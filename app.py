@@ -11,6 +11,7 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'mcq_secret_key_2024')
 QUESTIONS_BANK = os.path.join(os.path.dirname(__file__), 'questions_bank')
+ADMIN_PIN = os.environ.get('ADMIN_PIN', '1234')
 
 # ─────────────────────────────────────────────
 # DATABASE — SQLite locally, PostgreSQL on Railway
@@ -368,7 +369,35 @@ def exam_data(session_id):
 # ─────────────────────────────────────────────
 # ADMIN / IMPORT ROUTES
 # ─────────────────────────────────────────────
+# ─────────────────────────────────────────────
+# ADMIN PIN PROTECTION
+# ─────────────────────────────────────────────
+def admin_required(f):
+    from functools import wraps
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if not session.get('admin_ok'):
+            return redirect('/admin-login')
+        return f(*args, **kwargs)
+    return decorated
+
+@app.route('/admin-login', methods=['GET', 'POST'])
+def admin_login():
+    error = ''
+    if request.method == 'POST':
+        if request.form.get('pin') == ADMIN_PIN:
+            session['admin_ok'] = True
+            return redirect('/admin')
+        error = '❌ Wrong PIN. Try again.'
+    return render_template('admin_login.html', error=error)
+
+@app.route('/admin-logout')
+def admin_logout():
+    session.pop('admin_ok', None)
+    return redirect('/')
+
 @app.route('/admin')
+@admin_required
 def admin():
     tree = get_folder_tree()
     totals = get_folder_totals()
@@ -380,8 +409,15 @@ def admin():
 
 
 def _insert_questions(conn, questions, filename):
-    count = 0
+    count, skipped = 0, 0
     for q in questions:
+        # Duplicate check — skip if same question_text+folder+topic already exists
+        cur = db_exec(conn,
+            'SELECT id FROM questions WHERE folder=? AND topic=? AND question_text=?',
+            (q['folder'], q['topic'], q['question_text']))
+        if cur.fetchone():
+            skipped += 1
+            continue
         db_exec(conn, '''
             INSERT INTO questions
             (folder, topic, source_file, passage, passage_group_id, question_text,
@@ -396,7 +432,7 @@ def _insert_questions(conn, questions, filename):
             q.get('explanation', ''), q.get('question_order', 0)
         ))
         count += 1
-    return count
+    return count, skipped
 
 
 @app.route('/api/import-html', methods=['POST'])
@@ -409,9 +445,9 @@ def import_html():
     content   = file.read().decode('utf-8', errors='ignore')
     questions = parse_html_file(content, folder, topic)
     conn = get_db()
-    count = _insert_questions(conn, questions, file.filename)
+    count, skipped = _insert_questions(conn, questions, file.filename)
     conn.commit(); conn.close()
-    return jsonify({'imported': count, 'folder': folder, 'topic': topic})
+    return jsonify({'imported': count, 'skipped': skipped, 'folder': folder, 'topic': topic})
 
 
 @app.route('/api/import-pdf', methods=['POST'])
@@ -424,9 +460,9 @@ def import_pdf():
     content   = file.read()
     questions = parse_pdf_file(content, folder, topic)
     conn = get_db()
-    count = _insert_questions(conn, questions, file.filename)
+    count, skipped = _insert_questions(conn, questions, file.filename)
     conn.commit(); conn.close()
-    return jsonify({'imported': count, 'folder': folder, 'topic': topic})
+    return jsonify({'imported': count, 'skipped': skipped, 'folder': folder, 'topic': topic})
 
 
 @app.route('/api/add-question', methods=['POST'])
@@ -483,6 +519,45 @@ def stats():
 @app.route('/result/<session_id>')
 def result(session_id):
     return render_template('result.html', session_id=session_id)
+
+@app.route('/history')
+def history():
+    return render_template('history.html')
+
+@app.route('/api/history')
+def api_history():
+    conn = get_db()
+    cur = db_exec(conn, '''
+        SELECT id, config, score, total, started_at, submitted_at
+        FROM exam_sessions
+        WHERE submitted_at IS NOT NULL
+        ORDER BY submitted_at DESC
+        LIMIT 100
+    ''')
+    rows = [row_to_dict(r) for r in cur.fetchall()]
+    conn.close()
+    sessions = []
+    for r in rows:
+        try:
+            cfg = json.loads(r['config'])
+            pct = round(r['score'] / r['total'] * 100, 1) if r['total'] else 0
+            topics = []
+            for folder, ts in cfg.get('selections', {}).items():
+                for topic in ts:
+                    topics.append(f"{folder.replace('_',' ')} › {topic.replace('_',' ')}")
+            sessions.append({
+                'id': r['id'],
+                'student': cfg.get('student_name', 'Student'),
+                'score': r['score'],
+                'total': r['total'],
+                'percentage': pct,
+                'topics': topics,
+                'duration': cfg.get('duration', '—'),
+                'submitted_at': str(r['submitted_at'])[:16].replace('T', ' ')
+            })
+        except:
+            continue
+    return jsonify(sessions)
 
 
 # ─────────────────────────────────────────────
