@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}MCQ Exam App — Home{% endblock %}
+{% block content %}
+<div class="main">
+
+  <!-- Welcome Banner -->
+  <div class="card" style="background: linear-gradient(135deg, #1a237e, #3949ab); color: white; border: none;">
+    <div style="font-size: 28px; font-weight: 800; margin-bottom: 4px;">Welcome Back! 👋</div>
+    <div style="opacity: 0.85; font-size: 14px;">Your personal MCQ practice platform. Study smart, score higher.</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="card">
+    <div class="card-title">📊 Question Bank</div>
+    <div class="stat-grid" id="statsGrid">
+      <div class="stat-box"><div class="val" id="totalQ">...</div><div class="lbl">Questions</div></div>
+      <div class="stat-box" style="background: linear-gradient(135deg,#ff6f00,#ffa000)"><div class="val" id="totalExams">...</div><div class="lbl">Exams Taken</div></div>
+      <div class="stat-box" style="background: linear-gradient(135deg,#2e7d32,#43a047)"><div class="val" id="avgScore">...</div><div class="lbl">Avg Score %</div></div>
+    </div>
+  </div>
+
+  <!-- Topic Overview -->
+  <div class="card">
+    <div class="card-title">📁 Available Topics</div>
+    {% if tree %}
+      {% for folder, topics in tree.items() %}
+        <div style="margin-bottom: 14px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <div style="font-weight: 700; color: var(--primary); font-size: 15px;">📂 {{ folder.replace('_', ' ') }}</div>
+            <span class="badge badge-folder">{{ totals.get(folder, 0) }} Qs</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-left: 4px;">
+            {% for topic, count in topics.items() %}
+              <div style="background: #f5f5ff; border: 1px solid #c5cae9; border-radius: 20px; padding: 4px 12px; font-size: 12px;">
+                <strong>{{ topic.replace('_', ' ') }}</strong> <span style="color: var(--text-muted);">({{ count }})</span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% if not loop.last %}<hr class="divider">{% endif %}
+      {% endfor %}
+    {% else %}
+      <div style="text-align: center; padding: 30px 0; color: var(--text-muted);">
+        <div style="font-size: 40px; margin-bottom: 12px;">📭</div>
+        <div style="font-size: 16px; font-weight: 600;">No questions yet!</div>
+        <div style="font-size: 13px; margin-top: 6px;">Go to ⚙️ Admin to import your HTML & PDF files.</div>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Quick Start -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+    <a href="/setup" class="btn btn-accent" style="border-radius: 12px; padding: 18px 12px; flex-direction: column; gap: 4px; font-size: 14px;">
+      <span style="font-size: 26px;">📝</span> Start Exam
+    </a>
+    <a href="/admin" class="btn btn-outline" style="border-radius: 12px; padding: 18px 12px; flex-direction: column; gap: 4px; font-size: 14px;">
+      <span style="font-size: 26px;">⚙️</span> Admin
+    </a>
+  </div>
+
+  <!-- How to use -->
+  <div class="card">
+    <div class="card-title">💡 How to Access on Phone</div>
+    <div style="font-size: 13px; color: var(--text-muted); line-height: 1.7;">
+      <div>1. Connect your phone to the <strong>same WiFi</strong> as this PC</div>
+      <div>2. Open phone browser</div>
+      <div>3. Go to: <strong id="phoneUrl" style="color: var(--primary); background: #e8eaf6; padding: 2px 8px; border-radius: 4px;">Loading...</strong></div>
+      <div style="margin-top: 8px; font-size: 12px;">💡 Bookmark it for quick access!</div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+// Load stats
+fetch('/api/stats').then(r => r.json()).then(d => {
+  document.getElementById('totalQ').textContent = d.total_questions;
+  document.getElementById('totalExams').textContent = d.total_exams;
+  document.getElementById('avgScore').textContent = d.avg_score + '%';
+});
+
+// Show phone URL
+fetch('/api/stats').then(() => {
+  document.getElementById('phoneUrl').textContent = window.location.href;
+});
+</script>
+{% endblock %}

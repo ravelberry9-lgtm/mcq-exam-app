@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Exam Results</title>
+<style>
+:root {
+  --primary: #1a237e; --primary-light: #3949ab;
+  --success: #2e7d32; --danger: #c62828; --warning: #f57f17;
+  --accent: #ff6f00; --bg: #f0f2f5; --card: #fff;
+  --text: #1a1a2e; --text-muted: #546e7a; --border: #e0e4ef;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); }
+
+.header { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; padding: 20px; text-align: center; }
+.header h1 { font-size: 22px; font-weight: 800; }
+.header .sub { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+
+.main { padding: 16px; max-width: 680px; margin: 0 auto; padding-bottom: 30px; }
+
+/* SCORE CARD */
+.score-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px 20px;
+  text-align: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+}
+.score-ring {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
+  position: relative;
+}
+.score-ring svg { transform: rotate(-90deg); }
+.score-ring .bg { fill: none; stroke: #e0e4ef; stroke-width: 10; }
+.score-ring .fill { fill: none; stroke-width: 10; stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
+.score-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.score-pct { font-size: 28px; font-weight: 800; }
+.score-lbl { font-size: 11px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+
+.stats-row { display: flex; justify-content: center; gap: 24px; margin-top: 16px; }
+.stat-item { text-align: center; }
+.stat-item .val { font-size: 22px; font-weight: 800; }
+.stat-item .lbl { font-size: 11px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-top: 2px; }
+
+/* GRADE BADGE */
+.grade-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+/* TOPIC BREAKDOWN */
+.breakdown-card {
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+.breakdown-title { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+.topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.topic-name { font-size: 13px; font-weight: 600; flex: 1; }
+.topic-bar-wrap { flex: 2; background: #e0e4ef; border-radius: 50px; height: 8px; overflow: hidden; }
+.topic-bar-fill { height: 8px; border-radius: 50px; transition: width 0.8s ease; }
+.topic-score { font-size: 12px; font-weight: 700; min-width: 50px; text-align: right; }
+
+/* FILTER */
+.filter-row { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.filter-btn {
+  padding: 7px 16px;
+  border-radius: 50px;
+  border: 1.5px solid var(--border);
+  background: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--text-muted);
+}
+.filter-btn.active { border-color: var(--primary); background: var(--primary); color: white; }
+
+/* QUESTION REVIEW */
+.q-review {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  border-left: 4px solid var(--border);
+}
+.q-review.correct { border-left-color: var(--success); }
+.q-review.wrong { border-left-color: var(--danger); }
+.q-review.skipped { border-left-color: var(--warning); }
+
+.q-review-header {
+  padding: 12px 14px 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.q-review-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.correct .q-review-num { background: var(--success); }
+.wrong .q-review-num { background: var(--danger); }
+.skipped .q-review-num { background: var(--warning); }
+
+.q-review-text { font-size: 13.5px; line-height: 1.5; flex: 1; color: var(--text); }
+.q-review-arrow { color: var(--text-muted); font-size: 16px; transition: transform 0.2s; }
+.q-review-arrow.open { transform: rotate(90deg); }
+
+.q-review-body { display: none; padding: 0 14px 12px; border-top: 1px solid #f0f0f0; }
+.q-review-body.open { display: block; }
+
+.opt-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 8px; margin-top: 5px; font-size: 13.5px; }
+.opt-row.correct-opt { background: #e8f5e9; color: var(--success); }
+.opt-row.wrong-opt { background: #fce4ec; color: var(--danger); }
+.opt-row.other-opt { color: var(--text-muted); }
+.opt-key { font-weight: 700; width: 26px; }
+.explanation-box { background: #e8f4fd; border-radius: 8px; padding: 10px 12px; font-size: 12.5px; color: #1565c0; margin-top: 10px; line-height: 1.6; }
+
+/* RESEARCH PANEL */
+.research-bar {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #e0e4ef;
+  align-items: center;
+}
+.research-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 13px;
+  border-radius: 20px;
+  border: 1.5px solid;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s;
+  background: white;
+}
+.research-btn:active { transform: scale(0.96); }
+.rb-google     { border-color: #4285f4; color: #4285f4; }
+.rb-perplexity { border-color: #20808d; color: #20808d; }
+.rb-claude     { border-color: #d97706; color: #d97706; }
+.rb-chatgpt    { border-color: #10a37f; color: #10a37f; }
+.rb-gemini     { border-color: #8b5cf6; color: #8b5cf6; }
+.rb-google:hover     { background: #4285f4; color: white; }
+.rb-perplexity:hover { background: #20808d; color: white; }
+.rb-claude:hover     { background: #d97706; color: white; }
+.rb-chatgpt:hover    { background: #10a37f; color: white; }
+.rb-gemini:hover     { background: #8b5cf6; color: white; }
+
+/* PROMPT MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.55);
+  align-items: center; justify-content: center;
+  padding: 16px;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: white; border-radius: 16px;
+  width: 100%; max-width: 560px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.modal-header {
+  background: var(--primary); color: white;
+  padding: 14px 18px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.modal-header h3 { font-size: 15px; font-weight: 800; }
+.modal-close { background: none; border: none; color: white; font-size: 22px; cursor: pointer; line-height: 1; }
+.modal-body { padding: 16px; }
+.modal-note {
+  background: #fff8e1; border-radius: 8px; padding: 9px 12px;
+  font-size: 12px; color: #7b5800; margin-bottom: 12px; line-height: 1.5;
+}
+.modal-prompt {
+  width: 100%; min-height: 160px; max-height: 240px;
+  border: 1.5px solid var(--border); border-radius: 8px;
+  padding: 10px; font-size: 12.5px; line-height: 1.6;
+  resize: vertical; font-family: inherit; color: var(--text);
+}
+.modal-copy-btn {
+  width: 100%; margin-top: 10px; padding: 11px;
+  background: var(--primary); color: white;
+  border: none; border-radius: 8px; font-size: 14px;
+  font-weight: 700; cursor: pointer;
+}
+.modal-copy-btn.copied { background: #2e7d32; }
+.modal-ai-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px; margin-top: 10px;
+}
+.modal-ai-btn {
+  padding: 10px 8px; border-radius: 10px; border: 1.5px solid;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  background: white; transition: all 0.15s; text-align: center;
+}
+.modal-ai-btn:hover { color: white; }
+.mai-claude  { border-color: #d97706; color: #d97706; }
+.mai-chatgpt { border-color: #10a37f; color: #10a37f; }
+.mai-gemini  { border-color: #8b5cf6; color: #8b5cf6; }
+.mai-claude:hover  { background: #d97706; }
+.mai-chatgpt:hover { background: #10a37f; }
+.mai-gemini:hover  { background: #8b5cf6; }
+
+.copy-toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: #1a237e; color: white; padding: 10px 22px; border-radius: 50px;
+  font-size: 13px; font-weight: 600; z-index: 9999;
+  opacity: 0; transition: opacity 0.3s; pointer-events: none; white-space: nowrap;
+}
+.copy-toast.show { opacity: 1; }
+
+.passage-mini { background: #fffbec; border-left: 3px solid #f57f17; padding: 8px 12px; font-size: 12px; color: #5d4037; border-radius: 4px; margin-bottom: 10px; line-height: 1.6; }
+.passage-toggle { font-size: 12px; font-weight: 600; color: #e65100; cursor: pointer; margin-bottom: 6px; }
+
+/* ACTIONS */
+.action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.action-btn {
+  padding: 16px 12px;
+  border-radius: 14px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: all 0.15s;
+}
+.action-btn:active { transform: scale(0.97); }
+.btn-home { background: var(--primary); color: white; }
+.btn-new { background: var(--accent); color: white; }
+
+.loading { text-align: center; padding: 80px 20px; color: var(--text-muted); }
+.spinner { width: 40px; height: 40px; border: 4px solid #e0e4ef; border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<div class="copy-toast" id="copyToast"></div>
+
+<!-- Research Modal -->
+<div class="modal-overlay" id="researchModal">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3>🔬 Research This Question</h3>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-note" id="modalNote">
+        ✅ <strong>Prompt auto-copied!</strong> Click any AI below — then press <strong>Ctrl+V</strong> to paste and send.
+      </div>
+      <textarea class="modal-prompt" id="modalPromptText" readonly onclick="this.select()"></textarea>
+      <button class="modal-copy-btn" id="modalCopyBtn" onclick="copyModalPrompt()">📋 Copy Again</button>
+      <div class="modal-ai-row">
+        <a class="modal-ai-btn mai-claude"  href="https://claude.ai/new"         target="_blank">🤖 Claude</a>
+        <a class="modal-ai-btn mai-chatgpt" href="https://chatgpt.com/"          target="_blank">💬 ChatGPT</a>
+        <a class="modal-ai-btn mai-gemini"  href="https://gemini.google.com/app" target="_blank">✨ Gemini</a>
+        <a class="modal-ai-btn" id="linkPerplexity" href="#"                     target="_blank" style="border-color:#20808d;color:#20808d">🔎 Perplexity</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="loadingDiv" class="loading">
+  <div class="spinner"></div>
+  <div>Calculating results...</div>
+</div>
+
+<div id="resultsWrap" style="display:none;">
+  <div class="header">
+    <h1>📊 Exam Results</h1>
+    <div class="sub" id="headerSub">Tap questions to review answers</div>
+  </div>
+
+  <div class="main">
+    <!-- Score Card -->
+    <div class="score-card">
+      <div class="score-ring">
+        <svg width="120" height="120" viewBox="0 0 120 120">
+          <circle class="bg" cx="60" cy="60" r="50"/>
+          <circle class="fill" id="scoreArc" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314"/>
+        </svg>
+        <div class="score-center">
+          <div class="score-pct" id="scorePct">0%</div>
+          <div class="score-lbl">Score</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item"><div class="val" id="statCorrect" style="color:var(--success)">0</div><div class="lbl">Correct</div></div>
+        <div class="stat-item"><div class="val" id="statWrong" style="color:var(--danger)">0</div><div class="lbl">Wrong</div></div>
+        <div class="stat-item"><div class="val" id="statSkip" style="color:var(--warning)">0</div><div class="lbl">Skipped</div></div>
+      </div>
+      <div id="gradeBadge" class="grade-badge"></div>
+    </div>
+
+    <!-- Topic Breakdown -->
+    <div class="breakdown-card" id="topicBreakdown">
+      <div class="breakdown-title">📈 Performance by Topic</div>
+      <div id="topicRows"></div>
+    </div>
+
+    <!-- Question Review -->
+    <div class="breakdown-card">
+      <div class="breakdown-title">🔍 Question Review</div>
+      <div class="filter-row">
+        <button class="filter-btn active" onclick="filterReview('all', this)">All</button>
+        <button class="filter-btn" onclick="filterReview('wrong', this)">❌ Wrong</button>
+        <button class="filter-btn" onclick="filterReview('correct', this)">✅ Correct</button>
+        <button class="filter-btn" onclick="filterReview('skipped', this)">⏭ Skipped</button>
+      </div>
+      <div id="questionReview"></div>
+    </div>
+
+    <!-- Actions -->
+    <div class="action-grid">
+      <a href="/" class="action-btn btn-home">🏠 Home</a>
+      <a href="/setup" class="action-btn btn-new">📝 New Exam</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const SESSION_ID = '{{ session_id }}';
+let allResults = [];
+
+async function loadResults() {
+  const cached = sessionStorage.getItem('result_' + SESSION_ID);
+  let data;
+  if (cached) {
+    data = JSON.parse(cached);
+  } else {
+    const resp = await fetch('/api/submit-exam', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ session_id: SESSION_ID, answers: {} })
+    });
+    data = await resp.json();
+  }
+
+  if (!data || data.error) {
+    document.getElementById('loadingDiv').innerHTML = '<p style="color:red;padding:40px">Results not found. <a href="/">Go Home</a></p>';
+    return;
+  }
+
+  allResults = data.results || [];
+  renderResults(data);
+  document.getElementById('loadingDiv').style.display = 'none';
+  document.getElementById('resultsWrap').style.display = '';
+}
+
+function renderResults(data) {
+  const { score, total, unanswered, percentage, results } = data;
+  const wrong = total - score - unanswered;
+
+  // Score ring
+  setTimeout(() => {
+    const circumference = 314;
+    const offset = circumference - (percentage / 100) * circumference;
+    const arc = document.getElementById('scoreArc');
+    arc.style.strokeDashoffset = offset;
+    arc.style.stroke = percentage >= 70 ? '#2e7d32' : percentage >= 40 ? '#ff6f00' : '#c62828';
+  }, 100);
+
+  document.getElementById('scorePct').textContent = percentage + '%';
+  document.getElementById('statCorrect').textContent = score;
+  document.getElementById('statWrong').textContent = wrong;
+  document.getElementById('statSkip').textContent = unanswered;
+
+  // Header
+  document.getElementById('headerSub').textContent = `${score}/${total} correct · ${percentage}%`;
+
+  // Grade
+  let grade, gradeColor, gradeMsg;
+  if (percentage >= 90) { grade = 'A+'; gradeColor = '#1b5e20'; gradeMsg = '🌟 Outstanding!'; }
+  else if (percentage >= 80) { grade = 'A'; gradeColor = '#2e7d32'; gradeMsg = '🎉 Excellent!'; }
+  else if (percentage >= 70) { grade = 'B'; gradeColor = '#33691e'; gradeMsg = '👍 Good Job!'; }
+  else if (percentage >= 60) { grade = 'C'; gradeColor = '#e65100'; gradeMsg = '📚 Keep Practicing!'; }
+  else if (percentage >= 40) { grade = 'D'; gradeColor = '#bf360c'; gradeMsg = '💪 Needs Improvement'; }
+  else { grade = 'F'; gradeColor = '#c62828'; gradeMsg = '🔄 Try Again'; }
+
+  const badge = document.getElementById('gradeBadge');
+  badge.textContent = `Grade ${grade} — ${gradeMsg}`;
+  badge.style.background = gradeColor + '20';
+  badge.style.color = gradeColor;
+
+  // Topic breakdown
+  const topicStats = {};
+  results.forEach(r => {
+    const key = r.folder + '/' + r.topic;
+    if (!topicStats[key]) topicStats[key] = { name: r.topic.replace(/_/g,' '), folder: r.folder.replace(/_/g,' '), correct: 0, total: 0 };
+    topicStats[key].total++;
+    if (r.is_correct) topicStats[key].correct++;
+  });
+
+  const topicRowsEl = document.getElementById('topicRows');
+  Object.values(topicStats).forEach(t => {
+    const pct = Math.round(t.correct / t.total * 100);
+    const color = pct >= 70 ? '#2e7d32' : pct >= 40 ? '#ff6f00' : '#c62828';
+    topicRowsEl.innerHTML += `
+      <div class="topic-row">
+        <div class="topic-name">${escapeHtml(t.folder)} › ${escapeHtml(t.name)}</div>
+        <div class="topic-bar-wrap"><div class="topic-bar-fill" style="width:${pct}%;background:${color}"></div></div>
+        <div class="topic-score" style="color:${color}">${t.correct}/${t.total}</div>
+      </div>`;
+  });
+
+  renderReview(results);
+}
+
+function renderReview(results, filter = 'all') {
+  const container = document.getElementById('questionReview');
+  container.innerHTML = '';
+
+  results.forEach((r, idx) => {
+    const status = r.is_correct ? 'correct' : !r.user_answer ? 'skipped' : 'wrong';
+    if (filter !== 'all' && filter !== status) return;
+
+    const div = document.createElement('div');
+    div.className = `q-review ${status}`;
+    div.dataset.status = status;
+
+    let optHtml = '';
+    r.options.forEach(opt => {
+      let cls = 'other-opt';
+      let icon = '';
+      if (opt.key === r.correct_answer) { cls = 'correct-opt'; icon = '✅ '; }
+      else if (opt.key === r.user_answer && !r.is_correct) { cls = 'wrong-opt'; icon = '❌ '; }
+      optHtml += `<div class="opt-row ${cls}"><span class="opt-key">${opt.key}</span>${icon}${escapeHtml(opt.text)}</div>`;
+    });
+
+    let passageHtml = '';
+    if (r.passage) {
+      passageHtml = `<div class="passage-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">📖 Show/Hide Passage</div>
+        <div class="passage-mini" style="display:none">${escapeHtml(r.passage)}</div>`;
+    }
+
+    const expHtml = r.explanation ? `<div class="explanation-box">💡 ${escapeHtml(r.explanation)}</div>` : '';
+    const yourAns = r.user_answer ? `Your answer: <strong>${r.user_answer}</strong>` : '<strong>⏭ Not answered</strong>';
+    const researchHtml = buildResearchBar(r);
+
+    div.innerHTML = `
+      <div class="q-review-header" onclick="toggleReview(this)">
+        <div class="q-review-num">${idx+1}</div>
+        <div class="q-review-text">${escapeHtml(r.question_text.substring(0, 80))}${r.question_text.length > 80 ? '...' : ''}</div>
+        <div class="q-review-arrow">▶</div>
+      </div>
+      <div class="q-review-body">
+        ${passageHtml}
+        <div class="q-review-text" style="font-size:13.5px;margin-bottom:8px;padding:0">${escapeHtml(r.question_text)}</div>
+        ${optHtml}
+        <div style="font-size:12px;color:var(--text-muted);margin-top:8px">${yourAns} · Correct: <strong>${r.correct_answer}</strong></div>
+        ${expHtml}
+        ${researchHtml}
+      </div>`;
+    container.appendChild(div);
+  });
+
+  if (container.children.length === 0) {
+    container.innerHTML = '<div style="text-align:center;padding:20px;color:var(--text-muted)">No questions in this category.</div>';
+  }
+}
+
+function toggleReview(header) {
+  const body = header.nextElementSibling;
+  const arrow = header.querySelector('.q-review-arrow');
+  body.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+
+function filterReview(filter, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderReview(allResults, filter);
+}
+
+function escapeHtml(text) {
+  if (!text) return '';
+  return text.toString()
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/\n/g, '<br>');
+}
+
+// ── Research helpers ──────────────────────────────────
+let _currentPrompt = '';
+let _currentGoogleQuery = '';
+
+function buildPrompt(r) {
+  const opts = r.options.map(o => `${o.key}) ${o.text}`).join('\n');
+  const userPart = r.user_answer
+    ? `My answer: ${r.user_answer} (${r.is_correct ? 'Correct ✅' : 'Wrong ❌'})`
+    : 'I did not attempt this question.';
+  return `I am preparing for a competitive exam. Please explain this MCQ in detail:
+
+Question: ${r.question_text}
+
+Options:
+${opts}
+
+Correct Answer: ${r.correct_answer}
+${userPart}
+
+Please explain:
+1. Why option ${r.correct_answer} is correct
+2. Why the other options are wrong
+3. Key concept or trick to remember for similar questions`;
+}
+
+// Prompts stored by index — avoids embedding text with special chars in onclick
+const _prompts = [];
+
+function buildResearchBar(r) {
+  const prompt = buildPrompt(r);
+  const googleQuery = encodeURIComponent(r.question_text.substring(0, 150));
+  const idx = _prompts.length;
+  _prompts.push({ prompt, googleQuery });
+
+  return `
+    <div class="research-bar">
+      <span style="font-size:11px;font-weight:700;color:var(--text-muted);">🔬 Research:</span>
+      <a class="research-btn rb-google" href="https://www.google.com/search?q=${googleQuery}" target="_blank">🔍 Google</a>
+      <a class="research-btn rb-perplexity" href="https://www.perplexity.ai/search?q=${googleQuery}" target="_blank">🔎 Perplexity</a>
+      <button class="research-btn rb-claude" onclick="openModal(${idx})">🤖 Claude / ChatGPT / Gemini</button>
+    </div>`;
+}
+
+function openModal(idx) {
+  const { prompt, googleQuery } = _prompts[idx];
+  _currentPrompt = prompt;
+  _currentGoogleQuery = googleQuery;
+
+  const ta = document.getElementById('modalPromptText');
+  ta.value = prompt;
+  document.getElementById('modalCopyBtn').textContent = '📋 Copy Again';
+  document.getElementById('modalCopyBtn').classList.remove('copied');
+  document.getElementById('linkPerplexity').href = 'https://www.perplexity.ai/search?q=' + googleQuery;
+  document.getElementById('researchModal').classList.add('open');
+
+  // Auto-copy the prompt as soon as modal opens
+  ta.select();
+  try {
+    const ok = document.execCommand('copy');
+    document.getElementById('modalNote').innerHTML = ok
+      ? '✅ <strong>Prompt auto-copied!</strong> Click any AI below — then press <strong>Ctrl+V</strong> to paste.'
+      : '📋 Click <strong>Copy Again</strong> then open an AI below and paste with <strong>Ctrl+V</strong>.';
+  } catch(e) {
+    navigator.clipboard.writeText(prompt).catch(() => {});
+  }
+}
+
+function closeModal() {
+  document.getElementById('researchModal').classList.remove('open');
+}
+
+// Close when clicking the dark overlay (not the box itself)
+document.getElementById('researchModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+function copyModalPrompt() {
+  const ta = document.getElementById('modalPromptText');
+  ta.select();
+  navigator.clipboard.writeText(ta.value).then(() => {
+    const btn = document.getElementById('modalCopyBtn');
+    btn.textContent = '✅ Copied! Now click an AI button below';
+    btn.classList.add('copied');
+    showToast('✅ Copied! Now open an AI and press Ctrl+V');
+  }).catch(() => {
+    ta.select();
+    document.execCommand('copy');
+    showToast('✅ Copied! Now open an AI and press Ctrl+V');
+  });
+}
+
+
+function showToast(msg) {
+  const t = document.getElementById('copyToast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+loadResults();
+</script>
+</body>
+</html>

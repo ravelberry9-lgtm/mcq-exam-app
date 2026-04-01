@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Exam in Progress</title>
+<style>
+:root {
+  --primary: #1a237e; --primary-light: #3949ab;
+  --accent: #ff6f00; --success: #2e7d32; --danger: #c62828;
+  --bg: #f0f2f5; --card: #ffffff; --text: #1a1a2e;
+  --text-muted: #546e7a; --border: #e0e4ef;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+/* TOP BAR */
+.top-bar {
+  background: var(--primary);
+  color: white;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.timer {
+  font-size: 20px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  background: rgba(255,255,255,0.15);
+  padding: 4px 14px;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+.timer.warning { background: rgba(255,152,0,0.7); animation: pulse 1s infinite; }
+.timer.danger { background: rgba(198,40,40,0.8); animation: pulse 0.5s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.7} }
+.progress-mini { font-size: 13px; opacity: 0.85; }
+
+/* PROGRESS TRACK */
+.progress-bar-wrap { background: rgba(255,255,255,0.2); height: 4px; }
+.progress-bar-fill { height: 4px; background: var(--accent); transition: width 0.3s; }
+
+/* MAIN */
+.exam-main { padding: 14px; max-width: 680px; margin: 0 auto; padding-bottom: 100px; }
+
+/* QUESTION CARD */
+.q-card {
+  background: white;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border: 1.5px solid var(--border);
+  display: none;
+}
+.q-card.active { display: block; }
+
+/* PASSAGE BOX */
+.passage-box {
+  background: #fffbec;
+  border-left: 4px solid #f57f17;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #3e2723;
+  border-bottom: 1px solid #ffe082;
+}
+.passage-label { font-size: 11px; font-weight: 700; color: #e65100; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+
+/* QUESTION HEADER */
+.q-header {
+  padding: 14px 16px 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.q-num-badge {
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.q-text { font-size: 15px; line-height: 1.55; color: var(--text); flex: 1; }
+
+/* FOLDER LABEL */
+.q-meta { padding: 0 16px 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+.meta-pill {
+  font-size: 11px;
+  padding: 2px 9px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.pill-folder { background: #e8eaf6; color: #3949ab; }
+.pill-topic { background: #f3e5f5; color: #6a1b9a; }
+.pill-diff-E { background: #e8f5e9; color: #2e7d32; }
+.pill-diff-M { background: #fff3e0; color: #e65100; }
+.pill-diff-T { background: #fce4ec; color: #ad1457; }
+
+/* OPTIONS */
+.options-list { padding: 4px 12px 16px; display: flex; flex-direction: column; gap: 8px; }
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: white;
+  text-align: left;
+  width: 100%;
+  font-size: 14.5px;
+  color: var(--text);
+}
+.option-btn:hover { border-color: var(--primary-light); background: #f0f2ff; }
+.option-btn.selected { border-color: var(--primary); background: #e8eaf6; }
+.option-btn.selected .opt-key { background: var(--primary); color: white; }
+.opt-key {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+/* NAVIGATION */
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid var(--border);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 680px;
+  margin: 0 auto;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.nav-btn {
+  padding: 11px 18px;
+  border-radius: 50px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  min-height: 44px;
+}
+.nav-prev { background: #e8eaf6; color: var(--primary); }
+.nav-next { background: var(--primary); color: white; flex: 1; }
+.nav-submit { background: var(--accent); color: white; }
+.nav-btn:active { transform: scale(0.96); }
+
+/* QUESTION GRID NAVIGATOR */
+.q-grid-wrap {
+  background: white;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  padding: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border: 1.5px solid var(--border);
+}
+.q-grid-title { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+.q-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.q-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px solid var(--border);
+  background: white;
+  color: var(--text-muted);
+  transition: all 0.15s;
+}
+.q-dot.answered { background: #e8f5e9; border-color: #2e7d32; color: #2e7d32; }
+.q-dot.current { border-color: var(--primary); color: var(--primary); background: #e8eaf6; }
+.q-dot.current.answered { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.modal h2 { font-size: 20px; margin-bottom: 12px; color: var(--primary); }
+.modal p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+.modal-btns { display: flex; gap: 10px; }
+.modal-btns button { flex: 1; padding: 13px; border: none; border-radius: 50px; font-size: 15px; font-weight: 700; cursor: pointer; }
+.modal-cancel { background: #f5f5f5; color: var(--text); }
+.modal-confirm { background: var(--accent); color: white; }
+
+/* LOADING */
+.loading { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+.spinner { width: 40px; height: 40px; border: 4px solid #e0e4ef; border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<div id="loadingScreen" class="loading" style="padding-top: 100px;">
+  <div class="spinner"></div>
+  <div>Loading your exam...</div>
+</div>
+
+<div id="examWrap" style="display:none;">
+  <div class="top-bar">
+    <div>
+      <div style="font-size: 11px; opacity: 0.7; font-weight: 600; text-transform: uppercase;">Exam</div>
+      <div class="progress-mini" id="progressText">Q 1 / ?</div>
+    </div>
+    <div class="timer" id="timer">--:--</div>
+    <div style="text-align:right;">
+      <div style="font-size: 11px; opacity: 0.7; font-weight: 600; text-transform: uppercase;">Answered</div>
+      <div class="progress-mini" id="answeredText">0 / ?</div>
+    </div>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+
+  <div class="exam-main" id="examMain">
+    <!-- Questions injected here -->
+  </div>
+</div>
+
+<!-- Navigation Bar -->
+<div class="nav-bar" id="navBar" style="display:none;">
+  <button class="nav-btn nav-prev" onclick="navigate(-1)" id="prevBtn">◀ Prev</button>
+  <button class="nav-btn nav-submit" onclick="confirmSubmit()">Submit</button>
+  <button class="nav-btn nav-next" onclick="navigate(1)" id="nextBtn">Next ▶</button>
+</div>
+
+<!-- Submit Modal -->
+<div class="modal-overlay" id="submitModal">
+  <div class="modal">
+    <h2>🏁 Submit Exam?</h2>
+    <p id="submitModalText">Are you sure you want to submit?</p>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeModal()">Go Back</button>
+      <button class="modal-confirm" onclick="submitExam()">Submit Now</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const SESSION_ID = '{{ session_id }}';
+let questions = [];
+let answers = {};
+let currentIdx = 0;
+let timerInterval;
+let totalSeconds = {{ duration }} * 60;
+let timeLeft = totalSeconds;
+let examSubmitted = false;
+
+// Load exam data
+async function loadExam() {
+  const cached = sessionStorage.getItem('exam_' + SESSION_ID);
+  let data;
+  if (cached) {
+    data = JSON.parse(cached);
+  } else {
+    const resp = await fetch('/api/exam-data/' + SESSION_ID);
+    data = await resp.json();
+  }
+
+  if (data.error) {
+    document.getElementById('loadingScreen').innerHTML = '<p style="color:red">Error loading exam: ' + data.error + '</p>';
+    return;
+  }
+
+  questions = data.questions;
+  timeLeft = (data.duration || {{ duration }}) * 60;
+  totalSeconds = timeLeft;
+
+  renderQuestions();
+  buildGrid();
+  startTimer();
+
+  document.getElementById('loadingScreen').style.display = 'none';
+  document.getElementById('examWrap').style.display = '';
+  document.getElementById('navBar').style.display = '';
+  updateNav();
+  updateProgress();
+}
+
+function renderQuestions() {
+  const main = document.getElementById('examMain');
+
+  // Question navigator grid
+  const gridWrap = document.createElement('div');
+  gridWrap.className = 'q-grid-wrap';
+  gridWrap.innerHTML = '<div class="q-grid-title">📋 Question Navigator (tap to jump)</div><div class="q-grid" id="qGrid"></div>';
+  main.appendChild(gridWrap);
+
+  // Render each question card
+  questions.forEach((q, idx) => {
+    const card = document.createElement('div');
+    card.className = 'q-card' + (idx === 0 ? ' active' : '');
+    card.id = 'qcard_' + idx;
+
+    let html = '';
+
+    // Passage (show only for first question of a group, but always show box)
+    if (q.passage) {
+      // Check if same passage as previous question
+      const prevPassage = idx > 0 ? questions[idx-1].passage_group_id : null;
+      if (q.passage_group_id !== prevPassage) {
+        html += `<div class="passage-box">
+          <div class="passage-label">📖 Read the passage carefully</div>
+          <div>${escapeHtml(q.passage)}</div>
+        </div>`;
+      }
+    }
+
+    // Metadata
+    html += `<div class="q-meta">
+      <span class="meta-pill pill-folder">${escapeHtml(q.folder.replace(/_/g,' '))}</span>
+      <span class="meta-pill pill-topic">${escapeHtml(q.topic.replace(/_/g,' '))}</span>
+      <span class="meta-pill pill-diff-${q.difficulty}">${q.difficulty==='E'?'Easy':q.difficulty==='T'?'Tough':'Medium'}</span>
+    </div>`;
+
+    // Question
+    html += `<div class="q-header">
+      <div class="q-num-badge">${idx+1}</div>
+      <div class="q-text">${escapeHtml(q.question_text)}</div>
+    </div>`;
+
+    // Options
+    html += '<div class="options-list">';
+    q.options.forEach(opt => {
+      html += `<button class="option-btn" id="opt_${idx}_${opt.key}" onclick="selectAnswer(${idx},'${opt.key}')">
+        <span class="opt-key">${opt.key}</span>
+        <span class="opt-text">${escapeHtml(opt.text)}</span>
+      </button>`;
+    });
+    html += '</div>';
+
+    card.innerHTML = html;
+    main.appendChild(card);
+  });
+}
+
+function buildGrid() {
+  const grid = document.getElementById('qGrid');
+  questions.forEach((q, idx) => {
+    const dot = document.createElement('div');
+    dot.className = 'q-dot' + (idx === 0 ? ' current' : '');
+    dot.id = 'qdot_' + idx;
+    dot.textContent = idx + 1;
+    dot.onclick = () => goToQuestion(idx);
+    grid.appendChild(dot);
+  });
+}
+
+function goToQuestion(idx) {
+  document.getElementById('qcard_' + currentIdx).classList.remove('active');
+  document.getElementById('qdot_' + currentIdx).classList.remove('current');
+  currentIdx = idx;
+  document.getElementById('qcard_' + currentIdx).classList.add('active');
+  document.getElementById('qdot_' + currentIdx).classList.add('current');
+
+  // Scroll grid dot into view
+  const dot = document.getElementById('qdot_' + idx);
+  dot.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+  // Scroll question into view
+  document.getElementById('qcard_' + idx).scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  updateNav();
+  updateProgress();
+}
+
+function navigate(dir) {
+  const next = currentIdx + dir;
+  if (next >= 0 && next < questions.length) {
+    goToQuestion(next);
+  }
+}
+
+function selectAnswer(qIdx, key) {
+  const q = questions[qIdx];
+  answers[q.id] = key;
+
+  // Update option buttons
+  q.options.forEach(opt => {
+    const btn = document.getElementById('opt_' + qIdx + '_' + opt.key);
+    if (btn) btn.classList.toggle('selected', opt.key === key);
+  });
+
+  // Update dot
+  const dot = document.getElementById('qdot_' + qIdx);
+  if (dot) dot.classList.add('answered');
+
+  updateProgress();
+}
+
+function updateNav() {
+  document.getElementById('prevBtn').disabled = currentIdx === 0;
+  document.getElementById('nextBtn').disabled = currentIdx === questions.length - 1;
+  document.getElementById('progressText').textContent = `Q ${currentIdx+1} / ${questions.length}`;
+}
+
+function updateProgress() {
+  const answered = Object.keys(answers).length;
+  const total = questions.length;
+  document.getElementById('answeredText').textContent = answered + ' / ' + total;
+  document.getElementById('progressFill').style.width = (answered/total*100) + '%';
+
+  // Update current dot
+  questions.forEach((q, idx) => {
+    const dot = document.getElementById('qdot_' + idx);
+    if (!dot) return;
+    dot.classList.toggle('answered', !!answers[q.id]);
+    dot.classList.toggle('current', idx === currentIdx);
+  });
+}
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimerDisplay();
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      submitExam(true);
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const mins = Math.floor(timeLeft / 60);
+  const secs = timeLeft % 60;
+  const el = document.getElementById('timer');
+  el.textContent = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+
+  el.classList.remove('warning', 'danger');
+  if (timeLeft <= 60) el.classList.add('danger');
+  else if (timeLeft <= 300) el.classList.add('warning');
+}
+
+function confirmSubmit() {
+  if (examSubmitted) return;
+  const answered = Object.keys(answers).length;
+  const unanswered = questions.length - answered;
+  document.getElementById('submitModalText').innerHTML =
+    `You've answered <strong>${answered}</strong> of <strong>${questions.length}</strong> questions.` +
+    (unanswered > 0 ? `<br><br>⚠️ <strong>${unanswered} question(s)</strong> are unanswered. They will be marked incorrect.` : '<br><br>✅ All questions answered!') +
+    `<br><br>Once submitted, you cannot change your answers.`;
+  document.getElementById('submitModal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('submitModal').classList.remove('open');
+}
+
+async function submitExam(autoSubmit = false) {
+  if (examSubmitted) return;
+  examSubmitted = true;
+  clearInterval(timerInterval);
+  closeModal();
+
+  // Show loading
+  document.getElementById('examMain').innerHTML = '<div class="loading"><div class="spinner"></div><div>Evaluating your answers...</div></div>';
+  document.getElementById('navBar').style.display = 'none';
+
+  try {
+    const resp = await fetch('/api/submit-exam', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ session_id: SESSION_ID, answers: answers })
+    });
+    const result = await resp.json();
+
+    if (result.error) {
+      alert('Error: ' + result.error);
+      return;
+    }
+
+    // Store results
+    sessionStorage.setItem('result_' + SESSION_ID, JSON.stringify(result));
+    window.location.href = '/result/' + SESSION_ID;
+  } catch(e) {
+    alert('Failed to submit. Please try again.');
+    examSubmitted = false;
+  }
+}
+
+function escapeHtml(text) {
+  if (!text) return '';
+  return text.toString()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/\n/g, '<br>');
+}
+
+// Start
+loadExam();
+
+// Prevent accidental back navigation
+window.addEventListener('beforeunload', (e) => {
+  if (!examSubmitted && Object.keys(answers).length > 0) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+</script>
+</body>
+</html>

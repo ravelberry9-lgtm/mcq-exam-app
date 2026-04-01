@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+{% block title %}Admin — MCQ App{% endblock %}
+{% block content %}
+<div class="main">
+
+<div class="card" style="background: linear-gradient(135deg,#1a237e,#3949ab); color: white; border: none;">
+  <div style="font-size: 20px; font-weight: 800;">⚙️ Admin Panel</div>
+  <div style="opacity: 0.85; font-size: 13px; margin-top: 4px;">Import questions, manage topics, view stats.</div>
+</div>
+
+<!-- Total Questions -->
+<div class="card">
+  <div class="card-title">📊 Database Stats</div>
+  <div style="font-size: 32px; font-weight: 800; color: var(--primary);">{{ total_q }}</div>
+  <div style="font-size: 13px; color: var(--text-muted);">Total questions in database</div>
+</div>
+
+<!-- Import HTML -->
+<div class="card">
+  <div class="card-title">📄 Import HTML File</div>
+  <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+    Supports the standard MCQ HTML format (like your ArtCulture file). Questions + answers will be auto-extracted.
+  </div>
+  <div class="form-group">
+    <label class="form-label">Folder (main category)</label>
+    <input type="text" id="htmlFolder" class="form-control" placeholder="e.g. GK or Mental_Ability" value="GK">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Topic (sub-category)</label>
+    <input type="text" id="htmlTopic" class="form-control" placeholder="e.g. Art_Culture" value="">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Select HTML File</label>
+    <input type="file" id="htmlFile" accept=".html,.htm" class="form-control" style="padding: 10px;">
+  </div>
+  <button class="btn btn-primary btn-block" onclick="importHtml()" id="htmlImportBtn">⬆ Import HTML</button>
+  <div id="htmlResult" style="margin-top: 10px; font-size: 13px; display: none;"></div>
+</div>
+
+<!-- Import PDF -->
+<div class="card">
+  <div class="card-title">📑 Import PDF File</div>
+  <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+    Works with text-based PDFs (not scanned/image PDFs). For image PDFs, use the manual entry below.
+  </div>
+  <div class="form-group">
+    <label class="form-label">Folder</label>
+    <input type="text" id="pdfFolder" class="form-control" placeholder="e.g. Mental_Ability" value="Mental_Ability">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Topic</label>
+    <input type="text" id="pdfTopic" class="form-control" placeholder="e.g. Puzzles" value="Puzzles">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Select PDF File</label>
+    <input type="file" id="pdfFile" accept=".pdf" class="form-control" style="padding: 10px;">
+  </div>
+  <button class="btn btn-primary btn-block" onclick="importPdf()" id="pdfImportBtn">⬆ Import PDF</button>
+  <div id="pdfResult" style="margin-top: 10px; font-size: 13px; display: none;"></div>
+</div>
+
+<!-- Manual Question Entry -->
+<div class="card">
+  <div class="card-title">✏️ Add Question Manually</div>
+  <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+    Use this for image-based PDFs — type in questions manually.
+  </div>
+  <div class="form-group">
+    <label class="form-label">Folder</label>
+    <input type="text" id="mFolder" class="form-control" placeholder="GK or Mental_Ability" value="GK">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Topic</label>
+    <input type="text" id="mTopic" class="form-control" placeholder="e.g. History" value="">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Passage (optional — for linked questions)</label>
+    <textarea id="mPassage" class="form-control" rows="3" placeholder="Leave empty if standalone question..."></textarea>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Passage Group ID (optional — same ID links questions to same passage)</label>
+    <input type="text" id="mGroupId" class="form-control" placeholder="e.g. puzzle_set_1">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Question Text *</label>
+    <textarea id="mQtext" class="form-control" rows="3" placeholder="Type your question here..."></textarea>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+    <div class="form-group">
+      <label class="form-label">A) *</label>
+      <input type="text" id="mA" class="form-control" placeholder="Option A">
+    </div>
+    <div class="form-group">
+      <label class="form-label">B) *</label>
+      <input type="text" id="mB" class="form-control" placeholder="Option B">
+    </div>
+    <div class="form-group">
+      <label class="form-label">C) *</label>
+      <input type="text" id="mC" class="form-control" placeholder="Option C">
+    </div>
+    <div class="form-group">
+      <label class="form-label">D) *</label>
+      <input type="text" id="mD" class="form-control" placeholder="Option D">
+    </div>
+    <div class="form-group">
+      <label class="form-label">E) (optional)</label>
+      <input type="text" id="mE" class="form-control" placeholder="Option E (leave blank if 4-option)">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Correct Answer *</label>
+      <select id="mCorrect" class="form-control">
+        <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option>
+      </select>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+    <div class="form-group">
+      <label class="form-label">Difficulty</label>
+      <select id="mDiff" class="form-control">
+        <option value="E">Easy</option>
+        <option value="M" selected>Medium</option>
+        <option value="T">Tough</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Explanation (optional)</label>
+    <textarea id="mExplain" class="form-control" rows="2" placeholder="Add explanation or leave blank..."></textarea>
+  </div>
+  <button class="btn btn-success btn-block" onclick="addQuestion()">➕ Add Question</button>
+  <div id="manualResult" style="margin-top: 10px; font-size: 13px; display: none;"></div>
+</div>
+
+<!-- Topic Management -->
+<div class="card">
+  <div class="card-title">🗂 Manage Topics</div>
+  {% if tree %}
+    {% for folder, topics in tree.items() %}
+    <div style="margin-bottom: 14px;">
+      <div style="font-weight: 700; color: var(--primary); margin-bottom: 6px;">📂 {{ folder.replace('_', ' ') }}</div>
+      {% for topic, count in topics.items() %}
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f0f0f0;">
+        <div style="flex: 1;">
+          <div style="font-size: 13px; font-weight: 600;">{{ topic.replace('_', ' ') }}</div>
+          <div style="font-size: 11px; color: var(--text-muted);">{{ count }} questions</div>
+        </div>
+        <button onclick="deleteTopic('{{ folder }}','{{ topic }}')" style="background: #fce4ec; color: #c62828; border: none; border-radius: 8px; padding: 6px 14px; font-size: 12px; font-weight: 700; cursor: pointer;">🗑 Delete</button>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  {% else %}
+    <div style="text-align: center; padding: 20px; color: var(--text-muted); font-size: 14px;">No topics yet. Import some files above!</div>
+  {% endif %}
+</div>
+
+<!-- Scan Questions Bank Folder -->
+<div class="card">
+  <div class="card-title">📂 Scan Question Bank Folder</div>
+  <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+    If you've placed HTML/PDF files in the <code>questions_bank/</code> folder, click Scan to auto-import them. Folder name = folder, subfolder name = topic.
+  </div>
+  <button class="btn btn-outline btn-block" onclick="scanFolder()">🔍 Scan & Import All Files</button>
+  <div id="scanResult" style="margin-top: 10px; font-size: 13px; display: none;"></div>
+</div>
+
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+async function importHtml() {
+  const file = document.getElementById('htmlFile').files[0];
+  const folder = document.getElementById('htmlFolder').value.trim();
+  const topic = document.getElementById('htmlTopic').value.trim();
+  if (!file || !folder || !topic) { showToast('Please fill all fields and select file', 'error'); return; }
+
+  const btn = document.getElementById('htmlImportBtn');
+  btn.disabled = true; btn.textContent = 'Importing...';
+
+  const fd = new FormData();
+  fd.append('file', file);
+  fd.append('folder', folder);
+  fd.append('topic', topic);
+
+  const resp = await fetch('/api/import-html', { method: 'POST', body: fd });
+  const data = await resp.json();
+  btn.disabled = false; btn.textContent = '⬆ Import HTML';
+
+  const el = document.getElementById('htmlResult');
+  el.style.display = '';
+  if (data.error) {
+    el.style.color = 'red'; el.textContent = '❌ Error: ' + data.error;
+  } else {
+    el.style.color = 'green'; el.textContent = '✅ Imported ' + data.imported + ' questions into ' + data.folder + ' / ' + data.topic;
+    showToast('Imported ' + data.imported + ' questions!', 'success');
+    setTimeout(() => location.reload(), 1500);
+  }
+}
+
+async function importPdf() {
+  const file = document.getElementById('pdfFile').files[0];
+  const folder = document.getElementById('pdfFolder').value.trim();
+  const topic = document.getElementById('pdfTopic').value.trim();
+  if (!file || !folder || !topic) { showToast('Please fill all fields and select file', 'error'); return; }
+
+  const btn = document.getElementById('pdfImportBtn');
+  btn.disabled = true; btn.textContent = 'Importing...';
+
+  const fd = new FormData();
+  fd.append('file', file);
+  fd.append('folder', folder);
+  fd.append('topic', topic);
+
+  const resp = await fetch('/api/import-pdf', { method: 'POST', body: fd });
+  const data = await resp.json();
+  btn.disabled = false; btn.textContent = '⬆ Import PDF';
+
+  const el = document.getElementById('pdfResult');
+  el.style.display = '';
+  if (data.error) {
+    el.style.color = 'red'; el.textContent = '❌ Error: ' + data.error;
+  } else if (data.imported === 0) {
+    el.style.color = 'orange'; el.textContent = '⚠️ 0 questions found. This may be an image-based PDF — use manual entry instead.';
+  } else {
+    el.style.color = 'green'; el.textContent = '✅ Imported ' + data.imported + ' questions!';
+    showToast('Imported ' + data.imported + ' questions!', 'success');
+    setTimeout(() => location.reload(), 1500);
+  }
+}
+
+async function addQuestion() {
+  const d = {
+    folder: document.getElementById('mFolder').value.trim(),
+    topic: document.getElementById('mTopic').value.trim(),
+    passage: document.getElementById('mPassage').value.trim() || null,
+    passage_group_id: document.getElementById('mGroupId').value.trim() || null,
+    question_text: document.getElementById('mQtext').value.trim(),
+    option_a: document.getElementById('mA').value.trim(),
+    option_b: document.getElementById('mB').value.trim(),
+    option_c: document.getElementById('mC').value.trim(),
+    option_d: document.getElementById('mD').value.trim(),
+    option_e: document.getElementById('mE').value.trim() || null,
+    correct_answer: document.getElementById('mCorrect').value,
+    difficulty: document.getElementById('mDiff').value,
+    explanation: document.getElementById('mExplain').value.trim()
+  };
+
+  if (!d.folder || !d.topic || !d.question_text || !d.option_a || !d.option_b || !d.option_c || !d.option_d) {
+    showToast('Please fill all required fields!', 'error'); return;
+  }
+
+  const resp = await fetch('/api/add-question', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(d)
+  });
+  const data = await resp.json();
+  const el = document.getElementById('manualResult');
+  el.style.display = '';
+  if (data.success) {
+    el.style.color = 'green'; el.textContent = '✅ Question added!';
+    showToast('Question added!', 'success');
+    // Clear fields (keep folder/topic)
+    ['mPassage','mGroupId','mQtext','mA','mB','mC','mD','mE','mExplain'].forEach(id => { document.getElementById(id).value = ''; });
+    setTimeout(() => { el.style.display='none'; }, 3000);
+  } else {
+    el.style.color = 'red'; el.textContent = '❌ Failed to add question.';
+  }
+}
+
+async function deleteTopic(folder, topic) {
+  if (!confirm(`Delete ALL questions in ${folder}/${topic}? This cannot be undone.`)) return;
+  const resp = await fetch('/api/delete-topic', {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({folder, topic})
+  });
+  const data = await resp.json();
+  if (data.success) { showToast('Topic deleted!', 'success'); setTimeout(() => location.reload(), 1000); }
+}
+
+async function scanFolder() {
+  showToast('Scanning folder...', '');
+  // This endpoint would scan the questions_bank directory
+  // For now show instructions
+  const el = document.getElementById('scanResult');
+  el.style.display = '';
+  el.style.color = '#1565c0';
+  el.innerHTML = `📁 Place your files in <code>questions_bank/FOLDER_NAME/TOPIC_NAME.html</code> or <code>.pdf</code><br>
+  Example: <code>questions_bank/GK/Art_Culture.html</code><br>
+  Then the app will auto-detect folder = GK, topic = Art_Culture.`;
+}
+</script>
+{% endblock %}
