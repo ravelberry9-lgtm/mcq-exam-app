@@ -212,6 +212,42 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .q-dot.answered { background: #e8f5e9; border-color: #2e7d32; color: #2e7d32; }
 .q-dot.current { border-color: var(--primary); color: var(--primary); background: #e8eaf6; }
 .q-dot.current.answered { background: var(--primary); color: white; border-color: var(--primary); }
+.q-dot.bookmarked { border-color: #ff6f00; }
+.q-dot.bookmarked::after { content: '🔖'; position: absolute; font-size: 8px; top: -4px; right: -4px; }
+.q-dot { position: relative; }
+
+/* BOOKMARK BUTTON */
+.bookmark-btn {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  padding: 5px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.15s;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.bookmark-btn.active { border-color: #ff6f00; color: #ff6f00; background: #fff3e0; }
+
+/* TIMER WARNING BANNER */
+.timer-warning-banner {
+  display: none;
+  background: #fff3e0;
+  border-left: 4px solid #ff6f00;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e65100;
+  text-align: center;
+}
+.timer-warning-banner.danger-level {
+  background: #fce4ec;
+  border-color: #c62828;
+  color: #c62828;
+  animation: pulse 1s infinite;
+}
 
 /* MODAL */
 .modal-overlay {
@@ -266,6 +302,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
     </div>
   </div>
   <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="timer-warning-banner" id="timerBanner">⚠️ 5 minutes remaining — wrap up soon!</div>
 
   <div class="exam-main" id="examMain">
     <!-- Questions injected here -->
@@ -300,6 +337,8 @@ let timerInterval;
 let totalSeconds = {{ duration }} * 60;
 let timeLeft = totalSeconds;
 let examSubmitted = false;
+let bookmarks = new Set();
+let warnedFive = false;
 
 // Load exam data
 async function loadExam() {
@@ -372,6 +411,7 @@ function renderQuestions() {
     html += `<div class="q-header">
       <div class="q-num-badge">${idx+1}</div>
       <div class="q-text">${escapeHtml(q.question_text)}</div>
+      <button class="bookmark-btn" id="bm_${idx}" onclick="toggleBookmark(${idx})" title="Bookmark">🔖</button>
     </div>`;
 
     // Options
@@ -482,8 +522,22 @@ function updateTimerDisplay() {
   el.textContent = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
 
   el.classList.remove('warning', 'danger');
-  if (timeLeft <= 60) el.classList.add('danger');
-  else if (timeLeft <= 300) el.classList.add('warning');
+  const banner = document.getElementById('timerBanner');
+
+  if (timeLeft <= 60) {
+    el.classList.add('danger');
+    banner.style.display = 'block';
+    banner.classList.add('danger-level');
+    banner.textContent = '🚨 Less than 1 minute! Submit now!';
+  } else if (timeLeft <= 300) {
+    el.classList.add('warning');
+    if (!warnedFive) {
+      warnedFive = true;
+      banner.style.display = 'block';
+      banner.classList.remove('danger-level');
+      banner.textContent = '⏰ 5 minutes remaining — start wrapping up!';
+    }
+  }
 }
 
 function confirmSubmit() {
@@ -541,6 +595,22 @@ function escapeHtml(text) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/\n/g, '<br>');
+}
+
+// BOOKMARKS
+function toggleBookmark(idx) {
+  const key = 'bm_' + idx;
+  if (bookmarks.has(idx)) {
+    bookmarks.delete(idx);
+    document.getElementById('bm_' + idx).classList.remove('active');
+    document.getElementById('qdot_' + idx)?.classList.remove('bookmarked');
+  } else {
+    bookmarks.add(idx);
+    document.getElementById('bm_' + idx).classList.add('active');
+    document.getElementById('qdot_' + idx)?.classList.add('bookmarked');
+  }
+  // Save to sessionStorage for result page
+  sessionStorage.setItem('bookmarks_' + SESSION_ID, JSON.stringify([...bookmarks]));
 }
 
 // Start

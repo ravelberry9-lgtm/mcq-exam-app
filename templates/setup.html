@@ -8,6 +8,15 @@
   <div style="opacity: 0.9; font-size: 13px; margin-top: 4px;">Choose topics, number of questions, and exam mode.</div>
 </div>
 
+<!-- Student Name -->
+<div class="card">
+  <div class="card-title">👤 Your Name</div>
+  <div class="form-group" style="margin-bottom: 0;">
+    <input type="text" id="studentName" class="form-control" placeholder="Enter your name (optional)" maxlength="60"
+           style="font-size: 16px;">
+  </div>
+</div>
+
 <!-- Exam Mode & Timer -->
 <div class="card">
   <div class="card-title">🕐 Exam Settings</div>
@@ -93,6 +102,10 @@ const deviceId = localStorage.getItem('mcq_device_id') || (() => {
   return id;
 })();
 
+// Restore saved name
+const savedName = localStorage.getItem('mcq_student_name');
+if (savedName) document.getElementById('studentName').value = savedName;
+
 document.getElementById('examMode').addEventListener('change', function() {
   document.getElementById('noRepeatInfo').style.display = this.value === 'no_repeat' ? 'block' : 'none';
 });
@@ -162,6 +175,8 @@ function updateSummary() {
 async function startExam() {
   const mode = document.getElementById('examMode').value;
   const duration = parseInt(document.getElementById('duration').value) || 45;
+  const studentName = document.getElementById('studentName').value.trim() || 'Student';
+  localStorage.setItem('mcq_student_name', studentName);
   const allInputs = document.querySelectorAll('.topic-input');
 
   const selections = {};
@@ -188,7 +203,7 @@ async function startExam() {
     const resp = await fetch('/api/start-exam', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mode, duration, selections, device_id: deviceId })
+      body: JSON.stringify({ mode, duration, selections, device_id: deviceId, student_name: studentName })
     });
     const data = await resp.json();
     if (data.error) {

@@ -171,10 +171,11 @@ def folder_stats():
 @app.route('/api/start-exam', methods=['POST'])
 def start_exam():
     data = request.json
-    mode      = data.get('mode', 'shuffle')
-    duration  = int(data.get('duration', 45))
-    selections = data.get('selections', {})
-    device_id = data.get('device_id', 'default')
+    mode         = data.get('mode', 'shuffle')
+    duration     = int(data.get('duration', 45))
+    selections   = data.get('selections', {})
+    device_id    = data.get('device_id', 'default')
+    student_name = data.get('student_name', 'Student')
 
     conn = get_db()
     all_questions = []
@@ -232,7 +233,7 @@ def start_exam():
         conn.commit()
 
     session_id = str(uuid.uuid4())
-    config = {'mode': mode, 'duration': duration, 'selections': selections, 'device_id': device_id}
+    config = {'mode': mode, 'duration': duration, 'selections': selections, 'device_id': device_id, 'student_name': student_name}
     q_ids = [q['id'] for q in all_questions]
     db_exec(conn, 'INSERT INTO exam_sessions (id, config, questions) VALUES (?,?,?)',
             (session_id, json.dumps(config), json.dumps(q_ids)))

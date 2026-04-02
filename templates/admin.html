@@ -190,8 +190,12 @@ async function importHtml() {
   el.style.display = '';
   if (data.error) {
     el.style.color = 'red'; el.textContent = '❌ Error: ' + data.error;
+  } else if (data.imported === 0 && data.skipped > 0) {
+    el.style.color = 'orange'; el.textContent = '⏭ All ' + data.skipped + ' questions already exist — nothing new imported.';
   } else {
-    el.style.color = 'green'; el.textContent = '✅ Imported ' + data.imported + ' questions into ' + data.folder + ' / ' + data.topic;
+    el.style.color = 'green';
+    el.textContent = '✅ Imported ' + data.imported + ' questions into ' + data.folder + ' / ' + data.topic +
+      (data.skipped > 0 ? ' · ⏭ ' + data.skipped + ' duplicates skipped' : '');
     showToast('Imported ' + data.imported + ' questions!', 'success');
     setTimeout(() => location.reload(), 1500);
   }
@@ -219,10 +223,14 @@ async function importPdf() {
   el.style.display = '';
   if (data.error) {
     el.style.color = 'red'; el.textContent = '❌ Error: ' + data.error;
+  } else if (data.imported === 0 && data.skipped > 0) {
+    el.style.color = 'orange'; el.textContent = '⏭ All ' + data.skipped + ' questions already exist — nothing new imported.';
   } else if (data.imported === 0) {
     el.style.color = 'orange'; el.textContent = '⚠️ 0 questions found. This may be an image-based PDF — use manual entry instead.';
   } else {
-    el.style.color = 'green'; el.textContent = '✅ Imported ' + data.imported + ' questions!';
+    el.style.color = 'green';
+    el.textContent = '✅ Imported ' + data.imported + ' questions!' +
+      (data.skipped > 0 ? ' · ⏭ ' + data.skipped + ' duplicates skipped' : '');
     showToast('Imported ' + data.imported + ' questions!', 'success');
     setTimeout(() => location.reload(), 1500);
   }
@@ -291,3 +299,4 @@ async function scanFolder() {
 }
 </script>
 {% endblock %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
