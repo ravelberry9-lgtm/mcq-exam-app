@@ -61,6 +61,17 @@ def init_db():
     conn = get_db()
     if USE_POSTGRES:
         cur = conn.cursor()
+        cur.execute('''CREATE TABLE IF NOT EXISTS study_notes (
+            id SERIAL PRIMARY KEY,
+            subject TEXT NOT NULL,
+            topic TEXT NOT NULL,
+            chapter_num INTEGER NOT NULL,
+            chapter_title_te TEXT NOT NULL,
+            chapter_title_en TEXT NOT NULL,
+            pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )''')
         cur.execute('''CREATE TABLE IF NOT EXISTS questions (
             id SERIAL PRIMARY KEY,
             folder TEXT NOT NULL,
@@ -100,6 +111,17 @@ def init_db():
         cur.close()
     else:
         conn.executescript('''
+            CREATE TABLE IF NOT EXISTS study_notes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                subject TEXT NOT NULL,
+                topic TEXT NOT NULL,
+                chapter_num INTEGER NOT NULL,
+                chapter_title_te TEXT NOT NULL,
+                chapter_title_en TEXT NOT NULL,
+                pages_ref TEXT DEFAULT '',
+                sections_json TEXT NOT NULL DEFAULT '[]',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
             CREATE TABLE IF NOT EXISTS questions (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 folder TEXT NOT NULL, topic TEXT NOT NULL, source_file TEXT,
@@ -559,6 +581,154 @@ def api_history():
         except:
             continue
     return jsonify(sessions)
+
+
+# ─────────────────────────────────────────────
+# NOTES ROUTES
+# ─────────────────────────────────────────────
+@app.route('/notes')
+def notes_home():
+    conn = get_db()
+    cur = db_exec(conn, '''
+        SELECT subject, COUNT(*) as chapter_count
+        FROM study_notes GROUP BY subject ORDER BY subject
+    ''')
+    subjects = [row_to_dict(r) for r in cur.fetchall()]
+    conn.close()
+    return render_template('notes_home.html', subjects=subjects)
+
+
+@app.route('/notes/<subject>')
+def notes_subject(subject):
+    conn = get_db()
+    cur = db_exec(conn, '''
+        SELECT topic, COUNT(*) as chapter_count
+        FROM study_notes WHERE subject=? GROUP BY topic ORDER BY topic
+    ''', (subject,))
+    topics = [row_to_dict(r) for r in cur.fetchall()]
+    conn.close()
+    return render_template('notes_subject.html', subject=subject, topics=topics)
+
+
+@app.route('/notes/<subject>/<topic>')
+def notes_topic(subject, topic):
+    conn = get_db()
+    cur = db_exec(conn, '''
+        SELECT id, chapter_num, chapter_title_te, chapter_title_en, pages_ref
+        FROM study_notes WHERE subject=? AND topic=?
+        ORDER BY chapter_num
+    ''', (subject, topic))
+    chapters = [row_to_dict(r) for r in cur.fetchall()]
+    conn.close()
+    return render_template('notes_topic.html', subject=subject, topic=topic, chapters=chapters)
+
+
+@app.route('/notes/<subject>/<topic>/<int:chapter_id>')
+def notes_chapter(subject, topic, chapter_id):
+    conn = get_db()
+    cur = db_exec(conn, 'SELECT * FROM study_notes WHERE id=?', (chapter_id,))
+    chapter = row_to_dict(cur.fetchone())
+    conn.close()
+    if not chapter:
+        return redirect('/notes')
+    sections = json.loads(chapter['sections_json'])
+    return render_template('notes_chapter.html',
+                           subject=subject, topic=topic,
+                           chapter=chapter, sections=sections)
+
+
+@app.route('/api/notes/add', methods=['POST'])
+@admin_required
+def notes_add():
+    d = request.json
+    conn = get_db()
+    db_exec(conn, '''
+        INSERT INTO study_notes
+        (subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
+        VALUES (?,?,?,?,?,?,?)
+    ''', (
+        d['subject'], d['topic'], int(d['chapter_num']),
+        d['chapter_title_te'], d['chapter_title_en'],
+        d.get('pages_ref', ''), d.get('sections_json', '[]')
+    ))
+    conn.commit()
+    conn.close()
+    return jsonify({'success': True})
+
+
+@app.route('/api/notes/delete', methods=['POST'])
+@admin_required
+def notes_delete():
+    d = request.json
+    conn = get_db()
+    db_exec(conn, 'DELETE FROM study_notes WHERE id=?', (d['id'],))
+    conn.commit()
+    conn.close()
+    return jsonify({'success': True})
+
+
+@app.route('/api/notes/list')
+def notes_list():
+    conn = get_db()
+    cur = db_exec(conn, '''
+        SELECT id, subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref
+        FROM study_notes ORDER BY subject, topic, chapter_num
+    ''')
+    rows = [row_to_dict(r) for r in cur.fetchall()]
+    conn.close()
+    return jsonify(rows)
+
+
+@app.route('/api/notes/seed', methods=['POST'])
+@admin_required
+def notes_seed():
+    """Seed Chapter 1 Indian History if not already present."""
+    conn = get_db()
+    cur = db_exec(conn, "SELECT id FROM study_notes WHERE subject='GK' AND topic='Indian_History' AND chapter_num=1")
+    if cur.fetchone():
+        conn.close()
+        return jsonify({'message': 'Already seeded'})
+
+    ch1_sections = [
+        {"title": "చరిత్ర అంటే ఏమిటి?", "sub": "History · Culture · Civilisation నిర్వచనాలు",
+         "audio": "స్నేహితులారా, ఒక్కసారి ఊహించండి. మీరు అప్పుడే నిద్ర లేచారు, కిటికీ బయటికి చూస్తే అక్కడ అరణ్యాలు, నదులు, గుహలు కనిపిస్తున్నాయి. ఆ గుహల్లో మన పూర్వికులు జీవించారు. వాళ్ళు ఎలా జీవించారు? వాళ్ళ సమాజం ఏ విధంగా పరిణామం చెందింది? ఈ ప్రశ్నలన్నింటికీ సమాధానం ఇచ్చే శాస్త్రమే చరిత్ర! ప్రపంచంలోని వివిధ ప్రాంతాల్లో మానవ సమాజ ఆవిర్భావం, సంస్కృతి, నాగరికత ఏ విధంగా పరిణామం చెందుతూ వచ్చాయి? సామాజిక, ఆర్థిక, మత, రాజకీయ వ్యవస్థలు ఎలా మారుతూ వచ్చాయి? అని మనకు తెలియజేసే శాస్త్రమే చరిత్ర. సంస్కృతి అనగా ఒక జీవన విధానము. నాగరికత అనగా సంస్కృతిలో ఒక ప్రత్యేకమైన అభివృద్ధి సాధించిన పరిణామ దశ. అంటే నాగరికత అనేది సంస్కృతి యొక్క ఉన్నత రూపం!"},
+        {"title": "హిస్టరీ పదం పుట్టుక", "sub": "హిస్టోరియా (గ్రీకు) · హెరోడోటస్ · Father of History",
+         "audio": "చరిత్రను ఇంగ్లీష్‌లో హిస్టరీ అని అంటారు. హిస్టరీ అనే పదం హిస్టోరియా అనే గ్రీకు పదం నుండి వచ్చింది. హిస్టోరియా అనగా పరిశోధించి తెలుసుకొనుట, అంటే Inquiry, Knowledge acquired by investigation. హెరోడోటస్ అనే గ్రీకు మహాపురుషుడిని చరిత్ర పితామహుడు, Father of History అని పేర్కొంటారు. ఆయన క్రీస్తు పూర్వం ఐదవ శతాబ్దంలో జీవించారు. ఆయన రాసిన మహాగ్రంథం పేరు The Histories. ఇందులో గ్రీకు పర్షియన్ యుద్ధాలు, Egyptian civilisation, Asian cultures అన్నీ క్రమబద్ధంగా వర్ణించారు."},
+        {"title": "ఇండాలజీ & సర్ విలియం జోన్స్", "sub": "Indology · Father of Indian Indology",
+         "audio": "భారతచరిత్ర, సంస్కృతులు, భాష మరియు సాహిత్య అధ్యయనాన్ని ఇండాలజీ అంటారు. భారత ఇండాలజీ పితామహుడిగా సర్ విలియం జోన్స్‌ను పిలుస్తారు. ఆయన సంస్కృత భాషను నేర్చుకొని, 1784లో Asiatic Society of Bengal స్థాపించారు. సంస్కృతం, లాటిన్, గ్రీకు అన్నీ ఒకే మాతృభాష నుండి వచ్చాయని ఆయన నిరూపించారు. ఇదే Indo-European Language Family Theory కి పునాది!"},
+        {"title": "మంచు యుగాలు – Ice Ages", "sub": "Pleistocene · Holocene · మానవ ఆవిర్భావం",
+         "audio": "క్రీస్తు పూర్వం ఐదు లక్షల సంవత్సరాల పరకుగలు దశ తొలి శిలాయుగం. ఆ కాలాన్ని ప్లీస్టోసీన్ అంటారు. ఇదే తొలి మంచు యుగం, First Ice Age. ఆ కాలంలో భూమి మొత్తం మంచుతో కప్పబడి ఉండేది. తర్వాత మంచు కరిగి నీరు ఏర్పడ్డాయి. జీవం తిరిగి చిగురించింది. సంస్కృతి పురోగమించింది. ఈ దశను హెలోసీన్ అంటారు. ఇది రెండవ మంచు యుగం. ఇదే ప్రస్తుతం మనం జీవిస్తున్న దశ. మానవుడు ఆస్ట్రలో పిథికస్ భూమిపై ఉద్భవించి ఐదు లక్షల సంవత్సరాల కాలం పూర్తి అవుతుంది."},
+        {"title": "చారిత్రక ఆధారాలు – పరిచయం", "sub": "Literary Sources · Archaeological Sources",
+         "audio": "మన పూర్వీకులు ఏం చేశారో మనకు ఎలా తెలుస్తుంది? చరిత్రకారులు రెండు రకాల ఆధారాలు ఉపయోగిస్తారు. మొదటిది లిఖిత ఆధారాలు అంటే Literary Sources, రాసినవి, చదివినవి. రెండవది పురావస్తు ఆధారాలు అంటే Archaeological Sources, తవ్వకాల్లో దొరికినవి. లిఖిత ఆధారాలు మళ్ళా రెండు రకాలు. స్వదేశీ సాహిత్యం మరియు విదేశీ సాహిత్యం. ఇవన్నీ కలిపి మనకు చరిత్ర పుట్టింది!"},
+        {"title": "స్వదేశీ సాహిత్యం – మతపరమైనది", "sub": "వేదాలు · బౌద్ధ · జైన సాహిత్యం",
+         "audio": "స్వదేశీ సాహిత్యం రెండు భాగాలు. మొదటిది మతపరమైన సాహిత్యం. రెండవది లౌకిక సాహిత్యం. మతపరమైన సాహిత్యంలో ముఖ్యమైనవి వేద సాహిత్యం. నాలుగు వేదాలు ఋగ్వేదం, సామవేదం, యజుర్వేదం, అథర్వవేదం. ఇవి భారత జ్ఞాన సంపదకు పునాదులు! వేదాల తర్వాత వచ్చినవి ఉపనిషత్తులు, ఆరణ్యకాలు, బ్రాహ్మణాలు. బౌద్ధ సాహిత్యం అంటే త్రిపిటకాలు. జైన సాహిత్యం అంటే అంగాలు మరియు ఉపాంగాలు."},
+        {"title": "స్వదేశీ సాహిత్యం – లౌకికం", "sub": "అర్థశాస్త్రం · రాజతరంగిణి · పురాణాలు · పాణిని",
+         "audio": "లౌకిక సాహిత్యం అంటే మతేతర రచనలు. అష్టాధ్యాయి అంటే పాణిని రాసిన సంస్కృత వ్యాకరణ గ్రంథం. నాలుగు వేల సూత్రాలతో సంస్కృత భాష నిర్మాణాన్ని వివరించారు! అర్థశాస్త్రం అంటే కౌటిల్యుడు, చాణక్యుడు రాసిన గ్రంథం. రాజనీతి, ఆర్థిక వ్యవస్థ, యుద్ధ వ్యూహాలు అన్నింటినీ వివరిస్తుంది. రాజతరంగిణి అంటే కల్హణుడు రాసిన కశ్మీర్ చరిత్ర. పురాణాలు అంటే పదునెనిమిది మహాపురాణాలు రాజవంశాల వంశావళి తెలుపుతాయి."},
+        {"title": "విదేశీ సాహిత్యం – గ్రీకు & లాటిన్", "sub": "మెగస్తనీస్ Indica · Pliny Natural History",
+         "audio": "విదేశీ సాహిత్యం అంటే విదేశీయులు భారత్ గురించి రాసిన రచనలు. గ్రీకు సాహిత్యం అంటే మెగస్తనీస్ చంద్రగుప్త మౌర్య కాలంలో పాటలీపుత్రంలో గ్రీకు రాయబారిగా నివసించారు. ఆయన రాసిన ఇండికా అనే గ్రంథం భారత జనజీవనం, రాజ్యపాలన, సమాజం గురించి అద్భుత వర్ణన. లాటిన్ సాహిత్యం అంటే ప్లీనీ రాసిన నాచురల్ హిస్టరీ. ఇందులో భారతదేశంతో రోమన్ వ్యాపారం, సుగంధ ద్రవ్యాలు, పట్టు వ్యాపారం గురించి వివరాలున్నాయి."},
+        {"title": "విదేశీ సాహిత్యం – చైనీస్ & శ్రీలంక", "sub": "ఫా-హియాన్ · హ్యూయాన్-త్సాంగ్ · దీపవంశ · మహావంశ",
+         "audio": "చైనీస్ సాహిత్యం చాలా ముఖ్యమైనది. ఫా-హియాన్ క్రీస్తు శకం మూడువందల తొంభై తొమ్మిది నుండి నాలుగువందల పద్నాలుగు మధ్య భారత్‌కు వచ్చిన చైనీస్ బౌద్ధ యాత్రికుడు. హ్యూయాన్-త్సాంగ్ హర్షవర్ధనుడి కాలంలో భారత్‌కు వచ్చారు. ఆయన్ని King of Travellers, యాత్రికుల రాజు అంటారు. Fo-Kuo-Ki అనే గ్రంథం రాశారు. శ్రీలంక సాహిత్యం అంటే దీపవంశ, The Chronicle of the Island. మహావంశ, The Great Chronicle. ఇవి బౌద్ధ మత వ్యాప్తి, అశోక చక్రవర్తి చరిత్రకు అద్భుత ఆధారాలు."},
+        {"title": "విదేశీ సాహిత్యం – జైన, టిబెట్, అరబిక్", "sub": "తారానాథ్ · అల్-బిరూని · కితాబ్-ఉల్-హింద్",
+         "audio": "జైన్ సాహిత్యం అంటే జైన గ్రంథాలు అంగాలు, ఉపాంగాలు. భారత సమాజ, వ్యాపార, తాత్విక అంశాలు వివరిస్తాయి. టిబెటన్ సాహిత్యం అంటే తారానాథ్ రాసిన The History of Tibet. బౌద్ధ మతం టిబెట్‌కు వ్యాప్తి, భారత-టిబెట్ సాంస్కృతిక సంబంధాల గురించి తెలుపుతుంది. అల్-బిరూని పదకొండవ శతాబ్దంలో గజనీ మహ్మద్‌తో భారత్‌కు వచ్చారు. ఆయన రాసిన కితాబ్-ఉల్-హింద్ అనే గ్రంథం భారత జ్ఞాన సంపద, సమాజం, మతం గురించి విలువైన వివరాలిస్తుంది. ఆయన్ను Founder of Indology అని కూడా అంటారు!"},
+        {"title": "పురావస్తు ఆధారాలు – శాసనాలు", "sub": "Rock · Pillar · Cave · Copper Plate Inscriptions",
+         "audio": "శాసనాలు అంటే రాళ్ళపై, స్తంభాలపై, రాగి రేకులపై రాసిన చారిత్రక పత్రాలు. ప్రపంచంలో నూట డెభ్భై ఐదు భాషల్లో శాసనాలు లభించాయి! శాసనాల రకాలు నాలుగు. మొదటిది రాక్ ఎడిట్స్ అంటే రాళ్ళపై చెక్కిన శాసనాలు. రెండవది పిల్లర్ ఎడిట్స్ అంటే స్తంభాలపై చెక్కిన శాసనాలు. మూడవది కేవ్ ఇన్స్క్రిప్షన్స్ అంటే గుహలలో చెక్కిన శాసనాలు. నాల్గవది కాపర్ ప్లేట్ ఇన్స్క్రిప్షన్స్ అంటే రాగి రేకులపై రాసిన శాసనాలు. ప్రయోజనం ప్రకారం శాసనాలు నాలుగు రకాలు. రాజశాసనాలు, దాన శాసనాలు, స్మారక శాసనాలు, అంకిత శాసనాలు."},
+        {"title": "నాణేలు & కుండలు", "sub": "Numismatics · OCP · PGW · NBP Pottery",
+         "audio": "నాణేల అధ్యయనాన్ని Numismatics అంటారు. నాణేలపై రాజుల చిత్రాలు, పేర్లు, తేదీలు, రాజ్య చిహ్నాలు ఉంటాయి. రాజవంశాల కాలనిర్ణయానికి ఇవి అద్భుత ఆధారాలు! కుండలు కాలనిర్ణయానికి అద్భుతమైన ఆధారాలు. మొదటిది ఓసీపీ అంటే Ochre Coloured Pottery. క్రీస్తు పూర్వం రెండు వేల నుండి నాలుగువందల సంవత్సరాల కాలానికి చెందినవి. రెండవది పీజీడబ్ల్యూ అంటే Painted Grey Ware. క్రీస్తు పూర్వం ఒక వేల సంవత్సరాల కాలానికి చెందినవి. వేదకాలపు నాగరికతకు చెందినవి. మూడవది ఎన్‌బీపీ అంటే Northern Black Polished Ware. క్రీస్తు పూర్వం ఏడువందల తర్వాతి కాలానికి చెందినవి. మౌర్య కాలానికి చెందినవి."},
+        {"title": "వాస్తు శిల్పాలు – 3 శైలులు", "sub": "Nagara · Dravida · Vesara Architecture Styles",
+         "audio": "పురావస్తు ఆధారాలలో చివరగా వాస్తు శిల్పాలు. ఇవి పూర్తిగా చరిత్రకు అద్దం పట్టే ఆధారాలు! భారత దేవాలయ నిర్మాణ శైలులు మూడు. మొదటిది నాగర శైలి. ఇది ఉత్తర భారతంలో వాడుకలో ఉంది. శిఖరాలు గుండ్రంగా, వక్రరేఖల్లో ఉంటాయి. రెండవది ద్రావిడ శైలి. దక్షిణ భారతంలో ప్రచారంలో ఉంది. గోపురాలు పెద్దవిగా, అడ్డంగా ఉంటాయి. మూడవది వేసర శైలి. నాగర మరియు ద్రావిడ శైలుల మిశ్రమం. దక్కన్ ప్రాంతంలో ఎక్కువగా కనిపిస్తుంది. చాళుక్య, రాష్ట్రకూట వంశాల కాలంలో అభివృద్ధి చెందింది."},
+        {"title": "Mind Map – సంక్షిప్త సారాంశం", "sub": "అధ్యాయం 1 పూర్తి Mind Mapping | Revision",
+         "audio": "అధ్యాయం ఒకటి యొక్క పూర్తి సారాంశం వినండి. ఆధారాలు రెండు రకాలు. లిఖితపూర్వక ఆధారాలు మరియు పురావస్తు ఆధారాలు. విదేశీ సాహిత్యం అంటే ఇండికా మెగస్తనీస్, నాచురల్ హిస్టరీ ప్లీనీ, దీపవంశ మహావంశ, హ్యూయాన్-త్సాంగ్, తారానాథ్ రాసిన The History of Tibet, కితాబ్-ఉల్-హింద్ అల్-బిరూని. స్వదేశీ సాహిత్యం అంటే వేద, బౌద్ధ, జైన గ్రంథాలు, పాణిని అష్టాధ్యాయి, కౌటిల్య అర్థశాస్త్రం, రాజతరంగిణి, పురాణాలు. పురావస్తు ఆధారాలు అంటే శాసనాలు, వాస్తు శిల్పాలు, నాణేలు మరియు కుండలు. గుర్తుంచుకోండి! చరిత్ర అంటే లిఖిత ఆధారాలు మరియు పురావస్తు ఆధారాలు రెండింటి కలయిక. ఈ అధ్యాయం పూర్తయింది. అభినందనలు!"}
+    ]
+
+    db_exec(conn, '''
+        INSERT INTO study_notes
+        (subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
+        VALUES (?,?,?,?,?,?,?)
+    ''', ('GK', 'Indian_History', 1, 'చరిత్ర – పరిచయం',
+          'Introduction to History', '1-6', json.dumps(ch1_sections, ensure_ascii=False)))
+    conn.commit()
+    conn.close()
+    return jsonify({'success': True, 'message': 'Chapter 1 seeded successfully'})
 
 
 # ─────────────────────────────────────────────

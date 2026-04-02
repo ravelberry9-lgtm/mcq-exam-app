@@ -286,6 +286,42 @@ async function deleteTopic(folder, topic) {
   if (data.success) { showToast('Topic deleted!', 'success'); setTimeout(() => location.reload(), 1000); }
 }
 
+// ─── NOTES ───────────────────────────────────
+async function seedNotes() {
+  const btn = document.getElementById('seedBtn');
+  btn.disabled = true; btn.textContent = 'Seeding...';
+  const resp = await fetch('/api/notes/seed', { method: 'POST' });
+  const data = await resp.json();
+  btn.disabled = false; btn.textContent = '🌱 Seed Chapter 1';
+  showToast(data.message || (data.success ? 'Chapter 1 seeded!' : 'Error'), data.success ? 'success' : 'error');
+  loadNotesList();
+}
+
+async function loadNotesList() {
+  const resp = await fetch('/api/notes/list');
+  const rows = await resp.json();
+  const el = document.getElementById('notesList');
+  if (!rows.length) { el.innerHTML = '<p style="color:var(--text-muted);font-size:13px;">No chapters yet. Click Seed to add Chapter 1.</p>'; return; }
+  el.innerHTML = rows.map(r => `
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);">
+      <span style="font-size:18px;">📖</span>
+      <div style="flex:1;">
+        <strong>${r.subject} › ${r.topic.replace('_',' ')} › Ch.${r.chapter_num}</strong><br>
+        <span style="font-size:12px;color:var(--text-muted);">${r.chapter_title_te} — ${r.chapter_title_en}</span>
+      </div>
+      <a href="/notes/${r.subject}/${r.topic}/${r.id}" style="font-size:12px;color:var(--primary);text-decoration:none;margin-right:8px;">👁 View</a>
+      <button onclick="deleteNote(${r.id},'${r.chapter_title_en}')" style="background:#fce4ec;border:none;border-radius:8px;padding:4px 10px;font-size:11px;color:#c62828;cursor:pointer;font-weight:700;">🗑</button>
+    </div>
+  `).join('');
+}
+
+async function deleteNote(id, title) {
+  if (!confirm('Delete "' + title + '"?')) return;
+  const resp = await fetch('/api/notes/delete', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({id}) });
+  const data = await resp.json();
+  if (data.success) { showToast('Deleted!', 'success'); loadNotesList(); }
+}
+
 async function scanFolder() {
   showToast('Scanning folder...', '');
   // This endpoint would scan the questions_bank directory
@@ -298,5 +334,20 @@ async function scanFolder() {
   Then the app will auto-detect folder = GK, topic = Art_Culture.`;
 }
 </script>
+
+<!-- Notes Management Card -->
+<div class="card">
+  <div class="card-title">📖 Study Notes Management</div>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+    Manage chapter-wise Telugu audio study notes.
+    <a href="/notes" style="color:var(--primary);font-weight:600;">📖 Open Notes →</a>
+  </p>
+  <button id="seedBtn" onclick="seedNotes()" class="btn btn-success" style="margin-bottom:14px;min-height:40px;padding:8px 18px;font-size:13px;">
+    🌱 Seed Chapter 1 (Indian History)
+  </button>
+  <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
+</div>
+<script>loadNotesList();</script>
+
 {% endblock %}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

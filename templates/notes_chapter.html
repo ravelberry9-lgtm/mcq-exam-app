@@ -1,0 +1,255 @@
+{% extends "base.html" %}
+{% block title %}Chapter {{ chapter.chapter_num }} – {{ chapter.chapter_title_en }}{% endblock %}
+{% block content %}
+<style>
+  .n-player {
+    background: #fff;
+    border-bottom: 2px solid #e8d5b0;
+    padding: 10px 14px;
+    position: sticky;
+    top: 68px;
+    z-index: 90;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .n-now { font-size:12px; color:#8a6a40; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:6px; }
+  .n-controls { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .nb { border:none; border-radius:20px; padding:7px 14px; font-size:12px; font-weight:700; cursor:pointer; }
+  .nb-play  { background:#2e7d32; color:white; }
+  .nb-pause { background:#f57c00; color:white; }
+  .nb-stop  { background:#c62828; color:white; }
+  .nb-nav   { background:#f0f2f5; border:1.5px solid #e0e4ef; color:#1a237e; padding:6px 10px; }
+  .n-speed  { display:flex; align-items:center; gap:5px; font-size:11px; color:#8a6a40; margin-left:auto; }
+  .n-speed select { border:1px solid #e0e4ef; border-radius:6px; padding:3px 5px; font-size:11px; }
+  .n-prog   { height:3px; background:#e0d0b0; border-radius:3px; overflow:hidden; margin-top:6px; }
+  .n-prog-fill { height:100%; background:linear-gradient(90deg,#c8860a,#7b3f00); width:0%; transition:width 0.4s; }
+
+  .sec-card {
+    background:#fffdf9;
+    border:1.5px solid #e8d5b0;
+    border-radius:12px;
+    margin-bottom:10px;
+    overflow:hidden;
+    transition:all 0.2s;
+    cursor:pointer;
+  }
+  .sec-card.playing { border-color:#c8860a; background:#fff3cd; box-shadow:0 0 0 3px rgba(200,134,10,0.15); }
+  .sec-card.done    { border-color:#a5d6a7; background:#e8f5e9; }
+
+  .sec-hdr { display:flex; align-items:center; gap:10px; padding:11px 13px; }
+  .sec-num {
+    min-width:30px; height:30px; border-radius:50%;
+    background:#1a237e; color:white;
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; font-weight:800; flex-shrink:0;
+  }
+  .sec-card.playing .sec-num { background:#c8860a; }
+  .sec-card.done    .sec-num { background:#2e7d32; }
+  .sec-title { font-size:14px; font-weight:700; color:#1a237e; }
+  .sec-sub   { font-size:11px; color:#8a6a40; margin-top:2px; }
+  .sec-badge {
+    font-size:10px; padding:2px 8px; border-radius:10px; font-weight:700; margin-left:auto; white-space:nowrap;
+  }
+  .badge-playing { background:#fff3cd; color:#856404; }
+  .badge-done    { background:#e8f5e9; color:#2e7d32; }
+  .badge-idle    { background:#f5f5f5; color:#999; }
+
+  .sec-body { padding:0 13px 12px; font-size:14px; line-height:1.8; display:none; border-top:1px solid #e8d5b0; padding-top:11px; }
+  .sec-body.open { display:block; }
+  .play-btn {
+    background:#1a237e; color:white; border:none; border-radius:16px;
+    padding:5px 14px; font-size:12px; font-weight:700; cursor:pointer; margin-top:8px;
+  }
+  .play-btn:hover { background:#3949ab; }
+
+  .voice-tip {
+    background:#fff8e1; border:1px solid #ffcc02; border-radius:8px;
+    padding:7px 11px; font-size:11px; color:#5d4037; margin-bottom:12px;
+  }
+  .play-all-wrap { text-align:center; margin:16px 0 24px; }
+  .play-all-btn {
+    background:linear-gradient(135deg,#7b3f00,#c8860a);
+    color:white; border:none; border-radius:22px;
+    padding:13px 28px; font-size:15px; font-weight:800; cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,0.18);
+  }
+  .fab {
+    position:fixed; bottom:18px; right:14px;
+    background:#1a237e; color:white; width:50px; height:50px;
+    border-radius:50%; border:none; font-size:20px;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.25); z-index:200;
+  }
+  .fab:active { transform:scale(0.95); }
+</style>
+
+<!-- Sticky player bar -->
+<div class="n-player">
+  <div class="n-now" id="nowPlaying">▶ సిద్ధంగా ఉంది — Play నొక్కండి</div>
+  <div class="n-controls">
+    <button class="nb nb-play"  onclick="resumePlay()">▶ Play</button>
+    <button class="nb nb-pause" onclick="pausePlay()">⏸</button>
+    <button class="nb nb-stop"  onclick="stopPlay()">⏹</button>
+    <button class="nb nb-nav"   onclick="prevSec()">⏮</button>
+    <button class="nb nb-nav"   onclick="nextSec()">⏭</button>
+    <div class="n-speed">
+      <span>వేగం</span>
+      <select id="spd" onchange="changeSpeed()">
+        <option value="0.7">0.7×</option>
+        <option value="0.85">0.85×</option>
+        <option value="1" selected>1×</option>
+        <option value="1.15">1.15×</option>
+        <option value="1.3">1.3×</option>
+      </select>
+    </div>
+  </div>
+  <div class="n-prog"><div class="n-prog-fill" id="progFill"></div></div>
+</div>
+
+<div class="main" style="padding-bottom:80px;">
+
+  <!-- Breadcrumb -->
+  <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">
+    <a href="/notes" style="color:var(--primary);text-decoration:none;">📖 Notes</a> ›
+    <a href="/notes/{{ subject }}" style="color:var(--primary);text-decoration:none;">{{ subject.replace('_',' ') }}</a> ›
+    <a href="/notes/{{ subject }}/{{ topic }}" style="color:var(--primary);text-decoration:none;">{{ topic.replace('_',' ') }}</a> ›
+    <strong>Ch. {{ chapter.chapter_num }}</strong>
+  </div>
+
+  <!-- Chapter header -->
+  <div class="card" style="background:linear-gradient(135deg,#7b3f00,#a0522d);color:white;text-align:center;padding:18px 14px;margin-bottom:12px;">
+    <div style="font-size:13px;opacity:0.8;margin-bottom:4px;">అధ్యాయం {{ chapter.chapter_num }}</div>
+    <div style="font-size:20px;font-weight:900;">{{ chapter.chapter_title_te }}</div>
+    <div style="font-size:13px;font-weight:600;opacity:0.85;margin-top:4px;">({{ chapter.chapter_title_en }})</div>
+    {% if chapter.pages_ref %}
+    <div style="font-size:11px;opacity:0.7;margin-top:6px;">📄 Pages {{ chapter.pages_ref }} | Winners Publications</div>
+    {% endif %}
+  </div>
+
+  <div class="voice-tip">
+    📱 <strong>Telugu voice:</strong> Settings → Accessibility → TTS → Install <strong>Google Telugu TTS</strong>
+  </div>
+
+  <!-- Section cards -->
+  {% for sec in sections %}
+  <div class="sec-card" id="card-{{ loop.index0 }}" onclick="toggleSec({{ loop.index0 }})">
+    <div class="sec-hdr">
+      <div class="sec-num">{{ loop.index }}</div>
+      <div style="flex:1;min-width:0;">
+        <div class="sec-title">{{ sec.title }}</div>
+        {% if sec.sub %}<div class="sec-sub">{{ sec.sub }}</div>{% endif %}
+      </div>
+      <span class="sec-badge badge-idle" id="badge-{{ loop.index0 }}">●</span>
+    </div>
+    <div class="sec-body" id="body-{{ loop.index0 }}">
+      <p style="white-space:pre-line;">{{ sec.audio }}</p>
+      <button class="play-btn" onclick="event.stopPropagation(); playSec({{ loop.index0 }})">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="play-all-wrap">
+    <button class="play-all-btn" onclick="playAll()">🎙️ అన్ని సెక్షన్లు వినండి</button>
+  </div>
+
+</div>
+
+<button class="fab" onclick="togglePP()" id="fabBtn">▶</button>
+
+<script>
+const SECS = {{ sections | tojson }};
+let cur = -1, speaking = false, paused = false, utt = null, queue = [], allMode = false;
+
+function getVoice() {
+  const vs = speechSynthesis.getVoices();
+  return vs.find(v => v.lang && v.lang.startsWith('te'))
+      || vs.find(v => v.lang && v.lang.startsWith('hi'))
+      || vs[0] || null;
+}
+
+function playSec(i) { stop(); cur = i; allMode = false; queue = []; speak(); }
+
+function playAll() {
+  stop();
+  allMode = true;
+  queue = SECS.map((_, i) => i);
+  nextQ();
+}
+
+function nextQ() {
+  if (!queue.length) {
+    setNow('✅ అన్ని సెక్షన్లు పూర్తయ్యాయి!');
+    document.getElementById('fabBtn').textContent = '▶';
+    speaking = false; return;
+  }
+  cur = queue.shift();
+  speak();
+}
+
+function speak() {
+  if (cur < 0 || cur >= SECS.length) return;
+  openSec(cur);
+  setNow('▶ ' + SECS[cur].title);
+  setBadge(cur, 'playing');
+  setCard(cur, 'playing');
+  updateProg();
+  document.getElementById('fabBtn').textContent = '⏸';
+
+  utt = new SpeechSynthesisUtterance(SECS[cur].audio);
+  utt.lang = 'te-IN';
+  utt.rate = parseFloat(document.getElementById('spd').value);
+  const v = getVoice();
+  if (v) utt.voice = v;
+
+  utt.onend = () => {
+    setBadge(cur, 'done'); setCard(cur, 'done');
+    speaking = false; updateProg();
+    if (allMode || queue.length) setTimeout(nextQ, 600);
+    else { document.getElementById('fabBtn').textContent = '▶'; setNow('✅ పూర్తయింది'); }
+  };
+  utt.onerror = () => { speaking = false; document.getElementById('fabBtn').textContent = '▶'; };
+
+  speaking = true; paused = false;
+  speechSynthesis.speak(utt);
+}
+
+function resumePlay() {
+  if (paused) { speechSynthesis.resume(); paused = false; document.getElementById('fabBtn').textContent = '⏸'; if(cur>=0) setNow('▶ '+SECS[cur].title); }
+  else if (!speaking) { if (cur >= 0) playSec(cur); else playAll(); }
+}
+function pausePlay() {
+  if (speaking && !paused) { speechSynthesis.pause(); paused = true; document.getElementById('fabBtn').textContent = '▶'; setNow('⏸ ఆపబడింది'); }
+}
+function stopPlay() { stop(); }
+function stop() {
+  speechSynthesis.cancel(); speaking = false; paused = false; queue = []; allMode = false;
+  document.getElementById('fabBtn').textContent = '▶';
+  setNow('⏹ ఆపబడింది');
+  if (cur >= 0) { const c = document.getElementById('card-'+cur); if(c && !c.classList.contains('done')) c.classList.remove('playing'); }
+}
+function prevSec() { stop(); playSec(Math.max(0, cur < 0 ? 0 : cur - 1)); }
+function nextSec() { stop(); playSec(Math.min(SECS.length-1, cur < 0 ? 0 : cur + 1)); }
+function togglePP() { if (speaking && !paused) pausePlay(); else resumePlay(); }
+function changeSpeed() { if (speaking) { const i = cur; stop(); setTimeout(() => playSec(i), 80); } }
+
+function setNow(t) { document.getElementById('nowPlaying').textContent = t; }
+function updateProg() {
+  const d = document.querySelectorAll('.sec-card.done').length;
+  document.getElementById('progFill').style.width = Math.round(d / SECS.length * 100) + '%';
+}
+function setBadge(i, s) {
+  const el = document.getElementById('badge-'+i); if(!el) return;
+  if (s==='playing') { el.className='sec-badge badge-playing'; el.textContent='▶ వింటున్నారు'; }
+  else if (s==='done') { el.className='sec-badge badge-done'; el.textContent='✓ పూర్తయింది'; }
+  else { el.className='sec-badge badge-idle'; el.textContent='●'; }
+}
+function setCard(i, cls) {
+  const c = document.getElementById('card-'+i); if(!c) return;
+  c.classList.remove('playing','done'); if(cls) c.classList.add(cls);
+}
+function openSec(i) { const b = document.getElementById('body-'+i); if(b) b.classList.add('open'); }
+function toggleSec(i) { const b = document.getElementById('body-'+i); if(b) b.classList.toggle('open'); }
+
+speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+setTimeout(() => speechSynthesis.getVoices(), 400);
+</script>
+{% endblock %}
