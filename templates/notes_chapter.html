@@ -124,6 +124,32 @@
   [data-theme="dark"] .sec-card.playing { background:#2d2200; border-color:#c8860a; }
   [data-theme="dark"] .n-player { background:#1e2130; border-color:#2a2d3e; }
   [data-theme="dark"] .prog-banner { background:#1a2d1a; border-color:#4caf50; }
+
+  /* Wake lock indicator */
+  .wakelock-on {
+    font-size:10px; background:#e8f5e9; color:#2e7d32;
+    border-radius:10px; padding:2px 7px; font-weight:700;
+    border:1px solid #a5d6a7; white-space:nowrap;
+  }
+
+  /* Resume bar */
+  .resume-bar {
+    display:none; background:#e3f2fd;
+    border:1.5px solid #1976d2; border-radius:10px;
+    padding:10px 12px; margin-bottom:10px;
+    align-items:center; gap:8px; flex-wrap:wrap;
+  }
+  .resume-bar.show { display:flex; }
+  .resume-bar .rb-label { font-size:12px; color:#1565c0; font-weight:600; flex:1; min-width:0; }
+  .rb-btn {
+    border:none; border-radius:16px; padding:6px 14px;
+    font-size:12px; font-weight:700; cursor:pointer; white-space:nowrap;
+  }
+  .rb-resume  { background:#1976d2; color:white; }
+  .rb-restart { background:#f5f5f5; border:1.5px solid #ccc; color:#333; }
+  .rb-dismiss { background:none; border:none; font-size:16px; color:#999; cursor:pointer; padding:0 4px; }
+  [data-theme="dark"] .resume-bar { background:#0d1e33; border-color:#42a5f5; }
+  [data-theme="dark"] .resume-bar .rb-label { color:#90caf9; }
 </style>
 
 <!-- Sticky player bar -->
@@ -145,6 +171,7 @@
         <option value="1.3">1.3×</option>
       </select>
     </div>
+    <span class="wakelock-on" id="wlChip" style="display:none;">🔆 Screen On</span>
   </div>
   <div class="n-prog"><div class="n-prog-fill" id="progFill"></div></div>
 </div>
@@ -167,6 +194,14 @@
     {% if chapter.pages_ref %}
     <div style="font-size:11px;opacity:0.7;margin-top:6px;">📄 Pages {{ chapter.pages_ref }} | Winners Publications</div>
     {% endif %}
+  </div>
+
+  <!-- Resume bar (shown when returning after audio was interrupted) -->
+  <div class="resume-bar" id="resumeBar">
+    <span class="rb-label" id="rbLabel">⏸ ఆగిపోయింది...</span>
+    <button class="rb-btn rb-resume"  onclick="resumeFromSaved()">▶ Resume</button>
+    <button class="rb-btn rb-restart" onclick="restartFromBeginning()">⏮ మొదటి నుండి</button>
+    <button class="rb-dismiss"        onclick="dismissResume()">✕</button>
   </div>
 
   <!-- Progress banner (S5) -->
@@ -226,9 +261,97 @@ const SECS = {{ sections | tojson }};
 const CHAPTER_ID = {{ chapter.id }};
 const PROG_KEY = 'notes_prog_' + CHAPTER_ID;
 const BM_KEY   = 'notes_bm_'   + CHAPTER_ID;
+const POS_KEY  = 'notes_pos_'  + CHAPTER_ID;   // last playing position
 
 let cur = -1, speaking = false, paused = false, utt = null, queue = [], allMode = false;
 let filterMode = 'all';
+
+/* ─── WAKE LOCK ─── */
+let wakeLock = null;
+async function acquireWakeLock() {
+  if (!('wakeLock' in navigator)) return;
+  try {
+    if (wakeLock) return;                              // already held
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => { wakeLock = null; updateWLChip(false); });
+    updateWLChip(true);
+  } catch(e) { /* not available or denied */ }
+}
+function releaseWakeLock() {
+  if (wakeLock) { wakeLock.release().catch(()=>{}); wakeLock = null; }
+  updateWLChip(false);
+}
+function updateWLChip(on) {
+  const c = document.getElementById('wlChip');
+  if (c) c.style.display = on ? 'inline' : 'none';
+}
+
+/* ─── PAGE VISIBILITY (screen-off / app switch) ─── */
+document.addEventListener('visibilitychange', async () => {
+  if (document.hidden) {
+    // Page went background — pause if playing
+    if (speaking && !paused) {
+      pausePlay();
+      sessionStorage.setItem('notes_bg_paused', '1');
+    }
+  } else {
+    // Page came back foreground
+    if (sessionStorage.getItem('notes_bg_paused')) {
+      sessionStorage.removeItem('notes_bg_paused');
+      showResumeBar();
+    }
+    // Re-acquire wake lock if we were playing
+    if (speaking && !wakeLock) await acquireWakeLock();
+  }
+});
+
+/* ─── POSITION SAVE / LOAD ─── */
+function savePosition(i) {
+  localStorage.setItem(POS_KEY, JSON.stringify({ sec: i, mode: allMode ? 'all' : 'single', ts: Date.now() }));
+}
+function loadPosition() {
+  try { return JSON.parse(localStorage.getItem(POS_KEY)); }
+  catch(e) { return null; }
+}
+function clearPosition() { localStorage.removeItem(POS_KEY); }
+
+/* ─── RESUME BAR ─── */
+function showResumeBar() {
+  const pos = loadPosition();
+  if (!pos || pos.sec < 0 || pos.sec >= SECS.length) return;
+  const bar = document.getElementById('resumeBar');
+  const lbl = document.getElementById('rbLabel');
+  if (bar) {
+    lbl.textContent = '⏸ ఆగిన చోట: Section ' + (pos.sec + 1) + ' — ' + (SECS[pos.sec]?.title || '');
+    bar.classList.add('show');
+  }
+}
+function dismissResume() {
+  const bar = document.getElementById('resumeBar');
+  if (bar) bar.classList.remove('show');
+}
+function resumeFromSaved() {
+  const pos = loadPosition();
+  dismissResume();
+  if (!pos) return;
+  if (pos.mode === 'all') {
+    // rebuild queue from saved section onwards
+    stop();
+    allMode = true;
+    queue = SECS.map((_,i) => i).filter(i => {
+      const c = document.getElementById('card-'+i);
+      return i >= pos.sec && c && !c.classList.contains('hidden-bm');
+    });
+    nextQ();
+  } else {
+    playSec(pos.sec);
+  }
+}
+function restartFromBeginning() {
+  dismissResume();
+  clearPosition();
+  playAll();
+}
 
 /* ─── STORAGE HELPERS ─── */
 function loadProg() {
@@ -371,13 +494,15 @@ function nextQ() {
   speak();
 }
 
-function speak() {
+async function speak() {
   if (cur < 0 || cur >= SECS.length) return;
   openSec(cur);
   setNow('▶ ' + SECS[cur].title);
   setBadge(cur, 'playing');
   setCard(cur, 'playing');
   document.getElementById('fabBtn').textContent = '⏸';
+  savePosition(cur);           // ← save position before speaking
+  await acquireWakeLock();     // ← keep screen on
 
   utt = new SpeechSynthesisUtterance(SECS[cur].audio);
   utt.lang = 'te-IN';
@@ -388,12 +513,23 @@ function speak() {
   utt.onend = () => {
     setBadge(cur, 'done');
     setCard(cur, 'done');
-    markDoneInStorage(cur);   // ← S5: save to localStorage
+    markDoneInStorage(cur);
     speaking = false;
-    if (allMode || queue.length) setTimeout(nextQ, 600);
-    else { document.getElementById('fabBtn').textContent = '▶'; setNow('✅ పూర్తయింది'); }
+    if (allMode || queue.length) {
+      setTimeout(nextQ, 600);
+    } else {
+      releaseWakeLock();         // ← release when fully done
+      clearPosition();           // ← clear saved position
+      document.getElementById('fabBtn').textContent = '▶';
+      setNow('✅ పూర్తయింది');
+    }
   };
-  utt.onerror = () => { speaking = false; document.getElementById('fabBtn').textContent = '▶'; };
+  utt.onerror = (e) => {
+    speaking = false;
+    document.getElementById('fabBtn').textContent = '▶';
+    // If interrupted by system (screen off etc.), show resume bar
+    if (cur >= 0) showResumeBar();
+  };
 
   speaking = true; paused = false;
   speechSynthesis.speak(utt);
@@ -406,9 +542,11 @@ function resumePlay() {
 function pausePlay() {
   if (speaking && !paused) { speechSynthesis.pause(); paused = true; document.getElementById('fabBtn').textContent = '▶'; setNow('⏸ ఆపబడింది'); }
 }
-function stopPlay() { stop(); }
+function stopPlay() { stop(); clearPosition(); }
 function stop() {
-  speechSynthesis.cancel(); speaking = false; paused = false; queue = []; allMode = false;
+  speechSynthesis.cancel();
+  releaseWakeLock();           // ← release screen lock on stop
+  speaking = false; paused = false; queue = []; allMode = false;
   document.getElementById('fabBtn').textContent = '▶';
   setNow('⏹ ఆపబడింది');
   if (cur >= 0) {
@@ -444,6 +582,11 @@ document.addEventListener('DOMContentLoaded', () => {
   refreshProgressUI();
   refreshBookmarkUI();
   applyFilter();
+  // Show resume bar if there's a saved mid-session position
+  const pos = loadPosition();
+  if (pos && pos.sec >= 0 && pos.sec < SECS.length) {
+    showResumeBar();
+  }
 });
 // Fallback if DOM already loaded
 refreshProgressUI();
