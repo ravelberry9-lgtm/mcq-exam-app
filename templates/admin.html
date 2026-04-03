@@ -292,6 +292,11 @@ async function seedNotes(force=false) {
   btn.disabled = true; btn.textContent = 'Seeding...';
   const url = force ? '/api/notes/seed?force=1' : '/api/notes/seed';
   const resp = await fetch(url, { method: 'POST' });
+  const ct = resp.headers.get('content-type') || '';
+  if (!ct.includes('json')) {
+    btn.disabled = false; btn.textContent = '🌱 Seed Chapter 1 Notes (17 Sections)';
+    showToast('Session expired — please refresh and log in again.', 'error'); return;
+  }
   const data = await resp.json();
   btn.disabled = false; btn.textContent = '🌱 Seed Chapter 1 (17 Sections)';
   if (data.message && data.message.includes('Already seeded')) {
@@ -346,6 +351,14 @@ async function seedChapterMcqs(force=false) {
   const url = force ? '/api/mcq/seed_ch1?force=1' : '/api/mcq/seed_ch1';
   try {
     const resp = await fetch(url, { method: 'POST' });
+    // Guard: if server returned HTML (redirect), it means session expired
+    const ct = resp.headers.get('content-type') || '';
+    if (!ct.includes('json')) {
+      btn.disabled = false; btn.textContent = '🎯 Seed Chapter 1 MCQs (61 Questions)';
+      el.style.display = ''; el.style.color = '#c62828';
+      el.textContent = '❌ Session expired — please refresh the page and log in again.';
+      return;
+    }
     const data = await resp.json();
     btn.disabled = false; btn.textContent = '🎯 Seed Chapter 1 MCQs (61 Questions)';
     el.style.display = '';
