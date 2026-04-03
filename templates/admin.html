@@ -329,14 +329,49 @@ async function deleteNote(id, title) {
 
 async function scanFolder() {
   showToast('Scanning folder...', '');
-  // This endpoint would scan the questions_bank directory
-  // For now show instructions
   const el = document.getElementById('scanResult');
   el.style.display = '';
   el.style.color = '#1565c0';
   el.innerHTML = `📁 Place your files in <code>questions_bank/FOLDER_NAME/TOPIC_NAME.html</code> or <code>.pdf</code><br>
   Example: <code>questions_bank/GK/Art_Culture.html</code><br>
   Then the app will auto-detect folder = GK, topic = Art_Culture.`;
+}
+
+// ─── CHAPTER MCQ SEED ────────────────────────
+async function seedChapterMcqs(force=false) {
+  const btn = document.getElementById('seedMcqBtn');
+  const el  = document.getElementById('mcqSeedResult');
+  btn.disabled = true; btn.textContent = '⏳ Seeding MCQs...';
+
+  const url = force ? '/api/mcq/seed_ch1?force=1' : '/api/mcq/seed_ch1';
+  try {
+    const resp = await fetch(url, { method: 'POST' });
+    const data = await resp.json();
+    btn.disabled = false; btn.textContent = '🎯 Seed Chapter 1 MCQs (61 Questions)';
+    el.style.display = '';
+
+    if (data.error) {
+      el.style.color = '#c62828';
+      el.textContent = '❌ Error: ' + data.error;
+      showToast('MCQ seed failed', 'error');
+    } else if (data.message && data.message.toLowerCase().includes('already')) {
+      el.style.color = '#f57c00';
+      el.textContent = '⚠️ ' + data.message;
+      const ok = confirm('MCQs already exist! Re-seed? (Old Chapter 1 MCQs will be replaced)');
+      if (ok) { seedChapterMcqs(true); return; }
+    } else if (data.success) {
+      el.style.color = '#2e7d32';
+      el.textContent = '✅ ' + (data.message || 'MCQs seeded!') + ' Open Notes → Indian History → Ch.1 → 🎯 Chapter Quiz to test.';
+      showToast(data.message || 'MCQs seeded!', 'success');
+    } else {
+      el.style.color = '#888';
+      el.textContent = JSON.stringify(data);
+    }
+  } catch(e) {
+    btn.disabled = false; btn.textContent = '🎯 Seed Chapter 1 MCQs (61 Questions)';
+    el.style.display = ''; el.style.color = '#c62828';
+    el.textContent = '❌ Network error: ' + e.message;
+  }
 }
 </script>
 
@@ -348,10 +383,16 @@ async function scanFolder() {
     <a href="/notes" style="color:var(--primary);font-weight:600;">📖 Open Notes →</a>
   </p>
 
-  <!-- Seed button -->
-  <button id="seedBtn" onclick="seedNotes()" class="btn btn-success" style="margin-bottom:16px;min-height:40px;padding:8px 18px;font-size:13px;">
-    🌱 Seed Chapter 1 (Indian History)
-  </button>
+  <!-- Seed buttons row -->
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+    <button id="seedBtn" onclick="seedNotes()" class="btn btn-success" style="min-height:40px;padding:8px 18px;font-size:13px;">
+      🌱 Seed Chapter 1 Notes (17 Sections)
+    </button>
+    <button id="seedMcqBtn" onclick="seedChapterMcqs()" class="btn btn-primary" style="min-height:40px;padding:8px 18px;font-size:13px;background:linear-gradient(135deg,#1a237e,#3949ab);">
+      🎯 Seed Chapter 1 MCQs (61 Questions)
+    </button>
+  </div>
+  <div id="mcqSeedResult" style="margin-bottom:12px;font-size:13px;display:none;"></div>
 
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>

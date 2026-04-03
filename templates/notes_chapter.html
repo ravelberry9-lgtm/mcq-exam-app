@@ -150,6 +150,119 @@
   .rb-dismiss { background:none; border:none; font-size:16px; color:#999; cursor:pointer; padding:0 4px; }
   [data-theme="dark"] .resume-bar { background:#0d1e33; border-color:#42a5f5; }
   [data-theme="dark"] .resume-bar .rb-label { color:#90caf9; }
+
+  /* ── Chapter Quiz Button ── */
+  .quiz-btn {
+    background:linear-gradient(135deg,#1a237e,#3949ab);
+    color:white; border:none; border-radius:22px;
+    padding:12px 26px; font-size:14px; font-weight:800; cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,0.18); margin-left:10px;
+  }
+  .quiz-btn:active { transform:scale(0.97); }
+
+  /* ── Quiz Modal ── */
+  .quiz-overlay {
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55);
+    z-index:500; align-items:flex-start; justify-content:center;
+    overflow-y:auto; padding:14px 0 40px;
+  }
+  .quiz-overlay.show { display:flex; }
+  .quiz-modal {
+    background:#fff; border-radius:18px; width:100%; max-width:520px;
+    margin:auto; padding:0; overflow:hidden;
+    box-shadow:0 8px 40px rgba(0,0,0,0.25);
+  }
+  .quiz-header {
+    background:linear-gradient(135deg,#1a237e,#3949ab);
+    color:white; padding:14px 16px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .quiz-header h3 { flex:1; font-size:15px; font-weight:800; margin:0; }
+  .quiz-close {
+    background:rgba(255,255,255,0.2); border:none; color:white;
+    border-radius:50%; width:30px; height:30px; font-size:16px;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+  }
+  .quiz-body { padding:16px; }
+  .quiz-progress-row { display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+  .quiz-prog-bar { flex:1; height:6px; background:#e0e4ef; border-radius:50px; overflow:hidden; }
+  .quiz-prog-fill { height:100%; background:linear-gradient(90deg,#1a237e,#3949ab); border-radius:50px; transition:width 0.3s; }
+  .quiz-prog-label { font-size:11px; color:#888; white-space:nowrap; font-weight:700; }
+
+  .quiz-section-tag { font-size:10px; background:#fff3cd; color:#856404; padding:3px 10px; border-radius:10px; font-weight:700; display:inline-block; margin-bottom:8px; }
+  .quiz-diff { font-size:10px; padding:3px 8px; border-radius:10px; font-weight:700; display:inline-block; margin-left:6px; }
+  .diff-1 { background:#e8f5e9; color:#2e7d32; }
+  .diff-2 { background:#fff3cd; color:#856404; }
+  .diff-3 { background:#fce4ec; color:#c62828; }
+
+  .quiz-q { font-size:15px; font-weight:700; line-height:1.6; margin-bottom:16px; color:#1a237e; }
+
+  .quiz-opts { display:flex; flex-direction:column; gap:9px; }
+  .quiz-opt {
+    border:2px solid #e0e4ef; border-radius:12px; padding:11px 14px;
+    font-size:13px; cursor:pointer; background:#f8f9fd;
+    text-align:left; width:100%; transition:all 0.15s; line-height:1.5;
+    font-weight:600; color:#333;
+  }
+  .quiz-opt:hover:not(:disabled) { border-color:#3949ab; background:#e8eaf6; }
+  .quiz-opt.correct { border-color:#2e7d32!important; background:#e8f5e9!important; color:#1b5e20!important; }
+  .quiz-opt.wrong   { border-color:#c62828!important; background:#fce4ec!important; color:#b71c1c!important; }
+  .quiz-opt:disabled { cursor:default; }
+
+  .quiz-explanation {
+    display:none; margin-top:12px; background:#fff8e1;
+    border:1px solid #ffcc02; border-radius:10px; padding:10px 12px;
+    font-size:12px; color:#5d4037; line-height:1.6;
+  }
+  .quiz-explanation.show { display:block; }
+
+  .quiz-footer { display:flex; gap:8px; margin-top:14px; align-items:center; flex-wrap:wrap; }
+  .quiz-next-btn {
+    background:#1a237e; color:white; border:none; border-radius:16px;
+    padding:9px 22px; font-size:13px; font-weight:800; cursor:pointer;
+    display:none;
+  }
+  .quiz-next-btn.show { display:inline-block; }
+  .quiz-relisten-btn {
+    background:#f3e5f5; color:#7b1fa2; border:1.5px solid #7b1fa2;
+    border-radius:16px; padding:8px 16px; font-size:12px; font-weight:700;
+    cursor:pointer; display:none;
+  }
+  .quiz-relisten-btn.show { display:inline-block; }
+
+  /* Results screen */
+  .quiz-result { display:none; padding:20px 16px; text-align:center; }
+  .quiz-result.show { display:block; }
+  .result-score { font-size:52px; font-weight:900; color:#1a237e; }
+  .result-sub { font-size:14px; color:#555; margin-top:4px; }
+  .result-grade { font-size:18px; font-weight:800; margin-top:8px; }
+  .result-breakdown { text-align:left; margin-top:16px; border-top:1px solid #e0e4ef; padding-top:12px; }
+  .rb-section { margin-bottom:8px; }
+  .rb-section-title { font-size:12px; font-weight:700; color:#1a237e; margin-bottom:4px; }
+  .rb-q-row { display:flex; align-items:center; gap:6px; font-size:11px; padding:4px 8px; border-radius:8px; margin-bottom:3px; }
+  .rb-q-row.correct-r { background:#e8f5e9; }
+  .rb-q-row.wrong-r   { background:#fce4ec; }
+  .rb-q-icon { font-size:14px; flex-shrink:0; }
+  .rb-q-text { flex:1; min-width:0; }
+  .rb-q-ans  { font-size:10px; color:#555; white-space:nowrap; }
+  .result-again-btn {
+    background:linear-gradient(135deg,#1a237e,#3949ab); color:white;
+    border:none; border-radius:20px; padding:11px 28px;
+    font-size:14px; font-weight:800; cursor:pointer; margin-top:18px;
+  }
+  .result-close-btn {
+    background:#f5f5f5; border:1.5px solid #ccc; color:#333;
+    border-radius:20px; padding:10px 22px; font-size:13px; font-weight:700;
+    cursor:pointer; margin-top:18px; margin-left:8px;
+  }
+
+  [data-theme="dark"] .quiz-modal { background:#1a1d2e; }
+  [data-theme="dark"] .quiz-opt { background:#12142a; border-color:#2a2d3e; color:#ddd; }
+  [data-theme="dark"] .quiz-opt:hover:not(:disabled) { background:#22254a; }
+  [data-theme="dark"] .quiz-q { color:#90caf9; }
+  [data-theme="dark"] .quiz-prog-bar { background:#2a2d3e; }
+  [data-theme="dark"] .quiz-explanation { background:#2d2200; border-color:#856404; color:#f5deb3; }
+  [data-theme="dark"] .result-breakdown { border-color:#2a2d3e; }
 </style>
 
 <!-- Sticky player bar -->
@@ -250,8 +363,65 @@
 
   <div class="play-all-wrap">
     <button class="play-all-btn" onclick="playAll()">🎙️ అన్ని సెక్షన్లు వినండి</button>
+    <button class="quiz-btn"     onclick="openQuiz()">🎯 Chapter Quiz</button>
   </div>
 
+</div>
+
+<!-- ══════════ CHAPTER QUIZ MODAL ══════════ -->
+<div class="quiz-overlay" id="quizOverlay" onclick="closeQuizOnBackdrop(event)">
+  <div class="quiz-modal" id="quizModal">
+
+    <!-- Header -->
+    <div class="quiz-header">
+      <h3 id="quizTitle">🎯 Chapter Quiz</h3>
+      <button class="quiz-close" onclick="closeQuiz()">✕</button>
+    </div>
+
+    <!-- Question panel -->
+    <div class="quiz-body" id="quizBody">
+      <!-- Progress -->
+      <div class="quiz-progress-row">
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qzProgFill" style="width:0%"></div></div>
+        <span class="quiz-prog-label" id="qzProgLabel">0 / 0</span>
+      </div>
+
+      <!-- Tags -->
+      <div>
+        <span class="quiz-section-tag" id="qzSecTag">Section –</span>
+        <span class="quiz-diff" id="qzDiff"></span>
+      </div>
+
+      <!-- Question -->
+      <div class="quiz-q" id="qzQuestion">లోడ్ అవుతోంది...</div>
+
+      <!-- Options -->
+      <div class="quiz-opts" id="qzOpts"></div>
+
+      <!-- Explanation -->
+      <div class="quiz-explanation" id="qzExpl"></div>
+
+      <!-- Footer buttons -->
+      <div class="quiz-footer">
+        <button class="quiz-next-btn"     id="qzNextBtn"     onclick="nextQuestion()">తదుపరి ప్రశ్న →</button>
+        <button class="quiz-relisten-btn" id="qzRelistenBtn" onclick="relistenSection()">🔊 మళ్ళీ వినండి</button>
+      </div>
+    </div>
+
+    <!-- Results panel (hidden until done) -->
+    <div class="quiz-result" id="quizResult">
+      <div style="font-size:36px;margin-bottom:8px;">🏆</div>
+      <div class="result-score" id="resScore">0%</div>
+      <div class="result-sub"   id="resSub">0 సరైనవి / 0 ప్రశ్నలు</div>
+      <div class="result-grade" id="resGrade"></div>
+      <div class="result-breakdown" id="resBreakdown"></div>
+      <div>
+        <button class="result-again-btn" onclick="retakeQuiz()">🔄 మళ్ళీ చేయండి</button>
+        <button class="result-close-btn" onclick="closeQuiz()">✕ మూయండి</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <button class="fab" onclick="togglePP()" id="fabBtn">▶</button>
@@ -576,6 +746,230 @@ function toggleSec(i) { const b = document.getElementById('body-'+i); if(b) b.cl
 
 speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
 setTimeout(() => speechSynthesis.getVoices(), 400);
+
+/* ══════════════════════════════════════════
+   CHAPTER QUIZ
+══════════════════════════════════════════ */
+let qzAll    = [];   // all MCQ objects from API
+let qzQueue  = [];   // shuffled copy
+let qzIdx    = 0;    // current question index in qzQueue
+let qzScore  = 0;
+let qzHistory = [];  // {q, chosen, correct, secIdx, secTitle}
+let qzCurSecIdx = -1; // section index of current question (for re-listen)
+
+async function openQuiz() {
+  // Reset state
+  qzAll = []; qzQueue = []; qzIdx = 0; qzScore = 0; qzHistory = []; qzCurSecIdx = -1;
+
+  // Show overlay immediately with loader
+  document.getElementById('quizOverlay').classList.add('show');
+  document.getElementById('quizBody').style.display = 'block';
+  document.getElementById('quizResult').classList.remove('show');
+  document.getElementById('qzQuestion').textContent = '⏳ ప్రశ్నలు లోడ్ అవుతున్నాయి...';
+  document.getElementById('qzOpts').innerHTML = '';
+  document.getElementById('qzExpl').classList.remove('show');
+  document.getElementById('qzNextBtn').classList.remove('show');
+  document.getElementById('qzRelistenBtn').classList.remove('show');
+
+  // Fetch MCQs
+  try {
+    const res = await fetch('/api/mcq/chapter/' + CHAPTER_ID);
+    const data = await res.json();
+    if (!data.mcqs || !data.mcqs.length) {
+      document.getElementById('qzQuestion').textContent = '❌ ఇంకా questions లేవు. Admin నుండి seed చేయండి.';
+      return;
+    }
+    qzAll   = data.mcqs;
+    qzQueue = shuffle([...qzAll]);
+    renderQuestion();
+  } catch(e) {
+    document.getElementById('qzQuestion').textContent = '❌ Error loading questions: ' + e.message;
+  }
+}
+
+function closeQuiz() {
+  document.getElementById('quizOverlay').classList.remove('show');
+  speechSynthesis.cancel(); // stop any re-listen audio
+}
+function closeQuizOnBackdrop(e) {
+  if (e.target === document.getElementById('quizOverlay')) closeQuiz();
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function renderQuestion() {
+  const q = qzQueue[qzIdx];
+  if (!q) { showResults(); return; }
+
+  qzCurSecIdx = q.section_idx;
+
+  // Progress bar
+  const pct = Math.round(qzIdx / qzQueue.length * 100);
+  document.getElementById('qzProgFill').style.width = pct + '%';
+  document.getElementById('qzProgLabel').textContent = (qzIdx + 1) + ' / ' + qzQueue.length;
+
+  // Section tag
+  const secTitle = (SECS[q.section_idx] && SECS[q.section_idx].title) || ('Section ' + (q.section_idx + 1));
+  document.getElementById('qzSecTag').textContent = '📌 ' + secTitle;
+
+  // Difficulty badge
+  const diffEl = document.getElementById('qzDiff');
+  const diffMap = {1:'⭐ Easy','2':'⭐⭐ Medium','3':'⭐⭐⭐ Hard'};
+  const diffCls = {1:'diff-1',2:'diff-2',3:'diff-3'};
+  diffEl.textContent = diffMap[q.difficulty] || '';
+  diffEl.className = 'quiz-diff ' + (diffCls[q.difficulty] || '');
+
+  // Question
+  document.getElementById('qzQuestion').textContent = q.q_te;
+
+  // Options
+  const opts = ['a','b','c','d'];
+  const optsContainer = document.getElementById('qzOpts');
+  optsContainer.innerHTML = '';
+  opts.forEach(letter => {
+    const text = q['opt_' + letter];
+    if (!text) return;
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = text;
+    btn.dataset.letter = letter;
+    btn.onclick = () => answerQuestion(letter);
+    optsContainer.appendChild(btn);
+  });
+
+  // Reset explanation and buttons
+  const expl = document.getElementById('qzExpl');
+  expl.classList.remove('show'); expl.textContent = '';
+  document.getElementById('qzNextBtn').classList.remove('show');
+  document.getElementById('qzRelistenBtn').classList.remove('show');
+}
+
+function answerQuestion(chosen) {
+  const q = qzQueue[qzIdx];
+  if (!q) return;
+
+  // Disable all options
+  const btns = document.querySelectorAll('.quiz-opt');
+  btns.forEach(btn => {
+    btn.disabled = true;
+    const letter = btn.dataset.letter;
+    if (letter === q.correct) btn.classList.add('correct');
+    else if (letter === chosen && chosen !== q.correct) btn.classList.add('wrong');
+  });
+
+  const isCorrect = (chosen === q.correct);
+  if (isCorrect) qzScore++;
+
+  // Record history
+  qzHistory.push({
+    q: q.q_te,
+    chosen: q['opt_' + chosen] || chosen,
+    correct: q['opt_' + q.correct] || q.correct,
+    secIdx: q.section_idx,
+    secTitle: (SECS[q.section_idx] && SECS[q.section_idx].title) || ('Section ' + (q.section_idx + 1)),
+    isCorrect
+  });
+
+  // Show explanation
+  if (q.explanation_te) {
+    const expl = document.getElementById('qzExpl');
+    expl.textContent = '💡 ' + q.explanation_te;
+    expl.classList.add('show');
+  }
+
+  // Show next and re-listen buttons
+  const isLast = qzIdx >= qzQueue.length - 1;
+  const nextBtn = document.getElementById('qzNextBtn');
+  nextBtn.textContent = isLast ? '📊 ఫలితాలు చూపించు' : 'తదుపరి ప్రశ్న →';
+  nextBtn.classList.add('show');
+
+  if (!isCorrect) {
+    document.getElementById('qzRelistenBtn').classList.add('show');
+  }
+}
+
+function nextQuestion() {
+  qzIdx++;
+  if (qzIdx >= qzQueue.length) { showResults(); return; }
+  renderQuestion();
+}
+
+function relistenSection() {
+  if (qzCurSecIdx < 0 || qzCurSecIdx >= SECS.length) return;
+  closeQuiz();
+  setTimeout(() => playSec(qzCurSecIdx), 300);
+}
+
+function showResults() {
+  document.getElementById('quizBody').style.display = 'none';
+  const res = document.getElementById('quizResult');
+  res.classList.add('show');
+
+  const total = qzQueue.length;
+  const pct   = total ? Math.round(qzScore / total * 100) : 0;
+
+  document.getElementById('resScore').textContent = pct + '%';
+  document.getElementById('resSub').textContent   = qzScore + ' సరైనవి / ' + total + ' ప్రశ్నలు';
+
+  // Grade
+  let grade = '', gradeColor = '';
+  if (pct >= 90)      { grade = '🥇 అద్భుతం! Outstanding!';  gradeColor = '#2e7d32'; }
+  else if (pct >= 75) { grade = '🥈 చాలా బాగుంది! Very Good!'; gradeColor = '#1976d2'; }
+  else if (pct >= 60) { grade = '🥉 బాగుంది! Good!';          gradeColor = '#f57c00'; }
+  else if (pct >= 40) { grade = '📚 మళ్ళీ చదవండి. Study more!'; gradeColor = '#e65100'; }
+  else                { grade = '🔄 మళ్ళీ వినండి. Re-listen!';  gradeColor = '#c62828'; }
+  const gradeEl = document.getElementById('resGrade');
+  gradeEl.textContent = grade; gradeEl.style.color = gradeColor;
+
+  // Breakdown by section
+  const bySection = {};
+  qzHistory.forEach(h => {
+    if (!bySection[h.secTitle]) bySection[h.secTitle] = { correct:0, wrong:[], secIdx: h.secIdx };
+    if (h.isCorrect) bySection[h.secTitle].correct++;
+    else bySection[h.secTitle].wrong.push({ q: h.q, correct: h.correct });
+  });
+
+  const breakdown = document.getElementById('resBreakdown');
+  breakdown.innerHTML = '<div style="font-size:13px;font-weight:800;color:#1a237e;margin-bottom:10px;">📊 Section-wise Results</div>';
+  Object.entries(bySection).forEach(([secTitle, data]) => {
+    const div = document.createElement('div');
+    div.className = 'rb-section';
+    const secIdx = data.secIdx;
+    const wrongCount = data.wrong.length;
+    const secTotal = data.correct + wrongCount;
+    div.innerHTML = `<div class="rb-section-title">📌 ${secTitle} — ${data.correct}/${secTotal}</div>`;
+    if (wrongCount > 0) {
+      data.wrong.forEach(w => {
+        div.innerHTML += `<div class="rb-q-row wrong-r">
+          <span class="rb-q-icon">✗</span>
+          <span class="rb-q-text">${w.q}</span>
+          <span class="rb-q-ans">✓ ${w.correct}</span>
+        </div>`;
+      });
+      div.innerHTML += `<button onclick="relistenFromResult(${secIdx})" style="font-size:11px;background:#f3e5f5;color:#7b1fa2;border:1px solid #7b1fa2;border-radius:10px;padding:3px 10px;cursor:pointer;margin-top:4px;margin-bottom:6px;">🔊 Section మళ్ళీ వినండి</button>`;
+    }
+    breakdown.appendChild(div);
+  });
+}
+
+function relistenFromResult(secIdx) {
+  closeQuiz();
+  setTimeout(() => playSec(secIdx), 300);
+}
+
+function retakeQuiz() {
+  qzQueue = shuffle([...qzAll]);
+  qzIdx = 0; qzScore = 0; qzHistory = []; qzCurSecIdx = -1;
+  document.getElementById('quizBody').style.display = 'block';
+  document.getElementById('quizResult').classList.remove('show');
+  renderQuestion();
+}
 
 // ─── INIT ───
 document.addEventListener('DOMContentLoaded', () => {
