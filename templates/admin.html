@@ -342,12 +342,142 @@ async function scanFolder() {
     Manage chapter-wise Telugu audio study notes.
     <a href="/notes" style="color:var(--primary);font-weight:600;">📖 Open Notes →</a>
   </p>
-  <button id="seedBtn" onclick="seedNotes()" class="btn btn-success" style="margin-bottom:14px;min-height:40px;padding:8px 18px;font-size:13px;">
+
+  <!-- Seed button -->
+  <button id="seedBtn" onclick="seedNotes()" class="btn btn-success" style="margin-bottom:16px;min-height:40px;padding:8px 18px;font-size:13px;">
     🌱 Seed Chapter 1 (Indian History)
   </button>
+
+  <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
+
+  <hr class="divider">
+
+  <!-- Add New Chapter Form -->
+  <div style="margin-top:4px;">
+    <div style="font-size:14px;font-weight:700;color:var(--primary);margin-bottom:12px;">➕ Add New Chapter</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+      <div class="form-group" style="margin:0;">
+        <label class="form-label">Subject</label>
+        <input id="nSubject" class="form-control" placeholder="e.g. GK" value="GK">
+      </div>
+      <div class="form-group" style="margin:0;">
+        <label class="form-label">Topic</label>
+        <input id="nTopic" class="form-control" placeholder="e.g. Indian_History" value="Indian_History">
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:10px;margin-bottom:10px;">
+      <div class="form-group" style="margin:0;">
+        <label class="form-label">Chapter No.</label>
+        <input id="nChNum" class="form-control" type="number" placeholder="2" min="1">
+      </div>
+      <div class="form-group" style="margin:0;">
+        <label class="form-label">Pages Ref</label>
+        <input id="nPages" class="form-control" placeholder="e.g. 7-20">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Chapter Title (Telugu)</label>
+      <input id="nTitleTe" class="form-control" placeholder="e.g. ప్రాక్ చారిత్రక సంస్కృతులు">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Chapter Title (English)</label>
+      <input id="nTitleEn" class="form-control" placeholder="e.g. Pre-Historic Cultures">
+    </div>
+
+    <!-- Sections builder -->
+    <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:8px;margin-top:4px;">Sections</div>
+    <div id="sectionsWrap"></div>
+    <button onclick="addSection()" style="background:#e8eaf6;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;color:var(--primary);cursor:pointer;width:100%;margin-bottom:12px;">+ Add Section</button>
+
+    <button onclick="saveChapter()" class="btn btn-primary btn-block" id="saveChBtn">💾 Save Chapter</button>
+    <div id="saveResult" style="margin-top:8px;font-size:13px;display:none;"></div>
+  </div>
 </div>
-<script>loadNotesList();</script>
+<script>
+loadNotesList();
+
+let secCount = 0;
+function addSection() {
+  const idx = secCount++;
+  const wrap = document.getElementById('sectionsWrap');
+  const div = document.createElement('div');
+  div.id = 'sec_' + idx;
+  div.style.cssText = 'border:1.5px solid var(--border);border-radius:10px;padding:12px;margin-bottom:10px;background:#fafafa;';
+  div.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+      <span style="font-size:12px;font-weight:700;color:var(--primary);">Section ${idx+1}</span>
+      <button onclick="document.getElementById('sec_${idx}').remove()" style="background:#fce4ec;border:none;border-radius:6px;padding:2px 8px;font-size:11px;color:#c62828;cursor:pointer;font-weight:700;">✕</button>
+    </div>
+    <div class="form-group" style="margin-bottom:8px;">
+      <label class="form-label">Title (Telugu)</label>
+      <input class="form-control sec-title" style="font-size:13px;" placeholder="e.g. పాత రాతి యుగం">
+    </div>
+    <div class="form-group" style="margin-bottom:8px;">
+      <label class="form-label">Sub-title (English)</label>
+      <input class="form-control sec-sub" style="font-size:13px;" placeholder="e.g. Palaeolithic Age · Old Stone Age">
+    </div>
+    <div class="form-group" style="margin:0;">
+      <label class="form-label">Audio Text (Telugu narration)</label>
+      <textarea class="form-control sec-audio" rows="5" style="font-size:13px;font-family:inherit;" placeholder="Full Telugu narration text for TTS..."></textarea>
+    </div>`;
+  wrap.appendChild(div);
+}
+
+async function saveChapter() {
+  const subject   = document.getElementById('nSubject').value.trim();
+  const topic     = document.getElementById('nTopic').value.trim();
+  const chNum     = parseInt(document.getElementById('nChNum').value);
+  const pages     = document.getElementById('nPages').value.trim();
+  const titleTe   = document.getElementById('nTitleTe').value.trim();
+  const titleEn   = document.getElementById('nTitleEn').value.trim();
+
+  if (!subject || !topic || !chNum || !titleTe || !titleEn) {
+    showToast('Please fill all chapter fields', 'error'); return;
+  }
+
+  const sections = [];
+  document.querySelectorAll('#sectionsWrap > div').forEach(div => {
+    const t  = div.querySelector('.sec-title')?.value.trim();
+    const s  = div.querySelector('.sec-sub')?.value.trim();
+    const a  = div.querySelector('.sec-audio')?.value.trim();
+    if (t && a) sections.push({ title: t, sub: s || '', audio: a });
+  });
+
+  if (!sections.length) { showToast('Add at least one section', 'error'); return; }
+
+  const btn = document.getElementById('saveChBtn');
+  btn.disabled = true; btn.textContent = 'Saving...';
+
+  const resp = await fetch('/api/notes/add', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ subject, topic, chapter_num: chNum, chapter_title_te: titleTe,
+                           chapter_title_en: titleEn, pages_ref: pages,
+                           sections_json: JSON.stringify(sections) })
+  });
+  const data = await resp.json();
+  btn.disabled = false; btn.textContent = '💾 Save Chapter';
+
+  const el = document.getElementById('saveResult');
+  el.style.display = '';
+  if (data.success) {
+    el.style.color = 'green';
+    el.textContent = '✅ Chapter saved! ' + sections.length + ' sections.';
+    showToast('Chapter saved!', 'success');
+    document.getElementById('nChNum').value = '';
+    document.getElementById('nTitleTe').value = '';
+    document.getElementById('nTitleEn').value = '';
+    document.getElementById('nPages').value = '';
+    document.getElementById('sectionsWrap').innerHTML = '';
+    secCount = 0;
+    loadNotesList();
+  } else {
+    el.style.color = 'red'; el.textContent = '❌ Error saving chapter';
+  }
+}
+</script>
 
 {% endblock %}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

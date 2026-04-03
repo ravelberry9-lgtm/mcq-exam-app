@@ -34,6 +34,8 @@
   }
   .sec-card.playing { border-color:#c8860a; background:#fff3cd; box-shadow:0 0 0 3px rgba(200,134,10,0.15); }
   .sec-card.done    { border-color:#a5d6a7; background:#e8f5e9; }
+  .sec-card.bookmarked { border-left:4px solid #7b1fa2; }
+  .sec-card.hidden-bm  { display:none; }
 
   .sec-hdr { display:flex; align-items:center; gap:10px; padding:11px 13px; }
   .sec-num {
@@ -47,19 +49,25 @@
   .sec-title { font-size:14px; font-weight:700; color:#1a237e; }
   .sec-sub   { font-size:11px; color:#8a6a40; margin-top:2px; }
   .sec-badge {
-    font-size:10px; padding:2px 8px; border-radius:10px; font-weight:700; margin-left:auto; white-space:nowrap;
+    font-size:10px; padding:2px 8px; border-radius:10px; font-weight:700; white-space:nowrap;
   }
   .badge-playing { background:#fff3cd; color:#856404; }
   .badge-done    { background:#e8f5e9; color:#2e7d32; }
   .badge-idle    { background:#f5f5f5; color:#999; }
+  .badge-bm      { background:#f3e5f5; color:#7b1fa2; font-size:12px; padding:2px 6px; }
 
   .sec-body { padding:0 13px 12px; font-size:14px; line-height:1.8; display:none; border-top:1px solid #e8d5b0; padding-top:11px; }
   .sec-body.open { display:block; }
   .play-btn {
     background:#1a237e; color:white; border:none; border-radius:16px;
-    padding:5px 14px; font-size:12px; font-weight:700; cursor:pointer; margin-top:8px;
+    padding:5px 14px; font-size:12px; font-weight:700; cursor:pointer; margin-top:8px; margin-right:6px;
   }
   .play-btn:hover { background:#3949ab; }
+  .bm-btn {
+    border:1.5px solid #7b1fa2; color:#7b1fa2; background:transparent;
+    border-radius:16px; padding:5px 12px; font-size:12px; font-weight:700; cursor:pointer; margin-top:8px;
+  }
+  .bm-btn.active { background:#7b1fa2; color:white; }
 
   .voice-tip {
     background:#fff8e1; border:1px solid #ffcc02; border-radius:8px;
@@ -72,6 +80,36 @@
     padding:13px 28px; font-size:15px; font-weight:800; cursor:pointer;
     box-shadow:0 4px 14px rgba(0,0,0,0.18);
   }
+
+  /* Progress summary banner */
+  .prog-banner {
+    background:linear-gradient(135deg,#e8f5e9,#f1f8e9);
+    border:1.5px solid #a5d6a7;
+    border-radius:10px;
+    padding:10px 14px;
+    margin-bottom:12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .prog-banner .prog-label { font-size:12px; color:#2e7d32; font-weight:700; }
+  .prog-banner .prog-bar-wrap { flex:1; min-width:80px; background:#c8e6c9; border-radius:50px; height:6px; overflow:hidden; }
+  .prog-banner .prog-bar-inner { height:100%; border-radius:50px; background:#2e7d32; transition:width 0.4s; }
+  .prog-banner .prog-pct { font-size:12px; color:#2e7d32; font-weight:800; white-space:nowrap; }
+  .prog-banner .prog-last { font-size:10px; color:#558b2f; margin-left:auto; white-space:nowrap; }
+
+  /* Filter toolbar */
+  .filter-bar {
+    display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap;
+  }
+  .filter-btn {
+    border:1.5px solid #e0e4ef; background:#f5f5f5; color:#555;
+    border-radius:20px; padding:6px 14px; font-size:12px; font-weight:700; cursor:pointer;
+  }
+  .filter-btn.active { border-color:#7b1fa2; background:#f3e5f5; color:#7b1fa2; }
+  .filter-btn.active-green { border-color:#2e7d32; background:#e8f5e9; color:#2e7d32; }
+
   .fab {
     position:fixed; bottom:18px; right:14px;
     background:#1a237e; color:white; width:50px; height:50px;
@@ -80,6 +118,12 @@
     cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.25); z-index:200;
   }
   .fab:active { transform:scale(0.95); }
+
+  [data-theme="dark"] .sec-card { background:#1a1d2e; border-color:#2a2d3e; }
+  [data-theme="dark"] .sec-card.done { background:#1a2d1a; border-color:#4caf50; }
+  [data-theme="dark"] .sec-card.playing { background:#2d2200; border-color:#c8860a; }
+  [data-theme="dark"] .n-player { background:#1e2130; border-color:#2a2d3e; }
+  [data-theme="dark"] .prog-banner { background:#1a2d1a; border-color:#4caf50; }
 </style>
 
 <!-- Sticky player bar -->
@@ -125,8 +169,24 @@
     {% endif %}
   </div>
 
+  <!-- Progress banner (S5) -->
+  <div class="prog-banner" id="progBanner">
+    <span class="prog-label">📊 Progress</span>
+    <div class="prog-bar-wrap"><div class="prog-bar-inner" id="progBarInner" style="width:0%"></div></div>
+    <span class="prog-pct" id="progPct">0%</span>
+    <span class="prog-last" id="progLast"></span>
+  </div>
+
   <div class="voice-tip">
     📱 <strong>Telugu voice:</strong> Settings → Accessibility → TTS → Install <strong>Google Telugu TTS</strong>
+  </div>
+
+  <!-- Filter toolbar (S6) -->
+  <div class="filter-bar">
+    <button class="filter-btn active-green" id="filterAll"    onclick="setFilter('all')">📋 All Sections</button>
+    <button class="filter-btn"              id="filterBm"     onclick="setFilter('bookmarked')">📌 Bookmarked</button>
+    <button class="filter-btn"              id="filterUndone" onclick="setFilter('undone')">🔄 Not Done</button>
+    <button style="margin-left:auto;border:none;background:transparent;font-size:11px;color:#c62828;cursor:pointer;" onclick="resetProgress()">🗑 Reset</button>
   </div>
 
   <!-- Section cards -->
@@ -138,11 +198,17 @@
         <div class="sec-title">{{ sec.title }}</div>
         {% if sec.sub %}<div class="sec-sub">{{ sec.sub }}</div>{% endif %}
       </div>
-      <span class="sec-badge badge-idle" id="badge-{{ loop.index0 }}">●</span>
+      <div style="display:flex;align-items:center;gap:4px;flex-shrink:0;">
+        <span class="sec-badge badge-idle" id="badge-{{ loop.index0 }}">●</span>
+        <span class="badge-bm" id="bm-icon-{{ loop.index0 }}" style="display:none;">📌</span>
+      </div>
     </div>
     <div class="sec-body" id="body-{{ loop.index0 }}">
       <p style="white-space:pre-line;">{{ sec.audio }}</p>
-      <button class="play-btn" onclick="event.stopPropagation(); playSec({{ loop.index0 }})">🔊 ఈ సెక్షన్ వినండి</button>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">
+        <button class="play-btn" onclick="event.stopPropagation(); playSec({{ loop.index0 }})">🔊 ఈ సెక్షన్ వినండి</button>
+        <button class="bm-btn" id="bmbtn-{{ loop.index0 }}" onclick="event.stopPropagation(); toggleBookmark({{ loop.index0 }})">📌 Bookmark</button>
+      </div>
     </div>
   </div>
   {% endfor %}
@@ -157,8 +223,124 @@
 
 <script>
 const SECS = {{ sections | tojson }};
-let cur = -1, speaking = false, paused = false, utt = null, queue = [], allMode = false;
+const CHAPTER_ID = {{ chapter.id }};
+const PROG_KEY = 'notes_prog_' + CHAPTER_ID;
+const BM_KEY   = 'notes_bm_'   + CHAPTER_ID;
 
+let cur = -1, speaking = false, paused = false, utt = null, queue = [], allMode = false;
+let filterMode = 'all';
+
+/* ─── STORAGE HELPERS ─── */
+function loadProg() {
+  try { return JSON.parse(localStorage.getItem(PROG_KEY)) || {done:[], last:null}; }
+  catch(e) { return {done:[], last:null}; }
+}
+function saveProg(p) { localStorage.setItem(PROG_KEY, JSON.stringify(p)); }
+function loadBm() {
+  try { return JSON.parse(localStorage.getItem(BM_KEY)) || []; }
+  catch(e) { return []; }
+}
+function saveBm(bm) { localStorage.setItem(BM_KEY, JSON.stringify(bm)); }
+
+/* ─── PROGRESS UI (S5) ─── */
+function refreshProgressUI() {
+  const p = loadProg();
+  const total = SECS.length;
+  const doneCount = p.done.length;
+  const pct = total ? Math.round(doneCount / total * 100) : 0;
+
+  document.getElementById('progBarInner').style.width = pct + '%';
+  document.getElementById('progPct').textContent = pct + '%  (' + doneCount + '/' + total + ')';
+
+  if (p.last) {
+    const d = new Date(p.last);
+    document.getElementById('progLast').textContent = '🕐 ' + d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+  }
+
+  // player progress fill
+  document.getElementById('progFill').style.width = pct + '%';
+
+  // restore done state on cards
+  p.done.forEach(i => {
+    const c = document.getElementById('card-'+i);
+    if (c && !c.classList.contains('playing')) {
+      c.classList.add('done');
+    }
+    setBadge(i, 'done');
+  });
+}
+
+function markDoneInStorage(i) {
+  const p = loadProg();
+  if (!p.done.includes(i)) { p.done.push(i); }
+  p.last = new Date().toISOString();
+  saveProg(p);
+  refreshProgressUI();
+}
+
+function resetProgress() {
+  if (!confirm('అన్ని sections progress reset చేయాలా?')) return;
+  localStorage.removeItem(PROG_KEY);
+  SECS.forEach((_, i) => {
+    const c = document.getElementById('card-'+i);
+    if (c) { c.classList.remove('done','playing'); }
+    setBadge(i, 'idle');
+  });
+  refreshProgressUI();
+}
+
+/* ─── BOOKMARK UI (S6) ─── */
+function refreshBookmarkUI() {
+  const bm = loadBm();
+  SECS.forEach((_, i) => {
+    const card = document.getElementById('card-'+i);
+    const icon = document.getElementById('bm-icon-'+i);
+    const btn  = document.getElementById('bmbtn-'+i);
+    if (!card) return;
+    if (bm.includes(i)) {
+      card.classList.add('bookmarked');
+      if (icon) icon.style.display = 'inline';
+      if (btn)  { btn.classList.add('active'); btn.textContent = '📌 Bookmarked'; }
+    } else {
+      card.classList.remove('bookmarked');
+      if (icon) icon.style.display = 'none';
+      if (btn)  { btn.classList.remove('active'); btn.textContent = '📌 Bookmark'; }
+    }
+  });
+}
+
+function toggleBookmark(i) {
+  const bm = loadBm();
+  const idx = bm.indexOf(i);
+  if (idx === -1) bm.push(i); else bm.splice(idx, 1);
+  saveBm(bm);
+  refreshBookmarkUI();
+  applyFilter();
+}
+
+/* ─── FILTER (S6) ─── */
+function setFilter(mode) {
+  filterMode = mode;
+  document.getElementById('filterAll').className    = 'filter-btn' + (mode==='all'       ? ' active-green' : '');
+  document.getElementById('filterBm').className     = 'filter-btn' + (mode==='bookmarked' ? ' active'       : '');
+  document.getElementById('filterUndone').className = 'filter-btn' + (mode==='undone'     ? ' active-green' : '');
+  applyFilter();
+}
+
+function applyFilter() {
+  const bm   = loadBm();
+  const prog = loadProg();
+  SECS.forEach((_, i) => {
+    const card = document.getElementById('card-'+i);
+    if (!card) return;
+    let show = true;
+    if (filterMode === 'bookmarked') show = bm.includes(i);
+    if (filterMode === 'undone')     show = !prog.done.includes(i);
+    card.classList.toggle('hidden-bm', !show);
+  });
+}
+
+/* ─── TTS CORE ─── */
 function getVoice() {
   const vs = speechSynthesis.getVoices();
   return vs.find(v => v.lang && v.lang.startsWith('te'))
@@ -171,7 +353,11 @@ function playSec(i) { stop(); cur = i; allMode = false; queue = []; speak(); }
 function playAll() {
   stop();
   allMode = true;
-  queue = SECS.map((_, i) => i);
+  // only queue visible sections if filter active
+  queue = SECS.map((_, i) => i).filter(i => {
+    const c = document.getElementById('card-'+i);
+    return c && !c.classList.contains('hidden-bm');
+  });
   nextQ();
 }
 
@@ -191,7 +377,6 @@ function speak() {
   setNow('▶ ' + SECS[cur].title);
   setBadge(cur, 'playing');
   setCard(cur, 'playing');
-  updateProg();
   document.getElementById('fabBtn').textContent = '⏸';
 
   utt = new SpeechSynthesisUtterance(SECS[cur].audio);
@@ -201,8 +386,10 @@ function speak() {
   if (v) utt.voice = v;
 
   utt.onend = () => {
-    setBadge(cur, 'done'); setCard(cur, 'done');
-    speaking = false; updateProg();
+    setBadge(cur, 'done');
+    setCard(cur, 'done');
+    markDoneInStorage(cur);   // ← S5: save to localStorage
+    speaking = false;
     if (allMode || queue.length) setTimeout(nextQ, 600);
     else { document.getElementById('fabBtn').textContent = '▶'; setNow('✅ పూర్తయింది'); }
   };
@@ -224,7 +411,10 @@ function stop() {
   speechSynthesis.cancel(); speaking = false; paused = false; queue = []; allMode = false;
   document.getElementById('fabBtn').textContent = '▶';
   setNow('⏹ ఆపబడింది');
-  if (cur >= 0) { const c = document.getElementById('card-'+cur); if(c && !c.classList.contains('done')) c.classList.remove('playing'); }
+  if (cur >= 0) {
+    const c = document.getElementById('card-'+cur);
+    if (c && !c.classList.contains('done')) c.classList.remove('playing');
+  }
 }
 function prevSec() { stop(); playSec(Math.max(0, cur < 0 ? 0 : cur - 1)); }
 function nextSec() { stop(); playSec(Math.min(SECS.length-1, cur < 0 ? 0 : cur + 1)); }
@@ -232,10 +422,7 @@ function togglePP() { if (speaking && !paused) pausePlay(); else resumePlay(); }
 function changeSpeed() { if (speaking) { const i = cur; stop(); setTimeout(() => playSec(i), 80); } }
 
 function setNow(t) { document.getElementById('nowPlaying').textContent = t; }
-function updateProg() {
-  const d = document.querySelectorAll('.sec-card.done').length;
-  document.getElementById('progFill').style.width = Math.round(d / SECS.length * 100) + '%';
-}
+
 function setBadge(i, s) {
   const el = document.getElementById('badge-'+i); if(!el) return;
   if (s==='playing') { el.className='sec-badge badge-playing'; el.textContent='▶ వింటున్నారు'; }
@@ -251,5 +438,15 @@ function toggleSec(i) { const b = document.getElementById('body-'+i); if(b) b.cl
 
 speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
 setTimeout(() => speechSynthesis.getVoices(), 400);
+
+// ─── INIT ───
+document.addEventListener('DOMContentLoaded', () => {
+  refreshProgressUI();
+  refreshBookmarkUI();
+  applyFilter();
+});
+// Fallback if DOM already loaded
+refreshProgressUI();
+refreshBookmarkUI();
 </script>
 {% endblock %}

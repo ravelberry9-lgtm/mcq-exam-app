@@ -1,6 +1,48 @@
 {% extends "base.html" %}
 {% block title %}{{ topic.replace('_',' ') }} – Notes{% endblock %}
 {% block content %}
+<style>
+  .ch-card {
+    display:flex; flex-direction:column; gap:8px;
+    cursor:pointer; transition:transform 0.15s;
+    text-decoration:none; color:inherit;
+  }
+  .ch-card:hover .ch-inner { transform:translateY(-2px); }
+  .ch-inner {
+    background:var(--card-bg,#fff);
+    border:1.5px solid var(--border,#e8d5b0);
+    border-radius:12px;
+    padding:12px 14px;
+    display:flex; align-items:center; gap:14px;
+    transition:transform 0.15s, box-shadow 0.15s;
+  }
+  .ch-inner:hover { box-shadow:0 4px 14px rgba(0,0,0,0.10); }
+  .ch-num {
+    width:44px; height:44px; border-radius:10px;
+    background:linear-gradient(135deg,#7b3f00,#c8860a);
+    display:flex; align-items:center; justify-content:center;
+    color:white; font-size:15px; font-weight:800; flex-shrink:0;
+  }
+  .ch-meta { flex:1; min-width:0; }
+  .ch-te   { font-size:15px; font-weight:700; color:var(--primary,#1a237e); }
+  .ch-en   { font-size:12px; color:var(--text-muted,#888); margin-top:2px; }
+  .ch-pg   { font-size:11px; color:var(--text-muted,#888); margin-top:2px; }
+
+  /* Progress mini bar */
+  .ch-prog-wrap { margin-top:6px; }
+  .ch-prog-row  { display:flex; align-items:center; gap:7px; }
+  .ch-prog-bar  { flex:1; height:5px; background:#e0d0b0; border-radius:50px; overflow:hidden; }
+  .ch-prog-fill { height:100%; border-radius:50px; background:linear-gradient(90deg,#2e7d32,#66bb6a); transition:width 0.4s; }
+  .ch-prog-pct  { font-size:11px; font-weight:700; color:#2e7d32; white-space:nowrap; min-width:36px; text-align:right; }
+  .ch-prog-last { font-size:10px; color:#888; margin-top:2px; }
+
+  .badge-audio { font-size:11px; background:#fff3cd; color:#856404; padding:2px 8px; border-radius:10px; font-weight:700; white-space:nowrap; }
+  .badge-done  { font-size:11px; background:#e8f5e9; color:#2e7d32; padding:2px 8px; border-radius:10px; font-weight:700; white-space:nowrap; }
+
+  [data-theme="dark"] .ch-prog-bar { background:#2a2d3e; }
+  [data-theme="dark"] .ch-inner { background:#1a1d2e; border-color:#2a2d3e; }
+</style>
+
 <div class="main">
 
   <!-- Breadcrumb -->
@@ -12,27 +54,34 @@
     <strong>{{ topic.replace('_',' ') }}</strong>
   </div>
 
+  <!-- Header card -->
   <div class="card" style="background:linear-gradient(135deg,#4a148c,#7b1fa2);color:white;padding:20px 16px;margin-bottom:14px;">
     <div style="font-size:28px;margin-bottom:6px;">🏛️</div>
     <h2 style="font-size:18px;font-weight:800;">{{ topic.replace('_',' ') }}</h2>
     <p style="opacity:0.8;font-size:12px;margin-top:4px;">{{ chapters|length }} chapter(s) available</p>
   </div>
 
+  <!-- Chapter list -->
   {% for ch in chapters %}
-  <a href="/notes/{{ subject }}/{{ topic }}/{{ ch.id }}" style="text-decoration:none;">
-    <div class="card" style="display:flex;align-items:center;gap:14px;cursor:pointer;transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-      <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#7b3f00,#c8860a);display:flex;align-items:center;justify-content:center;color:white;font-size:15px;font-weight:800;flex-shrink:0;">
-        {{ ch.chapter_num }}
-      </div>
-      <div style="flex:1;min-width:0;">
-        <div style="font-size:15px;font-weight:700;color:var(--primary);">{{ ch.chapter_title_te }}</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">{{ ch.chapter_title_en }}</div>
-        {% if ch.pages_ref %}
-        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">📄 Pages {{ ch.pages_ref }}</div>
-        {% endif %}
+  <a class="ch-card" href="/notes/{{ subject }}/{{ topic }}/{{ ch.id }}">
+    <div class="ch-inner">
+      <div class="ch-num">{{ ch.chapter_num }}</div>
+      <div class="ch-meta">
+        <div class="ch-te">{{ ch.chapter_title_te }}</div>
+        <div class="ch-en">{{ ch.chapter_title_en }}</div>
+        {% if ch.pages_ref %}<div class="ch-pg">📄 Pages {{ ch.pages_ref }}</div>{% endif %}
+
+        <!-- S5: Progress bar populated by JS -->
+        <div class="ch-prog-wrap" id="prog-wrap-{{ ch.id }}">
+          <div class="ch-prog-row">
+            <div class="ch-prog-bar"><div class="ch-prog-fill" id="prog-fill-{{ ch.id }}" style="width:0%"></div></div>
+            <div class="ch-prog-pct" id="prog-pct-{{ ch.id }}"></div>
+          </div>
+          <div class="ch-prog-last" id="prog-last-{{ ch.id }}"></div>
+        </div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
-        <span style="font-size:11px;background:#fff3cd;color:#856404;padding:2px 8px;border-radius:10px;font-weight:700;">🔊 Audio</span>
+        <span class="badge-audio" id="badge-{{ ch.id }}">🔊 Audio</span>
         <div style="color:var(--text-muted);font-size:16px;">›</div>
       </div>
     </div>
@@ -42,9 +91,80 @@
   {% if not chapters %}
   <div class="card" style="text-align:center;padding:40px 20px;">
     <div style="font-size:48px;margin-bottom:12px;">📭</div>
-    <p style="font-size:15px;color:var(--text-muted);">No chapters added yet</p>
+    <p style="font-size:15px;color:var(--text-muted);">No chapters added yet.</p>
+    <a href="/admin" style="color:var(--primary);font-size:13px;">+ Admin నుండి chapter add చేయండి</a>
   </div>
   {% endif %}
 
 </div>
+
+<script>
+/* S5 – read chapter progress from localStorage and update cards */
+const CHAPTERS = {{ chapters | tojson }};
+
+function relativeTime(isoStr) {
+  if (!isoStr) return '';
+  const diff = Date.now() - new Date(isoStr).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1)   return 'ఇప్పుడే';
+  if (mins < 60)  return mins + ' నిమిషాల క్రితం';
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24)   return hrs + ' గంటల క్రితం';
+  const days = Math.floor(hrs / 24);
+  if (days < 7)   return days + ' రోజుల క్రితం';
+  return new Date(isoStr).toLocaleDateString();
+}
+
+function loadChapterProgress(chapterId) {
+  try { return JSON.parse(localStorage.getItem('notes_prog_' + chapterId)) || {done:[], last:null}; }
+  catch(e) { return {done:[], last:null}; }
+}
+
+function loadChapterSectionCount(chapterId) {
+  // We pass section counts from the server via a lookup
+  return CHAPTER_COUNTS[chapterId] || 0;
+}
+
+const CHAPTER_COUNTS = {};
+CHAPTERS.forEach(ch => {
+  try {
+    const secs = JSON.parse(ch.sections_json || '[]');
+    CHAPTER_COUNTS[ch.id] = secs.length;
+  } catch(e) { CHAPTER_COUNTS[ch.id] = 0; }
+});
+
+function refreshAllProgress() {
+  CHAPTERS.forEach(ch => {
+    const prog  = loadChapterProgress(ch.id);
+    const total = CHAPTER_COUNTS[ch.id];
+    const done  = prog.done ? prog.done.length : 0;
+    const pct   = total ? Math.round(done / total * 100) : 0;
+
+    const fillEl = document.getElementById('prog-fill-' + ch.id);
+    const pctEl  = document.getElementById('prog-pct-'  + ch.id);
+    const lastEl = document.getElementById('prog-last-' + ch.id);
+    const badge  = document.getElementById('badge-'     + ch.id);
+
+    if (fillEl) fillEl.style.width = pct + '%';
+
+    if (pctEl) {
+      if (total > 0) pctEl.textContent = pct + '%';
+      else pctEl.textContent = '';
+    }
+
+    if (lastEl && prog.last) {
+      lastEl.textContent = '🕐 చివరిసారి: ' + relativeTime(prog.last);
+    }
+
+    // Change badge to ✅ Done when 100%
+    if (badge && pct === 100) {
+      badge.className = 'badge-done';
+      badge.textContent = '✅ పూర్తయింది';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', refreshAllProgress);
+refreshAllProgress();
+</script>
 {% endblock %}

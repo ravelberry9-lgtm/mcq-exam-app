@@ -614,7 +614,7 @@ def notes_subject(subject):
 def notes_topic(subject, topic):
     conn = get_db()
     cur = db_exec(conn, '''
-        SELECT id, chapter_num, chapter_title_te, chapter_title_en, pages_ref
+        SELECT id, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json
         FROM study_notes WHERE subject=? AND topic=?
         ORDER BY chapter_num
     ''', (subject, topic))
