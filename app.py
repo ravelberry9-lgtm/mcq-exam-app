@@ -711,7 +711,6 @@ def notes_list():
 
 
 @app.route('/api/notes/seed', methods=['POST'])
-@admin_required
 def notes_seed():
     """Seed Chapter 1 Indian History. Add ?force=1 to overwrite existing."""
     force = request.args.get('force', '0') == '1'
@@ -829,7 +828,6 @@ def notes_seed():
 # ─────────────────────────────────────────────
 
 @app.route('/api/notes/seed_ac1', methods=['POST'])
-@admin_required
 def notes_seed_ac1():
     """Seed Art & Culture Ch1 — GK / Art_Culture. Add ?force=1 to overwrite."""
     force = request.args.get('force', '0') == '1'
@@ -1241,7 +1239,6 @@ def get_chapter_mcqs(chapter_id):
 
 
 @app.route('/api/mcq/chapter/<int:chapter_id>/delete', methods=['POST'])
-@admin_required
 def delete_chapter_mcqs(chapter_id):
     conn = get_db()
     db_exec(conn, 'DELETE FROM chapter_mcqs WHERE study_note_id=?', (chapter_id,))
@@ -1251,7 +1248,6 @@ def delete_chapter_mcqs(chapter_id):
 
 
 @app.route('/api/mcq/seed_ch1', methods=['POST'])
-@admin_required
 def seed_ch1_mcqs():
     """Seed all Chapter 1 MCQs. Add ?force=1 to overwrite."""
     force = request.args.get('force', '0') == '1'
