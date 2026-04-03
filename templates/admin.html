@@ -287,13 +287,18 @@ async function deleteTopic(folder, topic) {
 }
 
 // ─── NOTES ───────────────────────────────────
-async function seedNotes() {
+async function seedNotes(force=false) {
   const btn = document.getElementById('seedBtn');
   btn.disabled = true; btn.textContent = 'Seeding...';
-  const resp = await fetch('/api/notes/seed', { method: 'POST' });
+  const url = force ? '/api/notes/seed?force=1' : '/api/notes/seed';
+  const resp = await fetch(url, { method: 'POST' });
   const data = await resp.json();
-  btn.disabled = false; btn.textContent = '🌱 Seed Chapter 1';
-  showToast(data.message || (data.success ? 'Chapter 1 seeded!' : 'Error'), data.success ? 'success' : 'error');
+  btn.disabled = false; btn.textContent = '🌱 Seed Chapter 1 (17 Sections)';
+  if (data.message && data.message.includes('Already seeded')) {
+    const ok = confirm('Already seeded! Re-seed with updated 17 sections? (Old data will be replaced)');
+    if (ok) { seedNotes(true); return; }
+  }
+  showToast(data.message || (data.success ? 'Chapter 1 seeded with 17 sections!' : 'Error'), data.success ? 'success' : 'error');
   loadNotesList();
 }
 
