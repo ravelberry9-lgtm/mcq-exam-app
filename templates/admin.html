@@ -383,6 +383,36 @@ async function seedArtCulture(force=false) {
   }
 }
 
+// ─── INDIAN HISTORY CHAPTER 2 SEED ──────────
+async function seedCh2IH(force=false) {
+  const btn = document.getElementById('seedCh2Btn');
+  const el  = document.getElementById('ch2SeedResult');
+  btn.disabled = true; btn.textContent = '⏳ Seeding...';
+  const url = force ? '/api/notes/seed_ch2_ih?force=1' : '/api/notes/seed_ch2_ih';
+  try {
+    const data = await safeFetch(url, { method: 'POST' });
+    btn.disabled = false; btn.textContent = '🌱 Seed Notes (20 Sections)';
+    el.style.display = '';
+    if (data.message && data.message.toLowerCase().includes('already')) {
+      el.style.color = '#f57c00'; el.textContent = '⚠️ ' + data.message;
+      const ok = confirm('Already seeded! Re-seed Indian History Ch2? (Old data will be replaced)');
+      if (ok) { seedCh2IH(true); return; }
+    } else if (data.success) {
+      el.style.color = '#2e7d32';
+      el.textContent = '✅ ' + (data.message || 'Indian History Ch2 seeded!');
+      showToast(data.message || 'Indian History Ch2 seeded!', 'success');
+      loadNotesList();
+    } else {
+      el.style.color = '#c62828'; el.textContent = '❌ ' + (data.error || 'Error seeding');
+    }
+  } catch(e) {
+    btn.disabled = false; btn.textContent = '🌱 Seed Notes (20 Sections)';
+    el.style.display = ''; el.style.color = '#c62828';
+    el.textContent = '❌ ' + e.message;
+    alert('Seed Indian History Ch2 failed:\n' + e.message);
+  }
+}
+
 // ─── CHAPTER MCQ SEED ────────────────────────
 async function seedChapterMcqs(force=false) {
   const btn = document.getElementById('seedMcqBtn');
@@ -447,6 +477,15 @@ async function seedChapterMcqs(force=false) {
     </button>
   </div>
   <div id="acSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+
+  <!-- Indian History Ch2 -->
+  <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:6px;">📜 Indian History — Chapter 2 (Pre-Historic Cultures)</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+    <button id="seedCh2Btn" onclick="seedCh2IH()" class="btn btn-success" style="min-height:40px;padding:8px 18px;font-size:13px;">
+      🌱 Seed Notes (20 Sections)
+    </button>
+  </div>
+  <div id="ch2SeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
