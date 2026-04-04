@@ -286,20 +286,36 @@ async function deleteTopic(folder, topic) {
   if (data.success) { showToast('Topic deleted!', 'success'); setTimeout(() => location.reload(), 1000); }
 }
 
+// ─── safe JSON fetch helper ───────────────────
+async function safeFetch(url, opts) {
+  const resp = await fetch(url, opts);
+  const text = await resp.text();
+  try { return JSON.parse(text); }
+  catch(e) {
+    // Server returned non-JSON — show first 120 chars for diagnosis
+    throw new Error('Server returned non-JSON (HTTP ' + resp.status + '): ' + text.slice(0,120));
+  }
+}
+
 // ─── NOTES ───────────────────────────────────
 async function seedNotes(force=false) {
   const btn = document.getElementById('seedBtn');
   btn.disabled = true; btn.textContent = 'Seeding...';
   const url = force ? '/api/notes/seed?force=1' : '/api/notes/seed';
-  const resp = await fetch(url, { method: 'POST' });
-  const data = await resp.json();
-  btn.disabled = false; btn.textContent = '🌱 Seed Chapter 1 (17 Sections)';
-  if (data.message && data.message.includes('Already seeded')) {
-    const ok = confirm('Already seeded! Re-seed with updated 17 sections? (Old data will be replaced)');
-    if (ok) { seedNotes(true); return; }
+  try {
+    const data = await safeFetch(url, { method: 'POST' });
+    btn.disabled = false; btn.textContent = '🌱 Seed Chapter 1 (17 Sections)';
+    if (data.message && data.message.includes('Already seeded')) {
+      const ok = confirm('Already seeded! Re-seed with updated 17 sections? (Old data will be replaced)');
+      if (ok) { seedNotes(true); return; }
+    }
+    showToast(data.message || (data.success ? 'Chapter 1 seeded!' : 'Error'), data.success ? 'success' : 'error');
+    loadNotesList();
+  } catch(e) {
+    btn.disabled = false; btn.textContent = '🌱 Seed Chapter 1 (17 Sections)';
+    showToast('❌ ' + e.message, 'error');
+    alert('Seed Notes failed:\n' + e.message);
   }
-  showToast(data.message || (data.success ? 'Chapter 1 seeded with 17 sections!' : 'Error'), data.success ? 'success' : 'error');
-  loadNotesList();
 }
 
 async function loadNotesList() {
@@ -343,21 +359,27 @@ async function seedArtCulture(force=false) {
   const el  = document.getElementById('acSeedResult');
   btn.disabled = true; btn.textContent = '⏳ Seeding...';
   const url = force ? '/api/notes/seed_ac1?force=1' : '/api/notes/seed_ac1';
-  const resp = await fetch(url, { method: 'POST' });
-  const data = await resp.json();
-  btn.disabled = false; btn.textContent = '🌱 Seed Notes (20 Sections)';
-  el.style.display = '';
-  if (data.message && data.message.toLowerCase().includes('already')) {
-    el.style.color = '#f57c00'; el.textContent = '⚠️ ' + data.message;
-    const ok = confirm('Already seeded! Re-seed Art & Culture Ch1? (Old data will be replaced)');
-    if (ok) { seedArtCulture(true); return; }
-  } else if (data.success) {
-    el.style.color = '#2e7d32';
-    el.textContent = '✅ ' + (data.message || 'Art & Culture Ch1 seeded!');
-    showToast(data.message || 'Art & Culture Ch1 seeded!', 'success');
-    loadNotesList();
-  } else {
-    el.style.color = '#c62828'; el.textContent = '❌ ' + (data.error || 'Error seeding');
+  try {
+    const data = await safeFetch(url, { method: 'POST' });
+    btn.disabled = false; btn.textContent = '🌱 Seed Notes (20 Sections)';
+    el.style.display = '';
+    if (data.message && data.message.toLowerCase().includes('already')) {
+      el.style.color = '#f57c00'; el.textContent = '⚠️ ' + data.message;
+      const ok = confirm('Already seeded! Re-seed Art & Culture Ch1? (Old data will be replaced)');
+      if (ok) { seedArtCulture(true); return; }
+    } else if (data.success) {
+      el.style.color = '#2e7d32';
+      el.textContent = '✅ ' + (data.message || 'Art & Culture Ch1 seeded!');
+      showToast(data.message || 'Art & Culture Ch1 seeded!', 'success');
+      loadNotesList();
+    } else {
+      el.style.color = '#c62828'; el.textContent = '❌ ' + (data.error || 'Error seeding');
+    }
+  } catch(e) {
+    btn.disabled = false; btn.textContent = '🌱 Seed Notes (20 Sections)';
+    el.style.display = ''; el.style.color = '#c62828';
+    el.textContent = '❌ ' + e.message;
+    alert('Seed Art & Culture failed:\n' + e.message);
   }
 }
 
@@ -366,17 +388,14 @@ async function seedChapterMcqs(force=false) {
   const btn = document.getElementById('seedMcqBtn');
   const el  = document.getElementById('mcqSeedResult');
   btn.disabled = true; btn.textContent = '⏳ Seeding MCQs...';
-
   const url = force ? '/api/mcq/seed_ch1?force=1' : '/api/mcq/seed_ch1';
   try {
-    const resp = await fetch(url, { method: 'POST' });
-    const data = await resp.json();
+    const data = await safeFetch(url, { method: 'POST' });
     btn.disabled = false; btn.textContent = '🎯 Seed Chapter 1 MCQs (61 Questions)';
     el.style.display = '';
-
     if (data.error) {
       el.style.color = '#c62828';
-      el.textContent = '❌ Error: ' + data.error;
+      el.textContent = '❌ ' + data.error;
       showToast('MCQ seed failed', 'error');
     } else if (data.message && data.message.toLowerCase().includes('already')) {
       el.style.color = '#f57c00';
@@ -394,7 +413,8 @@ async function seedChapterMcqs(force=false) {
   } catch(e) {
     btn.disabled = false; btn.textContent = '🎯 Seed Chapter 1 MCQs (61 Questions)';
     el.style.display = ''; el.style.color = '#c62828';
-    el.textContent = '❌ Network error: ' + e.message;
+    el.textContent = '❌ ' + e.message;
+    alert('Seed MCQs failed:\n' + e.message);
   }
 }
 </script>
