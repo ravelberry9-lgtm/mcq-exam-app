@@ -715,22 +715,28 @@ def notes_seed():
     """Seed Chapter 1 Indian History. Add ?force=1 to overwrite existing."""
     force = request.args.get('force', '0') == '1'
     conn = get_db()
-    # Ensure study_notes table exists on Railway
+    # Ensure study_notes table exists (handles older Railway deployments)
     if USE_POSTGRES:
         cur0 = conn.cursor()
         cur0.execute('''CREATE TABLE IF NOT EXISTS study_notes (
             id SERIAL PRIMARY KEY,
-            subject TEXT NOT NULL,
-            topic TEXT NOT NULL,
+            subject TEXT NOT NULL, topic TEXT NOT NULL,
             chapter_num INTEGER NOT NULL,
-            chapter_title_te TEXT NOT NULL,
-            chapter_title_en TEXT NOT NULL,
-            pages_ref TEXT DEFAULT '',
-            sections_json TEXT NOT NULL DEFAULT '[]',
+            chapter_title_te TEXT NOT NULL, chapter_title_en TEXT NOT NULL,
+            pages_ref TEXT DEFAULT '', sections_json TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )''')
+        conn.commit(); cur0.close()
+    else:
+        conn.execute('''CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            subject TEXT NOT NULL, topic TEXT NOT NULL,
+            chapter_num INTEGER NOT NULL,
+            chapter_title_te TEXT NOT NULL, chapter_title_en TEXT NOT NULL,
+            pages_ref TEXT DEFAULT '', sections_json TEXT NOT NULL DEFAULT '[]',
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )''')
         conn.commit()
-        cur0.close()
     cur = db_exec(conn, "SELECT id FROM study_notes WHERE subject='GK' AND topic='Indian_History' AND chapter_num=1")
     existing = cur.fetchone()
     if existing and not force:
@@ -848,22 +854,28 @@ def notes_seed_ac1():
     """Seed Art & Culture Ch1 — GK / Art_Culture. Add ?force=1 to overwrite."""
     force = request.args.get('force', '0') == '1'
     conn = get_db()
-    # Ensure study_notes table exists on Railway
+    # Ensure study_notes table exists (handles older Railway deployments)
     if USE_POSTGRES:
         cur0 = conn.cursor()
         cur0.execute('''CREATE TABLE IF NOT EXISTS study_notes (
             id SERIAL PRIMARY KEY,
-            subject TEXT NOT NULL,
-            topic TEXT NOT NULL,
+            subject TEXT NOT NULL, topic TEXT NOT NULL,
             chapter_num INTEGER NOT NULL,
-            chapter_title_te TEXT NOT NULL,
-            chapter_title_en TEXT NOT NULL,
-            pages_ref TEXT DEFAULT '',
-            sections_json TEXT NOT NULL DEFAULT '[]',
+            chapter_title_te TEXT NOT NULL, chapter_title_en TEXT NOT NULL,
+            pages_ref TEXT DEFAULT '', sections_json TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )''')
+        conn.commit(); cur0.close()
+    else:
+        conn.execute('''CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            subject TEXT NOT NULL, topic TEXT NOT NULL,
+            chapter_num INTEGER NOT NULL,
+            chapter_title_te TEXT NOT NULL, chapter_title_en TEXT NOT NULL,
+            pages_ref TEXT DEFAULT '', sections_json TEXT NOT NULL DEFAULT '[]',
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )''')
         conn.commit()
-        cur0.close()
     cur = db_exec(conn, "SELECT id FROM study_notes WHERE subject='GK' AND topic='Art_Culture' AND chapter_num=1")
     if cur.fetchone():
         if not force:
@@ -1293,7 +1305,7 @@ def seed_ch1_mcqs():
 def _seed_ch1_mcqs_inner():
     force = request.args.get('force', '0') == '1'
     conn = get_db()
-    # Ensure chapter_mcqs table exists (may not exist on older Railway deployments)
+    # Ensure chapter_mcqs table exists (handles deployments where init_db ran before this table was added)
     if USE_POSTGRES:
         cur0 = conn.cursor()
         cur0.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
@@ -1312,6 +1324,22 @@ def _seed_ch1_mcqs_inner():
         )''')
         conn.commit()
         cur0.close()
+    else:
+        conn.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            study_note_id INTEGER NOT NULL,
+            section_idx INTEGER NOT NULL DEFAULT 0,
+            difficulty INTEGER NOT NULL DEFAULT 1,
+            q_te TEXT NOT NULL,
+            opt_a TEXT NOT NULL,
+            opt_b TEXT NOT NULL,
+            opt_c TEXT NOT NULL,
+            opt_d TEXT NOT NULL,
+            correct TEXT NOT NULL,
+            explanation_te TEXT NOT NULL DEFAULT '',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )''')
+        conn.commit()
     # Get chapter 1 id
     cur = db_exec(conn, "SELECT id FROM study_notes WHERE subject='GK' AND topic='Indian_History' AND chapter_num=1")
     row = cur.fetchone()
