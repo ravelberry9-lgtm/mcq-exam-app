@@ -1250,6 +1250,15 @@ def delete_chapter_mcqs(chapter_id):
 @app.route('/api/mcq/seed_ch1', methods=['POST'])
 def seed_ch1_mcqs():
     """Seed all Chapter 1 MCQs. Add ?force=1 to overwrite."""
+    try:
+        return _seed_ch1_mcqs_inner()
+    except Exception as exc:
+        import traceback
+        tb = traceback.format_exc()
+        print("MCQ SEED ERROR:", tb)
+        return jsonify({'success': False, 'error': str(exc), 'traceback': tb}), 500
+
+def _seed_ch1_mcqs_inner():
     force = request.args.get('force', '0') == '1'
     conn = get_db()
     # Get chapter 1 id
@@ -1796,9 +1805,15 @@ def seed_ch1_mcqs():
     insert_sql = '''INSERT INTO chapter_mcqs
         (study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te)
         VALUES (?,?,?,?,?,?,?,?,?,?)'''
-    for m in mcqs:
-        db_exec(conn, insert_sql, (ch_id,) + m)
-    conn.commit()
+    try:
+        for i, m in enumerate(mcqs):
+            db_exec(conn, insert_sql, (ch_id,) + m)
+        conn.commit()
+    except Exception as e:
+        try: conn.rollback()
+        except: pass
+        conn.close()
+        raise RuntimeError(f'INSERT failed at MCQ index (after commit): {e}')
     conn.close()
     return jsonify({'success': True, 'message': f'{len(mcqs)} MCQs seeded for Chapter 1!'})
 
