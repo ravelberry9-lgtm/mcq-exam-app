@@ -651,6 +651,19 @@ def notes_topic(subject, topic):
     ''', (subject, topic))
     chapters = [row_to_dict(r) for r in cur.fetchall()]
     conn.close()
+    # Pre-compute estimated seconds (130 wpm) so the template doesn't need to parse sections_json
+    for ch in chapters:
+        try:
+            secs = json.loads(ch.get('sections_json') or '[]')
+            total_words = sum(
+                len((s.get('audio') or s.get('text') or '').split())
+                for s in secs
+            )
+            ch['est_secs']   = max(5, round(total_words / (130 / 60))) if total_words else 0
+            ch['sec_count']  = len(secs)
+        except Exception:
+            ch['est_secs']  = 0
+            ch['sec_count'] = 0
     return render_template('notes_topic.html', subject=subject, topic=topic, chapters=chapters)
 
 
@@ -663,9 +676,16 @@ def notes_chapter(subject, topic, chapter_id):
     if not chapter:
         return redirect('/notes')
     sections = json.loads(chapter['sections_json'])
+    # Pre-compute estimated total seconds (130 wpm at 1×) for the chapter header
+    try:
+        total_words = sum(len((s.get('audio') or s.get('text') or '').split()) for s in sections)
+        ch_est_secs = max(5, round(total_words / (130 / 60))) if total_words else 0
+    except Exception:
+        ch_est_secs = 0
     return render_template('notes_chapter.html',
                            subject=subject, topic=topic,
-                           chapter=chapter, sections=sections)
+                           chapter=chapter, sections=sections,
+                           ch_est_secs=ch_est_secs)
 
 
 @app.route('/api/notes/add', methods=['POST'])

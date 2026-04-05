@@ -135,18 +135,9 @@ function fmtTimeFull(secs) {
   return m > 0 ? m + 'm ' + s + 's' : s + 's';
 }
 
-function loadChapterSectionCount(chapterId) {
-  // We pass section counts from the server via a lookup
-  return CHAPTER_COUNTS[chapterId] || 0;
-}
-
+// est_secs and sec_count are pre-computed server-side and injected per chapter
 const CHAPTER_COUNTS = {};
-CHAPTERS.forEach(ch => {
-  try {
-    const secs = JSON.parse(ch.sections_json || '[]');
-    CHAPTER_COUNTS[ch.id] = secs.length;
-  } catch(e) { CHAPTER_COUNTS[ch.id] = 0; }
-});
+CHAPTERS.forEach(ch => { CHAPTER_COUNTS[ch.id] = ch.sec_count || 0; });
 
 function refreshAllProgress() {
   CHAPTERS.forEach(ch => {
@@ -171,11 +162,22 @@ function refreshAllProgress() {
       lastEl.textContent = '🕐 చివరిసారి: ' + relativeTime(prog.last);
     }
 
-    // Show total listening time for this chapter
-    const times     = loadChapterTimes(ch.id);
-    const totalSecs = Object.values(times).reduce((a, b) => a + b, 0);
-    const timeEl    = document.getElementById('prog-time-' + ch.id);
-    if (timeEl) timeEl.textContent = totalSecs > 0 ? '⏱ ' + fmtTimeFull(totalSecs) : '';
+    // Show total listening time (or estimated) for this chapter
+    const times      = loadChapterTimes(ch.id);
+    const listenSecs = Object.values(times).reduce((a, b) => a + b, 0);
+    const estSecs    = ch.est_secs || 0;
+    const timeEl     = document.getElementById('prog-time-' + ch.id);
+    if (timeEl) {
+      if (listenSecs > 0 && estSecs > 0) {
+        timeEl.textContent  = '⏱ ' + fmtTimeFull(listenSecs) + ' / ~' + fmtTimeFull(estSecs);
+        timeEl.style.color  = '#2e7d32';
+      } else if (estSecs > 0) {
+        timeEl.textContent  = '🕐 ~' + fmtTimeFull(estSecs);
+        timeEl.style.color  = '#8a6a40';
+      } else {
+        timeEl.textContent  = '';
+      }
+    }
 
     // Change badge to ✅ Done when 100%
     if (badge && pct === 100) {

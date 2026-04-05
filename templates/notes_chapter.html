@@ -498,8 +498,10 @@ let curEstSecs    = 0;     // estimated total seconds for current section
 /* ── TIMING HELPERS ── */
 function estimateDuration(text, rate) {
   // Rough estimate: Telugu TTS ≈ 130 words/min at 1×
-  rate = rate || 1;
-  const words = text.trim().split(/\s+/).length;
+  rate  = rate || 1;
+  text  = (text || '').toString();
+  const words = text.trim().split(/\s+/).filter(w => w.length > 0).length;
+  if (!words) return 5;
   return Math.max(5, Math.round(words / (130 * rate / 60)));
 }
 
@@ -1294,18 +1296,23 @@ renderEstimates();
 updateOrderBtn();
 refreshChHeaderTime();
 
+const CH_EST_SECS = {{ ch_est_secs }};  // pre-computed server-side (130 wpm at 1×)
+
 function refreshChHeaderTime() {
-  const times  = loadTimes();
-  const total  = Object.values(times).reduce((a, b) => a + b, 0);
-  const p      = loadProg();
-  const done   = p.done ? p.done.length : 0;
-  const secTot = SECS.length;
-  const el     = document.getElementById('chHeaderTime');
+  const el = document.getElementById('chHeaderTime');
   if (!el) return;
-  if (total > 0) {
-    el.textContent = '⏱ ' + fmtTimeFull(total) + ' వినిపించబడింది  ·  ' + done + '/' + secTot + ' sections';
-  } else if (done > 0) {
-    el.textContent = done + '/' + secTot + ' sections పూర్తయ్యాయి';
+
+  const times    = loadTimes();
+  const listened = Object.values(times).reduce((a, b) => a + b, 0);
+  const p        = loadProg();
+  const done     = p.done ? p.done.length : 0;
+  const secTot   = SECS.length;
+  const estTotal = CH_EST_SECS;
+
+  if (listened > 0) {
+    el.textContent = '⏱ ' + fmtTimeFull(listened) + ' వినిపించబడింది  ·  ~' + fmtTimeFull(estTotal) + ' మొత్తం  ·  ' + done + '/' + secTot + ' sections';
+  } else {
+    el.textContent = '📖 ' + secTot + ' sections  ·  ~' + fmtTimeFull(estTotal) + ' estimated';
   }
 }
 </script>
