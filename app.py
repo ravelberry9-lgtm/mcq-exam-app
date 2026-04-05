@@ -3125,6 +3125,41 @@ def seed_ch4_mcqs():
     finally:
         conn.close()
 
+# ── CHAPTER 5: మత సంస్కరణోద్యమాలు ─────────────────────────────────────────────
+try:
+    from seed_ch5 import _seed_ch5_notes_inner, _seed_ch5_mcqs_inner
+    _SEED_CH5_LOADED = True
+except Exception as _e:
+    _SEED_CH5_LOADED = False
+    print(f"[WARN] seed_ch5.py not loaded: {_e}")
+
+@app.route('/api/notes/seed_ch5_ih', methods=['POST'])
+def notes_seed_ch5_ih():
+    if not _SEED_CH5_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch5.py not found'}), 500
+    conn = get_db()
+    try:
+        force = request.args.get('force', '0') == '1'
+        result = _seed_ch5_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=force)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+@app.route('/api/mcq/seed_ch5', methods=['POST'])
+def seed_ch5_mcqs():
+    if not _SEED_CH5_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch5.py not found'}), 500
+    conn = get_db()
+    try:
+        result = _seed_ch5_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print("\n" + "="*55)
