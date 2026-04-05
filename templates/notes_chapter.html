@@ -264,6 +264,23 @@
   [data-theme="dark"] .quiz-explanation { background:#2d2200; border-color:#856404; color:#f5deb3; }
   [data-theme="dark"] .result-breakdown { border-color:#2a2d3e; }
 
+  /* ── Quiz order toggle ── */
+  .qz-order-btn {
+    border:none; border-radius:14px; padding:4px 10px;
+    font-size:11px; font-weight:700; cursor:pointer; white-space:nowrap;
+  }
+  .qz-order-random     { background:#fff3cd; color:#856404; }
+  .qz-order-sequential { background:#e3f2fd; color:#1565c0; }
+
+  /* ── Relisten banner (inside quiz) ── */
+  .qz-relisten-banner {
+    display:none; background:#f3e5f5; border:1.5px solid #7b1fa2;
+    border-radius:10px; padding:9px 12px; margin-bottom:10px;
+    align-items:center; gap:8px;
+  }
+  .qz-relisten-banner.show { display:flex; }
+  [data-theme="dark"] .qz-relisten-banner { background:#1a0d2e; border-color:#ab47bc; }
+
   /* ── Audio Timing ── */
   .sec-dur {
     font-size:10px; color:#8a6a40; background:#fdf3e3;
@@ -330,6 +347,7 @@
     {% if chapter.pages_ref %}
     <div style="font-size:11px;opacity:0.7;margin-top:6px;">📄 Pages {{ chapter.pages_ref }} | Winners Publications</div>
     {% endif %}
+    <div id="chHeaderTime" style="font-size:12px;opacity:0.9;margin-top:6px;font-weight:700;"></div>
   </div>
 
   <!-- Resume bar (shown when returning after audio was interrupted) -->
@@ -403,11 +421,17 @@
     <!-- Header -->
     <div class="quiz-header">
       <h3 id="quizTitle">🎯 Chapter Quiz</h3>
+      <button class="qz-order-btn qz-order-random" id="qzOrderBtn" onclick="toggleQuizOrder()">🔀 Random</button>
       <button class="quiz-close" onclick="closeQuiz()">✕</button>
     </div>
 
     <!-- Question panel -->
     <div class="quiz-body" id="quizBody">
+      <!-- Relisten banner (shown while audio plays inside quiz) -->
+      <div class="qz-relisten-banner" id="qzRelistenBanner">
+        <span style="flex:1;font-size:12px;color:#7b1fa2;font-weight:700;" id="qzRelistenLabel">🔊 వింటున్నారు...</span>
+        <button onclick="stopRelisten()" style="border:none;background:#7b1fa2;color:white;border-radius:8px;padding:4px 12px;font-size:11px;font-weight:700;cursor:pointer;">⏹ Stop</button>
+      </div>
       <!-- Progress -->
       <div class="quiz-progress-row">
         <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qzProgFill" style="width:0%"></div></div>
@@ -963,11 +987,42 @@ function renderCompletionSummary() {
    CHAPTER QUIZ
 ══════════════════════════════════════════ */
 let qzAll    = [];   // all MCQ objects from API
-let qzQueue  = [];   // shuffled copy
+let qzQueue  = [];   // ordered copy (random or sequential)
 let qzIdx    = 0;    // current question index in qzQueue
 let qzScore  = 0;
 let qzHistory = [];  // {q, chosen, correct, secIdx, secTitle}
 let qzCurSecIdx = -1; // section index of current question (for re-listen)
+
+// ── Quiz order mode ──
+let qzOrderMode = localStorage.getItem('quiz_order_' + CHAPTER_ID) || 'random';
+
+function toggleQuizOrder() {
+  qzOrderMode = qzOrderMode === 'random' ? 'sequential' : 'random';
+  localStorage.setItem('quiz_order_' + CHAPTER_ID, qzOrderMode);
+  updateOrderBtn();
+}
+
+function updateOrderBtn() {
+  const btn = document.getElementById('qzOrderBtn');
+  if (!btn) return;
+  if (qzOrderMode === 'random') {
+    btn.textContent = '🔀 Random';
+    btn.className   = 'qz-order-btn qz-order-random';
+    btn.title       = 'Click to switch to sequential order';
+  } else {
+    btn.textContent = '📋 Sequential';
+    btn.className   = 'qz-order-btn qz-order-sequential';
+    btn.title       = 'Click to switch to random order';
+  }
+}
+
+function buildQueue() {
+  if (qzOrderMode === 'sequential') {
+    // Section order, then stable within each section
+    return [...qzAll].sort((a, b) => a.section_idx - b.section_idx || (a.id - b.id));
+  }
+  return shuffle([...qzAll]);
+}
 
 async function openQuiz() {
   // Reset state
@@ -982,6 +1037,8 @@ async function openQuiz() {
   document.getElementById('qzExpl').classList.remove('show');
   document.getElementById('qzNextBtn').classList.remove('show');
   document.getElementById('qzRelistenBtn').classList.remove('show');
+  document.getElementById('qzRelistenBanner').classList.remove('show');
+  updateOrderBtn();   // ← show correct toggle label on open
 
   // Fetch MCQs
   try {
@@ -992,7 +1049,7 @@ async function openQuiz() {
       return;
     }
     qzAll   = data.mcqs;
-    qzQueue = shuffle([...qzAll]);
+    qzQueue = buildQueue();   // ← respect chosen order
     renderQuestion();
   } catch(e) {
     document.getElementById('qzQuestion').textContent = '❌ Error loading questions: ' + e.message;
@@ -1000,8 +1057,9 @@ async function openQuiz() {
 }
 
 function closeQuiz() {
+  speechSynthesis.cancel();   // stop any in-quiz audio
+  document.getElementById('qzRelistenBanner').classList.remove('show');
   document.getElementById('quizOverlay').classList.remove('show');
-  speechSynthesis.cancel(); // stop any re-listen audio
 }
 function closeQuizOnBackdrop(e) {
   if (e.target === document.getElementById('quizOverlay')) closeQuiz();
@@ -1114,8 +1172,7 @@ function nextQuestion() {
 
 function relistenSection() {
   if (qzCurSecIdx < 0 || qzCurSecIdx >= SECS.length) return;
-  closeQuiz();
-  setTimeout(() => playSec(qzCurSecIdx), 300);
+  startRelistenAudio(qzCurSecIdx);   // ← stay inside quiz, play in background
 }
 
 function showResults() {
@@ -1171,12 +1228,42 @@ function showResults() {
 }
 
 function relistenFromResult(secIdx) {
-  closeQuiz();
-  setTimeout(() => playSec(secIdx), 300);
+  startRelistenAudio(secIdx);   // ← stay inside quiz/results, play in background
+}
+
+/* ── IN-QUIZ RELISTEN AUDIO ── */
+function startRelistenAudio(secIdx) {
+  speechSynthesis.cancel();
+  const sec = SECS[secIdx];
+  if (!sec) return;
+
+  const banner = document.getElementById('qzRelistenBanner');
+  const label  = document.getElementById('qzRelistenLabel');
+  if (banner) banner.classList.add('show');
+  if (label)  label.textContent = '🔊 ' + (sec.title || ('Section ' + (secIdx + 1))) + ' వింటున్నారు...';
+
+  const ru = new SpeechSynthesisUtterance(sec.audio);
+  ru.lang = 'te-IN';
+  ru.rate = parseFloat(document.getElementById('spd').value) || 1;
+  const v = getVoice(); if (v) ru.voice = v;
+
+  ru.onend = ru.onerror = () => {
+    const b = document.getElementById('qzRelistenBanner');
+    if (b) b.classList.remove('show');
+  };
+  speechSynthesis.speak(ru);
+}
+
+function stopRelisten() {
+  speechSynthesis.cancel();
+  const banner = document.getElementById('qzRelistenBanner');
+  if (banner) banner.classList.remove('show');
 }
 
 function retakeQuiz() {
-  qzQueue = shuffle([...qzAll]);
+  speechSynthesis.cancel();
+  document.getElementById('qzRelistenBanner').classList.remove('show');
+  qzQueue = buildQueue();   // ← respect chosen order on retake too
   qzIdx = 0; qzScore = 0; qzHistory = []; qzCurSecIdx = -1;
   document.getElementById('quizBody').style.display = 'block';
   document.getElementById('quizResult').classList.remove('show');
@@ -1187,10 +1274,12 @@ function retakeQuiz() {
 document.addEventListener('DOMContentLoaded', () => {
   refreshProgressUI();
   refreshBookmarkUI();
-  refreshTimingUI();   // ← restore actual times on done badges + top banner
+  refreshTimingUI();      // ← restore actual times on done badges + top banner
   applyFilter();
-  renderEstimates();   // ← show estimated durations on all section cards
-  checkAllDone();      // ← restore completion summary if all done
+  renderEstimates();      // ← show estimated durations on all section cards
+  checkAllDone();         // ← restore completion summary if all done
+  updateOrderBtn();       // ← show correct quiz order toggle label
+  refreshChHeaderTime();  // ← show total chapter time in header card
   // Show resume bar if there's a saved mid-session position
   const pos = loadPosition();
   if (pos && pos.sec >= 0 && pos.sec < SECS.length) {
@@ -1202,5 +1291,22 @@ refreshProgressUI();
 refreshBookmarkUI();
 refreshTimingUI();
 renderEstimates();
+updateOrderBtn();
+refreshChHeaderTime();
+
+function refreshChHeaderTime() {
+  const times  = loadTimes();
+  const total  = Object.values(times).reduce((a, b) => a + b, 0);
+  const p      = loadProg();
+  const done   = p.done ? p.done.length : 0;
+  const secTot = SECS.length;
+  const el     = document.getElementById('chHeaderTime');
+  if (!el) return;
+  if (total > 0) {
+    el.textContent = '⏱ ' + fmtTimeFull(total) + ' వినిపించబడింది  ·  ' + done + '/' + secTot + ' sections';
+  } else if (done > 0) {
+    el.textContent = done + '/' + secTot + ' sections పూర్తయ్యాయి';
+  }
+}
 </script>
 {% endblock %}

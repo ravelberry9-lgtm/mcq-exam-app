@@ -77,7 +77,10 @@
             <div class="ch-prog-bar"><div class="ch-prog-fill" id="prog-fill-{{ ch.id }}" style="width:0%"></div></div>
             <div class="ch-prog-pct" id="prog-pct-{{ ch.id }}"></div>
           </div>
-          <div class="ch-prog-last" id="prog-last-{{ ch.id }}"></div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:2px;">
+            <div class="ch-prog-last" id="prog-last-{{ ch.id }}" style="flex:1;"></div>
+            <div id="prog-time-{{ ch.id }}" style="font-size:10px;color:#2e7d32;font-weight:700;white-space:nowrap;"></div>
+          </div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
@@ -120,6 +123,18 @@ function loadChapterProgress(chapterId) {
   catch(e) { return {done:[], last:null}; }
 }
 
+function loadChapterTimes(chapterId) {
+  try { return JSON.parse(localStorage.getItem('notes_time_' + chapterId)) || {}; }
+  catch(e) { return {}; }
+}
+
+function fmtTimeFull(secs) {
+  secs = Math.max(0, Math.floor(secs));
+  const m = Math.floor(secs / 60);
+  const s = secs % 60;
+  return m > 0 ? m + 'm ' + s + 's' : s + 's';
+}
+
 function loadChapterSectionCount(chapterId) {
   // We pass section counts from the server via a lookup
   return CHAPTER_COUNTS[chapterId] || 0;
@@ -155,6 +170,12 @@ function refreshAllProgress() {
     if (lastEl && prog.last) {
       lastEl.textContent = '🕐 చివరిసారి: ' + relativeTime(prog.last);
     }
+
+    // Show total listening time for this chapter
+    const times     = loadChapterTimes(ch.id);
+    const totalSecs = Object.values(times).reduce((a, b) => a + b, 0);
+    const timeEl    = document.getElementById('prog-time-' + ch.id);
+    if (timeEl) timeEl.textContent = totalSecs > 0 ? '⏱ ' + fmtTimeFull(totalSecs) : '';
 
     // Change badge to ✅ Done when 100%
     if (badge && pct === 100) {
