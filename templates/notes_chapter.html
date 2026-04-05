@@ -216,7 +216,20 @@
   }
   .quiz-explanation.show { display:block; }
 
+  /* Filter row */
+  .qz-filter-row { display:flex; gap:5px; flex-wrap:wrap; padding:8px 16px 6px; background:#f0f2ff; border-bottom:1px solid #d0d5f5; }
+  .qz-filter-btn { border:1.5px solid #c8b8f0; background:#fff; color:#6a1b9a; border-radius:12px; padding:3px 10px; font-size:10px; font-weight:700; cursor:pointer; transition:all 0.15s; }
+  .qz-filter-btn:hover { background:#e8e0f5; }
+  .qz-filter-btn.active { background:#7b1fa2; color:white; border-color:#7b1fa2; }
+  .qz-filter-btn.filt-wrong-active { background:#c62828; color:white; border-color:#c62828; }
+
   .quiz-footer { display:flex; gap:8px; margin-top:14px; align-items:center; flex-wrap:wrap; }
+  .quiz-prev-btn {
+    background:#e8f0fe; color:#1a73e8; border:1.5px solid #1a73e8;
+    border-radius:16px; padding:8px 16px; font-size:13px; font-weight:800;
+    cursor:pointer; display:none;
+  }
+  .quiz-prev-btn.show { display:inline-block; }
   .quiz-next-btn {
     background:#1a237e; color:white; border:none; border-radius:16px;
     padding:9px 22px; font-size:13px; font-weight:800; cursor:pointer;
@@ -229,6 +242,14 @@
     cursor:pointer; display:none;
   }
   .quiz-relisten-btn.show { display:inline-block; }
+  /* Relisten section text panel */
+  .qz-relisten-text {
+    display:none; background:#fdf3ff; border:1px solid #ce93d8;
+    border-radius:10px; padding:10px 12px; font-size:12px; color:#4a148c;
+    margin-top:8px; white-space:pre-wrap; line-height:1.7;
+    max-height:200px; overflow-y:auto;
+  }
+  .qz-relisten-text.show { display:block; }
 
   /* Results screen */
   .quiz-result { display:none; padding:20px 16px; text-align:center; }
@@ -425,6 +446,15 @@
       <button class="quiz-close" onclick="closeQuiz()">✕</button>
     </div>
 
+    <!-- Difficulty / filter row -->
+    <div class="qz-filter-row" id="qzFilterRow">
+      <button class="qz-filter-btn active" id="filt-all"   onclick="setDiffFilter('all')">📚 All</button>
+      <button class="qz-filter-btn"        id="filt-1"     onclick="setDiffFilter('1')">⭐ Easy</button>
+      <button class="qz-filter-btn"        id="filt-2"     onclick="setDiffFilter('2')">⭐⭐ Medium</button>
+      <button class="qz-filter-btn"        id="filt-3"     onclick="setDiffFilter('3')">⭐⭐⭐ Hard</button>
+      <button class="qz-filter-btn"        id="filt-wrong" onclick="setDiffFilter('wrong')">❌ Wrong</button>
+    </div>
+
     <!-- Question panel -->
     <div class="quiz-body" id="quizBody">
       <!-- Relisten banner (shown while audio plays inside quiz) -->
@@ -432,6 +462,8 @@
         <span style="flex:1;font-size:12px;color:#7b1fa2;font-weight:700;" id="qzRelistenLabel">🔊 వింటున్నారు...</span>
         <button onclick="stopRelisten()" style="border:none;background:#7b1fa2;color:white;border-radius:8px;padding:4px 12px;font-size:11px;font-weight:700;cursor:pointer;">⏹ Stop</button>
       </div>
+      <!-- Section text shown during relisten -->
+      <div class="qz-relisten-text" id="qzRelistenText"></div>
       <!-- Progress -->
       <div class="quiz-progress-row">
         <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qzProgFill" style="width:0%"></div></div>
@@ -455,6 +487,7 @@
 
       <!-- Footer buttons -->
       <div class="quiz-footer">
+        <button class="quiz-prev-btn"     id="qzPrevBtn"     onclick="prevQuestion()">← మునుపటి</button>
         <button class="quiz-next-btn"     id="qzNextBtn"     onclick="nextQuestion()">తదుపరి ప్రశ్న →</button>
         <button class="quiz-relisten-btn" id="qzRelistenBtn" onclick="relistenSection()">🔊 మళ్ళీ వినండి</button>
       </div>
@@ -469,6 +502,7 @@
       <div class="result-breakdown" id="resBreakdown"></div>
       <div>
         <button class="result-again-btn" onclick="retakeQuiz()">🔄 మళ్ళీ చేయండి</button>
+        <button class="result-again-btn" id="retryWrongBtn" onclick="retakeWrongOnly()" style="background:#fce4ec;color:#c62828;border:1.5px solid #c62828;">❌ Wrong Only</button>
         <button class="result-close-btn" onclick="closeQuiz()">✕ మూయండి</button>
       </div>
     </div>
@@ -988,15 +1022,59 @@ function renderCompletionSummary() {
 /* ══════════════════════════════════════════
    CHAPTER QUIZ
 ══════════════════════════════════════════ */
-let qzAll    = [];   // all MCQ objects from API
-let qzQueue  = [];   // ordered copy (random or sequential)
-let qzIdx    = 0;    // current question index in qzQueue
-let qzScore  = 0;
-let qzHistory = [];  // {q, chosen, correct, secIdx, secTitle}
-let qzCurSecIdx = -1; // section index of current question (for re-listen)
+let qzAll       = [];   // all MCQ objects from API
+let qzQueue     = [];   // ordered copy (random or sequential)
+let qzIdx       = 0;    // current question index in qzQueue
+let qzScore     = 0;
+let qzHistory   = [];   // {q, chosen, correct, secIdx, secTitle, isCorrect}
+let qzCurSecIdx = -1;   // section index of current question (for re-listen)
+let qzAnsweredMap = {}; // qzIdx → {chosen, isCorrect} — per-session answered state
 
 // ── Quiz order mode ──
-let qzOrderMode = localStorage.getItem('quiz_order_' + CHAPTER_ID) || 'random';
+let qzOrderMode  = localStorage.getItem('quiz_order_' + CHAPTER_ID) || 'random';
+let qzDiffFilter = localStorage.getItem('quiz_diff_'  + CHAPTER_ID) || 'all';
+
+// ── Wrong answer persistence ──
+const WRONG_KEY = 'quiz_wrong_' + CHAPTER_ID;
+function loadWrongIds() {
+  try { return new Set(JSON.parse(localStorage.getItem(WRONG_KEY)) || []); }
+  catch(e) { return new Set(); }
+}
+function saveWrongIds(s) { localStorage.setItem(WRONG_KEY, JSON.stringify([...s])); }
+
+function setDiffFilter(f) {
+  if (f === 'wrong' && loadWrongIds().size === 0) {
+    showToast('ఇంకా తప్పిన questions లేవు!', 'error');
+    return;
+  }
+  qzDiffFilter = f;
+  localStorage.setItem('quiz_diff_' + CHAPTER_ID, f);
+  updateFilterBtns();
+  // Rebuild queue with new filter if quiz is already open
+  if (qzAll.length) {
+    const newQ = buildQueue();
+    if (!newQ.length) { showToast('ఆ filter కు questions లేవు!', 'error'); return; }
+    qzQueue = newQ;
+    qzIdx = 0; qzScore = 0; qzHistory = []; qzAnsweredMap = {}; qzCurSecIdx = -1;
+    document.getElementById('quizBody').style.display = 'block';
+    document.getElementById('quizResult').classList.remove('show');
+    renderQuestion();
+  }
+}
+
+function updateFilterBtns() {
+  ['all','1','2','3','wrong'].forEach(f => {
+    const btn = document.getElementById('filt-' + f);
+    if (!btn) return;
+    btn.classList.toggle('active', qzDiffFilter === f);
+  });
+  // Show wrong count on the button
+  const wrongBtn = document.getElementById('filt-wrong');
+  if (wrongBtn) {
+    const wc = loadWrongIds().size;
+    wrongBtn.textContent = '❌ Wrong' + (wc ? ' (' + wc + ')' : '');
+  }
+}
 
 function toggleQuizOrder() {
   qzOrderMode = qzOrderMode === 'random' ? 'sequential' : 'random';
@@ -1019,16 +1097,27 @@ function updateOrderBtn() {
 }
 
 function buildQueue() {
-  if (qzOrderMode === 'sequential') {
-    // Section order, then stable within each section
-    return [...qzAll].sort((a, b) => a.section_idx - b.section_idx || (a.id - b.id));
+  let pool = [...qzAll];
+  // Apply difficulty / wrong filter
+  if (qzDiffFilter === 'wrong') {
+    const wrongIds = loadWrongIds();
+    pool = pool.filter(q => wrongIds.has(q.id));
+    if (!pool.length) return [];   // caller must handle empty
+  } else if (qzDiffFilter !== 'all') {
+    const d = parseInt(qzDiffFilter);
+    const filtered = pool.filter(q => q.difficulty === d);
+    pool = filtered.length ? filtered : pool;  // fallback to all if none
   }
-  return shuffle([...qzAll]);
+  if (qzOrderMode === 'sequential') {
+    return pool.sort((a, b) => a.section_idx - b.section_idx || (a.id - b.id));
+  }
+  return shuffle(pool);
 }
 
 async function openQuiz() {
   // Reset state
-  qzAll = []; qzQueue = []; qzIdx = 0; qzScore = 0; qzHistory = []; qzCurSecIdx = -1;
+  qzAll = []; qzQueue = []; qzIdx = 0; qzScore = 0;
+  qzHistory = []; qzAnsweredMap = {}; qzCurSecIdx = -1;
 
   // Show overlay immediately with loader
   document.getElementById('quizOverlay').classList.add('show');
@@ -1038,9 +1127,12 @@ async function openQuiz() {
   document.getElementById('qzOpts').innerHTML = '';
   document.getElementById('qzExpl').classList.remove('show');
   document.getElementById('qzNextBtn').classList.remove('show');
+  document.getElementById('qzPrevBtn').classList.remove('show');
   document.getElementById('qzRelistenBtn').classList.remove('show');
   document.getElementById('qzRelistenBanner').classList.remove('show');
-  updateOrderBtn();   // ← show correct toggle label on open
+  document.getElementById('qzRelistenText').classList.remove('show');
+  updateOrderBtn();
+  updateFilterBtns();
 
   // Fetch MCQs
   try {
@@ -1051,7 +1143,14 @@ async function openQuiz() {
       return;
     }
     qzAll   = data.mcqs;
-    qzQueue = buildQueue();   // ← respect chosen order
+    qzQueue = buildQueue();
+    if (!qzQueue.length) {
+      // filter returned nothing — fallback to all
+      qzDiffFilter = 'all';
+      localStorage.setItem('quiz_diff_' + CHAPTER_ID, 'all');
+      updateFilterBtns();
+      qzQueue = buildQueue();
+    }
     renderQuestion();
   } catch(e) {
     document.getElementById('qzQuestion').textContent = '❌ Error loading questions: ' + e.message;
@@ -1059,8 +1158,9 @@ async function openQuiz() {
 }
 
 function closeQuiz() {
-  speechSynthesis.cancel();   // stop any in-quiz audio
+  speechSynthesis.cancel();
   document.getElementById('qzRelistenBanner').classList.remove('show');
+  document.getElementById('qzRelistenText').classList.remove('show');
   document.getElementById('quizOverlay').classList.remove('show');
 }
 function closeQuizOnBackdrop(e) {
@@ -1092,8 +1192,8 @@ function renderQuestion() {
 
   // Difficulty badge
   const diffEl = document.getElementById('qzDiff');
-  const diffMap = {1:'⭐ Easy','2':'⭐⭐ Medium','3':'⭐⭐⭐ Hard'};
-  const diffCls = {1:'diff-1',2:'diff-2',3:'diff-3'};
+  const diffMap = {1:'⭐ Easy', 2:'⭐⭐ Medium', 3:'⭐⭐⭐ Hard'};
+  const diffCls = {1:'diff-1', 2:'diff-2', 3:'diff-3'};
   diffEl.textContent = diffMap[q.difficulty] || '';
   diffEl.className = 'quiz-diff ' + (diffCls[q.difficulty] || '');
 
@@ -1101,10 +1201,9 @@ function renderQuestion() {
   document.getElementById('qzQuestion').textContent = q.q_te;
 
   // Options
-  const opts = ['a','b','c','d'];
   const optsContainer = document.getElementById('qzOpts');
   optsContainer.innerHTML = '';
-  opts.forEach(letter => {
+  ['a','b','c','d'].forEach(letter => {
     const text = q['opt_' + letter];
     if (!text) return;
     const btn = document.createElement('button');
@@ -1115,20 +1214,47 @@ function renderQuestion() {
     optsContainer.appendChild(btn);
   });
 
-  // Reset explanation and buttons
-  const expl = document.getElementById('qzExpl');
-  expl.classList.remove('show'); expl.textContent = '';
-  document.getElementById('qzNextBtn').classList.remove('show');
-  document.getElementById('qzRelistenBtn').classList.remove('show');
+  // Prev button — show if not first
+  const prevBtn = document.getElementById('qzPrevBtn');
+  if (prevBtn) prevBtn.classList.toggle('show', qzIdx > 0);
+
+  // Next button — always visible (allows skipping)
+  const isLast = qzIdx >= qzQueue.length - 1;
+  const nextBtn = document.getElementById('qzNextBtn');
+  nextBtn.textContent = isLast ? '📊 ఫలితాలు చూపించు' : 'తదుపరి ప్రశ్న →';
+  nextBtn.classList.add('show');
+
+  // If already answered this session, restore answered state
+  const answered = qzAnsweredMap[qzIdx];
+  if (answered) {
+    const allBtns = optsContainer.querySelectorAll('.quiz-opt');
+    allBtns.forEach(btn => {
+      btn.disabled = true;
+      const letter = btn.dataset.letter;
+      if (letter === q.correct) btn.classList.add('correct');
+      else if (letter === answered.chosen && !answered.isCorrect) btn.classList.add('wrong');
+    });
+    if (q.explanation_te) {
+      const expl = document.getElementById('qzExpl');
+      expl.textContent = '💡 ' + q.explanation_te;
+      expl.classList.add('show');
+    }
+    document.getElementById('qzRelistenBtn').classList.toggle('show', !answered.isCorrect);
+  } else {
+    // Fresh unanswered state
+    document.getElementById('qzExpl').classList.remove('show');
+    document.getElementById('qzExpl').textContent = '';
+    document.getElementById('qzRelistenBtn').classList.remove('show');
+  }
 }
 
 function answerQuestion(chosen) {
   const q = qzQueue[qzIdx];
   if (!q) return;
+  if (qzAnsweredMap[qzIdx]) return;  // already answered — no re-answering
 
-  // Disable all options
-  const btns = document.querySelectorAll('.quiz-opt');
-  btns.forEach(btn => {
+  // Disable all options and highlight
+  document.querySelectorAll('.quiz-opt').forEach(btn => {
     btn.disabled = true;
     const letter = btn.dataset.letter;
     if (letter === q.correct) btn.classList.add('correct');
@@ -1138,7 +1264,16 @@ function answerQuestion(chosen) {
   const isCorrect = (chosen === q.correct);
   if (isCorrect) qzScore++;
 
-  // Record history
+  // Store answered state for this session (for prev navigation)
+  qzAnsweredMap[qzIdx] = { chosen, isCorrect };
+
+  // Persist to wrong-answer log
+  const wrongSet = loadWrongIds();
+  if (isCorrect) wrongSet.delete(q.id); else wrongSet.add(q.id);
+  saveWrongIds(wrongSet);
+  updateFilterBtns();  // refresh wrong count badge
+
+  // Record in history
   qzHistory.push({
     q: q.q_te,
     chosen: q['opt_' + chosen] || chosen,
@@ -1155,20 +1290,18 @@ function answerQuestion(chosen) {
     expl.classList.add('show');
   }
 
-  // Show next and re-listen buttons
-  const isLast = qzIdx >= qzQueue.length - 1;
-  const nextBtn = document.getElementById('qzNextBtn');
-  nextBtn.textContent = isLast ? '📊 ఫలితాలు చూపించు' : 'తదుపరి ప్రశ్న →';
-  nextBtn.classList.add('show');
-
-  if (!isCorrect) {
-    document.getElementById('qzRelistenBtn').classList.add('show');
-  }
+  if (!isCorrect) document.getElementById('qzRelistenBtn').classList.add('show');
 }
 
 function nextQuestion() {
   qzIdx++;
   if (qzIdx >= qzQueue.length) { showResults(); return; }
+  renderQuestion();
+}
+
+function prevQuestion() {
+  if (qzIdx <= 0) return;
+  qzIdx--;
   renderQuestion();
 }
 
@@ -1182,11 +1315,14 @@ function showResults() {
   const res = document.getElementById('quizResult');
   res.classList.add('show');
 
-  const total = qzQueue.length;
-  const pct   = total ? Math.round(qzScore / total * 100) : 0;
+  const total    = qzQueue.length;
+  const answered = Object.keys(qzAnsweredMap).length;
+  const pct      = answered ? Math.round(qzScore / answered * 100) : 0;
 
   document.getElementById('resScore').textContent = pct + '%';
-  document.getElementById('resSub').textContent   = qzScore + ' సరైనవి / ' + total + ' ప్రశ్నలు';
+  document.getElementById('resSub').textContent   =
+    qzScore + ' సరైనవి / ' + answered + ' జవాబులు' +
+    (answered < total ? '  (' + (total - answered) + ' skip)' : '');
 
   // Grade
   let grade = '', gradeColor = '';
@@ -1227,6 +1363,10 @@ function showResults() {
     }
     breakdown.appendChild(div);
   });
+
+  // Show/hide "Wrong Only" retake button based on whether there are stored wrong answers
+  const retryWrongBtn = document.getElementById('retryWrongBtn');
+  if (retryWrongBtn) retryWrongBtn.style.display = loadWrongIds().size > 0 ? '' : 'none';
 }
 
 function relistenFromResult(secIdx) {
@@ -1239,10 +1379,18 @@ function startRelistenAudio(secIdx) {
   const sec = SECS[secIdx];
   if (!sec) return;
 
+  // Show banner with label
   const banner = document.getElementById('qzRelistenBanner');
   const label  = document.getElementById('qzRelistenLabel');
   if (banner) banner.classList.add('show');
   if (label)  label.textContent = '🔊 ' + (sec.title || ('Section ' + (secIdx + 1))) + ' వింటున్నారు...';
+
+  // Show section text content
+  const textEl = document.getElementById('qzRelistenText');
+  if (textEl) {
+    textEl.textContent = sec.audio || '';
+    textEl.classList.add('show');
+  }
 
   const ru = new SpeechSynthesisUtterance(sec.audio);
   ru.lang = 'te-IN';
@@ -1252,6 +1400,7 @@ function startRelistenAudio(secIdx) {
   ru.onend = ru.onerror = () => {
     const b = document.getElementById('qzRelistenBanner');
     if (b) b.classList.remove('show');
+    // Keep text visible after audio ends so user can read it
   };
   speechSynthesis.speak(ru);
 }
@@ -1260,16 +1409,30 @@ function stopRelisten() {
   speechSynthesis.cancel();
   const banner = document.getElementById('qzRelistenBanner');
   if (banner) banner.classList.remove('show');
+  const textEl = document.getElementById('qzRelistenText');
+  if (textEl) textEl.classList.remove('show');
 }
 
 function retakeQuiz() {
   speechSynthesis.cancel();
   document.getElementById('qzRelistenBanner').classList.remove('show');
-  qzQueue = buildQueue();   // ← respect chosen order on retake too
-  qzIdx = 0; qzScore = 0; qzHistory = []; qzCurSecIdx = -1;
+  document.getElementById('qzRelistenText').classList.remove('show');
+  qzQueue = buildQueue();
+  qzIdx = 0; qzScore = 0; qzHistory = []; qzAnsweredMap = {}; qzCurSecIdx = -1;
   document.getElementById('quizBody').style.display = 'block';
   document.getElementById('quizResult').classList.remove('show');
+  updateFilterBtns();
   renderQuestion();
+}
+
+function retakeWrongOnly() {
+  if (loadWrongIds().size === 0) {
+    showToast('తప్పిన questions లేవు — అన్నీ సరైనవి! 🎉', 'success');
+    return;
+  }
+  qzDiffFilter = 'wrong';
+  localStorage.setItem('quiz_diff_' + CHAPTER_ID, 'wrong');
+  retakeQuiz();
 }
 
 // ─── INIT ───
@@ -1281,6 +1444,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderEstimates();      // ← show estimated durations on all section cards
   checkAllDone();         // ← restore completion summary if all done
   updateOrderBtn();       // ← show correct quiz order toggle label
+  updateFilterBtns();     // ← show correct filter + wrong count
   refreshChHeaderTime();  // ← show total chapter time in header card
   // Show resume bar if there's a saved mid-session position
   const pos = loadPosition();
@@ -1294,6 +1458,7 @@ refreshBookmarkUI();
 refreshTimingUI();
 renderEstimates();
 updateOrderBtn();
+updateFilterBtns();
 refreshChHeaderTime();
 
 const CH_EST_SECS = {{ ch_est_secs }};  // pre-computed server-side (130 wpm at 1×)
