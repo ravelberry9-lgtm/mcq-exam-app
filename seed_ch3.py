@@ -1227,7 +1227,7 @@ def _seed_ch3_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres, force=
 
     if existing and not force:
         return {
-            "status": "skipped",
+            "success": False,
             "message": "Chapter 3 notes already seeded. Use force=True to overwrite.",
             "total": len(CH3_SECTIONS),
         }
@@ -1255,8 +1255,8 @@ def _seed_ch3_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres, force=
         conn.commit()
 
     return {
-        "status": "ok",
-        "message": f"Chapter 3 notes seeded successfully!",
+        "success": True,
+        "message": f"Chapter 3 notes seeded successfully! ({len(CH3_SECTIONS)} sections)",
         "total": len(CH3_SECTIONS),
     }
 
@@ -1302,7 +1302,7 @@ def _seed_ch3_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
     row = cur.fetchone()
     if not row:
         return {
-            "status": "error",
+            "success": False,
             "error": "Chapter 3 study note not found. Please seed notes first (click 'Seed Notes' button).",
         }
 
@@ -1331,9 +1331,16 @@ def _seed_ch3_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
     if not use_postgres:
         conn.commit()
 
+    easy   = sum(1 for t in CH3_MCQS if t[1] == 1)
+    medium = sum(1 for t in CH3_MCQS if t[1] == 2)
+    hard   = sum(1 for t in CH3_MCQS if t[1] == 3)
+
     return {
-        "status": "ok",
-        "message": f"Chapter 3 MCQs seeded successfully!",
+        "success": True,
+        "message": f"Chapter 3 MCQs seeded successfully! Total: {inserted} questions across 20 sections.",
         "inserted": inserted,
         "total": len(CH3_MCQS),
+        "easy": easy,
+        "medium": medium,
+        "hard": hard,
     }
