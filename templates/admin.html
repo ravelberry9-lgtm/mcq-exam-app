@@ -447,6 +447,35 @@ async function seedChapterMcqs(force=false) {
     alert('Seed MCQs failed:\n' + e.message);
   }
 }
+
+// ─── CHAPTER 2 MCQ SEED ──────────────────────
+async function seedCh2Mcqs() {
+  const btn = document.getElementById('seedCh2McqBtn');
+  const el  = document.getElementById('ch2McqSeedResult');
+  btn.disabled = true; btn.textContent = '⏳ Seeding MCQs...';
+  try {
+    const data = await safeFetch('/api/mcq/seed_ch2', { method: 'POST' });
+    btn.disabled = false; btn.textContent = '🎯 Seed MCQs (75 Questions)';
+    el.style.display = '';
+    if (data.error) {
+      el.style.color = '#c62828';
+      el.textContent = '❌ ' + data.error;
+      showToast('Ch2 MCQ seed failed', 'error');
+    } else if (data.success) {
+      el.style.color = '#2e7d32';
+      el.textContent = '✅ ' + (data.message || 'Chapter 2 MCQs seeded!') + ' Open Notes → Indian History → Ch.2 → 🎯 Chapter Quiz to test.';
+      showToast(data.message || 'Chapter 2 MCQs seeded!', 'success');
+    } else {
+      el.style.color = '#888';
+      el.textContent = JSON.stringify(data);
+    }
+  } catch(e) {
+    btn.disabled = false; btn.textContent = '🎯 Seed MCQs (75 Questions)';
+    el.style.display = ''; el.style.color = '#c62828';
+    el.textContent = '❌ ' + e.message;
+    alert('Seed Ch2 MCQs failed:\n' + e.message);
+  }
+}
 </script>
 
 <!-- Notes Management Card -->
@@ -484,8 +513,12 @@ async function seedChapterMcqs(force=false) {
     <button id="seedCh2Btn" onclick="seedCh2IH()" class="btn btn-success" style="min-height:40px;padding:8px 18px;font-size:13px;">
       🌱 Seed Notes (20 Sections) — Pre-Historic Cultures
     </button>
+    <button id="seedCh2McqBtn" onclick="seedCh2Mcqs()" class="btn btn-primary" style="min-height:40px;padding:8px 18px;font-size:13px;background:linear-gradient(135deg,#1a237e,#3949ab);">
+      🎯 Seed MCQs (75 Questions)
+    </button>
   </div>
-  <div id="ch2SeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+  <div id="ch2SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
+  <div id="ch2McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
