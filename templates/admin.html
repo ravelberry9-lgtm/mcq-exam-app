@@ -588,6 +588,17 @@ async function seedCh3Mcqs() {
   </div>
   <div id="ch3SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
   <div id="ch3McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+  <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:6px;">🏛️ Indian History — Chapter 4 (వేద నాగరికత)</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+    <button id="seedCh4Btn" onclick="seedCh4IH()" class="btn btn-success" style="min-height:40px;padding:8px 18px;font-size:13px;">
+      🌱 Seed Notes (20 Sections) — Vedic Civilisation
+    </button>
+    <button id="seedCh4McqBtn" onclick="seedCh4Mcqs()" class="btn btn-primary" style="min-height:40px;padding:8px 18px;font-size:13px;background:linear-gradient(135deg,#4a148c,#7b1fa2);">
+      🎯 Seed MCQs (104 Questions)
+    </button>
+  </div>
+  <div id="ch4SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
+  <div id="ch4McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
@@ -640,6 +651,44 @@ async function seedCh3Mcqs() {
 loadNotesList();
 
 let secCount = 0;
+async function seedCh4IH(force=false) {
+  const btn = document.getElementById('seedCh4Btn');
+  const el  = document.getElementById('ch4SeedResult');
+  btn.disabled = true; btn.textContent = '⏳ Seeding Ch4 Notes...';
+  try {
+    const url = force ? '/api/notes/seed_ch4_ih?force=1' : '/api/notes/seed_ch4_ih';
+    const data = await safeFetch(url, { method: 'POST' });
+    btn.disabled = false; btn.textContent = '🌱 Seed Notes (20 Sections) — Vedic Civilisation';
+    el.style.display = 'block';
+    if (data.already_exists || (!data.success && data.message && data.message.includes('already'))) {
+      const ok = confirm('Chapter 4 notes already seeded. Overwrite?');
+      if (ok) { seedCh4IH(true); return; }
+    } else if (data.success) {
+      el.textContent = '✅ ' + (data.message || 'Chapter 4 notes seeded!');
+      showToast(data.message || 'Chapter 4 notes seeded!', 'success');
+    } else {
+      el.textContent = '❌ ' + (data.error || data.message || 'Error');
+      showToast(data.error || 'Error seeding Ch4 notes', 'error');
+    }
+  } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+}
+async function seedCh4Mcqs() {
+  const btn = document.getElementById('seedCh4McqBtn');
+  const el  = document.getElementById('ch4McqSeedResult');
+  btn.disabled = true; btn.textContent = '⏳ Seeding Ch4 MCQs...';
+  try {
+    const data = await safeFetch('/api/mcq/seed_ch4', { method: 'POST' });
+    btn.disabled = false; btn.textContent = '🎯 Seed MCQs (104 Questions)';
+    el.style.display = 'block';
+    if (!data.success) {
+      el.textContent = '❌ ' + (data.error || data.message || 'Error');
+      showToast(data.error || 'Error seeding Ch4 MCQs', 'error');
+    } else if (data.success) {
+      el.textContent = '✅ ' + (data.message || 'Chapter 4 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
+      showToast(data.message || 'Chapter 4 MCQs seeded!', 'success');
+    }
+  } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+}
 function addSection() {
   const idx = secCount++;
   const wrap = document.getElementById('sectionsWrap');
