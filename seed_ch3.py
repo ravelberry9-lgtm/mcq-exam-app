@@ -1190,106 +1190,142 @@ CH3_MCQS = [
 # ─────────────────────────────────────────────
 
 def _seed_ch3_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres, force=False):
-    """Seed Chapter 3 (Indus Valley Civilisation) notes into the DB.
+    """Seed Chapter 3 (Indus Valley Civilisation) into study_notes table.
 
-    Args:
-        conn: active DB connection
-        db_exec_fn: callable(conn, sql, params=()) → cursor
-        row_to_dict_fn: callable(cursor) → list[dict]
-        use_postgres: bool — True ⇒ %s placeholders, False ⇒ ?
-        force: if True, delete existing ch3 notes first
-    Returns:
-        dict with 'inserted', 'skipped', 'total' keys
+    Inserts one row into study_notes with sections_json = JSON array of all 20 sections.
+    Schema matches app.py:  study_notes(subject, topic, chapter_num,
+                             chapter_title_te, chapter_title_en, pages_ref, sections_json)
     """
+    import json as _json
+
     ph = "%s" if use_postgres else "?"
 
-    chapter_title = "Chapter 3 – Indus Valley Civilisation (IVC)"
+    # Ensure study_notes table exists
+    if use_postgres:
+        db_exec_fn(conn, '''CREATE TABLE IF NOT EXISTS study_notes (
+            id SERIAL PRIMARY KEY, subject TEXT NOT NULL, topic TEXT NOT NULL,
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL,
+            chapter_title_en TEXT NOT NULL, pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
+    else:
+        db_exec_fn(conn, '''CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, subject TEXT NOT NULL, topic TEXT NOT NULL,
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL,
+            chapter_title_en TEXT NOT NULL, pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
 
-    # Optionally wipe existing records
-    if force:
-        db_exec_fn(conn, f"DELETE FROM notes WHERE chapter = {ph}", (chapter_title,))
+    if not use_postgres:
+        conn.commit()
+
+    # Check for existing record
+    cur = db_exec_fn(conn,
+        f"SELECT id FROM study_notes WHERE subject={ph} AND topic={ph} AND chapter_num={ph}",
+        ('GK', 'Indian_History', 3))
+    existing = cur.fetchone()
+
+    if existing and not force:
+        return {
+            "status": "skipped",
+            "message": "Chapter 3 notes already seeded. Use force=True to overwrite.",
+            "total": len(CH3_SECTIONS),
+        }
+
+    if existing and force:
+        db_exec_fn(conn,
+            f"DELETE FROM study_notes WHERE subject={ph} AND topic={ph} AND chapter_num={ph}",
+            ('GK', 'Indian_History', 3))
         if not use_postgres:
             conn.commit()
 
-    inserted = 0
-    skipped = 0
+    sections_json = _json.dumps(CH3_SECTIONS, ensure_ascii=False)
 
-    for idx, sec in enumerate(CH3_SECTIONS):
-        # Check duplicate
-        cur = db_exec_fn(
-            conn,
-            f"SELECT id FROM notes WHERE chapter = {ph} AND section_index = {ph}",
-            (chapter_title, idx),
-        )
-        rows = row_to_dict_fn(cur)
-        if rows:
-            skipped += 1
-            continue
-
-        db_exec_fn(
-            conn,
-            f"""INSERT INTO notes (chapter, section_index, title, subtitle, audio_text)
-                VALUES ({ph}, {ph}, {ph}, {ph}, {ph})""",
-            (chapter_title, idx, sec["title"], sec.get("sub", ""), sec["audio"]),
-        )
-        inserted += 1
+    db_exec_fn(conn,
+        f"""INSERT INTO study_notes
+            (subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
+            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
+        ('GK', 'Indian_History', 3,
+         'సింధు నాగరికత',
+         'Indus Valley Civilisation',
+         '21-40',
+         sections_json))
 
     if not use_postgres:
         conn.commit()
 
     return {
         "status": "ok",
-        "chapter": chapter_title,
-        "inserted": inserted,
-        "skipped": skipped,
+        "message": f"Chapter 3 notes seeded successfully!",
         "total": len(CH3_SECTIONS),
     }
 
 
 def _seed_ch3_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
-    """Seed Chapter 3 MCQs into the DB.
+    """Seed Chapter 3 MCQs into chapter_mcqs table.
 
-    Tuple layout: (section_idx, difficulty, q_te, a, b, c, d, correct, explanation_te)
-
-    Args:
-        conn: active DB connection
-        db_exec_fn: callable(conn, sql, params=()) → cursor
-        row_to_dict_fn: callable(cursor) → list[dict]
-        use_postgres: bool
-    Returns:
-        dict with 'inserted', 'skipped', 'total' keys
+    Requires study_notes row for Chapter 3 to exist first (run _seed_ch3_notes_inner).
+    Schema matches app.py:  chapter_mcqs(study_note_id, section_idx, difficulty,
+                             q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te)
     """
     ph = "%s" if use_postgres else "?"
 
-    chapter_title = "Chapter 3 – Indus Valley Civilisation (IVC)"
+    # Ensure chapter_mcqs table exists
+    if use_postgres:
+        db_exec_fn(conn, '''CREATE TABLE IF NOT EXISTS chapter_mcqs (
+            id SERIAL PRIMARY KEY, study_note_id INTEGER NOT NULL,
+            section_idx INTEGER NOT NULL DEFAULT 0,
+            difficulty INTEGER NOT NULL DEFAULT 1,
+            q_te TEXT NOT NULL,
+            opt_a TEXT NOT NULL, opt_b TEXT NOT NULL,
+            opt_c TEXT NOT NULL, opt_d TEXT NOT NULL,
+            correct TEXT NOT NULL, explanation_te TEXT NOT NULL DEFAULT '',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
+    else:
+        db_exec_fn(conn, '''CREATE TABLE IF NOT EXISTS chapter_mcqs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, study_note_id INTEGER NOT NULL,
+            section_idx INTEGER NOT NULL DEFAULT 0,
+            difficulty INTEGER NOT NULL DEFAULT 1,
+            q_te TEXT NOT NULL,
+            opt_a TEXT NOT NULL, opt_b TEXT NOT NULL,
+            opt_c TEXT NOT NULL, opt_d TEXT NOT NULL,
+            correct TEXT NOT NULL, explanation_te TEXT NOT NULL DEFAULT "",
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
+
+    if not use_postgres:
+        conn.commit()
+
+    # Get the study_note_id for Chapter 3
+    cur = db_exec_fn(conn,
+        f"SELECT id FROM study_notes WHERE subject={ph} AND topic={ph} AND chapter_num={ph}",
+        ('GK', 'Indian_History', 3))
+    row = cur.fetchone()
+    if not row:
+        return {
+            "status": "error",
+            "error": "Chapter 3 study note not found. Please seed notes first (click 'Seed Notes' button).",
+        }
+
+    # Support both sqlite3.Row and dict-like rows
+    try:
+        note_id = row['id']
+    except (TypeError, KeyError):
+        note_id = row[0]
+
+    # Delete existing MCQs for this chapter to avoid duplicates
+    db_exec_fn(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    if not use_postgres:
+        conn.commit()
 
     inserted = 0
-    skipped = 0
-
     for tup in CH3_MCQS:
         (sec_idx, difficulty, q_te, a, b, c, d, correct, explanation_te) = tup
-
-        # Deduplicate by chapter + question text
-        cur = db_exec_fn(
-            conn,
-            f"SELECT id FROM mcqs WHERE chapter = {ph} AND question = {ph}",
-            (chapter_title, q_te),
-        )
-        rows = row_to_dict_fn(cur)
-        if rows:
-            skipped += 1
-            continue
-
-        db_exec_fn(
-            conn,
-            f"""INSERT INTO mcqs
-                    (chapter, section_index, difficulty, question,
-                     option_a, option_b, option_c, option_d,
-                     correct_option, explanation)
+        db_exec_fn(conn,
+            f"""INSERT INTO chapter_mcqs
+                (study_note_id, section_idx, difficulty,
+                 q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te)
                 VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
-            (chapter_title, sec_idx, difficulty, q_te,
-             a, b, c, d, correct, explanation_te),
-        )
+            (note_id, sec_idx, difficulty, q_te, a, b, c, d, correct, explanation_te))
         inserted += 1
 
     if not use_postgres:
@@ -1297,8 +1333,7 @@ def _seed_ch3_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
 
     return {
         "status": "ok",
-        "chapter": chapter_title,
+        "message": f"Chapter 3 MCQs seeded successfully!",
         "inserted": inserted,
-        "skipped": skipped,
         "total": len(CH3_MCQS),
     }
