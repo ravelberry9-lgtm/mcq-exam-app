@@ -3015,6 +3015,48 @@ def _seed_ch2_mcqs_inner():
     return jsonify({'success': True, 'message': f'Chapter 2 MCQs seeded! Total: {len(mcqs)} questions across 20 sections.'})
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# Chapter 3 Seed Routes (సింధు నాగరికత)
+# ─────────────────────────────────────────────────────────────────────────────
+try:
+    from seed_ch3 import _seed_ch3_notes_inner, _seed_ch3_mcqs_inner
+    _SEED_CH3_LOADED = True
+except Exception as _e:
+    _SEED_CH3_LOADED = False
+    print(f"[WARN] seed_ch3.py not loaded: {_e}")
+
+@app.route('/api/notes/seed_ch3_ih', methods=['POST'])
+def notes_seed_ch3_ih():
+    """Seed Chapter 3 Indian History – Indus Civilisation. Add ?force=1 to overwrite."""
+    if not _SEED_CH3_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch3.py not found'}), 500
+    force = request.args.get('force', '0') == '1'
+    conn = get_db()
+    try:
+        result = _seed_ch3_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=force)
+        return jsonify(result)
+    except Exception as e:
+        import traceback
+        return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500
+    finally:
+        conn.close()
+
+@app.route('/api/mcq/seed_ch3', methods=['POST'])
+def seed_ch3_mcqs():
+    """Seed Chapter 3 MCQs."""
+    if not _SEED_CH3_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch3.py not found'}), 500
+    conn = get_db()
+    try:
+        result = _seed_ch3_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
+        return jsonify(result)
+    except Exception as e:
+        import traceback
+        return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500
+    finally:
+        conn.close()
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print("\n" + "="*55)

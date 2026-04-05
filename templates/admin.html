@@ -476,6 +476,62 @@ async function seedCh2Mcqs() {
     alert('Seed Ch2 MCQs failed:\n' + e.message);
   }
 }
+
+async function seedCh3IH(force=false) {
+  const btn = document.getElementById('seedCh3Btn');
+  const el  = document.getElementById('ch3SeedResult');
+  btn.disabled = true; btn.textContent = '⏳ Seeding Ch3 Notes...';
+  try {
+    const url = force ? '/api/notes/seed_ch3_ih?force=1' : '/api/notes/seed_ch3_ih';
+    const data = await safeFetch(url, { method: 'POST' });
+    btn.disabled = false; btn.textContent = '🌱 Seed Notes (20 Sections) — Indus Civilisation';
+    el.style.display = '';
+    if (data.message && data.message.includes('already')) {
+      const ok = confirm('Chapter 3 notes already seeded. Overwrite?');
+      if (ok) { seedCh3IH(true); return; }
+      el.style.color = '#888'; el.textContent = 'Skipped.'; return;
+    }
+    if (data.success) {
+      el.style.color = '#2e7d32';
+      el.textContent = '✅ ' + (data.message || 'Ch3 notes seeded!');
+      showToast('Chapter 3 notes seeded!', 'success');
+    } else {
+      el.style.color = '#c62828';
+      el.textContent = '❌ ' + (data.error || JSON.stringify(data));
+    }
+  } catch(e) {
+    btn.disabled = false; btn.textContent = '🌱 Seed Notes (20 Sections) — Indus Civilisation';
+    el.style.display = ''; el.style.color = '#c62828';
+    el.textContent = '❌ ' + e.message;
+  }
+}
+
+async function seedCh3Mcqs() {
+  const btn = document.getElementById('seedCh3McqBtn');
+  const el  = document.getElementById('ch3McqSeedResult');
+  btn.disabled = true; btn.textContent = '⏳ Seeding Ch3 MCQs...';
+  try {
+    const data = await safeFetch('/api/mcq/seed_ch3', { method: 'POST' });
+    btn.disabled = false; btn.textContent = '🎯 Seed MCQs (110+ Questions)';
+    el.style.display = '';
+    if (data.error) {
+      el.style.color = '#c62828';
+      el.textContent = '❌ ' + data.error;
+      showToast('Ch3 MCQ seed failed', 'error');
+    } else if (data.success) {
+      el.style.color = '#2e7d32';
+      el.textContent = '✅ ' + (data.message || 'Chapter 3 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
+      showToast(data.message || 'Chapter 3 MCQs seeded!', 'success');
+    } else {
+      el.style.color = '#888';
+      el.textContent = JSON.stringify(data);
+    }
+  } catch(e) {
+    btn.disabled = false; btn.textContent = '🎯 Seed MCQs (110+ Questions)';
+    el.style.display = ''; el.style.color = '#c62828';
+    el.textContent = '❌ ' + e.message;
+  }
+}
 </script>
 
 <!-- Notes Management Card -->
@@ -519,6 +575,19 @@ async function seedCh2Mcqs() {
   </div>
   <div id="ch2SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
   <div id="ch2McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+
+  <!-- Indian History Ch3 -->
+  <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:6px;">🏛️ Indian History — Chapter 3 (సింధు నాగరికత)</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+    <button id="seedCh3Btn" onclick="seedCh3IH()" class="btn btn-success" style="min-height:40px;padding:8px 18px;font-size:13px;">
+      🌱 Seed Notes (20 Sections) — Indus Civilisation
+    </button>
+    <button id="seedCh3McqBtn" onclick="seedCh3Mcqs()" class="btn btn-primary" style="min-height:40px;padding:8px 18px;font-size:13px;background:linear-gradient(135deg,#4a148c,#7b1fa2);">
+      🎯 Seed MCQs (110+ Questions)
+    </button>
+  </div>
+  <div id="ch3SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
+  <div id="ch3McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
