@@ -1287,7 +1287,7 @@ CH5_MCQS = [
 
 # ── SEED FUNCTIONS ─────────────────────────────────────────────────────────────
 
-def _seed_ch5_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
+def _seed_ch5_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
     """Insert Chapter 5 study notes into study_notes table."""
     ph = '%s' if USE_POSTGRES else '?'
 
