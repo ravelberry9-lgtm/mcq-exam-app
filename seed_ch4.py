@@ -1135,8 +1135,8 @@ def _seed_ch4_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
             conn.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
                 id SERIAL PRIMARY KEY, study_note_id INTEGER NOT NULL,
                 section_idx INTEGER DEFAULT 0, difficulty INTEGER DEFAULT 1,
-                q_te TEXT NOT NULL, a TEXT NOT NULL, b TEXT NOT NULL,
-                c TEXT NOT NULL, d TEXT NOT NULL, correct TEXT NOT NULL,
+                q_te TEXT NOT NULL, opt_a TEXT NOT NULL, opt_b TEXT NOT NULL,
+                opt_c TEXT NOT NULL, opt_d TEXT NOT NULL, correct TEXT NOT NULL,
                 explanation_te TEXT DEFAULT '')''')
         else:
             conn.execute('''CREATE TABLE IF NOT EXISTS study_notes (
@@ -1147,8 +1147,8 @@ def _seed_ch4_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
             conn.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
                 id INTEGER PRIMARY KEY AUTOINCREMENT, study_note_id INTEGER NOT NULL,
                 section_idx INTEGER DEFAULT 0, difficulty INTEGER DEFAULT 1,
-                q_te TEXT NOT NULL, a TEXT NOT NULL, b TEXT NOT NULL,
-                c TEXT NOT NULL, d TEXT NOT NULL, correct TEXT NOT NULL,
+                q_te TEXT NOT NULL, opt_a TEXT NOT NULL, opt_b TEXT NOT NULL,
+                opt_c TEXT NOT NULL, opt_d TEXT NOT NULL, correct TEXT NOT NULL,
                 explanation_te TEXT DEFAULT '')''')
         if not USE_POSTGRES:
             conn.commit()
@@ -1171,7 +1171,7 @@ def _seed_ch4_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
         conn.commit()
 
     insert_sql = f'''INSERT INTO chapter_mcqs
-        (study_note_id, section_idx, difficulty, q_te, a, b, c, d, correct, explanation_te)
+        (study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te)
         VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})'''
 
     for (sec_idx, diff, q, a, b, c, d, correct, expl) in CH4_MCQS:
