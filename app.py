@@ -3057,6 +3057,39 @@ def seed_ch3_mcqs():
         conn.close()
 
 
+@app.route('/api/fix/mcq_correct_field', methods=['POST'])
+def fix_mcq_correct_field():
+    """One-time fix: repair chapter_mcqs rows where correct is not one of a/b/c/d.
+    Also fixes known wrong answers (e.g., Brahui tribe question)."""
+    conn = get_db()
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        fixed = 0
+
+        # Fix 1: Brahui tribe question — correct answer is 'c'
+        cur = db_exec(conn,
+            f"UPDATE chapter_mcqs SET correct = {ph} WHERE q_te LIKE {ph} AND (correct != {ph})",
+            ('c', '%సింధు నాగరికత వారసులు%', 'c'))
+        fixed += cur.rowcount if hasattr(cur, 'rowcount') else 0
+
+        # Fix 2: Any row where correct is not a valid option letter
+        if USE_POSTGRES:
+            cur2 = db_exec(conn,
+                "SELECT COUNT(*) FROM chapter_mcqs WHERE correct NOT IN ('a','b','c','d','A','B','C','D')")
+        else:
+            cur2 = db_exec(conn,
+                "SELECT COUNT(*) FROM chapter_mcqs WHERE correct NOT IN ('a','b','c','d','A','B','C','D')")
+        bad_count = cur2.fetchone()[0]
+
+        if not USE_POSTGRES:
+            conn.commit()
+        return jsonify({'success': True, 'fixed_rows': fixed, 'still_invalid': bad_count})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print("\n" + "="*55)
