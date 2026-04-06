@@ -510,6 +510,15 @@ document.addEventListener('click', function(e) {
         curMain.replaceWith(newMain.cloneNode(true));
         document.title = doc.title;
         history.pushState({gmAjax: true, href}, doc.title, href);
+
+        // n-player and FAB button live OUTSIDE .main in the chapter template,
+        // so they survive .main replacement.  HIDE them (don't remove — the
+        // chapter scripts still update those DOM nodes and would crash otherwise).
+        // The global mini-bar takes over showing controls on non-chapter pages.
+        const nplayer = document.querySelector('.n-player');
+        if (nplayer) nplayer.style.display = 'none';
+        const fab = document.getElementById('fabBtn');
+        if (fab) fab.style.display = 'none';
       }
     })
     .catch(() => { window.location.href = href; });   // fallback to normal nav on error
@@ -527,6 +536,10 @@ window.addEventListener('popstate', function(e) {
         if (newMain && curMain) {
           curMain.replaceWith(newMain.cloneNode(true));
           document.title = doc.title;
+          const nplayer = document.querySelector('.n-player');
+          if (nplayer) nplayer.style.display = 'none';
+          const fab = document.getElementById('fabBtn');
+          if (fab) fab.style.display = 'none';
         }
       })
       .catch(() => window.location.reload());
