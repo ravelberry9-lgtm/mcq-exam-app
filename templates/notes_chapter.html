@@ -1578,27 +1578,50 @@ document.addEventListener('DOMContentLoaded', () => {
   updateOrderBtn();       // ← show correct quiz order toggle label
   updateFilterBtns();     // ← show correct filter + wrong count
   refreshChHeaderTime();  // ← show total chapter time in header card
-  // ── Auto-play when navigated back from mini-bar ▶ button ──
-  const autoplay = new URLSearchParams(window.location.search).get('autoplay') === '1';
+  // ── Auto-play when navigated back from mini-bar ▶ or 📍 Go button ──
+  const params   = new URLSearchParams(window.location.search);
+  const autoplay = params.get('autoplay') === '1';
   if (autoplay) {
     history.replaceState({}, '', CHAPTER_URL);   // clean URL immediately
-    // Try localStorage position first (most accurate — knows if allMode)
+
+    // Determine which section to play (localStorage → sessionStorage → hash → 0)
+    let targetIdx = -1;
+    const hashMatch = window.location.hash.match(/^#card-(\d+)$/);
+    if (hashMatch) targetIdx = parseInt(hashMatch[1], 10);
+
     const pos = loadPosition();
     if (pos && pos.sec >= 0 && pos.sec < SECS.length) {
+      targetIdx = pos.sec;
       resumeFromSaved();
     } else {
-      // Fallback: use sessionStorage (saved by _saveTTSState when leaving the page)
       try {
         const d = JSON.parse(sessionStorage.getItem('tts_now') || '{}');
-        const idx = (typeof d.secIdx === 'number' && d.secIdx >= 0 && d.secIdx < SECS.length)
-                    ? d.secIdx : 0;
-        playSec(idx);
-      } catch(e) { playAll(); }
+        if (typeof d.secIdx === 'number' && d.secIdx >= 0 && d.secIdx < SECS.length)
+          targetIdx = d.secIdx;
+      } catch(e) {}
+      playSec(Math.max(0, targetIdx));
+    }
+
+    // Scroll to the section card after a short delay (let DOM settle)
+    if (targetIdx >= 0) {
+      setTimeout(() => {
+        const el = document.getElementById('card-' + targetIdx);
+        if (el) el.scrollIntoView({behavior: 'smooth', block: 'center'});
+      }, 600);
     }
   } else {
     // Normal load — show resume bar if mid-session position exists
+    // Also scroll to hash-targeted section (from 📍 Go without autoplay)
     const pos = loadPosition();
     if (pos && pos.sec >= 0 && pos.sec < SECS.length) showResumeBar();
+    const hashMatch = window.location.hash.match(/^#card-(\d+)$/);
+    if (hashMatch) {
+      const idx = parseInt(hashMatch[1], 10);
+      setTimeout(() => {
+        const el = document.getElementById('card-' + idx);
+        if (el) el.scrollIntoView({behavior: 'smooth', block: 'center'});
+      }, 400);
+    }
   }
 });
 // Fallback if DOM already loaded
