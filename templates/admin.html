@@ -612,6 +612,18 @@ async function seedCh3Mcqs() {
   </div>
   <div id="ch5SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
   <div id="ch5McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+              <!-- Indian History Ch6 -->
+              <div style="font-size:13px;font-weight:700;color:#555;margin-bottom:6px;">🏛️ Indian History — Chapter 6 (మగధ సామ్రాజ్యం)</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                <button id="seedCh6Btn" onclick="seedCh6IH()" class="btn btn-success" style="font-size:13px;padding:8px 16px;border-radius:8px;">
+                  🌱 Seed Notes (15 Sections) — Magadha Dynasty
+                </button>
+                <button id="seedCh6McqBtn" onclick="seedCh6Mcqs()" class="btn btn-primary" style="font-size:13px;padding:8px 16px;border-radius:8px;background:#6f42c1;border-color:#6f42c1;">
+                  🎯 Seed MCQs (90 Questions)
+                </button>
+              </div>
+              <div id="ch6SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
+              <div id="ch6McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
@@ -819,6 +831,45 @@ async function seedCh5Mcqs() {
     }
   } catch(e) { btn.disabled=false; showToast('Network error','error'); }
 }
+      async function seedCh6IH(force=false) {
+        const btn = document.getElementById('seedCh6Btn');
+        const el  = document.getElementById('ch6SeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Ch6 Notes...';
+        try {
+          const url = force ? '/api/notes/seed_ch6_ih?force=1' : '/api/notes/seed_ch6_ih';
+          const data = await safeFetch(url, { method: 'POST' });
+          btn.disabled = false; btn.textContent = '🌱 Seed Notes (15 Sections) — Magadha Dynasty';
+          el.style.display = 'block';
+          if (data.already_exists || (!data.success && data.message && data.message.includes('already'))) {
+            const ok = confirm('Chapter 6 notes already seeded. Overwrite?');
+            if (ok) { seedCh6IH(true); return; }
+          } else if (data.success) {
+            el.textContent = '✅ ' + (data.message || 'Chapter 6 notes seeded!');
+            showToast(data.message || 'Chapter 6 notes seeded!', 'success');
+          } else {
+            el.textContent = '❌ ' + (data.error || data.message || 'Error');
+            showToast(data.error || 'Error seeding Ch6 notes', 'error');
+          }
+        } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
+      async function seedCh6Mcqs() {
+        const btn = document.getElementById('seedCh6McqBtn');
+        const el  = document.getElementById('ch6McqSeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Ch6 MCQs...';
+        try {
+          const data = await safeFetch('/api/mcq/seed_ch6', { method: 'POST' });
+          btn.disabled = false; btn.textContent = '🎯 Seed MCQs (90 Questions)';
+          el.style.display = 'block';
+          if (!data.success) {
+            el.textContent = '❌ ' + (data.error || data.message || 'Error');
+            showToast(data.error || 'Error seeding Ch6 MCQs', 'error');
+          } else {
+            el.textContent = '✅ ' + (data.message || 'Chapter 6 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
+            showToast(data.message || 'Chapter 6 MCQs seeded!', 'success');
+            loadNotesList();
+          }
+        } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
 </script>
 
 {% endblock %}
