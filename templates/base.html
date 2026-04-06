@@ -379,27 +379,11 @@ const gm = {
       return;
     }
 
-    // On the chapter page — live state
-    const st = tc.state();
-    const isPlaying = st.playing && !st.paused;
-
-    if (isPlaying) {
-      this._dismissed = false;   // new play — show bar again even if previously dismissed
-      this._render(st, true);
-      const t = document.getElementById('gmTime');
-      if (t) t.textContent = st.timeStr || '';
-    } else if (st.secTitle) {
-      this._render(st, false);
-      const t = document.getElementById('gmTime');
-      if (t) t.textContent = st.paused ? '\u23F8 Paused' : '\u2714 Done';
-    } else if (raw && !this._dismissed) {
-      try { this._render(JSON.parse(raw), false); } catch(e) {}
-      const t = document.getElementById('gmTime');
-      if (t) t.textContent = '\u25B6 Tap Play to resume';
-    } else if (!raw) {
-      const bar = document.getElementById('gMiniBar');
-      if (bar) bar.classList.remove('active');
-    }
+    // On the chapter page — the sticky n-player bar already shows all controls.
+    // Hide the global mini-bar here to avoid showing two players at once.
+    // sessionStorage stays populated so the bar reappears on other pages.
+    const bar2 = document.getElementById('gMiniBar');
+    if (bar2) bar2.classList.remove('active');
   },
 
   play() {

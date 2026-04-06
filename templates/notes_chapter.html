@@ -948,14 +948,20 @@ async function speak() {
 function resumePlay() {
   if (paused) {
     paused = false;
-    // Chrome's resume() is unreliable — cancel current chunk and re-speak it
-    try { speechSynthesis.cancel(); } catch(e) {}
+    // Use native resume() — keeps audio in the user gesture callstack so Chrome allows it.
+    // Falls back to re-speak if resume() doesn't actually restart speech (Chrome bug on some versions).
+    try { speechSynthesis.resume(); } catch(e) {}
     startLiveTimer(curEstSecs);
     document.getElementById('fabBtn').textContent = '⏸';
     if (cur >= 0) setNow('▶ ' + SECS[cur].title);
-    setTimeout(() => _speakNextChunk(), 80);
     _updateSkipBtns();
     _saveTTSState();
+    // Fallback: if speech still isn't running after 350ms, re-speak current chunk
+    setTimeout(() => {
+      if (speaking && !paused && !speechSynthesis.speaking && !speechSynthesis.pending) {
+        _speakNextChunk();
+      }
+    }, 350);
   }
   else if (!speaking) { if (cur >= 0) playSec(cur); else playAll(); }
 }
