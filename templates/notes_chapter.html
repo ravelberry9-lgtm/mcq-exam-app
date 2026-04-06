@@ -632,6 +632,14 @@ function updateWLChip(on) {
 }
 
 /* ─── PAGE VISIBILITY (screen-off / app switch) ─── */
+// Save position + state when user navigates away (breadcrumb, back button, etc.)
+window.addEventListener('pagehide', () => {
+  if (speaking || paused) {
+    if (cur >= 0) savePosition(cur);   // ensure localStorage has position
+    _saveTTSState(cur);                // ensure sessionStorage has section info
+  }
+});
+
 document.addEventListener('visibilitychange', async () => {
   if (document.hidden) {
     // Page went background — pause if playing
@@ -639,6 +647,8 @@ document.addEventListener('visibilitychange', async () => {
       pausePlay();
       sessionStorage.setItem('notes_bg_paused', '1');
     }
+    // Always save state on hide so mini-bar data survives navigation
+    if (cur >= 0) { savePosition(cur); _saveTTSState(cur); }
   } else {
     // Page came back foreground
     if (sessionStorage.getItem('notes_bg_paused')) {
@@ -1568,17 +1578,27 @@ document.addEventListener('DOMContentLoaded', () => {
   updateOrderBtn();       // ← show correct quiz order toggle label
   updateFilterBtns();     // ← show correct filter + wrong count
   refreshChHeaderTime();  // ← show total chapter time in header card
-  // Show resume bar if there's a saved mid-session position
-  const pos = loadPosition();
-  if (pos && pos.sec >= 0 && pos.sec < SECS.length) {
-    // If navigated back from mini-bar with ?autoplay=1, auto-resume
-    const autoplay = new URLSearchParams(window.location.search).get('autoplay') === '1';
-    if (autoplay) {
-      history.replaceState({}, '', CHAPTER_URL);
+  // ── Auto-play when navigated back from mini-bar ▶ button ──
+  const autoplay = new URLSearchParams(window.location.search).get('autoplay') === '1';
+  if (autoplay) {
+    history.replaceState({}, '', CHAPTER_URL);   // clean URL immediately
+    // Try localStorage position first (most accurate — knows if allMode)
+    const pos = loadPosition();
+    if (pos && pos.sec >= 0 && pos.sec < SECS.length) {
       resumeFromSaved();
     } else {
-      showResumeBar();
+      // Fallback: use sessionStorage (saved by _saveTTSState when leaving the page)
+      try {
+        const d = JSON.parse(sessionStorage.getItem('tts_now') || '{}');
+        const idx = (typeof d.secIdx === 'number' && d.secIdx >= 0 && d.secIdx < SECS.length)
+                    ? d.secIdx : 0;
+        playSec(idx);
+      } catch(e) { playAll(); }
     }
+  } else {
+    // Normal load — show resume bar if mid-session position exists
+    const pos = loadPosition();
+    if (pos && pos.sec >= 0 && pos.sec < SECS.length) showResumeBar();
   }
 });
 // Fallback if DOM already loaded
