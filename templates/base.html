@@ -219,6 +219,30 @@ input[type=number].form-control::-webkit-inner-spin-button { opacity: 1; }
   .card { padding: 16px; }
   .stat-box .val { font-size: 22px; }
 }
+
+/* ── Global TTS Mini-Bar ── */
+.g-minibar {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(135deg, #1a237e, #3949ab);
+  color: #fff;
+  z-index: 950;
+  padding: 8px 12px 10px;
+  box-shadow: 0 -3px 16px rgba(0,0,0,0.22);
+  border-top: 2px solid rgba(255,255,255,0.18);
+}
+.g-minibar.active { display: block; }
+.gm-info { font-size: 12px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gm-sub  { font-size: 10px; opacity: 0.7; margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gm-row  { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.gm-btn  { border: none; border-radius: 16px; padding: 5px 11px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; }
+.gm-play { background: #4caf50; color: white; }
+.gm-pause{ background: #ff9800; color: white; }
+.gm-stop { background: #f44336; color: white; }
+.gm-goto { background: rgba(255,255,255,0.2); color: white; border: 1.5px solid rgba(255,255,255,0.4); }
+.gm-skip { background: rgba(255,255,255,0.12); color: white; border: 1.5px solid rgba(255,255,255,0.3); }
+.gm-time { font-size: 11px; opacity: 0.7; margin-left: auto; white-space: nowrap; }
+[data-theme="dark"] .g-minibar { background: linear-gradient(135deg, #0f1540, #1a237e); }
 </style>
 </head>
 <body>
@@ -239,6 +263,21 @@ input[type=number].form-control::-webkit-inner-spin-button { opacity: 1; }
 </header>
 
 {% block content %}{% endblock %}
+
+<!-- ── Global TTS Mini-Bar (persists across all pages) ── -->
+<div class="g-minibar" id="gMiniBar">
+  <div class="gm-info" id="gmInfo">🔊</div>
+  <div class="gm-sub"  id="gmSub"></div>
+  <div class="gm-row">
+    <button class="gm-btn gm-skip"  id="gmBack"  onclick="gm.back()">⏪ 10s</button>
+    <button class="gm-btn gm-play"  id="gmPlay"  onclick="gm.play()">▶ Play</button>
+    <button class="gm-btn gm-pause" id="gmPause" onclick="gm.pause()" style="display:none">⏸ Pause</button>
+    <button class="gm-btn gm-skip"  id="gmFwd"   onclick="gm.fwd()">⏩ 10s</button>
+    <button class="gm-btn gm-stop"              onclick="gm.stop()">⏹</button>
+    <button class="gm-btn gm-goto"              onclick="gm.goto()">📍 Go</button>
+    <span class="gm-time" id="gmTime"></span>
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
 
@@ -266,6 +305,92 @@ function toggleDark() {
 applyDark(localStorage.getItem('mcq_dark') === '1');
 </script>
 {% block scripts %}{% endblock %}
+<script>
+// ── Global TTS Mini-Bar controller ──
+const TTS_SS_KEY = 'tts_now';
+const gm = {
+  _t: null,
+  init() {
+    this._load();
+    this._t = setInterval(() => this._sync(), 600);
+  },
+  _load() {
+    try {
+      const s = sessionStorage.getItem(TTS_SS_KEY);
+      if (!s) return;
+      const d = JSON.parse(s);
+      this._render(d, false);
+    } catch(e) {}
+  },
+  _render(d, playing) {
+    const bar = document.getElementById('gMiniBar');
+    if (!bar || !d) return;
+    const info = document.getElementById('gmInfo');
+    const sub  = document.getElementById('gmSub');
+    if (info) info.textContent = '\uD83D\uDD0A Ch' + d.chNum + ' \xB7 ' + (d.secTitle || '');
+    if (sub)  sub.textContent  = d.chTitle || '';
+    bar.classList.add('active');
+    this._setPlayPause(playing);
+  },
+  _setPlayPause(playing) {
+    const p  = document.getElementById('gmPlay');
+    const pa = document.getElementById('gmPause');
+    const bk = document.getElementById('gmBack');
+    const fw = document.getElementById('gmFwd');
+    if (p)  p.style.display  = playing ? 'none' : '';
+    if (pa) pa.style.display = playing ? '' : 'none';
+    if (bk) bk.style.display = playing ? '' : 'none';
+    if (fw) fw.style.display = playing ? '' : 'none';
+  },
+  _sync() {
+    const tc = window.TTS_CONTROLS;
+    const raw = sessionStorage.getItem(TTS_SS_KEY);
+    if (!tc && !raw) {
+      const bar = document.getElementById('gMiniBar');
+      if (bar) bar.classList.remove('active');
+      return;
+    }
+    if (!tc) {
+      // Different page — show paused state
+      const bar = document.getElementById('gMiniBar');
+      if (bar) bar.classList.add('active');
+      this._setPlayPause(false);
+      const t = document.getElementById('gmTime');
+      if (t) t.textContent = '\u23F8 Paused';
+      return;
+    }
+    // On the chapter page — live state from TTS_CONTROLS
+    const st = tc.state();
+    if (st.secTitle) this._render(st, st.playing && !st.paused);
+    else { const bar = document.getElementById('gMiniBar'); if (bar) bar.classList.remove('active'); }
+    const t = document.getElementById('gmTime');
+    if (t) t.textContent = st.timeStr || '';
+  },
+  play()  {
+    if (window.TTS_CONTROLS) { window.TTS_CONTROLS.play(); return; }
+    try {
+      const d = JSON.parse(sessionStorage.getItem(TTS_SS_KEY) || '{}');
+      if (d.url) window.location.href = d.url + '?autoplay=1';
+    } catch(e) {}
+  },
+  pause() { if (window.TTS_CONTROLS) window.TTS_CONTROLS.pause(); },
+  back()  { if (window.TTS_CONTROLS) window.TTS_CONTROLS.skip(-10); },
+  fwd()   { if (window.TTS_CONTROLS) window.TTS_CONTROLS.skip(10);  },
+  stop()  {
+    if (window.TTS_CONTROLS) window.TTS_CONTROLS.stop();
+    sessionStorage.removeItem(TTS_SS_KEY);
+    const bar = document.getElementById('gMiniBar');
+    if (bar) bar.classList.remove('active');
+  },
+  goto()  {
+    try {
+      const d = JSON.parse(sessionStorage.getItem(TTS_SS_KEY) || '{}');
+      if (d.url) window.location.href = d.url;
+    } catch(e) {}
+  }
+};
+document.addEventListener('DOMContentLoaded', () => gm.init());
+</script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/static/sw.js').catch(() => {});

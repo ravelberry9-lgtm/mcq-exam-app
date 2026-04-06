@@ -333,6 +333,8 @@
     <button class="nb nb-pause" onclick="pausePlay()">⏸</button>
     <button class="nb nb-stop"  onclick="stopPlay()">⏹</button>
     <button class="nb nb-nav"   onclick="prevSec()">⏮</button>
+    <button class="nb nb-nav"   id="nbBack" onclick="skipSec(-10)" style="background:#5c6bc0;color:white;display:none">⏪10s</button>
+    <button class="nb nb-nav"   id="nbFwd"  onclick="skipSec(10)"  style="background:#5c6bc0;color:white;display:none">⏩10s</button>
     <button class="nb nb-nav"   onclick="nextSec()">⏭</button>
     <div class="n-speed">
       <span>వేగం</span>
@@ -350,7 +352,7 @@
   <div class="n-prog"><div class="n-prog-fill" id="progFill"></div></div>
 </div>
 
-<div class="main" style="padding-bottom:80px;">
+<div class="main" style="padding-bottom:110px;">
 
   <!-- Breadcrumb -->
   <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">
@@ -522,6 +524,12 @@ const TIME_KEY = 'notes_time_' + CHAPTER_ID;   // per-section actual durations (
 
 let cur = -1, speaking = false, paused = false, utt = null, queue = [], allMode = false;
 let filterMode = 'all';
+
+// ── Chunk-based TTS state (fixes Chrome immediate-stop bug) ──
+let _allWords = [], _wordPos = 0, _chunks = [], _chunkIdx = 0;
+const CHAPTER_NUM   = {{ chapter.chapter_num }};
+const CHAPTER_TITLE = {{ chapter.chapter_title_te | tojson }};
+const CHAPTER_URL   = window.location.pathname;
 
 // ── Timing state ──
 let secStartTime  = 0;     // Date.now() when current section timer last started
@@ -835,6 +843,71 @@ function nextQ() {
   speak();
 }
 
+// ── Chunk-based TTS helpers ──
+function _rebuildChunks(fromWord) {
+  const remaining = _allWords.slice(fromWord);
+  _chunks = [];
+  for (let i = 0; i < remaining.length; i += 80)
+    _chunks.push(remaining.slice(i, i + 80).join(' '));
+  if (!_chunks.length) _chunks = [''];
+  _chunkIdx = 0;
+}
+
+function _speakNextChunk() {
+  if (!speaking || _chunkIdx >= _chunks.length) {
+    if (_chunkIdx >= _chunks.length && speaking) _onChunksDone();
+    return;
+  }
+  const rate = parseFloat(document.getElementById('spd').value);
+  try {
+    utt = new SpeechSynthesisUtterance(_chunks[_chunkIdx]);
+    utt.lang = 'te-IN'; utt.rate = rate;
+    const v = getVoice(); if (v) utt.voice = v;
+    const chunkWordCount = _chunks[_chunkIdx].trim().split(/\s+/).filter(w=>w).length;
+    utt.onend = () => {
+      _wordPos += chunkWordCount;
+      if (speaking && !paused) { _chunkIdx++; _speakNextChunk(); }
+    };
+    utt.onerror = (e) => {
+      if (e.error === 'interrupted') return;
+      clearLiveTimer();
+      speaking = false;
+      document.getElementById('fabBtn').textContent = '▶';
+      _updateSkipBtns();
+      if (cur >= 0) showResumeBar();
+      _saveTTSState();
+    };
+    speechSynthesis.speak(utt);
+  } catch(e) {
+    speaking = false;
+    document.getElementById('fabBtn').textContent = '▶';
+    _updateSkipBtns();
+  }
+}
+
+function _onChunksDone() {
+  const actualMs = pausedElapsed + (Date.now() - secStartTime);
+  recordSectionTime(cur, actualMs);
+  clearLiveTimer();
+  setBadge(cur, 'done');
+  setCard(cur, 'done');
+  markDoneInStorage(cur);
+  refreshTimingUI();
+  speaking = false;
+  _allWords = []; _wordPos = 0; _chunks = []; _chunkIdx = 0;
+  _updateSkipBtns();
+  sessionStorage.removeItem('tts_now');
+  if (allMode && queue.length) {
+    setTimeout(nextQ, 600);
+  } else {
+    releaseWakeLock();
+    clearPosition();
+    document.getElementById('fabBtn').textContent = '▶';
+    setNow('✅ పూర్తయింది');
+    checkAllDone();
+  }
+}
+
 async function speak() {
   if (cur < 0 || cur >= SECS.length) return;
   openSec(cur);
@@ -842,84 +915,120 @@ async function speak() {
   setBadge(cur, 'playing');
   setCard(cur, 'playing');
   document.getElementById('fabBtn').textContent = '⏸';
-  savePosition(cur);           // ← save position before speaking
-  await acquireWakeLock();     // ← keep screen on
+  savePosition(cur);
+  await acquireWakeLock();
 
   const rate = parseFloat(document.getElementById('spd').value);
   const estSecs = estimateDuration(SECS[cur].audio, rate);
-  pausedElapsed = 0;           // ← reset before new section
-  startLiveTimer(estSecs);    // ← start live countdown
+  pausedElapsed = 0;
+  startLiveTimer(estSecs);
 
-  utt = new SpeechSynthesisUtterance(SECS[cur].audio);
-  utt.lang = 'te-IN';
-  utt.rate = rate;
-  const v = getVoice();
-  if (v) utt.voice = v;
-
-  utt.onend = () => {
-    const actualMs = pausedElapsed + (Date.now() - secStartTime);
-    recordSectionTime(cur, actualMs);  // ← save actual duration
-    clearLiveTimer();                  // ← stop live timer
-
-    setBadge(cur, 'done');
-    setCard(cur, 'done');
-    markDoneInStorage(cur);
-    refreshTimingUI();                 // ← update top banner + badges
-    speaking = false;
-    if (allMode && queue.length) {
-      setTimeout(nextQ, 600);
-    } else {
-      releaseWakeLock();
-      clearPosition();
-      document.getElementById('fabBtn').textContent = '▶';
-      setNow('✅ పూర్తయింది');
-      checkAllDone();                  // ← show completion summary
-    }
-  };
-  utt.onerror = (e) => {
-    clearLiveTimer();
-    speaking = false;
-    document.getElementById('fabBtn').textContent = '▶';
-    // If interrupted by system (screen off etc.), show resume bar
-    if (cur >= 0) showResumeBar();
-  };
-
+  // Split into ~80-word chunks — fixes Chrome's "stops immediately" bug
+  _allWords = (SECS[cur].audio || '').trim().split(/\s+/).filter(w => w);
+  _wordPos  = 0;
+  _rebuildChunks(0);
   speaking = true; paused = false;
-  speechSynthesis.speak(utt);
+  _speakNextChunk();
+  _saveTTSState();
+  _updateSkipBtns();
 }
 
 function resumePlay() {
   if (paused) {
-    speechSynthesis.resume();
-    startLiveTimer(curEstSecs);  // ← restart timer (pausedElapsed already set)
     paused = false;
+    // Chrome's resume() is unreliable — cancel current chunk and re-speak it
+    try { speechSynthesis.cancel(); } catch(e) {}
+    startLiveTimer(curEstSecs);
     document.getElementById('fabBtn').textContent = '⏸';
-    if(cur>=0) setNow('▶ '+SECS[cur].title);
+    if (cur >= 0) setNow('▶ ' + SECS[cur].title);
+    setTimeout(() => _speakNextChunk(), 80);
+    _updateSkipBtns();
+    _saveTTSState();
   }
   else if (!speaking) { if (cur >= 0) playSec(cur); else playAll(); }
 }
+
 function pausePlay() {
   if (speaking && !paused) {
-    speechSynthesis.pause();
-    pauseLiveTimer();            // ← freeze timer
+    try { speechSynthesis.pause(); } catch(e) {}
+    pauseLiveTimer();
     paused = true;
     document.getElementById('fabBtn').textContent = '▶';
     setNow('⏸ ఆపబడింది');
+    _updateSkipBtns();
+    _saveTTSState();
   }
 }
-function stopPlay() { stop(); clearPosition(); }
+
+function stopPlay() { stop(); clearPosition(); sessionStorage.removeItem('tts_now'); }
 function stop() {
-  speechSynthesis.cancel();
-  clearLiveTimer();              // ← stop & hide live timer
+  try { speechSynthesis.cancel(); } catch(e) {}
+  clearLiveTimer();
   releaseWakeLock();
   speaking = false; paused = false; queue = []; allMode = false;
+  _allWords = []; _wordPos = 0; _chunks = []; _chunkIdx = 0;
   document.getElementById('fabBtn').textContent = '▶';
   setNow('⏹ ఆపబడింది');
+  _updateSkipBtns();
   if (cur >= 0) {
     const c = document.getElementById('card-'+cur);
     if (c && !c.classList.contains('done')) c.classList.remove('playing');
   }
 }
+
+// ── Skip ±10 seconds ──
+function skipSec(deltaSecs) {
+  if (!speaking) return;
+  const rate = parseFloat(document.getElementById('spd').value) || 1;
+  const wordsPerSec = 130 * rate / 60;  // ~2.17 at 1×
+  const jump = Math.round(Math.abs(deltaSecs) * wordsPerSec);
+  let newPos = _wordPos + (deltaSecs > 0 ? jump : -jump);
+  newPos = Math.max(0, Math.min(newPos, _allWords.length - 1));
+  try { speechSynthesis.cancel(); } catch(e) {}
+  _wordPos = newPos;
+  _rebuildChunks(newPos);
+  setTimeout(() => _speakNextChunk(), 80);
+}
+
+function _updateSkipBtns() {
+  const bk = document.getElementById('nbBack');
+  const fw = document.getElementById('nbFwd');
+  if (bk) bk.style.display = speaking ? '' : 'none';
+  if (fw) fw.style.display = speaking ? '' : 'none';
+}
+
+function _saveTTSState() {
+  try {
+    if (!speaking || cur < 0) return;
+    const sec = SECS[cur] || {};
+    sessionStorage.setItem('tts_now', JSON.stringify({
+      chNum:    CHAPTER_NUM,
+      chTitle:  CHAPTER_TITLE,
+      secIdx:   cur,
+      secTitle: sec.title || '',
+      url:      CHAPTER_URL
+    }));
+  } catch(e) {}
+}
+
+// ── TTS_CONTROLS: interface for global mini-bar ──
+window.TTS_CONTROLS = {
+  play()  { resumePlay(); },
+  pause() { pausePlay(); },
+  stop()  { stopPlay(); },
+  skip(d) { skipSec(d); },
+  state() {
+    const sec = SECS[cur] || {};
+    return {
+      playing:  speaking,
+      paused:   paused,
+      chNum:    CHAPTER_NUM,
+      chTitle:  CHAPTER_TITLE,
+      secTitle: (cur >= 0) ? sec.title || '' : '',
+      timeStr:  document.getElementById('liveTimer')?.textContent || ''
+    };
+  }
+};
 function prevSec() { stop(); playSec(Math.max(0, cur < 0 ? 0 : cur - 1)); }
 function nextSec() { stop(); playSec(Math.min(SECS.length-1, cur < 0 ? 0 : cur + 1)); }
 function togglePP() { if (speaking && !paused) pausePlay(); else resumePlay(); }
@@ -1158,7 +1267,7 @@ async function openQuiz() {
 }
 
 function closeQuiz() {
-  speechSynthesis.cancel();
+  try { speechSynthesis.cancel(); } catch(e) {}
   document.getElementById('qzRelistenBanner').classList.remove('show');
   document.getElementById('qzRelistenText').classList.remove('show');
   document.getElementById('quizOverlay').classList.remove('show');
@@ -1375,7 +1484,7 @@ function relistenFromResult(secIdx) {
 
 /* ── IN-QUIZ RELISTEN AUDIO ── */
 function startRelistenAudio(secIdx) {
-  speechSynthesis.cancel();
+  try { speechSynthesis.cancel(); } catch(e) {}
   const sec = SECS[secIdx];
   if (!sec) return;
 
@@ -1406,7 +1515,7 @@ function startRelistenAudio(secIdx) {
 }
 
 function stopRelisten() {
-  speechSynthesis.cancel();
+  try { speechSynthesis.cancel(); } catch(e) {}
   const banner = document.getElementById('qzRelistenBanner');
   if (banner) banner.classList.remove('show');
   const textEl = document.getElementById('qzRelistenText');
@@ -1414,7 +1523,7 @@ function stopRelisten() {
 }
 
 function retakeQuiz() {
-  speechSynthesis.cancel();
+  try { speechSynthesis.cancel(); } catch(e) {}
   document.getElementById('qzRelistenBanner').classList.remove('show');
   document.getElementById('qzRelistenText').classList.remove('show');
   qzQueue = buildQueue();
@@ -1449,7 +1558,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Show resume bar if there's a saved mid-session position
   const pos = loadPosition();
   if (pos && pos.sec >= 0 && pos.sec < SECS.length) {
-    showResumeBar();
+    // If navigated back from mini-bar with ?autoplay=1, auto-resume
+    const autoplay = new URLSearchParams(window.location.search).get('autoplay') === '1';
+    if (autoplay) {
+      history.replaceState({}, '', CHAPTER_URL);
+      resumeFromSaved();
+    } else {
+      showResumeBar();
+    }
   }
 });
 // Fallback if DOM already loaded
