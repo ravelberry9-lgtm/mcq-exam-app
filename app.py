@@ -3188,6 +3188,8 @@ def seed_ch6_mcqs():
         return jsonify({'success': False, 'error': 'seed_ch6.py not found'}), 500
     conn = get_db()
     try:
+        # Auto-seed notes first (no-op if already present) so MCQ seed always finds them
+        _seed_ch6_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
         result = _seed_ch6_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
         return jsonify(result)
     except Exception as e:
