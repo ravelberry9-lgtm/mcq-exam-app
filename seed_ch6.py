@@ -1484,7 +1484,14 @@ def _seed_ch6_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
     cur = db_exec(conn, f'SELECT id FROM study_notes WHERE chapter_num={ph} AND subject={ph}', (6, 'Indian History'))
     row = cur.fetchone()
     if not row:
-        return {'success': False, 'error': 'Chapter 6 notes not found. Seed notes first.'}
+        # Diagnostic: show what IS in study_notes
+        try:
+            all_cur = db_exec(conn, 'SELECT id, subject, chapter_num FROM study_notes', ())
+            all_rows = all_cur.fetchall()
+            debug = [dict(r) if hasattr(r, 'keys') else {'id': r[0], 'subject': r[1], 'chapter_num': r[2]} for r in all_rows]
+        except Exception as de:
+            debug = str(de)
+        return {'success': False, 'error': f'Chapter 6 notes not found. DB has: {debug}'}
 
     note_id = row_to_dict(row)['id'] if hasattr(row, 'keys') else row[0]
 
