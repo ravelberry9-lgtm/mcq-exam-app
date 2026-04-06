@@ -363,27 +363,48 @@ const gm = {
     const tc  = window.TTS_CONTROLS;
     const raw = sessionStorage.getItem(TTS_SS_KEY);
 
+    // Use URL to detect chapter page (reliable even after AJAX navigation)
+    const onChapterPage = /\/notes\/[^\/]+\/[^\/]+\/\d+/.test(window.location.pathname);
+
+    // On the chapter page — n-player shows all controls, hide global mini-bar
+    if (onChapterPage) {
+      const bar = document.getElementById('gMiniBar');
+      if (bar) bar.classList.remove('active');
+      return;
+    }
+
+    // Nothing to show — no TTS state at all
     if (!tc && !raw) {
       const bar = document.getElementById('gMiniBar');
       if (bar) bar.classList.remove('active');
       return;
     }
 
-    // Not on the chapter page — show paused state
-    if (!tc) {
-      if (!this._dismissed) {
-        try { this._render(JSON.parse(raw), false); } catch(e) {}
-        const t = document.getElementById('gmTime');
-        if (t) t.textContent = '\u23F8 Paused \u2014 tap \u25B6 to resume';
-      }
-      return;
+    if (this._dismissed) return;
+
+    // Determine actual playing state: check TTS_CONTROLS first, then speechSynthesis directly
+    const actuallyPlaying = tc ? tc.state().playing
+                                : (typeof speechSynthesis !== 'undefined' && speechSynthesis.speaking);
+
+    // Build display data
+    let d;
+    if (tc) {
+      const st = tc.state();
+      d = { chNum: st.chNum, chTitle: st.chTitle, secTitle: st.secTitle };
+    } else {
+      try { d = JSON.parse(raw); } catch(e) { return; }
     }
 
-    // On the chapter page — the sticky n-player bar already shows all controls.
-    // Hide the global mini-bar here to avoid showing two players at once.
-    // sessionStorage stays populated so the bar reappears on other pages.
-    const bar2 = document.getElementById('gMiniBar');
-    if (bar2) bar2.classList.remove('active');
+    this._render(d, actuallyPlaying);
+
+    const t = document.getElementById('gmTime');
+    if (t) {
+      if (actuallyPlaying) {
+        t.textContent = (tc ? tc.state().timeStr : '') || '\u25B6 Playing';
+      } else {
+        t.textContent = '\u23F8 Paused \u2014 tap \u25B6 to resume';
+      }
+    }
   },
 
   play() {
@@ -400,18 +421,32 @@ const gm = {
       } catch(e) {}
       tc.play(); return;
     }
-    // Different page — navigate back with autoplay
+    // AJAX scenario: no TTS_CONTROLS but speech is paused in browser
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.paused) {
+      try { speechSynthesis.resume(); return; } catch(e) {}
+    }
+    // Full-page navigation away — go back to chapter with autoplay
     try {
       const d = JSON.parse(sessionStorage.getItem(TTS_SS_KEY) || '{}');
       if (d.url) window.location.href = d.url + '?autoplay=1';
     } catch(e) {}
   },
 
-  pause() { if (window.TTS_CONTROLS) window.TTS_CONTROLS.pause(); },
+  pause() {
+    if (window.TTS_CONTROLS) { window.TTS_CONTROLS.pause(); return; }
+    // AJAX scenario: TTS_CONTROLS gone but speechSynthesis still running
+    try { speechSynthesis.pause(); } catch(e) {}
+    const t = document.getElementById('gmTime');
+    if (t) t.textContent = '\u23F8 Paused \u2014 tap \u25B6 to resume';
+    this._setPlayPause(false);
+  },
   back()  { if (window.TTS_CONTROLS) window.TTS_CONTROLS.skip(-10); },
   fwd()   { if (window.TTS_CONTROLS) window.TTS_CONTROLS.skip(10);  },
 
   stop() {
+    // Always cancel speech directly — covers AJAX scenario where TTS_CONTROLS
+    // still lives on window from the chapter page scripts (outside .main)
+    try { speechSynthesis.cancel(); } catch(e) {}
     if (window.TTS_CONTROLS) window.TTS_CONTROLS.stop();
     sessionStorage.removeItem(TTS_SS_KEY);
     this._dismissed = false;
