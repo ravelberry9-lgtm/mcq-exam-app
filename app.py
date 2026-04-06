@@ -3197,6 +3197,45 @@ def seed_ch6_mcqs():
     finally:
         conn.close()
 
+
+# ── CHAPTER 7: విదేశీ దండయాత్రలు ─────────────────────────────────────────────
+try:
+    from seed_ch7 import _seed_ch7_notes_inner, _seed_ch7_mcqs_inner
+    _SEED_CH7_LOADED = True
+except Exception as _e:
+    _SEED_CH7_LOADED = False
+    print(f"[WARN] seed_ch7.py not loaded: {_e}")
+
+@app.route('/api/notes/seed_ch7_ih', methods=['POST'])
+def notes_seed_ch7_ih():
+    if not _SEED_CH7_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch7.py not found'}), 500
+    conn = get_db()
+    try:
+        force = request.args.get('force', '0') == '1'
+        result = _seed_ch7_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=force)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+@app.route('/api/mcq/seed_ch7', methods=['POST'])
+def seed_ch7_mcqs():
+    if not _SEED_CH7_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch7.py not found'}), 500
+    conn = get_db()
+    try:
+        # Auto-seed notes first (no-op if already present) so MCQ seed always finds them
+        _seed_ch7_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        result = _seed_ch7_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print("\n" + "="*55)

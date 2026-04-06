@@ -625,6 +625,19 @@ async function seedCh3Mcqs() {
               <div id="ch6SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
               <div id="ch6McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
+              <!-- Indian History Ch7 -->
+              <div style="font-size:13px;font-weight:700;color:#555;margin-bottom:6px;">🏹 Indian History — Chapter 7 (విదేశీ దండయాత్రలు)</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                <button id="seedCh7Btn" onclick="seedCh7IH()" class="btn btn-success" style="font-size:13px;padding:8px 16px;border-radius:8px;">
+                  🌱 Seed Notes (14 Sections) — Foreign Invasions
+                </button>
+                <button id="seedCh7McqBtn" onclick="seedCh7Mcqs()" class="btn btn-primary" style="font-size:13px;padding:8px 16px;border-radius:8px;background:#6f42c1;border-color:#6f42c1;">
+                  🎯 Seed MCQs (79 Questions)
+                </button>
+              </div>
+              <div id="ch7SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
+              <div id="ch7McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
 
@@ -866,6 +879,44 @@ async function seedCh5Mcqs() {
           } else {
             el.textContent = '✅ ' + (data.message || 'Chapter 6 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
             showToast(data.message || 'Chapter 6 MCQs seeded!', 'success');
+            loadNotesList();
+          }
+        } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
+
+      async function seedCh7IH(force=false) {
+        const btn = document.getElementById('seedCh7Btn');
+        const el  = document.getElementById('ch7SeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Ch7 Notes...';
+        try {
+          const url = force ? '/api/notes/seed_ch7_ih?force=1' : '/api/notes/seed_ch7_ih';
+          const data = await safeFetch(url, { method: 'POST' });
+          btn.disabled = false; btn.textContent = '🌱 Seed Notes (14 Sections) — Foreign Invasions';
+          el.style.display = 'block';
+          if (data.message && data.message.includes('Already seeded')) {
+            const ok = confirm('Chapter 7 notes already seeded. Overwrite?');
+            if (ok) { seedCh7IH(true); return; }
+          } else if (data.success) {
+            el.textContent = '✅ ' + (data.message || 'Chapter 7 notes seeded!');
+            showToast(data.message || 'Chapter 7 notes seeded!', 'success');
+          } else {
+            showToast(data.error || 'Error seeding Ch7 notes', 'error');
+          }
+        } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
+      async function seedCh7Mcqs() {
+        const btn = document.getElementById('seedCh7McqBtn');
+        const el  = document.getElementById('ch7McqSeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Ch7 MCQs...';
+        try {
+          const data = await safeFetch('/api/mcq/seed_ch7', { method: 'POST' });
+          btn.disabled = false; btn.textContent = '🎯 Seed MCQs (79 Questions)';
+          el.style.display = 'block';
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Ch7 MCQs', 'error');
+          } else {
+            el.textContent = '✅ ' + (data.message || 'Chapter 7 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
+            showToast(data.message || 'Chapter 7 MCQs seeded!', 'success');
             loadNotesList();
           }
         } catch(e) { btn.disabled=false; showToast('Network error','error'); }
