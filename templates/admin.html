@@ -650,6 +650,18 @@ async function seedCh3Mcqs() {
               </div>
               <div id="ch8SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
               <div id="ch8McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+              <!-- Indian History Ch9 -->
+              <div style="font-size:13px;font-weight:700;color:#555;margin-bottom:6px;">🏛️ Indian History — Chapter 9 (మౌర్యుల అనంతర కాలము)</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                <button id="seedCh9Btn" onclick="seedCh9IH()" class="btn btn-success" style="font-size:13px;padding:8px 16px;border-radius:8px;">
+                  🌱 Seed Notes (24 Sections) — Post-Mauryan Era
+                </button>
+                <button id="seedCh9McqBtn" onclick="seedCh9Mcqs()" class="btn btn-primary" style="font-size:13px;padding:8px 16px;border-radius:8px;background:#6f42c1;border-color:#6f42c1;">
+                  🎯 Seed MCQs (106 Questions)
+                </button>
+              </div>
+              <div id="ch9SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
+              <div id="ch9McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
@@ -970,6 +982,46 @@ async function seedCh5Mcqs() {
           } else {
             el.textContent = '✅ ' + (data.message || 'Chapter 8 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
             showToast(data.message || 'Chapter 8 MCQs seeded!', 'success');
+            loadNotesList();
+          }
+        } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
+
+      async function seedCh9IH(force=false) {
+        const btn = document.getElementById('seedCh9Btn');
+        const el  = document.getElementById('ch9SeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Ch9 Notes...';
+        try {
+          const url = force ? '/api/notes/seed_ch9_ih?force=1' : '/api/notes/seed_ch9_ih';
+          const data = await safeFetch(url, { method: 'POST' });
+          btn.disabled = false; btn.textContent = '🌱 Seed Notes (24 Sections) — Post-Mauryan Era';
+          el.style.display = 'block';
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Ch9 notes', 'error');
+          } else if (data.message && data.message.includes('already')) {
+            const ok = confirm(data.message + '\n\nRe-seed (overwrite)?');
+            if (ok) { seedCh9IH(true); return; }
+          } else {
+            el.textContent = '✅ ' + (data.message || 'Chapter 9 notes seeded!');
+            showToast(data.message || 'Chapter 9 notes seeded!', 'success');
+            loadNotesList();
+          }
+        } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
+
+      async function seedCh9Mcqs() {
+        const btn = document.getElementById('seedCh9McqBtn');
+        const el  = document.getElementById('ch9McqSeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Ch9 MCQs...';
+        try {
+          const data = await safeFetch('/api/mcq/seed_ch9', { method: 'POST' });
+          btn.disabled = false; btn.textContent = '🎯 Seed MCQs (106 Questions)';
+          el.style.display = 'block';
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Ch9 MCQs', 'error');
+          } else {
+            el.textContent = '✅ ' + (data.message || 'Chapter 9 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
+            showToast(data.message || 'Chapter 9 MCQs seeded!', 'success');
             loadNotesList();
           }
         } catch(e) { btn.disabled=false; showToast('Network error','error'); }
