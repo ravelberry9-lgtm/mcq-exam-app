@@ -1407,14 +1407,14 @@ def _seed_ch6_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
         pass
 
     # Check if already seeded
-    cur = db_exec(conn, f'SELECT id FROM study_notes WHERE chapter_num={ph} AND subject={ph}', (6, 'Indian History'))
+    cur = db_exec(conn, f'SELECT id FROM study_notes WHERE chapter_num={ph} AND subject={ph}', (6, 'GK'))
     row = cur.fetchone()
     if row and not force:
         return {'success': False, 'already_exists': True,
                 'message': 'Chapter 6 notes already seeded. Use force=True to overwrite.'}
 
     # Delete existing ch6 notes
-    db_exec(conn, f'DELETE FROM study_notes WHERE chapter_num={ph} AND subject={ph}', (6, 'Indian History'))
+    db_exec(conn, f'DELETE FROM study_notes WHERE chapter_num={ph} AND subject={ph}', (6, 'GK'))
     if USE_POSTGRES:
         conn.commit()
 
@@ -1423,8 +1423,8 @@ def _seed_ch6_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
         f'''INSERT INTO study_notes
             (subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
             VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph})''',
-        ('Indian History',
-         'Ancient India',
+        ('GK',
+         'మగధ సామ్రాజ్యం',
          6,
          'మగధ సామ్రాజ్యం',
          'Magadha Dynasty',
@@ -1481,7 +1481,7 @@ def _seed_ch6_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
         pass
 
     # Get study_note_id for ch6
-    cur = db_exec(conn, f'SELECT id FROM study_notes WHERE chapter_num={ph} AND subject={ph}', (6, 'Indian History'))
+    cur = db_exec(conn, f'SELECT id FROM study_notes WHERE chapter_num={ph} AND subject={ph}', (6, 'GK'))
     row = cur.fetchone()
     if not row:
         # Diagnostic: show what IS in study_notes

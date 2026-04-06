@@ -1049,137 +1049,131 @@ MCQ_DATA = [
 # SEED FUNCTIONS
 # ---------------------------------------------------------------------------
 def _seed_ch8_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
-    """Seed Chapter 8 study notes into the study_notes table."""
-    db_exec(conn, """
-        CREATE TABLE IF NOT EXISTS study_notes (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            subject TEXT NOT NULL,
-            topic TEXT NOT NULL,
-            chapter_num INTEGER,
-            section_index INTEGER,
-            title TEXT,
-            content TEXT,
-            pages_ref TEXT,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-    """ if not USE_POSTGRES else """
-        CREATE TABLE IF NOT EXISTS study_notes (
-            id SERIAL PRIMARY KEY,
-            subject TEXT NOT NULL,
-            topic TEXT NOT NULL,
-            chapter_num INTEGER,
-            section_index INTEGER,
-            title TEXT,
-            content TEXT,
-            pages_ref TEXT,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-    """, [])
+    """Seed Chapter 8 study notes — uses standard schema (sections_json)."""
+    import json as _json
 
     ph = "%s" if USE_POSTGRES else "?"
 
-    # Check if already seeded
-    cur = db_exec(conn, f"""
-        SELECT COUNT(*) as cnt FROM study_notes
-        WHERE subject={ph} AND topic={ph} AND chapter_num={ph}
-    """, ['GK', 'Indian_History', 8])
-    row = cur.fetchone()
-    count = row[0] if row else 0
+    # Ensure tables exist (standard schema matching app.py and other chapters)
+    if not USE_POSTGRES:
+        conn.execute('''CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            subject TEXT NOT NULL, topic TEXT NOT NULL,
+            chapter_num INTEGER NOT NULL,
+            chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '',
+            pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )''')
+        conn.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            study_note_id INTEGER NOT NULL,
+            section_idx INTEGER NOT NULL DEFAULT 0,
+            difficulty INTEGER NOT NULL DEFAULT 1,
+            q_te TEXT NOT NULL, opt_a TEXT NOT NULL,
+            opt_b TEXT NOT NULL, opt_c TEXT NOT NULL, opt_d TEXT NOT NULL,
+            correct TEXT NOT NULL, explanation_te TEXT NOT NULL DEFAULT '',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )''')
+        conn.commit()
+    else:
+        conn.execute('''CREATE TABLE IF NOT EXISTS study_notes (
+            id SERIAL PRIMARY KEY,
+            subject TEXT NOT NULL, topic TEXT NOT NULL,
+            chapter_num INTEGER NOT NULL,
+            chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '',
+            pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )''')
+        conn.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
+            id SERIAL PRIMARY KEY,
+            study_note_id INTEGER NOT NULL,
+            section_idx INTEGER NOT NULL DEFAULT 0,
+            difficulty INTEGER NOT NULL DEFAULT 1,
+            q_te TEXT NOT NULL, opt_a TEXT NOT NULL,
+            opt_b TEXT NOT NULL, opt_c TEXT NOT NULL, opt_d TEXT NOT NULL,
+            correct TEXT NOT NULL, explanation_te TEXT NOT NULL DEFAULT '',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )''')
 
-    if count > 0 and not force:
+    # Check if already seeded
+    cur0 = db_exec(conn, f"SELECT id FROM study_notes WHERE subject={ph} AND topic={ph} AND chapter_num={ph}",
+                   ('GK', 'Indian_History', 8))
+    existing = row_to_dict(cur0.fetchone())
+    if existing and not force:
         return {
             'success': True,
-            'message': f'Chapter 8 notes already seeded ({count} sections). Use force=True to re-seed.',
-            'easy': 0, 'medium': 0, 'hard': 0,
+            'message': f'Chapter 8 notes already seeded ({len(SECTIONS)} sections). Use force=True to re-seed.',
+            'total': len(SECTIONS),
         }
 
-    # Delete existing and re-insert
-    db_exec(conn, f"""
-        DELETE FROM study_notes
-        WHERE subject={ph} AND topic={ph} AND chapter_num={ph}
-    """, ['GK', 'Indian_History', 8])
+    # Delete existing
+    db_exec(conn, f"DELETE FROM study_notes WHERE subject={ph} AND topic={ph} AND chapter_num={ph}",
+            ('GK', 'Indian_History', 8))
 
-    for (sec_idx, title_te, body_te) in SECTIONS:
-        db_exec(conn, f"""
-            INSERT INTO study_notes
-                (subject, topic, chapter_num, section_index, title, content, pages_ref)
-            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph})
-        """, ['GK', 'Indian_History', 8, sec_idx, title_te, body_te, '111-137'])
+    # Convert SECTIONS tuples → standard sections_json format
+    # SECTIONS = [(sec_idx, title_te, body_te), ...]  sorted by sec_idx
+    sorted_secs = sorted(SECTIONS, key=lambda t: t[0])
+    sections_list = [{"title": title_te, "sub": "", "audio": body_te}
+                     for (_, title_te, body_te) in sorted_secs]
+    sections_json = _json.dumps(sections_list, ensure_ascii=False)
 
-    conn.commit()
+    db_exec(conn,
+        f"INSERT INTO study_notes (subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'Indian_History', 8,
+         'మౌర్యసామ్రాజ్యము', 'Mauryan Empire', '111-137', sections_json))
+
+    if not USE_POSTGRES:
+        conn.commit()
+
     return {
         'success': True,
-        'message': f'Chapter 8 notes seeded successfully ({len(SECTIONS)} sections).',
-        'easy': 0, 'medium': 0, 'hard': 0,
+        'message': f'Chapter 8 notes seeded successfully! ({len(SECTIONS)} sections)',
+        'total': len(SECTIONS),
     }
 
 
 def _seed_ch8_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
-    """Seed Chapter 8 MCQs into the chapter_mcqs table."""
-    db_exec(conn, """
-        CREATE TABLE IF NOT EXISTS chapter_mcqs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            subject TEXT NOT NULL,
-            topic TEXT NOT NULL,
-            chapter_num INTEGER,
-            section_index INTEGER,
-            difficulty INTEGER DEFAULT 1,
-            question_te TEXT,
-            option_a TEXT,
-            option_b TEXT,
-            option_c TEXT,
-            option_d TEXT,
-            correct_option TEXT,
-            explanation_te TEXT,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-    """ if not USE_POSTGRES else """
-        CREATE TABLE IF NOT EXISTS chapter_mcqs (
-            id SERIAL PRIMARY KEY,
-            subject TEXT NOT NULL,
-            topic TEXT NOT NULL,
-            chapter_num INTEGER,
-            section_index INTEGER,
-            difficulty INTEGER DEFAULT 1,
-            question_te TEXT,
-            option_a TEXT,
-            option_b TEXT,
-            option_c TEXT,
-            option_d TEXT,
-            correct_option TEXT,
-            explanation_te TEXT,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-    """, [])
-
+    """Seed Chapter 8 MCQs — uses standard schema (study_note_id, section_idx, ...)."""
     ph = "%s" if USE_POSTGRES else "?"
 
-    # Delete existing ch8 MCQs
-    db_exec(conn, f"""
-        DELETE FROM chapter_mcqs
-        WHERE subject={ph} AND topic={ph} AND chapter_num={ph}
-    """, ['GK', 'Indian_History', 8])
+    # Ensure notes row exists first
+    _seed_ch8_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
 
-    easy = medium = hard = 0
+    # Get study_note_id
+    cur0 = db_exec(conn, f"SELECT id FROM study_notes WHERE subject={ph} AND topic={ph} AND chapter_num={ph}",
+                   ('GK', 'Indian_History', 8))
+    note_row = row_to_dict(cur0.fetchone())
+    if not note_row:
+        return {'success': False, 'error': 'Chapter 8 notes row not found — seed notes first.'}
+    note_id = note_row['id']
+
+    # Delete existing MCQs for this chapter
+    db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+
+    easy = medium = hard = inserted = 0
+    insert_sql = (
+        f"INSERT INTO chapter_mcqs "
+        f"(study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
+    )
     for (sec_idx, diff, q_te, a, b, c, d, correct, expl) in MCQ_DATA:
-        db_exec(conn, f"""
-            INSERT INTO chapter_mcqs
-                (subject, topic, chapter_num, section_index, difficulty,
-                 question_te, option_a, option_b, option_c, option_d,
-                 correct_option, explanation_te)
-            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})
-        """, ['GK', 'Indian_History', 8, sec_idx, diff,
-              q_te, a, b, c, d, correct, expl])
-        if diff == 1:
-            easy += 1
-        elif diff == 2:
-            medium += 1
-        else:
-            hard += 1
+        db_exec(conn, insert_sql, (note_id, sec_idx, diff, q_te, a, b, c, d, correct, expl))
+        inserted += 1
+        if diff == 1:   easy   += 1
+        elif diff == 2: medium += 1
+        else:           hard   += 1
 
-    conn.commit()
+    if not USE_POSTGRES:
+        conn.commit()
+
     return {
         'success': True,
-        'message': f'Chapter 8 MCQs seeded: Easy={easy}, Medium={medium}, Hard={hard}.',
+        'message': f'Chapter 8 MCQs seeded successfully! Total: {inserted} questions across 18 sections.',
+        'inserted': inserted, 'total': inserted,
         'easy': easy, 'medium': medium, 'hard': hard,
     }
