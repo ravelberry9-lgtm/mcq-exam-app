@@ -3236,6 +3236,43 @@ def seed_ch7_mcqs():
         conn.close()
 
 
+# ── CHAPTER 8: మౌర్యసామ్రాజ్యము ─────────────────────────────────────────────
+try:
+    from seed_ch8 import _seed_ch8_notes_inner, _seed_ch8_mcqs_inner
+    _SEED_CH8_LOADED = True
+except Exception as _e:
+    _SEED_CH8_LOADED = False
+    print(f"[WARN] seed_ch8.py not loaded: {_e}")
+
+@app.route('/api/notes/seed_ch8_ih', methods=['POST'])
+def notes_seed_ch8_ih():
+    if not _SEED_CH8_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch8.py not found'}), 500
+    conn = get_db()
+    try:
+        force = request.args.get('force', '0') == '1'
+        result = _seed_ch8_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=force)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+@app.route('/api/mcq/seed_ch8', methods=['POST'])
+def seed_ch8_mcqs():
+    if not _SEED_CH8_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch8.py not found'}), 500
+    conn = get_db()
+    try:
+        _seed_ch8_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        result = _seed_ch8_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print("\n" + "="*55)

@@ -616,7 +616,7 @@ async function seedCh3Mcqs() {
               <div style="font-size:13px;font-weight:700;color:#555;margin-bottom:6px;">🏛️ Indian History — Chapter 6 (మగధ సామ్రాజ్యం)</div>
               <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
                 <button id="seedCh6Btn" onclick="seedCh6IH()" class="btn btn-success" style="font-size:13px;padding:8px 16px;border-radius:8px;">
-                  🌱 Seed Notes (15 Sections) — Magadha Dynasty
+                  🌱 Seed Notes (18 Sections) — Magadha Dynasty
                 </button>
                 <button id="seedCh6McqBtn" onclick="seedCh6Mcqs()" class="btn btn-primary" style="font-size:13px;padding:8px 16px;border-radius:8px;background:#6f42c1;border-color:#6f42c1;">
                   🎯 Seed MCQs (90 Questions)
@@ -637,6 +637,19 @@ async function seedCh3Mcqs() {
               </div>
               <div id="ch7SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
               <div id="ch7McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+
+              <!-- Indian History Ch8 -->
+              <div style="font-size:13px;font-weight:700;color:#555;margin-bottom:6px;">🦚 Indian History — Chapter 8 (మౌర్యసామ్రాజ్యము)</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                <button id="seedCh8Btn" onclick="seedCh8IH()" class="btn btn-success" style="font-size:13px;padding:8px 16px;border-radius:8px;">
+                  🌱 Seed Notes (18 Sections) — Mauryan Empire
+                </button>
+                <button id="seedCh8McqBtn" onclick="seedCh8Mcqs()" class="btn btn-primary" style="font-size:13px;padding:8px 16px;border-radius:8px;background:#6f42c1;border-color:#6f42c1;">
+                  🎯 Seed MCQs (85 Questions)
+                </button>
+              </div>
+              <div id="ch8SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
+              <div id="ch8McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
@@ -851,7 +864,7 @@ async function seedCh5Mcqs() {
         try {
           const url = force ? '/api/notes/seed_ch6_ih?force=1' : '/api/notes/seed_ch6_ih';
           const data = await safeFetch(url, { method: 'POST' });
-          btn.disabled = false; btn.textContent = '🌱 Seed Notes (15 Sections) — Magadha Dynasty';
+          btn.disabled = false; btn.textContent = '🌱 Seed Notes (18 Sections) — Magadha Dynasty';
           el.style.display = 'block';
           if (data.already_exists || (!data.success && data.message && data.message.includes('already'))) {
             const ok = confirm('Chapter 6 notes already seeded. Overwrite?');
@@ -917,6 +930,46 @@ async function seedCh5Mcqs() {
           } else {
             el.textContent = '✅ ' + (data.message || 'Chapter 7 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
             showToast(data.message || 'Chapter 7 MCQs seeded!', 'success');
+            loadNotesList();
+          }
+        } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
+
+      async function seedCh8IH(force=false) {
+        const btn = document.getElementById('seedCh8Btn');
+        const el  = document.getElementById('ch8SeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Ch8 Notes...';
+        try {
+          const url = force ? '/api/notes/seed_ch8_ih?force=1' : '/api/notes/seed_ch8_ih';
+          const data = await safeFetch(url, { method: 'POST' });
+          btn.disabled = false; btn.textContent = '🌱 Seed Notes (18 Sections) — Mauryan Empire';
+          el.style.display = 'block';
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Ch8 notes', 'error');
+          } else if (data.message && data.message.includes('already')) {
+            const ok = confirm(data.message + '\n\nRe-seed (overwrite)?');
+            if (ok) { seedCh8IH(true); return; }
+          } else {
+            el.textContent = '✅ ' + (data.message || 'Chapter 8 notes seeded!');
+            showToast(data.message || 'Chapter 8 notes seeded!', 'success');
+            loadNotesList();
+          }
+        } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
+
+      async function seedCh8Mcqs() {
+        const btn = document.getElementById('seedCh8McqBtn');
+        const el  = document.getElementById('ch8McqSeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Ch8 MCQs...';
+        try {
+          const data = await safeFetch('/api/mcq/seed_ch8', { method: 'POST' });
+          btn.disabled = false; btn.textContent = '🎯 Seed MCQs (85 Questions)';
+          el.style.display = 'block';
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Ch8 MCQs', 'error');
+          } else {
+            el.textContent = '✅ ' + (data.message || 'Chapter 8 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
+            showToast(data.message || 'Chapter 8 MCQs seeded!', 'success');
             loadNotesList();
           }
         } catch(e) { btn.disabled=false; showToast('Network error','error'); }
