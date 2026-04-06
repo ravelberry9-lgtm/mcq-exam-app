@@ -896,7 +896,9 @@ function _onChunksDone() {
   speaking = false;
   _allWords = []; _wordPos = 0; _chunks = []; _chunkIdx = 0;
   _updateSkipBtns();
-  sessionStorage.removeItem('tts_now');
+  // Keep sessionStorage so mini-bar persists after finish (user can re-play).
+  // Only explicit ⏹ Stop clears it.
+  _saveTTSState(cur);   // save last-played section
   if (allMode && queue.length) {
     setTimeout(nextQ, 600);
   } else {
@@ -997,14 +999,17 @@ function _updateSkipBtns() {
   if (fw) fw.style.display = speaking ? '' : 'none';
 }
 
-function _saveTTSState() {
+// Save TTS state to sessionStorage — always save whenever a section index is known
+// (not just while speaking). Only stop() clears it.
+function _saveTTSState(secIdx) {
   try {
-    if (!speaking || cur < 0) return;
-    const sec = SECS[cur] || {};
+    const idx = (secIdx !== undefined) ? secIdx : cur;
+    if (idx < 0 || idx >= SECS.length) return;
+    const sec = SECS[idx] || {};
     sessionStorage.setItem('tts_now', JSON.stringify({
       chNum:    CHAPTER_NUM,
       chTitle:  CHAPTER_TITLE,
-      secIdx:   cur,
+      secIdx:   idx,
       secTitle: sec.title || '',
       url:      CHAPTER_URL
     }));
@@ -1013,18 +1018,26 @@ function _saveTTSState() {
 
 // ── TTS_CONTROLS: interface for global mini-bar ──
 window.TTS_CONTROLS = {
-  play()  { resumePlay(); },
-  pause() { pausePlay(); },
-  stop()  { stopPlay(); },
-  skip(d) { skipSec(d); },
+  play()        { resumePlay(); },
+  pause()       { pausePlay(); },
+  stop()        { stopPlay(); },
+  skip(d)       { skipSec(d); },
+  // Play a specific section by index (used by mini-bar when coming back to page)
+  playSection(i){ if (i >= 0 && i < SECS.length) { stop(); cur = i; allMode = false; queue = []; speak(); } },
   state() {
     const sec = SECS[cur] || {};
+    // Also check sessionStorage so we can report last-known section even when idle
+    let ssTitle = '', ssChNum = CHAPTER_NUM, ssChTitle = CHAPTER_TITLE;
+    try {
+      const d = JSON.parse(sessionStorage.getItem('tts_now') || '{}');
+      ssTitle = d.secTitle || ''; ssChNum = d.chNum || CHAPTER_NUM; ssChTitle = d.chTitle || CHAPTER_TITLE;
+    } catch(e) {}
     return {
       playing:  speaking,
       paused:   paused,
-      chNum:    CHAPTER_NUM,
-      chTitle:  CHAPTER_TITLE,
-      secTitle: (cur >= 0) ? sec.title || '' : '',
+      chNum:    ssChNum,
+      chTitle:  ssChTitle,
+      secTitle: (cur >= 0) ? (sec.title || '') : ssTitle,
       timeStr:  document.getElementById('liveTimer')?.textContent || ''
     };
   }

@@ -343,31 +343,57 @@ const gm = {
     if (fw) fw.style.display = playing ? '' : 'none';
   },
   _sync() {
-    const tc = window.TTS_CONTROLS;
+    const tc  = window.TTS_CONTROLS;
     const raw = sessionStorage.getItem(TTS_SS_KEY);
+    // Nothing anywhere — hide bar
     if (!tc && !raw) {
       const bar = document.getElementById('gMiniBar');
       if (bar) bar.classList.remove('active');
       return;
     }
+    // Not on the chapter page — show paused state from sessionStorage
     if (!tc) {
-      // Different page — show paused state
-      const bar = document.getElementById('gMiniBar');
-      if (bar) bar.classList.add('active');
-      this._setPlayPause(false);
+      try {
+        const d = JSON.parse(raw);
+        this._render(d, false);
+      } catch(e) {}
       const t = document.getElementById('gmTime');
-      if (t) t.textContent = '\u23F8 Paused';
+      if (t) t.textContent = '\u23F8 Paused — tap \u25B6 to resume';
       return;
     }
-    // On the chapter page — live state from TTS_CONTROLS
+    // On the chapter page — get live state
     const st = tc.state();
-    if (st.secTitle) this._render(st, st.playing && !st.paused);
-    else { const bar = document.getElementById('gMiniBar'); if (bar) bar.classList.remove('active'); }
-    const t = document.getElementById('gmTime');
-    if (t) t.textContent = st.timeStr || '';
+    // secTitle comes from either live state or sessionStorage fallback (TTS_CONTROLS.state() handles this)
+    if (st.secTitle) {
+      this._render(st, st.playing && !st.paused);
+      const t = document.getElementById('gmTime');
+      if (t) t.textContent = st.playing ? (st.timeStr || '') : (st.paused ? '\u23F8 Paused' : '\u2714 Done');
+    } else if (raw) {
+      // Chapter page loaded but nothing playing yet — show from sessionStorage
+      try { this._render(JSON.parse(raw), false); } catch(e) {}
+      const t = document.getElementById('gmTime');
+      if (t) t.textContent = '\u25B6 Tap Play to resume';
+    } else {
+      const bar = document.getElementById('gMiniBar');
+      if (bar) bar.classList.remove('active');
+    }
   },
   play()  {
-    if (window.TTS_CONTROLS) { window.TTS_CONTROLS.play(); return; }
+    const tc = window.TTS_CONTROLS;
+    if (tc) {
+      const st = tc.state();
+      // Already playing or paused — just toggle play
+      if (st.playing || st.paused) { tc.play(); return; }
+      // On chapter page but idle — use saved secIdx to restart correct section
+      try {
+        const d = JSON.parse(sessionStorage.getItem(TTS_SS_KEY) || '{}');
+        if (typeof d.secIdx === 'number' && d.secIdx >= 0 && tc.playSection) {
+          tc.playSection(d.secIdx); return;
+        }
+      } catch(e) {}
+      tc.play(); return;
+    }
+    // Different page — navigate back to chapter with autoplay flag
     try {
       const d = JSON.parse(sessionStorage.getItem(TTS_SS_KEY) || '{}');
       if (d.url) window.location.href = d.url + '?autoplay=1';
