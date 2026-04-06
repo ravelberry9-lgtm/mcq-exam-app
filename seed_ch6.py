@@ -1377,37 +1377,39 @@ def _seed_ch6_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
     ph = '%s' if USE_POSTGRES else '?'
 
     # Ensure table exists
-    if USE_POSTGRES:
-        conn.execute('''CREATE TABLE IF NOT EXISTS study_notes (
-            id SERIAL PRIMARY KEY,
-            subject TEXT NOT NULL,
-            topic TEXT NOT NULL,
-            chapter_num INTEGER NOT NULL,
-            chapter_title_te TEXT NOT NULL,
-            chapter_title_en TEXT NOT NULL,
-            pages_ref TEXT DEFAULT '',
-            sections_json TEXT NOT NULL DEFAULT '[]',
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )''')
+    try:
+        if USE_POSTGRES:
+            conn.execute('''CREATE TABLE IF NOT EXISTS study_notes (
+                id SERIAL PRIMARY KEY,
+                subject TEXT NOT NULL,
+                topic TEXT NOT NULL,
+                chapter_num INTEGER NOT NULL,
+                chapter_title_te TEXT NOT NULL,
+                chapter_title_en TEXT NOT NULL,
+                pages_ref TEXT DEFAULT '',
+                sections_json TEXT NOT NULL DEFAULT '[]',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )''')
+        else:
+            conn.execute('''CREATE TABLE IF NOT EXISTS study_notes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                subject TEXT NOT NULL,
+                topic TEXT NOT NULL,
+                chapter_num INTEGER NOT NULL,
+                chapter_title_te TEXT NOT NULL,
+                chapter_title_en TEXT NOT NULL,
+                pages_ref TEXT DEFAULT '',
+                sections_json TEXT NOT NULL DEFAULT '[]',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )''')
         conn.commit()
-    else:
-        conn.execute('''CREATE TABLE IF NOT EXISTS study_notes (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            subject TEXT NOT NULL,
-            topic TEXT NOT NULL,
-            chapter_num INTEGER NOT NULL,
-            chapter_title_te TEXT NOT NULL,
-            chapter_title_en TEXT NOT NULL,
-            pages_ref TEXT DEFAULT '',
-            sections_json TEXT NOT NULL DEFAULT '[]',
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )''')
-        conn.commit()
+    except Exception:
+        pass
 
     # Check if already seeded
     cur = db_exec(conn, f'SELECT id FROM study_notes WHERE chapter_num={ph} AND subject={ph}', (6, 'Indian History'))
-    rows = row_to_dict(cur)
-    if rows and not force:
+    row = cur.fetchone()
+    if row and not force:
         return {'success': False, 'already_exists': True,
                 'message': 'Chapter 6 notes already seeded. Use force=True to overwrite.'}
 
@@ -1443,46 +1445,48 @@ def _seed_ch6_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
     ph = '%s' if USE_POSTGRES else '?'
 
     # Ensure table exists
-    if USE_POSTGRES:
-        conn.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
-            id SERIAL PRIMARY KEY,
-            study_note_id INTEGER NOT NULL,
-            section_idx INTEGER NOT NULL DEFAULT 0,
-            difficulty INTEGER NOT NULL DEFAULT 1,
-            q_te TEXT NOT NULL,
-            opt_a TEXT NOT NULL,
-            opt_b TEXT NOT NULL,
-            opt_c TEXT NOT NULL,
-            opt_d TEXT NOT NULL,
-            correct TEXT NOT NULL,
-            explanation_te TEXT NOT NULL DEFAULT '',
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )''')
+    try:
+        if USE_POSTGRES:
+            conn.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
+                id SERIAL PRIMARY KEY,
+                study_note_id INTEGER NOT NULL,
+                section_idx INTEGER NOT NULL DEFAULT 0,
+                difficulty INTEGER NOT NULL DEFAULT 1,
+                q_te TEXT NOT NULL,
+                opt_a TEXT NOT NULL,
+                opt_b TEXT NOT NULL,
+                opt_c TEXT NOT NULL,
+                opt_d TEXT NOT NULL,
+                correct TEXT NOT NULL,
+                explanation_te TEXT NOT NULL DEFAULT '',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )''')
+        else:
+            conn.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                study_note_id INTEGER NOT NULL,
+                section_idx INTEGER NOT NULL DEFAULT 0,
+                difficulty INTEGER NOT NULL DEFAULT 1,
+                q_te TEXT NOT NULL,
+                opt_a TEXT NOT NULL,
+                opt_b TEXT NOT NULL,
+                opt_c TEXT NOT NULL,
+                opt_d TEXT NOT NULL,
+                correct TEXT NOT NULL,
+                explanation_te TEXT NOT NULL DEFAULT '',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )''')
         conn.commit()
-    else:
-        conn.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            study_note_id INTEGER NOT NULL,
-            section_idx INTEGER NOT NULL DEFAULT 0,
-            difficulty INTEGER NOT NULL DEFAULT 1,
-            q_te TEXT NOT NULL,
-            opt_a TEXT NOT NULL,
-            opt_b TEXT NOT NULL,
-            opt_c TEXT NOT NULL,
-            opt_d TEXT NOT NULL,
-            correct TEXT NOT NULL,
-            explanation_te TEXT NOT NULL DEFAULT '',
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )''')
-        conn.commit()
+    except Exception:
+        pass
 
     # Get study_note_id for ch6
     cur = db_exec(conn, f'SELECT id FROM study_notes WHERE chapter_num={ph} AND subject={ph}', (6, 'Indian History'))
-    rows = row_to_dict(cur)
-    if not rows:
+    row = cur.fetchone()
+    if not row:
         return {'success': False, 'error': 'Chapter 6 notes not found. Seed notes first.'}
 
-    note_id = rows[0]['id']
+    note_id = row_to_dict(row)['id'] if hasattr(row, 'keys') else row[0]
 
     # Delete existing ch6 MCQs
     db_exec(conn, f'DELETE FROM chapter_mcqs WHERE study_note_id={ph}', (note_id,))
