@@ -1620,7 +1620,7 @@ def _seed_ch9_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres, force=
 
     if existing and not force:
         return {
-            "success": False,
+            "success": True,
             "message": "Chapter 9 notes already seeded. Use force=True to overwrite.",
             "total": len(CH9_SECTIONS),
         }

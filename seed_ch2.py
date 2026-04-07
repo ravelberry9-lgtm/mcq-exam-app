@@ -130,7 +130,7 @@ def _seed_ch2_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
     cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND subject={ph}", (2, 'GK'))
     row = cur.fetchone()
     if row and not force:
-        return {'success': False, 'already_exists': True,
+        return {'success': True, 'already_exists': True,
                 'message': 'Chapter 2 notes already seeded. Use force=True to overwrite.'}
     if row and force:
         db_exec(conn, f"DELETE FROM study_notes WHERE chapter_num={ph} AND subject={ph}", (2, 'GK'))
