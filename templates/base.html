@@ -468,14 +468,53 @@ const gm = {
     try {
       const d = JSON.parse(sessionStorage.getItem(TTS_SS_KEY) || '{}');
       if (!d.url) return;
-      // If already on the chapter page, just scroll to the section
-      if (window.TTS_CONTROLS && typeof d.secIdx === 'number') {
-        const el = document.getElementById('card-' + d.secIdx);
-        if (el) { el.scrollIntoView({behavior:'smooth', block:'center'}); return; }
+      this._dismissed = false;
+
+      // ── Already on the chapter page — just scroll ──
+      if (/\/notes\/[^\/]+\/[^\/]+\/\d+/.test(window.location.pathname)) {
+        if (typeof d.secIdx === 'number') {
+          const el = document.getElementById('card-' + d.secIdx);
+          if (el) { el.scrollIntoView({behavior:'smooth', block:'center'}); return; }
+        }
+        return;
       }
+
+      // ── TTS_CONTROLS alive (AJAX scenario) — go back via AJAX, no page reload ──
+      if (window.TTS_CONTROLS) {
+        fetch(d.url, {credentials: 'same-origin'})
+          .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+          .then(html => {
+            const doc     = new DOMParser().parseFromString(html, 'text/html');
+            const newMain = doc.querySelector('.main');
+            const curMain = document.querySelector('.main');
+            if (newMain && curMain) {
+              curMain.replaceWith(newMain.cloneNode(true));
+              document.title = doc.title;
+              history.pushState({gmAjax: true, href: d.url}, doc.title, d.url);
+              // Restore n-player and FAB (were hidden when we left the chapter)
+              const np = document.querySelector('.n-player');
+              if (np) np.style.display = '';
+              const fb = document.getElementById('fabBtn');
+              if (fb) fb.style.display = '';
+              // Scroll to the playing section
+              if (typeof d.secIdx === 'number') {
+                setTimeout(() => {
+                  const el = document.getElementById('card-' + d.secIdx);
+                  if (el) el.scrollIntoView({behavior:'smooth', block:'center'});
+                }, 300);
+              }
+            }
+          })
+          .catch(() => {
+            // Fallback: full navigation
+            try { speechSynthesis.cancel(); } catch(e) {}
+            window.location.href = d.url + '?autoplay=1';
+          });
+        return;
+      }
+
+      // ── Full page navigation (TTS_CONTROLS gone) ──
       const hash = typeof d.secIdx === 'number' ? '#card-' + d.secIdx : '';
-      // Cancel any in-progress speech so it doesn't overlap when chapter page starts autoplay
-      try { speechSynthesis.cancel(); } catch(e) {}
       window.location.href = d.url + '?autoplay=1' + hash;
     } catch(e) {}
   }
