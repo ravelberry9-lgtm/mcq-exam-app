@@ -122,6 +122,21 @@ def init_db():
             explanation_te TEXT NOT NULL DEFAULT '',
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )''')
+        cur.execute('''CREATE TABLE IF NOT EXISTS pyq_questions (
+            id SERIAL PRIMARY KEY,
+            topic TEXT NOT NULL,
+            year TEXT NOT NULL,
+            paper TEXT NOT NULL,
+            question_number INTEGER DEFAULT 0,
+            question_text TEXT NOT NULL,
+            option_a TEXT NOT NULL,
+            option_b TEXT NOT NULL,
+            option_c TEXT NOT NULL,
+            option_d TEXT NOT NULL,
+            correct_answer TEXT DEFAULT '',
+            language TEXT DEFAULT 'English',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )''')
         conn.commit()
         cur.close()
     else:
@@ -170,6 +185,21 @@ def init_db():
                 opt_d TEXT NOT NULL,
                 correct TEXT NOT NULL,
                 explanation_te TEXT NOT NULL DEFAULT '',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE TABLE IF NOT EXISTS pyq_questions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                topic TEXT NOT NULL,
+                year TEXT NOT NULL,
+                paper TEXT NOT NULL,
+                question_number INTEGER DEFAULT 0,
+                question_text TEXT NOT NULL,
+                option_a TEXT NOT NULL,
+                option_b TEXT NOT NULL,
+                option_c TEXT NOT NULL,
+                option_d TEXT NOT NULL,
+                correct_answer TEXT DEFAULT '',
+                language TEXT DEFAULT 'English',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
         ''')
@@ -475,19 +505,27 @@ def submit_exam():
         conn.close(); return jsonify({'error': 'Already submitted'}), 400
 
     q_ids = json.loads(sess['questions'])
+    config = json.loads(sess['config'])
+    is_pyq = config.get('source') == 'PYQ'
+    q_table = 'pyq_questions' if is_pyq else 'questions'
     results, score = [], 0
     for qid in q_ids:
-        cur = db_exec(conn, 'SELECT * FROM questions WHERE id=?', (qid,))
+        cur = db_exec(conn, f'SELECT * FROM {q_table} WHERE id=?', (qid,))
         q = row_to_dict(cur.fetchone())
         if not q: continue
         user_ans = answers.get(str(qid), answers.get(qid, None))
-        correct = q['correct_answer'].strip().upper()
-        is_correct = bool(user_ans and user_ans.strip().upper() == correct)
+        correct = (q['correct_answer'] or '').strip().upper()
+        is_correct = bool(user_ans and correct and user_ans.strip().upper() == correct)
         if is_correct: score += 1
+        if is_pyq:
+            opts = [{'key': 'A', 'text': q['option_a']}, {'key': 'B', 'text': q['option_b']},
+                    {'key': 'C', 'text': q['option_c']}, {'key': 'D', 'text': q['option_d']}]
+        else:
+            opts = _get_options(q)
         results.append({
-            'id': qid, 'folder': q['folder'], 'topic': q['topic'],
+            'id': qid, 'folder': q.get('folder', 'APHC_PYQ'), 'topic': q['topic'],
             'passage': q.get('passage'), 'passage_group_id': q.get('passage_group_id'),
-            'question_text': q['question_text'], 'options': _get_options(q),
+            'question_text': q['question_text'], 'options': opts,
             'correct_answer': correct, 'user_answer': user_ans,
             'is_correct': is_correct, 'explanation': q.get('explanation', ''),
             'difficulty': q.get('difficulty', 'M')
@@ -511,15 +549,22 @@ def exam_data(session_id):
     if not sess:
         conn.close(); return jsonify({'error': 'Not found'}), 404
     config = json.loads(sess['config'])
+    is_pyq = config.get('source') == 'PYQ'
+    q_table = 'pyq_questions' if is_pyq else 'questions'
     q_ids = json.loads(sess['questions'])
     questions = []
     for qid in q_ids:
-        cur = db_exec(conn, 'SELECT * FROM questions WHERE id=?', (qid,))
+        cur = db_exec(conn, f'SELECT * FROM {q_table} WHERE id=?', (qid,))
         q = row_to_dict(cur.fetchone())
         if q:
-            questions.append({'id': q['id'], 'folder': q['folder'], 'topic': q['topic'],
+            if is_pyq:
+                opts = [{'key': 'A', 'text': q['option_a']}, {'key': 'B', 'text': q['option_b']},
+                        {'key': 'C', 'text': q['option_c']}, {'key': 'D', 'text': q['option_d']}]
+            else:
+                opts = _get_options(q)
+            questions.append({'id': q['id'], 'folder': q.get('folder', 'APHC_PYQ'), 'topic': q['topic'],
                                'passage': q.get('passage'), 'passage_group_id': q.get('passage_group_id'),
-                               'question_text': q['question_text'], 'options': _get_options(q),
+                               'question_text': q['question_text'], 'options': opts,
                                'difficulty': q.get('difficulty', 'M')})
     conn.close()
     return jsonify({'questions': questions, 'duration': config['duration'], 'total': len(questions)})
@@ -3555,6 +3600,210 @@ def seed_all_ancient():
 
     all_ok = all('error' not in r for r in results)
     return jsonify({'success': all_ok, 'total_steps': len(results), 'results': results})
+
+
+# ─────────────────────────────────────────────
+# APHC PYQ (Previous Year Questions) ROUTES
+# ─────────────────────────────────────────────
+@app.route('/pyq')
+def pyq_home():
+    conn = get_db()
+    # Get topic list with counts
+    cur = db_exec(conn, '''
+        SELECT topic, COUNT(*) as count FROM pyq_questions
+        GROUP BY topic ORDER BY count DESC
+    ''')
+    topics = [row_to_dict(r) for r in cur.fetchall()]
+
+    # Get year list with counts
+    cur = db_exec(conn, '''
+        SELECT year, COUNT(*) as count FROM pyq_questions
+        GROUP BY year ORDER BY year DESC
+    ''')
+    years = [row_to_dict(r) for r in cur.fetchall()]
+
+    # Total
+    cur = db_exec(conn, 'SELECT COUNT(*) as c FROM pyq_questions')
+    total = row_to_dict(cur.fetchone())['c']
+
+    conn.close()
+    return render_template('pyq.html', topics=topics, years=years, total=total)
+
+
+@app.route('/api/pyq-stats')
+def pyq_stats():
+    conn = get_db()
+    cur = db_exec(conn, '''
+        SELECT topic, year, COUNT(*) as count FROM pyq_questions
+        GROUP BY topic, year ORDER BY topic, year
+    ''')
+    rows = [row_to_dict(r) for r in cur.fetchall()]
+    cur = db_exec(conn, 'SELECT COUNT(*) as c FROM pyq_questions')
+    total = row_to_dict(cur.fetchone())['c']
+    conn.close()
+    return jsonify({'total': total, 'breakdown': rows})
+
+
+@app.route('/api/pyq-start-exam', methods=['POST'])
+def pyq_start_exam():
+    data = request.json
+    topics = data.get('topics', [])       # list of topic names
+    years = data.get('years', [])         # list of year strings
+    num_questions = int(data.get('num_questions', 40))
+    duration = int(data.get('duration', 45))
+    student_name = data.get('student_name', 'Student')
+    mode = data.get('mode', 'shuffle')
+
+    conn = get_db()
+
+    # Build query with filters
+    conditions = []
+    params = []
+    if topics:
+        placeholders = ','.join(['?'] * len(topics))
+        conditions.append(f'topic IN ({placeholders})')
+        params.extend(topics)
+    if years:
+        placeholders = ','.join(['?'] * len(years))
+        conditions.append(f'year IN ({placeholders})')
+        params.extend(years)
+
+    where = (' WHERE ' + ' AND '.join(conditions)) if conditions else ''
+    cur = db_exec(conn, f'SELECT * FROM pyq_questions{where}', params)
+    rows = [row_to_dict(r) for r in cur.fetchall()]
+
+    if not rows:
+        conn.close()
+        return jsonify({'error': 'No questions found for selected filters'}), 400
+
+    # Shuffle and pick
+    random.shuffle(rows)
+    selected = rows[:num_questions]
+
+    # Create exam session
+    session_id = str(uuid.uuid4())
+    # Store PYQ questions in the questions table temporarily? No — use pyq_questions IDs
+    # We'll store with a 'PYQ' marker in config
+    config = {
+        'mode': mode, 'duration': duration, 'student_name': student_name,
+        'source': 'PYQ', 'topics': topics, 'years': years
+    }
+    q_ids = [q['id'] for q in selected]
+
+    db_exec(conn, 'INSERT INTO exam_sessions (id, config, questions) VALUES (?,?,?)',
+            (session_id, json.dumps(config), json.dumps(q_ids)))
+    conn.commit()
+
+    # Build client questions
+    client_questions = [{
+        'id': q['id'],
+        'folder': 'APHC_PYQ',
+        'topic': q['topic'],
+        'passage': None,
+        'passage_group_id': None,
+        'question_text': q['question_text'],
+        'options': [
+            {'key': 'A', 'text': q['option_a']},
+            {'key': 'B', 'text': q['option_b']},
+            {'key': 'C', 'text': q['option_c']},
+            {'key': 'D', 'text': q['option_d']}
+        ],
+        'difficulty': 'M'
+    } for q in selected]
+
+    conn.close()
+    return jsonify({
+        'session_id': session_id, 'questions': client_questions,
+        'duration': duration, 'total': len(client_questions)
+    })
+
+
+@app.route('/api/pyq-submit', methods=['POST'])
+def pyq_submit():
+    data = request.json
+    session_id = data.get('session_id')
+    answers = data.get('answers', {})
+
+    conn = get_db()
+    cur = db_exec(conn, 'SELECT * FROM exam_sessions WHERE id=?', (session_id,))
+    sess = row_to_dict(cur.fetchone())
+    if not sess:
+        conn.close()
+        return jsonify({'error': 'Session not found'}), 404
+    if sess['submitted_at']:
+        conn.close()
+        return jsonify({'error': 'Already submitted'}), 400
+
+    q_ids = json.loads(sess['questions'])
+    results, score = [], 0
+    for qid in q_ids:
+        cur = db_exec(conn, 'SELECT * FROM pyq_questions WHERE id=?', (qid,))
+        q = row_to_dict(cur.fetchone())
+        if not q:
+            continue
+        user_ans = answers.get(str(qid), answers.get(qid, None))
+        correct = (q['correct_answer'] or '').strip().upper()
+        is_correct = bool(user_ans and correct and user_ans.strip().upper() == correct)
+        if is_correct:
+            score += 1
+        results.append({
+            'id': qid, 'folder': 'APHC_PYQ', 'topic': q['topic'],
+            'passage': None, 'passage_group_id': None,
+            'question_text': q['question_text'],
+            'options': [
+                {'key': 'A', 'text': q['option_a']},
+                {'key': 'B', 'text': q['option_b']},
+                {'key': 'C', 'text': q['option_c']},
+                {'key': 'D', 'text': q['option_d']}
+            ],
+            'correct_answer': correct, 'user_answer': user_ans,
+            'is_correct': is_correct, 'explanation': '',
+            'difficulty': 'M'
+        })
+
+    total = len(results)
+    unanswered = sum(1 for r in results if not r['user_answer'])
+    db_exec(conn, 'UPDATE exam_sessions SET answers=?, submitted_at=?, score=?, total=? WHERE id=?',
+            (json.dumps(answers), datetime.now().isoformat(), score, total, session_id))
+    conn.commit()
+    conn.close()
+
+    return jsonify({
+        'score': score, 'total': total, 'unanswered': unanswered,
+        'percentage': round(score / total * 100, 1) if total else 0,
+        'results': results
+    })
+
+
+@app.route('/api/pyq-exam-data/<session_id>')
+def pyq_exam_data(session_id):
+    conn = get_db()
+    cur = db_exec(conn, 'SELECT * FROM exam_sessions WHERE id=?', (session_id,))
+    sess = row_to_dict(cur.fetchone())
+    if not sess:
+        conn.close()
+        return jsonify({'error': 'Not found'}), 404
+    config = json.loads(sess['config'])
+    q_ids = json.loads(sess['questions'])
+    questions = []
+    for qid in q_ids:
+        cur = db_exec(conn, 'SELECT * FROM pyq_questions WHERE id=?', (qid,))
+        q = row_to_dict(cur.fetchone())
+        if q:
+            questions.append({
+                'id': q['id'], 'folder': 'APHC_PYQ', 'topic': q['topic'],
+                'passage': None, 'passage_group_id': None,
+                'question_text': q['question_text'],
+                'options': [
+                    {'key': 'A', 'text': q['option_a']},
+                    {'key': 'B', 'text': q['option_b']},
+                    {'key': 'C', 'text': q['option_c']},
+                    {'key': 'D', 'text': q['option_d']}
+                ],
+                'difficulty': 'M'
+            })
+    conn.close()
+    return jsonify({'questions': questions, 'duration': config['duration'], 'total': len(questions)})
 
 
 # ── Run init_db on import (works with gunicorn on Railway AND locally) ──
