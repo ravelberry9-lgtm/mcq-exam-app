@@ -3405,6 +3405,66 @@ def seed_modern_ch1_mcqs():
         conn.close()
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# SEED ALL ANCIENT — seeds ch1-ch9 notes + MCQs in one shot
+# ─────────────────────────────────────────────────────────────────────────────
+
+@app.route('/api/notes/seed_all_ancient', methods=['POST'])
+def seed_all_ancient():
+    """Seed ALL Ancient Indian History chapters (ch1-ch9) notes + MCQs in one call.
+    Uses the app's own test client to hit each seed endpoint sequentially.
+    Add ?force=1 to overwrite existing data."""
+    force = request.args.get('force', '0') == '1'
+    qs = '?force=1' if force else ''
+    results = []
+    client = app.test_client()
+
+    # Notes endpoints first, then MCQ endpoints
+    notes_routes = [
+        f'/api/notes/seed{qs}',          # ch1
+        f'/api/notes/seed_ch2_ih{qs}',   # ch2
+        f'/api/notes/seed_ch3_ih{qs}',   # ch3
+        f'/api/notes/seed_ch4_ih{qs}',   # ch4
+        f'/api/notes/seed_ch5_ih{qs}',   # ch5
+        f'/api/notes/seed_ch6_ih{qs}',   # ch6
+        f'/api/notes/seed_ch7_ih{qs}',   # ch7
+        f'/api/notes/seed_ch8_ih{qs}',   # ch8
+        f'/api/notes/seed_ch9_ih{qs}',   # ch9
+    ]
+    mcq_routes = [
+        '/api/mcq/seed_ch1',
+        '/api/mcq/seed_ch2',
+        '/api/mcq/seed_ch3',
+        '/api/mcq/seed_ch4',
+        '/api/mcq/seed_ch5',
+        '/api/mcq/seed_ch6',
+        '/api/mcq/seed_ch7',
+        '/api/mcq/seed_ch8',
+        '/api/mcq/seed_ch9',
+    ]
+
+    for i, route in enumerate(notes_routes, start=1):
+        try:
+            resp = client.post(route)
+            data = resp.get_json() or {}
+            results.append({'ch': i, 'type': 'notes', 'status': resp.status_code,
+                            'msg': data.get('message', data.get('success', str(data)))})
+        except Exception as e:
+            results.append({'ch': i, 'type': 'notes', 'error': str(e)})
+
+    for i, route in enumerate(mcq_routes, start=1):
+        try:
+            resp = client.post(route)
+            data = resp.get_json() or {}
+            results.append({'ch': i, 'type': 'mcqs', 'status': resp.status_code,
+                            'msg': data.get('message', data.get('success', str(data)))})
+        except Exception as e:
+            results.append({'ch': i, 'type': 'mcqs', 'error': str(e)})
+
+    all_ok = all('error' not in r for r in results)
+    return jsonify({'success': all_ok, 'total_steps': len(results), 'results': results})
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print("\n" + "="*55)
