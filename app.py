@@ -340,12 +340,15 @@ def _auto_seed_ancient():
     for ch_num, mod_name in [
         (1,'seed_ch1'),(2,'seed_ch2'),(3,'seed_ch3'),(4,'seed_ch4'),(5,'seed_ch5'),
         (6,'seed_ch6'),(7,'seed_ch7'),(8,'seed_ch8'),(9,'seed_ch9'),
+        (10,'seed_ch10_ancient'),
     ]:
         c = get_db()
         try:
             mod = importlib.import_module(mod_name)
-            notes_fn = getattr(mod, f'_seed_ch{ch_num}_notes_inner')
-            mcqs_fn  = getattr(mod, f'_seed_ch{ch_num}_mcqs_inner')
+            # derive function suffix from module name (e.g. seed_ch10_ancient → ch10_ancient)
+            fn_suffix = mod_name[len('seed_'):]  # 'ch1', 'ch2', ..., 'ch10_ancient'
+            notes_fn = getattr(mod, f'_seed_{fn_suffix}_notes_inner')
+            mcqs_fn  = getattr(mod, f'_seed_{fn_suffix}_mcqs_inner')
             # force=True because we just wiped — no existing rows to worry about
             notes_fn(c, db_exec, row_to_dict, USE_POSTGRES, force=True)
             c.commit()
@@ -3625,6 +3628,49 @@ def seed_modern_ch1_mcqs():
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# ANCIENT CH10 — Gupta Empire (seed_ch10_ancient.py)
+# ─────────────────────────────────────────────────────────────────────────────
+
+try:
+    from seed_ch10_ancient import (
+        _seed_ch10_ancient_notes_inner,
+        _seed_ch10_ancient_mcqs_inner,
+    )
+    _SEED_CH10_ANCIENT_LOADED = True
+except Exception as _e:
+    print(f"[WARN] seed_ch10_ancient.py not loaded: {_e}")
+    _SEED_CH10_ANCIENT_LOADED = False
+
+@app.route('/api/notes/seed_ch10_ancient_ih', methods=['POST'])
+def seed_ch10_ancient_ih_notes():
+    if not _SEED_CH10_ANCIENT_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch10_ancient.py not found'}), 500
+    force = request.args.get('force', '0') == '1'
+    conn = get_db()
+    try:
+        result = _seed_ch10_ancient_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=force)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+@app.route('/api/mcq/seed_ch10_ancient', methods=['POST'])
+def seed_ch10_ancient_mcqs():
+    if not _SEED_CH10_ANCIENT_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch10_ancient.py not found'}), 500
+    conn = get_db()
+    try:
+        _seed_ch10_ancient_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        result = _seed_ch10_ancient_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # SEED ALL ANCIENT — seeds ch1-ch9 notes + MCQs in one shot
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -3640,15 +3686,16 @@ def seed_all_ancient():
 
     # Notes endpoints first, then MCQ endpoints
     notes_routes = [
-        f'/api/notes/seed{qs}',          # ch1
-        f'/api/notes/seed_ch2_ih{qs}',   # ch2
-        f'/api/notes/seed_ch3_ih{qs}',   # ch3
-        f'/api/notes/seed_ch4_ih{qs}',   # ch4
-        f'/api/notes/seed_ch5_ih{qs}',   # ch5
-        f'/api/notes/seed_ch6_ih{qs}',   # ch6
-        f'/api/notes/seed_ch7_ih{qs}',   # ch7
-        f'/api/notes/seed_ch8_ih{qs}',   # ch8
-        f'/api/notes/seed_ch9_ih{qs}',   # ch9
+        f'/api/notes/seed{qs}',                    # ch1
+        f'/api/notes/seed_ch2_ih{qs}',             # ch2
+        f'/api/notes/seed_ch3_ih{qs}',             # ch3
+        f'/api/notes/seed_ch4_ih{qs}',             # ch4
+        f'/api/notes/seed_ch5_ih{qs}',             # ch5
+        f'/api/notes/seed_ch6_ih{qs}',             # ch6
+        f'/api/notes/seed_ch7_ih{qs}',             # ch7
+        f'/api/notes/seed_ch8_ih{qs}',             # ch8
+        f'/api/notes/seed_ch9_ih{qs}',             # ch9
+        f'/api/notes/seed_ch10_ancient_ih{qs}',    # ch10 (Gupta Empire)
     ]
     mcq_routes = [
         '/api/mcq/seed_ch1',
@@ -3660,6 +3707,7 @@ def seed_all_ancient():
         '/api/mcq/seed_ch7',
         '/api/mcq/seed_ch8',
         '/api/mcq/seed_ch9',
+        '/api/mcq/seed_ch10_ancient',
     ]
 
     for i, route in enumerate(notes_routes, start=1):
