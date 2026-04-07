@@ -226,26 +226,52 @@ def init_db():
 
 
 def _auto_seed_ancient():
-    """Seed all 9 ancient IH chapters. Each chapter gets a fresh DB connection."""
+    """Wipe any corrupt ancient data and re-seed all 9 chapters cleanly."""
     import importlib
+
+    # Step 1: Delete all existing Indian_History rows that are NOT Modern/Medieval.
+    # This clears orphaned rows from previous bad deploys (empty subtopic, duplicates, etc.)
+    # Modern chapter is preserved (subtopic='Modern'), as are any Medieval chapters.
+    try:
+        c0 = get_db()
+        ph = '%s' if USE_POSTGRES else '?'
+        # Delete MCQs linked to non-Modern IH notes
+        db_exec(c0,
+            "DELETE FROM chapter_mcqs WHERE study_note_id IN "
+            "(SELECT id FROM study_notes WHERE topic='Indian_History' "
+            "AND subtopic NOT IN ('Modern','Medieval'))")
+        # Delete the non-Modern IH notes themselves
+        db_exec(c0,
+            "DELETE FROM study_notes WHERE topic='Indian_History' "
+            "AND subtopic NOT IN ('Modern','Medieval')")
+        c0.commit()
+        c0.close()
+        print("[auto-seed] Cleared old ancient data.")
+    except Exception as e:
+        print(f"[auto-seed] Pre-delete error (ok if first run): {e}")
+        try: c0.rollback(); c0.close()
+        except: pass
+
+    # Step 2: Seed each chapter fresh with its own connection.
     for ch_num, mod_name in [
         (1,'seed_ch1'),(2,'seed_ch2'),(3,'seed_ch3'),(4,'seed_ch4'),(5,'seed_ch5'),
         (6,'seed_ch6'),(7,'seed_ch7'),(8,'seed_ch8'),(9,'seed_ch9'),
     ]:
-        c = get_db()   # fresh connection per chapter — avoids Postgres transaction abort
+        c = get_db()
         try:
             mod = importlib.import_module(mod_name)
             notes_fn = getattr(mod, f'_seed_ch{ch_num}_notes_inner')
             mcqs_fn  = getattr(mod, f'_seed_ch{ch_num}_mcqs_inner')
-            notes_fn(c, db_exec, row_to_dict, USE_POSTGRES, force=False)
+            # force=True because we just wiped — no existing rows to worry about
+            notes_fn(c, db_exec, row_to_dict, USE_POSTGRES, force=True)
             c.commit()
             mcqs_fn(c, db_exec, row_to_dict, USE_POSTGRES)
             c.commit()
-            # Ensure subtopic is set (ch1 old installs may have empty subtopic)
+            # Ensure subtopic='Ancient' (seed_ch1 old builds may omit it)
             db_exec(c,
                 "UPDATE study_notes SET subtopic='Ancient' WHERE topic='Indian_History' "
-                f"AND chapter_num={'%s' if USE_POSTGRES else '?'} AND (subtopic IS NULL OR subtopic='')",
-                (ch_num,))
+                f"AND chapter_num={'%s' if USE_POSTGRES else '?'} "
+                "AND (subtopic IS NULL OR subtopic='')", (ch_num,))
             c.commit()
             print(f"[auto-seed] ch{ch_num} done.")
         except Exception as e:
@@ -255,14 +281,6 @@ def _auto_seed_ancient():
         finally:
             try: c.close()
             except: pass
-    # Final back-fill: any chapter seeded without subtopic (covers manual seeds too)
-    try:
-        fc = get_db()
-        db_exec(fc, "UPDATE study_notes SET subtopic='Ancient' WHERE topic='Indian_History' AND (subtopic IS NULL OR subtopic='')")
-        fc.commit()
-        fc.close()
-    except Exception as e:
-        print(f"[auto-seed] final back-fill error: {e}")
 
 
 # ─────────────────────────────────────────────
@@ -1417,10 +1435,18 @@ Master Formula: H–M–PM–G–T–S–Me–Mo గుర్తుంచుక�
 def get_chapter_mcqs(chapter_id):
     """Return all MCQs for a chapter (shuffled)."""
     conn = get_db()
-    cur = db_exec(conn, '''
-        SELECT id, section_idx, difficulty, exam_type, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te
-        FROM chapter_mcqs WHERE study_note_id=? ORDER BY section_idx, id
-    ''', (chapter_id,))
+    try:
+        cur = db_exec(conn, '''
+            SELECT id, section_idx, difficulty, COALESCE(exam_type,'General') as exam_type,
+                   q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te
+            FROM chapter_mcqs WHERE study_note_id=? ORDER BY section_idx, id
+        ''', (chapter_id,))
+    except Exception:
+        # Fallback: exam_type column may not exist yet on older deployments
+        cur = db_exec(conn, '''
+            SELECT id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te
+            FROM chapter_mcqs WHERE study_note_id=? ORDER BY section_idx, id
+        ''', (chapter_id,))
     rows = [row_to_dict(r) for r in cur.fetchall()]
     conn.close()
     random.shuffle(rows)
