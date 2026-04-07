@@ -122,9 +122,9 @@ def _seed_ch1_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
     if USE_POSTGRES: conn.commit()
 
     db_exec(conn,
-        f"INSERT INTO study_notes (subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
-        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph})",
-        ('GK', 'Indian_History', 1,
+        f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'Indian_History', 'Ancient', 1,
          'భారతదేశ చరిత్ర పరిచయం', 'Introduction to History',
          '1-6', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
     if USE_POSTGRES: conn.commit()
