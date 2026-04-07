@@ -200,61 +200,73 @@ def init_db():
             conn.commit()
     except Exception:
         pass   # column already exists — safe to ignore
-    # Back-fill: any existing Indian_History row without a subtopic → 'Ancient'
-    try:
-        db_exec(conn,
-            f"UPDATE study_notes SET subtopic='Ancient' WHERE topic='Indian_History' AND (subtopic IS NULL OR subtopic='')")
-        if USE_POSTGRES:
-            conn.commit()
-        else:
-            conn.commit()
-    except Exception:
-        pass
-
     # ── Auto-seed ancient chapters if missing (safe to run on every startup) ──
+    # Each chapter gets its own fresh connection to avoid transaction abort issues.
+    # Use subtopic='Ancient' count (not chapter_num) to avoid counting Modern ch1.
     try:
-        cur_cnt = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND chapter_num <= 9")
+        cur_cnt = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND subtopic='Ancient'")
         row_cnt = cur_cnt.fetchone()
         ancient_count = list(row_cnt)[0] if row_cnt else 0
         if ancient_count < 9:
             print(f"[startup] Only {ancient_count}/9 ancient chapters found — auto-seeding...")
-            _auto_seed_ancient(conn)
+            conn.close()
+            _auto_seed_ancient()
             print("[startup] Auto-seed complete.")
+            return  # connection already closed inside _auto_seed_ancient
     except Exception as _ae:
         print(f"[startup] Auto-seed check error: {_ae}")
+
+    # Back-fill: any remaining Indian_History row without a subtopic → 'Ancient'
+    try:
+        db_exec(conn,
+            "UPDATE study_notes SET subtopic='Ancient' WHERE topic='Indian_History' AND (subtopic IS NULL OR subtopic='')")
+        conn.commit()
+    except Exception:
+        pass
 
     conn.close()
 
 
-def _auto_seed_ancient(conn):
-    """Seed all 9 ancient IH chapters using their inner functions (no HTTP needed)."""
-    seed_map = []
+def _auto_seed_ancient():
+    """Seed all 9 ancient IH chapters. Each chapter uses its own DB connection."""
+    import importlib
     for ch_num, mod_name in [
         (1,'seed_ch1'),(2,'seed_ch2'),(3,'seed_ch3'),(4,'seed_ch4'),(5,'seed_ch5'),
         (6,'seed_ch6'),(7,'seed_ch7'),(8,'seed_ch8'),(9,'seed_ch9'),
     ]:
+        # Fresh connection per chapter — avoids Postgres aborted transaction spreading
+        c = get_db()
         try:
-            import importlib
             mod = importlib.import_module(mod_name)
             notes_fn = getattr(mod, f'_seed_ch{ch_num}_notes_inner')
             mcqs_fn  = getattr(mod, f'_seed_ch{ch_num}_mcqs_inner')
-            seed_map.append((ch_num, notes_fn, mcqs_fn))
+            notes_fn(c, db_exec, row_to_dict, USE_POSTGRES, force=False)
+            c.commit()
+            mcqs_fn(c, db_exec, row_to_dict, USE_POSTGRES)
+            c.commit()
+            # Explicitly set subtopic='Ancient' for this chapter
+            ph = '%s' if USE_POSTGRES else '?'
+            c.execute(f"UPDATE study_notes SET subtopic='Ancient' WHERE topic={ph} AND chapter_num={ph} AND (subtopic IS NULL OR subtopic='')" if not USE_POSTGRES else
+                      f"UPDATE study_notes SET subtopic='Ancient' WHERE topic={ph} AND chapter_num={ph} AND (subtopic IS NULL OR subtopic='')",
+                      ('Indian_History', ch_num))
+            c.commit()
+            print(f"[auto-seed] ch{ch_num} done.")
         except Exception as e:
-            print(f"[auto-seed] ch{ch_num} import error: {e}")
-
-    for ch_num, notes_fn, mcqs_fn in seed_map:
-        try:
-            notes_fn(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
-            conn.commit()
-            print(f"[auto-seed] ch{ch_num} notes seeded.")
-        except Exception as e:
-            print(f"[auto-seed] ch{ch_num} notes error: {e}")
-        try:
-            mcqs_fn(conn, db_exec, row_to_dict, USE_POSTGRES)
-            conn.commit()
-            print(f"[auto-seed] ch{ch_num} MCQs seeded.")
-        except Exception as e:
-            print(f"[auto-seed] ch{ch_num} MCQs error: {e}")
+            print(f"[auto-seed] ch{ch_num} error: {e}")
+            try: c.rollback()
+            except: pass
+        finally:
+            try: c.close()
+            except: pass
+    # Final back-fill pass: fix any chapter that was seeded without subtopic
+    try:
+        fc = get_db()
+        fc.execute("UPDATE study_notes SET subtopic='Ancient' WHERE topic='Indian_History' AND (subtopic IS NULL OR subtopic='')" if not USE_POSTGRES else
+                   "UPDATE study_notes SET subtopic='Ancient' WHERE topic='Indian_History' AND (subtopic IS NULL OR subtopic='')")
+        fc.commit()
+        fc.close()
+    except Exception as e:
+        print(f"[auto-seed] back-fill error: {e}")
 
 
 # ─────────────────────────────────────────────
