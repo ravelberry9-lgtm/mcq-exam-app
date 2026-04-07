@@ -145,7 +145,7 @@ def _seed_ap_geo_ch2_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force
     db_exec(conn,
         f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
         f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
-        ('GK', 'AP_Geography', 'Physical', 2,
+        ('GK', 'AP_Geography', '', 2,
          'ఆంధ్రప్రదేశ్ సహజ స్వరూపం', 'Physiography of Andhra Pradesh',
          'pp.10-14', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
     conn.commit()
