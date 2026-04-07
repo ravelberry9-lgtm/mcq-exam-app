@@ -1424,7 +1424,7 @@ def _seed_ch6_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
             (subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
             VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph})''',
         ('GK',
-         'మగధ సామ్రాజ్యం',
+         'Indian_History',
          6,
          'మగధ సామ్రాజ్యం',
          'Magadha Dynasty',

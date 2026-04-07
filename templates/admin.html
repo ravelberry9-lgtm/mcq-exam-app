@@ -542,6 +542,22 @@ async function seedCh3Mcqs() {
     <a href="/notes" style="color:var(--primary);font-weight:600;">📖 Open Notes →</a>
   </p>
 
+  <!-- ── SEED ALL (topic-wise) ── -->
+  <div style="background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:1.5px solid #a5d6a7;border-radius:10px;padding:14px 16px;margin-bottom:18px;">
+    <div style="font-size:13px;font-weight:700;color:#2e7d32;margin-bottom:10px;">⚡ Quick Seed — Topic-wise (Notes + MCQs)</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button onclick="seedAllIH()" id="seedAllIHBtn"
+        style="background:linear-gradient(135deg,#1565c0,#1976d2);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;">
+        📜 Seed All Indian History (Ch 1–9)
+      </button>
+      <button onclick="seedAllAC()" id="seedAllACBtn"
+        style="background:linear-gradient(135deg,#6a1b9a,#8e24aa);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;">
+        🎨 Seed All Art &amp; Culture
+      </button>
+    </div>
+    <div id="seedAllProgress" style="margin-top:10px;font-size:12px;color:#333;display:none;"></div>
+  </div>
+
   <!-- Indian History Ch1 -->
   <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:6px;">📖 Indian History — Chapter 1</div>
   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
@@ -1025,6 +1041,75 @@ async function seedCh5Mcqs() {
             loadNotesList();
           }
         } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
+
+      // ── Seed All Indian History (Ch 1–9 Notes + MCQs) ──
+      async function seedAllIH() {
+        const btn = document.getElementById('seedAllIHBtn');
+        const log = document.getElementById('seedAllProgress');
+        btn.disabled = true; log.style.display = 'block'; log.textContent = '';
+
+        const steps = [
+          { label: 'Ch1 Notes',  url: '/api/notes/seed' },
+          { label: 'Ch1 MCQs',   url: '/api/mcq/seed_ch1' },
+          { label: 'Ch2 Notes',  url: '/api/notes/seed_ch2_ih' },
+          { label: 'Ch2 MCQs',   url: '/api/mcq/seed_ch2' },
+          { label: 'Ch3 Notes',  url: '/api/notes/seed_ch3_ih' },
+          { label: 'Ch3 MCQs',   url: '/api/mcq/seed_ch3' },
+          { label: 'Ch4 Notes',  url: '/api/notes/seed_ch4_ih' },
+          { label: 'Ch4 MCQs',   url: '/api/mcq/seed_ch4' },
+          { label: 'Ch5 Notes',  url: '/api/notes/seed_ch5_ih' },
+          { label: 'Ch5 MCQs',   url: '/api/mcq/seed_ch5' },
+          { label: 'Ch6 Notes',  url: '/api/notes/seed_ch6_ih' },
+          { label: 'Ch6 MCQs',   url: '/api/mcq/seed_ch6' },
+          { label: 'Ch7 Notes',  url: '/api/notes/seed_ch7_ih' },
+          { label: 'Ch7 MCQs',   url: '/api/mcq/seed_ch7' },
+          { label: 'Ch8 Notes',  url: '/api/notes/seed_ch8_ih' },
+          { label: 'Ch8 MCQs',   url: '/api/mcq/seed_ch8' },
+          { label: 'Ch9 Notes',  url: '/api/notes/seed_ch9_ih' },
+          { label: 'Ch9 MCQs',   url: '/api/mcq/seed_ch9' },
+        ];
+
+        let ok = 0, skip = 0, fail = 0;
+        for (const s of steps) {
+          log.textContent = `⏳ Seeding ${s.label}...`;
+          try {
+            const data = await safeFetch(s.url, { method: 'POST' });
+            if (data.success) { ok++; }
+            else if (data.message && data.message.includes('Already seeded')) { skip++; }
+            else { fail++; log.textContent += ` ❌ ${data.error || data.message || 'Error'}`; }
+          } catch(e) { fail++; }
+        }
+        btn.disabled = false;
+        log.textContent = `✅ Done — ${ok} seeded, ${skip} already existed, ${fail} failed`;
+        showToast('Indian History seed complete!', ok > 0 ? 'success' : 'info');
+        loadNotesList();
+      }
+
+      // ── Seed All Art & Culture ──
+      async function seedAllAC() {
+        const btn = document.getElementById('seedAllACBtn');
+        const log = document.getElementById('seedAllProgress');
+        btn.disabled = true; log.style.display = 'block';
+
+        const steps = [
+          { label: 'Art & Culture Ch1 Notes', url: '/api/notes/seed_ac1' },
+        ];
+
+        let ok = 0, skip = 0, fail = 0;
+        for (const s of steps) {
+          log.textContent = `⏳ Seeding ${s.label}...`;
+          try {
+            const data = await safeFetch(s.url, { method: 'POST' });
+            if (data.success) { ok++; }
+            else if (data.message && data.message.includes('Already seeded')) { skip++; }
+            else { fail++; }
+          } catch(e) { fail++; }
+        }
+        btn.disabled = false;
+        log.textContent = `✅ Done — ${ok} seeded, ${skip} already existed, ${fail} failed`;
+        showToast('Art & Culture seed complete!', ok > 0 ? 'success' : 'info');
+        loadNotesList();
       }
 </script>
 
