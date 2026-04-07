@@ -679,6 +679,18 @@ async function seedCh3Mcqs() {
               <div id="ch9SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
               <div id="ch9McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
+              <div style="font-size:13px;font-weight:700;color:#555;margin-bottom:6px;">🏛️ Modern Indian History — Chapter 1 (యూరోపియన్స్ రాక)</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                <button id="seedModernCh1Btn" onclick="seedModernCh1()" class="btn btn-success" style="font-size:13px;padding:8px 16px;border-radius:8px;">
+                  🌱 Seed Notes (21 Sections) — Advent of Europeans
+                </button>
+                <button id="seedModernCh1McqBtn" onclick="seedModernCh1Mcqs()" class="btn btn-primary" style="font-size:13px;padding:8px 16px;border-radius:8px;background:#6f42c1;border-color:#6f42c1;">
+                  🎯 Seed MCQs (130 Questions)
+                </button>
+              </div>
+              <div id="modernCh1SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
+              <div id="modernCh1McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
 
@@ -1043,6 +1055,46 @@ async function seedCh5Mcqs() {
         } catch(e) { btn.disabled=false; showToast('Network error','error'); }
       }
 
+      async function seedModernCh1(force=false) {
+        const btn = document.getElementById('seedModernCh1Btn');
+        const el  = document.getElementById('modernCh1SeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Modern Ch1 Notes...';
+        try {
+          const url = force ? '/api/notes/seed_modern_ch1?force=1' : '/api/notes/seed_modern_ch1';
+          const data = await safeFetch(url, { method: 'POST' });
+          btn.disabled = false; btn.textContent = '🌱 Seed Notes (21 Sections) — Advent of Europeans';
+          el.style.display = 'block';
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Modern Ch1 notes', 'error');
+          } else if (data.message && data.message.includes('already')) {
+            const ok = confirm(data.message + '\n\nRe-seed (overwrite)?');
+            if (ok) { seedModernCh1(true); return; }
+          } else {
+            el.textContent = '✅ ' + (data.message || 'Modern Ch1 notes seeded!');
+            showToast(data.message || 'Modern Ch1 notes seeded!', 'success');
+            loadNotesList();
+          }
+        } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
+
+      async function seedModernCh1Mcqs() {
+        const btn = document.getElementById('seedModernCh1McqBtn');
+        const el  = document.getElementById('modernCh1McqSeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Modern Ch1 MCQs...';
+        try {
+          const data = await safeFetch('/api/mcq/seed_modern_ch1', { method: 'POST' });
+          btn.disabled = false; btn.textContent = '🎯 Seed MCQs (130 Questions)';
+          el.style.display = 'block';
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Modern Ch1 MCQs', 'error');
+          } else {
+            el.textContent = '✅ ' + (data.message || 'Modern Ch1 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
+            showToast(data.message || 'Modern Ch1 MCQs seeded!', 'success');
+            loadNotesList();
+          }
+        } catch(e) { btn.disabled=false; showToast('Network error','error'); }
+      }
+
       // ── Seed All Indian History (Ch 1–9 Notes + MCQs) ──
       async function seedAllIH() {
         const btn = document.getElementById('seedAllIHBtn');
@@ -1068,6 +1120,8 @@ async function seedCh5Mcqs() {
           { label: 'Ch8 MCQs',   url: '/api/mcq/seed_ch8' },
           { label: 'Ch9 Notes',  url: '/api/notes/seed_ch9_ih' },
           { label: 'Ch9 MCQs',   url: '/api/mcq/seed_ch9' },
+          { label: 'Modern Ch1 Notes', url: '/api/notes/seed_modern_ch1' },
+          { label: 'Modern Ch1 MCQs',  url: '/api/mcq/seed_modern_ch1' },
         ];
 
         let ok = 0, skip = 0, fail = 0;

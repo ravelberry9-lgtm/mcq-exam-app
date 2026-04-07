@@ -3369,6 +3369,42 @@ def seed_ch9_mcqs():
         conn.close()
 
 
+try:
+    from seed_ch10 import _seed_ch10_notes_inner, _seed_ch10_mcqs_inner
+    _SEED_CH10_LOADED = True
+except Exception as _e:
+    _SEED_CH10_LOADED = False
+    print(f"[WARN] seed_ch10.py not loaded: {_e}")
+
+@app.route('/api/notes/seed_modern_ch1', methods=['POST'])
+def notes_seed_modern_ch1():
+    if not _SEED_CH10_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch10.py not found'}), 500
+    conn = get_db()
+    try:
+        force = request.args.get('force', '0') == '1'
+        result = _seed_ch10_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=force)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+@app.route('/api/mcq/seed_modern_ch1', methods=['POST'])
+def seed_modern_ch1_mcqs():
+    if not _SEED_CH10_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch10.py not found'}), 500
+    conn = get_db()
+    try:
+        _seed_ch10_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        result = _seed_ch10_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print("\n" + "="*55)
