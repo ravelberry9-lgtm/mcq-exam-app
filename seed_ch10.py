@@ -851,47 +851,45 @@ Call-Response:
 
     # ── SEC 20 ─────────────────────────────────────────────────────────────────
     {
-        "title": "అధ్యాయం సారాంశం — ఒక మహా గాథ",
+        "title": "Chapter Summary — Oka Maha Gaatha",
         "sub": "Story Narration · Dramatic Recap · All Europeans · Memory Anchors · Exam Must-Knows",
-        "audio": """చాలా బాగా చదివారు! ఒక్కసారి ఆగండి... ఇప్పుడు మీరు చదివిన 508 సంవత్సరాల చరిత్రను ఒక పెద్ద సినిమాగా మనసులో play చేసుకుందాం. 1453 నుండి 1961 వరకు. Ready?
+        "audio": """Chala bagaa chadivaru! Oka sari aagandi.. ippudu meeru chadivina 508 years charithranu oka pedda cinema laaga manasulo play chesukuntaamu. 1453 nundi 1961 varaku. Ready?
 
-సంవత్సరం 1453. యూరప్‌లో ప్రతి వ్యాపారి ఒకే కలగంటున్నాడు. ఆ కల పేరు... Spices! నల్లమిరియాలు, దాల్చిన చెక్క, లవంగాలు. బంగారం కంటే విలువైనవి. అవి వచ్చేది కాన్స్టాంటినోపుల్ మీదుగా. కానీ ఆ సంవత్సరం Ottoman sultan 2వ మహ్మద్ Battle of Fetih లో ఆ నగరాన్ని జయించాడు. ఆ రోజు నుండి ఆ నగరం Istanbul అయింది. భూమార్గం మూసుకుపోయింది. యూరప్‌కి ఒక్క ప్రశ్న వచ్చింది... ఇప్పుడు ఏం చేయాలి?
+Samvatsaram 1453.. Europe lo prathi varthaakudi okate kalagantunnadu.. aa kala peru.. Spices! Nalla miriyaalu, daalachina chekka, lavangaalu.. bangaaaram kante viluvainavivi.. avi vachedi Constantinoble meedugaa.. India nundi bhu maargam dwara Europe ki vellevi.. kaani 1453 lo em jarigindhi ante.. Turkish raaju ayna 2nd Mehmed.. Battle of Fetih lo aa nagaraanni jayinchadu.. aa rojunundi Constantinoble.. Istanbul ayyindi.. bhu maargam moosukupoyindi.. Europe ki okka prasna vaccindi.. ippudu em cheyyaali?
 
-రాసుకోండి... 1453, Battle of Fetih, 2వ మహ్మద్, కాన్స్టాంటినోపుల్ నుండి Istanbul.
+Rasukondee.. 1453, Battle of Fetih, 2nd Mehmed, Constantinoble from Istanbul.
 
-జవాబు వచ్చింది... సముద్రంలో వెళ్ళాలి!
+Jawabu vaccindi.. samudramlo vellaali!
 
-ముందుగా నడిచింది Portugal. Henry the Navigator నౌకాయాన పాఠశాల పెట్టాడు, sailors ని తయారు చేశాడు. 1487లో Bartholomeu Dias Africa అగ్రం దాటాడు, తుఫానులకు భయపడి వెనక్కి వచ్చాడు కానీ దారి చూపాడు. రాజు ఆ స్థలానికి Cape of Good Hope అని పేరు పెట్టాడు.
+Mundugaa nadinchindi Portugal.. Henry the Navigator navikayaana paathasaala pettadu.. sailors ni tayyaaru chesaadu.. 1487 lo Bartholomeu Dias.. Africa agrani daataadu.. tufaanulaku bayapadi venakki vacchaadu kaani daari choopaadu.. raaju aa sthalaaniki Cape of Good Hope ani peru pettadu.
 
-1492లో Columbus పడమర దిక్కుగా వెళ్ళాడు... India అనుకున్నాడు, కానీ అది America! పోరాటం ఆగలేదు.
+1492 lo Columbus padamara dikkugaa vellaadu.. India anukunnadu.. kaani adi America! Poraatam aagaledhu.
 
-1497 జూలై 8. Lisbon నుండి నాలుగు నౌకలు, 170 మంది నావికులు, ఒక్క మనిషి command లో బయలుదేరాయి. అతని పేరు... Vasco da Gama. Africa తీరంలో Malindi దగ్గర Arab navigator Ibn Majid దారి చూపాడు. 1498 మే 17... Kozhikode అంటే Calicut తీరం చేరారు.
+1497 July 8.. Lisbon nundi naalugu naaukalu.. 170 mandi naavikulu.. okka manishi command lo bayaluderaaru.. atani peru.. Vasco da Gama.. Africa teeramlo Malindi daggaraa Arab navigator Ibn Majid daari choopaadu.. 1498 May 17.. Kozhikode ante Calicut teeraanni cheraaru.
 
-ఒక్కసారి గట్టిగా చెప్పండి... 1498 మే 17! Calicut! Vasco da Gama! ఇది Indian modern history మొదలైన రోజు!
+Okka saari gattiga cheppandi.. 1498 May 17! Calicut! Vasco da Gama! Ee rojunundi Indian modern history modalayyindi!
 
-Vasco da Gama తెరిచిన తలుపు గుండా Portuguese empire నడిచింది. నాలుగు governors వచ్చారు. మొదటి Almeida, Blue Water Policy తో సముద్రంపై పట్టు సాధించాడు. తర్వాత Albuquerque వచ్చాడు, అతన్నే Father of Portuguese Empire in India అంటారు. 1510లో Goa జయించాడు, Hormuz మరియు Malacca కూడా. Cartaz system తో సముద్ర వ్యాపారంపై complete గుత్తాధిపత్యం. పరీక్షలో తప్పకుండా వస్తుంది... Almeida అంటే Blue Water, Albuquerque అంటే Father plus Goa 1510.
+Vasco da Gama terichina thalupu gundaa Portuguese empire nadinchindi.. Almeida muthama vachadu.. Blue Water Policy tho samudram meeda patthu saadhinchaadu.. tharuvatha Albuquerque vachadu.. atanney Father of Portuguese Empire in India antaru.. 1510 lo Goa jayinchadu.. Hormuz mariyu Malacca koodaa.. Cartaz system tho samudra vyaapaaramlo complete monopoly.. exam lo thappakunda vastundi.. Almeida ante Blue Water, Albuquerque ante Father plus Goa 1510.
 
-కానీ... ఏ empire అయినా ఎప్పటికీ నిలవదు.
+Kaani.. edhi empire ayyinaa eppatiki nilavadu.
 
-1612లో Battle of Swally లో British Captain Thomas Best దెబ్బతో Portuguese తూలారు. 1661లో Bombay వివాహ కట్నంగా British కి వెళ్ళింది. చివరకు 1961లో Operation Vijay లో General K.P. Candeth నాయకత్వంలో భారత సైన్యం Goa ని విముక్తి చేసింది. 462 సంవత్సరాల Portuguese పాలన... అక్కడితో ముగిసింది.
+1612 lo Battle of Swally lo British Captain Thomas Best debba tho Portuguese toolaaru.. 1661 lo Bombay vivaaha kattnam gaanee British ki vellaindi.. chivariiki 1961 lo Operation Vijay lo General K P Candeth naayakathvamlo Indian army Goa ni vimukthi chesindi.. 462 years Portuguese paalana.. akkadito mugisindi.
 
-ఇప్పుడు Dutch. 1602లో VOC స్థాపించారు. 1605లో Masulipatnam లో మొదటి factory. 1623లో Amboyna Massacre లో British వారిని చంపారు. కానీ 1759లో Battle of Bedara లో Robert Clive చేతిలో complete గా ఓడిపోయారు. ఏడు గంటల యుద్ధం... అంతే, India లో Dutch chapter అయిపోయింది.
+Ippudu Dutch.. 1602 lo VOC start chesaaru.. 1605 lo Masulipatnam lo muthama factory.. 1623 lo Amboyna Massacre lo British vaallani champaru.. kaani 1759 lo Battle of Bedara lo Robert Clive chethilo completely odipoyaaru.. 7 gantalaa yuddham.. ante Dutch chapter India lo ayyipoyindi.
 
-ఒక్కసారి చెప్పండి... VOC 1602, Bedara 1759, Robert Clive విజయం!
+Okka saari cheppandi.. VOC 1602, Bedara 1759, Robert Clive vijayam!
 
-British వేరే style. వారు traders గా వచ్చారు, rulers అయ్యారు. 1600 December 31 న Queen Elizabeth I అనుమతితో East India Company మొదలైంది. అప్పుడు Mughal emperor ఎవరు? అక్బర్! గుర్తుపెట్టుకోండి. 1612లో Battle of Swally, 1613లో Surat factory. Thomas Roe 1615లో Jahangir దర్బారుకు వచ్చి trade rights తీసుకున్నాడు. 1639లో Francis Day Madras పెట్టాడు. 1690లో Job Charnock Calcutta స్థాపించాడు. 1717లో Farrukhsiyar ఫర్మాన్ వల్ల EIC కి భారీ వ్యాపార హక్కులు వచ్చాయి. అందుకే దాన్ని Magna Carta of EIC అంటారు.
+British verey style.. vaaru traders gaanee vaacharu, rulers ayyaaru.. 1600 December 31 naa Queen Elizabeth First anumathitho East India Company modalayyindi.. appudu Mughal emperor evaruu? Akbar! Gurthupettukondi.. 1612 lo Battle of Swally, 1613 lo Surat factory.. Thomas Roe 1615 lo Jahangir darbaariiki vaachee trade rights teesukunnaadu.. 1639 lo Francis Day Madras pettaadu.. 1690 lo Job Charnock Calcutta sthaapinchadu.. 1717 lo Farrukhsiyar farman valaa EIC ki bhaari trade rights vaachaayi.. andhukey daanini Magna Carta of EIC antaaru.
 
-రాసుకోండి... Surat 1613, Madras 1639, Calcutta 1690. ఇది British cities పరీక్ష pattern.
+Rasukondee.. Surat 1613, Madras 1639, Calcutta 1690.. ee British cities exam pattern lo thappakunda vastundi.
 
-Danes వచ్చారు, 1620లో Tranquebar పెట్టారు, quietly వెళ్ళిపోయారు. French 1664లో వచ్చారు, Louis XIV కాలంలో minister Colbert French EIC start చేశాడు. ఇది మాత్రమే పూర్తి government controlled company. 1674లో Pondicherry వారి headquarters అయింది.
+Danes vaacharu, 1620 lo Tranquebar pettaaru, quietly vellipoyyaaru.. French 1664 lo vaacharu, Louis 14 kaalam lo minister Colbert French EIC start chesaadu.. ee company matrame complete government controlled company.. 1674 lo Pondicherry vaari headquarters ayyindi.
 
-చివరగా... వారు వదిలిన గుర్తులు. Goa లో Portuguese Iberian style churches నిలబడ్డాయి. Pondicherry లో French Cartesian grid streets ఇప్పటికీ ఉన్నాయి. Calcutta, Mumbai లో British Gothic buildings నిలబడ్డాయి. Lutyens పెట్టిన Rashtrapati Bhavan మరియు India Gate ఇప్పటికీ Delhi face గా ఉన్నాయి.
+Memory trick gurthupettukondi.. P D B D F! Portugal 1498, Dutch 1605, British 1608, Danes 1620, French 1668.. okka saari cheppandi.. P D B D F!
 
-గుర్తుంచుకోవడానికి trick... P D B D F! Portugal 1498, Dutch 1605, British 1608, Danes 1620, French 1668. ఒక్కసారి చెప్పండి... P D B D F!
+Exam lo thappakunda vachey 10 points.. Onddu, 1453 Battle of Fetih, 2nd Mehmed.. Rendu, 1498 May 17, Vasco da Gama, Calicut.. Moodu, Albuquerque ante Father of Portuguese Empire, Goa 1510.. Naalugu, Blue Water Policy ante Almeida.. Aaidu, 1600 December 31, EIC, Queen Elizabeth First.. Aaru, Magna Carta of EIC ante 1717 Farrukhsiyar.. Eedu, VOC ante 1602.. Enimidi, 1759 Bedara ante Robert Clive.. Thommidi, 1690 Calcutta ante Job Charnock.. Padhi, 1961 Operation Vijay ante K P Candeth, Goa.
 
-పరీక్షలో తప్పకుండా వచ్చే 10 points: ఒకటి, 1453 Battle of Fetih, 2వ మహ్మద్. రెండు, 1498 మే 17, Vasco da Gama, Calicut. మూడు, Albuquerque అంటే Father of Portuguese Empire, Goa 1510. నాలుగు, Blue Water Policy అంటే Almeida. ఐదు, 1600 December 31, EIC, Queen Elizabeth I. ఆరు, Magna Carta of EIC అంటే 1717, Farrukhsiyar. ఏడు, VOC అంటే 1602. ఎనిమిది, 1759 Bedara అంటే Robert Clive. తొమ్మిది, 1690 Calcutta అంటే Job Charnock. పది, 1961 Operation Vijay అంటే K.P. Candeth, Goa.
-
-మీరు 508 సంవత్సరాల చరిత్ర నేర్చుకున్నారు! పరీక్షలో మీకు మహావిజయం కలుగుగాక! శభాష్!"""
+Meeru 508 years charithra neruchukunnaaru! Exam lo meeku mahaa vijayam! Shabash!"""
     },
 
     # NOTE: PYQs are now part of the chapter MCQ quiz (exam_type tagged) — no separate audio section needed.

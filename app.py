@@ -210,7 +210,51 @@ def init_db():
             conn.commit()
     except Exception:
         pass
+
+    # ── Auto-seed ancient chapters if missing (safe to run on every startup) ──
+    try:
+        cur_cnt = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND chapter_num <= 9")
+        row_cnt = cur_cnt.fetchone()
+        ancient_count = list(row_cnt)[0] if row_cnt else 0
+        if ancient_count < 9:
+            print(f"[startup] Only {ancient_count}/9 ancient chapters found — auto-seeding...")
+            _auto_seed_ancient(conn)
+            print("[startup] Auto-seed complete.")
+    except Exception as _ae:
+        print(f"[startup] Auto-seed check error: {_ae}")
+
     conn.close()
+
+
+def _auto_seed_ancient(conn):
+    """Seed all 9 ancient IH chapters using their inner functions (no HTTP needed)."""
+    seed_map = []
+    for ch_num, mod_name in [
+        (1,'seed_ch1'),(2,'seed_ch2'),(3,'seed_ch3'),(4,'seed_ch4'),(5,'seed_ch5'),
+        (6,'seed_ch6'),(7,'seed_ch7'),(8,'seed_ch8'),(9,'seed_ch9'),
+    ]:
+        try:
+            import importlib
+            mod = importlib.import_module(mod_name)
+            notes_fn = getattr(mod, f'_seed_ch{ch_num}_notes_inner')
+            mcqs_fn  = getattr(mod, f'_seed_ch{ch_num}_mcqs_inner')
+            seed_map.append((ch_num, notes_fn, mcqs_fn))
+        except Exception as e:
+            print(f"[auto-seed] ch{ch_num} import error: {e}")
+
+    for ch_num, notes_fn, mcqs_fn in seed_map:
+        try:
+            notes_fn(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+            conn.commit()
+            print(f"[auto-seed] ch{ch_num} notes seeded.")
+        except Exception as e:
+            print(f"[auto-seed] ch{ch_num} notes error: {e}")
+        try:
+            mcqs_fn(conn, db_exec, row_to_dict, USE_POSTGRES)
+            conn.commit()
+            print(f"[auto-seed] ch{ch_num} MCQs seeded.")
+        except Exception as e:
+            print(f"[auto-seed] ch{ch_num} MCQs error: {e}")
 
 
 # ─────────────────────────────────────────────
@@ -3478,6 +3522,9 @@ def seed_all_ancient():
     all_ok = all('error' not in r for r in results)
     return jsonify({'success': all_ok, 'total_steps': len(results), 'results': results})
 
+
+# ── Run init_db on import (works with gunicorn on Railway AND locally) ──
+init_db()
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
