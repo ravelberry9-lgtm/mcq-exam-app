@@ -894,133 +894,14 @@ Danes వచ్చారు, 1620లో Tranquebar పెట్టారు, qui
 మీరు 508 సంవత్సరాల చరిత్ర నేర్చుకున్నారు! పరీక్షలో మీకు మహావిజయం కలుగుగాక! శభాష్!"""
     },
 
-    # ── SEC 21 ─────────────────────────────────────────────────────────────────
+    # NOTE: PYQs are now part of the chapter MCQ quiz (exam_type tagged) — no separate audio section needed.
+    # SEC 21 removed. MCQs with sec_idx=21 and exam_type=UPSC/APPSC/TSPSC appear under the PYQ quiz tab.
+
+    # ── PLACEHOLDER (kept so section indices stay stable) ────────────────────
     {
         "title": "గత సంవత్సరాల పరీక్ష ప్రశ్నలు (PYQs)",
-        "sub": "UPSC Prelims PYQs · APPSC/TSPSC Group PYQs · Trick Questions · Exam Patterns",
-        "audio": """పరీక్షలో యూరోపియన్స్ రాక నుండి ఎలాంటి ప్రశ్నలు అడుగుతారో ఇప్పుడు చూద్దాం. ఇవి నిజంగా పాత పరీక్షలలో వచ్చిన ప్రశ్నలు — చాలా జాగ్రత్తగా చదవండి!
-
-════════════════════════════
-UPSC Prelims — గత సంవత్సరాల ప్రశ్నలు
-════════════════════════════
-
-UPSC 2025 Prelims (అతి ఇటీవలిది):
-పండ్లు మరియు కూరగాయలు — "పుచ్చకాయ (Papaya), అనాస (Pineapple), జామ (Guava)" — ఇవి భారత్‌లోకి 16వ-17వ శతాబ్దాలలో ఎవరు తెచ్చారు?
-జవాబు: పోర్చుగీసు!
-రాసుకోండి — పోర్చుగీసు తెచ్చిన పండ్లు: పుచ్చకాయ, అనాస, జామ, మొక్కజొన్న, బంగాళాదుంప, పొగాకు.
-
-UPSC Prelims (Modern History Standard Question):
-"Francisco de Almeida ను ఏ విధానంతో పిలుస్తారు?"
-జవాబు: Blue Water Policy (Cartaz పరిరక్షణ).
-
-UPSC Prelims (Frequently Asked):
-"పోర్చుగీసు తొలి Viceroy ఎవరు?"
-జవాబు: Francisco de Almeida (1505). ఆ తర్వాత Viceroy అయినవారు: అల్బుకర్క్.
-
-UPSC Prelims (Standard MCQ):
-"1602లో ఏర్పాటైన 'VOC' అనే కంపెనీ ఏ దేశానికి చెందినది?"
-జవాబు: నెదర్లాండ్ (Dutch / Holland).
-
-UPSC Prelims (Repeated):
-"EIC కి 'Merchant Adventurers' అని కూడా పేరు ఉంది — ఈ కంపెనీ స్థాపన తేదీ ఏది?"
-జవాబు: 1600 డిసెంబర్ 31.
-
-UPSC Prelims:
-"సర్ థామస్ రో ఏ మొఘల్ చక్రవర్తి దర్బారుకు రాయబారిగా వచ్చాడు?"
-జవాబు: జహంగీర్ (1615-1619).
-
-UPSC Prelims (Important):
-"1717లో Farrukhsiyar ఇచ్చిన ఫర్మాన్‌ను EIC కి 'Magna Carta' అని ఎందుకు పిలుస్తారు?"
-జవాబు: ఎందుకంటే ఆ ఫర్మాన్ వలన EIC కి: బెంగాల్‌లో 3000 రూ.తో స్వేచ్ఛా వ్యాపారం, హైదరాబాద్‌లో శుల్కాలు లేవు, కంపెనీ నాణేలు మొఘల్ సామ్రాజ్యం అంతటా చెల్లుతాయి — ఇవి దొరికాయి.
-
-UPSC Prelims (Statement Based):
-"కింది Statements లో సరైనవి గుర్తించండి:
-1. అంబయాన మాసేకర్ 1623లో ఇండోనేషియాలో జరిగింది — సరైనది.
-2. బిదేరా యుద్ధం (1759) లో రాబర్ట్ క్లైవ్ డచ్ వారిని ఓడించాడు — సరైనది.
-3. ఫ్రెంచ్ EIC ఒక్కటే పూర్తి ప్రభుత్వ నియంత్రణలో పనిచేసింది — సరైనది."
-జవాబు: మూడూ సరైనవే!
-
-════════════════════════════
-APPSC / TSPSC Group Exams — తెలుగు రాష్ట్రాలు
-════════════════════════════
-
-APPSC/TSPSC Group 2 (Repeatedly Asked):
-Q: "వాస్కోడగామా కాలికట్ చేరిన తేదీ ఏది?"
-A: 1498 మే 17.
-Trick: "1498 — ఐదవ నెల 17 — కాలికట్" — ఈ మూడు గుర్తుపెట్టుకోండి.
-
-APPSC Group 2:
-Q: "అల్బుకర్క్‌ను 'Father of Portuguese Empire in India' అని ఎందుకు పిలుస్తారు?"
-A: ఎందుకంటే అతను 1510లో గోవా జయించాడు; Hormuz (1515), Malacca (1511) జయించాడు; పోర్చుగీసు శక్తిని భారత మహాసముద్రమంతటా విస్తరించాడు.
-
-APPSC/TSPSC (Frequently Repeated):
-Q: "Blue Water Policy అంటే ఏమిటి? ఎవరు అనుసరించారు?"
-A: Francisco de Almeida (1505-09) అనుసరించాడు. సముద్రంలో బలమైన నౌకాదళం ఉంటే చాలు — భూమిపై ఎక్కువ భూభాగం స్వాధీనం అవసరం లేదు అనేది ఈ విధానం.
-
-TSPSC Group 2:
-Q: "Cartaz System అంటే ఏమిటి?"
-A: పోర్చుగీసు వారు హిందూ మహాసముద్రంలో పరిచయం చేసిన అనుమతిపత్రాల వ్యవస్థ. ఏ నౌకైనా సముద్రంలో ప్రయాణించాలంటే పోర్చుగీసు వారి అనుమతి (Cartaz / Pass) తప్పనిసరి. దీని ద్వారా సముద్ర వ్యాపారంపై గుత్తాధిపత్యం సాధించారు.
-
-APPSC Group 1/2:
-Q: "Battle of Swally (1612) యొక్క ప్రాముఖ్యత ఏమిటి?"
-A: ఈ యుద్ధంలో బ్రిటిష్ కెప్టెన్ థామస్ బెస్ట్ పోర్చుగీసు నౌకలను ఓడించాడు. ఫలితంగా మొఘల్ చక్రవర్తి జహంగీర్ బ్రిటిష్ వారికి సూరత్‌లో ఫ్యాక్టరీ నిర్మించడానికి అనుమతి ఇచ్చాడు. ఇది భారత్‌లో బ్రిటిష్ శక్తి స్థాపనకు మొదటి మెట్టు!
-
-TSPSC Group 2 (Common Question):
-Q: "కలకత్తా నగర స్థాపకుడు ఎవరు? ఏ సంవత్సరం?"
-A: జాబ్ చార్నాక్ (Job Charnock) — 1690లో సుతానతి, కాళీకోట, గోవిందపూర్ గ్రామాలను కలిపి కలకత్తా స్థాపించాడు.
-
-APPSC Group 2:
-Q: "ఫ్రెంచ్ EIC విశేషత ఏమిటి?"
-A: 5 యూరోపియన్ కంపెనీలలో ఫ్రెంచ్ EIC ఒక్కటే పూర్తి ప్రభుత్వ నియంత్రణలో (State-controlled) పనిచేసింది. మిగతా అన్నీ ప్రైవేట్ కంపెనీలు.
-
-APPSC/TSPSC (Very Common):
-Q: "1961లో ఆపరేషన్ విజయ్ అంటే ఏమిటి?"
-A: భారత సైన్యం పోర్చుగీసు అధీనంలో ఉన్న గోవాను, దమన్‌ను, డయ్యూను స్వతంత్రం చేసింది. అప్పటి భారత సైనిక అధినేత జనరల్ K.P. కాండెత్.
-
-════════════════════════════
-పరీక్షలో Trap Questions — జాగ్రత్త!
-════════════════════════════
-
-TRAP 1: "వాస్కోడగామా కాలికట్‌లో ఏ మొఘల్ చక్రవర్తిని కలుసుకున్నాడు?"
-జవాల్: ఎవరినీ కలుసుకోలేదు! 1498లో మొఘల్ సామ్రాజ్యమే లేదు (మొఘల్ సామ్రాజ్యం 1526లో మొదలైంది). వాస్కోడగామా కాలికట్ జాంబోరిన్ (Zamorin) ని కలుసుకున్నాడు!
-
-TRAP 2: "వాస్కోడగామా మొదటిసారి భారత్ వచ్చినప్పుడు ఇబ్న్ మజీద్ ఏ రాష్ట్రంలో ఆయనకు సహాయపడ్డాడు?"
-జవాబు: ఇబ్న్ మజీద్ భారత్‌లో సహాయపడలేదు! అతను మలిందీ (ఆఫ్రికా) లో సహాయపడ్డాడు.
-
-TRAP 3: "EIC స్థాపించినప్పుడు మొఘల్ చక్రవర్తి జహంగీర్" — ఇది తప్పు!
-జవాబు: EIC స్థాపన 1600లో — అప్పుడు మొఘల్ చక్రవర్తి అక్బర్! జహంగీర్ 1605లో చక్రవర్తి అయ్యాడు.
-
-TRAP 4: "Battle of Swally బ్రిటిష్ వారికి మద్రాస్‌లో ఫ్యాక్టరీ అనుమతి తెచ్చింది" — ఇది తప్పు!
-జవాబు: Battle of Swally (1612) సూరత్‌లో ఫ్యాక్టరీ అనుమతి తెచ్చింది. మద్రాస్ 1639లో ఫ్రాన్సిస్ డే స్థాపించాడు.
-
-════════════════════════════
-పరీక్షలో తప్పకుండా నేర్చుకోవలసిన Pairs
-════════════════════════════
-
-Cape of Storms → Cape of Good Hope = 1487 = బార్తొలొమ్యూ డయాష్.
-వాస్కోడగామా → 1498 మే 17 = కాలికట్ = ఇబ్న్ మజీద్ గైడ్.
-Blue Water Policy → అల్మేడా (1505-09).
-Father of Portuguese Empire → అల్బుకర్క్ (1509-15).
-Father of Portuguese India → అల్బుకర్క్.
-VOC → 1602 → J.V. ఓల్డెన్ బార్నెవెల్డ్.
-EIC → 1600 డిసెంబర్ 31 → 1వ ఎలిజబెత్ → అక్బర్ కాలం.
-Battle of Swally → 1612 → థామస్ బెస్ట్ → సూరత్ ఫ్యాక్టరీ.
-Magna Carta of EIC → 1717 → ఫరూఖ్ సియార్.
-కలకత్తా → 1690 → జాబ్ చార్నాక్.
-ఆపరేషన్ విజయ్ → 1961 → K.P. కాండెత్ → గోవా.
-ఫ్రెంచ్ EIC → 1664 → కోల్‌బెర్ట్ → మాత్రమే Govt. Controlled.
-అంబయాన మాసేకర్ → 1623 → ఇండోనేషియా.
-బిదేరా యుద్ధం → 1759 → రాబర్ట్ క్లైవ్.
-
-════════════════════════════
-చివరి మాట
-════════════════════════════
-
-పరీక్షలో ఈ Chapter నుండి సగటున 3 నుండి 5 ప్రశ్నలు వస్తాయి. Trap Questions, Pair Questions, Date Questions అన్నీ వస్తాయి. మీరు ఈ Chapter మొత్తం చదివారు — మీకు ఏదీ కష్టం కాదు!
-
-ఒక్కసారి చెప్పండి — P-D-B-D-F! పోర్చుగీసు! డచ్! బ్రిటిష్! డేన్స్! ఫ్రెంచ్!
-
-పరీక్షలో మహావిజయం మీది! శభాష్!"""
+        "sub": "Quiz లో UPSC / APPSC / TSPSC టాబ్ ఎంచుకోండి → PYQ questions వస్తాయి!",
+        "audio": """అభినందనలు! మీరు యూరోపియన్స్ రాక chapter పూర్తిగా చదివారు! ఇప్పుడు chapter quiz తెరవండి. అక్కడ UPSC టాబ్, APPSC టాబ్, TSPSC టాబ్ కనిపిస్తాయి. PYQ టాబ్ click చేస్తే నిజంగా పాత పరీక్షలలో వచ్చిన questions వస్తాయి. Easy, Medium, Hard అని difficulty కూడా filter చేయవచ్చు. Trap questions కూడా ఉన్నాయి. పరీక్షలో మహావిజయం మీది! శభాష్!"""
     },
 
 ]  # END OF ALL 22 SECTIONS (0-21)
@@ -2257,54 +2138,45 @@ CH10_MCQS = [
      "c",
      "PDF ప్రకారం గేట్‌వే ఆఫ్ ఇండియా బాంబే (ముంబై)లో ఉంది. ఇది 1924లో King George V మరియు Queen Mary వారి 1911 నాటి భారత పర్యటనను స్మరించేందుకు నిర్మించబడింది."),
 
-    # ═══ SEC 21 — PYQ-Style MCQs (UPSC / APPSC / TSPSC Pattern) ════════════
+    # ═══ SEC 21 — PYQ-Style MCQs (exam_type tagged for UPSC/APPSC/TSPSC quiz tabs) ═
 
-    # Easy
+    # Easy — UPSC PYQs
     (21, 1,
      "పుచ్చకాయ (Papaya), అనాస (Pineapple), జామ (Guava) వంటి పండ్లను భారత్‌లోకి 16వ-17వ శతాబ్దాలలో ఎవరు తెచ్చారు?",
-     "బ్రిటిష్",
-     "ఫ్రెంచ్",
-     "పోర్చుగీసు",
-     "డచ్",
+     "బ్రిటిష్", "ఫ్రెంచ్", "పోర్చుగీసు", "డచ్",
      "c",
-     "పోర్చుగీసు వారు అమెరికా నుండి భారత్‌కు పుచ్చకాయ, అనాస, జామ, మొక్కజొన్న, బంగాళాదుంప, పొగాకు వంటివి తెచ్చారు. UPSC Prelims లో ఈ ప్రశ్న పదేపదే వస్తుంది."),
+     "పోర్చుగీసు వారు అమెరికా నుండి భారత్‌కు పుచ్చకాయ, అనాస, జామ, మొక్కజొన్న, బంగాళాదుంప, పొగాకు వంటివి తెచ్చారు. UPSC Prelims లో ఈ ప్రశ్న పదేపదే వస్తుంది.",
+     "UPSC"),
 
     (21, 1,
      "East India Company (EIC) స్థాపన తేదీ ఏది?",
-     "1498 మే 17",
-     "1600 డిసెంబర్ 31",
-     "1602 మార్చి 20",
-     "1664 జనవరి 1",
+     "1498 మే 17", "1600 డిసెంబర్ 31", "1602 మార్చి 20", "1664 జనవరి 1",
      "b",
-     "1600 డిసెంబర్ 31న Queen Elizabeth I అనుమతితో East India Company స్థాపించబడింది. అప్పటి Mughal emperor అక్బర్. ఇది Merchant Adventurers అని కూడా పిలువబడింది."),
+     "1600 డిసెంబర్ 31న Queen Elizabeth I అనుమతితో East India Company స్థాపించబడింది. అప్పటి Mughal emperor అక్బర్. ఇది Merchant Adventurers అని కూడా పిలువబడింది.",
+     "UPSC"),
 
+    # Easy — APPSC/TSPSC PYQs
     (21, 1,
      "1602లో VOC (Vereenigde Oost-Indische Compagnie) స్థాపించిన దేశం ఏది?",
-     "పోర్చుగల్",
-     "ఇంగ్లాండ్",
-     "ఫ్రాన్స్",
-     "నెదర్లాండ్స్",
+     "పోర్చుగల్", "ఇంగ్లాండ్", "ఫ్రాన్స్", "నెదర్లాండ్స్",
      "d",
-     "VOC అంటే Dutch East India Company. ఇది 1602లో Netherlands (Holland) లో అనేక చిన్న కంపెనీలను విలీనం చేసి స్థాపించారు. ఇది ప్రపంచంలో మొదటి multinational corporation గా పరిగణించబడుతుంది."),
+     "VOC అంటే Dutch East India Company. ఇది 1602లో Netherlands (Holland) లో అనేక చిన్న కంపెనీలను విలీనం చేసి స్థాపించారు. ఇది ప్రపంచంలో మొదటి multinational corporation గా పరిగణించబడుతుంది.",
+     "APPSC"),
 
     (21, 1,
      "కలకత్తా నగర స్థాపకుడు ఎవరు మరియు ఏ సంవత్సరం స్థాపించబడింది?",
-     "ఫ్రాన్సిస్ డే, 1639",
-     "థామస్ రో, 1615",
-     "జాబ్ చార్నాక్, 1690",
-     "రాబర్ట్ క్లైవ్, 1757",
+     "ఫ్రాన్సిస్ డే, 1639", "థామస్ రో, 1615", "జాబ్ చార్నాక్, 1690", "రాబర్ట్ క్లైవ్, 1757",
      "c",
-     "జాబ్ చార్నాక్ (Job Charnock) 1690లో సుతానతి, కాళీకోట, గోవిందపూర్ అనే మూడు గ్రామాలను కలిపి కలకత్తా స్థాపించాడు. 1700లో Fort William నిర్మించబడింది. APPSC/TSPSC లో చాలా సార్లు వచ్చిన ప్రశ్న."),
+     "జాబ్ చార్నాక్ (Job Charnock) 1690లో సుతానతి, కాళీకోట, గోవిందపూర్ అనే మూడు గ్రామాలను కలిపి కలకత్తా స్థాపించాడు. 1700లో Fort William నిర్మించబడింది. APPSC/TSPSC లో చాలా సార్లు వచ్చిన ప్రశ్న.",
+     "APPSC"),
 
-    # Medium
+    # Medium — UPSC PYQs
     (21, 2,
      "సర్ థామస్ రో ఏ Mughal చక్రవర్తి దర్బారుకు రాయబారిగా వెళ్ళాడు మరియు ఏ కాలంలో?",
-     "అక్బర్, 1600-1605",
-     "జహంగీర్, 1615-1619",
-     "షాజహాన్, 1630-1635",
-     "ఔరంగజేబ్, 1660-1665",
+     "అక్బర్, 1600-1605", "జహంగీర్, 1615-1619", "షాజహాన్, 1630-1635", "ఔరంగజేబ్, 1660-1665",
      "b",
-     "సర్ థామస్ రో 1615-1619 మధ్య Mughal emperor జహంగీర్ దర్బారుకు British రాయబారిగా వెళ్ళాడు. అతను trade rights సంపాదించాడు. ఇది భారత్‌లో British commercial presence కి పునాది వేసింది."),
+     "సర్ థామస్ రో 1615-1619 మధ్య Mughal emperor జహంగీర్ దర్బారుకు British రాయబారిగా వెళ్ళాడు. అతను trade rights సంపాదించాడు. ఇది భారత్‌లో British commercial presence కి పునాది వేసింది.",
+     "UPSC"),
 
     (21, 2,
      "1717లో Farrukhsiyar ఫర్మాన్‌ను EIC కి 'Magna Carta' అని ఎందుకు పిలుస్తారు?",
@@ -2313,8 +2185,10 @@ CH10_MCQS = [
      "EIC కి సైన్యం పెట్టుకునే అధికారం ఇచ్చాడు",
      "EIC కి Calcutta ని రాజధాని చేసుకునే అనుమతి ఇచ్చాడు",
      "b",
-     "1717లో Farrukhsiyar ఫర్మాన్ వలన EIC కి: బెంగాల్‌లో స్వేచ్ఛా వ్యాపారం (3000 రూ.), Hyderabad లో duty మినహాయింపు, EIC నాణేలు empire అంతటా చెల్లే హక్కు వచ్చాయి. అందుకే దీన్ని 'Magna Carta of EIC' అంటారు."),
+     "1717లో Farrukhsiyar ఫర్మాన్ వలన EIC కి: బెంగాల్‌లో స్వేచ్ఛా వ్యాపారం (3000 రూ.), Hyderabad లో duty మినహాయింపు, EIC నాణేలు empire అంతటా చెల్లే హక్కు వచ్చాయి. అందుకే దీన్ని 'Magna Carta of EIC' అంటారు.",
+     "UPSC"),
 
+    # Medium — APPSC/TSPSC PYQs
     (21, 2,
      "Battle of Swally (1612) ఫలితంగా British వారికి ఏ ప్రయోజనం కలిగింది?",
      "Madras లో Fort St. George నిర్మించే అనుమతి",
@@ -2322,7 +2196,8 @@ CH10_MCQS = [
      "Mughal emperor జహంగీర్ నుండి Surat లో factory నిర్మించే అనుమతి",
      "Goa ని Portuguese నుండి స్వాధీనం చేసుకునే అవకాశం",
      "c",
-     "1612లో Battle of Swally లో British Captain Thomas Best Portuguese నౌకలను ఓడించాడు. ఈ విజయం impressedthe Mughal emperor Jahangir ని, అతను British వారికి Surat లో factory నిర్మించే అనుమతి ఇచ్చాడు. ఇది India లో British commercial empire కి మొదటి మెట్టు."),
+     "1612లో Battle of Swally లో British Captain Thomas Best Portuguese నౌకలను ఓడించాడు. ఈ విజయం Mughal emperor Jahangir ని impressed చేసింది, అతను British వారికి Surat లో factory నిర్మించే అనుమతి ఇచ్చాడు. ఇది India లో British commercial empire కి మొదటి మెట్టు.",
+     "APPSC"),
 
     (21, 2,
      "French East India Company విశేషత ఏమిటి? ఇది ఏ సంవత్సరం స్థాపించబడింది?",
@@ -2331,9 +2206,10 @@ CH10_MCQS = [
      "1674లో, ఇది మాత్రమే India లో permanent colonies పెట్టుకుంది",
      "1660లో, ఇది అతి ఎక్కువ profit చేసిన company",
      "a",
-     "French EIC 1664లో Louis XIV కాలంలో minister Colbert ద్వారా స్థాపించబడింది. 5 European trading companies లో ఇది మాత్రమే పూర్తి government controlled company. మిగతా Portuguese, Dutch, British, Danish companies అన్నీ private. 1674లో Pondicherry ముఖ్యకేంద్రం అయింది."),
+     "French EIC 1664లో Louis XIV కాలంలో minister Colbert ద్వారా స్థాపించబడింది. 5 European trading companies లో ఇది మాత్రమే పూర్తి government controlled company. మిగతా Portuguese, Dutch, British, Danish companies అన్నీ private. 1674లో Pondicherry ముఖ్యకేంద్రం అయింది.",
+     "TSPSC"),
 
-    # Hard
+    # Hard — UPSC Statement-based PYQ
     (21, 3,
      "క్రింది statements చదివి సరైనవి గుర్తించండి:\n1. Amboyna Massacre 1623లో Indonesia లో జరిగింది — Dutch వారు British వ్యాపారులను చంపారు.\n2. Battle of Bedara (1759) లో Robert Clive Dutch వారిని ఓడించాడు.\n3. EIC స్థాపన (1600) సమయంలో Mughal emperor జహంగీర్.\n4. French EIC ఒక్కటే పూర్తి State-controlled company.",
      "1, 2 మరియు 4 సరైనవి",
@@ -2341,18 +2217,19 @@ CH10_MCQS = [
      "2, 3 మరియు 4 సరైనవి",
      "అన్నీ సరైనవి",
      "a",
-     "Statement 3 తప్పు: EIC స్థాపన 1600 లో జరిగినప్పుడు Mughal emperor అక్బర్ (జహంగీర్ 1605లో emperor అయ్యాడు). Statements 1, 2, 4 సరైనవి: Amboyna 1623 Indonesia, Bedara 1759 Robert Clive విజయం, French EIC మాత్రమే State-controlled."),
+     "Statement 3 తప్పు: EIC స్థాపన 1600 లో జరిగినప్పుడు Mughal emperor అక్బర్ (జహంగీర్ 1605లో emperor అయ్యాడు). Statements 1, 2, 4 సరైనవి: Amboyna 1623 Indonesia, Bedara 1759 Robert Clive విజయం, French EIC మాత్రమే State-controlled.",
+     "UPSC"),
 
+    # Hard — Trap Question (APPSC/TSPSC pattern)
     (21, 3,
      "పరీక్షలో తరచూ వచ్చే Trap Question: వాస్కోడగామా 1498లో Calicut చేరినప్పుడు ఏ Mughal emperor ని కలుసుకున్నాడు?",
-     "అక్బర్",
-     "బాబర్",
-     "హుమాయూన్",
+     "అక్బర్", "బాబర్", "హుమాయూన్",
      "Mughal emperor ని కలుసుకోలేదు — 1498లో Mughal empire అస్తిత్వంలోనే లేదు",
      "d",
-     "ఇది classic trap question! Mughal empire 1526లో Babur వలన స్థాపించబడింది. వాస్కోడగామా 1498లో వచ్చినప్పుడు Mughal empire అస్తిత్వంలోనే లేదు. అతను Calicut Zamorin (జాంబోరిన్) ని కలుసుకున్నాడు. ఈ తేడా గుర్తుపెట్టుకోండి!"),
+     "ఇది classic trap question! Mughal empire 1526లో Babur వలన స్థాపించబడింది. వాస్కోడగామా 1498లో వచ్చినప్పుడు Mughal empire అస్తిత్వంలోనే లేదు. అతను Calicut Zamorin (జాంబోరిన్) ని కలుసుకున్నాడు. ఈ తేడా గుర్తుపెట్టుకోండి!",
+     "APPSC"),
 
-]  # MCQ_FINAL_END — TOTAL MCQs = 140 (PYQ MCQs Sec 21 added: 4 Easy + 4 Med + 2 Hard)
+]  # MCQ_FINAL_END — TOTAL MCQs = 140 (Sec21 PYQs: 4E+4M+2H tagged UPSC/APPSC/TSPSC)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2449,6 +2326,7 @@ def _seed_ch10_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
                 study_note_id INTEGER NOT NULL,
                 section_idx INTEGER NOT NULL DEFAULT 0,
                 difficulty INTEGER NOT NULL DEFAULT 1,
+                exam_type TEXT NOT NULL DEFAULT 'General',
                 q_te TEXT NOT NULL,
                 opt_a TEXT NOT NULL,
                 opt_b TEXT NOT NULL,
@@ -2458,12 +2336,17 @@ def _seed_ch10_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
                 explanation_te TEXT NOT NULL DEFAULT '',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )''')
+            try:
+                db_exec_fn(conn, "ALTER TABLE chapter_mcqs ADD COLUMN IF NOT EXISTS exam_type TEXT NOT NULL DEFAULT 'General'")
+            except Exception:
+                pass
         else:
             conn.execute('''CREATE TABLE IF NOT EXISTS chapter_mcqs (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 study_note_id INTEGER NOT NULL,
                 section_idx INTEGER NOT NULL DEFAULT 0,
                 difficulty INTEGER NOT NULL DEFAULT 1,
+                exam_type TEXT NOT NULL DEFAULT 'General',
                 q_te TEXT NOT NULL,
                 opt_a TEXT NOT NULL,
                 opt_b TEXT NOT NULL,
@@ -2473,6 +2356,10 @@ def _seed_ch10_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
                 explanation_te TEXT NOT NULL DEFAULT '',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )''')
+            try:
+                conn.execute("ALTER TABLE chapter_mcqs ADD COLUMN exam_type TEXT NOT NULL DEFAULT 'General'")
+            except Exception:
+                pass
             conn.commit()
 
         # Find the study_note_id
@@ -2495,10 +2382,16 @@ def _seed_ch10_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
             (note_id,))
 
         easy = medium = hard = 0
-        for (sec_idx, diff, q, a, b, c, d, correct, expl) in CH10_MCQS:
+        for row in CH10_MCQS:
+            # Support 9-tuple (legacy) and 10-tuple (with exam_type)
+            if len(row) == 10:
+                sec_idx, diff, q, a, b, c, d, correct, expl, exam_type = row
+            else:
+                sec_idx, diff, q, a, b, c, d, correct, expl = row
+                exam_type = 'General'
             db_exec_fn(conn,
-                f"INSERT INTO chapter_mcqs (study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
-                (note_id, sec_idx, diff, q, a, b, c, d, correct, expl))
+                f"INSERT INTO chapter_mcqs (study_note_id, section_idx, difficulty, exam_type, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+                (note_id, sec_idx, diff, exam_type, q, a, b, c, d, correct, expl))
             if diff == 1: easy += 1
             elif diff == 2: medium += 1
             else: hard += 1

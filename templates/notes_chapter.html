@@ -222,6 +222,10 @@
   .qz-filter-btn:hover { background:#e8e0f5; }
   .qz-filter-btn.active { background:#7b1fa2; color:white; border-color:#7b1fa2; }
   .qz-filter-btn.filt-wrong-active { background:#c62828; color:white; border-color:#c62828; }
+  #exam-upsc.active  { background:#1565c0; border-color:#1565c0; color:white; }
+  #exam-appsc.active { background:#1b5e20; border-color:#1b5e20; color:white; }
+  #exam-tspsc.active { background:#4a148c; border-color:#4a148c; color:white; }
+  #exam-pyq.active   { background:#bf360c; border-color:#bf360c; color:white; }
 
   .quiz-footer { display:flex; gap:8px; margin-top:14px; align-items:center; flex-wrap:wrap; }
   .quiz-prev-btn {
@@ -449,6 +453,15 @@
       <h3 id="quizTitle">🎯 Chapter Quiz</h3>
       <button class="qz-order-btn qz-order-random" id="qzOrderBtn" onclick="toggleQuizOrder()">🔀 Random</button>
       <button class="quiz-close" onclick="closeQuiz()">✕</button>
+    </div>
+
+    <!-- Exam type filter row -->
+    <div class="qz-filter-row" id="qzExamFilterRow" style="border-bottom:1px solid #e0d6f5;padding-bottom:6px;margin-bottom:2px;">
+      <button class="qz-filter-btn active" id="exam-all"   onclick="setExamFilter('all')">📋 All</button>
+      <button class="qz-filter-btn"        id="exam-upsc"  onclick="setExamFilter('UPSC')" style="border-color:#1565c0;color:#1565c0;">🏛 UPSC</button>
+      <button class="qz-filter-btn"        id="exam-appsc" onclick="setExamFilter('APPSC')" style="border-color:#1b5e20;color:#1b5e20;">📜 APPSC</button>
+      <button class="qz-filter-btn"        id="exam-tspsc" onclick="setExamFilter('TSPSC')" style="border-color:#4a148c;color:#4a148c;">📝 TSPSC</button>
+      <button class="qz-filter-btn"        id="exam-pyq"   onclick="setExamFilter('PYQ')" style="border-color:#bf360c;color:#bf360c;">🎯 PYQ</button>
     </div>
 
     <!-- Difficulty / filter row -->
@@ -1174,6 +1187,7 @@ let qzAnsweredMap = {}; // qzIdx → {chosen, isCorrect} — per-session answere
 // ── Quiz order mode ──
 let qzOrderMode  = localStorage.getItem('quiz_order_' + CHAPTER_ID) || 'random';
 let qzDiffFilter = localStorage.getItem('quiz_diff_'  + CHAPTER_ID) || 'all';
+let qzExamFilter = localStorage.getItem('quiz_exam_'  + CHAPTER_ID) || 'all';
 
 // ── Wrong answer persistence ──
 const WRONG_KEY = 'quiz_wrong_' + CHAPTER_ID;
@@ -1191,16 +1205,25 @@ function setDiffFilter(f) {
   qzDiffFilter = f;
   localStorage.setItem('quiz_diff_' + CHAPTER_ID, f);
   updateFilterBtns();
-  // Rebuild queue with new filter if quiz is already open
-  if (qzAll.length) {
-    const newQ = buildQueue();
-    if (!newQ.length) { showToast('ఆ filter కు questions లేవు!', 'error'); return; }
-    qzQueue = newQ;
-    qzIdx = 0; qzScore = 0; qzHistory = []; qzAnsweredMap = {}; qzCurSecIdx = -1;
-    document.getElementById('quizBody').style.display = 'block';
-    document.getElementById('quizResult').classList.remove('show');
-    renderQuestion();
-  }
+  rebuildAndRender();
+}
+
+function setExamFilter(f) {
+  qzExamFilter = f;
+  localStorage.setItem('quiz_exam_' + CHAPTER_ID, f);
+  updateExamFilterBtns();
+  rebuildAndRender();
+}
+
+function rebuildAndRender() {
+  if (!qzAll.length) return;
+  const newQ = buildQueue();
+  if (!newQ.length) { showToast('ఆ filter కు questions లేవు!', 'error'); return; }
+  qzQueue = newQ;
+  qzIdx = 0; qzScore = 0; qzHistory = []; qzAnsweredMap = {}; qzCurSecIdx = -1;
+  document.getElementById('quizBody').style.display = 'block';
+  document.getElementById('quizResult').classList.remove('show');
+  renderQuestion();
 }
 
 function updateFilterBtns() {
@@ -1215,6 +1238,14 @@ function updateFilterBtns() {
     const wc = loadWrongIds().size;
     wrongBtn.textContent = '❌ Wrong' + (wc ? ' (' + wc + ')' : '');
   }
+}
+
+function updateExamFilterBtns() {
+  ['all','upsc','appsc','tspsc','pyq'].forEach(f => {
+    const btn = document.getElementById('exam-' + f);
+    if (!btn) return;
+    btn.classList.toggle('active', qzExamFilter === f.toUpperCase() || (f === 'all' && qzExamFilter === 'all'));
+  });
 }
 
 function toggleQuizOrder() {
@@ -1239,6 +1270,20 @@ function updateOrderBtn() {
 
 function buildQueue() {
   let pool = [...qzAll];
+  // Apply exam type filter first
+  if (qzExamFilter !== 'all') {
+    // PYQ tab shows UPSC + APPSC + TSPSC combined
+    if (qzExamFilter === 'PYQ') {
+      const pyqTypes = new Set(['UPSC','APPSC','TSPSC','APPSC/TSPSC']);
+      const filtered = pool.filter(q => pyqTypes.has((q.exam_type||'General').toUpperCase()));
+      pool = filtered.length ? filtered : pool;
+    } else {
+      const filtered = pool.filter(q =>
+        (q.exam_type||'General').toUpperCase().includes(qzExamFilter.toUpperCase())
+      );
+      pool = filtered.length ? filtered : pool;
+    }
+  }
   // Apply difficulty / wrong filter
   if (qzDiffFilter === 'wrong') {
     const wrongIds = loadWrongIds();
@@ -1274,6 +1319,7 @@ async function openQuiz() {
   document.getElementById('qzRelistenText').classList.remove('show');
   updateOrderBtn();
   updateFilterBtns();
+  updateExamFilterBtns();
 
   // Fetch MCQs
   try {

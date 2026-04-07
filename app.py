@@ -112,6 +112,7 @@ def init_db():
             study_note_id INTEGER NOT NULL,
             section_idx INTEGER NOT NULL DEFAULT 0,
             difficulty INTEGER NOT NULL DEFAULT 1,
+            exam_type TEXT NOT NULL DEFAULT 'General',
             q_te TEXT NOT NULL,
             opt_a TEXT NOT NULL,
             opt_b TEXT NOT NULL,
@@ -161,6 +162,7 @@ def init_db():
                 study_note_id INTEGER NOT NULL,
                 section_idx INTEGER NOT NULL DEFAULT 0,
                 difficulty INTEGER NOT NULL DEFAULT 1,
+                exam_type TEXT NOT NULL DEFAULT 'General',
                 q_te TEXT NOT NULL,
                 opt_a TEXT NOT NULL,
                 opt_b TEXT NOT NULL,
@@ -183,6 +185,18 @@ def init_db():
             cur2.close()
         else:
             conn.execute("ALTER TABLE study_notes ADD COLUMN subtopic TEXT DEFAULT ''")
+            conn.commit()
+    except Exception:
+        pass   # column already exists — safe to ignore
+    # ── Migration: add exam_type column to chapter_mcqs if not yet present ──
+    try:
+        if USE_POSTGRES:
+            cur3 = conn.cursor()
+            cur3.execute("ALTER TABLE chapter_mcqs ADD COLUMN IF NOT EXISTS exam_type TEXT NOT NULL DEFAULT 'General'")
+            conn.commit()
+            cur3.close()
+        else:
+            conn.execute("ALTER TABLE chapter_mcqs ADD COLUMN exam_type TEXT NOT NULL DEFAULT 'General'")
             conn.commit()
     except Exception:
         pass   # column already exists — safe to ignore
@@ -1352,7 +1366,7 @@ def get_chapter_mcqs(chapter_id):
     """Return all MCQs for a chapter (shuffled)."""
     conn = get_db()
     cur = db_exec(conn, '''
-        SELECT id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te
+        SELECT id, section_idx, difficulty, exam_type, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te
         FROM chapter_mcqs WHERE study_note_id=? ORDER BY section_idx, id
     ''', (chapter_id,))
     rows = [row_to_dict(r) for r in cur.fetchall()]
