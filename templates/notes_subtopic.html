@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ topic.replace('_',' ') }} – Notes{% endblock %}
+{% block title %}{{ subtopic }} – {{ topic.replace('_',' ') }} – Notes{% endblock %}
 {% block content %}
 <style>
   .ch-card {
@@ -27,18 +27,14 @@
   .ch-te   { font-size:15px; font-weight:700; color:var(--primary,#1a237e); }
   .ch-en   { font-size:12px; color:var(--text-muted,#888); margin-top:2px; }
   .ch-pg   { font-size:11px; color:var(--text-muted,#888); margin-top:2px; }
-
-  /* Progress mini bar */
   .ch-prog-wrap { margin-top:6px; }
   .ch-prog-row  { display:flex; align-items:center; gap:7px; }
   .ch-prog-bar  { flex:1; height:5px; background:#e0d0b0; border-radius:50px; overflow:hidden; }
   .ch-prog-fill { height:100%; border-radius:50px; background:linear-gradient(90deg,#2e7d32,#66bb6a); transition:width 0.4s; }
   .ch-prog-pct  { font-size:11px; font-weight:700; color:#2e7d32; white-space:nowrap; min-width:36px; text-align:right; }
   .ch-prog-last { font-size:10px; color:#888; margin-top:2px; }
-
   .badge-audio { font-size:11px; background:#fff3cd; color:#856404; padding:2px 8px; border-radius:10px; font-weight:700; white-space:nowrap; }
   .badge-done  { font-size:11px; background:#e8f5e9; color:#2e7d32; padding:2px 8px; border-radius:10px; font-weight:700; white-space:nowrap; }
-
   [data-theme="dark"] .ch-prog-bar { background:#2a2d3e; }
   [data-theme="dark"] .ch-inner { background:#1a1d2e; border-color:#2a2d3e; }
 </style>
@@ -51,44 +47,23 @@
     <span style="margin:0 6px;">›</span>
     <a href="/notes/{{ subject }}" style="color:var(--primary);text-decoration:none;">{{ subject.replace('_',' ') }}</a>
     <span style="margin:0 6px;">›</span>
-    <strong>{{ topic.replace('_',' ') }}</strong>
+    <a href="/notes/{{ subject }}/{{ topic }}" style="color:var(--primary);text-decoration:none;">{{ topic.replace('_',' ') }}</a>
+    <span style="margin:0 6px;">›</span>
+    <strong>{{ subtopic }}</strong>
   </div>
 
   <!-- Header card -->
-  <div class="card" style="background:linear-gradient(135deg,#4a148c,#7b1fa2);color:white;padding:20px 16px;margin-bottom:14px;">
-    <div style="font-size:28px;margin-bottom:6px;">🏛️</div>
-    <h2 style="font-size:18px;font-weight:800;">{{ topic.replace('_',' ') }}</h2>
-    {% if subtopics %}
-    <p style="opacity:0.8;font-size:12px;margin-top:4px;">{{ subtopics|length }} period(s)</p>
-    {% else %}
+  {% set period_icons   = {'Ancient': '🏺', 'Medieval': '🕌', 'Modern': '🏭'} %}
+  {% set period_colors  = {'Ancient': 'linear-gradient(135deg,#4e342e,#8d6e63)',
+                            'Medieval': 'linear-gradient(135deg,#1b5e20,#388e3c)',
+                            'Modern':   'linear-gradient(135deg,#0d47a1,#1976d2)'} %}
+  <div class="card" style="background:{{ period_colors.get(subtopic, 'linear-gradient(135deg,#37474f,#546e7a)') }};color:white;padding:20px 16px;margin-bottom:14px;">
+    <div style="font-size:28px;margin-bottom:6px;">{{ period_icons.get(subtopic, '📚') }}</div>
+    <h2 style="font-size:18px;font-weight:800;">{{ subtopic }} — {{ topic.replace('_',' ') }}</h2>
     <p style="opacity:0.8;font-size:12px;margin-top:4px;">{{ chapters|length }} chapter(s) available</p>
-    {% endif %}
   </div>
 
-  <!-- Subtopic cards (e.g. Ancient / Medieval / Modern) -->
-  {% if subtopics %}
-  {% set period_icons = {'Ancient': '🏺', 'Medieval': '🕌', 'Modern': '🏭'} %}
-  {% set period_colors = {'Ancient': 'linear-gradient(135deg,#4e342e,#8d6e63)', 'Medieval': 'linear-gradient(135deg,#1b5e20,#388e3c)', 'Modern': 'linear-gradient(135deg,#0d47a1,#1976d2)'} %}
-  {% for st in subtopics %}
-  <a href="/notes/{{ subject }}/{{ topic }}/{{ st.subtopic }}"
-     style="display:block;text-decoration:none;margin-bottom:12px;">
-    <div style="background:{{ period_colors.get(st.subtopic, 'linear-gradient(135deg,#37474f,#546e7a)') }};
-                color:white;border-radius:14px;padding:18px 20px;
-                display:flex;align-items:center;gap:16px;
-                box-shadow:0 2px 8px rgba(0,0,0,0.15);
-                transition:transform 0.15s;">
-      <div style="font-size:36px;flex-shrink:0;">{{ period_icons.get(st.subtopic, '📚') }}</div>
-      <div style="flex:1;min-width:0;">
-        <div style="font-size:17px;font-weight:800;">{{ st.subtopic }}</div>
-        <div style="font-size:12px;opacity:0.85;margin-top:3px;">{{ st.chapter_count }} chapter(s)</div>
-      </div>
-      <div style="font-size:20px;opacity:0.7;">›</div>
-    </div>
-  </a>
-  {% endfor %}
-
-  {% else %}
-  <!-- Chapter list (no subtopics) -->
+  <!-- Chapter list -->
   {% for ch in chapters %}
   <a class="ch-card" href="/notes/{{ subject }}/{{ topic }}/{{ ch.id }}">
     <div class="ch-inner">
@@ -97,8 +72,6 @@
         <div class="ch-te">{{ ch.chapter_title_te }}</div>
         <div class="ch-en">{{ ch.chapter_title_en }}</div>
         {% if ch.pages_ref %}<div class="ch-pg">📄 Pages {{ ch.pages_ref }}</div>{% endif %}
-
-        <!-- S5: Progress bar populated by JS -->
         <div class="ch-prog-wrap" id="prog-wrap-{{ ch.id }}">
           <div class="ch-prog-row">
             <div class="ch-prog-bar"><div class="ch-prog-fill" id="prog-fill-{{ ch.id }}" style="width:0%"></div></div>
@@ -121,16 +94,13 @@
   {% if not chapters %}
   <div class="card" style="text-align:center;padding:40px 20px;">
     <div style="font-size:48px;margin-bottom:12px;">📭</div>
-    <p style="font-size:15px;color:var(--text-muted);">No chapters added yet.</p>
-    <a href="/admin" style="color:var(--primary);font-size:13px;">+ Admin నుండి chapter add చేయండి</a>
+    <p style="font-size:15px;color:var(--text-muted);">No chapters in {{ subtopic }} yet.</p>
   </div>
-  {% endif %}
   {% endif %}
 
 </div>
 
 <script>
-/* S5 – read chapter progress from localStorage and update cards */
 const CHAPTERS = {{ chapters | tojson }};
 
 function relativeTime(isoStr) {
@@ -145,25 +115,19 @@ function relativeTime(isoStr) {
   if (days < 7)   return days + ' రోజుల క్రితం';
   return new Date(isoStr).toLocaleDateString();
 }
-
-function loadChapterProgress(chapterId) {
-  try { return JSON.parse(localStorage.getItem('notes_prog_' + chapterId)) || {done:[], last:null}; }
+function loadChapterProgress(id) {
+  try { return JSON.parse(localStorage.getItem('notes_prog_' + id)) || {done:[], last:null}; }
   catch(e) { return {done:[], last:null}; }
 }
-
-function loadChapterTimes(chapterId) {
-  try { return JSON.parse(localStorage.getItem('notes_time_' + chapterId)) || {}; }
+function loadChapterTimes(id) {
+  try { return JSON.parse(localStorage.getItem('notes_time_' + id)) || {}; }
   catch(e) { return {}; }
 }
-
 function fmtTimeFull(secs) {
   secs = Math.max(0, Math.floor(secs));
-  const m = Math.floor(secs / 60);
-  const s = secs % 60;
+  const m = Math.floor(secs / 60), s = secs % 60;
   return m > 0 ? m + 'm ' + s + 's' : s + 's';
 }
-
-// est_secs and sec_count are pre-computed server-side and injected per chapter
 const CHAPTER_COUNTS = {};
 CHAPTERS.forEach(ch => { CHAPTER_COUNTS[ch.id] = ch.sec_count || 0; });
 
@@ -173,48 +137,26 @@ function refreshAllProgress() {
     const total = CHAPTER_COUNTS[ch.id];
     const done  = prog.done ? prog.done.length : 0;
     const pct   = total ? Math.round(done / total * 100) : 0;
-
     const fillEl = document.getElementById('prog-fill-' + ch.id);
     const pctEl  = document.getElementById('prog-pct-'  + ch.id);
     const lastEl = document.getElementById('prog-last-' + ch.id);
     const badge  = document.getElementById('badge-'     + ch.id);
-
     if (fillEl) fillEl.style.width = pct + '%';
-
-    if (pctEl) {
-      if (total > 0) pctEl.textContent = pct + '%';
-      else pctEl.textContent = '';
-    }
-
-    if (lastEl && prog.last) {
-      lastEl.textContent = '🕐 చివరిసారి: ' + relativeTime(prog.last);
-    }
-
-    // Show total listening time (or estimated) for this chapter
+    if (pctEl)  pctEl.textContent  = total > 0 ? pct + '%' : '';
+    if (lastEl && prog.last) lastEl.textContent = '🕐 చివరిసారి: ' + relativeTime(prog.last);
     const times      = loadChapterTimes(ch.id);
     const listenSecs = Object.values(times).reduce((a, b) => a + b, 0);
     const estSecs    = ch.est_secs || 0;
     const timeEl     = document.getElementById('prog-time-' + ch.id);
     if (timeEl) {
-      if (listenSecs > 0 && estSecs > 0) {
-        timeEl.textContent  = '⏱ ' + fmtTimeFull(listenSecs) + ' / ~' + fmtTimeFull(estSecs);
-        timeEl.style.color  = '#2e7d32';
-      } else if (estSecs > 0) {
-        timeEl.textContent  = '🕐 ~' + fmtTimeFull(estSecs);
-        timeEl.style.color  = '#8a6a40';
-      } else {
-        timeEl.textContent  = '';
-      }
+      if (listenSecs > 0 && estSecs > 0)
+        timeEl.textContent = '⏱ ' + fmtTimeFull(listenSecs) + ' / ~' + fmtTimeFull(estSecs);
+      else if (estSecs > 0)
+        timeEl.textContent = '🕐 ~' + fmtTimeFull(estSecs);
     }
-
-    // Change badge to ✅ Done when 100%
-    if (badge && pct === 100) {
-      badge.className = 'badge-done';
-      badge.textContent = '✅ పూర్తయింది';
-    }
+    if (badge && pct === 100) { badge.className = 'badge-done'; badge.textContent = '✅ పూర్తయింది'; }
   });
 }
-
 document.addEventListener('DOMContentLoaded', refreshAllProgress);
 refreshAllProgress();
 </script>

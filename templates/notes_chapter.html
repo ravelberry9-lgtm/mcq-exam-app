@@ -359,6 +359,9 @@
     <a href="/notes" style="color:var(--primary);text-decoration:none;">📖 Notes</a> ›
     <a href="/notes/{{ subject }}" style="color:var(--primary);text-decoration:none;">{{ subject.replace('_',' ') }}</a> ›
     <a href="/notes/{{ subject }}/{{ topic }}" style="color:var(--primary);text-decoration:none;">{{ topic.replace('_',' ') }}</a> ›
+    {% if chapter.subtopic %}
+    <a href="/notes/{{ subject }}/{{ topic }}/{{ chapter.subtopic }}" style="color:var(--primary);text-decoration:none;">{{ chapter.subtopic }}</a> ›
+    {% endif %}
     <strong>Ch. {{ chapter.chapter_num }}</strong>
   </div>
 

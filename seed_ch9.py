@@ -1636,9 +1636,9 @@ def _seed_ch9_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres, force=
 
     db_exec_fn(conn,
         f"""INSERT INTO study_notes
-            (subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
+            (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
             VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
-        ('GK', 'Indian_History', 9,
+        ('GK', 'Indian_History', 'Ancient', 9,
          'మౌర్యుల అనంతర కాలం',
          'Post-Mauryan Era',
          '139-163',

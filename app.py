@@ -172,6 +172,30 @@ def init_db():
             );
         ''')
         conn.commit()
+
+    # ── Migration: add subtopic column if not yet present ──
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        if USE_POSTGRES:
+            cur2 = conn.cursor()
+            cur2.execute("ALTER TABLE study_notes ADD COLUMN IF NOT EXISTS subtopic TEXT DEFAULT ''")
+            conn.commit()
+            cur2.close()
+        else:
+            conn.execute("ALTER TABLE study_notes ADD COLUMN subtopic TEXT DEFAULT ''")
+            conn.commit()
+    except Exception:
+        pass   # column already exists — safe to ignore
+    # Back-fill: any existing Indian_History row without a subtopic → 'Ancient'
+    try:
+        db_exec(conn,
+            f"UPDATE study_notes SET subtopic='Ancient' WHERE topic='Indian_History' AND (subtopic IS NULL OR subtopic='')")
+        if USE_POSTGRES:
+            conn.commit()
+        else:
+            conn.commit()
+    except Exception:
+        pass
     conn.close()
 
 
@@ -644,6 +668,20 @@ def notes_subject(subject):
 @app.route('/notes/<subject>/<topic>')
 def notes_topic(subject, topic):
     conn = get_db()
+    # Check if any chapters have subtopics defined
+    cur = db_exec(conn, '''
+        SELECT subtopic, COUNT(*) as chapter_count
+        FROM study_notes WHERE subject=? AND topic=? AND subtopic IS NOT NULL AND subtopic != ''
+        GROUP BY subtopic ORDER BY subtopic
+    ''', (subject, topic))
+    subtopics = [row_to_dict(r) for r in cur.fetchall()]
+
+    if subtopics:
+        conn.close()
+        return render_template('notes_topic.html', subject=subject, topic=topic,
+                               subtopics=subtopics, chapters=[])
+
+    # No subtopics — show chapters directly
     cur = db_exec(conn, '''
         SELECT id, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json
         FROM study_notes WHERE subject=? AND topic=?
@@ -651,20 +689,41 @@ def notes_topic(subject, topic):
     ''', (subject, topic))
     chapters = [row_to_dict(r) for r in cur.fetchall()]
     conn.close()
-    # Pre-compute estimated seconds (130 wpm) so the template doesn't need to parse sections_json
     for ch in chapters:
         try:
             secs = json.loads(ch.get('sections_json') or '[]')
-            total_words = sum(
-                len((s.get('audio') or s.get('text') or '').split())
-                for s in secs
-            )
-            ch['est_secs']   = max(5, round(total_words / (130 / 60))) if total_words else 0
-            ch['sec_count']  = len(secs)
+            total_words = sum(len((s.get('audio') or s.get('text') or '').split()) for s in secs)
+            ch['est_secs']  = max(5, round(total_words / (130 / 60))) if total_words else 0
+            ch['sec_count'] = len(secs)
         except Exception:
             ch['est_secs']  = 0
             ch['sec_count'] = 0
-    return render_template('notes_topic.html', subject=subject, topic=topic, chapters=chapters)
+    return render_template('notes_topic.html', subject=subject, topic=topic,
+                           subtopics=[], chapters=chapters)
+
+
+@app.route('/notes/<subject>/<topic>/<subtopic>')
+def notes_subtopic(subject, topic, subtopic):
+    """List chapters within a subtopic (e.g. Ancient / Medieval / Modern)."""
+    conn = get_db()
+    cur = db_exec(conn, '''
+        SELECT id, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json
+        FROM study_notes WHERE subject=? AND topic=? AND subtopic=?
+        ORDER BY chapter_num
+    ''', (subject, topic, subtopic))
+    chapters = [row_to_dict(r) for r in cur.fetchall()]
+    conn.close()
+    for ch in chapters:
+        try:
+            secs = json.loads(ch.get('sections_json') or '[]')
+            total_words = sum(len((s.get('audio') or s.get('text') or '').split()) for s in secs)
+            ch['est_secs']  = max(5, round(total_words / (130 / 60))) if total_words else 0
+            ch['sec_count'] = len(secs)
+        except Exception:
+            ch['est_secs']  = 0
+            ch['sec_count'] = 0
+    return render_template('notes_subtopic.html', subject=subject, topic=topic,
+                           subtopic=subtopic, chapters=chapters)
 
 
 @app.route('/notes/<subject>/<topic>/<int:chapter_id>')
@@ -856,9 +915,9 @@ def notes_seed():
 
     db_exec(conn, '''
         INSERT INTO study_notes
-        (subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
-        VALUES (?,?,?,?,?,?,?)
-    ''', ('GK', 'Indian_History', 1, 'చరిత్ర – పరిచయం',
+        (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
+        VALUES (?,?,?,?,?,?,?,?)
+    ''', ('GK', 'Indian_History', 'Ancient', 1, 'చరిత్ర – పరిచయం',
           'Introduction to History', '1-6', json.dumps(ch1_sections, ensure_ascii=False)))
     conn.commit()
     conn.close()
