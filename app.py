@@ -265,7 +265,48 @@ def init_db():
     except Exception as _pe:
         print(f"[startup] PYQ seed check error: {_pe}")
 
+    # ── Auto-seed AP Geography chapters if missing ──
+    try:
+        cur_geo = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='AP_Geography'")
+        geo_count = list(cur_geo.fetchone())[0] if cur_geo else 0
+        if geo_count < 4:
+            print(f"[startup] Only {geo_count}/4 AP Geography chapters — auto-seeding...")
+            _auto_seed_ap_geography()
+            print("[startup] AP Geography auto-seed complete.")
+        else:
+            print(f"[startup] AP Geography: {geo_count} chapters already loaded.")
+    except Exception as _ge:
+        print(f"[startup] AP Geography seed check error: {_ge}")
+
     conn.close()
+
+
+def _auto_seed_ap_geography():
+    """Seed AP Geography chapters 1-4 into study_notes + chapter_mcqs."""
+    import importlib
+    for ch_num, mod_name, fn_suffix in [
+        (1, 'seed_ap_geo_ch1', 'ap_geo_ch1'),
+        (2, 'seed_ap_geo_ch2', 'ap_geo_ch2'),
+        (3, 'seed_ap_geo_ch3', 'ap_geo_ch3'),
+        (4, 'seed_ap_geo_ch4', 'ap_geo_ch4'),
+    ]:
+        c = get_db()
+        try:
+            mod = importlib.import_module(mod_name)
+            notes_fn = getattr(mod, f'_seed_{fn_suffix}_notes_inner')
+            mcqs_fn  = getattr(mod, f'_seed_{fn_suffix}_mcqs_inner')
+            notes_fn(c, db_exec, row_to_dict, USE_POSTGRES, force=True)
+            c.commit()
+            mcqs_fn(c, db_exec, row_to_dict, USE_POSTGRES)
+            c.commit()
+            print(f"[ap-geo-seed] ch{ch_num} done.")
+        except Exception as e:
+            print(f"[ap-geo-seed] ch{ch_num} error: {e}")
+            try: c.rollback()
+            except: pass
+        finally:
+            try: c.close()
+            except: pass
 
 
 def _auto_seed_ancient():
