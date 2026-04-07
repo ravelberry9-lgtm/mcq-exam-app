@@ -252,6 +252,19 @@ def init_db():
     except Exception:
         pass
 
+    # ── Auto-seed PYQ questions if table is empty ──
+    try:
+        cur_pyq = db_exec(conn, "SELECT COUNT(*) FROM pyq_questions")
+        pyq_count = list(cur_pyq.fetchone())[0] if cur_pyq else 0
+        if pyq_count == 0:
+            print(f"[startup] PYQ table empty — auto-seeding from pyq_seed_data.json...")
+            _auto_seed_pyq()
+            print("[startup] PYQ auto-seed complete.")
+        else:
+            print(f"[startup] PYQ: {pyq_count} questions already loaded.")
+    except Exception as _pe:
+        print(f"[startup] PYQ seed check error: {_pe}")
+
     conn.close()
 
 
@@ -311,6 +324,34 @@ def _auto_seed_ancient():
         finally:
             try: c.close()
             except: pass
+
+
+def _auto_seed_pyq():
+    """Load PYQ questions from pyq_seed_data.json into pyq_questions table."""
+    seed_path = os.path.join(os.path.dirname(__file__), 'pyq_seed_data.json')
+    if not os.path.exists(seed_path):
+        print("[pyq-seed] pyq_seed_data.json not found — skipping.")
+        return
+    try:
+        with open(seed_path, 'r', encoding='utf-8') as f:
+            questions = json.load(f)
+        conn = get_db()
+        inserted = 0
+        for q in questions:
+            db_exec(conn, '''INSERT INTO pyq_questions
+                (topic, year, paper, question_number, question_text,
+                 option_a, option_b, option_c, option_d, correct_answer, language)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?)''',
+                (q['topic'], q['year'], q['paper'], q.get('question_number', 0),
+                 q['question_text'], q['option_a'], q['option_b'],
+                 q['option_c'], q['option_d'], q.get('correct_answer', ''),
+                 q.get('language', 'English')))
+            inserted += 1
+        conn.commit()
+        conn.close()
+        print(f"[pyq-seed] Loaded {inserted} PYQ questions.")
+    except Exception as e:
+        print(f"[pyq-seed] Error: {e}")
 
 
 # ─────────────────────────────────────────────
