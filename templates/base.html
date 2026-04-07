@@ -382,14 +382,16 @@ const gm = {
 
     if (this._dismissed) return;
 
-    // Determine actual playing state: check TTS_CONTROLS first, then speechSynthesis directly
-    const actuallyPlaying = tc ? tc.state().playing
-                                : (typeof speechSynthesis !== 'undefined' && speechSynthesis.speaking);
+    // Determine actual playing state.
+    // tc.state().playing == speaking (true even when paused), so must also check !paused.
+    const st = tc ? tc.state() : null;
+    const actuallyPlaying = st
+      ? (st.playing && !st.paused)
+      : (typeof speechSynthesis !== 'undefined' && speechSynthesis.speaking && !speechSynthesis.paused);
 
     // Build display data
     let d;
-    if (tc) {
-      const st = tc.state();
+    if (st) {
       d = { chNum: st.chNum, chTitle: st.chTitle, secTitle: st.secTitle };
     } else {
       try { d = JSON.parse(raw); } catch(e) { return; }
@@ -400,7 +402,7 @@ const gm = {
     const t = document.getElementById('gmTime');
     if (t) {
       if (actuallyPlaying) {
-        t.textContent = (tc ? tc.state().timeStr : '') || '\u25B6 Playing';
+        t.textContent = (st ? st.timeStr : '') || '\u25B6 Playing';
       } else {
         t.textContent = '\u23F8 Paused \u2014 tap \u25B6 to resume';
       }
@@ -471,8 +473,9 @@ const gm = {
         const el = document.getElementById('card-' + d.secIdx);
         if (el) { el.scrollIntoView({behavior:'smooth', block:'center'}); return; }
       }
-      // Navigate to chapter with hash so browser auto-scrolls, then autoplay
       const hash = typeof d.secIdx === 'number' ? '#card-' + d.secIdx : '';
+      // Cancel any in-progress speech so it doesn't overlap when chapter page starts autoplay
+      try { speechSynthesis.cancel(); } catch(e) {}
       window.location.href = d.url + '?autoplay=1' + hash;
     } catch(e) {}
   }
