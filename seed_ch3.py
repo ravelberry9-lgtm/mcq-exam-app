@@ -1244,7 +1244,7 @@ def _seed_ch3_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres, force=
     db_exec_fn(conn,
         f"""INSERT INTO study_notes
             (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
-            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
+            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
         ('GK', 'Indian_History', 'Ancient', 3,
          'సింధు నాగరికత',
          'Indus Valley Civilisation',

@@ -1105,7 +1105,7 @@ def _seed_ch4_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
     db_exec(conn,
         f'''INSERT INTO study_notes
             (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
-            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph})''',
+            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})''',
         ('GK', 'Indian_History', 'Ancient', 4,
          'వేద నాగరికత',
          'Vedic Civilisation',
