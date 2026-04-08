@@ -715,6 +715,18 @@ async function seedCh3Mcqs() {
               <div id="modernCh2SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
               <div id="modernCh2McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
+              <div style="font-size:13px;font-weight:700;color:#555;margin-bottom:6px;">🏛️ Modern Indian History — Chapter 3 (బ్రిటిష్ సార్వభౌమాధికారం)</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                <button id="seedModernCh3Btn" onclick="seedModernCh3()" class="btn btn-success" style="font-size:13px;padding:8px 16px;border-radius:8px;">
+                  🌱 Seed Notes (15 Sections) — British Sovereignty
+                </button>
+                <button id="seedModernCh3McqBtn" onclick="seedModernCh3Mcqs()" class="btn btn-primary" style="font-size:13px;padding:8px 16px;border-radius:8px;background:#6f42c1;border-color:#6f42c1;">
+                  🎯 Seed MCQs (80 Questions)
+                </button>
+              </div>
+              <div id="modernCh3SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
+              <div id="modernCh3McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
 
@@ -1178,6 +1190,44 @@ async function seedCh5Mcqs() {
         btn.disabled = false; btn.textContent = '🌱 Seed Notes (27 Sections) — British Empire';
       }
 
+      async function seedModernCh3(force=false) {
+        const btn = document.getElementById('seedModernCh3Btn');
+        const el  = document.getElementById('modernCh3SeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Modern Ch3 Notes...';
+        el.style.display='block'; el.textContent = 'Seeding...';
+        try {
+          const url = force ? '/api/notes/seed_modern_ch3?force=1' : '/api/notes/seed_modern_ch3';
+          const data = await safeFetch(url, { method: 'POST' });
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Modern Ch3 notes', 'error');
+          } else {
+            if (data.error && data.error.includes('already')) { seedModernCh3(true); return; }
+            btn.textContent = '✅ Modern Ch3 Notes Seeded!';
+            el.textContent = '✅ ' + (data.message || 'Modern Ch3 notes seeded!');
+            showToast(data.message || 'Modern Ch3 notes seeded!', 'success');
+          }
+        } catch(e) { showToast('Error: '+e.message,'error'); }
+        finally { btn.disabled = false; }
+      }
+
+      async function seedModernCh3Mcqs() {
+        const btn = document.getElementById('seedModernCh3McqBtn');
+        const el  = document.getElementById('modernCh3McqSeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Modern Ch3 MCQs...';
+        el.style.display='block'; el.textContent = 'Seeding...';
+        try {
+          const data = await safeFetch('/api/mcq/seed_modern_ch3', { method: 'POST' });
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Modern Ch3 MCQs', 'error');
+          } else {
+            btn.textContent = '✅ Modern Ch3 MCQs Seeded!';
+            el.textContent = '✅ ' + (data.message || 'Modern Ch3 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
+            showToast(data.message || 'Modern Ch3 MCQs seeded!', 'success');
+          }
+        } catch(e) { showToast('Error: '+e.message,'error'); }
+        finally { btn.disabled = false; }
+      }
+
       async function seedModernCh2Mcqs() {
         const btn = document.getElementById('seedModernCh2McqBtn');
         const el  = document.getElementById('modernCh2McqSeedResult');
@@ -1225,6 +1275,8 @@ async function seedCh5Mcqs() {
           { label: 'Modern Ch1 MCQs',  url: '/api/mcq/seed_modern_ch1' },
           { label: 'Modern Ch2 Notes', url: '/api/notes/seed_modern_ch2' },
           { label: 'Modern Ch2 MCQs',  url: '/api/mcq/seed_modern_ch2' },
+          { label: 'Modern Ch3 Notes', url: '/api/notes/seed_modern_ch3' },
+          { label: 'Modern Ch3 MCQs',  url: '/api/mcq/seed_modern_ch3' },
         ];
 
         let ok = 0, skip = 0, fail = 0;
