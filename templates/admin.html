@@ -703,6 +703,18 @@ async function seedCh3Mcqs() {
               <div id="modernCh1SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
               <div id="modernCh1McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
+              <div style="font-size:13px;font-weight:700;color:#555;margin-bottom:6px;">🏛️ Modern Indian History — Chapter 2 (బ్రిటిష్ సామ్రాజ్య స్థాపన)</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                <button id="seedModernCh2Btn" onclick="seedModernCh2()" class="btn btn-success" style="font-size:13px;padding:8px 16px;border-radius:8px;">
+                  🌱 Seed Notes (27 Sections) — British Empire
+                </button>
+                <button id="seedModernCh2McqBtn" onclick="seedModernCh2Mcqs()" class="btn btn-primary" style="font-size:13px;padding:8px 16px;border-radius:8px;background:#6f42c1;border-color:#6f42c1;">
+                  🎯 Seed MCQs (128 Questions)
+                </button>
+              </div>
+              <div id="modernCh2SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
+              <div id="modernCh2McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
 
@@ -1146,6 +1158,44 @@ async function seedCh5Mcqs() {
         } catch(e) { btn.disabled=false; showToast('Network error','error'); }
       }
 
+      async function seedModernCh2(force=false) {
+        const btn = document.getElementById('seedModernCh2Btn');
+        const el  = document.getElementById('modernCh2SeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Modern Ch2 Notes...';
+        el.style.display = 'block'; el.textContent = 'Seeding...';
+        try {
+          const url = force ? '/api/notes/seed_modern_ch2?force=1' : '/api/notes/seed_modern_ch2';
+          const data = await safeFetch(url, { method: 'POST' });
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Modern Ch2 notes', 'error');
+            el.textContent = '❌ ' + (data.error || 'Error');
+            if (data.error && data.error.includes('already')) { seedModernCh2(true); return; }
+          } else {
+            el.textContent = '✅ ' + (data.message || 'Modern Ch2 notes seeded!');
+            showToast(data.message || 'Modern Ch2 notes seeded!', 'success');
+          }
+        } catch(e) { el.textContent = '❌ ' + e.message; }
+        btn.disabled = false; btn.textContent = '🌱 Seed Notes (27 Sections) — British Empire';
+      }
+
+      async function seedModernCh2Mcqs() {
+        const btn = document.getElementById('seedModernCh2McqBtn');
+        const el  = document.getElementById('modernCh2McqSeedResult');
+        btn.disabled = true; btn.textContent = '⏳ Seeding Modern Ch2 MCQs...';
+        el.style.display = 'block'; el.textContent = 'Seeding...';
+        try {
+          const data = await safeFetch('/api/mcq/seed_modern_ch2', { method: 'POST' });
+          if (!data.success) {
+            showToast(data.error || 'Error seeding Modern Ch2 MCQs', 'error');
+            el.textContent = '❌ ' + (data.error || 'Error');
+          } else {
+            el.textContent = '✅ ' + (data.message || 'Modern Ch2 MCQs seeded!') + ' Easy:' + data.easy + ' Medium:' + data.medium + ' Hard:' + data.hard;
+            showToast(data.message || 'Modern Ch2 MCQs seeded!', 'success');
+          }
+        } catch(e) { el.textContent = '❌ ' + e.message; }
+        btn.disabled = false; btn.textContent = '🎯 Seed MCQs (128 Questions)';
+      }
+
       // ── Seed All Indian History (Ch 1–9 Notes + MCQs) ──
       async function seedAllIH() {
         const btn = document.getElementById('seedAllIHBtn');
@@ -1173,6 +1223,8 @@ async function seedCh5Mcqs() {
           { label: 'Ch9 MCQs',   url: '/api/mcq/seed_ch9' },
           { label: 'Modern Ch1 Notes', url: '/api/notes/seed_modern_ch1' },
           { label: 'Modern Ch1 MCQs',  url: '/api/mcq/seed_modern_ch1' },
+          { label: 'Modern Ch2 Notes', url: '/api/notes/seed_modern_ch2' },
+          { label: 'Modern Ch2 MCQs',  url: '/api/mcq/seed_modern_ch2' },
         ];
 
         let ok = 0, skip = 0, fail = 0;
