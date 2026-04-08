@@ -243,6 +243,18 @@ def init_db():
     except Exception as _ae:
         print(f"[startup] Auto-seed check error: {_ae}")
 
+    # ── Auto-seed Modern ch2 if missing ──
+    try:
+        cur_mod = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND subtopic='Modern' AND chapter_num=2")
+        mod_count = list(cur_mod.fetchone())[0] if cur_mod else 0
+        if mod_count < 1 and _SEED_CH2_MODERN_LOADED:
+            print("[startup] Modern ch2 missing — auto-seeding...")
+            _seed_ch2_modern_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+            _seed_ch2_modern_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
+            print("[startup] Modern ch2 auto-seed complete.")
+    except Exception as _me:
+        print(f"[startup] Modern ch2 seed check error: {_me}")
+
     # Back-fill: fix any Indian_History row still missing a subtopic → 'Ancient'
     # Runs every startup (catches ch1 from old deploys + any other orphan rows).
     try:
@@ -3663,6 +3675,50 @@ def seed_ch10_ancient_mcqs():
     try:
         _seed_ch10_ancient_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
         result = _seed_ch10_ancient_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MODERN CH2 — Establishment of British Empire (seed_ch2_modern.py)
+# ─────────────────────────────────────────────────────────────────────────────
+
+try:
+    from seed_ch2_modern import (
+        _seed_ch2_modern_notes_inner,
+        _seed_ch2_modern_mcqs_inner,
+    )
+    _SEED_CH2_MODERN_LOADED = True
+except Exception as _e:
+    print(f"[WARN] seed_ch2_modern.py not loaded: {_e}")
+    _SEED_CH2_MODERN_LOADED = False
+
+@app.route('/api/notes/seed_modern_ch2', methods=['POST'])
+def notes_seed_modern_ch2():
+    if not _SEED_CH2_MODERN_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch2_modern.py not found'}), 500
+    force = request.args.get('force', '0') == '1'
+    conn = get_db()
+    try:
+        result = _seed_ch2_modern_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=force)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    finally:
+        conn.close()
+
+@app.route('/api/mcq/seed_modern_ch2', methods=['POST'])
+def seed_modern_ch2_mcqs():
+    if not _SEED_CH2_MODERN_LOADED:
+        return jsonify({'success': False, 'error': 'seed_ch2_modern.py not found'}), 500
+    conn = get_db()
+    try:
+        _seed_ch2_modern_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        result = _seed_ch2_modern_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
         return jsonify(result)
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
