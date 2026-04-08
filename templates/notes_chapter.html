@@ -125,6 +125,30 @@
   [data-theme="dark"] .n-player { background:#1e2130; border-color:#2a2d3e; }
   [data-theme="dark"] .prog-banner { background:#1a2d1a; border-color:#4caf50; }
 
+  /* ── Audio mode toggle ── */
+  .mode-toggle {
+    display:flex; align-items:center; gap:0; border-radius:20px;
+    overflow:hidden; border:1.5px solid #c8860a; flex-shrink:0;
+  }
+  .mode-btn {
+    border:none; background:#fff8ee; color:#8a6a40;
+    padding:6px 11px; font-size:11px; font-weight:700; cursor:pointer;
+    transition:all 0.18s; white-space:nowrap;
+  }
+  .mode-btn.mode-active { background:#c8860a; color:#fff; }
+  .mode-btn:first-child { border-right:1px solid #c8860a; }
+  [data-theme="dark"] .mode-btn { background:#2a2d3e; color:#b0926a; }
+  [data-theme="dark"] .mode-btn.mode-active { background:#c8860a; color:#fff; }
+
+  /* rec-missing toast */
+  .rec-toast {
+    display:none; position:fixed; bottom:80px; left:50%; transform:translateX(-50%);
+    background:#333; color:#fff; border-radius:20px; padding:8px 18px;
+    font-size:12px; font-weight:700; z-index:999; white-space:nowrap;
+    box-shadow:0 4px 14px rgba(0,0,0,0.3);
+  }
+  .rec-toast.show { display:block; }
+
   /* Wake lock indicator */
   .wakelock-on {
     font-size:10px; background:#e8f5e9; color:#2e7d32;
@@ -329,10 +353,20 @@
   [data-theme="dark"] .completion-card { background:#0d1e0d; border-color:#4caf50; }
 </style>
 
+<!-- Hidden HTML5 audio player for recorded mode -->
+<audio id="recPlayer" preload="none"></audio>
+<!-- Toast for missing recording -->
+<div class="rec-toast" id="recToast">⚠️ Recording లేదు — Auto TTS వాడుతున్నారు</div>
+
 <!-- Sticky player bar -->
 <div class="n-player">
   <div class="n-now" id="nowPlaying">▶ సిద్ధంగా ఉంది — Play నొక్కండి</div>
   <div class="n-controls">
+    <!-- Audio mode toggle -->
+    <div class="mode-toggle" title="Audio mode">
+      <button class="mode-btn" id="modeRec"  onclick="setAudioMode('recorded')">🎙️ నా స్వరం</button>
+      <button class="mode-btn" id="modeAuto" onclick="setAudioMode('auto')">🤖 Auto</button>
+    </div>
     <button class="nb nb-play"  onclick="resumePlay()">▶ Play</button>
     <button class="nb nb-pause" onclick="pausePlay()">⏸</button>
     <button class="nb nb-stop"  onclick="stopPlay()">⏹</button>
@@ -340,7 +374,7 @@
     <button class="nb nb-nav"   id="nbBack" onclick="skipSec(-10)" style="background:#5c6bc0;color:white;display:none">⏪10s</button>
     <button class="nb nb-nav"   id="nbFwd"  onclick="skipSec(10)"  style="background:#5c6bc0;color:white;display:none">⏩10s</button>
     <button class="nb nb-nav"   onclick="nextSec()">⏭</button>
-    <div class="n-speed">
+    <div class="n-speed" id="spdWrap">
       <span>వేగం</span>
       <select id="spd" onchange="changeSpeed()">
         <option value="0.7">0.7×</option>
@@ -838,6 +872,128 @@ function applyFilter() {
   });
 }
 
+/* ─── AUDIO MODE ─── */
+const _CHNUM   = {{ chapter.chapter_num }};
+const _SUBTOPIC = '{{ chapter.subtopic | lower | replace(" ","_") }}';
+
+let audioMode = localStorage.getItem('audioMode') || 'auto';  // 'auto' | 'recorded'
+
+function _audioFile(secIdx) {
+  const nn  = String(secIdx).padStart(2, '0');
+  const sub = _SUBTOPIC ? _SUBTOPIC + '_' : '';
+  return `/static/audio/ch${_CHNUM}_${sub}sec${nn}.mp3`;
+}
+
+function setAudioMode(mode) {
+  audioMode = mode;
+  localStorage.setItem('audioMode', mode);
+  // update toggle UI
+  document.getElementById('modeRec').classList.toggle('mode-active',  mode === 'recorded');
+  document.getElementById('modeAuto').classList.toggle('mode-active', mode === 'auto');
+  // hide speed control in recorded mode (speed handled via playback rate)
+  document.getElementById('spdWrap').style.display = mode === 'recorded' ? 'none' : '';
+  // stop whatever is playing now
+  if (mode === 'auto')      _stopRec();
+  else                      stop();
+  setNow('▶ సిద్ధంగా ఉంది — Play నొక్కండి');
+}
+
+// ── Recorded audio player ──────────────────────────────────────────
+const _recEl = document.getElementById('recPlayer');
+
+function _showRecToast(msg, ms) {
+  const t = document.getElementById('recToast');
+  t.textContent = msg || '⚠️ Recording లేదు — Auto TTS వాడుతున్నారు';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), ms || 3000);
+}
+
+function _stopRec() {
+  _recEl.pause();
+  _recEl.removeAttribute('src');
+  speaking = false; paused = false;
+  document.getElementById('fabBtn').textContent = '▶';
+  _updateSkipBtns && _updateSkipBtns();
+}
+
+function _playRec(secIdx) {
+  _stopRec();
+  cur = secIdx;
+  openSec(cur);
+  setNow('▶ ' + SECS[cur].title);
+  setBadge(cur, 'playing');
+  setCard(cur, 'playing');
+  document.getElementById('fabBtn').textContent = '⏸';
+  savePosition(cur);
+  acquireWakeLock();
+
+  const src = _audioFile(secIdx);
+  _recEl.src = src;
+  _recEl.load();
+  speaking = true; paused = false;
+
+  _recEl.play().catch(() => {
+    // File not found — fall back silently to TTS
+    _showRecToast('⚠️ Recording లేదు — Auto TTS వాడుతున్నారు');
+    speaking = false;
+    audioMode = 'auto';  // temporary fallback, don't save preference
+    document.getElementById('modeRec').classList.remove('mode-active');
+    document.getElementById('modeAuto').classList.add('mode-active');
+    document.getElementById('spdWrap').style.display = '';
+    speak();
+  });
+}
+
+// progress bar while recorded audio plays
+_recEl.addEventListener('timeupdate', () => {
+  if (_recEl.duration > 0) {
+    const pct = (_recEl.currentTime / _recEl.duration) * 100;
+    document.getElementById('progFill').style.width = pct + '%';
+    // live timer display
+    const rem = _recEl.duration - _recEl.currentTime;
+    document.getElementById('liveTimer').textContent =
+      _fmt(_recEl.currentTime) + ' / ' + _fmt(_recEl.duration);
+  }
+});
+
+function _fmt(s) {
+  const m = Math.floor(s / 60), sec = Math.floor(s % 60);
+  return m + ':' + String(sec).padStart(2,'0');
+}
+
+_recEl.addEventListener('ended', () => {
+  setBadge(cur, 'done');
+  setCard(cur, 'done');
+  markDoneInStorage(cur);
+  refreshTimingUI();
+  speaking = false; paused = false;
+  document.getElementById('fabBtn').textContent = '▶';
+  document.getElementById('progFill').style.width = '100%';
+  if (allMode && queue.length) {
+    cur = queue.shift();
+    setTimeout(() => _playRec(cur), 600);
+  } else {
+    releaseWakeLock();
+    clearPosition();
+    setNow('✅ పూర్తయింది');
+    checkAllDone();
+  }
+});
+
+_recEl.addEventListener('error', () => {
+  if (!speaking) return;
+  _showRecToast('⚠️ Recording లేదు — Auto TTS వాడుతున్నారు');
+  speaking = false;
+  speak();  // fallback
+});
+
+// init toggle state on page load
+(function _initModeUI() {
+  document.getElementById('modeRec').classList.toggle('mode-active',  audioMode === 'recorded');
+  document.getElementById('modeAuto').classList.toggle('mode-active', audioMode === 'auto');
+  document.getElementById('spdWrap').style.display = audioMode === 'recorded' ? 'none' : '';
+})();
+
 /* ─── TTS CORE ─── */
 function getVoice() {
   const vs = speechSynthesis.getVoices();
@@ -846,17 +1002,20 @@ function getVoice() {
       || vs[0] || null;
 }
 
-function playSec(i) { stop(); cur = i; allMode = false; queue = []; speak(); }
+function playSec(i) {
+  if (audioMode === 'recorded') { allMode = false; queue = []; _playRec(i); return; }
+  stop(); cur = i; allMode = false; queue = []; speak();
+}
 
 function playAll() {
-  stop();
+  if (audioMode === 'recorded') { _stopRec(); } else { stop(); }
   allMode = true;
-  // only queue visible sections if filter active
   queue = SECS.map((_, i) => i).filter(i => {
     const c = document.getElementById('card-'+i);
     return c && !c.classList.contains('hidden-bm');
   });
-  nextQ();
+  if (audioMode === 'recorded') { cur = queue.shift(); _playRec(cur); }
+  else                          { nextQ(); }
 }
 
 function nextQ() {
@@ -962,17 +1121,25 @@ async function speak() {
 }
 
 function resumePlay() {
+  if (audioMode === 'recorded') {
+    if (paused) {
+      _recEl.play();
+      paused = false; speaking = true;
+      document.getElementById('fabBtn').textContent = '⏸';
+      if (cur >= 0) setNow('▶ ' + SECS[cur].title);
+    } else if (!speaking) {
+      if (cur >= 0) _playRec(cur); else playAll();
+    }
+    return;
+  }
   if (paused) {
     paused = false;
-    // Use native resume() — keeps audio in the user gesture callstack so Chrome allows it.
-    // Falls back to re-speak if resume() doesn't actually restart speech (Chrome bug on some versions).
     try { speechSynthesis.resume(); } catch(e) {}
     startLiveTimer(curEstSecs);
     document.getElementById('fabBtn').textContent = '⏸';
     if (cur >= 0) setNow('▶ ' + SECS[cur].title);
     _updateSkipBtns();
     _saveTTSState();
-    // Fallback: if speech still isn't running after 350ms, re-speak current chunk
     setTimeout(() => {
       if (speaking && !paused && !speechSynthesis.speaking && !speechSynthesis.pending) {
         _speakNextChunk();
@@ -983,6 +1150,15 @@ function resumePlay() {
 }
 
 function pausePlay() {
+  if (audioMode === 'recorded') {
+    if (speaking && !paused) {
+      _recEl.pause();
+      paused = true; speaking = false;
+      document.getElementById('fabBtn').textContent = '▶';
+      setNow('⏸ ఆపబడింది');
+    }
+    return;
+  }
   if (speaking && !paused) {
     try { speechSynthesis.pause(); } catch(e) {}
     pauseLiveTimer();
@@ -994,8 +1170,12 @@ function pausePlay() {
   }
 }
 
-function stopPlay() { stop(); clearPosition(); sessionStorage.removeItem('tts_now'); }
+function stopPlay() {
+  if (audioMode === 'recorded') { _stopRec(); allMode = false; queue = []; clearPosition(); return; }
+  stop(); clearPosition(); sessionStorage.removeItem('tts_now');
+}
 function stop() {
+  _recEl.pause(); _recEl.removeAttribute('src');   // always stop recorded too
   try { speechSynthesis.cancel(); } catch(e) {}
   clearLiveTimer();
   releaseWakeLock();
@@ -1013,8 +1193,12 @@ function stop() {
 // ── Skip ±10 seconds ──
 function skipSec(deltaSecs) {
   if (!speaking) return;
+  if (audioMode === 'recorded') {
+    _recEl.currentTime = Math.max(0, Math.min(_recEl.duration || 0, _recEl.currentTime + deltaSecs));
+    return;
+  }
   const rate = parseFloat(document.getElementById('spd').value) || 1;
-  const wordsPerSec = 130 * rate / 60;  // ~2.17 at 1×
+  const wordsPerSec = 130 * rate / 60;
   const jump = Math.round(Math.abs(deltaSecs) * wordsPerSec);
   let newPos = _wordPos + (deltaSecs > 0 ? jump : -jump);
   newPos = Math.max(0, Math.min(newPos, _allWords.length - 1));
