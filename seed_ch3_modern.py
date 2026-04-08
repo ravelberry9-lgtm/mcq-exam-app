@@ -1142,10 +1142,13 @@ def _seed_ch3_modern_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres,
 
     db_exec_fn(conn,
         f"""INSERT INTO study_notes
-            (subject, topic, chapter_num, subtopic, title, sections_json)
-            VALUES ({ph},{ph},{ph},{ph},{ph},{ph})""",
-        ('GK', 'Indian_History', 3, 'Modern',
-         'బ్రిటిష్ సార్వభౌమాధికారం', sections_json))
+            (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json)
+            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
+        ('GK', 'Indian_History', 'Modern', 3,
+         'బ్రిటిష్ సార్వభౌమాధికారం',
+         'British Sovereignty',
+         '462-469',
+         sections_json))
 
     if not use_postgres:
         conn.commit()
@@ -1278,8 +1281,10 @@ if __name__ == "__main__":
 
     conn.execute('''CREATE TABLE IF NOT EXISTS study_notes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        subject TEXT, topic TEXT, chapter_num INTEGER, subtopic TEXT,
-        title TEXT, sections_json TEXT,
+        subject TEXT, topic TEXT, subtopic TEXT, chapter_num INTEGER,
+        chapter_title_te TEXT, chapter_title_en TEXT,
+        pages_ref TEXT DEFAULT '',
+        sections_json TEXT NOT NULL DEFAULT "[]",
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
     conn.commit()
 
