@@ -394,7 +394,7 @@ def _auto_seed_ancient():
             except: pass
 
 
-def _auto_seed_pyq():
+def _auto_seed_pyq(force=False):
     """Load PYQ questions from pyq_seed_data.json into pyq_questions table."""
     seed_path = os.path.join(os.path.dirname(__file__), 'pyq_seed_data.json')
     if not os.path.exists(seed_path):
@@ -404,6 +404,10 @@ def _auto_seed_pyq():
         with open(seed_path, 'r', encoding='utf-8') as f:
             questions = json.load(f)
         conn = get_db()
+        if force:
+            db_exec(conn, 'DELETE FROM pyq_questions')
+            if not USE_POSTGRES:
+                conn.commit()
         inserted = 0
         for q in questions:
             db_exec(conn, '''INSERT INTO pyq_questions
@@ -415,11 +419,24 @@ def _auto_seed_pyq():
                  q['option_c'], q['option_d'], q.get('correct_answer', ''),
                  q.get('language', 'English')))
             inserted += 1
-        conn.commit()
+        if not USE_POSTGRES:
+            conn.commit()
         conn.close()
         print(f"[pyq-seed] Loaded {inserted} PYQ questions.")
+        return inserted
     except Exception as e:
         print(f"[pyq-seed] Error: {e}")
+        return 0
+
+
+@app.route('/api/pyq/reseed', methods=['POST'])
+def pyq_reseed():
+    """Force-reload PYQ data from pyq_seed_data.json (clears old data first)."""
+    try:
+        inserted = _auto_seed_pyq(force=True)
+        return jsonify({'success': True, 'message': f'PYQ reseeded! {inserted} questions loaded.', 'total': inserted})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 
 # ─────────────────────────────────────────────
@@ -3984,7 +4001,8 @@ def pyq_submit():
             continue
         user_ans = answers.get(str(qid), answers.get(qid, None))
         correct = (q['correct_answer'] or '').strip().upper()
-        is_correct = bool(user_ans and correct and user_ans.strip().upper() == correct)
+        answer_available = correct not in ('', 'N/A')
+        is_correct = bool(answer_available and user_ans and user_ans.strip().upper() == correct)
         if is_correct:
             score += 1
         results.append({
@@ -3997,7 +4015,9 @@ def pyq_submit():
                 {'key': 'C', 'text': q['option_c']},
                 {'key': 'D', 'text': q['option_d']}
             ],
-            'correct_answer': correct, 'user_answer': user_ans,
+            'correct_answer': correct if answer_available else 'N/A',
+            'answer_available': answer_available,
+            'user_answer': user_ans,
             'is_correct': is_correct, 'explanation': '',
             'difficulty': 'M'
         })

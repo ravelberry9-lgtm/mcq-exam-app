@@ -727,6 +727,14 @@ async function seedCh3Mcqs() {
               <div id="modernCh3SeedResult" style="margin-bottom:6px;font-size:13px;display:none;"></div>
               <div id="modernCh3McqSeedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
 
+              <div style="font-size:13px;font-weight:700;color:#555;margin-bottom:6px;">⚖️ AP High Court — Previous Year Questions (PYQ)</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                <button id="pyqReseedBtn" onclick="pyqReseed()" class="btn btn-warning" style="font-size:13px;padding:8px 16px;border-radius:8px;">
+                  🔄 Reseed PYQ Data (712 Questions)
+                </button>
+              </div>
+              <div id="pyqReseedResult" style="margin-bottom:14px;font-size:13px;display:none;"></div>
+
   <!-- Existing chapters list -->
   <div id="notesList"><p style="color:var(--text-muted);font-size:13px;">Loading...</p></div>
 
@@ -1190,6 +1198,25 @@ async function seedCh5Mcqs() {
         btn.disabled = false; btn.textContent = '🌱 Seed Notes (27 Sections) — British Empire';
       }
 
+      async function pyqReseed() {
+        const btn = document.getElementById('pyqReseedBtn');
+        const el  = document.getElementById('pyqReseedResult');
+        btn.disabled = true; btn.textContent = '⏳ Reseeding PYQ...';
+        el.style.display='block'; el.textContent = 'Clearing old data and reloading...';
+        try {
+          const data = await safeFetch('/api/pyq/reseed', { method: 'POST' });
+          if (!data.success) {
+            showToast(data.error || 'Error reseeding PYQ', 'error');
+            el.textContent = '❌ ' + (data.error || 'Error');
+          } else {
+            btn.textContent = '✅ PYQ Reseeded!';
+            el.textContent = '✅ ' + (data.message || 'PYQ reseeded!') + ' — N/A answers marked for 316 questions.';
+            showToast(data.message || 'PYQ reseeded!', 'success');
+          }
+        } catch(e) { showToast('Error: '+e.message,'error'); }
+        finally { btn.disabled = false; }
+      }
+
       async function seedModernCh3(force=false) {
         const btn = document.getElementById('seedModernCh3Btn');
         const el  = document.getElementById('modernCh3SeedResult');
@@ -1277,6 +1304,7 @@ async function seedCh5Mcqs() {
           { label: 'Modern Ch2 MCQs',  url: '/api/mcq/seed_modern_ch2' },
           { label: 'Modern Ch3 Notes', url: '/api/notes/seed_modern_ch3' },
           { label: 'Modern Ch3 MCQs',  url: '/api/mcq/seed_modern_ch3' },
+          { label: 'PYQ Reseed',        url: '/api/pyq/reseed' },
         ];
 
         let ok = 0, skip = 0, fail = 0;
