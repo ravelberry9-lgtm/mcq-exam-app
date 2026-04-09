@@ -289,12 +289,21 @@ def init_db():
     except Exception as _pe:
         print(f"[startup] PYQ seed check error: {_pe}")
 
-    # ── Auto-seed AP Geography chapters if missing ──
+    # ── Auto-seed AP Geography chapters (force reseed ch1-2, remove old ch3-4) ──
     try:
+        # Remove old ch3/ch4 geography content if present
+        try:
+            db_exec(conn, "DELETE FROM chapter_mcqs WHERE study_note_id IN (SELECT id FROM study_notes WHERE topic='AP_Geography' AND chapter_num IN (3,4))")
+            db_exec(conn, "DELETE FROM study_notes WHERE topic='AP_Geography' AND chapter_num IN (3,4)")
+            conn.commit()
+        except Exception:
+            try: conn.rollback()
+            except: pass
+
         cur_geo = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='AP_Geography'")
         geo_count = list(cur_geo.fetchone())[0] if cur_geo else 0
-        if geo_count < 4:
-            print(f"[startup] Only {geo_count}/4 AP Geography chapters — auto-seeding...")
+        if geo_count < 2:
+            print(f"[startup] Only {geo_count}/2 AP Geography chapters — auto-seeding...")
             _auto_seed_ap_geography()
             print("[startup] AP Geography auto-seed complete.")
         else:
@@ -306,13 +315,11 @@ def init_db():
 
 
 def _auto_seed_ap_geography():
-    """Seed AP Geography chapters 1-4 into study_notes + chapter_mcqs."""
+    """Seed AP Geography chapters 1-2 into study_notes + chapter_mcqs."""
     import importlib
     for ch_num, mod_name, fn_suffix in [
         (1, 'seed_ap_geo_ch1', 'ap_geo_ch1'),
         (2, 'seed_ap_geo_ch2', 'ap_geo_ch2'),
-        (3, 'seed_ap_geo_ch3', 'ap_geo_ch3'),
-        (4, 'seed_ap_geo_ch4', 'ap_geo_ch4'),
     ]:
         c = get_db()
         try:
