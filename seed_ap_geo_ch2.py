@@ -248,8 +248,9 @@ SECTIONS_JSON = [
 - సెరికల్చర్: భారతదేశంలో 2వ అతిపెద్ద ముడి పట్టు (raw silk) ఉత్పత్తిదారు
 
 📌 సముద్ర వనరులు (Marine Resources):
-- AP = భారతదేశ చేపల ఉత్పత్తిలో ~35%! (పాత: ~30%, latest: ~35%)
-- రొయ్యల ఉత్పత్తిలో ~70%! (పాత textbook: 31%, latest: ~70% — AP దేశంలో అతిపెద్ద రొయ్య ఉత్పత్తిదారు)
+- AP = భారతదేశ చేపల ఉత్పత్తిలో ~30%! (Socio-Economic Survey 2024-25)
+- రొయ్యల ఎగుమతుల్లో 31%! (Socio-Economic Survey 2024-25)
+- 2024-25 చేపల ఉత్పత్తి (Dec వరకు): 41.38 LMT (target: 56.62 LMT)
 - సముద్ర చేపల నిషేధ కాలం: 61 రోజులు (ఏప్రిల్ 15 — జూన్ 14)
 - తీరం: 1,053.07 కి.మీ (NHO updated, 3rd longest) / 974 కి.మీ (old, was 2nd)
 
@@ -262,7 +263,7 @@ SECTIONS_JSON = [
 • డాల్ఫిన్స్ నోస్ = విశాఖపట్నం
 • కొరింగా = 2nd mangroves, హోప్ = sand spit
 • శ్రీహరికోట = ISRO, అడవులు = 23.59%
-• AP = ~35% of India's fish production, ~70% shrimp production (దేశంలో No.1)
+• AP = ~30% of India's fish, 31% shrimp exports (Socio-Economic Survey 2024-25)
 """
     },
     {
