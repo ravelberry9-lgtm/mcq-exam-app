@@ -145,7 +145,7 @@ SECTIONS_JSON = [
 
 📌 పాలకొండలు (Palkondas):
 - అన్నమయ్య జిల్లాలో ఫోర్ట్ హిల్ వ్యాలీ
-- హార్స్లీ హిల్స్ (1,290 మీ) అన్నమయ్య జిల్లాలో — "AP ఊటీ" అని పిలుస్తారు!
+- హార్స్లీ హిల్స్ (1,265 మీ) అన్నమయ్య జిల్లాలో — "AP ఊటీ" అని పిలుస్తారు!
 
 ★ అనంతపురం, సత్యసాయి: పెనుకొండ, మడకశిర, రామగిరి గుట్టలు
 ★ కర్నూల్: మార్కాపురం కొండలు, ముగిలి కొండలు, ఎర్రమల
@@ -198,7 +198,7 @@ SECTIONS_JSON = [
     },
     {
         "title": "2.6 కొల్లేరు & పులికాట్ సరస్సులు",
-        "sub": "Kolleru 260 sq km · Freshwater · Pulicat 759 sq km · Lagoon · Sriharikota · ISRO",
+        "sub": "Kolleru 260 sq km · Freshwater · Pulicat 460 sq km · Lagoon · Sriharikota · ISRO",
         "audio": """నమస్కారం! AP లోని రెండు ముఖ్యమైన సరస్సులు!
 
 📌 కొల్లేరు సరస్సు (Kolleru Lake):
@@ -211,7 +211,9 @@ SECTIONS_JSON = [
 
 📌 పులికాట్ సరస్సు (Pulicat Lake/Lagoon):
 - తిరుపతి జిల్లా (AP-తమిళనాడు సరిహద్దు)
-- విస్తీర్ణం: 759 చ.కి.మీ (పాత textbook: 460, UPSC/latest: 759)
+- మొత్తం విస్తీర్ణం: 759 చ.కి.మీ (total lagoon area)
+- నీటి విస్తీర్ణం (water spread): 460 చ.కి.మీ (monsoon), 250 చ.కి.మీ (dry season)
+- 🚨 Textbook 460 అంటే water spread! Total lagoon = 759!
 - భారతదేశంలో 2వ అతిపెద్ద లెగూన్ (1st = చిల్కా, ఒడిశా)
 - 96% AP లో, 4% తమిళనాడులో!
 - శ్రీహరికోట (Sriharikota) ద్వీపం ఈ సరస్సు & బంగాళాఖాతం మధ్య
@@ -221,13 +223,13 @@ SECTIONS_JSON = [
 
 🚨 ఎగ్జామ్ ట్రిక్ అలర్ట్ — Confusing Questions జాగ్రత్త!
 - "అతిపెద్ద మంచినీటి సరస్సు" = కొల్లేరు (260)
-- "అతిపెద్ద సరస్సు (overall)" = పులికాట్ (759 చ.కి.మీ, latest) — కానీ ఇది brackish/lagoon!
-- కొల్లేరు (260) < పులికాట్ (759) area లో
+- "అతిపెద్ద సరస్సు (overall)" = పులికాట్ (759 total / 460 water spread) — కానీ ఇది brackish/lagoon!
+- కొల్లేరు (260) < పులికాట్ (759/460) area లో
 - కొల్లేరు = Freshwater, పులికాట్ = Brackish/Lagoon
 
 📝 త్వరిత పునశ్చరణ (Quick Recap):
 • కొల్లేరు: 260, Freshwater, ఏలూరు, Wildlife Sanctuary
-• పులికాట్: 759 చ.కి.మీ (latest), Lagoon, తిరుపతి, 2nd largest lagoon (India)
+• పులికాట్: 759 total (460 water spread), Lagoon, తిరుపతి, 2nd largest lagoon (India)
 • శ్రీహరికోట = పులికాట్ & Bay మధ్య = ISRO!
 """
     },
@@ -288,7 +290,7 @@ SECTIONS_JSON = [
 
 🔑 సరస్సుల పోలిక:
 - కొల్లేరు: Freshwater, 260 చ.కి.మీ, ఏలూరు
-- పులికాట్: Lagoon, 759 చ.కి.మీ (latest; పాత textbook: 460), తిరుపతి, 2nd largest in India
+- పులికాట్: Lagoon, 759 total / 460 water spread, తిరుపతి, 2nd largest in India
 
 🔑 ప్రత్యేక భూస్వరూపాలు:
 - డాల్ఫిన్స్ నోస్ = విశాఖపట్నం
@@ -299,7 +301,7 @@ SECTIONS_JSON = [
 🚨 SUPER EXAM TRICKS:
 - "ధ-క-కు-రా-డే" = Rock systems (oldest → newest)
 - "జిం > సీ > మ" = Peak heights (1690 > 1680 > 1501)
-- "కొల్లేరు = Fresh = 260" vs "పులికాట్ = Salt = 759" (latest; textbook 460 outdated)
+- "కొల్లేరు = Fresh = 260" vs "పులికాట్ = Salt = 759 total / 460 water spread"
 - "3 భూ విభాగాలు" = Plateau → Ghats → Plains = West → East
 - నల్లమల = శ్రీశైలం, శేషాచలం = తిరుమల
 """
@@ -377,7 +379,7 @@ MCQ_DATA = [
 
     (5, 1, 'భారతదేశంలో 2వ అతిపెద్ద లెగూన్?',
      'a) కొల్లేరు', 'b) పులికాట్', 'c) సాంబార్', 'd) వేంబనాడ్',
-     'b', 'పులికాట్ (759 చ.కి.మీ, latest) భారతదేశంలో 2వ అతిపెద్ద లెగూన్ (1st = చిల్కా). పాత textbook 460 అని చెబుతుంది — latest data 759.'),
+     'b', 'పులికాట్ (759 చ.కి.మీ total, 460 water spread) భారతదేశంలో 2వ అతిపెద్ద లెగూన్ (1st = చిల్కా).'),
 
     (5, 1, 'శ్రీహరికోట ఏ సరస్సు సమీపంలో?',
      'a) కొల్లేరు', 'b) చిల్కా', 'c) పులికాట్', 'd) హుస్సేన్ సాగర్',
