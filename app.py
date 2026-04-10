@@ -1003,10 +1003,40 @@ def notes_chapter(subject, topic, chapter_id):
         ch_est_secs = max(5, round(total_words / (130 / 60))) if total_words else 0
     except Exception:
         ch_est_secs = 0
+    # Check if an HTML read-notes file exists for this chapter
+    html_notes_file = None
+    notes_map = {
+        ('GK', 'AP_Geography', 1): 'ap_geo_ch1_notes.html',
+        ('GK', 'AP_Geography', 2): 'ap_geo_ch2_notes.html',
+        ('GK', 'AP_Geography', 3): 'ap_geo_ch3_notes.html',
+        ('GK', 'AP_Geography', 4): 'ap_geo_ch4_notes.html',
+    }
+    key = (chapter.get('subject',''), chapter.get('topic',''), chapter.get('chapter_num',0))
+    if key in notes_map:
+        fpath = os.path.join(app.static_folder, 'notes', notes_map[key])
+        if os.path.exists(fpath):
+            html_notes_file = '/static/notes/' + notes_map[key]
+
     return render_template('notes_chapter.html',
                            subject=subject, topic=topic,
                            chapter=chapter, sections=sections,
-                           ch_est_secs=ch_est_secs)
+                           ch_est_secs=ch_est_secs,
+                           html_notes_file=html_notes_file)
+
+
+# ── Read Notes (HTML) ──────────────────────────────────────
+@app.route('/read-notes')
+def read_notes_home():
+    """Browse all available HTML study notes for reading/printing."""
+    notes_dir = os.path.join(app.static_folder, 'notes')
+    available = []
+    if os.path.isdir(notes_dir):
+        for fn in sorted(os.listdir(notes_dir)):
+            if fn.endswith('.html'):
+                # Parse filename to get display info
+                label = fn.replace('_notes.html', '').replace('_', ' ').title()
+                available.append({'filename': fn, 'label': label, 'url': '/static/notes/' + fn})
+    return render_template('read_notes.html', notes=available)
 
 
 @app.route('/api/notes/add', methods=['POST'])

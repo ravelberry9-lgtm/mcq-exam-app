@@ -412,6 +412,19 @@
     <div style="font-size:11px;opacity:0.7;margin-top:6px;">📄 Pages {{ chapter.pages_ref }} | Winners Publications</div>
     {% endif %}
     <div id="chHeaderTime" style="font-size:12px;opacity:0.9;margin-top:6px;font-weight:700;"></div>
+    {% if html_notes_file %}
+    <div style="margin-top:10px;display:flex;gap:8px;justify-content:center;">
+      <a href="{{ html_notes_file }}" target="_blank"
+         style="background:rgba(255,255,255,0.2);color:white;border:1.5px solid rgba(255,255,255,0.4);border-radius:16px;padding:6px 16px;font-size:12px;font-weight:700;text-decoration:none;">
+        📄 Read Notes
+      </a>
+      <a href="{{ html_notes_file }}" target="_blank"
+         onclick="setTimeout(()=>{window.open('{{ html_notes_file }}').print()},500); return false;"
+         style="background:rgba(255,255,255,0.2);color:white;border:1.5px solid rgba(255,255,255,0.4);border-radius:16px;padding:6px 16px;font-size:12px;font-weight:700;text-decoration:none;">
+        🖨 Print
+      </a>
+    </div>
+    {% endif %}
   </div>
 
   <!-- Resume bar (shown when returning after audio was interrupted) -->
@@ -474,6 +487,19 @@
   <div class="play-all-wrap">
     <button class="play-all-btn" onclick="playAll()">🎙️ అన్ని సెక్షన్లు వినండి</button>
     <button class="quiz-btn"     onclick="openQuiz()">🎯 Chapter Quiz</button>
+    {% if html_notes_file %}
+    <div style="display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap;">
+      <a href="{{ html_notes_file }}" target="_blank"
+         style="display:inline-flex;align-items:center;gap:5px;background:#1565c0;color:white;border:none;border-radius:22px;padding:11px 22px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;">
+        📄 Read Notes
+      </a>
+      <a href="{{ html_notes_file }}" target="_blank"
+         onclick="setTimeout(()=>{window.open('{{ html_notes_file }}').print()},500); return false;"
+         style="display:inline-flex;align-items:center;gap:5px;background:#f5f5f5;color:#333;border:1.5px solid #ddd;border-radius:22px;padding:11px 22px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;">
+        🖨 Print Notes
+      </a>
+    </div>
+    {% endif %}
   </div>
 
 </div>
