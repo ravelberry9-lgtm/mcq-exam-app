@@ -320,6 +320,11 @@ def _auto_seed_ap_geography():
     for ch_num, mod_name, fn_suffix in [
         (1, 'seed_ap_geo_ch1', 'ap_geo_ch1'),
         (2, 'seed_ap_geo_ch2', 'ap_geo_ch2'),
+        (3, 'seed_ap_geo_ch3', 'ap_geo_ch3'),
+        (4, 'seed_ap_geo_ch4', 'ap_geo_ch4'),
+        (5, 'seed_ap_geo_ch5', 'ap_geo_ch5'),
+        (6, 'seed_ap_geo_ch6', 'ap_geo_ch6'),
+        (7, 'seed_ap_geo_ch7', 'ap_geo_ch7'),
     ]:
         c = get_db()
         try:
