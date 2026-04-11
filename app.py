@@ -289,6 +289,19 @@ def init_db():
     except Exception as _pe:
         print(f"[startup] PYQ seed check error: {_pe}")
 
+    # ── Auto-seed AP Current Affairs chapters ──
+    try:
+        cur_ca = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='AP_Current_Affairs'")
+        ca_count = list(cur_ca.fetchone())[0] if cur_ca else 0
+        if ca_count < 1:
+            print(f"[startup] AP Current Affairs: {ca_count} divisions — auto-seeding...")
+            _auto_seed_ap_current_affairs()
+            print("[startup] AP Current Affairs auto-seed complete.")
+        else:
+            print(f"[startup] AP Current Affairs: {ca_count} divisions already loaded.")
+    except Exception as _ca_e:
+        print(f"[startup] AP Current Affairs seed check error: {_ca_e}")
+
     # ── Auto-seed AP Geography chapters (force reseed ch1-2, remove old ch3-4) ──
     try:
         # Remove old ch3/ch4 geography content if present
@@ -312,6 +325,31 @@ def init_db():
         print(f"[startup] AP Geography seed check error: {_ge}")
 
     conn.close()
+
+
+def _auto_seed_ap_current_affairs():
+    """Seed AP Current Affairs divisions into study_notes + chapter_mcqs."""
+    import importlib
+    for ch_num, mod_name, fn_suffix in [
+        (1, 'seed_ap_ca_div1', 'ap_ca_div1'),
+    ]:
+        c = get_db()
+        try:
+            mod = importlib.import_module(mod_name)
+            notes_fn = getattr(mod, f'_seed_{fn_suffix}_notes_inner')
+            mcqs_fn  = getattr(mod, f'_seed_{fn_suffix}_mcqs_inner')
+            notes_fn(c, db_exec, row_to_dict, USE_POSTGRES, force=True)
+            c.commit()
+            mcqs_fn(c, db_exec, row_to_dict, USE_POSTGRES)
+            c.commit()
+            print(f"[ap-ca-seed] div{ch_num} done.")
+        except Exception as e:
+            print(f"[ap-ca-seed] div{ch_num} error: {e}")
+            try: c.rollback()
+            except: pass
+        finally:
+            try: c.close()
+            except: pass
 
 
 def _auto_seed_ap_geography():
