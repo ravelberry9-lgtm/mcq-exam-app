@@ -315,7 +315,7 @@ def init_db():
 
 
 def _auto_seed_ap_geography():
-    """Seed AP Geography chapters 1-2 into study_notes + chapter_mcqs."""
+    """Seed AP Geography chapters 1-11 into study_notes + chapter_mcqs."""
     import importlib
     for ch_num, mod_name, fn_suffix in [
         (1, 'seed_ap_geo_ch1', 'ap_geo_ch1'),
@@ -325,6 +325,14 @@ def _auto_seed_ap_geography():
         (5, 'seed_ap_geo_ch5', 'ap_geo_ch5'),
         (6, 'seed_ap_geo_ch6', 'ap_geo_ch6'),
         (7, 'seed_ap_geo_ch7', 'ap_geo_ch7'),
+        (8, 'seed_ap_geo_ch8', 'ap_geo_ch8'),
+        (9, 'seed_ap_geo_ch9', 'ap_geo_ch9'),
+        (10, 'seed_ap_geo_ch10', 'ap_geo_ch10'),
+        (11, 'seed_ap_geo_ch11', 'ap_geo_ch11'),
+        (12, 'seed_ap_geo_ch12', 'ap_geo_ch12'),
+        (13, 'seed_ap_geo_ch13', 'ap_geo_ch13'),
+        (14, 'seed_ap_geo_ch14', 'ap_geo_ch14'),
+        (15, 'seed_ap_geo_ch15', 'ap_geo_ch15'),
     ]:
         c = get_db()
         try:
