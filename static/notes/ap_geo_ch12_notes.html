@@ -10,11 +10,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Noto Sans Telugu', 'Segoe UI', sans-serif; font-size: 11px; line-height: 1.55; color: #1a1a1a; max-width: 210mm; margin: auto; padding: 10mm; }
 h1 { font-size: 18px; color: #b71c1c; border-bottom: 3px solid #b71c1c; padding-bottom: 4px; margin-bottom: 8px; text-align: center; }
-h2 { font-size: 14px; color: #1565c0; border-left: 4px solid #1565c0; padding-left: 6px; margin: 10px 0 5px; }
-h3 { font-size: 12px; color: #2e7d32; margin: 6px 0 3px; }
+h2 { font-size: 14px; color: #1565c0; border-left: 4px solid #1565c0; padding-left: 6px; margin: 10px 0 5px; background:#e3f2fd; padding: 4px 6px; }
+h3 { font-size: 12px; color: #2e7d32; margin: 6px 0 3px; border-bottom: 1px dashed #aaa; padding-bottom: 2px; }
 table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10.5px; }
 th { background: #1565c0; color: white; padding: 4px 6px; text-align: left; font-size: 10px; }
-td { padding: 3px 6px; border: 1px solid #ccc; }
+td { padding: 3px 6px; border: 1px solid #ccc; vertical-align: top; }
 tr:nth-child(even) { background: #f5f5f5; }
 .alert-box { background: #fff3e0; border-left: 4px solid #e65100; padding: 5px 8px; margin: 5px 0; font-size: 10.5px; }
 .shock-box { background: #fce4ec; border-left: 4px solid #c62828; padding: 5px 8px; margin: 5px 0; font-size: 10.5px; }
@@ -26,12 +26,14 @@ tr:nth-child(even) { background: #f5f5f5; }
 ul, ol { margin-left: 15px; margin-bottom: 5px; }
 li { margin-bottom: 2px; }
 .no-break { page-break-inside: avoid; }
+.survey-tag { display: inline-block; background: #2e7d32; color: white; font-size: 9px; padding: 1px 5px; border-radius: 3px; margin-right: 4px; }
+.book-tag { display: inline-block; background: #1565c0; color: white; font-size: 9px; padding: 1px 5px; border-radius: 3px; margin-right: 4px; }
 </style>
 </head>
 <body>
 
-<h1>అధ్యాయం 12: ఆంధ్రప్రదేశ్‌లో రవాణా</h1>
-<div class="recap-box"><strong>రవాణా (Transportation):</strong> వ్యక్తులు, సరుకులు, నిర్మాణ సామగ్రులను ఒక స్థానం నుండి మరొక స్థానానికి రవాణా చేయడం.</div>
+<h1>అధ్యాయం 12: ఆంధ్రప్రదేశ్‌లో రవాణా (Transportation in AP)</h1>
+<div class="recap-box"><strong>రవాణా (Transportation):</strong> వ్యక్తులు, వస్తువులు మరియు సేవలను ఒక స్థానం నుండి మరొక స్థానానికి తరలించడం. AP లో నాలుగు రకాల రవాణా వ్యవస్థలు ఉన్నాయి: <span class="key-num">1. రోడ్డు 2. రైల్వే 3. జల 4. వాయు</span></div>
 
 <hr class="section-divider">
 
@@ -39,367 +41,379 @@ li { margin-bottom: 2px; }
 
 <h3>రోడ్ల మొత్తం పొడవు (Total Road Length)</h3>
 <table>
-<tr><th>నిర్వచనం</th><th>సర్వే 2024-25</th><th>పాఠ్యపుస్తకం</th></tr>
-<tr><td>మొత్తం రోడ్ల పొడవు</td><td><span class="key-num">45,379 కి.మీ</span></td><td><span class="key-num">45,321 కి.మీ</span></td></tr>
-<tr><td>రోడ్ సాంద్రత (కి.మీ/1000 చ.కి.మీ)</td><td><span class="key-num">50.08</span></td><td><span class="key-num">50.08</span></td></tr>
-<tr><td>జాతీయ రోడ్ సాంద్రత</td><td colspan="2"><span class="key-num">40.00 కి.మీ/1000 చ.కి.మీ</span></td></tr>
+<tr><th>రోడ్ల విభాగం</th><th>పాఠ్యపుస్తకం (2022)</th><th>సర్వే 2024-25</th></tr>
+<tr><td>జాతీయ రహదారులు (NHs)</td><td><span class="key-num">8,163.72 కి.మీ</span></td><td><span class="key-num">8,744 కి.మీ (55 NHలు)</span></td></tr>
+<tr><td>ఆర్&amp;బి రహదారులు (NHలు మినహా)</td><td><span class="key-num">45,321 కి.మీ</span></td><td><span class="key-num">45,379 కి.మీ</span></td></tr>
+<tr><td>&nbsp;&nbsp;— రాష్ట్ర రహదారులు (SHs)</td><td>12,595.60 కి.మీ</td><td>12,653 కి.మీ</td></tr>
+<tr><td>&nbsp;&nbsp;— ప్రధాన జిల్లా రహదారులు (MDR)</td><td>26,485.51 కి.మీ</td><td>26,486 కి.మీ</td></tr>
+<tr><td>&nbsp;&nbsp;— ఇతర జిల్లా &amp; గ్రామ రహదారులు</td><td>6,239.89 కి.మీ</td><td>—</td></tr>
+<tr><td>పంచాయతీ రహదారులు (P&amp;E)</td><td><span class="key-num">80,217 కి.మీ</span></td><td><span class="key-num">80,635 కి.మీ</span></td></tr>
+<tr><td>మొత్తం (NHలు + ఆర్&amp;బి)</td><td><span class="key-num">53,484.72 కి.మీ</span></td><td>—</td></tr>
 </table>
 
-<div class="shock-box"><strong>ఆశ్చర్యం:</strong> ఆంధ్రప్రదేశ్ యొక్క రోడ్ సాంద్రత <span class="key-num">50.08 కి.మీ/1000 చ.కి.మీ</span> — జాతీయ సగటు 40.00 కంటే ఎక్కువ!</div>
+<div class="shock-box"><strong>రోడ్ సాంద్రత:</strong> AP రోడ్ సాంద్రత <span class="key-num">50.08 కి.మీ / 1000 చ.కి.మీ</span> — జాతీయ సగటు 40.00 కంటే ఎక్కువ! | ప్రతి లక్ష జనాభాకు: <span class="key-num">16.53 కి.మీ</span> (దేశం: 10.89 కి.మీ) | సర్వే 2024-25: <span class="key-num">17.64 కి.మీ</span> per lakh population</div>
 
-<h3>జాతీయ రాజ్మార్గాలు (National Highways)</h3>
+<h3>జాతీయ రహదారులు (National Highways)</h3>
+<div class="alert-box">
+<strong>పాఠ్యపుస్తకం:</strong> 2022 డిసెంబర్ నాటికి <span class="key-num">52 జాతీయ రహదారులు</span> (8,163.72 కి.మీ)<br>
+<strong>నవీకరణ:</strong> 2022-23 Ministry of Road Transport నివేదిక ప్రకారం <span class="key-num">55 జాతీయ రహదారులు</span> (8,683.15 కి.మీ) | సర్వే 2024-25: <span class="key-num">55 NHలు, 8,744 కి.మీ</span>
+</div>
+
+<h3>ముఖ్యమైన జాతీయ రహదారులు</h3>
 <table>
-<tr><th>నిర్వచనం</th><th>సర్వే 2024-25</th><th>పాఠ్యపుస్తకం</th></tr>
-<tr><td>జ.రా. సంఖ్య</td><td><span class="key-num">55</span></td><td><span class="key-num">52</span></td></tr>
-<tr><td>జ.రా. పొడవు</td><td><span class="key-num">8,744 కి.మీ</span></td><td><span class="key-num">8,163.72 కి.మీ</span></td></tr>
-</table>
-
-<h3>ముఖ్యమైన జాతీయ రాజ్మార్గాల పట్టిక</h3>
-<table>
-<tr><th>జ.రా. సంఖ్య</th><th>మార్గం</th><th>పొడవు (కి.మీ)</th><th>ప్రాధాన్యం</th></tr>
-<tr><td><span class="trick-tag">NH-16</span> <span class="key-num">★ సుపీరియర్</span></td><td>చెన్నై-కోలకత్తా</td><td><span class="key-num">1,024</span></td><td>అత్యంత సుఖ్తమైన, వాహకల ట్రాఫిక్</td></tr>
-<tr><td>NH-48</td><td>బెంగళూరు-హైదరాబాద్</td><td>530</td><td>రక్షణ వలయం, వ్యాపార కేంద్రం</td></tr>
-<tr><td>NH-40</td><td>విశాఖపట్టణం-కర్నూలు</td><td>457</td><td>ఆంతరిక సংపర్కం</td></tr>
-<tr><td>NH-326</td><td>నిజామపట్టణం-చిత్తూర్</td><td><span class="key-num">13.60</span></td><td>★ అతిస్వల్పమైన</td></tr>
-<tr><td>NH-44</td><td>హైదరాబాద్-చెన్నై</td><td>414</td><td>ఉత్తర-దక్షిణ సంబంధం</td></tr>
-</table>
-
-<div class="update-box"><strong>సర్వే 2024-25 నవీకరణ:</strong> తాజా సర్వేలో 55 జాతీయ రాజ్మార్గాలు, మొత్తం 8,744 కి.మీ ఉన్నాయి.</div>
-
-<h3>రాష్ట్ర రాజ్మార్గాలు (State Highways)</h3>
-<table>
-<tr><th>విభాగం</th><th>విశదీకరణ</th></tr>
-<tr><td>సంఖ్య</td><td><span class="key-num">24 రాష్ట్ర రాజ్మార్గాలు</span></td></tr>
-<tr><td>మొత్తం పొడవు</td><td><span class="key-num">12,595.60 కి.మీ</span></td></tr>
-<tr><td>ఉద్దేశ్యం</td><td>జిల్లాల మధ్య సంపర్కం, అంతర్జిల్లా రవాణా</td></tr>
-</table>
-
-<h3>ప్రధాన జిల్లా రోడ్లు (Major District Roads)</h3>
-<table>
-<tr><th>విభాగం</th><th>విశదీకరణ</th></tr>
-<tr><td>పొడవు</td><td><span class="key-num">26,485.51 కి.మీ</span></td></tr>
-<tr><td>ఉద్దేశ్యం</td><td>జిల్లాలోని విభిన్న సంఘాల మధ్య సంపర్కం</td></tr>
-</table>
-
-<h3>APSRTC — ఆంధ్రప్రదేశ్ రోడ్ రవాణా సంస్థ</h3>
-<table>
-<tr><th>విభాగం</th><th>విశదీకరణ</th></tr>
-<tr><td>జోన్‌ల సంఖ్య</td><td><span class="key-num">4 జోన్‌లు</span></td></tr>
-<tr><td>బస్‌ల సంఖ్య (సర్వే 2024-25)</td><td><span class="key-num">11,226 బస్‌లు</span></td></tr>
-<tr><td>డిపో సంఖ్య</td><td><span class="key-num">129 డిపోలు</span></td></tr>
-<tr><td>ఉద్యోగుల సంఖ్య</td><td><span class="key-num">46,612 ఉద్యోగులు</span></td></tr>
-<tr><td>వార్షిక రాজస్వం</td><td><span class="key-num">₹4,261 కోటులు</span></td></tr>
+<tr><th>NH నంబర్</th><th>మార్గం</th><th>పొడవు</th><th>ప్రత్యేకత</th></tr>
+<tr><td><span class="trick-tag">NH-16 (పాత NH-5)</span></td><td>ఒడిషా సరిహద్దు → ఇచ్చాపురం → శ్రీకాకుళం → విశాఖ → విజయవాడ → గుంటూరు → నెల్లూరు → తమిళనాడు</td><td><span class="key-num">1,024 కి.మీ</span></td><td>★ అతి పొడవైన | స్వర్ణ చతుర్భుజి | తీర NH | 4 మూలల గుండా</td></tr>
+<tr><td>NH-565 (నూతన)</td><td>మావళ్ళ → వెంకటగిరి → YSR గోడ్</td><td>420 కి.మీ</td><td>—</td></tr>
+<tr><td>NH-63 (పాత NH-67)</td><td>కర్నాటక సరిహద్దు → గుంతకల్ → గుత్తి గోడ్</td><td>396 కి.మీ</td><td>—</td></tr>
+<tr><td>NH-214 &amp; 214A (పాత NH-216)</td><td>దిగువమట్టు → ఎక్స్‌పాన్య 214తో కలిసి → నరసాపురం → మచిలీపట్నం → చల్లపల్లి → అవనిగడ్డ → రేపల్లె → భాపట్ల → చీరాల → ఒంగోలు</td><td>391 కి.మీ</td><td>—</td></tr>
+<tr><td>NH-326 (నూతన)</td><td>నిజామపట్టణం → చిత్తూర్</td><td><span class="key-num">13.60 కి.మీ</span></td><td>★ అతి చిన్న NH</td></tr>
 </table>
 
 <div class="update-box">
-<b>సర్వే 2024-25 — APSRTC:</b> బస్సులు 11,226 | ఉద్యోగులు 46,612 | రాబడి ₹4,261 కోటి (Dec 2024 వరకు) | ఆక్యుపెన్సీ 69% | విద్యార్థి బస్ పాస్: 8.90 లక్షల మంది (80% రాయితీ)
+<strong>జిల్లాల ప్రత్యేకతలు:</strong>
+<ul>
+<li>అత్యధిక జాతీయ రహదారులు గల జిల్లా: <span class="key-num">చిత్తూరు</span> (విశాఖ, నెల్లూరు కూడా ఎక్కువ)</li>
+<li>అత్యధిక రోడ్ నెట్‌వర్క్ గల జిల్లా: <span class="key-num">అనంతపురం</span></li>
+<li>అత్యల్ప రోడ్ నెట్‌వర్క్ గల జిల్లా: <span class="key-num">విజయనగరం</span></li>
+<li>APSRTC ద్వారా అత్యధిక ఆదాయం గల జిల్లా: <span class="key-num">విశాఖ (₹429.88 కోట్లు)</span></li>
+<li>APSRTC ద్వారా అత్యల్ప ఆదాయం గల జిల్లా: <span class="key-num">విజయనగరం (₹100.61 కోట్లు)</span></li>
+</ul>
 </div>
+
+<h3>రాష్ట్ర రహదారులు (State Highways) — మొత్తం 24</h3>
+<table>
+<tr><th>SH</th><th>మార్గం</th><th>జిల్లా</th></tr>
+<tr><td>SH 2</td><td>Macherla – Piduguralla – Sattenapalle – Guntur</td><td>గుంటూరు</td></tr>
+<tr><td>SH 30</td><td>Anantapur – Tadipatri – Bugga</td><td>అనంతపురు</td></tr>
+<tr><td>SH 31</td><td>Kadapa – Rajampet – Koduru – Renigunta</td><td>కడప, చిత్తూరు</td></tr>
+<tr><td>SH 34</td><td>Kadiri – Rayachoti – Rajampet</td><td>అనంతపురు, కడప</td></tr>
+<tr><td>SH 36</td><td>Parvathipuram – Bobbili – Ramabhadrapuram – Rajam – Chilakapalem</td><td>శ్రీకాకుళం, విజయనగరం</td></tr>
+<tr><td>SH 37</td><td>Parvathipuram – Veeraghattam – Palakonda – Srikakulam – Kalingapatnam</td><td>శ్రీకాకుళం, విజయనగరం</td></tr>
+<tr><td>SH 38</td><td>Bheemunipatnam – Anakapalle – Narsipatnam – Rajavommangi – Addateegala – Rampachodavaram – Devipatnam</td><td>తూర్పుగోదావరి, విశాఖ</td></tr>
+<tr><td>SH 39</td><td>Visakhapatnam – Srungavarapukota – Araku</td><td>విశాఖపట్నం</td></tr>
+<tr><td>SH 40 – SH 172</td><td>మిగిలిన 16 రాష్ట్ర రహదారులు (తూర్పుగోదావరి, గుంటూరు, కృష్ణ, నెల్లూరు, కర్నూలు జిల్లాలలో)</td><td>వివిధ జిల్లాలు</td></tr>
+</table>
+<div class="recap-box">రాష్ట్ర రహదారులు ప్రత్యేకంగా జిల్లా కేంద్రాలను రాష్ట్ర రాజధాని నగరంతో అనుసంధానం చేస్తాయి. మొత్తం పొడవు: <span class="key-num">12,595.60 కి.మీ</span> (పాఠ్యపుస్తకం) | <span class="key-num">12,653 కి.మీ</span> (సర్వే 2024-25)</div>
+
+<h3>APSRTC — ఆంధ్రప్రదేశ్ రాష్ట్ర రోడ్ రవాణా సంస్థ</h3>
+<table>
+<tr><th>విభాగం</th><th>పాఠ్యపుస్తకం</th><th>సర్వే 2024-25</th></tr>
+<tr><td>జోన్ల సంఖ్య</td><td colspan="2"><span class="key-num">4 జోన్లు</span>: 1.నెల్లూరు, 2.కడప, 3.విజయవాడ, 4.విజయనగరం</td></tr>
+<tr><td>రీజియన్లు</td><td colspan="2">12 రీజియన్లు</td></tr>
+<tr><td>డిపోలు</td><td>129 డిపోలు</td><td>129 డిపోలు</td></tr>
+<tr><td>బస్సుల సంఖ్య</td><td><span class="key-num">11,098 బస్సులు</span></td><td><span class="key-num">11,226 బస్సులు</span> (8,475 RTC + 2,751 అద్దె)</td></tr>
+<tr><td>ఉద్యోగుల సంఖ్య</td><td><span class="key-num">49,544</span></td><td><span class="key-num">46,612</span></td></tr>
+<tr><td>వార్షిక రాజస్వం</td><td>—</td><td><span class="key-num">₹4,261 కోట్లు</span> (డిసెంబర్ 2024 వరకు)</td></tr>
+<tr><td>విద్యార్థి బస్ పాస్</td><td>28.81 లక్షల మంది</td><td><span class="key-num">8.90 లక్షల మంది (80% రాయితీ)</span></td></tr>
+<tr><td>ఆక్యుపెన్సీ</td><td>45 లక్ష కి.మీ మేర</td><td>69%</td></tr>
+</table>
+<div class="update-box"><strong>APSRTC జాతీయ అవార్డులు:</strong> 1. అత్యధిక టైర్ పనితీరు (Highest Tyre Performance) 2. ఇంధన సామర్థ్యం (Fuel Efficiency) 3. ఉత్పాదకత (Productivity)</div>
+<div class="alert-box">APSRTC ఏర్పాటు సంవత్సరం: <span class="key-num">1958</span> | 2019 సంపు చట్టం 36 ప్రకారం 2020 జనవరి 1 నుండి APSRTC ఉద్యోగులను ప్రభుత్వ సర్వీసుకు తీసుకోవడం జరిగింది.</div>
 
 <h3>నమోదైన వాహనాలు (Registered Vehicles)</h3>
 <table>
-<tr><th>విభాగం</th><th>సంఖ్య</th><th>శాతం</th></tr>
-<tr><td>మొత్తం నమోదైన వాహనాలు</td><td><span class="key-num">1.56 కోటులు</span></td><td>100%</td></tr>
-<tr><td>రవాణా కేతర (ఆటోమోబైల్‌లు, స్కూటర్‌లు)</td><td>1.39 కోటులు</td><td><span class="key-num">89.02%</span></td></tr>
-<tr><td>రవాణా వాహనాలు (సర్వీస్ వాహనాలు)</td><td>0.17 కోటులు</td><td>10.98%</td></tr>
+<tr><th>విభాగం</th><th>2022 డిసెంబర్ (పాఠ్యపుస్తకం)</th><th>సర్వే 2024-25</th></tr>
+<tr><td>మొత్తం నమోదైన వాహనాలు</td><td><span class="key-num">1.56 కోట్లు</span></td><td>1.59 కోట్లు (నాన్-ట్రాన్స్‌పోర్ట్) + 21.12 లక్ష (ట్రాన్స్‌పోర్ట్)</td></tr>
+<tr><td>రవాణా వాహనాలు (Transport)</td><td>10.98%</td><td><span class="key-num">21.12 లక్షలు</span> (వస్తువులు 52.70%, ఆటో 35.58%)</td></tr>
+<tr><td>రవాణా కాని వాహనాలు (Non-transport)</td><td><span class="key-num">89.02%</span></td><td><span class="key-num">1.59 కోట్లు</span> (మోటార్‌సైకిళ్ళు 88.08%)</td></tr>
+<tr><td>మోటారు వాహన రాజస్వం</td><td>—</td><td><span class="key-num">₹3,454.56 కోట్లు</span> (డిసెంబర్ 2024 వరకు)</td></tr>
 </table>
 
-<div class="alert-box"><strong>పరీక్ష సంచిక:</strong> <span class="trick-tag">APSRTC</span> రోడ్ రవాణా సంస్థ, ఇది సార్వజనిక రవాణా సేవ అందిస్తుంది.</div>
+<h3>సేతు భారతం — జాతీయ రహదారులపై ROBలు</h3>
+<div class="recap-box">సేతు భారతం కింద 22 రోడ్ ఓవర్ బ్రిడ్జ్ (ROBలు) మంజూరు చేయడం జరిగింది. ఇందులో 16 ROBల పనులు అప్పగించడం జరిగింది. 16 పనులు ప్రారంభించగా 6 పూర్తయ్యాయి. మిగిలిన 10 పనులు 2023 మార్చి నాటికి పూర్తి చేయాలని నిర్ణయించారు. మిగిలిన 6 ROBలు 2023 డిసెంబర్ చివరి నాటికి పూర్తి చేయాలని నిర్ణయించారు.</div>
 
-<h3>రోడ్ రవాణాలో ముఖ్యమైన జిల్లాలు</h3>
-<table>
-<tr><th>ఆధారం</th><th>జిల్లాలు</th><th>కారణం</th></tr>
-<tr><td>అత్యధిక జ.రా. (NH)</td><td><span class="key-num">చిత్తూర్</span>, విశాఖపట్టణం, నెల్లూరు</td><td>భూగోళపు అనుకూలత, రాష్ట్ర సరిహద్దులు</td></tr>
-<tr><td>అత్యధిక మొత్తం రోడ్‌లు</td><td><span class="key-num">అనంతపూర్</span></td><td>విస్తారమైన చదరపు ప్రదేశం</td></tr>
-<tr><td>కనీస రోడ్‌లు</td><td><span class="key-num">విజయనగరం</span></td><td>కోస్టల్ ప్రదేశం, పర్వతారణ్య ప్రాంతం</td></tr>
-</table>
+<h3>గ్రామీణ రోడ్ అభివృద్ధి</h3>
+<div class="recap-box">5486.07 కి.మీ పొడవైన పంచాయతీ రోడ్లు రోడ్లు &amp; భవనాల శాఖకు బదిలీ చేయడం జరిగింది. ఇందులో 1800 కి.మీ రోడ్లు నాన్-బిటి ఉపరితలాలు కలిగి ఉన్నాయి. అందువల్ల నాన్-బిటి రోడ్లను గ్రామీణ రోడ్ల క్రింద తారు రోడ్లుగా మార్చడానికి పనులు మంజూరు చేయాలని నిర్ణయించారు.</div>
+
+<div class="alert-box"><strong>వామపక్ష తీవ్రవాద ప్రభావిత ప్రాంత రోడ్ మార్గాలు (LWE Affected Areas):</strong> RCPLWEA పథకం కింద కేంద్ర, రాష్ట్ర ప్రభుత్వాలు 60:40 నిష్పత్తిలో భరిస్తాయి.</div>
 
 <hr class="section-divider">
 
 <h2>2. రైల్వే రవాణా (Railway Transport)</h2>
 
-<h3>రైల్వే నెట్‌వర్క్ (Railway Network)</h3>
+<h3>రైల్వే నెట్‌వర్క్ (Railway Network — 2016 నాటికి)</h3>
 <table>
-<tr><th>నిర్వచనం</th><th>విశదీకరణ</th></tr>
-<tr><td>మొత్తం రైల్‌వే పట్టీ పొడవు</td><td><span class="key-num">3,354 కి.మీ</span></td></tr>
-<tr><td>రైల్‌వే స్టేషన్‌ల సంఖ్య</td><td><span class="key-num">444 స్టేషన్‌లు</span></td></tr>
-<tr><td>రైల్‌వే నెట్‌వర్క్ సాంద్రత</td><td>3.70 కి.మీ/100 చ.కి.మీ</td></tr>
+<tr><th>వివరణ</th><th>గణాంకాలు</th></tr>
+<tr><td>మొత్తం రైల్వే మార్గం పొడవు</td><td><span class="key-num">3,354 కి.మీ</span></td></tr>
+<tr><td>రైల్వే స్టేషన్ల సంఖ్య</td><td><span class="key-num">444 స్టేషన్లు</span></td></tr>
+<tr><td>రైల్వే నెట్‌వర్క్ సాంద్రత</td><td><span class="key-num">3.70 కి.మీ / 100 చ.కి.మీ</span></td></tr>
 </table>
 
-<h3>ఆంధ్రప్రదేశ్‌లో రైల్‌వే చరిత్ర</h3>
-<div class="recap-box"><strong>మొదటి రైల్‌వే:</strong> 1862లో <span class="key-num">పుత్తూరు-రేణిగుంట</span> మధ్య ఆంధ్రప్రదేశ్‌లో మొదటి రైల్‌వే పాల్నాడు చిత్తూర్ జిల్లాలో నిర్మితమైంది.</div>
+<h3>రైల్వే చరిత్ర</h3>
+<div class="shock-box">
+<strong>మొదటి రైల్వే:</strong> <span class="key-num">1862లో</span> ఆంధ్రప్రదేశ్‌లో మొట్టమొదటి రైలు మార్గాన్ని <span class="key-num">పుత్తూరు – రేణిగుంట</span> (చిత్తూరు జిల్లా) మధ్య నిర్మించడం జరిగింది.<br>
+<strong>2017 ఫిబ్రవరి 27 ముందు:</strong> AP రైల్వే నెట్‌వర్క్ 3 జోన్ల కింద నిర్వహించబడేది.
+</div>
 
-<h3>రైల్‌వే జోన్‌లు (Railway Zones)</h3>
+<h3>ఆంధ్రప్రదేశ్‌లో రైల్వే జోన్లు</h3>
 <table>
-<tr><th>జోన్‌ సంఖ్య</th><th>జోన్‌ పేరు</th><th>హెడ్‌క్వార్టర్</th><th>తీర్వచ</th></tr>
-<tr><td>1</td><td>దక్షిణ కోస్ట్ రైల్‌వే (SCR)</td><td>సికందరాబాద్</td><td>నిర్దిష్ట నెల్లూరు-ఆంధ్ర ప్రదేశ్</td></tr>
-<tr><td>2</td><td>దక్షిణ-కోస్ట్ రైల్‌వే (SCR)</td><td>విజయవాడ</td><td>కృష్ణ-గుంటూరు ఎన్‌ ఎ</td></tr>
-<tr><td>3</td><td>దక్షిణ పూర్వ రైల్‌వే (SER)</td><td>కోలकత్తా</td><td>విశాఖపట్టణం, ఆంధ్రప్రదేశ్</td></tr>
+<tr><th>జోన్ పేరు</th><th>సంక్షిప్తం</th><th>AP లో కి.మీ</th><th>ప్రత్యేకత</th></tr>
+<tr><td><span class="key-num">దక్షిణమధ్య రైల్వే</span> (South Central Railway)</td><td>SCR</td><td><span class="key-num">2,660 కి.మీ</span></td><td>★ రాష్ట్రంలో అత్యధికం | HQ: సికందరాబాద్</td></tr>
+<tr><td>దక్షిణ రైల్వే (Southern Railway)</td><td>SR</td><td><span class="key-num">121 కి.మీ</span></td><td>పుత్తూరు నుండి చెన్నై వైపు ప్రాంతం</td></tr>
+<tr><td>తూర్పు తీర రైల్వే (East Coast Railway)</td><td>ECoR</td><td><span class="key-num">73 కి.మీ</span></td><td>విశాఖ నుండి ఒడిషా బోర్డర్ వరకు</td></tr>
+<tr><td><span class="key-num">దక్షిణ తీర రైల్వే</span> (South Coast Railway)</td><td>SCoR</td><td>—</td><td>★ నూతన జోన్ | HQ: విశాఖపట్నం | 18వ జోన్</td></tr>
 </table>
 
-<h3>దక్షిణ కోస్ట్ రైల్‌వే (South Coast Railway) — నవీకరణ 2019</h3>
+<h3>దక్షిణ తీర రైల్వే (South Coast Railway — SCoR)</h3>
 <table>
-<tr><th>విభాగం</th><th>విశదీకరణ</th></tr>
-<tr><td>ఏర్పాటు దినం</td><td><span class="key-num">ఫిబ్రవరి 27, 2019</span></td></tr>
-<tr><td>హెడ్‌క్వార్టర్</td><td><span class="key-num">విశాఖపట్టణం</span></td></tr>
-<tr><td>భారతీయ జోన్ సంఖ్య</td><td><span class="key-num">18వ జోన్</span></td></tr>
-<tr><td>నిర్వచనం</td><td>ఎన్‌ఎన్‌డిఎ భూభాగానికి సేవ చేయడానికి నిర్దిష్టంగా ఏర్పాటైన రైల్‌వే జోన్</td></tr>
+<tr><th>వివరణ</th><th>సమాచారం</th></tr>
+<tr><td>ఏర్పాటు తేదీ</td><td><span class="key-num">2019 ఫిబ్రవరి 27</span></td></tr>
+<tr><td>ప్రధాన కార్యాలయం</td><td><span class="key-num">విశాఖపట్నం</span></td></tr>
+<tr><td>భారత రైల్వే జోన్ సంఖ్య</td><td><span class="key-num">18వ జోన్</span></td></tr>
+<tr><td>విస్తరణ పరిధి</td><td>ఆంధ్రప్రదేశ్, తెలంగాణ, కర్నాటక, కొంతమేర తమిళనాడు</td></tr>
+<tr><td>విభాగాలు (Divisions)</td><td><span class="key-num">3: విజయవాడ, గుంతకల్లు, గుంటూరు</span></td></tr>
+</table>
+<div class="update-box"><strong>SCoR విభాగాల వివరాలు:</strong><br>
+1. <strong>విజయవాడ విభాగం:</strong> ఈ రైల్వే మండలం ఏర్పాటుకు ముందు తూర్పు కోస్ట్ రైల్వే పరిధిలో ఉన్న వాల్తేరు రైల్వే విభాగాన్ని రెండుగా విభజించి ఒక భాగం విజయవాడ విభాగంలో విలీనం చేయడం జరిగింది. మిగిలిన మార్గంతో రాయగడ కేంద్రంగా (క్రొత్త విభాగం) ఏర్పరచడం జరిగింది. రాయగడ విభాగం తూర్పు కోస్ట్ రైల్వే మండలంలో భాగముగా ఉంటుంది.<br>
+2. <strong>గుంతకల్లు విభాగం</strong><br>
+3. <strong>గుంటూరు విభాగం</strong>
+</div>
+
+<h3>ముఖ్యమైన రైల్వే మైలురాళ్ళు</h3>
+<table>
+<tr><th>విషయం</th><th>వివరాలు</th></tr>
+<tr><td>రైల్వే గ్రీస్ రిజర్వ్ వర్క్‌షాప్</td><td><span class="key-num">తిరుపతి</span></td></tr>
+<tr><td>రైల్వే వ్యాగన్ వర్క్‌షాప్</td><td><span class="key-num">విజయవాడ సమీపంలో గుంటుపల్లి</span></td></tr>
+<tr><td>దక్షిణమధ్య రైల్వే మొదటి డీజెల్ లోకోమోటివ్ షెడ్</td><td>గుడూరు-గుంటూరు మధ్య, <span class="key-num">2014లో</span> 13వది ప్రారంభం</td></tr>
+<tr><td>ఇంటర్‌సిటీ ఎక్స్‌ప్రెస్</td><td><span class="key-num">2016 జూన్ 20న</span> విజయవాడ-సికందరాబాద్ మధ్య ప్రారంభం</td></tr>
+<tr><td>విద్యుదీకరణ పూర్తైన మార్గం</td><td><span class="key-num">విజయవాడ-తిరుపతి</span></td></tr>
+<tr><td>AP లో ప్రధాన రైల్వే జంక్షన్</td><td><span class="key-num">విజయవాడ</span></td></tr>
+<tr><td>మాంచెస్టర్ ఆఫ్ ఆంధ్రప్రదేశ్ (రైల్వే పరంగా)</td><td><span class="key-num">విశాఖపట్నం</span></td></tr>
 </table>
 
-<div class="shock-box"><strong>ముఖ్యమైన నిర్ణయం:</strong> దక్షిణ కోస్ట్ రైల్‌వే <span class="key-num">భారత్‌లో 18వ రైల్‌వే జోన్</span>, విశాఖపట్టణం నుండి నిర్వహించబడుతుంది.</div>
-
-<h3>రైల్‌వే విభాగాలు (Railway Divisions)</h3>
-<table>
-<tr><th>విభాగం సంఖ్య</th><th>నాం</th><th>హెడ్‌క్వార్టర్</th></tr>
-<tr><td>1</td><td>సికందరాబాద్ విభాగం</td><td>సికందరాబాద్</td></tr>
-<tr><td>2</td><td>విజయవాడ విభాగం</td><td>విజయవాడ</td></tr>
-<tr><td>3</td><td>గుంటూరు విభాగం</td><td>గుంటూరు</td></tr>
-<tr><td>4</td><td>విశాఖపట్టణం విభాగం</td><td>విశాఖపట్టణం</td></tr>
-</table>
-
-<h3>రైల్‌వే సాధనల భారతీయ కర్పోరేషన్ (ICF) కోలకత్తా నుండి రవాణా</h3>
-<table>
-<tr><th>విభాగం</th><th>విశదీకరణ</th></tr>
-<tr><td>రైల్‌కారు (రచన)</td><td>చెన్నైలోని ఇంటిగ్రల్ కోచ్ ఫ్యాక్టరీ (ICF) రూపకల్పన</td></tr>
-<tr><td>గరిష్ఠ వేగం</td><td><span class="key-num">180 కి.మీ/గంట</span></td></tr>
-<tr><td>సంక్షిప్త నీటి సరఫరా</td><td>ఎయిర్ కండిషనింగ్, వెచ్చని సరఫరా</td></tr>
-</table>
-
-<h3>వందే భారత్ ఎక్స్‌ప్రెస్ రవాణా మార్గాలు</h3>
-<table>
-<tr><th>ఎక్స్‌ప్రెస్ సంఖ్య</th><th>రవాణా మార్గం</th><th>సుధిబడిన తేదీ</th><th>నిరీక్షణ</th></tr>
-<tr><td><span class="trick-tag">VB-1</span></td><td>సికందరాబాద్-విశాఖపట్టణం</td><td><span class="key-num">జనవరి 15, 2023</span></td><td>తీరప్రాంత సంపర్కం</td></tr>
-<tr><td><span class="trick-tag">VB-2</span></td><td>సికందరాబాద్-తిరుపతి</td><td><span class="key-num">ఏప్రిల్ 8, 2023</span></td><td>ధార్మిక సంపర్కం</td></tr>
-</table>
-
-<h3>ఆధુనిక రైల్‌వే సాధనాలు</h3>
-<div class="alert-box"><strong>రైల్‌వే మైలుకట్టాలు:</strong> <span class="trick-tag">రద్దీ గుడం-గుంటూరు</span> మధ్య 2014లో మొదటి డబిల్-డెక్ రైల్‌వే సంపూర్ణం.</div>
-
-<h3>సమీపస్థ పెద్ద రైల్‌వే సేతువు</h3>
-<table>
-<tr><th>సేతువు పేరు</th><th>స్థానం</th><th>పొడవు</th><th>ప్రాధాన్యం</th></tr>
-<tr><td><span class="key-num">ఈ. గోదావరి సేతువు</span></td><td>రాజమండ్రి-కోవ్వూర్</td><td><span class="key-num">2.7 కి.మీ</span></td><td>★ సుదీర్ఘ రోడ్-రైల్ సేతువు</td></tr>
-</table>
+<h3>అతి పొడవైన రోడ్-కం-రైల్ వంతెన</h3>
+<div class="shock-box"><strong>గోదావరి సేతువు (Godavari Bridge):</strong> తూర్పుగోదావరి జిల్లాలోని <span class="key-num">రాజమండ్రి – కోవ్వూరు</span> మధ్య గోదావరి నదిపై నిర్మించిన <span class="key-num">2.7 కి.మీ</span> పొడవైన రోడ్-కం-రైల్ వంతెన — ఆంధ్రప్రదేశ్‌లో అతి పొడవైనది.</div>
 
 <hr class="section-divider">
 
-<h2>3. మెట్రో రైలు (Metro Rail)</h2>
-
-<h3>విజయవాడ మెట్రో రైలు</h3>
+<h2>వందే భారత్ ఎక్స్‌ప్రెస్ (Vande Bharat Express)</h2>
 <table>
-<tr><th>విభాగం</th><th>విశదీకరణ</th></tr>
-<tr><td>మేల్‌చిన్న నిర్ణయం</td><td>విజయవాడ నగరం కోసం 2 కారిడర్‌లు</td></tr>
-<tr><td>ప్రతిపద్దల సంఖ్య</td><td><span class="key-num">2 కారిడర్‌లు</span></td></tr>
-<tr><td>వ్యయం</td><td><span class="key-num">₹6,769 కోటులు</span></td></tr>
-<tr><td>ప్రయోజనం</td><td>నగర రవాణా ఎందుకంటే, ట్రాఫిక్ సమస్య సమాధానం</td></tr>
+<tr><th>విభాగం</th><th>వివరాలు</th></tr>
+<tr><td>రకం</td><td>సెమీ-హై స్పీడ్, ఎలక్ట్రిక్, మల్టీపుల్ యూనిట్ రైలు</td></tr>
+<tr><td>నిర్మాణం</td><td><span class="key-num">ఇంటిగ్రల్ కోచ్ ఫ్యాక్టరీ (ICF), చెన్నై</span></td></tr>
+<tr><td>గరిష్ట వేగం</td><td><span class="key-num">180 కి.మీ/గంట</span></td></tr>
 </table>
 
-<h3>విశాఖపట్టణం మెట్రో రైలు</h3>
 <table>
-<tr><th>విభాగం</th><th>విశదీకరణ</th></tr>
-<tr><td>కారిడర్‌ల సంఖ్య</td><td><span class="key-num">4 కారిడర్‌లు</span></td></tr>
+<tr><th>వందే భారత్ సేవ</th><th>మార్గం</th><th>ప్రారంభ తేదీ</th><th>దూరం / సమయం</th></tr>
+<tr><td>1వ వందే భారత్ (AP లో)</td><td><span class="key-num">సికందరాబాద్ – విశాఖపట్నం</span></td><td><span class="key-num">జనవరి 15, 2023</span> (PM మోదీ ఉద్ఘాటన)</td><td>699 కి.మీ | 8.30 గంటలు</td></tr>
+<tr><td>2వ వందే భారత్ (AP లో)</td><td><span class="key-num">సికందరాబాద్ – తిరుపతి</span></td><td><span class="key-num">ఏప్రిల్ 8, 2023</span></td><td>తెలంగాణ–AP మధ్య</td></tr>
+</table>
+<div class="recap-box">1వ వందే భారత్ స్టాపేజీలు: సికందరాబాద్ → ఖమ్మం → విజయవాడ → రాజమండ్రి → విశాఖపట్నం. ఈ రైలు రాష్ట్రం నుండి బయలుదేరి 85 నందే భారత్ రైలు అవతారం మినహా అర రోజులు సికందరాబాద్ నుండి బయలుదేరి పరంగల్, ఖమ్మం, విజయవాడ, రాజమండ్రి మీదుగా 699 కిలోమీటర్ల దూరం కేవలం 8.30 గంటల్లో విశాఖపట్నం చేరుకుంటుంది.</div>
+
+<hr class="section-divider">
+
+<h2>మెట్రోరైల్ రవాణా వ్యవస్థ (Metro Rail — MRTS)</h2>
+<p style="margin-bottom:5px;">ప్రస్తుతం ఆంధ్రప్రదేశ్‌లో రాబోయే సంవత్సరాల్లో <span class="key-num">2 మెట్రో రైల్ ప్రాజెక్టులు</span> నిర్మించాలని పెట్టారు:</p>
+
+<h3>1. విజయవాడ – గుంటూరు – తెనాలి మెట్రోరైలు</h3>
+<table>
+<tr><th>విభాగం</th><th>వివరాలు</th></tr>
+<tr><td>ప్రాజెక్టు వ్యయం</td><td><span class="key-num">₹6,769 కోట్లు</span></td></tr>
+<tr><td>నిర్వహణ సంస్థ</td><td>AMRC (Andhra Metro Rail Corporation) — అమరావతిలో ఏర్పాటు</td></tr>
+<tr><td>మేనేజింగ్ డైరెక్టర్</td><td>రామకృష్ణ రెడ్డి</td></tr>
+<tr><td>కారిడర్ సంఖ్య</td><td><span class="key-num">2 కారిడర్లు</span></td></tr>
+<tr><td>కారిడర్-1</td><td><span class="key-num">పండిట్ నెహ్రూ బస్ స్టేషన్ → పెనమలూరు</span> (12.76 కి.మీ | 12 స్టేషన్లు) — వయా మహాత్మా గాంధీ రోడ్</td></tr>
+<tr><td>కారిడర్-2</td><td><span class="key-num">పండిట్ నెహ్రూ బస్ స్టేషన్ → నెదమూరు</span> (13.27 కి.మీ | 13 స్టేషన్లు) — వయా విజయవాడ రైల్వే స్టేషన్</td></tr>
+</table>
+
+<h3>2. విశాఖపట్నం మెట్రోరైలు</h3>
+<table>
+<tr><th>విభాగం</th><th>వివరాలు</th></tr>
+<tr><td>కారిడర్ సంఖ్య</td><td><span class="key-num">4 కారిడర్లు</span></td></tr>
 <tr><td>మొత్తం పొడవు</td><td><span class="key-num">42.55 కి.మీ</span></td></tr>
-<tr><td>ప్రయోజనం</td><td>నగర రవాణా ఎందుకంటే, ట్రాఫిక్ సమస్య సమాధానం</td></tr>
+<tr><td>లక్ష్యం</td><td>2018 డిసెంబర్ నాటికి పూర్తి చేయాలని AP పున:వ్యవస్థీకరణ చట్టం-2014 ప్రకారం కేంద్ర ప్రభుత్వం హామీ ఇచ్చింది</td></tr>
 </table>
-
-<div class="update-box"><strong>నవీకరణ:</strong> విశాఖపట్టణం మెట్రో రైలు చేతిలో 4 కారిడర్‌లను కలిగి ఉంది, సర్వమొత్తం 42.55 కి.మీ పొడవు ఉంది.</div>
-
-<hr class="section-divider">
-
-<h2>4. వందే భారత్ ఎక్స్‌ప్రెస్ వివరాలు</h2>
-
-<h3>రెలు విశదీకరణ</h3>
 <table>
-<tr><th>విభాగం</th><th>విశదీకరణ</th></tr>
-<tr><td>రూపకల్పన</td><td>చెన్నైలోని ఇంటిగ్రల్ కోచ్ ఫ్యాక్టరీ (ICF)</td></tr>
-<tr><td>గరిష్ఠ వేగం</td><td><span class="key-num">180 కి.మీ/గంట</span></td></tr>
-<tr><td>సుసుపధానాలు</td><td>ఎయిర్ కండిషనింగ్, వెచ్చని సరఫరా, విశ్రామ సరఫరాలు</td></tr>
-</table>
-
-<h3>వందే భారత్ రవాణా సేవలు (AP లో)</h3>
-<table>
-<tr><th>రవాణా సంఖ్య</th><th>రవాణా పేరు</th><th>సంబంధం</th><th>విస్తరణ దినం</th></tr>
-<tr><td>1</td><td>సికందరాబాద్-విశాఖపట్టణం వందే భారత్</td><td>సమీపీభూত నగరాల మధ్య</td><td><span class="key-num">జనవరి 15, 2023</span></td></tr>
-<tr><td>2</td><td>సికందరాబాద్-తిరుపతి వందే భారత్</td><td>పవిత్ర స్థానం సంపర్కం</td><td><span class="key-num">ఏప్రిల్ 8, 2023</span></td></tr>
+<tr><th>కారిడర్</th><th>మార్గం</th><th>పొడవు</th></tr>
+<tr><td>కారిడర్-1</td><td>NAD జంక్షన్ → కొమ్మాడి జంక్షన్</td><td>22.8 కి.మీ</td></tr>
+<tr><td>కారిడర్-2</td><td>గురుద్వారా → ఓల్డ్ పోస్ట్ ఆఫీసు</td><td>5.26 కి.మీ</td></tr>
+<tr><td>కారిడర్-3</td><td>తాటిచెర్ల → చిన్న వాల్తేరు</td><td>6.91 కి.మీ</td></tr>
+<tr><td>కారిడర్-4</td><td>NAD జంక్షన్ → గాజువాక</td><td>8.1 కి.మీ</td></tr>
 </table>
 
 <hr class="section-divider">
 
-<h2>5. జల రవాణా (Water Transport)</h2>
+<h2>3. జల రవాణా (Water Transport)</h2>
+<div class="recap-box">రవాణా మార్గాలలో అతిచవక ఖర్చుతో కూడుకున్న రవాణా, అతికినం వేగంగా సరుకులు సుదూర ప్రాంతాలకు చేర్చే రవాణా. రాష్ట్రంలో కేంద్ర ప్రభుత్వ అధీనంలో <span class="key-num">విశాఖ (ప్రధాన ఓడరేవు)</span> మరియు రాష్ట్ర ప్రభుత్వ అధీనంలో <span class="key-num">14 చిన్నతరం ఓడరేవులు</span> ఉన్నాయి. రాష్ట్ర తీరం పొడవు: <span class="key-num">972 కి.మీ లేదా 974 కి.మీ</span> (పాఠ్యపుస్తకం) | <span class="key-num">1,053.07 కి.మీ</span> (సర్వే 2024-25)</div>
 
-<h3>ఆంధ్రప్రదేశ్ బంदరులు (AP Ports)</h3>
-
-<h3>విశాఖపట్టణం ప్రధాన బంदరు (Major Port)</h3>
+<h3>విశాఖపట్నం ఓడరేవు (Visakhapatnam Port — Major Port)</h3>
 <table>
-<tr><th>విభాగం</th><th>విశదీకరణ</th></tr>
-<tr><td>నియోజకవర్గం</td><td><span class="key-num">విశాఖపట్టణం ఆంధ్రప్రదేశ్</span></td></tr>
-<tr><td>నిర్ణయ రకం</td><td>ప్రధాన బందరు</td></tr>
-<tr><td>నిర్ణయ సంఖ్య</td><td>1 ప్రధాన బందరు</td></tr>
-<tr><td>మిమూప స్లిప్‌ల సంఖ్య (బర్థ)</td><td><span class="key-num">14 బర్థలు</span></td></tr>
-<tr><td>సువిధా</td><td>సహజ నిర్ణయ, గভీర నీరు</td></tr>
-<tr><td>లక్ష్య సర్వసిద్ధం</td><td>ఎస్‌సీ-ఎంపీ (గోదావరి-గుంటూరు), తాజా-నీటి ఎందుకంటే</td></tr>
+<tr><th>విభాగం</th><th>వివరాలు</th></tr>
+<tr><td>నిర్వహణ</td><td>కేంద్ర ప్రభుత్వం (భారత ప్రభుత్వ అధీనం)</td></tr>
+<tr><td>ప్రత్యేకత</td><td><span class="key-num">దేశంలో అత్యంత లోతైన సహజ సిద్ధిమైన ఓడరేవు</span></td></tr>
+<tr><td>దేశంలో పెట్రోలియం దిగుమతికి</td><td>ముంబై ఓడరేవు తర్వాత <span class="key-num">2వ స్థానం</span></td></tr>
+<tr><td>అత్యధిక మత్స్య ఎగుమతులు</td><td>దేశంలో <span class="key-num">అత్యధిక</span></td></tr>
+<tr><td>తుఫాను రక్షణ</td><td>డాల్ఫిన్స్ నోస్ పర్వతం రక్షిస్తుంది</td></tr>
+<tr><td>బర్తుల సంఖ్య</td><td><span class="key-num">14 బర్తులు</span> (టింబర్ హార్బర్ + ఇన్నర్ హార్బర్ + 20 బర్తులతో జెట్టీ హార్బర్)</td></tr>
+<tr><td>జెట్టీ వైశాల్యం</td><td><span class="key-num">200 హెక్టార్లు</span></td></tr>
+<tr><td>శీతలీకరణ (Dolphin berths)</td><td>దక్షిణ డాల్ఫిన్స్ నోస్, ఉత్తర డాల్ఫిన్స్ నోస్</td></tr>
+<tr><td>కలకత్తా నుండి దూరం</td><td>880 కి.మీ</td></tr>
+<tr><td>మద్రాసు నుండి దూరం</td><td>780 కి.మీ</td></tr>
+<tr><td>విదేశీ నౌక సర్వీసు</td><td>ఫోర్ట్‌బ్లెయిర్ వరకు (అండమాన్ నికోబార్)</td></tr>
 </table>
 
-<h3>గైర్-ప్రధాన బందరులు (Non-Major Ports)</h3>
+<h3>రాష్ట్ర ప్రభుత్వ అధీనంలో ఉన్న చిన్నతరం ఓడరేవులు (14)</h3>
 <table>
-<tr><th>బందరు సంఖ్య</th><th>బందరు పేరు</th><th>సర్వే 2024-25 (MMT)</th><th>టిపిక్‌లు</th></tr>
-<tr><td>1</td><td>కృష్ణపట్టణం</td><td><span class="key-num">37.786</span></td><td>★ అధిక సామర్థ్యం</td></tr>
-<tr><td>2</td><td>గంగవరం</td><td><span class="key-num">16.201</span></td><td>దక్షిణీయ తీర</td></tr>
-<tr><td>3</td><td>చిన్నతిద్ द</td><td>1.2</td><td>చిన్న సుఖ్తమైన</td></tr>
-<tr><td>4</td><td>నెల్లూరు-నిర్ముండేపుల్లి</td><td>0.8</td><td>ఆర్లు, పోర్లు</td></tr>
-<tr><td>5</td><td>సూర్యపేట</td><td>0.5</td><td>ఆర్లు</td></tr>
-<tr><td>6</td><td>వెంకటపలేమ</td><td>0.3</td><td>చిన్న</td></tr>
-<tr><td>7</td><td>ముందే-ఏ</td><td>2.1</td><td>మధ్యమ సుఖ్తమైన</td></tr>
-<tr><td>8</td><td>బెజవాడ</td><td>0.2</td><td>చిన్న</td></tr>
-<tr><td>9</td><td>దేవిపట్నం</td><td>0.4</td><td>చిన్న</td></tr>
-<tr><td>10</td><td>ఆదిపట్నం</td><td>0.1</td><td>చిన్న</td></tr>
-<tr><td>11</td><td>నంద్యాలులు</td><td>0.3</td><td>చిన్న</td></tr>
-<tr><td>12</td><td>మీసుండేపుల్లీ</td><td>0.6</td><td>చిన్న</td></tr>
-<tr><td>13</td><td>రామయపట్నం</td><td>1.5</td><td>మధ్యమ సుఖ్తమైన</td></tr>
-<tr><td>14</td><td>ముతెహం</td><td>0.2</td><td>చిన్న</td></tr>
-<tr><td>15</td><td>ఆరుపత్తు</td><td>0.8</td><td>చిన్న</td></tr>
-<tr><td>16</td><td>సుం-సుందర</td><td>0.9</td><td>చిన్న</td></tr>
-<tr><td>17</td><td>ఖిమ్‌రా</td><td>0.4</td><td>చిన్న</td></tr>
+<tr><th>క్ర.సం.</th><th>ఓడరేవు పేరు</th><th>జిల్లా</th><th>ప్రత్యేకత / ముఖ్య సమాచారం</th></tr>
+<tr><td>1</td><td><span class="key-num">కాకినాడ లంగరు ఓడరేవు (యాంకరేజ్ పోర్ట్)</span></td><td>తూర్పుగోదావరి</td><td>హోబిలాండ్‌కు 17 కి.మీ దూరం; విశాఖకు 145 కి.మీ దక్షిణం; ఎగుమతులు: ముడి ఇనుం, టేకు, బియ్యం, పొగాకు; సర్వే కార్గో: <span class="key-num">2.326 MMT</span></td></tr>
+<tr><td>2</td><td><span class="key-num">కాకినాడ డీప్‌వాటర్ పోర్ట్</span></td><td>తూర్పుగోదావరి</td><td>OMST (BOT) విధానం; కాకినాడ సీపోర్ట్స్ లిమిటెడ్ (KSPL) నిర్వహణ (ఏప్రిల్ 1, 1999); రాష్ట్రానికి 22% ఆదాయం; ఎగుమతులు: రసాయన ఎరువులు, గ్రానైట్; సర్వే కార్గో: <span class="key-num">11.15 MMT</span></td></tr>
+<tr><td>3</td><td><span class="key-num">గంగవరం ఓడరేవు</span></td><td>విశాఖపట్నం</td><td>విశాఖకు 15 కి.మీ; <span class="key-num">దేశంలో అత్యంత లోతైన ఓడరేవు (21 మీటర్లు)</span>; 2009 జులై 12న YSR ఉద్ఘాటన; "Eco-Friendly" ఓడరేవు; PPP; సర్వే కార్గో: <span class="key-num">16.201 MMT</span></td></tr>
+<tr><td>4</td><td><span class="key-num">కృష్ణపట్నం ఓడరేవు</span></td><td>నెల్లూరు</td><td><span class="key-num">ఆసియాలో మొదటి గ్రీన్‌ఫీల్డ్ ఓడరేవు</span>; AP లో ప్రైవేటీకరించిన మొదటి ఓడరేవు; 2004 సెప్టెంబర్ BOST మోడల్; 2008 జులై 17న సోనియా గాంధీ ఉద్ఘాటన; 14 బర్తులు; CEO: అనిల్ యెండ్లూరి; Tagline: "India's Largest Gateway of East Coast"; సర్వే కార్గో: <span class="key-num">37.786 MMT</span> (అత్యధికం)</td></tr>
+<tr><td>5</td><td><span class="key-num">దుగ్గరాజుపట్నం ఓడరేవు</span></td><td>నెల్లూరు (ప్రస్తుతం తిరుపతి జిల్లా)</td><td>AP పున:వ్యవస్థీకరణ చట్టం 2014 ప్రకారం కేంద్రం అభివృద్ధి హామీ; శ్రీకాళహస్తికు 23 కి.మీ దూరం</td></tr>
+<tr><td>6</td><td><span class="key-num">మచిలీపట్నం ఓడరేవు</span></td><td>కృష్ణ</td><td>రాష్ట్ర ప్రభుత్వం PPP మోడల్‌లో అభివృద్ధి; మత్స్య కేంద్రం కూడా ఏర్పాటు; సర్వే వ్యయం: <span class="key-num">₹5,155.73 కోట్లు</span> (85 MT సామర్థ్యం)</td></tr>
+<tr><td>7</td><td><span class="key-num">నిజామ్‌పట్నం ఓడరేవు</span></td><td>గుంటూరు</td><td>వాదరేవు మరియు నిజామ్‌పట్నం కలిపి VANPIC ఇండస్ట్రియల్ కారిడర్</td></tr>
+<tr><td>8</td><td><span class="key-num">భావనపాడు ఓడరేవు</span></td><td>శ్రీకాకుళం</td><td>అభివృద్ధిలో ఉంది</td></tr>
+<tr><td>9</td><td><span class="key-num">రామాయపట్నం ఓడరేవు</span></td><td>ప్రకాశం (ఉలుపాడు మండలం)</td><td>సర్వే వ్యయం: <span class="key-num">₹9,929.39 కోట్లు</span> (Phase 1: ₹2,647.62 కోట్లు), 34.04 MMTPA సామర్థ్యం</td></tr>
+<tr><td>10</td><td><span class="key-num">కాకినాడ SEZ ఓడరేవు</span></td><td>తూర్పుగోదావరి</td><td>Captive Port గా నిర్మించడం జరుగుతుంది; సర్వే వ్యయం: <span class="key-num">₹2,123 కోట్లు</span></td></tr>
+<tr><td>11</td><td><span class="key-num">మేఘవరం పోర్ట్</span></td><td>శ్రీకాకుళం</td><td>Captive Port; East Coast Energy Private Limited నిర్మాణం</td></tr>
+<tr><td>12</td><td><span class="key-num">నక్కపల్లి ఓడరేవు</span></td><td>విశాఖ</td><td>ANRAK అల్యూమినియం కంపెనీ లిమిటెడ్ నిర్మాణం</td></tr>
+<tr><td>13</td><td><span class="key-num">కళింగపట్టణం ఓడరేవు</span></td><td>శ్రీకాకుళం</td><td>ఇక్కడ నుండి జనపనారను ఎగుమతి చేస్తారు</td></tr>
+<tr><td>14</td><td><span class="key-num">రవ్వా ఓడరేవు</span></td><td>తూర్పుగోదావరి</td><td>పశ్చిమగోదావరి జిల్లా గోదావరి పాయ వశిష్ఠ మీద నిర్మించిన ఓడరేవు; విశాఖ, చెన్నై, హాల్దియా ఓడరేవులకు ఎగుమతి; సర్వే కార్గో: <span class="key-num">0.443 MMT</span></td></tr>
 </table>
-
-<div class="update-box"><strong>సర్వే 2024-25 నవీకరణ:</strong> కృష్ణపట్టణం <span class="key-num">37.786 MMT</span> సామర్థ్యం, గంగవరం <span class="key-num">16.201 MMT</span> సామర్థ్యం ఉంది.</div>
-
-<h3>అభివృద్ధిలో ఉన్న బందరులు (Ports under Development)</h3>
-<table>
-<tr><th>బందరు పేరు</th><th>జిల్లా</th><th>స్థితి</th></tr>
-<tr><td><span class="trick-tag">మచిలీపట్నం</span></td><td>కృష్ణ</td><td>అభివృద్ధిలో</td></tr>
-<tr><td>ముళపేట</td><td>గుంటూరు</td><td>అభివృద్ధిలో</td></tr>
-<tr><td>రామయపట్నం</td><td>నెల్లూరు</td><td>అభివృద్ధిలో</td></tr>
-</table>
-
-<h3>సాగర్‌మాల సాక్షం (Sagarmala Project)</h3>
-<table>
-<tr><th>విభాగం</th><th>విశదీకరణ</th></tr>
-<tr><td>ప్రాజెక్ట్ పేరు</td><td><span class="key-num">సాగర్‌మాల (సముద్ర తీరం అభివృద్ధి ప్రాజెక్ట్)</span></td></tr>
-<tr><td>చేసిన నిర్ణయ</td><td>ఆంధ్రప్రదేశ్</td></tr>
-<tr><td>వ్యయం</td><td><span class="key-num">₹8,400 కోటులు</span></td></tr>
-<tr><td>ప్రయోజనం</td><td>తీర-ప్రాంత అభివృద్ధి, బందరు సువిధా అభివృద్ధి</td></tr>
-</table>
-
-<div class="shock-box"><strong>సాగర్‌మాల ప్రాజెక్ట్:</strong> ఆంధ్రప్రదేశ్ తీర రవాణా అభివృద్ధిలో <span class="key-num">₹8,400 కోటులు</span> వ్యయం నిర్ణయించారు.</div>
 
 <div class="update-box">
-<b>సర్వే 2024-25 — సాగరమాల అభివృద్ధి పోర్ట్‌లు:</b><br>
-• మచిలీపట్నం: ₹5,155.73 కోటి (85 MT సామర్థ్యం)<br>
-• ముళపేట: ₹4,361.91 కోటి (23.5 MT సామర్థ్యం)<br>
-• రామయ్యపట్నం: ₹9,929.39 కోటి (Phase 1: ₹2,647.62 Cr), 34.04 MMTPA<br>
-• కాకినాడ SEZ: ₹2,123 కోటి<br>
-• పోర్ట్ విజన్: 145 MTPA by 2030, 300 MTPA by 2047
+<strong>సర్వే 2024-25 — చిన్నతరం ఓడరేవుల కార్గో (నవంబర్ 2024 వరకు):</strong>
+కృష్ణపట్నం: <span class="key-num">37.786 MMT</span> | గంగవరం: <span class="key-num">16.201 MMT</span> | కాకినాడ డీప్ వాటర్: <span class="key-num">11.15 MMT</span> | కాకినాడ యాంకరేజ్: <span class="key-num">2.326 MMT</span> | రవ్వా: <span class="key-num">0.443 MMT</span>
+<br><strong>పోర్ట్ విజన్:</strong> సామర్థ్యం లక్ష్యం: <span class="key-num">145 MTPA (2030 నాటికి)</span>, 300 MTPA (2047 నాటికి) | నీలి ఆర్థిక సంభావ్యత: <span class="key-num">$20 బిలియన్ (2035 నాటికి)</span>
 </div>
 
-
-
-<hr class="section-divider">
-
-<h2>6. అంతర్గత జల మార్గాలు (Internal Waterways)</h2>
-
-<table>
-<tr><th>జల మార్గ సంఖ్య</th><th>నాం</th><th>పొడవు/సిహ్నం</th><th>ప్రయోజనం</th></tr>
-<tr><td>1</td><td>గోదావరి నదీ</td><td>సమీపస్థ రెండు జిల్లాలను కలిపేది</td><td>భూమి రవాణా, ఫసలు సేవ</td></tr>
-<tr><td>2</td><td>కృష్ణ నదీ</td><td>సమీపస్థ రెండు జిల్లాలను కలిపేది</td><td>భూమి రవాణా, ఫసలు సేవ</td></tr>
-<tr><td>3</td><td>తుంగభద్ర నదీ</td><td>సమీపస్థ జిల్లాలను కలిపేది</td><td>భూమి రవాణా</td></tr>
-<tr><td>4</td><td>వెండవతీ నదీ</td><td>సమీపస్థ జిల్లాలను కలిపేది</td><td>భూమి రవాణా</td></tr>
-</table>
-
-<div class="alert-box"><strong>అంతర్గత జల మార్గాల ప్రయోజనం:</strong> <span class="trick-tag">నదీ మార్గాలు</span> విద్యుత్ సేవ, రవాణా సేవ కోసం వాడతారు.</div>
-
 <div class="alert-box">
-<b>అంతర్గత జలమార్గాలు:</b><br>
-1. కర్నూలు-కడప కాలువ (119 కి.మీ.)<br>
-2. హార్పూన్‌గోదావరి జిల్లాలోని దాననీశ్వరం-సాసన్‌కోట కాలువ<br>
-3. హార్పూన్‌గోదావరి జిల్లాలోని రాజమండ్రి నుండి ప్రకాశం జిల్లాలోని చీరాలకు వెళ్ళే మార్గము<br>
-4. బకింగ్‌హాం కాలువ – కాకినాడ నుండి పాండిచ్చేరి వరకు. దీనినే జాతీయ జలమార్గం-4 గా పేర్కొంటారు.
+<strong>అభివృద్ధిలో ఉన్న ఇతర ఓడరేవులు:</strong> మూలపేట ఓడరేవు (Mulapeta): <span class="key-num">₹4,361.91 కోట్లు</span> (23.5 MT సామర్థ్యం) | తూముపాలెం ఓడరేవు (Tummapalem): విశాఖపట్నంకు 30 కి.మీ | నర్సాపూర్ ఓడరేవు (Narsapur): BOOT విధానంలో అభివృద్ధి
 </div>
 
-
-
-<hr class="section-divider">
-
-<h2>7. వాయు రవాణా (Air Transport)</h2>
-
-<h3>ఆంధ్రప్రదేశ్‌లో గల రవాణా విమానాల పట్టిక</h3>
+<h3>సాగర్‌మాల ప్రాజెక్ట్ (Sagarmala Project)</h3>
 <table>
-<tr><th>విమానాల రవాణ సంఖ్య</th><th>విమానాల పేరు</th><th>సంఖ్య</th><th>రకం</th></tr>
-<tr><td>1</td><td><span class="trick-tag">హైదరాబాద్ అంతర్జాతీయ విమానాల రవాణ</span></td><td>రేపు 2</td><td>అంతర్జాతీయ</td></tr>
-<tr><td>2</td><td><span class="trick-tag">విశాఖపట్టణం అంతర్జాతీయ విమానాల రవాణ</span></td><td>రేపు 2</td><td>అంతర్జాతీయ</td></tr>
-<tr><td>3</td><td><span class="trick-tag">కోచిన్ వాయువాహిని చిన్నారు (Cochin Shipyard)</span></td><td>రేపు 2</td><td>దేశీయ</td></tr>
-<tr><td>4</td><td><span class="trick-tag">తిరుపతి విమానాల రవాణ</span></td><td>రేపు 1</td><td>దేశీయ</td></tr>
-<tr><td>5</td><td><span class="trick-tag">విజయవాడ విమానాల రవాణ</span></td><td>రేపు 1</td><td>దేశీయ</td></tr>
-<tr><td>6</td><td><span class="trick-tag">పోచంపల్లి విమానాల రవాణ</span></td><td>రేపు 1</td><td>దేశీయ</td></tr>
+<tr><th>విభాగం</th><th>వివరాలు</th></tr>
+<tr><td>ఉద్దేశ్యం</td><td>దేశంలో ఓడరేవులను ఆధునికీకరించడానికి, నూతన ఓడరేవులు అభివృద్ధి చేయడానికి మరియు వీటిని రోడ్లు, రైళ్ళు, అంతర్గత జలమార్గాలతో అనుసంధానించడం</td></tr>
+<tr><td>మొత్తం ప్రాజెక్ట్ వ్యయం</td><td>కేంద్ర ప్రభుత్వం మొత్తం 12 లక్ష కోట్లు కేటాయించింది</td></tr>
+<tr><td>AP కు కేటాయింపు</td><td><span class="key-num">₹8,400 కోట్లు</span></td></tr>
+<tr><td>AP లో నూతనంగా నిర్మించే ఓడరేవులు</td><td>1. <span class="key-num">మచిలీపట్నం ఓడరేవు</span> (కృష్ణ జిల్లా) 2. <span class="key-num">వాదరేవు ఓడరేవు</span> (ప్రకాశం జిల్లా)</td></tr>
 </table>
 
-<h3>ఆందోళన కర్మాలు విమానాల రవాణకు (Proposed/Operational Airports)</h3>
+<h3>అంతర్గత జలమార్గాలు (Inland Waterways)</h3>
 <table>
-<tr><th>విమానాల రవాణ సంఖ్య</th><th>విమానాల రవాణ పేరు</th><th>జిల్లా</th><th>సింహం</th></tr>
-<tr><td>✓ ఆపరేషనల్</td><td>భోగపురం అంతర్జాతీయ విమానాల రవాణ</td><td>విశాఖపట్టణం</td><td>నిర్మాణం జరుగుతుంది</td></tr>
+<tr><th>క్ర.సం.</th><th>జలమార్గం</th><th>వివరాలు</th></tr>
+<tr><td>1</td><td><span class="key-num">కర్నూలు-కడప కాలువ</span></td><td>119 కి.మీ పొడవు</td></tr>
+<tr><td>2</td><td><span class="key-num">ధవళేశ్వరం-సాసనుగోట కాలువ</span></td><td>తూర్పుగోదావరి జిల్లాలో</td></tr>
+<tr><td>3</td><td><span class="key-num">రాజమండ్రి – చీరాల మార్గం</span></td><td>తూర్పుగోదావరి జిల్లాలోని రాజమండ్రి నుండి ప్రకాశం జిల్లాలో చీరాల వరకు</td></tr>
+<tr><td>4</td><td><span class="key-num">బకింగ్‌హామ్ కాలువ</span></td><td>కాకినాడ నుండి పాండిచ్చేరి వరకు — <span class="key-num">జాతీయ జలమార్గం-4 (NW-4)</span>గా పేర్కొంటారు; విజయవాడ-చెన్నై మధ్య కలుస్తుంది</td></tr>
 </table>
 
-<h3>సిద్ధీకృత ఇతర ఆశ్చర్య విమానాల రవాణలు (Greenfield Projects - Planned)</h3>
+<h3>రాష్ట్రంలో ముఖ్యమైన బీచ్‌లు (Key Bays/Beaches)</h3>
 <table>
-<tr><th>రెసిపీ</th><th>విమానాల రవాణ పేరు</th><th>జిల్లా</th><th>సింహం</th></tr>
-<tr><td>1</td><td>కుప్పం విమానాల రవాణ</td><td>చిత్తూర్</td><td>ప్రস్తారణ దశ</td></tr>
-<tr><td>2</td><td>దగదర్థీ విమానాల రవాణ</td><td>కర్నూలు</td><td>ప్రస్తారణ దశ</td></tr>
-<tr><td>3</td><td>ఖండిక్కుట విమానాల రవాణ</td><td>కర్నూలు</td><td>ప్రస్తారణ దశ</td></tr>
-<tr><td>4</td><td>నాగార్జునసాగర్ విమానాల రవాణ</td><td>నాలగొండ</td><td>ప్రస్తారణ దశ</td></tr>
-</table>
-
-<div class="update-box"><strong>భోగపురం విమానాల రవాణ:</strong> ఈ విమానాల రవాణ విశాఖపట్టణం జిల్లలో నిర్మాణం జరుగుతుంది, ఇది అంతర్జాతీయ విమానాల రవాణ.</div>
-
-<hr class="section-divider">
-
-<h2>8. ముఖ్యమైన విషయాలు (Key Facts) — పుస్తకం పృష్ఠం 105</h2>
-
-<table>
-<tr><th>ఆధారం</th><th>విశదీకరణ</th><th>గుర్తులు</th></tr>
-<tr><td>1</td><td>ఆంధ్రప్రదేశ్‌లో రోడ్ సాంద్రత</td><td><span class="key-num">50.08 కి.మీ/1000 చ.కి.మీ</span></td><td>జాతీయ సగటు > సుఖ్తమైన</td></tr>
-<tr><td>2</td><td>జాతీయ రాజ్మార్గ సంఖ్య (సర్వే)</td><td><span class="key-num">55 జ.రా</span></td><td>పాఠ్యపుస్తకంలో 52</td></tr>
-<tr><td>3</td><td>అతిసుఖ్తమైన జ.రా</td><td><span class="key-num">NH-16 (1,024 కి.మీ)</span></td><td>చెన్నై-కోలకత్తా రూట్</td></tr>
-<tr><td>4</td><td>చిన్న జ.రా</td><td><span class="key-num">NH-326 (13.60 కి.మీ)</span></td><td>నిజామపట్టణం-చిత్తూర్</td></tr>
-<tr><td>5</td><td>మొత్తం రైల్‌వే పట్టీ</td><td><span class="key-num">3,354 కి.మీ</span></td><td>444 స్టేషన్‌లు</td></tr>
-<tr><td>6</td><td>మొదటి రైల్‌వే</td><td><span class="key-num">1862 పుత్తూరు-రేణిగుంట</span></td><td>చిత్తూర్ జిల్లా</td></tr>
-<tr><td>7</td><td>విశాఖపట్టణం ప్రధాన బందరు</td><td><span class="key-num">14 బర్థలు</span></td><td>సహజ నిర్ణయ</td></tr>
-<tr><td>8</td><td>గైర్-ప్రధాన బందరుల సంఖ్య</td><td><span class="key-num">17 బందరులు</span></td><td>కృష్ణపట్టణం అధిక సామర్థ్యం</td></tr>
-<tr><td>9</td><td>సాగర్‌మాల ప్రాజెక్ట్</td><td><span class="key-num">₹8,400 కోటులు</span></td><td>తీర అభివృద్ధి</td></tr>
-<tr><td>10</td><td>విజయవాడ మెట్రో రైలు</td><td><span class="key-num">₹6,769 కోటులు</span></td><td>2 కారిడర్‌లు</td></tr>
-<tr><td>11</td><td>విశాఖ మెట్రో రైలు</td><td><span class="key-num">4 కారిడర్‌లు, 42.55 కి.మీ</span></td><td>నగర రవాణా</td></tr>
-<tr><td>12</td><td>దక్షిణ కోస్ట్ రైల్‌వే</td><td><span class="key-num">18వ భారత రైల్‌వే జోన్</span></td><td>2019 ఫిబ్రవరి 27</td></tr>
-<tr><td>13</td><td>వందే భారత్ (సికందరాబాద్-విశాఖ)</td><td><span class="key-num">జనవరి 15, 2023</span></td><td>180 కి.మీ/గంట</td></tr>
-<tr><td>14</td><td>గోదావరి సేతువు</td><td><span class="key-num">2.7 కి.మీ</span></td><td>రాజమండ్రి-కోవ్వూర్</td></tr>
-<tr><td>15</td><td>ఐసీఎఫ్ చెన్నై రూపకల్పన</td><td>వందే భారత్ ఎక్స్‌ప్రెస్</td><td>ఆధునిక సుసుపధానాలు</td></tr>
+<tr><th>బీచ్ పేరు</th><th>జిల్లా</th></tr>
+<tr><td>రామకృష్ణ, యూరాడ్, భీమిళీ</td><td>విశాఖపట్నం</td></tr>
+<tr><td>మంగినపూడి</td><td>కృష్ణ</td></tr>
+<tr><td>సూర్యలంక</td><td>బాపట్ల</td></tr>
+<tr><td>మైపాడు</td><td>నెల్లూరు</td></tr>
 </table>
 
 <hr class="section-divider">
 
-<h2>పరీక్ష సంచిక సమీక్ష (Exam Quick Review)</h2>
+<h2>4. వాయు రవాణా (Air Transport)</h2>
+<div class="recap-box">రాష్ట్రంలో సంతులిత ప్రాంతీయాభివృద్ధి సాధించేందుకు రాష్ట్ర రాజధాని నుండి జిల్లా ప్రధాన కేంద్రాలకు విమాన సేవలు కల్పించాలని ప్రయత్నిస్తున్నారు. AP వాయునయాన విధానం 2015 ప్రకారం నూతన హరిత క్షేత్ర విమానాశ్రయాలు నిర్మించాలని నిర్ణయించింది.</div>
+
+<h3>ప్రస్తుతం అమలులో ఉన్న విమానాశ్రయాలు (Operational — 6)</h3>
+<table>
+<tr><th>విమానాశ్రయం</th><th>రకం</th><th>ప్రత్యేకత</th></tr>
+<tr><td><span class="key-num">1. విశాఖపట్నం ఎయిర్‌పోర్ట్</span></td><td>అంతర్జాతీయ</td><td>AP లో <span class="key-num">ఏకైక అంతర్జాతీయ విమానాశ్రయం</span>; AAI అధీనం; 2 రన్‌వేలు; దుబాయ్, సింగపూర్, కౌలాలంపూర్ సర్వీసులు; సర్వే: 2.6 Mppa సామర్థ్యం</td></tr>
+<tr><td><span class="key-num">2. విజయవాడ ఎయిర్‌పోర్ట్</span></td><td>దేశీయ</td><td>గన్నవరం గ్రామం సమీపంలో; AAI అధీనం; <span class="key-num">రాష్ట్రంలో 2వ అత్యంత బిజీ</span>; రోజు 1 ఫ్లైట్ హైదరాబాద్‌కు</td></tr>
+<tr><td><span class="key-num">3. తిరుపతి ఎయిర్‌పోర్ట్</span></td><td>దేశీయ</td><td>1976లో స్థాపన; రేణిగుంట వద్ద; <span class="key-num">3వ అత్యంత బిజీ</span>; 2010 అక్టోబర్: గరుడ టెర్మినల్ శంకుస్థాపన; 2015 అక్టోబర్ 22: PM మోదీ ప్రారంభం</td></tr>
+<tr><td><span class="key-num">4. కడప ఎయిర్‌పోర్ట్</span></td><td>దేశీయ</td><td>1953లో నిర్మించబడింది; 2015 జూన్ 7 నుండి విమాన సర్వీసులు తిరిగి ప్రారంభం</td></tr>
+<tr><td><span class="key-num">5. రాజమండ్రి ఎయిర్‌పోర్ట్</span></td><td>దేశీయ</td><td>మధురాపూడి సమీపంలో; AAI అధీనం; ప్రస్తుతం నిర్మాణం చేపట్టారు</td></tr>
+<tr><td><span class="key-num">6. పుట్టపర్తి ఎయిర్‌పోర్ట్</span></td><td>దేశీయ</td><td>శ్రీ సత్య సాయి సెంట్రల్ ట్రస్ట్ అధీనం; అనంతపురం జిల్లా పుట్టపర్తిలో</td></tr>
+</table>
+<div class="update-box"><strong>సర్వే 2024-25 ప్రకారం:</strong> ప్రస్తుత ఆపరేషనల్ విమానాశ్రయాలు 6: విశాఖపట్నం, విజయవాడ, తిరుపతి, రాజమండ్రి, కడప, <span class="key-num">ఓర్వకల్లు (కర్నూలు)</span></div>
+
+<h3>నిర్మాణంలో ఉన్న విమానాశ్రయం</h3>
+<table>
+<tr><th>విమానాశ్రయం</th><th>వివరాలు</th></tr>
+<tr><td><span class="key-num">భోగపురం అంతర్జాతీయ విమానాశ్రయం</span></td><td>విజయనగరం జిల్లా, భోగపురం మండలం (హంసలు గ్రామం సమీపం); Greenfield PPP; Phase 1 వ్యయం: <span class="key-num">₹2,302.51 కోట్లు</span>; సామర్థ్యం: <span class="key-num">6 Mppa</span> (Phase 1)</td></tr>
+</table>
+
+<h3>ప్రణాళికలో ఉన్న హరిత క్షేత్ర విమానాశ్రయాలు (Greenfield — Planned)</h3>
+<table>
+<tr><th>విమానాశ్రయం</th><th>జిల్లా</th></tr>
+<tr><td>కుప్పం</td><td>చిత్తూరు</td></tr>
+<tr><td>దగదర్తి</td><td>నెల్లూరు</td></tr>
+<tr><td>డొంకొండ</td><td>ప్రకాశం</td></tr>
+<tr><td>నాగార్జున సాగర్</td><td>గుంటూరు</td></tr>
+<tr><td>శ్రీకాకుళం, తుని, తాడేపల్లిగూడెం, ఒంగోలు (సర్వే 2024-25)</td><td>వివిధ జిల్లాలు</td></tr>
+</table>
+<div class="alert-box"><strong>MoU విమానాశ్రయాల ఆధునికీకరణ:</strong> విజయవాడ, తిరుపతి, కడప, రాజమండ్రి, విశాఖపట్నం, పుట్టపర్తి విమానాశ్రయాలను ఆధునికీకరించేందుకు Airport Authority of India తో MoUలు కుదుర్చుకోవడం జరిగింది.</div>
+
+<hr class="section-divider">
+
+<h2>ముఖ్యాంశాలు — పేజీ 105 (Key Facts)</h2>
+<table>
+<tr><th>విషయం</th><th>సమాచారం</th><th>గుర్తింపు</th></tr>
+<tr><td>AP గుండా వెళ్ళే జాతీయ రహదారులు</td><td><span class="key-num">52 NHలు</span> (పాఠ్యపుస్తకం) | <span class="key-num">55 NHలు</span> (సర్వే 2024-25)</td><td>పాఠ్యపుస్తకం vs సర్వే గమనించండి</td></tr>
+<tr><td>NH సాంద్రత (ప్రతి లక్ష జనాభాకు)</td><td><span class="key-num">16.53 కి.మీ</span> (దేశం: 10.89 కి.మీ)</td><td>AP ఎక్కువ</td></tr>
+<tr><td>అతి పొడవైన NH</td><td><span class="key-num">NH-16 (1,024 కి.మీ)</span></td><td>చెన్నై-కోలకత్తా</td></tr>
+<tr><td>అతి చిన్న NH</td><td><span class="key-num">NH-326 (13.60 కి.మీ)</span></td><td>నిజామపట్టణం-చిత్తూర్</td></tr>
+<tr><td>స్వర్ణ చతుర్భుజిలో భాగమైన NH</td><td><span class="key-num">NH-16 (పాత NH-5)</span></td><td>4 మూలల గుండా వెళ్ళే NH</td></tr>
+<tr><td>సముద్ర తీరం గుండా వెళ్ళే NH</td><td><span class="key-num">NH-16</span></td><td>—</td></tr>
+<tr><td>అత్యధిక NHలు గల జిల్లా</td><td><span class="key-num">చిత్తూరు</span></td><td>—</td></tr>
+<tr><td>అత్యల్ప NHలు గల జిల్లా</td><td><span class="key-num">విజయనగరం</span></td><td>—</td></tr>
+<tr><td>APSRTC జోన్ల సంఖ్య &amp; పేర్లు</td><td><span class="key-num">4</span>: నెల్లూరు, కడప, విజయవాడ, విజయనగరం</td><td>—</td></tr>
+<tr><td>AP లో మొట్టమొదటి రైలు</td><td><span class="key-num">1862లో పుత్తూరు-రేణిగుంట</span> (చిత్తూరు జిల్లా)</td><td>—</td></tr>
+<tr><td>18వ రైల్వే జోన్</td><td><span class="key-num">దక్షిణ తీర రైల్వే (SCoR)</span>, HQ విశాఖపట్నం</td><td>2019 ఫిబ్రవరి 27 ఏర్పాటు</td></tr>
+<tr><td>రాష్ట్రంలో అత్యధిక భాగం రైల్వే</td><td><span class="key-num">దక్షిణమధ్య రైల్వే (SCR)</span> — 2,660 కి.మీ</td><td>—</td></tr>
+<tr><td>రైల్వే గ్రీస్ రిజర్వ్ వర్క్‌షాప్</td><td><span class="key-num">తిరుపతి</span></td><td>—</td></tr>
+<tr><td>రైల్వే వ్యాగన్ వర్క్‌షాప్</td><td><span class="key-num">విజయవాడ సమీపంలో గుంటుపల్లి</span></td><td>—</td></tr>
+<tr><td>విజయవాడ మెట్రో కారిడర్-1</td><td><span class="key-num">పండిట్ నెహ్రూ బస్ స్టేషన్ → పెనమలూరు</span> (వయా మహాత్మా గాంధీ రోడ్)</td><td>—</td></tr>
+<tr><td>విజయవాడ మెట్రో కారిడర్-2</td><td><span class="key-num">ఎలూరు రోడ్ → నెదమూరు</span> (వయా విజయవాడ రైల్వే స్టేషన్)</td><td>—</td></tr>
+<tr><td>దేశంలో అత్యంత లోతైన ఓడరేవు</td><td><span class="key-num">విశాఖపట్నం ఓడరేవు</span> (సహజ సిద్ధమైన)</td><td>—</td></tr>
+<tr><td>పెట్రోలియం దిగుమతికి 2వ స్థానం</td><td><span class="key-num">విశాఖపట్నం</span> (ముంబై తర్వాత)</td><td>—</td></tr>
+<tr><td>గ్రీన్‌ఫీల్డ్ ఓడరేవు</td><td><span class="key-num">కృష్ణపట్నం ఓడరేవు</span></td><td>ఆసియాలో మొదటిది</td></tr>
+<tr><td>అత్యంత లోతైన (21 మీటర్లు) ఓడరేవు</td><td><span class="key-num">గంగవరం ఓడరేవు</span></td><td>—</td></tr>
+<tr><td>గోదావరి పాయ వశిష్ఠ మీద నిర్మించిన ఓడరేవు</td><td><span class="key-num">నర్సాపూర్ ఓడరేవు</span></td><td>పశ్చిమగోదావరి జిల్లా</td></tr>
+<tr><td>ప్రధాన రైల్వే జంక్షన్</td><td><span class="key-num">విజయవాడ</span></td><td>—</td></tr>
+<tr><td>విద్యుదీకరణ పూర్తైన రైలు మార్గం</td><td><span class="key-num">విజయవాడ-తిరుపతి</span></td><td>—</td></tr>
+<tr><td>మాంచెస్టర్ ఆఫ్ ఆంధ్రప్రదేశ్ (ఓడరేవు పరంగా)</td><td><span class="key-num">విశాఖపట్నం</span></td><td>—</td></tr>
+<tr><td>బకింగ్‌హామ్ కాలువ ప్రాంతాల మధ్య</td><td><span class="key-num">విజయవాడ – చెన్నై</span></td><td>జాతీయ జలమార్గం-4</td></tr>
+<tr><td>మత్స్య పరిశ్రమ అభివృద్ధికి ప్రత్యేకంగా ఓడరేవు</td><td><span class="key-num">కాకినాడ ఓడరేవు</span></td><td>—</td></tr>
+<tr><td>కాకతీయుల కాలంలో ప్రసిద్ధి గాంచిన మోటుపల్లి రేవు</td><td><span class="key-num">ప్రకాశం జిల్లా</span></td><td>—</td></tr>
+<tr><td>AP లో ఏకైక అంతర్జాతీయ విమానాశ్రయం</td><td><span class="key-num">విశాఖపట్నం</span></td><td>—</td></tr>
+<tr><td>వందే భారత్ (సికందరాబాద్-విశాఖ) ప్రారంభం</td><td><span class="key-num">జనవరి 15, 2023</span></td><td>180 కి.మీ/గంట | 699 కి.మీ | 8.30 గంటలు</td></tr>
+<tr><td>గోదావరి సేతువు</td><td><span class="key-num">రాజమండ్రి-కోవ్వూరు (2.7 కి.మీ)</span></td><td>అతి పొడవైన రోడ్-కం-రైల్ వంతెన</td></tr>
+<tr><td>భోగపురం అంతర్జాతీయ విమానాశ్రయం</td><td><span class="key-num">₹2,302.51 కోట్లు | 6 Mppa</span></td><td>PPP Greenfield | విజయనగరం జిల్లా</td></tr>
+</table>
+
+<hr class="section-divider">
+
+<h2>పరీక్ష సంచిక (Quick Review)</h2>
 
 <div class="alert-box">
-<strong>ఉపయోగకరమైన ట్రిక్‌లు:</strong>
+<strong>ముఖ్యమైన ట్రిక్ పాయింట్లు:</strong>
 <ul>
-<li><span class="trick-tag">APSRTC</span> = ఆంధ్రప్రదేశ్ రోడ్ రవాణా సంస్థ (4 జోన్‌లు, 11,226 బస్‌లు)</li>
-<li><span class="trick-tag">SCR</span> = దక్షిణ కోస్ట్ రైల్‌వే (విశాఖపట్టణం హెడ్‌క్వార్టర్, 18వ జోన్)</li>
-<li><span class="trick-tag">NH-16</span> = అతిసుఖ్తమైన జ.రా (1,024 కి.మీ, చెన్నై-కోలకత్తా)</li>
-<li><span class="trick-tag">విశాఖపట్టణం</span> = ప్రధాన బందరు (14 బర్థలు, సహజ)</li>
-<li><span class="trick-tag">మెట్రో నగరాలు</span> = విజయవాడ (2 కారిడర్‌లు), విశాఖ (4 కారిడర్‌లు)</li>
+<li><span class="trick-tag">NH-16</span> = అతి పొడవైన (1,024 కి.మీ) | NH-326 = అతి చిన్న (13.60 కి.మీ)</li>
+<li><span class="trick-tag">APSRTC</span> = 4 జోన్లు (నెల్లూరు, కడప, విజయవాడ, విజయనగరం) | 11,226 బస్సులు (సర్వే)</li>
+<li><span class="trick-tag">SCoR</span> = 18వ రైల్వే జోన్, HQ విశాఖ, 2019 ఫిబ్రవరి 27, 3 విభాగాలు</li>
+<li><span class="trick-tag">విశాఖ ఓడరేవు</span> = సహజ సిద్ధమైన అత్యంత లోతైన | 14 బర్తులు | డాల్ఫిన్స్ నోస్ రక్షణ</li>
+<li><span class="trick-tag">కృష్ణపట్నం</span> = ఆసియాలో మొదటి గ్రీన్‌ఫీల్డ్ | 37.786 MMT కార్గో (సర్వే)</li>
+<li><span class="trick-tag">గంగవరం</span> = దేశంలో అత్యంత లోతైన ఓడరేవు (21 మీ) | 16.201 MMT కార్గో</li>
+<li><span class="trick-tag">విజయవాడ మెట్రో</span> = 2 కారిడర్లు (₹6,769 కోట్లు) | విశాఖ మెట్రో = 4 కారిడర్లు (42.55 కి.మీ)</li>
+<li><span class="trick-tag">వందే భారత్</span> = ICF చెన్నై | 180 కి.మీ/గంట | జనవరి 15, 2023 (SC-VSP)</li>
+<li><span class="trick-tag">బకింగ్‌హామ్ కాలువ</span> = కాకినాడ నుండి పాండిచ్చేరి = జాతీయ జలమార్గం-4</li>
+<li><span class="trick-tag">భోగపురం</span> = ₹2,302.51 కోట్లు | 6 Mppa Phase 1 | విజయనగరం జిల్లా</li>
 </ul>
-</strong>
 </div>
 
 <div class="shock-box">
-<strong>ఆశ్చర్య కేసులు పరీక్షలో:</strong>
+<strong>ఆశ్చర్యకరమైన పోలికలు:</strong>
 <ul>
-<li>ఆంధ్రప్రదేశ్ రోడ్ సాంద్రత (50.08) జాతీయ సగటు (40.00) కంటే ఎక్కువ</li>
-<li>తీర రవాణా అభివృద్ధిలో సాగర్‌మాల ₹8,400 కోటులు వ్యయం</li>
-<li>వందే భారత్ ఎక్స్‌ప్రెస్ ICF చెన్నై డిజైన్, 180 కి.మీ/గంట</li>
-<li>ఆంధ్రప్రదేశ్‌లో ఐదు ఆపరేషనల్ విమానాల రవాణలు (హైదరాబాద్, విశాఖ, విజయవాడ, తిరుపతి, కోచిన్)</li>
+<li>AP రోడ్ సాంద్రత (50.08) &gt; జాతీయ సగటు (40.00) ✓</li>
+<li>AP NH సాంద్రత ప్రతి లక్ష జనాభాకు (16.53) &gt; దేశం (10.89) ✓</li>
+<li>కృష్ణపట్నం కార్గో (37.786 MMT) &gt; గంగవరం (16.201 MMT) &gt; కాకినాడ DWP (11.15 MMT)</li>
+<li>మొట్టమొదటి రైలు: 1862 (పుత్తూరు-రేణిగుంట) &gt; 1863 or 1865 కాదు</li>
+<li>SCoR: 18వ జోన్ (19వ లేదా 17వ కాదు) | తేదీ: ఫిబ్రవరి 27, 2019</li>
 </ul>
 </div>
 
 <div class="recap-box">
-<strong>సంక్షిప్త సారాంశం:</strong> ఆంధ్రప్రదేశ్ రవాణా సంస్థాపన అత్యంత అభివృద్ధిచేసిన, కార్యకరమైన రవాణా నెట్‌వర్క్‌ను కలిగి ఉంది. రోడ్డు రవాణా (45,379 కి.మీ), రైల్‌వే (3,354 కి.మీ), జల రవాణా (విశాఖపట్టణం ప్రధాన బందరు), వాయు రవాణా (6 విమానాల రవాణలు), మరియు ఆధునిక మెట్రో నెట్‌వర్క్ (విజయవాడ, విశాఖపట్టణం) అన్నీ రాష్ట్ర ఆర్థిక వృద్ధికు అవసరమైన రవాణా సేవలను అందిస్తున్నాయి.
+<strong>సంక్షిప్త సారాంశం:</strong> ఆంధ్రప్రదేశ్ రవాణా వ్యవస్థ: రోడ్డు (45,379 కి.మీ ఆర్&amp;బి + 8,744 కి.మీ NHలు), రైల్వే (3,354 కి.మీ, 444 స్టేషన్లు), జల రవాణా (విశాఖ ప్రధాన ఓడరేవు + 14 చిన్నతరం), వాయు (6 ఆపరేషనల్ + భోగపురం నిర్మాణంలో) — ఈ నాలుగు రవాణా వ్యవస్థలు రాష్ట్ర ఆర్థిక వృద్ధికి కీలకమైన పాత్ర పోషిస్తున్నాయి.
 </div>
 
 </body>
