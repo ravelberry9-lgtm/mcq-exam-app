@@ -218,6 +218,8 @@
   .diff-1 { background:#e8f5e9; color:#2e7d32; }
   .diff-2 { background:#fff3cd; color:#856404; }
   .diff-3 { background:#fce4ec; color:#c62828; }
+  .diff-4 { background:#ede7f6; color:#4527a0; }
+  .diff-pyq { background:#e3f2fd; color:#0d47a1; }
 
   .quiz-q { font-size:15px; font-weight:700; line-height:1.6; margin-bottom:16px; color:#1a237e; }
 
@@ -1589,10 +1591,11 @@ function renderQuestion() {
 
   // Difficulty badge
   const diffEl = document.getElementById('qzDiff');
-  const diffMap = {1:'⭐ Easy', 2:'⭐⭐ Medium', 3:'⭐⭐⭐ Hard'};
-  const diffCls = {1:'diff-1', 2:'diff-2', 3:'diff-3'};
-  diffEl.textContent = diffMap[q.difficulty] || '';
-  diffEl.className = 'quiz-diff ' + (diffCls[q.difficulty] || '');
+  const diffMap = {1:'⭐ Easy', 2:'⭐⭐ Moderate', 3:'⭐⭐⭐ Tough', 4:'🔥 Toughest'};
+  const diffCls = {1:'diff-1', 2:'diff-2', 3:'diff-3', 4:'diff-4'};
+  const isPYQ = (q.exam_type||'General').toUpperCase() === 'APPSC' || (q.exam_type||'General').toUpperCase() === 'UPSC';
+  diffEl.textContent = isPYQ ? '📋 PYQ' : (diffMap[q.difficulty] || '');
+  diffEl.className = 'quiz-diff ' + (isPYQ ? 'diff-pyq' : (diffCls[q.difficulty] || ''));
 
   // Question
   document.getElementById('qzQuestion').textContent = q.q_te;

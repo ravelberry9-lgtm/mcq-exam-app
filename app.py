@@ -324,7 +324,57 @@ def init_db():
     except Exception as _ge:
         print(f"[startup] AP Geography seed check error: {_ge}")
 
+    # ── Auto-seed Indian Polity chapters (Lakshmikanth) ──
+    try:
+        cur_pol = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_Polity'")
+        pol_count = list(cur_pol.fetchone())[0] if cur_pol else 0
+        if pol_count < 1:
+            print(f"[startup] Indian Polity: {pol_count} chapters — auto-seeding...")
+            _auto_seed_polity()
+            print("[startup] Indian Polity auto-seed complete.")
+        else:
+            print(f"[startup] Indian Polity: {pol_count} chapters already loaded.")
+    except Exception as _pol_e:
+        print(f"[startup] Indian Polity seed check error: {_pol_e}")
+
     conn.close()
+
+
+def _auto_seed_polity():
+    """Seed Indian Polity (Lakshmikanth) chapters into study_notes + chapter_mcqs."""
+    import importlib
+    chapters = [
+        (1,  'seed_polity_ch1',  'polity_ch1'),
+        (2,  'seed_polity_ch2',  'polity_ch2'),
+        (3,  'seed_polity_ch3',  'polity_ch3'),
+        (4,  'seed_polity_ch4',  'polity_ch4'),
+        (5,  'seed_polity_ch5',  'polity_ch5'),
+        (6,  'seed_polity_ch6',  'polity_ch6'),
+        (7,  'seed_polity_ch7',  'polity_ch7'),
+        (8,  'seed_polity_ch8',  'polity_ch8'),
+        (9,  'seed_polity_ch9',  'polity_ch9'),
+        (10, 'seed_polity_ch10', 'polity_ch10'),
+        (11, 'seed_polity_ch11', 'polity_ch11'),
+        (12, 'seed_polity_ch12', 'polity_ch12'),
+    ]
+    for ch_num, mod_name, fn_suffix in chapters:
+        c = get_db()
+        try:
+            mod = importlib.import_module(mod_name)
+            notes_fn = getattr(mod, f'_seed_{fn_suffix}_notes_inner')
+            mcqs_fn  = getattr(mod, f'_seed_{fn_suffix}_mcqs_inner')
+            notes_fn(c, db_exec, row_to_dict, USE_POSTGRES, force=False)
+            c.commit()
+            mcqs_fn(c, db_exec, row_to_dict, USE_POSTGRES)
+            c.commit()
+            print(f"[polity-seed] ch{ch_num} done.")
+        except ModuleNotFoundError:
+            print(f"[polity-seed] ch{ch_num} — seed file not yet created, skipping.")
+        except Exception as e:
+            print(f"[polity-seed] ch{ch_num} error: {e}")
+        finally:
+            try: c.close()
+            except: pass
 
 
 def _auto_seed_ap_current_affairs():
