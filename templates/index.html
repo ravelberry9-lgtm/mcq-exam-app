@@ -48,25 +48,25 @@
         <div class="lt-arrow">→</div>
       </a>
 
-      <!-- Study Notes -->
-      <a href="/notes" class="launch-tile" style="--c1:#1b5e20;--c2:#388e3c;" aria-label="Study Notes — interactive chapter notes with audio">
+      <!-- Audio Notes -->
+      <a href="/notes" class="launch-tile" style="--c1:#1b5e20;--c2:#388e3c;" aria-label="Audio Notes — interactive chapter notes with text-to-speech">
         <div class="lt-blob"></div>
         <div class="lt-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
         </div>
-        <div class="lt-name">Study Notes</div>
-        <div class="lt-desc">Interactive TTS notes</div>
+        <div class="lt-name">Audio Notes</div>
+        <div class="lt-desc">Listen · chapter-by-chapter</div>
         <div class="lt-arrow">→</div>
       </a>
 
-      <!-- Read Notes -->
-      <a href="/read-notes" class="launch-tile" style="--c1:#4a148c;--c2:#7b1fa2;" aria-label="Read Notes — static HTML reference files">
+      <!-- Study Guide -->
+      <a href="/read-notes" class="launch-tile" style="--c1:#4a148c;--c2:#7b1fa2;" aria-label="Study Guide — full HTML reference notes for AP Geo and Current Affairs">
         <div class="lt-blob"></div>
         <div class="lt-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
         </div>
-        <div class="lt-name">Read Notes</div>
-        <div class="lt-desc">AP Geo &amp; Current Affairs</div>
+        <div class="lt-name">Study Guide</div>
+        <div class="lt-desc">Read · AP Geo &amp; CA notes</div>
         <div class="lt-arrow">→</div>
       </a>
 
@@ -126,15 +126,15 @@
                   </button>
                   <a class="tile-btn tile-notes"
                      href="/notes/{{ folder }}"
-                     aria-label="Notes for {{ folder.replace('_',' ') }}">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-                    Notes
+                     aria-label="Audio Notes for {{ folder.replace('_',' ') }}">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+                    Audio
                   </a>
                   <a class="tile-btn tile-read"
                      href="/read-notes"
-                     aria-label="Read HTML notes">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                    Read
+                     aria-label="Study Guide HTML notes">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                    Guide
                   </a>
                 </div>
               </div>
