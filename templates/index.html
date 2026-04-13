@@ -1,100 +1,256 @@
 {% extends "base.html" %}
 {% block title %}MCQ Exam App — Home{% endblock %}
+
 {% block content %}
 <div class="main">
 
-  <!-- Welcome Banner -->
-  <div class="card" style="background: linear-gradient(135deg, #1a237e, #3949ab); color: white; border: none;">
-    <div style="font-size: 28px; font-weight: 800; margin-bottom: 4px;">Welcome Back! 👋</div>
-    <div style="opacity: 0.85; font-size: 14px;">Your personal MCQ practice platform. Study smart, score higher.</div>
-  </div>
-
-  <!-- Stats -->
-  <div class="card">
-    <div class="card-title">📊 Question Bank</div>
-    <div class="stat-grid" id="statsGrid">
-      <div class="stat-box"><div class="val" id="totalQ">...</div><div class="lbl">Questions</div></div>
-      <div class="stat-box" style="background: linear-gradient(135deg,#ff6f00,#ffa000)"><div class="val" id="totalExams">...</div><div class="lbl">Exams Taken</div></div>
-      <div class="stat-box" style="background: linear-gradient(135deg,#2e7d32,#43a047)"><div class="val" id="avgScore">...</div><div class="lbl">Avg Score %</div></div>
+  <!-- ── Hero Section ── -->
+  <section class="hero-section" aria-label="Welcome">
+    <div class="hero-eyebrow">APPSC Group 2 Mains Prep</div>
+    <h2 class="hero-title">Welcome Back! 👋</h2>
+    <p class="hero-sub">Your personal MCQ practice platform. Study smart, score higher.</p>
+    <div class="hero-ctas">
+      <a href="/setup" class="hero-btn hero-btn-primary" aria-label="Start a new exam session">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        <span>Start Exam</span>
+      </a>
+      <a href="/pyq" class="hero-btn hero-btn-secondary" aria-label="Practice APHC Previous Year Questions">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span>APHC PYQ</span>
+      </a>
     </div>
-  </div>
+  </section>
 
-  <!-- Topic Overview -->
-  <div class="card">
-    <div class="card-title">📁 Available Topics</div>
-    {% if tree %}
-      {% for folder, topics in tree.items() %}
-        <div style="margin-bottom: 14px;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-            <div style="font-weight: 700; color: var(--primary); font-size: 15px;">📂 {{ folder.replace('_', ' ') }}</div>
-            <span class="badge badge-folder">{{ totals.get(folder, 0) }} Qs</span>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-left: 4px;">
-            {% for topic, count in topics.items() %}
-              <div style="background: #f5f5ff; border: 1px solid #c5cae9; border-radius: 20px; padding: 4px 12px; font-size: 12px;">
-                <strong>{{ topic.replace('_', ' ') }}</strong> <span style="color: var(--text-muted);">({{ count }})</span>
-              </div>
-            {% endfor %}
-          </div>
+  <!-- ── Stats Dashboard ── -->
+  <section aria-label="Question Bank Statistics">
+    <div class="card" style="margin-bottom: 16px;">
+      <div class="card-title">📊 Question Bank</div>
+      <div class="stat-grid" id="statsGrid">
+        <div class="stat-box">
+          <div class="val" id="totalQ">…</div>
+          <div class="lbl">Questions</div>
         </div>
-        {% if not loop.last %}<hr class="divider">{% endif %}
-      {% endfor %}
-    {% else %}
-      <div style="text-align: center; padding: 30px 0; color: var(--text-muted);">
-        <div style="font-size: 40px; margin-bottom: 12px;">📭</div>
-        <div style="font-size: 16px; font-weight: 600;">No questions yet!</div>
-        <div style="font-size: 13px; margin-top: 6px;">Go to ⚙️ Admin to import your HTML & PDF files.</div>
+        <div class="stat-box" style="background: linear-gradient(135deg,#ff6f00,#ffa000);">
+          <div class="val" id="totalExams">…</div>
+          <div class="lbl">Exams Taken</div>
+        </div>
+        <div class="stat-box" style="background: linear-gradient(135deg,#2e7d32,#43a047);">
+          <div class="val" id="avgScore">…</div>
+          <div class="lbl">Avg Score %</div>
+        </div>
       </div>
-    {% endif %}
-  </div>
-
-  <!-- APHC PYQ Section -->
-  <a href="/pyq" class="card" style="display: block; text-decoration: none; background: linear-gradient(135deg, #1b5e20, #43a047); color: white; border: none; cursor: pointer;">
-    <div style="display: flex; align-items: center; gap: 14px;">
-      <div style="font-size: 36px;">📜</div>
-      <div>
-        <div style="font-size: 18px; font-weight: 800;">APHC PYQ Practice</div>
-        <div style="opacity: 0.9; font-size: 13px;">Previous Year Questions (2021-2025) — Topic & Year filters</div>
-      </div>
-      <div style="margin-left: auto; font-size: 22px;">→</div>
     </div>
-  </a>
+  </section>
 
-  <!-- Quick Start -->
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
-    <a href="/setup" class="btn btn-accent" style="border-radius: 12px; padding: 18px 12px; flex-direction: column; gap: 4px; font-size: 14px;">
-      <span style="font-size: 26px;">📝</span> Start Exam
-    </a>
-    <a href="/admin" class="btn btn-outline" style="border-radius: 12px; padding: 18px 12px; flex-direction: column; gap: 4px; font-size: 14px;">
-      <span style="font-size: 26px;">⚙️</span> Admin
-    </a>
-  </div>
+  <!-- ── Topic Cards ── -->
+  <section aria-label="Available Topics">
+    <div class="card" style="padding-bottom: 8px;">
+      <div class="card-title">📁 Available Topics</div>
 
-  <!-- How to use -->
-  <div class="card">
-    <div class="card-title">💡 How to Access on Phone</div>
-    <div style="font-size: 13px; color: var(--text-muted); line-height: 1.7;">
-      <div>1. Connect your phone to the <strong>same WiFi</strong> as this PC</div>
-      <div>2. Open phone browser</div>
-      <div>3. Go to: <strong id="phoneUrl" style="color: var(--primary); background: #e8eaf6; padding: 2px 8px; border-radius: 4px;">Loading...</strong></div>
-      <div style="margin-top: 8px; font-size: 12px;">💡 Bookmark it for quick access!</div>
+      {% if tree %}
+        {% for folder, topics in tree.items() %}
+          <div class="topic-folder{% if not loop.last %} topic-folder-border{% endif %}">
+
+            <!-- Folder header -->
+            <div class="folder-header">
+              <div class="folder-name">
+                <svg class="folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                {{ folder.replace('_', ' ') }}
+              </div>
+              <span class="badge badge-folder">{{ totals.get(folder, 0) }} Qs</span>
+            </div>
+
+            <!-- Topic cards grid -->
+            <div class="topic-cards-grid">
+              {% for topic, count in topics.items() %}
+                <a href="/setup" class="topic-card" aria-label="{{ topic.replace('_', ' ') }} — {{ count }} questions">
+                  <div class="topic-name">{{ topic.replace('_', ' ') }}</div>
+                  <div class="topic-count">{{ count }} Qs</div>
+                </a>
+              {% endfor %}
+            </div>
+
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="empty-state" aria-label="No questions available">
+          <div class="empty-icon">📭</div>
+          <div class="empty-title">No questions yet!</div>
+          <p class="empty-sub">Go to <strong>⚙️ Admin</strong> to import your HTML &amp; PDF files.</p>
+        </div>
+      {% endif %}
+
     </div>
-  </div>
+  </section>
 
 </div>
 {% endblock %}
+
 {% block scripts %}
+<style>
+/* ── Hero section ── */
+.hero-section {
+  background: linear-gradient(135deg, #1a237e 0%, #3949ab 55%, #1565c0 100%);
+  border-radius: var(--radius);
+  padding: 28px 22px 24px;
+  margin-bottom: 16px;
+  color: white;
+  box-shadow: var(--shadow-lg);
+}
+.hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+.hero-title {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+.hero-sub {
+  font-size: 13px;
+  opacity: 0.85;
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+.hero-ctas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.hero-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 18px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.18s, box-shadow 0.18s;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.hero-btn svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.hero-btn:active { transform: scale(0.97); }
+.hero-btn-primary {
+  background: #ffffff;
+  color: var(--primary);
+}
+.hero-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.22); }
+.hero-btn-secondary {
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,0.38);
+}
+.hero-btn-secondary:hover { background: rgba(255,255,255,0.26); transform: translateY(-2px); }
+
+/* ── Topic folders & cards ── */
+.topic-folder { padding-bottom: 16px; margin-bottom: 12px; }
+.topic-folder-border { border-bottom: 1px solid var(--border); }
+.folder-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.folder-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 14px;
+}
+.folder-icon {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.topic-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.topic-card {
+  background: #f5f6ff;
+  border: 1.5px solid #c5cae9;
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.18s, background 0.18s, transform 0.18s, box-shadow 0.18s;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  -webkit-tap-highlight-color: transparent;
+}
+.topic-card:hover,
+.topic-card:focus-visible {
+  border-color: var(--primary);
+  background: #eaecff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+  outline: none;
+}
+.topic-card:active { transform: scale(0.98); }
+.topic-name {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text);
+}
+.topic-count {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+[data-theme="dark"] .topic-card          { background: #1a2040; border-color: #2c3260; }
+[data-theme="dark"] .topic-card:hover    { background: #222a55; border-color: #90caf9; }
+[data-theme="dark"] .topic-name          { color: var(--text); }
+
+/* ── Empty state ── */
+.empty-state {
+  text-align: center;
+  padding: 36px 20px;
+  color: var(--text-muted);
+}
+.empty-icon  { font-size: 44px; margin-bottom: 12px; }
+.empty-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+.empty-sub   { font-size: 13px; line-height: 1.6; }
+
+/* ── Responsive tweaks ── */
+@media (max-width: 360px) {
+  .hero-title { font-size: 22px; }
+  .topic-cards-grid { grid-template-columns: 1fr; }
+}
+</style>
+
 <script>
 // Load stats
 fetch('/api/stats').then(r => r.json()).then(d => {
-  document.getElementById('totalQ').textContent = d.total_questions;
+  document.getElementById('totalQ').textContent    = d.total_questions;
   document.getElementById('totalExams').textContent = d.total_exams;
-  document.getElementById('avgScore').textContent = d.avg_score + '%';
-});
-
-// Show phone URL
-fetch('/api/stats').then(() => {
-  document.getElementById('phoneUrl').textContent = window.location.href;
+  document.getElementById('avgScore').textContent   = d.avg_score + '%';
 });
 </script>
 {% endblock %}
