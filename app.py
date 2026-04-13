@@ -243,6 +243,20 @@ def init_db():
     except Exception as _ae:
         print(f"[startup] Auto-seed check error: {_ae}")
 
+    # ── Auto-seed Modern ch1 if missing (seed_ch10.py = Advent of Europeans) ──
+    try:
+        cur_mod1 = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND subtopic='Modern' AND chapter_num=1")
+        mod1_count = list(cur_mod1.fetchone())[0] if cur_mod1 else 0
+        if mod1_count < 1 and _SEED_CH10_LOADED:
+            print("[startup] Modern ch1 missing — auto-seeding...")
+            _seed_ch10_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+            conn.commit()
+            _seed_ch10_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES)
+            conn.commit()
+            print("[startup] Modern ch1 auto-seed complete.")
+    except Exception as _me1:
+        print(f"[startup] Modern ch1 seed check error: {_me1}")
+
     # ── Auto-seed Modern ch2 if missing ──
     try:
         cur_mod = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND subtopic='Modern' AND chapter_num=2")
@@ -302,21 +316,12 @@ def init_db():
     except Exception as _ca_e:
         print(f"[startup] AP Current Affairs seed check error: {_ca_e}")
 
-    # ── Auto-seed AP Geography chapters (force reseed ch1-2, remove old ch3-4) ──
+    # ── Auto-seed AP Geography chapters 1-15 ──
     try:
-        # Remove old ch3/ch4 geography content if present
-        try:
-            db_exec(conn, "DELETE FROM chapter_mcqs WHERE study_note_id IN (SELECT id FROM study_notes WHERE topic='AP_Geography' AND chapter_num IN (3,4))")
-            db_exec(conn, "DELETE FROM study_notes WHERE topic='AP_Geography' AND chapter_num IN (3,4)")
-            conn.commit()
-        except Exception:
-            try: conn.rollback()
-            except: pass
-
         cur_geo = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='AP_Geography'")
         geo_count = list(cur_geo.fetchone())[0] if cur_geo else 0
-        if geo_count < 2:
-            print(f"[startup] Only {geo_count}/2 AP Geography chapters — auto-seeding...")
+        if geo_count < 15:
+            print(f"[startup] Only {geo_count}/15 AP Geography chapters — auto-seeding all 15...")
             _auto_seed_ap_geography()
             print("[startup] AP Geography auto-seed complete.")
         else:

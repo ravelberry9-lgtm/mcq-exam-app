@@ -115,3 +115,46 @@ MCQ_DATA = [
     (3, 3, "ఆంధ్రప్రదేశ్‌లో భాషా వైవిధ్యం ఉందా?", "చిన్నవి", "ఉన్నవి", "లేనివి", "గణనీయం", "b", "అవును, AP లో భాషా వైవిధ్యం ఉంది. తెలుగు ప్రధాన భాష అయినా, ఉర్దూ, ఒరియా, ఇంగ్లీష్, కన్నడ, తమిళం భాషలు కూడా వాడుకలో ఉన్నాయి. సరిహద్దు జిల్లాలలో ద్విభాషా ప్రజలు ఉన్నారు."),
     (3, 1, "తెలుగు భాషకు ISO 639-1 భాషా కోడ్ ఏది?", "TL", "TE", "TG", "TA", "b", "తెలుగు భాషకు ISO 639-1 కోడ్ 'TE'. ఈ అంతర్జాతీయ ప్రమాణంలో ప్రతి భాషకు రెండు అక్షరాల కోడ్ కేటాయించబడుతుంది. తెలుగు కోడ్ TE, తమిళం TA, కన్నడం KN.")
 ]
+
+
+def _seed_ap_geo_ch15_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT 'AP_Geography', subtopic TEXT DEFAULT '',
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '', pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if USE_POSTGRES: conn.commit()
+    except Exception: pass
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (15, 'AP_Geography'))
+    row = cur.fetchone()
+    if row and not force: return {'success': True, 'already_exists': True}
+    if row and force: db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id IN (SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph})", (15, 'AP_Geography')); db_exec(conn, f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (15, 'AP_Geography'))
+    if USE_POSTGRES: conn.commit()
+    db_exec(conn,
+        f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'AP_Geography', '', 15, 'జాతులు-తెగలు-మతాలు-భాషలు', 'Tribes, Religions and Languages in AP',
+         'pp.104-110', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
+    conn.commit()
+    return {'success': True, 'message': 'AP Geo Ch15 notes seeded!'}
+
+
+def _seed_ap_geo_ch15_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
+    ph = '%s' if USE_POSTGRES else '?'
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (15, 'AP_Geography'))
+    row = cur.fetchone()
+    if not row:
+        _seed_ap_geo_ch15_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (15, 'AP_Geography'))
+        row = cur.fetchone()
+    note_id = row_to_dict(row)['id']
+    db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    insert_sql = (f"INSERT INTO chapter_mcqs (study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})")
+    for (sec_idx, diff, q_te, a, b, c, d, correct, expl) in MCQ_DATA:
+        db_exec(conn, insert_sql, (note_id, sec_idx, diff, q_te, a, b, c, d, str(correct).lower(), expl))
+    if USE_POSTGRES: conn.commit()
+    return {'success': True, 'inserted': len(MCQ_DATA)}

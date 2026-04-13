@@ -181,3 +181,46 @@ MCQ_DATA = [
     (8, 2, 'మచిలీపట్నం ఓడరేవు అభివృద్ధికి AP ప్రభుత్వం ఏ అంతర్జాతీయ సంస్థతో MoU కుదుర్చుకుంది?', 'DP World (Dubai)', 'PSA International (Singapore)', 'Maersk (Denmark)', 'CMA CGM (France)', 'b', 'మచిలీపట్నం ఓడరేవు అభివృద్ధికి AP ప్రభుత్వం సింగపూర్ కంపెనీ PSA International తో MoU కుదుర్చుకుంది. మచిలీపట్నం AP పున:వ్యవస్థీకరణ చట్టం 2014 హామీ. Sagarmala కింద మొత్తం ₹5,155.73 కోటి; 85 MT సామర్థ్యం.'),
     (8, 2, 'AP లో సర్వే 2024-25 ప్రకారం అత్యధిక కార్గో నిర్వహించే ఓడరేవు ఏది?', 'గంగవరం', 'కాకినాడ డీప్ వాటర్', 'విశాఖపట్నం', 'కృష్ణపట్నం', 'd', 'సర్వే 2024-25 ప్రకారం కృష్ణపట్నం ఓడరేవు 37.786 MMT కార్గో నిర్వహించింది — AP అన్ని ఓడరేవుల్లో అత్యధికం. తర్వాత గంగవరం 16.201 MMT, కాకినాడ డీప్ 11.15 MMT. అదానీ గ్రూప్ నిర్వహిస్తోంది.'),
 ]
+
+
+def _seed_ap_geo_ch12_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT 'AP_Geography', subtopic TEXT DEFAULT '',
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '', pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if USE_POSTGRES: conn.commit()
+    except Exception: pass
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (12, 'AP_Geography'))
+    row = cur.fetchone()
+    if row and not force: return {'success': True, 'already_exists': True}
+    if row and force: db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id IN (SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph})", (12, 'AP_Geography')); db_exec(conn, f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (12, 'AP_Geography'))
+    if USE_POSTGRES: conn.commit()
+    db_exec(conn,
+        f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'AP_Geography', '', 12, 'ఆంధ్రప్రదేశ్‌లో రవాణా', 'Transport in Andhra Pradesh',
+         'pp.82-90', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
+    conn.commit()
+    return {'success': True, 'message': 'AP Geo Ch12 notes seeded!'}
+
+
+def _seed_ap_geo_ch12_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
+    ph = '%s' if USE_POSTGRES else '?'
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (12, 'AP_Geography'))
+    row = cur.fetchone()
+    if not row:
+        _seed_ap_geo_ch12_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (12, 'AP_Geography'))
+        row = cur.fetchone()
+    note_id = row_to_dict(row)['id']
+    db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    insert_sql = (f"INSERT INTO chapter_mcqs (study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})")
+    for (sec_idx, diff, q_te, a, b, c, d, correct, expl) in MCQ_DATA:
+        db_exec(conn, insert_sql, (note_id, sec_idx, diff, q_te, a, b, c, d, str(correct).lower(), expl))
+    if USE_POSTGRES: conn.commit()
+    return {'success': True, 'inserted': len(MCQ_DATA)}

@@ -170,3 +170,46 @@ MCQ_DATA = [
     (14, 2, "సామాజిక-ఆర్థిక సర్వే 2024-25 ప్రకారం AP IMR ఎంత?", "24", "28", "20", "30", "a", "సర్వే 2024-25 ప్రకారం AP IMR (Infant Mortality Rate) ప్రతి 1000 జీవిత జన్మలకు 24. 2016 SRS IMR 34 తో పోలిస్తే గణనీయ తగ్గుదల. నవజాత శిశు సంరక్షణ, వ్యాక్సినేషన్ కార్యక్రమాల ప్రభావం."),
     (14, 1, "జాతీయ జన్మ రేటు?", "18.0", "19.0", "22.0", "20.4", "d", "National birth rate 20.4 per 1000")
 ]
+
+
+def _seed_ap_geo_ch14_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT 'AP_Geography', subtopic TEXT DEFAULT '',
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '', pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if USE_POSTGRES: conn.commit()
+    except Exception: pass
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (14, 'AP_Geography'))
+    row = cur.fetchone()
+    if row and not force: return {'success': True, 'already_exists': True}
+    if row and force: db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id IN (SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph})", (14, 'AP_Geography')); db_exec(conn, f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (14, 'AP_Geography'))
+    if USE_POSTGRES: conn.commit()
+    db_exec(conn,
+        f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'AP_Geography', '', 14, 'ఆంధ్రప్రదేశ్‌లో జనాభా', 'Population of Andhra Pradesh',
+         'pp.97-103', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
+    conn.commit()
+    return {'success': True, 'message': 'AP Geo Ch14 notes seeded!'}
+
+
+def _seed_ap_geo_ch14_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
+    ph = '%s' if USE_POSTGRES else '?'
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (14, 'AP_Geography'))
+    row = cur.fetchone()
+    if not row:
+        _seed_ap_geo_ch14_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (14, 'AP_Geography'))
+        row = cur.fetchone()
+    note_id = row_to_dict(row)['id']
+    db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    insert_sql = (f"INSERT INTO chapter_mcqs (study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})")
+    for (sec_idx, diff, q_te, a, b, c, d, correct, expl) in MCQ_DATA:
+        db_exec(conn, insert_sql, (note_id, sec_idx, diff, q_te, a, b, c, d, str(correct).lower(), expl))
+    if USE_POSTGRES: conn.commit()
+    return {'success': True, 'inserted': len(MCQ_DATA)}
