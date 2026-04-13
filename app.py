@@ -1376,16 +1376,86 @@ def notes_chapter(subject, topic, chapter_id):
 # ── Read Notes (HTML) ──────────────────────────────────────
 @app.route('/read-notes')
 def read_notes_home():
-    """Browse all available HTML study notes for reading/printing."""
+    """Browse all available HTML study notes organised by folder → subfolder."""
     notes_dir = os.path.join(app.static_folder, 'notes')
-    available = []
+
+    # Pretty-label helpers
+    _SECTION_LABELS = {
+        'AP_Geography':      'AP Geography',
+        'AP_Current_Affairs':'AP Current Affairs',
+    }
+    _SUBSECTION_LABELS = {
+        'Chapters':  'Chapters',
+        'Divisions': 'Divisions',
+    }
+
+    def _prettify(filename):
+        """Turn e.g. 'ch03_climate.html' → 'Ch 03: Climate'."""
+        stem = filename.replace('.html', '')
+        if stem.startswith('ch'):
+            parts = stem.split('_', 1)
+            num   = parts[0][2:].lstrip('0') or '0'
+            rest  = parts[1].replace('_', ' ').title() if len(parts) > 1 else ''
+            return f"Ch {num}: {rest}"
+        elif stem.startswith('div'):
+            parts = stem.split('_', 1)
+            num   = parts[0][3:].lstrip('0') or '0'
+            rest  = parts[1].replace('_', ' ').title() if len(parts) > 1 else ''
+            return f"Div {num}: {rest}"
+        return stem.replace('_', ' ').title()
+
+    groups = []  # list of { label, icon, sections: [ {label, notes:[…]} ] }
+
     if os.path.isdir(notes_dir):
-        for fn in sorted(os.listdir(notes_dir)):
-            if fn.endswith('.html'):
-                # Parse filename to get display info
-                label = fn.replace('_notes.html', '').replace('_', ' ').title()
-                available.append({'filename': fn, 'label': label, 'url': '/static/notes/' + fn})
-    return render_template('read_notes.html', notes=available)
+        for folder in sorted(os.listdir(notes_dir)):
+            folder_path = os.path.join(notes_dir, folder)
+            if not os.path.isdir(folder_path):
+                continue
+            group = {
+                'label':    _SECTION_LABELS.get(folder, folder.replace('_', ' ')),
+                'key':      folder,
+                'sections': [],
+            }
+            # Check for subfolders (Chapters / Divisions)
+            has_subs = any(
+                os.path.isdir(os.path.join(folder_path, e))
+                for e in os.listdir(folder_path)
+            )
+            if has_subs:
+                for sub in sorted(os.listdir(folder_path)):
+                    sub_path = os.path.join(folder_path, sub)
+                    if not os.path.isdir(sub_path):
+                        continue
+                    notes = []
+                    for fn in sorted(os.listdir(sub_path)):
+                        if not fn.endswith('.html'):
+                            continue
+                        notes.append({
+                            'label': _prettify(fn),
+                            'url':   f'/static/notes/{folder}/{sub}/{fn}',
+                        })
+                    if notes:
+                        group['sections'].append({
+                            'label': _SUBSECTION_LABELS.get(sub, sub),
+                            'notes': notes,
+                        })
+            else:
+                # flat files directly in the folder
+                notes = []
+                for fn in sorted(os.listdir(folder_path)):
+                    if not fn.endswith('.html'):
+                        continue
+                    notes.append({
+                        'label': _prettify(fn),
+                        'url':   f'/static/notes/{folder}/{fn}',
+                    })
+                if notes:
+                    group['sections'].append({'label': None, 'notes': notes})
+
+            if group['sections']:
+                groups.append(group)
+
+    return render_template('read_notes.html', groups=groups)
 
 
 @app.route('/api/notes/add', methods=['POST'])
