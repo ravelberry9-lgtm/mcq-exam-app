@@ -25,7 +25,7 @@ tr:nth-child(even) { background: #f5f5f5; }
 .section-divider { border: none; border-top: 2px dashed #ccc; margin: 8px 0; }
 ul, ol { margin-left: 15px; margin-bottom: 5px; }
 li { margin-bottom: 2px; }
-.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: hidden; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
+.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: visible; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
 .eenadu-title { background: #d32f2f; color: white; font-weight: bold; font-size: 11.5px; padding: 6px 10px; letter-spacing: 0.3px; }
 .eenadu-body { padding: 7px 10px; font-size: 10.5px; line-height: 1.7; color: #212121; }
 .eenadu-meta { background: #ffebee; font-size: 9.5px; padding: 4px 10px; color: #b71c1c; border-top: 1px solid #ffcdd2; }
@@ -33,6 +33,44 @@ li { margin-bottom: 2px; }
 .pyq-box { background: #fffde7; border-left: 4px solid #f57f17; padding: 6px 10px; margin: 6px 0; font-size: 10.5px; }
 .pyq-box strong { color: #e65100; }
 .pyq-head { background: #f57f17; color: white; font-weight: bold; font-size: 12px; padding: 5px 10px; border-radius: 4px 4px 0 0; margin-top: 12px; letter-spacing: 0.3px; }
+  /* ── PRINT OVERRIDES ── */
+  @media print {
+    html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+    /* Let content flow naturally — do NOT force a break after every .page div */
+    .page {
+      width: 100% !important;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 14mm 13mm !important;
+      box-shadow: none !important;
+      border: none !important;
+      page-break-after: auto !important;
+      break-after: auto !important;
+      overflow: visible !important;
+    }
+    /* Force a new print page before each major section */
+    .page-break {
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+    /* Small tables: keep together. Large tables (.breakable): allow row-level breaks */
+    table { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+    .breakable thead { display: table-header-group; }
+    .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    /* Keep small info boxes intact */
+    .no-break, .alert-box, .shock-box, .update-box,
+    .recap-box, .eenadu-article, .pyq-box {
+      page-break-inside: avoid !important; break-inside: avoid !important;
+    }
+    h2, h3 { page-break-after: avoid !important; break-after: avoid !important; }
+    h1 { page-break-before: avoid !important; }
+    .footer { display: block !important; }
+    .page-num::after { content: counter(page); }
+    .key-num { background: none !important; color: #b71c1c !important; font-weight: 700; padding: 0; }
+    .trick-tag { background: none !important; color: #1b5e20 !important; border: 1px solid #1b5e20; }
+  }
 </style>
 </head>
 <body>
@@ -48,8 +86,8 @@ li { margin-bottom: 2px; }
 <strong>కీ విషయం:</strong> దక్షిణ భారతదేశపు <span class="key-num">ధాన్యాగారం = ఆంధ్రప్రదేశ్</span> | AP is the granary of South India.
 </div>
 
-<table>
-<tr><th>విషయం | Topic</th><th>విలువ | Value</th></tr>
+<table class="breakable">
+<thead><tr><th>విషయం | Topic</th><th>విలువ | Value</th></tr></thead>
 <tr><td>జనాభా వ్యవసాయ ఆధారపడి | Population dependent on agriculture</td><td>62%</td></tr>
 <tr><td>2022-23 వ్యవసాయ రంగ వాటా (GSDP) | Agricultural sector share (GSDP)</td><td>36.19%</td></tr>
 <tr><td colspan="2"><strong>వ్యవసాయ రంగ సమీకరణ | Agricultural Sector Composition (2022-23)</strong></td></tr>
@@ -79,8 +117,8 @@ li { margin-bottom: 2px; }
 </table>
 
 <h3>2.2 భూ వర్గీకరణ (2021-22) | Land Classification</h3>
-<table>
-<tr><th>వర్గం | Category</th><th>విస్తీర్ణం | Area (లక్ష హె.)</th><th>శాతం | Percentage</th></tr>
+<table class="breakable">
+<thead><tr><th>వర్గం | Category</th><th>విస్తీర్ణం | Area (లక్ష హె.)</th><th>శాతం | Percentage</th></tr></thead>
 <tr><td>నికర సాగు భూమి | Net sown area</td><td>60.38</td><td>37.05%</td></tr>
 <tr><td>అడవుల భూమి | Forest land</td><td>36.88</td><td>22.63%</td></tr>
 <tr><td>వ్యవసాయేతర భూమి | Non-agricultural land</td><td>20.82</td><td>12.78%</td></tr>
@@ -132,8 +170,8 @@ li { margin-bottom: 2px; }
 </table>
 
 <h3>4.2 వరి (Rice) | Rice Crop</h3>
-<table>
-<tr><th>విషయం | Detail</th><th>ఆంకా | Data</th></tr>
+<table class="breakable">
+<thead><tr><th>విషయం | Detail</th><th>ఆంకా | Data</th></tr></thead>
 <tr><td>AP లో ప్రధానత | Primary crop in AP</td><td>1st rank cereal</td></tr>
 <tr><td colspan="2"><strong>జిల్లా-వారి అగ్రస్థానాలు | District Rankings</strong></td></tr>
 <tr><td>1st జిల్లా | 1st District</td><td>పశ్చిమ గోదావరి (P. Godavari)</td></tr>
@@ -235,8 +273,8 @@ li { margin-bottom: 2px; }
 </table>
 
 <h3>7.2 ఫలాలు | Fruits - District Rankings</h3>
-<table>
-<tr><th>ఫలం | Fruit</th><th>1st జిల్లా | 1st District</th><th>2nd జిల్లా | 2nd District</th><th>ఇతర నోట్‌లు | Other Notes</th></tr>
+<table class="breakable">
+<thead><tr><th>ఫలం | Fruit</th><th>1st జిల్లా | 1st District</th><th>2nd జిల్లా | 2nd District</th><th>ఇతర నోట్‌లు | Other Notes</th></tr></thead>
 <tr><td>మామిడి | Mango</td><td>చిత్తూరు</td><td>కర్నూలు</td><td>విశ్వ ప్రసిద్ధ | World-famous</td></tr>
 <tr><td>అరటి | Banana</td><td>కడప</td><td>అల్లూరు</td><td>వస్తువ ఉత్పత్తి | Bulk production</td></tr>
 <tr><td>బొప్పాయి | Papaya</td><td colspan="2">విశాఖ, అనకాపల్లి, కాకినాడ, కోనసీమ, NTR, ఏలూరు</td><td>బహుజిల్లా</td></tr>
@@ -357,8 +395,8 @@ li { margin-bottom: 2px; }
 <h2>9. మత్స్య సంపద | Fisheries & Aquaculture</h2>
 
 <h3>9.1 మత్స్య సంపద సమాచారం | Fisheries Overview</h3>
-<table>
-<tr><th>విషయం | Topic</th><th>ఆంకా | Data</th></tr>
+<table class="breakable">
+<thead><tr><th>విషయం | Topic</th><th>ఆంకా | Data</th></tr></thead>
 <tr><td>GSDP లో వాటా (2022-23) | Share in GSDP</td><td>9.15%</td></tr>
 <tr><td>సముద్ర చేపల ఉత్పత్తిలో జాతీయ స్థానం | Seafood production rank</td><td>1st</td></tr>
 <tr><td>రొయ్యల ఉత్పత్తిలో | Shrimp production</td><td>1st</td></tr>
@@ -445,8 +483,8 @@ li { margin-bottom: 2px; }
 <h2>11. సెరికల్చర్ & అటవీ సంపద | Sericulture & Forestry</h2>
 
 <h3>11.1 పట్టు (Silk) ఉత్పత్తి | Sericulture</h3>
-<table>
-<tr><th>విషయం | Topic</th><th>సమాచారం | Information</th></tr>
+<table class="breakable">
+<thead><tr><th>విషయం | Topic</th><th>సమాచారం | Information</th></tr></thead>
 <tr><td>దేశంలో జాతీయ స్థానం | National rank</td><td>2nd largest raw silk producer</td></tr>
 <tr><td>ఖ్యాతి | Recognition</td><td>'Best Bivoltine Practicing State' (వస్త్ర మంత్రిత్వం ప్రకారం) | Textile Ministry certified</td></tr>
 <tr><td>మల్‌బెర్రీ సాగు విస్తీర్ణం | Mulberry area</td><td>1,51,000 ఎకరాలు</td></tr>
@@ -576,8 +614,8 @@ li { margin-bottom: 2px; }
 </table>
 
 <h3>13.6 జిల్లా-నిర్దిష్ట ఇటుకలు | District-Specific Highlights</h3>
-<table>
-<tr><th>జిల్లా | District</th><th>ప్రధానత | Specialization</th></tr>
+<table class="breakable">
+<thead><tr><th>జిల్లా | District</th><th>ప్రధానత | Specialization</th></tr></thead>
 <tr><td>చిత్తూరు</td><td>మామిడి (1st), ఆవులు (1st)</td></tr>
 <tr><td>కర్నూలు</td><td>పసుపు (1st), నువ్వులు, టమాట (1st)</td></tr>
 <tr><td>అనంతపూర్</td><td>గోధుమ (1st), గొర్రెలు (1st), మేకలు (1st)</td></tr>
@@ -746,8 +784,8 @@ li { margin-bottom: 2px; }
 • <strong>సీజన్:</strong> జూన్/జూలై → అక్టోబర్/నవంబర్<br>
 • <strong>రుతుపవనాలు:</strong> నైరుతి రుతుపవనాలపై (SW Monsoon) ఆధారపడతాయి<br>
 • AP లో మొత్తం సాగు విస్తీర్ణంలో <span class="key-num">60-65%</span> ఖరీఫ్ పంటలే<br><br>
-<table>
-<tr><th>పంట</th><th>ముఖ్య జిల్లాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>పంట</th><th>ముఖ్య జిల్లాలు</th></tr></thead>
 <tr><td><strong>వరి (Rice)</strong></td><td>కృష్ణా, గుంటూరు, తూ.గోదావరి, పశ్చిమ గోదావరి</td></tr>
 <tr><td><strong>వేరుసెనగ (Groundnut)</strong></td><td>అనంతపూర్ <span class="key-num">(దేశంలో 1వ స్థానం)</span>, కర్నూలు, నెల్లూరు</td></tr>
 <tr><td><strong>పత్తి (Cotton)</strong></td><td>గుంటూరు, కృష్ణా, ప్రకాశం</td></tr>
@@ -764,8 +802,8 @@ li { margin-bottom: 2px; }
 • <strong>సీజన్:</strong> అక్టోబర్/నవంబర్ → మార్చి/ఏప్రిల్<br>
 • <strong>రుతుపవనాలు:</strong> ఈశాన్య రుతుపవనాలపై (NE Monsoon) ఆధారపడతాయి<br>
 • AP లో రబీ పంటలకు <strong>సాగునీటి పారుదల</strong> చాలా ముఖ్యం<br><br>
-<table>
-<tr><th>పంట</th><th>ముఖ్య జిల్లాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>పంట</th><th>ముఖ్య జిల్లాలు</th></tr></thead>
 <tr><td><strong>వరి (Rice — రబీ)</strong></td><td>కృష్ణా, గుంటూరు, తూ.గోదావరి</td></tr>
 <tr><td><strong>శనగలు (Chickpea/Bengal Gram)</strong></td><td>కర్నూలు, అనంతపూర్, ప్రకాశం</td></tr>
 <tr><td><strong>పొద్దుతిరుగుడు (Sunflower)</strong></td><td>కర్నూలు, నంద్యాల, కడప</td></tr>

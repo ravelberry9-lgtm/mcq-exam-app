@@ -25,7 +25,7 @@ tr:nth-child(even) { background: #f5f5f5; }
 .section-divider { border: none; border-top: 2px dashed #ccc; margin: 8px 0; }
 ul, ol { margin-left: 15px; margin-bottom: 5px; }
 li { margin-bottom: 2px; }
-.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: hidden; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
+.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: visible; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
 .eenadu-title { background: #d32f2f; color: white; font-weight: bold; font-size: 11.5px; padding: 6px 10px; letter-spacing: 0.3px; }
 .eenadu-body { padding: 7px 10px; font-size: 10.5px; line-height: 1.7; color: #212121; }
 .eenadu-meta { background: #ffebee; font-size: 9.5px; padding: 4px 10px; color: #b71c1c; border-top: 1px solid #ffcdd2; }
@@ -35,6 +35,44 @@ li { margin-bottom: 2px; }
 .key-num { color: #b71c1c; font-weight: bold; }
 .trick-tag { background: #e8f5e9; color: #1b5e20; padding: 1px 5px; border-radius: 3px; font-size: 9.5px; font-weight: bold; }
 
+  /* ── PRINT OVERRIDES ── */
+  @media print {
+    html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+    /* Let content flow naturally — do NOT force a break after every .page div */
+    .page {
+      width: 100% !important;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 14mm 13mm !important;
+      box-shadow: none !important;
+      border: none !important;
+      page-break-after: auto !important;
+      break-after: auto !important;
+      overflow: visible !important;
+    }
+    /* Force a new print page before each major section */
+    .page-break {
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+    /* Small tables: keep together. Large tables (.breakable): allow row-level breaks */
+    table { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+    .breakable thead { display: table-header-group; }
+    .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    /* Keep small info boxes intact */
+    .no-break, .alert-box, .shock-box, .update-box,
+    .recap-box, .eenadu-article, .pyq-box {
+      page-break-inside: avoid !important; break-inside: avoid !important;
+    }
+    h2, h3 { page-break-after: avoid !important; break-after: avoid !important; }
+    h1 { page-break-before: avoid !important; }
+    .footer { display: block !important; }
+    .page-num::after { content: counter(page); }
+    .key-num { background: none !important; color: #b71c1c !important; font-weight: 700; padding: 0; }
+    .trick-tag { background: none !important; color: #1b5e20 !important; border: 1px solid #1b5e20; }
+  }
 </style>
 </head>
 <body>
@@ -328,14 +366,14 @@ AP Geography | Electricity Sector in Andhra Pradesh
 <strong>💧 AP GENCO జల విద్యుత్ సామర్థ్యం:</strong> <span class="key-num">1,773.60 MW</span> (11 హైడ్రో స్టేషన్‌లు)
 </div>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>స్టేషన్ పేరు</th>
 <th>వర్ష / ఉద్ఘాటన</th>
 <th>సామర్థ్యం (MW)</th>
 <th>జిల్లా</th>
 <th>ప్రత్యేక విశేషాలు</th>
-</tr>
+</tr></thead>
 <tr>
 <td>మాచ్‌ఖండ్</td>
 <td>1955</td>
@@ -619,12 +657,12 @@ AP Geography | Electricity Sector in Andhra Pradesh
 
 <h3>10 వ్యర్థ పదార్థ విద్యుత్ కేంద్రాలు (Waste-to-Energy Plants):</h3>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>సంస్థ / Location</th>
 <th>జిల్లా</th>
 <th>సామర్థ్యం (MW)</th>
-</tr>
+</tr></thead>
 <tr>
 <td>విశాఖపట్నం</td>
 <td>విశాఖపట్నం</td>
@@ -858,12 +896,12 @@ AP Geography | Electricity Sector in Andhra Pradesh
 
 <h3>సర్వే 2024-25 సమీక్ష ప్రధాన సూచకాలు:</h3>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>సూచక | Indicator</th>
 <th>విలువ | Value</th>
 <th>యూనిట్‌లు</th>
-</tr>
+</tr></thead>
 <tr>
 <td>స్థాపిత సామర్థ్యం</td>
 <td><span class="key-num">27,392</span></td>

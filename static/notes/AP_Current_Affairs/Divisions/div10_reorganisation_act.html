@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AP పునర్వ్యవస్థీకరణ చట్టం 2014 & సవరణ 2026 — విభాగం 10</title>
 <style>
+@page { size: A4 portrait; margin: 12mm 10mm; }
+
 body{font-family:'Segoe UI',Arial,sans-serif;font-size:13px;color:#212121;max-width:960px;margin:0 auto;padding:16px;background:#fafafa;}
 h1{background:#1a237e;color:white;padding:12px 16px;border-radius:6px;font-size:18px;margin:0 0 12px 0;}
 h2{background:#283593;color:white;padding:8px 14px;border-radius:5px;font-size:15px;margin:22px 0 10px 0;}
@@ -42,6 +44,20 @@ tr:nth-child(even){background:#e8eaf6;}
 .scs-box{background:#e8f5e9;border:2px solid #2e7d32;border-radius:8px;padding:14px 16px;margin:12px 0;}
 .promise-table th{background:#4a148c;}
 .demand-box{background:#fff9c4;border-left:5px solid #f57f17;padding:10px 14px;margin:8px 0;border-radius:4px;font-size:12px;}
+/* Large tables allowed to break across print pages */
+.breakable { page-break-inside: auto; }
+.breakable tr { page-break-inside: avoid; }
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 10mm; }
+  table { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+  .breakable thead { display: table-header-group; }
+  .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .no-break, .alert-box, .shock-box, .update-box, .recap-box, .purple-box,
+  .eenadu-article, .pyq-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+  h2 { page-break-after: avoid !important; break-after: avoid !important; }
+  h3 { page-break-after: avoid !important; break-after: avoid !important; }
+}
 </style>
 </head>
 <body>
@@ -74,8 +90,8 @@ tr:nth-child(even){background:#e8eaf6;}
 
 <div class="law-card">
 <div class="law-title">⚖️ APRA 2014 — మూల చట్టం వివరాలు <span class="law-badge">Act No. 6/2014</span></div>
-<table>
-<tr><th>అంశం</th><th>వివరాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>అంశం</th><th>వివరాలు</th></tr></thead>
 <tr><td>పూర్తి పేరు</td><td><strong>Andhra Pradesh Reorganisation Act, 2014</strong></td></tr>
 <tr><td>చట్టం నంబర్</td><td>Act No. 6 of 2014</td></tr>
 <tr><td>Lok Sabha ఆమోదం</td><td><span class="key-num">ఫిబ్రవరి 18, 2014</span></td></tr>
@@ -201,8 +217,8 @@ tr:nth-child(even){background:#e8eaf6;}
 
 <div class="law-card">
 <div class="law-title">⚖️ Amendment Act 2026 — పూర్తి వివరాలు <span class="new-badge">Act No. 7/2026</span></div>
-<table>
-<tr><th>అంశం</th><th>వివరాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>అంశం</th><th>వివరాలు</th></tr></thead>
 <tr><td>పూర్తి పేరు</td><td>Andhra Pradesh Reorganisation (Amendment) Act, 2026</td></tr>
 <tr><td>చట్టం నంబర్</td><td><span class="key-num">Act No. 7 of 2026</span></td></tr>
 <tr><td>సవరించిన Section</td><td>AP Reorganisation Act 2014 — <span class="key-num">Section 5(2)</span></td></tr>
@@ -268,8 +284,8 @@ tr:nth-child(even){background:#e8eaf6;}
 
 <div class="law-card">
 <div class="law-title">🌊 పోలవరం — జాతీయ ప్రాజెక్టు (Section 90, APRA 2014)</div>
-<table>
-<tr><th>అంశం</th><th>వివరాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>అంశం</th><th>వివరాలు</th></tr></thead>
 <tr><td>APRA Section</td><td>Section 90 — పోలవరం జాతీయ ప్రాజెక్టుగా గుర్తింపు</td></tr>
 <tr><td>స్థానం</td><td>పశ్చిమ గోదావరి జిల్లా, ఏలేశ్వరం వద్ద</td></tr>
 <tr><td>నది</td><td>గోదావరి నది</td></tr>
@@ -301,8 +317,8 @@ tr:nth-child(even){background:#e8eaf6;}
 
 <div class="recap-box">
 <strong>📝 గుర్తుంచుకోవలసిన కీలక అంశాలు:</strong><br><br>
-<table>
-<tr><th>అంశం</th><th>సమాధానం</th></tr>
+<table class="breakable">
+<thead><tr><th>అంశం</th><th>సమాధానం</th></tr></thead>
 <tr><td>APRA 2014 అమలు తేదీ</td><td><strong>జూన్ 2, 2014</strong></td></tr>
 <tr><td>APRA 2014 Act Number</td><td><strong>Act No. 6 of 2014</strong></td></tr>
 <tr><td>తెలంగాణ భారత యొక్క ఎన్నవ రాష్ట్రం</td><td><strong>29వ రాష్ట్రం</strong></td></tr>
@@ -400,8 +416,8 @@ tr:nth-child(even){background:#e8eaf6;}
 
 <div class="section-card">
 <div class="section-title">📌 7 మండలాల పేర్లు — పరీక్ష కోసం</div>
-<table>
-<tr><th>#</th><th>మండలం పేరు</th><th>AP లో చేర్చిన జిల్లా</th></tr>
+<table class="breakable">
+<thead><tr><th>#</th><th>మండలం పేరు</th><th>AP లో చేర్చిన జిల్లా</th></tr></thead>
 <tr><td>1</td><td><strong>కునవరం (Kunavaram)</strong></td><td>తూర్పు గోదావరి</td></tr>
 <tr><td>2</td><td><strong>వి.ఆర్. పురం (Vararamachandrapuram)</strong></td><td>తూర్పు గోదావరి</td></tr>
 <tr><td>3</td><td><strong>చింతూరు (Chintoor)</strong></td><td>తూర్పు గోదావరి</td></tr>

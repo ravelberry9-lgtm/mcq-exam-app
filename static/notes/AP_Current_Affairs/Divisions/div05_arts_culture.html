@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AP కళలు & సంస్కృతి — విభాగం 5</title>
 <style>
+@page { size: A4 portrait; margin: 12mm 10mm; }
+
 body{font-family:'Segoe UI',Arial,sans-serif;font-size:13px;color:#212121;max-width:960px;margin:0 auto;padding:16px;background:#fafafa;}
 h1{background:#4a148c;color:white;padding:12px 16px;border-radius:6px;font-size:18px;margin:0 0 12px 0;}
 h2{background:#6a1b9a;color:white;padding:8px 14px;border-radius:5px;font-size:15px;margin:22px 0 10px 0;}
@@ -40,6 +42,20 @@ tr:nth-child(even){background:#f3e5f5;}
 .eenadu-title{font-weight:bold;font-size:13px;color:#4a148c;border-bottom:1px solid #ce93d8;padding-bottom:5px;margin-bottom:8px;}
 .eenadu-body{font-size:12px;line-height:1.7;color:#212121;}
 .eenadu-meta{font-size:11px;color:#555;margin-top:6px;}
+/* Large tables allowed to break across print pages */
+.breakable { page-break-inside: auto; }
+.breakable tr { page-break-inside: avoid; }
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 10mm; }
+  table { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+  .breakable thead { display: table-header-group; }
+  .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .no-break, .alert-box, .shock-box, .update-box, .recap-box, .purple-box,
+  .eenadu-article, .pyq-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+  h2 { page-break-after: avoid !important; break-after: avoid !important; }
+  h3 { page-break-after: avoid !important; break-after: avoid !important; }
+}
 </style>
 </head>
 <body>
@@ -310,8 +326,8 @@ tr:nth-child(even){background:#f3e5f5;}
 
 <div class="event-card no-break">
 <div class="event-title">🥁 విజయవాడ ఉత్సవ్ 2025 — గిన్నిస్ రికార్డు <span class="date-badge">సెప్టెంబర్-అక్టోబర్ 2025</span></div>
-<table>
-<tr><th>అంశం</th><th>వివరాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>అంశం</th><th>వివరాలు</th></tr></thead>
 <tr><td>ఉత్సవం</td><td>విజయవాడ ఉత్సవ్ 2025 (Vijayawada Utsav)</td></tr>
 <tr><td>ప్రారంభం</td><td>సెప్టెంబర్ 22, 2025; 11 రోజులు</td></tr>
 <tr><td>కార్యక్రమాలు</td><td><span class="key-num">284 కార్యక్రమాలు</span></td></tr>
@@ -396,8 +412,8 @@ tr:nth-child(even){background:#f3e5f5;}
 <p>తెలుగు <strong>ఇటాలియన్ ఆఫ్ ది ఈస్ట్</strong> అని పిలుస్తారు — ఎందుకంటే అన్ని పదాలు అచ్చుతో (vowel) ముగుస్తాయి.</p>
 </div>
 
-<table>
-<tr><th>కవి / రచయిత</th><th>కాలం</th><th>ప్రసిద్ధ రచన</th><th>బిరుదు</th></tr>
+<table class="breakable">
+<thead><tr><th>కవి / రచయిత</th><th>కాలం</th><th>ప్రసిద్ధ రచన</th><th>బిరుదు</th></tr></thead>
 <tr><td><strong>నన్నయ</strong></td><td>11వ శతాబ్దం</td><td>తెలుగు మహాభారత అనువాదం (మొదటి 2.5 అధ్యాయాలు)</td><td>ఆది కవి</td></tr>
 <tr><td><strong>తిక్కన</strong></td><td>13వ శతాబ్దం</td><td>మహాభారతం శేష భాగాలు; నిర్వచనోత్తర రామాయణం</td><td>ఉభయ కవి మిత్రుడు</td></tr>
 <tr><td><strong>ఎర్రన</strong></td><td>14వ శతాబ్దం</td><td>మహాభారత అరణ్య పర్వం</td><td>ప్రబంధ పరమేశ్వరుడు</td></tr>
@@ -411,8 +427,8 @@ tr:nth-child(even){background:#f3e5f5;}
 <h2>10. పరీక్ష సారాంశం — అన్ని సంఖ్యలు</h2>
 <!-- ============================================================ -->
 
-<table>
-<tr><th>అంశం</th><th>మొత్తం / నంబర్</th><th>గుర్తుంచుకునే విధం</th></tr>
+<table class="breakable">
+<thead><tr><th>అంశం</th><th>మొత్తం / నంబర్</th><th>గుర్తుంచుకునే విధం</th></tr></thead>
 <tr><td>AP GI ట్యాగ్‌లు (మొత్తం)</td><td><span class="key-num">21</span></td><td>హస్తకళలు 15 | ఆహారం 6</td></tr>
 <tr><td>కూచిపూడి UNESCO</td><td><span class="key-num">2008</span></td><td>Intangible (Tangible కాదు!)</td></tr>
 <tr><td>కూచిపూడి గిన్నిస్</td><td><span class="key-num">7,002</span> — ఏప్రిల్ 11, 2017</td><td>AP Social Welfare; ఆంధ్ర యూనివర్సిటీ, విశాఖ</td></tr>

@@ -6,9 +6,43 @@
 <title>AP Geography Ch2 — ఆంధ్రప్రదేశ్ నైసర్గిక స్వరూపం (Physiography)</title>
 <style>
   @page { size: A4; margin: 18mm 15mm 18mm 15mm; }
+    /* ── PRINT OVERRIDES ── */
   @media print {
-    .page-break { page-break-before: always; }
-    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+    /* Let content flow naturally — do NOT force a break after every .page div */
+    .page {
+      width: 100% !important;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 14mm 13mm !important;
+      box-shadow: none !important;
+      border: none !important;
+      page-break-after: auto !important;
+      break-after: auto !important;
+      overflow: visible !important;
+    }
+    /* Force a new print page before each major section */
+    .page-break {
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+    /* Small tables: keep together. Large tables (.breakable): allow row-level breaks */
+    table { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+    .breakable thead { display: table-header-group; }
+    .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    /* Keep small info boxes intact */
+    .no-break, .alert-box, .shock-box, .update-box,
+    .recap-box, .eenadu-article, .pyq-box {
+      page-break-inside: avoid !important; break-inside: avoid !important;
+    }
+    h2, h3 { page-break-after: avoid !important; break-after: avoid !important; }
+    h1 { page-break-before: avoid !important; }
+    .footer { display: block !important; }
+    .page-num::after { content: counter(page); }
+    .key-num { background: none !important; color: #b71c1c !important; font-weight: 700; padding: 0; }
+    .trick-tag { background: none !important; color: #1b5e20 !important; border: 1px solid #1b5e20; }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -87,7 +121,7 @@
   li { margin-bottom: 3px; }
   .two-col { display: flex; gap: 12px; }
   .two-col > div { flex: 1; }
-  .eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: hidden; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
+  .eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: visible; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
   .eenadu-title { background: #d32f2f; color: white; font-weight: bold; font-size: 11.5px; padding: 6px 10px; letter-spacing: 0.3px; }
   .eenadu-body { padding: 7px 10px; font-size: 10.5px; line-height: 1.7; color: #212121; }
   .eenadu-meta { background: #ffebee; font-size: 9.5px; padding: 4px 10px; color: #b71c1c; border-top: 1px solid #ffcdd2; }
@@ -196,8 +230,8 @@
 </div>
 
 <h3>జిల్లాలవారీ ప్రధాన కొండలు (District-wise Hills)</h3>
-<table>
-<tr><th>జిల్లా / ప్రాంతం</th><th>కొండలు</th></tr>
+<table class="breakable">
+<thead><tr><th>జిల్లా / ప్రాంతం</th><th>కొండలు</th></tr></thead>
 <tr><td>విశాఖపట్నం &amp; అల్లూరి సీతారామరాజు</td><td>యూరాడ్‌కొండ, అనంతగిరి, డాల్కొండలు, సింహాగిరి</td></tr>
 <tr><td>శ్రీకాకుళం &amp; పార్వతీపురం మన్యం</td><td>మహేంద్రగిరి కొండలు</td></tr>
 <tr><td>గుంటూరు, పల్నాడు, బాపట్ల</td><td>బెల్లంకొండ, నాగార్జునకొండ, వినుకొండ, కొటప్పకొండ, కొండవీడు</td></tr>
@@ -250,8 +284,8 @@
 <div class="two-col">
 <div>
 <h3>కొల్లేరు సరస్సు (Kolleru Lake)</h3>
-<table>
-<tr><th>అంశం</th><th>వివరాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>అంశం</th><th>వివరాలు</th></tr></thead>
 <tr><td>స్థానం</td><td>ఏలూరు జిల్లా (కృష్ణ-గోదావరి డెల్టాల మధ్య)</td></tr>
 <tr><td>విస్తీర్ణం</td><td><span class="key-num">260 చ.కి.మీ</span></td></tr>
 <tr><td>నీటి రకం</td><td>మంచినీరు (Freshwater)</td></tr>
@@ -263,8 +297,8 @@
 </div>
 <div>
 <h3>పులికాట్ సరస్సు (Pulicat Lake)</h3>
-<table>
-<tr><th>అంశం</th><th>వివరాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>అంశం</th><th>వివరాలు</th></tr></thead>
 <tr><td>స్థానం</td><td>తిరుపతి జిల్లా (AP-TN border)</td></tr>
 <tr><td>మొత్తం విస్తీర్ణం</td><td><span class="key-num">759 చ.కి.మీ</span> (total lagoon area)</td></tr>
 <tr><td>నీటి విస్తీర్ణం (water spread)</td><td><span class="key-num">460 చ.కి.మీ</span> (monsoon) / 250 (dry)</td></tr>

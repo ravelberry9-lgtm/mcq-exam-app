@@ -25,7 +25,7 @@ tr:nth-child(even) { background: #f5f5f5; }
 .section-divider { border: none; border-top: 2px dashed #ccc; margin: 8px 0; }
 ul, ol { margin-left: 15px; margin-bottom: 5px; }
 li { margin-bottom: 2px; }
-.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: hidden; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
+.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: visible; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
 .eenadu-title { background: #d32f2f; color: white; font-weight: bold; font-size: 11.5px; padding: 6px 10px; letter-spacing: 0.3px; }
 .eenadu-body { padding: 7px 10px; font-size: 10.5px; line-height: 1.7; color: #212121; }
 .eenadu-meta { background: #ffebee; font-size: 9.5px; padding: 4px 10px; color: #b71c1c; border-top: 1px solid #ffcdd2; }
@@ -34,6 +34,44 @@ li { margin-bottom: 2px; }
 .pyq-box { background: #fffde7; border-left: 4px solid #f57f17; padding: 6px 10px; margin: 6px 0; font-size: 10.5px; }
 .pyq-box strong { color: #e65100; }
 .pyq-head { background: #f57f17; color: white; font-weight: bold; font-size: 12px; padding: 5px 10px; border-radius: 4px 4px 0 0; margin-top: 12px; letter-spacing: 0.3px; }
+  /* ── PRINT OVERRIDES ── */
+  @media print {
+    html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+    /* Let content flow naturally — do NOT force a break after every .page div */
+    .page {
+      width: 100% !important;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 14mm 13mm !important;
+      box-shadow: none !important;
+      border: none !important;
+      page-break-after: auto !important;
+      break-after: auto !important;
+      overflow: visible !important;
+    }
+    /* Force a new print page before each major section */
+    .page-break {
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+    /* Small tables: keep together. Large tables (.breakable): allow row-level breaks */
+    table { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+    .breakable thead { display: table-header-group; }
+    .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    /* Keep small info boxes intact */
+    .no-break, .alert-box, .shock-box, .update-box,
+    .recap-box, .eenadu-article, .pyq-box {
+      page-break-inside: avoid !important; break-inside: avoid !important;
+    }
+    h2, h3 { page-break-after: avoid !important; break-after: avoid !important; }
+    h1 { page-break-before: avoid !important; }
+    .footer { display: block !important; }
+    .page-num::after { content: counter(page); }
+    .key-num { background: none !important; color: #b71c1c !important; font-weight: 700; padding: 0; }
+    .trick-tag { background: none !important; color: #1b5e20 !important; border: 1px solid #1b5e20; }
+  }
 </style>
 </style>
 </head>
@@ -155,12 +193,12 @@ AP Geography | Mineral Resources in Andhra Pradesh
 <!-- SECTION 3: MAJOR MINING REGIONS -->
 <h2>ప్రధాన మైనింగ్ ప్రాంతాలు</h2>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>ఖనిజము</th>
 <th>ఉత్పత్తి కేంద్రాలు</th>
 <th>జిల్లాలు</th>
-</tr>
+</tr></thead>
 <tr>
 <td><strong>కాజార్ (Feldspar)</strong></td>
 <td>అగ్గిగుండాల, బొందలమొట్టు, జంగంరాజపల్లి, గనికాలవ, మాదిగుబ్బ</td>
@@ -209,13 +247,13 @@ AP Geography | Mineral Resources in Andhra Pradesh
 
 <p style="font-size: 10px; margin-bottom: 5px; color: #666;"><strong>మూలం:</strong> పాఠ్యపుస్తకం పేజీ 78 | A4-సరిపరిచిన సంక్షిప్త రూపం</p>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>నం.</th>
 <th>ఖనిజము</th>
 <th>ఉత్పత్తి ప్రాంతాలు</th>
 <th>నిక్షేపాల జిల్లాలు</th>
-</tr>
+</tr></thead>
 <tr>
 <td>1</td>
 <td>బెరైటీస్</td>
@@ -385,13 +423,13 @@ AP Geography | Mineral Resources in Andhra Pradesh
 
 <p><strong>AP లో ఖనిజ సంపదలో గ్రానైట్ ఒక ప్రముఖ స్థానం కలిగి ఉంది. వివిధ రంగుల గ్రానైట్ ఖనిజాలు:</strong></p>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>గ్రానైట్ రకం</th>
 <th>రంగు</th>
 <th>ఉత్పత్తి జిల్లా</th>
 <th>విశేషం</th>
-</tr>
+</tr></thead>
 <tr>
 <td>బ్లూ గ్రానైట్</td>
 <td>నీలం</td>
@@ -723,12 +761,12 @@ AP Geography | Mineral Resources in Andhra Pradesh
 
 <h3>AP ఖనిజ సంపద గురించిన కీలక అంశాలు:</h3>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>నం.</th>
 <th>ముఖ్యమైన అంశం</th>
 <th>వివరణ/ఆధారం</th>
-</tr>
+</tr></thead>
 <tr>
 <td>1</td>
 <td><span class="trick-tag">TRICKY</span> AP రత్నగర్భ</td>
@@ -797,13 +835,13 @@ AP Geography | Mineral Resources in Andhra Pradesh
 
 <h3>1. బహుళ ఎంపిక ప్రశ్నలు:</h3>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>Q. నం.</th>
 <th>ప్రశ్న</th>
 <th>ఎంపికలు</th>
 <th>సమాధానం</th>
-</tr>
+</tr></thead>
 <tr>
 <td>1</td>
 <td>AP కు "రత్నగర్భ" అని ఎవరు అన్నారు?</td>

@@ -28,7 +28,7 @@ li { margin-bottom: 2px; }
 .no-break { page-break-inside: avoid; }
 .survey-tag { display: inline-block; background: #2e7d32; color: white; font-size: 9px; padding: 1px 5px; border-radius: 3px; margin-right: 4px; }
 .book-tag { display: inline-block; background: #1565c0; color: white; font-size: 9px; padding: 1px 5px; border-radius: 3px; margin-right: 4px; }
-.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: hidden; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
+.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: visible; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
 .eenadu-title { background: #d32f2f; color: white; font-weight: bold; font-size: 11.5px; padding: 6px 10px; letter-spacing: 0.3px; }
 .eenadu-body { padding: 7px 10px; font-size: 10.5px; line-height: 1.7; color: #212121; }
 .eenadu-meta { background: #ffebee; font-size: 9.5px; padding: 4px 10px; color: #b71c1c; border-top: 1px solid #ffcdd2; }
@@ -37,6 +37,44 @@ li { margin-bottom: 2px; }
 .pyq-box { background: #fffde7; border-left: 4px solid #f57f17; padding: 6px 10px; margin: 6px 0; font-size: 10.5px; }
 .pyq-box strong { color: #e65100; }
 .pyq-head { background: #f57f17; color: white; font-weight: bold; font-size: 12px; padding: 5px 10px; border-radius: 4px 4px 0 0; margin-top: 12px; letter-spacing: 0.3px; }
+  /* ── PRINT OVERRIDES ── */
+  @media print {
+    html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+    /* Let content flow naturally — do NOT force a break after every .page div */
+    .page {
+      width: 100% !important;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 14mm 13mm !important;
+      box-shadow: none !important;
+      border: none !important;
+      page-break-after: auto !important;
+      break-after: auto !important;
+      overflow: visible !important;
+    }
+    /* Force a new print page before each major section */
+    .page-break {
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+    /* Small tables: keep together. Large tables (.breakable): allow row-level breaks */
+    table { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+    .breakable thead { display: table-header-group; }
+    .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    /* Keep small info boxes intact */
+    .no-break, .alert-box, .shock-box, .update-box,
+    .recap-box, .eenadu-article, .pyq-box {
+      page-break-inside: avoid !important; break-inside: avoid !important;
+    }
+    h2, h3 { page-break-after: avoid !important; break-after: avoid !important; }
+    h1 { page-break-before: avoid !important; }
+    .footer { display: block !important; }
+    .page-num::after { content: counter(page); }
+    .key-num { background: none !important; color: #b71c1c !important; font-weight: 700; padding: 0; }
+    .trick-tag { background: none !important; color: #1b5e20 !important; border: 1px solid #1b5e20; }
+  }
 </style>
 </style>
 </head>
@@ -50,8 +88,8 @@ li { margin-bottom: 2px; }
 <h2>1. రోడ్డు రవాణా (Road Transport)</h2>
 
 <h3>రోడ్ల మొత్తం పొడవు (Total Road Length)</h3>
-<table>
-<tr><th>రోడ్ల విభాగం</th><th>పాఠ్యపుస్తకం (2022)</th><th>సర్వే 2024-25</th></tr>
+<table class="breakable">
+<thead><tr><th>రోడ్ల విభాగం</th><th>పాఠ్యపుస్తకం (2022)</th><th>సర్వే 2024-25</th></tr></thead>
 <tr><td>జాతీయ రహదారులు (NHs)</td><td><span class="key-num">8,163.72 కి.మీ</span></td><td><span class="key-num">8,744 కి.మీ (55 NHలు)</span></td></tr>
 <tr><td>ఆర్&amp;బి రహదారులు (NHలు మినహా)</td><td><span class="key-num">45,321 కి.మీ</span></td><td><span class="key-num">45,379 కి.మీ</span></td></tr>
 <tr><td>&nbsp;&nbsp;— రాష్ట్ర రహదారులు (SHs)</td><td>12,595.60 కి.మీ</td><td>12,653 కి.మీ</td></tr>
@@ -91,8 +129,8 @@ li { margin-bottom: 2px; }
 </div>
 
 <h3>రాష్ట్ర రహదారులు (State Highways) — మొత్తం 24</h3>
-<table>
-<tr><th>SH</th><th>మార్గం</th><th>జిల్లా</th></tr>
+<table class="breakable">
+<thead><tr><th>SH</th><th>మార్గం</th><th>జిల్లా</th></tr></thead>
 <tr><td>SH 2</td><td>Macherla – Piduguralla – Sattenapalle – Guntur</td><td>గుంటూరు</td></tr>
 <tr><td>SH 30</td><td>Anantapur – Tadipatri – Bugga</td><td>అనంతపురు</td></tr>
 <tr><td>SH 31</td><td>Kadapa – Rajampet – Koduru – Renigunta</td><td>కడప, చిత్తూరు</td></tr>
@@ -106,8 +144,8 @@ li { margin-bottom: 2px; }
 <div class="recap-box">రాష్ట్ర రహదారులు ప్రత్యేకంగా జిల్లా కేంద్రాలను రాష్ట్ర రాజధాని నగరంతో అనుసంధానం చేస్తాయి. మొత్తం పొడవు: <span class="key-num">12,595.60 కి.మీ</span> (పాఠ్యపుస్తకం) | <span class="key-num">12,653 కి.మీ</span> (సర్వే 2024-25)</div>
 
 <h3>APSRTC — ఆంధ్రప్రదేశ్ రాష్ట్ర రోడ్ రవాణా సంస్థ</h3>
-<table>
-<tr><th>విభాగం</th><th>పాఠ్యపుస్తకం</th><th>సర్వే 2024-25</th></tr>
+<table class="breakable">
+<thead><tr><th>విభాగం</th><th>పాఠ్యపుస్తకం</th><th>సర్వే 2024-25</th></tr></thead>
 <tr><td>జోన్ల సంఖ్య</td><td colspan="2"><span class="key-num">4 జోన్లు</span>: 1.నెల్లూరు, 2.కడప, 3.విజయవాడ, 4.విజయనగరం</td></tr>
 <tr><td>రీజియన్లు</td><td colspan="2">12 రీజియన్లు</td></tr>
 <tr><td>డిపోలు</td><td>129 డిపోలు</td><td>129 డిపోలు</td></tr>
@@ -180,8 +218,8 @@ li { margin-bottom: 2px; }
 </div>
 
 <h3>ముఖ్యమైన రైల్వే మైలురాళ్ళు</h3>
-<table>
-<tr><th>విషయం</th><th>వివరాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>విషయం</th><th>వివరాలు</th></tr></thead>
 <tr><td>క్యారేజ్ రిపేర్ షాప్ (Carriage Repair Shop)</td><td><span class="key-num">తిరుపతి</span></td></tr>
 <tr><td>రైల్వే వ్యాగన్ వర్క్‌షాప్</td><td><span class="key-num">విజయవాడ సమీపంలో గుంటుపల్లి</span></td></tr>
 <tr><td>దక్షిణమధ్య రైల్వే మొదటి డీజెల్ లోకోమోటివ్ షెడ్</td><td>గుడూరు-గుంటూరు మధ్య, <span class="key-num">2014లో</span> 13వది ప్రారంభం</td></tr>
@@ -252,8 +290,8 @@ li { margin-bottom: 2px; }
 <div class="recap-box">రవాణా మార్గాలలో అతిచవక ఖర్చుతో కూడుకున్న రవాణా, అతికినం వేగంగా సరుకులు సుదూర ప్రాంతాలకు చేర్చే రవాణా. రాష్ట్రంలో కేంద్ర ప్రభుత్వ అధీనంలో <span class="key-num">విశాఖ (ప్రధాన ఓడరేవు)</span> మరియు రాష్ట్ర ప్రభుత్వ అధీనంలో <span class="key-num">14 చిన్నతరం ఓడరేవులు</span> ఉన్నాయి. రాష్ట్ర తీరం పొడవు: <span class="key-num">972 కి.మీ లేదా 974 కి.మీ</span> (పాఠ్యపుస్తకం) | <span class="key-num">1,053.07 కి.మీ</span> (సర్వే 2024-25)</div>
 
 <h3>విశాఖపట్నం ఓడరేవు (Visakhapatnam Port — Major Port)</h3>
-<table>
-<tr><th>విభాగం</th><th>వివరాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>విభాగం</th><th>వివరాలు</th></tr></thead>
 <tr><td>నిర్వహణ</td><td>కేంద్ర ప్రభుత్వం (భారత ప్రభుత్వ అధీనం)</td></tr>
 <tr><td>ప్రత్యేకత</td><td><span class="key-num">దేశంలో అత్యంత లోతైన సహజ సిద్ధిమైన ఓడరేవు</span></td></tr>
 <tr><td>దేశంలో పెట్రోలియం దిగుమతికి</td><td>ముంబై ఓడరేవు తర్వాత <span class="key-num">2వ స్థానం</span></td></tr>
@@ -268,8 +306,8 @@ li { margin-bottom: 2px; }
 </table>
 
 <h3>రాష్ట్ర ప్రభుత్వ అధీనంలో ఉన్న చిన్నతరం ఓడరేవులు (14)</h3>
-<table>
-<tr><th>క్ర.సం.</th><th>ఓడరేవు పేరు</th><th>జిల్లా</th><th>ప్రత్యేకత / ముఖ్య సమాచారం</th></tr>
+<table class="breakable">
+<thead><tr><th>క్ర.సం.</th><th>ఓడరేవు పేరు</th><th>జిల్లా</th><th>ప్రత్యేకత / ముఖ్య సమాచారం</th></tr></thead>
 <tr><td>1</td><td><span class="key-num">కాకినాడ లంగరు ఓడరేవు (యాంకరేజ్ పోర్ట్)</span></td><td>తూర్పుగోదావరి</td><td>హింటర్‌ల్యాండ్‌కు 17 కి.మీ దూరం; విశాఖకు 145 కి.మీ దక్షిణం; ఎగుమతులు: ముడి ఇనుం, టేకు, బియ్యం, పొగాకు; సర్వే కార్గో: <span class="key-num">2.326 MMT</span></td></tr>
 <tr><td>2</td><td><span class="key-num">కాకినాడ డీప్‌వాటర్ పోర్ట్</span></td><td>తూర్పుగోదావరి</td><td>OMST (BOT) విధానం; కాకినాడ సీపోర్ట్స్ లిమిటెడ్ (KSPL) నిర్వహణ (ఏప్రిల్ 1, 1999); రాష్ట్రానికి 22% ఆదాయం; ఎగుమతులు: రసాయన ఎరువులు, గ్రానైట్; సర్వే కార్గో: <span class="key-num">11.15 MMT</span></td></tr>
 <tr><td>3</td><td><span class="key-num">గంగవరం ఓడరేవు</span></td><td>విశాఖపట్నం</td><td>విశాఖకు 15 కి.మీ; <span class="key-num">దేశంలో అత్యంత లోతైన ఓడరేవు (21 మీటర్లు)</span>; 2009 జులై 12న YSR ఉద్ఘాటన; "Eco-Friendly" ఓడరేవు; <span class="key-num">PPP</span> (ప్రభుత్వ-ప్రైవేట్ భాగస్వామ్యం) నమూనాలో నిర్మించారు; సర్వే కార్గో: <span class="key-num">16.201 MMT</span> (Million Metric Tonnes — సంవత్సరానికి కార్గో)</td></tr>
@@ -384,8 +422,8 @@ li { margin-bottom: 2px; }
 <div class="update-box"><strong>సర్వే 2024-25 ప్రకారం:</strong> ప్రస్తుత ఆపరేషనల్ విమానాశ్రయాలు 6: విశాఖపట్నం, విజయవాడ, తిరుపతి, రాజమండ్రి, కడప, <span class="key-num">ఓర్వకల్లు (కర్నూలు)</span></div>
 
 <h3>నిర్మాణంలో ఉన్న విమానాశ్రయం</h3>
-<table>
-<tr><th>విమానాశ్రయం</th><th>వివరాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>విమానాశ్రయం</th><th>వివరాలు</th></tr></thead>
 <tr><td colspan="2" style="padding:0">
 <table style="width:100%;border:none;margin:0">
 <tr style="background:#e8f5e9">
@@ -444,8 +482,8 @@ li { margin-bottom: 2px; }
 <hr class="section-divider">
 
 <h2>ముఖ్యాంశాలు — పేజీ 105 (Key Facts)</h2>
-<table>
-<tr><th>విషయం</th><th>సమాచారం</th><th>గుర్తింపు</th></tr>
+<table class="breakable">
+<thead><tr><th>విషయం</th><th>సమాచారం</th><th>గుర్తింపు</th></tr></thead>
 <tr><td>AP గుండా వెళ్ళే జాతీయ రహదారులు</td><td><span class="key-num">52 NHలు</span> (పాఠ్యపుస్తకం) | <span class="key-num">55 NHలు</span> (సర్వే 2024-25)</td><td>పాఠ్యపుస్తకం vs సర్వే గమనించండి</td></tr>
 <tr><td>NH సాంద్రత (ప్రతి లక్ష జనాభాకు)</td><td><span class="key-num">16.53 కి.మీ</span> (దేశం: 10.89 కి.మీ)</td><td>AP ఎక్కువ</td></tr>
 <tr><td>అతి పొడవైన NH</td><td><span class="key-num">NH-16 (1,024 కి.మీ)</span></td><td>చెన్నై-కోలకత్తా</td></tr>

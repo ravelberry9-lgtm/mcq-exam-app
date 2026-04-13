@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AP చరిత్ర & స్వాతంత్ర్య సమరయోధులు — విభాగం 7</title>
 <style>
+@page { size: A4 portrait; margin: 12mm 10mm; }
+
 body{font-family:'Segoe UI',Arial,sans-serif;font-size:13px;color:#212121;max-width:960px;margin:0 auto;padding:16px;background:#fafafa;}
 h1{background:#4e342e;color:white;padding:12px 16px;border-radius:6px;font-size:18px;margin:0 0 12px 0;}
 h2{background:#6d4c41;color:white;padding:8px 14px;border-radius:5px;font-size:15px;margin:22px 0 10px 0;}
@@ -41,6 +43,20 @@ tr:nth-child(even){background:#efebe9;}
 .eenadu-title{font-weight:bold;font-size:13px;color:#4e342e;border-bottom:1px solid #bcaaa4;padding-bottom:5px;margin-bottom:8px;}
 .eenadu-body{font-size:12px;line-height:1.7;color:#212121;}
 .eenadu-meta{font-size:11px;color:#555;margin-top:6px;}
+/* Large tables allowed to break across print pages */
+.breakable { page-break-inside: auto; }
+.breakable tr { page-break-inside: avoid; }
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 10mm; }
+  table { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+  .breakable thead { display: table-header-group; }
+  .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .no-break, .alert-box, .shock-box, .update-box, .recap-box, .purple-box,
+  .eenadu-article, .pyq-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+  h2 { page-break-after: avoid !important; break-after: avoid !important; }
+  h3 { page-break-after: avoid !important; break-after: avoid !important; }
+}
 </style>
 </head>
 <body>
@@ -68,8 +84,8 @@ tr:nth-child(even){background:#efebe9;}
 <!-- SECTION 2: ANCIENT DYNASTIES -->
 <h2>2. 🏺 ప్రాచీన రాజవంశాలు (Ancient Dynasties)</h2>
 
-<table>
-<tr><th>రాజవంశం</th><th>కాలం</th><th>రాజధాని</th><th>ముఖ్య పాలకుడు / విషయం</th></tr>
+<table class="breakable">
+<thead><tr><th>రాజవంశం</th><th>కాలం</th><th>రాజధాని</th><th>ముఖ్య పాలకుడు / విషయం</th></tr></thead>
 <tr><td><strong>సాతవాహనులు</strong></td><td>క్రీ.పూ. 2వ శ. – క్రీ.శ. 2వ శ.</td><td>అమరావతి, ధాన్యకటకం, ప్రతిష్ఠానపుర</td><td>గౌతమీపుత్ర సాతకర్ణి — అత్యంత శక్తిమంతుడు; బుద్ధిస్ట్ అమరావతి స్తూపం నిర్మాణం</td></tr>
 <tr><td><strong>ఇక్ష్వాకులు</strong></td><td>క్రీ.శ. 3వ శతాబ్దం</td><td>విజయపురి (నాగార్జునకొండ)</td><td>సాతవాహనుల వారసులు; బుద్ధిజం పోషణ; నాగార్జునకొండ త్రవ్వకాలు</td></tr>
 <tr><td><strong>పూర్వ చాళుక్యులు (వేంగి)</strong></td><td>క్రీ.శ. 7వ శ. – 1130</td><td>వేంగి (ఏలూరు సమీపం)</td><td>తెలుగు సాహిత్య పోషకులు; "తెలుగు దేశం" అనే పదం ఈ కాలంలో పుట్టింది</td></tr>
@@ -205,8 +221,8 @@ tr:nth-child(even){background:#efebe9;}
 <!-- SECTION 7: ARCHAEOLOGICAL SITES -->
 <h2>7. 🏺 ముఖ్య పురావస్తు / చారిత్రిక ప్రాంతాలు</h2>
 
-<table>
-<tr><th>ప్రాంతం</th><th>జిల్లా</th><th>చారిత్రిక ప్రాధాన్యత</th></tr>
+<table class="breakable">
+<thead><tr><th>ప్రాంతం</th><th>జిల్లా</th><th>చారిత్రిక ప్రాధాన్యత</th></tr></thead>
 <tr><td><strong>అమరావతి స్తూప</strong></td><td>గుంటూరు</td><td>సాతవాహన కాలం; బుద్ధిస్ట్ కళకు నిలయం; UNESCO ప్రతిపాదన</td></tr>
 <tr><td><strong>నాగార్జునకొండ</strong></td><td>నల్లమల కొండలు</td><td>ఇక్ష్వాకుల రాజధాని; బుద్ధిస్ట్ విశ్వవిద్యాలయం; ఇప్పుడు నాగార్జున సాగర్ జలాశయంలో మునిగింది</td></tr>
 <tr><td><strong>హంపి</strong></td><td>కర్నాటక (AP సరిహద్దు)</td><td>విజయనగర సామ్రాజ్య రాజధాని; UNESCO World Heritage Site</td></tr>
@@ -232,8 +248,8 @@ tr:nth-child(even){background:#efebe9;}
 <!-- SECTION 9: SUMMARY TABLE -->
 <h2>9. 📊 పరీక్ష రేపిడ్ రివిజన్ పట్టిక</h2>
 
-<table>
-<tr><th>విభాగం</th><th>కీలక వాస్తవం</th><th>సంఖ్య / తేదీ</th></tr>
+<table class="breakable">
+<thead><tr><th>విభాగం</th><th>కీలక వాస్తవం</th><th>సంఖ్య / తేదీ</th></tr></thead>
 <tr><td>సాతవాహన రాజధాని</td><td>అమరావతి / ధాన్యకటకం</td><td>క్రీ.పూ. 2వ శ. – క్రీ.శ. 2వ శ.</td></tr>
 <tr><td>కాకతీయ రాజధాని</td><td>వరంగల్ (ఓరుగల్లు)</td><td>1000–1323 CE</td></tr>
 <tr><td>విజయనగర స్థాపన</td><td>హరిహర I + బుక్క రాయ I</td><td>1336 CE</td></tr>

@@ -25,7 +25,7 @@ tr:nth-child(even) { background: #f5f5f5; }
 .section-divider { border: none; border-top: 2px dashed #ccc; margin: 8px 0; }
 ul, ol { margin-left: 15px; margin-bottom: 5px; }
 li { margin-bottom: 2px; }
-.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: hidden; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
+.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: visible; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
 .eenadu-title { background: #d32f2f; color: white; font-weight: bold; font-size: 11.5px; padding: 6px 10px; letter-spacing: 0.3px; }
 .eenadu-body { padding: 7px 10px; font-size: 10.5px; line-height: 1.7; color: #212121; }
 .eenadu-meta { background: #ffebee; font-size: 9.5px; padding: 4px 10px; color: #b71c1c; border-top: 1px solid #ffcdd2; }
@@ -34,6 +34,44 @@ li { margin-bottom: 2px; }
 .pyq-box { background: #fffde7; border-left: 4px solid #f57f17; padding: 6px 10px; margin: 6px 0; font-size: 10.5px; }
 .pyq-box strong { color: #e65100; }
 .pyq-head { background: #f57f17; color: white; font-weight: bold; font-size: 12px; padding: 5px 10px; border-radius: 4px 4px 0 0; margin-top: 12px; letter-spacing: 0.3px; }
+  /* ── PRINT OVERRIDES ── */
+  @media print {
+    html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+    /* Let content flow naturally — do NOT force a break after every .page div */
+    .page {
+      width: 100% !important;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 14mm 13mm !important;
+      box-shadow: none !important;
+      border: none !important;
+      page-break-after: auto !important;
+      break-after: auto !important;
+      overflow: visible !important;
+    }
+    /* Force a new print page before each major section */
+    .page-break {
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+    /* Small tables: keep together. Large tables (.breakable): allow row-level breaks */
+    table { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+    .breakable thead { display: table-header-group; }
+    .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    /* Keep small info boxes intact */
+    .no-break, .alert-box, .shock-box, .update-box,
+    .recap-box, .eenadu-article, .pyq-box {
+      page-break-inside: avoid !important; break-inside: avoid !important;
+    }
+    h2, h3 { page-break-after: avoid !important; break-after: avoid !important; }
+    h1 { page-break-before: avoid !important; }
+    .footer { display: block !important; }
+    .page-num::after { content: counter(page); }
+    .key-num { background: none !important; color: #b71c1c !important; font-weight: 700; padding: 0; }
+    .trick-tag { background: none !important; color: #1b5e20 !important; border: 1px solid #1b5e20; }
+  }
 </style>
 </style>
 </head>
@@ -79,13 +117,13 @@ AP Geography | Tourism in Andhra Pradesh (pp.108-111)
 <!-- SECTION 2: MAJOR TOURIST PLACES -->
 <h2>ముఖ్యమైన పర్యాటక ప్రదేశాలు | Major Tourist Places</h2>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>సీ.నం.</th>
 <th>ప్రదేశం</th>
 <th>జిల్లా / ప్రాంతం</th>
 <th>విశిష్టత</th>
-</tr>
+</tr></thead>
 <tr>
 <td><span class="key-num">1</span></td>
 <td><strong>కర్నూలు</strong></td>
@@ -215,11 +253,11 @@ AP Geography | Tourism in Andhra Pradesh (pp.108-111)
 <strong>📊 జలపాతాలు (Waterfalls):</strong> AP లో <span class="key-num">31</span> జలపాతాలు నమోదయ్యాయి (pp.111)
 </div>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>జిల్లా</th>
 <th>జలపాతాలు</th>
-</tr>
+</tr></thead>
 <tr>
 <td><strong>Srikakulam</strong></td>
 <td>సన్నాసు గెద్ద, మెట్టగుత, గోసం</td>
@@ -279,13 +317,13 @@ AP Geography | Tourism in Andhra Pradesh (pp.108-111)
 <strong>📌 నిర్వహణ:</strong> APTDC (Andhra Pradesh Tourism Development Corporation) ద్వారా నిర్వహించబడుతున్న 7 పర్యాటక విభాగాలు
 </div>
 
-<table>
-<tr>
+<table class="breakable">
+<thead><tr>
 <th>సీ.నం.</th>
 <th>పర్యాటక విభాగం</th>
 <th>కవర్డ్ జిల్లాలు</th>
 <th>ప్రధాన ఆకర్షణలు</th>
-</tr>
+</tr></thead>
 <tr>
 <td><span class="key-num">1</span></td>
 <td><strong>విశాఖపట్నం డివిజన్</strong></td>

@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AP ఆర్థిక వ్యవస్థ, పరిశ్రమలు & మౌలిక సదుపాయాలు — విభాగం 6</title>
 <style>
+@page { size: A4 portrait; margin: 12mm 10mm; }
+
 body{font-family:'Segoe UI',Arial,sans-serif;font-size:13px;color:#212121;max-width:960px;margin:0 auto;padding:16px;background:#fafafa;}
 h1{background:#0d47a1;color:white;padding:12px 16px;border-radius:6px;font-size:18px;margin:0 0 12px 0;}
 h2{background:#1565c0;color:white;padding:8px 14px;border-radius:5px;font-size:15px;margin:22px 0 10px 0;}
@@ -42,6 +44,20 @@ tr:nth-child(even){background:#e3f2fd;}
 .eenadu-meta{font-size:11px;color:#555;margin-top:6px;}
 .invest-bar{background:#e3f2fd;border-radius:6px;padding:6px 10px;margin:4px 0;font-size:12px;display:flex;gap:8px;align-items:center;}
 .invest-amount{background:#0d47a1;color:white;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:bold;white-space:nowrap;}
+/* Large tables allowed to break across print pages */
+.breakable { page-break-inside: auto; }
+.breakable tr { page-break-inside: avoid; }
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 10mm; }
+  table { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+  .breakable thead { display: table-header-group; }
+  .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .no-break, .alert-box, .shock-box, .update-box, .recap-box, .purple-box,
+  .eenadu-article, .pyq-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+  h2 { page-break-after: avoid !important; break-after: avoid !important; }
+  h3 { page-break-after: avoid !important; break-after: avoid !important; }
+}
 </style>
 </head>
 <body>
@@ -83,8 +99,8 @@ tr:nth-child(even){background:#e3f2fd;}
 <h2>1. AP ఆర్థిక స్థితిగతులు — స్నాప్‌షాట్ (2024-25)</h2>
 <!-- ============================================================ -->
 
-<table>
-<tr><th>సూచిక (Indicator)</th><th>విలువ (Value)</th><th>విశేషం</th></tr>
+<table class="breakable">
+<thead><tr><th>సూచిక (Indicator)</th><th>విలువ (Value)</th><th>విశేషం</th></tr></thead>
 <tr><td>GSDP (ప్రస్తుత ధరలు)</td><td><span class="key-num">₹16.41 లక్షల కోట్లు</span></td><td>2023-24 కంటే 12.5% వృద్ధి</td></tr>
 <tr><td>GSDP వాస్తవ వృద్ధిరేటు</td><td><span class="key-num">8.21%</span></td><td>దేశంలో 7వ స్థానం</td></tr>
 <tr><td>జాతీయ GDP లో సహకారం</td><td><span class="key-num">4.72%</span></td><td>జనాభా వాటా కేవలం 3.78%</td></tr>
@@ -204,8 +220,8 @@ tr:nth-child(even){background:#e3f2fd;}
 <div class="sector-card">
 <div class="sector-title">⛏️ ఖనిజ సంపద (Mineral Resources)</div>
 <div class="sector-para">ఆంధ్రప్రదేశ్ ఖనిజ సంపదలో సమృద్ధంగా ఉంది. <strong>AP Barites ఉత్పత్తిలో దేశంలో 1వ స్థానం</strong> (ప్రపంచంలో అతి పెద్ద Barites నిల్వలు కడప జిల్లాలో).</div>
-<table>
-<tr><th>Heavy Minerals (మార్చి 2026 లోక్‌సభ వెల్లడి)</th><th>నిల్వలు</th></tr>
+<table class="breakable">
+<thead><tr><th>Heavy Minerals (మార్చి 2026 లోక్‌సభ వెల్లడి)</th><th>నిల్వలు</th></tr></thead>
 <tr><td>మొత్తం Heavy Mineral deposits</td><td><span class="key-num">359.79 MT</span> (25 deposits)</td></tr>
 <tr><td>Ilmenite (ఇల్మెనైట్)</td><td>178.75 MT (అతిపెద్ద)</td></tr>
 <tr><td>Garnet (గార్నెట్)</td><td>67.30 MT</td></tr>
@@ -256,8 +272,8 @@ tr:nth-child(even){background:#e3f2fd;}
 <!-- ============================================================ -->
 
 <h3>⚓ పోర్టులు (Ports)</h3>
-<table>
-<tr><th>రకం</th><th>పోర్టు పేర్లు</th><th>విశేషాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>రకం</th><th>పోర్టు పేర్లు</th><th>విశేషాలు</th></tr></thead>
 <tr><td><strong>ప్రధాన పోర్టు (Major Port)</strong></td><td>విశాఖపట్నం (VPA)</td><td>దేశంలో అతిపెద్ద Eastern Coast Port; VPA = Visakhapatnam Port Authority</td></tr>
 <tr><td rowspan="4"><strong>నాన్-మేజర్ పోర్టులు</strong></td><td>కృష్ణపట్నం</td><td>2వ అతిపెద్ద non-major port (AP); Electronics & Coal</td></tr>
 <tr><td>గంగవరం</td><td>విశాఖపట్నం సమీపంలో; ప్రైవేట్</td></tr>
@@ -328,8 +344,8 @@ tr:nth-child(even){background:#e3f2fd;}
 <h2>9. కరెంట్ అఫైర్స్ 2024–2026 — కాలక్రమం</h2>
 <!-- ============================================================ -->
 
-<table>
-<tr><th>తేది</th><th>సంఘటన</th><th>ముఖ్య వివరాలు</th></tr>
+<table class="breakable">
+<thead><tr><th>తేది</th><th>సంఘటన</th><th>ముఖ్య వివరాలు</th></tr></thead>
 <tr><td>2024 జూన్ 2</td><td>అమరావతి రాజధాని హోదా (retroactively)</td><td>TDP నేతృత్వ ప్రభుత్వం అధికారంలోకి వచ్చిన రోజే అమలు</td></tr>
 <tr><td>2024 డిసెంబర్ 14</td><td>Swarnandhra 2047 విజన్ ఆవిష్కరణ</td><td>CM చంద్రబాబు; $2.4 Trillion GSDP లక్ష్యం</td></tr>
 <tr><td>2025 జనవరి</td><td>WEF Davos 2025 — AP పాల్గొనడం</td><td>గ్రీన్ ఎనర్జీ, హైడ్రోజన్ ఫోకస్; ₹10 లక్షల కోట్ల లక్ష్యం ప్రకటన</td></tr>
@@ -368,8 +384,8 @@ tr:nth-child(even){background:#e3f2fd;}
 <h2>11. పరీక్ష సారాంశం — కీలక సంఖ్యలు</h2>
 <!-- ============================================================ -->
 
-<table>
-<tr><th>అంశం</th><th>సంఖ్య / విలువ</th><th>గుర్తుంచుకునే విధం</th></tr>
+<table class="breakable">
+<thead><tr><th>అంశం</th><th>సంఖ్య / విలువ</th><th>గుర్తుంచుకునే విధం</th></tr></thead>
 <tr><td>GSDP 2024-25</td><td><span class="key-num">₹16.41 లక్షల కోట్లు</span></td><td>12.5% వృద్ధి | దేశంలో 9వ స్థానం</td></tr>
 <tr><td>వాస్తవ వృద్ధిరేటు</td><td><span class="key-num">8.21%</span></td><td>దేశంలో 7వ rank</td></tr>
 <tr><td>తలసరి ఆదాయం</td><td><span class="key-num">₹2,66,240</span></td><td>జాతీయ సగటుకు 1.3x</td></tr>

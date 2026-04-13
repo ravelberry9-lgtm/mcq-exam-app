@@ -27,7 +27,7 @@ ul, ol { margin-left: 15px; margin-bottom: 5px; }
 li { margin-bottom: 2px; }
 .note-small { font-size: 9.5px; color: #555; }
 .highlight-row { background: #fff59d !important; }
-.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: hidden; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
+.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: visible; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
 .eenadu-title { background: #d32f2f; color: white; font-weight: bold; font-size: 11.5px; padding: 6px 10px; letter-spacing: 0.3px; }
 .eenadu-body { padding: 7px 10px; font-size: 10.5px; line-height: 1.7; color: #212121; }
 .eenadu-meta { background: #ffebee; font-size: 9.5px; padding: 4px 10px; color: #b71c1c; border-top: 1px solid #ffcdd2; }
@@ -35,6 +35,44 @@ li { margin-bottom: 2px; }
 .pyq-box { background: #fffde7; border-left: 4px solid #f57f17; padding: 6px 10px; margin: 6px 0; font-size: 10.5px; }
 .pyq-box strong { color: #e65100; }
 .pyq-head { background: #f57f17; color: white; font-weight: bold; font-size: 12px; padding: 5px 10px; border-radius: 4px 4px 0 0; margin-top: 12px; letter-spacing: 0.3px; }
+  /* ── PRINT OVERRIDES ── */
+  @media print {
+    html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+    /* Let content flow naturally — do NOT force a break after every .page div */
+    .page {
+      width: 100% !important;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 14mm 13mm !important;
+      box-shadow: none !important;
+      border: none !important;
+      page-break-after: auto !important;
+      break-after: auto !important;
+      overflow: visible !important;
+    }
+    /* Force a new print page before each major section */
+    .page-break {
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+    /* Small tables: keep together. Large tables (.breakable): allow row-level breaks */
+    table { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+    .breakable thead { display: table-header-group; }
+    .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    /* Keep small info boxes intact */
+    .no-break, .alert-box, .shock-box, .update-box,
+    .recap-box, .eenadu-article, .pyq-box {
+      page-break-inside: avoid !important; break-inside: avoid !important;
+    }
+    h2, h3 { page-break-after: avoid !important; break-after: avoid !important; }
+    h1 { page-break-before: avoid !important; }
+    .footer { display: block !important; }
+    .page-num::after { content: counter(page); }
+    .key-num { background: none !important; color: #b71c1c !important; font-weight: 700; padding: 0; }
+    .trick-tag { background: none !important; color: #1b5e20 !important; border: 1px solid #1b5e20; }
+  }
 </style>
 </head>
 <body>
@@ -66,8 +104,8 @@ li { margin-bottom: 2px; }
 <p><span class="trick-tag">MAIN RIVER</span> గోదావరి AP లో ఎక్కువ ప్రాధాన్యమైన నది. దక్షిణ-మధ్య భారతలో "దక్షిణ గంగ" అని అర్థం గోదావరి అని పిలుస్తారు.</p>
 
 <h3>2.1 గోదావరి - ప్రధాన వివరాలు | Main Details</h3>
-<table>
-<tr><th>లక్షణం | Feature</th><th>వివరణ | Details</th></tr>
+<table class="breakable">
+<thead><tr><th>లక్షణం | Feature</th><th>వివరణ | Details</th></tr></thead>
 <tr><td>జన్మస్థానం | Source/Origin</td><td>త్రయంబకేశ్వర్, నాసిక్ జిల్లా, మహారాష్ట్ర (ఎత్తు: 750 మీ.)</td></tr>
 <tr><td>మొత్తం పొడవు | Total Length</td><td><span class="key-num">1465</span> కి.మీ.</td></tr>
 <tr><td>ఉభయ రాష్ట్రాల్లో (AP+TG) | Both States</td><td><span class="key-num">772</span> కి.మీ. <span class="trick-tag">PYQ</span></td></tr>
@@ -87,8 +125,8 @@ li { margin-bottom: 2px; }
 </div>
 
 <h3>2.2 గోదావరి శాఖలు | Godavari Branches (Mouths of Bay of Bengal)</h3>
-<table>
-<tr><th>శాఖ సంఖ్య</th><th>శాఖ పేరు | Branch Name</th><th>బంగాళ ఉపసాగరంలో స్థానం | Location at Bay</th></tr>
+<table class="breakable">
+<thead><tr><th>శాఖ సంఖ్య</th><th>శాఖ పేరు | Branch Name</th><th>బంగాళ ఉపసాగరంలో స్థానం | Location at Bay</th></tr></thead>
 <tr><td>1</td><td>గౌతమి | Gautami</td><td>కాకినాడ జిల్లా, యానం వద్ద చేరుతుంది</td></tr>
 <tr><td>2</td><td>వశిష్ట | Vasishta</td><td>అంబేద్కర్ కోనసీమ, అంతర్వేది వద్ద చేరుతుంది</td></tr>
 <tr><td>3</td><td>వైనతేయ | Vainatey</td><td>కోనసీమ, కోమరగిరి, ఓడలరేవు వద్ద చేరుతుంది</td></tr>
@@ -120,8 +158,8 @@ li { margin-bottom: 2px; }
 <p><span class="trick-tag">CRITICAL</span> కృష్ణ నది AP లో రెండవ ముఖ్య నది. <span class="key-num">485</span> కి.మీ. AP లో ప్రవహిస్తుంది (గోదావరి కంటే ఎక్కువ!).</p>
 
 <h3>3.1 కృష్ణ - ప్రధాన వివరాలు | Main Details</h3>
-<table>
-<tr><th>లక్షణం | Feature</th><th>వివరణ | Details</th></tr>
+<table class="breakable">
+<thead><tr><th>లక్షణం | Feature</th><th>వివరణ | Details</th></tr></thead>
 <tr><td>జన్మస్థానం | Source/Origin</td><td>మహారాష్ట్ర పశ్చిమ కనుమలు (ఎత్తు: 1,239 మీ.)</td></tr>
 <tr><td>మొత్తం పొడవు | Total Length</td><td><span class="key-num">1400</span> కి.మీ.</td></tr>
 <tr><td>ఉభయ రాష్ట్రాల్లో (AP+TG) | Both States</td><td><span class="key-num">612</span> కి.మీ. <span class="trick-tag">PYQ</span> (AP లో 485 కి.మీ.)</td></tr>
@@ -176,8 +214,8 @@ li { margin-bottom: 2px; }
 <h2>5. ఇతర ముఖ్య నదులు | Other Important Rivers</h2>
 
 <h3>5.1 చిన్న నదుల సమాచారం | Minor Rivers Details</h3>
-<table>
-<tr><th>నది | River</th><th>జన్మస్థానం | Source</th><th>AP జిల్లాలు | Districts</th><th>చేరుతున్న నది/చేటి | Meets</th><th>ప్రత్యేకత | Special Feature</th></tr>
+<table class="breakable">
+<thead><tr><th>నది | River</th><th>జన్మస్థానం | Source</th><th>AP జిల్లాలు | Districts</th><th>చేరుతున్న నది/చేటి | Meets</th><th>ప్రత్యేకత | Special Feature</th></tr></thead>
 
 <tr><td>వంశధార | Vamsadhara</td><td>ఓడిశా, రాంపా కొండలు</td><td>శ్రీకాకుళం</td><td>బంగాళ ఉపసాగరం</td><td>AP-ఓడిశా సరిహద్దు నది</td></tr>
 

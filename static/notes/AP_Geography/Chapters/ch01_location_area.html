@@ -5,98 +5,192 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AP Geography Ch1 — ఆంధ్రప్రదేశ్ ఉనికి - క్షేత్రీయ అమరిక</title>
 <style>
-  @page { size: A4; margin: 18mm 15mm 18mm 15mm; }
+  /* ── A4 PAGE SETUP ── */
+  @page {
+    size: A4 portrait;
+    margin: 16mm 14mm 20mm 15mm;
+  }
+  @page :first { margin-top: 12mm; }
+
+  /* ── PRINT OVERRIDES ── */
   @media print {
-    .page-break { page-break-before: always; }
-    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+    /* Let content flow naturally — do NOT force a break after every .page div */
+    .page {
+      width: 100% !important;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 14mm 13mm !important;
+      box-shadow: none !important;
+      border: none !important;
+      page-break-after: auto !important;
+      break-after: auto !important;
+      overflow: visible !important;
+    }
+    /* Force a new print page before each major section */
+    .page-break {
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+    /* Small tables: keep together. Large tables (.breakable): allow row-level breaks */
+    table { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+    .breakable thead { display: table-header-group; }
+    .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    /* Keep small info boxes intact */
+    .no-break, .alert-box, .shock-box, .update-box,
+    .recap-box, .eenadu-article, .pyq-box {
+      page-break-inside: avoid !important; break-inside: avoid !important;
+    }
+    h2, h3 { page-break-after: avoid !important; break-after: avoid !important; }
+    h1 { page-break-before: avoid !important; }
+    .footer { display: block !important; }
+    .page-num::after { content: counter(page); }
+    .key-num { background: none !important; color: #b71c1c !important; font-weight: 700; padding: 0; }
+    .trick-tag { background: none !important; color: #1b5e20 !important; border: 1px solid #1b5e20; }
   }
+
+  /* ── RESET ── */
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ── SCREEN BODY ── */
   body {
-    font-family: 'Segoe UI', 'Noto Sans Telugu', sans-serif;
-    font-size: 11.5pt;
-    line-height: 1.55;
+    font-family: 'Segoe UI', 'Noto Sans Telugu', 'Arial Unicode MS', sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.5;
     color: #1a1a2e;
-    background: #f0f0f5;
-    padding: 10px;
+    background: #e8eaf6;
+    padding: 12px 8px;
   }
+
+  /* ── A4 PAGE CARD ── */
   .page {
-    width: 210mm; min-height: 290mm; margin: 10px auto;
-    background: #fff; padding: 18mm 15mm;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    width: 210mm;
+    min-height: 297mm;
+    margin: 10px auto;
+    background: #fff;
+    padding: 14mm 13mm 16mm 14mm;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: visible;
   }
+  .page-break { page-break-before: always; break-before: page; }
+
+  /* ── HEADINGS ── */
   h1 {
-    text-align: center; font-size: 18pt; color: #fff;
+    text-align: center; font-size: 15pt; color: #fff;
     background: linear-gradient(135deg, #1a237e, #0d47a1);
-    padding: 14px 20px; border-radius: 8px; margin-bottom: 14px;
-    letter-spacing: 0.5px;
+    padding: 11px 16px; border-radius: 6px; margin-bottom: 11px;
+    letter-spacing: 0.4px; line-height: 1.3;
   }
-  h1 small { display: block; font-size: 11pt; font-weight: 400; opacity: 0.9; margin-top: 4px; }
+  h1 small { display: block; font-size: 9.5pt; font-weight: 400; opacity: 0.88; margin-top: 3px; }
   h2 {
-    font-size: 14pt; color: #0d47a1; border-bottom: 3px solid #1565c0;
-    padding-bottom: 4px; margin: 18px 0 10px;
+    font-size: 12.5pt; color: #0d47a1; border-bottom: 2.5px solid #1565c0;
+    padding-bottom: 3px; margin: 14px 0 8px;
   }
-  h3 { font-size: 12pt; color: #1565c0; margin: 12px 0 6px; }
-  .subtitle { font-size: 9.5pt; color: #546e7a; margin-bottom: 10px; }
+  h3 { font-size: 11pt; color: #1565c0; margin: 10px 0 5px; }
+  .subtitle { font-size: 8.5pt; color: #546e7a; margin-bottom: 8px; }
+
+  /* ── INFO BOXES ── */
   .alert-box {
     background: #fff3e0; border-left: 4px solid #e65100;
-    padding: 8px 12px; margin: 10px 0; border-radius: 0 6px 6px 0;
-    font-size: 10.5pt;
+    padding: 6px 10px; margin: 8px 0; border-radius: 0 5px 5px 0;
+    font-size: 9.5pt; page-break-inside: avoid;
   }
   .alert-box strong { color: #e65100; }
   .shock-box {
     background: #fce4ec; border-left: 4px solid #c62828;
-    padding: 8px 12px; margin: 10px 0; border-radius: 0 6px 6px 0;
-    font-size: 10.5pt;
+    padding: 6px 10px; margin: 8px 0; border-radius: 0 5px 5px 0;
+    font-size: 9.5pt; page-break-inside: avoid;
   }
   .shock-box strong { color: #c62828; }
   .update-box {
     background: #e8f5e9; border-left: 4px solid #2e7d32;
-    padding: 8px 12px; margin: 10px 0; border-radius: 0 6px 6px 0;
-    font-size: 10.5pt;
+    padding: 6px 10px; margin: 8px 0; border-radius: 0 5px 5px 0;
+    font-size: 9.5pt; page-break-inside: avoid;
   }
   .update-box strong { color: #2e7d32; }
   .recap-box {
-    background: #e3f2fd; border: 2px solid #1565c0;
-    padding: 10px 14px; margin: 12px 0; border-radius: 8px;
+    background: #e3f2fd; border: 1.5px solid #1565c0;
+    padding: 8px 12px; margin: 9px 0; border-radius: 6px;
+    page-break-inside: avoid;
   }
-  .recap-box h4 { color: #0d47a1; font-size: 11pt; margin-bottom: 6px; }
-  .recap-box ul { padding-left: 18px; font-size: 10.5pt; }
-  .recap-box li { margin-bottom: 3px; }
+  .recap-box h4 { color: #0d47a1; font-size: 10pt; margin-bottom: 4px; }
+  .recap-box ul { padding-left: 16px; font-size: 9.5pt; }
+  .recap-box li { margin-bottom: 2px; }
+
+  /* ── TABLES ── */
   table {
-    width: 100%; border-collapse: collapse; margin: 10px 0;
-    font-size: 10pt;
+    width: 100%; border-collapse: collapse; margin: 7px 0;
+    font-size: 9pt; page-break-inside: avoid;
+    table-layout: auto; word-break: break-word;
   }
-  th { background: #1565c0; color: #fff; padding: 6px 8px; text-align: left; }
-  td { padding: 5px 8px; border-bottom: 1px solid #e0e0e0; }
+  th {
+    background: #1565c0; color: #fff; padding: 5px 7px;
+    text-align: left; font-size: 9pt; font-weight: 600;
+  }
+  td { padding: 4px 7px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
   tr:nth-child(even) { background: #f5f5f5; }
+  tr { page-break-inside: avoid; }
+  /* Large tables that are allowed to break across print pages */
+  .breakable { page-break-inside: auto; }
+  .breakable tr { page-break-inside: avoid; }
+
+  /* ── INLINE TAGS ── */
   .key-num {
     display: inline-block; background: #0d47a1; color: #fff;
-    padding: 2px 8px; border-radius: 4px; font-weight: 700;
-    font-size: 10.5pt; margin: 1px 2px;
+    padding: 1px 6px; border-radius: 3px; font-weight: 700;
+    font-size: 9.5pt; margin: 1px 1px;
   }
   .trick-tag {
-    display: inline-block; background: #e65100; color: #fff;
-    padding: 1px 7px; border-radius: 3px; font-size: 9pt; font-weight: 600;
+    display: inline-block; background: #e8f5e9; color: #1b5e20;
+    border: 1px solid #a5d6a7;
+    padding: 1px 6px; border-radius: 3px; font-size: 8.5pt; font-weight: 600;
   }
+
+  /* ── LAYOUT ── */
+  p { margin-bottom: 5px; }
+  ul, ol { padding-left: 18px; margin-bottom: 6px; }
+  li { margin-bottom: 2px; }
+  .two-col { display: flex; gap: 10px; }
+  .two-col > div { flex: 1; min-width: 0; }
+
+  /* ── EENADU ARTICLES ── */
+  .eenadu-article {
+    border: 2px solid #d32f2f; border-radius: 5px; margin: 8px 0;
+    background: #fff9f9; overflow: hidden;
+    box-shadow: 1px 1px 4px rgba(211,47,47,0.12);
+    page-break-inside: avoid;
+  }
+  .eenadu-title {
+    background: #d32f2f; color: white; font-weight: bold;
+    font-size: 10.5pt; padding: 5px 9px; letter-spacing: 0.2px;
+  }
+  .eenadu-body { padding: 6px 9px; font-size: 9.5pt; line-height: 1.6; color: #212121; }
+  .eenadu-meta {
+    background: #ffebee; font-size: 8.5pt; padding: 3px 9px;
+    color: #b71c1c; border-top: 1px solid #ffcdd2;
+  }
+
+  /* ── PYQ BOXES ── */
+  .pyq-head {
+    background: #f57f17; color: white; padding: 4px 10px;
+    margin: 10px 0 0; font-size: 10pt; font-weight: bold;
+    border-radius: 4px 4px 0 0;
+  }
+  .pyq-box {
+    background: #fffde7; border-left: 4px solid #f57f17;
+    padding: 6px 10px; margin: 0 0 6px; font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+
+  /* ── FOOTER ── */
   .footer {
-    text-align: center; font-size: 8.5pt; color: #78909c;
-    margin-top: 16px; border-top: 1px solid #e0e0e0; padding-top: 6px;
+    text-align: center; font-size: 7.5pt; color: #90a4ae;
+    margin-top: 14px; border-top: 1px solid #e0e0e0; padding-top: 5px;
   }
-  p { margin-bottom: 6px; }
-  ul, ol { padding-left: 20px; margin-bottom: 8px; }
-  li { margin-bottom: 3px; }
-  .two-col { display: flex; gap: 12px; }
-  .two-col > div { flex: 1; }
-  .eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: hidden; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
-  .eenadu-title { background: #d32f2f; color: white; font-weight: bold; font-size: 11.5px; padding: 6px 10px; letter-spacing: 0.3px; }
-  .eenadu-body { padding: 7px 10px; font-size: 10.5px; line-height: 1.7; color: #212121; }
-  .eenadu-meta { background: #ffebee; font-size: 9.5px; padding: 4px 10px; color: #b71c1c; border-top: 1px solid #ffcdd2; }
-
-.pyq-box { background: #fffde7; border-left: 4px solid #f57f17; padding: 6px 10px; margin: 6px 0; font-size: 10.5px; }
-.pyq-head { background: #f57f17; color: white; padding: 4px 10px; margin: 8px 0 0; font-size: 11px; font-weight: bold; }
-.key-num { color: #b71c1c; font-weight: bold; }
-.trick-tag { background: #e8f5e9; color: #1b5e20; padding: 1px 5px; border-radius: 3px; font-size: 9.5px; font-weight: bold; }
-
+  .section-divider { border: none; border-top: 2px solid #1565c0; margin: 4px 0; }
 </style>
 </head>
 <body>
@@ -216,8 +310,8 @@
 <div class="shock-box"><strong>💥 KEY POINT:</strong> భూమి భౌతికంగా (physically) మారలేదు! మలుపులు, వంపులను (curves &amp; bends) కూడా లెక్కించడం వల్ల పొడవు పెరిగింది! "ఎందుకు పెరిగింది?" — ఎగ్జామ్‌లో తప్పక అడుగుతారు!</div>
 
 <h3>రాష్ట్రాలవారీ తీరం — పాత vs కొత్త (State-wise)</h3>
-<table>
-<tr><th>ర్యాంక్</th><th>రాష్ట్రం</th><th>పాత (కి.మీ)</th><th>కొత్త NHO (కి.మీ)</th><th>% పెరుగుదల</th></tr>
+<table class="breakable">
+<thead><tr><th>ర్యాంక్</th><th>రాష్ట్రం</th><th>పాత (కి.మీ)</th><th>కొత్త NHO (కి.మీ)</th><th>% పెరుగుదల</th></tr></thead>
 <tr style="background:#e8f5e9"><td><span class="key-num">1</span></td><td>గుజరాత్</td><td>1,214.70</td><td><strong>2,340.62</strong></td><td><span class="key-num">92.69%!</span> (అత్యధికం!)</td></tr>
 <tr style="background:#fff3e0"><td><span class="key-num">2</span></td><td>తమిళనాడు</td><td>906.90</td><td><strong>1,068.69</strong></td><td>+17.84%</td></tr>
 <tr style="background:#e3f2fd"><td><span class="key-num">3</span></td><td><strong>ఆంధ్రప్రదేశ్</strong></td><td>973.70</td><td><strong>1,053.07</strong></td><td><span class="key-num">+8.15%</span></td></tr>
@@ -263,8 +357,8 @@
 </table>
 
 <h3>జిల్లాల వారీ తీరం (District-wise Coastline — old 13 districts)</h3>
-<table>
-<tr><th>ర్యాంక్</th><th>జిల్లా (old)</th><th>తీరం (కి.మీ)</th><th>2022 తర్వాత</th></tr>
+<table class="breakable">
+<thead><tr><th>ర్యాంక్</th><th>జిల్లా (old)</th><th>తీరం (కి.మీ)</th><th>2022 తర్వాత</th></tr></thead>
 <tr><td>1</td><td>తూ.గోదావరి</td><td>~189.84</td><td>తూ.గో + కాకినాడ + కోనసీమ (split!)</td></tr>
 <tr style="background:#e8f5e9"><td>2→<strong>1</strong></td><td><strong>శ్రీకాకుళం</strong></td><td><strong>~173.12</strong></td><td>అలాగే — 2022 తర్వాత No.1!</td></tr>
 <tr><td>3</td><td>నెల్లూరు</td><td>~172.10</td><td>SPS నెల్లూరు</td></tr>
@@ -622,6 +716,9 @@
 <div class="footer">AP Exam Prep — Chapter 1 Study Notes | Updated: April 2026 | Cross-verified with AP Socio-Economic Survey 2024-25 &amp; Gazette Notifications</div>
 </div>
 
+
+<!-- ========== PAGE 7: Current Affairs ========== -->
+<div class="page page-break">
 <hr class="section-divider">
 <h2 style="color:#b71c1c">📰 ఈనాడు కరెంట్ అఫైర్స్</h2>
 
@@ -726,6 +823,8 @@
 <strong>🚌 మహిళలకు ఉచిత బస్సు (Super Six హామీ) — PYQ 2025:</strong><br>
 • TDP-BJP-JSP "Super Six" హామీల్లో ఒకటి: <span class="key-num">AP మహిళా నివాసితులందరికీ APSRTC ఉచిత ప్రయాణం</span><br>
 &nbsp;&nbsp;→ ఆదాయ పరిమితి లేకుండా; రాష్ట్ర బస్సుల్లో ప్రయాణానికి వర్తిస్తుంది
+</div>
+
 </div>
 
 </body>

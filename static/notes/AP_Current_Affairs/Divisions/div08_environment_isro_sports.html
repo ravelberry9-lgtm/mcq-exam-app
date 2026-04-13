@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AP పర్యావరణం, ISRO & క్రీడలు — విభాగం 8</title>
 <style>
+@page { size: A4 portrait; margin: 12mm 10mm; }
+
 body{font-family:'Segoe UI',Arial,sans-serif;font-size:13px;color:#212121;max-width:960px;margin:0 auto;padding:16px;background:#fafafa;}
 h1{background:#1b5e20;color:white;padding:12px 16px;border-radius:6px;font-size:18px;margin:0 0 12px 0;}
 h2{background:#2e7d32;color:white;padding:8px 14px;border-radius:5px;font-size:15px;margin:22px 0 10px 0;}
@@ -43,6 +45,20 @@ tr:nth-child(even){background:#e8f5e9;}
 .eenadu-title{font-weight:bold;font-size:13px;color:#1b5e20;border-bottom:1px solid #a5d6a7;padding-bottom:5px;margin-bottom:8px;}
 .eenadu-body{font-size:12px;line-height:1.7;color:#212121;}
 .eenadu-meta{font-size:11px;color:#555;margin-top:6px;}
+/* Large tables allowed to break across print pages */
+.breakable { page-break-inside: auto; }
+.breakable tr { page-break-inside: avoid; }
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; padding: 10mm; }
+  table { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+  .breakable thead { display: table-header-group; }
+  .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .no-break, .alert-box, .shock-box, .update-box, .recap-box, .purple-box,
+  .eenadu-article, .pyq-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+  h2 { page-break-after: avoid !important; break-after: avoid !important; }
+  h3 { page-break-after: avoid !important; break-after: avoid !important; }
+}
 </style>
 </head>
 <body>
@@ -87,8 +103,8 @@ tr:nth-child(even){background:#e8f5e9;}
 <!-- SECTION 3: WILDLIFE SANCTUARIES -->
 <h2>3. 🦁 వన్యప్రాణి అభయారణ్యాలు (Wildlife Sanctuaries)</h2>
 
-<table>
-<tr><th>అభయారణ్యం</th><th>జిల్లా</th><th>ముఖ్య విషయం</th></tr>
+<table class="breakable">
+<thead><tr><th>అభయారణ్యం</th><th>జిల్లా</th><th>ముఖ్య విషయం</th></tr></thead>
 <tr><td><strong>కొరింగ వన్యప్రాణి అభయారణ్యం</strong></td><td>కాకినాడ</td><td>AP అతి పెద్ద మడ అడవి; <strong class="key-num">35+ మడ చెట్ల జాతులు</strong>; 120+ పక్షి జాతులు; ఇర్రావడి డాల్ఫిన్లు</td></tr>
 <tr><td><strong>కౌండిణ్య వన్యప్రాణి అభయారణ్యం</strong></td><td>చిత్తూరు</td><td><strong>AP ఏకైక ఏనుగుల అభయారణ్యం</strong>; కర్నాటక సరిహద్దు దగ్గర; ~60 ఏనుగులు</td></tr>
 <tr><td><strong>రోళ్లపాడు వన్యప్రాణి అభయారణ్యం</strong></td><td>నందయాల జిల్లా (పూర్వం కర్నూలు) <em style="font-size:9px;">(X: పల్నాడు/గుంటూరు కాదు — తప్పు)</em></td><td><strong>గ్రేట్ ఇండియన్ బస్టర్డ్</strong> (జటాయువు) అభయారణ్యం — అత్యంత అంతరించిపోయే పక్షి</td></tr>
@@ -158,8 +174,8 @@ tr:nth-child(even){background:#e8f5e9;}
 
 <div class="sports-card no-break">
 <div class="sports-title">🏸 PV సింధు — Pusarla Venkata Sindhu <span class="sports-badge">Badminton</span></div>
-<table style="margin:0;">
-<tr><th style="background:#e65100;">వివరం</th><th style="background:#e65100;">సమాచారం</th></tr>
+<table class="breakable" style="margin:0;">
+<thead><tr><th style="background:#e65100;">వివరం</th><th style="background:#e65100;">సమాచారం</th></tr></thead>
 <tr><td><strong>జననం</strong></td><td>జూలై 5, 1995 — హైదరాబాద్ (తెలుగు కుటుంబం, AP వేళ్ళు)</td></tr>
 <tr><td><strong>BWF ర్యాంక్</strong></td><td>Career Best వరల్డ్ నెంబర్ 2 (2017) — ఆమె ఎప్పుడూ No. 1 కాలేదు; పలుమార్లు Top 5 లో ఉన్నారు</td></tr>
 <tr><td><strong>ఒలింపిక్‌లు</strong></td><td>రియో 2016 <span class="medal silver">రజత పతకం</span> + టోక్యో 2020 <span class="medal bronze">కాంస్య పతకం</span></td></tr>
@@ -234,8 +250,8 @@ tr:nth-child(even){background:#e8f5e9;}
 <!-- SECTION 7: KEY STATS -->
 <h2>7. 📊 పర్యావరణ సంఖ్యలు — రేపిడ్ రివిజన్</h2>
 
-<table>
-<tr><th>అంశం</th><th>వివరాలు</th><th>సంఖ్య / స్థానం</th></tr>
+<table class="breakable">
+<thead><tr><th>అంశం</th><th>వివరాలు</th><th>సంఖ్య / స్థానం</th></tr></thead>
 <tr><td>భారతదేశపు అతి పెద్ద పులుల అభయారణ్యం</td><td>నాగార్జునసాగర్-శ్రీశైలం (AP+TS)</td><td>~3,728 చ.కి.మీ</td></tr>
 <tr><td>AP అతి పెద్ద మడ అడవి</td><td>కొరింగ, కాకినాడ</td><td>35+ మడ జాతులు</td></tr>
 <tr><td>AP ఏకైక ఏనుగుల అభయారణ్యం</td><td>కౌండిణ్య, చిత్తూరు</td><td>~60 ఏనుగులు</td></tr>

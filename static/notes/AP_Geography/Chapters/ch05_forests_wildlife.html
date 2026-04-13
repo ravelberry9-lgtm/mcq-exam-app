@@ -33,7 +33,7 @@
   .trick-tag { display: inline-block; background: #e65100; color: #fff; padding: 1px 7px; border-radius: 3px; font-size: 9pt; font-weight: 600; }
   .footer { text-align: center; font-size: 8.5pt; color: #78909c; margin-top: 16px; border-top: 1px solid #e0e0e0; padding-top: 6px; }
   p { margin-bottom: 6px; } ul, ol { padding-left: 20px; margin-bottom: 8px; } li { margin-bottom: 3px; }
-  .eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: hidden; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
+  .eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: visible; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
   .eenadu-title { background: #d32f2f; color: white; font-weight: bold; font-size: 11.5px; padding: 6px 10px; letter-spacing: 0.3px; }
   .eenadu-body { padding: 7px 10px; font-size: 10.5px; line-height: 1.7; color: #212121; }
   .eenadu-meta { background: #ffebee; font-size: 9.5px; padding: 4px 10px; color: #b71c1c; border-top: 1px solid #ffcdd2; }
@@ -43,6 +43,44 @@
 .key-num { color: #b71c1c; font-weight: bold; }
 .trick-tag { background: #e8f5e9; color: #1b5e20; padding: 1px 5px; border-radius: 3px; font-size: 9.5px; font-weight: bold; }
 
+  /* ── PRINT OVERRIDES ── */
+  @media print {
+    html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+    /* Let content flow naturally — do NOT force a break after every .page div */
+    .page {
+      width: 100% !important;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 14mm 13mm !important;
+      box-shadow: none !important;
+      border: none !important;
+      page-break-after: auto !important;
+      break-after: auto !important;
+      overflow: visible !important;
+    }
+    /* Force a new print page before each major section */
+    .page-break {
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+    /* Small tables: keep together. Large tables (.breakable): allow row-level breaks */
+    table { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .breakable { page-break-inside: auto !important; break-inside: auto !important; }
+    .breakable thead { display: table-header-group; }
+    .breakable tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    /* Keep small info boxes intact */
+    .no-break, .alert-box, .shock-box, .update-box,
+    .recap-box, .eenadu-article, .pyq-box {
+      page-break-inside: avoid !important; break-inside: avoid !important;
+    }
+    h2, h3 { page-break-after: avoid !important; break-after: avoid !important; }
+    h1 { page-break-before: avoid !important; }
+    .footer { display: block !important; }
+    .page-num::after { content: counter(page); }
+    .key-num { background: none !important; color: #b71c1c !important; font-weight: 700; padding: 0; }
+    .trick-tag { background: none !important; color: #1b5e20 !important; border: 1px solid #1b5e20; }
+  }
 </style>
 </head>
 <body>
@@ -249,7 +287,7 @@
 <h2>Section 5.5: ముఖ్యమైన అటవీ ఉత్పత్తులు</h2>
 <p class="subtitle"><strong>2022-23 Total forest revenue:</strong> <span class="key-num">13,039.83 crores</span></p>
 
-<table>
+<table class="breakable">
   <thead>
     <tr>
       <th>#</th>
@@ -312,7 +350,7 @@
 
 <h2>Section 5.6: అడవి జంతువుల పంపిణీ</h2>
 
-<table>
+<table class="breakable">
   <thead>
     <tr>
       <th>#</th>
@@ -375,7 +413,7 @@
 
 <p class="subtitle"><span class="trick-tag">MUST MEMORIZE ALL 13</span> అటవీ వన్యజీవ సంరక్షణ కేంద్రాలు</p>
 
-<table>
+<table class="breakable">
   <thead>
     <tr>
       <th>#</th>
@@ -554,7 +592,7 @@
 
 <h2>Section 5.10: అటవీ సంరక్షణ పథకాలు</h2>
 
-<table>
+<table class="breakable">
   <thead>
     <tr>
       <th>#</th>
