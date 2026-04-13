@@ -28,6 +28,16 @@ li { margin-bottom: 2px; }
 .no-break { page-break-inside: avoid; }
 .survey-tag { display: inline-block; background: #2e7d32; color: white; font-size: 9px; padding: 1px 5px; border-radius: 3px; margin-right: 4px; }
 .book-tag { display: inline-block; background: #1565c0; color: white; font-size: 9px; padding: 1px 5px; border-radius: 3px; margin-right: 4px; }
+.eenadu-article { border: 2px solid #d32f2f; border-radius: 6px; margin: 10px 0; background: #fff9f9; overflow: hidden; box-shadow: 2px 2px 6px rgba(211,47,47,0.15); }
+.eenadu-title { background: #d32f2f; color: white; font-weight: bold; font-size: 11.5px; padding: 6px 10px; letter-spacing: 0.3px; }
+.eenadu-body { padding: 7px 10px; font-size: 10.5px; line-height: 1.7; color: #212121; }
+.eenadu-meta { background: #ffebee; font-size: 9.5px; padding: 4px 10px; color: #b71c1c; border-top: 1px solid #ffcdd2; }
+
+<style>
+.pyq-box { background: #fffde7; border-left: 4px solid #f57f17; padding: 6px 10px; margin: 6px 0; font-size: 10.5px; }
+.pyq-box strong { color: #e65100; }
+.pyq-head { background: #f57f17; color: white; font-weight: bold; font-size: 12px; padding: 5px 10px; border-radius: 4px 4px 0 0; margin-top: 12px; letter-spacing: 0.3px; }
+</style>
 </style>
 </head>
 <body>
@@ -66,7 +76,7 @@ li { margin-bottom: 2px; }
 <tr><td>NH-565 (నూతన)</td><td>మావళ్ళ → వెంకటగిరి → YSR గోడ్</td><td>420 కి.మీ</td><td>—</td></tr>
 <tr><td>NH-63 (పాత NH-67)</td><td>కర్నాటక సరిహద్దు → గుంతకల్ → గుత్తి గోడ్</td><td>396 కి.మీ</td><td>—</td></tr>
 <tr><td>NH-214 &amp; 214A (పాత NH-216)</td><td>దిగువమట్టు → ఎక్స్‌పాన్య 214తో కలిసి → నరసాపురం → మచిలీపట్నం → చల్లపల్లి → అవనిగడ్డ → రేపల్లె → భాపట్ల → చీరాల → ఒంగోలు</td><td>391 కి.మీ</td><td>—</td></tr>
-<tr><td>NH-326 (నూతన)</td><td>నిజామపట్టణం → చిత్తూర్</td><td><span class="key-num">13.60 కి.మీ</span></td><td>★ అతి చిన్న NH</td></tr>
+<tr><td>NH-326 (నూతన)</td><td>నిజామపట్టణం → చిత్తూర్</td><td><span class="key-num">13.60 కి.మీ</span></td><td>★ AP లో అతి చిన్న NH<br><em style="font-size:9px;">👉 NH అయినా చిన్నగా ఎందుకు? ఇది AP-TN సరిహద్దు వద్ద రెండు రాష్ట్రాలను కలిపే strategic connectivity route. పొడవు తక్కువైనా జాతీయ ప్రాముఖ్యత ఉన్నందుకు NH హోదా ఇచ్చారు.</em></td></tr>
 </table>
 
 <div class="update-box">
@@ -76,7 +86,7 @@ li { margin-bottom: 2px; }
 <li>అత్యధిక రోడ్ నెట్‌వర్క్ గల జిల్లా: <span class="key-num">అనంతపురం</span></li>
 <li>అత్యల్ప రోడ్ నెట్‌వర్క్ గల జిల్లా: <span class="key-num">విజయనగరం</span></li>
 <li>APSRTC ద్వారా అత్యధిక ఆదాయం గల జిల్లా: <span class="key-num">విశాఖ (₹129.88 కోట్లు)</span></li>
-<li>APSRTC ద్వారా అత్యల్ప ఆదాయం గల జిల్లా: <span class="key-num">విజయవాడ (₹100.61 కోట్లు)</span></li>
+<li>APSRTC ద్వారా అత్యల్ప ఆదాయం గల జిల్లా: <span class="key-num">విజయవాడ (₹100.61 కోట్లు)</span><br><em style="font-size:9px;">👉 విజయవాడ పెద్ద నగరమైనా తక్కువ ఎందుకు? ఇది APSRTC (రాష్ట్ర బస్సు) ఆదాయం మాత్రమే — విజయవాడలో ప్రైవేట్ వాహనాలు, ఆటోలు, క్యాబులు ఎక్కువ వాడతారు కాబట్టి APSRTC వాటా తక్కువగా ఉంటుంది.</em></li>
 </ul>
 </div>
 
@@ -195,11 +205,15 @@ li { margin-bottom: 2px; }
 </table>
 
 <table>
-<tr><th>వందే భారత్ సేవ</th><th>మార్గం</th><th>ప్రారంభ తేదీ</th><th>దూరం / సమయం</th></tr>
-<tr><td>1వ వందే భారత్ (AP లో)</td><td><span class="key-num">సికందరాబాద్ – విశాఖపట్నం</span></td><td><span class="key-num">జనవరి 15, 2023</span> (PM మోదీ ఉద్ఘాటన)</td><td>699 కి.మీ | 8.30 గంటలు</td></tr>
-<tr><td>2వ వందే భారత్ (AP లో)</td><td><span class="key-num">సికందరాబాద్ – తిరుపతి</span></td><td><span class="key-num">ఏప్రిల్ 8, 2023</span></td><td>తెలంగాణ–AP మధ్య</td></tr>
+<tr><th>ట్రైన్ నం.</th><th>మార్గం</th><th>ప్రారంభ తేదీ</th><th>గమనిక</th></tr>
+<tr><td><span class="key-num">20833</span></td><td><span class="key-num">విశాఖపట్నం – సికందరాబాద్</span></td><td><span class="key-num">జనవరి 15, 2023</span> (PM మోదీ ఉద్ఘాటన)</td><td>699 కి.మీ | 8.30 గంటలు | ఖమ్మం, విజయవాడ, రాజమండ్రి</td></tr>
+<tr><td><span class="key-num">20702</span></td><td><span class="key-num">తిరుపతి – సికందరాబాద్</span></td><td><span class="key-num">ఏప్రిల్ 8, 2023</span></td><td>TG–AP మధ్య | 2వ AP వందే భారత్</td></tr>
+<tr><td><span class="key-num">20678</span></td><td><span class="key-num">నర్సాపూర్ – MGR చెన్నై సెంట్రల్</span></td><td>2023 (Southern Railway)</td><td>ప. గోదావరి → తమిళనాడు | నెల్లూరు మీదుగా</td></tr>
+<tr><td><span class="key-num">20708</span></td><td><span class="key-num">విశాఖపట్నం – సికందరాబాద్</span></td><td>2024</td><td>20833కి అదనపు సేవ — రెండు రోజువారీ కనెక్షన్లు</td></tr>
+<tr><td><span class="key-num">20830</span></td><td><span class="key-num">విశాఖపట్నం – దుర్గ్</span></td><td>2024</td><td>తీర మార్గం — Chhattisgarh–AP కనెక్టివిటీ</td></tr>
+<tr><td><span class="key-num">20842</span></td><td><span class="key-num">విశాఖపట్నం – భువనేశ్వర్</span></td><td>2024</td><td>ఒడిశా తీర మార్గం — పర్యాటక కనెక్టివిటీ</td></tr>
 </table>
-<div class="recap-box">1వ వందే భారత్ స్టాపేజీలు: సికందరాబాద్ → ఖమ్మం → విజయవాడ → రాజమండ్రి → విశాఖపట్నం. ఈ రైలు రాష్ట్రం నుండి బయలుదేరి 85 నందే భారత్ రైలు అవతారం మినహా అర రోజులు సికందరాబాద్ నుండి బయలుదేరి పరంగల్, ఖమ్మం, విజయవాడ, రాజమండ్రి మీదుగా 699 కిలోమీటర్ల దూరం కేవలం 8.30 గంటల్లో విశాఖపట్నం చేరుకుంటుంది.</div>
+<div class="recap-box"><strong>⚡ పరీక్షకు:</strong> AP నుండి <span class="key-num">6 వందే భారత్ రైళ్ళు</span>, <span class="key-num">5 విభిన్న మార్గాలు</span>. విశాఖ-సికందరాబాద్ మార్గంలో 2 రైళ్ళు (20833 + 20708). కొత్తవి: 20678 నర్సాపూర్-చెన్నై | 20842 విశాఖ-భువనేశ్వర్. 1వ రైలు (20833) స్టాపేజీలు: విశాఖ → రాజమండ్రి → విజయవాడ → ఖమ్మం → సికందరాబాద్.</div>
 
 <hr class="section-divider">
 
@@ -258,13 +272,13 @@ li { margin-bottom: 2px; }
 <tr><th>క్ర.సం.</th><th>ఓడరేవు పేరు</th><th>జిల్లా</th><th>ప్రత్యేకత / ముఖ్య సమాచారం</th></tr>
 <tr><td>1</td><td><span class="key-num">కాకినాడ లంగరు ఓడరేవు (యాంకరేజ్ పోర్ట్)</span></td><td>తూర్పుగోదావరి</td><td>హోబిలాండ్‌కు 17 కి.మీ దూరం; విశాఖకు 145 కి.మీ దక్షిణం; ఎగుమతులు: ముడి ఇనుం, టేకు, బియ్యం, పొగాకు; సర్వే కార్గో: <span class="key-num">2.326 MMT</span></td></tr>
 <tr><td>2</td><td><span class="key-num">కాకినాడ డీప్‌వాటర్ పోర్ట్</span></td><td>తూర్పుగోదావరి</td><td>OMST (BOT) విధానం; కాకినాడ సీపోర్ట్స్ లిమిటెడ్ (KSPL) నిర్వహణ (ఏప్రిల్ 1, 1999); రాష్ట్రానికి 22% ఆదాయం; ఎగుమతులు: రసాయన ఎరువులు, గ్రానైట్; సర్వే కార్గో: <span class="key-num">11.15 MMT</span></td></tr>
-<tr><td>3</td><td><span class="key-num">గంగవరం ఓడరేవు</span></td><td>విశాఖపట్నం</td><td>విశాఖకు 15 కి.మీ; <span class="key-num">దేశంలో అత్యంత లోతైన ఓడరేవు (21 మీటర్లు)</span>; 2009 జులై 12న YSR ఉద్ఘాటన; "Eco-Friendly" ఓడరేవు; PPP; సర్వే కార్గో: <span class="key-num">16.201 MMT</span></td></tr>
+<tr><td>3</td><td><span class="key-num">గంగవరం ఓడరేవు</span></td><td>విశాఖపట్నం</td><td>విశాఖకు 15 కి.మీ; <span class="key-num">దేశంలో అత్యంత లోతైన ఓడరేవు (21 మీటర్లు)</span>; 2009 జులై 12న YSR ఉద్ఘాటన; "Eco-Friendly" ఓడరేవు; <span class="key-num">PPP</span> (ప్రభుత్వ-ప్రైవేట్ భాగస్వామ్యం) నమూనాలో నిర్మించారు; సర్వే కార్గో: <span class="key-num">16.201 MMT</span> (Million Metric Tonnes — సంవత్సరానికి కార్గో)</td></tr>
 <tr><td>4</td><td><span class="key-num">కృష్ణపట్నం ఓడరేవు</span></td><td>నెల్లూరు</td><td><span class="key-num">ఆసియాలో మొదటి గ్రీన్‌ఫీల్డ్ ఓడరేవు</span>; AP లో ప్రైవేటీకరించిన మొదటి ఓడరేవు; 2004 సెప్టెంబర్ BOST మోడల్; 2008 జులై 17న సోనియా గాంధీ ఉద్ఘాటన; 14 బర్తులు; CEO: అనిల్ యెండ్లూరి; Tagline: "India's Largest Gateway of East Coast"; సర్వే కార్గో: <span class="key-num">37.786 MMT</span> (అత్యధికం)</td></tr>
 <tr><td>5</td><td><span class="key-num">దుగ్గరాజుపట్నం ఓడరేవు</span></td><td>నెల్లూరు (ప్రస్తుతం తిరుపతి జిల్లా)</td><td>AP పున:వ్యవస్థీకరణ చట్టం 2014 ప్రకారం కేంద్రం అభివృద్ధి హామీ; శ్రీకాళహస్తికు 23 కి.మీ దూరం</td></tr>
-<tr><td>6</td><td><span class="key-num">మచిలీపట్నం ఓడరేవు</span></td><td>కృష్ణ</td><td>రాష్ట్ర ప్రభుత్వం PPP మోడల్‌లో అభివృద్ధి; మత్స్య కేంద్రం కూడా ఏర్పాటు; సర్వే వ్యయం: <span class="key-num">₹5,155.73 కోట్లు</span> (85 MT సామర్థ్యం)</td></tr>
+<tr><td>6</td><td><span class="key-num">మచిలీపట్నం ఓడరేవు</span></td><td>కృష్ణ</td><td>రాష్ట్ర ప్రభుత్వం <span class="key-num">PPP మోడల్</span> (Public-Private Partnership — ప్రభుత్వం + ప్రైవేట్ పెట్టుబడి) లో అభివృద్ధి; మత్స్య కేంద్రం కూడా ఏర్పాటు; సర్వే వ్యయం: <span class="key-num">₹5,155.73 కోట్లు</span> (85 MT సామర్థ్యం)</td></tr>
 <tr><td>7</td><td><span class="key-num">నిజామ్‌పట్నం ఓడరేవు</span></td><td>గుంటూరు</td><td>వాదరేవు మరియు నిజామ్‌పట్నం కలిపి VANPIC ఇండస్ట్రియల్ కారిడర్</td></tr>
 <tr><td>8</td><td><span class="key-num">భావనపాడు ఓడరేవు</span></td><td>శ్రీకాకుళం</td><td>అభివృద్ధిలో ఉంది</td></tr>
-<tr><td>9</td><td><span class="key-num">రామాయపట్నం ఓడరేవు</span></td><td>ప్రకాశం (ఉలుపాడు మండలం)</td><td>సర్వే వ్యయం: <span class="key-num">₹9,929.39 కోట్లు</span> (Phase 1: ₹2,647.62 కోట్లు), 34.04 MMTPA సామర్థ్యం</td></tr>
+<tr><td>9</td><td><span class="key-num">రామాయపట్నం ఓడరేవు</span></td><td>ప్రకాశం (ఉలుపాడు మండలం)</td><td>సర్వే వ్యయం: <span class="key-num">₹9,929.39 కోట్లు</span> (Phase 1 మొదటి దశ: ₹2,647.62 కోట్లు), <span class="key-num">34.04 MMTPA</span> సామర్థ్యం (Million Metric Tonnes Per Annum — సంవత్సరానికి 3.4 కోట్ల మెట్రిక్ టన్నుల సరుకు)</td></tr>
 <tr><td>10</td><td><span class="key-num">కాకినాడ SEZ ఓడరేవు</span></td><td>తూర్పుగోదావరి</td><td>Captive Port గా నిర్మించడం జరుగుతుంది; సర్వే వ్యయం: <span class="key-num">₹2,123 కోట్లు</span></td></tr>
 <tr><td>11</td><td><span class="key-num">మేఘవరం పోర్ట్</span></td><td>శ్రీకాకుళం</td><td>Captive Port; East Coast Energy Private Limited నిర్మాణం</td></tr>
 <tr><td>12</td><td><span class="key-num">నక్కపల్లి ఓడరేవు</span></td><td>విశాఖ</td><td>ANRAK అల్యూమినియం కంపెనీ లిమిటెడ్ నిర్మాణం</td></tr>
@@ -273,9 +287,52 @@ li { margin-bottom: 2px; }
 </table>
 
 <div class="update-box">
-<strong>సర్వే 2024-25 — చిన్నతరం ఓడరేవుల కార్గో (నవంబర్ 2024 వరకు):</strong>
-కృష్ణపట్నం: <span class="key-num">37.786 MMT</span> | గంగవరం: <span class="key-num">16.201 MMT</span> | కాకినాడ డీప్ వాటర్: <span class="key-num">11.15 MMT</span> | కాకినాడ యాంకరేజ్: <span class="key-num">2.326 MMT</span> | రవ్వా: <span class="key-num">0.443 MMT</span>
-<br><strong>పోర్ట్ విజన్:</strong> సామర్థ్యం లక్ష్యం: <span class="key-num">145 MTPA (2030 నాటికి)</span>, 300 MTPA (2047 నాటికి) | నీలి ఆర్థిక సంభావ్యత: <span class="key-num">$20 బిలియన్ (2035 నాటికి)</span>
+<strong>సర్వే 2024-25 — చిన్నతరం ఓడరేవుల కార్గో (నవంబర్ 2024 వరకు):</strong><br>
+<em style="font-size:9.5px;">👉 <strong>MMT</strong> = Million Metric Tonnes (10 లక్షల మెట్రిక్ టన్నులు) — ఒక నవంబర్ 2024 వరకు ఆ సంవత్సరంలో లోడ్/అన్‌లోడ్ అయిన మొత్తం సరుకు పరిమాణం</em><br><br>
+<table style="width:100%;border-collapse:collapse;font-size:10px;">
+<tr style="background:#1565c0;color:white;">
+  <th style="padding:4px 6px;text-align:left;">ఓడరేవు</th>
+  <th style="padding:4px 6px;text-align:left;">జిల్లా</th>
+  <th style="padding:4px 6px;text-align:right;">కార్గో (MMT)</th>
+  <th style="padding:4px 6px;text-align:left;">విశేషం</th>
+</tr>
+<tr style="background:#f3f6ff;">
+  <td style="padding:4px 6px;"><strong>కృష్ణపట్నం</strong></td>
+  <td style="padding:4px 6px;">నెల్లూరు</td>
+  <td style="padding:4px 6px;text-align:right;"><span class="key-num">37.786</span></td>
+  <td style="padding:4px 6px;">AP లో అత్యధిక కార్గో — 1వ స్థానం</td>
+</tr>
+<tr>
+  <td style="padding:4px 6px;"><strong>గంగవరం</strong></td>
+  <td style="padding:4px 6px;">విశాఖపట్నం</td>
+  <td style="padding:4px 6px;text-align:right;"><span class="key-num">16.201</span></td>
+  <td style="padding:4px 6px;">దేశంలో అత్యంత లోతైన పోర్టు (21 మీ)</td>
+</tr>
+<tr style="background:#f3f6ff;">
+  <td style="padding:4px 6px;"><strong>కాకినాడ డీప్‌వాటర్</strong></td>
+  <td style="padding:4px 6px;">తూ.గోదావరి</td>
+  <td style="padding:4px 6px;text-align:right;"><span class="key-num">11.150</span></td>
+  <td style="padding:4px 6px;">KSPL నిర్వహణ; రసాయన ఎరువులు ఎగుమతి</td>
+</tr>
+<tr>
+  <td style="padding:4px 6px;"><strong>కాకినాడ యాంకరేజ్</strong></td>
+  <td style="padding:4px 6px;">తూ.గోదావరి</td>
+  <td style="padding:4px 6px;text-align:right;"><span class="key-num">2.326</span></td>
+  <td style="padding:4px 6px;">లంగరు వేసి ట్రాన్సిప్‌మెంట్ జరుపుతారు</td>
+</tr>
+<tr style="background:#f3f6ff;">
+  <td style="padding:4px 6px;"><strong>రవ్వా</strong></td>
+  <td style="padding:4px 6px;">తూ.గోదావరి</td>
+  <td style="padding:4px 6px;text-align:right;"><span class="key-num">0.443</span></td>
+  <td style="padding:4px 6px;">వశిష్ఠ నది పాయపై నిర్మించిన చిన్న ఓడరేవు</td>
+</tr>
+</table>
+<br>
+<strong>పోర్ట్ విజన్ 2047:</strong><br>
+• సామర్థ్యం లక్ష్యం: <span class="key-num">145 MTPA (2030 నాటికి)</span> → <span class="key-num">300 MTPA (2047 నాటికి)</span><br>
+&nbsp;&nbsp;<em style="font-size:9.5px;">👉 <strong>MTPA</strong> = Million Tonnes Per Annum (సంవత్సరానికి 10 లక్షల టన్నులు నిర్వహించే సామర్థ్యం) — ప్రస్తుత సామర్థ్యం కంటే దాదాపు రెట్టింపు చేయడం 2030 లక్ష్యం</em><br>
+• నీలి ఆర్థిక సంభావ్యత (Blue Economy Potential): <span class="key-num">$20 బిలియన్ (2035 నాటికి)</span><br>
+&nbsp;&nbsp;<em style="font-size:9.5px;">👉 <strong>Blue Economy</strong> (నీలి ఆర్థిక వ్యవస్థ) = సముద్రం & నదుల ఆధారిత ఆర్థిక కార్యకలాపాలు — ఓడరేవులు, చేపలు, పర్యాటకం, సముద్ర ఖనిజాలు, శక్తి అన్నీ కలిపి; UN Sustainable Development Goal 14 ("Life Below Water") తో అనుసంధానం</em>
 </div>
 
 <div class="alert-box">
@@ -317,7 +374,7 @@ li { margin-bottom: 2px; }
 <h3>ప్రస్తుతం అమలులో ఉన్న విమానాశ్రయాలు (Operational — 6)</h3>
 <table>
 <tr><th>విమానాశ్రయం</th><th>రకం</th><th>ప్రత్యేకత</th></tr>
-<tr><td><span class="key-num">1. విశాఖపట్నం ఎయిర్‌పోర్ట్</span></td><td>అంతర్జాతీయ</td><td>AP లో <span class="key-num">ఏకైక అంతర్జాతీయ విమానాశ్రయం</span>; AAI అధీనం; 2 రన్‌వేలు; దుబాయ్, సింగపూర్, కౌలాలంపూర్ సర్వీసులు; సర్వే: 2.6 Mppa సామర్థ్యం</td></tr>
+<tr><td><span class="key-num">1. విశాఖపట్నం ఎయిర్‌పోర్ట్</span></td><td>అంతర్జాతీయ</td><td>AP లో <span class="key-num">ఏకైక అంతర్జాతీయ విమానాశ్రయం</span>; AAI అధీనం; 2 రన్‌వేలు; దుబాయ్, సింగపూర్, కౌలాలంపూర్ సర్వీసులు; సర్వే: <span class="key-num">2.6 Mppa</span> సామర్థ్యం (అంటే సంవత్సరానికి 26 లక్షల ప్రయాణికులు)</td></tr>
 <tr><td><span class="key-num">2. విజయవాడ ఎయిర్‌పోర్ట్</span></td><td>దేశీయ</td><td>గన్నవరం గ్రామం సమీపంలో; AAI అధీనం; <span class="key-num">రాష్ట్రంలో 2వ అత్యంత బిజీ</span>; రోజు 1 ఫ్లైట్ హైదరాబాద్‌కు</td></tr>
 <tr><td><span class="key-num">3. తిరుపతి ఎయిర్‌పోర్ట్</span></td><td>దేశీయ</td><td>1976లో స్థాపన; రేణిగుంట వద్ద; <span class="key-num">3వ అత్యంత బిజీ</span>; 2010 అక్టోబర్: గరుడ టెర్మినల్ శంకుస్థాపన; 2015 అక్టోబర్ 22: PM మోదీ ప్రారంభం</td></tr>
 <tr><td><span class="key-num">4. కడప ఎయిర్‌పోర్ట్</span></td><td>దేశీయ</td><td>1953లో నిర్మించబడింది; 2015 జూన్ 7 నుండి విమాన సర్వీసులు తిరిగి ప్రారంభం</td></tr>
@@ -329,7 +386,48 @@ li { margin-bottom: 2px; }
 <h3>నిర్మాణంలో ఉన్న విమానాశ్రయం</h3>
 <table>
 <tr><th>విమానాశ్రయం</th><th>వివరాలు</th></tr>
-<tr><td><span class="key-num">భోగపురం అంతర్జాతీయ విమానాశ్రయం</span></td><td>విజయనగరం జిల్లా, భోగపురం మండలం (హంసలు గ్రామం సమీపం); Greenfield PPP; Phase 1 వ్యయం: <span class="key-num">₹2,302.51 కోట్లు</span>; సామర్థ్యం: <span class="key-num">6 Mppa</span> (Phase 1)</td></tr>
+<tr><td colspan="2" style="padding:0">
+<table style="width:100%;border:none;margin:0">
+<tr style="background:#e8f5e9">
+  <td colspan="2" style="padding:8px 12px;font-weight:bold;font-size:1.05em;color:#1a237e">
+    ✈️ అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం <small style="font-weight:normal">(భోగపురం విమానాశ్రయం)</small>
+  </td>
+</tr>
+<tr><td style="width:30%;background:#f1f8e9;font-weight:bold;padding:6px 10px">📍 స్థానం</td>
+  <td style="padding:6px 10px">విజయనగరం జిల్లా, భోగపురం మండలం — హంసలు గ్రామం సమీపంలో</td></tr>
+<tr><td style="background:#f1f8e9;font-weight:bold;padding:6px 10px">🏗️ నిర్మాణ పద్ధతి</td>
+  <td style="padding:6px 10px">
+    <span class="key-num">Greenfield</span> — అంటే పూర్తిగా కొత్తగా నిర్మించే విమానాశ్రయం (ముందే ఉన్న దాన్ని విస్తరించడం కాదు)<br>
+    <span class="key-num">PPP నమూనా</span> — Public-Private Partnership (ప్రభుత్వం + ప్రైవేట్ సంస్థ కలిసి పెట్టుబడి పెట్టే పద్ధతి)
+  </td></tr>
+<tr><td style="background:#f1f8e9;font-weight:bold;padding:6px 10px">🏢 నిర్వహణ సంస్థ</td>
+  <td style="padding:6px 10px">
+    <span class="key-num">GMR GVIAL</span> — GMR Visakha International Airport Limited<br>
+    <small>(GMR గ్రూప్ ఇప్పటికే హైదరాబాద్ రాజీవ్ గాంధీ, ఢిల్లీ ఇందిరా గాంధీ విమానాశ్రయాలు నిర్వహిస్తున్న పెద్ద సంస్థ)</small>
+  </td></tr>
+<tr><td style="background:#f1f8e9;font-weight:bold;padding:6px 10px">💰 వ్యయం (మొదటి దశ)</td>
+  <td style="padding:6px 10px"><span class="key-num">₹2,302.51 కోట్లు</span> — Phase 1 (మొదటి దశ) నిర్మాణ అంచనా వ్యయం</td></tr>
+<tr><td style="background:#f1f8e9;font-weight:bold;padding:6px 10px">✈️ సామర్థ్యం</td>
+  <td style="padding:6px 10px">
+    <span class="key-num">6.3 Mppa</span> — అంటే సంవత్సరానికి <strong>63 లక్షల ప్రయాణికులు</strong><br>
+    <small>(Mppa = Million Passengers Per Annum = సంవత్సరానికి 10 లక్షల ప్రయాణికులు, కాబట్టి 6.3 Mppa = 63 లక్షలు)</small>
+  </td></tr>
+<tr><td style="background:#f1f8e9;font-weight:bold;padding:6px 10px">🔧 నిర్మాణ పురోగతి</td>
+  <td style="padding:6px 10px"><span class="key-num">36% పని పూర్తి</span> (2024 నాటికి)</td></tr>
+<tr><td style="background:#f1f8e9;font-weight:bold;padding:6px 10px">🛩️ పరీక్షా విమానాలు</td>
+  <td style="padding:6px 10px">
+    <span class="key-num">జనవరి 4, 2026</span>న Verification Flights నిర్వహించారు<br>
+    <small>(Verification Flights = రన్‌వే, నావిగేషన్ సిస్టమ్స్ పని చేస్తున్నాయా అని తనిఖీ చేసే పరీక్షా విమానాలు; అసలు ప్రయాణికుల సేవకు ముందు ఇవి నిర్వహిస్తారు)</small>
+  </td></tr>
+<tr><td style="background:#f1f8e9;font-weight:bold;padding:6px 10px">📅 ప్రారంభ లక్ష్యం</td>
+  <td style="padding:6px 10px"><span class="key-num">జూన్–జూలై 2026</span></td></tr>
+<tr><td style="background:#f1f8e9;font-weight:bold;padding:6px 10px">🏷️ పేరు మార్పు</td>
+  <td style="padding:6px 10px">
+    <span class="key-num">సెప్టెంబర్ 2024</span>లో — మన్యం విప్లవయోధుడు <strong>అల్లూరి సీతారామరాజు</strong> పేరున నామకరణం<br>
+    <small>(గతంలో కేవలం "భోగపురం అంతర్జాతీయ విమానాశ్రయం" అని పిలిచేవారు)</small>
+  </td></tr>
+</table>
+</td></tr>
 </table>
 
 <h3>ప్రణాళికలో ఉన్న హరిత క్షేత్ర విమానాశ్రయాలు (Greenfield — Planned)</h3>
@@ -378,7 +476,7 @@ li { margin-bottom: 2px; }
 <tr><td>AP లో ఏకైక అంతర్జాతీయ విమానాశ్రయం</td><td><span class="key-num">విశాఖపట్నం</span></td><td>—</td></tr>
 <tr><td>వందే భారత్ (సికందరాబాద్-విశాఖ) ప్రారంభం</td><td><span class="key-num">జనవరి 15, 2023</span></td><td>180 కి.మీ/గంట | 699 కి.మీ | 8.30 గంటలు</td></tr>
 <tr><td>గోదావరి సేతువు</td><td><span class="key-num">రాజమండ్రి-కోవ్వూరు (2.7 కి.మీ)</span></td><td>అతి పొడవైన రోడ్-కం-రైల్ వంతెన</td></tr>
-<tr><td>భోగపురం అంతర్జాతీయ విమానాశ్రయం</td><td><span class="key-num">₹2,302.51 కోట్లు | 6 Mppa</span></td><td>PPP Greenfield | విజయనగరం జిల్లా</td></tr>
+<tr><td>అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం (భోగపురం)</td><td><span class="key-num">₹2,302.51 కోట్లు</span><br><span class="key-num">6.3 Mppa</span> = సంవత్సరానికి 63 లక్షల ప్రయాణికులు</td><td>Greenfield PPP (ప్రభుత్వ-ప్రైవేట్ భాగస్వామ్యం) | నిర్వహణ: GMR GVIAL | విజయనగరం జిల్లా | 36% నిర్మాణం (2024) | జూన్–జూలై 2026 లక్ష్యం</td></tr>
 </table>
 
 <hr class="section-divider">
@@ -397,7 +495,7 @@ li { margin-bottom: 2px; }
 <li><span class="trick-tag">విజయవాడ మెట్రో</span> = 2 కారిడర్లు (₹6,769 కోట్లు) | విశాఖ మెట్రో = 4 కారిడర్లు (42.55 కి.మీ)</li>
 <li><span class="trick-tag">వందే భారత్</span> = ICF చెన్నై | 180 కి.మీ/గంట | జనవరి 15, 2023 (SC-VSP)</li>
 <li><span class="trick-tag">బకింగ్‌హామ్ కాలువ</span> = కాకినాడ నుండి పాండిచ్చేరి = జాతీయ జలమార్గం-4</li>
-<li><span class="trick-tag">భోగపురం</span> = ₹2,302.51 కోట్లు | 6 Mppa Phase 1 | విజయనగరం జిల్లా</li>
+<li><span class="trick-tag">భోగపురం</span> = ₹2,302.51 కోట్లు | <span class="key-num">6.3 Mppa</span> (63 లక్షల ప్రయాణికులు/సంవత్సరం) Phase 1 | విజయనగరం జిల్లా | PPP Greenfield | GMR GVIAL | జూన్ 2026 లక్ష్యం</li>
 </ul>
 </div>
 
@@ -414,6 +512,259 @@ li { margin-bottom: 2px; }
 
 <div class="recap-box">
 <strong>సంక్షిప్త సారాంశం:</strong> ఆంధ్రప్రదేశ్ రవాణా వ్యవస్థ: రోడ్డు (45,379 కి.మీ ఆర్&amp;బి + 8,744 కి.మీ NHలు), రైల్వే (3,354 కి.మీ, 444 స్టేషన్లు), జల రవాణా (విశాఖ ప్రధాన ఓడరేవు + 14 చిన్నతరం), వాయు (6 ఆపరేషనల్ + భోగపురం నిర్మాణంలో) — ఈ నాలుగు రవాణా వ్యవస్థలు రాష్ట్ర ఆర్థిక వృద్ధికి కీలకమైన పాత్ర పోషిస్తున్నాయి.
+</div>
+
+
+<hr class="section-divider">
+
+<h2>🛣️ గ్రీన్‌ఫీల్డ్ ఎక్స్‌ప్రెస్‌వేలు — AP లో కొత్త హైవేలు</h2>
+
+<div class="alert-box">
+<strong>⚠️ పరీక్ష హాట్‌స్పాట్‌లు — గ్రీన్‌ఫీల్డ్ హైవేలు:</strong><br>
+• <strong>బెంగళూరు–విజయవాడ ఎక్స్‌ప్రెస్‌వే:</strong> NH-544G | 518 కి.మీ | ₹19,320 కోట్లు | పునాది: మార్చి 11, 2024<br>
+• <strong>హైదరాబాద్–అమరావతి గ్రీన్‌ఫీల్డ్ ఎక్స్‌ప్రెస్‌వే:</strong> 220 కి.మీ | ₹25,000 కోట్లు | కేంద్రం ఆమోదం<br>
+• <strong>అమరావతి ORR:</strong> 189 కి.మీ | ₹20,000–25,000 కోట్లు | NHAI + APCRDA<br>
+• <strong>హైదరాబాద్–విజయవాడ ఎక్స్‌ప్రెస్‌వే అప్‌గ్రేడ్:</strong> 4 → 8 లేన్లు
+</div>
+
+<table>
+<tr><th>ప్రాజెక్టు</th><th>వివరాలు</th><th>స్థితి</th></tr>
+<tr>
+  <td><strong>బెంగళూరు–విజయవాడ ఎక్స్‌ప్రెస్‌వే</strong><br><small>NH-544G</small></td>
+  <td>పొడవు: <span class="key-num">518 కి.మీ</span> (6 లేన్లు); మార్గం: బెంగళూరు → కడప → కర్నూలు → గుంటూరు → విజయవాడ; వ్యయం: <span class="key-num">₹19,320 కోట్లు</span>; పునాది: PM మోదీ <span class="key-num">మార్చి 11, 2024</span>; ప్రయాణ సమయం తగ్గుదల: 10–12 గంటలు → 4–5 గంటలు</td>
+  <td>నిర్మాణంలో<br>2026 లక్ష్యం</td>
+</tr>
+<tr>
+  <td><strong>హైదరాబాద్–అమరావతి గ్రీన్‌ఫీల్డ్ ఎక్స్‌ప్రెస్‌వే</strong></td>
+  <td>పొడవు: <span class="key-num">220 కి.మీ</span> (6 లేన్లు); వ్యయం: <span class="key-num">₹25,000 కోట్లు</span> (అంచనా); కేంద్ర ఆమోదం; MoRTH DPR తయారీ ఆదేశాలు (ఏప్రిల్ 9, 2025)</td>
+  <td>DPR దశలో<br>(2025)</td>
+</tr>
+<tr>
+  <td><strong>అమరావతి Outer Ring Road (ORR)</strong></td>
+  <td>పొడవు: <span class="key-num">189 కి.మీ</span> (6 లేన్లు); నిర్వహణ: NHAI + APCRDA; మార్గం: విజయవాడ – గుంటూరు – తెనాలి సర్కిల్; వ్యయం: <span class="key-num">₹20,000–25,000 కోట్లు</span></td>
+  <td>ప్రణాళికలో</td>
+</tr>
+<tr>
+  <td><strong>హైదరాబాద్–విజయవాడ ఎక్స్‌ప్రెస్‌వే అప్‌గ్రేడ్</strong></td>
+  <td>ప్రస్తుత 4 లేన్లు → <span class="key-num">8 లేన్లు</span>; అధిక ట్రాఫిక్, ప్రమాదాల నివారణ</td>
+  <td>ప్రతిపాదన దశ</td>
+</tr>
+</table>
+
+<div class="shock-box">
+<strong>🚨 బెంగళూరు–విజయవాడ ఎక్స్‌ప్రెస్‌వే — గుర్తుంచుకోండి:</strong><br>
+• NH నంబర్: <strong>NH-544G</strong><br>
+• పొడవు: <strong>518 కి.మీ</strong><br>
+• పునాది: <strong>మార్చి 11, 2024</strong> (PM మోదీ)<br>
+• వ్యయం: <strong>₹19,320 కోట్లు</strong><br>
+• AP లో గుండా వెళ్ళే మార్గం: కడప → కర్నూలు → గుంటూరు జిల్లాలు
+</div>
+
+<h2>📰 ఈనాడు ప్రతిభ — సంబంధిత వార్తా వ్యాసాలు</h2>
+
+<hr class="section-divider">
+<h2 style="color:#0d47a1">⚓ ఓడరేవుల కరెంట్ అఫైర్స్ — వార్తల్లో AP పోర్టులు</h2>
+
+<div style="margin:15px 0;">
+</div>
+
+
+<div style="margin:15px 0;">
+</div>
+
+<div style="margin:15px 0;">
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="eenadu-article">
+  <div class="eenadu-title">కొత్త జిల్లాలు పోలవరం, మార్కాపురం</div>
+  <div class="eenadu-body">కొత్తగా పోలవరం, మార్కాపురం జిల్లాల ఏర్పాటుకు రాష్ట్ర మంత్రివర్గం ఆమోద ముద్ర వేసింది. అన్నమయ్య జిల్లాను కొనసాగిస్తూనే జిల్లా కేంద్రాన్ని రాయచోటి నుంచి మదనపల్లెకు మార్చే ప్రతిపాదనకు పచ్చజెండా ఊపింది. ప్రస్తుతం ఈ జిల్లాలో ఉన్న రాజంపేట నియోజకవర్గాన్ని వైఎస్సార్‌ కడప జిల్లాలోకి, రైల్వేకోడూరును తిరుపతి జిల్లాలో కలపాలని నిర్ణయించింది. మొత్తంగా రాష్ట్రంలోని జిల్లాల సంఖ్య ప్రస్తుతం ఉన్న 26 నుంచి 28కి పెరిగింది. కొత్తగా 5 రెవెన్యూ డివిజన్ల ఏర్పాటుతోపాటు కర్నూలు జిల్లా ఆదోని మండలాన్ని రెండుగా విభజించనున్నారు. ఈ నెల 31న తుది నోటిఫికేషన్‌ జారీ కానుంది. జనవరి 1 నుంచి పాలన ప్రారంభం అవుతుంది.</div>
+  <div class="eenadu-meta">30 డిసెంబర్ 2025 | ఈనాడు - అమరావతి | పాలన</div>
+</div>
+<div class="eenadu-article">
+  <div class="eenadu-title">కొత్త జిల్లాల వివరాలు — పోలవరం, మార్కాపురం</div>
+  <div class="eenadu-body">పోలవరం జిల్లా రంపచోడవరం కేంద్రంగా 12 మండలాలతో ఏర్పాటవుతోంది. మార్కాపురం జిల్లా 21 మండలాలతో ఏర్పాటవుతోంది. కొత్తగా 5 రెవెన్యూ డివిజన్లు అనకాపల్లి జిల్లాలో అడ్డరోడ్డు జంక్షన్, ప్రకాశం జిల్లాలో అద్దంకి, అన్నమయ్య జిల్లాలో పీలేరు, శ్రీసత్యసాయి జిల్లాలో మడకశిర, నంద్యాల జిల్లాలో బనగానపల్లి ఏర్పాటు కానున్నాయి. ప్రస్తుతం ఈ జిల్లాల్లో 17 చోట్ల మార్పులు చేర్పులు జరిగాయి. 9 జిల్లాల్లో ఎలాంటి మార్పులు లేవు.</div>
+  <div class="eenadu-meta">30 డిసెంబర్ 2025 | ఈనాడు - అమరావతి | పరిపాలన</div>
+</div>
+<div class="eenadu-article">
+  <div class="eenadu-title">50 కి.మీ.లకు ఒక పోర్టు — 4 కొత్త పోర్టుల నిర్మాణం</div>
+  <div class="eenadu-body">నిర్మాణంలో ఉన్న రామాయపట్నం, మచిలీపట్నం, మూలపేట, కాకినాడ గేట్‌వే పోర్టుల పనులను వేగంగా పూర్తి చేసి 2026 నాటికి వాటిని వినియోగంలోకి తేవాలని ప్రభుత్వం అధికారులకు లక్ష్యాన్ని నిర్దేశించింది. సముద్ర తీరం వెంట ప్రతి 50 కి.మీ.లకు పోర్టు ఆధారిత పరిశ్రమల ఏర్పాటు ద్వారా మొత్తంగా 20 పోర్టులను అందుబాటులోకి తేవాలన్నది ప్రభుత్వ ఆలోచన. రామాయపట్నం పోర్టు నిర్మాణ పనులు 69 శాతం పూర్తయ్యాయి. మచిలీపట్నం పోర్టు 2026 నవంబరు నాటికి పూర్తి చేయాలన్నది లక్ష్యం. మూలపేట పోర్టు 54.01 శాతం నిర్మాణ పనులు పూర్తి అయ్యాయి. తెలంగాణ, ఒడిశాల్లో డ్రైపోర్టులు ఏర్పాటు చేసి అక్కడి నుంచి పోర్టులను అనుసంధానించే ప్రతిపాదనలు రూపొందించింది.</div>
+  <div class="eenadu-meta">26 ఆగస్టు 2025 | ఈనాడు - అమరావతి | రేవులు-వ్యాపారం</div>
+</div>
+
+
+<hr class="section-divider">
+<div class="pyq-head">📋 AP HC PYQ ముఖ్యాంశాలు — రవాణా వ్యవస్థ | Key PYQ Transport Facts</div>
+
+<div class="pyq-box">
+<strong>⚓ విశాఖపట్నం ఓడరేవు — చారిత్రక వివరాలు (Visakhapatnam Port History):</strong><br>
+• <strong>ఉద్ఘాటన:</strong> <span class="key-num">1933</span>లో అప్పటి వైస్రాయ్ <strong>లార్డ్ విల్లింగ్డన్ (Lord Willingdon)</strong> చేత ఉద్ఘాటించబడింది<br>
+• <strong>మేజర్ పోర్ట్ హోదా:</strong> <span class="key-num">1964</span>లో ప్రధాన (Major) ఓడరేవుగా ప్రకటించారు<br>
+• <strong>విస్తరణ:</strong> 1964లో ఇన్నర్ హార్బర్ నిర్మించారు<br>
+• <strong>ప్రత్యేకత:</strong> దేశంలో <span class="key-num">అత్యంత లోతైన సహజ సిద్ధిమైన (Natural Harbor)</span> ఓడరేవు<br>
+• <strong>రక్షణ:</strong> డాల్ఫిన్స్ నోస్ పర్వతం సహజ రక్షణగా పని చేస్తుంది<br>
+• <strong>పేరు:</strong> విశాఖపట్నం పోర్ట్ ట్రస్ట్ → ప్రస్తుతం <strong>విశాఖపట్నం పోర్ట్ అథారిటీ (VPA)</strong><br>
+<span class="trick-tag">PYQ</span> <em>విశాఖ పోర్ట్ ఉద్ఘాటన = 1933, లార్డ్ విల్లింగ్డన్; Major Port = 1964</em>
+</div>
+
+<table>
+<tr><th>విశాఖపట్నం పోర్ట్ — కీలక తేదీలు</th><th>వివరాలు</th></tr>
+<tr><td><strong>1933</strong></td><td>లార్డ్ విల్లింగ్డన్ (వైస్రాయ్) ఉద్ఘాటన</td></tr>
+<tr><td><strong>1964</strong></td><td>మేజర్ పోర్ట్ హోదా, ఇన్నర్ హార్బర్ నిర్మాణం</td></tr>
+<tr><td><strong>2021</strong></td><td>పోర్ట్ ట్రస్ట్ → పోర్ట్ అథారిటీ (PA) గా మార్పు</td></tr>
+</table>
+
+<div class="pyq-box">
+<strong>✈️ భోగాపురం అంతర్జాతీయ విమానాశ్రయం:</strong><br>
+• విశాఖపట్నం జిల్లాలో నిర్మాణంలో ఉన్న గ్రీన్‌ఫీల్డ్ అంతర్జాతీయ విమానాశ్రయం<br>
+• <strong>Zuari Airports</strong> (GMR Group అనుబంధ సంస్థ) PPP నమూనాలో నిర్మిస్తోంది<br>
+• అంచనా పెట్టుబడి: <span class="key-num">₹1,800 కోట్లు</span> పైగా<br>
+• ఆర్థిక లాభాలు: ఉత్తర ఆంధ్ర పర్యాటక, పారిశ్రామిక రంగ వృద్ధికి ఉపకరణం<br>
+<span class="trick-tag">PYQ</span> <em>భోగాపురం = గ్రీన్‌ఫీల్డ్ అంతర్జాతీయ విమానాశ్రయం, విశాఖ జిల్లా</em>
+</div>
+
+<div class="alert-box">
+<strong>🔔 మర్చిపోలేని PYQ జంటలు:</strong><br>
+• <strong>ప్రధాన ఓడరేవు (Major Port)</strong> = విశాఖపట్నం (కేంద్ర ప్రభుత్వ నిర్వహణ)<br>
+• <strong>లోతైన సహజ ఓడరేవు (Natural Deep Harbor)</strong> = విశాఖపట్నం<br>
+• <strong>దేశంలో లోతైన కృత్రిమ ఓడరేవు</strong> = గంగవరం (21 మీటర్లు)<br>
+• <strong>ఆసియాలో మొదటి గ్రీన్‌ఫీల్డ్</strong> = కృష్ణపట్నం
+</div>
+
+
+
+<hr style="border:2px solid #f57f17; margin:10px 0;">
+<div class="pyq-head">📋 AP HC PYQ — AP రవాణా తాజా వాస్తవాలు | Transport Updates (2024-2025)</div>
+
+<div class="pyq-box">
+<strong>🚂 విజయవాడ రైల్వే స్టేషన్ — పరీక్ష PYQ 2025:</strong><br>
+• <strong>ఫిబ్రవరి 2024:</strong> విజయవాడ రైల్వే స్టేషన్ భారతదేశంలో <span class="key-num">అత్యంత శుభ్రమైన</span> రైల్వే స్టేషన్‌గా గుర్తింపు పొందింది<br>
+• <strong>NSG-1 హోదా:</strong> విజయవాడ జంక్షన్ = NSG-1 (Navi Mumbai, Chennai సమకక్షం) — అత్యున్నత తరగతి<br>
+• <strong>Transport Minister of AP (October 2024):</strong> <span class="key-num">మండిపల్లి రామ్‌ ప్రసాద్ రెడ్డి</span><br>
+<span class="trick-tag">PYQ 2025</span> <em>Vijayawada Railway = Cleanest in India Feb 2024 | NSG-1 station</em>
+</div>
+
+<div class="pyq-box">
+<strong>🌿 AP వాతావరణ పరివర్తన — KfW ఆర్థిక సహకారం (PYQ 2025):</strong><br>
+• <strong>KfW Development Bank (జర్మనీ):</strong> AP లో <strong>Climate Resilient Natural Farming</strong> కార్యక్రమానికి ఆర్థిక సహకారం అందించింది<br>
+• <strong>GFSI (Global Food Safety Initiative) ధృవీకరణ:</strong> ఎగుమతి సంబంధిత ధృవీకరణ ఖర్చులో <span class="key-num">50% రీఇంబర్స్‌మెంట్</span> AP ప్రభుత్వం ఇస్తుంది<br>
+• <strong>అంతర్జాతీయ వాణిజ్య సంతలు (Trade Fairs):</strong> స్టాల్ అద్దె (Ground Rent) లో <span class="key-num">25% రాయితీ</span><br>
+<span class="trick-tag">PYQ 2025</span> <em>KfW = Climate Resilient Farming AP | GFSI = 50% reimbursement | Trade fair = 25% subsidy</em>
+</div>
+
+
+<div class="pyq-head">📋 PYQ అభ్యాస ప్రశ్నలు — రేవులు & పట్టణ అభివృద్ధి (AP HC 2025)</div>
+<div class="pyq-box">
+<strong>⚓ విశాఖపట్నం పోర్టు చరిత్ర — PYQ 2025:</strong><br>
+• విశాఖపట్నం పోర్టు అధికారికంగా ప్రారంభించిన Viceroy: <span class="key-num">Lord Willingdon</span> (డిసెంబర్ 1933)<br>
+&nbsp;&nbsp;→ Lord Willingdon = 1931–36 వరకు India Viceroy గా ఉన్నారు<br>
+&nbsp;&nbsp;→ విశాఖ పోర్టు = AP లో అతిపెద్ద పోర్టు; Natural harbour (సహజ సిద్ధ నౌకాశ్రయం)<br>
+&nbsp;&nbsp;→ <em style="font-size:9.5px;">👉 Natural harbour అంటే పర్వతాలు/అడ్డంకులు వల్ల సహజంగా రక్షిత నీటి ప్రాంతం — తుఫాను నుండి నౌకలకు రక్షణ</em><br>
+<br>
+<strong>🧹 స్వచ్ఛ సర్వేక్షణ్ 2024-25 — AP నగరాల జాతీయ గుర్తింపు (జూలై 17, 2025):</strong><br>
+<em style="font-size:9.5px;">👉 స్వచ్ఛ సర్వేక్షణ్ = Ministry of Housing &amp; Urban Affairs (MoHUA) నిర్వహించే వార్షిక స్వచ్ఛత సర్వే; 9వ ఎడిషన్ (2024-25); రాష్ట్రపతి ద్రౌపది మూర్ము బహుమతులు ప్రదానం చేశారు</em><br><br>
+<table style="width:100%;border-collapse:collapse;font-size:10px;">
+<tr style="background:#2e7d32;color:white;">
+  <th style="padding:4px 6px;text-align:left;">నగరం</th>
+  <th style="padding:4px 6px;text-align:left;">పురస్కారం / విభాగం</th>
+  <th style="padding:4px 6px;text-align:left;">విశేషం</th>
+</tr>
+<tr style="background:#f1f8e9;">
+  <td style="padding:4px 6px;"><strong>విజయవాడ</strong></td>
+  <td style="padding:4px 6px;"><span class="key-num">Super Swachh League (SSL)</span></td>
+  <td style="padding:4px 6px;">Indore, Surat, Navi Mumbai తర్వాత జాతీయ స్థాయిలో గుర్తింపు</td>
+</tr>
+<tr>
+  <td style="padding:4px 6px;"><strong>గుంటూరు</strong></td>
+  <td style="padding:4px 6px;"><span class="key-num">Super Swachh League (SSL)</span></td>
+  <td style="padding:4px 6px;">గతంలో: 108వ → 17వ స్థానం (పురోగతి); SSL లో జాతీయ ఆమోదం</td>
+</tr>
+<tr style="background:#f1f8e9;">
+  <td style="padding:4px 6px;"><strong>తిరుపతి</strong></td>
+  <td style="padding:4px 6px;"><span class="key-num">Super Swachh League (SSL)</span></td>
+  <td style="padding:4px 6px;">పుణ్యక్షేత్రం నగరం — పర్యాటక నగరంగా స్వచ్ఛతలో జాతీయ స్థాయి</td>
+</tr>
+<tr>
+  <td style="padding:4px 6px;"><strong>విశాఖపట్నం (GVMC)</strong></td>
+  <td style="padding:4px 6px;"><span class="key-num">SafaiMitra Surakshit Shehar</span> + Ministerial Award (Special)</td>
+  <td style="padding:4px 6px;">పారిశుధ్య కార్మికుల భద్రత &amp; గౌరవానికి జాతీయ పురస్కారం</td>
+</tr>
+<tr style="background:#f1f8e9;">
+  <td style="padding:4px 6px;"><strong>రాజమహేంద్రవరం</strong></td>
+  <td style="padding:4px 6px;"><span class="key-num">Promising Swachh Shehar</span> + Ministerial Award (State)</td>
+  <td style="padding:4px 6px;">"ఒక రాష్ట్రం, ఒక పట్టణం" సూత్రంలో AP ప్రాతినిధ్యం</td>
+</tr>
+</table>
+<br>
+<em style="font-size:9.5px;">👉 <strong>Super Swachh League (SSL)</strong> = 2024-25 లో కొత్తగా ప్రవేశపెట్టిన విభాగం — గత సంవత్సరాల్లో నిరంతరంగా మెరుగైన పనితీరు చూపిన నగరాలకు మాత్రమే అర్హత; Indore 8 సార్లు వరుసగా 1వ స్థానం</em><br>
+<em style="font-size:9.5px;">👉 <strong>SafaiMitra Surakshit Shehar</strong> = మురుగు కాలువలు, సెప్టిక్ ట్యాంకుల్లో చనిపోయే పారిశుధ్య కార్మికుల (SafaiMitras) రక్షణకు machine-based cleaning తప్పనిసరి చేసిన నగరాలకు పురస్కారం</em><br>
+<br>
+<strong>🏗️ AP Urban Development Act — PYQ 2025:</strong><br>
+• AP Metropolitan Region and Urban Development Authority Act ఆమోదం: <span class="key-num">2016</span><br>
+• APUIAML పూర్తి రూపం: <span class="key-num">Andhra Pradesh Urban Infrastructure Asset Management Limited</span><br>
+&nbsp;&nbsp;→ Urban, industrial, social, tourism రంగాల్లో మౌలిక వసతి ప్రాజెక్టులకు సహాయం చేస్తుంది
+</div>
+
+<div class="update-box" style="border-left:4px solid #1565c0;">
+<strong>🚇 AP మెట్రో రైల్ 2024-25 — విశాఖ & విజయవాడ (కొత్త అప్‌డేట్):</strong><br>
+<em style="font-size:9.5px;">👉 డిసెంబర్ 2024 లో కేంద్ర ప్రభుత్వం రెండు మెట్రో ప్రాజెక్టులను ఒకేసారి ఆమోదించింది — మొత్తం పెట్టుబడి ₹22,507 కోట్లు; Centre 40% + Private 60% (PPP మోడల్)</em><br><br>
+<table style="width:100%;border-collapse:collapse;font-size:10px;">
+<tr style="background:#1565c0;color:white;">
+  <th style="padding:4px 6px;">నగరం</th>
+  <th style="padding:4px 6px;">విస్తీర్ణం</th>
+  <th style="padding:4px 6px;">స్టేషన్లు</th>
+  <th style="padding:4px 6px;">వ్యయం</th>
+  <th style="padding:4px 6px;">కారిడార్లు</th>
+</tr>
+<tr style="background:#f3f6ff;">
+  <td style="padding:4px 6px;"><strong>విశాఖపట్నం మెట్రో</strong></td>
+  <td style="padding:4px 6px;"><span class="key-num">46.23 కి.మీ</span> (Phase 1)</td>
+  <td style="padding:4px 6px;"><span class="key-num">42</span></td>
+  <td style="padding:4px 6px;"><span class="key-num">₹11,498 కోట్లు</span></td>
+  <td style="padding:4px 6px;">Steel Plant Jn → Kommadi; Gurudwara Jn → Old PO; Thatichetlapalem → Chinna Waltair</td>
+</tr>
+<tr>
+  <td style="padding:4px 6px;"><strong>విజయవాడ మెట్రో</strong></td>
+  <td style="padding:4px 6px;"><span class="key-num">38.40 కి.మీ</span> (Phase 1)</td>
+  <td style="padding:4px 6px;"><span class="key-num">34</span></td>
+  <td style="padding:4px 6px;"><span class="key-num">₹11,009 కోట్లు</span></td>
+  <td style="padding:4px 6px;">గన్నవరం → PNBS; PNBS → పేనమలూరు</td>
+</tr>
+</table>
+• నిర్మాణం ప్రారంభం: <span class="key-num">అక్టోబర్ 2025</span> నుండి<br>
+• Phase 2 విశాఖ: Kommadi → భోగాపురం అదనంగా (76.90 కి.మీ మొత్తం), ₹14,309 కోట్లు అదనంగా
+</div>
+
+<div class="update-box" style="border-left:4px solid #6a1b9a;">
+<strong>✈️ భోగాపురం అంతర్జాతీయ విమానాశ్రయం 2026 — అప్‌డేట్:</strong><br>
+• అధికారిక పేరు: <span class="key-num">అల్లూరి సీతారామరాజు (ASR) అంతర్జాతీయ విమానాశ్రయం</span><br>
+• నిర్మాణ సంస్థ: <strong>GMR Group</strong> — విశాఖకు 44 కి.మీ, విజయనగరానికి 23 కి.మీ<br>
+• మొదటి test/validation flight: <span class="key-num">జనవరి 4, 2026</span> — విజయవంతంగా ల్యాండ్ అయింది<br>
+• వాణిజ్య కార్యకలాపాలు ప్రారంభం: <span class="key-num">జూన్ 26, 2026</span> (PM మోదీ ప్రారంభోత్సవం లక్ష్యం)<br>
+• Phase 1 సామర్థ్యం: <span class="key-num">60 లక్షల ప్రయాణికులు/సంవత్సరం</span> | Runway: 3,800 మీటర్లు<br>
+• నిర్మాణ వ్యయం: <span class="key-num">₹4,592 కోట్లు</span> (Phase 1)<br>
+<em style="font-size:9.5px;">👉 North AP కు కొత్త aviation gateway — ఉత్తర కోస్తా జిల్లాలకు (విజయనగరం, శ్రీకాకుళం) Visakhapatnam airport కు ప్రత్యామ్నాయం; 500 ఎకరాల economic hub కూడా ప్లాన్ చేశారు</em>
+</div>
+
+<div class="update-box" style="border-left:4px solid #e65100;">
+<strong>🚂 సౌత్ కోస్ట్ రైల్వే జోన్ (SCoR) — విశాఖపట్నం HQ:</strong><br>
+• <span class="key-num">18వ రైల్వే జోన్</span> గా SCoR ఏర్పాటు — HQ: <span class="key-num">విశాఖపట్నం (ముదసర్లోవ)</span><br>
+• PM మోదీ foundation stone: <span class="key-num">జనవరి 8, 2025</span> — విశాఖపట్నంలో<br>
+• కేంద్ర మంత్రివర్గ ఆమోదం: <span class="key-num">ఫిబ్రవరి 7, 2025</span><br>
+• HQ భవనం: 11 అంతస్తులు, 50 ఎకరాల స్థలం, వ్యయం ₹149 కోట్లు<br>
+• ఏర్పాటు: <strong>East Coast Railway (ECoR) + South Central Railway (SCR)</strong> జోన్ల భాగాల నుండి పునర్వ్యవస్థీకరణ<br>
+• Waltair Division విభజన: ECoR నుండి SCoR కి బదిలీ<br>
+<em style="font-size:9.5px;">👉 దశాబ్దాల పాటు AP డిమాండ్ చేసిన ప్రత్యేక రైల్వే జోన్ 2025 లో నిజమైంది; విశాఖను రైల్వే administrative hub గా మార్చే చారిత్రక నిర్ణయం</em>
 </div>
 
 </body>

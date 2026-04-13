@@ -293,7 +293,7 @@ def init_db():
     try:
         cur_ca = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='AP_Current_Affairs'")
         ca_count = list(cur_ca.fetchone())[0] if cur_ca else 0
-        if ca_count < 4:
+        if ca_count < 10:
             print(f"[startup] AP Current Affairs: {ca_count} divisions — auto-seeding...")
             _auto_seed_ap_current_affairs()
             print("[startup] AP Current Affairs auto-seed complete.")
@@ -385,6 +385,12 @@ def _auto_seed_ap_current_affairs():
         (2, 'seed_ap_ca_div2', 'ap_ca_div2'),
         (3, 'seed_ap_ca_div3', 'ap_ca_div3'),
         (4, 'seed_ap_ca_div4', 'ap_ca_div4'),
+        (5, 'seed_ap_ca_div5', 'ap_ca_div5'),
+        (6, 'seed_ap_ca_div6', 'ap_ca_div6'),
+        (7, 'seed_ap_ca_div7', 'ap_ca_div7'),
+        (8, 'seed_ap_ca_div8', 'ap_ca_div8'),
+        (9, 'seed_ap_ca_div9', 'ap_ca_div9'),
+        (10, 'seed_ap_ca_div10', 'ap_ca_div10'),
     ]:
         c = get_db()
         try:
