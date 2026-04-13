@@ -584,12 +584,58 @@ def get_folder_totals():
     return {r['folder']: r['count'] for r in rows}
 
 
+def get_chapter_mcq_tree():
+    """
+    Returns chapter-MCQ counts grouped by subject, for the front-page accordion.
+    Shape: { 'AP_Geography': [ {note_id, chapter_num, title, count}, ... ], ... }
+    Only includes chapters that actually have MCQs.
+    """
+    conn = get_db()
+    try:
+        cur = db_exec(conn, '''
+            SELECT sn.id        AS note_id,
+                   sn.subject   AS sn_subject,
+                   sn.topic     AS subject,
+                   sn.chapter_num,
+                   COALESCE(sn.chapter_title_en,
+                            sn.chapter_title_te,
+                            'Chapter ' || sn.chapter_num) AS title,
+                   COUNT(cm.id) AS count
+            FROM study_notes sn
+            JOIN chapter_mcqs cm ON cm.study_note_id = sn.id
+            GROUP BY sn.id, sn.subject, sn.topic, sn.chapter_num
+            HAVING COUNT(cm.id) > 0
+            ORDER BY sn.topic, sn.chapter_num
+        ''')
+        rows = [row_to_dict(r) for r in cur.fetchall()]
+        tree = {}
+        for row in rows:
+            subj = row['subject']
+            if subj not in tree:
+                tree[subj] = []
+            tree[subj].append({
+                'note_id':     row['note_id'],
+                'sn_subject':  row['sn_subject'],
+                'chapter_num': row['chapter_num'],
+                'title':       row['title'],
+                'count':       row['count'],
+            })
+        conn.close()
+        return tree
+    except Exception:
+        conn.close()
+        return {}
+
+
 # ─────────────────────────────────────────────
 # ROUTES
 # ─────────────────────────────────────────────
 @app.route('/')
 def index():
-    return render_template('index.html', tree=get_folder_tree(), totals=get_folder_totals())
+    return render_template('index.html',
+        tree=get_folder_tree(),
+        totals=get_folder_totals(),
+        chapter_tree=get_chapter_mcq_tree())
 
 @app.route('/setup')
 def setup():
@@ -725,17 +771,73 @@ def _shuffle_keeping_passages(questions):
 @app.route('/api/start-quick-exam', methods=['POST'])
 def start_quick_exam():
     """Start a Quick Quiz that mixes main question bank + chapter MCQs for the same subject."""
-    data        = request.json
-    folder      = data.get('folder', '')
-    topic       = data.get('topic', '')
-    count       = int(data.get('count', 20))
-    mode        = data.get('mode', 'shuffle')
-    device_id   = data.get('device_id', 'default')
+    data         = request.json
+    folder       = data.get('folder', '')
+    topic        = data.get('topic', '')
+    note_id      = data.get('note_id')        # set when launching a specific chapter quiz
+    count        = int(data.get('count', 20))
+    mode         = data.get('mode', 'shuffle')
+    device_id    = data.get('device_id', 'default')
     student_name = data.get('student_name', 'Student')
 
     conn = get_db()
+    diff_map = {1: 'E', 2: 'M', 3: 'H'}
 
-    # ── 1. Main questions table ─────────────────────────────────────────
+    def _normalize_ch_row(cq, folder_name):
+        return {
+            '_ch': True,
+            'id':   'ch_' + str(cq['id']),
+            'folder': folder_name,
+            'topic':  cq.get('sn_topic', folder_name),
+            'question_text': cq.get('q_te', ''),
+            'options': [
+                {'key': 'A', 'text': cq.get('opt_a', '')},
+                {'key': 'B', 'text': cq.get('opt_b', '')},
+                {'key': 'C', 'text': cq.get('opt_c', '')},
+                {'key': 'D', 'text': cq.get('opt_d', '')},
+            ],
+            'correct':        cq.get('correct', '').strip().upper(),
+            'correct_answer': cq.get('correct', '').strip().upper(),
+            'difficulty':     diff_map.get(cq.get('difficulty', 2), 'M'),
+            'explanation':    cq.get('explanation_te', ''),
+            'passage': None, 'passage_group_id': None,
+        }
+
+    # ── A. Chapter-specific quiz (note_id provided) ─────────────────────
+    if note_id:
+        try:
+            cur = db_exec(conn, '''
+                SELECT cm.id, cm.q_te, cm.opt_a, cm.opt_b, cm.opt_c, cm.opt_d,
+                       cm.correct, cm.difficulty, cm.explanation_te,
+                       sn.topic as sn_topic, sn.chapter_num
+                FROM chapter_mcqs cm
+                JOIN study_notes sn ON cm.study_note_id = sn.id
+                WHERE cm.study_note_id = ?
+            ''', (note_id,))
+            ch_rows = [row_to_dict(r) for r in cur.fetchall()]
+        except Exception:
+            ch_rows = []
+
+        chapter_items = [_normalize_ch_row(r, r.get('sn_topic', 'Notes')) for r in ch_rows]
+        random.shuffle(chapter_items)
+        target = count if count > 0 else len(chapter_items)
+        selected_ch = chapter_items[:target]
+
+        session_questions = [e for e in selected_ch]   # all dicts
+        session_id = str(uuid.uuid4())
+        config = {
+            'mode': mode, 'duration': 30,
+            'note_id': note_id,
+            'device_id': device_id, 'student_name': student_name,
+            'source': 'chapter_quiz',
+        }
+        db_exec(conn, 'INSERT INTO exam_sessions (id, config, questions) VALUES (?,?,?)',
+                (session_id, json.dumps(config), json.dumps(session_questions)))
+        conn.commit(); conn.close()
+        return jsonify({'session_id': session_id, 'total': len(session_questions),
+                        'main_count': 0, 'chapter_count': len(session_questions)})
+
+    # ── B. Topic quiz: main questions table ─────────────────────────────
     if mode == 'no_repeat':
         cur = db_exec(conn, 'SELECT id FROM seen_questions WHERE device_id=?', (device_id,))
         seen_ids = [r['question_id'] for r in cur.fetchall()]
@@ -752,7 +854,7 @@ def start_quick_exam():
             'SELECT * FROM questions WHERE folder=? AND topic=?', (folder, topic))
     main_rows = [row_to_dict(r) for r in cur.fetchall()]
 
-    # ── 2. Chapter MCQs (join study_notes where topic = folder name) ────
+    # ── C. Also blend in chapter MCQs for the same subject ──────────────
     chapter_items = []
     try:
         cur = db_exec(conn, '''
@@ -764,29 +866,9 @@ def start_quick_exam():
             WHERE sn.topic = ?
         ''', (folder,))
         ch_rows = [row_to_dict(r) for r in cur.fetchall()]
-        diff_map = {1: 'E', 2: 'M', 3: 'H'}
-        for cq in ch_rows:
-            chapter_items.append({
-                '_ch': True,
-                'id': 'ch_' + str(cq['id']),
-                'folder': folder,
-                'topic': cq.get('sn_topic', folder),
-                'question_text': cq.get('q_te', ''),
-                'options': [
-                    {'key': 'A', 'text': cq.get('opt_a', '')},
-                    {'key': 'B', 'text': cq.get('opt_b', '')},
-                    {'key': 'C', 'text': cq.get('opt_c', '')},
-                    {'key': 'D', 'text': cq.get('opt_d', '')},
-                ],
-                'correct': cq.get('correct', '').strip().upper(),
-                'correct_answer': cq.get('correct', '').strip().upper(),
-                'difficulty': diff_map.get(cq.get('difficulty', 2), 'M'),
-                'explanation': cq.get('explanation_te', ''),
-                'passage': None,
-                'passage_group_id': None,
-            })
+        chapter_items = [_normalize_ch_row(r, folder) for r in ch_rows]
     except Exception:
-        pass  # chapter_mcqs table may not exist on older deployments
+        pass
 
     # ── 3. Combine pools and pick ───────────────────────────────────────
     # Main rows contribute their IDs; chapter items are stored as full dicts.

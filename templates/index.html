@@ -73,33 +73,35 @@
     </div>
   </section>
 
-  <!-- ── Topic Explorer (Accordion) ── -->
-  <section aria-label="Topic Explorer">
+  <!-- ── Quick Quiz Accordion ── -->
+  <section aria-label="Quick Quiz by Topic">
     <div class="card" style="padding:0;overflow:hidden;">
 
-      <!-- Card header -->
       <div class="explorer-header">
         <div class="card-title" style="margin:0;">⚡ Quick Quiz by Topic</div>
-        <button class="expand-all-btn" id="expandAllBtn" onclick="toggleAllFolders()" aria-label="Expand or collapse all folders">
+        <button class="expand-all-btn" id="expandAllBtn" onclick="toggleAllFolders()" aria-label="Expand or collapse all">
           Expand All
         </button>
       </div>
 
+      {% set ns = namespace(idx=0) %}
+
+      {# ── Section A: MCQ Question Bank topics ── #}
       {% if tree %}
         {% for folder, topics in tree.items() %}
         {% set folder_total = totals.get(folder, 0) %}
+        {% set ns.idx = ns.idx + 1 %}
+        {% set fid = 'f' ~ ns.idx %}
 
-        <div class="folder-block" id="fb-{{ loop.index }}">
-
-          <!-- Folder accordion header -->
+        <div class="folder-block" id="fb-{{ fid }}">
           <button class="folder-header"
-                  onclick="toggleFolder('{{ loop.index }}')"
+                  onclick="toggleFolder('{{ fid }}')"
                   aria-expanded="false"
-                  aria-controls="folder-body-{{ loop.index }}"
-                  id="folder-btn-{{ loop.index }}">
+                  aria-controls="folder-body-{{ fid }}"
+                  id="folder-btn-{{ fid }}">
             <div class="folder-left">
               <svg class="folder-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-              <span class="folder-name">{{ folder.replace('_', ' ') }}</span>
+              <span class="folder-name">{{ folder.replace('_',' ') }}</span>
               <span class="folder-badge">{{ topics|length }} topics</span>
             </div>
             <div class="folder-right">
@@ -108,31 +110,26 @@
             </div>
           </button>
 
-          <!-- Folder body -->
-          <div class="folder-body" id="folder-body-{{ loop.index }}" role="region" aria-labelledby="folder-btn-{{ loop.index }}">
+          <div class="folder-body" id="folder-body-{{ fid }}" role="region" aria-labelledby="folder-btn-{{ fid }}">
             <div class="topic-tiles-grid">
               {% for topic, count in topics.items() %}
               <div class="topic-tile">
                 <div class="tile-top">
-                  <div class="tile-topic-name">{{ topic.replace('_', ' ') }}</div>
+                  <div class="tile-topic-name">{{ topic.replace('_',' ') }}</div>
                   <div class="tile-q-count">{{ count }} Qs</div>
                 </div>
                 <div class="tile-actions">
                   <button class="tile-btn tile-quiz"
-                          onclick="openQuizSheet('{{ folder }}','{{ topic }}',{{ count }})"
+                          onclick="openQuizSheet('{{ folder }}','{{ topic }}',{{ count }},null)"
                           aria-label="Quick quiz: {{ topic.replace('_',' ') }}">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     Quiz
                   </button>
-                  <a class="tile-btn tile-notes"
-                     href="/notes/{{ folder }}"
-                     aria-label="Audio Notes for {{ folder.replace('_',' ') }}">
+                  <a class="tile-btn tile-notes" href="/notes/{{ folder }}" aria-label="Audio Notes">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
                     Audio
                   </a>
-                  <a class="tile-btn tile-read"
-                     href="/read-notes"
-                     aria-label="Study Guide HTML notes">
+                  <a class="tile-btn tile-read" href="/read-notes" aria-label="Study Guide">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
                     Guide
                   </a>
@@ -141,10 +138,70 @@
               {% endfor %}
             </div>
           </div>
-
         </div>
         {% endfor %}
-      {% else %}
+      {% endif %}
+
+      {# ── Section B: Audio Notes chapter MCQs ── #}
+      {% if chapter_tree %}
+        {% for subject, chapters in chapter_tree.items() %}
+        {% set ns.idx = ns.idx + 1 %}
+        {% set fid = 'f' ~ ns.idx %}
+        {% set ch_total = chapters | sum(attribute='count') %}
+
+        <div class="folder-block" id="fb-{{ fid }}">
+          <button class="folder-header"
+                  onclick="toggleFolder('{{ fid }}')"
+                  aria-expanded="false"
+                  aria-controls="folder-body-{{ fid }}"
+                  id="folder-btn-{{ fid }}">
+            <div class="folder-left">
+              <!-- headphone icon distinguishes audio-note chapters -->
+              <svg class="folder-ico" viewBox="0 0 24 24" aria-hidden="true" style="stroke:#ff6f00"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+              <span class="folder-name">{{ subject.replace('_',' ') }} <span style="font-size:10px;font-weight:600;opacity:.65;">· Audio Chapters</span></span>
+              <span class="folder-badge" style="background:#fff3e0;color:#e65100;">{{ chapters|length }} ch</span>
+            </div>
+            <div class="folder-right">
+              <span class="folder-qs">{{ ch_total }} Qs</span>
+              <svg class="folder-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+
+          <div class="folder-body" id="folder-body-{{ fid }}" role="region" aria-labelledby="folder-btn-{{ fid }}">
+            <div class="topic-tiles-grid">
+              {% for ch in chapters %}
+              <div class="topic-tile topic-tile-ch">
+                <div class="tile-top">
+                  <div class="tile-topic-name">Ch {{ ch.chapter_num }}: {{ ch.title }}</div>
+                  <div class="tile-q-count">{{ ch.count }} Qs</div>
+                </div>
+                <div class="tile-actions">
+                  <button class="tile-btn tile-quiz"
+                          onclick="openQuizSheet('{{ subject }}','Ch{{ ch.chapter_num }}',{{ ch.count }},{{ ch.note_id }})"
+                          aria-label="Quiz: Chapter {{ ch.chapter_num }}">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Quiz
+                  </button>
+                  <a class="tile-btn tile-notes"
+                     href="/notes/{{ ch.sn_subject }}/{{ subject }}"
+                     aria-label="Open chapter notes">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+                    Listen
+                  </a>
+                  <a class="tile-btn tile-read" href="/read-notes" aria-label="Study Guide">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                    Guide
+                  </a>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% endif %}
+
+      {% if not tree and not chapter_tree %}
         <div class="empty-state">
           <div class="empty-icon">📭</div>
           <div class="empty-title">No questions yet!</div>
@@ -351,6 +408,11 @@
 [data-theme="dark"] .tile-notes:hover { background: #0d2015; }
 [data-theme="dark"] .tile-read:hover  { background: #1a0d26; }
 
+/* Audio-chapter tiles get a warm left border */
+.topic-tile-ch { border-left: 3px solid #ff9800; }
+.topic-tile-ch .tile-topic-name { font-size: 11px; }
+[data-theme="dark"] .topic-tile-ch { border-left-color: #ffa726; }
+
 /* ── Empty state ── */
 .empty-state { text-align: center; padding: 32px 20px; color: var(--text-muted); }
 .empty-icon  { font-size: 40px; margin-bottom: 10px; }
@@ -459,16 +521,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ── Quick Quiz sheet ──
-let _qsFolder = '', _qsTopic = '', _qsAvail = 0, _qsCount = 20, _qsMode = 'shuffle';
+let _qsFolder = '', _qsTopic = '', _qsAvail = 0, _qsCount = 20, _qsMode = 'shuffle', _qsNoteId = null;
 
-function openQuizSheet(folder, topic, avail) {
+function openQuizSheet(folder, topic, avail, noteId) {
   _qsFolder = folder;
   _qsTopic  = topic;
   _qsAvail  = parseInt(avail);
+  _qsNoteId = noteId || null;   // non-null = chapter-specific quiz
 
   document.getElementById('qsTitle').textContent = '⚡ ' + topic.replace(/_/g, ' ');
-  document.getElementById('qsSub').textContent   =
-    folder.replace(/_/g, ' ') + ' · ' + avail + ' bank Qs + chapter MCQs mixed';
+  document.getElementById('qsSub').textContent   = _qsNoteId
+    ? folder.replace(/_/g,' ') + ' · Chapter MCQs only'
+    : folder.replace(/_/g,' ') + ' · Bank Qs + Chapter MCQs mixed';
 
   // Set chip availability
   const defaultN = Math.min(20, _qsAvail);
@@ -517,16 +581,19 @@ function startQuickQuiz() {
   btn.disabled = true;
   btn.textContent = 'Starting…';
   const count = _qsCount === 0 ? _qsAvail : _qsCount;
-  // Use /api/start-quick-exam which blends main question bank + chapter MCQs
+  const payload = {
+    folder: _qsFolder, topic: _qsTopic,
+    count: count, mode: _qsMode,
+    device_id: _devId, student_name: 'Student',
+  };
+  // Include note_id for chapter-specific quizzes (Audio Notes chapters)
+  if (_qsNoteId) payload.note_id = _qsNoteId;
+
   fetch('/api/start-quick-exam', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'same-origin',
-    body: JSON.stringify({
-      folder: _qsFolder, topic: _qsTopic,
-      count: count, mode: _qsMode,
-      device_id: _devId, student_name: 'Student'
-    })
+    body: JSON.stringify(payload)
   })
   .then(r => r.json())
   .then(d => {
