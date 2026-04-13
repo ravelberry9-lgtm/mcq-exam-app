@@ -582,100 +582,303 @@ MCQ_DATA = [
 
 
 def _seed_ap_ca_div9_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
-    """Seed study notes for AP CA chapter 9 (Padma Awards, Central Institutions, AP HC & Constitution)."""
-    existing = db_exec(
-        conn,
-        "SELECT id FROM study_notes WHERE topic=%s AND chapter_num=%s",
-        ("AP_Current_Affairs", 9)
-    )
-    rows = [row_to_dict(r) for r in existing]
-    if rows and not force:
-        return
-
-    html_path = os.path.join(
-        os.path.dirname(__file__),
-        "static", "notes", "ap_ca_div9_notes.html"
-    )
-    with open(html_path, "r", encoding="utf-8") as f:
-        html_content = f.read()
-
-    sections = json.loads(SECTIONS_JSON)
-    sections_data = json.dumps(sections, ensure_ascii=False)
-
-    if rows:
-        db_exec(
-            conn,
-            "UPDATE study_notes SET title=%s, content=%s, sections=%s WHERE topic=%s AND chapter_num=%s",
-            (
-                "పద్మ పురస్కారాలు, కేంద్ర సంస్థలు, AP హైకోర్టు & రాజ్యాంగం",
-                html_content,
-                sections_data,
-                "AP_Current_Affairs",
-                9
-            )
-        )
-    else:
-        ph = "%s" if USE_POSTGRES else "?"
-
-        def _ph(q):
-            return q if USE_POSTGRES else q.replace("%s", "?")
-
-        db_exec(
-            conn,
-            _ph(
-                "INSERT INTO study_notes (topic, chapter_num, title, content, sections) "
-                "VALUES (%s, %s, %s, %s, %s)"
-            ),
-            (
-                "AP_Current_Affairs",
-                9,
-                "పద్మ పురస్కారాలు, కేంద్ర సంస్థలు, AP హైకోర్టు & రాజ్యాంగం",
-                html_content,
-                sections_data
-            )
-        )
-
-
+    """Seed study notes for AP CA Division 9."""
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT 'AP_Current_Affairs', subtopic TEXT DEFAULT '',
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '', pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if USE_POSTGRES: conn.commit()
+    except Exception: pass
+    import json as _json
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (9, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if row and not force: return {'success': True, 'already_exists': True}
+    if row and force:
+        note_id = row_to_dict(row)['id']
+        db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+        db_exec(conn, f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (9, 'AP_Current_Affairs'))
+        if USE_POSTGRES: conn.commit()
+    db_exec(conn,
+        f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'AP_Current_Affairs', 'Division9', 9,
+         'పద్మ పురస్కారాలు, కేంద్ర సంస్థలు, AP హైకోర్టు & రాజ్యాంగం',
+         'Padma Awards, Central Institutions, AP HC & Constitution',
+         '', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
+    if USE_POSTGRES: conn.commit()
+    return {'success': True, 'message': 'AP CA Div9 notes seeded!'}
 def _seed_ap_ca_div9_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
-    """Seed MCQs for AP CA chapter 9 (Padma Awards, Central Institutions, AP HC & Constitution)."""
-    existing = db_exec(
-        conn,
-        "SELECT id FROM chapter_mcqs WHERE topic=%s AND chapter_num=%s",
-        ("AP_Current_Affairs", 9)
-    )
-    rows = [row_to_dict(r) for r in existing]
-    if rows and not force:
+    """Seed MCQs for AP CA chapter 9."""
+    ph = '%s' if USE_POSTGRES else '?'
+    cur = db_exec(conn,
+        f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+        (9, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if not row:
+        _seed_ap_ca_div9_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        cur = db_exec(conn,
+            f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+            (9, 'AP_Current_Affairs'))
+        row = cur.fetchone()
+    if not row:
+        print(f"[div9-mcqs] study_note not found — skipping")
         return
-    if rows and force:
-        db_exec(
-            conn,
-            "DELETE FROM chapter_mcqs WHERE topic=%s AND chapter_num=%s",
-            ("AP_Current_Affairs", 9)
-        )
-
-    def _ph(q):
-        return q if USE_POSTGRES else q.replace("%s", "?")
-
+    note_id = row_to_dict(row)['id']
+    cur2 = db_exec(conn, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    count = list(cur2.fetchone())[0]
+    if count > 0 and not force:
+        return
+    db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    insert_sql = (
+        f"INSERT INTO chapter_mcqs "
+        f"(study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
+    )
+    diff_map = {'easy': 1, 'medium': 2, 'hard': 3, 1: 1, 2: 2, 3: 3}
     for mcq in MCQ_DATA:
-        db_exec(
-            conn,
-            _ph(
-                "INSERT INTO chapter_mcqs "
-                "(topic, chapter_num, section_idx, difficulty, question_te, "
-                "opt_a, opt_b, opt_c, opt_d, answer, explanation_te) "
-                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            ),
-            (
-                "AP_Current_Affairs",
-                9,
-                mcq["section_idx"],
-                mcq["difficulty"],
-                mcq["question_te"],
-                mcq["opt_a"],
-                mcq["opt_b"],
-                mcq["opt_c"],
-                mcq["opt_d"],
-                mcq["answer"],
-                mcq["explanation_te"],
-            )
-        )
+        diff = diff_map.get(mcq.get('difficulty', 'medium'), 2)
+        q_te = mcq.get('question_te', mcq.get('question_te', ''))
+        db_exec(conn, insert_sql, (
+            note_id,
+            mcq['section_idx'],
+            diff,
+            q_te,
+            mcq['opt_a'], mcq['opt_b'], mcq['opt_c'], mcq['opt_d'],
+            str(mcq['answer']).lower(),
+            mcq['explanation_te']
+        ))
+    if USE_POSTGRES:
+        conn.commit()
+    return {'success': True, 'message': f'AP CA Div9 MCQs seeded! Total: {len(MCQ_DATA)}'}
+
+# Additional MCQs for div9 appended
+_EXTRA_MCQ_DATA = [
+    # Padma Awards additional
+    {
+        "section_idx": 1,
+        "difficulty": "easy",
+        "question_te": "2025 పద్మ విభూషణ్ పొందిన తెలుగు నటుడు ఎవరు?",
+        "opt_a": "అల్లు అర్జున్",
+        "opt_b": "మోహన్ బాబు",
+        "opt_c": "బాలకృష్ణ (నందమూరి బాలకృష్ణ)",
+        "opt_d": "చిరంజీవి",
+        "answer": "C",
+        "explanation_te": "2025లో నందమూరి బాలకృష్ణ పద్మ విభూషణ్ పురస్కారం పొందారు. ఇది తెలుగు సినిమాకు గొప్ప గౌరవం."
+    },
+    {
+        "section_idx": 1,
+        "difficulty": "medium",
+        "question_te": "SP బాలసుబ్రహ్మణ్యం ఏ సంవత్సరం పద్మ విభూషణ్ పొందారు?",
+        "opt_a": "2019",
+        "opt_b": "2020",
+        "opt_c": "2021",
+        "opt_d": "2022",
+        "answer": "C",
+        "explanation_te": "2021లో SP బాలసుబ్రహ్మణ్యం పద్మ విభూషణ్ పొందారు (మరణానంతర పురస్కారం). 2020 సెప్టెంబర్‌లో ఆయన COVID-19 తో మరణించారు."
+    },
+    {
+        "section_idx": 1,
+        "difficulty": "medium",
+        "question_te": "K. విశ్వనాథ్ దాదాసాహేబ్ ఫాల్కే పురస్కారం ఏ సంవత్సరం పొందారు?",
+        "opt_a": "2014",
+        "opt_b": "2016",
+        "opt_c": "2018",
+        "opt_d": "2020",
+        "answer": "B",
+        "explanation_te": "K. విశ్వనాథ్ 2016లో (67వ Dadasaheb Phalke Award) దాదాసాహేబ్ ఫాల్కే పురస్కారం పొందారు. ఆయన తెలుగు సినిమా దర్శకుడు."
+    },
+    {
+        "section_idx": 1,
+        "difficulty": "easy",
+        "question_te": "పద్మ పురస్కారాలు ఏ తేదీన ప్రకటిస్తారు?",
+        "opt_a": "స్వాతంత్ర్య దినం (ఆగస్టు 15)",
+        "opt_b": "గణతంత్ర దినం (జనవరి 26)",
+        "opt_c": "హోలీ",
+        "opt_d": "క్రిస్మస్",
+        "answer": "B",
+        "explanation_te": "పద్మ పురస్కారాలు ప్రతి సంవత్సరం గణతంత్ర దినోత్సవం (జనవరి 26) సందర్భంగా ప్రకటిస్తారు. పురస్కారాలు మార్చి/ఏప్రిల్ లో రాష్ట్రపతి భవన్‌లో ప్రదానం జరుగుతుంది."
+    },
+    {
+        "section_idx": 2,
+        "difficulty": "easy",
+        "question_te": "2023 ఆస్కార్ అవార్డు గెలిచిన తెలుగు పాట ఏది?",
+        "opt_a": "జై హో",
+        "opt_b": "నాటు నాటు (RRR)",
+        "opt_c": "బాహుబలి థీమ్",
+        "opt_d": "ఆర్యా",
+        "answer": "B",
+        "explanation_te": "RRR చిత్రంలోని 'నాటు నాటు' పాట 2023 ఆస్కార్ (95వ అకాడమీ అవార్డుల) లో Best Original Song విభాగంలో గెలిచింది. MM కీరవాణి సంగీతం."
+    },
+    {
+        "section_idx": 2,
+        "difficulty": "medium",
+        "question_te": "69వ జాతీయ చలనచిత్ర పురస్కారాల్లో Best Actor ఎవరు?",
+        "opt_a": "రామ్ చరణ్ (RRR)",
+        "opt_b": "అల్లు అర్జున్ (పుష్ప-ది రైజ్)",
+        "opt_c": "NTR Jr (RRR)",
+        "opt_d": "మహేష్ బాబు",
+        "answer": "B",
+        "explanation_te": "అల్లు అర్జున్ 69వ జాతీయ చలనచిత్ర పురస్కారాల్లో (Pushpa: The Rise చిత్రానికి) Best Actor పురస్కారం పొందారు — తొలి తెలుగు నటుడు ఈ అవార్డు గెలిచిన వారు."
+    },
+    {
+        "section_idx": 3,
+        "difficulty": "easy",
+        "question_te": "విశ్వనాధ సత్యనారాయణ జ్ఞానపీఠ్ పురస్కారం ఏ సంవత్సరం పొందారు?",
+        "opt_a": "1960",
+        "opt_b": "1970",
+        "opt_c": "1980",
+        "opt_d": "1990",
+        "answer": "B",
+        "explanation_te": "విశ్వనాధ సత్యనారాయణ 'రామాయణ కల్పవృక్షం' రచనకు 1970లో జ్ఞానపీఠ్ పురస్కారం పొందారు. ఇది మొదటి తెలుగు జ్ఞానపీఠ్."
+    },
+    {
+        "section_idx": 3,
+        "difficulty": "medium",
+        "question_te": "సి నారాయణ రెడ్డి (సినారె) జ్ఞానపీఠ్ పురస్కారం ఏ సంవత్సరం పొందారు?",
+        "opt_a": "1982",
+        "opt_b": "1988",
+        "opt_c": "1992",
+        "opt_d": "1998",
+        "answer": "B",
+        "explanation_te": "సి నారాయణ రెడ్డి (Sinaree) 1988లో జ్ఞానపీఠ్ పురస్కారం పొందారు. తెలుగులో రెండవ జ్ఞానపీఠ్ గ్రహీత."
+    },
+    {
+        "section_idx": 4,
+        "difficulty": "easy",
+        "question_te": "IIT తిరుపతి ఏ సంవత్సరంలో స్థాపించబడింది?",
+        "opt_a": "2014",
+        "opt_b": "2015",
+        "opt_c": "2018",
+        "opt_d": "2020",
+        "answer": "B",
+        "explanation_te": "IIT తిరుపతి 2015లో AP Reorganisation Act 2014 ప్రకారం AP కి ఒక IIT మంజూరు అయి స్థాపించబడింది."
+    },
+    {
+        "section_idx": 4,
+        "difficulty": "medium",
+        "question_te": "AIIMS మంగళగిరి ఎక్కడ ఉంది?",
+        "opt_a": "విశాఖపట్నం",
+        "opt_b": "మంగళగిరి (గుంటూరు జిల్లా)",
+        "opt_c": "తిరుపతి",
+        "opt_d": "కాకినాడ",
+        "answer": "B",
+        "explanation_te": "AIIMS మంగళగిరి గుంటూరు జిల్లాలో మంగళగిరిలో ఉంది. AP కి APRA 2014 ప్రకారం AIIMS మంజూరైంది, 2022లో సర్వీసులు ప్రారంభించింది."
+    },
+    {
+        "section_idx": 5,
+        "difficulty": "easy",
+        "question_te": "AP High Court (ప్రత్యేక) ఎప్పుడు ప్రారంభమైంది?",
+        "opt_a": "2016 జనవరి 1",
+        "opt_b": "2019 జనవరి 1",
+        "opt_c": "2014 జూన్ 2",
+        "opt_d": "2017 నవంబర్ 1",
+        "answer": "B",
+        "explanation_te": "AP High Court అమరావతిలో జనవరి 1, 2019న ప్రత్యేకంగా ఏర్పాటైంది. APRA 2014 సెక్షన్ 30 ప్రకారం ఏర్పాటైంది."
+    },
+    {
+        "section_idx": 5,
+        "difficulty": "medium",
+        "question_te": "AP High Court తొలి మహిళా Chief Justice ఎవరు?",
+        "opt_a": "జస్టిస్ ప్రభా శ్రీదేవన్",
+        "opt_b": "జస్టిస్ లీసా గిల్ (Lisa Gill)",
+        "opt_c": "జస్టిస్ హిమా కోహ్లి",
+        "opt_d": "జస్టిస్ బి.వి. నాగరత్న",
+        "answer": "B",
+        "explanation_te": "జస్టిస్ లీసా గిల్ ఏప్రిల్ 25, 2026న AP High Court తొలి మహిళా Chief Justice గా నియమితులయ్యారు."
+    },
+    {
+        "section_idx": 6,
+        "difficulty": "easy",
+        "question_te": "ఆర్టికల్ 371-D ఏ రాష్ట్రానికి సంబంధించినది?",
+        "opt_a": "తెలంగాణ",
+        "opt_b": "ఆంధ్రప్రదేశ్",
+        "opt_c": "కర్ణాటక",
+        "opt_d": "ఒడిశా",
+        "answer": "B",
+        "explanation_te": "ఆర్టికల్ 371-D ఆంధ్రప్రదేశ్‌కి సంబంధించినది. ఇది 32వ రాజ్యాంగ సవరణ 1973 ద్వారా చేర్చబడింది. విద్య, ఉద్యోగాలలో స్థానిక పౌరులకు రక్షణ కల్పిస్తుంది."
+    },
+    {
+        "section_idx": 6,
+        "difficulty": "medium",
+        "question_te": "ఆర్టికల్ 371-D ఏ రాజ్యాంగ సవరణ ద్వారా జోడించబడింది?",
+        "opt_a": "28వ సవరణ 1972",
+        "opt_b": "32వ సవరణ 1973",
+        "opt_c": "42వ సవరణ 1976",
+        "opt_d": "100వ సవరణ 2015",
+        "answer": "B",
+        "explanation_te": "ఆర్టికల్ 371-D 32వ రాజ్యాంగ సవరణ 1973 ద్వారా AP కి ప్రత్యేక రక్షణ కోసం జోడించబడింది. G.O.610 తర్వాత 6 Zones విద్య, ఉద్యోగాలలో రోస్టర్ సిస్టమ్ అమలు చేయడానికి."
+    },
+    {
+        "section_idx": 7,
+        "difficulty": "easy",
+        "question_te": "ప్రస్తుత AP గవర్నర్ ఎవరు?",
+        "opt_a": "జస్టిస్ S. అబ్దుల్ నజీర్",
+        "opt_b": "బిస్వభూషణ్ హరిచందన్",
+        "opt_c": "నవంబర్ నయనా పటేల్",
+        "opt_d": "ఇ.ఎస్.ఎల్ నరసిమ్హన్",
+        "answer": "A",
+        "explanation_te": "జస్టిస్ S. అబ్దుల్ నజీర్ ప్రస్తుత AP గవర్నర్. ఆయన సుప్రీంకోర్టు మాజీ న్యాయమూర్తి, 2023 జనవరిలో నియమితులయ్యారు."
+    },
+    {
+        "section_idx": 7,
+        "difficulty": "easy",
+        "question_te": "AP లో మొత్తం శాసనసభ స్థానాలు ఎన్ని?",
+        "opt_a": "119",
+        "opt_b": "175",
+        "opt_c": "150",
+        "opt_d": "294",
+        "answer": "B",
+        "explanation_te": "AP లో మొత్తం 175 శాసనసభ (Assembly) స్థానాలు ఉన్నాయి. 25 లోక్‌సభ మరియు 11 రాజ్యసభ స్థానాలు ఉన్నాయి."
+    },
+    {
+        "section_idx": 7,
+        "difficulty": "medium",
+        "question_te": "AP లో ప్రస్తుత జిల్లాల సంఖ్య (2026 జనవరి నాటికి)?",
+        "opt_a": "13",
+        "opt_b": "25",
+        "opt_c": "26",
+        "opt_d": "28",
+        "answer": "D",
+        "explanation_te": "జనవరి 1, 2026 నుండి AP లో మొత్తం 28 జిల్లాలు ఉన్నాయి. 2022 ఏప్రిల్‌లో 13→26 చేసి, తర్వాత 2 మరిన్ని జిల్లాలు జోడించడంతో 28 అయ్యాయి."
+    },
+    {
+        "section_idx": 8,
+        "difficulty": "easy",
+        "question_te": "AP లో ప్రస్తుత ముఖ్యమంత్రి ఎవరు?",
+        "opt_a": "వై.ఎస్. జగన్ మోహన్ రెడ్డి",
+        "opt_b": "చంద్రబాబు నాయుడు (నారా చంద్రబాబు నాయుడు)",
+        "opt_c": "కె. కేశవ్ రావు",
+        "opt_d": "పవన్ కళ్యాణ్",
+        "answer": "B",
+        "explanation_te": "చంద్రబాబు నాయుడు జూన్ 12, 2024న AP ముఖ్యమంత్రిగా ప్రమాణ స్వీకారం చేశారు. TDP-BJP-JSP కూటమి 2024 ఎన్నికల్లో ఘన విజయం సాధించింది."
+    },
+    {
+        "section_idx": 8,
+        "difficulty": "medium",
+        "question_te": "2026 AP Reorganisation Amendment Act ఏ తేదీన రాష్ట్రపతి ఆమోదం పొందింది?",
+        "opt_a": "ఏప్రిల్ 1, 2026",
+        "opt_b": "ఏప్రిల్ 2, 2026",
+        "opt_c": "ఏప్రిల్ 6, 2026",
+        "opt_d": "ఏప్రిల్ 13, 2026",
+        "answer": "C",
+        "explanation_te": "AP Reorganisation Amendment Act 2026 (Act No. 7/2026) రాష్ట్రపతి ఏప్రిల్ 6, 2026న ఆమోదించారు. ఇది అమరావతిని అధికారిక రాజధానిగా గుర్తించింది."
+    },
+    {
+        "section_idx": 8,
+        "difficulty": "hard",
+        "question_te": "APRA 2014 ప్రకారం అమలులోకి వచ్చిన తేదీ నుండి అమరావతి రాజధాని Retrospective గా ఏ తేదీ నుండి వర్తిస్తుంది?",
+        "opt_a": "జూన్ 2, 2014",
+        "opt_b": "అక్టోబర్ 1, 2018",
+        "opt_c": "జూన్ 2, 2024",
+        "opt_d": "ఏప్రిల్ 6, 2026",
+        "answer": "C",
+        "explanation_te": "2026 సవరణ చట్టం జూన్ 2, 2024 నుండి (Retrospectively) అమరావతిని AP రాజధానిగా గుర్తించింది. ఇది 2024 ఎన్నికల తర్వాత TDP ప్రభుత్వం అమరావతి రాజధాని అవ్వాలని నిర్ణయించిన తేదీ."
+    }
+]
+
+MCQ_DATA = MCQ_DATA + _EXTRA_MCQ_DATA

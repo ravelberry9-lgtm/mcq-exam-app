@@ -594,3 +594,50 @@ MCQ_DATA = [
 # ─── Database Integration (for seed loading) ───────────────────────────────────
 # This section would contain database seeding functions
 # Currently preserved for module structure compatibility
+
+
+def _seed_ap_ca_div2_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT 'AP_Current_Affairs', subtopic TEXT DEFAULT '',
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '', pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if USE_POSTGRES: conn.commit()
+    except Exception: pass
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (2, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if row and not force: return {'success': True, 'already_exists': True}
+    if row and force:
+        db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id IN (SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph})", (2, 'AP_Current_Affairs'))
+        db_exec(conn, f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (2, 'AP_Current_Affairs'))
+    if USE_POSTGRES: conn.commit()
+    db_exec(conn,
+        f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'AP_Current_Affairs', 'Division2', 2,
+         'TDP-BJP-JSP ప్రభుత్వ పథకాలు 2024-2026',
+         'TDP-BJP-JSP Government Schemes 2024-2026',
+         '', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
+    conn.commit()
+    return {'success': True, 'message': 'AP CA Div2 notes seeded!'}
+
+
+def _seed_ap_ca_div2_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES):
+    ph = '%s' if USE_POSTGRES else '?'
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (2, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if not row:
+        _seed_ap_ca_div2_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (2, 'AP_Current_Affairs'))
+        row = cur.fetchone()
+    note_id = row_to_dict(row)['id']
+    db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    insert_sql = f"INSERT INTO chapter_mcqs (study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
+    for (sec_idx, diff, q_te, a, b, c, d, correct, expl) in MCQ_DATA:
+        db_exec(conn, insert_sql, (note_id, sec_idx, diff, q_te, a, b, c, d, str(correct).lower(), expl))
+    if USE_POSTGRES: conn.commit()
+    return {'success': True, 'inserted': len(MCQ_DATA)}

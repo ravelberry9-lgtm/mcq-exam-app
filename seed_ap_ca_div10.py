@@ -236,105 +236,305 @@ MCQ_DATA = [
 
 # ── Helper functions ──────────────────────────────────────────────────────────
 
-def _seed_ap_ca_div10_notes_inner(c, db_exec, row_to_dict, USE_POSTGRES, force=False):
-    """Insert div10 HTML notes into study_notes table."""
-    here = os.path.dirname(os.path.abspath(__file__))
-    html_path = os.path.join(here, "static", "notes", "ap_ca_div10_notes.html")
-    if not os.path.exists(html_path):
-        print("[div10] HTML file not found:", html_path)
+def _seed_ap_ca_div10_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
+    """Seed study notes for AP CA Division 10."""
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT 'AP_Current_Affairs', subtopic TEXT DEFAULT '',
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '', pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if USE_POSTGRES: conn.commit()
+    except Exception: pass
+    import json as _json
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (10, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if row and not force: return {'success': True, 'already_exists': True}
+    if row and force:
+        note_id = row_to_dict(row)['id']
+        db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+        db_exec(conn, f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (10, 'AP_Current_Affairs'))
+        if USE_POSTGRES: conn.commit()
+    db_exec(conn,
+        f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'AP_Current_Affairs', 'Division10', 10,
+         'AP పునర్వ్యవస్థీకరణ చట్టం 2014 & సవరణ 2026',
+         'AP Reorganisation Act 2014 & Amendment 2026',
+         '', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
+    if USE_POSTGRES: conn.commit()
+    return {'success': True, 'message': 'AP CA Div10 notes seeded!'}
+def _seed_ap_ca_div10_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
+    """Seed MCQs for AP CA chapter 10 (AP Reorganisation Act 2014)."""
+    ph = '%s' if USE_POSTGRES else '?'
+    cur = db_exec(conn,
+        f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+        (10, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if not row:
+        _seed_ap_ca_div10_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        cur = db_exec(conn,
+            f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+            (10, 'AP_Current_Affairs'))
+        row = cur.fetchone()
+    if not row:
+        print("[div10-mcqs] study_note not found — skipping")
         return
-
-    with open(html_path, encoding="utf-8") as fh:
-        html_content = fh.read()
-
-    if USE_POSTGRES:
-        existing = db_exec(c,
-            "SELECT id FROM study_notes WHERE topic='AP_Current_Affairs' AND chapter_num=10")
-        row = existing.fetchone()
-    else:
-        existing = db_exec(c,
-            "SELECT id FROM study_notes WHERE topic='AP_Current_Affairs' AND chapter_num=10")
-        row = existing.fetchone()
-
-    if row:
-        if force:
-            if USE_POSTGRES:
-                db_exec(c,
-                    "UPDATE study_notes SET title=%s, content=%s, sections_json=%s "
-                    "WHERE topic='AP_Current_Affairs' AND chapter_num=10",
-                    ("AP పునర్వ్యవస్థీకరణ చట్టం 2014 & సవరణ 2026", html_content, SECTIONS_JSON))
-            else:
-                db_exec(c,
-                    "UPDATE study_notes SET title=?, content=?, sections_json=? "
-                    "WHERE topic='AP_Current_Affairs' AND chapter_num=10",
-                    ("AP పునర్వ్యవస్థీకరణ చట్టం 2014 & సవరణ 2026", html_content, SECTIONS_JSON))
-    else:
-        if USE_POSTGRES:
-            db_exec(c,
-                "INSERT INTO study_notes (topic, chapter_num, title, content, sections_json) "
-                "VALUES (%s,%s,%s,%s,%s)",
-                ("AP_Current_Affairs", 10,
-                 "AP పునర్వ్యవస్థీకరణ చట్టం 2014 & సవరణ 2026",
-                 html_content, SECTIONS_JSON))
-        else:
-            db_exec(c,
-                "INSERT INTO study_notes (topic, chapter_num, title, content, sections_json) "
-                "VALUES (?,?,?,?,?)",
-                ("AP_Current_Affairs", 10,
-                 "AP పునర్వ్యవస్థీకరణ చట్టం 2014 & సవరణ 2026",
-                 html_content, SECTIONS_JSON))
-
-
-def _seed_ap_ca_div10_mcqs_inner(c, db_exec, row_to_dict, USE_POSTGRES):
-    """Insert div10 MCQs into chapter_mcqs table."""
-    if USE_POSTGRES:
-        note_row = db_exec(c,
-            "SELECT id FROM study_notes WHERE topic='AP_Current_Affairs' AND chapter_num=10"
-        ).fetchone()
-    else:
-        note_row = db_exec(c,
-            "SELECT id FROM study_notes WHERE topic='AP_Current_Affairs' AND chapter_num=10"
-        ).fetchone()
-
-    if not note_row:
-        print("[div10-mcqs] study_note not found — skipping MCQ seed")
+    note_id = row_to_dict(row)['id']
+    cur2 = db_exec(conn, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    count = list(cur2.fetchone())[0]
+    if count > 0 and not force:
         return
-
-    note_id = row_to_dict(note_row)["id"] if callable(row_to_dict) else note_row[0]
-
-    if USE_POSTGRES:
-        existing = db_exec(c,
-            "SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id=%s", (note_id,))
-    else:
-        existing = db_exec(c,
-            "SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id=?", (note_id,))
-
-    count = list(existing.fetchone())[0]
-    if count >= len(MCQ_DATA):
-        return  # already seeded
-
-    if USE_POSTGRES:
-        db_exec(c, "DELETE FROM chapter_mcqs WHERE study_note_id=%s", (note_id,))
-    else:
-        db_exec(c, "DELETE FROM chapter_mcqs WHERE study_note_id=?", (note_id,))
-
-    for idx, mcq in enumerate(MCQ_DATA):
-        opts = mcq["options"]
-        if USE_POSTGRES:
-            db_exec(c,
-                "INSERT INTO chapter_mcqs "
-                "(study_note_id, section_idx, question, opt_a, opt_b, opt_c, opt_d, answer, explanation) "
-                "VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)",
-                (note_id, mcq["section_idx"], mcq["question"],
-                 opts[0], opts[1], opts[2], opts[3],
-                 mcq["answer"], mcq["explanation"]))
+    db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    insert_sql = (
+        f"INSERT INTO chapter_mcqs "
+        f"(study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
+    )
+    for mcq in MCQ_DATA:
+        # Handle both dict formats: "question"/"options" or "question_te"/"opt_a"-"opt_d"
+        q_te = mcq.get('question_te', mcq.get('question', ''))
+        if 'options' in mcq:
+            opts = mcq['options']
+            a, b, c, d = (opts + ['', '', '', ''])[:4]
         else:
-            db_exec(c,
-                "INSERT INTO chapter_mcqs "
-                "(study_note_id, section_idx, question, opt_a, opt_b, opt_c, opt_d, answer, explanation) "
-                "VALUES (?,?,?,?,?,?,?,?,?)",
-                (note_id, mcq["section_idx"], mcq["question"],
-                 opts[0], opts[1], opts[2], opts[3],
-                 mcq["answer"], mcq["explanation"]))
+            a = mcq.get('opt_a', '')
+            b = mcq.get('opt_b', '')
+            c = mcq.get('opt_c', '')
+            d = mcq.get('opt_d', '')
+        correct = str(mcq.get('answer', mcq.get('correct', 'a'))).lower()
+        expl = mcq.get('explanation_te', mcq.get('explanation', ''))
+        sec = mcq.get('section_idx', 0)
+        db_exec(conn, insert_sql, (note_id, sec, 2, q_te, a, b, c, d, correct, expl))
+    if USE_POSTGRES:
+        conn.commit()
+    return {'success': True, 'message': f'AP CA Div10 MCQs seeded! Total: {len(MCQ_DATA)}'}
 
-    print(f"[div10-mcqs] Inserted {len(MCQ_DATA)} MCQs for div10.")
+# Additional MCQs for div10 appended
+_EXTRA_MCQ_DATA_10 = [
+    {
+        "section_idx": 1,
+        "difficulty": "easy",
+        "question_te": "AP Reorganisation Act 2014 Lok Sabha లో ఏ తేదీన ఆమోదం పొందింది?",
+        "opt_a": "ఫిబ్రవరి 14, 2014",
+        "opt_b": "ఫిబ్రవరి 18, 2014",
+        "opt_c": "ఫిబ్రవరి 20, 2014",
+        "opt_d": "ఫిబ్రవరి 22, 2014",
+        "answer": "B",
+        "explanation_te": "APRA 2014 Lok Sabha లో ఫిబ్రవరి 18, 2014న ఆమోదించబడింది. Rajya Sabha ఫిబ్రవరి 20, 2014న ఆమోదించింది."
+    },
+    {
+        "section_idx": 1,
+        "difficulty": "easy",
+        "question_te": "APRA 2014 Rajya Sabha లో ఏ తేదీన ఆమోదం పొందింది?",
+        "opt_a": "ఫిబ్రవరి 18, 2014",
+        "opt_b": "ఫిబ్రవరి 19, 2014",
+        "opt_c": "ఫిబ్రవరి 20, 2014",
+        "opt_d": "ఫిబ్రవరి 24, 2014",
+        "answer": "C",
+        "explanation_te": "APRA 2014 Rajya Sabha లో ఫిబ్రవరి 20, 2014న ఆమోదించబడింది. ఇది భారత పార్లమెంట్ ద్వారా చాలా వివాదాస్పదంగా ఆమోదించబడింది."
+    },
+    {
+        "section_idx": 1,
+        "difficulty": "medium",
+        "question_te": "APRA 2014 Act Number ఏమిటి?",
+        "opt_a": "Act No. 2 of 2014",
+        "opt_b": "Act No. 4 of 2014",
+        "opt_c": "Act No. 6 of 2014",
+        "opt_d": "Act No. 10 of 2014",
+        "answer": "C",
+        "explanation_te": "Andhra Pradesh Reorganisation Act, 2014 — Act No. 6 of 2014. ఇది జూన్ 2, 2014న అమల్లోకి వచ్చింది."
+    },
+    {
+        "section_idx": 1,
+        "difficulty": "easy",
+        "question_te": "తెలంగాణ భారతదేశంలో ఎన్నవ రాష్ట్రంగా ఏర్పడింది?",
+        "opt_a": "27వ",
+        "opt_b": "28వ",
+        "opt_c": "29వ",
+        "opt_d": "30వ",
+        "answer": "C",
+        "explanation_te": "జూన్ 2, 2014న APRA 2014 అమలుతో తెలంగాణ భారతదేశంలో 29వ రాష్ట్రంగా అవతరించింది."
+    },
+    {
+        "section_idx": 2,
+        "difficulty": "easy",
+        "question_te": "APRA 2014 Section 30 దేనికి సంబంధించినది?",
+        "opt_a": "పోలవరం ప్రాజెక్టు",
+        "opt_b": "AP High Court ఏర్పాటు",
+        "opt_c": "జల వివాదాలు",
+        "opt_d": "ఆస్తుల విభజన",
+        "answer": "B",
+        "explanation_te": "APRA 2014 Section 30 AP కోసం ప్రత్యేక High Court ఏర్పాటు గురించి. ఇది జనవరి 1, 2019న అమరావతిలో ప్రారంభమైంది."
+    },
+    {
+        "section_idx": 2,
+        "difficulty": "medium",
+        "question_te": "APRA 2014 ఏ Section పోలవరం ప్రాజెక్టును జాతీయ ప్రాజెక్టుగా ప్రకటించింది?",
+        "opt_a": "Section 5",
+        "opt_b": "Section 30",
+        "opt_c": "Section 90",
+        "opt_d": "Section 94",
+        "answer": "D",
+        "explanation_te": "APRA 2014 Section 94 పోలవరం ప్రాజెక్టును (Indira Sagar Project) జాతీయ ప్రాజెక్టుగా ప్రకటించింది. కేంద్ర ప్రభుత్వం పూర్తి నిధులు అందించాలి."
+    },
+    {
+        "section_idx": 2,
+        "difficulty": "hard",
+        "question_te": "APRA 2014 Section 5(2) దేనికి సంబంధించినది?",
+        "opt_a": "హైదరాబాద్ ఉమ్మడి రాజధాని",
+        "opt_b": "AP రాజధాని నగర ఏర్పాటు (2026 సవరణ ద్వారా అమరావతి)",
+        "opt_c": "పోలవరం నిర్మాణం",
+        "opt_d": "జల పంపకం",
+        "answer": "B",
+        "explanation_te": "APRA 2014 Section 5(2) మొదట AP రాజధాని గురించి పేర్కొంది. 2026 సవరణ ద్వారా ఇది అమరావతి అని నిర్దిష్టంగా పేర్కొనబడింది."
+    },
+    {
+        "section_idx": 3,
+        "difficulty": "easy",
+        "question_te": "హైదరాబాద్ ఎంత కాలం ఉమ్మడి రాజధానిగా ఉండాలని APRA 2014 నిర్ణయించింది?",
+        "opt_a": "5 సంవత్సరాలు",
+        "opt_b": "10 సంవత్సరాలు",
+        "opt_c": "15 సంవత్సరాలు",
+        "opt_d": "అనిర్దిష్టంగా",
+        "answer": "B",
+        "explanation_te": "APRA 2014 ప్రకారం హైదరాబాద్ AP-తెలంగాణ రెండు రాష్ట్రాలకు 10 సంవత్సరాలు (2014-2024) ఉమ్మడి రాజధానిగా ఉంటుంది."
+    },
+    {
+        "section_idx": 3,
+        "difficulty": "medium",
+        "question_te": "Special Category Status (SCS) డిమాండ్ ఎవరు AP కి వాగ్దానం చేశారు?",
+        "opt_a": "నరేంద్ర మోదీ",
+        "opt_b": "మన్మోహన్ సింగ్",
+        "opt_c": "రాహుల్ గాంధీ",
+        "opt_d": "పి.వి. నరసింహారావు",
+        "answer": "B",
+        "explanation_te": "మన్మోహన్ సింగ్ (UPA ప్రభుత్వం) APRA 2014 ఆమోదం సమయంలో AP కి Special Category Status ఇస్తామని వాగ్దానం చేశారు. కానీ ఇది ఇంకా చట్టపూర్వకంగా అమలు కాలేదు."
+    },
+    {
+        "section_idx": 3,
+        "difficulty": "hard",
+        "question_te": "AP-తెలంగాణ ఆస్తుల విభజన నిష్పత్తి ఏమిటి?",
+        "opt_a": "50:50",
+        "opt_b": "60:40",
+        "opt_c": "58.32:41.68 (AP:TG)",
+        "opt_d": "70:30",
+        "answer": "C",
+        "explanation_te": "APRA 2014 ప్రకారం ఉమ్మడి AP ఆస్తులు 58.32% (AP) : 41.68% (తెలంగాణ) నిష్పత్తిలో జనాభా ఆధారంగా విభజించబడ్డాయి."
+    },
+    {
+        "section_idx": 4,
+        "difficulty": "easy",
+        "question_te": "14వ ఆర్థిక సంఘం AP SCS డిమాండ్ పై ఏ నిర్ణయం తీసుకుంది?",
+        "opt_a": "SCS మంజూరు చేసింది",
+        "opt_b": "SCS రద్దు చేసి Special Package ప్రతిపాదించింది",
+        "opt_c": "నిర్ణయం వాయిదా వేసింది",
+        "opt_d": "AP కి ఎటువంటి రాయితీలు ఇవ్వలేదు",
+        "answer": "B",
+        "explanation_te": "14వ ఆర్థిక సంఘం (2015) SCS పద్ధతిని రద్దు చేయాలని సిఫారసు చేసింది మరియు AP కి Special Package పద్ధతిలో నిధులు ఇవ్వాలని సూచించింది."
+    },
+    {
+        "section_idx": 5,
+        "difficulty": "easy",
+        "question_te": "AP Reorganisation Amendment Act 2026 Act Number ఏమిటి?",
+        "opt_a": "Act No. 5 of 2026",
+        "opt_b": "Act No. 6 of 2026",
+        "opt_c": "Act No. 7 of 2026",
+        "opt_d": "Act No. 10 of 2026",
+        "answer": "C",
+        "explanation_te": "AP Reorganisation Amendment Act 2026 — Act No. 7 of 2026. ఇది అమరావతిని AP అధికారిక రాజధానిగా పేర్కొంది."
+    },
+    {
+        "section_idx": 5,
+        "difficulty": "medium",
+        "question_te": "2026 Amendment Act Lok Sabha లో ఏ తేదీన ఆమోదం పొందింది?",
+        "opt_a": "మార్చి 31, 2026",
+        "opt_b": "ఏప్రిల్ 1, 2026",
+        "opt_c": "ఏప్రిల్ 2, 2026",
+        "opt_d": "ఏప్రిల్ 6, 2026",
+        "answer": "B",
+        "explanation_te": "2026 AP Reorganisation Amendment Act Lok Sabha లో ఏప్రిల్ 1, 2026న ఆమోదించబడింది. Rajya Sabha ఏప్రిల్ 2 న, రాష్ట్రపతి ఏప్రిల్ 6న ఆమోదించారు."
+    },
+    {
+        "section_idx": 6,
+        "difficulty": "medium",
+        "question_te": "G.O.610 దేనికి సంబంధించినది?",
+        "opt_a": "పోలవరం ప్రాజెక్టు",
+        "opt_b": "AP విద్య-ఉద్యోగాలలో 6 Zones రోస్టర్ సిస్టమ్",
+        "opt_c": "జల వివాదాలు",
+        "opt_d": "రాజధాని నిర్మాణం",
+        "answer": "B",
+        "explanation_te": "G.O.610 AP లో విద్య-ఉద్యోగాలను 6 Zones లో విభజించి స్థానికులకు రక్షణ కల్పించే రోస్టర్ సిస్టమ్ గురించి. ఆర్టికల్ 371-D కింద అమలైంది."
+    },
+    {
+        "section_idx": 6,
+        "difficulty": "easy",
+        "question_te": "States Reorganisation Act 1956 ఏ ఆధారంగా రాష్ట్రాలను ఏర్పాటు చేసింది?",
+        "opt_a": "మతం",
+        "opt_b": "భాష",
+        "opt_c": "జాతి",
+        "opt_d": "ఆర్థిక అభివృద్ధి",
+        "answer": "B",
+        "explanation_te": "States Reorganisation Act 1956 భాష ఆధారంగా రాష్ట్రాలను పునర్వ్యవస్థీకరించింది. ఫజల్ అలీ కమిషన్ నివేదిక ఆధారంగా అమలైంది. తెలుగు మాట్లాడే ప్రాంతాలు కలిసి AP ఏర్పాటైంది."
+    },
+    {
+        "section_idx": 7,
+        "difficulty": "hard",
+        "question_te": "AP Reorganisation Amendment Act No. 19 of 2014 దేనికి సంబంధించినది?",
+        "opt_a": "రాజధాని నిర్ణయం",
+        "opt_b": "7 మండలాలు ఖమ్మం జిల్లా నుండి AP కి బదిలీ",
+        "opt_c": "పోలవరం ఆమోదం",
+        "opt_d": "SCS మంజూరు",
+        "answer": "B",
+        "explanation_te": "Amendment Act No. 19 of 2014 (జూలై 11, 2014) ఖమ్మం జిల్లా నుండి 7 మండలాలను తూ/ప గోదావరి జిల్లాలకు బదిలీ చేసింది. పోలవరం ప్రాజెక్టు నిర్మాణం కోసం."
+    },
+    {
+        "section_idx": 7,
+        "difficulty": "medium",
+        "question_te": "APRA 2014 ప్రకారం పోలవరం ప్రాజెక్టు నిర్మాణ నిధులు ఎవరు భరించాలి?",
+        "opt_a": "AP రాష్ట్ర ప్రభుత్వం",
+        "opt_b": "కేంద్ర ప్రభుత్వం పూర్తిగా",
+        "opt_c": "AP-తెలంగాణ సమానంగా",
+        "opt_d": "ప్రైవేట్ సంస్థలు",
+        "answer": "B",
+        "explanation_te": "APRA 2014 Section 94 ప్రకారం పోలవరం జాతీయ ప్రాజెక్టుగా కేంద్ర ప్రభుత్వం పూర్తి నిధులు అందించాలి. ఇది AP రాష్ట్రానికి గొప్ప ప్రయోజనం."
+    },
+    {
+        "section_idx": 8,
+        "difficulty": "easy",
+        "question_te": "AP Reorganisation Act 2014 Rajya Sabha లో ఎందుకు వివాదాస్పదంగా ఆమోదించబడింది?",
+        "opt_a": "ఆర్థిక కారణాలు",
+        "opt_b": "Voting లేకుండా Voice Vote ద్వారా విపక్షాల నిరసన మధ్య ఆమోదించడం",
+        "opt_c": "సరైన నోటీసు ఇవ్వకుండా",
+        "opt_d": "రాష్ట్రపతి ఆమోదం లేకుండా",
+        "answer": "B",
+        "explanation_te": "APRA 2014 Rajya Sabha లో ఫిబ్రవరి 20, 2014న విపక్షాల తీవ్ర నిరసన మధ్య Voice Vote ద్వారా ఆమోదించబడింది. AP నుండి సభ్యులు వాకవుట్ చేశారు."
+    },
+    {
+        "section_idx": 0,
+        "difficulty": "medium",
+        "question_te": "AP రాజ్యాంగ పరిషత్ (State Constituent Assembly) ఎప్పుడు రద్దు అయింది?",
+        "opt_a": "1950",
+        "opt_b": "1956",
+        "opt_c": "1960",
+        "opt_d": "AP కి ప్రత్యేక రాజ్యాంగ పరిషత్ లేదు",
+        "answer": "D",
+        "explanation_te": "AP ఒక భారత రాష్ట్రం. రాష్ట్రాలకు ప్రత్యేక రాజ్యాంగాలు ఉండవు — భారత రాజ్యాంగం మాత్రమే వర్తిస్తుంది."
+    },
+    {
+        "section_idx": 0,
+        "difficulty": "easy",
+        "question_te": "ఉమ్మడి AP (Undivided AP) ఏ సంవత్సరాల మధ్య ఉంది?",
+        "opt_a": "1950–2014",
+        "opt_b": "1953–2014",
+        "opt_c": "1956–2014",
+        "opt_d": "1947–2014",
+        "answer": "C",
+        "explanation_te": "ఉమ్మడి ఆంధ్రప్రదేశ్ నవంబర్ 1, 1956 (రాష్ట్రాల పునర్వ్యవస్థీకరణ) నుండి జూన్ 1, 2014 (APRA అమలు) వరకు 58 సంవత్సరాలు ఉంది."
+    }
+]
+
+MCQ_DATA = MCQ_DATA + _EXTRA_MCQ_DATA_10

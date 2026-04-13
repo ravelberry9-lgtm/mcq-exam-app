@@ -322,104 +322,621 @@ MCQ_DATA = [
         "answer": "B",
         "explanation_te": "1956 States Reorganisation Act భాష ఆధారంగా భారత రాష్ట్రాలను పునర్వ్యవస్థీకరించింది. ఫజల్ అలీ కమిషన్ నివేదిక ఆధారంగా అమలైంది. ఫలితంగా నవం 1, 1956న AP ఏర్పాటైంది."
     },
+
+    # --- additional MCQs ---
+    {
+        'section_idx': 0,
+        'difficulty': 'easy',
+        'question_te': 'సాతవాహన వంశాన్ని స్థాపించిన వ్యక్తి ఎవరు?',
+        'opt_a': 'పులోమావి',
+        'opt_b': 'సిముఖుడు',
+        'opt_c': 'గౌతమీపుత్ర సాతకర్ణి',
+        'opt_d': 'హాల',
+        'answer': 'B',
+        'explanation_te': 'సాతవాహన వంశాన్ని సిముఖుడు క్రీ.పూ. 2వ శతాబ్దంలో స్థాపించాడు. ఈ వంశం అమరావతి, ధాన్యకటకం, ప్రతిష్ఠానపురాలను రాజధానులుగా కలిగి ఉంది.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'easy',
+        'question_te': 'అమరావతి స్తూపాన్ని ఎవరు నిర్మించారు?',
+        'opt_a': 'ఇక్ష్వాకులు',
+        'opt_b': 'కాకతీయులు',
+        'opt_c': 'సాతవాహనులు',
+        'opt_d': 'చాళుక్యులు',
+        'answer': 'C',
+        'explanation_te': 'బుద్ధిస్ట్ అమరావతి స్తూపం నిర్మాణానికి సాతవాహనులు ముఖ్యంగా గౌతమీపుత్ర సాతకర్ణి సహకరించాడు. ఇది ప్రపంచంలోనే అతిపెద్ద స్తూపాలలో ఒకటి.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'medium',
+        'question_te': 'ఇక్ష్వాకుల రాజధాని ఏది?',
+        'opt_a': 'అమరావతి',
+        'opt_b': 'నాగార్జునకొండ (విజయపురి)',
+        'opt_c': 'ధాన్యకటకం',
+        'opt_d': 'కందుకూరు',
+        'answer': 'B',
+        'explanation_te': 'ఇక్ష్వాకు వంశం క్రీ.శ. 3వ శతాబ్దంలో విజయపురిని (నేటి నాగార్జునకొండ) రాజధానిగా పాలించింది. వీరు బౌద్ధమతాన్ని పోషించారు.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'easy',
+        'question_te': 'కాకతీయుల రాజధాని ఏది?',
+        'opt_a': 'అమరావతి',
+        'opt_b': 'విజయవాడ',
+        'opt_c': 'వరంగల్ (ఓరుగల్లు)',
+        'opt_d': 'హంపి',
+        'answer': 'C',
+        'explanation_te': 'కాకతీయులు 1000–1323 కాలంలో వరంగల్ (ఓరుగల్లు) ను రాజధానిగా పాలించారు. వేయి స్తంభాల గుడి వీరి కాలంలో నిర్మించబడింది.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'medium',
+        'question_te': 'కాకతీయ వంశంలో రాజ్యపాలన చేసిన మహిళా పాలకురాలు ఎవరు?',
+        'opt_a': 'రుద్రమదేవి',
+        'opt_b': 'దుర్గాదేవి',
+        'opt_c': 'ప్రభావతీ గుప్త',
+        'opt_d': 'అక్కలదేవి',
+        'answer': 'A',
+        'explanation_te': 'రుద్రమదేవి కాకతీయ వంశంలో 1262–1289 కాలంలో రాజ్యపాలన చేసిన మహిళా చక్రవర్తి. మార్కో పోలో ఆమె రాజ్యాన్ని సందర్శించాడు.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'medium',
+        'question_te': 'విజయనగర సామ్రాజ్యాన్ని స్థాపించిన వారు ఎవరు?',
+        'opt_a': 'కృష్ణదేవరాయలు & రంగరాయ',
+        'opt_b': 'హరిహర I & బుక్క రాయ I',
+        'opt_c': 'దేవరాయ I & దేవరాయ II',
+        'opt_d': 'ప్రతాపరుద్రుడు & కాటమరాజు',
+        'answer': 'B',
+        'explanation_te': 'విజయనగర సామ్రాజ్యాన్ని 1336లో హరిహర I మరియు బుక్క రాయ I స్థాపించారు. హంపి రాజధానిగా ఈ సామ్రాజ్యం 1646 వరకు నిలిచింది.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'easy',
+        'question_te': 'విజయనగర సామ్రాజ్యానికి రాజధాని ఏది?',
+        'opt_a': 'అమరావతి',
+        'opt_b': 'కర్నూలు',
+        'opt_c': 'హంపి (విజయనగర)',
+        'opt_d': 'కొండవీడు',
+        'answer': 'C',
+        'explanation_te': 'విజయనగర సామ్రాజ్యానికి హంపి (విజయనగర) రాజధాని. ఇది నేటి కర్ణాటకలో ఉంది. కృష్ణదేవరాయలు ఈ సామ్రాజ్యానికి అత్యంత శక్తివంతుడైన చక్రవర్తి.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'hard',
+        'question_te': 'గోల్కొండ సుల్తానేట్ ఏ సంవత్సరంలో స్థాపించబడింది?',
+        'opt_a': '1512',
+        'opt_b': '1518',
+        'opt_c': '1501',
+        'opt_d': '1525',
+        'answer': 'B',
+        'explanation_te': 'గోల్కొండ సుల్తానేట్ (కుతుబ్ షాహీలు) 1518లో స్థాపించబడింది. 1687లో ఔరంగజేబు దీనిని జయించాడు.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'medium',
+        'question_te': 'కాకతీయ వంశానికి చివరి పాలకుడు ఎవరు?',
+        'opt_a': 'గణపతి దేవుడు',
+        'opt_b': 'ప్రతాపరుద్రుడు',
+        'opt_c': 'రుద్రమదేవి',
+        'opt_d': 'బేతాళ నాయకుడు',
+        'answer': 'B',
+        'explanation_te': 'ప్రతాపరుద్రుడు కాకతీయ వంశానికి చివరి పాలకుడు. 1323లో ఢిల్లీ సుల్తాన్ ఘియాసుద్దీన్ తుగ్లక్ సేనాపతి ఉలుఘ్ ఖాన్ చేత ఓడించబడ్డాడు.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'hard',
+        'question_te': 'పూర్వ చాళుక్యులు (వేంగి చాళుక్యులు) రాజధాని ఏది?',
+        'opt_a': 'అమరావతి',
+        'opt_b': 'వరంగల్',
+        'opt_c': 'వేంగి (ఏలూరు సమీపం)',
+        'opt_d': 'కడప',
+        'answer': 'C',
+        'explanation_te': 'పూర్వ చాళుక్యులు (వేంగి) క్రీ.శ. 7వ శతాబ్దం నుండి 1130 వరకు వేంగిని రాజధానిగా పాలించారు. "తెలుగు దేశం" అనే పదం ఈ కాలంలో పుట్టింది.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'easy',
+        'question_te': 'అల్లూరి సీతారామ రాజు మన్యం తిరుగుబాటు ఏ సంవత్సరంలో జరిగింది?',
+        'opt_a': '1920–1922',
+        'opt_b': '1922–1924',
+        'opt_c': '1919–1921',
+        'opt_d': '1925–1927',
+        'answer': 'B',
+        'explanation_te': 'అల్లూరి సీతారామ రాజు 1922–1924 మధ్య మన్యం తిరుగుబాటు నిర్వహించాడు. బ్రిటిష్ వారికి వ్యతిరేకంగా ఆదివాసీ హక్కుల కోసం పోరాడాడు.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'easy',
+        'question_te': 'అల్లూరి సీతారామ రాజు ఎప్పుడు జన్మించాడు?',
+        'opt_a': '1895',
+        'opt_b': '1897',
+        'opt_c': '1900',
+        'opt_d': '1902',
+        'answer': 'B',
+        'explanation_te': 'అల్లూరి సీతారామ రాజు 1897 జూలై 4న జన్మించాడు. ఆయన "మన్యం వీరుడు" అని ప్రసిద్ధి. 2022లో ఆయన 125వ జయంతి జాతీయస్థాయిలో నిర్వహించబడింది.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'easy',
+        'question_te': 'పొట్టి శ్రీరాముల్లు ఎందుకు ప్రసిద్ధి?',
+        'opt_a': 'AP విముక్తి కోసం పోరాడాడు',
+        'opt_b': 'తెలుగు రాష్ట్రం ఏర్పాటు కోసం నిరాహారదీక్ష చేసి మరణించాడు',
+        'opt_c': 'వేంగి చాళుక్యులతో పోరాడాడు',
+        'opt_d': 'హైదరాబాద్ విముక్తి నాయకుడు',
+        'answer': 'B',
+        'explanation_te': 'పొట్టి శ్రీరాముల్లు డిసెంబర్ 15, 1952న తెలుగు రాష్ట్రం ఏర్పాటు కోసం నిరాహారదీక్ష చేసి మరణించాడు. ఆయన మరణం తర్వాత 1953 అక్టోబర్ 1న ఆంధ్ర రాష్ట్రం ఏర్పాటు జరిగింది.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'easy',
+        'question_te': 'అమరజీవి పొట్టి శ్రీరాముల్లు మరణ తేదీ ఏది?',
+        'opt_a': 'నవంబర్ 1, 1952',
+        'opt_b': 'డిసెంబర్ 15, 1952',
+        'opt_c': 'అక్టోబర్ 1, 1953',
+        'opt_d': 'నవంబర్ 1, 1956',
+        'answer': 'B',
+        'explanation_te': 'పొట్టి శ్రీరాముల్లు డిసెంబర్ 15, 1952న 58 రోజుల నిరాహారదీక్ష తర్వాత మరణించాడు. ఈ తేదీని "అమరజీవి దినం" గా జరుపుకుంటారు.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'medium',
+        'question_te': 'ఉయ్యాలవాడ నరసింహారెడ్డి బ్రిటిష్ వారికి వ్యతిరేకంగా తిరుగుబాటు ఏ సంవత్సరంలో జరిగింది?',
+        'opt_a': '1856',
+        'opt_b': '1846',
+        'opt_c': '1857',
+        'opt_d': '1840',
+        'answer': 'B',
+        'explanation_te': 'ఉయ్యాలవాడ నరసింహారెడ్డి 1846లో బ్రిటిష్ వారికి వ్యతిరేకంగా తిరుగుబాటు నిర్వహించాడు. ఇది 1857 తిరుగుబాటుకు పూర్వం జరిగిన ముఖ్యమైన తిరుగుబాటు.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'easy',
+        'question_te': 'టంగుటూరి ప్రకాశం పంతులుకు ఏ బిరుదు ఇవ్వబడింది?',
+        'opt_a': 'ఆంధ్ర కేసరి',
+        'opt_b': 'ఆంధ్ర పితామహుడు',
+        'opt_c': 'మన్యం వీరుడు',
+        'opt_d': 'ఆంధ్ర రత్న',
+        'answer': 'A',
+        'explanation_te': 'టంగుటూరి ప్రకాశం పంతులుకు "ఆంధ్ర కేసరి" బిరుదు ఇవ్వబడింది. ఆయన ఆంధ్ర రాష్ట్రానికి తొలి ముఖ్యమంత్రిగా (1953-54) పనిచేశాడు.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'medium',
+        'question_te': 'కందుకూరి వీరేశలింగం పంతులు ఎందుకు ప్రసిద్ధి?',
+        'opt_a': 'రాజకీయ నాయకుడు',
+        'opt_b': 'తెలుగు సాహిత్య పితామహుడు & సంఘ సంస్కర్త',
+        'opt_c': 'మిలిటరీ నాయకుడు',
+        'opt_d': 'ISRO వ్యవస్థాపకుడు',
+        'answer': 'B',
+        'explanation_te': 'కందుకూరి వీరేశలింగం పంతులు తెలుగు సాహిత్య పితామహుడు మరియు సంఘ సంస్కర్త. వితంతు వివాహాలను ప్రోత్సహించాడు, బాలికల విద్య కోసం పోరాడాడు.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'easy',
+        'question_te': 'అల్లూరి సీతారామ రాజు 125వ జయంతి ఏ సంవత్సరంలో జరిగింది?',
+        'opt_a': '2020',
+        'opt_b': '2021',
+        'opt_c': '2022',
+        'opt_d': '2023',
+        'answer': 'C',
+        'explanation_te': 'అల్లూరి సీతారామ రాజు 125వ జయంతి 2022లో జాతీయ స్థాయిలో నిర్వహించబడింది. PM మోదీ ఆయన విగ్రహాన్ని విశాఖపట్నంలో ఆవిష్కరించారు.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'hard',
+        'question_te': 'దుర్గాబాయి దేశ్\u200cముఖ్ ఎవరి భార్య? మరియు ఆమె ఏ రంగంలో ప్రసిద్ధి?',
+        'opt_a': 'జవహర్\u200cలాల్ నెహ్రూ, రాజకీయాలు',
+        'opt_b': 'చింతమని దేశ్\u200cముఖ్, మహిళా సంక్షేమం',
+        'opt_c': 'రాజేంద్ర ప్రసాద్, విద్య',
+        'opt_d': 'సర్దార్ వల్లభ్\u200cభాయి పటేల్, న్యాయం',
+        'answer': 'B',
+        'explanation_te': 'దుర్గాబాయి దేశ్\u200cముఖ్ RBI గవర్నర్ చింతమని దేశ్\u200cముఖ్ భార్య. ఆమె ఆంధ్ర మహిళా సభను స్థాపించింది మరియు ప్రణాళికా సంఘ సభ్యురాలు.',
+    },
+    {
+        'section_idx': 2,
+        'difficulty': 'easy',
+        'question_te': 'ఆంధ్ర రాష్ట్రం ఏ తేదీన ఏర్పాటు అయింది?',
+        'opt_a': 'నవంబర్ 1, 1953',
+        'opt_b': 'అక్టోబర్ 1, 1953',
+        'opt_c': 'జూన్ 2, 1953',
+        'opt_d': 'జూలై 15, 1953',
+        'answer': 'B',
+        'explanation_te': 'పొట్టి శ్రీరాముల్లు మరణం తర్వాత ప్రజా ఉద్యమాల ఫలితంగా 1953 అక్టోబర్ 1న ఆంధ్ర రాష్ట్రం ఏర్పాటు అయింది.',
+    },
+    {
+        'section_idx': 2,
+        'difficulty': 'easy',
+        'question_te': 'ఆంధ్రప్రదేశ్ రాష్ట్రం ఏ తేదీన ఏర్పాటు అయింది?',
+        'opt_a': 'అక్టోబర్ 1, 1953',
+        'opt_b': 'నవంబర్ 1, 1956',
+        'opt_c': 'జనవరి 26, 1950',
+        'opt_d': 'ఆగస్టు 15, 1957',
+        'answer': 'B',
+        'explanation_te': 'రాష్ట్రాల పునర్వ్యవస్థీకరణ చట్టం ప్రకారం నవంబర్ 1, 1956న ఆంధ్ర రాష్ట్రానికి హైదరాబాద్ రాష్ట్రంలోని తెలుగు మాట్లాడే జిల్లాలు కలిసి ఆంధ్రప్రదేశ్ రాష్ట్రం ఏర్పాటు అయింది.',
+    },
+    {
+        'section_idx': 2,
+        'difficulty': 'medium',
+        'question_te': 'తెలంగాణ రాష్ట్రం ఏ తేదీన ఏర్పాటు అయింది?',
+        'opt_a': 'జూన్ 2, 2014',
+        'opt_b': 'జూన్ 1, 2014',
+        'opt_c': 'మార్చి 1, 2014',
+        'opt_d': 'అక్టోబర్ 2, 2014',
+        'answer': 'A',
+        'explanation_te': 'AP పునర్వ్యవస్థీకరణ చట్టం 2014 ప్రకారం జూన్ 2, 2014న తెలంగాణ రాష్ట్రం భారత దేశంలో 29వ రాష్ట్రంగా ఏర్పాటు అయింది.',
+    },
+    {
+        'section_idx': 2,
+        'difficulty': 'easy',
+        'question_te': 'AP రాష్ట్ర ఏర్పాటు దినోత్సవం ఏ తేదీన జరుపుతారు?',
+        'opt_a': 'అక్టోబర్ 1',
+        'opt_b': 'నవంబర్ 1',
+        'opt_c': 'జూన్ 2',
+        'opt_d': 'జనవరి 26',
+        'answer': 'B',
+        'explanation_te': 'ఆంధ్రప్రదేశ్ రాష్ట్ర ఏర్పాటు దినోత్సవం నవంబర్ 1న జరుపుతారు. 1956 నవంబర్ 1న రాష్ట్రాల పునర్వ్యవస్థీకరణ జరిగి AP ఏర్పాటు అయింది.',
+    },
+    {
+        'section_idx': 2,
+        'difficulty': 'medium',
+        'question_te': 'తెలుగు రాష్ట్రం కోసం డిమాండ్ ఎప్పుడు మొదలైంది?',
+        'opt_a': '1912',
+        'opt_b': '1920',
+        'opt_c': '1930',
+        'opt_d': '1942',
+        'answer': 'B',
+        'explanation_te': '1920లో నాగపూర్ కాంగ్రెస్ సమావేశంలో తెలుగు మాట్లాడే ప్రత్యేక రాష్ట్రం ఏర్పాటు కోసం డిమాండ్ అధికారికంగా మొదలైంది.',
+    },
+    {
+        'section_idx': 2,
+        'difficulty': 'hard',
+        'question_te': 'ఆంధ్ర రాష్ట్రానికి తొలి ముఖ్యమంత్రి ఎవరు?',
+        'opt_a': 'నీలం సంజీవ రెడ్డి',
+        'opt_b': 'టంగుటూరి ప్రకాశం పంతులు',
+        'opt_c': 'కాసు బ్రహ్మానంద రెడ్డి',
+        'opt_d': 'జలగం వెంగళరావు',
+        'answer': 'B',
+        'explanation_te': 'టంగుటూరి ప్రకాశం పంతులు 1953-54 కాలంలో ఆంధ్ర రాష్ట్రానికి తొలి ముఖ్యమంత్రిగా పనిచేశాడు. ఆయనకు "ఆంధ్ర కేసరి" బిరుదు ఉంది.',
+    },
+    {
+        'section_idx': 3,
+        'difficulty': 'easy',
+        'question_te': 'సర్ ఆర్థర్ కాటన్ ఎవరు? ఆయన AP కి ఏమి చేశాడు?',
+        'opt_a': 'బ్రిటిష్ మిలిటరీ జనరల్',
+        'opt_b': 'గోదావరి & కృష్ణా నదులపై ఆనకట్టలు నిర్మించిన బ్రిటిష్ ఇంజనీర్',
+        'opt_c': 'AP కి తొలి గవర్నర్',
+        'opt_d': 'యూరోపియన్ రాయబారి',
+        'answer': 'B',
+        'explanation_te': 'సర్ ఆర్థర్ కాటన్ 19వ శతాబ్దంలో గోదావరి (1852) మరియు కృష్ణా నదులపై ఆనకట్టలు నిర్మించి తెలుగు ప్రజలకు సాగు నీరు అందించాడు. ఆయన "రైతుల మిత్రుడు" గా ప్రసిద్ధి.',
+    },
+    {
+        'section_idx': 3,
+        'difficulty': 'easy',
+        'question_te': 'విశ్వనాధ సత్యనారాయణ ఏ రంగంలో ప్రసిద్ధి?',
+        'opt_a': 'రాజకీయం',
+        'opt_b': 'తెలుగు సాహిత్యం (జ్ఞానపీఠ్ అవార్డు)',
+        'opt_c': 'వ్యవసాయం',
+        'opt_d': 'శాస్త్రీయ సంగీతం',
+        'answer': 'B',
+        'explanation_te': 'విశ్వనాధ సత్యనారాయణ తెలుగు కవి మరియు రచయిత. "రామాయణ కల్పవృక్షం" రచనకు 1970లో జ్ఞానపీఠ్ అవార్డు పొందాడు.',
+    },
+    {
+        'section_idx': 3,
+        'difficulty': 'medium',
+        'question_te': 'నీలం సంజీవ రెడ్డి ఏ పదవిని నిర్వహించాడు?',
+        'opt_a': 'AP మొదటి ముఖ్యమంత్రి',
+        'opt_b': 'భారత రాష్ట్రపతి',
+        'opt_c': 'లోక్\u200cసభ స్పీకర్',
+        'opt_d': 'B & C రెండూ',
+        'answer': 'D',
+        'explanation_te': 'నీలం సంజీవ రెడ్డి AP మొదటి ముఖ్యమంత్రిగా (1956-60), లోక్\u200cసభ స్పీకర్\u200cగా, మరియు భారత 6వ రాష్ట్రపతిగా (1977-82) పనిచేశాడు.',
+    },
+    {
+        'section_idx': 3,
+        'difficulty': 'medium',
+        'question_te': 'అమరావతిని UNESCO కి ఏ శ్రేణిలో నామినేట్ చేయడానికి ప్రయత్నం జరిగింది?',
+        'opt_a': 'World Natural Heritage',
+        'opt_b': 'World Cultural Heritage',
+        'opt_c': 'World Memory',
+        'opt_d': 'Intangible Heritage',
+        'answer': 'B',
+        'explanation_te': 'అమరావతి స్తూపాన్ని UNESCO World Cultural Heritage కి నామినేట్ చేయాలని AP ప్రభుత్వం ప్రయత్నిస్తోంది. అమరావతి బుద్ధిస్ట్ శిల్పకళకు పేరుపొందింది.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'easy',
+        'question_te': 'నాగార్జునకొండ దేనికి ప్రసిద్ధి?',
+        'opt_a': 'వ్యవసాయ కేంద్రం',
+        'opt_b': 'ఇక్ష్వాకు కాలం నాటి బుద్ధిస్ట్ నాగరికత మరియు బహుళ మతాల స్తంభాలు',
+        'opt_c': 'పులుల అభయారణ్యం',
+        'opt_d': 'పోలవరం ప్రాజెక్టు',
+        'answer': 'B',
+        'explanation_te': 'నాగార్జునకొండ (విజయపురి) ఇక్ష్వాకు కాలం నాటి బుద్ధిస్ట్ నాగరికతకు ప్రసిద్ధి. ఇక్కడ బౌద్ధ, హిందూ, జైన స్మారకాలు కనుగొనబడ్డాయి.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'medium',
+        'question_te': 'వేయి స్తంభాల గుడి ఎక్కడ ఉంది?',
+        'opt_a': 'అమరావతి',
+        'opt_b': 'విజయవాడ',
+        'opt_c': 'వరంగల్',
+        'opt_d': 'తిరుపతి',
+        'answer': 'C',
+        'explanation_te': 'వేయి స్తంభాల గుడి వరంగల్\u200cలో ఉంది. ఇది కాకతీయుల కాలంలో నిర్మించబడింది. ఇప్పుడు ఈ ప్రాంతం తెలంగాణ రాష్ట్రంలో ఉంది.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'easy',
+        'question_te': 'AP రాష్ట్రపక్షి ఏది?',
+        'opt_a': 'నెమలి',
+        'opt_b': 'రోజ్-రింగ్డ్ పారాకీట్ (ఇండియన్ రోజ్-రింగ్డ్ పారాకీట్)',
+        'opt_c': 'రాయి గువ్వ',
+        'opt_d': 'కోయిల',
+        'answer': 'B',
+        'explanation_te': 'AP రాష్ట్రపక్షి రోజ్-రింగ్డ్ పారాకీట్ (Indian Rose-ringed Parakeet). ఇది AP అంతటా కనుగొనబడే సాధారణ పక్షి.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'easy',
+        'question_te': 'AP రాష్ట్ర జంతువు ఏది?',
+        'opt_a': 'సింహం',
+        'opt_b': 'పులి',
+        'opt_c': 'నల్ల జింక (కృష్ణ జింక)',
+        'opt_d': 'గజం',
+        'answer': 'C',
+        'explanation_te': 'నల్ల జింక (Blackbuck / కృష్ణ జింక) AP రాష్ట్ర జంతువు. ఇది AP లో ముఖ్యంగా కర్నూలు జిల్లాలో కనుగొనబడుతుంది.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'medium',
+        'question_te': 'AP రాష్ట్ర పుష్పం ఏది?',
+        'opt_a': 'బంతి',
+        'opt_b': 'సంపంగి',
+        'opt_c': 'నల్లేరు',
+        'opt_d': 'జాజి',
+        'answer': 'B',
+        'explanation_te': 'సంపంగి (Champa/Plumeria) AP రాష్ట్ర పుష్పం. ఇది తెలుగు సంస్కృతిలో ముఖ్యమైన పూవు.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'hard',
+        'question_te': 'ఈస్ట్ ఇండియా కంపెనీ మచిలీపట్నంలో ఏ సంవత్సరంలో తొలి ఫ్యాక్టరీ స్థాపించింది?',
+        'opt_a': '1611',
+        'opt_b': '1600',
+        'opt_c': '1625',
+        'opt_d': '1650',
+        'answer': 'A',
+        'explanation_te': 'బ్రిటిష్ ఈస్ట్ ఇండియా కంపెనీ 1611లో మచిలీపట్నంలో తొలి ఫ్యాక్టరీ స్థాపించింది. ఇది భారతదేశంలో తొలి బ్రిటిష్ వాణిజ్య కేంద్రాలలో ఒకటి.',
+    },
+    {
+        'section_idx': 5,
+        'difficulty': 'easy',
+        'question_te': 'అల్లూరి సీతారామ రాజు పేరిట ఏ జిల్లాకు నామకరణం చేశారు?',
+        'opt_a': 'పశ్చిమ గోదావరి',
+        'opt_b': 'అల్లూరి సీతారామ రాజు జిల్లా (రంపచోడవరం)',
+        'opt_c': 'విశాఖ ఏజెన్సీ',
+        'opt_d': 'తూర్పు గోదావరి',
+        'answer': 'B',
+        'explanation_te': 'ఆదివాసీ ప్రాంతాలను కవర్ చేసే కొత్త జిల్లా అల్లూరి సీతారామ రాజు జిల్లా (రంపచోడవరం) గా నామకరణం చేయబడింది.',
+    },
+    {
+        'section_idx': 5,
+        'difficulty': 'medium',
+        'question_te': 'AP లో జిల్లాల పునర్వ్యవస్థీకరణ ఏ సంవత్సరంలో జరిగింది?',
+        'opt_a': '2020',
+        'opt_b': '2021',
+        'opt_c': '2022',
+        'opt_d': '2023',
+        'answer': 'C',
+        'explanation_te': 'ఏప్రిల్ 4, 2022న AP ప్రభుత్వం 13 జిల్లాలను 26 జిల్లాలుగా విభజించింది. తర్వాత ఇవి 2 కొత్త జిల్లాలు చేర్చడంతో మొత్తం 26 జిల్లాలయ్యాయి.',
+    },
+    {
+        'section_idx': 5,
+        'difficulty': 'easy',
+        'question_te': 'అమరావతి ఏ జిల్లాలో ఉంది?',
+        'opt_a': 'గుంటూరు',
+        'opt_b': 'కృష్ణా',
+        'opt_c': 'NTR జిల్లా',
+        'opt_d': 'పల్నాడు',
+        'answer': 'A',
+        'explanation_te': 'అమరావతి గుంటూరు జిల్లాలో ఉంది. AP రాజధాని నగరంగా 2015లో శంకుస్థాపన జరిగింది. 2026లో రాజధాని హోదా అధికారికంగా ఇవ్వబడింది.',
+    },
+    {
+        'section_idx': 5,
+        'difficulty': 'hard',
+        'question_te': '"తెలుగు దేశం" అనే పదం ఎప్పుడు పుట్టింది?',
+        'opt_a': 'సాతవాహన కాలంలో',
+        'opt_b': 'ఇక్ష్వాకు కాలంలో',
+        'opt_c': 'వేంగి చాళుక్యుల కాలంలో',
+        'opt_d': 'కాకతీయుల కాలంలో',
+        'answer': 'C',
+        'explanation_te': '"తెలుగు దేశం" అనే పదం క్రీ.శ. 7వ శతాబ్దం నుండి 1130 వరకు పాలించిన వేంగి చాళుక్యుల కాలంలో పుట్టింది. వీరు తెలుగు సాహిత్యాన్ని పోషించారు.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'easy',
+        'question_te': 'గౌతమీపుత్ర సాతకర్ణి ఎవరు?',
+        'opt_a': 'కాకతీయ రాజు',
+        'opt_b': 'సాతవాహన వంశంలో అత్యంత శక్తిమంతుడైన రాజు',
+        'opt_c': 'విజయనగర చక్రవర్తి',
+        'opt_d': 'ఇక్ష్వాకు రాజు',
+        'answer': 'B',
+        'explanation_te': 'గౌతమీపుత్ర సాతకర్ణి సాతవాహన వంశంలో అత్యంత శక్తిమంతుడైన రాజు. ఆయన శాతవాహన సామ్రాజ్యాన్ని విస్తరింపజేసి ముడ్రలు, శాసనాలు జారీ చేశాడు.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'easy',
+        'question_te': 'కందుకూరి వీరేశలింగం ఏ పత్రిక స్థాపించాడు?',
+        'opt_a': 'ఆంధ్ర పత్రిక',
+        'opt_b': 'సత్యవాది',
+        'opt_c': 'వివేకవర్ధని',
+        'opt_d': 'ఆంధ్రభూమి',
+        'answer': 'C',
+        'explanation_te': 'కందుకూరి వీరేశలింగం 1874లో "వివేకవర్ధని" అనే పత్రిక స్థాపించాడు. దీని ద్వారా సామాజిక సంస్కరణలు ప్రచారం చేశాడు.',
+    },
+    {
+        'section_idx': 2,
+        'difficulty': 'medium',
+        'question_te': 'ఏ రాజ్యాంగ సంస్కరణ AP కి ప్రత్యేక రక్షణ కల్పిస్తుంది?',
+        'opt_a': 'ఆర్టికల్ 370',
+        'opt_b': 'ఆర్టికల్ 371-D',
+        'opt_c': 'ఆర్టికల్ 35A',
+        'opt_d': 'ఆర్టికల్ 356',
+        'answer': 'B',
+        'explanation_te': 'ఆర్టికల్ 371-D ఆంధ్రప్రదేశ్\u200cకి ప్రత్యేక రక్షణ కల్పిస్తుంది. ఇది విద్య మరియు ఉద్యోగాలలో స్థానిక పౌరులకు రక్షణ ఇస్తుంది.',
+    },
+    {
+        'section_idx': 3,
+        'difficulty': 'easy',
+        'question_te': 'AP లో మొట్టమొదటి ప్రభుత్వ పాఠశాల ఎక్కడ స్థాపించబడింది?',
+        'opt_a': 'నెల్లూరు',
+        'opt_b': 'హైదరాబాద్',
+        'opt_c': 'రాజమండ్రి',
+        'opt_d': 'కాకినాడ',
+        'answer': 'C',
+        'explanation_te': 'కందుకూరి వీరేశలింగం 1874లో రాజమండ్రిలో అనాధ శరణాలయం మరియు బాలికల పాఠశాల స్థాపించాడు. ఇది సంఘ సంస్కరణ దిశలో పెద్ద అడుగు.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'hard',
+        'question_te': 'వేంగి చాళుక్యులు ఏ మతాన్ని పోషించారు?',
+        'opt_a': 'జైనిజం మాత్రమే',
+        'opt_b': 'శైవ మతం మాత్రమే',
+        'opt_c': 'శైవ, వైష్ణవ మతాలతో పాటు తెలుగు సాహిత్యాన్ని',
+        'opt_d': 'బుద్ధిజం మాత్రమే',
+        'answer': 'C',
+        'explanation_te': 'వేంగి చాళుక్యులు శైవ, వైష్ణవ మతాలను మరియు తెలుగు సాహిత్యాన్ని పోషించారు. వీరి కాలంలో "తెలుగు దేశం" అనే పదం వాడుకలోకి వచ్చింది.',
+    },
+    {
+        'section_idx': 5,
+        'difficulty': 'medium',
+        'question_te': 'AP లో మొత్తం జిల్లాల సంఖ్య (2022 పునర్వ్యవస్థీకరణ తర్వాత) ఎంత?',
+        'opt_a': '13',
+        'opt_b': '25',
+        'opt_c': '26',
+        'opt_d': '28',
+        'answer': 'C',
+        'explanation_te': '2022 ఏప్రిల్\u200cలో AP లో 13 జిల్లాలను 26 జిల్లాలుగా విభజించారు. ఇది AP చరిత్రలో అతిపెద్ద పరిపాలనా పునర్వ్యవస్థీకరణ.',
+    },
+    {
+        'section_idx': 2,
+        'difficulty': 'easy',
+        'question_te': 'AP లో "అమరజీవి దినం" ఏ తేదీన జరుపుతారు?',
+        'opt_a': 'నవంబర్ 1',
+        'opt_b': 'అక్టోబర్ 1',
+        'opt_c': 'డిసెంబర్ 15',
+        'opt_d': 'జూన్ 2',
+        'answer': 'C',
+        'explanation_te': 'పొట్టి శ్రీరాముల్లు స్మృతిలో "అమరజీవి దినం" డిసెంబర్ 15న జరుపుతారు. ఆయన 1952 డిసె 15న మరణించాడు.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'hard',
+        'question_te': 'అల్లూరి సీతారామ రాజు తిరుగుబాటు ఏ ప్రాంతంలో జరిగింది?',
+        'opt_a': 'కృష్ణా డెల్టా',
+        'opt_b': 'మన్యం ప్రాంతం (ఏజెన్సీ ప్రాంతం)',
+        'opt_c': 'రాయలసీమ',
+        'opt_d': 'ఉత్తర ఆంధ్ర',
+        'answer': 'B',
+        'explanation_te': 'అల్లూరి సీతారామ రాజు తిరుగుబాటు పశ్చిమ గోదావరి, తూర్పు గోదావరి, విశాఖపట్నం జిల్లాల మన్యం ప్రాంతంలో జరిగింది. ఆదివాసీ హక్కుల కోసం బ్రిటిష్ పాలనకు వ్యతిరేకంగా పోరాడాడు.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'medium',
+        'question_te': 'AP రాష్ట్ర వృక్షం ఏది?',
+        'opt_a': 'వేప',
+        'opt_b': 'జువ్వి (నీమ్)',
+        'opt_c': 'మేడి (Neem)',
+        'opt_d': 'నేరేడు',
+        'answer': 'A',
+        'explanation_te': 'వేప (Neem) AP రాష్ట్ర వృక్షం. ఇది AP అంతటా సహజంగా పెరిగే వృక్షం మరియు అనేక ఔషధ గుణాలు కలిగి ఉంది.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'medium',
+        'question_te': 'రెడ్డి రాజ్యం ఏ ప్రాంతంలో పాలించింది?',
+        'opt_a': 'రాయలసీమ',
+        'opt_b': 'తీర ఆంధ్ర (కొండవీడు కేంద్రంగా)',
+        'opt_c': 'ఉత్తరాంధ్ర',
+        'opt_d': 'నాగార్జునకొండ ప్రాంతం',
+        'answer': 'B',
+        'explanation_te': 'రెడ్డి రాజ్యం 14వ-15వ శతాబ్దంలో కొండవీడును కేంద్రంగా తీర ఆంధ్ర ప్రాంతంలో పాలించింది. ప్రోలయ వేమారెడ్డి ఈ వంశం స్థాపకుడు.',
+    },
 ]
 
 
 def _seed_ap_ca_div7_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
-    """Seed study notes for AP CA chapter 7 (AP History & Freedom Fighters)."""
-    existing = db_exec(
-        conn,
-        "SELECT id FROM study_notes WHERE topic=%s AND chapter_num=%s",
-        ("AP_Current_Affairs", 7)
-    )
-    rows = [row_to_dict(r) for r in existing]
-    if rows and not force:
-        return
-
-    html_path = os.path.join(
-        os.path.dirname(__file__),
-        "static", "notes", "ap_ca_div7_notes.html"
-    )
-    with open(html_path, "r", encoding="utf-8") as f:
-        html_content = f.read()
-
-    sections = json.loads(SECTIONS_JSON)
-    sections_data = json.dumps(sections, ensure_ascii=False)
-
-    if rows:
-        db_exec(
-            conn,
-            "UPDATE study_notes SET title=%s, content=%s, sections=%s WHERE topic=%s AND chapter_num=%s",
-            (
-                "AP చరిత్ర & స్వాతంత్ర్య సమరయోధులు",
-                html_content,
-                sections_data,
-                "AP_Current_Affairs",
-                7
-            )
-        )
-    else:
-        ph = "%s" if USE_POSTGRES else "?"
-
-        def _ph(q):
-            return q if USE_POSTGRES else q.replace("%s", "?")
-
-        db_exec(
-            conn,
-            _ph(
-                "INSERT INTO study_notes (topic, chapter_num, title, content, sections) "
-                "VALUES (%s, %s, %s, %s, %s)"
-            ),
-            (
-                "AP_Current_Affairs",
-                7,
-                "AP చరిత్ర & స్వాతంత్ర్య సమరయోధులు",
-                html_content,
-                sections_data
-            )
-        )
-
-
+    """Seed study notes for AP CA Division 7."""
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT 'AP_Current_Affairs', subtopic TEXT DEFAULT '',
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '', pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if USE_POSTGRES: conn.commit()
+    except Exception: pass
+    import json as _json
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (7, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if row and not force: return {'success': True, 'already_exists': True}
+    if row and force:
+        note_id = row_to_dict(row)['id']
+        db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+        db_exec(conn, f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (7, 'AP_Current_Affairs'))
+        if USE_POSTGRES: conn.commit()
+    db_exec(conn,
+        f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'AP_Current_Affairs', 'Division7', 7,
+         'AP చరిత్ర & స్వాతంత్ర్య సమరయోధులు',
+         'AP History & Freedom Fighters',
+         '', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
+    if USE_POSTGRES: conn.commit()
+    return {'success': True, 'message': 'AP CA Div7 notes seeded!'}
 def _seed_ap_ca_div7_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
-    """Seed MCQs for AP CA chapter 7 (AP History & Freedom Fighters)."""
-    existing = db_exec(
-        conn,
-        "SELECT id FROM chapter_mcqs WHERE topic=%s AND chapter_num=%s",
-        ("AP_Current_Affairs", 7)
-    )
-    rows = [row_to_dict(r) for r in existing]
-    if rows and not force:
+    """Seed MCQs for AP CA chapter 7."""
+    ph = '%s' if USE_POSTGRES else '?'
+    cur = db_exec(conn,
+        f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+        (7, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if not row:
+        _seed_ap_ca_div7_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        cur = db_exec(conn,
+            f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+            (7, 'AP_Current_Affairs'))
+        row = cur.fetchone()
+    if not row:
+        print(f"[div7-mcqs] study_note not found — skipping")
         return
-    if rows and force:
-        db_exec(
-            conn,
-            "DELETE FROM chapter_mcqs WHERE topic=%s AND chapter_num=%s",
-            ("AP_Current_Affairs", 7)
-        )
-
-    def _ph(q):
-        return q if USE_POSTGRES else q.replace("%s", "?")
-
+    note_id = row_to_dict(row)['id']
+    cur2 = db_exec(conn, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    count = list(cur2.fetchone())[0]
+    if count > 0 and not force:
+        return
+    db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    insert_sql = (
+        f"INSERT INTO chapter_mcqs "
+        f"(study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
+    )
+    diff_map = {'easy': 1, 'medium': 2, 'hard': 3, 1: 1, 2: 2, 3: 3}
     for mcq in MCQ_DATA:
-        db_exec(
-            conn,
-            _ph(
-                "INSERT INTO chapter_mcqs "
-                "(topic, chapter_num, section_idx, difficulty, question_te, "
-                "opt_a, opt_b, opt_c, opt_d, answer, explanation_te) "
-                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            ),
-            (
-                "AP_Current_Affairs",
-                7,
-                mcq["section_idx"],
-                mcq["difficulty"],
-                mcq["question_te"],
-                mcq["opt_a"],
-                mcq["opt_b"],
-                mcq["opt_c"],
-                mcq["opt_d"],
-                mcq["answer"],
-                mcq["explanation_te"],
-            )
-        )
+        diff = diff_map.get(mcq.get('difficulty', 'medium'), 2)
+        q_te = mcq.get('question_te', mcq.get('question_te', ''))
+        db_exec(conn, insert_sql, (
+            note_id,
+            mcq['section_idx'],
+            diff,
+            q_te,
+            mcq['opt_a'], mcq['opt_b'], mcq['opt_c'], mcq['opt_d'],
+            str(mcq['answer']).lower(),
+            mcq['explanation_te']
+        ))
+    if USE_POSTGRES:
+        conn.commit()
+    return {'success': True, 'message': f'AP CA Div7 MCQs seeded! Total: {len(MCQ_DATA)}'}

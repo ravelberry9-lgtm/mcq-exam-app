@@ -473,59 +473,36 @@ MCQ_DATA = [
 
 
 def _seed_ap_ca_div3_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
-    """Seed study note for Division 3 — 2025 January–August Major Events."""
-    import os, pathlib
-
-    ph = "%s" if USE_POSTGRES else "?"
-    existing = db_exec(
-        conn,
-        f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
-        ("AP_Current_Affairs", 3)
-    ).fetchone()
-
-    if existing and not force:
-        return
-
-    html_path = pathlib.Path(__file__).parent / "static" / "notes" / "ap_ca_div3_notes.html"
-    content_html = html_path.read_text(encoding="utf-8") if html_path.exists() else ""
-
-    sections_json_str = _json.dumps(SECTIONS_JSON, ensure_ascii=False)
-
-    if existing:
-        db_exec(conn, f"""
-            UPDATE study_notes SET
-                chapter_title_te={ph}, chapter_title_en={ph},
-                pages_ref={ph}, sections_json={ph}, content={ph}
-            WHERE id={ph}
-        """, (
-            "2025 జనవరి–ఆగస్టు ముఖ్య సంఘటనలు",
-            "2025 January–August Major Events",
-            "Div-3 • Eenadu-verified • Jan–Aug 2025",
-            sections_json_str,
-            content_html,
-            existing[0]
-        ))
-    else:
-        db_exec(conn, f"""
-            INSERT INTO study_notes
-                (topic, subject, chapter_num, chapter_title_te, chapter_title_en,
-                 pages_ref, sections_json, content)
-            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})
-        """, (
-            "AP_Current_Affairs",
-            "AP Current Affairs",
-            3,
-            "2025 జనవరి–ఆగస్టు ముఖ్య సంఘటనలు",
-            "2025 January–August Major Events",
-            "Div-3 • Eenadu-verified • Jan–Aug 2025",
-            sections_json_str,
-            content_html,
-        ))
-
-    if hasattr(conn, "commit"):
-        conn.commit()
-
-
+    """Seed study notes for AP CA Division 3."""
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT 'AP_Current_Affairs', subtopic TEXT DEFAULT '',
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '', pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if USE_POSTGRES: conn.commit()
+    except Exception: pass
+    import json as _json
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (3, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if row and not force: return {'success': True, 'already_exists': True}
+    if row and force:
+        note_id = row_to_dict(row)['id']
+        db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+        db_exec(conn, f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (3, 'AP_Current_Affairs'))
+        if USE_POSTGRES: conn.commit()
+    db_exec(conn,
+        f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'AP_Current_Affairs', 'Division3', 3,
+         '2025 జనవరి–ఆగస్టు ముఖ్య సంఘటనలు',
+         '2025 January–August Major Events',
+         '', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
+    if USE_POSTGRES: conn.commit()
+    return {'success': True, 'message': 'AP CA Div3 notes seeded!'}
 def _seed_ap_ca_div3_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
     """Seed MCQs for Division 3."""
     ph = "%s" if USE_POSTGRES else "?"

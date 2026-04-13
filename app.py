@@ -307,12 +307,15 @@ def init_db():
     try:
         cur_ca = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='AP_Current_Affairs'")
         ca_count = list(cur_ca.fetchone())[0] if cur_ca else 0
-        if ca_count < 10:
-            print(f"[startup] AP Current Affairs: {ca_count} divisions — auto-seeding...")
+        cur_ca_mcq = db_exec(conn,
+            "SELECT COUNT(*) FROM chapter_mcqs cm JOIN study_notes sn ON cm.study_note_id=sn.id WHERE sn.topic='AP_Current_Affairs'")
+        ca_mcq_count = list(cur_ca_mcq.fetchone())[0] if cur_ca_mcq else 0
+        if ca_count < 10 or ca_mcq_count < 500:
+            print(f"[startup] AP Current Affairs: {ca_count} divisions, {ca_mcq_count} MCQs — auto-seeding all 10...")
             _auto_seed_ap_current_affairs()
             print("[startup] AP Current Affairs auto-seed complete.")
         else:
-            print(f"[startup] AP Current Affairs: {ca_count} divisions already loaded.")
+            print(f"[startup] AP Current Affairs: {ca_count} divisions, {ca_mcq_count} MCQs already loaded.")
     except Exception as _ca_e:
         print(f"[startup] AP Current Affairs seed check error: {_ca_e}")
 

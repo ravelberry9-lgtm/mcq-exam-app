@@ -207,128 +207,64 @@ MCQ_DATA = [
 
 
 def _seed_ap_ca_div5_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
-    """Seed study note for Division 5 — AP Art & Culture."""
-    import pathlib
-
-    ph = "%s" if USE_POSTGRES else "?"
-    existing = db_exec(
-        conn,
-        f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
-        ("AP_Current_Affairs", 5)
-    ).fetchone()
-
-    if existing and not force:
-        return
-
-    html_path = pathlib.Path(__file__).parent / "static" / "notes" / "ap_ca_div5_notes.html"
-    content_html = html_path.read_text(encoding="utf-8") if html_path.exists() else ""
-
-    sections_json_str = _json.dumps(SECTIONS_JSON, ensure_ascii=False)
-
-    if existing:
-        db_exec(conn, f"""
-            UPDATE study_notes SET
-                chapter_title_te={ph}, chapter_title_en={ph},
-                pages_ref={ph}, sections_json={ph}, content={ph}
-            WHERE id={ph}
-        """, (
-            "కళలు & సంస్కృతి",
-            "Art & Culture",
-            "Div-5 • GI Tags • UNESCO • Guinness • Cultural Events 2024-2026",
-            sections_json_str,
-            content_html,
-            existing[0]
-        ))
-    else:
-        db_exec(conn, f"""
-            INSERT INTO study_notes
-                (topic, subject, chapter_num, chapter_title_te, chapter_title_en,
-                 pages_ref, sections_json, content)
-            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})
-        """, (
-            "AP_Current_Affairs",
-            "AP Current Affairs",
-            5,
-            "కళలు & సంస్కృతి",
-            "Art & Culture",
-            "Div-5 • GI Tags • UNESCO • Guinness • Cultural Events 2024-2026",
-            sections_json_str,
-            content_html,
-        ))
-
-    if hasattr(conn, "commit"):
-        conn.commit()
-
-
+    """Seed study notes for AP CA Division 5."""
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT 'AP_Current_Affairs', subtopic TEXT DEFAULT '',
+            chapter_num INTEGER NOT NULL, chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '', pages_ref TEXT DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if USE_POSTGRES: conn.commit()
+    except Exception: pass
+    import json as _json
+    cur = db_exec(conn, f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (5, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if row and not force: return {'success': True, 'already_exists': True}
+    if row and force:
+        note_id = row_to_dict(row)['id']
+        db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+        db_exec(conn, f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}", (5, 'AP_Current_Affairs'))
+        if USE_POSTGRES: conn.commit()
+    db_exec(conn,
+        f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'AP_Current_Affairs', 'Division5', 5,
+         'AP వ్యవసాయం & నీటిపారుదల',
+         'AP Agriculture & Irrigation',
+         '', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
+    if USE_POSTGRES: conn.commit()
+    return {'success': True, 'message': 'AP CA Div5 notes seeded!'}
 def _seed_ap_ca_div5_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
-    """Seed MCQs for Division 5 — AP Art & Culture."""
-    import pathlib, sqlite3
-
-    ph = "%s" if USE_POSTGRES else "?"
-
-    note_row = db_exec(
-        conn,
-        f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
-        ("AP_Current_Affairs", 5)
-    ).fetchone()
-    if not note_row:
+    """Seed MCQs for AP CA Division 5 — AP Art & Culture."""
+    ph = '%s' if USE_POSTGRES else '?'
+    cur = db_exec(conn,
+        f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+        (5, 'AP_Current_Affairs'))
+    row = cur.fetchone()
+    if not row:
+        _seed_ap_ca_div5_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
+        cur = db_exec(conn,
+            f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+            (5, 'AP_Current_Affairs'))
+        row = cur.fetchone()
+    if not row:
+        print("[div5-mcqs] study_note not found — skipping")
         return
-    note_id = note_row[0]
-
-    existing = db_exec(
-        conn,
-        f"SELECT COUNT(*) FROM chapter_mcqs WHERE note_id={ph}",
-        (note_id,)
-    ).fetchone()
-    if existing and existing[0] > 0:
+    note_id = row[0]
+    cur2 = db_exec(conn, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    count = cur2.fetchone()[0]
+    if count > 0 and not force:
         return
-
-    section_ids = []
-    for idx, sec in enumerate(SECTIONS_JSON):
-        r = db_exec(
-            conn,
-            f"SELECT id FROM note_sections WHERE note_id={ph} AND section_order={ph}",
-            (note_id, idx)
-        ).fetchone()
-        section_ids.append(r[0] if r else None)
-
+    db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    insert_sql = (
+        f"INSERT INTO chapter_mcqs "
+        f"(study_note_id, section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
+    )
     for sec_idx, diff, q, a, b, c, d, ans, expl in MCQ_DATA:
-        sec_id = section_ids[sec_idx] if sec_idx < len(section_ids) else None
-        try:
-            db_exec(conn, f"""
-                INSERT INTO chapter_mcqs
-                    (note_id, section_id, difficulty, question_te,
-                     option_a, option_b, option_c, option_d, answer, explanation_te)
-                VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})
-            """, (note_id, sec_id, diff, q, a, b, c, d, ans, expl))
-        except Exception:
-            pass
-
-    if hasattr(conn, "commit"):
-        conn.commit()
-
-
-if __name__ == "__main__":
-    import sqlite3, pathlib, sys
-    db_path = pathlib.Path(__file__).parent / "mcq_app.db"
-    if not db_path.exists():
-        print(f"DB not found: {db_path}")
-        sys.exit(1)
-
-    conn = sqlite3.connect(str(db_path))
-    conn.row_factory = sqlite3.Row
-
-    def _FakeExec(c):
-        class E:
-            def __call__(self, conn, sql, params=()):
-                return conn.execute(sql, params)
-        return E()
-
-    def _row_to_dict(row):
-        return dict(row) if row else None
-
-    _seed_ap_ca_div5_notes_inner(conn, _FakeExec(conn), _row_to_dict, False, force=True)
-    _seed_ap_ca_div5_mcqs_inner(conn, _FakeExec(conn), _row_to_dict, False)
-    conn.commit()
-    conn.close()
-    print(f"[seed_ap_ca_div5] Seeded {len(MCQ_DATA)} MCQs for AP Art & Culture")
+        db_exec(conn, insert_sql, (note_id, sec_idx, diff, q, a, b, c, d, str(ans).lower(), expl))
+    if USE_POSTGRES: conn.commit()
+    return {'success': True, 'inserted': len(MCQ_DATA)}
