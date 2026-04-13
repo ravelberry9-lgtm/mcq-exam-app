@@ -467,7 +467,8 @@ function openQuizSheet(folder, topic, avail) {
   _qsAvail  = parseInt(avail);
 
   document.getElementById('qsTitle').textContent = '⚡ ' + topic.replace(/_/g, ' ');
-  document.getElementById('qsSub').textContent   = folder.replace(/_/g, ' ') + ' · ' + avail + ' questions available';
+  document.getElementById('qsSub').textContent   =
+    folder.replace(/_/g, ' ') + ' · ' + avail + ' bank Qs + chapter MCQs mixed';
 
   // Set chip availability
   const defaultN = Math.min(20, _qsAvail);
@@ -516,21 +517,32 @@ function startQuickQuiz() {
   btn.disabled = true;
   btn.textContent = 'Starting…';
   const count = _qsCount === 0 ? _qsAvail : _qsCount;
-  fetch('/api/start-exam', {
+  // Use /api/start-quick-exam which blends main question bank + chapter MCQs
+  fetch('/api/start-quick-exam', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'same-origin',
     body: JSON.stringify({
-      mode: _qsMode, duration: 30, device_id: _devId, student_name: 'Student',
-      selections: { [_qsFolder]: { [_qsTopic]: count } }
+      folder: _qsFolder, topic: _qsTopic,
+      count: count, mode: _qsMode,
+      device_id: _devId, student_name: 'Student'
     })
   })
   .then(r => r.json())
   .then(d => {
-    if (d.session_id) { window.location.href = '/exam/' + d.session_id; }
-    else { showToast(d.error || 'Could not start exam', 'error'); btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
+    if (d.session_id) {
+      window.location.href = '/exam/' + d.session_id;
+    } else {
+      showToast(d.error || 'Could not start exam', 'error');
+      btn.disabled = false;
+      btn.textContent = '⚡ Start Exam';
+    }
   })
-  .catch(() => { showToast('Network error — try again', 'error'); btn.disabled = false; btn.textContent = '⚡ Start Exam'; });
+  .catch(() => {
+    showToast('Network error — try again', 'error');
+    btn.disabled = false;
+    btn.textContent = '⚡ Start Exam';
+  });
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuizSheet(); });

@@ -722,6 +722,129 @@ def _shuffle_keeping_passages(questions):
     return result
 
 
+@app.route('/api/start-quick-exam', methods=['POST'])
+def start_quick_exam():
+    """Start a Quick Quiz that mixes main question bank + chapter MCQs for the same subject."""
+    data        = request.json
+    folder      = data.get('folder', '')
+    topic       = data.get('topic', '')
+    count       = int(data.get('count', 20))
+    mode        = data.get('mode', 'shuffle')
+    device_id   = data.get('device_id', 'default')
+    student_name = data.get('student_name', 'Student')
+
+    conn = get_db()
+
+    # ── 1. Main questions table ─────────────────────────────────────────
+    if mode == 'no_repeat':
+        cur = db_exec(conn, 'SELECT id FROM seen_questions WHERE device_id=?', (device_id,))
+        seen_ids = [r['question_id'] for r in cur.fetchall()]
+        if seen_ids:
+            ph = ','.join(['?'] * len(seen_ids))
+            cur = db_exec(conn,
+                f'SELECT * FROM questions WHERE folder=? AND topic=? AND id NOT IN ({ph})',
+                [folder, topic] + seen_ids)
+        else:
+            cur = db_exec(conn,
+                'SELECT * FROM questions WHERE folder=? AND topic=?', (folder, topic))
+    else:
+        cur = db_exec(conn,
+            'SELECT * FROM questions WHERE folder=? AND topic=?', (folder, topic))
+    main_rows = [row_to_dict(r) for r in cur.fetchall()]
+
+    # ── 2. Chapter MCQs (join study_notes where topic = folder name) ────
+    chapter_items = []
+    try:
+        cur = db_exec(conn, '''
+            SELECT cm.id, cm.q_te, cm.opt_a, cm.opt_b, cm.opt_c, cm.opt_d,
+                   cm.correct, cm.difficulty, cm.explanation_te,
+                   sn.topic as sn_topic, sn.chapter_num
+            FROM chapter_mcqs cm
+            JOIN study_notes sn ON cm.study_note_id = sn.id
+            WHERE sn.topic = ?
+        ''', (folder,))
+        ch_rows = [row_to_dict(r) for r in cur.fetchall()]
+        diff_map = {1: 'E', 2: 'M', 3: 'H'}
+        for cq in ch_rows:
+            chapter_items.append({
+                '_ch': True,
+                'id': 'ch_' + str(cq['id']),
+                'folder': folder,
+                'topic': cq.get('sn_topic', folder),
+                'question_text': cq.get('q_te', ''),
+                'options': [
+                    {'key': 'A', 'text': cq.get('opt_a', '')},
+                    {'key': 'B', 'text': cq.get('opt_b', '')},
+                    {'key': 'C', 'text': cq.get('opt_c', '')},
+                    {'key': 'D', 'text': cq.get('opt_d', '')},
+                ],
+                'correct': cq.get('correct', '').strip().upper(),
+                'correct_answer': cq.get('correct', '').strip().upper(),
+                'difficulty': diff_map.get(cq.get('difficulty', 2), 'M'),
+                'explanation': cq.get('explanation_te', ''),
+                'passage': None,
+                'passage_group_id': None,
+            })
+    except Exception:
+        pass  # chapter_mcqs table may not exist on older deployments
+
+    # ── 3. Combine pools and pick ───────────────────────────────────────
+    # Main rows contribute their IDs; chapter items are stored as full dicts.
+    # Mix them together, shuffle, then slice to count.
+    combined = []
+    for r in main_rows:
+        combined.append({'_type': 'main', 'data': r})
+    for c in chapter_items:
+        combined.append({'_type': 'ch', 'data': c})
+    random.shuffle(combined)
+
+    target = count if count > 0 else len(combined)
+    selected = combined[:target]
+
+    # Mark seen questions (no_repeat mode)
+    if mode == 'no_repeat':
+        for entry in selected:
+            if entry['_type'] == 'main':
+                qid = entry['data']['id']
+                try:
+                    if USE_POSTGRES:
+                        cur = conn.cursor()
+                        cur.execute(
+                            'INSERT INTO seen_questions (device_id, question_id) VALUES (%s,%s) ON CONFLICT DO NOTHING',
+                            (device_id, qid))
+                    else:
+                        db_exec(conn, 'INSERT OR IGNORE INTO seen_questions (device_id, question_id) VALUES (?,?)',
+                                (device_id, qid))
+                except Exception:
+                    pass
+        conn.commit()
+
+    # Build the questions JSON: regular IDs for main rows, full dicts for chapter MCQs
+    session_questions = []
+    for entry in selected:
+        if entry['_type'] == 'main':
+            session_questions.append(entry['data']['id'])
+        else:
+            session_questions.append(entry['data'])
+
+    session_id = str(uuid.uuid4())
+    config = {
+        'mode': mode, 'duration': 30,
+        'selections': {folder: {topic: target}},
+        'device_id': device_id, 'student_name': student_name,
+        'source': 'quick_mix',
+    }
+    db_exec(conn, 'INSERT INTO exam_sessions (id, config, questions) VALUES (?,?,?)',
+            (session_id, json.dumps(config), json.dumps(session_questions)))
+    conn.commit()
+    conn.close()
+
+    main_count = sum(1 for e in selected if e['_type'] == 'main')
+    ch_count   = sum(1 for e in selected if e['_type'] == 'ch')
+    return jsonify({'session_id': session_id, 'total': len(selected),
+                    'main_count': main_count, 'chapter_count': ch_count})
+
+
 @app.route('/exam/<session_id>')
 def exam(session_id):
     conn = get_db()
@@ -752,7 +875,26 @@ def submit_exam():
     is_pyq = config.get('source') == 'PYQ'
     q_table = 'pyq_questions' if is_pyq else 'questions'
     results, score = [], 0
-    for qid in q_ids:
+    for item in q_ids:
+        # ── Embedded chapter MCQ (dict stored directly in session) ──
+        if isinstance(item, dict):
+            qid      = item['id']
+            user_ans = answers.get(str(qid), answers.get(qid, None))
+            correct  = item.get('correct', item.get('correct_answer', '')).strip().upper()
+            is_correct = bool(user_ans and correct and user_ans.strip().upper() == correct)
+            if is_correct: score += 1
+            results.append({
+                'id': qid, 'folder': item.get('folder', ''), 'topic': item.get('topic', ''),
+                'passage': None, 'passage_group_id': None,
+                'question_text': item.get('question_text', ''),
+                'options': item.get('options', []),
+                'correct_answer': correct, 'user_answer': user_ans,
+                'is_correct': is_correct, 'explanation': item.get('explanation', ''),
+                'difficulty': item.get('difficulty', 'M'),
+            })
+            continue
+        # ── Regular question ID ──
+        qid = item
         cur = db_exec(conn, f'SELECT * FROM {q_table} WHERE id=?', (qid,))
         q = row_to_dict(cur.fetchone())
         if not q: continue
@@ -796,7 +938,22 @@ def exam_data(session_id):
     q_table = 'pyq_questions' if is_pyq else 'questions'
     q_ids = json.loads(sess['questions'])
     questions = []
-    for qid in q_ids:
+    for item in q_ids:
+        # ── Embedded chapter MCQ dict ──
+        if isinstance(item, dict):
+            questions.append({
+                'id':               item['id'],
+                'folder':           item.get('folder', ''),
+                'topic':            item.get('topic', ''),
+                'passage':          None,
+                'passage_group_id': None,
+                'question_text':    item.get('question_text', ''),
+                'options':          item.get('options', []),
+                'difficulty':       item.get('difficulty', 'M'),
+            })
+            continue
+        # ── Regular question ID ──
+        qid = item
         cur = db_exec(conn, f'SELECT * FROM {q_table} WHERE id=?', (qid,))
         q = row_to_dict(cur.fetchone())
         if q:
