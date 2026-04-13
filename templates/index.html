@@ -4,51 +4,82 @@
 {% block content %}
 <div class="main">
 
-  <!-- ── Hero Section ── -->
-  <section class="hero-section" aria-label="Welcome">
-    <div class="hero-eyebrow">APPSC Group 2 Mains Prep</div>
-    <h2 class="hero-title">Welcome Back! 👋</h2>
-    <p class="hero-sub">Your personal MCQ practice platform. Study smart, score higher.</p>
-    <div class="hero-ctas">
-      <a href="/setup" class="hero-btn hero-btn-primary" aria-label="Configure a custom exam">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-        <span>Custom Exam</span>
-      </a>
-      <a href="/pyq" class="hero-btn hero-btn-secondary" aria-label="Practice APHC Previous Year Questions">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <span>APHC PYQ</span>
-      </a>
+  <!-- ── Greeting bar ── -->
+  <div class="greeting-bar">
+    <div class="greeting-left">
+      <div class="greeting-title">📚 APPSC MCQ Practice</div>
+      <div class="greeting-sub">Group 2 Mains · <span id="totalQ">…</span> questions loaded</div>
     </div>
-  </section>
-
-  <!-- ── Stats Dashboard ── -->
-  <section aria-label="Question Bank Statistics">
-    <div class="card" style="margin-bottom:16px;">
-      <div class="card-title">📊 Question Bank</div>
-      <div class="stat-grid">
-        <div class="stat-box">
-          <div class="val" id="totalQ">…</div>
-          <div class="lbl">Questions</div>
-        </div>
-        <div class="stat-box" style="background:linear-gradient(135deg,#ff6f00,#ffa000);">
-          <div class="val" id="totalExams">…</div>
-          <div class="lbl">Exams Taken</div>
-        </div>
-        <div class="stat-box" style="background:linear-gradient(135deg,#2e7d32,#43a047);">
-          <div class="val" id="avgScore">…</div>
-          <div class="lbl">Avg Score %</div>
-        </div>
+    <div class="greeting-stats">
+      <div class="gs-item">
+        <span class="gs-val" id="totalExams">…</span>
+        <span class="gs-lbl">Exams</span>
+      </div>
+      <div class="gs-item">
+        <span class="gs-val" id="avgScore">…</span>
+        <span class="gs-lbl">Avg %</span>
       </div>
     </div>
+  </div>
+
+  <!-- ── Quick Launch Tiles ── -->
+  <section aria-label="Quick launch">
+    <div class="launch-grid">
+
+      <!-- Custom Exam -->
+      <a href="/setup" class="launch-tile" style="--c1:#1a237e;--c2:#3949ab;" aria-label="Custom Exam — configure a multi-topic quiz">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <div class="lt-name">Custom Exam</div>
+        <div class="lt-desc">Pick topics &amp; count</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+      <!-- APHC PYQ -->
+      <a href="/pyq" class="launch-tile" style="--c1:#bf360c;--c2:#e64a19;" aria-label="APHC Previous Year Questions">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="lt-name">APHC PYQ</div>
+        <div class="lt-desc">Previous year papers</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+      <!-- Study Notes -->
+      <a href="/notes" class="launch-tile" style="--c1:#1b5e20;--c2:#388e3c;" aria-label="Study Notes — interactive chapter notes with audio">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        </div>
+        <div class="lt-name">Study Notes</div>
+        <div class="lt-desc">Interactive TTS notes</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+      <!-- Read Notes -->
+      <a href="/read-notes" class="launch-tile" style="--c1:#4a148c;--c2:#7b1fa2;" aria-label="Read Notes — static HTML reference files">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="lt-name">Read Notes</div>
+        <div class="lt-desc">AP Geo &amp; Current Affairs</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+    </div>
   </section>
 
-  <!-- ── Accordion Topic Explorer ── -->
+  <!-- ── Topic Explorer (Accordion) ── -->
   <section aria-label="Topic Explorer">
     <div class="card" style="padding:0;overflow:hidden;">
 
       <!-- Card header -->
       <div class="explorer-header">
-        <div class="card-title" style="margin:0;">📚 Topic Explorer</div>
+        <div class="card-title" style="margin:0;">⚡ Quick Quiz by Topic</div>
         <button class="expand-all-btn" id="expandAllBtn" onclick="toggleAllFolders()" aria-label="Expand or collapse all folders">
           Expand All
         </button>
@@ -58,10 +89,9 @@
         {% for folder, topics in tree.items() %}
         {% set folder_total = totals.get(folder, 0) %}
 
-        <!-- ── Folder block ── -->
         <div class="folder-block" id="fb-{{ loop.index }}">
 
-          <!-- Folder header (clickable accordion toggle) -->
+          <!-- Folder accordion header -->
           <button class="folder-header"
                   onclick="toggleFolder('{{ loop.index }}')"
                   aria-expanded="false"
@@ -78,7 +108,7 @@
             </div>
           </button>
 
-          <!-- Folder body (collapsible) -->
+          <!-- Folder body -->
           <div class="folder-body" id="folder-body-{{ loop.index }}" role="region" aria-labelledby="folder-btn-{{ loop.index }}">
             <div class="topic-tiles-grid">
               {% for topic, count in topics.items() %}
@@ -96,7 +126,7 @@
                   </button>
                   <a class="tile-btn tile-notes"
                      href="/notes/{{ folder }}"
-                     aria-label="Study notes for {{ folder.replace('_',' ') }}">
+                     aria-label="Notes for {{ folder.replace('_',' ') }}">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
                     Notes
                   </a>
@@ -111,11 +141,8 @@
               {% endfor %}
             </div>
           </div>
-          <!-- /folder body -->
 
         </div>
-        <!-- /folder block -->
-
         {% endfor %}
       {% else %}
         <div class="empty-state">
@@ -125,7 +152,7 @@
         </div>
       {% endif %}
 
-    </div><!-- /card -->
+    </div>
   </section>
 
 </div><!-- /main -->
@@ -134,15 +161,10 @@
 <!-- ── Quick Quiz Bottom Sheet ── -->
 <div class="qs-overlay" id="qsOverlay" onclick="closeQuizSheet()" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qsTitle">
   <div class="qs-sheet" onclick="event.stopPropagation()">
-
-    <!-- Handle -->
     <div class="qs-handle"><div class="qs-handle-bar"></div></div>
-
-    <!-- Title -->
     <div class="qs-title" id="qsTitle">⚡ Quick Quiz</div>
-    <div class="qs-sub" id="qsSub"></div>
+    <div class="qs-sub"   id="qsSub"></div>
 
-    <!-- Count chips -->
     <div class="qs-label">How many questions?</div>
     <div class="qs-chips" id="qsChips" role="group" aria-label="Question count">
       <button class="qs-chip" data-n="10"  onclick="selectChip(this)">10</button>
@@ -151,21 +173,16 @@
       <button class="qs-chip" data-n="0"   onclick="selectChip(this)">All</button>
     </div>
 
-    <!-- Mode row -->
     <div class="qs-label" style="margin-top:14px;">Mode</div>
     <div class="qs-chips" role="group" aria-label="Exam mode">
-      <button class="qs-chip active" data-mode="shuffle"    onclick="selectMode(this)">🔀 Shuffle</button>
-      <button class="qs-chip"        data-mode="no_repeat"  onclick="selectMode(this)">🆕 New Only</button>
+      <button class="qs-chip active" data-mode="shuffle"   onclick="selectMode(this)">🔀 Shuffle</button>
+      <button class="qs-chip"        data-mode="no_repeat" onclick="selectMode(this)">🆕 New Only</button>
     </div>
 
-    <!-- Action row -->
     <div class="qs-actions">
-      <button class="btn btn-outline" style="flex:1;" onclick="closeQuizSheet()">Cancel</button>
-      <button class="btn btn-primary" style="flex:2;" id="qsStartBtn" onclick="startQuickQuiz()">
-        ⚡ Start Exam
-      </button>
+      <button class="btn btn-outline" style="flex:1;"  onclick="closeQuizSheet()">Cancel</button>
+      <button class="btn btn-primary" style="flex:2;"  id="qsStartBtn" onclick="startQuickQuiz()">⚡ Start Exam</button>
     </div>
-
   </div>
 </div>
 
@@ -173,229 +190,241 @@
 
 {% block scripts %}
 <style>
-/* ── Hero ── */
-.hero-section {
-  background: linear-gradient(135deg, #1a237e 0%, #3949ab 55%, #1565c0 100%);
+/* ── Greeting bar ── */
+.greeting-bar {
+  background: linear-gradient(135deg, #1a237e, #3949ab);
   border-radius: var(--radius);
-  padding: 26px 20px 22px;
-  margin-bottom: 16px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   color: white;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
 }
-.hero-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; opacity: .7; margin-bottom: 5px; }
-.hero-title   { font-size: 24px; font-weight: 800; line-height: 1.15; margin-bottom: 5px; }
-.hero-sub     { font-size: 13px; opacity: .85; line-height: 1.5; margin-bottom: 20px; }
-.hero-ctas    { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.hero-btn {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 7px; border-radius: 12px; padding: 16px 8px;
-  font-size: 13px; font-weight: 700; text-decoration: none;
-  transition: transform .18s, box-shadow .18s;
-  text-align: center; -webkit-tap-highlight-color: transparent;
-}
-.hero-btn svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.hero-btn:active { transform: scale(.97); }
-.hero-btn-primary  { background: #fff; color: var(--primary); }
-.hero-btn-primary:hover  { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.22); }
-.hero-btn-secondary { background: rgba(255,255,255,.15); color: #fff; border: 2px solid rgba(255,255,255,.35); }
-.hero-btn-secondary:hover { background: rgba(255,255,255,.25); transform: translateY(-2px); }
+.greeting-title { font-size: 15px; font-weight: 800; margin-bottom: 3px; }
+.greeting-sub   { font-size: 11px; opacity: .8; }
+.greeting-stats { display: flex; gap: 16px; flex-shrink: 0; }
+.gs-item        { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.gs-val         { font-size: 20px; font-weight: 800; line-height: 1; }
+.gs-lbl         { font-size: 9px; opacity: .75; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
 
-/* ── Explorer card header ── */
+/* ── Quick-launch tile grid ── */
+.launch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.launch-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 18px 16px 14px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, var(--c1), var(--c2));
+  color: white;
+  text-decoration: none;
+  min-height: 118px;
+  overflow: hidden;
+  transition: transform .18s, box-shadow .18s;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 3px 12px rgba(0,0,0,.18);
+}
+.launch-tile:hover  { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.24); }
+.launch-tile:active { transform: scale(.97); }
+
+/* Decorative background blob */
+.lt-blob {
+  position: absolute;
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  right: -20px; bottom: -20px;
+  pointer-events: none;
+}
+
+/* Icon circle */
+.lt-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.18);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+.lt-icon svg {
+  width: 20px; height: 20px;
+  stroke: white; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.lt-name {
+  font-size: 14px; font-weight: 800;
+  line-height: 1.2; margin-bottom: 3px;
+  z-index: 1;
+}
+.lt-desc {
+  font-size: 10px; opacity: .8; line-height: 1.4;
+  z-index: 1; flex: 1;
+}
+.lt-arrow {
+  font-size: 16px; font-weight: 900; opacity: .6;
+  margin-top: auto; align-self: flex-end;
+}
+
+/* ── Explorer card ── */
 .explorer-header {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 20px 14px;
+  padding: 16px 18px 12px;
   border-bottom: 1px solid var(--border);
 }
 .expand-all-btn {
-  font-size: 12px; font-weight: 700; color: var(--primary);
+  font-size: 11px; font-weight: 700; color: var(--primary);
   background: none; border: 1.5px solid var(--primary);
-  border-radius: 20px; padding: 4px 12px; cursor: pointer;
+  border-radius: 20px; padding: 4px 11px; cursor: pointer;
   transition: background .18s, color .18s;
 }
 .expand-all-btn:hover { background: var(--primary); color: white; }
 
-/* ── Folder block ── */
+/* ── Folder accordion ── */
 .folder-block { border-bottom: 1px solid var(--border); }
 .folder-block:last-child { border-bottom: none; }
-
-/* Folder header button */
 .folder-header {
   width: 100%; display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 20px; background: none; border: none; cursor: pointer;
+  padding: 12px 18px; background: none; border: none; cursor: pointer;
   text-align: left; gap: 8px; -webkit-tap-highlight-color: transparent;
   transition: background .15s;
 }
 .folder-header:hover { background: rgba(26,35,126,.04); }
 [data-theme="dark"] .folder-header:hover { background: rgba(255,255,255,.04); }
-.folder-left  { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
-.folder-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-.folder-ico   { width: 16px; height: 16px; stroke: var(--primary); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-.folder-name  { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.folder-badge { font-size: 10px; font-weight: 700; background: #e8eaf6; color: #3949ab; border-radius: 20px; padding: 2px 7px; white-space: nowrap; flex-shrink: 0; }
+.folder-left  { display: flex; align-items: center; gap: 7px; flex: 1; min-width: 0; }
+.folder-right { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
+.folder-ico   { width: 15px; height: 15px; stroke: var(--primary); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.folder-name  { font-size: 13px; font-weight: 700; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.folder-badge { font-size: 10px; font-weight: 700; background: #e8eaf6; color: #3949ab; border-radius: 20px; padding: 1px 7px; white-space: nowrap; flex-shrink: 0; }
 [data-theme="dark"] .folder-badge { background: #1a2040; color: #90caf9; }
 .folder-qs    { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
 .folder-chevron {
-  width: 16px; height: 16px; stroke: var(--text-muted); fill: none;
+  width: 15px; height: 15px; stroke: var(--text-muted); fill: none;
   stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
   transition: transform .25s ease; flex-shrink: 0;
 }
 .folder-header[aria-expanded="true"] .folder-chevron { transform: rotate(180deg); }
-.folder-header[aria-expanded="true"] .folder-ico { stroke: var(--accent); }
-
-/* ── Folder body (collapsible) ── */
+.folder-header[aria-expanded="true"] .folder-ico     { stroke: var(--accent); }
 .folder-body {
-  max-height: 0;
-  overflow: hidden;
+  max-height: 0; overflow: hidden;
   transition: max-height .35s ease, padding .25s ease;
-  padding: 0 16px;
+  padding: 0 12px;
 }
-.folder-body.open {
-  max-height: 4000px;   /* generous — CSS transition only triggers on max-height */
-  padding: 10px 16px 16px;
-}
+.folder-body.open { max-height: 4000px; padding: 8px 12px 14px; }
 
-/* ── Topic tiles grid ── */
-.topic-tiles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-}
+/* ── Topic tiles inside accordion ── */
+.topic-tiles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; }
 .topic-tile {
-  background: var(--card);
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: 10px; overflow: hidden; display: flex; flex-direction: column;
   transition: border-color .18s, box-shadow .18s;
 }
 .topic-tile:hover { border-color: var(--primary-light); box-shadow: var(--shadow); }
 [data-theme="dark"] .topic-tile { background: #181e30; }
-
-.tile-top {
-  padding: 10px 10px 8px;
-  flex: 1;
-}
-.tile-topic-name {
-  font-size: 12px; font-weight: 700; line-height: 1.35;
-  color: var(--text); margin-bottom: 3px;
-}
-.tile-q-count {
-  font-size: 11px; color: var(--text-muted); font-weight: 600;
-}
-
-/* Three action buttons row at bottom of tile */
-.tile-actions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--border);
-}
+.tile-top { padding: 9px 10px 7px; flex: 1; }
+.tile-topic-name { font-size: 11px; font-weight: 700; line-height: 1.3; color: var(--text); margin-bottom: 2px; }
+.tile-q-count    { font-size: 10px; color: var(--text-muted); font-weight: 600; }
+.tile-actions    { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); }
 .tile-btn {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 3px; padding: 7px 4px;
-  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px;
+  gap: 3px; padding: 6px 2px;
+  font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px;
   border: none; background: none; cursor: pointer; text-decoration: none;
   color: var(--text-muted); transition: background .15s, color .15s;
   -webkit-tap-highlight-color: transparent;
 }
 .tile-btn + .tile-btn { border-left: 1px solid var(--border); }
-.tile-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tile-btn svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .tile-btn:active { opacity: .7; }
-
-.tile-quiz  { color: #1565c0; }
-.tile-quiz:hover  { background: #e3f2fd; color: #0d47a1; }
-.tile-notes { color: #2e7d32; }
-.tile-notes:hover { background: #e8f5e9; color: #1b5e20; }
-.tile-read  { color: #6a1b9a; }
-.tile-read:hover  { background: #f3e5f5; color: #4a148c; }
-
+.tile-quiz  { color: #1565c0; } .tile-quiz:hover  { background: #e3f2fd; }
+.tile-notes { color: #2e7d32; } .tile-notes:hover { background: #e8f5e9; }
+.tile-read  { color: #6a1b9a; } .tile-read:hover  { background: #f3e5f5; }
 [data-theme="dark"] .tile-quiz:hover  { background: #0d2240; }
 [data-theme="dark"] .tile-notes:hover { background: #0d2015; }
 [data-theme="dark"] .tile-read:hover  { background: #1a0d26; }
 
 /* ── Empty state ── */
-.empty-state { text-align: center; padding: 36px 20px; color: var(--text-muted); }
-.empty-icon  { font-size: 44px; margin-bottom: 12px; }
-.empty-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+.empty-state { text-align: center; padding: 32px 20px; color: var(--text-muted); }
+.empty-icon  { font-size: 40px; margin-bottom: 10px; }
+.empty-title { font-size: 15px; font-weight: 700; margin-bottom: 5px; color: var(--text); }
 .empty-sub   { font-size: 13px; line-height: 1.6; }
 
 /* ── Quick Quiz bottom sheet ── */
 .qs-overlay {
-  display: none;
-  position: fixed; inset: 0; z-index: 1000;
-  background: rgba(0,0,0,.45);
-  align-items: flex-end;
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.45); align-items: flex-end;
   -webkit-tap-highlight-color: transparent;
 }
 .qs-overlay.open { display: flex; }
 .qs-sheet {
   width: 100%; max-width: 520px; margin: 0 auto;
-  background: var(--card);
-  border-radius: 20px 20px 0 0;
-  padding: 0 20px 28px;
-  box-shadow: 0 -6px 30px rgba(0,0,0,.18);
-  animation: sheetUp .28s ease;
+  background: var(--card); border-radius: 20px 20px 0 0;
+  padding: 0 20px 28px; box-shadow: 0 -6px 30px rgba(0,0,0,.18);
+  animation: sheetUp .26s ease;
 }
 @keyframes sheetUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-.qs-handle     { display: flex; justify-content: center; padding: 12px 0 16px; }
+.qs-handle { display: flex; justify-content: center; padding: 12px 0 14px; cursor: pointer; }
 .qs-handle-bar { width: 36px; height: 4px; background: var(--border); border-radius: 2px; }
-.qs-title  { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
-.qs-sub    { font-size: 12px; color: var(--text-muted); margin-bottom: 18px; }
-.qs-label  { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 8px; }
+.qs-title  { font-size: 17px; font-weight: 800; color: var(--text); margin-bottom: 3px; }
+.qs-sub    { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+.qs-label  { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 8px; }
 .qs-chips  { display: flex; gap: 8px; flex-wrap: wrap; }
 .qs-chip {
-  padding: 8px 16px; border-radius: 20px; border: 2px solid var(--border);
-  background: var(--bg); color: var(--text);
-  font-size: 13px; font-weight: 700; cursor: pointer;
-  transition: all .18s; -webkit-tap-highlight-color: transparent;
+  padding: 8px 15px; border-radius: 20px; border: 2px solid var(--border);
+  background: var(--bg); color: var(--text); font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: all .18s; -webkit-tap-highlight-color: transparent;
 }
 .qs-chip.active { background: var(--primary); border-color: var(--primary); color: white; }
-.qs-chip:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
+.qs-chip:hover:not(.active):not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.qs-chip:disabled { opacity: .38; cursor: not-allowed; }
 .qs-actions { display: flex; gap: 10px; margin-top: 22px; }
 
 /* ── Responsive ── */
-@media (max-width: 360px) {
-  .hero-title { font-size: 21px; }
+@media (max-width: 340px) {
+  .launch-tile    { min-height: 100px; padding: 14px 12px 10px; }
   .topic-tiles-grid { grid-template-columns: 1fr; }
-  .qs-chip { padding: 7px 12px; font-size: 12px; }
 }
 </style>
 
 <script>
 // ── Stats ──
 fetch('/api/stats').then(r => r.json()).then(d => {
-  document.getElementById('totalQ').textContent     = d.total_questions;
+  document.getElementById('totalQ').textContent     = d.total_questions.toLocaleString();
   document.getElementById('totalExams').textContent = d.total_exams;
   document.getElementById('avgScore').textContent   = d.avg_score + '%';
 }).catch(() => {});
 
-// ── Device ID (persisted per browser) ──
+// ── Device ID ──
 let _devId = localStorage.getItem('mcq_device_id');
 if (!_devId) { _devId = 'web_' + Math.random().toString(36).slice(2,9); localStorage.setItem('mcq_device_id', _devId); }
 
-// ── Folder accordion state (persisted) ──
+// ── Folder accordion ──
 const FS_KEY = 'mcq_open_folders';
-function _loadFolderState() {
-  try { return JSON.parse(localStorage.getItem(FS_KEY) || '{}'); } catch(e) { return {}; }
-}
-function _saveFolderState(st) { localStorage.setItem(FS_KEY, JSON.stringify(st)); }
+function _loadFS() { try { return JSON.parse(localStorage.getItem(FS_KEY) || '{}'); } catch(e) { return {}; } }
+function _saveFS(st) { localStorage.setItem(FS_KEY, JSON.stringify(st)); }
 
 function toggleFolder(idx) {
   const body = document.getElementById('folder-body-' + idx);
-  const btn  = document.getElementById('folder-btn-' + idx);
+  const btn  = document.getElementById('folder-btn-'  + idx);
   if (!body) return;
-  const isOpen = body.classList.toggle('open');
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  const st = _loadFolderState();
-  st[idx] = isOpen;
-  _saveFolderState(st);
-  updateExpandAllLabel();
+  const open = body.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  const st = _loadFS(); st[idx] = open; _saveFS(st);
+  _updateExpandBtn();
 }
 
 function toggleAllFolders() {
-  const bodies = document.querySelectorAll('.folder-body');
+  const bodies  = document.querySelectorAll('.folder-body');
   const allOpen = [...bodies].every(b => b.classList.contains('open'));
-  const target = !allOpen;
+  const target  = !allOpen;
   const st = {};
   bodies.forEach((body, i) => {
     const idx = i + 1;
@@ -404,22 +433,21 @@ function toggleAllFolders() {
     if (btn) btn.setAttribute('aria-expanded', target ? 'true' : 'false');
     st[idx] = target;
   });
-  _saveFolderState(st);
-  updateExpandAllLabel();
+  _saveFS(st);
+  _updateExpandBtn();
 }
 
-function updateExpandAllLabel() {
+function _updateExpandBtn() {
   const bodies  = document.querySelectorAll('.folder-body');
   const allOpen = [...bodies].every(b => b.classList.contains('open'));
   const btn = document.getElementById('expandAllBtn');
   if (btn) btn.textContent = allOpen ? 'Collapse All' : 'Expand All';
 }
 
-// Restore folder state on load
+// Restore state on load
 document.addEventListener('DOMContentLoaded', () => {
-  const st = _loadFolderState();
-  const bodies = document.querySelectorAll('.folder-body');
-  bodies.forEach((body, i) => {
+  const st = _loadFS();
+  document.querySelectorAll('.folder-body').forEach((body, i) => {
     const idx = i + 1;
     if (st[idx]) {
       body.classList.add('open');
@@ -427,49 +455,47 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btn) btn.setAttribute('aria-expanded', 'true');
     }
   });
-  updateExpandAllLabel();
+  _updateExpandBtn();
 });
 
-// ── Quick Quiz bottom sheet ──
-let _qsFolder = '', _qsTopicName = '', _qsAvail = 0, _qsCount = 20, _qsMode = 'shuffle';
+// ── Quick Quiz sheet ──
+let _qsFolder = '', _qsTopic = '', _qsAvail = 0, _qsCount = 20, _qsMode = 'shuffle';
 
 function openQuizSheet(folder, topic, avail) {
-  _qsFolder    = folder;
-  _qsTopicName = topic;
-  _qsAvail     = parseInt(avail);
+  _qsFolder = folder;
+  _qsTopic  = topic;
+  _qsAvail  = parseInt(avail);
 
-  document.getElementById('qsTitle').textContent = '⚡ ' + topic.replace(/_/g,' ');
-  document.getElementById('qsSub').textContent   = folder.replace(/_/g,' ') + ' · ' + avail + ' questions available';
+  document.getElementById('qsTitle').textContent = '⚡ ' + topic.replace(/_/g, ' ');
+  document.getElementById('qsSub').textContent   = folder.replace(/_/g, ' ') + ' · ' + avail + ' questions available';
 
-  // Reset chips to default (20 or all if avail < 20)
-  _qsCount = Math.min(20, _qsAvail);
+  // Set chip availability
+  const defaultN = Math.min(20, _qsAvail);
+  _qsCount = defaultN;
   document.querySelectorAll('.qs-chip[data-n]').forEach(c => {
     const n = parseInt(c.dataset.n);
-    const inactive = n > _qsAvail && n !== 0;
-    c.disabled = inactive;
-    c.style.opacity = inactive ? '.4' : '';
-    c.classList.toggle('active', !inactive && n === _qsCount);
+    const tooMany = n > _qsAvail && n !== 0;
+    c.disabled = tooMany;
+    c.classList.toggle('active', !tooMany && n === defaultN);
   });
-  // Select "all" chip if avail < 10
   if (_qsAvail < 10) {
     document.querySelectorAll('.qs-chip[data-n]').forEach(c => c.classList.remove('active'));
-    const allChip = document.querySelector('.qs-chip[data-n="0"]');
-    if (allChip) { allChip.classList.add('active'); _qsCount = 0; }
+    const allC = document.querySelector('.qs-chip[data-n="0"]');
+    if (allC) { allC.classList.add('active'); _qsCount = 0; }
   }
-
-  // Reset mode chips
+  // Reset mode
   document.querySelectorAll('.qs-chip[data-mode]').forEach(c => c.classList.toggle('active', c.dataset.mode === 'shuffle'));
   _qsMode = 'shuffle';
 
-  const overlay = document.getElementById('qsOverlay');
-  overlay.classList.add('open');
-  overlay.removeAttribute('aria-hidden');
+  const ol = document.getElementById('qsOverlay');
+  ol.classList.add('open');
+  ol.removeAttribute('aria-hidden');
 }
 
 function closeQuizSheet() {
-  const overlay = document.getElementById('qsOverlay');
-  overlay.classList.remove('open');
-  overlay.setAttribute('aria-hidden', 'true');
+  const ol = document.getElementById('qsOverlay');
+  ol.classList.remove('open');
+  ol.setAttribute('aria-hidden', 'true');
 }
 
 function selectChip(el) {
@@ -489,39 +515,24 @@ function startQuickQuiz() {
   const btn = document.getElementById('qsStartBtn');
   btn.disabled = true;
   btn.textContent = 'Starting…';
-
   const count = _qsCount === 0 ? _qsAvail : _qsCount;
-
   fetch('/api/start-exam', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'same-origin',
     body: JSON.stringify({
-      mode:         _qsMode,
-      duration:     30,
-      device_id:    _devId,
-      student_name: 'Student',
-      selections:   { [_qsFolder]: { [_qsTopicName]: count } }
+      mode: _qsMode, duration: 30, device_id: _devId, student_name: 'Student',
+      selections: { [_qsFolder]: { [_qsTopic]: count } }
     })
   })
   .then(r => r.json())
   .then(d => {
-    if (d.session_id) {
-      window.location.href = '/exam/' + d.session_id;
-    } else {
-      showToast(d.error || 'Could not start exam', 'error');
-      btn.disabled = false;
-      btn.textContent = '⚡ Start Exam';
-    }
+    if (d.session_id) { window.location.href = '/exam/' + d.session_id; }
+    else { showToast(d.error || 'Could not start exam', 'error'); btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
   })
-  .catch(() => {
-    showToast('Network error — try again', 'error');
-    btn.disabled = false;
-    btn.textContent = '⚡ Start Exam';
-  });
+  .catch(() => { showToast('Network error — try again', 'error'); btn.disabled = false; btn.textContent = '⚡ Start Exam'; });
 }
 
-// Close sheet on Escape
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuizSheet(); });
 </script>
 {% endblock %}
