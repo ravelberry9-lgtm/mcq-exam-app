@@ -35,16 +35,10 @@
   .rn-section-ico {
     width: 36px; height: 36px; border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
+    font-size: 20px; flex-shrink: 0;
+    background: rgba(69,39,160,.10);
   }
-  .rn-section-ico.geo { background: #e8f5e9; }
-  .rn-section-ico.ca  { background: #fff3e0; }
-  [data-theme="dark"] .rn-section-ico.geo { background: #1b2e1e; }
-  [data-theme="dark"] .rn-section-ico.ca  { background: #2e1f0e; }
-
-  .rn-section-ico svg { width: 20px; height: 20px; }
-  .geo svg { stroke: #2e7d32; }
-  .ca  svg { stroke: #e65100; }
+  [data-theme="dark"] .rn-section-ico { background: rgba(179,157,219,.12); }
 
   .rn-section-title { flex: 1; }
   .rn-section-title strong { font-size: 15px; color: var(--text); display: block; }
@@ -85,6 +79,11 @@
   .rn-card:hover { border-color: #7b1fa2; box-shadow: 0 4px 14px rgba(123,31,162,.1); }
 
   .rn-card-label { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.3; }
+  .rn-tag { display:inline-block; font-size:10px; font-weight:700; padding:1px 7px;
+    border-radius:20px; margin-bottom:4px; }
+  .rn-tag-note { background:#e8f5e9; color:#2e7d32; }
+  .rn-tag-mcq  { background:#e3f2fd; color:#1565c0; }
+  .rn-tag-ca   { background:#fff3e0; color:#e65100; }
 
   .rn-btns { display: flex; gap: 7px; flex-wrap: wrap; }
   .rn-btn {
@@ -123,18 +122,7 @@
               onclick="rnToggle(this, 'rn-body-{{ loop.index }}')">
 
         <!-- Icon -->
-        <div class="rn-section-ico {{ 'geo' if 'Geo' in grp.label else 'ca' }}">
-          {% if 'Geography' in grp.label %}
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-          </svg>
-          {% else %}
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16v16H4z"/><path d="M9 9h6M9 12h6M9 15h4"/>
-          </svg>
-          {% endif %}
-        </div>
+        <div class="rn-section-ico">{{ grp.icon if grp.icon else '📚' }}</div>
 
         <!-- Title -->
         <div class="rn-section-title">

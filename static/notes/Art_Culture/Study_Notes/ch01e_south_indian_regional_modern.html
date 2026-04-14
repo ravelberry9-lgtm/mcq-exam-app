@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1 Remaining — South Indian + Modern Architecture | Art & Culture</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 18mm 16mm 16mm 16mm; }
+@media print { .page-break { page-break-before: always; } .no-break { page-break-inside: avoid; } body { background: #fff !important; } }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --a4: 794px;
+  --brick: #9b3a1a; --brick-lt: #c4623a; --mud: #6b4226; --sand: #e8d5b0;
+  --green: #1e5c38; --blue: #1a3e7a; --purple: #5a2080; --teal: #0e5c5c;
+  --orange: #b85a00; --gold: #5a3400;
+  --text: #1a1206; --subtext: #2c1800; --border: #d4b896;
+  --tel-bg: #eef4ff; --tel-bdr: #1a3e7a;
+  --mem-bg: #edf7f0; --mem-bdr: #1e5c38;
+  --exam-bg: #fffbec; --exam-bdr: #5a3400;
+}
+body { font-family: 'Libre Baskerville', Georgia, serif; background: #ddd5c8; color: var(--text); font-size: 10.5pt; line-height: 1.65; }
+.a4-page { width: var(--a4); min-height: 1123px; background: #fff; margin: 18px auto; padding: 14mm 16mm 13mm 16mm; box-shadow: 0 2px 18px rgba(0,0,0,0.18); }
+
+/* HEADER/FOOTER */
+.screen-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid var(--border); padding-bottom: 5px; margin-bottom: 10px; }
+.screen-header .sh-left { font-family: 'Source Sans 3', sans-serif; font-size: 7.5pt; color: #1a1206; font-weight: 700; letter-spacing: 0.04em; }
+.screen-header .sh-right { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #1a1206; font-weight: 600; }
+.screen-footer { border-top: 1px solid var(--border); padding-top: 5px; margin-top: 10px; display: flex; justify-content: space-between; font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #1a1206; font-weight: 600; }
+
+/* HEADINGS */
+.sec-heading { display: flex; align-items: baseline; gap: 8px; margin: 14px 0 7px; border-bottom: 2px solid var(--brick); padding-bottom: 4px; }
+.sec-heading .sec-num { font-family: 'Fira Mono', monospace; font-size: 8pt; font-weight: 600; color: #fff; background: var(--brick); padding: 1px 7px; border-radius: 2px; flex-shrink: 0; }
+.sec-heading h2 { font-family: 'Libre Baskerville', serif; font-size: 12.5pt; font-weight: 700; color: var(--brick); }
+.sec-heading .te { font-family: 'Tiro Telugu', serif; font-size: 10pt; color: var(--subtext); }
+.sub-heading { font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; color: #fff; background: var(--mud); text-transform: uppercase; letter-spacing: 0.07em; margin: 12px 0 6px; padding: 4px 10px; border-radius: 3px; display: flex; align-items: center; gap: 6px; }
+.sub-heading .te-sh { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; text-transform: none; letter-spacing: 0; color: #f8e8d8; }
+
+/* BILINGUAL */
+.bilingual { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin: 6px 0 10px; }
+.bi-en { padding: 8px 11px; background: #fffdf9; font-size: 10pt; border-bottom: 1px solid var(--border); line-height: 1.6; }
+.bi-en .lang-tag { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #1a1206; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 3px; font-weight: 700; }
+.bi-te { padding: 8px 11px; background: var(--tel-bg); border-left: 3px solid var(--tel-bdr); font-family: 'Tiro Telugu', serif; font-size: 11pt; color: #0a1428; line-height: 1.95; }
+.bi-te .lang-tag { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #0a2060; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 3px; font-weight: 700; }
+.bi-te .kw  { color: var(--brick); font-weight: 700; }
+.bi-te .kw2 { color: var(--blue);  font-weight: 700; }
+.bi-te .kw3 { color: var(--green); font-weight: 700; }
+
+/* TELUGU STORY */
+.telugu-story { background: var(--tel-bg); border: 1px solid #b8ccee; border-left: 3px solid var(--tel-bdr); border-radius: 4px; padding: 9px 12px; font-family: 'Tiro Telugu', serif; font-size: 11pt; color: #0a1428; line-height: 2; margin: 6px 0 10px; }
+.telugu-story .ts-label { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #0a2060; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 4px; font-weight: 700; }
+.telugu-story .kw  { color: var(--brick); font-weight: 700; }
+.telugu-story .kw2 { color: var(--blue);  font-weight: 700; }
+.telugu-story .kw3 { color: var(--green); font-weight: 700; }
+.telugu-story .kw4 { color: var(--purple); font-weight: 700; }
+
+/* TABLES */
+.styled-table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 6px 0 10px; }
+.styled-table caption { font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; color: #fff; background: var(--brick); text-transform: uppercase; letter-spacing: 0.06em; text-align: left; padding: 5px 9px; border-radius: 4px 4px 0 0; }
+.styled-table thead tr { background: var(--mud); }
+.styled-table thead th { color: #fff; padding: 6px 8px; font-family: 'Source Sans 3', sans-serif; font-size: 8.5pt; font-weight: 700; text-align: left; border: 1px solid #8a5228; }
+.styled-table thead th .te-th { font-family: 'Tiro Telugu', serif; font-weight: 400; font-size: 8.5pt; display: block; color: #f8e8d8; margin-top: 1px; }
+.styled-table tbody tr:nth-child(odd)  { background: #fffdf9; }
+.styled-table tbody tr:nth-child(even) { background: #faf3eb; }
+.styled-table td { padding: 6px 8px; border: 1px solid #ddd0be; vertical-align: top; line-height: 1.5; }
+.styled-table td .te-td { font-family: 'Tiro Telugu', serif; font-size: 10pt; color: #0a1428; display: block; margin-top: 3px; line-height: 1.85; }
+.styled-table td strong { color: var(--brick); }
+.tag-sm  { font-family: 'Fira Mono', monospace; font-size: 7.5pt; background: #fce8dc; color: #6a1000; border: 1px solid #c89070; padding: 1px 5px; border-radius: 2px; display: inline-block; font-weight: 600; }
+.tag-blue { font-family: 'Fira Mono', monospace; font-size: 7.5pt; background: #dce8fc; color: #0a2060; border: 1px solid #90a8dc; padding: 1px 5px; border-radius: 2px; display: inline-block; font-weight: 600; }
+
+/* DYNASTY BLOCK */
+.dynasty-block { border-radius: 4px; border: 1px solid var(--border); overflow: hidden; margin: 7px 0 10px; }
+.dynasty-block .db-head { padding: 6px 11px; font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+.dynasty-block.pallava   .db-head { background: #2b4f8a; }
+.dynasty-block.chola     .db-head { background: #8a2020; }
+.dynasty-block.hoysala   .db-head { background: #1e5c38; }
+.dynasty-block.vijaya    .db-head { background: #6b4226; }
+.dynasty-block.rajput    .db-head { background: #7a3a00; }
+.dynasty-block.sikh      .db-head { background: #5a7a00; }
+.dynasty-block.kashmir   .db-head { background: #0e5c5c; }
+.dynasty-block.awadh     .db-head { background: #5a2080; }
+.dynasty-block.modern    .db-head { background: #3a3a6a; }
+.dynasty-block .db-head .te-dh { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; color: #f8e8d8; }
+.dynasty-block .db-head .db-period { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #f8e8d8; font-weight: 600; }
+.dynasty-block .db-body { padding: 8px 11px; background: #fffdf9; }
+.dynasty-block .db-body .en-row { font-size: 9.5pt; margin: 3px 0; line-height: 1.5; padding-bottom: 5px; border-bottom: 1px dashed var(--border); }
+.dynasty-block .db-body .en-row:last-child { border-bottom: none; padding-bottom: 0; }
+.dynasty-block .db-body .en-row strong { color: var(--brick); }
+.dynasty-block .db-body .te-row { font-family: 'Tiro Telugu', serif; font-size: 10pt; color: #0a1428; line-height: 1.9; margin-top: 2px; display: block; }
+
+/* MEMORY BOX */
+.memory-box { background: var(--mem-bg); border: 1px solid #8acca0; border-left: 4px solid var(--mem-bdr); border-radius: 4px; padding: 8px 11px; margin: 6px 0 10px; }
+.memory-box .mem-label { font-family: 'Fira Mono', monospace; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0a3a20; margin-bottom: 4px; }
+.memory-box .mnemonic { font-family: 'Libre Baskerville', serif; font-size: 10.5pt; font-weight: 700; color: var(--mud); margin-bottom: 3px; }
+.memory-box .mnem-exp { font-family: 'Source Sans 3', sans-serif; font-size: 9pt; color: #0a2018; margin-bottom: 5px; }
+.memory-box .mem-te { font-family: 'Tiro Telugu', serif; font-size: 10.5pt; color: #0a1a10; line-height: 1.9; border-top: 1px dashed #8acca0; padding-top: 5px; margin-top: 3px; }
+.memory-box .mem-te .kw { color: var(--mem-bdr); font-weight: 700; }
+
+/* EXAM ALERT */
+.exam-alert { background: var(--exam-bg); border: 1px solid #c8a830; border-left: 4px solid var(--exam-bdr); border-radius: 4px; padding: 8px 11px; margin: 6px 0 10px; }
+.exam-alert .ea-label { font-family: 'Fira Mono', monospace; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4a2800; margin-bottom: 4px; }
+.exam-alert ul { padding-left: 14px; margin: 0; }
+.exam-alert li { font-size: 9.5pt; margin: 3px 0; line-height: 1.55; }
+.exam-alert li strong { color: var(--brick); }
+.exam-alert .ea-te { font-family: 'Tiro Telugu', serif; font-size: 10pt; color: #2c1800; margin-top: 6px; padding-top: 5px; border-top: 1px dashed #c8a830; line-height: 1.9; }
+
+/* HIGHLIGHT BOX */
+.highlight-box { background: #fef6ed; border: 1px solid var(--sand); border-left: 4px solid var(--brick-lt); border-radius: 4px; padding: 7px 11px; margin: 5px 0 10px; font-size: 10pt; }
+.highlight-box .hb-te { font-family: 'Tiro Telugu', serif; font-size: 10.5pt; line-height: 1.95; color: #1a1206; margin-top: 4px; }
+.highlight-box .kw  { color: var(--brick); font-weight: 700; }
+.highlight-box .kw2 { color: var(--blue);  font-weight: 700; }
+.highlight-box .kw3 { color: var(--green); font-weight: 700; }
+
+/* KEY POINTS */
+.keypoints { list-style: none; margin: 5px 0 10px; padding: 0; }
+.keypoints li { display: flex; gap: 8px; padding: 5px 0; border-bottom: 1px dashed var(--border); font-size: 10pt; line-height: 1.5; }
+.keypoints li:last-child { border-bottom: none; }
+.keypoints li .kp-num { flex-shrink: 0; width: 20px; height: 20px; background: var(--brick); color: #fff; border-radius: 50%; font-family: 'Fira Mono', monospace; font-size: 7pt; display: flex; align-items: center; justify-content: center; margin-top: 2px; font-weight: 600; }
+.keypoints li .kp-body .te-kp { font-family: 'Tiro Telugu', serif; font-size: 10.5pt; color: #0a1428; display: block; margin-top: 3px; line-height: 1.9; }
+
+/* DEEP NOTE */
+.deep-note { border: 1.5px solid var(--brick-lt); border-radius: 4px; padding: 7px 11px; background: #fff7f3; font-size: 9.5pt; margin: 5px 0 10px; }
+.deep-note .dn-label { font-family: 'Fira Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; color: #6a1000; font-weight: 700; margin-bottom: 3px; display: block; }
+.deep-note .dn-te { font-family: 'Tiro Telugu', serif; font-size: 10.5pt; color: #1a1206; line-height: 1.9; margin-top: 4px; }
+.deep-note .kw  { color: var(--brick); font-weight: 700; }
+.deep-note .kw2 { color: var(--blue);  font-weight: 700; }
+.deep-note .kw3 { color: var(--green); font-weight: 700; }
+
+/* UNIV GRID */
+.univ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0 10px; }
+.univ-card { border-radius: 4px; border: 1px solid var(--border); overflow: hidden; }
+.univ-card .uc-head { padding: 5px 9px; background: var(--mud); color: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 8.5pt; font-weight: 700; }
+.univ-card .uc-head .te-uh { font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400; display: block; color: #f8e8d8; margin-top: 1px; }
+.univ-card .uc-body { padding: 7px 9px; background: #fffdf9; font-size: 9pt; line-height: 1.5; }
+.univ-card .uc-body .te { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; color: #0a1428; display: block; margin-top: 3px; line-height: 1.85; }
+.univ-card .uc-body strong { color: var(--brick); }
+
+/* QUICK REVISION TABLE */
+.qr-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin: 6px 0 10px; }
+.qr-table caption { font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; color: #fff; background: #3a1a00; text-transform: uppercase; letter-spacing: 0.06em; text-align: center; padding: 6px 9px; border-radius: 4px 4px 0 0; }
+.qr-table thead tr { background: var(--mud); }
+.qr-table thead th { color: #fff; padding: 5px 7px; font-family: 'Source Sans 3', sans-serif; font-size: 8pt; font-weight: 700; text-align: left; border: 1px solid #8a5228; }
+.qr-table thead th .te-th { font-family: 'Tiro Telugu', serif; font-size: 8pt; font-weight: 400; display: block; color: #f8e8d8; margin-top: 1px; }
+.qr-table tbody tr:nth-child(odd)  { background: #fffdf9; }
+.qr-table tbody tr:nth-child(even) { background: #faf3eb; }
+.qr-table td { padding: 4px 7px; border: 1px solid #ddd0be; vertical-align: top; line-height: 1.4; font-size: 8.5pt; }
+.qr-table td .te-td { font-family: 'Tiro Telugu', serif; font-size: 9pt; color: #0a1428; display: block; margin-top: 2px; line-height: 1.75; }
+.qr-table td strong { color: var(--brick); }
+.qr-table .cat-col { background: #e8d8c0 !important; font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 8.5pt; color: #2c1800; text-align: center; }
+.qr-table .cat-col .te { font-family: 'Tiro Telugu', serif; font-size: 9pt; color: #2c1800; text-align: center; display: block; }
+
+hr.div { border: none; border-top: 1.5px dashed var(--border); margin: 12px 0; }
+</style>
+</head>
+<body>
+
+<!-- ████████████████████████
+     PAGE 13 — SOUTH INDIAN DYNASTIES
+█████████████████████████ -->
+<div class="a4-page">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · SOUTH INDIAN ARCHITECTURE — PALLAVA · CHOLA · HOYSALA · VIJAYANAGARA</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">1.1-J</div>
+    <h2>South Indian Temple Architecture — Dynasties <span class="te">— దక్షిణ భారత దేవాలయ వంశాలు</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — దక్షిణ భారత దేవాలయాల కథ</span>
+    దక్షిణ భారతదేశంలో దేవాలయ నిర్మాణ చరిత్ర అనేది <span class="kw">పల్లవుల</span> నుండి మొదలై, <span class="kw2">చోళులు</span> ద్వారా గరిష్ట స్థాయికి చేరి, <span class="kw3">హోయ్సళులు</span> తమ శైలిలో సూక్ష్మ చెక్కడాలతో మెరిసి, <span class="kw4">విజయనగర సామ్రాజ్యంలో</span> భవ్యమైన గోపురాలతో పరిణమించింది. ప్రతి వంశం తన ముద్రను దేవాలయ వాస్తుశిల్పంలో వేసింది. ఈ నాలుగు వంశాలను మీరు అర్థం చేసుకుంటే దక్షిణ భారత వాస్తుశిల్పం మొత్తం అర్థమవుతుంది!
+  </div>
+
+  <!-- PALLAVA -->
+  <div class="dynasty-block pallava no-break">
+    <div class="db-head">
+      <span>Pallava Dynasty — పల్లవ వంశం <span class="te-dh">(Mahabalipuram · Shore Temple)</span></span>
+      <span class="db-period">4th – 9th Century CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        <strong>Mahabalipuram (Mamallapuram), Tamil Nadu</strong> — Most important Pallava site. Contains: <strong>Five Rathas</strong> (monolithic rock-cut temples, each carved from a single rock — named after Pandavas), <strong>Shore Temple</strong> (structural stone temple facing the sea — earliest surviving structural temple in South India), <strong>Arjuna's Penance</strong> (world's largest rock relief).
+        <span class="te-row">మహాబలిపురం — పల్లవుల అత్యంత ముఖ్యమైన స్థలం. <span style="color:var(--brick);font-weight:700">పంచ రథాలు</span> — 5 ఏకశిలా రాతి దేవాలయాలు, ప్రతి ఒక్కటీ ఒకే రాయి నుండి తొలిచారు — పాండవుల పేరు పెట్టారు. <span style="color:var(--blue);font-weight:700">తీర దేవాలయం (Shore Temple)</span> — సముద్ర ఒడ్డున ఉన్న దక్షిణ భారతదేశపు అత్యంత పురాతన స్వతంత్ర నిర్మిత రాతి దేవాలయం. అర్జునుని తపస్సు — ప్రపంచంలో అతి పెద్ద రాతి శిల్ప చిత్రణ.</span>
+      </div>
+      <div class="en-row">
+        <strong>Architectural style:</strong> Early rock-cut caves → Monolithic Rathas → Structural stone temples. Used <strong>Pallava style</strong> = Dravidian with lion base (Vyala/Yali) pillars. <strong>Kanchipuram</strong> was their capital — Kailasanatha Temple (oldest surviving temple in Kanchipuram).
+        <span class="te-row">నిర్మాణ శైలి పరిణామం: రాతి గుహలు → ఏకశిలా రథాలు → స్వతంత్ర రాతి దేవాలయాలు. కాంచీపురం వారి రాజధాని — కైలాసనాథ దేవాలయం అక్కడ అత్యంత పురాతనమైనది.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHOLA -->
+  <div class="dynasty-block chola no-break">
+    <div class="db-head">
+      <span>Chola Dynasty — చోళ వంశం <span class="te-dh">(Brihadeeswara · Gangaikondacholapuram)</span></span>
+      <span class="db-period">9th – 13th Century CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        <strong>Brihadeeswara Temple, Thanjavur</strong> <span class="tag-sm">UNESCO</span> — Built by <strong>Raja Raja Chola I</strong>. Vimana (tower) is <strong>216 feet tall — tallest in India</strong>! Made entirely of granite. Completed around 1010 CE. No shadow of the Vimana falls on the ground at noon. The <strong>Kumbam (finial)</strong> on top weighs ~80 tonnes, lifted without machinery.
+        <span class="te-row">బృహదీశ్వర దేవాలయం, తంజావూర్ — <span style="color:var(--brick);font-weight:700">రాజ రాజ చోళ I</span> నిర్మించాడు. విమానం 216 అడుగుల ఎత్తు — <span style="color:var(--brick);font-weight:700">భారతదేశంలో అత్యంత ఎత్తైన</span>! పూర్తిగా గ్రానైట్ రాయితో నిర్మించారు. మధ్యాహ్నం 12 గంటలకు విమానం నీడ నేలపై పడదు! పై కుంభం (~80 టన్నులు) యంత్రాలు లేకుండా ఎత్తారు — అద్భుతమైన ఇంజినీరింగ్!</span>
+      </div>
+      <div class="en-row">
+        <strong>Gangaikondacholapuram</strong> — Built by <strong>Rajendra Chola I</strong> (son of Raja Raja). Celebrates victory over kingdoms up to Ganga river. Temple slightly different — Vimana has a curved profile (unlike straight Brihadeeswara). <strong>Nataraja Temple, Chidambaram</strong> — another famous Chola temple.
+        <span class="te-row">గంగైకొండచోళపురం — <span style="color:var(--brick);font-weight:700">రాజేంద్ర చోళ I</span> (రాజ రాజ కొడుకు) నిర్మించాడు. గంగా నది వరకు జయించిన విజయాన్ని జరుపుకున్నాడు. విమానం కొంచెం వంపుగా ఉంటుంది. నటరాజ దేవాలయం, చిదంబరం — మరొక ప్రసిద్ధ చోళ దేవాలయం.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOYSALA -->
+  <div class="dynasty-block hoysala no-break">
+    <div class="db-head">
+      <span>Hoysala Dynasty — హోయ్సళ వంశం <span class="te-dh">(Halebid · Belur · Soapstone carving)</span></span>
+      <span class="db-period">11th – 14th Century CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        <strong>Hoysaleswara Temple, Halebid (Karnataka)</strong> — Built by <strong>King Vishnuvardhana</strong>. Famous for its <strong>intricate, minute soapstone carvings</strong> covering the entire exterior. Star-shaped (stellate) plan — unique feature. Dedicated to Shiva. Sculptures show continuous friezes of elephants, horses, scrolls, deities.
+        <span class="te-row"><span style="color:var(--brick);font-weight:700">హోయ్సళేశ్వర దేవాలయం, హాలేబిడ్</span> — రాజు విష్ణువర్ధన నిర్మించాడు. మొత్తం బయటి గోడ సూక్ష్మమైన సాబుసరాయి (soapstone) చెక్కడాలతో నిండి ఉంటుంది. <span style="color:var(--blue);font-weight:700">నక్షత్రాకార (Stellate)</span> నేలపై నమూనా — హోయ్సళ వంశపు ప్రత్యేక లక్షణం. నిరంతర వరుసలలో ఏనుగులు, గుర్రాలు, దేవుళ్ళ శిల్పాలు.</span>
+      </div>
+      <div class="en-row">
+        <strong>Chennakeshava Temple, Belur</strong> — Also Hoysala. Famous for its <strong>Shalabanjikas</strong> (bracket figures of celestial women) and <strong>Darpana Sundari</strong> (lady looking in mirror). Made of chloritic schist (soft stone that hardens with exposure to air).
+        <span class="te-row">చెన్నకేశవ దేవాలయం, బేలూర్ — శాలభంజికలు (స్వర్గలోక స్త్రీల బ్రాకెట్ విగ్రహాలు) మరియు దర్పణ సుందరి (అద్దంలో చూసే స్త్రీ) శిల్పాలకు ప్రసిద్ధి.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIJAYANAGARA -->
+  <div class="dynasty-block vijaya no-break">
+    <div class="db-head">
+      <span>Vijayanagara Empire — విజయనగర సామ్రాజ్యం <span class="te-dh">(Hampi · Vittala Temple)</span></span>
+      <span class="db-period">14th – 17th Century CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        <strong>Hampi (Karnataka)</strong> <span class="tag-sm">UNESCO</span> — Capital of Vijayanagara. Famous for: <strong>Vittala Temple</strong> (musical pillars — when struck, emit musical notes; Stone Chariot in front — icon of Hampi), <strong>Hazara Rama Temple</strong>, <strong>Virupaksha Temple</strong>. Largest pre-Mughal empire site.
+        <span class="te-row"><span style="color:var(--brick);font-weight:700">హంపి</span> — విజయనగర రాజధాని. <span style="color:var(--brick);font-weight:700">విఠల దేవాలయం</span> — సంగీత స్తంభాలు (తాకితే సంగీత స్వరాలు వస్తాయి!); ముందు రాతి రథం ఉంటుంది — హంపి చిహ్నం. మొఘలుల ముందు అతి పెద్ద సామ్రాజ్య నగరం.</span>
+      </div>
+      <div class="en-row">
+        <strong>Architectural features:</strong> Tall Gopurams; <strong>Kalyanamantapam</strong> (wedding hall); <strong>100-pillar halls</strong>; horse sculptures on pillars (unique to Vijayanagara); Synthesis of Chalukya, Hoysala, Pandya and Chola styles.
+        <span class="te-row">ఎత్తైన గోపురాలు; కళ్యాణ మండపం (పెళ్లి హాలు); 100 స్తంభాల హాళ్ళు; స్తంభాలపై గుర్రాల శిల్పాలు (విజయనగరానికి మాత్రమే ప్రత్యేకం); చాళుక్య, హోయ్సళ, పాండ్య, చోళ శైలుల మిశ్రమం.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ South Indian Dynasties — Exam Focus</div>
+    <ul>
+      <li><strong>Pallava</strong> → Mahabalipuram → Shore Temple → 5 Rathas (Pandava names) → Earliest structural S.Indian temple</li>
+      <li><strong>Chola</strong> → Brihadeeswara (Thanjavur) → Raja Raja Chola I → 216 feet → UNESCO → No noon shadow</li>
+      <li><strong>Hoysala</strong> → Halebid → Star-shaped plan → Soapstone carvings → Stellate design</li>
+      <li><strong>Vijayanagara</strong> → Hampi → UNESCO → Vittala Temple → <strong>Musical Pillars</strong> → Stone Chariot</li>
+      <li><strong>Kailasanatha Temple</strong> = Kanchipuram = Pallavas (NOT Ellora's Kailash which is Rashtrakuta)</li>
+    </ul>
+    <div class="ea-te">
+      📌 <strong>ట్రిక్:</strong> కైలాసనాథ = కాంచీపురం = పల్లవులు. కైలాశ దేవాలయం = ఎల్లోరా = రాష్ట్రకూటులు. ఈ రెండూ వేర్వేరు! | సంగీత స్తంభాలు ఏ దేవాలయంలో? విఠల దేవాలయం, హంపి. | తంజావూర్ విమానం మధ్యాహ్నం నీడ పడదు — ఇది పరీక్షలో ట్రిక్ ప్రశ్నగా వస్తుంది!
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.1-J · South Indian Dynasties — Pallava · Chola · Hoysala · Vijayanagara</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 13</span>
+  </div>
+</div>
+
+
+<!-- ████████████████████████
+     PAGE 14 — RAJPUT + SIKH + KASHMIR + AWADH + ANCIENT UNIVERSITIES
+█████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · RAJPUT · SIKH · KASHMIR · AWADH · ANCIENT UNIVERSITIES</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">1.2-C</div>
+    <h2>Regional Architectural Styles <span class="te">— ప్రాంతీయ వాస్తుశిల్పం శైలులు</span></h2>
+  </div>
+
+  <!-- RAJPUT -->
+  <div class="dynasty-block rajput no-break">
+    <div class="db-head">
+      <span>Rajput Architecture — రాజపుత్ర వాస్తుశిల్పం</span>
+      <span class="db-period">7th – 18th Century CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        Rajput architecture blended <strong>Nagara Hindu style</strong> with Mughal elements over time. Primarily responsible for <strong>grandiose palaces and forts</strong>. Used <strong>jharokhas</strong> (overhanging enclosed balconies), <strong>chattris</strong> (dome-shaped pavilions), and <strong>jaalis</strong> (perforated stone screens).
+        <span class="te-row">రాజపుత్ర వాస్తుశిల్పం <span style="color:var(--brick);font-weight:700">నాగర హిందూ శైలి</span>తో మొఘల్ అంశాలు కలిపింది. వీరు ముఖ్యంగా <span style="color:var(--blue);font-weight:700">భవ్యమైన రాజభవనాలు మరియు కోటలు</span> నిర్మించారు. జరోఖాలు (తొంగి చూసే బాల్కనీలు), ఛత్రులు (గొడుగు ఆకార పందిళ్ళు), జాలీలు (రంధ్రాల రాయి తెరలు) వారి ప్రత్యేక లక్షణాలు.</span>
+      </div>
+      <div class="en-row">
+        <strong>Key examples:</strong> Amber Fort, Jaipur; Mehrangarh Fort, Jodhpur; City Palace, Udaipur; Chittorgarh Fort. <strong>Shekhawati region</strong> — known for painted havelis. <strong>Rajput style influenced Mughal architecture</strong> significantly — especially in use of chattris.
+        <span class="te-row">ముఖ్య ఉదాహరణలు: ఆంబర్ కోట (జైపూర్), మెహ్రాన్‌గఢ్ కోట (జోధ్‌పూర్), చిత్తోర్‌గఢ్ కోట. రాజపుత్ర శైలి మొఘల్ వాస్తుశిల్పాన్ని చాలా ప్రభావితం చేసింది.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIKH -->
+  <div class="dynasty-block sikh no-break">
+    <div class="db-head">
+      <span>Sikh Architecture — సిక్కు వాస్తుశిల్పం</span>
+      <span class="db-period">Modern Punjab region</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        Sikh architecture arose in the <strong>modern Punjab area</strong>. Highly influenced by <strong>Mughal and Rajput</strong> styles. Key features: Cornices made in shape of an <strong>arch (bow-shaped)</strong>, <strong>Using many Chattras (kiosks)</strong> on building, Typically coated with <strong>brass and copper panels</strong> for decoration and support, Domes that are fluted — tilted structures.
+        <span class="te-row">సిక్కు వాస్తుశిల్పం ఆధునిక పంజాబ్ ప్రాంతంలో ఉద్భవించింది. <span style="color:var(--brick);font-weight:700">మొఘల్ మరియు రాజపుత్ర</span> శైలుల ప్రభావం స్పష్టంగా ఉంటుంది. లక్షణాలు: వంపు ఆకార cornice, పై పైన అనేక ఛత్రులు, అలంకారానికి <span style="color:var(--blue);font-weight:700">ఇత్తడి మరియు రాగి పలకలు</span> పూతగా వేస్తారు, fluted గుమ్మటాలు.</span>
+      </div>
+      <div class="en-row">
+        <strong>Golden Temple (Harmandir Sahib), Amritsar</strong> — most sacred Sikh shrine. Built in the 16th century by Sultan Shah. The Harmandira Sahib is also known as the <strong>Golden Temple</strong>. Has two temples — <strong>Vishnu &amp; Avantisvara dedicated to Lord Shiva</strong>. <strong>Shri Harmandir Sahib, also known as the Golden Temple</strong>, was built during the 10th and 17th centuries.
+        <span class="te-row"><span style="color:var(--brick);font-weight:700">స్వర్ణ మందిరం (హర్మందిర్ సాహిబ్), అమృతసర్</span> — అత్యంత పవిత్రమైన సిక్కు ప్రార్థనా స్థలం. నీటి మధ్య నిర్మించారు — అమృత సరస్సులో. బంగారు పూత కప్పడం దీని ప్రత్యేకత.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KASHMIR -->
+  <div class="dynasty-block kashmir no-break">
+    <div class="db-head">
+      <span>Kashmir Architecture — కాశ్మీర్ వాస్తుశిల్పం</span>
+      <span class="db-period">Kashmir Valley</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        Kashmir temple architecture has unique features: <strong>Trefoli arches</strong> (Gandhara influence), <strong>Triangular pediments</strong>, <strong>Straight-edged pyramidal roofs</strong>, <strong>Cellular layout &amp; enclosed courtyard</strong>, <strong>Column walls</strong>, <strong>Relatively more number of steps</strong>. Mosques: no domes — made of wood, brick &amp; stone masonry. <strong>Absence of dome</strong> is notably absent following the Islamic tradition.
+        <span class="te-row">కాశ్మీర్ దేవాలయ వాస్తుశిల్పం ప్రత్యేక లక్షణాలు: తోరణ ఆకార ఆర్చ్‌లు (గాంధార ప్రభావం), త్రిభుజాకార పెడిమెంట్‌లు, నేరుగా వాలు గల పిరమిడ్ పైకప్పు, నీటి తొట్టెలు, మెట్లు ఎక్కువ సంఖ్యలో ఉంటాయి. మసీదులలో గుమ్మటాలు ఉండవు — చెక్క, ఇటుక నిర్మాణం.</span>
+      </div>
+      <div class="en-row">
+        <strong>Famous temples:</strong> Martand Sun Temple (built under Lalitaditya Muktapida — 8th century); Avantiswami Temple. Famous gardens: <strong>Shalimar Bagh, Nishat Bagh, Chashme Shahi</strong> — all Mughal gardens built in Kashmir valley.
+        <span class="te-row">మార్తాండ సూర్య దేవాలయం — లలితాదిత్య ముక్తాపీడ (8వ శతాబ్దం) నిర్మించాడు. షాలిమర్ బాఘ్, నిషాత్ బాఘ్, చష్మె షాహి — మొఘల్ పద్ధతిలో నిర్మించిన కాశ్మీర్ తోటలు.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AWADH -->
+  <div class="dynasty-block awadh no-break">
+    <div class="db-head">
+      <span>Awadh Architecture — అవధ్ వాస్తుశిల్పం</span>
+      <span class="db-period">Lucknow | 18th Century CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        Awadh architecture developed when the Nawabs of Awadh started patronising local styles from Faizabad to Lucknow. Key features: roofs were <strong>plastered with rice bran</strong> (no use of iron and stone); <strong>uniqueness is that there is no use of iron</strong>; buildings adorned with stucco work. Examples: <strong>Bara Imambara</strong> (Lucknow) — largest hall without use of beams; <strong>Rumi Darwaza</strong> (Turkish Gate); <strong>Chota Imambara</strong>; <strong>Bhul Bhulaiya</strong> — labyrinth/maze.
+        <span class="te-row">అవధ్ వాస్తుశిల్పంలో <span style="color:var(--brick);font-weight:700">ఇనుపు మరియు రాయి వాడరు</span> — ఇది దీని విశేషం. పైకప్పులు అన్నపు ముక్కు (rice bran) పూతతో నిర్మించారు. <span style="color:var(--blue);font-weight:700">బారా ఇమాంబారా, లక్నో</span> — దూలాలు లేకుండా నిర్మించిన అతి పెద్ద హాలు. రూమీ దర్వాజా — టర్కిష్ ద్వారం. భుల్ భులయ్యా — పెద్ద అగడ్త/మేజ్.</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <!-- ANCIENT UNIVERSITIES -->
+  <div class="sec-heading">
+    <div class="sec-num">REF</div>
+    <h2>Universities of Ancient India <span class="te">— ప్రాచీన భారత విశ్వవిద్యాలయాలు</span></h2>
+  </div>
+
+  <div class="univ-grid no-break">
+    <div class="univ-card">
+      <div class="uc-head">Nalanda University — నలంద
+        <span class="te-uh">Bihar | Buddhist | Most Famous</span>
+      </div>
+      <div class="uc-body">
+        Founded around <strong>427 CE (Gupta period)</strong>. Located on Bihar, near Patna. Dedicated to Buddhist studies. <strong>Hieun Tsang</strong> (Chinese traveller) studied here in 7th century. Had 10,000 students &amp; 2,000 teachers. Destroyed by <strong>Bakhtiyar Khilji (1193 CE)</strong>. <strong>UNESCO World Heritage Site</strong>.
+        <span class="te">గుప్త కాలంలో (427 CE) స్థాపించబడింది. హువాన్ జాంగ్ ఇక్కడ చదివాడు. 10,000 విద్యార్థులు, 2,000 ఉపాధ్యాయులు. బఖ్తియార్ ఖిల్జీ (1193 CE) ధ్వంసం చేశాడు. UNESCO వారసత్వ స్థలం.</span>
+      </div>
+    </div>
+    <div class="univ-card">
+      <div class="uc-head">Takshashila (Taxila) — తక్షశిల
+        <span class="te-uh">Pakistan (NW) | Oldest University</span>
+      </div>
+      <div class="uc-body">
+        Located in <strong>Pakistan</strong> (now). Established in the <strong>5th century BCE</strong> — <strong>world's oldest university</strong>. Subjects: Vedas, philosophy, law, medicine, military sciences. <strong>Chanakya</strong> (Kautilya) was a teacher here. <strong>Panini</strong> (Sanskrit grammar) studied here. Alexander the Great visited.
+        <span class="te">ప్రపంచంలో అత్యంత పురాతన విశ్వవిద్యాలయం (5వ శతాబ్దం BCE). <span style="color:var(--brick);font-weight:700">చాణక్యుడు</span> ఇక్కడ ఉపాధ్యాయుడు. పాణిని ఇక్కడ చదివాడు. అలెగ్జాండర్ సందర్శించాడు.</span>
+      </div>
+    </div>
+    <div class="univ-card">
+      <div class="uc-head">Vikramashila — విక్రమశిల
+        <span class="te-uh">Bihar | Buddhist | Pala Dynasty</span>
+      </div>
+      <div class="uc-body">
+        Located in <strong>Bihar</strong>. Founded by <strong>Dharmapala</strong> (Pala king) in 8th century CE. Buddhist monastery cum university. Had 108 temples, 6 colleges. Destroyed by <strong>Bakhtiyar Khilji</strong>. Specialised in <strong>Tantric Buddhism</strong>.
+        <span class="te">బిహార్‌లో ధర్మపాలుడు (పాల వంశం) 8వ శతాబ్దంలో స్థాపించాడు. 108 దేవాలయాలు, 6 కళాశాలలు. బఖ్తియార్ ఖిల్జీ ధ్వంసం చేశాడు. తాంత్రిక బౌద్ధమతానికి ప్రత్యేకత.</span>
+      </div>
+    </div>
+    <div class="univ-card">
+      <div class="uc-head">Vallabhi · Odantapuri · Jagaddala
+        <span class="te-uh">Other Major Universities</span>
+      </div>
+      <div class="uc-body">
+        <strong>Vallabhi (Gujarat)</strong> — Buddhist; known for Hinayana Buddhism; destroyed by Arab invasions. <strong>Odantapuri (Bihar)</strong> — Buddhist; Pala period; Destroyed by Khilji. <strong>Jagaddala (Bengal)</strong> — Buddhist; Pala dynasty. <strong>Nagarjunakonda (AP)</strong> — Buddhist university; Ikshvaku dynasty.
+        <span class="te">వల్లభి (గుజరాత్) — హీనయాన బౌద్ధమతం; అరబ్ దాడులలో ధ్వంసం. ఒదంతపురి (బిహార్) — పాల కాలం; ఖిల్జీ ధ్వంసం. జగద్దళ (బెంగాల్) — పాల వంశం. నాగార్జున కొండ (AP) — ఇక్ష్వాకు వంశం.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.2-C · Rajput · Sikh · Kashmir · Awadh · Ancient Universities</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 14</span>
+  </div>
+</div>
+
+
+<!-- ████████████████████████
+     PAGE 15 — MODERN ARCHITECTURE (1.3)
+█████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1.3 · MODERN ARCHITECTURE — COLONIAL INFLUENCES + INDIAN ARCHITECTS</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">1.3</div>
+    <h2>Modern Architecture <span class="te">— ఆధునిక వాస్తుశిల్పం</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — వలస పాలన వాస్తుశిల్పాన్ని ఎలా మార్చింది?</span>
+    యూరోపియన్లు భారతదేశానికి వచ్చినప్పుడు, వారు తమ దేశపు నిర్మాణ శైలులు తీసుకువచ్చారు. <span class="kw">పోర్చుగీసు వారు గోవాలో చర్చిలు నిర్మించారు</span>. <span class="kw2">ఫ్రెంచ్ వారు పాండిచ్చేరిలో తమ నగర ప్రణాళిక అమలు చేశారు</span>. <span class="kw3">బ్రిటిష్ వారు పెద్ద స్థాయిలో</span> రైల్వే స్టేషన్లు, కోర్టులు, ప్రభుత్వ భవనాలు నిర్మించారు — వీటిలో గాథిక్, రోమన్, ఇండో-ఇస్లామిక్ శైలులు కలిసి ఒక కొత్త శైలి — <span class="kw">ఇండో-గోతిక్</span> పుట్టింది. స్వాతంత్ర్యం తర్వాత <span class="kw2">చార్లెస్ కొర్రియా, లారీ బేకర్</span> వంటి భారతీయ వాస్తుశిల్పులు స్వదేశీ అవసరాలకు అనుగుణంగా నిర్మించారు.
+  </div>
+
+  <!-- PORTUGUESE -->
+  <div class="dynasty-block modern no-break">
+    <div class="db-head">
+      <span>Portuguese Influence — పోర్చుగీసు ప్రభావం <span class="te-dh">Goa · Churches · Iberian Style</span></span>
+      <span class="db-period">16th–18th Century CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        The Portuguese earned the <strong>Iberian architectural style</strong> with them. They transformed trading terminals into <strong>fortified cities</strong>. They also introduced <strong>Baroque style</strong> and <strong>patio homes</strong>. <strong>Basilica of Bom Jesus, Goa</strong> <span class="tag-sm">UNESCO</span> — houses the relics of <strong>St. Francis Xavier</strong>; finished in 1605 CE. <strong>Se Cathedral, Goa</strong> — largest church in Asia; has the famous "Golden Bell". <strong>Church of St. Francis of Assisi, Goa</strong>. <strong>St. Paul's Church, Diu Fort</strong> — also Portuguese.
+        <span class="te-row">పోర్చుగీసు వారు <span style="color:var(--brick);font-weight:700">ఐబేరియన్ శైలి</span> తీసుకువచ్చారు. <span style="color:var(--brick);font-weight:700">బాసిలికా ఆఫ్ బోమ్ జీసస్, గోవా</span> — సెయింట్ ఫ్రాన్సిస్ జేవియర్ అవశేషాలు ఇక్కడ ఉన్నాయి; 1605 CE లో పూర్తైంది; UNESCO వారసత్వ స్థలం. <span style="color:var(--blue);font-weight:700">సే కేథడ్రల్, గోవా</span> — ఆసియాలో అతి పెద్ద చర్చి; "గోల్డెన్ బెల్" కోసం ప్రసిద్ధి.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRENCH -->
+  <div class="dynasty-block awadh no-break">
+    <div class="db-head">
+      <span>French Influence — ఫ్రెంచ్ ప్రభావం <span class="te-dh">Puducherry · Chandannagar</span></span>
+      <span class="db-period">17th–20th Century CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        The French brought the notion of <strong>urban city planning and Cartesian grid layouts</strong> (now Chandernagor and Chandannagar). They also established the notion of <strong>faceless architecture</strong>, which is characterised by a basic facade. <strong>Puducherry (Pondicherry)</strong> — French Quarter has yellow colonial buildings with French names; grid street layout with canals. <strong>Sacred Heart Church, Pondicherry</strong> — neo-gothic style. Coastal cities of Mahé (Kerala), Karaikal (Tamil Nadu), and Yanam (Andhra Pradesh) were also established by the French.
+        <span class="te-row">ఫ్రెంచ్ వారు <span style="color:var(--brick);font-weight:700">పట్టణ ప్రణాళిక మరియు గ్రిడ్ లేఔట్</span> భావన తీసుకువచ్చారు. పాండిచ్చేరి — ఫ్రెంచ్ క్వార్టర్‌లో పసుపు వలస భవనాలు, ఫ్రెంచ్ పేర్లతో వీధులు, కాలువ నేలపై నమూనా. మహే (కేరళ), కారైకల్ (తమిళనాడు), యానం (ఆంధ్రప్రదేశ్) — ఫ్రెంచ్ స్థాపించాయి.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRITISH -->
+  <div class="dynasty-block modern no-break">
+    <div class="db-head">
+      <span>British Influence — బ్రిటిష్ ప్రభావం <span class="te-dh">Indo-Gothic · Neo-Roman · Lutyens Delhi</span></span>
+      <span class="db-period">18th–20th Century CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        The British used <strong>Gothic style</strong> and fused it with Indian architectural elements to create the <strong>Indo-Gothic style</strong> (also called Victorian or Saracenic). Features: Pointed arches, wide windows, red sandstone/limestone, coarse arches. <strong>Best examples:</strong><br>
+        • <strong>Chhatrapati Shivaji Maharaj Terminus (CST/VT), Mumbai</strong> — Gothic; UNESCO; built 1888 CE<br>
+        • <strong>High Court, Mumbai</strong> — Gothic<br>
+        • <strong>Mumbai University</strong> — Gothic; by Gilbert Scott<br>
+        • <strong>Gateway of India, Mumbai</strong> — Indo-Saracenic; built 1924 CE to commemorate King George V visit<br>
+        • <strong>Victoria Memorial, Kolkata</strong> — Indo-Saracenic; white marble; built 1921 CE<br>
+        • <strong>Rashtrapati Bhavan (Viceroy's House), New Delhi</strong> — by Edwin Lutyens; combines Mughal, Classical, and Indian elements; 340 rooms
+        <span class="te-row">బ్రిటిష్ వారు <span style="color:var(--brick);font-weight:700">గోతిక్ శైలి</span> మరియు భారతీయ అంశాలు కలిపి <span style="color:var(--brick);font-weight:700">ఇండో-గోతిక్ (విక్టోరియన్/సారసెనిక్)</span> శైలి సృష్టించారు. ముఖ్య నిర్మాణాలు: ఛత్రపతి శివాజీ టర్మినస్ (ముంబై) — UNESCO; గేట్‌వే ఆఫ్ ఇండియా (ముంబై); విక్టోరియా మెమోరియల్ (కోల్కతా); రాష్ట్రపతి భవన్ — ఎడ్విన్ లుట్యెన్స్ రూపకల్పన, 340 గదులు, మొఘల్+క్లాసికల్+భారతీయ శైలుల మిశ్రమం.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDIAN ARCHITECTS -->
+  <div class="sub-heading">Post-Independence Indian Architects <span class="te-sh">— స్వాతంత్ర్యానంతర భారతీయ వాస్తుశిల్పులు</span></div>
+
+  <table class="styled-table no-break">
+    <caption>Famous Indian Architects — ప్రసిద్ధ భారతీయ వాస్తుశిల్పులు</caption>
+    <thead>
+      <tr>
+        <th style="width:22%">Architect <span class="te-th">వాస్తుశిల్పి</span></th>
+        <th style="width:22%">Known For <span class="te-th">ప్రసిద్ధి</span></th>
+        <th>Key Works &amp; Features <span class="te-th">ముఖ్య రచనలు</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Laurie Baker</strong> <span class="tag-sm">PRITZKER</span>
+          <span class="te-td">లారీ బేకర్</span></td>
+        <td>"Architect of the Poor" <span class="te-td">పేదల వాస్తుశిల్పి</span></td>
+        <td>Known for <strong>environmentally friendly buildings using locally available materials</strong>. Emphasis on <strong>ventilation and thermal comfort</strong>. Used <strong>filler slab construction</strong> to reduce steel &amp; cement. Designed <strong>LIC Building, New Delhi</strong> and <strong>Padma Bhushan Assembly Building, Thiruvananthapuram</strong>. Known as "Indian Architecture Conscience Keeper" &amp; "Gandhi of Architecture". <strong>Nominated for Pritzker Prize</strong>.
+          <span class="te-td">స్థానిక సామగ్రి వాడి <span style="color:var(--brick);font-weight:700">పర్యావరణ అనుకూల నిర్మాణాలు</span> చేశాడు. ఉక్కు, సిమెంట్ తక్కువగా వాడే <span style="color:var(--blue);font-weight:700">ఫిల్లర్ స్లాబ్</span> పద్ధతి. "భారతీయ వాస్తుశిల్పం యొక్క మనసాక్షి" అని పిలుస్తారు.</span></td>
+      </tr>
+      <tr>
+        <td><strong>Charles Correa</strong>
+          <span class="te-td">చార్లెస్ కొర్రియా</span></td>
+        <td>Urban Design + Low-cost housing <span class="te-td">పట్టణ రూపకల్పన</span></td>
+        <td>Introduced concept of <strong>filler slab construction to reduce steel &amp; cement consumption</strong>. Designed <strong>LIC Building, New Delhi; Madhya Pradesh Vidhan Sabha; Gandhi Smarak Sangrahalaya, Ahmedabad</strong>. Known for <strong>urban design and planning</strong>. Received <strong>Padma Vibhushan</strong>. In 2006, received <strong>Aga Khan Award for Architecture</strong>. Known as "Gandhi of Indian Architecture".
+          <span class="te-td"><span style="color:var(--brick);font-weight:700">చార్లెస్ కొర్రియా</span> పట్టణ రూపకల్పనకు ప్రసిద్ధి. గాంధీ స్మారక సంగ్రహాలయం (అహ్మదాబాద్) రూపకల్పన. 2006లో ఆగా ఖాన్ అవార్డు. పద్మ విభూషణ్ అందుకున్నాడు.</span></td>
+      </tr>
+      <tr>
+        <td><strong>B.V. Doshi</strong>
+          <span class="te-td">బాల్ కృష్ణ దోషి</span></td>
+        <td>Pritzker Prize Winner <span class="te-td">ప్రిట్జ్కర్ పురస్కారం</span></td>
+        <td>First Indian to win the <strong>Pritzker Prize (2018)</strong> — highest honour in architecture. Worked with Le Corbusier on Chandigarh project. Key works: <strong>IIM Bangalore; Aranya Housing Project</strong>. Known for low-cost housing.
+          <span class="te-td">2018లో <span style="color:var(--brick);font-weight:700">ప్రిట్జ్కర్ పురస్కారం</span> (వాస్తుశిల్పంలో అత్యున్నత గౌరవం) పొందిన మొదటి భారతీయుడు. IIM బెంగళూరు రూపకల్పన.</span></td>
+      </tr>
+      <tr>
+        <td><strong>Le Corbusier</strong>
+          <span class="te-td">లే కర్బూజియే</span></td>
+        <td>Chandigarh — India's Planned City <span class="te-td">చండీగఢ్</span></td>
+        <td>French-Swiss architect who designed <strong>Chandigarh city plan</strong> — India's first planned modern city. Designed <strong>Secretariat, Assembly, High Court</strong> in Chandigarh. Used <strong>Brutalist concrete style</strong>. Also worked on Delhi.
+          <span class="te-td">ఫ్రెంచ్-స్విస్ వాస్తుశిల్పి. <span style="color:var(--brick);font-weight:700">చండీగఢ్</span> — భారతదేశపు మొదటి ప్రణాళికాబద్ధ ఆధునిక నగరం. సెక్రటేరియట్, శాసనసభ, హై కోర్ట్ అన్నీ ఇతను రూపొందించాడు.</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Modern Architecture — Exam Focus</div>
+    <ul>
+      <li><strong>Basilica of Bom Jesus, Goa</strong> = Portuguese + UNESCO + St. Francis Xavier relics</li>
+      <li><strong>CST/VT Mumbai</strong> = Gothic + UNESCO + 1888 CE (British)</li>
+      <li><strong>Gateway of India</strong> = Indo-Saracenic + 1924 + King George V visit</li>
+      <li><strong>Rashtrapati Bhavan</strong> = Edwin Lutyens + 340 rooms + Mughal+Classical+Indian fusion</li>
+      <li><strong>Victoria Memorial, Kolkata</strong> = Indo-Saracenic + white marble + 1921 CE</li>
+      <li><strong>Laurie Baker</strong> = "Architect of Poor" + Locally available materials + Filler slab + Kerala</li>
+      <li><strong>B.V. Doshi</strong> = First Indian <strong>Pritzker Prize winner (2018)</strong> + IIM Bangalore</li>
+      <li><strong>Chandigarh</strong> = Le Corbusier + India's first planned city</li>
+      <li><strong>Charles Correa</strong> = Padma Vibhushan + Aga Khan Award 2006 + Gandhi Smarak</li>
+    </ul>
+    <div class="ea-te">
+      📌 <strong>ట్రిక్ ప్రశ్నలు:</strong> భారతదేశంలో ప్రిట్జ్కర్ పురస్కారం పొందిన మొదటి వ్యక్తి ఎవరు? — B.V. దోషి (2018)! | "పేదల వాస్తుశిల్పి" ఎవరు? — లారీ బేకర్! | రాష్ట్రపతి భవన్ ఎవరు రూపొందించారు? — ఎడ్విన్ లుట్యెన్స్! | చండీగఢ్ నగర ప్రణాళిక ఎవరు వేశారు? — లే కర్బూజియే!
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.3 · Modern Architecture — Portuguese · French · British · Indian Architects</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 15</span>
+  </div>
+</div>
+
+
+<!-- ████████████████████████
+     PAGE 16 — CHAPTER 1 QUICK REVISION SHEET
+█████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · COMPLETE QUICK REVISION SHEET — ALL TOPICS</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">QR</div>
+    <h2>Chapter 1 — Quick Revision at a Glance <span class="te">— సత్వర పునశ్చరణ పట్టిక</span></h2>
+  </div>
+
+  <table class="qr-table no-break">
+    <caption>Chapter 1 Complete Quick Revision — Chapter 1 సంపూర్ణ పునశ్చరణ</caption>
+    <thead>
+      <tr>
+        <th style="width:14%">Topic <span class="te-th">అంశం</span></th>
+        <th style="width:16%">Key Name <span class="te-th">ముఖ్య పేరు</span></th>
+        <th style="width:14%">Location <span class="te-th">స్థలం</span></th>
+        <th style="width:14%">Dynasty/Period <span class="te-th">వంశం/కాలం</span></th>
+        <th>Special Fact <span class="te-th">ముఖ్య విషయం</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="cat-col">Harappan <span class="te">హరప్పా</span></td>
+        <td><strong>Great Bath</strong><span class="te-td">మహా స్నాన కుండం</span></td>
+        <td>Mohenjo-daro<span class="te-td">మొహెంజో-దారో</span></td>
+        <td>3300–1500 BCE<span class="te-td"></span></td>
+        <td>Waterproofed with Bitumen; ritual purpose<span class="te-td">బిటుమెన్‌తో నీరు-రహితం; మత ప్రయోజనం</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Harappan <span class="te">హరప్పా</span></td>
+        <td><strong>Dancing Girl</strong><span class="te-td">నాట్యకత్తె</span></td>
+        <td>Mohenjo-daro</td>
+        <td>Bronze; Lost Wax<span class="te-td">కంచు; మైనపు పోత</span></td>
+        <td>Tribhanga posture; left arm full of bangles<span class="te-td">త్రిభంగ భంగిమ; ఎడమ చేతిపై గాజులు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Harappan <span class="te">హరప్పా</span></td>
+        <td><strong>Unicorn Seal</strong><span class="te-td">ఏకశృంగి ముద్ర</span></td>
+        <td>Multiple sites</td>
+        <td>Steatite; Pictographic<span class="te-td">స్టీటైట్; చిత్రలిపి</span></td>
+        <td>Most common animal; script undeciphered; R→L<span class="te-td">అత్యంత సాధారణ జంతువు; లిపి అర్థం కాలేదు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Mauryan <span class="te">మౌర్య</span></td>
+        <td><strong>Sarnath Lion Capital</strong><span class="te-td">సారనాథ్ సింహ స్తంభం</span></td>
+        <td>Sarnath, UP</td>
+        <td>Ashoka; 3rd C BCE<span class="te-td">అశోకుడు</span></td>
+        <td>National Emblem; 4 lions back-to-back<span class="te-td">జాతీయ చిహ్నం; 4 సింహాలు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Mauryan <span class="te">మౌర్య</span></td>
+        <td><strong>Sanchi Stupa</strong><span class="te-td">సాంచి స్తూపం</span></td>
+        <td>Madhya Pradesh</td>
+        <td>Ashoka; 3rd C BCE<span class="te-td">అశోకుడు</span></td>
+        <td>Oldest stone stupa; UNESCO; 4 elaborate Toranas<span class="te-td">పురాతన రాతి స్తూపం; UNESCO</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Mauryan <span class="te">మౌర్య</span></td>
+        <td><strong>Barabar Caves</strong><span class="te-td">బరాబర్ గుహలు</span></td>
+        <td>Bihar</td>
+        <td>Dasharatha; Ajivikas<span class="te-td">దశరథుడు</span></td>
+        <td>Oldest rock-cut caves; NOT Buddhist — for Ajivikas<span class="te-td">పురాతన రాతి గుహలు; బౌద్ధులకు కాదు — ఆజీవకులకు!</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Post-Mauryan <span class="te">మౌర్యానంతర</span></td>
+        <td><strong>Gandhara School</strong><span class="te-td">గాంధార పాఠశాల</span></td>
+        <td>NW India/Pakistan</td>
+        <td>Kushana; Grey schist<span class="te-td">కుషాన్; బూడిద రాయి</span></td>
+        <td>Greek-Roman influence; wavy hair; muscular Buddha<span class="te-td">గ్రీకు ప్రభావం; అలల జుట్టు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Post-Mauryan <span class="te">మౌర్యానంతర</span></td>
+        <td><strong>Mathura School</strong><span class="te-td">మథుర పాఠశాల</span></td>
+        <td>UP</td>
+        <td>Kushana; Red sandstone<span class="te-td">కుషాన్; ఎర్ర రాయి</span></td>
+        <td>Indigenous Indian; shaved head; all 3 religions<span class="te-td">స్వదేశీ; గుండు తల; 3 మతాలు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Post-Mauryan <span class="te">మౌర్యానంతర</span></td>
+        <td><strong>Amaravati School</strong><span class="te-td">అమరావతి పాఠశాల</span></td>
+        <td>Andhra Pradesh</td>
+        <td>Satavahana; White marble<span class="te-td">శాతవాహన; తెల్ల పాలరాయి</span></td>
+        <td>Dynamic; Tribhanga; slender S-shape body<span class="te-td">త్రిభంగ; సన్నటి S ఆకారం</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Gupta / Caves <span class="te">గుప్త/గుహలు</span></td>
+        <td><strong>Ajanta Caves</strong><span class="te-td">అజంతా గుహలు</span></td>
+        <td>Maharashtra</td>
+        <td>2nd BCE–6th CE<span class="te-td">Buddhist only</span></td>
+        <td>29 caves; Paintings (Fresco-secco); Buddhist only<span class="te-td">29 గుహలు; చిత్రాలు; కేవలం బౌద్ధ</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Gupta / Caves <span class="te">గుప్త/గుహలు</span></td>
+        <td><strong>Ellora Caves</strong><span class="te-td">ఎల్లోరా గుహలు</span></td>
+        <td>Maharashtra</td>
+        <td>5th–11th CE<span class="te-td">All 3 religions</span></td>
+        <td>34 caves; Sculptures; Hindu+Buddhist+Jain<span class="te-td">34 గుహలు; శిల్పాలు; 3 మతాలు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Temple Styles <span class="te">శైలులు</span></td>
+        <td><strong>Nagara</strong><span class="te-td">నాగర</span></td>
+        <td>North India</td>
+        <td>Curvilinear shikhara<span class="te-td">వంపు శిఖరం</span></td>
+        <td>No compound wall; no mandatory tank; Khajuraho<span class="te-td">గోడ లేదు; నీటి తొట్టి కాదు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Temple Styles <span class="te">శైలులు</span></td>
+        <td><strong>Dravida</strong><span class="te-td">ద్రావిడ</span></td>
+        <td>South India</td>
+        <td>Stepped pyramid vimana<span class="te-td">మెట్ల విమానం</span></td>
+        <td>Gopuram + Prakaras + Pushkarini (water tank)<span class="te-td">గోపురం + ప్రాకారం + పుష్కరిణి</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">South Indian <span class="te">దక్షిణ</span></td>
+        <td><strong>Brihadeeswara</strong><span class="te-td">బృహదీశ్వరం</span></td>
+        <td>Thanjavur, TN</td>
+        <td>Raja Raja Chola I<span class="te-td">రాజ రాజ చోళ I</span></td>
+        <td>216 ft; UNESCO; Granite; No noon shadow<span class="te-td">216 అడుగులు; UNESCO; గ్రానైట్; నీడ పడదు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">South Indian <span class="te">దక్షిణ</span></td>
+        <td><strong>Vittala Temple</strong><span class="te-td">విఠల దేవాలయం</span></td>
+        <td>Hampi, Karnataka</td>
+        <td>Vijayanagara; UNESCO<span class="te-td">విజయనగర; UNESCO</span></td>
+        <td>Musical pillars; Stone Chariot<span class="te-td">సంగీత స్తంభాలు; రాతి రథం</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Medieval <span class="te">మధ్యకాలం</span></td>
+        <td><strong>Qutb Minar</strong><span class="te-td">కుతుబ్ మినార్</span></td>
+        <td>Delhi</td>
+        <td>Aibak→Iltutmish→Firuz<span class="te-td">3 పాలకులు</span></td>
+        <td>73 m; UNESCO; Red sandstone + marble<span class="te-td">73 మీ; UNESCO; ఎర్ర రాయి + పాలరాయి</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Medieval <span class="te">మధ్యకాలం</span></td>
+        <td><strong>Taj Mahal</strong><span class="te-td">తాజ్ మహల్</span></td>
+        <td>Agra, UP</td>
+        <td>Shah Jahan; 1632–53<span class="te-td">షాజహాన్</span></td>
+        <td>Mumtaz's memory; Makrana marble; 22 years; Ustad Ahmad Lahauri<span class="te-td">ముంతాజ్; మక్రానా పాలరాయి; 22 సంవత్సరాలు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Modern <span class="te">ఆధునిక</span></td>
+        <td><strong>Laurie Baker</strong><span class="te-td">లారీ బేకర్</span></td>
+        <td>Kerala</td>
+        <td>Post-independence<span class="te-td">స్వాతంత్ర్యానంతరం</span></td>
+        <td>"Architect of Poor"; local materials; filler slab<span class="te-td">పేదల వాస్తుశిల్పి; స్థానిక సామగ్రి</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Modern <span class="te">ఆధునిక</span></td>
+        <td><strong>B.V. Doshi</strong><span class="te-td">బి.వి. దోషి</span></td>
+        <td>India</td>
+        <td>Pritzker 2018<span class="te-td">ప్రిట్జ్కర్ 2018</span></td>
+        <td>First Indian Pritzker Prize winner; IIM Bangalore<span class="te-td">మొదటి భారతీయ ప్రిట్జ్కర్ విజేత</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="memory-box no-break">
+    <div class="mem-label">🎯 Chapter 1 Master Memory Formula — అన్నీ గుర్తుపెట్టుకోవడానికి</div>
+    <div class="mnemonic">"H–M–PM–G–T–S–Me–Mo" = Complete Ch.1 Flow</div>
+    <div class="mnem-exp">
+      <strong>H</strong>arappan → <strong>M</strong>auryan → <strong>P</strong>ost-<strong>M</strong>auryan → <strong>G</strong>upta → <strong>T</strong>emple Styles → <strong>S</strong>outh Indian Dynasties → <strong>Me</strong>dieval → <strong>Mo</strong>dern
+    </div>
+    <div class="mem-te">
+      <span class="kw">హ–మో–మో–గు–దే–ద–మ–ఆ</span> అని గుర్తుపెట్టుకోండి: హరప్పా → మౌర్య → మౌర్యానంతర → గుప్త → దేవాలయ శైలులు → దక్షిణ వంశాలు → మధ్యకాలం → ఆధునికం. ఈ క్రమంలో అన్నీ అర్థమవుతాయి. ప్రతి కాలం తర్వాతి కాలానికి పునాది వేసింది!
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1 · Complete Quick Revision Sheet — All Topics Covered</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 16</span>
+  </div>
+</div>
+
+</body>
+</html>

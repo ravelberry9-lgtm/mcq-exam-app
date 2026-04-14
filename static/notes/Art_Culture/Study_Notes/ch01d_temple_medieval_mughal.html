@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1.1-I – Temple Architecture + Medieval | Art & Culture</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 18mm 16mm 16mm 16mm; }
+@media print {
+  .page-break { page-break-before: always; }
+  .no-break    { page-break-inside: avoid; }
+  body { background: #fff !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --a4: 794px;
+  --brick:    #9b3a1a;
+  --brick-lt: #c4623a;
+  --mud:      #6b4226;
+  --sand:     #e8d5b0;
+  --green:    #1e5c38;
+  --blue:     #1a3e7a;
+  --purple:   #5a2080;
+  --teal:     #0e5c5c;
+  --gold:     #5a3400;
+  --text:     #1a1206;
+  --subtext:  #2c1800;
+  --border:   #d4b896;
+  --tel-bg:   #eef4ff;
+  --tel-bdr:  #1a3e7a;
+  --mem-bg:   #edf7f0;
+  --mem-bdr:  #1e5c38;
+  --exam-bg:  #fffbec;
+  --exam-bdr: #5a3400;
+}
+body { font-family: 'Libre Baskerville', Georgia, serif; background: #ddd5c8; color: var(--text); font-size: 10.5pt; line-height: 1.65; }
+.a4-page { width: var(--a4); min-height: 1123px; background: #ffffff; margin: 18px auto; padding: 14mm 16mm 13mm 16mm; box-shadow: 0 2px 18px rgba(0,0,0,0.18); }
+
+/* ── HEADER / FOOTER ── */
+.screen-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid var(--border); padding-bottom: 5px; margin-bottom: 10px; }
+.screen-header .sh-left { font-family: 'Source Sans 3', sans-serif; font-size: 7.5pt; color: #1a1206; font-weight: 700; letter-spacing: 0.04em; }
+.screen-header .sh-right { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #1a1206; font-weight: 600; }
+.screen-footer { border-top: 1px solid var(--border); padding-top: 5px; margin-top: 10px; display: flex; justify-content: space-between; font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #1a1206; font-weight: 600; }
+
+/* ── HEADINGS ── */
+.sec-heading { display: flex; align-items: baseline; gap: 8px; margin: 14px 0 7px; border-bottom: 2px solid var(--brick); padding-bottom: 4px; }
+.sec-heading .sec-num { font-family: 'Fira Mono', monospace; font-size: 8pt; font-weight: 600; color: #fff; background: var(--brick); padding: 1px 7px; border-radius: 2px; flex-shrink: 0; }
+.sec-heading h2 { font-family: 'Libre Baskerville', serif; font-size: 12.5pt; font-weight: 700; color: var(--brick); }
+.sec-heading .te { font-family: 'Tiro Telugu', serif; font-size: 10pt; color: var(--subtext); }
+.sub-heading { font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; color: #fff; background: var(--mud); text-transform: uppercase; letter-spacing: 0.07em; margin: 12px 0 6px; padding: 4px 10px; border-radius: 3px; display: flex; align-items: center; gap: 6px; }
+.sub-heading .te-sh { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; text-transform: none; letter-spacing: 0; color: #f8e8d8; }
+
+/* ── BILINGUAL ── */
+.bilingual { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin: 6px 0 10px; }
+.bi-en { padding: 8px 11px; background: #fffdf9; font-size: 10pt; border-bottom: 1px solid var(--border); line-height: 1.6; }
+.bi-en .lang-tag { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #1a1206; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 3px; font-weight: 700; }
+.bi-te { padding: 8px 11px; background: var(--tel-bg); border-left: 3px solid var(--tel-bdr); font-family: 'Tiro Telugu', serif; font-size: 11pt; color: #0a1428; line-height: 1.95; }
+.bi-te .lang-tag { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #0a2060; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 3px; font-weight: 700; }
+.bi-te .kw  { color: var(--brick);  font-weight: 700; }
+.bi-te .kw2 { color: var(--blue);   font-weight: 700; }
+.bi-te .kw3 { color: var(--green);  font-weight: 700; }
+.bi-te .kw4 { color: var(--purple); font-weight: 700; }
+
+/* ── TELUGU STORY ── */
+.telugu-story { background: var(--tel-bg); border: 1px solid #b8ccee; border-left: 3px solid var(--tel-bdr); border-radius: 4px; padding: 9px 12px; font-family: 'Tiro Telugu', serif; font-size: 11pt; color: #0a1428; line-height: 2; margin: 6px 0 10px; }
+.telugu-story .ts-label { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #0a2060; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 4px; font-weight: 700; }
+.telugu-story .kw  { color: var(--brick);  font-weight: 700; }
+.telugu-story .kw2 { color: var(--blue);   font-weight: 700; }
+.telugu-story .kw3 { color: var(--green);  font-weight: 700; }
+.telugu-story .kw4 { color: var(--purple); font-weight: 700; }
+
+/* ── TABLES ── */
+.styled-table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 6px 0 10px; }
+.styled-table caption { font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; color: #ffffff; background: var(--brick); text-transform: uppercase; letter-spacing: 0.06em; text-align: left; padding: 5px 9px; border-radius: 4px 4px 0 0; }
+.styled-table thead tr { background: var(--mud); }
+.styled-table thead th { color: #ffffff; padding: 6px 8px; font-family: 'Source Sans 3', sans-serif; font-size: 8.5pt; font-weight: 700; text-align: left; border: 1px solid #8a5228; }
+.styled-table thead th .te-th { font-family: 'Tiro Telugu', serif; font-weight: 400; font-size: 8.5pt; display: block; color: #f8e8d8; margin-top: 1px; }
+.styled-table tbody tr:nth-child(odd)  { background: #fffdf9; }
+.styled-table tbody tr:nth-child(even) { background: #faf3eb; }
+.styled-table td { padding: 6px 8px; border: 1px solid #ddd0be; vertical-align: top; line-height: 1.5; }
+.styled-table td .te-td { font-family: 'Tiro Telugu', serif; font-size: 10pt; color: #0a1428; display: block; margin-top: 3px; line-height: 1.85; }
+.styled-table td strong { color: var(--brick); }
+.tag-sm { font-family: 'Fira Mono', monospace; font-size: 7.5pt; background: #fce8dc; color: #6a1000; border: 1px solid #c89070; padding: 1px 5px; border-radius: 2px; display: inline-block; font-weight: 600; }
+.tag-blue { font-family: 'Fira Mono', monospace; font-size: 7.5pt; background: #dce8fc; color: #0a2060; border: 1px solid #90a8dc; padding: 1px 5px; border-radius: 2px; display: inline-block; font-weight: 600; }
+.tag-green { font-family: 'Fira Mono', monospace; font-size: 7.5pt; background: #d4f0e0; color: #0a3a20; border: 1px solid #70b890; padding: 1px 5px; border-radius: 2px; display: inline-block; font-weight: 600; }
+
+/* ── THREE-WAY COMPARISON ── */
+.comp3 { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 6px 0 10px; }
+.comp3 th { padding: 6px 8px; font-family: 'Source Sans 3', sans-serif; font-size: 8.5pt; font-weight: 700; border: 1px solid #8a5228; text-align: center; color: #fff; }
+.comp3 th.aspect-h { background: #3a2a14; }
+.comp3 th.n-h { background: var(--brick); }
+.comp3 th.d-h { background: var(--blue); }
+.comp3 th.v-h { background: var(--green); }
+.comp3 th .te-th { font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400; display: block; color: #f8e8d8; margin-top: 1px; }
+.comp3 td { padding: 6px 8px; border: 1px solid #ddd0be; vertical-align: top; line-height: 1.45; font-size: 9pt; }
+.comp3 tr:nth-child(odd)  td { background: #fffdf9; }
+.comp3 tr:nth-child(even) td { background: #faf3eb; }
+.comp3 td .te { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; color: #0a1428; display: block; margin-top: 2px; line-height: 1.8; }
+.comp3 td strong { color: var(--brick); }
+.comp3 .aspect-col { background: #f0e4d0 !important; font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 8.5pt; color: #2c1800; text-align: center; }
+.comp3 .aspect-col .te { font-family: 'Tiro Telugu', serif; font-size: 9pt; color: #2c1800; text-align: center; }
+
+/* ── MEMORY BOX ── */
+.memory-box { background: var(--mem-bg); border: 1px solid #8acca0; border-left: 4px solid var(--mem-bdr); border-radius: 4px; padding: 8px 11px; margin: 6px 0 10px; }
+.memory-box .mem-label { font-family: 'Fira Mono', monospace; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0a3a20; margin-bottom: 4px; }
+.memory-box .mnemonic { font-family: 'Libre Baskerville', serif; font-size: 10.5pt; font-weight: 700; color: var(--mud); margin-bottom: 3px; }
+.memory-box .mnem-exp { font-family: 'Source Sans 3', sans-serif; font-size: 9pt; color: #0a2018; margin-bottom: 5px; }
+.memory-box .mem-te { font-family: 'Tiro Telugu', serif; font-size: 10.5pt; color: #0a1a10; line-height: 1.9; border-top: 1px dashed #8acca0; padding-top: 5px; margin-top: 3px; }
+.memory-box .mem-te .kw { color: var(--mem-bdr); font-weight: 700; }
+
+/* ── EXAM ALERT ── */
+.exam-alert { background: var(--exam-bg); border: 1px solid #c8a830; border-left: 4px solid var(--exam-bdr); border-radius: 4px; padding: 8px 11px; margin: 6px 0 10px; }
+.exam-alert .ea-label { font-family: 'Fira Mono', monospace; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4a2800; margin-bottom: 4px; }
+.exam-alert ul { padding-left: 14px; margin: 0; }
+.exam-alert li { font-size: 9.5pt; margin: 3px 0; line-height: 1.55; }
+.exam-alert li strong { color: var(--brick); }
+.exam-alert .ea-te { font-family: 'Tiro Telugu', serif; font-size: 10pt; color: #2c1800; margin-top: 6px; padding-top: 5px; border-top: 1px dashed #c8a830; line-height: 1.9; }
+
+/* ── HIGHLIGHT BOX ── */
+.highlight-box { background: #fef6ed; border: 1px solid var(--sand); border-left: 4px solid var(--brick-lt); border-radius: 4px; padding: 7px 11px; margin: 5px 0 10px; font-size: 10pt; }
+.highlight-box .hb-te { font-family: 'Tiro Telugu', serif; font-size: 10.5pt; line-height: 1.95; color: #1a1206; margin-top: 4px; }
+.highlight-box .kw  { color: var(--brick); font-weight: 700; }
+.highlight-box .kw2 { color: var(--blue);  font-weight: 700; }
+.highlight-box .kw3 { color: var(--green); font-weight: 700; }
+
+/* ── DEEP NOTE ── */
+.deep-note { border: 1.5px solid var(--brick-lt); border-radius: 4px; padding: 7px 11px; background: #fff7f3; font-size: 9.5pt; margin: 5px 0 10px; }
+.deep-note .dn-label { font-family: 'Fira Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; color: #6a1000; font-weight: 700; margin-bottom: 3px; display: block; }
+.deep-note .dn-te { font-family: 'Tiro Telugu', serif; font-size: 10.5pt; color: #1a1206; line-height: 1.9; margin-top: 4px; }
+.deep-note .kw  { color: var(--brick);  font-weight: 700; }
+.deep-note .kw2 { color: var(--blue);   font-weight: 700; }
+.deep-note .kw3 { color: var(--green);  font-weight: 700; }
+
+/* ── KEY POINTS ── */
+.keypoints { list-style: none; margin: 5px 0 10px; padding: 0; }
+.keypoints li { display: flex; gap: 8px; padding: 5px 0; border-bottom: 1px dashed var(--border); font-size: 10pt; line-height: 1.5; }
+.keypoints li:last-child { border-bottom: none; }
+.keypoints li .kp-num { flex-shrink: 0; width: 20px; height: 20px; background: var(--brick); color: #fff; border-radius: 50%; font-family: 'Fira Mono', monospace; font-size: 7pt; display: flex; align-items: center; justify-content: center; margin-top: 2px; font-weight: 600; }
+.keypoints li .kp-body .te-kp { font-family: 'Tiro Telugu', serif; font-size: 10.5pt; color: #0a1428; display: block; margin-top: 3px; line-height: 1.9; }
+
+/* ── TEMPLE PARTS VISUAL ── */
+.temple-parts-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin: 6px 0 10px;
+}
+.tp-card { border-radius: 4px; border: 1px solid var(--border); overflow: hidden; }
+.tp-card .tp-head { padding: 5px 9px; background: var(--mud); color: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 8.5pt; font-weight: 700; }
+.tp-card .tp-head .te-tp { font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400; display: block; color: #f8e8d8; margin-top: 1px; }
+.tp-card .tp-body { padding: 7px 9px; background: #fffdf9; font-size: 9pt; line-height: 1.5; }
+.tp-card .tp-body .te { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; color: #0a1428; display: block; margin-top: 3px; line-height: 1.85; }
+.tp-card .tp-body strong { color: var(--brick); }
+
+/* ── TEMPLE STYLE VISUAL DIAGRAM (CSS) ── */
+.style-compare {
+  display: flex; gap: 10px; margin: 8px 0 12px; align-items: flex-start;
+}
+.style-box {
+  flex: 1; border-radius: 4px; overflow: hidden; border: 1px solid var(--border);
+}
+.style-box .sb-head {
+  padding: 6px 10px; font-family: 'Source Sans 3', sans-serif; font-size: 9pt; font-weight: 700; color: #fff; text-align: center;
+}
+.style-box.nagara .sb-head  { background: var(--brick); }
+.style-box.dravida .sb-head { background: var(--blue); }
+.style-box.vesara .sb-head  { background: var(--green); }
+.style-box .sb-head .te-sbh { font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400; display: block; color: #f8e8d8; }
+/* CSS Temple shape */
+.temple-shape { padding: 10px 8px 8px; background: #fffdf9; display: flex; flex-direction: column; align-items: center; }
+/* Nagara — curved shikhara */
+.ng-shikhara { width: 0; height: 0; border-left: 22px solid transparent; border-right: 22px solid transparent; border-bottom: 55px solid #c4623a; border-radius: 0 0 2px 2px; margin: 0 auto; position: relative; }
+.ng-shikhara::after { content: ''; position: absolute; width: 8px; height: 8px; background: #9b3a1a; border-radius: 50%; top: -10px; left: -4px; }
+/* Dravida — stepped pyramid */
+.dr-tier { background: #2b4f8a; margin: 0 auto 2px; border-radius: 1px; }
+/* Vesara — mix */
+.vs-top { width: 0; height: 0; border-left: 16px solid transparent; border-right: 16px solid transparent; border-bottom: 28px solid #1e5c38; margin: 0 auto 2px; }
+.vs-tier { background: #3a8060; margin: 0 auto 2px; border-radius: 1px; }
+
+.sb-features { padding: 7px 9px; }
+.sb-features .sf-row { font-size: 8.5pt; padding: 2px 0; border-bottom: 1px dashed #e0ccb0; display: flex; gap: 5px; }
+.sb-features .sf-row:last-child { border-bottom: none; }
+.sb-features .sf-label { font-family: 'Fira Mono', monospace; font-size: 7pt; font-weight: 700; color: #1a1206; flex-shrink: 0; width: 55px; }
+.sb-features .sf-val { font-size: 8.5pt; color: #1a1206; line-height: 1.4; }
+.sb-features .sf-val .te { font-family: 'Tiro Telugu', serif; font-size: 9pt; color: #0a1428; display: block; line-height: 1.75; margin-top: 1px; }
+
+/* ── MEDIEVAL SECTIONS ── */
+.dynasty-block { border-radius: 4px; border: 1px solid var(--border); overflow: hidden; margin: 7px 0 11px; }
+.dynasty-block .db-head { padding: 6px 11px; font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+.dynasty-block.slave   .db-head { background: #3a2870; }
+.dynasty-block.khilji  .db-head { background: #1e5c38; }
+.dynasty-block.tughlaq .db-head { background: #2b4f8a; }
+.dynasty-block.mughal  .db-head { background: var(--brick); }
+.dynasty-block.suri    .db-head { background: var(--teal); }
+.dynasty-block.rajput  .db-head { background: #7a3a00; }
+.dynasty-block .db-head .te-dh { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; color: #f8e8d8; }
+.dynasty-block .db-head .db-period { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #f8e8d8; font-weight: 600; }
+.dynasty-block .db-body { padding: 8px 11px; background: #fffdf9; }
+.dynasty-block .db-body .en-row { font-size: 9.5pt; margin: 3px 0; line-height: 1.5; padding-bottom: 5px; border-bottom: 1px dashed var(--border); }
+.dynasty-block .db-body .en-row:last-child { border-bottom: none; padding-bottom: 0; }
+.dynasty-block .db-body .en-row strong { color: var(--brick); }
+.dynasty-block .db-body .te-row { font-family: 'Tiro Telugu', serif; font-size: 10pt; color: #0a1428; line-height: 1.9; margin-top: 2px; display: block; }
+
+/* ── FEATURES STRIP (Islamic Architecture) ── */
+.features-strip { display: flex; flex-wrap: wrap; gap: 7px; margin: 6px 0 10px; }
+.feature-pill { border-radius: 3px; border: 1px solid var(--border); padding: 5px 9px; background: #fffdf9; flex: 1; min-width: 140px; }
+.feature-pill .fp-head { font-family: 'Source Sans 3', sans-serif; font-size: 8pt; font-weight: 700; color: var(--brick); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+.feature-pill .fp-te { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; color: #0a1428; line-height: 1.8; }
+
+/* ── TWO-BOX ── */
+.two-box { display: flex; gap: 10px; margin: 6px 0 10px; }
+.tbox { flex: 1; border-radius: 4px; border: 1px solid var(--border); overflow: hidden; }
+.tbox .tb-head { padding: 5px 10px; font-family: 'Source Sans 3', sans-serif; font-size: 9pt; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; }
+.tbox.t-brick  .tb-head { background: var(--brick); }
+.tbox.t-blue   .tb-head { background: var(--blue); }
+.tbox.t-green  .tb-head { background: var(--green); }
+.tbox.t-purple .tb-head { background: var(--purple); }
+.tbox.t-teal   .tb-head { background: var(--teal); }
+.tbox .tb-head .te-tbh { font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400; text-transform: none; letter-spacing: 0; display: block; color: #f8e8d8; }
+.tbox .tb-body { padding: 7px 10px; background: #fffdf9; }
+.tbox .tb-body ul { padding-left: 13px; margin: 0; }
+.tbox .tb-body li { font-size: 9pt; margin: 3px 0; line-height: 1.5; }
+.tbox .tb-body li .te { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; color: #0a1428; display: block; line-height: 1.8; }
+
+hr.div { border: none; border-top: 1.5px dashed var(--border); margin: 12px 0; }
+</style>
+</head>
+<body>
+
+<!-- ████████████████████████████████
+     PAGE 10 — TEMPLE ARCHITECTURE: PARTS + NAGARA vs DRAVIDA vs VESARA
+█████████████████████████████████ -->
+<div class="a4-page">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · SOUTH INDIAN TEMPLE ARCHITECTURE · NAGARA · DRAVIDA · VESARA</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">1.1-I</div>
+    <h2>Temple Architecture — Hindu Temple Styles <span class="te">— దేవాలయ వాస్తుశిల్పం</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — దేవాలయం అంటే ఏమిటి? దాని భాగాలు ఎందుకు ముఖ్యం?</span>
+    హిందూ దేవాలయం కేవలం పూజా స్థలం మాత్రమే కాదు — అది ఒక <span class="kw">సంపూర్ణ విశ్వ నమూనా (Cosmic Symbol)</span>! దేవాలయం పర్వతాన్ని సూచిస్తుంది — <span class="kw2">మేరు పర్వతాన్ని</span>, ఇది హిందూ విశ్వాస వ్యవస్థలో దేవతల నివాసం. శిఖరం పైకి వెళ్ళే కొద్దీ సన్నబడటం — మనిషి నుండి దేవుని వైపు ప్రయాణాన్ని సూచిస్తుంది. లోపలి <span class="kw">గర్భగృహం</span> చీకటిగా ఉంటుంది — అది తల్లి గర్భాన్ని సూచిస్తుంది. ఇప్పుడు దేవాలయంలోని ప్రతి భాగాన్ని అర్థం చేసుకుందాం.
+  </div>
+
+  <!-- TEMPLE PARTS GRID -->
+  <div class="sub-heading">Parts of a Hindu Temple — హిందూ దేవాలయ భాగాలు</div>
+  <div class="temple-parts-grid no-break">
+    <div class="tp-card">
+      <div class="tp-head">Garbhagriha (గర్భగృహం)
+        <span class="te-tp">Inner Sanctum — అంత:పురం</span>
+      </div>
+      <div class="tp-body">
+        The innermost chamber housing the <strong>main deity</strong>. Dark, square room — symbolises the womb of the universe.
+        <span class="te">దేవాలయంలో అత్యంత పవిత్రమైన గది — ప్రధాన విగ్రహం ఇక్కడ ఉంటుంది. చీకటిగా, చతురస్రంగా ఉంటుంది — <strong>విశ్వ గర్భాన్ని</strong> సూచిస్తుంది. పురోహితుడు మాత్రమే ప్రవేశించగలడు.</span>
+      </div>
+    </div>
+    <div class="tp-card">
+      <div class="tp-head">Shikhara / Vimana (శిఖరం / విమానం)
+        <span class="te-tp">Tower above Garbhagriha — శిఖరం</span>
+      </div>
+      <div class="tp-body">
+        The <strong>tower/spire</strong> above the Garbhagriha. In <strong>North India = Shikhara</strong> (curvilinear). In <strong>South India = Vimana</strong> (pyramidal stepped tower).
+        <span class="te">గర్భగృహం పైన ఉన్న <strong>శిఖరం/గోపురం</strong>. ఉత్తర భారతదేశంలో <strong>శిఖరం</strong> (వంపు ఆకారం). దక్షిణ భారతదేశంలో <strong>విమానం</strong> (మెట్ల పిరమిడ్ ఆకారం).</span>
+      </div>
+    </div>
+    <div class="tp-card">
+      <div class="tp-head">Mandapa (మండపం)
+        <span class="te-tp">Hall / Assembly Space — సభా మండపం</span>
+      </div>
+      <div class="tp-body">
+        The <strong>pillared hall</strong> in front of the Garbhagriha. Used for worship, music, dance performances. Can have multiple mandapas.
+        <span class="te">గర్భగృహం ముందున్న <strong>స్తంభాల మండపం</strong>. పూజ, సంగీత, నృత్య కార్యక్రమాలు ఇక్కడ జరుగుతాయి. ఒకటి కంటే ఎక్కువ మండపాలు ఉండవచ్చు.</span>
+      </div>
+    </div>
+    <div class="tp-card">
+      <div class="tp-head">Gopuram (గోపురం)
+        <span class="te-tp">Gateway Tower — ప్రవేశ ద్వారం</span>
+      </div>
+      <div class="tp-body">
+        The <strong>elaborate gateway</strong> of South Indian temples. Can be taller than the Vimana. Heavily decorated with sculptures.
+        <span class="te">దక్షిణ భారత దేవాలయాల ముఖ్యమైన <strong>అలంకారమైన ద్వారం</strong>. విమానం కంటే ఎత్తుగా ఉండవచ్చు. శిల్పాలతో నిండి ఉంటుంది.</span>
+      </div>
+    </div>
+    <div class="tp-card">
+      <div class="tp-head">Antarala (అంతరాళం)
+        <span class="te-tp">Vestibule — సంధి గది</span>
+      </div>
+      <div class="tp-body">
+        The <strong>transitional space</strong> between Mandapa and Garbhagriha. Acts as a connecting passage.
+        <span class="te">మండపం మరియు గర్భగృహం మధ్య ఉన్న <strong>సంధి స్థలం</strong>. రెండింటిని కలిపే మార్గం.</span>
+      </div>
+    </div>
+    <div class="tp-card">
+      <div class="tp-head">Vahana (వాహనం) + Jagati (జగతి)
+        <span class="te-tp">Vehicle + Platform — వేదిక</span>
+      </div>
+      <div class="tp-body">
+        <strong>Vahana</strong> = mount/vehicle of deity placed before shrine (e.g. Nandi for Shiva). <strong>Jagati</strong> = raised platform on which entire temple stands.
+        <span class="te"><strong>వాహనం</strong> = దేవుని వాహనం (శివునికి నంది). <strong>జగతి</strong> = దేవాలయమంతా నిలబడే <strong>ఎత్తైన వేదిక</strong>.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAGARA vs DRAVIDA vs VESARA -->
+  <div class="sub-heading">Three Temple Styles: Nagara · Dravida · Vesara <span class="te-sh">— మూడు దేవాలయ శైలులు</span></div>
+
+  <div class="style-compare no-break">
+    <!-- NAGARA -->
+    <div class="style-box nagara">
+      <div class="sb-head">① Nagara Style
+        <span class="te-sbh">నాగర శైలి — North India</span>
+      </div>
+      <div class="temple-shape">
+        <div class="ng-shikhara"></div>
+        <div style="width:52px;height:12px;background:#d08060;margin:2px auto;border-radius:1px;"></div>
+        <div style="width:62px;height:18px;background:#e0a880;margin:0 auto;border-radius:1px;"></div>
+        <div style="width:70px;height:8px;background:#c07050;margin:0 auto;"></div>
+        <div style="font-family:'Fira Mono',monospace;font-size:6.5pt;color:#1a1206;font-weight:700;margin-top:4px;text-align:center;">NAGARA (Curvilinear)</div>
+      </div>
+      <div class="sb-features">
+        <div class="sf-row"><div class="sf-label">REGION</div><div class="sf-val">North India<span class="te">ఉత్తర భారతదేశం</span></div></div>
+        <div class="sf-row"><div class="sf-label">SHIKHARA</div><div class="sf-val"><strong>Curvilinear</strong> — curves like mountain<span class="te">వంపు ఆకార శిఖరం — పర్వతం వంటిది</span></div></div>
+        <div class="sf-row"><div class="sf-label">BOUNDARY</div><div class="sf-val">No compound wall<span class="te">సరిహద్దు గోడ ఉండదు</span></div></div>
+        <div class="sf-row"><div class="sf-label">WATER TANK</div><div class="sf-val">Not mandatory<span class="te">నీటి తొట్టి తప్పనిసరి కాదు</span></div></div>
+        <div class="sf-row"><div class="sf-label">EXAMPLES</div><div class="sf-val">Khajuraho (MP), Lingaraja (Odisha), Kandariya Mahadeva<span class="te">ఖజురాహో, లింగరాజ దేవాలయం</span></div></div>
+        <div class="sf-row"><div class="sf-label">SUBTYPES</div><div class="sf-val">Latina, Valabhi, Shekhara<span class="te">లతీన, వలభి, శేఖర రకాలు</span></div></div>
+      </div>
+    </div>
+
+    <!-- DRAVIDA -->
+    <div class="style-box dravida">
+      <div class="sb-head">② Dravida Style
+        <span class="te-sbh">ద్రావిడ శైలి — South India</span>
+      </div>
+      <div class="temple-shape">
+        <div class="dr-tier" style="width:14px;height:10px;"></div>
+        <div class="dr-tier" style="width:24px;height:10px;"></div>
+        <div class="dr-tier" style="width:36px;height:10px;"></div>
+        <div class="dr-tier" style="width:48px;height:10px;"></div>
+        <div class="dr-tier" style="width:60px;height:10px;"></div>
+        <div style="width:68px;height:10px;background:#1a3060;margin:0 auto;border-radius:1px;"></div>
+        <div style="width:74px;height:8px;background:#223870;margin:0 auto;"></div>
+        <div style="font-family:'Fira Mono',monospace;font-size:6.5pt;color:#1a1206;font-weight:700;margin-top:4px;text-align:center;">DRAVIDA (Stepped Pyramid)</div>
+      </div>
+      <div class="sb-features">
+        <div class="sf-row"><div class="sf-label">REGION</div><div class="sf-val">South India<span class="te">దక్షిణ భారతదేశం</span></div></div>
+        <div class="sf-row"><div class="sf-label">VIMANA</div><div class="sf-val"><strong>Stepped pyramid</strong> (Vimana) — flat-topped<span class="te">మెట్ల పిరమిడ్ ఆకార విమానం — చదునైన పైభాగం</span></div></div>
+        <div class="sf-row"><div class="sf-label">GOPURAM</div><div class="sf-val">Elaborate <strong>gateway tower</strong> — often taller than Vimana<span class="te">విస్తారమైన గోపురం — విమానం కంటే ఎత్తుగా ఉండవచ్చు</span></div></div>
+        <div class="sf-row"><div class="sf-label">BOUNDARY</div><div class="sf-val">Compound walls (Prakaras)<span class="te">ప్రాకారాలు — చుట్టూ గోడలు తప్పనిసరి</span></div></div>
+        <div class="sf-row"><div class="sf-label">WATER TANK</div><div class="sf-val">Temple tank mandatory (Pushkarini)<span class="te">పుష్కరిణి — నీటి తొట్టి తప్పనిసరి</span></div></div>
+        <div class="sf-row"><div class="sf-label">EXAMPLES</div><div class="sf-val">Brihadeeswara (Thanjavur), Meenakshi, Shore Temple<span class="te">బృహదీశ్వర, మీనాక్షి, తీర దేవాలయం</span></div></div>
+      </div>
+    </div>
+
+    <!-- VESARA -->
+    <div class="style-box vesara">
+      <div class="sb-head">③ Vesara Style
+        <span class="te-sbh">వేసర శైలి — Deccan</span>
+      </div>
+      <div class="temple-shape">
+        <div class="vs-top"></div>
+        <div class="vs-tier" style="width:36px;height:8px;"></div>
+        <div class="vs-tier" style="width:46px;height:8px;"></div>
+        <div class="vs-tier" style="width:54px;height:8px;"></div>
+        <div style="width:60px;height:8px;background:#2a6848;margin:0 auto;border-radius:1px;"></div>
+        <div style="width:68px;height:8px;background:#1a5838;margin:0 auto;"></div>
+        <div style="font-family:'Fira Mono',monospace;font-size:6.5pt;color:#1a1206;font-weight:700;margin-top:4px;text-align:center;">VESARA (Hybrid)</div>
+      </div>
+      <div class="sb-features">
+        <div class="sf-row"><div class="sf-label">REGION</div><div class="sf-val">Deccan — Karnataka, Maharashtra<span class="te">డెక్కన్ — కర్ణాటక, మహారాష్ట్ర</span></div></div>
+        <div class="sf-row"><div class="sf-label">STYLE</div><div class="sf-val"><strong>Hybrid</strong> of Nagara + Dravida<span class="te">నాగర + ద్రావిడ మిశ్రమం</span></div></div>
+        <div class="sf-row"><div class="sf-label">DYNASTY</div><div class="sf-val">Chalukyas, Hoysalas, Rashtrakutas<span class="te">చాళుక్యులు, హోయ్సళులు, రాష్ట్రకూటులు</span></div></div>
+        <div class="sf-row"><div class="sf-label">EXAMPLES</div><div class="sf-val">Pattadakal temples, Durga Temple (Aihole), Hoysaleswara (Halebid)<span class="te">పట్టదకల్ దేవాలయాలు, హోయ్సళేశ్వర</span></div></div>
+        <div class="sf-row"><div class="sf-label">KEY</div><div class="sf-val">Also called <strong>Chalukyan Style</strong><span class="te">చాళుక్య శైలి అని కూడా అంటారు</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="memory-box no-break">
+    <div class="mem-label">🧠 Memory Trick — మూడు శైలులు గుర్తుపెట్టుకోవడానికి</div>
+    <div class="mnemonic">"N–D–V" = "North Curves · South Steps · Deccan Blends"</div>
+    <div class="mnem-exp">
+      <strong>N</strong>agara (North) → Curvilinear Shikhara → No compound wall → Khajuraho, Lingaraja<br>
+      <strong>D</strong>ravida (South) → Stepped Vimana + Gopuram → Compound walls + Pushkarini → Brihadeeswara<br>
+      <strong>V</strong>esara (Deccan) → Hybrid of both → Chalukyas/Hoysalas → Pattadakal, Halebid
+    </div>
+    <div class="mem-te">
+      <span class="kw">నాగర = ఉత్తరం = వంపు శిఖరం = గోడ లేదు</span><br>
+      <span class="kw">ద్రావిడ = దక్షిణం = మెట్ల విమానం = గోపురం + ప్రాకారం + పుష్కరిణి</span><br>
+      <span class="kw">వేసర = డెక్కన్ = రెండింటి మిశ్రమం = చాళుక్యులు</span><br>
+      పరీక్షలో "Gopuram is a feature of which style?" → ద్రావిడ! "Curvilinear shikhara?" → నాగర!
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.1-I · Temple Parts · Nagara · Dravida · Vesara Styles</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 10</span>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████
+     PAGE 11 — MEDIEVAL ARCHITECTURE: ISLAMIC + DELHI SULTANATE
+█████████████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1.2 · MEDIEVAL ARCHITECTURE — ISLAMIC + DELHI SULTANATE</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">1.2</div>
+    <h2>Architecture of Medieval India <span class="te">— మధ్యకాలీన భారత వాస్తుశిల్పం</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — మధ్యకాలీన వాస్తుశిల్పం ఎందుకు వేరే?</span>
+    11వ శతాబ్దంలో అరబ్బులు, తర్వాత తుర్కులు భారతదేశంపై దాడి చేశారు. వారితో పాటు వచ్చింది <span class="kw">ఇస్లామిక్ వాస్తుశిల్పం</span>. ఈ శైలిలో రెండు విప్లవాత్మక మార్పులు వచ్చాయి: మొదటిది — <span class="kw2">ఆర్చ్ మరియు గుమ్మటాల వాడకం</span> (Arcuate style). హిందూ వాస్తుశిల్పంలో ఆర్చ్ ఉండదు — రాళ్ళను అడ్డంగా పేర్చేవారు (Trabeate). రెండవది — <span class="kw3">మానవ, జంతు చిత్రాలకు బదులు రేఖాగణిత నమూనాలు</span> (Arabesque). ఇస్లాంలో మానవ చిత్రలేఖనం నిషిద్ధం. అందుకే మసీదుల అలంకారంలో అక్షరాలు, జ్యామితి నమూనాలు ఉంటాయి. ఈ రెండు ప్రపంచాల కలయికలో <span class="kw">ఇండో-ఇస్లామిక్</span> శైలి ఉద్భవించింది.
+  </div>
+
+  <!-- ISLAMIC ARCHITECTURE FEATURES -->
+  <div class="sub-heading">Features of Islamic (Indo-Islamic) Architecture <span class="te-sh">— ఇస్లామిక్ వాస్తుశిల్పం లక్షణాలు</span></div>
+
+  <div class="features-strip no-break">
+    <div class="feature-pill">
+      <div class="fp-head">① Arcuate Style (ఆర్చ్ & గుమ్మటాలు)</div>
+      <div class="fp-te">Arches and domes replaced flat beams. <strong>True arch</strong> (keystone at top) introduced.
+      ఆర్చ్‌లు, గుమ్మటాలు సమతల పళ్ళెపు రాళ్ళకు బదులుగా వచ్చాయి.</div>
+    </div>
+    <div class="feature-pill">
+      <div class="fp-head">② Arabesque (రేఖాగణిత నమూనాలు)</div>
+      <div class="fp-te">Geometric and floral patterns instead of human/animal figures. Calligraphy used extensively.
+      మానవ చిత్రాల బదులు జ్యామిత, పుష్ప నమూనాలు. ఖురాన్ వాక్యాలు చెక్కేవారు.</div>
+    </div>
+    <div class="feature-pill">
+      <div class="fp-head">③ Minaret (మినార్)</div>
+      <div class="fp-te">Tall slender towers for Azaan (prayer call). Introduced by Islamic rulers.
+      నమాజ్ కోసం పిలుపు ఇచ్చే పొడవైన సన్నటి స్తంభాలు.</div>
+    </div>
+    <div class="feature-pill">
+      <div class="fp-head">④ Mortar as Cement (సిమెంట్ మార్టర్)</div>
+      <div class="fp-te">Mortar (lime) used as cementing agent — stronger &amp; faster construction.
+      సున్నపు మార్టర్ సిమెంటుగా వాడారు — నిర్మాణం మరింత బలంగా, వేగంగా.</div>
+    </div>
+    <div class="feature-pill">
+      <div class="fp-head">⑤ Pietra Dura (పచ్చరాళ్ళ పని)</div>
+      <div class="fp-te">Inlay work with precious/semi-precious stones in marble. Perfected in Mughal era.
+      పాలరాయిలో రత్నాలు, రంగు రాళ్ళు పొదగడం — తాజ్ మహల్‌లో అద్భుతంగా కనిపిస్తుంది.</div>
+    </div>
+    <div class="feature-pill">
+      <div class="fp-head">⑥ Charbagh (చతుర్భుజ ఉద్యానం)</div>
+      <div class="fp-te">Persian garden layout — divided into 4 parts by water channels. Taj Mahal garden is best example.
+      4 భాగాలుగా విభజించిన పర్షియన్ తోట శైలి. తాజ్ మహల్ ఉద్యానం.</div>
+    </div>
+  </div>
+
+  <div class="two-box no-break">
+    <div class="tbox t-brick">
+      <div class="tb-head">Trabeate Style (Hindu)
+        <span class="te-tbh">హిందూ/ప్రాచీన శైలి</span>
+      </div>
+      <div class="tb-body">
+        <ul>
+          <li>Horizontal stone beams placed across vertical pillars
+            <span class="te">నిలువు స్తంభాలపై అడ్డ రాళ్ళు పేర్చే శైలి</span></li>
+          <li>No arch — weight transferred by stone beams (lintel)
+            <span class="te">ఆర్చ్ ఉండదు — బరువు అడ్డ రాతి ద్వారా పడుతుంది</span></li>
+          <li>Used in previous architectures — Stupas, Hindu temples
+            <span class="te">స్తూపాలు, హిందూ దేవాలయాలలో వాడేవారు</span></li>
+          <li><strong>Minars were absent</strong>
+            <span class="te">మినార్‌లు ఉండేవి కాదు</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tbox t-blue">
+      <div class="tb-head">Arcuate Style (Islamic)
+        <span class="te-tbh">ఇస్లామిక్ శైలి</span>
+      </div>
+      <div class="tb-body">
+        <ul>
+          <li>Arches and domes to span spaces — weight distributed along curve
+            <span class="te">ఆర్చ్‌లు, గుమ్మటాలు — బరువు వంపు వెంట పంచబడుతుంది</span></li>
+          <li><strong>True arch</strong> with keystone at top — stable &amp; strong
+            <span class="te">పై మధ్యలో రాయి (keystone) — మరింత స్థిరంగా</span></li>
+          <li>Brick + lime mortar used — easy to build large spaces
+            <span class="te">ఇటుక + సున్నపు మార్టర్ — పెద్ద హాళ్ళు నిర్మించడం సులభం</span></li>
+          <li><strong>Minars</strong> added around mosques
+            <span class="te">మసీదుల చుట్టూ మినార్‌లు అవసరం</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELHI SULTANATE -->
+  <div class="sub-heading">Architecture During Delhi Sultanate <span class="te-sh">— ఢిల్లీ సుల్తానేట్ వాస్తుశిల్పం</span></div>
+
+  <div class="dynasty-block slave no-break">
+    <div class="db-head">
+      <span>① Slave Dynasty (Mamluk) — బానిస వంశం <span class="te-dh">Qutb-ud-din Aibak, Iltutmish, Balban</span></span>
+      <span class="db-period">1206 – 1290 CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        <strong>Qutb Minar (Delhi)</strong> — 73 metres tall; 5 storeys; started by Qutb-ud-din Aibak (1 storey), completed by Iltutmish (3 storeys), last 2 by Firuz Shah Tughlaq. Made of <strong>red sandstone &amp; marble</strong>. UNESCO Heritage. <span class="tag-sm">TALLEST</span>
+        <span class="te-row">కుతుబ్ మినార్ — 73 మీటర్ల ఎత్తు. కుతుబ్-ఉద్-దీన్ ఐబక్ మొదలుపెట్టాడు, ఇల్తుత్మిష్ 3 అంతస్తులు కట్టాడు, ఫిరూజ్ షా తుఘ్లక్ చివరి 2 అంతస్తులు కట్టాడు. ఎర్ర ఇసుక రాయి + పాలరాయి. UNESCO వారసత్వ స్థలం. భారతదేశంలో అత్యంత ఎత్తైన మినార్!</span>
+      </div>
+      <div class="en-row">
+        <strong>Quwwat-ul-Islam Mosque (Delhi)</strong> — First mosque built in India after Islamic conquest. Literally means "Might of Islam". Built by Qutb-ud-din Aibak (1193 CE). 27 Hindu/Jain temples demolished for material.
+        <span class="te-row">కువ్వత్-ఉల్-ఇస్లాం మసీదు — ఇస్లామిక్ ఆక్రమణ తర్వాత భారతదేశంలో నిర్మించిన మొదటి మసీదు. 27 హిందూ/జైన దేవాలయాల వస్తువులు వాడారు.</span>
+      </div>
+      <div class="en-row">
+        <strong>Adhai-din-ka-Jhonpra (Ajmer)</strong> — Mosque built in 2.5 days according to legend. Actually Qutb-ud-din's mosque. Screen of 7 arches in front.
+        <span class="te-row">అఢై-దిన్-కా-ఝోంప్రా (అజ్మేర్) — 2.5 రోజుల్లో కట్టారని ఐతిహ్యం. ముందు 7 ఆర్చ్‌ల తెర.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dynasty-block khilji no-break">
+    <div class="db-head">
+      <span>② Khilji Dynasty — ఖిల్జీ వంశం <span class="te-dh">Alauddin Khilji</span></span>
+      <span class="db-period">1290 – 1320 CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        <strong>Alai Darwaza (Delhi)</strong> — Southern gateway to Qutb Minar complex. First building in India to use <strong>true arch</strong> and <strong>true dome</strong> scientifically. Red sandstone with white marble decoration.
+        <span class="te-row">అలాయ్ దర్వాజా — కుతుబ్ మినార్ సముదాయానికి దక్షిణ ద్వారం. భారతదేశంలో మొట్టమొదటిసారి <strong>నిజమైన ఆర్చ్ మరియు నిజమైన గుమ్మటం</strong> శాస్త్రీయంగా వాడిన నిర్మాణం. ఎర్ర రాయి + తెల్ల పాలరాయి.</span>
+      </div>
+      <div class="en-row">
+        <strong>Alai Minar (Incomplete)</strong> — Alauddin wanted to build a minar twice the height of Qutb Minar. Died before completion — only base built.
+        <span class="te-row">అలాయ్ మినార్ — కుతుబ్ మినార్ కంటే రెట్టింపు ఎత్తు నిర్మించాలని అలాఉద్దీన్ కోరుకున్నాడు. మరణించడంతో అసంపూర్ణంగా మిగిలిపోయింది — ఆధారం మాత్రమే నిర్మించబడింది.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dynasty-block tughlaq no-break">
+    <div class="db-head">
+      <span>③ Tughlaq Dynasty — తుఘ్లక్ వంశం <span class="te-dh">Ghiyasuddin, Muhammad bin Tughlaq, Firuz Shah</span></span>
+      <span class="db-period">1320 – 1414 CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        <strong>Tughlaqabad Fort</strong> — Built by Ghiyasuddin Tughlaq. Combination of <strong>Arcuate + Trabeate</strong>. Sloping walls (battered walls) — unique Tughlaq feature. Used grey quartzite stone (not red sandstone).
+        <span class="te-row">తుఘ్లకాబాద్ కోట — ఘియాసుద్దీన్ తుఘ్లక్ నిర్మించాడు. వాలుగా ఉన్న గోడలు (బాటర్డ్ వాల్స్) — తుఘ్లక్ వంశపు ప్రత్యేక లక్షణం. బూడిద క్వార్ట్‌జైట్ రాయి వాడారు.</span>
+      </div>
+      <div class="en-row">
+        <strong>Firuz Shah's works</strong> — Built many mosques, forts, tombs. Repaired Qutb Minar (added 2 storeys). Also built <strong>Hauz Khas (Delhi)</strong> — a large reservoir with madrasas around it.
+        <span class="te-row">ఫిరూజ్ షా తుఘ్లక్ — కుతుబ్ మినార్‌కు 2 అంతస్తులు చేర్చాడు. హౌజ్ ఖాస్ — పెద్ద నీటి తొట్టి చుట్టూ మదర్సాలు నిర్మించాడు.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.2 · Medieval Architecture — Islamic Features · Slave · Khilji · Tughlaq</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 11</span>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████
+     PAGE 12 — MUGHAL ARCHITECTURE (BABUR to AURANGZEB)
+█████████████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1.2 · MUGHAL ARCHITECTURE · 1526 – 1707 CE</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">1.2-B</div>
+    <h2>Mughal Architecture <span class="te">— మొఘల్ వాస్తుశిల్పం</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — మొఘల్ వాస్తుశిల్పం ఎందుకు ప్రత్యేకమైనది?</span>
+    మొఘల్ వాస్తుశిల్పం అనేది <span class="kw">హిందూ + పర్షియన్ + ఇస్లామిక్ + మధ్య ఆసియా శైలుల అద్భుత మిశ్రమం</span>. బాబర్ తో మొదలై ఔరంగజేబుతో అంతమైన ఈ కాలంలో వాస్తుశిల్పం అత్యంత అభివృద్ధి చెందింది. <span class="kw2">అక్బర్ కాలంలో</span> — ఎర్ర ఇసుక రాయి ఉపయోగించారు, భారతీయ అంశాలు కలిపారు. <span class="kw3">షాజహాన్ కాలంలో</span> — తెల్ల పాలరాయి ఉపయోగించారు, పీట్రా డురా పని విస్తరించింది. ప్రపంచంలోనే అత్యంత అందమైన నిర్మాణంగా పరిగణించే <span class="kw">తాజ్ మహల్</span> ఈ కాలంలోనే నిర్మించబడింది!
+  </div>
+
+  <div class="dynasty-block mughal no-break">
+    <div class="db-head">
+      <span>Babur (బాబర్) — మొఘల్ వంశ స్థాపకుడు</span>
+      <span class="db-period">1526 – 1530 CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        Built mosques at <strong>Panipat and Rohilkhand</strong>. His rule was too brief to inspire any new architectural style. Architecture was characterised by <strong>persistent Afghan style</strong>. Used both Indo-Afghan and Persian styles. Indo-Saracenic architecture style shifted from the Lodi to Mughal period.
+        <span class="te-row">పానిపట్ మరియు రోహిల్‌ఖండ్‌లో మసీదులు నిర్మించాడు. అఫ్ఘాన్ శైలి కొనసాగింది. లోధి నుండి మొఘల్ కాలానికి నిర్మాణ శైలి మారింది.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dynasty-block suri no-break">
+    <div class="db-head">
+      <span>Sher Shah Suri (షేర్ షా సూరి) — మొఘల్ మధ్య విరామం</span>
+      <span class="db-period">1540 – 1545 CE</span>
+    </div>
+    <div class="db-body">
+      <div class="en-row">
+        <strong>Purana Qila (Old Fort), Delhi</strong> — Sher Shah built this fort. Qila-i-Kuhna Mosque inside. <strong>Rohtas Fort (Punjab)</strong> — another major fort. Built the <strong>Grand Trunk Road (Sadak-e-Azam)</strong>. Tomb at Sasaram, Bihar — set in middle of a lake — finest example of Afghan architecture in India.
+        <span class="te-row">పురానా కిలా (పాత కోట), ఢిల్లీ — షేర్ షా నిర్మించాడు. రోహ్తాస్ కోట (పంజాబ్). <strong>గ్రాండ్ ట్రంక్ రోడ్ (సదక్-ఎ-ఆజమ్)</strong> నిర్మించాడు. సాసారం, బిహార్‌లో సమాధి — మధ్య సరస్సులో నిర్మించబడింది — భారతదేశంలో అఫ్ఘాన్ వాస్తుశిల్పానికి ఉత్తమ ఉదాహరణ!</span>
+      </div>
+    </div>
+  </div>
+
+  <table class="styled-table no-break">
+    <caption>Mughal Rulers and Their Key Architectural Contributions — మొఘల్ పాలకుల ముఖ్య నిర్మాణాలు</caption>
+    <thead>
+      <tr>
+        <th style="width:16%">Ruler <span class="te-th">పాలకుడు</span></th>
+        <th style="width:16%">Period <span class="te-th">కాలం</span></th>
+        <th>Key Buildings &amp; Features <span class="te-th">ముఖ్య నిర్మాణాలు &amp; లక్షణాలు</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Akbar (అక్బర్)</strong> <span class="tag-sm">GOLDEN AGE</span>
+          <span class="te-td">అక్బర్</span></td>
+        <td>1556–1605
+          <span class="te-td"></span></td>
+        <td><strong>Agra Fort</strong> (red sandstone); <strong>Fatehpur Sikri</strong> — new capital (frozen moment in history); <strong>Buland Darwaza</strong> (54m — world's tallest gateway); <strong>Humayun's Tomb</strong> (Delhi — first garden tomb, precursor to Taj Mahal); <strong>Panch Mahal</strong>; used red sandstone; Hindu-Islamic fusion
+          <span class="te-td">ఆగ్రా కోట (ఎర్ర రాయి); ఫతేపూర్ సిక్రీ — కొత్త రాజధాని; బులంద్ దర్వాజా — ప్రపంచంలో అత్యంత ఎత్తైన ద్వారం (54 మీ); హుమాయున్ సమాధి — మొదటి తోట సమాధి, తాజ్ మహల్‌కు ఆద్యమాదర్శం</span></td>
+      </tr>
+      <tr>
+        <td><strong>Jahangir (జహంగీర్)</strong>
+          <span class="te-td">జహంగీర్</span></td>
+        <td>1605–1627
+          <span class="te-td"></span></td>
+        <td>Architecture took <strong>backseat</strong>; focused more on paintings &amp; gardens. <strong>Tomb of Itimad-ud-Daulah</strong> (Agra) — first building entirely in white marble; built by wife Nur Jahan; first to use Pietra Dura fully. <strong>Shalimar Bagh</strong> (Lahore).
+          <span class="te-td">జహంగీర్ చిత్రలేఖనానికి ఎక్కువ శ్రద్ధ ఇచ్చాడు. ఇతిమాద్-ఉద్-దౌలా సమాధి — పూర్తిగా తెల్ల పాలరాయిలో నిర్మించిన మొదటి నిర్మాణం; అతని భార్య నూర్ జహాన్ నిర్మించింది.</span></td>
+      </tr>
+      <tr>
+        <td><strong>Shah Jahan (షాజహాన్)</strong> <span class="tag-sm">PEAK</span>
+          <span class="te-td">షాజహాన్</span></td>
+        <td>1628–1658
+          <span class="te-td"></span></td>
+        <td><strong>Taj Mahal</strong> (Agra — in memory of Mumtaz Mahal; UNESCO; white marble; Pietra Dura; Charbagh garden; 22 years to build); <strong>Red Fort</strong> (Delhi); <strong>Jama Masjid</strong> (Delhi — largest mosque in India); <strong>Diwan-i-Am, Diwan-i-Khas; Moti Masjid</strong>; white marble replaced red sandstone
+          <span class="te-td">తాజ్ మహల్ — ముంతాజ్ మహల్ స్మృతిలో; UNESCO; తెల్ల పాలరాయి; పీట్రా డురా; 22 సంవత్సరాలు నిర్మాణం; ఎర్ర కోట (ఢిల్లీ); జమా మసీదు — భారతదేశంలో అతి పెద్ద మసీదు</span></td>
+      </tr>
+      <tr>
+        <td><strong>Aurangzeb (ఔరంగజేబు)</strong>
+          <span class="te-td">ఔరంగజేబు</span></td>
+        <td>1658–1707
+          <span class="te-td"></span></td>
+        <td>Architecture deteriorated under his reign. <strong>Bibi-ka-Maqbara</strong> (Aurangabad) — called "Poor copy of Taj Mahal"; built in honour of wife. <strong>Moti Masjid</strong> (Delhi — inside Red Fort). Architecture became more <strong>puritanical</strong>.
+          <span class="te-td">బీబీ-కా-మఖ్‌బరా — "పేద తాజ్ మహల్ నకల్" అని పిలుస్తారు; భార్య గౌరవార్థం నిర్మించారు. నిర్మాణం మరింత సరళంగా మారింది.</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="deep-note no-break">
+    <span class="dn-label">⭐ Taj Mahal — అత్యంత పరీక్ష ముఖ్యమైన అంశాలు</span>
+    Built by <strong>Shah Jahan in memory of Mumtaz Mahal (wife)</strong> · Located in <strong>Agra, UP</strong> · Made of <strong>White Makrana Marble</strong> · Construction: 1632–1653 (<strong>22 years</strong>) · Chief architect: <strong>Ustad Ahmad Lahauri</strong> · Features: <strong>Pietra Dura</strong> (stone inlay), <strong>Charbagh</strong> (4-part garden), 4 minarets, central dome (double dome), <strong>Yumuna River</strong> behind it · UNESCO World Heritage Site
+    <div class="dn-te">
+      తాజ్ మహల్ — <span class="kw">షాజహాన్ తన భార్య ముంతాజ్ మహల్ స్మృతిలో నిర్మించాడు</span>. ఆగ్రా, ఉత్తరప్రదేశ్. <span class="kw2">తెల్ల మక్రానా పాలరాయి</span>తో నిర్మించారు. 1632 నుండి 1653 వరకు <span class="kw">22 సంవత్సరాలు</span> నిర్మాణం జరిగింది. ప్రధాన వాస్తుశిల్పి: <span class="kw2">ఉస్తాద్ అహ్మద్ లాహౌరి</span>. విశేషాలు: పీట్రా డురా (రత్నాల జడ్పులు), చర్బాఘ్ తోట, 4 మినార్‌లు, రెండు పొరల గుమ్మటం, వెనక యమునా నది. UNESCO వారసత్వ స్థలం.
+    </div>
+  </div>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Exam Focus — Medieval Architecture తప్పక గుర్తుపెట్టుకోండి</div>
+    <ul>
+      <li><strong>First mosque in India</strong> = Quwwat-ul-Islam, Delhi (Qutb-ud-din Aibak)</li>
+      <li><strong>Qutb Minar</strong> = Started Aibak → Completed Iltutmish → 2 storeys by Firuz Shah Tughlaq</li>
+      <li><strong>Alai Darwaza</strong> = First <strong>true arch + true dome</strong> in India (Alauddin Khilji)</li>
+      <li><strong>Buland Darwaza</strong> = World's tallest gateway (54m) — Akbar, Fatehpur Sikri</li>
+      <li><strong>First garden tomb</strong> = Humayun's Tomb, Delhi (Akbar)</li>
+      <li><strong>First all-white marble</strong> building = Itimad-ud-Daulah (Jahangir's wife Nur Jahan)</li>
+      <li><strong>Taj Mahal</strong> = Shah Jahan + Mumtaz + White Makrana marble + 22 years + Ustad Ahmad Lahauri</li>
+      <li><strong>Bibi-ka-Maqbara</strong> = "Poor Taj Mahal" = Aurangzeb</li>
+      <li><strong>Grand Trunk Road</strong> = Sher Shah Suri (Sadak-e-Azam)</li>
+    </ul>
+    <div class="ea-te">
+      📌 <strong>ట్రిక్ ప్రశ్నలు:</strong> కుతుబ్ మినార్ ఎవరు నిర్మించారు? — అందరూ "కుతుబ్ ఉద్ దీన్" అంటారు కానీ అతను 1 అంతస్తు మాత్రమే కట్టాడు — మిగతాది ఇల్తుత్మిష్! | తెల్ల పాలరాయిలో మొదటి నిర్మాణం తాజ్ మహల్ కాదు — ఇతిమాద్-ఉద్-దౌలా! | గ్రాండ్ ట్రంక్ రోడ్ మొఘలులు కాదు — షేర్ షా సూరి!
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.2-B · Mughal Architecture — Babur to Aurangzeb</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 12</span>
+  </div>
+</div>
+
+</body>
+</html>

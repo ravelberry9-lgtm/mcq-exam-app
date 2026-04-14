@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 2 — Indian Painting Part 1 | Art & Culture</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 18mm 16mm 16mm 16mm; }
+@media print { .page-break{page-break-before:always;} .no-break{page-break-inside:avoid;} body{background:#fff!important;} }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root {
+  --a4: 794px;
+  --brick: #9b3a1a; --brick-lt: #c4623a; --mud: #6b4226; --sand: #e8d5b0;
+  --green: #1e5c38; --blue: #1a3e7a; --purple: #5a2a7a; --gold: #5a3400;
+  --text: #1a1206; --subtext: #2c1800; --border: #d4b896;
+  --tel-bg: #eef4ff; --tel-bdr: #1a3e7a;
+  --mem-bg: #edf7f0; --mem-bdr: #1e5c38;
+  --exam-bg: #fffbec; --exam-bdr: #5a3400;
+}
+body { font-family:'Libre Baskerville',Georgia,serif; background:#ddd5c8; color:var(--text); font-size:10.5pt; line-height:1.65; }
+.a4-page { width:var(--a4); min-height:1123px; background:#ffffff; margin:18px auto; padding:14mm 16mm 13mm 16mm; box-shadow:0 2px 18px rgba(0,0,0,0.18); }
+
+/* HEADER/FOOTER */
+.screen-header { display:flex; justify-content:space-between; align-items:center; border-bottom:1.5px solid var(--border); padding-bottom:5px; margin-bottom:10px; }
+.screen-header .sh-left { font-family:'Source Sans 3',sans-serif; font-size:7.5pt; color:#1a1206; font-weight:700; letter-spacing:0.04em; }
+.screen-header .sh-right { font-family:'Fira Mono',monospace; font-size:7.5pt; color:#1a1206; font-weight:600; }
+.screen-footer { border-top:1px solid var(--border); padding-top:5px; margin-top:10px; display:flex; justify-content:space-between; font-family:'Fira Mono',monospace; font-size:7.5pt; color:#1a1206; font-weight:600; }
+
+/* CHAPTER COVER */
+.chapter-cover { border:2.5px solid var(--brick); border-radius:4px; padding:20px 22px; margin-bottom:16px; background:#fffdf9; position:relative; }
+.chapter-cover::before { content:''; position:absolute; top:6px; left:6px; right:6px; bottom:6px; border:1px solid var(--sand); border-radius:2px; pointer-events:none; }
+.ch-tag { font-family:'Fira Mono',monospace; font-size:7pt; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--brick); background:#fce8dc; border:1px solid #e8b898; display:inline-block; padding:2px 8px; border-radius:2px; margin-bottom:9px; }
+.ch-title-en { font-family:'Libre Baskerville',serif; font-size:20pt; font-weight:700; color:var(--brick); line-height:1.2; margin-bottom:6px; }
+.ch-title-te { font-family:'Tiro Telugu',serif; font-size:14pt; color:var(--mud); margin-bottom:10px; }
+.ch-meta { display:flex; gap:18px; flex-wrap:wrap; margin-top:10px; padding-top:10px; border-top:1px dashed var(--border); }
+.ch-meta span { font-family:'Source Sans 3',sans-serif; font-size:9pt; color:var(--subtext); font-weight:600; }
+.ch-meta strong { color:var(--brick); }
+
+/* SECTION HEADING */
+.sec-heading { display:flex; align-items:baseline; gap:8px; margin:16px 0 7px; border-bottom:2px solid var(--brick); padding-bottom:4px; }
+.sec-heading .sec-num { font-family:'Fira Mono',monospace; font-size:8pt; font-weight:600; color:#fff; background:var(--brick); padding:1px 7px; border-radius:2px; flex-shrink:0; }
+.sec-heading h2 { font-family:'Libre Baskerville',serif; font-size:12.5pt; font-weight:700; color:var(--brick); }
+.sec-heading .te { font-family:'Tiro Telugu',serif; font-size:10pt; color:var(--subtext); }
+.sub-heading { font-family:'Source Sans 3',sans-serif; font-size:9.5pt; font-weight:700; color:#fff; background:var(--mud); text-transform:uppercase; letter-spacing:0.07em; margin:12px 0 6px; padding:4px 10px; border-radius:3px; display:flex; align-items:center; gap:6px; }
+.sub-heading .te-sh { font-family:'Tiro Telugu',serif; font-size:9pt; font-weight:400; text-transform:none; letter-spacing:0; color:#f8e8d8; }
+
+/* BILINGUAL */
+.bilingual { border:1px solid var(--border); border-radius:4px; overflow:hidden; margin:6px 0 10px; }
+.bi-en { padding:8px 11px; background:#fffdf9; font-size:10pt; border-bottom:1px solid var(--border); line-height:1.6; }
+.bi-en .lang-tag { font-family:'Fira Mono',monospace; font-size:7.5pt; color:#1a1206; text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:3px; font-weight:700; }
+.bi-te { padding:8px 11px; background:var(--tel-bg); border-left:3px solid var(--tel-bdr); font-family:'Tiro Telugu',serif; font-size:11pt; color:#0a1428; line-height:1.95; }
+.bi-te .lang-tag { font-family:'Fira Mono',monospace; font-size:7.5pt; color:#0a2060; text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:3px; font-weight:700; }
+.bi-te .kw { color:var(--brick); font-weight:700; }
+.bi-te .kw2 { color:var(--blue); font-weight:700; }
+.bi-te .kw3 { color:var(--green); font-weight:700; }
+.bi-te .kw4 { color:var(--purple); font-weight:700; }
+
+/* TELUGU STORY */
+.telugu-story { background:var(--tel-bg); border:1px solid #b8ccee; border-left:3px solid var(--tel-bdr); border-radius:4px; padding:9px 12px; font-family:'Tiro Telugu',serif; font-size:11pt; color:#0a1428; line-height:2; margin:6px 0 10px; }
+.telugu-story .ts-label { font-family:'Fira Mono',monospace; font-size:7.5pt; color:#0a2060; text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:4px; font-weight:700; }
+.telugu-story .kw { color:var(--brick); font-weight:700; }
+.telugu-story .kw2 { color:var(--blue); font-weight:700; }
+.telugu-story .kw3 { color:var(--green); font-weight:700; }
+.telugu-story .kw4 { color:var(--purple); font-weight:700; }
+
+/* TABLES */
+.styled-table { width:100%; border-collapse:collapse; font-size:9.5pt; margin:6px 0 10px; }
+.styled-table caption { font-family:'Source Sans 3',sans-serif; font-size:9.5pt; font-weight:700; color:#fff; background:var(--brick); text-transform:uppercase; letter-spacing:0.06em; text-align:left; padding:5px 9px; border-radius:4px 4px 0 0; }
+.styled-table thead tr { background:var(--mud); }
+.styled-table thead th { color:#fff; padding:6px 8px; font-family:'Source Sans 3',sans-serif; font-size:8.5pt; font-weight:700; text-align:left; border:1px solid #8a5228; }
+.styled-table thead th .te-th { font-family:'Tiro Telugu',serif; font-weight:400; font-size:8.5pt; display:block; color:#f8e8d8; margin-top:1px; }
+.styled-table tbody tr:nth-child(odd) { background:#fffdf9; }
+.styled-table tbody tr:nth-child(even) { background:#faf3eb; }
+.styled-table td { padding:6px 8px; border:1px solid #ddd0be; vertical-align:top; line-height:1.5; }
+.styled-table td .te-td { font-family:'Tiro Telugu',serif; font-size:10pt; color:#0a1428; display:block; margin-top:3px; line-height:1.85; }
+.styled-table td strong { color:var(--brick); }
+.tag-sm { font-family:'Fira Mono',monospace; font-size:7.5pt; background:#fce8dc; color:#6a1000; border:1px solid #c89070; padding:1px 5px; border-radius:2px; display:inline-block; font-weight:600; }
+
+/* KEY POINTS */
+.keypoints { list-style:none; margin:5px 0 10px; padding:0; }
+.keypoints li { display:flex; gap:8px; padding:5px 0; border-bottom:1px dashed var(--border); font-size:10pt; line-height:1.5; }
+.keypoints li:last-child { border-bottom:none; }
+.keypoints li .kp-num { flex-shrink:0; width:20px; height:20px; background:var(--brick); color:#fff; border-radius:50%; font-family:'Fira Mono',monospace; font-size:7pt; display:flex; align-items:center; justify-content:center; margin-top:2px; font-weight:600; }
+.keypoints li .kp-body .te-kp { font-family:'Tiro Telugu',serif; font-size:10.5pt; color:#0a1428; display:block; margin-top:3px; line-height:1.9; }
+
+/* MEMORY BOX */
+.memory-box { background:var(--mem-bg); border:1px solid #8acca0; border-left:4px solid var(--mem-bdr); border-radius:4px; padding:8px 11px; margin:6px 0 10px; }
+.memory-box .mem-label { font-family:'Fira Mono',monospace; font-size:7.5pt; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#0a3a20; margin-bottom:4px; }
+.memory-box .mnemonic { font-family:'Libre Baskerville',serif; font-size:10.5pt; font-weight:700; color:var(--mud); margin-bottom:3px; }
+.memory-box .mnem-exp { font-family:'Source Sans 3',sans-serif; font-size:9pt; color:#0a2018; margin-bottom:5px; }
+.memory-box .mem-te { font-family:'Tiro Telugu',serif; font-size:10.5pt; color:#0a1a10; line-height:1.9; border-top:1px dashed #8acca0; padding-top:5px; margin-top:3px; }
+.memory-box .mem-te .kw { color:var(--mem-bdr); font-weight:700; }
+
+/* EXAM ALERT */
+.exam-alert { background:var(--exam-bg); border:1px solid #c8a830; border-left:4px solid var(--exam-bdr); border-radius:4px; padding:8px 11px; margin:6px 0 10px; }
+.exam-alert .ea-label { font-family:'Fira Mono',monospace; font-size:7.5pt; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#4a2800; margin-bottom:4px; }
+.exam-alert ul { padding-left:14px; margin:0; }
+.exam-alert li { font-size:9.5pt; margin:3px 0; line-height:1.55; }
+.exam-alert li strong { color:var(--brick); }
+.exam-alert .ea-te { font-family:'Tiro Telugu',serif; font-size:10pt; color:#2c1800; margin-top:6px; padding-top:5px; border-top:1px dashed #c8a830; line-height:1.9; }
+
+/* HIGHLIGHT BOX */
+.highlight-box { background:#fef6ed; border:1px solid var(--sand); border-left:4px solid var(--brick-lt); border-radius:4px; padding:7px 11px; margin:5px 0 10px; font-size:10pt; }
+.highlight-box .hb-te { font-family:'Tiro Telugu',serif; font-size:10.5pt; line-height:1.95; color:#1a1206; margin-top:4px; }
+.highlight-box .kw { color:var(--brick); font-weight:700; }
+.highlight-box .kw2 { color:var(--blue); font-weight:700; }
+.highlight-box .kw3 { color:var(--green); font-weight:700; }
+
+/* DEEP NOTE */
+.deep-note { border:1.5px solid var(--brick-lt); border-radius:4px; padding:7px 11px; background:#fff7f3; font-size:9.5pt; margin:5px 0 10px; }
+.deep-note .dn-label { font-family:'Fira Mono',monospace; font-size:7.5pt; letter-spacing:0.1em; text-transform:uppercase; color:#6a1000; font-weight:700; margin-bottom:3px; display:block; }
+.deep-note .dn-te { font-family:'Tiro Telugu',serif; font-size:10.5pt; color:#1a1206; line-height:1.9; margin-top:4px; }
+.deep-note .kw { color:var(--brick); font-weight:700; }
+.deep-note .kw2 { color:var(--blue); font-weight:700; }
+.deep-note .kw3 { color:var(--green); font-weight:700; }
+
+/* THREE-PHASE BOXES */
+.three-col { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin:6px 0 10px; }
+.three-col.two { grid-template-columns:1fr 1fr; }
+.col-card { border-radius:4px; border:1px solid var(--border); overflow:hidden; }
+.col-card .col-head { padding:5px 9px; font-family:'Source Sans 3',sans-serif; font-size:8.5pt; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.05em; }
+.col-card.c-green .col-head { background:#2e6b2e; }
+.col-card.c-brown .col-head { background:#6b3a10; }
+.col-card.c-teal  .col-head { background:#1a5a5a; }
+.col-card.c-brick .col-head { background:var(--brick); }
+.col-card.c-blue  .col-head { background:var(--blue); }
+.col-card.c-mud   .col-head { background:var(--mud); }
+.col-card.c-green2 .col-head { background:var(--green); }
+.col-card .col-head .te-ch { font-family:'Tiro Telugu',serif; font-size:8.5pt; font-weight:400; text-transform:none; letter-spacing:0; display:block; color:#f8e8d8; margin-top:1px; }
+.col-card .col-body { padding:7px 9px; background:#fffdf9; font-size:9pt; line-height:1.5; }
+.col-card .col-body .te { font-family:'Tiro Telugu',serif; font-size:9.5pt; color:#0a1428; display:block; margin-top:3px; line-height:1.8; }
+.col-card .col-body strong { color:var(--brick); }
+
+/* TWO BOX */
+.two-box { display:flex; gap:10px; margin:6px 0 10px; }
+.tbox { flex:1; border-radius:4px; border:1px solid var(--border); overflow:hidden; }
+.tbox .tb-head { padding:5px 10px; font-family:'Source Sans 3',sans-serif; font-size:9pt; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.05em; }
+.tbox.t-brick .tb-head { background:var(--brick); }
+.tbox.t-blue  .tb-head { background:var(--blue); }
+.tbox.t-green .tb-head { background:var(--green); }
+.tbox.t-purple .tb-head { background:var(--purple); }
+.tbox.t-mud .tb-head { background:var(--mud); }
+.tbox .tb-head .te-tbh { font-family:'Tiro Telugu',serif; font-size:8.5pt; font-weight:400; text-transform:none; letter-spacing:0; display:block; color:#f8e8d8; }
+.tbox .tb-body { padding:7px 10px; background:#fffdf9; }
+.tbox .tb-body ul { padding-left:13px; margin:0; }
+.tbox .tb-body li { font-size:9pt; margin:3px 0; line-height:1.5; }
+.tbox .tb-body li .te { font-family:'Tiro Telugu',serif; font-size:9.5pt; color:#0a1428; display:block; line-height:1.8; }
+
+/* MINI FEATURES GRID */
+.mini-features { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin:6px 0 10px; }
+.mf-item { background:#f8f0fc; border:1px solid #c090d8; border-left:3px solid var(--purple); border-radius:4px; padding:6px 9px; }
+.mf-item .mf-en { font-size:9pt; color:#1a1206; line-height:1.45; font-weight:600; }
+.mf-item .mf-te { font-family:'Tiro Telugu',serif; font-size:9.5pt; color:#2a0a3a; display:block; margin-top:3px; line-height:1.8; }
+
+/* MUGHAL RULER BLOCK */
+.ruler-block { border-radius:4px; border:1px solid var(--border); overflow:hidden; margin:6px 0 10px; }
+.ruler-block .rb-head { padding:6px 11px; font-family:'Source Sans 3',sans-serif; font-size:9pt; font-weight:700; color:#fff; display:flex; justify-content:space-between; align-items:center; }
+.ruler-block.akbar    .rb-head { background:#8a2020; }
+.ruler-block.jahangir .rb-head { background:#1a3e7a; }
+.ruler-block.shah     .rb-head { background:#1e5c38; }
+.ruler-block.humayun  .rb-head { background:#5a2a7a; }
+.ruler-block .rb-head .te-rh { font-family:'Tiro Telugu',serif; font-size:8.5pt; font-weight:400; color:#f8e8d8; }
+.ruler-block .rb-head .rb-period { font-family:'Fira Mono',monospace; font-size:7.5pt; color:#f8e8d8; font-weight:600; }
+.ruler-block .rb-body { padding:8px 11px; background:#fffdf9; }
+.ruler-block .rb-body .en-row { font-size:9.5pt; margin:3px 0; line-height:1.5; padding-bottom:5px; border-bottom:1px dashed var(--border); }
+.ruler-block .rb-body .en-row:last-child { border-bottom:none; padding-bottom:0; }
+.ruler-block .rb-body .en-row strong { color:var(--brick); }
+.ruler-block .rb-body .te-row { font-family:'Tiro Telugu',serif; font-size:10pt; color:#0a1428; line-height:1.9; margin-top:2px; display:block; }
+
+hr.div { border:none; border-top:1.5px dashed var(--border); margin:12px 0; }
+</style>
+</head>
+<body>
+
+<!-- ████ PAGE 1 — CHAPTER COVER + INTRO + 2.1 PRE-HISTORIC OVERVIEW ████ -->
+<div class="a4-page">
+  <div class="screen-header">
+    <span class="sh-left">CH 2 · INDIAN PAINTING · PART 1 OF 2</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <!-- CHAPTER COVER -->
+  <div class="chapter-cover no-break">
+    <div class="ch-tag">Chapter 2 · Art &amp; Culture · AP High Court Section Officer 2026</div>
+    <div class="ch-title-en">Indian Painting</div>
+    <div class="ch-title-te">భారతీయ చిత్రలేఖనం</div>
+    <div class="ch-meta">
+      <span><strong>Sub-topics:</strong> 2.1 Pre-Historic · 2.2 Mural &amp; Miniature · 2.3 Regional · 2.4 Modern · 2.5 Folk</span>
+      <span><strong>UPSC Weightage:</strong> High (3–5 Qs/year)</span>
+      <span><strong>Pages:</strong> 41–56</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Introduction</span>
+      Like any other art form, Indian paintings have a rich diversity and history. The earliest prehistoric paintings, which date back to <strong>30,000 years</strong>, were discovered at sites such as <strong>Bhimbetka rock shelters</strong>. Indian painting can be classified into <strong>miniatures, murals, and folk paintings</strong>. Painting is one of the most delicate art forms, using colour and line to portray the ideas and emotions of people.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు — పరిచయం</span>
+      భారతీయ చిత్రలేఖనం అనేది <span class="kw">30,000 సంవత్సరాల</span> పురాతన చరిత్ర కలిగిన కళ! <span class="kw">భీంబెట్కా రాక్ షెల్టర్లలో</span> ప్రపంచంలోనే అత్యంత పురాతనమైన రాతి చిత్రాలు కనుగొనబడ్డాయి. భారతీయ చిత్రలేఖనాన్ని మూడు ముఖ్య విభాగాలుగా విభజించవచ్చు: <span class="kw2">లఘు చిత్రాలు (Miniatures)</span>, <span class="kw3">గోడ చిత్రాలు (Murals)</span>, మరియు <span class="kw4">జానపద చిత్రాలు (Folk Paintings)</span>. రంగులు మరియు రేఖలను ఉపయోగించి భావాలు, భావోద్వేగాలు వ్యక్తపరచడమే చిత్రకళ ముఖ్య ప్రయోజనం.
+    </div>
+  </div>
+
+  <!-- 2.1 SECTION HEADING -->
+  <div class="sec-heading">
+    <div class="sec-num">2.1</div>
+    <h2>Pre-Historic Paintings <span class="te">— ప్రాగైతిహాసిక చిత్రాలు</span></h2>
+  </div>
+
+  <div class="highlight-box no-break">
+    <strong>First Discovery:</strong> In India around <strong>1867–68</strong>, by archaeologist <strong>Archibold Carlleyle</strong> — twelve years before the discovery of Altamira in Spain. Cockburn, Anderson, Mitra and Ghosh were early archaeologists who discovered sites in the Indian sub-continent.
+    <div class="hb-te">
+      భారతదేశంలో మొదటిగా రాతి చిత్రాలు <span class="kw">1867–68లో</span> పురావస్తు శాస్త్రవేత్త <span class="kw">ఆర్కిబోల్డ్ కార్ల్లీల్</span> కనుగొన్నాడు — స్పెయిన్‌లోని అల్టమిరా కనుగొనడానికి 12 సంవత్సరాల ముందే! తర్వాత కాక్‌బర్న్, ఆండర్సన్, మిత్రా, ఘోష్ వంటి పురావస్తు శాస్త్రవేత్తలు <span class="kw2">మధ్యప్రదేశ్, ఉత్తరప్రదేశ్, ఆంధ్రప్రదేశ్, కర్ణాటక మరియు బీహార్‌లలో</span> అనేక స్థలాలు కనుగొన్నారు.
+    </div>
+  </div>
+
+  <!-- THREE PHASES -->
+  <div class="sub-heading">Three Phases of Pre-Historic Paintings <span class="te-sh">— మూడు దశలు</span></div>
+
+  <div class="three-col no-break">
+    <div class="col-card c-green">
+      <div class="col-head">① Upper Paleolithic<span class="te-ch">ఎగువ శిలాయుగం (40,000–10,000 BCE)</span></div>
+      <div class="col-body">
+        Linear representations in <strong>green and dark red</strong>. Huge animal figures: <strong>bisons, elephants, tigers, rhinos, boars</strong> + stick-like humans.
+        <span class="te">ఆకుపచ్చ మరియు ముదురు ఎరుపు రంగులలో సరళమైన చిత్రాలు. పెద్ద జంతువుల రూపాలు — దున్నపోతులు, ఏనుగులు, పులులు. మనుషులు కర్రల వంటి సరళ రూపంలో చిత్రించబడ్డారు. వేటాడడం, నాట్యం దృశ్యాలు ఉంటాయి. రాజసాపురి కర్నామ్ ప్రాంతంలో ఎక్కువగా కనిపిస్తాయి.</span>
+      </div>
+    </div>
+    <div class="col-card c-brown">
+      <div class="col-head">② Mesolithic<span class="te-ch">మధ్య శిలాయుగం (10,000–8,000 BCE)</span></div>
+      <div class="col-body">
+        <strong>Largest pre-historic paintings</strong> of India. Size smaller but themes multiply. Scenes: hunting, community life, dancing, animal-taming.
+        <span class="te">భారతదేశంలో అత్యంత పెద్ద ప్రాగైతిహాసిక చిత్రాలు ఈ కాలానికి చెందినవి. చిత్రం పరిమాణం చిన్నది కానీ విషయాలు పెరిగాయి. వేట, సమాజ జీవనం, నాట్యం, పశు నిర్వహణ దృశ్యాలు ఎక్కువ. <strong>లాంగ్నజ్ (గుజరాత్), భీంబెట్కా, అడమగర్హ్ (MP), సంగనకల్లు (కర్ణాటక)</strong> ముఖ్య స్థలాలు.</span>
+      </div>
+    </div>
+    <div class="col-card c-teal">
+      <div class="col-head">③ Chalcolithic<span class="te-ch">తామ్రయుగం (8,000–4,000 BCE)</span></div>
+      <div class="col-body">
+        Reveals interaction between <strong>cave-dwellers and settled agricultural communities</strong> of Malwa plains. Common motifs: cross-hatched squares, lattices, pottery, metal tools.
+        <span class="te">గుహావాసులు మరియు మాల్వా మైదానాల స్థిర వ్యవసాయ సమాజాల మధ్య సంపర్కాన్ని చూపిస్తుంది. క్రాస్-హాచ్ చతురస్రాలు, జాలీ నమూనాలు, కుండలు, లోహ పనిముట్లు సాధారణ చిత్రాలు. <strong>ముందు కాలాల ప్రకాశం మరియు చైతన్యం ఈ చిత్రాలలో తగ్గిపోయింది.</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2 · Indian Painting — Pre-Historic Overview</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 1</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 2 — BHIMBETKA + CHALCOLITHIC DETAIL ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2 · BHIMBETKA ROCK PAINTINGS · CHALCOLITHIC · PRE-HISTORIC</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <!-- BHIMBETKA -->
+  <div class="sec-heading">
+    <div class="sec-num">2.1-A</div>
+    <h2>Bhimbetka Rock Paintings <span class="te">— భీంబెట్కా రాతి చిత్రాలు</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — భీంబెట్కా గురించి అర్థం చేసుకోండి</span>
+    భీంబెట్కా — ఈ పేరు వింటే మనకు ముందు తోచేది "ఇది ఒక రాతి ఆశ్రయం" అని. కానీ ఇది అంతకంటే చాలా ఎక్కువ. భీంబెట్కా అంటే భారతదేశపు <span class="kw">జీవాత్మ చిత్రకళ పుట్టినిల్లు</span>! ఇక్కడ <span class="kw">243 రాతి ఆశ్రయాలు</span> ఉన్నాయి — అన్నీ 30,000 సంవత్సరాల పురాతన చిత్రాలతో నిండి ఉన్నాయి. ఈ చిత్రాల్లో రోజువారీ జీవితం — వేట, నాట్యం, యుద్ధం, పశుపాలన, సామాజిక సమావేశాలు — అన్నీ కనిపిస్తాయి. <span class="kw2">ఆస్ట్రేలియాలోని కకదు జాతీయ ఉద్యానవనంలో</span>, <span class="kw3">ఫ్రాన్స్‌లోని లాస్కాక్స్ గుహ చిత్రాలతో</span> పోలిక ఉందని పురావస్తు శాస్త్రవేత్తలు చెప్తారు — ఇది ప్రపంచ స్థాయి విశేషం!
+  </div>
+
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Facts</span>
+      The Bhimbetka Rock Shelter has the <strong>oldest-known rock art in India</strong> and is one of the largest prehistoric complexes. It has around <strong>243 rock shelters</strong> and earned the honour of <strong>UNESCO World Heritage Site in 2003</strong>. Paintings resemble those discovered in Kakadu (Australia) and Lascaux caves (France). Themes: daily life, hunting, dancing, music, honey collection, animal fighting, community gatherings. Animals depicted: <strong>elephant, bison, deer, peacock, snake</strong>.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      భీంబెట్కా <span class="kw">2003లో UNESCO వారసత్వ స్థలంగా</span> గుర్తింపు పొందింది. ఇక్కడ 243 రాతి ఆశ్రయాలు ఉన్నాయి. చిత్రాల విషయాలు: <span class="kw2">వేట దృశ్యాలు</span> — విల్లు, బాణాలు, బల్లెాలతో వేటాడడం; <span class="kw3">సామాజిక దృశ్యాలు</span> — నాట్యం, సంగీతం, తేనె సేకరణ, పశుపోషణ; పిల్లలు ఆడుకోవడం, స్త్రీలు ఆహారం వండటం, సమాజ నృత్యం — ఆనాటి జీవనాన్ని అద్భుతంగా చిత్రీకరించారు.
+    </div>
+  </div>
+
+  <!-- UPPER PALEOLITHIC DETAIL -->
+  <div class="sub-heading">Upper Paleolithic Paintings — విశేషాలు <span class="te-sh">(40,000–10,000 BCE)</span></div>
+  <ul class="keypoints no-break">
+    <li>
+      <div class="kp-num">1</div>
+      <div class="kp-body">
+        Richest paintings reported from <strong>Vindhya ranges of Madhya Pradesh and their Kaimurean extensions into Uttar Pradesh</strong> — full of Palaeolithic and Mesolithic remains.
+        <span class="te-kp">అత్యంత సమృద్ధమైన చిత్రాలు <span style="color:var(--brick);font-weight:700">మధ్యప్రదేశ్‌లోని వింధ్య పర్వత శ్రేణులలో</span> మరియు ఉత్తరప్రదేశ్‌లోకి వ్యాపించిన కైమూర్ ప్రాంతంలో కనుగొనబడ్డాయి. అక్కడ భీంబెట్కాలో అత్యంత అద్భుతమైన రాతి ఆశ్రయాలు ఉన్నాయి.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">2</div>
+      <div class="kp-body">
+        Themes range from <strong>mundane events of daily life to sacred and royal images</strong>. Hunting scenes predominate — men with barbed spears, pointed sticks, arrows, bows.
+        <span class="te-kp">చిత్రాల విషయాలు <span style="color:var(--brick);font-weight:700">రోజువారీ జీవితం నుండి పవిత్ర, రాజ చిత్రాల వరకు</span> విస్తరించాయి. వేట దృశ్యాలు ఎక్కువగా ఉంటాయి — బార్బ్డ్ బల్లేలు, బాణాలతో వేటాడే మనుషులు స్పష్టంగా చిత్రించబడ్డారు.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">3</div>
+      <div class="kp-body">
+        Animals painted in <strong>naturalistic style</strong>; human beings in <strong>stylistic manner</strong>. Men in some paintings adorned with elaborate head-dresses; sometimes painted with head masks.
+        <span class="te-kp">జంతువులు <span style="color:var(--brick);font-weight:700">సహజ శైలిలో</span> చిత్రించబడ్డాయి; మనుషులు <span style="color:var(--blue);font-weight:700">శైలీకృత రీతిలో</span>. కొన్ని చిత్రాలలో మనుషులు అలంకారమైన తల వస్త్రాలు ధరించి, కొన్నిసార్లు తల ముసుగులతో చిత్రించబడ్డారు.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">4</div>
+      <div class="kp-body">
+        Animals depicted: <strong>Elephant, bison, tiger, boar, deer, antelope, leopard, panther, rhinoceros, fish, frog, lizard, squirrel</strong> and birds. Karnataka granite rocks provided canvas: <strong>Kupgallu, Piklihal, Tekkalkota</strong>.
+        <span class="te-kp">చిత్రించిన జంతువులు: ఏనుగు, దున్నపోతు, పులి, అడవి పంది, జింక, చిరుత, ఖడ్గమృగం, చేప, కప్ప, తోడేలు, ఉడుత మరియు పక్షులు. కర్ణాటక గ్రానైట్ రాళ్ళు చిత్రాలకు వేదికలు — <span style="color:var(--brick);font-weight:700">కుప్‌గల్లు, పిక్లిహాల్, టెక్కల్‌కోట</span>.</span>
+      </div>
+    </li>
+  </ul>
+
+  <!-- CHALCOLITHIC DETAIL -->
+  <div class="sub-heading">Chalcolithic Paintings — చాలిత్ సైతిక చిత్రాలు <span class="te-sh">(తామ్రయుగం వివరాలు)</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Features</span>
+      Reveals association between cave-dwellers and settled agricultural communities of Malwa plains. Vividness and vitality of earlier periods disappear. Colours used: <strong>white, yellow, orange, red ochre, purple, brown, green, black</strong>. Red from haematite (geru in India), green from chalcedony stone, white possibly from limestone. Both men and animals engaged in the <strong>struggle for survival</strong>. Individual animal paintings show mastery of primitive artists in drawing forms.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      తామ్రయుగం చిత్రాలు <span class="kw">మాల్వా మైదానాల వ్యవసాయ సమాజాలతో</span> గుహావాసుల సంబంధాన్ని చూపిస్తాయి. ముందు కాలాల ప్రకాశం, చైతన్యం తగ్గాయి. రంగులు వైవిధ్యంగా ఉంటాయి — <span class="kw2">తెలుపు, పసుపు, నారింజ, ఎర్ర ఖనిజం, నేరేడు, గోధుమ, ఆకుపచ్చ, నలుపు</span>. ఎరుపు రంగు <span class="kw">హేమటైట్ (గేరు)</span> నుండి, ఆకుపచ్చ <span class="kw">కాల్సిడోని రాయి</span> నుండి, తెలుపు <span class="kw">సున్నపురాయి</span> నుండి తయారు చేసేవారు. ఆదిమ చిత్రకారుల నైపుణ్యం జంతు చిత్రాలలో స్పష్టంగా కనిపిస్తుంది.
+    </div>
+  </div>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Exam Focus — Pre-Historic Paintings</div>
+    <ul>
+      <li><strong>First discovery</strong> in India → 1867–68 → <strong>Archibold Carlleyle</strong> (NOT in Spain — Altamira was 12 years later)</li>
+      <li><strong>Bhimbetka</strong> → MP → UNESCO 2003 → 243 rock shelters → Oldest rock art in India</li>
+      <li>Upper Paleolithic → <strong>Green &amp; dark red</strong> → Linear + huge animals + stylistic humans</li>
+      <li>Mesolithic → <strong>Largest prehistoric paintings</strong> → more themes multiply</li>
+      <li>Chalcolithic → <strong>Cave-dwellers + settled agricultural communities</strong> → Malwa plains</li>
+      <li>Haematite = <strong>Geru</strong> (red colour source) · Chalcedony = Green colour · Limestone = White</li>
+      <li>Famous Mesolithic sites: <strong>Langhnaj (Gujarat), Bhimbetka, Adamagarh (MP), SanganaKallu (Karnataka)</strong></li>
+    </ul>
+    <div class="ea-te">📌 పరీక్షలో తరచుగా వచ్చే ప్రశ్న: భీంబెట్కా ఏ రాష్ట్రంలో ఉంది? (మధ్యప్రదేశ్). మొట్టమొదటి రాతి చిత్రాలు ఎవరు కనుగొన్నారు? (కార్ల్లీల్). చాలిత్ సైతిక రంగులలో ఎర్రుపు ఏ నుండి వస్తుంది? (హేమటైట్/గేరు)!</div>
+  </div>
+
+  <div class="memory-box no-break">
+    <div class="mem-label">🧠 Memory Trick — 3 దశలు గుర్తుపెట్టుకోండి</div>
+    <div class="mnemonic">"U–M–C" → "Usual Mammoth Chase" → Upper · Mesolithic · Chalcolithic</div>
+    <div class="mnem-exp">
+      <strong>U</strong>pper Paleolithic → Green+Dark Red → Animals naturalistic, Humans stylistic · 40,000–10,000 BCE<br>
+      <strong>M</strong>esolithic → Largest prehistoric paintings → More themes → 10,000–8,000 BCE<br>
+      <strong>C</strong>halcolithic → Cave-dwellers meet farmers → Malwa plains → Multiple colours · 8,000–4,000 BCE
+    </div>
+    <div class="mem-te">
+      గుర్తు: <span class="kw">ఎగువ శిలాయుగం = ఆకుపచ్చ+ఎరుపు, పెద్ద జంతువులు</span> | <span class="kw">మధ్య శిలాయుగం = అతి పెద్ద చిత్రాలు, ఎక్కువ విషయాలు</span> | <span class="kw">తామ్రయుగం = వ్యవసాయ సమాజ సంపర్కం, వైవిధ్య రంగులు</span>
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.1 · Bhimbetka · Pre-Historic Phases Detail</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 2</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 3 — 2.2 MURAL PAINTINGS: AJANTA + BAGH ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.2 · MURAL PAINTINGS — AJANTA · BAGH · ELLORA</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">2.2</div>
+    <h2>Mural &amp; Miniature Paintings in India <span class="te">— గోడ చిత్రాలు మరియు లఘు చిత్రాలు</span></h2>
+  </div>
+
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Overview</span>
+      Indian paintings are broadly classified as <strong>murals, miniatures and paintings on cloth</strong>. Murals are large works executed on the walls of solid structures, as in Ajanta Caves and Kailashnath temple. They have existed in India since ancient times, dated between <strong>10th century BC and 10th century AD</strong>. Places with mural paintings include: <strong>Ajanta, Bagh, Sittanavasal, Armamalai cave, Ravan Chhaya rock-shelter and Kailashnath temple in Ellora caves</strong>. Majority of themes relate to religion — Buddhism, Jainism and Hinduism.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      భారతీయ చిత్రాలను మూడు విధాలుగా విభజించవచ్చు: <span class="kw">గోడ చిత్రాలు (Murals)</span> — గుహలు, దేవాలయ గోడలపై పెద్ద చిత్రాలు; <span class="kw2">లఘు చిత్రాలు (Miniatures)</span> — చిన్న పరిమాణంలో అద్భుతమైన వివరాలతో చిత్రాలు; <span class="kw3">వస్త్ర చిత్రాలు (Paintings on cloth)</span>. గోడ చిత్రాలు 10వ శతాబ్దం BCE నుండి 10వ శతాబ్దం CE వరకు ఉన్నాయి. <span class="kw">అజంతా, బాఘ్, సిట్టనవాసల్, అర్మామలై, ఎల్లోరాలోని కైలాసనాథ దేవాలయం</span> ముఖ్యమైన స్థలాలు.
+    </div>
+  </div>
+
+  <!-- AJANTA -->
+  <div class="sub-heading">Ajanta Cave Paintings — అజంతా గుహ చిత్రాలు <span class="te-sh">(Most Important)</span></div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — అజంతా చిత్రాల కథ</span>
+    అజంతా చిత్రాలు గురించి చెప్పాలంటే — ఇవి <span class="kw">మొదటి శతాబ్దం BCE నుండి 5వ శతాబ్దం CE</span> వరకు వేర్వేరు కాలాలలో వేర్వేరు గుహలపై చిత్రించబడ్డాయి. ఇవి <span class="kw2">కేవలం బౌద్ధ మత విషయాలే</span> (అలంకారిక కప్పు నమూనాలు తప్ప). అజంతా చిత్రాల విషయం పూర్తిగా <span class="kw">జాతక కథలు</span> — బుద్ధుడు పూర్వ జన్మలలో ఏయే రూపాలలో జీవించాడో చెప్పే కథలు. ఈ చిత్రాలు <span class="kw3">Fresco-secco పద్ధతిలో</span> వేశారు — ముందు సున్నపు పూత వేసి, ఆరిన తర్వాత రంగులు వేసే పద్ధతి. ఇది చాలా నైపుణ్యం కావాలి కానీ ఫలితం వేల సంవత్సరాలు మన్నుతుంది!
+  </div>
+
+  <ul class="keypoints no-break">
+    <li>
+      <div class="kp-num">1</div>
+      <div class="kp-body">
+        <strong>Cave IX and X</strong> have the earliest paintings of Ajanta. The only surviving one is a group on the left wall of cave X: a <strong>king with attendants in front of a tree decked with flags</strong>.
+        <span class="te-kp">గుహ IX మరియు X లో అజంతా అత్యంత ప్రాచీన చిత్రాలు ఉన్నాయి. గుహ X ఎడమ గోడపై — <span style="color:var(--brick);font-weight:700">రాజు తన అనుచరులతో పతాకాలు అలంకరించిన చెట్టు ముందు నిలబడిన</span> చిత్రం ఉంది — ఇది బోధి వృక్షాన్ని సందర్శించే దృశ్యం.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">2</div>
+      <div class="kp-body">
+        Cave No. 1 — Paintings of various Bodhisattvas in tribhanga pose: <strong>Vajrapani</strong> (protector and power), <strong>Manjusri</strong> (Buddha's wisdom), <strong>Padmapani/Avalokitesvara</strong> (symbol of compassion).
+        <span class="te-kp">గుహ 1 లో బోధిసత్వుల చిత్రాలు — <span style="color:var(--brick);font-weight:700">వజ్రపాణి</span> (రక్షకుడు), <span style="color:var(--blue);font-weight:700">మంజుశ్రీ</span> (బుద్ధుని జ్ఞానం), <span style="color:var(--green);font-weight:700">పద్మపాణి/అవలోకితేశ్వర</span> (కరుణకు చిహ్నం) — అందరూ త్రిభంగ భంగిమలో చిత్రించబడ్డారు.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">3</div>
+      <div class="kp-body">
+        Cave 16 — <strong>Dying Princess</strong>: Famous painting depicting a princess who appears to be dying as she swoons, with attendants around her. Cave 10 = <strong>Vishwakarma Cave</strong> (Buddhist Chaitya cave).
+        <span class="te-kp">గుహ 16 — <span style="color:var(--brick);font-weight:700">మరణిస్తున్న రాకుమారి</span> చిత్రం — రాకుమారి స్పృహ కోల్పోతూ అనుచరుల నడుమ కూలిపోయే హృదయవిదారక దృశ్యం. ఇది అజంతా ప్రసిద్ధ చిత్రాలలో ఒకటి.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">4</div>
+      <div class="kp-body">
+        Other famous Jataka scenes: <strong>Shibi Jataka</strong> (King Shibi offering his own flesh to save pigeon), <strong>Matri-Poshaka Jataka</strong> (ungrateful person saved by elephant gives out his whereabouts to the king).
+        <span class="te-kp"><span style="color:var(--brick);font-weight:700">శిబి జాతకం</span> — రాజు శిబి పావురాన్ని రక్షించడానికి తన మాంసం ఇచ్చే కథ. <span style="color:var(--blue);font-weight:700">మాత్రీ-పోషక జాతకం</span> — ఏనుగు రక్షించిన కృతఘ్నుడు ఏనుగు ఉన్న చోటు రాజుకు చెప్పే కథ.</span>
+      </div>
+    </li>
+  </ul>
+
+  <hr class="div">
+
+  <!-- BAGH PAINTINGS -->
+  <div class="sub-heading">Bagh Cave Paintings — బాఘ్ గుహ చిత్రాలు <span class="te-sh">(Vindhya Hills, MP)</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Facts</span>
+      Bagh caves are located in <strong>Vindhya hills of Madhya Pradesh</strong> along the Baghini river. Paintings from Bagh caves correspond to those at Ajanta in <strong>Cave No. 1 and 2</strong>. Stylistically both belong to the same form but Bagh figures are more <strong>tightly modelled and stronger in outline</strong>. They are <strong>earthlier and more human than those at Ajanta</strong>. These paintings are developed under the patronage of <strong>Gupta kings</strong>. Cave No. 4 (Sabha Mandapa) is the most elaborate.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      బాఘ్ గుహలు మధ్యప్రదేశ్‌లోని <span class="kw">వింధ్య కొండలలో బాఘిని నది ఒడ్డున</span> ఉన్నాయి. ఇక్కడి చిత్రాలు అజంతా గుహ 1, 2 చిత్రాలను పోలి ఉంటాయి. కానీ తేడా ఏమిటంటే — బాఘ్ చిత్రాలు <span class="kw2">మరింత గట్టిగా, బలంగా</span> ఉంటాయి; అజంతా చిత్రాలు కంటే <span class="kw3">మరింత సాధారణ మానవ జీవితాన్ని</span> ప్రతిబింబిస్తాయి. <span class="kw">గుప్త రాజుల</span> పోషకత్వంలో అభివృద్ధి చెందాయి. అతి ముఖ్యమైన అర్లెస్ట్ బ్రాహ్మణిక్ చిత్రాలు <span class="kw">బాదామి గుహల్లో</span> (6వ శతాబ్దం CE) కనుగొనబడ్డాయి.
+    </div>
+  </div>
+
+  <!-- ELLORA CAVE PAINTINGS -->
+  <div class="sub-heading">Ellora Cave Paintings — ఎల్లోరా గుహ చిత్రాలు</div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English</span>
+      Several Hindu, Buddhist and Jain temples were excavated from Ellora between <strong>8th and 10th centuries AD</strong> from the living rock. 34 caves total — <strong>17 Brahmanical, 12 Buddhist, 5 Jain</strong>. Most impressive: <strong>Kailashnath Temple</strong> — free standing structure with painting fragments on ceilings, developed under patronage of <strong>Rashtrakuta king Krishna I</strong>, dedicated to Lord Shiva. Cave 10 = <strong>Vishwakarma Cave</strong> (Buddha in Vyakhyana Mudra). Cave 14 = <strong>"Raavankikhai"</strong>. Cave 15 = <strong>Dashavatara Temple</strong>. Jain caves: <strong>Indra Sabha (Cave 32), Jagannath Sabha (Cave 33)</strong>.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      ఎల్లోరా గుహలు <span class="kw">8వ నుండి 10వ శతాబ్దం AD</span> మధ్య తొలచబడ్డాయి. 34 గుహలలో — 17 బ్రాహ్మణ, 12 బౌద్ధ, 5 జైన. అత్యంత ముఖ్యమైనది <span class="kw2">కైలాసనాథ దేవాలయం</span> — ఇది నేల నుండి పైకి కాకుండా, పర్వతాన్ని పైనుండి క్రిందికి తొలిచి నిర్మించారు — <span class="kw3">ప్రపంచంలో అత్యంత పెద్ద ఏకశిలా రాతి దేవాలయం!</span> రాష్ట్రకూట రాజు కృష్ణ I దీన్ని శివునికి అంకితం చేశాడు. గుహ 10 = విశ్వకర్మ గుహ; గుహ 14 = రావణ్‌కికై; గుహ 15 = దశావతార దేవాలయం.
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.2 · Mural Paintings — Ajanta · Bagh · Ellora</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 3</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 4 — SITTANAVASAL · BADAMI · ARMAMALAI · LEPAKSHI ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.2 · MURAL PAINTINGS — SITTANAVASAL · BADAMI · LEPAKSHI</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <!-- SITTANAVASAL -->
+  <div class="sub-heading">Sittanavasal Cave Paintings — సిట్టనవాసల్ <span class="te-sh">(Tamil Nadu)</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Facts</span>
+      Sittanavasal Caves paintings are known as one of the best cave paintings of <strong>early medieval India</strong>. They represent <strong>Jain thoughts and ideologies on rock-cut architecture</strong>. Most date back to <strong>9th century AD in the Pandyan period</strong>. Technique used: <strong>Fresco-secco</strong> (surfaces covered with lime plaster 2.5 mm thick before adding 0.5 mm thick lime wash). Pigments: permanent mineral colours — lime (black from lamp soot/charcoal), red from red ochre, yellow from yellow ochre, green from "Terre verre", blue from ultramarine or lapis lazuli. Famous ceiling painting: <strong>scene of great beauty — a lotus pool with birds, elephants, buffaloes and a young man plucking flowers</strong>. The ceiling of cave's Ardha Mandapam still flaunt beautiful paintings after centuries.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      సిట్టనవాసల్ గుహ చిత్రాలు తమిళనాడులో ఉన్నాయి. ఇవి <span class="kw">జైన మత ఆలోచనలు మరియు భావాలను</span> రాతి తొలచిన వాస్తుశిల్పంపై వ్యక్తపరుస్తాయి. ఇవి <span class="kw2">పాండ్య పాలనలో 9వ శతాబ్దం AD</span> నాటివి. <span class="kw">ఫ్రెస్కో-సెక్కో</span> పద్ధతి వాడారు — సున్నపు పూత (2.5 మి.మీ.) వేసి ఆరిన తర్వాత సన్నటి సున్నపు కడుగు (0.5 మి.మీ.) వేసి చిత్రం వేస్తారు. అత్యంత ముఖ్యమైన చిత్రం: <span class="kw3">కప్పుపై అద్భుతమైన తామర చెరువు — పక్షులు, ఏనుగులు, గేదెలు మరియు పూలు కోస్తున్న యువకుడు!</span>
+    </div>
+  </div>
+
+  <!-- BADAMI -->
+  <div class="sub-heading">Badami Cave Paintings — బాదామి గుహ చిత్రాలు <span class="te-sh">(Karnataka)</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Facts</span>
+      Badami was the capital of the early <strong>Chalukyan dynasty</strong> which ruled the region from <strong>543 to 598 CE</strong>. Cave No. 4 inscription mentions date <strong>578–579 CE</strong>, describes the beauty of the cave including the dedication of the image of Vishnu. Paintings depict palace scenes — one shows <strong>Kirtivarman</strong>, the son of Pulakesin I and the elder brother of Mangalesha, seated inside the palace with his wife and feudatories watching a dance scene. These paintings are <strong>stylistically similar to Ajanta</strong>. Sinuous drawn lines, fluid forms and compact composition exemplify proficiency of artists in 6th century CE. The <strong>earliest Brahmanical paintings</strong> so far known are the fragments found in Badami caves (Cave No. 3 — circa 6th century AD). Painting of <strong>Siva and Parvati</strong> is found somewhat well preserved.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      బాదామి కర్ణాటకలో <span class="kw">చాళుక్య వంశపు రాజధాని</span> (543–598 CE). గుహ 4 శాసనం 578–579 CE నాటిది. ఇక్కడ <span class="kw2">కీర్తివర్మన్</span> (పులకేశి I కొడుకు) తన భార్య మరియు సామంతులతో కూర్చుని నృత్య ప్రదర్శన చూస్తున్న అద్భుతమైన రాజ భవన దృశ్యం ఉంది. ఇవి అజంతా చిత్రాలను పోలి ఉంటాయి — వంపు రేఖలు, ప్రవాహ రూపాలు, సమ్మేళన నిర్మాణం. ఇవి ఇప్పటివరకు కనుగొన్న <span class="kw3">అత్యంత పురాతన బ్రాహ్మణ మత చిత్రాలు</span>! శివ-పార్వతి చిత్రం ఇక్కడ చక్కగా సంరక్షించబడింది.
+    </div>
+  </div>
+
+  <!-- ARMAMALAI -->
+  <div class="sub-heading">Armamalai Cave Paintings — అర్మామలై <span class="te-sh">(Tamil Nadu — Jain Temple)</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English</span>
+      Armamalai Cave is known for a <strong>Jain temple with ancient paintings, Petroglyphs and rock art</strong>. The cave has three parts with walls of mud and adobe, turning it into complex of <strong>three shrines — trikuta</strong>. The cave belongs to <strong>8th century AD</strong>. The ceiling and walls are covered with beautiful colour paintings depicting stories of Jainism. Western part of ceiling adorned with <strong>floral designs with lotus as dominating motive</strong> — similar to Sittanavasal. These paintings are similar to murals in Sittanavasal cave (250 km south of Armamalai).
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      అర్మామలై గుహ తమిళనాడులోని <span class="kw">జైన దేవాలయంగా</span> ప్రసిద్ధి. మూడు భాగాలు — ముద్ర మరియు అడోబే గోడలతో <span class="kw2">త్రికూట</span> (మూడు గర్భగృహాలు) నిర్మించారు. 8వ శతాబ్దం AD నాటిది. కప్పు మరియు గోడలపై <span class="kw3">జైనమతం కథలు వర్ణించే అందమైన రంగు చిత్రాలు</span> ఉన్నాయి. పడమర కప్పులో తామరను ప్రధాన మోటిఫ్‌గా వాడిన పుష్ప నమూనాలు అలంకరించాయి — సిట్టనవాసల్ నమూనాను పోలి ఉంటుంది.
+    </div>
+  </div>
+
+  <!-- LEPAKSHI -->
+  <div class="sub-heading">Lepakshi Temple Painting — లేపాక్షి దేవాలయ చిత్రాలు <span class="te-sh">(Andhra Pradesh)</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Facts</span>
+      Paintings on ceilings of <strong>Virabhadra temple</strong> dedicated to god Shiva in <strong>Lepakshi, Andhra Pradesh</strong>. The Lepakshi murals are among the <strong>most significant surviving pictorial paintings of the Vijayanagara empire in southern India</strong>. The murals were completed around the same time. They cover the ceilings of the <strong>mahamandapa</strong> and various shrines, illustrating themes from mythology and courtly life — scenes from <strong>Ramayana, Mahabharata</strong>, as well as texts such as the Puranas. The temple was constructed by brothers <strong>Virupanna Nayaka and Viranna</strong>, governors of Penukonda during the reign of the Vijayanagara ruler <strong>Achutaraya</strong> in the 16th century. Composition includes 13 panels sectioned into sub-panels. All four edges of the mural are decorative paintings of mythical animals, birds, devotees, <strong>dancers, and musicians</strong>.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      లేపాక్షి ఆంధ్రప్రదేశ్‌లోని <span class="kw">వీరభద్ర దేవాలయం</span> (శివుని ఆలయం) యొక్క కప్పుపై చిత్రాలు. ఇవి దక్షిణ భారతదేశంలో <span class="kw2">విజయనగర సామ్రాజ్యపు అత్యంత ముఖ్యమైన మిగిలి ఉన్న గోడ చిత్రాలు</span>. 16వ శతాబ్దంలో <span class="kw3">విరూపన్న నాయక మరియు వీరన్న</span> అనే సోదరులు — అచ్యుతరాయ పాలనలో పెనుకొండ గవర్నర్లు — ఈ దేవాలయం నిర్మించారు. మహామండపం కప్పులపై <span class="kw">రామాయణ, మహాభారత</span> కథలు, పురాణ దృశ్యాలు చిత్రించారు. 13 ప్యానెల్‌లు ఉపవిభాగాలుగా విభజించబడ్డాయి. అంచులపై పౌరాణిక జంతువులు, పక్షులు, భక్తులు, <span class="kw">నాట్యకత్తెలు, వాద్యకారులు</span> చిత్రించారు.
+    </div>
+  </div>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Exam Focus — Mural Paintings</div>
+    <ul>
+      <li><strong>Ajanta</strong> → Buddhist only → Fresco-secco → Cave 1 (Padmapani, Vajrapani) → Cave 16 (Dying Princess)</li>
+      <li><strong>Bagh Caves</strong> → Vindhya hills, MP → Baghini river → Gupta period → Earthlier than Ajanta</li>
+      <li><strong>Ellora</strong> → 34 caves → 17 Brahmanical + 12 Buddhist + 5 Jain → Kailashnath (Rashtrakuta Krishna I)</li>
+      <li><strong>Sittanavasal</strong> → Tamil Nadu → Jain themes → Pandyan period 9th C AD → Lotus pool ceiling painting</li>
+      <li><strong>Badami</strong> → Karnataka → Chalukyas (543–598 CE) → Kirtivarman palace scene → <strong>Earliest Brahmanical paintings</strong></li>
+      <li><strong>Armamalai</strong> → Tamil Nadu → Jain → Trikuta (3 shrines) → 8th century AD → Floral ceiling like Sittanavasal</li>
+      <li><strong>Lepakshi</strong> → Andhra Pradesh → Virabhadra temple → Vijayanagara → Virupanna Nayaka → Ramayana+Mahabharata</li>
+    </ul>
+    <div class="ea-te">📌 <strong>ట్రిక్ ప్రశ్నలు:</strong> అత్యంత పురాతన బ్రాహ్మణ మత చిత్రాలు ఎక్కడ? (బాదామి). జైన సంప్రదాయంతో ముడిపడిన చిత్రాలు ఏ స్థలాలలో? (సిట్టనవాసల్, అర్మామలై). లేపాక్షి ఏ సామ్రాజ్యానికి చెందినది? (విజయనగరం). ఎల్లోరాలో ముఖ్యమైన జైన గుహలు? (ఇంద్ర సభ 32, జగన్నాథ సభ 33).</div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.2 · Sittanavasal · Badami · Armamalai · Lepakshi Murals</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 4</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 5 — MINIATURE PAINTINGS: FEATURES + PALA + APABHRAMSA + DECCAN ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.2 · MINIATURE PAINTINGS — FEATURES · PALA · APABHRAMSA · DECCAN</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">2.2-B</div>
+    <h2>Miniature Paintings <span class="te">— లఘు చిత్రాలు</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — లఘు చిత్రాల పరిచయం</span>
+    "లఘు చిత్రాలు" అంటే చిన్న పరిమాణంలో అద్భుతమైన వివరాలతో చేయబడిన చిత్రాలు. ఇవి గోడ చిత్రాలకు ప్రతిక్రియగా <span class="kw">8వ నుండి 12వ శతాబ్దాల మధ్య</span> ఉద్భవించాయి. <span class="kw2">బౌద్ధ పాల కాలం</span> లో తూర్పు భారతదేశంలో తాళపత్ర గ్రంథాలపై, <span class="kw3">జైన తాళపత్ర గ్రంథాలపై</span> పడమర భారతదేశంలో ప్రారంభమయ్యాయి. <span class="kw">ఇస్లాం నాగరికత సంపర్కంతో</span> — ముఖ్యంగా మొఘల్ సామ్రాజ్యంతో (1526–1757 AD) — ఈ కళ రాజ సభలో స్థిరపడి అభివృద్ధి చెందింది. అచ్చటి నుండి <span class="kw">చిత్రిత గ్రంథాలు, ఆల్బమ్ లఘు చిత్రాలు, చిత్రపటాలు, వేడుక చిత్రాలు</span> దేశమంతటా వ్యాపించాయి.
+  </div>
+
+  <!-- FEATURES OF MINIATURE -->
+  <div class="sub-heading">Features of Miniature Paintings — లఘు చిత్రాల లక్షణాలు</div>
+
+  <table class="styled-table no-break">
+    <caption>Key Features of Indian Miniature Paintings — ముఖ్య లక్షణాలు</caption>
+    <thead>
+      <tr>
+        <th style="width:35%">Feature <span class="te-th">లక్షణం</span></th>
+        <th>Detail <span class="te-th">వివరణ</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Size</strong> — పరిమాణం</td>
+        <td>No more than <strong>25 square inches</strong>; subject portrayed at scale of <strong>1/6th actual size</strong>
+          <span class="te-td">25 చదరపు అంగుళాలు మించదు; విషయం అసలు పరిమాణంలో 1/6వ వంతులో చిత్రించబడుతుంది</span></td>
+      </tr>
+      <tr>
+        <td><strong>Materials</strong> — సామగ్రి</td>
+        <td>Hand-mixed colours: <strong>pure gold, silver, minerals, plants, valuable stones, indigo, conch shells</strong>
+          <span class="te-td">చేతితో కలిపిన రంగులు: స్వచ్ఛమైన బంగారం, వెండి, ఖనిజాలు, మొక్కలు, విలువైన రాళ్ళు, ఇండిగో, శంఖు పెంకులు</span></td>
+      </tr>
+      <tr>
+        <td><strong>Human Figure</strong> — మానవ రూపం</td>
+        <td><strong>Side profile</strong> depicted in majority of Indian miniature paintings
+          <span class="te-td">అధికాంశ భారతీయ లఘు చిత్రాలలో <strong>పక్క భంగిమ (Side Profile)</strong>లో మానవ రూపం చిత్రించబడుతుంది</span></td>
+      </tr>
+      <tr>
+        <td><strong>Skin Color</strong> — చర్మ రంగు</td>
+        <td>Dark in <strong>Rajasthani miniatures</strong>; paler in <strong>Mughal paintings</strong>
+          <span class="te-td">రాజస్థాన్ లఘు చిత్రాలలో చర్మం చీకటి రంగు; మొఘల్ చిత్రాలలో పాలిపోయిన రంగు</span></td>
+      </tr>
+      <tr>
+        <td><strong>Eyes &amp; Hair</strong> — కళ్ళు &amp; జుట్టు</td>
+        <td>Female figurines have long hair; eyes and hair <strong>almost always black</strong>; bulging eyes, sharp nose, thin waist
+          <span class="te-td">స్త్రీ విగ్రహాలకు పొడవు జుట్టు; కళ్ళు మరియు జుట్టు దాదాపు ఎప్పుడూ నల్లగా; ఉబ్బిన కళ్ళు, పదునైన ముక్కు, సన్నటి నడుము</span></td>
+      </tr>
+      <tr>
+        <td><strong>Celestial Entities</strong> — దైవిక రూపాలు</td>
+        <td>Lord Krishna and other celestial beings depicted in <strong>blue colour</strong>
+          <span class="te-td">శ్రీ కృష్ణుడు మరియు ఇతర దైవిక రూపాలు <strong>నీలి రంగులో</strong> చిత్రించబడ్డారు</span></td>
+      </tr>
+      <tr>
+        <td><strong>Dress</strong> — వేషధారణ</td>
+        <td>Men wear turban; traditional attire; female figurines have elaborate clothing
+          <span class="te-td">పురుషులు తలపాగా ధరిస్తారు; సాంప్రదాయ వేషం; స్త్రీ విగ్రహాలు విస్తారమైన వస్త్రాలు</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PALA SCHOOL -->
+  <div class="sub-heading">Pala School of Art — పాల కళా పాఠశాల <span class="te-sh">(Eastern India — 11th–12th Century)</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English</span>
+      Earliest examples of miniature painting in India exist in form of illustrations to <strong>religious texts on Buddhism</strong> executed under the <strong>Palas</strong> of eastern India and <strong>Jain texts executed in western India</strong> during 11th–12th centuries AD. Large number of manuscripts on palm-leaf relating to Buddhist themes illustrated with images of Buddhist deities at centres such as <strong>Nalanda, Odantapuri, Vikramashila and Somarupa</strong>. Surviving examples mostly belong to <strong>Vajrayana School of Buddhism</strong>. Pala painting shows a <strong>naturalistic style with sinuous lines and subdued tones of colour</strong>. One of finest examples: manuscript of <strong>Astasahasrika Prajnaparamita</strong> (Perfection of Wisdom — 8,000 lines), housed in Oxford, England. Pala art came to sudden end after destruction of Buddhist monasteries by Muslim invaders in first half of 13th century. <strong>Colours in this form had symbolic meanings</strong>.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      భారతదేశంలో లఘు చిత్రలేఖనం <span class="kw">పాల వంశం</span> పాలనలో తూర్పు భారతదేశంలో మొదలైంది. <span class="kw2">బౌద్ధ మత గ్రంథాలపై</span> తాళపత్రాలపై చిత్రాలు వేశారు. <span class="kw">నలంద, ఒదంతపురి, విక్రమశిల, సోమారూప</span> వంటి బౌద్ధ కేంద్రాలలో అభివృద్ధి. శైలి <span class="kw3">సహజత్వంతో — వంపు రేఖలు, మృదువైన రంగుల స్వరాలు</span>. అత్యుత్తమ ఉదాహరణ: <span class="kw">అష్టసాహస్రిక ప్రజ్ఞాపారమిత</span> గ్రంథం (ఇప్పుడు ఆక్స్‌ఫర్డ్, ఇంగ్లాండ్‌లో). 13వ శతాబ్దంలో ముస్లిం దండయాత్రలలో బౌద్ధ మఠాలు ధ్వంసమవడంతో పాల కళ అకస్మాత్తుగా అంతమైంది.
+    </div>
+  </div>
+
+  <!-- APABHRAMSA -->
+  <div class="sub-heading">Apabhramsa School of Art — అపభ్రంశ కళా పాఠశాల <span class="te-sh">(Western India — Jain)</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English</span>
+      Can be traced back to <strong>Gujarat and Mewar region of Rajasthan</strong>. During 11th–15th centuries, it was the most popular painting style in <strong>western India</strong>. Jain religion was the most prominent motif; Vaishnava School adopted it afterward. Included concept of <strong>Gita Govinda and secular love</strong> in artworks. Paintings were done on <strong>palm leaf</strong> in early Jain period; later on <strong>paper</strong>. Colours: mainly <strong>red, yellow, and ochre</strong> — symbolic value; later employed <strong>bright and gold colours</strong>. <strong>Note:</strong> Paintings were done on palm leaf, but later they moved to paper in the later time.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      అపభ్రంశ పాఠశాల <span class="kw">గుజరాత్ మరియు రాజస్థాన్‌లోని మేవాడ్ ప్రాంతంలో</span> ఉద్భవించింది. 11వ–15వ శతాబ్దాల మధ్య పడమర భారతదేశంలో అత్యంత ప్రాచీన చిత్రకళా శైలి. <span class="kw2">జైన మతం</span> ప్రధాన విషయం; తర్వాత వైష్ణవ పాఠశాల కూడా స్వీకరించింది. <span class="kw3">గీత గోవింద మరియు లౌకిక ప్రేమ</span> భావనలను చిత్రాలలో చేర్చారు. ముందు తాళపత్రాలపై, తర్వాత కాగితంపై వేశారు. రంగులు — ఎరుపు, పసుపు, ఓకేర్ — ప్రతీకాత్మక అర్థం కలిగి ఉంటాయి; తర్వాత <span class="kw">ప్రకాశవంతమైన మరియు బంగారు రంగులు</span> వాడారు.
+    </div>
+  </div>
+
+  <!-- DECCAN MINIATURE -->
+  <div class="sub-heading">Miniature Paintings — Deccan Style <span class="te-sh">— డెక్కన్ శైలి</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English</span>
+      Colors applied flat with garment and human figures delineated in black. Faces viewed from three-quarter angle giving a <strong>detached look</strong>. Landscapes filled with trees, rocks and other designs <strong>not attempting to mimic nature</strong>.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      డెక్కన్ చిత్రాలలో రంగులు <span class="kw">చదునుగా</span> (flat) వేస్తారు. మానవ ఆకృతులు నల్లగా రూపుదిద్దుకుంటాయి. ముఖాలు <span class="kw2">మూడు-పావు కోణంలో</span> చూపించడం వల్ల వేరుపాటు అనుభూతి కలుగుతుంది. ప్రకృతి నకలు చేయకుండా చెట్లు, రాళ్ళు, ఇతర నమూనాలతో పరిసరాలు అలంకరిస్తారు.
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.2-B · Miniature Paintings — Features · Pala · Apabhramsa · Deccan</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 5</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 6 — DELHI SULTANATE + MUGHAL ERA MINIATURES ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.2 · MINIATURE PAINTINGS — DELHI SULTANATE + MUGHAL ERA</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sub-heading">Miniature Paintings — Delhi Sultanate Period <span class="te-sh">— ఢిల్లీ సుల్తానేట్</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English</span>
+      Paintings attempted to combine <strong>Persian motifs</strong> from ancestors with Indian traditional components. Preferred pictorial manuscripts. The <strong>Nimatnama</strong> (a book) written under the reign of <strong>Nasir Shah</strong>, who ruled over Mandu, is one of the best examples — it exemplifies the blending of indigenous and Persian styles. A style known as <strong>Lodi Khuladar</strong> was popular at this time and was practiced in many of the <strong>Sultanate-controlled districts between Delhi and Jaunpur</strong>.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      ఢిల్లీ సుల్తానేట్ కాలంలో చిత్రాలు <span class="kw">పర్షియన్ మోటిఫ్‌లు</span> మరియు భారతీయ సంప్రదాయ అంశాలను కలిపే ప్రయత్నం చేశాయి. <span class="kw2">నిమత్‌నామా</span> — మాండులో నాసిర్ షా పాలనలో రాసిన పుస్తకం — స్వదేశీ మరియు పర్షియన్ శైలుల అందమైన మిశ్రమానికి ఉత్తమ ఉదాహరణ. <span class="kw3">లోధి ఖులాదార్</span> శైలి ఢిల్లీ–జౌన్‌పూర్ మధ్య సుల్తానేట్ నియంత్రిత జిల్లాలలో ప్రాచుర్యం పొందింది.
+    </div>
+  </div>
+
+  <div class="sub-heading">Mughal Era — మొఘల్ కాలం <span class="te-sh">(1526–1757 AD)</span></div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — మొఘల్ చిత్రకళ ఎందుకు ప్రత్యేకమైనది?</span>
+    మొఘల్ చిత్రకళ అనేది <span class="kw">భారతీయ చిత్రలేఖనం చరిత్రలో ఒక మైలురాయి</span>! ఈ కళ పుట్టుక విశేషమేమిటంటే — బాబర్ వచ్చినప్పుడు ఇది లేదు, హుమాయున్ పర్షియాలో ఉన్నప్పుడు పర్షియన్ చిత్రకారుల నుండి నేర్చుకున్నాడు, తిరిగి వచ్చి ఆ కళను భారతీయ నేలలో పెంచాడు. అక్బర్ హయాంలో <span class="kw2">మొత్తం చిత్రకళా శాఖ (Tasvir Khana)</span> ఏర్పాటైంది. జహంగీర్ హయాంలో అది <span class="kw3">గరిష్ట స్థాయికి</span> చేరింది. షాజహాన్ నుండి <span class="kw">ప్రకాశం తగ్గింది</span>. ఇది ఒక అద్భుతమైన కళాత్మక పరిణామ ప్రయాణం!
+  </div>
+
+  <!-- BABUR + HUMAYUN -->
+  <div class="ruler-block humayun no-break">
+    <div class="rb-head">
+      <span>Babur &amp; Humayun — బాబర్ మరియు హుమాయున్ <span class="te-rh">మొఘల్ చిత్రకళ పునాది</span></span>
+      <span class="rb-period">1526–1556</span>
+    </div>
+    <div class="rb-body">
+      <div class="en-row">
+        <strong>Babur</strong> — Origin of Mughal School of Painting considered landmark in history. He commissioned some illustrations of Mughal family tree from a Persian artist named <strong>Bihzad</strong>.
+        <span class="te-row">బాబర్ పర్షియన్ చిత్రకారుడు <span style="color:var(--brick);font-weight:700">బిహ్జాద్</span> ద్వారా మొఘల్ వంశ వృక్షం చిత్రాలు వేయించాడు — ఇది మొఘల్ చిత్రకళకు ముఖ్యమైన మైలురాయి.</span>
+      </div>
+      <div class="en-row">
+        <strong>Humayun</strong> — A great patron. While at Shah Abbas' court in Persia, he hired two major painters: <strong>Abdus Samad and Mir Sayyid Ali</strong>, who stayed with him after he reclaimed his throne and established the Mughal dynasty in India. His atelier was disrupted when he lost throne to Sher Shah Suri and was exiled to Persia.
+        <span class="te-row">హుమాయున్ పర్షియాలో ఉన్నప్పుడు రెండు ముఖ్యమైన చిత్రకారులు నియమించుకున్నాడు: <span style="color:var(--brick);font-weight:700">అబ్దుస్ సమద్ మరియు మీర్ సయ్యద్ అలీ</span>. వారు అతనితో భారతదేశానికి వచ్చి మొఘల్ చిత్రకళ పునాది వేశారు. షేర్ షా సూరి చేతిలో ఓడిపోవడంతో కళా శాఖ తాత్కాలికంగా ఆగిపోయింది.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AKBAR -->
+  <div class="ruler-block akbar no-break">
+    <div class="rb-head">
+      <span>Akbar — అక్బర్ <span class="te-rh">మొఘల్ చిత్రకళ స్వర్ణ అధ్యాయం ప్రారంభం</span></span>
+      <span class="rb-period">1556–1605</span>
+    </div>
+    <div class="rb-body">
+      <div class="en-row">
+        Created an entire department dedicated to painting — <strong>Tasvir Khana</strong> (professional artistic studio). Artists on pay, developed their own styles. Used <strong>three-dimensional figures</strong> and continued <strong>use of foreshortening</strong>. Artists encouraged use of <strong>calligraphy</strong>. Distinguishing feature: <strong>transformation of popular art to court art</strong> — artist more concerned with court life than popular life.
+        <span class="te-row">అక్బర్ <span style="color:var(--brick);font-weight:700">తస్వీర్ ఖానా</span> (చిత్రకళా శాఖ) స్థాపించాడు — జీతం పై చిత్రకారులు. <span style="color:var(--blue);font-weight:700">త్రిమితీయ (3D) రూపాలు</span> మరియు <span style="color:var(--green);font-weight:700">ఫోర్‌షార్టెనింగ్</span> పద్ధతి వాడారు. ప్రజా జీవితానికి బదులు <span style="color:var(--brick);font-weight:700">రాజ సభా జీవితం</span> ప్రధాన విషయమైంది.</span>
+      </div>
+      <div class="en-row">
+        Notable painters: <strong>Daswant, Basawan, Kesu</strong>. Famous illustrated manuscripts: <strong>Tutinama, Hamzanama, Anvar-i-Suhaili, Gulistan of Sadi</strong>.
+        <span class="te-row">ప్రసిద్ధ చిత్రకారులు: <span style="color:var(--brick);font-weight:700">దస్వంత్, బసావన్, కేసు</span>. ముఖ్యమైన గ్రంథ చిత్రణలు: <span style="color:var(--blue);font-weight:700">తుతీనామా, హమ్జానామా, అన్వర్-ఇ-సుహైలి, గులిస్తాన్ ఆఫ్ సాది</span>.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAHANGIR -->
+  <div class="ruler-block jahangir no-break">
+    <div class="rb-head">
+      <span>Jahangir — జహంగీర్ <span class="te-rh">మొఘల్ చిత్రకళ గరిష్ట స్థాయి</span></span>
+      <span class="rb-period">1605–1627</span>
+    </div>
+    <div class="rb-body">
+      <div class="en-row">
+        <strong>During the reign of Jahangir, Mughal paintings achieved their pinnacle</strong>. He was a naturalist who loved paintings of <strong>flora and fauna — birds, animals, trees, flowers</strong>. Emphasized <strong>naturalism</strong> into portrait painting. Distinctive trend: use of <strong>decorated margins around paintings</strong> — sometimes as elaborate as the paintings themselves.
+        <span class="te-row">జహంగీర్ హయాంలో మొఘల్ చిత్రకళ <span style="color:var(--brick);font-weight:700">గరిష్ట స్థాయికి చేరింది</span>. అతను స్వభావసిద్ధంగా ప్రకృతి ప్రేమి — పక్షులు, జంతువులు, చెట్లు, పూలు అతని ఇష్టమైన విషయాలు. చిత్రాల చుట్టూ <span style="color:var(--blue);font-weight:700">అలంకారమైన అంచులు</span> వేయడం ఈ కాలంలో ప్రత్యేక పోకడ.</span>
+      </div>
+      <div class="en-row">
+        His atelier primarily produced <strong>naturalistic paintings of zebra, turkey, and cock</strong>. Famous artist: <strong>Ustad Mansoor</strong> (master of complex faces). An animal fable called <strong>Ayar-i-Danish</strong> (Touchstone of Knowledge) was illustrated. Famous painters: <strong>Dawlat, Basawan, Kau</strong> include <strong>Tultiana, Hazanzanama, Anvar-i-Shuhalli, and Gulistan of Sad</strong>.
+        <span class="te-row">అతని చిత్రకళా శాఖ జీబ్రా, టర్కీ పక్షి, కోడి వంటి జంతు చిత్రాలు ప్రసిద్ధంగా వేసింది. ప్రసిద్ధ చిత్రకారుడు <span style="color:var(--brick);font-weight:700">ఉస్తాద్ మన్సూర్</span> — క్లిష్టమైన ముఖాలను చిత్రించే విద్వాంసుడు. <span style="color:var(--blue);font-weight:700">అయ్యర్-ఇ-దానిష్</span> (జ్ఞానపు కసోటి) అనే జంతు కథల పుస్తకం చిత్రించబడింది.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHAH JAHAN -->
+  <div class="ruler-block shah no-break">
+    <div class="rb-head">
+      <span>Shah Jahan — షాజహాన్ <span class="te-rh">మొఘల్ చిత్రకళ స్వరం మారింది</span></span>
+      <span class="rb-period">1628–1658</span>
+    </div>
+    <div class="rb-body">
+      <div class="en-row">
+        <strong>During Shah Jahan's reign, the tone of Mughal art shifted dramatically</strong>. He preferred <strong>artificial elements</strong> in paintings over naturalistic images. He attempted to diminish the vitality of paintings and introduced <strong>unnatural stillness as a result of European influence</strong>. He <strong>discouraged use of charcoal in drawing</strong> and instead <strong>encouraged artists to draw and sketch with a pencil</strong>. He also directed that more <strong>gold and silver be used</strong> in paintings. He preferred brighter colour palettes.
+        <span class="te-row">షాజహాన్ హయాంలో మొఘల్ చిత్రకళ <span style="color:var(--brick);font-weight:700">నాటకీయంగా మారింది</span>. అతను సహజ రూపాల బదులు <span style="color:var(--blue);font-weight:700">కృత్రిమ అంశాలు</span> ఇష్టపడ్డాడు. <span style="color:var(--green);font-weight:700">యూరోపియన్ ప్రభావంతో</span> చిత్రాలలో అసహజ నిశ్చలత్వం వచ్చింది. బొగ్గు వదిలి <span style="color:var(--brick);font-weight:700">పెన్సిల్‌తో చిత్రించమని</span> ప్రోత్సహించాడు. చిత్రాలలో ఎక్కువ బంగారం, వెండి వాడాలని ఆదేశించాడు.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Exam Focus — Mughal Miniature Paintings</div>
+    <ul>
+      <li><strong>Humayun</strong> → Hired <strong>Abdus Samad &amp; Mir Sayyid Ali</strong> from Persia</li>
+      <li><strong>Akbar</strong> → Founded <strong>Tasvir Khana</strong> → 3D figures + foreshortening → Tutinama, Hamzanama</li>
+      <li><strong>Jahangir</strong> → <strong>Pinnacle of Mughal painting</strong> → Naturalist → Flora &amp; Fauna → Decorated margins → Ustad Mansoor</li>
+      <li><strong>Shah Jahan</strong> → Tone shifted → Artificial elements → <strong>Pencil over charcoal</strong> → European influence → More gold &amp; silver</li>
+      <li><strong>Nimatnama</strong> = Delhi Sultanate → Nasir Shah → Mandu → Blending of Persian + Indian styles</li>
+      <li><strong>Lodi Khuladar</strong> style = Sultanate controlled districts between Delhi and Jaunpur</li>
+    </ul>
+    <div class="ea-te">📌 <strong>పరీక్షలో ట్రిక్ ప్రశ్నలు:</strong> మొఘల్ చిత్రకళ తన ఉచ్ఛస్థితికి ఎవరి హయాంలో చేరింది? (జహంగీర్). అక్బర్ స్థాపించిన చిత్రకళా శాఖ ఏమిటి? (తస్వీర్ ఖానా). షాజహాన్ ఏ చిత్రకళా మాధ్యమాన్ని నిరుత్సాహపరిచాడు? (బొగ్గు). బిహ్జాద్ ఎవరికి సంబంధించిన చిత్రకారుడు? (బాబర్).</div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.2-B · Mughal Era Miniature Paintings</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 6</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 7 — TANJORE + MYSORE + SOUTH INDIAN MINIATURES ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.2 · SOUTH INDIAN MINIATURES — TANJORE · MYSORE PAINTINGS</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sub-heading">South Indian Miniature Painting Schools <span class="te-sh">— దక్షిణ భారత చిత్రకళా పాఠశాలలు</span></div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — దక్షిణ భారత చిత్రకళ ఎందుకు విభిన్నంగా ఉంటుంది?</span>
+    దక్షిణ భారత చిత్రకళా పాఠశాలలు ఉత్తర భారతదేశంలోని మొఘల్ శైలికి భిన్నంగా ఉంటాయి. ఎందుకంటే వాతావరణం వేరు, పోషకులు వేరు, మత ప్రాముఖ్యత వేరు. <span class="kw">తంజావూర్ చిత్రాలు</span> అంటే <span class="kw2">బంగారు పూత, రత్నాలు, అద్దాలు</span> — ఇవి చిత్రాలు కాదు, <span class="kw3">ఆభరణాల వంటి అద్భుత కళాఖండాలు!</span> <span class="kw">మైసూర్ చిత్రాలు</span> అంటే <span class="kw2">ఘనత, సూక్ష్మత, ఆధ్యాత్మికత</span> — హిందూ దేవతల చిత్రాలలో అందమైన నిర్మలత్వం కనిపిస్తుంది. ఈ రెండు పాఠశాలలూ ఉత్తర భారత శైలి కంటే పూర్తిగా వేరైన అనుభవం ఇస్తాయి.
+  </div>
+
+  <div class="two-box no-break">
+    <div class="tbox t-brick">
+      <div class="tb-head">Tanjore Painting — తంజావూర్ చిత్రకళ
+        <span class="te-tbh">తమిళనాడు · 18వ శతాబ్దం · మరాఠా పాలకులు</span>
+      </div>
+      <div class="tb-body">
+        <ul>
+          <li>Thanjavur or Tanjore School known for its <strong>unique decorative painting style</strong>
+            <span class="te">అద్వితీయ అలంకారిక చిత్రకళా శైలికి ప్రసిద్ధి</span></li>
+          <li>During 18th century, patronised by <strong>Maratha rulers</strong>; paintings lasted under British period
+            <span class="te">18వ శతాబ్దంలో మరాఠా పాలకులు పోషించారు; బ్రిటిష్ కాలంలో కూడా కొనసాగింది</span></li>
+          <li>Distinct: primarily made of <strong>glass and board</strong> rather than traditional cloth and vellum
+            <span class="te">సంప్రదాయ వస్త్రం బదులు <strong>అద్దం మరియు బోర్డుపై</strong> వేస్తారు</span></li>
+          <li>Due to bright colour patterns and <strong>abundant use of gold leaf</strong> — one-of-a-kind
+            <span class="te">ప్రకాశవంతమైన రంగులు మరియు అధికంగా <strong>బంగారు రేకు</strong> వాడటంతో అనన్యమైనవి</span></li>
+          <li>To create larger-than-life images: <strong>gemstones and cut glasses</strong> as ornaments
+            <span class="te">పెద్ద రూపాలు చేయడానికి <strong>రత్నాలు మరియు కత్తిరించిన అద్దాలు</strong> ఆభరణాలుగా వాడతారు</span></li>
+          <li>Majority of paintings showed <strong>Krishna smiling in various stances</strong>, highlighting events in his life
+            <span class="te">అధికాంశ చిత్రాలు వివిధ భంగిమలలో <strong>నవ్వే కృష్ణుడిని</strong> చిత్రిస్తాయి</span></li>
+          <li>Under patronage of <strong>Sarfoji Maharaj</strong> — paintings attained their pinnacle
+            <span class="te">సర్ఫోజీ మహారాజ్ పోషకత్వంలో తంజావూర్ చిత్రాలు అత్యున్నత స్థాయికి చేరాయి</span></li>
+          <li>These paintings are distinct in that they are primarily made of <strong>glass and board</strong>
+            <span class="te">ఇవి ప్రాథమికంగా అద్దం మరియు బోర్డుపై వేయడం వలన ప్రత్యేకమైనవి</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tbox t-mud">
+      <div class="tb-head">Mysore Painting — మైసూర్ చిత్రకళ
+        <span class="te-tbh">కర్ణాటక · మైసూర్ పాలకులు · నిర్మలత్వం</span>
+      </div>
+      <div class="tb-body">
+        <ul>
+          <li>Rulers of <strong>Mysore province</strong> were patrons; lasted under the British period
+            <span class="te">మైసూర్ రాజ్యపు పాలకులు పోషించారు; బ్రిటిష్ కాలంలో కూడా కొనసాగింది</span></li>
+          <li>Representation of <strong>Hindu gods and goddesses</strong> is a key motif in Mysore paintings
+            <span class="te">హిందూ దేవతల చిత్రణ అత్యంత ముఖ్యమైన విషయం</span></li>
+          <li>Unusual aspect: each painting contains <strong>two or more people</strong>, one larger and more colourful
+            <span class="te">విలక్షణమైన విషయం: ప్రతి చిత్రంలో <strong>రెండు లేదా అంతకంటే ఎక్కువ మంది</strong> ఉంటారు — ఒకరు పెద్దగా, రంగురంగులగా</span></li>
+          <li>Technique <strong>differs significantly</strong> from north Indian styles
+            <span class="te">పద్ధతి ఉత్తర భారత శైలుల కంటే పూర్తిగా భిన్నం</span></li>
+          <li>They employ <strong>'gesso paste'</strong> — zinc oxide and Arabic gum mixture. Provides distinct foundation producing a <strong>gloss over the backdrop</strong>
+            <span class="te"><strong>గెస్సో పేస్ట్</strong> వాడతారు — జింక్ ఆక్సైడ్ మరియు అరేబిక్ గమ్ మిశ్రమం. ఇది నేపథ్యంపై <strong>మెరుపు</strong> ఉత్పత్తి చేసే ప్రత్యేక పునాది అందిస్తుంది</span></li>
+          <li>Colours used: one containing <strong>two or more people, one is larger</strong>; employ <strong>zinc oxide and Arabic gum</strong>
+            <span class="te">మైసూర్ చిత్రాల ప్రత్యేకత: గెస్సో పేస్ట్‌తో నేపథ్యం తయారు చేసి, హిందూ దేవతలను అందంగా చిత్రిస్తారు</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="memory-box no-break">
+    <div class="mem-label">🧠 Memory Trick — దక్షిణ భారత చిత్రకళ గుర్తుపెట్టుకోండి</div>
+    <div class="mnemonic">Tanjore = "Glass + Gold + Gems" | Mysore = "Gesso + Gods + Gloss"</div>
+    <div class="mnem-exp">
+      <strong>Tanjore:</strong> Glass board + Gold leaf + Gemstone ornaments + Maratha patronage + Krishna → One-of-a-kind<br>
+      <strong>Mysore:</strong> Gesso paste (Zinc oxide+Arabic gum) + Hindu Gods + Gloss backdrop + Mysore rulers → North vs South technique
+    </div>
+    <div class="mem-te">
+      <span class="kw">తంజావూర్ = అద్దం + బంగారు రేకు + రత్నాలు + కృష్ణ చిత్రాలు + మరాఠాలు</span><br>
+      <span class="kw">మైసూర్ = గెస్సో పేస్ట్ + హిందూ దేవతలు + మెరుపు నేపథ్యం + మైసూర్ పాలకులు</span><br>
+      పరీక్షలో "గెస్సో పేస్ట్ వాడే చిత్రాలు?" → మైసూర్! "బంగారు రేకు, రత్నాలు వాడే చిత్రాలు?" → తంజావూర్!
+    </div>
+  </div>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Ch 2.2 Complete Exam Focus — Mural &amp; Miniature Paintings</div>
+    <ul>
+      <li><strong>Pala School</strong> → Buddhist texts → Palm leaf → Nalanda, Odantapuri → Naturalistic → Sinuous lines → Ended 13th C (Muslim invasion)</li>
+      <li><strong>Apabhramsa School</strong> → Gujarat + Mewar → 11th–15th C → Jain → Palm leaf → later Paper → Red, Yellow, Ochre → symbolic</li>
+      <li><strong>Tanjore</strong> → 18th C → Maratha → Glass+Board → Gold leaf+Gemstones → Krishna → Sarfoji Maharaj</li>
+      <li><strong>Mysore</strong> → Hindu Gods → Gesso paste (Zinc oxide+Arabic gum) → Gloss → distinct from N.India technique</li>
+      <li><strong>Miniature features</strong> → max 25 sq inches → Side profile → Blue for Krishna → Dark skin Rajasthani/Paler Mughal</li>
+      <li><strong>Astasahasrika Prajnaparamita</strong> = Finest Pala manuscript → Oxford, England</li>
+    </ul>
+    <div class="ea-te">📌 <strong>ముఖ్య గుర్తులు:</strong> లఘు చిత్రాలు గరిష్టంగా 25 చదరపు అంగుళాలు. పాల పాఠశాల ముస్లిం దండయాత్రతో అంతమైంది. అపభ్రంశ = జైన మత చిత్రాలు = గుజరాత్+మేవాడ్. తంజావూర్ = గాజు + బంగారు రేకు. మైసూర్ = గెస్సో పేస్ట్.</div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.2 · South Indian Miniatures — Tanjore · Mysore · Chapter 2 Part 1 Complete</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 7</span>
+  </div>
+</div>
+
+</body>
+</html>

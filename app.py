@@ -1389,22 +1389,47 @@ def read_notes_home():
 
     # Pretty-label helpers
     _SECTION_LABELS = {
-        'AP_Geography':      'AP Geography',
-        'AP_Current_Affairs':'AP Current Affairs',
+        'AP_Geography':        'AP Geography',
+        'AP_Current_Affairs':  'AP Current Affairs',
+        'Indian_Geography':    'Indian Geography',
+        'Indian_Current_Affairs': 'Indian Current Affairs',
+        'Indian_Economy':      'Indian Economy',
+        'Art_Culture':         'Art & Culture',
+    }
+    _SECTION_ICONS = {
+        'AP_Geography':        '🗺️',
+        'AP_Current_Affairs':  '📰',
+        'Indian_Geography':    '🌏',
+        'Indian_Current_Affairs': '📡',
+        'Indian_Economy':      '💹',
+        'Art_Culture':         '🎭',
     }
     _SUBSECTION_LABELS = {
-        'Chapters':  'Chapters',
-        'Divisions': 'Divisions',
+        'Chapters':       'Chapters',
+        'Divisions':      'Divisions',
+        'Study_Notes':    '📖 Study Notes',
+        'MCQs':           '📝 Practice MCQs',
+        'Current_Affairs':'📰 Current Affairs',
     }
 
     def _prettify(filename):
-        """Turn e.g. 'ch03_climate.html' → 'Ch 03: Climate'."""
+        """Turn e.g. 'ch03_climate.html' → 'Ch 3: Climate'
+           and 'ch01a_mauryan_art.html' → 'Ch 1-A: Mauryan Art'."""
+        import re
         stem = filename.replace('.html', '')
         if stem.startswith('ch'):
             parts = stem.split('_', 1)
-            num   = parts[0][2:].lstrip('0') or '0'
-            rest  = parts[1].replace('_', ' ').title() if len(parts) > 1 else ''
-            return f"Ch {num}: {rest}"
+            raw_num = parts[0][2:]          # e.g. '01', '01a', '02b'
+            # Split numeric part from letter suffix
+            m = re.match(r'^0*(\d+)([a-z]?)$', raw_num)
+            if m:
+                num    = m.group(1)         # '1', '2'
+                letter = m.group(2).upper() # 'A', 'B', ''
+                num_str = f"{num}-{letter}" if letter else num
+            else:
+                num_str = raw_num.lstrip('0') or '0'
+            rest = parts[1].replace('_', ' ').title() if len(parts) > 1 else ''
+            return f"Ch {num_str}: {rest}"
         elif stem.startswith('div'):
             parts = stem.split('_', 1)
             num   = parts[0][3:].lstrip('0') or '0'
@@ -1421,6 +1446,7 @@ def read_notes_home():
                 continue
             group = {
                 'label':    _SECTION_LABELS.get(folder, folder.replace('_', ' ')),
+                'icon':     _SECTION_ICONS.get(folder, '📚'),
                 'key':      folder,
                 'sections': [],
             }
