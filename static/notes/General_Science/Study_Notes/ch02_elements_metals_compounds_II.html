@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch 02 — Elements, Metals & Compounds II | General Science</title>
+<style>
+:root{--pri:#0d2346;--acc:#1565c0;--acc2:#0288d1;--bg:#e8f0fe;--bg2:#f0f7ff;--en-border:#1565c0;--te-border:#6a1b9a;--shock:#b71c1c;--exam:#e65100;--mem:#1b5e20;--hi:#4a148c;}
+@page{size:A4;margin:14mm 13mm 14mm 13mm;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.2pt;line-height:1.45;color:#1a1a2e;background:#fff;}
+.page{width:184mm;min-height:267mm;padding:6mm 0;position:relative;}
+.page-break{page-break-after:always;break-after:page;}
+.cover{background:linear-gradient(135deg,var(--pri) 0%,#1a237e 60%,#283593 100%);color:#fff;border-radius:6px;padding:18mm 12mm 14mm;text-align:center;margin-bottom:8mm;}
+.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:7.5pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6mm;}
+.cover h1{font-size:19pt;font-weight:800;letter-spacing:-0.3px;margin-bottom:3mm;}
+.cover h1 span{color:#90caf9;}
+.cover h2{font-size:11pt;font-weight:400;color:#bbdefb;margin-bottom:4mm;}
+.cover-te{font-size:10pt;color:#90caf9;margin-bottom:5mm;}
+.cover-meta{display:flex;justify-content:center;gap:16px;font-size:7.8pt;color:#bbdefb;flex-wrap:wrap;margin-top:4mm;}
+.cover-meta span{background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 10px;}
+.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:5px 10px;font-size:7.5pt;color:#e3f2fd;margin-top:5mm;line-height:1.8;}
+.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:9.5pt;font-weight:700;margin:5mm 0 3mm;letter-spacing:0.3px;display:flex;justify-content:space-between;align-items:center;}
+.sec-head .te{font-size:8pt;font-weight:400;color:#90caf9;}
+.sub-head{color:var(--pri);font-weight:700;font-size:9pt;border-bottom:2px solid var(--acc);padding-bottom:2px;margin:4mm 0 2mm;display:flex;justify-content:space-between;}
+.sub-head .te{font-size:7.8pt;color:#555;font-weight:400;}
+.bilingual{border:1px solid #b0bec5;border-radius:5px;margin-bottom:4mm;overflow:hidden;}
+.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:5px 8px;font-size:8.5pt;line-height:1.5;}
+.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:5px 8px;font-size:8.3pt;line-height:1.5;color:#4a148c;}
+.lang-tag{display:inline-block;font-size:6.8pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-bottom:3px;}
+.bi-en .lang-tag{background:var(--en-border);color:#fff;}
+.bi-te .lang-tag{background:var(--te-border);color:#fff;}
+.shock-box{border:2px solid var(--shock);background:#fff3f3;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.shock-box .shock-title{color:var(--shock);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.highlight-box{border:2px solid var(--hi);background:#f3e5f5;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.exam-tag{background:#b71c1c;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px;}
+.imp-tag{background:#1565c0;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;}
+.te-tag{background:#6a1b9a;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;}
+.chem{font-family:'Courier New',monospace;font-size:8pt;background:#e3f2fd;padding:0 3px;border-radius:2px;}
+table{width:100%;border-collapse:collapse;font-size:8.3pt;margin-bottom:3mm;}
+th{background:var(--pri);color:#fff;padding:4px 7px;text-align:left;font-weight:600;font-size:8pt;}
+td{padding:3px 7px;border:1px solid #cfd8dc;vertical-align:top;}
+tr:nth-child(even) td{background:#f0f7ff;}
+.te-td{display:block;color:#6a1b9a;font-size:7.6pt;margin-top:1px;}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:3mm;}
+.pyq-item{background:#f0f7ff;border-left:3px solid var(--acc);padding:4px 8px;margin-bottom:2mm;border-radius:3px;font-size:8.2pt;}
+.pyq-q{font-weight:600;color:var(--pri);}
+.pyq-a{color:var(--shock);font-weight:700;}
+ul{padding-left:16px;margin-bottom:3mm;}
+li{margin-bottom:2px;font-size:8.5pt;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page page-break">
+<div class="cover">
+  <div class="cover-tag">General Science · Model Set 2</div>
+  <h1>Elements, Metals &amp; <span>Compounds II</span></h1>
+  <h2>Model Set 2 — 50 MCQs Comprehensive Guide</h2>
+  <div class="cover-te">మూలకాలు, లోహాలు మరియు సమ్మేళనాలు — II</div>
+  <div class="topics-bar">
+    📋 Topics: Brittleness &amp; Ductility · Bleaching Powder · Transistors (Si, Ge) · Greenhouse Gases ·
+    Annealing · Caustic Soda · Water Glass · Bleaching Agents · Noble Gases · Rare Earth Elements ·
+    Types of Iron · Carbon Allotropes · Galvanisation · Rust · LPG · Soda Water · Muriatic Acid
+  </div>
+  <div class="cover-meta">
+    <span>📝 50 Questions</span><span>🟢 19 Easy · 🟡 24 Medium · 🔴 7 Hard</span><span>🎯 APPSC/UPSC GK</span>
+  </div>
+</div>
+
+<div class="sec-head">1. Physical Properties of Materials <span class="te">పదార్థాల భౌతిక ధర్మాలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Ductility vs Brittleness:</strong> Ductile materials can be drawn into wires or beaten into sheets without fracturing. <strong>Copper, gold, and aluminium</strong> are highly ductile. Brittle materials (cast iron, glass, concrete) fracture when stressed.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>డక్టిలిటీ vs బ్రిటిల్‌నెస్:</strong> వెంట్రుకల్లా సాగే మరియు రేకులుగా బాదగలిగే పదార్థాలు డక్టైల్. రాగి, బంగారం, అల్యూమినియం డక్టైల్. కాస్ట్ ఐరన్, గాజు, కాంక్రీట్ పెళుసైనవి (brittle).
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Annealing:</strong> The process of <em>slow cooling</em> of hot glass (or metal) to relieve internal stresses and prevent cracking. Fast cooling makes glass brittle and prone to fracture.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>ఎన్నీలింగ్ (Annealing):</strong> వేడి గాజును లేదా లోహాన్ని నెమ్మదిగా చల్లబరిచే ప్రక్రియ. లోపలి ఒత్తిళ్లు తొలగి గాజు పగలకుండా ఉంటుంది. త్వరగా చల్లబరిస్తే పెళుసు అవుతుంది.
+  </div>
+</div>
+
+<div class="exam-alert">
+  <div class="ea-title">⚠️ EXAM ALERT — Ductile vs Brittle <span class="exam-tag">FREQUENT</span></div>
+  Copper = NOT brittle (ductile metal). Cast iron, glass, concrete = brittle. <br>
+  Galvanised iron = zinc coating. Wrought iron = purest iron (least carbon &lt;0.1%).
+</div>
+</div>
+
+<!-- PAGE 2: IMPORTANT COMPOUNDS -->
+<div class="page page-break">
+<div class="sec-head">2. Important Compounds &amp; Formulas <span class="te">ముఖ్యమైన సమ్మేళనాలు</span></div>
+
+<table>
+<tr><th>Common Name / సాధారణ పేరు</th><th>Chemical Name / రసాయన పేరు</th><th>Formula</th></tr>
+<tr><td>Caustic Soda<br><span class="te-td">కాస్టిక్ సోడా</span></td><td>Sodium Hydroxide<br><span class="te-td">సోడియం హైడ్రాక్సైడ్</span></td><td><span class="chem">NaOH</span></td></tr>
+<tr><td>Water Glass<br><span class="te-td">వాటర్ గ్లాస్</span></td><td>Sodium Silicate<br><span class="te-td">సోడియం సిలికేట్</span></td><td><span class="chem">Na₂SiO₃</span></td></tr>
+<tr><td>Washing Soda<br><span class="te-td">వాషింగ్ సోడా</span></td><td>Sodium Carbonate<br><span class="te-td">సోడియం కార్బొనేట్</span></td><td><span class="chem">Na₂CO₃</span></td></tr>
+<tr><td>Baking Soda<br><span class="te-td">బేకింగ్ సోడా</span></td><td>Sodium Bicarbonate<br><span class="te-td">సోడియం బైకార్బొనేట్</span></td><td><span class="chem">NaHCO₃</span></td></tr>
+<tr><td>Common Salt<br><span class="te-td">సాధారణ ఉప్పు</span></td><td>Sodium Chloride<br><span class="te-td">సోడియం క్లోరైడ్</span></td><td><span class="chem">NaCl</span></td></tr>
+<tr><td>Bleaching Powder<br><span class="te-td">బ్లీచింగ్ పౌడర్</span></td><td>Calcium hypochlorite-chloride<br><span class="te-td">కాల్షియం హైపోక్లోరైట్</span></td><td><span class="chem">Ca(OCl)Cl</span></td></tr>
+<tr><td>Heavy Water<br><span class="te-td">భార జలం</span></td><td>Deuterium Oxide<br><span class="te-td">డ్యుటీరియం ఆక్సైడ్</span></td><td><span class="chem">D₂O</span></td></tr>
+<tr><td>Muriatic Acid<br><span class="te-td">మ్యూరియాటిక్ ఆమ్లం</span></td><td>Hydrochloric Acid<br><span class="te-td">హైడ్రోక్లోరిక్ ఆమ్లం</span></td><td><span class="chem">HCl</span></td></tr>
+<tr><td>Rust<br><span class="te-td">తుప్పు</span></td><td>Iron oxide + Iron hydroxide mixture<br><span class="te-td">ఐరన్ ఆక్సైడ్ + హైడ్రాక్సైడ్ మిశ్రమం</span></td><td><span class="chem">Fe₂O₃ + Fe(OH)₃</span></td></tr>
+<tr><td>Soda Water<br><span class="te-td">సోడా వాటర్</span></td><td>Water + Carbonic acid<br><span class="te-td">కార్బోనిక్ ఆమ్లం కలిగిన నీరు</span></td><td><span class="chem">CO₂ + H₂O → H₂CO₃</span></td></tr>
+</table>
+
+<div class="memory-box">
+  <div class="mem-title">🧠 SODIUM COMPOUNDS — Memory Trick (Na సమ్మేళనాల మెమరీ ట్రిక్)</div>
+  <strong>Na</strong>Cl = Salt (ఉప్పు) | <strong>Na</strong>HCO₃ = Baking Soda (బేకింగ్ సోడా) | <strong>Na</strong>₂CO₃ = Washing Soda (వాషింగ్ సోడా) | <strong>Na</strong>OH = Caustic Soda (కాస్టిక్ సోడా) | <strong>Na</strong>₂SiO₃ = Water Glass (వాటర్ గ్లాస్)
+</div>
+</div>
+
+<!-- PAGE 3: BLEACHING, GASES & METALS -->
+<div class="page page-break">
+<div class="sec-head">3. Bleaching Agents &amp; Special Gases <span class="te">బ్లీచింగ్ ఏజెంట్లు మరియు ప్రత్యేక వాయువులు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Bleaching Agents (బ్లీచింగ్ ఏజెంట్లు):</strong> SO₂ (sulphur dioxide — for wool/silk, reversible), Cl₂ (chlorine), NaOCl (sodium hypochlorite), H₂O₂ (hydrogen peroxide), bleaching powder.
+    <br><strong>NOT a bleaching agent:</strong> CO₂ (carbon dioxide) — only a greenhouse gas.
+    <br><strong>Bleaching powder formation:</strong> Ca(OH)₂ + Cl₂ → Ca(OCl)Cl + H₂O
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>బ్లీచింగ్ ఏజెంట్లు:</strong> SO₂ (ఉన్ని/పట్టుకు), Cl₂, NaOCl, H₂O₂ — అన్నీ బ్లీచింగ్ చేస్తాయి.
+    <strong>CO₂ (కార్బన్ డైయాక్సైడ్) బ్లీచింగ్ ఏజెంట్ కాదు</strong> — ఇది గ్రీన్‌హౌస్ వాయువు మాత్రమే.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Greenhouse Gases (గ్రీన్‌హౌస్ వాయువులు):</strong> CO₂, CH₄ (methane), CFCs, N₂O, water vapour.<br>
+    <strong>NOT a greenhouse gas:</strong> Hydrogen (H₂) — it is flammable but does NOT trap infrared radiation directly.<br>
+    <strong>Noble Gases (నోబెల్ వాయువులు):</strong> He, Ne, Ar, Kr, Xe, Rn (Group 18) — Helium is the most common noble gas example in exams.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>గ్రీన్‌హౌస్ వాయువులు:</strong> CO₂, మీథేన్, CFCs, N₂O, నీటి ఆవిరి. <strong>హైడ్రోజన్ (H₂) గ్రీన్‌హౌస్ వాయువు కాదు.</strong>
+    <strong>నోబెల్ వాయువులు (18వ గ్రూపు):</strong> He, Ne, Ar, Kr, Xe, Rn — హీలియం ప్రధాన ఉదాహరణ.
+  </div>
+</div>
+
+<div class="sec-head">4. Types of Iron &amp; Carbon in Iron <span class="te">ఇనుము రకాలు — కార్బన్ శాతం</span></div>
+
+<table>
+<tr><th>Type / రకం</th><th>Carbon % / కార్బన్ %</th><th>Properties / ధర్మాలు</th></tr>
+<tr><td><strong>Wrought Iron</strong><br><span class="te-td">రాట్ ఐరన్ (స్వచ్ఛమైన ఇనుము)</span></td><td>&lt;0.1% (LEAST)<br><span class="te-td">అత్యల్పం</span></td><td>Purest, malleable, tough<br><span class="te-td">అత్యంత స్వచ్ఛమైనది, మెత్తని</span></td></tr>
+<tr><td><strong>Steel</strong><br><span class="te-td">స్టీల్</span></td><td>0.1–1.5%</td><td>Strong, hard<br><span class="te-td">బలమైనది</span></td></tr>
+<tr><td><strong>Cast Iron (White)</strong><br><span class="te-td">కాస్ట్ ఐరన్ (తెల్లని)</span></td><td>1.8–3.5%</td><td>Hard, brittle<br><span class="te-td">కఠినమైనది, పెళుసైనది</span></td></tr>
+<tr><td><strong>Cast Iron (Grey) / Pig Iron</strong><br><span class="te-td">గ్రే కాస్ట్ ఐరన్ / పిగ్ ఐరన్</span></td><td>2.5–4.5% (MOST)<br><span class="te-td">అత్యధికం</span></td><td>Most brittle<br><span class="te-td">అత్యంత పెళుసైనది</span></td></tr>
+</table>
+
+<div class="shock-box">
+  <div class="shock-title">⚡ SHOCK FACT — Rust Composition (తుప్పు సంఘటనం)</div>
+  Rust = <strong>Fe₂O₃ + Fe(OH)₃</strong> (a mixture of iron III oxide and iron III hydroxide).<br>
+  Rusting requires BOTH water AND oxygen. Chemical formula: Fe₂O₃·xH₂O<br>
+  <span class="te-tag">తెలుగు</span> తుప్పు = Fe₂O₃ + Fe(OH)₃ మిశ్రమం. రాగిపడాలంటే నీరు మరియు ఆక్సిజన్ రెండూ అవసరం.
+</div>
+</div>
+
+<!-- PAGE 4: METALS, ELEMENTS & PERIODIC TABLE -->
+<div class="page page-break">
+<div class="sec-head">5. Metals — Properties &amp; Occurrence <span class="te">లోహాల ధర్మాలు మరియు లభ్యత</span></div>
+
+<table>
+<tr><th>Fact / విషయం</th><th>Metal / లోహం</th><th>Reason / కారణం</th></tr>
+<tr><td>Liquid at room temperature<br><span class="te-td">గది ఉష్ణో. వద్ద ద్రవం</span></td><td><strong>Mercury (Hg)</strong><br><span class="te-td">పాదరసం</span></td><td>MP = −38.8°C</td></tr>
+<tr><td>Lightest gas<br><span class="te-td">అత్యంత తేలికైన వాయువు</span></td><td><strong>Hydrogen (H₂)</strong><br><span class="te-td">హైడ్రోజన్</span></td><td>Mol. wt = 2</td></tr>
+<tr><td>Gas lighter than air<br><span class="te-td">గాలి కంటే తేలికైన వాయువు</span></td><td><strong>Ammonia (NH₃)</strong><br><span class="te-td">అమ్మోనియా</span></td><td>Mol. wt = 17 &lt; 29 (air)</td></tr>
+<tr><td>First metal discovered<br><span class="te-td">మొదట కనుగొన్న లోహం</span></td><td><strong>Copper (Cu)</strong><br><span class="te-td">రాగి</span></td><td>Occurs natively ~9000 BC</td></tr>
+<tr><td>Native (free) state metal<br><span class="te-td">స్వచ్ఛ రూపంలో లభించేది</span></td><td><strong>Platinum (Pt)</strong><br><span class="te-td">ప్లాటినం</span></td><td>Noble metal, inert</td></tr>
+<tr><td>Strategic metal<br><span class="te-td">వ్యూహాత్మక లోహం</span></td><td><strong>Titanium (Ti)</strong><br><span class="te-td">టైటానియం</span></td><td>Aerospace &amp; defence</td></tr>
+<tr><td>Purest form of iron<br><span class="te-td">ఇనుము స్వచ్ఛ రూపం</span></td><td><strong>Wrought Iron</strong><br><span class="te-td">రాట్ ఐరన్</span></td><td>&lt;0.1% carbon</td></tr>
+<tr><td>Metal in photo films<br><span class="te-td">ఫోటో ఫిల్మ్ లోహం</span></td><td><strong>Silver (Ag)</strong><br><span class="te-td">వెండి</span></td><td>AgBr/AgCl light-sensitive</td></tr>
+</table>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Rare Earth Elements:</strong> 17 elements = 15 Lanthanides + <strong>Yttrium (Y)</strong> + <strong>Scandium (Sc)</strong>. All have similar chemical properties. Used in electronics, magnets, batteries, and catalysts.<br>
+    <strong>Transistors:</strong> Made from <strong>Silicon (Si)</strong> and <strong>Germanium (Ge)</strong> — semiconductors. Silicon dominates modern electronics; Germanium was used in early transistors.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>రేర్ ఎర్త్ ఎలిమెంట్స్:</strong> 17 మూలకాలు = 15 లాంథనైడ్లు + యిట్రియం (Y) + స్కాండియం (Sc).<br>
+    <strong>ట్రాన్సిస్టర్లు:</strong> సిలికాన్ (Si) మరియు జెర్మేనియం (Ge) — అర్ధవాహకాలు.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Lawrencium (Lr):</strong> Atomic number <strong>103</strong> — the last actinide. Mendelevium = 101, Nobelium = 102, Lawrencium = 103.<br>
+    <strong>Permanent Hardness of Water:</strong> Due to CaSO₄, MgSO₄ — removed by <strong>Sodium Carbonate (Na₂CO₃)</strong> or Zeolites (ion exchange softeners).
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>లారెన్షియం (Lr):</strong> పరమాణు సంఖ్య 103 — ఆక్టినైడ్ శ్రేణిలో చివరి మూలకం.<br>
+    <strong>నీటి శాశ్వత కాఠిన్యం:</strong> Na₂CO₃ (వాషింగ్ సోడా) లేదా జియోలైట్లు కలపడం ద్వారా తొలగించవచ్చు.
+  </div>
+</div>
+</div>
+
+<!-- PAGE 5: ALLOYS, ALLOTROPES & SPECIAL GASES -->
+<div class="page page-break">
+<div class="sec-head">6. Alloys &amp; Carbon Allotropes <span class="te">మిశ్రమలోహాలు మరియు కార్బన్ రూపాంతరాలు</span></div>
+
+<div class="cols-2">
+<div>
+<table>
+<tr><th>Alloy / మిశ్రమలోహం</th><th>Components / భాగాలు</th></tr>
+<tr><td>Brass / ఇత్తడి</td><td>Cu + Zn</td></tr>
+<tr><td>Bronze / కంచు</td><td>Cu + Sn</td></tr>
+<tr><td>German Silver</td><td>Cu + Zn + Ni</td></tr>
+<tr><td>Stainless Steel</td><td>Fe + Cr + Ni</td></tr>
+<tr><td>Galvanized Iron</td><td>Fe + Zinc coating</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th>Allotrope / రూపాంతరం</th><th>Key Fact</th></tr>
+<tr><td>Diamond / వజ్రం</td><td>Hardest (Mohs 10)</td></tr>
+<tr><td>Graphite / గ్రాఫైట్</td><td>Softest; lubricant</td></tr>
+<tr><td>Charcoal</td><td>Adsorption/purification</td></tr>
+<tr><td>Fullerene (C₆₀)</td><td>Buckminsterfullerene</td></tr>
+</table>
+</div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>LPG (Liquified Petroleum Gas):</strong> Mainly <strong>methane + butane + propane</strong> (C₁, C₄, C₃). Liquefied under pressure for storage. Used as domestic cooking fuel.<br>
+    <strong>Acetylene (C₂H₂):</strong> Used in hawkers' carbide lamps (calcium carbide + water → acetylene). Burns with brilliant luminous flame.<br>
+    <strong>Electric Bulb Gas:</strong> Nitrogen (N₂) or Argon (Ar) — prevents tungsten filament oxidation.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>LPG:</strong> మీథేన్ + బ్యూటేన్ + ప్రోపేన్ మిశ్రమం. ఒత్తిడి వద్ద ద్రవీభవించిన వాయు ఇంధనం.<br>
+    <strong>అసిటిలీన్:</strong> వీధి వ్యాపారుల కార్బైడ్ దీపాల్లో వాడతారు.<br>
+    <strong>ఎలక్ట్రిక్ బల్బు:</strong> నైట్రోజన్ లేదా ఆర్గాన్ నింపుతారు.
+  </div>
+</div>
+
+<div class="memory-box">
+  <div class="mem-title">🧠 ALLOTROPES vs ISOTOPES vs ALLOYS</div>
+  <strong>Allotropes</strong> = same element, different structures (C: diamond/graphite/fullerene)<br>
+  <strong>Isotopes</strong> = same element, different mass numbers (H: ¹H, ²H, ³H)<br>
+  <strong>Alloys</strong> = mixture of two or more metals (Brass = Cu+Zn)<br>
+  <span class="te-tag">తెలుగు</span> అలోట్రోప్‌లు=ఒకే మూలకం వేర్వేరు రూపాలు | ఐసోటోప్‌లు=వేర్వేరు ద్రవ్యరాశి | మిశ్రమలోహం=రెండు లోహాల మిశ్రమం
+</div>
+
+<div class="exam-alert">
+  <div class="ea-title">⚠️ EXAM ALERT — Hydrogen Isotopes (హైడ్రోజన్ ఐసోటోప్‌లు) <span class="exam-tag">TRAP</span></div>
+  H isotopes: <strong>Protium (¹H)</strong>, <strong>Deuterium (²H)</strong>, <strong>Tritium (³H)</strong>.<br>
+  <strong>Yttrium (Y)</strong> is NOT an isotope of hydrogen — it is a rare earth element (at. no. 39).<br>
+  <span class="te-tag">తెలుగు</span> యిట్రియం హైడ్రోజన్ ఐసోటోప్ కాదు — ఇది రేర్ ఎర్త్ మూలకం.
+</div>
+</div>
+
+<!-- PAGE 6: PYQs, RECAP & TRAP SHEET -->
+<div class="page">
+<div class="sec-head">7. Previous Year Questions &amp; Recap <span class="te">మునుపటి ప్రశ్నలు మరియు సారాంశం</span></div>
+
+<div class="cols-2">
+<div>
+<div class="pyq-item"><span class="pyq-q">Q: Bleaching powder is made from?</span><br><span class="pyq-a">A: Lime + Chlorine → Ca(OCl)Cl</span></div>
+<div class="pyq-item"><span class="pyq-q">Q: Transistors use which two elements?</span><br><span class="pyq-a">A: Silicon (Si) + Germanium (Ge)</span></div>
+<div class="pyq-item"><span class="pyq-q">Q: Muriatic acid = ?</span><br><span class="pyq-a">A: HCl (Hydrochloric acid)</span></div>
+<div class="pyq-item"><span class="pyq-q">Q: Heavy water = ?</span><br><span class="pyq-a">A: D₂O (Deuterium oxide)</span></div>
+<div class="pyq-item"><span class="pyq-q">Q: Rust composition?</span><br><span class="pyq-a">A: Fe₂O₃ + Fe(OH)₃ mixture</span></div>
+<div class="pyq-item"><span class="pyq-q">Q: Purest form of iron?</span><br><span class="pyq-a">A: Wrought iron (&lt;0.1% C)</span></div>
+</div>
+<div>
+<div class="pyq-item"><span class="pyq-q">Q: NOT a greenhouse gas?</span><br><span class="pyq-a">A: Hydrogen (H₂)</span></div>
+<div class="pyq-item"><span class="pyq-q">Q: Galvanized iron = coating of?</span><br><span class="pyq-a">A: Zinc (Zn)</span></div>
+<div class="pyq-item"><span class="pyq-q">Q: Rare earth elements include?</span><br><span class="pyq-a">A: Lanthanides + Y + Sc (17 total)</span></div>
+<div class="pyq-item"><span class="pyq-q">Q: NOT a neutral oxide?</span><br><span class="pyq-a">A: SO₂ (sulphur dioxide = acidic oxide)</span></div>
+<div class="pyq-item"><span class="pyq-q">Q: Soda water contains?</span><br><span class="pyq-a">A: Carbonic acid (H₂CO₃)</span></div>
+<div class="pyq-item"><span class="pyq-q">Q: Annealing = ?</span><br><span class="pyq-a">A: Slow cooling of hot glass</span></div>
+</div>
+</div>
+
+<div class="shock-box">
+  <div class="shock-title">🪤 TRAP SHEET — Common Confusions (సాధారణ తప్పులు)</div>
+  <table>
+  <tr><th>Trap / తప్పు</th><th>Correct Answer / సరైన జవాబు</th></tr>
+  <tr><td>CO₂ = bleaching agent?</td><td><strong>NO</strong> — CO₂ is NOT a bleaching agent (it is a greenhouse gas)</td></tr>
+  <tr><td>Tritium oxide = heavy water?</td><td><strong>NO</strong> — Heavy water = D₂O (deuterium oxide, NOT tritium)</td></tr>
+  <tr><td>Pig iron = purest iron?</td><td><strong>NO</strong> — Wrought iron = purest (least C). Pig iron = most C.</td></tr>
+  <tr><td>Brass = Cu+Sn?</td><td><strong>NO</strong> — Brass = Cu+Zn. Bronze = Cu+Sn.</td></tr>
+  <tr><td>Yttrium = H isotope?</td><td><strong>NO</strong> — Yttrium is a rare earth element (at. no. 39)</td></tr>
+  <tr><td>H₂ = greenhouse gas?</td><td><strong>NO</strong> — Hydrogen is NOT a greenhouse gas</td></tr>
+  </table>
+</div>
+
+<div class="memory-box">
+  <div class="mem-title">🧠 QUICK RECAP (Model Set 2 Key Facts)</div>
+  <ul>
+  <li>Copper = ductile (NOT brittle) | Annealing = slow cooling of hot glass</li>
+  <li>Bleaching powder = Ca(OH)₂ + Cl₂ | Water glass = Na₂SiO₃ | Caustic soda = NaOH</li>
+  <li>Noble gas in periodic table: He, Ne, Ar, Kr, Xe, Rn (Group 18)</li>
+  <li>Transistors = Si + Ge | Rare earth = Lanthanides + Y + Sc</li>
+  <li>LPG = CH₄ + C₃H₈ + C₄H₁₀ | Acetylene (C₂H₂) = hawker lamps</li>
+  <li>Wrought iron = purest (&lt;0.1% C) | Diamond = hardest; Graphite = softest allotrope</li>
+  <li>Galvanized iron = zinc coating | Rust = Fe₂O₃ + Fe(OH)₃</li>
+  <li>Soda water = H₂CO₃ (carbonic acid) | Muriatic acid = HCl</li>
+  </ul>
+</div>
+</div>
+
+</body>
+</html>
