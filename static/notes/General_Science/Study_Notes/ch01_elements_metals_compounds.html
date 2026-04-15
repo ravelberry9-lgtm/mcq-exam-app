@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch 01 — Elements, Metals & Compounds | General Science</title>
+<style>
+/* ===== ROOT VARIABLES — SCIENCE BLUE THEME ===== */
+:root {
+  --pri:#0d2346;
+  --acc:#1565c0;
+  --acc2:#0288d1;
+  --bg:#e8f0fe;
+  --bg2:#f0f7ff;
+  --en-border:#1565c0;
+  --te-border:#6a1b9a;
+  --shock:#b71c1c;
+  --exam:#e65100;
+  --mem:#1b5e20;
+  --hi:#4a148c;
+}
+
+/* ===== PAGE SETUP ===== */
+@page { size: A4; margin: 14mm 13mm 14mm 13mm; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 9.2pt; line-height: 1.45; color: #1a1a2e; background: #fff; }
+.page { width: 184mm; min-height: 267mm; padding: 6mm 0; position: relative; }
+.page-break { page-break-after: always; break-after: page; }
+
+/* ===== COVER ===== */
+.cover { background: linear-gradient(135deg,var(--pri) 0%,#1a237e 60%,#283593 100%); color:#fff; border-radius:6px; padding:18mm 12mm 14mm; text-align:center; margin-bottom:8mm; }
+.cover-tag { background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.4); border-radius:20px; display:inline-block; padding:3px 14px; font-size:7.5pt; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6mm; }
+.cover h1 { font-size:19pt; font-weight:800; letter-spacing:-0.3px; margin-bottom:3mm; }
+.cover h1 span { color:#90caf9; }
+.cover h2 { font-size:11pt; font-weight:400; color:#bbdefb; margin-bottom:4mm; }
+.cover-te { font-size:10pt; color:#90caf9; margin-bottom:5mm; }
+.cover-meta { display:flex; justify-content:center; gap:16px; font-size:7.8pt; color:#bbdefb; flex-wrap:wrap; margin-top:4mm; }
+.cover-meta span { background:rgba(255,255,255,0.1); border-radius:4px; padding:2px 10px; }
+.topics-bar { background:rgba(255,255,255,0.1); border-radius:4px; padding:5px 10px; font-size:7.5pt; color:#e3f2fd; margin-top:5mm; line-height:1.8; }
+
+/* ===== HEADINGS ===== */
+.sec-head { background:var(--pri); color:#fff; padding:4px 10px; border-radius:4px; font-size:9.5pt; font-weight:700; margin:5mm 0 3mm; letter-spacing:0.3px; display:flex; justify-content:space-between; align-items:center; }
+.sec-head .te { font-size:8pt; font-weight:400; color:#90caf9; }
+.sub-head { color:var(--pri); font-weight:700; font-size:9pt; border-bottom:2px solid var(--acc); padding-bottom:2px; margin:4mm 0 2mm; display:flex; justify-content:space-between; }
+.sub-head .te { font-size:7.8pt; color:#555; font-weight:400; }
+
+/* ===== BILINGUAL BOXES ===== */
+.bilingual { border:1px solid #b0bec5; border-radius:5px; margin-bottom:4mm; overflow:hidden; }
+.bi-en { background:#fff; border-left:4px solid var(--en-border); padding:5px 8px; font-size:8.5pt; line-height:1.5; }
+.bi-te { background:#f3e5f5; border-left:4px solid var(--te-border); padding:5px 8px; font-size:8.3pt; line-height:1.5; color:#4a148c; }
+.lang-tag { display:inline-block; font-size:6.8pt; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:1px 7px; border-radius:3px; margin-bottom:3px; }
+.bi-en .lang-tag { background:var(--en-border); color:#fff; }
+.bi-te .lang-tag { background:var(--te-border); color:#fff; }
+
+/* ===== SPECIAL BOXES ===== */
+.shock-box { border:2px solid var(--shock); background:#fff3f3; border-radius:5px; padding:5px 9px; margin-bottom:3mm; font-size:8.3pt; }
+.shock-box .shock-title { color:var(--shock); font-weight:700; font-size:8.5pt; margin-bottom:3px; }
+.exam-alert { border:2px solid var(--exam); background:#fff8f0; border-radius:5px; padding:5px 9px; margin-bottom:3mm; font-size:8.3pt; }
+.exam-alert .ea-title { color:var(--exam); font-weight:700; font-size:8.5pt; margin-bottom:3px; }
+.memory-box { border:2px solid var(--mem); background:#f1f8e9; border-radius:5px; padding:5px 9px; margin-bottom:3mm; font-size:8.3pt; }
+.memory-box .mem-title { color:var(--mem); font-weight:700; font-size:8.5pt; margin-bottom:3px; }
+.highlight-box { border:2px solid var(--hi); background:#f3e5f5; border-radius:5px; padding:5px 9px; margin-bottom:3mm; font-size:8.3pt; }
+
+/* ===== INLINE TAGS ===== */
+.exam-tag { background:#b71c1c; color:#fff; font-size:6.5pt; font-weight:700; padding:1px 5px; border-radius:3px; letter-spacing:0.5px; }
+.imp-tag  { background:#1565c0; color:#fff; font-size:6.5pt; font-weight:700; padding:1px 5px; border-radius:3px; }
+.te-tag   { background:#6a1b9a; color:#fff; font-size:6.5pt; font-weight:700; padding:1px 5px; border-radius:3px; }
+.chem     { font-family:'Courier New',monospace; font-size:8pt; background:#e3f2fd; padding:0 3px; border-radius:2px; }
+
+/* ===== TABLES ===== */
+table { width:100%; border-collapse:collapse; font-size:8.3pt; margin-bottom:3mm; }
+th { background:var(--pri); color:#fff; padding:4px 7px; text-align:left; font-weight:600; font-size:8pt; }
+td { padding:3px 7px; border:1px solid #cfd8dc; vertical-align:top; }
+tr:nth-child(even) td { background:#f0f7ff; }
+.te-td { display:block; color:#6a1b9a; font-size:7.6pt; margin-top:1px; }
+
+/* ===== TWO COLUMN ===== */
+.cols-2 { display:grid; grid-template-columns:1fr 1fr; gap:4mm; margin-bottom:3mm; }
+.cols-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:3mm; margin-bottom:3mm; }
+
+/* ===== PYQ SECTION ===== */
+.pyq-grid { display:grid; grid-template-columns:1fr 1fr; gap:3mm; margin-bottom:3mm; }
+.pyq-item { border:1px solid #b0bec5; border-radius:4px; padding:5px 7px; font-size:8pt; background:#fff; }
+.pyq-q { color:#0d2346; font-weight:600; margin-bottom:3px; }
+.pyq-a { color:#1b5e20; font-size:7.8pt; }
+.pyq-num { background:var(--pri); color:#fff; font-size:6.8pt; padding:1px 5px; border-radius:3px; margin-right:4px; font-weight:700; }
+.te { display:block; color:#6a1b9a; font-size:7.4pt; margin-top:2px; }
+.te-td2 { color:#6a1b9a; font-size:7.6pt; }
+.no-break { break-inside:avoid; page-break-inside:avoid; }
+
+/* ===== RECAP ===== */
+.recap-box { border:2px solid var(--pri); border-radius:5px; background:#e8f0fe; padding:6px 10px; margin-bottom:3mm; columns:2; column-gap:5mm; }
+.recap-item { font-size:8pt; margin-bottom:3px; break-inside:avoid; line-height:1.4; }
+.ri-num { background:var(--pri); color:#fff; font-size:6.5pt; padding:1px 5px; border-radius:50%; margin-right:4px; font-weight:700; }
+.recap-te { display:block; color:#6a1b9a; font-size:7.2pt; padding-left:20px; }
+
+/* ===== TRAP SHEET ===== */
+.trap-table { font-size:7.8pt; margin-bottom:3mm; }
+.trap-table th { background:#b71c1c; }
+.trap-wrong { color:#c62828; font-weight:600; }
+.trap-right { color:#1b5e20; font-weight:600; }
+
+/* ===== COMPARISON TABLE ===== */
+.vs-table { font-size:8pt; }
+.vs-head { background:var(--acc); color:#fff; }
+
+/* ===== PAGE NUMBER ===== */
+.pn { position:absolute; bottom:2mm; right:0; font-size:7pt; color:#90a4ae; }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1: COVER ==================== -->
+<div class="page page-break">
+<div class="cover">
+  <div class="cover-tag">APPSC 2026 · General Science</div>
+  <h1>Elements, Metals <span>&</span> Compounds</h1>
+  <h2>Model Test Set 1 — Study Notes</h2>
+  <div class="cover-te">మూలకాలు, లోహాలు మరియు సమ్మేళనాలు</div>
+  <div class="cover-meta">
+    <span>📄 5 Pages</span>
+    <span>❓ 50 MCQs</span>
+    <span>🔬 General Science</span>
+    <span>⭐ APPSC / TSPSC</span>
+  </div>
+  <div class="topics-bar">
+    <strong>Topics Covered:</strong>
+    Classification of Matter · Carbon Allotropes · Noble Gases · Alloys Mega-Table ·
+    Chemical Names & Formulae · Ores & Minerals · Metals vs Non-Metals · Periodic Table ·
+    Water Properties · Important Uses
+  </div>
+</div>
+
+<!-- INTRO BILINGUAL -->
+<div class="bilingual">
+  <div class="bi-en">
+    <span class="lang-tag">English — Chapter Overview</span>
+    This chapter covers the foundational concepts of General Science that appear frequently in APPSC, TSPSC, SSC and other competitive exams. The core theme is: <strong>What are substances made of, and what are their properties?</strong> Matter is classified as <em>Elements</em> (single type of atom, cannot be broken down further — e.g. Gold, Oxygen, Carbon), <em>Compounds</em> (two or more elements chemically bonded in fixed ratio — e.g. Water H₂O, Salt NaCl), and <em>Mixtures</em> (two or more substances physically combined in any ratio — e.g. Air, Sea Water, Alloys). The most tested areas are: <strong>(1) Alloys</strong> and their composition, <strong>(2) Chemical names</strong> of common substances (Washing Soda, Plaster of Paris etc.), <strong>(3) Uses of elements</strong> (which gas for balloons? which metal for batteries?), and <strong>(4) Properties of metals vs non-metals</strong>.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — అధ్యాయం అవలోకనం</span>
+    ఈ అధ్యాయం పరీక్షలలో అత్యధికంగా అడిగే జనరల్ సైన్స్ అంశాలను కవర్ చేస్తుంది. పదార్థాన్ని మూడు విధాలుగా వర్గీకరిస్తారు: <strong>మూలకాలు</strong> (ఒక రకమైన పరమాణువులు; ఉదా: బంగారం, ఆక్సిజన్), <strong>సమ్మేళనాలు</strong> (రెండు లేదా అంతకు మించిన మూలకాలు రసాయనంగా కలిసినవి; ఉదా: నీరు H₂O), <strong>మిశ్రమాలు</strong> (భౌతికంగా కలిసినవి; ఉదా: గాలి, మిశ్రమ లోహాలు). పరీక్షలో ముఖ్యమైన అంశాలు: <strong>మిశ్రమ లోహాల కూర్పు, సాధారణ పదార్థాల రసాయన నామాలు, మూలకాల ఉపయోగాలు</strong>.
+  </div>
+</div>
+
+<!-- CLASSIFICATION TABLE -->
+<div class="sec-head">Classification of Matter <span class="te">పదార్థ వర్గీకరణ</span></div>
+<table>
+  <tr><th>Category<span class="te-td">వర్గం</span></th><th>Definition<span class="te-td">నిర్వచనం</span></th><th>Examples<span class="te-td">ఉదాహరణలు</span></th><th>Key Property<span class="te-td">ముఖ్య లక్షణం</span></th></tr>
+  <tr>
+    <td><strong>Element</strong><span class="te-td">మూలకం</span></td>
+    <td>Single type of atom; cannot be broken down by chemical methods<span class="te-td">ఒకే రకం పరమాణువులు; రసాయన పద్ధతులతో విభజించలేనిది</span></td>
+    <td>Gold (Au), Diamond (C), Oxygen (O), Silicon (Si)<span class="te-td">బంగారం, వజ్రం, ఆక్సిజన్</span></td>
+    <td>118 elements known; 92 natural<span class="te-td">118 మూలకాలు; 92 సహజ సిద్ధమైనవి</span></td>
+  </tr>
+  <tr>
+    <td><strong>Compound</strong><span class="te-td">సమ్మేళనం</span></td>
+    <td>Two or more elements chemically bonded in fixed ratio<span class="te-td">నిర్ణీత నిష్పత్తిలో రసాయనంగా బంధించబడినవి</span></td>
+    <td>Water (H₂O), NaCl, CO₂, Urea (CO(NH₂)₂)<span class="te-td">నీరు, ఉప్పు, కార్బన్ డైయాక్సైడ్</span></td>
+    <td>Properties differ from constituent elements<span class="te-td">భాగాల నుండి వేరైన లక్షణాలు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Mixture</strong><span class="te-td">మిశ్రమం</span></td>
+    <td>Two or more substances physically combined in any proportion<span class="te-td">ఏ నిష్పత్తిలోనైనా భౌతికంగా కలిసినవి</span></td>
+    <td>Air, Sea water, Alloys (Brass/Steel), Blood<span class="te-td">గాలి, సముద్రపు నీరు, మిశ్రమ లోహాలు</span></td>
+    <td>Separated by physical means; variable composition<span class="te-td">భౌతిక పద్ధతులతో వేరుచేయవచ్చు</span></td>
+  </tr>
+</table>
+
+<div class="shock-box">
+  <div class="shock-title">⚡ EXAM TRAP — Air, Alloys & Sea Water are MIXTURES, not Compounds!</div>
+  Air = mixture of N₂(78%) + O₂(21%) + Ar(0.9%) + CO₂(0.04%) — proportions can vary. Brass = mixture (alloy) of Cu + Zn. Sea water = mixture of water + dissolved salts. <strong>TRAP</strong>: Examine often asks "Is air an element, compound, mixture or electrolyte?" — Answer is always <strong>MIXTURE</strong>.
+  <span class="te-td">గాలి, మిశ్రమ లోహాలు (Alloys), సముద్రపు నీరు — ఇవన్నీ మిశ్రమాలు (Mixtures) — సమ్మేళనాలు కాదు!</span>
+</div>
+<div class="pn">Page 1</div>
+</div>
+
+<!-- ==================== PAGE 2: CARBON, SILICON, NOBLE GASES ==================== -->
+<div class="page page-break">
+<div class="sec-head">Carbon and its Allotropes <span class="te">కార్బన్ మరియు దాని రూపాంతరాలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en">
+    <span class="lang-tag">English — Carbon Allotropes</span>
+    Carbon (C) is unique — it forms several allotropes (different physical forms of the same element). <strong>Diamond</strong>: each C atom bonded to 4 others in a tetrahedral network — hardest natural substance (10 Mohs), used in cutting tools, space probe windows, gemstones. <strong>Graphite</strong>: layered hexagonal structure — each C bonded to 3 others; layers slide easily (lubricant); free electrons between layers (conducts electricity); used in pencils, lubricants, electrodes. <strong>Fullerene (C₆₀)</strong>: cage-like spherical molecules (Buckminsterfullerene); used in nanomaterials, drug delivery. <strong>Carbon nanotubes</strong>: strongest material known; used in electronics, composites. Key exam point: <span class="exam-tag">TRAP</span> Diamond does NOT conduct electricity; Graphite DOES conduct electricity — opposite of what students expect!
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — కార్బన్ రూపాంతరాలు</span>
+    కార్బన్ యొక్క ప్రధాన రూపాంతరాలు: <strong>వజ్రం (Diamond)</strong> — అత్యంత కఠినమైన సహజ పదార్థం; ప్రతి కార్బన్ పరమాణువు 4 ఇతర పరమాణువులతో బంధించబడి ఉంటుంది; విద్యుత్ వాహకం కాదు. <strong>గ్రాఫైట్ (Graphite)</strong> — పెన్సిల్‌లలో వాడతారు; విద్యుత్ వాహకం; మెత్తగా ఉంటుంది. <strong>ఫుల్లెరీన్ (C₆₀)</strong> — నానో పదార్థాలలో వాడతారు.
+    <span class="exam-tag">TRAP</span>: వజ్రం — విద్యుత్ అవాహకం (insulator); గ్రాఫైట్ — విద్యుత్ వాహకం (conductor).
+  </div>
+</div>
+
+<table>
+  <tr><th>Allotrope<span class="te-td">రూపాంతరం</span></th><th>Structure</th><th>Hardness</th><th>Electricity</th><th>Uses<span class="te-td">ఉపయోగాలు</span></th></tr>
+  <tr>
+    <td><strong>Diamond</strong><span class="te-td">వజ్రం</span></td>
+    <td>3D tetrahedral network<span class="te-td">3D సమ చతుర్భుజ జాలక</span></td>
+    <td>10 (hardest)<span class="te-td">అత్యంత కఠినం</span></td>
+    <td class="trap-wrong">Insulator ✗<span class="te-td">అవాహకం</span></td>
+    <td>Cutting, jewellery, space probe windows<span class="te-td">కత్తిరింపు, నగలు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Graphite</strong><span class="te-td">గ్రాఫైట్</span></td>
+    <td>2D layered hexagonal<span class="te-td">పొరల నిర్మాణం</span></td>
+    <td>1–2 (soft)<span class="te-td">మెత్తని</span></td>
+    <td class="trap-right">Conductor ✓<span class="te-td">వాహకం</span></td>
+    <td>Pencils, lubricant, electrodes<span class="te-td">పెన్సిళ్లు, గ్రీజు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Fullerene C₆₀</strong></td>
+    <td>Spherical cage (60 C atoms)</td>
+    <td>—</td>
+    <td>Semiconductor</td>
+    <td>Nanomaterials, drug delivery</td>
+  </tr>
+  <tr>
+    <td><strong>Coal/Charcoal</strong><span class="te-td">బొగ్గు</span></td>
+    <td>Amorphous (no fixed structure)<span class="te-td">నిరాకార నిర్మాణం</span></td>
+    <td>—</td>
+    <td>Poor conductor</td>
+    <td>Fuel; activated carbon for decolourising sugar<span class="te-td">రంగు తొలగించడం</span></td>
+  </tr>
+</table>
+
+<div class="cols-2">
+<div>
+<div class="sec-head" style="font-size:8.5pt;">Silicon (Si) — Earth's Dominant Element <span class="te" style="font-size:7.5pt;">సిలికాన్</span></div>
+<table>
+  <tr><th>Fact</th><th>Detail</th></tr>
+  <tr><td>Abundance in crust<span class="te-td">భూపటలంలో</span></td><td>Most abundant element in rocks & minerals (after Oxygen)<span class="te-td">శిలలలో అత్యధికం (O తర్వాత)</span></td></tr>
+  <tr><td>Silicon Carbide (SiC)<span class="te-td">కార్బోరండం</span></td><td>Carborundum — hardness 9–9.5 Mohs; cuts very hard substances<span class="te-td">అత్యంత కఠిన పదార్థాలను కత్తిరించడం</span></td></tr>
+  <tr><td>Silicon Dioxide (SiO₂)<span class="te-td">సిలికా</span></td><td>Sand, Quartz, Glass — most common compound<span class="te-td">ఇసుక, గాజు</span></td></tr>
+  <tr><td>Semiconductors<span class="te-td">సెమీకండక్టర్</span></td><td>Pure Si used in chips, solar cells<span class="te-td">కంప్యూటర్ చిప్స్, సౌర ఘటాలు</span></td></tr>
+</table>
+</div>
+<div>
+<div class="sec-head" style="font-size:8.5pt;">Noble Gases — Group 18 <span class="te" style="font-size:7.5pt;">నిష్క్రియ వాయువులు</span></div>
+<table>
+  <tr><th>Gas</th><th>Symbol</th><th>Key Use<span class="te-td">ముఖ్య ఉపయోగం</span></th></tr>
+  <tr><td><strong>Helium</strong><span class="te-td">హీలియం</span></td><td>He</td><td>Balloons, airships (non-flammable)<span class="te-td">బెలూన్లు (మండదు)</span></td></tr>
+  <tr><td>Neon<span class="te-td">నియాన్</span></td><td>Ne</td><td>Advertising signs (red glow)<span class="te-td">ప్రకటన సైన్‌బోర్డులు</span></td></tr>
+  <tr><td>Argon<span class="te-td">ఆర్గాన్</span></td><td>Ar</td><td>Electric bulbs, welding<span class="te-td">ఎలక్ట్రిక్ బల్బులు</span></td></tr>
+  <tr><td>Krypton<span class="te-td">క్రిప్టాన్</span></td><td>Kr</td><td>Fluorescent lamps</td></tr>
+  <tr><td>Xenon<span class="te-td">జీనాన్</span></td><td>Xe</td><td>Photo flash bulbs</td></tr>
+  <tr><td>Radon<span class="te-td">రేడాన్</span></td><td>Rn</td><td>Cancer therapy (radioactive)</td></tr>
+</table>
+</div>
+</div>
+
+<div class="sec-head">Phosphorus Allotropes & Special Elements <span class="te">ఫాస్పరస్ రూపాంతరాలు</span></div>
+<table>
+  <tr><th>Element / Form</th><th>Property</th><th>Use / Key Exam Fact<span class="te-td">ముఖ్య అంశం</span></th></tr>
+  <tr>
+    <td><strong>White / Yellow Phosphorus</strong><span class="te-td">తెల్ల ఫాస్పరస్</span></td>
+    <td>Pyrophoric — catches fire spontaneously in air; highly toxic<span class="te-td">గాలిలో స్వయంగా మండుతుంది; విషపూరితం</span></td>
+    <td><span class="exam-tag">TRAP</span> NOT used in safety matches<span class="te-td">అగ్గిపెట్టెలలో వాడరు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Red Phosphorus</strong><span class="te-td">ఎర్ర ఫాస్పరస్</span></td>
+    <td>Stable, non-toxic, non-pyrophoric<span class="te-td">స్థిరమైనది, సురక్షితం</span></td>
+    <td>Used on striking surface of SAFETY MATCHES<span class="te-td">అగ్గిపెట్టె పక్క పూతలో వాడతారు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Bromine (Br₂)</strong><span class="te-td">బ్రోమిన్</span></td>
+    <td>Only non-metal that is LIQUID at room temp; reddish-brown; pungent<span class="te-td">గది ఉష్ణోగ్రతలో ద్రవంగా ఉండే ఏకైక అలోహం</span></td>
+    <td>Mercury = only METAL liquid at RT<span class="te-td">పాదరసం — ఏకైక ద్రవ లోహం</span></td>
+  </tr>
+  <tr>
+    <td><strong>Technetium (Tc)</strong><span class="te-td">టెక్నీషియం</span></td>
+    <td>Atomic no. 43; first man-made element<span class="te-td">మొదటి మానవ నిర్మిత మూలకం</span></td>
+    <td>Does not occur naturally on Earth; obtained from Mo bombardment<span class="te-td">సహజంగా దొరకదు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Sodium (Na)</strong><span class="te-td">సోడియం</span></td>
+    <td>Reacts vigorously with water and air<span class="te-td">నీరు, గాలితో చర్య పొందుతుంది</span></td>
+    <td>Stored under KEROSENE<span class="te-td">కిరోసిన్‌లో భద్రపరుస్తారు</span></td>
+  </tr>
+</table>
+<div class="pn">Page 2</div>
+</div>
+
+<!-- ==================== PAGE 3: ALLOYS + METALS ==================== -->
+<div class="page page-break">
+<div class="sec-head">Alloys — Mega Table <span class="te">మిశ్రమ లోహాలు — ముఖ్య పట్టిక</span></div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — What are Alloys?</span>
+    An alloy is a <strong>mixture</strong> (not a compound) of a metal with one or more other metals or non-metals, formed to improve properties. Key properties improved: hardness, corrosion resistance, strength, melting point. <span class="exam-tag">TRAP</span> Alloys are <em>mixtures</em> — they can be separated by physical methods; their composition is variable. The most commonly tested alloys in exams are: Brass, Bronze, Solder, Nichrome, Stainless Steel, and German Silver.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — మిశ్రమ లోహాలు</span>
+    మిశ్రమ లోహం అనేది ఒక <strong>మిశ్రమం</strong> — రసాయన సమ్మేళనం కాదు. లోహ గుణాలను మెరుగుపరచడానికి రెండు లేదా అంతకు మించిన లోహాలను కలుపుతారు. పరీక్షలో అత్యంత ముఖ్యమైనవి: ఇత్తడి (Brass), కంచు (Bronze), సోల్డర్, నిక్రోమ్, స్టెయిన్లెస్ స్టీల్.
+  </div>
+</div>
+
+<table>
+  <tr>
+    <th style="width:18%">Alloy<span class="te-td">మిశ్రమ లోహం</span></th>
+    <th style="width:32%">Composition<span class="te-td">కూర్పు</span></th>
+    <th>Key Use / Property<span class="te-td">ఉపయోగం</span></th>
+  </tr>
+  <tr>
+    <td><strong>Brass</strong><span class="te-td">ఇత్తడి</span></td>
+    <td>60% Copper (Cu) + 40% Zinc (Zn)<span class="te-td">60% రాగి + 40% జింక్</span></td>
+    <td>Taps, valves, musical instruments, cartridge cases<span class="te-td">కుళాయిలు, సంగీత వాద్యాలు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Bronze</strong><span class="te-td">కంచు</span></td>
+    <td>Copper (Cu) + Tin (Sn) — typically 90% Cu + 10% Sn<span class="te-td">రాగి + తగరం</span></td>
+    <td>Statues, coins, bells, medals<span class="te-td">విగ్రహాలు, గంటలు, నాణేలు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Solder</strong><span class="te-td">సోల్డర్</span></td>
+    <td>Lead (Pb) + Tin (Sn) — 50:50 or 60:40<span class="te-td">సీసం + తగరం</span></td>
+    <td>Joining metals/wires; low melting point<span class="te-td">లోహాలను జోడించడానికి</span></td>
+  </tr>
+  <tr>
+    <td><strong>Nichrome</strong><span class="te-td">నిక్రోమ్</span></td>
+    <td>Nickel (Ni) + Chromium (Cr) — ~80% Ni, 20% Cr<span class="te-td">నికెల్ + క్రోమియం</span></td>
+    <td>Heating elements in iron, toaster, geyser — high resistance + high MP<span class="te-td">ఎలక్ట్రిక్ ఇస్త్రీపెట్టె, నీళ్ళ గీజర్</span></td>
+  </tr>
+  <tr>
+    <td><strong>Stainless Steel</strong><span class="te-td">స్టెయిన్లెస్ స్టీల్</span></td>
+    <td>Iron (Fe) + Chromium (Cr, ≥10.5%) + Nickel (Ni)<span class="te-td">ఇనుము + క్రోమియం + నికెల్</span></td>
+    <td>Utensils, surgical instruments, cutlery; rust-resistant<span class="te-td">వంట పాత్రలు, శస్త్ర చికిత్స పరికరాలు</span></td>
+  </tr>
+  <tr>
+    <td><strong>German Silver</strong><span class="te-td">జర్మన్ సిల్వర్</span></td>
+    <td>Copper (Cu) + Zinc (Zn) + Nickel (Ni)<span class="te-td">రాగి + జింక్ + నికెల్</span></td>
+    <td>Cutlery, jewellery — <span class="exam-tag">TRAP</span> Contains NO silver!<span class="te-td">వెండి అస్సలు లేదు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Amalgam</strong><span class="te-td">అమాల్గామ్</span></td>
+    <td>Mercury (Hg) + other metals (Ag, Sn, Cu for dental)<span class="te-td">పాదరసం + ఇతర లోహాలు</span></td>
+    <td>Dental fillings; gold extraction from ore<span class="te-td">దంత పూరింపు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Duralumin</strong></td>
+    <td>Aluminium (Al) + Copper (Cu) + Mn + Mg</td>
+    <td>Aircraft parts — light weight + high strength</td>
+  </tr>
+  <tr>
+    <td><strong>Magnalium</strong></td>
+    <td>Aluminium (Al) + Magnesium (Mg)</td>
+    <td>Aircraft frames; light and strong</td>
+  </tr>
+  <tr>
+    <td><strong>Type metal</strong></td>
+    <td>Lead (Pb) + Antimony (Sb) + Tin (Sn)</td>
+    <td>Printing type; expands on solidifying</td>
+  </tr>
+</table>
+
+<div class="cols-2">
+<div>
+<div class="sec-head" style="font-size:8.5pt;">Metals — Key Properties & Conductivity <span class="te" style="font-size:7.5pt;">లోహ గుణాలు</span></div>
+<table>
+  <tr><th>Property</th><th>Best/Most</th><th>Worst/Least</th></tr>
+  <tr><td>Electrical conductivity<span class="te-td">విద్యుత్ వాహకత</span></td><td class="trap-right">Silver (Ag)<span class="te-td">వెండి</span></td><td class="trap-wrong">Bismuth (Bi)</td></tr>
+  <tr><td>Thermal conductivity<span class="te-td">ఉష్ణ వాహకత</span></td><td class="trap-right">Silver (Ag)</td><td>—</td></tr>
+  <tr><td>Hardest metal<span class="te-td">కఠినమైన లోహం</span></td><td>Chromium (Cr)<span class="te-td">క్రోమియం</span></td><td>—</td></tr>
+  <tr><td>Lightest metal<span class="te-td">తేలికైన లోహం</span></td><td>Lithium (Li)<span class="te-td">లిథియం</span></td><td>—</td></tr>
+  <tr><td>Most abundant in crust<span class="te-td">భూపటలంలో అత్యధికం</span></td><td>Aluminium (Al)<span class="te-td">అల్యూమినియం</span></td><td>—</td></tr>
+  <tr><td>2nd most abundant metal<span class="te-td">రెండవ అత్యధికం</span></td><td>Iron (Fe)<span class="te-td">ఇనుము</span></td><td>—</td></tr>
+  <tr><td>Liquid metal at RT<span class="te-td">గది ఉష్ణోగ్రతలో ద్రవ లోహం</span></td><td>Mercury (Hg)<span class="te-td">పాదరసం</span></td><td>—</td></tr>
+  <tr><td>Liquid non-metal at RT<span class="te-td">ద్రవ అలోహం</span></td><td>Bromine (Br)<span class="te-td">బ్రోమిన్</span></td><td>—</td></tr>
+</table>
+</div>
+<div>
+<div class="sec-head" style="font-size:8.5pt;">Non-Ferrous vs Ferrous <span class="te" style="font-size:7.5pt;">ఇనుముతో / ఇనుమేతర</span></div>
+<div class="highlight-box" style="margin-bottom:2mm;">
+  <strong>Ferrous metals</strong> (contain Fe or are in the iron group): Iron (Fe), Nickel (Ni), Cobalt (Co), and their alloys (Steel etc.)<br>
+  <span class="te-td">ఇనుమును కలిగిన లోహాలు: Fe, Ni, Co</span><br><br>
+  <strong>Non-ferrous metals</strong> (do NOT contain Fe): Aluminium (Al), Copper (Cu), Gold (Au), Silver (Ag), Zinc (Zn), Lead (Pb), Tin (Sn)<br>
+  <span class="te-td">ఇనుము లేని లోహాలు: Al, Cu, Au, Ag, Zn</span>
+</div>
+<div class="memory-box">
+  <div class="mem-title">🧠 Memory — Noble / Coinage Metals</div>
+  <strong>Coinage metals</strong> (Group 11): Cu, Ag, Au — "<strong>CAG</strong>" (Copper, Ag-Silver, Gold)<br>
+  <span class="te-td">నాణేల లోహాలు: రాగి, వెండి, బంగారం</span><br>
+  Zinc (Zn) is Group 12 — NOT a coinage metal! <span class="exam-tag">TRAP</span><br>
+  <strong>Noble metals</strong> (don't react with air): Au + Pt
+</div>
+</div>
+</div>
+<div class="pn">Page 3</div>
+</div>
+
+<!-- ==================== PAGE 4: COMPOUNDS + ORES ==================== -->
+<div class="page page-break">
+<div class="sec-head">Common Chemical Names, Formulae & Uses <span class="te">సాధారణ రసాయన నామాలు, సూత్రాలు</span></div>
+<table>
+  <tr>
+    <th style="width:22%">Common Name<span class="te-td">సాధారణ పేరు</span></th>
+    <th style="width:22%">Chemical Name<span class="te-td">రసాయన నామం</span></th>
+    <th style="width:20%">Formula</th>
+    <th>Key Fact / Use<span class="te-td">ముఖ్య అంశం</span></th>
+  </tr>
+  <tr>
+    <td><strong>Washing Soda</strong><span class="te-td">వాషింగ్ సోడా</span></td>
+    <td>Sodium carbonate decahydrate<span class="te-td">సోడియం కార్బొనేట్</span></td>
+    <td><span class="chem">Na₂CO₃·10H₂O</span></td>
+    <td>Removes permanent hardness of water; textile industry<span class="te-td">నీటి శాశ్వత కాఠిన్యం తొలగించడం</span></td>
+  </tr>
+  <tr>
+    <td><strong>Baking Soda</strong><span class="te-td">బేకింగ్ సోడా</span></td>
+    <td>Sodium bicarbonate<span class="te-td">సోడియం బైకార్బొనేట్</span></td>
+    <td><span class="chem">NaHCO₃</span></td>
+    <td>Antacid; baking (releases CO₂); fire extinguisher (dry powder)<span class="te-td">ఆంటాసిడ్; కేక్ తయారీ</span></td>
+  </tr>
+  <tr>
+    <td><strong>Plaster of Paris</strong><span class="te-td">ప్లాస్టర్ ఆఫ్ పారిస్</span></td>
+    <td>Calcium sulphate hemihydrate<span class="te-td">కాల్షియం సల్ఫేట్ అర్ధ జలసంయోగ</span></td>
+    <td><span class="chem">2CaSO₄·H₂O</span></td>
+    <td>Made from Gypsum (CaSO₄·2H₂O) by heating at 120°C; used for casts, moulding<span class="te-td">జిప్సం వేడిచేసి తయారు చేస్తారు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Gypsum</strong><span class="te-td">జిప్సం</span></td>
+    <td>Calcium sulphate dihydrate</td>
+    <td><span class="chem">CaSO₄·2H₂O</span></td>
+    <td>Used in cement (setting retarder); fertiliser; natural ore<span class="te-td">సిమెంట్లో వాడతారు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Urea</strong><span class="te-td">యూరియా</span></td>
+    <td>Carbamide<span class="te-td">కార్బమైడ్</span></td>
+    <td><span class="chem">CO(NH₂)₂</span></td>
+    <td>First organic compound synthesised (Wöhler, 1828); N fertiliser (46% N)<span class="te-td">మొదటి సంశ్లేష సేంద్రీయ పదార్థం; నత్రజని ఎరువు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Laughing Gas</strong><span class="te-td">నవ్వుల వాయువు</span></td>
+    <td>Nitrous oxide</td>
+    <td><span class="chem">N₂O</span></td>
+    <td>Anaesthetic in dentistry; causes involuntary laughter<span class="te-td">దంత వైద్యంలో మత్తు మందు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Gobar Gas / Biogas</strong><span class="te-td">గోబర్ గ్యాస్</span></td>
+    <td>Mainly Methane<span class="te-td">మీథేన్</span></td>
+    <td><span class="chem">CH₄ (~60%)</span></td>
+    <td>From anaerobic decomposition of cattle dung; cooking fuel<span class="te-td">పశువుల పేడ కుళ్ళుట ద్వారా; వంట చెరకు</span></td>
+  </tr>
+  <tr>
+    <td><strong>LPG (Cooking Gas)</strong><span class="te-td">వంట గ్యాస్</span></td>
+    <td>Liquefied Petroleum Gas</td>
+    <td>Butane <span class="chem">C₄H₁₀</span> + Propane <span class="chem">C₃H₈</span></td>
+    <td>Domestic fuel; compressed in cylinders<span class="te-td">గృహ వంట ఇంధనం</span></td>
+  </tr>
+  <tr>
+    <td><strong>Green Vitriol</strong><span class="te-td">గ్రీన్ విట్రియోల్</span></td>
+    <td>Ferrous sulphate heptahydrate</td>
+    <td><span class="chem">FeSO₄·7H₂O</span></td>
+    <td><span class="exam-tag">TRAP</span> NOT copper sulphate! Blue Vitriol = CuSO₄·5H₂O (Copper); White Vitriol = ZnSO₄·7H₂O (Zinc)<span class="te-td">ఇనుప సల్ఫేట్ — రాగి కాదు!</span></td>
+  </tr>
+  <tr>
+    <td><strong>Calomel</strong></td>
+    <td>Mercurous chloride</td>
+    <td><span class="chem">Hg₂Cl₂</span></td>
+    <td>Used as fungicide and purgative<span class="te-td">శిలీంధ్రనాశిని</span></td>
+  </tr>
+  <tr>
+    <td><strong>Galena</strong><span class="te-td">గెలీనా</span></td>
+    <td>Lead(II) sulphide</td>
+    <td><span class="chem">PbS</span></td>
+    <td>Most important ore of Lead (Pb)<span class="te-td">సీసం ముఖ్య ఖనిజం</span></td>
+  </tr>
+</table>
+
+<div class="sec-head">Important Ores & Minerals <span class="te">ముఖ్యమైన ఖనిజాలు</span></div>
+<div class="cols-2">
+<table>
+  <tr><th>Ore / Mineral</th><th>Metal Extracted<span class="te-td">లోహం</span></th><th>Formula</th></tr>
+  <tr><td><strong>Bauxite</strong><span class="te-td">బాక్సైట్</span></td><td>Aluminium (Al)<span class="te-td">అల్యూమినియం</span></td><td>Al₂O₃·2H₂O</td></tr>
+  <tr><td>Cryolite</td><td>Aluminium (flux)</td><td>Na₃AlF₆</td></tr>
+  <tr><td>Feldspar</td><td>Aluminium (minor)</td><td>KAlSi₃O₈</td></tr>
+  <tr><td><strong>Haematite</strong><span class="te-td">హెమటైట్</span></td><td>Iron (Fe)<span class="te-td">ఇనుము</span></td><td>Fe₂O₃</td></tr>
+  <tr><td>Magnetite</td><td>Iron (Fe)</td><td>Fe₃O₄</td></tr>
+  <tr><td><strong>Galena</strong><span class="te-td">గెలీనా</span></td><td>Lead (Pb)<span class="te-td">సీసం</span></td><td>PbS</td></tr>
+</table>
+<table>
+  <tr><th>Ore / Mineral</th><th>Metal / Element<span class="te-td">లోహం</span></th><th>Formula</th></tr>
+  <tr><td><strong>Pitchblende</strong><span class="te-td">పిచ్‌బ్లెండ్</span></td><td>Uranium (U) + Radium (Ra)<span class="te-td">యురేనియం + రేడియం</span></td><td>UO₂</td></tr>
+  <tr><td>Rutile</td><td>Titanium (Ti)</td><td>TiO₂</td></tr>
+  <tr><td><strong>Azurite</strong></td><td>Copper (Cu)<span class="te-td">రాగి — Al కాదు!</span></td><td>Cu₃(CO₃)₂(OH)₂</td></tr>
+  <tr><td>Calamine</td><td>Zinc (Zn)<span class="te-td">జింక్</span></td><td>ZnCO₃</td></tr>
+  <tr><td>Calcite/Limestone</td><td>Calcium (Ca)</td><td>CaCO₃</td></tr>
+  <tr><td>Chlorophyll</td><td>Central metal = Magnesium (Mg)<span class="te-td">పత్రహరితంలో Mg</span></td><td>Porphyrin ring</td></tr>
+</table>
+</div>
+
+<div class="shock-box">
+  <div class="shock-title">⚡ CRITICAL TRAP — Azurite is Copper, NOT Aluminium!</div>
+  Q: "Which of the following is NOT an ore of aluminium? (a) Feldspar (b) Bauxite (c) Cryolite (d) Azurite" → Answer: <strong>(d) Azurite</strong> — it is a COPPER mineral. All others contain Al. Also: Radium (Ra) comes from <strong>Pitchblende</strong> (uranium ore) — NOT from Limestone.
+  <span class="te-td">అజురైట్ = రాగి ఖనిజం; అల్యూమినియం ఖనిజం కాదు! రేడియం = పిచ్‌బ్లెండ్ నుండి వస్తుంది</span>
+</div>
+<div class="pn">Page 4</div>
+</div>
+
+<!-- ==================== PAGE 5: SPECIAL FACTS + PERIODIC TABLE ==================== -->
+<div class="page page-break">
+<div class="sec-head">Important Uses of Substances <span class="te">పదార్థాల ముఖ్య ఉపయోగాలు</span></div>
+<table>
+  <tr><th style="width:30%">Substance<span class="te-td">పదార్థం</span></th><th>Use<span class="te-td">ఉపయోగం</span></th><th>Key Exam Fact<span class="te-td">ముఖ్య అంశం</span></th></tr>
+  <tr>
+    <td><strong>CO₂ (Carbon Dioxide)</strong><span class="te-td">కార్బన్ డైయాక్సైడ్</span></td>
+    <td>Fire extinguisher<span class="te-td">అగ్నిమాపక పరికరం</span></td>
+    <td>Does NOT support combustion; heavier than air; safe for electrical fires<span class="te-td">దహనాన్ని పోషించదు; విద్యుత్ అగ్నిప్రమాదానికి సురక్షితం</span></td>
+  </tr>
+  <tr>
+    <td><strong>Helium (He)</strong><span class="te-td">హీలియం</span></td>
+    <td>Weather balloons, airships<span class="te-td">బెలూన్లు</span></td>
+    <td>Lighter than air + NON-FLAMMABLE (unlike H₂ — Hindenburg disaster)<span class="te-td">మండదు; హైడ్రోజన్ మండుతుంది</span></td>
+  </tr>
+  <tr>
+    <td><strong>Lead (Pb)</strong><span class="te-td">సీసం</span></td>
+    <td>Storage batteries<span class="te-td">స్టోరేజ్ బ్యాటరీలు</span></td>
+    <td>Lead-acid battery: Pb (–) + PbO₂ (+) + dil H₂SO₄; 2V per cell; 6 cells = 12V car battery<span class="te-td">కారు బ్యాటరీ; 6 ఘటాలు = 12V</span></td>
+  </tr>
+  <tr>
+    <td><strong>Teflon (PTFE)</strong><span class="te-td">టెఫ్లాన్</span></td>
+    <td>Non-stick cookware coating<span class="te-td">నాన్-స్టిక్ పాత్రలు</span></td>
+    <td>Polytetrafluoroethylene; chemically inert; low friction; <span class="exam-tag">TRAP</span> NOT PVC, NOT polystyrene<span class="te-td">రసాయన జడత్వం; తక్కువ ఘర్షణ</span></td>
+  </tr>
+  <tr>
+    <td><strong>Sulphur (S)</strong><span class="te-td">సల్ఫర్</span></td>
+    <td>Hair setting / perming<span class="te-td">జుట్టు సెట్టింగ్</span></td>
+    <td>Breaks & reforms disulphide bonds (–S–S–) in keratin (hair protein)<span class="te-td">కెరాటిన్‌లోని S–S బంధాలు విచ్ఛిన్నం</span></td>
+  </tr>
+  <tr>
+    <td><strong>Mica</strong><span class="te-td">మైకా</span></td>
+    <td>Electrical insulation + heat resistance<span class="te-td">విద్యుత్ అవాహకం + ఉష్ణ వాహకం</span></td>
+    <td><span class="exam-tag">TRAP</span> Bad conductor of ELECTRICITY but GOOD conductor of HEAT — unique property! Found in Jharkhand, AP (Nellore)<span class="te-td">విద్యుత్ అవాహకం కానీ ఉష్ణ వాహకం</span></td>
+  </tr>
+  <tr>
+    <td><strong>SiC (Carborundum)</strong><span class="te-td">కార్బోరండం</span></td>
+    <td>Cutting abrasive<span class="te-td">కత్తిరింపు అఘర్షణి</span></td>
+    <td>Silicon Carbide; hardness 9–9.5 Mohs; cuts very hard substances<span class="te-td">9.5 మోహ్స్ కాఠిన్యం</span></td>
+  </tr>
+  <tr>
+    <td><strong>TEL (Tetraethyl Lead)</strong></td>
+    <td>Petrol additive (antiknock)<span class="te-td">పెట్రోల్ సంకలితం</span></td>
+    <td>Improves octane rating; NOW BANNED due to Pb pollution; replaced by MTBE<span class="te-td">ఇప్పుడు నిషేధించబడింది</span></td>
+  </tr>
+  <tr>
+    <td><strong>CFC (Freon)</strong><span class="te-td">CFC</span></td>
+    <td>Refrigerants, aerosol propellants<span class="te-td">శీతలీకరణి</span></td>
+    <td>Destroys ozone layer; banned under Montreal Protocol 1987; used in refrigerators<span class="te-td">ఓజోన్ పొర నష్టం; 1987 మాంట్రియల్ ఒప్పందం</span></td>
+  </tr>
+</table>
+
+<div class="cols-2">
+<div>
+<div class="sec-head" style="font-size:8.5pt;">Water — Special Properties <span class="te" style="font-size:7pt;">నీటి విశేష గుణాలు</span></div>
+<table>
+  <tr><th>Property</th><th>Fact / Value</th></tr>
+  <tr><td>Maximum density<span class="te-td">గరిష్ట సాంద్రత</span></td><td><strong>4°C</strong> (3.98°C) = 1000 kg/m³<span class="te-td">4°C వద్ద</span></td></tr>
+  <tr><td>Anomalous expansion<span class="te-td">అసాధారణ వ్యాకోచం</span></td><td>Water EXPANDS on cooling below 4°C → Ice floats<span class="te-td">4°C కంటే తక్కువకు చల్లబడినా వ్యాకోచిస్తుంది</span></td></tr>
+  <tr><td>Best conductor<span class="te-td">వాహకత</span></td><td>Sea water (dissolved ions); Distilled = poorest<span class="te-td">సముద్రపు నీరు అత్యుత్తమ వాహకం</span></td></tr>
+  <tr><td>Most soluble<span class="te-td">నీటిలో కరిగేది</span></td><td>Sugar &gt; Common Salt &gt; Camphor &gt; Sulphur<span class="te-td">చక్కెర &gt; ఉప్పు &gt; కర్పూరం &gt; సల్ఫర్</span></td></tr>
+  <tr><td>Hardness removal<span class="te-td">కాఠిన్యం తొలగింపు</span></td><td>Temp hardness: boiling; Permanent: Washing Soda<span class="te-td">శాశ్వత: వాషింగ్ సోడా</span></td></tr>
+</table>
+</div>
+<div>
+<div class="sec-head" style="font-size:8.5pt;">Periodic Table — Key Points <span class="te" style="font-size:7pt;">ఆవర్తన పట్టిక</span></div>
+<table>
+  <tr><th>Aspect</th><th>Detail</th></tr>
+  <tr><td>Mendeleev (1869)<span class="te-td">మెండలీవ్</span></td><td>Arranged by increasing <strong>Atomic Mass</strong>; left gaps for undiscovered elements<span class="te-td">పరమాణు ద్రవ్యరాశి క్రమంలో</span></td></tr>
+  <tr><td>Modern (Moseley, 1913)<span class="te-td">ఆధునిక పట్టిక</span></td><td>Arranged by increasing <strong>Atomic Number</strong><span class="te-td">పరమాణు సంఖ్య క్రమంలో</span></td></tr>
+  <tr><td>Technetium (Tc, 43)<span class="te-td">టెక్నీషియం</span></td><td>1st man-made transition element; not found in nature<span class="te-td">మొదటి మానవ నిర్మిత పరివర్తన మూలకం</span></td></tr>
+  <tr><td>Ionic size trend<span class="te-td">అయాన్ పరిమాణం</span></td><td>Isoelectronic ions: higher nuclear charge → smaller size; Al³⁺ &lt; Mg²⁺ &lt; Na⁺<span class="te-td">అణు ఆవేశం ఎక్కువ = పరిమాణం తక్కువ</span></td></tr>
+</table>
+<div class="memory-box" style="margin-top:2mm;">
+  <div class="mem-title">🧠 Memory Aid — Vitriols</div>
+  <strong>B</strong>lue = <strong>Cu</strong>SO₄ (Copper — Blue Vitriol)<br>
+  <strong>G</strong>reen = <strong>Fe</strong>SO₄ (Iron — Green Vitriol) <span class="exam-tag">TRAP</span><br>
+  <strong>W</strong>hite = <strong>Zn</strong>SO₄ (Zinc — White Vitriol)<br>
+  "BGW = Cu Fe Zn" 🎨
+</div>
+</div>
+</div>
+<div class="pn">Page 5</div>
+</div>
+
+<!-- ==================== PYQ PAGE ==================== -->
+<div class="page">
+<div class="sec-head">Practice Questions — Model Set 1 (Selected) <span class="te">అభ్యాస ప్రశ్నలు</span></div>
+
+<div class="cols-2">
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q1</span> Organic compounds are compounds of which element?</div><div class="pyq-a">✅ <strong>Carbon (C)</strong> — basis of organic chemistry; catenation property<span class="te"> కర్బన సమ్మేళనాలు = కార్బన్ మూలకం</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q2</span> Most important ore of aluminium?</div><div class="pyq-a">✅ <strong>Bauxite</strong> (Al₂O₃·2H₂O). Azurite = Copper ore; Galena = Lead ore<span class="te"> బాక్సైట్ = అల్యూమినియం; అజురైట్ = రాగి</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q4</span> Alloy used in heating elements of electric devices?</div><div class="pyq-a">✅ <strong>Nichrome</strong> (Ni + Cr) — high resistance + high melting point<span class="te"> నిక్రోమ్ = హీటింగ్ ఎలిమెంట్</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q5</span> Brass composition?</div><div class="pyq-a">✅ <strong>60% Cu + 40% Zn</strong>. Bronze = Cu + Sn; German Silver = Cu + Zn + Ni (no Ag!)<span class="te"> ఇత్తడి = 60% రాగి + 40% జింక్</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q7</span> Diamond is an allotrope of?</div><div class="pyq-a">✅ <strong>Carbon</strong>. Other allotropes: Graphite, Fullerene, C nanotubes<span class="te"> వజ్రం = కార్బన్ రూపాంతరం</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q8</span> Air is a/an?</div><div class="pyq-a">✅ <strong>Mixture</strong> — 78% N₂, 21% O₂, 0.9% Ar, 0.04% CO₂. Variable composition<span class="te"> గాలి = మిశ్రమం; సమ్మేళనం కాదు</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q14</span> Gas used to extinguish fire?</div><div class="pyq-a">✅ <strong>CO₂</strong> — does not support combustion; heavier than air; safe for electrical fires<span class="te"> CO₂ — దహనాన్ని పోషించదు</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q22</span> Non-metal liquid at room temperature?</div><div class="pyq-a">✅ <strong>Bromine (Br₂)</strong> — red liquid. Mercury = only METAL liquid at RT<span class="te"> బ్రోమిన్ = ఏకైక ద్రవ అలోహం</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q24</span> What is laughing gas?</div><div class="pyq-a">✅ <strong>Nitrous oxide (N₂O)</strong> — anaesthetic in dentistry; causes involuntary laughter<span class="te"> నైట్రస్ ఆక్సైడ్ = నవ్వు తెప్పించే వాయువు</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q27</span> Stainless steel is alloy of?</div><div class="pyq-a">✅ <strong>Fe + Cr + Ni</strong>. Chromium (≥10.5%) forms passive oxide, preventing rust<span class="te"> ఇనుము + క్రోమియం + నికెల్</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q28</span> Green Vitriol is which compound?</div><div class="pyq-a">✅ <strong>FeSO₄·7H₂O</strong> (Ferrous sulphate). TRAP: Blue Vitriol = CuSO₄ (Copper), NOT Green!<span class="te"> గ్రీన్ విట్రియోల్ = ఇనుప సల్ఫేట్; బ్లూ = రాగి సల్ఫేట్</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q33</span> Sodium metal is stored under?</div><div class="pyq-a">✅ <strong>Kerosene</strong> — Na reacts with water and air; kerosene creates inert barrier<span class="te"> సోడియం = కిరోసిన్‌లో భద్రపరుస్తారు</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q38</span> Water has maximum density at?</div><div class="pyq-a">✅ <strong>4°C</strong> (anomalous expansion below 4°C → ice floats → aquatic life survives)<span class="te"> నీటి గరిష్ట సాంద్రత 4°C వద్ద</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q39</span> Non-stick pans coated with?</div><div class="pyq-a">✅ <strong>Teflon (PTFE)</strong> — polytetrafluoroethylene; chemically inert, low friction<span class="te"> టెఫ్లాన్ (PTFE) = నాన్-స్టిక్ పాత్రలు</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q43</span> Bad conductor of electricity but good conductor of heat?</div><div class="pyq-a">✅ <strong>Mica</strong> — unique dual property; used in electrical insulation in furnaces<span class="te"> మైకా = విద్యుత్ అవాహకం + ఉష్ణ వాహకం</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q48</span> Central metal in Chlorophyll?</div><div class="pyq-a">✅ <strong>Magnesium (Mg)</strong>. Haemoglobin's central metal = Iron (Fe). Both are metalloporphyrins<span class="te"> క్లోరోఫిల్ = మెగ్నీషియం; హీమోగ్లోబిన్ = ఇనుము</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q49</span> Best conductor of electricity?</div><div class="pyq-a">✅ <strong>Silver (Ag)</strong> — best; then Cu, Au, Al. Mica = insulator<span class="te"> వెండి = అత్యుత్తమ విద్యుత్ వాహకం</span></div></div>
+
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q50</span> Washing soda is?</div><div class="pyq-a">✅ <strong>Sodium Carbonate (Na₂CO₃·10H₂O)</strong>. Baking soda = NaHCO₃ (bicarbonate)<span class="te"> వాషింగ్ సోడా = సోడియం కార్బొనేట్</span></div></div>
+</div>
+
+<!-- RECAP BOX -->
+<div class="sec-head" style="margin-top:3mm;">Quick Recap — Must-Know Facts <span class="te">త్వరిత పునశ్చరణ</span></div>
+<div class="recap-box">
+  <div class="recap-item"><span class="ri-num">1</span>Air = <strong>Mixture</strong> (78% N₂, 21% O₂)<span class="recap-te">గాలి = మిశ్రమం</span></div>
+  <div class="recap-item"><span class="ri-num">2</span>Brass = <strong>Cu(60%) + Zn(40%)</strong> | Bronze = Cu + Sn<span class="recap-te">ఇత్తడి = రాగి + జింక్; కంచు = రాగి + తగరం</span></div>
+  <div class="recap-item"><span class="ri-num">3</span>Nichrome = heating elements (Ni + Cr)<span class="recap-te">నిక్రోమ్ = హీటింగ్ ఎలిమెంట్</span></div>
+  <div class="recap-item"><span class="ri-num">4</span>Stainless Steel = Fe + Cr + Ni<span class="recap-te">స్టెయిన్లెస్ స్టీల్ = ఇనుము + క్రోమియం + నికెల్</span></div>
+  <div class="recap-item"><span class="ri-num">5</span>Diamond = hardest (insulator); Graphite = conductor (pencils)<span class="recap-te">వజ్రం = అవాహకం; గ్రాఫైట్ = వాహకం</span></div>
+  <div class="recap-item"><span class="ri-num">6</span>Only liquid non-metal = <strong>Bromine</strong>; liquid metal = <strong>Mercury</strong><span class="recap-te">ద్రవ అలోహం = బ్రోమిన్; ద్రవ లోహం = పాదరసం</span></div>
+  <div class="recap-item"><span class="ri-num">7</span>Washing Soda = Na₂CO₃; Baking Soda = NaHCO₃; PoP = 2CaSO₄·H₂O<span class="recap-te">సోడాల సూత్రాలు</span></div>
+  <div class="recap-item"><span class="ri-num">8</span>Green Vitriol = FeSO₄ (Iron); Blue Vitriol = CuSO₄ (Copper)<span class="recap-te">విట్రియోల్స్ గుర్తుంచుకోండి</span></div>
+  <div class="recap-item"><span class="ri-num">9</span>Best conductor = Silver (Ag); then Cu, Au, Al<span class="recap-te">అత్యుత్తమ వాహకం = వెండి</span></div>
+  <div class="recap-item"><span class="ri-num">10</span>Bauxite = Al ore; Galena = Pb ore; Pitchblende = U + Ra ore; Azurite = Cu ore<span class="recap-te">ఖనిజాలు — లోహాల జత</span></div>
+  <div class="recap-item"><span class="ri-num">11</span>Chlorophyll = Mg; Haemoglobin = Fe (both metalloporphyrins)<span class="recap-te">క్లోరోఫిల్ = Mg; రక్తం = Fe</span></div>
+  <div class="recap-item"><span class="ri-num">12</span>Water max density = 4°C; Teflon = non-stick coating (PTFE)<span class="recap-te">నీటి గరిష్ట సాంద్రత 4°C; టెఫ్లాన్ = PTFE</span></div>
+  <div class="recap-item"><span class="ri-num">13</span>Red Phosphorus = safety matches (NOT white); Na stored in Kerosene<span class="recap-te">రెడ్ ఫాస్పరస్ = అగ్గిపెట్టె; సోడియం = కిరోసిన్</span></div>
+  <div class="recap-item"><span class="ri-num">14</span>Gobar gas = mainly CH₄; LPG = Butane + Propane; CO₂ = fire extinguisher<span class="recap-te">గోబర్ గ్యాస్ = మీథేన్; CO₂ = అగ్నిమాపకం</span></div>
+  <div class="recap-item"><span class="ri-num">15</span>Mendeleev = atomic mass order (1869); Moseley = atomic number order (1913)<span class="recap-te">మెండలీవ్ = ద్రవ్యరాశి; మోస్లే = పరమాణు సంఖ్య</span></div>
+</div>
+
+<!-- TRAP SHEET -->
+<div class="sec-head">Mega Trap Sheet — Do NOT Get These Wrong! <span class="te">పరీక్ష ఉచ్చులు</span></div>
+<table class="trap-table">
+  <tr><th>Trap Question</th><th>WRONG Answer ✗</th><th>CORRECT Answer ✓</th></tr>
+  <tr><td>Is Air an element, compound or mixture?</td><td class="trap-wrong">Compound</td><td class="trap-right">Mixture — variable composition, separable</td></tr>
+  <tr><td>Does Diamond conduct electricity?</td><td class="trap-wrong">Yes (it's carbon)</td><td class="trap-right">NO — Diamond is insulator; Graphite conducts</td></tr>
+  <tr><td>Brass composition</td><td class="trap-wrong">Cu + Tin (Sn)</td><td class="trap-right">Cu(60%) + Zn(40%) — Tin = Bronze!</td></tr>
+  <tr><td>German Silver contains silver?</td><td class="trap-wrong">Yes</td><td class="trap-right">NO — Cu + Zn + Ni; ZERO silver content</td></tr>
+  <tr><td>Green Vitriol is which compound?</td><td class="trap-wrong">Copper Sulphate (CuSO₄)</td><td class="trap-right">FeSO₄ (Ferrous/Iron sulphate); Blue Vitriol = CuSO₄</td></tr>
+  <tr><td>Azurite is an ore of which metal?</td><td class="trap-wrong">Aluminium (Al)</td><td class="trap-right">Copper (Cu) — NOT Al. Al ores: Bauxite, Cryolite, Feldspar</td></tr>
+  <tr><td>Best conductor of electricity among metals</td><td class="trap-wrong">Copper (Cu)</td><td class="trap-right">Silver (Ag) is best; Copper 2nd (used commercially — cheaper)</td></tr>
+  <tr><td>Washing Soda formula</td><td class="trap-wrong">NaHCO₃ (bicarbonate)</td><td class="trap-right">Na₂CO₃·10H₂O — NaHCO₃ is BAKING soda</td></tr>
+  <tr><td>Which phosphorus in safety matches?</td><td class="trap-wrong">White/Yellow Phosphorus</td><td class="trap-right">Red Phosphorus — White P is toxic & pyrophoric</td></tr>
+  <tr><td>Non-stick coating material</td><td class="trap-wrong">PVC or Polystyrene</td><td class="trap-right">Teflon (PTFE — Polytetrafluoroethylene)</td></tr>
+  <tr><td>Mendeleev arranged elements by</td><td class="trap-wrong">Atomic Number</td><td class="trap-right">Atomic Mass (1869); Modern = Atomic Number (Moseley 1913)</td></tr>
+  <tr><td>Central metal in Chlorophyll</td><td class="trap-wrong">Iron (Fe)</td><td class="trap-right">Magnesium (Mg); Fe is in Haemoglobin</td></tr>
+  <tr><td>Mica conductivity</td><td class="trap-wrong">Conducts both heat & electricity</td><td class="trap-right">Good heat conductor BUT bad electrical conductor</td></tr>
+  <tr><td>Laughing gas chemical name</td><td class="trap-wrong">Carbon dioxide (CO₂)</td><td class="trap-right">Nitrous oxide (N₂O)</td></tr>
+  <tr><td>1st man-made transition element</td><td class="trap-wrong">Zirconium (Zr)</td><td class="trap-right">Technetium (Tc, atomic no. 43)</td></tr>
+</table>
+<div class="pn">Page 6 (PYQ)</div>
+</div>
+
+</body>
+</html>
