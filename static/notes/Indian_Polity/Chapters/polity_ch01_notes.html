@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 1 — Historical Background | Indian Polity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+    background: #eef2f7;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px;
+    background: #fff;
+    padding: 13mm 12mm 11mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+    color: #fff;
+    border-radius: 9px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .hbadge {
+    background: rgba(255,255,255,0.2);
+    border-radius: 7px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .htitle h1 { font-size: 18px; font-weight: 700; }
+  .htitle h2 { font-size: 13.5px; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+  .hmeta { margin-left: auto; text-align: right; font-size: 13px; opacity: 0.8; line-height: 1.7; }
+
+  /* SECTION HEADING */
+  .sh {
+    font-size: 14px;
+    font-weight: 700;
+    color: #283593;
+    background: #e8eaf6;
+    border-left: 5px solid #5c6bc0;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 11px 0 7px;
+    letter-spacing: 0.3px;
+  }
+
+  /* GRIDS */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+
+  /* CARD */
+  .card {
+    background: #f5f7ff;
+    border: 1.5px solid #c5cae9;
+    border-radius: 7px;
+    padding: 8px 10px;
+  }
+  .ch {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1a237e;
+    border-bottom: 1px solid #c5cae9;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
+  }
+
+  /* FACT ROWS */
+  .fact { margin: 3px 0; font-size: 14.5px; }
+  .fact::before { content: "• "; color: #5c6bc0; font-weight: 700; }
+  .k { font-weight: 700; color: #1a237e; }
+  .kg { font-weight: 700; color: #1b5e20; }
+  .kt { font-weight: 700; color: #004d40; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    background: #3949ab;
+    color: #fff;
+    padding: 5px 7px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td { padding: 4px 7px; border-bottom: 1px solid #e8eaf6; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) td { background: #f0f2ff; }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .tg { background: #e8f5e9; color: #1b5e20; }
+  .tb { background: #e3f2fd; color: #0d47a1; }
+  .tp { background: #ede7f6; color: #4527a0; }
+  .tt { background: #e0f7fa; color: #00695c; }
+
+  /* PILLS */
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .pill {
+    background: #3949ab;
+    color: #fff;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .pg { background: #2e7d32; }
+  .pt { background: #00695c; }
+  .pp { background: #4527a0; }
+
+  /* SOURCE GRID */
+  .sgrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
+  .sitem {
+    background: #e8eaf6;
+    border: 1.5px solid #9fa8da;
+    border-radius: 6px;
+    padding: 5px 6px;
+    text-align: center;
+  }
+  .sc { font-size: 13px; font-weight: 700; color: #283593; }
+  .sv { font-size: 12.5px; color: #37474f; margin-top: 2px; line-height: 1.35; }
+
+  /* TIMELINE */
+  .tl { padding-left: 18px; }
+  .tli { position: relative; padding: 3px 0 3px 12px; }
+  .tli::before {
+    content: '';
+    position: absolute;
+    left: -1px; top: 8px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: #5c6bc0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1.5px #5c6bc0;
+  }
+  .tli::after {
+    content: '';
+    position: absolute;
+    left: 3px; top: 17px;
+    width: 2px;
+    height: calc(100% - 8px);
+    background: #c5cae9;
+  }
+  .tli:last-child::after { display: none; }
+  .ty { font-weight: 700; color: #283593; font-size: 14.5px; }
+  .tx { font-size: 14px; color: #333; }
+
+  .footer {
+    border-top: 1.5px solid #c5cae9;
+    margin-top: 10px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ PAGE 1 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 1</div>
+    <div class="htitle">
+      <h1>Historical Background — చారిత్రక నేపథ్యం</h1>
+      <h2>Indian Polity · Lakshmikanth · APPSC Group 2</h2>
+    </div>
+    <div class="hmeta">12 Sections · 88 MCQs<br>Telugu + English</div>
+  </div>
+
+  <!-- TWO PHASES -->
+  <div class="sh">📜 బ్రిటిష్ పాలన — రెండు దశలు (Two Phases)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">🏭 కంపెనీ పాలన (Company Rule) — 1773–1858</div>
+      <div class="fact">వ్యవధి: <span class="k">85 సంవత్సరాలు</span> (1773 నుండి 1858)</div>
+      <div class="fact">మొదటి నియంత్రణ చట్టం: <span class="k">Regulating Act 1773</span></div>
+      <div class="fact">Charter Acts ద్వారా బ్రిటిష్ పార్లమెంట్ నియంత్రణ</div>
+      <div class="fact">1857 సిపాయిల తిరుగుబాటు తర్వాత కంపెనీ పాలన అంతమైంది</div>
+    </div>
+    <div class="card">
+      <div class="ch">👑 క్రౌన్ పాలన (Crown Rule) — 1858–1947</div>
+      <div class="fact">వ్యవధి: <span class="k">89 సంవత్సరాలు</span> (1858 నుండి 1947)</div>
+      <div class="fact">GOI Act 1858 ద్వారా Crown పాలన ప్రారంభం</div>
+      <div class="fact">కంపెనీ పాలన 1857లో కాదు — <span class="k">1858లో</span> అంతమైంది</div>
+      <div class="fact">మొదటి Viceroy: <span class="k">Lord Canning</span></div>
+    </div>
+  </div>
+
+  <!-- ACTS TABLE -->
+  <div class="sh">📋 అన్ని ముఖ్యమైన చట్టాలు — సంపూర్ణ వివరాలు (All Acts — Complete Facts)</div>
+  <table>
+    <thead>
+      <tr><th style="width:16%">చట్టం</th><th style="width:8%">సంవత్సరం</th><th>ముఖ్య విషయాలు (MCQ Facts)</th><th style="width:22%">గుర్తుంచుకోండి</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Regulating Act</b></td>
+        <td><span class="tag tb">1773</span></td>
+        <td>
+          • బ్రిటిష్ పార్లమెంట్ కంపెనీ వ్యవహారాలపై <b>మొదటి నియంత్రణ చట్టం</b><br>
+          • Bengal Governor → <b>Governor General of Bengal</b> (పేరు మార్పు)<br>
+          • Calcutta లో <b>Supreme Court</b> ఏర్పాటు (1774)<br>
+          • Court of Directors బ్రిటిష్ ప్రభుత్వానికి నివేదించాలి
+        </td>
+        <td><b>Warren Hastings</b> = మొదటి G.G. of Bengal</td>
+      </tr>
+      <tr>
+        <td><b>Pitt's India Act</b></td>
+        <td><span class="tag tb">1784</span></td>
+        <td>
+          • <b>Board of Control</b> (రాజకీయ) + Court of Directors (వ్యాపార) = <b>Double Government</b><br>
+          • British Possessions in India అని మొదటిసారి పేర్కొన్నారు<br>
+          • Company వ్యవహారాలపై రాజకీయ నియంత్రణ బలపడింది
+        </td>
+        <td>Board of Control + Court of Directors = Diarchy</td>
+      </tr>
+      <tr>
+        <td><b>Charter Act</b></td>
+        <td><span class="tag tb">1813</span></td>
+        <td>
+          • వ్యాపార గుత్తాధిపత్యం <b>పాక్షికంగా రద్దు</b> (China trade మాత్రం కంపెనీకే)<br>
+          • Christian <b>Missionaries</b> కు భారతదేశంలో ప్రవేశ అనుమతి<br>
+          • India లో వ్యాపారం ఇతరులకు అనుమతి (China/Tea తప్ప)
+        </td>
+        <td>China వ్యాపారం + Tea కంపెనీకే మిగిలింది</td>
+      </tr>
+      <tr>
+        <td><b>Charter Act</b></td>
+        <td><span class="tag tp">1833</span></td>
+        <td>
+          • G.G. of Bengal → <b>Governor General of India</b> (పేరు మార్పు)<br>
+          • కంపెనీ వ్యాపారం <b>పూర్తిగా రద్దు</b> — పూర్తి పాలనా సంస్థ<br>
+          • చట్ట రూపకల్పన అధికారం G.G. Council కి<br>
+          • Civil Services కోసం Open Competition మొదటిసారి ప్రతిపాదించారు (1853లో అమలు)
+        </td>
+        <td><b>Lord William Bentinck</b> = మొదటి G.G. of India</td>
+      </tr>
+      <tr>
+        <td><b>Charter Act</b></td>
+        <td><span class="tag tp">1853</span></td>
+        <td>
+          • <b>Legislative Council</b> మరియు <b>Executive Council</b> వేరు చేశారు<br>
+          • శాసనసభలో Local Province ప్రతినిధులు చేర్పు<br>
+          • Civil Services కి <b>Open Competition</b> (Macaulay Committee సిఫార్సు)<br>
+          • చివరి Charter Act — తర్వాత 1857 తిరుగుబాటు
+        </td>
+        <td>Legislative + Executive వేరు; Open Civil Services</td>
+      </tr>
+      <tr>
+        <td><b>GOI Act</b></td>
+        <td><span class="tag tp">1858</span></td>
+        <td>
+          • కంపెనీ పాలన రద్దు → Crown పాలన ప్రారంభం<br>
+          • <b>Secretary of State for India</b> పదవి (15 Council సభ్యులు)<br>
+          • G.G. ని ఇప్పుడు <b>Viceroy</b> అని పిలుస్తారు<br>
+          • Board of Control + Court of Directors <b>రద్దు</b>
+        </td>
+        <td><b>Lord Canning</b> = మొదటి Viceroy</td>
+      </tr>
+      <tr>
+        <td><b>Indian Councils Act</b></td>
+        <td><span class="tag tb">1861</span></td>
+        <td>
+          • మొదటిసారి భారతీయులకు Council లో <b>Nomination</b><br>
+          • <b>Portfolio System</b> ప్రవేశపెట్టారు (ప్రతి మంత్రికి నిర్దిష్ట శాఖ)<br>
+          • Bombay, Madras Presidencies కి Legislative Powers పునరుద్ధరణ (<b>Decentralization</b>)<br>
+          • Viceroy కి Ordinance చేసే అధికారం
+        </td>
+        <td>Portfolio System + Nomination మొదలు</td>
+      </tr>
+      <tr>
+        <td><b>Indian Councils Act</b></td>
+        <td><span class="tag tb">1892</span></td>
+        <td>
+          • శాసన మండళ్ళలో Non-official సభ్యుల సంఖ్య పెంపు<br>
+          • <b>Indirect Elections</b> మొదలు (నేరుగా కాదు)<br>
+          • <b>Budget చర్చ</b> మరియు ప్రశ్నలు అడగడానికి అనుమతి
+        </td>
+        <td>పరోక్ష ఎన్నికలు + Budget Discussion</td>
+      </tr>
+      <tr>
+        <td><b>Indian Councils Act</b></td>
+        <td><span class="tag tp">1909</span></td>
+        <td>
+          • <b>Morley-Minto Reforms</b> (Morley = Secretary of State; Minto = Viceroy)<br>
+          • <b>Direct Elections</b> మొదటిసారి (పరిమిత స్థాయిలో)<br>
+          • <b>Separate Electorate for Muslims</b> (తర్వాత విభజనకు కారణం)<br>
+          • Viceroy Executive Council లో మొదటి భారతీయ సభ్యుడు: <b>Satyendra Prasad Sinha</b>
+        </td>
+        <td>Separate Electorate = దేశ విభజన విత్తనం</td>
+      </tr>
+      <tr>
+        <td><b>GOI Act</b></td>
+        <td><span class="tag tp">1919</span></td>
+        <td>
+          • <b>Montagu-Chelmsford Reforms</b> (Montagu = SoS; Chelmsford = Viceroy)<br>
+          • రాష్ట్రాల్లో <b>Diarchy</b>: Reserved (Governor నేరుగా) + Transferred (భారతీయ మంత్రులు)<br>
+          • కేంద్రంలో మొదటిసారి <b>Bicameral Legislature</b>: CLA (Lower) + Council of State (Upper)<br>
+          • <b>PSC (Public Service Commission)</b> ఏర్పాటు — UPSC పూర్వ రూపం<br>
+          • Central + State Budgets వేరు; London లో High Commissioner
+        </td>
+        <td>Diarchy at State; Bicameral Centre; PSC = UPSC predecessor</td>
+      </tr>
+      <tr>
+        <td><b>GOI Act</b></td>
+        <td><span class="tag tp">1935</span></td>
+        <td>
+          • <b>Provincial Autonomy</b> — రాష్ట్రాల్లో Diarchy రద్దు<br>
+          • <b>All-India Federation</b> ప్రతిపాదన (Princely States నిరాకరణ వల్ల <b>అమలు కాలేదు</b>)<br>
+          • <b>RBI</b> (Reserve Bank of India) స్థాపన — 1935లోనే<br>
+          • <b>Federal Court</b> ఏర్పాటు — Supreme Court పూర్వ రూపం<br>
+          • 6 రాష్ట్రాల్లో Bicameral Legislature; Council of India రద్దు<br>
+          • మన రాజ్యాంగంలో <b>70%+ అంశాలు</b> ఇక్కడ నుండే<br>
+          • కేంద్రంలో Diarchy ప్రతిపాదన — <b>అమలు కాలేదు</b>
+        </td>
+        <td>అత్యంత విస్తారమైన చట్టం; RBI + Federal Court</td>
+      </tr>
+      <tr>
+        <td><b>Indian Independence Act</b></td>
+        <td><span class="tag tp">1947</span></td>
+        <td>
+          • బ్రిటిష్ పార్లమెంట్ ఆమోదం: <b>July 18, 1947</b>; అమలు: <b>August 15, 1947</b><br>
+          • India + Pakistan రెండు <b>Dominions</b> గా స్వాతంత్ర్యం<br>
+          • రెండు దేశాలు తమ CA ద్వారా Constitutions రూపొందించుకునే వరకు <b>GOI Act 1935</b> వర్తింపు<br>
+          • Princely States పై <b>Paramountcy రద్దు</b><br>
+          • Secretary of State for India పదవి రద్దు<br>
+          • <b>Radcliffe Line</b> = India-Pakistan సరిహద్దు (Sir Cyril Radcliffe)
+        </td>
+        <td>Mountbatten = India 1st G.G.; Jinnah = Pakistan G.G.; Rajagopalachari = last Indian G.G.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">Indian Polity · Lakshmikanth · Chapter 1: Historical Background · APPSC Group 2 · Page 1 of 2</div>
+</div>
+
+<!-- ════════════════ PAGE 2 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 1</div>
+    <div class="htitle">
+      <h1>Historical Background — చారిత్రక నేపథ్యం (Page 2)</h1>
+      <h2>Missions · Sources of Constitution · Diarchy · Key Persons · Revision</h2>
+    </div>
+    <div class="hmeta">APPSC Group 2<br>Lakshmikanth</div>
+  </div>
+
+  <!-- MISSIONS -->
+  <div class="sh">📅 మిషన్లు, కమిషన్లు & కాన్ఫరెన్సులు (Missions & Conferences)</div>
+  <div class="g2">
+    <div class="tl">
+      <div class="tli">
+        <span class="ty">Simon Commission (1927–28)</span><br>
+        <span class="tx">• 7 మంది సభ్యులు — <b>అందరూ బ్రిటిషర్లే</b>, ఒక్క భారతీయుడు లేడు<br>
+        • <b>"Simon Go Back"</b> — దేశవ్యాప్త నిరసన, అన్ని పార్టీల Boycott<br>
+        • 1919 Act సమీక్షకు 1927 నియమింపు; 1928 భారత పర్యటన</span>
+      </div>
+      <div class="tli">
+        <span class="ty">Round Table Conferences (1930–32)</span><br>
+        <span class="tx">• <b>1st RTC (1930-31):</b> Congress పాల్గొనలేదు — Gandhi జైల్లో (Salt Satyagraha)<br>
+        • <b>2nd RTC (1931):</b> Gandhi పాల్గొన్నారు; మతపరమైన విభేదాల వల్ల విఫలం<br>
+        • <b>3rd RTC (1932):</b> Congress పాల్గొనలేదు; <b>Communal Award</b> ప్రకటించారు</span>
+      </div>
+      <div class="tli">
+        <span class="ty">August Offer — 1940</span><br>
+        <span class="tx">• Viceroy <b>Linlithgow</b> ప్రతిపాదన (Wavell కాదు — Wavell = Simla Conference 1945)<br>
+        • Dominion Status వాగ్దానం; Congress + Muslim League రెండూ తిరస్కరించాయి</span>
+      </div>
+    </div>
+    <div class="tl">
+      <div class="tli">
+        <span class="ty">Cripps Mission — 1942</span><br>
+        <span class="tx">• <b>Sir Stafford Cripps</b> నేతృత్వం<br>
+        • Dominion Status వాగ్దానం — Gandhi: <b>"కూలిపోతున్న బ్యాంక్‌పై Post-dated cheque"</b><br>
+        • తిరస్కరణ తర్వాత → <b>Quit India Movement 1942</b></span>
+      </div>
+      <div class="tli">
+        <span class="ty">Cabinet Mission — 1946</span><br>
+        <span class="tx">• 3 సభ్యులు: <b>Pethick-Lawrence + Stafford Cripps + A.V. Alexander</b><br>
+        • Pakistan డిమాండ్ తిరస్కరించింది<br>
+        • <b>Constituent Assembly</b> ఏర్పాటు పథకం ఇచ్చింది<br>
+        • Congress అంగీకరించింది → స్వాతంత్ర్యానికి దారి</span>
+      </div>
+      <div class="tli">
+        <span class="ty">Indian Independence Act — 1947</span><br>
+        <span class="tx">• July 18, 1947 బ్రిటిష్ Parliament ఆమోదం<br>
+        • India 1st G.G.: <b>Lord Mountbatten</b>; చివరి G.G.: <b>C. Rajagopalachari</b> (ఏకైక భారతీయ G.G.)<br>
+        • Pakistan G.G.: <b>Muhammad Ali Jinnah</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY PERSONS -->
+  <div class="sh">🔑 ముఖ్యమైన జంటలు — Persons & Positions (MCQ Favorites)</div>
+  <div class="g3">
+    <div class="card">
+      <div class="ch">Governor Generals</div>
+      <div class="fact"><span class="k">Warren Hastings</span> — మొదటి G.G. of Bengal (1773)</div>
+      <div class="fact"><span class="k">Lord William Bentinck</span> — మొదటి G.G. of India (1833)</div>
+      <div class="fact"><span class="k">C. Rajagopalachari</span> — చివరి + ఏకైక భారతీయ G.G. (1948–50)</div>
+    </div>
+    <div class="card">
+      <div class="ch">Viceroys</div>
+      <div class="fact"><span class="k">Lord Canning</span> — మొదటి Viceroy (1858)</div>
+      <div class="fact"><span class="k">Lord Mountbatten</span> — చివరి Viceroy + India 1st G.G.</div>
+      <div class="fact"><span class="k">Linlithgow</span> — August Offer 1940<br><span class="k">Wavell</span> — Simla Conference 1945</div>
+    </div>
+    <div class="card">
+      <div class="ch">Reforms Persons</div>
+      <div class="fact"><span class="k">Morley + Minto</span> — 1909 (SoS + Viceroy)</div>
+      <div class="fact"><span class="k">Montagu + Chelmsford</span> — 1919 (SoS + Viceroy)</div>
+      <div class="fact"><span class="k">Satyendra Prasad Sinha</span> — మొదటి భారతీయ Executive Council Member (1909)</div>
+    </div>
+  </div>
+
+  <!-- DIARCHY -->
+  <div class="sh">⚖️ Diarchy (ద్వంద్వ పాలన) — 1919 Act — MCQ Trap Points</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">🔒 Reserved Subjects (Governor నేరుగా పాలించేవి)</div>
+      <div class="fact">Finance (ఆర్థికం)</div>
+      <div class="fact">Law &amp; Order (శాంతిభద్రతలు)</div>
+      <div class="fact">Land Revenue (భూమి శిస్తు)</div>
+      <div class="fact">Justice (న్యాయం)</div>
+      <div class="fact">Irrigation (నీటిపారుదల)</div>
+    </div>
+    <div class="card">
+      <div class="ch">🔓 Transferred Subjects (భారతీయ మంత్రులకు)</div>
+      <div class="fact">Education (విద్య)</div>
+      <div class="fact">Health (ఆరోగ్యం)</div>
+      <div class="fact">Local Government (స్థానిక పాలన)</div>
+      <div class="fact">Agriculture (వ్యవసాయం)</div>
+      <div class="fact">Public Works (బహిరంగ నిర్మాణాలు)</div>
+    </div>
+  </div>
+  <div class="fact" style="margin-top:4px; font-size:12px;">
+    ⚠️ రాష్ట్రాల్లో Diarchy = <span class="k">1919 Act</span> &nbsp;|&nbsp; రాష్ట్రాల్లో Diarchy రద్దు = <span class="k">1935 Act</span> (Provincial Autonomy) &nbsp;|&nbsp; కేంద్రంలో Diarchy = 1935 లో ప్రతిపాదన మాత్రమే — <span class="k">అమలు కాలేదు</span>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sh">🌍 భారత రాజ్యాంగం వనరులు (Sources of Indian Constitution)</div>
+  <div class="sgrid">
+    <div class="sitem"><div class="sc">🇬🇧 UK</div><div class="sv">Parliamentary System · Single Citizenship · Rule of Law · Cabinet System · Writ Jurisdiction · Bicameral Parliament</div></div>
+    <div class="sitem"><div class="sc">🇺🇸 USA</div><div class="sv">Fundamental Rights · Judicial Review · Independent Judiciary · Vice-President · Preamble inspiration · Impeachment</div></div>
+    <div class="sitem"><div class="sc">🇮🇪 Ireland</div><div class="sv">DPSP · Rajya Sabha Nomination (Art 80) · Presidential Election (PR/STV method)</div></div>
+    <div class="sitem"><div class="sc">🇨🇦 Canada</div><div class="sv">Strong Centre Federation · Residuary Powers with Centre · Advisory jurisdiction of Supreme Court</div></div>
+    <div class="sitem"><div class="sc">🇦🇺 Australia</div><div class="sv">Concurrent List · Joint Sitting of Parliament · Freedom of Trade &amp; Commerce</div></div>
+    <div class="sitem"><div class="sc">🇷🇺 USSR</div><div class="sv">Fundamental Duties (Art 51A) · Five-Year Plans inspiration · Ideals of Justice in Preamble</div></div>
+    <div class="sitem"><div class="sc">🇩🇪 Germany</div><div class="sv">Suspension of FRs during Emergency (Weimar Republic)</div></div>
+    <div class="sitem"><div class="sc">🇿🇦 S.Africa</div><div class="sv">Amendment Procedure (Special Majority) · Rajya Sabha Members' Election</div></div>
+    <div class="sitem"><div class="sc">🇯🇵 Japan</div><div class="sv">Procedure Established by Law (Article 21 — Right to Life)</div></div>
+    <div class="sitem"><div class="sc">🇫🇷 France</div><div class="sv">Republic concept · Liberty–Equality–Fraternity · Republic ideals in Preamble</div></div>
+  </div>
+
+  <!-- PILLS -->
+  <div class="sh">⚡ Quick Revision — పరీక్షలో తప్పకుండా వచ్చే విషయాలు</div>
+  <div class="pills">
+    <span class="pill">Company Rule = 1773–1858 = 85 yrs</span>
+    <span class="pill pg">Crown Rule = 1858–1947 = 89 yrs</span>
+    <span class="pill">1773 = మొదటి నియంత్రణ చట్టం</span>
+    <span class="pill pt">Warren Hastings = 1st G.G. of Bengal</span>
+    <span class="pill pp">1784 = Board of Control (Double Govt)</span>
+    <span class="pill pg">1833 = G.G. of India = Bentinck</span>
+    <span class="pill">1853 = Open Civil Services</span>
+    <span class="pill pt">1858 = Crown Rule + Canning = 1st Viceroy</span>
+    <span class="pill pp">1861 = Portfolio System + Nomination</span>
+    <span class="pill pg">1909 = Separate Electorate (Muslims) = Satyendra Sinha</span>
+    <span class="pill">1919 = Montagu-Chelmsford = State Diarchy + Bicameral Centre + PSC</span>
+    <span class="pill pt">1935 = Provincial Autonomy + RBI + Federal Court</span>
+    <span class="pill pp">IIA 1947 = July 18 passed; Aug 15 effective</span>
+    <span class="pill pg">Mountbatten = Last Viceroy + 1st G.G. of India</span>
+    <span class="pill">Rajagopalachari = Last + Only Indian G.G.</span>
+    <span class="pill pt">Jinnah = 1st G.G. of Pakistan</span>
+    <span class="pill pp">Radcliffe Line = India–Pakistan Boundary</span>
+    <span class="pill pg">USA = FRs | Ireland = DPSP</span>
+    <span class="pill">Canada = Residuary Powers | Australia = Concurrent List</span>
+    <span class="pill pt">USSR = Fundamental Duties | Japan = Art.21 Procedure</span>
+    <span class="pill pp">August Offer 1940 = Linlithgow (NOT Wavell)</span>
+    <span class="pill pg">Cripps 1942 = "Post-dated cheque on crashing bank" — Gandhi</span>
+    <span class="pill">Cabinet Mission 1946 = Pethick-Lawrence + Cripps + A.V. Alexander</span>
+    <span class="pill pt">Simon Commission = 7 British members; No Indians; Boycotted</span>
+    <span class="pill pp">All-India Federation (1935) = Never implemented (Princely States refused)</span>
+    <span class="pill pg">Diarchy at State level = 1919; Diarchy at Centre (1935) = Never implemented</span>
+  </div>
+
+  <div class="footer">Indian Polity · Lakshmikanth · Chapter 1: Historical Background · APPSC Group 2 · Page 2 of 2</div>
+</div>
+
+</body>
+</html>

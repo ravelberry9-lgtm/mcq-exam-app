@@ -1353,7 +1353,9 @@ def notes_chapter(subject, topic, chapter_id):
     conn.close()
     if not chapter:
         return redirect('/notes')
-    sections = json.loads(chapter['sections_json'])
+    sections_raw = json.loads(chapter['sections_json'])
+    # Filter out sections with no audio/text content so empty cards aren't shown
+    sections = [s for s in sections_raw if (s.get('audio') or s.get('text') or '').strip()]
     # Pre-compute estimated total seconds (130 wpm at 1×) for the chapter header
     try:
         total_words = sum(len((s.get('audio') or s.get('text') or '').split()) for s in sections)
@@ -1363,10 +1365,30 @@ def notes_chapter(subject, topic, chapter_id):
     # Check if an HTML read-notes file exists for this chapter
     html_notes_file = None
     notes_map = {
-        ('GK', 'AP_Geography', 1): 'ap_geo_ch1_notes.html',
-        ('GK', 'AP_Geography', 2): 'ap_geo_ch2_notes.html',
-        ('GK', 'AP_Geography', 3): 'ap_geo_ch3_notes.html',
-        ('GK', 'AP_Geography', 4): 'ap_geo_ch4_notes.html',
+        # AP Geography
+        ('GK', 'AP_Geography', 1): 'AP_Geography/Chapters/ch01_location_area.html',
+        ('GK', 'AP_Geography', 2): 'AP_Geography/Chapters/ch02_physiography.html',
+        ('GK', 'AP_Geography', 3): 'AP_Geography/Chapters/ch03_climate.html',
+        ('GK', 'AP_Geography', 4): 'AP_Geography/Chapters/ch04_soil_resources.html',
+        ('GK', 'AP_Geography', 5): 'AP_Geography/Chapters/ch05_forests_wildlife.html',
+        ('GK', 'AP_Geography', 6): 'AP_Geography/Chapters/ch06_river_system.html',
+        ('GK', 'AP_Geography', 7): 'AP_Geography/Chapters/ch07_irrigation.html',
+        ('GK', 'AP_Geography', 8): 'AP_Geography/Chapters/ch08_power_sector.html',
+        ('GK', 'AP_Geography', 9): 'AP_Geography/Chapters/ch09_agriculture.html',
+        ('GK', 'AP_Geography', 10): 'AP_Geography/Chapters/ch10_minerals.html',
+        # Indian Polity
+        ('GK', 'Indian_Polity', 1):  'Indian_Polity/Chapters/polity_ch01_notes.html',
+        ('GK', 'Indian_Polity', 2):  'Indian_Polity/Chapters/polity_ch02_notes.html',
+        ('GK', 'Indian_Polity', 3):  'Indian_Polity/Chapters/polity_ch03_notes.html',
+        ('GK', 'Indian_Polity', 4):  'Indian_Polity/Chapters/polity_ch04_notes.html',
+        ('GK', 'Indian_Polity', 5):  'Indian_Polity/Chapters/polity_ch05_notes.html',
+        ('GK', 'Indian_Polity', 6):  'Indian_Polity/Chapters/polity_ch06_notes.html',
+        ('GK', 'Indian_Polity', 7):  'Indian_Polity/Chapters/polity_ch07_notes.html',
+        ('GK', 'Indian_Polity', 8):  'Indian_Polity/Chapters/polity_ch08_notes.html',
+        ('GK', 'Indian_Polity', 9):  'Indian_Polity/Chapters/polity_ch09_notes.html',
+        ('GK', 'Indian_Polity', 10): 'Indian_Polity/Chapters/polity_ch10_notes.html',
+        ('GK', 'Indian_Polity', 11): 'Indian_Polity/Chapters/polity_ch11_notes.html',
+        ('GK', 'Indian_Polity', 12): 'Indian_Polity/Chapters/polity_ch12_notes.html',
     }
     key = (chapter.get('subject',''), chapter.get('topic',''), chapter.get('chapter_num',0))
     if key in notes_map:

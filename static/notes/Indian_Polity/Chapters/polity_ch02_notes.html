@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 2 — Making of the Constitution | Indian Polity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+    background: #eef2f7;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px;
+    background: #fff;
+    padding: 13mm 12mm 11mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%);
+    color: #fff;
+    border-radius: 9px;
+    padding: 11px 16px;
+    margin-bottom: 11px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .hbadge {
+    background: rgba(255,255,255,0.2);
+    border-radius: 7px;
+    padding: 5px 13px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .htitle h1 { font-size: 18px; font-weight: 700; }
+  .htitle h2 { font-size: 13.5px; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+  .hmeta { margin-left: auto; text-align: right; font-size: 13px; opacity: 0.8; line-height: 1.7; }
+
+  /* SECTION HEADING */
+  .sh {
+    font-size: 14px;
+    font-weight: 700;
+    color: #4a148c;
+    background: #f3e5f5;
+    border-left: 5px solid #9c27b0;
+    padding: 5px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 10px 0 6px;
+    letter-spacing: 0.3px;
+  }
+
+  /* GRIDS */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+  .g4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; }
+
+  /* CARD */
+  .card {
+    background: #fdf4ff;
+    border: 1.5px solid #ce93d8;
+    border-radius: 7px;
+    padding: 8px 10px;
+  }
+  .ch {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #4a148c;
+    border-bottom: 1px solid #ce93d8;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
+  }
+
+  /* FACT */
+  .fact { margin: 3px 0; font-size: 14.5px; }
+  .fact::before { content: "• "; color: #9c27b0; font-weight: 700; }
+  .k { font-weight: 700; color: #4a148c; }
+  .kg { font-weight: 700; color: #1b5e20; }
+  .kb { font-weight: 700; color: #0d47a1; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    background: #6a1b9a;
+    color: #fff;
+    padding: 5px 7px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td { padding: 4px 7px; border-bottom: 1px solid #f3e5f5; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) td { background: #faf0ff; }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .tg { background: #e8f5e9; color: #1b5e20; }
+  .tb { background: #e3f2fd; color: #0d47a1; }
+  .tp { background: #ede7f6; color: #4527a0; }
+
+  /* NUMBER BOXES */
+  .numstrip { display: flex; gap: 7px; flex-wrap: wrap; margin: 5px 0; }
+  .nbox {
+    background: #5e35b1;
+    color: #fff;
+    border-radius: 7px;
+    padding: 6px 12px;
+    text-align: center;
+    min-width: 62px;
+  }
+  .nbox .n { font-size: 18px; font-weight: 700; line-height: 1.1; }
+  .nbox .l { font-size: 9.5px; opacity: 0.85; margin-top: 2px; }
+  .nbox.gb { background: #2e7d32; }
+  .nbox.bl { background: #1565c0; }
+  .nbox.tl { background: #00695c; }
+
+  /* CONST NUMBERS */
+  .cbox {
+    background: linear-gradient(135deg, #4a148c, #7b1fa2);
+    color: #fff;
+    border-radius: 8px;
+    padding: 9px 14px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+  }
+  .cbox.grn { background: linear-gradient(135deg, #2e7d32, #388e3c); }
+  .ci { text-align: center; }
+  .ci .cn { font-size: 24px; font-weight: 700; line-height: 1.1; }
+  .ci .cl { font-size: 9.5px; opacity: 0.85; margin-top: 2px; }
+  .cdiv { width: 1.5px; height: 44px; background: rgba(255,255,255,0.3); }
+
+  /* PILLS */
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .pill {
+    background: #5e35b1;
+    color: #fff;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .pg { background: #2e7d32; }
+  .pt { background: #00695c; }
+  .pb { background: #1565c0; }
+
+  /* TIMELINE */
+  .tl { padding-left: 18px; }
+  .tli { position: relative; padding: 3px 0 3px 12px; }
+  .tli::before {
+    content: '';
+    position: absolute;
+    left: -1px; top: 8px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: #9c27b0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1.5px #9c27b0;
+  }
+  .tli::after {
+    content: '';
+    position: absolute;
+    left: 3px; top: 17px;
+    width: 2px;
+    height: calc(100% - 8px);
+    background: #ce93d8;
+  }
+  .tli:last-child::after { display: none; }
+  .ty { font-weight: 700; color: #6a1b9a; font-size: 14.5px; }
+  .tx { font-size: 14px; color: #333; }
+
+  /* PERSON CARD */
+  .pcard {
+    background: #fdf4ff;
+    border: 1.5px solid #ce93d8;
+    border-radius: 7px;
+    padding: 6px 8px;
+    text-align: center;
+  }
+  .pname { font-weight: 700; font-size: 13.5px; color: #4a148c; }
+  .prole { font-size: 12.5px; color: #666; margin-top: 2px; line-height: 1.3; }
+
+  .footer {
+    border-top: 1.5px solid #ce93d8;
+    margin-top: 10px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ PAGE 1 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 2</div>
+    <div class="htitle">
+      <h1>Making of the Constitution — రాజ్యాంగ నిర్మాణం</h1>
+      <h2>Indian Polity · Lakshmikanth · APPSC Group 2</h2>
+    </div>
+    <div class="hmeta">9 Sections · 62 MCQs · 8 PYQs<br>Telugu + English</div>
+  </div>
+
+  <!-- DEMAND -->
+  <div class="sh">📣 రాజ్యాంగ నిర్మాణ సభ డిమాండ్ — కాలక్రమం (CA Demand Timeline)</div>
+  <div class="g2">
+    <div class="tl">
+      <div class="tli">
+        <span class="ty">1934 — M.N. Roy <span class="tag tp">⭐ మొదటి</span></span><br>
+        <span class="tx"><b>Manabendra Nath Roy</b> మొట్టమొదటి CA డిమాండ్ చేశారు<br>
+        APPSC + UPSC రెండిటిలో తరచుగా అడిగే ప్రశ్న</span>
+      </div>
+      <div class="tli">
+        <span class="ty">1935 — INC అధికారికంగా</span><br>
+        <span class="tx">Indian National Congress అధికారికంగా CA డిమాండ్ చేసింది<br>
+        <b>M.N. Roy కంటే 1 సంవత్సరం తర్వాత</b> — ఇక్కడ తప్పు చేయకండి</span>
+      </div>
+      <div class="tli">
+        <span class="ty">1940 — August Offer</span><br>
+        <span class="tx">Viceroy <b>Linlithgow</b> (Wavell కాదు!) CA కి పాక్షిక అంగీకారం<br>
+        Congress + Muslim League రెండూ తిరస్కరించాయి</span>
+      </div>
+    </div>
+    <div class="tl">
+      <div class="tli">
+        <span class="ty">1942 — Cripps Mission</span><br>
+        <span class="tx"><b>Sir Stafford Cripps</b> నేతృత్వం; CA ఏర్పాటు ప్రతిపాదించింది<br>
+        Gandhi తిరస్కరించారు → Quit India Movement</span>
+      </div>
+      <div class="tli">
+        <span class="ty">1946 — Cabinet Mission <span class="tag tg">✓ అసలు పథకం</span></span><br>
+        <span class="tx">3 సభ్యులు: <b>Pethick-Lawrence + Cripps + A.V. Alexander</b><br>
+        Pakistan డిమాండ్ తిరస్కరించింది<br>
+        <b>CA ఏర్పాటు అసలు పథకం</b> ఇచ్చింది; Congress అంగీకరించింది</span>
+      </div>
+      <div class="tli">
+        <span class="ty">క్రమం (Sequence)</span><br>
+        <span class="tx"><b>M.N.Roy (1934) → INC (1935) → August Offer (1940) → Cripps (1942) → Cabinet Mission (1946)</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPOSITION -->
+  <div class="sh">📊 రాజ్యాంగ నిర్మాణ సభ కూర్పు (Composition of Constituent Assembly)</div>
+  <div class="g2">
+    <div>
+      <div class="numstrip">
+        <div class="nbox"><div class="n">389</div><div class="l">మొత్తం<br>(విభజన ముందు)</div></div>
+        <div class="nbox bl"><div class="n">296</div><div class="l">British India<br>Provinces</div></div>
+        <div class="nbox tl"><div class="n">93</div><div class="l">స్వదేశీ<br>సంస్థానాలు</div></div>
+        <div class="nbox gb"><div class="n">299</div><div class="l">విభజన తర్వాత<br>(India కోసం)</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ch">ఎన్నిక వివరాలు</div>
+      <div class="fact">ఎన్నిక పద్ధతి: <span class="k">STV (Single Transferable Vote)</span></div>
+      <div class="fact">నిష్పత్తి: <span class="k">10 లక్షల జనాభాకు 1 సభ్యుడు</span></div>
+      <div class="fact">ఇది <span class="k">పరోక్ష ఎన్నిక</span> — Provincial MLAs ఎన్నికించారు</div>
+      <div class="fact"><span class="k">Muslim League</span> మొదటి సమావేశాన్ని బహిష్కరించింది</div>
+      <div class="fact">మహిళా సభ్యులు: <span class="k">15 మంది</span></div>
+      <div class="fact">మొదటి సమావేశంలో హాజరైన వారు: <span class="k">207 మంది</span></div>
+    </div>
+  </div>
+
+  <!-- SESSIONS & PERSONS -->
+  <div class="sh">📅 మొదటి సమావేశాలు — కీలక తేదీలు & వ్యక్తులు (Key Dates & Persons)</div>
+  <div class="g3">
+    <div class="card">
+      <div class="ch">🗓 December 9, 1946 — మొదటి సమావేశం</div>
+      <div class="fact">తాత్కాలిక అధ్యక్షుడు: <span class="k">Dr. Sacchidananda Sinha</span></div>
+      <div class="fact">ఎందుకు? అత్యంత <span class="k">పెద్ద వయస్సు</span> కారణంగా (oldest member)</div>
+      <div class="fact">Muslim League రాలేదు; 207 మంది హాజరు</div>
+    </div>
+    <div class="card">
+      <div class="ch">🗓 December 11, 1946</div>
+      <div class="fact">శాశ్వత అధ్యక్షుడు: <span class="k">Dr. Rajendra Prasad</span></div>
+      <div class="fact">ఉపాధ్యక్షులు: <span class="k">H.C. Mukherjee</span> + V.T. Krishnamachari</div>
+      <div class="fact">రాజ్యాంగ సలహాదారు: <span class="k">Sir B.N. Rau</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">⏱ CA Statistics</div>
+      <div class="fact">మొత్తం Sessions: <span class="k">11</span></div>
+      <div class="fact">మొత్తం రోజులు (Sittings): <span class="k">166 రోజులు</span></div>
+      <div class="fact">పట్టిన సమయం: <span class="k">2 సంవత్సరాలు, 11 నెలలు, 18 రోజులు</span></div>
+      <div class="fact">మొత్తం ఖర్చు: <span class="k">₹64 లక్షలు</span></div>
+    </div>
+  </div>
+
+  <!-- COMMITTEES -->
+  <div class="sh">🏛 ముఖ్య కమిటీలు (Key Committees & Chairmen)</div>
+  <table>
+    <thead>
+      <tr><th>కమిటీ / Committee</th><th>అధ్యక్షుడు / Chairman</th><th>గమనిక</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Drafting Committee</b> (ముసాయిదా కమిటీ)</td>
+        <td><b style="color:#4a148c;">Dr. B.R. Ambedkar</b></td>
+        <td><span class="tag tp">అత్యంత ముఖ్యమైన కమిటీ ⭐</span></td>
+      </tr>
+      <tr>
+        <td>Union Powers Committee</td>
+        <td>Jawaharlal Nehru</td>
+        <td rowspan="2">నెహ్రూ <b>రెండు</b> Union Committees</td>
+      </tr>
+      <tr>
+        <td>Union Constitution Committee</td>
+        <td>Jawaharlal Nehru</td>
+      </tr>
+      <tr>
+        <td>Provincial Constitution Committee</td>
+        <td>Sardar Vallabhbhai Patel</td>
+        <td rowspan="2">పటేల్ <b>రెండు</b> Committees</td>
+      </tr>
+      <tr>
+        <td>Advisory Committee on FRs &amp; Minorities</td>
+        <td>Sardar Vallabhbhai Patel</td>
+      </tr>
+      <tr>
+        <td>Steering Committee</td>
+        <td>Dr. Rajendra Prasad</td>
+        <td>CA అధ్యక్షుడే Chairman</td>
+      </tr>
+      <tr>
+        <td>Credential Committee (Nomination)</td>
+        <td>Alladi Krishnaswami Ayyar</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- DRAFTING COMMITTEE -->
+  <div class="sh">✍️ ముసాయిదా కమిటీ — 7 సభ్యులు (Drafting Committee — Aug 29, 1947)</div>
+  <div class="g4">
+    <div class="pcard">
+      <div class="pname">Dr. B.R. Ambedkar</div>
+      <div class="prole">Chairman<br>"Father of Constitution"<br>"Modern Manu"<br>Granville Austin: "Chief Architect"</div>
+    </div>
+    <div class="pcard">
+      <div class="pname">N. Gopalaswami Ayyangar</div>
+      <div class="prole">Member</div>
+    </div>
+    <div class="pcard">
+      <div class="pname">Alladi Krishnaswami Ayyar</div>
+      <div class="prole">Member</div>
+    </div>
+    <div class="pcard">
+      <div class="pname">Dr. K.M. Munshi</div>
+      <div class="prole">Member</div>
+    </div>
+    <div class="pcard">
+      <div class="pname">Syed M. Saadulla</div>
+      <div class="prole">Member</div>
+    </div>
+    <div class="pcard">
+      <div class="pname">N. Madhava Rau</div>
+      <div class="prole">Replaced <b>B.L. Mitter</b><br>(అనారోగ్యంతో రాజీనామా)</div>
+    </div>
+    <div class="pcard">
+      <div class="pname">T.T. Krishnamachari</div>
+      <div class="prole">Replaced <b>D.P. Khaitan</b><br>(మరణం తర్వాత)</div>
+    </div>
+    <div class="pcard" style="background:#e8f5e9; border-color:#81c784;">
+      <div class="pname" style="color:#1b5e20;">ముఖ్య తేదీలు</div>
+      <div class="prole">ఏర్పాటు: Aug 29, 1947<br>Draft: February 1948<br>Public opinion: 8 నెలలు<br>1st Reading: Nov 4, 1948</div>
+    </div>
+  </div>
+
+  <div class="footer">Indian Polity · Lakshmikanth · Chapter 2: Making of the Constitution · APPSC Group 2 · Page 1 of 2</div>
+</div>
+
+<!-- ════════════════ PAGE 2 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 2</div>
+    <div class="htitle">
+      <h1>Making of the Constitution — రాజ్యాంగ నిర్మాణం (Page 2)</h1>
+      <h2>Objective Resolution · Adoption · Commencement · Numbers · Criticisms · Revision</h2>
+    </div>
+    <div class="hmeta">APPSC Group 2<br>62 MCQs · 8 PYQs</div>
+  </div>
+
+  <!-- OBJECTIVE RESOLUTION -->
+  <div class="sh">🎯 లక్ష్య తీర్మానం (Objective Resolution)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">కీలక వివరాలు</div>
+      <div class="fact">ప్రవేశపెట్టారు: <span class="k">Jawaharlal Nehru</span></div>
+      <div class="fact">ప్రవేశపెట్టిన తేదీ: <span class="k">December 13, 1946</span></div>
+      <div class="fact">ఆమోదించిన తేదీ: <span class="kg">January 22, 1947</span></div>
+      <div class="fact">రాజ్యాంగం యొక్క <span class="k">ఆత్మ (Spirit)</span></div>
+      <div class="fact"><span class="k">Preamble (ప్రస్తావన)</span> కి పునాది వేసింది</div>
+    </div>
+    <div class="card">
+      <div class="ch">తీర్మానంలో ముఖ్య అంశాలు</div>
+      <div class="fact">"<span class="k">Independent Sovereign Democratic Republic</span>" ప్రకటన</div>
+      <div class="fact">స్వేచ్ఛ, సమానత్వం, న్యాయం సూత్రాలు నిర్వచించింది</div>
+      <div class="fact">మైనారిటీలు, వెనుకబడిన వర్గాల హక్కుల హామీ</div>
+      <div class="fact">ఇది Preamble కి పూర్వ రూపం</div>
+    </div>
+  </div>
+
+  <!-- ADOPTION & COMMENCEMENT -->
+  <div class="sh">✅ రాజ్యాంగ ఆమోదం మరియు అమలు (Adoption & Commencement)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">📅 November 26, 1949 — ఆమోదం</div>
+      <div class="fact"><span class="k">రాజ్యాంగ దినం (Constitution Day / Samvidhan Diwas)</span> — 2015 నుండి</div>
+      <div class="fact">సంతకాలు: <span class="k">November 24, 1949</span></div>
+      <div class="fact">వెంటనే అమలులోకి వచ్చినవి (Nov 26, 1949 నే):</div>
+      <div class="fact" style="margin-left:8px;">① Citizenship (పౌరసత్వం)</div>
+      <div class="fact" style="margin-left:8px;">② Elections (ఎన్నికలు)</div>
+      <div class="fact" style="margin-left:8px;">③ Provisional Parliament</div>
+      <div class="fact" style="margin-left:8px;">④ Short Title</div>
+    </div>
+    <div class="card">
+      <div class="ch">📅 January 26, 1950 — అమలు (Commencement)</div>
+      <div class="fact">ఎందుకు జనవరి 26 ఎంచుకున్నారు?</div>
+      <div class="fact"><span class="k">January 26, 1930</span> — INC "పూర్ణ స్వరాజ్యం (Purna Swaraj)" ప్రకటించింది</div>
+      <div class="fact">ఆ చారిత్రాత్మక రోజు స్మారకంగా Jan 26, 1950 ఎంచుకున్నారు</div>
+      <div class="fact">ఈ రోజు నుండి <span class="k">Republic of India</span> ప్రారంభమైంది</div>
+    </div>
+  </div>
+
+  <!-- CONSTITUTION NUMBERS -->
+  <div class="sh">🔢 రాజ్యాంగ సంఖ్యలు — Original vs Current</div>
+  <div class="g2">
+    <div>
+      <div style="font-weight:700; color:#4a148c; font-size:12px; margin-bottom:5px;">📜 1949 — Original రాజ్యాంగం:</div>
+      <div class="cbox">
+        <div class="ci"><div class="cn">395</div><div class="cl">ఆర్టికల్స్</div></div>
+        <div class="cdiv"></div>
+        <div class="ci"><div class="cn">22</div><div class="cl">భాగాలు (Parts)</div></div>
+        <div class="cdiv"></div>
+        <div class="ci"><div class="cn">8</div><div class="cl">షెడ్యూల్స్</div></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-weight:700; color:#1b5e20; font-size:12px; margin-bottom:5px;">📗 Current రాజ్యాంగం (సవరణల తర్వాత):</div>
+      <div class="cbox grn">
+        <div class="ci"><div class="cn">~470</div><div class="cl">ఆర్టికల్స్</div></div>
+        <div class="cdiv"></div>
+        <div class="ci"><div class="cn">25</div><div class="cl">భాగాలు (Parts)</div></div>
+        <div class="cdiv"></div>
+        <div class="ci"><div class="cn">12</div><div class="cl">షెడ్యూల్స్</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRITICISMS -->
+  <div class="sh">⚠️ రాజ్యాంగ నిర్మాణ సభపై విమర్శలు (Criticisms — MCQ Points)</div>
+  <table>
+    <thead>
+      <tr><th style="width:28%">విమర్శ</th><th>వివరాలు (MCQ Facts)</th><th style="width:22%">ఎవరు చెప్పారు</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>ప్రాతినిధ్యం లేదు</b><br>(Not Representative)</td>
+        <td>
+          • ప్రజలు నేరుగా ఎన్నుకోలేదు — Provincial MLAs ఎన్నికించారు<br>
+          • సార్వత్రిక వయోజన ఓటు హక్కు (Universal Adult Franchise) ద్వారా కాదు<br>
+          • పరిమిత franchise ఆధారంగా మాత్రమే
+        </td>
+        <td><b>Winston Churchill</b> — <i>"one-party body"</i></td>
+      </tr>
+      <tr>
+        <td><b>కాంగ్రెస్ ఆధిపత్యం</b><br>(Congress Dominated)</td>
+        <td>
+          • చాలా మంది సభ్యులు Congress నుండే వచ్చారు<br>
+          • Muslim League boycott చేసింది — ప్రాతినిధ్యం తక్కువ
+        </td>
+        <td>Granville Austin కూడా "one-party document" అన్నారు</td>
+      </tr>
+      <tr>
+        <td><b>న్యాయవాదుల పార్లమెంట్</b><br>(Lawyer's Paradise)</td>
+        <td>
+          • చాలా మంది సభ్యులు న్యాయవాదులు<br>
+          • సామాన్య ప్రజల ప్రాతినిధ్యం తక్కువ
+        </td>
+        <td>సాధారణ విమర్శకులు</td>
+      </tr>
+      <tr>
+        <td><b>సమయం & ఖర్చు</b></td>
+        <td>
+          • దాదాపు <b>3 సంవత్సరాలు</b> పట్టింది (2yr 11m 18d)<br>
+          • <b>₹64 లక్షలు</b> ఖర్చు అయింది
+        </td>
+        <td>విమర్శకులు</td>
+      </tr>
+      <tr>
+        <td><b>అప్పు తెచ్చిన రాజ్యాంగం</b><br>(Borrowed Constitution)</td>
+        <td>
+          • చాలా అంశాలు ఇతర దేశాల రాజ్యాంగాల నుండి స్వీకరించారు<br>
+          • GOI Act 1935 నుండి 70%+ అంశాలు
+        </td>
+        <td><b>T.T. Krishnamachari</b> (CA లోనే మాట్లాడారు)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- IMPORTANT QUOTES -->
+  <div class="sh">💬 ముఖ్యమైన వ్యాఖ్యలు & వ్యక్తులు (Quotes & Key Persons)</div>
+  <div class="g3">
+    <div class="card">
+      <div class="ch">Dr. B.R. Ambedkar</div>
+      <div class="fact">"Father of Indian Constitution"</div>
+      <div class="fact">"Modern Manu" అని కూడా పిలుస్తారు</div>
+      <div class="fact">Granville Austin: <b>"Chief Architect"</b></div>
+      <div class="fact">Drafting Committee Chairman</div>
+      <div class="fact">"రాజ్యాంగం పని చేయకపోతే తప్పు మనది"</div>
+    </div>
+    <div class="card">
+      <div class="ch">Dr. Rajendra Prasad</div>
+      <div class="fact">CA శాశ్వత అధ్యక్షుడు (Dec 11, 1946)</div>
+      <div class="fact">Steering Committee Chairman</div>
+      <div class="fact">India మొదటి <b>రాష్ట్రపతి</b></div>
+      <div class="fact">రాజ్యాంగంపై చివరి సంతకం చేశారు</div>
+    </div>
+    <div class="card">
+      <div class="ch">Sir B.N. Rau</div>
+      <div class="fact">Constitutional Adviser (రాజ్యాంగ సలహాదారు)</div>
+      <div class="fact">H.C. Mukherjee = VP of CA (అధ్యక్షుడు కాదు)</div>
+      <div class="fact">Jawaharlal Nehru = Objective Resolution</div>
+      <div class="fact">Granville Austin = "Working a Democratic Constitution" రచయిత</div>
+    </div>
+  </div>
+
+  <!-- QUICK PILLS -->
+  <div class="sh">⚡ Quick Revision Pills — పరీక్షకు ముందు</div>
+  <div class="pills">
+    <span class="pill">M.N. Roy 1934 = మొదటి CA డిమాండ్</span>
+    <span class="pill pg">INC 1935 = అధికారిక CA డిమాండ్</span>
+    <span class="pill pt">Cabinet Mission 1946 = అసలు CA పథకం</span>
+    <span class="pill pb">August Offer 1940 = Linlithgow (Wavell కాదు!)</span>
+    <span class="pill">Cripps Mission 1942 = Stafford Cripps</span>
+    <span class="pill pg">Cabinet Mission = Pethick-Lawrence + Cripps + A.V. Alexander</span>
+    <span class="pill pt">389 (మొత్తం) = 296 (Provinces) + 93 (Princely States)</span>
+    <span class="pill pb">299 = విభజన తర్వాత India CA</span>
+    <span class="pill">STV = ఎన్నిక పద్ధతి; 10 లక్షలకు 1 సభ్యుడు</span>
+    <span class="pill pg">Dec 9, 1946 = మొదటి సమావేశం; 207 హాజరు</span>
+    <span class="pill pt">Sacchidananda Sinha = తాత్కాలిక అధ్యక్షుడు (oldest member)</span>
+    <span class="pill pb">Dec 11, 1946 = Rajendra Prasad = శాశ్వత అధ్యక్షుడు</span>
+    <span class="pill">B.N. Rau = రాజ్యాంగ సలహాదారు; H.C. Mukherjee = VP</span>
+    <span class="pill pg">11 Sessions | 166 Days | 2yr 11m 18d | ₹64 lakh</span>
+    <span class="pill pt">Ambedkar = Drafting Committee; Nehru = 2 Union Committees</span>
+    <span class="pill pb">Patel = Provincial + Advisory Committees (రెండూ)</span>
+    <span class="pill">Drafting Committee = Aug 29, 1947; 7 సభ్యులు</span>
+    <span class="pill pg">B.L. Mitter → N. Madhava Rau (ill); D.P. Khaitan → T.T. Krishnamachari (died)</span>
+    <span class="pill pt">Draft Constitution = February 1948; Public opinion = 8 months</span>
+    <span class="pill pb">Dec 13, 1946 = Objective Resolution ప్రవేశపెట్టారు (Nehru)</span>
+    <span class="pill">Jan 22, 1947 = Objective Resolution ఆమోదం</span>
+    <span class="pill pg">Nov 26, 1949 = ఆమోదం (Constitution Day from 2015)</span>
+    <span class="pill pt">Nov 24, 1949 = సభ్యులు సంతకాలు</span>
+    <span class="pill pb">Jan 26, 1950 = అమలు (Purna Swaraj 1930 స్మారకంగా)</span>
+    <span class="pill">Original = 395 Articles / 22 Parts / 8 Schedules</span>
+    <span class="pill pg">Current = ~470 Articles / 25 Parts / 12 Schedules</span>
+    <span class="pill pt">Churchill = "one-party body"; T.T. Krishnamachari = Borrowed Constitution</span>
+    <span class="pill pb">Ambedkar = "Father of Constitution" + "Modern Manu"</span>
+    <span class="pill">Granville Austin = "Chief Architect"; Rajendra Prasad = India's 1st President</span>
+  </div>
+
+  <div class="footer">Indian Polity · Lakshmikanth · Chapter 2: Making of the Constitution · APPSC Group 2 · Page 2 of 2</div>
+</div>
+
+</body>
+</html>
