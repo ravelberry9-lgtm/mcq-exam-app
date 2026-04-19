@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 12 — Basic Structure of the Constitution | Indian Polity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+    background: #e0f4ef;
+    color: #0a2e26;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px;
+    background: #f6fdfb;
+    padding: 13mm 12mm 11mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  .header {
+    background: linear-gradient(135deg, #0c4a3d 0%, #0f6b58 60%, #128c73 100%);
+    color: #fff;
+    border-radius: 9px;
+    padding: 11px 16px;
+    margin-bottom: 11px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .hbadge {
+    background: rgba(255,255,255,0.2);
+    border-radius: 7px;
+    padding: 5px 13px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .htitle h1 { font-size: 18px; font-weight: 700; }
+  .htitle h2 { font-size: 13.5px; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+  .hmeta { margin-left: auto; text-align: right; font-size: 13px; opacity: 0.8; line-height: 1.7; }
+
+  .sh {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0c4a3d;
+    background: #d6f5ec;
+    border-left: 5px solid #128c73;
+    padding: 5px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 10px 0 6px;
+    letter-spacing: 0.3px;
+  }
+
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+
+  .card {
+    background: #edfaf5;
+    border: 1.5px solid #80d4ba;
+    border-radius: 8px;
+    padding: 8px 11px;
+  }
+  .card-h {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: #0c4a3d;
+    margin-bottom: 4px;
+  }
+  .card-em {
+    background: linear-gradient(135deg, #0c4a3d, #128c73);
+    color: #fff;
+  }
+  .card-em .card-h { color: #a8f0dc; }
+
+  .intro-box {
+    background: #e6f9f3;
+    border: 2px solid #20a882;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+  }
+
+  .numstrip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 9px 0;
+  }
+  .num-cell {
+    background: linear-gradient(160deg, #0c4a3d 0%, #0f6b58 100%);
+    color: #fff;
+    border-radius: 8px;
+    padding: 7px 6px;
+    text-align: center;
+  }
+  .num-big { font-size: 26px; font-weight: 700; line-height: 1.1; }
+  .num-label { font-size: 11.5px; line-height: 1.3; opacity: 0.9; margin-top: 2px; }
+
+  /* Case timeline */
+  .timeline { margin-top: 6px; }
+  .tl-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 6px;
+    align-items: flex-start;
+  }
+  .tl-year {
+    background: #0f6b58;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .tl-year.highlight { background: #0a6644; border: 2px solid #a8f0dc; }
+  .tl-text { font-size: 13px; line-height: 1.45; }
+
+  /* Elements grid */
+  .elem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 6px;
+  }
+  .elem-item {
+    background: #0f6b58;
+    color: #fff;
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .elem-item em {
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+
+  /* Post-KB cases table */
+  .case-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 6px; }
+  .case-table th {
+    background: #0c4a3d;
+    color: #fff;
+    padding: 6px 8px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .case-table td {
+    padding: 5px 8px;
+    border-bottom: 1px solid #b8ead8;
+    vertical-align: top;
+  }
+  .case-table tr:nth-child(even) td { background: #e6f9f3; }
+  .case-table tr:nth-child(odd) td { background: #f6fdfb; }
+  .case-table .case-name { font-weight: 700; color: #0c4a3d; white-space: nowrap; }
+
+  .fact {
+    font-size: 13.5px;
+    padding: 2px 0;
+    border-bottom: 1px dotted #80d4ba;
+    margin-bottom: 3px;
+  }
+  .fact:last-child { border-bottom: none; }
+  .fact em { color: #0d5c47; font-style: normal; font-size: 12.5px; }
+
+  .pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 6px;
+  }
+  .pill {
+    background: #d6f5ec;
+    border: 1.5px solid #20a882;
+    color: #0a2e26;
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+  .pill-dark {
+    background: #0c4a3d;
+    color: #fff;
+    border: none;
+  }
+
+  .scope-box {
+    background: #e6f9f3;
+    border: 1.5px solid #20a882;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 6px;
+  }
+
+  .highlight { color: #0a6644; font-weight: 700; }
+  .red { color: #c0392b; font-weight: 700; }
+  .pg-num {
+    text-align: right;
+    font-size: 11px;
+    color: #5a8c7a;
+    margin-top: 8px;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; padding: 10mm 11mm 8mm; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ PAGE 1 ═══════════════════════════ -->
+<div class="page">
+
+  <div class="header">
+    <div class="hbadge">అధ్యాయం 12<br>Chapter 12</div>
+    <div class="htitle">
+      <h1>రాజ్యాంగ మూల నిర్మాణం</h1>
+      <h2>Basic Structure of the Constitution</h2>
+    </div>
+    <div class="hmeta">
+      కేశవానంద భారతి 1973<br>
+      Kesavananda Bharati 1973<br>
+      45 MCQs · 10 PYQs
+    </div>
+  </div>
+
+  <!-- INTRO BOX -->
+  <div class="intro-box">
+    <div class="card-h" style="font-size:14px; color:#0c4a3d;">⚖️ మూల నిర్మాణ సిద్ధాంతం — సారాంశం / Basic Structure Doctrine — At a Glance</div>
+    <div class="g2" style="margin-top:6px;">
+      <div>
+        <div class="fact">పార్లమెంటు Art 368 కింద ఏ నిబంధన అయినా సవరించవచ్చు<br><em>Parliament can amend any provision under Art 368</em></div>
+        <div class="fact">కానీ రాజ్యాంగ <span class="highlight">మూల నిర్మాణాన్ని నాశనం/సంక్షిప్తం చేయలేదు</span><br><em>BUT cannot destroy/abrogate the <strong>Basic Structure</strong></em></div>
+        <div class="fact">రాజ్యాంగంలో స్పష్టంగా లేదు — <span class="highlight">న్యాయపరమైన సిద్ధాంతం</span><br><em>Not explicitly in Constitution — it is a judicial doctrine</em></div>
+      </div>
+      <div>
+        <div class="fact">కేవలం రాజ్యాంగ సవరణలకు వర్తిస్తుంది — సాధారణ చట్టాలకు కాదు<br><em>Applies ONLY to constitutional amendments — NOT ordinary laws</em></div>
+        <div class="fact">స్థిరమైన జాబితా లేదు — అభివృద్ధి చెందే సిద్ధాంతం<br><em>No fixed list — it is an evolving doctrine</em></div>
+        <div class="fact">జర్మనీ 'eternity clauses' (Art 79(3)) ప్రభావం<br><em>Influenced by German Constitution's eternity clauses</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NUMSTRIP -->
+  <div class="numstrip">
+    <div class="num-cell">
+      <div class="num-big">13</div>
+      <div class="num-label">న్యాయమూర్తులు — KB 1973<br>Judges — Kesavananda Bharati</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-big">Apr 24</div>
+      <div class="num-label">1973 తీర్పు తేదీ<br>Judgment date — KB</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-big">7:6</div>
+      <div class="num-label">మెజారిటీ: మైనారిటీ<br>Majority:Minority — KB</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-big">99</div>
+      <div class="num-label">NJAC సవరణ — రద్దు 2015<br>NJAC Amendment — struck 2015</div>
+    </div>
+  </div>
+
+  <!-- PRE-KESAVANANDA CASE TIMELINE -->
+  <div class="sh">పూర్వ-కేశవానంద పరిణామం / Pre-Kesavananda Evolution</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">1951</div>
+      <div class="tl-text"><strong>శంకరి ప్రసాద్ కేసు</strong> — పార్లమెంటు Art 368 కింద FRs సహా ఏ నిబంధన అయినా సవరించవచ్చు. రాజ్యాంగ సవరణలు Art 13(2) లోని 'చట్టం' (law) కాదు.<br><em>Shankari Prasad: Parliament can amend any provision including FRs. Constitutional amendments are NOT 'law' under Art 13(2).</em></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1964</div>
+      <div class="tl-text"><strong>సజ్జన్ సింగ్ కేసు</strong> — శంకరి ప్రసాద్ సమర్థించబడింది. <span class="highlight">న్యాయమూర్తి ముధోల్కర్ (dissent)</span>: పార్లమెంటు రాజ్యాంగ 'ప్రాథమిక లక్షణాలు' (basic features) మార్చగలదా? — మూల నిర్మాణ సిద్ధాంత పూర్వగామి.<br><em>Sajjan Singh: Shankari Prasad upheld. Justice Mudholkar (dissent) first raised basic features concept.</em></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1967</div>
+      <div class="tl-text"><strong>గోలక్‌నాథ్ కేసు</strong> (11 న్యాయమూర్తులు) — పార్లమెంటు FRs సవరించలేదు (absolute); 'భావి అమలు' (Prospective Overruling) వాడబడింది. 1వ, 4వ, 17వ సవరణలు సవాల్.<br><em>Golaknath (11 judges): Parliament cannot amend FRs — absolute bar. Applied Prospective Overruling.</em></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1971</div>
+      <div class="tl-text"><strong>24వ సవరణ</strong> — గోలక్‌నాథ్ తిప్పికొట్టడానికి: Art 368 శీర్షిక మార్పు + Art 13(4) జోడింపు + రాష్ట్రపతి అనుమతి తప్పనిసరి. <strong>25వ సవరణ</strong> — Art 31C: Art 39(b)(c) చట్టాలకు Art 14/19 నుండి రక్షణ.<br><em>24th Amendment: countered Golaknath; 25th Amendment: Art 31C added.</em></div>
+    </div>
+  </div>
+
+  <!-- KESAVANANDA BHARATI CARD -->
+  <div class="sh">కేశవానంద భారతి కేసు 1973 / Kesavananda Bharati 1973</div>
+  <div class="g2">
+    <div class="card card-em">
+      <div class="card-h">కీలక వివరాలు / Key Details</div>
+      <div class="fact" style="border-color:rgba(168,240,220,0.3); color:#e0fff5;">పూర్తి పేరు: కేశవానంద భారతి శ్రీపాదగళ్వారు v. కేరళ రాష్ట్రం<br><em style="color:#a0d8c8;">Full name: KB Sripadagalvaru v. State of Kerala</em></div>
+      <div class="fact" style="border-color:rgba(168,240,220,0.3); color:#e0fff5;">తేదీ: <strong>ఏప్రిల్ 24, 1973</strong> (9వ షెడ్యూల్ కట్-ఆఫ్ తేదీ)<br><em style="color:#a0d8c8;">Date: April 24, 1973 (9th Schedule cut-off date)</em></div>
+      <div class="fact" style="border-color:rgba(168,240,220,0.3); color:#e0fff5;"><strong>13 న్యాయమూర్తులు — 7:6 మెజారిటీ</strong><br><em style="color:#a0d8c8;">13 judges — 7:6 majority</em></div>
+    </div>
+    <div class="card">
+      <div class="card-h">కీలక నిర్ణయాలు / Key Holdings</div>
+      <div class="fact">24వ సవరణ చెల్లుబాటు ధృవీకరించింది — FRs సవరించవచ్చు<br><em>24th Amendment upheld — FRs can be amended</em></div>
+      <div class="fact">గోలక్‌నాథ్ (FRs అసలు సవరించలేమ) తిరస్కరించబడింది<br><em>Golaknath (absolute bar on FR amendment) overruled</em></div>
+      <div class="fact"><span class="highlight">మూల నిర్మాణ సిద్ధాంతం ప్రకటన</span> — నాశనం చేయలేమ<br><em>Basic Structure Doctrine announced — cannot be destroyed</em></div>
+      <div class="fact">9 న్యాయమూర్తులు 'ratio decidendi' ప్రకటనపై సంతకం<br><em>9 judges signed statement confirming ratio decidendi</em></div>
+      <div class="fact">తర్వాత: న్యా. ఎ.ఎన్. రే (మైనారిటీ) 3 సీనియర్ న్యాయమూర్తులను అతిక్రమించి CJ నియమితులు<br><em>After: Justice A.N. Ray (minority) appointed CJ superseding 3 senior judges</em></div>
+    </div>
+  </div>
+
+  <div class="pg-num">పేజీ 1 / Page 1</div>
+</div>
+
+<!-- ═══════════════════════════ PAGE 2 ═══════════════════════════ -->
+<div class="page">
+
+  <div class="header">
+    <div class="hbadge">అధ్యాయం 12<br>Chapter 12</div>
+    <div class="htitle">
+      <h1>మూల నిర్మాణ అంశాలు &amp; ముఖ్య కేసులు</h1>
+      <h2>Elements of Basic Structure &amp; Landmark Cases</h2>
+    </div>
+    <div class="hmeta">
+      కేశవానంద భారతి 1973<br>
+      Kesavananda Bharati 1973
+    </div>
+  </div>
+
+  <!-- ELEMENTS OF BASIC STRUCTURE -->
+  <div class="sh">మూల నిర్మాణ అంశాలు / Elements of Basic Structure</div>
+  <div class="elem-grid">
+    <div class="elem-item">రాజ్యాంగ ఆధిపత్యం<br><em>Constitutional Supremacy</em></div>
+    <div class="elem-item">గణతంత్ర + ప్రజాస్వామ్యం + పార్లమెంటరీ వ్యవస్థ<br><em>Republican &amp; Democratic Form &amp; Parliamentary Govt</em></div>
+    <div class="elem-item">లౌకిక స్వభావం<br><em>Secular Character</em></div>
+    <div class="elem-item">సమాఖ్య స్వభావం<br><em>Federal Character</em></div>
+    <div class="elem-item">అధికారాల వేర్పాటు<br><em>Separation of Powers</em></div>
+    <div class="elem-item">న్యాయ సమీక్ష<br><em>Judicial Review</em></div>
+    <div class="elem-item">స్వేచ్ఛా ఎన్నికలు<br><em>Free &amp; Fair Elections</em></div>
+    <div class="elem-item">న్యాయవ్యవస్థ స్వాతంత్ర్యం<br><em>Independence of Judiciary</em></div>
+    <div class="elem-item">FRs-DPSPs సమతుల్యత<br><em>Harmony: FRs &amp; DPSPs</em></div>
+    <div class="elem-item">నిబంధనాపాలన<br><em>Rule of Law</em></div>
+    <div class="elem-item">పరిమిత సవరణ అధికారం<br><em>Limited Amending Power</em></div>
+    <div class="elem-item">ఏకత్వం + సమగ్రత<br><em>Unity &amp; Integrity</em></div>
+  </div>
+
+  <!-- POST-KESAVANANDA CASES TABLE -->
+  <div class="sh">కేశవానంద తర్వాత ముఖ్య కేసులు / Post-Kesavananda Landmark Cases</div>
+  <table class="case-table">
+    <thead>
+      <tr>
+        <th>కేసు / Case</th>
+        <th>సంవత్సరం</th>
+        <th>మూల నిర్మాణ నిర్ణయం / Basic Structure Ruling</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="case-name">ఇందిరా గాంధీ v. రాజ్‌నారాయణ్<br><em>Indira Gandhi v. Raj Narain</em></td>
+        <td>1975</td>
+        <td>స్వేచ్ఛా ఎన్నికలు = మూల నిర్మాణం; 39వ సవరణ రద్దు (PM ఎన్నికకు రక్షణ)<br><em>Free &amp; fair elections = Basic Structure; 39th Amendment struck down</em></td>
+      </tr>
+      <tr>
+        <td class="case-name">మినర్వా మిల్స్<br><em>Minerva Mills</em></td>
+        <td>1980</td>
+        <td>Art 368(4)(5) రద్దు; FRs-DPSPs సమతుల్యత = మూల నిర్మాణం; పరిమిత సవరణ అధికారం<br><em>Art 368(4)(5) struck down; FRs-DPSPs harmony = Basic Structure; limited amending power</em></td>
+      </tr>
+      <tr>
+        <td class="case-name">వామన్ రావు<br><em>Waman Rao</em></td>
+        <td>1981</td>
+        <td>ఏప్రిల్ 24, 1973 కి ముందు 9వ షెడ్యూల్‌లోని చట్టాలు పూర్తి రక్షణ; తర్వాతివి మూల నిర్మాణ పరీక్ష<br><em>Laws in 9th Sch before Apr 24, 1973 fully protected; after — subject to Basic Structure test</em></td>
+      </tr>
+      <tr>
+        <td class="case-name">SR బొమ్మై<br><em>SR Bommai</em></td>
+        <td>1994</td>
+        <td>లౌకికత, సమాఖ్య స్వభావం, ప్రజాస్వామ్యం = మూల నిర్మాణం; రాష్ట్రపతి పాలన న్యాయ సమీక్షకు లోనవుతుంది<br><em>Secularism, federalism, democracy = Basic Structure; President's Rule reviewable</em></td>
+      </tr>
+      <tr>
+        <td class="case-name">L. చంద్రకుమార్<br><em>L. Chandra Kumar</em></td>
+        <td>1997</td>
+        <td>ట్రిబ్యునల్‌ల నుండి SC/HC న్యాయ సమీక్ష తొలగించడం మూల నిర్మాణ ఉల్లంఘన<br><em>Removing SC/HC review over Tribunals violates Basic Structure</em></td>
+      </tr>
+      <tr>
+        <td class="case-name">IR కోహెలో<br><em>IR Coelho</em></td>
+        <td>2007</td>
+        <td>9 న్యాయమూర్తులు: Apr 24, 1973 తర్వాత 9వ షెడ్యూల్ చట్టాలు FR సారం ఉల్లంఘిస్తే సమీక్షించవచ్చు<br><em>9 judges: Laws added to 9th Sch after Apr 24, 1973 reviewable if they damage essence of FRs</em></td>
+      </tr>
+      <tr>
+        <td class="case-name">NJAC కేసు<br><em>NJAC Case</em></td>
+        <td>2015</td>
+        <td>99వ సవరణ రద్దు; న్యాయవ్యవస్థ స్వాతంత్ర్యం = మూల నిర్మాణం; NJAC కార్యనిర్వాహక జోక్యం ఆమోదయోగ్యం కాదు<br><em>99th Amendment struck down; Independence of Judiciary = Basic Structure; executive involvement unacceptable</em></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SCOPE BOX -->
+  <div class="sh">వ్యాప్తి మరియు పరిమితులు / Scope and Limits of the Doctrine</div>
+  <div class="scope-box">
+    <div class="g2">
+      <div>
+        <div class="fact"><span class="highlight">✓ వర్తించే చోట్లు / Where it applies:</span><br>Art 368 కింద రాజ్యాంగ సవరణలు<br><em>Constitutional amendments under Art 368</em></div>
+        <div class="fact">రాష్ట్ర చట్టాలకు <span class="red">✗ వర్తించదు</span> — రాష్ట్రాలు రాజ్యాంగం సవరించవు<br><em>Does NOT apply to State laws</em></div>
+      </div>
+      <div>
+        <div class="fact">సాధారణ చట్టాలకు <span class="red">✗ వర్తించదు</span> — FRs దిగ్బంధన ద్వారా పరీక్షించబడతాయి<br><em>Does NOT apply to ordinary legislation</em></div>
+        <div class="fact">అత్యవసర పరిస్థితిలో కూడా <span class="highlight">✓ వర్తిస్తుంది</span> — నిలిపివేయలేమ<br><em>Applies even during Emergency — cannot be suspended</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK REVISION PILLS -->
+  <div class="sh">శీఘ్ర పునరీక్షణ / Quick Revision</div>
+  <div class="pill-grid">
+    <span class="pill pill-dark">KB 1973 = మూల నిర్మాణ ప్రకటన / Basic Structure announced</span>
+    <span class="pill">13 న్యాయమూర్తులు · Apr 24, 1973 / 13 Judges · Apr 24, 1973</span>
+    <span class="pill">ముధోల్కర్ 1964 = మొట్టమొదటి 'basic features' సూచన / Mudholkar 1964 = first mention</span>
+    <span class="pill">గోలక్‌నాథ్ 1967 = FRs సవరించలేమ (absolute) / Golaknath 1967 = absolute bar on FR amendment</span>
+    <span class="pill pill-dark">KB 1973 = FRs సవరించవచ్చు కానీ మూల నిర్మాణం కాదు / FRs amendable; Basic Structure NOT</span>
+    <span class="pill">మినర్వా మిల్స్ 1980 = Art 368(4)(5) రద్దు / Minerva Mills 1980 = 368(4)(5) struck down</span>
+    <span class="pill">SR బొమ్మై 1994 = లౌకికత మూల నిర్మాణం / Secularism = Basic Structure</span>
+    <span class="pill">NJAC 2015 = 99వ సవరణ రద్దు / 99th Amendment struck down</span>
+    <span class="pill">Apr 24, 1973 = 9వ షెడ్యూల్ కట్-ఆఫ్ తేదీ / Cut-off date for 9th Schedule</span>
+    <span class="pill pill-dark">జర్మనీ = eternity clauses ప్రభావం / Germany = eternity clauses influence</span>
+    <span class="pill">కేవలం రాజ్యాంగ సవరణలకే వర్తిస్తుంది / Applies ONLY to constitutional amendments</span>
+    <span class="pill">స్థిరమైన జాబితా లేదు — అభివృద్ధి చెందే సిద్ధాంతం / No fixed list — evolving doctrine</span>
+  </div>
+
+  <div class="pg-num">పేజీ 2 / Page 2</div>
+</div>
+
+</body>
+</html>
