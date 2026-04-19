@@ -2,14 +2,14 @@
 <html lang="te">
 <head>
 <meta charset="UTF-8">
-<title>Chapter 12 — Basic Structure of the Constitution | Indian Polity</title>
+<title>Chapter 10 — Fundamental Duties | Indian Polity</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
-    background: #e0f4ef;
-    color: #0a2e26;
+    background: #ecf0e6;
+    color: #1a200e;
     font-size: 15px;
     line-height: 1.55;
   }
@@ -17,13 +17,13 @@
     width: 210mm;
     min-height: 297mm;
     margin: 0 auto 16px;
-    background: #f6fdfb;
+    background: #fff;
     padding: 13mm 12mm 11mm;
     box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   }
 
   .header {
-    background: linear-gradient(135deg, #0c4a3d 0%, #0f6b58 60%, #128c73 100%);
+    background: linear-gradient(135deg, #2e4a12 0%, #3d6118 60%, #4d7a1e 100%);
     color: #fff;
     border-radius: 9px;
     padding: 11px 16px;
@@ -47,9 +47,9 @@
   .sh {
     font-size: 14px;
     font-weight: 700;
-    color: #0c4a3d;
-    background: #d6f5ec;
-    border-left: 5px solid #128c73;
+    color: #2e4a12;
+    background: #f0f6e8;
+    border-left: 5px solid #6a9c30;
     padding: 5px 10px;
     border-radius: 0 6px 6px 0;
     margin: 10px 0 6px;
@@ -60,379 +60,364 @@
   .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
 
   .card {
-    background: #edfaf5;
-    border: 1.5px solid #80d4ba;
-    border-radius: 8px;
-    padding: 8px 11px;
+    background: #f4f9ec;
+    border: 1.5px solid #b3d175;
+    border-radius: 7px;
+    padding: 8px 10px;
   }
-  .card-h {
-    font-weight: 700;
+  .ch {
     font-size: 13.5px;
-    color: #0c4a3d;
-    margin-bottom: 4px;
+    font-weight: 700;
+    color: #2e4a12;
+    border-bottom: 1px solid #b3d175;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
   }
-  .card-em {
-    background: linear-gradient(135deg, #0c4a3d, #128c73);
+
+  .fact { margin: 3px 0; font-size: 14.5px; }
+  .fact::before { content: "• "; color: #5a8a1e; font-weight: 700; }
+  .k { font-weight: 700; color: #2e4a12; }
+  .kb { font-weight: 700; color: #0d47a1; }
+  .kp { font-weight: 700; color: #4a148c; }
+  .kt { font-weight: 700; color: #00574a; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    background: #3d6118;
     color: #fff;
+    padding: 5px 7px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
   }
-  .card-em .card-h { color: #a8f0dc; }
+  td { padding: 4px 7px; border-bottom: 1px solid #e8f2d8; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) td { background: #f4f9ec; }
 
-  .intro-box {
-    background: #e6f9f3;
-    border: 2px solid #20a882;
-    border-radius: 10px;
-    padding: 10px 14px;
-    margin-bottom: 10px;
+  /* Intro box */
+  .introbox {
+    background: linear-gradient(135deg, #f4f9ec 0%, #e8f4d8 100%);
+    border: 2px solid #8ab84a;
+    border-radius: 9px;
+    padding: 10px 13px;
+    margin-bottom: 9px;
   }
+  .introbox .row { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 5px; }
+  .introbox .item { flex: 1; min-width: 110px; }
+  .introbox .label { font-size: 11.5px; color: #5a7a28; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .introbox .val { font-size: 14px; font-weight: 700; color: #2e4a12; margin-top: 1px; }
 
+  /* Number strip */
   .numstrip {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin: 9px 0;
+    gap: 6px;
+    margin: 7px 0;
   }
-  .num-cell {
-    background: linear-gradient(160deg, #0c4a3d 0%, #0f6b58 100%);
+  .ns {
+    background: #3d6118;
     color: #fff;
-    border-radius: 8px;
-    padding: 7px 6px;
+    border-radius: 7px;
+    padding: 6px 8px;
     text-align: center;
   }
-  .num-big { font-size: 26px; font-weight: 700; line-height: 1.1; }
-  .num-label { font-size: 11.5px; line-height: 1.3; opacity: 0.9; margin-top: 2px; }
+  .ns .n { font-size: 20px; font-weight: 700; line-height: 1.1; }
+  .ns .l { font-size: 11px; line-height: 1.3; opacity: 0.9; margin-top: 2px; }
 
-  /* Case timeline */
-  .timeline { margin-top: 6px; }
-  .tl-item {
+  /* Duty list */
+  .dutylist { list-style: none; }
+  .dutyitem {
     display: flex;
-    gap: 10px;
-    margin-bottom: 6px;
+    gap: 7px;
     align-items: flex-start;
+    padding: 4px 0;
+    border-bottom: 1px dotted #c5dd8a;
   }
-  .tl-year {
-    background: #0f6b58;
+  .dutyitem:last-child { border-bottom: none; }
+  .dtag {
+    background: #3d6118;
     color: #fff;
-    border-radius: 5px;
-    padding: 2px 8px;
-    font-size: 12px;
-    font-weight: 700;
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .tl-year.highlight { background: #0a6644; border: 2px solid #a8f0dc; }
-  .tl-text { font-size: 13px; line-height: 1.45; }
-
-  /* Elements grid */
-  .elem-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    margin-top: 6px;
-  }
-  .elem-item {
-    background: #0f6b58;
-    color: #fff;
-    border-radius: 6px;
-    padding: 5px 8px;
+    border-radius: 4px;
+    padding: 1px 7px;
     font-size: 12.5px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 1.3;
-  }
-  .elem-item em {
-    display: block;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 11px;
-    opacity: 0.85;
+    font-weight: 700;
+    flex-shrink: 0;
     margin-top: 2px;
   }
+  .dtag.alt { background: #5a8a1e; }
+  .dtag.new { background: #e65100; }
+  .dtext { font-size: 13.5px; color: #1a200e; line-height: 1.45; }
 
-  /* Post-KB cases table */
-  .case-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 6px; }
-  .case-table th {
-    background: #0c4a3d;
-    color: #fff;
-    padding: 6px 8px;
-    text-align: left;
-    font-weight: 700;
-    font-size: 12px;
-  }
-  .case-table td {
-    padding: 5px 8px;
-    border-bottom: 1px solid #b8ead8;
-    vertical-align: top;
-  }
-  .case-table tr:nth-child(even) td { background: #e6f9f3; }
-  .case-table tr:nth-child(odd) td { background: #f6fdfb; }
-  .case-table .case-name { font-weight: 700; color: #0c4a3d; white-space: nowrap; }
-
-  .fact {
+  /* Quote card */
+  .qcard {
+    background: #f0f6e8;
+    border-left: 4px solid #6a9c30;
+    border-radius: 0 7px 7px 0;
+    padding: 7px 10px;
+    margin: 5px 0;
     font-size: 13.5px;
-    padding: 2px 0;
-    border-bottom: 1px dotted #80d4ba;
-    margin-bottom: 3px;
+    color: #2e3e10;
+    font-style: italic;
   }
-  .fact:last-child { border-bottom: none; }
-  .fact em { color: #0d5c47; font-style: normal; font-size: 12.5px; }
 
-  .pill-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 6px;
+  .abadge {
+    display: inline-block;
+    background: #3d6118;
+    color: #fff;
+    border-radius: 5px;
+    padding: 1px 7px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-right: 4px;
   }
+  .abadge.bl { background: #1565c0; }
+  .abadge.pp { background: #4527a0; }
+  .abadge.rd { background: #b71c1c; }
+
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
   .pill {
-    background: #d6f5ec;
-    border: 1.5px solid #20a882;
-    color: #0a2e26;
-    border-radius: 20px;
+    background: #3d6118;
+    color: #fff;
+    border-radius: 14px;
     padding: 3px 10px;
-    font-size: 12.5px;
+    font-size: 13.5px;
     font-weight: 600;
   }
-  .pill-dark {
-    background: #0c4a3d;
-    color: #fff;
-    border: none;
-  }
+  .pb { background: #1565c0; }
+  .pp { background: #4527a0; }
+  .pt { background: #00574a; }
 
-  .scope-box {
-    background: #e6f9f3;
-    border: 1.5px solid #20a882;
-    border-radius: 8px;
-    padding: 8px 12px;
-    margin-top: 6px;
-  }
-
-  .highlight { color: #0a6644; font-weight: 700; }
-  .red { color: #c0392b; font-weight: 700; }
-  .pg-num {
-    text-align: right;
+  .footer {
+    border-top: 1.5px solid #b3d175;
+    margin-top: 10px;
+    padding-top: 5px;
+    text-align: center;
     font-size: 11px;
-    color: #5a8c7a;
-    margin-top: 8px;
+    color: #888;
   }
 
   @media print {
     body { background: #fff; }
-    .page { box-shadow: none; margin: 0; padding: 10mm 11mm 8mm; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
   }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════ PAGE 1 ═══════════════════════════ -->
+<!-- ════════════════ PAGE 1 ════════════════ -->
 <div class="page">
-
   <div class="header">
-    <div class="hbadge">అధ్యాయం 12<br>Chapter 12</div>
+    <div class="hbadge">Chapter 10</div>
     <div class="htitle">
-      <h1>రాజ్యాంగ మూల నిర్మాణం</h1>
-      <h2>Basic Structure of the Constitution</h2>
+      <h1>Fundamental Duties — ప్రాథమిక విధులు</h1>
+      <h2>Indian Polity · Lakshmikanth · APPSC Group 2</h2>
     </div>
-    <div class="hmeta">
-      కేశవానంద భారతి 1973<br>
-      Kesavananda Bharati 1973<br>
-      45 MCQs · 10 PYQs
-    </div>
+    <div class="hmeta">48 MCQs · 7 PYQs<br>Article 51A · Part IVA</div>
   </div>
 
-  <!-- INTRO BOX -->
-  <div class="intro-box">
-    <div class="card-h" style="font-size:14px; color:#0c4a3d;">⚖️ మూల నిర్మాణ సిద్ధాంతం — సారాంశం / Basic Structure Doctrine — At a Glance</div>
-    <div class="g2" style="margin-top:6px;">
-      <div>
-        <div class="fact">పార్లమెంటు Art 368 కింద ఏ నిబంధన అయినా సవరించవచ్చు<br><em>Parliament can amend any provision under Art 368</em></div>
-        <div class="fact">కానీ రాజ్యాంగ <span class="highlight">మూల నిర్మాణాన్ని నాశనం/సంక్షిప్తం చేయలేదు</span><br><em>BUT cannot destroy/abrogate the <strong>Basic Structure</strong></em></div>
-        <div class="fact">రాజ్యాంగంలో స్పష్టంగా లేదు — <span class="highlight">న్యాయపరమైన సిద్ధాంతం</span><br><em>Not explicitly in Constitution — it is a judicial doctrine</em></div>
-      </div>
-      <div>
-        <div class="fact">కేవలం రాజ్యాంగ సవరణలకు వర్తిస్తుంది — సాధారణ చట్టాలకు కాదు<br><em>Applies ONLY to constitutional amendments — NOT ordinary laws</em></div>
-        <div class="fact">స్థిరమైన జాబితా లేదు — అభివృద్ధి చెందే సిద్ధాంతం<br><em>No fixed list — it is an evolving doctrine</em></div>
-        <div class="fact">జర్మనీ 'eternity clauses' (Art 79(3)) ప్రభావం<br><em>Influenced by German Constitution's eternity clauses</em></div>
-      </div>
-    </div>
+  <!-- Intro Box -->
+  <div class="introbox">
+    <div style="font-size:14.5px; font-weight:700; color:#2e4a12;">10.1 పరిచయం — ప్రాథమిక విధులు ఎందుకు?
+    <span style="font-size:13px; font-weight:400; color:#4a6a22;"> (Why Fundamental Duties?)</span></div>
+    <div class="fact" style="margin-top:5px;">రాజ్యాంగంలో మొదట ప్రాథమిక విధులు లేవు — 42వ సవరణ 1976 ద్వారా జోడించబడ్డాయి<br><em>Originally no Fundamental Duties — added by <span class="k">42nd Amendment 1976</span></em></div>
+    <div class="fact">స్వర్ణ సింగ్ కమిటీ సిఫారసు మేరకు జోడించబడ్డాయి; <span class="k">USSR (సోవియట్ యూనియన్)</span> రాజ్యాంగం నుండి స్వీకరించబడ్డాయి<br><em>Added on recommendation of <span class="k">Swaran Singh Committee</span>; borrowed from <span class="k">USSR (Soviet Union)</span> constitution</em></div>
+    <div class="fact">స్థానం: <span class="k">భాగం IVA · ఆర్టికల్ 51A</span> (DPSPs తర్వాత, భాగం V కు ముందు)<br><em>Placed in: <span class="k">Part IVA · Article 51A</span> (after DPSPs in Part IV, before Part V)</em></div>
+    <div class="fact">ప్రస్తుతం <span class="k">11 ప్రాథమిక విధులు</span> — మొదట 10 (42వ సవరణ 1976); 11వ విధి 86వ సవరణ 2002 ద్వారా జోడించబడింది<br><em>Currently <span class="k">11 Fundamental Duties</span> — originally 10 (42nd Amdt 1976); 11th added by 86th Amdt 2002</em></div>
   </div>
 
-  <!-- NUMSTRIP -->
+  <!-- Numstrip -->
   <div class="numstrip">
-    <div class="num-cell">
-      <div class="num-big">13</div>
-      <div class="num-label">న్యాయమూర్తులు — KB 1973<br>Judges — Kesavananda Bharati</div>
+    <div class="ns">
+      <div class="n">42</div>
+      <div class="l">వ సవరణ<br>nd Amendment<br>1976</div>
     </div>
-    <div class="num-cell">
-      <div class="num-big">Apr 24</div>
-      <div class="num-label">1973 తీర్పు తేదీ<br>Judgment date — KB</div>
+    <div class="ns">
+      <div class="n">10</div>
+      <div class="l">మొదటి విధులు<br>Original Duties<br>(a–j)</div>
     </div>
-    <div class="num-cell">
-      <div class="num-big">7:6</div>
-      <div class="num-label">మెజారిటీ: మైనారిటీ<br>Majority:Minority — KB</div>
+    <div class="ns">
+      <div class="n">86</div>
+      <div class="l">వ సవరణ<br>th Amendment<br>2002</div>
     </div>
-    <div class="num-cell">
-      <div class="num-big">99</div>
-      <div class="num-label">NJAC సవరణ — రద్దు 2015<br>NJAC Amendment — struck 2015</div>
-    </div>
-  </div>
-
-  <!-- PRE-KESAVANANDA CASE TIMELINE -->
-  <div class="sh">పూర్వ-కేశవానంద పరిణామం / Pre-Kesavananda Evolution</div>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-year">1951</div>
-      <div class="tl-text"><strong>శంకరి ప్రసాద్ కేసు</strong> — పార్లమెంటు Art 368 కింద FRs సహా ఏ నిబంధన అయినా సవరించవచ్చు. రాజ్యాంగ సవరణలు Art 13(2) లోని 'చట్టం' (law) కాదు.<br><em>Shankari Prasad: Parliament can amend any provision including FRs. Constitutional amendments are NOT 'law' under Art 13(2).</em></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">1964</div>
-      <div class="tl-text"><strong>సజ్జన్ సింగ్ కేసు</strong> — శంకరి ప్రసాద్ సమర్థించబడింది. <span class="highlight">న్యాయమూర్తి ముధోల్కర్ (dissent)</span>: పార్లమెంటు రాజ్యాంగ 'ప్రాథమిక లక్షణాలు' (basic features) మార్చగలదా? — మూల నిర్మాణ సిద్ధాంత పూర్వగామి.<br><em>Sajjan Singh: Shankari Prasad upheld. Justice Mudholkar (dissent) first raised basic features concept.</em></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">1967</div>
-      <div class="tl-text"><strong>గోలక్‌నాథ్ కేసు</strong> (11 న్యాయమూర్తులు) — పార్లమెంటు FRs సవరించలేదు (absolute); 'భావి అమలు' (Prospective Overruling) వాడబడింది. 1వ, 4వ, 17వ సవరణలు సవాల్.<br><em>Golaknath (11 judges): Parliament cannot amend FRs — absolute bar. Applied Prospective Overruling.</em></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">1971</div>
-      <div class="tl-text"><strong>24వ సవరణ</strong> — గోలక్‌నాథ్ తిప్పికొట్టడానికి: Art 368 శీర్షిక మార్పు + Art 13(4) జోడింపు + రాష్ట్రపతి అనుమతి తప్పనిసరి. <strong>25వ సవరణ</strong> — Art 31C: Art 39(b)(c) చట్టాలకు Art 14/19 నుండి రక్షణ.<br><em>24th Amendment: countered Golaknath; 25th Amendment: Art 31C added.</em></div>
+    <div class="ns">
+      <div class="n">11</div>
+      <div class="l">ప్రస్తుత విధులు<br>Current Duties<br>(a–k)</div>
     </div>
   </div>
 
-  <!-- KESAVANANDA BHARATI CARD -->
-  <div class="sh">కేశవానంద భారతి కేసు 1973 / Kesavananda Bharati 1973</div>
-  <div class="g2">
-    <div class="card card-em">
-      <div class="card-h">కీలక వివరాలు / Key Details</div>
-      <div class="fact" style="border-color:rgba(168,240,220,0.3); color:#e0fff5;">పూర్తి పేరు: కేశవానంద భారతి శ్రీపాదగళ్వారు v. కేరళ రాష్ట్రం<br><em style="color:#a0d8c8;">Full name: KB Sripadagalvaru v. State of Kerala</em></div>
-      <div class="fact" style="border-color:rgba(168,240,220,0.3); color:#e0fff5;">తేదీ: <strong>ఏప్రిల్ 24, 1973</strong> (9వ షెడ్యూల్ కట్-ఆఫ్ తేదీ)<br><em style="color:#a0d8c8;">Date: April 24, 1973 (9th Schedule cut-off date)</em></div>
-      <div class="fact" style="border-color:rgba(168,240,220,0.3); color:#e0fff5;"><strong>13 న్యాయమూర్తులు — 7:6 మెజారిటీ</strong><br><em style="color:#a0d8c8;">13 judges — 7:6 majority</em></div>
-    </div>
-    <div class="card">
-      <div class="card-h">కీలక నిర్ణయాలు / Key Holdings</div>
-      <div class="fact">24వ సవరణ చెల్లుబాటు ధృవీకరించింది — FRs సవరించవచ్చు<br><em>24th Amendment upheld — FRs can be amended</em></div>
-      <div class="fact">గోలక్‌నాథ్ (FRs అసలు సవరించలేమ) తిరస్కరించబడింది<br><em>Golaknath (absolute bar on FR amendment) overruled</em></div>
-      <div class="fact"><span class="highlight">మూల నిర్మాణ సిద్ధాంతం ప్రకటన</span> — నాశనం చేయలేమ<br><em>Basic Structure Doctrine announced — cannot be destroyed</em></div>
-      <div class="fact">9 న్యాయమూర్తులు 'ratio decidendi' ప్రకటనపై సంతకం<br><em>9 judges signed statement confirming ratio decidendi</em></div>
-      <div class="fact">తర్వాత: న్యా. ఎ.ఎన్. రే (మైనారిటీ) 3 సీనియర్ న్యాయమూర్తులను అతిక్రమించి CJ నియమితులు<br><em>After: Justice A.N. Ray (minority) appointed CJ superseding 3 senior judges</em></div>
-    </div>
-  </div>
+  <!-- 11 Duties List -->
+  <div class="sh">10.2 11 ప్రాథమిక విధులు — ఆర్టికల్ 51A (11 Fundamental Duties)</div>
+  <ul class="dutylist">
+    <li class="dutyitem">
+      <span class="dtag">51A(a)</span>
+      <div class="dtext">రాజ్యాంగాన్ని పాటించడం, దాని ఆదర్శాలు, వ్యవస్థలను గౌరవించడం, జాతీయ పతాకం &amp; జాతీయ గీతాన్ని గౌరవించడం<br><em>Abide by the Constitution, respect its ideals &amp; institutions, National Flag &amp; National Anthem</em></div>
+    </li>
+    <li class="dutyitem">
+      <span class="dtag alt">51A(b)</span>
+      <div class="dtext">స్వాతంత్ర్య ఉద్యమానికి స్ఫూర్తినిచ్చిన ఉదాత్త ఆదర్శాలను మనసారా పాటించడం<br><em>Cherish and follow the noble ideals which inspired the national struggle for freedom</em></div>
+    </li>
+    <li class="dutyitem">
+      <span class="dtag">51A(c)</span>
+      <div class="dtext">భారతదేశ సార్వభౌమత్వం, ఐక్యత మరియు సమగ్రతను నిలబెట్టడం మరియు రక్షించడం<br><em>Uphold and protect the sovereignty, unity and integrity of India</em></div>
+    </li>
+    <li class="dutyitem">
+      <span class="dtag alt">51A(d)</span>
+      <div class="dtext">దేశాన్ని రక్షించడం మరియు పిలిచినప్పుడు జాతీయ సేవ చేయడం<br><em>Defend the country and render national service when called upon</em></div>
+    </li>
+    <li class="dutyitem">
+      <span class="dtag">51A(e)</span>
+      <div class="dtext">మత, భాషా, ప్రాంతీయ వైవిధ్యాలను అధిగమించి సహోదర భావన పెంపొందించడం; మహిళల గౌరవాన్ని తక్కువ చేసే ఆచారాలు విరమించడం<br><em>Promote harmony and spirit of common brotherhood; renounce practices derogatory to the dignity of women</em></div>
+    </li>
+    <li class="dutyitem">
+      <span class="dtag alt">51A(f)</span>
+      <div class="dtext">భారతదేశ సమ్మిళిత సంస్కృతి యొక్క గొప్ప వారసత్వాన్ని విలువకట్టడం మరియు పరిరక్షించడం<br><em>Value and preserve the rich heritage of our composite culture</em></div>
+    </li>
+    <li class="dutyitem">
+      <span class="dtag">51A(g)</span>
+      <div class="dtext">అడవులు, సరస్సులు, నదులు, వన్యప్రాణులతో సహా సహజ పర్యావరణాన్ని రక్షించడం మరియు మెరుగుపరచడం; జీవులపట్ల కరుణ<br><em>Protect and improve the natural environment including forests, lakes, rivers and wildlife; have compassion for living creatures</em></div>
+    </li>
+    <li class="dutyitem">
+      <span class="dtag alt">51A(h)</span>
+      <div class="dtext">శాస్త్రీయ దృక్పథం, మానవతావాదం మరియు జ్ఞాన విచారణ &amp; సంస్కరణ స్ఫూర్తిని పెంపొందించడం<br><em>Develop scientific temper, humanism and the spirit of inquiry and reform</em></div>
+    </li>
+    <li class="dutyitem">
+      <span class="dtag">51A(i)</span>
+      <div class="dtext">సార్వజనిక ఆస్తిని సంరక్షించడం మరియు హింసను విరమించడం<br><em>Safeguard public property and abjure violence</em></div>
+    </li>
+    <li class="dutyitem">
+      <span class="dtag alt">51A(j)</span>
+      <div class="dtext">వ్యక్తిగత మరియు సామూహిక కార్యకలాపాలన్నింటిలో శ్రేష్ఠతకు కృషి చేయడం — దేశం నిరంతరం ఉన్నత శిఖరాలకు చేరేలా<br><em>Strive towards excellence in all spheres of individual &amp; collective activity — so that the nation constantly rises higher</em></div>
+    </li>
+    <li class="dutyitem">
+      <span class="dtag new">51A(k)</span>
+      <div class="dtext" style="font-weight:600;">6-14 సంవత్సరాల పిల్లలకు విద్యా అవకాశాలు కల్పించడం తల్లిదండ్రులు లేదా సంరక్షకుల విధి — <span style="color:#e65100;">86వ సవరణ 2002</span><br><em>Parent/guardian's duty to provide educational opportunities for child (6-14 years) — <span style="color:#e65100;">86th Amendment 2002</span></em></div>
+    </li>
+  </ul>
 
-  <div class="pg-num">పేజీ 1 / Page 1</div>
+  <div class="footer">Chapter 10 · Page 1 of 2 · Indian Polity — Lakshmikanth · APPSC Group 2</div>
 </div>
 
-<!-- ═══════════════════════════ PAGE 2 ═══════════════════════════ -->
+<!-- ════════════════ PAGE 2 ════════════════ -->
 <div class="page">
-
   <div class="header">
-    <div class="hbadge">అధ్యాయం 12<br>Chapter 12</div>
+    <div class="hbadge">Chapter 10</div>
     <div class="htitle">
-      <h1>మూల నిర్మాణ అంశాలు &amp; ముఖ్య కేసులు</h1>
-      <h2>Elements of Basic Structure &amp; Landmark Cases</h2>
+      <h1>Fundamental Duties — ప్రాథమిక విధులు (Page 2)</h1>
+      <h2>Indian Polity · Lakshmikanth · APPSC Group 2</h2>
     </div>
-    <div class="hmeta">
-      కేశవానంద భారతి 1973<br>
-      Kesavananda Bharati 1973
+    <div class="hmeta">48 MCQs · 7 PYQs</div>
+  </div>
+
+  <!-- Swaran Singh Committee -->
+  <div class="sh">10.3 స్వర్ణ సింగ్ కమిటీ &amp; 86వ సవరణ (Swaran Singh Committee &amp; 86th Amendment)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">స్వర్ణ సింగ్ కమిటీ (1976)</div>
+      <div class="fact">ఇందిరా గాంధీ ప్రభుత్వం 1976 లో ఏర్పాటు చేసింది<br><em>Set up by Indira Gandhi government in 1976</em></div>
+      <div class="fact">కమిటీ <span class="k">8 విధులు</span> సిఫారసు చేసింది; పార్లమెంటు <span class="k">10 విధులు</span> ఆమోదించింది (2 అదనంగా)<br><em>Committee recommended <span class="k">8 duties</span>; Parliament approved <span class="k">10 duties</span> (2 extra added)</em></div>
+      <div class="fact">DPSPs (భాగం IV) తర్వాత కొత్త భాగంలో ఉంచమని సిఫారసు చేసింది<br><em>Recommended placing after DPSPs (Part IV) in a new Part</em></div>
+      <div class="fact">విధులు ఉల్లంఘించినందుకు <span class="k">శిక్షలు నిర్ణయించాలని</span> కూడా సిఫారసు చేసింది<br><em>Also recommended prescribing <span class="k">penalties</span> for breach of duties</em></div>
+    </div>
+    <div class="card">
+      <div class="ch">86వ సవరణ 2002 — 11వ విధి (11th Duty)</div>
+      <div class="fact"><span class="k">Art 21A</span> జోడించింది — 6-14 సంవత్సరాల పిల్లలకు ఉచిత &amp; నిర్బంధ విద్య<br><em><span class="k">Art 21A</span> added — free &amp; compulsory education for children 6-14 years</em></div>
+      <div class="fact"><span class="k">Art 51A(k)</span> జోడించింది — 6-14 సంవత్సరాల పిల్లలకు విద్యా అవకాశాలు కల్పించడం తల్లిదండ్రుల/సంరక్షకుల విధి<br><em><span class="k">Art 51A(k)</span> added — parent/guardian's duty for educational opportunities (6-14)</em></div>
+      <div class="fact">RTE చట్టం 2009 — Art 21A అమలుకు రూపొందించబడింది<br><em>RTE Act 2009 — enacted to implement Art 21A</em></div>
+      <div class="fact">Art 45 (DPSP) కూడా సవరించబడింది — '14 సంవత్సరాల వరకు ఉచిత విద్య' నుండి '6 సంవత్సరాల లోపు శిశువులకు ఉచిత శిశు సంరక్షణ &amp; విద్య'గా మార్చబడింది<br><em>Art 45 (DPSP) also amended — changed from 'free education up to 14 years' to 'free early childhood care &amp; education for children below 6 years'</em></div>
     </div>
   </div>
 
-  <!-- ELEMENTS OF BASIC STRUCTURE -->
-  <div class="sh">మూల నిర్మాణ అంశాలు / Elements of Basic Structure</div>
-  <div class="elem-grid">
-    <div class="elem-item">రాజ్యాంగ ఆధిపత్యం<br><em>Constitutional Supremacy</em></div>
-    <div class="elem-item">గణతంత్ర + ప్రజాస్వామ్యం + పార్లమెంటరీ వ్యవస్థ<br><em>Republican &amp; Democratic Form &amp; Parliamentary Govt</em></div>
-    <div class="elem-item">లౌకిక స్వభావం<br><em>Secular Character</em></div>
-    <div class="elem-item">సమాఖ్య స్వభావం<br><em>Federal Character</em></div>
-    <div class="elem-item">అధికారాల వేర్పాటు<br><em>Separation of Powers</em></div>
-    <div class="elem-item">న్యాయ సమీక్ష<br><em>Judicial Review</em></div>
-    <div class="elem-item">స్వేచ్ఛా ఎన్నికలు<br><em>Free &amp; Fair Elections</em></div>
-    <div class="elem-item">న్యాయవ్యవస్థ స్వాతంత్ర్యం<br><em>Independence of Judiciary</em></div>
-    <div class="elem-item">FRs-DPSPs సమతుల్యత<br><em>Harmony: FRs &amp; DPSPs</em></div>
-    <div class="elem-item">నిబంధనాపాలన<br><em>Rule of Law</em></div>
-    <div class="elem-item">పరిమిత సవరణ అధికారం<br><em>Limited Amending Power</em></div>
-    <div class="elem-item">ఏకత్వం + సమగ్రత<br><em>Unity &amp; Integrity</em></div>
+  <!-- Nature & Features -->
+  <div class="sh">10.4 స్వభావం &amp; లక్షణాలు (Nature &amp; Features of Fundamental Duties)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">ముఖ్య లక్షణాలు (Key Features)</div>
+      <div class="fact"><span class="k">న్యాయ-అమలు యోగ్యం కాదు</span> — న్యాయస్థానంలో నేరుగా అమలు చేయలేరు<br><em><span class="k">Non-justiciable</span> — cannot be directly enforced in courts</em></div>
+      <div class="fact">కేవలం <span class="k">భారత పౌరులకే</span> వర్తిస్తాయి (విదేశీయులకు కాదు)<br><em>Apply only to <span class="k">Indian citizens</span> (not foreigners)</em></div>
+      <div class="fact">పార్లమెంటు చట్టం ద్వారా వాటిని <span class="k">అమలు చేయవచ్చు</span> — శిక్షలు నిర్ణయించవచ్చు<br><em>Parliament CAN enforce them through law — prescribe penalties</em></div>
+      <div class="fact">చట్టాల <span class="k">రాజ్యాంగ చెల్లుబాటు</span> నిర్ణయించడానికి న్యాయస్థానాలు వాటిని ఉపయోగించవచ్చు<br><em>Courts can use them to determine <span class="k">constitutional validity</span> of laws</em></div>
+    </div>
+    <div class="card">
+      <div class="ch">విమర్శలు &amp; ప్రాముఖ్యత (Criticism &amp; Importance)</div>
+      <div class="fact">విమర్శ: అవి కేవలం నైతిక నిర్దేశాలు — అమలు లేకుండా ఉపయోగం తక్కువ<br><em>Criticism: Mere moral exhortations — less utility without enforcement</em></div>
+      <div class="fact">విమర్శ: జాబితా సమగ్రం కాదు — పన్నులు చెల్లించడం, ఓటు వేయడం చేర్చలేదు<br><em>Criticism: List is not exhaustive — paying taxes, voting not included</em></div>
+      <div class="fact">ప్రాముఖ్యత: పౌర స్పృహ పెంపొందించడానికి స్ఫూర్తి<br><em>Importance: Source of inspiration for civic consciousness</em></div>
+      <div class="fact">ప్రాముఖ్యత: వర్మా కమిటీ 2002 — అనేక ఉన్న చట్టాలు వాటిని అమలు చేస్తున్నాయి<br><em>Importance: Verma Committee 2002 — many existing laws implement them</em></div>
+    </div>
   </div>
 
-  <!-- POST-KESAVANANDA CASES TABLE -->
-  <div class="sh">కేశవానంద తర్వాత ముఖ్య కేసులు / Post-Kesavananda Landmark Cases</div>
-  <table class="case-table">
-    <thead>
-      <tr>
-        <th>కేసు / Case</th>
-        <th>సంవత్సరం</th>
-        <th>మూల నిర్మాణ నిర్ణయం / Basic Structure Ruling</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="case-name">ఇందిరా గాంధీ v. రాజ్‌నారాయణ్<br><em>Indira Gandhi v. Raj Narain</em></td>
-        <td>1975</td>
-        <td>స్వేచ్ఛా ఎన్నికలు = మూల నిర్మాణం; 39వ సవరణ రద్దు (PM ఎన్నికకు రక్షణ)<br><em>Free &amp; fair elections = Basic Structure; 39th Amendment struck down</em></td>
-      </tr>
-      <tr>
-        <td class="case-name">మినర్వా మిల్స్<br><em>Minerva Mills</em></td>
-        <td>1980</td>
-        <td>Art 368(4)(5) రద్దు; FRs-DPSPs సమతుల్యత = మూల నిర్మాణం; పరిమిత సవరణ అధికారం<br><em>Art 368(4)(5) struck down; FRs-DPSPs harmony = Basic Structure; limited amending power</em></td>
-      </tr>
-      <tr>
-        <td class="case-name">వామన్ రావు<br><em>Waman Rao</em></td>
-        <td>1981</td>
-        <td>ఏప్రిల్ 24, 1973 కి ముందు 9వ షెడ్యూల్‌లోని చట్టాలు పూర్తి రక్షణ; తర్వాతివి మూల నిర్మాణ పరీక్ష<br><em>Laws in 9th Sch before Apr 24, 1973 fully protected; after — subject to Basic Structure test</em></td>
-      </tr>
-      <tr>
-        <td class="case-name">SR బొమ్మై<br><em>SR Bommai</em></td>
-        <td>1994</td>
-        <td>లౌకికత, సమాఖ్య స్వభావం, ప్రజాస్వామ్యం = మూల నిర్మాణం; రాష్ట్రపతి పాలన న్యాయ సమీక్షకు లోనవుతుంది<br><em>Secularism, federalism, democracy = Basic Structure; President's Rule reviewable</em></td>
-      </tr>
-      <tr>
-        <td class="case-name">L. చంద్రకుమార్<br><em>L. Chandra Kumar</em></td>
-        <td>1997</td>
-        <td>ట్రిబ్యునల్‌ల నుండి SC/HC న్యాయ సమీక్ష తొలగించడం మూల నిర్మాణ ఉల్లంఘన<br><em>Removing SC/HC review over Tribunals violates Basic Structure</em></td>
-      </tr>
-      <tr>
-        <td class="case-name">IR కోహెలో<br><em>IR Coelho</em></td>
-        <td>2007</td>
-        <td>9 న్యాయమూర్తులు: Apr 24, 1973 తర్వాత 9వ షెడ్యూల్ చట్టాలు FR సారం ఉల్లంఘిస్తే సమీక్షించవచ్చు<br><em>9 judges: Laws added to 9th Sch after Apr 24, 1973 reviewable if they damage essence of FRs</em></td>
-      </tr>
-      <tr>
-        <td class="case-name">NJAC కేసు<br><em>NJAC Case</em></td>
-        <td>2015</td>
-        <td>99వ సవరణ రద్దు; న్యాయవ్యవస్థ స్వాతంత్ర్యం = మూల నిర్మాణం; NJAC కార్యనిర్వాహక జోక్యం ఆమోదయోగ్యం కాదు<br><em>99th Amendment struck down; Independence of Judiciary = Basic Structure; executive involvement unacceptable</em></td>
-      </tr>
-    </tbody>
+  <!-- FR vs DPSP vs FD Comparison -->
+  <div class="sh">10.5 FR vs DPSP vs FD పోలిక (Comparison Table)</div>
+  <table>
+    <tr><th>లక్షణం / Feature</th><th>మూలభూత హక్కులు / FRs</th><th>DPSP</th><th>ప్రాథమిక విధులు / FDs</th></tr>
+    <tr>
+      <td>స్థానం / Placement</td>
+      <td>భాగం III (Art 12–35)<br><em>Part III</em></td>
+      <td>భాగం IV (Art 36–51)<br><em>Part IV</em></td>
+      <td>భాగం IVA (Art 51A)<br><em>Part IVA</em></td>
+    </tr>
+    <tr>
+      <td>ఎవరికి? / For Whom?</td>
+      <td>పౌరులు + కొన్ని అన్యులు<br><em>Citizens + some aliens</em></td>
+      <td>రాజ్యానికి నిర్దేశాలు<br><em>Directives to State</em></td>
+      <td>కేవలం పౌరులు<br><em>Citizens only</em></td>
+    </tr>
+    <tr>
+      <td>న్యాయ-అమలు / Justiciable?</td>
+      <td><span class="k">అవును</span> — Art 32/226<br><em>Yes — Art 32/226</em></td>
+      <td><span class="k">కాదు</span><br><em>No</em></td>
+      <td><span class="k">కాదు</span> (పరోక్ష అమలు మాత్రమే)<br><em>No (only indirect)</em></td>
+    </tr>
+    <tr>
+      <td>మూలం / Source</td>
+      <td>USA Bill of Rights<br><em>USA</em></td>
+      <td>ఐర్లాండ్ రాజ్యాంగం<br><em>Irish Constitution</em></td>
+      <td>USSR రాజ్యాంగం<br><em>USSR Constitution</em></td>
+    </tr>
+    <tr>
+      <td>జోడించిన సంవత్సరం / Added</td>
+      <td>1950 (అసలు రాజ్యాంగంలో)<br><em>1950 (original)</em></td>
+      <td>1950 (అసలు రాజ్యాంగంలో)<br><em>1950 (original)</em></td>
+      <td>1976 (42వ సవరణ)<br><em>1976 (42nd Amdt)</em></td>
+    </tr>
   </table>
 
-  <!-- SCOPE BOX -->
-  <div class="sh">వ్యాప్తి మరియు పరిమితులు / Scope and Limits of the Doctrine</div>
-  <div class="scope-box">
-    <div class="g2">
-      <div>
-        <div class="fact"><span class="highlight">✓ వర్తించే చోట్లు / Where it applies:</span><br>Art 368 కింద రాజ్యాంగ సవరణలు<br><em>Constitutional amendments under Art 368</em></div>
-        <div class="fact">రాష్ట్ర చట్టాలకు <span class="red">✗ వర్తించదు</span> — రాష్ట్రాలు రాజ్యాంగం సవరించవు<br><em>Does NOT apply to State laws</em></div>
-      </div>
-      <div>
-        <div class="fact">సాధారణ చట్టాలకు <span class="red">✗ వర్తించదు</span> — FRs దిగ్బంధన ద్వారా పరీక్షించబడతాయి<br><em>Does NOT apply to ordinary legislation</em></div>
-        <div class="fact">అత్యవసర పరిస్థితిలో కూడా <span class="highlight">✓ వర్తిస్తుంది</span> — నిలిపివేయలేమ<br><em>Applies even during Emergency — cannot be suspended</em></div>
-      </div>
+  <!-- Cases -->
+  <div class="sh">10.6 ముఖ్య కేసులు (Landmark Cases)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">బిజో ఎమ్మాన్యూయేల్ v. కేరళ రాష్ట్రం (1986)</div>
+      <div class="fact">జెహోవా సాక్షుల విద్యార్థులు జాతీయ గీతం పాడటానికి నిరాకరించారు — SC Art 25 కింద రక్షించింది<br><em>Jehovah's Witness students refused to sing National Anthem — SC protected them under Art 25</em></div>
+      <div class="fact">నిర్ణయం: Art 51A(a) ప్రకారం విధి ఉన్నా, Art 25 (మత స్వాతంత్ర్యం) తో సమతులన చేయాలి<br><em>Held: Even with duty under Art 51A(a), balance with Art 25 (freedom of religion)</em></div>
+    </div>
+    <div class="card">
+      <div class="ch">AIIMS Students Union v. AIIMS (2001) &amp; వర్మా కమిటీ 2002</div>
+      <div class="fact"><span class="k">AIIMS కేసు</span>: ప్రాథమిక విధులు చట్టాల రాజ్యాంగ చెల్లుబాటు నిర్ణయించడానికి ఉపయోగపడతాయి<br><em><span class="k">AIIMS case</span>: FDs are useful in determining constitutional validity of laws</em></div>
+      <div class="fact"><span class="k">వర్మా కమిటీ 2002</span> (జస్టిస్ J.S. వర్మా): మూలభూత విధుల అమలుపై నివేదించింది — ఉన్న చట్టాలు వాటిని అమలు చేస్తున్నాయని; ఉదా: Protection of Civil Rights Act 1955 (Art 51A(e)), Environment Protection Act 1986 (Art 51A(g))<br><em><span class="k">Verma Committee 2002</span>: Operationalise FDs — many existing laws already implement them</em></div>
     </div>
   </div>
 
-  <!-- QUICK REVISION PILLS -->
-  <div class="sh">శీఘ్ర పునరీక్షణ / Quick Revision</div>
-  <div class="pill-grid">
-    <span class="pill pill-dark">KB 1973 = మూల నిర్మాణ ప్రకటన / Basic Structure announced</span>
-    <span class="pill">13 న్యాయమూర్తులు · Apr 24, 1973 / 13 Judges · Apr 24, 1973</span>
-    <span class="pill">ముధోల్కర్ 1964 = మొట్టమొదటి 'basic features' సూచన / Mudholkar 1964 = first mention</span>
-    <span class="pill">గోలక్‌నాథ్ 1967 = FRs సవరించలేమ (absolute) / Golaknath 1967 = absolute bar on FR amendment</span>
-    <span class="pill pill-dark">KB 1973 = FRs సవరించవచ్చు కానీ మూల నిర్మాణం కాదు / FRs amendable; Basic Structure NOT</span>
-    <span class="pill">మినర్వా మిల్స్ 1980 = Art 368(4)(5) రద్దు / Minerva Mills 1980 = 368(4)(5) struck down</span>
-    <span class="pill">SR బొమ్మై 1994 = లౌకికత మూల నిర్మాణం / Secularism = Basic Structure</span>
-    <span class="pill">NJAC 2015 = 99వ సవరణ రద్దు / 99th Amendment struck down</span>
-    <span class="pill">Apr 24, 1973 = 9వ షెడ్యూల్ కట్-ఆఫ్ తేదీ / Cut-off date for 9th Schedule</span>
-    <span class="pill pill-dark">జర్మనీ = eternity clauses ప్రభావం / Germany = eternity clauses influence</span>
-    <span class="pill">కేవలం రాజ్యాంగ సవరణలకే వర్తిస్తుంది / Applies ONLY to constitutional amendments</span>
-    <span class="pill">స్థిరమైన జాబితా లేదు — అభివృద్ధి చెందే సిద్ధాంతం / No fixed list — evolving doctrine</span>
+  <!-- Quick Revision -->
+  <div class="sh">⚡ త్వరిత సమీక్ష పిల్స్ (Quick Revision Pills)</div>
+  <div class="pills">
+    <span class="pill">ప్రాథమిక విధులు = భాగం IVA = ఆర్టికల్ 51A / Part IVA = Art 51A</span>
+    <span class="pill pb">42వ సవరణ 1976 ద్వారా జోడించబడ్డాయి / Added by 42nd Amendment 1976</span>
+    <span class="pill">USSR రాజ్యాంగం నుండి స్వీకరించబడ్డాయి / Borrowed from USSR Constitution</span>
+    <span class="pill pp">స్వర్ణ సింగ్ కమిటీ 1976 — 8 విధులు సిఫారసు / Swaran Singh Committee — 8 duties recommended</span>
+    <span class="pill">పార్లమెంటు 10 ఆమోదించింది (2 అదనంగా) / Parliament approved 10 (2 extra)</span>
+    <span class="pill pb">86వ సవరణ 2002 — 11వ విధి (k) జోడించింది / 86th Amdt 2002 — added 11th duty (k)</span>
+    <span class="pill pp">11వ విధి = తల్లిదండ్రులు 6-14 పిల్లలకు విద్య / 11th duty = Parents educate children 6-14</span>
+    <span class="pill">Art 51A(f) = సమ్మిళిత సంస్కృతి వారసత్వం / Composite culture heritage</span>
+    <span class="pill pb">Art 51A(g) = సహజ పర్యావరణం రక్షణ / Natural environment protection</span>
+    <span class="pill">Art 51A(h) = శాస్త్రీయ దృక్పథం / Scientific temper and humanism</span>
+    <span class="pill pp">Art 51A(i) = సార్వజనిక ఆస్తి + హింస వ్యతిరేకం / Public property + abjure violence</span>
+    <span class="pill">న్యాయ-అమలు యోగ్యం కాదు — కానీ పార్లమెంటు చట్టం ద్వారా అమలు చేయవచ్చు / Non-justiciable but Parliament can enforce</span>
+    <span class="pill pb">కేవలం పౌరులకే వర్తిస్తాయి (విదేశీయులకు కాదు) / Apply only to citizens (not foreigners)</span>
+    <span class="pill pt">వర్మా కమిటీ 2002 = FDs అమలు నివేదిక / Verma Committee 2002 = FDs operationalisation</span>
+    <span class="pill">పన్నులు చెల్లించడం FD కాదు — విమర్శ / Paying taxes NOT a FD — criticism of incompleteness</span>
+    <span class="pill pp">AIIMS 2001: FDs చట్టాల చెల్లుబాటు నిర్ణయించడానికి ఉపయోగం / FDs used to determine constitutionality</span>
   </div>
 
-  <div class="pg-num">పేజీ 2 / Page 2</div>
+  <div class="footer">Chapter 10 · Page 2 of 2 · Indian Polity — Lakshmikanth · APPSC Group 2</div>
 </div>
 
 </body>

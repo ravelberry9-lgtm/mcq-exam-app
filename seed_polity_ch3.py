@@ -1,8 +1,8 @@
 # seed_polity_ch3.py
-# Chapter 3: Salient Features of the Constitution
-# (రాజ్యాంగం యొక్క ప్రముఖ లక్షణాలు)
+# Chapter 3: Salient Features & Concept of the Constitution
+# (రాజ్యాంగం యొక్క భావన, ప్రముఖ లక్షణాలు)
 # Standard : APPSC Group 2 | Source: Lakshmikanth Indian Polity
-# Total Sections: 9 | Total MCQs: 63 | PYQs: 10
+# Total Sections: 11 | Total MCQs: 92 | PYQs: 12
 # Difficulty: 1=Easy  2=Moderate  3=Tough  4=Toughest
 # PYQ: 10th element (index 9) = 'APPSC' or 'UPSC'
 # ─────────────────────────────────────────────
@@ -252,6 +252,80 @@ Ireland — DPSP.
 Canada — Strong Centre.
 
 "ఇంత నేర్చుకుని, ఇంత కష్టపడి రాశారు — ఇప్పటికీ జీవిస్తోంది ఈ రాజ్యాంగం" — అంబేడ్కర్ ఆత్మ చిరునవ్వు నవ్వింది."""
+    },
+    {
+        "title": "3.10 రాజ్యాంగ భావన — లిఖిత/అలిఖిత, దృఢ/సౌమ్య",
+        "sub": "Written vs Unwritten · Rigid vs Flexible · Enacted vs Evolved · Bryce & Wheare",
+        "audio": """రాజ్యాంగ భావన (Concept of Constitution):
+
+రాజ్యాంగం అంటే: రాజ్యం యొక్క ప్రాథమిక చట్టం — ప్రభుత్వ నిర్మాణం, అధికారాల పంపిణీ, పౌరుల హక్కులను నిర్ణయించే సర్వోన్నత చట్టం.
+
+రాజ్యాంగాల వర్గీకరణ — జేమ్స్ బ్రైస్ (James Bryce):
+
+1. లిఖిత రాజ్యాంగం (Written Constitution):
+• ఒక నిర్దిష్ట సమయంలో రాసి ఆమోదించిన పత్రం.
+• ఉదాహరణ: భారత్, USA, ఫ్రాన్స్, జపాన్
+• 'Enacted Constitution' అని కూడా అంటారు.
+
+2. అలిఖిత రాజ్యాంగం (Unwritten Constitution):
+• పార్లమెంట్ చట్టాలు, న్యాయ తీర్పులు, సంప్రదాయాల ద్వారా పెరిగింది.
+• ఉదాహరణ: United Kingdom (Britain), New Zealand, Israel
+• 'Evolved Constitution' అని కూడా అంటారు.
+
+3. దృఢ రాజ్యాంగం (Rigid Constitution):
+• సవరించడానికి ప్రత్యేక కఠిన విధానం అవసరం.
+• ఉదాహరణ: USA (2/3 Congress + 3/4 States)
+• భారత్ — పాక్షికంగా దృఢం (Art. 368 — కొన్ని అంశాలకు రాష్ట్రాల ఆమోదం కావాలి)
+
+4. సౌమ్య రాజ్యాంగం (Flexible Constitution):
+• సాధారణ చట్టసభ మెజారిటీతో సవరించవచ్చు.
+• ఉదాహరణ: United Kingdom
+
+భారత్ రాజ్యాంగం — మిశ్రమ (Neither purely rigid nor purely flexible):
+• కొన్ని నిబంధనలు సాధారణ మెజారిటీతో సవరించవచ్చు.
+• కొన్ని నిబంధనలు 2/3 మెజారిటీ + రాష్ట్రాల ఆమోదం అవసరం.
+• K.C. Wheare: భారత రాజ్యాంగం "partly flexible and partly rigid"
+
+K.C. Wheare — రాజ్యాంగ పండితుడు:
+• Modern Constitutions పుస్తకం రాశారు.
+• భారత రాజ్యాంగాన్ని "Quasi-Federal" అన్నారు.
+• UK రాజ్యాంగం — అలిఖిత + సౌమ్య (Unwritten + Flexible)"""
+    },
+    {
+        "title": "3.11 సమాఖ్య, ఏకీకృత, అర్ధ-సమాఖ్య స్వభావం",
+        "sub": "Federal · Unitary · Quasi-Federal · Nature of Indian Constitution",
+        "audio": """రాజ్యాంగాల స్వభావం — అధికారాల పంపిణీ ఆధారంగా:
+
+1. సమాఖ్య రాజ్యాంగం (Federal Constitution):
+• కేంద్రం + రాష్ట్రాల మధ్య అధికారాలు రాజ్యాంగబద్ధంగా విభజించబడతాయి.
+• ఉదాహరణ: USA, ఆస్ట్రేలియా, స్విట్జర్లాండ్
+• లక్షణాలు: లిఖిత రాజ్యాంగం, న్యాయ సమీక్ష, ద్విసభ విధానం, రాజ్యాంగ సర్వోన్నతత
+
+2. ఏకీకృత రాజ్యాంగం (Unitary Constitution):
+• అన్ని అధికారాలు కేంద్రంలో కేంద్రీకృతమవుతాయి.
+• ఉదాహరణ: UK, France, Japan, China
+• రాష్ట్రాలు కేంద్రం సృష్టించిన అధికార కేంద్రాలు మాత్రమే.
+
+3. భారత్ — అర్ధ-సమాఖ్య (Quasi-Federal):
+• K.C. Wheare: భారత్ "quasi-federal" — federal రూపంలో ఉంటూ unitary spirit కలది.
+• Paul Appleby: "Extremely federalized" అన్నారు.
+• Ivor Jennings: "Federation with strong centralizing tendency" అన్నారు.
+
+సమాఖ్య లక్షణాలు (Federal Features) — భారత్:
+• లిఖిత రాజ్యాంగం, అధికారాల విభజన (3 Lists)
+• స్వతంత్ర న్యాయవ్యవస్థ, ద్విసభా పార్లమెంట్
+• రాజ్యాంగ సర్వోన్నతత
+
+ఏకీకృత లక్షణాలు (Unitary Features) — భారత్:
+• అవశేష అధికారాలు కేంద్రానికి (ధర్మనిరపేక్ష అంశాలు)
+• ఒకే పౌరసత్వం, ఒకే సమగ్ర న్యాయవ్యవస్థ
+• గవర్నర్ నియామకం కేంద్రం చేయడం
+• అత్యవసర పరిస్థితిలో రాష్ట్రాల అధికారాలు కేంద్రానికి మారడం
+• రాష్ట్ర అంశాలపై పార్లమెంట్ చట్టాలు చేయగల అధికారం (Art.249, 252, 253)
+• All India Services (IAS, IPS) — కేంద్రం నియంత్రించడం
+• రాష్ట్ర జాబితాపై సవరణ చేయగల అధికారం
+
+SR Bommai కేసు (1994): రాష్ట్రాలు కేంద్రానికి "satellite" కాదు; Federal democracy నిజమైనది."""
     },
 ]
 
@@ -846,6 +920,273 @@ POLITY_CH3_MCQS = [
      "c",
      "Financial Emergency (ఆర్థిక అత్యవసర పరిస్థితి) = Article 360. National Emergency = Article 352. President's Rule = Article 356. Amendment of Constitution = Article 368. ఇవి నాలుగూ పరీక్షలలో తరచుగా వచ్చే ముఖ్య ఆర్టికల్స్.",
      "UPSC"),
+
+    # ── Section 9: రాజ్యాంగ భావన — Written/Unwritten & Rigid/Flexible ──────────────
+    (9, 1,
+     "రాజ్యాంగాలను 'Written' మరియు 'Unwritten' గా వర్గీకరించిన పండితుడు ఎవరు?\n"
+     "(Who classified constitutions into 'Written' and 'Unwritten'?)",
+     "K.C. Wheare", "James Bryce",
+     "Ivor Jennings", "Paul Appleby",
+     "b",
+     "James Bryce తన 'Studies in History and Jurisprudence' లో రాజ్యాంగాలను Written మరియు Unwritten గా వర్గీకరించారు. K.C. Wheare రాజ్యాంగాలను Federal/Unitary/Quasi-Federal గా వర్గీకరించారు."),
+
+    (9, 1,
+     "కింది దేశాలలో 'అలిఖిత రాజ్యాంగం' (Unwritten Constitution) ఉన్న దేశం ఏది?\n"
+     "(Which of the following countries has an Unwritten Constitution?)",
+     "USA", "France",
+     "United Kingdom", "Japan",
+     "c",
+     "United Kingdom (UK) కి అలిఖిత రాజ్యాంగం ఉంది — Magna Carta (1215), Bill of Rights (1689), Parliament Acts వంటి చట్టాలు, కోర్టు తీర్పులు మరియు సంప్రదాయాల ద్వారా రూపొందినది. USA, France, Japan లకు లిఖిత రాజ్యాంగాలు ఉన్నాయి."),
+
+    (9, 1,
+     "'Enacted Constitution' అంటే ఏమిటి?\n"
+     "(What is meant by an 'Enacted Constitution'?)",
+     "పార్లమెంట్ చర్చ ద్వారా క్రమంగా పెరిగిన రాజ్యాంగం",
+     "సంప్రదాయాలు మరియు ఆచారాల ద్వారా విలీనమైన రాజ్యాంగం",
+     "నిర్దిష్ట సమావేశం ద్వారా ఒక సమయంలో రాసి ఆమోదించిన రాజ్యాంగం",
+     "న్యాయస్థాన తీర్పుల ద్వారా రూపొందిన రాజ్యాంగం",
+     "c",
+     "Enacted Constitution = లిఖిత రాజ్యాంగం — ఒక నిర్దిష్ట సమావేశం (Constituent Assembly) ద్వారా ఒకే సమయంలో రాసి ఆమోదించబడింది. Evolved Constitution = అలిఖిత రాజ్యాంగం — సంప్రదాయాలు, చట్టాలు మరియు కోర్టు తీర్పుల ద్వారా క్రమంగా పెరిగింది (UK)."),
+
+    (9, 2,
+     "'దృఢ రాజ్యాంగం' (Rigid Constitution) యొక్క ముఖ్య లక్షణం ఏమిటి?\n"
+     "(What is the key feature of a 'Rigid Constitution'?)",
+     "సాధారణ మెజారిటీతో సవరించవచ్చు",
+     "సవరించడానికి ప్రత్యేక కఠిన విధానం అవసరం",
+     "సవరణలు అసాధ్యం",
+     "రాజ్యాంగ కోర్టు మాత్రమే సవరించగలదు",
+     "b",
+     "Rigid Constitution = సవరించడానికి ప్రత్యేక విధానం అవసరం — సాధారణ చట్టంకంటే కఠినంగా ఉంటుంది. USA రాజ్యాంగం దృఢమైనది: 2/3 Congress ఆమోదం + 3/4 రాష్ట్రాల ఆమోదం అవసరం. Flexible Constitution = UK — సాధారణ పార్లమెంట్ మెజారిటీతో సవరించవచ్చు."),
+
+    (9, 2,
+     "అమెరికా (USA) రాజ్యాంగం ఏ వర్గానికి చెందుతుంది?\n"
+     "(To which category does the USA Constitution belong?)",
+     "Flexible + Unwritten", "Rigid + Written",
+     "Flexible + Written", "Rigid + Unwritten",
+     "b",
+     "USA రాజ్యాంగం Rigid (దృఢ) మరియు Written (లిఖిత). సవరించడానికి 2/3 Congress మెజారిటీ + 3/4 రాష్ట్రాల ఆమోదం అవసరం. 1789 నుండి ఇప్పటి వరకు కేవలం 27 సవరణలు మాత్రమే జరిగాయి. UK రాజ్యాంగం Flexible + Unwritten."),
+
+    (9, 2,
+     "UK (బ్రిటన్) రాజ్యాంగం ఏ వర్గానికి చెందుతుంది?\n"
+     "(To which category does the UK Constitution belong?)",
+     "Written + Rigid", "Written + Flexible",
+     "Unwritten + Flexible", "Unwritten + Rigid",
+     "c",
+     "UK రాజ్యాంగం Unwritten (అలిఖిత) మరియు Flexible (సౌమ్య). Parliament Acts, Magna Carta, Bill of Rights వంటి అనేక చట్టాలు, సంప్రదాయాలు కలిసి రాజ్యాంగంగా పని చేస్తాయి. సాధారణ పార్లమెంట్ మెజారిటీతో మార్చవచ్చు."),
+
+    (9, 2,
+     "భారత రాజ్యాంగం 'Rigid' మరియు 'Flexible' విషయంలో ఏ వర్గానికి చెందుతుంది?\n"
+     "(In terms of Rigid vs Flexible, how is the Indian Constitution classified?)",
+     "పూర్తిగా దృఢమైనది (Completely Rigid)",
+     "పూర్తిగా సౌమ్యమైనది (Completely Flexible)",
+     "పాక్షికంగా దృఢం, పాక్షికంగా సౌమ్యం (Partly Rigid, Partly Flexible)",
+     "సవరించడం అసాధ్యం (Cannot be amended)",
+     "c",
+     "భారత రాజ్యాంగం మిశ్రమ స్వభావం కలది — K.C. Wheare దీన్ని 'partly flexible and partly rigid' అన్నారు. కొన్ని నిబంధనలు సాధారణ మెజారిటీతో సవరించవచ్చు (Art.368 - Type I). కొన్నింటికి 2/3 మెజారిటీ + రాష్ట్రాల ఆమోదం కావాలి (Art.368 - Type III)."),
+
+    (9, 3,
+     "K.C. Wheare రాజ్యాంగ పండితత్వంలో ఏ పుస్తకానికి ప్రసిద్ధులు?\n"
+     "(K.C. Wheare is famous for which book in constitutional scholarship?)",
+     "Federal Government", "Modern Constitutions",
+     "The Constitution of Liberty", "Constitutional Government",
+     "b",
+     "K.C. Wheare 'Modern Constitutions' (1951) పుస్తకంలో రాజ్యాంగాలను Written/Unwritten, Rigid/Flexible, Federal/Unitary గా వర్గీకరించారు. అదే పుస్తకంలో భారత రాజ్యాంగాన్ని 'Quasi-Federal' అన్నారు. 'Federal Government' కూడా Wheare రాసిన పుస్తకమే, కానీ classification కు 'Modern Constitutions' ప్రసిద్ధం."),
+
+    (9, 3,
+     "ఒక రాజ్యాంగం 'Supreme Constitution' (సర్వోన్నత రాజ్యాంగం) అని అనడానికి అర్థం ఏమిటి?\n"
+     "(What does it mean for a constitution to be a 'Supreme Constitution'?)",
+     "రాష్ట్రపతి రాజ్యాంగాన్ని మార్చగలడు",
+     "రాజ్యాంగం అన్ని సాధారణ చట్టాలకంటే ఉన్నతమైనది; రాజ్యాంగ విరుద్ధ చట్టం చెల్లదు",
+     "పార్లమెంట్ రాజ్యాంగాన్ని ఏ సమయంలోనైనా మార్చవచ్చు",
+     "న్యాయస్థానాలు రాజ్యాంగాన్ని రద్దు చేయవచ్చు",
+     "b",
+     "Supreme Constitution (రాజ్యాంగ సర్వోన్నతత) = రాజ్యాంగం దేశంలోని అన్ని చట్టాలకు ఉన్నతమైనది. రాజ్యాంగ విరుద్ధంగా చేసిన ఏ చట్టమైనా చెల్లదు (void). USA, భారత్ లలో రాజ్యాంగ సర్వోన్నతత ఉంది. UK లో Parliament Supremacy ఉంది (రాజ్యాంగ సర్వోన్నతత కాదు)."),
+
+    (9, 2,
+     "ఏ దేశంలో 'Parliamentary Sovereignty' (పార్లమెంట్ సర్వోన్నతత) ఉంది, రాజ్యాంగ సర్వోన్నతత కాదు?\n"
+     "(In which country does 'Parliamentary Sovereignty' prevail, not constitutional supremacy?)",
+     "USA", "India",
+     "Australia", "United Kingdom",
+     "d",
+     "UK లో Parliament అత్యున్నత అధికారం కలది — Parliament ఏ చట్టమైనా చేయవచ్చు, మార్చవచ్చు. కోర్టులు పార్లమెంట్ చట్టాన్ని రద్దు చేయలేవు (Unwritten constitution). USA, India, Australia లలో రాజ్యాంగ సర్వోన్నతత ఉంది — court రాజ్యాంగ విరుద్ధ చట్టాన్ని రద్దు చేయగలదు."),
+
+    (9, 2,
+     "Israel మరియు New Zealand ల రాజ్యాంగం ఏ వర్గానికి చెందుతుంది?\n"
+     "(The constitutions of Israel and New Zealand belong to which category?)",
+     "Written + Rigid", "Unwritten + Flexible",
+     "Written + Flexible", "Rigid + Federal",
+     "b",
+     "Israel మరియు New Zealand కి అలిఖిత + సౌమ్య రాజ్యాంగాలు ఉన్నాయి (Unwritten + Flexible) — UK తరహా. UK, Israel, New Zealand — ఈ మూడింటికి లిఖిత రాజ్యాంగం లేదు. Australia, Canada, India, USA లకు లిఖిత రాజ్యాంగాలు ఉన్నాయి."),
+
+    (9, 3,
+     "APPSC Polity: 'Organic Laws' అంటే ఏమిటి?\n"
+     "('Organic Laws' in constitutional context means?)",
+     "వ్యవసాయానికి సంబంధించిన చట్టాలు",
+     "రాజ్యాంగ సవరణ చట్టాలు",
+     "రాజ్యాంగంగా పని చేసే ప్రాథమిక చట్టాలు",
+     "పర్యావరణ పరిరక్షణ చట్టాలు",
+     "c",
+     "Organic Laws = ఒక దేశంలో రాజ్యాంగంగా పని చేసే ప్రాథమిక చట్టాలు. UK లో Magna Carta, Bill of Rights, Parliament Acts వంటివి organic laws గా పని చేస్తాయి. Israel లో Basic Laws organic laws గా పని చేస్తాయి. భారత్ లో Constitution of India ఒకే organic law."),
+
+    (9, 2,
+     "పార్లమెంట్ రాజ్యాంగ సవరణ చేయాలంటే కనీసం ఎంత మెజారిటీ అవసరం (సాధారణ సవరణకు)?\n"
+     "(For ordinary constitutional amendments in India under Art.368, minimum majority needed?)",
+     "సాధారణ మెజారిటీ (Simple majority)",
+     "2/3 హాజరైన సభ్యులు మరియు ఓటేసిన వారిలో + మొత్తం సభ్యత్వంలో సగానికి పైగా",
+     "3/4 మెజారిటీ + రాష్ట్రాల ఆమోదం",
+     "ఏకగ్రీవ తీర్మానం",
+     "b",
+     "Art.368 ప్రకారం సాధారణ రాజ్యాంగ సవరణకు: 2/3 హాజరైన & ఓటేసిన సభ్యుల మెజారిటీ + మొత్తు సభ్యత్వంలో సగానికి పైగా (Special Majority). కొన్ని ముఖ్యమైన నిబంధనలకు ఇంకా రాష్ట్రాల ఆమోదం కూడా కావాలి. ఇది USA కంటే తక్కువ దృఢం, UK కంటే ఎక్కువ దృఢం.",
+     "APPSC"),
+
+    (9, 3,
+     "ఒక సంవిధానం 'Evolved Constitution' అయితే దాని ప్రత్యేకత ఏమిటి?\n"
+     "(What is special about an 'Evolved Constitution'?)",
+     "ఇది ఒక విప్లవం తర్వాత రాయబడింది",
+     "ఇది దేశం స్వాతంత్య్రం పొందిన తర్వాత రాయబడింది",
+     "ఇది సంప్రదాయాలు, చట్టాలు, కోర్టు తీర్పుల ద్వారా క్రమంగా రూపొందింది",
+     "ఇది విదేశీ రాజ్యాంగాల నుండి నేరుగా అనువదించబడింది",
+     "c",
+     "Evolved Constitution (అలిఖిత రాజ్యాంగం) = UK రాజ్యాంగం వంటిది — వందల సంవత్సరాలుగా పార్లమెంట్ చట్టాలు (Magna Carta 1215, Petition of Right 1628, Bill of Rights 1689), న్యాయ తీర్పులు, political conventions ద్వారా క్రమంగా పెరిగింది. ఒకే సమయంలో ఒక Constituent Assembly రాయలేదు."),
+
+    # ── Section 10: సమాఖ్య, ఏకీకృత, అర్ధ-సమాఖ్య ──────────────────────────────────
+    (10, 1,
+     "K.C. Wheare భారత రాజ్యాంగాన్ని ఏ పదంతో వర్ణించారు?\n"
+     "(How did K.C. Wheare describe the Indian Constitution?)",
+     "Federal", "Unitary",
+     "Quasi-Federal", "Confederate",
+     "c",
+     "K.C. Wheare భారత రాజ్యాంగాన్ని 'Quasi-Federal' (అర్ధ-సమాఖ్య) అన్నారు — Federal రూపంలో ఉంటూ, Unitary ఆత్మ కలది. అవశేష అధికారాలు కేంద్రానికి, అత్యవసర పరిస్థితిలో రాష్ట్రాల అధికారాలు కేంద్రానికి మారడం వంటి Unitary లక్షణాలు ఉన్నాయి."),
+
+    (10, 1,
+     "కింది దేశాలలో 'Unitary Constitution' (ఏకీకృత రాజ్యాంగం) ఉన్న దేశం ఏది?\n"
+     "(Which of the following has a Unitary Constitution?)",
+     "USA", "Australia",
+     "France", "Switzerland",
+     "c",
+     "France ఏకీకృత రాజ్యాంగం కలది — అన్ని అధికారాలు Paris కేంద్రంలో కేంద్రీకృతం. UK కూడా Unitary. USA, Australia, Switzerland లు Federal constitutions కలవి. భారత్ Quasi-Federal."),
+
+    (10, 1,
+     "సమాఖ్య రాజ్యాంగం (Federal Constitution) లో అవశేష అధికారాలు (Residuary Powers) ఎక్కడ ఉంటాయి — USA లో?\n"
+     "(In the USA federal system, where do Residuary Powers reside?)",
+     "కేంద్ర ప్రభుత్వంలో", "రాష్ట్రాలలో లేదా ప్రజలలో",
+     "సుప్రీం కోర్టులో", "అధ్యక్షుడిలో",
+     "b",
+     "USA రాజ్యాంగం 10వ Amendment ప్రకారం: 'Powers not delegated to the US nor prohibited to the States are reserved to the States or the people.' అంటే Residuary Powers రాష్ట్రాలకు లేదా ప్రజలకు. భారత్ లో విరుద్ధంగా — Residuary Powers కేంద్రానికి (Art.248)."),
+
+    (10, 2,
+     "భారత రాజ్యాంగంలో అవశేష అధికారాలు (Residuary Powers) ఏ ఆర్టికల్ కింద కేంద్రానికి ఇవ్వబడ్డాయి?\n"
+     "(Under which Article are Residuary Powers vested in the Centre in India?)",
+     "Article 246", "Article 247",
+     "Article 248", "Article 249",
+     "c",
+     "Article 248: Residuary Powers of legislation — Parliament has exclusive power to make laws on any matter not enumerated in Concurrent List or State List. ఇది USA కు విరుద్ధం (USA లో States కు). Art.246 = 3 Lists విభజన; Art.249 = Rajya Sabha Resolution ద్వారా State List పై Parliament చట్టం."),
+
+    (10, 2,
+     "ఏ పండితుడు భారత రాజ్యాంగాన్ని 'Federation with strong centralising tendency' అన్నారు?\n"
+     "(Which scholar described India's constitution as a 'Federation with strong centralising tendency'?)",
+     "K.C. Wheare", "Paul Appleby",
+     "Ivor Jennings", "Granville Austin",
+     "c",
+     "Ivor Jennings: 'Federation with a strong centralising tendency.' K.C. Wheare: 'Quasi-Federal.' Paul Appleby: 'Extremely federalized.' Granville Austin: 'Cooperative Federalism.' ఇవి నాలుగూ పరీక్షలలో వేరువేరుగా అడుగుతారు — జాగ్రత్తగా గుర్తుపెట్టుకోండి."),
+
+    (10, 2,
+     "భారత రాజ్యాంగంలో గల ఈ లక్షణం ఏకీకృత స్వభావాన్ని (Unitary feature) చూపిస్తుంది:\n"
+     "(Which of the following features of Indian Constitution reflects its Unitary character?)",
+     "అధికారాల విభజన (Three Lists)",
+     "స్వతంత్ర న్యాయవ్యవస్థ",
+     "అవశేష అధికారాలు కేంద్రానికి",
+     "ద్విసభా పార్లమెంట్",
+     "c",
+     "భారత రాజ్యాంగంలో Unitary Features: (1) అవశేష అధికారాలు కేంద్రానికి (Art.248), (2) ఒకే పౌరసత్వం, (3) Integrated Judiciary, (4) గవర్నర్ నియామకం కేంద్రం, (5) అత్యవసర పరిస్థితిలో రాష్ట్రాల అధికారాలు కేంద్రానికి, (6) All India Services. అధికారాల విభజన మరియు స్వతంత్ర న్యాయవ్యవస్థ Federal features."),
+
+    (10, 2,
+     "సమాఖ్య వ్యవస్థకు (Federal System) అవసరమైన ముఖ్యమైన పరిస్థితులు — కింది వాటిలో సమాఖ్యకు అవసరమైనది ఏది?\n"
+     "(Which of the following is essential for a Federal System?)",
+     "ఒకే పార్టీ పాలన",
+     "రాజ్యాంగ సర్వోన్నతత మరియు అధికారాల విభజన",
+     "ఒకే పౌరసత్వం మాత్రమే",
+     "నేరుగా ఎన్నుకోబడిన అధ్యక్షుడు",
+     "b",
+     "Federal System కు అవసరమైన లక్షణాలు (K.C. Wheare ప్రకారం): (1) రాజ్యాంగ సర్వోన్నతత, (2) అధికారాల విభజన (Center + States), (3) స్వతంత్ర న్యాయవ్యవస్థ, (4) రాజ్యాంగ కాఠిన్యం (Rigidity). ఒకే పార్టీ, ఒకే పౌరసత్వం Unitary features."),
+
+    (10, 3,
+     "SR Bommai vs Union of India (1994) కేసులో సుప్రీం కోర్టు భారత సమాఖ్య స్వభావం గురించి ఏమి నిర్ణయించింది?\n"
+     "(What did the Supreme Court decide about India's federal character in SR Bommai vs UoI 1994?)",
+     "భారత్ పూర్తిగా Unitary దేశం",
+     "రాష్ట్రాలు కేంద్రానికి 'satellite' లాంటివి",
+     "Federalism భారత రాజ్యాంగ మూల నిర్మాణంలో భాగం",
+     "అత్యవసర పరిస్థితిలో Federalism పూర్తిగా నిలిపివేయవచ్చు",
+     "c",
+     "SR Bommai Case (1994): రాష్ట్ర ప్రభుత్వాలను కేంద్రం Art.356 ద్వారా రద్దు చేయడాన్ని పరిమితం చేస్తూ, Federalism భారత రాజ్యాంగ 'Basic Structure' లో భాగమని నిర్ణయించింది. 'States are not mere appendages of the Centre.' — రాష్ట్రాలు వారి రంగంలో సర్వోన్నత అధికారం కలవి."),
+
+    (10, 2,
+     "భారత రాజ్యాంగంలో 'ఒకే పౌరసత్వం' (Single Citizenship) ఏ దేశ రాజ్యాంగం నుండి స్వీకరించారు?\n"
+     "(Single Citizenship in Indian Constitution is borrowed from which country?)",
+     "USA", "Australia",
+     "Canada", "UK",
+     "d",
+     "Single Citizenship (ఒకే పౌరసత్వం) UK నుండి స్వీకరించారు. USA లో Dual Citizenship ఉంది — Federal Citizenship + State Citizenship. భారత్ లో ఒకే పౌరసత్వం Unitary feature లో ఒకటి — రాష్ట్ర పౌరసత్వం లేదు, కేవలం భారత పౌరసత్వం మాత్రమే."),
+
+    (10, 3,
+     "'Cooperative Federalism' (సహకార సమాఖ్య) భావన భారత రాజ్యాంగంలో ఎవరు గుర్తించారు?\n"
+     "('Cooperative Federalism' in Indian Constitution was identified by which scholar?)",
+     "K.C. Wheare", "Ivor Jennings",
+     "Granville Austin", "Paul Appleby",
+     "c",
+     "Granville Austin తన 'Working a Democratic Revolution' పుస్తకంలో భారత రాజ్యాంగాన్ని 'Cooperative Federalism' గా వర్ణించారు — కేంద్రం మరియు రాష్ట్రాలు పరస్పర సహకారంతో పని చేస్తాయి. K.C. Wheare: Quasi-Federal; Ivor Jennings: Federation with centralising tendency; Paul Appleby: Extremely federalized."),
+
+    (10, 3,
+     "భారత్ లో గవర్నర్ (Governor) నియామకం ఎవరు చేస్తారు — ఇది ఏ స్వభావాన్ని చూపిస్తుంది?\n"
+     "(Who appoints the Governor in India — and what constitutional character does this reflect?)",
+     "రాష్ట్ర ప్రజలు ప్రత్యక్షంగా ఎన్నుకుంటారు — Federal",
+     "రాష్ట్ర శాసనసభ ఎన్నుకుంటుంది — Federal",
+     "రాష్ట్రపతి నియమిస్తారు — Unitary",
+     "సుప్రీం కోర్టు నియమిస్తుంది — Judicial",
+     "c",
+     "గవర్నర్ నియామకం రాష్ట్రపతి (కేంద్రం) చేస్తారు — ఇది Unitary feature. USA లో Governor ప్రజలు ఎన్నుకుంటారు (Federal feature). భారత్ లో గవర్నర్ కేంద్రం agent లా పని చేస్తారు, రాష్ట్రం ఎన్నుకున్న ప్రతినిధి కాదు — అందుకే Quasi-Federal."),
+
+    (10, 2,
+     "Confederation (సమాఖ్య సమ్మేళనం) మరియు Federation (సమాఖ్య) లో ముఖ్య తేడా ఏమిటి?\n"
+     "(Key difference between Confederation and Federation?)",
+     "Confederation లో లిఖిత రాజ్యాంగం ఉంటుంది, Federation లో ఉండదు",
+     "Confederation లో కేంద్రం బలంగా ఉంటుంది, Federation లో రాష్ట్రాలు బలంగా ఉంటాయి",
+     "Confederation లో సభ్య రాష్ట్రాలు స్వతంత్రంగా ఉంటాయి, Federation లో రాజ్యాంగం సర్వోన్నతం",
+     "Federation లో ఒకే పౌరసత్వం ఉంటుంది, Confederation లో రెండు పౌరసత్వాలు ఉంటాయి",
+     "c",
+     "Confederation = loose alliance of independent states (ex: EU partly, old Articles of Confederation USA 1781-1789) — సభ్య రాష్ట్రాలు స్వతంత్రంగా ఉంటాయి, కేంద్ర ప్రభుత్వం బలహీనంగా ఉంటుంది, రాష్ట్రాలు వేరుపడవచ్చు. Federation = రాజ్యాంగ ఆధారంగా కేంద్రం + రాష్ట్రాలు — రాష్ట్రాలు వేరుపడలేవు."),
+
+    (10, 2,
+     "Article 249 ద్వారా పార్లమెంట్ ఏ పరిస్థితిలో రాష్ట్ర జాబితా (State List) పై చట్టాలు చేయగలదు?\n"
+     "(Under Art.249, when can Parliament legislate on State List items?)",
+     "రాష్ట్రపతి ఉత్తర్వు ద్వారా",
+     "రాజ్యసభ 2/3 మెజారిటీ తీర్మానం ద్వారా — జాతీయ ప్రయోజనం పేరుతో",
+     "లోక్‌సభ సాధారణ మెజారిటీ ద్వారా",
+     "రాష్ట్ర అభ్యర్థన లేకుండా సాధ్యం కాదు",
+     "b",
+     "Art.249: Rajya Sabha 2/3 present & voting మెజారిటీ తీర్మానం — 'National Interest' కారణంగా Parliament రాష్ట్ర జాబితా పై చట్టాలు చేయవచ్చు (1 సంవత్సరం, renewal సాధ్యం). ఇది Unitary feature — కేంద్రం రాష్ట్రాల అంశాలపై అతిక్రమించగలదు."),
+
+    (10, 3,
+     "All India Services (IAS, IPS, IFoS) Unitary feature ఎందుకంటారు?\n"
+     "(Why are All India Services considered a Unitary feature?)",
+     "ఇవి కేవలం కేంద్రం మాత్రమే ఉపయోగించుకుంటుంది",
+     "వీటిని పార్లమెంట్ రద్దు చేయగలదు",
+     "ఇవి కేంద్రం నియంత్రణలో ఉండి రాష్ట్రాలలో పని చేస్తాయి — కేంద్రీయ ఆధిపత్యం చూపిస్తుంది",
+     "వీటికి రాష్ట్ర అనుమతి అవసరం",
+     "c",
+     "All India Services (Art.312): IAS, IPS, IFoS — UPSC నియమిస్తుంది, కేంద్రం ఆధీనంలో ఉంటాయి, కానీ రాష్ట్రాలలో పని చేస్తాయి. పదోన్నతి, నిర్ణయం కేంద్రం తీసుకుంటుంది. ఇది Unitary feature — USA లో లేదు (each state has its own services). అంబేడ్కర్ వీటిని 'Steel Frame of India' అన్నారు.",
+     "APPSC"),
+
+    (10, 3,
+     "APPSC PYQ: భారత రాజ్యాంగంలో సమాఖ్య లక్షణంగా (Federal Feature) ఏది లేదు?\n"
+     "(APPSC PYQ: Which of the following is NOT a Federal Feature of the Indian Constitution?)",
+     "అధికారాల విభజన (Division of Powers)",
+     "స్వతంత్ర న్యాయవ్యవస్థ (Independent Judiciary)",
+     "ద్విసభా పార్లమెంట్ (Bicameralism)",
+     "ఒకే పౌరసత్వం (Single Citizenship)",
+     "d",
+     "ఒకే పౌరసత్వం (Single Citizenship) = Unitary Feature. Federal feature కాదు. USA లో Dual Citizenship (Federal + State) ఉంది. భారత్ లో రాష్ట్ర పౌరసత్వం లేదు. అధికారాల విభజన, స్వతంత్ర న్యాయవ్యవస్థ, ద్విసభా పార్లమెంట్ — ఇవి Federal features.",
+     "APPSC"),
 ]
 
 

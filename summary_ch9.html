@@ -1,466 +1,397 @@
 <!DOCTYPE html>
 <html lang="te">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Ch 9 – Directive Principles of State Policy | Indian Polity</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<title>Chapter 7 — Fundamental Rights | Indian Polity</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Noto Sans Telugu','Noto Sans',sans-serif;font-size:15px;color:#1a1a2e;background:#e8edf2;line-height:1.6}
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+    background: #ede7f6;
+    color: #1a1230;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px;
+    background: #fff;
+    padding: 13mm 12mm 11mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
 
-/* ── PAGE ── */
-.page{width:210mm;min-height:297mm;margin:8mm auto;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.18);page-break-after:always}
+  .header {
+    background: linear-gradient(135deg, #311b92 0%, #4527a0 100%);
+    color: #fff;
+    border-radius: 9px;
+    padding: 11px 16px;
+    margin-bottom: 11px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .hbadge {
+    background: rgba(255,255,255,0.2);
+    border-radius: 7px;
+    padding: 5px 13px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .htitle h1 { font-size: 18px; font-weight: 700; }
+  .htitle h2 { font-size: 13.5px; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+  .hmeta { margin-left: auto; text-align: right; font-size: 13px; opacity: 0.8; line-height: 1.7; }
 
-/* ── HEADER BAND ── */
-.hdr{background:linear-gradient(135deg,#0d2b36 0%,#1a3c4a 55%,#163547 100%);color:#fff;padding:14px 22px 12px;display:flex;justify-content:space-between;align-items:flex-end}
-.hdr-left h1{font-size:18px;font-weight:800;letter-spacing:.5px;line-height:1.25}
-.hdr-left .sub{font-size:12px;opacity:.78;margin-top:3px}
-.hdr-right{text-align:right}
-.hdr-right .tag{display:inline-block;background:rgba(77,208,225,.22);border:1px solid rgba(77,208,225,.5);border-radius:20px;padding:3px 10px;font-size:11.5px;color:#b2ebf2;margin-bottom:2px}
-.hdr-right .count{font-size:11px;opacity:.65}
+  .sh {
+    font-size: 14px;
+    font-weight: 700;
+    color: #311b92;
+    background: #ede7f6;
+    border-left: 5px solid #7c4dff;
+    padding: 5px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 10px 0 6px;
+    letter-spacing: 0.3px;
+  }
 
-/* ── BODY ── */
-.body{padding:14px 18px 10px}
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
 
-/* ── SECTION TITLE ── */
-.sh{font-size:14px;font-weight:700;color:#1a3c4a;border-left:4px solid #26a69a;padding-left:9px;margin:12px 0 7px;text-transform:uppercase;letter-spacing:.6px}
+  .card {
+    background: #f3e5f5;
+    border: 1.5px solid #ce93d8;
+    border-radius: 7px;
+    padding: 8px 10px;
+  }
+  .ch {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #311b92;
+    border-bottom: 1px solid #ce93d8;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
+  }
 
-/* ── INFO BOX ── */
-.infobox{background:#e0f7fa;border:1.5px solid #80deea;border-radius:7px;padding:10px 14px;margin-bottom:10px}
-.infobox p{font-size:14.5px;margin-bottom:4px}
-.infobox p:last-child{margin-bottom:0}
-.infobox strong{color:#006064}
+  .fact { margin: 3px 0; font-size: 14.5px; }
+  .fact::before { content: "• "; color: #7c4dff; font-weight: 700; }
+  .k { font-weight: 700; color: #311b92; }
+  .kg { font-weight: 700; color: #1b5e20; }
+  .kb { font-weight: 700; color: #0d47a1; }
+  .kt { font-weight: 700; color: #004d40; }
 
-/* ── TWO-COLUMN GRID ── */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-bottom:10px}
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    background: #4527a0;
+    color: #fff;
+    padding: 5px 7px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td { padding: 4px 7px; border-bottom: 1px solid #ede7f6; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) td { background: #f3e5f5; }
 
-/* ── CARD ── */
-.card{background:#f0f7ff;border:1.5px solid #b0bec5;border-radius:7px;padding:10px 12px}
-.card.teal{background:#e0f7fa;border-color:#80deea}
-.card.green{background:#e8f5e9;border-color:#a5d6a7}
-.card.amber{background:#fff8e1;border-color:#ffe082}
-.card.deep{background:#e3f2fd;border-color:#90caf9}
-.card h3{font-size:13.5px;font-weight:700;color:#1a3c4a;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #cfd8dc}
-.card h3 span{font-weight:400;font-size:12px;color:#546e7a}
-.card p{font-size:14px;margin-bottom:3px}
-.card p:last-child{margin-bottom:0}
-.card .art{display:inline-block;background:#1a3c4a;color:#fff;border-radius:4px;padding:1px 7px;font-size:12px;font-weight:700;margin-right:4px}
-.card .note{font-size:12.5px;color:#37474f;background:#eceff1;border-radius:4px;padding:2px 6px;margin-top:3px;display:inline-block}
+  .tag {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .tg { background: #e8f5e9; color: #1b5e20; }
+  .tb { background: #e3f2fd; color: #0d47a1; }
+  .tp { background: #ede7f6; color: #311b92; }
+  .tt { background: #e0f7fa; color: #004d40; }
 
-/* ── CLASSIFICATION TABLE ── */
-.cls-table{width:100%;border-collapse:collapse;margin-bottom:10px;font-size:13.5px}
-.cls-table th{background:#1a3c4a;color:#fff;padding:6px 10px;text-align:left;font-size:13px}
-.cls-table td{padding:6px 10px;border:1px solid #cfd8dc;vertical-align:top}
-.cls-table tr:nth-child(even) td{background:#f5f9fc}
-.cls-badge{display:inline-block;border-radius:4px;padding:1px 7px;font-size:12px;font-weight:600;margin:1px}
-.cls-badge.s{background:#e8f5e9;color:#2e7d32}
-.cls-badge.g{background:#fff8e1;color:#f57f17}
-.cls-badge.l{background:#e3f2fd;color:#1565c0}
+  .abadge {
+    display: inline-block;
+    background: #4527a0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 1px 7px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-right: 4px;
+  }
+  .abadge.gr { background: #2e7d32; }
+  .abadge.bl { background: #1565c0; }
+  .abadge.tl { background: #006064; }
 
-/* ── COMPARISON TABLE ── */
-.cmp-table{width:100%;border-collapse:collapse;margin-bottom:10px;font-size:13.5px}
-.cmp-table th{background:#1a3c4a;color:#fff;padding:6px 10px;text-align:center}
-.cmp-table td{padding:6px 10px;border:1px solid #cfd8dc;text-align:center;vertical-align:top}
-.cmp-table td:first-child{text-align:left;font-weight:600;background:#f5f9fc}
-.cmp-table tr:nth-child(even) td:not(:first-child){background:#fafcff}
-.tick{color:#2e7d32;font-weight:700}
-.cross{color:#c62828;font-weight:700}
+  .writgrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
+  .witem {
+    background: #ede7f6;
+    border: 1.5px solid #ce93d8;
+    border-radius: 6px;
+    padding: 5px 6px;
+    text-align: center;
+  }
+  .wc { font-size: 13px; font-weight: 700; color: #311b92; }
+  .wv { font-size: 12.5px; color: #555; margin-top: 2px; line-height: 1.35; }
 
-/* ── CASES TIMELINE ── */
-.timeline{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
-.tl-row{display:grid;grid-template-columns:110px 1fr;gap:8px;align-items:start}
-.tl-year{background:#1a3c4a;color:#fff;border-radius:5px;padding:3px 8px;font-size:12.5px;font-weight:700;text-align:center}
-.tl-txt{font-size:13.5px;padding:3px 0}
-.tl-txt strong{color:#006064}
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .pill {
+    background: #5e35b1;
+    color: #fff;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .pb { background: #1565c0; }
+  .pg { background: #2e7d32; }
+  .pt { background: #00695c; }
 
-/* ── PILLS ── */
-.pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.pill{background:#e0f2f1;border:1px solid #80cbc4;border-radius:20px;padding:4px 12px;font-size:13.5px;color:#004d40}
-.pill strong{color:#00695c}
+  .footer {
+    border-top: 1.5px solid #ce93d8;
+    margin-top: 10px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 11px;
+    color: #888;
+  }
 
-/* ── SCHOLARS QUOTE STRIP ── */
-.quotes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
-.qcard{background:#fce4ec;border:1px solid #f48fb1;border-radius:7px;padding:8px 10px;font-size:13px}
-.qcard .who{font-weight:700;color:#880e4f;font-size:12px;margin-bottom:3px}
-.qcard.teal{background:#e0f7fa;border-color:#80deea}
-.qcard.teal .who{color:#006064}
-.qcard.blue{background:#e3f2fd;border-color:#90caf9}
-.qcard.blue .who{color:#1565c0}
-
-/* ── ART GRID ── */
-.art-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:10px}
-.ag-cell{background:#f0f7ff;border:1.5px solid #b0bec5;border-radius:6px;padding:7px 9px;font-size:13px}
-.ag-cell .an{font-size:12.5px;font-weight:700;background:#1a3c4a;color:#fff;border-radius:4px;padding:1px 6px;display:inline-block;margin-bottom:4px}
-.ag-cell.s{border-color:#a5d6a7;background:#e8f5e9}
-.ag-cell.g{border-color:#ffe082;background:#fff8e1}
-.ag-cell.l{border-color:#90caf9;background:#e3f2fd}
-
-/* ── SAVING CLAUSES ── */
-.saving-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-bottom:10px}
-.sv-card{border-radius:7px;padding:9px 12px;font-size:13.5px}
-.sv-card h4{font-size:13px;font-weight:700;margin-bottom:5px;padding-bottom:3px;border-bottom:1px solid rgba(0,0,0,.12)}
-
-/* ── FACT HIGHLIGHT ── */
-.fact{background:linear-gradient(135deg,#e0f7fa,#e3f2fd);border-left:4px solid #26a69a;border-radius:0 6px 6px 0;padding:7px 12px;margin-bottom:8px;font-size:14.5px}
-.fact strong{color:#00695c}
-
-@media print{
-  body{background:#fff}
-  .page{margin:0;box-shadow:none;border-radius:0}
-}
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════ PAGE 1 ═══════════════════════════════ -->
+<!-- ════════════════ PAGE 1 ════════════════ -->
 <div class="page">
-  <div class="hdr">
-    <div class="hdr-left">
-      <h1>రాజ్య నిర్దేశక సూత్రాలు<br><span style="font-size:15px;font-weight:600">Directive Principles of State Policy</span></h1>
-      <div class="sub">అధ్యాయం 9 | Chapter 9 · భాగం IV / Part IV · అనుచ్ఛేదాలు / Articles 36–51</div>
+  <div class="header">
+    <div class="hbadge">Chapter 7</div>
+    <div class="htitle">
+      <h1>Fundamental Rights — ప్రాథమిక హక్కులు</h1>
+      <h2>Indian Polity · Lakshmikanth · APPSC Group 2</h2>
     </div>
-    <div class="hdr-right">
-      <div class="tag">లక్ష్మీకాంత్ ఇండియన్ పాలిటీ</div><br>
-      <div class="count">47 MCQs · 9 PYQs / Articles 36–51 · Part IV</div>
+    <div class="hmeta">51 MCQs · 11 PYQs<br>Part III · Articles 12–35</div>
+  </div>
+
+  <!-- Overview -->
+  <div class="sh">7.1 పరిచయం — ప్రాథమిక హక్కుల అవలోకనం (Overview of Fundamental Rights)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">ప్రాథమిక వివరాలు (Basic Facts)</div>
+      <div class="fact">భాగం III · అనుచ్ఛేదాలు <span class="k">12–35</span> · మూలం: <span class="kb">USA Bill of Rights</span><br><em>Part III · Articles <span class="k">12–35</span> · Source: <span class="kb">USA Bill of Rights</span></em></div>
+      <div class="fact">మొదట్లో <span class="k">7 హక్కులు</span> → ఇప్పుడు <span class="k">6 హక్కులు</span><br><em>Originally <span class="k">7 FRs</span> → now <span class="k">6 FRs</span></em></div>
+      <div class="fact"><span class="k">44వ సవరణ 1978</span>: ఆస్తి హక్కు (Art 19(1)(f) + Art 31) ప్రాథమిక హక్కుగా తొలగింపు<br><em><span class="k">44th Amendment 1978</span>: Right to Property removed as FR</em></div>
+      <div class="fact">Art 300A: ఆస్తి హక్కు = <span class="k">రాజ్యాంగ/చట్ట హక్కు</span> (ప్రాథమిక హక్కు కాదు)<br><em>Art 300A: Right to Property = <span class="k">Constitutional/Legal Right</span> (not FR)</em></div>
+      <div class="fact">ప్రాథమిక హక్కులు <span class="k">న్యాయస్థాన అమలు యోగ్యం</span> — Art 32/226 ద్వారా<br><em>FRs are <span class="k">justiciable</span> — enforceable in court (Art 32/226)</em></div>
+    </div>
+    <div class="card">
+      <div class="ch">6 ప్రాథమిక హక్కులు (6 Fundamental Rights)</div>
+      <div class="fact"><span class="k">1.</span> సమానత్వ హక్కు (Art 14–18)<br><em><span class="k">1.</span> Right to Equality (Art 14–18)</em></div>
+      <div class="fact"><span class="k">2.</span> స్వాతంత్ర్య హక్కు (Art 19–22)<br><em><span class="k">2.</span> Right to Freedom (Art 19–22)</em></div>
+      <div class="fact"><span class="k">3.</span> దోపిడీకి వ్యతిరేక హక్కు (Art 23–24)<br><em><span class="k">3.</span> Right Against Exploitation (Art 23–24)</em></div>
+      <div class="fact"><span class="k">4.</span> మత స్వాతంత్ర్య హక్కు (Art 25–28)<br><em><span class="k">4.</span> Right to Freedom of Religion (Art 25–28)</em></div>
+      <div class="fact"><span class="k">5.</span> సాంస్కృతిక &amp; విద్యా హక్కులు (Art 29–30)<br><em><span class="k">5.</span> Cultural &amp; Educational Rights (Art 29–30)</em></div>
+      <div class="fact"><span class="k">6.</span> రాజ్యాంగ పరిహారాల హక్కు (Art 32)<br><em><span class="k">6.</span> Right to Constitutional Remedies (Art 32)</em></div>
     </div>
   </div>
-  <div class="body">
 
-    <!-- Intro -->
-    <div class="sh">DPSP పరిచయం · Introduction</div>
-    <div class="two-col" style="margin-bottom:8px">
-      <div class="infobox">
-        <p><strong>భాగం IV, అనుచ్ఛేదాలు 36–51 / Part IV, Articles 36–51</strong></p>
-        <p>• అనుచ్ఛేద 36 → 'రాజ్యం' నిర్వచనం = అనుచ్ఛేద 12 వలెనే<br>
-           <em>Art 36 → Definition of 'State' = Same as Art 12</em></p>
-        <p>• అనుచ్ఛేద 37 → న్యాయస్థానాల ద్వారా అమలు చేయలేని కానీ పాలనలో మూలభూతమైన సూత్రాలు<br>
-           <em>Art 37 → Non-justiciable but fundamental in governance</em></p>
-        <p>• స్వీకరించబడింది: ఐర్లాండ్ రాజ్యాంగం 1937 నుండి<br>
-           <em>Borrowed from: Irish (Eire) Constitution 1937</em></p>
-      </div>
-      <div class="infobox" style="background:#e8f5e9;border-color:#a5d6a7">
-        <p><strong>FR vs DPSP – త్వరిత తులన / Quick Contrast</strong></p>
-        <p>• FR లు → న్యాయదాన యోగ్యమైనవి (Justiciable)<br>
-           DPSP లు → న్యాయదాన యోగ్యం కానివి (Non-justiciable)</p>
-        <p>• FR లు → ప్రతికూల బాధ్యతలు (Negative obligations)<br>
-           DPSP లు → సానుకూల బాధ్యతలు (Positive obligations)</p>
-        <p>• FR లు → రాజకీయ ప్రజాస్వామ్యం (Political Democracy)<br>
-           DPSP లు → సాంఘిక-ఆర్థిక ప్రజాస్వామ్యం (Socio-economic Democracy)</p>
-      </div>
+  <!-- Articles 12 & 13 -->
+  <div class="sh">7.2 ఆర్టికల్ 12 (రాజ్యం) &amp; ఆర్టికల్ 13 (ప్రాథమిక హక్కులకు విరుద్ధమైన చట్టాలు)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch"><span class="abadge">Art 12</span> — 'రాజ్యం' నిర్వచనం (Definition of 'State')</div>
+      <div class="fact"><span class="k">భారత ప్రభుత్వం</span> (కేంద్ర ప్రభుత్వం)<br><em><span class="k">Government of India</span> (Central Govt)</em></div>
+      <div class="fact"><span class="k">భారత పార్లమెంటు</span><br><em><span class="k">Parliament</span> of India</em></div>
+      <div class="fact"><span class="k">రాష్ట్ర ప్రభుత్వాలు</span> మరియు రాష్ట్ర శాసనసభలు<br><em><span class="k">State Governments</span> and State Legislatures</em></div>
+      <div class="fact"><span class="k">స్థానిక సంస్థలు</span> (నగరపాలక సంస్థలు, పంచాయతీలు)<br><em><span class="k">Local authorities</span> (municipalities, panchayats)</em></div>
+      <div class="fact"><span class="k">ఇతర సంస్థలు</span> (శాసనబద్ధ సంస్థలు, పరికరాలు)<br><em><span class="k">Other authorities</span> (statutory bodies, instrumentalities)</em></div>
     </div>
-
-    <!-- Scholars -->
-    <div class="sh">విద్వాంసుల అభిప్రాయాలు · Scholars' Views</div>
-    <div class="quotes">
-      <div class="qcard">
-        <div class="who">K.T. షా / K.T. Shah</div>
-        "బ్యాంకు సౌకర్యానికి చెల్లించే చెక్కు"<br>
-        <em>"A cheque payable at the bank's convenience"</em>
-      </div>
-      <div class="qcard teal">
-        <div class="who">T.T. కృష్ణమాచారి / T.T. Krishnamachari</div>
-        "పవిత్ర కోరికలు"<br>
-        <em>"Pious wishes"</em>
-      </div>
-      <div class="qcard blue">
-        <div class="who">గ్రాన్‌విల్ ఆస్టిన్ / Granville Austin</div>
-        "రాజ్యాంగ మనస్సాక్షి"<br>
-        <em>"Conscience of the Constitution"</em><br>
-        <span style="font-size:12px">(FR + DPSP కలిపి / FR + DPSP together)</span>
-      </div>
-    </div>
-    <!-- Ambedkar & Art 38(2) fact strip -->
-    <div class="fact">
-      <strong>అంబేడ్కర్:</strong> DPSP లను 1935 GoI Act లోని '<strong>Instruments of Instructions</strong>' తో పోల్చారు — గవర్నర్ జనరల్‌కు జారీ చేసిన ఆదేశాలు.<br>
-      <em>Ambedkar compared DPSPs to the 'Instruments of Instructions' under the Government of India Act 1935.</em>
-      &nbsp;|&nbsp;
-      <strong>Art 38(2)</strong> → <strong>44వ సవరణ 1978</strong> జోడించింది — ఆదాయం, హోదా, అవకాశాలలో అసమానతలు తగ్గించడం.<br>
-      <em>Art 38(2) added by 44th Amendment 1978 — minimise inequalities in income, status &amp; opportunities.</em>
-    </div>
-    <!-- Classification Table -->
-    <div class="sh">వర్గీకరణ పట్టిక · Classification Table</div>
-    <table class="cls-table">
-      <tr>
-        <th>వర్గం / Category</th>
-        <th>అనుచ్ఛేదాలు / Articles</th>
-        <th>ముఖ్య నిర్దేశకాలు / Key Directives</th>
-      </tr>
-      <tr>
-        <td><span class="cls-badge s">సమాజవాద / Socialistic</span></td>
-        <td>38, 39, 39A, 41, 42, 43, 43A, 43B, 47</td>
-        <td>సామాజిక-ఆర్థిక న్యాయం, జీవన వేతనం, ఉచిత న్యాయ సహాయం<br><em>Social-economic justice, living wage, free legal aid</em></td>
-      </tr>
-      <tr>
-        <td><span class="cls-badge g">గాంధేయ / Gandhian</span></td>
-        <td>40, 43, 46, 47, 48</td>
-        <td>పంచాయతీలు, కుటీర పరిశ్రమలు, SC/ST, గోహత్య నిషేధం<br><em>Panchayats, cottage industries, SC/ST, cow slaughter ban</em></td>
-      </tr>
-      <tr>
-        <td><span class="cls-badge l">ఉదారవాద-మేధో / Liberal-Intellectual</span></td>
-        <td>44, 45, 48, 48A, 49, 50, 51</td>
-        <td>ఏకరీతి పౌర స్మృతి, పర్యావరణం, న్యాయ స్వాతంత్ర్యం<br><em>UCC, environment, judicial independence, international peace</em></td>
-      </tr>
-    </table>
-
-    <!-- Socialistic DPSPs Grid -->
-    <div class="sh">సమాజవాద నిర్దేశక సూత్రాలు · Socialistic DPSPs</div>
-    <div class="art-grid">
-      <div class="ag-cell s">
-        <span class="an">Art 38</span><br>
-        సామాజిక-ఆర్థిక-రాజకీయ న్యాయంతో సమాజ వ్యవస్థ; అసమానతల తగ్గింపు<br>
-        <em>Social order with social, economic &amp; political justice; reduce inequalities</em>
-      </div>
-      <div class="ag-cell s">
-        <span class="an">Art 39</span><br>
-        <b>(a)</b> సమాన జీవనోపాధి హక్కు / Equal livelihood<br>
-        <b>(b)</b> వనరుల పంపిణీ / Resource distribution<br>
-        <b>(c)</b> సంపద కేంద్రీకరణ నివారణ / Anti-concentration
-      </div>
-      <div class="ag-cell s">
-        <span class="an">Art 39A</span><br>
-        సమాన న్యాయం + ఉచిత న్యాయ సహాయం<br>
-        <em>Equal justice + Free legal aid</em><br>
-        <span style="font-size:12px;color:#2e7d32">↳ 42వ సవరణ 1976 / 42nd Amdt 1976</span>
-      </div>
-      <div class="ag-cell s">
-        <span class="an">Art 41</span><br>
-        పని, విద్య, నిరుద్యోగ/వృద్ధాప్య/ అనారోగ్య సహాయానికి హక్కు<br>
-        <em>Right to work, education &amp; public assistance</em>
-      </div>
-      <div class="ag-cell s">
-        <span class="an">Art 42</span><br>
-        న్యాయమైన పని పరిస్థితులు + మాతృత్వ సహాయం<br>
-        <em>Just work conditions + Maternity relief</em>
-      </div>
-      <div class="ag-cell s">
-        <span class="an">Art 43</span><br>
-        కార్మికులకు జీవన వేతనం; కుటీర పరిశ్రమలు<br>
-        <em>Living wage for workers; cottage industries</em><br>
-        <span style="font-size:12px;color:#f57f17">(గాంధేయ కూడా / Gandhian too)</span>
-      </div>
-      <div class="ag-cell s">
-        <span class="an">Art 43A</span><br>
-        పరిశ్రమల నిర్వహణలో కార్మికుల భాగస్వామ్యం<br>
-        <em>Workers' participation in management</em><br>
-        <span style="font-size:12px;color:#2e7d32">↳ 42వ సవరణ 1976 / 42nd Amdt 1976</span>
-      </div>
-      <div class="ag-cell s">
-        <span class="an">Art 43B</span><br>
-        సహకార సంఘాల అభివృద్ధి<br>
-        <em>Promotion of cooperative societies</em><br>
-        <span style="font-size:12px;color:#2e7d32">↳ 97వ సవరణ 2011 / 97th Amdt 2011</span>
-      </div>
-    </div>
-
-    <!-- Gandhian DPSPs -->
-    <div class="sh">గాంధేయ నిర్దేశక సూత్రాలు · Gandhian DPSPs</div>
-    <div class="two-col">
-      <div>
-        <div class="card" style="background:#fff8e1;border-color:#ffe082;margin-bottom:7px">
-          <h3><span class="art">Art 40</span> గ్రామ పంచాయతీలు <span>/ Village Panchayats</span></h3>
-          <p>గ్రామ పంచాయతీలను సంఘటిత చేసి స్వయంపాలన యూనిట్లుగా పని చేయించాలి</p>
-          <p><em>Organise village panchayats, endow powers to function as self-government units</em></p>
-        </div>
-        <div class="card" style="background:#fff8e1;border-color:#ffe082">
-          <h3><span class="art">Art 46</span> SC/ST &amp; బలహీన వర్గాలు <span>/ Weaker Sections</span></h3>
-          <p>అనుసూచిత కులాలు, అనుసూచిత తెగలు మరియు బలహీన వర్గాల విద్యా ఆర్థిక అభివృద్ధి; సామాజిక అన్యాయం నుండి రక్షణ</p>
-          <p><em>Promote educational &amp; economic interests of SC, ST &amp; weaker sections; protect from social injustice</em></p>
-        </div>
-      </div>
-      <div>
-        <div class="card" style="background:#fff8e1;border-color:#ffe082;margin-bottom:7px">
-          <h3><span class="art">Art 47</span> పోషణ + నిషేధం <span>/ Nutrition + Prohibition</span></h3>
-          <p>పౌష్టికాహారం మరియు జీవన ప్రమాణం పెంపు; మాదక పానీయాల నిషేధం</p>
-          <p><em>Raise nutrition &amp; living standards; prohibit intoxicating drinks and drugs</em></p>
-          <span class="note">సమాజవాద + గాంధేయ / Socialistic + Gandhian</span><br>
-          <span class="note" style="margin-top:3px">వాంచు కమిటీ 1961 మద్యపాన నిషేధం సిఫారసు చేసింది / Wanchoo Committee 1961 recommended prohibition</span>
-        </div>
-        <div class="card" style="background:#fff8e1;border-color:#ffe082">
-          <h3><span class="art">Art 48</span> వ్యవసాయం + పశుపాలన <span>/ Agriculture + Animal Husbandry</span></h3>
-          <p>శాస్త్రీయ వ్యవసాయం; ఆవులు, దూడలు, పాడి పశువుల వధ నిషేధం; జాతి సంరక్షణ</p>
-          <p><em>Scientific agriculture; prohibit slaughter of cows, calves, milch &amp; draught cattle; breed preservation</em></p>
-          <span class="note">గాంధేయ + ఉదారవాద / Gandhian + Liberal</span>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /body -->
-</div><!-- /page1 -->
-
-<!-- ═══════════════════════════════ PAGE 2 ═══════════════════════════════ -->
-<div class="page">
-  <div class="hdr">
-    <div class="hdr-left">
-      <h1>రాజ్య నిర్దేశక సూత్రాలు – భాగం 2<br><span style="font-size:15px;font-weight:600">DPSP – Part 2 · FR Conflict · Cases · Saving Clauses</span></h1>
-      <div class="sub">అధ్యాయం 9 | Chapter 9 · Articles 36–51 · Part IV</div>
-    </div>
-    <div class="hdr-right">
-      <div class="tag">లక్ష్మీకాంత్ ఇండియన్ పాలిటీ</div><br>
-      <div class="count">47 MCQs · 9 PYQs / Articles 36–51 · Part IV</div>
+    <div class="card">
+      <div class="ch"><span class="abadge">Art 13</span> — శూన్య చట్టాలు (Void Laws)</div>
+      <div class="fact"><span class="k">రాజ్యాంగ పూర్వ చట్టాలు</span>: <span class="k">గ్రహణ సిద్ధాంతం</span> — విరుద్ధ భాగం నిద్రావస్థలో ఉంటుంది, మృతం కాదు<br><em><span class="k">Pre-Constitution laws</span>: Doctrine of <span class="k">Eclipse</span> — inconsistent part dormant, not dead</em></div>
+      <div class="fact"><span class="k">రాజ్యాంగ పరంతర చట్టాలు</span>: <span class="k">ప్రారంభం నుండే శూన్యం</span> (Void ab initio)<br><em><span class="k">Post-Constitution laws</span>: <span class="k">Void ab initio</span> (null from birth)</em></div>
+      <div class="fact"><span class="k">విభజన సిద్ధాంతం</span>: విరుద్ధ భాగం మాత్రమే శూన్యం, మిగతాది చెల్లుతుంది<br><em>Doctrine of <span class="k">Severability</span>: Only inconsistent part void, rest valid</em></div>
+      <div class="fact">Art 13(4) 24వ సవరణ 1971 చేత జోడించబడింది<br><em>Art 13(4) added by 24th Amendment 1971</em></div>
     </div>
   </div>
-  <div class="body">
 
-    <!-- Liberal-Intellectual DPSPs -->
-    <div class="sh">ఉదారవాద-మేధో నిర్దేశక సూత్రాలు · Liberal-Intellectual DPSPs</div>
-    <div class="art-grid">
-      <div class="ag-cell l">
-        <span class="an">Art 44</span><br>
-        ఏకరీతి పౌర స్మృతి<br>
-        <em>Uniform Civil Code</em><br>
-        <span style="font-size:12px;color:#c62828">⭐ APPSC PYQ</span>
-      </div>
-      <div class="ag-cell l">
-        <span class="an">Art 45</span><br>
-        <b>మూలంలో (Before 86th):</b> 14 సంవత్సరాల లోపు ఉచిత విద్య<br>
-        <b>ఇప్పుడు:</b> 6 సంవత్సరాల లోపు బాల్య సంరక్షణ<br>
-        <em>Now: Early childhood care for children below 6</em>
-      </div>
-      <div class="ag-cell l">
-        <span class="an">Art 48A</span><br>
-        పర్యావరణ పరిరక్షణ + అటవీ సంరక్షణ<br>
-        <em>Protect environment + Safeguard forests &amp; wildlife</em><br>
-        <span style="font-size:12px;color:#1565c0">↳ 42వ సవరణ 1976</span>
-      </div>
-      <div class="ag-cell l">
-        <span class="an">Art 49</span><br>
-        జాతీయ ప్రాముఖ్యం గల స్మారక చిహ్నాల రక్షణ<br>
-        <em>Protection of monuments of national importance</em>
-      </div>
-      <div class="ag-cell l">
-        <span class="an">Art 50</span><br>
-        న్యాయవ్యవస్థ–కార్యనిర్వాహక వేర్పాటు<br>
-        <em>Separation of Judiciary from Executive</em><br>
-        <span style="font-size:12px">Public services లో / In public services</span>
-      </div>
-      <div class="ag-cell l">
-        <span class="an">Art 51</span><br>
-        అంతర్జాతీయ శాంతి + భద్రత; అంతర్జాతీయ చట్టాల పట్ల గౌరవం<br>
-        <em>International peace &amp; security; respect for international law</em>
-      </div>
+  <!-- Right to Equality -->
+  <div class="sh">7.3 సమానత్వ హక్కు — Articles 14–18 (Right to Equality)</div>
+  <table>
+    <tr><th>అనుచ్ఛేదం / Article</th><th>హక్కు / Right</th><th>ముఖ్య వివరాలు / Key Facts</th></tr>
+    <tr>
+      <td><span class="k">Art 14</span></td>
+      <td>చట్టం ముందు సమానత్వం + చట్టాల సమాన రక్షణ<br><em>Equality before law + Equal protection of laws</em></td>
+      <td>"చట్టం ముందు సమానత్వం" ← <span class="kb">UK</span> | "సమాన రక్షణ" ← <span class="kb">USA</span><br><em>"Equality before law" ← UK | "Equal protection" ← USA</em></td>
+    </tr>
+    <tr>
+      <td><span class="k">Art 15</span></td>
+      <td>మతం, జాతి, కులం, లింగం, పుట్టిన స్థలంపై వివక్ష రహితం<br><em>No discrimination on religion, race, caste, sex, place of birth</em></td>
+      <td>రాజ్యం మహిళలు, పిల్లలు, SC/STలకు ప్రత్యేక నిబంధనలు చేయవచ్చు (Art 15(3),(4),(5))<br><em>State CAN make special provisions for women, children, SCs/STs</em></td>
+    </tr>
+    <tr>
+      <td><span class="k">Art 16</span></td>
+      <td>ప్రభుత్వ ఉద్యోగంలో అవకాశాల సమానత్వం<br><em>Equality of opportunity in public employment</em></td>
+      <td>1వ సవరణ(1951), 77వ(1995), 81వ(2000), 93వ(2005), 103వ(2019-EWS)<br><em>1st Amdt(1951), 77th(1995), 81st(2000), 93rd(2005), 103rd(2019-EWS)</em></td>
+    </tr>
+    <tr>
+      <td><span class="k">Art 17</span></td>
+      <td>అస్పృశ్యత రద్దు<br><em>Abolition of Untouchability</em></td>
+      <td><span class="k">నిరపేక్ష హక్కు</span> (ఎలాంటి పరిమితులూ అనుమతించబడవు) | నాగరిక హక్కుల రక్షణ చట్టం 1955<br><em><span class="k">Absolute right</span> (no restrictions) | Protection of Civil Rights Act 1955</em></td>
+    </tr>
+    <tr>
+      <td><span class="k">Art 18</span></td>
+      <td>బిరుదుల రద్దు (సైనిక/విద్యా బిరుదులు తప్ప)<br><em>Abolition of Titles (except military/academic)</em></td>
+      <td>భారత రత్న, పద్మ పురస్కారాలు = బిరుదులు కావు (SC 1996) — పురస్కారాలు, బిరుదులు కావు<br><em>Bharat Ratna, Padma Awards = NOT titles (SC 1996) — awards, not titles</em></td>
+    </tr>
+  </table>
+
+  <!-- Art 19 -->
+  <div class="sh">7.5 ఆర్టికల్ 19 — 6 స్వాతంత్ర్యాలు (పౌరులకు మాత్రమే / Citizens Only)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">Art 19(1) కింద 6 స్వాతంత్ర్యాలు (6 Freedoms)</div>
+      <div class="fact"><span class="abadge">a</span> వాక్ మరియు వ్యక్తీకరణ స్వాతంత్ర్యం<br><em>Freedom of speech and expression</em></div>
+      <div class="fact"><span class="abadge">b</span> శాంతియుతంగా సమావేశమవ్వే హక్కు (ఆయుధాలు లేకుండా)<br><em>Right to assemble peaceably (without arms)</em></div>
+      <div class="fact"><span class="abadge">c</span> సంఘాలు/సంయుక్తాలు/సహకార సంఘాలు ఏర్పాటు హక్కు<br><em>Right to form associations/unions/cooperatives</em></div>
+      <div class="fact"><span class="abadge">d</span> భారత్ అంతటా స్వేచ్ఛగా తిరిగే హక్కు<br><em>Right to move freely throughout India</em></div>
+      <div class="fact"><span class="abadge">e</span> భారత్‌లో ఎక్కడైనా నివసించే/స్థిరపడే హక్కు<br><em>Right to reside/settle in any part of India</em></div>
+      <div class="fact"><span class="abadge">g</span> ఏదైనా వృత్తి/వ్యాపారం చేసే హక్కు<br><em>Right to practice any profession/trade/business</em></div>
     </div>
-
-    <!-- FR vs DPSP Conflict Timeline -->
-    <div class="sh">FR మరియు DPSP వైరుధ్య చరిత్ర · FR–DPSP Conflict Timeline</div>
-    <div class="timeline">
-      <div class="tl-row">
-        <div class="tl-year">1951<br>Champakam</div>
-        <div class="tl-txt"><strong>రాష్ట్రం of మద్రాస్ v. చంపకం దొరైరాజన్:</strong> FR vs DPSP వైరుధ్యంలో <strong>FR గెలుస్తుంది</strong>. మత ఆధారిత సీట్ల కేటాయింపు Art 29(2) ఉల్లంఘన.<br><em>FR prevails over DPSP. Religion-based seat allocation violates Art 29(2).</em></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-year">1951<br>1st Amdt</div>
-        <div class="tl-txt"><strong>1వ రాజ్యాంగ సవరణ:</strong> <strong>Art 15(4)</strong> జోడించింది — SC/ST/OBC కోసం ప్రత్యేక నిబంధనలు అనుమతించింది.<br><em>1st Amendment added Art 15(4) permitting special provisions for SC/ST and backward classes.</em></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-year">1967<br>Golak Nath</div>
-        <div class="tl-txt"><strong>గోలక్‌నాథ్ కేసు:</strong> పార్లమెంటుకు <strong>మూల హక్కులు సవరించే అధికారం లేదు</strong>.<br><em>Parliament has no power to amend Fundamental Rights.</em></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-year">1971<br>24th Amdt</div>
-        <div class="tl-txt"><strong>24వ సవరణ:</strong> గోలక్‌నాథ్ తీర్పు రద్దు — <strong>Art 13(4) + 368(3)</strong> జోడించి FR లతో సహా రాజ్యాంగంలో ఏ భాగాన్నైనా సవరించే అధికారం నిర్ధారించింది.<br><em>24th Amdt overruled Golak Nath; Parliament can amend any part including FRs.</em></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-year">1971<br>25th Amdt</div>
-        <div class="tl-txt"><strong>25వ సవరణ – Art 31C జోడించింది:</strong> Art 39(b) &amp; 39(c) అమలు చేసే చట్టాలు <strong>Art 14 &amp; 19</strong> ఆధారంగా సవాలు చేయలేవు.<br><em>25th Amdt inserted Art 31C: laws implementing Arts 39(b)&amp;(c) safe from challenge under Arts 14&amp;19.</em></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-year">1973<br>Kesavananda</div>
-        <div class="tl-txt"><strong>కేశవానంద భారతి:</strong> <strong>మూల నిర్మాణ సిద్ధాంతం</strong> — పార్లమెంటు FR లను సవరించవచ్చు కానీ మూల నిర్మాణాన్ని నాశనం చేయలేదు. FR + DPSP రెండూ మూల నిర్మాణంలో భాగం.<br><em>Basic Structure Doctrine — Parliament can amend FRs but not destroy Basic Structure.</em></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-year">1976<br>42nd Amdt</div>
-        <div class="tl-txt"><strong>42వ సవరణ – Art 31C విస్తరణ:</strong> <strong>అన్ని DPSPs</strong> అమలు చేసే చట్టాలు Art 14 &amp; 19 నుండి రక్షింపబడతాయి (కానీ తర్వాత రద్దు).<br><em>42nd Amdt extended Art 31C to all DPSPs — later struck down.</em></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-year">1980<br>Minerva Mills</div>
-        <div class="tl-txt"><strong>మినర్వా మిల్స్:</strong> 42వ సవరణ ద్వారా అన్ని DPSPs కు ఇచ్చిన Art 31C విస్తరణ <strong>రాజ్యాంగ విరుద్ధం</strong>. Art 31C మళ్ళీ Art 39(b)&amp;(c) కు మాత్రమే పరిమితం.<br><em>Extension of Art 31C to all DPSPs struck down. Art 31C restored to original scope.</em></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-year">2007<br>IR Coelho</div>
-        <div class="tl-txt"><strong>I.R. కోయెల్హో (9 న్యాయమూర్తులు):</strong> <strong>24 ఏప్రిల్ 1973</strong> తర్వాత 9వ షెడ్యూల్‌కు జోడించిన చట్టాలు మూల నిర్మాణ సిద్ధాంతం ఆధారంగా న్యాయ సమీక్షకు లోబడతాయి.<br><em>Laws added to 9th Schedule after April 24, 1973 subject to judicial review on Basic Structure grounds.</em></div>
-      </div>
+    <div class="card">
+      <div class="ch">Art 19 పై ముఖ్య గమనికలు (Key Notes)</div>
+      <div class="fact">కేవలం <span class="k">పౌరులకే</span> అందుబాటులో ఉంటుంది (విదేశీయులకు కాదు)<br><em>Available only to <span class="k">Citizens</span> (not aliens/foreigners)</em></div>
+      <div class="fact">Art 19(1)(f) — ఆస్తి హక్కు <span class="k">44వ సవరణ 1978 చేత తొలగించబడింది</span><br><em>Art 19(1)(f) — Right to Property <span class="k">removed by 44th Amdt 1978</span></em></div>
+      <div class="fact"><span class="k">97వ సవరణ 2011</span>: సహకార సంఘాలు 19(1)(c)కు జోడించబడ్డాయి<br><em><span class="k">97th Amendment 2011</span>: Cooperative societies added to 19(1)(c)</em></div>
+      <div class="fact">రాజ్యం సహేతుక పరిమితులు విధించవచ్చు<br><em>Reasonable restrictions can be imposed by State</em></div>
+      <div class="fact">పత్రికా స్వాతంత్ర్యం 19(1)(a) కింద చేర్చబడింది<br><em>Press freedom covered under 19(1)(a)</em></div>
     </div>
+  </div>
 
-    <!-- Saving Clauses -->
-    <div class="sh">రక్షక ఖండాలు · Saving Clauses</div>
-    <div class="saving-grid">
-      <div class="sv-card" style="background:#e8f5e9;border:1.5px solid #a5d6a7">
-        <h4 style="color:#2e7d32">అనుచ్ఛేద 31A / Article 31A</h4>
-        <p>భూ సంస్కరణ, ఎస్టేట్ రద్దు, జమీందారీ రద్దు చట్టాలకు Art 14 &amp; 19 ఆధారంగా న్యాయ సవాల్ నుండి రక్షణ</p>
-        <p><em>Saves land reform laws from challenge under Arts 14 &amp; 19</em></p>
-        <span class="note" style="background:#c8e6c9">↳ 1వ సవరణ 1951 / 1st Amdt 1951</span>
-      </div>
-      <div class="sv-card" style="background:#e3f2fd;border:1.5px solid #90caf9">
-        <h4 style="color:#1565c0">అనుచ్ఛేద 31B / Article 31B</h4>
-        <p>9వ షెడ్యూల్‌లో జాబితా చేసిన చట్టాలు న్యాయ సమీక్ష నుండి రక్షింపబడతాయి</p>
-        <p><em>Saves laws in 9th Schedule from judicial review</em></p>
-        <p style="font-size:12.5px;margin-top:4px">⚠ 1973 తర్వాత జోడించిన చట్టాలు: IR Coelho (2007) ప్రకారం న్యాయ సమీక్ష<br><em>Post-1973 additions: subject to judicial review</em></p>
-        <span class="note" style="background:#bbdefb">↳ 1వ సవరణ 1951 / 1st Amdt 1951</span>
-      </div>
-      <div class="sv-card" style="background:#fff8e1;border:1.5px solid #ffe082">
-        <h4 style="color:#f57f17">అనుచ్ఛేద 31C / Article 31C</h4>
-        <p>Art 39(b) &amp; 39(c) అమలు చేసే చట్టాలకు Art 14 &amp; 19 ఆధారంగా సవాల్ నుండి రక్షణ</p>
-        <p><em>Saves laws implementing Arts 39(b)&amp;(c) from challenge under Arts 14&amp;19</em></p>
-        <p style="font-size:12.5px;margin-top:4px">42వ సవరణ (1976): అన్ని DPSPs కు విస్తరించింది → మినర్వా మిల్స్ (1980): రద్దు<br><em>42nd Amdt extended to all DPSPs → Minerva Mills: struck down</em></p>
-        <span class="note" style="background:#fff9c4">↳ 25వ సవరణ 1971 / 25th Amdt 1971</span>
-      </div>
+  <div class="footer">Chapter 7 · Page 1 of 2 · Indian Polity — Lakshmikanth · APPSC Group 2</div>
+</div>
+
+<!-- ════════════════ PAGE 2 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 7</div>
+    <div class="htitle">
+      <h1>Fundamental Rights — ప్రాథమిక హక్కులు (Page 2)</h1>
+      <h2>Indian Polity · Lakshmikanth · APPSC Group 2</h2>
     </div>
+    <div class="hmeta">51 MCQs · 11 PYQs</div>
+  </div>
 
-    <!-- Quick Revision Pills -->
-    <div class="sh">త్వరిత పునరావలోకన · Quick Revision</div>
-    <div class="pills">
-      <div class="pill">భాగం IV = Art 36–51 / <strong>Part IV = Art 36–51</strong></div>
-      <div class="pill">స్వీకరించింది = <strong>ఐర్లాండ్ రాజ్యాంగం 1937 / Irish Constitution 1937</strong></div>
-      <div class="pill">Art 39A → <strong>42వ సవరణ 1976</strong> / 42nd Amdt 1976</div>
-      <div class="pill">Art 43A → <strong>42వ సవరణ 1976</strong> / 42nd Amdt 1976</div>
-      <div class="pill">Art 43B → <strong>97వ సవరణ 2011</strong> / 97th Amdt 2011</div>
-      <div class="pill">Art 48A → <strong>42వ సవరణ 1976</strong> / 42nd Amdt 1976</div>
-      <div class="pill">Art 45 మార్పు → <strong>86వ సవరణ 2002</strong> / 86th Amdt 2002</div>
-      <div class="pill">Art 31A &amp; 31B → <strong>1వ సవరణ 1951</strong> / 1st Amdt 1951</div>
-      <div class="pill">Art 31C → <strong>25వ సవరణ 1971</strong> / 25th Amdt 1971</div>
-      <div class="pill">UCC = <strong>Art 44</strong> · Village Panchayats = <strong>Art 40</strong> · Separation = <strong>Art 50</strong></div>
-      <div class="pill">Int'l Peace = <strong>Art 51</strong> · Free Legal Aid = <strong>Art 39A</strong></div>
-      <div class="pill">Champakam 1951 → <strong>FR &gt; DPSP</strong> in conflict</div>
-      <div class="pill">Minerva Mills 1980 → <strong>FR + DPSP balance</strong> = Basic Structure</div>
-      <div class="pill">గ్రాన్‌విల్ ఆస్టిన్ → FR + DPSP = <strong>"Conscience of Constitution"</strong></div>
-      <div class="pill">B.R. అంబేడ్కర్ → DPSP = <strong>రాజకీయ → సాంఘిక-ఆర్థిక ప్రజాస్వామ్యం</strong></div>
+  <!-- Arts 20, 21, 21A, 22 -->
+  <div class="sh">7.6 &amp; 7.7 ఆర్టికల్స్ 20, 21, 21A, 22 — స్వాతంత్ర్యం &amp; అరెస్టు రక్షణ</div>
+  <table>
+    <tr><th>అనుచ్ఛేదం / Article</th><th>హక్కు / Right</th><th>ముఖ్య వివరాలు / Key Details</th></tr>
+    <tr>
+      <td><span class="k">Art 20</span></td>
+      <td>నేరాల నుండి శిక్ష వ్యతిరేక రక్షణ<br><em>Protection against conviction for offences</em></td>
+      <td>(1) పూర్వాన్వయ చట్టం నిషేధం | (2) <span class="k">రెట్టింపు ప్రమాదం లేదు</span> (USA 5వ సవరణ) | (3) స్వయం నేరారోపణ లేదు<br><em>(1) No ex-post-facto law | (2) No <span class="k">double jeopardy</span> | (3) No self-incrimination</em></td>
+    </tr>
+    <tr>
+      <td><span class="k">Art 21</span></td>
+      <td>జీవించే హక్కు &amp; వ్యక్తి స్వాతంత్ర్యం (అత్యంత ముఖ్యమైన FR)<br><em>Right to life &amp; personal liberty (most important FR)</em></td>
+      <td>"<span class="k">చట్టం ద్వారా నిర్ణీత విధానం</span> తప్ప ఎవరినీ జీవితం/స్వాతంత్ర్యం నుండి వంచించకూడదు" | <span class="kg">మనేకా గాంధీ కేసు 1978</span> పరిధిని విస్తరించింది<br><em>"procedure established by law" | <span class="kg">Maneka Gandhi Case 1978</span> broadened scope</em></td>
+    </tr>
+    <tr>
+      <td><span class="k">Art 21A</span></td>
+      <td>విద్యా హక్కు (6–14 సంవత్సరాలు)<br><em>Right to Education (6–14 years)</em></td>
+      <td><span class="k">86వ సవరణ 2002</span> చేత జోడించబడింది; RTE చట్టం 2009 (రైట్ టు ఎడ్యుకేషన్ యాక్ట్)<br><em>Added by <span class="k">86th Amendment 2002</span>; RTE Act 2009</em></td>
+    </tr>
+    <tr>
+      <td><span class="k">Art 22</span></td>
+      <td>ఇష్టారీతి అరెస్టు &amp; నిర్బంధానికి వ్యతిరేక రక్షణ<br><em>Protection against arbitrary arrest &amp; detention</em></td>
+      <td>సాధారణ అరెస్టు: తెలియపరచే హక్కు + న్యాయవాది + <span class="k">24 గంటలలో</span> మేజిస్ట్రేట్ | నిరోధక నిర్బంధం: ఆలోచనా మండలి <span class="k">3 నెలల</span> తర్వాత; గరిష్ఠం: <span class="k">NSA 1980 = 12 నెలలు</span><br><em>Normal: inform + lawyer + <span class="k">24 hours</span> | Preventive: Advisory Board <span class="k">3 months</span>; NSA 1980 = <span class="k">12 months</span></em></td>
+    </tr>
+  </table>
+
+  <!-- Right against Exploitation + Religion -->
+  <div class="sh">7.3–7.4 (కొనసాగింపు) — Art 23–24 &amp; Art 25–28</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">దోపిడీకి వ్యతిరేక హక్కు (Art 23–24)</div>
+      <div class="fact"><span class="abadge">23</span> మానవ అక్రమ రవాణా &amp; బలవంతపు శ్రమ (బేగార్) నిషేధం<br><em>Prohibition of human trafficking &amp; forced labour (begar)</em></div>
+      <div class="fact">Art 23 <span class="k">అందరు వ్యక్తులకూ</span> వర్తిస్తుంది (పౌరులు + పౌరేతరులు)<br><em>Art 23 available to <span class="k">all persons</span> (citizens + non-citizens)</em></div>
+      <div class="fact"><span class="abadge">24</span> కర్మాగారాలు/గనులు/ప్రమాదకర పనులలో శిశు శ్రమ నిషేధం<br><em>No child labour in factories/mines/hazardous work</em></div>
+      <div class="fact"><span class="k">14 సంవత్సరాల లోపు</span> పిల్లలను నియమించుకోలేరు<br><em>Children <span class="k">below 14</span> — cannot be employed</em></div>
+      <div class="fact">శిశు శ్రమ (నిషేధ &amp; నియంత్రణ) చట్టం 1986<br><em>Child Labour (Prohibition &amp; Regulation) Act 1986</em></div>
     </div>
+    <div class="card">
+      <div class="ch">మత స్వాతంత్ర్య హక్కు (Art 25–28)</div>
+      <div class="fact"><span class="abadge">25</span> అంతరాత్మ స్వాతంత్ర్యం &amp; మతాన్ని అనుసరించే/ఆచరించే/ప్రచారం చేసే స్వాతంత్ర్యం<br><em>Freedom of conscience &amp; free profession/practice/propagation of religion</em></div>
+      <div class="fact"><span class="abadge">26</span> మత వ్యవహారాలను నిర్వహించే స్వాతంత్ర్యం (మత వర్గాలు)<br><em>Freedom to manage religious affairs (religious denominations)</em></div>
+      <div class="fact"><span class="abadge">27</span> ఏదైనా మత ప్రచారానికి పన్నులు చెల్లించమని బలవంతం లేదు<br><em>No compulsion to pay taxes for promotion of any religion</em></div>
+      <div class="fact"><span class="abadge">28</span> పూర్తిగా రాజ్యం నిర్వహించే పాఠశాలల్లో మత విద్య నిషేధం<br><em>No religious instruction in purely state-funded schools</em></div>
+    </div>
+  </div>
 
-    <!-- Comparison Table -->
-    <div class="sh">FR vs DPSP తులనాత్మక పట్టిక · Comparison Table</div>
-    <table class="cmp-table">
-      <tr>
-        <th style="text-align:left;width:34%">అంశం / Aspect</th>
-        <th>మూల హక్కులు (FR) / Fundamental Rights</th>
-        <th>నిర్దేశక సూత్రాలు (DPSP)</th>
-      </tr>
-      <tr>
-        <td>న్యాయదానం / Justiciability</td>
-        <td><span class="tick">✓</span> న్యాయస్థానాల ద్వారా అమలు<br><em>Enforceable by courts</em></td>
-        <td><span class="cross">✗</span> న్యాయస్థానాల ద్వారా అమలు చేయలేరు<br><em>Not enforceable by courts</em></td>
-      </tr>
-      <tr>
-        <td>బాధ్యత / Obligation</td>
-        <td>ప్రతికూల (రాజ్యం ఏమి చేయకూడదో)<br><em>Negative – what State must NOT do</em></td>
-        <td>సానుకూల (రాజ్యం ఏమి చేయాలో)<br><em>Positive – what State SHOULD do</em></td>
-      </tr>
-      <tr>
-        <td>ప్రజాస్వామ్యం / Democracy</td>
-        <td>రాజకీయ ప్రజాస్వామ్యం<br><em>Political Democracy</em></td>
-        <td>సాంఘిక-ఆర్థిక ప్రజాస్వామ్యం<br><em>Socio-economic Democracy</em></td>
-      </tr>
-      <tr>
-        <td>సవరణ / Amendability</td>
-        <td>సవరించవచ్చు (మూల నిర్మాణం పరిమితితో)<br><em>Can be amended (Basic Structure limit)</em></td>
-        <td>సవరించవచ్చు<br><em>Can be amended</em></td>
-      </tr>
-    </table>
+  <!-- Cultural Rights + Art 32 -->
+  <div class="sh">సాంస్కృతిక &amp; విద్యా హక్కులు (Art 29–30) + రాజ్యాంగ పరిహారాల హక్కు (Art 32)</div>
+  <div class="g3">
+    <div class="card">
+      <div class="ch">సాంస్కృతిక &amp; విద్యా హక్కులు (Art 29–30)</div>
+      <div class="fact"><span class="abadge">29</span>: ఏ వర్గమైనా (మైనారిటీ) విభిన్న భాష/లిపి/సంస్కృతి సంరక్షించుకోవచ్చు<br><em>Any section (minority) can conserve distinct language/script/culture</em></div>
+      <div class="fact"><span class="abadge">30</span>: మైనారిటీలు (మత/భాషా) విద్యా సంస్థలు స్థాపించవచ్చు &amp; నిర్వహించవచ్చు<br><em>Minorities (religious/linguistic) can establish &amp; administer educational institutions</em></div>
+      <div class="fact">మైనారిటీ సంస్థలకు సహాయంలో రాజ్యం వివక్ష చేయకూడదు<br><em>State cannot discriminate in granting aid to minority institutions</em></div>
+    </div>
+    <div class="card">
+      <div class="ch">రాజ్యాంగ పరిహారాల హక్కు (Art 32)</div>
+      <div class="fact"><span class="abadge">Art 32</span>: Dr. అంబేద్కర్ దీన్ని <span class="k">"రాజ్యాంగపు హృదయం మరియు ఆత్మ"</span> అన్నారు<br><em>Dr. Ambedkar called it <span class="k">"Heart and Soul of the Constitution"</span></em></div>
+      <div class="fact">ప్రాథమిక హక్కుల అమలు కోసం నేరుగా <span class="k">సుప్రీం కోర్టును</span> ఆశ్రయించే హక్కు<br><em>Right to move <span class="k">Supreme Court</span> directly for FR enforcement</em></div>
+      <div class="fact">Art 226: హైకోర్టు రిట్‌లు (విస్తృత పరిధి)<br><em>Art 226: High Court writs (wider scope)</em></div>
+    </div>
+    <div class="card">
+      <div class="ch">5 రిట్‌లు (Art 32 / Art 226)</div>
+      <div class="fact"><span class="k">హేబియస్ కార్పస్</span>: చట్టవిరుద్ధ నిర్బంధం నుండి విడుదల<br><em><span class="k">Habeas Corpus</span>: Release from illegal detention</em></div>
+      <div class="fact"><span class="k">మాండమస్</span>: ప్రభుత్వ విధి నిర్వహించమని ఆదేశం<br><em><span class="k">Mandamus</span>: Compel public duty</em></div>
+      <div class="fact"><span class="k">ప్రొహిబిషన్</span>: దిగువ కోర్టు అధికార పరిధి మించకుండా ఆపడం<br><em><span class="k">Prohibition</span>: Stop inferior court from exceeding jurisdiction</em></div>
+      <div class="fact"><span class="k">సెర్షియోరారీ</span>: దిగువ కోర్టు ఆదేశాన్ని రద్దు చేయడం<br><em><span class="k">Certiorari</span>: Quash order of inferior court</em></div>
+      <div class="fact"><span class="k">క్వో వారంటో</span>: పబ్లిక్ ఆఫీస్ అక్రమ ఆక్రమణను సవాలు చేయడం<br><em><span class="k">Quo Warranto</span>: Challenge unlawful occupation of public office</em></div>
+    </div>
+  </div>
 
-  </div><!-- /body -->
-</div><!-- /page2 -->
+  <!-- Art 33, 34, 35 -->
+  <div class="sh">7.8 Art 33, 34, 35 &amp; ముఖ్య కేసులు (Important Cases)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">Art 33, 34, 35</div>
+      <div class="fact"><span class="abadge">33</span>: పార్లమెంటు సాయుధ దళాలు/పోలీసుల ప్రాథమిక హక్కులను పరిమితం చేయవచ్చు<br><em>Parliament can restrict FRs of Armed Forces/Police</em></div>
+      <div class="fact"><span class="abadge">34</span>: మార్షల్ లా సమయంలో చేసిన చర్యలకు పార్లమెంటు నష్టపరిహారం ఇవ్వవచ్చు<br><em>Parliament can indemnify acts during Martial Law</em></div>
+      <div class="fact"><span class="abadge">35</span>: కొన్ని ప్రాథమిక హక్కులను అమలు చేయడానికి చట్టాలు చేసే అధికారం కేవలం పార్లమెంటుకే (రాష్ట్రాలకు కాదు)<br><em>Only Parliament (NOT states) can make laws to enforce certain FRs</em></div>
+    </div>
+    <div class="card">
+      <div class="ch">ముఖ్య కేసులు (Landmark Cases)</div>
+      <div class="fact"><span class="k">మనేకా గాంధీ (1978)</span>: Art 21 — విధానం న్యాయంగా, సరళంగా &amp; సహేతుకంగా ఉండాలి<br><em><span class="k">Maneka Gandhi (1978)</span>: Art 21 — procedure must be fair, just &amp; reasonable</em></div>
+      <div class="fact"><span class="k">కేశవానంద భారతి (1973)</span>: ప్రాథమిక హక్కులు మూల నిర్మాణాన్ని నాశనం చేయలేవు<br><em><span class="k">Kesavananda Bharati (1973)</span>: FRs cannot destroy Basic Structure</em></div>
+      <div class="fact"><span class="k">మినర్వా మిల్స్ (1980)</span>: ప్రాథమిక హక్కులు &amp; DPSP మధ్య సమతుల్యత అవసరం<br><em><span class="k">Minerva Mills (1980)</span>: Balance between FRs &amp; DPSPs required</em></div>
+      <div class="fact"><span class="k">ADM జబల్‌పూర్ (1976)</span>: తిరుగుబాటు చేయబడింది — Art 21 అత్యవసర పరిస్థితిలో నిలిపివేయబడదు<br><em><span class="k">ADM Jabalpur (1976)</span>: Overruled — Art 21 not suspended during Emergency</em></div>
+    </div>
+  </div>
+
+  <!-- Quick Revision -->
+  <div class="sh">⚡ త్వరిత సమీక్ష పిల్స్ (Quick Revision Pills)</div>
+  <div class="pills">
+    <span class="pill">Part III · Art 12–35 = 6 PRs / 6 FRs</span>
+    <span class="pill pg">మూలం: USA Bill of Rights / Source: USA Bill of Rights</span>
+    <span class="pill pb">7→6 హక్కులు: 44వ సవరణ 1978 ఆస్తి హక్కు తొలగింపు / 44th Amdt 1978 removed Property</span>
+    <span class="pill">Art 300A = ఆస్తి = రాజ్యాంగ హక్కు (FR కాదు) / Property = Constitutional Right</span>
+    <span class="pill pg">Art 12 = రాజ్యంలో స్థానిక &amp; ఇతర సంస్థలు చేర్చబడ్డాయి / State includes local authorities</span>
+    <span class="pill pt">Art 13: పూర్వ = గ్రహణం; పరంతర = ప్రారంభం నుండే శూన్యం / Pre=Eclipse; Post=Void ab initio</span>
+    <span class="pill">Art 14: UK (సమానత్వం) + USA (సమాన రక్షణ) / UK + USA</span>
+    <span class="pill pb">Art 17: అస్పృశ్యత = నిరపేక్ష FR (మినహాయింపులు లేవు) / Untouchability = Absolute FR</span>
+    <span class="pill pg">భారత రత్న = పురస్కారం, బిరుదు కాదు (SC 1996) / Bharat Ratna = Award not Title</span>
+    <span class="pill pt">Art 19: 6 స్వాతంత్ర్యాలు; పౌరులకే; 97వ సవరణ 2011 సహకార సంఘాలు / 6 freedoms; Citizens only</span>
+    <span class="pill">Art 20: రెట్టింపు ప్రమాదం USA 5వ సవరణ నుండి / Double Jeopardy from USA 5th Amendment</span>
+    <span class="pill pb">Art 21A: RTE 6–14 సంవత్సరాలు → 86వ సవరణ 2002 / RTE 6–14 yrs → 86th Amendment</span>
+    <span class="pill pg">Art 22: 24 గంటలలో మేజిస్ట్రేట్; నిరోధకం: 3 నెలలు ఆలోచనా మండలి / 24 hrs magistrate</span>
+    <span class="pill pt">NSA 1980 గరిష్ఠం = 12 నెలలు / NSA 1980 max = 12 months</span>
+    <span class="pill">Art 32 = హృదయం &amp; ఆత్మ (Dr. అంబేద్కర్) = 5 రిట్‌లు SC కు / Heart &amp; Soul = 5 writs to SC</span>
+    <span class="pill pb">మనేకా గాంధీ 1978: Art 21 = న్యాయమైన విధానం / Art 21 = fair procedure</span>
+  </div>
+
+  <div class="footer">Chapter 7 · Page 2 of 2 · Indian Polity — Lakshmikanth · APPSC Group 2</div>
+</div>
 
 </body>
 </html>

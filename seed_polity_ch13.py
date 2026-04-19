@@ -1,0 +1,655 @@
+# seed_polity_ch11.py
+# Chapter 11: Amendment of the Constitution (రాజ్యాంగ సవరణ)
+# Total MCQs: 53 | PYQs: 9 | Format: Bilingual (Telugu + English)
+# Sections:
+#   0 = ప్రాథమిక అంశాలు / Basic Facts — Art 368, Procedure (6 MCQs)
+#   1 = సాధారణ మెజారిటీ / Simple Majority Amendments (5 MCQs)
+#   2 = ప్రత్యేక మెజారిటీ / Special Majority Amendments (5 MCQs)
+#   3 = ప్రత్యేక మెజారిటీ + రాష్ట్రాల ఆమోదం / Special Majority + State Ratification (5 MCQs)
+#   4 = మూల నిర్మాణ సిద్ధాంతం / Basic Structure Doctrine (10 MCQs — incl. Sajjan Singh 1964, Waman Rao 1981)
+#   5 = ముఖ్య సవరణలు భాగం I / Important Amendments Part I — 1st to 69th (8 MCQs)
+#   6 = ముఖ్య సవరణలు భాగం II / Important Amendments Part II — 73rd to 104th incl. 86th (9 MCQs)
+#   7 = కఠిన ప్రశ్నలు / Tough MCQs (5 MCQs)
+
+import json as _json
+
+POLITY_CH13_MCQS = [
+
+    # ══════════════ SECTION 0: BASIC FACTS (6 MCQs) ══════════════
+
+    (0, "easy",
+     "రాజ్యాంగ సవరణ అధికారం మరియు విధానం ఏ ఆర్టికల్‌లో ఉంది?\n(Power and procedure to amend the Constitution is in which Article?)",
+     "ఆర్టికల్ 356 / Article 356",
+     "ఆర్టికల్ 360 / Article 360",
+     "ఆర్టికల్ 368 / Article 368",
+     "ఆర్టికల్ 370 / Article 370",
+     "C",
+     "రాజ్యాంగ సవరణ అధికారం మరియు విధానం ఆర్టికల్ 368, భాగం XX (Part XX) లో ఉంది.\nPower and procedure to amend the Constitution is in Article 368, Part XX (Part Twenty)."),
+
+    (0, "easy",
+     "రాజ్యాంగ సవరణ బిల్లును ఎవరు ప్రవేశపెట్టవచ్చు?\n(Who can introduce a Constitutional Amendment Bill?)",
+     "కేవలం కేంద్ర మంత్రి మండలి / Only the Union Cabinet",
+     "పార్లమెంటులోని ఏ సభలోనైనా — ప్రభుత్వ లేదా ప్రైవేట్ సభ్యుడు / In either House of Parliament — government or private member",
+     "కేవలం రాష్ట్రపతి / Only the President",
+     "కేవలం రాజ్యసభలో / Only in Rajya Sabha",
+     "B",
+     "రాజ్యాంగ సవరణ బిల్లును పార్లమెంటులోని ఏ సభలోనైనా — లోక్‌సభ లేదా రాజ్యసభలో — ప్రభుత్వ లేదా ప్రైవేట్ సభ్యుడు ప్రవేశపెట్టవచ్చు. రాష్ట్ర శాసనసభలు ప్రవేశపెట్టలేవు.\nA Constitutional Amendment Bill can be introduced in either House of Parliament by government or private member. State legislatures cannot introduce it."),
+
+    (0, "medium",
+     "రాజ్యాంగ సవరణ బిల్లుపై 'ప్రత్యేక మెజారిటీ' అంటే ఏమిటి?\n(What is 'Special Majority' for a Constitutional Amendment Bill?)",
+     "ప్రతి సభలో 2/3 మంది సభ్యులు హాజరై ఓటు వేయడం / 2/3 of members present and voting in each House",
+     "ప్రతి సభలో హాజరై ఓటు వేసిన 2/3 + మొత్తం సభ్యత్వంలో సగం కంటే ఎక్కువ మంది ఆమోదం / 2/3 of members present & voting AND majority of total membership of each House",
+     "ప్రతి సభలో 3/4 మంది మొత్తం సభ్యత్వం ఆమోదం / 3/4 of total membership of each House",
+     "రెండు సభల మొత్తం 2/3 మంది ఆమోదం / 2/3 of combined total of both Houses",
+     "B",
+     "ప్రత్యేక మెజారిటీ: (1) హాజరై ఓటు వేసిన సభ్యుల్లో 2/3 మంది ఆమోదం + (2) ఆ సభ మొత్తం సభ్యత్వంలో సగం కంటే ఎక్కువ మంది ఆమోదం — రెండు సభల్లోనూ.\nSpecial Majority: (1) 2/3 of members present & voting AND (2) majority of total membership — in EACH House separately."),
+
+    (0, "medium",
+     "రాజ్యాంగ సవరణ బిల్లుపై రెండు సభల మధ్య అభిప్రాయ భేదం వచ్చినప్పుడు ఏమి జరుగుతుంది?\n(What happens if two Houses disagree on a Constitutional Amendment Bill?)",
+     "సంయుక్త సమావేశం (Joint Sitting) ద్వారా పరిష్కరించబడుతుంది / Resolved through Joint Sitting",
+     "లోక్‌సభ నిర్ణయం అంతిమం / Lok Sabha decision is final",
+     "రాష్ట్రపతి మధ్యవర్తిత్వం చేస్తారు / President mediates",
+     "బిల్లు రద్దవుతుంది — సంయుక్త సమావేశానికి అనుమతి లేదు / Bill lapses — no provision for Joint Sitting",
+     "D",
+     "రాజ్యాంగ సవరణ బిల్లుకు సంయుక్త సమావేశం నిబంధన లేదు. రెండు సభలూ వేర్వేరుగా ప్రత్యేక మెజారిటీతో ఆమోదించాలి. భేదం వస్తే బిల్లు రద్దవుతుంది.\nThere is no provision for Joint Sitting for Constitutional Amendment Bills. Both Houses must separately pass with Special Majority. If disagreement, the bill lapses."),
+
+    (0, "hard",
+     "24వ సవరణ చట్టం 1971 రాష్ట్రపతి పాత్రను ఆర్టికల్ 368 విషయంలో ఎలా మార్చింది?\n(How did the 24th Amendment Act 1971 change the President's role regarding Art 368?)",
+     "రాష్ట్రపతికి సవరణ బిల్లుపై వీటో అధికారం ఇచ్చింది / Gave President veto power over amendment bills",
+     "రాష్ట్రపతి తప్పనిసరిగా అనుమతి ఇవ్వాలని నిర్బంధించింది — నిరాకరించే అధికారం తొలగించింది / Made President's assent mandatory — removed power to withhold",
+     "రాష్ట్రపతిని సవరణ ప్రక్రియ నుండి పూర్తిగా మినహాయించింది / Excluded President from amendment process entirely",
+     "రాష్ట్రపతికి 6 నెలల పాటు బిల్లు నిలుపుదల అధికారం ఇచ్చింది / Gave President 6-month suspension power",
+     "B",
+     "24వ సవరణ 1971: రాష్ట్రపతి రాజ్యాంగ సవరణ బిల్లుకు తప్పనిసరిగా అనుమతి ఇవ్వాలి — నిరాకరించే అధికారం లేదు. అలాగే పార్లమెంటుకు ఏ నిబంధనను కూడా సవరించే అధికారం ఉందని స్పష్టంగా పేర్కొన్నది.\n24th Amendment 1971: President MUST give assent to Constitutional Amendment Bills — no power to withhold. Also explicitly stated Parliament's power to amend any provision."),
+
+    (0, "medium",
+     "రాజ్యాంగ సవరణ విషయంలో కింది ఏ వ్యాఖ్య సరైనది?\n(Which statement about Constitutional Amendment is correct?)",
+     "రాష్ట్ర శాసనసభలు రాజ్యాంగ సవరణ బిల్లు ప్రవేశపెట్టవచ్చు / State legislatures can introduce amendment bills",
+     "రాజ్యాంగ సవరణకు ఎప్పుడూ రాష్ట్రాల ఆమోదం అవసరం / State ratification is always required for amendment",
+     "రాజ్యాంగ సవరణ బిల్లు ఆమోదానికి నిర్ణీత సమయ పరిమితి లేదు / There is no time limit for ratification by states",
+     "రాజ్యాంగ సవరణ బిల్లుకు ప్రజాభిప్రాయ సేకరణ అవసరం / Referendum is required for amendment",
+     "C",
+     "రాష్ట్రాల ఆమోదానికి రాజ్యాంగంలో నిర్దిష్ట సమయ పరిమితి నిర్ణయించబడలేదు. రాష్ట్ర శాసనసభలు సవరణ బిల్లు ప్రవేశపెట్టలేవు; ప్రజాభిప్రాయ సేకరణ నిబంధన లేదు.\nThere is no specified time limit for state ratification of amendment bills. State legislatures cannot introduce amendment bills; no provision for referendum."),
+
+    # ══════════════ SECTION 1: SIMPLE MAJORITY AMENDMENTS (5 MCQs) ══════════════
+
+    (1, "medium",
+     "కింది ఏ నిబంధన సాధారణ మెజారిటీతో సవరించవచ్చు — ఆర్టికల్ 368 పరిధిలో కాదు?\n(Which provision can be amended by Simple Majority — outside the scope of Art 368?)",
+     "ఎన్నికల ప్రక్రియ / Electoral process",
+     "కొత్త రాష్ట్రాల ఏర్పాటు — Art 2 &amp; 3 / Formation of new states — Art 2 &amp; 3",
+     "రాష్ట్రపతి ఎన్నిక / Election of President",
+     "కేంద్ర-రాష్ట్రాల మధ్య శాసన అధికారాల పంపిణీ / Distribution of legislative powers",
+     "B",
+     "Art 2/3 (కొత్త రాష్ట్రాల ఏర్పాటు), శాసన మండళ్ళ సృష్టి/రద్దు, MP జీతాలు, పార్లమెంటు నిబంధనాపుస్తకం — ఇవి సాధారణ మెజారిటీతో, Art 368 పరిధి వెలుపల సవరించవచ్చు.\nArt 2/3 (new states), creation/abolition of Legislative Councils, MP salaries, Rules of Procedure — amendable by Simple Majority, outside Art 368 scope."),
+
+    (1, "medium",
+     "రాష్ట్ర శాసనమండళ్ళు (Legislative Councils) సృష్టించడం లేదా రద్దు చేయడం ఏ రకమైన మెజారిటీ అవసరం?\n(Creating or abolishing State Legislative Councils requires which type of majority?)",
+     "రాష్ట్ర శాసనసభ తీర్మానం + పార్లమెంటు సాధారణ మెజారిటీ / State legislature resolution + Parliament Simple Majority",
+     "పార్లమెంటు ప్రత్యేక మెజారిటీ / Parliament Special Majority",
+     "పార్లమెంటు ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం / Special Majority + Half States ratification",
+     "పార్లమెంటు సాధారణ మెజారిటీ మాత్రమే / Only Parliament Simple Majority",
+     "A",
+     "రాష్ట్ర శాసన మండళ్ళ సృష్టి/రద్దు: రాష్ట్ర శాసనసభ తీర్మానం (ప్రత్యేక మెజారిటీ) ఆధారంగా పార్లమెంటు సాధారణ మెజారిటీతో చట్టం చేయాలి. ఇది Art 368 పరిధి వెలుపల.\nCreation/abolition of State Legislative Councils: State legislature passes resolution (Special Majority), then Parliament enacts law by Simple Majority. This is outside Art 368 scope."),
+
+    (1, "hard",
+     "కింది ఏ అంశం 'సాధారణ మెజారిటీ'తో సవరించవచ్చు?\n(Which of the following can be amended by Simple Majority?)",
+     "ఐదవ షెడ్యూల్ (అనుసూచిత జాతి ప్రాంతాల పరిపాలన) / Fifth Schedule (administration of Scheduled Areas)",
+     "ఏడవ షెడ్యూల్ (కేంద్ర-రాష్ట్ర జాబితాలు) / Seventh Schedule (Union-State Lists)",
+     "మొదటి షెడ్యూల్ (రాష్ట్రాల పేర్లు) — Art 3/4 ద్వారా / First Schedule (names of States) — via Art 3/4",
+     "తొమ్మిదవ షెడ్యూల్ / Ninth Schedule",
+     "C",
+     "మొదటి షెడ్యూల్ (రాష్ట్రాల పేర్లు) Art 3/4 ద్వారా పార్లమెంటు సాధారణ మెజారిటీతో సవరించవచ్చు. ఐదవ షెడ్యూల్ కూడా సాధారణ మెజారిటీతో అయినా, 7వ షెడ్యూల్ ప్రత్యేక మెజారిటీ + రాష్ట్రాల ఆమోదం అవసరం.\nFirst Schedule (names of States) via Art 3/4 can be amended by Simple Majority. 7th Schedule requires Special Majority + State ratification."),
+
+    (1, "medium",
+     "పార్లమెంటు సభ్యుల జీతాలు మరియు భత్యాలకు సంబంధించిన నిబంధనలు ఏ రకమైన మెజారిటీతో సవరించవచ్చు?\n(Provisions relating to salaries and allowances of MPs can be amended by which majority?)",
+     "ప్రత్యేక మెజారిటీ / Special Majority",
+     "ప్రత్యేక మెజారిటీ + రాష్ట్రాల ఆమోదం / Special Majority + State Ratification",
+     "సాధారణ మెజారిటీ / Simple Majority",
+     "ఏకగ్రీవ నిర్ణయం / Unanimous decision",
+     "C",
+     "MPs జీతాలు, భత్యాలు, పెన్షన్లు సాధారణ మెజారిటీతో సవరించవచ్చు. ఇవి Art 368 పరిధి వెలుపల ఉన్న నిబంధనలు.\nSalaries, allowances and pensions of MPs can be amended by Simple Majority. These are outside the scope of Art 368."),
+
+    (1, "medium",
+     "పౌరసత్వ నిబంధనలు (Art 5-11) ఏ రకమైన మెజారిటీతో సవరించవచ్చు?\n(Citizenship provisions (Art 5-11) can be amended by which majority?)",
+     "ప్రత్యేక మెజారిటీ + రాష్ట్రాల ఆమోదం / Special Majority + State Ratification",
+     "ప్రత్యేక మెజారిటీ / Special Majority",
+     "సాధారణ మెజారిటీ / Simple Majority",
+     "రాజ్యాంగ సవరణ అవసరం లేదు / No constitutional amendment required",
+     "C",
+     "పౌరసత్వ నిబంధనలు (Art 5-11) సాధారణ మెజారిటీతో సవరించవచ్చు. ఇవి Art 368 పరిధి వెలుపల ఉన్నాయి.\nCitizenship provisions (Art 5-11) can be amended by Simple Majority. They are outside the scope of Art 368."),
+
+    # ══════════════ SECTION 2: SPECIAL MAJORITY AMENDMENTS (5 MCQs) ══════════════
+
+    (2, "medium",
+     "ప్రాథమిక హక్కులను సవరించడానికి ఏ మెజారిటీ అవసరం?\n(Which majority is required to amend Fundamental Rights?)",
+     "సాధారణ మెజారిటీ / Simple Majority",
+     "ప్రత్యేక మెజారిటీ / Special Majority",
+     "ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం / Special Majority + Ratification by half of States",
+     "ప్రాథమిక హక్కులు సవరించలేమ / Fundamental Rights cannot be amended",
+     "B",
+     "ప్రాథమిక హక్కులు (Art 12-35) ప్రత్యేక మెజారిటీతో సవరించవచ్చు. 24వ సవరణ 1971 ఇది స్పష్టంగా నిర్ధారించింది; కేశవానంద భారతి కేసు 1973 పరిధిని నిర్ణయించింది.\nFundamental Rights (Art 12-35) can be amended by Special Majority. 24th Amendment 1971 clarified this; Kesavananda Bharati 1973 set the limits."),
+
+    (2, "medium",
+     "ఆర్టికల్ 368 ప్రత్యేక మెజారిటీ అవసరమయ్యే నిబంధనలలో ఏది లేదు?\n(Which of the following does NOT require Special Majority under Art 368?)",
+     "మూలభూత హక్కులు / Fundamental Rights",
+     "ఆదేశ సూత్రాలు (DPSPs) / Directive Principles of State Policy",
+     "పార్లమెంటు కోరం నిబంధనలు / Quorum rules in Parliament",
+     "రాజ్యాంగ నిర్మాణ నిబంధనలు / Provisions of Constitutional structure",
+     "C",
+     "పార్లమెంటు కోరం నిబంధనలు సాధారణ మెజారిటీతో సవరించవచ్చు — Art 368 పరిధి వెలుపల ఉంటాయి. FRs, DPSPs, రాజ్యాంగ నిర్మాణ నిబంధనలు ప్రత్యేక మెజారిటీ అవసరం.\nQuorum rules in Parliament are outside Art 368 scope and need only Simple Majority. FRs, DPSPs, structural provisions require Special Majority."),
+
+    (2, "hard",
+     "కింది ఏ నిబంధన ప్రత్యేక మెజారిటీ మాత్రమే అవసరం (రాష్ట్రాల ఆమోదం అవసరం లేదు)?\n(Which provision requires Special Majority ONLY — without State ratification?)",
+     "రాష్ట్రపతి ఎన్నిక పద్ధతి / Manner of election of President",
+     "7వ షెడ్యూల్‌లో పంపిణీ / Distribution in 7th Schedule",
+     "పార్లమెంటులో రాష్ట్రాల ప్రాతినిధ్యం / Representation of States in Parliament",
+     "ప్రాథమిక హక్కులు / Fundamental Rights",
+     "D",
+     "ప్రాథమిక హక్కులు ప్రత్యేక మెజారిటీ మాత్రమే అవసరం. రాష్ట్రపతి ఎన్నిక, 7వ షెడ్యూల్, పార్లమెంటులో రాష్ట్రాల ప్రాతినిధ్యం — ఇవి ప్రత్యేక మెజారిటీ + రాష్ట్రాల ఆమోదం అవసరం.\nFundamental Rights require Special Majority only. Election of President, 7th Schedule, Representation of States in Parliament — these require Special Majority + State ratification."),
+
+    (2, "medium",
+     "సుప్రీం కోర్టు మరియు హైకోర్టులకు సంబంధించిన రాజ్యాంగ నిబంధనలు సవరించడానికి ఏ మెజారిటీ అవసరం?\n(Amending constitutional provisions relating to Supreme Court and High Courts requires which majority?)",
+     "సాధారణ మెజారిటీ / Simple Majority",
+     "ప్రత్యేక మెజారిటీ / Special Majority",
+     "ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం / Special Majority + Ratification by half states",
+     "2/3 మొత్తం సభ్యత్వం / 2/3 of total membership",
+     "B",
+     "సుప్రీం కోర్టు మరియు హైకోర్టులకు సంబంధించిన చాలా నిబంధనలు ప్రత్యేక మెజారిటీతో సవరించవచ్చు. (అయితే యూనియన్ టెర్రిటరీల్లో హైకోర్టుల నిర్మాణం కొన్ని సార్లు రాష్ట్రాల ఆమోదం అవసరం)\nMost provisions relating to SC and HCs require Special Majority. However, some HC provisions in UTs may need State ratification."),
+
+    (2, "medium",
+     "10వ షెడ్యూల్ (పక్షపాత నిరోధక చట్టం / Anti-defection law) సవరించడానికి ఏ మెజారిటీ అవసరం?\n(Which majority is required to amend the 10th Schedule (Anti-defection law)?)",
+     "సాధారణ మెజారిటీ / Simple Majority",
+     "ప్రత్యేక మెజారిటీ / Special Majority",
+     "ప్రత్యేక మెజారిటీ + రాష్ట్రాల ఆమోదం / Special Majority + State Ratification",
+     "రాష్ట్రపతి ఉత్తర్వులు / Presidential order",
+     "B",
+     "10వ షెడ్యూల్ (పక్షపాత నిరోధక చట్టం — 52వ సవరణ 1985) ప్రత్యేక మెజారిటీతో సవరించవచ్చు.\n10th Schedule (Anti-defection Law — 52nd Amendment 1985) requires Special Majority to amend."),
+
+    # ══════════════ SECTION 3: SPECIAL MAJORITY + STATE RATIFICATION (5 MCQs) ══════════════
+
+    (3, "medium",
+     "రాష్ట్రాల ఆమోదం అవసరమయ్యే రాజ్యాంగ సవరణలకు కనీసం ఎన్ని రాష్ట్రాల శాసనసభలు ఆమోదించాలి?\n(For amendments requiring State ratification, at least how many State legislatures must ratify?)",
+     "మూడింట రెండు వంతుల రాష్ట్రాలు (2/3) / Two-thirds of states (2/3)",
+     "సగం కంటే ఎక్కువ రాష్ట్రాలు (50% కంటే ఎక్కువ) / More than half of states (more than 50%)",
+     "నాలుగింట మూడు వంతుల రాష్ట్రాలు (3/4) / Three-fourths of states (3/4)",
+     "మూడింట ఒక వంతు రాష్ట్రాలు (1/3) / One-third of states (1/3)",
+     "B",
+     "రాష్ట్రాల ఆమోదం అవసరమైన సవరణలకు సగం కంటే ఎక్కువ రాష్ట్రాల శాసనసభలు (సాధారణ మెజారిటీతో) ఆమోదించాలి. ఏ రాష్ట్రాలు ఆమోదించాలో నిర్దిష్టంగా పేర్కొనబడలేదు.\nFor State ratification, more than half of all State legislatures (by Simple Majority) must ratify. No specific states are required — any majority of states will do."),
+
+    (3, "medium",
+     "రాష్ట్రపతి ఎన్నిక పద్ధతి సవరించడానికి ఏ విధానం అవసరం?\n(What procedure is required to amend the manner of election of the President?)",
+     "సాధారణ మెజారిటీ మాత్రమే / Simple Majority only",
+     "ప్రత్యేక మెజారిటీ మాత్రమే / Special Majority only",
+     "ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం / Special Majority + Ratification by half states",
+     "రాష్ట్రపతి స్వయంగా ఆమోదించాలి / President must personally approve",
+     "C",
+     "రాష్ట్రపతి ఎన్నిక పద్ధతి సవరణకు ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం అవసరం — ఇది సమాఖ్య లక్షణం కలిగిన నిబంధన.\nAmending the manner of election of President requires Special Majority + Ratification by half states — this is a federal provision.",
+     "APPSC"),
+
+    (3, "medium",
+     "7వ షెడ్యూల్ (కేంద్ర జాబితా, రాష్ట్ర జాబితా, ఉమ్మడి జాబితా) సవరించడానికి ఏ విధానం అవసరం?\n(What procedure is required to amend the 7th Schedule — Union, State and Concurrent Lists?)",
+     "సాధారణ మెజారిటీ / Simple Majority",
+     "ప్రత్యేక మెజారిటీ మాత్రమే / Special Majority only",
+     "ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం / Special Majority + Ratification by half states",
+     "రాష్ట్రాల ఆమోదం మాత్రమే / Only State ratification",
+     "C",
+     "7వ షెడ్యూల్ (కేంద్ర-రాష్ట్ర-ఉమ్మడి జాబితాలు) అత్యంత సమాఖ్య నిబంధన — ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం అవసరం.\n7th Schedule (Union-State-Concurrent Lists) is a highly federal provision — requires Special Majority + ratification by half of states."),
+
+    (3, "hard",
+     "కింది ఏ నిబంధనలు ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం అవసరం?\n(Which provisions require Special Majority + Ratification by half states?)\n1. రాష్ట్రపతి ఎన్నిక / Election of President\n2. సుప్రీం కోర్టు అధికార పరిధి / Jurisdiction of Supreme Court\n3. 7వ షెడ్యూల్ / 7th Schedule\n4. పార్లమెంటులో రాష్ట్రాల ప్రాతినిధ్యం / Representation of States in Parliament\n5. ఆర్టికల్ 368 సవరణ నిబంధన స్వయంగా / Art 368 itself",
+     "1, 3, 4, 5 మాత్రమే / Only 1, 3, 4, 5",
+     "1, 2, 3 మాత్రమే / Only 1, 2, 3",
+     "2, 3, 4, 5 మాత్రమే / Only 2, 3, 4, 5",
+     "అన్నీ (1, 2, 3, 4, 5) / All — 1, 2, 3, 4, 5",
+     "A",
+     "ప్రత్యేక మెజారిటీ + రాష్ట్రాల ఆమోదం అవసరమైనవి: రాష్ట్రపతి ఎన్నిక, కేంద్ర+రాష్ట్ర కార్యనిర్వహణ అధికారాల పరిధి, 7వ షెడ్యూల్, పార్లమెంటులో రాష్ట్రాల ప్రాతినిధ్యం, Art 368 స్వయంగా. SC అధికార పరిధి ప్రత్యేక మెజారిటీ మాత్రమే.\nState ratification required for: Election of President, Extent of executive power, 7th Schedule, State representation in Parliament, Art 368 itself. SC jurisdiction — Special Majority only."),
+
+    (3, "medium",
+     "ఆర్టికల్ 368 (సవరణ విధానం స్వయంగా) సవరించడానికి ఏ విధానం అవసరం?\n(What procedure is required to amend Article 368 itself?)",
+     "సాధారణ మెజారిటీ / Simple Majority",
+     "ప్రత్యేక మెజారిటీ మాత్రమే / Special Majority only",
+     "ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం / Special Majority + Ratification by half states",
+     "రాజ్యాంగ సభ ఏర్పాటు అవసరం / Constituent Assembly required",
+     "C",
+     "Art 368 స్వయంగా (సవరణ విధానం) సవరించడానికి ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం అవసరం. ఇది రాజ్యాంగ మూల నిర్మాణంలో భాగమైన సవరణాధికారాన్ని రక్షిస్తుంది.\nAmending Art 368 itself requires Special Majority + Ratification by half states. This protects the amendment power as part of constitutional basic structure."),
+
+    # ══════════════ SECTION 4: BASIC STRUCTURE DOCTRINE (8 MCQs) ══════════════
+
+    (4, "medium",
+     "శంకరి ప్రసాద్ v. భారత యూనియన్ (1951) కేసులో సుప్రీం కోర్టు ఏ నిర్ణయం తీసుకుంది?\n(What did the Supreme Court hold in Shankari Prasad v. Union of India (1951)?)",
+     "పార్లమెంటు ప్రాథమిక హక్కులను సవరించలేదు / Parliament cannot amend Fundamental Rights",
+     "పార్లమెంటు ప్రాథమిక హక్కులతో సహా రాజ్యాంగంలోని ఏ నిబంధనను అయినా సవరించవచ్చు / Parliament can amend any provision including FRs",
+     "ప్రాథమిక హక్కులు మూల నిర్మాణంలో భాగం / Fundamental Rights are part of Basic Structure",
+     "రాజ్యాంగ సవరణ అధికారం పరిమితమైనది / Amendment power is limited",
+     "B",
+     "శంకరి ప్రసాద్ కేసు 1951: SC నిర్ణయం — పార్లమెంటుకు Art 368 కింద ప్రాథమిక హక్కులతో సహా ఏ నిబంధనను అయినా సవరించే అధికారం ఉంది. (తర్వాత గోలక్‌నాథ్ 1967 ఇది తిరస్కరించింది)\nShankari Prasad 1951: Parliament has power under Art 368 to amend any provision including FRs. (Later overruled by Golaknath 1967)"),
+
+    (4, "medium",
+     "సజ్జన్ సింగ్ v. రాజస్థాన్ రాష్ట్రం (1964) కేసులో సుప్రీం కోర్టు ఏ నిర్ణయం తీసుకుంది?\n(What did the Supreme Court hold in Sajjan Singh v. State of Rajasthan (1964)?)",
+     "పార్లమెంటు ప్రాథమిక హక్కులను సవరించలేదు / Parliament cannot amend Fundamental Rights",
+     "శంకరి ప్రసాద్ నిర్ణయం సమర్థించబడింది — పార్లమెంటుకు Art 368 కింద ప్రాథమిక హక్కులు సహా సవరించే అధికారం ఉంది / Upheld Shankari Prasad — Parliament has power to amend any provision including FRs",
+     "మూల నిర్మాణ సిద్ధాంతం ప్రకటించబడింది / Basic Structure Doctrine was propounded",
+     "ప్రాథమిక హక్కులు సవరించడానికి రాష్ట్రాల ఆమోదం అవసరం / State ratification needed to amend FRs",
+     "B",
+     "సజ్జన్ సింగ్ కేసు 1964: SC శంకరి ప్రసాద్ (1951) నిర్ణయాన్ని సమర్థించింది — పార్లమెంటుకు Art 368 కింద ప్రాథమిక హక్కులు సహా రాజ్యాంగంలోని ఏ నిబంధనను అయినా సవరించే అధికారం ఉంది. ఇది కేసుల క్రమంలో: శంకరి ప్రసాద్ 1951 → సజ్జన్ సింగ్ 1964 → గోలక్‌నాథ్ 1967 (తిరస్కరించింది) → కేశవానంద భారతి 1973.\nSajjan Singh 1964: SC upheld Shankari Prasad (1951) — Parliament has power under Art 368 to amend any provision including FRs. Case sequence: Shankari Prasad 1951 → Sajjan Singh 1964 → Golaknath 1967 (overruled) → Kesavananda Bharati 1973."),
+
+    (4, "medium",
+     "గోలక్‌నాథ్ v. పంజాబ్ రాష్ట్రం (1967) కేసులో సుప్రీం కోర్టు ఏ నిర్ణయం తీసుకుంది?\n(What did the Supreme Court hold in Golaknath v. State of Punjab (1967)?)",
+     "పార్లమెంటు ప్రాథమిక హక్కులను సవరించవచ్చు / Parliament can amend Fundamental Rights",
+     "పార్లమెంటు ప్రాథమిక హక్కులను సవరించలేదు — అవి అతీంద్రియ (transcendental) / Parliament cannot amend FRs — they are transcendental",
+     "మూల నిర్మాణ సిద్ధాంతం ప్రకటించింది / Announced Basic Structure doctrine",
+     "సవరణ అధికారాన్ని అపరిమితంగా ప్రకటించింది / Declared amendment power unlimited",
+     "B",
+     "గోలక్‌నాథ్ కేసు 1967: SC (11 న్యాయమూర్తులు) — పార్లమెంటు ప్రాథమిక హక్కులను సవరించలేదు. ఇది శంకరి ప్రసాద్ నిర్ణయాన్ని తిరస్కరించింది. (తర్వాత 24వ సవరణ 1971 మరియు కేశవానంద భారతి 1973 ద్వారా తిరస్కరించబడింది)\nGolaknath 1967: SC (11 judges) — Parliament cannot amend FRs. Overruled Shankari Prasad. (Later overruled by 24th Amendment 1971 and Kesavananda Bharati 1973)"),
+
+    (4, "easy",
+     "మూల నిర్మాణ సిద్ధాంతం (Basic Structure Doctrine) ఏ కేసులో ప్రకటించబడింది?\n(In which case was the Basic Structure Doctrine propounded?)",
+     "శంకరి ప్రసాద్ v. భారత యూనియన్ (1951) / Shankari Prasad v. UOI (1951)",
+     "గోలక్‌నాథ్ v. పంజాబ్ రాష్ట్రం (1967) / Golaknath v. State of Punjab (1967)",
+     "కేశవానంద భారతి v. కేరళ రాష్ట్రం (1973) / Kesavananda Bharati v. State of Kerala (1973)",
+     "మినర్వా మిల్స్ v. భారత యూనియన్ (1980) / Minerva Mills v. UOI (1980)",
+     "C",
+     "మూల నిర్మాణ సిద్ధాంతం కేశవానంద భారతి v. కేరళ రాష్ట్రం (1973) కేసులో 13 న్యాయమూర్తుల ధర్మాసనం ప్రకటించింది. పార్లమెంటు ప్రాథమిక హక్కులు సవరించవచ్చు కానీ రాజ్యాంగ మూల నిర్మాణాన్ని నాశనం చేయలేదు.\nBasic Structure Doctrine was propounded by a 13-judge bench in Kesavananda Bharati v. State of Kerala (1973). Parliament can amend FRs but cannot destroy the Basic Structure.",
+     "APPSC"),
+
+    (4, "medium",
+     "కేశవానంద భారతి కేసు 1973 లో రాజ్యాంగ 'మూల నిర్మాణం' (Basic Structure) లో ఏ అంశాలు చేర్చబడ్డాయి?\n(Which elements are part of 'Basic Structure' as per Kesavananda Bharati 1973?)",
+     "రాజ్యాంగ ఆధిపత్యం, లౌకికవాదం, ప్రజాస్వామ్యం, న్యాయ సమీక్ష / Supremacy of Constitution, Secularism, Democracy, Judicial Review",
+     "కేవలం ప్రాథమిక హక్కులు / Only Fundamental Rights",
+     "కేవలం సమాఖ్య లక్షణాలు / Only Federal features",
+     "DPSPs మరియు ప్రాథమిక హక్కులు / DPSPs and Fundamental Rights",
+     "A",
+     "మూల నిర్మాణంలో: రాజ్యాంగ ఆధిపత్యం, గణతంత్ర & ప్రజాస్వామ్య ప్రభుత్వ రూపం, లౌకిక స్వభావం, సమాఖ్య స్వభావం, అధికారాల వేర్పాటు, న్యాయ సమీక్ష, స్వేచ్ఛా & న్యాయమైన ఎన్నికలు, న్యాయవ్యవస్థ స్వాతంత్ర్యం, నిబంధనాపాలన.\nBasic Structure includes: Constitutional supremacy, Republican & democratic form, Secular character, Federal character, Separation of powers, Judicial review, Free & fair elections, Independence of judiciary, Rule of law."),
+
+    (4, "medium",
+     "42వ సవరణ 1976 రాజ్యాంగ సవరణ అధికారానికి సంబంధించి ఏమి ప్రయత్నించింది?\n(What did the 42nd Amendment 1976 attempt regarding constitutional amendment power?)",
+     "సవరణ అధికారాన్ని పరిమితపరచింది / Limited the amendment power",
+     "సవరణ అధికారం సంపూర్ణమని, న్యాయ సమీక్ష చేయలేమని పేర్కొంది / Declared amendment power absolute and beyond judicial review",
+     "Art 368 రద్దు చేయడానికి ప్రయత్నించింది / Tried to repeal Art 368",
+     "రాష్ట్రాల ఆమోదం తప్పనిసరి చేసింది / Made State ratification mandatory for all amendments",
+     "B",
+     "42వ సవరణ 1976: పార్లమెంటు సవరణ అధికారం సంపూర్ణమని, న్యాయస్థానాలు సమీక్షించలేమని పేర్కొంది. అయితే మినర్వా మిల్స్ 1980 కేసులో ఈ నిబంధన రద్దు చేయబడింది.\n42nd Amendment 1976: Declared Parliament's amending power absolute and non-reviewable by courts. This provision was struck down in Minerva Mills 1980."),
+
+    (4, "medium",
+     "మినర్వా మిల్స్ v. భారత యూనియన్ (1980) కేసులో సుప్రీం కోర్టు ఏమి నిర్ణయించింది?\n(What did the Supreme Court hold in Minerva Mills v. Union of India (1980)?)",
+     "మూల నిర్మాణ సిద్ధాంతాన్ని తిరస్కరించింది / Rejected the Basic Structure doctrine",
+     "42వ సవరణ ద్వారా జోడించిన Art 368(4) మరియు (5) ని రద్దు చేసింది — సవరణ అధికారం పరిమితమైనదని / Struck down Art 368(4) and (5) of 42nd Amdt — held amendment power is limited",
+     "DPSPs ప్రాథమిక హక్కులకంటే ఆధిపత్యం కలిగిఉన్నాయని / DPSPs have supremacy over Fundamental Rights",
+     "పార్లమెంటుకు అపరిమిత సవరణ అధికారం ఉందని / Parliament has unlimited amendment power",
+     "B",
+     "మినర్వా మిల్స్ 1980: 42వ సవరణలో జోడించిన Art 368(4) మరియు (5) (పార్లమెంటు సవరణ అధికారం సంపూర్ణమని పేర్కొన్న నిబంధనలు) రద్దు చేయబడ్డాయి. FRs మరియు DPSPs మధ్య సమతుల్యత మూల నిర్మాణంలో భాగమని పేర్కొంది.\nMinerva Mills 1980: Art 368(4) and (5) added by 42nd Amendment (declaring absolute amendment power) struck down. Held harmony between FRs and DPSPs is part of Basic Structure."),
+
+    (4, "hard",
+     "ఇందిరా నెహ్రూ గాంధీ v. రాజ్‌నారాయణ్ (1975) కేసులో 'మూల నిర్మాణం'లో ఏ అంశం చేర్చబడింది?\n(Which element was added to 'Basic Structure' in Indira Nehru Gandhi v. Raj Narain (1975)?)",
+     "పార్లమెంటరీ ప్రజాస్వామ్యం / Parliamentary democracy",
+     "స్వేచ్ఛా మరియు న్యాయమైన ఎన్నికలు / Free and fair elections",
+     "న్యాయ స్వాతంత్ర్యం / Independence of judiciary",
+     "సమాఖ్య స్వభావం / Federal character",
+     "B",
+     "ఇందిరా గాంధీ v. రాజ్‌నారాయణ్ కేసు (1975) — SC ప్రకటించింది: స్వేచ్ఛా మరియు న్యాయమైన ఎన్నికలు రాజ్యాంగ మూల నిర్మాణంలో భాగం. 39వ సవరణను రద్దు చేసింది.\nIndira Gandhi v. Raj Narain (1975): SC held that free and fair elections are part of Basic Structure. Struck down the 39th Amendment."),
+
+    (4, "hard",
+     "IR కోహెలో v. ఆంధ్రప్రదేశ్ రాష్ట్రం (2007) కేసు మూల నిర్మాణ సిద్ధాంతానికి ఏమి జోడించింది?\n(What did IR Coelho v. State of Andhra Pradesh (2007) add to the Basic Structure doctrine?)",
+     "ప్రాథమిక హక్కులు మూల నిర్మాణంలో భాగమని / FRs are part of Basic Structure",
+     "ఏప్రిల్ 24, 1973 తర్వాత 9వ షెడ్యూల్‌కు జోడించిన చట్టాలు మూల నిర్మాణాన్ని ఉల్లంఘిస్తే న్యాయ సమీక్షకు లోనవుతాయని / Laws added to 9th Schedule after April 24, 1973 are subject to judicial review if they violate Basic Structure",
+     "రాజ్యాంగ సవరణ అధికారం సంపూర్ణమని / Amendment power is absolute",
+     "రాష్ట్రాల ఆమోదం లేకుండా సమాఖ్య నిబంధనలు సవరించలేమని / Federal provisions cannot be amended without State ratification",
+     "B",
+     "IR కోహెలో 2007 (9 న్యాయమూర్తుల ధర్మాసనం): ఏప్రిల్ 24, 1973 (కేశవానంద భారతి నిర్ణయం తేదీ) తర్వాత 9వ షెడ్యూల్‌కు జోడించిన చట్టాలు మూల నిర్మాణాన్ని ఉల్లంఘిస్తే న్యాయ సమీక్షకు లోనవుతాయి.\nIR Coelho 2007 (9-judge bench): Laws added to 9th Schedule after April 24, 1973 (date of Kesavananda Bharati) are subject to judicial review if they violate Basic Structure."),
+
+    (4, "hard",
+     "వామన్ రావు v. భారత యూనియన్ (1981) కేసు 9వ షెడ్యూల్ రక్షణ గురించి ఏమి నిర్ణయించింది?\n(What did Waman Rao v. Union of India (1981) decide about 9th Schedule protection?)",
+     "9వ షెడ్యూల్‌లోని అన్ని చట్టాలు న్యాయ సమీక్షకు లోనవుతాయి / All laws in 9th Schedule are subject to judicial review",
+     "9వ షెడ్యూల్‌లోని అన్ని చట్టాలకు పూర్తి రక్షణ ఉంది — తేదీ నిర్ణయంతో సంబంధం లేదు / All laws in 9th Schedule are fully protected — date is irrelevant",
+     "ఏప్రిల్ 24, 1973 కి మునుపు 9వ షెడ్యూల్‌కు జోడించిన చట్టాలు పూర్తిగా రక్షించబడతాయి; తర్వాత జోడించిన వాటికి మూల నిర్మాణ పరీక్ష వర్తిస్తుంది / Laws added to 9th Schedule BEFORE April 24, 1973 are fully protected; those added after are subject to Basic Structure test",
+     "9వ షెడ్యూల్ రద్దు చేయబడింది / 9th Schedule was abolished",
+     "C",
+     "వామన్ రావు కేసు 1981: ఏప్రిల్ 24, 1973 (కేశవానంద భారతి నిర్ణయం తేదీ) కి ముందు 9వ షెడ్యూల్‌కు జోడించిన చట్టాలు ప్రాథమిక హక్కుల ఉల్లంఘన కారణంగా సవాలు చేయడం నుండి పూర్తిగా రక్షించబడతాయి. తర్వాత జోడించిన చట్టాలు మూల నిర్మాణ పరీక్షకు లోనవుతాయి — IR కోహెలో 2007 ఇది నిర్ధారించింది.\nWaman Rao 1981: Laws added to 9th Schedule BEFORE April 24, 1973 (Kesavananda Bharati date) are fully protected from challenge on grounds of FR violation. Laws added after that date are subject to Basic Structure test — confirmed by IR Coelho 2007."),
+
+    # ══════════════ SECTION 5: IMPORTANT AMENDMENTS PART I (8 MCQs) ══════════════
+
+    (5, "medium",
+     "9వ షెడ్యూల్ మరియు భూ సంస్కరణ చట్టాలను రక్షించడానికి ఏ సవరణ చేయబడింది?\n(Which Amendment added the 9th Schedule to protect land reform laws?)",
+     "మొదటి సవరణ చట్టం 1951 / 1st Amendment Act 1951",
+     "నాల్గవ సవరణ చట్టం 1955 / 4th Amendment Act 1955",
+     "సప్తమ సవరణ చట్టం 1956 / 7th Amendment Act 1956",
+     "24వ సవరణ చట్టం 1971 / 24th Amendment Act 1971",
+     "A",
+     "మొదటి సవరణ చట్టం 1951: (1) 9వ షెడ్యూల్ జోడించింది — భూ సంస్కరణ చట్టాలను న్యాయ సమీక్ష నుండి రక్షించడానికి; (2) Art 19(1)(a) పై సహేతుక పరిమితులు; (3) Art 15(4) — SC/ST ల కోసం ప్రత్యేక నిబంధనలు.\n1st Amendment Act 1951: Added 9th Schedule to protect land reform laws; added Art 15(4) for SC/ST special provisions; added reasonable restrictions on Art 19(1)(a)."),
+
+    (5, "medium",
+     "7వ సవరణ చట్టం 1956 దేని కోసం చేయబడింది?\n(7th Amendment Act 1956 was enacted for which purpose?)",
+     "ప్రాథమిక హక్కుల పరిధి విస్తరణ / Expansion of Fundamental Rights",
+     "రాష్ట్రాల పునర్వ్యవస్థీకరణ — A, B, C, D వర్గాలు రద్దు / States Reorganisation — abolished A, B, C, D category States",
+     "ఎమర్జెన్సీ నిబంధనలు జోడించడం / Addition of Emergency provisions",
+     "DPSP విస్తరణ / Extension of DPSPs",
+     "B",
+     "7వ సవరణ 1956: రాష్ట్రాల పునర్వ్యవస్థీకరణ చట్టం 1956 అమలుకు — రాష్ట్రాల A, B, C, D వర్గీకరణ రద్దు చేసి, 14 రాష్ట్రాలు + 6 UTలు ఏర్పాటు.\n7th Amendment 1956: Implemented States Reorganisation Act 1956 — abolished A, B, C, D classification of states; created 14 States + 6 UTs."),
+
+    (5, "medium",
+     "24వ సవరణ చట్టం 1971 ఏమి సాధించింది?\n(What did the 24th Amendment Act 1971 achieve?)",
+     "ఆస్తి హక్కు ప్రాథమిక హక్కు జాబితా నుండి తొలగింపు / Removed Right to Property from list of FRs",
+     "పార్లమెంటుకు ప్రాథమిక హక్కులతో సహా రాజ్యాంగంలోని ఏ నిబంధనను అయినా సవరించే అధికారం ఉందని స్పష్టం చేసింది + రాష్ట్రపతి అనుమతి తప్పనిసరి / Clarified Parliament's power to amend any provision including FRs + made President's assent mandatory",
+     "అత్యవసర పరిస్థితి నిబంధనలను బలోపేతం చేసింది / Strengthened Emergency provisions",
+     "42వ సవరణ రద్దు చేసింది / Repealed 42nd Amendment",
+     "B",
+     "24వ సవరణ 1971 (గోలక్‌నాథ్ 1967 ను తిప్పికొట్టడానికి): (1) పార్లమెంటుకు ఏ నిబంధనను అయినా సవరించే అధికారం స్పష్టపరచింది; (2) రాష్ట్రపతి రాజ్యాంగ సవరణ బిల్లుకు తప్పనిసరిగా అనుమతి ఇవ్వాలి.\n24th Amendment 1971 (to negate Golaknath 1967): (1) Clarified Parliament's power to amend any provision; (2) Made President's assent mandatory."),
+
+    (5, "easy",
+     "42వ సవరణ చట్టం 1976 ని 'మినీ రాజ్యాంగం' అని ఎందుకు అంటారు?\n(Why is the 42nd Amendment Act 1976 called the 'Mini Constitution'?)",
+     "అది చాలా చిన్న సవరణ అవడం వల్ల / Because it was a very small amendment",
+     "అది రాజ్యాంగంలో అత్యంత విస్తృతమైన మార్పులు తెచ్చింది / Because it brought the most sweeping changes to the Constitution",
+     "అది కొత్త రాజ్యాంగం రచించింది / Because it drafted a new Constitution",
+     "అది రాజ్యాంగ సభ నిర్ణయం / Because it was a Constituent Assembly decision",
+     "B",
+     "42వ సవరణ 1976 రాజ్యాంగంలో అత్యంత విస్తృత మార్పులు తెచ్చింది: ప్రాథమిక విధులు జోడించింది, DPSPs బలోపేతం, న్యాయ సమీక్ష పరిమితం, 'సోషలిస్ట్-సెక్యులర్-ఇంటెగ్రిటీ' పీఠికకు జోడించింది, అత్యవసర నిబంధనలు మార్చబడ్డాయి.\n42nd Amendment 1976 brought the most sweeping changes: added Fundamental Duties, strengthened DPSPs, limited judicial review, added 'Socialist-Secular-Integrity' to Preamble, modified Emergency provisions.",
+     "APPSC"),
+
+    (5, "easy",
+     "44వ సవరణ చట్టం 1978 ఏ ముఖ్యమైన మార్పు తెచ్చింది?\n(What major change did the 44th Amendment Act 1978 bring?)",
+     "ప్రాథమిక విధులు జోడించింది / Added Fundamental Duties",
+     "ఆస్తి హక్కు (Art 19(1)(f) + Art 31) ప్రాథమిక హక్కుల జాబితా నుండి తొలగింపు / Removed Right to Property (Art 19(1)(f) + Art 31) from Fundamental Rights",
+     "GST ప్రవేశపెట్టింది / Introduced GST",
+     "DPSPs ను ప్రాథమిక హక్కుల కంటే ఆధిపత్యంలో ఉంచింది / Placed DPSPs above Fundamental Rights",
+     "B",
+     "44వ సవరణ 1978 (జనతా ప్రభుత్వం): ఆస్తి హక్కు ప్రాథమిక హక్కుల జాబితా నుండి తొలగించబడింది. Art 300A జోడించబడింది — ఆస్తి హక్కు ఇప్పుడు రాజ్యాంగ/చట్టపరమైన హక్కు.\n44th Amendment 1978 (Janata Party): Right to Property removed from FRs. Art 300A added — Right to Property now a Constitutional/Legal right only.",
+     "APPSC"),
+
+    (5, "medium",
+     "52వ సవరణ చట్టం 1985 ఏ ముఖ్య నిబంధన జోడించింది?\n(Which major provision was added by the 52nd Amendment Act 1985?)",
+     "73వ షెడ్యూల్‌లో పంచాయతీరాజ్ / Panchayati Raj in 73rd Schedule",
+     "10వ షెడ్యూల్ — పక్షపాత నిరోధక చట్టం / 10th Schedule — Anti-defection law",
+     "ఆర్టికల్ 21A — విద్యా హక్కు / Article 21A — Right to Education",
+     "9వ షెడ్యూల్ — భూ సంస్కరణలు / 9th Schedule — Land reforms",
+     "B",
+     "52వ సవరణ 1985: 10వ షెడ్యూల్ జోడించింది — పక్షపాత నిరోధక చట్టం (Anti-defection law). ఎన్నికైన తర్వాత పార్టీ ఫిరాయింపు చేస్తే సభ్యత్వం కోల్పోతారు.\n52nd Amendment 1985: Added 10th Schedule — Anti-defection law. Members elected on party ticket who defect lose their membership."),
+
+    (5, "easy",
+     "61వ సవరణ చట్టం 1989 ఏ మార్పు తెచ్చింది?\n(What change did the 61st Amendment Act 1989 bring?)",
+     "ఓటింగ్ వయసు 25 నుండి 21కి తగ్గించబడింది / Voting age reduced from 25 to 21",
+     "ఓటింగ్ వయసు 21 నుండి 18కి తగ్గించబడింది / Voting age reduced from 21 to 18",
+     "లోక్‌సభ సీట్లు పెంచబడ్డాయి / Lok Sabha seats increased",
+     "రాజ్యసభ కాలవ్యవధి పెంచబడింది / Rajya Sabha term extended",
+     "B",
+     "61వ సవరణ 1989: ఓటు వేసే అర్హత వయసు 21 నుండి 18 సంవత్సరాలకు తగ్గించబడింది. ఇది ఆర్టికల్ 326 సవరణ ద్వారా చేయబడింది.\n61st Amendment 1989: Voting age reduced from 21 to 18 years. Done by amending Article 326.",
+     "APPSC"),
+
+    (5, "medium",
+     "69వ సవరణ చట్టం 1991 ఏ నిర్ణయం తీసుకుంది?\n(What did the 69th Amendment Act 1991 decide?)",
+     "ముంబై మహానగరపాలికకు ప్రత్యేక హోదా / Special status to Mumbai Municipal Corporation",
+     "ఢిల్లీని జాతీయ రాజధాని రాష్ట్ర భూభాగం (NCT)గా గుర్తించింది + శాసనసభ మరియు మంత్రిమండలి ఏర్పాటు / Designated Delhi as NCT + Legislative Assembly and Council of Ministers",
+     "అన్ని UTలకు శాసనసభలు ఇచ్చింది / Gave Legislative Assemblies to all UTs",
+     "ఢిల్లీని 28వ రాష్ట్రంగా ఏర్పాటు చేసింది / Made Delhi the 28th State",
+     "B",
+     "69వ సవరణ 1991: ఢిల్లీకి 'జాతీయ రాజధాని రాష్ట్ర భూభాగం' (NCT) హోదా ఇచ్చి, శాసనసభ మరియు మంత్రిమండలి ఏర్పాటు చేసింది. ఢిల్లీ రాష్ట్రం కాదు — NCT.\n69th Amendment 1991: Designated Delhi as NCT (National Capital Territory) with a Legislative Assembly and Council of Ministers. Delhi is not a state — it is an NCT."),
+
+    # ══════════════ SECTION 6: IMPORTANT AMENDMENTS PART II (8 MCQs) ══════════════
+
+    (6, "easy",
+     "73వ సవరణ చట్టం 1992 ఏ నిబంధన జోడించింది?\n(What provision was added by the 73rd Amendment Act 1992?)",
+     "నగర పంచాయతీలు మరియు పురపాలక సంఘాలు / Nagar Panchayats and Municipalities",
+     "పంచాయతీ రాజ్ సంస్థలకు రాజ్యాంగ హోదా — 11వ షెడ్యూల్ / Constitutional status to Panchayati Raj institutions — 11th Schedule",
+     "సహకార సంఘాలు / Cooperative Societies",
+     "ఆర్థిక అత్యవసర పరిస్థితి నిబంధనలు / Financial Emergency provisions",
+     "B",
+     "73వ సవరణ 1992: పంచాయతీ రాజ్ సంస్థలకు రాజ్యాంగ హోదా ఇచ్చింది — Art 243-243O జోడించింది; 11వ షెడ్యూల్ (29 అంశాలు) జోడించింది. గ్రామ పంచాయతీ, పంచాయతీ సమితి, జిల్లా పరిషత్‌లకు నిర్బంధ ఎన్నికలు.\n73rd Amendment 1992: Constitutional status to Panchayati Raj — added Art 243-243O; 11th Schedule (29 subjects). Mandatory elections for Gram Panchayat, Intermediate and District Panchayat.",
+     "APPSC"),
+
+    (6, "easy",
+     "74వ సవరణ చట్టం 1992 దేనిని ప్రవేశపెట్టింది?\n(What did the 74th Amendment Act 1992 introduce?)",
+     "పంచాయతీ రాజ్‌కు రాజ్యాంగ హోదా / Constitutional status to Panchayati Raj",
+     "పట్టణ స్థానిక సంస్థలకు రాజ్యాంగ హోదా — 12వ షెడ్యూల్ / Constitutional status to Urban Local Bodies — 12th Schedule",
+     "మహిళలకు ప్రత్యేక రిజర్వేషన్లు / Special reservations for women",
+     "GST మండలి / GST Council",
+     "B",
+     "74వ సవరణ 1992: పట్టణ స్థానిక సంస్థలకు (నగర పంచాయతీలు, పురపాలక సంఘాలు, నగర్ నిగమాలు) రాజ్యాంగ హోదా; Art 243P-243ZG జోడించింది; 12వ షెడ్యూల్ (18 అంశాలు).\n74th Amendment 1992: Constitutional status to Urban Local Bodies (Nagar Panchayat, Municipal Council, Municipal Corporation); Art 243P-243ZG; 12th Schedule (18 subjects).",
+     "APPSC"),
+
+    (6, "medium",
+     "86వ సవరణ చట్టం 2002 ఏ ముఖ్య మార్పులు తెచ్చింది?\n(What important changes did the 86th Amendment Act 2002 bring?)",
+     "6-14 సంవత్సరాల పిల్లలకు ఉచిత విద్యను DPSP గా జోడించింది / Added free education for 6-14 years as DPSP",
+     "ఆర్టికల్ 21A — 6-14 సంవత్సరాల పిల్లలకు ఉచిత విద్యను ప్రాథమిక హక్కుగా చేసింది + Art 51A(k) — తల్లిదండ్రులకు విద్య బాధ్యత / Art 21A — made free education for 6-14 a Fundamental Right + Art 51A(k) — duty of parents to provide education",
+     "ఉన్నత విద్యలో రిజర్వేషన్ పెంచింది / Increased reservation in higher education",
+     "ప్రాథమిక విద్యను స్థానిక సంస్థలకు బదిలీ చేసింది / Transferred primary education to local bodies",
+     "B",
+     "86వ సవరణ 2002: (1) Art 21A జోడించింది — 6-14 సంవత్సరాల పిల్లలకు ఉచిత మరియు నిర్బంధ విద్యను ప్రాథమిక హక్కుగా ప్రకటించింది; (2) Art 45 (DPSP) మార్పు — 14 సంవత్సరాల వరకు నుండి 6 సంవత్సరాల లోపు పిల్లలకు ప్రారంభ బాల్య సంరక్షణకు మార్చబడింది; (3) Art 51A(k) — తల్లిదండ్రులు/సంరక్షకులు 6-14 సంవత్సరాల పిల్లలకు విద్య అందించాలని ప్రాథమిక విధి జోడించింది.\n86th Amendment 2002: (1) Art 21A added — free and compulsory education for children 6-14 years as Fundamental Right; (2) Art 45 (DPSP) changed — from 14-year education to early childhood care for children below 6 years; (3) Art 51A(k) added — duty of parents/guardians to provide education to children aged 6-14."),
+
+    (6, "medium",
+     "91వ సవరణ చట్టం 2003 ఏ ముఖ్య నిబంధన జోడించింది?\n(What important provision did the 91st Amendment Act 2003 add?)",
+     "ప్రైవేట్ సంస్థలలో రిజర్వేషన్లు / Reservations in private institutions",
+     "పక్షపాత నిరోధక చట్టం బలోపేతం + మంత్రిమండలి పరిమాణం పరిమితి (15% లేదా కనీసం 12 మంది) / Strengthened anti-defection + Cabinet size limit (15% or min 12)",
+     "పట్టణ స్థానిక సంస్థలకు అదనపు అధికారాలు / Additional powers to Urban Local Bodies",
+     "న్యాయమూర్తుల నియామక విధానం మార్పు / Change in appointment of judges",
+     "B",
+     "91వ సవరణ 2003: (1) మంత్రిమండలి పరిమాణం — లోక్‌సభ/రాష్ట్ర శాసనసభ మొత్తం సభ్యత్వంలో 15% లేదా కనీసం 12 మంది (ఏది ఎక్కువైతే అది); (2) పార్టీ ఫిరాయింపు వారికి మంత్రి పదవి నిషేధం.\n91st Amendment 2003: (1) Cabinet size — 15% of total membership of Lok Sabha/State Assembly or minimum 12 (whichever is higher); (2) Defectors disqualified from ministerial posts."),
+
+    (6, "medium",
+     "97వ సవరణ చట్టం 2011 ఏమి జోడించింది?\n(What did the 97th Amendment Act 2011 add?)",
+     "EWS (ఆర్థికంగా బలహీన వర్గాలు) రిజర్వేషన్ / EWS (Economically Weaker Sections) reservation",
+     "సహకార సంఘాలు నెలకొల్పే మరియు నిర్వహించే హక్కు — Art 19(1)(c)కు జోడించింది / Right to form cooperative societies added to Art 19(1)(c)",
+     "సామాజిక మరియు ఆర్థిక న్యాయం DPSPగా జోడించింది / Added social and economic justice as DPSP",
+     "ఆన్‌లైన్ ఓటింగ్ నిబంధనలు / Online voting provisions",
+     "B",
+     "97వ సవరణ 2011: (1) Art 19(1)(c) కు సహకార సంఘాలు నెలకొల్పే హక్కు జోడించింది; (2) Art 43B (DPSP) — సహకార సంఘాల ప్రోత్సాహం జోడించింది; (3) Art 243ZH-ZT — సహకార సంఘాలకు రాజ్యాంగ హోదా.\n97th Amendment 2011: Added right to form cooperative societies to Art 19(1)(c); Art 43B (DPSP) on cooperative promotion; Art 243ZH-ZT (Constitutional status to cooperatives)."),
+
+    (6, "easy",
+     "101వ సవరణ చట్టం 2016 ఏమి ప్రవేశపెట్టింది?\n(What did the 101st Amendment Act 2016 introduce?)",
+     "పంచాయతీ రాజ్‌కు రాజ్యాంగ హోదా / Constitutional status to Panchayati Raj",
+     "వస్తు మరియు సేవల పన్ను (GST) / Goods and Services Tax (GST)",
+     "OBC కమిషన్‌కు రాజ్యాంగ హోదా / Constitutional status to OBC Commission",
+     "EWS 10% రిజర్వేషన్ / 10% EWS reservation",
+     "B",
+     "101వ సవరణ 2016: వస్తు మరియు సేవల పన్ను (GST) ప్రవేశపెట్టబడింది. Art 246A, 269A, 279A (GST మండలి) జోడించబడ్డాయి. 'ఒక దేశం — ఒక పన్ను' విప్లవాత్మక మార్పు.\n101st Amendment 2016: Introduced Goods and Services Tax (GST). Added Art 246A, 269A, 279A (GST Council). Revolutionary 'One Nation — One Tax' change.",
+     "APPSC"),
+
+    (6, "medium",
+     "102వ సవరణ చట్టం 2018 ఏమి ప్రవేశపెట్టింది?\n(What did the 102nd Amendment Act 2018 introduce?)",
+     "SC/ST కమిషన్‌కు రాజ్యాంగ హోదా / Constitutional status to SC/ST Commission",
+     "జాతీయ వెనుకబడిన వర్గాల కమిషన్ (NCBC) కు రాజ్యాంగ హోదా / Constitutional status to National Commission for Backward Classes (NCBC)",
+     "OBCలకు 27% రిజర్వేషన్ / 27% reservation for OBCs",
+     "జాతీయ మహిళా కమిషన్‌కు రాజ్యాంగ హోదా / Constitutional status to National Commission for Women",
+     "B",
+     "102వ సవరణ 2018: జాతీయ వెనుకబడిన వర్గాల కమిషన్ (NCBC) కు రాజ్యాంగ హోదా ఇచ్చింది — Art 338B జోడించింది.\n102nd Amendment 2018: Gave constitutional status to National Commission for Backward Classes (NCBC) — added Art 338B."),
+
+    (6, "easy",
+     "103వ సవరణ చట్టం 2019 ఏమి ప్రవేశపెట్టింది?\n(What did the 103rd Amendment Act 2019 introduce?)",
+     "SC/STలకు ప్రమోషన్లలో రిజర్వేషన్ / Reservation in promotions for SC/STs",
+     "ఆర్థికంగా బలహీన వర్గాలకు (EWS) 10% రిజర్వేషన్ — Art 15(6) మరియు Art 16(6) / 10% reservation for EWS — Art 15(6) and Art 16(6)",
+     "ప్రైవేట్ రంగంలో రిజర్వేషన్ / Reservation in private sector",
+     "OBCలకు అదనపు 5% రిజర్వేషన్ / Additional 5% reservation for OBCs",
+     "B",
+     "103వ సవరణ 2019: ఆర్థికంగా బలహీన వర్గాలకు (EWS — Economic Weaker Sections) విద్యా సంస్థలు మరియు ప్రభుత్వ ఉద్యోగాల్లో 10% రిజర్వేషన్. Art 15(6) మరియు Art 16(6) జోడించబడ్డాయి.\n103rd Amendment 2019: 10% reservation for EWS in educational institutions and government jobs. Added Art 15(6) and Art 16(6).",
+     "APPSC"),
+
+    (6, "medium",
+     "104వ సవరణ చట్టం 2020 ఏమి నిర్ణయించింది?\n(What did the 104th Amendment Act 2020 decide?)",
+     "లోక్‌సభ సీట్లు 543 నుండి 600 కు పెంచింది / Increased Lok Sabha seats from 543 to 600",
+     "లోక్‌సభ మరియు రాష్ట్ర శాసనసభల్లో SC/ST రిజర్వేషన్ పదేళ్ళు పొడిగించింది (2030 వరకు) + ఆంగ్లో-ఇండియన్ నామినేషన్ తొలగించింది / Extended SC/ST reservation for 10 years (till 2030) + Removed Anglo-Indian nomination",
+     "OBC కమిషన్‌కు రాజ్యాంగ హోదా / Constitutional status to OBC Commission",
+     "రాజ్యాంగ పీఠికలో 'సోషలిస్ట్' పదం తొలగించింది / Removed 'Socialist' from Preamble",
+     "B",
+     "104వ సవరణ 2020: (1) లోక్‌సభ మరియు రాష్ట్ర శాసనసభల్లో SC/ST రిజర్వేషన్ పదేళ్ళు పొడిగించింది — 2030 జనవరి 25 వరకు; (2) లోక్‌సభ మరియు రాష్ట్ర శాసనసభల్లో ఆంగ్లో-ఇండియన్ నామినేషన్ రద్దు చేసింది.\n104th Amendment 2020: Extended SC/ST reservation in Lok Sabha and State Assemblies by 10 years (till Jan 25, 2030); Removed Anglo-Indian nomination from Lok Sabha and State Assemblies."),
+
+    # ══════════════ SECTION 7: TOUGH MCQs (5 MCQs) ══════════════
+
+    (7, "hard",
+     "కింది ఏ నిబంధన సవరణకు రాష్ట్రాల ఆమోదం అవసరం లేదు?\n(Which provision does NOT require State ratification for amendment?)",
+     "రాష్ట్రపతి ఎన్నిక పద్ధతి / Manner of election of President",
+     "7వ షెడ్యూల్‌లో పంపిణీ / Distribution of 7th Schedule",
+     "ప్రాథమిక హక్కులు / Fundamental Rights",
+     "కేంద్ర మరియు రాష్ట్ర కార్యనిర్వహణ అధికారాల పరిధి / Extent of executive power of Union and States",
+     "C",
+     "ప్రాథమిక హక్కులు సవరించడానికి రాష్ట్రాల ఆమోదం అవసరం లేదు — ప్రత్యేక మెజారిటీ మాత్రమే సరిపోతుంది. రాష్ట్రపతి ఎన్నిక, 7వ షెడ్యూల్, కార్యనిర్వహణ అధికారాల పరిధి — ఇవన్నీ రాష్ట్రాల ఆమోదం అవసరం.\nFundamental Rights can be amended by Special Majority only — no State ratification needed. Election of President, 7th Schedule, extent of executive power — these require State ratification."),
+
+    (7, "hard",
+     "రాజ్యాంగ సవరణ ప్రక్రియ గురించి కింది ఏ వ్యాఖ్య సరైనది?\n(Which statement about the Constitutional Amendment procedure is correct?)",
+     "రాష్ట్ర శాసనసభ రాజ్యాంగ సవరణ బిల్లు ప్రవేశపెట్టవచ్చు / State legislature can introduce Constitutional Amendment Bill",
+     "అత్యవసర పరిస్థితిలో రాజ్యాంగ సవరణ చేయలేమ / Constitutional amendments cannot be made during Emergency",
+     "కేంద్రం మరియు రాష్ట్రాల మధ్య శాసన అధికారాల పంపిణీ సాధారణ మెజారిటీతో సవరించవచ్చు / Distribution of legislative powers between Centre and States can be amended by Simple Majority",
+     "రాజ్యాంగ సవరణ బిల్లు రాష్ట్రాల ఆమోదం తర్వాత తిరిగి పార్లమెంటు ఆమోదానికి పంపనవసరం లేదు / After State ratification, bill does not need to be re-presented to Parliament",
+     "D",
+     "రాష్ట్రాల ఆమోదం తర్వాత బిల్లు తిరిగి పార్లమెంటుకు పంపనవసరం లేదు — రాష్ట్రపతి ఆమోదానికి నేరుగా వెళ్తుంది. అత్యవసర పరిస్థితిలో కూడా సవరణ చేయవచ్చు; రాష్ట్ర శాసనసభలు బిల్లు ప్రవేశపెట్టలేవు.\nAfter State ratification, the bill goes directly to President for assent — no need to re-present to Parliament. Amendments can be made during Emergency; State legislatures cannot introduce bills."),
+
+    (7, "hard",
+     "42వ మరియు 44వ సవరణల మధ్య ముఖ్య వ్యత్యాసం ఏమిటి?\n(What is the key distinction between the 42nd and 44th Amendments?)",
+     "42వ = గణతంత్ర రోజు వరకు; 44వ = స్వాతంత్ర్య దినోత్సవం వరకు / 42nd = till Republic Day; 44th = till Independence Day",
+     "42వ = ఇందిరా గాంధీ (కాంగ్రెస్) — రాజ్యాంగ నిర్బంధం తగ్గించింది; 44వ = మొరార్జీ దేశాయి (జనతా) — 42వ అనేక నిబంధనలు రద్దు చేసింది + ఆస్తి హక్కు తొలగించింది / 42nd = Indira Gandhi (Congress) — reduced constitutional restraints; 44th = Morarji Desai (Janata) — reversed many 42nd Amdt provisions + removed Right to Property",
+     "42వ = SC/ST రిజర్వేషన్; 44వ = OBC రిజర్వేషన్ / 42nd = SC/ST reservation; 44th = OBC reservation",
+     "42వ = GST; 44వ = పంచాయతీ రాజ్ / 42nd = GST; 44th = Panchayati Raj",
+     "B",
+     "42వ సవరణ 1976 (ఇందిరా గాంధీ — అత్యవసర పరిస్థితి సమయంలో): ప్రాథమిక విధులు, పీఠికలో సోషలిస్ట్-సెక్యులర్-ఇంటెగ్రిటీ, సవరణ అధికారం సంపూర్ణంగా ప్రకటన, DPSPs బలోపేతం. 44వ సవరణ 1978 (జనతా): 42వ అనేక నిబంధనలు రద్దు, ఆస్తి హక్కు తొలగింపు, అత్యవసర నిబంధనలు సంస్కరణ.\n42nd (Indira Gandhi during Emergency): FDs added, Socialist-Secular-Integrity in Preamble, declared absolute amendment power, strengthened DPSPs. 44th (Janata): Reversed many 42nd provisions, removed Right to Property, reformed Emergency provisions."),
+
+    (7, "hard",
+     "కింది సవరణ-ఫలితం జంటలలో ఏది తప్పు?\n(Which Amendment–Outcome pair is INCORRECT?)",
+     "42వ సవరణ 1976 → పీఠికకు 'సోషలిస్ట్, సెక్యులర్, ఇంటెగ్రిటీ' జోడించింది / 42nd Amdt 1976 → Added 'Socialist, Secular, Integrity' to Preamble",
+     "52వ సవరణ 1985 → 10వ షెడ్యూల్ (పక్షపాత నిరోధక చట్టం) / 52nd Amdt 1985 → 10th Schedule (Anti-defection law)",
+     "86వ సవరణ 2002 → Art 21A (విద్యా హక్కు 6-14 సంవత్సరాలు) / 86th Amdt 2002 → Art 21A (Right to Education 6-14 years)",
+     "101వ సవరణ 2016 → పంచాయతీ రాజ్‌కు రాజ్యాంగ హోదా / 101st Amdt 2016 → Constitutional status to Panchayati Raj",
+     "D",
+     "101వ సవరణ 2016 GST ప్రవేశపెట్టింది, పంచాయతీ రాజ్‌కు రాజ్యాంగ హోదా కాదు. పంచాయతీ రాజ్‌కు రాజ్యాంగ హోదా 73వ సవరణ 1992 ద్వారా ఇవ్వబడింది.\n101st Amendment 2016 introduced GST, NOT Panchayati Raj status. Panchayati Raj got constitutional status through 73rd Amendment 1992."),
+
+    (7, "hard",
+     "మూల నిర్మాణ కేసుల క్రమం సరైనది ఏది?\n(Which sequence of Basic Structure cases is correct?)",
+     "శంకరి ప్రసాద్ (1951) → గోలక్‌నాథ్ (1967) → కేశవానంద భారతి (1973) → మినర్వా మిల్స్ (1980) / Shankari Prasad → Golaknath → Kesavananda Bharati → Minerva Mills",
+     "గోలక్‌నాథ్ (1967) → శంకరి ప్రసాద్ (1951) → కేశవానంద భారతి (1973) → మినర్వా మిల్స్ (1980) / Golaknath → Shankari Prasad → Kesavananda Bharati → Minerva Mills",
+     "కేశవానంద భారతి (1973) → శంకరి ప్రసాద్ (1951) → గోలక్‌నాథ్ (1967) → మినర్వా మిల్స్ (1980) / Kesavananda Bharati → Shankari Prasad → Golaknath → Minerva Mills",
+     "మినర్వా మిల్స్ (1980) → గోలక్‌నాథ్ (1967) → కేశవానంద భారతి (1973) → శంకరి ప్రసాద్ (1951) / Minerva Mills → Golaknath → Kesavananda Bharati → Shankari Prasad",
+     "A",
+     "సరైన క్రమం: (1) శంకరి ప్రసాద్ 1951 — FRs సవరించవచ్చు; (2) గోలక్‌నాథ్ 1967 — FRs సవరించలేమ; (3) కేశవానంద భారతి 1973 — మూల నిర్మాణ సిద్ధాంతం; (4) మినర్వా మిల్స్ 1980 — సవరణ అధికారం పరిమితం.\nCorrect sequence: Shankari Prasad 1951 → Golaknath 1967 → Kesavananda Bharati 1973 → Minerva Mills 1980."),
+
+]
+
+
+
+import json as _json
+
+
+def _seed_polity_ch13_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres, force=False):
+    import json as _j
+    ph = '%s' if use_postgres else '?'
+    _sections = [
+    {"title": "11.1 ప్రాథమిక అంశాలు — Art 368", "sub": "Art 368 · Part XX · Amendment Procedure · Constitutional Law", "audio": ""},
+    {"title": "11.2 సాధారణ మెజారిటీ సవరణలు", "sub": "Simple Majority · Art 4 · Art 169 · Art 239A · Schedules", "audio": ""},
+    {"title": "11.3 ప్రత్యేక మెజారిటీ సవరణలు", "sub": "Special Majority · 2/3 + 1/2 · Art 368 · Most Provisions", "audio": ""},
+    {"title": "11.4 రాష్ట్రాల ఆమోదం అవసరమయ్యే సవరణలు", "sub": "State Ratification · Half States · Federal Provisions · Art 54 · Art 75", "audio": ""},
+    {"title": "11.5 మూల నిర్మాణ సిద్ధాంతం", "sub": "Basic Structure · Shankari Prasad · Sajjan Singh · Golaknath · Kesavananda", "audio": ""},
+    {"title": "11.6 ముఖ్య సవరణలు భాగం I (1-69వ)", "sub": "1st Amendment · 7th · 9th · 24th · 25th · 42nd · 44th · 52nd · 61st · 69th", "audio": ""},
+    {"title": "11.7 ముఖ్య సవరణలు భాగం II (73-104వ)", "sub": "73rd · 74th · 86th · 91st · 97th · 99th · 100th · 101st · 102nd · 103rd · 104th", "audio": ""},
+    {"title": "11.8 కఠిన ప్రశ్నలు", "sub": "Tough MCQs · Waman Rao 1981 · IR Coelho · Amendment Sequences", "audio": ""}
+]
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT '',
+            subtopic TEXT NOT NULL DEFAULT '',
+            chapter_num INTEGER NOT NULL DEFAULT 0,
+            chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '',
+            pages_ref TEXT NOT NULL DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if use_postgres: conn.commit()
+    except Exception:
+        pass
+
+    cur = db_exec_fn(conn,
+        f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+        (13, 'Indian_Polity'))
+    row = cur.fetchone()
+    if row and not force:
+        return {'success': True, 'already_exists': True,
+                'message': 'Polity Ch13 notes already seeded.'}
+    if row and force:
+        db_exec_fn(conn,
+            f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+            (13, 'Indian_Polity'))
+    if use_postgres:
+        conn.commit()
+
+    db_exec_fn(conn,
+        f"INSERT INTO study_notes "
+        f"(subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        (('GK', 'Indian_Polity', '', 13,
+         'రాజ్యాంగ సవరణ',
+         'Amendment of the Constitution',
+         'Ch.13',
+         _j.dumps(_sections, ensure_ascii=False)))
+    conn.commit()
+    return {'success': True, 'message': 'Polity Ch13 notes seeded!'}
+
+
+def _seed_polity_ch13_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
+    ph = '%s' if use_postgres else '?'
+
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS chapter_mcqs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            study_note_id INTEGER NOT NULL,
+            section_idx INTEGER NOT NULL DEFAULT 0,
+            difficulty INTEGER NOT NULL DEFAULT 1,
+            exam_type TEXT NOT NULL DEFAULT 'General',
+            q_te TEXT NOT NULL,
+            opt_a TEXT NOT NULL,
+            opt_b TEXT NOT NULL,
+            opt_c TEXT NOT NULL,
+            opt_d TEXT NOT NULL,
+            correct TEXT NOT NULL,
+            explanation_te TEXT NOT NULL DEFAULT '',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if use_postgres: conn.commit()
+    except Exception:
+        pass
+
+    cur = db_exec_fn(conn,
+        f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+        (13, 'Indian_Polity'))
+    row = cur.fetchone()
+    if not row:
+        _seed_polity_ch13_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
+        cur = db_exec_fn(conn,
+            f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+            (13, 'Indian_Polity'))
+        row = cur.fetchone()
+
+    note_id = row_to_dict_fn(row)['id']
+    db_exec_fn(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+
+    insert_sql = (
+        f"INSERT INTO chapter_mcqs "
+        f"(study_note_id, section_idx, difficulty, exam_type, "
+        f"q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
+    )
+
+    diff_map = {"easy": 1, "medium": 2, "hard": 3, "toughest": 4,
+                 1: 1, 2: 2, 3: 3, 4: 4}
+    easy = medium = hard = toughest = pyq = 0
+    for mcq in POLITY_CH13_MCQS:
+        sec_idx, diff, q, a, b, c, d, correct, expl = mcq[:9]
+        exam_type = mcq[9] if len(mcq) > 9 else 'General'
+        diff_int = diff_map.get(diff, 2) if not isinstance(diff, int) else diff
+        db_exec_fn(conn, insert_sql,
+                   (note_id, sec_idx, diff_int, exam_type, q, a, b, c, d,
+                    str(correct).lower(), expl))
+        if exam_type in ('APPSC', 'UPSC'):
+            pyq += 1
+        elif diff_int == 1: easy += 1
+        elif diff_int == 2: medium += 1
+        elif diff_int == 3: hard += 1
+        elif diff_int == 4: toughest += 1
+
+    if use_postgres: conn.commit()
+    conn.commit()
+
+    total = len(POLITY_CH13_MCQS)
+    return {
+        'success': True,
+        'message': f'Polity Ch13 MCQs seeded! Total: {total}',
+        'inserted': total,
+        'easy': easy, 'medium': medium, 'hard': hard,
+        'toughest': toughest, 'pyq': pyq
+    }
