@@ -8,6 +8,8 @@
 # PYQ: 10th element (index 9) = 'APPSC' or 'UPSC'
 # ─────────────────────────────────────────────
 
+import json as _json
+
 POLITY_CH8_MCQS = [
 
     # ══════════════════════════════════════════
@@ -441,15 +443,136 @@ POLITY_CH8_MCQS = [
 ]
 
 
-def _seed_polity_ch8_mcqs_inner(conn, chapter_id):
-    c = conn.cursor()
-    for row in POLITY_CH8_MCQS:
-        sec_idx, diff, q, a, b, cv, d, correct, expl = row[:9]
-        exam_type = row[9] if len(row) > 9 else None
-        c.execute(
-            """INSERT OR IGNORE INTO chapter_mcqs
-               (chapter_id, section_index, difficulty, question, option_a, option_b, option_c, option_d, correct_answer, explanation, exam_type)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?)""",
-            (chapter_id, sec_idx, diff, q, a, b, cv, d, correct, expl, exam_type)
-        )
+
+import json as _json
+
+
+def _seed_polity_ch8_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres, force=False):
+    import json as _j
+    ph = '%s' if use_postgres else '?'
+    _sections = [
+    {"title": "8.1 ఆర్టికల్ 23: బలవంతపు వెట్టి చాకిరీ నిషేధం", "sub": "Art 23 · Forced Labour · Trafficking · Bonded Labour", "audio": ""},
+    {"title": "8.2 ఆర్టికల్ 24: బాలల చాకిరీ నిషేధం", "sub": "Art 24 · Child Labour · Factories · Mines · Hazardous", "audio": ""},
+    {"title": "8.3 ఆర్టికల్ 25-26: మతస్వాతంత్ర్యం", "sub": "Art 25 · Art 26 · Freedom of Religion · Conscience", "audio": ""},
+    {"title": "8.4 ఆర్టికల్ 27-28: మతం మరియు విద్య", "sub": "Art 27 · Art 28 · Religious Taxation · Institutions", "audio": ""},
+    {"title": "8.5 ఆర్టికల్ 29-30: సాంస్కృతిక మరియు విద్యా హక్కులు", "sub": "Art 29 · Art 30 · Minority Rights · Language · Script", "audio": ""},
+    {"title": "8.6 ఆర్టికల్ 31A-31C: రక్షిత చట్టాలు", "sub": "Art 31A · Art 31B · Art 31C · 9th Schedule · Property", "audio": ""},
+    {"title": "8.7 ఆర్టికల్ 32: రాజ్యాంగ పరిహారాల హక్కు", "sub": "Art 32 · Writs · Habeas Corpus · Mandamus · Certiorari", "audio": ""},
+    {"title": "8.8 ఆర్టికల్ 33-35 మరియు అత్యవసర నిలుపు", "sub": "Art 33 · Art 34 · Art 35 · Emergency · FR Suspension", "audio": ""}
+]
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS study_notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            subject TEXT NOT NULL DEFAULT 'GK',
+            topic TEXT NOT NULL DEFAULT '',
+            subtopic TEXT NOT NULL DEFAULT '',
+            chapter_num INTEGER NOT NULL DEFAULT 0,
+            chapter_title_te TEXT NOT NULL DEFAULT '',
+            chapter_title_en TEXT NOT NULL DEFAULT '',
+            pages_ref TEXT NOT NULL DEFAULT '',
+            sections_json TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if use_postgres: conn.commit()
+    except Exception:
+        pass
+
+    cur = db_exec_fn(conn,
+        f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+        (8, 'Indian_Polity'))
+    row = cur.fetchone()
+    if row and not force:
+        return {'success': True, 'already_exists': True,
+                'message': 'Polity Ch8 notes already seeded.'}
+    if row and force:
+        db_exec_fn(conn,
+            f"DELETE FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+            (8, 'Indian_Polity'))
+    if use_postgres:
+        conn.commit()
+
+    db_exec_fn(conn,
+        f"INSERT INTO study_notes "
+        f"(subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+        ('GK', 'Indian_Polity', '', 8,
+         'ప్రాథమిక హక్కులు భాగం II',
+         'Fundamental Rights Part II',
+         'Ch.8',
+         _j.dumps(_sections, ensure_ascii=False)))
     conn.commit()
+    return {'success': True, 'message': 'Polity Ch8 notes seeded!'}
+
+
+def _seed_polity_ch8_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
+    ph = '%s' if use_postgres else '?'
+
+    try:
+        conn.execute("""CREATE TABLE IF NOT EXISTS chapter_mcqs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            study_note_id INTEGER NOT NULL,
+            section_idx INTEGER NOT NULL DEFAULT 0,
+            difficulty INTEGER NOT NULL DEFAULT 1,
+            exam_type TEXT NOT NULL DEFAULT 'General',
+            q_te TEXT NOT NULL,
+            opt_a TEXT NOT NULL,
+            opt_b TEXT NOT NULL,
+            opt_c TEXT NOT NULL,
+            opt_d TEXT NOT NULL,
+            correct TEXT NOT NULL,
+            explanation_te TEXT NOT NULL DEFAULT '',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if use_postgres: conn.commit()
+    except Exception:
+        pass
+
+    cur = db_exec_fn(conn,
+        f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+        (8, 'Indian_Polity'))
+    row = cur.fetchone()
+    if not row:
+        _seed_polity_ch8_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
+        cur = db_exec_fn(conn,
+            f"SELECT id FROM study_notes WHERE chapter_num={ph} AND topic={ph}",
+            (8, 'Indian_Polity'))
+        row = cur.fetchone()
+
+    note_id = row_to_dict_fn(row)['id']
+    db_exec_fn(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+
+    insert_sql = (
+        f"INSERT INTO chapter_mcqs "
+        f"(study_note_id, section_idx, difficulty, exam_type, "
+        f"q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) "
+        f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
+    )
+
+    diff_map = {"easy": 1, "medium": 2, "hard": 3, "toughest": 4,
+                 1: 1, 2: 2, 3: 3, 4: 4}
+    easy = medium = hard = toughest = pyq = 0
+    for mcq in POLITY_CH8_MCQS:
+        sec_idx, diff, q, a, b, c, d, correct, expl = mcq[:9]
+        exam_type = mcq[9] if len(mcq) > 9 else 'General'
+        diff_int = diff_map.get(diff, 2) if not isinstance(diff, int) else diff
+        db_exec_fn(conn, insert_sql,
+                   (note_id, sec_idx, diff_int, exam_type, q, a, b, c, d,
+                    str(correct).lower(), expl))
+        if exam_type in ('APPSC', 'UPSC'):
+            pyq += 1
+        elif diff_int == 1: easy += 1
+        elif diff_int == 2: medium += 1
+        elif diff_int == 3: hard += 1
+        elif diff_int == 4: toughest += 1
+
+    if use_postgres: conn.commit()
+    conn.commit()
+
+    total = len(POLITY_CH8_MCQS)
+    return {
+        'success': True,
+        'message': f'Polity Ch8 MCQs seeded! Total: {total}',
+        'inserted': total,
+        'easy': easy, 'medium': medium, 'hard': hard,
+        'toughest': toughest, 'pyq': pyq
+    }

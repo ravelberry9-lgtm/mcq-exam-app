@@ -336,7 +336,7 @@ def init_db():
     try:
         cur_pol = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_Polity'")
         pol_count = list(cur_pol.fetchone())[0] if cur_pol else 0
-        if pol_count < 1:
+        if pol_count < 12:
             print(f"[startup] Indian Polity: {pol_count} chapters — auto-seeding...")
             _auto_seed_polity()
             print("[startup] Indian Polity auto-seed complete.")
