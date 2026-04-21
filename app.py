@@ -679,6 +679,39 @@ def _auto_seed_pyq(force=False):
         return 0
 
 
+@app.route('/api/debug/polity')
+def debug_polity():
+    """Diagnostic: show study_notes + MCQ counts for Indian_Polity per chapter."""
+    conn = get_db()
+    try:
+        # study_notes rows per chapter
+        notes_rows = [row_to_dict(r) for r in db_exec(conn, """
+            SELECT chapter_num, subject, chapter_title_en, chapter_title_te,
+                   CASE WHEN (chapter_title_en IS NULL OR chapter_title_en='') THEN 'EMPTY' ELSE 'OK' END AS title_status
+            FROM study_notes WHERE topic='Indian_Polity' ORDER BY chapter_num
+        """).fetchall()]
+        # MCQ count per chapter
+        mcq_rows = [row_to_dict(r) for r in db_exec(conn, """
+            SELECT sn.chapter_num, COUNT(cm.id) AS mcq_count
+            FROM study_notes sn
+            LEFT JOIN chapter_mcqs cm ON cm.study_note_id = sn.id
+            WHERE sn.topic='Indian_Polity'
+            GROUP BY sn.chapter_num ORDER BY sn.chapter_num
+        """).fetchall()]
+        # Columns in study_notes
+        cols = [row_to_dict(r)['name'] for r in db_exec(conn, "PRAGMA table_info(study_notes)").fetchall()]
+        conn.close()
+        return jsonify({
+            'study_notes_count': len(notes_rows),
+            'study_notes_columns': cols,
+            'notes_per_chapter': notes_rows,
+            'mcq_per_chapter': mcq_rows,
+        })
+    except Exception as e:
+        conn.close()
+        return jsonify({'error': str(e)})
+
+
 @app.route('/api/pyq/reseed', methods=['POST'])
 def pyq_reseed():
     """Force-reload PYQ data from pyq_seed_data.json (clears old data first)."""
