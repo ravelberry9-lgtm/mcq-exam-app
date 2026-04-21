@@ -27,13 +27,25 @@ def _seed_polity_ch90_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres
     )
 
 
-def _seed_polity_ch90_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres=False):
-    existing = db_exec_fn(conn,
-        "SELECT COUNT(*) FROM chapter_mcqs WHERE subject='GK' AND topic='Indian_Polity' AND chapter_num=90"
-    ).fetchone()
-    count = list(existing)[0] if existing else 0
-    if count >= 64:
+def _seed_polity_ch90_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres=False, force=False):
+    import datetime as _dt
+    ph = "%s" if use_postgres else "?"
+    _TOPIC = 'Indian_Polity'
+    _CH = 90
+    note_id = row_to_dict_fn(db_exec_fn(conn,
+        f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
+        (_TOPIC, _CH)).fetchone() or {}).get('id')
+    if not note_id:
         return
+    existing = list(db_exec_fn(conn,
+        f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}",
+        (note_id,)).fetchone() or [0])[0]
+    if existing and not force:
+        return
+    if existing:
+        db_exec_fn(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    now = _dt.datetime.utcnow().isoformat()
+
 
     mcqs = [
         # ── Section 0: Basic Structure & Constitutional Supremacy ──
@@ -564,13 +576,11 @@ def _seed_polity_ch90_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres=
          'a',
          'The four Judges cases chart the evolution of judicial appointments: Gupta 1981 (executive primacy), Second Judges 1993 (collegium established), Third Judges 1998 (expanded to 5-judge collegium), Fourth Judges/NJAC 2015 (struck down NJAC, restored collegium).'),
     ]
-
     for (si, diff, q, oa, ob, oc, od, cor, expl) in mcqs:
         db_exec_fn(conn,
-            """INSERT INTO chapter_mcqs
-               (subject, topic, chapter_num, section_index, difficulty,
-                question_telugu, option_a, option_b, option_c, option_d,
-                correct_option, explanation)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""",
-            ('GK','Indian_Polity', 90, si, diff, q, oa, ob, oc, od, cor, expl)
-        )
+            f"""INSERT INTO chapter_mcqs
+                (study_note_id, section_idx, difficulty, exam_type,
+                 q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te, created_at)
+                VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
+            (note_id, si, diff, 'General', q, oa, ob, oc, od, cor, expl, now))
+

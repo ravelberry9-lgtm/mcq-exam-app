@@ -357,19 +357,30 @@ def _seed_polity_ch86_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres
 
 
 def _seed_polity_ch86_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres=False, force=False):
-    existing = db_exec_fn(conn, "SELECT COUNT(*) FROM chapter_mcqs WHERE topic='Indian_Polity' AND chapter_num=86")
-    if list(existing.fetchone())[0] > 0 and not force:
+    import datetime as _dt
+    ph = "%s" if use_postgres else "?"
+    _TOPIC = 'Indian_Polity'
+    _CH = 86
+    note_id = row_to_dict_fn(db_exec_fn(conn,
+        f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
+        (_TOPIC, _CH)).fetchone() or {}).get('id')
+    if not note_id:
         return
-    ph = '%s' if use_postgres else '?'
-    sql = f"""INSERT INTO chapter_mcqs
-        (subject, topic, chapter_num, section_index, difficulty, question_telugu,
-         option_a, option_b, option_c, option_d, correct_option, explanation)
-        VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"""
-    for row in _MCQ_DATA:
-        sec, diff, q, a, b, c, d, correct, exp = row
-        db_exec_fn(conn, sql, ('GK', 'Indian_Polity', 86, sec, diff, q, a, b, c, d, correct, exp))
-
-
+    existing = list(db_exec_fn(conn,
+        f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}",
+        (note_id,)).fetchone() or [0])[0]
+    if existing and not force:
+        return
+    if existing:
+        db_exec_fn(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    now = _dt.datetime.utcnow().isoformat()
+    for (sec, diff, q, a, b, c, d, ans, exp) in _MCQ_DATA:
+        db_exec_fn(conn,
+            f"""INSERT INTO chapter_mcqs
+                (study_note_id, section_idx, difficulty, exam_type,
+                 q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te, created_at)
+                VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
+            (note_id, sec, diff, 'General', q, a, b, c, d, ans, exp, now))
 def seed_polity_ch86(conn, db_exec_fn, row_to_dict_fn, use_postgres=False, force=False):
     _seed_polity_ch86_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres, force)
     _seed_polity_ch86_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres, force)
