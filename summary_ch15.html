@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 15 — President of India | Indian Polity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+    background: #eef2f7;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px;
+    background: #fff;
+    padding: 13mm 12mm 11mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%);
+    color: #fff;
+    border-radius: 9px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .hbadge {
+    background: rgba(255,255,255,0.2);
+    border-radius: 7px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .htitle h1 { font-size: 18px; font-weight: 700; }
+  .htitle h2 { font-size: 13.5px; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+  .hmeta { margin-left: auto; text-align: right; font-size: 13px; opacity: 0.8; line-height: 1.7; }
+
+  /* SECTION HEADING */
+  .sh {
+    font-size: 14px;
+    font-weight: 700;
+    color: #4a148c;
+    background: #f3e5f5;
+    border-left: 5px solid #7b1fa2;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 11px 0 7px;
+    letter-spacing: 0.3px;
+  }
+
+  /* GRIDS */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+
+  /* CARD */
+  .card {
+    background: #faf5ff;
+    border: 1.5px solid #ce93d8;
+    border-radius: 7px;
+    padding: 8px 10px;
+  }
+  .ch {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #4a148c;
+    border-bottom: 1px solid #ce93d8;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
+  }
+
+  /* FACT ROWS */
+  .fact { margin: 3px 0; font-size: 14.5px; }
+  .fact::before { content: "• "; color: #7b1fa2; font-weight: 700; }
+  .k  { font-weight: 700; color: #4a148c; }
+  .kg { font-weight: 700; color: #1b5e20; }
+  .kt { font-weight: 700; color: #004d40; }
+  .kr { font-weight: 700; color: #b71c1c; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    background: #6a1b9a;
+    color: #fff;
+    padding: 5px 7px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td { padding: 4px 7px; border-bottom: 1px solid #e8eaf6; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) td { background: #f8f0ff; }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .tg { background: #e8f5e9; color: #1b5e20; }
+  .tb { background: #e3f2fd; color: #0d47a1; }
+  .tp { background: #ede7f6; color: #4527a0; }
+  .tt { background: #e0f7fa; color: #00695c; }
+  .tr { background: #ffebee; color: #b71c1c; }
+  .to { background: #fff3e0; color: #e65100; }
+
+  /* PILLS */
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .pill {
+    background: #6a1b9a;
+    color: #fff;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .pg { background: #2e7d32; }
+  .pt { background: #00695c; }
+  .pb { background: #0d47a1; }
+
+  /* HIGHLIGHT BOX */
+  .hbox {
+    background: #fff8e1;
+    border-left: 4px solid #f9a825;
+    border-radius: 0 6px 6px 0;
+    padding: 6px 10px;
+    margin: 6px 0;
+    font-size: 14px;
+  }
+
+  /* SOURCE GRID */
+  .sgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+  .sitem {
+    background: #f3e5f5;
+    border: 1.5px solid #ce93d8;
+    border-radius: 6px;
+    padding: 5px 6px;
+    text-align: center;
+  }
+  .sc { font-size: 13px; font-weight: 700; color: #4a148c; }
+  .sv { font-size: 12.5px; color: #37474f; margin-top: 2px; line-height: 1.35; }
+
+  .footer {
+    border-top: 1.5px solid #ce93d8;
+    margin-top: 10px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ PAGE 1 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 15</div>
+    <div class="htitle">
+      <h1>President of India — భారత రాష్ట్రపతి</h1>
+      <h2>Indian Polity · Lakshmikanth · APPSC Group 2 · Articles 52–361</h2>
+    </div>
+    <div class="hmeta">8 Sections · 63 MCQs<br>Telugu + English</div>
+  </div>
+
+  <!-- KEY ARTICLES OVERVIEW -->
+  <div class="sh">📜 ముఖ్య అనుచ్ఛేదాలు — సారాంశం (Key Articles at a Glance)</div>
+  <div class="sgrid">
+    <div class="sitem"><div class="sc">Art.52</div><div class="sv">రాష్ట్రపతి పదవి<br>(Office of President)</div></div>
+    <div class="sitem"><div class="sc">Art.53</div><div class="sv">కార్యనిర్వాహక అధికారం<br>(Executive Power)</div></div>
+    <div class="sitem"><div class="sc">Art.54</div><div class="sv">ఎలక్టోరల్ కాలేజ్<br>(Electoral College)</div></div>
+    <div class="sitem"><div class="sc">Art.55</div><div class="sv">STV పద్ధతి<br>(STV Method)</div></div>
+    <div class="sitem"><div class="sc">Art.56</div><div class="sv">పదవీ కాలం 5 సం.<br>(5-year Term)</div></div>
+    <div class="sitem"><div class="sc">Art.57</div><div class="sv">పునర్ ఎన్నిక<br>(Re-election)</div></div>
+    <div class="sitem"><div class="sc">Art.58</div><div class="sv">అర్హతలు<br>(Qualifications)</div></div>
+    <div class="sitem"><div class="sc">Art.59</div><div class="sv">పదవీ నిబంధనలు<br>(Conditions)</div></div>
+    <div class="sitem"><div class="sc">Art.60</div><div class="sv">ప్రమాణం — CJI<br>(Oath by CJI)</div></div>
+    <div class="sitem"><div class="sc">Art.61</div><div class="sv">Impeachment<br>(మహాభియోగం)</div></div>
+    <div class="sitem"><div class="sc">Art.65</div><div class="sv">VP బాధ్యతలు<br>(VP Acting)</div></div>
+    <div class="sitem"><div class="sc">Art.71</div><div class="sv">ఎన్నిక వివాద SC<br>(Election Disputes)</div></div>
+    <div class="sitem"><div class="sc">Art.72</div><div class="sv">క్షమాభిక్ష<br>(Pardoning Power)</div></div>
+    <div class="sitem"><div class="sc">Art.74</div><div class="sv">CoM సలహా<br>(CoM Advice)</div></div>
+    <div class="sitem"><div class="sc">Art.123</div><div class="sv">ఆర్డినెన్స్<br>(Ordinance)</div></div>
+    <div class="sitem"><div class="sc">Art.352/356/360</div><div class="sv">Emergency Powers<br>(అత్యవసర పరిస్థితులు)</div></div>
+  </div>
+
+  <!-- SECTION 15.1 — ELECTION & QUALIFICATIONS -->
+  <div class="sh">🗳️ 15.1 ఎన్నిక మరియు అర్హతలు (Election & Qualifications) — Art.52–62</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">🏛️ ఎలక్టోరల్ కాలేజ్ (Art.54)</div>
+      <div class="fact">పార్లమెంట్ ఉభయ సభల <span class="k">ఎన్నికైన</span> సభ్యులు (నామినేటెడ్ మినహా)</div>
+      <div class="fact">రాష్ట్రాల శాసనసభల <span class="k">ఎన్నికైన</span> సభ్యులు</div>
+      <div class="fact"><span class="k">70వ సవరణ (1992)</span> తర్వాత: <span class="kg">ఢిల్లీ + పుదుచ్చేరి</span> శాసనసభ సభ్యులు కూడా</div>
+      <div class="fact"><span class="kr">నామినేటెడ్ సభ్యులు — పాల్గొనరు</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">📋 అర్హతలు (Art.58)</div>
+      <div class="fact">భారత పౌరుడు (Indian Citizen)</div>
+      <div class="fact"><span class="k">35 సంవత్సరాలు</span> పూర్తి (35 years)</div>
+      <div class="fact"><span class="k">లోక్‌సభ</span> సభ్యత్వానికి అర్హుడు (eligible for LS)</div>
+      <div class="fact"><span class="k">లాభదాయక పదవి లేనివాడు</span> (no office of profit)</div>
+      <div class="fact">మినహాయింపు: రాష్ట్రపతి, VP, గవర్నర్, కేంద్ర/రాష్ట్ర మంత్రి పదవులు</div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ch">⚖️ ఓటు విలువ (Art.55) — STV</div>
+      <div class="fact"><span class="k">MLA ఓటు విలువ</span> = రాష్ట్ర జనాభా ÷ (ఎన్నికైన MLAs × 1000)</div>
+      <div class="fact"><span class="k">MP ఓటు విలువ</span> = అన్ని MLAs మొత్తం విలువ ÷ మొత్తం ఎన్నికైన MPs</div>
+      <div class="fact">పద్ధతి: <span class="k">నిష్పత్తి ప్రాతినిధ్యం — STV</span> (Proportional Representation)</div>
+      <div class="fact">రహస్య బ్యాలెట్ (Secret Ballot)</div>
+    </div>
+    <div class="card">
+      <div class="ch">📅 పదవీ నిబంధనలు (Art.56–60)</div>
+      <div class="fact">పదవీ కాలం: <span class="k">5 సంవత్సరాలు</span></div>
+      <div class="fact">రాజీనామా: <span class="k">ఉపరాష్ట్రపతికి</span> లిఖితంగా (Art.56(1)(a))</div>
+      <div class="fact">ప్రమాణం: <span class="k">CJI</span> సమక్షంలో (Art.60)</div>
+      <div class="fact">పునర్ ఎన్నిక: <span class="kg">పరిమితులు లేవు</span> (Art.57)</div>
+      <div class="fact">నామినేషన్: <span class="k">50 ప్రతిపాదకులు + 50 అనుమోదకులు + ₹15,000</span> డిపాజిట్</div>
+    </div>
+  </div>
+
+  <div class="hbox">
+    <b>ఎన్నిక వివాదాలు (Art.71):</b> రాష్ట్రపతి/VP ఎన్నికకు సంబంధించిన వివాదాలు <span class="k">సుప్రీం కోర్టు</span> విచారిస్తుంది. Art.71(4): ఎలక్టోరల్ కాలేజ్‌లో ఖాళీ ఉన్నా ఎన్నిక <span class="kg">చెల్లుబాటవుతుంది</span>.<br>
+    <b>Election Disputes (Art.71):</b> SC has jurisdiction. Art.71(4): Election not invalid merely because of vacancy in Electoral College.
+  </div>
+
+  <!-- SECTION 15.2 — IMPEACHMENT & VACANCY -->
+  <div class="sh">⚖️ 15.2 Impeachment మరియు ఖాళీ (Impeachment & Vacancy) — Art.61, 65</div>
+  <table>
+    <thead>
+      <tr><th style="width:20%">దశ (Step)</th><th>వివరణ (Detail)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>1. నోటీసు<br>(Notice)</b></td>
+        <td>• ఏ సభలోనైనా (Either House) ప్రారంభించవచ్చు<br>
+            • సభ <span class="k">మొత్తం సభ్యత్వంలో కనీసం 1/4</span> మంది సంతకం అవసరం<br>
+            • <span class="k">14 రోజుల</span> ముందు నోటీసు ఇవ్వాలి<br>
+            • (Notice by at least 1/4 of total membership; 14 days prior)</td>
+      </tr>
+      <tr>
+        <td><b>2. మొదటి సభ<br>(First House)</b></td>
+        <td>• సభ <span class="k">మొత్తం సభ్యత్వంలో 2/3</span> మెజారిటీతో ఆమోదించాలి<br>
+            • (Resolution passed by 2/3 of total membership of that House)</td>
+      </tr>
+      <tr>
+        <td><b>3. విచారణ<br>(Investigation)</b></td>
+        <td>• ఇతర సభ ఆరోపణలు విచారిస్తుంది<br>
+            • రాష్ట్రపతి స్వయంగా లేదా ప్రాతినిధి ద్వారా వాదన వినిపించవచ్చు<br>
+            • (Other House investigates; President can appear/be represented)</td>
+      </tr>
+      <tr>
+        <td><b>4. తొలగింపు<br>(Removal)</b></td>
+        <td>• ఇతర సభ కూడా <span class="k">మొత్తం సభ్యత్వంలో 2/3</span> మెజారిటీ ఇస్తే — రాష్ట్రపతి తొలగింపు<br>
+            • (Other House also passes by 2/3 of total membership → President removed)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="g2" style="margin-top:7px">
+    <div class="card">
+      <div class="ch">⚠️ Impeachment — ముఖ్యమైన విషయాలు</div>
+      <div class="fact">NCM వేరు — <span class="k">LS మాత్రమే</span>; Impeachment: <span class="kg">ఏ సభలోనైనా</span></div>
+      <div class="fact">'Violation of Constitution' రాజ్యాంగంలో <span class="kr">నిర్వచించబడలేదు</span></div>
+      <div class="fact">భారత చరిత్రలో ఇప్పటివరకు <span class="kr">ఏ రాష్ట్రపతీ Impeachment జరగలేదు</span></div>
+      <div class="fact">నామినేటెడ్ సభ్యులు కూడా Impeachment లో పాల్గొంటారు</div>
+    </div>
+    <div class="card">
+      <div class="ch">🔄 ఖాళీ అయినప్పుడు (Art.65)</div>
+      <div class="fact">1వరుస: <span class="k">ఉపరాష్ట్రపతి</span> (Vice President)</div>
+      <div class="fact">2వరుస: <span class="k">సుప్రీం కోర్టు CJI</span> (if VP also unavailable)</div>
+      <div class="fact">6 నెలల లోపు <span class="k">కొత్త రాష్ట్రపతి ఎన్నిక</span> జరగాలి</div>
+      <div class="fact">Art.71(4): ఎలక్టోరల్ కాలేజ్‌లో ఖాళీ — ఎన్నిక చెల్లుతుంది</div>
+    </div>
+  </div>
+
+  <div class="footer">Indian Polity · Lakshmikanth · Chapter 15: President of India · APPSC Group 2 · Page 1 of 3</div>
+</div>
+
+<!-- ════════════════ PAGE 2 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 15</div>
+    <div class="htitle">
+      <h1>President of India — అధికారాలు (Powers)</h1>
+      <h2>Executive · Legislative · Financial · Judicial · Ordinance · Emergency</h2>
+    </div>
+    <div class="hmeta">APPSC Group 2<br>Lakshmikanth</div>
+  </div>
+
+  <!-- SECTION 15.3 — EXECUTIVE & LEGISLATIVE POWERS -->
+  <div class="sh">⚡ 15.3 కార్యనిర్వాహక మరియు శాసన అధికారాలు (Executive & Legislative Powers)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">🏛️ కార్యనిర్వాహక అధికారాలు (Executive Powers)</div>
+      <div class="fact"><span class="tag tp">Art.53</span> కేంద్ర కార్యనిర్వాహక అధికారం — రాష్ట్రపతిలో నిహితం (Union executive power vested)</div>
+      <div class="fact"><span class="tag tp">Art.74</span> CoM సలహా <span class="k">బాధ్యకరం</span> (44వ సవరణ తర్వాత); ఒకసారి పునర్విచారణ కోరవచ్చు</div>
+      <div class="fact"><span class="tag tp">Art.75</span> PM మరియు మంత్రుల నియామకం (Appointment of PM & Ministers)</div>
+      <div class="fact"><span class="tag tp">Art.76</span> భారత అటార్నీ జనరల్ నియామకం (Appoint AG)</div>
+      <div class="fact"><span class="tag tp">Art.77</span> కేంద్ర ప్రభుత్వ చర్యలు రాష్ట్రపతి పేరు మీద</div>
+      <div class="fact"><span class="tag tp">Art.78</span> PM — CoM నిర్ణయాలు రాష్ట్రపతికి తెలపాలి</div>
+    </div>
+    <div class="card">
+      <div class="ch">📜 శాసన అధికారాలు (Legislative Powers)</div>
+      <div class="fact"><span class="tag tp">Art.85</span> పార్లమెంట్ సమావేశ పరచడం, వాయిదా, LS రద్దు</div>
+      <div class="fact"><span class="tag tp">Art.86</span> ఉభయ సభలనుద్దేశించి ప్రసంగించడం (Address Parliament)</div>
+      <div class="fact"><span class="tag tp">Art.87</span> ప్రత్యేక ప్రసంగం: ప్రతి సంవత్సరం మొదటి సెషన్ + కొత్త LS మొదటి సమావేశం</div>
+      <div class="fact"><span class="tag tp">Art.108</span> Joint Sitting (సంయుక్త సమావేశం) ఏర్పాటు</div>
+      <div class="fact"><span class="tag tp">Art.111</span> బిల్లులపై ఆమోదం / పునర్విచారణ / Pocket Veto</div>
+      <div class="fact"><span class="tag tp">Art.143</span> SC అభిప్రాయం కోరడం (Presidential Reference)</div>
+    </div>
+  </div>
+
+  <div class="hbox">
+    <b>Art.74 — 44వ సవరణ (1978):</b> రాష్ట్రపతి CoM సలహా <span class="k">తప్పనిసరిగా పాటించాలి</span> (CoM advice is binding). రాష్ట్రపతి ఒకసారి పునర్విచారణ కోరవచ్చు; మళ్లీ పంపిన సలహాపై తప్పనిసరిగా ఆమోదించాలి.<br>
+    <b>నామమాత్రపు అధిపతి (Nominal/Constitutional Head):</b> Art.53లో అధికారం ఉన్నా — ఆచరణలో CoM సలహా ప్రకారమే నడుచుకుంటారు.
+  </div>
+
+  <!-- SECTION 15.4 — FINANCIAL & JUDICIAL POWERS -->
+  <div class="sh">💰 15.4 ఆర్థిక మరియు న్యాయ అధికారాలు (Financial & Judicial Powers)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">💰 ఆర్థిక అధికారాలు</div>
+      <div class="fact">వార్షిక బడ్జెట్ (Annual Financial Statement) పార్లమెంట్‌కు సమర్పణ</div>
+      <div class="fact">ధన బిల్లు (Money Bill) — <span class="k">రాష్ట్రపతి ముందు అనుమతి తప్పనిసరి</span></div>
+      <div class="fact"><span class="tag tp">Art.266</span> Consolidated Fund of India — ఉపసంహరణకు ఆమోదం</div>
+      <div class="fact">Finance Commission (Art.280) నియామకం</div>
+      <div class="fact">Contingency Fund (Art.267) — అత్యవసర వ్యయానికి</div>
+    </div>
+    <div class="card">
+      <div class="ch">⚖️ న్యాయ అధికారాలు (Judicial Powers)</div>
+      <div class="fact">SC, HC న్యాయమూర్తుల నియామకం (Appointment of Judges)</div>
+      <div class="fact"><span class="tag tp">Art.143</span> SC అభిప్రాయం కోరే అధికారం — Presidential Reference</div>
+      <div class="fact"><span class="tag tp">Art.72</span> క్షమాభిక్ష అధికారం (Pardoning Power) — 5 రకాలు</div>
+      <div class="fact">SC అభిప్రాయం <span class="kr">బాధ్యకరం కాదు</span> (not binding on President)</div>
+    </div>
+  </div>
+
+  <!-- PARDONING POWER TABLE -->
+  <div class="sh">🕊️ క్షమాభిక్ష అధికారం (Pardoning Power) — Art.72 vs Art.161</div>
+  <table>
+    <thead>
+      <tr><th style="width:20%">రకం (Type)</th><th style="width:40%">అర్థం (Meaning)</th><th style="width:20%">రాష్ట్రపతి (Art.72)</th><th style="width:20%">గవర్నర్ (Art.161)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Pardon</b><br>(క్షమాపణ)</td>
+        <td>శిక్ష పూర్తిగా రద్దు; నేరం మాపు; అన్ని పరిణామాలు తొలగు</td>
+        <td><span class="tag tg">✓ అవును</span></td>
+        <td><span class="tag tg">✓ అవును</span></td>
+      </tr>
+      <tr>
+        <td><b>Commutation</b><br>(పరివర్తన)</td>
+        <td>శిక్ష తక్కువ రూపంలోకి మార్పు (మరణ శిక్ష → జీవిత కారాగారం)</td>
+        <td><span class="tag tg">✓ అవును</span></td>
+        <td><span class="tag tg">✓ అవును</span></td>
+      </tr>
+      <tr>
+        <td><b>Remission</b><br>(తగ్గింపు)</td>
+        <td>శిక్ష కాలం తగ్గింపు; స్వభావం మారదు</td>
+        <td><span class="tag tg">✓ అవును</span></td>
+        <td><span class="tag tg">✓ అవును</span></td>
+      </tr>
+      <tr>
+        <td><b>Respite</b><br>(వాయిదా-ప్రత్యేక)</td>
+        <td>ప్రత్యేక కారణాల వల్ల తక్కువ శిక్ష (గర్భిణి వంటివి)</td>
+        <td><span class="tag tg">✓ అవును</span></td>
+        <td><span class="tag tg">✓ అవును</span></td>
+      </tr>
+      <tr>
+        <td><b>Reprieve</b><br>(తాత్కాలిక)</td>
+        <td>శిక్ష తాత్కాలికంగా ఆపడం (mainly death sentence)</td>
+        <td><span class="tag tg">✓ అవును</span></td>
+        <td><span class="tag tg">✓ అవును</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sh" style="margin-top:10px">🔑 రాష్ట్రపతికి మాత్రమే — గవర్నర్‌కు లేదు (Exclusive to President)</div>
+  <div class="g3">
+    <div class="card">
+      <div class="ch">☠️ మరణ శిక్ష (Death Sentence)</div>
+      <div class="fact">రాష్ట్రపతి: <span class="kg">క్షమించగలరు ✓</span></div>
+      <div class="fact">గవర్నర్: <span class="kr">క్షమించలేరు ✗</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">⚔️ కోర్ట్ మార్షల్ (Court Martial)</div>
+      <div class="fact">రాష్ట్రపతి: <span class="kg">క్షమించగలరు ✓</span></div>
+      <div class="fact">గవర్నర్: <span class="kr">క్షమించలేరు ✗</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">📋 కేంద్ర చట్టాల శిక్ష</div>
+      <div class="fact">రాష్ట్రపతి: <span class="kg">క్షమించగలరు ✓</span></div>
+      <div class="fact">గవర్నర్: <span class="kr">క్షమించలేరు ✗</span></div>
+    </div>
+  </div>
+
+  <div class="hbox">
+    <b>Epuru Sudhakar Case (2006):</b> రాష్ట్రపతి/గవర్నర్ క్షమాభిక్ష తిరస్కారం <span class="k">న్యాయసమీక్షకు లోబడి ఉంటుంది</span> (subject to judicial review). స్వేచ్ఛాయుత/రాజకీయ నిరాకరణ చెల్లుబాటు కాదు.<br>
+    <b>Epuru Sudhakar (2006):</b> Rejection of mercy petition is subject to judicial review — arbitrary/political grounds are invalid.
+  </div>
+
+  <!-- SECTION 15.5 — ORDINANCE POWER -->
+  <div class="sh">📜 15.5 ఆర్డినెన్స్ అధికారం (Ordinance Power) — Art.123</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">📋 ఆర్డినెన్స్ — ముఖ్య నియమాలు</div>
+      <div class="fact">జారీ సందర్భం: <span class="k">రెండు సభలూ</span> సమావేశంలో లేనప్పుడు మాత్రమే</div>
+      <div class="fact">ఒక సభ మాత్రమే సమావేశంలో ఉన్నా సరిపోదు — <span class="k">రెండూ లేనప్పుడే</span></div>
+      <div class="fact">పార్లమెంట్ ముందు ఉంచడం: <span class="k">6 వారాలలోపు</span> (సమావేశం ప్రారంభమైన నాటి నుండి)</div>
+      <div class="fact">గరిష్ఠ జీవిత కాలం: <span class="k">~7.5 నెలలు</span> (6 నెలలు + 6 వారాలు)</div>
+      <div class="fact">వెనక్కి తీసుకోవడం: <span class="kg">ఎప్పుడైనా</span> సాధ్యం</div>
+    </div>
+    <div class="card">
+      <div class="ch">⚠️ పరిమితులు (Limitations)</div>
+      <div class="fact"><span class="kr">రాజ్యాంగ సవరణ చేయలేదు</span> (cannot amend Constitution)</div>
+      <div class="fact"><span class="kr">ప్రాథమిక హక్కులు ఉల్లంఘించకూడదు</span></div>
+      <div class="fact">రాష్ట్ర జాబితా అంశాలకు <span class="kr">వర్తించదు</span></div>
+      <div class="fact">న్యాయసమీక్ష: <span class="kg">సాధ్యం</span> — SC పరిశీలించగలదు</div>
+      <div class="fact">రాష్ట్ర గవర్నర్: <span class="tag tp">Art.213</span> కింద ఆర్డినెన్స్ జారీ చేయగలరు</div>
+    </div>
+  </div>
+
+  <div class="hbox">
+    <b>D.C. Wadhwa v. State of Bihar (1987):</b> ఆర్డినెన్స్‌లను పదే పదే పునర్జారీ చేయడం (Repromulgation) <span class="kr">రాజ్యాంగంపై మోసం (fraud on Constitution)</span> — చెల్లుబాటు కాదు.<br>
+    <b>D.C. Wadhwa (1987):</b> Repromulgation of Ordinances without placing before Legislature = fraud on Constitution, unconstitutional.
+  </div>
+
+  <div class="footer">Indian Polity · Lakshmikanth · Chapter 15: President of India · APPSC Group 2 · Page 2 of 3</div>
+</div>
+
+<!-- ════════════════ PAGE 3 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 15</div>
+    <div class="htitle">
+      <h1>Emergency · Veto Powers · Quick Reference</h1>
+      <h2>Art.352 · 356 · 360 · Veto · Presidents of India · APPSC PYQs</h2>
+    </div>
+    <div class="hmeta">APPSC Group 2<br>Lakshmikanth</div>
+  </div>
+
+  <!-- SECTION 15.6 — EMERGENCY POWERS -->
+  <div class="sh">🚨 15.6 అత్యవసర అధికారాలు (Emergency Powers)</div>
+  <table>
+    <thead>
+      <tr><th style="width:22%">రకం (Type)</th><th style="width:10%">Article</th><th style="width:28%">కారణం (Grounds)</th><th>ముఖ్య విషయాలు (Key Facts)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>జాతీయ అత్యవసర<br>(National Emergency)</b></td>
+        <td><span class="tag tp">Art.352</span></td>
+        <td>యుద్ధం / బాహ్య దాడి / <span class="k">సాయుధ తిరుగుబాటు</span><br>(War/External Aggression/<b>Armed Rebellion</b>)</td>
+        <td>• Cabinet <span class="k">లిఖిత సలహా</span> తప్పనిసరి (44వ సవరణ)<br>
+            • <span class="k">1 నెల</span>లోపు పార్లమెంట్ ఆమోదం<br>
+            • LS <span class="k">సాధారణ మెజారిటీ</span>తో రద్దు చేయగలదు<br>
+            • ప్రతి <span class="k">6 నెలలకు</span> పార్లమెంట్ ఆమోదం</td>
+      </tr>
+      <tr>
+        <td><b>రాష్ట్రపతి పాలన<br>(President's Rule)</b></td>
+        <td><span class="tag tp">Art.356</span></td>
+        <td>రాష్ట్ర రాజ్యాంగ యంత్రాంగం వైఫల్యం<br>(Failure of Constitutional Machinery)</td>
+        <td>• గవర్నర్ నివేదిక ఆధారంగా<br>
+            • మొదటి <span class="k">2 నెలలు</span>; తర్వాత 6 నెలలకు ఆమోదం<br>
+            • గరిష్ఠ: <span class="k">3 సంవత్సరాలు</span><br>
+            • <span class="k">SR Bommai Case (1994)</span> — Floor Test తప్పనిసరి</td>
+      </tr>
+      <tr>
+        <td><b>ఆర్థిక అత్యవసర<br>(Financial Emergency)</b></td>
+        <td><span class="tag tp">Art.360</span></td>
+        <td>ఆర్థిక సుస్థిరత / రాజ్యాంగ ఆర్థిక నిబంధనలకు ముప్పు<br>(Financial stability threatened)</td>
+        <td>• ఇప్పటివరకు <span class="kr">విధించలేదు</span> (never proclaimed)<br>
+            • <span class="k">2 నెలలు</span>లోపు పార్లమెంట్ ఆమోదం<br>
+            • రాష్ట్రాల ఆర్థిక బిల్లులు రాష్ట్రపతి రిజర్వ్ చేయవచ్చు</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="g2" style="margin-top:7px">
+    <div class="card">
+      <div class="ch">⚠️ 44వ సవరణ (1978) — Art.352 మార్పులు</div>
+      <div class="fact">'Internal Disturbance' → <span class="k">'Armed Rebellion'</span> పదం మార్పు</div>
+      <div class="fact">Cabinet <span class="k">లిఖిత సలహా</span> తప్పనిసరి (written advice mandatory)</div>
+      <div class="fact">LS <span class="k">సాధారణ మెజారిటీ</span>తో అత్యవసర పరిస్థితి రద్దు</div>
+      <div class="fact">1/10 LS సభ్యులు ప్రత్యేక సమావేశం కోరవచ్చు</div>
+    </div>
+    <div class="card">
+      <div class="ch">📋 అత్యవసర పరిస్థితుల చరిత్ర</div>
+      <div class="fact">1962: <span class="k">చైనా యుద్ధం</span> (Art.352 — 1st)</div>
+      <div class="fact">1965: <span class="k">పాకిస్తాన్ యుద్ధం</span> (Art.352 — 2nd)</div>
+      <div class="fact">1971: <span class="k">బంగ్లాదేశ్ యుద్ధం</span> (Art.352 — 3rd)</div>
+      <div class="fact">1975–77: <span class="k">అంతర్గత అత్యవసర</span> (Internal Emergency — Mrs. Gandhi)</div>
+      <div class="fact">Art.356: <span class="k">100+ సార్లు</span> వినియోగం</div>
+    </div>
+  </div>
+
+  <!-- SECTION 15.7 — VETO POWERS -->
+  <div class="sh">🛑 15.7 వీటో అధికారాలు (Veto Powers) — Art.111</div>
+  <table>
+    <thead>
+      <tr><th style="width:22%">వీటో రకం (Type)</th><th style="width:38%">అర్థం (Meaning)</th><th style="width:20%">పార్లమెంట్ ఓర్చుకోగలదా?</th><th>ఉదాహరణ</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Absolute Veto</b><br>(సంపూర్ణ వీటో)</td>
+        <td>రాష్ట్రపతి స్పష్టంగా ఆమోదం నిరాకరిస్తారు; బిల్లు రద్దవుతుంది (President withholds assent; Bill lapses)</td>
+        <td><span class="tag tr">కాదు ✗</span></td>
+        <td>ప్రైవేట్ మెంబర్ బిల్లులపై వర్తిస్తుంది</td>
+      </tr>
+      <tr>
+        <td><b>Suspensive Veto</b><br>(స్తంభన వీటో)</td>
+        <td>పునర్విచారణకు తిరిగి పంపుతారు (Art.111); పార్లమెంట్ మళ్లీ ఆమోదిస్తే తప్పనిసరి సంతకం (reconsideration → if re-passed, must assent)</td>
+        <td><span class="tag tg">అవును ✓</span></td>
+        <td>సాధారణ ఓర్చుకోవడం సాధ్యం; మనీ బిల్లులకు వర్తించదు</td>
+      </tr>
+      <tr>
+        <td><b>Pocket Veto</b><br>(జేబు వీటో)</td>
+        <td>నిర్ణయం తీసుకోకుండా నిరవధికంగా ఆపడం; రాజ్యాంగంలో <span class="k">సమయ పరిమితి లేదు</span> (takes no action; no time limit in India)</td>
+        <td><span class="tag tr">కాదు ✗</span></td>
+        <td><span class="k">జైల్ సింగ్</span> — Indian Post Office (Amendment) Bill 1986</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="hbox">
+    <b>మనీ బిల్లు (Art.110) పై వీటో:</b> రాష్ట్రపతికి <span class="kr">Absolute Veto మాత్రమే</span>. Suspensive Veto వర్తించదు — పార్లమెంట్ ఓర్చుకోలేదు. మనీ బిల్లు ఆమోదం లేదా నిరాకరణ మాత్రమే.<br>
+    <b>US వేరు:</b> అమెరికాలో Pocket Veto = 10 రోజులలో సంతకం చేయకపోవడం (Congress సమావేశంలో లేనప్పుడు). భారత్‌లో <span class="k">పరిమితి లేదు</span>.
+  </div>
+
+  <!-- DISCRETIONARY POWERS -->
+  <div class="sh">🔍 విచక్షణాధికారాలు (Discretionary Powers)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">⚖️ స్పష్టమైన విచక్షణ (Express/Constitutional Discretion)</div>
+      <div class="fact">PM నియామకంలో విచక్షణ — స్పష్ట మెజారిటీ లేనప్పుడు</div>
+      <div class="fact">CoM విశ్వాస పరీక్ష (Confidence Vote) కోసం సమయం ఇవ్వడం</div>
+      <div class="fact">LS రద్దు — PM సలహా తిరస్కరించవచ్చు (మైనారిటీ CoM అయినప్పుడు)</div>
+      <div class="fact">CoM అందుబాటులో లేనప్పుడు Prorogation వాయిదా</div>
+    </div>
+    <div class="card">
+      <div class="ch">📋 Art.361 — రక్షణలు (Immunities)</div>
+      <div class="fact">పదవిలో ఉన్నంత కాలం <span class="k">కోర్టు విచారణ ఉండదు</span></div>
+      <div class="fact">అధికారిక విధులకు సంబంధించి <span class="k">వ్యక్తిగత బాధ్యత లేదు</span></div>
+      <div class="fact">పదవి విరమణ తర్వాత ఏ కోర్టులోనైనా విచారణ సాధ్యం</div>
+      <div class="fact">Impeachment ద్వారా మాత్రమే తొలగింపు (while in office)</div>
+    </div>
+  </div>
+
+  <!-- PRESIDENTS OF INDIA -->
+  <div class="sh">🇮🇳 భారత రాష్ట్రపతులు — ముఖ్య విషయాలు (Presidents of India — Notable Facts)</div>
+  <table>
+    <thead>
+      <tr><th style="width:30%">రాష్ట్రపతి</th><th style="width:15%">పదవీ కాలం</th><th>విశేషం (Special Fact)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>రాజేంద్ర ప్రసాద్<br>(Rajendra Prasad)</b></td>
+        <td>1950–1962</td>
+        <td><span class="k">మొదటి</span> రాష్ట్రపతి; <span class="kg">రెండు సార్లు ఎన్నికైన ఏకైక వ్యక్తి</span> (Only President elected twice)</td>
+      </tr>
+      <tr>
+        <td><b>S. రాధాకృష్ణన్<br>(S. Radhakrishnan)</b></td>
+        <td>1962–1967</td>
+        <td>తాత్విక విద్వాంసుడు; ముందు ఉపరాష్ట్రపతి; <span class="kg">Teachers' Day (Sept 5)</span> — ఆయన జన్మదినం</td>
+      </tr>
+      <tr>
+        <td><b>V.V. గిరి<br>(V.V. Giri)</b></td>
+        <td>1969–1974</td>
+        <td>స్వతంత్ర అభ్యర్థి; <span class="k">రెండవ ప్రాధాన్యతా ఓట్ల</span> ద్వారా గెలిచారు (STV second preference votes demonstrated)</td>
+      </tr>
+      <tr>
+        <td><b>ఫక్రుద్దీన్ అలీ అహ్మద్<br>(Fakhruddin Ali Ahmed)</b></td>
+        <td>1974–1977</td>
+        <td>పదవిలో ఉండగా <span class="kr">మరణించారు</span> (died in office); 1975 National Emergency ఆమోదం</td>
+      </tr>
+      <tr>
+        <td><b>APJ అబ్దుల్ కలామ్<br>(APJ Abdul Kalam)</b></td>
+        <td>2002–2007</td>
+        <td>'జనుల రాష్ట్రపతి' (People's President); అవిభక్త ఓటుతో ఎన్నిక; Scientist President</td>
+      </tr>
+      <tr>
+        <td><b>ప్రతిభా పాటిల్<br>(Pratibha Patil)</b></td>
+        <td>2007–2012</td>
+        <td><span class="kg">మొదటి మహిళా రాష్ట్రపతి</span> (First Woman President — 12వ రాష్ట్రపతి)</td>
+      </tr>
+      <tr>
+        <td><b>ద్రౌపది ముర్ము<br>(Droupadi Murmu)</b></td>
+        <td>2022–</td>
+        <td><span class="kg">మొదటి గిరిజన మహిళా రాష్ట్రపతి</span> (First Tribal Woman President — 15వ రాష్ట్రపతి)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- QUICK REFERENCE -->
+  <div class="sh">⚡ APPSC కోసం వేగంగా గుర్తుంచుకోండి (Quick Reference for APPSC)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">🔑 అర్హతలు & ఎన్నిక</div>
+      <div class="fact">వయస్సు: <span class="k">35 సంవత్సరాలు</span> (not 30, not 25)</div>
+      <div class="fact">అర్హత: <span class="k">LS సభ్యత్వానికి</span> (not RS)</div>
+      <div class="fact">ప్రమాణం: <span class="k">CJI</span> సమక్షంలో (Art.60)</div>
+      <div class="fact">నామినేటెడ్ సభ్యులు: <span class="kr">పాల్గొనరు</span></div>
+      <div class="fact">70వ సవరణ (1992): <span class="k">ఢిల్లీ + పుదుచ్చేరి</span> చేర్పు</div>
+      <div class="fact">రెండుసార్లు: <span class="k">రాజేంద్ర ప్రసాద్ మాత్రమే</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">🔑 Impeachment</div>
+      <div class="fact">ఏ సభలోనైనా: <span class="kg">అవును ✓</span></div>
+      <div class="fact">నోటీసు: <span class="k">1/4 మంది + 14 రోజులు</span></div>
+      <div class="fact">ఆమోదం: <span class="k">రెండు సభలలో 2/3</span> (total membership)</div>
+      <div class="fact">భారతదేశంలో ఎప్పుడూ: <span class="kr">జరగలేదు</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">🔑 Art.72 — క్షమాభిక్ష</div>
+      <div class="fact">మరణ శిక్ష: <span class="k">రాష్ట్రపతికి మాత్రమే</span></div>
+      <div class="fact">కోర్ట్ మార్షల్: <span class="k">రాష్ట్రపతికి మాత్రమే</span></div>
+      <div class="fact">కేంద్ర చట్టాల శిక్ష: <span class="k">రాష్ట్రపతికి మాత్రమే</span></div>
+      <div class="fact">రాష్ట్ర చట్టాల శిక్ష: <span class="kg">రెండూ చేయగలరు</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">🔑 ఆర్డినెన్స్ (Art.123)</div>
+      <div class="fact">జారీ: <span class="k">రెండు సభలూ</span> సమావేశంలో లేనప్పుడు</div>
+      <div class="fact">గరిష్ఠ కాలం: <span class="k">~7.5 నెలలు</span></div>
+      <div class="fact">D.C. Wadhwa: పునర్జారీ = <span class="kr">Fraud on Constitution</span></div>
+      <div class="fact">రాజ్యాంగ సవరణ: <span class="kr">చేయలేదు</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">🔑 Veto Powers</div>
+      <div class="fact">Pocket Veto: <span class="k">జైల్ సింగ్</span> — Post Office Bill 1986</div>
+      <div class="fact">US Pocket Veto: <span class="k">10 రోజులు</span>; భారత్: <span class="kg">పరిమితి లేదు</span></div>
+      <div class="fact">మనీ బిల్లు: <span class="kr">Suspensive Veto వర్తించదు</span></div>
+      <div class="fact">Suspensive Veto ఓర్చుకోవడం: <span class="kg">సాధారణ మెజారిటీ</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">🔑 Immunities (Art.361)</div>
+      <div class="fact">పదవిలో: <span class="k">కోర్టు విచారణ లేదు</span></div>
+      <div class="fact">తొలగింపు: <span class="k">Impeachment మాత్రమే</span></div>
+      <div class="fact">44వ సవరణ: CoM సలహా <span class="k">బాధ్యకరం</span></div>
+      <div class="fact">Art.74: రాష్ట్రపతి <span class="k">నామమాత్రపు అధిపతి</span></div>
+    </div>
+  </div>
+
+  <div class="footer">Indian Polity · Lakshmikanth · Chapter 15: President of India · APPSC Group 2 · Page 3 of 3</div>
+</div>
+
+</body>
+</html>

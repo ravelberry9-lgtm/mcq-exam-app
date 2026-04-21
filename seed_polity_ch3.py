@@ -388,7 +388,7 @@ POLITY_CH3_MCQS = [
 
     # Toughest
     (0, 4,
-     "Assertion (A): Indian Constitution is called the longest written constitution in the world.\nReason (R): It originally contained 395 Articles, 22 Parts, and 8 Schedules, and was influenced by the Government of India Act 1935 which provided approximately 250 provisions.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): Indian Constitution is called the longest written constitution in the world.\nReason (R): It originally contained 395 Articles, 22 Parts, and 8 Schedules, and was influenced by the Government of India Act 1935 which provided approximately 250 provisions.",
      "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
      "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు",
      "A సరైనది, R తప్పు",
@@ -464,7 +464,7 @@ POLITY_CH3_MCQS = [
 
     # PYQ — UPSC
     (1, 2,
-     "Which of the following countries inspired the Directive Principles of State Policy in the Indian Constitution? [UPSC Style]",
+     "కింది వాటిలో ఏ దేశం DPSPకి స్ఫూర్తి? / Which of the following countries inspired the Directive Principles of State Policy in the Indian Constitution? [UPSC Style]",
      "United States of America", "United Kingdom",
      "Canada", "Ireland",
      "d",
@@ -674,7 +674,7 @@ POLITY_CH3_MCQS = [
 
     # PYQ — UPSC Bilingual
     (4, 2,
-     "Which Part and Articles of the Indian Constitution deal with Directive Principles of State Policy? [UPSC Style]",
+     "DPSPలు రాజ్యాంగంలో ఏ భాగంలో? / Which Part and Articles of the Indian Constitution deal with Directive Principles of State Policy? [UPSC Style]",
      "Part III, Articles 12-35",
      "Part IV, Articles 36-51",
      "Part IV-A, Articles 51A",
@@ -843,7 +843,7 @@ POLITY_CH3_MCQS = [
 
     # PYQ — UPSC Bilingual
     (6, 2,
-     "Which Independent Constitutional Body is established under Article 324 of the Indian Constitution? [UPSC Style]",
+     "అధికరణం 324 కింద ఏ స్వతంత్ర సంస్థ? / Which Independent Constitutional Body is established under Article 324 of the Indian Constitution? [UPSC Style]",
      "UPSC (Union Public Service Commission)",
      "CAG (Comptroller and Auditor General)",
      "Election Commission of India",
@@ -914,7 +914,7 @@ POLITY_CH3_MCQS = [
 
     # PYQ — UPSC Bilingual
     (7, 2,
-     "Under which Article of the Indian Constitution can the President proclaim Financial Emergency? [UPSC Style]",
+     "ఆర్థిక అత్యవసర పరిస్థితి ఏ అధికరణం కింద? / Under which Article of the Indian Constitution can the President proclaim Financial Emergency? [UPSC Style]",
      "Article 352", "Article 356",
      "Article 360", "Article 368",
      "c",

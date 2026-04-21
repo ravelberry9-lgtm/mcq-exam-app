@@ -283,7 +283,7 @@ POLITY_CH5_MCQS = [
 
     # Toughest
     (0, 4,
-     "Assertion (A): India is described as a 'Union of States' and not a 'Federation of States' in Article 1.\nReason (R): In India, the Constitution is supreme, states are created by the Constitution, and they cannot secede from the Union — unlike the USA where states formed the federation.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): India is described as a 'Union of States' and not a 'Federation of States' in Article 1.\nReason (R): In India, the Constitution is supreme, states are created by the Constitution, and they cannot secede from the Union — unlike the USA where states formed the federation.",
      "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
      "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు",
      "A సరైనది, R తప్పు",
@@ -373,7 +373,7 @@ POLITY_CH5_MCQS = [
 
     # PYQ — UPSC
     (1, 2,
-     "Under which Article of the Indian Constitution can Parliament form new states or alter the areas, boundaries or names of existing states? [UPSC Style]",
+     "కొత్త రాష్ట్రాలు ఏర్పాటు ఏ అధికరణం కింద? / Under which Article of the Indian Constitution can Parliament form new states or alter the areas, boundaries or names of existing states? [UPSC Style]",
      "Article 1", "Article 2",
      "Article 3", "Article 4",
      "c",
@@ -437,7 +437,7 @@ POLITY_CH5_MCQS = [
 
     # Toughest
     (2, 4,
-     "Assertion (A): India is described as a Union, not a Federation, because the states of India have no right to secede.\nReason (R): Unlike the USA, where states came together to form a federation and retain certain inherent rights, the Indian states were created by the Constitution and draw their existence from it.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): India is described as a Union, not a Federation, because the states of India have no right to secede.\nReason (R): Unlike the USA, where states came together to form a federation and retain certain inherent rights, the Indian states were created by the Constitution and draw their existence from it.",
      "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
      "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు",
      "A సరైనది, R తప్పు",
@@ -687,7 +687,7 @@ POLITY_CH5_MCQS = [
 
     # Toughest — Bilingual
     (6, 4,
-     "Assertion (A): After the J&K Reorganisation Act 2019, India has 28 states and 8 Union Territories.\nReason (R): J&K was bifurcated into two Union Territories — J&K (with legislature) and Ladakh (without legislature) — reducing the number of states from 29 to 28.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): After the J&K Reorganisation Act 2019, India has 28 states and 8 Union Territories.\nReason (R): J&K was bifurcated into two Union Territories — J&K (with legislature) and Ladakh (without legislature) — reducing the number of states from 29 to 28.",
      "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ / Both correct, R explains A",
      "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు / Both correct, R doesn't explain",
      "A సరైనది, R తప్పు / A correct, R wrong",
@@ -761,7 +761,7 @@ POLITY_CH5_MCQS = [
 
     # PYQ — UPSC Bilingual
     (7, 2,
-     "Which of the following is/are correctly matched? [UPSC Style]\n(1) Sikkim — 36th Amendment 1975 — 22nd State\n(2) Goa — 25th State — 1987\n(3) Telangana — 28th State — 2014",
+     "కింది జోడీలలో సరైనది ఏది? / Which of the following is/are correctly matched? [UPSC Style]\n(1) Sikkim — 36th Amendment 1975 — 22nd State\n(2) Goa — 25th State — 1987\n(3) Telangana — 28th State — 2014",
      "1 మరియు 2 మాత్రమే / 1 and 2 only",
      "2 మరియు 3 మాత్రమే / 2 and 3 only",
      "1 మరియు 3 తప్పు / 1 and 3 wrong",

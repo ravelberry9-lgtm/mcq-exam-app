@@ -301,7 +301,7 @@ POLITY_CH4_MCQS = [
 
     # Toughest
     (0, 4,
-     "Assertion (A): The Preamble of the Indian Constitution begins with 'WE, THE PEOPLE OF INDIA'.\nReason (R): This phrase signifies that the ultimate source of authority in India is the people, not any external power or the Constituent Assembly.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): The Preamble of the Indian Constitution begins with 'WE, THE PEOPLE OF INDIA'.\nReason (R): This phrase signifies that the ultimate source of authority in India is the people, not any external power or the Constituent Assembly.",
      "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
      "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు",
      "A సరైనది, R తప్పు",
@@ -387,7 +387,7 @@ POLITY_CH4_MCQS = [
 
     # PYQ — UPSC
     (1, 2,
-     "Which words were added to the Preamble of the Indian Constitution by the 42nd Constitutional Amendment Act, 1976? [UPSC Style]",
+     "42వ సవరణ ద్వారా పీఠికకు ఏ పదాలు జోడించారు? / Which words were added to the Preamble of the Indian Constitution by the 42nd Constitutional Amendment Act, 1976? [UPSC Style]",
      "Sovereign and Democratic",
      "Republic and Justice",
      "Socialist, Secular and Integrity",
@@ -456,7 +456,7 @@ POLITY_CH4_MCQS = [
 
     # Toughest
     (2, 4,
-     "Assertion (A): India is a Democratic Republic.\nReason (R): In India, the Head of State (President) is elected for a fixed term, and the government derives its authority from the will of the people expressed through elections.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): India is a Democratic Republic.\nReason (R): In India, the Head of State (President) is elected for a fixed term, and the government derives its authority from the will of the people expressed through elections.",
      "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
      "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు",
      "A సరైనది, R తప్పు",
@@ -541,7 +541,7 @@ POLITY_CH4_MCQS = [
 
     # PYQ — UPSC
     (3, 2,
-     "The Preamble of the Indian Constitution mentions 'Justice'. Which of the following are the types of Justice mentioned? [UPSC Style]",
+     "పీఠికలో న్యాయం రకాలు ఏమేమి? / The Preamble of the Indian Constitution mentions 'Justice'. Which of the following are the types of Justice mentioned? [UPSC Style]",
      "Social and Economic only",
      "Social, Economic and Political",
      "Social, Economic, Political and Judicial",
@@ -685,7 +685,7 @@ POLITY_CH4_MCQS = [
 
     # PYQ — UPSC Bilingual
     (5, 2,
-     "In which case did the Supreme Court rule that the Preamble is a part of the Constitution? [UPSC Style]",
+     "పీఠిక రాజ్యాంగంలో భాగమని ఏ కేసులో తేల్చారు? / In which case did the Supreme Court rule that the Preamble is a part of the Constitution? [UPSC Style]",
      "Berubari Union Case 1960",
      "Golaknath Case 1967",
      "Kesavananda Bharati Case 1973",
@@ -819,7 +819,7 @@ POLITY_CH4_MCQS = [
 
     # Toughest — Bilingual
     (7, 4,
-     "Assertion (A): The Preamble to the Indian Constitution reflects the ideals and aspirations of the people of India.\nReason (R): The Preamble is based on the Objective Resolution moved by Nehru in 1946, which encapsulated the vision of free India, and was used as a guide in drafting the Constitution.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): The Preamble to the Indian Constitution reflects the ideals and aspirations of the people of India.\nReason (R): The Preamble is based on the Objective Resolution moved by Nehru in 1946, which encapsulated the vision of free India, and was used as a guide in drafting the Constitution.",
      "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ / Both correct, R explains A",
      "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు / Both correct, R doesn't explain",
      "A సరైనది, R తప్పు / A correct, R wrong",
@@ -829,7 +829,7 @@ POLITY_CH4_MCQS = [
 
     # PYQ — UPSC Bilingual
     (7, 2,
-     "Consider the Preamble of the Indian Constitution. Which of the following correctly describes what the Preamble IS and IS NOT? [UPSC Style]",
+     "పీఠిక గురించి సరైన వివరణ ఏది? / Consider the Preamble of the Indian Constitution. Which of the following correctly describes what the Preamble IS and IS NOT? [UPSC Style]",
      "It is enforceable in court and is part of the Constitution",
      "It is part of the Constitution but not directly enforceable in court",
      "It is neither part of the Constitution nor enforceable",

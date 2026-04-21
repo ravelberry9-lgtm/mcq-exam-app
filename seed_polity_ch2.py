@@ -290,7 +290,7 @@ POLITY_CH2_MCQS = [
 
     # Toughest
     (0, 4,
-     "Assertion (A): The demand for a Constituent Assembly was first formally put forward by M.N. Roy in 1934.\nReason (R): M.N. Roy believed that the Indian people, through their elected representatives, should frame their own Constitution rather than having it imposed by the British.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): The demand for a Constituent Assembly was first formally put forward by M.N. Roy in 1934.\nReason (R): M.N. Roy believed that the Indian people, through their elected representatives, should frame their own Constitution rather than having it imposed by the British.",
      "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
      "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు",
      "A సరైనది, R తప్పు",
@@ -366,7 +366,7 @@ POLITY_CH2_MCQS = [
 
     # PYQ — UPSC
     (1, 2,
-     "How many members did the Constituent Assembly of India consist of, when it was originally constituted under the Cabinet Mission Plan? [UPSC Style]",
+     "రాజ్యాంగ సభలో సభ్యుల సంఖ్య ఎంత? / How many members did the Constituent Assembly of India consist of, when it was originally constituted under the Cabinet Mission Plan? [UPSC Style]",
      "299", "350", "389", "296",
      "c",
      "Under the Cabinet Mission Plan, the Constituent Assembly was to have 389 members in total — 296 from British Indian Provinces and 93 from Princely States. After partition, this reduced to 299 for the Indian Constituent Assembly.",
@@ -574,7 +574,7 @@ POLITY_CH2_MCQS = [
 
     # PYQ — UPSC Bilingual
     (4, 2,
-     "Who among the following replaced D.P. Khaitan in the Drafting Committee of the Constituent Assembly? [UPSC Prelims Style]",
+     "రాజ్యాంగ ముసాయిదా కమిటీలో ఎవరు భర్తీ అయ్యారు? / Who among the following replaced D.P. Khaitan in the Drafting Committee of the Constituent Assembly? [UPSC Prelims Style]",
      "N. Madhava Rau",
      "N. Gopalaswami Ayyangar",
      "T.T. Krishnamachari",
@@ -625,7 +625,7 @@ POLITY_CH2_MCQS = [
 
     # Tough — Bilingual
     (5, 3,
-     "Assertion (A): The Objective Resolution moved by Nehru is considered the 'spirit' of the Indian Constitution.\nReason (R): The ideals and objectives contained in the Objective Resolution — sovereignty, democracy, republic, justice, liberty, equality — are reflected in the Preamble of the Constitution.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): The Objective Resolution moved by Nehru is considered the 'spirit' of the Indian Constitution.\nReason (R): The ideals and objectives contained in the Objective Resolution — sovereignty, democracy, republic, justice, liberty, equality — are reflected in the Preamble of the Constitution.",
      "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ / Both correct, R explains A",
      "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు / Both correct, R doesn't explain",
      "A సరైనది, R తప్పు / A correct, R wrong",
@@ -794,7 +794,7 @@ POLITY_CH2_MCQS = [
 
     # PYQ — UPSC Bilingual
     (7, 2,
-     "The Constituent Assembly of India took approximately how long to frame the Constitution and at what approximate cost? [UPSC Style]",
+     "రాజ్యాంగ సభ ఎంత కాలం తీసుకుంది? / The Constituent Assembly of India took approximately how long to frame the Constitution and at what approximate cost? [UPSC Style]",
      "1 year, 6 months, cost ₹30 lakhs",
      "2 years, 11 months, 18 days, cost ₹64 lakhs",
      "3 years, 4 months, cost ₹1 crore",

@@ -417,7 +417,7 @@ POLITY_CH1_MCQS = [
      "కంపెనీ పాలన 1773లో రెగ్యులేటింగ్ యాక్ట్ తో ప్రారంభమైంది (సరైనది). క్రౌన్ పాలన 1858లో ప్రారంభమైంది (సరైనది). కానీ కంపెనీ పాలన 1858లో అంతమైంది, 1857లో కాదు (3 తప్పు)."),
 
     (0, 2,
-     "Which statement about British Rule in India is CORRECT?\n(A) Company Rule began with Regulating Act 1773\n(B) Crown Rule began in 1857\n(C) Company Rule ended in 1947",
+     "కింది వాటిలో సరైనది ఏది? / Which statement about British Rule in India is CORRECT?\n(A) Company Rule began with Regulating Act 1773\n(B) Crown Rule began in 1857\n(C) Company Rule ended in 1947",
      "A only", "B only", "A and C", "B and C",
      "a",
      "Company Rule is generally marked from the Regulating Act 1773. Crown Rule began in 1858 (not 1857) after the Government of India Act 1858. Company Rule ended in 1858, not 1947."),
@@ -441,7 +441,7 @@ POLITY_CH1_MCQS = [
      "రెగ్యులేటింగ్ యాక్ట్ 1773 ప్రకారం బెంగాల్ గవర్నర్‌ను 'గవర్నర్ జనరల్ ఆఫ్ బెంగాల్'గా మార్చారు. మొదటి గవర్నర్ జనరల్ = వారెన్ హేస్టింగ్స్ (Warren Hastings)."),
 
     (1, 1,
-     "The Regulating Act of 1773 is significant because it was:",
+     "రెగ్యులేటింగ్ యాక్ట్ 1773 ప్రాముఖ్యత ఏమిటి? / The Regulating Act of 1773 is significant because it was:",
      "The first Act to provide a written Constitution for India",
      "The first step taken by the British Parliament to control the Company's affairs",
      "The Act that transferred power from Company to the Crown",
@@ -481,7 +481,7 @@ POLITY_CH1_MCQS = [
      "కలకత్తా సుప్రీం కోర్ట్ 1774లో ఏర్పాటైంది, 1773లో కాదు. చట్టం 1773లో వచ్చినా, కోర్ట్ 1774లో స్థాపించబడింది. మిగతా మూడు నిజమే."),
 
     (1, 3,
-     "Assertion (A): Pitt's India Act 1784 established a system of 'Double Government' in India.\nReason (R): Under this Act, the Board of Control supervised the political affairs while the Court of Directors handled commercial affairs.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): Pitt's India Act 1784 established a system of 'Double Government' in India.\nReason (R): Under this Act, the Board of Control supervised the political affairs while the Court of Directors handled commercial affairs.",
      "Both A and R are correct, and R correctly explains A",
      "Both A and R are correct, but R does not explain A",
      "A is correct but R is incorrect",
@@ -517,7 +517,7 @@ POLITY_CH1_MCQS = [
      "చార్టర్ యాక్ట్ 1833 ద్వారా బెంగాల్ గవర్నర్ జనరల్‌ని 'గవర్నర్ జనరల్ ఆఫ్ ఇండియా'గా మార్చారు. ఈ బిరుదు పొందిన మొదటి వ్యక్తి లార్డ్ విలియమ్ బెంటింక్ (Lord William Bentinck)."),
 
     (2, 1,
-     "Which Charter Act ended the trade monopoly of the East India Company (except China trade and Tea trade)?",
+     "కింది Charter Act వాణిజ్య గుత్తాధిపత్యం ముగించింది ఏది? / Which Charter Act ended the trade monopoly of the East India Company (except China trade and Tea trade)?",
      "Charter Act 1793", "Charter Act 1813", "Charter Act 1833", "Charter Act 1853",
      "b",
      "Charter Act 1813 ended the Company's trade monopoly over India. However, the monopoly on China trade and Tea trade continued until Charter Act 1833, which completely ended all commercial activities of the Company."),
@@ -564,7 +564,7 @@ POLITY_CH1_MCQS = [
 
     # PYQ — UPSC
     (2, 2,
-     "The Charter Act of 1813 is associated with which of the following? [UPSC Prelims Style]",
+     "చార్టర్ యాక్ట్ 1813 దేనితో సంబంధం? / The Charter Act of 1813 is associated with which of the following? [UPSC Prelims Style]",
      "Abolition of East India Company's trade monopoly with China",
      "Establishment of Governor General of India post",
      "Partial end of Company's trade monopoly, allowing Christian missionaries",
@@ -605,7 +605,7 @@ POLITY_CH1_MCQS = [
      "మూడూ సరైనవే. 1858 యాక్ట్ ద్వారా Board of Control + Court of Directors రద్దు అయ్యాయి. Secretary of State కు 15 సభ్యుల కౌన్సిల్ ఉండేది. వైస్రాయ్ Secretary of State ద్వారా బ్రిటిష్ పార్లమెంట్‌కు జవాబుదారీగా ఉండేవాడు."),
 
     (3, 2,
-     "Which of the following was NOT a feature of the Government of India Act 1858?",
+     "కింది వాటిలో తప్పు ఏది? / Which of the following was NOT a feature of the Government of India Act 1858?",
      "Transfer of power from Company to the Crown",
      "Establishment of the post of Secretary of State for India",
      "Introduction of the concept of Diarchy at the provincial level",
@@ -696,7 +696,7 @@ POLITY_CH1_MCQS = [
 
     # Toughest
     (4, 4,
-     "Assertion (A): Indian Councils Act 1909 sowed the seeds of partition of India.\nReason (R): It introduced the concept of Separate Electorate for Muslims, which communalized Indian politics and created a precedent for division on religious lines.",
+     "అభికథనం-కారణం సరైనవా? / Assertion (A): Indian Councils Act 1909 sowed the seeds of partition of India.\nReason (R): It introduced the concept of Separate Electorate for Muslims, which communalized Indian politics and created a precedent for division on religious lines.",
      "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
      "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు",
      "A సరైనది, R తప్పు",
@@ -748,7 +748,7 @@ POLITY_CH1_MCQS = [
      "Reserved Subjects (గవర్నర్ నేరుగా పాలించేవి): Land Revenue, Law & Order, Finance, Justice. Transferred Subjects (భారతీయ మంత్రులకు ఇచ్చినవి): Education, Health, Local Government, Agriculture. కాబట్టి 2 మరియు 3 Reserved."),
 
     (5, 2,
-     "Which of the following is NOT correct about the Government of India Act 1919?",
+     "కింది వాటిలో తప్పు ఏది? / Which of the following is NOT correct about the Government of India Act 1919?",
      "It introduced Diarchy at the provincial level",
      "It established a bicameral legislature at the Centre for the first time",
      "It introduced Diarchy at the Central level which was successfully implemented",
@@ -776,7 +776,7 @@ POLITY_CH1_MCQS = [
 
     # PYQ — UPSC
     (5, 2,
-     "The Montagu-Chelmsford Reforms of 1919 introduced Dyarchy in the provinces. What does Dyarchy mean? [UPSC Style]",
+     "Dyarchy అంటే ఏమిటి? / The Montagu-Chelmsford Reforms of 1919 introduced Dyarchy in the provinces. What does Dyarchy mean? [UPSC Style]",
      "Two houses of Legislature at the Centre",
      "Division of provincial subjects into Reserved and Transferred categories",
      "Dual control of India by the Crown and the Parliament",

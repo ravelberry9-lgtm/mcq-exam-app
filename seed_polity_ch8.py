@@ -177,7 +177,7 @@ POLITY_CH8_MCQS = [
 
     # PYQ — UPSC
     (2, 2,
-     "Which of the following is correct about Article 25 of the Indian Constitution? [UPSC Style]",
+     "అధికరణం 25 గురించి సరైనది ఏది? / Which of the following is correct about Article 25 of the Indian Constitution? [UPSC Style]",
      "It is available only to Indian citizens / భారత పౌరులకు మాత్రమే",
      "It is subject to public order, morality and health / ఇది public order, morality, health కి లోబడి ఉంటుంది",
      "It prohibits propagation of religion / మత ప్రచారాన్ని నిషేధిస్తుంది",
@@ -368,7 +368,7 @@ POLITY_CH8_MCQS = [
 
     # PYQ — UPSC
     (6, 2,
-     "Which of the following writs is issued to an inferior court to prevent it from exceeding its jurisdiction? [UPSC Style]",
+     "అధికారాన్ని మించి వ్యవహరించకుండా ఏ రిట్ ఇస్తారు? / Which of the following writs is issued to an inferior court to prevent it from exceeding its jurisdiction? [UPSC Style]",
      "Habeas Corpus", "Mandamus", "Prohibition", "Certiorari",
      "c",
      "Prohibition writ = inferior court jurisdiction exceed అవ్వకుండా ముందే ఆపడం (BEFORE decision is made). Certiorari = inferior court decision తర్వాత రద్దు చేయడం (AFTER decision).\nProhibition prevents an inferior court from exceeding its jurisdiction BEFORE a decision. Certiorari quashes a decision AFTER it has been made. Habeas Corpus = illegal detention. Mandamus = compel public duty.",
