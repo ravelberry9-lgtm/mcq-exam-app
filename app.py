@@ -378,17 +378,17 @@ def init_db():
         cur_pol = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_Polity'")
         pol_count = list(cur_pol.fetchone())[0] if cur_pol else 0
         cur_pol_mcq = db_exec(conn, """
-            SELECT COUNT(*) FROM chapter_mcqs cm
+            SELECT COUNT(DISTINCT sn.chapter_num) FROM chapter_mcqs cm
             JOIN study_notes sn ON cm.study_note_id=sn.id
             WHERE sn.topic='Indian_Polity'
         """)
         pol_mcq_count = list(cur_pol_mcq.fetchone())[0] if cur_pol_mcq else 0
-        if pol_count < 90 or pol_mcq_count < 1000:
-            print(f"[startup] Indian Polity: {pol_count} chapters, {pol_mcq_count} MCQs — auto-seeding...")
+        if pol_count < 90 or pol_mcq_count < 90:
+            print(f"[startup] Indian Polity: {pol_count} notes, {pol_mcq_count}/90 chapters with MCQs — auto-seeding...")
             _auto_seed_polity()
             print("[startup] Indian Polity auto-seed complete.")
         else:
-            print(f"[startup] Indian Polity: {pol_count} chapters, {pol_mcq_count} MCQs already loaded.")
+            print(f"[startup] Indian Polity: {pol_count} notes, {pol_mcq_count}/90 chapters with MCQs — fully loaded.")
     except Exception as _pol_e:
         print(f"[startup] Indian Polity seed check error: {_pol_e}")
 
