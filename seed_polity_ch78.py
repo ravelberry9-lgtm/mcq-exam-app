@@ -370,21 +370,29 @@ _MCQ_DATA = [
 ]
 
 def _seed_polity_ch78_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres=False, force=False):
-    existing = row_to_dict_fn(
-        db_exec_fn(conn, "SELECT id FROM study_notes WHERE topic='Indian_Polity' AND chapter_num=78").fetchone() or {}
-    )
-    if existing and not force:
-        return
-    if existing and force:
-        db_exec_fn(conn, "DELETE FROM study_notes WHERE topic='Indian_Polity' AND chapter_num=78")
+    import datetime as _dt
     ph = "%s" if use_postgres else "?"
-    db_exec_fn(conn,
-        f"INSERT INTO study_notes (subject, topic, chapter_num, title, content, summary) VALUES ({ph},{ph},{ph},{ph},{ph},{ph})",
-        ("GK", "Indian_Polity", 78,
-         "Special Provisions for Some States",
-         NOTES_HTML, SUMMARY_HTML)
-    )
-
+    existing = row_to_dict_fn(db_exec_fn(conn,
+        f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
+        ('Indian_Polity', 78)).fetchone() or {})
+    if existing and not force:
+        return existing.get('id')
+    if existing:
+        db_exec_fn(conn,
+            f"DELETE FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
+            ('Indian_Polity', 78))
+    now = _dt.datetime.utcnow().isoformat()
+    cur = db_exec_fn(conn,
+        f"""INSERT INTO study_notes
+            (subject, topic, chapter_num, chapter_title_te, chapter_title_en,
+             pages_ref, sections_json, created_at)
+            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
+        ('GK', 'Indian_Polity', 78,
+         'కొన్ని రాష్ట్రాలకు ప్రత్యేక నిబంధనలు',
+         'Special Provisions for Some States',
+         'Lakshmikanth Ch.78',
+         '[]', now))
+    return cur.lastrowid
 def _seed_polity_ch78_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres=False, force=False):
     import datetime as _dt
     ph = "%s" if use_postgres else "?"

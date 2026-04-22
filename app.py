@@ -332,46 +332,19 @@ def init_db():
     except Exception as _ge:
         print(f"[startup] AP Geography seed check error: {_ge}")
 
-    # ── Migration: fix Indian Polity ch66-90 study_notes (wrong schema from old seeder) ──
-    # Old seeder used subject='Polity', columns title/content/summary.
-    # Correct schema uses subject='GK', chapter_title_te, chapter_title_en, sections_json.
+    # ── Migration: deduplicate chapter_mcqs (keep only one row per study_note+question) ──
+    # Some _mcqs_inner functions lack existence checks and re-insert on every seeder run.
     try:
-        _CH_TITLES = {
-            66: ('సమాఖ్య వ్యవస్థ',           'Federal System'),
-            67: ('న్యాయసమీక్ష',              'Judicial Review'),
-            68: ('న్యాయ క్రియాశీలత',         'Judicial Activism'),
-            69: ('ప్రజా ప్రయోజన వ్యాజ్యం',  'Public Interest Litigation (PIL)'),
-            70: ('జాతీయ దర్యాప్తు సంస్థ',   'National Investigation Agency (NIA)'),
-            71: ('జాతీయ విపత్తు నిర్వహణ',   'National Disaster Management Authority (NDMA)'),
-            72: ('బార్ కౌన్సిల్ ఆఫ్ ఇండియా', 'Bar Council of India'),
-            73: ('చట్ట సంఘం',               'Law Commission of India'),
-            74: ('నియోజకవర్గ పరిమితి సంఘం', 'Delimitation Commission'),
-            75: ('ఈశాన్య మండలి',            'North Eastern Council (NEC)'),
-            76: ('ప్రభుత్వ హక్కులు-బాధ్యతలు','Rights and Liabilities of the Government'),
-            77: ('ప్రత్యేక నిబంధనలు',        'Special Provisions for Certain Classes'),
-            78: ('కొన్ని రాష్ట్రాలకు ప్రత్యేక నిబంధనలు', 'Special Provisions for Some States'),
-            79: ('రాజకీయ పార్టీలు',          'Political Parties'),
-            80: ('ఎన్నికలు',                 'Elections'),
-            81: ('ఎన్నికల చట్టాలు',          'Election Laws'),
-            82: ('ఎన్నికల సంస్కరణలు',       'Electoral Reforms'),
-            83: ('ఓటు ప్రవర్తన',             'Voting Behaviour'),
-            84: ('సంకీర్ణ ప్రభుత్వం',        'Coalition Government'),
-            85: ('పార్టీ ఫిరాయింపు నిరోధక చట్టం', 'Anti-Defection Law'),
-            86: ('ఒత్తిడి సమూహాలు',         'Pressure Groups'),
-            87: ('జాతీయ సమైక్యత',           'National Integration'),
-            88: ('విదేశాంగ విధానం',          'Foreign Policy'),
-            89: ('NCRWC',                   'NCRWC (National Commission to Review the Working of the Constitution)'),
-            90: ('చారిత్రాత్మక తీర్పులు',   'Landmark Judgements and Their Impact'),
-        }
-        for _ch_num, (_te, _en) in _CH_TITLES.items():
-            db_exec(conn,
-                "UPDATE study_notes SET subject='GK', chapter_title_te=?, chapter_title_en=?, sections_json=COALESCE(NULLIF(sections_json,''),'[]') "
-                "WHERE topic='Indian_Polity' AND chapter_num=? AND (subject!='GK' OR chapter_title_en='' OR chapter_title_en IS NULL)",
-                (_te, _en, _ch_num))
+        db_exec(conn, """
+            DELETE FROM chapter_mcqs
+            WHERE id NOT IN (
+                SELECT MIN(id) FROM chapter_mcqs GROUP BY study_note_id, q_te
+            )
+        """)
         conn.commit()
-        print("[startup] Indian Polity ch66-90 study_notes migration applied.")
-    except Exception as _mig_e:
-        print(f"[startup] Indian Polity ch66-90 migration error: {_mig_e}")
+        print("[startup] chapter_mcqs deduplication done.")
+    except Exception as _dedup_e:
+        print(f"[startup] MCQ dedup error: {_dedup_e}")
 
     # ── Auto-seed Indian Polity chapters (Lakshmikanth) ──
     try:
