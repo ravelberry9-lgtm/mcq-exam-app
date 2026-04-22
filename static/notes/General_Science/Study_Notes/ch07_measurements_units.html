@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch 07 — Measurements &amp; Units | General Science</title>
+<style>
+:root{--pri:#0d2346;--acc:#1565c0;--acc2:#0288d1;--bg:#e8f0fe;--bg2:#f0f7ff;--en-border:#1565c0;--te-border:#6a1b9a;--shock:#b71c1c;--exam:#e65100;--mem:#1b5e20;--hi:#4a148c;}
+@page{size:A4;margin:14mm 13mm 14mm 13mm;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.2pt;line-height:1.45;color:#1a1a2e;background:#fff;}
+.page{width:184mm;min-height:267mm;padding:6mm 0;position:relative;}
+.page-break{page-break-after:always;break-after:page;}
+.cover{background:linear-gradient(135deg,var(--pri) 0%,#1a237e 60%,#283593 100%);color:#fff;border-radius:6px;padding:16mm 12mm 12mm;text-align:center;margin-bottom:7mm;}
+.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:7.5pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5mm;}
+.cover h1{font-size:19pt;font-weight:800;letter-spacing:-0.3px;margin-bottom:3mm;}
+.cover h1 span{color:#90caf9;}
+.cover h2{font-size:11pt;font-weight:400;color:#bbdefb;margin-bottom:4mm;}
+.cover-te{font-size:10pt;color:#90caf9;margin-bottom:4mm;}
+.cover-meta{display:flex;justify-content:center;gap:16px;font-size:7.8pt;color:#bbdefb;flex-wrap:wrap;margin-top:3mm;}
+.cover-meta span{background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 10px;}
+.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:5px 10px;font-size:7.5pt;color:#e3f2fd;margin-top:4mm;line-height:1.8;}
+.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:9.5pt;font-weight:700;margin:5mm 0 3mm;letter-spacing:0.3px;display:flex;justify-content:space-between;align-items:center;}
+.sec-head .te{font-size:8pt;font-weight:400;color:#90caf9;}
+.bilingual{border:1px solid #b0bec5;border-radius:5px;margin-bottom:4mm;overflow:hidden;}
+.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:5px 8px;font-size:8.5pt;line-height:1.5;}
+.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:5px 8px;font-size:8.3pt;line-height:1.5;color:#4a148c;}
+.lang-tag{display:inline-block;font-size:6.8pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-bottom:3px;}
+.bi-en .lang-tag{background:var(--en-border);color:#fff;}
+.bi-te .lang-tag{background:var(--te-border);color:#fff;}
+.shock-box{border:2px solid var(--shock);background:#fff3f3;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.shock-box .shock-title{color:var(--shock);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.exam-tag{background:#b71c1c;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px;}
+.te-tag{background:#6a1b9a;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;}
+table{width:100%;border-collapse:collapse;font-size:8.3pt;margin-bottom:3mm;}
+th{background:var(--pri);color:#fff;padding:4px 7px;text-align:left;font-weight:600;font-size:8pt;}
+td{padding:3px 7px;border:1px solid #cfd8dc;vertical-align:top;}
+tr:nth-child(even) td{background:#f0f7ff;}
+.te-td{display:block;color:#6a1b9a;font-size:7.6pt;margin-top:1px;}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:3mm;}
+.pyq-item{background:#f0f7ff;border-left:3px solid var(--acc);padding:4px 8px;margin-bottom:2mm;border-radius:3px;font-size:8.2pt;page-break-inside:avoid;}
+.pyq-q{font-weight:600;color:var(--pri);}
+.pyq-num{background:var(--acc);color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:4px;}
+.pyq-a{color:var(--shock);font-weight:700;}
+ul{padding-left:16px;margin-bottom:3mm;}
+li{margin-bottom:2px;font-size:8.5pt;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER + SI SYSTEM + LENGTH UNITS -->
+<div class="page page-break">
+<div class="cover">
+  <div class="cover-tag">General Science · Model Set 7</div>
+  <h1>Measurements &amp; <span>Units</span></h1>
+  <h2>Model Set 7 — 50 MCQs Comprehensive Guide</h2>
+  <div class="cover-te">కొలతలు మరియు ప్రమాణాలు</div>
+  <div class="topics-bar">
+    📏 Topics: SI Base Units · Length Units (Micron to Fermi) · Astronomical Distances ·
+    Measuring Instruments · Electrical Units · Pressure &amp; Power Units ·
+    Unit Conversions · Dimensionless Quantities · Dimensional Analysis · Error Types
+  </div>
+  <div class="cover-meta">
+    <span>📝 50 Questions</span><span>🟢 22 Easy · 🟡 20 Medium · 🔴 8 Hard</span><span>🎯 APPSC/UPSC GK</span>
+  </div>
+</div>
+
+<div class="sec-head">1. The 7 SI Base Units <span class="te">SI ప్రాథమిక ప్రమాణాలు</span></div>
+
+<table>
+<tr><th>#</th><th>Quantity / రాశి</th><th>SI Unit / ప్రమాణం</th><th>Symbol</th></tr>
+<tr><td>1</td><td>Length / పొడవు<span class="te-td"></span></td><td>Metre<span class="te-td">మీటర్</span></td><td><strong>m</strong></td></tr>
+<tr><td>2</td><td>Mass / ద్రవ్యరాశి<span class="te-td"></span></td><td>Kilogram<span class="te-td">కిలోగ్రాం</span></td><td><strong>kg</strong></td></tr>
+<tr><td>3</td><td>Time / సమయం<span class="te-td"></span></td><td>Second<span class="te-td">సెకన్</span></td><td><strong>s</strong></td></tr>
+<tr><td>4</td><td>Electric current / విద్యుత్ ప్రవాహం<span class="te-td"></span></td><td>Ampere<span class="te-td">ఆంపియర్</span></td><td><strong>A</strong></td></tr>
+<tr><td>5</td><td>Temperature / ఉష్ణోగ్రత<span class="te-td"></span></td><td>Kelvin<span class="te-td">కెల్విన్</span></td><td><strong>K</strong></td></tr>
+<tr><td>6</td><td>Amount of substance / పదార్థ పరిమాణం<span class="te-td"></span></td><td>Mole<span class="te-td">మోల్</span></td><td><strong>mol</strong></td></tr>
+<tr><td>7</td><td>Luminous intensity / కాంతి తీవ్రత<span class="te-td"></span></td><td>Candela<span class="te-td">కాండెలా</span></td><td><strong>cd</strong></td></tr>
+</table>
+
+<div class="shock-box">
+  <div class="shock-title">⚡ MEMORY — 7 SI Base Units: "My King Sleeps And Keeps Many Cats"</div>
+  <strong>M</strong>etre · <strong>K</strong>ilogram · <strong>S</strong>econd · <strong>A</strong>mpere · <strong>K</strong>elvin · <strong>M</strong>ole · <strong>C</strong>andela<br>
+  <span class="te-tag">తెలుగు</span> మీటర్ · కిలోగ్రాం · సెకన్ · ఆంపియర్ · కెల్విన్ · మోల్ · కాండెలా — 7 ప్రాథమిక SI ప్రమాణాలు<br>
+  <span class="exam-tag">TRAP</span> Kilogram (kg) is a UNIT, not a physical quantity. The physical quantity is MASS.
+</div>
+
+<div class="sec-head">2. Units of Length — Smallest to Largest <span class="te">పొడవు ప్రమాణాలు</span></div>
+
+<table>
+<tr><th>Unit / ప్రమాణం</th><th>SI Value</th><th>Use / ఉపయోగం</th></tr>
+<tr><td><strong>Fermi / Femtometre (fm)</strong><br><span class="te-td">ఫెర్మిమీటర్</span></td><td>10⁻¹⁵ m</td><td>Nuclear dimensions (smallest of these)<br><span class="te-td">నూక్లియర్ పరిమాణాలు</span></td></tr>
+<tr><td><strong>Angstrom (Å)</strong><br><span class="te-td">ఆంగ్‌స్ట్రామ్</span></td><td>10⁻¹⁰ m</td><td>Atomic/molecular size, X-ray wavelengths<br><span class="te-td">పరమాణు పరిమాణాలు</span></td></tr>
+<tr><td><strong>Nanometre (nm)</strong><br><span class="te-td">నానోమీటర్</span></td><td>10⁻⁹ m</td><td>Visible light wavelengths (400–700 nm)<br><span class="te-td">కాంతి తరంగదైర్ఘ్యాలు</span></td></tr>
+<tr><td><strong>Micron / Micrometre (µm)</strong><br><span class="te-td">మైక్రాన్</span></td><td>10⁻⁶ m = 1/1000 mm</td><td>Cell sizes, dust particles<br><span class="te-td">కణ పరిమాణాలు</span></td></tr>
+<tr><td><strong>Light Year (ly)</strong><br><span class="te-td">కాంతి సంవత్సరం</span></td><td>9.46 × 10¹² km</td><td>Stellar/interstellar distances — unit of DISTANCE, not speed<br><span class="te-td">నక్షత్రాల మధ్య దూరం</span></td></tr>
+<tr><td><strong>Parsec (pc)</strong><br><span class="te-td">పార్సెక్</span></td><td>3.086 × 10¹³ km ≈ 3.26 ly</td><td>Stellar/galactic distances<br><span class="te-td">నక్షత్ర/గ్యాలక్టిక్ దూరాలు</span></td></tr>
+</table>
+
+<div class="exam-alert">
+  <div class="ea-title">🎯 TRAP — Light Year is a unit of DISTANCE not SPEED</div>
+  Light year = distance light travels in 1 year ≈ 9.46 × 10¹² km. It is used for stellar distances, NOT for measuring speed of light.<br>
+  <span class="te-tag">తెలుగు</span> కాంతి సంవత్సరం = కాంతి 1 సంవత్సరంలో ప్రయాణించే దూరం. ఇది వేగం కాదు — దూర ప్రమాణం.
+</div>
+</div>
+
+
+<!-- PAGE 2: MEASURING INSTRUMENTS + UNITS TABLE -->
+<div class="page page-break">
+<div class="sec-head">3. Measuring Instruments — Master Table <span class="te">కొలత పరికరాలు</span></div>
+
+<table>
+<tr><th>Instrument / పరికరం</th><th>Measures / కొలుస్తుంది</th><th>Unit / ప్రమాణం</th></tr>
+<tr><td><strong>Ammeter / అమ్మీటర్</strong></td><td>Electric current — connected in SERIES<br><span class="te-td">విద్యుత్ ప్రవాహం — శ్రేణిలో అనుసంధానం</span></td><td>Ampere (A)</td></tr>
+<tr><td><strong>Voltmeter / వోల్టమీటర్</strong></td><td>Voltage / potential difference — PARALLEL<br><span class="te-td">వోల్టేజీ — సమాంతరంలో అనుసంధానం</span></td><td>Volt (V)</td></tr>
+<tr><td><strong>Anemometer / అనిమోమీటర్</strong></td><td>Wind speed / velocity of fluid<br><span class="te-td">గాలి వేగం / ప్రవాహ వేగం</span></td><td>km/h, knot</td></tr>
+<tr><td><strong>Barometer / బేరోమీటర్</strong></td><td>Atmospheric pressure<br><span class="te-td">వాతావరణ పీడనం</span></td><td>Pa, mbar, mmHg</td></tr>
+<tr><td><strong>Hydrometer / హైడ్రోమీటర్</strong></td><td>Specific gravity of liquids<br><span class="te-td">ద్రవాల విశిష్ట గురుత్వం</span></td><td>Dimensionless</td></tr>
+<tr><td><strong>Hygrometer / హైగ్రోమీటర్</strong></td><td>Relative humidity<br><span class="te-td">సాపేక్ష ఆర్ద్రత</span></td><td>% RH</td></tr>
+<tr><td><strong>Tachometer / టాకోమీటర్</strong></td><td>Rotation speed (RPM)<br><span class="te-td">భ్రమణ వేగం</span></td><td>RPM</td></tr>
+<tr><td><strong>Pyrometer / పైరోమీటర్</strong></td><td>High temperatures (non-contact)<br><span class="te-td">అధిక ఉష్ణోగ్రతలు (సంపర్కం లేకుండా)</span></td><td>°C, K</td></tr>
+<tr><td><strong>Dynamometer / డైనమోమీటర్</strong></td><td>Power of machine / force<br><span class="te-td">యంత్ర సామర్థ్యం / బలం</span></td><td>Watt, Newton</td></tr>
+<tr><td><strong>Spectrometer / స్పెక్ట్రోమీటర్</strong></td><td>Refractive indices (precisely)<br><span class="te-td">వక్రీభవన గుణకాలు</span></td><td>Dimensionless</td></tr>
+<tr><td><strong>Chronometer / క్రోనోమీటర్</strong></td><td>Time (very precise)<br><span class="te-td">సమయం (అత్యంత కచ్చితంగా)</span></td><td>s, min, hr</td></tr>
+<tr><td><strong>Atomic Clock / అణు గడియారం</strong></td><td>Very small time intervals (most precise)<br><span class="te-td">అతి చిన్న సమయ వ్యవధులు</span></td><td>s (nanoseconds)</td></tr>
+<tr><td><strong>Speedometer / స్పీడోమీటర్</strong></td><td>Speed of vehicle<br><span class="te-td">వాహన వేగం</span></td><td>km/h</td></tr>
+<tr><td><strong>Audiometer / ఆడియోమీటర్</strong></td><td>Hearing ability / sound level<br><span class="te-td">వినికిడి స్థాయి</span></td><td>dB</td></tr>
+</table>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Barometer falling:</strong> Indicates decreasing atmospheric pressure → approach of low-pressure system → <strong>Rainfall/Storm</strong>.<br>
+    <strong>Barometer rising:</strong> High pressure → fair/clear weather.<br>
+    <strong>Dobson Unit (DU):</strong> Measures thickness of ozone layer. Normal ≈ 300 DU. 1 DU = 0.01 mm at STP.<br>
+    <strong>Parallax Method:</strong> Used to measure distances of planets/stars. Earth's orbital radius used as baseline.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>బేరోమీటర్ పడిపోవడం:</strong> వాతావరణ పీడనం తగ్గడం → వర్షం / తుఫాను సంకేతం.<br>
+    <strong>బేరోమీటర్ పెరగడం:</strong> అధిక పీడనం → మంచి వాతావరణం.<br>
+    <strong>డాబ్సన్ యూనిట్:</strong> ఓజోన్ పొర మందం కొలుస్తుంది. సాధారణ స్థాయి ≈ 300 DU.<br>
+    <strong>పారలాక్స్ పద్ధతి:</strong> గ్రహాల/నక్షత్రాల దూరం కొలవడానికి వాడతారు.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Thermometers — Temperature Ranges (Q5):</strong><br>
+    • <strong>Alcohol thermometer:</strong> Best for <em>lowest temperatures</em> — alcohol freezes at <strong>−114°C</strong>; boils at 78°C → used in polar/arctic stations<br>
+    • <strong>Mercury thermometer:</strong> Freezes at −39°C → cannot measure very low temps. Range: −39°C to 357°C<br>
+    • <strong>Clinical thermometer:</strong> Range 35–42°C — used for body temperature only<br>
+    • <strong>Resistance thermometer:</strong> Very accurate for precise industrial measurements (uses Pt wire)<br>
+    <span class="exam-tag">TRAP</span> For the <strong>lowest temperature</strong>, choose <strong>Alcohol</strong> — not mercury (too high a freezing point).
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>థర్మామీటర్ రకాలు — ఉష్ణోగ్రత పరిధి:</strong><br>
+    • <strong>ఆల్కహాల్ థర్మామీటర్:</strong> అతి తక్కువ ఉష్ణోగ్రతలకు (−114°C వద్ద గడ్డకడుతుంది) — ధ్రువ ప్రాంతాల్లో వాడతారు<br>
+    • <strong>పాదరస థర్మామీటర్:</strong> −39°C కంటే తక్కువకు పని చేయదు; పరిధి −39°C నుండి 357°C<br>
+    • <strong>క్లినికల్ థర్మామీటర్:</strong> 35–42°C పరిధి — శరీర ఉష్ణోగ్రతకు మాత్రమే<br>
+    <span class="exam-tag">TRAP</span> అత్యల్ప ఉష్ణోగ్రతకు ఎల్లప్పుడూ <strong>ఆల్కహాల్ థర్మామీటర్</strong> ఎంచుకోండి.
+  </div>
+</div>
+</div>
+
+
+<!-- PAGE 3: UNITS OF PHYSICAL QUANTITIES + ELECTRICITY -->
+<div class="page page-break">
+<div class="sec-head">4. Units of Key Physical Quantities <span class="te">ముఖ్యమైన భౌతిక రాశుల ప్రమాణాలు</span></div>
+
+<div class="cols-2">
+<table>
+<tr><th>Quantity / రాశి</th><th>Unit / ప్రమాణం</th></tr>
+<tr><td>Energy / Work / Heat<br><span class="te-td">శక్తి / పని / ఉష్ణం</span></td><td><strong>Joule (J)</strong></td></tr>
+<tr><td>Power<br><span class="te-td">సామర్థ్యం</span></td><td><strong>Watt (W)</strong></td></tr>
+<tr><td>Pressure<br><span class="te-td">పీడనం</span></td><td><strong>Pascal (Pa)</strong></td></tr>
+<tr><td>Frequency<br><span class="te-td">పౌనఃపున్యం</span></td><td><strong>Hertz (Hz)</strong></td></tr>
+<tr><td>Sound intensity<br><span class="te-td">ధ్వని తీవ్రత</span></td><td><strong>Decibel (dB)</strong></td></tr>
+<tr><td>Illuminance<br><span class="te-td">ప్రకాశ తీవ్రత</span></td><td><strong>Lux (lx)</strong></td></tr>
+<tr><td>Luminous flux<br><span class="te-td">కాంతి అభివాహం</span></td><td><strong>Lumen (lm)</strong></td></tr>
+<tr><td>Depth (nautical)<br><span class="te-td">నీటి లోతు</span></td><td><strong>Fathom</strong> (6 ft)</td></tr>
+<tr><td>Water flow rate<br><span class="te-td">నీటి ప్రవాహ రేటు</span></td><td><strong>Cusec</strong> (ft³/s)</td></tr>
+<tr><td>Ozone layer<br><span class="te-td">ఓజోన్ పొర</span></td><td><strong>Dobson Unit</strong></td></tr>
+</table>
+<table>
+<tr><th>Electrical Quantity<br><span class="te-td">విద్యుత్ రాశి</span></th><th>Unit</th></tr>
+<tr><td>Current / విద్యుత్ ప్రవాహం</td><td><strong>Ampere (A)</strong></td></tr>
+<tr><td>Voltage / potential<br><span class="te-td">వోల్టేజీ</span></td><td><strong>Volt (V)</strong></td></tr>
+<tr><td>Resistance / నిరోధం</td><td><strong>Ohm (Ω)</strong></td></tr>
+<tr><td>Resistivity / నిరోధకత</td><td><strong>Ohm-metre (Ω·m)</strong></td></tr>
+<tr><td>Capacitance / సామర్థ్యం</td><td><strong>Farad (F)</strong></td></tr>
+<tr><td>Charge / ఆవేశం</td><td><strong>Coulomb (C)</strong></td></tr>
+<tr><td>Inductance</td><td><strong>Henry (H)</strong></td></tr>
+<tr><td>Mag. field (SI)<br><span class="te-td">అయస్కాంత క్షేత్రం</span></td><td><strong>Tesla (T)</strong></td></tr>
+<tr><td>Mag. field (CGS)</td><td><strong>Gauss (G)</strong></td></tr>
+<tr><td>Magnetic flux<br><span class="te-td">అయస్కాంత అభివాహం</span></td><td><strong>Weber (Wb)</strong></td></tr>
+</table>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Supplementary &amp; Special Units — Match Table (Q16):</strong><br>
+    • <strong>Solid angle → Steradian (sr)</strong> — supplementary SI unit (dimensionless); 1 sr = solid angle subtended by unit area at unit distance<br>
+    • <strong>Impulse → Newton-second (N·s)</strong> — Impulse = Force × time = F·t [same dimensions as momentum: MLT⁻¹]<br>
+    • <strong>Dynamic Viscosity → Pascal-second (Pa·s)</strong> — resistance to flow. Water ≈ 0.001 Pa·s; honey ≈ 10 Pa·s<br>
+    • <strong>Pressure → Pascal (Pa)</strong> — 1 Pa = 1 N/m². 1 bar = 10⁵ Pa; 1 atm = 101325 Pa<br>
+    <span class="exam-tag">MATCH KEY</span> Solid angle→Steradian | Impulse→Newton-sec | Viscosity→Pascal-sec | Pressure→Pascal
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>విశేష ప్రమాణాల జతకట్టడం (Q16):</strong><br>
+    • <strong>ఘన కోణం → స్టెరేడియన్ (sr)</strong> — SI అనుబంధ ప్రమాణం (మితిరహితం)<br>
+    • <strong>ప్రచోదనం → న్యూటన్-సెకన్ (N·s)</strong> — Impulse = బలం × సమయం; ద్రవ్యవేగంతో సమాన మితులు [MLT⁻¹]<br>
+    • <strong>స్నిగ్ధత → పాస్కల్-సెకన్ (Pa·s)</strong> — ద్రవ ప్రవాహ నిరోధం. నీరు ≈ 0.001 Pa·s<br>
+    • <strong>పీడనం → పాస్కల్ (Pa)</strong> — 1 Pa = 1 N/m²<br>
+    <span class="exam-tag">జత కీ</span> ఘన కోణం→స్టెరేడియన్ | ప్రచోదనం→న్యూటన్-సెకన్ | స్నిగ్ధత→పాస్కల్-సెకన్ | పీడనం→పాస్కల్
+  </div>
+</div>
+
+<div class="exam-alert">
+  <div class="ea-title">🎯 Frequency Units — kHz, MHz, GHz (Q18)</div>
+  <strong>Hertz (Hz)</strong> = 1 cycle/second → SI unit of frequency.<br>
+  <strong>Kilohertz (kHz)</strong> = 1000 Hz → AM radio band (540–1600 kHz). 1 kHz = 10³ Hz<br>
+  <strong>Megahertz (MHz)</strong> = 10⁶ Hz → FM radio, TV broadcasts<br>
+  <strong>Gigahertz (GHz)</strong> = 10⁹ Hz → Microwave, WiFi, mobile networks<br>
+  <span class="te-tag">తెలుగు</span> కిలోహెర్ట్జ్ (kHz) = AM రేడియో తరంగాల పౌనఃపున్యం కొలవడానికి (540–1600 kHz). హెర్ట్జ్ = పౌనఃపున్యం SI ప్రమాణం. MHz = FM రేడియో; GHz = WiFi/మొబైల్.
+</div>
+
+<div class="shock-box">
+  <div class="shock-title">⚡ RESISTANCE vs RESISTIVITY — Classic Trap</div>
+  <strong>Resistance (R)</strong> = opposition to current flow in a specific conductor → unit: <strong>Ohm (Ω)</strong><br>
+  <strong>Resistivity (ρ)</strong> = material property independent of shape/size → unit: <strong>Ohm-metre (Ω·m)</strong> [R = ρL/A]<br>
+  <span class="te-tag">తెలుగు</span> నిరోధం (R) → ఓమ్ (Ω) | నిరోధకత (ρ) → ఓమ్-మీటర్ (Ω·m) — ఇవి వేర్వేరు రాశులు.
+</div>
+
+<div class="sec-head">5. Key Unit Conversions <span class="te">ముఖ్యమైన ప్రమాణ మార్పిడులు</span></div>
+
+<table>
+<tr><th>Conversion / మార్పిడి</th><th>Value</th></tr>
+<tr><td>1 Horsepower (HP)<span class="te-td">1 అశ్వ సామర్థ్యం</span></td><td><strong>746 Watts</strong> (1 kW = 1.341 HP)</td></tr>
+<tr><td>1 Joule<span class="te-td">1 జౌల్</span></td><td><strong>10⁷ ergs</strong> (1 N = 10⁵ dyne; 1 m = 10² cm)</td></tr>
+<tr><td>1 Kilometre<span class="te-td">1 కి.మీ</span></td><td><strong>0.621 miles</strong> (1 mile = 1.609 km)</td></tr>
+<tr><td>1 Fathom<span class="te-td">1 ఫాథమ్</span></td><td><strong>6 feet</strong> = 1.8288 m</td></tr>
+<tr><td>1 Nautical mile<span class="te-td">1 నాటికల్ మైల్</span></td><td><strong>1852 m</strong> = 1.15 statute miles</td></tr>
+<tr><td>1 Knot<span class="te-td">1 నాట్</span></td><td><strong>1 nautical mile/hour</strong> = 1.852 km/h</td></tr>
+<tr><td>1 Parsec<span class="te-td">1 పార్సెక్</span></td><td><strong>3.26 light years</strong> ≈ 3.086 × 10¹³ km</td></tr>
+<tr><td>1 Micron (µm)<span class="te-td">1 మైక్రాన్</span></td><td><strong>10⁻⁶ m</strong> = 1/1000 mm</td></tr>
+<tr><td>1 Bar<span class="te-td">1 బార్</span></td><td><strong>10⁵ Pascal</strong> (standard atmosphere = 1.01325 bar)</td></tr>
+<tr><td>1 Calorie<span class="te-td">1 కేలరీ</span></td><td><strong>4.186 Joules</strong></td></tr>
+</table>
+</div>
+
+
+<!-- PAGE 4: DIMENSIONAL ANALYSIS + ERRORS -->
+<div class="page page-break">
+<div class="sec-head">6. Dimensional Analysis — Quick Reference <span class="te">మితి విశ్లేషణ</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Dimensional Formula for key quantities:</strong><br>
+    • Energy / Work / KE / Heat: <strong>[ML²T⁻²]</strong> — (KE = ½mv², Work = Fd)<br>
+    • Angular Momentum / Planck's constant (h): <strong>[ML²T⁻¹]</strong> — (L = Iω = mvr; h = E/f)<br>
+    • Impulse = Momentum: <strong>[MLT⁻¹]</strong> — (Impulse = Ft; p = mv)<br>
+    • Force: <strong>[MLT⁻²]</strong> | Pressure: <strong>[ML⁻¹T⁻²]</strong> | Power: <strong>[ML²T⁻³]</strong><br>
+    <strong>Dimensionless quantities:</strong> Angle, Specific gravity, Strain, Refractive index, Poisson's ratio — all are pure ratios with no units.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>ముఖ్యమైన మితి సూత్రాలు:</strong><br>
+    • శక్తి / పని / గతి శక్తి: [ML²T⁻²] | కోణీయ ద్రవ్యవేగం / ప్లాంక్ స్థిరాంకం: [ML²T⁻¹]<br>
+    • ప్రచోదనం = ద్రవ్యవేగం: [MLT⁻¹] | బలం: [MLT⁻²] | పీడనం: [ML⁻¹T⁻²]<br>
+    <strong>మితిరహిత రాశులు:</strong> కోణం, విశిష్ట గురుత్వం, వికృతి — ఇవి నిష్పత్తులు.
+  </div>
+</div>
+
+<table>
+<tr><th>Pair / జత</th><th>Same Dimensions? / సమాన మితులు?</th><th>Dimensions</th></tr>
+<tr><td><strong>Impulse &amp; Momentum</strong><br><span class="te-td">ప్రచోదనం మరియు ద్రవ్యవేగం</span></td><td><span style="color:green;font-weight:700;">✓ YES</span></td><td>[MLT⁻¹]</td></tr>
+<tr><td><strong>KE &amp; Work</strong><br><span class="te-td">గతి శక్తి మరియు పని</span></td><td><span style="color:green;font-weight:700;">✓ YES</span></td><td>[ML²T⁻²]</td></tr>
+<tr><td><strong>Angular Momentum &amp; Planck's constant</strong><br><span class="te-td">కోణీయ ద్రవ్యవేగం మరియు ప్లాంక్ స్థిరాంకం</span></td><td><span style="color:green;font-weight:700;">✓ YES</span></td><td>[ML²T⁻¹]</td></tr>
+<tr><td><strong>Torque &amp; Angular Momentum</strong><br><span class="te-td">టార్క్ మరియు కోణీయ ద్రవ్యవేగం</span></td><td><span style="color:red;font-weight:700;">✗ NO</span></td><td>Torque [ML²T⁻²] ≠ [ML²T⁻¹]</td></tr>
+<tr><td><strong>Specific heat &amp; Latent heat</strong><br><span class="te-td">విశిష్టోష్ణం మరియు గుప్తోష్ణం</span></td><td><span style="color:red;font-weight:700;">✗ NO</span></td><td>[L²T⁻²K⁻¹] ≠ [L²T⁻²]</td></tr>
+</table>
+
+<div class="sec-head">7. Electrical Devices &amp; Special Units <span class="te">విద్యుత్ పరికరాలు మరియు ప్రత్యేక ప్రమాణాలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Dynamo (Generator):</strong> Converts <em>mechanical → electrical</em> energy (Faraday's law). Reverse = Motor (electrical → mechanical).<br>
+    <strong>Transformer:</strong> Steps AC voltage up or down using mutual induction. V₂/V₁ = N₂/N₁. Does NOT work with DC.<br>
+    <strong>Atomic Clock:</strong> Most precise timekeeper (Caesium-133; 9,192,631,770 Hz). Defines the SI second. Accurate to 1 s in 300 million years. Used in GPS.<br>
+    <strong>Decibel (dB):</strong> 0 dB = threshold of hearing; 60 dB = normal conversation; 120 dB = threshold of pain; 140 dB = jet engine.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>డైనమో:</strong> యాంత్రిక శక్తి → విద్యుత్ శక్తి. విలోమం = విద్యుత్ మోటారు.<br>
+    <strong>ట్రాన్స్‌ఫార్మర్:</strong> AC వోల్టేజీ పెంచడానికి / తగ్గించడానికి. DC తో పని చేయదు.<br>
+    <strong>అణు గడియారం:</strong> అత్యంత కచ్చితమైన సమయమాపక పరికరం. GPS లో వాడతారు.<br>
+    <strong>డెసిబెల్:</strong> 0 dB = వినికిడి హద్దు; 60 dB = సాధారణ సంభాషణ; 120 dB = నొప్పి హద్దు.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Optical Instruments — What Each Views (Q40):</strong><br>
+    • <strong>Telescope (దూరదర్శిని):</strong> Views <em>distant objects</em> — stars, planets, mountains. Collects and focuses light (refracting/reflecting). Invented by Hans Lippershey (1608); improved by Galileo.<br>
+    • <strong>Microscope (సూక్ష్మదర్శిని):</strong> Views <em>very small/microscopic objects</em> — bacteria, cells, microorganisms.<br>
+    • <strong>Magnifying glass:</strong> Views <em>small nearby objects</em> — simple convex lens, low magnification.<br>
+    <span class="exam-tag">TRAP</span> Telescope ≠ Microscope. "Living cells" → Microscope; "Distant stars/planets" → Telescope.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>దృష్టి పరికరాలు (Q40):</strong><br>
+    • <strong>టెలిస్కోప్ (దూరదర్శిని):</strong> సుదూర వస్తువులను (నక్షత్రాలు, గ్రహాలు) పరిశీలించడానికి.<br>
+    • <strong>మైక్రోస్కోప్ (సూక్ష్మదర్శిని):</strong> చాలా చిన్న వస్తువులను (బాక్టీరియా, కణాలు) చూడడానికి.<br>
+    • <strong>మాగ్నిఫైయింగ్ గ్లాస్:</strong> దగ్గరలో ఉన్న చిన్న వస్తువులను చూడడానికి.<br>
+    <span class="exam-tag">TRAP</span> సజీవ కణాలు → మైక్రోస్కోప్; సుదూర వస్తువులు → టెలిస్కోప్.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Knot vs Nautical Mile:</strong> Knot = 1 nautical mile/hour (speed). Nautical mile = 1852 m (distance). Used in maritime and aviation.<br>
+    <strong>Cusec:</strong> Cubic feet per second — measures water flow rate. Used in dam/river/irrigation measurements.<br>
+    <strong>Types of Errors — Full Taxonomy (Q47):</strong><br>
+    ① <strong>Systematic errors</strong> (predictable, one-direction):<br>
+    &nbsp;&nbsp;→ <strong>Instrumental error</strong>: Faulty instrument — <em>Zero error falls here</em> (scale zero ≠ true zero)<br>
+    &nbsp;&nbsp;→ <strong>Personal error</strong>: Observer's habit (e.g., parallax error in reading scale)<br>
+    &nbsp;&nbsp;→ <strong>Environmental error</strong>: Temperature/pressure changes affecting instrument<br>
+    ② <strong>Random errors</strong> (unpredictable, accidental): Fluctuations with no fixed pattern. Reduced by taking multiple readings and averaging.<br>
+    <span class="exam-tag">KEY</span> Zero error = <strong>Instrumental error</strong> (type of Systematic error). NOT accidental/random.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>నాట్ vs నాటికల్ మైల్:</strong> నాట్ = వేగం (1 నాటికల్ మైల్/గంట). నాటికల్ మైల్ = దూరం (1852 మీ).<br>
+    <strong>క్యూసెక్:</strong> క్యూబిక్ ఫీట్/సెకన్ — నీటి ప్రవాహ రేటు. డ్యాంలు/నదులలో వాడతారు.<br>
+    <strong>జీరో ఎర్రర్:</strong> పరికర దోషం (instrumental error) — పరికరం శూన్య స్థానం సరిగ్గా లేకపోవడం వలన.<br>
+    <strong>దోష రకాలు:</strong> క్రమబద్ధ (పరికర, వ్యక్తిగత, వాతావరణ) మరియు యాదృచ్ఛిక దోషాలు.
+  </div>
+</div>
+</div>
+
+
+<!-- PAGE 5: TRAP SHEET + PYQ + MEMORY BOX -->
+<div class="page">
+<div class="sec-head">8. Trap Sheet — Common Exam Mistakes <span class="te">సాధారణ పరీక్షా తప్పులు</span></div>
+
+<table>
+<tr><th>Wrong Answer (తప్పు)</th><th>Correct Answer (సరైనది)</th></tr>
+<tr><td>Light year = unit of speed</td><td><strong>Light year = unit of DISTANCE</strong> (distance light travels in 1 year ≈ 9.46×10¹² km)</td></tr>
+<tr><td>SI has 6 base units</td><td><strong>SI has 7 base units</strong>: m, kg, s, A, K, mol, cd</td></tr>
+<tr><td>Kilogram (kg) = physical quantity</td><td><strong>kg = UNIT of mass.</strong> Physical quantity = mass. Units are not physical quantities.</td></tr>
+<tr><td>Resistance unit = Ohm-metre</td><td><strong>Resistance (R) → Ohm (Ω). Resistivity (ρ) → Ohm-metre (Ω·m).</strong> These are different quantities.</td></tr>
+<tr><td>Transformer works with DC</td><td><strong>Transformer only works with AC.</strong> DC has no changing flux → no induction.</td></tr>
+<tr><td>Dynamo = electrical to mechanical</td><td><strong>Dynamo = mechanical → electrical.</strong> Motor = electrical → mechanical (reverse).</td></tr>
+<tr><td>Decibel = unit of frequency/pitch</td><td><strong>Decibel = intensity of sound.</strong> Frequency (pitch) is measured in Hertz (Hz).</td></tr>
+<tr><td>Gauss = SI unit of magnetic field</td><td><strong>Tesla = SI unit. Gauss = CGS unit.</strong> 1 Tesla = 10,000 Gauss.</td></tr>
+<tr><td>Angular momentum same as Torque</td><td><strong>Angular momentum [ML²T⁻¹] ≠ Torque [ML²T⁻²].</strong> Angular momentum = Planck's constant.</td></tr>
+<tr><td>Hydrometer = humidity meter</td><td><strong>Hydrometer = specific gravity of liquids.</strong> Hygrometer = relative humidity.</td></tr>
+<tr><td>Watt = unit of heat</td><td><strong>Watt = unit of POWER (J/s).</strong> Heat unit = Joule, Calorie, kJ.</td></tr>
+<tr><td>1 fathom = 6 metres</td><td><strong>1 fathom = 6 FEET</strong> = 1.83 m (not metres).</td></tr>
+<tr><td>Mercury thermometer for lowest temperatures</td><td><strong>Alcohol thermometer</strong> for lowest temps (alcohol freezes at −114°C). Mercury freezes at −39°C → cannot measure polar temperatures.</td></tr>
+<tr><td>kHz measures sound intensity</td><td><strong>kHz (Kilohertz) measures radio wave frequency</strong> (AM band 540–1600 kHz). Sound intensity is measured in Decibel (dB).</td></tr>
+<tr><td>Telescope views small/living cells</td><td><strong>Telescope = distant objects</strong> (stars, planets). Microscope = small/living cells/bacteria. Magnifying glass = small nearby objects.</td></tr>
+<tr><td>Zero error = accidental/random error</td><td><strong>Zero error = Instrumental error</strong> (a type of systematic error). Random errors are accidental/unpredictable fluctuations — different category.</td></tr>
+<tr><td>Solid angle unit = Pascal | Viscosity unit = Steradian</td><td>Solid angle → <strong>Steradian (sr)</strong>. Dynamic viscosity → <strong>Pascal-second (Pa·s)</strong>. Impulse → <strong>Newton-second (N·s)</strong>. Pressure → <strong>Pascal (Pa)</strong>.</td></tr>
+</table>
+
+<div class="sec-head">9. Previous Year Questions (Set 7) <span class="te">మునుపటి సంవత్సర ప్రశ్నలు</span></div>
+
+<div class="cols-2">
+<div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q2</span> Light year measures?</div><div class="pyq-a">✅ Stellar distances (దూరం — వేగం కాదు)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q3</span> 1 micron = ?</div><div class="pyq-a">✅ 1/1000 of mm = 10⁻⁶ m</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q6</span> 1 horsepower = ?</div><div class="pyq-a">✅ 746 Watts</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q10</span> SI base units count?</div><div class="pyq-a">✅ 7 (m, kg, s, A, K, mol, cd)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q16</span> Solid angle → Steradian; Impulse → ?</div><div class="pyq-a">✅ Newton-second (N·s)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q21</span> Resistance → ? Current → ?</div><div class="pyq-a">✅ Ohm; Ampere (A-4, B-1, C-2, D-3)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q25</span> Magnetic induction unit?</div><div class="pyq-a">✅ Gauss (CGS) / Tesla (SI)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q28</span> Anemometer → Tachometer → Pyrometer?</div><div class="pyq-a">✅ Wind speed → RPM → High temps (A-4, B-3, C-1, D-2)</div></div>
+</div>
+<div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q30</span> 1 Joule = ? ergs</div><div class="pyq-a">✅ 10⁷ ergs (1N=10⁵dyne; 1m=10²cm)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q31</span> Smallest length unit among options?</div><div class="pyq-a">✅ Fermimetre (10⁻¹⁵ m)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q36</span> Dobson unit measures?</div><div class="pyq-a">✅ Thickness of Ozone layer</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q43</span> Lux is SI unit of?</div><div class="pyq-a">✅ Illuminance (intensity of illumination)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q45</span> Dimensionless quantities?</div><div class="pyq-a">✅ All — Angle, Specific gravity, Strain</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q46</span> Angular momentum same dimensions as?</div><div class="pyq-a">✅ Planck's constant [ML²T⁻¹]</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q49</span> Same dimensions: Impulse and?</div><div class="pyq-a">✅ Momentum [MLT⁻¹]</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q50</span> KE dimensions same as?</div><div class="pyq-a">✅ Work [ML²T⁻²]</div></div>
+</div>
+</div>
+
+<div class="memory-box">
+  <div class="mem-title">🧠 MASTER MEMORY BOX — Set 7 One-Liners</div>
+  <ul>
+  <li>7 SI units: m · kg · s · A · K · mol · cd | kg = unit of mass, not a physical quantity</li>
+  <li>Length order (small→large): Fermi(10⁻¹⁵) &lt; Angstrom(10⁻¹⁰) &lt; nm(10⁻⁹) &lt; micron(10⁻⁶) &lt; light year &lt; parsec</li>
+  <li>1 HP = 746 W | 1 J = 10⁷ ergs | 1 km = 0.62 miles | 1 fathom = 6 feet | 1 parsec = 3.26 ly</li>
+  <li>Ammeter (series) → current | Voltmeter (parallel) → voltage | Anemometer → wind speed</li>
+  <li>Hydrometer → specific gravity | Hygrometer → humidity | Pyrometer → high temp</li>
+  <li>Tachometer → RPM | Dynamometer → machine power | Spectrometer → refractive index</li>
+  <li>Dynamo: mechanical→electrical | Motor: electrical→mechanical | Transformer: AC voltage only</li>
+  <li>Tesla (SI) = magnetic field | Gauss (CGS) = magnetic induction | 1 T = 10,000 G</li>
+  <li>Resistance → Ohm | Resistivity → Ohm-metre | Capacitance → Farad | Charge → Coulomb</li>
+  <li>Decibel = sound intensity | Hertz = frequency | Lux = illuminance | Candela = luminous intensity</li>
+  <li>Angular momentum = Planck's constant = [ML²T⁻¹] | Impulse = Momentum = [MLT⁻¹]</li>
+  <li>Dimensionless: Angle, Specific gravity, Strain | Zero error = Instrumental error</li>
+  <li>Barometer falling → rain/storm | Dobson unit → ozone layer | Cusec → water flow rate</li>
+  <li>Atomic clock = most precise | Knot = nautical mile/hour | Nautical mile = 1852 m</li>
+  <li>Alcohol thermometer → lowest temps (freezes −114°C) | Mercury → −39°C min | Clinical → body temp only</li>
+  <li>kHz = AM radio (540–1600 kHz) | MHz = FM/TV | GHz = WiFi/mobile | Hz = cycles/second</li>
+  </ul>
+  <span class="te-tag">తెలుగు</span> 7 SI ప్రమాణాలు | ఫెర్మి అతి చిన్నది | 1 HP = 746 W | 1 J = 10⁷ ergs | అమ్మీటర్→ఆంపియర్ | టెస్లా→అయస్కాంత క్షేత్రం | కోణీయ ద్రవ్యవేగం = ప్లాంక్ స్థిరాంకం = [ML²T⁻¹]
+</div>
+</div>
+
+</body>
+</html>

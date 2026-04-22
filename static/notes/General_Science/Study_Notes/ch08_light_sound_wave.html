@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch 08 — Light, Sound &amp; Wave | General Science</title>
+<style>
+:root{--pri:#0d2346;--acc:#1565c0;--acc2:#0288d1;--bg:#e8f0fe;--bg2:#f0f7ff;--en-border:#1565c0;--te-border:#6a1b9a;--shock:#b71c1c;--exam:#e65100;--mem:#1b5e20;--hi:#4a148c;}
+@page{size:A4;margin:14mm 13mm 14mm 13mm;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.2pt;line-height:1.45;color:#1a1a2e;background:#fff;}
+.page{width:184mm;min-height:267mm;padding:6mm 0;position:relative;}
+.page-break{page-break-after:always;break-after:page;}
+.cover{background:linear-gradient(135deg,var(--pri) 0%,#1a237e 60%,#283593 100%);color:#fff;border-radius:6px;padding:14mm 12mm 10mm;text-align:center;margin-bottom:6mm;}
+.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:7.5pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4mm;}
+.cover h1{font-size:18pt;font-weight:800;letter-spacing:-0.3px;margin-bottom:2mm;}
+.cover h1 span{color:#90caf9;}
+.cover h2{font-size:10.5pt;font-weight:400;color:#bbdefb;margin-bottom:3mm;}
+.cover-te{font-size:9.5pt;color:#90caf9;margin-bottom:3mm;}
+.cover-meta{display:flex;justify-content:center;gap:14px;font-size:7.8pt;color:#bbdefb;flex-wrap:wrap;margin-top:2mm;}
+.cover-meta span{background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 10px;}
+.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:4px 10px;font-size:7.5pt;color:#e3f2fd;margin-top:3mm;line-height:1.8;}
+.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:9.5pt;font-weight:700;margin:4mm 0 3mm;letter-spacing:0.3px;display:flex;justify-content:space-between;align-items:center;}
+.sec-head .te{font-size:8pt;font-weight:400;color:#90caf9;}
+.bilingual{border:1px solid #b0bec5;border-radius:5px;margin-bottom:3mm;overflow:hidden;}
+.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:5px 8px;font-size:8.5pt;line-height:1.5;}
+.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:5px 8px;font-size:8.3pt;line-height:1.5;color:#4a148c;}
+.lang-tag{display:inline-block;font-size:6.8pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-bottom:3px;}
+.bi-en .lang-tag{background:var(--en-border);color:#fff;}
+.bi-te .lang-tag{background:var(--te-border);color:#fff;}
+.shock-box{border:2px solid var(--shock);background:#fff3f3;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.shock-box .shock-title{color:var(--shock);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.exam-tag{background:#b71c1c;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px;}
+.te-tag{background:#6a1b9a;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;}
+table{width:100%;border-collapse:collapse;font-size:8.3pt;margin-bottom:3mm;}
+th{background:var(--pri);color:#fff;padding:4px 7px;text-align:left;font-weight:600;font-size:8pt;}
+td{padding:3px 7px;border:1px solid #cfd8dc;vertical-align:top;}
+tr:nth-child(even) td{background:#f0f7ff;}
+.te-td{display:block;color:#6a1b9a;font-size:7.6pt;margin-top:1px;}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:3mm;}
+.pyq-item{background:#f0f7ff;border-left:3px solid var(--acc);padding:4px 8px;margin-bottom:2mm;border-radius:3px;font-size:8.2pt;page-break-inside:avoid;}
+.pyq-q{font-weight:600;color:var(--pri);}
+.pyq-num{background:var(--acc);color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:4px;}
+.pyq-a{color:var(--shock);font-weight:700;}
+ul{padding-left:16px;margin-bottom:3mm;}
+li{margin-bottom:2px;font-size:8.5pt;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER + WAVE TYPES + EM SPECTRUM -->
+<div class="page page-break">
+<div class="cover">
+  <div class="cover-tag">General Science · Model Set 8</div>
+  <h1>Light, Sound &amp; <span>Wave</span></h1>
+  <h2>Model Set 8 — 50 MCQs Comprehensive Guide</h2>
+  <div class="cover-te">కాంతి, ధ్వని మరియు తరంగాలు</div>
+  <div class="topics-bar">
+    📡 Topics: Wave Types · EM Spectrum · Light Phenomena (Reflection, Refraction, TIR, Dispersion) ·
+    Mirrors &amp; Lenses · Eye Defects &amp; Corrections · Colour Mixing · Sound Properties ·
+    Radiation Types (UV/X-ray/Gamma) · Heat Transfer
+  </div>
+  <div class="cover-meta">
+    <span>📝 50 Questions</span><span>🟢 22 Easy · 🟡 20 Medium · 🔴 8 Hard</span><span>🎯 APPSC/UPSC GK</span>
+  </div>
+</div>
+
+<div class="sec-head">1. Wave Types — Longitudinal vs Transverse <span class="te">తరంగ రకాలు</span></div>
+
+<div class="cols-2">
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Longitudinal Waves (అనుదైర్ఘ్య తరంగాలు):</strong><br>
+    Particles vibrate <em>parallel</em> to wave direction.<br>
+    Compressions (high pressure) + Rarefactions (low pressure)<br>
+    Examples: <strong>Sound in air</strong>, seismic P-waves<br>
+    Need a medium — cannot travel through vacuum.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    కణాలు తరంగ దిశకు <em>సమాంతరంగా</em> కంపిస్తాయి.<br>
+    ఉదాహరణలు: <strong>గాలిలో ధ్వని</strong>, భూకంప P-తరంగాలు.<br>
+    యానకం అవసరం — శూన్యంలో ప్రయాణించలేవు.
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Transverse Waves (తిర్యక్ తరంగాలు):</strong><br>
+    Particles vibrate <em>perpendicular</em> to wave direction.<br>
+    Crest (max displacement) + Trough (min displacement)<br>
+    Examples: <strong>Light, EM waves</strong>, water surface waves<br>
+    EM waves travel through vacuum (no medium needed).
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    కణాలు తరంగ దిశకు <em>లంబంగా</em> కంపిస్తాయి.<br>
+    ఉదాహరణలు: <strong>కాంతి, విద్యుదయస్కాంత తరంగాలు</strong>, నీటి తరంగాలు.<br>
+    శూన్యంలో కూడా ప్రయాణిస్తాయి.
+  </div>
+</div>
+</div>
+
+<div class="sec-head">2. Electromagnetic (EM) Spectrum — Frequency Order <span class="te">విద్యుదయస్కాంత వర్ణపటం</span></div>
+
+<table>
+<tr><th>Wave / తరంగం</th><th>Frequency / పౌనఃపున్యం</th><th>Wavelength</th><th>Key Use / ముఖ్య ఉపయోగం</th></tr>
+<tr><td><strong>Radio waves</strong><br><span class="te-td">రేడియో తరంగాలు</span></td><td>&lt; 300 MHz</td><td>Longest</td><td>AM/FM Radio, TV broadcasting<br><span class="te-td">రేడియో, టెలివిజన్ ప్రసారాలు</span></td></tr>
+<tr><td><strong>Microwaves</strong><br><span class="te-td">మైక్రో తరంగాలు</span></td><td>300 MHz – 300 GHz</td><td>mm–cm</td><td>RADAR, microwave oven, WiFi<br><span class="te-td">రాడార్, మైక్రోవేవ్ ఓవెన్</span></td></tr>
+<tr><td><strong>Infrared (IR)</strong><br><span class="te-td">పరారుణ తరంగాలు</span></td><td>300 GHz – 430 THz</td><td>µm–mm</td><td>Thermal imaging, TV remotes<br><span class="te-td">ఉష్ణ చిత్రణ, TV రిమోట్</span></td></tr>
+<tr><td><strong>Visible light</strong><br><span class="te-td">దృశ్య కాంతి</span></td><td>430–770 THz</td><td>400–700 nm</td><td>Human vision (VIBGYOR)<br><span class="te-td">మానవ దృష్టి</span></td></tr>
+<tr><td><strong>Ultraviolet (UV)</strong><br><span class="te-td">అతినీలలోహిత</span></td><td>770 THz – 30 PHz</td><td>10–400 nm</td><td>Sterilisation, vitamin D, fluorescence<br><span class="te-td">క్రిమిసంహారణ, విటమిన్ D</span></td></tr>
+<tr><td><strong>X-rays</strong><br><span class="te-td">ఎక్స్-కిరణాలు</span></td><td>30 PHz – 3 EHz</td><td>0.01–10 nm</td><td>Medical imaging, security scanners<br><span class="te-td">వైద్య చిత్రణ (Röntgen, 1895)</span></td></tr>
+<tr><td><strong>Gamma rays</strong><br><span class="te-td">గామా కిరణాలు</span></td><td>&gt; 3 EHz</td><td>Shortest</td><td>Radiotherapy, sterilisation, gene mutation<br><span class="te-td">క్యాన్సర్ చికిత్స, జన్యు ఉత్పరివర్తనలు</span></td></tr>
+</table>
+
+<div class="shock-box">
+  <div class="shock-title">⚡ EM SPECTRUM ORDER (Low→High frequency): R M I V U X G</div>
+  <strong>R</strong>adio · <strong>M</strong>icrowave · <strong>I</strong>nfrared · <strong>V</strong>isible · <strong>U</strong>ltraviolet · <strong>X</strong>-ray · <strong>G</strong>amma<br>
+  Memory: "<strong>R</strong>eal <strong>M</strong>en <strong>I</strong>n <strong>V</strong>egas <strong>U</strong>se e<strong>X</strong>tra <strong>G</strong>reat hotels"<br>
+  <span class="te-tag">తెలుగు</span> తక్కువ→అధిక పౌనఃపున్యం: రేడియో → మైక్రో → పరారుణ → దృశ్య → UV → X-ray → గామా. గామా = అత్యధిక పౌనఃపున్యం, అత్యల్ప తరంగదైర్ఘ్యం, అత్యధిక శక్తి.
+</div>
+</div>
+
+
+<!-- PAGE 2: LIGHT PHENOMENA -->
+<div class="page page-break">
+<div class="sec-head">3. Light Phenomena — Key Principles <span class="te">కాంతి దృగ్విషయాలు</span></div>
+
+<table>
+<tr><th>Phenomenon / దృగ్విషయం</th><th>Definition / నిర్వచనం</th><th>Examples / ఉదాహరణలు</th></tr>
+<tr><td><strong>Reflection / పరావర్తనం</strong></td><td>Light bouncing back from surface<br><span class="te-td">కాంతి ఉపరితలం నుండి వెనుకకు తిరిగిరావడం</span></td><td>Mirrors, periscope<br><span class="te-td">దర్పణాలు, పెరిస్కోప్</span></td></tr>
+<tr><td><strong>Refraction / వక్రీభవనం</strong></td><td>Bending of light at medium boundary (Snell's Law: n₁sinθ₁ = n₂sinθ₂)<br><span class="te-td">కాంతి యానకం మారినప్పుడు వంగడం</span></td><td>Lens, prism, mirage (TIR), rainbow<br><span class="te-td">కటకం, పట్టకం, ఇంద్రధనుస్సు</span></td></tr>
+<tr><td><strong>Total Internal Reflection (TIR) / సంపూర్ణాంతర పరావర్తనం</strong></td><td>Light travels from denser→rarer medium; angle &gt; critical angle → all light reflected<br><span class="te-td">సాంద్ర నుండి విరళ యానకంలోకి; కోణం విమర్శ కోణం కంటే ఎక్కువ</span></td><td>Optical fibre, mirage, diamond brilliance<br><span class="te-td">ఆప్టికల్ ఫైబర్, ఎండమావులు, వజ్రం మెరుపు</span></td></tr>
+<tr><td><strong>Dispersion / విక్షేపణం</strong></td><td>White light splits into VIBGYOR through prism<br><span class="te-td">తెల్లని కాంతి VIBGYOR లోకి విభజన</span></td><td>Prism, rainbow<br><span class="te-td">పట్టకం, ఇంద్రధనుస్సు</span></td></tr>
+<tr><td><strong>Scattering / పరిక్షేపణం</strong></td><td>Light deflected by small particles (Rayleigh: ∝ 1/λ⁴)<br><span class="te-td">చిన్న కణాల వల్ల కాంతి చెదిరిపోవడం</span></td><td>Blue sky, red sunset<br><span class="te-td">నీలి ఆకాశం, ఎరుపు సూర్యాస్తమయం</span></td></tr>
+<tr><td><strong>Diffraction / వివర్తనం</strong></td><td>Bending of light around edges/obstacles<br><span class="te-td">అడ్డంకుల అంచుల చుట్టూ కాంతి వంగడం</span></td><td>CD rainbow, single slit pattern<br><span class="te-td">CD రెయిన్‌బో</span></td></tr>
+<tr><td><strong>Interference / వ్యతికరణం</strong></td><td>Superposition of two coherent waves<br><span class="te-td">రెండు తరంగాల సంయోజనం</span></td><td>Soap bubble colours, anti-reflection coating<br><span class="te-td">సబ్బు బుడగ రంగులు</span></td></tr>
+</table>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Rainbow (Q3):</strong> Formed by Reflection + Refraction + Dispersion in water droplets. Sunlight enters droplet → refracts → internally reflects → refracts again exiting → VIBGYOR separated at 40°–42°. Exam answer: Reflection and Refraction.<br>
+    <strong>Blue Sky (Q4):</strong> Rayleigh scattering — blue light (short λ) scattered ~10× more than red (scattering ∝ 1/λ⁴). Sunset = red/orange because blue scattered away along longer path.<br>
+    <strong>Mirage (Q5):</strong> Hot ground → hotter air layers → decreasing refractive index upward → light bends upward → TIR at some layer → sky image appears like water.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>ఇంద్రధనుస్సు (Q3):</strong> నీటి బిందువులలో వక్రీభవనం + పరావర్తనం + విక్షేపణం వల్ల. పరీక్ష సమాధానం: పరావర్తనం + వక్రీభవనం.<br>
+    <strong>నీలి ఆకాశం (Q4):</strong> రేలీ పరిక్షేపణం — నీలి కాంతి ఎరుపు కంటే ~10 రెట్లు ఎక్కువగా వెదజల్లబడుతుంది. సూర్యాస్తమయంలో ఎరుపు/నారింజ రంగు — నీలి కాంతి దూర మార్గంలో వెదజల్లిపోతుంది.<br>
+    <strong>ఎండమావులు (Q5):</strong> వేడి నేల → వేడి గాలి → తక్కువ వక్రీభవన గుణకం → సంపూర్ణాంతర పరావర్తనం → ఆకాశ ప్రతిబింబం నీటిలా కనిపిస్తుంది.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Optical Fibre (Q6, Q26):</strong> Works on TIR. Core (dense glass) + Cladding (less dense). Light enters at angle &gt; critical angle → bounces along the fibre. Used in: internet (broadband), endoscopy, telecom.<br>
+    <strong>Star Twinkling (Q8):</strong> Atmospheric refraction — different air layer densities continuously shift apparent position. Planets don't twinkle (they are extended sources, not points).<br>
+    <strong>Speed of light (Q28):</strong> Maximum in vacuum: c = 3×10⁸ m/s. In medium: v = c/n. Diamond (n≈2.42) slows light most among common materials.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>ఆప్టికల్ ఫైబర్ (Q6, Q26):</strong> సంపూర్ణాంతర పరావర్తనం సూత్రం. కోర్ (సాంద్ర) + క్లాడ్డింగ్ (విరళ). ఇంటర్నెట్, ఎండోస్కోపీ, టెలికమ్యూనికేషన్‌లో వాడతారు.<br>
+    <strong>నక్షత్రాల మినుకుమినుకు (Q8):</strong> వాతావరణ వక్రీభవనం. గ్రహాలు మినుకుమినుకుమనవు (విస్తీర్ణ మూలాలు).<br>
+    <strong>కాంతి వేగం (Q28):</strong> శూన్యంలో గరిష్టం c = 3×10⁸ m/s. యానకంలో v = c/n.
+  </div>
+</div>
+</div>
+
+
+<!-- PAGE 3: MIRRORS, LENSES, EYES, COLOUR -->
+<div class="page page-break">
+<div class="sec-head">4. Mirrors &amp; Lenses — Master Table <span class="te">దర్పణాలు మరియు కటకాలు</span></div>
+
+<table>
+<tr><th>Item / పరికరం</th><th>Type / రకం</th><th>Why / ఎందుకు</th></tr>
+<tr><td>Rear-view mirror in vehicles<br><span class="te-td">వాహన వెనుక అద్దం</span></td><td><strong>Convex Mirror</strong><br><span class="te-td">కుంభాకార దర్పణం</span></td><td>Wide field of view; always virtual, erect, diminished image<br><span class="te-td">విశాల దృష్టి క్షేత్రం; ఎల్లప్పుడూ నిటారైన, చిన్న మిథ్యా ప్రతిబింబం</span></td></tr>
+<tr><td>Shaving/makeup mirror<br><span class="te-td">షేవింగ్ అద్దం</span></td><td><strong>Concave Mirror</strong><br><span class="te-td">పుటాకార దర్పణం</span></td><td>Magnified, virtual, erect image when object within F<br><span class="te-td">నాభ్యాంతరంలో ఉంచినప్పుడు పెద్ద మిథ్యా ప్రతిబింబం</span></td></tr>
+<tr><td>ENT head mirror<br><span class="te-td">ENT తల అద్దం</span></td><td><strong>Concave Mirror</strong><br><span class="te-td">పుటాకార దర్పణం</span></td><td>Focuses light on examination area<br><span class="te-td">పరీక్ష ప్రాంతంపై కాంతిని కేంద్రీకరిస్తుంది</span></td></tr>
+<tr><td>Vehicle headlights<br><span class="te-td">వాహన హెడ్‌లైట్</span></td><td><strong>Concave (Parabolic) Mirror</strong><br><span class="te-td">పుటాకార (పరావలయ) దర్పణం</span></td><td>Bulb at focus → parallel beam emitted<br><span class="te-td">బల్బు నాభి వద్ద → సమాంతర కిరణాల మూట</span></td></tr>
+<tr><td>Magnifying glass<br><span class="te-td">భూతద్దం</span></td><td><strong>Convex Lens</strong><br><span class="te-td">కుంభాకార కటకం</span></td><td>Object within F → magnified virtual image<br><span class="te-td">నాభ్యాంతరంలో ఉంచితే పెద్ద మిథ్యా ప్రతిబింబం</span></td></tr>
+<tr><td>Periscope<br><span class="te-td">పెరిస్కోప్</span></td><td><strong>Plane Mirrors (Reflection)</strong><br><span class="te-td">సమతల దర్పణాలు (పరావర్తనం)</span></td><td>Two mirrors at 45°; used in submarines<br><span class="te-td">రెండు దర్పణాలు 45° లో; జలాంతర్గాముల్లో వాడతారు</span></td></tr>
+</table>
+
+<div class="sec-head">5. Eye Defects &amp; Corrections <span class="te">కంటి లోపాలు మరియు సరిదిద్దుబాటు</span></div>
+
+<div class="cols-2">
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Myopia (Short-sightedness) Q24:</strong><br>
+    Eyeball too long OR lens too powerful → image forms IN FRONT of retina.<br>
+    Can see near clearly; distant objects blurred.<br>
+    Correction: <strong>Concave (diverging) lens</strong> — negative power.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>హ్రస్వదృష్టి (Myopia) Q24:</strong><br>
+    నేత్రగోళం పొడవుగా ఉంటుంది → ప్రతిబింబం రెటీనా ముందు పడుతుంది.<br>
+    దూర వస్తువులు అస్పష్టంగా కనిపిస్తాయి.<br>
+    సరిదిద్దుబాటు: <strong>పుటాకార (అపసారి) కటకం</strong>.
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Hypermetropia (Long-sightedness) Q23:</strong><br>
+    Eyeball too short OR lens too weak → image forms BEHIND retina.<br>
+    Can see distant clearly; near objects blurred.<br>
+    Correction: <strong>Convex (converging) lens</strong> — positive power.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>దీర్ఘదృష్టి (Hypermetropia) Q23:</strong><br>
+    నేత్రగోళం చిన్నగా ఉంటుంది → ప్రతిబింబం రెటీనా వెనుక పడుతుంది.<br>
+    సమీప వస్తువులు అస్పష్టంగా కనిపిస్తాయి.<br>
+    సరిదిద్దుబాటు: <strong>కుంభాకార (అభిసారి) కటకం</strong>.
+  </div>
+</div>
+</div>
+
+<div class="exam-alert">
+  <div class="ea-title">🎯 Eye Facts (Q20, Q21, Q22)</div>
+  <strong>Least distance of distinct vision:</strong> 25 cm (near point of normal eye)<br>
+  <strong>Far point</strong> of normal eye: infinity<br>
+  <strong>Eye sensitivity max:</strong> Yellow-green region ≈ 555 nm (green region)<br>
+  <strong>Colour blindness:</strong> Cannot distinguish Red and Green (X-linked recessive, more common in males; diagnosed by Ishihara test)<br>
+  <strong>Dioptre:</strong> Unit of lens power. P = 1/f (metres). Convex = positive D; Concave = negative D.<br>
+  <span class="te-tag">తెలుగు</span> స్పష్ట దృష్టి కనీస దూరం = 25 సెం.మీ | కంటి గరిష్ట సున్నితత్వం ≈ 555 nm (ఆకుపచ్చ) | వర్ణాంధత్వం: ఎరుపు-ఆకుపచ్చ గుర్తించలేకపోవడం.
+</div>
+
+<div class="sec-head">6. Colour Mixing (Additive — Light) <span class="te">రంగుల మిశ్రమం</span></div>
+
+<table>
+<tr><th>Mix / మిశ్రమం</th><th>Result / ఫలితం</th><th>Notes / గమనికలు</th></tr>
+<tr><td>Red + Green<span class="te-td">ఎరుపు + ఆకుపచ్చ</span></td><td><strong>Yellow / పసుపు</strong></td><td>Q29 ✓</td></tr>
+<tr><td>Red + Blue<span class="te-td">ఎరుపు + నీలం</span></td><td><strong>Magenta / మెజెంటా</strong></td><td></td></tr>
+<tr><td>Green + Blue<span class="te-td">ఆకుపచ్చ + నీలం</span></td><td><strong>Cyan / సైయన్</strong></td><td></td></tr>
+<tr><td>Red + Green + Blue<span class="te-td">మూడూ కలిపి</span></td><td><strong>White / తెలుపు</strong></td><td>Additive: all colours = white</td></tr>
+<tr><td>Yellow + Blue<span class="te-td">పసుపు + నీలం</span></td><td><strong>White / తెలుపు</strong></td><td>Complementary pair (Q25) ✓</td></tr>
+<tr><td>VIBGYOR dispersion<br><span class="te-td">VIBGYOR విక్షేపణం</span></td><td>Violet deviates MOST; Red deviates LEAST (Q2)<br><span class="te-td">వైలెట్ = అత్యధిక విచలనం; ఎరుపు = అత్యల్ప విచలనం</span></td><td>Violet: shortest λ, highest n<br>Red: longest λ, lowest n</td></tr>
+</table>
+</div>
+
+
+<!-- PAGE 4: SOUND + HEAT TRANSFER -->
+<div class="page page-break">
+<div class="sec-head">7. Sound — Properties &amp; Applications <span class="te">ధ్వని — లక్షణాలు మరియు అనువర్తనాలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Speed of Sound (Q31):</strong> Fastest in solids → liquids → gases. In air ≈ 343 m/s; Water ≈ 1500 m/s; Steel ≈ 5960 m/s. Sound cannot travel in vacuum.<br>
+    <strong>Frequency formula (Q15):</strong> f = 1/T. Period 0.01 s → f = 100 Hz. Audible range: 20 Hz – 20,000 Hz.<br>
+    <strong>Infrasound:</strong> &lt;20 Hz (elephants, whales). <strong>Ultrasound:</strong> &gt;20,000 Hz (bats, SONAR, medical imaging 2–20 MHz).<br>
+    <strong>Echo (Q33):</strong> Reflection of sound. Min distance for echo = 17.2 m (persistence of hearing = 0.1 s). Reverberation = multiple echoes in enclosed space.<br>
+    <strong>Intensity (Q18):</strong> Sound energy per sec per unit area (W/m²) — objective. Loudness — subjective perception (dB).
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>ధ్వని వేగం (Q31):</strong> ఘనాలలో > ద్రవాలలో > వాయువులలో. ఉక్కు ≈ 5960 m/s; నీరు ≈ 1500 m/s; గాలి ≈ 343 m/s. శూన్యంలో ప్రయాణించదు.<br>
+    <strong>పౌనఃపున్యం (Q15):</strong> f = 1/T. T = 0.01 సె → f = 100 Hz. వినగలిగే పరిధి: 20 Hz – 20,000 Hz.<br>
+    <strong>ప్రతిధ్వని (Q33):</strong> ధ్వని పరావర్తనం. కనీస దూరం 17.2 మీ. రివర్బరేషన్ = మూసిన స్థలంలో బహుళ ప్రతిధ్వనులు.<br>
+    <strong>తీవ్రత (Q18):</strong> ప్రమాణ వైశాల్యంలో సెకనుకు ప్రవహించే ధ్వని శక్తి (W/m²) — వస్తుగతం. శబ్ద పెద్దదనం — వ్యక్తిగతం (dB).
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Sound Energy Conversions:</strong><br>
+    • Microphone (Q35): Sound (mechanical) → Electrical energy<br>
+    • Loudspeaker: Electrical → Sound (reverse of microphone)<br>
+    • Gramophone: Mechanical groove vibrations → Sound<br>
+    <strong>Shrill Voice (Q36):</strong> Women have shorter, thinner vocal cords → higher frequency → higher pitch. Men have longer, thicker cords → lower pitch.<br>
+    <strong>Wavefront (Q34):</strong> Point source in isotropic medium → Spherical wavefront. At large distance → approximates Plane wavefront.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>ధ్వని శక్తి మార్పులు:</strong><br>
+    • మైక్రోఫోన్ (Q35): ధ్వని → విద్యుత్ శక్తి<br>
+    • లౌడ్ స్పీకర్: విద్యుత్ → ధ్వని (వ్యతిరేకం)<br>
+    <strong>కీచు గొంతు (Q36):</strong> స్త్రీల స్వరతంత్రులు పొట్టిగా → అధిక పౌనఃపున్యం → కీచు స్వరం.<br>
+    <strong>తరంగాగ్రం (Q34):</strong> బిందు మూలం → గోళాకార తరంగాగ్రం. దూరంలో → సమతల తరంగాగ్రం.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Conductors vs Insulators (Q47):</strong><br>
+    • <strong>Conductors:</strong> Allow electricity to flow freely — have free electrons.<br>
+    &nbsp;&nbsp;Examples: <strong>Copper, Aluminium, Silver, Mercury, Iron, Gold</strong><br>
+    • <strong>Insulators:</strong> Do NOT allow electricity to flow — no free electrons.<br>
+    &nbsp;&nbsp;Examples: <strong>Wood, Rubber, Glass, Plastic, Ceramic, Paper, Dry air</strong><br>
+    • <strong>Semiconductors:</strong> In between (Silicon, Germanium) — conductivity varies with conditions.<br>
+    <span class="exam-tag">TRAP</span> Mercury is a metal AND a conductor (liquid at room temp). Pure water = insulator; salt water = conductor (ions carry current). Wood = insulator even though it is a solid.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>వాహకాలు vs అవాహకాలు (Q47):</strong><br>
+    • <strong>వాహకాలు (Conductors):</strong> విద్యుత్ ప్రవహించనిస్తాయి — స్వేచ్ఛా ఎలక్ట్రాన్లు కలిగి ఉంటాయి.<br>
+    &nbsp;&nbsp;ఉదాహరణలు: <strong>రాగి, అల్యూమినియం, వెండి, పాదరసం, ఇనుము, బంగారం</strong><br>
+    • <strong>అవాహకాలు (Insulators):</strong> విద్యుత్ ప్రవహించవు — స్వేచ్ఛా ఎలక్ట్రాన్లు లేవు.<br>
+    &nbsp;&nbsp;ఉదాహరణలు: <strong>చెక్క, రబ్బర్, గాజు, ప్లాస్టిక్, సిరామిక్, కాగితం</strong><br>
+    <span class="exam-tag">TRAP</span> పాదరసం ద్రవ లోహం అయినా వాహకమే. స్వచ్ఛమైన నీరు = అవాహకం; ఉప్పు నీరు = వాహకం. చెక్క ఘనపదార్థమైనా అవాహకమే.
+  </div>
+</div>
+
+<div class="sec-head">8. Heat Transfer &amp; Radiation Properties <span class="te">ఉష్ణ బదిలీ మరియు వికిరణ లక్షణాలు</span></div>
+
+<div class="cols-2">
+<table>
+<tr><th>Heat Transfer / ఉష్ణ బదిలీ</th><th>Description</th></tr>
+<tr><td><strong>Conduction</strong><br><span class="te-td">వాహనం</span></td><td>Through solid physical contact<br><span class="te-td">ఘన పదార్థాల స్పర్శ ద్వారా</span></td></tr>
+<tr><td><strong>Convection</strong><br><span class="te-td">సంవహనం</span></td><td>Through fluid movement (liquid/gas)<br><span class="te-td">ద్రవం/వాయువు కదలిక ద్వారా</span></td></tr>
+<tr><td><strong>Radiation</strong><br><span class="te-td">వికిరణం</span></td><td>EM waves — no medium needed (Sun→Earth)<br><span class="te-td">యానకం అవసరం లేదు — సూర్యుడు→భూమి</span></td></tr>
+</table>
+<table>
+<tr><th>Property / లక్షణం</th><th>Value / విలువ</th></tr>
+<tr><td>Silver thermal conductivity<br><span class="te-td">వెండి ఉష్ణ వాహకత</span></td><td><strong>429 W/m·K</strong> (highest metal)</td></tr>
+<tr><td>Copper thermal conductivity<br><span class="te-td">రాగి</span></td><td>401 W/m·K</td></tr>
+<tr><td>Fresh water freezing point<br><span class="te-td">స్వచ్ఛ నీటి ఘనీభవన స్థానం</span></td><td><strong>0°C</strong> (max density at 4°C)</td></tr>
+<tr><td>Steam latent heat<br><span class="te-td">ఆవిరి గుప్తోష్ణం</span></td><td>≈ 2260 kJ/kg (burns more than water)</td></tr>
+</table>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English</span>
+    <strong>Steam burns more (Q43):</strong> Steam at 100°C contains extra latent heat of vaporization (≈2260 kJ/kg). When steam condenses on skin, it releases this latent heat PLUS sensible heat — causing more severe burns than boiling water at same temperature.<br>
+    <strong>Gas Flame Zones (Q46):</strong> Innermost = Dark zone (coldest, unburnt gas); Middle = Luminous zone (yellow, partial combustion); Outer = Non-luminous zone (blue, complete combustion = HOTTEST). Goldsmiths use the outer non-luminous zone.<br>
+    <strong>RADAR (Q41):</strong> Radio Detection And Ranging. Emits microwave pulses → detects reflected echoes → determines distance/direction of objects. SONAR (submarines) uses ultrasound instead.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు</span>
+    <strong>ఆవిరి మరింత గాయం (Q43):</strong> 100°C ఆవిరి అదనంగా వాష్పీభవన గుప్తోష్ణం (≈2260 kJ/kg) కలిగి ఉంటుంది — అందుకే మరుగుతున్న నీటి కంటే తీవ్రమైన గాయం చేస్తుంది.<br>
+    <strong>గ్యాస్ మంట జోన్లు (Q46):</strong> లోపల = డార్క్ జోన్ (చల్లగా); మధ్య = ల్యూమినస్ జోన్ (పాక్షిక దహనం); బయట = నాన్-ల్యూమినస్ జోన్ (సంపూర్ణ దహనం, అత్యంత వేడి).<br>
+    <strong>రాడార్ (Q41):</strong> మైక్రోవేవ్ పంపి ప్రతిఫలనం ద్వారా వస్తువు దూరం/దిశ కనుగొంటుంది. SONAR = అతిధ్వని (జలాంతర్గాములు).
+  </div>
+</div>
+</div>
+
+
+<!-- PAGE 5: TRAP SHEET + PYQ + MEMORY BOX -->
+<div class="page">
+<div class="sec-head">9. Trap Sheet — Common Exam Mistakes <span class="te">సాధారణ పరీక్షా తప్పులు</span></div>
+
+<table>
+<tr><th>Wrong Answer (తప్పు)</th><th>Correct Answer (సరైనది)</th></tr>
+<tr><td>Sound is a transverse wave</td><td><strong>Sound in air is LONGITUDINAL</strong> (compression/rarefaction). Light is transverse.</td></tr>
+<tr><td>Red light deviates most in prism</td><td><strong>Violet deviates MOST; Red deviates LEAST.</strong> VIBGYOR order from most to least deviation.</td></tr>
+<tr><td>Rainbow = only refraction</td><td><strong>Rainbow = Reflection + Refraction + Dispersion</strong> in water droplets. Exam answer: Reflection and Refraction.</td></tr>
+<tr><td>Sky is blue due to reflection</td><td><strong>Blue sky = Rayleigh scattering</strong> (blue light, short λ, scatters ~10× more than red).</td></tr>
+<tr><td>Mirage = diffraction</td><td><strong>Mirage = Total Internal Reflection</strong> (hot ground air has lower n; light bends back up).</td></tr>
+<tr><td>Optical fibre = refraction</td><td><strong>Optical fibre = Total Internal Reflection (TIR)</strong>. Core denser than cladding.</td></tr>
+<tr><td>Rear-view mirror = concave</td><td><strong>Rear-view mirror = Convex</strong> (wide field of view). Headlights/shaving = Concave.</td></tr>
+<tr><td>Myopia corrected by convex lens</td><td><strong>Myopia → Concave lens.</strong> Hypermetropia → Convex lens. (Myo → Minus/Concave)</td></tr>
+<tr><td>Colour blindness = can't see any colour</td><td><strong>Colour blindness = cannot distinguish Red and Green</strong> (most common type; X-linked recessive).</td></tr>
+<tr><td>Red + Green = White</td><td><strong>Red + Green = Yellow.</strong> R+G+B = White. Yellow + Blue = White (complementary).</td></tr>
+<tr><td>X-rays have low penetrating power</td><td><strong>X-rays have HIGH penetrating power</strong> — pass through soft tissue, absorbed by bones.</td></tr>
+<tr><td>Sound travels fastest in air</td><td><strong>Sound fastest in Steel</strong> (5960 m/s). Air ≈ 343 m/s. Sound cannot travel in vacuum.</td></tr>
+<tr><td>Microphone = electrical to sound</td><td><strong>Microphone = Sound → Electrical.</strong> Loudspeaker = Electrical → Sound (reverse).</td></tr>
+<tr><td>Luminous zone = hottest part of flame</td><td><strong>Non-luminous zone = HOTTEST</strong> (complete combustion, outer blue zone).</td></tr>
+<tr><td>Freezing point = 4°C</td><td><strong>Freezing point of fresh water = 0°C.</strong> Maximum density = 4°C (different concept).</td></tr>
+<tr><td>Copper = highest thermal conductivity</td><td><strong>Silver has highest thermal conductivity</strong> (429 W/m·K). Copper = 401, used as it's cheaper.</td></tr>
+<tr><td>Mercury is an insulator (it's a liquid)</td><td><strong>Mercury is a CONDUCTOR</strong> — it is a liquid metal with free electrons. Wood, rubber, glass, plastic = insulators.</td></tr>
+<tr><td>Pure water is a good conductor</td><td><strong>Pure water is an insulator.</strong> Salt (impure) water conducts because dissolved ions carry current.</td></tr>
+</table>
+
+<div class="sec-head">10. Previous Year Questions (Set 8) <span class="te">మునుపటి సంవత్సర ప్రశ్నలు</span></div>
+
+<div class="cols-2">
+<div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q1</span> Sound wave in air?</div><div class="pyq-a">✅ Longitudinal (not transverse)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q2</span> Colour deviating least in prism?</div><div class="pyq-a">✅ Red (longest λ, lowest n)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q4</span> Sky appears blue due to?</div><div class="pyq-a">✅ Rayleigh scattering (1/λ⁴)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q5</span> Mirage caused by?</div><div class="pyq-a">✅ Total Internal Reflection</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q6</span> Optical fibre works on?</div><div class="pyq-a">✅ Total Internal Reflection</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q10</span> Rear-view mirror type?</div><div class="pyq-a">✅ Convex Mirror (wide field)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q13</span> Headlights use?</div><div class="pyq-a">✅ Concave (Parabolic) Mirror</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q15</span> Period 0.01s → frequency?</div><div class="pyq-a">✅ 100 Hz (f = 1/T)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q22</span> Eye max sensitivity?</div><div class="pyq-a">✅ Green region (≈555 nm)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q23</span> Hypermetropia correction?</div><div class="pyq-a">✅ Convex lens (+ve power)</div></div>
+</div>
+<div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q24</span> Myopia correction?</div><div class="pyq-a">✅ Concave lens (−ve power)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q25</span> Complementary colour of Yellow?</div><div class="pyq-a">✅ Blue (Yellow+Blue=White)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q29</span> Red + Green = ?</div><div class="pyq-a">✅ Yellow (additive mixing)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q31</span> Sound fastest in?</div><div class="pyq-a">✅ Steel (5960 m/s)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q37</span> Lowest frequency among options?</div><div class="pyq-a">✅ Visible Ray (lowest among Visible/UV/X-ray/Gamma)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q42</span> Highest frequency waves?</div><div class="pyq-a">✅ Gamma rays (&gt;10¹⁸ Hz)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q43</span> Causes more burn?</div><div class="pyq-a">✅ Steam (latent heat ≈2260 kJ/kg)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q44</span> Max thermal conductivity metal?</div><div class="pyq-a">✅ Silver (429 W/m·K)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q46</span> Hottest part of gas flame?</div><div class="pyq-a">✅ Non-luminous zone (outer blue, complete combustion)</div></div>
+<div class="pyq-item"><div class="pyq-q"><span class="pyq-num">Q50</span> Star colour determined by?</div><div class="pyq-a">✅ Temperature (Wien's law: blue=hot, red=cool)</div></div>
+</div>
+</div>
+
+<div class="memory-box">
+  <div class="mem-title">🧠 MASTER MEMORY BOX — Set 8 One-Liners</div>
+  <ul>
+  <li>Sound = Longitudinal wave | Light = Transverse EM wave | Sound needs medium; Light travels in vacuum</li>
+  <li>EM Spectrum (low→high freq): R M I V U X G (Radio Micro IR Visible UV X-ray Gamma)</li>
+  <li>Gamma = highest freq, shortest λ, highest energy | Visible = lowest freq among V/UV/X/G options</li>
+  <li>TIR applications: Optical fibre (comm), Mirage (hot ground), Diamond brilliance, Periscope prisms</li>
+  <li>Rainbow = Reflection + Refraction + Dispersion in water droplets | Red deviates least in prism</li>
+  <li>Blue sky = Rayleigh scattering (1/λ⁴) | Sunset red = blue scattered away along longer path</li>
+  <li>Concave mirror: ENT doctor, shaving mirror, headlights, searchlights | Convex mirror: rear-view</li>
+  <li>Myopia → Concave lens (image in front) | Hypermetropia → Convex lens (image behind)</li>
+  <li>Least distinct vision = 25 cm | Eye max sensitivity = green (555 nm) | Colour blindness = red-green</li>
+  <li>Additive mixing: R+G=Yellow | R+B=Magenta | G+B=Cyan | R+G+B=White | Yellow+Blue=White</li>
+  <li>Sound: Steel(5960) > Water(1500) > Air(343) m/s | f=1/T: T=0.01s → f=100 Hz</li>
+  <li>Echo = sound reflection (min 17.2 m) | Sonography = ultrasound (>20kHz, medical 2-20 MHz)</li>
+  <li>Microphone: sound→electrical | Loudspeaker: electrical→sound | Radar = microwave | SONAR = ultrasound</li>
+  <li>Heat transfer: Conduction (solids) + Convection (fluids) + Radiation (EM waves, no medium)</li>
+  <li>Silver = max thermal conductivity (429 W/m·K) > Copper (401) > Al (237) > Fe (80)</li>
+  <li>Steam burns more (latent heat 2260 kJ/kg) | Non-luminous zone = hottest flame | 0°C = water freezes; 4°C = max density</li>
+  <li>Star colour = temperature (Wien's law): Blue&gt;10000K, Yellow~5778K (Sun), Red&lt;5000K</li>
+  <li>Conductors: Copper, Al, Silver, Mercury, Iron (free electrons) | Insulators: Wood, Rubber, Glass, Plastic, Ceramic</li>
+  <li>Pure water = insulator | Salt water = conductor (ions) | Mercury = liquid metal = conductor</li>
+  </ul>
+  <span class="te-tag">తెలుగు</span> ధ్వని = అనుదైర్ఘ్య | కాంతి = తిర్యక్ EM | TIR → ఆప్టికల్ ఫైబర్, ఎండమావులు | ఎరుపు = తక్కువ విచలనం | హ్రస్వదృష్టి → పుటాకార | దీర్ఘదృష్టి → కుంభాకార | వెండి = గరిష్ట ఉష్ణ వాహకత | నాన్-ల్యూమినస్ జోన్ = వేడిగా | నక్షత్ర రంగు = ఉష్ణోగ్రత
+</div>
+</div>
+
+</body>
+</html>
