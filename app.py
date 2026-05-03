@@ -406,6 +406,21 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed General Science MCQs (Set 11 + Set 12 = 100 Qs) ──
+    try:
+        cur_sci = db_exec(conn, "SELECT COUNT(*) FROM questions WHERE topic='General_Science'")
+        sci_count = _fv(cur_sci.fetchone())
+        if sci_count < 100:
+            print(f"[startup] General Science: {sci_count}/100 MCQs — auto-seeding...")
+            _auto_seed_science()
+            print("[startup] General Science auto-seed complete.")
+        else:
+            print(f"[startup] General Science: {sci_count} MCQs — fully loaded.")
+    except Exception as _sci_e:
+        print(f"[startup] General Science seed check error: {_sci_e}")
+        try: conn.rollback()
+        except: pass
+
     conn.close()
 
 
@@ -601,6 +616,54 @@ def _auto_seed_polity():
             print(f"[polity-seed] ch{ch_num} — seed file not yet created, skipping.")
         except Exception as e:
             print(f"[polity-seed] ch{ch_num} error: {e}")
+        finally:
+            try: c.close()
+            except: pass
+
+
+def _auto_seed_science():
+    """Load General Science MCQs from seed_science_set11/12_bilingual into the questions table.
+
+    The seed scripts ship as standalone sqlite scripts but their `questions` list
+    is module-level data. We import them, read the list, and INSERT via db_exec
+    so this works on both SQLite (local) and PostgreSQL (Render).
+    Each tuple is (q_text, opt_a, opt_b, opt_c, opt_d, correct, difficulty, explanation, q_order).
+    """
+    import importlib
+    ph = '%s' if USE_POSTGRES else '?'
+    sets = [
+        ('seed_science_set11_bilingual', 'Science_Set11_Human_System2'),
+        ('seed_science_set12_bilingual', 'Science_Set12_Human_System3'),
+    ]
+    for mod_name, source in sets:
+        c = get_db()
+        try:
+            mod = importlib.import_module(mod_name)
+            qs = getattr(mod, 'questions', None)
+            if not qs:
+                print(f"[sci-seed] {mod_name}: no `questions` list, skipping.")
+                continue
+            db_exec(c, f"DELETE FROM questions WHERE source_file={ph}", (source,))
+            sql = (
+                f"INSERT INTO questions "
+                f"(folder, topic, source_file, question_text, "
+                f" option_a, option_b, option_c, option_d, "
+                f" correct_answer, difficulty, explanation, question_order) "
+                f"VALUES ('GK','General_Science',{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
+            )
+            inserted = 0
+            for q in qs:
+                if len(q) < 9:
+                    continue
+                params = (source,) + tuple(q[:9])
+                db_exec(c, sql, params)
+                inserted += 1
+            c.commit()
+            print(f"[sci-seed] {mod_name}: inserted {inserted} MCQs (source={source}).")
+        except Exception as e:
+            print(f"[sci-seed] {mod_name} error: {e}")
+            try: c.rollback()
+            except: pass
         finally:
             try: c.close()
             except: pass
@@ -1995,7 +2058,6 @@ def read_notes_home():
                 groups.append(group)
 
     return render_template('read_notes.html', groups=groups)
-
 
 
 @app.route('/api/notes/add', methods=['POST'])
