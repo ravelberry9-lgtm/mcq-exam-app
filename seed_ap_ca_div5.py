@@ -253,7 +253,7 @@ def _seed_ap_ca_div5_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=
     if not row:
         print("[div5-mcqs] study_note not found — skipping")
         return
-    note_id = row[0]
+    note_id = row_to_dict(row)['id']
     cur2 = db_exec(conn, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
     count = cur2.fetchone()[0]
     if count > 0 and not force:

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch 10 — Human System | General Science</title>
+<style>
+:root{--pri:#0d2346;--acc:#1565c0;--acc2:#0288d1;--bg:#e8f0fe;--bg2:#f0f7ff;--en-border:#1565c0;--te-border:#6a1b9a;--shock:#b71c1c;--exam:#e65100;--mem:#1b5e20;--hi:#4a148c;}
+@page{size:A4;margin:14mm 13mm 14mm 13mm;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.2pt;line-height:1.45;color:#1a1a2e;background:#fff;}
+.page{width:184mm;min-height:267mm;padding:6mm 0;position:relative;}
+.page-break{page-break-after:always;break-after:page;}
+.cover{background:linear-gradient(135deg,var(--pri) 0%,#1a237e 60%,#283593 100%);color:#fff;border-radius:6px;padding:12mm 12mm 9mm;text-align:center;margin-bottom:5mm;}
+.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:7.5pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3mm;}
+.cover h1{font-size:18pt;font-weight:800;letter-spacing:-0.3px;margin-bottom:2mm;}
+.cover h1 span{color:#90caf9;}
+.cover h2{font-size:10.5pt;font-weight:400;color:#bbdefb;margin-bottom:2mm;}
+.cover-te{font-size:9.5pt;color:#90caf9;margin-bottom:2mm;}
+.cover-meta{display:flex;justify-content:center;gap:14px;font-size:7.8pt;color:#bbdefb;flex-wrap:wrap;margin-top:2mm;}
+.cover-meta span{background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 10px;}
+.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:4px 10px;font-size:7.5pt;color:#e3f2fd;margin-top:3mm;line-height:1.8;}
+.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:9.5pt;font-weight:700;margin:4mm 0 2mm;letter-spacing:0.3px;display:flex;justify-content:space-between;align-items:center;}
+.sec-head .te{font-size:8pt;font-weight:400;color:#90caf9;}
+.bilingual{border:1px solid #b0bec5;border-radius:5px;margin-bottom:3mm;overflow:hidden;}
+.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:5px 8px;font-size:8.5pt;line-height:1.5;}
+.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:5px 8px;font-size:8.3pt;line-height:1.5;color:#4a148c;}
+.lang-tag{display:inline-block;font-size:6.8pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-bottom:3px;}
+.bi-en .lang-tag{background:var(--en-border);color:#fff;}
+.bi-te .lang-tag{background:var(--te-border);color:#fff;}
+.shock-box{border:2px solid var(--shock);background:#fff3f3;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.shock-box .shock-title{color:var(--shock);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.exam-tag{background:#b71c1c;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px;}
+.te-tag{background:#6a1b9a;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;}
+table{width:100%;border-collapse:collapse;font-size:8.3pt;margin-bottom:3mm;}
+th{background:var(--pri);color:#fff;padding:4px 7px;text-align:left;font-weight:600;font-size:8pt;}
+td{padding:3px 7px;border:1px solid #cfd8dc;vertical-align:top;}
+tr:nth-child(even) td{background:#f0f7ff;}
+.te-td{display:block;color:#6a1b9a;font-size:7.6pt;margin-top:1px;}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:3mm;}
+.pyq-item{background:#f0f7ff;border-left:3px solid var(--acc);padding:4px 8px;margin-bottom:2mm;border-radius:3px;font-size:8.2pt;page-break-inside:avoid;}
+.pyq-q{font-weight:600;color:var(--pri);}
+.pyq-num{background:var(--acc);color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:4px;}
+.pyq-a{color:var(--shock);font-weight:700;}
+ul{padding-left:16px;margin-bottom:2mm;}
+li{margin-bottom:2px;font-size:8.4pt;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER + ENDOCRINE GLANDS MASTER TABLE + HORMONE PAIRS -->
+<div class="page page-break">
+<div class="cover">
+  <div class="cover-tag">General Science · Model Set 10</div>
+  <h1>Human <span>System</span></h1>
+  <h2>Model Set 10 — 50 MCQs Comprehensive Guide</h2>
+  <div class="cover-te">మానవ వ్యవస్థ · ద్విభాష అధ్యయన గమనికలు</div>
+  <div class="cover-meta">
+    <span>📄 5 Pages A4</span>
+    <span>❓ 50 MCQs</span>
+    <span>🫀 Endocrine · Blood · Nervous · Eye · Digestive</span>
+    <span>🎯 APPSC / UPSC</span>
+  </div>
+  <div class="topics-bar">
+    Topics: Endocrine Glands · Hormones · Blood Groups · Clotting · Nervous System · Reflex Arc · Eye Defects · Digestive System · Genetics · Human Body Facts<br>
+    విషయాలు: అంతర్గ్రంథులు · హార్మోన్లు · రక్తపు గ్రూపులు · రక్తం గడ్డకట్టడం · నాడీ వ్యవస్థ · దృష్టి లోపాలు · జీర్ణ వ్యవస్థ · జన్యుశాస్త్రం
+  </div>
+</div>
+
+<div class="sec-head">🔬 Endocrine Glands — Master Table <span class="te">అంతర్గ్రంథులు — మాస్టర్ పట్టిక</span></div>
+<table>
+  <tr><th>Gland / గ్రంథి</th><th>Location / స్థానం</th><th>Key Hormones / హార్మోన్లు</th><th>Disorder / రుగ్మత</th></tr>
+  <tr>
+    <td><b>Pituitary</b><span class="te-td">పిట్యూటరీ (పీయూష)</span></td>
+    <td>Base of brain, sella turcica<span class="te-td">మెదడు దిగువ</span></td>
+    <td>GH, FSH, LH, TSH, ACTH, Oxytocin, ADH<span class="te-td">GH, FSH, LH, TSH, ACTH, ఆక్సిటోసిన్, ADH</span></td>
+    <td>GH↑ → Gigantism (child) / Acromegaly (adult); ADH absent → Diabetes insipidus (polyuria, up to 20L/day)<span class="te-td">GH↑ → జైగాంటిజం / ఆక్రోమెగాలీ; ADH↓ → డయాబెటిస్ ఇన్‌సిపిడస్ (అతి మూత్రం/polyuria, 20L/రోజు వరకు)</span></td>
+  </tr>
+  <tr>
+    <td><b>Thyroid</b><span class="te-td">థైరాయిడ్</span></td>
+    <td>Neck (trachea)<span class="te-td">మెడ (శ్వాసనాళం దగ్గర)</span></td>
+    <td>Thyroxine (T4), T3, Calcitonin<span class="te-td">థైరాక్సిన్ (T4), T3, కాల్సిటోనిన్</span></td>
+    <td>↓ → Hypothyroidism, Goiter; ↑ → Hyperthyroidism<span class="te-td">↓ → హైపోథైరాయిడిజం, గాయిటర్; ↑ → హైపర్‌థైరాయిడిజం</span></td>
+  </tr>
+  <tr>
+    <td><b>Parathyroid</b><span class="te-td">పారాథైరాయిడ్</span></td>
+    <td>Behind thyroid (4 glands)<span class="te-td">థైరాయిడ్ వెనుక (4 గ్రంథులు)</span></td>
+    <td>PTH (Parathyroid hormone)<span class="te-td">PTH (పారాథైరాయిడ్ హార్మోన్)</span></td>
+    <td>PTH regulates Ca²⁺ &amp; phosphate<span class="te-td">PTH: Ca²⁺ మరియు ఫాస్ఫేట్ నియంత్రణ</span></td>
+  </tr>
+  <tr>
+    <td><b>Adrenal</b><span class="te-td">అడ్రినల్ (అధివృక్క)</span></td>
+    <td>Above kidneys<span class="te-td">మూత్రపిండాల పై</span></td>
+    <td>Medulla: Adrenaline, Noradrenaline; Cortex: Cortisol, Aldosterone<span class="te-td">అడ్రినలిన్; కార్టిసాల్, అల్డోస్టిరాన్</span></td>
+    <td>Controls BP &amp; stress response<span class="te-td">BP, ఒత్తిడి నియంత్రణ</span></td>
+  </tr>
+  <tr>
+    <td><b>Pancreas</b><span class="te-td">క్లోమం (ప్యాంక్రియాస్)</span></td>
+    <td>Abdomen (behind stomach)<span class="te-td">ఉదరంలో జీర్ణాశయం వెనుక</span></td>
+    <td>Insulin (β cells), Glucagon (α cells)<span class="te-td">ఇన్సులిన్ (β కణాలు), గ్లుకగాన్ (α కణాలు)</span></td>
+    <td>Insulin↓ → Diabetes mellitus<span class="te-td">ఇన్సులిన్↓ → డయాబెటిస్ మెల్లిటస్</span></td>
+  </tr>
+  <tr>
+    <td><b>Pineal</b><span class="te-td">పీనియల్ గ్రంథి</span></td>
+    <td>Epithalamus (brain)<span class="te-td">మెదడులో ఎపిథాలమస్</span></td>
+    <td>Melatonin<span class="te-td">మెలటోనిన్</span></td>
+    <td>Smallest endocrine gland (~150 mg); secretes Melatonin → regulates circadian rhythm/sleep-wake cycle<span class="te-td">అత్యంత చిన్న అంతర్గ్రంథి (~150 mg); మెలటోనిన్ → సర్కేడియన్ లయ/నిద్ర-మేల్కొనే చక్రం నియంత్రణ</span></td>
+  </tr>
+  <tr>
+    <td><b>Thymus</b><span class="te-td">థైమస్ (బాల గ్రంథి)</span></td>
+    <td>Chest (mediastinum)<span class="te-td">ఉరస్సులో మధ్యాంతరంలో</span></td>
+    <td>Thymosin<span class="te-td">థైమోసిన్</span></td>
+    <td>T-cell maturation; shrinks after puberty<span class="te-td">T-కణాల పరిపక్వత; యుక్తవయసు తర్వాత చిన్నదవుతుంది</span></td>
+  </tr>
+</table>
+
+<div class="shock-box">
+  <div class="shock-title">⚡ Q1 TRAP — Gland–Hormone Matching</div>
+  <b>FSH → Pituitary ✓</b> | <b>Somatotropic (GH) → Pituitary</b> (NOT thyroid ✗) | <b>Thyroxine → Thyroid</b> (NOT parathyroid ✗) | <b>PTH → Parathyroid</b><br>
+  <span style="color:#6a1b9a">FSH → పిట్యూటరీ ✓ | GH (సోమాటోట్రోపిక్) → పిట్యూటరీ (థైరాయిడ్ కాదు ✗) | థైరాక్సిన్ → థైరాయిడ్ (పారాథైరాయిడ్ కాదు ✗) | PTH → పారాథైరాయిడ్</span>
+</div>
+</div><!-- end page 1 -->
+
+<!-- PAGE 2: BLOOD SYSTEM -->
+<div class="page page-break">
+<div class="sec-head">🩸 Blood System — Complete Guide <span class="te">రక్త వ్యవస్థ</span></div>
+
+<div class="cols-2">
+<div>
+<table>
+  <tr><th colspan="2">Blood Components / రక్త భాగాలు</th></tr>
+  <tr><td><b>RBC</b> (Erythrocytes)<span class="te-td">ఎర్ర రక్త కణాలు</span></td><td>Carry O₂ (Hb); lifespan 120 days; destroyed in Spleen<span class="te-td">O₂ తీసుకువెళతాయి; ప్లీహంలో నాశనం</span></td></tr>
+  <tr><td><b>WBC</b> (Leukocytes)<span class="te-td">తెల్ల రక్త కణాలు</span></td><td>Immunity; phagocytosis; 5,000–10,000/mm³<span class="te-td">రక్షణ; ఫాగోసైటోసిస్</span></td></tr>
+  <tr><td><b>Platelets</b> (Thrombocytes)<span class="te-td">రక్త ఫలకికలు</span></td><td>Blood clotting; lifespan 7–10 days<span class="te-td">రక్తం గడ్డకట్టడం; 7-10 రోజులు</span></td></tr>
+  <tr><td><b>Plasma</b><span class="te-td">ప్లాస్మా</span></td><td>55% of blood; transports nutrients, hormones, CO₂<span class="te-td">పోషకాలు, హార్మోన్లు రవాణా</span></td></tr>
+</table>
+</div>
+<div>
+<table>
+  <tr><th colspan="3">ABO Blood Groups / రక్తపు గ్రూపులు</th></tr>
+  <tr><th>Group</th><th>Antigen on RBC</th><th>Antibody in Plasma</th></tr>
+  <tr><td><b>A</b></td><td>A antigen</td><td>Anti-B</td></tr>
+  <tr><td><b>B</b></td><td>B antigen</td><td>Anti-A</td></tr>
+  <tr><td><b>AB</b></td><td>A + B antigens</td><td>NONE → Universal Recipient</td></tr>
+  <tr><td><b>O</b></td><td>None</td><td>Anti-A + Anti-B → Universal Donor</td></tr>
+</table>
+</div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Blood Clotting Key Facts (Q8, Q27, Q48):</b><br>
+  • Essential for clotting: PLATELETS + Clotting factors (I–XIII, Factor VI excluded = 13 factors) + Calcium ions + Vitamin K<br>
+  • Heparin = natural anticoagulant; produced by mast cells &amp; liver → prevents clotting INSIDE blood vessels<br>
+  • Fibrin forms the clot meshwork; Prothrombin (Factor II) → Thrombin → Fibrinogen → Fibrin<br>
+  • Thrombosis = clot in blood vessel (pathological); Thrombus → Embolus → Embolism<br>
+  • Vitamin K deficiency → clotting failure; Hemophilia A = Factor VIII deficiency (X-linked recessive)
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>రక్తం గడ్డకట్టే ముఖ్యమైన విషయాలు:</b><br>
+  • అవసరం: ఫలకికలు + రక్తం గడ్డకట్టే కారకాలు (13, Factor VI మినహాయించి) + Ca²⁺ + విటమిన్ K<br>
+  • హెపారిన్: మాస్ట్ కణాలు + కాలేయం; రక్తనాళాల లోపల గడ్డకట్టకుండా నిరోధిస్తుంది<br>
+  • థ్రాంబోసిస్ = రక్తనాళంలో గడ్డకట్టడం; థ్రాంబస్ → ఎంబోలస్ → ఎంబోలిజం<br>
+  • హిమోఫిలియా A = Factor VIII లోపం (X-linked recessive)
+  </div>
+</div>
+
+<div class="cols-2">
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>CO vs CO₂ with Hemoglobin (Q36):</b><br>
+  • CO + Hb → <b>Carboxyhemoglobin (HbCO)</b> — IRREVERSIBLE (200× affinity of O₂) → CO poisoning → tissue hypoxia → death<br>
+  • CO₂ + Hb → <b>Carbaminohemoglobin</b> — REVERSIBLE → normal CO₂ transport<br>
+  • CO = colorless, odorless gas; from incomplete combustion
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  CO + హిమోగ్లోబిన్ = కార్బాక్సీహిమోగ్లోబిన్ (తిరిగి వేరుకాదు) → CO విషం<br>
+  CO₂ + హిమోగ్లోబిన్ = కార్బామినోహిమోగ్లోబిన్ (వేరుపడుతుంది) → సాధారణ CO₂ రవాణా
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Rh Factor (Q26) &amp; Blood Genetics (Q35, Q39):</b><br>
+  • Rh detection = IMMUNOLOGIC reaction (antigen-antibody agglutination)<br>
+  • Blood group controlled by GENES (ABO gene, chromosome 9); Iᴬ, Iᴮ codominant; i recessive<br>
+  • Q39: Father A (Iᴬi) × Mother O (ii) → offspring Iᴬi (A) or ii (O) → Son can be A or O; B/AB impossible
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  Rh గుర్తించడం = రోగనిరోధక చర్య (ఇమ్యునోలాజిక్)<br>
+  రక్తపు గ్రూపు = జన్యువులు (క్రోమోజోమ్ 9); Iᴬ, Iᴮ కోడామినెంట్<br>
+  Q39: తండ్రి A (Iᴬi) × తల్లి O (ii) → కుమారుడు A లేదా O; B/AB సాధ్యం కాదు
+  </div>
+</div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>More Blood Facts (Q6, Q20, Q34, Q46):</b><br>
+  • Urine yellow color = UROCHROME (Urobilin) — pigment from Hb breakdown → Bilirubin → Urobilinogen → Urochrome<br>
+  • Spleen = "graveyard of RBCs" — destroys old RBCs (~120-day lifespan); bone marrow = PRODUCES RBCs<br>
+  • Thrombosis = clot in blood vessel; AB = Universal Recipient (no antibodies in plasma); O = Universal Donor (no antigens on RBC)<br>
+  • Normal body temp: 37°C = <b>310 K</b> (37 + 273); regulated by hypothalamus
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  మూత్రం పసుపు రంగు = యూరోక్రోమ్ (హిమోగ్లోబిన్ విచ్ఛిన్నం నుండి)<br>
+  ప్లీహం = పాత RBC లను నాశనం చేస్తుంది; ఎముక మజ్జ = RBC లను తయారు చేస్తుంది<br>
+  AB = విశ్వ గ్రహీత (యాంటీబాడీలు లేవు); O = విశ్వ దాత (యాంటీజన్లు లేవు)<br>
+  శరీర ఉష్ణోగ్రత: 37°C = 310 K; హైపోథాలమస్ నియంత్రిస్తుంది
+  </div>
+</div>
+</div><!-- end page 2 -->
+
+<!-- PAGE 3: NERVOUS SYSTEM + EYE -->
+<div class="page page-break">
+<div class="sec-head">🧠 Nervous System <span class="te">నాడీ వ్యవస్థ</span></div>
+
+<div class="cols-2">
+<table>
+  <tr><th colspan="2">Brain Parts &amp; Functions / మెదడు భాగాలు</th></tr>
+  <tr><td><b>Cerebrum</b><span class="te-td">సెరిబ్రమ్ (మస్తిష్కం)</span></td><td>Voluntary actions, intelligence, memory<span class="te-td">ఐచ్ఛిక చర్యలు, జ్ఞానం, జ్ఞాపకం</span></td></tr>
+  <tr><td><b>Cerebellum</b><span class="te-td">సెరిబెల్లమ్ (అనుమస్తిష్కం)</span></td><td>Balance, coordination, muscle tone<span class="te-td">సమతుల్యత, సమన్వయం</span></td></tr>
+  <tr><td><b>Medulla oblongata</b><span class="te-td">మజ్జాముఖం</span></td><td>Respiratory center, heartbeat, BP, swallowing<span class="te-td">శ్వాస కేంద్రం, గుండె కొట్టుకోవడం, BP</span></td></tr>
+  <tr><td><b>Hypothalamus</b><span class="te-td">హైపోథాలమస్</span></td><td>Thermoregulation (body temp), hunger, thirst; controls pituitary<span class="te-td">శరీర ఉష్ణోగ్రత, ఆకలి, దాహం; పిట్యూటరీ నియంత్రణ</span></td></tr>
+  <tr><td><b>Pons</b><span class="te-td">పాన్స్</span></td><td>Pneumotaxic center; relay between brain &amp; spinal cord<span class="te-td">శ్వాస లయ నియంత్రణ</span></td></tr>
+  <tr><td><b>Spinal cord</b><span class="te-td">వెన్నుపాము</span></td><td>Reflex center; conducts impulses<span class="te-td">రిఫ్లెక్స్ కేంద్రం; ప్రేరణలను నిర్వహిస్తుంది</span></td></tr>
+</table>
+<div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Reflex Arc (Q16):</b><br>
+  Stimulus → Sensory receptor → Afferent (sensory) nerve → Spinal cord (integration) → Efferent (motor) nerve → Effector (muscle/gland)<br>
+  <span class="exam-tag">EXAM</span> Key says (c) Motor nerves; scientifically, the CONTROL CENTER = Spinal cord (CNS).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  రిఫ్లెక్స్ ఆర్క్: ఉద్దీపన → జ్ఞాన గ్రాహకం → అభివాహి నాడి → వెన్నుపాము → అపవాహి నాడి → చర్య<br>
+  <span class="te-tag">పరీక్ష</span> కీ: (c) చాలక నాడులు; శాస్త్రీయంగా: వెన్నుపాము నియంత్రిస్తుంది
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Alzheimer's (Q4) &amp; Biological Death (Q28):</b><br>
+  • Alzheimer's = degeneration of BRAIN CELLS (neurons) → memory loss, dementia; amyloid plaques &amp; tau tangles<br>
+  • Biological death = death of BRAIN TISSUE; occurs 4–6 min after clinical death; brain cells cannot regenerate
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  అల్జీమర్స్ = మెదడు కణాల క్షీణత → జ్ఞాపకశక్తి కోల్పోవడం<br>
+  జీవ మరణం = మెదడు కణజాలం చనిపోవడం (4-6 నిమిషాలలో)
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Respiratory Center (Q43) &amp; Sound Limit (Q17):</b><br>
+  • Respiratory center = Medulla oblongata (controls rate &amp; depth of breathing)<br>
+  • Max safe sound intensity = <b>85 dB</b> (WHO); beyond this → noise-induced hearing loss (NIHL)
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  శ్వాస కేంద్రం = మజ్జాముఖం; గరిష్ట సురక్షిత ధ్వని = 85 dB<br>
+  85 dB మించిన శబ్దం → వినికిడి నష్టం (NIHL)
+  </div>
+</div>
+</div>
+</div>
+
+<div class="sec-head">👁 Eye — Defects &amp; Corrections <span class="te">కంటి లోపాలు మరియు సరిదిద్దుకోవడం</span></div>
+<table>
+  <tr><th>Defect / లోపం</th><th>Cause / కారణం</th><th>Correction / సరిదిద్దుకోవడం</th><th>Ref</th></tr>
+  <tr>
+    <td><b>Myopia</b> (Shortsightedness)<span class="te-td">హ్రస్వదృష్టి</span></td>
+    <td>Elongation of eyeball; image in front of retina<span class="te-td">కనుగుడ్డు పొడవు పెరగడం</span></td>
+    <td>Concave (diverging) lens; Radial Keratotomy / LASIK<span class="te-td">పుటాకార కటకం</span></td>
+    <td>Q3, Q29</td>
+  </tr>
+  <tr>
+    <td><b>Hypermetropia</b> (Farsightedness)<span class="te-td">దీర్ఘదృష్టి</span></td>
+    <td>Eyeball too short; image behind retina<span class="te-td">కనుగుడ్డు చిన్నది</span></td>
+    <td>Convex (converging) lens<span class="te-td">కుంభాకార కటకం</span></td>
+    <td>—</td>
+  </tr>
+  <tr>
+    <td><b>Presbyopia</b><span class="te-td">వృద్ధులకు దగ్గర దృష్టి</span></td>
+    <td>Loss of lens elasticity (aging)<span class="te-td">వృద్ధాప్యంలో కటకం సామర్థ్యం తగ్గడం</span></td>
+    <td>Bifocal lens (invented by Benjamin Franklin): Upper = concave (far), Lower = convex (near)<span class="te-td">బైఫోకల్ (బెంజమిన్ ఫ్రాంక్లిన్ ఆవిష్కరణ): పై = పుటాకార (దూర దృష్టి), కింది = కుంభాకార (దగ్గర దృష్టి)</span></td>
+    <td>Q11</td>
+  </tr>
+  <tr>
+    <td><b>Color blindness</b><span class="te-td">వర్ణాంధత్వం</span></td>
+    <td>Deficiency of cone photoreceptors (X-linked recessive)<span class="te-td">X-linked recessive జన్యు లోపం</span></td>
+    <td>No cure; Protanopia (red) + Deuteranopia (green) = Red-green<span class="te-td">ప్రోటానోపియా + డ్యూటెరానోపియా = ఎరుపు-ఆకుపచ్చ వర్ణాంధత్వం</span></td>
+    <td>Q14, Q45</td>
+  </tr>
+  <tr>
+    <td><b>Eye color</b><span class="te-td">కళ్ళ రంగు</span></td>
+    <td>Melanin pigment in IRIS determines eye color<span class="te-td">ఐరిస్‌లో మెలనిన్ పరిమాణం బట్టి కళ్ళ రంగు</span></td>
+    <td>More melanin → brown/black; Less → blue/green<span class="te-td">ఎక్కువ మెలనిన్ → నలుపు; తక్కువ → నీలం</span></td>
+    <td>Q12</td>
+  </tr>
+  <tr>
+    <td><b>Stereoscopic vision</b><span class="te-td">స్టీరియోస్కోపిక్ దృష్టి</span></td>
+    <td>Two eyes form slightly different images<span class="te-td">రెండు కళ్ళు వేర్వేరు ప్రతిబింబాలు</span></td>
+    <td>Brain fuses both → 3D/depth perception<span class="te-td">మెదడు కలిపి 3D దృష్టి ఏర్పరుస్తుంది</span></td>
+    <td>Q41</td>
+  </tr>
+</table>
+</div><!-- end page 3 -->
+
+<!-- PAGE 4: DIGESTIVE + REPRODUCTION + MISC -->
+<div class="page page-break">
+<div class="sec-head">🦷 Digestive System &amp; Related <span class="te">జీర్ణ వ్యవస్థ</span></div>
+
+<div class="cols-2">
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Alimentary Canal vs Accessory Organs (Q2):</b><br>
+  <b>Alimentary canal:</b> Mouth → Pharynx → Oesophagus → Stomach → Small intestine → Large intestine (Colon + Rectum) → Anus<br>
+  <b>Accessory organs (NOT part of alimentary canal):</b> Liver, Pancreas, Salivary glands, Gallbladder<br>
+  Saliva: contains Salivary Amylase (Ptyalin) → digests STARCH → Maltose (Q25)
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  ఆహార నాళం: నోరు → ఆహారవాహిక → జీర్ణాశయం → ప్రేగులు → పురీషనాళం<br>
+  అనుబంధ అవయవాలు (ఆహార నాళంలో భాగాలు కావు): కాలేయం, క్లోమం, లాలాజల గ్రంథులు<br>
+  లాలాజలం: సెలైవరీ అమైలేజ్ (టయాలిన్) → పిండిపదార్థం → మాల్టోస్ (Q25)
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Teeth (Q9) &amp; Digestion:</b><br>
+  Tooth roots: Incisor = 1 root | Canine = 1 root | Pre-molar = 1–2 roots | <b>Molar = 2–3 roots</b> (upper molars = 3 roots)<br>
+  Protein digestion = Pepsin (stomach); Fat = Lipase (pancreas/small intestine); Fiber = not digested by humans<br>
+  Adults: 32 teeth (including 4 wisdom teeth)
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  దంత మూలాలు: ఇన్సిజర్/కనైన్ = 1 | ప్రీ-మోలార్ = 1-2 | <b>మోలార్ = 2-3 (పై మోలార్ = 3 మూలాలు)</b><br>
+  ప్రోటీన్లు: పెప్సిన్; కొవ్వులు: లైపేజ్; పిండి: అమైలేజ్<br>
+  పెద్దలు: 32 పళ్ళు (4 అక్కల్ పళ్ళు సహా)
+  </div>
+</div>
+</div>
+
+<div class="sec-head">🧬 Genetics, Reproduction &amp; Body Facts <span class="te">జన్యుశాస్త్రం, పునరుత్పత్తి &amp; శరీర విషయాలు</span></div>
+
+<div class="cols-2">
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Chromosomes &amp; Sex Determination (Q24):</b><br>
+  • Male = 44 autosomes + XY (46,XY) | Female = 44 + XX (46,XX)<br>
+  • Sex determined by father's sperm: X sperm → XX (girl); Y sperm → XY (boy)<br>
+  • Klinefelter (XXY) = male; Turner (XO) = female<br>
+  <b>Amnion (Q22):</b> Innermost extra-embryonic membrane; encloses embryo in amniotic fluid → protects from desiccation &amp; shock
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  పురుషుడు = XY (46 క్రోమోజోమ్లు); స్త్రీ = XX<br>
+  లింగ నిర్ణయం = తండ్రి స్పెర్మ్ పై ఆధారపడుతుంది<br>
+  ఉల్బం (Amnion): పిండాన్ని అమ్నియోటిక్ ద్రవంతో చుట్టి ఎండిపోకుండా రక్షిస్తుంది
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>DNA Complementarity (Q37):</b><br>
+  • Base pairing: A–T (2 H-bonds); G–C (3 H-bonds) — based on hydrogen bonding potential from base specificity<br>
+  • Antiparallel double helix (Watson-Crick, 1953)<br>
+  <b>Natural Auxin (Q10):</b> IAA (Indole-3-Acetic Acid) — natural plant hormone. NAA, IBA, 2,4-D = synthetic auxins.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  DNA పరిపూరకత: A-T (2 హైడ్రోజన్ బంధాలు); G-C (3 హైడ్రోజన్ బంధాలు)<br>
+  వాట్సన్-క్రిక్ నమూనా (1953); యాంటీపేరలల్ డబుల్ హెలిక్స్<br>
+  సహజ ఆక్సిన్ = IAA; NAA, IBA, 2,4-D = సంశ్లేషిత ఆక్సిన్లు
+  </div>
+</div>
+</div>
+
+<table>
+  <tr><th colspan="3">Miscellaneous Human Body Facts / మానవ శరీర ముఖ్య విషయాలు</th></tr>
+  <tr><th>Fact / విషయం</th><th>Details / వివరాలు</th><th>Q</th></tr>
+  <tr><td>Muscles in body<span class="te-td">శరీరంలో కండరాలు</span></td><td>~700 skeletal muscles<span class="te-td">~700 అస్థి కండరాలు</span></td><td>Q19</td></tr>
+  <tr><td>Bones in body<span class="te-td">శరీరంలో ఎముకలు</span></td><td>206 bones in adult<span class="te-td">పెద్దలలో 206 ఎముకలు</span></td><td>—</td></tr>
+  <tr><td>Heart pacemaker<span class="te-td">గుండె పేస్‌మేకర్</span></td><td>SA node (Sinoatrial node) — right atrium; 70–72 bpm<span class="te-td">SA నోడ్ = కుడి కర్ణికలో; 70-72 bpm</span></td><td>Q49</td></tr>
+  <tr><td>Spleen<span class="te-td">ప్లీహం</span></td><td>"Graveyard of RBCs" — destroys old RBCs (120-day lifespan)<span class="te-td">పాత RBC లను నాశనం చేస్తుంది</span></td><td>Q20</td></tr>
+  <tr><td>Voice pitch (Q31)<span class="te-td">గొంతు పిచ్</span></td><td>Women's pitch HIGHER (shorter vocal cords, higher frequency); Men's pitch LOWER<span class="te-td">స్త్రీలు: ఎక్కువ పిచ్ (చిన్న స్వరతంత్రులు); పురుషులు: తక్కువ</span></td><td>Q31</td></tr>
+  <tr><td>Wuchereria bancrofti<span class="te-td">వుచెరేరియా</span></td><td>Lives in LYMPH VESSELS; transmitted by Culex mosquito → Filariasis/Elephantiasis<span class="te-td">శోషరస నాళాలలో నివసిస్తుంది; క్యూలెక్స్ దోమ → ఫైలేరియా</span></td><td>Q30</td></tr>
+  <tr><td>Plasmodium (Q13)<span class="te-td">ప్లాస్మోడియం</span></td><td>Merozoites mature in RBCs → RBCs burst → malaria fever (48–72 hr cycle)<span class="te-td">మెరోజోయిట్లు RBC లలో గుణకారం → RBC లు పగులు → మలేరియా జ్వరం</span></td><td>Q13</td></tr>
+  <tr><td>Detritivores (Q50)<span class="te-td">డెట్రిటివోర్స్</span></td><td>Feed on dead organic matter (detritus): millipedes, woodlice, dung flies, springtails, slugs → recycle nutrients to soil<span class="te-td">చనిపోయిన/కుళ్ళిన సేంద్రీయ పదార్థం (detritus) తినేవి: మిల్లీపెడ్, పేడ ఈగలు, నత్తలు → పోషకాల పునర్వినియోగం</span></td><td>Q50</td></tr>
+  <tr><td>Inner ear (Q21)<span class="te-td">లోపలి చెవి</span></td><td>Without inner ear → CANNOT hear at all (cochlea transduces sound → electrical signals)<span class="te-td">లోపలి చెవి లేకపోతే → శబ్దాన్ని వినలేరు</span></td><td>Q21</td></tr>
+  <tr><td>Lungs location (Q38)<span class="te-td">ఊపిరితిత్తుల స్థానం</span></td><td>Thoracic cavity; Right = 3 lobes; Left = 2 lobes; covered by Pleura<span class="te-td">ఉరః కుహరం; కుడి = 3 భాగాలు; ఎడమ = 2 భాగాలు; ప్లూరా కప్పబడుతుంది</span></td><td>Q38</td></tr>
+  <tr><td>Thyroxine &amp; iodine (Q42)<span class="te-td">థైరాక్సిన్ &amp; అయోడిన్</span></td><td>Thyroxine (T4) has 4 iodine atoms; T3 has 3; iodine deficiency → goiter<span class="te-td">T4 = 4 అయోడిన్ అణువులు; అయోడిన్ లోపం → గాయిటర్</span></td><td>Q42</td></tr>
+</table>
+</div><!-- end page 4 -->
+
+<!-- PAGE 5: TRAP SHEET + PYQ + MEMORY BOX -->
+<div class="page">
+<div class="sec-head">⚠ Trap Sheet — Common Exam Mistakes <span class="te">తప్పుడు జవాబుల జాగ్రత్త</span></div>
+<table>
+  <tr><th>#</th><th>Common Wrong Answer / తప్పుడు జవాబు</th><th>Correct Fact / సరైన విషయం</th><th>Q</th></tr>
+  <tr><td>1</td><td>Somatotropic (GH) → Thyroid</td><td>GH → Pituitary (NOT thyroid); Thyroid secretes Thyroxine</td><td>Q1</td></tr>
+  <tr><td>2</td><td>Thyroxine → Parathyroid</td><td>Thyroxine → Thyroid; PTH → Parathyroid</td><td>Q1</td></tr>
+  <tr><td>3</td><td>Liver &amp; Pancreas are part of alimentary canal</td><td>Liver &amp; Pancreas = ACCESSORY organs (NOT alimentary canal)</td><td>Q2</td></tr>
+  <tr><td>4</td><td>Myopia caused by weak muscles or retina</td><td>Myopia = ELONGATION of eyeball</td><td>Q3</td></tr>
+  <tr><td>5</td><td>Pineal body has no known function</td><td>Pineal body NOW known to secrete Melatonin</td><td>Q5</td></tr>
+  <tr><td>6</td><td>Urine color = Bile or Cholesterol</td><td>Urine yellow = UROCHROME (Urobilin)</td><td>Q6</td></tr>
+  <tr><td>7</td><td>Insulin targets RBC or kidney</td><td>Insulin targets: Liver, Skeletal muscle, Adipose tissue → none of Q7 options</td><td>Q7</td></tr>
+  <tr><td>8</td><td>Diabetes insipidus = Insulin deficiency</td><td>Diabetes insipidus = ADH absence (excess urine); Diabetes mellitus = Insulin absence</td><td>Q15</td></tr>
+  <tr><td>9</td><td>⚠ Reflex action controlled by motor nerves (exam) OR spinal cord (science)</td><td>Exam key: (c) Motor nerves; Scientific: Spinal cord is integration center</td><td>Q16</td></tr>
+  <tr><td>10</td><td>GH oversecretion → only gigantism</td><td>GH↑ in children → Gigantism; GH↑ in adults → Acromegaly</td><td>Q18</td></tr>
+  <tr><td>11</td><td>Bifocal upper part = convex for near vision</td><td>Upper = concave (far); LOWER = convex (near vision)</td><td>Q11</td></tr>
+  <tr><td>12</td><td>Eye color determined by pupil or cornea</td><td>Eye color = melanin pigment in IRIS</td><td>Q12</td></tr>
+  <tr><td>13</td><td>Spleen produces RBCs</td><td>Spleen DESTROYS old RBCs; Bone marrow PRODUCES RBCs</td><td>Q20</td></tr>
+  <tr><td>14</td><td>CO₂ forms irreversible complex with Hb</td><td>CO = irreversible (carboxyhemoglobin); CO₂ = reversible (carbaminohemoglobin)</td><td>Q36</td></tr>
+  <tr><td>15</td><td>AB = universal recipient because of antigens</td><td>AB = universal recipient because NO ANTIBODIES in plasma</td><td>Q46</td></tr>
+  <tr><td>16</td><td>O blood group = no antigens AND no antibodies</td><td>O = no antigens on RBC, but HAS anti-A and anti-B antibodies in plasma</td><td>Q46</td></tr>
+  <tr><td>17</td><td>Blood clotting factors = 12 or 14</td><td>Blood clotting factors = 13 (Factor I–XIII; Factor VI excluded)</td><td>Q48</td></tr>
+  <tr><td>18</td><td>⚠ BP during sleep = decreases (science) OR fluctuates (exam)</td><td>Exam key: (c) Fluctuates; Scientifically: BP decreases in NREM sleep</td><td>Q44</td></tr>
+  <tr><td>19</td><td>Color blindness: Protanopia = green blindness</td><td>Protanopia = RED; Deuteranopia = GREEN; both = red-green blindness</td><td>Q45</td></tr>
+  <tr><td>20</td><td>Pituitary = adrenal = any gland regulates BP</td><td>Blood pressure regulated primarily by ADRENAL GLAND (adrenaline + aldosterone)</td><td>Q40</td></tr>
+</table>
+
+<div class="cols-2">
+<div>
+<div class="sec-head" style="font-size:8.5pt;padding:3px 8px;">📋 PYQ Flashcards</div>
+<div class="pyq-item"><span class="pyq-num">Q1</span><span class="pyq-q">Correctly matched gland-hormone pair?</span> <span class="pyq-a">→ (a) Pituitary–FSH only</span></div>
+<div class="pyq-item"><span class="pyq-num">Q15</span><span class="pyq-q">Disease caused by ADH absence?</span> <span class="pyq-a">→ (b) Diabetes insipidus</span></div>
+<div class="pyq-item"><span class="pyq-num">Q32</span><span class="pyq-q">Smallest gland in human body?</span> <span class="pyq-a">→ (c) Pineal gland (~150 mg)</span></div>
+<div class="pyq-item"><span class="pyq-num">Q36</span><span class="pyq-q">Irreversible complex with hemoglobin?</span> <span class="pyq-a">→ (a) Carbon monoxide → Carboxyhemoglobin</span></div>
+<div class="pyq-item"><span class="pyq-num">Q46</span><span class="pyq-q">Why AB is universal recipient?</span> <span class="pyq-a">→ (b) Lack of antibodies in blood</span></div>
+<div class="pyq-item"><span class="pyq-num">Q49</span><span class="pyq-q">SA node also known as?</span> <span class="pyq-a">→ (a) Pacemaker of heart</span></div>
+</div>
+<div>
+<div class="exam-alert">
+  <div class="ea-title">⚠ 2 Exam-Key Conflicts to Remember</div>
+  <b>Q16 Reflex action:</b> Exam key = (c) Motor nerves; Science = Spinal cord controls reflex integration. In exam, mark (c).<br>
+  <span style="color:#6a1b9a">Q16: పరీక్ష = చాలక నాడులు; శాస్త్రీయం = వెన్నుపాము. పరీక్షలో (c) గుర్తించండి.</span><br><br>
+  <b>Q44 BP during sleep:</b> Exam key = (c) Fluctuates; Science = BP decreases in NREM sleep (~10-20%). In exam, mark (c).<br>
+  <span style="color:#6a1b9a">Q44: పరీక్ష = హెచ్చుతగ్గులు; శాస్త్రీయం = తగ్గుతుంది. పరీక్షలో (c) గుర్తించండి.</span>
+</div>
+</div>
+</div>
+
+<div class="memory-box">
+  <div class="mem-title">🧠 Memory Box — 25 One-Liners for Rapid Revision</div>
+  1. Pituitary = Master gland; located at base of brain (sella turcica) | పిట్యూటరీ = మాస్టర్ గ్లాండ్<br>
+  2. GH↑ children → Gigantism; GH↑ adults → Acromegaly | GH↑ పిల్లలు → జైగాంటిజం; పెద్దలు → ఆక్రోమెగాలీ<br>
+  3. ADH absent → Diabetes insipidus (excess urine); Insulin absent → Diabetes mellitus | ADH లేపం → అతిమూత్ర వ్యాధి<br>
+  4. Pineal gland = smallest endocrine gland (~150 mg); secretes Melatonin | పీనియల్ = అతి చిన్న అంతర్గ్రంథి<br>
+  5. Thyroxine (T4) = 4 iodine atoms; iodine deficiency → Goiter | థైరాక్సిన్ = 4 అయోడిన్ అణువులు<br>
+  6. Adrenal gland regulates blood pressure (adrenaline + aldosterone) | అడ్రినల్ → BP నియంత్రణ<br>
+  7. Myopia = elongated eyeball → concave lens; Hypermetropia = short eyeball → convex lens | మయోపియా = పుటాకారం<br>
+  8. Bifocal: UPPER = concave (far); LOWER = convex (near) | బైఫోకల్: పై = దూరం; కింది = దగ్గర<br>
+  9. Eye color = melanin in IRIS (not pupil, not cornea) | కళ్ళ రంగు = ఐరిస్‌లో మెలనిన్<br>
+  10. Protanopia = red; Deuteranopia = green; both = red-green color blindness | ప్రోటానోపియా = ఎరుపు; డ్యూటెరానోపియా = ఆకుపచ్చ<br>
+  11. AB = universal recipient (no antibodies); O = universal donor (no antigens on RBC) | AB = విశ్వ గ్రహీత; O = విశ్వ దాత<br>
+  12. Blood clotting factors = 13 (I–XIII; Factor VI excluded); Platelets essential | రక్తం గడ్డకట్టే కారకాలు = 13<br>
+  13. Heparin = natural anticoagulant from mast cells + liver | హెపారిన్ = సహజ రక్తనిరోధకం<br>
+  14. CO + Hb = Carboxyhemoglobin (IRREVERSIBLE); CO₂ + Hb = Carbaminohemoglobin (reversible) | CO = తిరిగి వేరుకాదు<br>
+  15. Urine yellow = Urochrome (from Hb → Bilirubin → Urobilinogen → Urochrome) | మూత్రం పసుపు = యూరోక్రోమ్<br>
+  16. Spleen = graveyard of RBCs; Bone marrow = RBC factory | ప్లీహం = పాత RBC లను నాశనం చేస్తుంది<br>
+  17. Medulla oblongata = respiratory center + heartbeat + BP control | మజ్జాముఖం = శ్వాస కేంద్రం<br>
+  18. Biological death = brain cell death (4–6 min after cardiac arrest) | జీవ మరణం = మెదడు కణాలు చనిపోవడం<br>
+  19. SA node = pacemaker; right atrium; 70–72 bpm | SA నోడ్ = పేస్‌మేకర్<br>
+  20. Body temp = 37°C = 310 K (37 + 273) | శరీర ఉష్ణోగ్రత = 310 K<br>
+  21. Wuchereria bancrofti → lymph vessels → Filariasis/Elephantiasis (Culex mosquito) | వుచెరేరియా → శోషరస నాళాలు → ఫైలేరియా<br>
+  22. Molar = 3 roots (upper); Pre-molar = 1–2 roots; Incisor/Canine = 1 root | మోలార్ = 3 మూలాలు<br>
+  23. Natural auxin = IAA; Synthetic: NAA, IBA, 2,4-D | సహజ ఆక్సిన్ = IAA<br>
+  24. Human body: ~700 muscles; 206 bones; 32 teeth; ~4–6L blood | 700 కండరాలు; 206 ఎముకలు<br>
+  25. Safe sound limit = 85 dB (WHO); beyond → NIHL | 85 dB మించిన శబ్దం → వినికిడి నష్టం
+</div>
+</div><!-- end page 5 -->
+
+</body>
+</html>

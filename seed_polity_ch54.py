@@ -799,11 +799,14 @@ def _seed_polity_ch54_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
         f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
         (_TOPIC, _CH)).fetchone())
     note_id = row['id']
-    existing = db_exec_fn(conn,
+    _cnt_row = db_exec_fn(conn,
         f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,)).fetchone()
-    if (existing[0] if existing else 0) > 0:
+    existing = list(row_to_dict_fn(_cnt_row or {}).values())[0] if _cnt_row else 0
+    if existing > 0:
         return
     EXAM = 'UPSC'
+    _diff_map = {"easy": 1, "medium": 2, "hard": 3}
+
     for m in _MCQS:
         sec, diff, q, a, b, c, d, ans, expl = m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7], m[8]
         exam = m[9] if len(m) > 9 else EXAM
@@ -811,7 +814,7 @@ def _seed_polity_ch54_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
             f"INSERT INTO chapter_mcqs "
             f"(study_note_id,section_idx,difficulty,exam_type,q_te,opt_a,opt_b,opt_c,opt_d,correct,explanation_te) "
             f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
-            (note_id, sec, diff, exam, q, a, b, c, d, ans, expl))
+            (note_id, sec, _diff_map.get(diff, 1), exam, q, a, b, c, d, ans, expl))
 
 
 def seed_polity_ch54(conn, db_exec_fn, row_to_dict_fn, use_postgres=False, force=False):

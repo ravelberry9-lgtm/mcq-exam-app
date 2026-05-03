@@ -44,9 +44,10 @@ def _seed_polity_ch90_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres=
         (_TOPIC, _CH)).fetchone() or {}).get('id')
     if not note_id:
         return
-    existing = list(db_exec_fn(conn,
+    _cnt_row = db_exec_fn(conn,
         f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}",
-        (note_id,)).fetchone() or [0])[0]
+        (note_id,)).fetchone()
+    existing = list(row_to_dict_fn(_cnt_row or {}).values())[0] if _cnt_row else 0
     if existing and not force:
         return
     if existing:

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch 12 — Human System 3 | General Science</title>
+<style>
+:root{--pri:#0d2346;--acc:#1565c0;--acc2:#0288d1;--bg:#e8f0fe;--bg2:#f0f7ff;--en-border:#1565c0;--te-border:#6a1b9a;--shock:#b71c1c;--exam:#e65100;--mem:#1b5e20;--hi:#4a148c;}
+@page{size:A4;margin:14mm 13mm 14mm 13mm;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.2pt;line-height:1.45;color:#1a1a2e;background:#fff;}
+.page{width:184mm;min-height:267mm;padding:6mm 0;position:relative;}
+.page-break{page-break-after:always;break-after:page;}
+.cover{background:linear-gradient(135deg,var(--pri) 0%,#1a237e 60%,#283593 100%);color:#fff;border-radius:6px;padding:11mm 12mm 8mm;text-align:center;margin-bottom:4mm;}
+.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:7.5pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3mm;}
+.cover h1{font-size:17pt;font-weight:800;letter-spacing:-0.3px;margin-bottom:2mm;}
+.cover h1 span{color:#90caf9;}
+.cover h2{font-size:10pt;font-weight:400;color:#bbdefb;margin-bottom:2mm;}
+.cover-te{font-size:9pt;color:#90caf9;margin-bottom:2mm;}
+.cover-meta{display:flex;justify-content:center;gap:12px;font-size:7.6pt;color:#bbdefb;flex-wrap:wrap;margin-top:2mm;}
+.cover-meta span{background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 9px;}
+.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:3px 9px;font-size:7.3pt;color:#e3f2fd;margin-top:2mm;line-height:1.7;}
+.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:9.5pt;font-weight:700;margin:3mm 0 2mm;letter-spacing:0.3px;display:flex;justify-content:space-between;align-items:center;}
+.sec-head .te{font-size:8pt;font-weight:400;color:#90caf9;}
+.bilingual{border:1px solid #b0bec5;border-radius:5px;margin-bottom:2mm;overflow:hidden;}
+.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:4px 8px;font-size:8.5pt;line-height:1.5;}
+.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:4px 8px;font-size:8.2pt;line-height:1.5;color:#4a148c;}
+.lang-tag{display:inline-block;font-size:6.8pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-bottom:3px;}
+.bi-en .lang-tag{background:var(--en-border);color:#fff;}
+.bi-te .lang-tag{background:var(--te-border);color:#fff;}
+.shock-box{border:2px solid var(--shock);background:#fff3f3;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:8.3pt;}
+.shock-box .shock-title{color:var(--shock);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:8.3pt;}
+.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:8.3pt;}
+.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.exam-tag{background:#b71c1c;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px;}
+.te-tag{background:#6a1b9a;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;}
+table{width:100%;border-collapse:collapse;font-size:8.3pt;margin-bottom:2mm;}
+th{background:var(--pri);color:#fff;padding:3px 7px;text-align:left;font-weight:600;font-size:8pt;}
+td{padding:3px 7px;border:1px solid #cfd8dc;vertical-align:top;}
+tr:nth-child(even) td{background:#f0f7ff;}
+.te-td{display:block;color:#6a1b9a;font-size:7.6pt;margin-top:1px;}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:2mm;}
+.pyq-item{background:#f0f7ff;border-left:3px solid var(--acc);padding:4px 8px;margin-bottom:2mm;border-radius:3px;font-size:8.2pt;page-break-inside:avoid;}
+.pyq-q{font-weight:600;color:var(--pri);}
+.pyq-num{background:var(--acc);color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:4px;}
+.pyq-a{color:var(--shock);font-weight:700;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER + DIGESTIVE / SKELETAL BASICS -->
+<div class="page page-break">
+<div class="cover">
+  <div class="cover-tag">General Science · Model Set 12</div>
+  <h1>Human System <span>3</span></h1>
+  <h2>Model Set 12 — 50 MCQs Comprehensive Guide</h2>
+  <div class="cover-te">మానవ వ్యవస్థ 3 · ద్విభాష అధ్యయన గమనికలు</div>
+  <div class="cover-meta">
+    <span>📄 5 Pages A4</span>
+    <span>❓ 50 MCQs</span>
+    <span>🦴 Bones · Enzymes · Heart · Hormones · Eye · Blood</span>
+    <span>🎯 APPSC / UPSC</span>
+  </div>
+  <div class="topics-bar">
+    Topics: Pericardium · Hookworm · Digestion · Blood Donation · Thyroid · Induced-fit · Duodenum · Brain · Dental Formula · Salivary Glands · Sodium · Heart Attack · Allergy · Calcium · PKU · Cornea · Valves · Twins · Retina · Vestigial · Gliding Joint · Melanin · ECG · Bile<br>
+    విషయాలు: పెరికార్డియం · హుక్‌వార్మ్ · జీర్ణక్రియ · రక్తదానం · థైరాయిడ్ · ఇండ్యూస్డ్-ఫిట్ · డ్యూయోడెనమ్ · మెదడు · దంత సూత్రం · లాలాజల గ్రంథులు · సోడియం · గుండెపోటు · అలెర్జీ · కాల్షియం
+  </div>
+</div>
+
+<div class="sec-head">🦴 Bones &amp; Skeleton / Digestive System Basics <span class="te">ఎముకలు · జీర్ణవ్యవస్థ</span></div>
+<div class="cols-2">
+<table>
+  <tr><th colspan="2">Key Bones — Names &amp; Locations / ముఖ్య ఎముకలు</th></tr>
+  <tr><td>Pericardium (Q1, Q13)<span class="te-td">పెరికార్డియం</span></td><td><b>NOT a bone</b> — double-layered membranous sac surrounding the heart; pericardial fluid = 25–50 mL<span class="te-td">ఎముక కాదు — గుండె చుట్టూ రెండు పొరల సంచి; 25-50 mL ద్రవం</span></td></tr>
+  <tr><td>Patella (Q29)<span class="te-td">పటెల్లా</span></td><td>Knee bone (kneecap) — sesamoid bone<span class="te-td">మోకాలి ఎముక (కీకేప్) — సెసామాయిడ్ ఎముక</span></td></tr>
+  <tr><td>Stapes (Q29)<span class="te-td">స్టేపిస్</span></td><td>Smallest bone in human body — middle ear ossicle (Malleus → Incus → Stapes)<span class="te-td">శరీరంలో అతిచిన్న ఎముక — మధ్య చెవి ఒసికిల్</span></td></tr>
+  <tr><td>Radius (Q34)<span class="te-td">రేడియస్</span></td><td>Forearm (ARM) bone — NOT a leg bone; paired with Ulna<span class="te-td">ముంచేయి ఎముక — కాలి ఎముక కాదు; Ulna తో కలిసి</span></td></tr>
+  <tr><td>Femur (Q34)<span class="te-td">ఫీమర్</span></td><td>Thigh (upper leg) — LONGEST &amp; STRONGEST bone in body<span class="te-td">తొడ ఎముక — శరీరంలో అతిపొడవు + అతిబలమైన ఎముక</span></td></tr>
+  <tr><td>Leg bones (Q34)<span class="te-td">కాలి ఎముకలు</span></td><td>Femur + Tibia (shinbone) + Fibula + Patella (kneecap)<span class="te-td">ఫీమర్ + టిబియా + ఫైబులా + పటెల్లా</span></td></tr>
+</table>
+<div>
+<table>
+  <tr><th colspan="2">Joints / కీళ్ళు (Q40)</th></tr>
+  <tr><td>Gliding joint (Plane joint)<span class="te-td">గ్లైడింగ్ / Plane జాయింట్</span></td><td><b>Carpals</b> (wrist bones) and Tarsals (ankle) — flat articular surfaces that slide/glide past each other; limited movement<span class="te-td">కార్పెల్స్ (మణికట్టు) మరియు టార్సల్స్ (చీలమండ) — సమతల ఉపరితలాలు జారుతాయి</span></td></tr>
+  <tr><td>Ball-and-socket<span class="te-td">బాల్ అండ్ సాకెట్</span></td><td>Hip (femur + acetabulum) &amp; Shoulder<span class="te-td">హిప్ మరియు భుజం కీలు</span></td></tr>
+  <tr><td>Hinge joint<span class="te-td">హింగ్ జాయింట్</span></td><td>Elbow (Humerus + Radius)<span class="te-td">మోచేయి కీలు</span></td></tr>
+  <tr><td>Pivot joint<span class="te-td">పివట్ జాయింట్</span></td><td>Atlas–Axis (skull rotation)<span class="te-td">మెడ వెన్నుపూస (తల తిప్పడం)</span></td></tr>
+</table>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Vestigial Organs (Q39):</b><br>
+  Vestigial = reduced evolutionary remnants with little/no function. Examples: Appendix (remnant of cecum), Wisdom teeth/3rd Molar (jaw shrinkage), Centriole, Coccyx (tailbone), Plica semilunaris (eye corner), Arrector pili (goosebumps).<br>
+  <b>Diaphragm = NOT vestigial</b> — essential dome-shaped muscle for breathing (contracts → lungs expand → inhalation).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  అవశేష అవయవాలు: అపెండిక్స్, జ్ఞానదంతాలు, సెంట్రియోల్, కాక్సిక్స్ (తోక ఎముక).<br>
+  డయాఫ్రాగమ్ = అవశేష అవయవం కాదు — శ్వాసక్రియకు అత్యావశ్యక కండరం.
+  </div>
+</div>
+</div>
+</div>
+
+<div class="sec-head">🦷 Dental Formula &amp; Salivary Glands <span class="te">దంత సూత్రం · లాలాజల గ్రంథులు</span></div>
+<div class="cols-2">
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Dental Formula (Q10):</b> 2123/2123 per half jaw (upper/lower).<br>
+  2 Incisors (cutting) + 1 Canine (tearing) + 2 Premolars (crushing) + 3 Molars (grinding) = 8/half × 4 = <b>32 total teeth</b>.<br>
+  Milk teeth (deciduous) = 2102/2102 = 20 teeth.<br>
+  <b>Function match (Q19):</b> Incisor = Cutting (1), Canine = Tearing (1), Molar = Grinding (2) → Answer: 1, 1, 2.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  దంత సూత్రం = 2123/2123; 2 కుంతకాలు (కత్తిరించడం) + 1 రదనిక (చీల్చడం) + 2 ముందు చార్వణకాలు + 3 చార్వణకాలు = 32 మొత్తం దంతాలు.<br>
+  పాల దంతాలు = 20. Q19 జవాబు: 1, 1, 2.
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Salivary Glands — 3 Pairs (Q11):</b><br>
+  1. <b>Parotid</b> — largest; near ear; affected in <b>mumps</b>; secretes serous saliva.<br>
+  2. <b>Submandibular</b> — below jaw; mixed saliva (mucous + serous).<br>
+  3. <b>Sublingual</b> — smallest; under tongue; mainly mucous saliva.<br>
+  All secrete: Ptyalin (amylase = starch digestion), Mucin, Lysozyme, IgA.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  3 జతల లాలాజల గ్రంథులు: పారోటిడ్ (అతిపెద్ద, చెవి దగ్గర — గవదబిళ్ళలో ప్రభావితం) + సబ్‌మాండిబ్యులర్ (దవడ కింద) + సబ్‌లింగువల్ (నాలుక కింద, అతిచిన్న). అన్నీ: టయలిన్ + మ్యుసిన్ స్రవిస్తాయి.
+  </div>
+</div>
+</div>
+</div>
+
+<!-- PAGE 2: DIGESTIVE ENZYMES / HEART / HORMONES -->
+<div class="page page-break">
+<div class="sec-head">🧪 Digestive Enzymes &amp; GI Tract <span class="te">జీర్ణ ఎంజైమ్లు · GI మార్గం</span></div>
+<div class="cols-2">
+<table>
+  <tr><th colspan="3">Key Digestive Enzymes / జీర్ణ ఎంజైమ్లు</th></tr>
+  <tr><th>Enzyme</th><th>Substrate</th><th>Location / Source</th></tr>
+  <tr><td>Ptyalin (Salivary Amylase)<span class="te-td">టయలిన్</span></td><td>Starch → Maltose<span class="te-td">పిండి పదార్థాలు</span></td><td>Mouth / Salivary glands<span class="te-td">నోరు</span></td></tr>
+  <tr><td><b>Pepsin</b> (Q3)<span class="te-td">పెప్సిన్</span></td><td><b>Proteins</b> (activated by HCl)<span class="te-td">ప్రోటీన్లు</span></td><td>Stomach<span class="te-td">జీర్ణాశయం</span></td></tr>
+  <tr><td><b>Lipase</b> (Q3)<span class="te-td">లైపేజ్</span></td><td><b>Fats → fatty acids + glycerol</b><span class="te-td">కొవ్వులు</span></td><td>Pancreas → small intestine<span class="te-td">క్లోమం → చిన్న ప్రేగు</span></td></tr>
+  <tr><td>Trypsin<span class="te-td">ట్రిప్సిన్</span></td><td>Proteins (small intestine)<span class="te-td">ప్రోటీన్లు</span></td><td>Pancreas → duodenum<span class="te-td">క్లోమం</span></td></tr>
+  <tr><td>Erypsin<span class="te-td">ఎరిప్సిన్</span></td><td>Peptides → amino acids<span class="te-td">పెప్టైడ్లు</span></td><td>Small intestine<span class="te-td">చిన్న ప్రేగు</span></td></tr>
+</table>
+<div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Pepsin + Lipase (Q3) = Protein + Fat digestion:</b><br>
+  Pepsin = protein enzyme (stomach, activated by HCl); Lipase = fat enzyme (pancreas/small intestine). Together they handle PROTEINS + FATS.<br>
+  Ptyalin = starch only. Trypsin = protein (small intestine). Erypsin = final peptide breakdown.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  పెప్సిన్ = ప్రోటీన్ జీర్ణం (జీర్ణాశయం); లైపేజ్ = కొవ్వు జీర్ణం. రెండూ కలిసి ప్రోటీన్లు + కొవ్వులు జీర్ణం చేస్తాయి (Q3 జవాబు = B).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Duodenum (Q8):</b> First and UPPERMOST part of small intestine (~25–30 cm; "duodenum" = twelve in Latin = 12 finger-widths). Receives bile + pancreatic juice → neutralises acidic chyme from stomach. Sequence: Duodenum → Jejunum → Ileum.<br>
+  <b>Food absorption time (Q5):</b> Complete intestinal absorption ≈ <b>12 hours</b> in small intestine.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  డ్యూయోడెనమ్ = చిన్న ప్రేగు మొదటి భాగం (~25-30 cm); పైత్యరసం + క్లోమ రసం స్వీకరించి ఆమ్ల chyme నిర్వీర్యం చేస్తుంది.<br>
+  ఆహారం పూర్తి శోషణ = ~12 గంటలు (Q5).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Bile Juice (Q50):</b> Alkaline (pH 7.6–8.6); secreted by liver, stored in gallbladder. Neutralises acidic chyme entering duodenum. Also emulsifies fats (increases surface area for lipase). <b>Pepsin/Gastric juice/HCl = make food MORE acidic</b> — wrong options.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  పైత్యరసం: క్షార స్వభావం (pH 7.6-8.6); కాలేయం తయారు చేస్తుంది; పిత్తాశయంలో నిల్వ. డ్యూయోడెనమ్‌లో ఆమ్ల chyme నిర్వీర్యం చేస్తుంది + కొవ్వులు emulsify చేస్తుంది (Q50).
+  </div>
+</div>
+</div>
+</div>
+
+<div class="sec-head">❤️ Heart System — Pericardium, Heart Attack, CPR <span class="te">గుండె వ్యవస్థ</span></div>
+<div class="cols-2">
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Pericardium (Q1, Q13):</b> Double-layered membranous sac enclosing the heart. Outer = fibrous pericardium (tough, protective); Inner = serous pericardium (2 layers: parietal + visceral). Visceral layer = EPICARDIUM (outermost heart wall layer). Pericardial fluid (25–50 mL) reduces friction. Inflammation = Pericarditis.<br>
+  Q1: Pericardium is NOT a bone. Q13: It IS the membrane covering the heart. These two Qs are complementary.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  పెరికార్డియం = గుండె చుట్టూ రెండు పొరల సంచి (Q1 = ఎముక కాదు; Q13 = గుండె కప్పే పొర). పెరికార్డియల్ ద్రవం (25-50 mL) రాపిడి తగ్గిస్తుంది. ఎపికార్డియం = గుండె గోడ బాహ్య పొర.
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Heart Attack / Myocardial Infarction (Q14):</b> Blockage of <b>coronary arteries</b> (vessels that supply blood TO the heart muscle itself) → no blood to heart muscle → cardiac muscle cells die (infarction). Main cause: Atherosclerosis (plaque) → thrombosis. Symptoms: chest pain, arm/jaw radiation, sweating.<br>
+  Note: Cardiac arrest (heart STOPS beating) ≠ Heart attack (MI).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  గుండెపోటు (MI): కరోనరీ ధమనులు మూసుకుపోవడం → గుండె కండరానికి రక్తం రాకపోవడం → కండర కణ మరణం. అథెరోస్క్లెరోసిస్ + థ్రాంబోసిస్ = ప్రధాన కారణాలు. కార్డియాక్ అరెస్ట్ ≠ గుండెపోటు.
+  </div>
+</div>
+</div>
+<div class="exam-alert">
+  <div class="ea-title">⚠ Exam Conflict Q22 — CPR / Cardiac Arrest</div>
+  <b>Exam key: (c) Mouth-to-mouth resuscitation.</b><br>
+  Scientific note: Modern AHA guidelines (2010+) recommend CHEST COMPRESSIONS (CPR) as the FIRST step. Sequence = CAB: Compressions → Airway → Breathing (not Airway first). For exam: mark (c). Scientifically: option (d) CPR is the correct first response.<br>
+  <span style="color:#6a1b9a">పరీక్ష కీ: (c) నోటి ద్వారా శ్వాస. ఆధునిక మార్గదర్శకాలు: మొదట చెస్ట్ కంప్రెషన్స్. పరీక్షలో (c) అనుసరించండి.</span>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Valves in Veins (Q20):</b> Semilunar valves in veins prevent BACKFLOW of blood. Mechanism in limbs: Valves + muscle pump (skeletal muscles squeeze veins → blood toward heart). Varicose veins = damaged/incompetent valves → blood pools. <b>Arteries have NO valves</b> (high pressure). Heart valves: Tricuspid (right AV), Bicuspid/Mitral (left AV), Pulmonary semilunar, Aortic semilunar.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  సిరలలో కవాటాలు (valves): వెనక్కి ప్రవహించకుండా నిరోధిస్తాయి. కండర పంప్ + కవాటాలు = రక్తాన్ని గుండె వైపు నెట్టుతాయి. వెరికోస్ సిరలు = కవాటాలు దెబ్బతినడం. ధమనులలో కవాటాలు లేవు (Q20).
+  </div>
+</div>
+</div>
+
+<!-- PAGE 3: ENDOCRINE / IMMUNITY / BRAIN / SPECIAL TOPICS -->
+<div class="page page-break">
+<div class="sec-head">⚗️ Endocrine System &amp; Hormones <span class="te">అంతర్గ్రంథులు · హార్మోన్లు</span></div>
+<div class="cols-2">
+<table>
+  <tr><th colspan="2">Glands — Direct vs Indirect Control / గ్రంథులు</th></tr>
+  <tr><td><b>Thyroid (Q6)</b><span class="te-td">థైరాయిడ్</span></td><td><b>DIRECTLY</b> regulates metabolic rate via T3 (Triiodothyronine) + T4 (Thyroxine). Hypo = slow metabolism, weight gain, goiter. Hyper = fast metabolism, weight loss.<span class="te-td">నేరుగా జీవక్రియ రేటు నియంత్రణ; హైపో = బరువు పెరగడం; హైపర్ = తగ్గడం</span></td></tr>
+  <tr><td>Pituitary (Q6)<span class="te-td">పిట్యూటరీ</span></td><td>Controls thyroid <b>INDIRECTLY</b> via TSH (Thyroid Stimulating Hormone)<span class="te-td">TSH ద్వారా పరోక్షంగా థైరాయిడ్‌ను నియంత్రిస్తుంది</span></td></tr>
+  <tr><td><b>Thymus (Q27)</b><span class="te-td">థైమస్ (బాల గ్రంథి)</span></td><td>LARGEST relative to body size at birth; involutes after puberty (replaced by fat). Function: T-cell maturation; hormone: Thymosin. DiGeorge syndrome = thymus absent → immune deficiency.<span class="te-td">పుట్టినప్పుడు అతిపెద్ద గ్రంథి; యుక్తవయస్సు తర్వాత కుంచించుకుపోతుంది; T-కణాల పరిపక్వత</span></td></tr>
+  <tr><td><b>Pancreas (Q43)</b><span class="te-td">క్లోమం</span></td><td>Insulin (β cells) → lowers blood glucose; Glucagon (α cells) → raises blood glucose. Insulin deficiency/resistance → Diabetes Mellitus.<span class="te-td">ఇన్సులిన్ = చక్కెర తగ్గించడం; గ్లుకగాన్ = పెంచడం; ఇన్సులిన్ లోపం = మధుమేహం</span></td></tr>
+  <tr><td>Parathyroid (Q6)<span class="te-td">పారాథైరాయిడ్</span></td><td>PTH → raises blood Ca²⁺; Calcitonin (thyroid) → lowers Ca²⁺<span class="te-td">PTH → Ca²⁺ పెంచుతుంది; కాల్సిటోనిన్ → తగ్గిస్తుంది</span></td></tr>
+</table>
+<div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Calcium Distribution (Q16):</b> 99% in bones &amp; teeth (as hydroxyapatite). ~0.5–1% in blood/soft tissues. Blood calcium functions: blood clotting (Factor IV), muscle contraction, nerve transmission, enzyme activation. Normal blood Ca = 8.5–10.5 mg/dL. Regulated by PTH (raises) and Calcitonin (lowers).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  కాల్షియం: 99% ఎముకలు + దంతాలలో; ~0.5-1% రక్తంలో. రక్తంలో Ca²⁺: రక్తం గడ్డకట్టడం + కండర సంకోచం + నాడీ ప్రసారం. PTH = Ca²⁺ పెంచుతుంది (Q16).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Sodium &amp; Nervous System (Q12, Q49):</b><br>
+  Q12: Na⁺ deficiency (hyponatremia) → impairs nervous system. Na⁺ essential for action potentials via Na⁺/K⁺ ATPase pump (3 Na⁺ out, 2 K⁺ in → electrochemical gradient). Symptoms: confusion, seizures, coma.<br>
+  Q49: High BP → reduce SODIUM intake. High Na⁺ → water retention → increased blood volume → higher BP. Normal Na⁺ &lt;2300 mg/day; hypertensives &lt;1500 mg/day. DASH diet = low sodium + high potassium.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  Q12: Na⁺ లోపం → నాడీ వ్యవస్థ ప్రభావం (Na⁺/K⁺ పంప్ నిరోధం). Q49: అధిక BP = సోడియం తగ్గించాలి; అధిక Na⁺ → నీటి నిలుపు → BP పెరుగుతుంది.
+  </div>
+</div>
+</div>
+</div>
+
+<div class="exam-alert">
+  <div class="ea-title">⚠ Q49 Print Error — Both Options (b) and (c) say "Potassium"</div>
+  The original question has a printing error: options (b) and (c) are both printed as "Potassium." The correct answer is always <b>(d) Sodium</b>. Potassium actually LOWERS blood pressure (relaxes blood vessel walls) — opposite effect.<br>
+  <span style="color:#6a1b9a">Q49 ముద్రణ తప్పిదం: (b) మరియు (c) రెండూ "పొటాషియం" అని ఉన్నాయి. సరైన జవాబు = (d) సోడియం. పొటాషియం = BP తగ్గిస్తుంది (వ్యతిరేక ప్రభావం).</span>
+</div>
+
+<div class="sec-head">🧠 Brain &amp; Nervous System <span class="te">మెదడు · నాడీ వ్యవస్థ</span></div>
+<div class="cols-2">
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Brain uses ONLY Glucose (Q9):</b> Fatty acids CANNOT cross the blood-brain barrier (BBB); only glucose (and ketone bodies in starvation) can enter brain cells. Brain glucose need: ~120 g/day. Brain = 2% body weight but uses 20% of body's energy and 15% of cardiac output. In starvation: ketone bodies used as alternative.<br>
+  <b>Brain weight (Q21):</b> Male ≈ 1350 g; Female ≈ 1200–1250 g.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  మెదడు = గ్లూకోజ్ మాత్రమే వాడుతుంది (BBB కారణంగా కొవ్వు ఆమ్లాలు ప్రవేశించలేవు). ~120 g/day అవసరం. శరీర బరువులో 2% = 20% శక్తి వినియోగం. పురుష మెదడు ≈ 1350 గ్రాములు (Q21).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Scratching Relieves Itching — Gate Control Theory (Q26):</b> (Melzack &amp; Wall, 1965). Scratching stimulates touch/pressure A-β nerve fibres → "gate" closes in spinal cord → inhibits itch signals (C fibres). Also: brain releases SEROTONIN → overrides itch. Antihistaminic chemicals also released.<br>
+  Downside: Scratch-itch cycle — repeated scratching releases more histamine.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  గోకడం వల్ల దురద తగ్గడం = GATE CONTROL THEORY (Melzack &amp; Wall, 1965). A-β నాడి తంతువులు స్పర్శ/ఒత్తిడి → స్పైనల్ కార్డ్‌లో "గేట్" మూసుకుపోవడం → itch సంకేతాలు తగ్గడం; సెరోటోనిన్ విడుదల (Q26).
+  </div>
+</div>
+</div>
+</div>
+
+<!-- PAGE 4: EYE / BLOOD / REPRODUCTION / SPECIAL TOPICS -->
+<div class="page page-break">
+<div class="sec-head">👁️ Eye &amp; Vision <span class="te">కన్ను · దృష్టి</span></div>
+<div class="cols-2">
+<table>
+  <tr><th colspan="2">Eye — Key Facts / కంటి ముఖ్య విషయాలు</th></tr>
+  <tr><td>Retina image (Q24)<span class="te-td">రెటీనా ప్రతిబింబం</span></td><td><b>Real and inverted</b> (upside down); eye lens converges light rays → forms real, inverted, diminished image on retina; brain (occipital cortex via optic nerve) corrects to appear upright<span class="te-td">నిజమైనది మరియు తలక్రిందులైనది; కటకం కాంతి పుంజాలను కేంద్రీకరిస్తుంది; మెదడు నిటారుగా చేస్తుంది</span></td></tr>
+  <tr><td>Iris vs Pupil (Q31)<span class="te-td">ఐరిస్ వర్సెస్ కనుపాప</span></td><td><b>IRIS</b> regulates light (muscular structure); PUPIL = merely the opening/hole in the iris<span class="te-td">ఐరిస్ = కాంతి నియంత్రణ; కనుపాప = ఐరిస్‌లో రంధ్రం మాత్రమే</span></td></tr>
+  <tr><td>Cornea transplant (Q18)<span class="te-td">కార్నియా మార్పిడి</span></td><td>Most common &amp; successful eye transplant; avascular → less immune rejection. Retina/Lens CANNOT be transplanted.<span class="te-td">అత్యంత సాధారణ కంటి మార్పిడి; రక్తనాళాలు లేవు → తక్కువ తిరస్కరణ</span></td></tr>
+  <tr><td>Astigmatism (Q48)<span class="te-td">ఆస్టిగ్మాటిజం</span></td><td>Irregular cornea/lens curvature → blurred at all distances. Corrected by <b>cylindrical (toric) lenses</b>.<span class="te-td">అసమాన కార్నియా వక్రత → స్థూపాకార అద్దాలు</span></td></tr>
+  <tr><td>Vision defects summary<span class="te-td">దృష్టి లోపాలు</span></td><td>Myopia = concave lens; Hypermetropia = convex lens; Astigmatism = cylindrical; Night blindness = Vitamin A deficiency<span class="te-td">హ్రస్వ = పుటాకార; దీర్ఘ = కుంభాకార; రేచీకటి = విటమిన్ A లోపం</span></td></tr>
+</table>
+<div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Iris Detail (Q31):</b> Iris = coloured circular muscular diaphragm containing two muscles:<br>
+  • Sphincter pupillae: constricts pupil in bright light → less light in.<br>
+  • Dilator pupillae: dilates pupil in dim light → more light in.<br>
+  Cornea = transparent refractive surface (most refraction = 2/3). Sclera = white protective outer coat.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  ఐరిస్ రెండు కండరాలు: స్ఫింక్టర్ (ప్రకాశవంతమైన కాంతిలో కనుపాప చిన్నదవుతుంది) + డైలేటర్ (మసక వెలుతురులో కనుపాప పెద్దదవుతుంది). కార్నియా = పారదర్శక పైభాగం.
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Induced-Fit Model (Q7):</b> Daniel Koshland (1958): Substrate binding induces a CONFORMATIONAL CHANGE in the enzyme's active site → optimises fit for catalysis (hand-into-glove analogy). After reaction, enzyme returns to original shape.<br>
+  Vs Lock-and-Key (Emil Fischer, 1890): rigid active site; substrate fits exactly (key-in-lock).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  ఇండ్యూస్డ్-ఫిట్ మోడల్ (Koshland, 1958): సబ్‌స్ట్రేట్ బంధం → ఎంజైమ్ క్రియాశీల సైట్‌లో నిర్మాణ మార్పు (చేయి + గ్లోవ్). Lock-and-key (Fischer, 1890) = దృఢమైన సైట్ (Q7).
+  </div>
+</div>
+</div>
+</div>
+
+<div class="sec-head">🩸 Blood — Anticoagulation, RQ, Arterial Bleeding <span class="te">రక్తం · ప్రత్యేక విషయాలు</span></div>
+<div class="cols-2">
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Anticoagulation Methods (Q35):</b><br>
+  ✓ CHILLING (4°C): slows enzyme activity of clotting factors; used in blood banks.<br>
+  ✓ OXALATE: chelates Ca²⁺ → clotting cascade cannot proceed (Ca²⁺ is essential).<br>
+  ✗ THERMAL TREATMENT: not a standard anticoagulation method.<br>
+  Answer: 1 and 3.<br>
+  <b>Anticoagulants (Q45):</b> Citrate + Oxalate prevent clotting by removing <b>Ca²⁺</b> (calcium ions). Without Ca²⁺ → clotting cascade fails. EDTA also chelates Ca²⁺ (used in CBC samples).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  రక్తం గడ్డకట్టడం నిరోధించే పద్ధతులు: ✓ చల్లబరచడం (4°C) + ✓ ఆక్సలేట్ (Ca²⁺ తొలగిస్తుంది); ✗ ఉష్ణ చికిత్స = ప్రమాణిత పద్ధతి కాదు. సిట్రేట్ + ఆక్సలేట్ = Ca²⁺ తొలగించడం ద్వారా గడ్డకట్టడం నిరోధిస్తాయి (Q45).
+  </div>
+</div>
+<div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Respiratory Quotient (Q36):</b> RQ = Volume of CO₂ produced ÷ Volume of O₂ consumed.<br>
+  Carbohydrates = 1.0; Fats = 0.7; Proteins = 0.8; Mixed diet ≈ 0.85.<br>
+  Glucose formula: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O → RQ = 6/6 = 1.0<br>
+  RQ &gt;1 = anaerobic fermentation; &lt;0.7 = excess fat oxidation/starvation.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  RQ = CO₂ ఉత్పత్తి / O₂ వినియోగం. కార్బోహైడ్రేట్లు = 1.0; కొవ్వులు = 0.7; ప్రోటీన్లు = 0.8. మిశ్రమ ఆహారం ≈ 0.85 (Q36).
+  </div>
+</div>
+<div class="exam-alert">
+  <div class="ea-title">⚠ Exam Conflict Q38 — Arterial Bleeding</div>
+  <b>Exam key: (b) 2 and 3</b> (purple blood + continuous) — SCIENTIFICALLY DESCRIBES VENOUS bleeding.<br>
+  Arterial bleeding = BRIGHT RED (oxygenated) + SPURTING/INTERMITTENT (pulsatile, follows heartbeat) = options 1 and 4. For exam: mark (b). Scientifically: arterial = (c) 1 and 4.<br>
+  <span style="color:#6a1b9a">ధమని రక్తస్రావం = ప్రకాశవంతమైన ఎరుపు + అడపాదడపా; సిర = ముదురు ఊదా + నిరంతరం. పరీక్ష కీ (b) = సిర లక్షణాలు వర్ణిస్తుంది!</span>
+</div>
+</div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>AB Blood Group — No Antibodies (Q33):</b> AB = Universal Recipient. Has BOTH A and B antigens on RBC surface → has NO anti-A or anti-B antibodies in plasma (would destroy own cells). Summary: A = anti-B; B = anti-A; O = anti-A + anti-B; AB = NO antibodies.<br>
+  <b>RBCs bind O₂ (Q37):</b> via Hemoglobin (Fe²⁺ in heme). Oxyhemoglobin = bright red; Deoxyhemoglobin = dark red/purple. Vitamin B12 (Cobalamin) = contains cobalt (Co), NOT iron; involved in DNA synthesis and nerve function — does NOT bind O₂.<br>
+  <b>Elements in blood (Q25):</b> Fe (hemoglobin), Cu (ceruloplasmin, enzymes), Mg (enzyme cofactor, ATP), Ca, Na, K — all present. CHROMIUM = not a standard blood element (only trace for insulin action).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  AB రక్తపు గ్రూపు: A మరియు B రెండు యాంటీజన్లు → ఎలాంటి యాంటీబాడీలు లేవు → విశ్వ గ్రహీత (Q33). RBC లు Fe²⁺ (హిమోగ్లోబిన్) ద్వారా O₂ బంధిస్తాయి. విటమిన్ B12 = కోబాల్ట్, O₂ బంధించదు (Q37).
+  </div>
+</div>
+</div>
+
+<!-- PAGE 5: GENETICS / REPRODUCTION / MISCELLANEOUS / MCQ QUICK REF -->
+<div class="page page-break">
+<div class="sec-head">🧬 Genetics, Reproduction &amp; Miscellaneous <span class="te">జన్యుశాస్త్రం · పునరుత్పత్తి · ఇతర విషయాలు</span></div>
+<div class="cols-2">
+<div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Identical vs Fraternal Twins (Q23):</b><br>
+  Identical (Monozygotic) = ONE zygote splits → TWO embryos → same DNA, same sex, same blood group. Conjoined twins = incomplete split.<br>
+  Fraternal (Dizygotic) = two eggs fertilized by two sperms → different DNA (like siblings). Can be same or different sex.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  ఐడెంటికల్ = ఒకే జైగోట్ → రెండు భ్రూణాలు → ఒకే DNA. ఫ్రెటర్నల్ = రెండు అండాలు + రెండు శుక్రకణాలు → వేరే DNA. Q23 జవాబు = (a).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Sperm &amp; Sex Determination (Q30):</b> Sperm carries either X OR Y chromosome (NEVER both simultaneously). 50% X-sperm; 50% Y-sperm. Egg always = X. X-sperm + X egg = XX (Female); Y-sperm + X egg = XY (Male). Sex determined by FATHER. Option 3 (XY sperm) = wrong; would require non-disjunction abnormality.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  శుక్రకణం: X లేదా Y మాత్రమే (ఒకేసారి రెండూ కాదు). X + X = ఆడ; Y + X = మగ. లింగ నిర్ణయం = తండ్రి (శుక్రకణం) నిర్ణయిస్తాడు. XY శుక్రకణం = non-disjunction (అసాధారణం) (Q30).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Ovulation Prevention (Q41):</b> Oral Contraceptive Pills (OCP) = synthetic estrogen + progesterone → suppress FSH and LH → PREVENT OVULATION. IUD and Copper T = prevent IMPLANTATION (not ovulation). Emergency pill = prevents ovulation/implantation.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  OCP మాత్రలు: ఈస్ట్రోజెన్ + ప్రొజెస్టిరోన్ → FSH/LH అణచివేయడం → అండోత్సర్గం నిరోధించడం. IUD/కాపర్ T = అమర్పు (implantation) నిరోధిస్తాయి (Q41).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>PKU — Phenylketonuria (Q17):</b> Autosomal recessive; inherited lack of enzyme <b>Phenylalanine Hydroxylase (PAH)</b>. Phenylalanine cannot → Tyrosine → accumulates → toxic to brain → intellectual disability. Detected by Guthrie test at birth. Treatment: low-phenylalanine diet. "Inborn error of metabolism" = inherited enzyme deficiency.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  PKU = ఫినైల్‌అలనిన్ హైడ్రాక్సిలేస్ (PAH) ఎంజైమ్ లోపం (వారసత్వ). ఫినైల్‌అలనిన్ మెదడులో పేరుకుపోవడం → మేధా వైకల్యం. గుత్రీ పరీక్ష (పుట్టినప్పుడు). చికిత్స = తక్కువ phenylalanine ఆహారం (Q17).
+  </div>
+</div>
+</div>
+<div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Blood Donation Interval (Q4):</b> Minimum = <b>3 months</b> (~12–16 weeks / 56+ days per WHO/Indian guidelines for whole blood). RBCs take ~120 days to regenerate; iron stores recover in 8–12 weeks. Volume donated ≈ 350–450 mL.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  రక్తదానాల మధ్య కనీస విరామం = 3 నెలలు (~12-16 వారాలు). RBC లు తిరిగి తయారవడానికి ~120 రోజులు. ప్రతి దానం ≈ 350-450 mL (Q4).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Hookworm Entry (Q2):</b> Hookworm (Ancylostoma duodenale / Necator americanus) enters body by PENETRATING skin of SOLES OF BARE FEET (filariform larvae in soil). Route: Soil → skin → bloodstream → lungs → trachea → swallowed → small intestine.<br>
+  Leech = external attachment (not a roundworm). Tapeworm = ingested (undercooked meat). Trichina = ingested (pork).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  హుక్‌వార్మ్ = అరికాళ్ళ చర్మం ద్వారా ప్రవేశిస్తుంది (నేల నుండి). మార్గం: నేల → చర్మం → రక్తం → ఊపిరితిత్తులు → మింగబడి → చిన్న ప్రేగు. జలగ = బాహ్య; టేప్‌వార్మ్ = ఆహారం ద్వారా (Q2).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Allergy (Q15):</b> IgE-mediated Type I hypersensitivity. Allergen → B cells produce IgE → IgE binds to mast cells → re-exposure: mast cells release HISTAMINE → symptoms. Pollens/foreign materials = triggers, not the fundamental cause. The cause = antigen-antibody reaction. Treatment: antihistamines.<br>
+  <b>Melanin (Q42):</b> Produced by melanocytes (basal epidermis layer). Eumelanin = brown/black; Pheomelanin = red/yellow. Absorbs UV → protects DNA. Albinism = no melanin; Vitiligo = patchy loss.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  అలెర్జీ = IgE-మాస్ట్ కణ-హిస్టామిన్ యంత్రాంగం; యాంటిజెన్-యాంటీబాడీ ప్రతిచర్య = కారణం (Q15). మెలనిన్ = మెలనోసైట్లు ఉత్పత్తి; UV రక్షణ; ఆల్బినిజం = మెలనిన్ లేకపోవడం (Q42).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Uracil vs Thymine in RNA (Q46):</b> Uracil is energetically CHEAPER to synthesize (thymine = uracil + methyl group → extra energy). RNA is short-lived and produced in large quantities → efficient to use uracil. DNA uses thymine to detect cytosine deamination mutations (if uracil in DNA, repair machinery cannot distinguish normal U from mutated C).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  RNA లో యురేసిల్: సంశ్లేషణ చేయడానికి శక్తి తక్కువ (థైమిన్ = మిథైల్ సమూహం అవసరం = ఎక్కువ శక్తి). DNA లో థైమిన్: సైటోసిన్ → యురేసిల్ మ్యుటేషన్‌లను గుర్తించడానికి (Q46).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>ECG — Electrocardiogram (Q47):</b> Records ELECTRICAL ACTIVITY of the heart — rate, rhythm, pattern of impulses. Waves: P wave (atrial depolarization/contraction); QRS complex (ventricular depolarization/contraction); T wave (ventricular repolarization/relaxation). Uses: diagnose arrhythmias, heart attacks (MI), heart block, pericarditis. Compare: Echocardiogram (Echo) = shows heart SHAPE/structure (not ECG).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  ECG (Electrocardiogram): గుండె విద్యుత్ కార్యకలాపాలు రికార్డ్ చేస్తుంది. P తరంగం (కర్ణిక), QRS సంకీర్ణం (జఠరిక సంకోచం), T తరంగం (వ్యాకోచం). గుండె లయ రుగ్మతలు నిర్ధారణ (Q47).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Autopsy (Q44):</b> From Greek "autos" (self) + "opsis" (sight) = "seeing for oneself." Post-mortem examination: external examination + internal dissection of organs → determine cause/manner of death, identify disease or injuries. Types: Forensic (legal/criminal), Clinical/Medical (disease study), Academic (education).<br>
+  Compare: Autograft = transplanting tissue from one body part to another of the SAME person (e.g., skin graft). Autotomy = self-amputation (lizard drops tail). Autoesism = fictitious term.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  ఆటోప్సీ (శవపరీక్ష): మరణ కారణం నిర్ణయించడానికి శరీర పరీక్ష + విచ్ఛేదన (Q44). ఆటోగ్రాఫ్ట్ = స్వీయ కణజాల మార్పిడి. ఆటోటోమీ = స్వీయ అవయవ కోత (బల్లి తోక).
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>First Organ Transplant — Exam Conflict (Q28):</b><br>
+  Exam key: (c) HEART — Dr. Christiaan Barnard, 1967, Groote Schuur Hospital, Cape Town, South Africa. Patient (Louis Washkansky) survived 18 days.<br>
+  Scientific fact: First SUCCESSFUL organ transplant = KIDNEY — Dr. Joseph Murray, 1954, Peter Bent Brigham Hospital, Boston (Nobel Prize 1990). Follow exam key (c) Heart in exams.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  ⚠ పరీక్ష కీ Q28: (c) గుండె — Dr. Barnard, 1967, Cape Town. శాస్త్రీయ వాస్తవం: మొదటి విజయవంతమైన మార్పిడి = మూత్రపిండం — Dr. Murray, 1954, Boston (నోబెల్ 1990). పరీక్షలో (c) అనుసరించండి.
+  </div>
+</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Embryo Heart Development (Q32):</b> Week 3 = cardiac tube forms (first contractions begin day 21–22); Week 4 = heart tube loops and begins beating; Week 6 = heartbeat clearly detectable by <b>ultrasound</b> (exam answer = 6th week); Week 8 = 4-chambered heart fully formed. At birth: ductus arteriosus and foramen ovale close → adult circulation begins.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  మానవ పిండం గుండె: వారం 3 = హృదయ గొట్టం ఏర్పడటం (మొదటి సంకోచాలు); వారం 4 = కొట్టుకోవడం ప్రారంభం; వారం 6 = అల్ట్రాసౌండ్‌లో స్పష్టంగా గుర్తించవచ్చు (పరీక్ష సమాధానం); వారం 8 = 4 గదులు పూర్తవడం (Q32).
+  </div>
+</div>
+</div>
+</div>
+
+<div class="sec-head">📋 MCQ Quick Reference — Set 12 Answer Key <span class="te">MCQ సత్వర సూచన</span></div>
+<div class="cols-2">
+<table>
+  <tr><th>Q</th><th>Answer / జవాబు</th><th>Q</th><th>Answer / జవాబు</th></tr>
+  <tr><td>1</td><td><b>C</b> — Pericardium (not a bone)<span class="te-td">పెరికార్డియం (ఎముక కాదు)</span></td><td>26</td><td><b>D</b> — Nerve stimulation → antihistaminic<span class="te-td">నాడీ ప్రేరణ → Gate Control Theory</span></td></tr>
+  <tr><td>2</td><td><b>B</b> — Hookworm (soles of feet)<span class="te-td">హుక్‌వార్మ్ (అరికాళ్ళ చర్మం)</span></td><td>27</td><td><b>C</b> — Thymus (largest at birth, involutes)<span class="te-td">థైమస్ (పుట్టినప్పుడు పెద్దది)</span></td></tr>
+  <tr><td>3</td><td><b>B</b> — Pepsin + Lipase<span class="te-td">పెప్సిన్ + లైపేజ్</span></td><td>28</td><td><b>C</b> — Heart (exam key; kidney = scientific)<span class="te-td">గుండె (పరీక్ష కీ)</span></td></tr>
+  <tr><td>4</td><td><b>B</b> — 3 months<span class="te-td">3 నెలలు</span></td><td>29</td><td><b>D</b> — Patella (kneecap)<span class="te-td">పటెల్లా (మోకాలి ఎముక)</span></td></tr>
+  <tr><td>5</td><td><b>C</b> — 12 hours<span class="te-td">12 గంటలు</span></td><td>30</td><td><b>C</b> — X and Y (not both simultaneously)<span class="te-td">X లేదా Y మాత్రమే</span></td></tr>
+  <tr><td>6</td><td><b>C</b> — Thyroid (direct BMR control)<span class="te-td">థైరాయిడ్ (నేరు జీవక్రియ నియంత్రణ)</span></td><td>31</td><td><b>C</b> — Iris (not pupil)<span class="te-td">ఐరిస్ (కనుపాప కాదు)</span></td></tr>
+  <tr><td>7</td><td><b>A</b> — Conformational change (Induced-fit)<span class="te-td">నిర్మాణ మార్పు (ఇండ్యూస్డ్-ఫిట్)</span></td><td>32</td><td><b>D</b> — 6th week<span class="te-td">6వ వారంలో</span></td></tr>
+  <tr><td>8</td><td><b>A</b> — Uppermost small intestine<span class="te-td">చిన్న ప్రేగు పైభాగం</span></td><td>33</td><td><b>D</b> — AB group (no antibodies)<span class="te-td">AB గ్రూపు (యాంటీబాడీలు లేవు)</span></td></tr>
+  <tr><td>9</td><td><b>C</b> — Brain (glucose only)<span class="te-td">మెదడు (గ్లూకోజ్ మాత్రమే)</span></td><td>34</td><td><b>A</b> — Radius (arm, not leg)<span class="te-td">రేడియస్ (చేయి ఎముక)</span></td></tr>
+  <tr><td>10</td><td><b>B</b> — 2123/2123 (32 teeth)<span class="te-td">2123/2123 (32 దంతాలు)</span></td><td>35</td><td><b>C</b> — 1 and 3 (chilling + oxalate)<span class="te-td">1 మరియు 3</span></td></tr>
+</table>
+<table>
+  <tr><th>Q</th><th>Answer / జవాబు</th><th>Q</th><th>Answer / జవాబు</th></tr>
+  <tr><td>11</td><td><b>C</b> — 3 pairs salivary glands<span class="te-td">3 జతల లాలాజల గ్రంథులు</span></td><td>36</td><td><b>D</b> — CO₂/O₂ (RQ definition)<span class="te-td">CO₂/O₂ నిష్పత్తి</span></td></tr>
+  <tr><td>12</td><td><b>D</b> — Sodium (nervous system)<span class="te-td">సోడియం (నాడీ వ్యవస్థ)</span></td><td>37</td><td><b>A</b> — RBCs (hemoglobin binds O₂)<span class="te-td">RBC లు (హిమోగ్లోబిన్)</span></td></tr>
+  <tr><td>13</td><td><b>D</b> — Pericardium (heart covering)<span class="te-td">పెరికార్డియం (గుండె పొర)</span></td><td>38</td><td><b>B ⚠</b> — Exam key (scientifically wrong!)<span class="te-td">పరీక్ష కీ (శాస్త్రీయంగా తప్పు)</span></td></tr>
+  <tr><td>14</td><td><b>C</b> — Coronary artery blockage<span class="te-td">కరోనరీ ధమని మూసుకుపోవడం</span></td><td>39</td><td><b>D</b> — Diaphragm (NOT vestigial)<span class="te-td">డయాఫ్రాగమ్ (అవశేష అవయవం కాదు)</span></td></tr>
+  <tr><td>15</td><td><b>D</b> — Antigen-antibody reaction (IgE)<span class="te-td">యాంటిజెన్-యాంటీబాడీ ప్రతిచర్య</span></td><td>40</td><td><b>B</b> — Carpals (gliding joint)<span class="te-td">కార్పెల్స్ (గ్లైడింగ్ జాయింట్)</span></td></tr>
+  <tr><td>16</td><td><b>D</b> — 0.5% in blood<span class="te-td">0.5% రక్తంలో</span></td><td>41</td><td><b>D</b> — Pills (prevent ovulation)<span class="te-td">మాత్రలు (అండోత్సర్గం నిరోధం)</span></td></tr>
+  <tr><td>17</td><td><b>D</b> — Inherited enzyme lack (PAH)<span class="te-td">ఎంజైమ్ వారసత్వ లోపం (PKU)</span></td><td>42</td><td><b>B</b> — Melanin<span class="te-td">మెలనిన్ (చర్మ రంగు)</span></td></tr>
+  <tr><td>18</td><td><b>B</b> — Cornea (keratoplasty)<span class="te-td">కార్నియా (కెరాటోప్లాస్టీ)</span></td><td>43</td><td><b>D</b> — Blood sugar balance<span class="te-td">రక్తంలో చక్కెర సమతుల్యత</span></td></tr>
+  <tr><td>19</td><td><b>C</b> — 1, 1, 2 (I, C, M)<span class="te-td">1, 1, 2</span></td><td>44</td><td><b>C</b> — Autopsy (post-mortem)<span class="te-td">ఆటోప్సీ (శవపరీక్ష)</span></td></tr>
+  <tr><td>20</td><td><b>B</b> — Valves in veins<span class="te-td">సిరలలో కవాటాలు</span></td><td>45</td><td><b>C</b> — Ca²⁺ (calcium removal)<span class="te-td">Ca²⁺ తొలగించడం</span></td></tr>
+  <tr><td>21</td><td><b>C</b> — 1350 g (male brain)<span class="te-td">1350 గ్రాములు (పురుష మెదడు)</span></td><td>46</td><td><b>D</b> — Energetically cheaper (uracil)<span class="te-td">శక్తి పరంగా చవకైనది</span></td></tr>
+  <tr><td>22</td><td><b>C ⚠</b> — Mouth-to-mouth (exam key)<span class="te-td">నోటి ద్వారా శ్వాస (పరీక్ష కీ)</span></td><td>47</td><td><b>A</b> — Heart rate (ECG records electrical activity)<span class="te-td">ECG = విద్యుత్ కార్యకలాపాలు</span></td></tr>
+  <tr><td>23</td><td><b>A</b> — Same zygote splits (identical)<span class="te-td">ఒకే జైగోట్ (ఐడెంటికల్ ట్విన్స్)</span></td><td>48</td><td><b>C</b> — Astigmatism (cylindrical lens)<span class="te-td">ఆస్టిగ్మాటిజం (స్థూపాకార అద్దాలు)</span></td></tr>
+  <tr><td>24</td><td><b>B</b> — Real and inverted (retina)<span class="te-td">నిజమైనది మరియు తలక్రిందులు</span></td><td>49</td><td><b>D ⚠</b> — Sodium (print error: b+c wrong)<span class="te-td">సోడియం (ముద్రణ తప్పిదం)</span></td></tr>
+  <tr><td>25</td><td><b>C</b> — Chromium (not in blood)<span class="te-td">క్రోమియం (రక్తంలో లేదు)</span></td><td>50</td><td><b>D</b> — Bile juice (alkaline, pH 7.6–8.6)<span class="te-td">పైత్యరసం (క్షార స్వభావం)</span></td></tr>
+</table>
+</div>
+
+<div class="memory-box">
+  <div class="mem-title">📌 Key Memory Points — Set 12 / ముఖ్య గుర్తుంచుకోవలసిన అంశాలు</div>
+  <b>Pericardium</b> = heart membrane (NOT bone) · <b>Hookworm</b> = enters via feet · <b>Pepsin+Lipase</b> = protein+fat · <b>Blood donation</b> = 3 months · <b>Thyroid</b> = direct BMR control · <b>Induced-fit</b> = Koshland 1958 · <b>Duodenum</b> = uppermost small intestine · <b>Brain</b> = glucose only · <b>2123/2123</b> = 32 teeth · <b>Parotid</b> = largest (mumps) · <b>Na⁺</b> = nervous system + BP control · <b>AB</b> = no antibodies · <b>Patella</b> = kneecap · <b>Radius</b> = arm (not leg) · <b>RQ</b> = CO₂/O₂ · <b>Iris</b> controls light (not pupil) · <b>Cornea</b> = transplantable (avascular) · <b>Thymus</b> = largest at birth, involutes · <b>Melanin</b> = UV protection · <b>Bile</b> = alkaline, neutralises chyme · <b>ECG</b> = electrical activity of heart<br><br>
+  <span style="color:#1b5e20;font-size:7.8pt;">⚠ Exam Conflicts: Q22 (mouth-to-mouth vs CPR) · Q28 (heart vs kidney first transplant) · Q38 (arterial bleeding scientifically = red+spurting; exam key = purple+continuous) · Q49 (print error: answer is Sodium/D, not Potassium)</span>
+</div>
+</div>
+
+</body>
+</html>

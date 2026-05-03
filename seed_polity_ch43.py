@@ -190,9 +190,10 @@ def _seed_polity_ch43_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
         (_TOPIC, _CH)).fetchone())
     note_id = row['id']
 
-    existing = db_exec_fn(conn,
+    _cnt_row = db_exec_fn(conn,
         f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,)).fetchone()
-    if (existing[0] if existing else 0) > 0:
+    existing = list(row_to_dict_fn(_cnt_row or {}).values())[0] if _cnt_row else 0
+    if existing > 0:
         return
 
     EXAM = 'UPSC'
@@ -278,13 +279,16 @@ def _seed_polity_ch43_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
         (7,'medium','91వ సవరణ 2003 "చీలిక" తొలగించి "విలీన" మినహాయింపు మాత్రమే ఉంచడంలో రాజ్యాంగ తర్కం ఏమిటి?','చిన్న సమూహాలు విలీనానికే మార్గం అనుసరించాలి','విలీనం = వేరే పార్టీతో ఏకీభవించడం (సైద్ధాంతిక); చీలిక = కేవలం అధికారం కోసం మారడం','ఉభయ మార్గాలు సమానంగా ఉండాలి','కేవలం ఎన్నికల కమిషన్ నిర్ణయించిన మార్పులే చెల్లుబాటవుతాయి','b','విలీనం (2/3) = రాజకీయ/సైద్ధాంతిక కారణాలతో ఒక పార్టీ మరొక పార్టీలో చేరడం; చీలిక = మంత్రి పదవుల కోసం మారడానికి లొసుగు; అందువల్ల చీలిక తొలగించారు.'),
     ]
 
+    _diff_map = {"easy": 1, "medium": 2, "hard": 3}
+
+
     for (sec, diff, q, a, b_, c_, d_, corr, exp) in mcqs:
         db_exec_fn(conn,
             f"""INSERT INTO chapter_mcqs
                 (study_note_id, section_idx, difficulty, exam_type,
                  q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te)
                 VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
-            (note_id, sec, diff, EXAM, q, a, b_, c_, d_, corr, exp))
+            (note_id, sec, _diff_map.get(diff, 1), EXAM, q, a, b_, c_, d_, corr, exp))
 
 
 def seed_polity_ch43(conn, db_exec_fn, row_to_dict_fn, use_postgres=False, force=False):

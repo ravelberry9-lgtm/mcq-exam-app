@@ -181,9 +181,10 @@ def _seed_polity_ch44_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
         (_TOPIC, _CH)).fetchone())
     note_id = row['id']
 
-    existing = db_exec_fn(conn,
+    _cnt_row = db_exec_fn(conn,
         f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,)).fetchone()
-    if (existing[0] if existing else 0) > 0:
+    existing = list(row_to_dict_fn(_cnt_row or {}).values())[0] if _cnt_row else 0
+    if existing > 0:
         return
 
     EXAM = 'UPSC'
@@ -269,13 +270,16 @@ def _seed_polity_ch44_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
         (7,'medium','NHRC వివిధ ప్రత్యేక ఉద్దేశాలకు "Special Rapporteurs" నియమించగలదా?','లేదు, NHRC కి ఆ అధికారం లేదు','అవును, ప్రత్యేక మానవ హక్కుల సమస్యలకు Special Rapporteurs నియమించవచ్చు','కేవలం SC ఆదేశం మేరకు','UN నుండి Rapporteurs తీసుకుంటారు','b','NHRC ప్రత్యేక మానవ హక్కుల సమస్యలు (custody deaths, bonded labour, etc.) దర్యాప్తు చేయడానికి Special Rapporteurs నియమించవచ్చు.'),
     ]
 
+    _diff_map = {"easy": 1, "medium": 2, "hard": 3}
+
+
     for (sec, diff, q, a, b_, c_, d_, corr, exp) in mcqs:
         db_exec_fn(conn,
             f"""INSERT INTO chapter_mcqs
                 (study_note_id, section_idx, difficulty, exam_type,
                  q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te)
                 VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
-            (note_id, sec, diff, EXAM, q, a, b_, c_, d_, corr, exp))
+            (note_id, sec, _diff_map.get(diff, 1), EXAM, q, a, b_, c_, d_, corr, exp))
 
 
 def seed_polity_ch44(conn, db_exec_fn, row_to_dict_fn, use_postgres=False, force=False):

@@ -782,13 +782,14 @@ def _seed_polity_ch63_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
     if not note_id:
         return
     now = _dt.datetime.utcnow().isoformat()
+    _diff_map = {"easy": 1, "medium": 2, "hard": 3}
     for (sec, diff, q, a, b, c, d, correct, explanation) in _MCQS:
         db_exec_fn(conn,
             f"""INSERT INTO chapter_mcqs
                 (study_note_id, section_idx, difficulty, exam_type,
                  q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te, created_at)
                 VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
-            (note_id, sec, diff, 'UPSC', q, a, b, c, d, correct, explanation, now))
+            (note_id, sec, _diff_map.get(diff, 1), 'UPSC', q, a, b, c, d, correct, explanation, now))
 
 
 def seed_polity_ch63(conn, db_exec_fn, row_to_dict_fn, use_postgres=False, force=False):

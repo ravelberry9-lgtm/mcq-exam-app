@@ -515,7 +515,7 @@ def _seed_ap_ca_div3_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=
     if not note_row:
         return
 
-    note_id = note_row[0]
+    note_id = row_to_dict(note_row)['id']
 
     existing_count = db_exec(
         conn,

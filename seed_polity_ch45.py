@@ -192,9 +192,10 @@ def _seed_polity_ch45_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
         (_TOPIC, _CH)).fetchone())
     note_id = row['id']
 
-    existing = db_exec_fn(conn,
+    _cnt_row = db_exec_fn(conn,
         f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,)).fetchone()
-    if (existing[0] if existing else 0) > 0:
+    existing = list(row_to_dict_fn(_cnt_row or {}).values())[0] if _cnt_row else 0
+    if existing > 0:
         return
 
     EXAM = 'UPSC'
@@ -280,13 +281,16 @@ def _seed_polity_ch45_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres)
         (7,'medium','NCSC, NCST, NCBC, NHRC, NCW, NCM, NCPCR, NCMEI — వీటిలో అన్నింటికీ ఉమ్మడిగా ఉండే ఒక లక్షణం ఏమిటి?','అన్నీ రాజ్యాంగ సంస్థలు','అన్నింటికీ Civil Court అధికారాలు ఉంటాయి','అన్నీ రాష్ట్రపతి నియమిస్తారు','అన్నీ 5 సంవత్సరాల పదవీకాలం కలిగి ఉంటాయి','b','NCSC, NCST, NCBC, NHRC, NCW, NCM, NCPCR, NCMEI — అన్నింటికీ విచారణ సమయంలో Civil Court అధికారాలు ఉంటాయి.'),
     ]
 
+    _diff_map = {"easy": 1, "medium": 2, "hard": 3}
+
+
     for (sec, diff, q, a, b_, c_, d_, corr, exp) in mcqs:
         db_exec_fn(conn,
             f"""INSERT INTO chapter_mcqs
                 (study_note_id, section_idx, difficulty, exam_type,
                  q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te)
                 VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
-            (note_id, sec, diff, EXAM, q, a, b_, c_, d_, corr, exp))
+            (note_id, sec, _diff_map.get(diff, 1), EXAM, q, a, b_, c_, d_, corr, exp))
 
 
 def seed_polity_ch45(conn, db_exec_fn, row_to_dict_fn, use_postgres=False, force=False):
