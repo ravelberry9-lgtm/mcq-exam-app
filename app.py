@@ -398,6 +398,70 @@ def init_db():
 def _auto_seed_polity():
     """Seed Indian Polity (Lakshmikanth) chapters into study_notes + chapter_mcqs."""
     import importlib
+
+    # ── Runtime compatibility shims ───────────────────────────────────────────
+    # Older seed files may use string difficulty ('easy'/'medium'/'hard') instead
+    # of the integer the schema requires (1/2/3).  They may also rely on
+    # list(fetchone())[0] which on psycopg2 RealDictRow returns the column *name*
+    # instead of the value.  We fix both at call-time without touching the seed
+    # files by wrapping db_exec + the cursor it returns.
+    _DIFF_MAP = {'easy': 1, 'medium': 2, 'hard': 3}
+
+    class _CompatRow:
+        """Wraps a psycopg2 RealDictRow so that:
+        - list(row)[0]  → first *value* (not the key string)
+        - dict(row)     → proper dict  (via keys() + __getitem__)
+        - row['col']    → column value by name
+        - row.get(k)    → column value by name with default
+        """
+        __slots__ = ('_d', '_vals')
+        def __init__(self, d):
+            self._d = dict(d)  # normalise to plain dict
+            self._vals = list(self._d.values())
+        def __getitem__(self, key):
+            if isinstance(key, int):
+                return self._vals[key]
+            return self._d[key]
+        def __iter__(self):
+            # list(row)[0] → first value (not key)
+            return iter(self._vals)
+        def keys(self):
+            # dict(row) uses keys() + __getitem__ → produces proper dict
+            return self._d.keys()
+        def get(self, key, default=None):
+            return self._d.get(key, default)
+        def __bool__(self):
+            return bool(self._d)
+
+    class _CompatCursor:
+        """Wraps a DB cursor — fixes fetchone() for list()[0] usage."""
+        def __init__(self, cur):
+            self._cur = cur
+        def fetchone(self):
+            row = self._cur.fetchone()
+            if row is None:
+                return None
+            if isinstance(row, dict):
+                return _CompatRow(row)
+            return row
+        def fetchall(self):
+            return self._cur.fetchall()
+        @property
+        def lastrowid(self):
+            return getattr(self._cur, 'lastrowid', None)
+
+    def _compat_exec(conn, sql, params=()):
+        """Wraps db_exec: fixes string difficulty in chapter_mcqs INSERTs."""
+        if params and 'chapter_mcqs' in sql and 'INSERT' in sql:
+            p = list(params)
+            # Column order is always: study_note_id, section_idx, difficulty, ...
+            # so difficulty is at index 2.
+            if len(p) >= 3 and isinstance(p[2], str) and p[2].lower() in _DIFF_MAP:
+                p[2] = _DIFF_MAP[p[2].lower()]
+            params = tuple(p)
+        cur = db_exec(conn, sql, params)
+        return _CompatCursor(cur)
+    # ─────────────────────────────────────────────────────────────────────────
     chapters = [
         (1,  'seed_polity_ch1',  'polity_ch1'),
         (2,  'seed_polity_ch2',  'polity_ch2'),
@@ -496,10 +560,28 @@ def _auto_seed_polity():
             mod = importlib.import_module(mod_name)
             notes_fn = getattr(mod, f'_seed_{fn_suffix}_notes_inner')
             mcqs_fn  = getattr(mod, f'_seed_{fn_suffix}_mcqs_inner')
-            notes_fn(c, db_exec, row_to_dict, USE_POSTGRES, force=False)
+            notes_fn(c, _compat_exec, row_to_dict, USE_POSTGRES, force=False)
             c.commit()
-            mcqs_fn(c, db_exec, row_to_dict, USE_POSTGRES)
+            mcqs_fn(c, _compat_exec, row_to_dict, USE_POSTGRES)
             c.commit()
+            # Verify MCQs were actually inserted; if count=0 force a re-seed
+            # (guards against seed files that skipped inserts due to stale count cache)
+            ph2 = '%s' if USE_POSTGRES else '?'
+            nr = _compat_exec(c, f"SELECT id FROM study_notes WHERE topic={ph2} AND chapter_num={ph2}",
+                              ('Indian_Polity', ch_num)).fetchone()
+            if nr:
+                nid = nr.get('id') if hasattr(nr, 'get') else nr[0]
+                cr = _compat_exec(c, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph2}",
+                                  (nid,)).fetchone()
+                mcq_cnt = cr[0] if cr else 0
+                if mcq_cnt == 0:
+                    try:
+                        mcqs_fn(c, _compat_exec, row_to_dict, USE_POSTGRES, force=True)
+                    except TypeError:
+                        # Older signature has no force param — delete & re-insert manually
+                        _compat_exec(c, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph2}", (nid,))
+                        mcqs_fn(c, _compat_exec, row_to_dict, USE_POSTGRES)
+                    c.commit()
             print(f"[polity-seed] ch{ch_num} done.")
         except ModuleNotFoundError:
             print(f"[polity-seed] ch{ch_num} — seed file not yet created, skipping.")
