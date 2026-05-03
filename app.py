@@ -2015,46 +2015,8 @@ def read_notes_home():
 
 
 # ─────────────────────────────────────────────
-# Study Library — APBOOKS catalog (metadata-only)
-# Indian History Audio Guide & Ch10 Cinematic Narrative
+# Ch10 Cinematic Narrative
 # ─────────────────────────────────────────────
-@app.route('/library')
-def library():
-    """Browse APBOOKS catalog (metadata-only index of source PDFs/Excels)."""
-    catalog_path = os.path.join(app.static_folder, 'library_catalog.json')
-    groups = {}
-    total_items = 0
-    total_bytes = 0
-    if os.path.isfile(catalog_path):
-        try:
-            with open(catalog_path, 'r', encoding='utf-8') as f:
-                groups = json.load(f)
-            for items in groups.values():
-                total_items += len(items)
-                for it in items:
-                    sz = it.get('size', '')
-                    # rough sum from "X MB" / "X KB" string
-                    if 'MB' in sz:
-                        try: total_bytes += int(float(sz.split()[0]) * 1024 * 1024)
-                        except: pass
-                    elif 'KB' in sz:
-                        try: total_bytes += int(float(sz.split()[0]) * 1024)
-                        except: pass
-        except Exception:
-            pass
-    total_size_mb = round(total_bytes / (1024 * 1024)) if total_bytes else 0
-    return render_template('library.html',
-                           groups=groups,
-                           total_items=total_items,
-                           total_size_mb=total_size_mb)
-
-
-@app.route('/study/audio-guide/indian-history')
-def study_audio_guide_indian_history():
-    """Self-contained Telugu/English audio guide for Ancient History Ch1."""
-    return redirect('/static/guides/indian_history_ch1.html')
-
-
 @app.route('/study/narrative/ch10')
 def study_narrative_ch10():
     """Cinematic narrative for Ancient History Ch10 — Gupta Empire."""
