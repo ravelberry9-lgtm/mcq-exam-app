@@ -410,8 +410,8 @@ def init_db():
     try:
         cur_sci = db_exec(conn, "SELECT COUNT(*) FROM questions WHERE topic='General_Science'")
         sci_count = _fv(cur_sci.fetchone())
-        if sci_count < 100:
-            print(f"[startup] General Science: {sci_count}/100 MCQs — auto-seeding...")
+        if sci_count < 349:
+            print(f"[startup] General Science: {sci_count}/349 MCQs — auto-seeding...")
             _auto_seed_science()
             print("[startup] General Science auto-seed complete.")
         else:
@@ -632,6 +632,11 @@ def _auto_seed_science():
     import importlib
     ph = '%s' if USE_POSTGRES else '?'
     sets = [
+        ('seed_science_set1_bilingual',  'Science_Set1_Elements_Metals_Compounds'),
+        ('seed_science_set2_bilingual',  'Science_Set2_Elements_Metals_Compounds_II'),
+        ('seed_science_set3_bilingual',  'Science_Set3_Elements_Metals_Compounds_III'),
+        ('seed_science_set4_bilingual',  'Science_Set4_Atoms_Radioactivity_Nuclear'),
+        ('seed_science_set5_bilingual',  'Science_Set5_Synthetic_Materials'),
         ('seed_science_set11_bilingual', 'Science_Set11_Human_System2'),
         ('seed_science_set12_bilingual', 'Science_Set12_Human_System3'),
     ]
