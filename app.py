@@ -912,6 +912,21 @@ def setup():
 def folder_stats():
     return jsonify(get_folder_tree())
 
+@app.route('/api/quiz-meta')
+def quiz_meta():
+    """Return available topics in chapter_mcqs with question counts."""
+    conn = get_db()
+    cur = db_exec(conn, '''
+        SELECT sn.topic, COUNT(cm.id) as count
+        FROM chapter_mcqs cm
+        JOIN study_notes sn ON cm.study_note_id = sn.id
+        GROUP BY sn.topic
+        ORDER BY count DESC
+    ''')
+    topics = [row_to_dict(r) for r in cur.fetchall()]
+    conn.close()
+    return jsonify({'topics': topics})
+
 @app.route('/api/start-exam', methods=['POST'])
 def start_exam():
     data = request.json
@@ -921,41 +936,161 @@ def start_exam():
     device_id    = data.get('device_id', 'default')
     student_name = data.get('student_name', 'Student')
 
+    # ── New filter params ──────────────────────────────────────────────
+    sources      = data.get('sources', ['main'])
+    difficulties = data.get('difficulties', ['E','M','H'])
+    quiz_count   = int(data.get('quiz_count', 0) or 0)
+    quiz_topics  = data.get('quiz_topics', [])
+    pyq_count    = int(data.get('pyq_count', 0) or 0)
+    pyq_topics   = data.get('pyq_topics', [])
+    pyq_years    = data.get('pyq_years', [])
+
+    diff_set = set(d.upper() for d in difficulties) if difficulties else {'E','M','H'}
+    diff_int_map = {'E': 1, 'M': 2, 'H': 3}
+    diff_ints = [diff_int_map[d] for d in diff_set if d in diff_int_map]
+
     conn = get_db()
+    ph = '%s' if USE_POSTGRES else '?'
+
     all_questions = []
+    extra_items   = []
 
-    for folder, topics in selections.items():
-        for topic, count in topics.items():
-            count = int(count)
-            if count <= 0:
-                continue
-
-            if mode == 'no_repeat':
-                cur = db_exec(conn, 'SELECT question_id FROM seen_questions WHERE device_id=?', (device_id,))
-                seen_ids = [r['question_id'] for r in cur.fetchall()]
-
-                if seen_ids:
-                    ph = ','.join(['?'] * len(seen_ids))
-                    cur = db_exec(conn,
-                        f'SELECT * FROM questions WHERE folder=? AND topic=? AND id NOT IN ({ph})',
-                        [folder, topic] + seen_ids)
+    # ── A. Main question bank ──────────────────────────────────────────
+    if 'main' in sources:
+        for folder, topics in selections.items():
+            for topic, count in topics.items():
+                count = int(count)
+                if count <= 0:
+                    continue
+                if diff_set < {'E','M','H'}:
+                    diff_placeholders = ','.join([ph] * len(diff_set))
+                    diff_clause = f' AND difficulty IN ({diff_placeholders})'
+                    diff_params = list(diff_set)
                 else:
-                    cur = db_exec(conn, 'SELECT * FROM questions WHERE folder=? AND topic=?', (folder, topic))
-                rows = [row_to_dict(r) for r in cur.fetchall()]
-
-                if len(rows) < count:
-                    cur = db_exec(conn, 'SELECT * FROM questions WHERE folder=? AND topic=?', (folder, topic))
+                    diff_clause = ''
+                    diff_params = []
+                if mode == 'no_repeat':
+                    cur = db_exec(conn, f'SELECT question_id FROM seen_questions WHERE device_id={ph}', (device_id,))
+                    seen_ids = [r['question_id'] for r in cur.fetchall()]
+                    if seen_ids:
+                        excl = ','.join([ph] * len(seen_ids))
+                        cur = db_exec(conn,
+                            f'SELECT * FROM questions WHERE folder={ph} AND topic={ph} AND id NOT IN ({excl}){diff_clause}',
+                            [folder, topic] + seen_ids + diff_params)
+                    else:
+                        cur = db_exec(conn,
+                            f'SELECT * FROM questions WHERE folder={ph} AND topic={ph}{diff_clause}',
+                            [folder, topic] + diff_params)
                     rows = [row_to_dict(r) for r in cur.fetchall()]
+                    if len(rows) < count:
+                        cur = db_exec(conn,
+                            f'SELECT * FROM questions WHERE folder={ph} AND topic={ph}{diff_clause}',
+                            [folder, topic] + diff_params)
+                        rows = [row_to_dict(r) for r in cur.fetchall()]
+                else:
+                    cur = db_exec(conn,
+                        f'SELECT * FROM questions WHERE folder={ph} AND topic={ph}{diff_clause}',
+                        [folder, topic] + diff_params)
+                    rows = [row_to_dict(r) for r in cur.fetchall()]
+                rows = _pick_questions_smart(rows, count)
+                all_questions.extend(rows)
+
+    # ── B. Chapter Quiz ────────────────────────────────────────────────
+    if 'quiz' in sources and quiz_count > 0:
+        try:
+            diff_map_str = {1: 'E', 2: 'M', 3: 'H'}
+            if diff_ints and len(diff_ints) < 3:
+                dph = ','.join([ph] * len(diff_ints))
+                diff_clause_q = f' AND cm.difficulty IN ({dph})'
+                diff_params_q = diff_ints
             else:
-                cur = db_exec(conn, 'SELECT * FROM questions WHERE folder=? AND topic=?', (folder, topic))
-                rows = [row_to_dict(r) for r in cur.fetchall()]
+                diff_clause_q = ''
+                diff_params_q = []
+            if quiz_topics:
+                tph = ','.join([ph] * len(quiz_topics))
+                topic_clause = f' AND sn.topic IN ({tph})'
+                topic_params = quiz_topics
+            else:
+                topic_clause = ''
+                topic_params = []
+            cur = db_exec(conn,
+                f'''SELECT cm.id, cm.q_te, cm.opt_a, cm.opt_b, cm.opt_c, cm.opt_d,
+                           cm.correct, cm.difficulty, cm.explanation_te,
+                           sn.topic as sn_topic, sn.chapter_title_en
+                    FROM chapter_mcqs cm
+                    JOIN study_notes sn ON cm.study_note_id = sn.id
+                    WHERE 1=1{diff_clause_q}{topic_clause}''',
+                diff_params_q + topic_params)
+            ch_rows = [row_to_dict(r) for r in cur.fetchall()]
+            random.shuffle(ch_rows)
+            ch_rows = ch_rows[:quiz_count]
+            for r in ch_rows:
+                extra_items.append({
+                    '_source': 'quiz',
+                    'id': 'ch_' + str(r['id']),
+                    'folder': r.get('sn_topic', 'Quiz'),
+                    'topic': r.get('sn_topic', 'Quiz'),
+                    'chapter': r.get('chapter_title_en', ''),
+                    'question_text': r.get('q_te', ''),
+                    'options': [
+                        {'key': 'A', 'text': r.get('opt_a', '')},
+                        {'key': 'B', 'text': r.get('opt_b', '')},
+                        {'key': 'C', 'text': r.get('opt_c', '')},
+                        {'key': 'D', 'text': r.get('opt_d', '')},
+                    ],
+                    'correct': r.get('correct', '').strip().upper(),
+                    'correct_answer': r.get('correct', '').strip().upper(),
+                    'difficulty': diff_map_str.get(r.get('difficulty', 2), 'M'),
+                    'explanation': r.get('explanation_te', ''),
+                    'passage': None, 'passage_group_id': None,
+                })
+        except Exception as _qe:
+            print(f'[start-exam] quiz fetch error: {_qe}')
 
-            rows = _pick_questions_smart(rows, count)
-            all_questions.extend(rows)
+    # ── C. PYQ ────────────────────────────────────────────────────────
+    if 'pyq' in sources and pyq_count > 0:
+        try:
+            clauses, params_pyq = [], []
+            if pyq_topics:
+                tph = ','.join([ph] * len(pyq_topics))
+                clauses.append(f'topic IN ({tph})')
+                params_pyq.extend(pyq_topics)
+            if pyq_years:
+                yph = ','.join([ph] * len(pyq_years))
+                clauses.append(f'year IN ({yph})')
+                params_pyq.extend(pyq_years)
+            where = (' WHERE ' + ' AND '.join(clauses)) if clauses else ''
+            cur = db_exec(conn, f'SELECT * FROM pyq_questions{where}', params_pyq)
+            pyq_rows = [row_to_dict(r) for r in cur.fetchall()]
+            random.shuffle(pyq_rows)
+            pyq_rows = pyq_rows[:pyq_count]
+            for r in pyq_rows:
+                extra_items.append({
+                    '_source': 'pyq',
+                    'id': 'pyq_' + str(r['id']),
+                    'folder': 'PYQ',
+                    'topic': r.get('topic', 'PYQ'),
+                    'year':  r.get('year', ''),
+                    'paper': r.get('paper', ''),
+                    'question_text': r.get('question_text', ''),
+                    'options': [
+                        {'key': 'A', 'text': r.get('option_a', '')},
+                        {'key': 'B', 'text': r.get('option_b', '')},
+                        {'key': 'C', 'text': r.get('option_c', '')},
+                        {'key': 'D', 'text': r.get('option_d', '')},
+                    ],
+                    'correct': r.get('correct_answer', '').strip().upper(),
+                    'correct_answer': r.get('correct_answer', '').strip().upper(),
+                    'difficulty': 'M',
+                    'explanation': r.get('explanation', ''),
+                    'passage': None, 'passage_group_id': None,
+                })
+        except Exception as _pe:
+            print(f'[start-exam] pyq fetch error: {_pe}')
 
-    if not all_questions:
+    if not all_questions and not extra_items:
         conn.close()
-        return jsonify({'error': 'No questions found for selected topics'}), 400
+        return jsonify({'error': 'No questions found for the selected filters'}), 400
 
     if mode == 'shuffle':
         all_questions = _shuffle_keeping_passages(all_questions)
@@ -967,8 +1102,7 @@ def start_exam():
                     cur = conn.cursor()
                     cur.execute(
                         'INSERT INTO seen_questions (device_id, question_id) VALUES (%s,%s) ON CONFLICT DO NOTHING',
-                        (device_id, q['id'])
-                    )
+                        (device_id, q['id']))
                 else:
                     db_exec(conn, 'INSERT OR IGNORE INTO seen_questions (device_id, question_id) VALUES (?,?)',
                             (device_id, q['id']))
@@ -976,24 +1110,36 @@ def start_exam():
                 pass
         conn.commit()
 
+    session_questions = [q['id'] for q in all_questions] + extra_items
+    random.shuffle(session_questions)
+
     session_id = str(uuid.uuid4())
-    config = {'mode': mode, 'duration': duration, 'selections': selections, 'device_id': device_id, 'student_name': student_name}
-    q_ids = [q['id'] for q in all_questions]
-    db_exec(conn, 'INSERT INTO exam_sessions (id, config, questions) VALUES (?,?,?)',
-            (session_id, json.dumps(config), json.dumps(q_ids)))
+    config = {
+        'mode': mode, 'duration': duration, 'selections': selections,
+        'sources': sources, 'difficulties': list(diff_set),
+        'quiz_count': quiz_count, 'pyq_count': pyq_count,
+        'device_id': device_id, 'student_name': student_name,
+    }
+    db_exec(conn, f'INSERT INTO exam_sessions (id, config, questions) VALUES ({ph},{ph},{ph})',
+            (session_id, json.dumps(config), json.dumps(session_questions)))
     conn.commit()
     conn.close()
 
-    client_questions = [{
-        'id': q['id'], 'folder': q['folder'], 'topic': q['topic'],
-        'passage': q.get('passage'), 'passage_group_id': q.get('passage_group_id'),
-        'question_text': q['question_text'],
-        'options': _get_options(q), 'difficulty': q.get('difficulty', 'M')
-    } for q in all_questions]
+    client_questions = []
+    for q in all_questions:
+        client_questions.append({
+            'id': q['id'], 'folder': q['folder'], 'topic': q['topic'],
+            'passage': q.get('passage'), 'passage_group_id': q.get('passage_group_id'),
+            'question_text': q['question_text'],
+            'options': _get_options(q), 'difficulty': q.get('difficulty', 'M'),
+            '_source': 'main',
+        })
+    for item in extra_items:
+        client_questions.append(item)
+    random.shuffle(client_questions)
 
     return jsonify({'session_id': session_id, 'questions': client_questions,
                     'duration': duration, 'total': len(client_questions)})
-
 
 def _get_options(q):
     opts = [{'key': k, 'text': q[f'option_{k.lower()}']} for k in ['A','B','C','D']]
