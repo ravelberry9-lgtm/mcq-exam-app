@@ -1881,13 +1881,13 @@ def _seed_ch10_ancient_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres
     if not row:
         return {"success": False, "error": "Chapter 10 study note not found. Seed notes first."}
 
-    note_id = list(row)[0]
+    note_id = row_to_dict_fn(row)['id']
 
     # Check if already seeded
     cur2 = db_exec_fn(conn,
         f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
     count_row = cur2.fetchone()
-    existing_count = list(count_row)[0] if count_row else 0
+    existing_count = list(row_to_dict_fn(count_row).values())[0] if count_row else 0
     if existing_count > 0:
         return {
             "success": True,
