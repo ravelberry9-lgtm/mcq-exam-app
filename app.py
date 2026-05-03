@@ -56,6 +56,14 @@ def row_to_dict(row):
         return None
     return dict(row)
 
+def _fv(row):
+    """Extract first value from a row — works for both psycopg2 RealDictRow (dict) and sqlite3.Row (tuple-like)."""
+    if row is None:
+        return 0
+    if isinstance(row, dict):
+        return list(row.values())[0]
+    return list(row)[0]
+
 
 def init_db():
     conn = get_db()
@@ -235,7 +243,7 @@ def init_db():
     try:
         cur_cnt = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND subtopic='Ancient'")
         row_cnt = cur_cnt.fetchone()
-        ancient_count = list(row_cnt)[0] if row_cnt else 0
+        ancient_count = _fv(row_cnt)
         if ancient_count < 9:
             print(f"[startup] Only {ancient_count}/9 ancient chapters — auto-seeding...")
             _auto_seed_ancient()
@@ -246,7 +254,7 @@ def init_db():
     # ── Auto-seed Modern ch1 if missing (seed_ch10.py = Advent of Europeans) ──
     try:
         cur_mod1 = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND subtopic='Modern' AND chapter_num=1")
-        mod1_count = list(cur_mod1.fetchone())[0] if cur_mod1 else 0
+        mod1_count = _fv(cur_mod1.fetchone())
         if mod1_count < 1 and _SEED_CH10_LOADED:
             print("[startup] Modern ch1 missing — auto-seeding...")
             _seed_ch10_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
@@ -260,7 +268,7 @@ def init_db():
     # ── Auto-seed Modern ch2 if missing ──
     try:
         cur_mod = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND subtopic='Modern' AND chapter_num=2")
-        mod_count = list(cur_mod.fetchone())[0] if cur_mod else 0
+        mod_count = _fv(cur_mod.fetchone())
         if mod_count < 1 and _SEED_CH2_MODERN_LOADED:
             print("[startup] Modern ch2 missing — auto-seeding...")
             _seed_ch2_modern_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
@@ -272,7 +280,7 @@ def init_db():
     # ── Auto-seed Modern ch3 if missing ──
     try:
         cur_mod3 = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND subtopic='Modern' AND chapter_num=3")
-        mod3_count = list(cur_mod3.fetchone())[0] if cur_mod3 else 0
+        mod3_count = _fv(cur_mod3.fetchone())
         if mod3_count < 1 and _SEED_CH3_MODERN_LOADED:
             print("[startup] Modern ch3 missing — auto-seeding...")
             _seed_ch3_modern_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False)
@@ -293,7 +301,7 @@ def init_db():
     # ── Auto-seed PYQ questions if table is empty ──
     try:
         cur_pyq = db_exec(conn, "SELECT COUNT(*) FROM pyq_questions")
-        pyq_count = list(cur_pyq.fetchone())[0] if cur_pyq else 0
+        pyq_count = _fv(cur_pyq.fetchone())
         if pyq_count == 0:
             print(f"[startup] PYQ table empty — auto-seeding from pyq_seed_data.json...")
             _auto_seed_pyq()
@@ -306,10 +314,10 @@ def init_db():
     # ── Auto-seed AP Current Affairs chapters ──
     try:
         cur_ca = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='AP_Current_Affairs'")
-        ca_count = list(cur_ca.fetchone())[0] if cur_ca else 0
+        ca_count = _fv(cur_ca.fetchone())
         cur_ca_mcq = db_exec(conn,
             "SELECT COUNT(*) FROM chapter_mcqs cm JOIN study_notes sn ON cm.study_note_id=sn.id WHERE sn.topic='AP_Current_Affairs'")
-        ca_mcq_count = list(cur_ca_mcq.fetchone())[0] if cur_ca_mcq else 0
+        ca_mcq_count = _fv(cur_ca_mcq.fetchone())
         if ca_count < 10 or ca_mcq_count < 500:
             print(f"[startup] AP Current Affairs: {ca_count} divisions, {ca_mcq_count} MCQs — auto-seeding all 10...")
             _auto_seed_ap_current_affairs()
@@ -322,7 +330,7 @@ def init_db():
     # ── Auto-seed AP Geography chapters 1-15 ──
     try:
         cur_geo = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='AP_Geography'")
-        geo_count = list(cur_geo.fetchone())[0] if cur_geo else 0
+        geo_count = _fv(cur_geo.fetchone())
         if geo_count < 15:
             print(f"[startup] Only {geo_count}/15 AP Geography chapters — auto-seeding all 15...")
             _auto_seed_ap_geography()
@@ -349,13 +357,13 @@ def init_db():
     # ── Auto-seed Indian Polity chapters (Lakshmikanth) ──
     try:
         cur_pol = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_Polity'")
-        pol_count = list(cur_pol.fetchone())[0] if cur_pol else 0
+        pol_count = _fv(cur_pol.fetchone())
         cur_pol_mcq = db_exec(conn, """
             SELECT COUNT(DISTINCT sn.chapter_num) FROM chapter_mcqs cm
             JOIN study_notes sn ON cm.study_note_id=sn.id
             WHERE sn.topic='Indian_Polity'
         """)
-        pol_mcq_count = list(cur_pol_mcq.fetchone())[0] if cur_pol_mcq else 0
+        pol_mcq_count = _fv(cur_pol_mcq.fetchone())
         if pol_count < 90 or pol_mcq_count < 90:
             print(f"[startup] Indian Polity: {pol_count} notes, {pol_mcq_count}/90 chapters with MCQs — auto-seeding...")
             _auto_seed_polity()
@@ -672,7 +680,12 @@ def debug_polity():
             GROUP BY sn.chapter_num ORDER BY sn.chapter_num
         """).fetchall()]
         # Columns in study_notes
-        cols = [row_to_dict(r)['name'] for r in db_exec(conn, "PRAGMA table_info(study_notes)").fetchall()]
+        if USE_POSTGRES:
+            cols = [row_to_dict(r)['column_name'] for r in db_exec(conn,
+                "SELECT column_name FROM information_schema.columns WHERE table_name='study_notes' ORDER BY ordinal_position"
+            ).fetchall()]
+        else:
+            cols = [row_to_dict(r)['name'] for r in db_exec(conn, "PRAGMA table_info(study_notes)").fetchall()]
         conn.close()
         return jsonify({
             'study_notes_count': len(notes_rows),
