@@ -1997,15 +1997,6 @@ def read_notes_home():
     return render_template('read_notes.html', groups=groups)
 
 
-# ─────────────────────────────────────────────
-# Ch10 Cinematic Narrative
-# ─────────────────────────────────────────────
-@app.route('/study/narrative/ch10')
-def study_narrative_ch10():
-    """Cinematic narrative for Ancient History Ch10 — Gupta Empire."""
-    return render_template('narrative_ch10.html')
-
-
 
 @app.route('/api/notes/add', methods=['POST'])
 @admin_required
