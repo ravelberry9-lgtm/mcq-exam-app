@@ -1124,7 +1124,7 @@ def _seed_ch3_modern_notes_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres,
         f"SELECT COUNT(*) FROM study_notes WHERE topic={ph} AND subtopic={ph} AND chapter_num={ph}",
         ('Indian_History', 'Modern', 3))
     row = cur.fetchone()
-    count = list(row_to_dict_fn(row).values())[0] if row else 0
+    count = list(row)[0] if row else 0
 
     if count > 0 and not force:
         return {
@@ -1203,13 +1203,13 @@ def _seed_ch3_modern_mcqs_inner(conn, db_exec_fn, row_to_dict_fn, use_postgres):
     if not row:
         return {"success": False, "error": "Chapter 3 Modern study note not found. Seed notes first."}
 
-    note_id = row_to_dict_fn(row)['id']
+    note_id = list(row)[0]
 
     # Check if already seeded
     cur2 = db_exec_fn(conn,
         f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
     count_row = cur2.fetchone()
-    existing_count = list(row_to_dict_fn(count_row).values())[0] if count_row else 0
+    existing_count = list(count_row)[0] if count_row else 0
     if existing_count > 0:
         return {
             "success": True,

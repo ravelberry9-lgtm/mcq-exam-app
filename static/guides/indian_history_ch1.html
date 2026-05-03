@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>భారతదేశ చరిత్ర – అధ్యాయం 1 | Audio Guide</title>
+<style>
+  :root {
+    --primary: #7b3f00;
+    --secondary: #c8860a;
+    --bg: #fdf6ed;
+    --card: #fffdf9;
+    --border: #e8d5b0;
+    --text: #2c1a00;
+    --muted: #8a6a40;
+    --active: #fff3cd;
+    --active-border: #c8860a;
+    --green: #2e7d32;
+    --green-light: #e8f5e9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', 'Noto Sans Telugu', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  header {
+    background: linear-gradient(135deg, #7b3f00, #c8860a);
+    color: white;
+    padding: 18px 16px 14px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  }
+  header h1 { font-size: 18px; font-weight: 800; }
+  header p  { font-size: 12px; opacity: 0.85; margin-top: 4px; }
+
+  .player-bar {
+    background: #fff;
+    border-bottom: 2px solid var(--border);
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: sticky;
+    top: 68px;
+    z-index: 99;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .now-playing {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .now-playing span { color: var(--primary); font-weight: 800; }
+  .controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    border: none;
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-play  { background: var(--green); color: white; }
+  .btn-pause { background: #f57c00;      color: white; }
+  .btn-stop  { background: #c62828;      color: white; }
+  .btn-nav   { background: var(--bg); border: 2px solid var(--border); color: var(--primary); padding: 6px 12px; }
+  .btn-nav:hover { background: var(--border); }
+  .speed-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--muted);
+    margin-left: auto;
+  }
+  .speed-wrap select {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 3px 6px;
+    font-size: 12px;
+    background: white;
+    color: var(--primary);
+  }
+  .progress-bar-wrap {
+    height: 4px;
+    background: #e0d0b0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #c8860a, #7b3f00);
+    width: 0%;
+    transition: width 0.5s;
+  }
+
+  .voice-warning {
+    background: #fff8e1;
+    border: 1px solid #ffcc02;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #5d4037;
+    margin: 10px 14px 0;
+  }
+
+  .main { padding: 12px 14px 90px; }
+
+  .chapter-title {
+    background: linear-gradient(135deg, #7b3f00, #a0522d);
+    color: white;
+    border-radius: 14px;
+    padding: 18px 16px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .chapter-title h2  { font-size: 22px; font-weight: 900; }
+  .chapter-title p   { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+  .chapter-title .pages { font-size: 11px; opacity: 0.7; margin-top: 6px; }
+
+  .section-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+  .section-card.playing {
+    border-color: var(--active-border);
+    background: var(--active);
+    box-shadow: 0 0 0 3px rgba(200,134,10,0.2);
+  }
+  .section-card.done {
+    border-color: #a5d6a7;
+    background: var(--green-light);
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+  .section-num {
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .section-card.playing .section-num { background: var(--secondary); }
+  .section-card.done   .section-num  { background: var(--green); }
+  .section-title-wrap { flex: 1; min-width: 0; }
+  .section-title { font-size: 14px; font-weight: 700; color: var(--primary); }
+  .section-sub   { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .section-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .badge-playing { background: #fff3cd; color: #856404; }
+  .badge-done    { background: var(--green-light); color: var(--green); }
+  .badge-pending { background: #f5f5f5; color: #999; }
+
+  .section-body {
+    padding: 0 14px 14px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--text);
+    display: none;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    margin-top: 0;
+  }
+  .section-body.open { display: block; }
+  .section-body p { margin-bottom: 10px; }
+  .highlight {
+    background: #fff3cd;
+    border-left: 3px solid var(--secondary);
+    padding: 7px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 8px 0;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .table-wrap { overflow-x: auto; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { background: var(--primary); color: white; padding: 7px 8px; text-align: left; }
+  td { padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: #f9f3e8; }
+
+  .play-section-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .play-section-btn:hover { background: var(--secondary); }
+
+  .summary-box {
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    border: 2px solid #a5d6a7;
+    border-radius: 14px;
+    padding: 14px;
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .summary-box h4 { color: var(--green); font-size: 13px; margin-bottom: 8px; }
+  .summary-box p  { margin-bottom: 8px; }
+
+  .play-all-wrap {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .play-all-btn {
+    background: linear-gradient(135deg, #7b3f00, #c8860a);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  }
+  .play-all-btn:active { transform: scale(0.97); }
+
+  .fab {
+    position: fixed;
+    bottom: 20px;
+    right: 16px;
+    background: var(--primary);
+    color: white;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    z-index: 200;
+  }
+  .fab:active { transform: scale(0.95); }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" style="position:absolute;left:12px;top:14px;color:#fff;text-decoration:none;background:rgba(255,255,255,0.18);padding:5px 12px;border-radius:18px;font-size:12px;font-weight:700;">← App</a>
+  <h1>🏛️ భారతదేశ చరిత్ర – Audio Guide</h1>
+  <p>అధ్యాయం 1 | చరిత్ర – పరిచయం (Introduction to History)</p>
+</header>
+
+<div class="player-bar">
+  <div class="now-playing" id="nowPlaying">▶ సిద్ధంగా ఉంది — ఏదైనా సెక్షన్ నొక్కండి లేదా Play All నొక్కండి</div>
+  <div class="controls">
+    <button class="btn btn-play"  onclick="resumePlay()">▶ Play</button>
+    <button class="btn btn-pause" onclick="pausePlay()">⏸ Pause</button>
+    <button class="btn btn-stop"  onclick="stopPlay()">⏹ Stop</button>
+    <button class="btn btn-nav"   onclick="prevSection()">⏮ Prev</button>
+    <button class="btn btn-nav"   onclick="nextSection()">Next ⏭</button>
+    <div class="speed-wrap">
+      <label>వేగం:</label>
+      <select id="speedSel" onchange="changeSpeed()">
+        <option value="0.7">0.7×</option>
+        <option value="0.85">0.85×</option>
+        <option value="1" selected>1×</option>
+        <option value="1.15">1.15×</option>
+        <option value="1.3">1.3×</option>
+      </select>
+    </div>
+  </div>
+  <div class="progress-bar-wrap">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+</div>
+
+<div class="voice-warning">
+  📱 <strong>Telugu voice setup:</strong> Phone Settings → Accessibility → Text-to-Speech → <strong>Google Telugu TTS</strong> install చేయండి. లేకపోతే English voice తో play అవుతుంది.
+</div>
+
+<div class="main">
+
+  <div class="chapter-title">
+    <h2>అధ్యాయం 1</h2>
+    <p>చరిత్ర – పరిచయం</p>
+    <p style="font-size:15px;font-weight:700;margin-top:6px;">(INTRODUCTION TO HISTORY)</p>
+    <div class="pages">పేజీలు 1–6 | Winners Publications | భారతదేశ చరిత్ర</div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section-card" id="card-0" onclick="toggleSection(0)">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title-wrap">
+        <div class="section-title">చరిత్ర అంటే ఏమిటి?</div>
+        <div class="section-sub">History · Culture · Civilisation నిర్వచనాలు</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-0">●</span>
+    </div>
+    <div class="section-body" id="body-0">
+      <p>స్నేహితులారా, ఒక్కసారి ఊహించండి — మీరు అప్పుడే నిద్ర లేచారు, కిటికీ బయటికి చూస్తే అక్కడ అరణ్యాలు, నదులు, గుహలు కనిపిస్తున్నాయి. ఆ గుహల్లో మన పూర్వికులు జీవించారు. వాళ్ళు ఎలా జీవించారు? వాళ్ళ సమాజం ఏ విధంగా పరిణామం చెందింది? ఈ ప్రశ్నలన్నింటికీ సమాధానం ఇచ్చే శాస్త్రమే <strong>చరిత్ర (History)</strong>!</p>
+      <div class="highlight">✦ ప్రపంచంలోని వివిధ ప్రాంతాల్లో మానవ సమాజ ఆవిర్భావం, సంస్కృతి, నాగరికత ఏ విధంగా పరిణామం చెందుతూ వచ్చాయి? సామాజిక, ఆర్థిక, మత, రాజకీయ వ్యవస్థలు ఎలా మారుతూ వచ్చాయి? అని మనకు తెలియజేసే శాస్త్రమే చరిత్ర!</div>
+      <p><strong>సంస్కృతి (Culture)</strong> అనగా ఒక జీవన విధానము. ఆహారం, వేషం, భాష, కళలు, ఆచారాలు — ఇవన్నీ కలిపితే అదే సంస్కృతి.</p>
+      <p><strong>నాగరికత (Civilisation)</strong> అనగా సంస్కృతిలో ఒక ప్రత్యేకమైన అభివృద్ధి సాధించిన పరిణామ దశ. నాగరికత అనేది సంస్కృతి యొక్క ఉన్నత రూపం!</p>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(0)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section-card" id="card-1" onclick="toggleSection(1)">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title-wrap">
+        <div class="section-title">హిస్టరీ పదం పుట్టుక</div>
+        <div class="section-sub">హిస్టోరియా (గ్రీకు) · హెరోడోటస్ · Father of History</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-1">●</span>
+    </div>
+    <div class="section-body" id="body-1">
+      <p>చరిత్రను ఇంగ్లీష్‌లో 'హిస్టరీ' అని అంటారు. హిస్టరీ అనే పదం <strong>'హిస్టోరియా'</strong> అనే గ్రీకు పదం నుండి వచ్చింది. హిస్టోరియా అనగా పరిశోధించి తెలుసుకొనుట — <em>Inquiry; Knowledge acquired by investigation</em>.</p>
+      <div class="highlight">✦ 'హెరోడోటస్'ను (గ్రీక్) చరిత్ర పితామహుడు (Father of History) అని పేర్కొంటారు. ఇతని గ్రంధం <strong>"The Histories"</strong>. ఆయన క్రీ.పూ. 5వ శతాబ్దంలో జీవించి విస్తృతంగా ప్రయాణించి వివిధ నాగరికతలను నమోదు చేశారు.</div>
+      <p>ఆయన రాసిన The Histories లో Greek-Persian Wars, Egyptian civilisation, Asian cultures అన్నీ క్రమబద్ధంగా వర్ణించారు — ఇది చరిత్ర రచనకు మూలస్తంభం!</p>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(1)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section-card" id="card-2" onclick="toggleSection(2)">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title-wrap">
+        <div class="section-title">ఇండాలజీ & సర్ విలియం జోన్స్</div>
+        <div class="section-sub">Indology · Father of Indian Indology</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-2">●</span>
+    </div>
+    <div class="section-body" id="body-2">
+      <p>భారతచరిత్ర, సంస్కృతులు, భాష మరియు సాహిత్య అధ్యయనాన్ని <strong>ఇండాలజీ (Indology)</strong> అంటారు.</p>
+      <div class="highlight">✦ భారత ఇండాలజీ పితామహుడిగా <strong>సర్ విలియం జోన్స్</strong>‌ను పిలుస్తారు. ఆయన సంస్కృత భాషను నేర్చుకొని, 1784లో Asiatic Society of Bengal స్థాపించారు. సంస్కృతం, లాటిన్, గ్రీకు ఒకే మాతృభాష నుండి వచ్చాయని నిరూపించారు — ఇదే Indo-European Language Family Theory!</div>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(2)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section-card" id="card-3" onclick="toggleSection(3)">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title-wrap">
+        <div class="section-title">మంచు యుగాలు – Ice Ages</div>
+        <div class="section-sub">Pleistocene · Holocene · మానవ ఆవిర్భావం</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-3">●</span>
+    </div>
+    <div class="section-body" id="body-3">
+      <div class="highlight">✦ క్రీ.పూ. 5 లక్షల సం|| పరకుగలు దశ తొలి శిలాయుగం — దీన్నే <strong>ప్లీస్టోసీన్ (Pleistocene)</strong> అంటారు. ఇదే తొలి మంచు యుగం (First Ice Age)! ఆ కాలంలో భూమి మొత్తం మంచుతో కప్పబడి ఉండేది.</div>
+      <p>తర్వాత మంచు కరిగి నీరు ఏర్పడ్డాయి, జీవం చిగురించింది, సంస్కృతి పురోగమించింది — ఈ దశను <strong>హెలోసీన్ (Holocene)</strong> అంటారు — ఇది 2వ మంచు యుగం, ఇదే ప్రస్తుతం మనం జీవిస్తున్న దశ!</p>
+      <p>మానవుడు <strong>(ఆస్ట్రలో పిథికస్ — Australopithecus)</strong> భూమిపై ఉద్భవించి 5,00,000 సం|| కాలము పూర్తి అవుతుంది. ఆ దీర్ఘ ప్రయాణంలోనే నేడు మనం ఇక్కడ ఉన్నాం!</p>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(3)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section-card" id="card-4" onclick="toggleSection(4)">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title-wrap">
+        <div class="section-title">చారిత్రక ఆధారాలు – పరిచయం</div>
+        <div class="section-sub">Literary Sources · Archaeological Sources</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-4">●</span>
+    </div>
+    <div class="section-body" id="body-4">
+      <div class="highlight">✦ చరిత్రకారులు రెండు రకాల ఆధారాలు ఉపయోగిస్తారు:<br>
+      1. <strong>లిఖిత ఆధారాలు (Historical / Literary Sources)</strong> — రాసినవి<br>
+      2. <strong>పురావస్తు ఆధారాలు (Archaeological Sources)</strong> — తవ్వకాల్లో దొరికినవి</div>
+      <p>భారతదేశంలోని వివిధ కాలాలలోని కవుల ద్వారా, మత బోధకుల ద్వారా విలువైన సాహిత్య సమాచారం అందించబడింది. ఈ గ్రంథాలలో మతపరమైన, సమకాలీన, లౌకిక మరియు చరిత్ర, సంస్కృతి, సామాజిక అంశాలు పొందుపరచబడ్డాయి.</p>
+      <p>లిఖిత ఆధారాలు మళ్ళా రెండు రకాలు: <strong>స్వదేశీ సాహిత్యం (Indigenous Literature)</strong> మరియు <strong>విదేశీ సాహిత్యం (Foreign Literature)</strong>.</p>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(4)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section-card" id="card-5" onclick="toggleSection(5)">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title-wrap">
+        <div class="section-title">స్వదేశీ సాహిత్యం – మతపరమైనది</div>
+        <div class="section-sub">వేదాలు · బౌద్ధ · జైన సాహిత్యం</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-5">●</span>
+    </div>
+    <div class="section-body" id="body-5">
+      <p><strong>స్వదేశీ సాహిత్యం</strong> రెండు భాగాలు: 1. మతపరమైన సాహిత్యం, 2. లౌకిక సాహిత్యం.</p>
+      <div class="highlight">✦ <strong>వేద సాహిత్యం</strong> — నాలుగు వేదాలు:<br>
+      • ఋగ్వేదం — అతి పురాతన వేదం, దేవతల స్తుతి మంత్రాలు<br>
+      • సామవేదం — సంగీత రూపంలో మంత్రాలు<br>
+      • యజుర్వేదం — యజ్ఞ కర్మల విధానాలు<br>
+      • అథర్వవేదం — ఆయుర్వేద, మంత్రాలు, జీవన రహస్యాలు</div>
+      <p>వేదాల తర్వాత వచ్చినవి: <strong>ఉపనిషత్తులు, ఆరణ్యకాలు, బ్రాహ్మణాలు</strong> — ఇవి తత్వశాస్త్రాన్ని వివరిస్తాయి.</p>
+      <p><strong>బౌద్ధ సాహిత్యం</strong> — త్రిపిటకాలు (Tripitakas): వినయ పిటకం, సుత్త పిటకం, అభిధమ్మ పిటకం. బుద్ధుని బోధనలు, మఠ నియమాలు.</p>
+      <p><strong>జైన సాహిత్యం</strong> — అంగాలు మరియు ఉపాంగాలు. మహావీరుడి బోధనలు పొందుపరచబడ్డాయి.</p>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(5)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section-card" id="card-6" onclick="toggleSection(6)">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title-wrap">
+        <div class="section-title">స్వదేశీ సాహిత్యం – లౌకికం</div>
+        <div class="section-sub">అర్థశాస్త్రం · రాజతరంగిణి · పురాణాలు · పాణిని</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-6">●</span>
+    </div>
+    <div class="section-body" id="body-6">
+      <p>లౌకిక సాహిత్యం అంటే మతేతర రచనలు — రాజ్యపాలన, చరిత్ర, వ్యాకరణం గురించి రాసినవి.</p>
+      <div class="highlight">✦ <strong>అష్టాధ్యాయి</strong> — పాణిని రాసిన సంస్కృత వ్యాకరణ గ్రంథం. 4,000 సూత్రాలతో సంస్కృత భాష నిర్మాణాన్ని వివరించారు!</div>
+      <p><strong>అర్థశాస్త్రం (Arthashastra)</strong> — కౌటిల్యుడు (చాణక్యుడు) రాసిన గ్రంథం. రాజనీతి, ఆర్థిక వ్యవస్థ, యుద్ధ వ్యూహాలు అన్నింటినీ వివరిస్తుంది. 2,300 సం|| క్రితం రాసినా నేటికీ ఆధునికంగా అనిపిస్తుంది!</p>
+      <p><strong>రాజతరంగిణి (Rajatarangini)</strong> — కల్హణుడు రాసిన కశ్మీర్ చరిత్ర. తేదీలతో, క్రమంలో రాసిన అద్భుత చారిత్రక రచన.</p>
+      <p><strong>పురాణాలు</strong> — 18 మహాపురాణాలు. రాజవంశాల వంశావళి, పురాతన చరిత్ర తెలుపుతాయి.</p>
+      <p><strong>హర్షచరిత్ (Harshacharita)</strong> — బాణభట్టుడు రాసిన హర్షవర్ధనుడి జీవిత చరిత్ర. <strong>ముద్రారాక్షసం</strong> — చంద్రగుప్త మౌర్యుని గురించిన నాటకం.</p>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(6)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section-card" id="card-7" onclick="toggleSection(7)">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <div class="section-title-wrap">
+        <div class="section-title">విదేశీ సాహిత్యం – గ్రీకు & లాటిన్</div>
+        <div class="section-sub">మెగస్తనీస్ Indica · Pliny Natural History</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-7">●</span>
+    </div>
+    <div class="section-body" id="body-7">
+      <p>విదేశీ సాహిత్యం (Foreign Literary Sources) అంటే విదేశీయులు భారత్ గురించి రాసిన రచనలు. వీటిలో నిష్పాక్షికమైన విలువైన సమాచారం ఉంటుంది!</p>
+      <div class="highlight">✦ <strong>గ్రీకు సాహిత్యం (Greek Sources):</strong><br>
+      <strong>మెగస్తనీస్ (Megasthenes)</strong> — చంద్రగుప్త మౌర్య కాలంలో పాటలీపుత్రంలో గ్రీకు రాయబారిగా నివసించారు. ఆయన రాసిన <strong>ఇండికా (Indica)</strong> భారత జనజీవనం, రాజ్యపాలన, సమాజం గురించి అద్భుత వర్ణన!</div>
+      <p>Indica లో పాటలీపుత్రం పట్టణ సౌందర్యం, మౌర్య సైన్యం, రైతుల జీవితాలు అన్నీ వర్ణించారు.</p>
+      <div class="highlight">✦ <strong>లాటిన్ సాహిత్యం (Latin Sources):</strong><br>
+      <strong>ప్లీనీ (Pliny)</strong> రాసిన <strong>నాచురల్ హిస్టరీ (Natural History)</strong> — భారతదేశంతో రోమన్ వ్యాపారం, సుగంధ ద్రవ్యాలు, పట్టు వ్యాపారం గురించి వివరాలున్నాయి.</div>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(7)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section-card" id="card-8" onclick="toggleSection(8)">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <div class="section-title-wrap">
+        <div class="section-title">విదేశీ సాహిత్యం – చైనీస్ & శ్రీలంక</div>
+        <div class="section-sub">ఫా-హియాన్ · హ్యూయాన్-త్సాంగ్ · దీపవంశ · మహావంశ</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-8">●</span>
+    </div>
+    <div class="section-body" id="body-8">
+      <div class="highlight">✦ <strong>చైనీస్ సాహిత్యం (Chinese Sources):</strong><br>
+      • <strong>ఫా-హియాన్ (Fa-Hien)</strong> — క్రీ.శ. 399–414 చంద్రగుప్త విక్రమాదిత్య కాలంలో భారత్‌కు వచ్చారు. బౌద్ధ గ్రంథాల కోసం ప్రయాణించి భారత సమాజం, మఠాలు, ప్రజల జీవనం వర్ణించారు.<br>
+      • <strong>హ్యూయాన్-త్సాంగ్ (Hsuan Tsang)</strong> — హర్షవర్ధనుడి కాలంలో వచ్చారు. ఆయన్ని <strong>King of Travellers</strong> అంటారు. <strong>Fo-Kuo-Ki</strong> అనే గ్రంథం రాశారు — నాలందా, కశ్మీర్, ఆంధ్ర అన్నీ వర్ణించారు.</div>
+      <div class="highlight">✦ <strong>శ్రీలంక సాహిత్యం (Ceylonese Sources):</strong><br>
+      • <strong>దీపవంశ (Dipavamsa)</strong> — The Chronicle of the Island<br>
+      • <strong>మహావంశ (Mahavamsa)</strong> — The Great Chronicle<br>
+      ఇవి బౌద్ధ మత వ్యాప్తి, అశోక చక్రవర్తి, శ్రీలంకా చరిత్రకు అద్భుత ఆధారాలు.</div>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(8)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="section-card" id="card-9" onclick="toggleSection(9)">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <div class="section-title-wrap">
+        <div class="section-title">విదేశీ సాహిత్యం – జైన, టిబెట్, అరబిక్</div>
+        <div class="section-sub">తారానాథ్ · అల్-బిరూని · కితాబ్-ఉల్-హింద్</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-9">●</span>
+    </div>
+    <div class="section-body" id="body-9">
+      <div class="highlight">✦ <strong>జైన్ సాహిత్యం (Jain Sources):</strong><br>
+      జైన గ్రంథాలు — అంగాలు, ఉపాంగాలు. భారత సమాజ, వ్యాపార, తాత్విక అంశాలు వివరిస్తాయి.</div>
+      <div class="highlight">✦ <strong>టిబెటన్ సాహిత్యం (Tibetan Sources):</strong><br>
+      <strong>తారానాథ్ (Taranath)</strong> రాసిన <strong>"The History of Tibet"</strong> — బౌద్ధ మతం టిబెట్‌కు వ్యాప్తి, భారత-టిబెట్ సాంస్కృతిక సంబంధాలు.</div>
+      <div class="highlight">✦ <strong>అరబిక్ సాహిత్యం (Arabic Sources):</strong><br>
+      <strong>అల్-బిరూని (Al-Biruni)</strong> — 11వ శతాబ్దంలో గజనీ మహ్మద్‌తో భారత్‌కు వచ్చారు. సంస్కృతం నేర్చుకొని రాసిన <strong>కితాబ్-ఉల్-హింద్ (Kitab-ul-Hind)</strong> భారత జ్ఞాన సంపద, సమాజం, మతం గురించి విలువైన వివరాలిస్తుంది. ఆయన్ను "Founder of Indology" అని కూడా అంటారు!</div>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(9)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 11 -->
+  <div class="section-card" id="card-10" onclick="toggleSection(10)">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <div class="section-title-wrap">
+        <div class="section-title">పురావస్తు ఆధారాలు – శాసనాలు</div>
+        <div class="section-sub">Rock · Pillar · Cave · Copper Plate Inscriptions</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-10">●</span>
+    </div>
+    <div class="section-body" id="body-10">
+      <div class="highlight">✦ <strong>శాసనాలు (Inscriptions)</strong> — రాళ్ళపై, స్తంభాలపై, రాగి రేకులపై రాసిన చారిత్రక పత్రాలు. ప్రపంచంలో 175 భాషల్లో శాసనాలు లభించాయి!</div>
+      <p><strong>శాసనాల రకాలు (4 రకాలు):</strong></p>
+      <p><strong>1. రాక్ ఎడిట్స్ (Rock Edicts)</strong> — రాళ్ళపై చెక్కిన శాసనాలు. అశోకుని ధర్మ సందేశాలకు ఉదాహరణ: గిర్నార్, కాళ్ళీ (AP).</p>
+      <p><strong>2. పిల్లర్ ఎడిట్స్ (Pillar Edicts)</strong> — స్తంభాలపై చెక్కిన శాసనాలు. అశోక స్తంభాలు అలహాబాద్, సారనాథ్‌లో ఉన్నాయి.</p>
+      <p><strong>3. కేవ్ ఇన్స్క్రిప్షన్స్ (Cave Inscriptions)</strong> — గుహలలో చెక్కిన శాసనాలు. బారాబర్ గుహలు (బీహార్).</p>
+      <p><strong>4. కాపర్ ప్లేట్ ఇన్స్క్రిప్షన్స్ (Copper Plate Inscriptions)</strong> — రాగి రేకులపై రాసిన శాసనాలు. భూమి దానం చేసినప్పుడు రాసేవారు.</p>
+      <div class="highlight">✦ ప్రయోజనం ప్రకారం శాసనాలు:<br>
+      • రాజశాసనాలు (Royal Edicts) — అశోకుని శాసనాలు<br>
+      • దాన శాసనాలు (Donative Inscriptions) — నలంద తామ్రశాసనం<br>
+      • స్మారక శాసనాలు (Commemorative Inscriptions)<br>
+      • అంకిత శాసనాలు (Dedicative Inscriptions)</div>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(10)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 12 -->
+  <div class="section-card" id="card-11" onclick="toggleSection(11)">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <div class="section-title-wrap">
+        <div class="section-title">నాణేలు & కుండలు</div>
+        <div class="section-sub">Numismatics · OCP · PGW · NBP Pottery Table</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-11">●</span>
+    </div>
+    <div class="section-body" id="body-11">
+      <div class="highlight">✦ <strong>నాణేలు (Coins)</strong> — నాణేల అధ్యయనాన్ని <strong>Numismatics</strong> అంటారు. నాణేలపై రాజుల చిత్రాలు, పేర్లు, తేదీలు, రాజ్య చిహ్నాలు ఉంటాయి. రాజవంశాల కాలనిర్ణయానికి అద్భుత ఆధారాలు!</div>
+      <div class="highlight">✦ <strong>కుండలు (Pottery)</strong> — ఏ కాలంలో ఎలాంటి కుండలు వాడారో చూస్తే ఆ కాలం తెలుస్తుంది!</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>క్రం</th><th>రకం</th><th>కాలం (క్రీ.పూ.)</th><th>లక్షణాలు</th></tr>
+          <tr><td>1</td><td><strong>OCP</strong> (Ochre Coloured Pottery)</td><td>2000–400 సం||</td><td>నారింజ-బంగారు రంగు</td></tr>
+          <tr><td>2</td><td><strong>PGW</strong> (Painted Grey Ware)</td><td>1 సహస్రం</td><td>బూడిద రంగు, నల్లని చిత్రాలు — వేదకాలం</td></tr>
+          <tr><td>3</td><td><strong>NBP</strong> (Northern Black Polished Ware)</td><td>700 తర్వాత</td><td>నల్లగా మెరిసే కుండలు — మౌర్య కాలం</td></tr>
+        </table>
+      </div>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(11)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 13 -->
+  <div class="section-card" id="card-12" onclick="toggleSection(12)">
+    <div class="section-header">
+      <div class="section-num">13</div>
+      <div class="section-title-wrap">
+        <div class="section-title">వాస్తు శిల్పాలు – 3 శైలులు</div>
+        <div class="section-sub">Nagara · Dravida · Vesara Architecture Styles</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-12">●</span>
+    </div>
+    <div class="section-body" id="body-12">
+      <div class="highlight">✦ భారత దేవాలయ నిర్మాణ శైలులు మూడు:<br>
+      1. <strong>నాగర శైలి (Nagara Style)</strong> — ఉత్తర భారత<br>
+      2. <strong>ద్రావిడ శైలి (Dravida Style)</strong> — దక్షిణ భారత<br>
+      3. <strong>వేసర శైలి (Vesara Style)</strong> — ఉత్తర + దక్షిణ కలయిక</div>
+      <p><strong>నాగర శైలి</strong> — శిఖరాలు గుండ్రంగా, వక్రరేఖల్లో. ఉదా: కాజురహో, లింగరాజ్ ఆలయం (భువనేశ్వర్).</p>
+      <p><strong>ద్రావిడ శైలి</strong> — గోపురాలు (Gopurams) పెద్దవిగా, అడ్డంగా. ఉదా: తంజావూర్, మధురై, తిరుపతి.</p>
+      <p><strong>వేసర శైలి</strong> — నాగర+ద్రావిడ మిశ్రమం. దక్కన్ ప్రాంతంలో. చాళుక్య, రాష్ట్రకూట వంశాల కాలంలో అభివృద్ధి చెందింది.</p>
+      <p><em>Iconography</em> అనే శాస్త్రం శిల్పాలను పరిశీలించి చరిత్రకు ఆధారాలు అందిస్తుంది!</p>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(12)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <!-- SECTION 14 – Mind Map -->
+  <div class="section-card" id="card-13" onclick="toggleSection(13)">
+    <div class="section-header">
+      <div class="section-num">🗺</div>
+      <div class="section-title-wrap">
+        <div class="section-title">Mind Map – సంక్షిప్త సారాంశం</div>
+        <div class="section-sub">అధ్యాయం 1 పూర్తి Mind Mapping | Revision</div>
+      </div>
+      <span class="section-badge badge-pending" id="badge-13">●</span>
+    </div>
+    <div class="section-body" id="body-13">
+      <div class="summary-box">
+        <h4>📊 ఆధారాలు — Mind Map</h4>
+        <p><strong>లిఖితపూర్వక ఆధారాలు:</strong></p>
+        <p>► <strong>విదేశీ సాహిత్యం:</strong> గ్రీకు (Indica–మెగస్తనీస్) · లాటిన్ (Natural History–Pliny) · శ్రీలంక (దీపవంశ, మహావంశ) · చైనీస్ (Fo-Kuo-Ki–హ్యూయాన్-త్సాంగ్) · టిబెట్ (History of Tibet–తారానాథ్) · అరబిక్ (కితాబ్-ఉల్-హింద్–అల్-బిరూని)</p>
+        <p>► <strong>స్వదేశీ సాహిత్యం:</strong> మతపరమైనవి (వేద, బౌద్ధ, జైన గ్రంథాలు) · లౌకికం (పాణిని అష్టాధ్యాయి, అర్థశాస్త్రం, రాజతరంగిణి, పురాణాలు)</p>
+        <p><strong>పురావస్తు ఆధారాలు:</strong></p>
+        <p>► <strong>శాసనాలు:</strong> రాజశాసనాలు (అశోకుని) · దాన శాసనాలు (నలంద తామ్రశాసనం) · అంకిత శాసనాలు · స్మారక శాసనాలు</p>
+        <p>► <strong>వాస్తు & శిల్పాలు:</strong> నగర శైలి (ఉత్తర) · ద్రావిడ శైలి (దక్షిణ) · వేసర శైలి (మిశ్రమం)</p>
+        <p>► <strong>నాణేలు · కుండలు:</strong> OCP · PGW · NBP | వెండి, రాగి, బంగారు నాణేలు</p>
+      </div>
+      <p style="margin-top:12px;font-weight:700;">గుర్తుంచుకోండి: చరిత్ర = లిఖిత ఆధారాలు + పురావస్తు ఆధారాలు. రెండింటి కలయికతోనే పూర్తి చరిత్ర రూపుదిద్దుకుంటుంది! 🏛️</p>
+      <button class="play-section-btn" onclick="event.stopPropagation(); playSection(13)">🔊 ఈ సెక్షన్ వినండి</button>
+    </div>
+  </div>
+
+  <div class="play-all-wrap">
+    <button class="play-all-btn" onclick="playAll()">
+      🎙️ అన్ని సెక్షన్లు వినండి (Play All)
+    </button>
+  </div>
+
+</div><!-- /.main -->
+
+<button class="fab" onclick="togglePlayPause()" id="fabBtn" title="Play/Pause">▶</button>
+
+<script>
+const SECTIONS = [
+  {
+    title: "సెక్షన్ 1: చరిత్ర అంటే ఏమిటి?",
+    text: `స్నేహితులారా, ఒక్కసారి ఊహించండి. మీరు అప్పుడే నిద్ర లేచారు, కిటికీ బయటికి చూస్తే అక్కడ అరణ్యాలు, నదులు, గుహలు కనిపిస్తున్నాయి. ఆ గుహల్లో మన పూర్వికులు జీవించారు. వాళ్ళు ఎలా జీవించారు? వాళ్ళ సమాజం ఏ విధంగా పరిణామం చెందింది? ఈ ప్రశ్నలన్నింటికీ సమాధానం ఇచ్చే శాస్త్రమే చరిత్ర!
+
+ప్రపంచంలోని వివిధ ప్రాంతాల్లో మానవ సమాజ ఆవిర్భావం, సంస్కృతి, నాగరికత ఏ విధంగా పరిణామం చెందుతూ వచ్చాయి? సామాజిక, ఆర్థిక, మత, రాజకీయ వ్యవస్థలు ఎలా మారుతూ వచ్చాయి? అని మనకు తెలియజేసే శాస్త్రమే చరిత్ర.
+
+సంస్కృతి అనగా ఒక జీవన విధానము. ఒక సమాజం తమ ఆహారం, వేషం, భాష, కళలు, ఆచారాలు — ఇవన్నీ కలిపితే అదే సంస్కృతి.
+
+నాగరికత అనగా సంస్కృతిలో ఒక ప్రత్యేకమైన అభివృద్ధి సాధించిన పరిణామ దశ. అంటే నాగరికత అనేది సంస్కృతి యొక్క ఉన్నత రూపం!`
+  },
+  {
+    title: "సెక్షన్ 2: హిస్టరీ పదం పుట్టుక",
+    text: `చరిత్రను ఇంగ్లీష్‌లో హిస్టరీ అని అంటారు. హిస్టరీ అనే పదం హిస్టోరియా అనే గ్రీకు పదం నుండి వచ్చింది. హిస్టోరియా అనగా పరిశోధించి తెలుసుకొనుట. అంటే Inquiry, Knowledge acquired by investigation.
+
+హెరోడోటస్ అనే గ్రీకు మహాపురుషుడిని చరిత్ర పితామహుడు, Father of History అని పేర్కొంటారు. ఆయన క్రీస్తు పూర్వం ఐదవ శతాబ్దంలో జీవించారు.
+
+ఆయన రాసిన మహాగ్రంథం పేరు The Histories. ఇందులో గ్రీకు పర్షియన్ యుద్ధాలు, Egyptian civilisation, Asian cultures అన్నీ క్రమబద్ధంగా వర్ణించారు. ఇది చరిత్ర రచనకు మూలస్తంభం!`
+  },
+  {
+    title: "సెక్షన్ 3: ఇండాలజీ & సర్ విలియం జోన్స్",
+    text: `భారతచరిత్ర, సంస్కృతులు, భాష మరియు సాహిత్య అధ్యయనాన్ని ఇండాలజీ అంటారు.
+
+భారత ఇండాలజీ పితామహుడిగా సర్ విలియం జోన్స్‌ను పిలుస్తారు. ఆయన సంస్కృత భాషను నేర్చుకొని, 1784లో Asiatic Society of Bengal స్థాపించారు.
+
+సంస్కృతం, లాటిన్, గ్రీకు అన్నీ ఒకే మాతృభాష నుండి వచ్చాయని ఆయన నిరూపించారు. ఇదే Indo-European Language Family Theory కి పునాది!`
+  },
+  {
+    title: "సెక్షన్ 4: మంచు యుగాలు",
+    text: `క్రీస్తు పూర్వం ఐదు లక్షల సంవత్సరాల పరకుగలు దశ తొలి శిలాయుగం. ఆ కాలాన్ని ప్లీస్టోసీన్ అంటారు. ఇదే తొలి మంచు యుగం, First Ice Age.
+
+ఆ కాలంలో భూమి మొత్తం మంచుతో కప్పబడి ఉండేది. పర్వతాలు, మైదానాలు, అడవులు అన్నీ మంచు కింద మాయమయ్యాయి. జీవరాశి అంతా ఆ భయంకర చలిలో మనుగడ కోసం పోరాడింది.
+
+తర్వాత మంచు కరిగి నీరు ఏర్పడ్డాయి. జీవం తిరిగి చిగురించింది. సంస్కృతి పురోగమించింది. ఈ దశను హెలోసీన్ అంటారు. ఇది రెండవ మంచు యుగం. ఇదే ప్రస్తుతం మనం జీవిస్తున్న దశ.
+
+మానవుడు ఆస్ట్రలో పిథికస్ భూమిపై ఉద్భవించి ఐదు లక్షల సంవత్సరాల కాలం పూర్తి అవుతుంది.`
+  },
+  {
+    title: "సెక్షన్ 5: చారిత్రక ఆధారాలు పరిచయం",
+    text: `మన పూర్వీకులు ఏం చేశారో మనకు ఎలా తెలుస్తుంది? చరిత్రకారులు రెండు రకాల ఆధారాలు ఉపయోగిస్తారు.
+
+మొదటిది లిఖిత ఆధారాలు అంటే Literary Sources. రాసినవి, చదివినవి.
+
+రెండవది పురావస్తు ఆధారాలు అంటే Archaeological Sources. తవ్వకాల్లో దొరికినవి.
+
+భారతదేశంలోని వివిధ కాలాలలోని కవుల ద్వారా, మత బోధకుల ద్వారా విలువైన సాహిత్య సమాచారం అందించబడింది. ఈ గ్రంథాలలో మతపరమైన, సమకాలీన, లౌకిక, సాంస్కృతిక అన్ని రకాల అంశాలు పొందుపరచబడ్డాయి.
+
+లిఖిత ఆధారాలు మళ్ళా రెండు రకాలు. స్వదేశీ సాహిత్యం మరియు విదేశీ సాహిత్యం. ఇవన్నీ కలిపి మనకు చరిత్ర పుట్టింది!`
+  },
+  {
+    title: "సెక్షన్ 6: స్వదేశీ సాహిత్యం మతపరమైనది",
+    text: `స్వదేశీ సాహిత్యం రెండు భాగాలు. మొదటిది మతపరమైన సాహిత్యం. రెండవది లౌకిక సాహిత్యం.
+
+మతపరమైన సాహిత్యంలో ముఖ్యమైనవి వేద సాహిత్యం. నాలుగు వేదాలు — ఋగ్వేదం, సామవేదం, యజుర్వేదం, అథర్వవేదం. ఇవి భారత జ్ఞాన సంపదకు పునాదులు!
+
+ఋగ్వేదం అతి పురాతన వేదం. దేవతల స్తుతి మంత్రాలు ఉన్నాయి. సామవేదం సంగీత రూపంలో మంత్రాలు. యజుర్వేదం యజ్ఞ కర్మల విధానాలు. అథర్వవేదం ఆయుర్వేద, మంత్రాలు, జీవన రహస్యాలు.
+
+వేదాల తర్వాత వచ్చినవి ఉపనిషత్తులు, ఆరణ్యకాలు, బ్రాహ్మణాలు. ఇవి తత్వశాస్త్రాన్ని వివరిస్తాయి.
+
+బౌద్ధ సాహిత్యం — త్రిపిటకాలు. వినయ పిటకం, సుత్త పిటకం, అభిధమ్మ పిటకం. బుద్ధుని బోధనలు, మఠ నియమాలు వివరిస్తాయి.
+
+జైన సాహిత్యం — అంగాలు మరియు ఉపాంగాలు. మహావీరుడి బోధనలు పొందుపరచబడ్డాయి.`
+  },
+  {
+    title: "సెక్షన్ 7: స్వదేశీ సాహిత్యం లౌకికం",
+    text: `లౌకిక సాహిత్యం అంటే మతేతర రచనలు. రాజ్యపాలన, నీతి, చరిత్ర, వ్యాకరణం గురించి రాసినవి.
+
+అష్టాధ్యాయి — పాణిని రాసిన సంస్కృత వ్యాకరణ గ్రంథం. నాలుగు వేల సూత్రాలతో సంస్కృత భాష నిర్మాణాన్ని వివరించారు!
+
+అర్థశాస్త్రం — కౌటిల్యుడు, అంటే చాణక్యుడు రాసిన గ్రంథం. రాజనీతి, ఆర్థిక వ్యవస్థ, యుద్ధ వ్యూహాలు అన్నింటినీ వివరిస్తుంది. రెండువేల మూడువందల సంవత్సరాల క్రితం రాసినా నేటికీ ఆధునికంగా అనిపిస్తుంది!
+
+రాజతరంగిణి — కల్హణుడు రాసిన కశ్మీర్ చరిత్ర. తేదీలతో, క్రమంలో రాసిన అద్భుత చారిత్రక రచన.
+
+పురాణాలు — పదునెనిమిది మహాపురాణాలు రాజవంశాల వంశావళి, పురాతన చరిత్ర తెలుపుతాయి.
+
+హర్షచరిత్ — బాణభట్టుడు రాసిన హర్షవర్ధనుడి జీవిత చరిత్ర. ముద్రారాక్షసం — చంద్రగుప్త మౌర్యుని గురించిన నాటకం.`
+  },
+  {
+    title: "సెక్షన్ 8: విదేశీ సాహిత్యం గ్రీకు & లాటిన్",
+    text: `విదేశీ సాహిత్యం అంటే విదేశీయులు భారత్ గురించి రాసిన రచనలు. వీటిలో నిష్పాక్షికమైన విలువైన సమాచారం ఉంటుంది!
+
+గ్రీకు సాహిత్యం — మెగస్తనీస్ చంద్రగుప్త మౌర్య కాలంలో పాటలీపుత్రంలో గ్రీకు రాయబారిగా నివసించారు. ఆయన రాసిన ఇండికా అనే గ్రంథం భారత జనజీవనం, రాజ్యపాలన, సమాజం గురించి అద్భుత వర్ణన. పాటలీపుత్రం పట్టణ సౌందర్యం, మౌర్య సైన్యం, రైతుల జీవితాలు అన్నీ వర్ణించారు. ఇది అత్యంత విలువైన విదేశీ ఆధారం!
+
+లాటిన్ సాహిత్యం — ప్లీనీ రాసిన నాచురల్ హిస్టరీ అనే గ్రంథంలో భారతదేశంతో రోమన్ వ్యాపారం, సుగంధ ద్రవ్యాలు, పట్టు వ్యాపారం గురించి వివరాలున్నాయి.`
+  },
+  {
+    title: "సెక్షన్ 9: విదేశీ సాహిత్యం చైనీస్ & శ్రీలంక",
+    text: `చైనీస్ సాహిత్యం చాలా ముఖ్యమైనది.
+
+ఫా-హియాన్ — క్రీస్తు శకం మూడువందల తొంభై తొమ్మిది నుండి నాలుగువందల పద్నాలుగు మధ్య భారత్‌కు వచ్చిన చైనీస్ బౌద్ధ యాత్రికుడు. చంద్రగుప్త విక్రమాదిత్య పాలనా కాలంలో వచ్చారు. బౌద్ధ గ్రంథాల కోసం ప్రయాణించి, భారత సమాజం, బౌద్ధ మఠాలు, ప్రజల జీవనం వర్ణించారు.
+
+హ్యూయాన్-త్సాంగ్ — హర్షవర్ధనుడి కాలంలో భారత్‌కు వచ్చారు. ఆయన్ని King of Travellers, యాత్రికుల రాజు అంటారు. Fo-Kuo-Ki అనే గ్రంథం రాశారు. నాలందా విశ్వవిద్యాలయం, కశ్మీర్, ఆంధ్రప్రదేశం అన్నీ వర్ణించారు.
+
+శ్రీలంక సాహిత్యం — దీపవంశ అంటే The Chronicle of the Island. మహావంశ అంటే The Great Chronicle. ఇవి బౌద్ధ మత వ్యాప్తి, అశోక చక్రవర్తి, శ్రీలంకా చరిత్రకు అద్భుత ఆధారాలు.`
+  },
+  {
+    title: "సెక్షన్ 10: విదేశీ సాహిత్యం జైన, టిబెట్, అరబిక్",
+    text: `జైన్ సాహిత్యం — జైన గ్రంథాలు, అంగాలు, ఉపాంగాలు. భారత సమాజ, వ్యాపార, తాత్విక అంశాలు వివరిస్తాయి.
+
+టిబెటన్ సాహిత్యం — తారానాథ్ రాసిన The History of Tibet అనే గ్రంథం. బౌద్ధ మతం టిబెట్‌కు వ్యాప్తి, భారత-టిబెట్ సాంస్కృతిక సంబంధాల గురించి తెలుపుతుంది.
+
+అల్-బిరూని పదకొండవ శతాబ్దంలో గజనీ మహ్మద్‌తో భారత్‌కు వచ్చారు. ఆయన సంస్కృతం నేర్చుకొని భారత సమాజాన్ని, తత్వశాస్త్రాన్ని, విజ్ఞానశాస్త్రాన్ని అర్థం చేసుకున్నారు.
+
+ఆయన రాసిన కితాబ్-ఉల్-హింద్ అనే గ్రంథం భారత జ్ఞాన సంపద, సమాజం, మతం గురించి విలువైన వివరాలిస్తుంది. ఆయన్ను Founder of Indology అని కూడా అంటారు!`
+  },
+  {
+    title: "సెక్షన్ 11: పురావస్తు ఆధారాలు శాసనాలు",
+    text: `శాసనాలు అంటే రాళ్ళపై, స్తంభాలపై, రాగి రేకులపై రాసిన చారిత్రక పత్రాలు. ప్రపంచంలో నూట డెభ్భై ఐదు భాషల్లో శాసనాలు లభించాయి!
+
+శాసనాల రకాలు నాలుగు.
+
+మొదటిది రాక్ ఎడిట్స్ అంటే రాళ్ళపై చెక్కిన శాసనాలు. అశోకుని ధర్మ సందేశాలకు ఉదాహరణ గిర్నార్, కాళ్ళీ.
+
+రెండవది పిల్లర్ ఎడిట్స్ అంటే స్తంభాలపై చెక్కిన శాసనాలు. అశోక స్తంభాలు అలహాబాద్, సారనాథ్‌లో ఉన్నాయి.
+
+మూడవది కేవ్ ఇన్స్క్రిప్షన్స్ అంటే గుహలలో చెక్కిన శాసనాలు. బారాబర్ గుహలు బీహార్‌లో ఉన్నాయి.
+
+నాల్గవది కాపర్ ప్లేట్ ఇన్స్క్రిప్షన్స్ అంటే రాగి రేకులపై రాసిన శాసనాలు. రాజులు భూమి దానం చేసినప్పుడు రాసేవారు.
+
+ప్రయోజనం ప్రకారం శాసనాలు నాలుగు రకాలు. రాజశాసనాలు, దాన శాసనాలు, స్మారక శాసనాలు, అంకిత శాసనాలు.`
+  },
+  {
+    title: "సెక్షన్ 12: నాణేలు & కుండలు",
+    text: `నాణేల అధ్యయనాన్ని Numismatics అంటారు. నాణేలపై రాజుల చిత్రాలు, పేర్లు, తేదీలు, రాజ్య చిహ్నాలు ఉంటాయి. రాజవంశాల కాలనిర్ణయానికి ఇవి అద్భుత ఆధారాలు!
+
+కుండలు కాలనిర్ణయానికి అద్భుతమైన ఆధారాలు. ఏ కాలంలో ఎలాంటి కుండలు వాడారో చూస్తే ఆ కాలం తెలుస్తుంది!
+
+మొదటిది ఓసీపీ అంటే Ochre Coloured Pottery. క్రీస్తు పూర్వం రెండు వేల నుండి నాలుగువందల సంవత్సరాల కాలానికి చెందినవి. నారింజ బంగారు రంగులో ఉంటాయి.
+
+రెండవది పీజీడబ్ల్యూ అంటే Painted Grey Ware. క్రీస్తు పూర్వం ఒక వేల సంవత్సరాల కాలానికి చెందినవి. బూడిద రంగు, నల్లని చిత్రాలు ఉంటాయి. వేదకాలపు నాగరికతకు చెందినవి.
+
+మూడవది ఎన్‌బీపీ అంటే Northern Black Polished Ware. క్రీస్తు పూర్వం ఏడువందల తర్వాతి కాలానికి చెందినవి. నల్లగా మెరిసే కుండలు. మౌర్య కాలానికి చెందినవి.`
+  },
+  {
+    title: "సెక్షన్ 13: వాస్తు శిల్పాలు మూడు శైలులు",
+    text: `పురావస్తు ఆధారాలలో చివరగా వాస్తు శిల్పాలు. ఇవి పూర్తిగా చరిత్రకు అద్దం పట్టే ఆధారాలు!
+
+భారత దేవాలయ నిర్మాణ శైలులు మూడు.
+
+మొదటిది నాగర శైలి. ఇది ఉత్తర భారతంలో వాడుకలో ఉంది. శిఖరాలు గుండ్రంగా, వక్రరేఖల్లో ఉంటాయి. కాజురహో దేవాలయాలు, లింగరాజ్ ఆలయం భువనేశ్వర్ ఇవి ఉదాహరణలు.
+
+రెండవది ద్రావిడ శైలి. దక్షిణ భారతంలో ప్రచారంలో ఉంది. గోపురాలు పెద్దవిగా, అడ్డంగా ఉంటాయి. తంజావూర్, మధురై, తిరుపతి దేవాలయాలు ఈ శైలికి ఉదాహరణలు.
+
+మూడవది వేసర శైలి. నాగర మరియు ద్రావిడ శైలుల మిశ్రమం. దక్కన్ ప్రాంతంలో, అంటే ఆంధ్ర, కర్నాటకలో ఎక్కువగా కనిపిస్తుంది. చాళుక్య, రాష్ట్రకూట వంశాల కాలంలో అభివృద్ధి చెందింది.
+
+Iconography అనే శాస్త్రం శిల్పాలను పరిశీలించి చరిత్రకు ఆధారాలు అందిస్తుంది!`
+  },
+  {
+    title: "Mind Map సంక్షిప్త సారాంశం",
+    text: `అధ్యాయం ఒకటి యొక్క పూర్తి సారాంశం వినండి.
+
+ఆధారాలు రెండు రకాలు. లిఖితపూర్వక ఆధారాలు మరియు పురావస్తు ఆధారాలు.
+
+విదేశీ సాహిత్యం: గ్రీకు సాహిత్యం అంటే ఇండికా మెగస్తనీస్. లాటిన్ అంటే ప్లీనీ నాచురల్ హిస్టరీ. శ్రీలంక అంటే దీపవంశ, మహావంశ. చైనీస్ అంటే హ్యూయాన్-త్సాంగ్. టిబెట్ అంటే తారానాథ్ రాసిన The History of Tibet. అరబిక్ అంటే కితాబ్-ఉల్-హింద్ అల్-బిరూని.
+
+స్వదేశీ సాహిత్యం: మతపరమైనవి అంటే వేద, బౌద్ధ, జైన గ్రంథాలు. లౌకికం అంటే పాణిని అష్టాధ్యాయి, కౌటిల్య అర్థశాస్త్రం, రాజతరంగిణి, పురాణాలు.
+
+పురావస్తు ఆధారాలు: శాసనాలు — రాజశాసనాలు, దాన శాసనాలు, అంకిత శాసనాలు, స్మారక శాసనాలు. వాస్తు శిల్పాలు — నగర శైలి, ద్రావిడ శైలి, వేసర శైలి. నాణేలు మరియు కుండలు — ఓసీపీ, పీజీడబ్ల్యూ, ఎన్‌బీపీ.
+
+గుర్తుంచుకోండి! చరిత్ర అంటే లిఖిత ఆధారాలు మరియు పురావస్తు ఆధారాలు రెండింటి కలయిక. ఈ అధ్యాయం పూర్తయింది. అభినందనలు!`
+  }
+];
+
+let currentSection = -1;
+let speaking = false;
+let paused = false;
+let utterance = null;
+let playQueue = [];
+let playingAll = false;
+
+function getVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  return voices.find(v => v.lang && v.lang.startsWith('te'))
+      || voices.find(v => v.lang && v.lang.startsWith('hi'))
+      || voices[0] || null;
+}
+
+function playSection(idx) {
+  stopPlay();
+  currentSection = idx;
+  playingAll = false;
+  playQueue = [];
+  speakCurrent();
+}
+
+function playAll() {
+  stopPlay();
+  playingAll = true;
+  playQueue = SECTIONS.map((_, i) => i);
+  playNextInQueue();
+}
+
+function playNextInQueue() {
+  if (!playQueue.length) {
+    updateNowPlaying('✅ అన్ని సెక్షన్లు పూర్తయ్యాయి!');
+    document.getElementById('fabBtn').textContent = '▶';
+    speaking = false;
+    return;
+  }
+  currentSection = playQueue.shift();
+  speakCurrent();
+}
+
+function speakCurrent() {
+  if (currentSection < 0 || currentSection >= SECTIONS.length) return;
+  openSection(currentSection);
+  const sec = SECTIONS[currentSection];
+  updateNowPlaying('▶ ' + sec.title);
+  updateBadge(currentSection, 'playing');
+  updateCardClass(currentSection, 'playing');
+  updateProgress();
+  document.getElementById('fabBtn').textContent = '⏸';
+
+  utterance = new SpeechSynthesisUtterance(sec.text);
+  utterance.lang = 'te-IN';
+  utterance.rate = parseFloat(document.getElementById('speedSel').value);
+  utterance.pitch = 1.0;
+  const voice = getVoice();
+  if (voice) utterance.voice = voice;
+
+  utterance.onend = () => {
+    updateBadge(currentSection, 'done');
+    updateCardClass(currentSection, 'done');
+    speaking = false;
+    updateProgress();
+    if (playingAll || playQueue.length > 0) {
+      setTimeout(playNextInQueue, 700);
+    } else {
+      document.getElementById('fabBtn').textContent = '▶';
+      updateNowPlaying('✅ పూర్తయింది');
+    }
+  };
+  utterance.onerror = () => {
+    speaking = false;
+    document.getElementById('fabBtn').textContent = '▶';
+  };
+
+  speaking = true;
+  paused = false;
+  window.speechSynthesis.speak(utterance);
+}
+
+function resumePlay() {
+  if (paused) {
+    window.speechSynthesis.resume();
+    paused = false;
+    document.getElementById('fabBtn').textContent = '⏸';
+    if (currentSection >= 0) updateNowPlaying('▶ ' + SECTIONS[currentSection].title);
+  } else if (!speaking) {
+    if (currentSection >= 0) playSection(currentSection);
+    else playAll();
+  }
+}
+
+function pausePlay() {
+  if (speaking && !paused) {
+    window.speechSynthesis.pause();
+    paused = true;
+    document.getElementById('fabBtn').textContent = '▶';
+    updateNowPlaying('⏸ ఆపబడింది');
+  }
+}
+
+function stopPlay() {
+  window.speechSynthesis.cancel();
+  speaking = false; paused = false;
+  playQueue = []; playingAll = false;
+  document.getElementById('fabBtn').textContent = '▶';
+  updateNowPlaying('⏹ ఆపబడింది — సిద్ధంగా ఉంది');
+  if (currentSection >= 0) {
+    const card = document.getElementById('card-' + currentSection);
+    if (card && !card.classList.contains('done')) card.classList.remove('playing');
+  }
+}
+
+function prevSection() {
+  stopPlay();
+  playSection(Math.max(0, currentSection - 1));
+}
+function nextSection() {
+  stopPlay();
+  playSection(Math.min(SECTIONS.length - 1, (currentSection < 0 ? 0 : currentSection + 1)));
+}
+function togglePlayPause() {
+  if (speaking && !paused) pausePlay(); else resumePlay();
+}
+function changeSpeed() {
+  if (speaking) { const i = currentSection; stopPlay(); setTimeout(() => playSection(i), 100); }
+}
+
+function updateNowPlaying(t) { document.getElementById('nowPlaying').textContent = t; }
+
+function updateProgress() {
+  const done = document.querySelectorAll('.section-card.done').length;
+  document.getElementById('progressBar').style.width = Math.round((done / SECTIONS.length) * 100) + '%';
+}
+
+function updateBadge(idx, state) {
+  const el = document.getElementById('badge-' + idx);
+  if (!el) return;
+  if (state === 'playing') { el.className = 'section-badge badge-playing'; el.textContent = '▶ వింటున్నారు'; }
+  else if (state === 'done') { el.className = 'section-badge badge-done'; el.textContent = '✓ పూర్తయింది'; }
+  else { el.className = 'section-badge badge-pending'; el.textContent = '●'; }
+}
+
+function updateCardClass(idx, cls) {
+  const card = document.getElementById('card-' + idx);
+  if (!card) return;
+  card.classList.remove('playing', 'done');
+  if (cls) card.classList.add(cls);
+}
+
+function openSection(idx) {
+  const b = document.getElementById('body-' + idx);
+  if (b) b.classList.add('open');
+}
+
+function toggleSection(idx) {
+  const b = document.getElementById('body-' + idx);
+  if (b) b.classList.toggle('open');
+}
+
+// Pre-load voices
+window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+setTimeout(() => window.speechSynthesis.getVoices(), 500);
+</script>
+</body>
+</html>

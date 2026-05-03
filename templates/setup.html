@@ -5,7 +5,7 @@
 
 <div class="card" style="background: linear-gradient(135deg,#ff6f00,#ffa000); color: white; border: none;">
   <div style="font-size: 20px; font-weight: 800;">⚙️ Configure Your Exam</div>
-  <div style="opacity: 0.9; font-size: 13px; margin-top: 4px;">Choose topics, question sources, difficulty and exam mode.</div>
+  <div style="opacity: 0.9; font-size: 13px; margin-top: 4px;">Choose topics, number of questions, and exam mode.</div>
 </div>
 
 <!-- Student Name -->
@@ -36,89 +36,7 @@
   </div>
 </div>
 
-<!-- Question Sources -->
-<div class="card">
-  <div class="card-title">📦 Question Sources</div>
-  <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Select which question banks to include</div>
-  <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px;">
-    <button class="source-chip active" id="src_main" onclick="toggleSource('main')"
-            style="padding: 8px 16px; border-radius: 20px; border: 2px solid #ff6f00; background: #ff6f00; color: white; font-size: 13px; font-weight: 600; cursor: pointer;">
-      📚 Main Bank
-    </button>
-    <button class="source-chip" id="src_quiz" onclick="toggleSource('quiz')"
-            style="padding: 8px 16px; border-radius: 20px; border: 2px solid #7c3aed; background: white; color: #7c3aed; font-size: 13px; font-weight: 600; cursor: pointer;">
-      🧩 Chapter Quiz
-    </button>
-    <button class="source-chip" id="src_pyq" onclick="toggleSource('pyq')"
-            style="padding: 8px 16px; border-radius: 20px; border: 2px solid #0284c7; background: white; color: #0284c7; font-size: 13px; font-weight: 600; cursor: pointer;">
-      📋 PYQ
-    </button>
-  </div>
-
-  <!-- Chapter Quiz Options (shown when quiz selected) -->
-  <div id="quizOptions" style="display:none; border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px;">
-    <div style="font-size: 13px; font-weight: 600; color: #7c3aed; margin-bottom: 10px;">🧩 Chapter Quiz Settings</div>
-    <div class="form-group">
-      <label class="form-label">Number of Quiz Questions</label>
-      <input type="number" id="quizCount" class="form-control" value="20" min="1" max="200"
-             style="max-width: 120px;" oninput="updateSummary()">
-    </div>
-    <div class="form-group" style="margin-bottom: 0;">
-      <label class="form-label">Filter by Topic (optional — leave empty for all)</label>
-      <div id="quizTopicChips" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
-        <div style="font-size: 12px; color: var(--text-muted);">Loading topics…</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PYQ Options (shown when pyq selected) -->
-  <div id="pyqOptions" style="display:none; border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px;">
-    <div style="font-size: 13px; font-weight: 600; color: #0284c7; margin-bottom: 10px;">📋 PYQ Settings</div>
-    <div class="form-group">
-      <label class="form-label">Number of PYQ Questions</label>
-      <input type="number" id="pyqCount" class="form-control" value="20" min="1" max="200"
-             style="max-width: 120px;" oninput="updateSummary()">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Filter by Topic (optional)</label>
-      <div id="pyqTopicChips" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
-        <div style="font-size: 12px; color: var(--text-muted);">Loading topics…</div>
-      </div>
-    </div>
-    <div class="form-group" style="margin-bottom: 0;">
-      <label class="form-label">Filter by Year (optional)</label>
-      <div id="pyqYearChips" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
-        <div style="font-size: 12px; color: var(--text-muted);">Loading years…</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Difficulty Filter -->
-<div class="card">
-  <div class="card-title">🎯 Difficulty Level</div>
-  <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Filter questions by toughness (applies to all sources)</div>
-  <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-    <button class="diff-chip active" id="diff_E" onclick="toggleDiff('E')"
-            style="padding: 8px 18px; border-radius: 20px; border: 2px solid #16a34a; background: #16a34a; color: white; font-size: 13px; font-weight: 600; cursor: pointer;">
-      🟢 Easy
-    </button>
-    <button class="diff-chip active" id="diff_M" onclick="toggleDiff('M')"
-            style="padding: 8px 18px; border-radius: 20px; border: 2px solid #d97706; background: #d97706; color: white; font-size: 13px; font-weight: 600; cursor: pointer;">
-      🟡 Medium
-    </button>
-    <button class="diff-chip active" id="diff_H" onclick="toggleDiff('H')"
-            style="padding: 8px 18px; border-radius: 20px; border: 2px solid #dc2626; background: #dc2626; color: white; font-size: 13px; font-weight: 600; cursor: pointer;">
-      🔴 Hard
-    </button>
-  </div>
-  <div id="diffWarning" style="display:none; background:#fff3cd; border-radius:8px; padding:8px 12px; font-size:12px; color:#856404; margin-top:10px;">
-    ⚠️ At least one difficulty level must be selected.
-  </div>
-</div>
-
-<!-- Topic Selection (Main Bank) -->
-<div id="mainBankSection">
+<!-- Topic Selection -->
 <div id="topicSections">
   {% for folder, topics in tree.items() %}
   <div class="card folder-card" data-folder="{{ folder }}">
@@ -159,7 +77,6 @@
   </div>
   {% endfor %}
 </div>
-</div>
 
 <!-- Summary Bar -->
 <div id="summaryBar" style="position: sticky; bottom: 0; background: white; border-top: 2px solid var(--border); padding: 12px 16px; margin: 0 -16px; display: none; box-shadow: 0 -4px 20px rgba(0,0,0,0.1);">
@@ -193,157 +110,6 @@ document.getElementById('examMode').addEventListener('change', function() {
   document.getElementById('noRepeatInfo').style.display = this.value === 'no_repeat' ? 'block' : 'none';
 });
 
-// ── Source & Difficulty State ─────────────────────────────────────────────
-const activeSources = new Set(['main']);
-const activeDiffs = new Set(['E', 'M', 'H']);
-
-const sourceColors = {
-  main: '#ff6f00',
-  quiz: '#7c3aed',
-  pyq:  '#0284c7',
-};
-
-function toggleSource(src) {
-  if (activeSources.has(src)) {
-    activeSources.delete(src);
-  } else {
-    activeSources.add(src);
-  }
-  const btn = document.getElementById('src_' + src);
-  const color = sourceColors[src];
-  if (activeSources.has(src)) {
-    btn.style.background = color;
-    btn.style.color = 'white';
-    btn.style.borderColor = color;
-  } else {
-    btn.style.background = 'white';
-    btn.style.color = color;
-    btn.style.borderColor = color;
-  }
-  // Show/hide sub-options
-  document.getElementById('quizOptions').style.display = activeSources.has('quiz') ? 'block' : 'none';
-  document.getElementById('pyqOptions').style.display  = activeSources.has('pyq')  ? 'block' : 'none';
-  // Show/hide main bank section
-  document.getElementById('mainBankSection').style.display = activeSources.has('main') ? '' : 'none';
-  updateSummary();
-}
-
-function toggleDiff(d) {
-  if (activeDiffs.has(d)) {
-    if (activeDiffs.size === 1) {
-      document.getElementById('diffWarning').style.display = 'block';
-      return;
-    }
-    activeDiffs.delete(d);
-  } else {
-    activeDiffs.add(d);
-  }
-  document.getElementById('diffWarning').style.display = 'none';
-  const btn = document.getElementById('diff_' + d);
-  const colors = { E: '#16a34a', M: '#d97706', H: '#dc2626' };
-  const c = colors[d];
-  if (activeDiffs.has(d)) {
-    btn.style.background = c; btn.style.color = 'white'; btn.style.borderColor = c;
-  } else {
-    btn.style.background = 'white'; btn.style.color = c; btn.style.borderColor = c;
-  }
-  updateSummary();
-}
-
-// ── Quiz topic chips ──────────────────────────────────────────────────────
-let quizTopics = [];
-let selectedQuizTopics = new Set();  // empty = all
-
-async function loadQuizMeta() {
-  try {
-    const r = await fetch('/api/quiz-meta');
-    const d = await r.json();
-    quizTopics = d.topics || [];
-    const container = document.getElementById('quizTopicChips');
-    if (!quizTopics.length) { container.innerHTML = '<div style="font-size:12px;color:var(--text-muted);">No quiz questions available yet.</div>'; return; }
-    container.innerHTML = '';
-    quizTopics.forEach(({topic, count}) => {
-      const btn = document.createElement('button');
-      btn.textContent = topic.replace('_',' ') + ' (' + count + ')';
-      btn.style.cssText = 'padding:6px 12px;border-radius:16px;border:2px solid #7c3aed;background:white;color:#7c3aed;font-size:12px;font-weight:600;cursor:pointer;';
-      btn.onclick = () => {
-        if (selectedQuizTopics.has(topic)) {
-          selectedQuizTopics.delete(topic);
-          btn.style.background = 'white'; btn.style.color = '#7c3aed';
-        } else {
-          selectedQuizTopics.add(topic);
-          btn.style.background = '#7c3aed'; btn.style.color = 'white';
-        }
-        updateSummary();
-      };
-      container.appendChild(btn);
-    });
-  } catch(e) { console.error('quiz meta error', e); }
-}
-
-// ── PYQ topic & year chips ────────────────────────────────────────────────
-let selectedPyqTopics = new Set();
-let selectedPyqYears  = new Set();
-
-async function loadPyqMeta() {
-  try {
-    const r = await fetch('/api/pyq-stats');
-    const d = await r.json();
-
-    // Build topic set
-    const topicCounts = {};
-    const yearCounts  = {};
-    (d.breakdown || []).forEach(row => {
-      topicCounts[row.topic] = (topicCounts[row.topic] || 0) + row.count;
-      yearCounts[row.year]   = (yearCounts[row.year]   || 0) + row.count;
-    });
-
-    // Topic chips
-    const tContainer = document.getElementById('pyqTopicChips');
-    tContainer.innerHTML = '';
-    Object.entries(topicCounts).sort((a,b) => b[1]-a[1]).forEach(([topic, count]) => {
-      const btn = document.createElement('button');
-      btn.textContent = topic.replace('_',' ') + ' (' + count + ')';
-      btn.style.cssText = 'padding:6px 12px;border-radius:16px;border:2px solid #0284c7;background:white;color:#0284c7;font-size:12px;font-weight:600;cursor:pointer;';
-      btn.onclick = () => {
-        if (selectedPyqTopics.has(topic)) {
-          selectedPyqTopics.delete(topic);
-          btn.style.background = 'white'; btn.style.color = '#0284c7';
-        } else {
-          selectedPyqTopics.add(topic);
-          btn.style.background = '#0284c7'; btn.style.color = 'white';
-        }
-        updateSummary();
-      };
-      tContainer.appendChild(btn);
-    });
-
-    // Year chips
-    const yContainer = document.getElementById('pyqYearChips');
-    yContainer.innerHTML = '';
-    Object.entries(yearCounts).sort((a,b) => b[0].localeCompare(a[0])).forEach(([year, count]) => {
-      const btn = document.createElement('button');
-      btn.textContent = year + ' (' + count + ')';
-      btn.style.cssText = 'padding:6px 12px;border-radius:16px;border:2px solid #0284c7;background:white;color:#0284c7;font-size:12px;font-weight:600;cursor:pointer;';
-      btn.onclick = () => {
-        if (selectedPyqYears.has(year)) {
-          selectedPyqYears.delete(year);
-          btn.style.background = 'white'; btn.style.color = '#0284c7';
-        } else {
-          selectedPyqYears.add(year);
-          btn.style.background = '#0284c7'; btn.style.color = 'white';
-        }
-        updateSummary();
-      };
-      yContainer.appendChild(btn);
-    });
-  } catch(e) { console.error('pyq meta error', e); }
-}
-
-loadQuizMeta();
-loadPyqMeta();
-
-// ── Folder / Topic logic (unchanged) ─────────────────────────────────────
 function toggleFolder(folder) {
   const body = document.getElementById('folderBody_' + folder);
   const chevron = document.getElementById('folderChevron_' + folder);
@@ -360,8 +126,13 @@ function distributeFolderTotal(folder) {
   const total = parseInt(document.getElementById('folderTotal_' + folder).value) || 0;
   const inputs = document.querySelectorAll(`.topic-input[data-folder="${folder}"]`);
   if (!inputs.length) return;
+
+  // Clear all topic inputs
   inputs.forEach(inp => { inp.value = ''; });
+
   if (total === 0) { updateFolderCount(folder); return; }
+
+  // Distribute evenly
   const perTopic = Math.floor(total / inputs.length);
   let remainder = total - perTopic * inputs.length;
   inputs.forEach(inp => {
@@ -376,86 +147,51 @@ function updateFolderCount(folder) {
   let sum = 0;
   inputs.forEach(inp => { sum += parseInt(inp.value) || 0; });
   document.getElementById('folderCount_' + folder).textContent = sum > 0 ? sum + ' selected' : '0 selected';
+  // Sync folder total input
   document.getElementById('folderTotal_' + folder).value = sum || '';
   updateSummary();
 }
 
-// ── Summary ───────────────────────────────────────────────────────────────
 function updateSummary() {
+  const allInputs = document.querySelectorAll('.topic-input');
   let total = 0;
-  const parts = [];
+  const details = [];
+  const folders = {};
 
-  // Main bank
-  if (activeSources.has('main')) {
-    const allInputs = document.querySelectorAll('.topic-input');
-    let mainTotal = 0;
-    const folders = {};
-    allInputs.forEach(inp => {
-      const v = parseInt(inp.value) || 0;
-      if (v > 0) { mainTotal += v; folders[inp.dataset.folder] = (folders[inp.dataset.folder] || 0) + v; }
-    });
-    if (mainTotal > 0) {
-      total += mainTotal;
-      parts.push('Main: ' + mainTotal);
+  allInputs.forEach(inp => {
+    const v = parseInt(inp.value) || 0;
+    if (v > 0) {
+      total += v;
+      const f = inp.dataset.folder;
+      folders[f] = (folders[f] || 0) + v;
     }
-  }
-
-  // Quiz
-  if (activeSources.has('quiz')) {
-    const qc = parseInt(document.getElementById('quizCount').value) || 0;
-    if (qc > 0) { total += qc; parts.push('Quiz: ' + qc); }
-  }
-
-  // PYQ
-  if (activeSources.has('pyq')) {
-    const pc = parseInt(document.getElementById('pyqCount').value) || 0;
-    if (pc > 0) { total += pc; parts.push('PYQ: ' + pc); }
-  }
-
-  // Difficulty badge
-  if (activeDiffs.size < 3) {
-    const labels = { E: 'Easy', M: 'Medium', H: 'Hard' };
-    parts.push('🎯 ' + [...activeDiffs].map(d => labels[d]).join('+'));
-  }
+  });
 
   document.getElementById('totalSelectedDisplay').textContent = total + ' question' + (total !== 1 ? 's' : '') + ' selected';
-  document.getElementById('summaryDetails').textContent = parts.join(' · ');
+  document.getElementById('summaryDetails').textContent = Object.entries(folders).map(([f, c]) => f.replace('_', ' ') + ': ' + c).join(' · ');
   document.getElementById('summaryBar').style.display = total > 0 ? '' : 'none';
 }
 
-// ── Start Exam ────────────────────────────────────────────────────────────
 async function startExam() {
-  const mode        = document.getElementById('examMode').value;
-  const duration    = parseInt(document.getElementById('duration').value) || 45;
+  const mode = document.getElementById('examMode').value;
+  const duration = parseInt(document.getElementById('duration').value) || 45;
   const studentName = document.getElementById('studentName').value.trim() || 'Student';
   localStorage.setItem('mcq_student_name', studentName);
+  const allInputs = document.querySelectorAll('.topic-input');
 
-  // Validate at least one source has questions
-  let total = 0;
   const selections = {};
+  allInputs.forEach(inp => {
+    const v = parseInt(inp.value) || 0;
+    if (v > 0) {
+      const f = inp.dataset.folder;
+      const t = inp.dataset.topic;
+      if (!selections[f]) selections[f] = {};
+      selections[f][t] = v;
+    }
+  });
 
-  if (activeSources.has('main')) {
-    document.querySelectorAll('.topic-input').forEach(inp => {
-      const v = parseInt(inp.value) || 0;
-      if (v > 0) {
-        const f = inp.dataset.folder, t = inp.dataset.topic;
-        if (!selections[f]) selections[f] = {};
-        selections[f][t] = v;
-        total += v;
-      }
-    });
-  }
-
-  const quizCount = activeSources.has('quiz') ? (parseInt(document.getElementById('quizCount').value) || 0) : 0;
-  const pyqCount  = activeSources.has('pyq')  ? (parseInt(document.getElementById('pyqCount').value)  || 0) : 0;
-  total += quizCount + pyqCount;
-
-  if (total === 0) {
-    showToast('Please select at least one question!', 'error');
-    return;
-  }
-  if (activeDiffs.size === 0) {
-    showToast('Select at least one difficulty level!', 'error');
+  if (Object.keys(selections).length === 0) {
+    showToast('Please select at least one topic!', 'error');
     return;
   }
 
@@ -464,25 +200,10 @@ async function startExam() {
   btn.textContent = 'Loading...';
 
   try {
-    const payload = {
-      mode, duration,
-      selections,
-      device_id:    deviceId,
-      student_name: studentName,
-      // New fields
-      sources:      [...activeSources],
-      difficulties: [...activeDiffs],
-      quiz_count:   quizCount,
-      quiz_topics:  [...selectedQuizTopics],
-      pyq_count:    pyqCount,
-      pyq_topics:   [...selectedPyqTopics],
-      pyq_years:    [...selectedPyqYears],
-    };
-
     const resp = await fetch('/api/start-exam', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+      body: JSON.stringify({ mode, duration, selections, device_id: deviceId, student_name: studentName })
     });
     const data = await resp.json();
     if (data.error) {
@@ -490,6 +211,7 @@ async function startExam() {
       btn.disabled = false;
       btn.textContent = '🚀 Start Exam';
     } else {
+      // Store questions in sessionStorage
       sessionStorage.setItem('exam_' + data.session_id, JSON.stringify(data));
       window.location.href = '/exam/' + data.session_id;
     }

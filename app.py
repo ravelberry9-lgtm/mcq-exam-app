@@ -65,6 +65,7 @@ def _fv(row):
     return list(row)[0]
 
 
+
 def init_db():
     conn = get_db()
     if USE_POSTGRES:
@@ -296,6 +297,7 @@ def init_db():
         print(f"[startup] Modern ch3 seed check error: {_me3}")
         try: conn.rollback()
         except: pass
+
     # ── Auto-seed Modern ch4 if missing ──
     try:
         cur_mod4 = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_History' AND subtopic='Modern' AND chapter_num=4")
@@ -309,7 +311,6 @@ def init_db():
         print(f"[startup] Modern ch4 seed check error: {_me4}")
         try: conn.rollback()
         except: pass
-
 
     # Back-fill: fix any Indian_History row still missing a subtopic → 'Ancient'
     # Runs every startup (catches ch1 from old deploys + any other orphan rows).
@@ -937,23 +938,25 @@ def start_exam():
     student_name = data.get('student_name', 'Student')
 
     # ── New filter params ──────────────────────────────────────────────
-    sources      = data.get('sources', ['main'])
-    difficulties = data.get('difficulties', ['E','M','H'])
+    sources      = data.get('sources', ['main'])          # ['main','quiz','pyq']
+    difficulties = data.get('difficulties', ['E','M','H'])# subset of E/M/H
     quiz_count   = int(data.get('quiz_count', 0) or 0)
-    quiz_topics  = data.get('quiz_topics', [])
+    quiz_topics  = data.get('quiz_topics', [])            # [] = all topics
     pyq_count    = int(data.get('pyq_count', 0) or 0)
-    pyq_topics   = data.get('pyq_topics', [])
-    pyq_years    = data.get('pyq_years', [])
+    pyq_topics   = data.get('pyq_topics', [])             # [] = all topics
+    pyq_years    = data.get('pyq_years', [])              # [] = all years
 
+    # Build difficulty filter for main-bank questions (E/M/H strings)
     diff_set = set(d.upper() for d in difficulties) if difficulties else {'E','M','H'}
+    # Map E/M/H → 1/2/3 for chapter_mcqs
     diff_int_map = {'E': 1, 'M': 2, 'H': 3}
     diff_ints = [diff_int_map[d] for d in diff_set if d in diff_int_map]
 
     conn = get_db()
     ph = '%s' if USE_POSTGRES else '?'
 
-    all_questions = []
-    extra_items   = []
+    all_questions = []   # main-bank dicts (have int id)
+    extra_items   = []   # quiz + pyq dicts (stored in full in session)
 
     # ── A. Main question bank ──────────────────────────────────────────
     if 'main' in sources:
@@ -962,6 +965,8 @@ def start_exam():
                 count = int(count)
                 if count <= 0:
                     continue
+
+                # Build difficulty clause
                 if diff_set < {'E','M','H'}:
                     diff_placeholders = ','.join([ph] * len(diff_set))
                     diff_clause = f' AND difficulty IN ({diff_placeholders})'
@@ -969,6 +974,7 @@ def start_exam():
                 else:
                     diff_clause = ''
                     diff_params = []
+
                 if mode == 'no_repeat':
                     cur = db_exec(conn, f'SELECT question_id FROM seen_questions WHERE device_id={ph}', (device_id,))
                     seen_ids = [r['question_id'] for r in cur.fetchall()]
@@ -992,13 +998,14 @@ def start_exam():
                         f'SELECT * FROM questions WHERE folder={ph} AND topic={ph}{diff_clause}',
                         [folder, topic] + diff_params)
                     rows = [row_to_dict(r) for r in cur.fetchall()]
+
                 rows = _pick_questions_smart(rows, count)
                 all_questions.extend(rows)
 
-    # ── B. Chapter Quiz ────────────────────────────────────────────────
+    # ── B. Chapter Quiz (chapter_mcqs) ────────────────────────────────
     if 'quiz' in sources and quiz_count > 0:
         try:
-            diff_map_str = {1: 'E', 2: 'M', 3: 'H'}
+            diff_map = {1: 'E', 2: 'M', 3: 'H'}
             if diff_ints and len(diff_ints) < 3:
                 dph = ','.join([ph] * len(diff_ints))
                 diff_clause_q = f' AND cm.difficulty IN ({dph})'
@@ -1006,6 +1013,7 @@ def start_exam():
             else:
                 diff_clause_q = ''
                 diff_params_q = []
+
             if quiz_topics:
                 tph = ','.join([ph] * len(quiz_topics))
                 topic_clause = f' AND sn.topic IN ({tph})'
@@ -1013,10 +1021,11 @@ def start_exam():
             else:
                 topic_clause = ''
                 topic_params = []
+
             cur = db_exec(conn,
                 f'''SELECT cm.id, cm.q_te, cm.opt_a, cm.opt_b, cm.opt_c, cm.opt_d,
                            cm.correct, cm.difficulty, cm.explanation_te,
-                           sn.topic as sn_topic, sn.chapter_title_en
+                           sn.topic as sn_topic, sn.chapter_num, sn.chapter_title_en
                     FROM chapter_mcqs cm
                     JOIN study_notes sn ON cm.study_note_id = sn.id
                     WHERE 1=1{diff_clause_q}{topic_clause}''',
@@ -1024,6 +1033,7 @@ def start_exam():
             ch_rows = [row_to_dict(r) for r in cur.fetchall()]
             random.shuffle(ch_rows)
             ch_rows = ch_rows[:quiz_count]
+
             for r in ch_rows:
                 extra_items.append({
                     '_source': 'quiz',
@@ -1040,7 +1050,7 @@ def start_exam():
                     ],
                     'correct': r.get('correct', '').strip().upper(),
                     'correct_answer': r.get('correct', '').strip().upper(),
-                    'difficulty': diff_map_str.get(r.get('difficulty', 2), 'M'),
+                    'difficulty': diff_map.get(r.get('difficulty', 2), 'M'),
                     'explanation': r.get('explanation_te', ''),
                     'passage': None, 'passage_group_id': None,
                 })
@@ -1064,6 +1074,7 @@ def start_exam():
             pyq_rows = [row_to_dict(r) for r in cur.fetchall()]
             random.shuffle(pyq_rows)
             pyq_rows = pyq_rows[:pyq_count]
+
             for r in pyq_rows:
                 extra_items.append({
                     '_source': 'pyq',
@@ -1088,10 +1099,12 @@ def start_exam():
         except Exception as _pe:
             print(f'[start-exam] pyq fetch error: {_pe}')
 
+    # ── Check we got something ─────────────────────────────────────────
     if not all_questions and not extra_items:
         conn.close()
         return jsonify({'error': 'No questions found for the selected filters'}), 400
 
+    # ── Mark seen (main bank only) ─────────────────────────────────────
     if mode == 'shuffle':
         all_questions = _shuffle_keeping_passages(all_questions)
 
@@ -1110,8 +1123,10 @@ def start_exam():
                 pass
         conn.commit()
 
+    # ── Build session payload ─────────────────────────────────────────
+    # Store main-bank IDs, quiz/pyq as full dicts (same pattern as quick-exam)
     session_questions = [q['id'] for q in all_questions] + extra_items
-    random.shuffle(session_questions)
+    random.shuffle(session_questions)   # interleave sources
 
     session_id = str(uuid.uuid4())
     config = {
@@ -1125,6 +1140,7 @@ def start_exam():
     conn.commit()
     conn.close()
 
+    # Build client question list (main bank rows need full expansion)
     client_questions = []
     for q in all_questions:
         client_questions.append({
@@ -1140,6 +1156,7 @@ def start_exam():
 
     return jsonify({'session_id': session_id, 'questions': client_questions,
                     'duration': duration, 'total': len(client_questions)})
+
 
 def _get_options(q):
     opts = [{'key': k, 'text': q[f'option_{k.lower()}']} for k in ['A','B','C','D']]
@@ -1995,6 +2012,53 @@ def read_notes_home():
                 groups.append(group)
 
     return render_template('read_notes.html', groups=groups)
+
+
+# ─────────────────────────────────────────────
+# Study Library — APBOOKS catalog (metadata-only)
+# Indian History Audio Guide & Ch10 Cinematic Narrative
+# ─────────────────────────────────────────────
+@app.route('/library')
+def library():
+    """Browse APBOOKS catalog (metadata-only index of source PDFs/Excels)."""
+    catalog_path = os.path.join(app.static_folder, 'library_catalog.json')
+    groups = {}
+    total_items = 0
+    total_bytes = 0
+    if os.path.isfile(catalog_path):
+        try:
+            with open(catalog_path, 'r', encoding='utf-8') as f:
+                groups = json.load(f)
+            for items in groups.values():
+                total_items += len(items)
+                for it in items:
+                    sz = it.get('size', '')
+                    # rough sum from "X MB" / "X KB" string
+                    if 'MB' in sz:
+                        try: total_bytes += int(float(sz.split()[0]) * 1024 * 1024)
+                        except: pass
+                    elif 'KB' in sz:
+                        try: total_bytes += int(float(sz.split()[0]) * 1024)
+                        except: pass
+        except Exception:
+            pass
+    total_size_mb = round(total_bytes / (1024 * 1024)) if total_bytes else 0
+    return render_template('library.html',
+                           groups=groups,
+                           total_items=total_items,
+                           total_size_mb=total_size_mb)
+
+
+@app.route('/study/audio-guide/indian-history')
+def study_audio_guide_indian_history():
+    """Self-contained Telugu/English audio guide for Ancient History Ch1."""
+    return redirect('/static/guides/indian_history_ch1.html')
+
+
+@app.route('/study/narrative/ch10')
+def study_narrative_ch10():
+    """Cinematic narrative for Ancient History Ch10 — Gupta Empire."""
+    return render_template('narrative_ch10.html')
 
 
 @app.route('/api/notes/add', methods=['POST'])
@@ -4791,6 +4855,8 @@ def seed_modern_ch3_mcqs():
         return jsonify({'success': False, 'error': str(e)}), 500
     finally:
         conn.close()
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # MODERN CH4 — Governor Generals & Viceroys (seed_ch4_modern.py)
 # ─────────────────────────────────────────────────────────────────────────────
@@ -4831,8 +4897,6 @@ def seed_modern_ch4_mcqs():
         return jsonify({'success': False, 'error': str(e)}), 500
     finally:
         conn.close()
-
-
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -5104,21 +5168,21 @@ def pyq_exam_data(session_id):
     return jsonify({'questions': questions, 'duration': config['duration'], 'total': len(questions)})
 
 
-# ── Run init_db on import (works with gunicorn on Railway AND locally) ──
+# Run init_db on import (works with gunicorn on Render AND locally)
 init_db()
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print("\n" + "="*55)
-    print("  📚 MCQ EXAM APP — STARTED")
-    print(f"  DB: {'PostgreSQL ☁️' if USE_POSTGRES else 'SQLite 💾'}")
+    print("  MCQ EXAM APP - STARTED")
+    print(f"  DB: {'PostgreSQL' if USE_POSTGRES else 'SQLite'}")
     print("="*55)
     if not USE_POSTGRES:
         import socket
         try: local_ip = socket.gethostbyname(socket.gethostname())
         except: local_ip = "127.0.0.1"
-        print(f"\n  💻 On this PC:    http://localhost:{port}")
-        print(f"  📱 On your phone: http://{local_ip}:{port}")
+        print(f"\n  On this PC:    http://localhost:{port}")
+        print(f"  On your phone: http://{local_ip}:{port}")
         print(f"\n  Make sure phone is on same WiFi network!")
     print("="*55 + "\n")
     app.run(host='0.0.0.0', port=port, debug=False)

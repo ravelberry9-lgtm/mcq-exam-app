@@ -1,0 +1,576 @@
+{% extends "base.html" %}
+{% block title %}Ch10 Ancient — గుప్త Cinematic Narrative{% endblock %}
+{% block content %}
+<style>
+  .cn-wrap { max-width: 760px; margin: 0 auto; padding: 12px 14px 80px; }
+  .cn-hero {
+    background: linear-gradient(135deg,#7b3f00,#c8860a);
+    color:#fff; padding: 22px 18px; border-radius: 14px;
+    text-align:center; margin-bottom:18px;
+    box-shadow: 0 6px 22px rgba(123,63,0,0.25);
+  }
+  .cn-hero .crumb { font-size:11px; opacity:.8; margin-bottom:6px; letter-spacing:.4px; text-transform:uppercase; }
+  .cn-hero h1 { font-size:20px; font-weight:900; margin-bottom:5px; }
+  .cn-hero p  { font-size:13px; opacity:.92; }
+  .cn-hero .meta { font-size:11px; opacity:.78; margin-top:8px; }
+
+  .cn-toc {
+    background: var(--card); border:1.5px solid var(--border);
+    border-radius:12px; padding:12px; margin-bottom:18px;
+  }
+  .cn-toc-title {
+    font-size:13px; font-weight:800; color:var(--primary);
+    margin-bottom:10px; display:flex; align-items:center; gap:6px;
+  }
+  .cn-toc-grid {
+    display:grid; grid-template-columns: repeat(auto-fill, minmax(170px,1fr)); gap:6px;
+  }
+  .cn-toc-item {
+    display:flex; align-items:center; gap:8px;
+    padding:7px 10px; background:var(--bg);
+    border:1px solid var(--border); border-radius:8px;
+    text-decoration:none; color:var(--text);
+    font-size:12px; transition: all .15s;
+  }
+  .cn-toc-item:hover { border-color:#c8860a; background:#fff8e1; color:#7b3f00; }
+  [data-theme="dark"] .cn-toc-item:hover { background:#2a1f0a; }
+  .cn-toc-num {
+    width:22px; height:22px; border-radius:50%;
+    background:#7b3f00; color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:800; flex-shrink:0;
+  }
+
+  .cn-chapter {
+    background:var(--card); border:1.5px solid var(--border);
+    border-radius:14px; padding:18px 18px 16px;
+    margin-bottom:18px;
+    scroll-margin-top:74px;
+  }
+  .cn-chapter-head { display:flex; gap:14px; align-items:flex-start; margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+  .cn-num {
+    flex-shrink:0; min-width:46px; height:46px;
+    background: linear-gradient(135deg,#7b3f00,#c8860a);
+    color:#fff; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800; padding:4px;
+    text-align:center;
+  }
+  .cn-te {
+    font-size:17px; font-weight:800; color:#7b3f00;
+    line-height:1.35; margin-bottom:3px;
+    font-family:'Noto Sans Telugu','Segoe UI',sans-serif;
+  }
+  [data-theme="dark"] .cn-te { color:#ffb74d; }
+  .cn-en { font-size:12px; color:var(--text-muted); font-style:italic; }
+  .cn-body p {
+    margin-bottom:12px;
+    font-size:15px; line-height:1.85;
+    color:var(--text);
+    font-family:'Noto Sans Telugu','Segoe UI',sans-serif;
+  }
+  .cn-body p:last-child { margin-bottom:0; }
+
+  .cn-back {
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--primary); color:#fff;
+    padding:8px 16px; border-radius:18px;
+    font-size:12px; font-weight:700; text-decoration:none;
+    margin-bottom:14px;
+  }
+  .cn-back:hover { background: var(--primary-light); }
+
+  .cn-print {
+    position:fixed; right:14px; bottom:14px;
+    background:#7b3f00; color:#fff;
+    border:none; padding:11px 16px; border-radius:24px;
+    font-size:13px; font-weight:700; cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.25); z-index:90;
+  }
+
+  @media print {
+    .app-header, .cn-back, .cn-print, .cn-toc, .g-minibar { display:none !important; }
+    .cn-chapter { page-break-inside: avoid; box-shadow:none; border:none; }
+    body { background:#fff; }
+  }
+</style>
+
+<div class="cn-wrap">
+  <a href="/notes" class="cn-back">← Notes</a>
+
+  <div class="cn-hero">
+    <div class="crumb">Ancient History · Ch 10</div>
+    <h1>🏛️ గుప్త సామ్రాజ్యం — Cinematic Narrative</h1>
+    <p>20 chapter dramatic walk-through · Telugu + English context</p>
+    <div class="meta">20 chapters · Read aloud or follow along</div>
+  </div>
+
+  <div class="cn-toc">
+    <div class="cn-toc-title">📑 Chapter Index</div>
+    <div class="cn-toc-grid">
+      <a href="#ch1" class="cn-toc-item"><span class="cn-toc-num">1</span><span class="cn-toc-title">స్వర్ణయుగం తెర తెరుచుకుంటోంది</span></a>
+      <a href="#ch2" class="cn-toc-item"><span class="cn-toc-num">2</span><span class="cn-toc-title">సాక్ష్యాలు మాట్లాడతాయి</span></a>
+      <a href="#ch3" class="cn-toc-item"><span class="cn-toc-num">3</span><span class="cn-toc-title">చైనా అబ్బాయి, భారత్‌లో</span></a>
+      <a href="#ch4" class="cn-toc-item"><span class="cn-toc-num">4</span><span class="cn-toc-title">రాళ్ళు చెప్పే రహస్యాలు</span></a>
+      <a href="#ch5" class="cn-toc-item"><span class="cn-toc-num">5</span><span class="cn-toc-title">నాణేలు చెప్పే కథలు</span></a>
+      <a href="#ch6" class="cn-toc-item"><span class="cn-toc-num">6</span><span class="cn-toc-title">వంశారంభం</span></a>
+      <a href="#ch7" class="cn-toc-item"><span class="cn-toc-num">7</span><span class="cn-toc-title">భారత నెపోలియన్</span></a>
+      <a href="#ch8" class="cn-toc-item"><span class="cn-toc-num">8</span><span class="cn-toc-title">అన్ని దిక్కులూ జయించిన రాజు</span></a>
+      <a href="#ch9" class="cn-toc-item"><span class="cn-toc-num">9</span><span class="cn-toc-title">ప్రేమ, పిరికితనం, ప్రతీకారం</span></a>
+      <a href="#ch10" class="cn-toc-item"><span class="cn-toc-num">10</span><span class="cn-toc-title">తొమ్మిది బిరుదులు, తొమ్మిది మేధావులు</span></a>
+      <a href="#ch11" class="cn-toc-item"><span class="cn-toc-num">11</span><span class="cn-toc-title">నలంద వెలిగిన రోజులు</span></a>
+      <a href="#ch12" class="cn-toc-item"><span class="cn-toc-num">12</span><span class="cn-toc-title">చివరి మహారాజు</span></a>
+      <a href="#ch13" class="cn-toc-item"><span class="cn-toc-num">13</span><span class="cn-toc-title">రాజు నుండి గ్రామం వరకు</span></a>
+      <a href="#ch14" class="cn-toc-item"><span class="cn-toc-num">14</span><span class="cn-toc-title">సమాజం — వెలుతురు మరియు చీకటి</span></a>
+      <a href="#ch15" class="cn-toc-item"><span class="cn-toc-num">15</span><span class="cn-toc-title">బంగారు ఆర్థిక వ్యవస్థ</span></a>
+      <a href="#ch16" class="cn-toc-item"><span class="cn-toc-num">16</span><span class="cn-toc-title">కాళిదాసు — భారత Shakespeare</span></a>
+      <a href="#ch17" class="cn-toc-item"><span class="cn-toc-num">17</span><span class="cn-toc-title">పంచతంత్రం నుండి శస్త్రవైద్యం వరకు</span></a>
+      <a href="#ch18" class="cn-toc-item"><span class="cn-toc-num">18</span><span class="cn-toc-title">శూన్యాన్ని కనుగొన్న మేధావులు</span></a>
+      <a href="#ch19" class="cn-toc-item"><span class="cn-toc-num">19</span><span class="cn-toc-title">గుహలు, వెలుతురు, రంగులు</span></a>
+      <a href="#ch20" class="cn-toc-item"><span class="cn-toc-num">20</span><span class="cn-toc-title">రాయిలో దేవుళ్ళు</span></a>
+    </div>
+  </div>
+
+  
+<section class="cn-chapter" id="ch1">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 1</div>
+    <div>
+      <h2 class="cn-te">స్వర్ణయుగం తెర తెరుచుకుంటోంది</h2>
+      <div class="cn-en">The Golden Age Curtain Rises</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>CE 240...</p>
+        <p>ఒక కొత్త వంశం భారతభూమి మీద తొలి అడుగు వేసింది.</p>
+        <p>Maurya సామ్రాజ్యం పడిపోయి శతాబ్దాలు గడిచాయి. దేశం చీకటిలో ఉంది... ముక్కలు ముక్కలుగా. Shunga లు వచ్చారు, వెళ్ళారు. Satavahana లు వచ్చారు, వెళ్ళారు. ఆ చీకట్లో — ఒక నక్షత్రం ఉదయించింది.</p>
+        <p>గుప్త సామ్రాజ్యం!</p>
+        <p>CE 240 నుండి CE 543 వరకు... దాదాపు మూడు వందల సంవత్సరాలు — ఇది భారతదేశపు స్వర్ణయుగం.</p>
+        <p>చరిత్రకారుడు K.M. Munshi ఈ కాలాన్ని చూసి ఆశ్చర్యపోయాడు. &quot;స్వర్ణయుగం!&quot; అని అన్నాడు. అయితే A.L. Basham అంగీకరించలేదు — &quot;ఈ వైభవం ఉత్తర భారత్‌కు మాత్రమే పరిమితం&quot; అని నిలబడ్డాడు. ఇద్దరి మాటల్లో నిజముంది... కానీ ఆ మూడు శతాబ్దాల్లో భారతదేశం చూసిన కళ, శాస్త్రం, సాహిత్యం — వేటికీ సరిజోడు లేదు.</p>
+        <p>గుప్తుల రాజముద్ర — Garuda. విష్ణువు వాహనం. గుప్తుల అధికార లాంఛనం — Varaha. విష్ణువు మూడవ అవతారం. ఈ రెండు చిహ్నాలు చూస్తే అర్థమవుతుంది — &quot;మేము ధర్మ రక్షకులం&quot; అని వారు ప్రతి పతాకంలో చెప్పారు.</p>
+        <p>రాజభాష — Sanskrit. రాజధాని — Pataliputra. రెండవ రాజధాని — Ujjain. ప్రధాన వృత్తి — వ్యవసాయం. ఈ వంశం వైశ్యులా, క్షత్రియులా అని ఇప్పటికీ వాదన ఉంది... John Fleet &quot;Corpus Inscriptionum Indicarum&quot; లో గుప్తుల శాసనాలన్నీ సేకరించాడు.</p>
+        <p>గుర్తుంచుకోండి — రాజముద్ర Garuda, లాంఛనం Varaha, K.M. Munshi = స్వర్ణయుగం!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch2">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 2</div>
+    <div>
+      <h2 class="cn-te">సాక్ష్యాలు మాట్లాడతాయి</h2>
+      <div class="cn-en">Evidence Speaks</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>గుప్తుల చరిత్ర తెలుసుకోవాలంటే... మనకు ఆధారాలు కావాలి కదా?</p>
+        <p>మొదటిది — సాహిత్యం.</p>
+        <p>Kamandaka రాసిన &quot;నీతిసారం&quot; — రాజనీతి సూత్రాలు. గుప్తుల పాలన అర్థం చేసుకోవడానికి అత్యంత ముఖ్యమైన గ్రంధం. Vishakhadatta రాసిన రెండు నాటకాలు — &quot;ముద్రారాక్షసం&quot; మరియు &quot;దేవీ చంద్రగుప్తం.&quot; ముద్రారాక్షసం Chandragupta Maurya చరిత్ర... దేవీ చంద్రగుప్తం — అది ఒక గుప్త వంశపు నాటకీయ గాథ. కొంచెం ఆగండి... ఆ కథ వస్తుంది!</p>
+        <p>Shudrak రాసిన &quot;మృచ్ఛకటికం&quot; — అంటే &quot;చిన్న మట్టి బండి.&quot; ఒక మామూలు వ్యాపారి Charudatta మరియు వేశ్య Vasantasena ప్రేమ కథ. ఈ నాటకం ఆ కాలపు సమాజాన్ని అద్దంలో చూపిస్తుంది.</p>
+        <p>Vatsyayan రాసిన &quot;Kamasutra&quot;... అర్థం తప్పు చేసుకోకండి — ఇది కేవలం శారీరక సంబంధాల గ్రంధం కాదు. ఆ కాలపు సమాజం, ప్రేమ, జీవన విధానం — అన్నీ ఉన్నాయి.</p>
+        <p>Vajjika రాసిన &quot;కౌముది మహోత్సవం&quot; — మొదటి Chandragupta పట్టాభిషేకాన్ని వర్ణిస్తుంది. Somadeva రాసిన &quot;కథాసరిత్సాగరం&quot; — వేల కథల సముద్రం. Chandragomi రాసిన &quot;చంద్రవ్యాకరణం&quot; — ఇందులో Skandagupta, Toramana అనే హూణ నాయకుణ్ణి ఓడించాడని చెప్పబడింది. &quot;ఆర్య మంజుశ్రీ మూల కల్ప&quot; — బౌద్ధ గ్రంధం, గుప్తుల పాలనపై ముఖ్యమైన సమాచారం ఇస్తుంది.</p>
+        <p>ఇవన్నీ సాహిత్య ఆధారాలు. కానీ అన్నిటికన్నా విలువైన ఆధారం — కళ్ళతో చూసి రాసిన ఒక చైనా యాత్రికుడిది!</p>
+        <p>గుర్తుంచుకోండి — Kamandaka = నీతిసారం, Vishakhadatta = ముద్రారాక్షసం + దేవీ చంద్రగుప్తం, Shudrak = మృచ్ఛకటికం, Somadeva = కథాసరిత్సాగరం!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch3">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 3</div>
+    <div>
+      <h2 class="cn-te">చైనా అబ్బాయి, భారత్‌లో</h2>
+      <div class="cn-en">A Chinese Pilgrim Arrives</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>CE 399...</p>
+        <p>65 ఏళ్ళ చైనా సన్యాసి ఒంటరిగా బయలుదేరాడు. Gobi ఎడారి దాటాడు... Himalayas దిగాడు... 14 సంవత్సరాల ప్రయాణం. అతని పేరు — Fahiyan (Fa-Hien).</p>
+        <p>ఎందుకు వచ్చాడు? Buddhist తీర్థయాత్ర కోసం. Buddha జన్మించిన చోటు చూడాలని... బౌద్ధ గ్రంధాలు సేకరించాలని.</p>
+        <p>CE 399 నుండి 414 వరకు భారత్‌లో ఉన్నాడు. అప్పటి రాజు — రెండవ Chandragupta Vikramaditya.</p>
+        <p>Taxila లో 2 సంవత్సరాలు చదివాడు. Pataliputra వెళ్ళాడు — అక్కడ 3 సంవత్సరాలు ఉన్నాడు. మొత్తం 5 సంవత్సరాలు!</p>
+        <p>Pataliputra చూసి విస్మయపడ్డాడు. &quot;పుష్ప నగరం!&quot; అని అన్నాడు — Pushpa Nagaram — పూల నగరం! వీధులు నిండా తోటలు... రాజభవనంలో చక్కని నిర్మాణాలు... అతని కళ్ళు తేజస్సుతో నిండాయి.</p>
+        <p>గుప్తుల న్యాయం చూసి ఇంకా ఆశ్చర్యపడ్డాడు. &quot;మరణ శిక్ష అరుదు! చేతులు కోయడం వంటి శిక్షలు లేవు. జరిమానా మాత్రమే!&quot; అని రాశాడు. రోడ్లు సురక్షితం... దొంగలు లేరు... ప్రయాణం నిరాటంకం.</p>
+        <p>కానీ ఒక చీకటి కోణం కూడా రాశాడు...</p>
+        <p>Chandala లు — అంటరానివారు — పట్టణాల బయట నివసిస్తారు. మేడమీదకు వెళ్ళేటప్పుడు తాపు వాయించుకుంటూ వెళ్ళాలి — అగ్రవర్ణుల నీడపై వారి నీడ పడకూడదని.</p>
+        <p>అయ్యో... స్వర్ణయుగంలో కూడా ఈ అమానుష విభజన ఉందా!</p>
+        <p>Fahiyan తిరిగి China వెళ్ళి &quot;ఫో-కువో-కి&quot; (Fo-kuo-ki) రాశాడు — &quot;A Record of the Buddhistic Kingdoms.&quot; చరిత్రకారులకు అమూల్యమైన ఆధారం.</p>
+        <p>గుర్తుంచుకోండి — Fahiyan = రెండవ Chandragupta కాలం (CE 399–414). Taxila 2 సం. + Pataliputra 3 సం. = 5 సం. గ్రంధం = ఫో-కువో-కి. Pataliputra = పుష్ప నగరం!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch4">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 4</div>
+    <div>
+      <h2 class="cn-te">రాళ్ళు చెప్పే రహస్యాలు</h2>
+      <div class="cn-en">Stones That Tell Secrets</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>శాసనాలు... రాళ్ళపై చెక్కిన చరిత్ర.</p>
+        <p>Allahabad Prashasti! ఇది Ashoka నిర్మించిన ఒక శిలాస్తంభంపై ఉంది — అదే స్తంభంపై! సముద్రగుప్తుని మంత్రి, విదేశ వ్యవహారాల అధికారి — Harishena — ఈ శాసనాన్ని వేయించాడు. 33 శ్లోకాలు! సముద్రగుప్తుని విజయాలు, రాజులు — అన్నీ వర్ణించబడ్డాయి. &quot;Kaviraj&quot; బిరుదు కూడా ఇందులోనే కనిపిస్తుంది.</p>
+        <p>Mehrauli Iron Pillar, Delhi! &quot;Chandra&quot; రాజు Vahlikas ను ఓడించాడని ఇందులో ఉంది — ఆ &quot;Chandra&quot; Chandragupta II అని నమ్ముతారు. వావ్ — ఈ స్తంభం 1600+ సంవత్సరాలుగా తుప్పు పట్టలేదు! ఇప్పటికీ మెరుస్తోంది. గుప్తుల లోహశాస్త్రం ఎంత గొప్పదో ఈ ఒక్క విషయం చెప్పేస్తుంది.</p>
+        <p>Junagadh శాసనం — ఇది చాలా ప్రత్యేకం! ఒకే రాయిపై మూడు రాజుల శాసనాలు — Ashoka యొక్క 14 శాసనాలు... Rudradaman శాసనం... మరియు Skandagupta వేయించిన శాసనం. Skandagupta పాలకుడు Chakrapalita, Sudarshan Lake మరమ్మత్తు చేయించాడని ఇందులో ఉంది. మూడు యుగాల మూడు రాజుల మాటలు ఒకే రాయిపై — ఇది చరిత్ర, ఇది అద్భుతం!</p>
+        <p>Nalanda Copper Plate — ఇందులో మొదటిసారిగా &quot;Agrahar&quot; అనే పదం కనిపించింది. బ్రాహ్మణులకు దానం చేయబడిన పన్నుమినహాయింపు భూమి.</p>
+        <p>Eran Inscription — CE 510. Bhanugpta వేయించాడు. దేశ చరిత్రలో మొట్టమొదటి Sati ప్రస్తావన ఇందులోనే! Bhanugpta సేనాని Goparaju యుద్ధంలో మరణించగా — అతని భార్య మంటల్లో దూకింది. అయ్యో... ఆమె స్వచ్ఛందంగా వెళ్ళిందా, వెళ్ళమని చెప్పారా — ఆ ప్రశ్నకు సమాధానం ఇంతవరకూ రాలేదు.</p>
+        <p>Bhitari Inscription — Skandagupta హూణులను ఓడించిన వివరాలు ఇందులో ఉన్నాయి.</p>
+        <p>గుర్తుంచుకోండి — Allahabad Prashasti = Harishena వేయించాడు. Iron Pillar = తుప్పు పట్టలేదు. Junagadh = 3 రాజుల శాసనాలు. Eran = CE 510, మొదటి Sati ప్రస్తావన!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch5">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 5</div>
+    <div>
+      <h2 class="cn-te">నాణేలు చెప్పే కథలు</h2>
+      <div class="cn-en">Coins That Carry Stories</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>గుప్తుల నాణేలు... ఒక్కొక్కటి ఒక కథ చెప్తాయి.</p>
+        <p>Sri Gupta, Ghatotkacha — వీళ్ళిద్దరి నాణేలపై &quot;Maharaja&quot; మాత్రమే. చిన్న హోదా, చిన్న రాజ్యం.</p>
+        <p>మొదటి Chandragupta నుండి — &quot;Maharajadhiraja!&quot; రాజులకు రాజు. ఆ నాణేలపై Kumari Devi తో కలిసి బొమ్మ వేశాడు — ప్రేమ మాత్రమే కాదు, రాజనయం కూడా.</p>
+        <p>సముద్రగుప్తుని నాణేలు — 8 రకాలు! Ashvamedha (గుర్రపు యజ్ఞం) నాణేలు... Lyrist నాణేలు (వీణ వాయిస్తున్న బొమ్మ!)... Vyaghra (పులి) నాణేలు... వావ్! ఒక యుద్ధవీరుడు వీణ వాయిస్తున్న బొమ్మ నాణెంపై వేయించాడు — ఇది కేవలం శక్తి మాత్రమే కాదు, కళ కూడా అని చెప్పడం.</p>
+        <p>రెండవ Chandragupta — మొదటిసారి వెండి నాణేలు చేయించాడు. మొత్తం 9 రకాలు.</p>
+        <p>Kumaragupta — మొదటిసారి రాగి నాణేలు! అతను Kartikeya భక్తుడు కాబట్టి నాణేలపై నెమలి బొమ్మ — నెమలికి మేత వేస్తున్న Kumaragupta చిత్రం.</p>
+        <p>Skandagupta నాణేలు — హూణులను ఓడిస్తున్న దృశ్యాలు! ఆ నాణేలు చూస్తే అతని ధైర్యం అనుభవమవుతుంది.</p>
+        <p>గుర్తుంచుకోండి — వెండి నాణేలు మొదట = రెండవ Chandragupta. రాగి నాణేలు మొదట = Kumaragupta. Kumaragupta నాణేలపై = నెమలి! సముద్రగుప్తుని నాణేలు = 8 రకాలు!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch6">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 6</div>
+    <div>
+      <h2 class="cn-te">వంశారంభం</h2>
+      <div class="cn-en">How It All Started</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>CE 240. Sri Gupta...</p>
+        <p>గుప్త వంశ స్థాపకుడు. &quot;Maharaja&quot; బిరుదు, చిన్న రాజ్యం, పెద్ద కలలు.</p>
+        <p>Sri Gupta ఒక అసాధారణ పని చేశాడు — China నుండి వచ్చిన Buddhist సన్యాసుల కోసం Gaya దగ్గర Mrigasikhavana లో ఒక Buddhist విహారం నిర్మించాడు. 24 గ్రామాల ఆదాయం దానంగా ఇచ్చాడు. ఈ విషయం Chinese యాత్రికుడు I-tsing రాశాడు. ఒక హిందూ రాజు Buddhist సన్యాసుల కోసం విహారాలు నిర్మించాడు — ఇది సహిష్ణుత!</p>
+        <p>Sri Gupta తర్వాత కుమారుడు Ghatotkacha (CE 280–319). ఇతనూ &quot;Maharaja&quot; మాత్రమే... కానీ ఒక అద్భుతమైన కుమారుడిని పెంచాడు.</p>
+        <p>CE 319. మొదటి Chandragupta సింహాసనం అధిష్టించాడు. &quot;Maharaja&quot; చాలదు అనిపించింది — &quot;Maharajadhiraja!&quot; అని పెట్టుకున్నాడు. ఇక్కడ నుండి నిజమైన ప్రారంభం.</p>
+        <p>కారణం ఏమిటంటే — Licchavi రాజకుమారి Kumari Devi తో వివాహం చేసుకున్నాడు. Licchavi లు ఆ కాలంలో Magadha, Pataliputra ప్రాంతాల్లో శక్తివంతమైన వంశం. ఈ వివాహంతో Pataliputra గుప్తుల చేతుల్లోకి వచ్చింది. తెలివైన రాజకీయ పెళ్ళి!</p>
+        <p>ఇంకా గొప్పేమిటంటే — &quot;Licchavi Dauhitra&quot; (Licchavi రాజకుమారి అల్లుడు) అని తన నాణేలపై గర్వంగా రాశాడు. పెళ్ళాం వంశం గురించి నాణెంపై రాసుకున్న భర్త — ఇది అపూర్వం!</p>
+        <p>CE 319/320 — &quot;Gupta Era&quot; (Gupta Samvat) మొదలైంది.</p>
+        <p>గుర్తుంచుకోండి — Sri Gupta = వంశ స్థాపకుడు. మొదటి Chandragupta = నిజమైన స్థాపకుడు. Kumari Devi = Licchavi రాజకుమారి. Gupta Samvat = CE 319/320!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch7">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 7</div>
+    <div>
+      <h2 class="cn-te">భారత నెపోలియన్</h2>
+      <div class="cn-en">India&#x27;s Napoleon</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>CE 335. మొదటి Chandragupta మరణ శయ్యపై ఉన్నాడు. చుట్టూ అనేక కుమారులు...</p>
+        <p>&quot;ఇతను మాత్రమే ఈ భూమిని కాపాడగలడు&quot; — తండ్రి Samudragupta వైపు చూపించాడు.</p>
+        <p>ఆ క్షణం నుండి చరిత్ర మారిపోయింది!</p>
+        <p>Samudragupta — V.A. Smith అతన్ని చూసి &quot;భారత నెపోలియన్!&quot; అన్నాడు. నెపోలియన్ వంటి యుద్ధవీరుడు... కానీ నెపోలియన్‌కి లేని ఒక గుణం ఉంది — కళాభిరుచి. అతను స్వయంగా వీణ వాయించేవాడు!</p>
+        <p>యుద్ధ రంగంలో నిప్పు లాంటివాడు... ఆస్థానంలో కళాకారుల ప్రోత్సాహకుడు — ఇద్దరు వ్యక్తిత్వాలు ఒకే శరీరంలో!</p>
+        <p>అతని బిరుదులు చూడండి — Maharajadhiraja, Kaviraj (కవి-రాజు!), Vikram, Parakramanka, Sarvarajochetta. &quot;Kaviraj&quot; — ఒక యోధునికి ఇది ఎంత అరుదైన బిరుదు కదా!</p>
+        <p>Harishena — అతని మంత్రి, సంధివిగ్రాహకుడు — 33 శ్లోకాల్లో Allahabad Prashasti లో సముద్రగుప్తుని జయగాథ వర్ణించాడు. ఇది రాతి పోయెట్రీ!</p>
+        <p>గుర్తుంచుకోండి — సముద్రగుప్తుడు = భారత నెపోలియన్ (V.A. Smith). బిరుదు Kaviraj. వీణ వాయించేవాడు. Harishena = Allahabad Prashasti వేయించాడు!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch8">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 8</div>
+    <div>
+      <h2 class="cn-te">అన్ని దిక్కులూ జయించిన రాజు</h2>
+      <div class="cn-en">The King Who Conquered Every Direction</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>సముద్రగుప్తుని విజయ యాత్ర — అర్థం చేసుకోవాలంటే ఒక map ఊహించుకోండి...</p>
+        <p>ఉత్తరంలో — 9 రాజులను పట్టుకున్నాడు, ఓడించాడు, మళ్ళీ వదిలిపెట్టాడు. ఈ విధానానికి పేరు &quot;గ్రహణమోక్ష&quot; — పట్టుకోవడం, విడిచిపెట్టడం. ఆ 9 రాజులెవరంటే — Ahicchhatra రాజు Achuta... Padmavati రాజు Nagasena... Bankura రాజు Chandravarman... Mathura రాజు Ganapatinaga... Kotivarsha రాజు Nagadatta... Balavarman... Erich రాజు Nandin... Mahendra... Tyagi Naga. వీళ్ళందరూ మహారాజులే — అయినా సముద్రగుప్తుని ముందు మోకాళ్ళూనారు.</p>
+        <p>దక్షిణ భారత్ — 12 రాజులు! Kosala రాజు Mahendra... Mahakantara పాలకుడు Vyaghraraja... Kaurala రాజు Mantaraja... Pistapura రాజు Mahendragiri...</p>
+        <p>ఆగండి! Pistapura అంటే నేటి ఆంధ్రప్రదేశ్ పిఠాపురం! మన Telugu నేల! అర్రె!</p>
+        <p>Ganjam పాలకుడు Svamidatta... Erandapala రాజు Damana... Kanchipuram రాజు Vishnugopa... Avamukta రాజు Nilaraja... Vengi రాజు Hastivarman...</p>
+        <p>Vengi కూడా ఆంధ్రప్రదేశ్! సముద్రగుప్తుని ప్రభావం మన Telugu నేల వరకూ వ్యాపించింది — ఇది మన గర్వం!</p>
+        <p>...Palakka రాజు Ugrasena... Devarashtra రాజు Kubera... కుస్తలపురి రాజు ధనంజయుడు.</p>
+        <p>అడవి రాజ్యాలు (Aṭavikā Rajyālu) — అర్జున నాయకులు, మాలవులు, యుద్ధేయులు, మద్రకులు, అభీర, విరిశాకలు, సనకానికులు, కర్రికులు, ప్రార్థనులు — వీళ్ళందరూ కప్పం కట్టి, ఆదేశాలు పాటించారు.</p>
+        <p>సరిహద్దు రాజ్యాలు — Samatata, Davaka, Kamarupa, Nepal, Kartripura — ఇవి కూడా విధేయత చూపించాయి. Sri Lanka రాజు Mahameghavarman సముద్రగుప్తుని అనుమతి తీసుకొని Gaya లో Buddhist విహారం నిర్మించాడు — ఇది అతని శక్తికి నిదర్శనం!</p>
+        <p>గుర్తుంచుకోండి — గ్రహణమోక్ష విధానం. ఉత్తర = 9 రాజులు. దక్షిణ = 12 రాజులు. పిఠాపురం (Pistapura) మరియు Vengi — మన ఆంధ్రప్రదేశ్!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch9">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 9</div>
+    <div>
+      <h2 class="cn-te">ప్రేమ, పిరికితనం, ప్రతీకారం</h2>
+      <div class="cn-en">Love, Cowardice and Revenge</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>అయ్యో... ఈ కథ వినాల్సిందే!</p>
+        <p>సముద్రగుప్తుడు మరణించాడు. రాజ్యం కుమారుడు Ramugupta కు వచ్చింది. కానీ Ramugupta రాజు కాడు — పిరికివాడు.</p>
+        <p>Shaka రాజు మావడ రుద్రసింహుడు దండయాత్ర చేశాడు. Ramugupta ముందు నిలవలేకపోయాడు. సంధి కోసం తల వంచాడు.</p>
+        <p>అప్పుడు శక రాజు అడిగాడు — &quot;నీ రాజ్యం వద్దు, నీ సైన్యం వద్దు... నీ భార్య Dhruvadevi ని ఇవ్వు.&quot;</p>
+        <p>Ramugupta — అయ్యో ఇలా జరిగిందా! — &quot;సరే&quot; అన్నాడు!</p>
+        <p>తమ్ముడు Chandragupta II ముందుకు వచ్చాడు. అన్న పిరికితనంపై అవమానంతో... Dhruvadevi ను రక్షించాలనే సంకల్పంతో. &quot;నేను వెళతా&quot; అన్నాడు.</p>
+        <p>Chandragupta స్త్రీ వేషంలో — Dhruvadevi లా — మావడ రుద్రసింహుడి శిబిరంలో ప్రవేశించాడు. మరోక్షణంలో... మావడ రుద్రసింహుడు మరణించాడు!</p>
+        <p>తర్వాత? Ramugupta ను కూడా మట్టుపెట్టాడు. Dhruvadevi ని వివాహం చేసుకున్నాడు. సింహాసనం చేపట్టాడు.</p>
+        <p>అన్నకు ద్రోహం చేశాడా? ధర్మాన్ని నిలబెట్టాడా? — చరిత్ర సమాధానం ఇవ్వదు. Vishakhadatta ఈ గాథను &quot;దేవీ చంద్రగుప్తం&quot; నాటకంలో అమరం చేశాడు.</p>
+        <p>గుర్తుంచుకోండి — Ramugupta = పిరికివాడు. మావడ రుద్రసింహుడు = శక రాజు. Dhruvadevi = రాముగుప్తుని భార్య. Chandragupta II = స్త్రీ వేషంలో వెళ్ళాడు. దేవీ చంద్రగుప్తం = Vishakhadatta రాశాడు!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch10">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 10</div>
+    <div>
+      <h2 class="cn-te">తొమ్మిది బిరుదులు, తొమ్మిది మేధావులు</h2>
+      <div class="cn-en">Nine Titles, Nine Geniuses</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>రెండవ Chandragupta (CE 380–415)... ఇతను కేవలం యోధుడు కాదు. సాంస్కృతిక నాయకుడు.</p>
+        <p>అతనికి 9 బిరుదులు ఉన్నాయి!</p>
+        <p>Vikramaditya — శకులను ఓడించినందుకు. అత్యంత ప్రసిద్ధం. Shakari — శకుల శత్రువు. సాహసాంక — సాహసవంతుడు. కవి-పండిత కల్పతరువు — కవులకు, పండితులకు కల్పవృక్షం లాంటి దాత. పరమ భాగవత — Vishnu భక్తుడు. సింహ విక్రమ... దేవగుప్త... దేవశ్రీ... దేవరాజు.</p>
+        <p>CE 388–409 మధ్య పశ్చిమ భారత్‌లో Shaka క్షత్రపులను ఓడించాడు. Bharukacha (Broach, Gujarat) వంటి పశ్చిమ తీర ఓడరేవులు గుప్తుల చేతుల్లోకి వచ్చాయి — వ్యాపారం పెరిగింది!</p>
+        <p>మొదటిసారి వెండి నాణేలు చేయించాడు. Ujjain ను రెండవ రాజధానిగా చేశాడు. Fahiyan ఈ కాలంలోనే వచ్చి &quot;పుష్ప నగరం!&quot; అన్నాడు.</p>
+        <p>ఇప్పుడు — నవరత్నాలు! అతని ఆస్థానంలో 9 మేధావులు:</p>
+        <p>వేతాల భట్టు — ఆస్థాన కవి. అమరసింహుడు — &quot;అమరకోశం&quot; (Sanskrit నిఘంటువు). శంకుడు — ఆర్కిటెక్ట్. ధన్వంతరి — Ayurveda వైద్యుడు. వరుచి — వ్యాకరణ నిపుణుడు. వరాహమిహిర — జ్యోతిష్య శాస్త్రవేత్త. కాళిదాసు — మహాకవి! క్షపణక — తత్వవేత్త. ఘటకర్పర — కవి.</p>
+        <p>ఇవన్నీ ఒకే ఆస్థానంలో ఉన్నాయంటే నమ్మగలమా... కానీ ఇది నిజమే!</p>
+        <p>V.A. Smith Kalidasa ను &quot;Indian Shakespeare&quot; అన్నాడు. Shakespeare పాశ్చాత్య నాటక రచనలో శ్రేష్ఠుడైనట్లే, Kalidasa భారతీయ సాహిత్యంలో శ్రేష్ఠుడు.</p>
+        <p>గుర్తుంచుకోండి — 9 బిరుదులు, 9 నవరత్నాలు! Vikramaditya = అత్యంత ప్రసిద్ధ బిరుదు. Kalidasa = Indian Shakespeare. నవరత్నాలు = రెండవ Chandragupta ఆస్థానం!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch11">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 11</div>
+    <div>
+      <h2 class="cn-te">నలంద వెలిగిన రోజులు</h2>
+      <div class="cn-en">The Days Nalanda Shone</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>CE 414. రెండవ Chandragupta మరణించాడు. కుమారుడు Kumaragupta సింహాసనం అధిష్టించాడు. CE 414 నుండి 455 వరకు — 41 సంవత్సరాలు! అత్యంత దీర్ఘమైన, శాంతిపూర్ణమైన పాలన.</p>
+        <p>Kumaragupta ఎవరు? Chandragupta II కుమారుడు. భార్య — Anantadevi. ముఖ్య బిరుదు — Mahendraditya. ఇంకా వ్యాఘ్రహ పరాక్రమ (పులి వంటి పరాక్రమం)... చంద్రప్రకాశ (చంద్రుని వంటి కాంతి)... పరమ భాగవత.</p>
+        <p>అతను Kartikeya భక్తుడు. Kartikeya వాహనం — నెమలి. అందుకే నాణేలపై నెమలి బొమ్మ! నెమలికి మేత వేస్తున్న Kumaragupta చిత్రం — ఎంత చక్కని దృశ్యం కదా!</p>
+        <p>కానీ అతని అతి గొప్ప కానుక — Nalanda విశ్వవిద్యాలయం!</p>
+        <p>Bihar లో... ప్రపంచ చరిత్రలో మొట్టమొదటి Residential University! 10,000 మంది విద్యార్థులు! 2,000 మంది ఆచార్యులు! Buddhism, Vedas, వ్యాకరణం, తర్కం, వైద్యం, జ్యోతిష్యం — అన్ని విషయాలు. Vasubandhu అనే బౌద్ధ తత్వవేత్త ఈ కాలంలో జీవించాడు.</p>
+        <p>CE 1193 లో Muhammad Bakhtiyar Khilji ఈ విశ్వవిద్యాలయాన్ని ధ్వంసం చేశాడు. వేల సంవత్సరాల జ్ఞాన సంపద కాలిపోయింది...</p>
+        <p>అయ్యో... ఎంత నష్టం! ఎంత క్రూరత్వం! ఆ మంటల్లో ఎన్ని పుస్తకాలు కాలాయో... ఎంత జ్ఞానం పోయిందో... ఇప్పటికీ మనసు వికలమవుతుంది.</p>
+        <p>నేడు ఇది UNESCO World Heritage Site.</p>
+        <p>Kumaragupta పాలన చివరిలో Pushyamitras తిరుగుబాటు — అణచివేయడం సాధ్యం కాలేదు. ఆ పని కుమారుడు Skandagupta చేశాడు.</p>
+        <p>గుర్తుంచుకోండి — Kumaragupta = Mahendraditya. భార్య Anantadevi. Nalanda స్థాపకుడు = Kumaragupta! 10,000 విద్యార్థులు, 2,000 ఆచార్యులు. ధ్వంసం = Muhammad Bakhtiyar Khilji, CE 1193!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch12">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 12</div>
+    <div>
+      <h2 class="cn-te">చివరి మహారాజు</h2>
+      <div class="cn-en">The Last Great King</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>Skandagupta (CE 455–467)...</p>
+        <p>గుప్తుల్లో చివరి మహారాజు. వీరుడు. ధైర్యవంతుడు. కానీ విధి అతనిపై నవ్వింది.</p>
+        <p>అధికారంలోకి వచ్చిన వెంటనే రెండు యుద్ధాలు!</p>
+        <p>మొదటిది — Pushyamitras తిరుగుబాటు. తండ్రి చేయలేకపోయిన పని — అణచివేశాడు. తండ్రి రాజ్యాన్ని రక్షించాడు. ఒక కుమారుడికి ఇంతకంటే గొప్ప నిష్ఠ ఏముంటుంది?</p>
+        <p>రెండవది — Hunas! మధ్య Asia నుండి వచ్చిన భయంకరమైన యోధులు. నాయకుడు Toramana. CE 455 లో Skandagupta వారిని ఓడించాడు! ఈ విజయం Bhitari inscription లో చెక్కబడింది, Chandravyakarana గ్రంధంలో పేర్కొనబడింది. ఈ విజయంతో &quot;Vikramaditya&quot; బిరుదు వచ్చింది.</p>
+        <p>Junagadh శాసనంలో — Sudarshan Lake మరమ్మత్తు. అతని పాలకుడు Chakrapalita ఈ పని చేశాడు. అదే రాయిపై Ashoka, Rudradaman శాసనాలు — మూడు యుగాల మూడు రాజులు!</p>
+        <p>Skandagupta CE 467 లో మరణించాడు. అతని తర్వాత బలహీన పాలకులు — Puragupta, Kumaragupta II, Buddhagupta, Narasimhagupta, Kumaragupta III, Vishnugupta.</p>
+        <p>Bhanuguta (CE 510) Eran లో శాసనం — మొదటి Sati ప్రస్తావన. Goparaju భార్య మంటల్లో దూకింది.</p>
+        <p>Buddhagupta Pahoadpur శాసనం (నేటి Bangladesh) — వ్యవసాయ భూమికి అధిపతి రాజు అని.</p>
+        <p>Hunas మళ్ళీ దండయాత్ర చేశారు — Mihirakula అనే నాయకుడు Gujarat వరకూ వచ్చాడు. Narasimhagupta ఓడిపోయాడు.</p>
+        <p>CE 543 — Vishnugupta, చివరి గుప్త రాజు, పాలన ముగించాడు. Hunas దండయాత్రలు... బలహీన వారసులు... సామంత రాజుల తిరుగుబాట్లు (Vakatakulu, Malavu, Abhirulu)... Rome పతనం (CE 476) వల్ల వ్యాపారం తగ్గిపోయింది... స్వర్ణయుగం అంతమైంది!</p>
+        <p>గుర్తుంచుకోండి — Skandagupta = విక్రమాదిత్య. Hunas నాయకుడు = Toramana. చివరి రాజు = Vishnugupta. పతనం = CE 543!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch13">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 13</div>
+    <div>
+      <h2 class="cn-te">రాజు నుండి గ్రామం వరకు</h2>
+      <div class="cn-en">From King to Village</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>గుప్తుల పాలనా యంత్రాంగం... ఒక పిరమిడ్ లాగా ఊహించుకోండి.</p>
+        <p>పై కొనలో రాజు — &quot;Maharajadhiraja&quot; బిరుదు. అత్యున్నత న్యాయాధికారి కూడా రాజే.</p>
+        <p>కేంద్ర అధికారులు — Kumaramatya (రాజ కుటుంబ సభ్యులకు పదవులు — ఇది గుప్తుల ప్రత్యేక లక్షణం!)... Mantri/Sachiva (ముఖ్యమంత్రి వంటివాడు)... Senapati (సైన్యాధిపతి)... Mahadandanayaka (న్యాయ + సైనిక అధిపతి)... Sandhivigrahaka (విదేశ వ్యవహారాల మంత్రి — Harishena ఈ పదవిలో ఉన్నాడు!)... Duta (రాయబారి)... Mahapratihara (రాజభవన రక్షకుడు).</p>
+        <p>ప్రాంతీయ పరిపాలన — రాజ్యం → రాష్ట్రం → విషయం → ఆహారం → గ్రామం!</p>
+        <p>రాష్ట్రం అధిపతి &quot;Uparika.&quot; విషయం (జిల్లా స్థాయి) అధిపతి &quot;Vishayapati.&quot; ఇతనికి నాల్గు మంది సభ్యులతో &quot;Vishaya Parishad&quot; — నాగరశ్రేష్ఠి (వ్యాపారుల నాయకుడు)... సార్థవాహ... ప్రధమ కులిక... కాయస్థ. గ్రామం అధిపతి &quot;గ్రామిక.&quot; గ్రామ వివాదాలు &quot;పంచమండలి&quot; (గ్రామ పెద్దల సభ) నిర్ణయించేది.</p>
+        <p>భూమి కొలవడానికి &quot;ధ్రువాధికరణ.&quot; భూమి రికార్డులు &quot;పుస్తపాల.&quot;</p>
+        <p>సమంత వ్యవస్థ — సగ-స్వతంత్ర రాజులు కప్పం కట్టేవారు, యుద్ధ సమయంలో సైన్యం ఇచ్చేవారు. గుప్తులు బలహీనపడినప్పుడు వీళ్ళే తిరుగుబాటు చేశారు — ఇది అతి పెద్ద ఎదురుదెబ్బ!</p>
+        <p>అగ్రహారం — బ్రాహ్మణులకు దానం చేయబడిన పన్నుమినహాయింపు భూమి. Nalanda తామ్ర శాసనంలో ఈ పదం మొదటిసారి కనిపించింది.</p>
+        <p>Fahiyan మెచ్చుకున్నాడు — మరణ శిక్ష అరుదు, రోడ్లు సురక్షితం, ప్రయాణం నిరాటంకం.</p>
+        <p>గుర్తుంచుకోండి — రాష్ట్రం → విషయం → ఆహారం → గ్రామం. Vishaya Parishad = 4 మంది. గ్రామిక = గ్రామాధిపతి. అగ్రహారం మొదటిసారి = Nalanda తామ్ర శాసనం!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch14">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 14</div>
+    <div>
+      <h2 class="cn-te">సమాజం — వెలుతురు మరియు చీకటి</h2>
+      <div class="cn-en">Society — Light and Shadow</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>గుప్తుల కాలంలో సమాజం... మంచి మరియు చెడు రెండూ ఉన్నాయి.</p>
+        <p>వర్ణ వ్యవస్థ — బ్రాహ్మణులకు అగ్రహారాలు, గౌరవం. కానీ Chandala లు పట్టణాల బయట నివసించేవారు... మేడమీదకు వెళ్ళేటప్పుడు తాపు వాయిస్తూ నడవాలి. అయ్యో — స్వర్ణయుగంలో కూడా ఈ వివక్ష!</p>
+        <p>మహిళలు — ఉన్నత కుటుంబాల్లో విద్య ఉండేది, ఇది మంచిది. కానీ... CE 510 Eran శాసనంలో మొదటి Sati ప్రస్తావన. బాల్యవివాహాలు మొదలయ్యాయి. విధవ పునర్వివాహం నిషేధమైంది. ఒకేసారి వైభవం మరియు వివక్ష — ఇదే గుప్తుల కాలం!</p>
+        <p>వైష్ణవ మతం అభివృద్ధి చెందింది. రెండవ Chandragupta బిరుదు &quot;పరమ భాగవత&quot; — Vishnu మహా భక్తుడు. Garuda రాజముద్ర. దశావతారాలు — Vishnu 10 అవతారాలు: మత్స్యం, కూర్మం, వరాహం, నరసింహుడు, వామనుడు, పరశురాముడు, రాముడు, కృష్ణుడు, బుద్ధుడు, కల్కి. వరాహ అవతారం (మూడవ అవతారం) గుప్తుల కాలంలో అత్యంత ముఖ్యమైనది — Udayagiri లో అద్భుతమైన వరాహ శిల్పం!</p>
+        <p>Buddhist శ్రీలంక రాజు Mahameghavarman సముద్రగుప్తుని అనుమతి తీసుకొని Gaya లో Buddhist విహారం నిర్మించాడు. Nalanda లో Buddhist విద్య ముఖ్యమైన స్థానంలో ఉండేది. Vasubandhu అనే Mahayana Buddhist తత్వవేత్త Kumaragupta కాలంలో జీవించాడు.</p>
+        <p>షడ్దర్శనాలు — 6 తత్వ శాఖలు... గుప్తుల కాలంలో పూర్తిగా అభివృద్ధి పొందాయి:</p>
+        <p>సాంఖ్యం — స్థాపకుడు Kapila, గుప్తుల కాలం: Ishvara Krishna &quot;సాంఖ్యకారిక&quot; రాశాడు. ప్రకృతి-పురుష సిద్ధాంతం. న్యాయం — స్థాపకుడు Gautama, గుప్తుల కాలం: Pakshilaswami Vatsyayana &quot;న్యాయభాష్యం&quot; రాశాడు. తర్కం ద్వారా జ్ఞానం. వైశేషికం — స్థాపకుడు Kanada, గుప్తుల కాలం: Prashastapada &quot;పదార్థధర్మ సంగ్రహం&quot; రాశాడు. పరమాణు సిద్ధాంతం. యోగం — స్థాపకుడు Patanjali, గుప్తుల కాలం: Vyasa &quot;యోగభాష్యం&quot; రాశాడు. పూర్వమీమాంస — స్థాపకుడు Jaimini, గుప్తుల కాలం: Kumarilabhatta &quot;మీమాంసా శ్లోకవార్తికం&quot; రాశాడు. వేదాంతం — స్థాపకుడు Badarayana, గుప్తుల కాలం: Gaudapada &quot;మాండూక్య కారిక&quot; రాశాడు. &quot;బ్రహ్మ సత్యం, జగత్ మిథ్య.&quot;</p>
+        <p>గుర్తుంచుకోండి — Sati మొదటి ప్రస్తావన = CE 510 Eran. Vaishnavism ప్రధాన మతం. షడ్దర్శనాలు = 6. పరమాణు సిద్ధాంతం = వైశేషికం. &quot;బ్రహ్మ సత్యం జగత్ మిథ్య&quot; = వేదాంతం, Gaudapada!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch15">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 15</div>
+    <div>
+      <h2 class="cn-te">బంగారు ఆర్థిక వ్యవస్థ</h2>
+      <div class="cn-en">The Golden Economy</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>గుప్తుల స్వర్ణయుగం కళ-సాహిత్యాలలో మాత్రమే కాదు — వ్యవసాయంలో, వ్యాపారంలో కూడా!</p>
+        <p>భూమి 4 రకాలు — Kshetra (వ్యవసాయ భూమి)... Khilya (బంజరు)... Aprahata (అడవి)... Vastu (ఇళ్ళ భూమి). ప్రధాన పంటలు — గోధుమలు, వరి, చెరకు. Sudarshan Lake (Junagadh) వంటి తటాకాలు నీటిపారుదలకు ఉండేవి.</p>
+        <p>7 రకాల పన్నులు — వేళ్ళపై లెక్కించుకోండి!</p>
+        <p>భోగ — రాజుకు నివేదించే ఆహారం, పళ్ళు, పూలు. హిరణ్య — బంగారు నాణేలలో నగదు పన్ను. భాగ — పంట వాటా, 6 లో 1 వంతు రాజుకు. శుల్క — వ్యాపార సుంకం (customs duty). పోలివకర — ఇళ్ళపై పన్ను (house tax). బలి — పండుగలు, ప్రత్యేక సందర్భాల్లో వసూలు. ఉద్రంగ — భూమి పన్ను మరో రూపం.</p>
+        <p>పన్ను వసూలు అధికారి &quot;రాజస్థానీయ.&quot; భూమి కొలిచే అధికారి &quot;ధ్రువాధికరణ.&quot;</p>
+        <p>వ్యాపారం! తూర్పు ఓడరేవు — Tamralipta (నేటి Bangladesh, బంగాళాఖాతం) — తూర్పు Asia తో వ్యాపారం. పశ్చిమ ఓడరేవు — Bharukacha/Broach (Gujarat) — పశ్చిమ Asia, Rome తో వ్యాపారం!</p>
+        <p>ఎగుమతులు — నూలు వస్త్రాలు... సుగంధ ద్రవ్యాలు (మిరియాలు, ఏలకులు, దాల్చిన)... ఏనుగులు, గుర్రాలు... మణులు రత్నాలు... నీలిమందు (Indigo)... ఔషధ మొక్కలు.</p>
+        <p>దిగుమతులు — Rome నుండి బంగారు నాణేలు... glass వస్తువులు... రత్నాలు... రాగి, tin... Asian గుర్రాలు.</p>
+        <p>Guilds — Nigama (వ్యాపార సంఘం)... Shrestha (నిగమ అధ్యక్షుడు)... Sarthavaha (కారవాన్ నాయకుడు)... Kulika (కళాకారుల నాయకుడు). వీళ్ళు Vishaya Parishad లో కూడా పాల్గొనేవారు — వ్యాపారులకు రాజకీయ ప్రాతినిధ్యం ఉండేది!</p>
+        <p>Chandragupta II Shakas ను ఓడించినప్పుడు Bharukacha వంటి పశ్చిమ ఓడరేవులు వచ్చాయి — వ్యాపారం పెరిగింది. Rome CE 476 లో పడిపోవడంతో పశ్చిమ వ్యాపారం తగ్గింది — గుప్తుల ఆర్థిక బలహీనతకు కారణమైంది.</p>
+        <p>గుర్తుంచుకోండి — 7 పన్నులు: భోగ-హిరణ్య-భాగ-శుల్క-పోలివకర-బలి-ఉద్రంగ. తూర్పు ఓడరేవు = Tamralipta. పశ్చిమ ఓడరేవు = Bharukacha. Shrestha = Nigama నాయకుడు!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch16">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 16</div>
+    <div>
+      <h2 class="cn-te">కాళిదాసు — భారత Shakespeare</h2>
+      <div class="cn-en">Kalidasa — India&#x27;s Shakespeare</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>కాళిదాసు!</p>
+        <p>ఆ పేరు వినగానే... Sanskrit సాహిత్య ప్రేమికుల మనసులో ఒక దివ్య వెలుతురు వెలుగుతుంది.</p>
+        <p>రెండవ Chandragupta Vikramaditya యొక్క నవరత్నాలలో అత్యంత ప్రకాశమానమైన రత్నం. V.A. Smith అన్నారు — &quot;Indian Shakespeare!&quot;</p>
+        <p>3 నాటకాలు:</p>
+        <p>అభిజ్ఞాన శాకుంతలం — Shakuntala మరియు Dushyanta ప్రేమ కథ. ఋషి ఆశ్రమంలో పెరిగిన Shakuntala... రాజుతో ప్రేమలో పడడం... Durvasa శాపం... మళ్ళీ గుర్తుపట్టడం — అద్భుతమైన గాథ! William Jones 1789 లో దీన్ని English లో అనువదించాడు. జర్మన్ మహాకవి Goethe చదివి ఆశ్చర్యపోయి అన్నాడు — &quot;If you wish to combine youth and old age, Heavens and Earth, then read Shakuntala!&quot; వావ్... ఒక జర్మన్ కవి ఒక Sanskrit కవిని ఆకాశానికెత్తాడు!</p>
+        <p>మాళవికాగ్నిమిత్రం — ఒక రాజు తన రాణి చెప్పులదాసి Malavika ను ప్రేమించిన కథ. ప్రేమకు హోదా అడ్డు కాదు కదా?</p>
+        <p>విక్రమోర్వశీయం — రాజు Pururava మరియు అప్సర Urvashi ప్రేమ కథ. మనిషి-అప్సర ప్రేమ!</p>
+        <p>4 కావ్యాలు:</p>
+        <p>మేఘదూతం — ఒక Yaksha తన ప్రేయసికి మేఘుని ద్వారా సందేశం పంపే కవిత. &quot;ఓ మేఘమా, నా ప్రేయసికి చెప్పు...&quot; — ప్రేమ గీతికల్లో అత్యుత్కృష్టమైనది. రఘువంశం — Rama వంశ చరిత్ర. కుమారసంభవం — Shiva-Parvati వివాహం, Kumara Swami జన్మ. ఋతుసంహారం — ఆరు ఋతువుల వర్ణన.</p>
+        <p>గుర్తుంచుకోండి — కాళిదాసు = Indian Shakespeare (V.A. Smith). 3 నాటకాలు: అభిజ్ఞాన శాకుంతలం + మాళవికాగ్నిమిత్రం + విక్రమోర్వశీయం. 4 కావ్యాలు: మేఘదూతం + రఘువంశం + కుమారసంభవం + ఋతుసంహారం. William Jones = 1789 English అనువాదం. Goethe = Shakuntala మెచ్చుకున్నాడు!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch17">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 17</div>
+    <div>
+      <h2 class="cn-te">పంచతంత్రం నుండి శస్త్రవైద్యం వరకు</h2>
+      <div class="cn-en">From Panchatantra to Surgery</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>Vishnu Sharma రాసిన పంచతంత్రం — 5 విభాగాల్లో రాజనీతి, జీవన విధానం నేర్పే కథలు. పిల్లలకు నీతిని కథల రూపంలో చెప్పడం — ఎంత తెలివైన పని! ప్రపంచంలోని అనేక భాషలలోకి అనువదించబడ్డాయి.</p>
+        <p>నవరత్నుడు అమరసింహుడు — &quot;అమరకోశం&quot; — Sanskrit నిఘంటువు. ఇప్పటికీ Sanskrit విద్యార్థులకు అనివార్యమైన గ్రంధం.</p>
+        <p>వరుచి — Sanskrit వ్యాకరణ నిపుణుడు. Panini వ్యాకరణంపై &quot;వార్తిక&quot; వ్యాఖ్య రాశాడు. నవరత్నుడు.</p>
+        <p>ధన్వంతరి — నవరత్నుడు, Ayurveda వైద్యుడు.</p>
+        <p>సుశ్రుతుడు! &quot;సుశ్రుత సంహిత&quot; రాశాడు. ఇందులో 700 ఔషధ మొక్కలు... 64 రకాల శస్త్రక్రియలు! అతన్ని &quot;Father of Surgery&quot; అంటారు. 2500 సంవత్సరాల క్రితం ఒక భారతీయ వైద్యుడు శస్త్రవైద్యం చేశాడు — ఇది ఆశ్చర్యం కాదా!</p>
+        <p>వాగ్భటుడు — &quot;అష్టాంగ సంగ్రహం&quot; (Ashtanga Sangraha) రాశాడు. Ayurveda యొక్క 8 శాఖలను ఒకే గ్రంధంలో సేకరించాడు.</p>
+        <p>గుర్తుంచుకోండి — పంచతంత్రం = Vishnu Sharma. అమరకోశం = అమరసింహుడు (Sanskrit నిఘంటువు). సుశ్రుత సంహిత = 700 ఔషధాలు + 64 శస్త్రక్రియలు. సుశ్రుతుడు = Father of Surgery. వాగ్భటుడు = అష్టాంగ సంగ్రహం!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch18">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 18</div>
+    <div>
+      <h2 class="cn-te">శూన్యాన్ని కనుగొన్న మేధావులు</h2>
+      <div class="cn-en">The Geniuses Who Discovered Zero</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>ఆర్యభట్ట!</p>
+        <p>CE 476 లో జన్మించాడు. Nalanda లో చదివాడు. Kumaragupta కాలంలో జీవించాడు.</p>
+        <p>అతను కనుగొన్నవి చూస్తే... నోట మాట రాదు!</p>
+        <p>శూన్యం — Zero! ఇది భారతదేశం ప్రపంచానికి ఇచ్చిన అత్యంత విలువైన కానుక. Zero లేకుండా ఆధునిక గణితం లేదు... కంప్యూటర్లు లేవు... internet లేదు. మీరు ఇప్పుడు చదువుతున్న ఈ screen లో వందల కోట్ల Zeros పని చేస్తున్నాయి!</p>
+        <p>pi (π) ≈ 3.1416 అని లెక్కించాడు — అది నేటికీ సరైనదే!</p>
+        <p>భూమి గుండ్రంగా ఉంటుందని, సూర్యుని చుట్టూ తిరుగుతుందని చెప్పాడు. Copernicus Europe లో 1000 సంవత్సరాల తర్వాత చెప్పాడు!</p>
+        <p>చంద్రుని నీడ వల్ల సూర్యగ్రహణం, భూమి నీడ వల్ల చంద్రగ్రహణం అని వివరించాడు. భూమి దాని అక్షం చుట్టూ తిరుగుతుందని (Earth rotates on its axis) చెప్పాడు!</p>
+        <p>ఇవన్నీ &quot;ఆర్యభటీయం&quot; లో రాశాడు.</p>
+        <p>వరాహమిహిర — నవరత్నుడు, Ujjain లో ఉండేవాడు. రచనలు — బృహత్ సంహిత (జ్యోతిష్యం, వాస్తు, వ్యవసాయం, ఔషధాలు అన్నీ ఒకే encyclopedia లో!)... పంచ సిద్ధాంతిక (5 జ్యోతిష్య శాఖల సంకలనం)... బృహజ్జాతకం (horoscopy). సూర్య సిద్ధాంతం — Aryabhatta కాలంలో రాయబడిన ముఖ్యమైన జ్యోతిష్య గ్రంధం.</p>
+        <p>బ్రహ్మగుప్తుడు — CE 628 లో &quot;బ్రహ్మస్ఫుట సిద్ధాంతం&quot; రాశాడు. Zero తో అంకగణితం వివరించాడు. అతణ్ణి &quot;ఇండియన్ న్యూటన్&quot; అని, &quot;గణచక్ర చూడామణి&quot; అని పిలుస్తారు — గురుత్వాకర్షణకు సంబంధించిన పరిశోధనలు చేశాడు!</p>
+        <p>గుర్తుంచుకోండి — ఆర్యభట్ట = Zero + π + భూమి గుండ్రంగా. CE 476 జన్మ. గ్రంధం = ఆర్యభటీయం. వరాహమిహిర = బృహత్ సంహిత (encyclopedia). పంచ సిద్ధాంతిక = 5 జ్యోతిష్య శాఖలు. బ్రహ్మగుప్తుడు = ఇండియన్ న్యూటన్!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch19">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 19</div>
+    <div>
+      <h2 class="cn-te">గుహలు, వెలుతురు, రంగులు</h2>
+      <div class="cn-en">Caves, Light and Colours</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>గుప్తుల వాస్తు కళ రెండు రకాలు — గుహా దేవాలయాలు మరియు నిర్మిత దేవాలయాలు.</p>
+        <p>మొదట గుహలు...</p>
+        <p>Udayagiri Caves (Madhya Pradesh) — హిందూ గుహా దేవాలయాలు. రెండవ Chandragupta కాలంలో నిర్మించబడ్డాయి. మొత్తం 20 గుహలు... వాటిలో 9 ముఖ్యమైన వైష్ణవ గుహాలయాలు. 5వ గుహలో — Varaha అవతారం (Vishnu మూడవ అవతారం) యొక్క అద్భుతమైన శిల్పం! Udayagiri Varaha ప్రపంచ ప్రసిద్ధి.</p>
+        <p>Bagh Caves (Madhya Pradesh) — బౌద్ధ గుహా దేవాలయాలు. అందమైన Buddhist murals... Ajanta చిత్రాలను పోలి ఉంటాయి.</p>
+        <p>Ajanta Caves (Maharashtra, Aurangabad జిల్లా)! 30 గుహలు... బౌద్ధ మతానికి చెందినవి. UNESCO World Heritage Site! Chaityas (ప్రార్థన మందిరాలు) మరియు Viharas (సన్యాసుల నివాసాలు) రెండూ ఉన్నాయి. 17వ గుహ — &quot;శ్రావస్తి చమత్కారం&quot; (1000 బుద్ధులు) చిత్రం. 26వ గుహ — &quot;బుద్ధ మహాపరినిర్వాణం&quot; చిత్రం.</p>
+        <p>1819 లో British Colonel John Smith ఈ గుహలను కనుగొన్నాడు. వందల సంవత్సరాలు మరచిపోయిన సంపద... ఒక్కొక్క అడుగులో తిరిగి వెలుగులోకి వచ్చింది!</p>
+        <p>Sanchi Stupa (Madhya Pradesh) — Ashoka నిర్మించాడు, కానీ గుప్తుల కాలంలో అందమైన Toranas (ప్రవేశ ద్వారాలు) జోడించారు.</p>
+        <p>గుర్తుంచుకోండి — Udayagiri = హిందూ గుహలు (Madhya Pradesh). 20 గుహలు, 9 వైష్ణవ, 5వ గుహలో వరాహ శిల్పం. Bagh = బౌద్ధ గుహలు. Ajanta = 30 గుహలు, Colonel John Smith, 1819. Cave 17 = శ్రావస్తి. Cave 26 = మహాపరినిర్వాణం!</p>
+  </div>
+</section>
+
+<section class="cn-chapter" id="ch20">
+  <div class="cn-chapter-head">
+    <div class="cn-num">అ 20</div>
+    <div>
+      <h2 class="cn-te">రాయిలో దేవుళ్ళు</h2>
+      <div class="cn-en">Gods in Stone</div>
+    </div>
+  </div>
+  <div class="cn-body">
+        <p>భారతదేశంలో మొట్టమొదటి నిర్మిత (structural) దేవాలయాలు — ఇక్ష్వాకు రాజులు కట్టారు! కృష్ణా నది తీరంలోని వీరపురంలో — నేటి ఆంధ్రప్రదేశ్! మన Telugu నేల మీద మొట్టమొదటి నిర్మిత దేవాలయాలు లేచాయి — ఇది మన గర్వం!</p>
+        <p>గుప్తులు ఉత్తర భారత్‌లో మొట్టమొదటి నిర్మిత దేవాలయాలు కట్టారు — ఇది Nagara శైలి.</p>
+        <p>Nagara శైలి లక్షణాలు — శిఖర (పైకి వక్రంగా పోయే tower)... గర్భగృహం (లోపల చిన్న గది)... మండపం (ప్రధాన మందిరం)... ప్రాకారం (ప్రహరీ గోడ).</p>
+        <p>Nagara శైలి 3 ఉపశాఖలు — ఒడిశా (Kalinga) శైలి (Konark, Lingaraj, Jagannath!)... Khajuraho శైలి (Madhya Pradesh, Chandela రాజులు)... సోలంకి శైలి (Gujarat — Somnath, Modhera).</p>
+        <p>గుప్తుల నిర్మిత దేవాలయాల 5 దశలు!</p>
+        <p>మొదటి దశ — పైకప్పు లేని సమతల కప్పు దేవాలయాలు. Temple 17 at Sanchi. రెండవ దశ — శిఖర (tower) జోడించారు. మూడవ దశ — పంచాయతన శైలి! ప్రధాన దేవతకు 4 ఇతర దేవతల మందిరాలు జోడించారు. Dashavatara Temple (Devgarh, Uttar Pradesh) — స్థానికంగా &quot;సాగర్‌మర్&quot; అంటారు. 1 మీటర్ 54 సెం.మీ. Sheshashayi Vishnu శిల్పం... గోడలపై Ramayana, Mahabharata ఘట్టాలు. నాలుగవ దశ — దీర్ఘచతుర్ప్రాకార (elongated sanctum). Tir Temple. అయిదవ దశ — వృత్తాకార (circular) దేవాలయాలు. Duniyum-Rajgir (Bihar).</p>
+        <p>ఇంకా — Tigawa Temple (Madhya Pradesh) — Vishnu, Shakti, Kankali Devi. Bhitargaon Temple (Uttar Pradesh) — ఇటుకతో నిర్మించిన మొట్టమొదటి దేవాలయం!</p>
+        <p>చిత్రలేఖనం — షడంగాలు! 6 అంగాలు: రూపభేద (అంచులు)... ప్రమాణ (అనుపాతాలు)... భావ (భావాలు)... లావణ్య (సౌందర్యం)... సదృశ్యం (సారూప్యత)... వర్ణిక భంగ (రంగుల మేళవింపు).</p>
+        <p>శిల్పకళ — Varaha శిల్పం (Udayagiri). Sultanganj Buddha (Bihar) — రాగి (copper) తో నిర్మించిన 2.3 మీటర్ల ఎత్తు బుద్ధుని విగ్రహం. ఇప్పుడు Birmingham Museum లో ఉంది — అక్కడికి ఎలా వెళ్ళిందో... ఆ బాధాకరమైన చరిత్ర మరోసారి చెప్తాం.</p>
+        <p>గుర్తుంచుకోండి — ఇక్ష్వాకులు = మొదటి నిర్మిత దేవాలయాలు (మన ఆంధ్రప్రదేశ్!). గుప్తులు = ఉత్తర భారత్‌లో మొదట. Nagara శైలి = Shikhara. 5 దశలు. Dashavatara Temple = Devgarh, సాగర్‌మర్. Bhitargaon = మొదటి ఇటుక దేవాలయం. షడంగాలు = 6. Sultanganj Buddha = 2.3 మీటర్లు, రాగి, Birmingham!</p>
+        <p>ముగింపు — చరిత్ర చెప్పిన పాఠం Epilogue — What History Never Forgets</p>
+        <p>CE 543...</p>
+        <p>Vishnugupta, చివరి గుప్త రాజు, పాలన ముగించాడు. మూడు వందల సంవత్సరాల వైభవం అంతమైంది.</p>
+        <p>కానీ... నిజంగా అంతమైందా?</p>
+        <p>Kalidasa రాసిన అభిజ్ఞాన శాకుంతలం ఈ రోజు కూడా రంగస్థలాలపై వెలుగుతోంది. Aryabhatta కనుగొన్న Zero లేకుండా మీరు ఈ పాఠం చదవలేరు. Nalanda లో నేర్చుకున్న జ్ఞానం ప్రపంచమంతా వ్యాపించింది. Ajanta చిత్రాలు UNESCO ద్వారా అంతర్జాతీయంగా గుర్తింపు పొందాయి. Sushruta శస్త్రవైద్య సూత్రాలు ఆధునిక surgery కి పునాది వేశాయి.</p>
+        <p>గుప్తులు పోలేదు... వారి వారసత్వం భారతభూమి ప్రతి మూలలో నిక్షిప్తమైనది.</p>
+        <p>మన ఆంధ్రప్రదేశ్ Pistapura (పిఠాపురం) మరియు Vengi — సముద్రగుప్తుని దక్షిణ యాత్రలో ఉన్నాయి. Ikshvakulu కట్టిన మొట్టమొదటి నిర్మిత దేవాలయాలు మన Telugu నేల మీద లేచాయి. ఇది మన చరిత్ర... ఇది మన గర్వం.</p>
+        <p>స్వర్ణయుగం అంతమైంది. స్వర్ణ వారసత్వం — శాశ్వతం.</p>
+  </div>
+</section>
+
+</div>
+
+<button class="cn-print" onclick="window.print()" title="Print or save as PDF">🖨 Print</button>
+
+{% endblock %}
