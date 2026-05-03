@@ -250,6 +250,8 @@ def init_db():
             print("[startup] Auto-seed complete.")
     except Exception as _ae:
         print(f"[startup] Auto-seed check error: {_ae}")
+        try: conn.rollback()
+        except: pass
 
     # ── Auto-seed Modern ch1 if missing (seed_ch10.py = Advent of Europeans) ──
     try:
@@ -264,6 +266,8 @@ def init_db():
             print("[startup] Modern ch1 auto-seed complete.")
     except Exception as _me1:
         print(f"[startup] Modern ch1 seed check error: {_me1}")
+        try: conn.rollback()
+        except: pass
 
     # ── Auto-seed Modern ch2 if missing ──
     try:
@@ -276,6 +280,8 @@ def init_db():
             print("[startup] Modern ch2 auto-seed complete.")
     except Exception as _me:
         print(f"[startup] Modern ch2 seed check error: {_me}")
+        try: conn.rollback()
+        except: pass
 
     # ── Auto-seed Modern ch3 if missing ──
     try:
@@ -288,6 +294,8 @@ def init_db():
             print("[startup] Modern ch3 auto-seed complete.")
     except Exception as _me3:
         print(f"[startup] Modern ch3 seed check error: {_me3}")
+        try: conn.rollback()
+        except: pass
 
     # Back-fill: fix any Indian_History row still missing a subtopic → 'Ancient'
     # Runs every startup (catches ch1 from old deploys + any other orphan rows).
@@ -296,7 +304,8 @@ def init_db():
             "UPDATE study_notes SET subtopic='Ancient' WHERE topic='Indian_History' AND (subtopic IS NULL OR subtopic='')")
         conn.commit()
     except Exception:
-        pass
+        try: conn.rollback()
+        except: pass
 
     # ── Auto-seed PYQ questions if table is empty ──
     try:
@@ -310,6 +319,8 @@ def init_db():
             print(f"[startup] PYQ: {pyq_count} questions already loaded.")
     except Exception as _pe:
         print(f"[startup] PYQ seed check error: {_pe}")
+        try: conn.rollback()
+        except: pass
 
     # ── Auto-seed AP Current Affairs chapters ──
     try:
@@ -326,6 +337,8 @@ def init_db():
             print(f"[startup] AP Current Affairs: {ca_count} divisions, {ca_mcq_count} MCQs already loaded.")
     except Exception as _ca_e:
         print(f"[startup] AP Current Affairs seed check error: {_ca_e}")
+        try: conn.rollback()
+        except: pass
 
     # ── Auto-seed AP Geography chapters 1-15 ──
     try:
@@ -339,6 +352,8 @@ def init_db():
             print(f"[startup] AP Geography: {geo_count} chapters already loaded.")
     except Exception as _ge:
         print(f"[startup] AP Geography seed check error: {_ge}")
+        try: conn.rollback()
+        except: pass
 
     # ── Migration: deduplicate chapter_mcqs (keep only one row per study_note+question) ──
     # Some _mcqs_inner functions lack existence checks and re-insert on every seeder run.
@@ -353,6 +368,8 @@ def init_db():
         print("[startup] chapter_mcqs deduplication done.")
     except Exception as _dedup_e:
         print(f"[startup] MCQ dedup error: {_dedup_e}")
+        try: conn.rollback()
+        except: pass
 
     # ── Auto-seed Indian Polity chapters (Lakshmikanth) ──
     try:
@@ -372,6 +389,8 @@ def init_db():
             print(f"[startup] Indian Polity: {pol_count} notes, {pol_mcq_count}/90 chapters with MCQs — fully loaded.")
     except Exception as _pol_e:
         print(f"[startup] Indian Polity seed check error: {_pol_e}")
+        try: conn.rollback()
+        except: pass
 
     conn.close()
 
