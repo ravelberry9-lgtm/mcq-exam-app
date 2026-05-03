@@ -4,13 +4,13 @@
 <div class="main">
 
 <div class="card" style="background: linear-gradient(135deg,#ff6f00,#ffa000); color: white; border: none;">
-  <div style="font-size: 20px; font-weight: 800;">âï¸ Configure Your Exam</div>
+  <div style="font-size: 20px; font-weight: 800;">⚙️ Configure Your Exam</div>
   <div style="opacity: 0.9; font-size: 13px; margin-top: 4px;">Choose topics, question sources, difficulty and exam mode.</div>
 </div>
 
 <!-- Student Name -->
 <div class="card">
-  <div class="card-title">ð¤ Your Name</div>
+  <div class="card-title">👤 Your Name</div>
   <div class="form-group" style="margin-bottom: 0;">
     <input type="text" id="studentName" class="form-control" placeholder="Enter your name (optional)" maxlength="60"
            style="font-size: 16px;">
@@ -19,12 +19,12 @@
 
 <!-- Exam Mode & Timer -->
 <div class="card">
-  <div class="card-title">ð Exam Settings</div>
+  <div class="card-title">🕐 Exam Settings</div>
   <div class="form-group">
     <label class="form-label">Exam Mode</label>
     <select id="examMode" class="form-control">
-      <option value="shuffle">ð Shuffle Mode â Random questions each time</option>
-      <option value="no_repeat">â Non-Repeat Mode â Never repeat seen questions</option>
+      <option value="shuffle">🔀 Shuffle Mode — Random questions each time</option>
+      <option value="no_repeat">✅ Non-Repeat Mode — Never repeat seen questions</option>
     </select>
   </div>
   <div class="form-group">
@@ -32,48 +32,48 @@
     <input type="number" id="duration" class="form-control" value="45" min="1" max="180">
   </div>
   <div id="noRepeatInfo" style="display:none; background:#e8f5e9; border-radius:8px; padding:10px 14px; font-size:13px; color:#2e7d32; margin-top:-6px;">
-    â Questions you've already seen will be excluded. <button onclick="resetSeen()" style="background:none;border:none;color:#1b5e20;text-decoration:underline;cursor:pointer;font-size:13px;">Reset history</button>
+    ✅ Questions you've already seen will be excluded. <button onclick="resetSeen()" style="background:none;border:none;color:#1b5e20;text-decoration:underline;cursor:pointer;font-size:13px;">Reset history</button>
   </div>
 </div>
 
 <!-- Question Sources -->
 <div class="card">
-  <div class="card-title">ð¦ Question Sources</div>
+  <div class="card-title">📦 Question Sources</div>
   <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Select which question banks to include</div>
   <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px;">
     <button class="source-chip active" id="src_main" onclick="toggleSource('main')"
             style="padding: 8px 16px; border-radius: 20px; border: 2px solid #ff6f00; background: #ff6f00; color: white; font-size: 13px; font-weight: 600; cursor: pointer;">
-      ð Main Bank
+      📚 Main Bank
     </button>
     <button class="source-chip" id="src_quiz" onclick="toggleSource('quiz')"
             style="padding: 8px 16px; border-radius: 20px; border: 2px solid #7c3aed; background: white; color: #7c3aed; font-size: 13px; font-weight: 600; cursor: pointer;">
-      ð§© Chapter Quiz
+      🧩 Chapter Quiz
     </button>
     <button class="source-chip" id="src_pyq" onclick="toggleSource('pyq')"
             style="padding: 8px 16px; border-radius: 20px; border: 2px solid #0284c7; background: white; color: #0284c7; font-size: 13px; font-weight: 600; cursor: pointer;">
-      ð PYQ
+      📋 PYQ
     </button>
   </div>
 
   <!-- Chapter Quiz Options (shown when quiz selected) -->
   <div id="quizOptions" style="display:none; border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px;">
-    <div style="font-size: 13px; font-weight: 600; color: #7c3aed; margin-bottom: 10px;">ð§© Chapter Quiz Settings</div>
+    <div style="font-size: 13px; font-weight: 600; color: #7c3aed; margin-bottom: 10px;">🧩 Chapter Quiz Settings</div>
     <div class="form-group">
       <label class="form-label">Number of Quiz Questions</label>
       <input type="number" id="quizCount" class="form-control" value="20" min="1" max="200"
              style="max-width: 120px;" oninput="updateSummary()">
     </div>
     <div class="form-group" style="margin-bottom: 0;">
-      <label class="form-label">Filter by Topic (optional â leave empty for all)</label>
+      <label class="form-label">Filter by Topic (optional — leave empty for all)</label>
       <div id="quizTopicChips" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
-        <div style="font-size: 12px; color: var(--text-muted);">Loading topicsâ¦</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Loading topics…</div>
       </div>
     </div>
   </div>
 
   <!-- PYQ Options (shown when pyq selected) -->
   <div id="pyqOptions" style="display:none; border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px;">
-    <div style="font-size: 13px; font-weight: 600; color: #0284c7; margin-bottom: 10px;">ð PYQ Settings</div>
+    <div style="font-size: 13px; font-weight: 600; color: #0284c7; margin-bottom: 10px;">📋 PYQ Settings</div>
     <div class="form-group">
       <label class="form-label">Number of PYQ Questions</label>
       <input type="number" id="pyqCount" class="form-control" value="20" min="1" max="200"
@@ -82,13 +82,13 @@
     <div class="form-group">
       <label class="form-label">Filter by Topic (optional)</label>
       <div id="pyqTopicChips" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
-        <div style="font-size: 12px; color: var(--text-muted);">Loading topicsâ¦</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Loading topics…</div>
       </div>
     </div>
     <div class="form-group" style="margin-bottom: 0;">
       <label class="form-label">Filter by Year (optional)</label>
       <div id="pyqYearChips" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
-        <div style="font-size: 12px; color: var(--text-muted);">Loading yearsâ¦</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Loading years…</div>
       </div>
     </div>
   </div>
@@ -96,24 +96,24 @@
 
 <!-- Difficulty Filter -->
 <div class="card">
-  <div class="card-title">ð¯ Difficulty Level</div>
+  <div class="card-title">🎯 Difficulty Level</div>
   <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Filter questions by toughness (applies to all sources)</div>
   <div style="display: flex; gap: 10px; flex-wrap: wrap;">
     <button class="diff-chip active" id="diff_E" onclick="toggleDiff('E')"
             style="padding: 8px 18px; border-radius: 20px; border: 2px solid #16a34a; background: #16a34a; color: white; font-size: 13px; font-weight: 600; cursor: pointer;">
-      ð¢ Easy
+      🟢 Easy
     </button>
     <button class="diff-chip active" id="diff_M" onclick="toggleDiff('M')"
             style="padding: 8px 18px; border-radius: 20px; border: 2px solid #d97706; background: #d97706; color: white; font-size: 13px; font-weight: 600; cursor: pointer;">
-      ð¡ Medium
+      🟡 Medium
     </button>
     <button class="diff-chip active" id="diff_H" onclick="toggleDiff('H')"
             style="padding: 8px 18px; border-radius: 20px; border: 2px solid #dc2626; background: #dc2626; color: white; font-size: 13px; font-weight: 600; cursor: pointer;">
-      ð´ Hard
+      🔴 Hard
     </button>
   </div>
   <div id="diffWarning" style="display:none; background:#fff3cd; border-radius:8px; padding:8px 12px; font-size:12px; color:#856404; margin-top:10px;">
-    â ï¸ At least one difficulty level must be selected.
+    ⚠️ At least one difficulty level must be selected.
   </div>
 </div>
 
@@ -123,9 +123,9 @@
   {% for folder, topics in tree.items() %}
   <div class="card folder-card" data-folder="{{ folder }}">
     <div class="card-title" style="cursor: pointer;" onclick="toggleFolder('{{ folder }}')">
-      <span>ð {{ folder.replace('_', ' ') }}</span>
+      <span>📂 {{ folder.replace('_', ' ') }}</span>
       <span style="font-size: 13px; color: var(--text-muted); font-weight: 400;" id="folderCount_{{ folder }}">0 selected</span>
-      <span id="folderChevron_{{ folder }}" style="margin-left: auto; transition: transform 0.2s;">â¼</span>
+      <span id="folderChevron_{{ folder }}" style="margin-left: auto; transition: transform 0.2s;">▼</span>
     </div>
     <div id="folderBody_{{ folder }}">
       <!-- Total from this folder -->
@@ -136,7 +136,7 @@
                  data-folder="{{ folder }}" placeholder="0" min="0" max="500"
                  style="max-width: 120px;"
                  onchange="distributeFolderTotal('{{ folder }}')">
-          <span style="font-size: 12px; color: var(--text-muted);">OR specify per topic below â</span>
+          <span style="font-size: 12px; color: var(--text-muted);">OR specify per topic below ↓</span>
         </div>
       </div>
 
@@ -169,7 +169,7 @@
       <div style="font-size: 12px; color: var(--text-muted);" id="summaryDetails"></div>
     </div>
     <button class="btn btn-accent" onclick="startExam()" id="startBtn" style="min-width: 120px;">
-      ð Start Exam
+      🚀 Start Exam
     </button>
   </div>
 </div>
@@ -193,7 +193,7 @@ document.getElementById('examMode').addEventListener('change', function() {
   document.getElementById('noRepeatInfo').style.display = this.value === 'no_repeat' ? 'block' : 'none';
 });
 
-// ââ Source & Difficulty State âââââââââââââââââââââââââââââââââââââââââââââ
+// ── Source & Difficulty State ─────────────────────────────────────────────
 const activeSources = new Set(['main']);
 const activeDiffs = new Set(['E', 'M', 'H']);
 
@@ -250,7 +250,7 @@ function toggleDiff(d) {
   updateSummary();
 }
 
-// ââ Quiz topic chips ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── Quiz topic chips ──────────────────────────────────────────────────────
 let quizTopics = [];
 let selectedQuizTopics = new Set();  // empty = all
 
@@ -281,7 +281,7 @@ async function loadQuizMeta() {
   } catch(e) { console.error('quiz meta error', e); }
 }
 
-// ââ PYQ topic & year chips ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── PYQ topic & year chips ────────────────────────────────────────────────
 let selectedPyqTopics = new Set();
 let selectedPyqYears  = new Set();
 
@@ -343,7 +343,7 @@ async function loadPyqMeta() {
 loadQuizMeta();
 loadPyqMeta();
 
-// ââ Folder / Topic logic (unchanged) âââââââââââââââââââââââââââââââââââââ
+// ── Folder / Topic logic (unchanged) ─────────────────────────────────────
 function toggleFolder(folder) {
   const body = document.getElementById('folderBody_' + folder);
   const chevron = document.getElementById('folderChevron_' + folder);
@@ -380,7 +380,7 @@ function updateFolderCount(folder) {
   updateSummary();
 }
 
-// ââ Summary âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── Summary ───────────────────────────────────────────────────────────────
 function updateSummary() {
   let total = 0;
   const parts = [];
@@ -415,15 +415,15 @@ function updateSummary() {
   // Difficulty badge
   if (activeDiffs.size < 3) {
     const labels = { E: 'Easy', M: 'Medium', H: 'Hard' };
-    parts.push('ð¯ ' + [...activeDiffs].map(d => labels[d]).join('+'));
+    parts.push('🎯 ' + [...activeDiffs].map(d => labels[d]).join('+'));
   }
 
   document.getElementById('totalSelectedDisplay').textContent = total + ' question' + (total !== 1 ? 's' : '') + ' selected';
-  document.getElementById('summaryDetails').textContent = parts.join(' Â· ');
+  document.getElementById('summaryDetails').textContent = parts.join(' · ');
   document.getElementById('summaryBar').style.display = total > 0 ? '' : 'none';
 }
 
-// ââ Start Exam ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── Start Exam ────────────────────────────────────────────────────────────
 async function startExam() {
   const mode        = document.getElementById('examMode').value;
   const duration    = parseInt(document.getElementById('duration').value) || 45;
@@ -488,7 +488,7 @@ async function startExam() {
     if (data.error) {
       showToast(data.error, 'error');
       btn.disabled = false;
-      btn.textContent = 'ð Start Exam';
+      btn.textContent = '🚀 Start Exam';
     } else {
       sessionStorage.setItem('exam_' + data.session_id, JSON.stringify(data));
       window.location.href = '/exam/' + data.session_id;
@@ -496,7 +496,7 @@ async function startExam() {
   } catch(e) {
     showToast('Error starting exam. Try again.', 'error');
     btn.disabled = false;
-    btn.textContent = 'ð Start Exam';
+    btn.textContent = '🚀 Start Exam';
   }
 }
 
