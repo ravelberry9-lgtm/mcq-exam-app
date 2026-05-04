@@ -448,8 +448,8 @@ def init_db():
                                   "JOIN study_notes sn ON cm.study_note_id=sn.id "
                                   "WHERE sn.topic='General_Science'")
         sci_mcqs = _fv(cur_sci_m.fetchone())
-        if sci_notes < 11 or sci_mcqs < 540:
-            print(f"[startup] General Science: {sci_notes}/11 chapters, {sci_mcqs}/548 MCQs — auto-seeding...")
+        if sci_notes < 12 or sci_mcqs < 590:
+            print(f"[startup] General Science: {sci_notes}/12 chapters, {sci_mcqs}/598 MCQs — auto-seeding...")
             _auto_seed_science()
             print("[startup] General Science auto-seed complete.")
         else:
@@ -687,6 +687,7 @@ def _auto_seed_science():
         (3,  'seed_science_set3_bilingual',  3,  'Elements, Metals & Compounds (III)', 'మూలకాలు, లోహాలు మరియు సమ్మేళనాలు (III)'),
         (4,  'seed_science_set4_bilingual',  4,  'Atoms, Radioactivity & Nuclear',     'పరమాణువులు, రేడియోధార్మికత & న్యూక్లియర్'),
         (5,  'seed_science_set5_bilingual',  5,  'Synthetic Materials',                'కృత్రిమ పదార్థాలు'),
+        (6,  'seed_science_set6_bilingual',  6,  'Reactions, Changes & Separation',    'రసాయన చర్యలు, మార్పులు & వేర్పాటు'),
         (7,  'seed_science_set7_bilingual',  7,  'Measurements & Units',               'కొలతలు & ప్రమాణాలు'),
         (8,  'seed_science_set8_bilingual',  8,  'Light, Sound & Wave',                'కాంతి, ధ్వని & తరంగం'),
         (9,  'seed_science_set9_bilingual',  9,  'Appliances & Devices',               'ఉపకరణాలు & పరికరాలు'),
