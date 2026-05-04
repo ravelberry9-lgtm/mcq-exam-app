@@ -1951,6 +1951,75 @@ def api_wrong_answers_stats():
     return jsonify({'unresolved': unresolved, 'resolved': resolved})
 
 
+@app.route('/api/audit')
+def api_audit():
+    """One-time diagnostics endpoint. Pass ?pin=<ADMIN_PIN>. Returns DB-wide counts."""
+    if (request.args.get('pin') or '') != ADMIN_PIN:
+        return jsonify({'error': 'pin required'}), 401
+    out = {}
+    conn = get_db()
+    def one(sql, params=()):
+        cur = db_exec(conn, sql, params)
+        row = cur.fetchone()
+        if row is None: return None
+        if isinstance(row, dict): return list(row.values())[0]
+        try: return row[0]
+        except: 
+            try: return list(row)[0]
+            except: return row
+    def rows(sql, params=()):
+        cur = db_exec(conn, sql, params)
+        return [row_to_dict(r) for r in cur.fetchall()]
+    try:
+        out['totals'] = {
+            'study_notes':     one("SELECT COUNT(*) FROM study_notes"),
+            'chapter_mcqs':    one("SELECT COUNT(*) FROM chapter_mcqs"),
+            'questions':       one("SELECT COUNT(*) FROM questions"),
+            'pyq_questions':   one("SELECT COUNT(*) FROM pyq_questions"),
+            'exam_sessions':   one("SELECT COUNT(*) FROM exam_sessions"),
+            'wrong_answers':   one("SELECT COUNT(*) FROM wrong_answers"),
+            'seen_questions':  one("SELECT COUNT(*) FROM seen_questions"),
+        }
+        out['by_topic'] = {
+            'study_notes': rows("SELECT topic, COUNT(*) AS n FROM study_notes GROUP BY topic ORDER BY topic"),
+            'chapter_mcqs': rows("SELECT sn.topic, COUNT(cm.id) AS n FROM chapter_mcqs cm JOIN study_notes sn ON cm.study_note_id=sn.id GROUP BY sn.topic ORDER BY sn.topic"),
+        }
+        # Polity chapter list with MCQ counts
+        out['polity_chapters'] = rows("""
+            SELECT sn.chapter_num, sn.chapter_title_en, COUNT(cm.id) AS mcqs
+            FROM study_notes sn
+            LEFT JOIN chapter_mcqs cm ON cm.study_note_id=sn.id
+            WHERE sn.topic='Indian_Polity'
+            GROUP BY sn.chapter_num, sn.chapter_title_en
+            ORDER BY sn.chapter_num
+        """)
+        # Detect duplicates per (study_note_id, q_te)
+        out['dup_chapter_mcqs'] = rows("""
+            SELECT sn.topic, COUNT(*) AS dup_rows
+            FROM (
+                SELECT id, study_note_id,
+                       ROW_NUMBER() OVER (PARTITION BY study_note_id, q_te ORDER BY id) AS rn
+                FROM chapter_mcqs
+            ) t
+            JOIN study_notes sn ON t.study_note_id=sn.id
+            WHERE t.rn > 1
+            GROUP BY sn.topic
+            ORDER BY dup_rows DESC
+        """)
+        # Orphaned chapter_mcqs (no parent study_note)
+        out['orphaned_chapter_mcqs'] = one(
+            "SELECT COUNT(*) FROM chapter_mcqs cm "
+            "WHERE NOT EXISTS (SELECT 1 FROM study_notes sn WHERE sn.id=cm.study_note_id)"
+        )
+        # PYQ years/papers count
+        out['pyq_papers'] = rows("SELECT year, paper, COUNT(*) AS n FROM pyq_questions GROUP BY year, paper ORDER BY year DESC, paper LIMIT 30")
+    except Exception as e:
+        out['error'] = str(e)
+    finally:
+        conn.close()
+    return jsonify(out)
+
+
 @app.route('/api/start-wrong-answers-exam', methods=['POST'])
 def start_wrong_answers_exam():
     """Build an exam from this device's unresolved wrong answers."""
