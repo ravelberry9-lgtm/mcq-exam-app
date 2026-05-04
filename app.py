@@ -448,8 +448,8 @@ def init_db():
                                   "JOIN study_notes sn ON cm.study_note_id=sn.id "
                                   "WHERE sn.topic='General_Science'")
         sci_mcqs = _fv(cur_sci_m.fetchone())
-        if sci_notes < 12 or sci_mcqs < 590:
-            print(f"[startup] General Science: {sci_notes}/12 chapters, {sci_mcqs}/598 MCQs — auto-seeding...")
+        if sci_notes < 13 or sci_mcqs < 640:
+            print(f"[startup] General Science: {sci_notes}/13 chapters, {sci_mcqs}/648 MCQs — auto-seeding...")
             _auto_seed_science()
             print("[startup] General Science auto-seed complete.")
         else:
@@ -694,6 +694,7 @@ def _auto_seed_science():
         (10, 'seed_science_set10_bilingual', 10, 'Human System I',                     'మానవ వ్యవస్థ I'),
         (11, 'seed_science_set11_bilingual', 11, 'Human System II',                    'మానవ వ్యవస్థ II'),
         (12, 'seed_science_set12_bilingual', 12, 'Human System III',                   'మానవ వ్యవస్థ III'),
+        (13, 'seed_science_set13_bilingual', 13, 'Human System IV',                    'మానవ వ్యవస్థ IV'),
     ]
 
     # Wipe existing General_Science rows so we can re-seed cleanly
