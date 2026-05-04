@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% block title %}Wrong Answers — Review & Retake{% endblock %}
+{% block content %}
+<style>
+  .wa-wrap { max-width: 760px; margin: 0 auto; padding: 12px 14px 80px; }
+  .wa-hero {
+    background: linear-gradient(135deg, #c62828, #e64a19);
+    color: #fff; padding: 20px 18px; border-radius: 14px;
+    margin-bottom: 16px; box-shadow: 0 6px 20px rgba(198,40,40,.25);
+  }
+  .wa-hero h1 { font-size: 19px; font-weight: 900; margin-bottom: 4px; }
+  .wa-hero p  { font-size: 13px; opacity: .92; margin-bottom: 10px; }
+  .wa-stats { display:flex; gap:10px; flex-wrap:wrap; }
+  .wa-stat-pill {
+    background: rgba(255,255,255,.18); padding: 5px 12px;
+    border-radius: 18px; font-size: 12px; font-weight: 700;
+  }
+  .wa-actions { margin: 6px 0 14px; display:flex; gap:10px; flex-wrap:wrap; }
+  .wa-actions .btn { flex:1; min-width:140px; }
+
+  .wa-tabs { display:flex; gap:6px; margin-bottom:12px; }
+  .wa-tab {
+    padding:8px 14px; border-radius:18px; border:1.5px solid var(--border);
+    background:var(--bg); color:var(--text); font-size:13px; font-weight:700;
+    cursor:pointer; transition:all .18s;
+  }
+  .wa-tab.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+  .wa-card {
+    background: var(--card); border:1.5px solid var(--border);
+    border-radius:12px; padding:14px 16px; margin-bottom:12px;
+  }
+  .wa-card.resolved { opacity:.55; border-color:#a5d6a7; }
+  .wa-meta { font-size:11px; color:var(--text-muted); margin-bottom:8px;
+             display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .wa-topic { background:#fce4ec; color:#ad1457; padding:2px 8px;
+              border-radius:10px; font-weight:700; font-size:10px; }
+  [data-theme="dark"] .wa-topic { background:#3a0d22; color:#f48fb1; }
+  .wa-question { font-size:14px; font-weight:600; color:var(--text);
+                 margin-bottom:10px; line-height:1.55; white-space:pre-wrap; }
+  .wa-options { display:grid; gap:5px; margin-bottom:10px; }
+  .wa-opt {
+    padding:8px 12px; border-radius:8px; border:1.5px solid var(--border);
+    font-size:13px; line-height:1.45; background:var(--bg);
+  }
+  .wa-opt.correct  { border-color:#2e7d32; background:#e8f5e9; color:#1b5e20; font-weight:700; }
+  .wa-opt.your-wrong { border-color:#c62828; background:#ffebee; color:#b71c1c; }
+  [data-theme="dark"] .wa-opt.correct  { background:#0d2015; color:#a5d6a7; }
+  [data-theme="dark"] .wa-opt.your-wrong { background:#2a0d0d; color:#ef9a9a; }
+  .wa-opt-key { font-weight:800; margin-right:6px; }
+  .wa-explanation {
+    font-size:12px; color:var(--text-muted); padding:10px 12px;
+    background:#fff8e1; border-left:3px solid #f57f17; border-radius:6px;
+    line-height:1.55; white-space:pre-wrap;
+  }
+  [data-theme="dark"] .wa-explanation { background:#3a2e0a; color:#ffd180; border-left-color:#ffb74d; }
+  .wa-resolved-tag {
+    display:inline-block; font-size:10px; font-weight:800;
+    background:#2e7d32; color:#fff; padding:2px 8px; border-radius:12px;
+  }
+
+  .wa-empty {
+    text-align:center; padding:60px 20px; color:var(--text-muted);
+  }
+  .wa-empty-ico { font-size:48px; margin-bottom:14px; }
+</style>
+
+<div class="wa-wrap">
+  <div class="wa-hero">
+    <h1>⚠️ Wrong Answers</h1>
+    <p>Every question you got wrong is collected here. Practice them until you get them right — they then move to the Resolved tab.</p>
+    <div class="wa-stats">
+      <span class="wa-stat-pill" id="waUnresolvedPill">… unresolved</span>
+      <span class="wa-stat-pill" id="waResolvedPill">… resolved</span>
+    </div>
+  </div>
+
+  <div class="wa-actions">
+    <button class="btn btn-accent btn-block" id="waPracticeBtn" onclick="startPractice()">⚡ Practice My Wrong Answers</button>
+    <a href="/" class="btn btn-outline btn-block">← Home</a>
+  </div>
+
+  <div class="wa-tabs" role="tablist">
+    <button class="wa-tab active" data-tab="0" onclick="showTab(this,0)">Unresolved</button>
+    <button class="wa-tab" data-tab="1" onclick="showTab(this,1)">Resolved</button>
+  </div>
+
+  <div id="waList"></div>
+</div>
+
+<script>
+let _devId = localStorage.getItem('mcq_device_id');
+if (!_devId) { _devId = 'web_' + Math.random().toString(36).slice(2,9); localStorage.setItem('mcq_device_id', _devId); }
+
+let currentResolvedFilter = 0;
+
+function showTab(btn, val) {
+  document.querySelectorAll('.wa-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  currentResolvedFilter = val;
+  loadList();
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function renderCard(item) {
+  const opts = ['A','B','C','D'];
+  const optMap = {A:item.option_a, B:item.option_b, C:item.option_c, D:item.option_d};
+  const correct = (item.correct_answer || '').toUpperCase();
+  const userAns = (item.user_answer || '').toUpperCase();
+  const isResolved = item.resolved == 1;
+
+  let optionsHtml = opts.map(L => {
+    let cls = 'wa-opt';
+    if (L === correct) cls += ' correct';
+    else if (L === userAns) cls += ' your-wrong';
+    return `<div class="${cls}"><span class="wa-opt-key">${L}.</span>${escapeHtml(optMap[L])}</div>`;
+  }).join('');
+
+  return `
+    <div class="wa-card ${isResolved?'resolved':''}">
+      <div class="wa-meta">
+        <span class="wa-topic">${escapeHtml(item.topic || 'Mixed')}</span>
+        <span>Attempted ${escapeHtml((item.attempted_at||'').slice(0,10))}</span>
+        ${isResolved?'<span class="wa-resolved-tag">✓ Resolved</span>':''}
+      </div>
+      <div class="wa-question">${escapeHtml(item.question_text)}</div>
+      <div class="wa-options">${optionsHtml}</div>
+      ${item.explanation ? `<div class="wa-explanation">${escapeHtml(item.explanation)}</div>` : ''}
+    </div>`;
+}
+
+async function loadList() {
+  const list = document.getElementById('waList');
+  list.innerHTML = '<div class="wa-empty"><div class="wa-empty-ico">⏳</div>Loading…</div>';
+  try {
+    const r = await fetch(`/api/wrong-answers?device_id=${encodeURIComponent(_devId)}&resolved=${currentResolvedFilter}`);
+    const d = await r.json();
+    document.getElementById('waUnresolvedPill').textContent = `${d.unresolved} unresolved`;
+    document.getElementById('waResolvedPill').textContent  = `${d.resolved} resolved`;
+    document.getElementById('waPracticeBtn').disabled = (d.unresolved === 0);
+
+    if (!d.items || !d.items.length) {
+      list.innerHTML = `
+        <div class="wa-empty">
+          <div class="wa-empty-ico">${currentResolvedFilter==1?'🏆':'🎯'}</div>
+          <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;">
+            ${currentResolvedFilter==1?'No resolved wrong answers yet':'No unresolved wrong answers!'}
+          </div>
+          <div style="font-size:13px;line-height:1.6;">
+            ${currentResolvedFilter==1?'Once you re-answer wrong questions correctly, they move here.':'Take an exam and any wrong answers will appear here for review.'}
+          </div>
+        </div>`;
+      return;
+    }
+    list.innerHTML = d.items.map(renderCard).join('');
+  } catch(e) {
+    list.innerHTML = `<div class="wa-empty"><div class="wa-empty-ico">😞</div>Error loading: ${escapeHtml(e.message)}</div>`;
+  }
+}
+
+async function startPractice() {
+  const btn = document.getElementById('waPracticeBtn');
+  btn.disabled = true; btn.textContent = 'Building exam…';
+  try {
+    const r = await fetch('/api/start-wrong-answers-exam', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({device_id: _devId, student_name: 'Student'})
+    });
+    const d = await r.json();
+    if (d.session_id) {
+      window.location.href = '/exam/' + d.session_id;
+    } else {
+      showToast(d.error || 'Could not build practice exam', 'error');
+      btn.disabled = false; btn.textContent = '⚡ Practice My Wrong Answers';
+    }
+  } catch(e) {
+    showToast('Network error — try again', 'error');
+    btn.disabled = false; btn.textContent = '⚡ Practice My Wrong Answers';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadList);
+</script>
+{% endblock %}

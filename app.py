@@ -130,6 +130,23 @@ def init_db():
             explanation_te TEXT NOT NULL DEFAULT '',
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )''')
+        cur.execute('''CREATE TABLE IF NOT EXISTS wrong_answers (
+            id SERIAL PRIMARY KEY,
+            device_id TEXT NOT NULL,
+            source TEXT NOT NULL DEFAULT 'chapter',
+            source_id INTEGER,
+            exam_session_id TEXT,
+            topic TEXT,
+            question_text TEXT NOT NULL,
+            option_a TEXT, option_b TEXT, option_c TEXT, option_d TEXT,
+            correct_answer TEXT NOT NULL,
+            user_answer TEXT,
+            explanation TEXT DEFAULT '',
+            attempted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            resolved INTEGER DEFAULT 0,
+            resolved_at TIMESTAMP,
+            UNIQUE(device_id, source, source_id)
+        )''')
         cur.execute('''CREATE TABLE IF NOT EXISTS pyq_questions (
             id SERIAL PRIMARY KEY,
             topic TEXT NOT NULL,
@@ -194,6 +211,23 @@ def init_db():
                 correct TEXT NOT NULL,
                 explanation_te TEXT NOT NULL DEFAULT '',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE TABLE IF NOT EXISTS wrong_answers (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                device_id TEXT NOT NULL,
+                source TEXT NOT NULL DEFAULT 'chapter',
+                source_id INTEGER,
+                exam_session_id TEXT,
+                topic TEXT,
+                question_text TEXT NOT NULL,
+                option_a TEXT, option_b TEXT, option_c TEXT, option_d TEXT,
+                correct_answer TEXT NOT NULL,
+                user_answer TEXT,
+                explanation TEXT DEFAULT '',
+                attempted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                resolved INTEGER DEFAULT 0,
+                resolved_at TIMESTAMP,
+                UNIQUE(device_id, source, source_id)
             );
             CREATE TABLE IF NOT EXISTS pyq_questions (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -1534,6 +1568,78 @@ def submit_exam():
 
     total = len(results)
     unanswered = sum(1 for r in results if not r['user_answer'])
+
+    # ── Log wrong answers + mark previously-wrong-now-right as resolved ──
+    device_id = (config.get('device_id') or '').strip() or None
+    if device_id:
+        ph = '%s' if USE_POSTGRES else '?'
+        for r in results:
+            qid = r.get('id')
+            if qid is None:
+                continue
+            src_kind = 'pyq' if is_pyq else 'chapter'
+            try:
+                if isinstance(qid, str) and qid.startswith('ch_'):
+                    src_kind = 'chapter'
+                    qid = int(qid[3:])
+                elif isinstance(qid, str) and qid.startswith('pyq_'):
+                    src_kind = 'pyq'
+                    qid = int(qid[4:])
+                elif isinstance(qid, str) and qid.isdigit():
+                    qid = int(qid)
+            except (ValueError, TypeError):
+                continue
+            opts = r.get('options') or []
+            def opt_text(letter):
+                for o in opts:
+                    if o.get('key') == letter:
+                        return o.get('text', '')
+                return ''
+            if r['is_correct']:
+                # If they got this right, mark any prior wrong-answer entry as resolved
+                try:
+                    db_exec(conn, f"UPDATE wrong_answers SET resolved=1, resolved_at=CURRENT_TIMESTAMP "
+                                  f"WHERE device_id={ph} AND source={ph} AND source_id={ph} AND resolved=0",
+                            (device_id, src_kind, qid))
+                except Exception as _re:
+                    print(f"[wrong-answers] resolve error qid={qid}: {_re}")
+                    try: conn.rollback()
+                    except: pass
+            else:
+                # Log as wrong (UPSERT — refresh attempt info, reset resolved)
+                try:
+                    if USE_POSTGRES:
+                        db_exec(conn,
+                            f"INSERT INTO wrong_answers "
+                            f"(device_id, source, source_id, exam_session_id, topic, question_text, "
+                            f" option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, resolved) "
+                            f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},0) "
+                            f"ON CONFLICT (device_id, source, source_id) DO UPDATE SET "
+                            f"  exam_session_id=EXCLUDED.exam_session_id, "
+                            f"  user_answer=EXCLUDED.user_answer, "
+                            f"  attempted_at=CURRENT_TIMESTAMP, resolved=0, resolved_at=NULL",
+                            (device_id, src_kind, qid, session_id, r.get('topic',''), r.get('question_text',''),
+                             opt_text('A'), opt_text('B'), opt_text('C'), opt_text('D'),
+                             r.get('correct_answer',''), r.get('user_answer'), r.get('explanation','')))
+                    else:
+                        db_exec(conn,
+                            f"INSERT INTO wrong_answers "
+                            f"(device_id, source, source_id, exam_session_id, topic, question_text, "
+                            f" option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, resolved) "
+                            f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},0) "
+                            f"ON CONFLICT(device_id, source, source_id) DO UPDATE SET "
+                            f"  exam_session_id=excluded.exam_session_id, "
+                            f"  user_answer=excluded.user_answer, "
+                            f"  attempted_at=CURRENT_TIMESTAMP, resolved=0, resolved_at=NULL",
+                            (device_id, src_kind, qid, session_id, r.get('topic',''), r.get('question_text',''),
+                             opt_text('A'), opt_text('B'), opt_text('C'), opt_text('D'),
+                             r.get('correct_answer',''), r.get('user_answer'), r.get('explanation','')))
+                except Exception as _le:
+                    print(f"[wrong-answers] log error qid={qid}: {_le}")
+                    try: conn.rollback()
+                    except: pass
+        conn.commit()
+
     db_exec(conn, 'UPDATE exam_sessions SET answers=?, submitted_at=?, score=?, total=? WHERE id=?',
             (json.dumps(answers), datetime.now().isoformat(), score, total, session_id))
     conn.commit(); conn.close()
@@ -1786,6 +1892,113 @@ def api_history():
 # ─────────────────────────────────────────────
 # NOTES ROUTES
 # ─────────────────────────────────────────────
+@app.route('/wrong-answers')
+def wrong_answers_page():
+    """Review page — list all unresolved wrong answers for this device."""
+    return render_template('wrong_answers.html')
+
+
+@app.route('/api/wrong-answers')
+def api_wrong_answers():
+    """Return wrong answers for this device. ?resolved=0|1|all (default 0)"""
+    device_id = (request.args.get('device_id') or '').strip()
+    resolved = request.args.get('resolved', '0')
+    if not device_id:
+        return jsonify({'items': [], 'total': 0})
+    ph = '%s' if USE_POSTGRES else '?'
+    conn = get_db()
+    if resolved == 'all':
+        cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE device_id={ph} ORDER BY attempted_at DESC", (device_id,))
+    else:
+        try: r_int = int(resolved)
+        except: r_int = 0
+        cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE device_id={ph} AND resolved={ph} ORDER BY attempted_at DESC", (device_id, r_int))
+    items = [row_to_dict(r) for r in cur.fetchall()]
+    # Counts
+    cur2 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=0", (device_id,))
+    unresolved = _fv(cur2.fetchone())
+    cur3 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=1", (device_id,))
+    resolved_count = _fv(cur3.fetchone())
+    conn.close()
+    return jsonify({
+        'items': items, 'total': len(items),
+        'unresolved': unresolved, 'resolved': resolved_count,
+    })
+
+
+@app.route('/api/wrong-answers-stats')
+def api_wrong_answers_stats():
+    """Quick count for home tile."""
+    device_id = (request.args.get('device_id') or '').strip()
+    if not device_id:
+        return jsonify({'unresolved': 0, 'resolved': 0})
+    ph = '%s' if USE_POSTGRES else '?'
+    conn = get_db()
+    cur = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=0", (device_id,))
+    unresolved = _fv(cur.fetchone())
+    cur = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=1", (device_id,))
+    resolved = _fv(cur.fetchone())
+    conn.close()
+    return jsonify({'unresolved': unresolved, 'resolved': resolved})
+
+
+@app.route('/api/start-wrong-answers-exam', methods=['POST'])
+def start_wrong_answers_exam():
+    """Build an exam from this device's unresolved wrong answers."""
+    data = request.json or {}
+    device_id = (data.get('device_id') or '').strip()
+    student_name = data.get('student_name', 'Student')
+    if not device_id:
+        return jsonify({'error': 'device_id required'}), 400
+    ph = '%s' if USE_POSTGRES else '?'
+    conn = get_db()
+    # Pull unresolved wrong answers — embed full snapshot so submit-exam handles them as embedded items
+    cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE device_id={ph} AND resolved=0 ORDER BY attempted_at ASC", (device_id,))
+    rows = [row_to_dict(r) for r in cur.fetchall()]
+    if not rows:
+        conn.close()
+        return jsonify({'error': 'No unresolved wrong answers — go take an exam first!'}), 400
+    questions = []
+    for r in rows:
+        sid = r['source_id']
+        if r['source'] == 'chapter':
+            qid = 'ch_' + str(sid)
+        elif r['source'] == 'pyq':
+            qid = 'pyq_' + str(sid)
+        else:
+            qid = sid
+        questions.append({
+            'id': qid,  # prefixed so submit-exam normalizes back to (source, source_id)
+            'folder': 'WRONG',
+            'topic': r.get('topic') or 'Wrong Answers',
+            'question_text': r['question_text'],
+            'options': [
+                {'key': 'A', 'text': r.get('option_a') or ''},
+                {'key': 'B', 'text': r.get('option_b') or ''},
+                {'key': 'C', 'text': r.get('option_c') or ''},
+                {'key': 'D', 'text': r.get('option_d') or ''},
+            ],
+            'correct_answer': r['correct_answer'],
+            'correct': r['correct_answer'],
+            'explanation': r.get('explanation') or '',
+            'difficulty': 'M',
+        })
+    session_id = str(uuid.uuid4())
+    config = {
+        'mode': 'wrong_retake',
+        'duration': max(15, min(60, len(questions) * 1)),
+        'device_id': device_id,
+        'student_name': student_name,
+        'source': 'WRONG',
+    }
+    db_exec(conn,
+        'INSERT INTO exam_sessions (id, config, questions) VALUES (?, ?, ?)',
+        (session_id, json.dumps(config), json.dumps(questions)))
+    conn.commit(); conn.close()
+    return jsonify({'session_id': session_id, 'count': len(questions), 'duration': config['duration']})
+
+
+
 @app.route('/notes')
 def notes_home():
     conn = get_db()

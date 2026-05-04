@@ -59,6 +59,17 @@
         <div class="lt-arrow">→</div>
       </a>
 
+      <!-- Wrong Answers -->
+      <a href="/wrong-answers" class="launch-tile" style="--c1:#c62828;--c2:#e64a19;" aria-label="Wrong Answers — review and retake">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="lt-name">Wrong Answers</div>
+        <div class="lt-desc"><span id="waCount">…</span> to review</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
       <!-- Study Guide -->
       <a href="/read-notes" class="launch-tile" style="--c1:#4a148c;--c2:#7b1fa2;" aria-label="Study Guide — full HTML reference notes for AP Geo and Current Affairs">
         <div class="lt-blob"></div>
@@ -463,6 +474,18 @@ fetch('/api/stats').then(r => r.json()).then(d => {
   document.getElementById('totalExams').textContent = d.total_exams;
   document.getElementById('avgScore').textContent   = d.avg_score + '%';
 }).catch(() => {});
+
+// ── Wrong Answers count for the tile ──
+{
+  let _devId = localStorage.getItem('mcq_device_id');
+  if (!_devId) { _devId = 'web_' + Math.random().toString(36).slice(2,9); localStorage.setItem('mcq_device_id', _devId); }
+  fetch('/api/wrong-answers-stats?device_id=' + encodeURIComponent(_devId))
+    .then(r => r.json())
+    .then(d => {
+      const el = document.getElementById('waCount');
+      if (el) el.textContent = (d.unresolved || 0);
+    }).catch(() => {});
+}
 
 // ── Device ID ──
 let _devId = localStorage.getItem('mcq_device_id');
