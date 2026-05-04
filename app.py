@@ -406,16 +406,20 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed General Science MCQs (Set 11 + Set 12 = 100 Qs) ──
+    # ── Auto-seed General Science chapters (sets 1-5, 7-12 = 11 chapters / 548 MCQs) ──
     try:
-        cur_sci = db_exec(conn, "SELECT COUNT(*) FROM questions WHERE topic='General_Science'")
-        sci_count = _fv(cur_sci.fetchone())
-        if sci_count < 548:
-            print(f"[startup] General Science: {sci_count}/548 MCQs — auto-seeding...")
+        cur_sci_n = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='General_Science'")
+        sci_notes = _fv(cur_sci_n.fetchone())
+        cur_sci_m = db_exec(conn, "SELECT COUNT(*) FROM chapter_mcqs cm "
+                                  "JOIN study_notes sn ON cm.study_note_id=sn.id "
+                                  "WHERE sn.topic='General_Science'")
+        sci_mcqs = _fv(cur_sci_m.fetchone())
+        if sci_notes < 11 or sci_mcqs < 540:
+            print(f"[startup] General Science: {sci_notes}/11 chapters, {sci_mcqs}/548 MCQs — auto-seeding...")
             _auto_seed_science()
             print("[startup] General Science auto-seed complete.")
         else:
-            print(f"[startup] General Science: {sci_count} MCQs — fully loaded.")
+            print(f"[startup] General Science: {sci_notes} chapters, {sci_mcqs} MCQs — fully loaded.")
     except Exception as _sci_e:
         print(f"[startup] General Science seed check error: {_sci_e}")
         try: conn.rollback()
@@ -622,60 +626,105 @@ def _auto_seed_polity():
 
 
 def _auto_seed_science():
-    """Load General Science MCQs from seed_science_set11/12_bilingual into the questions table.
+    """Migrate General Science MCQs into chapter_mcqs (chapter-quiz format).
 
-    The seed scripts ship as standalone sqlite scripts but their `questions` list
-    is module-level data. We import them, read the list, and INSERT via db_exec
-    so this works on both SQLite (local) and PostgreSQL (Render).
-    Each tuple is (q_text, opt_a, opt_b, opt_c, opt_d, correct, difficulty, explanation, q_order).
+    Each set becomes a chapter under topic='General_Science'. Sets map to
+    the existing General_Science HTML chapter notes by chapter_num so the
+    Listen / Guide buttons link correctly. Idempotent: wipes existing
+    General_Science rows then re-seeds.
     """
     import importlib
     ph = '%s' if USE_POSTGRES else '?'
+    DIFF_MAP = {'E': 1, 'M': 2, 'H': 3, 'easy': 1, 'medium': 2, 'hard': 3}
+
+    # (set_num, module_name, chapter_num, title_en, title_te)
     sets = [
-        ('seed_science_set1_bilingual',  'Science_Set1_Elements_Metals_Compounds'),
-        ('seed_science_set2_bilingual',  'Science_Set2_Elements_Metals_Compounds_II'),
-        ('seed_science_set3_bilingual',  'Science_Set3_Elements_Metals_Compounds_III'),
-        ('seed_science_set4_bilingual',  'Science_Set4_Atoms_Radioactivity_Nuclear'),
-        ('seed_science_set5_bilingual',  'Science_Set5_Synthetic_Materials'),
-        ('seed_science_set7_bilingual',  'Science_Set7_Measurements_Units'),
-        ('seed_science_set8_bilingual',  'Science_Set8_Light_Sound_Wave'),
-        ('seed_science_set9_bilingual',  'Science_Set9_Appliances_Devices'),
-        ('seed_science_set10_bilingual', 'Science_Set10_Human_System1'),
-        ('seed_science_set11_bilingual', 'Science_Set11_Human_System2'),
-        ('seed_science_set12_bilingual', 'Science_Set12_Human_System3'),
+        (1,  'seed_science_set1_bilingual',  1,  'Elements, Metals & Compounds (I)',   'మూలకాలు, లోహాలు మరియు సమ్మేళనాలు (I)'),
+        (2,  'seed_science_set2_bilingual',  2,  'Elements, Metals & Compounds (II)',  'మూలకాలు, లోహాలు మరియు సమ్మేళనాలు (II)'),
+        (3,  'seed_science_set3_bilingual',  3,  'Elements, Metals & Compounds (III)', 'మూలకాలు, లోహాలు మరియు సమ్మేళనాలు (III)'),
+        (4,  'seed_science_set4_bilingual',  4,  'Atoms, Radioactivity & Nuclear',     'పరమాణువులు, రేడియోధార్మికత & న్యూక్లియర్'),
+        (5,  'seed_science_set5_bilingual',  5,  'Synthetic Materials',                'కృత్రిమ పదార్థాలు'),
+        (7,  'seed_science_set7_bilingual',  7,  'Measurements & Units',               'కొలతలు & ప్రమాణాలు'),
+        (8,  'seed_science_set8_bilingual',  8,  'Light, Sound & Wave',                'కాంతి, ధ్వని & తరంగం'),
+        (9,  'seed_science_set9_bilingual',  9,  'Appliances & Devices',               'ఉపకరణాలు & పరికరాలు'),
+        (10, 'seed_science_set10_bilingual', 10, 'Human System I',                     'మానవ వ్యవస్థ I'),
+        (11, 'seed_science_set11_bilingual', 11, 'Human System II',                    'మానవ వ్యవస్థ II'),
+        (12, 'seed_science_set12_bilingual', 12, 'Human System III',                   'మానవ వ్యవస్థ III'),
     ]
-    for mod_name, source in sets:
+
+    # Wipe existing General_Science rows so we can re-seed cleanly
+    c = get_db()
+    try:
+        db_exec(c, "DELETE FROM chapter_mcqs WHERE study_note_id IN "
+                   "(SELECT id FROM study_notes WHERE topic='General_Science')")
+        db_exec(c, "DELETE FROM study_notes WHERE topic='General_Science'")
+        # Also remove any old Main-Bank General_Science rows (from earlier auto-seeds)
+        db_exec(c, "DELETE FROM questions WHERE topic='General_Science'")
+        c.commit()
+    except Exception as _wipe_e:
+        print(f"[sci-seed] wipe error: {_wipe_e}")
+        try: c.rollback()
+        except: pass
+    finally:
+        try: c.close()
+        except: pass
+
+    total_inserted = 0
+    for set_num, mod_name, ch_num, title_en, title_te in sets:
         c = get_db()
         try:
             mod = importlib.import_module(mod_name)
             qs = getattr(mod, 'questions', None)
             if not qs:
-                print(f"[sci-seed] {mod_name}: no `questions` list, skipping.")
+                print(f"[sci-seed] {mod_name}: no `questions`, skip.")
                 continue
-            db_exec(c, f"DELETE FROM questions WHERE source_file={ph}", (source,))
-            sql = (
-                f"INSERT INTO questions "
-                f"(folder, topic, source_file, question_text, "
-                f" option_a, option_b, option_c, option_d, "
-                f" correct_answer, difficulty, explanation, question_order) "
-                f"VALUES ('GK','General_Science',{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
+
+            # Insert study_notes row, get its id
+            if USE_POSTGRES:
+                cur = db_exec(c,
+                    "INSERT INTO study_notes "
+                    "(subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+                    f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph}) RETURNING id",
+                    ('General Science', 'General_Science', ch_num, title_te, title_en,
+                     f'Set {set_num}', '[]'))
+                row = cur.fetchone()
+                note_id = row[0] if isinstance(row, (list, tuple)) else row['id']
+            else:
+                cur = db_exec(c,
+                    "INSERT INTO study_notes "
+                    "(subject, topic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
+                    f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph})",
+                    ('General Science', 'General_Science', ch_num, title_te, title_en,
+                     f'Set {set_num}', '[]'))
+                note_id = cur.lastrowid
+
+            mcq_sql = (
+                f"INSERT INTO chapter_mcqs "
+                f"(study_note_id, section_idx, difficulty, exam_type, "
+                f" q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te) "
+                f"VALUES ({ph},{ph},{ph},'General',{ph},{ph},{ph},{ph},{ph},{ph},{ph})"
             )
             inserted = 0
             for q in qs:
-                if len(q) < 9:
-                    continue
-                params = (source,) + tuple(q[:9])
-                db_exec(c, sql, params)
+                if len(q) < 9: continue
+                q_text, oa, ob, oc, od, correct, diff, expl, q_order = q[:9]
+                diff_int = DIFF_MAP.get(str(diff).strip(), 2)
+                params = (note_id, int(q_order or 0), diff_int,
+                          q_text, oa, ob, oc, od, correct, expl or '')
+                db_exec(c, mcq_sql, params)
                 inserted += 1
             c.commit()
-            print(f"[sci-seed] {mod_name}: inserted {inserted} MCQs (source={source}).")
+            total_inserted += inserted
+            print(f"[sci-seed] Set {set_num} ({title_en}): note_id={note_id}, {inserted} MCQs.")
         except Exception as e:
-            print(f"[sci-seed] {mod_name} error: {e}")
+            print(f"[sci-seed] Set {set_num} error: {e}")
             try: c.rollback()
             except: pass
         finally:
             try: c.close()
             except: pass
+    print(f"[sci-seed] TOTAL inserted into chapter_mcqs: {total_inserted}")
+
 
 
 def _auto_seed_ap_current_affairs():
