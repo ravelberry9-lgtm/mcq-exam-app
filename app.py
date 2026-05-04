@@ -472,7 +472,15 @@ def _auto_seed_polity():
     # list(fetchone())[0] which on psycopg2 RealDictRow returns the column *name*
     # instead of the value.  We fix both at call-time without touching the seed
     # files by wrapping db_exec + the cursor it returns.
-    _DIFF_MAP = {'easy': 1, 'medium': 2, 'hard': 3}
+    _DIFF_MAP = {
+        # Common lowercase forms
+        'easy': 1, 'simple': 1, 'beginner': 1, 'e': 1,
+        'medium': 2, 'moderate': 2, 'med': 2, 'm': 2,
+        'hard': 3, 'tough': 3, 'difficult': 3, 'h': 3,
+        'toughest': 3, 'hardest': 3, 'expert': 3, 'advanced': 3,
+        # Numeric strings
+        '1': 1, '2': 2, '3': 3,
+    }
 
     class _CompatRow:
         """Wraps a psycopg2 RealDictRow so that:
@@ -523,8 +531,9 @@ def _auto_seed_polity():
             p = list(params)
             # Column order is always: study_note_id, section_idx, difficulty, ...
             # so difficulty is at index 2.
-            if len(p) >= 3 and isinstance(p[2], str) and p[2].lower() in _DIFF_MAP:
-                p[2] = _DIFF_MAP[p[2].lower()]
+            if len(p) >= 3 and isinstance(p[2], str):
+                key = p[2].strip().lower()
+                p[2] = _DIFF_MAP.get(key, 2)  # unknown strings → Medium (2)
             params = tuple(p)
         cur = db_exec(conn, sql, params)
         return _CompatCursor(cur)
