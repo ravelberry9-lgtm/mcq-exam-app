@@ -2020,6 +2020,45 @@ def api_audit():
     return jsonify(out)
 
 
+@app.route('/api/cleanup-orphans', methods=['POST'])
+def api_cleanup_orphans():
+    """Delete chapter_mcqs whose study_note_id no longer exists. PIN-protected."""
+    if (request.args.get('pin') or '') != ADMIN_PIN:
+        return jsonify({'error': 'pin required'}), 401
+    conn = get_db()
+    try:
+        # Count first
+        cur = db_exec(conn,
+            "SELECT COUNT(*) FROM chapter_mcqs cm "
+            "WHERE NOT EXISTS (SELECT 1 FROM study_notes sn WHERE sn.id=cm.study_note_id)")
+        n_orph = _fv(cur.fetchone()) or 0
+        # Delete
+        db_exec(conn,
+            "DELETE FROM chapter_mcqs WHERE id IN ("
+            "  SELECT cm.id FROM chapter_mcqs cm "
+            "  WHERE NOT EXISTS (SELECT 1 FROM study_notes sn WHERE sn.id=cm.study_note_id))")
+        # Also clean up empty study_notes (no chapter_mcqs at all) for AP CA-style cruft
+        cur2 = db_exec(conn,
+            "SELECT COUNT(*) FROM study_notes sn "
+            "WHERE NOT EXISTS (SELECT 1 FROM chapter_mcqs cm WHERE cm.study_note_id=sn.id)")
+        n_empty = _fv(cur2.fetchone()) or 0
+        # Don't auto-delete empty study_notes — they may be intentional
+        conn.commit()
+    except Exception as e:
+        try: conn.rollback()
+        except: pass
+        conn.close()
+        return jsonify({'error': str(e)}), 500
+    conn.close()
+    return jsonify({
+        'deleted_orphan_chapter_mcqs': n_orph,
+        'empty_study_notes_remaining': n_empty,
+        'note': 'empty study_notes left untouched (review manually if you want them removed)',
+    })
+
+
+
+
 @app.route('/api/start-wrong-answers-exam', methods=['POST'])
 def start_wrong_answers_exam():
     """Build an exam from this device's unresolved wrong answers."""
