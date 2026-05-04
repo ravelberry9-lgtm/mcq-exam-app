@@ -916,8 +916,7 @@ def _auto_seed_pyq(force=False):
         conn = get_db()
         if force:
             db_exec(conn, 'DELETE FROM pyq_questions')
-            if not USE_POSTGRES:
-                conn.commit()
+            conn.commit()
         inserted = 0
         for q in questions:
             db_exec(conn, '''INSERT INTO pyq_questions
@@ -929,8 +928,7 @@ def _auto_seed_pyq(force=False):
                  q['option_c'], q['option_d'], q.get('correct_answer', ''),
                  q.get('language', 'English')))
             inserted += 1
-        if not USE_POSTGRES:
-            conn.commit()
+        conn.commit()
         conn.close()
         print(f"[pyq-seed] Loaded {inserted} PYQ questions.")
         return inserted
