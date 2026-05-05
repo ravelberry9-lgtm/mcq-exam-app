@@ -386,7 +386,9 @@
   transition: max-height .35s ease, padding .25s ease;
   padding: 0 12px;
 }
-.folder-body.open { max-height: 4000px; padding: 8px 12px 14px; }
+/* Bumped from 4000px → 20000px so 90+ chapters render fully on mobile (single-column).
+   Folders with 90 chapters at ~75px = ~6750px on phone needed more headroom. */
+.folder-body.open { max-height: 20000px; padding: 8px 12px 14px; }
 
 /* ── Topic tiles inside accordion ── */
 .topic-tiles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; }
