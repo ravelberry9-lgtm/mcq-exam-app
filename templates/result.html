@@ -289,10 +289,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
       <textarea class="modal-prompt" id="modalPromptText" readonly onclick="this.select()"></textarea>
       <button class="modal-copy-btn" id="modalCopyBtn" onclick="copyModalPrompt()">📋 Copy Again</button>
       <div class="modal-ai-row">
-        <a class="modal-ai-btn mai-claude"  href="https://claude.ai/new"         target="_blank">🤖 Claude</a>
-        <a class="modal-ai-btn mai-chatgpt" href="https://chatgpt.com/"          target="_blank">💬 ChatGPT</a>
-        <a class="modal-ai-btn mai-gemini"  href="https://gemini.google.com/app" target="_blank">✨ Gemini</a>
-        <a class="modal-ai-btn" id="linkPerplexity" href="#"                     target="_blank" style="border-color:#20808d;color:#20808d">🔎 Perplexity</a>
+        <a class="modal-ai-btn mai-claude"  href="https://claude.ai/new"         target="_blank" rel="noopener" onclick="closeModal()">🤖 Claude</a>
+        <a class="modal-ai-btn mai-chatgpt" href="https://chatgpt.com/"          target="_blank" rel="noopener" onclick="closeModal()">💬 ChatGPT</a>
+        <a class="modal-ai-btn mai-gemini"  href="https://gemini.google.com/app" target="_blank" rel="noopener" onclick="closeModal()">✨ Gemini</a>
+        <a class="modal-ai-btn" id="linkPerplexity" href="#"                     target="_blank" rel="noopener" onclick="closeModal()" style="border-color:#20808d;color:#20808d">🔎 Perplexity</a>
       </div>
     </div>
   </div>
@@ -603,11 +603,22 @@ function openModal(idx) {
 
 function closeModal() {
   document.getElementById('researchModal').classList.remove('open');
+  // Clear any selected text + defocus to prevent stuck-cursor on tab return
+  if (window.getSelection) { try { window.getSelection().removeAllRanges(); } catch(e){} }
+  try { document.activeElement && document.activeElement.blur(); } catch(e){}
 }
 
 // Close when clicking the dark overlay (not the box itself)
 document.getElementById('researchModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
+});
+
+// ESC key closes the modal (rescue handle if user returns with modal still open)
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var m = document.getElementById('researchModal');
+    if (m && m.classList.contains('open')) closeModal();
+  }
 });
 
 function copyModalPrompt() {
