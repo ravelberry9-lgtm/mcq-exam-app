@@ -63,6 +63,79 @@
     text-align:center; padding:60px 20px; color:var(--text-muted);
   }
   .wa-empty-ico { font-size:48px; margin-bottom:14px; }
+
+  /* RESEARCH BAR (per-card AI lookup) */
+  .research-bar {
+    display:flex; gap:7px; flex-wrap:wrap; align-items:center;
+    margin-top:10px; padding-top:10px; border-top:1px dashed var(--border);
+  }
+  .research-btn {
+    display:inline-flex; align-items:center; gap:5px;
+    padding:6px 13px; border-radius:20px; border:1.5px solid;
+    font-size:12px; font-weight:700; cursor:pointer; text-decoration:none;
+    transition:all .15s; background:var(--card);
+  }
+  .research-btn:active { transform:scale(0.96); }
+  .rb-google     { border-color:#4285f4; color:#4285f4; }
+  .rb-perplexity { border-color:#20808d; color:#20808d; }
+  .rb-claude     { border-color:#d97706; color:#d97706; }
+  .rb-google:hover     { background:#4285f4; color:#fff; }
+  .rb-perplexity:hover { background:#20808d; color:#fff; }
+  .rb-claude:hover     { background:#d97706; color:#fff; }
+
+  /* RESEARCH MODAL */
+  .modal-overlay {
+    display:none; position:fixed; inset:0; z-index:1000;
+    background:rgba(0,0,0,0.55);
+    align-items:center; justify-content:center; padding:16px;
+  }
+  .modal-overlay.open { display:flex; }
+  .modal-box {
+    background:var(--card); border-radius:16px;
+    width:100%; max-width:560px;
+    box-shadow:0 12px 40px rgba(0,0,0,0.3); overflow:hidden;
+  }
+  .modal-header {
+    background:var(--primary); color:#fff; padding:14px 18px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .modal-header h3 { font-size:15px; font-weight:800; }
+  .modal-close { background:none; border:none; color:#fff; font-size:22px; cursor:pointer; line-height:1; }
+  .modal-body { padding:16px; }
+  .modal-note {
+    background:#fff8e1; border-radius:8px; padding:9px 12px;
+    font-size:12px; color:#7b5800; margin-bottom:12px; line-height:1.5;
+  }
+  [data-theme="dark"] .modal-note { background:#3a2e0a; color:#ffd180; }
+  .modal-prompt {
+    width:100%; min-height:160px; max-height:240px;
+    border:1.5px solid var(--border); border-radius:8px;
+    padding:10px; font-size:12.5px; line-height:1.6;
+    resize:vertical; font-family:inherit; color:var(--text); background:var(--bg);
+  }
+  .modal-copy-btn {
+    width:100%; margin-top:10px; padding:11px;
+    background:var(--primary); color:#fff;
+    border:none; border-radius:8px; font-size:14px;
+    font-weight:700; cursor:pointer;
+  }
+  .modal-copy-btn.copied { background:#2e7d32; }
+  .modal-ai-row {
+    display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px;
+  }
+  .modal-ai-btn {
+    padding:10px 8px; border-radius:10px; border:1.5px solid;
+    font-size:13px; font-weight:700; cursor:pointer;
+    background:var(--card); transition:all .15s; text-align:center;
+    text-decoration:none;
+  }
+  .modal-ai-btn:hover { color:#fff; }
+  .mai-claude  { border-color:#d97706; color:#d97706; }
+  .mai-chatgpt { border-color:#10a37f; color:#10a37f; }
+  .mai-gemini  { border-color:#8b5cf6; color:#8b5cf6; }
+  .mai-claude:hover  { background:#d97706; }
+  .mai-chatgpt:hover { background:#10a37f; }
+  .mai-gemini:hover  { background:#8b5cf6; }
 </style>
 
 <div class="wa-wrap">
@@ -88,6 +161,29 @@
   <div id="waList"></div>
 </div>
 
+<!-- Research Modal -->
+<div class="modal-overlay" id="researchModal">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3>🔬 Research This Question</h3>
+      <button class="modal-close" onclick="closeResearchModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-note" id="modalNote">
+        ✅ <strong>Prompt auto-copied!</strong> Click any AI below — then press <strong>Ctrl+V</strong> to paste and send.
+      </div>
+      <textarea class="modal-prompt" id="modalPromptText" readonly onclick="this.select()"></textarea>
+      <button class="modal-copy-btn" id="modalCopyBtn" onclick="copyModalPrompt()">📋 Copy Again</button>
+      <div class="modal-ai-row">
+        <a class="modal-ai-btn mai-claude"  href="https://claude.ai/new"         target="_blank">🤖 Claude</a>
+        <a class="modal-ai-btn mai-chatgpt" href="https://chatgpt.com/"          target="_blank">💬 ChatGPT</a>
+        <a class="modal-ai-btn mai-gemini"  href="https://gemini.google.com/app" target="_blank">✨ Gemini</a>
+        <a class="modal-ai-btn" id="linkPerplexity" href="#"                     target="_blank" style="border-color:#20808d;color:#20808d">🔎 Perplexity</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 let _devId = localStorage.getItem('mcq_device_id');
 if (!_devId) { _devId = 'web_' + Math.random().toString(36).slice(2,9); localStorage.setItem('mcq_device_id', _devId); }
@@ -106,6 +202,93 @@ function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 }
 
+// ── Research helpers ──────────────────────────────────
+const _prompts = [];
+
+function buildPromptForItem(item) {
+  const optMap = {A:item.option_a, B:item.option_b, C:item.option_c, D:item.option_d};
+  const opts = ['A','B','C','D'].map(L => `${L}) ${optMap[L] || ''}`).join('\n');
+  const correct = (item.correct_answer || '').toUpperCase();
+  const userAns = (item.user_answer || '').toUpperCase();
+  const userPart = userAns
+    ? `My answer: ${userAns} (Wrong ❌ — I am reviewing this in my Wrong Answers list.)`
+    : 'I did not attempt this question.';
+  return `I am preparing for a competitive exam. Please explain this MCQ in detail:
+
+Question: ${item.question_text}
+
+Options:
+${opts}
+
+Correct Answer: ${correct}
+${userPart}
+
+Please explain:
+1. Why option ${correct} is correct
+2. Why the other options are wrong
+3. Key concept or trick to remember for similar questions`;
+}
+
+function buildResearchBar(item) {
+  const prompt = buildPromptForItem(item);
+  const googleQuery = encodeURIComponent((item.question_text||'').substring(0, 150));
+  const idx = _prompts.length;
+  _prompts.push({ prompt, googleQuery });
+  return `
+    <div class="research-bar">
+      <span style="font-size:11px;font-weight:700;color:var(--text-muted);">🔬 Research:</span>
+      <a class="research-btn rb-google" href="https://www.google.com/search?q=${googleQuery}" target="_blank">🔍 Google</a>
+      <a class="research-btn rb-perplexity" href="https://www.perplexity.ai/search?q=${googleQuery}" target="_blank">🔎 Perplexity</a>
+      <button class="research-btn rb-claude" onclick="openResearchModal(${idx})">🤖 Claude / ChatGPT / Gemini</button>
+    </div>`;
+}
+
+function openResearchModal(idx) {
+  const { prompt, googleQuery } = _prompts[idx];
+  const ta = document.getElementById('modalPromptText');
+  ta.value = prompt;
+  document.getElementById('modalCopyBtn').textContent = '📋 Copy Again';
+  document.getElementById('modalCopyBtn').classList.remove('copied');
+  document.getElementById('linkPerplexity').href = 'https://www.perplexity.ai/search?q=' + googleQuery;
+  document.getElementById('researchModal').classList.add('open');
+
+  // Auto-copy
+  ta.select();
+  try {
+    const ok = document.execCommand('copy');
+    document.getElementById('modalNote').innerHTML = ok
+      ? '✅ <strong>Prompt auto-copied!</strong> Click any AI below — then press <strong>Ctrl+V</strong> to paste.'
+      : '📋 Click <strong>Copy Again</strong> then open an AI below and paste with <strong>Ctrl+V</strong>.';
+  } catch(e) {
+    navigator.clipboard.writeText(prompt).catch(()=>{});
+  }
+}
+
+function closeResearchModal() {
+  document.getElementById('researchModal').classList.remove('open');
+}
+
+function copyModalPrompt() {
+  const ta = document.getElementById('modalPromptText');
+  ta.select();
+  navigator.clipboard.writeText(ta.value).then(() => {
+    const btn = document.getElementById('modalCopyBtn');
+    btn.textContent = '✅ Copied! Now click an AI button below';
+    btn.classList.add('copied');
+    if (typeof showToast === 'function') showToast('✅ Copied! Now open an AI and press Ctrl+V');
+  }).catch(() => {
+    ta.select();
+    document.execCommand('copy');
+    if (typeof showToast === 'function') showToast('✅ Copied! Now open an AI and press Ctrl+V');
+  });
+}
+
+// Close on overlay click
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('researchModal');
+  if (overlay) overlay.addEventListener('click', e => { if (e.target === overlay) closeResearchModal(); });
+});
+
 function renderCard(item) {
   const opts = ['A','B','C','D'];
   const optMap = {A:item.option_a, B:item.option_b, C:item.option_c, D:item.option_d};
@@ -120,6 +303,8 @@ function renderCard(item) {
     return `<div class="${cls}"><span class="wa-opt-key">${L}.</span>${escapeHtml(optMap[L])}</div>`;
   }).join('');
 
+  const researchHtml = buildResearchBar(item);
+
   return `
     <div class="wa-card ${isResolved?'resolved':''}">
       <div class="wa-meta">
@@ -130,6 +315,7 @@ function renderCard(item) {
       <div class="wa-question">${escapeHtml(item.question_text)}</div>
       <div class="wa-options">${optionsHtml}</div>
       ${item.explanation ? `<div class="wa-explanation">${escapeHtml(item.explanation)}</div>` : ''}
+      ${researchHtml}
     </div>`;
 }
 

@@ -4,258 +4,500 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ch 13 — Human System IV | General Science</title>
-<style>:root{--pri:#0d2346;--acc:#1565c0;--acc2:#0288d1;--bg:#e8f0fe;--bg2:#f0f7ff;--en-border:#1565c0;--te-border:#6a1b9a;--shock:#b71c1c;--exam:#e65100;--mem:#1b5e20;}
-@page{size:A4;margin:14mm 13mm;}
+<style>
+:root{--pri:#0d2346;--acc:#1565c0;--acc2:#0288d1;--bg:#e8f0fe;--bg2:#f0f7ff;--en-border:#1565c0;--te-border:#6a1b9a;--shock:#b71c1c;--exam:#e65100;--mem:#1b5e20;--hi:#4a148c;}
+@page{size:A4;margin:14mm 13mm 14mm 13mm;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.2pt;line-height:1.45;color:#1a1a2e;background:#fff;}
 .page{width:184mm;min-height:267mm;padding:6mm 0;position:relative;}
 .page-break{page-break-after:always;break-after:page;}
-.cover{background:linear-gradient(135deg,var(--pri),#1a237e 60%,#283593);color:#fff;border-radius:6px;padding:11mm 12mm 8mm;text-align:center;margin-bottom:4mm;}
-.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:7.5pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3mm;}
-.cover h1{font-size:17pt;font-weight:800;margin-bottom:2mm;}
+.cover{background:linear-gradient(135deg,var(--pri) 0%,#1a237e 60%,#283593 100%);color:#fff;border-radius:6px;padding:18mm 12mm 14mm;text-align:center;margin-bottom:8mm;}
+.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:7.5pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6mm;}
+.cover h1{font-size:19pt;font-weight:800;letter-spacing:-0.3px;margin-bottom:3mm;}
 .cover h1 span{color:#90caf9;}
-.cover h2{font-size:10pt;font-weight:400;color:#bbdefb;margin-bottom:2mm;}
-.cover-te{font-size:9pt;color:#90caf9;margin-bottom:2mm;}
-.cover-meta{display:flex;justify-content:center;gap:12px;font-size:7.6pt;color:#bbdefb;flex-wrap:wrap;margin-top:2mm;}
-.cover-meta span{background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 9px;}
-.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:4px 9px;font-size:7.3pt;color:#e3f2fd;margin-top:2mm;line-height:1.7;}
-.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:9.5pt;font-weight:700;margin:3mm 0 2mm;display:flex;justify-content:space-between;align-items:center;}
+.cover h2{font-size:11pt;font-weight:400;color:#bbdefb;margin-bottom:4mm;}
+.cover-te{font-size:10pt;color:#90caf9;margin-bottom:5mm;}
+.cover-meta{display:flex;justify-content:center;gap:16px;font-size:7.8pt;color:#bbdefb;flex-wrap:wrap;margin-top:4mm;}
+.cover-meta span{background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 10px;}
+.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:5px 10px;font-size:7.5pt;color:#e3f2fd;margin-top:5mm;line-height:1.8;}
+.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:9.5pt;font-weight:700;margin:5mm 0 3mm;letter-spacing:0.3px;display:flex;justify-content:space-between;align-items:center;}
 .sec-head .te{font-size:8pt;font-weight:400;color:#90caf9;}
-.bilingual{border:1px solid #b0bec5;border-radius:5px;margin-bottom:2mm;overflow:hidden;}
-.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:4px 8px;font-size:8.5pt;line-height:1.5;}
-.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:4px 8px;font-size:8.2pt;line-height:1.5;color:#4a148c;}
+.sub-head{color:var(--pri);font-weight:700;font-size:9pt;border-bottom:2px solid var(--acc);padding-bottom:2px;margin:4mm 0 2mm;display:flex;justify-content:space-between;}
+.sub-head .te{font-size:7.8pt;color:#555;font-weight:400;}
+.bilingual{border:1px solid #b0bec5;border-radius:5px;margin-bottom:4mm;overflow:hidden;}
+.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:5px 8px;font-size:8.5pt;line-height:1.5;}
+.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:5px 8px;font-size:8.3pt;line-height:1.5;color:#4a148c;}
 .lang-tag{display:inline-block;font-size:6.8pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-bottom:3px;}
 .bi-en .lang-tag{background:var(--en-border);color:#fff;}
 .bi-te .lang-tag{background:var(--te-border);color:#fff;}
-table{width:100%;border-collapse:collapse;font-size:8.3pt;margin-bottom:2mm;}
-th{background:var(--pri);color:#fff;padding:3px 7px;text-align:left;font-weight:600;font-size:8pt;}
+.shock-box{border:2px solid var(--shock);background:#fff3f3;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.shock-box .shock-title{color:var(--shock);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
+.highlight-box{border:2px solid var(--hi);background:#f3e5f5;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:8.3pt;}
+.exam-tag{background:#b71c1c;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px;}
+table{width:100%;border-collapse:collapse;font-size:8.3pt;margin-bottom:3mm;}
+th{background:var(--pri);color:#fff;padding:4px 7px;text-align:left;font-weight:600;font-size:8pt;}
 td{padding:3px 7px;border:1px solid #cfd8dc;vertical-align:top;}
 tr:nth-child(even) td{background:#f0f7ff;}
 .te-td{display:block;color:#6a1b9a;font-size:7.6pt;margin-top:1px;}
-.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:2mm;}
-.qa-row{background:#f0f7ff;border-left:3px solid var(--acc);padding:4px 8px;margin-bottom:2mm;border-radius:3px;font-size:8.2pt;page-break-inside:avoid;}
-.qa-num{background:var(--acc);color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:4px;}
-.qa-q{font-weight:600;color:var(--pri);}
-.qa-a{color:var(--shock);font-weight:700;}
-.qa-te{color:#4a148c;font-size:7.8pt;display:block;margin-top:2px;}
-.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:8.3pt;}
-.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
-.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:8.3pt;}
-.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:8.5pt;margin-bottom:3px;}</style>
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:3mm;}
+.pyq-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:3mm;}
+.pyq-item{border:1px solid #b0bec5;border-radius:4px;padding:5px 7px;font-size:8pt;background:#fff;}
+.pyq-q{color:#0d2346;font-weight:600;margin-bottom:3px;}
+.pyq-a{color:#1b5e20;font-size:7.8pt;}
+.pyq-num{background:var(--pri);color:#fff;font-size:6.8pt;padding:1px 5px;border-radius:3px;margin-right:4px;font-weight:700;}
+.te{display:block;color:#6a1b9a;font-size:7.4pt;margin-top:2px;}
+.no-break{break-inside:avoid;page-break-inside:avoid;}
+.recap-box{border:2px solid var(--pri);border-radius:5px;background:#e8f0fe;padding:6px 10px;margin-bottom:3mm;columns:2;column-gap:5mm;}
+.recap-item{font-size:8pt;margin-bottom:3px;break-inside:avoid;line-height:1.4;}
+.ri-num{background:var(--pri);color:#fff;font-size:6.5pt;padding:1px 5px;border-radius:50%;margin-right:4px;font-weight:700;}
+.pn{position:absolute;bottom:3mm;right:6mm;font-size:7pt;color:#90a4ae;font-weight:600;}
+</style>
 </head>
 <body>
 
+<!-- ==================== PAGE 1: COVER + HEART ==================== -->
 <div class="page page-break">
 <div class="cover">
   <div class="cover-tag">General Science · Model Set 13</div>
-  <h1>Human System IV <span>13</span></h1>
-  <h2>Model Set 13 — 50 MCQs Comprehensive Guide</h2>
-  <div class="cover-te">మానవ వ్యవస్థ IV · ద్విభాష అధ్యయన గమనికలు</div>
+  <h1>Human System <span>IV</span></h1>
+  <h2>Heart · Blood · Bones · Hormones · Digestion · Eye · Reproduction</h2>
+  <div class="cover-te">మానవ వ్యవస్థ — IV · ద్విభాష పాఠ్యాంశ గమనికలు</div>
   <div class="cover-meta">
-    <span>📄 Bilingual</span>
+    <span>📄 6 Pages</span>
     <span>❓ 50 MCQs</span>
-    <span>🎯 APPSC / UPSC</span>
+    <span>🩺 General Science</span>
+    <span>⭐ APPSC / TSPSC / UPSC / SSC</span>
   </div>
-  <div class="topics-bar">Blood Pressure · Bile · Veins · Cells · Glands · Insulin · Enzymes · Digestion · Heart Chambers · Ribs · Skull · Lymph · Bones · Endocrine · Brain · Funny Bone · Mala-D · Cornea · Hormones · Identical Twins · Plasma · Diploid · Cholesterol · Pregnancy<br>రక్తపోటు · పైత్యరసం · సిరలు · కణాలు · గ్రంథులు · ఇన్సులిన్ · ఎంజైమ్‌లు · జీర్ణం · గుండె గదులు · పక్కటెముకలు · పుర్రె · శోషరసం · ఎముకలు · వినాళ గ్రంథులు · మెదడు</div>
+  <div class="topics-bar">
+    <strong>Topics Covered:</strong>
+    Blood Pressure · Veins vs Arteries · Heart Chambers · SA Node Pacemaker · Cholesterol · RBC/WBC/Platelets · Plasma 90% · Spleen · Lymph · Bones (206 / Skull 22 / Ribs 24) · Femur · Funny Bone · Thyroid · Insulin · Pituitary · Pancreas · Pepsin · Bile · Liver · Kidney · Cornea · Vision Defects · Encephalitis · Thalidomide · Twins · Mala-D · Ultrasound · 46 Chromosomes
+  </div>
 </div>
-<div class="sec-head">🩸 Blood & Circulation <span class="te">రక్తం · ప్రసరణ</span></div><div class="qa-row">
-  <span class="qa-num">Q1</span><span class="qa-q">The blood pressure (systolic and diastolic) of a healthy man is</span><br>
-  <span class="qa-a">→ A. 120 mm and 80 mm</span>
-  <span class="qa-te">తెలుగు: ఆరోగ్యవంతమైన మనిషి యొక్క రక్తపోటు ఎంత</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q3</span><span class="qa-q">Veins differ from arteries in having</span><br>
-  <span class="qa-a">→ D. valves to control direction of flow</span>
-  <span class="qa-te">తెలుగు: ధమనుల నుండి సిరలు ఏ లక్షణాన్ని కలిగి ఉండటంలో భిన్నంగా ఉంటాయి</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q9</span><span class="qa-q">Impure blood from various parts of the body enters into the</span><br>
-  <span class="qa-a">→ B. right auricle</span>
-  <span class="qa-te">తెలుగు: శరీరంలోని వివిధ భాగాల నుండి అశుద్ధ రక్తం గుండెలోని ఏ గదిలోకి ప్రవేశిస్తుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q14</span><span class="qa-q">The blood pressure is the pressure of blood in</span><br>
-  <span class="qa-a">→ A. arteries</span>
-  <span class="qa-te">తెలుగు: రక్తపోటు అనేది దేనిలో ప్రవహించే రక్తం యొక్క పీడనం</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q17</span><span class="qa-q">Which of the following blood groups is a universal recipient</span><br>
-  <span class="qa-a">→ C. AB</span>
-  <span class="qa-te">తెలుగు: కింది వాటిలో ఏ రక్తపు గ్రూపు విశ్వ గ్రహీత</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q19</span><span class="qa-q">Which of the following helps us in protecting from infection</span><br>
-  <span class="qa-a">→ B. WBC</span>
-  <span class="qa-te">తెలుగు: ఇన్ఫెక్షన్ల నుండి మనలను రక్షించడంలో కింది వాటిలో ఏది సహాయపడుతుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q20</span><span class="qa-q">Oxygen is transported to every cell of the human body by</span><br>
-  <span class="qa-a">→ A. red blood cells</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలోని ప్రతి కణానికి ఆక్సిజన్ దేని ద్వారా రవాణా చేయబడుతుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q26</span><span class="qa-q">The main function of white blood cells is</span><br>
-  <span class="qa-a">→ C. To develop resistance towards disease</span>
-  <span class="qa-te">తెలుగు: తెల్ల రక్త కణాల ప్రధాన విధి ఏమిటి</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q30</span><span class="qa-q">The viscous nature of human blood is due to</span><br>
-  <span class="qa-a">→ A. Proteins in blood</span>
-  <span class="qa-te">తెలుగు: మానవ రక్తం యొక్క స్నిగ్ధతకు కారణం ఏమిటి</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q41</span><span class="qa-q">The blood cholesterol level in 100 ml of blood in a normal person varies between</span><br>
-  <span class="qa-a">→ C. 150 to 250 mg</span>
-  <span class="qa-te">తెలుగు: సాధారణ వ్యక్తి యొక్క 100 ml రక్తంలో కొలెస్ట్రాల్ స్థాయి దేని మధ్య మారుతూ ఉంటుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q42</span><span class="qa-q">Formation of WBC and destruction of RBC takes place in</span><br>
-  <span class="qa-a">→ B. Spleen</span>
-  <span class="qa-te">తెలుగు: WBC ఉత్పత్తి మరియు RBC విధ్వంసం ఎక్కడ జరుగుతుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q50</span><span class="qa-q">Percentage of water in plasma is</span><br>
-  <span class="qa-a">→ D. 90%</span>
-  <span class="qa-te">తెలుగు: రక్త ప్లాస్మాలో నీటి శాతం ఎంత</span>
-</div><div class="sec-head">🦴 Bones & Skeleton <span class="te">ఎముకలు · అస్థిపంజరం</span></div><div class="qa-row">
-  <span class="qa-num">Q10</span><span class="qa-q">The number of ribs in the human body is</span><br>
-  <span class="qa-a">→ D. 24</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలో పక్కటెముకల సంఖ్య ఎంత</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q12</span><span class="qa-q">The skull is constituted of bones in number</span><br>
-  <span class="qa-a">→ D. 5</span>
-  <span class="qa-te">తెలుగు: పుర్రె ఎన్ని ఎముకలతో నిర్మితమై ఉంటుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q15</span><span class="qa-q">The longest bone in the human body is</span><br>
-  <span class="qa-a">→ C. thigh bone</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలో అతి పొడవైన ఎముక ఏది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q16</span><span class="qa-q">The total number of bones in the human skull are</span><br>
-  <span class="qa-a">→ C. 22</span>
-  <span class="qa-te">తెలుగు: మానవ పుర్రెలో ఉండే మొత్తం ఎముకల సంఖ్య ఎంత</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q31</span><span class="qa-q">How many bones are there in the human body</span><br>
-  <span class="qa-a">→ C. 206</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలో ఎన్ని ఎముకలు ఉంటాయి</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q40</span><span class="qa-q">What is Funny Bone</span><br>
-  <span class="qa-a">→ B. A nerve</span>
-  <span class="qa-te">తెలుగు: ఫన్నీ బోన్ అంటే ఏమిటి</span>
-</div><div class="sec-head">🧬 Glands & Hormones <span class="te">గ్రంథులు · హార్మోన్లు</span></div><div class="qa-row">
-  <span class="qa-num">Q5</span><span class="qa-q">The largest endocrine gland of the human body is</span><br>
-  <span class="qa-a">→ D. Thyroid</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలో అతిపెద్ద వినాళ గ్రంథి ఏది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q6</span><span class="qa-q">What is the main function of insulin in the human body</span><br>
-  <span class="qa-a">→ C. To control the level of sugar in the body</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలో ఇన్సులిన్ యొక్క ప్రధాన విధి ఏమిటి</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q18</span><span class="qa-q">Which of the following glands controls the development of sex organs in humans</span><br>
-  <span class="qa-a">→ D. Pituitary</span>
-  <span class="qa-te">తెలుగు: కింది ఏ గ్రంథి మానవులలో లైంగిక అవయవాల అభివృద్ధిని నియంత్రిస్తుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q22</span><span class="qa-q">Which of the following is a mixed gland (i.e. secretes both enzymes and hormones)</span><br>
-  <span class="qa-a">→ D. Pancreas</span>
-  <span class="qa-te">తెలుగు: కింది వాటిలో ఏది మిశ్రమ గ్రంథి</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q28</span><span class="qa-q">Pituitary gland is present</span><br>
-  <span class="qa-a">→ A. Below the brain</span>
-  <span class="qa-te">తెలుగు: పిట్యూటరీ గ్రంథి ఎక్కడ ఉంటుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q36</span><span class="qa-q">The first human hormone synthesized with the help of biotechnology was</span><br>
-  <span class="qa-a">→ A. Prostaglandin</span>
-  <span class="qa-te">తెలుగు: బయోటెక్నాలజీ సహాయంతో సంశ్లేషణ చేయబడిన మొదటి మానవ హార్మోన్ ఏది</span>
-</div><div class="sec-head">🍎 Digestion & Enzymes <span class="te">జీర్ణక్రియ · ఎంజైమ్‌లు</span></div><div class="qa-row">
-  <span class="qa-num">Q2</span><span class="qa-q">Bile juice is secreted by</span><br>
-  <span class="qa-a">→ B. Liver</span>
-  <span class="qa-te">తెలుగు: బైల్ జ్యూస్ దేని ద్వారా స్రవించబడుతుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q7</span><span class="qa-q">An enzyme that works in an acidic medium is</span><br>
-  <span class="qa-a">→ A. pepsin</span>
-  <span class="qa-te">తెలుగు: ఆమ్ల యానకంలో పనిచేసే ఎంజైమ్ ఏది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q8</span><span class="qa-q">Food is mainly digested in</span><br>
-  <span class="qa-a">→ C. small intestine</span>
-  <span class="qa-te">తెలుగు: ఆహారం ప్రధానంగా ఎక్కడ జీర్ణమవుతుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q11</span><span class="qa-q">Which enzyme converts milk into casein</span><br>
-  <span class="qa-a">→ D. Renin</span>
-  <span class="qa-te">తెలుగు: పాలను కేసిన్‌గా మార్చే ఎంజైమ్ ఏది</span>
-</div><div class="sec-head">💗 Heart & Pacemaker <span class="te">గుండె · పేస్‌మేకర్</span></div><div class="qa-row">
-  <span class="qa-num">Q21</span><span class="qa-q">Within the cardiac conduction system, which structure is the primary pacemaker responsible for initiating each heartbeat</span><br>
-  <span class="qa-a">→ B. Sinoatrial SA node</span>
-  <span class="qa-te">తెలుగు: గుండె ప్రసరణ వ్యవస్థలో ప్రతి హృదయ స్పందనను ప్రారంభించే ప్రాథమిక పేస్‌మేకర్ ఏది</span>
-</div><div class="sec-head">👁️ Senses & Brain <span class="te">ఇంద్రియాలు · మెదడు</span></div><div class="qa-row">
-  <span class="qa-num">Q25</span><span class="qa-q">If a person can see an object clearly when it is placed at about 25 cm away from him, he is suffering from</span><br>
-  <span class="qa-a">→ D. None of these</span>
-  <span class="qa-te">తెలుగు: ఒక వ్యక్తి తన నుండి సుమారు 25 సెం.మీ దూరంలో ఉంచిన వస్తువును స్పష్టంగా చూడగలిగితే, అతను ఏ వ్యాధితో బాధపడుతున్నాడు</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q39</span><span class="qa-q">Cornea is a part of which of the following of the human body</span><br>
-  <span class="qa-a">→ A. Eye</span>
-  <span class="qa-te">తెలుగు: కార్నియా మానవ శరీరంలోని కింది ఏ భాగంలో ఉంటుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q48</span><span class="qa-q">A man cannot see objects distinctly at a distance less than 1 meter. He is suffering from</span><br>
-  <span class="qa-a">→ C. long-sightedness</span>
-  <span class="qa-te">తెలుగు: ఒక వ్యక్తి 1 మీటరు కంటే తక్కువ దూరంలో ఉన్న వస్తువులను స్పష్టంగా చూడలేడు. అతను ఏ వ్యాధితో బాధపడుతున్నాడు</span>
-</div><div class="sec-head">🧫 Cells, Genetics & Reproduction <span class="te">కణాలు · జన్యుశాస్త్రం · పునరుత్పత్తి</span></div><div class="qa-row">
-  <span class="qa-num">Q4</span><span class="qa-q">The smallest cells in the human body are</span><br>
-  <span class="qa-a">→ C. blood cells</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలో అతి చిన్న కణాలు ఏవి</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q33</span><span class="qa-q">In Homo sapiens, fertilization occurs in the</span><br>
-  <span class="qa-a">→ D. oviduct</span>
-  <span class="qa-te">తెలుగు: హోమో సేపియన్స్ లో ఫలదీకరణం ఎక్కడ జరుగుతుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q35</span><span class="qa-q">The prenatal technique used to see an image of the growing fetus in the womb is called</span><br>
-  <span class="qa-a">→ C. Ultrasound</span>
-  <span class="qa-te">తెలుగు: గర్భంలో పెరుగుతున్న పిండం యొక్క చిత్రాన్ని చూడటానికి ఉపయోగించే ప్రినేటల్ టెక్నిక్‌ను ఏమంటారు</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q43</span><span class="qa-q">Which of the following when taken by pregnant women is found to be the cause of deformed children</span><br>
-  <span class="qa-a">→ C. Thalidomide</span>
-  <span class="qa-te">తెలుగు: గర్భిణీ స్త్రీలు తీసుకోవడం వల్ల పిల్లలలో వైకల్యాలు రావడానికి కారణమైన మందు ఏది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q44</span><span class="qa-q">The diploid number of chromosomes in the human body is</span><br>
-  <span class="qa-a">→ C. 46</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలో క్రోమోజోమ్‌ల ద్వయస్థితిక సంఖ్య ఎంత</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q45</span><span class="qa-q">The largest cell in the human body is</span><br>
-  <span class="qa-a">→ A. Nerve cell</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలో అతిపెద్ద కణం ఏది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q47</span><span class="qa-q">Mala-D, a female contraceptive, prevents</span><br>
-  <span class="qa-a">→ A. ovulation</span>
-  <span class="qa-te">తెలుగు: మాలా-D దేనిని నిరోధిస్తుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q49</span><span class="qa-q">Identical twins are born when</span><br>
-  <span class="qa-a">→ D. one sperm fertilizes the ovum and the zygote splits into two parts each developing independently</span>
-  <span class="qa-te">తెలుగు: ఐడెంటికల్ ట్విన్స్ ఎప్పుడు పుడతారు</span>
-</div><div class="sec-head">🔬 Other Body Systems <span class="te">ఇతర వ్యవస్థలు</span></div><div class="qa-row">
-  <span class="qa-num">Q13</span><span class="qa-q">The largest lymphatic organ of the body is</span><br>
-  <span class="qa-a">→ B. spleen</span>
-  <span class="qa-te">తెలుగు: శరీరంలో అతిపెద్ద శోషరస అవయవం ఏది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q23</span><span class="qa-q">Match disease to organ. Tuberculosis-Lungs, Hepatitis-Liver, Gonorrhea-Reproductive tract, Mumps-Salivary glands. Pick the correct mapping.</span><br>
-  <span class="qa-a">→ C. i-c, ii-d, iii-b, iv-a</span>
-  <span class="qa-te">తెలుగు: వ్యాధులను అవయవాలతో జతపరచండి.</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q24</span><span class="qa-q">Name the virus spread by mosquitoes that causes inflammation in the brain</span><br>
-  <span class="qa-a">→ B. Japanese encephalitis</span>
-  <span class="qa-te">తెలుగు: మెదడులో వాపు కలిగించే మరియు దోమల ద్వారా వ్యాపించే వైరస్ పేరు ఏమిటి</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q27</span><span class="qa-q">Which of the following is not a function of Kidneys</span><br>
-  <span class="qa-a">→ B. Secretion of antibiotics</span>
-  <span class="qa-te">తెలుగు: కింది వాటిలో మూత్రపిండాల విధి కానిది ఏది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q29</span><span class="qa-q">Element present in the largest amount in the human body is</span><br>
-  <span class="qa-a">→ C. Oxygen</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలో అత్యధిక పరిమాణంలో ఉండే మూలకం ఏది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q32</span><span class="qa-q">Which of the following organs is used in the purification of blood in the human body</span><br>
-  <span class="qa-a">→ B. Kidney</span>
-  <span class="qa-te">తెలుగు: మానవ శరీరంలో రక్తాన్ని శుద్ధి చేయడానికి ఏ అవయవం ఉపయోగించబడుతుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q34</span><span class="qa-q">The chief nitrogenous waste in humans is</span><br>
-  <span class="qa-a">→ C. urea</span>
-  <span class="qa-te">తెలుగు: మానవులలో ప్రధాన నత్రజని సంబంధిత వ్యర్థం ఏది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q37</span><span class="qa-q">Sweat glands occur in the greatest number in the skin of the</span><br>
-  <span class="qa-a">→ B. armpits</span>
-  <span class="qa-te">తెలుగు: స్వేద గ్రంథులు ఏ భాగపు చర్మంలో అత్యధిక సంఖ్యలో ఉంటాయి</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q38</span><span class="qa-q">Which of the following organs converts glycogen into glucose and purifies the blood</span><br>
-  <span class="qa-a">→ A. Liver</span>
-  <span class="qa-te">తెలుగు: కింది ఏ అవయవం గ్లైకోజెన్‌ను గ్లూకోజ్‌గా మారుస్తుంది మరియు రక్తాన్ని శుద్ధి చేస్తుంది</span>
-</div><div class="qa-row">
-  <span class="qa-num">Q46</span><span class="qa-q">In our body, the tissues are bathed in</span><br>
-  <span class="qa-a">→ C. lymph</span>
-  <span class="qa-te">తెలుగు: మన శరీరంలో కణజాలాలు దేనిలో మునిగి ఉంటాయి</span>
-</div></div></body></html>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English — Chapter Overview</span>
+  This chapter consolidates the most-tested human-physiology facts that recur across APPSC, TSPSC, SSC and UPSC papers. The core themes are: <strong>(1) the cardiovascular system</strong> — how blood is pumped, regulated, and what its components do; <strong>(2) the skeletal system</strong> — counts (206 bones, 22 skull, 24 ribs) and special bones; <strong>(3) the endocrine system</strong> — which gland is "largest", which is "master", which is "mixed"; <strong>(4) digestion and excretion</strong> — pepsin, bile, urea, the role of liver and kidney; <strong>(5) sense organs and disease</strong> — cornea, vision defects, Japanese encephalitis, thalidomide; and <strong>(6) reproduction &amp; genetics</strong> — fertilisation site, identical twins, Mala-D and 46 chromosomes. Each topic is paired with the exact question number it answers in Set 13.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు — అధ్యాయం అవలోకనం</span>
+  ఈ అధ్యాయం పరీక్షలలో పదేపదే అడిగే మానవ శరీరధర్మ శాస్త్రాన్ని కవర్ చేస్తుంది. ముఖ్య విభాగాలు: <strong>(1) హృదయ-రక్త వ్యవస్థ</strong> — రక్తపోటు, గుండె, రక్త కణాలు; <strong>(2) అస్థిపంజరం</strong> — 206 ఎముకలు, 22 పుర్రె, 24 పక్కటెముకలు; <strong>(3) వినాళ గ్రంథులు</strong> — థైరాయిడ్ (అతిపెద్ద), పిట్యూటరీ (మాస్టర్), క్లోమం (మిశ్రమ); <strong>(4) జీర్ణ + విసర్జన</strong> — పెప్సిన్, పైత్యరసం, యూరియా, కాలేయం, మూత్రపిండం; <strong>(5) జ్ఞాన అవయవాలు + వ్యాధులు</strong> — కార్నియా, దృష్టి దోషాలు, JE, థాలిడోమైడ్; <strong>(6) పునరుత్పత్తి + జన్యువులు</strong>.
+  </div>
+</div>
+
+<div class="sec-head">Heart, Circulation &amp; Blood Pressure <span class="te">గుండె · ప్రసరణ · రక్తపోటు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English — Cardiovascular Basics</span>
+  The heart is a four-chambered muscular pump (size ≈ closed fist, weight ≈ 250–350 g). It pumps ~5 L of blood per minute through two parallel circuits — the <strong>pulmonary circuit</strong> (right side → lungs → left side) and the <strong>systemic circuit</strong> (left side → body → right side). The right side handles deoxygenated ("impure") blood; the left side handles oxygenated ("pure") blood. The two never mix in mammals or birds. Q1 gives normal BP as <strong>120/80 mmHg</strong>; Q14 fixes the location of measurement as <strong>arteries</strong> (never veins). Q9 traces impure blood entry: returns to the <strong>right auricle</strong> via vena cavae. The <strong>SA node</strong> (Q21) is the natural pacemaker firing 70-80/min at rest.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు — హృదయ ప్రాథమికాలు</span>
+  గుండె = 4 గదుల కండరాల పంపు; పిడికిలి అంత పరిమాణం, 250-350 గ్రా. ప్రతి నిమిషం 5 L రక్తాన్ని పంప్ చేస్తుంది. రెండు వలయాలు: <strong>ఊపిరితిత్తుల వలయం</strong> + <strong>శరీర వలయం</strong>. కుడి వైపు = అశుద్ధ రక్తం; ఎడమ = శుద్ధ రక్తం. <strong>సాధారణ BP = 120/80 mmHg</strong> (Q1), ధమనులలో కొలుస్తారు (Q14). అశుద్ధ రక్తం → కుడి కర్ణిక (Q9). SA నోడ్ = సహజ పేస్‌మేకర్ (Q21).
+  </div>
+</div>
+
+<table>
+<tr><th style="width:18%">Topic</th><th>Detail / Mechanism</th><th style="width:30%">Exam Hook</th></tr>
+<tr><td><strong>Blood Pressure</strong> (Q1, Q14)<span class="te-td">రక్తపోటు</span></td>
+<td>Pressure on artery walls. Systolic 120 = ventricular contraction; Diastolic 80 = relaxation. Sphygmomanometer in mmHg.<span class="te-td">ధమని గోడలపై పీడనం; సిస్టోలిక్ = సంకోచం</span></td>
+<td>Q1: 120/80. Q14: in arteries. Hypertension ≥140/90.<span class="te-td">హై-BP = 140/90 పైన</span></td></tr>
+<tr><td><strong>Veins vs Arteries</strong> (Q3)<span class="te-td">సిరలు × ధమనులు</span></td>
+<td>Arteries: thick walls, narrow lumen, NO valves. Veins: thinner walls, wider lumen, HAVE valves preventing back-flow.<span class="te-td">ధమనులు: కవాటాలు లేవు. సిరలు: కవాటాలు ఉంటాయి</span></td>
+<td>Q3: <strong>valves to control direction</strong>. Failure = varicose veins.<span class="te-td">సిరల ప్రత్యేకత = కవాటాలు</span></td></tr>
+<tr><td><strong>Heart Chambers</strong> (Q9)<span class="te-td">గుండె గదులు</span></td>
+<td>4 chambers: 2 atria + 2 ventricles. Right = impure; Left = pure. Atria receive; ventricles pump.<span class="te-td">కుడి అశుద్ధం, ఎడమ శుద్ధం</span></td>
+<td>Q9: impure blood → <strong>right auricle</strong>.<span class="te-td">కుడి కర్ణిక</span></td></tr>
+<tr><td><strong>SA Node</strong> (Q21)<span class="te-td">SA నోడ్</span></td>
+<td>Pacemaker tissue in upper-right atrium; fires 70-80/min. Path: SA → AV → Bundle of His → Purkinje → ventricles.<span class="te-td">SA → AV → His → పుర్కింజే</span></td>
+<td>Q21: <strong>SA node</strong>. Damage → arrhythmia.<span class="te-td">కృత్రిమ పేస్‌మేకర్</span></td></tr>
+<tr><td><strong>Cholesterol</strong> (Q41)<span class="te-td">కొలెస్ట్రాల్</span></td>
+<td>Steroid lipid; precursor of bile acids, vitamin D, sex hormones. LDL = "bad"; HDL = "good".<span class="te-td">LDL చెడు; HDL మంచి</span></td>
+<td>Q41: <strong>150–250 mg/100 mL</strong>. &gt;240 = high risk.<span class="te-td">150-250 mg/100mL</span></td></tr>
+</table>
+
+<div class="memory-box no-break">
+<div class="mem-title">🧠 Memory — Cardiac Path "SA → AV → His → Purkinje"</div>
+SA fires (~75 bpm), AV delays (atria empty before ventricles contract), His + Purkinje rapidly spread the signal across both ventricles for synchronous contraction. ECG: <strong>P</strong> = atrial depolarisation · <strong>QRS</strong> = ventricular depolarisation · <strong>T</strong> = ventricular repolarisation.
+<span class="te-td">SA → AV → His → పుర్కింజే. ECG లో P = కర్ణిక; QRS = జఠరిక; T = రీపోలరైజేషన్</span>
+</div>
+
+<div class="exam-alert no-break">
+<div class="ea-title">⚠ Exam Trap — Veins, NOT arteries, have valves</div>
+Many candidates flip this. Arteries have THICK walls and HIGH pressure (no valves needed except aortic/pulmonary semilunar). Veins return blood at LOW pressure, often against gravity (foot to heart) — so they need <strong>valves</strong> to prevent back-flow. Q3 = "valves to control direction of flow."
+<span class="te-td">ధమనులు = మందమైన గోడలు, అధిక పీడనం. సిరలు = తక్కువ పీడనం, కవాటాలు ఉంటాయి (Q3)</span>
+</div>
+<div class="pn">Page 1</div>
+</div>
+
+<!-- ==================== PAGE 2: BLOOD + LYMPH ==================== -->
+<div class="page page-break">
+<div class="sec-head">Blood Composition — Cells, Plasma &amp; Groups <span class="te">రక్త కూర్పు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English — Blood is a Liquid Tissue</span>
+  Blood is a connective tissue (cells suspended in plasma). Adult has ~5 L (8% body weight). Four jobs: <strong>(1) transport</strong> O₂/CO₂, nutrients, hormones, waste; <strong>(2) defence</strong> (WBCs &amp; antibodies); <strong>(3) clotting</strong> (platelets + fibrin); <strong>(4) thermoregulation</strong> &amp; pH balance. Liquid part = plasma (~55%); cellular part = formed elements (~45%) i.e. RBCs, WBCs, platelets. Plasma is <strong>~90% water</strong> (Q50); the rest is plasma proteins, ions, gases, hormones.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు — రక్తం = ద్రవ కణజాలం</span>
+  ప్రౌఢునిలో ~5 L (శరీర బరువులో 8%). 4 ప్రధాన విధులు: రవాణా, రక్షణ, గడ్డకట్టడం, ఉష్ణోగ్రత నియంత్రణ. ప్లాస్మా = 55% (90% నీరు — Q50); కణాలు = 45% (RBC, WBC, ప్లేట్‌లెట్స్).
+  </div>
+</div>
+
+<table>
+<tr><th>Component<span class="te-td">భాగం</span></th><th>Function<span class="te-td">విధి</span></th><th>Q-Reference &amp; Key Fact<span class="te-td">కీలక వాస్తవం</span></th></tr>
+<tr><td><strong>RBC</strong><span class="te-td">ఎర్ర రక్త కణాలు</span></td>
+<td>Biconcave, anucleate; haemoglobin → O₂ transport. Made in red marrow; live ~120 d.<span class="te-td">హీమోగ్లోబిన్; ఆక్సిజన్ రవాణా</span></td>
+<td>Q4: <strong>Smallest cells</strong> (~7 µm). Q20: O₂ transport. Q42: destroyed in spleen.<span class="te-td">అతిచిన్న కణాలు</span></td></tr>
+<tr><td><strong>WBC</strong><span class="te-td">తెల్ల రక్త కణాలు</span></td>
+<td>Nucleated immune cells. Types: neutrophil (60%), lymphocyte (30%), monocyte, eosinophil, basophil.<span class="te-td">కేంద్రకం ఉంటుంది</span></td>
+<td>Q19: <strong>protect from infection</strong>. Q26: <strong>disease resistance</strong>. Q42: formed in spleen.<span class="te-td">ఇన్ఫెక్షన్ నుండి రక్షణ</span></td></tr>
+<tr><td><strong>Platelets</strong><span class="te-td">ప్లేట్‌లెట్స్</span></td>
+<td>Cell fragments from megakaryocytes. Trigger clotting cascade → fibrin mesh.<span class="te-td">గడ్డకట్టడం</span></td>
+<td>150K-400K/µL. Low = thrombocytopenia (dengue).<span class="te-td">డెంగ్యూలో తగ్గుతాయి</span></td></tr>
+<tr><td><strong>Plasma</strong><span class="te-td">ప్లాస్మా</span></td>
+<td>Liquid matrix: proteins (albumin, globulin, fibrinogen), ions, glucose, hormones, gases.<span class="te-td">ద్రవ మాధ్యమం</span></td>
+<td>Q30: <strong>viscosity = proteins</strong>. Q50: <strong>~90% water</strong>.<span class="te-td">90% నీరు</span></td></tr>
+<tr><td><strong>Nerve Cell</strong><span class="te-td">నాడీ కణం</span></td>
+<td>Excitable cell with dendrites + axon. Sciatic axon &gt;1 m.<span class="te-td">సియాటిక్ నాడి 1 మీ. పైన</span></td>
+<td>Q45: <strong>Largest cell</strong> in body.<span class="te-td">అతిపెద్ద కణం</span></td></tr>
+</table>
+
+<div class="cols-2">
+<div>
+<div class="sub-head">ABO Blood Groups <span class="te">ABO రక్త గ్రూపులు</span></div>
+<table>
+<tr><th>Group</th><th>Antigen</th><th>Antibodies</th></tr>
+<tr><td><strong>A</strong></td><td>A</td><td>anti-B</td></tr>
+<tr><td><strong>B</strong></td><td>B</td><td>anti-A</td></tr>
+<tr><td><strong>AB</strong> <span class="exam-tag">UR</span><span class="te-td">విశ్వ గ్రహీత</span></td><td>A &amp; B</td><td>NONE — receives from any donor (Q17)<span class="te-td">యాంటీబాడీ లేదు</span></td></tr>
+<tr><td><strong>O</strong> <span class="exam-tag">UD</span><span class="te-td">విశ్వ దాత</span></td><td>NONE</td><td>anti-A + anti-B<span class="te-td">అన్ని గ్రూపులకు ఇవ్వగలడు</span></td></tr>
+</table>
+<div class="memory-box" style="margin-top:2mm;">
+<div class="mem-title">🧠 Memory — UR &amp; UD</div>
+<strong>AB</strong> = "<strong>A</strong>ll-<strong>B</strong>lood-receivable" → Universal Recipient (Q17).<br>
+<strong>O</strong> = "Only antibodies, no antigens" → Universal Donor.<br>
+Rh factor must also match.
+<span class="te-td">AB = విశ్వ గ్రహీత; O = విశ్వ దాత</span>
+</div>
+</div>
+<div>
+<div class="sub-head">Spleen &amp; Lymph <span class="te">ప్లీహం · శోషరసం</span></div>
+<table>
+<tr><th>Organ/Fluid</th><th>Role</th></tr>
+<tr><td><strong>Spleen</strong> (Q13, Q42)<span class="te-td">ప్లీహం</span></td><td><strong>Largest lymphatic organ</strong> (Q13). Red pulp destroys old RBCs (Q42); white pulp makes WBCs &amp; antibodies (Q42). Recycles iron.<span class="te-td">పాత RBCలు నాశనం, WBCలు తయారీ</span></td></tr>
+<tr><td><strong>Lymph</strong> (Q46)<span class="te-td">శోషరసం</span></td><td>Clear fluid that <strong>bathes body tissues</strong> (Q46). From leaked plasma → lymph nodes → thoracic duct → returns to subclavian vein.<span class="te-td">కణజాలం చుట్టూ ద్రవం</span></td></tr>
+<tr><td><strong>Lymph Nodes</strong><span class="te-td">లింఫ్ నోడ్</span></td><td>~600 filters in neck/armpit/groin. Loaded with B+T lymphocytes; swell during infection.<span class="te-td">600 వడబోతలు</span></td></tr>
+<tr><td><strong>Thymus</strong><span class="te-td">థైమస్</span></td><td>T-cell maturation site (above heart). Active in childhood; shrinks in adult.<span class="te-td">T-కణ పరిపక్వత</span></td></tr>
+</table>
+</div>
+</div>
+
+<div class="shock-box">
+<div class="shock-title">⚡ EXAM TRAP — Smallest Cell vs Largest Cell vs Smallest Bone</div>
+<strong>Smallest CELL</strong> = RBC ~7 µm (Q4). <strong>Largest CELL</strong> = nerve cell, &gt;1 m (Q45). Don't confuse with bones — <strong>smallest BONE</strong> = stapes (~3 mm, ear); <strong>longest BONE</strong> = femur (~50 cm, Q15). Read the question carefully.
+<span class="te-td">అతిచిన్న కణం = RBC; అతిపెద్ద కణం = నాడీ కణం. అతిచిన్న ఎముక = స్టేపిస్; పొడవైన ఎముక = ఫీమర్</span>
+</div>
+
+<div class="exam-alert">
+<div class="ea-title">⚠ Plasma (Q30, Q50)</div>
+Plasma is the straw liquid (~55% blood by volume). By weight: <strong>90% water</strong> (Q50) + 7% plasma proteins + 1% inorganic salts + 1% glucose, lipids, hormones. Proteins (albumin 60% + globulin 35% + fibrinogen 4%) are responsible for blood's <strong>viscosity</strong> (Q30). Albumin maintains osmotic pressure; globulins include antibodies; fibrinogen makes blood clottable.
+<span class="te-td">ప్లాస్మా = 90% నీరు + 7% ప్రోటీన్లు. స్నిగ్ధత ప్రోటీన్ల వల్ల (Q30)</span>
+</div>
+<div class="pn">Page 2</div>
+</div>
+
+<!-- ==================== PAGE 3: BONES + ENDOCRINE ==================== -->
+<div class="page page-break">
+<div class="sec-head">Skeletal System — Bones, Skull &amp; Joints <span class="te">అస్థిపంజర వ్యవస్థ</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English — The Human Skeleton</span>
+  An adult has <strong>206 bones</strong> (Q31); newborns have ~270 (many fuse with age — e.g., 5 sacral vertebrae fuse into one sacrum). The skeleton is divided into <strong>axial</strong> (skull + vertebral column + thoracic cage = 80 bones) and <strong>appendicular</strong> (limbs + girdles = 126). Bones are <strong>living tissue</strong> — they store calcium/phosphate (99% of body Ca), house red marrow (RBC factory) and yellow marrow (fat). Key counts: <strong>22 skull bones</strong> (Q16), <strong>24 ribs</strong> = 12 pairs (Q10), <strong>femur</strong> = longest (Q15), <strong>206 total</strong> (Q31). The "funny bone" (Q40) is NOT a bone — it is the <strong>ulnar nerve</strong> exposed at the elbow.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు — మానవ అస్థిపంజరం</span>
+  ప్రౌఢ మానవునిలో <strong>206 ఎముకలు</strong> (Q31); శిశువులలో 270. అక్షీయ (పుర్రె + వెన్నెముక + పక్కటెముకలు) = 80; అపెండిక్యులర్ = 126. ఎముకలు = సజీవ కణజాలం. ముఖ్య సంఖ్యలు: <strong>పుర్రె 22 (Q16), పక్కటెముకలు 24 (Q10), ఫీమర్ = అతిపొడవు (Q15)</strong>. "ఫన్నీ బోన్" (Q40) = ఎముక కాదు, ఉల్నార్ నరం.
+  </div>
+</div>
+
+<table>
+<tr><th style="width:18%">Bone / Region</th><th>Count / Location</th><th>Key Exam Fact</th></tr>
+<tr><td><strong>Total bones</strong> (Q31)<span class="te-td">మొత్తం</span></td><td><strong>206</strong> (adult); 270 (newborn)<span class="te-td">206</span></td><td>Axial 80 + Appendicular 126<span class="te-td">అక్షీయ + అపెండిక్యులర్</span></td></tr>
+<tr><td><strong>Skull</strong> (Q16)<span class="te-td">పుర్రె</span></td><td><strong>22</strong> = 8 cranial + 14 facial<span class="te-td">8 + 14</span></td><td>Cranial: frontal, 2 parietal, 2 temporal, occipital, sphenoid, ethmoid. Mandible only movable.<span class="te-td">మండిబుల్ ఒక్కటే కదిలే ఎముక</span></td></tr>
+<tr><td><strong>Ribs</strong> (Q10)<span class="te-td">పక్కటెముకలు</span></td><td><strong>24</strong> = 12 pairs<span class="te-td">12 జతలు</span></td><td>7 true + 3 false + 2 floating<span class="te-td">7 సత్య + 3 అసత్య + 2 తేలే</span></td></tr>
+<tr><td><strong>Vertebrae</strong><span class="te-td">వెన్నుపూసలు</span></td><td>26 (adult) ; 33 (child)<span class="te-td">26</span></td><td>7 cervical + 12 thoracic + 5 lumbar + sacrum + coccyx<span class="te-td">C7 + T12 + L5</span></td></tr>
+<tr><td><strong>Femur</strong> (Q15)<span class="te-td">తొడ ఎముక</span></td><td>Thigh<span class="te-td">తొడ</span></td><td><strong>Longest + strongest</strong> bone (~26% height)<span class="te-td">అత్యంత పొడవు + బలమైన</span></td></tr>
+<tr><td><strong>Stapes</strong><span class="te-td">స్టేపిస్</span></td><td>Middle ear<span class="te-td">మధ్య చెవి</span></td><td>Smallest bone (~3 mm); malleus → incus → stapes<span class="te-td">అతిచిన్న ఎముక</span></td></tr>
+<tr><td><strong>Funny Bone</strong> (Q40)<span class="te-td">"ఫన్నీ బోన్"</span></td><td>Elbow<span class="te-td">మోచేయి</span></td><td><strong>NOT A BONE</strong> — ulnar nerve at the medial epicondyle.<span class="te-td">ఎముక కాదు; ఉల్నార్ నరం</span></td></tr>
+<tr><td><strong>Chromosomes</strong> (Q44)<span class="te-td">క్రోమోజోములు</span></td><td>46 in somatic; 23 in gametes<span class="te-td">46</span></td><td>Diploid; 22 autosomes + 1 sex pair (XX/XY)<span class="te-td">23 జతలు</span></td></tr>
+</table>
+
+<div class="exam-alert no-break">
+<div class="ea-title">⚠ Exam Trap — Skull Bones: Q12 vs Q16 Conflict</div>
+Set 13 has TWO skull-bone questions. <strong>Q12</strong>'s key gives <strong>"5"</strong> — a printing error. <strong>Q16</strong> in the same paper correctly says <strong>"22"</strong>. Both cannot be right; the scientifically correct count is <strong>22 bones</strong> (8 cranial + 14 facial). Always write <strong>22</strong>.
+<span class="te-td">పుర్రె = 22 (Q16). Q12 లో "5" అచ్చు తప్పు. పరీక్షలో 22 వ్రాయండి</span>
+</div>
+
+<div class="memory-box no-break">
+<div class="mem-title">🧠 Memory — Bone Counts "22-24-26-206-46"</div>
+Skull = <strong>22</strong> · Ribs = <strong>24</strong> · Vertebrae = <strong>26</strong> · Total bones = <strong>206</strong> · Chromosomes = <strong>46</strong>. Each pair adds 2 — easy to remember.
+<span class="te-td">పుర్రె 22, పక్కటెముకలు 24, వెన్నుపూసలు 26, మొత్తం 206, క్రోమోజోములు 46</span>
+</div>
+
+<div class="sec-head">Endocrine Glands &amp; Hormones <span class="te">వినాళ గ్రంథులు · హార్మోన్లు</span></div>
+
+<table>
+<tr><th>Gland<span class="te-td">గ్రంథి</span></th><th>Location &amp; Hormone<span class="te-td">స్థానం</span></th><th>Function / Q-Reference</th></tr>
+<tr><td><strong>Pituitary</strong> (Q18, Q28)<span class="te-td">పిట్యూటరీ</span></td>
+<td>Pea-sized, <strong>below the brain</strong> (Q28); sella turcica<span class="te-td">మెదడు కింద</span></td>
+<td><strong>Master gland</strong>. <strong>Controls sex-organ development</strong> (Q18) via FSH/LH. Also: GH, TSH, ACTH, prolactin, ADH, oxytocin.<span class="te-td">మాస్టర్ గ్రంథి</span></td></tr>
+<tr><td><strong>Thyroid</strong> (Q5)<span class="te-td">థైరాయిడ్</span></td>
+<td>Front of neck below larynx; butterfly-shaped<span class="te-td">మెడ ముందు</span></td>
+<td><strong>Largest endocrine gland</strong> (Q5). Iodine-containing T₃, T₄ → BMR + heat + brain dev. Iodine deficit = goitre.<span class="te-td">అతిపెద్ద వినాళ గ్రంథి</span></td></tr>
+<tr><td><strong>Pancreas</strong> (Q6, Q22)<span class="te-td">క్లోమం</span></td>
+<td>Behind stomach; <strong>mixed gland</strong> (Q22)<span class="te-td">మిశ్రమ గ్రంథి</span></td>
+<td>Exocrine: trypsin, lipase, amylase. Endocrine (Islets of Langerhans): <strong>Insulin (β) → ↓ blood sugar (Q6)</strong>; Glucagon (α) → ↑ sugar.<span class="te-td">ఇన్సులిన్ = చక్కెర నియంత్రణ</span></td></tr>
+<tr><td><strong>Adrenal</strong><span class="te-td">అడ్రీనల్</span></td><td>On top of kidneys<span class="te-td">మూత్రపిండాల పైన</span></td><td>Cortex: cortisol, aldosterone. Medulla: adrenaline (fight-or-flight).<span class="te-td">అడ్రినలిన్</span></td></tr>
+<tr><td><strong>Parathyroid</strong><span class="te-td">పారాథైరాయిడ్</span></td><td>4 small glands behind thyroid<span class="te-td">4 చిన్న గ్రంథులు</span></td><td>PTH → ↑ blood Ca²⁺<span class="te-td">కాల్షియం పెంపు</span></td></tr>
+<tr><td><strong>Pineal</strong><span class="te-td">పీనియల్</span></td><td>Mid-brain<span class="te-td">మెదడు మధ్యలో</span></td><td>Melatonin → sleep-wake cycle<span class="te-td">నిద్ర-మేలుకొనే చక్రం</span></td></tr>
+<tr><td><strong>Biotech Hormone</strong> (Q36)<span class="te-td">బయోటెక్</span></td><td>—</td><td>First synthesised by biotech = <strong>Prostaglandin</strong> (Q36).<span class="te-td">ప్రోస్టాగ్లాండిన్</span></td></tr>
+</table>
+
+<div class="highlight-box">
+<strong>Diabetes &amp; Insulin (Q6):</strong> Insulin's main role is to <strong>control sugar levels</strong> (Q6) — body cells absorb glucose from blood and store as glycogen/lipids. <strong>Type 1</strong>: autoimmune β-cell destruction → must inject insulin. <strong>Type 2</strong>: insulin resistance → diet/exercise/oral drugs. Symptoms: polyuria, polydipsia, polyphagia (3 P's). HbA1c ≥ 6.5% confirms diagnosis.
+<span class="te-td">ఇన్సులిన్ = రక్తంలో చక్కెరను నియంత్రిస్తుంది. Type 1 = β-కణ నాశనం; Type 2 = నిరోధకత</span>
+</div>
+<div class="pn">Page 3</div>
+</div>
+
+<!-- ==================== PAGE 4: DIGESTION + EYE ==================== -->
+<div class="page page-break">
+<div class="sec-head">Digestive Enzymes, Liver &amp; Kidney <span class="te">జీర్ణ ఎంజైమ్‌లు · కాలేయం · మూత్రపిండం</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">English — Digestion in 5 Steps</span>
+  Digestion converts food (proteins, fats, carbs) into absorbable units. Each step has its own enzyme + pH: <strong>(1) Mouth</strong> — salivary amylase (ptyalin) digests starch; <strong>(2) Stomach</strong> — <strong>pepsin works in acidic medium pH 1.5-2</strong> (Q7), digesting proteins; renin curdles milk casein (Q11) in infants; <strong>(3) Duodenum</strong> — bile (from liver, Q2) emulsifies fats; pancreatic juice (trypsin, lipase, amylase) acts in alkaline pH; <strong>(4) Small intestine</strong> — <strong>most digestion + absorption</strong> (Q8); villi/microvilli give 250 m² surface; <strong>(5) Large intestine</strong> — water + Na⁺ reabsorption, vitamin K from gut bacteria. The <strong>liver</strong> (Q2, Q38) is the metabolic powerhouse. The <strong>kidneys</strong> (Q27, Q32, Q34) filter blood and excrete <strong>urea</strong> as the chief nitrogenous waste.
+  </div>
+  <div class="bi-te"><span class="lang-tag">తెలుగు — జీర్ణం 5 దశలు</span>
+  జీర్ణం = ఆహారాన్ని శోషించగల యూనిట్లుగా మార్చడం. <strong>(1) నోరు</strong> — లాలాజల అమైలేజ్; <strong>(2) జీర్ణాశయం</strong> — <strong>పెప్సిన్ ఆమ్ల pH 1.5-2 లో</strong> (Q7); రెనిన్ = పాలను గడ్డకట్టిస్తుంది (Q11); <strong>(3) డ్యూయోడెనమ్</strong> — పైత్యరసం (కాలేయం, Q2) + క్లోమ ఎంజైమ్‌లు; <strong>(4) చిన్న ప్రేగు</strong> — అత్యధిక జీర్ణం + శోషణ (Q8); <strong>(5) పెద్ద ప్రేగు</strong> — నీరు + విటమిన్ K. కాలేయం = బహుళ విధులు. మూత్రపిండాలు = రక్త శుద్ధి + యూరియా విసర్జన.
+  </div>
+</div>
+
+<table>
+<tr><th>Enzyme / Organ</th><th>Site &amp; Action</th><th>Q-Reference</th></tr>
+<tr><td><strong>Pepsin</strong><span class="te-td">పెప్సిన్</span></td><td>Stomach (pH 1.5-2). Breaks proteins into peptides. Secreted as pepsinogen.<span class="te-td">జీర్ణాశయం; ప్రోటీన్ → పెప్టైడ్</span></td><td>Q7: <strong>acidic medium</strong>.<span class="te-td">ఆమ్లంలో పనిచేసే ఏకైక ఎంజైమ్</span></td></tr>
+<tr><td><strong>Renin</strong> (Rennin)<span class="te-td">రెనిన్</span></td><td>Infant stomach. Coagulates milk by converting casein to curdled form.<span class="te-td">కేసిన్ → పెరుగు</span></td><td>Q11: <strong>milk → casein curdling</strong>.<span class="te-td">చీజ్ తయారీ</span></td></tr>
+<tr><td><strong>Bile</strong><span class="te-td">పైత్యరసం</span></td><td>Made in <strong>liver</strong> (Q2); stored in gallbladder. Alkaline; emulsifies fats.<span class="te-td">కాలేయంలో; క్షారం</span></td><td>Q2: bile = <strong>liver</strong>.<span class="te-td">పైత్యరసం = కాలేయం</span></td></tr>
+<tr><td><strong>Small Intestine</strong> (Q8)<span class="te-td">చిన్న ప్రేగు</span></td><td>~6 m; villi → 250 m² surface; absorbs amino acids, sugars, fats, vitamins.<span class="te-td">విల్లి = 250 m²</span></td><td>Q8: <strong>main site of digestion</strong>.<span class="te-td">అత్యధిక జీర్ణం</span></td></tr>
+<tr><td><strong>Liver</strong> (Q2, Q38)<span class="te-td">కాలేయం</span></td><td>Largest internal organ (~1.5 kg). Bile + glycogen ↔ glucose + plasma proteins + detox + RBC recycle.<span class="te-td">అతిపెద్ద అంతర్గత అవయవం</span></td><td>Q2: bile. Q38: <strong>glycogen → glucose</strong> + blood purification.<span class="te-td">గ్లైకోజన్ → గ్లూకోజ్</span></td></tr>
+<tr><td><strong>Kidney</strong> (Q27, Q32, Q34)<span class="te-td">మూత్రపిండం</span></td><td>Filters 180 L/day; urine 1-2 L. BP regulation, EPO, vitamin D activation.<span class="te-td">రక్త శుద్ధి</span></td><td>Q27: NOT a kidney function = <strong>antibiotic secretion</strong>. Q32: blood purification. Q34: <strong>urea</strong>.<span class="te-td">యాంటీబయాటిక్స్ స్రవించవు</span></td></tr>
+</table>
+
+<div class="cols-2">
+<div class="memory-box no-break">
+<div class="mem-title">🧠 Memory — Liver Functions "BLP-DRV"</div>
+<strong>B</strong>ile production (Q2)<br>
+<strong>L</strong>iver glycogen ↔ glucose (Q38)<br>
+<strong>P</strong>lasma proteins (albumin, fibrinogen)<br>
+<strong>D</strong>etoxification (alcohol, drugs, ammonia → urea)<br>
+<strong>R</strong>BC recycling (haem → bilirubin)<br>
+<strong>V</strong>itamin storage (A, D, E, K, B12)<br>
+Damage = jaundice (yellow skin from bilirubin).
+<span class="te-td">కాలేయ విధులు 6: పైత్యరసం + గ్లైకోజన్ + ప్రోటీన్లు + విషతొలగింపు + RBC + విటమిన్</span>
+</div>
+<div class="exam-alert no-break">
+<div class="ea-title">⚠ Q27 — Kidneys do NOT secrete antibiotics</div>
+Real kidney functions: filtration, urine, BP regulation, electrolyte balance, EPO, vitamin D activation. They do <strong>NOT secrete antibiotics</strong> — antibiotics come from soil microbes/fungi (e.g., penicillin from <em>Penicillium</em>), not human organs. Q27 answer = "Secretion of antibiotics" (the wrong-fit option).
+<span class="te-td">మూత్రపిండాలు యాంటీబయాటిక్స్ స్రవించవు. Q27 = యాంటీబయాటిక్స్ స్రావం (తప్పుడు ఎంపిక)</span>
+</div>
+</div>
+
+<div class="sec-head">Eye, Vision Defects &amp; Cornea <span class="te">కన్ను · దృష్టి దోషాలు</span></div>
+
+<table>
+<tr><th>Topic</th><th>Detail</th><th>Exam Hook</th></tr>
+<tr><td><strong>Cornea</strong> (Q39)<span class="te-td">కార్నియా</span></td>
+<td>Front transparent layer of <strong>eye</strong>. Avascular. Layers: epithelium → Bowman's → stroma → Descemet's → endothelium.<span class="te-td">కంటి ముందు పారదర్శక పొర</span></td>
+<td>Q39: cornea = <strong>eye</strong>. ~67% of focusing power; most-transplanted organ.<span class="te-td">కన్ను</span></td></tr>
+<tr><td><strong>Normal vision</strong> (Q25)<span class="te-td">సాధారణ దృష్టి</span></td>
+<td>Adult least distance of distinct vision = <strong>25 cm</strong>.<span class="te-td">25 cm</span></td>
+<td>Q25: clearly seeing at 25 cm = <strong>no defect</strong> ("None of these").<span class="te-td">సాధారణం</span></td></tr>
+<tr><td><strong>Hypermetropia</strong> (Q48)<span class="te-td">దీర్ఘదృష్టి</span></td>
+<td>Cannot see close objects (&lt; 1 m). Cause: short eyeball; image BEHIND retina.<span class="te-td">దగ్గర మసక</span></td>
+<td>Correction: <strong>convex (+) lens</strong>.<span class="te-td">కన్వెక్స్ లెన్స్</span></td></tr>
+<tr><td><strong>Myopia</strong><span class="te-td">హ్రస్వదృష్టి</span></td>
+<td>Cannot see distant objects. Image IN FRONT of retina.<span class="te-td">దూర మసక</span></td>
+<td>Correction: <strong>concave (−) lens</strong>.<span class="te-td">కాన్కేవ్ లెన్స్</span></td></tr>
+<tr><td><strong>Astigmatism</strong><span class="te-td">ఆస్టిగ్మాటిజం</span></td>
+<td>Irregular cornea curvature → blurred at all distances<span class="te-td">అస్థిర వక్రత</span></td>
+<td>Cylindrical lens<span class="te-td">సిలిండ్రికల్ లెన్స్</span></td></tr>
+<tr><td><strong>Cataract</strong><span class="te-td">శుక్లం</span></td>
+<td>Cloudy lens (age, diabetes, UV).<span class="te-td">లెన్స్ మబ్బు</span></td>
+<td>Most common preventable blindness in India.<span class="te-td">ఆపరేషన్ ద్వారా చికిత్స</span></td></tr>
+</table>
+<div class="pn">Page 4</div>
+</div>
+
+<!-- ==================== PAGE 5: DISEASES + REPRODUCTION ==================== -->
+<div class="page page-break">
+<div class="sec-head">Diseases — Disease–Organ Map &amp; JE <span class="te">వ్యాధులు · అవయవ జతలు · JE</span></div>
+
+<table>
+<tr><th>Disease</th><th>Organ Affected</th><th>Cause &amp; Notes</th></tr>
+<tr><td><strong>Tuberculosis</strong><span class="te-td">క్షయవ్యాధి</span></td><td>Lungs<span class="te-td">ఊపిరితిత్తులు</span></td><td><em>Mycobacterium tuberculosis</em>; air-borne; cough &gt; 2 wks; DOTS therapy.<span class="te-td">వాయు మార్గం; DOTS</span></td></tr>
+<tr><td><strong>Hepatitis</strong><span class="te-td">హెపటైటిస్</span></td><td>Liver<span class="te-td">కాలేయం</span></td><td>Viral A/B/C/D/E. A &amp; E water-borne; B/C blood/sex; vaccine for A &amp; B.<span class="te-td">కాలేయ వాపు</span></td></tr>
+<tr><td><strong>Gonorrhoea</strong><span class="te-td">గనోరియా</span></td><td>Reproductive tract<span class="te-td">పునరుత్పత్తి తంత్రం</span></td><td><em>Neisseria gonorrhoeae</em>; STI; antibiotics.<span class="te-td">లైంగిక సంక్రమణం</span></td></tr>
+<tr><td><strong>Mumps</strong><span class="te-td">గవదబిళ్ళలు</span></td><td>Salivary (parotid) glands<span class="te-td">పారోటిడ్</span></td><td>Paramyxovirus; swollen jaw; MMR vaccine.<span class="te-td">MMR టీకా</span></td></tr>
+<tr><td><strong>Japanese Encephalitis</strong> (Q24)<span class="te-td">JE</span></td><td><strong>Brain</strong><span class="te-td">మెదడు</span></td><td>JE virus (flavivirus); spread by <strong>Culex mosquitoes</strong>; pigs+birds = amplifying hosts; mortality 20-30%; JE vaccine in UIP since 2006.<span class="te-td">దోమల ద్వారా; మరణాల రేటు 20-30%</span></td></tr>
+</table>
+
+<div class="highlight-box">
+<strong>Q23 — Disease–Organ Match Pattern:</strong> TB ↔ Lungs · Hepatitis ↔ Liver · Gonorrhoea ↔ Reproductive tract · Mumps ↔ Salivary glands. Q23 correct mapping = <strong>i-c, ii-d, iii-b, iv-a</strong>. Etymology clue: "hepato-" = liver; "encephalo-" = brain; "rhino-" = nose. Knowing Greek/Latin roots saves time on similar questions.
+<span class="te-td">వ్యాధి-అవయవ జతలు: TB-ఊపిరి, హెప-కాలేయం, గన-పునరు, గవ-లాల. Q23 = i-c, ii-d, iii-b, iv-a</span>
+</div>
+
+<div class="shock-box">
+<div class="shock-title">⚡ Thalidomide Tragedy (Q43) — Why Drug Safety Tests Exist</div>
+<strong>Thalidomide</strong> was sold in 1957–61 as a "safe" sedative and anti–morning-sickness drug for pregnant women. It crossed the placenta and caused severe limb deformities (<strong>phocomelia</strong> — flipper-like limbs) in over <strong>10,000 babies worldwide</strong>. Withdrawn 1961. This catastrophe led to today's <strong>strict pre-marketing teratogenicity testing</strong> on all new drugs (1962 Kefauver-Harris amendment in US). Now used (with strict pregnancy safeguards) for leprosy + multiple myeloma. Q43 answer: thalidomide caused deformed children.
+<span class="te-td">థాలిడోమైడ్ (Q43): 1950ల చివర గర్భిణీలకు అమ్మారు; శిశువులలో అంగ వైకల్యం (ఫోకోమెలియా); 10,000+ ప్రభావితం; 1961 నిషేధం</span>
+</div>
+
+<div class="sec-head">Reproduction, Genetics &amp; Body Misc <span class="te">పునరుత్పత్తి · జన్యువులు</span></div>
+
+<table>
+<tr><th>Topic</th><th>Detail</th><th>Q-Reference</th></tr>
+<tr><td><strong>Fertilisation Site</strong> (Q33)<span class="te-td">ఫలదీకరణ స్థలం</span></td>
+<td>Occurs in <strong>oviduct (Fallopian tube)</strong>, ampulla. Ovum + sperm = zygote. Zygote travels 4-5 d to uterus → implantation.<span class="te-td">అండవాహికలో</span></td>
+<td>Q33: <strong>oviduct</strong>. Ectopic = tube blockage.<span class="te-td">అండవాహిక</span></td></tr>
+<tr><td><strong>Identical Twins</strong> (Q49)<span class="te-td">ఏకజైగోటిక్ కవలలు</span></td>
+<td><strong>Monozygotic</strong>: ONE sperm + ONE ovum → zygote splits into 2 embryos. 100% same DNA, same sex.<span class="te-td">జైగోట్ విడిపోవడం</span></td>
+<td>Q49: zygote splits. 100% genetic identity → same sex always.<span class="te-td">100% DNA సమానత్వం</span></td></tr>
+<tr><td><strong>Ultrasound</strong> (Q35)<span class="te-td">అల్ట్రాసౌండ్</span></td>
+<td>1-10 MHz; non-ionising; safe in pregnancy. Detects: foetal age, position, anomalies.<span class="te-td">అతిధ్వని తరంగాలు</span></td>
+<td>Q35: prenatal foetus imaging. India: <strong>PCPNDT Act 1994</strong> bans sex determination.<span class="te-td">PCPNDT 1994</span></td></tr>
+<tr><td><strong>Mala-D</strong> (Q47)<span class="te-td">మాలా-D</span></td>
+<td>Combined oral contraceptive (estrogen + progestin). Suppresses GnRH → ↓FSH/LH → no ovulation.<span class="te-td">నోటి గర్భనిరోధక మాత్ర</span></td>
+<td>Q47: <strong>prevents ovulation</strong>. Failure rate &lt; 1%.<span class="te-td">అండోత్సర్గ నిరోధం</span></td></tr>
+<tr><td><strong>Chromosomes</strong> (Q44)<span class="te-td">క్రోమోజోములు</span></td>
+<td>Diploid = 46 = 23 pairs (22 autosomes + 1 sex pair, XX♀/XY♂). Gametes haploid = 23.<span class="te-td">46 = 23 జతలు</span></td>
+<td>Q44: <strong>46</strong>. Down's = trisomy 21.<span class="te-td">డౌన్ = 47</span></td></tr>
+<tr><td><strong>Body element</strong> (Q29)<span class="te-td">శరీర మూలకం</span></td>
+<td>By mass: <strong>Oxygen ~65%</strong> → C 18% → H 10% → N 3% → Ca 1.5%. Mostly bound in water.<span class="te-td">ఆక్సిజన్ 65%</span></td>
+<td>Q29: largest = <strong>oxygen</strong>.<span class="te-td">ఆక్సిజన్</span></td></tr>
+<tr><td><strong>Sweat glands</strong> (Q37)<span class="te-td">స్వేద గ్రంథులు</span></td>
+<td>2-4 million eccrine + apocrine. Greatest density: <strong>armpits</strong>, palms, soles. Eccrine = watery (cooling); apocrine = thick (odour).<span class="te-td">చంకలు; అరచేతులు</span></td>
+<td>Q37: greatest in <strong>armpits</strong>.<span class="te-td">అత్యధికం చంకలలో</span></td></tr>
+</table>
+
+<div class="memory-box">
+<div class="mem-title">🧠 Master Memory — "Largest / Smallest" facts of Set 13</div>
+<strong>Largest endocrine gland</strong> = Thyroid (Q5) · <strong>Largest internal organ</strong> = Liver · <strong>Largest lymphatic organ</strong> = Spleen (Q13) · <strong>Largest cell</strong> = Nerve cell (Q45) · <strong>Smallest cell</strong> = RBC (Q4) · <strong>Longest bone</strong> = Femur (Q15) · <strong>Most abundant element</strong> = Oxygen (Q29) · <strong>Plasma water</strong> = 90% (Q50) · <strong>Total bones</strong> = 206 (Q31) · <strong>Skull bones</strong> = 22 (Q16) · <strong>Ribs</strong> = 24 (Q10) · <strong>Chromosomes</strong> = 46 (Q44).
+<span class="te-td">అతిపెద్ద: థైరాయిడ్, ప్లీహం, నాడీ కణం, ఫీమర్; అతిచిన్న: RBC; ఎక్కువ: ఆక్సిజన్</span>
+</div>
+<div class="pn">Page 5</div>
+</div>
+
+<!-- ==================== PAGE 6: PYQ + RECAP ==================== -->
+<div class="page page-break">
+<div class="sec-head">Practice Questions — Set 13 (50 MCQs) <span class="te">అభ్యాస ప్రశ్నలు</span></div>
+<div class="pyq-grid">
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q1</span> Blood pressure (systolic / diastolic)?</div><div class="pyq-a">✅ <strong>120 / 80 mmHg</strong><span class="te">120/80 mmHg</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q2</span> Bile juice secreted by?</div><div class="pyq-a">✅ <strong>Liver</strong><span class="te">కాలేయం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q3</span> Veins differ from arteries by having?</div><div class="pyq-a">✅ <strong>Valves</strong><span class="te">కవాటాలు</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q4</span> Smallest cells in human body?</div><div class="pyq-a">✅ <strong>Blood cells (RBC)</strong><span class="te">రక్త కణాలు</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q5</span> Largest endocrine gland?</div><div class="pyq-a">✅ <strong>Thyroid</strong><span class="te">థైరాయిడ్</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q6</span> Insulin's main function?</div><div class="pyq-a">✅ <strong>Control sugar levels</strong><span class="te">చక్కెర నియంత్రణ</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q7</span> Enzyme working in acidic medium?</div><div class="pyq-a">✅ <strong>Pepsin</strong><span class="te">పెప్సిన్</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q8</span> Food mainly digested in?</div><div class="pyq-a">✅ <strong>Small intestine</strong><span class="te">చిన్న ప్రేగు</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q9</span> Impure blood enters?</div><div class="pyq-a">✅ <strong>Right auricle</strong><span class="te">కుడి కర్ణిక</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q10</span> Number of ribs?</div><div class="pyq-a">✅ <strong>24</strong><span class="te">24</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q11</span> Enzyme converting milk to casein?</div><div class="pyq-a">✅ <strong>Renin</strong><span class="te">రెనిన్</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q12</span> Skull bones (source key)?</div><div class="pyq-a">⚠ Key=5; correct=<strong>22</strong> (see Q16)<span class="te">అచ్చు తప్పు</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q13</span> Largest lymphatic organ?</div><div class="pyq-a">✅ <strong>Spleen</strong><span class="te">ప్లీహం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q14</span> BP is pressure of blood in?</div><div class="pyq-a">✅ <strong>Arteries</strong><span class="te">ధమనులు</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q15</span> Longest bone?</div><div class="pyq-a">✅ <strong>Thigh bone (Femur)</strong><span class="te">తొడ ఎముక</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q16</span> Total skull bones?</div><div class="pyq-a">✅ <strong>22</strong> (8+14)<span class="te">22</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q17</span> Universal recipient blood group?</div><div class="pyq-a">✅ <strong>AB</strong><span class="te">AB</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q18</span> Sex-organ development gland?</div><div class="pyq-a">✅ <strong>Pituitary</strong><span class="te">పిట్యూటరీ</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q19</span> Protection from infection?</div><div class="pyq-a">✅ <strong>WBC</strong><span class="te">WBC</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q20</span> Oxygen transported by?</div><div class="pyq-a">✅ <strong>Red blood cells</strong><span class="te">RBC</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q21</span> Primary cardiac pacemaker?</div><div class="pyq-a">✅ <strong>SA node</strong><span class="te">SA నోడ్</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q22</span> Mixed gland?</div><div class="pyq-a">✅ <strong>Pancreas</strong><span class="te">క్లోమం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q23</span> Disease-organ match?</div><div class="pyq-a">✅ <strong>i-c, ii-d, iii-b, iv-a</strong><span class="te">జతలు</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q24</span> Mosquito-borne brain virus?</div><div class="pyq-a">✅ <strong>Japanese encephalitis</strong><span class="te">JE</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q25</span> Sees clearly at 25 cm — defect?</div><div class="pyq-a">✅ <strong>None of these</strong><span class="te">సాధారణం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q26</span> Main WBC function?</div><div class="pyq-a">✅ <strong>Disease resistance</strong><span class="te">వ్యాధి నిరోధకత</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q27</span> NOT a kidney function?</div><div class="pyq-a">✅ <strong>Antibiotic secretion</strong><span class="te">యాంటీబయాటిక్</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q28</span> Pituitary location?</div><div class="pyq-a">✅ <strong>Below brain</strong><span class="te">మెదడు కింద</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q29</span> Most abundant body element?</div><div class="pyq-a">✅ <strong>Oxygen</strong><span class="te">ఆక్సిజన్</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q30</span> Blood viscosity due to?</div><div class="pyq-a">✅ <strong>Proteins</strong><span class="te">ప్రోటీన్లు</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q31</span> Total bones?</div><div class="pyq-a">✅ <strong>206</strong><span class="te">206</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q32</span> Blood purification organ?</div><div class="pyq-a">✅ <strong>Kidney</strong><span class="te">మూత్రపిండం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q33</span> Fertilisation occurs in?</div><div class="pyq-a">✅ <strong>Oviduct</strong><span class="te">అండవాహిక</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q34</span> Chief nitrogenous waste?</div><div class="pyq-a">✅ <strong>Urea</strong><span class="te">యూరియా</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q35</span> Prenatal foetus imaging?</div><div class="pyq-a">✅ <strong>Ultrasound</strong><span class="te">అల్ట్రాసౌండ్</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q36</span> First biotech hormone?</div><div class="pyq-a">✅ <strong>Prostaglandin</strong><span class="te">ప్రోస్టాగ్లాండిన్</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q37</span> Sweat glands greatest in?</div><div class="pyq-a">✅ <strong>Armpits</strong><span class="te">చంకలు</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q38</span> Glycogen → glucose + blood purification?</div><div class="pyq-a">✅ <strong>Liver</strong><span class="te">కాలేయం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q39</span> Cornea is part of?</div><div class="pyq-a">✅ <strong>Eye</strong><span class="te">కన్ను</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q40</span> "Funny Bone" is?</div><div class="pyq-a">✅ <strong>A nerve (ulnar)</strong><span class="te">ఉల్నార్ నరం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q41</span> Cholesterol per 100 mL?</div><div class="pyq-a">✅ <strong>150–250 mg</strong><span class="te">150-250 mg</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q42</span> WBC formation + RBC destruction?</div><div class="pyq-a">✅ <strong>Spleen</strong><span class="te">ప్లీహం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q43</span> Drug causing baby deformity?</div><div class="pyq-a">✅ <strong>Thalidomide</strong><span class="te">థాలిడోమైడ్</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q44</span> Diploid chromosomes?</div><div class="pyq-a">✅ <strong>46</strong><span class="te">46</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q45</span> Largest cell?</div><div class="pyq-a">✅ <strong>Nerve cell</strong><span class="te">నాడీ కణం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q46</span> Tissues bathed in?</div><div class="pyq-a">✅ <strong>Lymph</strong><span class="te">శోషరసం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q47</span> Mala-D prevents?</div><div class="pyq-a">✅ <strong>Ovulation</strong><span class="te">అండోత్సర్గం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q48</span> Cannot see &lt;1m clearly = ?</div><div class="pyq-a">✅ <strong>Hypermetropia</strong><span class="te">దీర్ఘదృష్టి</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q49</span> Identical twins arise when?</div><div class="pyq-a">✅ <strong>Zygote splits</strong><span class="te">జైగోట్ విడిపోవడం</span></div></div>
+<div class="pyq-item no-break"><div class="pyq-q"><span class="pyq-num">Q50</span> Water % in plasma?</div><div class="pyq-a">✅ <strong>90%</strong><span class="te">90%</span></div></div>
+</div>
+
+<div class="sec-head">Quick Recap — All 50 Facts <span class="te">త్వరిత పునశ్చరణ</span></div>
+<div class="recap-box">
+  <div class="recap-item"><span class="ri-num">1</span> BP normal = 120/80 in arteries.</div>
+  <div class="recap-item"><span class="ri-num">2</span> Veins have valves; arteries don't.</div>
+  <div class="recap-item"><span class="ri-num">3</span> Impure blood → right auricle.</div>
+  <div class="recap-item"><span class="ri-num">4</span> Smallest cell = RBC; Largest = nerve.</div>
+  <div class="recap-item"><span class="ri-num">5</span> WBC → infection / disease resistance.</div>
+  <div class="recap-item"><span class="ri-num">6</span> RBC → O₂ transport.</div>
+  <div class="recap-item"><span class="ri-num">7</span> Plasma 90% water; viscosity = proteins.</div>
+  <div class="recap-item"><span class="ri-num">8</span> AB = universal recipient; O = donor.</div>
+  <div class="recap-item"><span class="ri-num">9</span> Spleen = largest lymph organ.</div>
+  <div class="recap-item"><span class="ri-num">10</span> Lymph bathes tissues.</div>
+  <div class="recap-item"><span class="ri-num">11</span> Bones: 206 / Skull 22 / Ribs 24.</div>
+  <div class="recap-item"><span class="ri-num">12</span> Femur = longest; Stapes = smallest.</div>
+  <div class="recap-item"><span class="ri-num">13</span> Funny bone = ulnar nerve.</div>
+  <div class="recap-item"><span class="ri-num">14</span> Chromosomes = 46.</div>
+  <div class="recap-item"><span class="ri-num">15</span> SA node = pacemaker.</div>
+  <div class="recap-item"><span class="ri-num">16</span> Cholesterol 150–250 mg/100mL.</div>
+  <div class="recap-item"><span class="ri-num">17</span> Thyroid = largest endocrine.</div>
+  <div class="recap-item"><span class="ri-num">18</span> Pituitary = master gland.</div>
+  <div class="recap-item"><span class="ri-num">19</span> Pancreas = mixed gland.</div>
+  <div class="recap-item"><span class="ri-num">20</span> Insulin → blood sugar control.</div>
+  <div class="recap-item"><span class="ri-num">21</span> First biotech hormone = prostaglandin.</div>
+  <div class="recap-item"><span class="ri-num">22</span> Pepsin works in acidic stomach.</div>
+  <div class="recap-item"><span class="ri-num">23</span> Renin curdles milk casein.</div>
+  <div class="recap-item"><span class="ri-num">24</span> Bile from liver; emulsifies fats.</div>
+  <div class="recap-item"><span class="ri-num">25</span> Small intestine = main digestion.</div>
+  <div class="recap-item"><span class="ri-num">26</span> Liver: glycogen↔glucose.</div>
+  <div class="recap-item"><span class="ri-num">27</span> Kidney does NOT make antibiotics.</div>
+  <div class="recap-item"><span class="ri-num">28</span> Chief N-waste = urea.</div>
+  <div class="recap-item"><span class="ri-num">29</span> Cornea = part of eye.</div>
+  <div class="recap-item"><span class="ri-num">30</span> 25 cm distinct vision = normal.</div>
+  <div class="recap-item"><span class="ri-num">31</span> Cannot see &lt;1m → hypermetropia.</div>
+  <div class="recap-item"><span class="ri-num">32</span> JE = mosquito-borne brain virus.</div>
+  <div class="recap-item"><span class="ri-num">33</span> Thalidomide → baby deformities.</div>
+  <div class="recap-item"><span class="ri-num">34</span> TB-Lungs, Hep-Liver, Gono-Repro, Mumps-Saliv.</div>
+  <div class="recap-item"><span class="ri-num">35</span> Fertilisation in oviduct.</div>
+  <div class="recap-item"><span class="ri-num">36</span> Identical twins = zygote split.</div>
+  <div class="recap-item"><span class="ri-num">37</span> Ultrasound = prenatal imaging.</div>
+  <div class="recap-item"><span class="ri-num">38</span> Mala-D blocks ovulation.</div>
+  <div class="recap-item"><span class="ri-num">39</span> O = most abundant element (~65%).</div>
+  <div class="recap-item"><span class="ri-num">40</span> Sweat density highest in armpits.</div>
+</div>
+<div class="pn">Page 6</div>
+</div>
+
+</body>
+</html>
