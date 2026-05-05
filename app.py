@@ -462,81 +462,80 @@ def init_db():
     conn.close()
 
 
+# ── Module-level runtime compatibility shims ──────────────────────────────────
+# Older seed files use string difficulty ('easy'/'medium'/'hard'/'toughest') instead
+# of the integer the schema requires (1/2/3). They may also rely on list(fetchone())[0]
+# which on psycopg2 RealDictRow returns the column *name* instead of the value.
+# These helpers fix both at call-time without touching the seed files.
+# Defined at module level so every endpoint (auto-seeder, force-reseed, missing-reseed)
+# can use them.
+_DIFF_MAP = {
+    # Common lowercase forms
+    'easy': 1, 'simple': 1, 'beginner': 1, 'e': 1,
+    'medium': 2, 'moderate': 2, 'med': 2, 'm': 2,
+    'hard': 3, 'tough': 3, 'difficult': 3, 'h': 3,
+    'toughest': 3, 'hardest': 3, 'expert': 3, 'advanced': 3,
+    # Numeric strings
+    '1': 1, '2': 2, '3': 3,
+}
+
+
+class _CompatRow:
+    """Wraps a psycopg2 RealDictRow so list(row)[0] → first VALUE (not key string)."""
+    __slots__ = ('_d', '_vals')
+    def __init__(self, d):
+        self._d = dict(d)
+        self._vals = list(self._d.values())
+    def __getitem__(self, key):
+        if isinstance(key, int):
+            return self._vals[key]
+        return self._d[key]
+    def __iter__(self):
+        return iter(self._vals)
+    def keys(self):
+        return self._d.keys()
+    def get(self, key, default=None):
+        return self._d.get(key, default)
+    def __bool__(self):
+        return bool(self._d)
+
+
+class _CompatCursor:
+    """Wraps a DB cursor — fixes fetchone() for list()[0] usage."""
+    def __init__(self, cur):
+        self._cur = cur
+    def fetchone(self):
+        row = self._cur.fetchone()
+        if row is None:
+            return None
+        if isinstance(row, dict):
+            return _CompatRow(row)
+        return row
+    def fetchall(self):
+        return self._cur.fetchall()
+    @property
+    def lastrowid(self):
+        return getattr(self._cur, 'lastrowid', None)
+
+
+def _compat_exec(conn, sql, params=()):
+    """Wraps db_exec: fixes string difficulty in chapter_mcqs INSERTs."""
+    if params and 'chapter_mcqs' in sql and 'INSERT' in sql:
+        p = list(params)
+        # Column order is always: study_note_id, section_idx, difficulty, ...
+        # so difficulty is at index 2.
+        if len(p) >= 3 and isinstance(p[2], str):
+            key = p[2].strip().lower()
+            p[2] = _DIFF_MAP.get(key, 2)  # unknown strings → Medium (2)
+        params = tuple(p)
+    cur = db_exec(conn, sql, params)
+    return _CompatCursor(cur)
+
+
 def _auto_seed_polity():
     """Seed Indian Polity (Lakshmikanth) chapters into study_notes + chapter_mcqs."""
     import importlib
-
-    # ── Runtime compatibility shims ───────────────────────────────────────────
-    # Older seed files may use string difficulty ('easy'/'medium'/'hard') instead
-    # of the integer the schema requires (1/2/3).  They may also rely on
-    # list(fetchone())[0] which on psycopg2 RealDictRow returns the column *name*
-    # instead of the value.  We fix both at call-time without touching the seed
-    # files by wrapping db_exec + the cursor it returns.
-    _DIFF_MAP = {
-        # Common lowercase forms
-        'easy': 1, 'simple': 1, 'beginner': 1, 'e': 1,
-        'medium': 2, 'moderate': 2, 'med': 2, 'm': 2,
-        'hard': 3, 'tough': 3, 'difficult': 3, 'h': 3,
-        'toughest': 3, 'hardest': 3, 'expert': 3, 'advanced': 3,
-        # Numeric strings
-        '1': 1, '2': 2, '3': 3,
-    }
-
-    class _CompatRow:
-        """Wraps a psycopg2 RealDictRow so that:
-        - list(row)[0]  → first *value* (not the key string)
-        - dict(row)     → proper dict  (via keys() + __getitem__)
-        - row['col']    → column value by name
-        - row.get(k)    → column value by name with default
-        """
-        __slots__ = ('_d', '_vals')
-        def __init__(self, d):
-            self._d = dict(d)  # normalise to plain dict
-            self._vals = list(self._d.values())
-        def __getitem__(self, key):
-            if isinstance(key, int):
-                return self._vals[key]
-            return self._d[key]
-        def __iter__(self):
-            # list(row)[0] → first value (not key)
-            return iter(self._vals)
-        def keys(self):
-            # dict(row) uses keys() + __getitem__ → produces proper dict
-            return self._d.keys()
-        def get(self, key, default=None):
-            return self._d.get(key, default)
-        def __bool__(self):
-            return bool(self._d)
-
-    class _CompatCursor:
-        """Wraps a DB cursor — fixes fetchone() for list()[0] usage."""
-        def __init__(self, cur):
-            self._cur = cur
-        def fetchone(self):
-            row = self._cur.fetchone()
-            if row is None:
-                return None
-            if isinstance(row, dict):
-                return _CompatRow(row)
-            return row
-        def fetchall(self):
-            return self._cur.fetchall()
-        @property
-        def lastrowid(self):
-            return getattr(self._cur, 'lastrowid', None)
-
-    def _compat_exec(conn, sql, params=()):
-        """Wraps db_exec: fixes string difficulty in chapter_mcqs INSERTs."""
-        if params and 'chapter_mcqs' in sql and 'INSERT' in sql:
-            p = list(params)
-            # Column order is always: study_note_id, section_idx, difficulty, ...
-            # so difficulty is at index 2.
-            if len(p) >= 3 and isinstance(p[2], str):
-                key = p[2].strip().lower()
-                p[2] = _DIFF_MAP.get(key, 2)  # unknown strings → Medium (2)
-            params = tuple(p)
-        cur = db_exec(conn, sql, params)
-        return _CompatCursor(cur)
+    # Helpers (_compat_exec, _CompatRow, _CompatCursor, _DIFF_MAP) now defined at module level.
     # ─────────────────────────────────────────────────────────────────────────
     chapters = [
         (1,  'seed_polity_ch1',  'polity_ch1'),
