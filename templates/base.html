@@ -353,6 +353,11 @@ input[type=number].form-control::-webkit-inner-spin-button { opacity: 1; }
 
   <nav class="header-nav" role="navigation" aria-label="Main navigation">
 
+    <button id="installAppBtn" class="nav-item install-btn" onclick="triggerInstall()" aria-label="Install app on your phone" style="display:none;background:#ff6f00;color:#fff;border:none;cursor:pointer;font:inherit;">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span class="nav-label">Install</span>
+    </button>
+
     <a href="/admin" class="nav-item" aria-label="Admin Settings">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
       <span class="nav-label">Admin</span>
@@ -710,6 +715,94 @@ document.addEventListener('DOMContentLoaded', () => gm.init());
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/static/sw.js').catch(() => {});
+}
+
+// ── PWA Install button ────────────────────────────────
+let _deferredInstallPrompt = null;
+const _installBtn = document.getElementById('installAppBtn');
+
+function _isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches
+      || window.navigator.standalone === true;
+}
+function _isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+
+// Hide the button if app already installed
+if (_isStandalone()) {
+  if (_installBtn) _installBtn.style.display = 'none';
+} else {
+  // Android Chrome / Edge fires this when site is installable
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    _deferredInstallPrompt = e;
+    if (_installBtn) _installBtn.style.display = '';
+  });
+
+  // iOS Safari can't programmatically install; show button anyway with iOS instructions
+  if (_isIOS() && _installBtn) {
+    _installBtn.style.display = '';
+  }
+
+  // After successful install, hide the button + clear the deferred prompt
+  window.addEventListener('appinstalled', () => {
+    _deferredInstallPrompt = null;
+    if (_installBtn) _installBtn.style.display = 'none';
+    if (typeof showToast === 'function') showToast('✅ App installed! Open it from your home screen.');
+  });
+}
+
+async function triggerInstall() {
+  // iOS Safari path — show instruction sheet
+  if (_isIOS()) {
+    _showIOSInstructions();
+    return;
+  }
+  // Android path — fire the deferred install prompt
+  if (_deferredInstallPrompt) {
+    _deferredInstallPrompt.prompt();
+    const choice = await _deferredInstallPrompt.userChoice;
+    _deferredInstallPrompt = null;
+    if (choice && choice.outcome === 'accepted') {
+      if (_installBtn) _installBtn.style.display = 'none';
+    }
+  } else {
+    // Browser hasn't yet fired beforeinstallprompt — give a hint
+    if (typeof showToast === 'function') {
+      showToast('Open Chrome menu (⋮) → "Install app" to install.', 'info');
+    } else {
+      alert('Open the Chrome menu and tap "Install app".');
+    }
+  }
+}
+
+function _showIOSInstructions() {
+  // Build an overlay if not present
+  let ov = document.getElementById('iosInstallOverlay');
+  if (!ov) {
+    ov = document.createElement('div');
+    ov.id = 'iosInstallOverlay';
+    ov.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:10000;display:flex;align-items:flex-end;justify-content:center;';
+    ov.onclick = (e) => { if (e.target === ov) ov.remove(); };
+    ov.innerHTML = `
+      <div style="background:var(--card,#fff);color:var(--text,#1a1a2e);width:100%;max-width:480px;border-radius:16px 16px 0 0;padding:18px 18px 24px;box-shadow:0 -8px 30px rgba(0,0,0,0.25);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <div style="font-weight:800;font-size:16px;">📱 Install on iPhone</div>
+          <button onclick="document.getElementById('iosInstallOverlay').remove()" style="background:none;border:none;font-size:24px;line-height:1;cursor:pointer;color:var(--text-muted,#546e7a);">×</button>
+        </div>
+        <div style="font-size:14px;line-height:1.7;color:var(--text,#1a1a2e);">
+          1. Tap the <strong>Share</strong> button <span style="display:inline-block;border:1.5px solid #1565c0;border-radius:5px;padding:0 5px;color:#1565c0;font-size:12px;">⬆️</span> at the bottom of Safari.<br>
+          2. Scroll down and tap <strong>"Add to Home Screen"</strong>.<br>
+          3. Tap <strong>Add</strong> in the top-right.<br>
+          The app will appear on your home screen with the MCQ icon.
+        </div>
+        <div style="margin-top:12px;font-size:12px;color:var(--text-muted,#546e7a);">
+          Note: this only works in <strong>Safari</strong>, not Chrome on iPhone.
+        </div>
+      </div>`;
+    document.body.appendChild(ov);
+  }
 }
 </script>
 </body>
