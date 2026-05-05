@@ -387,774 +387,935 @@ The Final Battle
 POLITY_CH1_MCQS = [
 
     # ══════════════════════════════════════════
-    # SECTION 0 — కంపెనీ & క్రౌన్ పాలన
+    # SECTION 0 — Company & Crown Rule / కంపెనీ & క్రౌన్ పాలన
     # ══════════════════════════════════════════
 
-    # Easy
+    # MCQ 1
     (0, 1,
-     "కంపెనీ పాలన (Company Rule) ఏ సంవత్సరం నుండి ఏ సంవత్సరం వరకు కొనసాగింది?",
-     "1600–1857", "1773–1857", "1773–1858", "1600–1858",
+     "From which year to which year did Company Rule continue in India?\nతెలుగు: కంపెనీ పాలన ఏ సంవత్సరం నుండి ఏ సంవత్సరం వరకు కొనసాగింది?",
+     "1600–1857 / 1600–1857",
+     "1773–1857 / 1773–1857",
+     "1773–1858 / 1773–1858",
+     "1600–1858 / 1600–1858",
      "c",
      "రెగ్యులేటింగ్ యాక్ట్ 1773 నుండి అధికారిక నియంత్రణ ప్రారంభమైంది. 1858లో Government of India Act ద్వారా కంపెనీ పాలన అంతమైంది. కాబట్టి కంపెనీ పాలన 1773–1858."),
 
+    # MCQ 2
     (0, 1,
-     "1857 తిరుగుబాటు తర్వాత భారత పాలన ఎవరికి బదిలీ అయింది?",
-     "భారతీయ రాజులకు", "బ్రిటిష్ క్రౌన్‌కు (British Crown)", "ఈస్ట్ ఇండియా కంపెనీకే", "బ్రిటిష్ పార్లమెంట్‌కు నేరుగా",
+     "After the 1857 Revolt, Indian governance was transferred to whom?\nతెలుగు: 1857 తిరుగుబాటు తర్వాత భారత పాలన ఎవరికి బదిలీ అయింది?",
+     "Indian Kings / భారతీయ రాజులకు",
+     "British Crown / బ్రిటిష్ క్రౌన్‌కు (British Crown)",
+     "East India Company itself / ఈస్ట్ ఇండియా కంపెనీకే",
+     "British Parliament directly / బ్రిటిష్ పార్లమెంట్‌కు నేరుగా",
      "b",
      "Government of India Act 1858 ద్వారా భారత పాలన ఈస్ట్ ఇండియా కంపెనీ నుండి నేరుగా బ్రిటిష్ క్రౌన్‌కు బదిలీ అయింది."),
 
+    # MCQ 3
     (0, 1,
-     "క్రౌన్ పాలన (Crown Rule) ఎంత సంవత్సరాల పాటు కొనసాగింది?",
-     "75 సంవత్సరాలు", "89 సంవత్సరాలు", "100 సంవత్సరాలు", "50 సంవత్సరాలు",
+     "How many years did Crown Rule continue in India?\nతెలుగు: క్రౌన్ పాలన ఎంత సంవత్సరాల పాటు కొనసాగింది?",
+     "75 years / 75 సంవత్సరాలు",
+     "89 years / 89 సంవత్సరాలు",
+     "100 years / 100 సంవత్సరాలు",
+     "50 years / 50 సంవత్సరాలు",
      "b",
      "క్రౌన్ పాలన 1858 నుండి 1947 వరకు = 89 సంవత్సరాలు. కంపెనీ పాలన 1773 నుండి 1858 వరకు = 85 సంవత్సరాలు."),
 
-    # Moderate
+    # MCQ 4
     (0, 2,
-     "భారతదేశంలో బ్రిటిష్ పాలన గురించి కింది వాటిలో సరైనది ఏది?\n(1) కంపెనీ పాలన 1773లో ప్రారంభమైంది\n(2) క్రౌన్ పాలన 1858లో ప్రారంభమైంది\n(3) కంపెనీ పాలన 1857లో అంతమైంది",
-     "1 మాత్రమే సరైనది", "1 మరియు 2 సరైనవి", "2 మాత్రమే సరైనది", "1, 2 మరియు 3 సరైనవి",
+     "Regarding British Rule in India, which of the following are CORRECT?\n(1) Company Rule began in 1773\n(2) Crown Rule began in 1858\n(3) Company Rule ended in 1857\nతెలుగు: భారతదేశంలో బ్రిటిష్ పాలన గురించి కింది వాటిలో సరైనది ఏది?\n(1) కంపెనీ పాలన 1773లో ప్రారంభమైంది\n(2) క్రౌన్ పాలన 1858లో ప్రారంభమైంది\n(3) కంపెనీ పాలన 1857లో అంతమైంది",
+     "Only 1 / 1 మాత్రమే సరైనది",
+     "1 and 2 / 1 మరియు 2 సరైనవి",
+     "Only 2 / 2 మాత్రమే సరైనది",
+     "1, 2 and 3 / 1, 2 మరియు 3 సరైనవి",
      "b",
      "కంపెనీ పాలన 1773లో రెగ్యులేటింగ్ యాక్ట్ తో ప్రారంభమైంది (సరైనది). క్రౌన్ పాలన 1858లో ప్రారంభమైంది (సరైనది). కానీ కంపెనీ పాలన 1858లో అంతమైంది, 1857లో కాదు (3 తప్పు)."),
 
+    # MCQ 5
     (0, 2,
-     "కింది వాటిలో సరైనది ఏది? / Which statement about British Rule in India is CORRECT?\n(A) Company Rule began with Regulating Act 1773\n(B) Crown Rule began in 1857\n(C) Company Rule ended in 1947",
-     "A only", "B only", "A and C", "B and C",
+     "Which statement about British Rule in India is CORRECT?\n(A) Company Rule began with Regulating Act 1773\n(B) Crown Rule began in 1857\n(C) Company Rule ended in 1947\nతెలుగు: కింది వాటిలో సరైనది ఏది?",
+     "A only / A మాత్రమే",
+     "B only / B మాత్రమే",
+     "A and C / A మరియు C",
+     "B and C / B మరియు C",
      "a",
      "Company Rule is generally marked from the Regulating Act 1773. Crown Rule began in 1858 (not 1857) after the Government of India Act 1858. Company Rule ended in 1858, not 1947."),
 
-    # Tough
+    # MCQ 6
     (0, 3,
-     "కింది జంటలను సరిగ్గా జోడించండి:\n(A) కంపెనీ పాలన ప్రారంభం — 1. 1858\n(B) క్రౌన్ పాలన ప్రారంభం — 2. 1773\n(C) భారత స్వాతంత్ర్యం — 3. 1947",
-     "A-2, B-1, C-3", "A-1, B-2, C-3", "A-2, B-3, C-1", "A-3, B-1, C-2",
+     "Match the following correctly:\n(A) Company Rule begins — 1. 1858\n(B) Crown Rule begins — 2. 1773\n(C) Indian Independence — 3. 1947\nతెలుగు: కింది జంటలను సరిగ్గా జోడించండి",
+     "A-2, B-1, C-3",
+     "A-1, B-2, C-3",
+     "A-2, B-3, C-1",
+     "A-3, B-1, C-2",
      "a",
      "కంపెనీ పాలన ప్రారంభం = 1773 (రెగ్యులేటింగ్ యాక్ట్). క్రౌన్ పాలన ప్రారంభం = 1858 (GOI Act 1858). భారత స్వాతంత్ర్యం = 1947. కాబట్టి A-2, B-1, C-3 సరైన జంట."),
 
     # ══════════════════════════════════════════
-    # SECTION 1 — రెగ్యులేటింగ్ యాక్ట్ 1773 & పిట్స్ ఇండియా యాక్ట్ 1784
+    # SECTION 1 — Regulating Act 1773 & Pitt's India Act 1784 / రెగ్యులేటింగ్ + పిట్స్ యాక్ట్
     # ══════════════════════════════════════════
 
-    # Easy
+    # MCQ 7
     (1, 1,
-     "రెగ్యులేటింగ్ యాక్ట్ 1773 ప్రకారం బెంగాల్ మొదటి గవర్నర్ జనరల్ ఎవరు?",
-     "లార్డ్ కార్న్‌వాలీస్", "లార్డ్ కానింగ్", "వారెన్ హేస్టింగ్స్", "లార్డ్ బెంటింక్",
+     "Who was the first Governor General of Bengal under the Regulating Act 1773?\nతెలుగు: రెగ్యులేటింగ్ యాక్ట్ 1773 ప్రకారం బెంగాల్ మొదటి గవర్నర్ జనరల్ ఎవరు?",
+     "Lord Cornwallis / లార్డ్ కార్న్‌వాలీస్",
+     "Lord Canning / లార్డ్ కానింగ్",
+     "Warren Hastings / వారెన్ హేస్టింగ్స్ (Warren Hastings)",
+     "Lord Bentinck / లార్డ్ బెంటింక్",
      "c",
-     "రెగ్యులేటింగ్ యాక్ట్ 1773 ప్రకారం బెంగాల్ గవర్నర్‌ను 'గవర్నర్ జనరల్ ఆఫ్ బెంగాల్'గా మార్చారు. మొదటి గవర్నర్ జనరల్ = వారెన్ హేస్టింగ్స్ (Warren Hastings)."),
+     "రెగ్యులేటింగ్ యాక్ట్ 1773 ప్రకారం వారెన్ హేస్టింగ్స్ (Warren Hastings) మొదటి గవర్నర్ జనరల్ ఆఫ్ బెంగాల్."),
 
+    # MCQ 8
     (1, 1,
-     "రెగ్యులేటింగ్ యాక్ట్ 1773 ప్రాముఖ్యత ఏమిటి? / The Regulating Act of 1773 is significant because it was:",
-     "The first Act to provide a written Constitution for India",
-     "The first step taken by the British Parliament to control the Company's affairs",
-     "The Act that transferred power from Company to the Crown",
-     "The Act that established the Supreme Court in England",
+     "The Regulating Act of 1773 is significant because it was:\nతెలుగు: రెగ్యులేటింగ్ యాక్ట్ 1773 ప్రాముఖ్యత ఏమిటి?",
+     "The first Act to provide a written Constitution for India / భారతదేశానికి లిఖిత రాజ్యాంగం ఇచ్చిన మొదటి చట్టం",
+     "The first step taken by the British Parliament to control the Company's affairs / కంపెనీ వ్యవహారాలను నియంత్రించడానికి బ్రిటిష్ పార్లమెంట్ తీసుకున్న మొదటి అడుగు",
+     "The Act that transferred power from Company to the Crown / కంపెనీ నుండి క్రౌన్‌కు అధికారాన్ని బదిలీ చేసిన చట్టం",
+     "The Act that established the Supreme Court in England / ఇంగ్లాండ్‌లో సుప్రీం కోర్ట్ ఏర్పాటు చేసిన చట్టం",
      "b",
-     "Regulating Act 1773 was the first attempt by the British Parliament to regulate and control the affairs of the East India Company. It was the first legislative step towards a centralized administration in India."),
+     "Regulating Act 1773 was the first step by the British Parliament to control the East India Company's affairs in India."),
 
+    # MCQ 9
     (1, 1,
-     "పిట్స్ ఇండియా యాక్ట్ 1784 ఏ వ్యవస్థను ప్రవేశపెట్టింది?",
-     "ఏకాధికార వ్యవస్థ (Single Government)", "ద్వంద్వ పాలన (Double Government / Diarchy)",
-     "సమాఖ్య వ్యవస్థ (Federal System)", "సైనిక పాలన (Military Rule)",
+     "Which system did Pitt's India Act 1784 introduce?\nతెలుగు: పిట్స్ ఇండియా యాక్ట్ 1784 ఏ వ్యవస్థను ప్రవేశపెట్టింది?",
+     "Single Government / ఏకాధికార వ్యవస్థ",
+     "Double Government (Diarchy) / ద్వంద్వ పాలన (Double Government)",
+     "Federal System / సమాఖ్య వ్యవస్థ",
+     "Military Rule / సైనిక పాలన",
      "b",
-     "పిట్స్ ఇండియా యాక్ట్ 1784 Board of Control (రాజకీయ వ్యవహారాలు) మరియు Court of Directors (వ్యాపార వ్యవహారాలు) అనే ద్వంద్వ పాలన వ్యవస్థను (Double Government/Diarchy) ప్రవేశపెట్టింది."),
+     "Pitt's India Act 1784 introduced 'Double Government' — Board of Control (political affairs) + Court of Directors (commercial affairs)."),
 
-    # Moderate
+    # MCQ 10
     (1, 2,
-     "రెగ్యులేటింగ్ యాక్ట్ 1773 గురించి కింది వాటిలో సరైనవి ఏవి?\n(1) ఇది బ్రిటిష్ పార్లమెంట్ చేసిన మొదటి నియంత్రణ చట్టం\n(2) కలకత్తాలో సుప్రీం కోర్ట్ ఏర్పాటు చేశారు\n(3) మొదటి గవర్నర్ జనరల్ ఆఫ్ ఇండియా వారెన్ హేస్టింగ్స్",
-     "1 మరియు 2 మాత్రమే", "2 మరియు 3 మాత్రమే", "1 మరియు 3 మాత్రమే", "1, 2 మరియు 3",
+     "Regarding Regulating Act 1773, which of the following are CORRECT?\n(1) First Act of British Parliament to control the Company\n(2) Supreme Court was established in Calcutta\n(3) Warren Hastings became the first Governor General of India\nతెలుగు: రెగ్యులేటింగ్ యాక్ట్ 1773 గురించి కింది వాటిలో సరైనవి ఏవి?",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
+     "1 and 3 only / 1 మరియు 3 మాత్రమే",
+     "1, 2 and 3 / 1, 2 మరియు 3",
      "a",
-     "1 సరైనది (మొదటి నియంత్రణ చట్టం). 2 సరైనది (కలకత్తా సుప్రీం కోర్ట్ 1774లో). కానీ 3 తప్పు — వారెన్ హేస్టింగ్స్ 'గవర్నర్ జనరల్ ఆఫ్ బెంగాల్', 'గవర్నర్ జనరల్ ఆఫ్ ఇండియా' కాదు. ఆ బిరుదు 1833 యాక్ట్ తో వచ్చింది."),
+     "Statements 1 and 2 are correct. Statement 3 is incorrect — Warren Hastings was the first Governor General of BENGAL (not India). The post 'Governor General of India' was created only in 1833."),
 
+    # MCQ 11
     (1, 2,
-     "పిట్స్ ఇండియా యాక్ట్ 1784లో Board of Control యొక్క ముఖ్య పని ఏమిటి?",
-     "వ్యాపార వ్యవహారాలు నిర్వహించడం", "రాజకీయ, సైనిక మరియు ఆర్థిక వ్యవహారాలు నియంత్రించడం",
-     "న్యాయ వ్యవహారాలు చూడడం", "Governor General ని నియమించడం",
+     "Under Pitt's India Act 1784, what was the main function of the Board of Control?\nతెలుగు: పిట్స్ ఇండియా యాక్ట్ 1784లో Board of Control యొక్క ముఖ్య పని ఏమిటి?",
+     "Conducting commercial affairs / వ్యాపార వ్యవహారాలు నిర్వహించడం",
+     "Controlling political, military and revenue affairs / రాజకీయ, సైనిక మరియు ఆర్థిక వ్యవహారాలు నియంత్రించడం",
+     "Looking after judicial affairs / న్యాయ వ్యవహారాలు చూడడం",
+     "Appointing the Governor General / Governor General ని నియమించడం",
      "b",
-     "Board of Control కంపెనీ యొక్క రాజకీయ, సైనిక మరియు ఆర్థిక వ్యవహారాలను నియంత్రించేది. వ్యాపార వ్యవహారాలు Court of Directors నిర్వహించేది."),
+     "The Board of Control supervised political, military, and revenue affairs of the Company. The Court of Directors handled commercial matters."),
 
-    # Tough
+    # MCQ 12
     (1, 3,
-     "కింది వాటిలో రెగ్యులేటింగ్ యాక్ట్ 1773కు సంబంధించి సరికానిది (INCORRECT) ఏది?",
-     "ఇది బ్రిటిష్ పార్లమెంట్ కంపెనీ వ్యవహారాలను నియంత్రించిన మొదటి చట్టం",
-     "వారెన్ హేస్టింగ్స్ మొదటి గవర్నర్ జనరల్ ఆఫ్ బెంగాల్",
-     "కలకత్తాలో సుప్రీం కోర్ట్ 1773లోనే ఏర్పాటైంది",
-     "కంపెనీ డైరెక్టర్లు తమ కార్యకలాపాలను బ్రిటిష్ ప్రభుత్వానికి నివేదించాలి",
+     "Which of the following is INCORRECT about the Regulating Act 1773?\nతెలుగు: కింది వాటిలో రెగ్యులేటింగ్ యాక్ట్ 1773కు సంబంధించి సరికానిది ఏది?",
+     "It was the first Act of the British Parliament to control Company affairs / బ్రిటిష్ పార్లమెంట్ కంపెనీ వ్యవహారాలను నియంత్రించిన మొదటి చట్టం",
+     "Warren Hastings was the first Governor General of Bengal / వారెన్ హేస్టింగ్స్ మొదటి గవర్నర్ జనరల్ ఆఫ్ బెంగాల్",
+     "Supreme Court was established in Calcutta in 1773 itself / కలకత్తాలో సుప్రీం కోర్ట్ 1773లోనే ఏర్పాటైంది",
+     "Court of Directors must report to the British Government / కంపెనీ డైరెక్టర్లు తమ కార్యకలాపాలను బ్రిటిష్ ప్రభుత్వానికి నివేదించాలి",
      "c",
-     "కలకత్తా సుప్రీం కోర్ట్ 1774లో ఏర్పాటైంది, 1773లో కాదు. చట్టం 1773లో వచ్చినా, కోర్ట్ 1774లో స్థాపించబడింది. మిగతా మూడు నిజమే."),
+     "The Regulating Act was passed in 1773 but the Supreme Court at Calcutta was actually established in 1774 — option C is the incorrect statement."),
 
+    # MCQ 13
     (1, 3,
-     "అభికథనం-కారణం సరైనవా? / Assertion (A): Pitt's India Act 1784 established a system of 'Double Government' in India.\nReason (R): Under this Act, the Board of Control supervised the political affairs while the Court of Directors handled commercial affairs.",
-     "Both A and R are correct, and R correctly explains A",
-     "Both A and R are correct, but R does not explain A",
-     "A is correct but R is incorrect",
-     "A is incorrect but R is correct",
+     "Assertion (A): Pitt's India Act 1784 established a 'Double Government' in India.\nReason (R): Under this Act, the Board of Control supervised political affairs while the Court of Directors handled commercial affairs.\nతెలుగు: అభికథనం-కారణం సరైనవా?",
+     "Both A and R correct, R explains A / రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
+     "Both A and R correct, R does not explain A / రెండూ సరైనవి, కానీ R వివరణ కాదు",
+     "A correct, R incorrect / A సరైనది, R తప్పు",
+     "A incorrect, R correct / A తప్పు, R సరైనది",
      "a",
-     "Pitt's India Act 1784 indeed created Double Government (Diarchy). Board of Control handled political/military/financial affairs; Court of Directors handled commercial affairs. R correctly explains why it was called Double Government."),
+     "Both A and R are correct. R correctly describes the dual structure (Board of Control + Court of Directors) which was the very mechanism of Double Government."),
 
-    # Toughest
+    # MCQ 14
     (1, 4,
-     "కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?\n(1) రెగ్యులేటింగ్ యాక్ట్ 1773 — గవర్నర్ జనరల్ ఆఫ్ బెంగాల్ పదవి\n(2) పిట్స్ ఇండియా యాక్ట్ 1784 — ద్వంద్వ పాలన వ్యవస్థ\n(3) చార్టర్ యాక్ట్ 1813 — కంపెనీ వ్యాపార గుత్తాధిపత్యం రద్దు\n(4) చార్టర్ యాక్ట్ 1833 — సివిల్ సర్వీసెస్ Open Competition",
-     "1, 2 మరియు 3 మాత్రమే", "1, 2, 3 మరియు 4 అన్నీ",
-     "2 మరియు 3 మాత్రమే", "1 మరియు 4 మాత్రమే",
+     "Which of the following pairs are correctly matched?\n(1) Regulating Act 1773 — post of Governor General of Bengal\n(2) Pitt's India Act 1784 — Double Government\n(3) Charter Act 1813 — End of Company's trade monopoly\n(4) Charter Act 1833 — Open Competition for Civil Services\nతెలుగు: కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?",
+     "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
+     "All of 1, 2, 3 and 4 / అన్నీ",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
      "a",
-     "1, 2, 3 సరైనవి. కానీ 4 తప్పు — Open Competition for Civil Services 1853 Charter Act తో వచ్చింది, 1833తో కాదు. కాబట్టి 1, 2, 3 మాత్రమే సరైన జంటలు."),
+     "Pairs 1, 2, 3 are correct. Pair 4 is wrong — Open Competition for Civil Services was introduced by the Charter Act 1853 (not 1833)."),
 
-    # PYQ — APPSC
+    # MCQ 15 (10-tuple, exam=APPSC)
     (1, 2,
-     "రెగ్యులేటింగ్ యాక్ట్ (Regulating Act) 1773 ద్వారా ఏర్పాటైన సుప్రీం కోర్ట్ ఎక్కడ స్థాపించారు? [APPSC Group 2]",
-     "బొంబాయి", "మద్రాస్", "కలకత్తా", "ఢిల్లీ",
+     "Where was the Supreme Court established under the Regulating Act 1773? [APPSC Group 2]\nతెలుగు: రెగ్యులేటింగ్ యాక్ట్ 1773 ద్వారా ఏర్పాటైన సుప్రీం కోర్ట్ ఎక్కడ స్థాపించారు?",
+     "Bombay / బొంబాయి",
+     "Madras / మద్రాస్",
+     "Calcutta / కలకత్తా (Calcutta)",
+     "Delhi / ఢిల్లీ",
      "c",
      "రెగ్యులేటింగ్ యాక్ట్ 1773 ప్రకారం కలకత్తా (Calcutta)లో సుప్రీం కోర్ట్ 1774లో స్థాపించారు. ఇది APPSC Group 2 2016 లో అడిగిన ప్రశ్న.",
      "APPSC"),
 
     # ══════════════════════════════════════════
-    # SECTION 2 — చార్టర్ యాక్ట్స్ 1813, 1833, 1853
+    # SECTION 2 — Charter Acts 1813, 1833, 1853 / చార్టర్ యాక్ట్‌లు
     # ══════════════════════════════════════════
 
-    # Easy
+    # MCQ 16
     (2, 1,
-     "చార్టర్ యాక్ట్ 1833 ప్రకారం 'గవర్నర్ జనరల్ ఆఫ్ ఇండియా' అయిన మొదటి వ్యక్తి ఎవరు?",
-     "వారెన్ హేస్టింగ్స్", "లార్డ్ కానింగ్", "లార్డ్ విలియమ్ బెంటింక్", "లార్డ్ కార్న్‌వాలీస్",
+     "Who was the first 'Governor General of India' under the Charter Act 1833?\nతెలుగు: చార్టర్ యాక్ట్ 1833 ప్రకారం 'గవర్నర్ జనరల్ ఆఫ్ ఇండియా' అయిన మొదటి వ్యక్తి ఎవరు?",
+     "Warren Hastings / వారెన్ హేస్టింగ్స్",
+     "Lord Canning / లార్డ్ కానింగ్",
+     "Lord William Bentinck / లార్డ్ విలియమ్ బెంటింక్ (Lord William Bentinck)",
+     "Lord Cornwallis / లార్డ్ కార్న్‌వాలీస్",
      "c",
-     "చార్టర్ యాక్ట్ 1833 ద్వారా బెంగాల్ గవర్నర్ జనరల్‌ని 'గవర్నర్ జనరల్ ఆఫ్ ఇండియా'గా మార్చారు. ఈ బిరుదు పొందిన మొదటి వ్యక్తి లార్డ్ విలియమ్ బెంటింక్ (Lord William Bentinck)."),
+     "Lord William Bentinck was redesignated as the first 'Governor General of India' under the Charter Act 1833. Earlier, Warren Hastings was the first 'Governor General of Bengal'."),
 
+    # MCQ 17
     (2, 1,
-     "కింది Charter Act వాణిజ్య గుత్తాధిపత్యం ముగించింది ఏది? / Which Charter Act ended the trade monopoly of the East India Company (except China trade and Tea trade)?",
-     "Charter Act 1793", "Charter Act 1813", "Charter Act 1833", "Charter Act 1853",
+     "Which Charter Act ended the trade monopoly of the East India Company (except China trade and Tea)?\nతెలుగు: కింది ఏ Charter Act వాణిజ్య గుత్తాధిపత్యం ముగించింది?",
+     "Charter Act 1793",
+     "Charter Act 1813",
+     "Charter Act 1833",
+     "Charter Act 1853",
      "b",
-     "Charter Act 1813 ended the Company's trade monopoly over India. However, the monopoly on China trade and Tea trade continued until Charter Act 1833, which completely ended all commercial activities of the Company."),
+     "Charter Act 1813 ended Company's trade monopoly EXCEPT for China trade and Tea trade. China trade monopoly was ended by Charter Act 1833."),
 
+    # MCQ 18
     (2, 1,
-     "చార్టర్ యాక్ట్ 1853 ముఖ్యత ఏమిటి?",
-     "కంపెనీ వ్యాపార గుత్తాధిపత్యం రద్దు", "శాసనసభ మరియు కార్యనిర్వాహక మండలి వేరు చేశారు",
-     "కంపెనీ పాలన పూర్తిగా రద్దు", "భారతదేశంలో మొదటి సాధారణ ఎన్నికలు",
+     "What is the importance of the Charter Act 1853?\nతెలుగు: చార్టర్ యాక్ట్ 1853 ముఖ్యత ఏమిటి?",
+     "End of Company trade monopoly / కంపెనీ వ్యాపార గుత్తాధిపత్యం రద్దు",
+     "Separation of legislative and executive councils / శాసనసభ మరియు కార్యనిర్వాహక మండలి వేరు చేశారు",
+     "Complete abolition of Company Rule / కంపెనీ పాలన పూర్తిగా రద్దు",
+     "First general elections in India / భారతదేశంలో మొదటి సాధారణ ఎన్నికలు",
      "b",
-     "చార్టర్ యాక్ట్ 1853 మొదటిసారి Legislative Council (శాసనసభ)ని Executive Council (కార్యనిర్వాహక మండలి) నుండి వేరు చేసింది. Open Competition for Civil Services కూడా ఇదే యాక్ట్ లో వచ్చింది."),
+     "Charter Act 1853 separated the legislative and executive functions of the Governor General's council and introduced Open Competition for Civil Services."),
 
-    # Moderate
+    # MCQ 19
     (2, 2,
-     "కింది వాటిలో చార్టర్ యాక్ట్ 1833కు సంబంధించి సరైనవి ఏవి?\n(1) కంపెనీ పూర్తిగా వ్యాపార సంస్థగా కాకుండా పాలనా సంస్థగా మారింది\n(2) గవర్నర్ జనరల్ ఆఫ్ ఇండియా పదవి ఏర్పాటైంది\n(3) Open Competition for Civil Services ప్రవేశపెట్టారు",
-     "1 మాత్రమే", "1 మరియు 2", "2 మరియు 3", "1, 2 మరియు 3",
+     "Regarding Charter Act 1833, which of the following are CORRECT?\n(1) Company became more administrative than commercial\n(2) Post of Governor General of India was created\n(3) Open Competition for Civil Services introduced\nతెలుగు: కింది వాటిలో చార్టర్ యాక్ట్ 1833కు సంబంధించి సరైనవి ఏవి?",
+     "Only 1 / 1 మాత్రమే",
+     "1 and 2 / 1 మరియు 2",
+     "2 and 3 / 2 మరియు 3",
+     "1, 2 and 3 / 1, 2 మరియు 3",
      "b",
-     "1 సరైనది — కంపెనీ పూర్తిగా పాలనా సంస్థగా మారింది. 2 సరైనది — G.G. of India పదవి వచ్చింది. కానీ 3 తప్పు — Open Competition for Civil Services 1853 Charter Act తో వచ్చింది."),
+     "Charter Act 1833 made the Company purely administrative + created the post of Governor General of India. Open Competition for Civil Services was introduced by Charter Act 1853 (statement 3 is wrong)."),
 
+    # MCQ 20
     (2, 2,
-     "Charter Acts యొక్క సరైన క్రమాన్ని ఏర్పాటు చేయండి:\n(P) గవర్నర్ జనరల్ ఆఫ్ ఇండియా పదవి ఏర్పాటు\n(Q) కంపెనీ గుత్తాధిపత్యం పాక్షిక రద్దు\n(R) శాసన మరియు కార్యనిర్వాహక మండళ్ళు వేరు\n(S) ద్వంద్వ పాలన వ్యవస్థ",
-     "S → Q → P → R", "Q → S → P → R", "S → P → Q → R", "P → Q → R → S",
+     "Arrange the Charter Acts in correct chronological order:\n(P) Post of Governor General of India created\n(Q) Partial end of Company monopoly\n(R) Separation of legislative + executive\n(S) Double Government introduced\nతెలుగు: Charter Acts యొక్క సరైన క్రమాన్ని ఏర్పాటు చేయండి",
+     "S → Q → P → R",
+     "Q → S → P → R",
+     "S → P → Q → R",
+     "P → Q → R → S",
      "a",
-     "S = పిట్స్ ఇండియా యాక్ట్ 1784 (ద్వంద్వ పాలన) → Q = 1813 (గుత్తాధిపత్యం పాక్షిక రద్దు) → P = 1833 (G.G. of India) → R = 1853 (శాసన + కార్యనిర్వాహక వేరు). సరైన క్రమం: S → Q → P → R."),
+     "Order: S=Pitt's Act 1784 (Double Government) → Q=Charter Act 1813 (partial monopoly end) → P=Charter Act 1833 (GG of India) → R=Charter Act 1853 (separation)."),
 
-    # Tough
+    # MCQ 21
     (2, 3,
-     "కింది వాటిలో సరికానిది (INCORRECT) ఏది?",
-     "చార్టర్ యాక్ట్ 1813 క్రైస్తవ మిషనరీలకు భారతదేశంలో పని చేయడానికి అనుమతించింది",
-     "చార్టర్ యాక్ట్ 1833 కంపెనీ వ్యాపార కార్యకలాపాలు పూర్తిగా రద్దు చేసింది",
-     "చార్టర్ యాక్ట్ 1853 సివిల్ సర్వీసెస్‌కు Open Competition ప్రవేశపెట్టింది",
-     "చార్టర్ యాక్ట్ 1813 చైనా వ్యాపార గుత్తాధిపత్యాన్ని పూర్తిగా రద్దు చేసింది",
+     "Which of the following is INCORRECT?\nతెలుగు: కింది వాటిలో సరికానిది ఏది?",
+     "Charter Act 1813 allowed Christian missionaries to work in India / 1813 క్రైస్తవ మిషనరీలకు అనుమతి",
+     "Charter Act 1833 completely abolished Company's trade activities / 1833 కంపెనీ వ్యాపార కార్యకలాపాలు పూర్తిగా రద్దు",
+     "Charter Act 1853 introduced Open Competition for Civil Services / 1853 సివిల్ సర్వీసెస్‌కు Open Competition",
+     "Charter Act 1813 completely ended China trade monopoly / 1813 చైనా వ్యాపార గుత్తాధిపత్యాన్ని పూర్తిగా రద్దు",
      "d",
-     "చార్టర్ యాక్ట్ 1813 చైనా వ్యాపారం మరియు టీ వ్యాపారం కంపెనీకే ఉంచింది — రద్దు చేయలేదు. ఆ గుత్తాధిపత్యం 1833 యాక్ట్ తో రద్దైంది. మిగతా మూడు నిజమే. (గమనిక: మొదటిసారి భారతీయులను Legislative Council కు నియమించింది ICA 1861 — 1853 కాదు.)"),
+     "China trade monopoly was ended by Charter Act 1833 (NOT 1813). Charter Act 1813 only ended India trade monopoly while keeping China and Tea monopolies intact."),
 
-    # Toughest
+    # MCQ 22
     (2, 4,
-     "Assertion (A): Charter Act of 1853 is considered a significant constitutional milestone.\nReason (R): It introduced for the first time the principle of Open Competition for Civil Services and separated the legislative and executive functions of the Governor General's Council.\nఈ జంట గురించి సరైన సమాధానం ఏది?",
-     "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
-     "A మరియు R రెండూ సరైనవి, కానీ R అనేది A కి వివరణ కాదు",
-     "A సరైనది, R తప్పు",
-     "A తప్పు, R సరైనది",
+     "Assertion (A): Charter Act of 1853 is considered a significant constitutional milestone.\nReason (R): It introduced Open Competition for Civil Services and separated legislative + executive functions of the GG's Council.\nతెలుగు: ఈ జంట గురించి సరైన సమాధానం ఏది?",
+     "Both A and R correct, R explains A / రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
+     "Both A and R correct, R does not explain A / రెండూ సరైనవి, R వివరణ కాదు",
+     "A correct, R incorrect / A సరైనది, R తప్పు",
+     "A incorrect, R correct / A తప్పు, R సరైనది",
      "a",
-     "Charter Act 1853 రెండు కీలక మార్పులు చేసింది: (1) Open Competition for Civil Services (2) Legislative Council ని Executive Council నుండి వేరు చేయడం. ఇవే దాన్ని ముఖ్యమైన మైలురాయి (milestone) చేస్తున్నాయి. R అనేది A కి సరైన వివరణ."),
+     "Both Assertion and Reason are correct, and the Reason precisely explains why the Charter Act 1853 is a milestone."),
 
-    # PYQ — UPSC
+    # MCQ 23 (10-tuple, exam=UPSC)
     (2, 2,
-     "చార్టర్ యాక్ట్ 1813 దేనితో సంబంధం? / The Charter Act of 1813 is associated with which of the following? [UPSC Prelims Style]",
-     "Abolition of East India Company's trade monopoly with China",
-     "Establishment of Governor General of India post",
-     "Partial end of Company's trade monopoly, allowing Christian missionaries",
-     "Separation of Legislative and Executive Councils",
+     "The Charter Act of 1813 is associated with which of the following? [UPSC Prelims Style]\nతెలుగు: చార్టర్ యాక్ట్ 1813 దేనితో సంబంధం?",
+     "Abolition of Company's trade monopoly with China / చైనాతో గుత్తాధిపత్యం రద్దు",
+     "Establishment of Governor General of India post / GG of India పదవి ఏర్పాటు",
+     "Partial end of Company's trade monopoly, allowing Christian missionaries / కంపెనీ గుత్తాధిపత్యం పాక్షిక రద్దు, మిషనరీలకు అనుమతి",
+     "Separation of Legislative and Executive Councils / శాసనసభ + కార్యనిర్వాహక మండలి వేరు",
      "c",
-     "Charter Act 1813: (1) Ended Company's trade monopoly over India (except China & Tea) (2) Allowed Christian missionaries to work in India (3) Allocated ₹1 lakh for education. China trade monopoly ended only in 1833.",
+     "Charter Act 1813 partially ended Company's trade monopoly (kept China + Tea monopolies) and allowed Christian missionaries to work in India.",
      "UPSC"),
 
     # ══════════════════════════════════════════
-    # SECTION 3 — గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1858
+    # SECTION 3 — Government of India Act 1858 / GOI Act 1858
     # ══════════════════════════════════════════
 
-    # Easy
+    # MCQ 24
     (3, 1,
-     "మొదటి వైస్రాయ్ (Viceroy) ఎవరు?",
-     "లార్డ్ డల్హౌసీ", "లార్డ్ కానింగ్", "లార్డ్ బెంటింక్", "లార్డ్ కర్జన్",
+     "Who was the first Viceroy of India?\nతెలుగు: మొదటి వైస్రాయ్ ఎవరు?",
+     "Lord Dalhousie / లార్డ్ డల్హౌసీ",
+     "Lord Canning / లార్డ్ కానింగ్ (Lord Canning)",
+     "Lord Bentinck / లార్డ్ బెంటింక్",
+     "Lord Curzon / లార్డ్ కర్జన్",
      "b",
-     "Government of India Act 1858 ప్రకారం గవర్నర్ జనరల్‌ని వైస్రాయ్ (Viceroy) అని పిలవడం ప్రారంభమైంది. మొదటి వైస్రాయ్ లార్డ్ కానింగ్ (Lord Canning)."),
+     "Lord Canning was the last Governor General + first Viceroy of India after the GOI Act 1858 transferred power to the Crown."),
 
+    # MCQ 25
     (3, 1,
-     "Government of India Act 1858 ప్రకారం 'సెక్రటరీ ఆఫ్ స్టేట్ ఫర్ ఇండియా' పదవిలో ఉన్న మొదటి వ్యక్తి ఎవరు?",
-     "చార్లెస్ వుడ్ (Charles Wood)", "లార్డ్ స్టాన్లీ (Lord Stanley)", "ఎడ్వర్డ్ స్టాన్లీ", "లార్డ్ మాకాలే",
+     "Who was the first 'Secretary of State for India' under the GOI Act 1858?\nతెలుగు: Government of India Act 1858 ప్రకారం 'సెక్రటరీ ఆఫ్ స్టేట్ ఫర్ ఇండియా' పదవిలో ఉన్న మొదటి వ్యక్తి ఎవరు?",
+     "Charles Wood / చార్లెస్ వుడ్",
+     "Lord Stanley / లార్డ్ స్టాన్లీ (Lord Stanley)",
+     "Edward Stanley / ఎడ్వర్డ్ స్టాన్లీ",
+     "Lord Macaulay / లార్డ్ మాకాలే",
      "b",
-     "Government of India Act 1858 ద్వారా Secretary of State for India పదవి సృష్టించబడింది. మొదటి Secretary of State for India = లార్డ్ స్టాన్లీ (Lord Stanley / Edward Henry Stanley)."),
+     "Lord Stanley (later 15th Earl of Derby) was the first Secretary of State for India after the GOI Act 1858 created the post."),
 
+    # MCQ 26
     (3, 1,
-     "Government of India Act 1858 ఏ సంఘటన తర్వాత వచ్చింది?",
-     "మొదటి ప్రపంచ యుద్ధం (World War I)", "1857 సిపాయిల తిరుగుబాటు",
-     "ప్లాసీ యుద్ధం (Battle of Plassey)", "డాండీ మార్చ్ (Dandi March)",
+     "The Government of India Act 1858 came after which event?\nతెలుగు: Government of India Act 1858 ఏ సంఘటన తర్వాత వచ్చింది?",
+     "World War I / మొదటి ప్రపంచ యుద్ధం",
+     "1857 Sepoy Mutiny / 1857 సిపాయిల తిరుగుబాటు (Sepoy Mutiny)",
+     "Battle of Plassey / ప్లాసీ యుద్ధం",
+     "Dandi March / డాండీ మార్చ్",
      "b",
-     "1857 సిపాయిల తిరుగుబాటు (First War of Independence) తర్వాత బ్రిటిష్ వారు కంపెనీ పాలన అసమర్థమని గ్రహించారు. అందుకే 1858లో Government of India Act ద్వారా పాలన క్రౌన్‌కు బదిలీ చేశారు."),
+     "GOI Act 1858 was a direct response to the 1857 Sepoy Mutiny / First War of Indian Independence — it transferred power from Company to the Crown."),
 
-    # Moderate
+    # MCQ 27
     (3, 2,
-     "Government of India Act 1858 గురించి కింది వాటిలో సరైనవి ఏవి?\n(1) Board of Control మరియు Court of Directors రద్దయ్యాయి\n(2) Secretary of State కౌన్సిల్‌లో 15 మంది సభ్యులు ఉంటారు\n(3) వైస్రాయ్ Secretary of State కు జవాబుదారీగా ఉంటాడు",
-     "1 మాత్రమే", "1 మరియు 2 మాత్రమే", "1, 2 మరియు 3", "2 మరియు 3 మాత్రమే",
+     "Regarding GOI Act 1858, which of the following are CORRECT?\n(1) Board of Control + Court of Directors abolished\n(2) Secretary of State has a 15-member council\n(3) Viceroy is responsible to the Secretary of State\nతెలుగు: Government of India Act 1858 గురించి కింది వాటిలో సరైనవి ఏవి?",
+     "Only 1 / 1 మాత్రమే",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "1, 2 and 3 / 1, 2 మరియు 3",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
      "c",
-     "మూడూ సరైనవే. 1858 యాక్ట్ ద్వారా Board of Control + Court of Directors రద్దు అయ్యాయి. Secretary of State కు 15 సభ్యుల కౌన్సిల్ ఉండేది. వైస్రాయ్ Secretary of State ద్వారా బ్రిటిష్ పార్లమెంట్‌కు జవాబుదారీగా ఉండేవాడు."),
+     "All three are correct features of GOI Act 1858."),
 
+    # MCQ 28
     (3, 2,
-     "కింది వాటిలో తప్పు ఏది? / Which of the following was NOT a feature of the Government of India Act 1858?",
-     "Transfer of power from Company to the Crown",
-     "Establishment of the post of Secretary of State for India",
-     "Introduction of the concept of Diarchy at the provincial level",
-     "Abolition of the Board of Control and Court of Directors",
+     "Which of the following was NOT a feature of the GOI Act 1858?\nతెలుగు: కింది వాటిలో తప్పు ఏది?",
+     "Transfer of power from Company to the Crown / కంపెనీ నుండి క్రౌన్‌కు అధికార బదిలీ",
+     "Establishment of Secretary of State for India post / Secretary of State పదవి ఏర్పాటు",
+     "Introduction of Diarchy at provincial level / రాష్ట్ర స్థాయిలో Diarchy",
+     "Abolition of Board of Control + Court of Directors / Board of Control + Court of Directors రద్దు",
      "c",
-     "Diarchy (ద్వంద్వ పాలన) at provincial level was introduced by Government of India Act 1919 (Montagu-Chelmsford Reforms), not 1858. The other three are correct features of GOI Act 1858."),
+     "Diarchy at the provincial level was introduced by GOI Act 1919 (Montagu-Chelmsford Reforms) — NOT 1858."),
 
-    # Tough
+    # MCQ 29
     (3, 3,
-     "కింది వాటిలో Government of India Act 1858 ద్వారా రద్దయినవి ఏవి?\n(1) Board of Control\n(2) Court of Directors\n(3) East India Company\n(4) సుప్రీం కోర్ట్",
-     "1 మరియు 2 మాత్రమే", "1, 2 మరియు 3", "2, 3 మరియు 4", "1, 2, 3 మరియు 4",
+     "Which of the following were abolished by the GOI Act 1858?\n(1) Board of Control\n(2) Court of Directors\n(3) East India Company\n(4) Supreme Court\nతెలుగు: GOI Act 1858 ద్వారా రద్దయినవి ఏవి?",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "1, 2 and 3 / 1, 2 మరియు 3",
+     "2, 3 and 4 / 2, 3 మరియు 4",
+     "1, 2, 3 and 4 / 1, 2, 3 మరియు 4",
      "b",
-     "1858 యాక్ట్ ద్వారా Board of Control, Court of Directors మరియు East India Company రద్దయ్యాయి. సుప్రీం కోర్ట్ రద్దు కాలేదు — అది తర్వాత 1861 యాక్ట్ ద్వారా High Courts గా మార్చబడింది."),
+     "GOI Act 1858 abolished the Board of Control, Court of Directors, and ended Company Rule (East India Company). The Supreme Court was NOT abolished."),
 
-    # Toughest
+    # MCQ 30
     (3, 4,
-     "కింది వాటిలో సరిగ్గా జోడించినవి అన్నీ ఏవి?\n(1) రెగ్యులేటింగ్ యాక్ట్ 1773 — కంపెనీపై పార్లమెంట్ మొదటి నియంత్రణ\n(2) పిట్స్ ఇండియా యాక్ట్ 1784 — ద్వంద్వ పాలన + Board of Control\n(3) GOI యాక్ట్ 1858 — మొదటి వైస్రాయ్ లార్డ్ బెంటింక్\n(4) చార్టర్ యాక్ట్ 1853 — శాసన + కార్యనిర్వాహక వేరు",
-     "1, 2 మరియు 4 మాత్రమే", "1, 2, 3 మరియు 4 అన్నీ",
-     "2, 3 మరియు 4 మాత్రమే", "1 మరియు 4 మాత్రమే",
+     "Which of the following are correctly matched?\n(1) Regulating Act 1773 — first Parliament control over Company\n(2) Pitt's India Act 1784 — Double Govt + Board of Control\n(3) GOI Act 1858 — first Viceroy was Lord Bentinck\n(4) Charter Act 1853 — separation of legislative + executive\nతెలుగు: కింది వాటిలో సరిగ్గా జోడించినవి అన్నీ ఏవి?",
+     "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
+     "All four / అన్నీ",
+     "2, 3 and 4 only / 2, 3 మరియు 4 మాత్రమే",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
      "a",
-     "3 తప్పు — మొదటి వైస్రాయ్ లార్డ్ కానింగ్ (Lord Canning), బెంటింక్ కాదు. బెంటింక్ మొదటి G.G. of India (1833 చార్టర్ యాక్ట్ ద్వారా). మిగతా 1, 2, 4 సరైనవి."),
+     "Pairs 1, 2 and 4 are correct. Pair 3 is wrong — the first Viceroy was Lord Canning, NOT Bentinck."),
 
-    # PYQ — APPSC
+    # MCQ 31 (10-tuple, exam=APPSC)
     (3, 2,
-     "భారత పాలనను ఈస్ట్ ఇండియా కంపెనీ నుండి బ్రిటిష్ క్రౌన్‌కు బదిలీ చేసిన చట్టం ఏది? [APPSC Group 2 PYQ]",
-     "చార్టర్ యాక్ట్ 1853", "పిట్స్ ఇండియా యాక్ట్ 1784",
-     "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1858", "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1861",
+     "Which Act transferred Indian governance from East India Company to British Crown? [APPSC Group 2 PYQ]\nతెలుగు: భారత పాలనను ఈస్ట్ ఇండియా కంపెనీ నుండి బ్రిటిష్ క్రౌన్‌కు బదిలీ చేసిన చట్టం ఏది?",
+     "Charter Act 1853 / చార్టర్ యాక్ట్ 1853",
+     "Pitt's India Act 1784 / పిట్స్ ఇండియా యాక్ట్ 1784",
+     "Government of India Act 1858 / గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1858",
+     "Indian Councils Act 1861 / ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1861",
      "c",
      "Government of India Act 1858 ద్వారా భారత పాలన ఈస్ట్ ఇండియా కంపెనీ నుండి బ్రిటిష్ క్రౌన్‌కు బదిలీ అయింది. ఇది APPSC Group 2 లో తరచుగా అడిగే ప్రశ్న.",
      "APPSC"),
 
     # ══════════════════════════════════════════
-    # SECTION 4 — ఇండియన్ కౌన్సిల్స్ యాక్ట్స్ 1861, 1892, 1909
+    # SECTION 4 — Indian Councils Acts 1861, 1892, 1909 / ఇండియన్ కౌన్సిల్స్ యాక్ట్
     # ══════════════════════════════════════════
 
-    # Easy
+    # MCQ 32
     (4, 1,
-     "మార్లే-మింటో రిఫార్మ్స్ (Morley-Minto Reforms) ఏ చట్టంతో సంబంధం ఉంది?",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1861", "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1892",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909", "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1919",
+     "Morley-Minto Reforms are associated with which Act?\nతెలుగు: మార్లే-మింటో రిఫార్మ్స్ ఏ చట్టంతో సంబంధం ఉంది?",
+     "Indian Councils Act 1861 / ICA 1861",
+     "Indian Councils Act 1892 / ICA 1892",
+     "Indian Councils Act 1909 / ICA 1909 (Morley-Minto)",
+     "Government of India Act 1919 / GOI Act 1919",
      "c",
-     "మార్లే-మింటో రిఫార్మ్స్ = ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909. లార్డ్ మార్లే (Secretary of State) + లార్డ్ మింటో (Viceroy) పేర్ల కలయిక."),
+     "Morley-Minto Reforms = Indian Councils Act 1909. Lord Morley = Secretary of State + Lord Minto = Viceroy."),
 
+    # MCQ 33
     (4, 1,
-     "వైస్రాయ్ కార్యనిర్వాహక మండలిలో నియమించబడిన మొదటి భారతీయ సభ్యుడు ఎవరు?",
-     "బాల గంగాధర తిలక్", "గోపాల కృష్ణ గోఖలే",
-     "సత్యేంద్ర ప్రసాద్ సిన్హా", "డా. బి.ఆర్. అంబేడ్కర్",
+     "Who was the first Indian member appointed to the Viceroy's Executive Council?\nతెలుగు: వైస్రాయ్ కార్యనిర్వాహక మండలిలో నియమించబడిన మొదటి భారతీయ సభ్యుడు ఎవరు?",
+     "Bal Gangadhar Tilak / బాల గంగాధర తిలక్",
+     "Gopal Krishna Gokhale / గోపాల కృష్ణ గోఖలే",
+     "Satyendra Prasad Sinha / సత్యేంద్ర ప్రసాద్ సిన్హా (Satyendra P. Sinha)",
+     "Dr. B. R. Ambedkar / డా. బి.ఆర్. అంబేడ్కర్",
      "c",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909 ప్రకారం సత్యేంద్ర ప్రసాద్ సిన్హా (Satyendra Prasad Sinha) వైస్రాయ్ కార్యనిర్వాహక మండలిలో మొదటి భారతీయ సభ్యుడు అయ్యారు."),
+     "Satyendra Prasad Sinha (later Lord Sinha) was the first Indian appointed to the Viceroy's Executive Council in 1909, as Law Member."),
 
+    # MCQ 34
     (4, 1,
-     "ముస్లింలకు ప్రత్యేక నియోజకవర్గాలు (Separate Electorate) ఏ చట్టం ద్వారా ఏర్పాటయ్యాయి?",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1892", "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909",
-     "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1919", "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1935",
+     "Separate Electorate for Muslims was introduced by which Act?\nతెలుగు: ముస్లింలకు ప్రత్యేక నియోజకవర్గాలు ఏ చట్టం ద్వారా ఏర్పాటయ్యాయి?",
+     "Indian Councils Act 1892 / ICA 1892",
+     "Indian Councils Act 1909 / ICA 1909 (Morley-Minto)",
+     "Government of India Act 1919 / GOI Act 1919",
+     "Government of India Act 1935 / GOI Act 1935",
      "b",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909 (మార్లే-మింటో రిఫార్మ్స్) ద్వారా ముస్లింలకు Separate Electorate ఏర్పాటైంది. ఇది తర్వాత దేశ విభజనకు పునాది వేసిన నిర్ణయంగా చరిత్రకారులు పేర్కొంటారు."),
+     "Separate Electorate for Muslims was introduced by Indian Councils Act 1909 (Morley-Minto Reforms) — sowing the seeds of communal politics."),
 
+    # MCQ 35
     (4, 1,
-     "పోర్ట్‌ఫోలియో సిస్టమ్ (Portfolio System) ఏ చట్టంలో ప్రవేశపెట్టారు?",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1861", "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1892",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909", "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1919",
+     "Portfolio System was introduced by which Act?\nతెలుగు: పోర్ట్‌ఫోలియో సిస్టమ్ ఏ చట్టంలో ప్రవేశపెట్టారు?",
+     "Indian Councils Act 1861 / ICA 1861",
+     "Indian Councils Act 1892 / ICA 1892",
+     "Indian Councils Act 1909 / ICA 1909",
+     "Government of India Act 1919 / GOI Act 1919",
      "a",
-     "Portfolio System (ప్రతి మంత్రికి నిర్దిష్ట శాఖ అప్పగించడం) ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1861లో ప్రవేశపెట్టారు. ఇది ఆధునిక కేబినెట్ వ్యవస్థకు పూర్వ రూపం."),
+     "Portfolio System was introduced by Indian Councils Act 1861 — Lord Canning's reform that gave specific portfolios to council members."),
 
-    # Moderate
+    # MCQ 36
     (4, 2,
-     "కింది వాటిలో ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909కు సంబంధించి సరైనవి ఏవి?\n(1) మొదటిసారి ప్రత్యక్ష ఎన్నికలు ప్రవేశపెట్టారు\n(2) ముస్లింలకు ప్రత్యేక నియోజకవర్గాలు ఇచ్చారు\n(3) సత్యేంద్ర ప్రసాద్ సిన్హా మొదటి భారతీయ కార్యనిర్వాహక మండలి సభ్యుడు\n(4) బొంబాయి మరియు మద్రాస్ ప్రెసిడెన్సీలకు శాసన అధికారాలు ఇచ్చారు",
-     "1, 2 మరియు 3 మాత్రమే", "2 మరియు 3 మాత్రమే",
-     "1, 2, 3 మరియు 4 అన్నీ", "1 మరియు 4 మాత్రమే",
+     "Regarding Indian Councils Act 1909, which of the following are CORRECT?\n(1) First time direct elections introduced\n(2) Separate Electorate for Muslims given\n(3) Satyendra Prasad Sinha was first Indian member of Executive Council\n(4) Bombay and Madras Presidencies got legislative powers\nతెలుగు: కింది వాటిలో ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909కు సంబంధించి సరైనవి ఏవి?",
+     "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
+     "All four / అన్నీ",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
      "a",
-     "4 తప్పు — బొంబాయి మరియు మద్రాస్ ప్రెసిడెన్సీలకు శాసన అధికారాలు 1861 యాక్ట్ లో ఇచ్చారు, 1909లో కాదు. మిగతా 1, 2, 3 సరైనవి."),
+     "Statements 1, 2, 3 are correct. Statement 4 is wrong — legislative powers to Bombay and Madras Presidencies were given by Charter Act 1861, not 1909."),
 
+    # MCQ 37
     (4, 2,
-     "కింది చట్టాలను వాటి ముఖ్య లక్షణాలతో సరిగ్గా జోడించండి:\n(P) ICA 1861 — (1) Separate Electorate for Muslims\n(Q) ICA 1892 — (2) Portfolio System\n(R) ICA 1909 — (3) Indirect Elections + Budget Discussion",
-     "P-2, Q-3, R-1", "P-1, Q-2, R-3", "P-3, Q-1, R-2", "P-2, Q-1, R-3",
+     "Match the Acts with their main features:\n(P) ICA 1861 — (1) Separate Electorate for Muslims\n(Q) ICA 1892 — (2) Portfolio System\n(R) ICA 1909 — (3) Indirect Elections + Budget Discussion\nతెలుగు: కింది చట్టాలను వాటి ముఖ్య లక్షణాలతో సరిగ్గా జోడించండి",
+     "P-2, Q-3, R-1",
+     "P-1, Q-2, R-3",
+     "P-3, Q-1, R-2",
+     "P-2, Q-1, R-3",
      "a",
-     "ICA 1861 → Portfolio System (P-2). ICA 1892 → Indirect Elections + Budget Discussion (Q-3). ICA 1909 → Separate Electorate for Muslims (R-1). సరైన జంట: P-2, Q-3, R-1."),
+     "ICA 1861 = Portfolio System (Canning); ICA 1892 = Indirect Elections + Budget discussion; ICA 1909 = Separate Electorate for Muslims. Hence P-2, Q-3, R-1."),
 
-    # Tough
+    # MCQ 38
     (4, 3,
-     "కింది వాటిలో సరికానిది (INCORRECT) ఏది?",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1861 ప్రతినిధి ప్రభుత్వం వైపు మొదటి అడుగు",
-     "మార్లే-మింటో రిఫార్మ్స్ 1909లో ముస్లింలకు Separate Electorate ఇచ్చాయి",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1892 మొదటిసారి నేరుగా ఎన్నికలు ప్రవేశపెట్టింది",
-     "సత్యేంద్ర ప్రసాద్ సిన్హా వైస్రాయ్ కార్యనిర్వాహక మండలిలో మొదటి భారతీయ సభ్యుడు",
+     "Which of the following is INCORRECT?\nతెలుగు: కింది వాటిలో సరికానిది ఏది?",
+     "Indian Councils Act 1861 was the first step toward representative govt / 1861 ప్రతినిధి ప్రభుత్వం వైపు మొదటి అడుగు",
+     "Morley-Minto Reforms 1909 introduced Separate Electorate for Muslims / 1909లో ముస్లింలకు Separate Electorate",
+     "Indian Councils Act 1892 introduced direct elections for the first time / 1892 మొదటిసారి నేరుగా ఎన్నికలు ప్రవేశపెట్టింది",
+     "Satyendra Prasad Sinha was first Indian member of Viceroy's Executive Council / సత్యేంద్ర ప్రసాద్ సిన్హా మొదటి భారతీయ సభ్యుడు",
      "c",
-     "1892 యాక్ట్ పరోక్ష ఎన్నికలు (Indirect Elections) ప్రవేశపెట్టింది, నేరుగా ఎన్నికలు (Direct Elections) కాదు. Direct Elections మొదట 1909 యాక్ట్ లో వచ్చాయి (పరిమిత స్థాయిలో)."),
+     "ICA 1892 introduced INDIRECT elections (not direct). Direct elections were introduced for the first time only by ICA 1909 — option C is incorrect."),
 
-    # Toughest
+    # MCQ 39
     (4, 4,
-     "అభికథనం-కారణం సరైనవా? / Assertion (A): Indian Councils Act 1909 sowed the seeds of partition of India.\nReason (R): It introduced the concept of Separate Electorate for Muslims, which communalized Indian politics and created a precedent for division on religious lines.",
-     "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
-     "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు",
-     "A సరైనది, R తప్పు",
-     "A తప్పు, R సరైనది",
+     "Assertion (A): Indian Councils Act 1909 sowed the seeds of partition of India.\nReason (R): It introduced Separate Electorate for Muslims, which communalised Indian politics.\nతెలుగు: అభికథనం-కారణం సరైనవా?",
+     "Both A and R correct, R explains A / రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
+     "Both A and R correct, R does not explain A / రెండూ సరైనవి, R వివరణ కాదు",
+     "A correct, R incorrect / A సరైనది, R తప్పు",
+     "A incorrect, R correct / A తప్పు, R సరైనది",
      "a",
-     "1909 యాక్ట్ లో ముస్లింలకు Separate Electorate ప్రవేశపెట్టడం వల్ల మతపరమైన రాజకీయాలు (Communal Politics) ప్రారంభమయ్యాయి. ఇది 1947 దేశ విభజనకు దూరంగా కానీ నేరుగా దారితీసిన నిర్ణయంగా చరిత్రకారులు పేర్కొంటారు. R అనేది A కి సరైన వివరణ."),
+     "Both A and R are correct. The Separate Electorate (R) is precisely what created the religious divide that led to Partition (A)."),
 
-    # PYQ — APPSC
+    # MCQ 40 (10-tuple, exam=APPSC)
     (4, 2,
-     "మార్లే-మింటో సంస్కరణలు (Morley-Minto Reforms) ఏ సంవత్సరంకు చెందినవి? [APPSC Group 2]",
-     "1892", "1905", "1909", "1919",
+     "Morley-Minto Reforms belong to which year? [APPSC Group 2]\nతెలుగు: మార్లే-మింటో సంస్కరణలు ఏ సంవత్సరంకు చెందినవి?",
+     "1892",
+     "1905",
+     "1909",
+     "1919",
      "c",
      "మార్లే-మింటో సంస్కరణలు = ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909. లార్డ్ మార్లే (Secretary of State) + లార్డ్ మింటో (Viceroy). APPSC Group 2 లో తరచుగా అడిగే ప్రశ్న.",
      "APPSC"),
 
     # ══════════════════════════════════════════
-    # SECTION 5 — గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1919
+    # SECTION 5 — Government of India Act 1919 (Montagu-Chelmsford)
     # ══════════════════════════════════════════
 
-    # Easy
+    # MCQ 41
     (5, 1,
-     "మాంటేగు-చెమ్స్‌ఫర్డ్ రిఫార్మ్స్ (Montagu-Chelmsford Reforms) ఏ చట్టంతో సంబంధం ఉంది?",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909", "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1919",
-     "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1935", "ఇండియన్ ఇండిపెండెన్స్ యాక్ట్ 1947",
+     "Montagu-Chelmsford Reforms are associated with which Act?\nతెలుగు: మాంటేగు-చెమ్స్‌ఫర్డ్ రిఫార్మ్స్ ఏ చట్టంతో సంబంధం ఉంది?",
+     "Indian Councils Act 1909 / ICA 1909",
+     "Government of India Act 1919 / GOI Act 1919",
+     "Government of India Act 1935 / GOI Act 1935",
+     "Indian Independence Act 1947 / IIA 1947",
      "b",
-     "మాంటేగు-చెమ్స్‌ఫర్డ్ రిఫార్మ్స్ = Government of India Act 1919. మాంటేగు (Montagu) = Secretary of State, చెమ్స్‌ఫర్డ్ (Chelmsford) = Viceroy."),
+     "Montagu-Chelmsford Reforms = GOI Act 1919. Edwin Montagu (Secretary of State) + Lord Chelmsford (Viceroy)."),
 
+    # MCQ 42
     (5, 1,
-     "Government of India Act 1919 ప్రకారం రాష్ట్ర స్థాయిలో ద్వంద్వ పాలన (Diarchy)లో 'బదిలీ అంశాలు (Transferred Subjects)' ఎవరికి ఇచ్చారు?",
-     "గవర్నర్‌కు", "వైస్రాయ్‌కు", "భారతీయ మంత్రులకు", "సెక్రటరీ ఆఫ్ స్టేట్‌కు",
+     "Under GOI Act 1919, who was given the 'Transferred Subjects' under Diarchy at provincial level?\nతెలుగు: GOI Act 1919 ప్రకారం రాష్ట్ర స్థాయిలో Diarchyలో 'Transferred Subjects' ఎవరికి ఇచ్చారు?",
+     "Governor / గవర్నర్‌కు",
+     "Viceroy / వైస్రాయ్‌కు",
+     "Indian Ministers / భారతీయ మంత్రులకు (Indian Ministers)",
+     "Secretary of State / సెక్రటరీ ఆఫ్ స్టేట్‌కు",
      "c",
-     "Diarchy లో రెండు రకాల అంశాలు: Reserved Subjects (గవర్నర్ పాలన) మరియు Transferred Subjects (విద్య, ఆరోగ్యం వంటివి — భారతీయ మంత్రులకు ఇచ్చారు)."),
+     "Transferred Subjects (education, health, local self-government, agriculture etc.) were given to Indian Ministers responsible to the Legislature. Reserved Subjects stayed with the Governor."),
 
+    # MCQ 43
     (5, 1,
-     "కేంద్రంలో ద్వి సభా వ్యవస్థ (Bicameral Legislature) మొదటిసారి ఏ చట్టంలో ప్రవేశపెట్టారు?",
-     "ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909",
-     "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1919",
-     "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1935",
-     "చార్టర్ యాక్ట్ 1853",
+     "Bicameral Legislature at the Centre was introduced for the first time by which Act?\nతెలుగు: కేంద్రంలో ద్వి సభా వ్యవస్థ మొదటిసారి ఏ చట్టంలో ప్రవేశపెట్టారు?",
+     "Indian Councils Act 1909 / ICA 1909",
+     "Government of India Act 1919 / GOI Act 1919 (Bicameral)",
+     "Government of India Act 1935 / GOI Act 1935",
+     "Charter Act 1853 / Charter Act 1853",
      "b",
-     "GOI Act 1919 మొదటిసారి కేంద్రంలో Bicameral Legislature ఏర్పాటు చేసింది: (1) Central Legislative Assembly (దిగువ సభ) మరియు (2) Council of State (ఎగువ సభ)."),
+     "GOI Act 1919 introduced bicameral legislature at the Centre — Council of State (Upper) + Legislative Assembly (Lower) — for the first time."),
 
-    # Moderate
+    # MCQ 44
     (5, 2,
-     "GOI Act 1919 ప్రకారం Diarchy వ్యవస్థలో కింది వాటిలో 'Reserved Subjects' కు చెందేవి ఏవి?\n(1) విద్య (Education)\n(2) భూమి శిస్తు (Land Revenue)\n(3) న్యాయ వ్యవస్థ (Law & Order)\n(4) స్థానిక స్వపరిపాలన (Local Government)",
-     "1 మరియు 4 మాత్రమే", "2 మరియు 3 మాత్రమే",
-     "1, 2 మరియు 3", "2, 3 మరియు 4",
+     "Under GOI Act 1919 Diarchy, which of the following are 'Reserved Subjects'?\n(1) Education\n(2) Land Revenue\n(3) Law & Order\n(4) Local Government\nతెలుగు: GOI Act 1919 ప్రకారం 'Reserved Subjects' కు చెందేవి ఏవి?",
+     "1 and 4 only / 1 మరియు 4",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే (Land Revenue + Law & Order)",
+     "1, 2 and 3 / 1, 2, 3",
+     "2, 3 and 4 / 2, 3 మరియు 4",
      "b",
-     "Reserved Subjects (గవర్నర్ నేరుగా పాలించేవి): Land Revenue, Law & Order, Finance, Justice. Transferred Subjects (భారతీయ మంత్రులకు ఇచ్చినవి): Education, Health, Local Government, Agriculture. కాబట్టి 2 మరియు 3 Reserved."),
+     "Reserved Subjects (Governor's domain) = Land Revenue, Law & Order, Police, Justice, Finance. Transferred Subjects = Education, Health, Local Govt, Agriculture (Indian ministers)."),
 
+    # MCQ 45
     (5, 2,
-     "కింది వాటిలో తప్పు ఏది? / Which of the following is NOT correct about the Government of India Act 1919?",
-     "It introduced Diarchy at the provincial level",
-     "It established a bicameral legislature at the Centre for the first time",
-     "It introduced Diarchy at the Central level which was successfully implemented",
-     "It led to the establishment of a Public Service Commission",
+     "Which of the following is NOT correct about the GOI Act 1919?\nతెలుగు: కింది వాటిలో తప్పు ఏది?",
+     "Introduced Diarchy at the provincial level / రాష్ట్ర స్థాయిలో Diarchy",
+     "Established a bicameral legislature at the Centre for the first time / కేంద్రంలో మొదటిసారి bicameral legislature",
+     "Introduced Diarchy at the Central level which was successfully implemented / కేంద్ర స్థాయిలో Diarchy విజయవంతంగా అమలు",
+     "Led to the establishment of a Public Service Commission / Public Service Commission ఏర్పాటు",
      "c",
-     "GOI Act 1919 లో కేంద్రంలో Diarchy ప్రతిపాదించలేదు — అది 1935 యాక్ట్ లో ప్రతిపాదించారు (కానీ అమలు కాలేదు). 1919లో రాష్ట్ర స్థాయిలో మాత్రమే Diarchy ఉంది."),
+     "GOI Act 1919 did NOT implement Diarchy at the Centre. Diarchy was only at provincial level. Central Diarchy was proposed by GOI Act 1935 but never implemented either."),
 
-    # Tough
+    # MCQ 46
     (5, 3,
-     "GOI Act 1919 మరియు GOI Act 1935లో Diarchy (ద్వంద్వ పాలన) గురించి సరైన పోలిక ఏది?",
-     "1919లో కేంద్రంలో, 1935లో రాష్ట్రాల్లో Diarchy ప్రవేశపెట్టారు",
-     "1919లో రాష్ట్రాల్లో Diarchy అమలైంది; 1935లో కేంద్రంలో Diarchy ప్రతిపాదించారు కానీ అమలు కాలేదు",
-     "రెండు యాక్ట్‌లలోనూ రాష్ట్రాల్లో Diarchy అమలైంది",
-     "1919లో Diarchy విఫలమైంది; 1935లో విజయవంతంగా అమలైంది",
+     "Compare Diarchy in GOI Act 1919 vs GOI Act 1935. Which is correct?\nతెలుగు: GOI Act 1919 మరియు GOI Act 1935లో Diarchy గురించి సరైన పోలిక ఏది?",
+     "1919 introduced Diarchy at Centre, 1935 at provinces / 1919లో కేంద్రంలో, 1935లో రాష్ట్రాల్లో",
+     "1919 had provincial Diarchy (implemented); 1935 proposed Central Diarchy but never implemented / 1919లో రాష్ట్ర Diarchy అమలైంది; 1935లో కేంద్ర Diarchy ప్రతిపాదించారు కానీ అమలు కాలేదు",
+     "Both Acts had provincial Diarchy / రెండింటిలోనూ రాష్ట్ర Diarchy",
+     "1919 Diarchy failed; 1935 succeeded / 1919లో విఫలం; 1935లో విజయవంతం",
      "b",
-     "1919 — రాష్ట్రాల్లో Diarchy అమలైంది (Reserved + Transferred subjects). 1935 — రాష్ట్రాల్లో Diarchy రద్దు చేసి Provincial Autonomy ఇచ్చారు; కేంద్రంలో Diarchy ప్రతిపాదించారు కానీ సంస్థానాల అంగీకారం లేక అమలు కాలేదు."),
+     "GOI Act 1919 implemented Diarchy at the provincial level. GOI Act 1935 abolished provincial Diarchy and proposed Central Diarchy, but the Central Diarchy was never implemented because the All-India Federation didn't materialise."),
 
-    # Toughest
+    # MCQ 47
     (5, 4,
-     "కింది వాటిలో అన్నీ సరైన జంటలు ఏవి?\n(1) మాంటేగు-చెమ్స్‌ఫర్డ్ రిఫార్మ్స్ — GOI Act 1919\n(2) రాష్ట్రాల్లో Diarchy — GOI Act 1919\n(3) Public Service Commission ఏర్పాటు — GOI Act 1919\n(4) కేంద్రంలో Diarchy అమలు — GOI Act 1919",
-     "1, 2 మరియు 3 మాత్రమే", "1 మరియు 2 మాత్రమే",
-     "1, 2, 3 మరియు 4 అన్నీ", "2, 3 మరియు 4 మాత్రమే",
+     "Which of the following pairs are ALL correctly matched?\n(1) Montagu-Chelmsford Reforms — GOI Act 1919\n(2) Provincial Diarchy — GOI Act 1919\n(3) Public Service Commission — GOI Act 1919\n(4) Central Diarchy implemented — GOI Act 1919\nతెలుగు: కింది వాటిలో అన్నీ సరైన జంటలు ఏవి?",
+     "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "All four / అన్నీ",
+     "2, 3 and 4 only / 2, 3 మరియు 4 మాత్రమే",
      "a",
-     "4 తప్పు — కేంద్రంలో Diarchy GOI Act 1919లో లేదు. అది 1935లో ప్రతిపాదించారు (అమలు కాలేదు). మిగతా 1, 2, 3 సరైనవి."),
+     "Pairs 1, 2, 3 are correct. Pair 4 is wrong — Central Diarchy was NEVER implemented by GOI Act 1919 (only provincial Diarchy was implemented)."),
 
-    # PYQ — UPSC
+    # MCQ 48 (10-tuple, exam=UPSC)
     (5, 2,
-     "Dyarchy అంటే ఏమిటి? / The Montagu-Chelmsford Reforms of 1919 introduced Dyarchy in the provinces. What does Dyarchy mean? [UPSC Style]",
-     "Two houses of Legislature at the Centre",
-     "Division of provincial subjects into Reserved and Transferred categories",
-     "Dual control of India by the Crown and the Parliament",
-     "Joint administration by two Viceroys",
+     "What does Dyarchy mean — as introduced by Montagu-Chelmsford Reforms 1919? [UPSC Style]\nతెలుగు: Dyarchy అంటే ఏమిటి?",
+     "Two houses of Legislature at the Centre / కేంద్రంలో రెండు సభలు",
+     "Division of provincial subjects into Reserved and Transferred / రాష్ట్ర subjects ను Reserved + Transferred గా విభజన",
+     "Dual control of India by Crown and Parliament / క్రౌన్ + పార్లమెంట్ ద్వంద్వ నియంత్రణ",
+     "Joint administration by two Viceroys / ఇద్దరు వైస్రాయ్‌ల ఉమ్మడి పాలన",
      "b",
-     "Dyarchy (ద్వంద్వ పాలన) in provinces means the division of provincial subjects into: (1) Reserved subjects — controlled by the Governor and (2) Transferred subjects — controlled by Indian ministers responsible to the legislature.",
+     "Dyarchy in provinces means the division of provincial subjects into: (1) Reserved subjects — controlled by the Governor and (2) Transferred subjects — controlled by Indian ministers responsible to the legislature.",
      "UPSC"),
 
     # ══════════════════════════════════════════
-    # SECTION 6 — గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1935
+    # SECTION 6 — Government of India Act 1935
     # ══════════════════════════════════════════
 
-    # Easy
+    # MCQ 49
     (6, 1,
-     "GOI Act 1935 ద్వారా ఏర్పాటైన ఫెడరల్ కోర్ట్ (Federal Court) తర్వాత దేనిగా మారింది?",
-     "హైకోర్ట్", "సుప్రీం కోర్ట్", "ప్రివీ కౌన్సిల్", "రాజ్యాంగ న్యాయస్థానం",
+     "The Federal Court established by GOI Act 1935 later became which institution?\nతెలుగు: GOI Act 1935 ద్వారా ఏర్పాటైన Federal Court తర్వాత దేనిగా మారింది?",
+     "High Court / హైకోర్ట్",
+     "Supreme Court / సుప్రీం కోర్ట్ (Supreme Court — 1950)",
+     "Privy Council / ప్రివీ కౌన్సిల్",
+     "Constitutional Court / రాజ్యాంగ న్యాయస్థానం",
      "b",
-     "GOI Act 1935 ద్వారా స్థాపించబడిన Federal Court 1950లో సుప్రీం కోర్ట్ (Supreme Court of India)గా మారింది. ఇది APPSC మరియు UPSC రెండిటిలో తరచుగా వచ్చే ప్రశ్న."),
+     "Federal Court (1937) was the predecessor of the Supreme Court of India, which was inaugurated on 28 January 1950 after the Constitution came into force."),
 
+    # MCQ 50
     (6, 1,
-     "రిజర్వ్ బ్యాంక్ ఆఫ్ ఇండియా (Reserve Bank of India) ఏ చట్టం ద్వారా స్థాపించబడింది?",
-     "చార్టర్ యాక్ట్ 1833", "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1919",
-     "గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1935", "ఇండియన్ ఇండిపెండెన్స్ యాక్ట్ 1947",
+     "Reserve Bank of India (RBI) was established by which Act?\nతెలుగు: రిజర్వ్ బ్యాంక్ ఆఫ్ ఇండియా ఏ చట్టం ద్వారా స్థాపించబడింది?",
+     "Charter Act 1833 / Charter Act 1833",
+     "GOI Act 1919 / GOI Act 1919",
+     "GOI Act 1935 / GOI Act 1935 (RBI established 1 April 1935)",
+     "Indian Independence Act 1947 / IIA 1947",
      "c",
-     "RBI (Reserve Bank of India) GOI Act 1935 ద్వారా స్థాపించబడింది. 1935 యాక్ట్ RBI, Federal Court వంటి సంస్థలను ఏర్పాటు చేసింది — ఇవి స్వాతంత్ర్యం తర్వాత కూడా కొనసాగాయి."),
+     "RBI was established under the Reserve Bank of India Act 1934, but the broader institutional framework was set up by the GOI Act 1935. RBI commenced operations on 1 April 1935."),
 
+    # MCQ 51
     (6, 1,
-     "GOI Act 1935 గురించి కింది వాటిలో సరైనది ఏది?",
-     "ఇది స్వాతంత్ర్యానికి ముందు మొట్టమొదటి రాజ్యాంగ పత్రం",
-     "ఇది అఖిల భారత సమాఖ్యను విజయవంతంగా అమలు చేసింది",
-     "ఇది స్వాతంత్ర్యానికి ముందు అత్యంత విస్తారమైన రాజ్యాంగ పత్రం",
-     "ఇది రాష్ట్రాల్లో Diarchy ప్రవేశపెట్టింది",
+     "Which is correct about GOI Act 1935?\nతెలుగు: GOI Act 1935 గురించి కింది వాటిలో సరైనది ఏది?",
+     "First constitutional document before independence / స్వాతంత్ర్యానికి ముందు మొట్టమొదటి రాజ్యాంగ పత్రం",
+     "Successfully implemented All-India Federation / అఖిల భారత సమాఖ్యను విజయవంతంగా అమలు",
+     "Most extensive constitutional document before independence / స్వాతంత్ర్యానికి ముందు అత్యంత విస్తారమైన రాజ్యాంగ పత్రం",
+     "Introduced Diarchy at the provinces / రాష్ట్రాల్లో Diarchy ప్రవేశపెట్టింది",
      "c",
-     "GOI Act 1935 స్వాతంత్ర్యానికి ముందు అత్యంత విస్తారమైన రాజ్యాంగ పత్రం (most elaborate constitutional document). అఖిల భారత సమాఖ్య అమలు కాలేదు. రాష్ట్రాల్లో Diarchy 1919లో వచ్చింది, 1935లో రద్దైంది."),
+     "GOI Act 1935 was the most extensive (lengthy) constitutional document before independence — 321 sections + 10 schedules. Many features were borrowed into the 1950 Constitution."),
 
-    # Moderate
+    # MCQ 52
     (6, 2,
-     "GOI Act 1935లో అఖిల భారత సమాఖ్య (All-India Federation) ఎందుకు అమలు కాలేదు?",
-     "కాంగ్రెస్ తిరస్కరించింది", "ముస్లిం లీగ్ తిరస్కరించింది",
-     "స్వదేశీ సంస్థానాలు (Princely States) అంగీకరించలేదు", "బ్రిటిష్ పార్లమెంట్ రద్దు చేసింది",
+     "Why was the All-India Federation under GOI Act 1935 NOT implemented?\nతెలుగు: GOI Act 1935లో అఖిల భారత సమాఖ్య ఎందుకు అమలు కాలేదు?",
+     "Congress refused / కాంగ్రెస్ తిరస్కరించింది",
+     "Muslim League refused / ముస్లిం లీగ్ తిరస్కరించింది",
+     "Princely States did not agree / స్వదేశీ సంస్థానాలు అంగీకరించలేదు (Princely States)",
+     "British Parliament cancelled it / బ్రిటిష్ పార్లమెంట్ రద్దు చేసింది",
      "c",
-     "All-India Federation లో British India Provinces + Princely States కలవాలని ప్రతిపాదించారు. కానీ స్వదేశీ సంస్థానాలు (Princely States) చేరడానికి నిరాకరించినందున ఇది ఎప్పుడూ అమలు కాలేదు."),
+     "The All-India Federation was never implemented because the Princely States (562 of them) did not give consent to join. WW2 (1939) further postponed the plan."),
 
+    # MCQ 53
     (6, 2,
-     "కింది వాటిలో GOI Act 1935కు సంబంధించిన సరైనవి ఏవి?\n(1) RBI స్థాపన\n(2) Federal Court స్థాపన\n(3) రాష్ట్రాల్లో Provincial Autonomy\n(4) కేంద్రంలో Diarchy విజయవంతంగా అమలు",
-     "1, 2 మరియు 3 మాత్రమే", "1 మరియు 2 మాత్రమే",
-     "1, 2, 3 మరియు 4 అన్నీ", "3 మరియు 4 మాత్రమే",
+     "Regarding GOI Act 1935, which of the following are CORRECT?\n(1) RBI established\n(2) Federal Court established\n(3) Provincial Autonomy granted\n(4) Central Diarchy successfully implemented\nతెలుగు: కింది వాటిలో GOI Act 1935కు సంబంధించిన సరైనవి ఏవి?",
+     "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "All four / అన్నీ",
+     "3 and 4 only / 3 మరియు 4 మాత్రమే",
      "a",
-     "4 తప్పు — కేంద్రంలో Diarchy 1935లో ప్రతిపాదించారు కానీ ఎప్పుడూ అమలు కాలేదు. మిగతా 1 (RBI), 2 (Federal Court), 3 (Provincial Autonomy) అన్నీ నిజమే."),
+     "Statements 1, 2, 3 correct. Statement 4 is wrong — Central Diarchy was proposed by GOI Act 1935 but NEVER implemented (since All-India Federation didn't materialise)."),
 
-    # Tough
+    # MCQ 54
     (6, 3,
-     "GOI Act 1935 మరియు భారత రాజ్యాంగం మధ్య సంబంధం గురించి సరైనది ఏది?",
-     "భారత రాజ్యాంగం 1935 యాక్ట్‌ను పూర్తిగా తిరస్కరించింది",
-     "ఫెడరలిజం, అత్యవసర నిబంధనలు, న్యాయ వ్యవస్థ వంటి అనేక అంశాలు 1935 నుండి తీసుకున్నారు",
-     "1935 యాక్ట్ మరియు భారత రాజ్యాంగం మధ్య ఎలాంటి సంబంధం లేదు",
-     "1935 యాక్ట్ అనేది భారత రాజ్యాంగం యొక్క అధికారిక పూర్వ రూపం",
+     "What is the correct relationship between GOI Act 1935 and the Indian Constitution?\nతెలుగు: GOI Act 1935 మరియు భారత రాజ్యాంగం మధ్య సంబంధం?",
+     "Indian Constitution completely rejected the 1935 Act / భారత రాజ్యాంగం 1935 ను పూర్తిగా తిరస్కరించింది",
+     "Many features (federalism, emergency provisions, judiciary etc.) were borrowed from the 1935 Act / ఫెడరలిజం, అత్యవసర నిబంధనలు, న్యాయ వ్యవస్థ వంటి అనేక అంశాలు 1935 నుండి తీసుకున్నారు",
+     "No relation between the two / ఎలాంటి సంబంధం లేదు",
+     "1935 Act is the official precursor of the Constitution / అధికారిక పూర్వ రూపం",
      "b",
-     "భారత రాజ్యాంగ రూపశిల్పులు GOI Act 1935 నుండి చాలా అంశాలు తీసుకున్నారు — Federal System, Emergency Provisions, Public Service Commissions, Judiciary వంటివి. అందుకే Ambedkar 1935 యాక్ట్‌ను 'Constitution as dressed up' అన్నారు."),
+     "The Indian Constitution borrowed many features from GOI Act 1935 — federal structure, emergency provisions, judicial structure, public service commissions etc."),
 
-    # Toughest
+    # MCQ 55
     (6, 4,
-     "కింది ఏ జంట తప్పుగా జోడించబడింది?\n(1) RBI స్థాపన — GOI Act 1935\n(2) Federal Court — GOI Act 1919\n(3) రాష్ట్రాల్లో Diarchy — GOI Act 1919\n(4) కేంద్రంలో Bicameral Legislature — GOI Act 1935",
-     "2 మరియు 4 మాత్రమే తప్పు", "2 మాత్రమే తప్పు",
-     "4 మాత్రమే తప్పు", "1 మరియు 3 మాత్రమే తప్పు",
+     "Which of the following pairs are INCORRECTLY matched?\n(1) RBI established — GOI Act 1935\n(2) Federal Court — GOI Act 1919\n(3) Provincial Diarchy — GOI Act 1919\n(4) Central Bicameral Legislature — GOI Act 1935\nతెలుగు: కింది ఏ జంట తప్పుగా జోడించబడింది?",
+     "Only 2 and 4 are wrong / 2 మరియు 4 మాత్రమే తప్పు",
+     "Only 2 is wrong / 2 మాత్రమే తప్పు",
+     "Only 4 is wrong / 4 మాత్రమే తప్పు",
+     "Only 1 and 3 are wrong / 1 మరియు 3 మాత్రమే తప్పు",
      "a",
-     "2 తప్పు — Federal Court GOI Act 1935లో వచ్చింది, 1919లో కాదు. 4 తప్పు — కేంద్రంలో Bicameral Legislature GOI Act 1919లో వచ్చింది, 1935లో కాదు. 1 మరియు 3 సరైనవి."),
+     "Pair 2 wrong (Federal Court was established by GOI Act 1935, not 1919). Pair 4 wrong (Central Bicameral Legislature was first introduced by GOI Act 1919, not 1935)."),
 
-    # PYQ — APPSC
+    # MCQ 56 (10-tuple, exam=APPSC)
     (6, 2,
-     "కింది వాటిలో గవర్నమెంట్ ఆఫ్ ఇండియా యాక్ట్ 1935 ద్వారా ఏర్పాటైనవి ఏవి? [APPSC Group 2 PYQ]",
-     "సుప్రీం కోర్ట్ మరియు రిజర్వ్ బ్యాంక్", "ఫెడరల్ కోర్ట్ మరియు రిజర్వ్ బ్యాంక్",
-     "హైకోర్ట్ మరియు రిజర్వ్ బ్యాంక్", "ఫెడరల్ కోర్ట్ మరియు సెంట్రల్ బ్యాంక్",
+     "Which two institutions were established by Government of India Act 1935? [APPSC Group 2 PYQ]\nతెలుగు: GOI Act 1935 ద్వారా ఏర్పాటైనవి ఏవి?",
+     "Supreme Court and RBI / సుప్రీం కోర్ట్ + రిజర్వ్ బ్యాంక్",
+     "Federal Court and RBI / ఫెడరల్ కోర్ట్ + రిజర్వ్ బ్యాంక్ (Federal Court + RBI)",
+     "High Court and RBI / హైకోర్ట్ + RBI",
+     "Federal Court and Central Bank / Federal Court + Central Bank",
      "b",
      "GOI Act 1935 ద్వారా Federal Court (తర్వాత సుప్రీం కోర్ట్ అయింది) మరియు Reserve Bank of India (RBI) స్థాపించబడ్డాయి. సుప్రీం కోర్ట్ 1950లో ఏర్పాటైంది.",
      "APPSC"),
 
     # ══════════════════════════════════════════
-    # SECTION 7 — సైమన్ కమిషన్, RTCలు, August Offer, Cripps, Cabinet Mission
+    # SECTION 7 — Pre-Independence Missions (Simon, Cripps, Cabinet, Quit India)
     # ══════════════════════════════════════════
 
-    # Easy
+    # MCQ 57
     (7, 1,
-     "సైమన్ కమిషన్ (Simon Commission)ను భారతీయులు ఎందుకు బహిష్కరించారు?",
-     "కమిషన్ నివేదిక మంచిది కాదు కాబట్టి",
-     "కమిషన్‌లో ఒక్క భారతీయ సభ్యుడు కూడా లేదు కాబట్టి",
-     "కమిషన్ చాలా ఖర్చుతో కూడుకున్నది కాబట్టి",
-     "బ్రిటిష్ రాజు నియమించారు కాబట్టి",
+     "Why did Indians boycott the Simon Commission?\nతెలుగు: సైమన్ కమిషన్‌ను భారతీయులు ఎందుకు బహిష్కరించారు?",
+     "Commission report was not good / కమిషన్ నివేదిక మంచిది కాదు",
+     "Commission had no Indian member / కమిషన్‌లో ఒక్క భారతీయ సభ్యుడు కూడా లేదు",
+     "Commission was too expensive / చాలా ఖర్చుతో కూడుకున్నది",
+     "British king appointed it / బ్రిటిష్ రాజు నియమించారు",
      "b",
-     "Simon Commission లో 7 మంది సభ్యులు అందరూ బ్రిటిషర్లే. ఒక్క భారతీయుడు కూడా లేదు! అందుకే 'Simon Go Back' నినాదంతో దేశవ్యాప్త బహిష్కరణ జరిగింది."),
+     "Simon Commission (1927) was an all-British, all-white commission with no Indian member. Indians boycotted it with the slogan 'Simon Go Back'. Lala Lajpat Rai died from injuries during a protest."),
 
+    # MCQ 58
     (7, 1,
-     "కేబినెట్ మిషన్ (Cabinet Mission 1946)లో సభ్యులు ఎంత మంది?",
-     "5 మంది", "3 మంది", "7 మంది", "4 మంది",
+     "How many members were in the Cabinet Mission of 1946?\nతెలుగు: కేబినెట్ మిషన్ 1946లో సభ్యులు ఎంత మంది?",
+     "5 members / 5 మంది",
+     "3 members / 3 మంది (Pethick-Lawrence + Cripps + Alexander)",
+     "7 members / 7 మంది",
+     "4 members / 4 మంది",
      "b",
-     "Cabinet Mission 1946లో 3 మంది సభ్యులు: (1) పెథిక్-లారెన్స్ (Pethick-Lawrence) — Secretary of State, (2) సర్ స్టాఫర్డ్ క్రిప్స్ (Stafford Cripps), (3) A.V. అలెగ్జాండర్ (A.V. Alexander)."),
+     "Cabinet Mission 1946 had 3 members: Lord Pethick-Lawrence (Secretary of State for India, Chairman) + Sir Stafford Cripps + A. V. Alexander."),
 
+    # MCQ 59
     (7, 1,
-     "క్రిప్స్ మిషన్ (Cripps Mission 1942)ను గాంధీజీ ఎలా పోల్చారు?",
-     "విరిగిన సంకెళ్ళ వంటిది", "కూలిపోతున్న బ్యాంక్‌పై తేదీ ముందుకు వేసిన చెక్కు",
-     "అర్థం లేని వాగ్దానం", "బానిసత్వపు కానుక",
+     "How did Gandhiji describe the Cripps Mission of 1942?\nతెలుగు: క్రిప్స్ మిషన్ ను గాంధీజీ ఎలా పోల్చారు?",
+     "Like broken chains / విరిగిన సంకెళ్ళ వంటిది",
+     "A post-dated cheque on a crashing bank / కూలిపోతున్న బ్యాంక్‌పై తేదీ ముందుకు వేసిన చెక్కు",
+     "A meaningless promise / అర్థం లేని వాగ్దానం",
+     "A gift of slavery / బానిసత్వపు కానుక",
      "b",
-     "గాంధీజీ క్రిప్స్ మిషన్‌ను 'Post-dated cheque on a crashing bank' (కూలిపోతున్న బ్యాంక్‌పై తేదీ ముందుకు వేసిన చెక్కు) అని విమర్శించారు. క్రిప్స్ మిషన్ తిరస్కరణ తర్వాత Quit India Movement 1942 ప్రారంభమైంది."),
+     "Gandhiji famously called the Cripps Mission's offer 'a post-dated cheque on a crashing bank' — a worthless promise that wouldn't be honoured."),
 
-    # Moderate
+    # MCQ 60
     (7, 2,
-     "రౌండ్ టేబుల్ కాన్ఫరెన్సులు (Round Table Conferences) గురించి కింది వాటిలో సరైనవి ఏవి?\n(1) మొదటి RTC (1930-31)లో కాంగ్రెస్ పాల్గొనలేదు\n(2) రెండవ RTC (1931)లో గాంధీజీ పాల్గొన్నారు\n(3) మూడవ RTC (1932)లో కాంగ్రెస్ పాల్గొంది\n(4) Communal Award (ఆగస్ట్ 1932) మూడవ RTC (నవంబర్ 1932) కంటే ముందే ప్రకటించారు",
-     "1, 2 మరియు 4 మాత్రమే", "1 మరియు 2 మాత్రమే",
-     "2 మరియు 3 మాత్రమే", "1, 2, 3 మరియు 4 అన్నీ",
+     "Regarding Round Table Conferences, which of the following are CORRECT?\n(1) Congress did not attend the 1st RTC (1930-31)\n(2) Gandhiji attended the 2nd RTC (1931)\n(3) Congress attended the 3rd RTC (1932)\n(4) Communal Award (Aug 1932) was announced before the 3rd RTC (Nov 1932)\nతెలుగు: రౌండ్ టేబుల్ కాన్ఫరెన్సుల గురించి సరైనవి ఏవి?",
+     "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
+     "All four / అన్నీ",
      "a",
-     "3 తప్పు — మూడవ RTC (1932)లో కాంగ్రెస్ పాల్గొనలేదు. మొదటి RTC (1930-31)లో కాంగ్రెస్ లేదు (గాంధీ జైలులో). రెండవ RTC (1931)లో గాంధీ పాల్గొన్నారు — విఫలమైంది. 4 సరైనది — Communal Award ఆగస్ట్ 16, 1932న Ramsay MacDonald ప్రకటించారు; మూడవ RTC నవంబర్ 1932లో జరిగింది — కాబట్టి Award ముందే వచ్చింది."),
+     "Statements 1, 2, 4 are correct. Statement 3 is WRONG — Congress did NOT attend the 3rd RTC (boycotted)."),
 
+    # MCQ 61
     (7, 2,
-     "కింది మిషన్లను కాలక్రమ వరుసలో అమర్చండి:\n(P) క్రిప్స్ మిషన్\n(Q) కేబినెట్ మిషన్\n(R) సైమన్ కమిషన్\n(S) ఆగస్ట్ ఆఫర్",
-     "R → S → P → Q", "P → Q → R → S", "S → R → P → Q", "R → P → S → Q",
+     "Arrange the following missions in chronological order:\n(P) Cripps Mission\n(Q) Cabinet Mission\n(R) Simon Commission\n(S) August Offer\nతెలుగు: కింది మిషన్లను కాలక్రమ వరుసలో అమర్చండి",
+     "R → S → P → Q",
+     "P → Q → R → S",
+     "S → R → P → Q",
+     "R → P → S → Q",
      "a",
-     "సైమన్ కమిషన్ (R) = 1927-28 → ఆగస్ట్ ఆఫర్ (S) = 1940 → క్రిప్స్ మిషన్ (P) = 1942 → కేబినెట్ మిషన్ (Q) = 1946. సరైన క్రమం: R → S → P → Q."),
+     "Order: Simon Commission (1927) → August Offer (1940) → Cripps Mission (1942) → Cabinet Mission (1946). Hence R → S → P → Q."),
 
-    # Tough
+    # MCQ 62
     (7, 3,
-     "కింది వాటిలో కేబినెట్ మిషన్ 1946 గురించి సరైనవి ఏవి?\n(1) పాకిస్థాన్ డిమాండ్‌ను తిరస్కరించింది\n(2) రాజ్యాంగ నిర్మాణ సభ ఏర్పాటు ప్రతిపాదించింది\n(3) కాంగ్రెస్ తిరస్కరించింది, ముస్లిం లీగ్ అంగీకరించింది\n(4) మూడు మంది బ్రిటిష్ కేబినెట్ మంత్రులు నేతృత్వం వహించారు",
-     "1, 2 మరియు 4 మాత్రమే", "1 మరియు 2 మాత్రమే",
-     "3 మరియు 4 మాత్రమే", "1, 2, 3 మరియు 4 అన్నీ",
+     "Regarding Cabinet Mission 1946, which of the following are CORRECT?\n(1) Rejected Pakistan demand\n(2) Proposed setting up Constituent Assembly\n(3) Congress refused, Muslim League accepted\n(4) Three British Cabinet ministers headed it\nతెలుగు: కేబినెట్ మిషన్ 1946 గురించి సరైనవి ఏవి?",
+     "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "3 and 4 only / 3 మరియు 4 మాత్రమే",
+     "All four / అన్నీ",
      "a",
-     "3 తప్పు — కాంగ్రెస్ కేబినెట్ మిషన్ ప్రణాళికను అంగీకరించింది. ముస్లిం లీగ్ మొదట అంగీకరించి తర్వాత తిరస్కరించింది. మిగతా 1, 2, 4 సరైనవి."),
+     "Statements 1, 2, 4 correct. Statement 3 is wrong — Cabinet Mission Plan was INITIALLY accepted by both Congress and Muslim League, but later disagreements arose over interpretation."),
 
-    # Toughest
+    # MCQ 63
     (7, 4,
-     "కింది జంటలలో సరిగ్గా జోడించినవి అన్నీ ఏవి?\n(1) Simon Commission (1927) — ఒక్క భారతీయ సభ్యుడు లేడు\n(2) August Offer (1940) — Viceroy Wavell ప్రతిపాదన\n(3) Cripps Mission (1942) — Quit India Movement కు దారితీసింది\n(4) Cabinet Mission (1946) — Pakistan demand తిరస్కరించింది",
-     "1, 3 మరియు 4 మాత్రమే", "1, 2, 3 మరియు 4 అన్నీ",
-     "2 మరియు 3 మాత్రమే", "1 మరియు 4 మాత్రమే",
+     "Which of the following pairs are ALL correctly matched?\n(1) Simon Commission (1927) — no Indian member\n(2) August Offer (1940) — Viceroy Wavell's proposal\n(3) Cripps Mission (1942) — led to Quit India Movement\n(4) Cabinet Mission (1946) — rejected Pakistan demand\nతెలుగు: కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?",
+     "1, 3 and 4 only / 1, 3 మరియు 4 మాత్రమే",
+     "All four / అన్నీ",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
      "a",
-     "2 తప్పు — August Offer (1940) ప్రతిపాదించింది Viceroy Linlithgow, Wavell కాదు. (Wavell Plan = Simla Conference 1945). మిగతా 1, 3, 4 సరైనవి. కాబట్టి 1, 3, 4 మాత్రమే సరైన జంటలు."),
+     "Pairs 1, 3, 4 correct. Pair 2 wrong — August Offer 1940 was made by Viceroy LINLITHGOW (not Wavell). Wavell came later in 1944."),
 
-    # PYQ — APPSC
+    # MCQ 64 (10-tuple, exam=APPSC)
     (7, 2,
-     "క్విట్ ఇండియా ఉద్యమం (Quit India Movement 1942) ఏ మిషన్ వైఫల్యం తర్వాత ప్రారంభమైంది? [APPSC Group 2]",
-     "సైమన్ కమిషన్", "కేబినెట్ మిషన్", "క్రిప్స్ మిషన్", "వేవెల్ ప్లాన్",
+     "Quit India Movement (1942) was launched after the failure of which mission? [APPSC Group 2]\nతెలుగు: క్విట్ ఇండియా ఉద్యమం ఏ మిషన్ వైఫల్యం తర్వాత ప్రారంభమైంది?",
+     "Simon Commission / సైమన్ కమిషన్",
+     "Cabinet Mission / కేబినెట్ మిషన్",
+     "Cripps Mission / క్రిప్స్ మిషన్ (Cripps Mission)",
+     "Wavell Plan / వేవెల్ ప్లాన్",
      "c",
      "క్రిప్స్ మిషన్ (Cripps Mission) 1942 వైఫల్యం తర్వాత గాంధీజీ నేతృత్వంలో Quit India Movement (ఆగస్ట్ 1942) ప్రారంభమైంది. ఇది APPSC Group 2 లో బహుళ సార్లు అడిగిన ప్రశ్న.",
      "APPSC"),
 
     # ══════════════════════════════════════════
-    # SECTION 8 — భారత స్వాతంత్ర్య చట్టం 1947 (BILINGUAL)
+    # SECTION 8 — Indian Independence Act 1947 / IIA 1947
     # ══════════════════════════════════════════
 
-    # Easy — Bilingual
+    # MCQ 65
     (8, 1,
-     "భారత స్వాతంత్ర్య చట్టం 1947 బ్రిటిష్ పార్లమెంట్ ఆమోదం పొందిన తేదీ ఏది?\n(On which date was the Indian Independence Act 1947 passed by the British Parliament?)",
-     "జూన్ 3, 1947 / June 3, 1947",
-     "జూలై 18, 1947 / July 18, 1947",
-     "ఆగస్ట్ 15, 1947 / August 15, 1947",
-     "జనవరి 26, 1950 / January 26, 1950",
+     "On which date was the Indian Independence Act 1947 passed by the British Parliament?\nతెలుగు: భారత స్వాతంత్ర్య చట్టం 1947 బ్రిటిష్ పార్లమెంట్ ఆమోదం పొందిన తేదీ ఏది?",
+     "June 3, 1947 / జూన్ 3, 1947",
+     "July 18, 1947 / జూలై 18, 1947 (July 18, 1947)",
+     "August 15, 1947 / ఆగస్ట్ 15, 1947",
+     "January 26, 1950 / జనవరి 26, 1950",
      "b",
-     "Indian Independence Act 1947ను బ్రిటిష్ పార్లమెంట్ జూలై 18, 1947న ఆమోదించింది. అమలు తేదీ: ఆగస్ట్ 15, 1947. ఈ రెండు తేదీలు వేర్వేరు అని గుర్తుపెట్టుకోండి!"),
+     "The Indian Independence Act was passed by the British Parliament on 18 July 1947 (received Royal Assent same day). India became independent on 15 August 1947."),
 
+    # MCQ 66
     (8, 1,
-     "స్వతంత్ర భారతదేశపు మొదటి గవర్నర్ జనరల్ ఎవరు?\n(Who was the first Governor General of independent India?)",
-     "C. రాజగోపాలాచారి / C. Rajagopalachari",
-     "డా. రాజేంద్ర ప్రసాద్ / Dr. Rajendra Prasad",
-     "లార్డ్ మౌంట్‌బాటెన్ / Lord Mountbatten",
-     "జవహర్లాల్ నెహ్రూ / Jawaharlal Nehru",
+     "Who was the first Governor General of independent India?\nతెలుగు: స్వతంత్ర భారతదేశపు మొదటి గవర్నర్ జనరల్ ఎవరు?",
+     "C. Rajagopalachari / C. రాజగోపాలాచారి",
+     "Dr. Rajendra Prasad / డా. రాజేంద్ర ప్రసాద్",
+     "Lord Mountbatten / లార్డ్ మౌంట్‌బాటెన్ (Lord Mountbatten)",
+     "Jawaharlal Nehru / జవహర్లాల్ నెహ్రూ",
      "c",
-     "స్వతంత్ర భారతదేశపు మొదటి Governor General = లార్డ్ మౌంట్‌బాటెన్ (Lord Mountbatten). తర్వాత C. రాజగోపాలాచారి (1948-50) — ఏకైక భారతీయ మరియు చివరి Governor General."),
+     "Lord Mountbatten served as the first Governor General of independent India (15 Aug 1947 – 21 June 1948). C. Rajagopalachari was the second and last GG (and first Indian)."),
 
+    # MCQ 67
     (8, 1,
-     "భారత-పాకిస్థాన్ సరిహద్దును గీసిన సరిహద్దు కమిషన్ అధ్యక్షుడు ఎవరు?\n(Who headed the Boundary Commission that drew the India-Pakistan border?)",
-     "లార్డ్ మౌంట్‌బాటెన్ / Lord Mountbatten",
-     "సర్ సిరిల్ రాడ్‌క్లిఫ్ / Sir Cyril Radcliffe",
-     "స్టాఫర్డ్ క్రిప్స్ / Stafford Cripps",
-     "పెథిక్-లారెన్స్ / Pethick-Lawrence",
+     "Who headed the Boundary Commission that drew the India-Pakistan border?\nతెలుగు: భారత-పాకిస్థాన్ సరిహద్దును గీసిన సరిహద్దు కమిషన్ అధ్యక్షుడు ఎవరు?",
+     "Lord Mountbatten / లార్డ్ మౌంట్‌బాటెన్",
+     "Sir Cyril Radcliffe / సర్ సిరిల్ రాడ్‌క్లిఫ్ (Sir Cyril Radcliffe)",
+     "Stafford Cripps / స్టాఫర్డ్ క్రిప్స్",
+     "Pethick-Lawrence / పెథిక్-లారెన్స్",
      "b",
-     "Boundary Commission అధ్యక్షుడు Sir Cyril Radcliffe. India-Pakistan సరిహద్దును 'Radcliffe Line' అంటారు. ఆయన కేవలం 5 వారాల్లో సరిహద్దు గీయవలసి వచ్చింది!"),
+     "Sir Cyril Radcliffe headed the Boundary Commission. He had never visited India before — the 'Radcliffe Line' was drawn in just 5 weeks (Jul-Aug 1947)."),
 
-    # Moderate — Bilingual
+    # MCQ 68
     (8, 2,
-     "IIA 1947 గురించి కింది వాటిలో సరైనవి ఏవి?\n(Which of the following are correct about the Indian Independence Act 1947?)\n(1) రెండు Dominions ఏర్పాటు చేశారు / Two Dominions were created\n(2) పాకిస్థాన్ మొదటి G.G. = జిన్నా / First G.G. of Pakistan = Jinnah\n(3) Secretary of State for India పదవి కొనసాగించారు / The post of Secretary of State continued\n(4) Princely States భారత్‌లో విలీనం చేయబడ్డాయి / Princely States were forcibly merged with India",
-     "1 మరియు 2 మాత్రమే / 1 and 2 only",
-     "1, 2 మరియు 3 / 1, 2 and 3",
-     "2, 3 మరియు 4 / 2, 3 and 4",
-     "1, 2, 3 మరియు 4 అన్నీ / All of 1,2,3,4",
+     "Which of the following are CORRECT about the Indian Independence Act 1947?\n(1) Two Dominions were created\n(2) First G.G. of Pakistan = Jinnah\n(3) Post of Secretary of State for India continued\n(4) Princely States were forcibly merged with India\nతెలుగు: IIA 1947 గురించి సరైనవి ఏవి?",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "1, 2 and 3 / 1, 2 మరియు 3",
+     "2, 3 and 4 / 2, 3 మరియు 4",
+     "All of 1, 2, 3, 4 / అన్నీ",
      "a",
-     "3 తప్పు — Secretary of State for India పదవి IIA 1947 ద్వారా రద్దు అయింది. 4 తప్పు — Princely States పై Paramountcy రద్దైంది, వాటిని బలవంతంగా విలీనం చేయలేదు. 1 మరియు 2 సరైనవి."),
+     "Statements 1 and 2 are correct. Statement 3 is wrong (Secretary of State post was abolished). Statement 4 is wrong (Princely States were given option to join either dominion or stay independent — not forcibly merged)."),
 
+    # MCQ 69
     (8, 2,
-     "IIA 1947 ప్రకారం రెండు దేశాలు తమ Constitutions రూపొందించుకునే వరకు ఏ చట్టం ప్రకారం పాలన జరిగింది?\n(Under which Act were both India and Pakistan governed until their Constitutions were framed?)",
-     "Government of India Act 1919",
-     "Government of India Act 1935 (with modifications / మార్పులతో)",
-     "Indian Independence Act 1947 తానే / IIA 1947 itself",
-     "Indian Councils Act 1909",
+     "Under which Act were both India and Pakistan governed until their Constitutions were framed?\nతెలుగు: IIA 1947 ప్రకారం రెండు దేశాలు తమ Constitutions రూపొందించుకునే వరకు ఏ చట్టం ప్రకారం పాలన జరిగింది?",
+     "GOI Act 1919 / GOI Act 1919",
+     "GOI Act 1935 with modifications / GOI Act 1935 (మార్పులతో)",
+     "Indian Independence Act 1947 itself / IIA 1947 తానే",
+     "Indian Councils Act 1909 / ICA 1909",
      "b",
-     "IIA 1947 ప్రకారం రెండు దేశాలూ తమ స్వంత Constitutions రూపొందించుకునే వరకు GOI Act 1935 (with modifications) ప్రకారం పాలన కొనసాగింది. India 1950 జనవరి 26న, Pakistan 1956లో తమ Constitutions అమలు చేసుకున్నాయి."),
+     "The Government of India Act 1935 (with adaptations) was the working constitution for both India and Pakistan until they framed their own Constitutions (India: 26 Jan 1950; Pakistan: 23 Mar 1956)."),
 
-    # Tough — Bilingual
+    # MCQ 70
     (8, 3,
-     "కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?\n(Which of the following pairs are correctly matched?)\n(1) మొదటి G.G. of India (స్వతంత్రం తర్వాత) — Mountbatten\n(2) చివరి మరియు ఏకైక భారతీయ G.G. — C. Rajagopalachari\n(3) Pakistan మొదటి G.G. — Liaquat Ali Khan\n(4) Boundary Commission అధ్యక్షుడు — Cyril Radcliffe",
-     "1, 2 మరియు 4 మాత్రమే / 1, 2 and 4 only",
-     "1, 2, 3 మరియు 4 అన్నీ / All",
-     "2 మరియు 3 మాత్రమే / 2 and 3 only",
-     "1 మరియు 4 మాత్రమే / 1 and 4 only",
+     "Which of the following pairs are correctly matched?\n(1) First G.G. of India (after independence) — Mountbatten\n(2) Last and only Indian G.G. — C. Rajagopalachari\n(3) Pakistan's first G.G. — Liaquat Ali Khan\n(4) Boundary Commission Chairman — Cyril Radcliffe\nతెలుగు: కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?",
+     "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
+     "All four / అన్నీ",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
      "a",
-     "3 తప్పు — Pakistan మొదటి Governor General = Muhammad Ali Jinnah (Quaid-e-Azam). Liaquat Ali Khan Pakistan మొదటి Prime Minister. మిగతా 1, 2, 4 సరైనవి."),
+     "Pairs 1, 2, 4 correct. Pair 3 is wrong — Pakistan's first G.G. was Muhammad Ali JINNAH (not Liaquat Ali Khan, who was the first PM)."),
 
-    # Toughest — Bilingual
+    # MCQ 71
     (8, 4,
-     "Assertion (A): భారత స్వాతంత్ర్య చట్టం 1947 రాజ్యాంగం అమలులోకి వచ్చే వరకు భారతదేశం Dominion of India గా ఉంది.\nReason (R): Indian Independence Act 1947 ప్రకారం భారతదేశానికి పూర్తి గణతంత్రం (Republic) కాకుండా Dominion Status ఇచ్చారు; 1950 జనవరి 26న Republic of India అయింది.\n(Assertion: India remained as Dominion of India until the Constitution came into force. Reason: IIA 1947 gave Dominion Status, not full Republic; India became Republic on January 26, 1950.)",
-     "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ / Both correct, R explains A",
-     "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు / Both correct, R doesn't explain",
-     "A సరైనది, R తప్పు / A correct, R wrong",
-     "A తప్పు, R సరైనది / A wrong, R correct",
+     "Assertion (A): India remained as Dominion of India until the Constitution came into force.\nReason (R): IIA 1947 gave Dominion Status, not full Republic; India became Republic on January 26, 1950.\nతెలుగు: అభికథనం: రాజ్యాంగం అమలులోకి వచ్చే వరకు భారతదేశం Dominion of India గా ఉంది.",
+     "Both correct, R explains A / రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
+     "Both correct, R doesn't explain / రెండూ సరైనవి, R వివరణ కాదు",
+     "A correct, R wrong / A సరైనది, R తప్పు",
+     "A wrong, R correct / A తప్పు, R సరైనది",
      "a",
-     "1947 ఆగస్ట్ 15 నుండి 1950 జనవరి 26 వరకు India 'Dominion of India' గా ఉంది. 1950 జనవరి 26న Constitution అమలులోకి వచ్చి 'Republic of India' అయింది. R అనేది A కి సరైన వివరణ."),
+     "Both A and R are correct, and R precisely explains A. India was Dominion from 15 Aug 1947 to 26 Jan 1950, after which it became a Republic."),
 
-    # PYQ — APPSC Bilingual
+    # MCQ 72 (10-tuple, exam=APPSC)
     (8, 2,
-     "స్వతంత్ర భారతదేశపు చివరి గవర్నర్ జనరల్ ఎవరు?\n(Who was the last Governor General of independent India?) [APPSC Group 1 PYQ]",
-     "లార్డ్ మౌంట్‌బాటెన్ / Lord Mountbatten",
-     "జవహర్లాల్ నెహ్రూ / Jawaharlal Nehru",
-     "C. రాజగోపాలాచారి / C. Rajagopalachari",
-     "డా. రాజేంద్ర ప్రసాద్ / Dr. Rajendra Prasad",
+     "Who was the last Governor General of independent India? [APPSC Group 1 PYQ]\nతెలుగు: స్వతంత్ర భారతదేశపు చివరి గవర్నర్ జనరల్ ఎవరు?",
+     "Lord Mountbatten / లార్డ్ మౌంట్‌బాటెన్",
+     "Jawaharlal Nehru / జవహర్లాల్ నెహ్రూ",
+     "C. Rajagopalachari / C. రాజగోపాలాచారి (C. Rajagopalachari / Rajaji)",
+     "Dr. Rajendra Prasad / డా. రాజేంద్ర ప్రసాద్",
      "c",
      "C. రాజగోపాలాచారి (Chakravarti Rajagopalachari / Rajaji) భారతదేశపు చివరి మరియు ఏకైక భారతీయ Governor General (1948–1950). 1950లో Republic అయిన తర్వాత Dr. Rajendra Prasad మొదటి President అయ్యారు.",
      "APPSC"),
 
     # ══════════════════════════════════════════
-    # SECTION 9 — భారత రాజ్యాంగం యొక్క వనరులు (BILINGUAL)
+    # SECTION 9 — Sources of the Indian Constitution
     # ══════════════════════════════════════════
 
-    # Easy — Bilingual
+    # MCQ 73
     (9, 1,
-     "భారత రాజ్యాంగంలో మూల హక్కులు (Fundamental Rights) ఏ దేశం రాజ్యాంగం నుండి స్వీకరించారు?\n(Fundamental Rights in the Indian Constitution were borrowed from which country?)",
-     "బ్రిటన్ / United Kingdom",
-     "అమెరికా / United States of America",
-     "ఐర్లాండ్ / Ireland",
-     "కెనడా / Canada",
+     "Fundamental Rights in the Indian Constitution were borrowed from which country?\nతెలుగు: భారత రాజ్యాంగంలో మూల హక్కులు ఏ దేశం రాజ్యాంగం నుండి స్వీకరించారు?",
+     "United Kingdom / బ్రిటన్",
+     "United States of America / అమెరికా (USA)",
+     "Ireland / ఐర్లాండ్",
+     "Canada / కెనడా",
      "b",
-     "Fundamental Rights (మూల హక్కులు) అమెరికా (USA) రాజ్యాంగం నుండి స్వీకరించారు. అలాగే Independent Judiciary, Judicial Review, Vice-President పదవి కూడా USA నుండి వచ్చాయి."),
+     "Fundamental Rights (Part III, Articles 12-35) were borrowed from the US Bill of Rights. The US has 'Bill of Rights' added through 10 amendments (1791)."),
 
+    # MCQ 74
     (9, 1,
-     "ఆదేశిక సూత్రాలు (Directive Principles of State Policy) ఏ దేశం నుండి స్వీకరించారు?\n(DPSP was borrowed from which country's Constitution?)",
-     "అమెరికా / USA",
-     "బ్రిటన్ / UK",
-     "ఐర్లాండ్ / Ireland",
-     "ఆస్ట్రేలియా / Australia",
+     "DPSP (Directive Principles of State Policy) was borrowed from which country's Constitution?\nతెలుగు: ఆదేశిక సూత్రాలు ఏ దేశం నుండి స్వీకరించారు?",
+     "USA / అమెరికా",
+     "UK / బ్రిటన్",
+     "Ireland / ఐర్లాండ్ (Ireland)",
+     "Australia / ఆస్ట్రేలియా",
      "c",
-     "Directive Principles of State Policy (DPSP) ఐర్లాండ్ (Ireland) రాజ్యాంగం నుండి స్వీకరించారు. అలాగే Rajya Sabha కు నామినేషన్, రాష్ట్రపతి ఎన్నిక పద్ధతి కూడా Ireland నుండే వచ్చాయి."),
+     "DPSP (Part IV, Articles 36-51) was borrowed from the Irish Constitution (1937). Ireland in turn borrowed from Spain."),
 
+    # MCQ 75
     (9, 1,
-     "ప్రాథమిక విధులు (Fundamental Duties) ఏ దేశం నుండి స్వీకరించారు?\n(Fundamental Duties in Indian Constitution were borrowed from which country?)",
-     "చైనా / China",
-     "సోవియట్ యూనియన్ / USSR (Soviet Union)",
-     "జపాన్ / Japan",
-     "జర్మనీ / Germany",
+     "Fundamental Duties in Indian Constitution were borrowed from which country?\nతెలుగు: ప్రాథమిక విధులు ఏ దేశం నుండి స్వీకరించారు?",
+     "China / చైనా",
+     "USSR (Soviet Union) / సోవియట్ యూనియన్ (USSR)",
+     "Japan / జపాన్",
+     "Germany / జర్మనీ",
      "b",
-     "Fundamental Duties (ప్రాథమిక విధులు) సోవియట్ యూనియన్ (USSR) రాజ్యాంగం నుండి స్వీకరించారు. పంచవర్ష ప్రణాళికల స్ఫూర్తి కూడా USSR నుండే."),
+     "Fundamental Duties (Part IVA, Article 51A) were borrowed from the USSR (Soviet Union) Constitution. Added by the 42nd Amendment (1976)."),
 
+    # MCQ 76
     (9, 1,
-     "అవశేష అధికారాలు కేంద్రానికి (Residuary Powers to Centre) ఏ దేశం నుండి స్వీకరించారు?\n(The concept of Residuary Powers vested in the Centre was borrowed from?)",
-     "అమెరికా / USA",
-     "ఆస్ట్రేలియా / Australia",
-     "కెనడా / Canada",
-     "దక్షిణ ఆఫ్రికా / South Africa",
+     "The concept of Residuary Powers vested in the Centre was borrowed from?\nతెలుగు: అవశేష అధికారాలు కేంద్రానికి ఏ దేశం నుండి స్వీకరించారు?",
+     "USA / అమెరికా",
+     "Australia / ఆస్ట్రేలియా",
+     "Canada / కెనడా (Canada)",
+     "South Africa / దక్షిణ ఆఫ్రికా",
      "c",
-     "కెనడా (Canada) నుండి రెండు అంశాలు స్వీకరించారు: (1) కేంద్రం బలంగా ఉన్న Federalism (2) Residuary Powers కేంద్రానికి. USA లో Residuary Powers రాష్ట్రాలకు ఉంటాయి — India కెనడా మోడల్ తీసుకుంది."),
+     "Residuary Powers vested in the Centre — borrowed from CANADA. (In USA they are with the states; in India and Canada they are with the Centre.)"),
 
-    # Moderate — Bilingual
+    # MCQ 77
     (9, 2,
-     "కింది వాటిని సరిగ్గా జోడించండి:\n(Match the following correctly:)\n(P) పార్లమెంటరీ వ్యవస్థ / Parliamentary System\n(Q) ఉమ్మడి జాబితా / Concurrent List\n(R) రాజ్యాంగ సవరణ విధానం / Amendment Procedure\n(S) అత్యవసర కాలంలో FRs నిలిపివేత / Suspension of FRs in Emergency\n(1) ఆస్ట్రేలియా  (2) జర్మనీ  (3) బ్రిటన్  (4) దక్షిణ ఆఫ్రికా",
+     "Match the following correctly:\n(P) Parliamentary System  (Q) Concurrent List  (R) Amendment Procedure  (S) Suspension of FRs in Emergency\n(1) Australia (2) Germany (3) UK (4) South Africa\nతెలుగు: కింది వాటిని సరిగ్గా జోడించండి",
      "P-3, Q-1, R-4, S-2",
      "P-1, Q-3, R-2, S-4",
      "P-3, Q-4, R-1, S-2",
      "P-2, Q-1, R-3, S-4",
      "a",
-     "Parliamentary System = UK (3). Concurrent List = Australia (1). Amendment Procedure = South Africa (4). Suspension of FRs during Emergency = Germany / Weimar Republic (2). సరైన జంట: P-3, Q-1, R-4, S-2."),
+     "Parliamentary System = UK (3); Concurrent List = Australia (1); Amendment Procedure = South Africa (4); Suspension of FRs in Emergency = Germany / Weimar (2). Hence P-3, Q-1, R-4, S-2."),
 
+    # MCQ 78
     (9, 2,
-     "కింది వాటిలో సరికానిది (INCORRECT) ఏది?\n(Which of the following is INCORRECTLY matched?)",
-     "Judicial Review — USA / అమెరికా",
-     "Concurrent List — Australia / ఆస్ట్రేలియా",
-     "Fundamental Duties — Ireland / ఐర్లాండ్",
-     "Procedure Established by Law (Article 21) — Japan / జపాన్",
+     "Which of the following is INCORRECTLY matched?\nతెలుగు: కింది వాటిలో సరికానిది ఏది?",
+     "Judicial Review — USA",
+     "Concurrent List — Australia",
+     "Fundamental Duties — Ireland",
+     "Procedure Established by Law (Article 21) — Japan",
      "c",
-     "Fundamental Duties = USSR (Soviet Union), Ireland కాదు. Ireland నుండి వచ్చినవి: DPSP, Rajya Sabha Nomination, President's Election Method. USSR నుండి వచ్చినవి: Fundamental Duties."),
+     "Fundamental Duties were borrowed from USSR (NOT Ireland). Ireland is the source of DPSP. Hence option C is incorrect."),
 
-    # Tough — Bilingual
+    # MCQ 79
     (9, 3,
-     "కింది జంటలన్నీ సరైనవేనా లేదా తప్పులు ఉన్నాయా? సరికానిన జంటలు ఏవి?\n(Which of the following pairs are INCORRECTLY matched?)\n(1) Single Citizenship — UK\n(2) DPSP — USA\n(3) Vice-President — USA\n(4) Rajya Sabha Nomination — Canada",
-     "2 మరియు 4 మాత్రమే తప్పు / 2 and 4 only incorrect",
-     "1 మరియు 3 మాత్రమే తప్పు / 1 and 3 only",
-     "3 మరియు 4 మాత్రమే తప్పు / 3 and 4 only",
-     "అన్నీ సరైనవి / All are correct",
+     "Which of the following pairs are INCORRECTLY matched?\n(1) Single Citizenship — UK\n(2) DPSP — USA\n(3) Vice-President — USA\n(4) Rajya Sabha Nomination — Canada\nతెలుగు: కింది ఏ జంటలు తప్పుగా జోడించబడ్డాయి?",
+     "Only 2 and 4 are wrong / 2 మరియు 4 మాత్రమే తప్పు",
+     "Only 1 and 3 are wrong / 1 మరియు 3 మాత్రమే తప్పు",
+     "Only 3 and 4 are wrong / 3 మరియు 4 మాత్రమే తప్పు",
+     "All are correct / అన్నీ సరైనవి",
      "a",
-     "2 తప్పు — DPSP = Ireland (USA కాదు). 4 తప్పు — Rajya Sabha Nomination = Ireland (Canada కాదు). 1 సరైనది (Single Citizenship = UK). 3 సరైనది (Vice-President = USA)."),
+     "DPSP came from IRELAND, not USA (pair 2 wrong). Rajya Sabha Nomination concept came from IRELAND, not Canada (pair 4 wrong). Pairs 1 and 3 are correct."),
 
-    # Toughest — Bilingual
+    # MCQ 80
     (9, 4,
-     "కింది సోర్స్-ఫీచర్ జంటలలో అన్నీ సరైనవి ఏవి?\n(All correctly matched Source-Feature pairs:)\n(1) Japan — Procedure Established by Law\n(2) France — Republic + Liberty, Equality, Fraternity\n(3) South Africa — Concurrent List + Joint Sitting of Parliament\n(4) Germany (Weimar) — Suspension of Fundamental Rights during Emergency",
-     "1, 2 మరియు 4 మాత్రమే / 1, 2 and 4 only",
-     "1, 2, 3 మరియు 4 అన్నీ / All",
-     "3 మరియు 4 మాత్రమే / 3 and 4 only",
-     "1 మరియు 4 మాత్రమే / 1 and 4 only",
+     "Which Source-Feature pairs are ALL correctly matched?\n(1) Japan — Procedure Established by Law\n(2) France — Republic + Liberty, Equality, Fraternity\n(3) South Africa — Concurrent List + Joint Sitting of Parliament\n(4) Germany (Weimar) — Suspension of Fundamental Rights during Emergency\nతెలుగు: కింది ఏవి అన్నీ సరైన జంటలు?",
+     "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
+     "All four / అన్నీ",
+     "3 and 4 only / 3 మరియు 4 మాత్రమే",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
      "a",
-     "3 తప్పు — Concurrent List + Joint Sitting = Australia (South Africa కాదు). South Africa నుండి వచ్చినవి: Amendment Procedure (Special Majority) + Rajya Sabha members election. మిగతా 1, 2, 4 సరైనవి."),
+     "Pairs 1, 2, 4 are correct. Pair 3 is wrong — South Africa contributed the Amendment Procedure + Election of Rajya Sabha members. Concurrent List = Australia; Joint Sitting = Australia."),
 
-    # PYQ — UPSC Bilingual
+    # MCQ 81 (10-tuple, exam=UPSC)
     (9, 2,
-     "భారత రాజ్యాంగంలో 'Procedure Established by Law' భావన ఏ దేశం నుండి స్వీకరించారు?\n(The concept of 'Procedure Established by Law' in Article 21 of Indian Constitution was borrowed from?) [UPSC Prelims PYQ]",
-     "అమెరికా / USA",
-     "జపాన్ / Japan",
-     "బ్రిటన్ / UK",
-     "ఆస్ట్రేలియా / Australia",
+     "The concept of 'Procedure Established by Law' in Article 21 of Indian Constitution was borrowed from? [UPSC Prelims PYQ]\nతెలుగు: 'Procedure Established by Law' భావన ఏ దేశం నుండి స్వీకరించారు?",
+     "USA / అమెరికా",
+     "Japan / జపాన్ (Japan)",
+     "UK / బ్రిటన్",
+     "Australia / ఆస్ట్రేలియా",
      "b",
      "Article 21లో 'Procedure Established by Law' జపాన్ (Japan) రాజ్యాంగం నుండి స్వీకరించారు. USA లో 'Due Process of Law' అంటారు — రెండూ వేర్వేరు. ఇది UPSC Prelims లో అడిగిన ప్రశ్న.",
      "UPSC"),
 
     # ══════════════════════════════════════════
-    # SECTION 10 — అన్ని చట్టాల సమీక్ష (BILINGUAL — Match the Following type)
+    # SECTION 10 — Mixed Recap / Comprehensive Practice
     # ══════════════════════════════════════════
 
-    # Easy — Bilingual
+    # MCQ 82
     (10, 1,
-     "RBI (Reserve Bank of India) ఏ చట్టం ద్వారా స్థాపించబడింది?\n(Under which Act was the Reserve Bank of India established?)",
-     "GOI Act 1919", "GOI Act 1935", "IIA 1947", "Charter Act 1853",
+     "Under which Act was the Reserve Bank of India established?\nతెలుగు: RBI ఏ చట్టం ద్వారా స్థాపించబడింది?",
+     "GOI Act 1919",
+     "GOI Act 1935 (RBI Act 1934 framework)",
+     "Indian Independence Act 1947",
+     "Charter Act 1853",
      "b",
-     "Reserve Bank of India, GOI Act 1935 ద్వారా స్థాపించబడింది. ఈ యాక్ట్ RBI తో పాటు Federal Court కూడా స్థాపించింది — Federal Court తర్వాత సుప్రీం కోర్ట్ అయింది."),
+     "RBI was established under the RBI Act 1934, framework set up via GOI Act 1935. Began operations on 1 April 1935."),
 
+    # MCQ 83
     (10, 1,
-     "పోర్ట్‌ఫోలియో సిస్టమ్ ప్రవేశపెట్టిన చట్టం మరియు Diarchy ప్రవేశపెట్టిన చట్టం వరుసగా ఏవి?\n(The Acts that introduced Portfolio System and Diarchy respectively are?)",
-     "ICA 1861 మరియు GOI Act 1919 / ICA 1861 and GOI Act 1919",
-     "ICA 1892 మరియు GOI Act 1935 / ICA 1892 and GOI Act 1935",
-     "ICA 1909 మరియు GOI Act 1919 / ICA 1909 and GOI Act 1919",
-     "GOI Act 1858 మరియు ICA 1909 / GOI Act 1858 and ICA 1909",
+     "The Acts that introduced Portfolio System and Diarchy respectively are?\nతెలుగు: పోర్ట్‌ఫోలియో సిస్టమ్ మరియు Diarchy ప్రవేశపెట్టిన చట్టాలు వరుసగా ఏవి?",
+     "ICA 1861 and GOI Act 1919 / ICA 1861 + GOI Act 1919 (correct)",
+     "ICA 1892 and GOI Act 1935 / ICA 1892 + GOI Act 1935",
+     "ICA 1909 and GOI Act 1919 / ICA 1909 + GOI Act 1919",
+     "GOI Act 1858 and ICA 1909 / GOI Act 1858 + ICA 1909",
      "a",
-     "Portfolio System = ICA 1861. Diarchy (రాష్ట్ర స్థాయిలో) = GOI Act 1919 (Montagu-Chelmsford Reforms). రెండూ వేర్వేరు చట్టాలలో వచ్చాయి — గుర్తుపెట్టుకోండి!"),
+     "Portfolio System = ICA 1861 (Lord Canning). Diarchy at provinces = GOI Act 1919 (Montagu-Chelmsford)."),
 
-    # Moderate — Bilingual
+    # MCQ 84
     (10, 2,
-     "కింది చట్టాలను కాలక్రమ వరుసలో అమర్చండి:\n(Arrange the following Acts in chronological order:)\n(P) Pitt's India Act\n(Q) Government of India Act 1935\n(R) Charter Act 1853\n(S) Indian Councils Act 1909",
-     "P → R → S → Q", "R → P → S → Q", "P → S → R → Q", "R → S → P → Q",
+     "Arrange the following Acts in chronological order:\n(P) Pitt's India Act\n(Q) Government of India Act 1935\n(R) Charter Act 1853\n(S) Indian Councils Act 1909\nతెలుగు: కింది చట్టాలను కాలక్రమ వరుసలో అమర్చండి",
+     "P → R → S → Q",
+     "R → P → S → Q",
+     "P → S → R → Q",
+     "R → S → P → Q",
      "a",
-     "Pitt's India Act (P) = 1784 → Charter Act 1853 (R) = 1853 → ICA 1909 (S) = 1909 → GOI Act 1935 (Q) = 1935. సరైన క్రమం: P → R → S → Q."),
+     "Order: P=Pitt's Act 1784 → R=Charter Act 1853 → S=ICA 1909 → Q=GOI Act 1935. Hence P → R → S → Q."),
 
+    # MCQ 85
     (10, 2,
-     "కింది వాటిని సరిగ్గా జోడించండి — మొదటి వ్యక్తి మరియు సంబంధిత చట్టం:\n(Match the 'First Person' with the related Act:)\n(1) మొదటి G.G. of Bengal — Regulating Act 1773\n(2) మొదటి G.G. of India — Charter Act 1833\n(3) మొదటి Viceroy — GOI Act 1919\n(4) మొదటి భారతీయ Executive Council సభ్యుడు — ICA 1909",
-     "1, 2 మరియు 4 సరైనవి / 1, 2 and 4 correct",
-     "1, 2, 3 మరియు 4 అన్నీ / All correct",
-     "1 మరియు 4 మాత్రమే / 1 and 4 only",
-     "2 మరియు 3 మాత్రమే / 2 and 3 only",
+     "Match the 'First Person' with the related Act:\n(1) First G.G. of Bengal — Regulating Act 1773\n(2) First G.G. of India — Charter Act 1833\n(3) First Viceroy — GOI Act 1919\n(4) First Indian Executive Council member — ICA 1909\nతెలుగు: 'మొదటి వ్యక్తి' మరియు సంబంధిత చట్టాన్ని జోడించండి",
+     "1, 2 and 4 correct / 1, 2 మరియు 4 సరైనవి",
+     "All four correct / అన్నీ సరైనవి",
+     "Only 1 and 4 / 1 మరియు 4 మాత్రమే",
+     "Only 2 and 3 / 2 మరియు 3 మాత్రమే",
      "a",
-     "3 తప్పు — మొదటి Viceroy = Lord Canning, GOI Act 1858 ద్వారా (1919 కాదు). మిగతా 1 (Warren Hastings, 1773), 2 (Bentinck, 1833), 4 (Satyendra Prasad Sinha, 1909) సరైనవి."),
+     "Pairs 1, 2, 4 correct. Pair 3 is wrong — First Viceroy (Lord Canning) came under GOI Act 1858 (NOT 1919)."),
 
-    # Tough — Bilingual
+    # MCQ 86
     (10, 3,
-     "కింది వాటిలో 'మొదటిసారి' (For the First Time) సరికానిది ఏది?\n(Which of the following 'First Time' entries is INCORRECT?)",
-     "మొదటిసారి భారతీయుల నామినేషన్ (First Indian Nomination) — ICA 1861",
-     "మొదటిసారి ప్రత్యక్ష ఎన్నికలు (First Direct Elections) — ICA 1909",
-     "మొదటిసారి కేంద్రంలో Bicameral Legislature — GOI Act 1919",
-     "మొదటిసారి రాష్ట్రాలకు Provincial Autonomy — GOI Act 1919",
+     "Which 'For the First Time' entry is INCORRECT?\nతెలుగు: కింది వాటిలో 'మొదటిసారి' సరికానిది ఏది?",
+     "First Indian Nomination — ICA 1861",
+     "First Direct Elections — ICA 1909",
+     "First time Bicameral Legislature at Centre — GOI Act 1919",
+     "First time Provincial Autonomy — GOI Act 1919",
      "d",
-     "Provincial Autonomy మొదటిసారి GOI Act 1935లో వచ్చింది, 1919లో కాదు. 1919లో రాష్ట్రాల్లో Diarchy వచ్చింది — అది Autonomy కాదు. మిగతా మూడు సరైనవే."),
+     "Provincial Autonomy was introduced FOR THE FIRST TIME by GOI Act 1935 (NOT 1919). 1919 introduced Provincial Diarchy; 1935 abolished Diarchy and gave full Provincial Autonomy."),
 
-    # Toughest — Bilingual
+    # MCQ 87
     (10, 4,
-     "కింది జంటలలో అన్నీ సరైనవి ఏవి? / (All correctly matched pairs:)\n(1) Open Competition for Civil Services — Charter Act 1853\n(2) Bicameral Legislature at Centre — GOI Act 1919\n(3) Separate Electorate for Muslims — GOI Act 1919\n(4) Provincial Autonomy — GOI Act 1935",
-     "1, 2 మరియు 4 మాత్రమే / 1, 2 and 4 only",
-     "1, 2, 3 మరియు 4 అన్నీ / All four",
-     "2, 3 మరియు 4 మాత్రమే / 2, 3 and 4 only",
-     "1 మరియు 4 మాత్రమే / 1 and 4 only",
+     "Which of the following pairs are ALL correctly matched?\n(1) Open Competition for Civil Services — Charter Act 1853\n(2) Bicameral Legislature at Centre — GOI Act 1919\n(3) Separate Electorate for Muslims — GOI Act 1919\n(4) Provincial Autonomy — GOI Act 1935\nతెలుగు: కింది జంటలలో అన్నీ సరైనవి ఏవి?",
+     "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
+     "All four / అన్నీ",
+     "2, 3 and 4 only / 2, 3 మరియు 4 మాత్రమే",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
      "a",
-     "3 తప్పు — Separate Electorate for Muslims మొదట ICA 1909లో వచ్చింది, GOI Act 1919లో కాదు. మిగతా 1 (1853), 2 (1919), 4 (1935) అన్నీ సరైనవి."),
+     "Pairs 1, 2, 4 correct. Pair 3 wrong — Separate Electorate for Muslims was introduced by ICA 1909 (Morley-Minto), NOT GOI Act 1919."),
 
-    # PYQ — APPSC Bilingual
+    # MCQ 88 (10-tuple, exam=APPSC)
     (10, 2,
-     "కింది వాటిలో సరైన జంట ఏది? / (Which is the correctly matched pair?) [APPSC Group 2 PYQ]",
-     "Diarchy at Province Level — GOI Act 1935",
-     "RBI స్థాపన — GOI Act 1919 / RBI Establishment — GOI Act 1919",
-     "Bicameral Legislature at Centre — GOI Act 1919 / కేంద్రంలో Bicameral Legislature — GOI Act 1919",
-     "Separate Electorate (Muslims) — GOI Act 1919",
+     "Which is the correctly matched pair? [APPSC Group 2 PYQ]\nతెలుగు: కింది వాటిలో సరైన జంట ఏది?",
+     "Diarchy at Province Level — GOI Act 1935 / రాష్ట్ర Diarchy — 1935",
+     "RBI Establishment — GOI Act 1919 / RBI స్థాపన — 1919",
+     "Bicameral Legislature at Centre — GOI Act 1919 / కేంద్రంలో Bicameral — GOI Act 1919",
+     "Separate Electorate (Muslims) — GOI Act 1919 / Separate Electorate — 1919",
      "c",
      "Bicameral Legislature at Centre = GOI Act 1919 ✅. A తప్పు (Diarchy at Province = 1919, not 1935). B తప్పు (RBI = 1935). D తప్పు (Separate Electorate = ICA 1909). ఇది APPSC Group 2 లో తరచుగా వచ్చే Match the Following ప్రశ్న.",
      "APPSC"),
