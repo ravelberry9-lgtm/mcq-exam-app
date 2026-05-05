@@ -432,7 +432,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 5
     (0, 2,
-     "Which statement about British Rule in India is CORRECT?\n(A) Company Rule began with Regulating Act 1773\n(B) Crown Rule began in 1857\n(C) Company Rule ended in 1947\nతెలుగు: కింది వాటిలో సరైనది ఏది?",
+     "Which statement about British Rule in India is CORRECT?\n(A) Company Rule began with Regulating Act 1773\n(B) Crown Rule began in 1857\n(C) Company Rule ended in 1947\nతెలుగు: కింది వాటిలో సరైనది ఏది?\n(A) కంపెనీ పాలన రెగ్యులేటింగ్ యాక్ట్ 1773తో ప్రారంభమైంది\n(B) క్రౌన్ పాలన 1857లో ప్రారంభమైంది\n(C) కంపెనీ పాలన 1947లో అంతమైంది",
      "A only / A మాత్రమే",
      "B only / B మాత్రమే",
      "A and C / A మరియు C",
@@ -442,7 +442,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 6
     (0, 3,
-     "Match the following correctly:\n(A) Company Rule begins — 1. 1858\n(B) Crown Rule begins — 2. 1773\n(C) Indian Independence — 3. 1947\nతెలుగు: కింది జంటలను సరిగ్గా జోడించండి",
+     "Match the following correctly:\n(A) Company Rule begins — 1. 1858\n(B) Crown Rule begins — 2. 1773\n(C) Indian Independence — 3. 1947\nతెలుగు: కింది జంటలను సరిగ్గా జోడించండి:\n(A) కంపెనీ పాలన ప్రారంభం — 1. 1858\n(B) క్రౌన్ పాలన ప్రారంభం — 2. 1773\n(C) భారత స్వాతంత్ర్యం — 3. 1947",
      "A-2, B-1, C-3",
      "A-1, B-2, C-3",
      "A-2, B-3, C-1",
@@ -486,7 +486,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 10
     (1, 2,
-     "Regarding Regulating Act 1773, which of the following are CORRECT?\n(1) First Act of British Parliament to control the Company\n(2) Supreme Court was established in Calcutta\n(3) Warren Hastings became the first Governor General of India\nతెలుగు: రెగ్యులేటింగ్ యాక్ట్ 1773 గురించి కింది వాటిలో సరైనవి ఏవి?",
+     "Regarding Regulating Act 1773, which of the following are CORRECT?\n(1) First Act of British Parliament to control the Company\n(2) Supreme Court was established in Calcutta\n(3) Warren Hastings became the first Governor General of India\nతెలుగు: రెగ్యులేటింగ్ యాక్ట్ 1773 గురించి కింది వాటిలో సరైనవి ఏవి?\n(1) కంపెనీని నియంత్రించడానికి బ్రిటిష్ పార్లమెంట్ చేసిన మొదటి చట్టం\n(2) కలకత్తాలో సుప్రీం కోర్ట్ ఏర్పాటు\n(3) వారెన్ హేస్టింగ్స్ మొదటి గవర్నర్ జనరల్ ఆఫ్ ఇండియా అయ్యారు",
      "1 and 2 only / 1 మరియు 2 మాత్రమే",
      "2 and 3 only / 2 మరియు 3 మాత్రమే",
      "1 and 3 only / 1 మరియు 3 మాత్రమే",
@@ -526,7 +526,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 14
     (1, 4,
-     "Which of the following pairs are correctly matched?\n(1) Regulating Act 1773 — post of Governor General of Bengal\n(2) Pitt's India Act 1784 — Double Government\n(3) Charter Act 1813 — End of Company's trade monopoly\n(4) Charter Act 1833 — Open Competition for Civil Services\nతెలుగు: కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?",
+     "Which of the following pairs are correctly matched?\n(1) Regulating Act 1773 — post of Governor General of Bengal\n(2) Pitt's India Act 1784 — Double Government\n(3) Charter Act 1813 — End of Company's trade monopoly\n(4) Charter Act 1833 — Open Competition for Civil Services\nతెలుగు: కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?\n(1) రెగ్యులేటింగ్ యాక్ట్ 1773 — గవర్నర్ జనరల్ ఆఫ్ బెంగాల్ పదవి\n(2) పిట్స్ ఇండియా యాక్ట్ 1784 — ద్వంద్వ పాలన (Double Government)\n(3) చార్టర్ యాక్ట్ 1813 — కంపెనీ వ్యాపార గుత్తాధిపత్యం రద్దు\n(4) చార్టర్ యాక్ట్ 1833 — Civil Services Open Competition",
      "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
      "All of 1, 2, 3 and 4 / అన్నీ",
      "2 and 3 only / 2 మరియు 3 మాత్రమే",
@@ -581,7 +581,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 19
     (2, 2,
-     "Regarding Charter Act 1833, which of the following are CORRECT?\n(1) Company became more administrative than commercial\n(2) Post of Governor General of India was created\n(3) Open Competition for Civil Services introduced\nతెలుగు: కింది వాటిలో చార్టర్ యాక్ట్ 1833కు సంబంధించి సరైనవి ఏవి?",
+     "Regarding Charter Act 1833, which of the following are CORRECT?\n(1) Company became more administrative than commercial\n(2) Post of Governor General of India was created\n(3) Open Competition for Civil Services introduced\nతెలుగు: కింది వాటిలో చార్టర్ యాక్ట్ 1833కు సంబంధించి సరైనవి ఏవి?\n(1) కంపెనీ వ్యాపార సంస్థగా కాకుండా పాలనా సంస్థగా మారింది\n(2) గవర్నర్ జనరల్ ఆఫ్ ఇండియా పదవి ఏర్పాటు\n(3) Civil Services కు Open Competition ప్రవేశపెట్టారు",
      "Only 1 / 1 మాత్రమే",
      "1 and 2 / 1 మరియు 2",
      "2 and 3 / 2 మరియు 3",
@@ -591,7 +591,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 20
     (2, 2,
-     "Arrange the Charter Acts in correct chronological order:\n(P) Post of Governor General of India created\n(Q) Partial end of Company monopoly\n(R) Separation of legislative + executive\n(S) Double Government introduced\nతెలుగు: Charter Acts యొక్క సరైన క్రమాన్ని ఏర్పాటు చేయండి",
+     "Arrange the Charter Acts in correct chronological order:\n(P) Post of Governor General of India created\n(Q) Partial end of Company monopoly\n(R) Separation of legislative + executive\n(S) Double Government introduced\nతెలుగు: Charter Acts యొక్క సరైన క్రమాన్ని ఏర్పాటు చేయండి:\n(P) గవర్నర్ జనరల్ ఆఫ్ ఇండియా పదవి ఏర్పాటు\n(Q) కంపెనీ గుత్తాధిపత్యం పాక్షిక రద్దు\n(R) శాసన + కార్యనిర్వాహక మండళ్ళు వేరు\n(S) ద్వంద్వ పాలన ప్రవేశపెట్టారు",
      "S → Q → P → R",
      "Q → S → P → R",
      "S → P → Q → R",
@@ -666,7 +666,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 27
     (3, 2,
-     "Regarding GOI Act 1858, which of the following are CORRECT?\n(1) Board of Control + Court of Directors abolished\n(2) Secretary of State has a 15-member council\n(3) Viceroy is responsible to the Secretary of State\nతెలుగు: Government of India Act 1858 గురించి కింది వాటిలో సరైనవి ఏవి?",
+     "Regarding GOI Act 1858, which of the following are CORRECT?\n(1) Board of Control + Court of Directors abolished\n(2) Secretary of State has a 15-member council\n(3) Viceroy is responsible to the Secretary of State\nతెలుగు: Government of India Act 1858 గురించి కింది వాటిలో సరైనవి ఏవి?\n(1) Board of Control + Court of Directors రద్దు\n(2) Secretary of State కి 15 మంది సభ్యులతో కౌన్సిల్\n(3) Viceroy, Secretary of State కు జవాబుదారీగా",
      "Only 1 / 1 మాత్రమే",
      "1 and 2 only / 1 మరియు 2 మాత్రమే",
      "1, 2 and 3 / 1, 2 మరియు 3",
@@ -686,7 +686,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 29
     (3, 3,
-     "Which of the following were abolished by the GOI Act 1858?\n(1) Board of Control\n(2) Court of Directors\n(3) East India Company\n(4) Supreme Court\nతెలుగు: GOI Act 1858 ద్వారా రద్దయినవి ఏవి?",
+     "Which of the following were abolished by the GOI Act 1858?\n(1) Board of Control\n(2) Court of Directors\n(3) East India Company\n(4) Supreme Court\nతెలుగు: GOI Act 1858 ద్వారా రద్దయినవి ఏవి?\n(1) Board of Control\n(2) Court of Directors\n(3) East India Company\n(4) సుప్రీం కోర్ట్",
      "1 and 2 only / 1 మరియు 2 మాత్రమే",
      "1, 2 and 3 / 1, 2 మరియు 3",
      "2, 3 and 4 / 2, 3 మరియు 4",
@@ -696,7 +696,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 30
     (3, 4,
-     "Which of the following are correctly matched?\n(1) Regulating Act 1773 — first Parliament control over Company\n(2) Pitt's India Act 1784 — Double Govt + Board of Control\n(3) GOI Act 1858 — first Viceroy was Lord Bentinck\n(4) Charter Act 1853 — separation of legislative + executive\nతెలుగు: కింది వాటిలో సరిగ్గా జోడించినవి అన్నీ ఏవి?",
+     "Which of the following are correctly matched?\n(1) Regulating Act 1773 — first Parliament control over Company\n(2) Pitt's India Act 1784 — Double Govt + Board of Control\n(3) GOI Act 1858 — first Viceroy was Lord Bentinck\n(4) Charter Act 1853 — separation of legislative + executive\nతెలుగు: కింది వాటిలో సరిగ్గా జోడించినవి అన్నీ ఏవి?\n(1) రెగ్యులేటింగ్ యాక్ట్ 1773 — కంపెనీపై పార్లమెంట్ మొదటి నియంత్రణ\n(2) పిట్స్ ఇండియా యాక్ట్ 1784 — ద్వంద్వ పాలన + Board of Control\n(3) GOI Act 1858 — మొదటి Viceroy లార్డ్ బెంటింక్\n(4) చార్టర్ యాక్ట్ 1853 — శాసన + కార్యనిర్వాహక వేరు",
      "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
      "All four / అన్నీ",
      "2, 3 and 4 only / 2, 3 మరియు 4 మాత్రమే",
@@ -761,7 +761,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 36
     (4, 2,
-     "Regarding Indian Councils Act 1909, which of the following are CORRECT?\n(1) First time direct elections introduced\n(2) Separate Electorate for Muslims given\n(3) Satyendra Prasad Sinha was first Indian member of Executive Council\n(4) Bombay and Madras Presidencies got legislative powers\nతెలుగు: కింది వాటిలో ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909కు సంబంధించి సరైనవి ఏవి?",
+     "Regarding Indian Councils Act 1909, which of the following are CORRECT?\n(1) First time direct elections introduced\n(2) Separate Electorate for Muslims given\n(3) Satyendra Prasad Sinha was first Indian member of Executive Council\n(4) Bombay and Madras Presidencies got legislative powers\nతెలుగు: కింది వాటిలో ఇండియన్ కౌన్సిల్స్ యాక్ట్ 1909కు సంబంధించి సరైనవి ఏవి?\n(1) మొదటిసారి ప్రత్యక్ష ఎన్నికలు\n(2) ముస్లింలకు Separate Electorate\n(3) సత్యేంద్ర ప్రసాద్ సిన్హా = Executive Council మొదటి భారతీయ సభ్యుడు\n(4) బొంబాయి, మద్రాస్ ప్రెసిడెన్సీలకు శాసన అధికారాలు",
      "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
      "2 and 3 only / 2 మరియు 3 మాత్రమే",
      "All four / అన్నీ",
@@ -771,7 +771,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 37
     (4, 2,
-     "Match the Acts with their main features:\n(P) ICA 1861 — (1) Separate Electorate for Muslims\n(Q) ICA 1892 — (2) Portfolio System\n(R) ICA 1909 — (3) Indirect Elections + Budget Discussion\nతెలుగు: కింది చట్టాలను వాటి ముఖ్య లక్షణాలతో సరిగ్గా జోడించండి",
+     "Match the Acts with their main features:\n(P) ICA 1861 — (1) Separate Electorate for Muslims\n(Q) ICA 1892 — (2) Portfolio System\n(R) ICA 1909 — (3) Indirect Elections + Budget Discussion\nతెలుగు: కింది చట్టాలను వాటి ముఖ్య లక్షణాలతో సరిగ్గా జోడించండి:\n(P) ICA 1861 — (1) Separate Electorate (Muslims)\n(Q) ICA 1892 — (2) Portfolio System\n(R) ICA 1909 — (3) పరోక్ష ఎన్నికలు + బడ్జెట్ చర్చ",
      "P-2, Q-3, R-1",
      "P-1, Q-2, R-3",
      "P-3, Q-1, R-2",
@@ -846,7 +846,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 44
     (5, 2,
-     "Under GOI Act 1919 Diarchy, which of the following are 'Reserved Subjects'?\n(1) Education\n(2) Land Revenue\n(3) Law & Order\n(4) Local Government\nతెలుగు: GOI Act 1919 ప్రకారం 'Reserved Subjects' కు చెందేవి ఏవి?",
+     "Under GOI Act 1919 Diarchy, which of the following are 'Reserved Subjects'?\n(1) Education\n(2) Land Revenue\n(3) Law & Order\n(4) Local Government\nతెలుగు: GOI Act 1919 ప్రకారం 'Reserved Subjects' కు చెందేవి ఏవి?\n(1) విద్య (Education)\n(2) భూమి శిస్తు (Land Revenue)\n(3) శాంతి-భద్రతలు (Law & Order)\n(4) స్థానిక స్వపరిపాలన (Local Government)",
      "1 and 4 only / 1 మరియు 4",
      "2 and 3 only / 2 మరియు 3 మాత్రమే (Land Revenue + Law & Order)",
      "1, 2 and 3 / 1, 2, 3",
@@ -876,7 +876,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 47
     (5, 4,
-     "Which of the following pairs are ALL correctly matched?\n(1) Montagu-Chelmsford Reforms — GOI Act 1919\n(2) Provincial Diarchy — GOI Act 1919\n(3) Public Service Commission — GOI Act 1919\n(4) Central Diarchy implemented — GOI Act 1919\nతెలుగు: కింది వాటిలో అన్నీ సరైన జంటలు ఏవి?",
+     "Which of the following pairs are ALL correctly matched?\n(1) Montagu-Chelmsford Reforms — GOI Act 1919\n(2) Provincial Diarchy — GOI Act 1919\n(3) Public Service Commission — GOI Act 1919\n(4) Central Diarchy implemented — GOI Act 1919\nతెలుగు: కింది వాటిలో అన్నీ సరైన జంటలు ఏవి?\n(1) మాంటేగు-చెమ్స్‌ఫర్డ్ సంస్కరణలు — GOI Act 1919\n(2) రాష్ట్రాల్లో Diarchy — GOI Act 1919\n(3) Public Service Commission — GOI Act 1919\n(4) కేంద్రంలో Diarchy అమలు — GOI Act 1919",
      "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
      "1 and 2 only / 1 మరియు 2 మాత్రమే",
      "All four / అన్నీ",
@@ -941,7 +941,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 53
     (6, 2,
-     "Regarding GOI Act 1935, which of the following are CORRECT?\n(1) RBI established\n(2) Federal Court established\n(3) Provincial Autonomy granted\n(4) Central Diarchy successfully implemented\nతెలుగు: కింది వాటిలో GOI Act 1935కు సంబంధించిన సరైనవి ఏవి?",
+     "Regarding GOI Act 1935, which of the following are CORRECT?\n(1) RBI established\n(2) Federal Court established\n(3) Provincial Autonomy granted\n(4) Central Diarchy successfully implemented\nతెలుగు: కింది వాటిలో GOI Act 1935కు సంబంధించిన సరైనవి ఏవి?\n(1) RBI స్థాపన\n(2) Federal Court ఏర్పాటు\n(3) రాష్ట్రాల్లో Provincial Autonomy\n(4) కేంద్రంలో Diarchy విజయవంతంగా అమలు",
      "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
      "1 and 2 only / 1 మరియు 2 మాత్రమే",
      "All four / అన్నీ",
@@ -961,7 +961,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 55
     (6, 4,
-     "Which of the following pairs are INCORRECTLY matched?\n(1) RBI established — GOI Act 1935\n(2) Federal Court — GOI Act 1919\n(3) Provincial Diarchy — GOI Act 1919\n(4) Central Bicameral Legislature — GOI Act 1935\nతెలుగు: కింది ఏ జంట తప్పుగా జోడించబడింది?",
+     "Which of the following pairs are INCORRECTLY matched?\n(1) RBI established — GOI Act 1935\n(2) Federal Court — GOI Act 1919\n(3) Provincial Diarchy — GOI Act 1919\n(4) Central Bicameral Legislature — GOI Act 1935\nతెలుగు: కింది ఏ జంట తప్పుగా జోడించబడింది?\n(1) RBI స్థాపన — GOI Act 1935\n(2) Federal Court — GOI Act 1919\n(3) రాష్ట్రాల్లో Diarchy — GOI Act 1919\n(4) కేంద్రంలో Bicameral Legislature — GOI Act 1935",
      "Only 2 and 4 are wrong / 2 మరియు 4 మాత్రమే తప్పు",
      "Only 2 is wrong / 2 మాత్రమే తప్పు",
      "Only 4 is wrong / 4 మాత్రమే తప్పు",
@@ -1016,7 +1016,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 60
     (7, 2,
-     "Regarding Round Table Conferences, which of the following are CORRECT?\n(1) Congress did not attend the 1st RTC (1930-31)\n(2) Gandhiji attended the 2nd RTC (1931)\n(3) Congress attended the 3rd RTC (1932)\n(4) Communal Award (Aug 1932) was announced before the 3rd RTC (Nov 1932)\nతెలుగు: రౌండ్ టేబుల్ కాన్ఫరెన్సుల గురించి సరైనవి ఏవి?",
+     "Regarding Round Table Conferences, which of the following are CORRECT?\n(1) Congress did not attend the 1st RTC (1930-31)\n(2) Gandhiji attended the 2nd RTC (1931)\n(3) Congress attended the 3rd RTC (1932)\n(4) Communal Award (Aug 1932) was announced before the 3rd RTC (Nov 1932)\nతెలుగు: రౌండ్ టేబుల్ కాన్ఫరెన్సుల గురించి సరైనవి ఏవి?\n(1) మొదటి RTC (1930-31)లో కాంగ్రెస్ పాల్గొనలేదు\n(2) రెండవ RTC (1931)లో గాంధీజీ పాల్గొన్నారు\n(3) మూడవ RTC (1932)లో కాంగ్రెస్ పాల్గొంది\n(4) Communal Award (Aug 1932) 3rd RTC (Nov 1932) కంటే ముందు",
      "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
      "1 and 2 only / 1 మరియు 2 మాత్రమే",
      "2 and 3 only / 2 మరియు 3 మాత్రమే",
@@ -1026,7 +1026,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 61
     (7, 2,
-     "Arrange the following missions in chronological order:\n(P) Cripps Mission\n(Q) Cabinet Mission\n(R) Simon Commission\n(S) August Offer\nతెలుగు: కింది మిషన్లను కాలక్రమ వరుసలో అమర్చండి",
+     "Arrange the following missions in chronological order:\n(P) Cripps Mission\n(Q) Cabinet Mission\n(R) Simon Commission\n(S) August Offer\nతెలుగు: కింది మిషన్లను కాలక్రమ వరుసలో అమర్చండి:\n(P) క్రిప్స్ మిషన్\n(Q) కేబినెట్ మిషన్\n(R) సైమన్ కమిషన్\n(S) ఆగస్ట్ ఆఫర్",
      "R → S → P → Q",
      "P → Q → R → S",
      "S → R → P → Q",
@@ -1036,7 +1036,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 62
     (7, 3,
-     "Regarding Cabinet Mission 1946, which of the following are CORRECT?\n(1) Rejected Pakistan demand\n(2) Proposed setting up Constituent Assembly\n(3) Congress refused, Muslim League accepted\n(4) Three British Cabinet ministers headed it\nతెలుగు: కేబినెట్ మిషన్ 1946 గురించి సరైనవి ఏవి?",
+     "Regarding Cabinet Mission 1946, which of the following are CORRECT?\n(1) Rejected Pakistan demand\n(2) Proposed setting up Constituent Assembly\n(3) Congress refused, Muslim League accepted\n(4) Three British Cabinet ministers headed it\nతెలుగు: కేబినెట్ మిషన్ 1946 గురించి సరైనవి ఏవి?\n(1) పాకిస్థాన్ డిమాండ్‌ను తిరస్కరించింది\n(2) రాజ్యాంగ నిర్మాణ సభ ఏర్పాటు ప్రతిపాదన\n(3) కాంగ్రెస్ తిరస్కరించింది, ముస్లిం లీగ్ అంగీకరించింది\n(4) ముగ్గురు బ్రిటిష్ Cabinet మంత్రులు నేతృత్వం",
      "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
      "1 and 2 only / 1 మరియు 2 మాత్రమే",
      "3 and 4 only / 3 మరియు 4 మాత్రమే",
@@ -1046,7 +1046,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 63
     (7, 4,
-     "Which of the following pairs are ALL correctly matched?\n(1) Simon Commission (1927) — no Indian member\n(2) August Offer (1940) — Viceroy Wavell's proposal\n(3) Cripps Mission (1942) — led to Quit India Movement\n(4) Cabinet Mission (1946) — rejected Pakistan demand\nతెలుగు: కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?",
+     "Which of the following pairs are ALL correctly matched?\n(1) Simon Commission (1927) — no Indian member\n(2) August Offer (1940) — Viceroy Wavell's proposal\n(3) Cripps Mission (1942) — led to Quit India Movement\n(4) Cabinet Mission (1946) — rejected Pakistan demand\nతెలుగు: కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?\n(1) సైమన్ కమిషన్ (1927) — భారతీయ సభ్యుడు లేరు\n(2) ఆగస్ట్ ఆఫర్ (1940) — Viceroy వేవెల్ ప్రతిపాదన\n(3) క్రిప్స్ మిషన్ (1942) — Quit India Movement\n(4) కేబినెట్ మిషన్ (1946) — పాకిస్థాన్ డిమాండ్ తిరస్కరణ",
      "1, 3 and 4 only / 1, 3 మరియు 4 మాత్రమే",
      "All four / అన్నీ",
      "2 and 3 only / 2 మరియు 3 మాత్రమే",
@@ -1101,7 +1101,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 68
     (8, 2,
-     "Which of the following are CORRECT about the Indian Independence Act 1947?\n(1) Two Dominions were created\n(2) First G.G. of Pakistan = Jinnah\n(3) Post of Secretary of State for India continued\n(4) Princely States were forcibly merged with India\nతెలుగు: IIA 1947 గురించి సరైనవి ఏవి?",
+     "Which of the following are CORRECT about the Indian Independence Act 1947?\n(1) Two Dominions were created\n(2) First G.G. of Pakistan = Jinnah\n(3) Post of Secretary of State for India continued\n(4) Princely States were forcibly merged with India\nతెలుగు: IIA 1947 గురించి సరైనవి ఏవి?\n(1) రెండు Dominions ఏర్పాటు\n(2) పాకిస్థాన్ మొదటి G.G. = జిన్నా\n(3) Secretary of State for India పదవి కొనసాగింది\n(4) Princely States భారత్‌లో బలవంతంగా విలీనం",
      "1 and 2 only / 1 మరియు 2 మాత్రమే",
      "1, 2 and 3 / 1, 2 మరియు 3",
      "2, 3 and 4 / 2, 3 మరియు 4",
@@ -1121,7 +1121,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 70
     (8, 3,
-     "Which of the following pairs are correctly matched?\n(1) First G.G. of India (after independence) — Mountbatten\n(2) Last and only Indian G.G. — C. Rajagopalachari\n(3) Pakistan's first G.G. — Liaquat Ali Khan\n(4) Boundary Commission Chairman — Cyril Radcliffe\nతెలుగు: కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?",
+     "Which of the following pairs are correctly matched?\n(1) First G.G. of India (after independence) — Mountbatten\n(2) Last and only Indian G.G. — C. Rajagopalachari\n(3) Pakistan's first G.G. — Liaquat Ali Khan\n(4) Boundary Commission Chairman — Cyril Radcliffe\nతెలుగు: కింది జంటలలో సరిగ్గా జోడించినవి ఏవి?\n(1) స్వాతంత్ర్యం తర్వాత మొదటి G.G. — మౌంట్‌బాటెన్\n(2) చివరి + ఏకైక భారతీయ G.G. — C. రాజగోపాలాచారి\n(3) పాకిస్థాన్ మొదటి G.G. — లియాకత్ అలీ ఖాన్\n(4) Boundary Commission అధ్యక్షుడు — సిరిల్ రాడ్‌క్లిఫ్",
      "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
      "All four / అన్నీ",
      "2 and 3 only / 2 మరియు 3 మాత్రమే",
@@ -1196,7 +1196,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 77
     (9, 2,
-     "Match the following correctly:\n(P) Parliamentary System  (Q) Concurrent List  (R) Amendment Procedure  (S) Suspension of FRs in Emergency\n(1) Australia (2) Germany (3) UK (4) South Africa\nతెలుగు: కింది వాటిని సరిగ్గా జోడించండి",
+     "Match the following correctly:\n(P) Parliamentary System  (Q) Concurrent List  (R) Amendment Procedure  (S) Suspension of FRs in Emergency\n(1) Australia (2) Germany (3) UK (4) South Africa\nతెలుగు: కింది వాటిని సరిగ్గా జోడించండి:\n(P) పార్లమెంటరీ వ్యవస్థ  (Q) ఉమ్మడి జాబితా  (R) సవరణ విధానం  (S) అత్యవసరంలో FRs నిలిపివేత\n(1) ఆస్ట్రేలియా  (2) జర్మనీ  (3) బ్రిటన్  (4) దక్షిణ ఆఫ్రికా",
      "P-3, Q-1, R-4, S-2",
      "P-1, Q-3, R-2, S-4",
      "P-3, Q-4, R-1, S-2",
@@ -1216,7 +1216,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 79
     (9, 3,
-     "Which of the following pairs are INCORRECTLY matched?\n(1) Single Citizenship — UK\n(2) DPSP — USA\n(3) Vice-President — USA\n(4) Rajya Sabha Nomination — Canada\nతెలుగు: కింది ఏ జంటలు తప్పుగా జోడించబడ్డాయి?",
+     "Which of the following pairs are INCORRECTLY matched?\n(1) Single Citizenship — UK\n(2) DPSP — USA\n(3) Vice-President — USA\n(4) Rajya Sabha Nomination — Canada\nతెలుగు: కింది ఏ జంటలు తప్పుగా జోడించబడ్డాయి?\n(1) ఏక పౌరసత్వం — UK\n(2) DPSP — USA\n(3) ఉప రాష్ట్రపతి — USA\n(4) రాజ్యసభ నామినేషన్ — Canada",
      "Only 2 and 4 are wrong / 2 మరియు 4 మాత్రమే తప్పు",
      "Only 1 and 3 are wrong / 1 మరియు 3 మాత్రమే తప్పు",
      "Only 3 and 4 are wrong / 3 మరియు 4 మాత్రమే తప్పు",
@@ -1226,7 +1226,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 80
     (9, 4,
-     "Which Source-Feature pairs are ALL correctly matched?\n(1) Japan — Procedure Established by Law\n(2) France — Republic + Liberty, Equality, Fraternity\n(3) South Africa — Concurrent List + Joint Sitting of Parliament\n(4) Germany (Weimar) — Suspension of Fundamental Rights during Emergency\nతెలుగు: కింది ఏవి అన్నీ సరైన జంటలు?",
+     "Which Source-Feature pairs are ALL correctly matched?\n(1) Japan — Procedure Established by Law\n(2) France — Republic + Liberty, Equality, Fraternity\n(3) South Africa — Concurrent List + Joint Sitting of Parliament\n(4) Germany (Weimar) — Suspension of Fundamental Rights during Emergency\nతెలుగు: కింది ఏవి అన్నీ సరైన జంటలు?\n(1) Japan — Procedure Established by Law\n(2) France — Republic + Liberty/Equality/Fraternity\n(3) South Africa — Concurrent List + Joint Sitting\n(4) Germany (Weimar) — Suspension of FRs in Emergency",
      "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
      "All four / అన్నీ",
      "3 and 4 only / 3 మరియు 4 మాత్రమే",
@@ -1271,7 +1271,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 84
     (10, 2,
-     "Arrange the following Acts in chronological order:\n(P) Pitt's India Act\n(Q) Government of India Act 1935\n(R) Charter Act 1853\n(S) Indian Councils Act 1909\nతెలుగు: కింది చట్టాలను కాలక్రమ వరుసలో అమర్చండి",
+     "Arrange the following Acts in chronological order:\n(P) Pitt's India Act\n(Q) Government of India Act 1935\n(R) Charter Act 1853\n(S) Indian Councils Act 1909\nతెలుగు: కింది చట్టాలను కాలక్రమ వరుసలో అమర్చండి:\n(P) పిట్స్ ఇండియా యాక్ట్\n(Q) GOI Act 1935\n(R) చార్టర్ యాక్ట్ 1853\n(S) ICA 1909",
      "P → R → S → Q",
      "R → P → S → Q",
      "P → S → R → Q",
@@ -1281,7 +1281,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 85
     (10, 2,
-     "Match the 'First Person' with the related Act:\n(1) First G.G. of Bengal — Regulating Act 1773\n(2) First G.G. of India — Charter Act 1833\n(3) First Viceroy — GOI Act 1919\n(4) First Indian Executive Council member — ICA 1909\nతెలుగు: 'మొదటి వ్యక్తి' మరియు సంబంధిత చట్టాన్ని జోడించండి",
+     "Match the 'First Person' with the related Act:\n(1) First G.G. of Bengal — Regulating Act 1773\n(2) First G.G. of India — Charter Act 1833\n(3) First Viceroy — GOI Act 1919\n(4) First Indian Executive Council member — ICA 1909\nతెలుగు: 'మొదటి వ్యక్తి' మరియు సంబంధిత చట్టాన్ని జోడించండి:\n(1) మొదటి G.G. of Bengal — Regulating Act 1773\n(2) మొదటి G.G. of India — Charter Act 1833\n(3) మొదటి Viceroy — GOI Act 1919\n(4) మొదటి భారతీయ Executive Council సభ్యుడు — ICA 1909",
      "1, 2 and 4 correct / 1, 2 మరియు 4 సరైనవి",
      "All four correct / అన్నీ సరైనవి",
      "Only 1 and 4 / 1 మరియు 4 మాత్రమే",
@@ -1301,7 +1301,7 @@ POLITY_CH1_MCQS = [
 
     # MCQ 87
     (10, 4,
-     "Which of the following pairs are ALL correctly matched?\n(1) Open Competition for Civil Services — Charter Act 1853\n(2) Bicameral Legislature at Centre — GOI Act 1919\n(3) Separate Electorate for Muslims — GOI Act 1919\n(4) Provincial Autonomy — GOI Act 1935\nతెలుగు: కింది జంటలలో అన్నీ సరైనవి ఏవి?",
+     "Which of the following pairs are ALL correctly matched?\n(1) Open Competition for Civil Services — Charter Act 1853\n(2) Bicameral Legislature at Centre — GOI Act 1919\n(3) Separate Electorate for Muslims — GOI Act 1919\n(4) Provincial Autonomy — GOI Act 1935\nతెలుగు: కింది జంటలలో అన్నీ సరైనవి ఏవి?\n(1) Civil Services Open Competition — Charter Act 1853\n(2) కేంద్రంలో Bicameral Legislature — GOI Act 1919\n(3) Separate Electorate (Muslims) — GOI Act 1919\n(4) Provincial Autonomy — GOI Act 1935",
      "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
      "All four / అన్నీ",
      "2, 3 and 4 only / 2, 3 మరియు 4 మాత్రమే",

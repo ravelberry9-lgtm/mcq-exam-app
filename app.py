@@ -420,23 +420,17 @@ def init_db():
         except: pass
 
     # ── Auto-seed Indian Polity chapters (Lakshmikanth) ──
+    # Always run the seeder; the per-chapter hash check inside _auto_seed_polity
+    # makes unchanged chapters a no-op (very fast). Chapters whose seed file
+    # actually changed get re-deleted + re-inserted automatically.
     try:
         cur_pol = db_exec(conn, "SELECT COUNT(*) FROM study_notes WHERE topic='Indian_Polity'")
         pol_count = _fv(cur_pol.fetchone())
-        cur_pol_mcq = db_exec(conn, """
-            SELECT COUNT(DISTINCT sn.chapter_num) FROM chapter_mcqs cm
-            JOIN study_notes sn ON cm.study_note_id=sn.id
-            WHERE sn.topic='Indian_Polity'
-        """)
-        pol_mcq_count = _fv(cur_pol_mcq.fetchone())
-        if pol_count < 90 or pol_mcq_count < 90:
-            print(f"[startup] Indian Polity: {pol_count} notes, {pol_mcq_count}/90 chapters with MCQs — auto-seeding...")
-            _auto_seed_polity()
-            print("[startup] Indian Polity auto-seed complete.")
-        else:
-            print(f"[startup] Indian Polity: {pol_count} notes, {pol_mcq_count}/90 chapters with MCQs — fully loaded.")
+        print(f"[startup] Indian Polity: {pol_count} notes existing — running auto-seed (per-chapter hash check)...")
+        _auto_seed_polity()
+        print("[startup] Indian Polity auto-seed complete.")
     except Exception as _pol_e:
-        print(f"[startup] Indian Polity seed check error: {_pol_e}")
+        print(f"[startup] Indian Polity seed error: {_pol_e}")
         try: conn.rollback()
         except: pass
 
@@ -629,35 +623,83 @@ def _auto_seed_polity():
         (89, 'seed_polity_ch89', 'polity_ch89'),
         (90, 'seed_polity_ch90', 'polity_ch90'),
     ]
+    import hashlib
+    ph2 = '%s' if USE_POSTGRES else '?'
+
+    def _mcq_hash(mod):
+        """Stable short hash of a chapter's MCQ list — detects content changes."""
+        mcqs = getattr(mod, f'POLITY_CH{ch_num}_MCQS', None)
+        if mcqs is None:
+            return None
+        return hashlib.sha1(repr(mcqs).encode('utf-8')).hexdigest()[:12]
+
+    skipped_unchanged = 0
+    reseeded = 0
     for ch_num, mod_name, fn_suffix in chapters:
         c = get_db()
         try:
             mod = importlib.import_module(mod_name)
             notes_fn = getattr(mod, f'_seed_{fn_suffix}_notes_inner')
             mcqs_fn  = getattr(mod, f'_seed_{fn_suffix}_mcqs_inner')
+
+            # Compute hash of CURRENT seed-file MCQs
+            current_hash = _mcq_hash(mod)
+
+            # Look up existing study_notes row + stored hash (we use pages_ref to store h:<hash>)
+            nr = _compat_exec(c,
+                f"SELECT id, pages_ref FROM study_notes WHERE topic={ph2} AND chapter_num={ph2}",
+                ('Indian_Polity', ch_num)).fetchone()
+            existing_id = None
+            stored_hash = None
+            if nr:
+                existing_id = nr.get('id') if hasattr(nr, 'get') else nr[0]
+                pr = nr.get('pages_ref') if hasattr(nr, 'get') else (nr[1] if len(nr) > 1 else '')
+                if pr and isinstance(pr, str) and pr.startswith('h:'):
+                    stored_hash = pr[2:]
+
+            # Verify the chapter has MCQs in DB (in case hash matches but MCQs are missing)
+            mcq_cnt = 0
+            if existing_id is not None:
+                cr = _compat_exec(c, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph2}",
+                                  (existing_id,)).fetchone()
+                mcq_cnt = cr[0] if cr else 0
+
+            # Skip if hash matches AND MCQs are present (unchanged chapter)
+            if current_hash and stored_hash == current_hash and mcq_cnt > 0:
+                skipped_unchanged += 1
+                continue
+
+            # Otherwise: seed (or re-seed) this chapter
             notes_fn(c, _compat_exec, row_to_dict, USE_POSTGRES, force=False)
             c.commit()
             mcqs_fn(c, _compat_exec, row_to_dict, USE_POSTGRES)
             c.commit()
-            # Verify MCQs were actually inserted; if count=0 force a re-seed
-            # (guards against seed files that skipped inserts due to stale count cache)
-            ph2 = '%s' if USE_POSTGRES else '?'
-            nr = _compat_exec(c, f"SELECT id FROM study_notes WHERE topic={ph2} AND chapter_num={ph2}",
-                              ('Indian_Polity', ch_num)).fetchone()
-            if nr:
-                nid = nr.get('id') if hasattr(nr, 'get') else nr[0]
-                cr = _compat_exec(c, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph2}",
-                                  (nid,)).fetchone()
-                mcq_cnt = cr[0] if cr else 0
-                if mcq_cnt == 0:
+
+            # Re-fetch + verify + stamp the new hash into pages_ref
+            nr2 = _compat_exec(c,
+                f"SELECT id FROM study_notes WHERE topic={ph2} AND chapter_num={ph2}",
+                ('Indian_Polity', ch_num)).fetchone()
+            if nr2:
+                nid2 = nr2.get('id') if hasattr(nr2, 'get') else nr2[0]
+                cr2 = _compat_exec(c, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph2}",
+                                   (nid2,)).fetchone()
+                cnt2 = cr2[0] if cr2 else 0
+                if cnt2 == 0:
+                    # Force a delete+re-insert if first try inserted nothing
                     try:
                         mcqs_fn(c, _compat_exec, row_to_dict, USE_POSTGRES, force=True)
                     except TypeError:
-                        # Older signature has no force param — delete & re-insert manually
-                        _compat_exec(c, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph2}", (nid,))
+                        _compat_exec(c, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph2}", (nid2,))
                         mcqs_fn(c, _compat_exec, row_to_dict, USE_POSTGRES)
                     c.commit()
-            print(f"[polity-seed] ch{ch_num} done.")
+                # Stamp the hash so next deploy knows whether content changed
+                if current_hash:
+                    _compat_exec(c,
+                        f"UPDATE study_notes SET pages_ref={ph2} WHERE id={ph2}",
+                        (f'h:{current_hash}', nid2))
+                    c.commit()
+            reseeded += 1
+            print(f"[polity-seed] ch{ch_num} re-seeded (hash {current_hash}).")
         except ModuleNotFoundError:
             print(f"[polity-seed] ch{ch_num} — seed file not yet created, skipping.")
         except Exception as e:
@@ -665,6 +707,7 @@ def _auto_seed_polity():
         finally:
             try: c.close()
             except: pass
+    print(f"[polity-seed] summary: {skipped_unchanged} unchanged · {reseeded} re-seeded.")
 
 
 def _auto_seed_science():
