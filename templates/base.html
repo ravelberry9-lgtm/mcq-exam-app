@@ -714,7 +714,34 @@ document.addEventListener('DOMContentLoaded', () => gm.init());
 </script>
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/static/sw.js').catch(() => {});
+  navigator.serviceWorker.register('/static/sw.js').then(reg => {
+    // When a new SW is installed and waiting, tell it to take over and reload the page
+    function listenForWaiting(reg) {
+      if (reg.waiting) {
+        reg.waiting.postMessage({type: 'SKIP_WAITING'});
+        return;
+      }
+      reg.addEventListener('updatefound', () => {
+        const sw = reg.installing;
+        if (!sw) return;
+        sw.addEventListener('statechange', () => {
+          if (sw.state === 'installed' && navigator.serviceWorker.controller) {
+            sw.postMessage({type: 'SKIP_WAITING'});
+          }
+        });
+      });
+    }
+    listenForWaiting(reg);
+    // Force reload exactly once when the controlling SW changes (after SKIP_WAITING)
+    let _refreshed = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (_refreshed) return;
+      _refreshed = true;
+      window.location.reload();
+    });
+    // Also poll for SW updates every 60 seconds while the app is open
+    setInterval(() => { reg.update().catch(() => {}); }, 60000);
+  }).catch(() => {});
 }
 
 // ── PWA Install button ────────────────────────────────
