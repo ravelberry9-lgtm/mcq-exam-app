@@ -241,566 +241,648 @@ POLITY_CH2_SECTIONS = [
 
 POLITY_CH2_MCQS = [
 
-    # ══════════════════════════════════════════
-    # SECTION 0 — రాజ్యాంగ నిర్మాణ సభ — డిమాండ్
-    # ══════════════════════════════════════════
+    # ══════════════ SECTION 0 — Origin of Constituent Assembly Idea ══════════════
 
-    # Easy
+    # MCQ 1
     (0, 1,
-     "రాజ్యాంగ నిర్మాణ సభ (Constituent Assembly) కోసం మొట్టమొదటిసారి డిమాండ్ చేసినది ఎవరు?",
-     "జవహర్లాల్ నెహ్రూ", "సర్దార్ పటేల్", "M.N. రాయ్", "బాలగంగాధర తిలక్",
+     "Who was the first person to formally demand a Constituent Assembly for India?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభ కోసం మొట్టమొదటిసారి డిమాండ్ చేసినది ఎవరు?",
+     "Jawaharlal Nehru / జవహర్లాల్ నెహ్రూ",
+     "Sardar Patel / సర్దార్ పటేల్",
+     "M.N. Roy (1934) / M.N. రాయ్ (1934)",
+     "Bal Gangadhar Tilak / బాలగంగాధర తిలక్",
      "c",
-     "M.N. రాయ్ (Manabendra Nath Roy) 1934లో మొట్టమొదటిసారి Constituent Assembly కోసం డిమాండ్ చేశారు. ఇది APPSC మరియు UPSC రెండిటిలో తరచుగా అడిగే ప్రశ్న."),
+     "M.N. Roy was the first person to formally demand a Constituent Assembly for India in 1934."),
 
+    # MCQ 2
     (0, 1,
-     "ఇండియన్ నేషనల్ కాంగ్రెస్ (INC) అధికారికంగా Constituent Assembly డిమాండ్ ఏ సంవత్సరంలో చేసింది?",
-     "1930", "1934", "1935", "1942",
+     "In which year did the Indian National Congress (INC) officially demand a Constituent Assembly?\nతెలుగు: ఇండియన్ నేషనల్ కాంగ్రెస్ (INC) అధికారికంగా Constituent Assembly డిమాండ్ ఏ సంవత్సరంలో చేసింది?",
+     "1930",
+     "1934",
+     "1935 / 1935",
+     "1942",
      "c",
-     "INC 1935లో అధికారికంగా Constituent Assembly డిమాండ్ చేసింది. అయితే మొట్టమొదటి డిమాండ్ 1934లో M.N. Roy చేశారు — రెండు తేదీలు వేర్వేరు అని గుర్తుంచుకోండి!"),
+     "INC officially demanded a Constituent Assembly in 1935 (after M.N. Roy's 1934 demand)."),
 
+    # MCQ 3
     (0, 1,
-     "రాజ్యాంగ నిర్మాణ సభ ఏర్పాటుకు అసలు పథకం (scheme) ఇచ్చిన మిషన్ ఏది?",
-     "క్రిప్స్ మిషన్ 1942", "సైమన్ కమిషన్ 1927", "కేబినెట్ మిషన్ 1946", "ఆగస్ట్ ఆఫర్ 1940",
+     "Which Mission gave the actual scheme for setting up the Constituent Assembly?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభ ఏర్పాటుకు అసలు పథకం (scheme) ఇచ్చిన మిషన్ ఏది?",
+     "Cripps Mission 1942 / క్రిప్స్ మిషన్ 1942",
+     "Simon Commission 1927 / సైమన్ కమిషన్ 1927",
+     "Cabinet Mission 1946 / కేబినెట్ మిషన్ 1946 (Cabinet Mission)",
+     "August Offer 1940 / ఆగస్ట్ ఆఫర్ 1940",
      "c",
-     "కేబినెట్ మిషన్ 1946 రాజ్యాంగ నిర్మాణ సభ ఏర్పాటుకు అసలు పథకం ఇచ్చింది. ఎన్నికలు జరిగాయి, సభ్యులు ఎన్నికయ్యారు — ఇది APPSC Group 2 లో బహుళ సార్లు అడిగిన ప్రశ్న."),
+     "Cabinet Mission 1946 gave the actual scheme. Earlier missions only conceded the principle of CA in stages."),
 
-    # Moderate
+    # MCQ 4
     (0, 2,
-     "కింది వాటిలో Constituent Assembly కు సంబంధించి సరైనవి ఏవి?\n(1) M.N. Roy 1934లో మొదటిసారి డిమాండ్ చేశారు\n(2) INC 1940లో అధికారికంగా డిమాండ్ చేసింది\n(3) August Offer 1940లో Constituent Assembly కు అంగీకారం తెలిపింది\n(4) Cabinet Mission 1946 అసలు పథకం ఇచ్చింది",
-     "1, 3 మరియు 4 మాత్రమే", "1 మరియు 4 మాత్రమే",
-     "1, 2, 3 మరియు 4 అన్నీ", "2 మరియు 4 మాత్రమే",
+     "Regarding the Constituent Assembly, which of the following are CORRECT?\n(1) M.N. Roy first demanded it in 1934\n(2) INC officially demanded in 1940\n(3) August Offer 1940 conceded CA principle\n(4) Cabinet Mission 1946 gave the actual scheme\nతెలుగు: కింది వాటిలో Constituent Assembly కు సంబంధించి సరైనవి ఏవి?\n(1) M.N. Roy 1934లో మొదటిసారి డిమాండ్ చేశారు\n(2) INC 1940లో అధికారికంగా డిమాండ్ చేసింది\n(3) August Offer 1940 CA సూత్రం అంగీకరించింది\n(4) Cabinet Mission 1946 అసలు పథకం ఇచ్చింది",
+     "1, 3 and 4 only / 1, 3 మరియు 4 మాత్రమే",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
+     "All four / అన్నీ",
+     "2 and 4 only / 2 మరియు 4 మాత్రమే",
      "a",
-     "2 తప్పు — INC అధికారికంగా CA డిమాండ్ చేసింది 1935లో, 1940లో కాదు. మిగతా 1 (M.N. Roy 1934), 3 (August Offer 1940), 4 (Cabinet Mission 1946) సరైనవి."),
+     "Statement 2 is incorrect — INC officially demanded CA in 1935, not 1940. The other three are correct."),
 
+    # MCQ 5
     (0, 2,
-     "కింది మిషన్లు/ఆఫర్లను కాలక్రమ వరుసలో అమర్చండి:\n(P) క్రిప్స్ మిషన్\n(Q) కేబినెట్ మిషన్\n(R) ఆగస్ట్ ఆఫర్\n(S) M.N. Roy యొక్క డిమాండ్",
-     "S → R → P → Q", "R → S → P → Q", "P → S → Q → R", "S → P → R → Q",
+     "Arrange the following Missions/Offers in chronological order:\n(P) Cripps Mission\n(Q) Cabinet Mission\n(R) August Offer\n(S) M.N. Roy's demand\nతెలుగు: కింది మిషన్లు/ఆఫర్లను కాలక్రమ వరుసలో అమర్చండి:\n(P) క్రిప్స్ మిషన్\n(Q) కేబినెట్ మిషన్\n(R) ఆగస్ట్ ఆఫర్\n(S) M.N. Roy డిమాండ్",
+     "S → R → P → Q",
+     "R → S → P → Q",
+     "P → S → Q → R",
+     "S → P → R → Q",
      "a",
-     "S = M.N. Roy 1934 → R = August Offer 1940 → P = Cripps Mission 1942 → Q = Cabinet Mission 1946. సరైన కాలక్రమం: S → R → P → Q."),
+     "Order: S=Roy 1934 → R=August Offer 1940 → P=Cripps 1942 → Q=Cabinet Mission 1946. Hence S → R → P → Q."),
 
-    # Tough
+    # MCQ 6
     (0, 3,
-     "కింది జంటలలో సరికానిది (INCORRECTLY matched) ఏది?",
-     "M.N. Roy — 1934 — మొదటి CA డిమాండ్",
-     "INC — 1935 — అధికారిక CA డిమాండ్",
-     "ఆగస్ట్ ఆఫర్ 1940 — Viceroy Wavell ప్రతిపాదన",
-     "క్రిప్స్ మిషన్ 1942 — CA ప్రతిపాదన",
+     "Which of the following pairs is INCORRECTLY matched?\nతెలుగు: కింది జంటలలో సరికానిది ఏది?",
+     "M.N. Roy — 1934 — first CA demand / M.N. Roy — 1934 — మొదటి CA డిమాండ్",
+     "INC — 1935 — official CA demand / INC — 1935 — అధికారిక CA డిమాండ్",
+     "August Offer 1940 — Viceroy Wavell's proposal / ఆగస్ట్ ఆఫర్ 1940 — Wavell ప్రతిపాదన (INCORRECT — was Linlithgow)",
+     "Cripps Mission 1942 — CA proposal / క్రిప్స్ మిషన్ 1942 — CA ప్రతిపాదన",
      "c",
-     "ఆగస్ట్ ఆఫర్ 1940 ప్రతిపాదించింది Viceroy Linlithgow, Wavell కాదు. (Wavell = Simla Conference 1945). మిగతా మూడు జంటలు సరైనవే."),
+     "August Offer (1940) was made by Viceroy LINLITHGOW (not Wavell, who came later in 1944). Pair C is incorrectly matched."),
 
-    # Toughest
+    # MCQ 7
     (0, 4,
-     "అభికథనం-కారణం సరైనవా? / Assertion (A): The demand for a Constituent Assembly was first formally put forward by M.N. Roy in 1934.\nReason (R): M.N. Roy believed that the Indian people, through their elected representatives, should frame their own Constitution rather than having it imposed by the British.",
-     "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
-     "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు",
-     "A సరైనది, R తప్పు",
-     "A తప్పు, R సరైనది",
+     "Assertion (A): The demand for a Constituent Assembly was first formally put forward by M.N. Roy in 1934.\nReason (R): M.N. Roy believed that the Indian people, through their elected representatives, should frame their own Constitution rather than having it imposed by the British.\nతెలుగు: అభికథనం-కారణం సరైనవా?",
+     "Both correct, R explains A / రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
+     "Both correct, R doesn't explain A / రెండూ సరైనవి, R వివరణ కాదు",
+     "A correct, R wrong / A సరైనది, R తప్పు",
+     "A wrong, R correct / A తప్పు, R సరైనది",
      "a",
-     "M.N. Roy 1934లో మొదట Constituent Assembly డిమాండ్ చేశారు. వారి తత్వం ప్రకారం ప్రజలే రాజ్యాంగం రూపొందించాలి, బ్రిటిష్ వారు ఇవ్వకూడదు — ఇదే R లో చెప్పింది. R అనేది A కి సరైన వివరణ."),
+     "Both A and R are correct. M.N. Roy's reason precisely explains why he made the demand — that representatives chosen by Indians, not the British, should frame the Constitution."),
 
-    # PYQ — APPSC
+    # MCQ 8 (10-tuple, exam=APPSC)
     (0, 2,
-     "భారత రాజ్యాంగ నిర్మాణ సభ ఏర్పాటుకు పథకం (scheme) ఎవరు ఇచ్చారు? [APPSC Group 2]",
-     "సైమన్ కమిషన్", "క్రిప్స్ మిషన్", "కేబినెట్ మిషన్", "మాంటేగు-చెమ్స్‌ఫర్డ్ రిఫార్మ్స్",
+     "Who gave the scheme for setting up the Constituent Assembly of India? [APPSC Group 2]\nతెలుగు: భారత రాజ్యాంగ నిర్మాణ సభ ఏర్పాటుకు పథకం ఎవరు ఇచ్చారు?",
+     "Simon Commission / సైమన్ కమిషన్",
+     "Cripps Mission / క్రిప్స్ మిషన్",
+     "Cabinet Mission / కేబినెట్ మిషన్ (Cabinet Mission)",
+     "Montagu-Chelmsford Reforms / మాంటేగు-చెమ్స్‌ఫర్డ్ రిఫార్మ్స్",
      "c",
-     "కేబినెట్ మిషన్ 1946 భారత రాజ్యాంగ నిర్మాణ సభ ఏర్పాటుకు అసలు పథకం ఇచ్చింది. పెథిక్-లారెన్స్, క్రిప్స్, అలెగ్జాండర్ — 3 మంది సభ్యులు ఉన్న ఈ మిషన్ APPSC Group 2 లో తరచుగా వచ్చే ప్రశ్న.",
+     "కేబినెట్ మిషన్ (Cabinet Mission) 1946 భారత రాజ్యాంగ నిర్మాణ సభ ఏర్పాటుకు పథకం ఇచ్చింది. ఇది APPSC Group 2 లో తరచుగా అడిగే ప్రశ్న.",
      "APPSC"),
 
-    # ══════════════════════════════════════════
-    # SECTION 1 — రాజ్యాంగ నిర్మాణ సభ — కూర్పు
-    # ══════════════════════════════════════════
+    # ══════════════ SECTION 1 — Composition of Constituent Assembly ══════════════
 
-    # Easy
+    # MCQ 9
     (1, 1,
-     "విభజన ముందు రాజ్యాంగ నిర్మాణ సభలో మొత్తం సభ్యులు ఎంత మంది?",
-     "299", "389", "296", "350",
+     "How many total members were in the Constituent Assembly before partition?\nతెలుగు: విభజన ముందు రాజ్యాంగ నిర్మాణ సభలో మొత్తం సభ్యులు ఎంత మంది?",
+     "299",
+     "389 / 389 (before partition)",
+     "296",
+     "350",
      "b",
-     "విభజన ముందు రాజ్యాంగ నిర్మాణ సభలో మొత్తం 389 సభ్యులు — 296 బ్రిటిష్ ఇండియా ప్రావిన్సుల నుండి + 93 స్వదేశీ సంస్థానాల నుండి."),
+     "Original CA had 389 members: 296 from Provinces + 93 from Princely States."),
 
+    # MCQ 10
     (1, 1,
-     "దేశ విభజన తర్వాత భారత రాజ్యాంగ నిర్మాణ సభలో మొత్తం సభ్యులు ఎంత మంది?",
-     "389", "350", "299", "296",
+     "How many total members were in the Indian Constituent Assembly AFTER partition?\nతెలుగు: దేశ విభజన తర్వాత భారత రాజ్యాంగ నిర్మాణ సభలో మొత్తం సభ్యులు ఎంత మంది?",
+     "389",
+     "350",
+     "299 / 299 (after partition)",
+     "296",
      "c",
-     "విభజన తర్వాత పాకిస్థాన్ వెళ్ళిన ప్రావిన్సుల సభ్యులు తొలగించారు. కాబట్టి భారత CA లో 299 సభ్యులు మిగిలారు."),
+     "After partition, CA had 299 members (Pakistan members left). Final count that signed the Constitution."),
 
+    # MCQ 11
     (1, 1,
-     "రాజ్యాంగ నిర్మాణ సభలో స్వదేశీ సంస్థానాల (Princely States) నుండి ఎంత మంది సభ్యులు ఉండాలని నిర్ణయించారు?",
-     "93", "96", "83", "100",
+     "How many seats were allotted to Princely States in the Constituent Assembly?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభలో స్వదేశీ సంస్థానాల (Princely States) నుండి ఎంత మంది సభ్యులు ఉండాలని నిర్ణయించారు?",
+     "93 / 93 (Princely States)",
+     "96",
+     "83",
+     "100",
      "a",
-     "రాజ్యాంగ నిర్మాణ సభలో 389 సీట్లలో 93 స్వదేశీ సంస్థానాలకు కేటాయించారు. మిగతా 296 బ్రిటిష్ ఇండియా ప్రావిన్సుల నుండి. 93 = 389 - 296."),
+     "Princely States quota was 93 seats out of 389 total. Provinces got 296. (389 = 296 + 93)"),
 
-    # Moderate
+    # MCQ 12
     (1, 2,
-     "కింది వాటిలో రాజ్యాంగ నిర్మాణ సభ కూర్పు గురించి సరైనవి ఏవి?\n(1) మొత్తం 389 సభ్యులు (విభజన ముందు)\n(2) ప్రావిన్సుల నుండి 296 సభ్యులు\n(3) సభ్యులను ప్రజలు నేరుగా ఎన్నికించారు\n(4) విభజన తర్వాత 299 సభ్యులు మిగిలారు",
-     "1, 2 మరియు 4 మాత్రమే", "1 మరియు 2 మాత్రమే",
-     "1, 2, 3 మరియు 4 అన్నీ", "2 మరియు 3 మాత్రమే",
+     "Regarding the composition of the Constituent Assembly, which of the following are CORRECT?\n(1) Total 389 members (before partition)\n(2) 296 members from Provinces\n(3) Members were directly elected by the people\n(4) After partition 299 members remained\nతెలుగు: కింది వాటిలో రాజ్యాంగ నిర్మాణ సభ కూర్పు గురించి సరైనవి ఏవి?\n(1) మొత్తం 389 సభ్యులు (విభజన ముందు)\n(2) ప్రావిన్సుల నుండి 296 సభ్యులు\n(3) సభ్యులను ప్రజలు నేరుగా ఎన్నికించారు\n(4) విభజన తర్వాత 299 సభ్యులు మిగిలారు",
+     "1, 2 and 4 only / 1, 2 మరియు 4 మాత్రమే",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "All four / అన్నీ",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
      "a",
-     "3 తప్పు — సభ్యులను ప్రజలు నేరుగా ఎన్నికించలేదు. ప్రాంతీయ శాసనసభ (Provincial Legislative Assembly) సభ్యులు Single Transferable Vote (STV) పద్ధతిలో CA సభ్యులను ఎన్నికించారు — ఇది పరోక్ష ఎన్నిక."),
+     "Statement 3 is INCORRECT — CA members were INDIRECTLY elected (by Provincial Legislative Assembly members), not directly by the people. The other three are correct."),
 
+    # MCQ 13
     (1, 2,
-     "రాజ్యాంగ నిర్మాణ సభ సభ్యులను ఎంచుకోవడానికి ఉపయోగించిన ఎన్నిక పద్ధతి ఏది?",
-     "First-Past-the-Post (FPTP) పద్ధతి",
-     "Single Transferable Vote (STV) — పరోక్ష ఎన్నిక",
-     "List System — నేరుగా ప్రజలు",
-     "Two-Round System",
+     "Which election method was used to choose Constituent Assembly members?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభ సభ్యులను ఎంచుకోవడానికి ఉపయోగించిన ఎన్నిక పద్ధతి ఏది?",
+     "First-Past-the-Post (FPTP) / FPTP పద్ధతి",
+     "Single Transferable Vote (STV) — indirect election / STV — పరోక్ష ఎన్నిక",
+     "List System — direct election / List System — నేరుగా ప్రజలు",
+     "Two-Round System / Two-Round System",
      "b",
-     "CA సభ్యులను ప్రాంతీయ శాసనసభ సభ్యులు (MLAs) Single Transferable Vote (STV) పద్ధతిలో ఎన్నికించారు. ఇది నేరుగా ప్రజలచే కాకుండా పరోక్ష ఎన్నిక — ఇది CA పై ఒక ముఖ్య విమర్శ."),
+     "STV (Single Transferable Vote) was the method — Provincial Legislative Assemblies indirectly elected CA members through STV."),
 
-    # Tough
+    # MCQ 14
     (1, 3,
-     "కింది వాటిలో సరికానిది (INCORRECT) ఏది?",
-     "CA మొత్తం 389 సభ్యులతో ఏర్పాటైంది (విభజన ముందు)",
-     "ప్రావిన్సుల నుండి 296 మరియు సంస్థానాల నుండి 93 సభ్యులు",
-     "CA సభ్యులు సార్వత్రిక వయోజన ఓటు హక్కు ఆధారంగా ఎన్నికయ్యారు",
-     "CA లో 15 మంది మహిళా సభ్యులు ఉన్నారు",
+     "Which of the following is INCORRECT?\nతెలుగు: కింది వాటిలో సరికానిది ఏది?",
+     "CA was constituted with 389 members (before partition) / CA మొత్తం 389 సభ్యులతో",
+     "296 from Provinces and 93 from Princely States / ప్రావిన్సుల 296 + సంస్థానాల 93",
+     "CA members were elected by universal adult franchise / సార్వత్రిక వయోజన ఓటు హక్కు ఆధారంగా (INCORRECT)",
+     "CA had 15 women members / CA లో 15 మంది మహిళా సభ్యులు",
      "c",
-     "CA సభ్యులు సార్వత్రిక వయోజన ఓటు హక్కు ఆధారంగా ఎన్నికయ్యారని చెప్పడం తప్పు. వారు ప్రాంతీయ శాసనసభ సభ్యులు (MLAs) ద్వారా Single Transferable Vote పద్ధతిలో ఎంచుకోబడ్డారు — ఇది పరిమిత ఫ్రాంచైజ్."),
+     "Universal adult franchise was NOT used. CA was indirectly elected via Provincial Assembly members using STV. Universal adult franchise applied for the FIRST time in 1952 elections."),
 
-    # Toughest
+    # MCQ 15
     (1, 4,
-     "కింది వాటిలో అన్నీ సరైన జంటలు ఏవి?\n(1) CA మొత్తం సభ్యులు (విభజన ముందు) — 389\n(2) సంస్థానాల కోటా — 93\n(3) ప్రావిన్సుల కోటా — 296\n(4) విభజన తర్వాత CA సభ్యులు — 389",
-     "1, 2 మరియు 3 మాత్రమే", "1, 2, 3 మరియు 4 అన్నీ",
-     "2 మరియు 3 మాత్రమే", "1 మరియు 4 మాత్రమే",
+     "Which of the following pairs are ALL correctly matched?\n(1) Total CA members (before partition) — 389\n(2) Princely States quota — 93\n(3) Provinces quota — 296\n(4) CA members after partition — 389\nతెలుగు: కింది వాటిలో అన్నీ సరైన జంటలు ఏవి?\n(1) CA మొత్తం సభ్యులు (విభజన ముందు) — 389\n(2) సంస్థానాల కోటా — 93\n(3) ప్రావిన్సుల కోటా — 296\n(4) విభజన తర్వాత CA సభ్యులు — 389",
+     "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
+     "All four / అన్నీ",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
      "a",
-     "4 తప్పు — విభజన తర్వాత CA సభ్యులు 299, 389 కాదు. మిగతా 1 (389), 2 (93), 3 (296) అన్నీ సరైనవి. 296 + 93 = 389 = మొత్తం."),
+     "Pairs 1, 2, 3 are correct. Pair 4 is wrong — after partition, CA had 299 members (NOT 389)."),
 
-    # PYQ — UPSC
+    # MCQ 16 (10-tuple, exam=UPSC)
     (1, 2,
-     "రాజ్యాంగ సభలో సభ్యుల సంఖ్య ఎంత? / How many members did the Constituent Assembly of India consist of, when it was originally constituted under the Cabinet Mission Plan? [UPSC Style]",
-     "299", "350", "389", "296",
+     "How many members did the Constituent Assembly of India consist of when originally constituted under the Cabinet Mission Plan? [UPSC Style]\nతెలుగు: రాజ్యాంగ సభలో సభ్యుల సంఖ్య ఎంత (Cabinet Mission ప్రకారం)?",
+     "299",
+     "350",
+     "389 / 389",
+     "296",
      "c",
-     "Under the Cabinet Mission Plan, the Constituent Assembly was to have 389 members in total — 296 from British Indian Provinces and 93 from Princely States. After partition, this reduced to 299 for the Indian Constituent Assembly.",
+     "Originally 389 (296 Provinces + 93 Princely States). After partition reduced to 299.",
      "UPSC"),
 
-    # ══════════════════════════════════════════
-    # SECTION 2 — మొదటి సమావేశాలు మరియు అధ్యక్షులు
-    # ══════════════════════════════════════════
+    # ══════════════ SECTION 2 — Sessions, Officers ══════════════
 
-    # Easy
+    # MCQ 17
     (2, 1,
-     "రాజ్యాంగ నిర్మాణ సభ మొదటి సమావేశం (First Session) ఏ తేదీన జరిగింది?",
-     "జనవరి 26, 1946", "డిసెంబర్ 9, 1946", "జనవరి 22, 1947", "డిసెంబర్ 11, 1946",
+     "On which date did the first session of the Constituent Assembly take place?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభ మొదటి సమావేశం (First Session) ఏ తేదీన జరిగింది?",
+     "January 26, 1946 / జనవరి 26, 1946",
+     "December 9, 1946 / డిసెంబర్ 9, 1946 (December 9, 1946)",
+     "January 22, 1947 / జనవరి 22, 1947",
+     "December 11, 1946 / డిసెంబర్ 11, 1946",
      "b",
-     "రాజ్యాంగ నిర్మాణ సభ మొదటి సమావేశం డిసెంబర్ 9, 1946న జరిగింది. ఈ తేదీ APPSC మరియు UPSC పరీక్షలలో తరచుగా వస్తుంది."),
+     "First session of CA was held on December 9, 1946 in the Constitution Hall (now Central Hall of Parliament)."),
 
+    # MCQ 18
     (2, 1,
-     "రాజ్యాంగ నిర్మాణ సభ మొదటి సమావేశంలో తాత్కాలిక అధ్యక్షుడు (Temporary Chairman) ఎవరు?",
-     "డా. రాజేంద్ర ప్రసాద్", "జవహర్లాల్ నెహ్రూ",
-     "డా. సచ్చిదానంద సిన్హా", "డా. B.R. అంబేడ్కర్",
+     "Who was the Temporary Chairman of the first session of the Constituent Assembly?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభ మొదటి సమావేశంలో తాత్కాలిక అధ్యక్షుడు ఎవరు?",
+     "Dr. Rajendra Prasad / డా. రాజేంద్ర ప్రసాద్",
+     "Jawaharlal Nehru / జవహర్లాల్ నెహ్రూ",
+     "Dr. Sachchidananda Sinha / డా. సచ్చిదానంద సిన్హా (Dr. Sachchidananda Sinha)",
+     "Dr. B.R. Ambedkar / డా. B.R. అంబేడ్కర్",
      "c",
-     "Dr. Sacchidananda Sinha రాజ్యాంగ నిర్మాణ సభ తాత్కాలిక అధ్యక్షుడు — అత్యంత పెద్ద వయస్సు (oldest member) కారణంగా ఆ గౌరవం లభించింది."),
+     "Dr. Sachchidananda Sinha — the eldest member — was the Temporary/Provisional Chairman of the first CA session (Dec 9, 1946)."),
 
+    # MCQ 19
     (2, 1,
-     "రాజ్యాంగ నిర్మాణ సభ శాశ్వత అధ్యక్షుడు (Permanent President) ఎవరు?",
-     "జవహర్లాల్ నెహ్రూ", "H.C. ముఖర్జీ",
-     "డా. రాజేంద్ర ప్రసాద్", "డా. B.R. అంబేడ్కర్",
+     "Who was the Permanent President of the Constituent Assembly?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభ శాశ్వత అధ్యక్షుడు ఎవరు?",
+     "Jawaharlal Nehru / జవహర్లాల్ నెహ్రూ",
+     "H.C. Mukherjee / H.C. ముఖర్జీ (Vice-President)",
+     "Dr. Rajendra Prasad / డా. రాజేంద్ర ప్రసాద్ (Dr. Rajendra Prasad)",
+     "Dr. B.R. Ambedkar / డా. B.R. అంబేడ్కర్",
      "c",
-     "Dr. Rajendra Prasad డిసెంబర్ 11, 1946న రాజ్యాంగ నిర్మాణ సభ శాశ్వత అధ్యక్షుడిగా ఎన్నికయ్యారు. ఆయన తర్వాత స్వతంత్ర భారతదేశపు మొదటి President అయ్యారు."),
+     "Dr. Rajendra Prasad was elected Permanent President of CA on December 11, 1946. H.C. Mukherjee was Vice-President."),
 
-    # Moderate
+    # MCQ 20
     (2, 2,
-     "కింది వాటిని సరిగ్గా జోడించండి:\n(P) తాత్కాలిక అధ్యక్షుడు — (1) Dr. Rajendra Prasad\n(Q) శాశ్వత అధ్యక్షుడు — (2) H.C. Mukherjee\n(R) ఉపాధ్యక్షుడు — (3) B.N. Rau\n(S) రాజ్యాంగ సలహాదారు — (4) Dr. Sacchidananda Sinha",
-     "P-4, Q-1, R-2, S-3", "P-1, Q-4, R-2, S-3",
-     "P-4, Q-1, R-3, S-2", "P-3, Q-1, R-2, S-4",
+     "Match the following correctly:\n(P) Temporary Chairman — (1) Dr. Rajendra Prasad\n(Q) Permanent President — (2) H.C. Mukherjee\n(R) Vice-President — (3) B.N. Rau\n(S) Constitutional Adviser — (4) Dr. Sachchidananda Sinha\nతెలుగు: కింది వాటిని సరిగ్గా జోడించండి:\n(P) తాత్కాలిక అధ్యక్షుడు — (1) Dr. Rajendra Prasad\n(Q) శాశ్వత అధ్యక్షుడు — (2) H.C. Mukherjee\n(R) ఉపాధ్యక్షుడు — (3) B.N. Rau\n(S) రాజ్యాంగ సలహాదారు — (4) Dr. Sachchidananda Sinha",
+     "P-4, Q-1, R-2, S-3",
+     "P-1, Q-4, R-2, S-3",
+     "P-4, Q-1, R-3, S-2",
+     "P-3, Q-1, R-2, S-4",
      "a",
-     "తాత్కాలిక అధ్యక్షుడు = Dr. Sacchidananda Sinha (P-4). శాశ్వత అధ్యక్షుడు = Dr. Rajendra Prasad (Q-1). ఉపాధ్యక్షుడు = H.C. Mukherjee (R-2). రాజ్యాంగ సలహాదారు = B.N. Rau (S-3)."),
+     "Temporary Chairman = Sinha (4); Permanent President = Rajendra Prasad (1); Vice-President = Mukherjee (2); Constitutional Adviser = B.N. Rau (3). Hence P-4, Q-1, R-2, S-3."),
 
+    # MCQ 21
     (2, 2,
-     "రాజ్యాంగ నిర్మాణ సభ గురించి కింది వాటిలో సరైనవి ఏవి?\n(1) మొత్తం 11 సమావేశాలు జరిగాయి\n(2) 166 రోజులు కూర్చున్నారు\n(3) పూర్తి కావడానికి 3 సంవత్సరాలకు పైగా పట్టింది\n(4) మొదటి సమావేశంలో ముస్లిం లీగ్ పాల్గొంది",
-     "1 మరియు 2 మాత్రమే", "1, 2 మరియు 3",
-     "2 మరియు 4 మాత్రమే", "1, 2, 3 మరియు 4",
+     "Regarding the Constituent Assembly, which of the following are CORRECT?\n(1) Total 11 sessions held\n(2) 166 days of sittings\n(3) Took over 3 years to complete\n(4) Muslim League participated in the first session\nతెలుగు: రాజ్యాంగ నిర్మాణ సభ గురించి కింది వాటిలో సరైనవి ఏవి?\n(1) మొత్తం 11 సమావేశాలు జరిగాయి\n(2) 166 రోజులు కూర్చున్నారు\n(3) పూర్తి కావడానికి 3 సంవత్సరాలకు పైగా పట్టింది\n(4) మొదటి సమావేశంలో ముస్లిం లీగ్ పాల్గొంది",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "1, 2 and 3 / 1, 2 మరియు 3",
+     "2 and 4 only / 2 మరియు 4 మాత్రమే",
+     "All four / అన్నీ",
      "a",
-     "3 తప్పు — 2 సంవత్సరాలు, 11 నెలలు, 18 రోజులు పట్టింది (3 సంవత్సరాలకు పైగా కాదు). 4 తప్పు — ముస్లిం లీగ్ మొదటి సమావేశాన్ని బహిష్కరించింది. 1 మరియు 2 సరైనవి."),
+     "Statements 1 (11 sessions) and 2 (166 days) are correct. Statement 3 is wrong — CA took 2 yrs 11 mo 18 days. Statement 4 is wrong — Muslim League boycotted the first session."),
 
-    # Tough
+    # MCQ 22
     (2, 3,
-     "రాజ్యాంగ నిర్మాణ సభ పూర్తి కావడానికి ఎంత సమయం పట్టింది?",
-     "2 సంవత్సరాలు, 6 నెలలు, 10 రోజులు",
-     "3 సంవత్సరాలు, 2 నెలలు, 5 రోజులు",
-     "2 సంవత్సరాలు, 11 నెలలు, 18 రోజులు",
-     "1 సంవత్సరం, 11 నెలలు, 18 రోజులు",
+     "How long did the Constituent Assembly take to complete its work?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభ పూర్తి కావడానికి ఎంత సమయం పట్టింది?",
+     "2 years, 6 months, 10 days / 2 సం., 6 నె., 10 రో.",
+     "3 years, 2 months, 5 days / 3 సం., 2 నె., 5 రో.",
+     "2 years, 11 months, 18 days / 2 సం., 11 నె., 18 రో. (correct)",
+     "1 year, 11 months, 18 days / 1 సం., 11 నె., 18 రో.",
      "c",
-     "రాజ్యాంగ నిర్మాణ సభ 2 సంవత్సరాలు, 11 నెలలు, 18 రోజుల్లో పూర్తైంది. 166 రోజుల సమావేశాలు, 11 సెషన్లు జరిగాయి. December 9, 1946 నుండి November 26, 1949 వరకు."),
+     "CA took 2 years, 11 months, 18 days to complete (Dec 9, 1946 — Nov 26, 1949). 11 sessions, 166 days of sittings, total cost ₹64 lakh."),
 
-    # Toughest
+    # MCQ 23
     (2, 4,
-     "కింది వాటిలో అన్నీ సరైన జంటలు ఏవి?\n(1) CA తాత్కాలిక అధ్యక్షుడు — Dr. Sacchidananda Sinha\n(2) CA శాశ్వత అధ్యక్షుడు — Dr. Rajendra Prasad\n(3) CA రాజ్యాంగ సలహాదారు — B.N. Rau\n(4) CA ఉపాధ్యక్షుడు — Dr. B.R. Ambedkar",
-     "1, 2 మరియు 3 మాత్రమే", "1, 2, 3 మరియు 4 అన్నీ",
-     "1 మరియు 3 మాత్రమే", "2, 3 మరియు 4 మాత్రమే",
+     "Which of the following pairs are ALL correctly matched?\n(1) CA Temporary Chairman — Dr. Sachchidananda Sinha\n(2) CA Permanent President — Dr. Rajendra Prasad\n(3) CA Constitutional Adviser — B.N. Rau\n(4) CA Vice-President — Dr. B.R. Ambedkar\nతెలుగు: కింది వాటిలో అన్నీ సరైన జంటలు ఏవి?\n(1) CA తాత్కాలిక అధ్యక్షుడు — Dr. Sachchidananda Sinha\n(2) CA శాశ్వత అధ్యక్షుడు — Dr. Rajendra Prasad\n(3) CA రాజ్యాంగ సలహాదారు — B.N. Rau\n(4) CA ఉపాధ్యక్షుడు — Dr. B.R. Ambedkar",
+     "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
+     "All four / అన్నీ",
+     "1 and 3 only / 1 మరియు 3 మాత్రమే",
+     "2, 3 and 4 only / 2, 3 మరియు 4 మాత్రమే",
      "a",
-     "4 తప్పు — CA ఉపాధ్యక్షుడు H.C. Mukherjee, Ambedkar కాదు. Ambedkar = Drafting Committee Chairman. మిగతా 1, 2, 3 అన్నీ సరైనవి."),
+     "Pairs 1, 2, 3 are correct. Pair 4 is wrong — CA Vice-President was H.C. Mukherjee (not Ambedkar). Ambedkar chaired the Drafting Committee."),
 
-    # PYQ — APPSC
+    # MCQ 24 (10-tuple, exam=APPSC)
     (2, 2,
-     "భారత రాజ్యాంగ నిర్మాణ సభకు రాజ్యాంగ సలహాదారుగా (Constitutional Adviser) పని చేసినది ఎవరు? [APPSC Group 2]",
-     "డా. B.R. అంబేడ్కర్", "సర్ B.N. రావు", "అల్లాడి కృష్ణస్వామి అయ్యర్", "K.M. ముంషీ",
+     "Who served as the Constitutional Adviser to the Constituent Assembly? [APPSC Group 2]\nతెలుగు: భారత రాజ్యాంగ నిర్మాణ సభకు రాజ్యాంగ సలహాదారుగా పని చేసినది ఎవరు?",
+     "Dr. B.R. Ambedkar / డా. B.R. అంబేడ్కర్",
+     "Sir B.N. Rau / సర్ B.N. రావు (Sir B.N. Rau)",
+     "Alladi Krishnaswami Iyer / అల్లాడి కృష్ణస్వామి అయ్యర్",
+     "K.M. Munshi / K.M. ముంషీ",
      "b",
-     "సర్ B.N. రావు (Sir Benegal Narsing Rau) భారత రాజ్యాంగ నిర్మాణ సభకు రాజ్యాంగ సలహాదారుగా పని చేశారు. ఆయన Draft Constitution తయారీలో ముఖ్య పాత్ర పోషించారు. ఇది APPSC Group 2 లో తరచుగా వచ్చే ప్రశ్న.",
+     "సర్ B.N. రావు (Sir B.N. Rau) రాజ్యాంగ నిర్మాణ సభకు రాజ్యాంగ సలహాదారుగా (Constitutional Adviser) పని చేశారు. ఆయన ముసాయిదా సూత్రాలను ఆంబేడ్కర్‌కు అందించారు.",
      "APPSC"),
 
-    # ══════════════════════════════════════════
-    # SECTION 3 — ముఖ్య కమిటీలు
-    # ══════════════════════════════════════════
+    # ══════════════ SECTION 3 — Committees ══════════════
 
-    # Easy
+    # MCQ 25
     (3, 1,
-     "రాజ్యాంగ నిర్మాణ సభ ముసాయిదా కమిటీ (Drafting Committee) అధ్యక్షుడు ఎవరు?",
-     "జవహర్లాల్ నెహ్రూ", "సర్దార్ పటేల్",
-     "డా. B.R. అంబేడ్కర్", "డా. రాజేంద్ర ప్రసాద్",
+     "Who was the Chairman of the Drafting Committee of the Constituent Assembly?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభ ముసాయిదా కమిటీ అధ్యక్షుడు ఎవరు?",
+     "Jawaharlal Nehru / జవహర్లాల్ నెహ్రూ",
+     "Sardar Patel / సర్దార్ పటేల్",
+     "Dr. B.R. Ambedkar / డా. B.R. అంబేడ్కర్ (Dr. Ambedkar)",
+     "Dr. Rajendra Prasad / డా. రాజేంద్ర ప్రసాద్",
      "c",
-     "Dr. B.R. Ambedkar Drafting Committee కి అధ్యక్షుడు. ఈ కమిటీ రాజ్యాంగం ముసాయిదా (draft) తయారు చేసింది. అంబేడ్కర్‌ని 'రాజ్యాంగ పితామహుడు' అంటారు."),
+     "Dr. B.R. Ambedkar chaired the Drafting Committee — the most important CA committee that prepared the actual Constitution."),
 
+    # MCQ 26
     (3, 1,
-     "యూనియన్ పవర్స్ కమిటీ (Union Powers Committee) అధ్యక్షుడు ఎవరు?",
-     "సర్దార్ పటేల్", "జవహర్లాల్ నెహ్రూ",
-     "డా. B.R. అంబేడ్కర్", "డా. రాజేంద్ర ప్రసాద్",
+     "Who was the Chairman of the Union Powers Committee?\nతెలుగు: యూనియన్ పవర్స్ కమిటీ అధ్యక్షుడు ఎవరు?",
+     "Sardar Patel / సర్దార్ పటేల్",
+     "Jawaharlal Nehru / జవహర్లాల్ నెహ్రూ (Nehru)",
+     "Dr. B.R. Ambedkar / డా. B.R. అంబేడ్కర్",
+     "Dr. Rajendra Prasad / డా. రాజేంద్ర ప్రసాద్",
      "b",
-     "జవహర్లాల్ నెహ్రూ Union Powers Committee మరియు Union Constitution Committee — రెండు కమిటీలకు అధ్యక్షుడు."),
+     "Nehru chaired both the Union Powers Committee and the Union Constitution Committee."),
 
+    # MCQ 27
     (3, 1,
-     "ప్రావిన్షియల్ రాజ్యాంగ కమిటీ (Provincial Constitution Committee) అధ్యక్షుడు ఎవరు?",
-     "జవహర్లాల్ నెహ్రూ", "డా. రాజేంద్ర ప్రసాద్",
-     "డా. B.R. అంబేడ్కర్", "సర్దార్ వల్లభ్ భాయి పటేల్",
+     "Who was the Chairman of the Provincial Constitution Committee?\nతెలుగు: ప్రావిన్షియల్ రాజ్యాంగ కమిటీ అధ్యక్షుడు ఎవరు?",
+     "Jawaharlal Nehru / జవహర్లాల్ నెహ్రూ",
+     "Dr. Rajendra Prasad / డా. రాజేంద్ర ప్రసాద్",
+     "Dr. B.R. Ambedkar / డా. B.R. అంబేడ్కర్",
+     "Sardar Vallabhbhai Patel / సర్దార్ వల్లభ్‌భాయి పటేల్ (Patel)",
      "d",
-     "సర్దార్ వల్లభ్ భాయి పటేల్ Provincial Constitution Committee మరియు Advisory Committee on Fundamental Rights & Minorities — రెండు కమిటీలకు అధ్యక్షుడు."),
+     "Sardar Patel chaired the Provincial Constitution Committee. He also chaired the Advisory Committee on FRs and Minorities."),
 
-    # Moderate
+    # MCQ 28
     (3, 2,
-     "కింది కమిటీలను వాటి అధ్యక్షులతో సరిగ్గా జోడించండి:\n(P) Drafting Committee — (1) నెహ్రూ\n(Q) Union Powers Committee — (2) రాజేంద్ర ప్రసాద్\n(R) Steering Committee — (3) పటేల్\n(S) Advisory Committee on FRs — (4) అంబేడ్కర్",
-     "P-4, Q-1, R-2, S-3", "P-1, Q-4, R-2, S-3",
-     "P-4, Q-3, R-1, S-2", "P-3, Q-1, R-4, S-2",
+     "Match the committees with their chairmen:\n(P) Drafting Committee — (1) Nehru\n(Q) Union Powers Committee — (2) Rajendra Prasad\n(R) Steering Committee — (3) Patel\n(S) Advisory Committee on FRs — (4) Ambedkar\nతెలుగు: కింది కమిటీలను వాటి అధ్యక్షులతో సరిగ్గా జోడించండి:\n(P) Drafting Committee — (1) నెహ్రూ\n(Q) Union Powers Committee — (2) రాజేంద్ర ప్రసాద్\n(R) Steering Committee — (3) పటేల్\n(S) Advisory Committee on FRs — (4) అంబేడ్కర్",
+     "P-4, Q-1, R-2, S-3",
+     "P-1, Q-4, R-2, S-3",
+     "P-4, Q-3, R-1, S-2",
+     "P-3, Q-1, R-4, S-2",
      "a",
-     "Drafting Committee = అంబేడ్కర్ (P-4). Union Powers Committee = నెహ్రూ (Q-1). Steering Committee = రాజేంద్ర ప్రసాద్ (R-2). Advisory Committee on FRs = పటేల్ (S-3). సరైన జంట: P-4, Q-1, R-2, S-3."),
+     "Drafting = Ambedkar (4); Union Powers = Nehru (1); Steering = Rajendra Prasad (2); Advisory FRs = Patel (3). Hence P-4, Q-1, R-2, S-3."),
 
+    # MCQ 29
     (3, 2,
-     "కింది వాటిలో సరికానిది (INCORRECT) ఏది?",
-     "Drafting Committee Chairman = Dr. B.R. Ambedkar",
-     "Union Powers Committee Chairman = Jawaharlal Nehru",
-     "Steering Committee Chairman = Dr. Rajendra Prasad",
-     "Advisory Committee on FRs Chairman = Jawaharlal Nehru",
+     "Which of the following is INCORRECT?\nతెలుగు: కింది వాటిలో సరికానిది ఏది?",
+     "Drafting Committee Chairman = Dr. B.R. Ambedkar / Drafting = Ambedkar",
+     "Union Powers Committee Chairman = Jawaharlal Nehru / Union Powers = Nehru",
+     "Steering Committee Chairman = Dr. Rajendra Prasad / Steering = Rajendra Prasad",
+     "Advisory Committee on FRs Chairman = Jawaharlal Nehru / Advisory FRs = Nehru (INCORRECT)",
      "d",
-     "Advisory Committee on Fundamental Rights, Minorities and Tribal Areas కి అధ్యక్షుడు సర్దార్ పటేల్, నెహ్రూ కాదు. నెహ్రూ Union Powers + Union Constitution Committees రెండింటికి అధ్యక్షుడు."),
+     "Advisory Committee on Fundamental Rights and Minorities was chaired by Sardar PATEL, not Nehru. Pair D is incorrect."),
 
-    # Tough
+    # MCQ 30
     (3, 3,
-     "రాజ్యాంగ నిర్మాణ సభలో నెహ్రూ అధ్యక్షత వహించిన కమిటీలు ఏవి?\n(1) Union Powers Committee\n(2) Union Constitution Committee\n(3) Drafting Committee\n(4) Steering Committee",
-     "1 మరియు 2 మాత్రమే", "1, 2 మరియు 3",
-     "2 మరియు 4 మాత్రమే", "1, 2, 3 మరియు 4 అన్నీ",
+     "Which committees of the Constituent Assembly did Nehru chair?\n(1) Union Powers Committee\n(2) Union Constitution Committee\n(3) Drafting Committee\n(4) Steering Committee\nతెలుగు: రాజ్యాంగ నిర్మాణ సభలో నెహ్రూ అధ్యక్షత వహించిన కమిటీలు ఏవి?\n(1) Union Powers Committee\n(2) Union Constitution Committee\n(3) Drafting Committee\n(4) Steering Committee",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "1, 2 and 3 / 1, 2 మరియు 3",
+     "2 and 4 only / 2 మరియు 4 మాత్రమే",
+     "All four / అన్నీ",
      "a",
-     "నెహ్రూ అధ్యక్షత వహించినవి: Union Powers Committee + Union Constitution Committee. Drafting Committee = అంబేడ్కర్. Steering Committee = రాజేంద్ర ప్రసాద్. కాబట్టి 1 మరియు 2 మాత్రమే సరైనవి."),
+     "Nehru chaired Union Powers and Union Constitution committees. Drafting = Ambedkar; Steering = Rajendra Prasad."),
 
-    # Toughest
+    # MCQ 31
     (3, 4,
-     "కింది జంటలలో సరికానివి (INCORRECTLY matched) ఏవి?\n(1) Union Constitution Committee — నెహ్రూ ✓\n(2) Provincial Constitution Committee — నెహ్రూ\n(3) Advisory Committee on FRs — పటేల్ ✓\n(4) Steering Committee — అంబేడ్కర్",
-     "2 మరియు 4 మాత్రమే తప్పు", "1 మరియు 3 మాత్రమే తప్పు",
-     "అన్నీ తప్పే", "అన్నీ సరైనవే",
+     "Which of the following pairs are INCORRECTLY matched?\n(1) Union Constitution Committee — Nehru ✓\n(2) Provincial Constitution Committee — Nehru\n(3) Advisory Committee on FRs — Patel ✓\n(4) Steering Committee — Ambedkar\nతెలుగు: కింది జంటలలో సరికానివి ఏవి?\n(1) Union Constitution Committee — నెహ్రూ ✓\n(2) Provincial Constitution Committee — నెహ్రూ\n(3) Advisory Committee on FRs — పటేల్ ✓\n(4) Steering Committee — అంబేడ్కర్",
+     "Only 2 and 4 are wrong / 2 మరియు 4 మాత్రమే తప్పు",
+     "Only 1 and 3 are wrong / 1 మరియు 3 మాత్రమే తప్పు",
+     "All are wrong / అన్నీ తప్పే",
+     "All are correct / అన్నీ సరైనవే",
      "a",
-     "2 తప్పు — Provincial Constitution Committee = పటేల్, నెహ్రూ కాదు. 4 తప్పు — Steering Committee = రాజేంద్ర ప్రసాద్, అంబేడ్కర్ కాదు. 1 మరియు 3 సరైనవి."),
+     "Pair 2 is wrong — Provincial Constitution Committee was chaired by PATEL (not Nehru). Pair 4 is wrong — Steering Committee was chaired by RAJENDRA PRASAD (not Ambedkar). Pairs 1 and 3 are correct."),
 
-    # PYQ — APPSC
+    # MCQ 32 (10-tuple, exam=APPSC)
     (3, 2,
-     "రాజ్యాంగ నిర్మాణ సభలో జవహర్లాల్ నెహ్రూ అధ్యక్షత వహించిన కమిటీ ఏది? [APPSC Group 2]",
-     "Drafting Committee", "Steering Committee",
-     "Union Powers Committee", "Advisory Committee on Fundamental Rights",
+     "Which committee did Jawaharlal Nehru chair in the Constituent Assembly? [APPSC Group 2]\nతెలుగు: రాజ్యాంగ నిర్మాణ సభలో జవహర్లాల్ నెహ్రూ అధ్యక్షత వహించిన కమిటీ ఏది?",
+     "Drafting Committee / Drafting Committee",
+     "Steering Committee / Steering Committee",
+     "Union Powers Committee / Union Powers Committee (Nehru)",
+     "Advisory Committee on Fundamental Rights / Advisory Committee FRs",
      "c",
-     "నెహ్రూ Union Powers Committee మరియు Union Constitution Committee — రెండింటికి అధ్యక్షుడు. Drafting Committee = అంబేడ్కర్. Advisory Committee = పటేల్. Steering Committee = రాజేంద్ర ప్రసాద్. ఇది APPSC Group 2 లో తరచుగా వచ్చే Match the Following ప్రశ్న.",
+     "నెహ్రూ Union Powers Committee మరియు Union Constitution Committee రెండింటికి అధ్యక్షుడు. Drafting = అంబేడ్కర్; Steering = రాజేంద్ర ప్రసాద్; Advisory FRs = పటేల్.",
      "APPSC"),
 
-    # ══════════════════════════════════════════
-    # SECTION 4 — ముసాయిదా కమిటీ — డాక్టర్ అంబేడ్కర్ (Bilingual)
-    # ══════════════════════════════════════════
+    # ══════════════ SECTION 4 — Drafting Committee ══════════════
 
-    # Easy — Bilingual
+    # MCQ 33
     (4, 1,
-     "ముసాయిదా కమిటీ (Drafting Committee) ఎంత మంది సభ్యులతో ఏర్పాటైంది?\n(How many members were there in the Drafting Committee?)",
-     "5 మంది / 5 members", "6 మంది / 6 members",
-     "7 మంది / 7 members", "9 మంది / 9 members",
+     "How many members were there in the Drafting Committee?\nతెలుగు: ముసాయిదా కమిటీలో ఎంత మంది సభ్యులు ఉన్నారు?",
+     "5 members / 5 మంది",
+     "6 members / 6 మంది",
+     "7 members / 7 మంది (correct)",
+     "9 members / 9 మంది",
      "c",
-     "Drafting Committee లో మొత్తం 7 సభ్యులు. అధ్యక్షుడు Dr. B.R. Ambedkar తో పాటు మరో 6 మంది. ఈ కమిటీ August 29, 1947న ఏర్పాటైంది."),
+     "Drafting Committee = 7 members. Chairman = Dr. B.R. Ambedkar."),
 
+    # MCQ 34
     (4, 1,
-     "ముసాయిదా రాజ్యాంగం (Draft Constitution) ఏ సంవత్సరంలో ప్రచురించారు?\n(In which year was the Draft Constitution published?)",
-     "1947", "1948", "1949", "1946",
+     "In which year was the Draft Constitution published?\nతెలుగు: ముసాయిదా రాజ్యాంగం ఏ సంవత్సరంలో ప్రచురించారు?",
+     "1947",
+     "1948 / 1948 (Feb 1948)",
+     "1949",
+     "1946",
      "b",
-     "Drafting Committee ముసాయిదా రాజ్యాంగాన్ని ఫిబ్రవరి 1948లో ప్రచురించింది. ప్రజల అభిప్రాయం (public opinion) కోసం 8 నెలలు ఇచ్చారు. తర్వాత నవంబర్ 1948లో Constituent Assembly లో మొదటి పఠనం ప్రారంభమైంది."),
+     "Draft Constitution was published on 26 February 1948 for public discussion."),
 
+    # MCQ 35
     (4, 1,
-     "డాక్టర్ B.R. అంబేడ్కర్‌ను ఏమని పిలుస్తారు?\n(What is Dr. B.R. Ambedkar known as?)",
-     "రాజ్యాంగ సలహాదారు / Constitutional Adviser",
-     "రాజ్యాంగ పితామహుడు / Father of Indian Constitution",
-     "రాజ్యాంగ నిర్మాణ సభ అధ్యక్షుడు / President of Constituent Assembly",
-     "భారత న్యాయ సంస్కర్త / Legal Reformer of India",
+     "What is Dr. B.R. Ambedkar known as?\nతెలుగు: డా. B.R. అంబేడ్కర్‌ను ఏమని పిలుస్తారు?",
+     "Constitutional Adviser / రాజ్యాంగ సలహాదారు",
+     "Father of Indian Constitution / రాజ్యాంగ పితామహుడు (Father of Indian Constitution)",
+     "President of Constituent Assembly / రాజ్యాంగ నిర్మాణ సభ అధ్యక్షుడు",
+     "Legal Reformer of India / భారత న్యాయ సంస్కర్త",
      "b",
-     "Dr. B.R. Ambedkar 'రాజ్యాంగ పితామహుడు' (Father of Indian Constitution) మరియు 'ఆధునిక మను' (Modern Manu) అని పిలుస్తారు. Granville Austin ఆయన్ని 'Chief Architect of Indian Constitution' అన్నారు."),
+     "Dr. B.R. Ambedkar is known as the 'Father of Indian Constitution' because he chaired the Drafting Committee and shaped most of its content."),
 
-    # Moderate — Bilingual
+    # MCQ 36
     (4, 2,
-     "Drafting Committee లో B.L. మిట్టర్ స్థానంలో ఎవరు నియమితులయ్యారు?\n(Who replaced B.L. Mitter in the Drafting Committee?)",
-     "T.T. కృష్ణమాచారి / T.T. Krishnamachari",
-     "N. మాధవ రావు / N. Madhava Rau",
-     "అల్లాడి కృష్ణస్వామి అయ్యర్ / Alladi Krishnaswami Ayyar",
-     "K.M. ముంషీ / K.M. Munshi",
+     "Who replaced B.L. Mitter in the Drafting Committee?\nతెలుగు: Drafting Committee లో B.L. మిట్టర్ స్థానంలో ఎవరు నియమితులయ్యారు?",
+     "T.T. Krishnamachari / T.T. కృష్ణమాచారి",
+     "N. Madhava Rau / N. మాధవ రావు (N. Madhava Rau)",
+     "Alladi Krishnaswami Iyer / అల్లాడి కృష్ణస్వామి అయ్యర్",
+     "K.M. Munshi / K.M. ముంషీ",
      "b",
-     "B.L. Mitter అనారోగ్య కారణంగా రాజీనామా చేశారు. ఆయన స్థానంలో N. Madhava Rau నియమితులయ్యారు. D.P. Khaitan మరణం తర్వాత T.T. Krishnamachari నియమితులయ్యారు — రెండూ వేర్వేరు."),
+     "N. Madhava Rau replaced B.L. Mitter, who resigned due to ill health."),
 
+    # MCQ 37
     (4, 2,
-     "కింది వాటిలో Drafting Committee సభ్యులు ఎవరు?\n(Which of the following were members of the Drafting Committee?)\n(1) K.M. Munshi\n(2) Alladi Krishnaswami Ayyar\n(3) T.T. Krishnamachari\n(4) B.N. Rau",
-     "1, 2 మరియు 3 మాత్రమే / 1, 2 and 3 only",
-     "1, 2, 3 మరియు 4 అన్నీ / All four",
-     "2 మరియు 3 మాత్రమే / 2 and 3 only",
-     "1 మరియు 4 మాత్రమే / 1 and 4 only",
+     "Which of the following were members of the Drafting Committee?\n(1) K.M. Munshi\n(2) Alladi Krishnaswami Iyer\n(3) T.T. Krishnamachari\n(4) B.N. Rau\nతెలుగు: కింది వాటిలో Drafting Committee సభ్యులు ఎవరు?\n(1) K.M. Munshi\n(2) Alladi Krishnaswami Iyer\n(3) T.T. Krishnamachari\n(4) B.N. Rau",
+     "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
+     "All four / అన్నీ",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
      "a",
-     "4 తప్పు — B.N. Rau Drafting Committee సభ్యుడు కాదు; ఆయన Constitutional Adviser (సలహాదారు). K.M. Munshi (1), Alladi Krishnaswami Ayyar (2), T.T. Krishnamachari (3) అందరూ Drafting Committee సభ్యులే."),
+     "Munshi, Alladi Krishnaswami, and T.T. Krishnamachari were all DC members. B.N. Rau was Constitutional ADVISER (not a DC member)."),
 
-    # Tough — Bilingual
+    # MCQ 38
     (4, 3,
-     "Drafting Committee గురించి కింది వాటిలో సరికానిది ఏది?\n(Which of the following is INCORRECT about the Drafting Committee?)",
-     "ఇది August 29, 1947న ఏర్పాటైంది / It was set up on August 29, 1947",
-     "7 మంది సభ్యులు ఉన్నారు / It had 7 members",
-     "Dr. Ambedkar దానికి Chairman / Dr. Ambedkar was its Chairman",
-     "N. Gopalaswami Ayyangar, B.L. Mitter స్థానంలో నియమితులయ్యారు / N. Gopalaswami Ayyangar replaced B.L. Mitter",
+     "Which of the following is INCORRECT about the Drafting Committee?\nతెలుగు: Drafting Committee గురించి కింది వాటిలో సరికానిది ఏది?",
+     "Set up on August 29, 1947 / August 29, 1947న ఏర్పాటు",
+     "Had 7 members / 7 మంది సభ్యులు",
+     "Dr. Ambedkar was Chairman / Dr. Ambedkar = Chairman",
+     "N. Gopalaswami Ayyangar replaced B.L. Mitter / Gopalaswami = B.L. Mitter స్థానంలో (INCORRECT)",
      "d",
-     "B.L. Mitter స్థానంలో N. Madhava Rau నియమితులయ్యారు, Gopalaswami Ayyangar కాదు. Gopalaswami Ayyangar మొదటి నుండి Drafting Committee సభ్యుడే. మిగతా మూడు సరైనవే."),
+     "B.L. Mitter was replaced by N. MADHAVA RAU (not Gopalaswami Ayyangar). Pair D is incorrect."),
 
-    # Toughest — Bilingual
+    # MCQ 39
     (4, 4,
-     "కింది అన్నీ సరైన జంటలు ఏవి? / (All correctly matched DC members and their context:)\n(1) B.L. Mitter — రాజీనామా చేశారు (resigned due to illness)\n(2) D.P. Khaitan — మరణం కారణంగా తొలగింపు (removed due to death)\n(3) N. Madhava Rau — B.L. Mitter స్థానంలో\n(4) T.T. Krishnamachari — N. Gopalaswami స్థానంలో",
-     "1, 2 మరియు 3 మాత్రమే / 1, 2 and 3 only",
-     "1, 2, 3 మరియు 4 అన్నీ / All",
-     "2 మరియు 3 మాత్రమే / 2 and 3 only",
-     "1 మరియు 4 మాత్రమే / 1 and 4 only",
+     "Which of the following are ALL correctly matched DC member changes?\n(1) B.L. Mitter — resigned due to illness\n(2) D.P. Khaitan — removed due to death\n(3) N. Madhava Rau — replaced B.L. Mitter\n(4) T.T. Krishnamachari — replaced N. Gopalaswami\nతెలుగు: కింది అన్నీ సరైన జంటలు ఏవి?\n(1) B.L. Mitter — రాజీనామా (అనారోగ్యం)\n(2) D.P. Khaitan — మరణం కారణంగా తొలగింపు\n(3) N. Madhava Rau — B.L. Mitter స్థానంలో\n(4) T.T. Krishnamachari — N. Gopalaswami స్థానంలో",
+     "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
+     "All four / అన్నీ",
+     "2 and 3 only / 2 మరియు 3 మాత్రమే",
+     "1 and 4 only / 1 మరియు 4 మాత్రమే",
      "a",
-     "4 తప్పు — T.T. Krishnamachari నియమితులైంది D.P. Khaitan స్థానంలో, N. Gopalaswami స్థానంలో కాదు. N. Gopalaswami Ayyangar మొదటి నుండి DC సభ్యుడే. మిగతా 1, 2, 3 అన్నీ సరైనవి."),
+     "Pairs 1, 2, 3 correct. Pair 4 wrong — T.T. Krishnamachari replaced D.P. KHAITAN (after his death), not N. Gopalaswami."),
 
-    # PYQ — UPSC Bilingual
+    # MCQ 40 (10-tuple, exam=UPSC)
     (4, 2,
-     "రాజ్యాంగ ముసాయిదా కమిటీలో ఎవరు భర్తీ అయ్యారు? / Who among the following replaced D.P. Khaitan in the Drafting Committee of the Constituent Assembly? [UPSC Prelims Style]",
-     "N. Madhava Rau",
-     "N. Gopalaswami Ayyangar",
-     "T.T. Krishnamachari",
-     "Syed Muhammad Saadulla",
+     "Who replaced D.P. Khaitan in the Drafting Committee? [UPSC Prelims Style]\nతెలుగు: D.P. Khaitan స్థానంలో Drafting Committeeలో ఎవరు వచ్చారు?",
+     "N. Madhava Rau / N. Madhava Rau",
+     "N. Gopalaswami Ayyangar / N. Gopalaswami Ayyangar",
+     "T.T. Krishnamachari / T.T. Krishnamachari (correct)",
+     "Syed Muhammad Saadulla / Syed Muhammad Saadulla",
      "c",
-     "D.P. Khaitan మరణించిన తర్వాత T.T. Krishnamachari Drafting Committee లో నియమితులయ్యారు. B.L. Mitter రాజీనామా తర్వాత N. Madhava Rau నియమితులయ్యారు — రెండూ వేర్వేరు replacements.",
+     "T.T. Krishnamachari replaced D.P. Khaitan after Khaitan's death in 1948. Krishnamachari later became Finance Minister.",
      "UPSC"),
 
-    # ══════════════════════════════════════════
-    # SECTION 5 — లక్ష్య తీర్మానం (Objective Resolution — Bilingual)
-    # ══════════════════════════════════════════
+    # ══════════════ SECTION 5 — Objective Resolution ══════════════
 
-    # Easy — Bilingual
+    # MCQ 41
     (5, 1,
-     "లక్ష్య తీర్మానం (Objective Resolution) ఎవరు ప్రవేశపెట్టారు?\n(Who moved the Objective Resolution in the Constituent Assembly?)",
-     "సర్దార్ పటేల్ / Sardar Patel",
-     "జవహర్లాల్ నెహ్రూ / Jawaharlal Nehru",
-     "డా. రాజేంద్ర ప్రసాద్ / Dr. Rajendra Prasad",
-     "డా. B.R. అంబేడ్కర్ / Dr. B.R. Ambedkar",
+     "Who moved the Objective Resolution in the Constituent Assembly?\nతెలుగు: లక్ష్య తీర్మానం (Objective Resolution) ఎవరు ప్రవేశపెట్టారు?",
+     "Sardar Patel / సర్దార్ పటేల్",
+     "Jawaharlal Nehru / జవహర్లాల్ నెహ్రూ (Nehru)",
+     "Dr. Rajendra Prasad / డా. రాజేంద్ర ప్రసాద్",
+     "Dr. B.R. Ambedkar / డా. B.R. అంబేడ్కర్",
      "b",
-     "జవహర్లాల్ నెహ్రూ (Jawaharlal Nehru) లక్ష్య తీర్మానాన్ని (Objective Resolution) డిసెంబర్ 13, 1946న ప్రవేశపెట్టారు. ఇది Preamble కి పునాది వేసింది."),
+     "Nehru moved the historic Objective Resolution on 13 December 1946 — outlining sovereignty, democracy, justice, equality, fraternity."),
 
+    # MCQ 42
     (5, 1,
-     "లక్ష్య తీర్మానం (Objective Resolution) ఆమోదం పొందిన తేదీ ఏది?\n(On which date was the Objective Resolution adopted?)",
-     "డిసెంబర్ 9, 1946 / December 9, 1946",
-     "డిసెంబర్ 13, 1946 / December 13, 1946",
-     "జనవరి 22, 1947 / January 22, 1947",
-     "ఆగస్ట్ 15, 1947 / August 15, 1947",
+     "On which date was the Objective Resolution adopted?\nతెలుగు: లక్ష్య తీర్మానం ఆమోదం పొందిన తేదీ ఏది?",
+     "December 9, 1946 / డిసెంబర్ 9, 1946",
+     "December 13, 1946 / డిసెంబర్ 13, 1946",
+     "January 22, 1947 / జనవరి 22, 1947 (correct)",
+     "August 15, 1947 / ఆగస్ట్ 15, 1947",
      "c",
-     "లక్ష్య తీర్మానం (Objective Resolution) నెహ్రూ డిసెంబర్ 13, 1946న ప్రవేశపెట్టారు కానీ ఆమోదం జనవరి 22, 1947న జరిగింది. రెండు తేదీలు వేర్వేరు అని గుర్తుంచుకోండి!"),
+     "Objective Resolution was MOVED on Dec 13, 1946 and ADOPTED on January 22, 1947."),
 
-    # Moderate — Bilingual
+    # MCQ 43
     (5, 2,
-     "లక్ష్య తీర్మానం (Objective Resolution) అనేది భారత రాజ్యాంగంలో ఏ భాగానికి పూర్వ రూపం?\n(The Objective Resolution became the basis of which part of the Indian Constitution?)",
-     "ప్రాథమిక హక్కులు / Fundamental Rights",
-     "ఆదేశిక సూత్రాలు / Directive Principles",
-     "ప్రస్తావన / Preamble",
-     "రాజ్యాంగ సవరణ విధానం / Amendment Procedure",
+     "The Objective Resolution became the basis of which part of the Indian Constitution?\nతెలుగు: లక్ష్య తీర్మానం భారత రాజ్యాంగంలో ఏ భాగానికి పూర్వ రూపం?",
+     "Fundamental Rights / ప్రాథమిక హక్కులు",
+     "Directive Principles / ఆదేశిక సూత్రాలు",
+     "Preamble / ప్రస్తావన (Preamble)",
+     "Amendment Procedure / రాజ్యాంగ సవరణ విధానం",
      "c",
-     "Objective Resolution Preamble (ప్రస్తావన) కి పూర్వ రూపం. ఇందులో స్వతంత్ర, సార్వభౌమ, గణతంత్ర, న్యాయం, స్వేచ్ఛ, సమానత్వం వంటి సూత్రాలు ఉన్నాయి — అవే Preamble లో రూపం తీసుకున్నాయి."),
+     "Objective Resolution = essential basis of the PREAMBLE. The ideals of sovereignty, democracy, justice, liberty, equality, fraternity flow from it."),
 
+    # MCQ 44
     (5, 2,
-     "కింది వాటిలో Objective Resolution గురించి సరైనవి ఏవి?\n(1) నెహ్రూ December 13, 1946న ప్రవేశపెట్టారు\n(2) January 22, 1947న ఆమోదించారు\n(3) ఇది Preamble కి పునాది\n(4) పటేల్ ప్రవేశపెట్టారు",
-     "1, 2 మరియు 3 మాత్రమే", "1 మరియు 3 మాత్రమే",
-     "2 మరియు 4 మాత్రమే", "1, 2, 3 మరియు 4 అన్నీ",
+     "Regarding the Objective Resolution, which of the following are CORRECT?\n(1) Nehru moved it on December 13, 1946\n(2) Adopted on January 22, 1947\n(3) Basis of the Preamble\n(4) Patel moved it\nతెలుగు: కింది వాటిలో Objective Resolution గురించి సరైనవి ఏవి?\n(1) నెహ్రూ December 13, 1946న ప్రవేశపెట్టారు\n(2) January 22, 1947న ఆమోదించారు\n(3) ఇది Preamble కి పునాది\n(4) పటేల్ ప్రవేశపెట్టారు",
+     "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
+     "1 and 3 only / 1 మరియు 3 మాత్రమే",
+     "2 and 4 only / 2 మరియు 4 మాత్రమే",
+     "All four / అన్నీ",
      "a",
-     "4 తప్పు — Objective Resolution ప్రవేశపెట్టింది నెహ్రూ, పటేల్ కాదు. మిగతా 1 (December 13), 2 (January 22), 3 (Preamble basis) అన్నీ సరైనవి."),
+     "Statements 1, 2, 3 are correct. Statement 4 wrong — Nehru (not Patel) moved the Objective Resolution."),
 
-    # Tough — Bilingual
+    # MCQ 45
     (5, 3,
-     "అభికథనం-కారణం సరైనవా? / Assertion (A): The Objective Resolution moved by Nehru is considered the 'spirit' of the Indian Constitution.\nReason (R): The ideals and objectives contained in the Objective Resolution — sovereignty, democracy, republic, justice, liberty, equality — are reflected in the Preamble of the Constitution.",
-     "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ / Both correct, R explains A",
-     "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు / Both correct, R doesn't explain",
-     "A సరైనది, R తప్పు / A correct, R wrong",
-     "A తప్పు, R సరైనది / A wrong, R correct",
+     "Assertion (A): The Objective Resolution moved by Nehru is considered the 'spirit' of the Indian Constitution.\nReason (R): The ideals (sovereignty, democracy, republic, justice, liberty, equality) in the Objective Resolution are reflected in the Preamble of the Constitution.\nతెలుగు: అభికథనం-కారణం సరైనవా?",
+     "Both correct, R explains A / రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
+     "Both correct, R doesn't explain / రెండూ సరైనవి, R వివరణ కాదు",
+     "A correct, R wrong / A సరైనది, R తప్పు",
+     "A wrong, R correct / A తప్పు, R సరైనది",
      "a",
-     "Objective Resolution ని రాజ్యాంగం యొక్క ఆత్మ (Spirit) అంటారు ఎందుకంటే దానిలోని స్వాతంత్ర్యం, సమానత్వం, న్యాయం, గణతంత్రం వంటి సూత్రాలు Preamble లో ప్రతిఫలించాయి. R అనేది A కి సరైన వివరణ."),
+     "Both A and R are correct. R precisely explains A — the Preamble inherits the values directly from the Objective Resolution."),
 
-    # Toughest — Bilingual
+    # MCQ 46
     (5, 4,
-     "కింది జంటలు అన్నీ సరైనవేనా? / (Are all pairs correctly matched?)\n(1) Objective Resolution ప్రవేశపెట్టింది — నెహ్రూ\n(2) Objective Resolution ఆమోదించిన తేదీ — December 13, 1946\n(3) Objective Resolution = Preamble కి పూర్వ రూపం\n(4) Objective Resolution ప్రవేశపెట్టిన తేదీ — December 13, 1946",
-     "1, 3 మరియు 4 మాత్రమే సరైనవి", "1, 2, 3 మరియు 4 అన్నీ సరైనవి",
-     "అన్నీ తప్పే", "1 మరియు 2 మాత్రమే",
+     "Are these pairs all correctly matched?\n(1) Objective Resolution mover — Nehru\n(2) Adoption date — December 13, 1946\n(3) Objective Resolution = basis of Preamble\n(4) Objective Resolution moving date — December 13, 1946\nతెలుగు: కింది జంటలు అన్నీ సరైనవేనా?\n(1) Objective Resolution ప్రవేశపెట్టింది — నెహ్రూ\n(2) ఆమోదించిన తేదీ — December 13, 1946\n(3) Objective Resolution = Preamble కి పూర్వ రూపం\n(4) ప్రవేశపెట్టిన తేదీ — December 13, 1946",
+     "Only 1, 3 and 4 correct / 1, 3 మరియు 4 మాత్రమే సరైనవి",
+     "All four correct / అన్నీ సరైనవి",
+     "All wrong / అన్నీ తప్పే",
+     "Only 1 and 2 / 1 మరియు 2 మాత్రమే",
      "a",
-     "2 తప్పు — Objective Resolution ఆమోదించిన తేదీ January 22, 1947, December 13 కాదు. December 13 అనేది ప్రవేశపెట్టిన తేదీ (statement 4 — correct). 1 (నెహ్రూ), 3 (Preamble basis), 4 (December 13 = moved) సరైనవి."),
+     "Pairs 1, 3, 4 correct. Pair 2 wrong — adoption was on Jan 22, 1947 (Dec 13, 1946 was the moving date)."),
 
-    # PYQ — APPSC Bilingual
+    # MCQ 47 (10-tuple, exam=APPSC)
     (5, 2,
-     "రాజ్యాంగ నిర్మాణ సభలో లక్ష్య తీర్మానం (Objective Resolution) ఆమోదం ఏ తేదీన జరిగింది? [APPSC Group 2]",
-     "December 13, 1946", "December 9, 1946",
-     "January 22, 1947", "August 15, 1947",
+     "On which date was the Objective Resolution adopted by the Constituent Assembly? [APPSC Group 2]\nతెలుగు: లక్ష్య తీర్మానం ఆమోదం ఏ తేదీన జరిగింది?",
+     "December 13, 1946",
+     "December 9, 1946",
+     "January 22, 1947 (correct)",
+     "August 15, 1947",
      "c",
-     "Objective Resolution నెహ్రూ December 13, 1946న ప్రవేశపెట్టారు. కానీ ఆమోదం January 22, 1947న జరిగింది. ఈ రెండు తేదీల తేడా APPSC Group 2 పరీక్షల్లో తరచుగా అడుగుతారు.",
+     "January 22, 1947న Objective Resolution ఆమోదం పొందింది. December 13, 1946న ప్రవేశపెట్టారు. ఇది Preamble కి పునాది.",
      "APPSC"),
 
-    # ══════════════════════════════════════════
-    # SECTION 6 — రాజ్యాంగ ఆమోదం మరియు అమలు (Bilingual)
-    # ══════════════════════════════════════════
+    # ══════════════ SECTION 6 — Adoption & Commencement ══════════════
 
-    # Easy — Bilingual
+    # MCQ 48
     (6, 1,
-     "భారత రాజ్యాంగం ఆమోదం పొందిన తేదీ ఏది?\n(On which date was the Indian Constitution adopted?)",
-     "జనవరి 26, 1950 / January 26, 1950",
-     "నవంబర్ 26, 1949 / November 26, 1949",
-     "ఆగస్ట్ 15, 1947 / August 15, 1947",
-     "జనవరి 22, 1947 / January 22, 1947",
+     "On which date was the Indian Constitution adopted?\nతెలుగు: భారత రాజ్యాంగం ఆమోదం పొందిన తేదీ ఏది?",
+     "January 26, 1950 / జనవరి 26, 1950",
+     "November 26, 1949 / నవంబర్ 26, 1949 (Adoption)",
+     "August 15, 1947 / ఆగస్ట్ 15, 1947",
+     "January 22, 1947 / జనవరి 22, 1947",
      "b",
-     "భారత రాజ్యాంగం నవంబర్ 26, 1949న ఆమోదం పొందింది (Adopted). ఈ తేదీని 'రాజ్యాంగ దినం' (Constitution Day / Samvidhan Diwas) గా 2015 నుండి జరుపుకుంటున్నారు."),
+     "Constitution was ADOPTED on November 26, 1949 (now celebrated as Samvidhan Diwas / Constitution Day)."),
 
+    # MCQ 49
     (6, 1,
-     "భారత రాజ్యాంగం అమలులోకి వచ్చిన తేదీ ఏది?\n(On which date did the Indian Constitution come into force?)",
-     "నవంబర్ 26, 1949 / November 26, 1949",
-     "ఆగస్ట్ 15, 1947 / August 15, 1947",
-     "జనవరి 26, 1950 / January 26, 1950",
-     "డిసెంబర్ 9, 1946 / December 9, 1946",
+     "On which date did the Indian Constitution come into force?\nతెలుగు: భారత రాజ్యాంగం అమలులోకి వచ్చిన తేదీ ఏది?",
+     "November 26, 1949 / నవంబర్ 26, 1949",
+     "August 15, 1947 / ఆగస్ట్ 15, 1947",
+     "January 26, 1950 / జనవరి 26, 1950 (Republic Day)",
+     "December 9, 1946 / డిసెంబర్ 9, 1946",
      "c",
-     "భారత రాజ్యాంగం జనవరి 26, 1950న అమలులోకి వచ్చింది (Commenced). అందుకే జనవరి 26ను గణతంత్ర దినోత్సవం (Republic Day) గా జరుపుకుంటాం. ఆమోదం (Nov 26) మరియు అమలు (Jan 26) — రెండు వేర్వేరు తేదీలు!"),
+     "Constitution came into FORCE on January 26, 1950 (now celebrated as Republic Day). This date was chosen to honour the Purna Swaraj declaration of 1930."),
 
+    # MCQ 50
     (6, 1,
-     "జనవరి 26ను గణతంత్ర దినోత్సవంగా ఎందుకు ఎంచుకున్నారు?\n(Why was January 26 chosen as Republic Day?)",
-     "1946 జనవరి 26న Cabinet Mission వచ్చింది / Cabinet Mission came on Jan 26, 1946",
-     "1930 జనవరి 26న INC పూర్ణ స్వరాజ్యం ప్రకటించింది / INC declared Purna Swaraj on Jan 26, 1930",
-     "1947 జనవరి 26న స్వాతంత్ర్యం వచ్చింది / India got Independence on Jan 26, 1947",
-     "1935 జనవరి 26న GOI Act వచ్చింది / GOI Act 1935 came into force on Jan 26",
+     "Why was January 26 chosen as Republic Day?\nతెలుగు: జనవరి 26ను గణతంత్ర దినోత్సవంగా ఎందుకు ఎంచుకున్నారు?",
+     "Cabinet Mission came on Jan 26, 1946 / Cabinet Mission",
+     "INC declared Purna Swaraj on Jan 26, 1930 / 1930 జనవరి 26న INC పూర్ణ స్వరాజ్యం ప్రకటన (correct)",
+     "India got Independence on Jan 26, 1947 / 1947 జనవరి 26న స్వాతంత్ర్యం",
+     "GOI Act 1935 came into force on Jan 26 / 1935 GOI Act",
      "b",
-     "జనవరి 26, 1930న Indian National Congress పూర్ణ స్వరాజ్యం (Purna Swaraj — Complete Independence) ప్రకటించింది. ఆ చారిత్రాత్మక రోజు స్మారకంగా జనవరి 26, 1950న రాజ్యాంగం అమలులోకి తెచ్చారు."),
+     "On 26 January 1930, the INC (Lahore Session) declared Purna Swaraj — complete independence from British rule. Choosing Jan 26 for Republic Day honoured this date."),
 
-    # Moderate — Bilingual
+    # MCQ 51
     (6, 2,
-     "అసలు రాజ్యాంగంలో (1949) ఆర్టికల్స్, పార్ట్స్ మరియు షెడ్యూల్స్ ఎన్ని ఉన్నాయి?\n(How many Articles, Parts, and Schedules were there in the original Constitution of 1949?)",
-     "395 Articles, 22 Parts, 8 Schedules",
+     "How many Articles, Parts, and Schedules were there in the original Constitution of 1949?\nతెలుగు: అసలు రాజ్యాంగంలో (1949) ఆర్టికల్స్, పార్ట్స్, షెడ్యూల్స్ ఎన్ని ఉన్నాయి?",
+     "395 Articles, 22 Parts, 8 Schedules (correct)",
      "450 Articles, 25 Parts, 12 Schedules",
      "395 Articles, 25 Parts, 12 Schedules",
      "448 Articles, 22 Parts, 8 Schedules",
      "a",
-     "అసలు రాజ్యాంగం (1949): 395 Articles (ఆర్టికల్స్), 22 Parts (భాగాలు), 8 Schedules (షెడ్యూల్స్). ప్రస్తుతం సవరణల వల్ల: ~450+ Articles, 25 Parts, 12 Schedules."),
+     "Original 1949 Constitution: 395 Articles + 22 Parts + 8 Schedules. Today (after amendments): ~470 Articles + 25 Parts + 12 Schedules."),
 
+    # MCQ 52
     (6, 2,
-     "నవంబర్ 26, 1949న ఆమోదం రోజే అమలులోకి వచ్చిన అంశాలు ఏవి?\n(Which provisions came into force immediately on November 26, 1949?)",
-     "మూల హక్కులు మరియు ఆదేశిక సూత్రాలు / Fundamental Rights and DPSP",
-     "పౌరసత్వం, ఎన్నికలు మరియు తాత్కాలిక పార్లమెంట్ / Citizenship, Elections, Provisional Parliament",
-     "అత్యవసర నిబంధనలు / Emergency Provisions",
-     "రాజ్యాంగ సవరణ విధానం / Amendment Procedure",
+     "Which provisions came into force immediately on November 26, 1949?\nతెలుగు: నవంబర్ 26, 1949న ఆమోదం రోజే అమలులోకి వచ్చిన అంశాలు ఏవి?",
+     "Fundamental Rights and DPSP / మూల హక్కులు + DPSP",
+     "Citizenship, Elections, Provisional Parliament / పౌరసత్వం, ఎన్నికలు, తాత్కాలిక Parliament (correct)",
+     "Emergency Provisions / అత్యవసర నిబంధనలు",
+     "Amendment Procedure / రాజ్యాంగ సవరణ విధానం",
      "b",
-     "నవంబర్ 26, 1949న Citizenship (పౌరసత్వం), Elections (ఎన్నికలు), Provisional Parliament (తాత్కాలిక పార్లమెంట్), Short Title వంటి నిబంధనలు వెంటనే అమలులోకి వచ్చాయి. మిగతా అన్ని నిబంధనలు జనవరి 26, 1950న అమలులోకి వచ్చాయి."),
+     "On Nov 26, 1949, only Citizenship, Elections, Provisional Parliament + a few related provisions came into force. The rest came on Jan 26, 1950."),
 
-    # Tough — Bilingual
+    # MCQ 53
     (6, 3,
-     "కింది వాటిలో రాజ్యాంగ ఆమోదం మరియు అమలు గురించి సరికానిది ఏది?\n(Which of the following is INCORRECT about adoption and commencement of the Constitution?)",
-     "నవంబర్ 26, 1949 = రాజ్యాంగ ఆమోదం (Adoption) / November 26, 1949 = Adoption",
-     "జనవరి 26, 1950 = రాజ్యాంగ అమలు (Commencement) / January 26, 1950 = Commencement",
-     "నవంబర్ 26 = 'Samvidhan Diwas' గా 2015 నుండి / November 26 = Constitution Day since 2015",
-     "జనవరి 26, 1947 పూర్ణ స్వరాజ్యం స్మారకంగా జనవరి 26 ఎంచుకున్నారు / January 26, 1947 Purna Swaraj remembered",
+     "Which of the following is INCORRECT about adoption and commencement of the Constitution?\nతెలుగు: రాజ్యాంగ ఆమోదం + అమలు గురించి సరికానిది ఏది?",
+     "November 26, 1949 = Adoption / 1949 నవం 26 = ఆమోదం",
+     "January 26, 1950 = Commencement / 1950 జన 26 = అమలు",
+     "November 26 = Constitution Day since 2015 / Nov 26 = Samvidhan Diwas (since 2015)",
+     "January 26, 1947 Purna Swaraj remembered / 1947 జన 26 పూర్ణ స్వరాజ్యం (INCORRECT)",
      "d",
-     "పూర్ణ స్వరాజ్యం (Purna Swaraj) ప్రకటించింది January 26, 1930న — 1947లో కాదు! 1947 జనవరి 26 అనేది సాధారణ తేదీ. 1930 జనవరి 26 = పూర్ణ స్వరాజ్యం. మిగతా మూడు సరైనవే."),
+     "Purna Swaraj was declared on Jan 26, 1930 (NOT 1947). Pair D is incorrect."),
 
-    # Toughest — Bilingual
+    # MCQ 54
     (6, 4,
-     "Assertion (A): The Indian Constitution was adopted on November 26, 1949 but came into force on January 26, 1950.\nReason (R): January 26 was chosen to commemorate the Purna Swaraj Declaration of January 26, 1930, when INC demanded complete independence from British rule.\n(రెండూ సరైనవేనా? R అనేది A కి సరైన వివరణా?)",
-     "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ / Both correct, R explains A",
-     "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు / Both correct, R doesn't explain",
-     "A సరైనది, R తప్పు / A correct, R wrong",
-     "A తప్పు, R సరైనది / A wrong, R correct",
+     "Assertion (A): The Indian Constitution was adopted on November 26, 1949 but came into force on January 26, 1950.\nReason (R): January 26 was chosen to commemorate the Purna Swaraj Declaration of January 26, 1930.\nతెలుగు: అభికథనం-కారణం సరైనవా?",
+     "Both correct, R explains A / రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
+     "Both correct, R doesn't explain / రెండూ సరైనవి, R వివరణ కాదు",
+     "A correct, R wrong / A సరైనది, R తప్పు",
+     "A wrong, R correct / A తప్పు, R సరైనది",
      "a",
-     "రాజ్యాంగం నవంబర్ 26, 1949న ఆమోదించారు (A — correct). జనవరి 26 ఎంచుకున్నారు ఎందుకంటే 1930 జనవరి 26న INC పూర్ణ స్వరాజ్యం ప్రకటించింది (R — correct and explains A). R అనేది A కి సరైన వివరణ."),
+     "Both A and R correct. R precisely explains why Jan 26 (not the adoption date Nov 26) was chosen — to honour the Purna Swaraj declaration of 1930."),
 
-    # PYQ — APPSC Bilingual
+    # MCQ 55 (10-tuple, exam=APPSC)
     (6, 2,
-     "భారత రాజ్యాంగ దినం (Samvidhan Diwas / Constitution Day) ఏ తేదీన జరుపుకుంటారు? [APPSC Group 1]",
-     "జనవరి 26 / January 26",
-     "ఆగస్ట్ 15 / August 15",
-     "నవంబర్ 26 / November 26",
-     "డిసెంబర్ 9 / December 9",
+     "On which date is Constitution Day (Samvidhan Diwas) celebrated in India? [APPSC Group 1]\nతెలుగు: భారత రాజ్యాంగ దినం (Samvidhan Diwas) ఏ తేదీన జరుపుకుంటారు?",
+     "January 26 / జనవరి 26",
+     "August 15 / ఆగస్ట్ 15",
+     "November 26 / నవంబర్ 26 (correct — Constitution adoption)",
+     "December 9 / డిసెంబర్ 9",
      "c",
-     "నవంబర్ 26, 1949న భారత రాజ్యాంగం ఆమోదించారు. అందుకే నవంబర్ 26ను 'రాజ్యాంగ దినం (Samvidhan Diwas / Constitution Day)' గా 2015 నుండి జరుపుకుంటున్నారు. ఇది APPSC Group 1, Group 2 రెండిటిలో అడిగిన ప్రశ్న.",
+     "నవంబర్ 26 (Samvidhan Diwas / Constitution Day) — రాజ్యాంగం ఆమోదం పొందిన తేదీ. 2015 నుండి అధికారికంగా జరుపుకుంటున్నారు. జనవరి 26 = Republic Day (అమలు తేదీ).",
      "APPSC"),
 
-    # ══════════════════════════════════════════
-    # SECTION 7 — రాజ్యాంగ నిర్మాణ సభపై విమర్శలు (Bilingual)
-    # ══════════════════════════════════════════
+    # ══════════════ SECTION 7 — Criticism of Constituent Assembly ══════════════
 
-    # Easy — Bilingual
+    # MCQ 56
     (7, 1,
-     "రాజ్యాంగ నిర్మాణ సభ ప్రాతినిధ్యం లేనిదని విమర్శకులు ఎందుకు అంటారు?\n(Why do critics say the Constituent Assembly was not truly representative?)",
-     "మహిళా సభ్యులు లేరు కాబట్టి / No women members",
-     "ప్రజలు నేరుగా ఎన్నుకోలేదు; పరోక్ష ఎన్నిక జరిగింది / Not directly elected by people",
-     "ముస్లింలు పాల్గొనలేదు కాబట్టి / Muslims didn't participate",
-     "అంబేడ్కర్ పాల్గొనలేదు కాబట్టి / Ambedkar didn't participate",
+     "Why do critics say the Constituent Assembly was not truly representative?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభ ప్రాతినిధ్యం లేనిదని విమర్శకులు ఎందుకు అంటారు?",
+     "No women members / మహిళా సభ్యులు లేరు",
+     "Not directly elected by people; indirect election / ప్రజలు నేరుగా ఎన్నుకోలేదు; పరోక్ష ఎన్నిక (correct)",
+     "Muslims didn't participate / ముస్లింలు పాల్గొనలేదు",
+     "Ambedkar didn't participate / అంబేడ్కర్ పాల్గొనలేదు",
      "b",
-     "CA సభ్యులు ప్రజలు నేరుగా ఎన్నుకోలేదు — ప్రాంతీయ శాసనసభ సభ్యులు (MLAs) పరిమిత ఓటర్ల ద్వారా ఎన్నికించారు. సార్వత్రిక వయోజన ఓటు హక్కు ఆధారంగా ఎన్నికలు జరగలేదు — ఇదే ప్రధాన విమర్శ."),
+     "CA members were INDIRECTLY elected by Provincial Assembly members (using STV) — not directly by the public. Universal adult franchise was introduced only in 1952."),
 
+    # MCQ 57
     (7, 1,
-     "రాజ్యాంగ నిర్మాణ సభను 'Lawyer's Paradise' అని ఎందుకు అంటారు?\n(Why is the Constituent Assembly described as a 'Lawyer's Paradise'?)",
-     "చాలా మంది సభ్యులు న్యాయవాదులు కాబట్టి / Most members were lawyers",
-     "చాలా మంది సభ్యులు రైతులు కాబట్టి / Most members were farmers",
-     "న్యాయ వ్యవస్థ బాగా ఉంది కాబట్టి / Legal system was excellent",
-     "రాజ్యాంగం న్యాయ శాస్త్రంపై ఆధారపడింది కాబట్టి / Constitution based on jurisprudence",
+     "Why is the Constituent Assembly described as a 'Lawyer's Paradise'?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభను 'Lawyer's Paradise' అని ఎందుకు అంటారు?",
+     "Most members were lawyers / చాలా మంది సభ్యులు న్యాయవాదులు (correct)",
+     "Most members were farmers / రైతులు",
+     "Legal system was excellent / న్యాయ వ్యవస్థ బాగా ఉంది",
+     "Constitution based on jurisprudence / న్యాయ శాస్త్రంపై ఆధారం",
      "a",
-     "CA సభ్యుల్లో చాలా మంది న్యాయవాదులు అవడం వల్ల వాస్తవ ప్రజల ప్రాతినిధ్యం తక్కువగా ఉందని విమర్శకులు అంటారు. అందుకే దీన్ని 'Lawyer's Paradise' అని పిలిచారు."),
+     "Critic Ivor Jennings called CA a 'lawyer's paradise' because most members were trained lawyers — leading to lengthy, technical, legalistic constitutional drafting."),
 
-    # Moderate — Bilingual
+    # MCQ 58
     (7, 2,
-     "రాజ్యాంగ నిర్మాణ సభను 'one-party body' అని ఎవరు విమర్శించారు?\n(Who called the Constituent Assembly a 'one-party body'?)",
-     "మహమ్మద్ అలీ జిన్నా / Muhammad Ali Jinnah",
-     "సర్ విన్‌స్టన్ చర్చిల్ / Sir Winston Churchill",
-     "లార్డ్ మౌంట్‌బాటెన్ / Lord Mountbatten",
-     "సైమన్ కమిషన్ / Simon Commission",
+     "Who called the Constituent Assembly a 'one-party body'?\nతెలుగు: రాజ్యాంగ నిర్మాణ సభను 'one-party body' అని ఎవరు విమర్శించారు?",
+     "Muhammad Ali Jinnah / మహమ్మద్ అలీ జిన్నా",
+     "Sir Winston Churchill / సర్ విన్‌స్టన్ చర్చిల్ (Churchill)",
+     "Lord Mountbatten / లార్డ్ మౌంట్‌బాటెన్",
+     "Simon Commission / సైమన్ కమిషన్",
      "b",
-     "బ్రిటిష్ PM Sir Winston Churchill రాజ్యాంగ నిర్మాణ సభను 'one-party body' అని విమర్శించారు — చాలా మంది సభ్యులు కాంగ్రెస్ నుండే వచ్చారని. ఇది UPSC మరియు APPSC పరీక్షలలో తరచుగా అడిగే ప్రశ్న."),
+     "Winston Churchill criticized CA as a 'one-party body of one community' — citing Congress dominance and Muslim League boycott."),
 
+    # MCQ 59
     (7, 2,
-     "కింది వాటిలో రాజ్యాంగ నిర్మాణ సభపై విమర్శలు ఏవి నిజమైనవి?\n(1) ప్రజలు నేరుగా ఎన్నుకోలేదు\n(2) కాంగ్రెస్ ఆధిపత్యం ఉంది\n(3) సమయం మరియు డబ్బు వృధా అయింది\n(4) అంబేడ్కర్ CA లో పాల్గొనలేదు",
-     "1, 2 మరియు 3 మాత్రమే", "1 మరియు 2 మాత్రమే",
-     "1, 2, 3 మరియు 4 అన్నీ", "2 మరియు 4 మాత్రమే",
+     "Which of the following criticisms of the Constituent Assembly are valid?\n(1) Not directly elected by the people\n(2) Congress dominance\n(3) Time and money were wasted\n(4) Ambedkar did not participate in CA\nతెలుగు: కింది వాటిలో రాజ్యాంగ నిర్మాణ సభపై విమర్శలు ఏవి నిజమైనవి?\n(1) ప్రజలు నేరుగా ఎన్నుకోలేదు\n(2) కాంగ్రెస్ ఆధిపత్యం ఉంది\n(3) సమయం + డబ్బు వృధా అయింది\n(4) అంబేడ్కర్ CA లో పాల్గొనలేదు",
+     "1, 2 and 3 only / 1, 2 మరియు 3 మాత్రమే",
+     "1 and 2 only / 1 మరియు 2 మాత్రమే",
+     "All four / అన్నీ",
+     "2 and 4 only / 2 మరియు 4 మాత్రమే",
      "a",
-     "4 తప్పు — అంబేడ్కర్ CA లో పాల్గొన్నారు; అంతే కాదు Drafting Committee Chairman కూడా అయ్యారు. మిగతా 1 (నేరుగా ఎన్నుకోలేదు), 2 (Congress dominated), 3 (సమయం + ₹64 లక్షలు ఖర్చు) అన్నీ నిజమైన విమర్శలు."),
+     "Criticisms 1, 2, 3 are valid criticisms historically made. Statement 4 is FALSE — Ambedkar was a key member and chaired the Drafting Committee."),
 
-    # Tough — Bilingual
+    # MCQ 60
     (7, 3,
-     "రాజ్యాంగ నిర్మాణ సభపై 'అప్పు తెచ్చిన రాజ్యాంగం (Borrowed Constitution)' విమర్శ ఏ అర్థంలో వస్తుంది?\n(What does the criticism 'Borrowed Constitution' mean?)",
-     "CA ఇతర దేశాల నుండి నిధులు అప్పుగా తీసుకుంది / CA borrowed money from other countries",
-     "రాజ్యాంగం ఇతర దేశాల రాజ్యాంగాల నుండి చాలా అంశాలు స్వీకరించింది / Constitution borrowed provisions from other constitutions",
-     "CA బ్రిటిష్ వారు ఇచ్చిన రాజ్యాంగాన్ని అంగీకరించింది / CA accepted a British-given Constitution",
-     "1935 Act మొత్తాన్ని అప్పుగా తీసుకున్నారు / The entire 1935 Act was borrowed",
+     "What does the criticism 'Borrowed Constitution' mean?\nతెలుగు: 'Borrowed Constitution' విమర్శ ఏ అర్థంలో వస్తుంది?",
+     "CA borrowed money from other countries / CA ఇతర దేశాల నుండి నిధులు అప్పుగా",
+     "Constitution borrowed provisions from other constitutions / రాజ్యాంగం ఇతర దేశాల రాజ్యాంగాల నుండి అంశాలు స్వీకరించింది (correct)",
+     "CA accepted a British-given Constitution / CA బ్రిటిష్ ఇచ్చిన రాజ్యాంగం",
+     "Entire 1935 Act was borrowed / 1935 Act మొత్తం",
      "b",
-     "'Borrowed Constitution' విమర్శ అంటే భారత రాజ్యాంగం USA, UK, Ireland, Canada, Australia మొదలైన దేశాల రాజ్యాంగాల నుండి చాలా అంశాలు స్వీకరించింది అని. అయితే విమర్శకులు దీన్ని వ్యతిరేకంగా చూస్తారు, మద్దతుదారులు దీన్ని 'best of the world' అని సమర్థిస్తారు."),
+     "The 'Borrowed Constitution' criticism refers to the fact that the Indian Constitution drew provisions from many sources: UK (parliamentary), US (FRs), Ireland (DPSP), Canada (federalism), USSR (Fundamental Duties), etc."),
 
-    # Toughest — Bilingual
+    # MCQ 61
     (7, 4,
-     "Assertion (A): The Constituent Assembly has been criticised for being dominated by the Congress Party.\nReason (R): Most members of the Constituent Assembly belonged to the Indian National Congress, giving it a one-sided character that affected the Constitution's drafting.\n(రెండూ నిజమేనా? R అనేది A కి వివరణా?)",
-     "A మరియు R రెండూ సరైనవి, R అనేది A కి సరైన వివరణ / Both correct, R explains A",
-     "A మరియు R రెండూ సరైనవి, కానీ R వివరణ కాదు / Both correct, R doesn't explain",
-     "A సరైనది, R తప్పు / A correct, R wrong",
-     "A తప్పు, R సరైనది / A wrong, R correct",
+     "Assertion (A): The Constituent Assembly has been criticised for being dominated by the Congress Party.\nReason (R): Most members of the Constituent Assembly belonged to the Indian National Congress, giving it a one-sided character.\nతెలుగు: అభికథనం-కారణం సరైనవా?",
+     "Both correct, R explains A / రెండూ సరైనవి, R అనేది A కి సరైన వివరణ",
+     "Both correct, R doesn't explain / రెండూ సరైనవి, R వివరణ కాదు",
+     "A correct, R wrong / A సరైనది, R తప్పు",
+     "A wrong, R correct / A తప్పు, R సరైనది",
      "a",
-     "CA పై Congress ఆధిపత్యం ఉందని విమర్శ (A — true). ఎక్కువ మంది CA సభ్యులు Congress నుండి వచ్చారు — ఇది one-sided character ఇచ్చిందని విమర్శ (R — true and explains A). Churchill దీన్నే 'one-party body' అన్నారు."),
+     "Both A and R are correct. R precisely explains why CA was criticized as Congress-dominated — most members were Congress."),
 
-    # PYQ — UPSC Bilingual
+    # MCQ 62 (10-tuple, exam=UPSC)
     (7, 2,
-     "రాజ్యాంగ సభ ఎంత కాలం తీసుకుంది? / The Constituent Assembly of India took approximately how long to frame the Constitution and at what approximate cost? [UPSC Style]",
-     "1 year, 6 months, cost ₹30 lakhs",
-     "2 years, 11 months, 18 days, cost ₹64 lakhs",
-     "3 years, 4 months, cost ₹1 crore",
-     "2 years, 6 months, cost ₹50 lakhs",
+     "How long did the Constituent Assembly take to frame the Constitution and at what approximate cost? [UPSC Style]\nతెలుగు: రాజ్యాంగ సభ ఎంత కాలం + ఎంత ఖర్చు తీసుకుంది?",
+     "1 year, 6 months, ₹30 lakhs",
+     "2 years, 11 months, 18 days, ₹64 lakhs (correct)",
+     "3 years, 4 months, ₹1 crore",
+     "2 years, 6 months, ₹50 lakhs",
      "b",
-     "రాజ్యాంగ నిర్మాణ సభ 2 సంవత్సరాలు, 11 నెలలు, 18 రోజుల్లో పూర్తి చేసింది. దాదాపు ₹64 లక్షలు (64 lakh rupees) ఖర్చు అయింది. 166 రోజులు కూర్చున్నారు, 11 సమావేశాలు జరిగాయి. ఈ విమర్శ UPSC మరియు APPSC పరీక్షలలో తరచుగా వస్తుంది.",
+     "CA: 2 years, 11 months, 18 days (Dec 9, 1946 — Nov 26, 1949). Total cost ≈ ₹64 lakh. 11 sessions, 166 days of sittings.",
      "UPSC"),
 ]
 
