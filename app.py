@@ -981,6 +981,138 @@ def debug_polity():
         return jsonify({'error': str(e)})
 
 
+@app.route('/api/polity/reseed-missing')
+def polity_reseed_missing():
+    """Seed any polity chapter (1-90) that has no study_notes row OR zero MCQs.
+    Pass ?pin=<ADMIN_PIN>. Returns a per-chapter summary.
+    Use this when Railway startup gets cut off and chapters >67 never seed.
+    """
+    if (request.args.get('pin') or '') != ADMIN_PIN:
+        return jsonify({'error': 'unauthorized'}), 401
+    import importlib
+    ph = '%s' if USE_POSTGRES else '?'
+    seeded, skipped, errors = [], [], []
+    conn = get_db()
+    try:
+        for ch_num in range(1, 91):
+            mod_name = f'seed_polity_ch{ch_num}'
+            fn_suffix = f'polity_ch{ch_num}'
+            try:
+                # Check current state
+                nr = _compat_exec(conn,
+                    f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
+                    ('Indian_Polity', ch_num)).fetchone()
+                mcq_cnt = 0
+                if nr:
+                    nid = nr.get('id') if hasattr(nr, 'get') else nr[0]
+                    cr = _compat_exec(conn,
+                        f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}",
+                        (nid,)).fetchone()
+                    mcq_cnt = cr[0] if cr else 0
+                if nr and mcq_cnt > 0:
+                    skipped.append({'ch': ch_num, 'mcqs': mcq_cnt})
+                    continue
+                # Need to seed (or re-seed for missing MCQs)
+                mod = importlib.import_module(mod_name)
+                notes_fn = getattr(mod, f'_seed_{fn_suffix}_notes_inner')
+                mcqs_fn  = getattr(mod, f'_seed_{fn_suffix}_mcqs_inner')
+                notes_fn(conn, _compat_exec, row_to_dict, USE_POSTGRES, force=True)
+                conn.commit()
+                mcqs_fn(conn, _compat_exec, row_to_dict, USE_POSTGRES)
+                conn.commit()
+                # Verify after seed
+                nr2 = _compat_exec(conn,
+                    f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
+                    ('Indian_Polity', ch_num)).fetchone()
+                cnt2 = 0
+                if nr2:
+                    nid2 = nr2.get('id') if hasattr(nr2, 'get') else nr2[0]
+                    cr2 = _compat_exec(conn,
+                        f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}",
+                        (nid2,)).fetchone()
+                    cnt2 = cr2[0] if cr2 else 0
+                seeded.append({'ch': ch_num, 'mcqs': cnt2})
+            except ModuleNotFoundError:
+                errors.append({'ch': ch_num, 'error': 'seed file not found'})
+            except Exception as e:
+                errors.append({'ch': ch_num, 'error': str(e)[:200]})
+                try: conn.rollback()
+                except: pass
+    finally:
+        try: conn.close()
+        except: pass
+    return jsonify({
+        'summary': {
+            'seeded_count': len(seeded),
+            'skipped_count': len(skipped),
+            'error_count': len(errors)
+        },
+        'seeded': seeded,
+        'skipped': skipped,
+        'errors': errors
+    })
+
+
+@app.route('/api/polity/force-reseed')
+def polity_force_reseed():
+    """Force-wipe and re-seed a specific polity chapter from its current seed file.
+    Pass ?ch=N&pin=<ADMIN_PIN>. Use this to apply updated bilingual content.
+    """
+    if (request.args.get('pin') or '') != ADMIN_PIN:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        ch_num = int(request.args.get('ch', '0'))
+    except ValueError:
+        return jsonify({'error': 'invalid ch param'}), 400
+    if not (1 <= ch_num <= 90):
+        return jsonify({'error': 'ch must be 1-90'}), 400
+    import importlib
+    ph = '%s' if USE_POSTGRES else '?'
+    conn = get_db()
+    try:
+        mod_name = f'seed_polity_ch{ch_num}'
+        fn_suffix = f'polity_ch{ch_num}'
+        mod = importlib.import_module(mod_name)
+        notes_fn = getattr(mod, f'_seed_{fn_suffix}_notes_inner')
+        mcqs_fn  = getattr(mod, f'_seed_{fn_suffix}_mcqs_inner')
+        # Delete existing chapter MCQs first
+        nr = _compat_exec(conn,
+            f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
+            ('Indian_Polity', ch_num)).fetchone()
+        if nr:
+            nid = nr.get('id') if hasattr(nr, 'get') else nr[0]
+            _compat_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (nid,))
+            conn.commit()
+        # Re-seed with force=True so notes row is also refreshed
+        notes_fn(conn, _compat_exec, row_to_dict, USE_POSTGRES, force=True)
+        conn.commit()
+        mcqs_fn(conn, _compat_exec, row_to_dict, USE_POSTGRES)
+        conn.commit()
+        # Verify
+        nr2 = _compat_exec(conn,
+            f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
+            ('Indian_Polity', ch_num)).fetchone()
+        cnt = 0
+        if nr2:
+            nid2 = nr2.get('id') if hasattr(nr2, 'get') else nr2[0]
+            cr = _compat_exec(conn,
+                f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}",
+                (nid2,)).fetchone()
+            cnt = cr[0] if cr else 0
+        return jsonify({
+            'success': True,
+            'chapter': ch_num,
+            'mcqs_loaded': cnt
+        })
+    except Exception as e:
+        try: conn.rollback()
+        except: pass
+        return jsonify({'success': False, 'error': str(e)[:300]}), 500
+    finally:
+        try: conn.close()
+        except: pass
+
+
 @app.route('/api/pyq/reseed', methods=['POST'])
 def pyq_reseed():
     """Force-reload PYQ data from pyq_seed_data.json (clears old data first)."""
