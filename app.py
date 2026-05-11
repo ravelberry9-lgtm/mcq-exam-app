@@ -741,6 +741,7 @@ def _auto_seed_science():
         (15, 'seed_science_set15_bilingual', 15, 'Living Organisms II & GK',            'జీవులు II & సాధారణ అధ్యయనం'),
         (16, 'seed_science_set16_bilingual', 16, 'Plants & Plant Systems',              'మొక్కలు మరియు వృక్ష వ్యవస్థలు'),
         (17, 'seed_science_set17_bilingual', 17, 'Plants & Plant Systems II',           'మొక్కలు మరియు వృక్ష వ్యవస్థలు II'),
+        (18, 'seed_science_set18_bilingual', 18, 'Human System V',                      'మానవ వ్యవస్థ V'),
     ]
 
     # Wipe existing General_Science rows so we can re-seed cleanly
