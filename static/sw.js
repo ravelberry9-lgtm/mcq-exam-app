@@ -1,6 +1,6 @@
 // MCQ Exam App — Service Worker
 // Bump CACHE_VERSION on every deploy that changes templates/JS/CSS so phones pick up fresh content.
-const CACHE_VERSION = 'mcq-v4-2026-05-05';
+const CACHE_VERSION = 'mcq-v5-2026-05-05';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const STATIC_ASSETS = [
   '/static/manifest.json',
