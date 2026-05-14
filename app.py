@@ -5792,6 +5792,50 @@ def pyq_exam_data(session_id):
     return jsonify({'questions': questions, 'duration': config['duration'], 'total': len(questions)})
 
 
+# ─────────────────────────────────────────────
+# AI EXPLANATION ENDPOINT (Perplexity or DB fallback)
+# ─────────────────────────────────────────────
+@app.route('/api/ai-explain', methods=['POST'])
+def ai_explain():
+    data = request.json or {}
+    question    = data.get('question', '')
+    answer      = data.get('answer', '')
+    explanation = data.get('explanation', '')
+
+    api_key = os.environ.get('PERPLEXITY_API_KEY', '')
+    if not api_key:
+        # No API key — return stored DB explanation immediately
+        fallback = explanation or ('The correct answer is ' + answer + '.')
+        return jsonify({'text': fallback, 'source': 'db'})
+
+    prompt = (
+        f"Question: {question}\n"
+        f"Correct Answer: {answer}\n\n"
+        f"Explain in 2-3 clear sentences why this answer is correct. "
+        f"Be concise and educational."
+    )
+    try:
+        import requests as req
+        r = req.post(
+            'https://api.perplexity.ai/chat/completions',
+            headers={
+                'Authorization': f'Bearer {api_key}',
+                'Content-Type': 'application/json'
+            },
+            json={
+                'model': 'llama-3.1-sonar-small-128k-online',
+                'messages': [{'role': 'user', 'content': prompt}],
+                'max_tokens': 220
+            },
+            timeout=10
+        )
+        text = r.json()['choices'][0]['message']['content'].strip()
+        return jsonify({'text': text, 'source': 'perplexity'})
+    except Exception as e:
+        fallback = explanation or ('The correct answer is ' + answer + '.')
+        return jsonify({'text': fallback, 'source': 'db'})
+
+
 # ── Run init_db on import (works with gunicorn on Railway AND locally) ──
 init_db()
 
