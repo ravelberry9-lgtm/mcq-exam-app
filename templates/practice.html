@@ -8,7 +8,6 @@
 :root {
   --primary: #1a237e;
   --primary-light: #3949ab;
-  --accent: #ff6f00;
   --bg: #f0f2ff;
   --card: #ffffff;
   --text: #1a1a2e;
@@ -31,8 +30,6 @@ body {
   padding-bottom: 80px;
   overflow-x: hidden;
 }
-
-/* ── Top bar ── */
 .top-bar {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: #fff;
@@ -47,178 +44,83 @@ body {
 }
 .back-btn {
   background: rgba(255,255,255,0.18);
-  border: none;
-  color: #fff;
-  border-radius: 8px;
-  padding: 6px 10px;
-  font-size: 18px;
-  cursor: pointer;
-  line-height: 1;
-  flex-shrink: 0;
+  border: none; color: #fff;
+  border-radius: 8px; padding: 6px 10px;
+  font-size: 18px; cursor: pointer; line-height: 1; flex-shrink: 0;
 }
 .bar-title { flex: 1; min-width: 0; }
 .bar-title h2 { font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bar-title p  { font-size: 11px; opacity: 0.75; margin-top: 1px; }
 .score-chip {
   background: rgba(255,255,255,0.20);
-  border-radius: 20px;
-  padding: 4px 12px;
-  font-size: 12px;
-  font-weight: 700;
-  white-space: nowrap;
-  flex-shrink: 0;
+  border-radius: 20px; padding: 4px 12px;
+  font-size: 12px; font-weight: 700; white-space: nowrap; flex-shrink: 0;
 }
 .fullpage-btn {
   background: rgba(255,255,255,0.18);
-  border: none;
-  color: #fff;
-  border-radius: 8px;
-  padding: 6px 10px;
-  font-size: 16px;
-  cursor: pointer;
-  line-height: 1;
-  flex-shrink: 0;
-  transition: background 0.15s;
+  border: none; color: #fff;
+  border-radius: 8px; padding: 6px 10px;
+  font-size: 16px; cursor: pointer; line-height: 1; flex-shrink: 0;
 }
-.fullpage-btn:active { background: rgba(255,255,255,0.35); }
-
-/* ── Progress bar ── */
 .progress-wrap { background: rgba(255,255,255,0.2); height: 3px; }
 .progress-fill { height: 3px; background: #ffcc02; transition: width 0.4s ease; }
-
-/* ── Filter strip ── */
 .filter-strip {
-  display: flex;
-  gap: 8px;
-  padding: 10px 14px 6px;
-  overflow-x: auto;
-  scrollbar-width: none;
+  display: flex; gap: 8px; padding: 10px 14px 6px;
+  overflow-x: auto; scrollbar-width: none;
 }
 .filter-strip::-webkit-scrollbar { display: none; }
 .filter-chip {
-  background: var(--card);
-  border: 1.5px solid var(--border);
-  border-radius: 20px;
-  padding: 5px 14px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-muted);
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: all 0.15s;
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: 20px; padding: 5px 14px;
+  font-size: 12px; font-weight: 600; color: var(--text-muted);
+  cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: all 0.15s;
 }
 .filter-chip.active { background: var(--primary); border-color: var(--primary); color: #fff; }
-
-/* ── Loading ── */
 .loading-wrap { text-align: center; padding: 80px 20px; color: var(--text-muted); }
 .spinner { width: 38px; height: 38px; border: 4px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 14px; }
 @keyframes spin { to { transform: rotate(360deg); } }
-
-/* ── Intro card ── */
 .intro-card {
-  margin: 16px 14px;
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: var(--shadow);
-  text-align: center;
+  margin: 16px 14px; background: var(--card);
+  border-radius: var(--radius); padding: 20px;
+  box-shadow: var(--shadow); text-align: center;
 }
 .intro-icon { font-size: 40px; margin-bottom: 10px; }
 .intro-card h3 { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
 .intro-card p  { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 .start-btn {
-  display: inline-block;
-  margin-top: 16px;
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  padding: 12px 36px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(26,35,126,0.25);
+  display: inline-block; margin-top: 16px;
+  background: var(--primary); color: #fff; border: none;
+  border-radius: 50px; padding: 12px 36px;
+  font-size: 15px; font-weight: 700; cursor: pointer;
 }
-.start-btn:active { transform: scale(0.97); }
-
-/* ── Question card (normal mode) ── */
 .q-card {
-  margin: 14px 14px 0;
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  display: none;
+  margin: 14px 14px 0; background: var(--card);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  overflow: hidden; display: none;
 }
 .q-card.visible { display: block; }
-
-.q-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px 0;
-}
-.q-num {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.diff-badge {
-  font-size: 10px;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 10px;
-  text-transform: uppercase;
-}
+.q-meta { display: flex; align-items: center; gap: 8px; padding: 10px 14px 0; }
+.q-num { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.diff-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; }
 .diff-Easy   { background: #e8f5e9; color: #2e7d32; }
 .diff-Medium { background: #fff3e0; color: #e65100; }
 .diff-Hard   { background: #fce4ec; color: #ad1457; }
-
-.q-text {
-  padding: 10px 14px 12px;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.55;
-  color: var(--text);
-}
-
-/* ── Options ── */
+.q-text { padding: 10px 14px 12px; font-size: 15px; font-weight: 600; line-height: 1.55; color: var(--text); }
 .options-list { padding: 0 14px 14px; display: flex; flex-direction: column; gap: 9px; }
 .opt-btn {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: var(--neutral-bg);
-  border: 2px solid var(--border);
-  border-radius: 10px;
-  padding: 11px 13px;
-  cursor: pointer;
-  text-align: left;
-  font-size: 14px;
-  color: var(--text);
-  transition: all 0.18s;
-  line-height: 1.45;
-  -webkit-tap-highlight-color: transparent;
+  width: 100%; display: flex; align-items: flex-start; gap: 10px;
+  background: var(--neutral-bg); border: 2px solid var(--border);
+  border-radius: 10px; padding: 11px 13px; cursor: pointer;
+  text-align: left; font-size: 14px; color: var(--text);
+  transition: all 0.18s; line-height: 1.45; -webkit-tap-highlight-color: transparent;
 }
 .opt-btn:active:not(.locked) { transform: scale(0.985); }
 .opt-btn:hover:not(.locked) { border-color: var(--primary-light); background: #eef0fb; }
 .opt-key {
-  width: 26px;
-  height: 26px;
-  min-width: 26px;
-  border-radius: 50%;
-  background: var(--border);
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  transition: all 0.18s;
+  width: 26px; height: 26px; min-width: 26px;
+  border-radius: 50%; background: var(--border); color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; transition: all 0.18s;
 }
 .opt-text { flex: 1; padding-top: 3px; }
 .opt-btn.correct-ans { background: var(--correct-bg); border-color: var(--correct); }
@@ -226,15 +128,9 @@ body {
 .opt-btn.wrong-ans { background: var(--wrong-bg); border-color: var(--wrong); }
 .opt-btn.wrong-ans .opt-key { background: var(--wrong); color: #fff; }
 .opt-btn.locked { cursor: default; }
-
-/* ── Feedback panel (normal mode) ── */
 .feedback-panel {
-  margin: 0 14px;
-  padding: 12px 14px;
-  border-radius: 10px;
-  font-size: 13.5px;
-  line-height: 1.6;
-  display: none;
+  margin: 0 14px; padding: 12px 14px; border-radius: 10px;
+  font-size: 13.5px; line-height: 1.6; display: none;
   animation: fadeUp 0.22s ease;
 }
 .feedback-panel.show { display: block; }
@@ -243,43 +139,17 @@ body {
 .feedback-panel.wrong-fb   { background: var(--wrong-bg);   border: 1.5px solid #f48fb1; color: #880e4f; }
 .fb-label { font-weight: 800; font-size: 14px; margin-bottom: 5px; }
 .fb-explanation { color: var(--text); font-size: 13px; line-height: 1.65; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(0,0,0,0.08); }
-
-/* ── Swipe hint (normal mode) ── */
-.swipe-hint {
-  text-align: center;
-  padding: 10px 14px 4px;
-  font-size: 12px;
-  color: var(--text-muted);
-  display: none;
-}
+.swipe-hint { text-align: center; padding: 10px 14px 4px; font-size: 12px; color: var(--text-muted); display: none; }
 .swipe-hint.show { display: block; }
-
-/* ── Next button ── */
 .next-wrap { padding: 12px 14px 0; display: none; }
 .next-wrap.show { display: block; }
 .next-btn {
-  width: 100%;
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  padding: 13px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.15s;
+  width: 100%; background: var(--primary); color: #fff; border: none;
+  border-radius: 50px; padding: 13px; font-size: 15px; font-weight: 700; cursor: pointer;
 }
-.next-btn:active { background: var(--primary-light); }
-
-/* ── Summary card ── */
 .summary-card {
-  margin: 14px;
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 24px 20px;
-  text-align: center;
-  display: none;
+  margin: 14px; background: var(--card); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 24px 20px; text-align: center; display: none;
 }
 .summary-card.show { display: block; }
 .summary-icon { font-size: 52px; margin-bottom: 12px; }
@@ -294,128 +164,61 @@ body {
 .sa-btn { flex: 1; padding: 13px; border-radius: 50px; border: none; font-size: 14px; font-weight: 700; cursor: pointer; }
 .sa-home  { background: var(--neutral-bg); color: var(--primary); border: 2px solid var(--border); }
 .sa-retry { background: var(--primary); color: #fff; }
-
-/* ── No questions ── */
 .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 14px; }
 
-/* ═══════════════════════════════════════════════════════
-   FULL PAGE MODE
-═══════════════════════════════════════════════════════ */
-body.fp-mode {
-  overflow: hidden;
-  padding-bottom: 0;
-}
+/* ═══ FULL PAGE MODE ═══ */
+body.fp-mode { overflow: hidden; padding-bottom: 0; }
 body.fp-mode .filter-strip,
 body.fp-mode .feedback-panel,
 body.fp-mode .next-wrap,
 body.fp-mode .swipe-hint,
 body.fp-mode .summary-card,
-body.fp-mode #questionArea { display: none !important; }
-body.fp-mode .progress-wrap { display: none; }
+body.fp-mode #questionArea,
+body.fp-mode .progress-wrap { display: none !important; }
 
-/* Full-page overlay */
 .fp-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #0d1b4b;
-  z-index: 200;
-  flex-direction: column;
-  touch-action: pan-y;
-  user-select: none;
+  display: none; position: fixed; inset: 0;
+  background: #0d1b4b; z-index: 200;
+  flex-direction: column; touch-action: pan-y; user-select: none;
 }
 body.fp-mode .fp-overlay { display: flex; }
-
-/* FP top bar */
 .fp-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  background: rgba(0,0,0,0.3);
-  flex-shrink: 0;
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; background: rgba(0,0,0,0.3); flex-shrink: 0;
 }
-.fp-back {
-  background: rgba(255,255,255,0.15);
-  border: none;
-  color: #fff;
-  border-radius: 8px;
-  padding: 6px 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
+.fp-back { background: rgba(255,255,255,0.15); border: none; color: #fff; border-radius: 8px; padding: 6px 10px; font-size: 16px; cursor: pointer; }
 .fp-title { flex: 1; color: #fff; font-size: 13px; font-weight: 600; opacity: 0.85; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .fp-counter { color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700; white-space: nowrap; }
 .fp-score   { background: rgba(255,255,255,0.15); border-radius: 16px; padding: 4px 12px; color: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; }
-
-/* FP progress */
 .fp-progress { height: 3px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
 .fp-progress-fill { height: 3px; background: #ffcc02; transition: width 0.35s ease; }
-
-/* FP card viewport */
-.fp-viewport {
-  flex: 1;
-  overflow: hidden;
-  position: relative;
-}
-
-/* FP card wrapper (slides horizontally) */
+.fp-viewport { flex: 1; overflow: hidden; position: relative; }
 .fp-card-wrap {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 12px;
+  position: absolute; inset: 0; display: flex;
+  align-items: center; justify-content: center; padding: 10px 12px;
   transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease;
 }
 .fp-card-wrap.slide-out-left  { transform: translateX(-100%); opacity: 0; }
 .fp-card-wrap.slide-out-right { transform: translateX(100%);  opacity: 0; }
 .fp-card-wrap.slide-in-right  { transform: translateX(100%);  opacity: 0; }
 .fp-card-wrap.slide-in-left   { transform: translateX(-100%); opacity: 0; }
-
-/* FP card */
 .fp-card {
-  background: #fff;
-  border-radius: 18px;
+  background: #fff; border-radius: 18px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-  padding: 16px;
-  width: 100%;
-  max-width: 520px;
+  padding: 16px; width: 100%; max-width: 520px;
   max-height: calc(100vh - 160px);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
 }
-.fp-card::-webkit-scrollbar { width: 4px; }
-.fp-card::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
-
 .fp-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .fp-q-num { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
-.fp-q-text {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.55;
-  color: var(--text);
-  margin-bottom: 14px;
-}
+.fp-q-text { font-size: 15px; font-weight: 700; line-height: 1.55; color: var(--text); margin-bottom: 14px; }
 .fp-opts { display: flex; flex-direction: column; gap: 9px; }
 .fp-opt {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: var(--neutral-bg);
-  border: 2px solid var(--border);
-  border-radius: 10px;
-  padding: 11px 13px;
-  cursor: pointer;
-  text-align: left;
-  font-size: 14px;
-  color: var(--text);
-  transition: all 0.18s;
-  line-height: 1.45;
-  -webkit-tap-highlight-color: transparent;
+  width: 100%; display: flex; align-items: flex-start; gap: 10px;
+  background: var(--neutral-bg); border: 2px solid var(--border);
+  border-radius: 10px; padding: 11px 13px; cursor: pointer;
+  text-align: left; font-size: 14px; color: var(--text);
+  transition: all 0.18s; line-height: 1.45; -webkit-tap-highlight-color: transparent;
 }
 .fp-opt:active:not(.locked) { transform: scale(0.985); }
 .fp-opt:hover:not(.locked)  { border-color: var(--primary-light); background: #eef0fb; }
@@ -424,73 +227,29 @@ body.fp-mode .fp-overlay { display: flex; }
 .fp-opt.wrong-ans   { background: var(--wrong-bg);   border-color: var(--wrong); }
 .fp-opt.wrong-ans   .opt-key { background: var(--wrong); color: #fff; }
 .fp-opt.locked { cursor: default; }
-
-/* FP inline feedback */
 .fp-feedback {
-  margin-top: 12px;
-  padding: 11px 13px;
-  border-radius: 10px;
-  font-size: 13px;
-  line-height: 1.6;
-  display: none;
-  animation: fadeUp 0.22s ease;
+  margin-top: 12px; padding: 11px 13px; border-radius: 10px;
+  font-size: 13px; line-height: 1.6; display: none; animation: fadeUp 0.22s ease;
 }
 .fp-feedback.show { display: block; }
 .fp-feedback.correct-fb { background: var(--correct-bg); border: 1.5px solid #a5d6a7; color: #1b5e20; }
 .fp-feedback.wrong-fb   { background: var(--wrong-bg);   border: 1.5px solid #f48fb1; color: #880e4f; }
 .fp-fb-label { font-weight: 800; font-size: 14px; margin-bottom: 4px; }
 .fp-fb-exp   { color: var(--text); font-size: 12.5px; line-height: 1.6; margin-top: 5px; padding-top: 5px; border-top: 1px solid rgba(0,0,0,0.08); }
-
-/* FP navigation row */
 .fp-nav {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px 14px;
-  gap: 12px;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 16px 14px; gap: 12px;
 }
 .fp-nav-btn {
-  background: rgba(255,255,255,0.14);
-  border: 1.5px solid rgba(255,255,255,0.25);
-  color: #fff;
-  border-radius: 50px;
-  padding: 10px 22px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.15s;
-  min-width: 80px;
+  background: rgba(255,255,255,0.14); border: 1.5px solid rgba(255,255,255,0.25);
+  color: #fff; border-radius: 50px; padding: 10px 22px;
+  font-size: 15px; font-weight: 700; cursor: pointer; min-width: 80px;
 }
-.fp-nav-btn:active { background: rgba(255,255,255,0.28); }
 .fp-nav-btn:disabled { opacity: 0.3; cursor: default; }
-.fp-swipe-label {
-  color: rgba(255,255,255,0.45);
-  font-size: 11px;
-  text-align: center;
-  flex: 1;
-  line-height: 1.4;
-}
-
-/* FP skip badge on unanswered */
-.fp-skip-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: rgba(255,200,0,0.7);
-  display: inline-block;
-  margin-right: 4px;
-}
-
-/* FP summary */
+.fp-swipe-label { color: rgba(255,255,255,0.45); font-size: 11px; text-align: center; flex: 1; line-height: 1.4; }
 .fp-summary {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  padding: 30px 24px;
-  color: #fff;
-  text-align: center;
+  display: none; flex-direction: column; align-items: center; justify-content: center;
+  flex: 1; padding: 30px 24px; color: #fff; text-align: center;
 }
 .fp-summary.show { display: flex; }
 .fp-sum-icon  { font-size: 56px; margin-bottom: 12px; }
@@ -509,21 +268,17 @@ body.fp-mode .fp-overlay { display: flex; }
 </head>
 <body>
 
-<!-- Top Bar -->
 <div class="top-bar">
-  <button class="back-btn" onclick="history.back()">←</button>
+  <button class="back-btn" onclick="history.back()">&#8592;</button>
   <div class="bar-title">
     <h2>{{ topic.replace('_',' ') }}</h2>
-    <p>{{ folder.replace('_',' ') }} · Practice Mode</p>
+    <p>{{ folder.replace('_',' ') }} &middot; Practice Mode</p>
   </div>
   <div class="score-chip" id="scoreChip">0 / 0</div>
-  <button class="fullpage-btn" id="fpToggleBtn" onclick="enterFullPage()" title="Full page mode">⛶</button>
+  <button class="fullpage-btn" id="fpToggleBtn" onclick="enterFullPage()" title="Full page mode">&#x26F6;</button>
 </div>
-<div class="progress-wrap">
-  <div class="progress-fill" id="progressFill" style="width:0%"></div>
-</div>
+<div class="progress-wrap"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
 
-<!-- Filter strip -->
 <div class="filter-strip">
   <button class="filter-chip active" onclick="setFilter('all',this)">All</button>
   <button class="filter-chip" onclick="setFilter('Easy',this)">Easy</button>
@@ -531,40 +286,30 @@ body.fp-mode .fp-overlay { display: flex; }
   <button class="filter-chip" onclick="setFilter('Hard',this)">Hard</button>
 </div>
 
-<!-- Loading -->
 <div class="loading-wrap" id="loadingWrap">
   <div class="spinner"></div>
-  <div>Loading questions…</div>
+  <div>Loading questions&hellip;</div>
 </div>
 
-<!-- Intro -->
 <div class="intro-card" id="introCard" style="display:none">
-  <div class="intro-icon">🎯</div>
+  <div class="intro-icon">&#127919;</div>
   <h3 id="introTitle">Practice Mode</h3>
-  <p id="introDesc">Tap an option to instantly see if you're right or wrong, with an explanation.</p>
+  <p id="introDesc">Tap an option to instantly see right/wrong. Swipe left/right to navigate.</p>
   <button class="start-btn" onclick="startPractice()">Start Practice</button>
 </div>
 
-<!-- Question area (normal mode) -->
 <div id="questionArea"></div>
-
-<!-- Swipe hint (normal mode) -->
-<div class="swipe-hint" id="swipeHint">← swipe to navigate · tap to answer</div>
-
-<!-- Feedback panel (normal mode) -->
+<div class="swipe-hint" id="swipeHint">&#8592; swipe to navigate &middot; tap to answer</div>
 <div class="feedback-panel" id="feedbackPanel">
   <div class="fb-label" id="fbLabel"></div>
   <div id="fbExplanation" class="fb-explanation"></div>
 </div>
-
-<!-- Next button (normal mode) -->
 <div class="next-wrap" id="nextWrap">
-  <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
+  <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question &#8594;</button>
 </div>
 
-<!-- Summary (normal mode) -->
 <div class="summary-card" id="summaryCard">
-  <div class="summary-icon" id="summaryIcon">🏆</div>
+  <div class="summary-icon" id="summaryIcon">&#127942;</div>
   <div class="summary-title">Practice Complete!</div>
   <div class="summary-score" id="summaryScore">0%</div>
   <div class="summary-sub" id="summarySub">0 correct out of 0</div>
@@ -574,48 +319,404 @@ body.fp-mode .fp-overlay { display: flex; }
     <div class="stat-box"><div class="sv" style="color:#1a237e" id="sumTotal">0</div><div class="sl">Total</div></div>
   </div>
   <div class="summary-actions">
-    <button class="sa-btn sa-home"  onclick="window.location.href='/'">🏠 Home</button>
-    <button class="sa-btn sa-retry" onclick="restartPractice()">🔄 Retry</button>
+    <button class="sa-btn sa-home"  onclick="window.location.href='/'">&#127968; Home</button>
+    <button class="sa-btn sa-retry" onclick="restartPractice()">&#128260; Retry</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     FULL PAGE OVERLAY
-═══════════════════════════════════════════════════════ -->
+<!-- FULL PAGE OVERLAY -->
 <div class="fp-overlay" id="fpOverlay">
-
-  <!-- FP top bar -->
   <div class="fp-bar">
-    <button class="fp-back" onclick="exitFullPage()">✕</button>
+    <button class="fp-back" onclick="exitFullPage()">&#10005;</button>
     <div class="fp-title">{{ topic.replace('_',' ') }}</div>
     <div class="fp-counter" id="fpCounter">1 / 1</div>
     <div class="fp-score" id="fpScore">0 / 0</div>
   </div>
   <div class="fp-progress"><div class="fp-progress-fill" id="fpProgressFill" style="width:0%"></div></div>
-
-  <!-- FP viewport (card slides here) -->
   <div class="fp-viewport" id="fpViewport">
     <div class="fp-card-wrap" id="fpCardWrap">
-      <div class="fp-card" id="fpCard">
-        <!-- injected dynamically -->
-      </div>
+      <div class="fp-card" id="fpCard"></div>
     </div>
   </div>
-
-  <!-- FP nav row -->
   <div class="fp-nav">
-    <button class="fp-nav-btn" id="fpPrevBtn" onclick="fpNavigate(-1)">← Prev</button>
+    <button class="fp-nav-btn" id="fpPrevBtn" onclick="fpNavigate(-1)">&#8592; Prev</button>
     <div class="fp-swipe-label">swipe left / right<br>to navigate</div>
-    <button class="fp-nav-btn" id="fpNextBtn" onclick="fpNavigate(1)">Next →</button>
+    <button class="fp-nav-btn" id="fpNextBtn" onclick="fpNavigate(1)">Next &#8594;</button>
   </div>
-
-  <!-- FP summary (shown at end) -->
   <div class="fp-summary" id="fpSummary">
-    <div class="fp-sum-icon"  id="fpSumIcon">🏆</div>
+    <div class="fp-sum-icon"  id="fpSumIcon">&#127942;</div>
     <div class="fp-sum-title">Practice Complete!</div>
     <div class="fp-sum-pct"   id="fpSumPct">0%</div>
     <div class="fp-sum-sub"   id="fpSumSub">0 correct out of 0</div>
     <div class="fp-sum-stats">
       <div class="fp-sum-stat"><div class="sv" style="color:#4caf50" id="fpSumCorrect">0</div><div class="sl">Correct</div></div>
       <div class="fp-sum-stat"><div class="sv" style="color:#ef5350" id="fpSumWrong">0</div><div class="sl">Wrong</div></div>
-      <div class="fp-sum-stat"><div class="sv" style="color:#ffcc02" id="fpSumSkipped">0</div><
+      <div class="fp-sum-stat"><div class="sv" style="color:#ffcc02" id="fpSumSkipped">0</div><div class="sl">Skipped</div></div>
+    </div>
+    <div class="fp-sum-btns">
+      <button class="fp-sum-btn fp-sum-home"  onclick="window.location.href='/'">&#127968; Home</button>
+      <button class="fp-sum-btn fp-sum-retry" onclick="fpRestart()">&#128260; Retry</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const FOLDER = '{{ folder }}';
+const TOPIC  = '{{ topic }}';
+
+let allQuestions = [];
+let filteredQs   = [];
+let currentIdx   = 0;
+let correct      = 0;
+let wrong        = 0;
+let answered     = 0;
+let filterMode   = 'all';
+let started      = false;
+let qStates      = {};
+let inFpMode     = false;
+let fpIdx        = 0;
+let isAnimating  = false;
+
+// ── Load questions ─────────────────────────────────────────────────────────
+async function load() {
+  const ctrl  = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 12000);
+  try {
+    const r = await fetch('/api/practice-questions/' + FOLDER + '/' + TOPIC, { signal: ctrl.signal });
+    clearTimeout(timer);
+    if (!r.ok) throw new Error('Server error ' + r.status);
+    const d = await r.json();
+    allQuestions = d.questions || [];
+    document.getElementById('loadingWrap').style.display = 'none';
+    if (!allQuestions.length) {
+      document.getElementById('questionArea').innerHTML = '<div class="empty-state">No questions found for this topic.</div>';
+      document.getElementById('fpToggleBtn').style.display = 'none';
+      return;
+    }
+    showIntro();
+  } catch(e) {
+    clearTimeout(timer);
+    const msg = (e.name === 'AbortError') ? 'Request timed out &mdash; check your connection.' : 'Failed to load questions. Please try again.';
+    document.getElementById('loadingWrap').innerHTML =
+      '<p style="color:red;padding:30px;text-align:center">' + msg +
+      '<br><br><button onclick="load()" style="padding:10px 24px;background:#1a237e;color:#fff;border:none;border-radius:50px;font-size:14px;cursor:pointer">Retry</button></p>';
+  }
+}
+
+function showIntro() {
+  document.getElementById('introTitle').textContent = TOPIC.replace(/_/g,' ') + ' Practice';
+  document.getElementById('introDesc').textContent  = allQuestions.length + ' questions ready. Tap to answer, swipe to navigate.';
+  document.getElementById('introCard').style.display = '';
+}
+
+// ── Filters ────────────────────────────────────────────────────────────────
+function setFilter(mode, btn) {
+  filterMode = mode;
+  document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (started) { applyFilter(); restartPractice(); }
+}
+
+function applyFilter() {
+  filteredQs = (filterMode === 'all') ? [...allQuestions]
+    : allQuestions.filter(q => q.difficulty === filterMode);
+  for (let i = filteredQs.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [filteredQs[i], filteredQs[j]] = [filteredQs[j], filteredQs[i]];
+  }
+}
+
+// ── Start / Restart ────────────────────────────────────────────────────────
+function startPractice() {
+  started = true;
+  applyFilter();
+  if (!filteredQs.length) { alert('No questions match the selected filter.'); return; }
+  currentIdx = 0; correct = 0; wrong = 0; answered = 0; qStates = {};
+  document.getElementById('introCard').style.display = 'none';
+  document.getElementById('summaryCard').classList.remove('show');
+  buildCards();
+  showQuestion(0);
+  document.getElementById('swipeHint').classList.add('show');
+}
+
+function restartPractice() {
+  document.getElementById('summaryCard').classList.remove('show');
+  document.getElementById('questionArea').innerHTML = '';
+  startPractice();
+}
+
+// ── Build cards ────────────────────────────────────────────────────────────
+function buildCards() {
+  const area = document.getElementById('questionArea');
+  area.innerHTML = '';
+  filteredQs.forEach((q, idx) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = 'qc_' + idx;
+    const opts = [{key:'A',text:q.option_a},{key:'B',text:q.option_b},{key:'C',text:q.option_c},{key:'D',text:q.option_d}];
+    const dc = q.difficulty === 'Easy' ? 'diff-Easy' : q.difficulty === 'Hard' ? 'diff-Hard' : 'diff-Medium';
+    card.innerHTML =
+      '<div class="q-meta"><span class="q-num">Q ' + (idx+1) + ' of ' + filteredQs.length + '</span><span class="diff-badge ' + dc + '">' + q.difficulty + '</span></div>' +
+      '<div class="q-text">' + escHtml(q.question_text) + '</div>' +
+      '<div class="options-list" id="opts_' + idx + '">' +
+      opts.map(o =>
+        '<button class="opt-btn" id="opt_' + idx + '_' + o.key + '" onclick="selectOption(' + idx + ',\'' + o.key + '\',\'' + escAttr(q.correct_answer) + '\',\'' + escAttr(q.explanation||'') + '\')">' +
+        '<span class="opt-key">' + o.key + '</span><span class="opt-text">' + escHtml(o.text) + '</span></button>'
+      ).join('') + '</div>';
+    area.appendChild(card);
+  });
+}
+
+function showQuestion(idx) {
+  document.querySelectorAll('.q-card').forEach(c => c.classList.remove('visible'));
+  document.getElementById('feedbackPanel').classList.remove('show');
+  document.getElementById('nextWrap').classList.remove('show');
+  if (idx >= filteredQs.length) { showSummary(); return; }
+  currentIdx = idx;
+  const card = document.getElementById('qc_' + idx);
+  if (card) card.classList.add('visible');
+  const st = qStates[idx];
+  if (st && st.answered) restoreNormalState(idx, st);
+  updateProgress(idx);
+}
+
+function restoreNormalState(idx, st) {
+  const optList = document.getElementById('opts_' + idx);
+  if (!optList) return;
+  optList.querySelectorAll('.opt-btn').forEach(b => b.classList.add('locked'));
+  const cb = document.getElementById('opt_' + idx + '_' + st.chosen);
+  if (cb) cb.classList.add(st.isCorrect ? 'correct-ans' : 'wrong-ans');
+  if (!st.isCorrect) {
+    const kb = document.getElementById('opt_' + idx + '_' + filteredQs[idx].correct_answer);
+    if (kb) kb.classList.add('correct-ans');
+  }
+  const panel = document.getElementById('feedbackPanel');
+  panel.className = 'feedback-panel show ' + (st.isCorrect ? 'correct-fb' : 'wrong-fb');
+  document.getElementById('fbLabel').textContent = st.isCorrect ? '✅ Correct!' : '❌ Incorrect!';
+  document.getElementById('fbExplanation').textContent = st.explanation || '';
+  document.getElementById('nextWrap').classList.add('show');
+  document.getElementById('nextBtn').textContent = (idx + 1 >= filteredQs.length) ? 'See Results \u{1F3C6}' : 'Next Question →';
+}
+
+function selectOption(idx, chosen, correctAns, explanation) {
+  const optList = document.getElementById('opts_' + idx);
+  if (!optList) return;
+  const buttons = optList.querySelectorAll('.opt-btn');
+  if (buttons[0].classList.contains('locked')) return;
+  buttons.forEach(b => b.classList.add('locked'));
+  const isCorrect = (chosen === correctAns);
+  if (!qStates[idx]) { answered++; if (isCorrect) correct++; else wrong++; }
+  qStates[idx] = { answered: true, chosen, isCorrect, explanation };
+  const cb = document.getElementById('opt_' + idx + '_' + chosen);
+  if (cb) cb.classList.add(isCorrect ? 'correct-ans' : 'wrong-ans');
+  if (!isCorrect) {
+    const kb = document.getElementById('opt_' + idx + '_' + correctAns);
+    if (kb) kb.classList.add('correct-ans');
+  }
+  const panel = document.getElementById('feedbackPanel');
+  panel.className = 'feedback-panel show ' + (isCorrect ? 'correct-fb' : 'wrong-fb');
+  document.getElementById('fbLabel').textContent = isCorrect ? '✅ Correct!' : '❌ Incorrect!';
+  document.getElementById('fbExplanation').textContent = explanation || (isCorrect ? 'Well done!' : 'Review the correct answer above.');
+  document.getElementById('nextWrap').classList.add('show');
+  document.getElementById('nextBtn').textContent = (idx + 1 >= filteredQs.length) ? 'See Results \u{1F3C6}' : 'Next Question →';
+  updateScore();
+  panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+
+function nextQuestion() { currentIdx++; showQuestion(currentIdx); window.scrollTo({top:0,behavior:'smooth'}); }
+function prevQuestion() { if (currentIdx > 0) { currentIdx--; showQuestion(currentIdx); window.scrollTo({top:0,behavior:'smooth'}); } }
+
+function updateScore() { document.getElementById('scoreChip').textContent = correct + ' / ' + answered; }
+function updateProgress(idx) {
+  const pct = filteredQs.length > 0 ? (idx / filteredQs.length) * 100 : 0;
+  document.getElementById('progressFill').style.width = pct + '%';
+  updateScore();
+}
+
+function showSummary() {
+  document.querySelectorAll('.q-card').forEach(c => c.classList.remove('visible'));
+  document.getElementById('feedbackPanel').classList.remove('show');
+  document.getElementById('nextWrap').classList.remove('show');
+  document.getElementById('swipeHint').classList.remove('show');
+  const total = filteredQs.length;
+  const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+  const icon = pct >= 80 ? '\u{1F3C6}' : pct >= 60 ? '\u{1F44D}' : pct >= 40 ? '\u{1F4DA}' : '\u{1F4AA}';
+  document.getElementById('summaryIcon').textContent  = icon;
+  document.getElementById('summaryScore').textContent = pct + '%';
+  document.getElementById('summarySub').textContent   = correct + ' correct out of ' + total;
+  document.getElementById('sumCorrect').textContent   = correct;
+  document.getElementById('sumWrong').textContent     = wrong;
+  document.getElementById('sumTotal').textContent     = total;
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('scoreChip').textContent    = correct + ' / ' + total;
+  document.getElementById('summaryCard').classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ═══ FULL PAGE MODE ═══════════════════════════════════════════════════════
+function enterFullPage() {
+  if (!started || !filteredQs.length) { startPractice(); setTimeout(_enterFP, 80); return; }
+  _enterFP();
+}
+function _enterFP() {
+  inFpMode = true;
+  document.body.classList.add('fp-mode');
+  fpIdx = currentIdx;
+  document.getElementById('fpToggleBtn').textContent = '⊞';
+  document.getElementById('fpSummary').classList.remove('show');
+  document.getElementById('fpViewport').style.display  = '';
+  document.querySelector('.fp-nav').style.display      = '';
+  renderFpCard(fpIdx, null);
+}
+function exitFullPage() {
+  inFpMode = false;
+  document.body.classList.remove('fp-mode');
+  document.getElementById('fpToggleBtn').textContent = '⛶';
+  currentIdx = fpIdx;
+  showQuestion(currentIdx);
+}
+
+function renderFpCard(idx, animDir) {
+  if (idx >= filteredQs.length) { showFpSummary(); return; }
+  const q   = filteredQs[idx];
+  const opts = [{key:'A',text:q.option_a},{key:'B',text:q.option_b},{key:'C',text:q.option_c},{key:'D',text:q.option_d}];
+  const dc  = q.difficulty === 'Easy' ? 'diff-Easy' : q.difficulty === 'Hard' ? 'diff-Hard' : 'diff-Medium';
+  const st  = qStates[idx];
+  const card = document.getElementById('fpCard');
+  card.innerHTML =
+    '<div class="fp-meta"><span class="fp-q-num">Q ' + (idx+1) + ' of ' + filteredQs.length + '</span><span class="diff-badge ' + dc + '">' + q.difficulty + '</span></div>' +
+    '<div class="fp-q-text">' + escHtml(q.question_text) + '</div>' +
+    '<div class="fp-opts" id="fpOpts">' +
+    opts.map(o =>
+      '<button class="fp-opt" id="fpOpt_' + o.key + '" onclick="fpSelectOption(\'' + o.key + '\',\'' + escAttr(q.correct_answer) + '\',\'' + escAttr(q.explanation||'') + '\')">' +
+      '<span class="opt-key">' + o.key + '</span><span class="opt-text">' + escHtml(o.text) + '</span></button>'
+    ).join('') + '</div>' +
+    '<div class="fp-feedback" id="fpFeedback"><div class="fp-fb-label" id="fpFbLabel"></div><div class="fp-fb-exp" id="fpFbExp"></div></div>';
+
+  if (st && st.answered) {
+    document.querySelectorAll('#fpOpts .fp-opt').forEach(b => b.classList.add('locked'));
+    const ce = document.getElementById('fpOpt_' + st.chosen);
+    if (ce) ce.classList.add(st.isCorrect ? 'correct-ans' : 'wrong-ans');
+    if (!st.isCorrect) {
+      const ke = document.getElementById('fpOpt_' + filteredQs[idx].correct_answer);
+      if (ke) ke.classList.add('correct-ans');
+    }
+    const fb = document.getElementById('fpFeedback');
+    fb.className = 'fp-feedback show ' + (st.isCorrect ? 'correct-fb' : 'wrong-fb');
+    document.getElementById('fpFbLabel').textContent = st.isCorrect ? '✅ Correct!' : '❌ Incorrect!';
+    document.getElementById('fpFbExp').textContent   = st.explanation || '';
+  }
+
+  document.getElementById('fpCounter').textContent     = (idx+1) + ' / ' + filteredQs.length;
+  document.getElementById('fpScore').textContent       = correct + ' / ' + answered;
+  document.getElementById('fpProgressFill').style.width = ((idx / filteredQs.length) * 100) + '%';
+  document.getElementById('fpPrevBtn').disabled        = (idx === 0);
+  document.getElementById('fpNextBtn').textContent     = (idx + 1 >= filteredQs.length) ? 'Results \u{1F3C6}' : 'Next →';
+
+  if (animDir) {
+    const wrap = document.getElementById('fpCardWrap');
+    const cls  = animDir === 1 ? 'slide-in-right' : 'slide-in-left';
+    wrap.classList.add(cls);
+    requestAnimationFrame(() => wrap.classList.remove(cls));
+  }
+  fpIdx = idx;
+}
+
+function fpSelectOption(chosen, correctAns, explanation) {
+  const optList = document.getElementById('fpOpts');
+  if (!optList) return;
+  const buttons = optList.querySelectorAll('.fp-opt');
+  if (buttons[0].classList.contains('locked')) return;
+  buttons.forEach(b => b.classList.add('locked'));
+  const isCorrect = (chosen === correctAns);
+  const idx = fpIdx;
+  if (!qStates[idx]) { answered++; if (isCorrect) correct++; else wrong++; }
+  qStates[idx] = { answered: true, chosen, isCorrect, explanation };
+  const ce = document.getElementById('fpOpt_' + chosen);
+  if (ce) ce.classList.add(isCorrect ? 'correct-ans' : 'wrong-ans');
+  if (!isCorrect) {
+    const ke = document.getElementById('fpOpt_' + correctAns);
+    if (ke) ke.classList.add('correct-ans');
+  }
+  const fb = document.getElementById('fpFeedback');
+  fb.className = 'fp-feedback show ' + (isCorrect ? 'correct-fb' : 'wrong-fb');
+  document.getElementById('fpFbLabel').textContent = isCorrect ? '✅ Correct!' : '❌ Incorrect!';
+  document.getElementById('fpFbExp').textContent   = explanation || (isCorrect ? 'Well done!' : 'Review the correct answer above.');
+  document.getElementById('fpScore').textContent   = correct + ' / ' + answered;
+  document.getElementById('scoreChip').textContent = correct + ' / ' + answered;
+  fb.scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+
+function fpNavigate(dir) {
+  if (isAnimating) return;
+  const next = fpIdx + dir;
+  if (next < 0) return;
+  if (next >= filteredQs.length) { showFpSummary(); return; }
+  isAnimating = true;
+  const wrap = document.getElementById('fpCardWrap');
+  wrap.classList.add(dir === 1 ? 'slide-out-left' : 'slide-out-right');
+  setTimeout(() => {
+    wrap.classList.remove('slide-out-left', 'slide-out-right');
+    renderFpCard(next, dir);
+    isAnimating = false;
+  }, 280);
+}
+
+function showFpSummary() {
+  const total   = filteredQs.length;
+  const skipped = total - answered;
+  const pct     = total > 0 ? Math.round((correct / total) * 100) : 0;
+  const icon    = pct >= 80 ? '\u{1F3C6}' : pct >= 60 ? '\u{1F44D}' : pct >= 40 ? '\u{1F4DA}' : '\u{1F4AA}';
+  document.getElementById('fpViewport').style.display  = 'none';
+  document.querySelector('.fp-nav').style.display      = 'none';
+  document.getElementById('fpSummary').classList.add('show');
+  document.getElementById('fpSumIcon').textContent     = icon;
+  document.getElementById('fpSumPct').textContent      = pct + '%';
+  document.getElementById('fpSumSub').textContent      = correct + ' correct out of ' + total;
+  document.getElementById('fpSumCorrect').textContent  = correct;
+  document.getElementById('fpSumWrong').textContent    = wrong;
+  document.getElementById('fpSumSkipped').textContent  = skipped;
+  document.getElementById('fpProgressFill').style.width = '100%';
+}
+
+function fpRestart() {
+  document.getElementById('fpSummary').classList.remove('show');
+  document.getElementById('fpViewport').style.display = '';
+  document.querySelector('.fp-nav').style.display     = '';
+  currentIdx = 0; correct = 0; wrong = 0; answered = 0; qStates = {};
+  applyFilter();
+  buildCards();
+  renderFpCard(0, null);
+}
+
+// ═══ SWIPE (both modes) ════════════════════════════════════════════════════
+let txStart = 0, tyStart = 0, ttStart = 0;
+document.addEventListener('touchstart', e => {
+  txStart = e.touches[0].clientX;
+  tyStart = e.touches[0].clientY;
+  ttStart = Date.now();
+}, { passive: true });
+document.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - txStart;
+  const dy = e.changedTouches[0].clientY - tyStart;
+  if (Math.abs(dx) < 45) return;
+  if (Math.abs(dy) > Math.abs(dx) * 0.75) return;
+  if (Date.now() - ttStart > 600) return;
+  if (inFpMode) { fpNavigate(dx < 0 ? 1 : -1); }
+  else if (started) { if (dx < 0) nextQuestion(); else prevQuestion(); }
+}, { passive: true });
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+function escHtml(t) {
+  if (!t) return '';
+  return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function escAttr(t) {
+  if (!t) return '';
+  return String(t).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;').replace(/\n/g,' ');
+}
+
+load();
+</script>
+</body>
+</html>
