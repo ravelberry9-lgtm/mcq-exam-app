@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Living Organisms — Complete Study Notes | General Science</title>
+<style>
+:root{--pri:#0d2346;--acc:#1565c0;--acc2:#0288d1;--bg:#e8f0fe;--bg2:#f0f7ff;--en-border:#1565c0;--te-border:#6a1b9a;--shock:#b71c1c;--exam:#e65100;--mem:#1b5e20;--hi:#4a148c;}
+@page{size:A4;margin:14mm 13mm 14mm 13mm;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:13.8pt;line-height:1.45;color:#1a1a2e;background:#fff;}
+.page{width:184mm;min-height:267mm;padding:6mm 0;position:relative;}
+.page-break{page-break-after:always;break-after:page;}
+.cover{background:linear-gradient(135deg,var(--pri) 0%,#1a237e 60%,#283593 100%);color:#fff;border-radius:6px;padding:12mm 12mm 9mm;text-align:center;margin-bottom:5mm;}
+.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:11.2pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3mm;}
+.cover h1{font-size:27.0pt;font-weight:800;letter-spacing:-0.3px;margin-bottom:2mm;}
+.cover h1 span{color:#90caf9;}
+.cover h2{font-size:15.8pt;font-weight:400;color:#bbdefb;margin-bottom:2mm;}
+.cover-te{font-size:14.2pt;color:#90caf9;margin-bottom:2mm;}
+.cover-meta{display:flex;justify-content:center;gap:14px;font-size:11.7pt;color:#bbdefb;flex-wrap:wrap;margin-top:2mm;}
+.cover-meta span{background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 10px;}
+.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:4px 10px;font-size:11.2pt;color:#e3f2fd;margin-top:3mm;line-height:1.8;}
+.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:14.2pt;font-weight:700;margin:4mm 0 2mm;letter-spacing:0.3px;display:flex;justify-content:space-between;align-items:center;}
+.sec-head .te{font-size:12.0pt;font-weight:400;color:#90caf9;}
+.sub-head{background:var(--bg);color:var(--pri);padding:3px 8px;border-radius:3px;font-size:13.0pt;font-weight:700;margin:3mm 0 1.5mm;border-left:4px solid var(--acc);}
+.bilingual{border:1px solid #b0bec5;border-radius:5px;margin-bottom:3mm;overflow:hidden;}
+.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:5px 8px;font-size:12.8pt;line-height:1.5;}
+.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:5px 8px;font-size:12.5pt;line-height:1.5;color:#4a148c;}
+.lang-tag{display:inline-block;font-size:10.2pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-bottom:3px;}
+.bi-en .lang-tag{background:var(--en-border);color:#fff;}
+.bi-te .lang-tag{background:var(--te-border);color:#fff;}
+.shock-box{border:2px solid var(--shock);background:#fff3f3;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:12.5pt;}
+.shock-box .shock-title{color:var(--shock);font-weight:700;font-size:12.8pt;margin-bottom:3px;}
+.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:12.5pt;}
+.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:12.8pt;margin-bottom:3px;}
+.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:12.5pt;}
+.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:12.8pt;margin-bottom:3px;}
+.highlight-box{border:2px solid var(--hi);background:#f3e5f5;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:12.5pt;}
+.exam-tag{background:#b71c1c;color:#fff;font-size:9.8pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px;}
+table{width:100%;border-collapse:collapse;font-size:12.5pt;margin-bottom:3mm;}
+th{background:var(--pri);color:#fff;padding:4px 7px;text-align:left;font-weight:600;font-size:12.0pt;}
+td{padding:3px 7px;border:1px solid #cfd8dc;vertical-align:top;}
+tr:nth-child(even) td{background:#f0f7ff;}
+.te-td{display:block;color:#6a1b9a;font-size:11.4pt;margin-top:1px;}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:3mm;}
+.pyq-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:3mm;}
+.pyq-item{border:1px solid #b0bec5;border-radius:4px;padding:5px 7px;font-size:12.0pt;background:#fff;}
+.pyq-q{color:#0d2346;font-weight:600;margin-bottom:3px;}
+.pyq-a{color:#1b5e20;font-size:11.7pt;}
+.pyq-num{background:var(--pri);color:#fff;font-size:10.2pt;padding:1px 5px;border-radius:3px;margin-right:4px;font-weight:700;}
+.te{display:block;color:#6a1b9a;font-size:11.1pt;margin-top:2px;}
+.no-break{break-inside:avoid;page-break-inside:avoid;}
+.recap-box{border:2px solid var(--pri);border-radius:5px;background:#e8f0fe;padding:6px 10px;margin-bottom:3mm;columns:2;column-gap:5mm;}
+.recap-item{font-size:12.0pt;margin-bottom:3px;break-inside:avoid;line-height:1.4;}
+.ri-num{background:var(--pri);color:#fff;font-size:9.8pt;padding:1px 5px;border-radius:50%;margin-right:4px;font-weight:700;}
+.pn{position:absolute;bottom:3mm;right:6mm;font-size:10.5pt;color:#90a4ae;font-weight:600;}
+table{break-inside:avoid;page-break-inside:avoid;max-width:100%;table-layout:fixed;word-wrap:break-word;overflow-wrap:break-word;}
+tr{break-inside:avoid;page-break-inside:avoid;}
+thead{display:table-header-group;}
+td,th{word-wrap:break-word;overflow-wrap:break-word;}
+.bilingual{break-inside:avoid;page-break-inside:avoid;}
+.shock-box{break-inside:avoid;page-break-inside:avoid;}
+.exam-alert{break-inside:avoid;page-break-inside:avoid;}
+.memory-box{break-inside:avoid;page-break-inside:avoid;}
+.highlight-box{break-inside:avoid;page-break-inside:avoid;}
+.cols-2{break-inside:avoid;page-break-inside:avoid;}
+.cols-3{break-inside:avoid;page-break-inside:avoid;}
+.sec-head{break-after:avoid;page-break-after:avoid;}
+.sub-head{break-after:avoid;page-break-after:avoid;}
+@media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: white !important; padding: 0 !important; margin: 0 !important; font-size: 11pt; }
+    table { page-break-inside: avoid !important; break-inside: avoid !important; width: 100% !important; }
+    thead { display: table-header-group !important; }
+    tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    td, th { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .section { page-break-inside: avoid !important; break-inside: avoid !important; box-shadow: none !important; border: 1px solid #ccc !important; margin-bottom: 12px !important; }
+    .memory-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .exam-trap { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .key-fact { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .recap-item { page-break-inside: avoid !important; break-inside: avoid !important; }
+    h2, h3, h4 { page-break-after: avoid !important; break-after: avoid !important; }
+    .toc { display: none !important; }
+    .cols-2, .cols-3, .recap-grid { display: block !important; }
+    .recap-item { display: inline-block !important; width: 45% !important; margin: 4px !important; vertical-align: top !important; }
+    th { background: #2e7d32 !important; color: white !important; }
+    tr:nth-child(even) { background: #f5f5f5 !important; }
+  }.cols-2{grid-template-columns:1fr 1fr;}table{font-size:11pt;}.page{width:184mm;}}
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1: COVER + INTRODUCTION ==================== -->
+<div class="page page-break">
+<div class="cover">
+  <div class="cover-tag">General Science &middot; APPSC / TSPSC Complete Notes</div>
+  <h1>Living <span>Organisms</span></h1>
+  <h2>Complete Study Notes &mdash; Bacteria to Mammals, Evolution to Ecology</h2>
+  <div class="cover-te">జీవులు &mdash; సమగ్ర అధ్యయన గమనికలు &middot; ద్విభాష</div>
+  <div class="cover-meta">
+    <span>15 Pages A4</span>
+    <span>NCERT Class 9 &amp; 10</span>
+    <span>Bilingual English &amp; Telugu</span>
+    <span>APPSC / TSPSC / UPSC / SSC</span>
+  </div>
+  <div class="topics-bar">
+    Topics: Introduction &middot; Microbes &amp; Bacteria &middot; Viruses &middot; Symbiosis &middot; Lower Invertebrates &middot; Worms &middot; Insects &amp; Arthropods &middot; Amphibians &amp; Reptiles &middot; Aquatic Life &middot; Birds &middot; Mammals &middot; Microbiology Pioneers &middot; Evolution Sequence &middot; Quick Reference Summary<br>
+    విషయాలు: పరిచయం &middot; సూక్ష్మజీవులు &middot; వైరస్‌లు &middot; సహజీవనం &middot; నిమ్న అకశేరుకాలు &middot; పురుగులు &middot; కీటకాలు &middot; ఉభయచరాలు &amp; సరీసృపాలు &middot; జల జీవులు &middot; పక్షులు &middot; క్షీరదాలు &middot; పరిణామ క్రమం
+  </div>
+</div>
+
+<div class="sec-head">Introduction: What Are Living Organisms? <span class="te">జీవులు అంటే ఏమిటి?</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; Characteristics of Life</span>
+  A living organism is any entity that exhibits all the fundamental characteristics of life. According to NCERT, the seven essential characteristics that distinguish living beings from non-living matter are: <strong>(1) Nutrition</strong> — obtaining and using food for energy and growth; <strong>(2) Respiration</strong> — releasing energy from food through oxidation; <strong>(3) Growth</strong> — an irreversible increase in mass and number; <strong>(4) Reproduction</strong> — producing offspring of the same kind; <strong>(5) Excretion</strong> — eliminating metabolic waste products; <strong>(6) Response to stimuli</strong> — reacting to changes in the environment; and <strong>(7) Movement</strong> — either of the whole body or of parts. Viruses are a unique exception: they are non-living crystals outside a host cell, but replicate inside host cells, placing them on the boundary of life.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; జీవుల లక్షణాలు</span>
+  ఒక జీవి జీవితం యొక్క అన్ని ప్రాథమిక లక్షణాలను కలిగి ఉంటుంది. NCERT ప్రకారం జీవులను నిర్జీవ పదార్థం నుండి వేరుచేసే ఏడు ముఖ్యమైన లక్షణాలు: <strong>(1) పోషణ</strong> &mdash; శక్తికి ఆహారం తీసుకోవడం; <strong>(2) శ్వాసక్రియ</strong> &mdash; ఆహారం నుండి శక్తి విడుదల; <strong>(3) పెరుగుదల</strong> &mdash; మొత్తంలో తిరిగి మార్చలేని పెరుగుదల; <strong>(4) జననం</strong> &mdash; సంతానాన్ని ఉత్పత్తి చేయడం; <strong>(5) విసర్జన</strong> &mdash; వ్యర్థ పదార్థాల తొలగింపు; <strong>(6) ప్రేరణకు స్పందన</strong> &mdash; పర్యావరణ మార్పులకు స్పందించడం; <strong>(7) చలనం</strong> &mdash; శరీరం లేదా భాగాల కదలిక. వైరస్‌లు మినహాయింపు &mdash; అతిధేయి కణం వెలుపల నిర్జీవంగా, లోపల ప్రతికృతి చేస్తాయి.
+  </div>
+</div>
+
+<div class="sub-head">Five Kingdom Classification &mdash; పంచ జగత్తు వర్గీకరణ</div>
+
+<table>
+<thead>
+<tr><th>Kingdom<span class="te-td">జగత్తు</span></th><th>Cell Type<span class="te-td">కణ రకం</span></th><th>Nutrition Mode<span class="te-td">పోషణ విధానం</span></th><th>Examples<span class="te-td">ఉదాహరణలు</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Monera</strong><span class="te-td">మొనెరా</span></td><td>Prokaryotic (no nucleus)<span class="te-td">ప్రొకారియోట్</span></td><td>Autotrophic / Heterotrophic<span class="te-td">స్వపోషక / పరపోషక</span></td><td>Bacteria, Cyanobacteria<span class="te-td">బ్యాక్టీరియా, సైనోబ్యాక్టీరియా</span></td></tr>
+<tr><td><strong>Protista</strong><span class="te-td">ప్రోటిస్టా</span></td><td>Eukaryotic, unicellular<span class="te-td">యూకారియోట్, ఏకకణం</span></td><td>Autotrophic / Heterotrophic<span class="te-td">రెండు విధాలు</span></td><td>Amoeba, Paramecium, Euglena<span class="te-td">అమీబా, పారామీషియం</span></td></tr>
+<tr><td><strong>Fungi</strong><span class="te-td">శిలీంధ్రాలు</span></td><td>Eukaryotic, multicellular (mostly)<span class="te-td">యూకారియోట్, బహుకణ</span></td><td>Saprotrophic (absorptive)<span class="te-td">మృతోపజీవి</span></td><td>Mushroom, Penicillium, Yeast<span class="te-td">పుట్టగొడుగులు, పెన్సిలియమ్</span></td></tr>
+<tr><td><strong>Plantae</strong><span class="te-td">వృక్ష జగత్తు</span></td><td>Eukaryotic, cell wall (cellulose)<span class="te-td">సెల్యులోజ్ కణ గోడ</span></td><td>Autotrophic (photosynthesis)<span class="te-td">కిరణజన్య సంయోగం</span></td><td>Algae, Mosses, Ferns, Flowering plants<span class="te-td">పుష్పించే మొక్కలు</span></td></tr>
+<tr><td><strong>Animalia</strong><span class="te-td">జంతు జగత్తు</span></td><td>Eukaryotic, no cell wall<span class="te-td">కణ గోడ లేదు</span></td><td>Heterotrophic (ingestive)<span class="te-td">పరపోషక</span></td><td>Insects, Fish, Reptiles, Mammals<span class="te-td">కీటకాలు, చేపలు, క్షీరదాలు</span></td></tr>
+</tbody>
+</table>
+
+<div class="memory-box no-break">
+<div class="mem-title">Memory Aid &mdash; Five Kingdoms in Order</div>
+The five kingdoms from simplest to most complex are: <strong>Monera</strong> (no nucleus), <strong>Protista</strong> (single-celled eukaryotes), <strong>Fungi</strong> (absorb food externally), <strong>Plantae</strong> (make their own food), and <strong>Animalia</strong> (ingest and digest food). A useful sentence to remember the order is: "<strong>M</strong>y <strong>P</strong>et <strong>F</strong>ish <strong>P</strong>lays <strong>A</strong>round."
+<span class="te-td">మొనెరా &rarr; ప్రోటిస్టా &rarr; శిలీంధ్రాలు &rarr; వృక్షాలు &rarr; జంతువులు. సరళత నుండి సంక్లిష్టతకు పెరిగే క్రమం.</span>
+</div>
+<div class="pn">Page 1</div>
+</div>
+
+<!-- ==================== PAGE 2: BACTERIA ==================== -->
+<div class="page page-break">
+<div class="sec-head">Microbes: Bacteria &mdash; Discovery, Structure &amp; Classification <span class="te">బ్యాక్టీరియా &mdash; ఆవిష్కరణ, నిర్మాణం</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; Bacteria Basics</span>
+  Bacteria are prokaryotic microorganisms belonging to Kingdom Monera. They were first observed in 1674 by the Dutch scientist <strong>Anton van Leeuwenhoek</strong>, who described moving microbes under his self-made microscope and named them <em>animalcules</em> ("little animals"). He is regarded as the <strong>Father of Microbiology</strong>. Bacteria have a simple cell lacking a true nucleus; genetic material is a single circular DNA molecule in the cytoplasm (nucleoid). The cell wall is made of <strong>peptidoglycan</strong>. Based on the Gram stain test, bacteria are classified into two groups: <strong>Gram-positive</strong> bacteria (e.g., <em>Staphylococcus aureus</em>) have a thick peptidoglycan wall and teichoic acid; they retain the violet dye and appear purple. <strong>Gram-negative</strong> bacteria (e.g., <em>Escherichia coli</em>) have a thin peptidoglycan layer and an outer membrane; they lose the violet dye and appear red/pink. All bacteria carry out <strong>respiration</strong> &mdash; aerobic (using oxygen), anaerobic (without oxygen), or facultative (both). Bacteria do <strong>not</strong> produce hormones; they regulate through chemical signalling called quorum sensing. Important examples: <em>Rhizobium</em> fixes atmospheric nitrogen in legume root nodules; <em>Cyanobacteria</em> (blue-green algae) are photosynthetic bacteria that fix nitrogen; <em>Lactobacillus</em> ferments milk into curd.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; బ్యాక్టీరియా ప్రాథమికాలు</span>
+  బ్యాక్టీరియా మొనెరా జగత్తుకు చెందిన ప్రొకారియోటిక్ సూక్ష్మజీవులు. వీటిని 1674లో <strong>ఆంటోనీ వాన్ లీవెన్‌హుక్</strong> మొదట గమనించారు &mdash; "animalcules" అని పేరు పెట్టారు; ఆయన <strong>సూక్ష్మజీవశాస్త్ర పితామహుడు</strong>. నిజమైన కేంద్రకం లేదు; జన్యు పదార్థం నేరుగా సైటోప్లాజంలో ఉంటుంది. కణ గోడ <strong>పెప్టిడోగ్లైకాన్</strong>తో నిర్మించబడింది. గ్రామ్ స్టెయిన్ ఆధారంగా రెండు రకాలు: <strong>గ్రామ్-పాజిటివ్</strong> (మందమైన కణ గోడ; వైలెట్ రంగు నిలుపుకుంటాయి; ఉదా: <em>Staphylococcus aureus</em>); <strong>గ్రామ్-నెగటివ్</strong> (పాతలమైన కణ గోడ + బాహ్య పొర; ఎరుపు/గులాబీ రంగు; ఉదా: <em>E. coli</em>). అన్ని బ్యాక్టీరియాలు శ్వాసిస్తాయి. హార్మోన్లు ఉత్పత్తి చేయవు. <em>Rhizobium</em> = చిక్కుడు మొక్కల వేరు గడ్డలలో నత్రజని స్థిరీకరణ; <em>Cyanobacteria</em> = కిరణజన్య సంయోగం చేసే బ్యాక్టీరియా; <em>Lactobacillus</em> = పాల పెరుగు.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Feature<span class="te-td">లక్షణం</span></th><th>Gram-Positive<span class="te-td">గ్రామ్-పాజిటివ్</span></th><th>Gram-Negative<span class="te-td">గ్రామ్-నెగటివ్</span></th></tr>
+</thead>
+<tbody>
+<tr><td>Cell wall thickness<span class="te-td">కణ గోడ మందం</span></td><td>Thick peptidoglycan (20&ndash;80 nm)<span class="te-td">మందమైన</span></td><td>Thin peptidoglycan (2&ndash;7 nm) + outer membrane<span class="te-td">పాతలమైన + బాహ్య పొర</span></td></tr>
+<tr><td>Gram stain colour<span class="te-td">రంగు</span></td><td>Purple / Violet<span class="te-td">వైలెట్</span></td><td>Red / Pink<span class="te-td">ఎరుపు</span></td></tr>
+<tr><td>Teichoic acid<span class="te-td">టెకోయిక్ ఆమ్లం</span></td><td>Present<span class="te-td">ఉంది</span></td><td>Absent<span class="te-td">లేదు</span></td></tr>
+<tr><td>Antibiotic sensitivity<span class="te-td">యాంటీబయోటిక్</span></td><td>Penicillin-sensitive (usually)<span class="te-td">సున్నితం</span></td><td>Resistant to many antibiotics<span class="te-td">నిరోధకత</span></td></tr>
+<tr><td>Examples<span class="te-td">ఉదాహరణలు</span></td><td><em>Staphylococcus aureus</em>, <em>Streptococcus</em>, <em>Bacillus</em><span class="te-td">స్టెఫిలోకాకస్</span></td><td><em>E. coli</em>, <em>Salmonella</em>, <em>Rhizobium</em>, <em>Cyanobacteria</em><span class="te-td">ఈ.కోలి, రైజోబియం</span></td></tr>
+</tbody>
+</table>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; Important Bacteria</span>
+  <strong>Rhizobium</strong> lives in root nodules of leguminous plants (peas, beans, lentils) and converts atmospheric nitrogen (N&#8322;) into ammonia (NH&#8323;) that the plant uses for protein synthesis &mdash; this is called biological nitrogen fixation. <strong>Cyanobacteria</strong> (formerly blue-green algae) are the oldest known oxygen-producers; they photosynthesise and fix nitrogen simultaneously. <em>Anabaena</em> and <em>Nostoc</em> are common examples used in biofertilisers. <strong>Yeast</strong> (<em>Saccharomyces cerevisiae</em>), a fungus, ferments glucose anaerobically: glucose &rarr; ethanol + CO&#8322;. The CO&#8322; released causes bread dough to rise. <strong>Penicillin</strong>, the world's first antibiotic, was discovered by Alexander Fleming in 1928 from the mould <em>Penicillium notatum</em>; it kills Gram-positive bacteria by inhibiting peptidoglycan synthesis.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; ముఖ్యమైన బ్యాక్టీరియాలు</span>
+  <strong>Rhizobium</strong> చిక్కుడు మొక్కల వేరు గడ్డలలో ఉండి వాతావరణ నత్రజనిని (N&#8322;) అమ్మోనియాగా (NH&#8323;) మారుస్తుంది &mdash; జైవిక నత్రజని స్థిరీకరణ. <strong>Cyanobacteria</strong> = కిరణజన్య సంయోగం + నత్రజని స్థిరీకరణ; జీవ ఎరువులలో ఉపయోగపడతాయి. <strong>ఈస్ట్</strong> అనాయేరోబిక్‌గా గ్లూకోజ్‌ను ఇథనాల్ + CO&#8322;గా మారుస్తుంది; CO&#8322; రొట్టె పిండిని ఉబ్బిస్తుంది. <strong>పెన్సిలిన్</strong> = 1928లో అలెగ్జాండర్ ఫ్లెమింగ్ <em>Penicillium notatum</em> బూజు నుండి కనుగొన్నారు; గ్రామ్-పాజిటివ్ బ్యాక్టీరియాను చంపుతుంది.
+  </div>
+</div>
+
+<div class="exam-alert no-break">
+<div class="ea-title">Exam Trap &mdash; Hormones in Bacteria</div>
+Bacteria do <strong>not</strong> produce hormones. They regulate population behaviour through <strong>quorum sensing</strong> &mdash; chemical signals released by individual bacteria that accumulate as the population grows. Hormones are found only in multicellular eukaryotes (animals and plants). Candidates often incorrectly assign hormones to bacteria; the correct answer is always that bacteria are hormone-free.
+<span class="te-td">బ్యాక్టీరియాలో హార్మోన్లు ఉండవు. అవి క్వోరమ్ సెన్సింగ్ ద్వారా నియంత్రించబడతాయి. హార్మోన్లు బహుకణ యూకారియోట్‌లలో మాత్రమే ఉంటాయి.</span>
+</div>
+<div class="pn">Page 2</div>
+</div>
+
+<!-- ==================== PAGE 3: VIRUSES ==================== -->
+<div class="page page-break">
+<div class="sec-head">Viruses &mdash; Structure, Genome &amp; Replication <span class="te">వైరస్‌లు &mdash; నిర్మాణం, జన్యువు, ప్రతికృతి</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; What Is a Virus?</span>
+  A virus is an acellular (non-cellular) entity that occupies the boundary between living and non-living matter. Outside a host cell, a virus exists as an inert crystalline particle with no metabolism. Inside a host cell, it hijacks the cell's machinery to replicate itself, which is why viruses are considered to exhibit the property of life &mdash; the ability to <strong>duplicate themselves</strong>. A virus consists of a <strong>protein coat (capsid)</strong> surrounding a core of either <strong>DNA or RNA, never both</strong>. Some viruses (enveloped viruses) also have a lipid envelope derived from the host cell membrane. Viruses cannot grow, metabolise food, or produce energy independently; they are obligate intracellular parasites. The tobacco mosaic virus (TMV), the first virus ever discovered (Ivanovsky 1892; Stanley crystallised it in 1935), contains <strong>RNA as its genetic material</strong>. Similarly, HIV, influenza, polio, dengue, Hepatitis C, and COVID-19 are RNA viruses.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; వైరస్ అంటే ఏమిటి?</span>
+  వైరస్ అకణ (కణ నిర్మాణం లేని) అస్తిత్వం; జీవ-నిర్జీవ సరిహద్దులో ఉంటుంది. అతిధేయి కణం వెలుపల జడమైన స్ఫటికం; లోపల కణ యంత్రాంగాన్ని వాడుకుని <strong>ప్రతికృతి చేసుకుంటుంది</strong>. నిర్మాణం: <strong>ప్రోటీన్ కోటు (క్యాప్సిడ్)</strong> + లోపల <strong>DNA లేదా RNA (రెండూ కాదు)</strong>. స్వతంత్రంగా జీవించలేవు; తప్పనిసరిగా అతిధేయి కణంలోనే పెరుగుతాయి. తంబాకు మొజాయిక్ వైరస్ (TMV) &mdash; మొదట కనుగొన్న వైరస్ &mdash; <strong>RNA మాత్రమే</strong> జన్యు పదార్థంగా కలిగి ఉంటుంది. HIV, ఇన్ఫ్లుయెంజా, పోలియో, డెంగ్యూ, COVID-19 కూడా RNA వైరస్‌లే.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Feature<span class="te-td">లక్షణం</span></th><th>DNA Viruses<span class="te-td">DNA వైరస్‌లు</span></th><th>RNA Viruses<span class="te-td">RNA వైరస్‌లు</span></th></tr>
+</thead>
+<tbody>
+<tr><td>Genetic material<span class="te-td">జన్యు పదార్థం</span></td><td>DNA<span class="te-td">DNA</span></td><td>RNA<span class="te-td">RNA</span></td></tr>
+<tr><td>Mutation rate<span class="te-td">మ్యూటేషన్ రేటు</span></td><td>Low (DNA polymerase proofreads)<span class="te-td">తక్కువ</span></td><td>High (no proofreading)<span class="te-td">అధికం</span></td></tr>
+<tr><td>Replication site<span class="te-td">ప్రతికృతి స్థానం</span></td><td>Usually nucleus<span class="te-td">కేంద్రకం</span></td><td>Usually cytoplasm<span class="te-td">సైటోప్లాజం</span></td></tr>
+<tr><td>Special enzyme<span class="te-td">ప్రత్యేక ఎంజైమ్</span></td><td>&mdash;<span class="te-td">&mdash;</span></td><td>Retroviruses use reverse transcriptase (RNA &rarr; DNA)<span class="te-td">రివర్స్ ట్రాన్స్‌స్క్రిప్టేజ్</span></td></tr>
+<tr><td>Examples<span class="te-td">ఉదాహరణలు</span></td><td>Herpes, Smallpox, Papilloma (HPV), Hepatitis B<span class="te-td">హెర్పెస్, మశూచి</span></td><td>TMV, HIV, Influenza, Polio, Dengue, COVID-19, Hepatitis C<span class="te-td">TMV, HIV, పోలియో</span></td></tr>
+</tbody>
+</table>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; HIV and AIDS</span>
+  <strong>HIV (Human Immunodeficiency Virus)</strong> is a retrovirus with an RNA genome. It uses the enzyme <strong>reverse transcriptase</strong> to convert its RNA into DNA inside the host cell, then integrates into the host's chromosomes. HIV specifically targets <strong>CD4+ T-helper lymphocytes</strong>, the central coordinators of the immune response. As HIV destroys these cells, the immune system collapses &mdash; a condition called <strong>AIDS (Acquired Immunodeficiency Syndrome)</strong>. With a depleted immune system, the body becomes vulnerable to opportunistic infections such as tuberculosis, <em>Pneumocystis</em> pneumonia, and fungal infections. HIV is transmitted through blood, sexual contact, and mother-to-child during childbirth or breastfeeding. HIV is considered "alive" because it can auto-reproduce inside host cells.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; HIV మరియు AIDS</span>
+  <strong>HIV</strong> ఒక రెట్రోవైరస్; RNA జన్యువు. <strong>రివర్స్ ట్రాన్స్‌స్క్రిప్టేజ్</strong> ద్వారా RNA ను DNA గా మారుస్తుంది; అతిధేయి క్రోమోజోమ్‌లలో చేరిపోతుంది. HIV <strong>CD4+ T-సహాయక లింఫోసైట్‌లను</strong> నాశనం చేస్తుంది &mdash; ఫలితంగా రోగనిరోధక వ్యవస్థ కూలిపోతుంది; ఈ స్థితిని <strong>AIDS</strong> అంటారు. AIDS వల్ల TB, శిలీంధ్ర సోంకులు వంటి అవకాశవాద వ్యాధులు వస్తాయి. HIV రక్తం, లైంగిక సంపర్కం, ప్రసవం ద్వారా వ్యాపిస్తుంది. HIV అతిధేయిలో స్వయంగా పునరుత్పత్తి చేయగలిగినందున జీవిగా పరిగణించబడుతుంది.
+  </div>
+</div>
+
+<div class="exam-alert no-break">
+<div class="ea-title">Key Fact &mdash; Virus Genome is ALWAYS Either DNA or RNA, Never Both</div>
+Every virus carries genetic material in the form of either DNA or RNA &mdash; never both in the same particle. Tobacco Mosaic Virus (TMV), the first virus to be crystallised, carries only RNA. This fact is among the most frequently tested in APPSC and TSPSC examinations. RNA viruses mutate far faster than DNA viruses because RNA polymerase lacks the proofreading ability of DNA polymerase &mdash; this is why influenza vaccines must be reformulated each year.
+<span class="te-td">వైరస్‌లో జన్యు పదార్థం DNA లేదా RNA (రెండూ కాదు). TMV &mdash; RNA మాత్రమే. RNA వైరస్‌లు వేగంగా మ్యూటేట్ అవుతాయి కాబట్టి ఫ్లూ వ్యాక్సిన్ ప్రతి సంవత్సరం మార్చాలి.</span>
+</div>
+<div class="pn">Page 3</div>
+</div>
+
+<!-- ==================== PAGE 4: SYMBIOSIS ==================== -->
+<div class="page page-break">
+<div class="sec-head">Symbiosis &mdash; Lichen, Mycorrhiza &amp; Rhizobium <span class="te">సహజీవనం &mdash; లైకెన్, మైకోరైజా, రైజోబియం</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; Symbiosis Defined</span>
+  Symbiosis is a close, long-term interaction between two different species. When both species benefit from the association, it is called <strong>mutualism</strong>. Three of the most important mutualistic associations tested in competitive examinations are the lichen, mycorrhiza, and Rhizobium partnerships. <strong>Lichens</strong> are composite organisms formed by the intimate symbiosis of <strong>algae and fungi</strong>. The alga (phycobiont) performs photosynthesis and supplies carbohydrates; the fungus (mycobiont) provides physical structure, water, and minerals. Lichens are pioneer organisms that colonise bare rock surfaces and are extremely sensitive to air pollution &mdash; their presence or absence serves as a reliable <strong>bioindicator of air quality</strong>. <strong>Mycorrhiza</strong> is the mutualistic association between <strong>fungi and the roots of higher plants</strong>. The fungal hyphae extend far into the soil, greatly increasing the root's surface area for water and phosphorus absorption. The plant reciprocates by supplying photosynthetic sugars to the fungus. Approximately 90 percent of all land plant species form mycorrhizal associations; without them, terrestrial plant life as we know it would not be possible. <strong>Rhizobium</strong> is a nitrogen-fixing bacterium that lives in root nodules of leguminous plants such as peas, beans, and groundnuts. It converts atmospheric nitrogen gas into ammonia, enriching the soil and reducing the need for chemical fertilisers.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; సహజీవనం వివరణ</span>
+  సహజీవనం అంటే రెండు వేర్వేరు జాతుల మధ్య సన్నిహిత, దీర్ఘకాలిక సంబంధం. రెండు జాతులు ప్రయోజనం పొందినప్పుడు దాన్ని <strong>పరస్పర సహజీవనం (mutualism)</strong> అంటారు. <strong>లైకెన్‌లు</strong> = <strong>శైవలం + శిలీంధ్రం</strong> సహజీవనం; శైవలం ఆహారం అందిస్తే, శిలీంధ్రం ఆశ్రయం + నీరు + ఖనిజాలు ఇస్తుంది. లైకెన్‌లు గాలి నాణ్యతకు <strong>జీవ సూచికలు</strong>. <strong>మైకోరైజా</strong> = <strong>శిలీంధ్రం + ఉన్నత మొక్కల వేర్లు</strong>; శిలీంధ్రం నీరు + భాస్వరం శోషిస్తుంది; మొక్క శర్కరలు ఇస్తుంది. ~90% భూమి మొక్కలకు మైకోరైజా అనుబంధం ఉంటుంది. <strong>Rhizobium</strong> = చిక్కుడు వేరు గడ్డలలో నత్రజని స్థిరీకరించే బ్యాక్టీరియం; నేల సారాన్ని పెంచుతుంది.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Type<span class="te-td">రకం</span></th><th>Partners<span class="te-td">భాగస్వాములు</span></th><th>Benefit<span class="te-td">ప్రయోజనం</span></th><th>Special Feature<span class="te-td">ప్రత్యేకత</span></th><th>Example<span class="te-td">ఉదాహరణ</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Lichen</strong><span class="te-td">లైకెన్</span></td><td>Algae + Fungi<span class="te-td">శైవలం + శిలీంధ్రం</span></td><td>Alga: food; Fungus: shelter, water<span class="te-td">ఆహారం + ఆశ్రయం</span></td><td>Pioneer on bare rock; air pollution bioindicator<span class="te-td">వాయు కాలుష్య సూచిక</span></td><td><em>Parmelia</em>, <em>Usnea</em><span class="te-td">పార్మీలియా</span></td></tr>
+<tr><td><strong>Mycorrhiza</strong><span class="te-td">మైకోరైజా</span></td><td>Fungi + Plant roots<span class="te-td">శిలీంధ్రం + వేర్లు</span></td><td>Fungus: sugars; Plant: water + phosphorus<span class="te-td">P శోషణ</span></td><td>90% land plants depend on it<span class="te-td">90% మొక్కలు</span></td><td>Most forest trees<span class="te-td">అడవి చెట్లు</span></td></tr>
+<tr><td><strong>Rhizobium</strong><span class="te-td">రైజోబియం</span></td><td>Bacteria + Legume root nodule<span class="te-td">బ్యాక్టీరియా + చిక్కుడు</span></td><td>Bacteria: sugars; Plant: fixed nitrogen<span class="te-td">నత్రజని స్థిరీకరణ</span></td><td>Reduces need for chemical fertilisers<span class="te-td">రసాయన ఎరువు అవసరం తగ్గుతుంది</span></td><td>Pea, bean, groundnut<span class="te-td">వేరుసెనగ, బఠాణీ</span></td></tr>
+</tbody>
+</table>
+
+<div class="memory-box no-break">
+<div class="mem-title">Memory &mdash; Symbiosis Trio</div>
+Three mutualistic associations to always remember: <strong>Lichen</strong> = Fungus + Alga (bare rocks, bark; pioneer); <strong>Mycorrhiza</strong> = Fungus + Plant Root (phosphorus uptake; 90% of land plants); <strong>Rhizobium</strong> = Bacteria + Legume Root Nodule (nitrogen fixation). All three are mutualistic, meaning both partners benefit. In all three cases, the fungus or bacterium gains carbohydrates while providing a mineral service to its partner.
+<span class="te-td">లైకెన్ = శిలీంధ్రం+శైవలం; మైకోరైజా = శిలీంధ్రం+వేరు; రైజోబియం = బ్యాక్టీరియా+చిక్కుడు వేరు. మూడూ పరస్పర ప్రయోజనం.</span>
+</div>
+
+<div class="highlight-box no-break">
+<strong>Phycology, Mycology, and Related Study Fields:</strong> The study of algae is called <strong>Phycology</strong> (from Greek <em>phukos</em> = seaweed). The study of fungi is <strong>Mycology</strong>. The study of bees is <strong>Melittology</strong>. The study of mites and ticks is <strong>Acarology</strong>. Phycology is a favourite examination term because candidates confuse it with other "-ology" words. <strong>Chlorella</strong>, a unicellular green alga, is used in space programmes to regulate oxygen levels and recycle carbon dioxide. <strong>Spirogyra</strong>, a filamentous green alga, was among the organisms first described by Leeuwenhoek in 1674.
+<span class="te-td">ఫైకాలజీ = శైవల అధ్యయనం; మైకాలజీ = శిలీంధ్రాలు; మెలిట్టాలజీ = తేనెటీగలు; అకారోలజీ = మైట్‌లు. క్లోరెల్లా = అంతరిక్షంలో O₂ నియంత్రణ. స్పైరోగైరా = లీవెన్‌హుక్ 1674.</span>
+</div>
+<div class="pn">Page 4</div>
+</div>
+
+
+<!-- ==================== PAGE 5: LOWER INVERTEBRATES ==================== -->
+<div class="page page-break">
+<div class="sec-head">Lower Invertebrates &mdash; Evolution Sequence <span class="te">నిమ్న అకశేరుకాలు &mdash; పరిణామ క్రమం</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; From Single Cell to Complex Body Plans</span>
+  The animal kingdom is organised from simplest to most complex in what biologists call the evolutionary sequence. Beginning with the single-celled <strong>Protozoa</strong>, each successive phylum represents an increase in structural and functional complexity. <strong>Porifera</strong> (sponges) are multicellular but lack true tissues; they are sessile filter feeders and are classified as animals despite their plant-like appearance. <strong>Coelenterata</strong> (Cnidaria) &mdash; including jellyfish, sea anemones, and sea fans &mdash; have tissue-level organisation with two body layers (diploblastic) and stinging cells (cnidocytes). <strong>Platyhelminthes</strong> (flatworms) introduced bilateral symmetry and a head-tail axis; they include the parasitic tapeworm and liver fluke. <strong>Nematoda</strong> (roundworms) are the most abundant animals on Earth; they have a pseudocoelom and a complete digestive tube. <strong>Annelida</strong> (segmented worms) such as the earthworm and leech introduced true coelom and metamerism (repetitive segmentation). <strong>Mollusca</strong> includes snails, clams, squid, and octopus; pearls form inside oysters (molluscs) when the mantle coats an irritant with layers of nacre. <strong>Echinodermata</strong> (starfish, sea urchin, sea cucumber) are exclusively marine and have a water-vascular system; starfish is not a true fish.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; సరళత నుండి సంక్లిష్టతకు</span>
+  జంతు జగత్తు సరళం నుండి సంక్లిష్టానికి పరిణామ క్రమంలో వర్గీకరించబడింది. <strong>ప్రోటోజోవా</strong> = ఏకకణ జంతువులు. <strong>పోరిఫెరా</strong> (స్పాంజెస్) = బహుకణ కానీ నిజమైన కణజాలాలు లేవు; జంతువు. <strong>సీలెంటరేటా</strong> (Cnidaria) = జెల్లీఫిష్, సముద్ర అనిమోన్, సీ-ఫ్యాన్; కణజాల స్థాయి; దంశన కణాలు. <strong>ప్లాటిహెల్మింథెస్</strong> = సమతల పురుగులు; పరాన్నజీవి తేతువు. <strong>నెమటోడా</strong> = గుండ్రని పురుగులు; భూమిపై అత్యధికం. <strong>అనెలిడా</strong> = వానపాము, జలగ; నిజమైన దేహ కుహరం; ఖండ విభజన. <strong>మొలస్కా</strong> = నత్తలు, గుల్లలు, ఆక్టోపస్; ముత్యాలు ఆయిస్టర్‌లో ఏర్పడతాయి. <strong>ఎకినోడెర్మాటా</strong> = స్టార్‌ఫిష్, సీ-అర్చిన్; పూర్తిగా సముద్ర జీవులు; నీటి వాహిక వ్యవస్థ.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Phylum<span class="te-td">ఫైలం</span></th><th>Key Feature<span class="te-td">ముఖ్య లక్షణం</span></th><th>Body Plan<span class="te-td">నిర్మాణ స్థాయి</span></th><th>Examples<span class="te-td">ఉదాహరణలు</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Protozoa</strong><span class="te-td">ప్రోటోజోవా</span></td><td>Unicellular animal<span class="te-td">ఏకకణ</span></td><td>Cell level<span class="te-td">కణ స్థాయి</span></td><td>Amoeba, Plasmodium, Paramecium<span class="te-td">అమీబా, మలేరియా జీవి</span></td></tr>
+<tr><td><strong>Porifera</strong><span class="te-td">పోరిఫెరా</span></td><td>Pores all over body; no true tissues<span class="te-td">కణజాలాలు లేవు</span></td><td>Cellular level<span class="te-td">కణ స్థాయి</span></td><td>Sponge (<em>Sycon</em>, <em>Spongilla</em>)<span class="te-td">స్పాంజ్</span></td></tr>
+<tr><td><strong>Coelenterata</strong><span class="te-td">సీలెంటరేటా</span></td><td>Cnidocytes (stinging cells); diploblastic<span class="te-td">దంశన కణాలు</span></td><td>Tissue level<span class="te-td">కణజాల స్థాయి</span></td><td>Jellyfish, Sea anemone, Hydra, Coral<span class="te-td">జెల్లీఫిష్, హైడ్రా</span></td></tr>
+<tr><td><strong>Platyhelminthes</strong><span class="te-td">ప్లాటిహెల్మింథెస్</span></td><td>Flat body; bilateral symmetry; no body cavity<span class="te-td">సమతల దేహం</span></td><td>Organ level<span class="te-td">అవయవ స్థాయి</span></td><td>Tapeworm, Planaria, Liver fluke<span class="te-td">తేతువు, ప్లానేరియా</span></td></tr>
+<tr><td><strong>Nematoda</strong><span class="te-td">నెమటోడా</span></td><td>Round, unsegmented; pseudocoelom<span class="te-td">అబద్ధ దేహ కుహరం</span></td><td>Organ level<span class="te-td">అవయవ స్థాయి</span></td><td>Ascaris, Filaria worm<span class="te-td">ఆస్కారిస్, ఫైలేరియా</span></td></tr>
+<tr><td><strong>Annelida</strong><span class="te-td">అనెలిడా</span></td><td>Segmented body; true coelom; closed circulation<span class="te-td">నిజమైన దేహ కుహరం</span></td><td>Organ-system level<span class="te-td">అవయవ వ్యవస్థ స్థాయి</span></td><td>Earthworm, Leech, Nereis<span class="te-td">వానపాము, జలగ</span></td></tr>
+<tr><td><strong>Mollusca</strong><span class="te-td">మొలస్కా</span></td><td>Soft body; mantle; shell (usually)<span class="te-td">మృదు దేహం; మాంటిల్</span></td><td>Organ-system level<span class="te-td">అవయవ వ్యవస్థ స్థాయి</span></td><td>Snail, Oyster, Squid, Octopus<span class="te-td">నత్త, ఆయిస్టర్, ఆక్టోపస్</span></td></tr>
+<tr><td><strong>Echinodermata</strong><span class="te-td">ఎకినోడెర్మాటా</span></td><td>Spiny skin; water-vascular system; radial symmetry<span class="te-td">నీటి వాహిక వ్యవస్థ</span></td><td>Organ-system level<span class="te-td">అవయవ వ్యవస్థ స్థాయి</span></td><td>Starfish, Sea urchin, Sea cucumber<span class="te-td">స్టార్‌ఫిష్, సీ-అర్చిన్</span></td></tr>
+</tbody>
+</table>
+
+<div class="exam-alert no-break">
+<div class="ea-title">Common Traps &mdash; "Fish" That Are Not Fish</div>
+Several animals carry the word "fish" in their name but do not belong to the class Pisces. <strong>Starfish</strong> is an Echinoderm. <strong>Silverfish</strong> is an insect (order Thysanura). <strong>Cuttlefish</strong> is a Mollusc (cephalopod). <strong>Jellyfish</strong> is a Cnidarian (Coelenterate). The only animal among the examination options that is a true fish is the <strong>shark</strong> &mdash; a cartilaginous fish of class Chondrichthyes.
+<span class="te-td">స్టార్‌ఫిష్ = ఎకినోడెర్మ్; సిల్వర్‌ఫిష్ = కీటకం; కటిల్‌ఫిష్ = మొలస్క్; జెల్లీఫిష్ = సీలెంటరేట్. నిజమైన చేప = సొరచేప.</span>
+</div>
+
+<div class="memory-box no-break">
+<div class="mem-title">Memory &mdash; Evolution Sequence (Pro Po Co Pl Ne An Mo Ec)</div>
+From simplest to most complex: <strong>Pro</strong>tozoa (single cell) &rarr; <strong>Po</strong>rifera (sponge) &rarr; <strong>Co</strong>elenterata (jellyfish) &rarr; <strong>Pl</strong>atyhelminthes (flatworm) &rarr; <strong>Ne</strong>matoda (roundworm) &rarr; <strong>An</strong>nelida (earthworm) &rarr; <strong>Mo</strong>llusca (snail, oyster) &rarr; <strong>Ec</strong>hinodermata (starfish). Use the phrase: "<strong>Pro Po Co Pl Ne An Mo Ec</strong>" as your mnemonic.
+<span class="te-td">పరిణామ క్రమం: ప్రోటోజోవా &rarr; పోరిఫెరా &rarr; సీలెంటరేటా &rarr; ప్లాటిహెల్మింథెస్ &rarr; నెమటోడా &rarr; అనెలిడా &rarr; మొలస్కా &rarr; ఎకినోడెర్మాటా.</span>
+</div>
+<div class="pn">Page 5</div>
+</div>
+
+<!-- ==================== PAGE 6: WORMS ==================== -->
+<div class="page page-break">
+<div class="sec-head">Worms &mdash; Earthworm, Tapeworm &amp; Leech <span class="te">పురుగులు &mdash; వానపాము, తేతువు, జలగ</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; The Three Important Worms</span>
+  The three worms most tested in examinations represent different phyla with very different lifestyles. The <strong>Earthworm</strong> (<em>Pheretima posthuma</em>) belongs to Phylum Annelida. It is a <strong>hermaphrodite</strong> &mdash; every individual possesses both male (testes) and female (ovaries) reproductive organs. Despite this, earthworms do not self-fertilise; two individuals align belly-to-belly and exchange sperm through the clitellum. Earthworm haemoglobin is unique: it is <strong>dissolved freely in the plasma</strong> rather than enclosed in red blood cells (earthworms have no RBCs). Special cells called <strong>chloragogen cells</strong> surround the intestine and function like a liver, storing glycogen and fat. The <strong>calciferous glands</strong> in the oesophagus neutralise soil acids by secreting calcium carbonate. Earthworms aerate and fertilise soil by ingesting it and excreting nutrient-rich castings; Darwin famously called them "nature's plough." The <strong>Tapeworm</strong> (<em>Taenia solium</em>) belongs to Phylum Platyhelminthes. It is an endoparasite living in the human small intestine, attaching itself by hooks and suckers on its scolex. It has no digestive system and absorbs nutrients directly through its body wall. The pig serves as the intermediate host. The <strong>Leech</strong> (<em>Hirudo medicinalis</em>) belongs to Phylum Annelida. It is an ectoparasite that feeds on blood and secretes <strong>hirudin</strong>, a powerful anticoagulant that prevents blood from clotting while it feeds. Hirudin has medical applications in preventing blood clots after microsurgery.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; మూడు ముఖ్యమైన పురుగులు</span>
+  <strong>వానపాము</strong> (<em>Pheretima posthuma</em>) = అనెలిడా ఫైలం; <strong>ద్విలింగ జీవి</strong> (hermaphrodite) &mdash; పురుష + స్త్రీ అవయవాలు రెండూ ఒకే శరీరంలో; స్వ-ఫలదీకరణం లేదు. వానపాము హెమోగ్లోబిన్ <strong>నేరుగా ప్లాస్మాలో కరిగి ఉంటుంది</strong> (RBC లేవు). <strong>క్లోరాగోగన్ కణాలు</strong> = యకృత్తు లాంటి విధి; గ్లైకోజెన్, కొవ్వు నిల్వ. <strong>కాల్సిఫెరస్ గ్రంథులు</strong> = నేల ఆమ్లాలను CaCO&#8323;తో తటస్థపరుస్తాయి. డార్విన్ "ప్రకృతి నాగలి" అన్నారు. <strong>తేతువు</strong> (<em>Taenia solium</em>) = ప్లాటిహెల్మింథెస్; మనిషి చిన్న ప్రేగులో ఎండోపారాసైట్; జీర్ణ వ్యవస్థ లేదు; పంది = మధ్యంతర అతిధేయి. <strong>జలగ</strong> (<em>Hirudo medicinalis</em>) = అనెలిడా; ఎక్టోపారాసైట్; <strong>హిరుడిన్</strong> (anticoagulant) స్రవిస్తుంది; మైక్రోసర్జరీలో వైద్య ఉపయోగం.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Feature<span class="te-td">లక్షణం</span></th><th>Earthworm<span class="te-td">వానపాము</span></th><th>Tapeworm<span class="te-td">తేతువు</span></th><th>Leech<span class="te-td">జలగ</span></th></tr>
+</thead>
+<tbody>
+<tr><td>Phylum<span class="te-td">ఫైలం</span></td><td>Annelida<span class="te-td">అనెలిడా</span></td><td>Platyhelminthes<span class="te-td">ప్లాటిహెల్మింథెస్</span></td><td>Annelida<span class="te-td">అనెలిడా</span></td></tr>
+<tr><td>Lifestyle<span class="te-td">జీవనశైలి</span></td><td>Free-living in soil<span class="te-td">స్వతంత్ర జీవి</span></td><td>Endoparasite (human intestine)<span class="te-td">ఎండో పరాన్నజీవి</span></td><td>Ectoparasite (blood sucker)<span class="te-td">ఎక్టో పరాన్నజీవి</span></td></tr>
+<tr><td>Sex<span class="te-td">లింగం</span></td><td>Hermaphrodite<span class="te-td">ద్విలింగ</span></td><td>Hermaphrodite (proglottids)<span class="te-td">ద్విలింగ</span></td><td>Hermaphrodite<span class="te-td">ద్విలింగ</span></td></tr>
+<tr><td>Blood / Hb<span class="te-td">రక్తం</span></td><td>Hb dissolved in plasma (no RBCs)<span class="te-td">ప్లాస్మాలో Hb</span></td><td>No circulatory system<span class="te-td">రక్త ప్రసరణ లేదు</span></td><td>Hb in plasma; secretes hirudin<span class="te-td">హిరుడిన్</span></td></tr>
+<tr><td>Special fact<span class="te-td">ప్రత్యేకత</span></td><td>Chloragogen cells; calciferous glands; nature's plough<span class="te-td">క్లోరాగోగన్; కాల్సిఫెరస్</span></td><td>Scolex with hooks + suckers<span class="te-td">స్కోలెక్స్</span></td><td>Hirudin anticoagulant; medical use<span class="te-td">హిరుడిన్; వైద్యం</span></td></tr>
+</tbody>
+</table>
+
+<div class="highlight-box no-break">
+<strong>Earthworm &mdash; The Farmer's Friend:</strong> Each acre of healthy agricultural soil supports approximately one million earthworms producing more than 25 tonnes of castings per year. Earthworm castings are five times richer in nitrogen, seven times richer in phosphorus, and eleven times richer in potassium than the surrounding soil. Earthworms also tunnel up to three metres deep, improving aeration and drainage. Charles Darwin devoted his final scientific book (1881, "The Formation of Vegetable Mould through the Action of Worms") entirely to earthworms, concluding they were the most important animals on Earth for agriculture.
+<span class="te-td">వానపాము = "రైతు మిత్రుడు." సంవత్సరానికి ఎకరానికి 25+ టన్నుల వెర్మికంపోస్ట్. డార్విన్ చివరి పుస్తకం (1881) వానపాముల గురించే.</span>
+</div>
+<div class="pn">Page 6</div>
+</div>
+
+
+<!-- ==================== PAGE 7: INSECTS AND ARTHROPODS ==================== -->
+<div class="page page-break">
+<div class="sec-head">Insects and Arthropods &mdash; Orders, Bees &amp; Sericulture <span class="te">కీటకాలు &mdash; క్రమాలు, తేనెటీగలు, పట్టు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; The Insect World</span>
+  Insects are the most species-rich class of animals, comprising approximately 75 percent of all known animal species. They are classified into <strong>26 orders</strong>, including Coleoptera (beetles &mdash; the largest order), Lepidoptera (butterflies and moths), Hymenoptera (ants, bees, and wasps), Diptera (flies and mosquitoes), Hemiptera (bugs), and Orthoptera (grasshoppers and crickets). Insects display remarkable social organisation in <strong>eusocial species</strong> such as ants, honeybees, and termites. In a honeybee colony, the <strong>queen</strong> is the fertile female who lays all eggs; <strong>worker bees</strong> are sterile females that collect nectar, make honey, tend brood, and defend the hive; <strong>drones</strong> are males whose sole function is to fertilise the queen on the nuptial flight. Ants achieve near-360 degree vision through their <strong>compound eyes</strong>, which are composed of thousands of individual lenses (ommatidia). <strong>Sericulture</strong> is the commercial rearing of silkworms for silk production. The silk is produced by the <strong>larva</strong> (<em>Bombyx mori</em>) of the silk moth, which feeds exclusively on <strong>mulberry leaves</strong>. The larva spins a continuous silk thread approximately one kilometre long around itself before entering the pupal stage, forming the <strong>cocoon</strong>. Cocoons are boiled before the moth emerges to preserve the unbroken thread. Other silkworms include tasar (<em>Antheraea mylitta</em>), eri (<em>Samia cynthia</em>), and muga (<em>Antheraea assamensis</em>). <strong>Apiculture</strong> (bee-keeping) is the practice of maintaining honeybee colonies for honey, beeswax, propolis, and pollination. The commercial honeybee species is <em>Apis mellifera</em> in Europe and <em>Apis cerana</em> (Indian honeybee) in Asia. Honeybees communicate the location and distance of food sources through the <strong>waggle dance</strong> (Karl von Frisch, 1973 Nobel Prize): the angle of the dance indicates direction relative to the sun; the duration of the waggle run indicates distance. <strong>Aestivation</strong> is the summer dormancy entered by certain animals (snails, lungfish, earthworms) in response to extreme heat or drought, analogous to hibernation in winter.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; కీటక ప్రపంచం</span>
+  కీటకాలు = అన్ని తెలిసిన జంతు జాతులలో ~75%. <strong>26 క్రమాలు</strong> అన్నిటిలో: కోలీయోప్టెరా (బీటిల్స్), లెపిడోప్టెరా (సీతాకోక చిలుకలు), హైమెనోప్టెరా (తేనెటీగలు, చీమలు), డిప్టెరా (ఈగలు), ఆర్థోప్టెరా (మిడతలు, కీచురాళ్లు). తేనెటీగ వలసలో: <strong>రాణి</strong> = గుడ్లు పెట్టే సారవంతమైన ఆడ; <strong>పనితేనెటీగలు</strong> = వంధ్య ఆడలు; <strong>మగ తేనెటీగలు (drones)</strong> = రాణిని ఫలదీకరణ చేయడమే పని. చీమలు <strong>సంయుక్త నేత్రాల</strong> ద్వారా ~360 డిగ్రీలు చూడగలవు. <strong>సెరికల్చర్</strong> = పట్టుపురుగుల పెంపకం; పట్టు <strong>లార్వా</strong> (<em>Bombyx mori</em>) నుండి; <strong>మల్బరీ ఆకులు</strong> మాత్రమే తింటుంది; <strong>కోకూన్</strong> దశలో ~1 km పట్టు తంతువు వడికుతుంది. <strong>ఎపికల్చర్</strong> = తేనెటీగ పెంపకం; తేనె, మైనం, పరాగసంపర్కం. <strong>వాగ్గ్ల్ నృత్యం</strong> = దూరం + దిశ సమాచారం. <strong>ఈస్టివేషన్</strong> = వేసవి నిద్ర (శీతాకాలంలో హైబర్నేషన్ వలె).
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Topic<span class="te-td">విషయం</span></th><th>Detail<span class="te-td">వివరణ</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Number of insect orders</strong><span class="te-td">కీటక క్రమాలు</span></td><td>26 orders; insects are the largest animal class (~75% of all species)<span class="te-td">26 క్రమాలు; అతి పెద్ద జంతు తరగతి</span></td></tr>
+<tr><td><strong>Largest insect order</strong><span class="te-td">అతి పెద్ద క్రమం</span></td><td>Coleoptera (beetles) &mdash; ~400,000 species<span class="te-td">కోలీయోప్టెరా (బీటిల్స్)</span></td></tr>
+<tr><td><strong>Silkworm food</strong><span class="te-td">పట్టుపురుగు ఆహారం</span></td><td>Mulberry leaves (<em>Morus alba</em>) exclusively<span class="te-td">మల్బరీ ఆకులు మాత్రమే</span></td></tr>
+<tr><td><strong>Silk source</strong><span class="te-td">పట్టు మూలం</span></td><td>Larva spins the cocoon; ~1 km continuous fibroin thread<span class="te-td">లార్వా; కోకూన్; ~1 km తంతువు</span></td></tr>
+<tr><td><strong>Worker bees</strong><span class="te-td">పనితేనెటీగలు</span></td><td>Sterile females; collect nectar, make honey, defend hive<span class="te-td">వంధ్య ఆడలు</span></td></tr>
+<tr><td><strong>Bee dance purpose</strong><span class="te-td">తేనెటీగ నృత్యం</span></td><td>Communication of food direction and distance (waggle dance, Karl von Frisch 1973 Nobel)<span class="te-td">సమాచారం; దూరం + దిశ</span></td></tr>
+<tr><td><strong>Ants' vision</strong><span class="te-td">చీమల దృష్టి</span></td><td>Compound eyes (thousands of ommatidia) giving near-360-degree vision<span class="te-td">సంయుక్త నేత్రాలు</span></td></tr>
+<tr><td><strong>Clicking insect</strong><span class="te-td">శబ్దం చేసే కీటకం</span></td><td>Crickets (stridulation &mdash; rubbing forewings together; mostly males for courtship)<span class="te-td">కీచురాళ్లు; స్ట్రిడ్యులేషన్</span></td></tr>
+<tr><td><strong>Aestivation</strong><span class="te-td">ఈస్టివేషన్</span></td><td>Summer dormancy in hot/dry conditions; opposite of hibernation (winter)<span class="te-td">వేసవి నిద్ర; హైబర్నేషన్ వ్యతిరేకం</span></td></tr>
+<tr><td><strong>Rice weevil</strong><span class="te-td">రైస్ వీవిల్</span></td><td>Insect NOT useful to humans &mdash; destroys stored grain<span class="te-td">నిల్వ ధాన్యం నాశకం</span></td></tr>
+<tr><td><strong>Greatest bee value</strong><span class="te-td">తేనెటీగ ప్రధాన ప్రయోజనం</span></td><td>Pollination of crop plants &mdash; approximately 75% of food crops depend on bee pollination<span class="te-td">పరాగసంపర్కం; 75% ఆహార పంటలు</span></td></tr>
+</tbody>
+</table>
+
+<div class="memory-box no-break">
+<div class="mem-title">Memory &mdash; Culture Terms</div>
+<strong>Apiculture</strong> = bees &middot; <strong>Sericulture</strong> = silkworms &middot; <strong>Pisciculture</strong> = fish &middot; <strong>Horticulture</strong> = garden crops &middot; <strong>Floriculture</strong> = flowers &middot; <strong>Silviculture</strong> = forest trees &middot; <strong>Aquaculture</strong> = aquatic organisms &middot; <strong>Mariculture</strong> = marine organisms &middot; <strong>Agriculture</strong> = field crops.
+<span class="te-td">ఎపికల్చర్=తేనెటీగ; సెరికల్చర్=పట్టు; పిసికల్చర్=చేప; హార్టికల్చర్=ఉద్యానం; సిల్వికల్చర్=అడవి చెట్లు.</span>
+</div>
+<div class="pn">Page 7</div>
+</div>
+
+<!-- ==================== PAGE 8: AMPHIBIANS AND REPTILES ==================== -->
+<div class="page page-break">
+<div class="sec-head">Amphibians and Reptiles &mdash; Cold-Blooded Vertebrates <span class="te">ఉభయచరాలు మరియు సరీసృపాలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; Poikilothermic Vertebrates</span>
+  Amphibians and reptiles are <strong>poikilothermic (cold-blooded or ectothermic)</strong> &mdash; their body temperature varies with the environmental temperature. They do not generate body heat internally through metabolism (unlike birds and mammals). <strong>Frogs and toads</strong> are both amphibians, but they differ in several ways. Frogs have smooth, moist skin and are more dependent on water; toads have <strong>dry, warty skin</strong> and can live in drier habitats. Adult amphibians excrete urea and their kidney type is the <strong>mesonephros</strong> &mdash; the intermediate stage in the evolution of vertebrate kidneys (pronephros in larvae, mesonephros in adult amphibians and fish, metanephros in reptiles, birds, and mammals). Reptiles include lizards, snakes, crocodilians, and turtles. All reptiles have a <strong>three-chambered heart</strong> &mdash; with the exception of <strong>crocodiles</strong>, which uniquely possess a <strong>four-chambered heart</strong>, the most advanced heart in the reptile class and the same structural arrangement as in birds and mammals. The <strong>King Cobra</strong> (<em>Ophiophagus hannah</em>) is the world's longest venomous snake (up to 5.5 m) and the <strong>only snake species that builds a nest</strong> &mdash; constructing a mound of leaves and soil to incubate eggs, which it guards vigilantly. Snakes detect odours using their <strong>forked tongue</strong> in conjunction with the <strong>Jacobson's organ</strong> (vomeronasal organ) in the palate &mdash; the tongue picks up scent particles from the air and delivers them to the Jacobson's organ for analysis. Snake venom glands are modified posterior <strong>salivary glands</strong>. A venomous snake bite typically leaves <strong>two puncture marks</strong> from the paired hollow fangs. The <strong>python</strong> is non-venomous; it kills prey by constriction. Among cold-blooded animals, the <strong>tortoise</strong> has the longest lifespan, with some Galapagos tortoises living more than 175 years.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; శీత రక్త సకశేరుకాలు</span>
+  ఉభయచరాలు మరియు సరీసృపాలు <strong>శీత రక్త జీవులు (poikilothermic)</strong> &mdash; శరీర ఉష్ణోగ్రత వాతావరణంతో మారుతుంది. <strong>కప్ప vs గోదురుకప్ప</strong>: కప్పకు మృదువైన, తడి చర్మం; గోదురుకప్పకు <strong>పొడి, పులిపిర్ల చర్మం</strong>; రెండూ ఉభయచరాలే. పెద్ద ఉభయచర మూత్రపిండం = <strong>మీసోనెఫ్రోస్</strong>. అన్ని సరీసృపాలకు <strong>మూడు గది గుండె</strong> ఉంటుంది &mdash; <strong>మొసలి మాత్రమే నాలుగు గది గుండె కలిగి ఉంటుంది</strong> (పక్షులు, క్షీరదాలతో సమానం). <strong>కింగ్ కోబ్రా</strong> = ఆకులతో గూడు కట్టే <strong>ఏకైక పాము జాతి</strong>; ప్రపంచంలోనే పొడవైన విషపు పాము. పాము నాలుక + <strong>జాకబ్సన్ అవయవం</strong> = వాసన పరిశీలన. పాము విష గ్రంథులు = మార్పు చెందిన <strong>లాలాజల గ్రంథులు</strong>. విషపు పాము కాటు = <strong>రెండు కన్నాలు</strong>. <strong>కొండచిలువ</strong> = విషం లేదు. <strong>తాబేలు</strong> = అత్యంత పొడవైన ఆయుష్షు.
+  </div>
+</div>
+
+<div class="cols-2">
+<table>
+<thead>
+<tr><th colspan="3">Frog vs Toad<span class="te-td">కప్ప vs గోదురుకప్ప</span></th></tr>
+<tr><th>Feature</th><th>Frog<span class="te-td">కప్ప</span></th><th>Toad<span class="te-td">గోదురుకప్ప</span></th></tr>
+</thead>
+<tbody>
+<tr><td>Skin</td><td>Smooth, moist<span class="te-td">మృదువు, తడి</span></td><td>Dry, warty<span class="te-td">పొడి, పులిపిర్లు</span></td></tr>
+<tr><td>Habitat</td><td>Mostly aquatic<span class="te-td">జలచర</span></td><td>More terrestrial<span class="te-td">భూచర</span></td></tr>
+<tr><td>Legs</td><td>Long hind legs for jumping<span class="te-td">పొడవు</span></td><td>Shorter legs, walking<span class="te-td">చిన్న</span></td></tr>
+<tr><td>Parotoid glands</td><td>Absent<span class="te-td">లేవు</span></td><td>Present (mild toxin)<span class="te-td">ఉన్నాయి</span></td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">Reptile Heart Chambers<span class="te-td">సరీసృప గుండె</span></th></tr>
+<tr><th>Animal</th><th>Chambers</th></tr>
+</thead>
+<tbody>
+<tr><td>Lizard<span class="te-td">బల్లి</span></td><td>3 chambers<span class="te-td">3 గదులు</span></td></tr>
+<tr><td>Snake<span class="te-td">పాము</span></td><td>3 chambers<span class="te-td">3 గదులు</span></td></tr>
+<tr><td>Turtle<span class="te-td">తాబేలు</span></td><td>3 chambers<span class="te-td">3 గదులు</span></td></tr>
+<tr><td><strong>Crocodile</strong><span class="te-td"><strong>మొసలి</strong></span></td><td><strong>4 chambers (unique)</strong><span class="te-td"><strong>4 గదులు (ఏకైకం)</strong></span></td></tr>
+<tr><td>Birds &amp; Mammals<span class="te-td">పక్షులు, క్షీరదాలు</span></td><td>4 chambers<span class="te-td">4 గదులు</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="shock-box no-break">
+<div class="shock-title">Important Exception &mdash; Crocodile Among Reptiles</div>
+The crocodile is the only reptile with a four-chambered heart, making it more closely related to birds than to other reptiles in terms of cardiac anatomy. This fact is heavily tested. All other reptiles &mdash; snakes, lizards, and turtles &mdash; have three-chambered hearts. However, crocodiles also have a small opening called the <strong>Foramen of Panizza</strong> connecting the two aortic arches, allowing minor mixing between systemic and pulmonary circuits.
+<span class="te-td">మొసలి = ఏకైక 4-గది గుండె సరీసృపం. పక్షులతో హృదయ పోలిక. ఇతర సరీసృపాలు (పాము, బల్లి, తాబేలు) = 3 గదులు.</span>
+</div>
+
+<div class="exam-alert no-break">
+<div class="ea-title">Exam Traps &mdash; Snake and Amphibian Facts</div>
+The following facts are commonly mismatched in examinations: <strong>(1)</strong> Snake tongue is for <strong>smell</strong> (not taste) via the Jacobson's organ; <strong>(2)</strong> Snake venom glands are modified <strong>salivary glands</strong> (not liver or pancreas); <strong>(3)</strong> Adult amphibian kidney = <strong>mesonephros</strong> (not metanephros, which belongs to reptiles, birds, and mammals); <strong>(4)</strong> Python is <strong>non-venomous</strong> (kills by constriction); <strong>(5)</strong> Only King Cobra builds a nest; other snakes simply deposit eggs in the environment.
+<span class="te-td">పాము నాలుక = వాసన; విష గ్రంథులు = లాలాజల గ్రంథులు; ఉభయచర మూత్రపిండం = మీసోనెఫ్రోస్; కొండచిలువ = విషం లేదు; కింగ్ కోబ్రా మాత్రమే గూడు కడుతుంది.</span>
+</div>
+<div class="pn">Page 8</div>
+</div>
+
+
+<!-- ==================== PAGE 9: AQUATIC LIFE ==================== -->
+<div class="page page-break">
+<div class="sec-head">Aquatic Life &mdash; Plankton, Benthos, Nekton &amp; Records <span class="te">జల జీవులు &mdash; ప్లవకాలు, బెంథోస్, నెక్టన్</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; Life in Water</span>
+  Aquatic life is organised into distinct ecological zones based on where organisms live and how they move. <strong>Plankton</strong> drift in the water column, unable to swim against currents. They include <strong>phytoplankton</strong> (microscopic algae that perform photosynthesis, forming the base of aquatic food chains) and <strong>zooplankton</strong> (microscopic animals). <strong>Nekton</strong> are active swimmers that can move against currents &mdash; fish, whales, dolphins, and squid belong to this group. <strong>Benthos</strong> are organisms that live on or in the bottom sediment &mdash; crabs, sponges, sea cucumbers, and clams are benthos. <strong>Neuston</strong> live at the water surface film, such as water striders. The <strong>blue whale</strong> (<em>Balaenoptera musculus</em>) holds two records: it is the <strong>largest living animal</strong> (up to 30 metres long, 180 tonnes) and produces the <strong>biggest baby</strong> of any animal (calves are about 7 metres long and 2.7 tonnes at birth). Among birds, the <strong>smallest egg</strong> is laid by the <strong>Bee Hummingbird</strong> (about 6 mm long), while the <strong>largest bird egg</strong> is laid by the ostrich. The human ovum (~0.1 mm) is the <strong>largest cell visible to the naked eye</strong> and the largest human cell, but it is not classified as an "egg" in the bird/reptile sense. Crustaceans such as crabs and prawns have <strong>copper-based haemocyanin</strong> as their blood pigment, giving their blood a blue colour (unlike the iron-based haemoglobin that gives vertebrate blood its red colour). Prawns are crustaceans, not insects &mdash; an examination trap. The <strong>camel</strong> has two distinct water-conservation adaptations: the hump stores <strong>fat</strong> (which is metabolised to produce metabolic water), and bulk water is stored in the <strong>intestinal cells</strong> (not the hump). These are two separate facts. Pearls form inside <strong>molluscs</strong> (primarily oysters and mussels) when the mantle secretes nacre around an irritant. <strong>Chlorella</strong> is a unicellular green alga used in space missions to maintain oxygen levels and recycle CO&#8322;.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; జలచర జీవన మండలాలు</span>
+  జలచర జీవులు నాలుగు మండలాలలో నివసిస్తాయి: <strong>ప్లవకాలు</strong> = నీటి స్తంభంలో తేలుతూ ఉంటాయి (ఫైటోప్లాంక్టన్ + జూప్లాంక్టన్); <strong>నెక్టన్</strong> = చురుకుగా ఈదే జీవులు (చేపలు, తిమింగలాలు); <strong>బెంథోస్</strong> = అడుగు నిక్షేపాలలో జీవించేవి (పీతలు, స్పాంజెస్, సీ-కుకంబర్); <strong>న్యూస్టన్</strong> = నీటి ఉపరితలం. <strong>నీలి తిమింగలం</strong> = <strong>అతిపెద్ద జంతువు</strong> (30 m, 180 t) + <strong>అతిపెద్ద శిశువు</strong> (7 m, 2.7 t). <strong>అతి చిన్న గుడ్డు = మానవుడు</strong> (~0.1 mm). క్రస్టేషియన్‌ల రక్తం = <strong>రాగి-ఆధారిత హీమోసయనిన్</strong> (నీలం); రొయ్య = క్రస్టేషియన్ (కీటకం కాదు). <strong>ఒంటె మూపురం = కొవ్వు నిల్వ</strong>; నీరు = <strong>ప్రేగు కణాలలో</strong> (మూపురంలో కాదు). ముత్యాలు = <strong>మొలస్క్‌లలో</strong> (ఆయిస్టర్). <strong>క్లోరెల్లా</strong> = అంతరిక్షంలో O&#8322; నిర్వహణ.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Animal / Record<span class="te-td">జంతువు / రికార్డు</span></th><th>Detail<span class="te-td">వివరణ</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Largest living animal</strong><span class="te-td">అతిపెద్ద జంతువు</span></td><td>Blue whale &mdash; up to 30 m length, 180 tonnes; largest animal ever to have lived<span class="te-td">నీలి తిమింగలం; 30 m; 180 t</span></td></tr>
+<tr><td><strong>Biggest baby</strong><span class="te-td">అతిపెద్ద శిశువు</span></td><td>Blue whale calf &mdash; ~7 m long, ~2.7 tonnes at birth<span class="te-td">నీలి తిమింగలం బచ్చ; 7 m</span></td></tr>
+<tr><td><strong>Smallest bird egg</strong><span class="te-td">అతి చిన్న పక్షి గుడ్డు</span></td><td>Bee Hummingbird (~6 mm); Largest bird egg = Ostrich (~15 cm)<span class="te-td">బీ హమ్మింగ్‌బర్డ్ (~6 మి.మీ.); అతిపెద్ద పక్షి గుడ్డు = ఆస్ట్రిచ్</span></td></tr>
+<tr><td><strong>Largest cell visible to naked eye</strong><span class="te-td">కంటికి కనిపించే అతిపెద్ద కణం</span></td><td>Human ovum (~0.1 mm); also the largest human cell<span class="te-td">మానవ అండం (~0.1 మి.మీ.); అతిపెద్ద మానవ కణం</span></td></tr>
+<tr><td><strong>Crustacean blood pigment</strong><span class="te-td">క్రస్టేషియన్ రక్త వర్ణద్రవ్యం</span></td><td>Copper-based haemocyanin &mdash; blue colour; found in crabs, prawns, lobsters<span class="te-td">రాగి హీమోసయనిన్; నీలం</span></td></tr>
+<tr><td><strong>True fish among imposters</strong><span class="te-td">నిజమైన చేప</span></td><td>Shark (class Chondrichthyes); Silverfish=insect; Starfish=echinoderm; Cuttlefish=mollusc<span class="te-td">సొరచేప; మిగతావి నకిలీ</span></td></tr>
+<tr><td><strong>Camel hump stores</strong><span class="te-td">ఒంటె మూపురం</span></td><td>Fat (metabolised to produce metabolic water + energy); NOT a water tank<span class="te-td">కొవ్వు; నీరు కాదు</span></td></tr>
+<tr><td><strong>Camel water storage site</strong><span class="te-td">ఒంటె నీటి నిల్వ</span></td><td>Intestinal cells (rumen-like stomach cells hold water); NOT the hump<span class="te-td">ప్రేగు కణాలు; మూపురం కాదు</span></td></tr>
+<tr><td><strong>Pearl formation</strong><span class="te-td">ముత్యాల ఏర్పాటు</span></td><td>Molluscs (mainly oysters) &mdash; mantle coats irritant with nacre (aragonite layers)<span class="te-td">మొలస్క్‌లు; ఆయిస్టర్</span></td></tr>
+<tr><td><strong>Longest lifespan (cold-blooded)</strong><span class="te-td">అత్యంత ఆయుష్షు</span></td><td>Tortoise &mdash; over 150 years; Galapagos tortoise 175+ years<span class="te-td">తాబేలు; 150+ సంవత్సరాలు</span></td></tr>
+<tr><td><strong>Chlorella in space</strong><span class="te-td">క్లోరెల్లా అంతరిక్షంలో</span></td><td>Unicellular green alga; high oxygen output + protein; used to recycle CO&#8322;<span class="te-td">ఏకకణ శైవలం; O&#8322; నిర్వహణ</span></td></tr>
+<tr><td><strong>Benthos</strong><span class="te-td">బెంథోస్</span></td><td>Bottom-dwelling aquatic organisms: crab, sponge, sea cucumber, clams<span class="te-td">అడుగు జీవులు</span></td></tr>
+</tbody>
+</table>
+
+<div class="exam-alert no-break">
+<div class="ea-title">Camel &mdash; Two Separate Examination Facts</div>
+The camel has two frequently tested but distinct water-survival adaptations. The <strong>hump stores fat</strong> (not water); metabolising one gram of fat releases approximately 1.1 grams of metabolic water. Separately, bulk water is stored in the cells of the <strong>stomach and intestine</strong> after the camel drinks large quantities. Do not merge these two into a single answer. A camel can drink up to 200 litres of water at once after dehydration, storing it in the digestive tract, not the hump.
+<span class="te-td">ఒంటె: (1) మూపురం = కొవ్వు నిల్వ; (2) నీరు = ప్రేగు కణాలలో. రెండు వేర్వేరు వాస్తవాలు; కలపకండి.</span>
+</div>
+<div class="pn">Page 9</div>
+</div>
+
+<!-- ==================== PAGE 10: BIRDS ==================== -->
+<div class="page page-break">
+<div class="sec-head">Birds &mdash; Characteristics, Records &amp; Special Facts <span class="te">పక్షులు &mdash; లక్షణాలు, రికార్డులు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; Class Aves</span>
+  Birds (Class Aves) are warm-blooded (homeothermic) vertebrates uniquely characterised by the presence of <strong>feathers</strong>, hollow (pneumatic) bones that reduce weight for flight, a four-chambered heart, and the <strong>syrinx</strong> &mdash; the voice-producing organ located at the bifurcation of the trachea into the two bronchi. The syrinx is unique to birds; mammals produce sound using the larynx. Birds obtain thrust in flight by <strong>flapping their wings</strong>, which simultaneously generates lift and forward thrust. The <strong>cerebellum</strong> is the brain region responsible for balance and muscular coordination; a pigeon whose cerebellum is destroyed cannot fly because it loses coordination of wing movements. Birds have <strong>air sacs</strong> connected to the lungs, ensuring a continuous flow of fresh air through the lungs in both inhalation and exhalation &mdash; making bird respiration more efficient than mammalian. <strong>Ducks and geese</strong> have <strong>webbed feet</strong> with skin between the toes that acts as paddles for swimming. Several bird species are flightless: the <strong>ostrich</strong> (Africa, largest living bird, up to 2.7 m and 150 kg), the <strong>emu</strong> (Australia), the <strong>kiwi</strong> (New Zealand), and the <strong>penguin</strong> (which uses its wings as flippers for swimming). The <strong>bat</strong>, although it flies, is a mammal &mdash; not a bird. Bats navigate in darkness using <strong>echolocation</strong>, emitting ultrasonic waves (20&ndash;200 kHz) and interpreting the returning echoes. Bats have the highest upper audible frequency among mammals, reaching up to 200 kHz. Plymouth Rock is not a dog breed &mdash; it is an American breed of chicken (poultry).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; పక్షుల తరగతి</span>
+  పక్షులు ఉష్ణ రక్త (homeothermic) సకశేరుకాలు; <strong>పింఛాలు</strong>, గుల్లి ఎముకలు, నాలుగు గది గుండె మరియు <strong>సిరింక్స్</strong> (శ్వాసనాళం చీలిక వద్ద ధ్వని అవయవం) ప్రత్యేక లక్షణాలు. పక్షులు <strong>రెక్కల కొట్టడం</strong> ద్వారా లిఫ్ట్ + థ్రస్ట్ పొందుతాయి. <strong>సెరిబెల్లం</strong> = సమతుల్యత + సమన్వయం; దెబ్బతింటే పావురం ఎగరలేదు. <strong>గాలి సంచులు</strong> (air sacs) = సమర్థవంతమైన శ్వాసక్రియ. <strong>బాతు/గూస్</strong> = <strong>ఈత పాదాలు</strong>. ఎగరని పక్షులు: <strong>ఆస్ట్రిచ్</strong> (ఆఫ్రికా; అతిపెద్ద పక్షి), <strong>ఈము</strong> (ఆస్ట్రేలియా), <strong>కివి</strong> (న్యూజిలాండ్), <strong>పెంగ్విన్</strong> (అంటార్కిటికా). <strong>గబ్బిలం</strong> = క్షీరదం (పక్షి కాదు); అల్ట్రాసౌండ్ (200 kHz వరకు) ద్వారా చీకటిలో దిక్కు తెలుసుకుంటుంది. ప్లైమౌత్ రాక్ = కోడి జాతి (కుక్క జాతి కాదు).
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Record / Feature<span class="te-td">రికార్డు / లక్షణం</span></th><th>Bird<span class="te-td">పక్షి</span></th><th>Detail<span class="te-td">వివరణ</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Largest living bird</strong><span class="te-td">అతిపెద్ద పక్షి</span></td><td>Ostrich<span class="te-td">ఆస్ట్రిచ్</span></td><td>Africa; up to 2.7 m tall, 150 kg; flightless; runs at 70 km/h<span class="te-td">ఎగరదు; 70 km/h పరుగు</span></td></tr>
+<tr><td><strong>Fastest bird in flight</strong><span class="te-td">అత్యంత వేగమైన పక్షి</span></td><td>Peregrine Falcon<span class="te-td">పెరెగ్రైన్ ఫాల్కన్</span></td><td>Up to 390 km/h in dive (fastest animal on Earth)<span class="te-td">390 km/h వేగం</span></td></tr>
+<tr><td><strong>Smallest bird</strong><span class="te-td">అతి చిన్న పక్షి</span></td><td>Bee Hummingbird<span class="te-td">బీ హమ్మింగ్‌బర్డ్</span></td><td>Cuba; ~5.7 cm, 1.6 g; also lays smallest bird egg<span class="te-td">క్యూబా; 5.7 cm</span></td></tr>
+<tr><td><strong>Highest-flying bird</strong><span class="te-td">అత్యంత ఎత్తులో ఎగిరే పక్షి</span></td><td>Bar-headed Goose<span class="te-td">బార్-హెడెడ్ గూస్</span></td><td>Flies over Himalayas at 8,000&ndash;9,000 m altitude<span class="te-td">హిమాలయాలపై 8,000 m</span></td></tr>
+<tr><td><strong>Only Australian flightless bird</strong><span class="te-td">ఆస్ట్రేలియా ఎగరని పక్షి</span></td><td>Emu<span class="te-td">ఈము</span></td><td>Second largest bird; cannot fly; powerful legs<span class="te-td">రెండవ అతిపెద్ద పక్షి</span></td></tr>
+<tr><td><strong>Webbed feet bird</strong><span class="te-td">ఈత పాదాల పక్షి</span></td><td>Duck<span class="te-td">బాతు</span></td><td>Also goose, pelican, cormorant; skin between toes for paddling<span class="te-td">గూస్, పెలికాన్ కూడా</span></td></tr>
+<tr><td><strong>Bird sound organ</strong><span class="te-td">పక్షి ధ్వని అవయవం</span></td><td>All birds<span class="te-td">అన్ని పక్షులు</span></td><td>Syrinx (at trachea bifurcation); mammals use larynx<span class="te-td">సిరింక్స్; క్షీరదాలు = లారింక్స్</span></td></tr>
+<tr><td><strong>Balance/coordination brain</strong><span class="te-td">సమతుల్యత మెదడు</span></td><td>All vertebrates<span class="te-td">అన్ని సకశేరుకాలు</span></td><td>Cerebellum; damage causes inability to fly in birds<span class="te-td">సెరిబెల్లం; దెబ్బ = ఎగరలేదు</span></td></tr>
+<tr><td><strong>Echolocation (not a bird)</strong><span class="te-td">ఎకోలొకేషన్</span></td><td>Bat (mammal)<span class="te-td">గబ్బిలం (క్షీరదం)</span></td><td>Ultrasonic waves 20&ndash;200 kHz; highest audible frequency in mammals<span class="te-td">200 kHz వరకు</span></td></tr>
+</tbody>
+</table>
+
+<div class="memory-box no-break">
+<div class="mem-title">Memory &mdash; Flightless Birds and Their Homes</div>
+<strong>Ostrich</strong> = Africa (largest living bird) &middot; <strong>Emu</strong> = Australia (second largest) &middot; <strong>Kiwi</strong> = New Zealand (smallest; nocturnal; National bird of NZ) &middot; <strong>Penguin</strong> = Antarctica (uses wings as flippers; excellent swimmer) &middot; <strong>Cassowary</strong> = Australia/New Guinea (dangerous; casque on head). None of these can fly. Bats can fly but are mammals &mdash; this "flying mammal" category is separate from flightless birds.
+<span class="te-td">ఎగరని పక్షులు: ఆస్ట్రిచ్(ఆఫ్రికా), ఈము(ఆస్ట్రేలియా), కివి(న్యూజిలాండ్), పెంగ్విన్(అంటార్కిటికా), కాసోవేరీ. గబ్బిలం ఎగురుతుంది కానీ క్షీరదం.</span>
+</div>
+<div class="pn">Page 10</div>
+</div>
+
+
+<!-- ==================== PAGE 11: MAMMALS ==================== -->
+<div class="page page-break">
+<div class="sec-head">Mammals &mdash; Characteristics, Records &amp; Special Facts <span class="te">క్షీరదాలు &mdash; లక్షణాలు, రికార్డులు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; Class Mammalia</span>
+  Mammals (Class Mammalia) are warm-blooded vertebrates defined by five key characteristics: <strong>(1)</strong> presence of <strong>mammary glands</strong> that produce milk to nourish offspring; <strong>(2)</strong> body covered with <strong>hair or fur</strong> for insulation; <strong>(3)</strong> a muscular <strong>diaphragm</strong> separating the thoracic and abdominal cavities and assisting in breathing; <strong>(4)</strong> a <strong>four-chambered heart</strong> ensuring complete separation of oxygenated and deoxygenated blood; <strong>(5)</strong> most give birth to live young (viviparous). The vast majority of mammals are placentals; however, <strong>monotremes</strong> are the remarkable egg-laying exceptions. The world's only two living monotreme species are the <strong>duck-billed platypus</strong> (<em>Ornithorhynchus anatinus</em>) and the <strong>spiny anteater (echidna)</strong> (<em>Tachyglossus aculeatus</em>) &mdash; both native to Australia and New Guinea. Although they lay leathery eggs, they are true mammals because they produce milk (through skin pores, as they have no nipples) and are warm-blooded. The male platypus has venomous spurs on its hind legs. The <strong>mule</strong> is a sterile hybrid produced by crossing a <strong>female horse (mare, 64 chromosomes) with a male donkey (jack, 62 chromosomes)</strong>, yielding offspring with 63 chromosomes. The odd chromosome number prevents normal meiosis, making the mule sterile. The reverse cross (stallion + female donkey) produces a hinny, which is rarer and smaller. The <strong>cow</strong> has a gestation period of <strong>280 days</strong>, similar to humans. An <strong>elephant</strong> has the longest gestation period of any land mammal &mdash; approximately 22 months (660 days). <strong>Colostrum</strong> is the thick, yellowish first milk produced by mammals in the two to three days after giving birth; it is rich in antibodies (IgA, IgG), lactoferrin, and immune cells, providing passive immunity to the newborn. <strong>Deer</strong> are not considered rabies vectors; rabies is primarily transmitted by dogs, cats, foxes, raccoons, and bats. <strong>Guinea pig</strong> (<em>Cavia porcellus</em>) is a short-tailed rodent widely used in biomedical research; like humans, guinea pigs cannot synthesise vitamin C and require it in their diet.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; క్షీరద తరగతి</span>
+  క్షీరదాలు ఉష్ణ రక్త సకశేరుకాలు; ఐదు ముఖ్య లక్షణాలు: <strong>(1) క్షీర గ్రంథులు</strong> (పాలు ఇవ్వడానికి); <strong>(2) వెంట్రుకలు / బొచ్చు</strong>; <strong>(3) మధ్యచ్ఛద (diaphragm)</strong>; <strong>(4) నాలుగు గది గుండె</strong>; <strong>(5)</strong> చాలా జాతులు సజీవ శిశువులు కనుతాయి. <strong>మోనోట్రీమ్‌లు</strong> = గుడ్లు పెట్టే క్షీరదాలు: <strong>డక్-బిల్డ్ ప్లాటిపస్</strong> + <strong>ఎకిడ్నా (శూల చీమలు తినేది)</strong> &mdash; రెండూ ఆస్ట్రేలియా/న్యూ గినియా; గుడ్లు పెట్టినా పాలు ఇస్తాయి (చనుమొనలు లేవు; చర్మ రంధ్రాల నుండి పాలు). మగ ప్లాటిపస్ విషపు ఎముక కలిగి ఉంటుంది. <strong>మ్యూల్</strong> = <strong>ఆడ గుర్రం (64 chr) + మగ గాడిద (62 chr)</strong> = 63 క్రోమోజోముల వంధ్య హైబ్రిడ్. <strong>ఆవు గర్భధారణ = 280 రోజులు</strong>. ఏనుగు = 22 నెలలు (620-660 రోజులు). <strong>పాలముదురు (Colostrum)</strong> = ప్రసవం తర్వాత 2-3 రోజులు; IgA, IgG ప్రతిరక్షకాలు; నిష్క్రియ రోగనిరోధకత. <strong>జింక</strong> = రేబిస్ వాహకం కాదు. <strong>గినియా పంది</strong> = విటమిన్ C తయారు చేసుకోలేదు; వైద్య పరీక్షలలో ఉపయోగం.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Animal / Feature<span class="te-td">జంతువు / లక్షణం</span></th><th>Detail<span class="te-td">వివరణ</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Monotremes (egg-laying mammals)</strong><span class="te-td">గుడ్లు పెట్టే క్షీరదాలు</span></td><td>Duck-billed Platypus + Echidna (spiny anteater); both in Australia/New Guinea; milk via skin pores<span class="te-td">ప్లాటిపస్ + ఎకిడ్నా; చర్మ రంధ్రాల నుండి పాలు</span></td></tr>
+<tr><td><strong>Mule hybrid</strong><span class="te-td">మ్యూల్ హైబ్రిడ్</span></td><td>Female horse (64 chr) + Male donkey (62 chr) = Mule (63 chr, sterile); hinny = stallion + female donkey<span class="te-td">ఆడ గుర్రం + మగ గాడిద = మ్యూల్ (వంధ్యత్వం)</span></td></tr>
+<tr><td><strong>Cow gestation</strong><span class="te-td">ఆవు గర్భధారణ</span></td><td>280 days (~9 months; same as humans)<span class="te-td">280 రోజులు</span></td></tr>
+<tr><td><strong>Longest gestation (land mammal)</strong><span class="te-td">అత్యంత గర్భకాలం</span></td><td>Elephant &mdash; approximately 22 months (660 days)<span class="te-td">ఏనుగు &mdash; 22 నెలలు</span></td></tr>
+<tr><td><strong>Colostrum</strong><span class="te-td">పాలముదురు</span></td><td>First milk; rich in antibodies (IgA, IgG); provides passive immunity to newborn<span class="te-td">ప్రతిరక్షకాలు; నిష్క్రియ రోగనిరోధకత</span></td></tr>
+<tr><td><strong>Not a rabid animal</strong><span class="te-td">రేబిస్ వాహకం కాదు</span></td><td>Deer; rabies mainly spread by dogs, cats, foxes, bats, raccoons<span class="te-td">జింక; రేబిస్ = కుక్క, పిల్లి, నక్క</span></td></tr>
+<tr><td><strong>Vitamin C synthesisers</strong><span class="te-td">విటమిన్ C తయారు చేయగలవి</span></td><td>Dogs, cats, cows, horses, rats (have L-gulonolactone oxidase gene intact)<span class="te-td">కుక్క, పిల్లి, ఆవు, గుర్రం, ఎలుక</span></td></tr>
+<tr><td><strong>Cannot synthesise Vit C</strong><span class="te-td">విటమిన్ C తయారు చేయలేవి</span></td><td>Humans, apes, monkeys, guinea pigs, bats, capybara (GULO gene mutated)<span class="te-td">మనుషులు, కోతులు, గినియా పంది, గబ్బిలాలు</span></td></tr>
+<tr><td><strong>Lab rodent</strong><span class="te-td">ప్రయోగశాల ఎలుక</span></td><td>Guinea pig (short-tailed; needs dietary Vit C; widely used in vaccine testing)<span class="te-td">గినియా పంది</span></td></tr>
+<tr><td><strong>Trypsin</strong><span class="te-td">ట్రిప్సిన్</span></td><td>Pancreatic protease enzyme; digests proteins in meat/blood in predators<span class="te-td">క్లోమ ఎంజైమ్; ప్రోటీన్ జీర్ణం</span></td></tr>
+<tr><td><strong>Human chromosomes</strong><span class="te-td">మానవ క్రోమోజోములు</span></td><td>46 (23 pairs: 22 autosomal + 1 sex pair XX/XY); gametes have 23 (haploid)<span class="te-td">46 క్రోమోజోములు; 23 జతలు</span></td></tr>
+</tbody>
+</table>
+
+<div class="exam-alert no-break">
+<div class="ea-title">Monotremes &mdash; Only Two Living Species</div>
+The world's only egg-laying mammals are the <strong>duck-billed platypus</strong> and the <strong>echidna (spiny anteater)</strong> &mdash; both endemic to Australia and New Guinea. Examination questions frequently ask about "egg-laying mammal" and both these names appear as correct options in different question papers. Know both. They produce milk through patches of skin (no nipples). The male platypus also possesses venomous spurs on the hind ankles &mdash; making it one of the very few venomous mammals.
+<span class="te-td">గుడ్లు పెట్టే క్షీరదాలు = 2 మాత్రమే: ప్లాటిపస్ + ఎకిడ్నా. రెండూ ఆస్ట్రేలియాలో. పాలు చర్మం ద్వారా. మగ ప్లాటిపస్ = విషం.</span>
+</div>
+<div class="pn">Page 11</div>
+</div>
+
+<!-- ==================== PAGE 12: MICROBIOLOGY PIONEERS ==================== -->
+<div class="page page-break">
+<div class="sec-head">Microbiology Pioneers &mdash; Discoveries and Timeline <span class="te">సూక్ష్మజీవశాస్త్ర పయొనీర్లు &mdash; ఆవిష్కరణలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; The Founders of Modern Biology</span>
+  The history of biology is marked by revolutionary discoveries that changed human understanding of life, disease, and the microscopic world. <strong>Robert Hooke</strong> (1635&ndash;1703) coined the word <strong>"cell"</strong> in 1665 after observing the dead cells in a thin slice of cork under a compound microscope. <strong>Anton van Leeuwenhoek</strong> (1632&ndash;1723), a Dutch cloth merchant who built the finest microscopes of his era (270x magnification), became in 1674 the first person to observe live microorganisms, which he called <em>animalcules</em>; among the organisms he described was <em>Spirogyra</em>. He is celebrated as the <strong>Father of Microbiology</strong>. <strong>Louis Pasteur</strong> (1822&ndash;1895) overturned the theory of spontaneous generation through his swan-neck flask experiments and established the <strong>Germ Theory of Disease</strong>, which holds that specific microorganisms cause specific diseases. He also developed pasteurisation and vaccines for chicken cholera, anthrax, and rabies. <strong>Robert Koch</strong> (1843&ndash;1910) discovered the causative agents of tuberculosis (<em>Mycobacterium tuberculosis</em>, 1882) and cholera (<em>Vibrio cholerae</em>, 1883) and formulated <strong>Koch's postulates</strong> &mdash; the scientific criteria for proving that a specific organism causes a specific disease. <strong>Edward Jenner</strong> (1749&ndash;1823) pioneered vaccination by using cowpox material to protect against <strong>smallpox</strong> in 1796 &mdash; the world's first vaccine. <strong>Alexander Fleming</strong> (1881&ndash;1955) discovered <strong>penicillin</strong> in 1928 when he noticed that the mould <em>Penicillium notatum</em> inhibited bacterial growth in a petri dish. Penicillin was the world's first antibiotic and revolutionised medicine. <strong>James Watson</strong> and <strong>Francis Crick</strong>, aided by X-ray crystallography data from Rosalind Franklin, proposed the <strong>double helix structure of DNA</strong> in 1953.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; ఆధునిక జీవశాస్త్ర వ్యవస్థాపకులు</span>
+  <strong>రాబర్ట్ హుక్</strong> (1665) &mdash; "కణం" అనే పదాన్ని కార్క్ కణాలు చూసి రూపొందించారు. <strong>ఆంటోనీ వాన్ లీవెన్‌హుక్</strong> (1674) &mdash; మొదటి జీవ సూక్ష్మజీవులను చూసారు; <em>Spirogyra</em> వర్ణించారు; "animalcules" పేరు పెట్టారు; <strong>సూక్ష్మజీవశాస్త్ర పితామహుడు</strong>. <strong>లూయి పాశ్చర్</strong> &mdash; స్వయంజన్మ సిద్ధాంతాన్ని తిరస్కరించారు; <strong>జెర్మ్ థియరీ</strong> నిర్థారించారు; పాస్టరైజేషన్, వ్యాక్సిన్‌లు. <strong>రాబర్ట్ కోచ్</strong> &mdash; TB (<em>Mycobacterium tuberculosis</em>, 1882), కలరా (<em>Vibrio cholerae</em>, 1883) కారకాలు కనుగొన్నారు; <strong>కోచ్ నిర్ణయాంశాలు</strong>. <strong>ఎడ్వర్డ్ జెన్నర్</strong> (1796) &mdash; మశూచి వ్యాక్సిన్ &mdash; ప్రపంచంలో మొదటి వ్యాక్సిన్. <strong>అలెగ్జాండర్ ఫ్లెమింగ్</strong> (1928) &mdash; <em>Penicillium notatum</em> నుండి పెన్సిలిన్ ఆవిష్కరణ. <strong>వాట్సన్ + క్రిక్</strong> (1953) &mdash; DNA ద్విసూత్ర సర్పిల నిర్మాణం.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Scientist<span class="te-td">శాస్త్రవేత్త</span></th><th>Discovery / Contribution<span class="te-td">ఆవిష్కరణ</span></th><th>Year<span class="te-td">సంవత్సరం</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Robert Hooke</strong><span class="te-td">రాబర్ట్ హుక్</span></td><td>Coined the word "cell" from observations of cork<span class="te-td">"కణం" పదం</span></td><td>1665<span class="te-td">1665</span></td></tr>
+<tr><td><strong>Anton van Leeuwenhoek</strong><span class="te-td">లీవెన్‌హుక్</span></td><td>First to observe live microbes; described Spirogyra; coined "animalcules"; Father of Microbiology<span class="te-td">మొదట సూక్ష్మజీవులు; స్పైరోగైరా; పితామహుడు</span></td><td>1674<span class="te-td">1674</span></td></tr>
+<tr><td><strong>Edward Jenner</strong><span class="te-td">జెన్నర్</span></td><td>First vaccine &mdash; cowpox material protects against smallpox; founder of vaccinology<span class="te-td">మొదటి వ్యాక్సిన్; మశూచి</span></td><td>1796<span class="te-td">1796</span></td></tr>
+<tr><td><strong>Louis Pasteur</strong><span class="te-td">పాశ్చర్</span></td><td>Germ Theory of Disease; swan-neck flask experiment; pasteurisation; rabies vaccine<span class="te-td">జెర్మ్ థియరీ; పాస్టరైజేషన్</span></td><td>1860s<span class="te-td">1860లు</span></td></tr>
+<tr><td><strong>Robert Koch</strong><span class="te-td">కోచ్</span></td><td>Discovered TB bacillus (1882) and cholera bacillus (1883); Koch's postulates<span class="te-td">TB + కలరా; కోచ్ నిర్ణయాంశాలు</span></td><td>1882&ndash;83<span class="te-td">1882-83</span></td></tr>
+<tr><td><strong>Alexander Fleming</strong><span class="te-td">ఫ్లెమింగ్</span></td><td>Discovered penicillin from mould Penicillium notatum; world's first antibiotic<span class="te-td">పెన్సిలిన్; మొదటి యాంటీబయోటిక్</span></td><td>1928<span class="te-td">1928</span></td></tr>
+<tr><td><strong>Watson &amp; Crick</strong><span class="te-td">వాట్సన్ + క్రిక్</span></td><td>Proposed DNA double helix structure (aided by Franklin's X-ray data)<span class="te-td">DNA ద్విసూత్ర నిర్మాణం</span></td><td>1953<span class="te-td">1953</span></td></tr>
+</tbody>
+</table>
+
+<div class="memory-box no-break">
+<div class="mem-title">Memory &mdash; Microbiology Timeline in Order</div>
+<strong>1665</strong> &mdash; Hooke coins "cell" from cork &middot; <strong>1674</strong> &mdash; Leeuwenhoek sees microbes (animalcules) &middot; <strong>1796</strong> &mdash; Jenner vaccinates against smallpox &middot; <strong>1860s</strong> &mdash; Pasteur germ theory + pasteurisation &middot; <strong>1882</strong> &mdash; Koch discovers TB bacillus &middot; <strong>1883</strong> &mdash; Koch discovers cholera bacillus &middot; <strong>1928</strong> &mdash; Fleming discovers penicillin &middot; <strong>1953</strong> &mdash; Watson &amp; Crick propose DNA double helix.
+<span class="te-td">1665 హుక్; 1674 లీవెన్‌హుక్; 1796 జెన్నర్; 1860 పాశ్చర్; 1882 కోచ్ TB; 1883 కోచ్ కలరా; 1928 ఫ్లెమింగ్; 1953 DNA.</span>
+</div>
+<div class="pn">Page 12</div>
+</div>
+
+
+<!-- ==================== PAGE 13: EVOLUTION SEQUENCE ==================== -->
+<div class="page page-break">
+<div class="sec-head">Evolution Sequence &mdash; Simple to Complex <span class="te">పరిణామ క్రమం &mdash; సరళత నుండి సంక్లిష్టతకు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; The Great Chain of Animal Life</span>
+  Biological evolution proceeds from simpler to more complex organisms over geological time. The evolutionary sequence of animal phyla &mdash; from the earliest single-celled organisms to the most complex vertebrates &mdash; reflects increasing levels of structural organisation: cellular, tissue, organ, and organ-system. <strong>Protozoa</strong> represent the base: single-celled eukaryotic animals (Amoeba, Plasmodium). <strong>Porifera</strong> (sponges) are the simplest multicellular animals; they have no true tissues or organs, and no nervous system. Despite their sessile, plant-like appearance, sponges are classified as animals. <strong>Coelenterata</strong> (Cnidaria) exhibit tissue-level organisation with two cell layers (diploblastic); their specialised stinging cells (cnidocytes) are unique. <strong>Platyhelminthes</strong> introduced bilateral symmetry, cephalisation (head formation), and the beginnings of organ-level organisation. <strong>Nematoda</strong> added a complete digestive system (mouth-to-anus) and a pseudocoelom. <strong>Annelida</strong> represent a major advance with a true coelom, metamerism (body segmentation), and a closed circulatory system. <strong>Arthropoda</strong> &mdash; the largest animal phylum &mdash; added a chitinous exoskeleton and jointed appendages; insects, crustaceans, arachnids, and myriapods all belong here. <strong>Mollusca</strong> are the second-largest phylum; the mantle, shell, and radula are defining features. <strong>Echinodermata</strong> are exclusively marine, have a water-vascular system, and show deuterostome development (like vertebrates). Finally, <strong>Chordata</strong> &mdash; defined by the presence of a notochord at some stage &mdash; includes all vertebrates: fish, amphibians, reptiles, birds, and mammals. The notochord becomes the vertebral column in vertebrates. <strong>Peripatus</strong>, the living fossil, serves as the connecting link between Annelida and Arthropoda; it has remained structurally similar for approximately 500 million years and is one of the few remaining examples of a transition form in the fossil record.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; జంతు జీవనంలో పెద్ద గొలుసు</span>
+  జీవపరిణామం సరళ జీవుల నుండి సంక్లిష్ట జీవులకు జరుగుతుంది. జంతు ఫైలాల పరిణామ క్రమం నాలుగు స్థాయులను ప్రతిబింబిస్తుంది: కణ స్థాయి, కణజాల స్థాయి, అవయవ స్థాయి, అవయవ వ్యవస్థ స్థాయి. <strong>ప్రోటోజోవా</strong> = ఏకకణ జంతువులు. <strong>పోరిఫెరా</strong> = బహుకణ కానీ నిజమైన కణజాలాలు లేవు; జంతువుగా వర్గీకరించబడతాయి. <strong>సీలెంటరేటా</strong> = కణజాల స్థాయి; దంశన కణాలు. <strong>ప్లాటిహెల్మింథెస్</strong> = ద్వి-పార్శ్వ సమరూపత; అవయవ స్థాయి. <strong>నెమటోడా</strong> = పూర్తి జీర్ణ నాళం. <strong>అనెలిడా</strong> = నిజమైన దేహ కుహరం; ఖండ విభజన; మూసిన రక్త ప్రసరణ. <strong>ఆర్థ్రోపోడా</strong> = అతి పెద్ద ఫైలం; కైటిన్ బాహ్య అస్థిపంజరం; కీటకాలు, క్రస్టేషియాలు, సాలెపురుగులు. <strong>మొలస్కా</strong> = రెండవ అతి పెద్ద ఫైలం. <strong>ఎకినోడెర్మాటా</strong> = సముద్ర జీవులు; నీటి వాహిక వ్యవస్థ. <strong>కార్డేటా</strong> = నోటోకార్డ్; సకశేరుకాలు. <strong>పెరిపాటస్</strong> = జీవ శిలాజం; అనెలిడా-ఆర్థ్రోపోడా మధ్య సంధి.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Phylum / Group<span class="te-td">ఫైలం</span></th><th>Key Advance<span class="te-td">ముఖ్య పురోగతి</span></th><th>Organisation Level<span class="te-td">స్థాయి</span></th><th>Examples<span class="te-td">ఉదాహరణలు</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Protozoa</strong></td><td>First eukaryotic animals<span class="te-td">మొదటి యూకారియోట్</span></td><td>Cell level<span class="te-td">కణ</span></td><td>Amoeba, Plasmodium<span class="te-td">అమీబా</span></td></tr>
+<tr><td><strong>Porifera</strong></td><td>Multicellular; filter feeding<span class="te-td">బహుకణ</span></td><td>Cellular level<span class="te-td">కణ</span></td><td>Sponge<span class="te-td">స్పాంజ్</span></td></tr>
+<tr><td><strong>Coelenterata</strong></td><td>Tissues; stinging cells; diploblastic<span class="te-td">కణజాలం; దంశన కణాలు</span></td><td>Tissue level<span class="te-td">కణజాల</span></td><td>Jellyfish, Hydra, Coral<span class="te-td">జెల్లీఫిష్, హైడ్రా</span></td></tr>
+<tr><td><strong>Platyhelminthes</strong></td><td>Bilateral symmetry; organ level<span class="te-td">ద్వి-పార్శ్వ; అవయవాలు</span></td><td>Organ level<span class="te-td">అవయవ</span></td><td>Tapeworm, Planaria<span class="te-td">తేతువు</span></td></tr>
+<tr><td><strong>Nematoda</strong></td><td>Complete gut; pseudocoelom<span class="te-td">పూర్తి జీర్ణ నాళం</span></td><td>Organ level<span class="te-td">అవయవ</span></td><td>Ascaris, Filaria<span class="te-td">ఆస్కారిస్</span></td></tr>
+<tr><td><strong>Annelida</strong></td><td>True coelom; segmentation; closed circulation<span class="te-td">నిజమైన దేహ కుహరం; ఖండాలు</span></td><td>Organ-system<span class="te-td">అవయవ వ్యవస్థ</span></td><td>Earthworm, Leech<span class="te-td">వానపాము, జలగ</span></td></tr>
+<tr><td><strong>Arthropoda</strong></td><td>Exoskeleton; jointed legs; largest phylum<span class="te-td">బాహ్య అస్థిపంజరం; కీళ్ళు</span></td><td>Organ-system<span class="te-td">అవయవ వ్యవస్థ</span></td><td>Insects, Crabs, Spiders<span class="te-td">కీటకాలు, పీతలు</span></td></tr>
+<tr><td><strong>Mollusca</strong></td><td>Mantle; shell; radula<span class="te-td">మాంటిల్; చిప్ప</span></td><td>Organ-system<span class="te-td">అవయవ వ్యవస్థ</span></td><td>Snail, Oyster, Squid<span class="te-td">నత్త, ఆయిస్టర్</span></td></tr>
+<tr><td><strong>Echinodermata</strong></td><td>Water-vascular system; exclusively marine<span class="te-td">నీటి వాహిక వ్యవస్థ</span></td><td>Organ-system<span class="te-td">అవయవ వ్యవస్థ</span></td><td>Starfish, Sea urchin<span class="te-td">స్టార్‌ఫిష్</span></td></tr>
+<tr><td><strong>Chordata</strong></td><td>Notochord; nerve cord; pharyngeal slits<span class="te-td">నోటోకార్డ్; నాడీ తంతువు</span></td><td>Organ-system<span class="te-td">అవయవ వ్యవస్థ</span></td><td>Fish, Frogs, Reptiles, Birds, Mammals<span class="te-td">చేపలు, పక్షులు, క్షీరదాలు</span></td></tr>
+</tbody>
+</table>
+
+<div class="highlight-box no-break">
+<strong>Peripatus &mdash; The Living Fossil:</strong> Peripatus (velvet worm) is a small, caterpillar-like animal that has survived virtually unchanged for approximately 500 million years, making it one of the most remarkable living fossils. It shows features of both Annelida (segmented body, thin cuticle, nephridia) and Arthropoda (tracheal respiration, claw-like legs). This places it as a transitional form between the two phyla. Other famous living fossils include the horseshoe crab (<em>Limulus</em>), the coelacanth fish (<em>Latimeria</em>), the tuatara reptile, and the ginkgo tree.
+<span class="te-td">పెరిపాటస్ = జీవ శిలాజం; ~500 మిలియన్ సంవత్సరాల నుండి మారలేదు. అనెలిడా + ఆర్థ్రోపోడా లక్షణాలు. ఇతర జీవ శిలాజాలు: హార్స్‌షూ క్రాబ్, సీలాకాంత్, తూట్టారా.</span>
+</div>
+<div class="pn">Page 13</div>
+</div>
+
+<!-- ==================== PAGE 14: PLANTS AND SPECIAL TOPICS ==================== -->
+<div class="page page-break">
+<div class="sec-head">Plants, Worm Biology &amp; Body Genetics <span class="te">మొక్కలు · పురుగు జీవశాస్త్రం · శరీర జన్యువులు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; Plant Hormones and Algae</span>
+  Plant biology contributes several important examination topics. <strong>Phycology</strong> is the study of <strong>algae</strong> (from Greek <em>phukos</em> = seaweed); not to be confused with Mycology (fungi study), Melittology (bee study), or Acarology (mite study). <strong>Auxins</strong> (indole-3-acetic acid, IAA) are plant hormones that promote cell elongation and root initiation, but at high concentrations they inhibit the normal development of <strong>fleshy fruits</strong>. Other plant hormones include <strong>gibberellins</strong> (stem elongation, seed germination), <strong>cytokinins</strong> (cell division, delays leaf ageing), <strong>ethylene</strong> (fruit ripening, a gas), and <strong>abscisic acid/ABA</strong> (stress response, dormancy induction). The herbivorous animals digest <strong>cellulose</strong> in the <strong>cecum</strong> (caecum), where symbiotic bacteria break down cellulose that the host's own enzymes cannot digest. The <strong>chameleon</strong> changes skin colour using <strong>chromatophore cells</strong> (pigment-containing cells) under combined nervous and hormonal control, serving both camouflage and intra-species communication. <strong>Spirogyra</strong> is a filamentous green alga named for the spiral arrangement of its chloroplasts; it was among the organisms first described by Leeuwenhoek in 1674 and is commonly found in freshwater ponds. The plant micronutrient most tested is <strong>Zinc (Zn)</strong>; phosphorus, magnesium, and calcium are macronutrients required in larger quantities. Zinc deficiency causes "khaira" disease in rice and "little leaf" disease in mango.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; మొక్కల హార్మోన్లు మరియు శైవలాలు</span>
+  <strong>ఫైకాలజీ</strong> = <strong>శైవలాల అధ్యయనం</strong>. <strong>ఆక్సిన్‌లు (IAA)</strong> = కణ పొడిగింపు ప్రోత్సహిస్తాయి; ఎక్కువ మోతాదులో <strong>కండగల పండ్ల అభివృద్ధిని నిరోధిస్తాయి</strong>. ఇతర మొక్క హార్మోన్లు: <strong>జిబరెల్లిన్‌లు</strong> (కాండం పెరుగుదల), <strong>సైటోకైనిన్‌లు</strong> (కణ విభజన), <strong>ఇథిలీన్</strong> (పండు పక్వం), <strong>ABA</strong> (ఒత్తిడి నిరోధం). శాకాహారులు <strong>సెల్యులోజ్‌ను అంధనాళంలో</strong> (cecum) జీర్ణిస్తాయి. <strong>ఊసరవెల్లి</strong> = <strong>క్రోమాటోఫోర్ కణాల</strong> ద్వారా రంగు మారుస్తుంది. <strong>స్పైరోగైరా</strong> = తాజా నీటి శైవలం; 1674లో లీవెన్‌హుక్ వర్ణించారు. <strong>జింక్ (Zn)</strong> = మొక్క సూక్ష్మ పోషకం; P, Mg, Ca = స్థూల పోషకాలు. Zn లోపం = వరిలో ఖైరా వ్యాధి.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Topic<span class="te-td">విషయం</span></th><th>Detail<span class="te-td">వివరణ</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Phycology</strong><span class="te-td">ఫైకాలజీ</span></td><td>Study of algae (Greek phukos = seaweed); Mycology = fungi; Melittology = bees; Acarology = mites<span class="te-td">శైవల అధ్యయనం</span></td></tr>
+<tr><td><strong>Auxin effect</strong><span class="te-td">ఆక్సిన్ ప్రభావం</span></td><td>Promotes cell elongation, root initiation; suppresses fleshy fruit development at high doses<span class="te-td">కణ పొడిగింపు; పండ్ల అభివృద్ధి నిరోధం</span></td></tr>
+<tr><td><strong>Ethylene</strong><span class="te-td">ఇథిలీన్</span></td><td>Plant hormone that promotes fruit ripening; a gas; used commercially to ripen bananas<span class="te-td">పండు పక్వం; వాయువు</span></td></tr>
+<tr><td><strong>Cellulose digestion site</strong><span class="te-td">సెల్యులోజ్ జీర్ణం</span></td><td>Cecum (caecum) in herbivores; symbiotic bacteria break down cellulose<span class="te-td">అంధనాళం; సహజీవ బ్యాక్టీరియా</span></td></tr>
+<tr><td><strong>Chameleon colour change</strong><span class="te-td">ఊసరవెల్లి</span></td><td>Chromatophore cells under nervous + hormonal control; camouflage and communication<span class="te-td">క్రోమాటోఫోర్ కణాలు</span></td></tr>
+<tr><td><strong>Plant micronutrient</strong><span class="te-td">సూక్ష్మ పోషకం</span></td><td>Zinc (Zn); macronutrients = N, P, K, Ca, Mg, S; deficiency causes khaira in rice<span class="te-td">జింక్; వరిలో ఖైరా</span></td></tr>
+<tr><td><strong>Earthworm haemoglobin</strong><span class="te-td">వానపాము హెమోగ్లోబిన్</span></td><td>Dissolved freely in plasma; no red blood cells; haemoglobin is extracellular<span class="te-td">ప్లాస్మాలో; RBC లేవు</span></td></tr>
+<tr><td><strong>Snake bite circulation</strong><span class="te-td">పాము కాటు ప్రభావం</span></td><td>Primarily affects blood circulation (haemotoxin in vipers) or nervous system (neurotoxin in cobra, krait)<span class="te-td">రక్త ప్రసరణ; నాడీ వ్యవస్థ</span></td></tr>
+<tr><td><strong>Human chromosomes</strong><span class="te-td">మానవ క్రోమోజోములు</span></td><td>46 chromosomes (23 pairs = 22 autosomal + 1 sex pair); gametes carry 23 (haploid)<span class="te-td">46 క్రోమోజోములు; 23 జతలు</span></td></tr>
+<tr><td><strong>Audible range (humans)</strong><span class="te-td">మానవ శ్రవణ పరిధి</span></td><td>20 Hz to 20,000 Hz (20 kHz); below = infrasound; above = ultrasound<span class="te-td">20 Hz &ndash; 20 kHz; ఇన్‌ఫ్రా / అల్ట్రా</span></td></tr>
+<tr><td><strong>Hydra respiration</strong><span class="te-td">హైడ్రా శ్వాసక్రియ</span></td><td>No blood; respires by direct diffusion through the two-layered body wall<span class="te-td">రక్తం లేదు; వ్యాప్తి ద్వారా</span></td></tr>
+</tbody>
+</table>
+
+<div class="memory-box no-break">
+<div class="mem-title">Memory &mdash; Plant Hormones (5 Main Classes)</div>
+<strong>Auxin (IAA)</strong> &mdash; cell elongation, apical dominance, root initiation; suppresses fleshy fruit development at high doses. <strong>Gibberellin (GA)</strong> &mdash; stem elongation, seed germination, breaks dormancy. <strong>Cytokinin</strong> &mdash; cell division, delays leaf senescence. <strong>Ethylene (gas)</strong> &mdash; fruit ripening, leaf/flower drop. <strong>ABA (abscisic acid)</strong> &mdash; stress response, stomata closure, induces dormancy. Remember: "A Gift Carries Excellent Achievement."
+<span class="te-td">ఆక్సిన్ (కణ పొడిగింపు) &bull; జిబరెల్లిన్ (మొలక) &bull; సైటోకైనిన్ (కణ విభజన) &bull; ఇథిలీన్ (పండు పక్వం) &bull; ABA (ఒత్తిడి నిరోధం).</span>
+</div>
+<div class="pn">Page 14</div>
+</div>
+
+
+<!-- ==================== PAGE 15: QUICK REFERENCE SUMMARY ==================== -->
+<div class="page page-break">
+<div class="sec-head">Quick Reference Summary &mdash; Animal Superlatives &amp; Key Exam Facts <span class="te">త్వరిత సందర్భ సారాంశం &mdash; జంతు రికార్డులు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN &mdash; All Key Facts in One Place</span>
+  This summary brings together the most frequently tested facts from the entire Living Organisms topic for quick revision. Pay special attention to the "only" facts, the "-culture" terms, the evolution sequence, the symbiosis trio, and the organism records, as these categories account for the majority of examination questions. Particular care should be taken to distinguish between facts that look similar: the camel hump (fat) versus water storage (intestine); earthworm haemoglobin (in plasma, no RBCs) versus other animals; crocodile heart (four chambers, only reptile) versus other reptile hearts (three chambers). The five-kingdom system should be memorised with the key distinguishing feature of each kingdom. The seven characteristics of life (nutrition, respiration, growth, reproduction, excretion, response, movement) are the foundation of all biology questions.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE &mdash; ముఖ్య వాస్తవాలు</span>
+  ఈ సారాంశం మొత్తం జీవుల అంశాన్ని కవర్ చేస్తుంది. "ఏకైక" వాస్తవాలు, "-culture" పదాలు, పరిణామ క్రమం, సహజీవన త్రయం, జంతు రికార్డులు &mdash; ఇవి పరీక్షలో అత్యధిక ప్రశ్నలు వచ్చే విభాగాలు. ఒంటె మూపురం (కొవ్వు) vs ప్రేగు (నీరు); వానపాము హెమోగ్లోబిన్ (ప్లాస్మాలో); మొసలి గుండె (4 గదులు, ఏకైక సరీసృపం) వంటి సారూప్య వాస్తవాలను వేరు చేయడం నేర్చుకోండి.
+  </div>
+</div>
+
+<table>
+<thead>
+<tr><th>Category<span class="te-td">వర్గం</span></th><th>Fact<span class="te-td">వాస్తవం</span></th><th>Answer<span class="te-td">సమాధానం</span></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Largest living animal</strong><span class="te-td">అతిపెద్ద జంతువు</span></td><td>Which is the largest animal alive today?<span class="te-td">నేటి అతిపెద్ద జంతువు?</span></td><td>Blue Whale (30 m, 180 t)<span class="te-td">నీలి తిమింగలం</span></td></tr>
+<tr><td><strong>Largest living bird</strong><span class="te-td">అతిపెద్ద పక్షి</span></td><td>Largest living bird?<span class="te-td">అతిపెద్ద పక్షి?</span></td><td>Ostrich (Africa; flightless)<span class="te-td">ఆస్ట్రిచ్</span></td></tr>
+<tr><td><strong>Smallest bird egg</strong><span class="te-td">అతి చిన్న పక్షి గుడ్డు</span></td><td>Bird with the smallest egg?<span class="te-td">అతి చిన్న పక్షి గుడ్డు?</span></td><td>Bee Hummingbird (~6 mm)<span class="te-td">బీ హమ్మింగ్‌బర్డ్</span></td></tr>
+<tr><td><strong>Largest cell (naked eye)</strong><span class="te-td">కంటికి కనిపించే అతిపెద్ద కణం</span></td><td>Largest human cell visible to naked eye?<span class="te-td">అతిపెద్ద మానవ కణం?</span></td><td>Human ovum (~0.1 mm)<span class="te-td">మానవ అండం</span></td></tr>
+<tr><td><strong>Only reptile 4-chamber heart</strong><span class="te-td">ఏకైక 4-గది సరీసృపం</span></td><td>Which reptile has a 4-chambered heart?<span class="te-td">నాలుగు గది గుండె సరీసృపం?</span></td><td>Crocodile only<span class="te-td">మొసలి మాత్రమే</span></td></tr>
+<tr><td><strong>Only nest-building snake</strong><span class="te-td">గూడు కట్టే పాము</span></td><td>Only snake to build a nest?<span class="te-td">గూడు కట్టే పాము?</span></td><td>King Cobra (<em>Ophiophagus hannah</em>)<span class="te-td">కింగ్ కోబ్రా</span></td></tr>
+<tr><td><strong>Non-venomous snake</strong><span class="te-td">విషం లేని పాము</span></td><td>Which is non-venomous?<span class="te-td">విషం లేనిది?</span></td><td>Python (kills by constriction)<span class="te-td">కొండచిలువ</span></td></tr>
+<tr><td><strong>Egg-laying mammals</strong><span class="te-td">గుడ్లు పెట్టే క్షీరదాలు</span></td><td>Only egg-laying mammal species?<span class="te-td">గుడ్లు పెట్టే క్షీరదాలు?</span></td><td>Platypus + Echidna (monotremes)<span class="te-td">ప్లాటిపస్ + ఎకిడ్నా</span></td></tr>
+<tr><td><strong>Sterile hybrid</strong><span class="te-td">వంధ్య హైబ్రిడ్</span></td><td>Mule = cross of?<span class="te-td">మ్యూల్ = ?</span></td><td>Female horse + Male donkey (63 chromosomes)<span class="te-td">ఆడ గుర్రం + మగ గాడిద</span></td></tr>
+<tr><td><strong>Longest lifespan</strong><span class="te-td">అతిపొడవు ఆయుష్షు</span></td><td>Cold-blooded animal with longest life?<span class="te-td">ఎక్కువ ఆయుష్షు?</span></td><td>Tortoise (150&ndash;175+ years)<span class="te-td">తాబేలు</span></td></tr>
+<tr><td><strong>Bacteria&mdash;no hormones</strong><span class="te-td">హార్మోన్లు లేని జీవులు</span></td><td>In which organisms are hormones absent?<span class="te-td">హార్మోన్లు లేవు?</span></td><td>Bacteria<span class="te-td">బ్యాక్టీరియా</span></td></tr>
+<tr><td><strong>RNA-genome virus</strong><span class="te-td">RNA వైరస్</span></td><td>Virus with RNA as genetic material (first discovered)?<span class="te-td">RNA వైరస్?</span></td><td>Tobacco Mosaic Virus (TMV)<span class="te-td">TMV</span></td></tr>
+<tr><td><strong>Lichen</strong><span class="te-td">లైకెన్</span></td><td>Lichen = symbiosis of?<span class="te-td">లైకెన్ = ?</span></td><td>Algae + Fungi (mutualism)<span class="te-td">శైవలం + శిలీంధ్రం</span></td></tr>
+<tr><td><strong>Father of Microbiology</strong><span class="te-td">సూక్ష్మజీవశాస్త్ర పితామహుడు</span></td><td>Who first saw live microbes (1674)?<span class="te-td">సూక్ష్మజీవులు మొదట చూసారు?</span></td><td>Anton van Leeuwenhoek<span class="te-td">లీవెన్‌హుక్</span></td></tr>
+<tr><td><strong>First antibiotic</strong><span class="te-td">మొదటి యాంటీబయోటిక్</span></td><td>First antibiotic; discovered from which organism?<span class="te-td">పెన్సిలిన్ మూలం?</span></td><td>Penicillin from mould Penicillium notatum (Fleming, 1928)<span class="te-td">పెన్సిలియమ్ బూజు</span></td></tr>
+<tr><td><strong>Worker bees</strong><span class="te-td">పనితేనెటీగలు</span></td><td>Worker bees are?<span class="te-td">పనితేనెటీగలు?</span></td><td>Sterile females<span class="te-td">వంధ్య ఆడలు</span></td></tr>
+<tr><td><strong>Silk source</strong><span class="te-td">పట్టు మూలం</span></td><td>Silk produced by which stage?<span class="te-td">పట్టు దశ?</span></td><td>Larva of Bombyx mori (cocoon stage)<span class="te-td">లార్వా; కోకూన్</span></td></tr>
+<tr><td><strong>Bee dance</strong><span class="te-td">తేనెటీగ నృత్యం</span></td><td>Bee dance serves what purpose?<span class="te-td">తేనెటీగ నృత్యం ఎందుకు?</span></td><td>Communication (distance + direction to food)<span class="te-td">సమాచారం</span></td></tr>
+<tr><td><strong>Plankton habitat</strong><span class="te-td">ప్లవకాల నివాసం</span></td><td>Where do planktons live?<span class="te-td">ప్లవకాలు ఎక్కడ?</span></td><td>Water column (drift with currents)<span class="te-td">నీటి స్తంభం</span></td></tr>
+<tr><td><strong>Pearl formation</strong><span class="te-td">ముత్యాల ఏర్పాటు</span></td><td>Pearls form inside which organism?<span class="te-td">ముత్యాలు ఎక్కడ?</span></td><td>Molluscs (mainly oysters)<span class="te-td">మొలస్క్‌లు (ఆయిస్టర్)</span></td></tr>
+<tr><td><strong>Camel hump</strong><span class="te-td">ఒంటె మూపురం</span></td><td>Camel hump stores?<span class="te-td">మూపురంలో?</span></td><td>Fat (NOT water)<span class="te-td">కొవ్వు (నీరు కాదు)</span></td></tr>
+<tr><td><strong>Chlorella in space</strong><span class="te-td">క్లోరెల్లా అంతరిక్షంలో</span></td><td>Which alga is used in space programmes?<span class="te-td">అంతరిక్ష శైవలం?</span></td><td>Chlorella (unicellular green alga)<span class="te-td">క్లోరెల్లా</span></td></tr>
+<tr><td><strong>Living fossil</strong><span class="te-td">జీవ శిలాజం</span></td><td>Connecting link between Annelida and Arthropoda?<span class="te-td">అనెలిడా-ఆర్థ్రోపోడా సంధి?</span></td><td>Peripatus<span class="te-td">పెరిపాటస్</span></td></tr>
+<tr><td><strong>Colostrum</strong><span class="te-td">పాలముదురు</span></td><td>Colostrum is important for calves because?<span class="te-td">పాలముదురు ప్రాముఖ్యత?</span></td><td>Rich in antibodies (IgA, IgG); passive immunity<span class="te-td">ప్రతిరక్షకాలు; నిష్క్రియ రోగనిరోధకత</span></td></tr>
+<tr><td><strong>Insect orders</strong><span class="te-td">కీటక క్రమాలు</span></td><td>Insects are grouped into how many orders?<span class="te-td">కీటకాల క్రమాలు?</span></td><td>26 orders<span class="te-td">26 క్రమాలు</span></td></tr>
+<tr><td><strong>Evolution sequence</strong><span class="te-td">పరిణామ క్రమం</span></td><td>Correct evolutionary sequence from simple to complex?<span class="te-td">పరిణామ క్రమం?</span></td><td>Protozoa &rarr; Porifera &rarr; Coelenterata &rarr; Annelida<span class="te-td">ప్రోటోజోవా&rarr;పోరిఫెరా&rarr;సీలెంటరేటా&rarr;అనెలిడా</span></td></tr>
+</tbody>
+</table>
+
+<div class="recap-box">
+  <div class="recap-item"><span class="ri-num">1</span>Blue whale = largest animal + biggest baby.</div>
+  <div class="recap-item"><span class="ri-num">2</span>Crocodile = only 4-chamber reptile.</div>
+  <div class="recap-item"><span class="ri-num">3</span>King Cobra = only nest-building snake.</div>
+  <div class="recap-item"><span class="ri-num">4</span>Platypus + Echidna = egg-laying mammals.</div>
+  <div class="recap-item"><span class="ri-num">5</span>Mule = mare 64 + jack 62 = 63 chr.</div>
+  <div class="recap-item"><span class="ri-num">6</span>Lichen = algae + fungi mutualism.</div>
+  <div class="recap-item"><span class="ri-num">7</span>Mycorrhiza = fungi + plant root.</div>
+  <div class="recap-item"><span class="ri-num">8</span>Rhizobium = bacteria + legume nodule.</div>
+  <div class="recap-item"><span class="ri-num">9</span>TMV = RNA-only virus.</div>
+  <div class="recap-item"><span class="ri-num">10</span>HIV attacks CD4+ T-cells (AIDS).</div>
+  <div class="recap-item"><span class="ri-num">11</span>Leeuwenhoek 1674 = Father of Microbiology.</div>
+  <div class="recap-item"><span class="ri-num">12</span>Fleming 1928 = penicillin from mould.</div>
+  <div class="recap-item"><span class="ri-num">13</span>Watson + Crick 1953 = DNA double helix.</div>
+  <div class="recap-item"><span class="ri-num">14</span>Ostrich = largest bird (Africa, flightless).</div>
+  <div class="recap-item"><span class="ri-num">15</span>Emu = flightless bird (Australia).</div>
+  <div class="recap-item"><span class="ri-num">16</span>Syrinx = bird voice organ.</div>
+  <div class="recap-item"><span class="ri-num">17</span>Cerebellum = balance + coordination.</div>
+  <div class="recap-item"><span class="ri-num">18</span>Bat = mammal using ultrasonic echolocation.</div>
+  <div class="recap-item"><span class="ri-num">19</span>Camel hump = fat; water = intestine.</div>
+  <div class="recap-item"><span class="ri-num">20</span>Tortoise = longest lifespan (cold-blooded).</div>
+  <div class="recap-item"><span class="ri-num">21</span>Silkworm eats mulberry; silk from larva.</div>
+  <div class="recap-item"><span class="ri-num">22</span>Worker bee = sterile female.</div>
+  <div class="recap-item"><span class="ri-num">23</span>Bee dance = direction + distance (communication).</div>
+  <div class="recap-item"><span class="ri-num">24</span>Earthworm = hermaphrodite; Hb in plasma.</div>
+  <div class="recap-item"><span class="ri-num">25</span>Tapeworm = Platyhelminthes (human intestine).</div>
+  <div class="recap-item"><span class="ri-num">26</span>Leech = Annelida; hirudin anticoagulant.</div>
+  <div class="recap-item"><span class="ri-num">27</span>Sponge = animal (Porifera).</div>
+  <div class="recap-item"><span class="ri-num">28</span>Hydra = no blood; respires through body wall.</div>
+  <div class="recap-item"><span class="ri-num">29</span>Peripatus = living fossil (Annelida-Arthropoda link).</div>
+  <div class="recap-item"><span class="ri-num">30</span>Chlorella in space = O&#8322; regulation.</div>
+  <div class="recap-item"><span class="ri-num">31</span>Phycology = study of algae.</div>
+  <div class="recap-item"><span class="ri-num">32</span>Auxin suppresses fleshy fruit development.</div>
+  <div class="recap-item"><span class="ri-num">33</span>Cellulose digested in cecum by bacteria.</div>
+  <div class="recap-item"><span class="ri-num">34</span>Chameleon = chromatophore colour change.</div>
+  <div class="recap-item"><span class="ri-num">35</span>Pearl = nacre in mollusc (oyster).</div>
+  <div class="recap-item"><span class="ri-num">36</span>Shark = true fish; others are impostors.</div>
+  <div class="recap-item"><span class="ri-num">37</span>Smallest bird egg = Bee Hummingbird. Largest bird egg = Ostrich. Largest cell visible to naked eye = Human ovum (0.1 mm).</div>
+  <div class="recap-item"><span class="ri-num">38</span>Adult amphibian kidney = mesonephros.</div>
+  <div class="recap-item"><span class="ri-num">39</span>Snake tongue = smell via Jacobson's organ; poison glands = modified salivary glands.</div>
+  <div class="recap-item"><span class="ri-num">40</span>Protozoa → Porifera → Coelenterata → Platyhelminthes → Nematoda → Annelida → Arthropoda → Mollusca → Echinodermata → Chordata.</div>
+    <div class="recap-item"><span class="ri-num">41</span>Gregor Mendel = Father of Genetics; discovered laws of inheritance using pea plants (<em>Pisum sativum</em>); published 1866. Laws: Law of Segregation + Law of Independent Assortment. జన్యుశాస్త్ర పితామహుడు = గ్రెగర్ మెండల్; బఠాణి మొక్కలతో ప్రయోగాలు.</div>
+  <div class="recap-item"><span class="ri-num">42</span>Charles Darwin = Theory of Evolution by Natural Selection (1859, <em>Origin of Species</em>). Hugo de Vries = Mutation theory. Lamarck = Acquired Characteristics theory. పరిణామ సిద్ధాంతం: డార్విన్ (1859); ద్రవ్యరాశి పరిణామం.</div>
+  <div class="recap-item"><span class="ri-num">43</span>Five-kingdom classification = R.H. Whittaker (1969). Two-kingdom = Linnaeus. Three-kingdom = Haeckel. Six-kingdom = Woese (adds Archaea). పంచ జగత్తు వర్గీకరణ = విట్టేకర్ (1969).</div>
+</div><!-- end recap-box -->
+</div><!-- end last page -->
+</body>
+</html>

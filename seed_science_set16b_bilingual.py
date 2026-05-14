@@ -1,0 +1,70 @@
+import sqlite3, os
+
+SOURCE = 'Science_Set16B_Plants_Ext'
+DB = os.path.join(os.path.dirname(__file__), 'database.db')
+
+questions = [
+    ('What is the outermost layer of a plant cell called?\\nతెలుగు: మొక్క కణం యొక్క బాహ్యతమ పొర ఏమిటి?', 'Cell wall / కణ గోడ', 'Cell membrane / కణ పొర', 'Vacuole / వాక్యువోల్', 'Cytoplasm / సైటోప్లాజమ్', 'A', 'M', '', 1),
+    ('Which tissue in plants conducts water from roots to leaves?\\nతెలుగు: మొక్కలలో వేర్ల నుండి ఆకులకు నీటిని నిర్వహించే కణజాలం ఏది?', 'Xylem / జైలెమ్', 'Phloem / ఫ్లోయమ్', 'Epidermis / ఎపిడెర్మిస్', 'Cortex / కార్టెక్స్', 'A', 'M', '', 2),
+    ('Which tissue transports food (sugars) in plants?\\nతెలుగు: మొక్కలలో ఆహారం (చక్కెరలు) రవాణా చేసే కణజాలం ఏది?', 'Phloem / ఫ్లోయమ్', 'Xylem / జైలెమ్', 'Sclerenchyma / స్క్లెరంకైమా', 'Collenchyma / కొలెన్‌కైమా', 'A', 'M', '', 3),
+    ('The root tip is protected by the?\\nతెలుగు: మూల కొన ఏ ద్వారా రక్షించబడుతుంది?', 'Root cap / మూల టోపీ', 'Root hair / మూల వెంట్రుక', 'Cortex / కార్టెక్స్', 'Endodermis / ఎండోడెర్మిస్', 'A', 'M', '', 4),
+    ('What is the function of stomata?\\nతెలుగు: స్టోమాటా యొక్క పని ఏమిటి?', 'Gas exchange and water loss / వాయు మార్పిడి మరియు నీటి నష్టం', 'Photosynthesis / కిరణజన్య సంయోగం', 'Water absorption / నీటి శోషణ', 'Nutrient storage / పోషక నిల్వ', 'A', 'M', '', 5),
+    ('Guard cells surround and regulate which structure?\\nతెలుగు: గార్డ్ సెల్లు ఏ నిర్మాణాన్ని చుట్టి నియంత్రిస్తాయి?', 'Stomata / స్టోమాటా', 'Chloroplast / క్లోరోప్లాస్ట్', 'Vacuole / వాక్యువోల్', 'Nucleus / కేంద్రకం', 'A', 'M', '', 6),
+    ('What is the pith in a plant stem?\\nతెలుగు: మొక్క కాండంలో పిత్ అంటే ఏమిటి?', 'Central soft tissue for storage / నిల్వ కోసం కేంద్ర మృదు కణజాలం', 'Outer covering / బాహ్య కవచం', 'Transport tissue / రవాణా కణజాలం', 'Photosynthetic layer / కిరణజన్య సంయోగ పొర', 'A', 'M', '', 7),
+    ('Annual rings in tree trunks indicate?\\nతెలుగు: చెట్టు కాండంలో వార్షిక వలయాలు ఏమి సూచిస్తాయి?', 'Age of the tree / చెట్టు వయసు', 'Height of the tree / చెట్టు ఎత్తు', 'Species of the tree / చెట్టు జాతి', 'Soil type / మట్టి రకం', 'A', 'M', '', 8),
+    ('Root hairs increase the surface area for?\\nతెలుగు: మూల వెంట్రుకలు దేని కోసం ఉపరితల వైశాల్యాన్ని పెంచుతాయి?', 'Water and mineral absorption / నీటి మరియు ఖనిజ శోషణ', 'Photosynthesis / కిరణజన్య సంయోగం', 'Gas exchange / వాయు మార్పిడి', 'Support / ఆధారం', 'A', 'M', '', 9),
+    ('Which type of root system consists of one main root?\\nతెలుగు: ఒక ప్రధాన మూలం ఉండే మూల వ్యవస్థ ఏ రకానికి చెందుతుంది?', 'Taproot system / మొత్తు మూల వ్యవస్థ', 'Fibrous root system / నారు మూల వ్యవస్థ', 'Adventitious roots / అనుకూల మూలాలు', 'Aerial roots / గాలి మూలాలు', 'A', 'M', '', 10),
+    ('What is the overall equation for photosynthesis?\\nతెలుగు: కిరణజన్య సంయోగానికి మొత్తం సమీకరణం ఏమిటి?', 'CO₂ + H₂O + light → glucose + O₂', 'O₂ + glucose → CO₂ + H₂O', 'H₂O + O₂ → glucose + CO₂', 'Glucose + light → O₂ + CO₂', 'A', 'M', '', 11),
+    ('What pigment in plants absorbs sunlight for photosynthesis?\\nతెలుగు: మొక్కలలో కిరణజన్య సంయోగం కోసం సూర్యకాంతిని శోషించే వర్ణద్రవ్యం ఏది?', 'Chlorophyll / క్లోరోఫిల్', 'Carotenoid / కారోటినాయిడ్', 'Anthocyanin / ఆంతోసయానిన్', 'Melanin / మెలనిన్', 'A', 'M', '', 12),
+    ('In which part of the chloroplast does the light reaction occur?\\nతెలుగు: క్లోరోప్లాస్ట్‌లో ఏ భాగంలో కాంతి ప్రతిచర్య జరుగుతుంది?', 'Thylakoid membranes / థైలాకాయిడ్ పొరలు', 'Stroma / స్ట్రోమా', 'Outer membrane / బాహ్య పొర', 'Inner membrane / అంతర పొర', 'A', 'M', '', 13),
+    ('The dark reaction of photosynthesis is also called?\\nతెలుగు: కిరణజన్య సంయోగంలో చీకటి ప్రతిచర్యను మరొక పేరేమిటి?', 'Calvin cycle / కాల్విన్ చక్రం', 'Krebs cycle / క్రెబ్స్ చక్రం', 'Electron transport chain / ఎలక్ట్రాన్ రవాణా గొలుసు', 'Glycolysis / గ్లైకోలైసిస్', 'A', 'M', '', 14),
+    ('Factors affecting the rate of photosynthesis include?\\nతెలుగు: కిరణజన్య సంయోగ రేటును ప్రభావితం చేసే కారకాలు ఏవి?', 'Light intensity, CO₂, temperature / కాంతి తీవ్రత, CO₂, ఉష్ణోగ్రత', 'Only water / కేవలం నీరు', 'Only temperature / కేవలం ఉష్ణోగ్రత', 'Gravity and pressure / గురుత్వాకర్షణ మరియు పీడనం', 'A', 'M', '', 15),
+    ('Which plant hormone promotes cell elongation and fruit growth?\\nతెలుగు: కణ పొడిగింపు మరియు ఫలం వృద్ధిని ప్రోత్సహించే మొక్క హార్మోన్ ఏది?', 'Auxin / ఆక్సిన్', 'Gibberellin / గిబ్బెరెల్లిన్', 'Cytokinin / సైటోకైనిన్', 'Abscisic acid / అబ్‌సిసిక్ యాసిడ్', 'A', 'M', '', 16),
+    ('Which hormone promotes seed germination and stem elongation?\\nతెలుగు: విత్తన మొలకెత్తడం మరియు కాండం పొడిగింపును ప్రోత్సహించే హార్మోన్ ఏది?', 'Gibberellin / గిబ్బెరెల్లిన్', 'Auxin / ఆక్సిన్', 'Ethylene / ఎత్తిలీన్', 'Cytokinin / సైటోకైనిన్', 'A', 'M', '', 17),
+    ('Which hormone promotes fruit ripening?\\nతెలుగు: ఫలం పక్వానికి ప్రోత్సహించే హార్మోన్ ఏది?', 'Ethylene / ఎత్తిలీన్', 'Gibberellin / గిబ్బెరెల్లిన్', 'Auxin / ఆక్సిన్', 'Cytokinin / సైటోకైనిన్', 'A', 'M', '', 18),
+    ('Abscisic acid (ABA) in plants causes?\\nతెలుగు: మొక్కలలో అబ్‌సిసిక్ యాసిడ్ (ABA) ఏమి చేస్తుంది?', 'Stomata closure during drought / కరువు సమయంలో స్టోమాటా మూత', 'Cell division / కణ విభజన', 'Fruit ripening / ఫలం పక్వం', 'Root growth / మూల వృద్ధి', 'A', 'M', '', 19),
+    ('Cytokinin promotes?\\nతెలుగు: సైటోకైనిన్ ఏమి ప్రోత్సహిస్తుంది?', 'Cell division and differentiation / కణ విభజన మరియు వేర్పాటు', 'Fruit drop / ఫలం రాలడం', 'Leaf aging / ఆకు వయసు పెరగడం', 'Seed dormancy / విత్తన నిద్రావస్థ', 'A', 'M', '', 20),
+    ('Phototropism in plants is a response to?\\nతెలుగు: మొక్కలలో ఫోటోట్రాపిజం దేనికి ప్రతిస్పందన?', 'Light / కాంతి', 'Water / నీరు', 'Gravity / గురుత్వాకర్షణ', 'Touch / స్పర్శ', 'A', 'M', '', 21),
+    ('Geotropism is growth of roots in response to?\\nతెలుగు: గురుత్వాకర్షణకు మూలాల వృద్ధి ప్రతిస్పందనను ఏమంటారు?', 'Gravity (growing downward) / గురుత్వాకర్షణ (క్రిందికి పెరగడం)', 'Light / కాంతి', 'Water / నీరు', 'Touch / స్పర్శ', 'A', 'M', '', 22),
+    ('Which plant growth regulator is used to ripen mangoes artificially?\\nతెలుగు: మామిడి పండ్లను కృత్రిమంగా పక్వం చేయడానికి ఏ మొక్క వృద్ధి నియంత్రకం ఉపయోగించబడుతుంది?', 'Ethylene (ethephon) / ఎత్తిలీన్ (ఎత్తెఫాన్)', 'Auxin / ఆక్సిన్', 'Gibberellin / గిబ్బెరెల్లిన్', 'Cytokinin / సైటోకైనిన్', 'A', 'M', '', 23),
+    ('Transpiration in plants refers to?\\nతెలుగు: మొక్కలలో ట్రాన్స్పిరేషన్ అంటే ఏమిటి?', 'Water loss through leaves / ఆకుల ద్వారా నీటి నష్టం', 'Food production / ఆహారం ఉత్పత్తి', 'Water absorption / నీటి శోషణ', 'Oxygen production / ఆక్సిజన్ ఉత్పత్తి', 'A', 'M', '', 24),
+    ('Which part of the plant absorbs water and minerals from soil?\\nతెలుగు: మొక్కలో మట్టి నుండి నీరు మరియు ఖనిజాలు శోషించే భాగం ఏది?', 'Roots / మూలాలు', 'Stem / కాండం', 'Leaves / ఆకులు', 'Flowers / పూలు', 'A', 'M', '', 25),
+    ('What are the vascular bundles in a plant?\\nతెలుగు: మొక్కలో వాస్కులర్ బండిళ్ళు ఏమిటి?', 'Groups of xylem and phloem together / జైలెమ్ మరియు ఫ్లోయమ్ కలిసి గుంపులు', 'Cells for photosynthesis / కిరణజన్య సంయోగ కణాలు', 'Protective outer cells / రక్షణాత్మక బాహ్య కణాలు', 'Water storage cells / నీటి నిల్వ కణాలు', 'A', 'M', '', 26),
+    ('What is the function of chloroplasts?\\nతెలుగు: క్లోరోప్లాస్ట్ల పని ఏమిటి?', 'Photosynthesis / కిరణజన్య సంయోగం', 'Respiration / శ్వాసక్రియ', 'Protein synthesis / ప్రోటీన్ సంశ్లేషణ', 'Cell division / కణ విభజన', 'A', 'M', '', 27),
+    ('Which type of leaf arrangement maximizes sunlight capture?\\nతెలుగు: సూర్యకాంతి గ్రహణాన్ని గరిష్టంగా చేసే ఆకు అమరిక ఏది?', 'Alternate/spiral arrangement / ఆల్టర్నేట్/స్పైరల్ అమరిక', 'Opposite arrangement / వ్యతిరేక అమరిక', 'Whorled arrangement / వలయ అమరిక', 'Random arrangement / యాదృచ్ఛిక అమరిక', 'A', 'M', '', 28),
+    ('What is secondary growth in plants?\\nతెలుగు: మొక్కలలో ద్వితీయ వృద్ధి అంటే ఏమిటి?', 'Increase in width/girth of stem / కాండం వెడల్పు/చుట్టుకొలత పెరుగుదల', 'Increase in height / ఎత్తు పెరుగుదల', 'New leaf formation / కొత్త ఆకు ఏర్పాటు', 'Root elongation / మూల పొడిగింపు', 'A', 'M', '', 29),
+    ('Lenticels on stems are used for?\\nతెలుగు: కాండంపై లెంటిసెల్లు దేనికి ఉపయోగించబడతాయి?', 'Gas exchange / వాయు మార్పిడి', 'Water absorption / నీటి శోషణ', 'Photosynthesis / కిరణజన్య సంయోగం', 'Nutrient transport / పోషక రవాణా', 'A', 'M', '', 30),
+    ('Heartwood in trees is?\\nతెలుగు: చెట్లలో హార్ట్‌వుడ్ అంటే ఏమిటి?', 'Dark, dense, non-functional old xylem / చీకటి, దట్టమైన, పని చేయని పాత జైలెమ్', 'Young conducting xylem / యువ నిర్వహణ జైలెమ్', 'Phloem tissue / ఫ్లోయమ్ కణజాలం', 'Bark layer / బెరడు పొర', 'A', 'M', '', 31),
+    ('Cactus stores water in its?\\nతెలుగు: కాక్టస్ దేనిలో నీరు నిల్వ చేస్తుంది?', 'Stem / కాండం', 'Roots / మూలాలు', 'Leaves / ఆకులు', 'Flowers / పూలు', 'A', 'M', '', 32),
+    ('Rhizome is a?\\nతెలుగు: రైజోమ్ అంటే ఏమిటి?', 'Underground horizontal stem / భూగర్భ క్షితిజ సమాంతర కాండం', 'Root type / మూల రకం', 'Leaf modification / ఆకు మార్పు', 'Flower type / పూ రకం', 'A', 'M', '', 33),
+    ('Turgor pressure in plant cells causes?\\nతెలుగు: మొక్క కణాలలో టర్గర్ పీడనం ఏమి చేస్తుంది?', 'Cell rigidity and plant support / కణ దృఢత్వం మరియు మొక్క మద్దతు', 'Cell division / కణ విభజన', 'Photosynthesis / కిరణజన్య సంయోగం', 'Respiration / శ్వాసక్రియ', 'A', 'M', '', 34),
+    ('What is the function of the epidermis in plants?\\nతెలుగు: మొక్కలలో ఎపిడెర్మిస్ యొక్క పని ఏమిటి?', 'Protects inner tissues / అంతర కణజాలాన్ని రక్షిస్తుంది', 'Conducts water / నీరు నిర్వహిస్తుంది', 'Stores food / ఆహారం నిల్వ చేస్తుంది', 'Produces flowers / పూలు ఉత్పత్తి చేస్తుంది', 'A', 'M', '', 35),
+    ('Osmosis in plants is movement of water from?\\nతెలుగు: మొక్కలలో ఆస్మోసిస్ అంటే నీటి కదలిక ఎక్కడ నుండి ఎక్కడికి?', 'Lower to higher solute concentration / తక్కువ నుండి ఎక్కువ ద్రావణ ఏకాగ్రత వైపు', 'Higher to lower solute concentration / ఎక్కువ నుండి తక్కువ ద్రావణ ఏకాగ్రత వైపు', 'Root to shoot / మూలం నుండి కొనకు', 'Leaf to root / ఆకు నుండి మూలానికి', 'A', 'M', '', 36),
+    ('Which mineral is essential for chlorophyll formation?\\nతెలుగు: క్లోరోఫిల్ ఏర్పాటుకు ఏ ఖనిజం అవసరం?', 'Magnesium / మెగ్నీషియం', 'Calcium / కాల్షియం', 'Iron / ఇనుము', 'Potassium / పొటాషియం', 'A', 'M', '', 37),
+    ('Leaves are the primary site for?\\nతెలుగు: ఆకులు ప్రధానంగా ఏ కోసం?', 'Photosynthesis / కిరణజన్య సంయోగం', 'Water absorption / నీటి శోషణ', 'Mineral absorption / ఖనిజ శోషణ', 'Reproduction / పునరుత్పత్తి', 'A', 'M', '', 38),
+    ('What is guttation in plants?\\nతెలుగు: మొక్కలలో గుట్టేషన్ అంటే ఏమిటి?', 'Loss of water as liquid droplets from leaf edges / ఆకు అంచుల నుండి ద్రవ చుక్కలగా నీటి నష్టం', 'Water absorbed by roots / మూలాలు శోషించిన నీరు', 'Food stored in stem / కాండంలో నిల్వ ఆహారం', 'Gas released at night / రాత్రి వదిలిన వాయువు', 'A', 'M', '', 39),
+    ('Nitrogen-fixing plants like legumes have which structures in roots?\\nతెలుగు: పప్పుధాన్యాల వంటి నైట్రోజన్-స్థిరీకరణ మొక్కల మూలాలలో ఏ నిర్మాణాలు ఉంటాయి?', 'Root nodules (with Rhizobium) / మూల గుళ్ళు (రైజోబియంతో)', 'Root hairs / మూల వెంట్రుకలు', 'Lateral roots / పార్శ్వ మూలాలు', 'Tap roots / మొత్తు మూలాలు', 'A', 'M', '', 40),
+    ('The waxy layer on leaves that prevents water loss is called?\\nతెలుగు: నీటి నష్టాన్ని నిరోధించే ఆకులపై మైనపు పొరను ఏమంటారు?', 'Cuticle / క్యుటికల్', 'Epidermis / ఎపిడెర్మిస్', 'Mesophyll / మెసోఫిల్', 'Vascular bundle / వాస్కులర్ బండిల్', 'A', 'M', '', 41),
+    ('Which process in plants produces seeds?\\nతెలుగు: మొక్కలలో విత్తనాలు ఉత్పత్తి చేసే ప్రక్రియ ఏది?', 'Fertilization / ఫలదీకరణం', 'Photosynthesis / కిరణజన్య సంయోగం', 'Transpiration / ట్రాన్స్పిరేషన్', 'Respiration / శ్వాసక్రియ', 'A', 'M', '', 42),
+    ('What is the function of meristematic tissue?\\nతెలుగు: మెరిస్టెమాటిక్ కణజాలం యొక్క పని ఏమిటి?', 'Cell division for plant growth / మొక్క వృద్ధికి కణ విభజన', 'Food storage / ఆహారం నిల్వ', 'Water conduction / నీటి వహనం', 'Gas exchange / వాయు మార్పిడి', 'A', 'M', '', 43),
+    ('Xerophytes are plants adapted to?\\nతెలుగు: జీరోఫైట్లు దేనికి అనుగుణంగా ఉండే మొక్కలు?', 'Dry/arid conditions / పొడి/ఎడారి పరిస్థితులు', 'Wet conditions / తడి పరిస్థితులు', 'Cold conditions / చల్లని పరిస్థితులు', 'Low light conditions / తక్కువ కాంతి పరిస్థితులు', 'A', 'M', '', 44),
+    ('The process by which plants manufacture food is?\\nతెలుగు: మొక్కలు ఆహారాన్ని తయారు చేసే ప్రక్రియ ఏది?', 'Photosynthesis / కిరణజన్య సంయోగం', 'Respiration / శ్వాసక్రియ', 'Fermentation / పులియడం', 'Absorption / శోషణ', 'A', 'M', '', 45),
+    ('Hydrophytes are plants that grow in?\\nతెలుగు: హైడ్రోఫైట్లు ఎక్కడ పెరిగే మొక్కలు?', 'Water / నీటిలో', 'Deserts / ఎడారులలో', 'Mountains / పర్వతాలలో', 'Forests / అడవులలో', 'A', 'M', '', 46),
+    ('Which element is NOT needed for photosynthesis?\\nతెలుగు: కిరణజన్య సంయోగానికి అవసరం లేని మూలకం ఏది?', 'Nitrogen / నైట్రోజన్', 'Carbon / కార్బన్', 'Hydrogen / హైడ్రోజన్', 'Oxygen / ఆక్సిజన్', 'A', 'M', '', 47),
+    ('C3 plants fix CO₂ into which compound first?\\nతెలుగు: C3 మొక్కలు CO₂ ను మొదటగా ఏ సమ్మేళనంలో స్థిరపరుస్తాయి?', '3-phosphoglycerate (3-PGA) / 3-ఫాస్ఫోగ్లిసెరేట్ (3-PGA)', 'Oxaloacetate / ఆక్జాలోయాసిటేట్', 'Glucose / గ్లూకోజ్', 'Pyruvate / పైరువేట్', 'A', 'M', '', 48),
+    ('Bundle sheath cells are found in which type of plants?\\nతెలుగు: బండిల్ శీత్స్ కణాలు ఏ రకమైన మొక్కలలో ఉంటాయి?', 'C4 plants / C4 మొక్కలు', 'C3 plants / C3 మొక్కలు', 'CAM plants / CAM మొక్కలు', 'All plants / అన్ని మొక్కలు', 'A', 'M', '', 49),
+    ('Which organelle is absent in plant cells but present in animal cells?\\nతెలుగు: మొక్క కణాలలో లేదు కానీ జంతు కణాలలో ఉండే అంగాంశం ఏది?', 'Centriole / సెంట్రియోల్', 'Mitochondria / మైటోకాండ్రియా', 'Ribosome / రైబోజోమ్', 'Golgi body / గాల్జీ బాడీ', 'A', 'M', '', 50),
+]
+
+def seed():
+    con = sqlite3.connect(DB); cur = con.cursor()
+    cur.execute("DELETE FROM questions WHERE source_file=?", (SOURCE,))
+    cur.executemany(
+        """INSERT INTO questions (folder,topic,source_file,question_text,option_a,option_b,option_c,option_d,correct_answer,difficulty,explanation,question_order)
+           VALUES ('GK','General_Science',?,?,?,?,?,?,?,?,?,?)""",
+        [(SOURCE, *q) for q in questions])
+    con.commit()
+    n = cur.execute("SELECT COUNT(*) FROM questions WHERE source_file=?",(SOURCE,)).fetchone()[0]
+    con.close(); print(f"Inserted {n} from {SOURCE}")
+
+if __name__ == '__main__': seed()

@@ -8,44 +8,86 @@
 :root{--pri:#0d2346;--acc:#1565c0;--acc2:#0288d1;--bg:#e8f0fe;--bg2:#f0f7ff;--en-border:#1565c0;--te-border:#6a1b9a;--shock:#b71c1c;--exam:#e65100;--mem:#1b5e20;--hi:#4a148c;}
 @page{size:A4;margin:14mm 13mm 14mm 13mm;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.2pt;line-height:1.45;color:#1a1a2e;background:#fff;}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:13.8pt;line-height:1.45;color:#1a1a2e;background:#fff;}
 .page{width:184mm;min-height:267mm;padding:6mm 0;position:relative;}
 .page-break{page-break-after:always;break-after:page;}
 .cover{background:linear-gradient(135deg,var(--pri) 0%,#1a237e 60%,#283593 100%);color:#fff;border-radius:6px;padding:11mm 12mm 8mm;text-align:center;margin-bottom:4mm;}
-.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:7.5pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3mm;}
-.cover h1{font-size:17pt;font-weight:800;letter-spacing:-0.3px;margin-bottom:2mm;}
+.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:11.2pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3mm;}
+.cover h1{font-size:25.5pt;font-weight:800;letter-spacing:-0.3px;margin-bottom:2mm;}
 .cover h1 span{color:#90caf9;}
-.cover h2{font-size:10pt;font-weight:400;color:#bbdefb;margin-bottom:2mm;}
-.cover-te{font-size:9pt;color:#90caf9;margin-bottom:2mm;}
-.cover-meta{display:flex;justify-content:center;gap:12px;font-size:7.6pt;color:#bbdefb;flex-wrap:wrap;margin-top:2mm;}
+.cover h2{font-size:15.0pt;font-weight:400;color:#bbdefb;margin-bottom:2mm;}
+.cover-te{font-size:13.5pt;color:#90caf9;margin-bottom:2mm;}
+.cover-meta{display:flex;justify-content:center;gap:12px;font-size:11.4pt;color:#bbdefb;flex-wrap:wrap;margin-top:2mm;}
 .cover-meta span{background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 9px;}
-.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:3px 9px;font-size:7.3pt;color:#e3f2fd;margin-top:2mm;line-height:1.7;}
-.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:9.5pt;font-weight:700;margin:3mm 0 2mm;letter-spacing:0.3px;display:flex;justify-content:space-between;align-items:center;}
-.sec-head .te{font-size:8pt;font-weight:400;color:#90caf9;}
+.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:3px 9px;font-size:10.9pt;color:#e3f2fd;margin-top:2mm;line-height:1.7;}
+.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:14.2pt;font-weight:700;margin:3mm 0 2mm;letter-spacing:0.3px;display:flex;justify-content:space-between;align-items:center;}
+.sec-head .te{font-size:12.0pt;font-weight:400;color:#90caf9;}
 .bilingual{border:1px solid #b0bec5;border-radius:5px;margin-bottom:2mm;overflow:hidden;}
-.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:4px 8px;font-size:8.5pt;line-height:1.5;}
-.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:4px 8px;font-size:8.2pt;line-height:1.5;color:#4a148c;}
-.lang-tag{display:inline-block;font-size:6.8pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-bottom:3px;}
+.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:4px 8px;font-size:12.8pt;line-height:1.5;}
+.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:4px 8px;font-size:12.3pt;line-height:1.5;color:#4a148c;}
+.lang-tag{display:inline-block;font-size:10.2pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-bottom:3px;}
 .bi-en .lang-tag{background:var(--en-border);color:#fff;}
 .bi-te .lang-tag{background:var(--te-border);color:#fff;}
-.shock-box{border:2px solid var(--shock);background:#fff3f3;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:8.3pt;}
-.shock-box .shock-title{color:var(--shock);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
-.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:8.3pt;}
-.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
-.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:8.3pt;}
-.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:8.5pt;margin-bottom:3px;}
-.exam-tag{background:#b71c1c;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px;}
-.te-tag{background:#6a1b9a;color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;}
-table{width:100%;border-collapse:collapse;font-size:8.3pt;margin-bottom:2mm;}
-th{background:var(--pri);color:#fff;padding:3px 7px;text-align:left;font-weight:600;font-size:8pt;}
+.shock-box{border:2px solid var(--shock);background:#fff3f3;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:12.5pt;}
+.shock-box .shock-title{color:var(--shock);font-weight:700;font-size:12.8pt;margin-bottom:3px;}
+.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:12.5pt;}
+.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:12.8pt;margin-bottom:3px;}
+.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:4px 9px;margin-bottom:2mm;font-size:12.5pt;}
+.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:12.8pt;margin-bottom:3px;}
+.exam-tag{background:#b71c1c;color:#fff;font-size:9.8pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px;}
+.te-tag{background:#6a1b9a;color:#fff;font-size:9.8pt;font-weight:700;padding:1px 5px;border-radius:3px;}
+table{width:100%;border-collapse:collapse;font-size:12.5pt;margin-bottom:2mm;}
+th{background:var(--pri);color:#fff;padding:3px 7px;text-align:left;font-weight:600;font-size:12.0pt;}
 td{padding:3px 7px;border:1px solid #cfd8dc;vertical-align:top;}
 tr:nth-child(even) td{background:#f0f7ff;}
-.te-td{display:block;color:#6a1b9a;font-size:7.6pt;margin-top:1px;}
+.te-td{display:block;color:#6a1b9a;font-size:11.4pt;margin-top:1px;}
 .cols-2{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:2mm;}
-.pyq-item{background:#f0f7ff;border-left:3px solid var(--acc);padding:4px 8px;margin-bottom:2mm;border-radius:3px;font-size:8.2pt;page-break-inside:avoid;}
+.pyq-item{background:#f0f7ff;border-left:3px solid var(--acc);padding:4px 8px;margin-bottom:2mm;border-radius:3px;font-size:12.3pt;page-break-inside:avoid;}
 .pyq-q{font-weight:600;color:var(--pri);}
-.pyq-num{background:var(--acc);color:#fff;font-size:6.5pt;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:4px;}
+.pyq-num{background:var(--acc);color:#fff;font-size:9.8pt;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:4px;}
 .pyq-a{color:var(--shock);font-weight:700;}
+
+/* ===== PRINT & TABLE FIX — A4 SAFE ===== */
+table            { break-inside: avoid; page-break-inside: avoid; width:100%; max-width:100%; table-layout:fixed; word-wrap:break-word; overflow-wrap:break-word; }
+tr               { break-inside: avoid; page-break-inside: avoid; }
+thead            { display: table-header-group; }
+td, th           { word-wrap: break-word; overflow-wrap: break-word; }
+.bilingual       { break-inside: avoid; page-break-inside: avoid; }
+.shock-box       { break-inside: avoid; page-break-inside: avoid; }
+.exam-alert      { break-inside: avoid; page-break-inside: avoid; }
+.memory-box      { break-inside: avoid; page-break-inside: avoid; }
+.highlight-box   { break-inside: avoid; page-break-inside: avoid; }
+.pyq-item        { break-inside: avoid; page-break-inside: avoid; }
+.recap-box       { break-inside: avoid; page-break-inside: avoid; }
+.cols-2          { break-inside: avoid; page-break-inside: avoid; }
+.cols-3          { break-inside: avoid; page-break-inside: avoid; }
+.sec-head        { break-after: avoid; page-break-after: avoid; }
+.sub-head        { break-after: avoid; page-break-after: avoid; }
+
+@media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: white !important; padding: 0 !important; margin: 0 !important; font-size: 11pt; }
+    table { page-break-inside: avoid !important; break-inside: avoid !important; width: 100% !important; }
+    thead { display: table-header-group !important; }
+    tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    td, th { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .section { page-break-inside: avoid !important; break-inside: avoid !important; box-shadow: none !important; border: 1px solid #ccc !important; margin-bottom: 12px !important; }
+    .memory-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .exam-trap { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .key-fact { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .recap-item { page-break-inside: avoid !important; break-inside: avoid !important; }
+    h2, h3, h4 { page-break-after: avoid !important; break-after: avoid !important; }
+    .toc { display: none !important; }
+    .cols-2, .cols-3, .recap-grid { display: block !important; }
+    .recap-item { display: inline-block !important; width: 45% !important; margin: 4px !important; vertical-align: top !important; }
+    th { background: #2e7d32 !important; color: white !important; }
+    tr:nth-child(even) { background: #f5f5f5 !important; }
+  }
+  .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .cols-2 { grid-template-columns: 1fr 1fr; }
+  table { font-size: 11pt; }
+  .page { width: 184mm; }
+}
 </style>
 </head>
 <body>
@@ -73,41 +115,40 @@ tr:nth-child(even) td{background:#f0f7ff;}
 <div class="cols-2">
 <table>
   <tr><th colspan="2">Blood Components &amp; Values / రక్త విలువలు</th></tr>
-  <tr><td>Blood volume<span class="te-td">రక్తం పరిమాణం</span></td><td>5–6 litres in adult (Q23)<span class="te-td">వయోజనుడిలో 5-6 లీటర్లు</span></td></tr>
-  <tr><td>RBC lifespan<span class="te-td">RBC జీవితకాలం</span></td><td>120 days; Spleen = "graveyard of RBCs" (destroys old RBCs) (Q15, Q38)<span class="te-td">120 రోజులు; ప్లీహం = "RBC ల స్మశానవాటిక" (నాశనం చేస్తుంది)</span></td></tr>
-  <tr><td>RBC production<span class="te-td">RBC ఉత్పత్తి</span></td><td>Red bone marrow (erythropoiesis) (Q17) | Kidney → Erythropoietin (EPO) hormone stimulates RBC production<span class="te-td">ఎర్ర ఎముక మజ్జ; మూత్రపిండాలు → Erythropoietin (EPO) → RBC ఉత్పత్తి ప్రేరేపిస్తుంది</span></td></tr>
-  <tr><td>Blood sugar<span class="te-td">రక్తంలో చక్కెర</span></td><td>GLUCOSE (70–100 mg/dL fasting) (Q24)<span class="te-td">గ్లూకోజ్ (ఉపవాసం: 70-100 mg/dL)</span></td></tr>
-  <tr><td>RBC:WBC ratio<span class="te-td">RBC:WBC నిష్పత్తి</span></td><td>~600:1 (scientific); exam key = 5000:1 (Q39)<span class="te-td">శాస్త్రీయం ~600:1; పరీక్ష: 5000:1</span></td></tr>
-  <tr><td>Hemoglobin metal<span class="te-td">హిమోగ్లోబిన్ లోహం</span></td><td>IRON (Fe²⁺) in heme group (Q31, Q41) | Compare: Chlorophyll = Magnesium (Mg²⁺); Hemocyanin = Copper (Cu²⁺)<span class="te-td">ఇనుము (Fe²⁺) హీమ్ సమూహంలో | క్లోరోఫిల్ = Magnesium; హిమోసయానిన్ = Copper</span></td></tr>
-  <tr><td>Cardiac cycle<span class="te-td">హృదయ చక్రం</span></td><td>0.8 second/beat at rest (Q6)<span class="te-td">0.8 సెకండ్/స్పందన (విశ్రాంతిలో)</span></td></tr>
+  <tr><td>Blood volume<span class="te-td">రక్తం పరిమాణం</span></td><td>5–6 litres in adult (Q23)<span class="te-td">వయోజనుడిలో 5–6 లీటర్లు ఉంటుంది.</span></td></tr>
+  <tr><td>RBC lifespan<span class="te-td">RBC జీవితకాలం</span></td><td>RBCs live for 120 days. The spleen is called the "graveyard of RBCs" because it destroys old red blood cells (as tested in Q15 and Q38).<span class="te-td">RBC లు 120 రోజులు జీవిస్తాయి. ప్లీహం పాత RBC లను నాశనం చేస్తుంది కాబట్టి దాన్ని "RBC ల స్మశానవాటిక" అంటారు.</span></td></tr>
+  <tr><td>RBC production<span class="te-td">RBC ఉత్పత్తి</span></td><td>RBCs are produced in the red bone marrow through a process called erythropoiesis (as tested in Q17). The kidneys release the hormone Erythropoietin (EPO), which stimulates the bone marrow to produce more RBCs.<span class="te-td">ఎర్ర ఎముక మజ్జలో RBC లు తయారవుతాయి. మూత్రపిండాలు Erythropoietin (EPO) హార్మోన్‌ను విడుదల చేస్తాయి, ఇది RBC ఉత్పత్తిని ప్రేరేపిస్తుంది.</span></td></tr>
+  <tr><td>Blood sugar<span class="te-td">రక్తంలో చక్కెర</span></td><td>Blood sugar is measured as GLUCOSE. The normal fasting level is 70–100 mg/dL (as tested in Q24).<span class="te-td">రక్తంలో చక్కెర అనేది గ్లూకోజ్. ఉపవాసం నిల్వ: 70–100 mg/dL.</span></td></tr>
+  <tr><td>RBC:WBC ratio<span class="te-td">RBC:WBC నిష్పత్తి</span></td><td>The scientific ratio is approximately 600:1, but the exam key answer is 5000:1 (as tested in Q39).<span class="te-td">శాస్త్రీయంగా ~600:1; పరీక్ష జవాబు కీ: 5000:1.</span></td></tr>
+  <tr><td>Hemoglobin metal<span class="te-td">హిమోగ్లోబిన్ లోహం</span></td><td>Hemoglobin contains IRON (Fe²⁺) in its heme group (as tested in Q31 and Q41). For comparison, Chlorophyll contains Magnesium (Mg²⁺) and Hemocyanin contains Copper (Cu²⁺).<span class="te-td">హిమోగ్లోబిన్‌లో హీమ్ సమూహంలో ఇనుము (Fe²⁺) ఉంటుంది. క్లోరోఫిల్‌లో Magnesium, హిమోసయానిన్‌లో Copper ఉంటాయి.</span></td></tr>
+  <tr><td>Cardiac cycle<span class="te-td">హృదయ చక్రం</span></td><td>One complete cardiac cycle takes 0.8 seconds per beat when the body is at rest (as tested in Q6).<span class="te-td">విశ్రాంతిలో ఒక హృదయ చక్రం పూర్తి కావడానికి 0.8 సెకండ్ పడుతుంది.</span></td></tr>
 </table>
 <div>
 <div class="bilingual">
   <div class="bi-en"><span class="lang-tag">EN</span>
   <b>O Group = Universal Donor (Q1):</b><br>
-  O group has NO antigens on RBC → no agglutination with ANY recipient → can give to A, B, AB, O. All of these can receive O-group blood.
+  O blood group has NO antigens on its red blood cells. Because there are no antigens, O-group blood does not cause agglutination (clumping) in any recipient. This means O-group blood can be safely given to people with blood groups A, B, AB, and O — making it the Universal Donor.
   </div>
   <div class="bi-te"><span class="lang-tag">TE</span>
-  O రక్తపు గ్రూపు = విశ్వ దాత; RBC పై యాంటీజన్లు లేవు → A, B, AB, O అందరికీ ఇవ్వవచ్చు.
+  O రక్తపు గ్రూపు విశ్వ దాత అంటారు. ఎందుకంటే దాని RBC లపై యాంటీజన్లు ఏవీ ఉండవు. దీని కారణంగా A, B, AB, O అన్ని గ్రూపులకు ఈ రక్తం ఇవ్వవచ్చు.
   </div>
 </div>
 <div class="bilingual">
   <div class="bi-en"><span class="lang-tag">EN</span>
   <b>Vitamin K &amp; Clotting (Q37):</b><br>
-  Vitamin K → essential for synthesis of PROTHROMBIN (Factor II) + VII, IX, X. Without K → no prothrombin → blood cannot clot → hemorrhage. Warfarin = Vitamin K antagonist (anticoagulant drug).
+  Vitamin K is essential for the synthesis of Prothrombin (Factor II) and clotting factors VII, IX, and X. Without Vitamin K, Prothrombin cannot be produced, which means the blood cannot clot, leading to hemorrhage. Warfarin is a Vitamin K antagonist and is used as an anticoagulant drug.
   </div>
   <div class="bi-te"><span class="lang-tag">TE</span>
-  విటమిన్ K → ప్రోథ్రాంబిన్ (II), VII, IX, X సంశ్లేషణకు అవసరం. లోపం → రక్తం గడ్డకట్టదు. వార్ఫారిన్ = విటమిన్ K ప్రత్యర్థి.
+  విటమిన్ K అనేది ప్రోథ్రాంబిన్ (Factor II), VII, IX మరియు X అనే గడ్డకట్టడపు కారకాల సంశ్లేషణకు అవసరం. విటమిన్ K లోపం ఉంటే రక్తం గడ్డకట్టదు. వార్ఫారిన్ అనేది విటమిన్ K ప్రత్యర్థిగా పనిచేసే మందు.
   </div>
 </div>
 <div class="bilingual">
   <div class="bi-en"><span class="lang-tag">EN</span>
   <b>Pulmonary Vein Exception (Q11):</b><br>
-  ALL veins carry deoxygenated blood EXCEPT the PULMONARY VEIN (carries oxygenated blood: lungs → left atrium). All arteries carry oxygenated blood EXCEPT PULMONARY ARTERY (deoxygenated: right ventricle → lungs).
+  All veins carry deoxygenated blood EXCEPT the Pulmonary Vein, which carries oxygenated blood from the lungs to the left atrium. Similarly, all arteries carry oxygenated blood EXCEPT the Pulmonary Artery, which carries deoxygenated blood from the right ventricle to the lungs.
   </div>
   <div class="bi-te"><span class="lang-tag">TE</span>
-  అన్ని సిరలు డీఆక్సిజన్ రక్తం; మినహాయింపు: పల్మనరీ సిర (ఆక్సిజన్ రక్తం).<br>
-  అన్ని ధమనులు ఆక్సిజన్ రక్తం; మినహాయింపు: పల్మనరీ ధమని (డీఆక్సిజన్).
+  అన్ని సిరలు డీఆక్సిజన్ రక్తాన్ని తీసుకువెళతాయి, కానీ పల్మనరీ సిర మాత్రం ఊపిరితిత్తుల నుండి ఆక్సిజన్ రక్తాన్ని గుండెకు తీసుకువస్తుంది. అన్ని ధమనులు ఆక్సిజన్ రక్తాన్ని మోస్తాయి, కానీ పల్మనరీ ధమని మాత్రం డీఆక్సిజన్ రక్తాన్ని ఊపిరితిత్తులకు తీసుకువెళుతుంది.
   </div>
 </div>
 </div>
@@ -115,11 +156,11 @@ tr:nth-child(even) td{background:#f0f7ff;}
 
 <div class="bilingual">
   <div class="bi-en"><span class="lang-tag">EN</span>
-  <b>Liver Functions (Q3, Q30, Q35, Q38):</b> Largest gland (~1.2–1.5 kg) | Bile production (digestion of fats) | Glycogen storage (carbohydrates stored as glycogen, Q35) | Fibrinogen synthesis (clotting factor I, Q30) | Bilirubin formation (from Hb breakdown) | Urea synthesis (from amino acids) | Detoxification (alcohol, drugs) | Protein synthesis (albumin).<br>
-  Statement from Q30: Liver produces bile ✓, fibrinogen ✓, affected by alcohol ✓; Heparin = mainly mast cells/basophils (NOT primarily liver → excluded in Q30).
+  <b>Liver Functions (Q3, Q30, Q35, Q38):</b> The liver is the largest gland in the body, weighing approximately 1.2–1.5 kg. It performs several critical functions: it produces bile, which aids in the digestion of fats; it stores carbohydrates in the form of glycogen (as tested in Q35); it synthesizes Fibrinogen, which is clotting Factor I (as tested in Q30); it forms Bilirubin from the breakdown of hemoglobin; it produces urea from amino acids; it performs detoxification of alcohol and drugs; and it synthesizes proteins such as albumin.<br>
+  Regarding Q30: The liver produces bile and fibrinogen and is affected by alcohol — all of which are correct. However, Heparin is produced mainly by mast cells and basophils, not primarily by the liver, so that statement is excluded in Q30.
   </div>
   <div class="bi-te"><span class="lang-tag">TE</span>
-  కాలేయం: అతిపెద్ద గ్రంథి (~1.2-1.5 kg) | పైత్యరసం | గ్లైకోజెన్ నిల్వ | ఫైబ్రినోజెన్ సంశ్లేషణ | బిలిరుబిన్ | యూరియా | డిటాక్సిఫికేషన్. Q30: హెపారిన్ ప్రధానంగా మాస్ట్ కణాలు ఉత్పత్తి చేస్తాయి (కాలేయం కాదు → వాక్యం 3 తప్పు).
+  కాలేయం అతిపెద్ద గ్రంథి (~1.2–1.5 kg). ఇది పైత్యరసం ఉత్పత్తి, గ్లైకోజెన్ నిల్వ, ఫైబ్రినోజెన్ సంశ్లేషణ, బిలిరుబిన్ నిర్మాణం, యూరియా ఉత్పత్తి మరియు డిటాక్సిఫికేషన్ వంటి పనులు చేస్తుంది. Q30 విషయంలో: హెపారిన్ ప్రధానంగా మాస్ట్ కణాలు ఉత్పత్తి చేస్తాయి, కాలేయం కాదు — కాబట్టి ఆ వాక్యం తప్పు అవుతుంది.
   </div>
 </div>
 </div><!-- end page 1 -->
@@ -133,36 +174,36 @@ tr:nth-child(even) td{background:#f0f7ff;}
   <tr>
     <td><b>Pituitary</b><span class="te-td">పిట్యూటరీ</span></td>
     <td>GH, FSH, LH, TSH, ACTH, ADH, Oxytocin<span class="te-td">GH, FSH, LH, TSH, ACTH, ADH</span></td>
-    <td>Master gland; base of brain; GH↑ → gigantism/acromegaly<span class="te-td">మాస్టర్ గ్లాండ్; మెదడు దిగువన</span></td>
+    <td>The Pituitary is called the Master Gland and is located at the base of the brain. When Growth Hormone (GH) is produced in excess, it leads to gigantism or acromegaly.<span class="te-td">పిట్యూటరీని మాస్టర్ గ్లాండ్ అంటారు; ఇది మెదడు దిగువన ఉంటుంది. GH అధికంగా ఉంటే gigantism కలుగుతుంది.</span></td>
     <td>—</td>
   </tr>
   <tr>
     <td><b>Thyroid</b><span class="te-td">థైరాయిడ్</span></td>
     <td>T3, T4 (Thyroxine), Calcitonin<span class="te-td">T3, T4, కాల్సిటోనిన్</span></td>
-    <td>Butterfly-shaped gland | Near LARYNX (Q20) | Accumulates IODINE (Q13) | Adam's apple = thyroid cartilage (Q7) | T4 = 4 iodine atoms | Iodine deficiency → Goiter (enlarged thyroid)<span class="te-td">సీతాకోకచిలుక ఆకారం | స్వరపేటిక దగ్గర (Q20); అయోడిన్ నిల్వ (Q13); అయోడిన్ లోపం → గాయిటర్ (Goiter)</span></td>
+    <td>The Thyroid is a butterfly-shaped gland located near the Larynx (as tested in Q20). It accumulates Iodine from the blood to synthesize its hormones (as tested in Q13). The Adam's apple is the prominence of the thyroid cartilage (as tested in Q7). Thyroxine (T4) contains four iodine atoms. A deficiency of iodine leads to Goiter, which is an enlargement of the thyroid gland.<span class="te-td">థైరాయిడ్ సీతాకోకచిలుక ఆకారంలో ఉంటుంది మరియు స్వరపేటిక దగ్గర ఉంటుంది (Q20). ఇది అయోడిన్‌ను నిల్వ చేస్తుంది (Q13). అయోడిన్ లోపం వల్ల గాయిటర్ వస్తుంది.</span></td>
     <td>Q7, Q13, Q20</td>
   </tr>
   <tr>
     <td><b>Adrenal</b><span class="te-td">అడ్రినల్</span></td>
     <td>Cortex: Cortisone/Cortisol, Aldosterone; Medulla: Adrenaline, Noradrenaline<span class="te-td">కార్టిసోన్, అల్డోస్టిరాన్; అడ్రినలిన్</span></td>
-    <td>CORTISONE = from adrenal CORTEX (Q2) | Controls blood pressure/BP (Q36): medulla → adrenaline ↑BP; cortex → aldosterone → Na⁺ retention ↑BP | Stress response<span class="te-td">కార్టిసోన్ = అడ్రినల్ కార్టెక్స్ (Q2); blood pressure నియంత్రణ: అడ్రినలిన్ + అల్డోస్టిరాన్ (Q36)</span></td>
+    <td>Cortisone is produced by the Adrenal Cortex (as tested in Q2). The adrenal gland controls blood pressure through two pathways: the medulla releases Adrenaline, which raises blood pressure, while the cortex releases Aldosterone, which causes sodium (Na⁺) retention and also raises blood pressure (as tested in Q36). The adrenal medulla also drives the stress response.<span class="te-td">కార్టిసోన్ అడ్రినల్ కార్టెక్స్ నుండి వస్తుంది (Q2). రక్తపోటు నియంత్రణలో అడ్రినలిన్ మరియు అల్డోస్టిరాన్ పాత్ర పోషిస్తాయి (Q36).</span></td>
     <td>Q2, Q36</td>
   </tr>
   <tr>
     <td><b>Pancreas</b><span class="te-td">క్లోమం</span></td>
     <td>Insulin (beta/β cells), Glucagon (alpha/α cells)<span class="te-td">ఇన్సులిన్ (beta β కణాలు), గ్లుకగాన్ (alpha α కణాలు)</span></td>
-    <td>Insulin secreted in PANCREAS (Q12) | Insulin deficiency → Diabetes Mellitus | Glycogen stored in LIVER via insulin signal (Q35); Glucagon → Glycogenolysis (breakdown)<span class="te-td">ఇన్సులిన్ = క్లోమం (Q12); లోపం → Diabetes Mellitus; గ్లుకగాన్ → Glycogenolysis (గ్లైకోజెన్ విచ్ఛిన్నం)</span></td>
+    <td>Insulin is secreted by the beta (β) cells of the Islets of Langerhans in the Pancreas (as tested in Q12). A deficiency of insulin causes Diabetes Mellitus. Insulin signals the liver to store glucose as glycogen (as tested in Q35). Glucagon has the opposite effect — it breaks down glycogen back into glucose through a process called Glycogenolysis.<span class="te-td">ఇన్సులిన్ క్లోమం యొక్క β కణాల నుండి వస్తుంది (Q12). ఇన్సులిన్ లోపం Diabetes Mellitus కు దారితీస్తుంది. గ్లుకగాన్ గ్లైకోజెన్‌ను విచ్ఛిన్నం చేస్తుంది (Glycogenolysis).</span></td>
     <td>Q12, Q35</td>
   </tr>
   <tr>
     <td><b>Hypothalamus</b><span class="te-td">హైపోథాలమస్</span></td>
     <td>Releasing/inhibiting hormones; ADH, Oxytocin (synthesized here)</td>
-    <td>THERMOREGULATION center = body's thermostat; maintains body temperature 37°C (Q33) | Also: hunger, thirst, circadian, blood pressure regulation<span class="te-td">శరీర thermostat = ఉష్ణోగ్రత నియంత్రణ కేంద్రం = 37°C (Q33)</span></td>
+    <td>The Hypothalamus acts as the body's thermostat by maintaining body temperature at 37°C (as tested in Q33). It also regulates hunger, thirst, the circadian rhythm, and blood pressure, and it controls the pituitary gland.<span class="te-td">హైపోథాలమస్ శరీర ఉష్ణోగ్రత నియంత్రణ కేంద్రంగా పనిచేస్తుంది మరియు శరీరాన్ని 37°C వద్ద నిర్వహిస్తుంది (Q33). ఇది ఆకలి, దాహం, సిర్కాడియన్ రిథమ్ కూడా నియంత్రిస్తుంది.</span></td>
     <td>Q33</td>
   </tr>
   <tr>
     <td><b>Endocrine vs Exocrine</b><span class="te-td">ఎండోక్రైన్ vs ఎక్సోక్రైన్</span></td>
-    <td colspan="2">Endocrine = ductless, hormones → bloodstream (Q45). Exocrine = have ducts, secrete onto surfaces. Pancreas = BOTH (mixed/heterocrine)<span class="te-td">ఎండోక్రైన్ = నాళాలు లేవు → రక్తంలోకి (Q45). ఎక్సోక్రైన్ = నాళాలు. క్లోమం = రెండూ</span></td>
+    <td colspan="2">Endocrine glands are ductless; they release hormones directly into the bloodstream (as tested in Q45). Exocrine glands have ducts and secrete their products onto body surfaces or into cavities. The Pancreas is both an endocrine and exocrine gland, making it a mixed or heterocrine gland.<span class="te-td">ఎండోక్రైన్ గ్రంథులకు నాళాలు ఉండవు; అవి హార్మోన్లను నేరుగా రక్తంలోకి వదులుతాయి (Q45). ఎక్సోక్రైన్ గ్రంథులకు నాళాలు ఉంటాయి. క్లోమం రెండు రకాలకు చెందిన గ్రంథి.</span></td>
     <td>Q45</td>
   </tr>
 </table>
@@ -172,27 +213,19 @@ tr:nth-child(even) td{background:#f0f7ff;}
 <div class="bilingual">
   <div class="bi-en"><span class="lang-tag">EN</span>
   <b>Digestion Sequence (Q8, Q21, Q26):</b><br>
-  • Mouth: Ptyalin (Salivary Amylase) → STARCH → Maltose (Q21)<br>
-  • Stomach: HCl/Hydrochloric acid (Q26) + Pepsin → PROTEINS (Q8) | HCl pH ~1.5–2; activates pepsinogen → pepsin; kills bacteria | Rennin/Chymosin (NOT Renin) = curdles milk in infants (Renin = kidney BP enzyme)<br>
-  • Small intestine: Trypsin, Chymotrypsin (proteins); Lipase (fats); Pancreatic amylase (starch); Sucrase, Lactase
+  In the mouth, Ptyalin (Salivary Amylase) breaks down starch into Maltose (as tested in Q21). In the stomach, Hydrochloric acid (HCl) is secreted (as tested in Q26) along with Pepsin, which digests Proteins (as tested in Q8). HCl has a pH of approximately 1.5–2; it activates pepsinogen into pepsin and kills harmful bacteria. Rennin (also called Chymosin, not to be confused with Renin, which is a kidney enzyme for blood pressure) curdles milk in infants. In the small intestine, Trypsin and Chymotrypsin digest proteins, Lipase digests fats, Pancreatic amylase digests starch, and enzymes like Sucrase and Lactase digest sugars.
   </div>
   <div class="bi-te"><span class="lang-tag">TE</span>
-  నోరు: టయలిన్ → స్టార్చ్ → మాల్టోస్ (Q21)<br>
-  జీర్ణాశయం: HCl (Q26) + పెప్సిన్ → ప్రోటీన్లు (Q8)<br>
-  చిన్న ప్రేగు: ట్రిప్సిన్, లైపేజ్, అమైలేజ్
+  నోటిలో లాలాజల అమైలేజ్ (టయలిన్) స్టార్చ్‌ను మాల్టోస్‌గా విచ్ఛిన్నం చేస్తుంది (Q21). జీర్ణాశయంలో HCl స్రవిస్తుంది (Q26); దాని pH 1.5–2, ఇది పెప్సినోజెన్‌ను పెప్సిన్‌గా మారుస్తుంది మరియు హానికరమైన బాక్టీరియాను చంపుతుంది. పెప్సిన్ ప్రోటీన్లను జీర్ణం చేస్తుంది (Q8). శిశువులలో రెన్నిన్ అనే ఎంజైమ్ పాలను గడ్డకట్టిస్తుంది. చిన్న ప్రేగులో ట్రిప్సిన్ మరియు కైమోట్రిప్సిన్ ప్రోటీన్లను జీర్ణం చేస్తాయి; లైపేజ్ కొవ్వులను జీర్ణం చేస్తుంది; క్లోమ అమైలేజ్ స్టార్చ్‌ను జీర్ణం చేస్తుంది; సుక్రేజ్ మరియు లాక్టేజ్ చక్కెరలను జీర్ణం చేస్తాయి.
   </div>
 </div>
 <div class="bilingual">
   <div class="bi-en"><span class="lang-tag">EN</span>
   <b>Enzymes as Catalysts (Q14) &amp; Saliva pH (Q27):</b><br>
-  • Enzymes = biological CATALYSTS; lower activation energy; specific (lock-key model); protein in nature<br>
-  • <span class="exam-tag">EXAM</span> Saliva: Exam key = (b) Alkaline; Scientific = slightly acidic (pH 6.2–7.4, avg 6.8)<br>
-  • Milk teeth = 20; Permanent = 32 (including wisdom) (Q34)
+  Enzymes are biological catalysts; they lower the activation energy needed for reactions and are specific to their substrates, following the lock-and-key model. Enzymes are protein in nature. Regarding saliva, the exam key answer is (b) Alkaline; however, scientifically, saliva is slightly acidic with a pH of 6.2–7.4, averaging 6.8. Children have 20 milk teeth, while adults have 32 permanent teeth, including wisdom teeth (as tested in Q34).
   </div>
   <div class="bi-te"><span class="lang-tag">TE</span>
-  ఎంజైమ్లు = జీవ ఉత్ప్రేరకాలు (Q14); యాక్టివేషన్ శక్తి తగ్గిస్తాయి<br>
-  లాలాజలం: పరీక్ష = క్షారం (b); శాస్త్రీయం = కొద్దిగా ఆమ్లం (Q27)<br>
-  పాల దంతాలు = 20; శాశ్వత దంతాలు = 32 (Q34)
+  ఎంజైమ్లు జీవ ఉత్ప్రేరకాలు; అవి చర్య జరగడానికి అవసరమైన శక్తిని తగ్గిస్తాయి (Q14). లాలాజలం విషయంలో పరీక్ష జవాబు క్షారం (b), కానీ శాస్త్రీయంగా కొద్దిగా ఆమ్లం (Q27). పాల దంతాలు 20; శాశ్వత దంతాలు 32 (Q34).
   </div>
 </div>
 </div>
@@ -200,16 +233,10 @@ tr:nth-child(even) td{background:#f0f7ff;}
 <div class="bilingual">
   <div class="bi-en"><span class="lang-tag">EN</span>
   <b>Kidney (Q9) &amp; Miscellaneous Body Facts:</b><br>
-  • Glomerulus = ULTRAFILTERING unit (Q9), inside Bowman's capsule | Nephron = structural + functional unit | GFR = 125 mL/min (~180 L/day filtered; ~1.5–2 L urine)<br>
-  • Placenta NOT in blood (Q19) — connects mother and foetus; enables nutrient + O₂ + waste exchange. Blood = RBCs + WBCs + Platelets (formed elements, 45%) + Plasma (liquid, 55%)<br>
-  • Foetus development = Ultrasound/Sonography (Q25) — uses high-frequency sound waves (>20,000 Hz); safe (no radiation, unlike CAT scan)<br>
-  • Perspiration: Exam key (b) = rid of wastes; Science = thermoregulation (c) (Q4)<br>
-  • Test tube baby (IVF): Exam key (b) = embryo develops in test tube; Science = fertilization external + development internal (c) (Q16); First test tube baby = Louise Brown (1978, UK)
+  The Glomerulus is the ultrafiltering unit of the kidney (as tested in Q9) and is found inside the Bowman's capsule. The Nephron is the structural and functional unit of the kidney. The glomerular filtration rate (GFR) is approximately 125 mL per minute, which filters about 180 litres per day, producing only 1.5–2 litres of urine. Placenta is not a component of blood (as tested in Q19) — it connects the mother and foetus and enables the exchange of nutrients, oxygen, and waste products. Blood is made up of formed elements (RBCs, WBCs, and Platelets — about 45%) and Plasma (the liquid component — about 55%). The development of the foetus is monitored using Ultrasound or Sonography (as tested in Q25), which uses high-frequency sound waves above 20,000 Hz and is safe because it does not use radiation, unlike CAT scans. Regarding perspiration, the exam key answer is (b) removal of wastes, while science considers the primary role to be thermoregulation (c), as tested in Q4. For test tube babies (IVF), the exam key answer is (b) embryo develops in a test tube; scientifically, fertilization is external and development is internal (c), as tested in Q16. The first test tube baby was Louise Brown, born in 1978 in the UK.
   </div>
   <div class="bi-te"><span class="lang-tag">TE</span>
-  గ్లోమెరులస్ = అల్ట్రాఫిల్టరింగ్ యూనిట్ (Q9); నెఫ్రాన్ = నిర్మాణ+క్రియాత్మక యూనిట్<br>
-  ప్లాసెంటా రక్తంలో ఉండదు (Q19); అల్ట్రాసౌండ్ = పిండం పరీక్ష (Q25)<br>
-  చెమట: పరీక్ష = వ్యర్థాలు (Q4); IVF: పరీక్ష = (b) (Q16)
+  గ్లోమెరులస్ అనేది మూత్రపిండంలోని అల్ట్రాఫిల్టరింగ్ యూనిట్; ఇది బోమన్ కాప్స్యూల్ లోపల ఉంటుంది (Q9). నెఫ్రాన్ అనేది మూత్రపిండం యొక్క నిర్మాణ మరియు క్రియాత్మక యూనిట్. GFR నిమిషానికి సుమారు 125 mL; రోజుకు 180 లీటర్లు వడపోస్తుంది, కానీ చివరకు కేవలం 1.5–2 లీటర్ల మూత్రం మాత్రమే తయారవుతుంది. ప్లాసెంటా రక్తంలో భాగం కాదు (Q19) — ఇది తల్లి మరియు పిండం మధ్య పోషకాలు, ఆక్సిజన్ మరియు వ్యర్థాలను మార్పిడి చేస్తుంది. పిండం అభివృద్ధిని పరీక్షించడానికి అల్ట్రాసౌండ్ (సోనోగ్రఫీ) ఉపయోగిస్తారు — ఇది 20,000 Hz కంటే ఎక్కువ పౌనఃపున్యంతో పనిచేస్తుంది మరియు రేడియేషన్ లేకపోవడం వల్ల సురక్షితమైనది (Q25). చెమట విషయంలో పరీక్ష జవాబు = వ్యర్థాలు తొలగించడం (b); శాస్త్రీయంగా = ఉష్ణోగ్రత నియంత్రణ (c) (Q4). IVF (టెస్ట్ ట్యూబ్ బేబీ) విషయంలో పరీక్ష జవాబు = పిండం టెస్ట్ ట్యూబ్‌లో పెరుగుతుంది (b); శాస్త్రీయంగా = ఫలదీకరణం బాహ్యంగా జరుగుతుంది, అభివృద్ధి అంతర్గతంగా జరుగుతుంది (c) (Q16). మొట్టమొదటి టెస్ట్ ట్యూబ్ బేబీ = లూయీస్ బ్రౌన్, 1978, UK.
   </div>
 </div>
 </div><!-- end page 2 -->
@@ -221,28 +248,27 @@ tr:nth-child(even) td{background:#f0f7ff;}
 <div class="cols-2">
 <table>
   <tr><th colspan="2">Eye Structure = Camera Analogy / కంటి = కెమెరా</th></tr>
-  <tr><td><b>Retina</b><span class="te-td">రెటీనా</span></td><td>= Film in camera (Q42); Rods (dim light) + Cones (colour)<span class="te-td">= కెమెరా ఫిల్మ్; రాడ్లు (మసక వెలుతురు) + కోన్లు (రంగు)</span></td></tr>
-  <tr><td><b>Lens</b><span class="te-td">కటకం</span></td><td>= Lens; changes convexity via ciliary muscles<span class="te-td">సిలియరీ కండరాల ద్వారా కుంభాకారత మారుతుంది</span></td></tr>
-  <tr><td><b>Iris/Pupil</b><span class="te-td">ఐరిస్/కనుపాప</span></td><td>= Aperture/Shutter; controls light entry<span class="te-td">= అపర్చర్; కాంతి ప్రవేశాన్ని నియంత్రిస్తుంది</span></td></tr>
-  <tr><td><b>Focusing/Accommodation (Q18)</b><span class="te-td">కేంద్రీకరణ/accommodation</span></td><td>Eye accommodation via Ciliary muscles changing lens convexity. Near: muscles contract → lens thicker (more convex). Far: muscles relax → lens thinner<span class="te-td">కంటి accommodation: సిలియరీ కండరాలు కటకం కుంభాకారత మారుస్తాయి</span></td></tr>
+  <tr><td><b>Retina</b><span class="te-td">రెటీనా</span></td><td>The Retina acts like the film in a camera (as tested in Q42). It contains Rods, which detect dim light, and Cones, which detect colour.<span class="te-td">రెటీనా కెమెరాలో ఫిల్మ్ వంటిది (Q42). రాడ్లు మసక వెలుతురులో పనిచేస్తాయి; కోన్లు రంగులు గుర్తిస్తాయి.</span></td></tr>
+  <tr><td><b>Lens</b><span class="te-td">కటకం</span></td><td>The Lens in the eye corresponds to the lens in a camera. Its convexity is changed by the ciliary muscles to focus on objects at different distances.<span class="te-td">కటకం సిలియరీ కండరాల ద్వారా కుంభాకారత మారుతుంది, వివిధ దూరాల వస్తువులపై కేంద్రీకరించడానికి.</span></td></tr>
+  <tr><td><b>Iris/Pupil</b><span class="te-td">ఐరిస్/కనుపాప</span></td><td>The Iris and Pupil act as the aperture or shutter of a camera, controlling how much light enters the eye.<span class="te-td">ఐరిస్ మరియు కనుపాప కెమెరాలో అపర్చర్ వంటివి; కంటిలోకి వచ్చే కాంతిని నియంత్రిస్తాయి.</span></td></tr>
+  <tr><td><b>Focusing/Accommodation (Q18)</b><span class="te-td">కేంద్రీకరణ/accommodation</span></td><td>Eye accommodation works through the Ciliary muscles, which change the convexity of the lens. When focusing on a near object, the ciliary muscles contract and the lens becomes thicker and more convex. When focusing on a far object, the muscles relax and the lens becomes thinner.<span class="te-td">కంటి accommodation లో సిలియరీ కండరాలు కటకం కుంభాకారతను మారుస్తాయి. దగ్గరి వస్తువుకు కండరాలు సంకోచిస్తాయి; దూరపు వస్తువుకు సడలుతాయి.</span></td></tr>
 </table>
 <table>
   <tr><th colspan="2">Lens Corrections / కటక సరిదిద్దుకోవడం</th></tr>
-  <tr><td><b>Convex lens</b><span class="te-td">కుంభాకార కటకం</span></td><td>Corrects LONG-sightedness (Hypermetropia) (Q22)<span class="te-td">దీర్ఘదృష్టి సరిదిద్దుతుంది</span></td></tr>
-  <tr><td><b>Concave lens</b><span class="te-td">పుటాకార కటకం</span></td><td>Corrects SHORT-sightedness (Myopia)<span class="te-td">హ్రస్వదృష్టి సరిదిద్దుతుంది</span></td></tr>
-  <tr><td><b>Bifocal (Franklin)</b><span class="te-td">బైఫోకల్ (ఫ్రాంక్లిన్)</span></td><td>Upper = concave (far); Lower = convex (near)<span class="te-td">పై = పుటాకార (దూరం); కింది = కుంభాకార (దగ్గర)</span></td></tr>
-  <tr><td><b>Cylindrical</b><span class="te-td">సిలిండ్రికల్</span></td><td>Corrects Astigmatism<span class="te-td">ఆస్టిగ్మాటిజం సరిదిద్దుతుంది</span></td></tr>
+  <tr><td><b>Convex lens</b><span class="te-td">కుంభాకార కటకం</span></td><td>A Convex lens is used to correct Long-sightedness, also known as Hypermetropia (as tested in Q22).<span class="te-td">కుంభాకార కటకం దీర్ఘదృష్టి (Hypermetropia) సరిదిద్దుతుంది (Q22).</span></td></tr>
+  <tr><td><b>Concave lens</b><span class="te-td">పుటాకార కటకం</span></td><td>A Concave lens is used to correct Short-sightedness, also known as Myopia.<span class="te-td">పుటాకార కటకం హ్రస్వదృష్టి (Myopia) సరిదిద్దుతుంది.</span></td></tr>
+  <tr><td><b>Bifocal (Franklin)</b><span class="te-td">బైఫోకల్ (ఫ్రాంక్లిన్)</span></td><td>In bifocal lenses (invented by Franklin), the upper portion is concave for distance vision and the lower portion is convex for near vision.<span class="te-td">బైఫోకల్ కటకంలో పై భాగం పుటాకారం (దూరం కోసం); కింది భాగం కుంభాకారం (దగ్గరికి).</span></td></tr>
+  <tr><td><b>Cylindrical</b><span class="te-td">సిలిండ్రికల్</span></td><td>A Cylindrical lens is used to correct Astigmatism.<span class="te-td">సిలిండ్రికల్ కటకం ఆస్టిగ్మాటిజం సరిదిద్దుతుంది.</span></td></tr>
 </table>
 </div>
 
 <div class="bilingual">
   <div class="bi-en"><span class="lang-tag">EN</span>
   <b>Brain (Q43) &amp; Hypothalamus (Q33):</b><br>
-  CEREBRUM = largest part of brain (~85%); voluntary actions, intelligence, memory, language | CEREBELLUM = balance &amp; coordination (~10%) | MEDULLA OBLONGATA = vital reflexes (heartbeat, respiration, BP) | HYPOTHALAMUS = thermoregulation center (maintains 37°C), hunger, thirst, circadian rhythm, controls pituitary
+  The Cerebrum is the largest part of the brain, accounting for about 85% of its volume. It controls voluntary actions, intelligence, memory, and language (as tested in Q43). The Cerebellum accounts for about 10% and is responsible for balance and coordination. The Medulla Oblongata controls vital reflexes such as heartbeat, respiration, and blood pressure. The Hypothalamus is the thermoregulation center of the body, maintaining a temperature of 37°C (as tested in Q33). It also regulates hunger, thirst, and the circadian rhythm, and controls the pituitary gland.
   </div>
   <div class="bi-te"><span class="lang-tag">TE</span>
-  సెరిబ్రమ్ = అతిపెద్ద భాగం (~85%); ఐచ్ఛిక చర్యలు, జ్ఞాపకం (Q43)<br>
-  సెరిబెల్లమ్ = సమతుల్యత; మజ్జాముఖం = శ్వాస, గుండె; హైపోథాలమస్ = 37°C నిర్వహణ (Q33)
+  సెరిబ్రమ్ మెదడులో అతిపెద్ద భాగం (~85%); ఐచ్ఛిక చర్యలు, జ్ఞాపకశక్తి నియంత్రిస్తుంది (Q43). సెరిబెల్లమ్ సమతుల్యత కాపాడుతుంది. మజ్జాముఖం శ్వాస మరియు గుండె కొట్టుకోవడం నియంత్రిస్తుంది. హైపోథాలమస్ శరీర ఉష్ణోగ్రతను 37°C వద్ద నిర్వహిస్తుంది (Q33).
   </div>
 </div>
 
@@ -252,20 +278,20 @@ tr:nth-child(even) td{background:#f0f7ff;}
 <div>
 <table>
   <tr><th colspan="2">Key Bones / ముఖ్య ఎముకలు</th></tr>
-  <tr><td>Leg bones (lower leg)<span class="te-td">కాలి ఎముకలు</span></td><td>Fibula + Tibia (Q10); Femur = upper leg (thigh)<span class="te-td">ఫైబులా + టిబియా; ఫీమర్ = తొడ</span></td></tr>
-  <tr><td>Arm bones<span class="te-td">చేయి ఎముకలు</span></td><td>Humerus (upper) + Radius + Ulna (forearm)<span class="te-td">హ్యూమరస్ + రేడియస్ + ఉల్నా</span></td></tr>
-  <tr><td>Shoulder → fingertips (Q40)<span class="te-td">భుజం → వేళ్ళు</span></td><td>Humerus → Radius-Ulna → Carpals → Metacarpals → Phalanges<span class="te-td">హ్యూమరస్ → రేడియస్-ఉల్నా → కార్పెల్స్ → మెటాకార్పెల్స్ → ఫాలాంజెస్</span></td></tr>
-  <tr><td>Connective tissues<span class="te-td">సంధిపూరక కణజాలాలు</span></td><td>Ligament = bone to bone (Q49) | Tendon = muscle to bone<span class="te-td">స్నాయువు = ఎముక-ఎముక (Q49); అనుకూపం = కండరం-ఎముక</span></td></tr>
+  <tr><td>Leg bones (lower leg)<span class="te-td">కాలి ఎముకలు</span></td><td>The lower leg contains the Fibula and Tibia (as tested in Q10). The Femur is the upper leg bone, found in the thigh.<span class="te-td">కాలి అడుగు భాగంలో ఫైబులా మరియు టిబియా ఉంటాయి (Q10). ఫీమర్ తొడ యొక్క ఎముక.</span></td></tr>
+  <tr><td>Arm bones<span class="te-td">చేయి ఎముకలు</span></td><td>The arm contains the Humerus in the upper arm and the Radius and Ulna in the forearm.<span class="te-td">చేయి యొక్క పై భాగంలో హ్యూమరస్ ఉంటుంది; ముంజేతిలో రేడియస్ మరియు ఉల్నా ఉంటాయి.</span></td></tr>
+  <tr><td>Shoulder → fingertips (Q40)<span class="te-td">భుజం → వేళ్ళు</span></td><td>From shoulder to fingertips, the bones are: Humerus, then Radius and Ulna, then Carpals, then Metacarpals, and finally Phalanges (as tested in Q40).<span class="te-td">భుజం నుండి వేళ్ళ వరకు: హ్యూమరస్, రేడియస్-ఉల్నా, కార్పెల్స్, మెటాకార్పెల్స్, ఫాలాంజెస్ (Q40).</span></td></tr>
+  <tr><td>Connective tissues<span class="te-td">సంధిపూరక కణజాలాలు</span></td><td>Ligaments connect bone to bone (as tested in Q49), while Tendons connect muscle to bone.<span class="te-td">స్నాయువు ఎముకను ఎముకకు కలుపుతుంది (Q49); అనుకూపం కండరాన్ని ఎముకకు కలుపుతుంది.</span></td></tr>
 </table>
 </div>
 <div>
 <table>
   <tr><th colspan="2">Muscles, Skin &amp; Immunity / కండరాలు, చర్మం &amp; రక్షణ</th></tr>
-  <tr><td>3 Muscle types<span class="te-td">3 కండర రకాలు</span></td><td>Skeletal (voluntary) + Smooth (involuntary) + Cardiac (involuntary) — NOT Sesamoids (Q28)<span class="te-td">అస్థి + నునుపు + హృదయ. సెసామాయిడ్స్ = ఎముక (Q28)</span></td></tr>
-  <tr><td>Keratin (Q48)<span class="te-td">కెరాటిన్</span></td><td>Makes outer skin layer (epidermis/stratum corneum) waterproof/impervious; found in skin, hair, nails<span class="te-td">epidermis (బాహ్య చర్మపొర)ను నీటికి చొరబడకుండా; చర్మం, జుట్టు, గోళ్ళలో</span></td></tr>
-  <tr><td>Skin blisters (Q32)<span class="te-td">పొక్కులు</span></td><td>Max tolerance without blisters = 60°C<span class="te-td">60°C వరకు పొక్కులు లేకుండా తట్టుకుంటుంది</span></td></tr>
-  <tr><td>Antigen (Q29)<span class="te-td">యాంటిజెన్</span></td><td>Foreign particle stimulating antibody production; antibodies = from B lymphocytes/plasma cells. Histone (distractor) = protein that packages DNA in nucleus (NOT an antigen)<span class="te-td">విదేశీ కణం → యాంటీబాడీలు (B lymphocytes); Histone = DNA పాకేజింగ్ ప్రోటీన్ (యాంటిజెన్ కాదు)</span></td></tr>
-  <tr><td>Histamine (Q50)<span class="te-td">హిస్టామిన్</span></td><td>Released by mast cells/basophils in ALLERGIC reactions; causes itching, sneezing, watery eyes; blocked by antihistamines (cetirizine, loratadine)<span class="te-td">అలెర్జీలో మాస్ట్ కణాల నుండి; దురద, తుమ్ము; antihistamines లక్షణాలు తగ్గిస్తాయి</span></td></tr>
+  <tr><td>3 Muscle types<span class="te-td">3 కండర రకాలు</span></td><td>There are three types of muscles: Skeletal (voluntary), Smooth (involuntary), and Cardiac (involuntary). Sesamoids are small bones found in tendons, not a type of muscle (as tested in Q28).<span class="te-td">కండరాలు మూడు రకాలు: అస్థి, నునుపు, హృదయ కండరాలు. సెసామాయిడ్స్ అనేవి ఎముకలు, కండరాలు కాదు (Q28).</span></td></tr>
+  <tr><td>Keratin (Q48)<span class="te-td">కెరాటిన్</span></td><td>Keratin is a protein that makes the outer skin layer (epidermis/stratum corneum) waterproof and impervious. It is also found in hair and nails (as tested in Q48).<span class="te-td">కెరాటిన్ ప్రోటీన్ బాహ్య చర్మపొర (epidermis)ను నీటికి చొరబడకుండా చేస్తుంది. ఇది జుట్టు మరియు గోళ్ళలో కూడా ఉంటుంది (Q48).</span></td></tr>
+  <tr><td>Skin blisters (Q32)<span class="te-td">పొక్కులు</span></td><td>The skin can tolerate up to 60°C without developing blisters (as tested in Q32).<span class="te-td">చర్మం 60°C వరకు పొక్కులు లేకుండా తట్టుకుంటుంది (Q32).</span></td></tr>
+  <tr><td>Antigen (Q29)<span class="te-td">యాంటిజెన్</span></td><td>An Antigen is a foreign particle that stimulates the production of antibodies. Antibodies are produced by B lymphocytes (plasma cells). Histone is a protein that packages DNA in the cell nucleus and is sometimes used as a distractor — it is NOT an antigen (as tested in Q29).<span class="te-td">యాంటిజెన్ అనేది శరీరంలో ప్రవేశించే విదేశీ కణం, ఇది యాంటీబాడీలను ప్రేరేపిస్తుంది. Histone అనేది DNA పాకేజింగ్ ప్రోటీన్, యాంటిజెన్ కాదు (Q29).</span></td></tr>
+  <tr><td>Histamine (Q50)<span class="te-td">హిస్టామిన్</span></td><td>Histamine is released by mast cells and basophils during allergic reactions. It causes symptoms such as itching, sneezing, and watery eyes. Antihistamine drugs such as cetirizine and loratadine block these effects (as tested in Q50).<span class="te-td">హిస్టామిన్ అలెర్జీ ప్రతిచర్యలలో మాస్ట్ కణాల నుండి విడుదలవుతుంది. దురద, తుమ్ము వంటి లక్షణాలు కలిగిస్తుంది. antihistamine మందులు ఈ లక్షణాలను తగ్గిస్తాయి (Q50).</span></td></tr>
 </table>
 </div>
 </div>
@@ -279,28 +305,20 @@ tr:nth-child(even) td{background:#f0f7ff;}
 <div class="bilingual">
   <div class="bi-en"><span class="lang-tag">EN</span>
   <b>Rh Factor Inheritance (Q46):</b><br>
-  Father Rh+ (dominant) × Mother Rh- (rr) → children likely Rh+ve (dominant allele from father). If father homozygous (RR) → all children Rh+. If heterozygous (Rr) → 50% Rh+, 50% Rh-.<br>
-  Rh incompatibility: Rh- mother + Rh+ baby → erythroblastosis fetalis (haemolytic disease of newborn) in subsequent pregnancies. Treatment: Rh immunoglobulin (Anti-D).
+  When an Rh-positive father (who carries the dominant allele) and an Rh-negative mother (rr) have children, the children are likely to be Rh-positive because they inherit the dominant allele from the father. If the father is homozygous (RR), all children will be Rh-positive. If the father is heterozygous (Rr), approximately 50% of the children will be Rh-positive and 50% will be Rh-negative.<br>
+  Rh incompatibility occurs when an Rh-negative mother carries an Rh-positive baby. In subsequent pregnancies, this can cause Erythroblastosis Fetalis, also known as Haemolytic Disease of the Newborn. The treatment is Rh immunoglobulin (Anti-D).
   </div>
   <div class="bi-te"><span class="lang-tag">TE</span>
-  తండ్రి Rh+ (డామినెంట్) × తల్లి Rh- (rr) → పిల్లలు Rh+ (Q46)<br>
-  Rh- తల్లి + Rh+ పిండం → రెండవ గర్భంలో ఎరిత్రోబ్లాస్టోసిస్ ఫీటాలిస్<br>
-  చికిత్స: Anti-D ఇమ్యునోగ్లోబులిన్
+  Rh కారకం వంశానుగతంగా వస్తుంది. తండ్రి Rh+ (ప్రధాన allele) మరియు తల్లి Rh- (rr) అయినప్పుడు పిల్లలు Rh+ అవుతారు, ఎందుకంటే వారు తండ్రి నుండి ప్రధాన allele పొందుతారు (Q46). తండ్రి homozygous (RR) అయితే అన్ని పిల్లలు Rh+ అవుతారు. తండ్రి heterozygous (Rr) అయితే సుమారు 50% పిల్లలు Rh+ మరియు 50% Rh- అవుతారు. Rh- తల్లికి Rh+ పిండం ఉన్నప్పుడు, తల్లి రక్తంలో Rh+ కు వ్యతిరేకంగా యాంటీబాడీలు తయారవుతాయి. రెండవ గర్భంలో ఈ యాంటీబాడీలు పిండం RBC లను నాశనం చేసే ఎరిత్రోబ్లాస్టోసిస్ ఫీటాలిస్ అనే ప్రమాదకరమైన స్థితి కలిగిస్తాయి. దీనికి చికిత్స: Anti-D ఇమ్యునోగ్లోబులిన్.
   </div>
 </div>
 <div class="bilingual">
   <div class="bi-en"><span class="lang-tag">EN</span>
   <b>DNA Replication Roles (Q5):</b><br>
-  • DNA Polymerase III = synthesizes new DNA strands complementary to template (MAIN ROLE, 5'→3')<br>
-  • Helicase = unwinds double helix<br>
-  • DNA Ligase = joins Okazaki fragments<br>
-  • RNase H / DNA Pol I = removes RNA primers<br>
-  Base pairing: A-T (2 H-bonds), G-C (3 H-bonds) — complementarity
+  DNA Polymerase III synthesizes new DNA strands that are complementary to the template strand, working in the 5' to 3' direction. This is the main enzyme of replication (as tested in Q5). Helicase is responsible for unwinding the double helix. DNA Ligase joins the Okazaki fragments together. RNase H and DNA Polymerase I remove the RNA primers. In base pairing, Adenine (A) pairs with Thymine (T) through 2 hydrogen bonds, and Guanine (G) pairs with Cytosine (C) through 3 hydrogen bonds.
   </div>
   <div class="bi-te"><span class="lang-tag">TE</span>
-  DNA పాలిమరేస్ III = మూస కు పరిపూరకమైన DNA తయారు చేయడం (Q5)<br>
-  హెలికేజ్ = విడదీయడం; DNA లైగేజ్ = ఒకజాకి ఖండితాలు కలపడం<br>
-  A-T (2 H-బంధాలు), G-C (3 H-బంధాలు)
+  DNA పునరావృత్తి అనేది కొత్త DNA తయారు చేసే ప్రక్రియ. DNA పాలిమరేస్ III అనేది టెంప్లేట్ తీగకు పరిపూరకమైన కొత్త DNA తీగను 5' నుండి 3' దిశలో సంశ్లేషిస్తుంది (Q5). హెలికేజ్ అనే ఎంజైమ్ DNA యొక్క ద్విచ్ఛేద నిర్మాణాన్ని విచ్ఛిన్నం చేసి రెండు తీగలను విడదీస్తుంది. DNA లైగేజ్ అనే ఎంజైమ్ ఒకజాకి ఖండితాలను కలిపి లాగింగ్ స్ట్రాండ్‌ను పూర్తి చేస్తుంది. క్షారజంట విషయంలో: అడెనిన్ (A) మరియు థైమిన్ (T) మధ్య 2 హైడ్రోజన్ బంధాలు ఉంటాయి; గ్వానిన్ (G) మరియు సైటోసిన్ (C) మధ్య 3 హైడ్రోజన్ బంధాలు ఉంటాయి.
   </div>
 </div>
 </div>
@@ -308,18 +326,18 @@ tr:nth-child(even) td{background:#f0f7ff;}
 <table>
   <tr><th colspan="3">Miscellaneous Human Body Quick Reference / మానవ శరీర త్వరిత సూచిక</th></tr>
   <tr><th>Topic / విషయం</th><th>Key Fact / ముఖ్య విషయం</th><th>Q</th></tr>
-  <tr><td>Largest gland<span class="te-td">అతిపెద్ด గ్రంథి</span></td><td>LIVER (~1.2–1.5 kg); also largest internal organ<span class="te-td">కాలేయం; అతిపెద్ద అంతర్గ అవయవం కూడా</span></td><td>Q3</td></tr>
-  <tr><td>Adam's apple<span class="te-td">ఆడమ్స్ యాపిల్</span></td><td>Thyroid cartilage prominence; exam answer = Thyroid (C)<span class="te-td">థైరాయిడ్ కార్టిలేజ్; పరీక్ష జవాబు = థైరాయిడ్</span></td><td>Q7</td></tr>
-  <tr><td>Cortisone producer<span class="te-td">కార్టిసోన్ ఉత్పాదకం</span></td><td>ADRENAL CORTEX (glucocorticoid)<span class="te-td">అడ్రినల్ కార్టెక్స్ (గ్లూకోకార్టికాయిడ్)</span></td><td>Q2</td></tr>
-  <tr><td>Thyroid location<span class="te-td">థైరాయిడ్ స్థానం</span></td><td>Near LARYNX (voice box), anterior to trachea<span class="te-td">స్వరపేటిక దగ్గర, శ్వాసనాళం ముందు</span></td><td>Q20</td></tr>
-  <tr><td>Cardiac cycle time<span class="te-td">హృదయ చక్రం</span></td><td>0.8 sec (atrial systole 0.1s + ventricular systole 0.3s + diastole 0.4s)<span class="te-td">0.8 సెకండ్ = 0.1+0.3+0.4</span></td><td>Q6</td></tr>
-  <tr><td>Iron in blood<span class="te-td">రక్తంలో ఇనుము</span></td><td>Exam key = compound (b); Science = complex (metalloprotein in heme)<span class="te-td">పరీక్ష = సమ్మేళనం; శాస్త్రీయం = సంక్లిష్టం</span></td><td>Q44</td></tr>
-  <tr><td>Ultrasound foetus<span class="te-td">పిండం పరీక్ష</span></td><td>Ultrasound (sonography) &gt;20,000 Hz; safe for foetus (no radiation)<span class="te-td">అల్ట్రాసౌండ్ &gt;20,000 Hz; సురక్షితం</span></td><td>Q25</td></tr>
-  <tr><td>Plutonium pacemakers<span class="te-td">పేస్‌మేకర్ మూలకం</span></td><td>Pu-238 (half-life 87.7 yrs) used in older nuclear pacemakers; modern = Li-I battery. Deuterium = isotope of Hydrogen (H-2), stable — NOT radioactive (distractor)<span class="te-td">Pu-238 పాత న్యూక్లియర్ పేస్‌మేకర్లలో. Deuterium = హైడ్రోజన్ ఐసోటోప్ (H-2), రేడియోధార్మికత లేదు</span></td><td>Q47</td></tr>
-  <tr><td>RBC:WBC ratio<span class="te-td">RBC:WBC నిష్పత్తి</span></td><td><span class="exam-tag">EXAM</span> 5000:1 (exam key); scientific ~600:1<span class="te-td">పరీక్ష కీ = 5000:1; శాస్త్రీయం ~600:1</span></td><td>Q39</td></tr>
-  <tr><td>Blood volume<span class="te-td">రక్తం పరిమాణం</span></td><td>5–6 litres (adult); ~7–8% of body weight<span class="te-td">5-6 లీటర్లు; శరీర బరువులో ~7-8%</span></td><td>Q23</td></tr>
-  <tr><td>Glycogen storage<span class="te-td">గ్లైకోజెన్ నిల్వ</span></td><td>LIVER (maintains blood glucose) + Skeletal muscles (exercise fuel)<span class="te-td">కాలేయం + అస్థి కండరాలు</span></td><td>Q35</td></tr>
-  <tr><td>Milk teeth<span class="te-td">పాల దంతాలు</span></td><td>20 (deciduous); replaced by 32 permanent teeth<span class="te-td">20 పాల దంతాలు → 32 శాశ్వత దంతాలు</span></td><td>Q34</td></tr>
+  <tr><td>Largest gland<span class="te-td">అతిపెద్ద గ్రంథి</span></td><td>The LIVER, weighing approximately 1.2–1.5 kg, is the largest gland and also the largest internal organ in the body.<span class="te-td">కాలేయం (~1.2–1.5 kg) అతిపెద్ద గ్రంథి మరియు అతిపెద్ద అంతర్గ అవయవం.</span></td><td>Q3</td></tr>
+  <tr><td>Adam's apple<span class="te-td">ఆడమ్స్ యాపిల్</span></td><td>The Adam's apple is the prominence of the Thyroid cartilage. The exam answer is Thyroid (option C).<span class="te-td">ఆడమ్స్ యాపిల్ అనేది థైరాయిడ్ కార్టిలేజ్ యొక్క ఉబ్బు; పరీక్ష జవాబు = థైరాయిడ్.</span></td><td>Q7</td></tr>
+  <tr><td>Cortisone producer<span class="te-td">కార్టిసోన్ ఉత్పాదకం</span></td><td>Cortisone is produced by the ADRENAL CORTEX and belongs to the glucocorticoid group of hormones.<span class="te-td">కార్టిసోన్ అడ్రినల్ కార్టెక్స్ (glucocorticoid) నుండి వస్తుంది.</span></td><td>Q2</td></tr>
+  <tr><td>Thyroid location<span class="te-td">థైరాయిడ్ స్థానం</span></td><td>The Thyroid gland is located near the Larynx (voice box), in front of the trachea.<span class="te-td">థైరాయిడ్ స్వరపేటిక దగ్గర, శ్వాసనాళం ముందు భాగంలో ఉంటుంది.</span></td><td>Q20</td></tr>
+  <tr><td>Cardiac cycle time<span class="te-td">హృదయ చక్రం</span></td><td>One cardiac cycle takes 0.8 seconds, consisting of atrial systole (0.1 s), ventricular systole (0.3 s), and diastole (0.4 s).<span class="te-td">ఒక హృదయ చక్రం 0.8 సెకండ్ = 0.1 + 0.3 + 0.4 సెకండ్లు.</span></td><td>Q6</td></tr>
+  <tr><td>Iron in blood<span class="te-td">రక్తంలో ఇనుము</span></td><td>The exam key answer is that iron exists as a compound (option b). Scientifically, it exists as a complex metalloprotein within the heme group.<span class="te-td">పరీక్ష జవాబు = సమ్మేళనం (b); శాస్త్రీయంగా = సంక్లిష్ట మెటాలోప్రోటీన్.</span></td><td>Q44</td></tr>
+  <tr><td>Ultrasound foetus<span class="te-td">పిండం పరీక్ష</span></td><td>Ultrasound (Sonography) uses sound waves above 20,000 Hz and is safe for the foetus because it does not use radiation.<span class="te-td">అల్ట్రాసౌండ్ 20,000 Hz కంటే ఎక్కువ పౌనఃపున్యం; పిండానికి సురక్షితం (రేడియేషన్ లేదు).</span></td><td>Q25</td></tr>
+  <tr><td>Plutonium pacemakers<span class="te-td">పేస్‌మేకర్ మూలకం</span></td><td>Pu-238, which has a half-life of 87.7 years, was used in older nuclear pacemakers. Modern pacemakers use lithium-iodine (Li-I) batteries. Deuterium is a stable isotope of Hydrogen (H-2) and is NOT radioactive, making it a common distractor.<span class="te-td">Pu-238 పాత న్యూక్లియర్ పేస్‌మేకర్లలో వాడేవారు. ఆధునిక పేస్‌మేకర్లలో Li-I బ్యాటరీ ఉంటుంది. Deuterium అనేది స్థిరమైన హైడ్రోజన్ ఐసోటోప్ (H-2); అది రేడియోధార్మికత కాదు.</span></td><td>Q47</td></tr>
+  <tr><td>RBC:WBC ratio<span class="te-td">RBC:WBC నిష్పత్తి</span></td><td><span class="exam-tag">EXAM</span> The exam key answer is 5000:1; the scientific ratio is approximately 600:1.<span class="te-td">పరీక్ష కీ = 5000:1; శాస్త్రీయంగా ~600:1.</span></td><td>Q39</td></tr>
+  <tr><td>Blood volume<span class="te-td">రక్తం పరిమాణం</span></td><td>An adult has 5–6 litres of blood, which is approximately 7–8% of total body weight.<span class="te-td">వయోజనుడిలో 5–6 లీటర్లు రక్తం; ఇది శరీర బరువులో ~7–8%.</span></td><td>Q23</td></tr>
+  <tr><td>Glycogen storage<span class="te-td">గ్లైకోజెన్ నిల్వ</span></td><td>Glycogen is stored in the LIVER, which helps maintain blood glucose levels, and in the skeletal muscles, where it serves as fuel during exercise.<span class="te-td">గ్లైకోజెన్ కాలేయంలో (రక్తంలో చక్కెర నిర్వహణకు) మరియు అస్థి కండరాలలో (వ్యాయామ శక్తికి) నిల్వ ఉంటుంది.</span></td><td>Q35</td></tr>
+  <tr><td>Milk teeth<span class="te-td">పాల దంతాలు</span></td><td>Children have 20 deciduous (milk) teeth, which are eventually replaced by 32 permanent teeth.<span class="te-td">పిల్లలకు 20 పాల దంతాలు ఉంటాయి; ఇవి తర్వాత 32 శాశ్వత దంతాలుగా మారతాయి.</span></td><td>Q34</td></tr>
 </table>
 </div><!-- end page 4 -->
 
@@ -328,80 +346,80 @@ tr:nth-child(even) td{background:#f0f7ff;}
 <div class="sec-head">⚠ Trap Sheet — Common Exam Mistakes <span class="te">తప్పుడు జవాబుల జాగ్రత్త</span></div>
 <table>
   <tr><th>#</th><th>Common Wrong Answer</th><th>Correct Fact</th><th>Q</th></tr>
-  <tr><td>1</td><td>O group = universal recipient</td><td>O group = UNIVERSAL DONOR (no antigens); AB = universal recipient (no antibodies)</td><td>Q1</td></tr>
-  <tr><td>2</td><td>Cortisone → Thyroid or Pancreas</td><td>Cortisone = ADRENAL CORTEX (glucocorticoid)</td><td>Q2</td></tr>
-  <tr><td>3</td><td>Heart or Brain = largest gland</td><td>LIVER = largest gland (heart and brain are not glands)</td><td>Q3</td></tr>
-  <tr><td>4</td><td>⚠ Perspiration primary function = thermoregulation (c)</td><td>Exam key = (b) rid of wastes; Science = thermoregulation. Mark exam key in exam.</td><td>Q4</td></tr>
-  <tr><td>5</td><td>Helicase = synthesizes DNA; DNA Polymerase = unwinds</td><td>DNA Polymerase = SYNTHESIZES new strands; Helicase = unwinds helix</td><td>Q5</td></tr>
-  <tr><td>6</td><td>Adam's apple = Adrenal or Pituitary</td><td>Adam's apple = Thyroid cartilage region; exam answer = (c) Thyroid</td><td>Q7</td></tr>
-  <tr><td>7</td><td>Protein digestion starts in mouth</td><td>Mouth = STARCH only (amylase); PROTEIN digestion starts in STOMACH (pepsin + HCl)</td><td>Q8</td></tr>
-  <tr><td>8</td><td>Nephron = ultrafiltering unit</td><td>GLOMERULUS = ultrafiltering unit; Nephron = structural + functional unit (includes glomerulus)</td><td>Q9</td></tr>
-  <tr><td>9</td><td>Ulna and Fibula both in leg</td><td>Leg = Tibia + Fibula; Arm = Humerus, Radius, Ulna. Ulna is in ARM not leg.</td><td>Q10</td></tr>
-  <tr><td>10</td><td>All veins = deoxygenated (no exceptions)</td><td>PULMONARY VEIN = only vein carrying oxygenated blood (lungs → heart)</td><td>Q11</td></tr>
-  <tr><td>11</td><td>Insulin secreted by Pituitary or Liver</td><td>Insulin = β cells of Islets of Langerhans in PANCREAS</td><td>Q12</td></tr>
-  <tr><td>12</td><td>Pituitary accumulates iodine</td><td>THYROID accumulates iodine (for T3/T4 synthesis)</td><td>Q13</td></tr>
-  <tr><td>13</td><td>⚠ Test tube baby: science = fertilization external + development internal</td><td>Exam key = (b) embryo develops in test tube; Science = (c). Mark exam key.</td><td>Q16</td></tr>
-  <tr><td>14</td><td>Bone marrow = destroys RBCs</td><td>Bone marrow = PRODUCES RBCs; Spleen = DESTROYS old RBCs</td><td>Q17, Q38</td></tr>
-  <tr><td>15</td><td>Retina = lens of camera</td><td>Retina = FILM of camera; Lens = lens; Pupil/Iris = aperture</td><td>Q42</td></tr>
-  <tr><td>16</td><td>⚠ Saliva = acidic (scientific)</td><td>Exam key = (b) Alkaline; Science = slightly acidic pH ~6.8. Mark exam key.</td><td>Q27</td></tr>
-  <tr><td>17</td><td>Sesamoids = type of muscle</td><td>Sesamoids = small BONES in tendons (e.g., patella); NOT a muscle type</td><td>Q28</td></tr>
-  <tr><td>18</td><td>Convex lens for myopia</td><td>Convex lens = HYPERMETROPIA (long-sight); Concave = MYOPIA (short-sight)</td><td>Q22</td></tr>
-  <tr><td>19</td><td>Ligaments = muscle to bone</td><td>Ligament = BONE to BONE; Tendon = MUSCLE to BONE</td><td>Q49</td></tr>
-  <tr><td>20</td><td>Heparin released in allergic reactions</td><td>HISTAMINE = released in allergic reactions (from mast cells); Heparin = anticoagulant</td><td>Q50</td></tr>
+  <tr><td>1</td><td>Students often mark O group as the universal recipient.</td><td>O group is the UNIVERSAL DONOR because it has no antigens on its RBCs. AB group is the universal recipient because it has no antibodies in the plasma.</td><td>Q1</td></tr>
+  <tr><td>2</td><td>Students often say Cortisone comes from the Thyroid or Pancreas.</td><td>Cortisone is produced exclusively by the ADRENAL CORTEX and is classified as a glucocorticoid hormone.</td><td>Q2</td></tr>
+  <tr><td>3</td><td>Students sometimes say the Heart or Brain is the largest gland.</td><td>The LIVER is the largest gland in the body. The heart and brain are not glands at all.</td><td>Q3</td></tr>
+  <tr><td>4</td><td>⚠ Students mark thermoregulation (option c) as the primary function of perspiration.</td><td>The exam key answer is (b) — removal of wastes. Scientifically, the primary function is thermoregulation (c). Always mark the exam key in competitive exams.</td><td>Q4</td></tr>
+  <tr><td>5</td><td>Students confuse the roles: Helicase synthesizes DNA and DNA Polymerase unwinds the helix.</td><td>DNA Polymerase III SYNTHESIZES new DNA strands. Helicase unwinds the double helix. Their roles are not interchangeable.</td><td>Q5</td></tr>
+  <tr><td>6</td><td>Students link Adam's apple to the Adrenal or Pituitary gland.</td><td>Adam's apple is the prominence of the Thyroid cartilage. The exam answer is option (c) Thyroid.</td><td>Q7</td></tr>
+  <tr><td>7</td><td>Students think protein digestion begins in the mouth.</td><td>The mouth digests STARCH only (using salivary amylase). Protein digestion begins in the STOMACH using pepsin and HCl.</td><td>Q8</td></tr>
+  <tr><td>8</td><td>Students say the Nephron is the ultrafiltering unit.</td><td>The GLOMERULUS is the ultrafiltering unit. The Nephron is the structural and functional unit of the kidney, and it includes the glomerulus within it.</td><td>Q9</td></tr>
+  <tr><td>9</td><td>Students place the Ulna and Fibula both in the leg.</td><td>The lower leg contains the Tibia and Fibula. The arm contains the Humerus, Radius, and Ulna. The Ulna is in the ARM, not the leg.</td><td>Q10</td></tr>
+  <tr><td>10</td><td>Students say all veins carry deoxygenated blood, with no exceptions.</td><td>The PULMONARY VEIN is the only vein that carries oxygenated blood. It brings oxygenated blood from the lungs to the heart.</td><td>Q11</td></tr>
+  <tr><td>11</td><td>Students say Insulin is secreted by the Pituitary or Liver.</td><td>Insulin is secreted by the beta (β) cells of the Islets of Langerhans, which are located in the PANCREAS.</td><td>Q12</td></tr>
+  <tr><td>12</td><td>Students say the Pituitary gland accumulates iodine.</td><td>The THYROID gland accumulates iodine from the blood to synthesize the hormones T3 and T4.</td><td>Q13</td></tr>
+  <tr><td>13</td><td>⚠ Scientifically, in IVF, fertilization is external and development is internal (option c).</td><td>The exam key answer is (b) — the embryo develops in a test tube. Always mark the exam key in competitive exams.</td><td>Q16</td></tr>
+  <tr><td>14</td><td>Students say bone marrow destroys RBCs.</td><td>Bone marrow PRODUCES RBCs. The Spleen DESTROYS old or worn-out RBCs.</td><td>Q17, Q38</td></tr>
+  <tr><td>15</td><td>Students say the Retina is the lens of the camera.</td><td>The Retina corresponds to the FILM of the camera. The Lens is the lens, and the Pupil and Iris correspond to the aperture.</td><td>Q42</td></tr>
+  <tr><td>16</td><td>⚠ Scientifically, saliva is slightly acidic with a pH of approximately 6.8.</td><td>The exam key answer is (b) Alkaline. Always mark the exam key in competitive exams.</td><td>Q27</td></tr>
+  <tr><td>17</td><td>Students think Sesamoids are a type of muscle.</td><td>Sesamoids are small BONES embedded in tendons (the patella, or kneecap, is an example). They are not a type of muscle.</td><td>Q28</td></tr>
+  <tr><td>18</td><td>Students use a Convex lens to correct Myopia.</td><td>A Convex lens corrects HYPERMETROPIA (long-sightedness). A Concave lens corrects MYOPIA (short-sightedness).</td><td>Q22</td></tr>
+  <tr><td>19</td><td>Students say Ligaments connect muscle to bone.</td><td>Ligaments connect BONE to BONE. Tendons connect MUSCLE to BONE. These two must not be confused.</td><td>Q49</td></tr>
+  <tr><td>20</td><td>Students say Heparin is released during allergic reactions.</td><td>HISTAMINE is released during allergic reactions by mast cells. Heparin is a natural anticoagulant — it prevents blood from clotting inside blood vessels.</td><td>Q50</td></tr>
 </table>
 
 <div class="cols-2">
 <div>
 <div class="sec-head" style="font-size:8.5pt;padding:3px 8px;">📋 PYQ Flashcards</div>
-<div class="pyq-item"><span class="pyq-num">Q1</span><span class="pyq-q">O group donor accepted by which groups?</span> <span class="pyq-a">→ (d) All of these (A, B, AB, O)</span></div>
-<div class="pyq-item"><span class="pyq-num">Q11</span><span class="pyq-q">Which vein carries oxygenated blood?</span> <span class="pyq-a">→ (c) Pulmonary vein</span></div>
-<div class="pyq-item"><span class="pyq-num">Q37</span><span class="pyq-q">Why Vitamin K absence causes no clotting?</span> <span class="pyq-a">→ (a) Essential for prothrombin synthesis</span></div>
-<div class="pyq-item"><span class="pyq-num">Q43</span><span class="pyq-q">Largest part of human brain?</span> <span class="pyq-a">→ (b) Cerebrum (~85%)</span></div>
-<div class="pyq-item"><span class="pyq-num">Q49</span><span class="pyq-q">What do ligaments join?</span> <span class="pyq-a">→ (b) Bone to bone (Tendons = muscle to bone)</span></div>
-<div class="pyq-item"><span class="pyq-num">Q50</span><span class="pyq-q">Produced during allergic reactions?</span> <span class="pyq-a">→ (b) Histamine (from mast cells)</span></div>
+<div class="pyq-item"><span class="pyq-num">Q1</span><span class="pyq-q">O group donor accepted by which groups?</span> <span class="pyq-a">Answer: (d) All of these — A, B, AB, and O groups can all receive O-group blood.</span></div>
+<div class="pyq-item"><span class="pyq-num">Q11</span><span class="pyq-q">Which vein carries oxygenated blood?</span> <span class="pyq-a">Answer: (c) Pulmonary vein — it is the only vein that carries oxygenated blood.</span></div>
+<div class="pyq-item"><span class="pyq-num">Q37</span><span class="pyq-q">Why Vitamin K absence causes no clotting?</span> <span class="pyq-a">Answer: (a) Because Vitamin K is essential for the synthesis of Prothrombin, without which clotting cannot occur.</span></div>
+<div class="pyq-item"><span class="pyq-num">Q43</span><span class="pyq-q">Largest part of human brain?</span> <span class="pyq-a">Answer: (b) Cerebrum, which accounts for approximately 85% of the brain's volume.</span></div>
+<div class="pyq-item"><span class="pyq-num">Q49</span><span class="pyq-q">What do ligaments join?</span> <span class="pyq-a">Answer: (b) Bone to bone. Note that Tendons join muscle to bone — do not confuse the two.</span></div>
+<div class="pyq-item"><span class="pyq-num">Q50</span><span class="pyq-q">Produced during allergic reactions?</span> <span class="pyq-a">Answer: (b) Histamine, which is released from mast cells during an allergic reaction.</span></div>
 </div>
 <div>
 <div class="exam-alert">
   <div class="ea-title">⚠ 4 Exam-Key Conflicts</div>
-  <b>Q4 Perspiration:</b> Exam = (b) rid of wastes; Science = (c) thermoregulation<br>
-  <span style="color:#6a1b9a">చెమట: పరీక్ష = వ్యర్థాలు (b); శాస్త్రీయం = ఉష్ణోగ్రత (c)</span><br>
-  <b>Q16 Test tube baby:</b> Exam = (b) embryo in test tube; Science = (c) ext. fertilization<br>
-  <span style="color:#6a1b9a">IVF: పరీక్ష = (b); శాస్త్రీయం = (c)</span><br>
-  <b>Q27 Saliva:</b> Exam = (b) Alkaline; Science = pH ~6.8 (slightly acidic)<br>
-  <span style="color:#6a1b9a">లాలాజలం: పరీక్ష = క్షారం (b); శాస్త్రీయం = కొద్దిగా ఆమ్లం</span><br>
-  <b>Q39 RBC:WBC:</b> Exam = (d) 5000:1; Science ≈ 600:1<br>
-  <span style="color:#6a1b9a">RBC:WBC: పరీక్ష = 5000:1 (d); శాస్త్రీయం ≈ 600:1</span>
+  <b>Q4 Perspiration:</b> The exam key answer is (b) removal of wastes. The scientific answer is (c) thermoregulation. Always mark the exam key in your answer sheet.<br>
+  <span style="color:#6a1b9a">చెమట: పరీక్ష జవాబు = వ్యర్థాలు తొలగించడం (b); శాస్త్రీయ జవాబు = ఉష్ణోగ్రత నియంత్రణ (c).</span><br>
+  <b>Q16 Test tube baby:</b> The exam key answer is (b) — the embryo develops in a test tube. The scientific answer is (c) — fertilization is external and development is internal.<br>
+  <span style="color:#6a1b9a">IVF: పరీక్ష జవాబు = (b); శాస్త్రీయ జవాబు = (c).</span><br>
+  <b>Q27 Saliva:</b> The exam key answer is (b) Alkaline. The scientific answer is that saliva has a pH of approximately 6.8, making it slightly acidic.<br>
+  <span style="color:#6a1b9a">లాలాజలం: పరీక్ష జవాబు = క్షారం (b); శాస్త్రీయంగా కొద్దిగా ఆమ్లం.</span><br>
+  <b>Q39 RBC:WBC:</b> The exam key answer is (d) 5000:1. The scientific ratio is approximately 600:1.<br>
+  <span style="color:#6a1b9a">RBC:WBC: పరీక్ష జవాబు = 5000:1 (d); శాస్త్రీయంగా ~600:1.</span>
 </div>
 </div>
 </div>
 
 <div class="memory-box">
   <div class="mem-title">🧠 Memory Box — 25 One-Liners for Rapid Revision</div>
-  1. O blood group = Universal Donor (no antigens on RBC); AB = Universal Recipient (no antibodies) | O = విశ్వ దాత; AB = విశ్వ గ్రహీత<br>
-  2. Liver = largest gland (1.2–1.5 kg); Skin = largest organ; Pineal = smallest endocrine gland | కాలేయం = అతిపెద్ద గ్రంథి<br>
-  3. Cortisone = Adrenal CORTEX (glucocorticoid); Adrenaline = Adrenal MEDULLA | కార్టిసోన్ = అడ్రినల్ కార్టెక్స్<br>
-  4. Thyroid near Larynx; accumulates Iodine; Adam's apple = thyroid cartilage | థైరాయిడ్ = స్వరపేటిక దగ్గర; అయోడిన్ నిల్వ<br>
-  5. Insulin = β cells of pancreas (Islets of Langerhans); Glucagon = α cells | ఇన్సులిన్ = క్లోమం β కణాలు<br>
-  6. Hypothalamus = thermoregulation (37°C); hunger; thirst; controls pituitary | హైపోథాలమస్ = ఉష్ణోగ్రత నియంత్రణ కేంద్రం<br>
-  7. Pulmonary vein = only vein with oxygenated blood; Pulmonary artery = only artery with deoxygenated | పల్మనరీ సిర = మినహాయింపు<br>
-  8. Vitamin K = prothrombin (II), VII, IX, X synthesis; deficiency → hemorrhage | విటమిన్ K = ప్రోథ్రాంబిన్ సంశ్లేషణ<br>
-  9. Hemoglobin: Fe²⁺ (Iron) in heme group; carries O₂; deficiency → anemia | హిమోగ్లోబిన్ = Fe²⁺; లోపం → రక్తహీనత<br>
-  10. RBC lifespan = 120 days; Spleen = graveyard; Bone marrow = factory | RBC = 120 రోజులు; ప్లీహం = స్మశానం; ఎముక మజ్జ = తయారీ<br>
-  11. Blood volume = 5–6 L; Blood sugar = Glucose (70–100 mg/dL) | రక్తం = 5-6 L; రక్తంలో చక్కెర = గ్లూకోజ్<br>
-  12. Cardiac cycle = 0.8 sec (systole + diastole) | హృదయ చక్రం = 0.8 సెకండ్<br>
-  13. Mouth → starch (amylase); Stomach → protein (pepsin + HCl); Intestine → fat (lipase) | నోరు = స్టార్చ్; జీర్ణాశయం = ప్రోటీన్; ప్రేగులు = కొవ్వు<br>
-  14. Ptyalin = salivary amylase = starch digestion; Pepsin = protein (stomach) | టయలిన్ = స్టార్చ్; పెప్సిన్ = ప్రోటీన్<br>
-  15. Glomerulus = ultrafiltering unit; Nephron = functional unit of kidney | గ్లోమెరులస్ = అల్ట్రాఫిల్టరింగ్; నెఫ్రాన్ = క్రియాత్మక యూనిట్<br>
-  16. Cerebrum = largest brain part (~85%); Cerebellum = balance; Medulla = vital reflexes | సెరిబ్రమ్ = అతిపెద్ద మెదడు భాగం (~85%)<br>
-  17. Retina = film; Lens = lens; Iris = aperture; Ciliary muscles → focus | రెటీనా = ఫిల్మ్; సిలియరీ కండరాలు = కేంద్రీకరణ<br>
-  18. Convex lens → hypermetropia (long-sight); Concave lens → myopia | కుంభాకార = దీర్ఘదృష్టి; పుటాకార = హ్రస్వదృష్టి<br>
-  19. Leg bones = Tibia + Fibula; Arm = Humerus + Radius + Ulna | కాలి = టిబియా + ఫైబులా; చేయి = హ్యూమరస్ + రేడియస్ + ఉల్నా<br>
-  20. Ligament = bone to bone; Tendon = muscle to bone; Keratin = waterproof skin | స్నాయువు = ఎముక-ఎముక; అనుకూపం = కండరం-ఎముక<br>
-  21. 3 muscle types: Skeletal + Smooth + Cardiac (Sesamoids = small bones, NOT muscle) | కండరాలు 3 రకాలు; సెసామాయిడ్ = ఎముక<br>
-  22. Antigen = stimulates antibody production; Histamine = allergic reaction mediator | యాంటిజెన్ = యాంటీబాడీ ప్రేరకం; హిస్టామిన్ = అలెర్జీ<br>
-  23. Pu-238 = old nuclear pacemakers; modern = Li-I battery | Pu-238 = పాత పేస్‌మేకర్లు<br>
-  24. Glycogen stored in Liver (blood glucose) + Muscles (exercise fuel) | గ్లైకోజెన్ = కాలేయం + కండరాలు<br>
-  25. Milk teeth = 20; Permanent = 32; Skin max temp = 60°C (blisters) | పాల దంతాలు = 20; శాశ్వతం = 32; 60°C వరకు పొక్కులు లేవు
+  1. O blood group is the Universal Donor because it has no antigens on its RBCs. AB blood group is the Universal Recipient because it has no antibodies in its plasma. (O = విశ్వ దాత; AB = విశ్వ గ్రహీత)<br>
+  2. The Liver is the largest gland, weighing 1.2–1.5 kg. The Skin is the largest organ. The Pineal gland is the smallest endocrine gland. (కాలేయం = అతిపెద్ద గ్రంథి)<br>
+  3. Cortisone is produced by the Adrenal Cortex and is classified as a glucocorticoid. Adrenaline is produced by the Adrenal Medulla. (కార్టిసోన్ = అడ్రినల్ కార్టెక్స్)<br>
+  4. The Thyroid gland is located near the Larynx, accumulates Iodine, and the Adam's apple is the prominence of the thyroid cartilage. (థైరాయిడ్ = స్వరపేటిక దగ్గర; అయోడిన్ నిల్వ)<br>
+  5. Insulin is produced by the beta (β) cells of the Islets of Langerhans in the Pancreas. Glucagon is produced by the alpha (α) cells. (ఇన్సులిన్ = క్లోమం β కణాలు)<br>
+  6. The Hypothalamus is the thermoregulation center of the body, maintaining a temperature of 37°C. It also regulates hunger, thirst, and controls the pituitary gland. (హైపోథాలమస్ = ఉష్ణోగ్రత నియంత్రణ కేంద్రం)<br>
+  7. The Pulmonary Vein is the only vein that carries oxygenated blood. The Pulmonary Artery is the only artery that carries deoxygenated blood. (పల్మనరీ సిర = మినహాయింపు)<br>
+  8. Vitamin K is essential for the synthesis of Prothrombin (Factor II) and clotting factors VII, IX, and X. A deficiency of Vitamin K leads to hemorrhage. (విటమిన్ K = ప్రోథ్రాంబిన్ సంశ్లేషణ)<br>
+  9. Hemoglobin contains Iron (Fe²⁺) in its heme group and carries oxygen. A deficiency of hemoglobin leads to anemia. (హిమోగ్లోబిన్ = Fe²⁺; లోపం → రక్తహీనత)<br>
+  10. RBCs live for 120 days. The Spleen destroys old RBCs and is called their graveyard. The Bone Marrow produces new RBCs and is called their factory. (RBC = 120 రోజులు; ప్లీహం = స్మశానం; ఎముక మజ్జ = తయారీ)<br>
+  11. The total blood volume in adults is 5–6 litres. Normal blood sugar (fasting) is measured as Glucose at 70–100 mg/dL. (రక్తం = 5–6 L; రక్తంలో చక్కెర = గ్లూకోజ్)<br>
+  12. One complete cardiac cycle takes 0.8 seconds, which includes both systole and diastole. (హృదయ చక్రం = 0.8 సెకండ్)<br>
+  13. The mouth digests starch using amylase. The stomach digests protein using pepsin and HCl. The intestine digests fats using lipase. (నోరు = స్టార్చ్; జీర్ణాశయం = ప్రోటీన్; ప్రేగులు = కొవ్వు)<br>
+  14. Ptyalin (Salivary Amylase) digests starch in the mouth. Pepsin digests proteins in the stomach. (టయలిన్ = స్టార్చ్; పెప్సిన్ = ప్రోటీన్)<br>
+  15. The Glomerulus is the ultrafiltering unit. The Nephron is the functional unit of the kidney. (గ్లోమెరులస్ = అల్ట్రాఫిల్టరింగ్; నెఫ్రాన్ = క్రియాత్మక యూనిట్)<br>
+  16. The Cerebrum is the largest part of the brain at approximately 85%. The Cerebellum controls balance. The Medulla Oblongata controls vital reflexes. (సెరిబ్రమ్ = అతిపెద్ద మెదడు భాగం (~85%))<br>
+  17. The Retina acts as the film of the eye camera. The Lens focuses light. The Iris and Pupil control light entry. Ciliary muscles change the lens shape for focusing. (రెటీనా = ఫిల్మ్; సిలియరీ కండరాలు = కేంద్రీకరణ)<br>
+  18. A Convex lens corrects Hypermetropia (long-sightedness). A Concave lens corrects Myopia (short-sightedness). (కుంభాకార = దీర్ఘదృష్టి; పుటాకార = హ్రస్వదృష్టి)<br>
+  19. The lower leg bones are the Tibia and Fibula. The arm bones are the Humerus, Radius, and Ulna. (కాలి = టిబియా + ఫైబులా; చేయి = హ్యూమరస్ + రేడియస్ + ఉల్నా)<br>
+  20. Ligaments connect bone to bone. Tendons connect muscle to bone. Keratin is the protein that makes skin waterproof. (స్నాయువు = ఎముక-ఎముక; అనుకూపం = కండరం-ఎముక)<br>
+  21. There are 3 types of muscles: Skeletal, Smooth, and Cardiac. Sesamoids are small bones found in tendons — they are NOT a type of muscle. (కండరాలు 3 రకాలు; సెసామాయిడ్ = ఎముక)<br>
+  22. An Antigen is a foreign particle that stimulates antibody production. Histamine is the mediator released during allergic reactions. (యాంటిజెన్ = యాంటీబాడీ ప్రేరకం; హిస్టామిన్ = అలెర్జీ)<br>
+  23. Pu-238 was used in older nuclear pacemakers due to its long half-life of 87.7 years. Modern pacemakers use lithium-iodine (Li-I) batteries. (Pu-238 = పాత పేస్‌మేకర్లు)<br>
+  24. Glycogen is stored in the Liver to maintain blood glucose levels, and also in the muscles to provide energy during exercise. (గ్లైకోజెన్ = కాలేయం + కండరాలు)<br>
+  25. Children have 20 milk teeth, which are replaced by 32 permanent teeth. The skin can tolerate up to 60°C before blisters form. (పాల దంతాలు = 20; శాశ్వతం = 32; 60°C వరకు పొక్కులు లేవు)
 </div>
 </div><!-- end page 5 -->
 
