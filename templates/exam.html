@@ -616,6 +616,17 @@ function toggleBookmark(idx) {
 // Start
 loadExam();
 
+// ── bfcache fix ──────────────────────────────────────────────────────────────
+// When user presses Back from the result page, the browser may restore this
+// page from the back-forward cache exactly as it was mid-submission (spinner
+// visible, examSubmitted=true). Detect this and redirect to the result page
+// so they never get stuck on "Evaluating your answers..." forever.
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted && examSubmitted) {
+    window.location.replace('/result/' + SESSION_ID);
+  }
+});
+
 // Prevent accidental back navigation
 window.addEventListener('beforeunload', (e) => {
   if (!examSubmitted && Object.keys(answers).length > 0) {
