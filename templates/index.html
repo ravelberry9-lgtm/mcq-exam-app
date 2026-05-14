@@ -577,6 +577,10 @@ function openQuizSheet(folder, topic, avail, noteId) {
   document.querySelectorAll('.qs-chip[data-mode]').forEach(c => c.classList.toggle('active', c.dataset.mode === 'shuffle'));
   _qsMode = 'shuffle';
 
+  // Always reset start button when opening a new sheet
+  const btn = document.getElementById('qsStartBtn');
+  if (btn) { btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
+
   const ol = document.getElementById('qsOverlay');
   ol.classList.add('open');
   ol.removeAttribute('aria-hidden');
@@ -586,6 +590,9 @@ function closeQuizSheet() {
   const ol = document.getElementById('qsOverlay');
   ol.classList.remove('open');
   ol.setAttribute('aria-hidden', 'true');
+  // Reset start button so it's never stuck in "Starting…" state
+  const btn = document.getElementById('qsStartBtn');
+  if (btn) { btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
 }
 
 function selectChip(el) {
