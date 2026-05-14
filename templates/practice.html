@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Practice – {{ topic.replace('_',' ') }}</title>
 <style>
 :root {
@@ -29,6 +29,7 @@ body {
   color: var(--text);
   min-height: 100vh;
   padding-bottom: 80px;
+  overflow-x: hidden;
 }
 
 /* ── Top bar ── */
@@ -67,6 +68,19 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
+.fullpage-btn {
+  background: rgba(255,255,255,0.18);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.fullpage-btn:active { background: rgba(255,255,255,0.35); }
 
 /* ── Progress bar ── */
 .progress-wrap { background: rgba(255,255,255,0.2); height: 3px; }
@@ -128,7 +142,7 @@ body {
 }
 .start-btn:active { transform: scale(0.97); }
 
-/* ── Question card ── */
+/* ── Question card (normal mode) ── */
 .q-card {
   margin: 14px 14px 0;
   background: var(--card);
@@ -173,7 +187,6 @@ body {
 
 /* ── Options ── */
 .options-list { padding: 0 14px 14px; display: flex; flex-direction: column; gap: 9px; }
-
 .opt-btn {
   width: 100%;
   display: flex;
@@ -193,7 +206,6 @@ body {
 }
 .opt-btn:active:not(.locked) { transform: scale(0.985); }
 .opt-btn:hover:not(.locked) { border-color: var(--primary-light); background: #eef0fb; }
-
 .opt-key {
   width: 26px;
   height: 26px;
@@ -209,23 +221,13 @@ body {
   transition: all 0.18s;
 }
 .opt-text { flex: 1; padding-top: 3px; }
-
-/* Correct / wrong states */
-.opt-btn.correct-ans {
-  background: var(--correct-bg);
-  border-color: var(--correct);
-}
+.opt-btn.correct-ans { background: var(--correct-bg); border-color: var(--correct); }
 .opt-btn.correct-ans .opt-key { background: var(--correct); color: #fff; }
-
-.opt-btn.wrong-ans {
-  background: var(--wrong-bg);
-  border-color: var(--wrong);
-}
+.opt-btn.wrong-ans { background: var(--wrong-bg); border-color: var(--wrong); }
 .opt-btn.wrong-ans .opt-key { background: var(--wrong); color: #fff; }
-
 .opt-btn.locked { cursor: default; }
 
-/* ── Feedback panel ── */
+/* ── Feedback panel (normal mode) ── */
 .feedback-panel {
   margin: 0 14px;
   padding: 12px 14px;
@@ -237,12 +239,20 @@ body {
 }
 .feedback-panel.show { display: block; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-
 .feedback-panel.correct-fb { background: var(--correct-bg); border: 1.5px solid #a5d6a7; color: #1b5e20; }
 .feedback-panel.wrong-fb   { background: var(--wrong-bg);   border: 1.5px solid #f48fb1; color: #880e4f; }
-
 .fb-label { font-weight: 800; font-size: 14px; margin-bottom: 5px; }
 .fb-explanation { color: var(--text); font-size: 13px; line-height: 1.65; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(0,0,0,0.08); }
+
+/* ── Swipe hint (normal mode) ── */
+.swipe-hint {
+  text-align: center;
+  padding: 10px 14px 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+  display: none;
+}
+.swipe-hint.show { display: block; }
 
 /* ── Next button ── */
 .next-wrap { padding: 12px 14px 0; display: none; }
@@ -281,20 +291,220 @@ body {
 .stat-box .sv { font-size: 26px; font-weight: 800; }
 .stat-box .sl { font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
 .summary-actions { display: flex; gap: 10px; }
-.sa-btn {
-  flex: 1;
-  padding: 13px;
-  border-radius: 50px;
-  border: none;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.sa-home { background: var(--neutral-bg); color: var(--primary); border: 2px solid var(--border); }
+.sa-btn { flex: 1; padding: 13px; border-radius: 50px; border: none; font-size: 14px; font-weight: 700; cursor: pointer; }
+.sa-home  { background: var(--neutral-bg); color: var(--primary); border: 2px solid var(--border); }
 .sa-retry { background: var(--primary); color: #fff; }
 
 /* ── No questions ── */
 .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 14px; }
+
+/* ═══════════════════════════════════════════════════════
+   FULL PAGE MODE
+═══════════════════════════════════════════════════════ */
+body.fp-mode {
+  overflow: hidden;
+  padding-bottom: 0;
+}
+body.fp-mode .filter-strip,
+body.fp-mode .feedback-panel,
+body.fp-mode .next-wrap,
+body.fp-mode .swipe-hint,
+body.fp-mode .summary-card,
+body.fp-mode #questionArea { display: none !important; }
+body.fp-mode .progress-wrap { display: none; }
+
+/* Full-page overlay */
+.fp-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0d1b4b;
+  z-index: 200;
+  flex-direction: column;
+  touch-action: pan-y;
+  user-select: none;
+}
+body.fp-mode .fp-overlay { display: flex; }
+
+/* FP top bar */
+.fp-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+.fp-back {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.fp-title { flex: 1; color: #fff; font-size: 13px; font-weight: 600; opacity: 0.85; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fp-counter { color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700; white-space: nowrap; }
+.fp-score   { background: rgba(255,255,255,0.15); border-radius: 16px; padding: 4px 12px; color: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; }
+
+/* FP progress */
+.fp-progress { height: 3px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
+.fp-progress-fill { height: 3px; background: #ffcc02; transition: width 0.35s ease; }
+
+/* FP card viewport */
+.fp-viewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* FP card wrapper (slides horizontally) */
+.fp-card-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease;
+}
+.fp-card-wrap.slide-out-left  { transform: translateX(-100%); opacity: 0; }
+.fp-card-wrap.slide-out-right { transform: translateX(100%);  opacity: 0; }
+.fp-card-wrap.slide-in-right  { transform: translateX(100%);  opacity: 0; }
+.fp-card-wrap.slide-in-left   { transform: translateX(-100%); opacity: 0; }
+
+/* FP card */
+.fp-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  padding: 16px;
+  width: 100%;
+  max-width: 520px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.fp-card::-webkit-scrollbar { width: 4px; }
+.fp-card::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+.fp-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.fp-q-num { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.fp-q-text {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.fp-opts { display: flex; flex-direction: column; gap: 9px; }
+.fp-opt {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--neutral-bg);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 13px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text);
+  transition: all 0.18s;
+  line-height: 1.45;
+  -webkit-tap-highlight-color: transparent;
+}
+.fp-opt:active:not(.locked) { transform: scale(0.985); }
+.fp-opt:hover:not(.locked)  { border-color: var(--primary-light); background: #eef0fb; }
+.fp-opt.correct-ans { background: var(--correct-bg); border-color: var(--correct); }
+.fp-opt.correct-ans .opt-key { background: var(--correct); color: #fff; }
+.fp-opt.wrong-ans   { background: var(--wrong-bg);   border-color: var(--wrong); }
+.fp-opt.wrong-ans   .opt-key { background: var(--wrong); color: #fff; }
+.fp-opt.locked { cursor: default; }
+
+/* FP inline feedback */
+.fp-feedback {
+  margin-top: 12px;
+  padding: 11px 13px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  display: none;
+  animation: fadeUp 0.22s ease;
+}
+.fp-feedback.show { display: block; }
+.fp-feedback.correct-fb { background: var(--correct-bg); border: 1.5px solid #a5d6a7; color: #1b5e20; }
+.fp-feedback.wrong-fb   { background: var(--wrong-bg);   border: 1.5px solid #f48fb1; color: #880e4f; }
+.fp-fb-label { font-weight: 800; font-size: 14px; margin-bottom: 4px; }
+.fp-fb-exp   { color: var(--text); font-size: 12.5px; line-height: 1.6; margin-top: 5px; padding-top: 5px; border-top: 1px solid rgba(0,0,0,0.08); }
+
+/* FP navigation row */
+.fp-nav {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px 14px;
+  gap: 12px;
+}
+.fp-nav-btn {
+  background: rgba(255,255,255,0.14);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  min-width: 80px;
+}
+.fp-nav-btn:active { background: rgba(255,255,255,0.28); }
+.fp-nav-btn:disabled { opacity: 0.3; cursor: default; }
+.fp-swipe-label {
+  color: rgba(255,255,255,0.45);
+  font-size: 11px;
+  text-align: center;
+  flex: 1;
+  line-height: 1.4;
+}
+
+/* FP skip badge on unanswered */
+.fp-skip-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,200,0,0.7);
+  display: inline-block;
+  margin-right: 4px;
+}
+
+/* FP summary */
+.fp-summary {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 30px 24px;
+  color: #fff;
+  text-align: center;
+}
+.fp-summary.show { display: flex; }
+.fp-sum-icon  { font-size: 56px; margin-bottom: 12px; }
+.fp-sum-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+.fp-sum-pct   { font-size: 52px; font-weight: 900; color: #ffcc02; margin: 6px 0; }
+.fp-sum-sub   { font-size: 14px; opacity: 0.7; margin-bottom: 24px; }
+.fp-sum-stats { display: flex; gap: 28px; margin-bottom: 28px; }
+.fp-sum-stat  { text-align: center; }
+.fp-sum-stat .sv { font-size: 28px; font-weight: 800; }
+.fp-sum-stat .sl { font-size: 11px; opacity: 0.6; text-transform: uppercase; font-weight: 600; }
+.fp-sum-btns  { display: flex; gap: 12px; width: 100%; max-width: 320px; }
+.fp-sum-btn   { flex: 1; padding: 13px; border-radius: 50px; border: none; font-size: 14px; font-weight: 700; cursor: pointer; }
+.fp-sum-home  { background: rgba(255,255,255,0.15); color: #fff; border: 1.5px solid rgba(255,255,255,0.3); }
+.fp-sum-retry { background: #ffcc02; color: #1a237e; }
 </style>
 </head>
 <body>
@@ -307,6 +517,7 @@ body {
     <p>{{ folder.replace('_',' ') }} · Practice Mode</p>
   </div>
   <div class="score-chip" id="scoreChip">0 / 0</div>
+  <button class="fullpage-btn" id="fpToggleBtn" onclick="enterFullPage()" title="Full page mode">⛶</button>
 </div>
 <div class="progress-wrap">
   <div class="progress-fill" id="progressFill" style="width:0%"></div>
@@ -334,280 +545,77 @@ body {
   <button class="start-btn" onclick="startPractice()">Start Practice</button>
 </div>
 
-<!-- Question area -->
-<div id="questionArea">
-  <!-- Cards injected here -->
-</div>
+<!-- Question area (normal mode) -->
+<div id="questionArea"></div>
 
-<!-- Feedback panel -->
+<!-- Swipe hint (normal mode) -->
+<div class="swipe-hint" id="swipeHint">← swipe to navigate · tap to answer</div>
+
+<!-- Feedback panel (normal mode) -->
 <div class="feedback-panel" id="feedbackPanel">
   <div class="fb-label" id="fbLabel"></div>
   <div id="fbExplanation" class="fb-explanation"></div>
 </div>
 
-<!-- Next button -->
+<!-- Next button (normal mode) -->
 <div class="next-wrap" id="nextWrap">
   <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
 </div>
 
-<!-- Summary -->
+<!-- Summary (normal mode) -->
 <div class="summary-card" id="summaryCard">
   <div class="summary-icon" id="summaryIcon">🏆</div>
   <div class="summary-title">Practice Complete!</div>
   <div class="summary-score" id="summaryScore">0%</div>
   <div class="summary-sub" id="summarySub">0 correct out of 0</div>
   <div class="stat-row">
-    <div class="stat-box">
-      <div class="sv" style="color:#2e7d32" id="sumCorrect">0</div>
-      <div class="sl">Correct</div>
-    </div>
-    <div class="stat-box">
-      <div class="sv" style="color:#c62828" id="sumWrong">0</div>
-      <div class="sl">Wrong</div>
-    </div>
-    <div class="stat-box">
-      <div class="sv" style="color:#1a237e" id="sumTotal">0</div>
-      <div class="sl">Total</div>
-    </div>
+    <div class="stat-box"><div class="sv" style="color:#2e7d32" id="sumCorrect">0</div><div class="sl">Correct</div></div>
+    <div class="stat-box"><div class="sv" style="color:#c62828" id="sumWrong">0</div><div class="sl">Wrong</div></div>
+    <div class="stat-box"><div class="sv" style="color:#1a237e" id="sumTotal">0</div><div class="sl">Total</div></div>
   </div>
   <div class="summary-actions">
-    <button class="sa-btn sa-home" onclick="window.location.href='/'">🏠 Home</button>
+    <button class="sa-btn sa-home"  onclick="window.location.href='/'">🏠 Home</button>
     <button class="sa-btn sa-retry" onclick="restartPractice()">🔄 Retry</button>
   </div>
 </div>
 
-<script>
-const FOLDER = '{{ folder }}';
-const TOPIC  = '{{ topic }}';
+<!-- ═══════════════════════════════════════════════════════
+     FULL PAGE OVERLAY
+═══════════════════════════════════════════════════════ -->
+<div class="fp-overlay" id="fpOverlay">
 
-let allQuestions   = [];
-let filteredQs     = [];
-let currentIdx     = 0;
-let correct        = 0;
-let wrong          = 0;
-let answered       = 0;
-let filterMode     = 'all';
-let started        = false;
+  <!-- FP top bar -->
+  <div class="fp-bar">
+    <button class="fp-back" onclick="exitFullPage()">✕</button>
+    <div class="fp-title">{{ topic.replace('_',' ') }}</div>
+    <div class="fp-counter" id="fpCounter">1 / 1</div>
+    <div class="fp-score" id="fpScore">0 / 0</div>
+  </div>
+  <div class="fp-progress"><div class="fp-progress-fill" id="fpProgressFill" style="width:0%"></div></div>
 
-// ── Load questions ──────────────────────────────────────────────────────────
-async function load() {
-  try {
-    const r = await fetch(`/api/practice-questions/${FOLDER}/${TOPIC}`);
-    const d = await r.json();
-    allQuestions = d.questions || [];
-    document.getElementById('loadingWrap').style.display = 'none';
-    if (!allQuestions.length) {
-      document.getElementById('questionArea').innerHTML = '<div class="empty-state">No questions found for this topic.</div>';
-      return;
-    }
-    showIntro();
-  } catch(e) {
-    document.getElementById('loadingWrap').innerHTML = '<p style="color:red;padding:40px">Failed to load questions.</p>';
-  }
-}
-
-function showIntro() {
-  const q = filteredQs.length || allQuestions.length;
-  document.getElementById('introTitle').textContent = TOPIC.replace(/_/g,' ') + ' Practice';
-  document.getElementById('introDesc').textContent =
-    `${allQuestions.length} questions ready. Tap an option to instantly see right/wrong with explanation.`;
-  document.getElementById('introCard').style.display = '';
-}
-
-// ── Filters ─────────────────────────────────────────────────────────────────
-function setFilter(mode, btn) {
-  filterMode = mode;
-  document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  if (started) {
-    // Apply filter mid-session: restart with filtered set
-    applyFilter();
-    restartPractice();
-  }
-}
-
-function applyFilter() {
-  if (filterMode === 'all') {
-    filteredQs = [...allQuestions];
-  } else {
-    filteredQs = allQuestions.filter(q => q.difficulty === filterMode);
-  }
-  // Shuffle
-  for (let i = filteredQs.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [filteredQs[i], filteredQs[j]] = [filteredQs[j], filteredQs[i]];
-  }
-}
-
-// ── Start / Restart ──────────────────────────────────────────────────────────
-function startPractice() {
-  started = true;
-  applyFilter();
-  if (!filteredQs.length) {
-    alert('No questions match the selected filter.');
-    return;
-  }
-  currentIdx = 0; correct = 0; wrong = 0; answered = 0;
-  document.getElementById('introCard').style.display = 'none';
-  document.getElementById('summaryCard').classList.remove('show');
-  buildCards();
-  showQuestion(0);
-}
-
-function restartPractice() {
-  document.getElementById('summaryCard').classList.remove('show');
-  document.getElementById('questionArea').innerHTML = '';
-  startPractice();
-}
-
-// ── Build all question cards (hidden) ────────────────────────────────────────
-function buildCards() {
-  const area = document.getElementById('questionArea');
-  area.innerHTML = '';
-  filteredQs.forEach((q, idx) => {
-    const card = document.createElement('div');
-    card.className = 'q-card';
-    card.id = 'qc_' + idx;
-
-    const opts = [
-      {key:'A', text: q.option_a},
-      {key:'B', text: q.option_b},
-      {key:'C', text: q.option_c},
-      {key:'D', text: q.option_d},
-    ];
-
-    const diffClass = q.difficulty === 'Easy' ? 'diff-Easy'
-                    : q.difficulty === 'Hard' ? 'diff-Hard' : 'diff-Medium';
-
-    card.innerHTML = `
-      <div class="q-meta">
-        <span class="q-num">Q ${idx + 1} of ${filteredQs.length}</span>
-        <span class="diff-badge ${diffClass}">${q.difficulty}</span>
+  <!-- FP viewport (card slides here) -->
+  <div class="fp-viewport" id="fpViewport">
+    <div class="fp-card-wrap" id="fpCardWrap">
+      <div class="fp-card" id="fpCard">
+        <!-- injected dynamically -->
       </div>
-      <div class="q-text">${escHtml(q.question_text)}</div>
-      <div class="options-list" id="opts_${idx}">
-        ${opts.map(o => `
-          <button class="opt-btn" id="opt_${idx}_${o.key}"
-                  onclick="selectOption(${idx},'${o.key}','${escAttr(q.correct_answer)}','${escAttr(q.explanation || '')}')">
-            <span class="opt-key">${o.key}</span>
-            <span class="opt-text">${escHtml(o.text)}</span>
-          </button>
-        `).join('')}
-      </div>
-    `;
-    area.appendChild(card);
-  });
-}
+    </div>
+  </div>
 
-// ── Show a question ──────────────────────────────────────────────────────────
-function showQuestion(idx) {
-  // Hide all cards, feedback, next
-  document.querySelectorAll('.q-card').forEach(c => c.classList.remove('visible'));
-  document.getElementById('feedbackPanel').classList.remove('show');
-  document.getElementById('nextWrap').classList.remove('show');
+  <!-- FP nav row -->
+  <div class="fp-nav">
+    <button class="fp-nav-btn" id="fpPrevBtn" onclick="fpNavigate(-1)">← Prev</button>
+    <div class="fp-swipe-label">swipe left / right<br>to navigate</div>
+    <button class="fp-nav-btn" id="fpNextBtn" onclick="fpNavigate(1)">Next →</button>
+  </div>
 
-  if (idx >= filteredQs.length) { showSummary(); return; }
-
-  const card = document.getElementById('qc_' + idx);
-  if (card) card.classList.add('visible');
-  updateProgress(idx);
-}
-
-// ── Handle option tap ────────────────────────────────────────────────────────
-function selectOption(idx, chosen, correctAns, explanation) {
-  // Lock all options for this card
-  const optList = document.getElementById('opts_' + idx);
-  if (!optList) return;
-  const buttons = optList.querySelectorAll('.opt-btn');
-  if (buttons[0].classList.contains('locked')) return; // already answered
-
-  buttons.forEach(btn => btn.classList.add('locked'));
-  answered++;
-
-  const isCorrect = chosen === correctAns;
-  if (isCorrect) correct++; else wrong++;
-
-  // Highlight chosen option
-  const chosenBtn = document.getElementById(`opt_${idx}_${chosen}`);
-  chosenBtn.classList.add(isCorrect ? 'correct-ans' : 'wrong-ans');
-
-  // Always show correct answer
-  if (!isCorrect) {
-    const correctBtn = document.getElementById(`opt_${idx}_${correctAns}`);
-    if (correctBtn) correctBtn.classList.add('correct-ans');
-  }
-
-  // Show feedback panel
-  const panel = document.getElementById('feedbackPanel');
-  const label = document.getElementById('fbLabel');
-  const expEl = document.getElementById('fbExplanation');
-
-  panel.className = 'feedback-panel show ' + (isCorrect ? 'correct-fb' : 'wrong-fb');
-  label.textContent = isCorrect ? '✅ Correct!' : '❌ Incorrect!';
-  expEl.textContent = explanation || (isCorrect ? 'Well done!' : 'Review the correct answer above.');
-
-  // Show Next button
-  const nextWrap = document.getElementById('nextWrap');
-  nextWrap.classList.add('show');
-  const nextBtn = document.getElementById('nextBtn');
-  nextBtn.textContent = (idx + 1 >= filteredQs.length) ? 'See Results 🏆' : 'Next Question →';
-
-  updateScore();
-  // Scroll feedback into view
-  panel.scrollIntoView({behavior:'smooth', block:'nearest'});
-}
-
-function nextQuestion() {
-  currentIdx++;
-  showQuestion(currentIdx);
-  window.scrollTo({top: 0, behavior:'smooth'});
-}
-
-// ── Score / Progress ─────────────────────────────────────────────────────────
-function updateScore() {
-  document.getElementById('scoreChip').textContent = `${correct} / ${answered}`;
-}
-
-function updateProgress(idx) {
-  const pct = filteredQs.length > 0 ? (idx / filteredQs.length) * 100 : 0;
-  document.getElementById('progressFill').style.width = pct + '%';
-  updateScore();
-}
-
-// ── Summary ──────────────────────────────────────────────────────────────────
-function showSummary() {
-  document.querySelectorAll('.q-card').forEach(c => c.classList.remove('visible'));
-  document.getElementById('feedbackPanel').classList.remove('show');
-  document.getElementById('nextWrap').classList.remove('show');
-
-  const total = filteredQs.length;
-  const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
-  const icon = pct >= 80 ? '🏆' : pct >= 60 ? '👍' : pct >= 40 ? '📚' : '💪';
-
-  document.getElementById('summaryIcon').textContent  = icon;
-  document.getElementById('summaryScore').textContent = pct + '%';
-  document.getElementById('summarySub').textContent   = `${correct} correct out of ${total}`;
-  document.getElementById('sumCorrect').textContent   = correct;
-  document.getElementById('sumWrong').textContent     = wrong;
-  document.getElementById('sumTotal').textContent     = total;
-  document.getElementById('progressFill').style.width = '100%';
-  document.getElementById('scoreChip').textContent = `${correct} / ${total}`;
-
-  document.getElementById('summaryCard').classList.add('show');
-  window.scrollTo({top: 0, behavior:'smooth'});
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-function escHtml(t) {
-  if (!t) return '';
-  return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-function escAttr(t) {
-  if (!t) return '';
-  return String(t).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;').replace(/\n/g,' ');
-}
-
-load();
-</script>
-</body>
-</html>
+  <!-- FP summary (shown at end) -->
+  <div class="fp-summary" id="fpSummary">
+    <div class="fp-sum-icon"  id="fpSumIcon">🏆</div>
+    <div class="fp-sum-title">Practice Complete!</div>
+    <div class="fp-sum-pct"   id="fpSumPct">0%</div>
+    <div class="fp-sum-sub"   id="fpSumSub">0 correct out of 0</div>
+    <div class="fp-sum-stats">
+      <div class="fp-sum-stat"><div class="sv" style="color:#4caf50" id="fpSumCorrect">0</div><div class="sl">Correct</div></div>
+      <div class="fp-sum-stat"><div class="sv" style="color:#ef5350" id="fpSumWrong">0</div><div class="sl">Wrong</div></div>
+      <div class="fp-sum-stat"><div class="sv" style="color:#ffcc02" id="fpSumSkipped">0</div><
