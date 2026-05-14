@@ -453,6 +453,21 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed AP High Court MCQs (Indian_Economy 700 + Everyday_Science 500) ──
+    try:
+        cur_hc = db_exec(conn, "SELECT COUNT(*) FROM questions WHERE folder='AP_HC'")
+        hc_count = _fv(cur_hc.fetchone())
+        if hc_count < 1200:
+            print(f"[startup] AP_HC questions: {hc_count}/1200 — auto-seeding...")
+            _auto_seed_ap_hc_questions()
+            print("[startup] AP_HC auto-seed complete.")
+        else:
+            print(f"[startup] AP_HC: {hc_count} questions already loaded.")
+    except Exception as _hc_e:
+        print(f"[startup] AP_HC seed check error: {_hc_e}")
+        try: conn.rollback()
+        except: pass
+
     conn.close()
 
 
@@ -708,6 +723,31 @@ def _auto_seed_polity():
             try: c.close()
             except: pass
     print(f"[polity-seed] summary: {skipped_unchanged} unchanged · {reseeded} re-seeded.")
+
+
+def _auto_seed_ap_hc_questions():
+    """
+    Seed 1200 hand-crafted AP High Court MCQs into the `questions` table.
+    700 Indian_Economy + 500 Everyday_Science questions.
+    Runs at startup if count < 1200. Skips duplicates safely.
+    """
+    import importlib
+    ph = '%s' if USE_POSTGRES else '?'
+    try:
+        mod = importlib.import_module('seed_ap_hc_questions')
+    except ModuleNotFoundError:
+        print("[ap-hc-seed] seed_ap_hc_questions.py not found — skipping.")
+        return
+    conn = get_db()
+    try:
+        inserted = mod.seed_ap_hc_questions_inner(conn, db_exec, ph)
+        print(f"[ap-hc-seed] Inserted {inserted} new AP_HC questions.")
+    except Exception as e:
+        print(f"[ap-hc-seed] Error: {e}")
+        try: conn.rollback()
+        except: pass
+    finally:
+        conn.close()
 
 
 def _auto_seed_science():
