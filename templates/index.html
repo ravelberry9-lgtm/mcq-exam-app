@@ -99,7 +99,57 @@
 
       {# ── Section A: MCQ Question Bank topics ── #}
       {% if tree %}
+
+        {# ── AP_HC: Featured practice tiles (always visible, no accordion) ── #}
+        {% if 'AP_HC' in tree %}
+        {% set hc_topics = tree['AP_HC'] %}
+        <div class="aphc-section">
+          <div class="aphc-header">
+            <span class="aphc-label">⚖️ AP HIGH COURT</span>
+            <span class="aphc-total">{{ totals.get('AP_HC',0) }} Questions</span>
+          </div>
+          <div class="aphc-grid">
+            {% for topic, count in hc_topics.items() %}
+            {% if topic == 'Indian_Economy' %}
+              {% set tile_icon = '💰' %}
+              {% set tile_bg = '#e8f5e9' %}
+              {% set tile_accent = '#2e7d32' %}
+              {% set tile_light = '#c8e6c9' %}
+            {% elif topic == 'Everyday_Science' %}
+              {% set tile_icon = '🔬' %}
+              {% set tile_bg = '#e3f2fd' %}
+              {% set tile_accent = '#1565c0' %}
+              {% set tile_light = '#bbdefb' %}
+            {% else %}
+              {% set tile_icon = '📋' %}
+              {% set tile_bg = '#f3e5f5' %}
+              {% set tile_accent = '#6a1b9a' %}
+              {% set tile_light = '#e1bee7' %}
+            {% endif %}
+            <div class="aphc-tile" style="background:{{ tile_bg }};border-color:{{ tile_light }}">
+              <div class="aphc-icon">{{ tile_icon }}</div>
+              <div class="aphc-name">{{ topic.replace('_',' ') }}</div>
+              <div class="aphc-count" style="color:{{ tile_accent }}">{{ count }} questions</div>
+              <div class="aphc-btns">
+                <a class="aphc-btn aphc-practice" href="/practice/AP_HC/{{ topic }}"
+                   style="background:{{ tile_accent }}">
+                  ⚡ Practice
+                </a>
+                <button class="aphc-btn aphc-exam"
+                        onclick="openQuizSheet('AP_HC','{{ topic }}',{{ count }},null)"
+                        style="border-color:{{ tile_accent }};color:{{ tile_accent }}">
+                  📝 Exam
+                </button>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {# ── Other folders: standard accordion ── #}
         {% for folder, topics in tree.items() %}
+        {% if folder != 'AP_HC' %}
         {% set folder_total = totals.get(folder, 0) %}
         {% set ns.idx = ns.idx + 1 %}
         {% set fid = 'f' ~ ns.idx %}
@@ -150,6 +200,7 @@
             </div>
           </div>
         </div>
+        {% endif %}
         {% endfor %}
       {% endif %}
 
@@ -356,6 +407,65 @@
 }
 .expand-all-btn:hover { background: var(--primary); color: white; }
 
+/* ── AP High Court featured section ── */
+.aphc-section {
+  margin: 10px 0 0;
+  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  padding: 14px 14px 16px;
+}
+.aphc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.aphc-label {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.aphc-total {
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+.aphc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.aphc-tile {
+  border-radius: 14px;
+  border: 1.5px solid;
+  padding: 14px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.aphc-icon  { font-size: 26px; line-height: 1; margin-bottom: 2px; }
+.aphc-name  { font-size: 13px; font-weight: 800; color: #1a1a2e; line-height: 1.3; }
+.aphc-count { font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+.aphc-btns  { display: flex; gap: 6px; margin-top: auto; }
+.aphc-btn {
+  flex: 1;
+  text-align: center;
+  padding: 7px 4px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.2;
+  border: none;
+  transition: opacity 0.15s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+.aphc-btn:active { transform: scale(0.95); opacity: 0.85; }
+.aphc-practice { color: #fff; }
+.aphc-exam     { background: rgba(255,255,255,0.9) !important; }
+
 /* ── Folder accordion ── */
 .folder-block { border-bottom: 1px solid var(--border); }
 .folder-block:last-child { border-bottom: none; }
@@ -532,6 +642,127 @@ function _updateExpandBtn() {
 }
 
 // Restore state on load
+document.addEventListener('DOMContentLoaded', () => {
+  const st = _loadFS();
+  document.querySelectorAll('.folder-body').forEach((body, i) => {
+    const idx = i + 1;
+    if (st[idx]) {
+      body.classList.add('open');
+      const btn = document.getElementById('folder-btn-' + idx);
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+  _updateExpandBtn();
+});
+
+// ── Quick Quiz sheet ──
+let _qsFolder = '', _qsTopic = '', _qsAvail = 0, _qsCount = 20, _qsMode = 'shuffle', _qsNoteId = null;
+
+function openQuizSheet(folder, topic, avail, noteId) {
+  _qsFolder = folder;
+  _qsTopic  = topic;
+  _qsAvail  = parseInt(avail);
+  _qsNoteId = noteId || null;   // non-null = chapter-specific quiz
+
+  document.getElementById('qsTitle').textContent = '⚡ ' + topic.replace(/_/g, ' ');
+  document.getElementById('qsSub').textContent   = _qsNoteId
+    ? folder.replace(/_/g,' ') + ' · Chapter MCQs only'
+    : folder.replace(/_/g,' ') + ' · Bank Qs + Chapter MCQs mixed';
+
+  // Set chip availability
+  const defaultN = Math.min(20, _qsAvail);
+  _qsCount = defaultN;
+  document.querySelectorAll('.qs-chip[data-n]').forEach(c => {
+    const n = parseInt(c.dataset.n);
+    const tooMany = n > _qsAvail && n !== 0;
+    c.disabled = tooMany;
+    c.classList.toggle('active', !tooMany && n === defaultN);
+  });
+  if (_qsAvail < 10) {
+    document.querySelectorAll('.qs-chip[data-n]').forEach(c => c.classList.remove('active'));
+    const allC = document.querySelector('.qs-chip[data-n="0"]');
+    if (allC) { allC.classList.add('active'); _qsCount = 0; }
+  }
+  // Reset mode
+  document.querySelectorAll('.qs-chip[data-mode]').forEach(c => c.classList.toggle('active', c.dataset.mode === 'shuffle'));
+  _qsMode = 'shuffle';
+
+  // Always reset start button when opening a new sheet
+  const btn = document.getElementById('qsStartBtn');
+  if (btn) { btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
+
+  const ol = document.getElementById('qsOverlay');
+  ol.classList.add('open');
+  ol.removeAttribute('aria-hidden');
+}
+
+function closeQuizSheet() {
+  const ol = document.getElementById('qsOverlay');
+  ol.classList.remove('open');
+  ol.setAttribute('aria-hidden', 'true');
+  // Reset start button so it's never stuck in "Starting…" state
+  const btn = document.getElementById('qsStartBtn');
+  if (btn) { btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
+}
+
+function selectChip(el) {
+  if (el.disabled) return;
+  document.querySelectorAll('.qs-chip[data-n]').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  _qsCount = parseInt(el.dataset.n);
+}
+
+function selectMode(el) {
+  document.querySelectorAll('.qs-chip[data-mode]').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  _qsMode = el.dataset.mode;
+}
+
+function startQuickQuiz() {
+  const btn = document.getElementById('qsStartBtn');
+  btn.disabled = true;
+  btn.textContent = 'Starting…';
+  const count = _qsCount === 0 ? _qsAvail : _qsCount;
+  const payload = {
+    folder: _qsFolder, topic: _qsTopic,
+    count: count, mode: _qsMode,
+    device_id: _devId, student_name: 'Student',
+  };
+  // Include note_id for chapter-specific quizzes (Audio Notes chapters)
+  if (_qsNoteId) payload.note_id = _qsNoteId;
+
+  fetch('/api/start-quick-exam', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
+    body: JSON.stringify(payload)
+  })
+  .then(r => r.json())
+  .then(d => {
+    if (d.session_id) {
+      window.location.href = '/exam/' + d.session_id;
+    } else {
+      showToast(d.error || 'Could not start exam', 'error');
+      btn.disabled = false;
+      btn.textContent = '⚡ Start Exam';
+    }
+  })
+  .catch(() => {
+    showToast('Network error — try again', 'error');
+    btn.disabled = false;
+    btn.textContent = '⚡ Start Exam';
+  });
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuizSheet(); });
+</script>
+{% endblock %}
+ins('open'));
+  const btn = document.getElementById('expand-all-btn');
+  if (btn) btn.textContent = allOpen ? '▲ Collapse All' : '▼ Expand All';
+}
+
+{% endblock %}
 document.addEventListener('DOMContentLoaded', () => {
   const st = _loadFS();
   document.querySelectorAll('.folder-body').forEach((body, i) => {

@@ -2077,6 +2077,25 @@ def stats():
 def result(session_id):
     return render_template('result.html', session_id=session_id)
 
+@app.route('/practice/<folder>/<topic>')
+def practice(folder, topic):
+    return render_template('practice.html', folder=folder, topic=topic)
+
+@app.route('/api/practice-questions/<folder>/<topic>')
+def practice_questions(folder, topic):
+    conn = get_db()
+    ph = '%s' if USE_POSTGRES else '?'
+    cur = db_exec(conn, f"""
+        SELECT id, question_text, option_a, option_b, option_c, option_d,
+               correct_answer, difficulty, explanation
+        FROM questions
+        WHERE folder={ph} AND topic={ph}
+        ORDER BY RANDOM()
+    """, (folder, topic))
+    rows = [row_to_dict(r) for r in cur.fetchall()]
+    conn.close()
+    return jsonify({'questions': rows, 'total': len(rows)})
+
 @app.route('/history')
 def history():
     return render_template('history.html')
