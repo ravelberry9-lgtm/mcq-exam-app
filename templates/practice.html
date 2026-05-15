@@ -329,7 +329,7 @@ function restoreNormal(i,st){
   /* restore explanation panel if it was shown */
   if(st.aiText){
     const ap=document.getElementById('aiPanel'); ap.classList.add('show');
-    const fr=document.getElementById('aiFrame'); if(fr&&st.aiQ) fr.src='/api/search-proxy?q='+encodeURIComponent(st.aiQ);
+    const fr=document.getElementById('aiFrame'); if(fr&&st.aiQ) fr.src='/api/search-proxy?q='+encodeURIComponent(st.aiQ)+'&a='+(st.aiAns?encodeURIComponent(st.aiAns):'');
     const sl=document.getElementById('aiSearchLink'),sa=document.getElementById('aiSearchA');
     if(st.aiQ&&sl&&sa){sl.style.display='';sa.href='https://www.perplexity.ai/search?q='+encodeURIComponent(st.aiQ);}
   }
@@ -364,10 +364,10 @@ function loadAI(i, question, correct_ans, exp, isFP){
   const panel   = document.getElementById(panelId);
   const frame   = document.getElementById(frameId);
   if(!panel || !frame) return;
-  const wikiUrl = '/api/search-proxy?q=' + encodeURIComponent(question);
+  const wikiUrl = '/api/search-proxy?q=' + encodeURIComponent(question) + '&a=' + encodeURIComponent(correct_ans);
   frame.src = wikiUrl;
   panel.classList.add('show');
-  if(states[i]){ states[i].aiQ = question; states[i].aiText = wikiUrl; }
+  if(states[i]){ states[i].aiQ = question; states[i].aiAns = correct_ans; states[i].aiText = wikiUrl; }
   /* Perplexity deep-link */
   const pplxUrl = 'https://www.perplexity.ai/search?q=' + encodeURIComponent(question);
   if(!isFP){
