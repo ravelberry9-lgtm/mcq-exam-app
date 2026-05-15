@@ -468,6 +468,26 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed Indian Polity 500 MCQs ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_pol_hc = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE folder={ph} AND topic={ph}",
+            ("AP_HC", "Indian_Polity"))
+        pol_count = _fv(cur_pol_hc.fetchone())
+        if pol_count < 490:
+            print(f"[startup] Indian_Polity MCQs: {pol_count}/500 — auto-seeding...")
+            import importlib
+            pol_mod = importlib.import_module('seed_polity_500')
+            pol_mod.seed()
+            print("[startup] Indian_Polity seed complete.")
+        else:
+            print(f"[startup] Indian_Polity: {pol_count} questions already loaded.")
+    except Exception as _pol_e:
+        print(f"[startup] Indian_Polity seed error: {_pol_e}")
+        try: conn.rollback()
+        except: pass
+
     conn.close()
 
 
