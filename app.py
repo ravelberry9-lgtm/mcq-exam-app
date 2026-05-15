@@ -5795,6 +5795,117 @@ def pyq_exam_data(session_id):
 # ─────────────────────────────────────────────
 # SEARCH PROXY — strips X-Frame-Options so DuckDuckGo loads in our iframe
 # ─────────────────────────────────────────────
+@app.route('/search-frame')
+def search_frame():
+    """Serves an iframe page with search results — same domain so no X-Frame-Options block."""
+    import requests as req
+    from flask import Response
+
+    q = request.args.get('q', '').strip()
+    a = request.args.get('a', '').strip()
+    if not q and not a:
+        return Response('<p>No query.</p>', content_type='text/html')
+
+    # Use correct answer as primary search term (much more relevant than full MCQ text)
+    search_term = a if a else q
+    full_query  = (q + ' ' + a).strip()
+
+    results_html = ''
+    source       = ''
+
+    # ── Option A: Brave Search API (set BRAVE_API_KEY in Railway env vars) ──
+    brave_key = os.environ.get('BRAVE_API_KEY', '')
+    if brave_key:
+        try:
+            r = req.get(
+                'https://api.search.brave.com/res/v1/web/search',
+                headers={'Accept': 'application/json',
+                         'Accept-Encoding': 'gzip',
+                         'X-Subscription-Token': brave_key},
+                params={'q': full_query, 'count': 4, 'safesearch': 'moderate'},
+                timeout=6
+            )
+            items = r.json().get('web', {}).get('results', [])[:4]
+            if items:
+                source = 'Brave Search (Web)'
+                results_html = ''.join(
+                    f'<div class="res">'
+                    f'<div class="rtitle"><a href="{it["url"]}" target="_top">{it["title"]}</a></div>'
+                    f'<div class="rurl">{it["url"][:55]}{"..." if len(it["url"])>55 else ""}</div>'
+                    f'<div class="rdesc">{it.get("description","")}</div>'
+                    f'</div>'
+                    for it in items
+                )
+        except Exception:
+            pass
+
+    # ── Option B: Wikipedia (search using just the correct answer) ──
+    if not results_html:
+        try:
+            wr = req.get(
+                'https://en.wikipedia.org/w/api.php',
+                params={'action': 'query', 'list': 'search', 'srsearch': search_term,
+                        'format': 'json', 'srlimit': 1, 'utf8': 1},
+                timeout=5
+            )
+            hits = wr.json().get('query', {}).get('search', [])
+            if hits:
+                title = hits[0]['title']
+                sr = req.get(
+                    f'https://en.wikipedia.org/api/rest_v1/page/summary/{title}',
+                    timeout=4
+                )
+                sd = sr.json()
+                if sd.get('extract'):
+                    source = 'Wikipedia'
+                    page_url = sd.get('content_urls', {}).get('desktop', {}).get('page', '')
+                    results_html = (
+                        f'<div class="res">'
+                        f'<div class="rtitle"><a href="{page_url}" target="_top">{sd["title"]} ↗</a></div>'
+                        f'<div class="rdesc">{sd["extract"][:700]}</div>'
+                        f'</div>'
+                    )
+        except Exception:
+            pass
+
+    pplx_url = f'https://www.perplexity.ai/search?q={full_query.replace(" ", "+")}'
+    goog_url  = f'https://www.google.com/search?q={full_query.replace(" ", "+")}'
+
+    if not results_html:
+        results_html = '<div class="no-res">No results found.</div>'
+
+    html = f'''<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *{{box-sizing:border-box;margin:0;padding:0}}
+  body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+        font-size:13px;color:#222;padding:10px 12px 6px;background:#fafbff;line-height:1.6}}
+  .src{{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:#888;margin-bottom:8px;font-weight:600}}
+  .res{{margin-bottom:11px;padding-bottom:11px;border-bottom:1px solid #eef}}
+  .res:last-child{{border-bottom:none}}
+  .rtitle a{{font-size:13.5px;font-weight:700;color:#1a237e;text-decoration:none;line-height:1.4;display:block}}
+  .rtitle a:hover{{text-decoration:underline}}
+  .rurl{{font-size:11px;color:#2e7d32;margin:2px 0 4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+  .rdesc{{font-size:12.5px;color:#444;line-height:1.55}}
+  .no-res{{color:#aaa;font-size:13px}}
+  .footer{{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;padding-top:8px;border-top:1px solid #eef}}
+  .footer a{{font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:50px;text-decoration:none;border:1.5px solid}}
+  .fg{{color:#1a73e8;border-color:#1a73e8;background:#fff}}
+  .fp{{color:#fff;background:#1a237e;border-color:#1a237e}}
+</style></head>
+<body>
+{f'<div class="src">🔍 {source}</div>' if source else ''}
+{results_html}
+<div class="footer">
+  <a class="fg" href="{goog_url}" target="_top">🔎 Google</a>
+  <a class="fp" href="{pplx_url}" target="_top">⚡ Perplexity</a>
+</div>
+</body></html>'''
+
+    return Response(html, content_type='text/html')
+
+
 @app.route('/api/search-proxy')
 def search_proxy():
     import requests as req, re

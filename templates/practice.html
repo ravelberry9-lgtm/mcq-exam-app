@@ -68,6 +68,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .ai-res-links a.pplx{background:#1a237e;color:#fff;border-color:#1a237e}
 .ai-res-links a.goog{background:#fff;color:#1a73e8;border-color:#1a73e8;font-weight:700}
 .ai-spin{width:22px;height:22px;border:3px solid #e0e4ef;border-top-color:#1a237e;border-radius:50%;animation:spin .7s linear infinite;margin:12px auto}
+.ai-frame-wrap{border-top:1px solid #e8eaf6}
+.ai-frame{width:100%;height:260px;border:none;display:block;background:#fafafa}
 .fp-ai-body{padding:10px 12px;font-size:12.5px;line-height:1.65;color:var(--tx);min-height:40px}
 .ai-search-link{display:block;margin:6px 14px 12px;text-align:center}
 .ai-search-link a{display:inline-flex;align-items:center;gap:6px;background:#1a237e;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:7px 16px;border-radius:50px;opacity:.9}
@@ -185,10 +187,10 @@ body.fp .fp-ov{display:flex}
 <div class="swipe-hint" id="swipeHint">&#8592; swipe to navigate</div>
 <div class="fb-panel" id="fbPanel"><div class="fb-lbl" id="fbLbl"></div><div class="fb-exp" id="fbExp"></div></div>
 <div class="ai-panel" id="aiPanel">
-  <div class="ai-header"><span class="ai-header-icon">&#x2728;</span><span>Explanation</span></div>
+  <div class="ai-header"><span class="ai-header-icon">&#x2728;</span><span>Explanation</span><span class="ai-source" id="aiSource"></span></div>
   <div class="ai-body" id="aiBody"></div>
-  <div class="ai-search-link" id="aiSearchLink" style="display:none">
-    <a id="aiSearchA" href="#" target="_blank" rel="noopener">&#128269; Search on Perplexity</a>
+  <div class="ai-frame-wrap" id="aiFrameWrap" style="display:none">
+    <iframe id="aiFrame" class="ai-frame" frameborder="0" scrolling="yes"></iframe>
   </div>
 </div>
 <div class="next-wrap" id="nextWrap"><button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next &#8594;</button></div>
@@ -365,41 +367,35 @@ function pick(i,chosen,correct_ans,exp,question){
   loadAI(i, question, correct_ans, exp, false);
 }
 
-/* ── EXPLANATION + BACKGROUND SEARCH ── */
-async function loadAI(i, question, correct_ans, exp, isFP){
+/* ── EXPLANATION + SEARCH IFRAME ── */
+function loadAI(i, question, correct_ans, exp, isFP){
   const panelId=isFP?'fpAi':'aiPanel';
   const bodyId =isFP?'fpAiBody':'aiBody';
   const panel=document.getElementById(panelId);
   const body =document.getElementById(bodyId);
   if(!panel||!body) return;
 
-  const query = question + ' ' + correct_ans;
-  const pplx  = 'https://www.perplexity.ai/search?q='+encodeURIComponent(query);
-  const eh = s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const eh=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const pplx='https://www.perplexity.ai/search?q='+encodeURIComponent(question+' '+correct_ans);
 
-  function openGoogle(q){
-    window.open('https://www.google.com/search?q='+q,'_blank',
-      'width=820,height=650,scrollbars=yes,resizable=yes,menubar=no,toolbar=no,location=no');
-  }
-  const gq = encodeURIComponent(query);
-  function render(src, title, text, url){
-    const readBtn=url?'<a href="'+url+'" target="_blank">Read more ↗</a>':'';
-    return '<div class="ai-res-src">'+src+'</div>'+
-           (title?'<div class="ai-res-title">'+eh(title)+'</div>':'')+
-           '<div class="ai-res-text">'+eh(text)+'</div>'+
-           '<div class="ai-res-links">'+readBtn+
-           '<a class="goog" onclick="window.open(\'https://www.google.com/search?q='+gq+'\',\'_blank\',\'width=820,height=650,scrollbars=yes,resizable=yes,menubar=no,toolbar=no,location=no\');return false;" href="#">🔎 Google</a>'+
-           '<a class="pplx" href="'+pplx+'" target="_blank">⚡ Perplexity</a></div>';
-  }
-
-  /* ── Step 1: show DB explanation INSTANTLY (no network call) ── */
-  const expHTML = render('📋 Explanation', '', exp||'Correct answer: '+correct_ans, '');
-  body.innerHTML = expHTML;
-  if(states[i]){ states[i].aiHTML=expHTML; states[i].aiQ=question; }
+  /* Step 1: show DB explanation INSTANTLY */
+  const expHTML='<div class="ai-res-src">📋 Explanation</div>'+
+    '<div class="ai-res-text">'+eh(exp||'Correct answer: '+correct_ans)+'</div>'+
+    '<div class="ai-res-links"><a class="pplx" href="'+pplx+'" target="_blank">⚡ Perplexity ↗</a></div>';
+  body.innerHTML=expHTML;
+  if(states[i]){states[i].aiHTML=expHTML;states[i].aiQ=question;}
   panel.classList.add('show');
   if(!isFP) setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
 
-  /* DB explanation already shown — no further network calls needed */
+  /* Step 2: load search iframe (served from our own domain — no X-Frame-Options block) */
+  if(!isFP){
+    const wrap=document.getElementById('aiFrameWrap');
+    const frame=document.getElementById('aiFrame');
+    if(wrap&&frame){
+      frame.src='/search-frame?q='+encodeURIComponent(question)+'&a='+encodeURIComponent(correct_ans);
+      wrap.style.display='';
+    }
+  }
 }
 
 function nextQuestion(){idx++;showQ(idx);window.scrollTo({top:0,behavior:'smooth'});}
