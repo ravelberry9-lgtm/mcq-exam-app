@@ -28,6 +28,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .intro-card h3{font-size:18px;font-weight:700;color:var(--pr);margin-bottom:6px}
 .intro-card p{font-size:13px;color:var(--txm);line-height:1.6}
 .start-btn{display:inline-block;margin-top:16px;background:var(--pr);color:#fff;border:none;border-radius:50px;padding:12px 36px;font-size:15px;font-weight:700;cursor:pointer}
+.resume-box{margin-top:14px;background:#e8eaf6;border-radius:12px;padding:12px 14px;text-align:left}
+.resume-box .rb-info{font-size:12px;color:#3949ab;font-weight:600;margin-bottom:10px}
+.resume-box .rb-btns{display:flex;gap:8px}
+.btn-resume{flex:2;background:var(--pr);color:#fff;border:none;border-radius:50px;padding:11px 0;font-size:14px;font-weight:700;cursor:pointer}
+.btn-fresh{flex:1;background:#fff;color:var(--pr);border:2px solid var(--pr);border-radius:50px;padding:11px 0;font-size:13px;font-weight:700;cursor:pointer}
 /* question card */
 .q-card{margin:14px 14px 0;background:var(--card);border-radius:var(--R);box-shadow:var(--sh);overflow:hidden;display:none}
 .q-card.visible{display:block}
@@ -179,8 +184,15 @@ body.fp .fp-ov{display:flex}
 <div class="intro-card" id="introCard" style="display:none">
   <div class="intro-icon">&#127919;</div>
   <h3 id="introTitle">Practice Mode</h3>
-  <p id="introDesc">Tap to answer &middot; swipe to navigate &middot; AI explains each answer</p>
-  <button class="start-btn" onclick="startPractice()">Start Practice</button>
+  <p id="introDesc"></p>
+  <button class="start-btn" id="btnStart" onclick="startPractice()">Start Practice</button>
+  <div class="resume-box" id="resumeBox" style="display:none">
+    <div class="rb-info" id="resumeInfo"></div>
+    <div class="rb-btns">
+      <button class="btn-resume" onclick="resumePractice()">&#9654; Resume</button>
+      <button class="btn-fresh" onclick="startPractice()">&#8635; Start Fresh</button>
+    </div>
+  </div>
 </div>
 
 <div id="qArea"></div>
@@ -264,10 +276,54 @@ async function load() {
   }
 }
 
+/* ── PROGRESS SAVE / RESUME ── */
+const SAVE_KEY='mcq_prog_'+FOLDER+'_'+TOPIC;
+function saveProgress(){
+  try{
+    localStorage.setItem(SAVE_KEY,JSON.stringify({
+      filter,idx,correct,wrong,answered,
+      qIds:filtQ.map(q=>q.id),
+      states:JSON.parse(JSON.stringify(states))
+    }));
+  }catch(e){}
+}
+function clearProgress(){try{localStorage.removeItem(SAVE_KEY);}catch(e){}}
+function loadSaved(){try{return JSON.parse(localStorage.getItem(SAVE_KEY)||'null');}catch(e){return null;}}
+
 function showIntro(){
   document.getElementById('introTitle').textContent=TOPIC.replace(/_/g,' ')+' Practice';
-  document.getElementById('introDesc').textContent=allQ.length+' questions · tap to answer · swipe to skip · AI explains';
+  const saved=loadSaved();
+  if(saved&&saved.answered>0){
+    const pct=Math.round(saved.correct/saved.answered*100);
+    document.getElementById('introDesc').textContent=
+      allQ.length+' questions  ·  '+saved.answered+' answered  ·  '+saved.correct+' correct';
+    document.getElementById('btnStart').style.display='none';
+    document.getElementById('resumeInfo').textContent=
+      '▶ Resume from Q'+(saved.idx+1)+' — '+pct+'% score so far';
+    document.getElementById('resumeBox').style.display='';
+  } else {
+    document.getElementById('introDesc').textContent=
+      allQ.length+' questions · tap to answer · swipe to skip';
+    document.getElementById('btnStart').style.display='';
+    document.getElementById('resumeBox').style.display='none';
+  }
   document.getElementById('introCard').style.display='';
+}
+
+function resumePractice(){
+  const saved=loadSaved();
+  if(!saved){startPractice();return;}
+  started=true;
+  filter=saved.filter||'all';
+  const qMap={};allQ.forEach(q=>qMap[q.id]=q);
+  filtQ=(saved.qIds||[]).map(id=>qMap[id]).filter(Boolean);
+  if(!filtQ.length){startPractice();return;}
+  idx=saved.idx||0;correct=saved.correct||0;wrong=saved.wrong||0;answered=saved.answered||0;
+  states=saved.states||{};
+  document.getElementById('introCard').style.display='none';
+  document.getElementById('sumCard').classList.remove('show');
+  buildCards();showQ(idx);
+  document.getElementById('swipeHint').classList.add('show');
 }
 
 /* ── FILTER ── */
@@ -284,6 +340,7 @@ function applyFilter(){
 
 /* ── START ── */
 function startPractice(){
+  clearProgress();
   started=true; applyFilter();
   if(!filtQ.length){alert('No questions match.');return;}
   idx=0;correct=0;wrong=0;answered=0;states={};
@@ -365,6 +422,7 @@ function pick(i,chosen,correct_ans,exp,question){
   updateScore(); fb.scrollIntoView({behavior:'smooth',block:'nearest'});
   /* trigger AI */
   loadAI(i, question, correct_ans, exp, false);
+  saveProgress();
 }
 
 /* ── EXPLANATION + SEARCH IFRAME ── */
@@ -408,6 +466,7 @@ function updateProg(i){
 }
 
 function showSum(){
+  clearProgress();
   document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('visible'));
   document.getElementById('fbPanel').classList.remove('show');
   document.getElementById('aiPanel').classList.remove('show');
