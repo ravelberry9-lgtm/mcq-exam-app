@@ -483,6 +483,13 @@ def init_db():
             print("[startup] Indian_Polity seed complete.")
         else:
             print(f"[startup] Indian_Polity: {pol_count} questions already loaded.")
+        # ── Auto-seed 500 PYQ-style Indian Polity MCQs ──
+        if pol_count < 990:
+            print(f"[startup] Indian_Polity PYQ MCQs: {pol_count}/1074 — auto-seeding PYQ batch...")
+            import importlib
+            pyq_mod = importlib.import_module('seed_polity_pyq_500')
+            pyq_mod.seed()
+            print("[startup] Indian_Polity PYQ seed complete.")
     except Exception as _pol_e:
         print(f"[startup] Indian_Polity seed error: {_pol_e}")
         try: conn.rollback()
