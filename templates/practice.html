@@ -406,9 +406,7 @@ async function loadAI(i, question, correct_ans, exp, isFP){
     }
     const topics=(ddg.RelatedTopics||[]).filter(t=>t&&t.Text);
     if(topics.length>=2){
-      const txt=topics.slice(0,3).map(t=>t.Text).join('
-
-');
+      const txt=topics.slice(0,3).map(t=>t.Text).join('\n\n');
       const h=render('📖 DuckDuckGo','Related Topics',txt,topics[0].FirstURL||'');
       body.innerHTML=h; if(states[i]) states[i].aiHTML=h; return;
     }
