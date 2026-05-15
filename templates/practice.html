@@ -59,8 +59,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .ai-header{background:linear-gradient(135deg,#1a237e,#3949ab);color:#fff;padding:9px 14px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700}
 .ai-header-icon{font-size:14px}
 .ai-source{margin-left:auto;font-size:10px;opacity:.7;font-weight:400}
-.ai-frame{width:100%;height:380px;border:none;display:block}
-.fp-ai-frame{width:100%;height:320px;border:none;display:block}
+.ai-frame{width:100%;height:370px;border:none;display:block}
+.fp-ai-frame{width:100%;height:310px;border:none;display:block}
 .ai-search-link{display:block;margin:6px 14px 12px;text-align:center}
 .ai-search-link a{display:inline-flex;align-items:center;gap:6px;background:#1a237e;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:7px 16px;border-radius:50px;opacity:.9}
 .ai-search-link a:active{opacity:.7}
@@ -178,7 +178,7 @@ body.fp .fp-ov{display:flex}
 <div class="fb-panel" id="fbPanel"><div class="fb-lbl" id="fbLbl"></div><div class="fb-exp" id="fbExp"></div></div>
 <div class="ai-panel" id="aiPanel">
   <div class="ai-header"><span class="ai-header-icon">&#x2728;</span><span>Explanation</span></div>
-  <iframe class="ai-frame" id="aiFrame" src="about:blank" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"></iframe>
+  <iframe class="ai-frame" id="aiFrame" src="about:blank" loading="lazy"></iframe>
   <div class="ai-search-link" id="aiSearchLink" style="display:none">
     <a id="aiSearchA" href="#" target="_blank" rel="noopener">&#128269; Search on Perplexity</a>
   </div>
@@ -329,7 +329,7 @@ function restoreNormal(i,st){
   /* restore explanation panel if it was shown */
   if(st.aiText){
     const ap=document.getElementById('aiPanel'); ap.classList.add('show');
-    const fr=document.getElementById('aiFrame'); if(fr&&st.aiQ) fr.src='/api/search-proxy?q='+encodeURIComponent(st.aiQ)+'&a='+(st.aiAns?encodeURIComponent(st.aiAns):'');
+    const fr=document.getElementById('aiFrame'); if(fr&&st.aiSrc) fr.src=st.aiSrc;
     const sl=document.getElementById('aiSearchLink'),sa=document.getElementById('aiSearchA');
     if(st.aiQ&&sl&&sa){sl.style.display='';sa.href='https://www.perplexity.ai/search?q='+encodeURIComponent(st.aiQ);}
   }
@@ -343,7 +343,7 @@ function pick(i,chosen,correct_ans,exp,question){
   btns.forEach(b=>b.classList.add('locked'));
   const ok=chosen===correct_ans;
   if(!states[i]){answered++;if(ok)correct++;else wrong++;}
-  states[i]={done:true,chosen,ok,exp,aiText:null,aiQ:null};
+  states[i]={done:true,chosen,ok,exp,aiSrc:null,aiQ:null,aiAns:null};
   const cb=document.getElementById('o'+i+'_'+chosen); if(cb) cb.classList.add(ok?'ok-ans':'ng-ans');
   if(!ok){const kb=document.getElementById('o'+i+'_'+correct_ans);if(kb)kb.classList.add('ok-ans');}
   const fb=document.getElementById('fbPanel');
@@ -357,27 +357,18 @@ function pick(i,chosen,correct_ans,exp,question){
   loadAI(i, question, correct_ans, exp, false);
 }
 
-/* ── WIKIPEDIA SEARCH PANEL ── */
+/* ── SEARCH PANEL (proxy strips X-Frame-Options → iframe works) ── */
 function loadAI(i, question, correct_ans, exp, isFP){
   const panelId = isFP ? 'fpAi' : 'aiPanel';
   const frameId = isFP ? 'fpAiFrame' : 'aiFrame';
   const panel   = document.getElementById(panelId);
   const frame   = document.getElementById(frameId);
   if(!panel || !frame) return;
-  const wikiUrl = '/api/search-proxy?q=' + encodeURIComponent(question) + '&a=' + encodeURIComponent(correct_ans);
-  frame.src = wikiUrl;
+  const src = '/api/search-proxy?q=' + encodeURIComponent(question) + '&a=' + encodeURIComponent(correct_ans);
+  frame.src = src;
   panel.classList.add('show');
-  if(states[i]){ states[i].aiQ = question; states[i].aiAns = correct_ans; states[i].aiText = wikiUrl; }
-  /* Perplexity deep-link */
-  const pplxUrl = 'https://www.perplexity.ai/search?q=' + encodeURIComponent(question);
-  if(!isFP){
-    const sl=document.getElementById('aiSearchLink'), sa=document.getElementById('aiSearchA');
-    if(sl&&sa){ sl.style.display=''; sa.href=pplxUrl; sa.textContent='🔍 Search on Perplexity'; }
-    setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
-  } else {
-    const fps=document.getElementById('fpAiSearch');
-    if(fps) fps.href=pplxUrl;
-  }
+  if(states[i]){ states[i].aiQ = question; states[i].aiAns = correct_ans; states[i].aiSrc = src; }
+  if(!isFP) setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
 }
 
 function nextQuestion(){idx++;showQ(idx);window.scrollTo({top:0,behavior:'smooth'});}
@@ -440,7 +431,7 @@ function renderFP(i){
     ['A','B','C','D'].map((k,n)=>'<button class="fp-opt" id="fpo_'+k+'" onclick="fpPick(\''+k+'\',\''+ea(q.correct_answer)+'\',\''+ea(q.explanation||'')+'\',\''+ea(q.question_text)+'\')">'+'<span class="ok-key">'+k+'</span><span class="opt-text">'+eh([q.option_a,q.option_b,q.option_c,q.option_d][n])+'</span></button>').join('')+
     '</div>'+
     '<div class="fp-fb" id="fpFb"><div class="fp-fb-lbl" id="fpFbL"></div><div class="fp-fb-exp" id="fpFbE"></div></div>'+
-    '<div class="fp-ai" id="fpAi"><div class="fp-ai-hdr"><span>&#128269;</span><span>Search Results</span></div><iframe class="fp-ai-frame" id="fpAiFrame" src="about:blank" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"></iframe><div class="fp-ai-search"><a id="fpAiSearch" href="#" target="_blank" rel="noopener">&#128269; Search on Perplexity</a></div></div>';
+    '<div class="fp-ai" id="fpAi"><div class="fp-ai-hdr"><span>&#128269;</span><span>Search Results</span></div><iframe class="fp-ai-frame" id="fpAiFrame" src="about:blank" loading="lazy"></iframe><div class="fp-ai-search"><a id="fpAiSearch" href="#" target="_blank" rel="noopener">&#128269; Search on Perplexity</a></div></div>';
 
   if(st&&st.done){
     document.querySelectorAll('#fpOl .fp-opt').forEach(b=>b.classList.add('locked'));
@@ -450,7 +441,7 @@ function renderFP(i){
     fb.className='fp-fb show '+(st.ok?'ok-fb':'ng-fb');
     document.getElementById('fpFbL').textContent=st.ok?'✅ Correct!':'❌ Incorrect!';
     document.getElementById('fpFbE').textContent=st.exp||'';
-    if(st.aiText){document.getElementById('fpAi').classList.add('show');const fr2=document.getElementById('fpAiFrame');if(fr2)fr2.src=st.aiText;const fps=document.getElementById('fpAiSearch');if(fps&&st.aiQ)fps.href='https://www.perplexity.ai/search?q='+encodeURIComponent(st.aiQ);}
+    if(st.aiSrc){document.getElementById('fpAi').classList.add('show');const fr2=document.getElementById('fpAiFrame');if(fr2)fr2.src=st.aiSrc;const fps=document.getElementById('fpAiSearch');if(fps&&st.aiQ)fps.href='https://www.perplexity.ai/search?q='+encodeURIComponent(st.aiQ);}
   }
 
   const wrap=document.getElementById('fpWrap');
@@ -469,7 +460,7 @@ function fpPick(chosen,correct_ans,exp,question){
   btns.forEach(b=>b.classList.add('locked'));
   const ok=chosen===correct_ans, i=fpIdx;
   if(!states[i]){answered++;if(ok)correct++;else wrong++;}
-  states[i]={done:true,chosen,ok,exp,aiText:null,aiQ:null};
+  states[i]={done:true,chosen,ok,exp,aiSrc:null,aiQ:null,aiAns:null};
   const ce=document.getElementById('fpo_'+chosen); if(ce) ce.classList.add(ok?'ok-ans':'ng-ans');
   if(!ok){const ke=document.getElementById('fpo_'+correct_ans);if(ke)ke.classList.add('ok-ans');}
   const fb=document.getElementById('fpFb');

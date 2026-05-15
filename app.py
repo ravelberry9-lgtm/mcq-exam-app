@@ -5800,117 +5800,138 @@ def search_proxy():
     import requests as req, re
     from urllib.parse import quote
 
-    q = request.args.get('q', '').strip()   # full question text
-    a = request.args.get('a', '').strip()   # correct answer
+    q = request.args.get('q', '').strip()
+    a = request.args.get('a', '').strip()
     if not q:
         return '<p>No query.</p>', 400
 
-    # ── Build a clean topic query (strip question-format words) ──
+    # ── Clean query: strip question-format words, append correct answer ──
     clean = re.sub(
         r'\b(which|who|what|when|where|how|why|is|are|was|were|not|correct|incorrect|'
         r'following|given|below|above|consider|statement|statements|true|false|about|'
         r'regarding|related|with|respect|among|option|options|choose|select|'
-        r'the|a|an|of|in|on|at|by|for|with)\b',
+        r'the|a|an|of|in|on|at|by|for)\b',
         ' ', q, flags=re.IGNORECASE)
     clean = re.sub(r'\s+', ' ', clean).strip()
-    search_q = (clean[:70] + ' ' + a[:50]).strip() or q[:80]
+    search_q = (clean[:70] + ' ' + a[:40]).strip() or q[:80]
 
-    # ── Shared CSS for result pages ──
-    CSS = (
-        '<style>*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'
-        'Segoe UI,sans-serif;font-size:13.5px;line-height:1.7;color:#1a1a2e;padding:14px;'
-        'margin:0;background:#fff}h3{font-size:14px;font-weight:700;color:#1a237e;margin:0 0 8px}'
-        'p{margin:0 0 10px;color:#333}.tag{font-size:10px;color:#888;margin-bottom:8px;'
-        'text-transform:uppercase;letter-spacing:.5px}.links{display:flex;gap:8px;'
-        'flex-wrap:wrap;margin-top:12px}a.btn{display:inline-block;font-size:12px;color:#1a237e;'
-        'border:1.5px solid #c5cae9;border-radius:50px;padding:5px 13px;text-decoration:none;'
-        'font-weight:600}a.pplx{background:#1a237e;color:#fff;border-color:#1a237e}</style>'
-    )
+    CSS = ('<style>*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'
+           'sans-serif;font-size:13.5px;line-height:1.75;color:#1a1a2e;padding:14px;margin:0;background:#fff}'
+           'h3{font-size:14px;font-weight:700;color:#1a237e;margin:0 0 8px;line-height:1.4}'
+           'p{margin:0 0 8px;color:#333}'
+           '.result{border-bottom:1px solid #eee;padding-bottom:10px;margin-bottom:10px}'
+           '.result:last-of-type{border:none}'
+           '.url{font-size:11px;color:#888;margin-bottom:3px}'
+           '.tag{font-size:10px;color:#888;letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px}'
+           '.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}'
+           'a.btn{display:inline-block;font-size:12px;color:#1a237e;border:1.5px solid #c5cae9;'
+           'border-radius:50px;padding:5px 13px;text-decoration:none;font-weight:600}'
+           'a.pplx{background:#1a237e;color:#fff;border-color:#1a237e}</style>')
 
-    def make_html(source, title, body, read_url=''):
-        pplx = 'https://www.perplexity.ai/search?q=' + quote(q[:100])
-        read = (f'<a class="btn" href="{read_url}" target="_blank">Read more ↗</a>'
-                if read_url else '')
+    pplx_url = 'https://www.perplexity.ai/search?q=' + quote(q[:120])
+
+    def results_page(source, items):
+        """items = list of {title, snippet, url}"""
+        rows = ''
+        for it in items[:4]:
+            rows += (f'<div class="result">'
+                     f'<div class="url">{it.get("url","")[:60]}</div>'
+                     f'<h3>{it.get("title","")}</h3>'
+                     f'<p>{it.get("snippet","")}</p>'
+                     f'</div>')
         return (f'<!DOCTYPE html><html><head><meta charset="UTF-8">{CSS}</head><body>'
-                f'<div class="tag">{source}</div>'
-                f'<h3>{title}</h3><p>{body}</p>'
-                f'<div class="links">{read}'
-                f'<a class="btn pplx" href="{pplx}" target="_blank">🔍 Perplexity ↗</a>'
+                f'<div class="tag">{source}</div>{rows}'
+                f'<div class="links">'
+                f'<a class="btn pplx" href="{pplx_url}" target="_blank">🔍 Perplexity ↗</a>'
                 f'</div></body></html>')
 
-    def fallback():
-        pplx = 'https://www.perplexity.ai/search?q=' + quote(q[:100])
+    def fallback_page():
         return (f'<!DOCTYPE html><html><head><meta charset="UTF-8">{CSS}</head>'
-                f'<body style="text-align:center;padding-top:40px">'
+                f'<body style="text-align:center;padding-top:50px">'
                 f'<div style="font-size:36px;margin-bottom:12px">🔍</div>'
-                f'<p style="color:#666;margin-bottom:16px">Could not load results.</p>'
-                f'<a class="btn pplx" href="{pplx}" target="_blank">Open in Perplexity ↗</a>'
+                f'<p style="color:#666;margin-bottom:16px">No results found.</p>'
+                f'<a class="btn pplx" href="{pplx_url}" target="_blank">Open in Perplexity ↗</a>'
                 f'</body></html>')
 
     from flask import Response as FR
+    HDR = {'User-Agent': 'Mozilla/5.0 (compatible; MCQApp/1.0; +educational)'}
 
-    # ── 1. Brave Search API (optional — set BRAVE_API_KEY in Railway) ──
+    # ── 1. Brave Search API (set BRAVE_API_KEY in Railway for best results) ──
     brave_key = os.environ.get('BRAVE_API_KEY', '')
     if brave_key:
         try:
             r = req.get('https://api.search.brave.com/res/v1/web/search',
-                params={'q': search_q, 'count': 3, 'search_lang': 'en'},
+                params={'q': search_q, 'count': 4, 'search_lang': 'en'},
                 headers={'Accept': 'application/json', 'X-Subscription-Token': brave_key},
                 timeout=7)
-            items = r.json().get('web', {}).get('results', [])
+            items = [{'title': x.get('title',''), 'snippet': x.get('description',''),
+                      'url': x.get('url','')} for x in r.json().get('web',{}).get('results',[])]
             if items:
-                top = items[0]
-                body = top.get('description', '')
-                for extra in items[1:3]:
-                    body += ' ' + extra.get('description', '')
-                html = make_html('🔎 Brave Search', top.get('title', ''), body.strip(), top.get('url', ''))
-                return FR(html, 200, content_type='text/html; charset=utf-8')
+                return FR(results_page('🔎 Brave Search', items), 200, content_type='text/html; charset=utf-8')
         except Exception:
             pass
 
-    # ── 2. DuckDuckGo Instant Answer API (free, no key, server-to-server OK) ──
+    # ── 2. SearXNG public instances — aggregates Google/Bing/DDG, allows server requests ──
+    SEARX_INSTANCES = [
+        'https://searx.be',
+        'https://search.mdosch.de',
+        'https://searxng.site',
+        'https://searx.tiekoetter.com',
+    ]
+    for instance in SEARX_INSTANCES:
+        try:
+            r = req.get(f'{instance}/search', params={
+                'q': search_q, 'format': 'json',
+                'categories': 'general', 'language': 'en-US'
+            }, headers=HDR, timeout=8)
+            if r.status_code == 200:
+                data = r.json()
+                items = [{'title': x.get('title',''), 'snippet': x.get('content',''),
+                          'url': x.get('url','')} for x in data.get('results', [])[:4]]
+                if items:
+                    return FR(results_page(f'🔎 SearXNG ({instance.split("//")[1]})', items),
+                              200, content_type='text/html; charset=utf-8')
+        except Exception:
+            continue
+
+    # ── 3. DuckDuckGo Instant Answer API ──
     try:
         r = req.get('https://api.duckduckgo.com/', params={
             'q': search_q, 'format': 'json', 'no_html': '1', 'skip_disambig': '1'
-        }, headers={'User-Agent': 'MCQExamApp/1.0 (educational)'}, timeout=7)
+        }, headers=HDR, timeout=7)
         d = r.json()
         abstract = d.get('AbstractText', '').strip()
-        heading  = d.get('Heading', '').strip()
-        abs_url  = d.get('AbstractURL', '')
         if abstract:
-            html = make_html('📖 DuckDuckGo Instant Answer', heading or 'Result', abstract, abs_url)
-            return FR(html, 200, content_type='text/html; charset=utf-8')
-        # Try related topics
-        topics = [t for t in d.get('RelatedTopics', []) if isinstance(t, dict) and t.get('Text')]
+            items = [{'title': d.get('Heading','Result'), 'snippet': abstract, 'url': d.get('AbstractURL','')}]
+            return FR(results_page('📖 DuckDuckGo', items), 200, content_type='text/html; charset=utf-8')
+        topics = [t for t in d.get('RelatedTopics',[]) if isinstance(t,dict) and t.get('Text')]
         if topics:
-            body = ' · '.join(t['Text'] for t in topics[:3])
-            html = make_html('📖 DuckDuckGo', 'Related Information', body)
-            return FR(html, 200, content_type='text/html; charset=utf-8')
+            items = [{'title': 'Related', 'snippet': t['Text'], 'url': t.get('FirstURL','')} for t in topics[:3]]
+            return FR(results_page('📖 DuckDuckGo', items), 200, content_type='text/html; charset=utf-8')
     except Exception:
         pass
 
-    # ── 3. Wikipedia REST API (last resort) ──
+    # ── 4. Wikipedia ──
     try:
         sr = req.get('https://en.wikipedia.org/w/api.php', params={
-            'action': 'query', 'list': 'search',
-            'srsearch': search_q, 'format': 'json', 'srlimit': 1, 'utf8': 1
-        }, headers={'User-Agent': 'MCQExamApp/1.0 (educational)'}, timeout=6)
-        hits = sr.json().get('query', {}).get('search', [])
-        if hits:
-            title = hits[0]['title']
-            smr = req.get(
-                'https://en.wikipedia.org/api/rest_v1/page/summary/' + quote(title),
-                headers={'User-Agent': 'MCQExamApp/1.0 (educational)'}, timeout=6)
-            wd = smr.json()
-            extract  = wd.get('extract', '')[:500]
-            page_url = wd.get('content_urls', {}).get('desktop', {}).get('page', '')
-            if extract:
-                html = make_html('📖 Wikipedia', title, extract, page_url)
-                return FR(html, 200, content_type='text/html; charset=utf-8')
+            'action':'query','list':'search','srsearch':search_q,
+            'format':'json','srlimit':2,'utf8':1}, headers=HDR, timeout=6)
+        hits = sr.json().get('query',{}).get('search',[])
+        items = []
+        for hit in hits[:2]:
+            title = hit['title']
+            sm = req.get('https://en.wikipedia.org/api/rest_v1/page/summary/'+quote(title),
+                         headers=HDR, timeout=5)
+            wd = sm.json()
+            items.append({'title': title,
+                          'snippet': wd.get('extract','')[:300],
+                          'url': wd.get('content_urls',{}).get('desktop',{}).get('page','')})
+        if items:
+            return FR(results_page('📖 Wikipedia', items), 200, content_type='text/html; charset=utf-8')
     except Exception:
         pass
 
-    return FR(fallback(), 200, content_type='text/html; charset=utf-8')
+    return FR(fallback_page(), 200, content_type='text/html; charset=utf-8')
 
 
 # ─────────────────────────────────────────────
