@@ -5793,6 +5793,44 @@ def pyq_exam_data(session_id):
 
 
 # ─────────────────────────────────────────────
+# SEARCH PROXY — strips X-Frame-Options so DuckDuckGo loads in our iframe
+# ─────────────────────────────────────────────
+@app.route('/api/search-proxy')
+def search_proxy():
+    import requests as req
+    q = request.args.get('q', '').strip()
+    if not q:
+        return '<p>No query.</p>', 400
+    try:
+        r = req.get(
+            'https://html.duckduckgo.com/html/',
+            params={'q': q},
+            headers={
+                'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Mobile) AppleWebKit/537.36 '
+                              '(KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.5',
+            },
+            timeout=8
+        )
+        html = r.text
+        # Fix relative links so CSS/assets load from DuckDuckGo
+        if '<head>' in html:
+            html = html.replace('<head>', '<head><base href="https://html.duckduckgo.com/">', 1)
+        # Return — deliberately NOT setting X-Frame-Options
+        from flask import Response as FlaskResp
+        resp = FlaskResp(html, status=r.status_code, content_type='text/html; charset=utf-8')
+        return resp
+    except Exception as e:
+        return (
+            '<html><body style="font-family:sans-serif;padding:20px;color:#333">'
+            '<p>⚠️ Search unavailable. <a href="https://www.perplexity.ai/search?q='
+            + q.replace('"', '') +
+            '" target="_blank">Open in Perplexity ↗</a></p></body></html>'
+        ), 200
+
+
+# ─────────────────────────────────────────────
 # AI EXPLANATION ENDPOINT (Perplexity or DB fallback)
 # ─────────────────────────────────────────────
 @app.route('/api/ai-explain', methods=['POST'])

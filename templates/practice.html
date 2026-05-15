@@ -329,7 +329,7 @@ function restoreNormal(i,st){
   /* restore explanation panel if it was shown */
   if(st.aiText){
     const ap=document.getElementById('aiPanel'); ap.classList.add('show');
-    const fr=document.getElementById('aiFrame'); if(fr&&st.aiQ) fr.src='https://en.m.wikipedia.org/w/index.php?search='+encodeURIComponent(st.aiQ)+'&ns0=1';
+    const fr=document.getElementById('aiFrame'); if(fr&&st.aiQ) fr.src='/api/search-proxy?q='+encodeURIComponent(st.aiQ);
     const sl=document.getElementById('aiSearchLink'),sa=document.getElementById('aiSearchA');
     if(st.aiQ&&sl&&sa){sl.style.display='';sa.href='https://www.perplexity.ai/search?q='+encodeURIComponent(st.aiQ);}
   }
@@ -364,7 +364,7 @@ function loadAI(i, question, correct_ans, exp, isFP){
   const panel   = document.getElementById(panelId);
   const frame   = document.getElementById(frameId);
   if(!panel || !frame) return;
-  const wikiUrl = 'https://en.m.wikipedia.org/w/index.php?search=' + encodeURIComponent(question) + '&ns0=1';
+  const wikiUrl = '/api/search-proxy?q=' + encodeURIComponent(question);
   frame.src = wikiUrl;
   panel.classList.add('show');
   if(states[i]){ states[i].aiQ = question; states[i].aiText = wikiUrl; }
@@ -440,7 +440,7 @@ function renderFP(i){
     ['A','B','C','D'].map((k,n)=>'<button class="fp-opt" id="fpo_'+k+'" onclick="fpPick(\''+k+'\',\''+ea(q.correct_answer)+'\',\''+ea(q.explanation||'')+'\',\''+ea(q.question_text)+'\')">'+'<span class="ok-key">'+k+'</span><span class="opt-text">'+eh([q.option_a,q.option_b,q.option_c,q.option_d][n])+'</span></button>').join('')+
     '</div>'+
     '<div class="fp-fb" id="fpFb"><div class="fp-fb-lbl" id="fpFbL"></div><div class="fp-fb-exp" id="fpFbE"></div></div>'+
-    '<div class="fp-ai" id="fpAi"><div class="fp-ai-hdr"><span>&#x2728;</span><span>Explanation</span></div><iframe class="fp-ai-frame" id="fpAiFrame" src="about:blank" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"></iframe><div class="fp-ai-search"><a id="fpAiSearch" href="#" target="_blank" rel="noopener">&#128269; Search on Perplexity</a></div></div>';
+    '<div class="fp-ai" id="fpAi"><div class="fp-ai-hdr"><span>&#128269;</span><span>Search Results</span></div><iframe class="fp-ai-frame" id="fpAiFrame" src="about:blank" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"></iframe><div class="fp-ai-search"><a id="fpAiSearch" href="#" target="_blank" rel="noopener">&#128269; Search on Perplexity</a></div></div>';
 
   if(st&&st.done){
     document.querySelectorAll('#fpOl .fp-opt').forEach(b=>b.classList.add('locked'));
