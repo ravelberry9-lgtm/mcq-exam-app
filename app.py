@@ -5798,36 +5798,73 @@ def pyq_exam_data(session_id):
 @app.route('/api/search-proxy')
 def search_proxy():
     import requests as req
+    from urllib.parse import quote
     q = request.args.get('q', '').strip()
     if not q:
         return '<p>No query.</p>', 400
-    try:
-        r = req.get(
-            'https://html.duckduckgo.com/html/',
-            params={'q': q},
-            headers={
-                'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Mobile) AppleWebKit/537.36 '
-                              '(KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-                'Accept-Language': 'en-US,en;q=0.5',
-            },
-            timeout=8
-        )
-        html = r.text
-        # Fix relative links so CSS/assets load from DuckDuckGo
-        if '<head>' in html:
-            html = html.replace('<head>', '<head><base href="https://html.duckduckgo.com/">', 1)
-        # Return — deliberately NOT setting X-Frame-Options
-        from flask import Response as FlaskResp
-        resp = FlaskResp(html, status=r.status_code, content_type='text/html; charset=utf-8')
-        return resp
-    except Exception as e:
+
+    def fallback_html(msg=''):
+        pplx = 'https://www.perplexity.ai/search?q=' + quote(q)
         return (
-            '<html><body style="font-family:sans-serif;padding:20px;color:#333">'
-            '<p>⚠️ Search unavailable. <a href="https://www.perplexity.ai/search?q='
-            + q.replace('"', '') +
-            '" target="_blank">Open in Perplexity ↗</a></p></body></html>'
-        ), 200
+            '<!DOCTYPE html><html><body style="font-family:-apple-system,sans-serif;'
+            'padding:20px;font-size:14px;color:#333;text-align:center;margin-top:40px">'
+            '<div style="font-size:32px;margin-bottom:12px">🔍</div>'
+            '<p style="margin-bottom:16px;color:#666">' + (msg or 'No Wikipedia article found.') + '</p>'
+            '<a href="' + pplx + '" target="_blank" style="display:inline-block;background:#1a237e;'
+            'color:#fff;padding:10px 22px;border-radius:50px;text-decoration:none;font-weight:700;font-size:13px">'
+            '🔍 Open in Perplexity ↗</a>'
+            '</body></html>'
+        )
+
+    try:
+        # Step 1 — Wikipedia search API (free, no key, allows server requests)
+        sr = req.get('https://en.wikipedia.org/w/api.php', params={
+            'action': 'query', 'list': 'search',
+            'srsearch': q, 'format': 'json', 'srlimit': 1, 'utf8': 1
+        }, headers={'User-Agent': 'MCQExamApp/1.0 (educational)'}, timeout=7)
+        results = sr.json().get('query', {}).get('search', [])
+        if not results:
+            return fallback_html(), 200
+
+        title = results[0]['title']
+
+        # Step 2 — Wikipedia REST summary (returns extract + thumbnail + url)
+        smr = req.get(
+            'https://en.wikipedia.org/api/rest_v1/page/summary/' + quote(title),
+            headers={'User-Agent': 'MCQExamApp/1.0 (educational)'}, timeout=7
+        )
+        data = smr.json()
+        extract  = data.get('extract', '') or results[0].get('snippet', '')
+        page_url = data.get('content_urls', {}).get('desktop', {}).get('page',
+                   'https://en.wikipedia.org/wiki/' + quote(title))
+        thumb    = data.get('thumbnail', {}).get('source', '')
+
+        img_tag = (
+            '<img src="' + thumb + '" style="float:right;max-width:90px;max-height:90px;'
+            'border-radius:8px;margin:0 0 10px 12px;object-fit:cover">'
+            if thumb else ''
+        )
+
+        html = (
+            '<!DOCTYPE html><html><head><meta charset="UTF-8">'
+            '<style>body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13.5px;'
+            'line-height:1.7;color:#1a1a2e;padding:14px;margin:0;background:#fff}'
+            'h2{font-size:15px;color:#1a237e;margin:0 0 10px;line-height:1.4}'
+            'p{margin:0 0 10px}'
+            '.src{display:inline-block;margin-top:6px;font-size:12px;color:#1a237e;'
+            'border:1.5px solid #c5cae9;border-radius:50px;padding:5px 14px;text-decoration:none;font-weight:700}'
+            '</style></head><body>'
+            + img_tag +
+            '<h2>📖 ' + title + '</h2>'
+            '<p>' + extract + '</p>'
+            '<a class="src" href="' + page_url + '" target="_blank">Read on Wikipedia ↗</a>'
+            '</body></html>'
+        )
+        from flask import Response as FR
+        return FR(html, status=200, content_type='text/html; charset=utf-8')
+
+    except Exception as e:
+        return fallback_html('Could not connect to Wikipedia.'), 200
 
 
 # ─────────────────────────────────────────────
