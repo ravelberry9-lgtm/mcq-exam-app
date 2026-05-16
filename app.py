@@ -6312,6 +6312,7 @@ _NOTES_BASE = os.path.join(os.path.dirname(__file__), 'static', 'notes', 'Genera
 
 # ── Concept notes: qid range → concept tag ──
 CONCEPT_MAP = [
+    # Awards & Honours (23001-23080)
     (23001, 23012, 'nobel_prize'),
     (23013, 23017, 'grammy_awards'),
     (23018, 23019, 'booker_prize'),
@@ -6322,8 +6323,40 @@ CONCEPT_MAP = [
     (23033, 23040, 'grammy_awards'),
     (23041, 23047, 'bafta_awards'),
     (23048, 23060, 'oscars'),
-    (23061, 23066, 'padma_awards'),   # includes Bharat Ratna 2025 (Q23066)
-    (23067, 23080, 'other_awards'),   # Abel, Pritzker, Phalke, Turing, FIFA, Sakharov
+    (23061, 23066, 'padma_awards'),
+    (23067, 23080, 'other_awards'),
+    # International Organisations (20001-20086)
+    (20001, 20016, 'org_un_g20'),
+    (20017, 20039, 'org_brics_g7_nato'),
+    (20040, 20070, 'org_quad_sco_asean'),
+    (20071, 20086, 'org_env_other'),
+    # Summits & Conferences (21001-21080)
+    (21001, 21020, 'summit_g20_g7_nato'),
+    (21021, 21040, 'summit_brics_sco_asean'),
+    (21041, 21080, 'summit_cop_davos'),
+    # Conflicts & Geopolitics (22001-22080)
+    (22001, 22016, 'conflict_sindoor'),
+    (22017, 22049, 'conflict_twelve_day'),
+    (22050, 22080, 'conflict_global'),
+    # Environment & Climate (25001-25080)
+    (25001, 25028, 'env_wildlife'),
+    (25029, 25080, 'env_climate_cop'),
+    # Science & Technology (26001-26080)
+    (26001, 26040, 'sci_isro_space'),
+    (26041, 26080, 'sci_tech'),
+    # Sports (27001-27080)
+    (27001, 27023, 'sports_cricket'),
+    (27024, 27048, 'sports_chess_tennis'),
+    (27049, 27080, 'sports_football_others'),
+    # Reports & Indices (28001-28080)
+    (28001, 28044, 'reports_global'),
+    (28045, 28080, 'reports_economic'),
+    # Intl Events & Appointments (29001-29080)
+    (29001, 29040, 'events_leadership'),
+    (29041, 29080, 'events_global'),
+    # Mideast War (30001-30080)
+    (30001, 30020, 'mideast_twelve_day'),
+    (30021, 30080, 'mideast_2026_war'),
 ]
 _concept_cache = {}   # tag -> html, loaded at startup
 
@@ -6347,6 +6380,8 @@ def _load_concept_cache():
                 import importlib
                 cn_mod = importlib.import_module('seed_concept_notes')
                 print('[concept_cache] seed_concept_notes seeded successfully.')
+                cn_intl = importlib.import_module('seed_concept_notes_intl')
+                print('[concept_cache] seed_concept_notes_intl seeded successfully.')
                 # Reload into cache after seeding
                 conn2 = get_db()
                 if USE_POSTGRES:
