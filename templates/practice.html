@@ -187,7 +187,7 @@ body.fp .fp-ov{display:flex}
 <body>
 
 <div class="top-bar">
-  <button class="back-btn" onclick="history.back()">&#8592;</button>
+  <button class="back-btn" onclick="goBack()">&#8592;</button>
   <div class="bar-title">
     <h2>{{ topic.replace('_',' ') }}</h2>
     <p>{{ folder.replace('_',' ') }} &middot; Practice</p>
@@ -404,6 +404,25 @@ function applyFilter(){
 }
 
 /* ── START ── */
+function goBack(){
+  if(started){
+    // Return to intro card instead of leaving the page
+    started=false;
+    document.getElementById('introCard').style.display='';
+    document.getElementById('sumCard').classList.remove('show');
+    document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('visible'));
+    document.getElementById('swipeHint').classList.remove('show');
+    document.getElementById('qArea').innerHTML='';
+    filtQ=[];idx=0;correct=0;wrong=0;answered=0;states={};
+    document.getElementById('progFill').style.width='0%';
+    document.getElementById('scoreChip').textContent='0 / 0';
+    // Close fullpage mode if open
+    const fp=document.getElementById('fpVp');
+    if(fp&&fp.style.display!=='none')fp.style.display='none';
+  } else {
+    history.back();
+  }
+}
 function startPractice(){
   if(_stMap.size>1&&_stSel.size===0){
     const w=document.getElementById('subtopicWarn');if(w)w.style.display='';
