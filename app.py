@@ -6322,9 +6322,8 @@ CONCEPT_MAP = [
     (23033, 23040, 'grammy_awards'),
     (23041, 23047, 'bafta_awards'),
     (23048, 23060, 'oscars'),
-    (23061, 23066, 'padma_awards'),
-    (23067, 23075, 'bharat_ratna'),
-    (23076, 23080, 'india_awards'),
+    (23061, 23066, 'padma_awards'),   # includes Bharat Ratna 2025 (Q23066)
+    (23067, 23080, 'other_awards'),   # Abel, Pritzker, Phalke, Turing, FIFA, Sakharov
 ]
 _concept_cache = {}   # tag -> html, loaded at startup
 
