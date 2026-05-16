@@ -1,1058 +1,1200 @@
 """
-Seed: Sports Current Affairs 2024-2026
-IDs: 27001–27080
-Folder: AP_HC
-Topic: National_Current_Affairs
-Cross-checked: GKToday Sports MCQs (Page 1), Olympics.com, ICC, PIB
+seed_sports_mcq.py – Sports 2025-2026 MCQs (IDs 27001-27080)
+All questions strictly 2025 to 16 May 2026. Force-refresh: deletes old range first.
 """
+import os, sqlite3
 
-import sqlite3, os
+USE_POSTGRES = bool(os.environ.get("DATABASE_URL"))
 
-def get_db():
-    base = os.path.dirname(os.path.abspath(__file__))
-    db_path = os.path.join(base, "database.db")
-    conn = sqlite3.connect(db_path)
-    conn.row_factory = sqlite3.Row
-    return conn
+if USE_POSTGRES:
+    import psycopg2, urllib.parse as _up
+    def _get_conn():
+        u = _up.urlparse(os.environ["DATABASE_URL"])
+        return psycopg2.connect(
+            host=u.hostname, port=u.port or 5432,
+            database=u.path.lstrip("/"),
+            user=u.username, password=u.password,
+            sslmode="require"
+        )
+else:
+    def _get_conn():
+        base = os.path.dirname(__file__)
+        return sqlite3.connect(os.path.join(base, "database.db"))
+
+def _fv(row):
+    if row is None: return 0
+    return row[0] if not isinstance(row[0], (list, dict)) else 0
 
 def seed():
-    conn = get_db()
+    conn = _get_conn()
     cur = conn.cursor()
+    ph = "%s" if USE_POSTGRES else "?"
 
-    cur.execute("SELECT COUNT(*) FROM questions WHERE id >= 27001 AND id <= 27080")
-    if cur.fetchone()[0] >= 75:
-        conn.close()
-        return
+    # Force-refresh: delete stale data in this ID range
+    cur.execute(f"DELETE FROM questions WHERE id>={ph} AND id<={ph}", (27001, 27080))
+    conn.commit()
 
-    ph = "?"
     questions = [
-        # --- IOC ---
+        # ─── ICC Champions Trophy 2025 (27001-27008) ───
         {
             "id": 27001,
-            "question_text": "The headquarter of the International Olympic Committee (IOC) is located in which city and country?",
-            "option_a": "Athens, Greece",
-            "option_b": "Sydney, Australia",
-            "option_c": "Lausanne, Switzerland",
-            "option_d": "Brussels, Belgium",
+            "question_text": "India won the ICC Champions Trophy 2025 by defeating which team in the final?",
+            "option_a": "Australia",
+            "option_b": "England",
+            "option_c": "New Zealand",
+            "option_d": "South Africa",
             "correct_answer": "C",
-            "explanation": "The International Olympic Committee (IOC) is headquartered in Lausanne, Switzerland. It was founded in 1894 by Pierre de Coubertin to revive the ancient Greek Olympics. Its mission is 'Building a Better World through Sport.'",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "India defeated New Zealand by 4 wickets in the ICC Champions Trophy 2025 final held on March 9, 2025, at the Dubai International Cricket Stadium, winning their third CT title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
         {
             "id": 27002,
-            "question_text": "Kirsty Coventry, elected as the new IOC President in 2025, is from which country?",
-            "option_a": "Australia",
-            "option_b": "Canada",
-            "option_c": "Zimbabwe",
-            "option_d": "Kenya",
-            "correct_answer": "C",
-            "explanation": "Kirsty Coventry from Zimbabwe was elected as the President of the International Olympic Committee (IOC) in 2025 in Greece. She is a former Olympic champion swimmer and became the first woman ever to lead the IOC.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Where was the ICC Champions Trophy 2025 final played?",
+            "option_a": "Lahore, Pakistan",
+            "option_b": "Dubai International Cricket Stadium, UAE",
+            "option_c": "Lord's, London",
+            "option_d": "Wankhede Stadium, Mumbai",
+            "correct_answer": "B",
+            "explanation": "India's matches in the 2025 Champions Trophy, including the final on March 9, were played in UAE (Dubai) because India refused to travel to Pakistan. Pakistan Cricket Board hosted the tournament across three Pakistani venues while India played in Dubai.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
         {
             "id": 27003,
-            "question_text": "Kirsty Coventry's election as IOC President in 2025 is historic because she is?",
-            "option_a": "First Asian to lead IOC",
-            "option_b": "First woman ever to lead IOC",
-            "option_c": "Youngest IOC President ever",
-            "option_d": "First African to lead IOC",
-            "correct_answer": "B",
-            "explanation": "Kirsty Coventry (Zimbabwe) made history in 2025 as the first woman ever to lead the International Olympic Committee (IOC). She is a former Olympic champion swimmer and was elected in Greece.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Who hosted the ICC Champions Trophy 2025?",
+            "option_a": "Board of Control for Cricket in India (BCCI)",
+            "option_b": "Cricket Australia (CA)",
+            "option_c": "Pakistan Cricket Board (PCB)",
+            "option_d": "England and Wales Cricket Board (ECB)",
+            "correct_answer": "C",
+            "explanation": "The ICC Champions Trophy 2025 (Feb 19 – March 9) was hosted by the Pakistan Cricket Board. India played their matches in UAE due to bilateral tensions. It was Pakistan's first major ICC event since the 1996 World Cup.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
         {
             "id": 27004,
-            "question_text": "The IOC was founded in which year and by whom?",
-            "option_a": "1896, by Baron Pierre de Coubertin",
-            "option_b": "1894, by Baron Pierre de Coubertin",
-            "option_c": "1900, by Avery Brundage",
-            "option_d": "1908, by Lord Killanin",
+            "question_text": "What was India's winning margin in the ICC Champions Trophy 2025 final against New Zealand?",
+            "option_a": "3 wickets",
+            "option_b": "4 wickets",
+            "option_c": "6 wickets",
+            "option_d": "52 runs",
             "correct_answer": "B",
-            "explanation": "The International Olympic Committee (IOC) was founded in 1894 by Baron Pierre de Coubertin to revive the ancient Greek Olympics. The first modern Olympics were held in Athens, Greece in 1896.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "India won by 4 wickets in the 2025 Champions Trophy final. Chasing New Zealand's 251/7, India reached 254/6 in 49 overs. Rohit Sharma scored 76 off 83 balls and KL Rahul was unbeaten at the end.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Paris Olympics 2024 ---
         {
             "id": 27005,
-            "question_text": "How many medals did India win at the Paris Olympics 2024?",
-            "option_a": "4 medals",
-            "option_b": "5 medals",
-            "option_c": "6 medals",
-            "option_d": "7 medals",
-            "correct_answer": "C",
-            "explanation": "India won 6 medals at the Paris Olympics 2024 — 1 Silver and 5 Bronze. India sent a contingent of 117 athletes. The silver came from Neeraj Chopra (javelin throw), and the 5 bronze medals came from Manu Bhaker (2), Swapnil Kusale, Indian hockey team, and Aman Sehrawat.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27006,
-            "question_text": "Neeraj Chopra won which medal at the Paris Olympics 2024?",
-            "option_a": "Gold",
-            "option_b": "Silver",
-            "option_c": "Bronze",
-            "option_d": "He did not participate",
-            "correct_answer": "B",
-            "explanation": "Neeraj Chopra won a Silver medal in Javelin Throw at the Paris Olympics 2024. At the Tokyo Olympics 2020, he had won the Gold medal in javelin throw — India's only individual gold at those Games.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27007,
-            "question_text": "Manu Bhaker is historic at Paris Olympics 2024 because she?",
-            "option_a": "Won India's first Olympic gold in shooting",
-            "option_b": "Became first Indian woman to win an Olympic shooting medal (won 2 bronze)",
-            "option_c": "Set a world record in 10m air pistol",
-            "option_d": "Won the first Olympic gold in women's wrestling",
-            "correct_answer": "B",
-            "explanation": "Manu Bhaker became the first Indian woman to win an Olympic shooting medal at Paris 2024. She won 2 bronze medals — in Women's 10m Air Pistol and in Mixed Team 10m Air Pistol (with Sarabjot Singh) — making her the first Indian since Independence to win 2 medals in the same Olympics.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27008,
-            "question_text": "Manu Bhaker won her second bronze medal at Paris Olympics 2024 in the Mixed Team 10m Air Pistol event partnering which shooter?",
-            "option_a": "Sift Kaur Samra",
-            "option_b": "Arjun Babuta",
-            "option_c": "Sarabjot Singh",
-            "option_d": "Aishwary Pratap Singh Tomar",
-            "correct_answer": "C",
-            "explanation": "Manu Bhaker partnered with Sarabjot Singh to win a Bronze medal in the Mixed Team 10m Air Pistol event at Paris Olympics 2024. This was her second bronze at the same Games, making her the first Indian since Independence to win two medals at a single Olympics.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27009,
-            "question_text": "Swapnil Kusale won a Bronze medal at Paris Olympics 2024 in which shooting event?",
-            "option_a": "Men's 10m Air Rifle",
-            "option_b": "Men's 25m Rapid Fire Pistol",
-            "option_c": "Men's 50m Rifle 3 Positions",
-            "option_d": "Men's 10m Air Pistol",
-            "correct_answer": "C",
-            "explanation": "Swapnil Kusale won a Bronze medal at Paris Olympics 2024 in the Men's 50m Rifle 3 Positions event. This was one of India's 5 bronze medals at the Games. India's total Paris 2024 tally was 1 Silver + 5 Bronze = 6 medals.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27010,
-            "question_text": "Aman Sehrawat won a Bronze medal at Paris Olympics 2024 in which sport?",
-            "option_a": "Boxing (51 kg)",
-            "option_b": "Wrestling 57 kg Freestyle",
-            "option_c": "Judo 73 kg",
-            "option_d": "Weightlifting 73 kg",
-            "correct_answer": "B",
-            "explanation": "Aman Sehrawat won a Bronze medal in Wrestling (57 kg Freestyle) at Paris Olympics 2024, becoming one of India's youngest Olympic medalists.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        # --- Paralympics 2024 ---
-        {
-            "id": 27011,
-            "question_text": "India won how many medals at the Paris Paralympics 2024, which was its best-ever Paralympic performance?",
-            "option_a": "19",
-            "option_b": "24",
-            "option_c": "29",
-            "option_d": "35",
-            "correct_answer": "C",
-            "explanation": "India won 29 medals at the Paris Paralympics 2024 — 7 Gold, 9 Silver, and 13 Bronze. This was India's best-ever Paralympic tally, surpassing the previous record of 19 medals at Tokyo 2020.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        # --- Cricket T20 WC 2024 ---
-        {
-            "id": 27012,
-            "question_text": "India won the ICC Men's T20 World Cup 2024 by defeating which team in the final?",
-            "option_a": "Australia",
-            "option_b": "England",
-            "option_c": "Pakistan",
-            "option_d": "South Africa",
-            "correct_answer": "D",
-            "explanation": "India defeated South Africa by 7 runs in the ICC Men's T20 World Cup 2024 final at the Kensington Oval, Barbados. India remained unbeaten throughout the campaign. It was India's first T20 World Cup title since 2007.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27013,
-            "question_text": "The ICC Men's T20 World Cup 2024 final was played at which venue?",
-            "option_a": "Wankhede Stadium, Mumbai",
-            "option_b": "Lord's Cricket Ground, London",
-            "option_c": "Kensington Oval, Barbados",
-            "option_d": "MCG, Melbourne",
-            "correct_answer": "C",
-            "explanation": "The ICC Men's T20 World Cup 2024 final between India and South Africa was played at the Kensington Oval in Barbados, West Indies. India won by 7 runs, led by captain Rohit Sharma.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27014,
-            "question_text": "Before the 2024 win, when did India last win the ICC Men's T20 World Cup?",
-            "option_a": "2010",
-            "option_b": "2014",
-            "option_c": "2007",
-            "option_d": "2016",
-            "correct_answer": "C",
-            "explanation": "India's previous ICC Men's T20 World Cup title was in 2007 — the inaugural edition. The 2024 victory ended a 17-year wait for India to recapture the T20 world title. The 2024 team was captained by Rohit Sharma.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27015,
-            "question_text": "Who captained India in the ICC Men's T20 World Cup 2024?",
-            "option_a": "Virat Kohli",
-            "option_b": "Hardik Pandya",
-            "option_c": "Rohit Sharma",
-            "option_d": "KL Rahul",
-            "correct_answer": "C",
-            "explanation": "Rohit Sharma captained India in the ICC Men's T20 World Cup 2024. India beat South Africa by 7 runs in the final at Barbados. After winning the T20 WC 2024, Rohit Sharma and Virat Kohli announced their retirement from T20 International cricket.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27016,
-            "question_text": "The ICC Men's T20 World Cup 2024 was co-hosted by which two nations?",
-            "option_a": "Australia and New Zealand",
-            "option_b": "India and Sri Lanka",
-            "option_c": "USA and West Indies",
-            "option_d": "England and Ireland",
-            "correct_answer": "C",
-            "explanation": "The ICC Men's T20 World Cup 2024 was co-hosted by the USA and West Indies. It was the first time a major ICC event was held in the USA. The final was held at the Kensington Oval, Barbados.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        # --- ICC Champions Trophy 2025 ---
-        {
-            "id": 27017,
-            "question_text": "India won the ICC Champions Trophy 2025, defeating which team in the final?",
-            "option_a": "Australia",
-            "option_b": "New Zealand",
-            "option_c": "England",
-            "option_d": "Pakistan",
-            "correct_answer": "B",
-            "explanation": "India won the ICC Champions Trophy 2025, defeating New Zealand in the final. The tournament was hosted by Pakistan and UAE. This added another ICC trophy to India's growing collection following the T20 WC 2024 title.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        # --- FIFA 2026 ---
-        {
-            "id": 27018,
-            "question_text": "The 2026 FIFA World Cup will be co-hosted by which three countries?",
-            "option_a": "Brazil, Argentina, and Uruguay",
-            "option_b": "England, France, and Germany",
-            "option_c": "Canada, Mexico, and USA",
-            "option_d": "Spain, Portugal, and Morocco",
-            "correct_answer": "C",
-            "explanation": "The 2026 FIFA World Cup will be co-hosted by Canada, Mexico, and the United States — the first time three countries have co-hosted a FIFA World Cup. It will also be the first expanded World Cup featuring 48 teams (up from 32).",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27019,
-            "question_text": "The 2026 FIFA World Cup is the first to feature how many teams?",
-            "option_a": "32",
-            "option_b": "40",
-            "option_c": "48",
-            "option_d": "64",
-            "correct_answer": "C",
-            "explanation": "The 2026 FIFA World Cup will feature 48 teams, expanded from the previous 32. This expansion allows more nations — including at least 8 from the Asian Football Confederation (AFC) — to participate.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27020,
-            "question_text": "Which country became the first non-host nation to qualify for the 2026 FIFA World Cup?",
-            "option_a": "China",
-            "option_b": "Japan",
-            "option_c": "Australia",
-            "option_d": "South Korea",
-            "correct_answer": "B",
-            "explanation": "Japan became the first non-host nation to qualify for the 2026 FIFA World Cup, joining co-hosts Canada, Mexico, and USA. Japan secured qualification with a 2-0 win over Bahrain, with Daichi Kamada and Takefusa Kubo scoring. It was Japan's 8th consecutive World Cup appearance (since 1998).",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27021,
-            "question_text": "Japan's qualification for the 2026 FIFA World Cup made it their how-many-th consecutive World Cup appearance?",
-            "option_a": "5th",
-            "option_b": "6th",
-            "option_c": "7th",
-            "option_d": "8th",
-            "correct_answer": "D",
-            "explanation": "Japan's 2026 FIFA World Cup qualification was its 8th consecutive World Cup appearance since 1998. Japan won 2-0 over Bahrain, with Daichi Kamada and Takefusa Kubo scoring.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        # --- Khelo India ---
-        {
-            "id": 27022,
-            "question_text": "The 7th edition of Khelo India Youth Games 2025 was held for the first time in which state?",
-            "option_a": "Odisha",
-            "option_b": "Karnataka",
-            "option_c": "Bihar",
-            "option_d": "Punjab",
-            "correct_answer": "C",
-            "explanation": "The 7th edition of Khelo India Youth Games 2025 was held in Bihar for the first time, from May 4 to 15, 2025. It spanned five districts: Patna, Nalanda, Gaya, Bhagalpur, and Begusarai. More than 8,500 athletes participated in 28 sports. PM Modi launched it via videoconference on May 4, 2025.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27023,
-            "question_text": "Khelo India Youth Games 2025 in Bihar was held across how many districts?",
-            "option_a": "Three",
-            "option_b": "Four",
-            "option_c": "Five",
-            "option_d": "Seven",
-            "correct_answer": "C",
-            "explanation": "Khelo India Youth Games 2025 in Bihar was held across 5 districts: Patna, Nalanda, Gaya, Bhagalpur, and Begusarai (May 4–15, 2025). Over 8,500 athletes and 1,500 technical staff participated in 28 sports.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        # --- Kho-Kho ---
-        {
-            "id": 27024,
-            "question_text": "The 57th Senior National Kho-Kho Championship 2025 was held in which city of Odisha?",
-            "option_a": "Bhubaneswar",
-            "option_b": "Cuttack",
-            "option_c": "Puri",
-            "option_d": "Rourkela",
-            "correct_answer": "C",
-            "explanation": "The 57th Senior National Kho-Kho Championship 2025 was held at the District Sports Complex in Puri, Odisha, from March 31 to April 4, 2025. A total of 74 teams participated, organized under the Kho Kho Federation of India (KKFI).",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27025,
-            "question_text": "The Kho Kho Federation of India (KKFI) organized the 57th Senior National Kho-Kho Championship. How many teams participated?",
-            "option_a": "52",
-            "option_b": "64",
-            "option_c": "74",
-            "option_d": "88",
-            "correct_answer": "C",
-            "explanation": "A total of 74 teams participated in the 57th Senior National Kho-Kho Championship 2025 in Puri, Odisha — including 30 state teams and institutional squads from Airport Authority, Railways, BSF, Maharashtra Police, and CISF.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        # --- Handball ---
-        {
-            "id": 27026,
-            "question_text": "Which state won the 47th National Junior Girls' Handball Championship 2025?",
-            "option_a": "Rajasthan",
-            "option_b": "Madhya Pradesh",
-            "option_c": "Gujarat",
-            "option_d": "Uttar Pradesh",
-            "correct_answer": "D",
-            "explanation": "Uttar Pradesh won the 47th National Junior Girls' Handball Championship by defeating Himachal Pradesh 19-17 at KD Singh 'Babu' Stadium in Lucknow (March 26-30, 2025). UP trailed 10-8 at halftime but made a strong comeback.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        {
-            "id": 27027,
-            "question_text": "The 47th National Junior Girls' Handball Championship was held at which venue in Lucknow?",
-            "option_a": "Ekana Sports Complex",
-            "option_b": "KD Singh 'Babu' Stadium",
-            "option_c": "Guru Nanak Sports Complex",
-            "option_d": "Surya Kumar Yadav Sports Academy",
-            "correct_answer": "B",
-            "explanation": "The 47th National Junior Girls' Handball Championship was held at KD Singh 'Babu' Stadium in Lucknow, Uttar Pradesh (March 26-30, 2025). UP beat Himachal Pradesh 19-17 in the final.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        # --- Archery ---
-        {
-            "id": 27028,
-            "question_text": "India won how many medals at the Archery World Cup 2025 Stage-2 held in Shanghai, China?",
-            "option_a": "5",
-            "option_b": "7",
-            "option_c": "9",
-            "option_d": "10",
-            "correct_answer": "B",
-            "explanation": "India won 7 medals at the Archery World Cup 2025 Stage-2 in Shanghai, China (May 6-11, 2025) — 2 Gold, 1 Silver, and 4 Bronze. Madhura Dhamangaonkar won gold in women's individual compound. Ojas Deotale's team won men's team compound gold.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
-        # --- ISSF ---
-        {
-            "id": 27029,
-            "question_text": "India finished in which position at the ISSF World Cup Lima 2025 (Rifle and Shotgun)?",
+            "question_text": "The ICC Champions Trophy 2025 win gave India their how many-th title in the tournament?",
             "option_a": "First",
             "option_b": "Second",
             "option_c": "Third",
             "option_d": "Fourth",
             "correct_answer": "C",
-            "explanation": "India finished 3rd at the ISSF World Cup Lima 2025 (Rifle and Shotgun), winning 7 medals — 2 Gold, 4 Silver, 1 Bronze. The tournament was held in Lima, Peru (April 13-22, 2025). China finished 1st and USA 2nd.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "India won the ICC Champions Trophy for the third time in 2025 (previously in 2002 and 2013), becoming the most successful team in Champions Trophy history. India also completed the tournament undefeated — the first team to do so.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
+        {
+            "id": 27006,
+            "question_text": "Which Indian batsman scored 76 off 83 balls in the ICC Champions Trophy 2025 final to anchor the chase?",
+            "option_a": "Virat Kohli",
+            "option_b": "Shubman Gill",
+            "option_c": "KL Rahul",
+            "option_d": "Rohit Sharma",
+            "correct_answer": "D",
+            "explanation": "Rohit Sharma scored 76 off 83 balls and KL Rahul contributed an unbeaten 34 as India successfully chased New Zealand's 251/7 to reach 254/6 in the ICC Champions Trophy 2025 final.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27007,
+            "question_text": "Which tournament record did India set in the ICC Champions Trophy 2025?",
+            "option_a": "Highest individual score in a final",
+            "option_b": "First team to win the CT undefeated",
+            "option_c": "Most consecutive sixes in a Champions Trophy innings",
+            "option_d": "Lowest total defended in a CT final",
+            "correct_answer": "B",
+            "explanation": "India won every match in the 2025 ICC Champions Trophy without a single defeat, becoming the first team in history to win the Champions Trophy while remaining undefeated throughout the entire tournament.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27008,
+            "question_text": "How many matches in total were played at the ICC Champions Trophy 2025, and across how many venues?",
+            "option_a": "10 matches, 2 venues",
+            "option_b": "13 matches, 3 Pakistani venues + Dubai",
+            "option_c": "15 matches, 3 venues",
+            "option_d": "12 matches, 4 venues",
+            "correct_answer": "C",
+            "explanation": "The 2025 ICC Champions Trophy featured 15 matches across three venues in Pakistan (Lahore, Karachi, Rawalpindi) plus the Dubai International Cricket Stadium for India's matches.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
+        },
+        # ─── ICC Women's ODI World Cup 2025 (27009-27016) ───
+        {
+            "id": 27009,
+            "question_text": "India won their maiden ICC Women's ODI World Cup 2025 title by defeating which team in the final?",
+            "option_a": "Australia",
+            "option_b": "England",
+            "option_c": "South Africa",
+            "option_d": "New Zealand",
+            "correct_answer": "C",
+            "explanation": "India defeated South Africa by 52 runs in the ICC Women's ODI World Cup 2025 final at Dr. DY Patil Stadium, Navi Mumbai, to claim their first-ever Women's World Cup title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27010,
+            "question_text": "Where was the ICC Women's ODI World Cup 2025 final held?",
+            "option_a": "Eden Gardens, Kolkata",
+            "option_b": "Narendra Modi Stadium, Ahmedabad",
+            "option_c": "Dr. DY Patil Stadium, Navi Mumbai",
+            "option_d": "Wankhede Stadium, Mumbai",
+            "correct_answer": "C",
+            "explanation": "The ICC Women's ODI World Cup 2025 final was played at the Dr. DY Patil Stadium in Navi Mumbai. India hosted the Women's World Cup and defeated South Africa by 52 runs to lift their maiden World Cup title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27011,
+            "question_text": "Which Indian cricketer took 5 wickets for 39 runs in the ICC Women's ODI World Cup 2025 final, also winning the Player of the Tournament award?",
+            "option_a": "Smriti Mandhana",
+            "option_b": "Harmanpreet Kaur",
+            "option_c": "Shafali Verma",
+            "option_d": "Deepti Sharma",
+            "correct_answer": "D",
+            "explanation": "Deepti Sharma delivered an outstanding bowling performance of 5/39 in the Women's ODI World Cup 2025 final, sparking South Africa's collapse from 209/5 to 246 all out. She was also named Player of the Tournament.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27012,
+            "question_text": "What score did India set batting first in the ICC Women's ODI World Cup 2025 final against South Africa?",
+            "option_a": "249/7",
+            "option_b": "265/5",
+            "option_c": "298/7",
+            "option_d": "312/6",
+            "correct_answer": "C",
+            "explanation": "India posted 298/7 in the Women's ODI WC 2025 final — the second-highest score in a Women's ODI World Cup final. Shafali Verma (87) and Deepti Sharma (58) were the top scorers. South Africa were dismissed for 246.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
+        },
+        {
+            "id": 27013,
+            "question_text": "India's ICC Women's ODI World Cup 2025 win was historically significant because India was the first team from which region to win a global cricket title in women's cricket?",
+            "option_a": "South Asia",
+            "option_b": "Asia",
+            "option_c": "Indian subcontinent",
+            "option_d": "BRICS nations",
+            "correct_answer": "B",
+            "explanation": "India's Women's ODI World Cup 2025 win made them the first women's team from Asia to win a global cricket title across formats (ODI and T20 combined). It ended India's wait after heartbreaking runner-up finishes in 2005 and 2017.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27014,
+            "question_text": "Which South African batter scored a century (101) in the Women's ODI World Cup 2025 final despite her team's defeat?",
+            "option_a": "Marizanne Kapp",
+            "option_b": "Lizelle Lee",
+            "option_c": "Sune Luus",
+            "option_d": "Laura Wolvaardt",
+            "correct_answer": "D",
+            "explanation": "Laura Wolvaardt, South Africa's captain, scored a brilliant 101 in the Women's ODI World Cup 2025 final. Despite her century, South Africa collapsed from 209/5 to 246 all out, falling short by 52 runs against India.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
+        },
+        {
+            "id": 27015,
+            "question_text": "Which Indian batter scored 87 runs in the ICC Women's ODI World Cup 2025 final to anchor India's innings?",
+            "option_a": "Smriti Mandhana",
+            "option_b": "Harmanpreet Kaur",
+            "option_c": "Shafali Verma",
+            "option_d": "Richa Ghosh",
+            "correct_answer": "C",
+            "explanation": "Shafali Verma scored 87 runs batting at the top of the order in the Women's ODI World Cup 2025 final, providing India with a strong platform in their successful total of 298/7.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27016,
+            "question_text": "Who captained the Indian women's cricket team that won the ICC Women's ODI World Cup 2025?",
+            "option_a": "Smriti Mandhana",
+            "option_b": "Harmanpreet Kaur",
+            "option_c": "Mithali Raj",
+            "option_d": "Deepti Sharma",
+            "correct_answer": "B",
+            "explanation": "Harmanpreet Kaur captained India in the ICC Women's ODI World Cup 2025. Under her leadership, India won their maiden Women's World Cup title after heartbreaking losses in the 2005 and 2017 finals.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        # ─── ICC T20 World Cup 2026 (27017-27023) ───
+        {
+            "id": 27017,
+            "question_text": "Which two countries co-hosted the ICC Men's T20 World Cup 2026?",
+            "option_a": "Australia and New Zealand",
+            "option_b": "England and South Africa",
+            "option_c": "India and Sri Lanka",
+            "option_d": "West Indies and USA",
+            "correct_answer": "C",
+            "explanation": "The ICC Men's T20 World Cup 2026 was co-hosted by India and Sri Lanka, running from February 7 to March 8, 2026, across 8 venues in both countries — 5 in India and 3 in Sri Lanka.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27018,
+            "question_text": "India won the ICC Men's T20 World Cup 2026, defeating which team in the final at Narendra Modi Stadium, Ahmedabad?",
+            "option_a": "Pakistan",
+            "option_b": "Australia",
+            "option_c": "England",
+            "option_d": "New Zealand",
+            "correct_answer": "D",
+            "explanation": "India beat New Zealand by 96 runs in the T20 World Cup 2026 final on March 8, 2026, at the Narendra Modi Stadium in Ahmedabad (86,000+ crowd). India scored 255/5 and dismissed NZ for 159.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27019,
+            "question_text": "Which Indian wicketkeeper-batsman scored 89 off 46 balls in the T20 World Cup 2026 final?",
+            "option_a": "Rishabh Pant",
+            "option_b": "KL Rahul",
+            "option_c": "Sanju Samson",
+            "option_d": "Ishan Kishan",
+            "correct_answer": "C",
+            "explanation": "Sanju Samson smashed 89 off 46 balls in the T20 World Cup 2026 final, powered India to 255/5 — the highest total in a T20 World Cup final. Jasprit Bumrah (4/15) and Axar Patel (3/27) then dismantled NZ for 159.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27020,
+            "question_text": "India's T20 World Cup 2026 win at the Narendra Modi Stadium was historic because India became the first host nation to win the T20 World Cup AND the first team to successfully defend it. How many T20 WC titles does India now hold?",
+            "option_a": "Two",
+            "option_b": "Three",
+            "option_c": "Four",
+            "option_d": "Five",
+            "correct_answer": "B",
+            "explanation": "With the 2026 win (March 8, Ahmedabad), India won their 3rd T20 World Cup title (2007, 2024, 2026) — the most by any nation, surpassing West Indies and England who each have two. India also became the first team to defend the T20 WC title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27021,
+            "question_text": "Jasprit Bumrah's bowling figures in the ICC T20 World Cup 2026 final were:",
+            "option_a": "3/21",
+            "option_b": "4/15",
+            "option_c": "5/18",
+            "option_d": "2/10",
+            "correct_answer": "B",
+            "explanation": "Jasprit Bumrah took 4 wickets for 15 runs in the T20 World Cup 2026 final against New Zealand, a match-winning spell that, combined with Axar Patel's 3/27, bowled NZ out for 159 chasing 256.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
+        },
+        {
+            "id": 27022,
+            "question_text": "The ICC T20 World Cup 2026 final was the highest-scoring T20 WC final in history. What was India's total?",
+            "option_a": "220/4",
+            "option_b": "236/6",
+            "option_c": "255/5",
+            "option_d": "241/7",
+            "correct_answer": "C",
+            "explanation": "India scored 255/5 in the T20 World Cup 2026 final — the highest total ever in a T20 World Cup final — powered by Sanju Samson's 89 off 46 and quickfire fifties from Abhishek Sharma and Ishan Kishan.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
+        },
+        {
+            "id": 27023,
+            "question_text": "How many teams participated in the ICC Men's T20 World Cup 2026?",
+            "option_a": "16",
+            "option_b": "18",
+            "option_c": "20",
+            "option_d": "24",
+            "correct_answer": "C",
+            "explanation": "The ICC Men's T20 World Cup 2026 (India+Sri Lanka) featured 20 teams in 4 groups of 5, with 55 total matches. The top two from each group advanced to the Super 8 stage.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        # ─── Chess 2024-25 (27024-27029) ───
+        {
+            "id": 27024,
+            "question_text": "Who became the youngest undisputed World Chess Champion on December 12, 2024, in Singapore?",
+            "option_a": "Praggnanandhaa Rameshbabu",
+            "option_b": "D. Gukesh",
+            "option_c": "Arjun Erigaisi",
+            "option_d": "Magnus Carlsen",
+            "correct_answer": "B",
+            "explanation": "D. Gukesh (18 years, India) became the youngest undisputed World Chess Champion on December 12, 2024, defeating reigning champion Ding Liren of China 7.5-6.5 in a 14-game match held in Singapore.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27025,
+            "question_text": "D. Gukesh's World Chess Championship 2024 victory broke whose record as the youngest world chess champion?",
+            "option_a": "Viswanathan Anand",
+            "option_b": "Garry Kasparov",
+            "option_c": "Bobby Fischer",
+            "option_d": "Vladimir Kramnik",
+            "correct_answer": "B",
+            "explanation": "Gukesh (18 years) became the youngest undisputed World Chess Champion, breaking the record held by Garry Kasparov since 1985. Gukesh is four years younger than Kasparov was when he won the world title. Gukesh is the 2nd Indian world chess champion after Viswanathan Anand.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27026,
+            "question_text": "Who won the FIDE Women's World Cup 2025, defeating Koneru Humpy in an all-Indian final?",
+            "option_a": "R. Vaishali",
+            "option_b": "Tania Sachdev",
+            "option_c": "Divya Deshmukh",
+            "option_d": "Harika Dronavalli",
+            "correct_answer": "C",
+            "explanation": "Divya Deshmukh (19-year-old from Nagpur) won the FIDE Women's World Cup 2025, defeating Koneru Humpy in an all-Indian final via tiebreaks. She became the first Indian to win the FIDE Women's World Cup and achieved the Grandmaster norm during the tournament.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27027,
+            "question_text": "D. Gukesh's World Chess Championship 2024 win score against Ding Liren was:",
+            "option_a": "8-6",
+            "option_b": "7.5-6.5",
+            "option_c": "8.5-5.5",
+            "option_d": "7-7 (tiebreak)",
+            "correct_answer": "B",
+            "explanation": "Gukesh defeated Ding Liren 7.5-6.5 in a 14-game World Chess Championship match in Singapore (December 2024). The decisive 14th game ended when Ding blundered (55.Rf2??) in what commentators described as a comfortable position.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
+        },
+        {
+            "id": 27028,
+            "question_text": "In which city was the FIDE Women's World Cup 2025 held, where Divya Deshmukh won her historic title?",
+            "option_a": "Chennai",
+            "option_b": "New Delhi",
+            "option_c": "Goa",
+            "option_d": "Kolkata",
+            "correct_answer": "C",
+            "explanation": "The FIDE Women's World Cup 2025 was held in Goa, India. Divya Deshmukh won the title there in a dramatic all-Indian final against Koneru Humpy, with the match decided in tiebreaks.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27029,
+            "question_text": "D. Gukesh is the ___th player to hold the undisputed World Chess Championship title:",
+            "option_a": "16th",
+            "option_b": "17th",
+            "option_c": "18th",
+            "option_d": "19th",
+            "correct_answer": "C",
+            "explanation": "D. Gukesh became the 18th undisputed World Chess Champion when he defeated Ding Liren in December 2024. He is the second Indian (after Viswanathan Anand) to hold the title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
+        },
+        # ─── Hockey Asia Cup 2025 (27030-27034) ───
         {
             "id": 27030,
-            "question_text": "ISSF stands for?",
-            "option_a": "International Shooting Sports Federation",
-            "option_b": "Indian Shooting Sports Foundation",
-            "option_c": "International Sharpshooters Sports Fraternity",
-            "option_d": "International Shooting Sport Federation",
-            "correct_answer": "D",
-            "explanation": "ISSF stands for International Shooting Sport Federation (note: 'Sport' not 'Sports'). It is the world governing body for Olympic shooting sports. Its headquarters are in Lausanne, Switzerland.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "India won the Men's Hockey Asia Cup 2025, defeating which country in the final?",
+            "option_a": "Pakistan",
+            "option_b": "Malaysia",
+            "option_c": "South Korea",
+            "option_d": "Japan",
+            "correct_answer": "C",
+            "explanation": "India beat South Korea 4-1 in the Men's Hockey Asia Cup 2025 final at the Rajgir Sports Complex, Bihar, winning their 4th Asia Cup title after an 8-year drought since their 2017 win.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
-        # --- Vandana Katariya ---
         {
             "id": 27031,
-            "question_text": "Vandana Katariya, who retired from international hockey, played how many international matches?",
-            "option_a": "250",
-            "option_b": "280",
-            "option_c": "300",
-            "option_d": "320",
-            "correct_answer": "D",
-            "explanation": "Vandana Katariya played 320 international matches in her career spanning over 15 years, making her the most-capped player in Indian women's hockey history. She scored 158 goals. She made her senior team debut in 2009.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "The Men's Hockey Asia Cup 2025 was held at which venue in India?",
+            "option_a": "Major Dhyan Chand National Stadium, Delhi",
+            "option_b": "Rajgir Sports Complex, Bihar",
+            "option_c": "Kalinga Stadium, Bhubaneswar",
+            "option_d": "Maulana Bhasani Hockey Stadium, Dhaka",
+            "correct_answer": "B",
+            "explanation": "The 2025 Men's Hockey Asia Cup was held at the Rajgir Sports Complex in Rajgir, Bihar. India beat South Korea 4-1 in the final to claim their 4th Asia Cup title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
         {
             "id": 27032,
-            "question_text": "Vandana Katariya is the first Indian woman to achieve which feat at the Olympics?",
-            "option_a": "First Indian woman to win an Olympic gold in hockey",
-            "option_b": "First Indian woman to score a hat-trick at the Olympics",
-            "option_c": "First Indian woman to captain an Olympic hockey team",
-            "option_d": "First Indian woman to score 100 international goals",
+            "question_text": "India's Hockey Asia Cup 2025 win was their ___th title in the tournament:",
+            "option_a": "Third",
+            "option_b": "Fourth",
+            "option_c": "Fifth",
+            "option_d": "Second",
             "correct_answer": "B",
-            "explanation": "Vandana Katariya is the first and only Indian woman to score a hat-trick at the Olympics. She received the Arjuna Award in 2021 and the Padma Shri in 2022, and the Hockey India Dhanraj Pillay Award for Forward of the Year in 2021 and 2022.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "India won the Men's Hockey Asia Cup 2025 for the 4th time (previous wins: 2003, 2007, 2017). Their 2025 win in Bihar also qualified them for the FIH Hockey World Cup 2026 in the Netherlands and Belgium.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
         {
             "id": 27033,
-            "question_text": "In which year was Vandana Katariya awarded the Padma Shri?",
-            "option_a": "2018",
-            "option_b": "2020",
-            "option_c": "2021",
-            "option_d": "2022",
-            "correct_answer": "D",
-            "explanation": "Vandana Katariya was awarded the Padma Shri in 2022. She had earlier received the Arjuna Award in 2021. She is the most-capped Indian women's hockey player with 320 international matches and 158 goals.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "India's Asia Cup Hockey 2025 win automatically qualified India for which major upcoming tournament?",
+            "option_a": "Olympics 2028 Los Angeles",
+            "option_b": "Commonwealth Games 2026",
+            "option_c": "FIH Hockey World Cup 2026",
+            "option_d": "Asian Games 2026",
+            "correct_answer": "C",
+            "explanation": "India's Hockey Asia Cup 2025 win directly qualified them for the FIH Hockey World Cup 2026, which will be co-hosted by the Netherlands and Belgium.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Mahendra Gurjar ---
         {
             "id": 27034,
-            "question_text": "Mahendra Gurjar set a world record of 61.17 metres in which para-athletics event at the 2025 Nottwil World Para Athletics Grand Prix?",
-            "option_a": "F41 Javelin Throw",
-            "option_b": "F42 Javelin Throw",
-            "option_c": "F54 Discus Throw",
-            "option_d": "F46 Shot Put",
-            "correct_answer": "B",
-            "explanation": "Mahendra Gurjar set a world record of 61.17 metres in the Men's F42 Javelin Throw at the 2025 Nottwil World Para Athletics Grand Prix in Switzerland (May 26, 2025). This surpassed the previous world record of 59.19 m set by Brazil's Roberto Floriani Edenilson in 2022. F42 is the classification for athletes with moderate movement impairment in one leg.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Which Indian player scored twice in the 2025 Hockey Asia Cup final against South Korea?",
+            "option_a": "Harmanpreet Singh",
+            "option_b": "Mandeep Singh",
+            "option_c": "Dilpreet Singh",
+            "option_d": "Gurjant Singh",
+            "correct_answer": "C",
+            "explanation": "Dilpreet Singh scored twice (28' and 45') in the 2025 Hockey Asia Cup final. Other scorers for India were Sukhjeet Singh (1') and Amit Rohidas (50'). South Korea's only goal came from Son Dain (51').",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
         },
+        # ─── Neeraj Chopra / Athletics 2025 (27035-27040) ───
         {
             "id": 27035,
-            "question_text": "The 2025 Nottwil World Para Athletics Grand Prix, where Mahendra Gurjar set a world record, was held in which country?",
-            "option_a": "Germany",
-            "option_b": "France",
-            "option_c": "Switzerland",
-            "option_d": "Italy",
-            "correct_answer": "C",
-            "explanation": "The 2025 Nottwil World Para Athletics Grand Prix was held in Nottwil, Switzerland on May 26, 2025. Mahendra Gurjar won the gold medal in the F42 Javelin Throw with a world record throw of 61.17 metres.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Neeraj Chopra became the first Indian to breach the 90-metre mark in javelin throw at which event in 2025?",
+            "option_a": "World Athletics Championships",
+            "option_b": "Doha Diamond League 2025",
+            "option_c": "Asian Athletics Championships",
+            "option_d": "Commonwealth Games 2026",
+            "correct_answer": "B",
+            "explanation": "Neeraj Chopra threw 90.23m at the Doha Diamond League 2025, becoming the first Indian to cross the 90-metre barrier in javelin throw. He finished second in the event as Julian Weber won with 91.06m.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
-        # --- Asian Wrestling ---
         {
             "id": 27036,
-            "question_text": "Manisha Bhanwala won India's first gold medal at the Senior Asian Wrestling Championship 2025 in which weight category?",
-            "option_a": "48 kg",
-            "option_b": "53 kg",
-            "option_c": "62 kg",
-            "option_d": "68 kg",
+            "question_text": "What was Neeraj Chopra's historic throw at the Doha Diamond League 2025?",
+            "option_a": "88.44m",
+            "option_b": "89.94m",
+            "option_c": "90.23m",
+            "option_d": "91.06m",
             "correct_answer": "C",
-            "explanation": "Manisha Bhanwala won gold in the women's 62 kg category at the Senior Asian Wrestling Championship 2025 in Amman, Jordan, defeating Korea's Ok J Kim by 8-7. This was India's first gold at this championship since 2021.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "Neeraj Chopra threw 90.23m at the Doha Diamond League 2025, breaking the 90m barrier for the first time. He became the 25th man in history and the third-best Asian javelin thrower (behind Pakistan's Arshad Nadeem at 92.97m and Chao-Tsun Cheng of Chinese Taipei at 91.36m).",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
         {
             "id": 27037,
-            "question_text": "The Senior Asian Wrestling Championship 2025 was held in which city?",
-            "option_a": "New Delhi",
-            "option_b": "Tokyo",
-            "option_c": "Astana",
-            "option_d": "Amman",
-            "correct_answer": "D",
-            "explanation": "The Senior Asian Wrestling Championship 2025 was held in Amman, Jordan. India won 1 Gold (Manisha Bhanwala, 62 kg), 1 Silver, and 6 Bronze medals, including 2 in Greco-Roman wrestling.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Who defeated Neeraj Chopra at the Doha Diamond League 2025 with a throw of 91.06m?",
+            "option_a": "Anderson Peters",
+            "option_b": "Arshad Nadeem",
+            "option_c": "Julian Weber",
+            "option_d": "Jakub Vadlejch",
+            "correct_answer": "C",
+            "explanation": "Julian Weber (Germany) won the javelin event at the Doha Diamond League 2025 with a last-round throw of 91.06m, edging out Neeraj Chopra who had thrown a personal-best 90.23m.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
         },
         {
             "id": 27038,
-            "question_text": "Antim Panghal won a Bronze medal in which weight category at the Senior Asian Wrestling Championship 2025?",
-            "option_a": "48 kg",
-            "option_b": "50 kg",
-            "option_c": "53 kg",
-            "option_d": "57 kg",
-            "correct_answer": "C",
-            "explanation": "Antim Panghal won a Bronze medal in the 53 kg category at the Senior Asian Wrestling Championship 2025 in Amman, Jordan, defeating Taipei's Meng H Hsieh by technical superiority.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Neeraj Chopra is training under which legendary Czech javelin thrower for the 2025 season?",
+            "option_a": "Steve Backley",
+            "option_b": "Jan Železný",
+            "option_c": "Sergey Makarov",
+            "option_d": "Andreas Thorkildsen",
+            "correct_answer": "B",
+            "explanation": "Neeraj Chopra is training under Jan Železný — widely regarded as the greatest javelin thrower of the modern era and 3-time Olympic champion. This coaching partnership has helped Neeraj break the 90m barrier in 2025.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
         },
-        # --- Sports Bodies HQ ---
         {
             "id": 27039,
-            "question_text": "FIFA, the governing body of world football, is headquartered in which city?",
-            "option_a": "Geneva",
-            "option_b": "Zurich",
-            "option_c": "Bern",
-            "option_d": "Lausanne",
-            "correct_answer": "B",
-            "explanation": "FIFA (Fédération Internationale de Football Association) is headquartered in Zurich, Switzerland. It was founded in 1904 and governs association football worldwide. The 2026 FIFA World Cup will be hosted by Canada, Mexico, and USA.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "After his 90.23m throw at Doha Diamond League 2025, Neeraj Chopra reclaimed which position in world javelin rankings?",
+            "option_a": "World No. 3",
+            "option_b": "World No. 2",
+            "option_c": "World No. 1",
+            "option_d": "World No. 4",
+            "correct_answer": "C",
+            "explanation": "Following his 90.23m throw at the Doha Diamond League 2025, Neeraj Chopra reclaimed the World No. 1 ranking in men's javelin throw, surpassing Anderson Peters.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
         {
             "id": 27040,
-            "question_text": "The International Cricket Council (ICC) is headquartered in which city?",
-            "option_a": "London, UK",
-            "option_b": "Mumbai, India",
-            "option_c": "Dubai, UAE",
-            "option_d": "Melbourne, Australia",
-            "correct_answer": "C",
-            "explanation": "The International Cricket Council (ICC) is headquartered in Dubai, UAE. It governs international cricket and organizes major events like the T20 World Cup, Cricket World Cup, and Champions Trophy. India won the ICC T20 World Cup 2024 and ICC Champions Trophy 2025.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Neeraj Chopra also won the javelin title at which Diamond League event in 2025?",
+            "option_a": "London Diamond League",
+            "option_b": "Paris Diamond League",
+            "option_c": "Eugene Diamond League",
+            "option_d": "Stockholm Diamond League",
+            "correct_answer": "B",
+            "explanation": "Neeraj Chopra won the javelin throw title at the Paris Diamond League 2025, adding to his strong 2025 season which also included his historic 90.23m throw at the Doha Diamond League.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
+        # ─── Tennis Grand Slams 2025 (27041-27048) ───
         {
             "id": 27041,
-            "question_text": "The Badminton World Federation (BWF) is headquartered in which city?",
-            "option_a": "Beijing",
-            "option_b": "Bangkok",
-            "option_c": "Singapore",
-            "option_d": "Kuala Lumpur",
+            "question_text": "Who won the Australian Open 2025 (Men's Singles)?",
+            "option_a": "Carlos Alcaraz",
+            "option_b": "Novak Djokovic",
+            "option_c": "Alexander Zverev",
+            "option_d": "Jannik Sinner",
             "correct_answer": "D",
-            "explanation": "The Badminton World Federation (BWF) is headquartered in Kuala Lumpur, Malaysia. It is the international governing body for badminton and oversees all international badminton competitions.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "Jannik Sinner won the Australian Open 2025 (Men's Singles), defeating Alexander Zverev 6-3, 7-6(4), 6-3 in the final. Sinner defended his 2024 title, becoming the dominant force in men's tennis.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
         {
             "id": 27042,
-            "question_text": "World Athletics (formerly IAAF), the governing body for track and field sports, is headquartered in which city?",
-            "option_a": "Geneva, Switzerland",
-            "option_b": "Monaco",
-            "option_c": "Paris, France",
-            "option_d": "London, UK",
-            "correct_answer": "B",
-            "explanation": "World Athletics (formerly the International Association of Athletics Federations or IAAF) is headquartered in Monaco. It governs all track and field events, including those in the Olympic Games.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Who won the Australian Open 2025 (Women's Singles)?",
+            "option_a": "Aryna Sabalenka",
+            "option_b": "Iga Swiatek",
+            "option_c": "Coco Gauff",
+            "option_d": "Madison Keys",
+            "correct_answer": "D",
+            "explanation": "Madison Keys won the Australian Open 2025 Women's Singles, defeating Aryna Sabalenka in the final — a major upset victory that marked Keys' first Grand Slam title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Chess ---
         {
             "id": 27043,
-            "question_text": "D Gukesh became the World Chess Champion in December 2024 by defeating which player?",
-            "option_a": "Magnus Carlsen (Norway)",
-            "option_b": "Fabiano Caruana (USA)",
-            "option_c": "Ding Liren (China)",
-            "option_d": "Ian Nepomniachtchi (Russia)",
+            "question_text": "Who won the French Open 2025 (Men's Singles), defeating Jannik Sinner and saving three match points?",
+            "option_a": "Novak Djokovic",
+            "option_b": "Rafael Nadal",
+            "option_c": "Carlos Alcaraz",
+            "option_d": "Alexander Zverev",
             "correct_answer": "C",
-            "explanation": "D Gukesh of India became the World Chess Champion in December 2024 by defeating reigning champion Ding Liren of China. At 18 years of age, Gukesh became the youngest World Chess Champion in history. He received the Khel Ratna Award 2024.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "Carlos Alcaraz won a sensational French Open 2025 final, defeating Jannik Sinner 4-6, 6-7(4), 6-4, 7-6(3), 7-6(2), saving three match points in a thrilling comeback. Women's: Coco Gauff.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
         {
             "id": 27044,
-            "question_text": "D Gukesh became the World Chess Champion in 2024. He is the youngest World Chess Champion ever at what age?",
-            "option_a": "16 years",
-            "option_b": "17 years",
-            "option_c": "18 years",
-            "option_d": "19 years",
-            "correct_answer": "C",
-            "explanation": "D Gukesh became the youngest World Chess Champion in history at 18 years of age in December 2024. He defeated China's Ding Liren in the World Chess Championship match and received the Khel Ratna Award 2024.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Who won Wimbledon 2025 (Men's Singles)?",
+            "option_a": "Carlos Alcaraz",
+            "option_b": "Jannik Sinner",
+            "option_c": "Novak Djokovic",
+            "option_d": "Daniil Medvedev",
+            "correct_answer": "B",
+            "explanation": "Jannik Sinner won Wimbledon 2025, defeating Carlos Alcaraz 4-6, 6-4, 6-4, 6-4 to avenge his French Open final defeat. Iga Swiatek won the Women's Wimbledon 2025 title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
         {
             "id": 27045,
-            "question_text": "India won both Open and Women's team titles at which Chess Olympiad in 2024?",
-            "option_a": "Warsaw",
-            "option_b": "Budapest",
-            "option_c": "Dubai",
-            "option_d": "Chennai",
-            "correct_answer": "B",
-            "explanation": "India swept the FIDE Chess Olympiad 2024 held in Budapest, Hungary, winning both the Open team and Women's team gold medals. This was a historic double gold for India in international chess.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Who won the US Open 2025 (Men's Singles)?",
+            "option_a": "Jannik Sinner",
+            "option_b": "Daniil Medvedev",
+            "option_c": "Carlos Alcaraz",
+            "option_d": "Novak Djokovic",
+            "correct_answer": "C",
+            "explanation": "Carlos Alcaraz won the US Open 2025 Men's Singles, defeating Jannik Sinner 6-2, 3-6, 6-1, 6-4. Aryna Sabalenka won the Women's US Open 2025.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
-        # --- 2028 Olympics ---
         {
             "id": 27046,
-            "question_text": "The 2028 Summer Olympics will be hosted by which city?",
-            "option_a": "London",
-            "option_b": "Tokyo",
-            "option_c": "Los Angeles",
-            "option_d": "Brisbane",
-            "correct_answer": "C",
-            "explanation": "The 2028 Summer Olympics will be hosted by Los Angeles, USA. The 2032 Summer Olympics are scheduled for Brisbane, Australia. Los Angeles previously hosted the Olympics in 1932 and 1984.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Which player dominated Women's Grand Slam tennis in 2025 by winning Wimbledon and the US Open?",
+            "option_a": "Coco Gauff",
+            "option_b": "Madison Keys",
+            "option_c": "Iga Swiatek",
+            "option_d": "Aryna Sabalenka",
+            "correct_answer": "D",
+            "explanation": "Aryna Sabalenka won the US Open 2025 Women's title, while Iga Swiatek won Wimbledon 2025. Coco Gauff won the French Open and Madison Keys claimed the Australian Open in 2025 — making all four Grand Slam women's titles go to different players.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Paris Olympics host ---
         {
             "id": 27047,
-            "question_text": "The 2024 Summer Olympics were held in which city?",
-            "option_a": "Tokyo",
-            "option_b": "Paris",
-            "option_c": "London",
-            "option_d": "Berlin",
+            "question_text": "Which two male players split all four Grand Slam titles in 2025 between them?",
+            "option_a": "Djokovic and Medvedev",
+            "option_b": "Alcaraz and Sinner",
+            "option_c": "Sinner and Zverev",
+            "option_d": "Alcaraz and Djokovic",
             "correct_answer": "B",
-            "explanation": "The 2024 Summer Olympics (XXXIII Olympiad) were held in Paris, France from July 26 to August 11, 2024. India won 6 medals (1 Silver + 5 Bronze) with a contingent of 117 athletes.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "Jannik Sinner and Carlos Alcaraz split all four Grand Slam titles in 2025. Sinner won the Australian Open and Wimbledon; Alcaraz won the French Open and US Open — the same split as 2024, continuing their fierce rivalry.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Archery medal winners ---
         {
             "id": 27048,
-            "question_text": "Madhura Dhamangaonkar won gold at the Archery World Cup 2025 Stage-2 in which event?",
-            "option_a": "Women's individual recurve",
-            "option_b": "Women's individual compound",
-            "option_c": "Mixed team recurve",
-            "option_d": "Women's team compound",
-            "correct_answer": "B",
-            "explanation": "Madhura Dhamangaonkar won a gold medal in the women's individual compound event at the Archery World Cup 2025 Stage-2 in Shanghai, China (May 6-11, 2025). India won 7 medals overall at this event.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Which Women's player won the French Open 2025 Grand Slam title?",
+            "option_a": "Aryna Sabalenka",
+            "option_b": "Iga Swiatek",
+            "option_c": "Coco Gauff",
+            "option_d": "Madison Keys",
+            "correct_answer": "C",
+            "explanation": "Coco Gauff (USA) won the French Open 2025 Women's Singles title. The 2025 Women's Grand Slams were shared: Australian Open → Madison Keys, French Open → Coco Gauff, Wimbledon → Iga Swiatek, US Open → Aryna Sabalenka.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- IOC founding place ---
+        # ─── 2026 FIFA World Cup (27049-27054) ───
         {
             "id": 27049,
-            "question_text": "Kirsty Coventry was elected as IOC President in which country?",
-            "option_a": "France",
-            "option_b": "Switzerland",
-            "option_c": "Greece",
-            "option_d": "USA",
-            "correct_answer": "C",
-            "explanation": "Kirsty Coventry from Zimbabwe was elected as IOC President in Greece. She is the first woman to lead the IOC. Greece holds special significance for the Olympics as the birthplace of the ancient Olympic Games.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "The 2026 FIFA World Cup will be co-hosted by which three countries?",
+            "option_a": "USA, Brazil, Argentina",
+            "option_b": "USA, Canada, Mexico",
+            "option_c": "Spain, Portugal, Morocco",
+            "option_d": "Germany, France, England",
+            "correct_answer": "B",
+            "explanation": "The 2026 FIFA World Cup will be co-hosted by the United States, Canada, and Mexico — the first World Cup with three host nations — running from June 11 to July 19, 2026, with 48 teams and 104 matches.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
-        # --- KKFI ---
         {
             "id": 27050,
-            "question_text": "KKFI, which organized the 57th Senior National Kho-Kho Championship 2025, stands for?",
-            "option_a": "Kho Kho Foundation of India",
-            "option_b": "Kho Kho Federation of India",
-            "option_c": "Kho Kho Forum of India",
-            "option_d": "Kabaddi-Kho Kho Federation of India",
-            "correct_answer": "B",
-            "explanation": "KKFI stands for Kho Kho Federation of India. It organized the 57th Senior National Kho-Kho Championship in Puri, Odisha (March 31 to April 4, 2025). 74 teams participated including state teams and institutional squads.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "How many teams will participate in the 2026 FIFA World Cup, the first expanded edition?",
+            "option_a": "32",
+            "option_b": "36",
+            "option_c": "40",
+            "option_d": "48",
+            "correct_answer": "D",
+            "explanation": "The 2026 FIFA World Cup will feature 48 teams — expanded from 32 — playing 104 total matches. The group stage will have 12 groups of 4 teams with the top 2 from each group (plus 8 best third-place teams) advancing.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
-        # --- Neeraj Chopra ---
         {
             "id": 27051,
-            "question_text": "Neeraj Chopra won which medal at the Tokyo Olympics 2020?",
-            "option_a": "Silver in Javelin Throw",
-            "option_b": "Gold in Javelin Throw",
-            "option_c": "Bronze in Javelin Throw",
-            "option_d": "Gold in Shot Put",
-            "correct_answer": "B",
-            "explanation": "Neeraj Chopra won Gold in Javelin Throw at the Tokyo Olympics 2020, becoming the first Indian to win an Olympic gold in track and field. At Paris 2024, he won Silver. He is a Khel Ratna and Padma Shri awardee.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "At which stadium will the 2026 FIFA World Cup final be held?",
+            "option_a": "AT&T Stadium, Dallas",
+            "option_b": "Rose Bowl, Los Angeles",
+            "option_c": "MetLife Stadium, East Rutherford, New Jersey",
+            "option_d": "Hard Rock Stadium, Miami",
+            "correct_answer": "C",
+            "explanation": "The 2026 FIFA World Cup final is scheduled at MetLife Stadium in East Rutherford, New Jersey (near New York City) on July 19, 2026. The stadium has a capacity of over 82,500.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- India hockey Paris ---
         {
             "id": 27052,
-            "question_text": "Which Indian sports team won a Bronze medal at the Paris Olympics 2024?",
-            "option_a": "Women's Cricket team",
-            "option_b": "Men's Football team",
-            "option_c": "Men's Hockey team",
-            "option_d": "Women's Badminton team",
-            "correct_answer": "C",
-            "explanation": "The Indian Men's Hockey team won a Bronze medal at the Paris Olympics 2024. India also won hockey bronze at Tokyo 2020, ending a 41-year medal drought in Olympic hockey. India has won 8 Olympic gold medals in hockey (all-time record).",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "How many host cities are there for the 2026 FIFA World Cup?",
+            "option_a": "10",
+            "option_b": "12",
+            "option_c": "14",
+            "option_d": "16",
+            "correct_answer": "D",
+            "explanation": "The 2026 FIFA World Cup has 16 host cities: 11 in the USA (Atlanta, Boston, Dallas, Houston, Kansas City, Los Angeles, Miami, New York/New Jersey, Philadelphia, San Francisco Bay Area, Seattle), 2 in Canada (Toronto, Vancouver), and 3 in Mexico (Guadalajara, Mexico City, Monterrey).",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- World Athletics ---
         {
             "id": 27053,
-            "question_text": "The Kho-Kho World Cup 2025, organized by the International Kho Kho Federation, was held in which country?",
-            "option_a": "India",
-            "option_b": "South Africa",
-            "option_c": "UAE",
-            "option_d": "England",
-            "correct_answer": "A",
-            "explanation": "The Kho-Kho World Cup 2025 was held in India. Both the men's and women's Indian Kho-Kho teams won the World Cup in the inaugural edition. India is the dominant force in Kho-Kho internationally.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "The 2026 FIFA World Cup will have how many matches — a record high for any World Cup?",
+            "option_a": "64",
+            "option_b": "80",
+            "option_c": "104",
+            "option_d": "96",
+            "correct_answer": "C",
+            "explanation": "The 2026 FIFA World Cup will feature 104 matches — the most in World Cup history, up from 64 at the 2022 Qatar World Cup — due to the expanded 48-team format.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Khelo India Institutions ---
         {
             "id": 27054,
-            "question_text": "Bihar set up which new institution as part of hosting Khelo India Youth Games 2025?",
-            "option_a": "Bihar Olympic Academy",
-            "option_b": "Bihar Sports University",
-            "option_c": "Patna Sports Institute",
-            "option_d": "National Sports Authority Bihar",
+            "question_text": "When did the 2026 FIFA World Cup begin?",
+            "option_a": "May 15, 2026",
+            "option_b": "June 11, 2026",
+            "option_c": "July 1, 2026",
+            "option_d": "June 20, 2026",
             "correct_answer": "B",
-            "explanation": "Bihar set up new institutions including the Khelo India State Centre of Excellence and Bihar Sports University as part of hosting Khelo India Youth Games 2025. This was the first time Bihar hosted the event.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "The 2026 FIFA World Cup began on June 11, 2026, and will run through July 19, 2026, across 16 host cities in the USA, Canada, and Mexico.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Tokyo to Paris ---
+        # ─── Upcoming/Completed Sporting Events 2026 (27055-27060) ───
         {
             "id": 27055,
-            "question_text": "India won how many medals at the Tokyo Olympics 2020?",
-            "option_a": "5",
-            "option_b": "7",
-            "option_c": "10",
-            "option_d": "12",
+            "question_text": "The FIH Men's Hockey World Cup 2026 will be co-hosted by which two European countries?",
+            "option_a": "Germany and Belgium",
+            "option_b": "Netherlands and Belgium",
+            "option_c": "Netherlands and Germany",
+            "option_d": "Spain and Portugal",
             "correct_answer": "B",
-            "explanation": "India won 7 medals at the Tokyo Olympics 2020 — 1 Gold (Neeraj Chopra, Javelin), 2 Silver (Mirabai Chanu-Weightlifting, Ravi Dahiya-Wrestling), and 4 Bronze (PV Sindhu-Badminton, Lovlina Borgohain-Boxing, Men's Hockey team, Bajrang Punia-Wrestling). This was India's best Olympic haul at that time. Paris 2024 (6 medals) was slightly fewer.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "The FIH Men's Hockey World Cup 2026 will be co-hosted by the Netherlands and Belgium. India qualified for this tournament by winning the Asia Cup 2025 in Rajgir, Bihar.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Nottwil ---
         {
             "id": 27056,
-            "question_text": "The F42 classification in para-athletics applies to athletes with which type of impairment?",
-            "option_a": "Visually impaired",
-            "option_b": "Moderate movement impairment in one leg",
-            "option_c": "Wheelchair athletes",
-            "option_d": "Upper limb amputation",
-            "correct_answer": "B",
-            "explanation": "The F42 classification in para-athletics is for athletes with moderate movement impairment in one leg. Mahendra Gurjar set the world record of 61.17m in F42 Javelin Throw at the Nottwil World Para Athletics Grand Prix in Switzerland (May 2025).",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "The 2026 Asian Games will be held in which Japanese city?",
+            "option_a": "Tokyo",
+            "option_b": "Osaka",
+            "option_c": "Aichi-Nagoya",
+            "option_d": "Fukuoka",
+            "correct_answer": "C",
+            "explanation": "The 2026 Asian Games (20th Asian Games) will be hosted by the Aichi-Nagoya region of Japan, scheduled for September 19 to October 4, 2026. This will be Japan's first time hosting the Asian Games since Tokyo 1958.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- FIDE ---
         {
             "id": 27057,
-            "question_text": "FIDE, the world chess governing body, is headquartered in which city?",
-            "option_a": "Moscow",
-            "option_b": "New York",
-            "option_c": "Lausanne",
-            "option_d": "London",
+            "question_text": "The 2026 Commonwealth Games will be hosted by which city?",
+            "option_a": "Adelaide, Australia",
+            "option_b": "Victoria, Canada",
+            "option_c": "Glasgow, Scotland",
+            "option_d": "Durban, South Africa",
             "correct_answer": "C",
-            "explanation": "FIDE (Fédération Internationale des Échecs / International Chess Federation) is headquartered in Lausanne, Switzerland. It is the governing body for international chess and organizes the World Chess Championship, Chess Olympiad, and other events.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "The 2026 Commonwealth Games will be held in Glasgow, Scotland (July 23 – August 2, 2026). Glasgow previously hosted the 2014 Commonwealth Games.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Vandana debut ---
+        # ─── Mixed / Higher-Order Sports Questions (27058-27080) ───
         {
             "id": 27058,
-            "question_text": "In which year did Vandana Katariya make her senior international hockey debut?",
-            "option_a": "2005",
-            "option_b": "2007",
-            "option_c": "2009",
-            "option_d": "2011",
-            "correct_answer": "C",
-            "explanation": "Vandana Katariya made her senior international hockey debut in 2009 and went on to play 320 international matches over 15+ years. She retired after becoming the most-capped player in Indian women's hockey history with 158 goals.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "India achieved a remarkable cricket double in 2025-26 by winning both the Women's ODI World Cup 2025 and the T20 World Cup 2026. Who captained the men's T20 World Cup 2026 team?",
+            "option_a": "Virat Kohli",
+            "option_b": "Rohit Sharma",
+            "option_c": "KL Rahul",
+            "option_d": "Shubman Gill",
+            "correct_answer": "B",
+            "explanation": "Rohit Sharma continued as captain of the Indian men's cricket team for the T20 World Cup 2026, leading India to their third T20 World Cup title (March 8, 2026, Ahmedabad). The women's team was captained by Harmanpreet Kaur.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Japan Kamada Kubo ---
         {
             "id": 27059,
-            "question_text": "Which two Japanese footballers scored in the 2026 FIFA World Cup qualification win over Bahrain?",
-            "option_a": "Takumi Minamino and Shinji Kagawa",
-            "option_b": "Daichi Kamada and Takefusa Kubo",
-            "option_c": "Yuya Osako and Wataru Endo",
-            "option_d": "Ritsu Doan and Junya Ito",
-            "correct_answer": "B",
-            "explanation": "Daichi Kamada and Takefusa Kubo scored in the second half as Japan beat Bahrain 2-0 to qualify for the 2026 FIFA World Cup, becoming the first non-host nation to secure their place in the tournament.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Neeraj Chopra's 90.23m throw at Doha 2025 made him only the ___ man in history to cross the 90m mark in javelin?",
+            "option_a": "20th",
+            "option_b": "22nd",
+            "option_c": "25th",
+            "option_d": "28th",
+            "correct_answer": "C",
+            "explanation": "Neeraj Chopra's 90.23m at Doha Diamond League 2025 made him the 25th man in javelin throw history to cross the 90-metre barrier. He is also the third-best Asian javelin thrower after Pakistan's Arshad Nadeem (92.97m) and Chinese Taipei's Chao-Tsun Cheng (91.36m).",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
         },
-        # --- Mirabai Chanu ---
         {
             "id": 27060,
-            "question_text": "At Paris Olympics 2024, India sent how many athletes in total?",
-            "option_a": "95",
-            "option_b": "107",
-            "option_c": "117",
-            "option_d": "128",
+            "question_text": "The ICC Champions Trophy 2025 was the ___th edition of the tournament:",
+            "option_a": "7th",
+            "option_b": "8th",
+            "option_c": "9th",
+            "option_d": "10th",
             "correct_answer": "C",
-            "explanation": "India sent a contingent of 117 athletes to the Paris Olympics 2024. The team won 6 medals — 1 Silver (Neeraj Chopra) and 5 Bronze (Manu Bhaker x2, Swapnil Kusale, Hockey team, Aman Sehrawat).",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "The 2025 ICC Champions Trophy was the 9th edition of the tournament. Previous editions: 1998 (Bangladesh), 2000 (Kenya), 2002 (Sri Lanka), 2004 (England), 2006 (India), 2009 (South Africa), 2013 (England), 2017 (England).",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
         },
-        # --- Sports federations ---
         {
             "id": 27061,
-            "question_text": "The International Handball Federation (IHF) is headquartered in which Swiss city?",
-            "option_a": "Zurich",
-            "option_b": "Geneva",
-            "option_c": "Basel",
-            "option_d": "Bern",
-            "correct_answer": "C",
-            "explanation": "The International Handball Federation (IHF) is headquartered in Basel, Switzerland. It governs international handball. The 47th National Junior Girls' Handball Championship 2025 in India was won by Uttar Pradesh.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Which combination correctly links a 2025-26 sports event with its winner?",
+            "option_a": "ICC Champions Trophy 2025 → Australia; Wimbledon 2025 Men's → Djokovic",
+            "option_b": "Hockey Asia Cup 2025 → India (beat South Korea 4-1); ICC Women's ODI WC 2025 → India (beat SA by 52 runs)",
+            "option_c": "French Open 2025 Men's → Djokovic; T20 WC 2026 → Australia",
+            "option_d": "FIDE Women's World Cup 2025 → Koneru Humpy; Ballon d'Or 2025 → Haaland",
+            "correct_answer": "B",
+            "explanation": "Option B is correct: India beat South Korea 4-1 in the Hockey Asia Cup 2025 final (Rajgir, Bihar), and India beat South Africa by 52 runs in the Women's ODI WC 2025 final (Navi Mumbai). All other options are incorrect.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Pierre de Coubertin ---
         {
             "id": 27062,
-            "question_text": "Pierre de Coubertin, who founded the IOC in 1894, was from which country?",
-            "option_a": "Greece",
-            "option_b": "Great Britain",
-            "option_c": "France",
-            "option_d": "Germany",
-            "correct_answer": "C",
-            "explanation": "Baron Pierre de Coubertin was a French historian and educator who founded the International Olympic Committee (IOC) in 1894 to revive the ancient Greek Olympics. The first modern Olympic Games were held in Athens, Greece in 1896.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "India won the ICC Champions Trophy 2025 — their earlier two CT wins were in which years?",
+            "option_a": "1998 and 2009",
+            "option_b": "2002 and 2013",
+            "option_c": "2000 and 2017",
+            "option_d": "2004 and 2009",
+            "correct_answer": "B",
+            "explanation": "India won the ICC Champions Trophy three times: 2002 (co-winners with Sri Lanka), 2013 (England), and 2025 (UAE/Pakistan). The 2002 and 2013 titles are India's first two, with 2025 being their third.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- ICC WC 2023 ---
         {
             "id": 27063,
-            "question_text": "Who won the ICC Men's Cricket World Cup (ODI) 2023 held in India?",
-            "option_a": "India",
-            "option_b": "New Zealand",
-            "option_c": "South Africa",
-            "option_d": "Australia",
-            "correct_answer": "D",
-            "explanation": "Australia won the ICC Men's Cricket World Cup (ODI) 2023 held in India, defeating India in the final at Narendra Modi Stadium, Ahmedabad by 6 wickets. Australia's Pat Cummins was the leading wicket-taker.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Divya Deshmukh's 2025 FIDE Women's World Cup win was notable because the final was entirely between two Indian players. Who was her opponent in the final?",
+            "option_a": "R. Vaishali",
+            "option_b": "Harika Dronavalli",
+            "option_c": "Koneru Humpy",
+            "option_d": "Tania Sachdev",
+            "correct_answer": "C",
+            "explanation": "Divya Deshmukh defeated Koneru Humpy in the FIDE Women's World Cup 2025 final — an all-Indian final held in Goa. The match was decided in tiebreaks. Divya became the first Indian to win this title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Khelo India launch ---
         {
             "id": 27064,
-            "question_text": "Prime Minister Modi launched the 7th Khelo India Youth Games 2025 on which date?",
-            "option_a": "April 4, 2025",
-            "option_b": "May 4, 2025",
-            "option_c": "June 4, 2025",
-            "option_d": "March 4, 2025",
-            "correct_answer": "B",
-            "explanation": "Prime Minister Narendra Modi launched the 7th Khelo India Youth Games on May 4, 2025 through videoconferencing. The games were held in Bihar (first time) from May 4–15, 2025, across 5 districts: Patna, Nalanda, Gaya, Bhagalpur, and Begusarai.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "The 2026 FIFA World Cup will be the first World Cup with 48 teams. How many groups will the group stage have?",
+            "option_a": "8 groups of 6",
+            "option_b": "10 groups of 5",
+            "option_c": "12 groups of 4",
+            "option_d": "16 groups of 3",
+            "correct_answer": "C",
+            "explanation": "The 2026 FIFA World Cup group stage consists of 12 groups of 4 teams each (48 teams total). The top 2 teams from each group (24 teams) plus the 8 best third-placed teams (total 32) advance to the knockout round.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
         },
-        # --- Olympics 2024 opening/closing ---
         {
             "id": 27065,
-            "question_text": "Paris Olympics 2024 opening ceremony was held in which unique venue?",
-            "option_a": "Stade de France",
-            "option_b": "River Seine",
-            "option_c": "Champs-Élysées",
-            "option_d": "Eiffel Tower plaza",
-            "correct_answer": "B",
-            "explanation": "The Paris Olympics 2024 opening ceremony was uniquely held on the River Seine (July 26, 2024), with athletes parading on boats along the river through Paris — the first Olympics opening ceremony held outside a stadium.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "In which year did India last win the Men's Hockey Asia Cup before their 2025 triumph?",
+            "option_a": "2012",
+            "option_b": "2013",
+            "option_c": "2017",
+            "option_d": "2019",
+            "correct_answer": "C",
+            "explanation": "India's previous Men's Hockey Asia Cup win before 2025 was in 2017 (Dhaka, Bangladesh). The 2025 win in Rajgir, Bihar ended an 8-year drought and was India's 4th Asia Cup title overall.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Deepika Kumari ---
         {
             "id": 27066,
-            "question_text": "Deepika Kumari, who won a bronze medal at Archery World Cup 2025 Stage-2, is associated with which archery bow type?",
-            "option_a": "Compound bow",
-            "option_b": "Recurve bow",
-            "option_c": "Longbow",
-            "option_d": "Crossbow",
+            "question_text": "Jannik Sinner won two Grand Slams in 2025. Which was his nationality?",
+            "option_a": "Swiss",
+            "option_b": "Italian",
+            "option_c": "Spanish",
+            "option_d": "German",
             "correct_answer": "B",
-            "explanation": "Deepika Kumari is India's top recurve archer who won a bronze in women's individual recurve at Archery World Cup 2025 Stage-2 in Shanghai. She is a former world number 1 in recurve archery and multiple World Cup winner.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "Jannik Sinner is Italian. He won the Australian Open (defeating Zverev) and Wimbledon (defeating Alcaraz) in 2025, establishing himself as a dominant force in men's tennis alongside Carlos Alcaraz (Spain).",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
-        # --- Asian Wrestling gold ---
         {
             "id": 27067,
-            "question_text": "Manisha Bhanwala's gold at Asian Wrestling Championship 2025 was India's first gold at the championship since which year?",
-            "option_a": "2019",
-            "option_b": "2020",
-            "option_c": "2021",
-            "option_d": "2022",
+            "question_text": "The ICC Men's T20 World Cup 2026 was played from February 7 to March 8, 2026. How many venues were used in India?",
+            "option_a": "3",
+            "option_b": "4",
+            "option_c": "5",
+            "option_d": "6",
             "correct_answer": "C",
-            "explanation": "Manisha Bhanwala's gold medal at the Senior Asian Wrestling Championship 2025 in Amman, Jordan was India's first gold at the championship since the 2021 edition. She defeated Korea's Ok J Kim 8-7 in the women's 62 kg final.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "The T20 World Cup 2026 used 8 venues total — 5 in India (MA Chidambaram Stadium Chennai, Arun Jaitley Stadium Delhi, Wankhede Stadium Mumbai, Eden Gardens Kolkata, Narendra Modi Stadium Ahmedabad) and 3 in Sri Lanka (Colombo R. Premadasa, Colombo SSC, Pallekele).",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
         },
-        # --- Vandana Arjuna award ---
         {
             "id": 27068,
-            "question_text": "In which year did Vandana Katariya receive the Arjuna Award for her contributions to Indian hockey?",
-            "option_a": "2018",
-            "option_b": "2019",
-            "option_c": "2021",
-            "option_d": "2023",
+            "question_text": "Which Indian fast bowler took 4 wickets for 15 runs in the T20 WC 2026 final, continuing his dominance in big matches?",
+            "option_a": "Mohammed Shami",
+            "option_b": "Arshdeep Singh",
+            "option_c": "Jasprit Bumrah",
+            "option_d": "Mohammed Siraj",
             "correct_answer": "C",
-            "explanation": "Vandana Katariya received the Arjuna Award in 2021 for her contributions to Indian hockey. She also received the Padma Shri in 2022 and the Hockey India Dhanraj Pillay Award for Forward of the Year in 2021 and 2022.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "Jasprit Bumrah took 4/15 in the T20 World Cup 2026 final against New Zealand at Narendra Modi Stadium, Ahmedabad. Along with Axar Patel's 3/27, this bowling performance dismissed NZ for just 159 chasing 256.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- ICC T20 2022 winner ---
         {
             "id": 27069,
-            "question_text": "Which country won the ICC Men's T20 World Cup 2022 held in Australia?",
-            "option_a": "India",
-            "option_b": "Pakistan",
-            "option_c": "England",
-            "option_d": "Australia",
-            "correct_answer": "C",
-            "explanation": "England won the ICC Men's T20 World Cup 2022 held in Australia, defeating Pakistan by 5 wickets in the final at Melbourne. India had lost to England in the semi-finals.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "India's maiden ICC Women's ODI World Cup 2025 win was hosted by India. Which city hosted the final?",
+            "option_a": "Mumbai (Wankhede)",
+            "option_b": "Navi Mumbai (Dr. DY Patil Stadium)",
+            "option_c": "Pune (Maharashtra Cricket Association Stadium)",
+            "option_d": "Chennai (MA Chidambaram Stadium)",
+            "correct_answer": "B",
+            "explanation": "The ICC Women's ODI World Cup 2025 final was played at the Dr. DY Patil Stadium in Navi Mumbai. India defeated South Africa by 52 runs to win their maiden Women's World Cup title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
         },
-        # --- Sumit Antil ---
         {
             "id": 27070,
-            "question_text": "Para-athlete Sumit Antil won a Gold medal at Paris Paralympics 2024 in which event?",
-            "option_a": "F64 Discus Throw",
-            "option_b": "F64 Javelin Throw",
-            "option_c": "T64 Long Jump",
-            "option_d": "F44 Shot Put",
-            "correct_answer": "B",
-            "explanation": "Sumit Antil won Gold in F64 Javelin Throw at Paris Paralympics 2024, setting a new world record. He had previously won gold at Tokyo 2020. F64 is the classification for single leg amputation below the knee. He is a Khel Ratna awardee.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Who was the first Indian (and first Asian) to successfully defend a T20 World Cup title as captain?",
+            "option_a": "Virat Kohli",
+            "option_b": "MS Dhoni",
+            "option_c": "Rohit Sharma",
+            "option_d": "KL Rahul",
+            "correct_answer": "C",
+            "explanation": "Rohit Sharma led India to the T20 WC 2024 title (West Indies+USA) and successfully defended it in the T20 WC 2026 (India+Sri Lanka) — making India the first nation to defend the T20 World Cup and Rohit the first captain to successfully defend the title.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Gukesh Khel Ratna ---
         {
             "id": 27071,
-            "question_text": "D Gukesh received which India's highest sports honour in 2024?",
-            "option_a": "Arjuna Award",
-            "option_b": "Dhyan Chand Award",
-            "option_c": "Khel Ratna (Major Dhyan Chand Khel Ratna Award)",
-            "option_d": "Dronacharya Award",
-            "correct_answer": "C",
-            "explanation": "D Gukesh received the Major Dhyan Chand Khel Ratna Award (India's highest sports honour) in 2024 for becoming World Chess Champion. Other Khel Ratna 2024 recipients included Manu Bhaker, Harmanpreet Singh, and Praveen Kumar.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Carlos Alcaraz won which two Grand Slams in 2025?",
+            "option_a": "Australian Open and Wimbledon",
+            "option_b": "French Open and US Open",
+            "option_c": "Australian Open and US Open",
+            "option_d": "Wimbledon and French Open",
+            "correct_answer": "B",
+            "explanation": "Carlos Alcaraz (Spain) won the French Open and US Open in 2025. Jannik Sinner won the Australian Open and Wimbledon. This identical split to 2024 confirmed Sinner and Alcaraz as the top two players in men's tennis.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- 2026 Olympics winter ---
         {
             "id": 27072,
-            "question_text": "The 2026 Winter Olympics will be hosted by which city?",
-            "option_a": "Oslo, Norway",
-            "option_b": "Milan-Cortina, Italy",
-            "option_c": "Sapporo, Japan",
-            "option_d": "Salt Lake City, USA",
+            "question_text": "Which upcoming 2026 sporting event will India and Sri Lanka co-host?",
+            "option_a": "ICC Men's ODI World Cup 2026",
+            "option_b": "ICC Men's T20 World Cup 2026",
+            "option_c": "ICC Women's T20 World Cup 2026",
+            "option_d": "Asia Cup 2026",
             "correct_answer": "B",
-            "explanation": "The 2026 Winter Olympics will be held in Milan-Cortina, Italy. This will be Italy's third Winter Olympics after Cortina d'Ampezzo (1956) and Turin (2006).",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "India and Sri Lanka co-hosted the ICC Men's T20 World Cup 2026 (Feb 7 – March 8, 2026). India won the tournament, defeating New Zealand by 96 runs in the final at Narendra Modi Stadium, Ahmedabad.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "easy",
+            "marks": 1
         },
-        # --- Para World Record Previous ---
         {
             "id": 27073,
-            "question_text": "Mahendra Gurjar's world record of 61.17m broke the previous record of 59.19m set by whom?",
-            "option_a": "Germany's Thomas Röhler",
-            "option_b": "Brazil's Roberto Floriani Edenilson",
-            "option_c": "Canada's Scott Martin",
-            "option_d": "Australia's Todd Hodgetts",
-            "correct_answer": "B",
-            "explanation": "Mahendra Gurjar's 61.17m world record in F42 Javelin Throw surpassed the previous world record of 59.19 metres set by Brazil's Roberto Floriani Edenilson in 2022, at the 2025 Nottwil World Para Athletics Grand Prix in Switzerland.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "What is Neeraj Chopra's significance in javelin throw as of 2025?",
+            "option_a": "First Indian to win an Olympic gold in any track/field event (2020) and first Indian to cross 90m (2025)",
+            "option_b": "First Asian to win a javelin gold at any major championships",
+            "option_c": "World record holder in men's javelin throw",
+            "option_d": "Only active athlete to have won Olympic, World, and Asian Championship gold",
+            "correct_answer": "A",
+            "explanation": "Neeraj Chopra made two landmark achievements: Olympic gold at Tokyo 2020 (first Indian field event Olympic gold) and then at Doha Diamond League 2025, he threw 90.23m to become the first Indian (and 25th man in history) to cross the 90-metre mark.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- ISSF host ---
         {
             "id": 27074,
-            "question_text": "The ISSF World Cup Lima 2025 was held in which country?",
-            "option_a": "Argentina",
-            "option_b": "Brazil",
-            "option_c": "Colombia",
-            "option_d": "Peru",
-            "correct_answer": "D",
-            "explanation": "The ISSF World Cup for Rifle and Shotgun 2025 was held in Lima, the capital city of Peru (April 13-22, 2025). India finished 3rd with 2 Gold, 4 Silver, and 1 Bronze medal, behind China (1st) and USA (2nd).",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "In which city was the World Chess Championship 2024 (won by Gukesh) held?",
+            "option_a": "Dubai, UAE",
+            "option_b": "Singapore",
+            "option_c": "Mumbai, India",
+            "option_d": "Reykjavik, Iceland",
+            "correct_answer": "B",
+            "explanation": "The World Chess Championship 2024 was held in Singapore. Gukesh Dommaraju defeated Ding Liren 7.5-6.5 in 14 games to become the youngest undisputed World Chess Champion on December 12, 2024.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Chess Olympiad ---
         {
             "id": 27075,
-            "question_text": "The FIDE Chess Olympiad 2024, which India won both Open and Women's gold, was held in which city?",
-            "option_a": "Chennai, India",
-            "option_b": "Warsaw, Poland",
-            "option_c": "Budapest, Hungary",
-            "option_d": "Vienna, Austria",
+            "question_text": "What was India's match-winning total in the ICC T20 World Cup 2026 final — the highest in a T20 WC final?",
+            "option_a": "232/5",
+            "option_b": "245/4",
+            "option_c": "255/5",
+            "option_d": "261/6",
             "correct_answer": "C",
-            "explanation": "The FIDE Chess Olympiad 2024 was held in Budapest, Hungary. India swept both the Open and Women's team gold medals — a historic double. India hosted the Chess Olympiad in Chennai in 2022.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "India scored 255/5 in the T20 World Cup 2026 final at Narendra Modi Stadium, Ahmedabad — the highest total ever in a T20 World Cup final. India won by 96 runs as New Zealand were bowled out for 159.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Para India best tally ---
         {
             "id": 27076,
-            "question_text": "India's 29 medals at Paris Paralympics 2024 was its best-ever Paralympic tally, surpassing the previous best of how many medals?",
-            "option_a": "13",
-            "option_b": "17",
-            "option_c": "19",
-            "option_d": "23",
-            "correct_answer": "C",
-            "explanation": "India's 29 medals at Paris Paralympics 2024 (7 Gold + 9 Silver + 13 Bronze) surpassed its previous best of 19 medals won at the Tokyo 2020 Paralympics. This represents the rapid growth of India's para-sports program.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "India won three ICC titles in 2025-2026. Which of the following is the correct list?",
+            "option_a": "ODI WC 2023 + CT 2025 + T20 WC 2026",
+            "option_b": "CT 2025 (men) + Women's ODI WC 2025 + T20 WC 2026 (men)",
+            "option_c": "T20 WC 2024 + CT 2025 + Women's T20 WC 2025",
+            "option_d": "CT 2025 + T20 WC 2026 + Women's CT 2025",
+            "correct_answer": "B",
+            "explanation": "India's three major ICC titles in 2025-26: (1) ICC Champions Trophy 2025 — men beat NZ by 4 wickets (March 9, Dubai); (2) ICC Women's ODI World Cup 2025 — beat SA by 52 runs (Navi Mumbai); (3) ICC Men's T20 WC 2026 — beat NZ by 96 runs (March 8, Ahmedabad).",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
         },
-        # --- ICC women's T20 WC 2024 ---
         {
             "id": 27077,
-            "question_text": "Which country won the ICC Women's T20 World Cup 2024?",
-            "option_a": "Australia",
-            "option_b": "India",
-            "option_c": "New Zealand",
-            "option_d": "England",
+            "question_text": "The 2026 Asian Games in Aichi-Nagoya will be the ___th edition of the Asian Games:",
+            "option_a": "18th",
+            "option_b": "19th",
+            "option_c": "20th",
+            "option_d": "21st",
             "correct_answer": "C",
-            "explanation": "New Zealand won the ICC Women's T20 World Cup 2024 held in UAE, defeating South Africa in the final. This was New Zealand's first ICC Women's T20 World Cup title.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "explanation": "The 2026 Asian Games (Aichi-Nagoya, Japan, September 19 – October 4) will be the 20th edition of the Asian Games. Japan last hosted the Asian Games in Tokyo in 1958.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
         },
-        # --- AFC teams ---
         {
             "id": 27078,
-            "question_text": "AFC stands for which full form in the context of football's Asian qualifying federation for FIFA World Cup?",
-            "option_a": "Africa Football Confederation",
-            "option_b": "Asian Football Championship",
-            "option_c": "Asian Football Confederation",
-            "option_d": "All Football Committee",
-            "correct_answer": "C",
-            "explanation": "AFC stands for Asian Football Confederation — the governing body for football in Asia. For the 2026 FIFA World Cup, at least 8 AFC teams can qualify due to the expanded 48-team format. Japan was the first AFC team to qualify.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Divya Deshmukh won the FIDE Women's World Cup 2025 at the age of:",
+            "option_a": "16",
+            "option_b": "17",
+            "option_c": "18",
+            "option_d": "19",
+            "correct_answer": "D",
+            "explanation": "Divya Deshmukh was 19 years old when she won the FIDE Women's World Cup 2025 in Goa, defeating Koneru Humpy in an all-Indian final. She also achieved the Grandmaster norm during the tournament.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- Manu Bhaker history ---
         {
             "id": 27079,
-            "question_text": "Manu Bhaker became the first Indian since Independence to win how many medals at a single Olympics?",
-            "option_a": "1",
-            "option_b": "2",
-            "option_c": "3",
-            "option_d": "4",
-            "correct_answer": "B",
-            "explanation": "Manu Bhaker became the first Indian since Independence to win 2 medals at a single Olympics at Paris 2024 — Bronze in Women's 10m Air Pistol and Bronze in Mixed Team 10m Air Pistol (with Sarabjot Singh). She was also the first Indian woman to win an Olympic shooting medal.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "question_text": "Which Indian Women's cricket star took 5/39 in the 2025 Women's ODI World Cup final AND was also the Player of the Tournament?",
+            "option_a": "Smriti Mandhana",
+            "option_b": "Jhulan Goswami",
+            "option_c": "Deepti Sharma",
+            "option_d": "Harmanpreet Kaur",
+            "correct_answer": "C",
+            "explanation": "Deepti Sharma was the standout performer in the ICC Women's ODI World Cup 2025 — she scored 58 runs batting and took 5/39 in the final against South Africa, also winning the Player of the Tournament award for her consistent contributions throughout.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "medium",
+            "marks": 1
         },
-        # --- ISSF Lima 2nd event ---
         {
             "id": 27080,
-            "question_text": "Where was the first ISSF World Cup 2025 (Rifle and Shotgun) held before the Lima event?",
-            "option_a": "Baku, Azerbaijan",
-            "option_b": "Buenos Aires, Argentina",
-            "option_c": "Cairo, Egypt",
-            "option_d": "New Delhi, India",
-            "correct_answer": "B",
-            "explanation": "The first ISSF World Cup 2025 (Rifle and Shotgun) was held in Buenos Aires, Argentina (April 1-10, 2025). The second event was held in Lima, Peru (April 13-22, 2025), where India finished 3rd with 7 medals.",
-            "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
-        },
+            "question_text": "Which correctly identifies the 2025-26 sports year at a glance?",
+            "option_a": "CT 2025 host: India; Chess WC 2024 youngest champion: Praggnanandhaa; T20 WC 2026 host: Australia",
+            "option_b": "Hockey Asia Cup 2025 winner: Pakistan; Tennis AO 2025 men: Zverev; Women's ODI WC 2025: Australia won",
+            "option_c": "ICC CT 2025: India won in Dubai (beat NZ); D. Gukesh: youngest chess WC (Dec 2024); Neeraj 90.23m: first Indian 90m+ at Doha DL 2025",
+            "option_d": "ICC T20 WC 2026: Pakistan won; Ballon d'Or 2025: Vinicius Jr.; Women's ODI WC 2025: England won",
+            "correct_answer": "C",
+            "explanation": "Option C correctly captures: India won CT 2025 in Dubai beating NZ; Gukesh became youngest-ever chess world champion (Dec 12, 2024, Singapore); Neeraj Chopra threw 90.23m at Doha DL 2025 — first Indian to cross 90m. All other options contain factual errors.",
+            "topic": "National_Current_Affairs",
+            "folder": "General_Science",
+            "difficulty": "hard",
+            "marks": 1
+        }
     ]
 
-    for q in questions:
-        cur.execute(
-            f"""INSERT OR IGNORE INTO questions
+    if USE_POSTGRES:
+        sql = """
+            INSERT INTO questions
                 (id, question_text, option_a, option_b, option_c, option_d,
-                 correct_answer, explanation, folder, topic)
-                VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
-            (q["id"], q["question_text"], q["option_a"], q["option_b"],
-             q["option_c"], q["option_d"], q["correct_answer"],
-             q["explanation"], q["folder"], q["topic"])
-        )
+                 correct_answer, explanation, topic, folder, difficulty, marks)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            ON CONFLICT (id) DO NOTHING
+        """
+    else:
+        sql = """
+            INSERT OR IGNORE INTO questions
+                (id, question_text, option_a, option_b, option_c, option_d,
+                 correct_answer, explanation, topic, folder, difficulty, marks)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+        """
+
+    for q in questions:
+        cur.execute(sql, (
+            q["id"], q["question_text"],
+            q["option_a"], q["option_b"], q["option_c"], q["option_d"],
+            q["correct_answer"], q["explanation"],
+            q["topic"], q["folder"], q["difficulty"], q["marks"]
+        ))
 
     conn.commit()
+    cur.close()
     conn.close()
+    print(f"[seed_sports_mcq] Inserted {len(questions)} Sports 2025-2026 questions (IDs 27001-27080).")
 
 if __name__ == "__main__":
     seed()
-    print("Sports Current Affairs MCQs seeded: IDs 27001–27080")

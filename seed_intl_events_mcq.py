@@ -1,499 +1,155 @@
 """
-Seed: International Events, Appointments & Developments MCQs
-IDs 29001–29080 | Topic: National_Current_Affairs
-Run standalone: python seed_intl_events_mcq.py
-Auto-run: called from app.py init_db()
+seed_intl_events_mcq.py
+80 GKToday-style MCQs — Topic: National_Current_Affairs
+Sub-topic: International Events & Appointments 2025-2026 ONLY
+Folder: General_Science | IDs: 29001-29080
+NOTE: seed() runs DELETE+INSERT to force-refresh stale 2024 data.
 """
 
-import os, sys
+import os, sqlite3
 
-DATABASE_URL = os.environ.get('DATABASE_URL', '')
-if DATABASE_URL.startswith('postgres://'):
-    DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://', 1)
+DATABASE_URL = os.environ.get("DATABASE_URL", "")
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 USE_POSTGRES = bool(DATABASE_URL)
 
-if USE_POSTGRES:
-    import psycopg2
-    import psycopg2.extras
-else:
-    import sqlite3
-
-DB_PATH = os.path.join(os.path.dirname(__file__), 'database.db')
-
-
-def get_conn():
-    if USE_POSTGRES:
-        return psycopg2.connect(DATABASE_URL)
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
-
-
-def _fv(row):
-    if row is None:
-        return 0
-    if isinstance(row, dict):
-        return list(row.values())[0]
-    return list(row)[0]
-
-
-QUESTIONS = [
-    # ── Global Elections & Leadership ──
-    (29001, "Donald Trump was elected as the _____ President of the United States in November 2024.",
-     "45th", "46th", "47th", "48th",
-     "C", "Donald Trump won the US Presidential Election on November 5, 2024, becoming the 47th President. He was inaugurated on January 20, 2025, with JD Vance as Vice President.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29002, "Who became the Prime Minister of the United Kingdom after the Labour Party's landslide victory in July 2024?",
-     "Boris Johnson", "Rishi Sunak", "Keir Starmer", "Jeremy Corbyn",
-     "C", "Keir Starmer became UK Prime Minister after Labour won the July 4, 2024 general election with a landslide, defeating Rishi Sunak's Conservative Party.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29003, "Sanae Takaichi, elected as Japan's first female Prime Minister in October 2025, was Japan's _____ Prime Minister.",
-     "100th", "102nd", "104th", "106th",
-     "C", "Sanae Takaichi was elected Japan's first female Prime Minister on October 21, 2025, becoming the 104th PM. Her LDP formed a coalition with Japan Innovation Party (Ishin).",
-     "General_Science", "National_Current_Affairs"),
-
-    (29004, "Who became Canada's Prime Minister in March 2025, succeeding Justin Trudeau?",
-     "Chrystia Freeland", "Mark Carney", "Pierre Poilievre", "Jagmeet Singh",
-     "B", "Mark Carney, former Governor of Bank of Canada and Bank of England, became Canada's Prime Minister on March 14, 2025 after Justin Trudeau resigned in January 2025.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29005, "Friedrich Merz became the Chancellor of Germany after which party won the February 2025 elections?",
-     "SPD", "FDP", "CDU/CSU", "Greens",
-     "C", "Friedrich Merz of CDU/CSU won the German federal elections held on February 23, 2025, succeeding Olaf Scholz (SPD) whose coalition had collapsed.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29006, "South Korean President Yoon Suk-yeol was impeached in December 2024 after declaring:",
-     "Emergency economic policy", "Martial law", "State of war", "Presidential emergency",
-     "B", "President Yoon Suk-yeol declared martial law on December 3, 2024. The National Assembly voted to impeach him on December 14, 2024. The Constitutional Court upheld the impeachment on April 4, 2025.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29007, "Who won South Korea's snap presidential election held on June 3, 2025?",
-     "Han Duck-soo", "Lee Jae-myung", "Yoon Suk-yeol", "Hong Joon-pyo",
-     "B", "Lee Jae-myung of the Democratic Party won South Korea's snap presidential election on June 3, 2025, following the impeachment and removal of Yoon Suk-yeol.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29008, "Sushila Karki was sworn as interim Prime Minister of Nepal in 2025. She was previously Nepal's first:",
-     "Foreign Minister", "Defence Minister", "Chief Justice", "Finance Minister",
-     "C", "Sushila Karki, 73, was Nepal's first woman Chief Justice (2016-17), known for her zero-tolerance stance on corruption. She became interim PM after mass protests forced KP Sharma Oli to resign.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29009, "Andrew Holness won a _____ term as Prime Minister of Jamaica in the September 2025 elections.",
-     "First", "Second", "Third", "Fourth",
-     "C", "Andrew Holness won a third term as PM of Jamaica, with his Jamaica Labour Party (JLP) winning 34 of 63 seats. Jamaica recorded a 43% drop in killings in 2025 under his tenure.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29010, "Sheikh Hasina resigned as Prime Minister of Bangladesh on August 5, 2024, after student-led protests. Who heads Bangladesh's interim government?",
-     "General Waker-Uz-Zaman", "Muhammad Yunus", "Kamal Hossain", "Mirza Fakhrul Islam",
-     "B", "Nobel laureate economist Muhammad Yunus was invited to head Bangladesh's interim government after Sheikh Hasina fled to India on August 5, 2024, following student-led mass protests.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── Pope & Vatican ──
-    (29011, "Pope Francis, who passed away on April 21, 2025, was the first pope from which continent?",
-     "Asia", "Africa", "North America", "South America",
-     "D", "Pope Francis (Jorge Mario Bergoglio, born in Argentina) was the first pope from Latin America (South America). He served from 2013 to 2025 and died at the age of 88.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29012, "Pope Leo XIV, elected on May 8, 2025, holds the distinction of being the:",
-     "First African pope", "First Asian pope", "First American pope", "First Eastern European pope",
-     "C", "Pope Leo XIV (birth name: Robert Francis Prevost, born in Chicago, USA) is the first American pope in history. He is also the first Augustinian to become pope.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── Syria / Global Conflicts ──
-    (29013, "Bashar al-Assad fled Syria on December 8, 2024, as rebel forces captured Damascus. Which group led the rebel coalition?",
-     "ISIS", "Al-Qaeda", "HTS (Hayat Tahrir al-Sham)", "Free Syrian Army",
-     "C", "Hayat Tahrir al-Sham (HTS), led by Ahmed al-Sharaa (also known as Abu Mohammad al-Jolani), captured Damascus on December 8, 2024. Assad fled to Russia, ending 54 years of Assad family rule.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29014, "The Gaza ceasefire Phase 1 agreement was reached on January 15, 2025. Which three countries mediated it?",
-     "USA, UK, France", "Qatar, Egypt, USA", "Saudi Arabia, Jordan, USA", "UN, Egypt, Qatar",
-     "B", "The Phase 1 ceasefire between Israel and Hamas was mediated by Qatar, Egypt, and the United States. It began on January 19, 2025 and involved a hostage-prisoner exchange.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── India – Operation Sindoor ──
-    (29015, "India launched Operation Sindoor on May 7, 2025, in response to which terrorist attack?",
-     "Uri attack", "Pulwama attack", "Pahalgam attack", "Pathankot attack",
-     "C", "India launched Operation Sindoor on May 7, 2025, with precision strikes on 9 terror infrastructure sites in Pakistan and PoK, in response to the Pahalgam terrorist attack (April 22, 2025) in which 26 tourists were killed.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29016, "How many terror infrastructure sites in Pakistan and Pakistan-occupied Kashmir were struck during Operation Sindoor?",
-     "5", "7", "9", "12",
-     "C", "Operation Sindoor targeted 9 terror infrastructure sites in Pakistan and PoK on May 7, 2025. India-Pakistan ceasefire was announced on May 10, 2025.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── BRICS ──
-    (29017, "Which of the following countries did NOT join BRICS as a new member on January 1, 2024?",
-     "Saudi Arabia", "Egypt", "Turkey", "Iran",
-     "C", "The new BRICS members who joined on January 1, 2024 were: Saudi Arabia, UAE, Egypt, Iran, and Ethiopia. Turkey did NOT join BRICS in 2024.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29018, "The BRICS Summit 2024 was held in which city?",
-     "Beijing, China", "Moscow, Russia", "Kazan, Russia", "New Delhi, India",
-     "C", "The BRICS Summit 2024 was held in Kazan, Russia, in October 2024. After the new members joined in January 2024, BRICS expanded to 10 members.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── WHO & Health ──
-    (29019, "The WHO declared a polio outbreak in which country in 2025, a nation that had been polio-free since 2000?",
-     "Fiji", "Papua New Guinea", "Solomon Islands", "Vanuatu",
-     "B", "WHO declared a polio outbreak in Papua New Guinea after poliovirus was found in healthy children in Lae city during routine screening. Low immunisation rates led to the return after the country was polio-free since 2000.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29020, "Suriname became the first country in the Amazon region to receive WHO malaria-free certification on:",
-     "January 15, 2025", "March 28, 2025", "June 30, 2025", "September 12, 2025",
-     "C", "WHO certified Suriname malaria-free on June 30, 2025 — making it the first Amazon region country to achieve this recognition, after nearly 70 years of efforts.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29021, "The World Health Assembly (WHA) of WHO passed a resolution titled 'Skin Diseases as a Global Public Health Priority'. Skin diseases affect approximately how many people worldwide?",
-     "500 million", "1.1 billion", "1.9 billion", "2.5 billion",
-     "C", "Skin diseases affect approximately 1.9 billion people globally. The WHO World Health Assembly passed the resolution calling for a Global Action Plan focused on prevention, detection, treatment, and care.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── International Bodies & HQs ──
-    (29022, "Where is the headquarters of the International Atomic Energy Agency (IAEA) located?",
-     "Geneva, Switzerland", "New York, USA", "Vienna, Austria", "Brussels, Belgium",
-     "C", "The IAEA is headquartered in Vienna, Austria. Its Statute was approved on October 23, 1956 and came into force on July 29, 1957. It has 178 member countries.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29023, "ICAO was established under which international convention of 1944?",
-     "Geneva Convention", "Vienna Convention", "Montreal Convention", "Chicago Convention",
-     "D", "The International Civil Aviation Organization (ICAO) was established under the Chicago Convention of 1944. Its headquarters are in Montreal, Canada. It is a UN specialized agency.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29024, "Where is the headquarters of UNODC (United Nations Office on Drugs and Crime)?",
-     "Geneva, Switzerland", "New York, USA", "Vienna, Austria", "Brussels, Belgium",
-     "C", "UNODC is headquartered in Vienna, Austria. It was established in 1997 by merging the UN Drug Control Programme and Centre for International Crime Prevention.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29025, "Khaled el-Anani, nominated as the next Director-General of UNESCO, is from which country?",
-     "Morocco", "Tunisia", "Egypt", "Algeria",
-     "C", "Khaled el-Anani, former Egyptian Minister of Tourism and Antiquities, was nominated as the next Director-General of UNESCO. UNESCO is headquartered in Paris, France.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29026, "The New Development Bank (NDB) was established by BRICS nations. Where is its headquarters?",
-     "Beijing, China", "Mumbai, India", "Shanghai, China", "Moscow, Russia",
-     "C", "The NDB (also known as BRICS Development Bank) is headquartered in Shanghai, China. It was set up by Brazil, Russia, India, China, and South Africa to fund infrastructure and sustainable development.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29027, "MERCOSUR, the South American trade bloc, was established by which treaty?",
-     "Treaty of Montevideo", "Treaty of Asunción", "Treaty of Buenos Aires", "Treaty of Brasilia",
-     "B", "MERCOSUR (Southern Common Market) was established in 1991 through the Treaty of Asunción. Its headquarters are in Montevideo, Uruguay. Original members: Argentina, Brazil, Paraguay, Uruguay.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29028, "The International Electrotechnical Commission (IEC), established in 1906, is headquartered in:",
-     "London, UK", "Paris, France", "Geneva, Switzerland", "Vienna, Austria",
-     "C", "IEC is headquartered in Geneva, Switzerland. India hosted the 89th IEC General Meeting at Bharat Mandapam, New Delhi, in September 2025 — the 4th time India hosted.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29029, "The Codex Alimentarius Commission (CAC), which sets international food standards, was jointly established by:",
-     "WHO and UNICEF", "FAO and WHO", "World Bank and FAO", "WTO and FAO",
-     "B", "The Codex Alimentarius Commission was established jointly by FAO (Food and Agriculture Organization) and WHO. India's role in Millets Group Standards was appreciated at the 88th Executive Committee session in Rome, July 2025.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29030, "Who is the WTO Director General, who was reappointed for a second term through 2027, and holds the distinction of being the first woman and first African to lead WTO?",
-     "Christine Lagarde", "Kristalina Georgieva", "Ngozi Okonjo-Iweala", "Amina Mohammed",
-     "C", "Ngozi Okonjo-Iweala (Nigeria) is the WTO Director General, reappointed for a second term through 2027. She is the first African and first woman to lead the World Trade Organization.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── India International ──
-    (29031, "India launched Operation Sagar Bandhu to provide HADR assistance to Sri Lanka after which natural disaster?",
-     "Cyclone Ditwah", "Cyclone Michaung", "Cyclone Remal", "Cyclone Biparjoy",
-     "A", "India launched Operation Sagar Bandhu after Cyclone Ditwah made landfall in Sri Lanka on November 27, 2025. The IAF delivered approximately 12 tonnes of relief including tents, blankets, and ready-to-eat food.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29032, "BHISHM Cubes were gifted by India to Maldives on the occasion of Maldives' 60th Independence Day. BHISHM stands for:",
-     "Bharat Health Initiative for Sahyog, Hita & Maitri", "Bharat Humanitarian Initiative for Safety, Health & Medicine", "Bharat Health Infrastructure for Surge, Hazard & Management", "Bharat Help Initiative for Stabilisation, Health & Medicine",
-     "A", "BHISHM = Bharat Health Initiative for Sahyog, Hita & Maitri. The PM gifted 2 BHISHM cubes to Maldivian President Mohamed Muizzu. Each cube handles 200 emergency cases and includes AI systems and surgical tools.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29033, "India is the first country to hold two ISA (International Seabed Authority) contracts for exploring which mineral deposit in the Indian Ocean?",
-     "Polymetallic nodules", "Cobalt-rich crusts", "Polymetallic sulphides", "Phosphorite nodules",
-     "C", "India became the first country to hold two ISA contracts for polymetallic sulphides in the Indian Ocean. These deposits contain copper, zinc, gold, and silver — essential for clean energy and high-tech applications.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29034, "Which Indian agency represents India as the national central bureau for Interpol matters?",
-     "NIA (National Investigation Agency)", "RAW (Research and Analysis Wing)", "CBI (Central Bureau of Investigation)", "IB (Intelligence Bureau)",
-     "C", "The CBI (Central Bureau of Investigation) is India's national central bureau for Interpol. India was elected to the Interpol Asian Committee at the 25th Asian Regional Conference held in Singapore.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29035, "The India-UK Free Trade Agreement was signed in which month of 2025?",
-     "January 2025", "March 2025", "May 2025", "August 2025",
-     "C", "The India-UK Free Trade Agreement (FTA) was signed on May 6, 2025, after about 3 years of negotiations (beginning 2022). It covers goods, services, digital trade, and investment.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29036, "LeadIT (Leadership Group for Industry Transition) was launched jointly by India and which country in 2019?",
-     "Germany", "Sweden", "Norway", "Denmark",
-     "B", "LeadIT was launched in 2019 by India and Sweden, supported by the World Economic Forum (WEF). It targets net-zero emissions from heavy industries by 2050. Its secretariat is hosted by the Stockholm Environment Institute.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29037, "India re-elected to Part II of ICAO Council represents states that:",
-     "Have most aircraft in service", "Contribute most to international civil air navigation facilities", "Have the most airports", "Carry most international passengers",
-     "B", "Part II of the ICAO Council represents states contributing most to international civil air navigation facilities. India has been a founding ICAO member since 1944 — 81 years of uninterrupted Council presence.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29038, "Which pilgrimage to Tibet was resumed by India in 2025 after a 5-year gap, as part of India-China rapprochement?",
-     "Mansarovar Yatra via Nathu La", "Kailash Mansarovar Yatra", "Kang Rinpoche Yatra", "Tso Mapham Pilgrimage",
-     "B", "The Kailash Mansarovar Yatra was resumed in 2025 after a 5-year pause, as part of India-China confidence-building measures. India and China also restored visas, flights, and resumed water-data sharing on rivers.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29039, "Russia formally recognised the Taliban government of Afghanistan on July 3, 2025. Which country does this make Russia in terms of recognising the Taliban?",
-     "First country", "Second country", "Third country", "Fifth country",
-     "A", "Russia became the first country in the world to formally recognise the Taliban government (which took power in 2021). Russia removed Taliban from its list of outlawed organisations and accepted Afghanistan's ambassador.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29040, "The Bagram Air Base, which the Taliban rejected returning to the US in 2025, is located north of which city in Afghanistan?",
-     "Kandahar", "Herat", "Kabul", "Mazar-i-Sharif",
-     "C", "Bagram Air Base is located north of Kabul, Afghanistan. It is the largest airbase in Afghanistan, originally built by the Soviet Union and later used by the US as its largest military installation in Afghanistan.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── Countries in News ──
-    (29041, "China's Tianwen-2 mission was launched to collect samples from which asteroid?",
-     "Bennu", "Ryugu", "2016HO3", "Apophis",
-     "C", "China launched the Tianwen-2 probe on a Long March 3-B rocket to collect samples from asteroid 2016HO3 and explore the main-belt comet 311P. The mission continues till end of 2027.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29042, "Iran's Bushehr plant is the country's only operational nuclear power facility. It was completed by which country in 2011?",
-     "China", "North Korea", "Russia", "France",
-     "C", "Bushehr nuclear plant, Iran's only operational nuclear facility, was completed by Russia in May 2011. Russia announced plans to build eight more nuclear plants in Iran under an existing agreement.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29043, "The South Pars gas field, the world's largest natural gas field, is jointly owned by Iran and which country?",
-     "Kuwait", "Iraq", "Saudi Arabia", "Qatar",
-     "D", "South Pars gas field, located in Bushehr province in the Persian Gulf, is jointly owned by Iran and Qatar. Iran is the world's 3rd largest gas producer (~275 billion cubic metres/year).",
-     "General_Science", "National_Current_Affairs"),
-
-    (29044, "Israel's 'Samson Option' refers to which defense doctrine?",
-     "Cyber warfare first-strike capability", "Massive nuclear retaliation if facing existential threat", "Iron Dome missile defence expansion", "Pre-emptive conventional military strikes",
-     "B", "The Samson Option is Israel's alleged doctrine of massive nuclear retaliation if the country faces an existential threat. Israel follows 'amimut' (deliberate ambiguity) — neither confirming nor denying nuclear weapons.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29045, "Typhoon Danas made a rare direct landfall in which country's Chiayi County — the first recorded typhoon strike there?",
-     "Japan", "Philippines", "Taiwan", "Vietnam",
-     "C", "Typhoon Danas made a rare and unusual direct landfall in Chiayi County, Taiwan — the first recorded typhoon strike in the area. Gusts reached up to 222 km/h.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29046, "Mount Lewotobi Laki-laki, which erupted sending ash 10 km high, is located on which island of Indonesia?",
-     "Java", "Sumatra", "Bali", "Flores",
-     "D", "Mount Lewotobi Laki-laki is an active stratovolcano located on Flores island in East Nusa Tenggara province, Indonesia. It is part of the twin-peaked Lewotobi volcanic complex within the Pacific Ring of Fire.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29047, "Hawaii became the first US state to introduce a 'Green Fee'. This fee applies to all of the following EXCEPT:",
-     "Hotel stays", "Short-term rentals", "Domestic flights", "Cruise ship passengers",
-     "C", "Hawaii's Green Fee applies to hotel stays, short-term rentals, and cruise ship passengers. Domestic flights are not part of the fee. It funds climate resiliency, conservation, and invasive species control.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29048, "Japan's AI law of May 2025 (Act on Promotion of Research, Development and Utilisation of AI) differs from the EU AI Act because it:",
-     "Bans AI completely", "Takes a strict risk-level regulatory approach", "Encourages voluntary responsibility instead of heavy regulation", "Limits AI to government use only",
-     "C", "Unlike the EU AI Act (2024) which divides AI into risk levels and imposes strict rules, Japan's approach encourages coordination and voluntary responsibility — a flexible model.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29049, "Saudi Arabia's TOURISE platform was launched to redefine tourism for the next how many years?",
-     "10 years", "25 years", "50 years", "100 years",
-     "C", "Saudi Arabia launched TOURISE as a global platform for the next 50 years of tourism. The inaugural TOURISE Summit was scheduled for Riyadh, November 2025.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29050, "According to the UN World Urbanisation Prospects 2025, which city became the world's most populous with approximately 42 million people?",
-     "Tokyo", "Dhaka", "Beijing", "Jakarta",
-     "D", "Jakarta became the world's most populous city (42 million) according to the UN World Urbanisation Prospects 2025. Dhaka is 2nd (37M) and Tokyo slipped to 3rd (33M). The change is due to a new standard definition of urban areas.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── Agreements & Initiatives ──
-    (29051, "The EU's Carbon Border Adjustment Mechanism (CBAM) is part of which broader EU climate strategy?",
-     "Green Deal 2030", "Fit for 55", "Net Zero Europe", "Carbon Zero Initiative",
-     "B", "CBAM is part of the EU's 'Fit for 55' strategy — targeting a 55% reduction in greenhouse gas emissions by 2030. It targets carbon-intensive imports like steel, aluminium, and cement. Full enforcement begins 2026.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29052, "The Blue NDC Challenge was launched by France and Brazil at which international conference?",
-     "COP29 in Baku", "2nd UN Ocean Conference", "3rd UN Ocean Conference (UNOC3)", "G20 Environment Ministers Meeting",
-     "C", "France and Brazil launched the Blue NDC Challenge at the 3rd United Nations Ocean Conference (UNOC3). The initiative urges countries to put oceans at the centre of their climate strategies ahead of COP30 in Belém, Brazil.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29053, "NATO's annual Baltic Operations exercise BALTOPS 25 was held in which country?",
-     "Norway", "Latvia", "Estonia", "Poland",
-     "B", "NATO's BALTOPS 25 (Baltic Operations 2025) was held in Latvia. It is a large-scale multinational drill focused on rapid-response and interoperability across the Baltic Sea region.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29054, "Russia announced it will launch the world's first nuclear power system with a closed fuel cycle by 2030. Where will it be built?",
-     "St. Petersburg", "Novosibirsk", "Tomsk Region", "Chelyabinsk",
-     "C", "Putin announced Russia will build the world's first closed fuel cycle nuclear power system in the Tomsk Region by 2030. It will reuse up to 95% of spent fuel, reducing waste and uranium demand.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29055, "The SoLAR Phase II initiative on solar irrigation was launched by IWMI and which other organisation?",
-     "World Bank", "IRENA", "SDC (Swiss Agency for Development and Cooperation)", "UNDP",
-     "C", "SoLAR Phase II (Solar Irrigation for Agricultural Resilience) was launched by IWMI (International Water Management Institute) and SDC (Swiss Agency for Development and Cooperation). It covers India, Bangladesh, Kenya, and Ethiopia.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29056, "The UK's 'One-In, One-Out' migration scheme is an agreement with which country about Channel crossings?",
-     "Belgium", "Germany", "Netherlands", "France",
-     "D", "The One-In-One-Out Scheme is a migration agreement between the UK and France. France takes back asylum seekers who crossed illegally; for each one returned, the UK grants asylum to one eligible migrant from France.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29057, "ICAR launched 'Maitri 2.0', the second edition of the Brazil-India Cross-Incubation Programme. It relates to which sector?",
-     "Defence", "Agritech", "Pharmaceuticals", "Space Technology",
-     "B", "ICAR (Indian Council of Agricultural Research) launched Maitri 2.0 in New Delhi. It is the Brazil-India Cross-Incubation Programme in Agritech, building on the 77-year agricultural partnership between India and Brazil.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29058, "The SICA (Central American Integration System) was established in 1991 through which protocol?",
-     "Managua Protocol", "Panama Protocol", "Tegucigalpa Protocol", "Guatemala Protocol",
-     "C", "SICA was established in 1991 through the Tegucigalpa Protocol, amending the Charter of the Organization of Central American States (ODECA) of 1962. India-SICA Foreign Ministers met in New York.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29059, "The term 'Girmitiyas' refers to Indian indentured labourers who went to British colonies. The word 'Girmitiya' is derived from the Indian pronunciation of:",
-     "Guarantee", "Agreement", "Government", "Grammar",
-     "B", "The term 'Girmitiya' comes from 'girmit' — an Indian pronunciation of 'agreement'. These labourers signed agreements (girmit) to work in British colonies like Fiji, Mauritius, Trinidad, and Guyana.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29060, "Which word was named Oxford University Press's Word of the Year 2025?",
-     "Aura farming", "Biohack", "Rage bait", "Clickbait",
-     "C", "Oxford University Press named 'Rage bait' as Word of the Year 2025. Its online usage rose three times, referring to content designed to provoke anger to increase views and traffic. It beat shortlisted words like 'aura farming' and 'biohack'.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── More International Bodies ──
-    (29061, "IFAD (International Fund for Agricultural Development) is a specialised agency of which international body?",
-     "World Bank", "IMF", "United Nations", "WTO",
-     "C", "IFAD is an international financial institution and a specialised agency of the United Nations. Its primary objective is to eradicate poverty and hunger in rural areas of developing countries.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29062, "Palau, which hosted the world's first live underwater interview in October 2025, is an archipelago located east of which country?",
-     "Australia", "Japan", "Philippines", "Indonesia",
-     "C", "Palau is an archipelago of around 340 islands located east of the Philippines in the Pacific Ocean. President Surangel Whipps Jr conducted the world's first live underwater interview to raise ocean protection awareness.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29063, "OmanSat-1, Oman's first communications satellite, was developed in partnership with which company?",
-     "Boeing Space", "SpaceX", "Airbus Defence and Space", "ISRO",
-     "C", "OmanSat-1 was developed in partnership with Airbus Defence and Space, built on Airbus' OneSat platform. It will operate in the Ka frequency band covering Oman, Middle East, East Africa, and Asia.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29064, "The Dorjilung Hydroelectric Power Project (1,125 MW) signed between Tata Power and DGPC (Druk Green Power Corporation) is located in which country?",
-     "Nepal", "Bangladesh", "Bhutan", "Myanmar",
-     "C", "The Dorjilung Hydroelectric Power Project (1,125 MW) is located in Lhuentse and Mongar districts of Bhutan on the Kurichhu River. It will be Bhutan's 2nd-largest hydropower project. World Bank is financing it.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29065, "West Seti Hydropower Project (750 MW) is located on which river in Nepal?",
-     "Karnali River", "Gandaki River", "Seti River", "Koshi River",
-     "C", "The West Seti Hydropower Project is a 750 MW storage-based hydroelectric project on the Seti River (a tributary of the Karnali) in Nepal. It is being developed by NHPC (India) under a PPP model.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29066, "The India-China rapprochement in 2025 included restoring several bilateral ties. Which of the following was NOT resumed as part of this rapprochement?",
-     "Kailash Mansarovar Yatra", "Direct flights between India and China", "BCIM Economic Corridor project", "Water-data sharing on rivers",
-     "C", "The BCIM (Bangladesh-China-India-Myanmar) Economic Corridor project was NOT resumed. India-China restored: Kailash Mansarovar Yatra, direct flights, visas, and water-data sharing (Brahmaputra river data).",
-     "General_Science", "National_Current_Affairs"),
-
-    (29067, "LeadIT 2.0, launched at COP28, focuses on inclusive transition for which type of industries?",
-     "Agriculture and farming", "Mining and extraction", "Heavy industries (steel, cement, chemicals)", "Digital and IT sector",
-     "C", "LeadIT targets net-zero emissions from heavy industries (like steel, cement, and chemicals) by 2050. LeadIT 2.0 (launched at COP28) focuses on inclusive transition, low-carbon technology transfer, and financial support for emerging economies.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29068, "Which African country launched a five-year (2025-2029) livestock vaccination drive targeting cattle, goats, sheep, and chickens to curb zoonotic diseases?",
-     "Nigeria", "Kenya", "Tanzania", "Ethiopia",
-     "C", "Tanzania launched a nationwide 5-year livestock vaccination campaign (2025-2029) targeting 19 million cattle, 17 million goats and sheep, and 40 million chickens. Tanzania has 36.6 million cattle — 2nd largest in Africa.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29069, "Trump's 'Liberation Day' (April 2, 2025) referred to the announcement of:",
-     "US withdrawal from NATO", "Reciprocal tariffs on imports", "US sanctions on China", "US withdrawal from WTO",
-     "B", "US President Donald Trump called April 2, 2025 'Liberation Day' when he announced sweeping reciprocal tariffs on imports from countries worldwide, significantly affecting global trade.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29070, "Muhammad Yunus, who heads Bangladesh's interim government, is associated with which field?",
-     "Military and defence", "Micro-finance and economics (Nobel laureate)", "Medicine and public health", "Law and judiciary",
-     "B", "Muhammad Yunus is a Nobel Peace Prize laureate (2006) known for pioneering micro-finance through Grameen Bank. He was invited to head Bangladesh's interim government after Sheikh Hasina fled in August 2024.",
-     "General_Science", "National_Current_Affairs"),
-
-    # ── More miscellaneous ──
-    (29071, "Ahmed al-Sharaa, who leads Syria's interim government after Assad's fall, was previously known by what nom de guerre?",
-     "Abu Bakr al-Baghdadi", "Abu Mohammad al-Jolani", "Abu Ibrahim al-Hashimi", "Abu Umar al-Shami",
-     "B", "Ahmed al-Sharaa is the real name of Abu Mohammad al-Jolani, the HTS leader who led the rebel coalition that captured Damascus on December 8, 2024, ending Assad's rule.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29072, "India hosted the 89th General Meeting of IEC at Bharat Mandapam in New Delhi. How many times had India hosted this meeting before?",
-     "Once (1997)", "Twice (1960, 1997)", "Three times (1960, 1997, 2013)", "Four times (1960, 1980, 1997, 2013)",
-     "C", "India hosted the IEC General Meeting three times before: 1960, 1997, and 2013. The 2025 hosting at Bharat Mandapam was the 4th time India hosted the IEC General Meeting.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29073, "MERCOSUR's original founding member countries included all EXCEPT:",
-     "Argentina", "Chile", "Brazil", "Uruguay",
-     "B", "MERCOSUR's original founding members (1991 Treaty of Asunción) are Argentina, Brazil, Paraguay, and Uruguay. Chile is only an associate member, not a founding member.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29074, "The Interpol Asian Committee meets annually to guide coordinated action on regional security. India was elected to this committee at the 25th Asian Regional Conference in which city?",
-     "Tokyo, Japan", "Bangkok, Thailand", "Singapore", "Kuala Lumpur, Malaysia",
-     "C", "India was elected to the Interpol Asian Committee at the 25th Asian Regional Conference held in Singapore. The CBI represented India at this conference.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29075, "Which country's President declared martial law in December 2024 and was subsequently impeached by the National Assembly?",
-     "Taiwan", "Thailand", "South Korea", "Myanmar",
-     "C", "South Korean President Yoon Suk-yeol declared martial law on December 3, 2024. The National Assembly voted to impeach him on December 14, 2024. The Constitutional Court upheld the impeachment on April 4, 2025.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29076, "To Lam became the new General Secretary of which country's Communist Party in 2024, after Nguyen Phu Trong passed away?",
-     "China", "Laos", "Vietnam", "Cambodia",
-     "C", "To Lam became Vietnam's Communist Party General Secretary in 2024, succeeding Nguyen Phu Trong who died in July 2024. Vietnam has a single-party political system led by the Communist Party.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29077, "The Pahalgam terrorist attack on April 22, 2025, in which 26 tourists were killed, occurred in which Indian Union Territory?",
-     "Jammu & Kashmir", "Ladakh", "Himachal Pradesh", "Uttarakhand",
-     "A", "The Pahalgam terrorist attack occurred in the Baisaran meadow near Pahalgam in Jammu & Kashmir on April 22, 2025. 26 tourists were killed, which prompted India to launch Operation Sindoor on May 7, 2025.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29078, "The Central American Integration System (SICA) was established by amending the Charter of which earlier organisation?",
-     "CELAC", "ODECA (Organization of Central American States)", "CACM", "PARLACEN",
-     "B", "SICA was established in 1991 by the Tegucigalpa Protocol which amended the Charter of ODECA (Organization of Central American States), originally founded in 1962.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29079, "Pope Leo XIV (Robert Francis Prevost), the first American pope, previously served as bishop in which country?",
-     "Brazil", "Mexico", "Argentina", "Peru",
-     "D", "Before becoming Pope Leo XIV, Robert Francis Prevost (born in Chicago, USA) served as a bishop in Peru. He is also the first Augustinian to become pope.",
-     "General_Science", "National_Current_Affairs"),
-
-    (29080, "The EU's CBAM (Carbon Border Adjustment Mechanism) was in its transitional phase from 2023 to 2025. When does full enforcement begin?",
-     "2025", "2026", "2027", "2028",
-     "B", "CBAM full enforcement begins in 2026 (transitional phase was 2023-2025). It is part of the EU's 'Fit for 55' strategy targeting 55% GHG reduction by 2030. India has expressed deep reservations about CBAM.",
-     "General_Science", "National_Current_Affairs"),
+INTL_EVENTS_MCQS = [
+    # WORLD LEADERS & NEW ELECTIONS 2025-2026 (29001-29018)
+    {"id":29001,"question_text":"Sanae Takaichi became Japan's Prime Minister on October 21, 2025. What historic distinction does she hold?","option_a":"Japan's youngest PM ever","option_b":"Japan's first female Prime Minister","option_c":"First PM from Osaka","option_d":"First PM from Nikkei background","correct_answer":"B","explanation":"Sanae Takaichi became Japan's 104th Prime Minister on October 21, 2025 — Japan's FIRST EVER female PM. She won the LDP leadership election defeating Shinjirō Koizumi. She formed a coalition with the Japan Innovation Party. Known as Japan's 'Iron Lady' (Thatcher admirer), she is an ultraconservative: opposes same-sex marriage, China hawk, supports stronger military.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29002,"question_text":"Mark Carney became Prime Minister of Canada on March 14, 2025. He was previously head of which international institution?","option_a":"IMF","option_b":"World Bank","option_c":"Bank of Canada and Bank of England","option_d":"WTO","correct_answer":"C","explanation":"Mark Carney (Liberal Party) became Canada's PM on March 14, 2025 after Justin Trudeau resigned. Carney is a renowned economist who served as Governor of the Bank of Canada (2008-2013) and Bank of England (2013-2020). He hosted G7 Kananaskis (June 2025). Canada faces Trump's tariff threats (35% on Canadian goods from Aug 1, 2025).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29003,"question_text":"Friedrich Merz became Chancellor of Germany after federal elections on February 23, 2025. Which political party does he lead?","option_a":"SPD (Social Democratic Party)","option_b":"CDU (Christian Democratic Union)","option_c":"AfD (Alternative for Germany)","option_d":"FDP (Free Democratic Party)","correct_answer":"B","explanation":"Friedrich Merz led the CDU (Christian Democratic Union) to victory in Germany's federal elections (February 23, 2025), becoming Chancellor. Merz succeeded Olaf Scholz (SPD). The CDU won but needed a coalition (CDU/CSU + SPD). Merz is a conservative who took a harder stance on immigration and defense.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29004,"question_text":"Pope Francis died on April 21, 2025. Who was elected as the new Pope on May 8, 2025?","option_a":"Cardinal Pietro Parolin","option_b":"Cardinal Robert Prevost — Pope Leo XIV","option_c":"Cardinal Luis Tagle","option_d":"Cardinal Matteo Zuppi","correct_answer":"B","explanation":"Pope Leo XIV — born Robert Prevost (Chicago, USA) — was elected Pope on May 8, 2025, becoming the FIRST AMERICAN POPE in history. He took the name Leo XIV. Pope Francis (Jorge Mario Bergoglio, Argentine) died on April 21, 2025 at age 88, after 12 years as Pope. Pope Leo XIV chose his papal name after Leo XIII (social justice encyclicals).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29005,"question_text":"Lee Jae-myung won the South Korean presidential election and became President on June 3, 2025. He replaced which president?","option_a":"Moon Jae-in","option_b":"Yoon Suk-yeol","option_c":"Park Geun-hye","option_d":"Roh Moo-hyun","correct_answer":"B","explanation":"Lee Jae-myung (Democratic Party) became South Korean President on June 3, 2025 after winning the snap election following Yoon Suk-yeol's impeachment. Yoon had declared martial law on December 3, 2024, was impeached by the National Assembly (December 14, 2024), and removed by the Constitutional Court (April 4, 2025). Lee also hosted APEC 2025 in Gyeongju.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29006,"question_text":"Péter Magyar became Prime Minister of Hungary on April 12, 2026 after defeating which long-serving PM?","option_a":"Gyurcsány Ferenc","option_b":"Viktor Orbán","option_c":"Gordon Bajnai","option_d":"Péter Medgyessy","correct_answer":"B","explanation":"Péter Magyar (Tisza Party) became Hungary's PM on April 12, 2026, defeating Viktor Orbán who had been PM since 2010 (16 years). Magyar's Tisza Party had gained momentum after winning nearly 30% of the vote in 2024 European Parliament elections. Orbán was known for 'illiberal democracy' and close ties with Russia — policies Magyar opposed.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29007,"question_text":"Balendra Shah became Prime Minister of Nepal on March 27, 2026. His rise was preceded by which protest movement?","option_a":"Anti-corruption movement 2024","option_b":"Gen Z-led protests (September 2025) that toppled PM KP Sharma Oli","option_c":"Maoist insurgency 2024","option_d":"Monarchy restoration movement","correct_answer":"B","explanation":"Balendra Shah became Nepal's PM on March 27, 2026. His rise followed Gen Z-led protests in September 2025 that toppled PM KP Sharma Oli over corruption and economic frustration — similar to Bangladesh's student protests (2024) that removed Sheikh Hasina. Nepal's political instability continued with rapid PM changes.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29008,"question_text":"Robert Prevost, who became Pope Leo XIV on May 8, 2025, is from which US city?","option_a":"New York","option_b":"Chicago","option_c":"Boston","option_d":"Los Angeles","correct_answer":"B","explanation":"Pope Leo XIV (Robert Prevost) was born in Chicago, Illinois, USA — making him the first American pope. He served as a missionary in Peru for many years and was made a Cardinal by Pope Francis. Before becoming Pope, he led the Dicastery for Bishops in Rome. He is the 267th Pope of the Catholic Church.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29009,"question_text":"Japan's PM Sanae Takaichi (October 2025) named Japan's first female Finance Minister. Who was she?","option_a":"Seiko Noda","option_b":"Yoko Kamikawa","option_c":"Satsuki Katayama","option_d":"Akie Abe","correct_answer":"C","explanation":"Sanae Takaichi named Satsuki Katayama as Japan's first female Finance Minister, and Kimi Onoda as Economic Security Minister. Takaichi's LDP-Japan Innovation Party coalition was Japan's first since the Koizumi era. Her priorities: tackling inflation, strengthening Japan's military (JSDF), and maintaining the US-Japan alliance.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29010,"question_text":"Donald Trump was inaugurated as the 47th US President on January 20, 2025 with which running mate?","option_a":"Mike Pence","option_b":"Ron DeSantis","option_c":"JD Vance","option_d":"Marco Rubio","correct_answer":"C","explanation":"Donald Trump (Republican) was inaugurated as the 47th US President on January 20, 2025 with JD Vance as Vice President. Trump won the November 2024 election against Democratic candidate Kamala Harris. Key Trump appointments: Marco Rubio (Secretary of State), Pete Hegseth (Defense Secretary), Robert F. Kennedy Jr. (HHS Secretary).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29011,"question_text":"Keir Starmer became UK Prime Minister after Labour's landslide victory in July 2024. Which key India-related agreement did he oversee in 2025?","option_a":"India-UK Defense Partnership Treaty","option_b":"India-UK Comprehensive Economic and Trade Agreement (CETA/FTA)","option_c":"India-UK Nuclear Cooperation Agreement","option_d":"India-UK Climate Alliance","correct_answer":"B","explanation":"UK PM Keir Starmer (Labour, since July 2024) oversaw the India-UK CETA (Comprehensive Economic and Trade Agreement/FTA) — concluded in principle May 6, 2025, signed July 24, 2025. This was a landmark achievement: 99% of Indian exports get duty-free UK access; 90% of UK exports to India get reduced tariffs. Target: double trade to $112 billion by 2030.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29012,"question_text":"Who became Bangladesh's Chief Advisor (head of interim government) after Sheikh Hasina fled in August 2024, continuing in 2025-2026?","option_a":"Khaleda Zia","option_b":"Muhammad Yunus","option_c":"Mirza Fakhrul Islam","option_d":"Abdul Hamid","correct_answer":"B","explanation":"Muhammad Yunus (Nobel Peace Prize 2006 for micro-finance/Grameen Bank) became Bangladesh's Chief Advisor heading the interim government after Sheikh Hasina fled to India (August 5, 2024) following student-led mass protests. In 2025-2026, Yunus led Bangladesh's transition, navigating relations with India which remained strained due to the Hasina factor.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29013,"question_text":"Ahmed al-Sharaa (formerly known as Abu Mohammad al-Jolani) became Syria's head of state after Assad fled in December 2024. What position does he hold as of 2025-2026?","option_a":"President of Syrian Arab Republic","option_b":"Prime Minister and transitional leader","option_c":"Head of interim/transitional government","option_d":"Military Commander-in-Chief","correct_answer":"C","explanation":"Ahmed al-Sharaa (real name of Abu Mohammad al-Jolani, HTS leader) became Syria's head of the transitional government after Bashar al-Assad fled to Russia (December 8, 2024). In 2025-2026, he led Syria's transition — seeking to shed the jihadist image and normalize with international community. The HTS (Hayat Tahrir al-Sham) was delisted from terrorist designation by some Western nations.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29014,"question_text":"Sushila Karki became interim Prime Minister of Nepal in 2025, before Balendra Shah (March 2026). Which institution did she head before becoming PM?","option_a":"Nepal Supreme Court","option_b":"Nepal Rastra Bank","option_c":"Anti-Corruption Commission","option_d":"Nepal Army","correct_answer":"C","explanation":"Sushila Karki, Nepal's interim PM (2025), previously headed Nepal's Anti-Corruption Commission — known for her integrity and independence. She became a caretaker PM amid Nepal's political crisis following Gen Z protests (September 2025) that toppled KP Sharma Oli. Nepal has had frequent PM changes due to coalition instability.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29015,"question_text":"To Lam became Vietnam's Communist Party General Secretary in 2024 and continued through 2025-2026. Vietnam's political system is:","option_a":"Multi-party democracy","option_b":"Constitutional monarchy","option_c":"Single-party socialist state led by Communist Party","option_d":"Federal republic","correct_answer":"C","explanation":"Vietnam is a single-party socialist state led by the Communist Party of Vietnam (CPV). To Lam became CPV General Secretary in 2024 after Nguyen Phu Trong died. The General Secretary is Vietnam's most powerful position. Vietnam is a key trade partner for India and has growing cooperation with QUAD countries amid South China Sea tensions with China.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29016,"question_text":"María Corina Machado of Venezuela won the Nobel Peace Prize 2025. What was she recognized for?","option_a":"Founding a regional climate coalition","option_b":"Tireless work promoting democratic rights and peaceful transition from dictatorship","option_c":"Negotiating drug cartel peace agreements","option_d":"Establishing the Latin American Human Rights Court","correct_answer":"B","explanation":"María Corina Machado won the Nobel Peace Prize 2025 for 'her tireless work promoting democratic rights for the people of Venezuela and her struggle to achieve a just and peaceful transition from dictatorship to democracy.' She is the leader of Venezuela's opposition against Nicolás Maduro's government. Maduro was reportedly captured by the US on January 3, 2026.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29017,"question_text":"Romuald Wadagni was appointed President of Benin on April 12, 2026. Benin is located in which region of Africa?","option_a":"East Africa","option_b":"Southern Africa","option_c":"West Africa","option_d":"North Africa","correct_answer":"C","explanation":"Benin is in West Africa, bordered by Togo, Burkina Faso, Niger, Nigeria, and the Atlantic Ocean. Capital: Porto-Novo (official)/Cotonou (economic). Benin is historically significant as the Kingdom of Dahomey — known for the slave trade era. It is a constitutional republic. Benin is not to be confused with Benin City in Nigeria.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29018,"question_text":"The 2025 South Korean presidential election was a snap election called after President Yoon was removed. The Constitutional Court upheld Yoon's impeachment on which date?","option_a":"January 14, 2025","option_b":"February 28, 2025","option_c":"April 4, 2025","option_d":"May 15, 2025","correct_answer":"C","explanation":"South Korea's Constitutional Court upheld Yoon Suk-yeol's impeachment on April 4, 2025 — permanently removing him from office. This triggered the snap presidential election won by Lee Jae-myung (Democratic Party) on June 3, 2025. Yoon had declared martial law on December 3, 2024 (retracted after 6 hours) and was impeached by National Assembly on December 14, 2024.","folder":"General_Science","topic":"National_Current_Affairs"},
+
+    # KEY GLOBAL EVENTS 2025-2026 (29019-29038)
+    {"id":29019,"question_text":"Operation Sindoor (India, May 7, 2025) was in retaliation for which terrorist attack?","option_a":"Uri attack 2016","option_b":"Pulwama attack 2019","option_c":"Pahalgam terror attack April 22, 2025","option_d":"Gurdaspur attack","correct_answer":"C","explanation":"Operation Sindoor (May 7, 2025) was India's retaliation for the Pahalgam terror attack (April 22, 2025) — where 26 tourists were killed at Baisaran Valley, Anantnag, J&K by The Resistance Front (LeT proxy). India struck 9 terrorist camps of JeM and LeT in Pakistan and PoK. Ceasefire on May 10, 2025.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29020,"question_text":"The Twelve-Day War (June 13-24, 2025) was between Israel and Iran. Which country's military also directly participated by bombing Iranian nuclear sites on June 22?","option_a":"Saudi Arabia","option_b":"United States","option_c":"UK","option_d":"France","correct_answer":"B","explanation":"The USA directly bombed 3 Iranian nuclear sites on June 22, 2025 during the Twelve-Day War — the most direct US military action against Iran's nuclear program ever. Israel had launched the war on June 13. Iran retaliated (Operation True Promise III: 550+ missiles + 1,000+ drones). Ceasefire: June 24, 2025 under US pressure.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29021,"question_text":"The 2026 Iran War (February 28, 2026) resulted in the death of which Iranian leader — the Supreme Leader since 1989?","option_a":"Masoud Pezeshkian","option_b":"Ali Larijani","option_c":"Ali Khamenei","option_d":"Mohammad Bagheri","correct_answer":"C","explanation":"Ali Khamenei — Iran's Supreme Leader since June 1989 — was killed in the coordinated US-Israel strikes on February 28, 2026. He had been Supreme Leader for 37 years. Also killed: Ali Larijani, multiple army commanders. Iran closed the Strait of Hormuz in response; struck US bases in Bahrain, Jordan, Kuwait, Qatar, Saudi Arabia, UAE.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29022,"question_text":"Indonesia joined BRICS as its 11th full member on January 6, 2025. BRICS's 17th Summit was held in which city and country in July 2025?","option_a":"São Paulo, Brazil","option_b":"Rio de Janeiro, Brazil","option_c":"Brasília, Brazil","option_d":"Bogotá, Colombia","correct_answer":"B","explanation":"BRICS 17th Summit: Rio de Janeiro, Brazil, July 6-7, 2025 (Brazil held 2025 chairmanship). Indonesia was present as BRICS's 11th full member (joined Jan 6, 2025 — first Southeast Asian BRICS member). 10 new BRICS partner countries were also announced (Belarus, Bolivia, Kazakhstan, Cuba, Malaysia, Nigeria, Thailand, Uganda, Uzbekistan, Vietnam).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29023,"question_text":"Russia became the first country to officially recognize the Taliban government of Afghanistan on:","option_a":"January 15, 2025","option_b":"March 7, 2025","option_c":"July 3, 2025","option_d":"October 15, 2025","correct_answer":"C","explanation":"Russia officially recognized the Taliban government of Afghanistan on July 3, 2025 — first country to do so. Taliban have ruled Afghanistan since August 2021 (US withdrawal). No country had recognized them until Russia's move in July 2025. Russia sought to expand Central Asian influence and countered US-NATO regional positioning.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29024,"question_text":"India's EAM Jaishankar met Iranian FM Araghchi in New Delhi on May 15, 2026. Which of the following best describes India's stance in the 2026 Iran War?","option_a":"India fully supported US-Israel coalition","option_b":"India supported Iran's position","option_c":"India maintained neutrality, engaged diplomatically with both sides","option_d":"India had no engagement with either side","correct_answer":"C","explanation":"India maintained neutrality in the 2026 Iran War — strategic Chabahar Port in Iran, energy imports, 8 million Indian diaspora in Gulf states all demanded caution. EAM Jaishankar met Iranian FM Araghchi (May 15, 2026) while maintaining defense ties with Israel. India abstained from relevant UN votes. India's 'Vasudhaiva Kutumbakam' foreign policy guides such balanced diplomacy.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29025,"question_text":"The Gaza ceasefire Phase 1 (January 15, 2025) was mediated by three countries. Which combination is correct?","option_a":"USA, Turkey, and Egypt","option_b":"Qatar, Egypt, and USA","option_c":"Saudi Arabia, UAE, and USA","option_d":"Jordan, Egypt, and USA","correct_answer":"B","explanation":"Qatar, Egypt, and USA mediated the Gaza ceasefire Phase 1 (January 15, 2025) — a 42-day humanitarian pause with hostage releases. Qatar (Hamas political bureau host), Egypt (borders Gaza via Rafah), and USA (Israel's key ally) formed the consistent mediation troika. The Gaza conflict had started October 7, 2023 with Hamas's surprise attack.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29026,"question_text":"Sudan's civil war saw the RSF (Rapid Support Forces) capture El Fasher on October 27, 2025. Who leads the RSF?","option_a":"General Abdel Fattah al-Burhan","option_b":"Mohamed Hamdan Dagalo ('Hemeti')","option_c":"Omar al-Bashir","option_d":"Ibrahim Gambari","correct_answer":"B","explanation":"Mohamed Hamdan Dagalo ('Hemeti') leads the RSF (Rapid Support Forces) fighting against Sudan's official army (SAF) led by General al-Burhan. RSF captured El Fasher (last major SAF-held city in Darfur) on October 27, 2025, after an 18-month siege. Sudan's civil war (started April 2023) has caused the world's worst humanitarian crisis: 10M+ internally displaced.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29027,"question_text":"Myanmar's military (Tatmadaw) has been fighting the People's Defence Force (PDF) and ethnic armed groups since the February 2021 coup. Who leads Myanmar's military government (SAC)?","option_a":"Aung San Suu Kyi","option_b":"Senior General Min Aung Hlaing","option_c":"Thein Sein","option_d":"General Shwe Mann","correct_answer":"B","explanation":"Senior General Min Aung Hlaing leads Myanmar's State Administration Council (SAC) — the military junta that seized power in the February 1, 2021 coup. Aung San Suu Kyi (NLD) was detained and remains imprisoned. Myanmar's civil war: 90,000+ killed, 3M+ internally displaced, 1M+ fled abroad by 2025. ASEAN's Five-Point Consensus (2021) remains largely unimplemented.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29028,"question_text":"Japan enacted an AI law in May 2025. Japan's approach to AI regulation is different from the EU AI Act. How?","option_a":"Japan's law is stricter with mandatory compliance","option_b":"Japan's law encourages coordination and voluntary responsibility — flexible model vs EU's mandatory risk-based approach","option_c":"Japan banned AI development entirely","option_d":"Japan only regulates AI for military use","correct_answer":"B","explanation":"Japan enacted an AI law in May 2025 focusing on coordination and voluntary responsibility — a flexible model. Unlike the EU AI Act (2024) which divides AI into risk levels with strict mandatory rules, Japan's approach encourages self-regulation and industry cooperation. This reflects Japan's economic strategy of not over-regulating emerging tech while ensuring societal safety.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29029,"question_text":"Hawaii became the first US state to implement a 'Green Fee' on tourists. This fee funds:","option_a":"State military defense","option_b":"Conservation and environmental protection","option_c":"Infrastructure development","option_d":"Healthcare","correct_answer":"B","explanation":"Hawaii became the first US state to implement a 'Green Fee' on tourists — a per-night charge to fund conservation and environmental protection of Hawaii's fragile ecosystems. Hawaii faces mass tourism pressure on its coral reefs, forests, and wildlife. Hawaii is also the state with the US's highest renewable energy commitment (100% by 2045).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29030,"question_text":"Pope Francis died on April 21, 2025, at age 88. He was the first Pope from which country?","option_a":"Brazil","option_b":"Spain","option_c":"Argentina","option_d":"Mexico","correct_answer":"C","explanation":"Pope Francis (born Jorge Mario Bergoglio, December 17, 1936, Buenos Aires, Argentina) was the first Pope from Latin America and the first Jesuit Pope. He died April 21, 2025 at age 88 after 12 years as Pope (elected March 13, 2013). He succeeded Pope Benedict XVI (who resigned — rare in papal history). Pope Leo XIV was elected on May 8, 2025.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29031,"question_text":"Timor-Leste became the 11th member of ASEAN in October 2025. It was the first ASEAN expansion since which year?","option_a":"1995","option_b":"1997","option_c":"1999","option_d":"2002","correct_answer":"C","explanation":"Timor-Leste's admission (October 2025) was ASEAN's first expansion since Cambodia joined in 1999 — a 26-year gap. ASEAN had 10 members from 1999-2025. The previous round of expansions: Vietnam (1995), Myanmar + Laos (1997), Cambodia (1999). ASEAN was founded in 1967 with 5 members (Thailand, Malaysia, Singapore, Philippines, Indonesia).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29032,"question_text":"The 2026 Thailand-Cambodia conflict was resolved by the 'Kuala Lumpur Peace Accord' at ASEAN 2025. US President Trump and which Malaysian PM witnessed the signing?","option_a":"Mahathir Mohamad","option_b":"Ismail Sabri Yaakob","option_c":"Anwar Ibrahim","option_d":"Najib Razak","correct_answer":"C","explanation":"Malaysian PM Anwar Ibrahim (and Trump) witnessed the Thailand-Cambodia 'Kuala Lumpur Peace Accord' at the 47th ASEAN Summit (October 2025). Anwar Ibrahim became Malaysia's PM in November 2022. He chaired ASEAN in 2025. The accord involved ceasefire, weapon withdrawal, and release of 18 Cambodian detainees by Bangkok.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29033,"question_text":"Which major international health crisis emerged in 2025 when WHO declared a polio outbreak in Papua New Guinea?","option_a":"Ebola","option_b":"Polio","option_c":"Monkeypox","option_d":"Cholera","correct_answer":"B","explanation":"Papua New Guinea (PNG) had a WHO-declared polio outbreak in 2025. Polio (poliovirus) was nearly eradicated globally — with only Afghanistan and Pakistan as endemic countries — making outbreaks elsewhere concerning. PNG is in the Western Pacific region. WHO declared PNG's outbreak a Public Health Emergency of International Concern (PHEIC) requiring global vaccination response.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29034,"question_text":"Saudi Arabia launched which digital tourism platform in 2025 to enhance its global tourism sector?","option_a":"TOURVISION","option_b":"TOURISE","option_c":"Saudi Experience","option_d":"Visit Arabia","correct_answer":"B","explanation":"Saudi Arabia launched the TOURISE platform in 2025 — a digital tourism enhancement platform as part of Saudi Vision 2030. Saudi Arabia has been rapidly developing its tourism sector: NEOM (futuristic city), AlUla (heritage), Red Sea Project (luxury tourism). Saudi Arabia aims to attract 150 million tourists/year by 2030.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29035,"question_text":"Jakarta, Indonesia was described as the world's most populous urban area in 2025 with approximately 42 million people. Why is Jakarta facing an existential crisis?","option_a":"Earthquake risk","option_b":"Flooding and sinking due to excessive groundwater extraction","option_c":"Air pollution","option_d":"Extreme heat","correct_answer":"B","explanation":"Jakarta faces an existential crisis: it is sinking at 1-25 cm/year due to excessive groundwater extraction — making it the world's fastest-sinking major city. Parts of North Jakarta are already below sea level. Indonesia began building a new capital city 'Nusantara' in Borneo to reduce Jakarta's administrative burden. Jakarta remains Indonesia's economic and cultural capital.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29036,"question_text":"The Indonesia-based volcano Mount Lewotobi Laki-laki erupted in 2025. It is located on which island?","option_a":"Java","option_b":"Bali","option_c":"Flores island","option_d":"Sumatra","correct_answer":"C","explanation":"Mount Lewotobi Laki-laki erupted in 2025 on Flores island, East Nusa Tenggara province, Indonesia. 'Laki-laki' means 'male' in Indonesian — there is a paired peak Lewotobi Perempuan ('female'). Indonesia has 127 active volcanoes — the world's most. Indonesia sits on the 'Ring of Fire' — the Pacific tectonic plate boundary.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29037,"question_text":"Typhoon Danas struck which region of Taiwan in 2025?","option_a":"Taipei Metropolitan Area","option_b":"Kaohsiung in southern Taiwan","option_c":"Chiayi County","option_d":"Hualien County","correct_answer":"C","explanation":"Typhoon Danas struck Chiayi County in southwestern Taiwan in 2025, causing floods and landslides. Taiwan faces 3-5 typhoons annually due to its location in the Western Pacific typhoon belt. Taiwan's semiconductor industry (TSMC) facilities in Hsinchu and Tainan were on high alert. Taiwan is also a major geopolitical flashpoint amid China-US tensions.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29038,"question_text":"China's Tianwen-2 mission (2025-2026) targets which near-Earth asteroid for a sample-return mission?","option_a":"Bennu","option_b":"Ryugu","option_c":"2016HO3 (Kamo'oalewa)","option_d":"Apophis","correct_answer":"C","explanation":"China's Tianwen-2 is a dual-mission: (1) Sample-return from near-Earth asteroid 2016HO3 (also called Kamo'oalewa — a quasi-satellite of Earth), then (2) rendezvous with main-belt comet 311P/PanSTARRS. Launched in 2025. Compare: NASA's OSIRIS-REx sampled asteroid Bennu (samples returned 2023); Japan's Hayabusa2 sampled Ryugu (2020).","folder":"General_Science","topic":"National_Current_Affairs"},
+
+    # INDIA'S INTERNATIONAL ENGAGEMENT 2025-2026 (29039-29055)
+    {"id":29039,"question_text":"India signed a MoU with UAE on May 15, 2026 for cooperation in which strategic energy sector?","option_a":"Nuclear energy","option_b":"Strategic petroleum reserves and LPG supplies","option_c":"Solar power cooperation","option_d":"Green hydrogen","correct_answer":"B","explanation":"India-UAE signed an MoU on May 15, 2026 for cooperation in strategic petroleum reserves and increased LPG (liquefied petroleum gas) supplies. India's Strategic Petroleum Reserve (SPR) program maintains reserves at Vishakhapatnam, Mangaluru, and Padur. UAE is one of India's top crude oil suppliers.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29040,"question_text":"India resumed the Kailash Mansarovar Yatra in 2025 after it was suspended since 2020. Why was it suspended?","option_a":"Nepal-India border dispute","option_b":"COVID-19 pandemic and India-China Galwan Valley clash","option_c":"Pakistan's objection","option_d":"Tibet Autonomous Region closure","correct_answer":"B","explanation":"Kailash Mansarovar Yatra was suspended from 2020 due to: (1) COVID-19 pandemic and (2) India-China Galwan Valley clash (June 2020) — which led to military standoff at LAC. Resumption in 2025 was part of broader India-China normalization (LAC patrolling at Depsang/Demchok friction points resolved October 2024). Mount Kailash is sacred in Hinduism, Buddhism, Jainism, and Bön.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29041,"question_text":"India became the first country to secure TWO deep-sea polymetallic sulphide exploration contracts from ISA. ISA stands for:","option_a":"International Space Agency","option_b":"International Seabed Authority","option_c":"Indian Scientific Affiliation","option_d":"International Submarine Association","correct_answer":"B","explanation":"India secured 2 polymetallic sulphide exploration contracts from ISA (International Seabed Authority) — the first country with 2 contracts for polymetallic sulphides. ISA regulates mineral exploration in international seabed (the 'Area'). Polymetallic sulphides contain copper, zinc, gold, silver. ISA is headquartered in Kingston, Jamaica.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29042,"question_text":"India dispatched BHISHM (Bike-mounted Hospital System) to which country on its 60th Independence Day, demonstrating medical diplomacy?","option_a":"Sri Lanka","option_b":"Nepal","option_c":"Maldives","option_d":"Bhutan","correct_answer":"C","explanation":"India gifted BHISHM (Bike-mounted Hospital System) to Maldives on its 60th Independence Day as part of India's 'Neighbourhood First' medical diplomacy. BHISHM is a compact, portable field hospital that can be transported on bikes — developed under Project Arogya Maitri. India-Maldives relations had tensions in 2024 but improved in 2025.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29043,"question_text":"Operation Sagar Bandhu was India's operation to help which neighboring country during Cyclone Ditwah in November 2025?","option_a":"Myanmar","option_b":"Bangladesh","option_c":"Sri Lanka","option_d":"Maldives","correct_answer":"C","explanation":"Operation Sagar Bandhu was India's operation to assist Sri Lanka during Cyclone Ditwah (November 27, 2025) — demonstrating India's 'First Responder' role in the Indian Ocean. India provided disaster relief including NDRF teams, essential supplies, and naval vessels. India-Sri Lanka relations have improved with Indian assistance in Sri Lanka's economic recovery.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29044,"question_text":"India-China resumed the Kailash Mansarovar Yatra in 2025. Earlier, India-China had also resolved LAC patrolling issues at which two friction points in October 2024?","option_a":"Pangong Tso and Hot Springs","option_b":"Depsang Plains and Demchok","option_c":"Gogra and Galwan","option_d":"Chushul and Daulat Beg Oldi","correct_answer":"B","explanation":"India-China resolved LAC patrolling at Depsang Plains and Demchok friction points in October 2024 — a major step in de-escalation after the June 2020 Galwan Valley clash (20 Indian soldiers killed). This was followed by the first Modi-Xi bilateral at BRICS Kazan (October 2024). In 2025, Modi met Xi at SCO Tianjin — first time on Chinese soil in 7 years.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29045,"question_text":"India was elected to the Executive Committee of ICAO's Part II category. ICAO's main function is:","option_a":"International trade regulation","option_b":"Global civil aviation safety and standards","option_c":"Maritime shipping regulations","option_d":"Telecommunications standards","correct_answer":"B","explanation":"ICAO (International Civil Aviation Organization) regulates global civil aviation safety, standards, and procedures. HQ: Montreal, Canada. Founded: 1944 (Chicago Convention/Convention on International Civil Aviation). India was elected to ICAO Executive Committee Part II — significant for India's growing aviation market (3rd largest domestic market; UDAN regional connectivity scheme).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29046,"question_text":"India hosted the 89th IEC General Meeting at Bharat Mandapam, New Delhi in September 2025. IEC stands for:","option_a":"Indian Engineering Council","option_b":"International Electrotechnical Commission","option_c":"International Energy Commission","option_d":"Indian Economic Committee","correct_answer":"B","explanation":"IEC (International Electrotechnical Commission) — founded 1906 — is the global body for international standards in electrical, electronic, and related technologies. HQ: Geneva, Switzerland. India hosted IEC's 89th General Meeting at Bharat Mandapam, New Delhi (September 2025) — a prestigious global standardization event. India's standards body is BIS (Bureau of Indian Standards).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29047,"question_text":"The CBI was re-designated as India's national bureau for Interpol. What does CBI's Interpol national bureau role involve?","option_a":"International cybercrime only","option_b":"Coordinating with Interpol for cross-border crime investigation and extradition requests","option_c":"Monitoring Indian nationals abroad","option_d":"Financial intelligence gathering","correct_answer":"B","explanation":"India's CBI (Central Bureau of Investigation) serves as India's national bureau for Interpol — coordinating international crime investigation requests, extraditions, and information sharing with 196 Interpol member countries. India was elected to Interpol's Asian Committee in Singapore. Interpol HQ: Lyon, France. Founded: 1923.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29048,"question_text":"The LeadIT initiative (Leadership Group for Industry Transition) was co-founded by India and which country in 2019?","option_a":"USA","option_b":"Germany","option_c":"Sweden","option_d":"France","correct_answer":"C","explanation":"LeadIT (Leadership Group for Industry Transition) was co-founded by India and Sweden in 2019 at COP25 to decarbonize heavy industries (steel, cement, chemicals, aluminium) that are difficult to decarbonize. HQ: Sweden. LeadIT connects government and private sector to develop net-zero heavy industry pathways. India's heavy industry sector makes up ~30% of national GHG emissions.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29049,"question_text":"ICAR Maitri 2.0 is an agri-tech cooperation initiative between India and which country?","option_a":"USA","option_b":"Brazil","option_c":"Australia","option_d":"Israel","correct_answer":"B","explanation":"ICAR Maitri 2.0 is an agricultural technology cooperation initiative between ICAR (Indian Council of Agricultural Research) and Brazil — building on the original Maitri collaboration. India-Brazil cooperation focuses on: tropical agriculture, ethanol/biofuels (Brazil leads global sugar-ethanol), digital agriculture, and genomics. Brazil also co-sponsored the Blue NDC Challenge with France.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29050,"question_text":"India-UK FTA was officially named CETA. What does CETA stand for in this context?","option_a":"Cooperative Economic and Trade Alliance","option_b":"Comprehensive Economic and Trade Agreement","option_c":"Continental Economic Trade Architecture","option_d":"Cross-border Economic Treaty Agreement","correct_answer":"B","explanation":"India-UK CETA = Comprehensive Economic and Trade Agreement (signed July 24, 2025). This eliminates/reduces tariffs on 99% of Indian exports to UK and 90% of UK exports to India. Target: increase bilateral trade by $34 billion/year from 2040. Note: Canada-EU also has a CETA (Comprehensive Economic and Trade Agreement) — the same acronym used differently.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29051,"question_text":"Iran's Bushehr Nuclear Power Plant was built with technical assistance from which country and when was it completed?","option_a":"China, 2008","option_b":"Russia, 2011","option_c":"Pakistan, 2005","option_d":"France, 2000","correct_answer":"B","explanation":"Iran's Bushehr Nuclear Power Plant (Bushehr-1) was built with Russian technical assistance and became operational in 2011. Russia's Rosatom constructed it. South Pars/North Dome Gas Field (world's largest natural gas reservoir) is jointly held by Iran and Qatar. Bushehr is separate from Iran's controversial enrichment facilities (Natanz, Fordow).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29052,"question_text":"The EU's CBAM (Carbon Border Adjustment Mechanism) entered full enforcement in 2026. It is part of which EU climate policy package?","option_a":"Green Deal 2030","option_b":"Fit for 55","option_c":"REPowerEU","option_d":"European Climate Law","correct_answer":"B","explanation":"CBAM (Carbon Border Adjustment Mechanism) full enforcement began in 2026, as part of EU's 'Fit for 55' package targeting 55% GHG reduction by 2030 (vs 1990 levels). CBAM taxes carbon-intensive imports (steel, cement, aluminium, fertilisers, electricity, hydrogen) to prevent carbon leakage. India has expressed deep reservations about CBAM's trade impact on Indian exports to EU.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29053,"question_text":"The Blue NDC Challenge was launched by France and Brazil for ocean conservation at which forum?","option_a":"COP28 Dubai","option_b":"UNOC3 (UN Ocean Conference 3)","option_c":"UNCLOS meeting","option_d":"G20 Brazil 2024","correct_answer":"B","explanation":"France and Brazil launched the Blue NDC Challenge at UNOC3 (Third UN Ocean Conference) to integrate ocean-related commitments into Nationally Determined Contributions (NDCs) under the Paris Agreement. Blue NDCs recognize oceans as carbon sinks and biodiversity hotspots requiring climate protection. Small Island Developing States (SIDS) are the biggest supporters.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29054,"question_text":"MERCOSUR's headquarters is in which South American city?","option_a":"Buenos Aires, Argentina","option_b":"Brasília, Brazil","option_c":"Montevideo, Uruguay","option_d":"Santiago, Chile","correct_answer":"C","explanation":"MERCOSUR (Southern Common Market) HQ is in Montevideo, Uruguay. Founded by the Treaty of Asunción (1991, in Asunción, Paraguay). Full members: Argentina, Brazil, Paraguay, Uruguay, Bolivia (since 2024). Venezuela was suspended. MERCOSUR is the world's 5th largest economy by GDP. Brazil-India's ICAR Maitri 2.0 strengthens MERCOSUR-South Asia agricultural links.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29055,"question_text":"SICA (Central American Integration System) was established by which treaty in 1991?","option_a":"Tegucigalpa Protocol","option_b":"Treaty of Asunción","option_c":"Cartagena Agreement","option_d":"Bogotá Protocol","correct_answer":"A","explanation":"SICA (Sistema de la Integración Centroamericana / Central American Integration System) was established by the Tegucigalpa Protocol in December 1991. Members: Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica, Panama, Belize, Dominican Republic. HQ: San Salvador, El Salvador. SICA promotes Central American political, economic, and social integration.","folder":"General_Science","topic":"National_Current_Affairs"},
+
+    # INTERNATIONAL BODIES, SCIENCE, MISC 2025-2026 (29056-29070)
+    {"id":29056,"question_text":"The Nobel Peace Prize 2025 went to María Corina Machado of Venezuela. Where is the Nobel Peace Prize awarded (unlike other Nobel Prizes which are awarded in Stockholm)?","option_a":"Geneva, Switzerland","option_b":"Oslo, Norway","option_c":"Brussels, Belgium","option_d":"Vienna, Austria","correct_answer":"B","explanation":"The Nobel Peace Prize is awarded in Oslo, Norway (at Oslo City Hall) — unlike other Nobel Prizes (Physics, Chemistry, Medicine, Literature, Economics) which are awarded in Stockholm, Sweden. This was stipulated by Alfred Nobel's will (1895). The Norwegian Nobel Committee selects the Peace Prize laureate. Other 2025 Nobel winners: Literature = László Krasznahorkai (Hungary).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29057,"question_text":"László Krasznahorkai won the Nobel Prize in Literature 2025. He is from which country?","option_a":"Romania","option_b":"Czech Republic","option_c":"Hungary","option_d":"Poland","correct_answer":"C","explanation":"László Krasznahorkai (born 1954) won the Nobel Prize in Literature 2025 — Hungary's first Nobel in Literature. Awarded 'for his compelling and visionary oeuvre that, in the midst of apocalyptic terror, reaffirms the power of art.' His major works: Satantango, The Melancholy of Resistance, War and War. Nobel Literature 2024: Han Kang (South Korea).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29058,"question_text":"The 2025 Nobel Prize in Physiology or Medicine was awarded for discoveries relating to:","option_a":"CRISPR gene editing","option_b":"Peripheral immune tolerance","option_c":"MicroRNA regulation","option_d":"Protein structure prediction","correct_answer":"B","explanation":"Nobel Medicine 2025: Mary Brunkow, Fred Ramsdell, and Shimon Sakaguchi won for fundamental discoveries relating to peripheral immune tolerance — how the immune system avoids attacking the body's own cells. This has major implications for autoimmune diseases and cancer immunotherapy. Nobel Medicine 2024: Victor Ambros and Gary Ruvkun (microRNA discovery).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29059,"question_text":"Nobel Physics 2025 was awarded for which discovery related to quantum mechanics?","option_a":"Higgs boson confirmation","option_b":"Macroscopic quantum mechanical tunnelling and energy quantisation in electric circuits","option_c":"Gravitational waves detection","option_d":"AI-enabled neural networks","correct_answer":"B","explanation":"Nobel Physics 2025: John Clarke, Michel Devoret, and John Martinis won for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in electric circuits — foundational work for quantum computing. Nobel Physics 2024: Hopfield and Hinton (AI/neural networks). The 2025 Nobel connects to quantum computing hardware development.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29060,"question_text":"Nobel Chemistry 2025 was awarded for pioneering metal-organic frameworks (MOFs). What are MOFs used for?","option_a":"Nuclear reactor construction","option_b":"Harvesting water from air, capturing CO2, storing gases, and catalysing reactions","option_c":"Semiconductor manufacturing","option_d":"Food preservation","correct_answer":"B","explanation":"Nobel Chemistry 2025: Susumu Kitagawa, Richard Robson, and Omar Yaghi won for metal-organic frameworks (MOFs) — molecular constructions that can harvest water from desert air, capture CO2, store toxic gases, or catalyse chemical reactions. MOFs are highly porous materials. Nobel Chemistry 2024: Hassabis, Baker, Jumper (protein structure prediction/AlphaFold).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29061,"question_text":"Nobel Economics 2025 was awarded for explaining how innovation creates economic growth. Which economist who also wrote a book about long-run economic growth won it?","option_a":"Daron Acemoglu alone","option_b":"Joel Mokyr, Philippe Aghion, and Peter Howitt","option_c":"Paul Romer","option_d":"Abhijit Banerjee","correct_answer":"B","explanation":"Nobel Economics 2025: Joel Mokyr (Northwestern), Philippe Aghion (Harvard/Collège de France), and Peter Howitt (Brown) — for explaining how innovation creates economic growth, advances society, and improves quality of life. Aghion and Howitt developed the 'Schumpeterian growth' model. Nobel Economics 2024: Acemoglu, Johnson, Robinson (colonisation and global inequality).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29062,"question_text":"Banu Mushtaq won the International Booker Prize 2025 — making her the first winner from which language?","option_a":"Telugu","option_b":"Tamil","option_c":"Kannada","option_d":"Malayalam","correct_answer":"C","explanation":"Bengaluru-based Banu Mushtaq won the International Booker Prize 2025 for 'Heart Lamp' (translated by Deepa Bhasthi from Kannada) — the first Kannada author to win the International Booker, and the first short story collection to win the prize. India has a rich tradition of regional language literature; previous Indian Booker wins were in English.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29063,"question_text":"Ousmane Dembélé won the Men's Ballon d'Or 2025. He plays for which club?","option_a":"Barcelona, Spain","option_b":"Real Madrid, Spain","option_c":"Paris Saint-Germain (PSG), France","option_d":"Manchester City, England","correct_answer":"C","explanation":"Ousmane Dembélé (France) won the Men's Ballon d'Or 2025 playing for Paris Saint-Germain (PSG). He beat Lamine Yamal (Barcelona) by 321 points. Women's Ballon d'Or: Aitana Bonmatí (Barcelona, Spain) won for the 3rd consecutive year. Ballon d'Or ceremony: September 22, 2025 at Théâtre du Châtelet, Paris. Previous men's winner: Rodri (Manchester City, 2024).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29064,"question_text":"The 67th Grammy Awards (2025) saw which hip-hop artist's song 'Not Like Us' win Record and Song of the Year?","option_a":"Drake","option_b":"Kendrick Lamar","option_c":"Jay-Z","option_d":"Travis Scott","correct_answer":"B","explanation":"Kendrick Lamar's 'Not Like Us' (a diss track targeting Drake) won Record of the Year and Song of the Year at the 67th Grammy Awards (2025). Beyoncé's Cowboy Carter won Album of the Year; Chappell Roan won Best New Artist. Kendrick Lamar was also selected to perform at Super Bowl LIX halftime show (February 2025).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29065,"question_text":"The film 'Anora' swept the Oscars 2025. Who directed this film?","option_a":"Christopher Nolan","option_b":"Martin Scorsese","option_c":"Sean Baker","option_d":"Guillermo del Toro","correct_answer":"C","explanation":"'Anora' directed by Sean Baker swept the 97th Academy Awards (Oscars 2025) — winning Best Picture, Best Director (Sean Baker), and Best Actress (Mikey Madison). The film tells the story of a sex worker who marries the son of a Russian oligarch. Sean Baker is known for 'Tangerine' (2015) and 'The Florida Project' (2017).","folder":"General_Science","topic":"National_Current_Affairs"},
+
+    # HIGHER ORDER / MIXED (29066-29080)
+    {"id":29066,"question_text":"Which of the following 2025 world leaders is CORRECTLY matched with their role?","option_a":"Mark Carney = UK PM","option_b":"Friedrich Merz = French President","option_c":"Sanae Takaichi = Japan's 104th PM (first female)","option_d":"Péter Magyar = Czech PM","correct_answer":"C","explanation":"Correct: Sanae Takaichi = Japan's 104th PM (first female, October 21, 2025) ✓. Incorrect: Mark Carney = Canada's PM (not UK; UK PM is Keir Starmer), Friedrich Merz = Germany's Chancellor (not French President; French President remains Macron), Péter Magyar = Hungary's PM (became PM April 12, 2026, not Czech PM).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29067,"question_text":"Pope Leo XIV (Robert Prevost) is historically significant as:","option_a":"First Pope from Asia","option_b":"First American Pope and first Pope from the Order of Augustine","option_c":"First Pope from a Protestant country","option_d":"Youngest Pope in 200 years","correct_answer":"B","explanation":"Pope Leo XIV is historically significant as: (1) First American Pope ever (from Chicago, USA), (2) First Pope from the Order of Saint Augustine (Augustinian order). He was elected May 8, 2025 after Pope Francis died April 21, 2025. He chose 'Leo XIV' after Pope Leo XIII known for social justice encyclicals. Pope Leo XIV speaks English, Spanish, Italian, and French.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29068,"question_text":"BRICS admitted Indonesia (January 2025) and 10 partner countries (July 2025). Which Nobel Prize winner (Peace 2025) is from a country that is a BRICS full member?","option_a":"László Krasznahorkai (Hungary) — BRICS member","option_b":"María Corina Machado (Venezuela) — BRICS partner","option_c":"Joel Mokyr (USA) — BRICS member","option_d":"None of the above — their countries are not BRICS members","correct_answer":"D","explanation":"None of the options match: László Krasznahorkai (Hungary) — Hungary is NOT a BRICS member; María Corina Machado (Venezuela) — Venezuela is NOT a BRICS member (was a MERCOSUR member, suspended); Joel Mokyr (USA) — USA is NOT a BRICS member (BRICS was founded partly as an alternative to US-led order). The 11 BRICS full members are Brazil, Russia, India, China, South Africa, Egypt, Ethiopia, Iran, UAE, Saudi Arabia, Indonesia.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29069,"question_text":"Match the 2025 Nobel Prize with the correct field: Nobel Peace Prize winner (Maria Corina Machado) vs. Nobel Literature winner (László Krasznahorkai) — which statement is CORRECT?","option_a":"Machado is Venezuelan; Krasznahorkai is Romanian","option_b":"Machado is Venezuelan; Krasznahorkai is Hungarian","option_c":"Machado is Colombian; Krasznahorkai is Czech","option_d":"Machado is Brazilian; Krasznahorkai is Polish","correct_answer":"B","explanation":"Nobel Peace 2025: María Corina Machado — Venezuelan opposition leader, democratic rights activist. Nobel Literature 2025: László Krasznahorkai — Hungarian author, 'compelling and visionary oeuvre.' Nobel Medicine: Brunkow, Ramsdell, Sakaguchi (immune tolerance). Nobel Physics: Clarke, Devoret, Martinis (quantum circuits). Nobel Chemistry: Kitagawa, Robson, Yaghi (MOFs). Nobel Economics: Mokyr, Aghion, Howitt (innovation+growth).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29070,"question_text":"Which summit-related statement from 2025 is CORRECT?","option_a":"COP30 raised climate finance target to $300B/year by 2035","option_b":"G7 Kananaskis produced a joint communiqué signed by all 7 leaders","option_c":"ASEAN KL 2025 admitted Timor-Leste as its 11th member","option_d":"SCO 2025 was held in Astana, Kazakhstan","correct_answer":"C","explanation":"ASEAN KL 2025 admitted Timor-Leste as its 11th member ✓. Incorrect: COP30 raised climate finance to $1.3T/year by 2035 (not $300B — that was COP29); G7 Kananaskis had NO full communiqué (Trump left early; remaining 6 issued joint statement); SCO 2025 was in Tianjin, China (not Astana — Astana was SCO 2024).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29071,"question_text":"Which country's university (ETH Zürich) published an assessment on India's air superiority in Operation Sindoor 2025?","option_a":"Germany","option_b":"Austria","option_c":"Switzerland","option_d":"Netherlands","correct_answer":"C","explanation":"ETH Zürich (Eidgenössische Technische Hochschule Zürich / Swiss Federal Institute of Technology) is in Switzerland. Its Center for Security Studies (CSS) published analysis on India's air superiority in Operation Sindoor. ETH Zürich is consistently ranked among the world's top universities (alongside MIT, Cambridge, Oxford). Notable alumni: Albert Einstein.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29072,"question_text":"The India-UK FTA (CETA 2025) will come into force in May 2026. What is the current bilateral trade value between India and UK?","option_a":"$20 billion","option_b":"$35 billion","option_c":"$56 billion","option_d":"$80 billion","correct_answer":"C","explanation":"India-UK bilateral trade: $56 billion (as of 2025). Target under CETA: double by 2030 (approx $112 billion). Projected $34 billion/year increase from 2040. India-UK trade: India exports textiles, pharmaceuticals, engineering goods, IT services to UK; UK exports whisky, aerospace, machinery, medical devices to India.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29073,"question_text":"In the context of Iran's nuclear program, uranium enriched to what percentage purity is considered 'near weapons-grade'?","option_a":"20%","option_b":"60%","option_c":"90% (weapons-grade)","option_d":"45%","correct_answer":"C","explanation":"Weapons-grade uranium: 90%+ enrichment. Iran had enriched to 60% purity (near weapons-grade) before the Twelve-Day War (June 2025). Low Enriched Uranium (LEU, <5%): power reactors. HEU (20-90%): research reactors. Weapons-grade (90%+): nuclear weapons. JCPOA had capped Iran's enrichment at 3.67%. The IAEA resolution (June 12, 2025) declaring Iran non-compliant triggered the Twelve-Day War.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29074,"question_text":"The Comprehensive and Progressive Agreement for Trans-Pacific Partnership (CPTPP) — which India has not joined — was signed in 2018 without the USA. Which country chairs CPTPP in 2025?","option_a":"Japan","option_b":"Vietnam","option_c":"Australia","option_d":"Canada","correct_answer":"A","explanation":"Japan chairs CPTPP in 2025. CPTPP (signed 2018) has 11 members: Japan, Canada, Australia, New Zealand, Singapore, Vietnam, Malaysia, Brunei, Mexico, Peru, Chile. UK joined in 2023 as 12th member. India has not joined CPTPP. China applied for membership (2021). CPTPP was originally TPP (Trans-Pacific Partnership) until the USA withdrew in 2017.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29075,"question_text":"Which of the following is CORRECTLY matched — an Indian government scheme with its purpose?","option_a":"MAITRI → maritime training initiative for Indo-Pacific (QUAD)","option_b":"BHISHM → India's coastal surveillance system","option_c":"LeadIT → India-USA clean energy partnership","option_d":"Sagar Bandhu → India's deep-sea mining program","correct_answer":"A","explanation":"MAITRI (Maritime Initiative for Training in the Indo-Pacific) is a QUAD initiative that trains Indo-Pacific coast guards ✓. Incorrect: BHISHM = Bike-mounted Hospital System (portable field hospital — given to Maldives); LeadIT = India-Sweden (NOT India-USA) initiative for heavy industry decarbonization; Sagar Bandhu = India's operation to assist Sri Lanka during Cyclone Ditwah (not a deep-sea program).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29076,"question_text":"South Korea held a snap presidential election on June 3, 2025. Who was the new President-elect who defeated the conservative candidate?","option_a":"Yoon Suk-yeol","option_b":"Han Duck-soo","option_c":"Lee Jae-myung","option_d":"Ahn Cheol-soo","correct_answer":"C","explanation":"Lee Jae-myung (Democratic Party) won South Korea's June 3, 2025 snap presidential election, defeating conservative candidate Han Duck-soo. Lee had previously narrowly lost the 2022 election to Yoon. He also became President as Yoon's Constitutional Court impeachment (April 4, 2025) paved the way. Lee also hosted APEC 2025 in Gyeongju.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29077,"question_text":"In Japan's political system, the PM is selected by both chambers of the National Diet. Sanae Takaichi led which coalition?","option_a":"LDP + Komeito","option_b":"LDP + Japan Innovation Party","option_c":"DPJ + LDP","option_d":"LDP alone (majority)","correct_answer":"B","explanation":"Sanae Takaichi became Japan's PM leading an LDP (Liberal Democratic Party) + Japan Innovation Party coalition. The LDP had traditionally partnered with Komeito, but following the 2025 LDP leadership changes, Takaichi secured the Japan Innovation Party as coalition partner instead. She won the LDP leadership election defeating Shinjirō Koizumi.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29078,"question_text":"The 2026 FIFA World Cup will feature 48 teams for the first time. How many teams played in previous World Cups (since 1998)?","option_a":"24 teams","option_b":"32 teams","option_c":"36 teams","option_d":"40 teams","correct_answer":"B","explanation":"Previous FIFA World Cups (1998-2022) featured 32 teams. The 2026 World Cup (USA-Canada-Mexico) expands to 48 teams — with 16 groups of 3 teams (or 12 groups of 4). India's football team has never qualified for the FIFA World Cup. FIFA World Cup 2022: Qatar (first in Middle East, first in winter); Argentina won (3rd title).","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29079,"question_text":"Which Indian city was ranked as the world's most populous urban area in 2025 by the United Nations?","option_a":"Mumbai","option_b":"Delhi","option_c":"Kolkata","option_d":"Bengaluru","correct_answer":"B","explanation":"Delhi (National Capital Region) was ranked as the world's most populous urban area in 2025 by UN Habitat — surpassing Tokyo. Delhi's population: 33+ million in city, 35+ million in NCR. The question mentions Jakarta at 42 million (which was Jakarta Greater area including suburban zones — methodologies differ). UN World Cities Report 2025 confirms Delhi NCR as world's most populated urban area.","folder":"General_Science","topic":"National_Current_Affairs"},
+    {"id":29080,"question_text":"WTO Director-General Ngozi Okonjo-Iweala is from which country and represents which milestone? [2025-2026 Rewrite v2]","option_a":"Ghana, first African DG","option_b":"Nigeria, first woman and first African DG of WTO","option_c":"South Africa, first female DG","option_d":"Kenya, first from Sub-Saharan Africa","correct_answer":"B","explanation":"Ngozi Okonjo-Iweala (Nigeria) is WTO DG — first woman AND first African to hold this position (appointed March 2021, re-appointed 2025). She previously served as Nigeria's Finance Minister (twice) and World Bank Managing Director. WTO (World Trade Organization) HQ: Geneva, Switzerland. Founded: 1995 (successor to GATT 1947). WTO has 166 member nations.","folder":"General_Science","topic":"National_Current_Affairs"},
 ]
 
 
 def seed():
-    conn = get_conn()
     if USE_POSTGRES:
-        cur_chk = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-    else:
-        cur_chk = conn.cursor()
-
-    cur_chk.execute("SELECT COUNT(*) FROM questions WHERE id >= 29001 AND id <= 29080")
-    existing = _fv(cur_chk.fetchone())
-    if existing >= 75:
-        print(f"[seed_intl_events_mcq] {existing}/80 questions already present — skipping.")
-        conn.close()
-        return
-
-    ph = '%s' if USE_POSTGRES else '?'
-    sql = f"""INSERT {'INTO' if USE_POSTGRES else 'OR IGNORE INTO'} questions
-        (id, question_text, option_a, option_b, option_c, option_d,
-         correct_answer, explanation, folder, topic)
-        VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})
-        {'ON CONFLICT DO NOTHING' if USE_POSTGRES else ''}"""
-
-    if USE_POSTGRES:
+        import psycopg2
+        conn = psycopg2.connect(DATABASE_URL)
+        conn.autocommit = False
         cur = conn.cursor()
+        ph = "%s"
+        delete_sql = "DELETE FROM questions WHERE id >= %s AND id <= %s"
+        insert_sql = """
+            INSERT INTO questions
+              (id, question_text, option_a, option_b, option_c, option_d,
+               correct_answer, explanation, folder, topic)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            ON CONFLICT (id) DO NOTHING
+        """
     else:
+        conn = sqlite3.connect(
+            os.path.join(os.path.dirname(__file__), "database.db")
+        )
         cur = conn.cursor()
+        ph = "?"
+        delete_sql = "DELETE FROM questions WHERE id >= ? AND id <= ?"
+        insert_sql = """
+            INSERT OR IGNORE INTO questions
+              (id, question_text, option_a, option_b, option_c, option_d,
+               correct_answer, explanation, folder, topic)
+            VALUES (?,?,?,?,?,?,?,?,?,?)
+        """
 
-    inserted = 0
-    for q in QUESTIONS:
-        try:
-            cur.execute(sql, q)
-            inserted += 1
-        except Exception as e:
-            print(f"[seed_intl_events_mcq] Skipping ID {q[0]}: {e}")
-            try:
-                conn.rollback()
-            except:
-                pass
+    # Force-refresh: delete stale 2024 data in this range
+    cur.execute(delete_sql, (29001, 29080))
+
+    for q in INTL_EVENTS_MCQS:
+        cur.execute(insert_sql, (
+            q["id"], q["question_text"],
+            q["option_a"], q["option_b"], q["option_c"], q["option_d"],
+            q["correct_answer"], q["explanation"],
+            q["folder"], q["topic"],
+        ))
 
     conn.commit()
-    print(f"[seed_intl_events_mcq] Inserted {inserted}/{len(QUESTIONS)} questions (IDs 29001–29080).")
     conn.close()
+    print(f"[seed_intl_events_mcq] {len(INTL_EVENTS_MCQS)} Intl Events 2025-2026 MCQs seeded (IDs 29001-29080).")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     seed()
