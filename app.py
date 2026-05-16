@@ -6371,61 +6371,36 @@ def topic_notes(qid):
     except Exception as e:
         return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
 
-@app.route('/api/ai-explain', methods=['POST'])
-def ai_explain():
-    data = request.json or {}
-    question    = data.get('question', '')
-    answer      = data.get('answer', '')
-    explanation = data.get('explanation', '')
-
-    api_key = os.environ.get('PERPLEXITY_API_KEY', '')
-    if not api_key:
-        fallback = explanation or ('The correct answer is ' + answer + '.')
-        return jsonify({'text': fallback, 'source': 'db'})
-
-    prompt = (
-        f"Question: {question}\n"
-        f"Correct Answer: {answer}\n\n"
-        f"Explain in 2-3 clear sentences why this answer is correct. "
-        f"Be concise and educational."
-    )
+@app.route('/api/topic-notes-html/<int:qid>')
+def topic_notes_html(qid):
+    """Return the notes HTML file with Telugu hidden and mobile-friendly CSS injected."""
+    fname, label = None, None
+    for lo, hi, f, lbl in _NOTES_MAP:
+        if lo <= qid <= hi:
+            fname, label = f, lbl
+            break
+    if not fname:
+        return '<p style="font-family:sans-serif;padding:20px;color:#888">No study notes for this topic.</p>', 404
+    path = os.path.join(_NOTES_BASE, fname)
+    if not os.path.exists(path):
+        return '<p style="font-family:sans-serif;padding:20px;color:#888">Notes file not found.</p>', 404
     try:
-        import requests as req
-        r = req.post(
-            'https://api.perplexity.ai/chat/completions',
-            headers={
-                'Authorization': f'Bearer {api_key}',
-                'Content-Type': 'application/json'
-            },
-            json={
-                'model': 'sonar',
-                'messages': [{'role': 'user', 'content': prompt}],
-                'max_tokens': 220
-            },
-            timeout=10
-        )
-        text = r.json()['choices'][0]['message']['content'].strip()
-        return jsonify({'text': text, 'source': 'perplexity'})
-    except Exception as e:
-        fallback = explanation or ('The correct answer is ' + answer + '.')
-        return jsonify({'text': fallback, 'source': 'db'})
-
-
-# ── Run init_db on import (works with gunicorn on Railway AND locally) ──
-init_db()
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    print("\n" + "="*55)
-    print("  📚 MCQ EXAM APP — STARTED")
-    print(f"  DB: {'PostgreSQL ☁️' if USE_POSTGRES else 'SQLite 💾'}")
-    print("="*55)
-    if not USE_POSTGRES:
-        import socket
-        try: local_ip = socket.gethostbyname(socket.gethostname())
-        except: local_ip = "127.0.0.1"
-        print(f"\n  💻 On this PC:    http://localhost:{port}")
-        print(f"  📱 On your phone: http://{local_ip}:{port}")
-        print(f"\n  Make sure phone is on same WiFi network!")
-    print("="*55 + "\n")
-    app.run(host='0.0.0.0', port=port, debug=False)
+        html = open(path, 'r', encoding='utf-8').read()
+        inject = """<style>
+.bi-te,.te-td,.cover-te,.te-tag,[class*="te-"]{display:none!important}
+span.lang-tag{display:none!important}
+.cover{page-break-after:normal!important;border:none!important;box-shadow:none!important;margin:0!important;padding:4px 0!important}
+body{font-size:13px!important;padding:10px 14px!important;margin:0!important;background:#fff!important;color:#1a1a2e!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif!important}
+h1,h2,h3,h4,h5{font-size:15px!important;color:#1a237e!important;margin:10px 0 6px!important;font-weight:700!important}
+table{width:100%!important;border-collapse:collapse!important;font-size:12px!important;margin:8px 0!important}
+th{background:#1a237e!important;color:#fff!important;padding:6px 8px!important;text-align:left!important;font-size:12px!important}
+td{border:1px solid #c5cae9!important;padding:5px 8px!important;vertical-align:top!important;line-height:1.5!important}
+tr:nth-child(even) td{background:#f0f2ff!important}
+.highlight-box,.exam-alert,.shock-box{font-size:12px!important;padding:8px 10px!important;margin:6px 0!important;border-radius:6px!important}
+p,li{font-size:13px!important;line-height:1.65!important;margin:4px 0!important}
+ul,ol{padding-left:18px!important;margin:4px 0!important}
+.bilingual{display:block!important}
+.en-td,.en-col,.bi-en{display:table-cell!important}
+</style>"""
+        if '</head>' in html:
+            html = html.replace('</head

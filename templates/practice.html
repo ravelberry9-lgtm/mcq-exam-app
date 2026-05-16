@@ -166,10 +166,22 @@ body.fp .fp-ov{display:flex}
 .notes-toggle{font-size:16px;transition:transform .25s;flex-shrink:0}
 .notes-toggle.open{transform:rotate(180deg)}
 .notes-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.notes-body.open{max-height:65vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
-.notes-content{padding:12px 14px;font-size:12.5px;line-height:1.75;color:#1a1a2e;white-space:pre-wrap;font-family:'Segoe UI',Arial,sans-serif}
-.notes-spin{width:20px;height:20px;border:3px solid #e0f2f1;border-top-color:#00695c;border-radius:50%;animation:spin .7s linear infinite;margin:16px auto}
-.notes-empty{color:#78909c;font-style:italic;padding:14px;text-align:center;font-size:12px}
+.notes-body.open{max-height:68vh;overflow:hidden}
+.notes-frame{width:100%;height:66vh;border:none;display:block;background:#fff}
+.notes-spin{width:20px;height:20px;border:3px solid #e0f2f1;border-top-color:#00695c;border-radius:50%;animation:spin .7s linear infinite;margin:24px auto}
+/* subtopic selection */
+.subtopic-box{margin-top:14px;background:#e8eaf6;border-radius:12px;padding:12px 14px;text-align:left}
+.subtopic-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.subtopic-hdr-lbl{font-size:12px;font-weight:700;color:#1a237e}
+.subtopic-actions{display:flex;gap:6px}
+.subtopic-act-btn{background:#fff;color:#1a237e;border:1.5px solid #c5cae9;border-radius:50px;padding:3px 11px;font-size:11px;font-weight:700;cursor:pointer}
+.subtopic-list{display:flex;flex-direction:column;gap:7px;max-height:220px;overflow-y:auto}
+.subtopic-item{display:flex;align-items:center;gap:9px;background:#fff;border-radius:8px;padding:8px 11px;cursor:pointer;border:1.5px solid #c5cae9;transition:border-color .15s}
+.subtopic-item.selected{border-color:#3949ab;background:#f0f2ff}
+.subtopic-chk{width:16px;height:16px;accent-color:#1a237e;flex-shrink:0;cursor:pointer}
+.subtopic-name{flex:1;font-size:12.5px;font-weight:600;color:#1a1a2e}
+.subtopic-cnt{font-size:11px;color:#6b7280;font-weight:600;white-space:nowrap}
+.subtopic-warn{font-size:11px;color:#c62828;padding:4px 0 0;display:none}
 </style>
 </head>
 <body>
@@ -198,6 +210,17 @@ body.fp .fp-ov{display:flex}
   <div class="intro-icon">&#127919;</div>
   <h3 id="introTitle">Practice Mode</h3>
   <p id="introDesc"></p>
+  <div class="subtopic-box" id="subtopicBox" style="display:none">
+    <div class="subtopic-hdr">
+      <span class="subtopic-hdr-lbl">&#127919; Select Topics to Practice</span>
+      <div class="subtopic-actions">
+        <button class="subtopic-act-btn" onclick="selectAllST()">All</button>
+        <button class="subtopic-act-btn" onclick="clearAllST()">None</button>
+      </div>
+    </div>
+    <div class="subtopic-list" id="subtopicList"></div>
+    <div class="subtopic-warn" id="subtopicWarn">Select at least one topic.</div>
+  </div>
   <button class="start-btn" id="btnStart" onclick="startPractice()">Start Practice</button>
   <div class="resume-box" id="resumeBox" style="display:none">
     <div class="rb-info" id="resumeInfo"></div>
@@ -226,7 +249,7 @@ body.fp .fp-ov{display:flex}
     <span class="notes-toggle" id="notesToggle">&#8964;</span>
   </div>
   <div class="notes-body" id="notesBody">
-    <div class="notes-content" id="notesContent"></div>
+    <iframe class="notes-frame" id="notesFrame" frameborder="0" src="about:blank"></iframe>
   </div>
 </div>
 <div class="next-wrap" id="nextWrap"><button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next &#8594;</button></div>
@@ -280,6 +303,20 @@ body.fp .fp-ov{display:flex}
 const FOLDER = '{{ folder }}';
 const TOPIC  = '{{ topic }}';
 let allQ=[], filtQ=[], idx=0, correct=0, wrong=0, answered=0, filter='all', started=false, states={}, fpMode=false, fpIdx=0, anim=false;
+const SUBTOPIC_MAP=[
+  [20001,20086,'International Organisations'],
+  [21001,21080,'Summits & Conferences'],
+  [22001,22080,'Conflicts & Geopolitics'],
+  [23001,23080,'Awards & Honours'],
+  [25001,25080,'Environment & Climate'],
+  [26001,26080,'Science & Technology'],
+  [27001,27080,'Sports'],
+  [28001,28080,'Reports & Indices'],
+  [29001,29080,'Intl Events & Appointments'],
+  [30001,30080,'Mideast War 2025-26'],
+];
+let _stMap=new Map(), _stSel=new Set();
+function _stName(id){for(const[a,b,n]of SUBTOPIC_MAP)if(id>=a&&id<=b)return n;return null;}
 
 /* ── LOAD ── */
 async function load() {
@@ -331,6 +368,7 @@ function showIntro(){
     document.getElementById('btnStart').style.display='';
     document.getElementById('resumeBox').style.display='none';
   }
+  buildSubtopicUI();
   document.getElementById('introCard').style.display='';
 }
 
@@ -359,14 +397,21 @@ function setFilter(m,btn){
 }
 function applyFilter(){
   filtQ=filter==='all'?[...allQ]:allQ.filter(q=>q.difficulty===filter);
+  if(_stMap.size>1&&_stSel.size>0&&_stSel.size<_stMap.size){
+    filtQ=filtQ.filter(q=>{const n=_stName(q.id);return n?_stSel.has(n):true;});
+  }
   for(let i=filtQ.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[filtQ[i],filtQ[j]]=[filtQ[j],filtQ[i]];}
 }
 
 /* ── START ── */
 function startPractice(){
+  if(_stMap.size>1&&_stSel.size===0){
+    const w=document.getElementById('subtopicWarn');if(w)w.style.display='';
+    return;
+  }
   clearProgress();
   started=true; applyFilter();
-  if(!filtQ.length){alert('No questions match.');return;}
+  if(!filtQ.length){alert('No questions match this filter.');return;}
   idx=0;correct=0;wrong=0;answered=0;states={};
   document.getElementById('introCard').style.display='none';
   document.getElementById('sumCard').classList.remove('show');
@@ -668,40 +713,26 @@ const _notesCache = {};
 function fetchNotes(qid) {
   const panel = document.getElementById('notesPanel');
   const body  = document.getElementById('notesBody');
-  const cont  = document.getElementById('notesContent');
+  const frame = document.getElementById('notesFrame');
   const lbl   = document.getElementById('notesLabel');
   const tog   = document.getElementById('notesToggle');
-  if (!panel || !body || !cont) return;
-  panel.classList.add('show');
-  body.classList.add('open');
-  if (tog) tog.classList.add('open');
-  if (_notesCache[qid]) {
-    cont.textContent = _notesCache[qid].text;
-    if (lbl) lbl.textContent = _notesCache[qid].label;
+  if (!panel || !frame) return;
+  // Only show panel if qid is in a known topic range
+  let label = null;
+  for(const[a,b,n]of SUBTOPIC_MAP){if(qid>=a&&qid<=b){label=n;break;}}
+  if(!label){
+    panel.classList.remove('show');
+    if(body)body.classList.remove('open');
+    if(tog)tog.classList.remove('open');
     return;
   }
-  cont.innerHTML = '<div class="notes-spin"></div>';
-  if (lbl) lbl.textContent = 'Loading\u2026';
-  fetch('/api/topic-notes/' + qid)
-    .then(r => { if (!r.ok) throw new Error('no-notes'); return r.json(); })
-    .then(d => {
-      if (d.found && d.text) {
-        _notesCache[qid] = { text: d.text, label: d.label || '' };
-        cont.textContent = d.text;
-        if (lbl) lbl.textContent = d.label || '';
-      } else {
-        _notesCache[qid] = null;
-        panel.classList.remove('show');
-        body.classList.remove('open');
-        if (tog) tog.classList.remove('open');
-      }
-    })
-    .catch(() => {
-      panel.classList.remove('show');
-      body.classList.remove('open');
-      if (tog) tog.classList.remove('open');
-    });
+  panel.classList.add('show');
+  if(body)body.classList.add('open');
+  if(tog)tog.classList.add('open');
+  if(lbl)lbl.textContent=label;
+  frame.src='/api/topic-notes-html/'+qid;
 }
+
 function toggleNotes() {
   const body = document.getElementById('notesBody');
   const tog  = document.getElementById('notesToggle');
@@ -710,6 +741,41 @@ function toggleNotes() {
   if (tog) tog.classList.toggle('open');
 }
 
+function buildSubtopicUI(){
+  _stMap=new Map();
+  for(const q of allQ){const n=_stName(q.id);if(n)_stMap.set(n,(_stMap.get(n)||0)+1);}
+  const box=document.getElementById('subtopicBox');
+  const list=document.getElementById('subtopicList');
+  if(!box||!list||_stMap.size<=1){if(box)box.style.display='none';return;}
+  _stSel=new Set(_stMap.keys());
+  list.innerHTML='';
+  for(const[name,cnt]of _stMap){
+    const sid='st_'+name.replace(/\W+/g,'_');
+    const row=document.createElement('label');
+    row.className='subtopic-item selected';
+    row.htmlFor=sid;
+    row.innerHTML='<input type="checkbox" class="subtopic-chk" id="'+sid+'" value="'+name+'" checked>'+'<span class="subtopic-name">'+name+'</span>'+'<span class="subtopic-cnt">'+cnt+' Qs</span>';
+    row.querySelector('input').addEventListener('change',function(){toggleST(name,this.checked,row);});
+    list.appendChild(row);
+  }
+  box.style.display='';
+}
+function toggleST(name,on,row){
+  if(on){_stSel.add(name);if(row)row.classList.add('selected');}
+  else{_stSel.delete(name);if(row)row.classList.remove('selected');}
+  const w=document.getElementById('subtopicWarn');
+  if(w)w.style.display=_stSel.size===0?'':'none';
+}
+function selectAllST(){
+  _stSel=new Set(_stMap.keys());
+  document.querySelectorAll('#subtopicList input').forEach(cb=>{cb.checked=true;cb.closest('.subtopic-item').classList.add('selected');});
+  const w=document.getElementById('subtopicWarn');if(w)w.style.display='none';
+}
+function clearAllST(){
+  _stSel.clear();
+  document.querySelectorAll('#subtopicList input').forEach(cb=>{cb.checked=false;cb.closest('.subtopic-item').classList.remove('selected');});
+  const w=document.getElementById('subtopicWarn');if(w)w.style.display='';
+}
 load();
 </script>
 </body>
