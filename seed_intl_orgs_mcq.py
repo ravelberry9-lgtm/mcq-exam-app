@@ -1093,7 +1093,7 @@ def seed():
                 continue
             cur.execute(
                 f"""INSERT INTO questions
-                    (id, question, option_a, option_b, option_c, option_d,
+                    (id, question_text, option_a, option_b, option_c, option_d,
                      correct_answer, explanation, folder, topic)
                     VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
                 (
