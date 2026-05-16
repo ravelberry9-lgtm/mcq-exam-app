@@ -6282,6 +6282,95 @@ def search_proxy():
 # ─────────────────────────────────────────────
 # AI EXPLANATION ENDPOINT (Perplexity or DB fallback)
 # ─────────────────────────────────────────────
+
+# ── Topic Notes: extract clean English text from HTML notes file for a question ──
+_NOTES_MAP = [
+    (20001, 20086, "intl_organisations_notes.html",       "International Organisations"),
+    (21001, 21080, "summits_conferences_notes.html",       "Summits & Conferences 2025-26"),
+    (22001, 22080, "conflicts_geopolitics_notes.html",     "Conflicts & Geopolitics 2025-26"),
+    (23001, 23080, "awards_honours_notes.html",            "Awards & Honours 2025-26"),
+    (25001, 25080, "environment_climate_notes.html",       "Environment & Climate 2025-26"),
+    (26001, 26080, "science_technology_notes.html",        "Science & Technology 2025-26"),
+    (27001, 27080, "sports_current_affairs_notes.html",    "Sports Current Affairs 2025-26"),
+    (28001, 28080, "reports_indices_notes.html",           "Rankings, Reports & Indices 2025-26"),
+    (29001, 29080, "intl_events_appointments_notes.html",  "International Events & Appointments 2025-26"),
+    (30001, 30080, "mideast_war_2025_26_notes.html",       "Israel-Iran-America War 2025-26"),
+]
+_NOTES_BASE = os.path.join(os.path.dirname(__file__), 'static', 'notes', 'General_Science', 'Study_Notes')
+
+import re as _re
+
+def _html_to_text(html):
+    """Strip HTML and return clean readable English text (no Telugu)."""
+    import re
+    # Remove script/style
+    html = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', html, flags=re.DOTALL|re.IGNORECASE)
+    html = re.sub(r'<!--.*?-->', ' ', html, flags=re.DOTALL)
+    # Remove Telugu spans/divs entirely (class bi-te, te-td, lang-tag TE, cover-te)
+    html = re.sub(r'<[^>]*(bi-te|te-td|cover-te|te-tag)[^>]*>.*?</[^>]+>', ' ', html, flags=re.DOTALL|re.IGNORECASE)
+    html = re.sub(r'<span[^>]*class=[^>]*lang-tag[^>]*>TE</span>', '', html, flags=re.IGNORECASE)
+    # Block elements → newlines
+    html = re.sub(r'<(h[1-6])[^>]*>', r'\n### ', html, flags=re.IGNORECASE)
+    html = re.sub(r'</(h[1-6])>', '\n', html, flags=re.IGNORECASE)
+    html = re.sub(r'<(p|div|li|tr|br|hr)[^>]*>', '\n', html, flags=re.IGNORECASE)
+    html = re.sub(r'</(p|div|li|tr)>', '\n', html, flags=re.IGNORECASE)
+    html = re.sub(r'<th[^>]*>', ' | ', html, flags=re.IGNORECASE)
+    html = re.sub(r'<td[^>]*>', ' | ', html, flags=re.IGNORECASE)
+    html = re.sub(r'<b[^>]*>', '**', html, flags=re.IGNORECASE)
+    html = re.sub(r'</b>', '**', html, flags=re.IGNORECASE)
+    # Strip remaining tags
+    html = re.sub(r'<[^>]+>', '', html)
+    # Decode entities
+    for ent, ch in [('&amp;','&'),('&lt;','<'),('&gt;','>'),('&nbsp;',' '),
+                    ('&#39;',"'"),('&quot;','"'),('&ndash;','–'),('&mdash;','—'),
+                    ('&bull;','•'),('&copy;','©'),('&trade;','™')]:
+        html = html.replace(ent, ch)
+    # Filter out lines that are mostly Telugu (Unicode range 0C00-0C7F)
+    lines = html.splitlines()
+    cleaned = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            cleaned.append('')
+            continue
+        telugu_chars = sum(1 for c in line if '\u0c00' <= c <= '\u0c7f')
+        total_alpha = sum(1 for c in line if c.isalpha())
+        if total_alpha > 0 and telugu_chars / total_alpha > 0.5:
+            continue  # skip Telugu-heavy lines
+        cleaned.append(line)
+    # Collapse multiple blank lines
+    out, prev_blank = [], False
+    for l in cleaned:
+        if not l:
+            if not prev_blank:
+                out.append('')
+            prev_blank = True
+        else:
+            out.append(l)
+            prev_blank = False
+    return '\n'.join(out).strip()
+
+
+@app.route('/api/topic-notes/<int:qid>')
+def topic_notes(qid):
+    """Return clean text from the HTML study notes for a given question ID."""
+    fname, label = None, None
+    for lo, hi, f, lbl in _NOTES_MAP:
+        if lo <= qid <= hi:
+            fname, label = f, lbl
+            break
+    if not fname:
+        return jsonify({'text': '', 'label': '', 'found': False})
+    path = os.path.join(_NOTES_BASE, fname)
+    if not os.path.exists(path):
+        return jsonify({'text': '', 'label': label, 'found': False})
+    try:
+        html = open(path, 'r', encoding='utf-8').read()
+        text = _html_to_text(html)
+        return jsonify({'text': text, 'label': label, 'found': True, 'file': fname})
+    except Exception as e:
+        return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
+
 @app.route('/api/ai-explain', methods=['POST'])
 def ai_explain():
     data = request.json or {}
