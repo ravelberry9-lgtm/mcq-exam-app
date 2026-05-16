@@ -157,7 +157,6 @@ body.fp .fp-ov{display:flex}
 .fp-btn2{flex:1;padding:13px;border-radius:50px;border:none;font-size:14px;font-weight:700;cursor:pointer}
 .fp-home{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
 .fp-retry{background:#ffcc02;color:#1a237e}
-/* ── STUDY NOTES PANEL ── */
 .notes-panel{margin:8px 14px 0;border-radius:12px;overflow:hidden;border:1.5px solid #b2dfdb;background:#fff;display:none}
 .notes-panel.show{display:block;animation:fadeUp .25s ease}
 .notes-hdr{background:linear-gradient(135deg,#00695c,#00897b);color:#fff;padding:9px 14px;display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
@@ -622,4 +621,93 @@ function fpRestart(){
     sx=e.touches[0].clientX; sy=e.touches[0].clientY;
     dragging=true; locked=false; horiz=false;
     const w=wrap(); w.classList.remove('snap'); w.style.transform='translateX(0)'; w.style.opacity='1';
-  },
+  },{passive:true});
+  vp().addEventListener('touchmove',function(e){
+    if(!dragging||!fpMode) return;
+    const dx=e.touches[0].clientX-sx, dy=e.touches[0].clientY-sy;
+    if(!locked){if(Math.abs(dx)>8||Math.abs(dy)>8){horiz=Math.abs(dx)>Math.abs(dy);locked=true;} return;}
+    if(!horiz) return;
+    e.preventDefault();
+    const w=wrap();
+    w.style.transform='translateX('+dx+'px)';
+    w.style.opacity=Math.max(0.35,1-Math.abs(dx)/(window.innerWidth*0.9));
+  },{passive:false});
+  vp().addEventListener('touchend',function(e){
+    if(!dragging||!fpMode) return; dragging=false;
+    if(!horiz) return;
+    const dx=e.changedTouches[0].clientX-sx, W=window.innerWidth;
+    const commit=Math.abs(dx)>W*THRESH;
+    const w=wrap();
+    if(commit&&dx<0&&fpIdx<filtQ.length-1){
+      anim=true; w.classList.add('snap'); w.style.transform='translateX(-110%)'; w.style.opacity='0';
+      setTimeout(()=>{renderFP(fpIdx+1);anim=false;},320);
+    } else if(commit&&dx>0&&fpIdx>0){
+      anim=true; w.classList.add('snap'); w.style.transform='translateX(110%)'; w.style.opacity='0';
+      setTimeout(()=>{renderFP(fpIdx-1);anim=false;},320);
+    } else {
+      w.classList.add('snap'); w.style.transform='translateX(0)'; w.style.opacity='1';
+    }
+  },{passive:true});
+}());
+
+/* normal mode swipe */
+let _sx=0,_sy=0,_st=0;
+document.addEventListener('touchstart',e=>{_sx=e.touches[0].clientX;_sy=e.touches[0].clientY;_st=Date.now();},{passive:true});
+document.addEventListener('touchend',e=>{
+  if(fpMode||!started) return;
+  const dx=e.changedTouches[0].clientX-_sx, dy=e.changedTouches[0].clientY-_sy;
+  if(Math.abs(dx)<50||Math.abs(dy)>Math.abs(dx)*.75||Date.now()-_st>500) return;
+  if(dx<0) nextQuestion(); else prevQuestion();
+},{passive:true});
+
+function eh(t){if(!t)return'';return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function ea(t){if(!t)return'';return String(t).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;').replace(/\n/g,' ');}
+
+/* ── STUDY NOTES ── */
+const _notesCache = {};
+function fetchNotes(qid) {
+  const panel = document.getElementById('notesPanel');
+  const body  = document.getElementById('notesBody');
+  const cont  = document.getElementById('notesContent');
+  const lbl   = document.getElementById('notesLabel');
+  const tog   = document.getElementById('notesToggle');
+  if (!panel || !body || !cont) return;
+  panel.classList.add('show');
+  body.classList.add('open');
+  if (tog) tog.classList.add('open');
+  if (_notesCache[qid]) {
+    cont.textContent = _notesCache[qid].text;
+    if (lbl) lbl.textContent = _notesCache[qid].label;
+    return;
+  }
+  cont.innerHTML = '<div class="notes-spin"></div>';
+  if (lbl) lbl.textContent = 'Loading\u2026';
+  fetch('/api/topic-notes/' + qid)
+    .then(r => r.json())
+    .then(d => {
+      if (d.found && d.text) {
+        _notesCache[qid] = { text: d.text, label: d.label || '' };
+        cont.textContent = d.text;
+        if (lbl) lbl.textContent = d.label || '';
+      } else {
+        cont.innerHTML = '<div class="notes-empty">No study notes available for this topic.</div>';
+        if (lbl) lbl.textContent = '';
+      }
+    })
+    .catch(() => {
+      cont.innerHTML = '<div class="notes-empty">Could not load notes.</div>';
+      if (lbl) lbl.textContent = '';
+    });
+}
+function toggleNotes() {
+  const body = document.getElementById('notesBody');
+  const tog  = document.getElementById('notesToggle');
+  if (!body) return;
+  body.classList.toggle('open');
+  if (tog) tog.classList.toggle('open');
+}
+
+load();
+</script>
+</body>
+</html>
