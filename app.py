@@ -535,6 +535,26 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed Summits & Conferences MCQs (80 Qs, IDs 21001–21080) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_sum = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (21001, 21080))
+        sum_count = _fv(cur_sum.fetchone())
+        if sum_count < 75:
+            print(f"[startup] Summits & Conferences MCQs: {sum_count}/80 — auto-seeding...")
+            import importlib
+            sum_mod = importlib.import_module('seed_summits_mcq')
+            sum_mod.seed()
+            print("[startup] Summits & Conferences seed complete.")
+        else:
+            print(f"[startup] Summits & Conferences: {sum_count} questions already loaded.")
+    except Exception as _sum_e:
+        print(f"[startup] Summits & Conferences seed error: {_sum_e}")
+        try: conn.rollback()
+        except: pass
+
     conn.close()
 
 
