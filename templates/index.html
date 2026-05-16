@@ -1,0 +1,759 @@
+{% extends "base.html" %}
+{% block title %}MCQ Exam App — Home{% endblock %}
+
+{% block content %}
+<div class="main">
+
+  <!-- ── Greeting bar ── -->
+  <div class="greeting-bar">
+    <div class="greeting-left">
+      <div class="greeting-title">📚 APPSC MCQ Practice</div>
+      <div class="greeting-sub">Group 2 Mains · <span id="totalQ">…</span> questions loaded</div>
+    </div>
+    <div class="greeting-stats">
+      <div class="gs-item">
+        <span class="gs-val" id="totalExams">…</span>
+        <span class="gs-lbl">Exams</span>
+      </div>
+      <div class="gs-item">
+        <span class="gs-val" id="avgScore">…</span>
+        <span class="gs-lbl">Avg %</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Quick Launch Tiles ── -->
+  <section aria-label="Quick launch">
+    <div class="launch-grid">
+
+      <!-- Custom Exam -->
+      <a href="/setup" class="launch-tile" style="--c1:#1a237e;--c2:#3949ab;" aria-label="Custom Exam — configure a multi-topic quiz">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <div class="lt-name">Custom Exam</div>
+        <div class="lt-desc">Pick topics &amp; count</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+      <!-- APHC PYQ -->
+      <a href="/pyq" class="launch-tile" style="--c1:#bf360c;--c2:#e64a19;" aria-label="APHC Previous Year Questions">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="lt-name">APHC PYQ</div>
+        <div class="lt-desc">Previous year papers</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+      <!-- Audio Notes -->
+      <a href="/notes" class="launch-tile" style="--c1:#1b5e20;--c2:#388e3c;" aria-label="Audio Notes — interactive chapter notes with text-to-speech">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+        </div>
+        <div class="lt-name">Audio Notes</div>
+        <div class="lt-desc">Listen · chapter-by-chapter</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+      <!-- Wrong Answers -->
+      <a href="/wrong-answers" class="launch-tile" style="--c1:#c62828;--c2:#e64a19;" aria-label="Wrong Answers — review and retake">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="lt-name">Wrong Answers</div>
+        <div class="lt-desc"><span id="waCount">…</span> to review</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+      <!-- Study Guide -->
+      <a href="/read-notes" class="launch-tile" style="--c1:#4a148c;--c2:#7b1fa2;" aria-label="Study Guide — full HTML reference notes for AP Geo and Current Affairs">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <div class="lt-name">Study Guide</div>
+        <div class="lt-desc">Read · AP Geo &amp; CA notes</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Quick Quiz Accordion ── -->
+  <section aria-label="Quick Quiz by Topic">
+    <div class="card" style="padding:0;overflow:hidden;">
+
+      <div class="explorer-header">
+        <div class="card-title" style="margin:0;">⚡ Quick Quiz by Topic</div>
+        <button class="expand-all-btn" id="expandAllBtn" onclick="toggleAllFolders()" aria-label="Expand or collapse all">
+          Expand All
+        </button>
+      </div>
+
+      {% set ns = namespace(idx=0) %}
+
+      {# ── Section A: MCQ Question Bank topics ── #}
+      {% if tree %}
+
+        {# ── AP_HC: Featured practice tiles (always visible, no accordion) ── #}
+        {% if 'AP_HC' in tree %}
+        {% set hc_topics = tree['AP_HC'] %}
+        <div class="aphc-section">
+          <div class="aphc-header">
+            <span class="aphc-label">⚖️ AP HIGH COURT</span>
+            <span class="aphc-total">{{ totals.get('AP_HC',0) }} Questions</span>
+          </div>
+          <div class="aphc-grid">
+            {% for topic, count in hc_topics.items() %}
+            {% if topic == 'Indian_Economy' %}
+              {% set tile_icon = '💰' %}
+              {% set tile_bg = '#e8f5e9' %}
+              {% set tile_accent = '#2e7d32' %}
+              {% set tile_light = '#c8e6c9' %}
+            {% elif topic == 'Everyday_Science' %}
+              {% set tile_icon = '🔬' %}
+              {% set tile_bg = '#e3f2fd' %}
+              {% set tile_accent = '#1565c0' %}
+              {% set tile_light = '#bbdefb' %}
+            {% else %}
+              {% set tile_icon = '📋' %}
+              {% set tile_bg = '#f3e5f5' %}
+              {% set tile_accent = '#6a1b9a' %}
+              {% set tile_light = '#e1bee7' %}
+            {% endif %}
+            <div class="aphc-tile" style="background:{{ tile_bg }};border-color:{{ tile_light }}">
+              <div class="aphc-icon">{{ tile_icon }}</div>
+              <div class="aphc-name">{{ topic.replace('_',' ') }}</div>
+              <div class="aphc-count" style="color:{{ tile_accent }}">{{ count }} questions</div>
+              <div class="aphc-btns">
+                <a class="aphc-btn aphc-practice" href="/practice/AP_HC/{{ topic }}"
+                   style="background:{{ tile_accent }}">
+                  ⚡ Practice
+                </a>
+                <button class="aphc-btn aphc-exam"
+                        onclick="openQuizSheet('AP_HC','{{ topic }}',{{ count }},null)"
+                        style="border-color:{{ tile_accent }};color:{{ tile_accent }}">
+                  📝 Exam
+                </button>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {# ── Other folders: standard accordion ── #}
+        {% for folder, topics in tree.items() %}
+        {% if folder != 'AP_HC' %}
+        {% set folder_total = totals.get(folder, 0) %}
+        {% set ns.idx = ns.idx + 1 %}
+        {% set fid = 'f' ~ ns.idx %}
+
+        <div class="folder-block" id="fb-{{ fid }}">
+          <button class="folder-header"
+                  onclick="toggleFolder('{{ fid }}')"
+                  aria-expanded="false"
+                  aria-controls="folder-body-{{ fid }}"
+                  id="folder-btn-{{ fid }}">
+            <div class="folder-left">
+              <svg class="folder-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+              <span class="folder-name">{{ folder.replace('_',' ') }}</span>
+              <span class="folder-badge">{{ topics|length }} topics</span>
+            </div>
+            <div class="folder-right">
+              <span class="folder-qs">{{ folder_total }} Qs</span>
+              <svg class="folder-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+
+          <div class="folder-body" id="folder-body-{{ fid }}" role="region" aria-labelledby="folder-btn-{{ fid }}">
+            <div class="topic-tiles-grid">
+              {% for topic, count in topics.items() %}
+              <div class="topic-tile">
+                <div class="tile-top">
+                  <div class="tile-topic-name">{{ topic.replace('_',' ') }}</div>
+                  <div class="tile-q-count">{{ count }} Qs</div>
+                </div>
+                <div class="tile-actions">
+                  <button class="tile-btn tile-quiz"
+                          onclick="openQuizSheet('{{ folder }}','{{ topic }}',{{ count }},null)"
+                          aria-label="Quick quiz: {{ topic.replace('_',' ') }}">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Quiz
+                  </button>
+                  <a class="tile-btn tile-notes" href="/notes/{{ folder }}" aria-label="Audio Notes">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+                    Audio
+                  </a>
+                  <a class="tile-btn tile-read" href="/read-notes" aria-label="Study Guide">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                    Guide
+                  </a>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {# ── Section B: Audio Notes chapter MCQs ── #}
+      {% if chapter_tree %}
+        {% for subject, chapters in chapter_tree.items() %}
+        {% set ns.idx = ns.idx + 1 %}
+        {% set fid = 'f' ~ ns.idx %}
+        {% set ch_total = chapters | sum(attribute='count') %}
+
+        <div class="folder-block" id="fb-{{ fid }}">
+          <button class="folder-header"
+                  onclick="toggleFolder('{{ fid }}')"
+                  aria-expanded="false"
+                  aria-controls="folder-body-{{ fid }}"
+                  id="folder-btn-{{ fid }}">
+            <div class="folder-left">
+              <!-- headphone icon distinguishes audio-note chapters -->
+              <svg class="folder-ico" viewBox="0 0 24 24" aria-hidden="true" style="stroke:#ff6f00"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+              <span class="folder-name">{{ subject.replace('_',' ') }} <span style="font-size:10px;font-weight:600;opacity:.65;">· Audio Chapters</span></span>
+              <span class="folder-badge" style="background:#fff3e0;color:#e65100;">{{ chapters|length }} ch</span>
+            </div>
+            <div class="folder-right">
+              <span class="folder-qs">{{ ch_total }} Qs</span>
+              <svg class="folder-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+
+          <div class="folder-body" id="folder-body-{{ fid }}" role="region" aria-labelledby="folder-btn-{{ fid }}">
+            <div class="topic-tiles-grid">
+              {% for ch in chapters %}
+              <div class="topic-tile topic-tile-ch">
+                <div class="tile-top">
+                  <div class="tile-topic-name">Ch {{ ch.chapter_num }}: {{ ch.title }}</div>
+                  <div class="tile-q-count">{{ ch.count }} Qs</div>
+                </div>
+                <div class="tile-actions">
+                  <button class="tile-btn tile-quiz"
+                          onclick="openQuizSheet('{{ subject }}','Ch{{ ch.chapter_num }}',{{ ch.count }},{{ ch.note_id }})"
+                          aria-label="Quiz: Chapter {{ ch.chapter_num }}">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Quiz
+                  </button>
+                  <a class="tile-btn tile-notes"
+                     href="/notes/{{ ch.sn_subject }}/{{ subject }}"
+                     aria-label="Open chapter notes">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+                    Listen
+                  </a>
+                  <a class="tile-btn tile-read" href="/read-notes" aria-label="Study Guide">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                    Guide
+                  </a>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% endif %}
+
+      {% if not tree and not chapter_tree %}
+        <div class="empty-state">
+          <div class="empty-icon">📭</div>
+          <div class="empty-title">No questions yet!</div>
+          <p class="empty-sub">Go to <strong>⚙️ Admin</strong> to import your HTML &amp; PDF files.</p>
+        </div>
+      {% endif %}
+
+    </div>
+  </section>
+
+</div><!-- /main -->
+
+
+<!-- ── Quick Quiz Bottom Sheet ── -->
+<div class="qs-overlay" id="qsOverlay" onclick="closeQuizSheet()" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qsTitle">
+  <div class="qs-sheet" onclick="event.stopPropagation()">
+    <div class="qs-handle"><div class="qs-handle-bar"></div></div>
+    <div class="qs-title" id="qsTitle">⚡ Quick Quiz</div>
+    <div class="qs-sub"   id="qsSub"></div>
+
+    <div class="qs-label">How many questions?</div>
+    <div class="qs-chips" id="qsChips" role="group" aria-label="Question count">
+      <button class="qs-chip" data-n="10"  onclick="selectChip(this)">10</button>
+      <button class="qs-chip active" data-n="20" onclick="selectChip(this)">20</button>
+      <button class="qs-chip" data-n="30"  onclick="selectChip(this)">30</button>
+      <button class="qs-chip" data-n="0"   onclick="selectChip(this)">All</button>
+    </div>
+
+    <div class="qs-label" style="margin-top:14px;">Mode</div>
+    <div class="qs-chips" role="group" aria-label="Exam mode">
+      <button class="qs-chip active" data-mode="shuffle"   onclick="selectMode(this)">🔀 Shuffle</button>
+      <button class="qs-chip"        data-mode="no_repeat" onclick="selectMode(this)">🆕 New Only</button>
+    </div>
+
+    <div class="qs-actions">
+      <button class="btn btn-outline" style="flex:1;"  onclick="closeQuizSheet()">Cancel</button>
+      <button class="btn btn-primary" style="flex:2;"  id="qsStartBtn" onclick="startQuickQuiz()">⚡ Start Exam</button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<style>
+/* ── Greeting bar ── */
+.greeting-bar {
+  background: linear-gradient(135deg, #1a237e, #3949ab);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: white;
+  box-shadow: var(--shadow);
+}
+.greeting-title { font-size: 15px; font-weight: 800; margin-bottom: 3px; }
+.greeting-sub   { font-size: 11px; opacity: .8; }
+.greeting-stats { display: flex; gap: 16px; flex-shrink: 0; }
+.gs-item        { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.gs-val         { font-size: 20px; font-weight: 800; line-height: 1; }
+.gs-lbl         { font-size: 9px; opacity: .75; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+
+/* ── Quick-launch tile grid ── */
+.launch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.launch-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 18px 16px 14px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, var(--c1), var(--c2));
+  color: white;
+  text-decoration: none;
+  min-height: 118px;
+  overflow: hidden;
+  transition: transform .18s, box-shadow .18s;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 3px 12px rgba(0,0,0,.18);
+}
+.launch-tile:hover  { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.24); }
+.launch-tile:active { transform: scale(.97); }
+
+/* Decorative background blob */
+.lt-blob {
+  position: absolute;
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  right: -20px; bottom: -20px;
+  pointer-events: none;
+}
+
+/* Icon circle */
+.lt-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.18);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+.lt-icon svg {
+  width: 20px; height: 20px;
+  stroke: white; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.lt-name {
+  font-size: 14px; font-weight: 800;
+  line-height: 1.2; margin-bottom: 3px;
+  z-index: 1;
+}
+.lt-desc {
+  font-size: 10px; opacity: .8; line-height: 1.4;
+  z-index: 1; flex: 1;
+}
+.lt-arrow {
+  font-size: 16px; font-weight: 900; opacity: .6;
+  margin-top: auto; align-self: flex-end;
+}
+
+/* ── Explorer card ── */
+.explorer-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.expand-all-btn {
+  font-size: 11px; font-weight: 700; color: var(--primary);
+  background: none; border: 1.5px solid var(--primary);
+  border-radius: 20px; padding: 4px 11px; cursor: pointer;
+  transition: background .18s, color .18s;
+}
+.expand-all-btn:hover { background: var(--primary); color: white; }
+
+/* ── AP High Court featured section ── */
+.aphc-section {
+  margin: 10px 0 0;
+  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  padding: 14px 14px 16px;
+}
+.aphc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.aphc-label {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.aphc-total {
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+.aphc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.aphc-tile {
+  border-radius: 14px;
+  border: 1.5px solid;
+  padding: 14px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.aphc-icon  { font-size: 26px; line-height: 1; margin-bottom: 2px; }
+.aphc-name  { font-size: 13px; font-weight: 800; color: #1a1a2e; line-height: 1.3; }
+.aphc-count { font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+.aphc-btns  { display: flex; gap: 6px; margin-top: auto; }
+.aphc-btn {
+  flex: 1;
+  text-align: center;
+  padding: 7px 4px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.2;
+  border: none;
+  transition: opacity 0.15s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+.aphc-btn:active { transform: scale(0.95); opacity: 0.85; }
+.aphc-practice { color: #fff; }
+.aphc-exam     { background: rgba(255,255,255,0.9) !important; }
+
+/* ── Folder accordion ── */
+.folder-block { border-bottom: 1px solid var(--border); }
+.folder-block:last-child { border-bottom: none; }
+.folder-header {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 18px; background: none; border: none; cursor: pointer;
+  text-align: left; gap: 8px; -webkit-tap-highlight-color: transparent;
+  transition: background .15s;
+}
+.folder-header:hover { background: rgba(26,35,126,.04); }
+[data-theme="dark"] .folder-header:hover { background: rgba(255,255,255,.04); }
+.folder-left  { display: flex; align-items: center; gap: 7px; flex: 1; min-width: 0; }
+.folder-right { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
+.folder-ico   { width: 15px; height: 15px; stroke: var(--primary); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.folder-name  { font-size: 13px; font-weight: 700; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.folder-badge { font-size: 10px; font-weight: 700; background: #e8eaf6; color: #3949ab; border-radius: 20px; padding: 1px 7px; white-space: nowrap; flex-shrink: 0; }
+[data-theme="dark"] .folder-badge { background: #1a2040; color: #90caf9; }
+.folder-qs    { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+.folder-chevron {
+  width: 15px; height: 15px; stroke: var(--text-muted); fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform .25s ease; flex-shrink: 0;
+}
+.folder-header[aria-expanded="true"] .folder-chevron { transform: rotate(180deg); }
+.folder-header[aria-expanded="true"] .folder-ico     { stroke: var(--accent); }
+.folder-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .25s ease;
+  padding: 0 12px;
+}
+/* Bumped from 4000px → 20000px so 90+ chapters render fully on mobile (single-column).
+   Folders with 90 chapters at ~75px = ~6750px on phone needed more headroom. */
+.folder-body.open { max-height: 20000px; padding: 8px 12px 14px; }
+
+/* ── Topic tiles inside accordion ── */
+.topic-tiles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; }
+.topic-tile {
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: 10px; overflow: hidden; display: flex; flex-direction: column;
+  transition: border-color .18s, box-shadow .18s;
+}
+.topic-tile:hover { border-color: var(--primary-light); box-shadow: var(--shadow); }
+[data-theme="dark"] .topic-tile { background: #181e30; }
+.tile-top { padding: 9px 10px 7px; flex: 1; }
+.tile-topic-name { font-size: 11px; font-weight: 700; line-height: 1.3; color: var(--text); margin-bottom: 2px; }
+.tile-q-count    { font-size: 10px; color: var(--text-muted); font-weight: 600; }
+.tile-actions    { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); }
+.tile-btn {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; padding: 6px 2px;
+  font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px;
+  border: none; background: none; cursor: pointer; text-decoration: none;
+  color: var(--text-muted); transition: background .15s, color .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.tile-btn + .tile-btn { border-left: 1px solid var(--border); }
+.tile-btn svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tile-btn:active { opacity: .7; }
+.tile-quiz  { color: #1565c0; } .tile-quiz:hover  { background: #e3f2fd; }
+.tile-notes { color: #2e7d32; } .tile-notes:hover { background: #e8f5e9; }
+.tile-read  { color: #6a1b9a; } .tile-read:hover  { background: #f3e5f5; }
+[data-theme="dark"] .tile-quiz:hover  { background: #0d2240; }
+[data-theme="dark"] .tile-notes:hover { background: #0d2015; }
+[data-theme="dark"] .tile-read:hover  { background: #1a0d26; }
+
+/* Audio-chapter tiles get a warm left border */
+.topic-tile-ch { border-left: 3px solid #ff9800; }
+.topic-tile-ch .tile-topic-name { font-size: 11px; }
+[data-theme="dark"] .topic-tile-ch { border-left-color: #ffa726; }
+
+/* ── Empty state ── */
+.empty-state { text-align: center; padding: 32px 20px; color: var(--text-muted); }
+.empty-icon  { font-size: 40px; margin-bottom: 10px; }
+.empty-title { font-size: 15px; font-weight: 700; margin-bottom: 5px; color: var(--text); }
+.empty-sub   { font-size: 13px; line-height: 1.6; }
+
+/* ── Quick Quiz bottom sheet ── */
+.qs-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.45); align-items: flex-end;
+  -webkit-tap-highlight-color: transparent;
+}
+.qs-overlay.open { display: flex; }
+.qs-sheet {
+  width: 100%; max-width: 520px; margin: 0 auto;
+  background: var(--card); border-radius: 20px 20px 0 0;
+  padding: 0 20px 28px; box-shadow: 0 -6px 30px rgba(0,0,0,.18);
+  animation: sheetUp .26s ease;
+}
+@keyframes sheetUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.qs-handle { display: flex; justify-content: center; padding: 12px 0 14px; cursor: pointer; }
+.qs-handle-bar { width: 36px; height: 4px; background: var(--border); border-radius: 2px; }
+.qs-title  { font-size: 17px; font-weight: 800; color: var(--text); margin-bottom: 3px; }
+.qs-sub    { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+.qs-label  { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 8px; }
+.qs-chips  { display: flex; gap: 8px; flex-wrap: wrap; }
+.qs-chip {
+  padding: 8px 15px; border-radius: 20px; border: 2px solid var(--border);
+  background: var(--bg); color: var(--text); font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: all .18s; -webkit-tap-highlight-color: transparent;
+}
+.qs-chip.active { background: var(--primary); border-color: var(--primary); color: white; }
+.qs-chip:hover:not(.active):not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.qs-chip:disabled { opacity: .38; cursor: not-allowed; }
+.qs-actions { display: flex; gap: 10px; margin-top: 22px; }
+
+/* ── Responsive ── */
+@media (max-width: 340px) {
+  .launch-tile    { min-height: 100px; padding: 14px 12px 10px; }
+  .topic-tiles-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+// ── Stats ──
+fetch('/api/stats').then(r => r.json()).then(d => {
+  document.getElementById('totalQ').textContent     = d.total_questions.toLocaleString();
+  document.getElementById('totalExams').textContent = d.total_exams;
+  document.getElementById('avgScore').textContent   = d.avg_score + '%';
+}).catch(() => {});
+
+// ── Wrong Answers count for the tile ──
+{
+  let _devId = localStorage.getItem('mcq_device_id');
+  if (!_devId) { _devId = 'web_' + Math.random().toString(36).slice(2,9); localStorage.setItem('mcq_device_id', _devId); }
+  fetch('/api/wrong-answers-stats?device_id=' + encodeURIComponent(_devId))
+    .then(r => r.json())
+    .then(d => {
+      const el = document.getElementById('waCount');
+      if (el) el.textContent = (d.unresolved || 0);
+    }).catch(() => {});
+}
+
+// ── Device ID ──
+let _devId = localStorage.getItem('mcq_device_id');
+if (!_devId) { _devId = 'web_' + Math.random().toString(36).slice(2,9); localStorage.setItem('mcq_device_id', _devId); }
+
+// ── Folder accordion ──
+const FS_KEY = 'mcq_open_folders';
+function _loadFS() { try { return JSON.parse(localStorage.getItem(FS_KEY) || '{}'); } catch(e) { return {}; } }
+function _saveFS(st) { localStorage.setItem(FS_KEY, JSON.stringify(st)); }
+
+function toggleFolder(idx) {
+  const body = document.getElementById('folder-body-' + idx);
+  const btn  = document.getElementById('folder-btn-'  + idx);
+  if (!body) return;
+  const open = body.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  const st = _loadFS(); st[idx] = open; _saveFS(st);
+  _updateExpandBtn();
+}
+
+function toggleAllFolders() {
+  const bodies  = document.querySelectorAll('.folder-body');
+  const allOpen = [...bodies].every(b => b.classList.contains('open'));
+  const target  = !allOpen;
+  const st = {};
+  bodies.forEach((body, i) => {
+    const idx = i + 1;
+    body.classList.toggle('open', target);
+    const btn = document.getElementById('folder-btn-' + idx);
+    if (btn) btn.setAttribute('aria-expanded', target ? 'true' : 'false');
+    st[idx] = target;
+  });
+  _saveFS(st);
+  _updateExpandBtn();
+}
+
+function _updateExpandBtn() {
+  const bodies  = document.querySelectorAll('.folder-body');
+  const allOpen = [...bodies].every(b => b.classList.contains('open'));
+  const btn = document.getElementById('expandAllBtn');
+  if (btn) btn.textContent = allOpen ? 'Collapse All' : 'Expand All';
+}
+
+// Restore state on load
+document.addEventListener('DOMContentLoaded', () => {
+  const st = _loadFS();
+  document.querySelectorAll('.folder-body').forEach((body, i) => {
+    const idx = i + 1;
+    if (st[idx]) {
+      body.classList.add('open');
+      const btn = document.getElementById('folder-btn-' + idx);
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+  _updateExpandBtn();
+});
+
+// ── Quick Quiz sheet ──
+let _qsFolder = '', _qsTopic = '', _qsAvail = 0, _qsCount = 20, _qsMode = 'shuffle', _qsNoteId = null;
+
+function openQuizSheet(folder, topic, avail, noteId) {
+  _qsFolder = folder;
+  _qsTopic  = topic;
+  _qsAvail  = parseInt(avail);
+  _qsNoteId = noteId || null;   // non-null = chapter-specific quiz
+
+  document.getElementById('qsTitle').textContent = '⚡ ' + topic.replace(/_/g, ' ');
+  document.getElementById('qsSub').textContent   = _qsNoteId
+    ? folder.replace(/_/g,' ') + ' · Chapter MCQs only'
+    : folder.replace(/_/g,' ') + ' · Bank Qs + Chapter MCQs mixed';
+
+  // Set chip availability
+  const defaultN = Math.min(20, _qsAvail);
+  _qsCount = defaultN;
+  document.querySelectorAll('.qs-chip[data-n]').forEach(c => {
+    const n = parseInt(c.dataset.n);
+    const tooMany = n > _qsAvail && n !== 0;
+    c.disabled = tooMany;
+    c.classList.toggle('active', !tooMany && n === defaultN);
+  });
+  if (_qsAvail < 10) {
+    document.querySelectorAll('.qs-chip[data-n]').forEach(c => c.classList.remove('active'));
+    const allC = document.querySelector('.qs-chip[data-n="0"]');
+    if (allC) { allC.classList.add('active'); _qsCount = 0; }
+  }
+  // Reset mode
+  document.querySelectorAll('.qs-chip[data-mode]').forEach(c => c.classList.toggle('active', c.dataset.mode === 'shuffle'));
+  _qsMode = 'shuffle';
+
+  // Always reset start button when opening a new sheet
+  const btn = document.getElementById('qsStartBtn');
+  if (btn) { btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
+
+  const ol = document.getElementById('qsOverlay');
+  ol.classList.add('open');
+  ol.removeAttribute('aria-hidden');
+}
+
+function closeQuizSheet() {
+  const ol = document.getElementById('qsOverlay');
+  ol.classList.remove('open');
+  ol.setAttribute('aria-hidden', 'true');
+  // Reset start button so it's never stuck in "Starting…" state
+  const btn = document.getElementById('qsStartBtn');
+  if (btn) { btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
+}
+
+function selectChip(el) {
+  if (el.disabled) return;
+  document.querySelectorAll('.qs-chip[data-n]').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  _qsCount = parseInt(el.dataset.n);
+}
+
+function selectMode(el) {
+  document.querySelectorAll('.qs-chip[data-mode]').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  _qsMode = el.dataset.mode;
+}
+
+function startQuickQuiz() {
+  const btn = document.getElementById('qsStartBtn');
+  btn.disabled = true;
+  btn.textContent = 'Starting…';
+  const count = _qsCount === 0 ? _qsAvail : _qsCount;
+  const payload = {
+    folder: _qsFolder, topic: _qsTopic,
+    count: count, mode: _qsMode,
+    device_id: _devId, student_name: 'Student',
+  };
+  // Include note_id for chapter-specific quizzes (Audio Notes chapters)
+  if (_qsNoteId) payload.note_id = _qsNoteId;
+
+  fetch('/api/start-quick-exam', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
+    body: JSON.stringify(payload)
+  })
+  .then(r => r.json())
+  .then(d => {
+    if (d.session_id) {
+      window.location.href = '/exam/' + d.session_id;
+    } else {
+      showToast(d.error || 'Could not start exam', 'error');
+      btn.disabled = false;
+      btn.textContent = '⚡ Start Exam';
+    }
+  })
+  .catch(() => {
+    showToast('Network error — try again', 'error');
+    btn.disabled = false;
+    btn.textContent = '⚡ Start Exam';
+  });
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuizSheet(); });
+</script>
+{% endblock %}

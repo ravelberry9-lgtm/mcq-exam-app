@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% block title %}{{ subtopic }} – {{ topic.replace('_',' ') }} – Notes{% endblock %}
+{% block content %}
+<style>
+  .ch-card {
+    display:flex; flex-direction:column; gap:8px;
+    cursor:pointer; transition:transform 0.15s;
+    text-decoration:none; color:inherit;
+  }
+  .ch-card:hover .ch-inner { transform:translateY(-2px); }
+  .ch-inner {
+    background:var(--card-bg,#fff);
+    border:1.5px solid var(--border,#e8d5b0);
+    border-radius:12px;
+    padding:12px 14px;
+    display:flex; align-items:center; gap:14px;
+    transition:transform 0.15s, box-shadow 0.15s;
+  }
+  .ch-inner:hover { box-shadow:0 4px 14px rgba(0,0,0,0.10); }
+  .ch-num {
+    width:44px; height:44px; border-radius:10px;
+    background:linear-gradient(135deg,#7b3f00,#c8860a);
+    display:flex; align-items:center; justify-content:center;
+    color:white; font-size:15px; font-weight:800; flex-shrink:0;
+  }
+  .ch-meta { flex:1; min-width:0; }
+  .ch-te   { font-size:15px; font-weight:700; color:var(--primary,#1a237e); }
+  .ch-en   { font-size:12px; color:var(--text-muted,#888); margin-top:2px; }
+  .ch-pg   { font-size:11px; color:var(--text-muted,#888); margin-top:2px; }
+  .ch-prog-wrap { margin-top:6px; }
+  .ch-prog-row  { display:flex; align-items:center; gap:7px; }
+  .ch-prog-bar  { flex:1; height:5px; background:#e0d0b0; border-radius:50px; overflow:hidden; }
+  .ch-prog-fill { height:100%; border-radius:50px; background:linear-gradient(90deg,#2e7d32,#66bb6a); transition:width 0.4s; }
+  .ch-prog-pct  { font-size:11px; font-weight:700; color:#2e7d32; white-space:nowrap; min-width:36px; text-align:right; }
+  .ch-prog-last { font-size:10px; color:#888; margin-top:2px; }
+  .badge-audio { font-size:11px; background:#fff3cd; color:#856404; padding:2px 8px; border-radius:10px; font-weight:700; white-space:nowrap; }
+  .badge-done  { font-size:11px; background:#e8f5e9; color:#2e7d32; padding:2px 8px; border-radius:10px; font-weight:700; white-space:nowrap; }
+  [data-theme="dark"] .ch-prog-bar { background:#2a2d3e; }
+  [data-theme="dark"] .ch-inner { background:#1a1d2e; border-color:#2a2d3e; }
+</style>
+
+<div class="main">
+
+  <!-- Breadcrumb -->
+  <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">
+    <a href="/notes" style="color:var(--primary);text-decoration:none;">📖 Notes</a>
+    <span style="margin:0 6px;">›</span>
+    <a href="/notes/{{ subject }}" style="color:var(--primary);text-decoration:none;">{{ subject.replace('_',' ') }}</a>
+    <span style="margin:0 6px;">›</span>
+    <a href="/notes/{{ subject }}/{{ topic }}" style="color:var(--primary);text-decoration:none;">{{ topic.replace('_',' ') }}</a>
+    <span style="margin:0 6px;">›</span>
+    <strong>{{ subtopic }}</strong>
+  </div>
+
+  <!-- Header card -->
+  {% set period_icons   = {'Ancient': '🏺', 'Medieval': '🕌', 'Modern': '🏭'} %}
+  {% set period_colors  = {'Ancient': 'linear-gradient(135deg,#4e342e,#8d6e63)',
+                            'Medieval': 'linear-gradient(135deg,#1b5e20,#388e3c)',
+                            'Modern':   'linear-gradient(135deg,#0d47a1,#1976d2)'} %}
+  <div class="card" style="background:{{ period_colors.get(subtopic, 'linear-gradient(135deg,#37474f,#546e7a)') }};color:white;padding:20px 16px;margin-bottom:14px;">
+    <div style="font-size:28px;margin-bottom:6px;">{{ period_icons.get(subtopic, '📚') }}</div>
+    <h2 style="font-size:18px;font-weight:800;">{{ subtopic }} — {{ topic.replace('_',' ') }}</h2>
+    <p style="opacity:0.8;font-size:12px;margin-top:4px;">{{ chapters|length }} chapter(s) available</p>
+  </div>
+
+  <!-- Chapter list -->
+  {% for ch in chapters %}
+  <a class="ch-card" href="/notes/{{ subject }}/{{ topic }}/{{ ch.id }}">
+    <div class="ch-inner">
+      <div class="ch-num">{{ ch.chapter_num }}</div>
+      <div class="ch-meta">
+        <div class="ch-te">{{ ch.chapter_title_te }}</div>
+        <div class="ch-en">{{ ch.chapter_title_en }}</div>
+        {% if ch.pages_ref %}<div class="ch-pg">📄 Pages {{ ch.pages_ref }}</div>{% endif %}
+        <div class="ch-prog-wrap" id="prog-wrap-{{ ch.id }}">
+          <div class="ch-prog-row">
+            <div class="ch-prog-bar"><div class="ch-prog-fill" id="prog-fill-{{ ch.id }}" style="width:0%"></div></div>
+            <div class="ch-prog-pct" id="prog-pct-{{ ch.id }}"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:2px;">
+            <div class="ch-prog-last" id="prog-last-{{ ch.id }}" style="flex:1;"></div>
+            <div id="prog-time-{{ ch.id }}" style="font-size:10px;color:#2e7d32;font-weight:700;white-space:nowrap;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
+        <span class="badge-audio" id="badge-{{ ch.id }}">🔊 Audio</span>
+        <div style="color:var(--text-muted);font-size:16px;">›</div>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+
+  {% if not chapters %}
+  <div class="card" style="text-align:center;padding:40px 20px;">
+    <div style="font-size:48px;margin-bottom:12px;">📭</div>
+    <p style="font-size:15px;color:var(--text-muted);">No chapters in {{ subtopic }} yet.</p>
+  </div>
+  {% endif %}
+
+</div>
+
+<script>
+const CHAPTERS = {{ chapters | tojson }};
+
+function relativeTime(isoStr) {
+  if (!isoStr) return '';
+  const diff = Date.now() - new Date(isoStr).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1)   return 'ఇప్పుడే';
+  if (mins < 60)  return mins + ' నిమిషాల క్రితం';
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24)   return hrs + ' గంటల క్రితం';
+  const days = Math.floor(hrs / 24);
+  if (days < 7)   return days + ' రోజుల క్రితం';
+  return new Date(isoStr).toLocaleDateString();
+}
+function loadChapterProgress(id) {
+  try { return JSON.parse(localStorage.getItem('notes_prog_' + id)) || {done:[], last:null}; }
+  catch(e) { return {done:[], last:null}; }
+}
+function loadChapterTimes(id) {
+  try { return JSON.parse(localStorage.getItem('notes_time_' + id)) || {}; }
+  catch(e) { return {}; }
+}
+function fmtTimeFull(secs) {
+  secs = Math.max(0, Math.floor(secs));
+  const m = Math.floor(secs / 60), s = secs % 60;
+  return m > 0 ? m + 'm ' + s + 's' : s + 's';
+}
+const CHAPTER_COUNTS = {};
+CHAPTERS.forEach(ch => { CHAPTER_COUNTS[ch.id] = ch.sec_count || 0; });
+
+function refreshAllProgress() {
+  CHAPTERS.forEach(ch => {
+    const prog  = loadChapterProgress(ch.id);
+    const total = CHAPTER_COUNTS[ch.id];
+    const done  = prog.done ? prog.done.length : 0;
+    const pct   = total ? Math.round(done / total * 100) : 0;
+    const fillEl = document.getElementById('prog-fill-' + ch.id);
+    const pctEl  = document.getElementById('prog-pct-'  + ch.id);
+    const lastEl = document.getElementById('prog-last-' + ch.id);
+    const badge  = document.getElementById('badge-'     + ch.id);
+    if (fillEl) fillEl.style.width = pct + '%';
+    if (pctEl)  pctEl.textContent  = total > 0 ? pct + '%' : '';
+    if (lastEl && prog.last) lastEl.textContent = '🕐 చివరిసారి: ' + relativeTime(prog.last);
+    const times      = loadChapterTimes(ch.id);
+    const listenSecs = Object.values(times).reduce((a, b) => a + b, 0);
+    const estSecs    = ch.est_secs || 0;
+    const timeEl     = document.getElementById('prog-time-' + ch.id);
+    if (timeEl) {
+      if (listenSecs > 0 && estSecs > 0)
+        timeEl.textContent = '⏱ ' + fmtTimeFull(listenSecs) + ' / ~' + fmtTimeFull(estSecs);
+      else if (estSecs > 0)
+        timeEl.textContent = '🕐 ~' + fmtTimeFull(estSecs);
+    }
+    if (badge && pct === 100) { badge.className = 'badge-done'; badge.textContent = '✅ పూర్తయింది'; }
+  });
+}
+document.addEventListener('DOMContentLoaded', refreshAllProgress);
+refreshAllProgress();
+</script>
+{% endblock %}
