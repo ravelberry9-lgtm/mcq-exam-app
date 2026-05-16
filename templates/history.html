@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block title %}Exam History{% endblock %}
+{% block content %}
+<div class="main">
+
+<div class="card" style="background:linear-gradient(135deg,#1a237e,#3949ab);color:white;border:none;">
+  <div style="font-size:20px;font-weight:800;">📜 Exam History</div>
+  <div style="opacity:0.85;font-size:13px;margin-top:4px;">All completed exam sessions</div>
+</div>
+
+<!-- Filter by student -->
+<div class="card" style="padding:14px;">
+  <input type="text" id="studentFilter" class="form-control"
+         placeholder="🔍 Filter by student name..." oninput="filterHistory()">
+</div>
+
+<!-- Stats summary -->
+<div class="stat-grid" id="summaryStats" style="margin-bottom:16px;display:none;">
+  <div class="stat-box"><div class="val" id="sSessions">0</div><div class="lbl">Exams</div></div>
+  <div class="stat-box"><div class="val" id="sAvg">0%</div><div class="lbl">Avg Score</div></div>
+  <div class="stat-box"><div class="val" id="sStudents">0</div><div class="lbl">Students</div></div>
+</div>
+
+<!-- History list -->
+<div id="historyList">
+  <div style="text-align:center;padding:40px;color:var(--text-muted);">
+    <div class="spinner" style="margin:0 auto 12px;"></div>
+    Loading history...
+  </div>
+</div>
+
+</div>
+
+<style>
+.spinner { width:30px;height:30px;border:3px solid #e0e4ef;border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite; }
+@keyframes spin{to{transform:rotate(360deg)}}
+.hist-card {
+  background:white;border-radius:12px;margin-bottom:10px;
+  padding:14px 16px;box-shadow:0 1px 6px rgba(0,0,0,0.07);
+  border-left:4px solid var(--border);
+}
+.hist-card.grade-a { border-left-color:#2e7d32; }
+.hist-card.grade-b { border-left-color:#33691e; }
+.hist-card.grade-c { border-left-color:#e65100; }
+.hist-card.grade-f { border-left-color:#c62828; }
+.hist-row { display:flex;align-items:center;justify-content:space-between;gap:10px; }
+.hist-student { font-size:15px;font-weight:700; }
+.hist-score {
+  font-size:22px;font-weight:800;
+  padding:4px 14px;border-radius:50px;
+}
+.score-a { background:#e8f5e9;color:#2e7d32; }
+.score-b { background:#f1f8e9;color:#33691e; }
+.score-c { background:#fff3e0;color:#e65100; }
+.score-f { background:#fce4ec;color:#c62828; }
+.hist-meta { font-size:12px;color:var(--text-muted);margin-top:5px; }
+.hist-topics { display:flex;flex-wrap:wrap;gap:5px;margin-top:6px; }
+.hist-topic-pill { background:#e8eaf6;color:#3949ab;font-size:11px;padding:2px 8px;border-radius:50px;font-weight:600; }
+</style>
+
+<script>
+let allHistory = [];
+
+async function loadHistory() {
+  const resp = await fetch('/api/history');
+  allHistory = await resp.json();
+  renderHistory(allHistory);
+  renderSummary(allHistory);
+}
+
+function renderSummary(data) {
+  if (!data.length) return;
+  document.getElementById('summaryStats').style.display = 'grid';
+  document.getElementById('sSessions').textContent = data.length;
+  const avg = data.reduce((s, r) => s + r.percentage, 0) / data.length;
+  document.getElementById('sAvg').textContent = Math.round(avg) + '%';
+  const students = new Set(data.map(r => r.student)).size;
+  document.getElementById('sStudents').textContent = students;
+}
+
+function renderHistory(data) {
+  const el = document.getElementById('historyList');
+  if (!data.length) {
+    el.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted);">No exam history yet.</div>';
+    return;
+  }
+  el.innerHTML = data.map(r => {
+    const pct = r.percentage;
+    let grade, scoreClass, cardClass;
+    if (pct >= 80)      { grade='A'; scoreClass='score-a'; cardClass='grade-a'; }
+    else if (pct >= 60) { grade='B'; scoreClass='score-b'; cardClass='grade-b'; }
+    else if (pct >= 40) { grade='C'; scoreClass='score-c'; cardClass='grade-c'; }
+    else                { grade='F'; scoreClass='score-f'; cardClass='grade-f'; }
+
+    const topics = r.topics.map(t => `<span class="hist-topic-pill">${t}</span>`).join('');
+    return `
+      <div class="hist-card ${cardClass}">
+        <div class="hist-row">
+          <div>
+            <div class="hist-student">👤 ${esc(r.student)}</div>
+            <div class="hist-meta">📅 ${r.submitted_at} &nbsp;·&nbsp; ⏱ ${r.duration} min</div>
+          </div>
+          <div>
+            <div class="hist-score ${scoreClass}">${r.score}/${r.total}</div>
+            <div style="text-align:center;font-size:11px;font-weight:700;color:var(--text-muted);">${pct}% · ${grade}</div>
+          </div>
+        </div>
+        <div class="hist-topics">${topics}</div>
+      </div>`;
+  }).join('');
+}
+
+function filterHistory() {
+  const q = document.getElementById('studentFilter').value.toLowerCase();
+  const filtered = q ? allHistory.filter(r => r.student.toLowerCase().includes(q)) : allHistory;
+  renderHistory(filtered);
+}
+
+function esc(t) {
+  return (t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+loadHistory();
+</script>
+{% endblock %}

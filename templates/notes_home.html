@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Notes – Study Material{% endblock %}
+{% block content %}
+<div class="main">
+
+  <div class="card" style="background:linear-gradient(135deg,#1a237e,#3949ab);color:white;text-align:center;padding:24px 16px;">
+    <div style="font-size:36px;margin-bottom:8px;">📖</div>
+    <h2 style="font-size:20px;font-weight:800;">Study Notes</h2>
+    <p style="opacity:0.85;font-size:13px;margin-top:4px;">Subject-wise Audio + Text Study Material</p>
+  </div>
+
+  {% if subjects %}
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">{{ subjects|length }} subject(s) available</p>
+    {% for s in subjects %}
+    <a href="/notes/{{ s.subject }}" style="text-decoration:none;">
+      <div class="card" style="display:flex;align-items:center;gap:14px;cursor:pointer;transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#1a237e,#3949ab);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">
+          {% if s.subject == 'GK' %}🌏
+          {% elif s.subject == 'Polity' %}⚖️
+          {% elif s.subject == 'Science' %}🔬
+          {% elif s.subject == 'Maths' %}📐
+          {% else %}📚{% endif %}
+        </div>
+        <div style="flex:1;">
+          <div style="font-size:16px;font-weight:700;color:var(--primary);">{{ s.subject.replace('_',' ') }}</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">{{ s.chapter_count }} chapter(s)</div>
+        </div>
+        <div style="color:var(--text-muted);font-size:18px;">›</div>
+      </div>
+    </a>
+    {% endfor %}
+  {% else %}
+    <div class="card" style="text-align:center;padding:40px 20px;">
+      <div style="font-size:48px;margin-bottom:12px;">📭</div>
+      <p style="font-size:16px;font-weight:600;color:var(--text-muted);">No study material yet</p>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Ask admin to seed Chapter 1 to get started!</p>
+      <a href="/admin" class="btn btn-primary" style="margin-top:16px;display:inline-flex;">⚙️ Go to Admin</a>
+    </div>
+  {% endif %}
+
+</div>
+{% endblock %}

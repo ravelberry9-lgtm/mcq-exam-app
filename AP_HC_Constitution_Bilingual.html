@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Constitution — Bilingual Quick Reference | AP High Court Exam</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════
+   BASE & PRINT SETUP
+══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:    #1B3A6B;
+  --blue:    #1565C0;
+  --lblue:   #D0E4F7;
+  --red:     #B71C1C;
+  --orange:  #E65100;
+  --green:   #1B5E20;
+  --lgreen:  #E8F5E9;
+  --amber:   #E65100;
+  --lamber:  #FFF3E0;
+  --purple:  #4A148C;
+  --lpurple: #F3E5F5;
+  --teal:    #00695C;
+  --lteal:   #E0F2F1;
+  --gray:    #263238;
+  --lgray:   #ECEFF1;
+  --gold:    #F57F17;
+  --white:   #FFFFFF;
+  --alt:     #EBF3FD;
+}
+
+body {
+  font-family: 'Noto Sans', 'Noto Sans Telugu', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--gray);
+  background: #f0f0f0;
+}
+
+/* ══════════════════════════════════════════════
+   PAGE CONTAINER
+══════════════════════════════════════════════ */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 14mm 13mm 14mm 13mm;
+  margin: 8mm auto;
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  page-break-after: always;
+  position: relative;
+}
+
+/* ══════════════════════════════════════════════
+   PRINT STYLES
+══════════════════════════════════════════════ */
+@page {
+  size: A4;
+  margin: 12mm 11mm 12mm 11mm;
+}
+@media print {
+  body { background: white; font-size: 13px; }
+  .page { margin: 0; box-shadow: none; width: 100%; padding: 0; page-break-after: always; }
+  .no-print { display: none !important; }
+}
+
+/* ══════════════════════════════════════════════
+   TYPOGRAPHY
+══════════════════════════════════════════════ */
+.te { font-family: 'Noto Sans Telugu', 'Noto Sans', Arial, sans-serif; }
+.en { font-family: 'Noto Sans', Arial, sans-serif; }
+
+h1 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--navy);
+  border-bottom: 3px solid var(--navy);
+  padding-bottom: 5px;
+  margin: 10px 0 8px 0;
+  line-height: 1.3;
+}
+h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--blue);
+  margin: 10px 0 5px 0;
+  line-height: 1.3;
+}
+h3 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 8px 0 4px 0;
+}
+.te-h { font-family: 'Noto Sans Telugu', sans-serif; font-size: 13.5px; color: var(--teal); display: block; font-weight: 600; margin-bottom: 1px; }
+
+/* ══════════════════════════════════════════════
+   HIGHLIGHT BOXES
+══════════════════════════════════════════════ */
+.box {
+  padding: 7px 11px;
+  border-radius: 5px;
+  margin: 6px 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.box-blue  { background: var(--lblue);   border-left: 5px solid var(--blue);   color: var(--navy); }
+.box-amber { background: var(--lamber);  border-left: 5px solid var(--amber);  color: #5D2F00; }
+.box-green { background: var(--lgreen);  border-left: 5px solid var(--green);  color: var(--green); }
+.box-red   { background: #FFEBEE;        border-left: 5px solid var(--red);    color: var(--red); }
+.box-purple{ background: var(--lpurple); border-left: 5px solid var(--purple); color: var(--purple); }
+.box-teal  { background: var(--lteal);   border-left: 5px solid var(--teal);   color: var(--teal); }
+
+/* ══════════════════════════════════════════════
+   TABLES
+══════════════════════════════════════════════ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6px 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+th {
+  background: var(--navy);
+  color: var(--white);
+  padding: 7px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid #aaa;
+  text-align: left;
+}
+td {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  vertical-align: top;
+}
+tr:nth-child(even) td { background: var(--alt); }
+.tbl-art { font-weight: 700; color: var(--navy); font-size: 13px; white-space: nowrap; }
+.tbl-te  { font-family: 'Noto Sans Telugu', sans-serif; font-size: 13px; color: var(--teal); display: block; }
+.bold { font-weight: 700; }
+.red  { color: var(--red); }
+.blue { color: var(--blue); }
+
+/* ══════════════════════════════════════════════
+   BULLETS
+══════════════════════════════════════════════ */
+ul.pts { margin: 4px 0 4px 16px; }
+ul.pts li { margin-bottom: 3px; font-size: 13.5px; line-height: 1.5; }
+ul.pts li span.te { font-family: 'Noto Sans Telugu', sans-serif; color: var(--teal); font-size: 13px; }
+
+/* ══════════════════════════════════════════════
+   PAGE HEADER / FOOTER
+══════════════════════════════════════════════ */
+.pg-hdr {
+  background: var(--navy);
+  color: var(--white);
+  padding: 5px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+.pg-ftr {
+  background: var(--lgray);
+  color: #555;
+  padding: 4px 10px;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+/* ══════════════════════════════════════════════
+   TITLE PAGE SPECIFIC
+══════════════════════════════════════════════ */
+.title-main {
+  background: var(--navy);
+  color: var(--white);
+  padding: 22px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 18mm 0 5mm 0;
+}
+.title-main h1 {
+  font-size: 28px;
+  color: var(--white);
+  border: none;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 2px;
+}
+.title-main .te-title {
+  font-family: 'Noto Sans Telugu', sans-serif;
+  font-size: 22px;
+  color: #FFD54F;
+  display: block;
+  margin-top: 6px;
+}
+.title-sub {
+  background: #1565C0;
+  color: #FFD54F;
+  padding: 8px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 0 0 8px 8px;
+  letter-spacing: 1px;
+}
+.title-exam {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 17px;
+  color: var(--navy);
+  font-weight: 700;
+}
+.title-covers {
+  background: var(--lgray);
+  border: 2px solid var(--navy);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+.badge {
+  display: inline-block;
+  background: var(--amber);
+  color: var(--white);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 2px 3px;
+}
+.pill-row { text-align: center; margin: 8px 0; }
+
+/* ══════════════════════════════════════════════
+   PRINT BUTTON
+══════════════════════════════════════════════ */
+.print-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--navy);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+.print-btn:hover { background: #2553A0; }
+
+/* grid for 2-col layout */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0; }
+.card {
+  background: var(--lgray);
+  border-left: 4px solid var(--navy);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+.card h3 { font-size: 13px; margin-bottom: 3px; }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+
+<!-- ════════════════════════════════════════════
+     PAGE 1 — TITLE PAGE
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="title-main">
+    <h1>INDIAN CONSTITUTION</h1>
+    <span class="te-title">భారత రాజ్యాంగం — త్వరిత సూచిక</span>
+  </div>
+  <div class="title-sub">QUICK REFERENCE GUIDE — త్వరిత మార్గదర్శి</div>
+  <p class="title-exam">Andhra Pradesh High Court Examination<br>
+    <span class="te" style="font-size:15px;color:#1565C0;">ఆంధ్రప్రదేశ్ హైకోర్టు పరీక్ష</span>
+  </p>
+  <div class="title-covers">
+    <strong>📚 Coverage / కవరేజ్:</strong><br>
+    ✅ Preamble (పీఠిక) &nbsp;|&nbsp; ✅ Fundamental Rights — ప్రాథమిక హక్కులు &nbsp;|&nbsp; ✅ DPSPs &nbsp;|&nbsp; ✅ Fundamental Duties — ప్రాథమిక విధులు<br>
+    ✅ President, VP, PM — రాష్ట్రపతి, ఉపరాష్ట్రపతి, ప్రధాన మంత్రి<br>
+    ✅ Parliament — పార్లమెంట్ &nbsp;|&nbsp; ✅ Judiciary — న్యాయవ్యవస్థ &nbsp;|&nbsp; ✅ Constitutional Bodies — రాజ్యాంగ సంస్థలు<br>
+    ✅ Federalism & Emergency — సమాఖ్యవాదం & అత్యవసర పరిస్థితి<br>
+    ✅ All 106 Amendments — అన్ని సవరణలు (1st to 106th)<br>
+    ✅ Landmark SC Judgments — ముఖ్యమైన న్యాయపీఠ తీర్పులు<br>
+    ✅ Current Affairs 2024–26 — తాజా రాజ్యాంగ పరిణామాలు
+  </div>
+  <div class="pill-row">
+    <span class="badge">A4 Printable</span>
+    <span class="badge">Bilingual Telugu-English</span>
+    <span class="badge">Large Font</span>
+    <span class="badge">AP HC Focus</span>
+    <span class="badge">2025 Edition</span>
+  </div>
+  <div class="box box-amber" style="margin-top:14px; font-size:14px; text-align:center;">
+    <strong>⚠️ Key Numbers / ముఖ్య సంఖ్యలు:</strong><br>
+    Originally: 395 Articles, 8 Schedules, 22 Parts &nbsp;|&nbsp; Now: ~470 Articles, 12 Schedules, 25 Parts<br>
+    <span class="te">అసలు: 395 అధికరణాలు, 8 షెడ్యూళ్లు | ప్రస్తుతం: ~470 అధికరణాలు, 12 షెడ్యూళ్లు</span><br>
+    Enacted: 26 Nov 1949 | Effective: 26 Jan 1950 | Longest written constitution in world
+  </div>
+  <div class="pg-ftr">For Exam Use Only | రాజ్యాంగ 106వ సవరణ వరకు | Current Affairs 2024–26 Covered</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 2 — PARTS & SCHEDULES
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>రాజ్యాంగ నిర్మాణం — CONSTITUTIONAL FRAMEWORK</span><span>Page 2</span></div>
+  <h1>రాజ్యాంగ నిర్మాణం — Parts, Articles &amp; Schedules</h1>
+
+  <div class="box box-blue" style="font-size:13.5px;">
+    <strong>Sources / మూలాలు:</strong> GoI Act 1935 (UPSC, EC, Federal), <strong>UK</strong> (PM, Cabinet, Rule of Law), <strong>USA</strong> (FRs, Judicial Review, Impeachment), <strong>Ireland</strong> (DPSPs), <strong>Canada</strong> (Residuary powers with Centre), <strong>Australia</strong> (Concurrent List, Joint Sitting), <strong>Germany</strong> (Emergency, FR suspension), <strong>South Africa</strong> (2/3rd amendment), <strong>Japan</strong> (Procedure by law — Art.21)
+  </div>
+
+  <h2>Parts of the Constitution / రాజ్యాంగం యొక్క భాగాలు</h2>
+  <table>
+    <tr><th style="width:13%">Part (Arts.)</th><th style="width:37%">Subject / విషయం</th><th style="width:13%">Part (Arts.)</th><th style="width:37%">Subject / విషయం</th></tr>
+    <tr><td><span class="tbl-art">I (1–4)</span></td><td>Union &amp; Territory <span class="tbl-te">సమాఖ్య &amp; భూభాగం</span></td><td><span class="tbl-art">II (5–11)</span></td><td>Citizenship <span class="tbl-te">పౌరసత్వం</span></td></tr>
+    <tr><td><span class="tbl-art">III (12–35)</span></td><td><strong class="red">Fundamental Rights ★</strong> <span class="tbl-te">ప్రాథమిక హక్కులు</span></td><td><span class="tbl-art">IV (36–51)</span></td><td>Directive Principles <span class="tbl-te">ఆదేశిక సూత్రాలు</span></td></tr>
+    <tr><td><span class="tbl-art">IVA (51A)</span></td><td>Fundamental Duties <span class="tbl-te">ప్రాథమిక విధులు</span></td><td><span class="tbl-art">V (52–151)</span></td><td>The Union <span class="tbl-te">కేంద్ర ప్రభుత్వం</span></td></tr>
+    <tr><td><span class="tbl-art">VI (152–237)</span></td><td>The States <span class="tbl-te">రాష్ట్రాలు</span></td><td><span class="tbl-art">VIII (239–242)</span></td><td>Union Territories <span class="tbl-te">కేంద్రపాలిత ప్రాంతాలు</span></td></tr>
+    <tr><td><span class="tbl-art">IX (243–O)</span></td><td>Panchayats — 73rd CAA <span class="tbl-te">పంచాయతీలు</span></td><td><span class="tbl-art">IXA (243P–ZG)</span></td><td>Municipalities — 74th CAA <span class="tbl-te">పురపాలకాలు</span></td></tr>
+    <tr><td><span class="tbl-art">X (244–244A)</span></td><td>Scheduled &amp; Tribal Areas <span class="tbl-te">షెడ్యూల్డ్ &amp; గిరిజన ప్రాంతాలు</span></td><td><span class="tbl-art">XI (245–263)</span></td><td>Centre-State Relations <span class="tbl-te">కేంద్ర-రాష్ట్ర సంబంధాలు</span></td></tr>
+    <tr><td><span class="tbl-art">XII (264–300A)</span></td><td>Finance, Property <span class="tbl-te">ఆర్థిక వ్యవస్థ</span></td><td><span class="tbl-art">XIV (308–323)</span></td><td>Services — UPSC/SPSC <span class="tbl-te">సివిల్ సర్వీసెస్</span></td></tr>
+    <tr><td><span class="tbl-art">XV (324–329A)</span></td><td>Elections <span class="tbl-te">ఎన్నికలు</span></td><td><span class="tbl-art">XVI (330–342A)</span></td><td>Special Provisions for SC/ST/OBC <span class="tbl-te">ప్రత్యేక నిబంధనలు</span></td></tr>
+    <tr><td><span class="tbl-art">XVII (343–351)</span></td><td>Official Language <span class="tbl-te">అధికారిక భాష</span></td><td><span class="tbl-art">XVIII (352–360)</span></td><td><strong class="red">Emergency ★★</strong> <span class="tbl-te">అత్యవసర పరిస్థితి</span></td></tr>
+    <tr><td><span class="tbl-art">XX (368)</span></td><td><strong>Amendment Procedure ★</strong> <span class="tbl-te">సవరణ విధానం</span></td><td><span class="tbl-art">XXI (369–392)</span></td><td>Temporary/Special Provisions <span class="tbl-te">తాత్కాలిక నిబంధనలు</span></td></tr>
+  </table>
+
+  <h2>12 Schedules / 12 షెడ్యూళ్లు</h2>
+  <table>
+    <tr><th style="width:10%">Schedule</th><th>Content / విషయం</th></tr>
+    <tr><td class="tbl-art">1st</td><td>States &amp; UTs list — 28 రాష్ట్రాలు + 8 కేంద్రపాలిత ప్రాంతాలు</td></tr>
+    <tr><td class="tbl-art">2nd</td><td>Salaries of President, Governors, Judges, CAG, Speaker — <span class="tbl-te">రాజ్యాంగ పదవీధారుల జీతాలు</span></td></tr>
+    <tr><td class="tbl-art">3rd</td><td>Forms of Oaths / Affirmations — <span class="tbl-te">ప్రమాణ స్వీకార రూపాలు</span></td></tr>
+    <tr><td class="tbl-art">4th</td><td>Rajya Sabha seats allocation (state-wise) — <span class="tbl-te">రాష్ట్రాల వారీగా రాజ్యసభ స్థానాలు</span></td></tr>
+    <tr><td class="tbl-art">5th</td><td>Scheduled Areas &amp; Tribes — 10 States — <span class="tbl-te">షెడ్యూల్డ్ ప్రాంతాలు (10 రాష్ట్రాలు)</span></td></tr>
+    <tr><td class="tbl-art">6th</td><td>Tribal Autonomous Districts — Assam, Meghalaya, Tripura, Mizoram — <span class="tbl-te">స్వయంప్రతిపత్తి జిల్లాలు</span></td></tr>
+    <tr><td class="tbl-art">7th</td><td><strong>Three Lists</strong>: Union List I (97 subjects), State List II (66), Concurrent List III (47) — <span class="tbl-te">మూడు జాబితాలు</span></td></tr>
+    <tr><td class="tbl-art">8th</td><td>22 Official Languages — <span class="tbl-te">22 అధికారిక భాషలు</span> (Originally 14; latest additions: Bodo, Santhali, Maithili, Dogri — 92nd CAA 2003)</td></tr>
+    <tr><td class="tbl-art">9th</td><td>Land reform laws protected from judicial review (1st CAA 1951); post-1973 laws reviewable (I.R. Coelho 2007) — <span class="tbl-te">న్యాయ సమీక్ష నుండి రక్షణ</span></td></tr>
+    <tr><td class="tbl-art">10th</td><td>Anti-Defection Law (52nd CAA 1985) — <span class="tbl-te">పక్షాంతర నిరోధక చట్టం</span></td></tr>
+    <tr><td class="tbl-art">11th</td><td>29 subjects for Panchayats (73rd CAA 1992) — <span class="tbl-te">పంచాయతీలకు 29 విషయాలు</span></td></tr>
+    <tr><td class="tbl-art">12th</td><td>18 subjects for Municipalities (74th CAA 1992) — <span class="tbl-te">పురపాలకాలకు 18 విషయాలు</span></td></tr>
+  </table>
+  <div class="pg-ftr">రాజ్యాంగ నిర్మాణం | Constitutional Framework | AP High Court Exam Reference</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 3 — FUNDAMENTAL RIGHTS
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>ప్రాథమిక హక్కులు — FUNDAMENTAL RIGHTS (Part III, Art.12–35)</span><span>Page 3</span></div>
+  <h1>ప్రాథమిక హక్కులు — Fundamental Rights (Art.12–35)</h1>
+
+  <div class="box box-blue">
+    <strong>6 Categories / 6 వర్గాలు:</strong>
+    <span class="te">(1) సమానత్వ హక్కు (14–18) | (2) స్వేచ్ఛా హక్కు (19–22) | (3) దోపిడీకి వ్యతిరేక హక్కు (23–24) | (4) మత స్వేచ్ఛ హక్కు (25–28) | (5) సాంస్కృతిక &amp; విద్యా హక్కు (29–30) | (6) రాజ్యాంగ పరిహారాల హక్కు (32–35)</span>
+  </div>
+  <div class="box box-amber">⚠️ Right to Property (ఆస్తి హక్కు) 44th CAA 1978 by removed from FRs → Art.300A (legal right only, not FR)</div>
+
+  <table style="font-size:13px;">
+    <tr><th style="width:12%">Article</th><th style="width:38%">Right / హక్కు</th><th style="width:12%">Article</th><th style="width:38%">Right / హక్కు</th></tr>
+    <tr>
+      <td class="tbl-art">12–13</td><td>State definition; Void laws<br><span class="tbl-te">రాష్ట్ర నిర్వచనం; శూన్య చట్టాలు</span></td>
+      <td class="tbl-art">14</td><td>Equality before law / Equal protection<br><span class="tbl-te">చట్టం ముందు సమానత్వం</span></td>
+    </tr>
+    <tr>
+      <td class="tbl-art">15</td><td>No discrimination (sex, race, caste, religion, birthplace)<br><span class="tbl-te">వివక్ష నిషేధం</span></td>
+      <td class="tbl-art">16</td><td>Equal opportunity in public employment<br><span class="tbl-te">ప్రభుత్వ ఉద్యోగాల్లో సమాన అవకాశం</span></td>
+    </tr>
+    <tr>
+      <td class="tbl-art">17</td><td><strong class="red">Abolition of Untouchability ★</strong><br><span class="tbl-te">అస్పృశ్యత నిర్మూలన (నేరం)</span></td>
+      <td class="tbl-art">18</td><td>Abolition of Titles (except military/academic)<br><span class="tbl-te">బిరుదుల నిర్మూలన</span></td>
+    </tr>
+    <tr>
+      <td class="tbl-art">19</td><td><strong>6 Freedoms</strong> (speech, assembly, association, movement, residence, profession)<br><span class="tbl-te">6 స్వేచ్ఛలు</span></td>
+      <td class="tbl-art">20</td><td>Protection in conviction (no double jeopardy, self-incrimination, ex-post-facto)<br><span class="tbl-te">శిక్ష నుండి రక్షణ</span></td>
+    </tr>
+    <tr>
+      <td class="tbl-art">21</td><td><strong class="red">Life &amp; Personal Liberty ★★ (most litigated)</strong><br><span class="tbl-te">జీవన & వ్యక్తిగత స్వేచ్ఛ హక్కు (అత్యంత ముఖ్యం)</span></td>
+      <td class="tbl-art">21A</td><td>Free &amp; Compulsory Education (6–14 yrs) — 86th CAA 2002<br><span class="tbl-te">ఉచిత &amp; నిర్బంధ విద్య హక్కు</span></td>
+    </tr>
+    <tr>
+      <td class="tbl-art">22</td><td>Protection against arrest &amp; detention (24hr + Magistrate)<br><span class="tbl-te">అరెస్ట్ మరియు నిర్బంధ రక్షణ</span></td>
+      <td class="tbl-art">23</td><td>Prohibition of trafficking &amp; forced labour<br><span class="tbl-te">మనుష్యుల అక్రమ రవాణా నిషేధం</span></td>
+    </tr>
+    <tr>
+      <td class="tbl-art">24</td><td>Child Labour prohibition (&lt;14 yrs in hazardous work)<br><span class="tbl-te">బాలకార్మిక నిషేధం</span></td>
+      <td class="tbl-art">25–28</td><td>Freedom of Religion (conscience, religious affairs, no compulsion)<br><span class="tbl-te">మత స్వేచ్ఛ</span></td>
+    </tr>
+    <tr>
+      <td class="tbl-art">29–30</td><td>Cultural &amp; Educational Rights of minorities<br><span class="tbl-te">మైనారిటీల సాంస్కృతిక &amp; విద్యా హక్కులు</span></td>
+      <td class="tbl-art">32</td><td><strong class="red">Right to move SC ★ — "Heart &amp; Soul" (Ambedkar)</strong><br><span class="tbl-te">SC కి వెళ్ళే హక్కు — హృదయం &amp; ఆత్మ</span></td>
+    </tr>
+  </table>
+
+  <h2>Art.19 — 6 Freedoms &amp; Restrictions / 6 స్వేచ్ఛలు &amp; పరిమితులు</h2>
+  <table>
+    <tr><th style="width:10%">Art.</th><th style="width:30%">Freedom / స్వేచ్ఛ</th><th style="width:60%">Restrictions (Reasonable) / సహేతుక పరిమితులు</th></tr>
+    <tr><td class="tbl-art">19(1)(a)</td><td>Speech &amp; Expression<br><span class="tbl-te">మాట్లాడే &amp; భావ వ్యక్తీకరణ స్వేచ్ఛ</span></td><td>Art.19(2): Sovereignty, Security, Public Order, Decency, Contempt of Court, Defamation, Incitement<br><span class="tbl-te">సార్వభౌమత్వం, భద్రత, శాంతి, నైతికత, న్యాయస్థాన ధిక్కారం</span></td></tr>
+    <tr><td class="tbl-art">19(1)(b)</td><td>Peaceful Assembly<br><span class="tbl-te">శాంతియుత సమావేశం</span></td><td>19(3): Sovereignty &amp; Public Order — <span class="tbl-te">సార్వభౌమత్వం &amp; శాంతి భద్రతలు</span></td></tr>
+    <tr><td class="tbl-art">19(1)(c)</td><td>Form Associations/Unions<br><span class="tbl-te">సంఘాలు, సంఘటనలు ఏర్పాటు</span></td><td>19(4): Sovereignty, Public Order, Morality</td></tr>
+    <tr><td class="tbl-art">19(1)(d,e)</td><td>Movement &amp; Residence<br><span class="tbl-te">చలన &amp; నివాస స్వేచ్ఛ</span></td><td>19(5): General public interest, tribal area protection</td></tr>
+    <tr><td class="tbl-art">19(1)(g)</td><td>Profession / Trade / Business<br><span class="tbl-te">వృత్తి స్వేచ్ఛ</span></td><td>19(6): Public interest, professional qualifications</td></tr>
+  </table>
+
+  <h2>Key Points / ముఖ్యమైన విషయాలు</h2>
+  <ul class="pts">
+    <li><strong class="red">FRs during Emergency:</strong> Art.19 suspended under National Emergency (Art.352); <strong>Arts.20 &amp; 21 CANNOT be suspended even during Emergency</strong> <span class="te">అత్యవసర పరిస్థితిలో కూడా 20, 21 అధికరణాలు రద్దు చేయలేరు</span></li>
+    <li><strong>Art.21 scope</strong> includes: right to livelihood, privacy (Puttaswamy 2017), speedy trial, legal aid, clean environment, education, health <span class="te">జీవన హక్కులో గోప్యత, వేగవంతమైన విచారణ, చట్టపరమైన సహాయం ఉన్నాయి</span></li>
+    <li><strong>Art.32</strong> itself is a FR — cannot be suspended except under Art.359 during National Emergency <span class="te">అధికరణం 32 స్వయంగా ప్రాథమిక హక్కు</span></li>
+    <li><strong>Art.13:</strong> Laws violating FRs are void (pre-Constitution: Doctrine of Eclipse; post: Doctrine of Severability)</li>
+    <li><strong>103rd CAA 2019:</strong> Art.15(6) + Art.16(6) — 10% EWS reservation <span class="te">ఆర్థికంగా వెనకబడిన వారికి 10% రిజర్వేషన్</span></li>
+    <li><strong>86th CAA 2002:</strong> Art.21A — Right to Education; RTE Act 2009 <span class="te">విద్యా హక్కు చట్టం 2009</span></li>
+    <li><strong>93rd CAA 2005:</strong> Art.15(5) — OBC/SC/ST reservation in private unaided educational institutions</li>
+  </ul>
+  <div class="pg-ftr">ప్రాథమిక హక్కులు | Fundamental Rights | Part III</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 4 — DPSPs + FUNDAMENTAL DUTIES + PREAMBLE
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>ఆదేశిక సూత్రాలు + ప్రాథమిక విధులు + పీఠిక — DPSP + FD + PREAMBLE</span><span>Page 4</span></div>
+  <h1>DPSPs (Art.36–51) + Fundamental Duties (Art.51A) + Preamble</h1>
+
+  <div class="box box-green">
+    <strong>DPSPs:</strong> Non-justiciable (courts cannot enforce) but "fundamental in governance" — <span class="te">న్యాయస్థానంలో అమలు చేయలేవు కానీ పాలనలో అత్యంత ముఖ్యమైనవి</span>. Inspired by <strong>Ireland's Constitution</strong>.
+  </div>
+
+  <table style="font-size:12.5px;">
+    <tr><th style="width:10%">Art.</th><th style="width:40%">Directive / ఆదేశం</th><th style="width:10%">Art.</th><th style="width:40%">Directive / ఆదేశం</th></tr>
+    <tr><td class="tbl-art">38</td><td>Social order; reduce inequalities <span class="tbl-te">సামాజిక వ్యత్యాసాలు తగ్గించడం</span></td><td class="tbl-art">39</td><td>Equal pay; prevent wealth concentration; child protection <span class="tbl-te">సమాన వేతనం</span></td></tr>
+    <tr><td class="tbl-art">39A</td><td>Free legal aid <span class="tbl-te">ఉచిత న్యాయ సహాయం</span> (42nd CAA 1976)</td><td class="tbl-art">40</td><td>Village Panchayats <span class="tbl-te">గ్రామ పంచాయతీలు</span></td></tr>
+    <tr><td class="tbl-art">41</td><td>Right to work, education, public assistance <span class="tbl-te">పని హక్కు</span></td><td class="tbl-art">42</td><td>Just &amp; humane work conditions + Maternity <span class="tbl-te">న్యాయమైన పని పరిస్థితులు</span></td></tr>
+    <tr><td class="tbl-art">43</td><td>Living wage; cottage industries <span class="tbl-te">జీవన వేతనం</span></td><td class="tbl-art">43A</td><td>Worker participation in management (42nd CAA) <span class="tbl-te">కార్మికుల భాగస్వామ్యం</span></td></tr>
+    <tr><td class="tbl-art">43B</td><td>Co-operative societies (97th CAA 2011) <span class="tbl-te">సహకార సంఘాలు</span></td><td class="tbl-art">44</td><td><strong>Uniform Civil Code</strong> <span class="tbl-te">ఏకరూప పౌర స్మృతి</span></td></tr>
+    <tr><td class="tbl-art">45</td><td>Early childhood care (up to 6 yrs) <span class="tbl-te">శిశు సంరక్షణ</span></td><td class="tbl-art">46</td><td>SC/ST/Weaker sections education &amp; economic interests <span class="tbl-te">SC/ST ప్రయోజనాలు</span></td></tr>
+    <tr><td class="tbl-art">47</td><td>Prohibition of alcohol &amp; drugs; nutrition <span class="tbl-te">మత్తు పానీయాల నిషేధం</span></td><td class="tbl-art">48</td><td>Cow protection; agriculture <span class="tbl-te">గోరక్షణ</span></td></tr>
+    <tr><td class="tbl-art">48A</td><td>Protect &amp; improve environment (42nd CAA) <span class="tbl-te">పర్యావరణ పరిరక్షణ</span></td><td class="tbl-art">49</td><td>Protect national monuments <span class="tbl-te">జాతీయ స్మారకాల సంరక్షణ</span></td></tr>
+    <tr><td class="tbl-art">50</td><td>Separate judiciary from executive <span class="tbl-te">న్యాయపాలన &amp; కార్యనిర్వాహక విభజన</span></td><td class="tbl-art">51</td><td>International peace &amp; security <span class="tbl-te">అంతర్జాతీయ శాంతి</span></td></tr>
+  </table>
+
+  <div class="grid2" style="margin-top:8px;">
+    <div>
+      <h2>Fundamental Duties (Art.51A) / ప్రాథమిక విధులు</h2>
+      <div class="box box-teal" style="font-size:12.5px; margin-bottom:5px;">
+        Added by <strong>42nd CAA 1976</strong> (10 duties); 11th duty added by <strong>86th CAA 2002</strong>.<br>
+        <span class="te">42వ సవరణ 1976 ద్వారా చేర్చబడ్డాయి; 11వ విధి 86వ సవరణ 2002</span><br>
+        Inspired by USSR | Not enforceable in court
+      </div>
+      <table style="font-size:12px;">
+        <tr><th>Duty</th><th>Subject / విషయం</th></tr>
+        <tr><td>(a)</td><td>Abide by Constitution; respect Flag &amp; Anthem <span class="tbl-te">రాజ్యాంగాన్ని గౌరవించడం</span></td></tr>
+        <tr><td>(b)</td><td>Cherish ideals of national struggle <span class="tbl-te">జాతీయ ఉద్యమ ఆదర్శాలు పాటించడం</span></td></tr>
+        <tr><td>(c)</td><td>Uphold sovereignty, unity, integrity <span class="tbl-te">సార్వభౌమత్వం, ఐక్యత, సమగ్రత</span></td></tr>
+        <tr><td>(d)</td><td>Defend the country <span class="tbl-te">దేశ రక్షణ</span></td></tr>
+        <tr><td>(e)</td><td>Promote harmony; transcend diversity <span class="tbl-te">సోదరత్వం పెంపొందించడం</span></td></tr>
+        <tr><td>(f)</td><td>Preserve composite culture heritage <span class="tbl-te">సాంస్కృతిక వారసత్వం</span></td></tr>
+        <tr><td>(g)</td><td>Protect natural environment <span class="tbl-te">పర్యావరణ పరిరక్షణ</span></td></tr>
+        <tr><td>(h)</td><td>Develop scientific temper &amp; humanism <span class="tbl-te">శాస్త్రీయ దృక్పథం</span></td></tr>
+        <tr><td>(i)</td><td>Safeguard public property; no violence <span class="tbl-te">ప్రభుత్వ ఆస్తి రక్షణ</span></td></tr>
+        <tr><td>(j)</td><td>Strive for excellence <span class="tbl-te">శ్రేష్ఠత కోసం కృషి</span></td></tr>
+        <tr><td>(k)</td><td>Provide education 6–14 yrs (86th CAA) <span class="tbl-te">6–14 వయస్సు పిల్లలకు విద్య</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <h2>Preamble Keywords / పీఠిక కీలక పదాలు</h2>
+      <table style="font-size:12px;">
+        <tr><th>Word</th><th>Meaning / అర్థం</th></tr>
+        <tr><td><strong>SOVEREIGN</strong></td><td>సర్వసత్తాక — No external control</td></tr>
+        <tr><td><strong>SOCIALIST</strong></td><td>సమాజవాద — 42nd CAA; mixed economy; reduce inequality</td></tr>
+        <tr><td><strong>SECULAR</strong></td><td>లౌకిక — 42nd CAA; no State religion; equal respect</td></tr>
+        <tr><td><strong>DEMOCRATIC</strong></td><td>ప్రజాస్వామిక — Elected government; universal franchise</td></tr>
+        <tr><td><strong>REPUBLIC</strong></td><td>గణతంత్రం — Elected head (President, not hereditary)</td></tr>
+        <tr><td><strong>JUSTICE</strong> — Social</td><td>సామాజిక న్యాయం — Art.38–39</td></tr>
+        <tr><td><strong>JUSTICE</strong> — Economic</td><td>ఆర్థిక న్యాయం — Art.39</td></tr>
+        <tr><td><strong>JUSTICE</strong> — Political</td><td>రాజకీయ న్యాయం — Universal franchise Art.326</td></tr>
+        <tr><td><strong>LIBERTY</strong> — Thought</td><td>స్వేచ్ఛ — Art.19, 25 (speech, conscience)</td></tr>
+        <tr><td><strong>EQUALITY</strong> — Status</td><td>సమానత్వం — Art.14–18</td></tr>
+        <tr><td><strong>FRATERNITY</strong></td><td>సౌభ్రాతృత్వం — Brotherhood; human dignity; <strong>unique to India</strong></td></tr>
+        <tr><td colspan="2" class="box box-blue" style="font-size:11.5px; padding:4px;">Preamble is part of Constitution: <strong>Kesavananda Bharati 1973</strong>; Not a FR: <strong>Berubari Union 1960</strong> <span class="tbl-te">పీఠిక రాజ్యాంగంలో భాగం</span></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="pg-ftr">ఆదేశిక సూత్రాలు | DPSPs + Fundamental Duties + Preamble | Part IV, IVA</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 5 — UNION EXECUTIVE
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>కేంద్ర కార్యనిర్వాహకం — UNION EXECUTIVE (Art.52–78)</span><span>Page 5</span></div>
+  <h1>కేంద్ర కార్యనిర్వాహకం — Union Executive</h1>
+
+  <h2>రాష్ట్రపతి — President of India (Art.52–62, 72–73)</h2>
+  <table style="font-size:13px;">
+    <tr><th style="width:22%">Aspect</th><th>Key Details / ముఖ్య వివరాలు</th></tr>
+    <tr><td><strong>Qualification / అర్హతలు</strong></td><td>Indian citizen; age ≥ 35; eligible for Lok Sabha; no office of profit <span class="tbl-te">భారత పౌరుడు; 35 సంవత్సరాలు; లోక్‌సభ అర్హత; లాభ పదవి లేకుండా</span></td></tr>
+    <tr><td><strong>Election / ఎన్నిక</strong></td><td><strong>Indirect</strong> — Electoral College: Elected MPs (LS+RS) + Elected MLAs (all States + Delhi + Puducherry); Single Transferable Vote + Proportional Representation <span class="tbl-te">పరోక్ష ఎన్నిక — ఎన్నికైన MPs + MLAs; STV + PR</span></td></tr>
+    <tr><td><strong>Term / పదవీకాలం</strong></td><td>5 years; re-eligible any number of times; Oath by CJI (Art.60) <span class="tbl-te">5 సంవత్సరాలు; పునరెన్నిక అవకాశం</span></td></tr>
+    <tr><td><strong>Removal / తొలగింపు</strong></td><td>Art.61: Impeachment — 2/3rd of total membership of initiating House → 2/3rd of other House; 14-day notice; only for violation of Constitution <span class="tbl-te">మహాభియోగం; రాజ్యాంగ ఉల్లంఘన మాత్రమే</span></td></tr>
+    <tr><td><strong>Veto / వీటో</strong></td><td>Absolute (other bills), Suspensive (return for reconsideration), Pocket veto (no time limit on ordinary bills); <strong class="red">NO veto on Money Bills &amp; Constitutional Amendment Bills</strong></td></tr>
+    <tr><td><strong>Pardoning / క్షమాభిక్ష</strong></td><td>Art.72: Pardon, Reprieve, Respite, Remission, Commutation — <strong>includes death sentences</strong>; overrides all courts <span class="tbl-te">మరణ శిక్ష సహా — అన్ని శిక్షలను క్షమించగలరు</span></td></tr>
+    <tr><td><strong>Emergency / అత్యవసరం</strong></td><td>Art.352 (National), Art.356 (State/President's Rule), Art.360 (Financial) — all on PM/Cabinet written advice <span class="tbl-te">కేబినెట్ లిఖిత సలహాపై అత్యవసర పరిస్థితి విధించగలరు</span></td></tr>
+    <tr><td><strong>Ordinance / ఆర్డినెన్స్</strong></td><td>Art.123: When Parliament not in session; same force as Parliament Act; must be laid before Parliament; lapses after 6 weeks of reassembly <span class="tbl-te">పార్లమెంట్ సమావేశాలు లేనప్పుడు ఆర్డినెన్స్ జారీ</span></td></tr>
+    <tr><td><strong>Current President</strong></td><td><strong>Smt. Droupadi Murmu</strong> — 15th President (July 2022); first tribal woman President <span class="tbl-te">శ్రీమతి ద్రౌపది ముర్ము — మొట్టమొదటి గిరిజన మహిళా రాష్ట్రపతి</span></td></tr>
+    <tr><td><strong>Salary / జీతం</strong></td><td>₹5 lakh/month from Consolidated Fund of India <span class="tbl-te">భారత సంఘటిత నిధి నుండి ₹5 లక్షలు/నెల</span></td></tr>
+  </table>
+
+  <div class="grid2" style="margin-top:8px;">
+    <div>
+      <h2>ఉపరాష్ట్రపతి — Vice President (Art.63–70)</h2>
+      <table style="font-size:12.5px;">
+        <tr><th>Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Election</strong></td><td>ALL Parliament members (elected + nominated, both LS + RS); PR + STV <span class="tbl-te">అన్ని పార్లమెంట్ సభ్యులు</span></td></tr>
+        <tr><td><strong>Term</strong></td><td>5 years; RS resolution (simple majority) + LS concurrence; 14-day notice</td></tr>
+        <tr><td><strong>Role</strong></td><td>Ex-officio Chairman of Rajya Sabha; Acts as President during vacancy <span class="tbl-te">రాజ్యసభ అధ్యక్షుడు</span></td></tr>
+        <tr><td><strong>Current VP</strong></td><td><strong>Jagdeep Dhankhar</strong> — 14th VP (Aug 2022) <span class="tbl-te">జగదీప్ ధన్‌ఖడ్</span></td></tr>
+        <tr><td><strong>Art.71</strong></td><td>VP election disputes → directly to SC (not EC)</td></tr>
+      </table>
+    </div>
+    <div>
+      <h2>ప్రధాన మంత్రి — Prime Minister (Art.74–78)</h2>
+      <table style="font-size:12.5px;">
+        <tr><th>Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Art.74</strong></td><td>CoM with PM at head to aid &amp; advise President — binding after 44th CAA 1978 <span class="tbl-te">CoM సలహా రాష్ట్రపతిపై binding</span></td></tr>
+        <tr><td><strong>Art.75(3)</strong></td><td>CoM collectively responsible to Lok Sabha <span class="tbl-te">లోక్‌సభకు సమిష్టిగా బాధ్యత</span></td></tr>
+        <tr><td><strong>Art.78</strong></td><td>PM duty: inform President of Union affairs; furnish Cabinet decisions <span class="tbl-te">రాష్ট్రపతికి కేంద్ర విషయాలు తెలియజేయడం</span></td></tr>
+        <tr><td><strong>Art.77</strong></td><td>Exec. actions of Union in name of President <span class="tbl-te">కార్యనిర్వాహక చర్యలు రాష్ట్రపతి పేరిట</span></td></tr>
+        <tr><td><strong>91st CAA</strong></td><td>CoM max 15% of LS (or min 12 members) <span class="tbl-te">CoM పరిమాణం LS యొక్క 15% వరకు మాత్రమే</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="box box-red" style="margin-top:8px;">
+    <strong>Key Principles / ముఖ్య సూత్రాలు:</strong> Art.53: Executive power vested in President | Art.74: Must act on Cabinet advice | Art.79: Parliament = President + RS + LS | President is nominal head (constitutional head); PM is real head (head of government) — <span class="te">రాష్ట్రపతి రాజ్యాంగ అధిపతి; ప్రధానమంత్రి వాస్తవిక అధిపతి</span>
+  </div>
+  <div class="pg-ftr">కేంద్ర కార్యనిర్వాహకం | Union Executive | Art.52–78</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 6 — PARLIAMENT
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>పార్లమెంట్ — PARLIAMENT (Art.79–122)</span><span>Page 6</span></div>
+  <h1>పార్లమెంట్ — Parliament (Lok Sabha &amp; Rajya Sabha)</h1>
+
+  <table style="font-size:12.5px;">
+    <tr>
+      <th style="width:20%">Feature / లక్షణం</th>
+      <th style="width:40%">లోక్‌సభ — Lok Sabha (Lower House)</th>
+      <th style="width:40%">రాజ్యసభ — Rajya Sabha (Upper House)</th>
+    </tr>
+    <tr>
+      <td><strong>Composition / సభ్యత్వం</strong></td>
+      <td>Max 552 (530 states + 20 UTs + 2 Anglo-Indian*); Current: <strong>543 elected</strong></td>
+      <td>Max 250 (238 elected + 12 nominated**); Current: <strong>245 members</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Elected by / ఎన్నిక</strong></td>
+      <td>Direct election — Universal Adult Franchise <span class="tbl-te">నేరుగా ప్రజలచే ఎన్నిక</span></td>
+      <td>Indirect — elected MLAs of each State by STV+PR <span class="tbl-te">పరోక్ష ఎన్నిక — MLAs చేత</span></td>
+    </tr>
+    <tr>
+      <td><strong>Term / పదవీకాలం</strong></td>
+      <td>5 years (extendable during Emergency) <span class="tbl-te">5 సంవత్సరాలు</span></td>
+      <td>Permanent body; member term = 6 years; 1/3 retire every 2 years <span class="tbl-te">శాశ్వత సంస్థ; 6 సంవత్సరాలు</span></td>
+    </tr>
+    <tr>
+      <td><strong>Presiding Officer</strong></td>
+      <td>Speaker (elected by members); Deputy Speaker <span class="tbl-te">స్పీకర్</span></td>
+      <td>Vice President of India (ex-officio); Deputy Chairman <span class="tbl-te">ఉపరాష్ట్రపతి (పదవి రీత్యా)</span></td>
+    </tr>
+    <tr>
+      <td><strong>Qualification</strong></td>
+      <td>Citizen; age ≥ 25; on electoral rolls; no office of profit</td>
+      <td>Citizen; age ≥ 30; on electoral rolls; no office of profit</td>
+    </tr>
+    <tr>
+      <td><strong>Quorum / కోరమ్</strong></td>
+      <td>1/10th of total membership <span class="tbl-te">మొత్తం సభ్యత్వంలో 1/10వ వంతు</span></td>
+      <td>1/10th of total membership</td>
+    </tr>
+    <tr>
+      <td><strong>Money Bill</strong></td>
+      <td>Introduced only in LS (Art.110); President assent mandatory; Speaker certifies <span class="tbl-te">ద్రవ్య బిల్లు LS లో మాత్రమే ప్రవేశపెట్టవచ్చు</span></td>
+      <td>RS can only suggest amendments (14 days); LS not bound to accept <span class="tbl-te">RS కేవలం సూచించవచ్చు; LS బంధించబడదు</span></td>
+    </tr>
+    <tr>
+      <td><strong>Exclusive powers</strong></td>
+      <td>Vote of no-confidence; CoM accountable to LS; Approve National Emergency <span class="tbl-te">అవిశ్వాస తీర్మానం; అత్యవసర పరిస్థితి అనుమతి</span></td>
+      <td>Art.249: empower Parliament on State List; Art.312: All-India Services <span class="tbl-te">రాష్ట్ర జాబితాపై పార్లమెంట్‌కు అధికారం</span></td>
+    </tr>
+  </table>
+  <div class="box box-amber">* Anglo-Indian nomination (Art.331) ended by <strong>104th CAA 2020</strong>. ** Nominated RS members (Art.80): eminent in literature, science, art, social service</div>
+
+  <h2>Types of Bills / బిల్లుల రకాలు</h2>
+  <table style="font-size:12.5px;">
+    <tr><th style="width:25%">Bill Type / బిల్లు రకం</th><th>Procedure / విధానం</th></tr>
+    <tr><td><strong>Ordinary Bill</strong> <span class="tbl-te">సాధారణ బిల్లు</span></td><td>Either House → Other House; deadlock → Joint Sitting presided by LS Speaker (Art.108) <span class="tbl-te">ఏ సభలోనైనా ప్రవేశపెట్టవచ్చు; 膠着 → సంయుక్త సమావేశం</span></td></tr>
+    <tr><td><strong>Money Bill</strong> <span class="tbl-te">ద్రవ్య బిల్లు</span></td><td>LS only → RS (max 14 days) → President assent (no veto); Speaker certifies (Art.110) <span class="tbl-te">LS మాత్రమే; స్పీకర్ ధృవీకరణ</span></td></tr>
+    <tr><td><strong>Financial Bill (I &amp; II)</strong></td><td>Type I: same as Money Bill (Art.110 provisions included); Type II: Either house; President recommendation needed</td></tr>
+    <tr><td><strong>Constitutional Amendment</strong> <span class="tbl-te">రాజ్యాంగ సవరణ</span></td><td>Either House; <strong>Special majority</strong> (2/3 present+voting AND majority of total membership); some need <strong>50%+ State ratification</strong>; Presidential assent mandatory (Art.368) <span class="tbl-te">విశేష మెజారిటీ; కొన్నింటికి రాష్ట్ర ఆమోదం కూడా</span></td></tr>
+  </table>
+
+  <h2>Key Parliamentary Terms / ముఖ్య పార్లమెంటరీ పదాలు</h2>
+  <ul class="pts">
+    <li><strong>Prorogation</strong> — ends session (by President) <span class="te">సమావేశం ముగింపు (రాష్ట్రపతి)</span> | <strong>Dissolution</strong> — ends LS (President on PM advice) <span class="te">రద్దు</span> | <strong>Adjournment</strong> — House adjourns itself <span class="te">వాయిదా</span></li>
+    <li><strong>Zero Hour</strong> (12 noon): urgent public matters without notice; not in Rules — <span class="te">నియమావళిలో లేని ప్రత్యేక సమయం</span></li>
+    <li><strong>Question Hour</strong>: <strong>Starred</strong> (oral, supplementary allowed), <strong>Unstarred</strong> (written answer), <strong>Short Notice</strong> (&lt;10 days)</li>
+    <li><strong class="red">Art.105:</strong> Parliamentary privileges | <strong>Art.108:</strong> Joint sitting (Ordinary bills only; LS Speaker presides)</li>
+    <li><strong>10th Schedule (Anti-Defection):</strong> Speaker/Chairman decides disqualification; decision is judicially reviewable — <em>Kihoto Hollohan 1992</em> <span class="te">పక్షాంతర నిరోధక చట్టం; స్పీకర్ నిర్ణయం న్యాయ సమీక్షకు అర్హం</span></li>
+    <li><strong>No-confidence motion</strong>: LS only; simple majority; 10-day notice; against CoM as whole <span class="te">అవిశ్వాస తీర్మానం: LS మాత్రమే</span></li>
+    <li><strong>Art.112:</strong> Annual Financial Statement (Union Budget) | <strong>Art.116:</strong> Vote on Account | <strong>Art.117:</strong> Finance Bills</li>
+    <li><strong>Voting age</strong> lowered 21→18 by <strong>61st CAA 1989</strong> (Art.326) <span class="te">ఓటు వయస్సు 21 నుండి 18కి తగ్గించారు</span></li>
+  </ul>
+  <div class="pg-ftr">పార్లమెంట్ | Parliament | Lok Sabha &amp; Rajya Sabha</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 7 — JUDICIARY & CONSTITUTIONAL BODIES
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>న్యాయవ్యవస్థ — JUDICIARY + Constitutional Bodies</span><span>Page 7</span></div>
+  <h1>న్యాయవ్యవస్థ — Judiciary &amp; Constitutional Bodies</h1>
+
+  <div class="grid2">
+    <div>
+      <h2>సర్వోన్నత న్యాయస్థానం — Supreme Court (Art.124–147)</h2>
+      <table style="font-size:12px;">
+        <tr><th>Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Composition</strong></td><td>CJI + 33 judges (total 34); increased by Parliament <span class="tbl-te">CJI + 33 న్యాయమూర్తులు</span></td></tr>
+        <tr><td><strong>Appointment</strong></td><td>Art.124(2): By President; Collegium system (NJAC 2014 struck down) <span class="tbl-te">రాష్ట్రపతి నియమిస్తారు; Collegium వ్యవస్థ</span></td></tr>
+        <tr><td><strong>Removal</strong></td><td>Art.124(4): Impeachment; 2/3rd present+voting AND majority of total in both Houses <span class="tbl-te">మహాభియోగం</span></td></tr>
+        <tr><td><strong>Art.131</strong></td><td>Original jurisdiction — Centre vs State or State vs State <span class="tbl-te">మూల పరిధి</span></td></tr>
+        <tr><td><strong>Art.136</strong></td><td><strong>SLP</strong> — SC can appeal from ANY court/tribunal in India <span class="tbl-te">ఏ న్యాయస్థానం నుండైనా అప్పీలు</span></td></tr>
+        <tr><td><strong>Art.141</strong></td><td>SC law binding on ALL courts in India <span class="tbl-te">SC నిర్ణయాలు అన్ని కోర్టులకు బంధకం</span></td></tr>
+        <tr><td><strong>Art.143</strong></td><td>President can seek SC advisory opinion <span class="tbl-te">రాష్ట్రపతి సలహా పరిధి</span></td></tr>
+        <tr><td><strong>Art.32</strong></td><td>Writ jurisdiction — FR enforcement (itself a FR) <span class="tbl-te">రిట్ పరిధి</span></td></tr>
+        <tr><td><strong>Salaries</strong></td><td>Charged to Consolidated Fund — not subject to Parliament vote <span class="tbl-te">సంఘటిత నిధి నుండి — పార్లమెంట్ ఆమోదం అవసరం లేదు</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <h2>హైకోర్టులు — High Courts (Art.214–232)</h2>
+      <table style="font-size:12px;">
+        <tr><th>Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Art.214</strong></td><td>Every State shall have a HC; Parliament can create common HC for 2+ states (Art.231) <span class="tbl-te">ప్రతి రాష్ట్రానికి హైకోర్టు</span></td></tr>
+        <tr><td><strong>Appointment</strong></td><td>Art.217: President + CJI + Governor consultation <span class="tbl-te">రాష్ట్రపతి, CJI, గవర్నర్ సంప్రదింపు</span></td></tr>
+        <tr><td><strong>Art.226 ★★</strong></td><td>Writ jurisdiction for FRs AND "any other purpose" — <strong>broader than Art.32</strong> <span class="tbl-te">FR + ఇతర ఏ విషయమైనా రిట్ అధికారం</span></td></tr>
+        <tr><td><strong>Art.227</strong></td><td>Superintendence over ALL subordinate courts (administrative) <span class="tbl-te">అన్ని అధీన న్యాయస్థానాలపై పర్యవేక్షణ</span></td></tr>
+        <tr><td><strong>Art.228</strong></td><td>Transfer of cases involving constitutional questions from subordinate courts <span class="tbl-te">రాజ్యాంగ ప్రశ్నలున్న కేసులు బదిలీ</span></td></tr>
+        <tr><td><strong>Art.215</strong></td><td>HC is a Court of Record — contempt power <span class="tbl-te">రికార్డు కోర్టు</span></td></tr>
+        <tr><td><strong>AP HC</strong></td><td>Seat: <strong>Amaravati</strong> (moved from Hyderabad after AP Reorganisation Act 2014) <span class="tbl-te">ఆంధ్రప్రదేశ్ హైకోర్టు — అమరావతి</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2>5 Writs / 5 రిట్‌లు (Art.32 SC + Art.226 HC)</h2>
+  <table style="font-size:12.5px;">
+    <tr><th>Writ / రిట్</th><th>Meaning / అర్థం</th><th>Purpose / ఉద్దేశం</th></tr>
+    <tr><td><strong class="red">Habeas Corpus</strong> <span class="tbl-te">హేబియస్ కార్పస్</span></td><td>"Produce the body" — శరీరాన్ని సమర్పించండి</td><td>Release of illegally detained person <span class="tbl-te">చట్టవిరుద్ధ నిర్బంధం నుండి విముక్తి</span></td></tr>
+    <tr><td><strong class="red">Mandamus</strong> <span class="tbl-te">మాండమస్</span></td><td>"We command" — మేము ఆదేశిస్తున్నాం</td><td>Compel public authority to do its duty <span class="tbl-te">ప్రభుత్వ అధికారికి విధి నిర్వహణ ఆదేశం</span></td></tr>
+    <tr><td><strong class="red">Prohibition</strong> <span class="tbl-te">ప్రొహిబిషన్</span></td><td>"Forbid" — నిషేధించు</td><td>Stop inferior court from exceeding jurisdiction <span class="tbl-te">దిగువ కోర్టు పరిధి అతిక్రమణ నిరోధం</span></td></tr>
+    <tr><td><strong class="red">Certiorari</strong> <span class="tbl-te">సర్షియోరేరి</span></td><td>"Certify" — ధృవీకరించండి</td><td>Quash order of inferior court (post-decision) <span class="tbl-te">దిగువ కోర్టు నిర్ణయం రద్దు</span></td></tr>
+    <tr><td><strong class="red">Quo Warranto</strong> <span class="tbl-te">క్వో వారంటో</span></td><td>"By what authority" — ఏ అధికారంతో</td><td>Challenge illegal usurpation of public office <span class="tbl-te">అక్రమంగా పదవి చేపట్టడాన్ని సవాలు</span></td></tr>
+  </table>
+
+  <h2>Key Constitutional Bodies / ముఖ్య రాజ్యాంగ సంస్థలు</h2>
+  <table style="font-size:12px;">
+    <tr><th style="width:25%">Body / సంస్థ</th><th>Key Points / ముఖ్య విషయాలు</th></tr>
+    <tr><td><strong>Election Commission (ECI)</strong> <span class="tbl-te">ఎన్నికల కమిషన్</span></td><td>Art.324 | 1 CEC + 2 ECs (after 2023 Act) | Removal: same as SC judge | Controls Parliamentary + State + President + VP elections <span class="tbl-te">అన్ని ఎన్నికలు నియంత్రణ</span></td></tr>
+    <tr><td><strong>CAG</strong> <span class="tbl-te">నియంత్రక మహా లేఖపరీక్షకుడు</span></td><td>Art.148–151 | 6 years or 65 yrs | Audits Centre + State accounts | Reports to President/Governor | Ambedkar: "most important officer" <span class="tbl-te">కేంద్ర + రాష్ట్ర ఖాతాల ఆడిట్</span></td></tr>
+    <tr><td><strong>UPSC</strong> <span class="tbl-te">యూనియన్ పబ్లిక్ సర్వీస్ కమిషన్</span></td><td>Art.315–323 | Conducts IAS/IPS/IFS exams | Consulted on all Union service appointments | Annual report to President</td></tr>
+    <tr><td><strong>Finance Commission</strong> <span class="tbl-te">ఆర్థిక సంఘం</span></td><td>Art.280 | Every 5 years (quinquennial) | Vertical (Centre→States) + Horizontal distribution | 15th FC: N.K. Singh; period 2021–26; 41% devolution <span class="tbl-te">ప్రతి 5 సంవత్సరాలకు ఒకసారి</span></td></tr>
+    <tr><td><strong>Attorney General</strong> <span class="tbl-te">అటార్నీ జనరల్</span></td><td>Art.76 | Highest Union law officer | Appears for Union in SC/HC | Participate in both Houses (no vote) | Can practice privately <span class="tbl-te">కేంద్ర ప్రభుత్వం తరపు అత్యున్నత న్యాయ అధికారి</span></td></tr>
+  </table>
+  <div class="pg-ftr">న్యాయవ్యవస్థ | Judiciary &amp; Constitutional Bodies | Art.124–323</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 8 — FEDERALISM & EMERGENCY
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>సమాఖ్యవాదం + అత్యవసర పరిస్థితి — FEDERALISM &amp; EMERGENCY</span><span>Page 8</span></div>
+  <h1>సమాఖ్యవాదం &amp; అత్యవసర పరిస్థితి — Federalism &amp; Emergency</h1>
+
+  <h2>3 Types of Emergency / 3 రకాల అత్యవసర పరిస్థితులు</h2>
+  <table style="font-size:12.5px;">
+    <tr>
+      <th style="width:18%">Feature</th>
+      <th style="width:27%">🔴 National Emergency<br>జాతీయ అత్యవసరం<br>(Art.352)</th>
+      <th style="width:27%">🟡 President's Rule<br>రాష్ట్రపతి పాలన<br>(Art.356)</th>
+      <th style="width:28%">🟢 Financial Emergency<br>ఆర్థిక అత్యవసరం<br>(Art.360)</th>
+    </tr>
+    <tr>
+      <td><strong>Ground / ఆధారం</strong></td>
+      <td>War / External Aggression / Armed Rebellion <span class="tbl-te">యుద్ధం, బాహ్య దాడి, సాయుధ తిరుగుబాటు</span></td>
+      <td>Failure of constitutional machinery in State <span class="tbl-te">రాష్ట్రంలో రాజ్యాంగ వ్యవస్థ విఫలం</span></td>
+      <td>Threat to financial stability of India <span class="tbl-te">భారత ఆర్థిక స్థిరత్వానికి ముప్పు</span></td>
+    </tr>
+    <tr>
+      <td><strong>Parliament Approval</strong></td>
+      <td>Both Houses; <strong>Special majority</strong>; within 1 month <span class="tbl-te">విశేష మెజారిటీ; 1 నెలలోపు</span></td>
+      <td>Both Houses; <strong>Simple majority</strong>; within 2 months <span class="tbl-te">సాధారణ మెజారిటీ; 2 నెలలోపు</span></td>
+      <td>Both Houses; <strong>Simple majority</strong>; within 2 months</td>
+    </tr>
+    <tr>
+      <td><strong>Duration / వ్యవధి</strong></td>
+      <td>6 months at a time; extendable indefinitely (every 6 months) <span class="tbl-te">ప్రతి 6 నెలలకు పొడిగింపు</span></td>
+      <td>6 months; max 3 years with Parliament approval; beyond 1 year: need NE + ECI certificate <span class="tbl-te">గరిష్టం 3 సంవత్సరాలు</span></td>
+      <td>No fixed period</td>
+    </tr>
+    <tr>
+      <td><strong>Effect on FRs</strong></td>
+      <td>Art.19 suspended; <strong class="red">Arts.20 &amp; 21 CANNOT be suspended</strong> <span class="tbl-te">Art.19 రద్దు; 20,21 రద్దు చేయలేరు</span></td>
+      <td>State legislature's powers vested in Parliament <span class="tbl-te">రాష్ట్ర శాసనసభ అధికారాలు పార్లమెంట్‌కు</span></td>
+      <td>Salaries of all govt employees reduced including judges <span class="tbl-te">అన్ని ప్రభుత్వ ఉద్యోగుల జీతాలు తగ్గింపు</span></td>
+    </tr>
+    <tr>
+      <td><strong>Revocation / రద్దు</strong></td>
+      <td>President; OR LS passes resolution by simple majority <span class="tbl-te">రాష్ట్రపతి లేదా LS సాధారణ మెజారిటీ</span></td>
+      <td>President; LS can revoke by simple majority</td>
+      <td>President</td>
+    </tr>
+    <tr>
+      <td><strong>44th CAA change</strong></td>
+      <td>Written CoM advice mandatory; "Armed Rebellion" replaced "Internal Disturbance"; LS can revoke <span class="tbl-te">లిఖిత CoM సలహా తప్పనిసరి</span></td>
+      <td>44th CAA: CoM majority in writing required <span class="tbl-te">CoM లిఖిత మెజారిటీ అవసరం</span></td>
+      <td>—</td>
+    </tr>
+  </table>
+
+  <div class="box box-blue"><strong>S.R. Bommai (1994):</strong> Art.356 President's Rule is justiciable; floor test preferred before dismissal; <strong>Federalism is Basic Structure</strong> — <span class="te">Art.356 న్యాయ సమీక్షకు అర్హం; సమాఖ్యవాదం ప్రాథమిక నిర్మాణంలో భాగం</span></div>
+
+  <h2>కేంద్ర-రాష్ట్ర సంబంధాలు — Centre-State Relations (Art.245–293)</h2>
+  <table style="font-size:12.5px;">
+    <tr><th style="width:22%">Aspect</th><th>Key Provisions / ముఖ్య నిబంధనలు</th></tr>
+    <tr><td><strong>Legislative Relations</strong> <span class="tbl-te">శాసన సంబంధాలు</span></td><td>Art.245–255: Parliament — Union List (I, 97), Concurrent List (III, 47); States — State List (II, 66); Residuary powers with Centre (Art.248 + Entry 97) <span class="tbl-te">అవశేష అధికారాలు కేంద్రానికి</span></td></tr>
+    <tr><td><strong>Art.249</strong></td><td>RS by 2/3 majority: Parliament can legislate on State List in national interest; 1 year (extendable) <span class="tbl-te">రాష్ట్ర జాబితాపై 2/3 RS తీర్మానంతో పార్లమెంట్‌కు అధికారం</span></td></tr>
+    <tr><td><strong>Art.250</strong></td><td>During National Emergency: Parliament can legislate on ANY State List subject <span class="tbl-te">అత్యవసర సమయంలో అన్ని రాష్ట్ర విషయాలపై</span></td></tr>
+    <tr><td><strong>Art.252</strong></td><td>Two or more states request Parliament to legislate on State List <span class="tbl-te">రెండు రాష్ట్రాల అభ్యర్థనపై పార్లమెంట్ శాసనం</span></td></tr>
+    <tr><td><strong>Art.253</strong></td><td>Parliament can legislate on any subject to implement international treaties <span class="tbl-te">అంతర్జాతీయ ఒప్పందాల అమలుకు ఏ విషయంపైనైనా</span></td></tr>
+    <tr><td><strong>Financial Relations</strong> <span class="tbl-te">ఆర్థిక సంబంధాలు</span></td><td>Art.264–293: Exclusive Union taxes (customs, corporation, income); State taxes (land, excise on liquor, profession); Finance Commission recommends devolution <span class="tbl-te">పన్నుల పంపిణీ; ఆర్థిক సంఘం సిఫారసు</span></td></tr>
+    <tr><td><strong>Art.263 / Zonal Councils</strong></td><td>Inter-State Council (created 1990, PM chairs); 5 Zonal Councils (not constitutional — statutory) <span class="tbl-te">అంతర్-రాష్ట్ర మండలి</span></td></tr>
+  </table>
+
+  <ul class="pts" style="margin-top:6px;">
+    <li>India = <strong>"Union of States" (Art.1)</strong>, NOT "Federation" — States cannot secede <span class="te">రాష్ట్రాలు విడిపోలేవు</span></li>
+    <li><strong>Federal features / సమాఖ్య లక్షణాలు:</strong> Written Constitution, Division of powers, Independent Judiciary, Bicameral Legislature, Dual Government</li>
+    <li><strong>Unitary features / ఏకీకృత లక్షణాలు:</strong> Single Constitution, Single Citizenship, Integrated Judiciary, Residuary with Centre, All-India Services, Governor as Centre's agent</li>
+    <li><strong>Sarkaria Commission (1983):</strong> Reduce misuse of Art.356 | <strong>Punchhi Commission (2007):</strong> "Constitutional Emergency" concept</li>
+  </ul>
+  <div class="pg-ftr">సమాఖ్యవాదం + అత్యవసర పరిస్థితి | Federalism &amp; Emergency</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 9 — CONSTITUTIONAL AMENDMENTS
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>రాజ్యాంగ సవరణలు — CONSTITUTIONAL AMENDMENTS</span><span>Page 9</span></div>
+  <h1>ముఖ్యమైన రాజ్యాంగ సవరణలు — Important Constitutional Amendments</h1>
+
+  <div class="box box-blue" style="font-size:13px; margin-bottom:6px;">
+    <strong>Art.368 — 3 Methods of Amendment / సవరణ విధానాలు:</strong><br>
+    (1) <strong>Simple majority</strong>: States/UTs admission, citizenship, elections, 5th/6th Schedule <span class="te">సాధారణ మెజారిటీ</span><br>
+    (2) <strong>Special majority</strong>: 2/3rd present+voting AND majority of total membership <span class="te">విశేష మెజారిటీ</span><br>
+    (3) <strong>Special majority + 50%+ State ratification</strong>: Federal provisions — President's election, SC/HC, Centre-State distribution, 7th Schedule, RS representation, Art.368 itself <span class="te">విశేష మెజారిటీ + రాష్ట్రాల ఆమోదం</span>
+  </div>
+
+  <table style="font-size:12px;">
+    <tr><th style="width:20%">Amendment / సవరణ</th><th>Key Provisions / ముఖ్య నిబంధనలు</th></tr>
+    <tr><td><strong>1st CAA (1951)</strong></td><td>Added 9th Schedule; permitted reservations in education/employment; restricted property right <span class="tbl-te">9వ షెడ్యూల్ చేర్పు; రిజర్వేషన్లకు అనుమతి</span></td></tr>
+    <tr><td><strong>7th CAA (1956)</strong></td><td>States reorganisation on linguistic basis; HC jurisdiction over UTs <span class="tbl-te">భాషా ప్రాతిపదికన రాష్ట్రాల పునర్వ్యవస్థీకరణ</span></td></tr>
+    <tr><td><strong>42nd CAA (1976)</strong> <span class="tbl-te">"మినీ రాజ్యాంగం"</span></td><td>"<strong>Mini Constitution</strong>" — Added 'Socialist', 'Secular', 'Integrity' to Preamble; added FDs (Art.51A); Art.39A (legal aid); Art.48A (environment); 43A (worker participation); curtailed judicial review <span class="tbl-te">పీఠికలో 'సమాజవాద', 'లౌకిక' జోడింపు; ప్రాథమిక విధులు చేర్పు</span></td></tr>
+    <tr><td><strong>44th CAA (1978)</strong></td><td>Reversed 42nd CAA excesses; "Armed Rebellion" for "Internal Disturbance"; written CoM advice mandatory; Property right removed from FRs → Art.300A <span class="tbl-te">ఆస్తి హక్కు FRs నుండి తొలగింపు</span></td></tr>
+    <tr><td><strong>52nd CAA (1985)</strong></td><td>10th Schedule — <strong>Anti-Defection Law</strong> <span class="tbl-te">పక్షాంతర నిరోధక చట్టం</span></td></tr>
+    <tr><td><strong>61st CAA (1989)</strong></td><td>Voting age <strong>21→18</strong> (Art.326) <span class="tbl-te">ఓటు వయస్సు 18కి తగ్గింపు</span></td></tr>
+    <tr><td><strong>73rd CAA (1992)</strong></td><td>Panchayati Raj — Part IX; Art.243; 11th Schedule (29 subjects); 3-tier; SC/ST/Women reservations <span class="tbl-te">పంచాయతీ రాజ్ — 3 స్థాయిల వ్యవస్థ</span></td></tr>
+    <tr><td><strong>74th CAA (1992)</strong></td><td>Municipalities — Part IXA; Art.243P-ZG; 12th Schedule (18 subjects); Wards Committees <span class="tbl-te">పురపాలక సంస్థలు — రాజ్యాంగ హోదా</span></td></tr>
+    <tr><td><strong>86th CAA (2002)</strong></td><td>Art.21A — <strong>Right to Education</strong> (6–14 yrs); RTE Act 2009; Art.51A(k) added <span class="tbl-te">విద్యా హక్కు ప్రాథమిక హక్కు</span></td></tr>
+    <tr><td><strong>91st CAA (2003)</strong></td><td>CoM size ≤15% of LS (min 12); defectors cannot hold ministerial post <span class="tbl-te">CoM పరిమాణ పరిమితి</span></td></tr>
+    <tr><td><strong>92nd CAA (2003)</strong></td><td>8th Schedule: Bodo, Dogri, Maithili, Santhali added → <strong>total 22 languages</strong> <span class="tbl-te">22 అధికారిక భాషలు</span></td></tr>
+    <tr><td><strong>97th CAA (2011)</strong></td><td>Right to form co-operatives (Art.19(1)(c)); Art.43B; Part IXB <span class="tbl-te">సహకార సంఘాల హక్కు</span></td></tr>
+    <tr><td><strong>99th CAA (2014)</strong></td><td>NJAC — <strong>struck down by SC in 2015</strong> (5-judge bench; Collegium continues) <span class="tbl-te">NJAC రద్దు; Collegium కొనసాగింపు</span></td></tr>
+    <tr><td><strong>101st CAA (2016)</strong></td><td><strong>GST</strong> — Art.246A, 269A, 279A; <strong>GST Council</strong> created <span class="tbl-te">వస్తు సేవల పన్ను — GST కౌన్సిల్</span></td></tr>
+    <tr><td><strong>102nd CAA (2018)</strong></td><td>NCBC (National Commission for Backward Classes) — <strong>Art.338B</strong> constitutional status <span class="tbl-te">NCBC కి రాజ్యాంగ హోదా</span></td></tr>
+    <tr><td><strong>103rd CAA (2019)</strong></td><td>Art.15(6) + Art.16(6): <strong>10% EWS reservation</strong> for economically weaker sections <span class="tbl-te">ఆర్థికంగా వెనకబడిన వర్గాలకు 10% రిజర్వేషన్</span></td></tr>
+    <tr><td><strong>104th CAA (2020)</strong></td><td>Ended Anglo-Indian nomination to LS + State Legislatures (Art.331, 333, 334) <span class="tbl-te">Anglo-Indian నామినేషన్ రద్దు</span></td></tr>
+    <tr><td><strong>105th CAA (2021)</strong></td><td>Restored States' power to identify &amp; list OBCs (overturned effect of 102nd CAA) <span class="tbl-te">OBC జాబితా రాష్ట్రాధికారం పునరుద్ధరణ</span></td></tr>
+    <tr><td><strong>106th CAA (2023)</strong> ★</td><td><strong>Nari Shakti Vandan Adhiniyam</strong>: <strong>33% reservation for women</strong> in LS + State Assemblies (applies to SC/ST seats too); effective after next Census + Delimitation <span class="tbl-te">మహిళలకు 33% రిజర్వేషన్ — జనగణన + పునర్వ్యవస్థీకరణ తర్వాత అమలు</span></td></tr>
+  </table>
+  <div class="pg-ftr">రాజ్యాంగ సవరణలు | Constitutional Amendments | 1st to 106th</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 10 — LANDMARK JUDGMENTS + CURRENT AFFAIRS
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>ముఖ్య తీర్పులు + తాజా పరిణామాలు — JUDGMENTS &amp; CURRENT AFFAIRS</span><span>Page 10</span></div>
+  <h1>ముఖ్య తీర్పులు &amp; తాజా పరిణామాలు — Landmark Judgments &amp; Current Affairs</h1>
+
+  <h2>ముఖ్యమైన న్యాయపీఠ తీర్పులు — Landmark SC Judgments</h2>
+  <table style="font-size:12px;">
+    <tr><th style="width:28%">Case / Year <span class="tbl-te">కేసు</span></th><th>Held / Significance <span class="tbl-te">నిర్ణయం</span></th></tr>
+    <tr><td><strong>Kesavananda Bharati (1973)</strong></td><td><strong>Basic Structure Doctrine</strong> — Parliament can amend Constitution but cannot destroy its basic structure. Elements: Supremacy of Constitution, Republican form, Secular character, Federal structure, Free elections, Judicial review <span class="tbl-te">ప్రాథమిక నిర్మాణ సిద్ధాంతం — రాజ్యాంగ ప్రాథమిక నిర్మాణాన్ని నాశనం చేయలేరు</span></td></tr>
+    <tr><td><strong>Maneka Gandhi (1978)</strong></td><td>Art.21: "procedure established by law" must be just, fair &amp; reasonable (overruled A.K. Gopalan 1950) <span class="tbl-te">Art.21 విస్తృత వ్యాఖ్యానం; న్యాయమైన విధానం</span></td></tr>
+    <tr><td><strong>Minerva Mills (1980)</strong></td><td>Judicial review + Balance between FRs and DPSPs are Basic Structure; Art.31C (42nd CAA) partly struck down <span class="tbl-te">న్యాయ సమీక్ష ప్రాథమిక నిర్మాణంలో భాగం</span></td></tr>
+    <tr><td><strong>Indra Sawhney (1992)</strong></td><td>Mandal Commission: 27% OBC reservation upheld; <strong>50% ceiling</strong>; no reservation in promotion; creamy layer exclusion <span class="tbl-te">OBC రిజర్వేషన్ 27% ఆమోదం; 50% పరిమితి</span></td></tr>
+    <tr><td><strong>S.R. Bommai (1994)</strong></td><td>Art.356 justiciable; floor test preferred; <strong>Federalism is Basic Structure</strong> <span class="tbl-te">Art.356 న్యాయ సమీక్షకు అర్హం; సమాఖ్యవాదం ప్రాథమిక నిర్మాణం</span></td></tr>
+    <tr><td><strong>I.R. Coelho (2007)</strong></td><td>9th Schedule laws added after April 24, 1973 can be judicially reviewed for FR violations <span class="tbl-te">1973 తర్వాత 9వ షెడ్యూల్ చేర్పులు న్యాయ సమీక్షకు అర్హం</span></td></tr>
+    <tr><td><strong>Puttaswamy (2017)</strong></td><td><strong>Right to Privacy</strong> is a fundamental right under Art.21 (9-judge bench) <span class="tbl-te">గోప్యత హక్కు — Art.21 కింద ప్రాథమిక హక్కు</span></td></tr>
+    <tr><td><strong>Art.370 Abrogation (2023)</strong></td><td>SC upheld abrogation of Art.370 (J&amp;K) — 5-judge bench; Article was temporary; statehood to be restored <span class="tbl-te">Art.370 రద్దు చెల్లుబాటు అవుతుంది</span></td></tr>
+    <tr><td><strong>EWS Reservation (2022)</strong></td><td>103rd CAA upheld 3:2 — EWS 10% reservation constitutional; does not violate Basic Structure <span class="tbl-te">EWS 10% రిజర్వేషన్ రాజ్యాంగబద్ధం</span></td></tr>
+    <tr><td><strong>Electoral Bonds (2024)</strong></td><td>SC <strong>struck down Electoral Bonds Scheme</strong> as unconstitutional — violates Art.19(1)(a) (right to information about political funding) <span class="tbl-te">ఎలక్టోరల్ బాండ్ పథకం రద్దు — Art.19(1)(a) ఉల్లంఘన</span></td></tr>
+  </table>
+
+  <h2>తాజా రాజ్యాంగ పరిణామాలు — Polity Current Affairs 2024–26</h2>
+  <table style="font-size:12px;">
+    <tr><th style="width:30%">Development / పరిణామం</th><th>Key Points / ముఖ్య విషయాలు</th></tr>
+    <tr><td><strong>Women's Reservation (106th CAA)</strong> <span class="tbl-te">మహిళా రిజర్వేషన్</span></td><td>33% in LS + State Assemblies; effective ONLY after next Census + Delimitation; applies within SC/ST quota also <span class="tbl-te">జనగణన + పునర్వ్యవస్థీకరణ తర్వాత మాత్రమే అమలు</span></td></tr>
+    <tr><td><strong>ONOE — One Nation One Election</strong> <span class="tbl-te">ఒకే దేశం ఒకే ఎన్నిక</span></td><td>Kovind Committee report (March 2024) — simultaneous elections; needs amendments to Art.83, 85, 172, 174, 356 etc. <span class="tbl-te">ఒకే సారి అన్ని ఎన్నికలు; రాజ్యాంగ సవరణలు అవసరం</span></td></tr>
+    <tr><td><strong>CEC Appointment Act 2023</strong> <span class="tbl-te">CEC నియామక చట్టం</span></td><td>3-member committee: PM + Leader of Opposition + Union Cabinet Minister; challenged in SC; SC collegium for CEC removed <span class="tbl-te">PM, విపక్ష నాయకుడు, కేంద్ర మంత్రి కమిటీ</span></td></tr>
+    <tr><td><strong>CAA Implementation 2024</strong> <span class="tbl-te">CAA అమలు</span></td><td>Citizenship Amendment Rules 2024 notified; CAA 2019 now operational — minorities from Pak/Bangladesh/Afghanistan (before Dec 31, 2014) <span class="tbl-te">పాకిస్తాన్, బంగ్లాదేశ్, ఆఫ్ఘానిస్తాన్ నుండి వచ్చిన మైనారిటీలకు పౌరసత్వం</span></td></tr>
+    <tr><td><strong>UCC — Uttarakhand</strong> <span class="tbl-te">ఏకరూప పౌర స్మృతి</span></td><td>First state UCC (2024) — marriage, divorce, inheritance for all (except tribals); Art.44 DPSP being implemented at state level <span class="tbl-te">ఉత్తరాఖండ్ — మొట్టమొదటి రాష్ట్ర UCC</span></td></tr>
+    <tr><td><strong>Governor Powers — SC Rulings</strong> <span class="tbl-te">గవర్నర్ అధికారాలు</span></td><td>SC ruled Governors cannot indefinitely withhold assent to State Bills (TN 2023, Telangana 2024); Art.200 discretion is limited; must act within reasonable time <span class="tbl-te">గవర్నర్ బిల్లులను అనిర్దిష్టంగా ఆపుకోలేరు</span></td></tr>
+    <tr><td><strong>Digital Personal Data Protection Act 2023</strong></td><td>India's first comprehensive data protection law; linked to Puttaswamy (Privacy) judgment; Data Protection Board; Significant Data Fiduciary</td></tr>
+    <tr><td><strong>AP Special Provisions</strong> <span class="tbl-te">AP ప్రత్యేక నిబంధనలు</span></td><td>Art.371D: Special provisions for AP (education + employment); AP HC at Amaravati; AP Reorganisation Act 2014 → Telangana (29th state); AP now 28 states <span class="tbl-te">Art.371D: AP లో విద్య + ఉద్యోగాల్లో ప్రత్యేక నిబంధనలు</span></td></tr>
+  </table>
+
+  <h2>Important Articles Quick Reference / ముఖ్య అధికరణాలు</h2>
+  <table style="font-size:12px;">
+    <tr><th>Art.</th><th>Subject</th><th>Art.</th><th>Subject</th><th>Art.</th><th>Subject</th></tr>
+    <tr><td class="tbl-art">1</td><td>India = Union of States <span class="tbl-te">భారతదేశం = రాష్ట్రాల సమాఖ్య</span></td><td class="tbl-art">13</td><td>Void laws — FR basis</td><td class="tbl-art">17</td><td>Untouchability abolished <span class="tbl-te">అస్పృశ్యత నిర్మూలన</span></td></tr>
+    <tr><td class="tbl-art">21</td><td>Life &amp; Liberty ★ <span class="tbl-te">జీవన హక్కు</span></td><td class="tbl-art">21A</td><td>Right to Education <span class="tbl-te">విద్యా హక్కు</span></td><td class="tbl-art">32</td><td>SC writ — FR enforcement <span class="tbl-te">SC రిట్ పరిధి</span></td></tr>
+    <tr><td class="tbl-art">44</td><td>Uniform Civil Code <span class="tbl-te">ఏకరూప పౌర స్మృతి</span></td><td class="tbl-art">51A</td><td>Fundamental Duties <span class="tbl-te">ప్రాథమిక విధులు</span></td><td class="tbl-art">72</td><td>President pardon <span class="tbl-te">రాష్ట్రపతి క్షమాభిక్ష</span></td></tr>
+    <tr><td class="tbl-art">74</td><td>Council of Ministers <span class="tbl-te">మంత్రిమండలి</span></td><td class="tbl-art">110</td><td>Money Bill definition <span class="tbl-te">ద్రవ్య బిల్లు నిర్వచనం</span></td><td class="tbl-art">123</td><td>Ordinance <span class="tbl-te">ఆర్డినెన్స్</span></td></tr>
+    <tr><td class="tbl-art">131</td><td>SC original jurisdiction <span class="tbl-te">SC మూల పరిధి</span></td><td class="tbl-art">136</td><td>SLP — Special Leave <span class="tbl-te">ప్రత్యేక అనుమతి</span></td><td class="tbl-art">141</td><td>SC law binding on all</td></tr>
+    <tr><td class="tbl-art">148</td><td>CAG <span class="tbl-te">నియంత్రక</span></td><td class="tbl-art">214</td><td>HC in every state <span class="tbl-te">ప్రతి రాష్ట్రానికి HC</span></td><td class="tbl-art">226</td><td>HC writ — broader scope ★ <span class="tbl-te">HC రిట్ పరిధి</span></td></tr>
+    <tr><td class="tbl-art">227</td><td>HC superintendence <span class="tbl-te">HC పర్యవేక్షణ</span></td><td class="tbl-art">280</td><td>Finance Commission <span class="tbl-te">ఆర్థిక సంఘం</span></td><td class="tbl-art">300A</td><td>Property right (legal) <span class="tbl-te">ఆస్తి హక్కు (చట్టపరమైన)</span></td></tr>
+    <tr><td class="tbl-art">324</td><td>Election Commission <span class="tbl-te">ఎన్నికల కమిషన్</span></td><td class="tbl-art">338B</td><td>NCBC <span class="tbl-te">OBC కమిషన్</span></td><td class="tbl-art">352/356/360</td><td>3 Emergencies <span class="tbl-te">3 అత్యవసర పరిస్థితులు</span></td></tr>
+    <tr><td class="tbl-art">368</td><td>Amendment procedure <span class="tbl-te">సవరణ విధానం</span></td><td class="tbl-art">371D</td><td>Special provisions — AP ★ <span class="tbl-te">AP ప్రత్యేక నిబంధనలు</span></td><td class="tbl-art">76</td><td>Attorney General <span class="tbl-te">అటార్నీ జనరల్</span></td></tr>
+  </table>
+
+  <div class="box box-purple" style="font-size:13px; margin-top:8px;">
+    <strong>⭐ AP High Court Focus / AP హైకోర్టు దృష్టి:</strong> Art.226 (HC writs — broader than Art.32) | Art.227 (HC superintendence over subordinate courts) | Art.214–231 (High Courts) | <strong>Art.371D</strong> (AP special provisions — education &amp; employment) | Art.233–237 (Subordinate Courts) | Art.300A (Property rights) | Art.105–106 (Parliamentary privileges) — <span class="te">ఈ అధికరణాలు AP హైకోర్టు పరీక్షలో తరచూ వస్తాయి</span>
+  </div>
+  <div class="pg-ftr">ముఖ్య తీర్పులు + తాజా పరిణామాలు | Landmark Judgments &amp; Current Affairs 2024–26 | AP HC Exam</div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     PAGE 11 — JUDICIAL REVIEW + GOVERNOR + STATE LEGISLATURE
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>న్యాయ సమీక్ష + గవర్నర్ + రాష్ట్ర శాసనసభ — JUDICIAL REVIEW, GOVERNOR &amp; STATE LEGISLATURE</span><span>Page 11</span></div>
+  <h1>న్యాయ సమీక్ష, గవర్నర్ &amp; రాష్ట్ర శాసనసభ</h1>
+
+  <div class="grid2">
+    <!-- LEFT: Judicial Review -->
+    <div>
+      <h2>న్యాయ సమీక్ష — Judicial Review</h2>
+      <div class="box box-blue" style="font-size:12px;">
+        <strong>What is Judicial Review?</strong> The power of SC and HCs to examine whether laws enacted by Parliament/State Legislatures or actions taken by the executive are consistent with the Constitution — and to <strong>declare them void (ultra vires)</strong> if they are not. It is the <em>cornerstone of constitutional supremacy</em> and the Rule of Law in India. <span class="te">పార్లమెంట్/రాష్ట్ర శాసనసభలు చేసిన చట్టాలు రాజ్యాంగానికి అనుగుణంగా ఉన్నాయా అని పరీక్షించి, విరుద్ధమైతే శూన్యంగా ప్రకటించే న్యాయస్థాన అధికారం — రాజ్యాంగ ఆధిపత్యానికి పునాది.</span>
+      </div>
+      <table style="font-size:12px;">
+        <tr><th style="width:33%">Aspect</th><th>Explanation</th></tr>
+        <tr><td><strong>Origin</strong></td><td><strong>USA:</strong> Marbury v. Madison (1803) — Chief Justice John Marshall first asserted that courts can declare laws unconstitutional. India borrowed the concept but with significant modifications. <span class="tbl-te">USA లో జన్మించింది; భారతదేశం స్వీకరించింది</span></td></tr>
+        <tr><td><strong>Constitutional Basis in India</strong></td><td>Not expressly stated but firmly implied through: <strong>Art.13</strong> (FR-inconsistent laws void), <strong>Art.32</strong> (SC enforces FRs), <strong>Art.226</strong> (HC writs), <strong>Art.131–136</strong> (SC original/appellate jurisdiction), <strong>Art.246</strong> (separation of legislative powers) <span class="tbl-te">రాజ్యాంగంలో నేరుగా పేర్కొనలేదు; అనేక అధికరణాల ద్వారా implied గా ఉంది</span></td></tr>
+        <tr><td><strong>Art.13 — Core Article</strong></td><td>Clause (1): All pre-Constitution laws inconsistent with FRs are void to the extent of inconsistency. Clause (2): State shall NOT make laws taking away or abridging FRs — void if it does. <strong>"State" includes Govt + Parliament + State Legislatures.</strong> <span class="tbl-te">FR కి విరుద్ధమైన చట్టాలు — వాటి మేరకు — శూన్యం</span></td></tr>
+        <tr><td><strong>3 Categories of JR</strong></td><td>(1) <strong>Constitutionality of legislation</strong> — laws tested against FRs/Articles; (2) <strong>Executive actions</strong> — administrative orders, circulars, ordinances reviewed; (3) <strong>Constitutional amendments</strong> — post-Kesavananda 1973: even amendments reviewed for Basic Structure violation <span class="tbl-te">చట్టాలు | కార్యనిర్వాహక చర్యలు | రాజ్యాంగ సవరణలు</span></td></tr>
+        <tr><td><strong>Narrower than USA ★</strong></td><td>In USA, JR is absolute — no law above SC. In India, Parliament CAN amend Constitution under Art.368, BUT cannot destroy the <strong>Basic Structure</strong> (Kesavananda Bharati 1973). India's JR checks constitutionality, not policy wisdom. <span class="tbl-te">USA కంటే పరిమితమైన పరిధి; ప్రాథమిక నిర్మాణం మాత్రమే రక్షించబడుతుంది</span></td></tr>
+        <tr><td><strong>Severability Doctrine</strong></td><td>If only <em>part</em> of a law is unconstitutional, only that part is struck down — the rest of the law survives. Courts "read down" laws where possible. (Art.13: "void to the extent of inconsistency") <span class="tbl-te">చట్టంలో ఒక భాగం మాత్రమే విరుద్ధమైతే, ఆ భాగం మాత్రమే రద్దు; మిగిలింది చెల్లుబాటు</span></td></tr>
+        <tr><td><strong>Eclipse Doctrine</strong></td><td>Pre-Constitution laws inconsistent with FRs do not become dead — they become <em>dormant</em> (eclipsed). If the FR is later amended to remove the inconsistency, the dormant law <em>revives</em> automatically. <span class="tbl-te">రాజ్యాంగ పూర్వ చట్టాలు గ్రహణానికి గురవుతాయి; FR మారితే తిరిగి జీవిస్తాయి</span></td></tr>
+        <tr><td><strong>Colorable Legislation</strong></td><td>What cannot be done directly cannot be done indirectly. If the real purpose/effect of a law violates the Constitution, it is void even if the law appears valid on its face. <span class="tbl-te">పరోక్ష మార్గంలో కూడా రాజ్యాంగాన్ని ఉల్లంఘించలేరు</span></td></tr>
+        <tr><td><strong>Policy NOT reviewed</strong></td><td>Courts examine <em>constitutionality</em> — NOT the wisdom, policy, utility, or expediency of a law. Courts cannot substitute their judgment for Parliament's on policy choices. <span class="tbl-te">చట్టం మంచిదా చెడ్డదా అని కాదు — రాజ్యాంగబద్ధతయే సమీక్ష</span></td></tr>
+        <tr><td><strong>9th Schedule (I.R. Coelho 2007)</strong></td><td>Laws added to 9th Schedule before 24 April 1973 are immune from JR. Post-1973 additions can be challenged for Basic Structure violation. <span class="tbl-te">1973 తర్వాత 9వ షెడ్యూల్ చేర్పులు న్యాయ సమీక్షకు అర్హం</span></td></tr>
+        <tr><td><strong>Art.142 — Complete Justice</strong></td><td>SC can pass any order/decree "necessary for doing complete justice" in any cause or matter — an extraordinary power that overrides ordinary law. <span class="tbl-te">సంపూర్ణ న్యాయం కోసం ఏ ఆదేశమైనా జారీ చేయగలరు</span></td></tr>
+      </table>
+      <div class="box box-amber" style="font-size:12px; margin-top:5px;">
+        <strong>Basic Structure Elements (Kesavananda 1973 + subsequent cases) / ప్రాథమిక నిర్మాణ అంశాలు:</strong><br>
+        Supremacy of Constitution | Republican &amp; Democratic form | Secular character | Federal structure | Separation of powers | Free &amp; Fair elections | Judicial Review | Unity &amp; Integrity | Art.32 (right to SC) | Parliamentary system | Rule of Law | Harmony between FRs &amp; DPSPs | Welfare State | Independence of Judiciary | Limited government | Art.226 (HC writ jurisdiction) <span class="te">ఇవి ఏ సవరణకూ అందవు — పార్లమెంట్‌కు కూడా</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: Governor -->
+    <div>
+      <h2>గవర్నర్ — Governor (Art.153–167)</h2>
+      <div class="box box-teal" style="font-size:12px;">
+        <strong>Dual Character of Governor:</strong> The Governor wears two hats — (1) <strong>Constitutional/Nominal Head of the State</strong> (like the President at Centre) — acts on the advice of the Council of Ministers headed by CM in all normal matters; and (2) <strong>Agent and Representative of the Centre</strong> — sends reports to Centre, can recommend President's Rule, reserves bills for President. This dual role creates constitutional tensions in Centre-State relations. <span class="te">గవర్నర్ రెండు పాత్రలు: రాష్ట్ర రాజ్యాంగ అధిపతి + కేంద్ర ప్రతినిధి. ఈ ద్వంద్వ స్వభావం కేంద్ర-రాష్ట్ర సంఘర్షణకు కారణమవుతుంది.</span>
+      </div>
+      <table style="font-size:12px;">
+        <tr><th style="width:35%">Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Appointment (Art.155)</strong></td><td>Appointed by the President of India by warrant under his hand and seal. Governor is not elected — no fixed selection criteria specified except qualifications. Convention: person from another state, not active politician. Sarkaria Commission: eminent person, detached from local politics. <span class="tbl-te">రాష్ట్రపతి నియమిస్తారు; ఎన్నిక లేదు; వేరే రాష్ట్రం నుండి</span></td></tr>
+        <tr><td><strong>Qualifications (Art.157)</strong></td><td>Must be a citizen of India; must have completed age of 35 years; must NOT hold any office of profit; must NOT be a member of Parliament or State Legislature. <span class="tbl-te">భారత పౌరుడు; 35+ సంవత్సరాలు; ఆదాయ పదవి ఉండకూడదు</span></td></tr>
+        <tr><td><strong>Term (Art.156)</strong></td><td>Holds office for <strong>5 years</strong> — BUT at the <strong>pleasure of the President</strong> (can be removed or transferred at any time without giving reasons). No formal impeachment process, unlike President. <span class="tbl-te">5 సంవత్సరాలు కానీ రాష్ట్రపతి ఇష్టానుసారం; ఏ సమయంలోనైనా తొలగించవచ్చు</span></td></tr>
+        <tr><td><strong>Normal Executive Role (Art.154, 163)</strong></td><td>All executive power of the state is formally vested in the Governor (Art.154). In practice, Governor exercises all powers on the <strong>aid and advice of the CoM</strong> headed by CM (Art.163). Governor is the nominal, constitutional head — CM leads the real executive. <span class="tbl-te">సాధారణంగా CM నేతృత్వంలోని CoM సలహాపై వ్యవహరిస్తారు; Governor nominal head</span></td></tr>
+        <tr><td><strong>Discretionary Powers ★</strong></td><td>(1) Appoint CM when no party has clear majority after elections; (2) Dismiss CM/Govt that has lost floor confidence; (3) <strong>Reserve a State Bill for President's consideration</strong> (Art.200); (4) Recommend President's Rule under Art.356; (5) Administer tribal areas (5th and 6th Schedules); (6) Require information from CM (Art.167); (7) Appoint CM of a state under President's Rule <span class="tbl-te">స్వవిచక్షణ అధికారాలు — ఇవి అత్యంత ముఖ్యమైనవి &amp; వివాదాస్పదమైనవి</span></td></tr>
+        <tr><td><strong>Art.200 — Bills ★</strong></td><td>When a bill is passed by State Legislature, Governor has 4 options: (1) Give assent; (2) Withhold assent; (3) Return bill for reconsideration (once only); (4) Reserve the bill for the President's consideration. <strong>Critical rule: If State Legislature re-passes the bill after Governor's return, the Governor MUST give assent</strong> — he cannot withhold indefinitely ("Pocket Veto" is unconstitutional). <span class="tbl-te">రాష్ట్ర బిల్లులపై 4 విధాలు; పునఃఆమోదం తర్వాత assent తప్పనిసరి</span></td></tr>
+        <tr><td><strong>Ordinance Power (Art.213)</strong></td><td>Governor can promulgate Ordinances when State Legislature is NOT in session and immediate action is necessary. Ordinance has the same force as a State Act. Must be laid before the Legislature within 6 weeks of reassembly — lapses if not approved. Cannot override the Constitution. <span class="tbl-te">శాసనసభ సమావేశంలో లేనప్పుడు ఆర్డినెన్స్ జారీ; 6 వారాల్లో Legislature ముందు పెట్టాలి</span></td></tr>
+        <tr><td><strong>Art.356 — President's Rule</strong></td><td>Governor sends a report to the President stating that the constitutional machinery in the state has failed — leading to President's Rule. Governor's report is justiciable (S.R. Bommai 1994). <span class="tbl-te">రాజ్యాంగ వ్యవస్థ వైఫల్యం నివేదికతో రాష్ట్రపతి పాలన</span></td></tr>
+        <tr><td><strong>Pardoning Power (Art.161)</strong></td><td>Governor can grant pardons, reprieves, respites, remissions for offences against <strong>state law only</strong>. Cannot pardon: (a) sentences by court-martial; (b) offences under Central law (only President can under Art.72). <span class="tbl-te">రాష్ట్ర చట్టాల కింద శిక్షలకే పరిమితం; కోర్ట్-మార్షల్/కేంద్ర చట్టానికి కాదు</span></td></tr>
+      </table>
+      <div class="box box-red" style="font-size:12px; margin-top:5px;">
+        <strong>TN v. Governor (SC, 8 Apr 2025) ★:</strong> Bench of J.B. Pardiwala &amp; R. Mahadevan JJ set <em>mandatory time limits</em> for Art.200 — Governor must: (1) Give assent or reserve for President: within <strong>1 month</strong>; (2) If withholding assent, must return with message: within <strong>3 months</strong>; (3) After Legislature re-passes: give assent within <strong>1 month</strong>. 10 Tamil Nadu bills were deemed to have received assent. <em>Indefinite withholding = Pocket Veto = unconstitutional.</em> <span class="te">నిరవధికంగా బిల్లులు ఆపుకోవడం (Pocket Veto) రాజ్యాంగ విరుద్ధం</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:8px;">రాష్ట్ర శాసనసభ — State Legislature (Art.168–212)</h2>
+  <div class="box box-blue" style="font-size:12px; margin-bottom:5px;">
+    Every state MUST have a <strong>Vidhan Sabha (Legislative Assembly)</strong>. Only 6 states optionally have a <strong>Vidhan Parishad (Legislative Council)</strong>. Unlike Parliament (where Rajya Sabha can delay bills), there is <strong>NO provision for a joint sitting of both State Houses</strong> — if Vidhan Parishad rejects a bill, it simply lapses (no override mechanism). State legislature makes laws on the <strong>State List (66 subjects) and Concurrent List (47 subjects)</strong>. <span class="te">ప్రతి రాష్ట్రానికి Vidhan Sabha తప్పనిసరి. 6 రాష్ట్రాలకు Vidhan Parishad. Joint session నేపథ్యం లేదు — VP తిరస్కరిస్తే bill lapse.</span>
+  </div>
+  <table style="font-size:12px;">
+    <tr>
+      <th style="width:18%">Feature</th>
+      <th>Vidhan Sabha — విధాన సభ (Lower/Popular House)</th>
+      <th>Vidhan Parishad — విధాన పరిషత్ (Upper House)</th>
+    </tr>
+    <tr><td><strong>Article</strong></td><td>Art.170</td><td>Art.171</td></tr>
+    <tr><td><strong>Strength</strong></td><td>Max <strong>500</strong>, min <strong>60</strong> members (AP: 175; Telangana: 119) <span class="tbl-te">గరిష్టం 500; కనిష్టం 60</span></td><td>Max = 1/3rd of Vidhan Sabha strength; min = <strong>40</strong> members <span class="tbl-te">Vidhan Sabha యొక్క 1/3వ వంతు; కనిష్టం 40</span></td></tr>
+    <tr><td><strong>Election Method</strong></td><td>Direct election by voters — Universal Adult Franchise (18+); single member constituencies; First-Past-the-Post system <span class="tbl-te">ప్రత్యక్ష ఓటింగ్ — 18+ ఓటర్లు</span></td><td>Indirect/multi-source: 1/3rd elected by MLAs | 1/3rd by local body members | 1/12th by graduates | 1/12th by teachers | 1/6th nominated by Governor (arts, science, literature, co-operatives) <span class="tbl-te">MLAs, స్థానిక సంస్థలు, గ్రాడ్యుయేట్లు, ఉపాధ్యాయులు, Governor నామినేషన్</span></td></tr>
+    <tr><td><strong>Term</strong></td><td>5 years; can be dissolved earlier by Governor on CM's advice or after motion of no-confidence passes <span class="tbl-te">5 సంవత్సరాలు; విశ్వాసం కోల్పోతే రద్దు</span></td><td>Permanent body — never dissolved; 1/3rd members retire every 2 years; each member's term = <strong>6 years</strong> <span class="tbl-te">శాశ్వత సభ; ప్రతి 2 సంవత్సరాలకు 1/3వ సభ్యులు రిటైర్; 6 సంవత్సరాల పదవీకాలం</span></td></tr>
+    <tr><td><strong>Presiding Officer</strong></td><td>Speaker (elected by members) + Deputy Speaker. Speaker gives Money Bill certificate. Speaker decides disqualification under Anti-Defection (10th Schedule). <span class="tbl-te">Speaker + Deputy Speaker; Money Bill certificate; Anti-Defection నిర్ణయం</span></td><td>Chairman (elected by VP members) + Deputy Chairman. Unlike RS where VP of India chairs, state VP Chairman is elected from among members. <span class="tbl-te">Chairman + Deputy Chairman; RS తరహా కాదు</span></td></tr>
+    <tr><td><strong>Money Bills</strong></td><td>Money Bills (Art.198) originate ONLY in Vidhan Sabha. Vidhan Sabha is the sole authority — VP can only suggest amendments (within 14 days), which Vidhan Sabha may accept or reject. <span class="tbl-te">ద్రవ్య బిల్లు: Vidhan Sabha మాత్రమే; VP ఆమోదం అవసరం లేదు</span></td><td>No power to initiate or block Money Bills. Can only suggest amendments within 14 days — Vidhan Sabha is free to reject suggestions. Bill deemed passed if VP does not return within 14 days. <span class="tbl-te">సూచనలు మాత్రమే; అడ్డుకోలేరు</span></td></tr>
+    <tr><td><strong>6 Bicameral States</strong></td><td colspan="2">States having both Vidhan Sabha + Vidhan Parishad: <strong>Uttar Pradesh, Maharashtra, Karnataka, Bihar, Andhra Pradesh, Telangana</strong>. Art.169: Parliament can create or abolish VP on state legislature's resolution (simple majority) passed by Parliament with special majority. <span class="tbl-te">ద్విసభ రాష్ట్రాలు 6: UP, Maharashtra, Karnataka, Bihar, AP, Telangana</span></td></tr>
+  </table>
+  <div class="box box-green" style="font-size:12px; margin-top:4px;">
+    <strong>State Bill Procedure / బిల్లు విధానం:</strong> Ordinary Bill introduced in either house → debate &amp; passage → sent to other house → Governor gives assent (Art.200) → becomes State Act. <strong>Key difference from Parliament:</strong> NO joint sitting — if VP rejects, bill lapses. Governor may return once for reconsideration — if legislature re-passes (with or without amendments), Governor MUST assent. <span class="te">VP తిరస్కరించినా Joint session లేదు — bill రద్దవుతుంది</span>
+  </div>
+  <div class="pg-ftr">న్యాయ సమీక్ష + గవర్నర్ + రాష్ట్ర శాసనసభ | Judicial Review, Governor &amp; State Legislature | AP HC Exam</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 12 — PIL + TRIBUNALS + DELIMITATION + BAR COUNCIL
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>PIL + Tribunals + పరిమితి కమిషన్ + Bar Council of India</span><span>Page 12</span></div>
+  <h1>ప్రజా ప్రయోజన వ్యాజ్యం, Tribunals, Delimitation Commission &amp; Bar Council</h1>
+
+  <div class="grid2">
+    <!-- LEFT: PIL + Tribunals -->
+    <div>
+      <h2>ప్రజా ప్రయోజన వ్యాజ్యం — Public Interest Litigation (PIL)</h2>
+      <div class="box box-blue" style="font-size:12px;">
+        <strong>What is PIL?</strong> A judicial innovation that allows <em>any person</em> acting in good faith to approach the SC or HC to enforce the constitutional rights of those who cannot approach the court themselves — prisoners, tribals, victims of disaster, bonded labourers. PIL relaxed the traditional <em>locus standi</em> rule (that only the aggrieved party can sue). Even a <strong>letter or postcard to the CJI</strong> can be treated as a PIL petition. <span class="te">పేద, అణగారిన వర్గాల తరఫున ఏ పౌరుడైనా న్యాయస్థానాన్ని ఆశ్రయించగలగడం — locus standi నిబంధన సడలింపు. CJI కి ఉత్తరం కూడా PIL గా స్వీకరిస్తారు.</span>
+      </div>
+      <table style="font-size:12px;">
+        <tr><th style="width:35%">Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Origin in India</strong></td><td>Justice V.R. Krishna Iyer introduced "representative standing" concept in 1970s. Justice P.N. Bhagwati formalized PIL in the 1980s. <strong>First recognised PIL: Hussainara Khatoon v. State of Bihar (1979)</strong> — SC upheld undertrials' right to speedy trial; thousands released. <span class="tbl-te">1970-80 లలో ప్రారంభం; మొదటి PIL 1979</span></td></tr>
+        <tr><td><strong>Constitutional Basis</strong></td><td><strong>Art.32</strong> (before Supreme Court) and <strong>Art.226</strong> (before High Court). Courts can take suo motu cognizance or treat letters/telegrams as PILs. HC's Art.226 jurisdiction is broader — covers not just FRs but any legal right. <span class="tbl-te">Art.32 (SC కి) మరియు Art.226 (HC కి) కింద దాఖలు</span></td></tr>
+        <tr><td><strong>Who Can File</strong></td><td>Any <strong>citizen of India</strong> acting bona fide in public interest — need not be personally aggrieved. No court fee required. Foreign nationals and companies are generally not entitled to file PILs on behalf of citizens. <span class="tbl-te">ఏ భారత పౌరుడైనా; వ్యక్తిగతంగా ప్రభావితం కావలసిన అవసరం లేదు; court fee లేదు</span></td></tr>
+        <tr><td><strong>Scope &amp; Areas</strong></td><td>Prison reform, environmental protection, education rights, bonded labour, child labour, women's rights, corruption exposure, food security, election integrity, disabled persons' rights, slum demolitions. PIL helped operationalise DPSPs through judicial intervention. <span class="tbl-te">జైలు సంస్కరణ, పర్యావరణ రక్షణ, విద్య, మహిళల హక్కులు, అవినీతి బహిర్గతం</span></td></tr>
+        <tr><td><strong>Landmark PILs</strong></td><td><strong>Hussainara Khatoon (1979):</strong> Speedy trial | <strong>Vishaka v. Rajasthan (1997):</strong> Workplace sexual harassment guidelines (led to POSH Act 2013) | <strong>MC Mehta v. UoI:</strong> Ganga/Yamuna pollution, Delhi vehicle pollution | <strong>PUCL v. India (2003):</strong> Right to food as Art.21 FR | <strong>Sheela Barse:</strong> Rights of women/children in police custody | <strong>Subhash Kumar:</strong> Right to pollution-free environment = part of Art.21 <span class="tbl-te">ముఖ్యమైన PIL కేసులు — పరీక్షకు ముఖ్యం</span></td></tr>
+        <tr><td><strong>Misuse &amp; SC Safeguards</strong></td><td>SC issued guidelines to prevent frivolous/vexatious PILs: bench must screen at the admission stage; courts impose exemplary costs on mala fide petitions; PIL cannot be a tool for publicity, political interference, or personal vendettas. "PIL should not become PIL — Personal Interest Litigation." <span class="tbl-te">అర్థం లేని PILలపై SC exemplary costs విధిస్తుంది; Political PILs తిరస్కరిస్తారు</span></td></tr>
+      </table>
+
+      <h2 style="margin-top:7px;">న్యాయాధికరణాలు — Tribunals (Art.323A &amp; 323B)</h2>
+      <div class="box box-teal" style="font-size:12px;">
+        <strong>Why Tribunals?</strong> Established to provide <em>speedy, specialised, and cost-effective adjudication</em> in specific domains (service disputes, tax, environment, companies) — reducing backlog in regular courts. Added to the Constitution by the <strong>42nd CAA (1976)</strong> inserting Arts. 323A and 323B. <span class="te">నిర్దిష్ట విషయాల్లో వేగవంతమైన, ప్రత్యేక న్యాయం కోసం ఏర్పాటు; 42వ సవరణ ద్వారా 1976లో చేర్పు.</span>
+      </div>
+      <table style="font-size:12px;">
+        <tr><th style="width:35%">Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Art.323A — Administrative Tribunals</strong></td><td>Parliament may establish Administrative Tribunals for disputes relating to <em>recruitment and service conditions</em> of Central/State public servants. <strong>CAT (Central Administrative Tribunal)</strong> established under Administrative Tribunals Act 1985 — handles service disputes of Central Govt employees. State Administrative Tribunals handle state employee disputes. <span class="tbl-te">కేంద్ర/రాష్ట్ర సేవకుల సేవా వివాదాల కోసం; CAT 1985 లో ఏర్పాటు</span></td></tr>
+        <tr><td><strong>Art.323B — Other Tribunals</strong></td><td>Parliament OR State Legislature may establish tribunals for specified subjects: taxation, foreign exchange, industrial/labour disputes, land reforms, ceiling on urban property, election to local bodies, food, rent control, co-operatives. These are domain-specific quasi-judicial bodies. <span class="tbl-te">పన్ను, కార్మిక, భూ సంస్కరణలు, స్థానిక ఎన్నికలు వంటి వివాదాలు</span></td></tr>
+        <tr><td><strong>Key Tribunals (India)</strong></td><td>CAT (service), NGT (environment), NCLT/NCLAT (company law &amp; insolvency), SAT (securities), TDSAT (telecom), ITAT (income tax), AFT (armed forces), DRT (debt recovery), CESTAT (customs &amp; excise), RERA (real estate) <span class="tbl-te">ముఖ్య న్యాయాధికరణాలు: CAT, NGT, NCLT, SAT, ITAT</span></td></tr>
+        <tr><td><strong>Exclusivity Issue</strong></td><td>Art.323A(2)(d) allowed Parliament to exclude HC jurisdiction (Art.226/227) over service matters — intended to reduce HC burden. But this raised a fundamental question: can Parliament override an HC's constitutional power of JR? <span class="tbl-te">HC పరిధి తొలగింపు ప్రయత్నం — రాజ్యాంగబద్ధతపై వివాదం</span></td></tr>
+        <tr><td><strong>L. Chandrakumar 1997 ★</strong></td><td><strong>7-judge Constitution bench SC:</strong> Held that the power of Tribunals to exclude HC jurisdiction (Art.226/227) is <em>unconstitutional</em>. HC's judicial review powers are part of the <strong>Basic Structure</strong> of the Constitution — Parliament cannot take them away. Appeals from CAT/Tribunals → HC Division Bench (Art.226/227) → SC (Art.136). <span class="tbl-te">Tribunal నిర్ణయాలు తప్పనిసరిగా HC సమీక్షకు అర్హం; HC పరిధి తొలగించడం Basic Structure కి వ్యతిరేకం</span></td></tr>
+        <tr><td><strong>Tribunals Reform Act 2021</strong></td><td>Merged several tribunals (e.g., Intellectual Property Appellate Board, Airport Appellate Tribunal merged into HCs); fixed 4-year terms for members; SC stayed some provisions challenging independence. Ongoing reform process to rationalize the tribunal system. <span class="tbl-te">2021 సంస్కరణలు; పలు tribunals విలీనం; 4 సంవత్సరాల term</span></td></tr>
+      </table>
+    </div>
+
+    <!-- RIGHT: Delimitation + Bar Council -->
+    <div>
+      <h2>పరిమితి కమిషన్ — Delimitation Commission</h2>
+      <div class="box box-blue" style="font-size:12px;">
+        <strong>Purpose:</strong> To redraw the boundaries of Parliamentary constituencies (LS seats) and State Assembly constituencies based on the <em>latest Census data</em>, ensuring that each constituency represents approximately equal population — essential for the democratic principle of "one person, one vote, one value." <span class="te">జనగణన తర్వాత నియోజకవర్గాల జనాభా సమానత్వం కోసం సరిహద్దుల పునర్నిర్ధారణ — ప్రజాస్వామ్య సమానత్వానికి అవసరం.</span>
+      </div>
+      <table style="font-size:12px;">
+        <tr><th style="width:35%">Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Constitutional Basis</strong></td><td><strong>Art.82:</strong> Parliament shall by law readjust allocation of seats in LS and State Assemblies after every Census. <strong>Art.170(3):</strong> State Assembly seats readjusted after every Census. The actual delimitation happens through a separate Delimitation Act passed by Parliament each time. <span class="tbl-te">Art.82 (LS) + Art.170(3) (రాష్ట్ర శాసనసభలు); ప్రతి జనగణన తర్వాత</span></td></tr>
+        <tr><td><strong>Nature &amp; Establishment</strong></td><td>A <strong>statutory body</strong> (NOT constitutional) — constituted afresh by Parliament through a Delimitation Act whenever needed. NOT a permanent body — it is dissolved after completing its task. A new Commission is established each time delimitation is needed. <span class="tbl-te">శాసనబద్ధ సంస్థ (రాజ్యాంగేతర); శాశ్వత సంస్థ కాదు; ప్రతిసారి కొత్తగా ఏర్పాటు</span></td></tr>
+        <tr><td><strong>Composition</strong></td><td>Chairperson: A <strong>Retired Supreme Court Judge</strong> appointed by the President. Ex-officio members: the <strong>Chief Election Commissioner</strong> and the <strong>State Election Commissioners</strong> of the concerned states (as associate members). <span class="tbl-te">రిటైర్డ్ SC న్యాయమూర్తి + CEC + రాష్ట్ర EC</span></td></tr>
+        <tr><td><strong>Legal Finality of Orders</strong></td><td>Delimitation orders have the <strong>force of law</strong> and are published in the Gazette. <strong>Art.329 bars any court</strong> from questioning the validity of delimitation — orders cannot be challenged in any court. This is an exception to normal judicial review. <span class="tbl-te">ఆదేశాలు న్యాయ సమీక్షకు అర్హం కావు; Art.329 — ఏ న్యాయస్థానంలోనూ ప్రశ్నించలేరు</span></td></tr>
+        <tr><td><strong>Delimitation Freeze ★</strong></td><td><strong>84th CAA (2001)</strong> froze seat allocation of LS and State Assemblies till the first Census after 2026 (effectively till 2031 Census data is available). This directly blocks implementation of <strong>106th CAA (Women's Reservation 33%)</strong> — which can only take effect after the next delimitation post-2031. <span class="tbl-te">2031 జనగణన తర్వాతే పున:పరిమితి; మహిళా రిజర్వేషన్ అమలు వాయిదా</span></td></tr>
+        <tr><td><strong>J&amp;K Delimitation 2022 ★</strong></td><td>Chairperson: <strong>Justice Ranjana Prakash Desai</strong> (Retd. SC Judge). Done under J&amp;K Reorganisation Act 2019. Order signed: <strong>5 May 2022</strong>; Effective: <strong>20 May 2022</strong>. Total seats: <strong>90</strong> (Jammu region: 43 seats; Kashmir region: 47 seats — 6 new seats added to Jammu). First time: <strong>9 seats reserved for STs</strong>. Covers only J&amp;K UT Assembly — not Parliament. <span class="tbl-te">J&K: 90 స్థానాలు; Justice Ranjana Desai అధ్యక్ష; 9 ST రిజర్వేషన్ స్థానాలు — తొలిసారి</span></td></tr>
+        <tr><td><strong>Past Commissions</strong></td><td>1952 (CJI Kania), 1963 (CJI Sinha), 1973 (CJI Sikri), 2002 (Justice Kuldeep Singh) — last full delimitation; next commission expected after 2031 Census data is processed. <span class="tbl-te">గత కమిషన్లు: 1952, 1963, 1973, 2002; తదుపరి 2031 తర్వాత</span></td></tr>
+      </table>
+
+      <h2 style="margin-top:7px;">Bar Council of India — BCI</h2>
+      <div class="box box-teal" style="font-size:12px;">
+        <strong>What is BCI?</strong> The Bar Council of India is the <em>statutory apex body</em> that regulates the legal profession across India — it controls who may practice as an advocate, maintains professional standards, oversees legal education, and provides disciplinary oversight. Established under the <strong>Advocates Act, 1961</strong>. It is NOT a constitutional body. <span class="te">న్యాయ వృత్తిని నియంత్రించే అత్యున్నత సంస్థ; Advocates Act 1961 కింద; రాజ్యాంగేతర సంస్థ.</span>
+      </div>
+      <table style="font-size:12px;">
+        <tr><th style="width:35%">Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Established by</strong></td><td><strong>Advocates Act, 1961</strong> (statutory, NOT constitutional). Replaced the earlier Legal Practitioners Act. Unified the Indian bar — created a single class of legal practitioners called "Advocates." <span class="tbl-te">Advocates Act 1961; రాజ్యాంగేతర; శాసనబద్ధ సంస్థ</span></td></tr>
+        <tr><td><strong>Constitutional Link</strong></td><td><strong>Art.19(1)(g):</strong> Freedom to practise any profession — fundamental right of advocates; <strong>Art.22:</strong> Right to be defended by a legal practitioner; <strong>Art.39A (DPSP):</strong> Equal justice and free legal aid; <strong>Art.233–237:</strong> Subordinate Courts where advocates regularly appear. <span class="tbl-te">Art.19(1)(g) వృత్తి స్వేచ్ఛ; Art.39A న్యాయ సహాయం DPSP</span></td></tr>
+        <tr><td><strong>Structure</strong></td><td>BCI (national apex body) + <strong>State Bar Councils</strong> in each state/UT. BCI consists of one elected representative from each State Bar Council. BCI has an elected Chairman and Vice-Chairman. Total members: approximately 22 (one per state/UT council). <span class="tbl-te">BCI (అత్యున్నత) + State Bar Councils (ప్రతి రాష్ట్రంలో)</span></td></tr>
+        <tr><td><strong>Key Functions</strong></td><td>(1) Enrol advocates; (2) Set minimum standards for legal education (LL.B. 3-yr/5-yr); (3) Conduct <strong>AIBE (All India Bar Examination)</strong> — mandatory to actively practise; (4) Disciplinary proceedings against erring advocates; (5) Legal aid and welfare of advocates; (6) Recommend law reforms. <span class="tbl-te">అడ్వకేట్ నమోదు; AIBE నిర్వహణ; శిక్షాపరమైన చర్యలు; law reform సిఫారసు</span></td></tr>
+        <tr><td><strong>Key Sections of Advocates Act</strong></td><td><strong>Sec.7:</strong> Functions of BCI | <strong>Sec.24:</strong> Qualifications for enrolment (LLB degree + age 21) | <strong>Sec.30:</strong> Right of advocates to practise in all courts and tribunals | <strong>Sec.35:</strong> Disciplinary powers — punishment ranges from reprimand to removal from roll | <strong>Sec.49:</strong> BCI's power to make rules for its own functioning <span class="tbl-te">Sec.24 అర్హతలు; Sec.30 ప్రాక్టీస్ హక్కు; Sec.35 శిక్షలు; Sec.49 నిబంధనలు</span></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="pg-ftr">PIL + Tribunals (Art.323A/B) + Delimitation Commission + Bar Council of India | AP HC Exam</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE 13 — LAW COMMISSION + LOKPAL + RTI + NEW CRIMINAL LAWS + CURRENT AFFAIRS
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="pg-hdr"><span>చట్ట కమిషన్ + Lokpal + RTI + కొత్త చట్టాలు + తాజా పరిణామాలు 2024–26</span><span>Page 13</span></div>
+  <h1>చట్ట కమిషన్, Lokpal &amp; Lokayukta, RTI Act, కొత్త నేర చట్టాలు &amp; తాజా పరిణామాలు</h1>
+
+  <div class="grid2">
+    <!-- LEFT: Law Commission + Lokpal -->
+    <div>
+      <h2>చట్ట కమిషన్ — Law Commission of India</h2>
+      <div class="box box-blue" style="font-size:12px;">
+        <strong>What is it?</strong> A government-appointed <em>advisory</em> body that undertakes research in law, recommends law reforms, drafts model bills, and reviews existing laws for relevance. Its recommendations are <strong>NOT binding</strong> on the government — but are highly influential. It is a non-constitutional, non-statutory (executive) body constituted by the Ministry of Law &amp; Justice. <span class="te">చట్ట సంస్కరణలను సిఫారసు చేసే కార్యనిర్వాహక సంస్థ. రాజ్యాంగేతర, శాసనేతర. నివేదికలు binding కావు.</span>
+      </div>
+      <table style="font-size:12px;">
+        <tr><th style="width:35%">Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Nature</strong></td><td>Executive body — constituted by an <em>order of the Ministry of Law &amp; Justice</em>. <strong>NOT constitutional, NOT statutory</strong>. Set up for a fixed term (usually 3 years), then reconstituted. Has no power to enforce its recommendations. <span class="tbl-te">కార్యనిర్వాహక ఉత్తర్వుతో ఏర్పాటు; రాజ్యాంగేతర; నిర్ణయాలు అమలు చేయించలేదు</span></td></tr>
+        <tr><td><strong>Historical Origin</strong></td><td>First Law Commission in India: <strong>1833</strong> under the Charter Act — <strong>Thomas Babington Macaulay</strong> as first member (drafted the Indian Penal Code). Modern post-Independence commissions began in <strong>1955</strong> — first chairman: <strong>M.C. Setalvad</strong> (India's first Attorney General). <span class="tbl-te">1833: Macaulay — IPC రచన; 1955: M.C. Setalvad నేతృత్వంలో ఆధునిక కమిషన్</span></td></tr>
+        <tr><td><strong>Composition</strong></td><td>Full-time Chairman (Retired CJI or Supreme Court Judge) + full-time/part-time members + Member-Secretary (from Indian Legal Service). Currently: <strong>23rd Commission</strong> (August 2024–August 2027) Chairman: <strong>Justice (Retd.) Dinesh Kumar Sharma.</strong> <span class="tbl-te">రిటైర్డ్ CJI/SC న్యాయమూర్తి + సభ్యులు + సభ్య కార్యదర్శి</span></td></tr>
+        <tr><td><strong>22nd Commission (2022–2024)</strong></td><td>Chairman: Justice Rituraj Awasthi. Key reports submitted: (1) One Nation One Election (suggested simultaneous elections feasible); (2) UCC — concluded India not ready for national UCC; (3) NRI marriages — registration within 30 days; (4) UAPA review; (5) Trade Secrets law. <span class="tbl-te">22వ కమిషన్: ONOE, UCC, NRI marriages నివేదికలు</span></td></tr>
+        <tr><td><strong>23rd Commission (Aug 2024–2027)</strong></td><td>Constituted 31 August 2024; term till 31 August 2027. Examining: criminal justice reforms, age of consent under IPC, data protection laws, mediation law reforms, consumer protection. <span class="tbl-te">23వ కమిషన్: Aug 2024 – Aug 2027; నేర న్యాయ సంస్కరణలు</span></td></tr>
+        <tr><td><strong>Role &amp; Significance</strong></td><td>Pioneered reforms that became BNS/BNSS/BSA (2023). Earlier reports shaped the CrPC 1973, Hindu Code Bills, Property Law reforms. Reports consulted before major legislation: UCC, Electoral Bonds, criminal law overhaul. Advisory but extremely influential in shaping India's legislative agenda. <span class="tbl-te">IPC, CrPC, Evidence Act సంస్కరణలకు బాటలు వేసింది</span></td></tr>
+      </table>
+
+      <h2 style="margin-top:7px;">Lokpal &amp; Lokayukta — లోక్‌పాల్</h2>
+      <div class="box box-amber" style="font-size:12px;">
+        <strong>Ombudsman Concept:</strong> Lokpal (Hindi for "protector of the people") is India's <em>national anti-corruption watchdog</em> for Central government officials — based on the <strong>Swedish Ombudsman</strong> concept. Proposed in <strong>1st ARC Report (1966)</strong>; first Lokpal Bill introduced in Parliament in <strong>1968</strong>. After 8 failed attempts over 45 years, it was finally enacted following <strong>Anna Hazare's anti-corruption movement (2011)</strong> as the <strong>Lokpal &amp; Lokayuktas Act, 2013</strong>. <span class="te">అవినీతి వ్యతిరేక Ombudsman; 1968 నుండి ప్రయత్నాలు; Anna Hazare ఉద్యమం తర్వాత 2013 లో చట్టం.</span>
+      </div>
+      <table style="font-size:12px;">
+        <tr><th style="width:35%">Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Constitutional Basis</strong></td><td>NOT directly in Constitution. Inspired by DPSPs: <strong>Art.39A</strong> (equal justice, free legal aid) and <strong>Art.46</strong> (promotion of weaker sections). The 116th CAA Bill proposing constitutional status for Lokpal was not passed — it remains a statutory body only. <span class="tbl-te">రాజ్యాంగంలో నేరుగా లేదు; DPSP ప్రేరణ; రాజ్యాంగ హోదా లేదు</span></td></tr>
+        <tr><td><strong>Establishment</strong></td><td>Lokpal &amp; Lokayuktas Act 2013; came into force 16 January 2014. <strong>First Lokpal: Justice Pinaki Chandra Ghose</strong> (former SC Judge) — appointed <strong>23 March 2019</strong>. Nearly 5 years elapsed between Act and first appointment. <span class="tbl-te">2013 చట్టం; మొదటి Lokpal: Justice Pinaki Chandra Ghose — 2019</span></td></tr>
+        <tr><td><strong>Jurisdiction ★</strong></td><td>(1) <strong>Prime Minister</strong> — only with restrictions (no allegations on foreign affairs, security, public order, atomic energy, space; full bench required; 2/3rd majority to proceed); (2) Union Ministers; (3) Members of Parliament; (4) Central Govt Group A/B/C/D officers; (5) PSU Boards; (6) NGOs receiving ≥ ₹10 lakh Central funding p.a. <span class="tbl-te">PM (పరిమిత పరిస్థితుల్లో), Ministers, MPs, Central officers, PSUs, NGOs పరిధిలో</span></td></tr>
+        <tr><td><strong>Composition</strong></td><td>Chairperson (former CJI/SC Judge) + max <strong>8 members</strong>: at least 50% judicial members; at least 50% from SC/ST/OBC/Women/Minorities. Appointed by President on recommendation of 5-member Selection Committee (PM + LS Speaker + Leader of Opposition + CJI nominee + eminent jurist). <span class="tbl-te">అధ్యక్షుడు + 8 సభ్యులు; 5-సభ్య Selection Committee</span></td></tr>
+        <tr><td><strong>Powers &amp; Process</strong></td><td>Inquiry → Investigation (through its own Investigation Wing or by directing CBI) → Prosecution (special courts). Can provisionally attach property/assets during investigation. Lokpal gives 90 days to respond. All complaints must be filed within 7 years. <span class="tbl-te">విచారణ → దర్యాప్తు (CBI/స్వంత wing) → ఆస్తుల జప్తు సిఫారసు</span></td></tr>
+        <tr><td><strong>Removal</strong></td><td>By the President on inquiry by a SC Judge — same process as SC Judge removal under Art.124. Term: 5 years or till age 70, whichever is earlier. No second term. <span class="tbl-te">రాష్ట్రపతి తొలగిస్తారు; SC న్యాయమూర్తి తరహా; 5 సంవత్సరాలు లేదా 70 సంవత్సరాలు</span></td></tr>
+        <tr><td><strong>Lokayukta</strong></td><td>State-level anti-corruption ombudsman for state officials; each state has its own Lokayukta Act (no national uniform law). <strong>Maharashtra</strong> was the first state to create Lokayukta (1972). <strong>Karnataka</strong> Lokayukta is considered strongest (disproportionate assets cases, trap operations). <span class="tbl-te">రాష్ట్ర స్థాయి; Maharashtra మొదటి రాష్ట్రం (1972); Karnataka — అత్యంత శక్తివంతమైన Lokayukta</span></td></tr>
+      </table>
+    </div>
+
+    <!-- RIGHT: RTI + New Criminal Laws -->
+    <div>
+      <h2>RTI Act 2005 — సమాచార హక్కు చట్టం</h2>
+      <div class="box box-green" style="font-size:12px;">
+        <strong>What is RTI?</strong> The Right to Information Act 2005 gives <em>every citizen</em> the legally enforceable right to access information held by public authorities. It is the primary transparency law of India. The SC has held that RTI flows from <strong>Art.19(1)(a)</strong> — freedom of speech &amp; expression includes the right to know what the government is doing. "People cannot exercise their democratic rights without information." <span class="te">ప్రభుత్వ సంస్థల సమాచారాన్ని పొందే పౌరుల హక్కు. Art.19(1)(a) వాక్ స్వాతంత్ర్యం కింద ప్రాథమిక హక్కు. పారదర్శకత చట్టం.</span>
+      </div>
+      <table style="font-size:12px;">
+        <tr><th style="width:35%">Aspect</th><th>Details</th></tr>
+        <tr><td><strong>Constitutional Basis</strong></td><td><strong>Art.19(1)(a)</strong> — SC held that freedom of speech includes the right to information. Democratic self-governance requires informed citizens. RTI Act 2005 operationalises this constitutional right through a statutory mechanism. <span class="tbl-te">Art.19(1)(a) కింద ప్రాథమిక హక్కు; RTI Act 2005 అమలు చేస్తుంది</span></td></tr>
+        <tr><td><strong>Who Can Apply</strong></td><td>Any <strong>citizen of India</strong>. Application must be filed with the <strong>Public Information Officer (PIO)</strong> of the relevant public authority. Foreign nationals, companies, NGOs cannot file RTI (only citizens). BPL applicants: exempt from fee. <span class="tbl-te">ఏ భారత పౌరుడైనా; PIO కి దరఖాస్తు; BPL వ్యక్తులకు fee మినహాయింపు</span></td></tr>
+        <tr><td><strong>Scope — "Public Authority"</strong></td><td>Covers: Central/State Governments, Parliament/State Legislatures, Judiciary (administrative info), PSUs, bodies substantially funded by Govt, NGOs substantially financed by Govt. Does NOT cover private companies not funded by government. <span class="tbl-te">కేంద్ర/రాష్ట్ర ప్రభుత్వాలు, PSUs, ప్రభుత్వ నిధులు పొందే NGOs</span></td></tr>
+        <tr><td><strong>Time Limits ★</strong></td><td><strong>30 days</strong> to furnish information (normal); <strong>48 hours</strong> if information involves life/liberty of a person. Fee: ₹10 application + ₹2 per page of info + actual cost for samples/models. Third-party information: 40 days. <span class="tbl-te">30 రోజుల్లో సమాచారం; జీవితానికి సంబంధిస్తే 48 గంటలు; ₹10 ఫీజు</span></td></tr>
+        <tr><td><strong>Appeal Mechanism</strong></td><td><strong>1st Appeal:</strong> Appellate Officer (same or superior in the same public authority) — within 30 days of PIO decision; to be decided within 30 days. <strong>2nd Appeal / Complaint:</strong> <em>Central Information Commission (CIC)</em> or <em>State Information Commission (SIC)</em> — filed within 90 days; CIC/SIC decides within 45 days. <span class="tbl-te">1వ అప్పీలు → Appellate Officer (30 days); 2వ అప్పీలు → CIC/SIC (90 days)</span></td></tr>
+        <tr><td><strong>CIC / SIC</strong></td><td>Central Information Commission (CIC): headed by Chief Information Commissioner + up to 10 Information Commissioners; appointed by President on PM's committee recommendation. State Information Commission (SIC): similar structure; appointed by Governor on CM's committee. <em>No re-appointment.</em> <span class="tbl-te">CIC: President నియమిస్తారు; SIC: Governor నియమిస్తారు; పునర్నియామకం లేదు</span></td></tr>
+        <tr><td><strong>Exemptions (Sec.8) ★</strong></td><td>Information exempt from disclosure: (a) national security/sovereignty; (b) Cabinet/Council of Ministers papers; (c) personal information with no public interest; (d) fiduciary relationship; (e) trade secrets; (f) information held in confidence by foreign govt; (g) court-prohibited; (h) info that would impede prosecution/investigation. Notwithstanding exemptions: overriding public interest can compel disclosure. <span class="tbl-te">జాతీయ భద్రత, Cabinet పత్రాలు, వ్యక్తిగత వివరాలు — మినహాయింపు; public interest override</span></td></tr>
+        <tr><td><strong>Proactive Disclosure (Sec.4)</strong></td><td>Every public authority must <em>suo motu</em> publish 17 categories of information without anyone asking: organisational structure, functions, powers, duties, salary/remuneration, budget, subsidies, decision-making procedures, beneficiaries of schemes, etc. Reduces information asymmetry. <span class="tbl-te">17 వర్గాల సమాచారాన్ని స్వచ్ఛందంగా ప్రచురించాలి</span></td></tr>
+        <tr><td><strong>RTI Amendment 2019</strong></td><td>CIC/SIC's <strong>term and salary</strong> are now determined by the <em>Central Government by rules</em> (removed the parliamentary-prescribed fixed 5-year tenure equivalent to CEC). Widely criticized as undermining the independence of Information Commissioners. Government's justification: CIC/SIC are not constitutional bodies like the ECI. <span class="tbl-te">CIC/SIC పదవీకాలం + జీతం కేంద్రం నిర్ణయిస్తుంది — స్వాతంత్ర్యం తగ్గింది</span></td></tr>
+      </table>
+
+      <h2 style="margin-top:7px;">కొత్త నేర చట్టాలు — New Criminal Laws (w.e.f. 1 July 2024)</h2>
+      <div class="box box-red" style="font-size:12px;">
+        Three colonial-era criminal laws — in force since the British era — replaced to "Indianize" the criminal justice system, shift focus from <em>punishment to reformation</em>, add technology-friendly provisions, ensure speedy trials, and remove colonial-era instruments like Sedition. All three passed in Parliament in December 2023 and came into force <strong>1 July 2024</strong>. <span class="te">వలస కాలపు 3 ముఖ్య చట్టాలను భారతీయ చట్టాలతో భర్తీ చేశారు; 1 జూలై 2024 నుండి అమలు.</span>
+      </div>
+      <table style="font-size:12px;">
+        <tr><th style="width:30%">New Law / కొత్త చట్టం</th><th style="width:22%">Replaces</th><th>Key Changes</th></tr>
+        <tr>
+          <td><strong>BNS 2023</strong><br>Bharatiya Nyaya Sanhita<br><span class="tbl-te">భారతీయ న్యాయ సంహిత</span></td>
+          <td>Indian Penal Code, 1860 <span class="tbl-te">IPC 1860</span></td>
+          <td><strong>Sedition (Sec.124A IPC) repealed</strong> — replaced by Sec.152 BNS ("acts endangering sovereignty, unity, integrity"); community service added as a new punishment; terrorism and organised crime codified for the first time; victim-centric provisions; 358 sections (vs 511 in IPC) <span class="tbl-te">రాజ్యద్రోహం తొలగింపు; సమాజ సేవ శిక్షగా; ఉగ్రవాదం నిర్వచనం చేర్పు</span></td>
+        </tr>
+        <tr>
+          <td><strong>BNSS 2023</strong><br>Bharatiya Nagarik Suraksha Sanhita<br><span class="tbl-te">భారతీయ నాగరిక సురక్షా సంహిత</span></td>
+          <td>Criminal Procedure Code, 1973 <span class="tbl-te">CrPC 1973</span></td>
+          <td><strong>Zero FIR</strong>: file at any police station regardless of jurisdiction (transferred later); <strong>Electronic/online FIR</strong>; trial must conclude within <strong>45 days</strong> after judgment is reserved; charges must be framed within 60 days; police custody extended to 90 days in phases (vs 15 days earlier); trial in absentia for declared absconders; mandatory videography of crime scenes; 531 sections <span class="tbl-te">Zero FIR; E-FIR; 45 రోజుల్లో తీర్పు; 90 రోజుల police custody</span></td>
+        </tr>
+        <tr>
+          <td><strong>BSA 2023</strong><br>Bharatiya Sakshya Adhiniyam<br><span class="tbl-te">భారతీయ సాక్ష్య అధినియమ్</span></td>
+          <td>Indian Evidence Act, 1872 <span class="tbl-te">Evidence Act 1872</span></td>
+          <td>Electronic records (emails, WhatsApp messages, cloud data) treated as <strong>primary evidence</strong> — previously treated as secondary; digital signatures; witnesses via video conferencing; joint trial for absconders; 170 sections (vs 167 earlier) <span class="tbl-te">ఎలక్ట్రానిక్ రికార్డులు ప్రాథమిక సాక్ష్యం; Cloud data, WhatsApp స్వీకార్యం</span></td>
+        </tr>
+      </table>
+      <div class="box box-red" style="font-size:12px; margin-top:4px;">
+        <strong>⚠️ Critical Exam Note:</strong> Offences committed <strong>before 1 July 2024</strong> → tried under old IPC/CrPC/Evidence Act. Offences committed <strong>on or after 1 July 2024</strong> → tried under BNS/BNSS/BSA. Both sets of laws currently operate in parallel during the transition period. <span class="te">1 జూలై 2024 కంటే ముందు నేరాలకు పాత చట్టాలు; తర్వాత నేరాలకు కొత్త చట్టాలు</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:8px;">తాజా పరిణామాలు 2024–26 — Polity Current Affairs</h2>
+  <table style="font-size:12px;">
+    <tr><th style="width:27%">Development / పరిణామం</th><th>Key Facts for Exam / ముఖ్య వివరాలు</th></tr>
+    <tr><td><strong>18th Lok Sabha (2024)</strong> <span class="tbl-te">18వ లోక్‌సభ</span></td><td>Results: 4 June 2024 | BJP: 240 (below 272 majority); NDA total: 293 | INC: 99 | INDIA bloc: 234 | Modi sworn 3rd consecutive term: 9 June 2024 | 18th LS first sitting: 24 June 2024 | Om Birla elected Speaker (2nd consecutive term) <span class="tbl-te">BJP 240; NDA 293; మోదీ 3వ పర్యాయం; Om Birla Speaker</span></td></tr>
+    <tr><td><strong>SC/ST Sub-Classification (Aug 2024)</strong> <span class="tbl-te">SC/ST ఉప-వర్గీకరణ</span></td><td><strong>State of Punjab v. Davinder Singh</strong> — 7-judge bench; <strong>6:1 majority (1 Aug 2024):</strong> States can sub-classify SC/ST categories within their quota to benefit the most backward (e.g., Balmikis/Chamars within SC); must have quantifiable data; overruled E.V. Chinnaiah 2004; Justice Bela Trivedi sole dissent; Justice Gavai obiter: creamy layer principle may apply to SC/ST in future <span class="tbl-te">రాష్ట్రాలు SC/ST లో ఉప-వర్గీకరణ చేయవచ్చు; E.V. Chinnaiah 2004 తప్పు</span></td></tr>
+    <tr><td><strong>J&amp;K Elections Oct 2024</strong> <span class="tbl-te">J&K ఎన్నికలు</span></td><td>3-phase elections (18 Sep – 1 Oct 2024); Results 8 Oct 2024 | NC+INC alliance: NC 42 + INC 6 | BJP: 29 | Omar Abdullah (NC) sworn as CM 16 Oct 2024 — <strong>first CM of J&amp;K as a Union Territory</strong>; Lt. Governor retains control over police, public order, Anti-Corruption Bureau <span class="tbl-te">UT గా మొట్టమొదటి ఎన్నికలు; Omar Abdullah CM; LG పోలీసు అధికారాలు కలిగి ఉంటారు</span></td></tr>
+    <tr><td><strong>16th Finance Commission</strong> <span class="tbl-te">16వ ఆర్థిక సంఘం</span></td><td>Constituted: 31 Dec 2023 | Chairman: <strong>Dr. Arvind Panagariya</strong> (former NITI Aayog VC, Columbia University professor) | Award period: <strong>1 April 2026 to 31 March 2031</strong> | Report to be submitted by Oct 2025 <span class="tbl-te">అధ్యక్షులు: Dr. Arvind Panagariya; కాలం: 2026–31</span></td></tr>
+    <tr><td><strong>ONOE — 129th CAA Bill 2024</strong> <span class="tbl-te">ఒకే దేశం ఒకే ఎన్నిక</span></td><td>Constitution (129th Amendment) Bill 2024 introduced in LS: 17 Dec 2024 | Kovind Committee Report (March 2024) recommended simultaneous elections | Referred to 39-member JPC (P.P. Chaudhary as chair) | Proposes <strong>new Art.82A</strong> (appointed date) + amendments to Arts.83,85,172,174,327,356 | UT Laws Amendment Bill (for Delhi, Puducherry, J&amp;K) also introduced | NOT yet passed <span class="tbl-te">129వ CAA బిల్లు; JPC కి రెఫర్; Art.82A ప్రతిపాదన</span></td></tr>
+    <tr><td><strong>Waqf UMEED Act 2025</strong> <span class="tbl-te">వక్ఫ్ సవరణ చట్టం</span></td><td>Waqf Act 1995 renamed: <strong>UMEED Act</strong> (Unified Waqf Management Empowerment Efficiency and Development) | Passed April 2025 | Key changes: "Waqf by user" (customary dedication) <strong>abolished</strong>; Sec.40 (unilateral declaration) removed; Non-Muslim members permitted on Waqf Boards; only 5+ year practising Muslims can create Waqf; Central Waqf Council reconstituted | Challenged in SC <span class="tbl-te">Waqf-by-user రద్దు; Non-Muslims Board లో; SC లో సవాల్</span></td></tr>
+    <tr><td><strong>Art.39(b) Private Property (Nov 2024)</strong></td><td><strong>Property Owners Association v. State of Maharashtra</strong> — 9-judge Constitution bench; <strong>8:1 majority</strong> (Nov 2024) | Held: NOT all private property constitutes "material resources of the community" under Art.39(b) — must assess each case on its characteristics; overruled Justice Krishna Iyer's broad socialist interpretation; Art.31C (as narrowed by Minerva Mills) still operative <span class="tbl-te">ప్రైవేట్ ఆస్తి అన్నీ సామాజిక వనరులు కావు; context బట్టి నిర్ణయించాలి</span></td></tr>
+    <tr><td><strong>Uttarakhand UCC (27 Jan 2025)</strong> <span class="tbl-te">ఉత్తరాఖండ్ UCC</span></td><td>Passed by UK Legislature: 7 Feb 2024 | In force: <strong>27 Jan 2025</strong> (Republic Day) | India's <strong>first State Uniform Civil Code</strong> | Covers all communities EXCEPT Scheduled Tribes | Equal inheritance rights for daughters; uniform marriage age (M: 21, F: 18); mandatory registration of live-in relationships; polygamy and polyandry <strong>prohibited</strong> | Implements Art.44 DPSP at state level <span class="tbl-te">మొట్టమొదటి రాష్ట్ర UCC; Art.44 DPSP అమలు; ST మినహాయింపు</span></td></tr>
+    <tr><td><strong>TN v. Governor (Apr 2025) ★</strong> <span class="tbl-te">గవర్నర్ బిల్లు కేసు</span></td><td>State of TN v. Governor — SC bench (JJ. J.B. Pardiwala &amp; R. Mahadevan), 8 Apr 2025 | <strong>10 TN bills deemed assented</strong> | Landmark time limits under Art.200: Governor must give assent/reserve within <strong>1 month</strong>; if withholding, must return within <strong>3 months</strong>; after legislature re-passes — <strong>1 month</strong> to assent; Pocket Veto = unconstitutional <span class="tbl-te">Art.200 కింద mandatory time limits; Pocket Veto రాజ్యాంగ విరుద్ధం</span></td></tr>
+    <tr><td><strong>Electoral Bonds Struck Down (Feb 2024)</strong></td><td>Assn for Democratic Reforms v. UoI — 5-judge bench; <strong>unanimous judgment; 15 Feb 2024</strong> | Electoral Bonds Scheme 2018 unconstitutional | Violates <strong>Art.19(1)(a)</strong> — voters' right to know about political funding; facilitates quid pro quo corruption; SBI ordered to submit all bond data to ECI; scheme permanently struck down <span class="tbl-te">Art.19(1)(a) ఉల్లంఘన; రాజకీయ నిధుల పారదర్శకత; పథకం శాశ్వతంగా రద్దు</span></td></tr>
+    <tr><td><strong>Bihar Caste Survey &amp; 65% Quota (Jun 2024)</strong></td><td>Bihar Govt conducted caste survey (Oct–Nov 2023) — OBCs found to be 63% of population | Bihar Legislature raised total reservation cap to 65% | Patna HC upheld survey (1 Aug 2023) | Bihar's <strong>65% reservation cap struck down by Patna HC</strong> (Jun 2024) — violates Indra Sawhney 50% ceiling; extraordinary circumstances not made out; SC petition pending <span class="tbl-te">65% రిజర్వేషన్ రద్దు; Indra Sawhney 50% పరిమితి వర్తిస్తుంది</span></td></tr>
+  </table>
+  <div class="box box-purple" style="font-size:12px; margin-top:5px;">
+    <strong>⭐ AP HC Exam — Must Know / తప్పనిసరి నేర్చుకోవాల్సినవి:</strong>
+    Art.226 (HC writs — broader than Art.32, covers any legal right not just FRs) | Art.227 (HC superintendence over subordinate courts — most relevant for AP HC!) | Art.371D (AP's special provisions — education &amp; employment) | Art.233–237 (Subordinate Courts — district judges, appointments) | L. Chandrakumar 1997 (Tribunal → HC → SC chain) | TN v. Governor Apr 2025 (Art.200 time limits) | BNS/BNSS/BSA effective 1 Jul 2024 | Lokpal Act 2013 — first Lokpal 2019 | RTI 2005 + 2019 amendment | Delimitation Commission (J&amp;K 2022 — Justice Ranjana Desai) | Bar Council = Advocates Act 1961 (statutory, NOT constitutional) | Law Commission = executive order body (NOT statutory, NOT constitutional) — <span class="te">ఇవి AP హైకోర్టు పరీక్షలో తప్పకుండా వస్తాయి</span>
+  </div>
+  <div class="pg-ftr">చట్ట కమిషన్ + Lokpal + RTI + కొత్త చట్టాలు + తాజా పరిణామాలు 2024–26 | AP HC Exam</div>
+</div>
+
+</body>
+</html>

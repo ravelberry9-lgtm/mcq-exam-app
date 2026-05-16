@@ -28,6 +28,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .intro-card h3{font-size:18px;font-weight:700;color:var(--pr);margin-bottom:6px}
 .intro-card p{font-size:13px;color:var(--txm);line-height:1.6}
 .start-btn{display:inline-block;margin-top:16px;background:var(--pr);color:#fff;border:none;border-radius:50px;padding:12px 36px;font-size:15px;font-weight:700;cursor:pointer}
+.resume-box{margin-top:14px;background:#e8eaf6;border-radius:12px;padding:12px 14px;text-align:left}
+.resume-box .rb-info{font-size:12px;color:#3949ab;font-weight:600;margin-bottom:10px}
+.resume-box .rb-btns{display:flex;gap:8px}
+.btn-resume{flex:2;background:var(--pr);color:#fff;border:none;border-radius:50px;padding:11px 0;font-size:14px;font-weight:700;cursor:pointer}
+.btn-fresh{flex:1;background:#fff;color:var(--pr);border:2px solid var(--pr);border-radius:50px;padding:11px 0;font-size:13px;font-weight:700;cursor:pointer}
 /* question card */
 .q-card{margin:14px 14px 0;background:var(--card);border-radius:var(--R);box-shadow:var(--sh);overflow:hidden;display:none}
 .q-card.visible{display:block}
@@ -66,7 +71,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .ai-res-links{display:flex;gap:8px;flex-wrap:wrap}
 .ai-res-links a{font-size:12px;color:#1a237e;border:1.5px solid #c5cae9;border-radius:50px;padding:5px 12px;text-decoration:none;font-weight:600}
 .ai-res-links a.pplx{background:#1a237e;color:#fff;border-color:#1a237e}
+.ai-res-links a.goog{background:#fff;color:#1a73e8;border-color:#1a73e8;font-weight:700}
 .ai-spin{width:22px;height:22px;border:3px solid #e0e4ef;border-top-color:#1a237e;border-radius:50%;animation:spin .7s linear infinite;margin:12px auto}
+.ai-frame-wrap{border-top:1px solid #e8eaf6}
+.ai-frame{width:100%;height:260px;border:none;display:block;background:#fafafa}
 .fp-ai-body{padding:10px 12px;font-size:12.5px;line-height:1.65;color:var(--tx);min-height:40px}
 .ai-search-link{display:block;margin:6px 14px 12px;text-align:center}
 .ai-search-link a{display:inline-flex;align-items:center;gap:6px;background:#1a237e;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:7px 16px;border-radius:50px;opacity:.9}
@@ -176,18 +184,25 @@ body.fp .fp-ov{display:flex}
 <div class="intro-card" id="introCard" style="display:none">
   <div class="intro-icon">&#127919;</div>
   <h3 id="introTitle">Practice Mode</h3>
-  <p id="introDesc">Tap to answer &middot; swipe to navigate &middot; AI explains each answer</p>
-  <button class="start-btn" onclick="startPractice()">Start Practice</button>
+  <p id="introDesc"></p>
+  <button class="start-btn" id="btnStart" onclick="startPractice()">Start Practice</button>
+  <div class="resume-box" id="resumeBox" style="display:none">
+    <div class="rb-info" id="resumeInfo"></div>
+    <div class="rb-btns">
+      <button class="btn-resume" onclick="resumePractice()">&#9654; Resume</button>
+      <button class="btn-fresh" onclick="startPractice()">&#8635; Start Fresh</button>
+    </div>
+  </div>
 </div>
 
 <div id="qArea"></div>
 <div class="swipe-hint" id="swipeHint">&#8592; swipe to navigate</div>
 <div class="fb-panel" id="fbPanel"><div class="fb-lbl" id="fbLbl"></div><div class="fb-exp" id="fbExp"></div></div>
 <div class="ai-panel" id="aiPanel">
-  <div class="ai-header"><span class="ai-header-icon">&#x2728;</span><span>Explanation</span></div>
+  <div class="ai-header"><span class="ai-header-icon">&#x2728;</span><span>Explanation</span><span class="ai-source" id="aiSource"></span></div>
   <div class="ai-body" id="aiBody"></div>
-  <div class="ai-search-link" id="aiSearchLink" style="display:none">
-    <a id="aiSearchA" href="#" target="_blank" rel="noopener">&#128269; Search on Perplexity</a>
+  <div class="ai-frame-wrap" id="aiFrameWrap" style="display:none">
+    <iframe id="aiFrame" class="ai-frame" frameborder="0" scrolling="yes"></iframe>
   </div>
 </div>
 <div class="next-wrap" id="nextWrap"><button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next &#8594;</button></div>
@@ -261,10 +276,54 @@ async function load() {
   }
 }
 
+/* ── PROGRESS SAVE / RESUME ── */
+const SAVE_KEY='mcq_prog_'+FOLDER+'_'+TOPIC;
+function saveProgress(){
+  try{
+    localStorage.setItem(SAVE_KEY,JSON.stringify({
+      filter,idx,correct,wrong,answered,
+      qIds:filtQ.map(q=>q.id),
+      states:JSON.parse(JSON.stringify(states))
+    }));
+  }catch(e){}
+}
+function clearProgress(){try{localStorage.removeItem(SAVE_KEY);}catch(e){}}
+function loadSaved(){try{return JSON.parse(localStorage.getItem(SAVE_KEY)||'null');}catch(e){return null;}}
+
 function showIntro(){
   document.getElementById('introTitle').textContent=TOPIC.replace(/_/g,' ')+' Practice';
-  document.getElementById('introDesc').textContent=allQ.length+' questions · tap to answer · swipe to skip · AI explains';
+  const saved=loadSaved();
+  if(saved&&saved.answered>0){
+    const pct=Math.round(saved.correct/saved.answered*100);
+    document.getElementById('introDesc').textContent=
+      allQ.length+' questions  ·  '+saved.answered+' answered  ·  '+saved.correct+' correct';
+    document.getElementById('btnStart').style.display='none';
+    document.getElementById('resumeInfo').textContent=
+      '▶ Resume from Q'+(saved.idx+1)+' — '+pct+'% score so far';
+    document.getElementById('resumeBox').style.display='';
+  } else {
+    document.getElementById('introDesc').textContent=
+      allQ.length+' questions · tap to answer · swipe to skip';
+    document.getElementById('btnStart').style.display='';
+    document.getElementById('resumeBox').style.display='none';
+  }
   document.getElementById('introCard').style.display='';
+}
+
+function resumePractice(){
+  const saved=loadSaved();
+  if(!saved){startPractice();return;}
+  started=true;
+  filter=saved.filter||'all';
+  const qMap={};allQ.forEach(q=>qMap[q.id]=q);
+  filtQ=(saved.qIds||[]).map(id=>qMap[id]).filter(Boolean);
+  if(!filtQ.length){startPractice();return;}
+  idx=saved.idx||0;correct=saved.correct||0;wrong=saved.wrong||0;answered=saved.answered||0;
+  states=saved.states||{};
+  document.getElementById('introCard').style.display='none';
+  document.getElementById('sumCard').classList.remove('show');
+  buildCards();showQ(idx);
+  document.getElementById('swipeHint').classList.add('show');
 }
 
 /* ── FILTER ── */
@@ -281,6 +340,7 @@ function applyFilter(){
 
 /* ── START ── */
 function startPractice(){
+  clearProgress();
   started=true; applyFilter();
   if(!filtQ.length){alert('No questions match.');return;}
   idx=0;correct=0;wrong=0;answered=0;states={};
@@ -362,82 +422,38 @@ function pick(i,chosen,correct_ans,exp,question){
   updateScore(); fb.scrollIntoView({behavior:'smooth',block:'nearest'});
   /* trigger AI */
   loadAI(i, question, correct_ans, exp, false);
+  saveProgress();
 }
 
-/* ── EXPLANATION + BACKGROUND SEARCH ── */
-async function loadAI(i, question, correct_ans, exp, isFP){
+/* ── EXPLANATION + SEARCH IFRAME ── */
+function loadAI(i, question, correct_ans, exp, isFP){
   const panelId=isFP?'fpAi':'aiPanel';
   const bodyId =isFP?'fpAiBody':'aiBody';
   const panel=document.getElementById(panelId);
   const body =document.getElementById(bodyId);
   if(!panel||!body) return;
 
-  const query = question + ' ' + correct_ans;
-  const pplx  = 'https://www.perplexity.ai/search?q='+encodeURIComponent(query);
-  const eh = s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const eh=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const pplx='https://www.perplexity.ai/search?q='+encodeURIComponent(question+' '+correct_ans);
 
-  function render(src, title, text, url){
-    const readBtn=url?'<a href="'+url+'" target="_blank">Read more ↗</a>':'';
-    return '<div class="ai-res-src">'+src+'</div>'+
-           (title?'<div class="ai-res-title">'+eh(title)+'</div>':'')+
-           '<div class="ai-res-text">'+eh(text)+'</div>'+
-           '<div class="ai-res-links">'+readBtn+
-           '<a class="pplx" href="'+pplx+'" target="_blank">🔍 Perplexity ↗</a></div>';
-  }
-
-  /* ── Step 1: show DB explanation INSTANTLY (no network call) ── */
-  const expHTML = render('📋 Explanation', '', exp||'Correct answer: '+correct_ans, '');
-  body.innerHTML = expHTML;
-  if(states[i]){ states[i].aiHTML=expHTML; states[i].aiQ=question; }
+  /* Step 1: show DB explanation INSTANTLY */
+  const expHTML='<div class="ai-res-src">📋 Explanation</div>'+
+    '<div class="ai-res-text">'+eh(exp||'Correct answer: '+correct_ans)+'</div>'+
+    '<div class="ai-res-links"><a class="pplx" href="'+pplx+'" target="_blank">⚡ Perplexity ↗</a></div>';
+  body.innerHTML=expHTML;
+  if(states[i]){states[i].aiHTML=expHTML;states[i].aiQ=question;}
   panel.classList.add('show');
   if(!isFP) setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
 
-  /* ── Step 2: background search (updates panel when done) ── */
-  try {
-    /* DuckDuckGo Instant Answer — full MCQ as query */
-    const ddgR = await fetch(
-      'https://api.duckduckgo.com/?q='+encodeURIComponent(query)+'&format=json&no_html=1&skip_disambig=1',
-      {signal:AbortSignal.timeout(5000)}
-    );
-    const ddg = await ddgR.json();
-    if(ddg.AbstractText){
-      const h=render('📖 DuckDuckGo', ddg.Heading, ddg.AbstractText, ddg.AbstractURL);
-      body.innerHTML=h; if(states[i]) states[i].aiHTML=h; return;
+  /* Step 2: load search iframe (served from our own domain — no X-Frame-Options block) */
+  if(!isFP){
+    const wrap=document.getElementById('aiFrameWrap');
+    const frame=document.getElementById('aiFrame');
+    if(wrap&&frame){
+      frame.src='/search-frame?q='+encodeURIComponent(question)+'&a='+encodeURIComponent(correct_ans);
+      wrap.style.display='';
     }
-    const topics=(ddg.RelatedTopics||[]).filter(t=>t&&t.Text);
-    if(topics.length>=2){
-      const txt=topics.slice(0,3).map(t=>t.Text).join('
-
-');
-      const h=render('📖 DuckDuckGo','Related Topics',txt,topics[0].FirstURL||'');
-      body.innerHTML=h; if(states[i]) states[i].aiHTML=h; return;
-    }
-  } catch(e){}
-
-  try {
-    /* Wikipedia — full MCQ as query, origin=* for CORS */
-    const wR = await fetch(
-      'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+
-      encodeURIComponent(query)+'&format=json&srlimit=1&utf8=1&origin=*',
-      {signal:AbortSignal.timeout(5000)}
-    );
-    const wd=await wR.json();
-    const hits=(wd.query||{}).search||[];
-    if(hits.length){
-      const title=hits[0].title;
-      const sR=await fetch(
-        'https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(title),
-        {signal:AbortSignal.timeout(4000)}
-      );
-      const sd=await sR.json();
-      if(sd.extract){
-        const h=render('📖 Wikipedia',sd.title,sd.extract.slice(0,600),
-          (sd.content_urls||{}).desktop?.page||'');
-        body.innerHTML=h; if(states[i]) states[i].aiHTML=h;
-      }
-    }
-  } catch(e){}
-  /* If all fail, keep the DB explanation already shown */
+  }
 }
 
 function nextQuestion(){idx++;showQ(idx);window.scrollTo({top:0,behavior:'smooth'});}
@@ -450,6 +466,7 @@ function updateProg(i){
 }
 
 function showSum(){
+  clearProgress();
   document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('visible'));
   document.getElementById('fbPanel').classList.remove('show');
   document.getElementById('aiPanel').classList.remove('show');

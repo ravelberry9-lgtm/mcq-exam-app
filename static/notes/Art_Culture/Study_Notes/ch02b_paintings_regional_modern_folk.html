@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 2 Part 2 — Regional Schools · Modern · Folk Paintings | Art & Culture</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 18mm 16mm 16mm 16mm; }
+@media print { .page-break{page-break-before:always;} .no-break{page-break-inside:avoid;} body{background:#fff!important;} }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root {
+  --a4:794px;
+  --brick:#9b3a1a; --brick-lt:#c4623a; --mud:#6b4226; --sand:#e8d5b0;
+  --green:#1e5c38; --blue:#1a3e7a; --purple:#5a2a7a; --gold:#5a3400;
+  --text:#1a1206; --subtext:#2c1800; --border:#d4b896;
+  --tel-bg:#eef4ff; --tel-bdr:#1a3e7a;
+  --mem-bg:#edf7f0; --mem-bdr:#1e5c38;
+  --exam-bg:#fffbec; --exam-bdr:#5a3400;
+}
+body{font-family:'Libre Baskerville',Georgia,serif;background:#ddd5c8;color:var(--text);font-size:10.5pt;line-height:1.65;}
+.a4-page{width:var(--a4);min-height:1123px;background:#ffffff;margin:18px auto;padding:14mm 16mm 13mm 16mm;box-shadow:0 2px 18px rgba(0,0,0,0.18);}
+
+/* HEADER/FOOTER */
+.screen-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid var(--border);padding-bottom:5px;margin-bottom:10px;}
+.screen-header .sh-left{font-family:'Source Sans 3',sans-serif;font-size:7.5pt;color:#1a1206;font-weight:700;letter-spacing:0.04em;}
+.screen-header .sh-right{font-family:'Fira Mono',monospace;font-size:7.5pt;color:#1a1206;font-weight:600;}
+.screen-footer{border-top:1px solid var(--border);padding-top:5px;margin-top:10px;display:flex;justify-content:space-between;font-family:'Fira Mono',monospace;font-size:7.5pt;color:#1a1206;font-weight:600;}
+
+/* SECTION HEADING */
+.sec-heading{display:flex;align-items:baseline;gap:8px;margin:14px 0 7px;border-bottom:2px solid var(--brick);padding-bottom:4px;}
+.sec-heading .sec-num{font-family:'Fira Mono',monospace;font-size:8pt;font-weight:600;color:#fff;background:var(--brick);padding:1px 7px;border-radius:2px;flex-shrink:0;}
+.sec-heading h2{font-family:'Libre Baskerville',serif;font-size:12.5pt;font-weight:700;color:var(--brick);}
+.sec-heading .te{font-family:'Tiro Telugu',serif;font-size:10pt;color:var(--subtext);}
+.sub-heading{font-family:'Source Sans 3',sans-serif;font-size:9.5pt;font-weight:700;color:#fff;background:var(--mud);text-transform:uppercase;letter-spacing:0.07em;margin:12px 0 6px;padding:4px 10px;border-radius:3px;display:flex;align-items:center;gap:6px;}
+.sub-heading .te-sh{font-family:'Tiro Telugu',serif;font-size:9pt;font-weight:400;text-transform:none;letter-spacing:0;color:#f8e8d8;}
+
+/* BILINGUAL */
+.bilingual{border:1px solid var(--border);border-radius:4px;overflow:hidden;margin:6px 0 10px;}
+.bi-en{padding:8px 11px;background:#fffdf9;font-size:10pt;border-bottom:1px solid var(--border);line-height:1.6;}
+.bi-en .lang-tag{font-family:'Fira Mono',monospace;font-size:7.5pt;color:#1a1206;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:3px;font-weight:700;}
+.bi-te{padding:8px 11px;background:var(--tel-bg);border-left:3px solid var(--tel-bdr);font-family:'Tiro Telugu',serif;font-size:11pt;color:#0a1428;line-height:1.95;}
+.bi-te .lang-tag{font-family:'Fira Mono',monospace;font-size:7.5pt;color:#0a2060;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:3px;font-weight:700;}
+.bi-te .kw{color:var(--brick);font-weight:700;}
+.bi-te .kw2{color:var(--blue);font-weight:700;}
+.bi-te .kw3{color:var(--green);font-weight:700;}
+.bi-te .kw4{color:var(--purple);font-weight:700;}
+
+/* TELUGU STORY */
+.telugu-story{background:var(--tel-bg);border:1px solid #b8ccee;border-left:3px solid var(--tel-bdr);border-radius:4px;padding:9px 12px;font-family:'Tiro Telugu',serif;font-size:11pt;color:#0a1428;line-height:2;margin:6px 0 10px;}
+.telugu-story .ts-label{font-family:'Fira Mono',monospace;font-size:7.5pt;color:#0a2060;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:4px;font-weight:700;}
+.telugu-story .kw{color:var(--brick);font-weight:700;}
+.telugu-story .kw2{color:var(--blue);font-weight:700;}
+.telugu-story .kw3{color:var(--green);font-weight:700;}
+.telugu-story .kw4{color:var(--purple);font-weight:700;}
+
+/* TABLES */
+.styled-table{width:100%;border-collapse:collapse;font-size:9.5pt;margin:6px 0 10px;}
+.styled-table caption{font-family:'Source Sans 3',sans-serif;font-size:9.5pt;font-weight:700;color:#fff;background:var(--brick);text-transform:uppercase;letter-spacing:0.06em;text-align:left;padding:5px 9px;border-radius:4px 4px 0 0;}
+.styled-table thead tr{background:var(--mud);}
+.styled-table thead th{color:#fff;padding:6px 8px;font-family:'Source Sans 3',sans-serif;font-size:8.5pt;font-weight:700;text-align:left;border:1px solid #8a5228;}
+.styled-table thead th .te-th{font-family:'Tiro Telugu',serif;font-weight:400;font-size:8.5pt;display:block;color:#f8e8d8;margin-top:1px;}
+.styled-table tbody tr:nth-child(odd){background:#fffdf9;}
+.styled-table tbody tr:nth-child(even){background:#faf3eb;}
+.styled-table td{padding:6px 8px;border:1px solid #ddd0be;vertical-align:top;line-height:1.5;}
+.styled-table td .te-td{font-family:'Tiro Telugu',serif;font-size:10pt;color:#0a1428;display:block;margin-top:3px;line-height:1.85;}
+.styled-table td strong{color:var(--brick);}
+.tag-sm{font-family:'Fira Mono',monospace;font-size:7.5pt;background:#fce8dc;color:#6a1000;border:1px solid #c89070;padding:1px 5px;border-radius:2px;display:inline-block;font-weight:600;}
+.tag-gi{font-family:'Fira Mono',monospace;font-size:7.5pt;background:#d4f0e0;color:#0a3a20;border:1px solid #70b890;padding:1px 5px;border-radius:2px;display:inline-block;font-weight:600;}
+
+/* KEY POINTS */
+.keypoints{list-style:none;margin:5px 0 10px;padding:0;}
+.keypoints li{display:flex;gap:8px;padding:5px 0;border-bottom:1px dashed var(--border);font-size:10pt;line-height:1.5;}
+.keypoints li:last-child{border-bottom:none;}
+.keypoints li .kp-num{flex-shrink:0;width:20px;height:20px;background:var(--brick);color:#fff;border-radius:50%;font-family:'Fira Mono',monospace;font-size:7pt;display:flex;align-items:center;justify-content:center;margin-top:2px;font-weight:600;}
+.keypoints li .kp-body .te-kp{font-family:'Tiro Telugu',serif;font-size:10.5pt;color:#0a1428;display:block;margin-top:3px;line-height:1.9;}
+
+/* MEMORY BOX */
+.memory-box{background:var(--mem-bg);border:1px solid #8acca0;border-left:4px solid var(--mem-bdr);border-radius:4px;padding:8px 11px;margin:6px 0 10px;}
+.memory-box .mem-label{font-family:'Fira Mono',monospace;font-size:7.5pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#0a3a20;margin-bottom:4px;}
+.memory-box .mnemonic{font-family:'Libre Baskerville',serif;font-size:10.5pt;font-weight:700;color:var(--mud);margin-bottom:3px;}
+.memory-box .mnem-exp{font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#0a2018;margin-bottom:5px;}
+.memory-box .mem-te{font-family:'Tiro Telugu',serif;font-size:10.5pt;color:#0a1a10;line-height:1.9;border-top:1px dashed #8acca0;padding-top:5px;margin-top:3px;}
+.memory-box .mem-te .kw{color:var(--mem-bdr);font-weight:700;}
+
+/* EXAM ALERT */
+.exam-alert{background:var(--exam-bg);border:1px solid #c8a830;border-left:4px solid var(--exam-bdr);border-radius:4px;padding:8px 11px;margin:6px 0 10px;}
+.exam-alert .ea-label{font-family:'Fira Mono',monospace;font-size:7.5pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#4a2800;margin-bottom:4px;}
+.exam-alert ul{padding-left:14px;margin:0;}
+.exam-alert li{font-size:9.5pt;margin:3px 0;line-height:1.55;}
+.exam-alert li strong{color:var(--brick);}
+.exam-alert .ea-te{font-family:'Tiro Telugu',serif;font-size:10pt;color:#2c1800;margin-top:6px;padding-top:5px;border-top:1px dashed #c8a830;line-height:1.9;}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:#fef6ed;border:1px solid var(--sand);border-left:4px solid var(--brick-lt);border-radius:4px;padding:7px 11px;margin:5px 0 10px;font-size:10pt;}
+.highlight-box .hb-te{font-family:'Tiro Telugu',serif;font-size:10.5pt;line-height:1.95;color:#1a1206;margin-top:4px;}
+.highlight-box .kw{color:var(--brick);font-weight:700;}
+.highlight-box .kw2{color:var(--blue);font-weight:700;}
+.highlight-box .kw3{color:var(--green);font-weight:700;}
+
+/* DEEP NOTE */
+.deep-note{border:1.5px solid var(--brick-lt);border-radius:4px;padding:7px 11px;background:#fff7f3;font-size:9.5pt;margin:5px 0 10px;}
+.deep-note .dn-label{font-family:'Fira Mono',monospace;font-size:7.5pt;letter-spacing:0.1em;text-transform:uppercase;color:#6a1000;font-weight:700;margin-bottom:3px;display:block;}
+.deep-note .dn-te{font-family:'Tiro Telugu',serif;font-size:10.5pt;color:#1a1206;line-height:1.9;margin-top:4px;}
+.deep-note .kw{color:var(--brick);font-weight:700;}
+.deep-note .kw2{color:var(--blue);font-weight:700;}
+.deep-note .kw3{color:var(--green);font-weight:700;}
+
+/* SCHOOL CARDS GRID */
+.school-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:6px 0 10px;}
+.school-card{border-radius:4px;border:1px solid var(--border);overflow:hidden;}
+.school-card .sc-head{padding:5px 9px;font-family:'Source Sans 3',sans-serif;font-size:8.5pt;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.05em;}
+.school-card.rajasthani .sc-head{background:#8a2020;}
+.school-card.malwa      .sc-head{background:#6b3a00;}
+.school-card.mewar      .sc-head{background:#1e5c38;}
+.school-card.bundi      .sc-head{background:#5a2a7a;}
+.school-card.kota       .sc-head{background:#0a5050;}
+.school-card.kishangarh .sc-head{background:#1a3e7a;}
+.school-card.jaipur     .sc-head{background:#6b3a6b;}
+.school-card.marwar     .sc-head{background:#4a3a00;}
+.school-card.pahari     .sc-head{background:#1e3a5c;}
+.school-card.basohli    .sc-head{background:#5c1a1a;}
+.school-card.kangra     .sc-head{background:#1a5c2a;}
+.school-card.company    .sc-head{background:#3a3a6a;}
+.school-card.bazaar     .sc-head{background:#3a1a6a;}
+.school-card.bengal     .sc-head{background:#1a4a3a;}
+.school-card.folk       .sc-head{background:#6b2a00;}
+.school-card .sc-head .te-sc{font-family:'Tiro Telugu',serif;font-size:8.5pt;font-weight:400;text-transform:none;letter-spacing:0;display:block;color:#f8e8d8;margin-top:1px;}
+.school-card .sc-body{padding:7px 9px;background:#fffdf9;font-size:9pt;line-height:1.5;}
+.school-card .sc-body .sc-row{display:flex;gap:5px;padding:3px 0;border-bottom:1px dashed #e0ccb0;font-size:8.5pt;}
+.school-card .sc-body .sc-row:last-child{border-bottom:none;}
+.school-card .sc-body .sc-label{font-family:'Fira Mono',monospace;font-size:7pt;font-weight:700;color:#1a1206;flex-shrink:0;width:55px;padding-top:1px;}
+.school-card .sc-body .sc-val{font-size:8.5pt;color:#1a1206;line-height:1.4;}
+.school-card .sc-body .sc-val .te{font-family:'Tiro Telugu',serif;font-size:9pt;color:#0a1428;display:block;line-height:1.75;margin-top:2px;}
+
+/* FOLK PAINTING CARDS */
+.folk-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:6px 0 10px;}
+.folk-card{border-radius:4px;border:1px solid var(--border);overflow:hidden;}
+.folk-card .fc-head{padding:5px 9px;background:var(--mud);color:#fff;font-family:'Source Sans 3',sans-serif;font-size:8.5pt;font-weight:700;}
+.folk-card .fc-head .fc-loc{font-family:'Fira Mono',monospace;font-size:7pt;color:#f8e8d8;display:block;margin-top:1px;font-weight:600;}
+.folk-card .fc-body{padding:7px 9px;background:#fffdf9;font-size:9pt;line-height:1.5;}
+.folk-card .fc-body .te{font-family:'Tiro Telugu',serif;font-size:9.5pt;color:#0a1428;display:block;margin-top:3px;line-height:1.85;}
+.folk-card .fc-body strong{color:var(--brick);}
+
+/* COMPARISON TABLE Mughal vs Rajput */
+.comp2{width:100%;border-collapse:collapse;font-size:9pt;margin:6px 0 10px;}
+.comp2 th{padding:6px 8px;font-family:'Source Sans 3',sans-serif;font-size:8.5pt;font-weight:700;border:1px solid #8a5228;text-align:center;color:#fff;}
+.comp2 th.aspect-h{background:#3a2a14;}
+.comp2 th.mughal-h{background:var(--brick);}
+.comp2 th.rajput-h{background:var(--blue);}
+.comp2 th .te-th{font-family:'Tiro Telugu',serif;font-size:8.5pt;font-weight:400;display:block;color:#f8e8d8;margin-top:1px;}
+.comp2 td{padding:6px 8px;border:1px solid #ddd0be;vertical-align:top;line-height:1.45;font-size:9pt;}
+.comp2 tr:nth-child(odd) td{background:#fffdf9;}
+.comp2 tr:nth-child(even) td{background:#faf3eb;}
+.comp2 td .te{font-family:'Tiro Telugu',serif;font-size:9.5pt;color:#0a1428;display:block;margin-top:2px;line-height:1.8;}
+.comp2 td strong{color:var(--brick);}
+.comp2 .aspect-col{background:#f0e4d0!important;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;color:#2c1800;text-align:center;}
+.comp2 .aspect-col .te{font-family:'Tiro Telugu',serif;font-size:9pt;color:#2c1800;text-align:center;}
+
+/* QUICK REVISION TABLE */
+.qr-table{width:100%;border-collapse:collapse;font-size:8.5pt;margin:6px 0 10px;}
+.qr-table caption{font-family:'Source Sans 3',sans-serif;font-size:9.5pt;font-weight:700;color:#fff;background:#3a1a00;text-transform:uppercase;padding:5px 9px;border-radius:4px 4px 0 0;text-align:left;}
+.qr-table thead tr{background:var(--mud);}
+.qr-table thead th{color:#fff;padding:5px 7px;font-family:'Source Sans 3',sans-serif;font-size:8pt;font-weight:700;border:1px solid #8a5228;text-align:left;}
+.qr-table thead th .te-th{font-family:'Tiro Telugu',serif;font-size:8pt;font-weight:400;display:block;color:#f8e8d8;margin-top:1px;}
+.qr-table tbody tr:nth-child(odd){background:#fffdf9;}
+.qr-table tbody tr:nth-child(even){background:#faf3eb;}
+.qr-table td{padding:4px 7px;border:1px solid #ddd0be;vertical-align:top;line-height:1.4;font-size:8.5pt;}
+.qr-table td .te-td{font-family:'Tiro Telugu',serif;font-size:9pt;color:#0a1428;display:block;margin-top:2px;line-height:1.75;}
+.qr-table td strong{color:var(--brick);}
+.qr-table .cat-col{background:#e8d8c0!important;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:8.5pt;color:#2c1800;text-align:center;}
+.qr-table .cat-col .te{font-family:'Tiro Telugu',serif;font-size:9pt;color:#2c1800;text-align:center;display:block;}
+
+hr.div{border:none;border-top:1.5px dashed var(--border);margin:12px 0;}
+</style>
+</head>
+<body>
+
+<!-- ████ PAGE 8 — 2.3 RAJASTHANI SCHOOL: INTRO + SALIENT FEATURES + MALWA + MEWAR ████ -->
+<div class="a4-page">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.3 · REGIONAL SCHOOLS — RAJASTHANI PAINTING: MALWA · MEWAR</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">2.3</div>
+    <h2>Regional Schools of Painting <span class="te">— ప్రాంతీయ చిత్రకళా పాఠశాలలు</span></h2>
+  </div>
+
+  <div class="highlight-box no-break">
+    The medieval period was dominated by Mughal style but the <strong>sub-imperial Schools developed</strong> a space by developing their own styles, remembering their Indian roots and a penchant for colourful paintings. Two major schools: <strong>(I) Rajasthani School</strong> and <strong>(II) Pahari School</strong>.
+    <div class="hb-te">
+      మధ్యకాలీన భారతదేశంలో మొఘల్ శైలి ప్రాబల్యం ఉండేది. కానీ <span class="kw">రాజ్య-అధీన పాఠశాలలు (Sub-imperial Schools)</span> తమ స్వంత శైలులు అభివృద్ధి చేసుకున్నాయి — భారతీయ మూలాలు గుర్తుంచుకుంటూ, రంగురంగుల చిత్రాలకు మొగ్గు చూపుతూ. రెండు ముఖ్య పాఠశాలలు: <span class="kw2">రాజస్థాన్ పాఠశాల</span> మరియు <span class="kw3">పహారీ పాఠశాల</span>.
+    </div>
+  </div>
+
+  <!-- RAJASTHANI SCHOOL -->
+  <div class="sec-heading">
+    <div class="sec-num">2.3-I</div>
+    <h2>Rajasthani School of Painting <span class="te">— రాజస్థానీ చిత్రకళా పాఠశాల</span></h2>
+  </div>
+
+  <div class="highlight-box no-break">
+    Influence in Rajasthan and parts of present-day MP, such as <strong>Mewar, Bundi, Kota, Jaipur, Bikaner, Kishangarh, Jodhpur (Marwar), Malwa, Sirohi</strong> and other such principalities, largely between <strong>16th and early 19th centuries</strong>.
+    <div class="hb-te">
+      రాజస్థాన్ మరియు ప్రస్తుత మధ్యప్రదేశ్‌లోని కొన్ని భాగాలలో ప్రభావం: <span class="kw">మేవాడ్, బుందీ, కోటా, జైపూర్, బికానేర్, కిషన్‌గఢ్, జోధ్‌పూర్ (మార్వాడ్), మాల్వా, సిరోహి</span> వంటి రాజ్యాలలో <span class="kw2">16వ నుండి 19వ శతాబ్దం ప్రారంభం</span> వరకు వర్ధిల్లింది.
+    </div>
+  </div>
+
+  <div class="sub-heading">Salient Features of Rajasthani School <span class="te-sh">— ముఖ్య లక్షణాలు</span></div>
+
+  <ul class="keypoints no-break">
+    <li><div class="kp-num">1</div><div class="kp-body">Deeply rooted in Indian traditions. Cults of <strong>Vaishnavism, Shaivism and Shakti</strong> exercised tremendous influence on pictorial art.<span class="te-kp">భారతీయ సంప్రదాయాలలో లోతుగా వేళ్ళూనుకున్నది. <span style="color:var(--brick);font-weight:700">వైష్ణవిజం, శైవిజం మరియు శక్తి</span> ఆరాధన ఈ పాఠశాల చిత్రకళపై అపారమైన ప్రభావం చూపింది.</span></div></li>
+    <li><div class="kp-num">2</div><div class="kp-body"><strong>Various cults of Krishna</strong> provided very rich field to the painter — devotion made significant contribution to the development of Indian painting.<span class="te-kp"><span style="color:var(--brick);font-weight:700">కృష్ణ భక్తి</span> చిత్రకారులకు అత్యంత సమృద్ధమైన విషయ క్షేత్రం అందించింది. భక్తి మరియు కళాత్మక నైపుణ్యం కలిసి భారతీయ చిత్రలేఖనాన్ని సుసంపన్నం చేశాయి.</span></div></li>
+    <li><div class="kp-num">3</div><div class="kp-body">Marked by <strong>bold drawing, strong and contrasting colours</strong>. Treatment of figures is <strong>flat without any attempt to show perspective in naturalistic manner</strong>.<span class="te-kp"><span style="color:var(--brick);font-weight:700">సాహసోపేత రేఖా చిత్రణ, బలమైన మరియు విరుద్ధ రంగులు</span>. వ్యక్తి రూపాలు <span style="color:var(--blue);font-weight:700">చదునుగా</span> (flat) చిత్రించబడతాయి — సహజ పరిదృశ్యం చూపించే ప్రయత్నం చేయరు.</span></div></li>
+    <li><div class="kp-num">4</div><div class="kp-body">Sometimes the surface divided into <strong>several compartments of different colours</strong> to separate one scene from another. <strong>Mughal influence</strong> seen in refining of drawing and some element of naturalism introduced in figures and trees.<span class="te-kp">కొన్నిసార్లు చిత్రఉపరితలం <span style="color:var(--brick);font-weight:700">వివిధ రంగుల విభాగాలుగా</span> విభజించి వేర్వేరు దృశ్యాలు చిత్రిస్తారు. మొఘల్ ప్రభావంతో రేఖా చిత్రణ మరింత సూక్ష్మమైంది; చెట్లు, మానవ రూపాలలో కొంత సహజత్వం వచ్చింది.</span></div></li>
+    <li><div class="kp-num">5</div><div class="kp-body">Portrayed <strong>social values and the changes introduced by kings for the betterment of society</strong>. Background of paintings formed special feature of Rajasthani School.<span class="te-kp"><span style="color:var(--brick);font-weight:700">సామాజిక విలువలు</span> మరియు రాజులు సమాజ అభివృద్ధికి తెచ్చిన మార్పులు చిత్రించారు. చిత్రాల నేపథ్యం రాజస్థానీ పాఠశాల ప్రత్యేక లక్షణం.</span></div></li>
+  </ul>
+
+  <!-- MALWA SCHOOL -->
+  <div class="sub-heading">Malwa School — మాల్వా పాఠశాల <span class="te-sh">(1600–1700 CE)</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Facts</span>
+      Malwa school flourished between <strong>1600 and 1700 CE</strong>. Most representative of the <strong>Hindu Rajput courts</strong>. Conservative style disappeared after end of 17th century. Salient features: <strong>flat compositions, black and chocolate-brown backgrounds</strong>; figures shown against solid colour patch; architecture painted in lively colour. Most appealing feature: <strong>primitive charm and simple childlike vision</strong>. Earliest work: illustrated version of <strong>Rasikapriya (1634)</strong>, followed by series illustrating Sanskrit poem <strong>Amaru Sataka (1652)</strong>. Also illustrations of <strong>Ragamala</strong>, Bhagavata-Purana and other Hindu devotional and literary works.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      మాల్వా పాఠశాల <span class="kw">1600–1700 CE</span> మధ్య వర్ధిల్లింది. <span class="kw2">హిందూ రాజ్‌పుత్ రాజ సభలకు</span> అత్యంత ప్రతినిధి. ముఖ్య లక్షణాలు: <span class="kw3">చదున్నైన నిర్మాణాలు, నల్ల మరియు చాక్లెట్-గోధుమ నేపథ్యాలు</span>; రంగురంగుల వాస్తుశిల్పం. అత్యంత ఆకర్షణీయ లక్షణం: <span class="kw">ఆదిమ సొగసు మరియు సరళమైన పిల్లల వంటి దృష్టి</span>. మొదటి కృతి: <span class="kw2">రసికప్రియ (1634)</span>, తర్వాత <span class="kw2">అమరు శతక (1652)</span>.
+    </div>
+  </div>
+
+  <!-- MEWAR SCHOOL -->
+  <div class="sub-heading">Mewar School — మేవాడ్ పాఠశాల <span class="te-sh">(17th–18th Century)</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Facts</span>
+      One of the most important schools of 17th and 18th centuries. Developed in the <strong>Hindu principality of Mewar in Rajasthan</strong>. Works characterised by <strong>simple bright colour and direct emotional appeal</strong>. Earliest example: series of <strong>Ragamala painted in 1605 CE at Chawand</strong>, a small place near Udaipur, by <strong>Misardi</strong>. Most paintings of this series in collection of <strong>Shri Gopi Krishna Kanoria</strong>. An increasing number of paintings were concerned with portraiture and life of the ruler. The expressive and vigorous style continued with variations through 1680, after which Mughal influence became more apparent.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      17వ–18వ శతాబ్దాల అత్యంత ముఖ్యమైన పాఠశాలలలో ఒకటి. రాజస్థాన్‌లోని <span class="kw">మేవాడ్ హిందూ రాజ్యంలో</span> అభివృద్ధి. <span class="kw2">సరళమైన ప్రకాశవంతమైన రంగులు</span> మరియు <span class="kw3">ప్రత్యక్ష భావాత్మక ఆకర్షణ</span> ముఖ్య లక్షణాలు. మొదటి ఉదాహరణ: <span class="kw">1605 CE లో చావాండ్‌లో మిసర్దీ</span> చిత్రించిన రాగమాల శ్రేణి — ఉదయ్‌పూర్ సమీపంలో. 1680 తర్వాత మొఘల్ ప్రభావం ఎక్కువవుతూ వచ్చింది.
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.3 · Rajasthani School — Malwa · Mewar</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 8</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 9 — BUNDI · KOTA · KISHANGARH · JAIPUR · MARWAR + RAGAMALA ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.3 · RAJASTHANI — BUNDI · KOTA · KISHANGARH · JAIPUR · MARWAR</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="school-grid no-break">
+    <!-- BUNDI -->
+    <div class="school-card bundi">
+      <div class="sc-head">Bundi School — బుందీ పాఠశాల
+        <span class="te-sc">1625 AD నుండి · కృష్ణ జీవితం</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><div class="sc-label">DATE</div><div class="sc-val">Dated back to 1625 AD <span class="te">1625 CE నాటిది</span></div></div>
+        <div class="sc-row"><div class="sc-label">FAMOUS</div><div class="sc-val"><strong>Bhairavi Ragini</strong> — Allahabad Museum — earliest example of Bundi painting <span class="te">భైరవి రాగిణి — అలహాబాద్ మ్యూజియం — అత్యంత పురాతన బుందీ చిత్రం</span></div></div>
+        <div class="sc-row"><div class="sc-label">THEME</div><div class="sc-val">Themes from life of Krishna — major theme in this school <span class="te">కృష్ణుని జీవిత దృశ్యాలు ప్రధాన విషయం</span></div></div>
+        <div class="sc-row"><div class="sc-label">EXAMPLE</div><div class="sc-val"><strong>Rasikapriya of late 17th C</strong>: Krishna collecting butter from a Gopi — but pot contains cloth/objects — background has trees; river with wavy lines; flowers; pair of aquatic birds; painting has border in <strong>brilliant red colour</strong> <span class="te">కృష్ణుడు వెన్న సేకరించే దృశ్యం; నేపథ్యంలో చెట్లు, అలలు గల నది; <span style="color:var(--brick);font-weight:700">ప్రకాశమైన ఎరుపు అంచు</span></span></div></div>
+      </div>
+    </div>
+
+    <!-- KOTA -->
+    <div class="school-card kota">
+      <div class="sc-head">Kota School — కోటా పాఠశాల
+        <span class="te-sc">రాజస్థాన్ · స్వతంత్ర విభాగం</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><div class="sc-label">ORIGIN</div><div class="sc-val">Division of Rajasthani school; difficult to differentiate initial Kota paintings from Bundi — borrowed from Bundi repertoire <span class="te">రాజస్థానీ పాఠశాల విభాగం; మొదటి కోటా చిత్రాలు బుందీ చిత్రాల నుండి భిన్నంగా గుర్తించడం కష్టం</span></div></div>
+        <div class="sc-row"><div class="sc-label">STYLE</div><div class="sc-val"><strong>Spontaneous, calligraphic</strong> in execution; emphasis on marked shading especially the <strong>double-lid eye</strong> <span class="te">స్వాభావిక, అక్షరకళా శైలి; <span style="color:var(--brick);font-weight:700">రెండు పొర కళ్ళు</span> (double-lid eye) — కోటా పాఠశాల విలక్షణం</span></div></div>
+        <div class="sc-row"><div class="sc-label">EXPERTISE</div><div class="sc-val">Expertise of artists from Kota School in portraying <strong>animals and combat</strong> <span class="te">జంతువులు మరియు యుద్ధ దృశ్యాలు చిత్రించడంలో అపూర్వ నైపుణ్యం</span></div></div>
+      </div>
+    </div>
+
+    <!-- KISHANGARH -->
+    <div class="school-card kishangarh">
+      <div class="sc-head">Kishangarh School — కిషన్‌గఢ్ పాఠశాల
+        <span class="te-sc">రాజస్థాన్ · సావంత్ సింగ్ · బణి థణి</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><div class="sc-label">FAMOUS</div><div class="sc-val">Most romantic legends — <strong>Sawant Singh</strong> and his lover <strong>Bani Thani</strong>; merging of life and mythology, romance and bhakti <span class="te">అత్యంత ప్రణయ పురాణాలు — సావంత్ సింగ్ మరియు అతని ప్రేయసి <span style="color:var(--brick);font-weight:700">బణి థణి</span>; జీవితం, పురాణం, రొమాన్స్, భక్తి కలిసి</span></div></div>
+        <div class="sc-row"><div class="sc-label">THEMES</div><div class="sc-val">Also painted a lot about <strong>Radha and Krishna's spiritual and romantic relationships</strong> <span class="te">రాధా-కృష్ణుల ఆధ్యాత్మిక మరియు ప్రణయ సంబంధాలు విస్తారంగా చిత్రించారు</span></div></div>
+      </div>
+    </div>
+
+    <!-- AMBER-JAIPUR -->
+    <div class="school-card jaipur">
+      <div class="sc-head">Amber-Jaipur School — అంబర్-జైపూర్
+        <span class="te-sc">'ధుందార్' పాఠశాల · బైరాత్ గోడ చిత్రాలు</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><div class="sc-label">ALSO KNOWN</div><div class="sc-val">Also known as <strong>'Dhundar'</strong> school; oldest evidence in Rajasthan's <strong>Bairat wall paintings</strong> <span class="te"><strong>ధుందార్</strong> పాఠశాల; రాజస్థాన్‌లోని <span style="color:var(--brick);font-weight:700">బైరాత్ గోడ చిత్రాలు</span> పురాతన ఆధారం</span></div></div>
+        <div class="sc-row"><div class="sc-label">PEAK</div><div class="sc-val">In 18th century, during reign of <strong>Sawai Pratap Singh</strong>, this school attained its pinnacle <span class="te">18వ శతాబ్దంలో <span style="color:var(--brick);font-weight:700">సవాయ్ ప్రతాప్ సింగ్</span> హయాంలో ఉచ్ఛస్థితికి చేరింది</span></div></div>
+        <div class="sc-row"><div class="sc-label">DEPT</div><div class="sc-val"><strong>Suratkhana</strong> — painting department. Miniatures to accompany Bhagavata Purana, Ramayana, Ragamala and portraits <span class="te"><span style="color:var(--brick);font-weight:700">సూరత్‌ఖానా</span> — చిత్రకళా శాఖ; భాగవత పురాణ, రామాయణ, రాగమాల మరియు చిత్రపటాలకు లఘు చిత్రాలు</span></div></div>
+        <div class="sc-row"><div class="sc-label">THEMES</div><div class="sc-val">Common themes: <strong>Radha, Krishna, Rasikapriya, Gita Govinda, Baramasa</strong> <span class="te">సాధారణ విషయాలు: రాధ, కృష్ణ, రసికప్రియ, గీత గోవింద, బారమాస</span></div></div>
+        <div class="sc-row"><div class="sc-label">JAIPUR</div><div class="sc-val">Jaipur School grew popular during <strong>Sawai Jai Singh's</strong> time; Sahibram drew portrait paintings; unique blend of Mughal and indigenous stylistic <span class="te">జైపూర్ పాఠశాల <span style="color:var(--brick);font-weight:700">సవాయ్ జై సింగ్</span> కాలంలో ప్రాచుర్యం; సాహిబ్రమ్ చిత్రపటాలు వేశాడు</span></div></div>
+      </div>
+    </div>
+
+    <!-- MARWAR -->
+    <div class="school-card marwar">
+      <div class="sc-head">Marwar School — మార్వాడ్ పాఠశాల
+        <span class="te-sc">జోధ్‌పూర్ · బికానేర్ · రాథోడ్‌లు</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><div class="sc-label">REGION</div><div class="sc-val"><strong>Jodhpur and Bikaner</strong> — controlled by Rathods; Jaisalmer ruled by Bhati's — vast schools of painting <span class="te"><span style="color:var(--brick);font-weight:700">జోధ్‌పూర్ మరియు బికానేర్</span> — రాథోడ్ నియంత్రణ; జైసల్మేర్ — భాటి నియంత్రణ; విశాలమైన చిత్రకళా పాఠశాలలు</span></div></div>
+        <div class="sc-row"><div class="sc-label">STYLE</div><div class="sc-val">Men and ladies from 15th &amp; 16th centuries wore brightly coloured attire. They followed Mughal traditions but after 18th century, the Rajput element grew more prominent — linear rhythm and bright colors <span class="te">15వ–16వ శతాబ్దాల స్త్రీ పురుషులు ప్రకాశమైన వస్త్రాలు ధరించారు. 18వ శతాబ్దం తర్వాత రాజ్‌పుత్ అంశం మరింత ప్రముఖమైంది</span></div></div>
+        <div class="sc-row"><div class="sc-label">JODHPUR</div><div class="sc-val">Jodhpur atelier produced excellent paintings; attention focused on exceptional paintings during <strong>Man Singh's (1803–1843)</strong> reign <span class="te">జోధ్‌పూర్ కళాశాల అద్భుత చిత్రాలు వేసింది; <span style="color:var(--brick);font-weight:700">మాన్ సింగ్ (1803–1843)</span> హయాంలో వేసిన చిత్రాలు విశేషమైనవి</span></div></div>
+      </div>
+    </div>
+
+    <!-- RAGAMALA -->
+    <div class="school-card rajasthani">
+      <div class="sc-head">Ragamala Paintings — రాగమాల చిత్రాలు
+        <span class="te-sc">16వ–17వ శతాబ్దం · సంగీత శైలులు</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><div class="sc-label">WHAT</div><div class="sc-val">Developed in most Indian schools of painting in <strong>16th and 17th centuries</strong>. Now known as: Pahari Ragamala, Rajasthan or Rajput Ragamala, Deccan Ragamala, Mughal Ragamala <span class="te">16వ–17వ శతాబ్దాలలో అనేక పాఠశాలలలో అభివృద్ధి. రాగమాల అంటే సంగీత రాగాల చిత్ర వర్ణనలు</span></div></div>
+        <div class="sc-row"><div class="sc-label">STYLE</div><div class="sc-val">Each raga personified by a color, mood, verse describing a story about a hero &amp; heroine (nayaka &amp; nayika), the season, time of day and night in which a particular raga is to be sung <span class="te">ప్రతి రాగాన్ని రంగు, మూడ్, వీరుడు-వీరాంగన, ఋతువు, రాత్రి-పగలు వేళలతో వ్యక్తీకరిస్తారు</span></div></div>
+        <div class="sc-row"><div class="sc-label">DEITIES</div><div class="sc-val">Most paintings demarcate specific Hindu deities associated with the raga — such as Bhairava or Bhairavi to Shiva, Sri to Devi, etc. <span class="te">రాగంతో సంబంధించిన హిందూ దేవతలు చిత్రించబడతారు — భైరవ/భైరవి = శివుడు</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Exam Focus — Rajasthani Schools</div>
+    <ul>
+      <li><strong>Malwa</strong> → 1600–1700 CE → Black/chocolate-brown backgrounds → Rasikapriya (1634) → Amaru Sataka (1652)</li>
+      <li><strong>Mewar</strong> → Bright colours → Ragamala 1605 CE at Chawand → by Misardi → Shri Gopi Krishna Kanoria collection</li>
+      <li><strong>Bundi</strong> → 1625 AD → Bhairavi Ragini (Allahabad Museum) → Krishna themes → Brilliant red border</li>
+      <li><strong>Kota</strong> → Division of Rajasthani → Borrowed from Bundi → <strong>Double-lid eye</strong> → Animals &amp; combat</li>
+      <li><strong>Kishangarh</strong> → Sawant Singh + <strong>Bani Thani</strong> → Romantic + Bhakti → Radha-Krishna</li>
+      <li><strong>Amber-Jaipur</strong> = <strong>Dhundar</strong> school → Bairat wall paintings → Sawai Pratap Singh → Suratkhana dept</li>
+      <li><strong>Marwar</strong> → Jodhpur + Bikaner → Rathods → Man Singh (1803–1843) peak</li>
+      <li><strong>Ragamala</strong> → 16th–17th C → Raga personified by color + mood + season + hero-heroine</li>
+    </ul>
+    <div class="ea-te">📌 <strong>ట్రిక్ ప్రశ్నలు:</strong> బణి థణి ఏ పాఠశాలకు చెందినది? (కిషన్‌గఢ్). మేవాడ్ పాఠశాల మొదటి ఉదాహరణ ఏమిటి? (రాగమాల 1605 CE, చావాండ్, మిసర్దీ). కోటా పాఠశాల విలక్షణ లక్షణం? (రెండు పొర కళ్ళు - double-lid eye). ధుందార్ పాఠశాల అంటే? (అంబర్-జైపూర్).</div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.3 · Rajasthani Schools — Bundi · Kota · Kishangarh · Jaipur · Marwar</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 9</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 10 — MUGHAL vs RAJPUT + PAHARI SCHOOL: BASOHLI + KANGRA ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.3 · MUGHAL vs RAJPUT COMPARISON + PAHARI SCHOOL</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sub-heading">Key Differences: Mughal vs Rajput Style Paintings <span class="te-sh">— మొఘల్ vs రాజ్‌పుత్ పోలిక</span></div>
+
+  <table class="comp2 no-break">
+    <thead>
+      <tr>
+        <th class="aspect-h" style="width:20%">Aspect <span class="te-th">విషయం</span></th>
+        <th class="mughal-h" style="width:40%">Mughal Style <span class="te-th">మొఘల్ శైలి</span></th>
+        <th class="rajput-h" style="width:40%">Rajput Style <span class="te-th">రాజ్‌పుత్ శైలి</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="aspect-col">Style <span class="te">స్వభావం</span></td>
+        <td>More <strong>aristocratic</strong> <span class="te">మరింత అభిజాత్య శైలి</span></td>
+        <td>More <strong>democratic</strong> — popular art <span class="te">మరింత ప్రజాస్వామ్య శైలి — ప్రజల కళ</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Character <span class="te">లక్షణం</span></td>
+        <td>More realistic, materialistic and secular <span class="te">మరింత వాస్తవిక, భౌతిక మరియు లౌకిక</span></td>
+        <td>More mystic, spiritual — religion as its integral part <span class="te">మరింత ఆధ్యాత్మిక — మతం అంతర్భాగం</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Audience <span class="te">ప్రేక్షకులు</span></td>
+        <td>Mostly confined to Imperial courts — depicts Mughal splendour and pomp <span class="te">రాజ సభలకే పరిమితం — మొఘల్ వైభవం చిత్రించింది</span></td>
+        <td>Art of the people — popular and familiar themes <span class="te">ప్రజల కళ — జనపరిచిత విషయాలు</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Folk Link <span class="te">జానపద సంబంధం</span></td>
+        <td>Isolated from Folk art <span class="te">జానపద కళ నుండి వేరుపడింది</span></td>
+        <td>Style was <strong>influenced and inspired by Folk art</strong> <span class="te">జానపద కళ ప్రభావం స్పష్టంగా కనిపిస్తుంది</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Subject <span class="te">విషయం</span></td>
+        <td>Deals with materialistic aspect of animal life: hunting of deers, fighting of animals such as elephants <span class="te">జంతువుల భౌతిక జీవనం — వేట, పోరు</span></td>
+        <td>Deals with religious as well as aesthetic aspect: animals as deities, increasing beauty in paintings <span class="te">మతపరమైన మరియు సౌందర్యపరమైన అంశాలు — జంతువులు దేవతలుగా</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PAHARI SCHOOL -->
+  <div class="sec-heading">
+    <div class="sec-num">2.3-II</div>
+    <h2>Pahari School of Painting <span class="te">— పహారీ చిత్రకళా పాఠశాల</span></h2>
+  </div>
+
+  <div class="highlight-box no-break">
+    Pahari region comprises the present State of <strong>Himachal Pradesh</strong>, some adjoining areas of <strong>Punjab</strong>, Union Territory of <strong>Jammu</strong> in the Jammu and Kashmir State and <strong>Garhwal in Uttar Pradesh</strong>. The whole area was divided into small States ruled by Rajput princes — often engaged in welfare. <strong>Nainsukh</strong> was a well-known master of the mid-18th century; his family workshop continued for another two generations. Composition, colour and pigmentation of each figure are unique. Deceptive to identify Pahari paintings as political boundaries were flexible and changed hands between different rulers.
+    <div class="hb-te">
+      పహారీ ప్రాంతం: <span class="kw">హిమాచల్ ప్రదేశ్</span> (ప్రధానంగా), పంజాబ్ కొన్ని ప్రాంతాలు, జమ్మూ UT, <span class="kw2">ఉత్తరప్రదేశ్‌లోని గర్వాల్</span>. ఈ ప్రాంతమంతా రాజ్‌పుత్ రాజకుమారులు పాలించే చిన్న రాజ్యాలుగా ఉండేది. ప్రఖ్యాత చిత్రకారుడు <span class="kw3">నైన్‌సుఖ్</span> — 18వ శతాబ్దం మధ్యకాలంలో ప్రసిద్ధుడు; అతని కుటుంబ కళాశాల మరో రెండు తరాలు కొనసాగింది. రాజకీయ సరిహద్దులు మారుతూ ఉన్నందున పహారీ చిత్రాలను గుర్తించడం కష్టం.
+    </div>
+  </div>
+
+  <div class="school-grid no-break">
+    <!-- BASOHLI -->
+    <div class="school-card basohli">
+      <div class="sc-head">Basohli Paintings — బసోహ్లీ చిత్రాలు
+        <span class="te-sc">జమ్మూ-కాశ్మీర్ · కాతుహ్వా ప్రాంతం · GI Tag</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><div class="sc-label">REGION</div><div class="sc-val">Famous in <strong>Kathua region</strong> of Jammu and Kashmir <span class="te">జమ్మూ-కాశ్మీర్‌లోని <span style="color:var(--brick);font-weight:700">కాతుహ్వా ప్రాంతంలో</span> ప్రసిద్ధి</span></div></div>
+        <div class="sc-row"><div class="sc-label">DEVI</div><div class="sc-val">This town produced remarkable <strong>Devi series</strong> — spectacular series of <strong>Supreme Goddess's incarnations</strong> <span class="te">అద్భుతమైన <span style="color:var(--brick);font-weight:700">దేవి శ్రేణి</span> — సర్వోన్నత దేవత అవతారాల చిత్ర సంకలనం</span></div></div>
+        <div class="sc-row"><div class="sc-label">TEXT</div><div class="sc-val">Exquisite portrayal of <strong>Rasamanjari text</strong> is likewise well-known <span class="te"><span style="color:var(--brick);font-weight:700">రసమంజరి</span> గ్రంథ చిత్ర వర్ణన ప్రసిద్ధి</span></div></div>
+        <div class="sc-row"><div class="sc-label">STYLE</div><div class="sc-val">Characterised by <strong>geometrical designs, brilliant colours, and shiny enamel</strong> <span class="te"><span style="color:var(--brick);font-weight:700">రేఖాగణిత నమూనాలు, ప్రకాశవంతమైన రంగులు, మెరుపు ఎనామెల్</span></span></div></div>
+        <div class="sc-row"><div class="sc-label">NOTE</div><div class="sc-val">Basohli Painting has recently been given a <strong>Geographical Indication (GI) Tag</strong> <span class="te">బసోహ్లీ చిత్రాలకు ఇటీవల <span style="color:var(--brick);font-weight:700">భౌగోళిక సూచన (GI) ట్యాగ్</span> లభించింది</span></div></div>
+      </div>
+    </div>
+
+    <!-- KANGRA -->
+    <div class="school-card kangra">
+      <div class="sc-head">Kangra Style Paintings — కాంగ్రా చిత్రాలు
+        <span class="te-sc">హిమాచల్ ప్రదేశ్ · గులేర్-కాంగ్రా శైలి</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><div class="sc-label">ORIGIN</div><div class="sc-val">Around 1800, <strong>Guler Kangra</strong> painting style was formed <span class="te">1800 సంవత్సరం ప్రాంతంలో <span style="color:var(--brick);font-weight:700">గులేర్-కాంగ్రా</span> శైలి రూపుదిద్దుకుంది</span></div></div>
+        <div class="sc-row"><div class="sc-label">STYLE</div><div class="sc-val">Naturalised version of artwork with noticeable differences in <strong>treatment of eyes and face modelling</strong> <span class="te">కళ్ళు మరియు ముఖ నమూనాలో స్పష్టమైన తేడాలతో సహజీకరించిన శైలి</span></div></div>
+        <div class="sc-row"><div class="sc-label">LANDSCAPE</div><div class="sc-val">Landscapes also <strong>frequently shown</strong> in Guler-Kangra art <span class="te">ప్రకృతి దృశ్యాలు కూడా తరచుగా చిత్రించబడతాయి</span></div></div>
+        <div class="sc-row"><div class="sc-label">THEME</div><div class="sc-val">Emphasised <strong>Indian women's grace and delicacy</strong>. Representation of eternal love of Hindu deities <strong>Radha and Krishna</strong> is core topic <span class="te">భారతీయ స్త్రీల సొగసు మరియు సూక్ష్మత ముఖ్యం. <span style="color:var(--brick);font-weight:700">రాధా-కృష్ణుల</span> శాశ్వత ప్రేమ ప్రధాన విషయం</span></div></div>
+        <div class="sc-row"><div class="sc-label">FIGURES</div><div class="sc-val">Multiple figures appear on the canvas, all of them animated <span class="te">చిత్రంపై అనేక రూపాలు కనిపిస్తాయి — అందరూ చురుకుగా ఉంటారు</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-heading">Features of Pahari School <span class="te-sh">— పహారీ పాఠశాల లక్షణాలు</span></div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English</span>
+      Themes painted spanned from <strong>mythology and literature</strong>; new techniques were introduced. In a typical Pahari painting, multiple figures appear on the canvas — all animated. Composition, colour and pigmentation of each figure are <strong>unique</strong>.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      పహారీ చిత్రాలు <span class="kw">పురాణ కథలు మరియు సాహిత్యం</span> నుండి విషయాలు తీసుకుంటాయి; కొత్త పద్ధతులు ప్రవేశపెట్టారు. ప్రతి పహారీ చిత్రంలో <span class="kw2">అనేక రూపాలు, చైతన్యంగా</span> కదులుతున్నట్లు ఉంటాయి. ప్రతి రూపానికి ప్రత్యేకమైన <span class="kw3">నిర్మాణం, రంగు మరియు వర్ణతీవ్రత</span>.
+    </div>
+  </div>
+
+  <div class="memory-box no-break">
+    <div class="mem-label">🧠 Memory Trick — Regional Schools గుర్తుపెట్టుకోండి</div>
+    <div class="mnemonic">Rajasthani: "M–M–B–K–K–J–M" = "Many Men Build Kites, Kishangarh Jaipur Marwar"</div>
+    <div class="mnem-exp">
+      <strong>M</strong>alwa (black bg, childlike) · <strong>M</strong>ewar (bright, 1605 Ragamala) · <strong>B</strong>undi (1625, red border) · <strong>K</strong>ota (double-lid eye, animals) · <strong>K</strong>ishangarh (Bani Thani) · <strong>J</strong>aipur/Amber (Dhundar, Suratkhana) · <strong>M</strong>arwar (Jodhpur+Bikaner)
+    </div>
+    <div class="mem-te">
+      పహారీ: <span class="kw">బసోహ్లీ = రేఖాగణిత నమూనాలు + దేవి శ్రేణి + GI Tag = కాతుహ్వా (J&amp;K)</span><br>
+      <span class="kw">కాంగ్రా = సహజీకరించిన శైలి + స్త్రీల సొగసు + రాధా-కృష్ణ = హిమాచల్ ప్రదేశ్</span>
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.3 · Mughal vs Rajput · Pahari School — Basohli · Kangra</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 10</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 11 — 2.4 MODERN INDIAN PAINTING ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.4 · MODERN INDIAN PAINTING — COMPANY · BAZAAR · RAJA RAVI VARMA · BENGAL</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">2.4</div>
+    <h2>Modern Indian Painting <span class="te">— ఆధునిక భారతీయ చిత్రలేఖనం</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — ఆధునిక చిత్రకళ ఎందుకు పుట్టింది?</span>
+    సాంప్రదాయ చిత్రకళా సంప్రదాయాలు బెంగాల్‌లో చాలావరకు అంతమైపోయాయి. <span class="kw">బ్రిటిష్ వారు కొత్త కళా పాఠశాలలు స్థాపించారు</span>. <span class="kw2">రాజా రవి వర్మ</span> పాశ్చాత్య సంప్రదాయాలపై ఆధారపడ్డాడు — నూనె రంగు, ఈజెల్ (Easel) పద్ధతులు వాడాడు. తర్వాత <span class="kw3">బెంగాల్ పాఠశాల</span> పుట్టింది — ఇది భారతదేశపు సంపద్భరిత సాంస్కృతిక గతాన్ని తిరిగి కనుగొనే ప్రయత్నం. 1800ల చివరలో కలకత్తా ఆధునిక భారతీయ చిత్రకళలో సమకాలీన ఉద్యమాన్ని ప్రారంభించిన ఘనతను పొందింది!
+  </div>
+
+  <!-- COMPANY PAINTING -->
+  <div class="school-grid no-break">
+    <div class="school-card company">
+      <div class="sc-head">Company Painting / Kalam — కంపెనీ చిత్రాలు
+        <span class="te-sc">వలస కాలం · హైబ్రిడ్ శైలి</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><div class="sc-label">ORIGIN</div><div class="sc-val">During colonial period, a <strong>hybrid painting style</strong> arose combining Rajput, Mughal, other Indian styles with European influences <span class="te">వలస కాలంలో రాజ్‌పుత్, మొఘల్, ఇతర భారతీయ శైలులను యూరోపియన్ ప్రభావాలతో కలిపిన <span style="color:var(--brick);font-weight:700">హైబ్రిడ్ (మిశ్రమ) శైలి</span></span></div></div>
+        <div class="sc-row"><div class="sc-label">HOW</div><div class="sc-val">British Company officers hired painters who combined their Indian training with European sensibilities — these paintings called <strong>'Company Paintings'</strong> <span class="te">బ్రిటిష్ అధికారులు నియమించిన చిత్రకారులు భారతీయ శిక్షణ మరియు యూరోపియన్ సంవేదనలు కలిపారు</span></div></div>
+        <div class="sc-row"><div class="sc-label">STYLE</div><div class="sc-val">Use of <strong>water colour</strong> set them apart; linear perspective and shading in technique. <strong>Kolkata, Chennai, Delhi, Patna, Varanasi, Thanjavur</strong> were birthplaces <span class="te">నీటి రంగు వాడకం ప్రత్యేకత; రేఖా దృష్టి కోణం మరియు నీడ పద్ధతి</span></div></div>
+        <div class="sc-row"><div class="sc-label">PATRONS</div><div class="sc-val"><strong>Lord Impey and Marquess Wellesley</strong> were patrons; they worked on India's "exotic" flora and animals <span class="te"><span style="color:var(--brick);font-weight:700">లార్డ్ ఇంపే మరియు మార్క్వెస్ వెల్లెస్లీ</span> పోషకులు; భారత అరుదైన వృక్ష, జంతు జాలాలు చిత్రించారు</span></div></div>
+      </div>
+    </div>
+
+    <!-- BAZAAR PAINTING -->
+    <div class="school-card bazaar">
+      <div class="sc-head">Bazaar Painting — బజార్ చిత్రాలు
+        <span class="te-sc">గ్రీకో-రోమన్ ప్రభావం · బెంగాల్ · బిహార్</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><div class="sc-label">ORIGIN</div><div class="sc-val">European encounter in India had impact — differed from Company paintings in combining <strong>European and Indian methods and themes</strong> <span class="te">యూరోపియన్ సంపర్కం ప్రభావం; కంపెనీ చిత్రాల కంటే <span style="color:var(--brick);font-weight:700">యూరోపియన్+భారతీయ పద్ధతులు, విషయాలు రెండూ</span> కలిపింది</span></div></div>
+        <div class="sc-row"><div class="sc-label">INFLUENCE</div><div class="sc-val">Influenced by <strong>Roman and Greek culture</strong>; painters forced to imitate Greek and Roman statuary <span class="te"><span style="color:var(--brick);font-weight:700">రోమన్ మరియు గ్రీకు సంస్కృతి</span> ప్రభావం; గ్రీకు-రోమన్ శిల్పాలను అనుకరించారు</span></div></div>
+        <div class="sc-row"><div class="sc-label">POPULAR</div><div class="sc-val">Quite popular in Bengal and Bihar — created paintings depicting <strong>everyday bazaars in India with European backdrop</strong> <span class="te">బెంగాల్, బిహార్‌లో ప్రాచుర్యం; రోజువారీ బజార్ దృశ్యాలు యూరోపియన్ నేపథ్యంలో</span></div></div>
+        <div class="sc-row"><div class="sc-label">FAMOUS</div><div class="sc-val">Depiction of Indian <strong>courtesans dancing</strong> before British officials was one of most well-known genres; Gods with multi-axes (Lord Ganesha) <strong>forbidden</strong> as departed from European notion of natural human figurine <span class="te">గణేశుడు వంటి బహు భుజాల దేవతలు <span style="color:var(--brick);font-weight:700">నిషేధించబడ్డారు</span> — యూరోపియన్ మానవ రూప భావనకు విరుద్ధం</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RAJA RAVI VARMA -->
+  <div class="deep-note no-break">
+    <span class="dn-label">⭐ Raja Ravi Varma Paintings — రాజా రవి వర్మ చిత్రాలు</span>
+    Regarded as one of India's most talented painters. Widely regarded as the <strong>founder of the contemporary painting school</strong>. School was dubbed "modern" due to overwhelming influence of western techniques and motifs. <strong>He combined elements of South Indian art with western colour and style techniques</strong>. Because of his bright brush strokes and extremely lifelike paintings, dubbed <strong>"Raphael of the East"</strong> — came from state of Kerala. Famous paintings: <strong>Lady in the Moonlight, Mother India, Ravana Kidnapping Sita</strong>. His paintings from the Ramayana, particularly "Ravana Kidnapping Sita", earned him national acclaim.
+    <div class="dn-te">
+      రాజా రవి వర్మ — భారతీయ <span class="kw">ఆధునిక చిత్రకళా పాఠశాల వ్యవస్థాపకుడు</span>. పాశ్చాత్య సంప్రదాయాలు మరియు విషయాల అత్యంత ప్రభావం వల్ల ఈ పాఠశాలను "ఆధునిక" అని పిలిచారు. <span class="kw2">దక్షిణ భారత కళ అంశాలను పాశ్చాత్య రంగు మరియు శైలి పద్ధతులతో</span> కలిపాడు. జీవకళగా మెరిసే చిత్రాల వల్ల <span class="kw3">"తూర్పు దేశపు రఫేల్"</span> బిరుదు పొందాడు — కేరళ నుండి వచ్చాడు. ప్రసిద్ధ చిత్రాలు: <span class="kw">చంద్రకాంతిలో స్త్రీ, మాతా భారత, రావణుడు సీతను అపహరించడం</span>. "రావణుడు సీతను అపహరించడం" చిత్రం అతనికి జాతీయ కీర్తి తెచ్చింది.
+    </div>
+  </div>
+
+  <!-- BENGAL SCHOOL -->
+  <div class="sub-heading">Bengal School of Art — బెంగాల్ కళా పాఠశాల</div>
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Facts</span>
+      Bengal school is thought to be a <strong>reactionary response to the established painting trends of the 1940s and 1960s</strong>. Stands out because of its use of <strong>muted colours</strong>. Founded on the writings of <strong>Abhanindranath Tagore</strong> in the early 20th century. His <strong>Arabian Night</strong> series created an impact on global scale — broke away from past Indian painting schools and introduced something fresh. He attempted to infuse <strong>Swadeshi values</strong> into Indian art and lessen Western art styles influence. <strong>Bharat Mata</strong> and other Mughal-themed paintings are among his most well-known works. <strong>Nandlal Bose</strong> — another renowned painter from this school; known for iconic <strong>white-on-black Gandhi sketch</strong> from the 1930s. <strong>Rabindranath Tagore</strong> — well-known painter from this style; paintings have bold black lines emphasising the topic; painted on tiny scale. <strong>MF Hussain</strong> — most popular cubist artist; created 'Personification of Romance' series; used horse to convey fluidity of motion.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      బెంగాల్ పాఠశాల <span class="kw">1940–1960ల స్థిర చిత్రకళా ధోరణులకు ప్రతిస్పందన</span>గా భావించబడుతుంది. <span class="kw2">మృదువైన రంగులు</span> వాడటం దీని ప్రత్యేకత. <span class="kw">అభనీంద్రనాథ్ ఠాగూర్</span> రచనలపై స్థాపించబడింది. అరేబియన్ నైట్ శ్రేణి ప్రపంచ స్థాయి ప్రభావం. <span class="kw3">స్వదేశీ విలువలను</span> భారతీయ కళలో నింపాలని ప్రయత్నించాడు. <span class="kw">నందలాల్ బోస్</span> — 1930ల నుండి నల్లపై తెలుపు <span class="kw2">గాంధీ రేఖా చిత్రం</span>. <span class="kw">రవీంద్రనాథ్ ఠాగూర్</span> — చిన్న పరిమాణంలో, ముదురు నల్ల రేఖలతో. <span class="kw2">MF హుస్సైన్</span> — 'రొమాన్స్ వ్యక్తీకరణ' శ్రేణి; గుర్రాన్ని గతి ప్రవాహానికి చిహ్నంగా వాడాడు.
+    </div>
+  </div>
+
+  <!-- PROGRESSIVE ARTISTS + CUBIST -->
+  <div class="deep-note no-break">
+    <span class="dn-label">⭐ Progressive Artists Group &amp; Cubist Style — ప్రోగ్రెసివ్ ఆర్టిస్ట్స్ గ్రూప్</span>
+    Another group of artists drew attention in <strong>1947</strong> with advanced and daring topics — ideas mixed up with softer, more abstract ones. <strong>Mulk Raj Anand</strong> was a patron of their first art show, which took place in <strong>1948</strong>. They've grown into a major collective since then, with numerous galleries in Delhi and Mumbai. They didn't have much in common, yet all inspired by <strong>European Modernism</strong>. <strong>Francis Newton Souza</strong> founded the organisation. Most well-known members: <strong>S.H. Raza, H.A. Gade, Ara</strong>, and others. <strong>MF Hussain</strong>, a well-known cubist painter, was a member. Cubist trend: influenced by <strong>European Cubist movement</strong> — artefacts broken, analysed, and reassembled in this method.
+    <div class="dn-te">
+      1947లో ప్రోగ్రెసివ్ ఆర్టిస్ట్స్ గ్రూప్ ఏర్పడింది. <span class="kw">మొదటి కళా ప్రదర్శన 1948లో</span> — <span class="kw2">ముల్క్ రాజ్ ఆనంద్</span> పోషించాడు. <span class="kw">ఫ్రాన్సిస్ న్యూటన్ సౌజా</span> స్థాపించాడు. సభ్యులు: <span class="kw3">SH రజా, HA గడే, అరా, MF హుస్సైన్</span>. అందరూ <span class="kw">యూరోపియన్ మోడర్నిజం</span> ద్వారా ప్రేరణ పొందారు. క్యూబిస్ట్ శైలి: వస్తువులను విచ్ఛిన్నం చేసి, విశ్లేషించి, పునర్నిర్మించే పద్ధతి.
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.4 · Modern Indian Painting — Company · Bazaar · Ravi Varma · Bengal School</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 11</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 12 — 2.5 FOLK PAINTINGS ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.5 · FOLK PAINTINGS — MADHUBANI · PATTACHITRA · KALAMKARI · WARLI</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">2.5</div>
+    <h2>Folk Paintings <span class="te">— జానపద చిత్రాలు</span></h2>
+  </div>
+
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Definition</span>
+      Folk painting is a visual depiction of the shared culture of a specific group of people and includes traditions specific to that culture, subculture, or group. Indian Folk Paintings are generally pictorial expressions distinguished by topics drawn from epics such as the Ramayana and Mahabharata, Bhagavata Purana, as well as ordinary village life, birds and animals, natural phenomena such as the sun, moon, plants and trees.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      జానపద చిత్రకళ అంటే ఒక నిర్దిష్ట సమూహం యొక్క <span class="kw">భాగస్వామ్య సంస్కృతి దృశ్య వర్ణన</span>. రామాయణ, మహాభారత, భాగవత పురాణం నుండి, అలాగే <span class="kw2">గ్రామీణ జీవితం, పక్షులు, జంతువులు, సూర్యుడు, చంద్రుడు, మొక్కలు, చెట్లు</span> — ఇవి జానపద చిత్రాల సాధారణ విషయాలు.
+    </div>
+  </div>
+
+  <div class="folk-grid no-break">
+    <!-- MADHUBANI -->
+    <div class="folk-card">
+      <div class="fc-head">Madhubani / Mithila Paintings — మధుబని / మిథిలా
+        <span class="fc-loc">📍 Bihar (Mithila region) · వెదురు కొమ్మ బ్రష్</span>
+      </div>
+      <div class="fc-body">
+        Women living in this region have painted figures and designs on the <strong>walls of their mud houses for ceremonial occasions, particularly weddings</strong>. People of this area see the origin of this art form at the time of <strong>Princess Sita getting married to Lord Rama</strong>. Painted in three areas of house — <strong>central or outer courtyards</strong> (eastern part — dwelling place of Kuladevi, usually Kali); <strong>southern part</strong> (gosain ghar = inner sanctum where family shrine — devasthana — griha devatas and kula devatas are painted). Most extraordinary and colourful: <strong>kohbar ghar (inner room)</strong> — magnificent representations of lotus with a stalk in full bloom. Mithila artists do not like empty spaces — <strong>fill entire space decoratively</strong> with birds, flowers, animals, fish, snakes, Sun and Moon — having symbolic intent. Women paint with <strong>bamboo twigs</strong> to which some cotton swab/rice straw/fibre is attached. Colours from mineral stones, organic things, such as <strong>phalsa and kusum flowers, bilwa leaves, kajal, turmeric</strong>.
+        <span class="te">
+          ముడ్ ఇళ్ళ గోడలపై వివాహ సంద‌ర్భాలలో చిత్రాలు వేస్తారు. <span style="color:var(--brick);font-weight:700">సీతా రాముని వివాహం</span> కాలంలో ఈ కళ పుట్టిందని నమ్మకం. ఇంటి మూడు భాగాలలో — వెలుపలి ఆవరణ (కాళి నివాసం), దక్షిణ భాగం (కోహ్‌బర్ ఘర్ — అత్యంత అందమైన ఆంతరిక గది). మిథిలా కళాకారులు ఖాళీ స్థలం అంచుకోరు — <span style="color:var(--brick);font-weight:700">వెదురు కొమ్మ, పత్తి వత్తి</span> తో రంగులు వేస్తారు. ఖనిజ రాళ్ళు, పూల రసాలు, వేప ఆకులు, కాటుక, పసుపు నుండి రంగులు.
+        </span>
+      </div>
+    </div>
+
+    <!-- PATTACHITRA -->
+    <div class="folk-card">
+      <div class="fc-head">Pattachitra Paintings — పట్టచిత్ర
+        <span class="fc-loc">📍 Odisha · వస్త్రంపై చిత్రాలు · జగన్నాథ్ సంబంధం</span>
+      </div>
+      <div class="fc-body">
+        State of <strong>Odisha</strong> is famous for Pattachitra painting. It is painted on a <strong>piece of cloth</strong>. Closely related to the cult of <strong>Shri Jagannath</strong> and the temple traditions in Puri. Popular themes: <strong>Thia Badhia</strong> — depiction of the temple of Jagannath; <strong>Krishna Lila</strong> — enactment of Jagannath as Lord Krishna displaying his powers as a child; <strong>Dasabatara Patti</strong> — ten incarnations of Lord Vishnu; <strong>Panchamukhi</strong> — depiction of Lord Ganesh as a five-headed deity. Most materials used are <strong>natural substances</strong>. Disciplined form of art with set rules and restrictions. <strong>A floral border is a must</strong> around the paintings — so is the <strong>use of natural colors</strong>.
+        <span class="te">
+          ఒడిశా రాష్ట్రం పట్టచిత్రానికి ప్రసిద్ధి. <span style="color:var(--brick);font-weight:700">వస్త్రంపై</span> చిత్రిస్తారు. <span style="color:var(--brick);font-weight:700">శ్రీ జగన్నాథ్</span> ఆరాధన మరియు పూరీ దేవాలయ సంప్రదాయాలతో దగ్గరి సంబంధం. ముఖ్య విషయాలు: థియా బాధియా (జగన్నాథ దేవాలయ చిత్రణ), కృష్ణ లీల, దశావతార పట్టి, పంచముఖి (5 తల గణేశుడు). <span style="color:var(--brick);font-weight:700">పుష్ప అంచు తప్పనిసరి</span>; ప్రకృతి రంగులు మాత్రమే.
+        </span>
+      </div>
+    </div>
+
+    <!-- KALAMKARI -->
+    <div class="folk-card">
+      <div class="fc-head">Kalamkari Painting — కలంకారీ
+        <span class="fc-loc">📍 Andhra Pradesh · 23 దశలు · వెదురు/ఖర్జూర కలం</span>
+      </div>
+      <div class="fc-body">
+        Type of hand-painted or block-printed cotton textile produced in Isfahan, Iran, and in the <strong>Indian state of Andhra Pradesh</strong>. Only <strong>natural dyes</strong> are used — involves <strong>twenty-three steps</strong>. To create design contours, artists use a <strong>bamboo or date palm stick pointed at one end with a bundle of fine hair attached</strong> — to serve as the brush or pen. Two distinctive styles in India: <strong>Srikalahasti style</strong> and <strong>Machilipatnam style</strong>. Style flourished in temples centred on creating <strong>unique religious identities</strong> on scrolls, temple hangings, chariot banners, as well as depictions of deities and scenes from Hindu epics (Ramayana, Mahabharata, Purana). Present status owes to <strong>Kamaladevi Chattopadhyay</strong> — popularised the art as first chairperson of <strong>All India Handicrafts Board</strong>.
+        <span class="te">
+          ఆంధ్రప్రదేశ్‌లో ఉత్పత్తి చేయబడే చేతితో రంగు వేసే లేదా బ్లాక్-ముద్రించిన పత్తి వస్త్రం. కేవలం <span style="color:var(--brick);font-weight:700">ప్రకృతి రంగులు; 23 దశలు</span>. డిజైన్ చేయడానికి <span style="color:var(--brick);font-weight:700">వెదురు లేదా ఖర్జూర కొమ్మ</span> బ్రష్ వాడతారు. రెండు శైలులు: <span style="color:var(--brick);font-weight:700">శ్రీకాళహస్తి శైలి</span> మరియు <span style="color:var(--blue);font-weight:700">మచిలీపట్నం శైలి</span>. <span style="color:var(--green);font-weight:700">కమలాదేవి చటోపాధ్యాయ్</span> — అఖిల భారత హస్తకళా బోర్డు మొదటి చైర్‌పర్సన్ — ఈ కళను ప్రాచుర్యం చేశారు.
+        </span>
+      </div>
+    </div>
+
+    <!-- WARLI -->
+    <div class="folk-card">
+      <div class="fc-head">Warli Painting — వార్లీ చిత్రాలు
+        <span class="fc-loc">📍 Maharashtra · తెల్ల వలయాలు · అన్నపు పిండి</span>
+      </div>
+      <div class="fc-body">
+        Warli community inhabit the <strong>west coast of Northern Maharashtra</strong> around north Sahyadri range. Tribal art. <strong>Married women play a central role</strong> in creating their most important painting called <strong>Chowk</strong> to mark special occasions. Closely associated with rituals of marriage, fertility, harvest and new season of sowing. Chowk dominated by figure of mother goddess <strong>Palaghat</strong> — worshipped as goddess of fertility — represents the <strong>corn goddess, Kansari</strong>. The cord goddess is enclosed in a small square frame decorated with 'pointed' chevrons symbolizing <strong>Hariyali Deva, i.e., the God of Plants</strong>. Central motif of Palaghat surrounded by scenes of everyday life — hunting, fishing, farming, dancing, mythological stories of animals. Paintings are traditionally painted with <strong>rice flour on earth-coloured walls</strong>. Basic graphic vocabulary: <strong>circle, triangle, and square</strong> — used in rudimentary wall paintings which are <strong>monosyllabic in nature</strong>. Circle and triangle come from their observation of nature. The circle represents the <strong>sun and the moon</strong>, while the triangle depicts <strong>mountains and conical trees</strong>.
+        <span class="te">
+          ఉత్తర మహారాష్ట్ర పడమర తీరంలో వార్లీ గిరిజన సమాజం. <span style="color:var(--brick);font-weight:700">వివాహిత మహిళలు</span> అత్యంత ముఖ్యమైన చిత్రం <span style="color:var(--brick);font-weight:700">చవ్క్</span> వేస్తారు. తల్లి దేవత <span style="color:var(--brick);font-weight:700">పాలఘాట్</span> (సారసరిత దేవత = కన్సారి). <span style="color:var(--brick);font-weight:700">అన్నపు పిండి</span> తో మట్టి రంగు గోడలపై వేస్తారు. వలయం = సూర్యుడు+చంద్రుడు; త్రిభుజం = కొండలు+చెట్లు; చతురస్రం = పవిత్ర స్థలం.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.5 · Folk Paintings — Madhubani · Pattachitra · Kalamkari · Warli</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 12</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 13 — KALIGHAT + PATUA + THANGKA + MANJUSHA + EXAM ALERT ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2.5 · FOLK PAINTINGS — KALIGHAT · PATUA · THANGKA · MANJUSHA</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="folk-grid no-break">
+    <!-- KALIGHAT -->
+    <div class="folk-card">
+      <div class="fc-head">Kalighat Painting — కాళిఘాట్ చిత్రాలు
+        <span class="fc-loc">📍 West Bengal · Kalighat Kali Temple · 19th century</span>
+      </div>
+      <div class="fc-body">
+        Originated in <strong>19th century in West Bengal, India, in the vicinity of Kalighat Kali Temple, Calcutta</strong>. Depicted Hindu gods, god and other mythological characters; developed to reflect a <strong>variety of subjects, including many depictions of everyday life</strong>. Paintings on life of <strong>Chaitanya Mahaprabhu</strong> are also quite common. <strong>Contemporary events like crime</strong> were also the subject of many paintings. Artists chose to portray secular themes and personalities — played a role in Independence movement; painted historic characters like <strong>Rani Lakshmibai, and Duldul the famous horse of Imam Hussain of Karbala</strong>. Use of <strong>water colours on mill paper</strong>, with brushes made of calf and squirrel hair is characteristic of this school.
+        <span class="te">
+          19వ శతాబ్దంలో పశ్చిమ బెంగాల్‌లో <span style="color:var(--brick);font-weight:700">కాళిఘాట్ కాళీ దేవాలయం</span> సమీపంలో ఉద్భవించింది. హిందూ దేవతలు, దైనందిన జీవితం, <span style="color:var(--brick);font-weight:700">చైతన్య మహాప్రభు</span> జీవితం, సమకాలీన సంఘటనలు (నేరాలు కూడా) చిత్రించేవారు. స్వాతంత్ర్య ఉద్యమంలో <span style="color:var(--brick);font-weight:700">రాణీ లక్ష్మీబాయి</span> వంటి వ్యక్తులు చిత్రించారు. <span style="color:var(--brick);font-weight:700">మిల్ పేపర్‌పై నీటి రంగులు</span>; దూడ-ఉడుత జుట్టు బ్రష్.
+        </span>
+      </div>
+    </div>
+
+    <!-- PATUA ARTS -->
+    <div class="folk-card">
+      <div class="fc-head">Patua Arts — పటువా కళలు
+        <span class="fc-loc">📍 West Bengal · Midnapur · Bengali Art</span>
+      </div>
+      <div class="fc-body">
+        Patua art or Bengali art dates back over <strong>a thousand years</strong>. Began as a local custom — artists (patuas) would tell Mangal Kavyas, or auspicious stories about Gods and Goddesses. Paintings done on <strong>pats or scrolls</strong>; scroll painters (patuas) have been traveling to different towns to sing their stories in exchange for food or money for generations. Traditionally painted on fabric to tell religious stories; nowadays painted with <strong>poster paints on sewed-together sheets of paper</strong> to make political and social statements. Patuas largely from <strong>Midnapur district</strong>; chitrakars from state's north and <strong>South 24 Parganas and Birbhum districts</strong>.
+        <span class="te">
+          వెయ్యి సంవత్సరాల చరిత్ర. స్థానిక ఆచారంగా పటుయా చిత్రకారులు <span style="color:var(--brick);font-weight:700">మంగళ కావ్యాలు, దేవతా కథలు</span> చెప్తూ తిరిగేవారు. <span style="color:var(--brick);font-weight:700">చుట్టు స్క్రోల్‌లపై</span> చిత్రాలు; ఆహారం లేదా డబ్బు కోసం వివిధ పట్టణాలలో పాడేవారు. ఇప్పుడు అనుకూలిత కాగితాలపై రాజకీయ, సామాజిక ప్రకటనలు.
+        </span>
+      </div>
+    </div>
+
+    <!-- THANGKA -->
+    <div class="folk-card">
+      <div class="fc-head">Thangka Paintings — థాంగ్కా చిత్రాలు
+        <span class="fc-loc">📍 Buddhist Monks · Cotton Canvas · Silk Brocade</span>
+      </div>
+      <div class="fc-body">
+        Originally adopted as a form of veneration, evoking <strong>Buddhism's ultimate ideals</strong>. Traditionally created by Buddhist monks and members of a specific ethnic community — expertise passed down through generations. Thangkas created using paints manufactured from <strong>natural vegetable or mineral colours on a cotton canvas basis (white backdrop)</strong>. Each colour utilized in the artwork has its own meaning. The picture is usually framed in <strong>colorful silk brocade</strong> after it is completed.
+        <span class="te">
+          బౌద్ధ విశ్వాసానికి నివాళిగా వేయబడిన చిత్రాలు. బౌద్ధ సన్యాసులు మరియు నిర్దిష్ట జాతి సమాజం వారు తయారు చేస్తారు — నైపుణ్యం తరతరాలుగా సంక్రమించింది. <span style="color:var(--brick);font-weight:700">తెల్లటి పత్తి వస్త్రంపై ప్రకృతి వృక్ష లేదా ఖనిజ రంగులు</span>. ప్రతి రంగుకు నిర్దిష్ట అర్థం ఉంది. పూర్తయిన తర్వాత <span style="color:var(--brick);font-weight:700">రంగుల పట్టు వస్త్రంలో</span> చట్రంలో పెడతారు.
+        </span>
+      </div>
+    </div>
+
+    <!-- MANJUSHA -->
+    <div class="folk-card">
+      <div class="fc-head">Manjusha Paintings — మంజూషా చిత్రాలు
+        <span class="fc-loc">📍 Bhagalpur, Bihar · పాము చిత్రాలు · జ్యూట్ కాగితం</span>
+      </div>
+      <div class="fc-body">
+        These paintings are produced in the <strong>Bihar region of Bhagalpur</strong>. <strong>Angika art</strong> is another name — with 'ang' referring to one of the Mahajan Pada. Also known as <strong>snake painting</strong> since snake patterns are constantly present. These paintings are done on <strong>jute and paper cartons</strong>.
+        <span class="te">
+          బిహార్‌లోని <span style="color:var(--brick);font-weight:700">భాగల్‌పూర్</span> ప్రాంతంలో తయారవుతాయి. <span style="color:var(--brick);font-weight:700">అంగిక కళ</span> అని కూడా పిలుస్తారు. <span style="color:var(--brick);font-weight:700">పాము చిత్రాలు</span> అని కూడా ప్రసిద్ధి — పాము నమూనాలు నిరంతరం ఉంటాయి. <span style="color:var(--brick);font-weight:700">జ్యూట్ మరియు కాగితం కార్టన్లపై</span> వేస్తారు.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Complete Folk Paintings Exam Focus — తప్పక గుర్తుపెట్టుకోండి</div>
+    <ul>
+      <li><strong>Madhubani/Mithila</strong> → Bihar → Walls of mud houses → Weddings → Bamboo twigs → Kohbar ghar (inner room) → Floral designs, no empty spaces</li>
+      <li><strong>Pattachitra</strong> → Odisha → Cloth → Jagannath cult → Puri → Floral border mandatory → Natural colours</li>
+      <li><strong>Kalamkari</strong> → Andhra Pradesh → Natural dyes → 23 steps → Bamboo/date palm stick pen → 2 styles: <strong>Srikalahasti &amp; Machilipatnam</strong> → Kamaladevi Chattopadhyay popularised</li>
+      <li><strong>Warli</strong> → North Maharashtra → Rice flour → Earth walls → Married women → Chowk → Palaghat (corn goddess) → Circle=Sun+Moon, Triangle=Mountains+Trees</li>
+      <li><strong>Kalighat</strong> → West Bengal → 19th century → Kalighat Kali Temple → Mill paper + water colour → Calf/squirrel hair brush → Chaitanya Mahaprabhu scenes</li>
+      <li><strong>Patua/Bengali art</strong> → West Bengal → 1000 years old → Scrolls → Midnapur → Mangal Kavyas</li>
+      <li><strong>Thangka</strong> → Buddhist monks → Cotton canvas → Natural/mineral colours → Silk brocade frame</li>
+      <li><strong>Manjusha</strong> → Bhagalpur, Bihar → Angika art → <strong>Snake paintings</strong> → Jute and paper cartons</li>
+    </ul>
+    <div class="ea-te">📌 <strong>ట్రిక్ ప్రశ్నలు:</strong> కలంకారీకి GI Tag ఇవ్వలేదు — బసోహ్లీకి ఇచ్చారు! | పట్టచిత్రలో అంచు తప్పనిసరి — ఏ అంచు? (పుష్ప అంచు). మంజూషాకు మరొక పేరు ఏమిటి? (అంగిక కళ, పాము చిత్రాలు). వార్లీ చిత్రాలలో వలయం దేన్ని సూచిస్తుంది? (సూర్యుడు+చంద్రుడు).</div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2.5 · Folk Paintings — Kalighat · Patua · Thangka · Manjusha</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 13</span>
+  </div>
+</div>
+
+
+<!-- ████ PAGE 14 — CHAPTER 2 QUICK REVISION SHEET ████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 2 · COMPLETE QUICK REVISION SHEET — INDIAN PAINTING</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">QR</div>
+    <h2>Chapter 2 — Quick Revision at a Glance <span class="te">— సత్వర పునశ్చరణ పట్టిక</span></h2>
+  </div>
+
+  <table class="qr-table no-break">
+    <caption>Chapter 2 Complete Quick Revision — Indian Painting</caption>
+    <thead>
+      <tr>
+        <th style="width:13%">Topic <span class="te-th">అంశం</span></th>
+        <th style="width:20%">Name / School <span class="te-th">పేరు/పాఠశాల</span></th>
+        <th style="width:14%">Location <span class="te-th">స్థలం</span></th>
+        <th style="width:15%">Period / Patron <span class="te-th">కాలం/పోషకులు</span></th>
+        <th>Special Fact <span class="te-th">ముఖ్య విషయం</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="cat-col">Pre-Historic <span class="te">ప్రాగైతిహాసిక</span></td>
+        <td><strong>Bhimbetka</strong><span class="te-td">భీంబెట్కా</span></td>
+        <td>MP<span class="te-td">మధ్యప్రదేశ్</span></td>
+        <td>30,000 yrs; UNESCO 2003<span class="te-td"></span></td>
+        <td>243 rock shelters; Oldest rock art in India; First discovered by Archibold Carlleyle (1867–68)<span class="te-td">అత్యంత పురాతన రాతి కళ; కార్ల్లీల్ కనుగొన్నాడు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Mural <span class="te">గోడ చిత్రాలు</span></td>
+        <td><strong>Ajanta</strong><span class="te-td">అజంతా</span></td>
+        <td>Maharashtra<span class="te-td">మహారాష్ట్ర</span></td>
+        <td>1st BCE–5th CE; Buddhist<span class="te-td">బౌద్ధ మాత్రమే</span></td>
+        <td>Fresco-secco; Cave 1=Padmapani; Cave 16=Dying Princess; Cave IX,X = earliest<span class="te-td">గుహ 1 = పద్మపాణి; గుహ 16 = మరణిస్తున్న రాకుమారి</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Mural <span class="te">గోడ చిత్రాలు</span></td>
+        <td><strong>Badami</strong><span class="te-td">బాదామి</span></td>
+        <td>Karnataka<span class="te-td">కర్ణాటక</span></td>
+        <td>543–598 CE; Chalukyas<span class="te-td">చాళుక్యులు</span></td>
+        <td>Earliest Brahmanical paintings; Kirtivarman palace scene; Cave 3 = 6th C AD<span class="te-td">అత్యంత పురాతన బ్రాహ్మణ మత చిత్రాలు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Mural <span class="te">గోడ చిత్రాలు</span></td>
+        <td><strong>Lepakshi</strong><span class="te-td">లేపాక్షి</span></td>
+        <td>Andhra Pradesh<span class="te-td">ఆంధ్రప్రదేశ్</span></td>
+        <td>16th C; Vijayanagara<span class="te-td">విజయనగరం</span></td>
+        <td>Virabhadra temple; Virupanna Nayaka; Most significant surviving Vijayanagara murals<span class="te-td">విజయనగర సామ్రాజ్యపు ముఖ్య మిగిలి ఉన్న గోడ చిత్రాలు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Miniature <span class="te">లఘు చిత్రాలు</span></td>
+        <td><strong>Pala School</strong><span class="te-td">పాల పాఠశాల</span></td>
+        <td>Eastern India<span class="te-td">తూర్పు భారతం</span></td>
+        <td>11th–12th C; Pala kings<span class="te-td">పాల రాజులు</span></td>
+        <td>Buddhist texts; Palm leaf; Naturalistic; Sinuous lines; Astasahasrika Prajnaparamita (Oxford)<span class="te-td">తాళపత్రాలపై బౌద్ధ గ్రంథ చిత్రాలు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Miniature <span class="te">లఘు చిత్రాలు</span></td>
+        <td><strong>Mughal — Jahangir</strong><span class="te-td">జహంగీర్</span></td>
+        <td>Delhi<span class="te-td">ఢిల్లీ</span></td>
+        <td>1605–1627; Naturalist<span class="te-td">ప్రకృతి ప్రేమి</span></td>
+        <td>Pinnacle of Mughal painting; Flora &amp; Fauna; Ustad Mansoor; Ayar-i-Danish; Decorated margins<span class="te-td">మొఘల్ చిత్రకళ ఉచ్ఛస్థితి; ఉస్తాద్ మన్సూర్</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Miniature <span class="te">లఘు చిత్రాలు</span></td>
+        <td><strong>Tanjore</strong><span class="te-td">తంజావూర్</span></td>
+        <td>Tamil Nadu<span class="te-td">తమిళనాడు</span></td>
+        <td>18th C; Marathas; Sarfoji<span class="te-td">మరాఠాలు</span></td>
+        <td>Glass+Board; Gold leaf; Gemstone ornaments; Krishna paintings<span class="te-td">అద్దం+బోర్డు; బంగారు రేకు; రత్నాలు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Miniature <span class="te">లఘు చిత్రాలు</span></td>
+        <td><strong>Mysore</strong><span class="te-td">మైసూర్</span></td>
+        <td>Karnataka<span class="te-td">కర్ణాటక</span></td>
+        <td>Mysore rulers<span class="te-td">మైసూర్ పాలకులు</span></td>
+        <td>Gesso paste (Zinc oxide+Arabic gum); Hindu Gods; Gloss backdrop<span class="te-td">గెస్సో పేస్ట్; మెరుపు నేపథ్యం</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Rajasthani <span class="te">రాజస్థాన్</span></td>
+        <td><strong>Mewar</strong><span class="te-td">మేవాడ్</span></td>
+        <td>Rajasthan<span class="te-td">రాజస్థాన్</span></td>
+        <td>17th–18th C; Hindu princip.<span class="te-td"></span></td>
+        <td>Ragamala 1605 CE; Chawand; by Misardi; bright colours; direct emotional appeal<span class="te-td">1605 CE రాగమాల; చావాండ్; మిసర్దీ</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Rajasthani <span class="te">రాజస్థాన్</span></td>
+        <td><strong>Kishangarh</strong><span class="te-td">కిషన్‌గఢ్</span></td>
+        <td>Rajasthan<span class="te-td">రాజస్థాన్</span></td>
+        <td>Sawant Singh<span class="te-td">సావంత్ సింగ్</span></td>
+        <td>Bani Thani (lover); Radha-Krishna; Romantic + Bhakti<span class="te-td">బణి థణి; రాధా-కృష్ణ</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Rajasthani <span class="te">రాజస్థాన్</span></td>
+        <td><strong>Amber-Jaipur</strong><span class="te-td">అంబర్-జైపూర్</span></td>
+        <td>Rajasthan<span class="te-td">రాజస్థాన్</span></td>
+        <td>Sawai Pratap Singh<span class="te-td">సవాయ్ ప్రతాప్ సింగ్</span></td>
+        <td>Dhundar school; Bairat wall paintings; Suratkhana dept.; Radha Krishna Rasikapriya<span class="te-td">ధుందార్; బైరాత్ గోడ చిత్రాలు; సూరత్‌ఖానా</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Pahari <span class="te">పహారీ</span></td>
+        <td><strong>Basohli</strong><span class="te-td">బసోహ్లీ</span></td>
+        <td>Kathua, J&amp;K<span class="te-td">కాతుహ్వా, J&amp;K</span></td>
+        <td>Rajput princes<span class="te-td">రాజ్‌పుత్ రాజులు</span></td>
+        <td>Geometric designs; Brilliant colours; Shiny enamel; Devi series; Rasamanjari; <strong>GI Tag</strong><span class="te-td">రేఖాగణిత నమూనాలు; GI Tag</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Pahari <span class="te">పహారీ</span></td>
+        <td><strong>Kangra</strong><span class="te-td">కాంగ్రా</span></td>
+        <td>Himachal Pradesh<span class="te-td">హిమాచల్</span></td>
+        <td">Around 1800; Guler-Kangra<span class="te-td">1800 ప్రాంతం</span></td>
+        <td>Naturalised; Indian women's grace; Radha-Krishna; Landscapes; animated multiple figures<span class="te-td">సహజీకరించిన; స్త్రీల సొగసు; రాధా-కృష్ణ</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Modern <span class="te">ఆధునిక</span></td>
+        <td><strong>Raja Ravi Varma</strong><span class="te-td">రాజా రవి వర్మ</span></td>
+        <td>Kerala<span class="te-td">కేరళ</span></td>
+        <td">19th–20th C<span class="te-td"></span></td>
+        <td>Founder contemporary school; "Raphael of East"; S.India+Western; Ravana Kidnapping Sita<span class="te-td">ఆధునిక పాఠశాల వ్యవస్థాపకుడు; తూర్పు దేశపు రఫేల్</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Modern <span class="te">ఆధునిక</span></td>
+        <td><strong>Bengal School</strong><span class="te-td">బెంగాల్ పాఠశాల</span></td>
+        <td>Bengal<span class="te-td">బెంగాల్</span></td>
+        <td">Abhanindranath Tagore<span class="te-td">అభనీంద్రనాథ్ ఠాగూర్</span></td>
+        <td>Muted colours; Swadeshi values; Nandlal Bose (Gandhi sketch); MF Hussain<span class="te-td">మృదువైన రంగులు; స్వదేశీ విలువలు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Folk <span class="te">జానపద</span></td>
+        <td><strong>Madhubani</strong><span class="te-td">మధుబని</span></td>
+        <td>Bihar (Mithila)<span class="te-td">బిహార్</span></td>
+        <td>Ceremonial/Weddings<span class="te-td">వివాహ సంద‌ర్భాలు</span></td>
+        <td>Mud walls; Bamboo twigs; No empty spaces; Kohbar ghar; Sita's wedding origin<span class="te-td">మట్టి గోడలు; వెదురు కొమ్మ; ఖాళీ స్థలం లేదు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Folk <span class="te">జానపద</span></td>
+        <td><strong>Pattachitra</strong><span class="te-td">పట్టచిత్ర</span></td>
+        <td>Odisha<span class="te-td">ఒడిశా</span></td>
+        <td>Jagannath cult; Puri<span class="te-td">జగన్నాథ్; పూరీ</span></td>
+        <td>Cloth; Floral border mandatory; Natural colours; Dasabatara Patti; Thia Badhia<span class="te-td">వస్త్రంపై; పుష్ప అంచు తప్పనిసరి</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Folk <span class="te">జానపద</span></td>
+        <td><strong>Kalamkari</strong><span class="te-td">కలంకారీ</span></td>
+        <td>Andhra Pradesh<span class="te-td">ఆంధ్రప్రదేశ్</span></td>
+        <td>23 steps; Natural dyes<span class="te-td">23 దశలు</span></td>
+        <td>Srikalahasti + Machilipatnam styles; Bamboo/date palm pen; Kamaladevi Chattopadhyay<span class="te-td">శ్రీకాళహస్తి + మచిలీపట్నం; కమలాదేవి</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Folk <span class="te">జానపద</span></td>
+        <td><strong>Warli</strong><span class="te-td">వార్లీ</span></td>
+        <td>N.Maharashtra<span class="te-td">ఉత్తర మహారాష్ట్ర</span></td>
+        <td">Married women; tribal<span class="te-td">వివాహిత మహిళలు</span></td>
+        <td>Rice flour; Earth walls; Chowk; Palaghat=Kansari; Circle=Sun+Moon<span class="te-td">అన్నపు పిండి; చవ్క్; పాలఘాట్; వలయం=సూర్యచంద్రులు</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Folk <span class="te">జానపద</span></td>
+        <td><strong>Kalighat</strong><span class="te-td">కాళిఘాట్</span></td>
+        <td>West Bengal<span class="te-td">పశ్చిమ బెంగాల్</span></td>
+        <td">19th C; Kalighat temple<span class="te-td">19వ శతాబ్దం</span></td>
+        <td>Mill paper+water colour; Calf+squirrel hair brush; Chaitanya Mahaprabhu; everyday life<span class="te-td">మిల్ పేపర్; దైనందిన జీవితం</span></td>
+      </tr>
+      <tr>
+        <td class="cat-col">Folk <span class="te">జానపద</span></td>
+        <td><strong>Manjusha</strong><span class="te-td">మంజూషా</span></td>
+        <td>Bhagalpur, Bihar<span class="te-td">భాగల్‌పూర్, బిహార్</span></td>
+        <td">Angika art<span class="te-td">అంగిక కళ</span></td>
+        <td>Snake paintings; Snake patterns constantly present; Jute and paper cartons<span class="te-td">పాము చిత్రాలు; జ్యూట్+కాగితం కార్టన్లు</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="memory-box no-break">
+    <div class="mem-label">🎯 Chapter 2 Master Memory Formula — అన్నీ గుర్తుపెట్టుకోండి</div>
+    <div class="mnemonic">"Pre → Mural → Mini → Regional → Modern → Folk" = Complete Ch.2 Flow</div>
+    <div class="mnem-exp">
+      <strong>Pre</strong>-historic (Bhimbetka) → <strong>Mural</strong> (Ajanta·Bagh·Ellora·Sittanavasal·Badami·Lepakshi) → <strong>Mini</strong>ature (Pala·Apabhramsa·Mughal·Tanjore·Mysore) → <strong>Regional</strong> (Rajasthani·Pahari) → <strong>Modern</strong> (Company·Bazaar·Ravi Varma·Bengal·Cubist) → <strong>Folk</strong> (Madhubani·Pattachitra·Kalamkari·Warli·Kalighat·Patua·Thangka·Manjusha)
+    </div>
+    <div class="mem-te">
+      <span class="kw">ప్రా→గో→లఘు→ప్రా→ఆధు→జాన</span> అని గుర్తుపెట్టుకోండి: ప్రాగైతిహాసిక → గోడ చిత్రాలు → లఘు చిత్రాలు → ప్రాంతీయ పాఠశాలలు → ఆధునికం → జానపదం. అత్యంత ముఖ్యమైన విషయాలు: భీంబెట్కా (UNESCO), అజంతా (Fresco-secco, Buddhist only), మొఘల్ (జహంగీర్ = ఉచ్ఛస్థితి), కిషన్‌గఢ్ = బణి థణి, కలంకారీ = 23 దశలు, పట్టచిత్ర = పుష్ప అంచు తప్పనిసరి, మంజూషా = పాము చిత్రాలు.
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 2 · Complete Quick Revision — Indian Painting · Part 2 Complete</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 14</span>
+  </div>
+</div>
+
+</body>
+</html>

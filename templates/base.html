@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>{% block title %}MCQ Exam App{% endblock %}</title>
+
+<!-- PWA -->
+<link rel="manifest" href="/static/manifest.json">
+<meta name="theme-color" content="#1a237e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MCQ Exam">
+<link rel="apple-touch-icon" href="/static/icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png">
+<style>
+:root {
+  --primary: #1a237e;
+  --primary-light: #3949ab;
+  --accent: #ff6f00;
+  --accent-light: #ffa000;
+  --success: #2e7d32;
+  --danger: #c62828;
+  --warning: #f57f17;
+  --bg: #f0f2f5;
+  --card: #ffffff;
+  --text: #1a1a2e;
+  --text-muted: #546e7a;
+  --border: #e0e4ef;
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.10);
+  --shadow-lg: 0 6px 30px rgba(0,0,0,0.15);
+}
+
+/* DARK MODE */
+[data-theme="dark"] {
+  --bg: #0f1117;
+  --card: #1e2130;
+  --text: #e8eaf6;
+  --text-muted: #90a4ae;
+  --border: #2a2d3e;
+  --shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+[data-theme="dark"] body { background: var(--bg); color: var(--text); }
+[data-theme="dark"] .card { background: var(--card); border-color: var(--border); }
+[data-theme="dark"] .form-control { background: #2a2d3e; color: var(--text); border-color: var(--border); }
+[data-theme="dark"] .form-control::placeholder { color: var(--text-muted); }
+[data-theme="dark"] select.form-control option { background: #1e2130; }
+[data-theme="dark"] .badge-folder { background: #1a2040; color: #90caf9; }
+[data-theme="dark"] .badge-topic { background: #2a1a40; color: #ce93d8; }
+[data-theme="dark"] .btn-outline { border-color: #90caf9; color: #90caf9; }
+[data-theme="dark"] .btn-outline:hover { background: #1a2040; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ── HEADER ── */
+.app-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.app-brand { flex-shrink: 0; }
+.brand-title { font-size: 17px; font-weight: 800; line-height: 1.1; }
+.brand-sub   { font-size: 10px; opacity: 0.75; margin-top: 1px; letter-spacing: 0.2px; }
+
+/* ── HEADER NAV ── */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  flex: 1;
+  justify-content: flex-end;
+}
+.header-nav::-webkit-scrollbar { display: none; }
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  padding: 5px 7px;
+  border-radius: 8px;
+  transition: background 0.18s, color 0.18s;
+  min-width: 42px;
+  flex-shrink: 0;
+}
+.nav-item:hover,
+.nav-item:focus-visible {
+  color: #fff;
+  background: rgba(255,255,255,0.16);
+  outline: none;
+}
+.nav-item svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.nav-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+  background: rgba(255,255,255,0.14);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 4px;
+  transition: background 0.2s;
+  padding: 0;
+}
+.dark-toggle:hover { background: rgba(255,255,255,0.26); }
+.dark-toggle svg   { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+/* Icon switching via CSS — no JS needed */
+.dark-toggle .icon-sun  { display: none; }
+.dark-toggle .icon-moon { display: block; }
+[data-theme="dark"] .dark-toggle .icon-sun  { display: block; }
+[data-theme="dark"] .dark-toggle .icon-moon { display: none; }
+
+/* MAIN LAYOUT */
+.main { padding: 16px; max-width: 680px; margin: 0 auto; }
+
+/* CARDS */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 22px;
+  border-radius: 50px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  min-height: 46px;
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-light); transform: translateY(-1px); }
+.btn-accent { background: var(--accent); color: white; }
+.btn-accent:hover { background: var(--accent-light); transform: translateY(-1px); }
+.btn-success { background: var(--success); color: white; }
+.btn-danger { background: var(--danger); color: white; }
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+.btn-outline:hover { background: var(--primary); color: white; }
+.btn-block { width: 100%; }
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* STAT BOXES */
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.stat-box {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+}
+.stat-box .val { font-size: 26px; font-weight: 800; line-height: 1; }
+.stat-box .lbl { font-size: 11px; opacity: 0.85; margin-top: 4px; }
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.badge-e { background: #e8f5e9; color: #2e7d32; }
+.badge-m { background: #fff3e0; color: #e65100; }
+.badge-t { background: #fce4ec; color: #ad1457; }
+.badge-folder { background: #e8eaf6; color: #3949ab; }
+.badge-topic { background: #f3e5f5; color: #6a1b9a; }
+
+/* FORM */
+.form-group { margin-bottom: 14px; }
+.form-label { display: block; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; }
+.form-control {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--text);
+  background: white;
+  transition: border 0.2s;
+  -webkit-appearance: none;
+}
+.form-control:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(26,35,126,0.1); }
+select.form-control { padding-right: 30px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23546e7a' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+input[type=number].form-control::-webkit-inner-spin-button { opacity: 1; }
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #323232;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  z-index: 9999;
+  transition: transform 0.3s;
+  max-width: 90vw;
+  text-align: center;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+.toast.success { background: var(--success); }
+.toast.error { background: var(--danger); }
+
+/* PROGRESS BAR */
+.progress { background: #e0e4ef; border-radius: 50px; height: 6px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 50px; background: var(--accent); transition: width 0.3s; }
+
+/* DIVIDER */
+.divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+
+/* RESPONSIVE */
+@media(max-width: 480px) {
+  .main { padding: 12px; }
+  .card { padding: 16px; }
+  .stat-box .val { font-size: 22px; }
+}
+
+/* ── Global TTS Mini-Bar ── */
+.g-minibar {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(135deg, #1a237e, #3949ab);
+  color: #fff;
+  z-index: 950;
+  padding: 0 12px 10px;
+  box-shadow: 0 -3px 16px rgba(0,0,0,0.22);
+  border-top: 2px solid rgba(255,255,255,0.18);
+  transition: transform 0.28s ease;
+}
+.g-minibar.active { display: block; }
+
+/* Collapsible handle — drag pill at the very top */
+.gm-handle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 0 5px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.gm-handle-bar {
+  width: 34px;
+  height: 3px;
+  background: rgba(255,255,255,0.38);
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+.gm-handle:hover .gm-handle-bar { background: rgba(255,255,255,0.7); }
+
+/* Collapsed state: show only the drag handle */
+.g-minibar.collapsed .gm-info-row,
+.g-minibar.collapsed .gm-row { display: none; }
+.g-minibar.collapsed { padding-bottom: 4px; }
+
+.gm-info { font-size: 12px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gm-sub  { font-size: 10px; opacity: 0.7; margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gm-row  { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.gm-btn  { border: none; border-radius: 16px; padding: 5px 11px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; }
+.gm-play { background: #4caf50; color: white; }
+.gm-pause{ background: #ff9800; color: white; }
+.gm-stop { background: #f44336; color: white; }
+.gm-goto { background: rgba(255,255,255,0.2); color: white; border: 1.5px solid rgba(255,255,255,0.4); }
+.gm-skip  { background: rgba(255,255,255,0.12); color: white; border: 1.5px solid rgba(255,255,255,0.3); }
+.gm-close { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); border: none;
+            border-radius: 50%; width: 26px; height: 26px; font-size: 13px; line-height: 1;
+            cursor: pointer; margin-left: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.gm-close:hover { background: rgba(255,255,255,0.22); color: white; }
+.gm-time { font-size: 11px; opacity: 0.7; margin-left: auto; white-space: nowrap; }
+[data-theme="dark"] .g-minibar { background: linear-gradient(135deg, #0f1540, #1a237e); }
+</style>
+</head>
+<body>
+
+<header class="app-header" role="banner">
+  <div class="app-brand">
+    <div class="brand-title">📚 MCQ Exam</div>
+    <div class="brand-sub">APPSC Practice Platform</div>
+  </div>
+
+  <nav class="header-nav" role="navigation" aria-label="Main navigation">
+
+    <button id="installAppBtn" class="nav-item install-btn" onclick="triggerInstall()" aria-label="Install app on your phone" style="display:none;background:#ff6f00;color:#fff;border:none;cursor:pointer;font:inherit;">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span class="nav-label">Install</span>
+    </button>
+
+    <a href="/admin" class="nav-item" aria-label="Admin Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      <span class="nav-label">Admin</span>
+    </a>
+
+    <button id="darkToggle" class="dark-toggle" onclick="toggleDark()" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <!-- Sun icon (shown in dark mode) -->
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <!-- Moon icon (shown in light mode) -->
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+
+  </nav>
+</header>
+
+<main role="main">
+{% block content %}{% endblock %}
+</main>
+
+<!-- ── Global TTS Mini-Bar (persists across all pages) ── -->
+<div class="g-minibar" id="gMiniBar" role="region" aria-label="Audio player">
+  <!-- Drag handle — tap to collapse/expand -->
+  <div class="gm-handle" onclick="toggleMinibar()" title="Collapse / expand player" aria-label="Toggle audio player">
+    <div class="gm-handle-bar"></div>
+  </div>
+
+  <!-- Info + close button -->
+  <div class="gm-info-row" style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:4px;">
+    <div style="min-width:0;flex:1;">
+      <div class="gm-info" id="gmInfo">🔊</div>
+      <div class="gm-sub"  id="gmSub"></div>
+    </div>
+    <button class="gm-close" onclick="gm.close()" title="Close player" aria-label="Close audio player">✕</button>
+  </div>
+
+  <!-- Controls -->
+  <div class="gm-row">
+    <button class="gm-btn gm-skip"  id="gmBack"  onclick="gm.back()"  aria-label="Back 10 seconds">⏪ 10s</button>
+    <button class="gm-btn gm-play"  id="gmPlay"  onclick="gm.play()"  aria-label="Play">▶ Play</button>
+    <button class="gm-btn gm-pause" id="gmPause" onclick="gm.pause()" aria-label="Pause" style="display:none">⏸ Pause</button>
+    <button class="gm-btn gm-skip"  id="gmFwd"   onclick="gm.fwd()"   aria-label="Forward 10 seconds">⏩ 10s</button>
+    <button class="gm-btn gm-stop"  onclick="gm.stop()"               aria-label="Stop">⏹ Stop</button>
+    <button class="gm-btn gm-goto"  onclick="gm.goto()"               aria-label="Go to current section">📍 Go</button>
+    <span class="gm-time" id="gmTime" aria-live="polite"></span>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+function showToast(msg, type='') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + type;
+  setTimeout(() => { t.className = 'toast'; }, 3000);
+}
+
+// DARK MODE
+function applyDark(on) {
+  document.documentElement.setAttribute('data-theme', on ? 'dark' : '');
+  // Icon switching is handled by CSS [data-theme="dark"] rules — no textContent change needed
+}
+function toggleDark() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const newVal = !isDark;
+  localStorage.setItem('mcq_dark', newVal ? '1' : '0');
+  applyDark(newVal);
+}
+// Apply on load
+applyDark(localStorage.getItem('mcq_dark') === '1');
+
+// Minibar collapse toggle
+function toggleMinibar() {
+  const bar = document.getElementById('gMiniBar');
+  if (bar) bar.classList.toggle('collapsed');
+}
+</script>
+{% block scripts %}{% endblock %}
+<script>
+// ── Global TTS Mini-Bar controller ──
+const TTS_SS_KEY = 'tts_now';
+const gm = {
+  _t: null,
+  _dismissed: false,   // user clicked ✕ — hide bar until new audio starts
+
+  init() {
+    this._dismissed = false;
+    this._load();
+    this._t = setInterval(() => this._sync(), 600);
+  },
+
+  _load() {
+    try {
+      const s = sessionStorage.getItem(TTS_SS_KEY);
+      if (!s) return;
+      const d = JSON.parse(s);
+      this._render(d, false);
+    } catch(e) {}
+  },
+
+  _render(d, playing) {
+    if (this._dismissed && !playing) return;   // stay hidden after close unless actively playing
+    const bar = document.getElementById('gMiniBar');
+    if (!bar || !d) return;
+    const info = document.getElementById('gmInfo');
+    const sub  = document.getElementById('gmSub');
+    if (info) info.textContent = '\uD83D\uDD0A Ch' + d.chNum + ' \xB7 ' + (d.secTitle || '');
+    if (sub)  sub.textContent  = d.chTitle || '';
+    bar.classList.add('active');
+    this._setPlayPause(playing);
+  },
+
+  _setPlayPause(playing) {
+    const p  = document.getElementById('gmPlay');
+    const pa = document.getElementById('gmPause');
+    const bk = document.getElementById('gmBack');
+    const fw = document.getElementById('gmFwd');
+    if (p)  p.style.display  = playing ? 'none' : '';
+    if (pa) pa.style.display = playing ? '' : 'none';
+    if (bk) bk.style.display = playing ? '' : 'none';
+    if (fw) fw.style.display = playing ? '' : 'none';
+  },
+
+  _sync() {
+    const tc  = window.TTS_CONTROLS;
+    const raw = sessionStorage.getItem(TTS_SS_KEY);
+
+    // Use URL to detect chapter page (reliable even after AJAX navigation)
+    const onChapterPage = /\/notes\/[^\/]+\/[^\/]+\/\d+/.test(window.location.pathname);
+
+    // On the chapter page — n-player shows all controls, hide global mini-bar
+    if (onChapterPage) {
+      const bar = document.getElementById('gMiniBar');
+      if (bar) bar.classList.remove('active');
+      return;
+    }
+
+    // Nothing to show — no TTS state at all
+    if (!tc && !raw) {
+      const bar = document.getElementById('gMiniBar');
+      if (bar) bar.classList.remove('active');
+      return;
+    }
+
+    if (this._dismissed) return;
+
+    // Determine actual playing state.
+    // tc.state().playing == speaking (true even when paused), so must also check !paused.
+    const st = tc ? tc.state() : null;
+    const actuallyPlaying = st
+      ? (st.playing && !st.paused)
+      : (typeof speechSynthesis !== 'undefined' && speechSynthesis.speaking && !speechSynthesis.paused);
+
+    // Build display data
+    let d;
+    if (st) {
+      d = { chNum: st.chNum, chTitle: st.chTitle, secTitle: st.secTitle };
+    } else {
+      try { d = JSON.parse(raw); } catch(e) { return; }
+    }
+
+    this._render(d, actuallyPlaying);
+
+    const t = document.getElementById('gmTime');
+    if (t) {
+      if (actuallyPlaying) {
+        t.textContent = (st ? st.timeStr : '') || '\u25B6 Playing';
+      } else {
+        t.textContent = '\u23F8 Paused \u2014 tap \u25B6 to resume';
+      }
+    }
+  },
+
+  play() {
+    const tc = window.TTS_CONTROLS;
+    this._dismissed = false;
+    if (tc) {
+      const st = tc.state();
+      if (st.playing || st.paused) { tc.play(); return; }
+      try {
+        const d = JSON.parse(sessionStorage.getItem(TTS_SS_KEY) || '{}');
+        if (typeof d.secIdx === 'number' && d.secIdx >= 0 && tc.playSection) {
+          tc.playSection(d.secIdx); return;
+        }
+      } catch(e) {}
+      tc.play(); return;
+    }
+    // AJAX scenario: no TTS_CONTROLS but speech is paused in browser
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.paused) {
+      try { speechSynthesis.resume(); return; } catch(e) {}
+    }
+    // Full-page navigation away — go back to chapter with autoplay
+    try {
+      const d = JSON.parse(sessionStorage.getItem(TTS_SS_KEY) || '{}');
+      if (d.url) window.location.href = d.url + '?autoplay=1';
+    } catch(e) {}
+  },
+
+  pause() {
+    if (window.TTS_CONTROLS) { window.TTS_CONTROLS.pause(); return; }
+    // AJAX scenario: TTS_CONTROLS gone but speechSynthesis still running
+    try { speechSynthesis.pause(); } catch(e) {}
+    const t = document.getElementById('gmTime');
+    if (t) t.textContent = '\u23F8 Paused \u2014 tap \u25B6 to resume';
+    this._setPlayPause(false);
+  },
+  back()  { if (window.TTS_CONTROLS) window.TTS_CONTROLS.skip(-10); },
+  fwd()   { if (window.TTS_CONTROLS) window.TTS_CONTROLS.skip(10);  },
+
+  stop() {
+    // Always cancel speech directly — covers AJAX scenario where TTS_CONTROLS
+    // still lives on window from the chapter page scripts (outside .main)
+    try { speechSynthesis.cancel(); } catch(e) {}
+    if (window.TTS_CONTROLS) window.TTS_CONTROLS.stop();
+    sessionStorage.removeItem(TTS_SS_KEY);
+    this._dismissed = false;
+    const bar = document.getElementById('gMiniBar');
+    if (bar) bar.classList.remove('active');
+  },
+
+  // ✕ — hide bar visually, audio keeps playing, bar reappears on next play
+  close() {
+    this._dismissed = true;
+    const bar = document.getElementById('gMiniBar');
+    if (bar) bar.classList.remove('active');
+  },
+
+  // 📍 Go — navigate to chapter AND scroll to the specific section being played
+  goto() {
+    try {
+      const d = JSON.parse(sessionStorage.getItem(TTS_SS_KEY) || '{}');
+      if (!d.url) return;
+      this._dismissed = false;
+
+      // ── Already on the chapter page — just scroll ──
+      if (/\/notes\/[^\/]+\/[^\/]+\/\d+/.test(window.location.pathname)) {
+        if (typeof d.secIdx === 'number') {
+          const el = document.getElementById('card-' + d.secIdx);
+          if (el) { el.scrollIntoView({behavior:'smooth', block:'center'}); return; }
+        }
+        return;
+      }
+
+      // ── TTS_CONTROLS alive (AJAX scenario) — go back via AJAX, no page reload ──
+      if (window.TTS_CONTROLS) {
+        fetch(d.url, {credentials: 'same-origin'})
+          .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+          .then(html => {
+            const doc     = new DOMParser().parseFromString(html, 'text/html');
+            const newMain = doc.querySelector('.main');
+            const curMain = document.querySelector('.main');
+            if (newMain && curMain) {
+              curMain.replaceWith(newMain.cloneNode(true));
+              document.title = doc.title;
+              history.pushState({gmAjax: true, href: d.url}, doc.title, d.url);
+              // Restore n-player and FAB (were hidden when we left the chapter)
+              const np = document.querySelector('.n-player');
+              if (np) np.style.display = '';
+              const fb = document.getElementById('fabBtn');
+              if (fb) fb.style.display = '';
+              // Scroll to the playing section
+              if (typeof d.secIdx === 'number') {
+                setTimeout(() => {
+                  const el = document.getElementById('card-' + d.secIdx);
+                  if (el) el.scrollIntoView({behavior:'smooth', block:'center'});
+                }, 300);
+              }
+            }
+          })
+          .catch(() => {
+            // Fallback: full navigation
+            try { speechSynthesis.cancel(); } catch(e) {}
+            window.location.href = d.url + '?autoplay=1';
+          });
+        return;
+      }
+
+      // ── Full page navigation (TTS_CONTROLS gone) ──
+      const hash = typeof d.secIdx === 'number' ? '#card-' + d.secIdx : '';
+      window.location.href = d.url + '?autoplay=1' + hash;
+    } catch(e) {}
+  }
+};
+
+// ── AJAX Navigation: keep audio alive when browsing notes hierarchy ──
+// When audio is playing, intercept clicks on /notes/... links (except chapter pages)
+// and swap page content without a full reload — so TTS keeps running.
+document.addEventListener('click', function(e) {
+  if (!window.TTS_CONTROLS) return;
+  const st = window.TTS_CONTROLS.state();
+  if (!st.playing && !st.paused) return;   // only when audio is active
+
+  const a = e.target.closest('a[href]');
+  if (!a) return;
+  const href = a.getAttribute('href') || '';
+
+  // Only intercept /notes/... navigation links
+  if (!href.startsWith('/notes')) return;
+  // Let chapter page links do a full navigation (they have complex JS)
+  if (/\/notes\/[^\/]+\/[^\/]+\/\d+/.test(href)) return;
+  // Same page — do nothing
+  if (href === window.location.pathname) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+
+  fetch(href, {credentials: 'same-origin'})
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(html => {
+      const doc     = new DOMParser().parseFromString(html, 'text/html');
+      const newMain = doc.querySelector('.main');
+      const curMain = document.querySelector('.main');
+      if (newMain && curMain) {
+        curMain.replaceWith(newMain.cloneNode(true));
+        document.title = doc.title;
+        history.pushState({gmAjax: true, href}, doc.title, href);
+
+        // n-player and FAB button live OUTSIDE .main in the chapter template,
+        // so they survive .main replacement.  HIDE them (don't remove — the
+        // chapter scripts still update those DOM nodes and would crash otherwise).
+        // The global mini-bar takes over showing controls on non-chapter pages.
+        const nplayer = document.querySelector('.n-player');
+        if (nplayer) nplayer.style.display = 'none';
+        const fab = document.getElementById('fabBtn');
+        if (fab) fab.style.display = 'none';
+      }
+    })
+    .catch(() => { window.location.href = href; });   // fallback to normal nav on error
+}, true);   // capture phase so we get the click before other handlers
+
+// Handle browser back/forward for AJAX-navigated pages
+window.addEventListener('popstate', function(e) {
+  if (e.state && e.state.gmAjax) {
+    fetch(e.state.href, {credentials: 'same-origin'})
+      .then(r => r.text())
+      .then(html => {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const newMain = doc.querySelector('.main');
+        const curMain = document.querySelector('.main');
+        if (newMain && curMain) {
+          curMain.replaceWith(newMain.cloneNode(true));
+          document.title = doc.title;
+          const nplayer = document.querySelector('.n-player');
+          if (nplayer) nplayer.style.display = 'none';
+          const fab = document.getElementById('fabBtn');
+          if (fab) fab.style.display = 'none';
+        }
+      })
+      .catch(() => window.location.reload());
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => gm.init());
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/static/sw.js').then(reg => {
+    // When a new SW is installed and waiting, tell it to take over and reload the page
+    function listenForWaiting(reg) {
+      if (reg.waiting) {
+        reg.waiting.postMessage({type: 'SKIP_WAITING'});
+        return;
+      }
+      reg.addEventListener('updatefound', () => {
+        const sw = reg.installing;
+        if (!sw) return;
+        sw.addEventListener('statechange', () => {
+          if (sw.state === 'installed' && navigator.serviceWorker.controller) {
+            sw.postMessage({type: 'SKIP_WAITING'});
+          }
+        });
+      });
+    }
+    listenForWaiting(reg);
+    // Force reload exactly once when the controlling SW changes (after SKIP_WAITING)
+    let _refreshed = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (_refreshed) return;
+      _refreshed = true;
+      window.location.reload();
+    });
+    // Also poll for SW updates every 60 seconds while the app is open
+    setInterval(() => { reg.update().catch(() => {}); }, 60000);
+  }).catch(() => {});
+}
+
+// ── PWA Install button ────────────────────────────────
+let _deferredInstallPrompt = null;
+const _installBtn = document.getElementById('installAppBtn');
+
+function _isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches
+      || window.navigator.standalone === true;
+}
+function _isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+
+// Hide the button if app already installed
+if (_isStandalone()) {
+  if (_installBtn) _installBtn.style.display = 'none';
+} else {
+  // Android Chrome / Edge fires this when site is installable
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    _deferredInstallPrompt = e;
+    if (_installBtn) _installBtn.style.display = '';
+  });
+
+  // iOS Safari can't programmatically install; show button anyway with iOS instructions
+  if (_isIOS() && _installBtn) {
+    _installBtn.style.display = '';
+  }
+
+  // After successful install, hide the button + clear the deferred prompt
+  window.addEventListener('appinstalled', () => {
+    _deferredInstallPrompt = null;
+    if (_installBtn) _installBtn.style.display = 'none';
+    if (typeof showToast === 'function') showToast('✅ App installed! Open it from your home screen.');
+  });
+}
+
+async function triggerInstall() {
+  // iOS Safari path — show instruction sheet
+  if (_isIOS()) {
+    _showIOSInstructions();
+    return;
+  }
+  // Android path — fire the deferred install prompt
+  if (_deferredInstallPrompt) {
+    _deferredInstallPrompt.prompt();
+    const choice = await _deferredInstallPrompt.userChoice;
+    _deferredInstallPrompt = null;
+    if (choice && choice.outcome === 'accepted') {
+      if (_installBtn) _installBtn.style.display = 'none';
+    }
+  } else {
+    // Browser hasn't yet fired beforeinstallprompt — give a hint
+    if (typeof showToast === 'function') {
+      showToast('Open Chrome menu (⋮) → "Install app" to install.', 'info');
+    } else {
+      alert('Open the Chrome menu and tap "Install app".');
+    }
+  }
+}
+
+function _showIOSInstructions() {
+  // Build an overlay if not present
+  let ov = document.getElementById('iosInstallOverlay');
+  if (!ov) {
+    ov = document.createElement('div');
+    ov.id = 'iosInstallOverlay';
+    ov.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:10000;display:flex;align-items:flex-end;justify-content:center;';
+    ov.onclick = (e) => { if (e.target === ov) ov.remove(); };
+    ov.innerHTML = `
+      <div style="background:var(--card,#fff);color:var(--text,#1a1a2e);width:100%;max-width:480px;border-radius:16px 16px 0 0;padding:18px 18px 24px;box-shadow:0 -8px 30px rgba(0,0,0,0.25);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <div style="font-weight:800;font-size:16px;">📱 Install on iPhone</div>
+          <button onclick="document.getElementById('iosInstallOverlay').remove()" style="background:none;border:none;font-size:24px;line-height:1;cursor:pointer;color:var(--text-muted,#546e7a);">×</button>
+        </div>
+        <div style="font-size:14px;line-height:1.7;color:var(--text,#1a1a2e);">
+          1. Tap the <strong>Share</strong> button <span style="display:inline-block;border:1.5px solid #1565c0;border-radius:5px;padding:0 5px;color:#1565c0;font-size:12px;">⬆️</span> at the bottom of Safari.<br>
+          2. Scroll down and tap <strong>"Add to Home Screen"</strong>.<br>
+          3. Tap <strong>Add</strong> in the top-right.<br>
+          The app will appear on your home screen with the MCQ icon.
+        </div>
+        <div style="margin-top:12px;font-size:12px;color:var(--text-muted,#546e7a);">
+          Note: this only works in <strong>Safari</strong>, not Chrome on iPhone.
+        </div>
+      </div>`;
+    document.body.appendChild(ov);
+  }
+}
+</script>
+</body>
+</html>
