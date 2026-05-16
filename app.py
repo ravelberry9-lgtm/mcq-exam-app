@@ -6362,9 +6362,10 @@ def _load_concept_cache():
         _concept_cache = {r[0]: r[1] for r in rows}
         print(f'[concept_cache] Loaded {len(_concept_cache)} concept notes.')
         need_awards = not _concept_cache
-        need_intl = any(t not in _concept_cache for t in _INTL_SENTINEL_TAGS)
+        # Always force-refresh intl concept notes to pick up updated 2025 index data
+        need_intl = True
         if need_awards or need_intl:
-            print(f'[concept_cache] Incomplete (awards={need_awards}, intl={need_intl}) — seeding...')
+            print(f'[concept_cache] Refreshing concept notes (awards={need_awards}, intl={need_intl})...')
             try:
                 import importlib
                 if need_awards:
@@ -6620,4 +6621,4 @@ if __name__ == '__main__':
         print(f"  📱 On your phone: http://{local_ip}:{port}")
         print(f"\n  Make sure phone is on same WiFi network!")
     print("="*55 + "\n")
-    app.run(host='0.0.0.0', port=port, debug=False)
+    app.run(host='
