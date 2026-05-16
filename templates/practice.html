@@ -683,20 +683,23 @@ function fetchNotes(qid) {
   cont.innerHTML = '<div class="notes-spin"></div>';
   if (lbl) lbl.textContent = 'Loading\u2026';
   fetch('/api/topic-notes/' + qid)
-    .then(r => r.json())
+    .then(r => { if (!r.ok) throw new Error('no-notes'); return r.json(); })
     .then(d => {
       if (d.found && d.text) {
         _notesCache[qid] = { text: d.text, label: d.label || '' };
         cont.textContent = d.text;
         if (lbl) lbl.textContent = d.label || '';
       } else {
-        cont.innerHTML = '<div class="notes-empty">No study notes available for this topic.</div>';
-        if (lbl) lbl.textContent = '';
+        _notesCache[qid] = null;
+        panel.classList.remove('show');
+        body.classList.remove('open');
+        if (tog) tog.classList.remove('open');
       }
     })
     .catch(() => {
-      cont.innerHTML = '<div class="notes-empty">Could not load notes.</div>';
-      if (lbl) lbl.textContent = '';
+      panel.classList.remove('show');
+      body.classList.remove('open');
+      if (tog) tog.classList.remove('open');
     });
 }
 function toggleNotes() {
