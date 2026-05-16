@@ -515,6 +515,26 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed International Current Affairs MCQs (86 Qs) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_intl = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE folder={ph} AND topic={ph}",
+            ("AP_HC", "International_Current_Affairs"))
+        intl_count = _fv(cur_intl.fetchone())
+        if intl_count < 80:
+            print(f"[startup] Intl Current Affairs MCQs: {intl_count}/86 — auto-seeding...")
+            import importlib
+            intl_mod = importlib.import_module('seed_intl_orgs_mcq')
+            intl_mod.seed()
+            print("[startup] International Current Affairs seed complete.")
+        else:
+            print(f"[startup] Intl Current Affairs: {intl_count} questions already loaded.")
+    except Exception as _intl_e:
+        print(f"[startup] Intl Current Affairs seed error: {_intl_e}")
+        try: conn.rollback()
+        except: pass
+
     conn.close()
 
 
