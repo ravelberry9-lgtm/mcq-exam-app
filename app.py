@@ -575,6 +575,46 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed Awards & Honours MCQs (80 Qs, IDs 23001–23080) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_aw = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (23001, 23080))
+        aw_count = _fv(cur_aw.fetchone())
+        if aw_count < 75:
+            print(f"[startup] Awards & Honours MCQs: {aw_count}/80 — auto-seeding...")
+            import importlib
+            aw_mod = importlib.import_module('seed_awards_mcq')
+            aw_mod.seed()
+            print("[startup] Awards & Honours seed complete.")
+        else:
+            print(f"[startup] Awards & Honours: {aw_count} questions already loaded.")
+    except Exception as _aw_e:
+        print(f"[startup] Awards & Honours seed error: {_aw_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed National Current Affairs Awards MCQs (IDs 24001–24012) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_na = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (24001, 24012))
+        na_count = _fv(cur_na.fetchone())
+        if na_count < 10:
+            print(f"[startup] National Awards MCQs: {na_count}/12 — auto-seeding...")
+            import importlib
+            aw_mod2 = importlib.import_module('seed_awards_mcq')
+            aw_mod2.seed()
+            print("[startup] National Awards seed complete.")
+        else:
+            print(f"[startup] National Awards: {na_count} questions already loaded.")
+    except Exception as _na_e:
+        print(f"[startup] National Awards seed error: {_na_e}")
+        try: conn.rollback()
+        except: pass
+
     conn.close()
 
 
