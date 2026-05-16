@@ -615,6 +615,86 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed Reports & Indices MCQs (IDs 28001–28080) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_rep = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (28001, 28080))
+        rep_count = _fv(cur_rep.fetchone())
+        if rep_count < 75:
+            print(f"[startup] Reports & Indices MCQs: {rep_count}/80 — auto-seeding...")
+            import importlib
+            rep_mod = importlib.import_module('seed_reports_mcq')
+            rep_mod.seed()
+            print("[startup] Reports & Indices seed complete.")
+        else:
+            print(f"[startup] Reports & Indices: {rep_count} questions already loaded.")
+    except Exception as _rep_e:
+        print(f"[startup] Reports & Indices seed error: {_rep_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Sports Current Affairs MCQs (IDs 27001–27080) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_spt = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (27001, 27080))
+        spt_count = _fv(cur_spt.fetchone())
+        if spt_count < 75:
+            print(f"[startup] Sports MCQs: {spt_count}/80 — auto-seeding...")
+            import importlib
+            spt_mod = importlib.import_module('seed_sports_mcq')
+            spt_mod.seed()
+            print("[startup] Sports seed complete.")
+        else:
+            print(f"[startup] Sports: {spt_count} questions already loaded.")
+    except Exception as _spt_e:
+        print(f"[startup] Sports seed error: {_spt_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Science & Technology MCQs (IDs 26001–26080) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_sci = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (26001, 26080))
+        sci_count = _fv(cur_sci.fetchone())
+        if sci_count < 75:
+            print(f"[startup] Science & Tech MCQs: {sci_count}/80 — auto-seeding...")
+            import importlib
+            sci_mod = importlib.import_module('seed_science_tech_mcq')
+            sci_mod.seed()
+            print("[startup] Science & Tech seed complete.")
+        else:
+            print(f"[startup] Science & Tech: {sci_count} questions already loaded.")
+    except Exception as _sci_e:
+        print(f"[startup] Science & Tech seed error: {_sci_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Environment & Climate MCQs (IDs 25001–25080) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_env = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (25001, 25080))
+        env_count = _fv(cur_env.fetchone())
+        if env_count < 75:
+            print(f"[startup] Environment MCQs: {env_count}/80 — auto-seeding...")
+            import importlib
+            env_mod = importlib.import_module('seed_environment_mcq')
+            env_mod.seed()
+            print("[startup] Environment seed complete.")
+        else:
+            print(f"[startup] Environment: {env_count} questions already loaded.")
+    except Exception as _env_e:
+        print(f"[startup] Environment seed error: {_env_e}")
+        try: conn.rollback()
+        except: pass
+
     conn.close()
 
 
