@@ -640,21 +640,13 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Reports & Indices MCQs (IDs 28001–28080) ──
+    # ── Auto-seed Reports & Indices MCQs (IDs 28001–28080) [force-refresh 2025] ──
     try:
-        ph = '%s' if USE_POSTGRES else '?'
-        cur_rep = db_exec(conn,
-            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
-            (28001, 28080))
-        rep_count = _fv(cur_rep.fetchone())
-        if rep_count < 75:
-            print(f"[startup] Reports & Indices MCQs: {rep_count}/80 — auto-seeding...")
-            import importlib
-            rep_mod = importlib.import_module('seed_reports_mcq')
-            rep_mod.seed()
-            print("[startup] Reports & Indices seed complete.")
-        else:
-            print(f"[startup] Reports & Indices: {rep_count} questions already loaded.")
+        import importlib
+        print("[startup] Reports & Indices 2025: refreshing data...")
+        rep_mod = importlib.import_module('seed_reports_mcq')
+        rep_mod.seed()
+        print("[startup] Reports & Indices seed complete.")
     except Exception as _rep_e:
         print(f"[startup] Reports & Indices seed error: {_rep_e}")
         try: conn.rollback()
@@ -672,21 +664,13 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Science & Technology MCQs (IDs 26001–26080) ──
+    # ── Auto-seed Science & Technology MCQs (IDs 26001–26080) [force-refresh 2025-26] ──
     try:
-        ph = '%s' if USE_POSTGRES else '?'
-        cur_sci = db_exec(conn,
-            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
-            (26001, 26080))
-        sci_count = _fv(cur_sci.fetchone())
-        if sci_count < 75:
-            print(f"[startup] Science & Tech MCQs: {sci_count}/80 — auto-seeding...")
-            import importlib
-            sci_mod = importlib.import_module('seed_science_tech_mcq')
-            sci_mod.seed()
-            print("[startup] Science & Tech seed complete.")
-        else:
-            print(f"[startup] Science & Tech: {sci_count} questions already loaded.")
+        import importlib
+        print("[startup] Science & Tech 2025-2026: refreshing data...")
+        sci_mod = importlib.import_module('seed_science_tech_mcq')
+        sci_mod.seed()
+        print("[startup] Science & Tech seed complete.")
     except Exception as _sci_e:
         print(f"[startup] Science & Tech seed error: {_sci_e}")
         try: conn.rollback()

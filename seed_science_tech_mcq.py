@@ -19,11 +19,9 @@ def seed():
     conn = get_db()
     cur = conn.cursor()
 
-    # Idempotency check
-    cur.execute("SELECT COUNT(*) FROM questions WHERE id >= 26001 AND id <= 26080")
-    if cur.fetchone()[0] >= 75:
-        conn.close()
-        return
+    # Force-refresh: delete old and re-insert with updated 2025 data
+    cur.execute("DELETE FROM questions WHERE id >= 26001 AND id <= 26080")
+    conn.commit()
 
     ph = "?"
     questions = [
@@ -975,68 +973,64 @@ def seed():
             "folder": "AP_HC",
             "topic": "National_Current_Affairs"
         },
-        # --- GSLV S. Ramakrishnan contribution ---
+        # --- Shubhanshu Shukla / Axiom-4 ---
         {
             "id": 26076,
-            "question_text": "The 'Shri S. Ramakrishnan Centre of Excellence' at IIT Madras focuses on research critical for which types of missions?",
-            "option_a": "Communications and navigation satellites",
-            "option_b": "Solar observation missions",
-            "option_c": "Spacecraft and launch vehicle thermal management for deep-space missions",
-            "option_d": "Geospatial imaging satellites",
+            "question_text": "Group Captain Shubhanshu Shukla became the first Indian to board the International Space Station. He was part of which mission?",
+            "option_a": "Gaganyaan-1",
+            "option_b": "Axiom Mission 3 (Ax-3)",
+            "option_c": "Axiom Mission 4 (Ax-4)",
+            "option_d": "SpaceX Crew Dragon Demo-2",
             "correct_answer": "C",
-            "explanation": "The Shri S. Ramakrishnan Centre at IIT Madras focuses on spacecraft and launch vehicle thermal management, which is crucial for future lunar, Mars, and deep-space missions under ISRO's Atmanirbhar Bharat initiative. ISRO scientists will collaborate with IIT Madras to develop advanced cooling systems.",
+            "explanation": "Group Captain Shubhanshu Shukla became the first Indian to board the International Space Station (ISS) as part of Axiom Mission 4 (Ax-4), launched on June 25, 2025 from Kennedy Space Center aboard SpaceX's Dragon spacecraft. He served as mission pilot. The mission concluded on July 15, 2025 after ~18 days on the ISS.",
             "folder": "AP_HC",
             "topic": "National_Current_Affairs"
         },
-        # --- Atmospheric/climate ---
         {
             "id": 26077,
-            "question_text": "Chandrayaan-3's Pragyan rover is named after a Sanskrit word meaning what?",
-            "option_a": "Power",
-            "option_b": "Explorer",
-            "option_c": "Wisdom",
-            "option_d": "Light",
-            "correct_answer": "C",
-            "explanation": "Pragyan is a Sanskrit word meaning 'wisdom'. It is the name of the rover deployed by Chandrayaan-3's lander Vikram after the historic south pole landing on August 23, 2023.",
+            "question_text": "Shubhanshu Shukla became the second Indian to travel to space after a gap of over 40 years. Who was the first Indian to go to space?",
+            "option_a": "Sunita Williams",
+            "option_b": "Rakesh Sharma",
+            "option_c": "Ravish Malhotra",
+            "option_d": "K. Kasturirangan",
+            "correct_answer": "B",
+            "explanation": "Wing Commander Rakesh Sharma was the first Indian to travel to space in 1984 aboard the Soviet Soyuz T-11 mission. Shubhanshu Shukla became the second Indian in space after a gap of over 40 years, as part of Axiom Mission 4 to the ISS in June 2025. Sunita Williams is an Indian-American NASA astronaut.",
             "folder": "AP_HC",
             "topic": "National_Current_Affairs"
         },
-        # --- ASFV spread ---
         {
             "id": 26078,
-            "question_text": "African Swine Fever Virus (ASFV) can spread through which route?",
-            "option_a": "Airborne transmission only",
-            "option_b": "Direct pig-to-human contact",
-            "option_c": "Contaminated clothing, equipment, or vehicles",
-            "option_d": "Mosquito bites",
+            "question_text": "The Axiom Mission 4 (Ax-4) crew was commanded by which former NASA astronaut?",
+            "option_a": "Scott Kelly",
+            "option_b": "Sunita Williams",
+            "option_c": "Peggy Whitson",
+            "option_d": "Mike Lopez-Alegria",
             "correct_answer": "C",
-            "explanation": "African Swine Fever Virus (ASFV) can spread through contaminated clothing, equipment, or vehicles, as well as through direct contact between infected and healthy pigs. There is no vaccine or treatment for ASF. It does NOT spread to humans.",
+            "explanation": "Axiom Mission 4 was commanded by Peggy Whitson, a former NASA astronaut and now an Axiom Space employee. The crew also included Shubhanshu Shukla (India/ISRO), Sławosz Uznański-Wiśniewski (Poland/ESA), and Tibor Kapu (Hungary). Shubhanshu Shukla served as mission pilot.",
             "folder": "AP_HC",
             "topic": "National_Current_Affairs"
         },
-        # --- ESA ---
         {
             "id": 26079,
-            "question_text": "Which organization's 'Earth Explorer' programme includes the Biomass satellite designed to measure global forest carbon?",
-            "option_a": "NASA",
-            "option_b": "JAXA",
-            "option_c": "European Space Agency (ESA)",
-            "option_d": "Roscosmos",
+            "question_text": "Shubhanshu Shukla is associated with India's Gaganyaan programme as one of the selected Gaganyatris. How many Gaganyatris (astronaut candidates) were selected for the Gaganyaan programme?",
+            "option_a": "Two",
+            "option_b": "Three",
+            "option_c": "Four",
+            "option_d": "Six",
             "correct_answer": "C",
-            "explanation": "The Biomass satellite is the 7th Earth Explorer satellite under the European Space Agency's (ESA) climate and Earth systems programme. It was launched by Vega C rocket from French Guiana (end of April 2025) to map global forests and measure carbon levels.",
+            "explanation": "Four Gaganyatris (astronaut candidates) were selected by ISRO for the Gaganyaan programme: Group Capt. Shubhanshu Shukla, Group Capt. Prashanth Balakrishnan Nair, Group Capt. Ajit Krishnan, and Group Capt. Angad Pratap. All four were trained at Yuri Gagarin Cosmonaut Training Center in Russia.",
             "folder": "AP_HC",
             "topic": "National_Current_Affairs"
         },
-        # --- Chandrayaan 4 ---
         {
             "id": 26080,
-            "question_text": "Chandrayaan-4, India's next planned lunar mission, will aim to achieve what milestone?",
-            "option_a": "First Indian rover on Mars",
-            "option_b": "Sample return from the Moon",
-            "option_c": "First Indian crewed Moon landing",
-            "option_d": "Building a permanent Moon base",
-            "correct_answer": "B",
-            "explanation": "Chandrayaan-4 is India's next planned lunar mission and aims to achieve sample return from the Moon — collecting lunar samples and bringing them back to Earth for study. This will be a significantly more complex mission than Chandrayaan-3 and represents the next step in India's lunar exploration programme.",
+            "question_text": "Axiom Mission 4 (Ax-4) with Shubhanshu Shukla was launched from Kennedy Space Center on June 25, 2025, using which launch vehicle?",
+            "option_a": "United Launch Alliance Vulcan",
+            "option_b": "Boeing Starliner",
+            "option_c": "SpaceX Falcon 9 with Dragon spacecraft",
+            "option_d": "NASA SLS",
+            "correct_answer": "C",
+            "explanation": "Axiom Mission 4 (Ax-4) was launched from Kennedy Space Center on June 25, 2025, using SpaceX's Falcon 9 rocket with Dragon spacecraft. The crew docked with the ISS and returned on July 15, 2025, splashing down in the Pacific Ocean near San Diego. Shubhanshu Shukla became the first Indian to board the ISS.",
             "folder": "AP_HC",
             "topic": "National_Current_Affairs"
         },

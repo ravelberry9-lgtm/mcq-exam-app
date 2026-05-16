@@ -461,12 +461,12 @@ def seed():
     else:
         cur_chk = conn.cursor()
 
-    cur_chk.execute("SELECT COUNT(*) FROM questions WHERE id >= 28001 AND id <= 28080")
-    existing = _fv(cur_chk.fetchone())
-    if existing >= 75:
-        print(f"[seed_reports_mcq] {existing}/80 questions already present — skipping.")
-        conn.close()
-        return
+    # Force-refresh: delete and re-insert with 2025 updated data
+    if USE_POSTGRES:
+        cur_chk.execute("DELETE FROM questions WHERE id >= 28001 AND id <= 28080")
+    else:
+        cur_chk.execute("DELETE FROM questions WHERE id >= 28001 AND id <= 28080")
+    conn.commit()
 
     ph = '%s' if USE_POSTGRES else '?'
     sql = f"""INSERT {'INTO' if USE_POSTGRES else 'OR IGNORE INTO'} questions
