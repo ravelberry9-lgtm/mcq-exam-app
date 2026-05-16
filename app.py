@@ -6210,6 +6210,8 @@ def search_proxy():
             pass
 
     # ── 2. SearXNG public instances — aggregates Google/Bing/DDG, allows server requests ──
+
+    # ── 2. SearXNG public instances — aggregates Google/Bing/DDG, allows server requests ──
     SEARX_INSTANCES = [
         'https://searx.be',
         'https://search.mdosch.de',
@@ -6219,4 +6221,117 @@ def search_proxy():
     for instance in SEARX_INSTANCES:
         try:
             r = req.get(f'{instance}/search', params={
-                'q': search_q
+                'q': search_q, 'format': 'json',
+                'categories': 'general', 'language': 'en-US'
+            }, headers=HDR, timeout=8)
+            if r.status_code == 200:
+                data = r.json()
+                items = [{'title': x.get('title',''), 'snippet': x.get('content',''),
+                          'url': x.get('url','')} for x in data.get('results', [])[:4]]
+                if items:
+                    return FR(results_page(f'🔎 SearXNG ({instance.split("//")[1]})', items),
+                              200, content_type='text/html; charset=utf-8')
+        except Exception:
+            continue
+
+    # ── 3. DuckDuckGo Instant Answer API ──
+    try:
+        r = req.get('https://api.duckduckgo.com/', params={
+            'q': search_q, 'format': 'json', 'no_html': '1', 'skip_disambig': '1'
+        }, headers=HDR, timeout=7)
+        d = r.json()
+        abstract = d.get('AbstractText', '').strip()
+        if abstract:
+            items = [{'title': d.get('Heading','Result'), 'snippet': abstract, 'url': d.get('AbstractURL','')}]
+            return FR(results_page('📖 DuckDuckGo', items), 200, content_type='text/html; charset=utf-8')
+        topics = [t for t in d.get('RelatedTopics',[]) if isinstance(t,dict) and t.get('Text')]
+        if topics:
+            items = [{'title': 'Related', 'snippet': t['Text'], 'url': t.get('FirstURL','')} for t in topics[:3]]
+            return FR(results_page('📖 DuckDuckGo', items), 200, content_type='text/html; charset=utf-8')
+    except Exception:
+        pass
+
+    # ── 4. Wikipedia ──
+    try:
+        sr = req.get('https://en.wikipedia.org/w/api.php', params={
+            'action':'query','list':'search','srsearch':search_q,
+            'format':'json','srlimit':2,'utf8':1}, headers=HDR, timeout=6)
+        hits = sr.json().get('query',{}).get('search',[])
+        items = []
+        for hit in hits[:2]:
+            title = hit['title']
+            sm = req.get('https://en.wikipedia.org/api/rest_v1/page/summary/'+quote(title),
+                         headers=HDR, timeout=5)
+            wd = sm.json()
+            items.append({'title': title,
+                          'snippet': wd.get('extract','')[:300],
+                          'url': wd.get('content_urls',{}).get('desktop',{}).get('page','')})
+        if items:
+            return FR(results_page('📖 Wikipedia', items), 200, content_type='text/html; charset=utf-8')
+    except Exception:
+        pass
+
+    return FR(fallback_page(), 200, content_type='text/html; charset=utf-8')
+
+
+# ─────────────────────────────────────────────
+# AI EXPLANATION ENDPOINT (Perplexity or DB fallback)
+# ─────────────────────────────────────────────
+@app.route('/api/ai-explain', methods=['POST'])
+def ai_explain():
+    data = request.json or {}
+    question    = data.get('question', '')
+    answer      = data.get('answer', '')
+    explanation = data.get('explanation', '')
+
+    api_key = os.environ.get('PERPLEXITY_API_KEY', '')
+    if not api_key:
+        fallback = explanation or ('The correct answer is ' + answer + '.')
+        return jsonify({'text': fallback, 'source': 'db'})
+
+    prompt = (
+        f"Question: {question}\n"
+        f"Correct Answer: {answer}\n\n"
+        f"Explain in 2-3 clear sentences why this answer is correct. "
+        f"Be concise and educational."
+    )
+    try:
+        import requests as req
+        r = req.post(
+            'https://api.perplexity.ai/chat/completions',
+            headers={
+                'Authorization': f'Bearer {api_key}',
+                'Content-Type': 'application/json'
+            },
+            json={
+                'model': 'sonar',
+                'messages': [{'role': 'user', 'content': prompt}],
+                'max_tokens': 220
+            },
+            timeout=10
+        )
+        text = r.json()['choices'][0]['message']['content'].strip()
+        return jsonify({'text': text, 'source': 'perplexity'})
+    except Exception as e:
+        fallback = explanation or ('The correct answer is ' + answer + '.')
+        return jsonify({'text': fallback, 'source': 'db'})
+
+
+# ── Run init_db on import (works with gunicorn on Railway AND locally) ──
+init_db()
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    print("\n" + "="*55)
+    print("  📚 MCQ EXAM APP — STARTED")
+    print(f"  DB: {'PostgreSQL ☁️' if USE_POSTGRES else 'SQLite 💾'}")
+    print("="*55)
+    if not USE_POSTGRES:
+        import socket
+        try: local_ip = socket.gethostbyname(socket.gethostname())
+        except: local_ip = "127.0.0.1"
+        print(f"\n  💻 On this PC:    http://localhost:{port}")
+        print(f"  📱 On your phone: http://{local_ip}:{port}")
+        print(f"\n  Make sure phone is on same WiFi network!")
+    print("="*55 + "\n")
+    app.run(host='0.0.0.0', port=port, debug=False)
