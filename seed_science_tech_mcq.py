@@ -63,7 +63,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "SpaDeX (Space Docking Experiment) is ISRO's technology demonstration mission to validate the ability to dock and undock small satellites in low-Earth orbit (LEO). It uses two satellites weighing approximately 220 kg each. Docking capability is critical for Gaganyaan and future lunar/space station missions.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26002,
@@ -75,7 +75,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Aditya-L1 was stationed at the Lagrange point L1, approximately 1.5 million kilometres from Earth (towards the Sun). From this position, the satellite can continuously observe the Sun without any eclipses. Its SUIT (Solar Ultraviolet Imaging Telescope) instrument observed a powerful solar flare and a rare plasma ejection.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26003,
@@ -87,7 +87,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "NISAR (NASA-ISRO Synthetic Aperture Radar) is the first joint Earth observation mission between NASA and ISRO. It was launched on July 30, 2025 using ISRO's GSLV-F16 into a sun-synchronous polar orbit. It is the world's first dual-frequency SAR satellite using both L-band and S-band radar systems.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26004,
@@ -99,7 +99,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "NISAR uses both L-band and S-band radar systems, making it the world's first dual-frequency Synthetic Aperture Radar (SAR) imaging satellite. L-band was contributed by NASA and S-band by ISRO. It studies Earth's surface changes related to earthquakes, landslides, glaciers, forests, and agriculture.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26005,
@@ -111,7 +111,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "Chandrayaan-3 became the first mission in history to make a soft landing on the Moon's South Pole on August 23, 2023. India became the 4th country to soft-land on the Moon. August 23 is now celebrated as National Space Day in India. Lander: Vikram; Rover: Pragyan.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26006,
@@ -123,7 +123,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "With Chandrayaan-3's successful landing on August 23, 2023, India became the 4th country to achieve a soft landing on the Moon, after the USA, USSR (Russia), and China. Moreover, it was the first ever landing on the lunar south pole.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26007,
@@ -135,7 +135,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "August 23 is celebrated as National Space Day in India to commemorate Chandrayaan-3's historic landing on the Moon's South Pole on August 23, 2023. This was a landmark achievement making India the first country to land on the lunar south pole.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26008,
@@ -147,7 +147,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "ISRO's Liquid Propulsion Systems Centre (LPSC) is developing a LOX-methane engine for the Next Generation Launch Vehicle (NGLV). LPSC also developed a spark torch igniter for higher ignition reliability and cleaner combustion, which was successfully tested on March 3, 2025.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26009,
@@ -159,7 +159,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Gaganyaan will make India the 4th nation to independently send humans to space, after USA, Russia (USSR), and China. The first crewed mission (Gaganyaan-4) is targeted for 2027–28. Uncrewed test flights (Gaganyaan-1, -2, -3) are planned for 2025–26.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26010,
@@ -171,7 +171,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "ISRO Chairman V. Narayanan inaugurated the 'Shri S. Ramakrishnan Centre of Excellence in Fluid and Thermal Science Research' at IIT Madras on March 17, 2025. The centre focuses on spacecraft and launch vehicle thermal management for future lunar, Mars, and deep-space missions.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- NASA Missions ---
         {
@@ -184,7 +184,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "NASA's SPHEREx mission was launched on March 12, 2025 from Vandenberg Space Force Base. It will study 450 million galaxies and 100 million stars, creating a 3D map of the sky to understand the history of the universe. It orbits in a sun-synchronous orbit at 650 km above Earth.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26012,
@@ -196,7 +196,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "NASA's PUNCH (Polarimeter to Unify the Corona and Heliosphere) mission was launched on March 12, 2025, alongside SPHEREx, on a single Falcon 9 rocket. It consists of four small satellites that study the solar corona, solar winds, and coronal mass ejections (CMEs) to improve space weather predictions.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26013,
@@ -208,7 +208,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "NASA launched both the SPHEREx and PUNCH space missions together on March 12, 2025, from Vandenberg Space Force Base, California, using a SpaceX Falcon 9 rocket.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26014,
@@ -220,7 +220,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "NASA's Europa Clipper mission is heading to Europa, one of Jupiter's moons. The spacecraft performed a Mars flyby in March 2025 and will perform an Earth flyby in December 2026, arriving at Europa in April 2030 to study its potential habitability (Europa has a subsurface ocean).",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26015,
@@ -232,7 +232,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "The ESA Biomass satellite is the 7th Earth Explorer satellite under ESA's climate and Earth systems programme. It will study global forests, measuring carbon levels and forest health to understand their role in the carbon cycle. It uses radar to create detailed 3D models of forest structures.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- IIT/IISc Innovations ---
         {
@@ -245,7 +245,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "IIT Madras researchers developed a framework to enhance protection of critical infrastructure from ballistic missile threats. The framework helps designers improve the ballistic resistance of reinforced concrete (RC) panels. Findings were published in the journal Reliability Engineering & System Safety.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26017,
@@ -257,7 +257,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "IIT Bombay's National Centre for Photovoltaic Research and Education (NCPRE) developed a high-efficiency tandem solar cell with nearly 30% power conversion efficiency, a major advancement for solar energy technology.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26018,
@@ -269,7 +269,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "IIT Madras launched India's first cancer genome database to boost cancer research across the country. This database catalogues genomic data on Indian cancer types, enabling more targeted cancer diagnosis and treatment research.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26019,
@@ -281,7 +281,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "AMRSense is an AI-powered tool developed by IIIT-Delhi researchers. It analyzes hospital data to provide early insights on Antimicrobial Resistance (AMR) patterns. This is critical for combating the growing global threat of drug-resistant infections.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26020,
@@ -293,7 +293,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Researchers at IISc developed a technique using the bacterium Sporosarcina pasteurii with guar gum to create bricks from lunar and Martian soil simulants (regolith). The bacterium converts urea and calcium into calcium carbonate crystals, binding soil particles. This eco-friendly method supports NASA's Artemis programme goal of permanent lunar settlements.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26021,
@@ -305,7 +305,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Sporosarcina pasteurii bacteria converts urea and calcium into calcium carbonate (CaCO₃) crystals, which bind lunar soil (regolith) particles together with guar gum, creating solid bricks. This biomineralization process is eco-friendly and avoids transporting heavy materials from Earth.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Disease Agents ---
         {
@@ -318,7 +318,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The causative agent of African Swine Fever (ASF) is the African Swine Fever Virus (ASFV). ASF is a highly contagious and fatal viral disease affecting domestic and wild pigs but poses no risk to humans. There is currently no vaccine or treatment for ASF.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26023,
@@ -330,7 +330,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "African Swine Fever (ASF) affects domestic and wild pigs and is highly contagious and fatal to them. However, it poses NO risk to humans. It first emerged in Mizoram in March 2021 and has since become endemic. There is no vaccine or treatment.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26024,
@@ -342,7 +342,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "River Blindness (Onchocerciasis) is caused by the parasitic worm Onchocerca volvulus and spreads through the bite of infected blackflies (genus Simulium) that breed near fast-flowing rivers. It causes severe skin itching, skin damage, and permanent blindness. WHO classifies it as a major Neglected Tropical Disease, especially in sub-Saharan Africa, Yemen, and Latin America.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26025,
@@ -354,7 +354,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "A study by the Zoological Survey of India (ZSI) used DNA barcoding to correctly identify blackfly species (genus Simulium) that spread River Blindness (Onchocerciasis). DNA barcoding involves using short DNA sequences to identify species.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26026,
@@ -366,7 +366,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Multiple Sclerosis (MS) is an autoimmune disorder that occurs when the immune system attacks the brain and spinal cord. It affects nearly 1 million people in the US and over 2.8 million worldwide. Recent studies show gut microbiome imbalance can predict MS severity.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26027,
@@ -378,7 +378,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Studies on Multiple Sclerosis found that MS patients have more Blautia and Akkermansia but lower Bifidobacterium and Prevotella in their gut. A lower Bifidobacterium-to-Akkermansia ratio is linked to worse disability. These findings may help improve MS diagnosis by focusing on gut microbiome health.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Space Concepts ---
         {
@@ -391,7 +391,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "A Lagrange point is a position in space where the gravitational forces of two large bodies (e.g., Earth and Sun) combined with the centrifugal force balance out, allowing a smaller object to maintain a stable orbit. Aditya-L1 is stationed at L1, approximately 1.5 million km from Earth towards the Sun.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26029,
@@ -403,7 +403,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "A Coronal Mass Ejection (CME) is a massive burst of solar plasma and magnetic field from the Sun's corona. CMEs can affect Earth's magnetosphere and cause geomagnetic storms. NASA's PUNCH mission (4 satellites) studies solar corona, solar winds, and CMEs to improve space weather predictions.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26030,
@@ -415,7 +415,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Lunar Regolith is the loose soil and rock covering the Moon's surface. IISc used lunar and Martian soil simulants (regolith) in their bacteria-based technique to create bricks for future lunar habitats under NASA's Artemis programme, which aims to establish permanent Moon settlements.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Sonic Weapons ---
         {
@@ -428,7 +428,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "Sonic weapons, also called acoustic weapons, emit loud, painful sounds over long distances. They use audible or inaudible sound waves to disrupt, disorient, or incapacitate people. They were first developed for military use; the US used them in Iraq in 2004. Serbia was recently accused of using them against protesters in Belgrade.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26032,
@@ -440,7 +440,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "The Serbian government was accused of using sonic weapons (acoustic weapons) to disperse protesters in Belgrade, Serbia's capital. Sonic weapons emit concentrated sound beams causing discomfort, pain, and disorientation. The US first used sonic weapons in Iraq in 2004.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- NGLV / Launch vehicles ---
         {
@@ -453,7 +453,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "ISRO is developing a LOX-methane (Liquid Oxygen + methane) engine for the Next Generation Launch Vehicle (NGLV). This propellant combination is cleaner and supports reusability. NGLV will have a reusable booster stage and two expendable upper stages.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26034,
@@ -465,7 +465,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "PSLV-C61/EOS-09 (Earth Observation Satellite-09) was launched by ISRO on May 18, 2025. EOS satellites provide Earth observation data for various applications including agriculture, forestry, disaster management, and urban planning.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- SPHEREx in detail ---
         {
@@ -478,7 +478,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "SPHEREx (Spectro-Photometer for the History of the Universe, Epoch of Reionization and Ices Explorer) will measure the near-infrared spectra of hundreds of millions of galaxies, creating a 3D map of the sky to understand the history of the universe. It entered a sun-synchronous orbit 650 km above Earth.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Chandrayaan details ---
         {
@@ -491,7 +491,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Chandrayaan-3's lander is named Vikram (after ISRO founder Vikram Sarabhai) and the rover is named Pragyan (meaning 'wisdom' in Sanskrit). They landed on the Moon's South Pole on August 23, 2023.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Gaganyaan ---
         {
@@ -504,7 +504,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "The first crewed Gaganyaan mission (Gaganyaan-4) is targeted for 2027–28. Before this, three uncrewed test flights (Gaganyaan-1, -2, -3) are planned for 2025–26. The European Space Agency (ESA) is also supporting Indian human spaceflight missions.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Bioscience terms ---
         {
@@ -517,7 +517,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "DNA barcoding is a technique for identifying species using short, standardized DNA sequences from a specific gene region. The Zoological Survey of India (ZSI) used DNA barcoding to correctly identify blackfly species that spread River Blindness (Onchocerciasis).",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Aditya-L1 instrument ---
         {
@@ -530,7 +530,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The SUIT (Solar Ultraviolet Imaging Telescope) onboard Aditya-L1 made a first-of-its-kind observation of a rare plasma ejection in ultraviolet light and also observed a powerful solar flare. Aditya-L1 is stationed at Lagrange Point L1, approximately 1.5 million km from Earth.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Biomass satellite ---
         {
@@ -543,7 +543,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "ESA's Biomass satellite is the 7th Earth Explorer satellite under ESA's climate and Earth systems programme. It was launched using the Vega C rocket from French Guiana (end of April 2025) to study global forests and measure carbon levels.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- NISAR details ---
         {
@@ -556,7 +556,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "NISAR (NASA-ISRO SAR) studies Earth's surface changes related to earthquakes, landslides, glaciers, forests, and agriculture. It is the world's first dual-frequency radar imaging satellite, using both L-band and S-band SAR systems. Launched July 30, 2025 via ISRO's GSLV-F16.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Space terms ---
         {
@@ -569,7 +569,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "A Sun-Synchronous Orbit (SSO) is a type of polar orbit where the satellite passes over any given point on Earth's surface at approximately the same local solar time each day. This ensures consistent lighting conditions for imaging. Both SPHEREx and NISAR use sun-synchronous orbits.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Artemis ---
         {
@@ -582,7 +582,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "NASA's Artemis programme aims to return humans to the Moon and establish permanent lunar settlements. IISc developed a bacteria-based technique (using Sporosarcina pasteurii) to create and repair bricks from lunar regolith, supporting the Artemis goal of self-sustaining Moon habitats.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- SpaDeX details ---
         {
@@ -595,7 +595,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "SpaDeX (Space Docking Experiment) uses two satellites weighing approximately 220 kg each in Low Earth Orbit. The mission validates India's docking/undocking capability, a prerequisite for Gaganyaan and future space station missions.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- ISRO Chairman ---
         {
@@ -608,7 +608,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "V. Narayanan is the Chairman of ISRO who inaugurated the 'Shri S. Ramakrishnan Centre of Excellence in Fluid and Thermal Science Research' at IIT Madras on March 17, 2025. The centre is named after S. Ramakrishnan, an IIT Madras alumnus who contributed to PSLV and GSLV MK3 development.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Onchocerciasis ---
         {
@@ -621,7 +621,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "River Blindness (Onchocerciasis) spreads through the bite of infected blackflies of the genus Simulium. These blackflies breed near fast-flowing rivers and streams. The disease causes severe skin itching, skin damage, and in serious cases, permanent blindness.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- ASF ---
         {
@@ -634,7 +634,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "African Swine Fever first emerged in India in Mizoram, specifically in Lungsen village, Lunglei, on March 21, 2021. It has since become endemic in Mizoram. ASF is caused by ASFV (African Swine Fever Virus) and has no vaccine or treatment.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- GSLV-F16/NISAR ---
         {
@@ -647,7 +647,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "NISAR (NASA-ISRO Synthetic Aperture Radar) was launched on July 30, 2025, using ISRO's GSLV-F16 into a sun-synchronous polar orbit. NISAR is the first joint Earth observation mission between NASA and ISRO.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- IIT Madras cancer DB ---
         {
@@ -660,7 +660,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "IIT Madras launched India's first cancer genome database to boost cancer research. This database enables the study of genomic patterns of cancers occurring in Indian populations, supporting more targeted diagnosis and treatment strategies.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- SPHEREx orbit ---
         {
@@ -673,7 +673,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "NASA's SPHEREx satellite orbits Earth at 650 km above the surface in a sun-synchronous orbit. It studies 450 million galaxies and 100 million stars, creating a 3D map of the universe's history.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- IIT Roorkee/others ---
         {
@@ -686,7 +686,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "SUIT stands for Solar Ultraviolet Imaging Telescope. It is one of the instruments onboard India's Aditya-L1 solar mission. SUIT made a first-of-its-kind observation of a rare plasma ejection in ultraviolet light and observed a powerful solar flare.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Vandenberg ---
         {
@@ -699,7 +699,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "NASA's SPHEREx and PUNCH missions were launched together on March 12, 2025, from Vandenberg Space Force Base, California, using a Falcon 9 rocket.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Vega-C ---
         {
@@ -712,7 +712,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "ESA's Biomass satellite was launched using the Vega C rocket from French Guiana (European Spaceport) by the end of April 2025. Vega C is the European Space Agency's small-to-medium payload launch vehicle.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Europa ---
         {
@@ -725,7 +725,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Europa, one of Jupiter's moons, is believed to harbor a subsurface liquid water ocean beneath its icy surface. This makes it one of the most promising candidates for extraterrestrial life in our solar system. NASA's Europa Clipper (arriving April 2030) will study Europa's potential habitability.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Lumpy Skin ---
         {
@@ -738,7 +738,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Lumpy Skin Disease (LSD) is caused by Capripoxvirus, a DNA virus. It primarily affects cattle and buffalo, causing nodular skin lesions, fever, and reduced milk production. It spreads through insects (mosquitoes, flies). Major outbreaks occurred in India between 2022–2024.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- GSLV ---
         {
@@ -751,7 +751,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "GSLV stands for Geosynchronous Satellite Launch Vehicle. ISRO uses GSLV to launch heavier satellites, including the GSLV-F16 that launched NISAR on July 30, 2025. GSLV MK3 (also called LVM3) is a more powerful version used for heavier payloads.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Multiple Sclerosis ---
         {
@@ -764,7 +764,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Multiple Sclerosis (MS) affects nearly 1 million people in the USA and over 2.8 million people worldwide. It is an autoimmune disorder where the immune system attacks the brain and spinal cord. Recent studies link gut microbiome imbalance to MS severity.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- IIT Madras ballistic ---
         {
@@ -777,7 +777,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "IIT Madras researchers published their findings on a framework for enhancing protection of reinforced concrete (RC) panels against ballistic missile threats in the journal Reliability Engineering & System Safety. The framework helps designers improve ballistic resistance of infrastructure like military bunkers and nuclear power buildings.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- 3D map ---
         {
@@ -790,7 +790,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "SPHEREx (launched March 12, 2025) will create a 3D map of the sky by measuring near-infrared spectra of hundreds of millions of galaxies (450 million) and 100 million stars. This will help understand the history and large-scale structure of the universe.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- AMR ---
         {
@@ -803,7 +803,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "AMR stands for Antimicrobial Resistance — when bacteria, viruses, fungi, and parasites evolve to resist the effects of medicines (antibiotics, antivirals, etc.), making infections harder to treat. IIIT-Delhi's AMRSense is an AI tool that helps track AMR patterns using hospital data.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Chandrayaan next ---
         {
@@ -816,7 +816,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "LUPEX (Lunar Polar Exploration Mission) is a planned joint mission between ISRO and JAXA (Japan Aerospace Exploration Agency) to explore the Moon's polar region and study water ice resources. ISRO will provide the lander while JAXA will provide the rover.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- NCPRE ---
         {
@@ -829,7 +829,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "NCPRE stands for National Centre for Photovoltaic Research and Education at IIT Bombay. Researchers there developed a high-efficiency tandem solar cell with nearly 30% power conversion efficiency, a significant advancement in solar energy technology.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- ESA Biomass launch rocket ---
         {
@@ -842,7 +842,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "ESA's Biomass satellite uses radar technology to quantify forest biomass and carbon content from space and will also create detailed 3D models of forest structures. It will monitor changes over time, helping climate research and forest conservation efforts.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Guar gum ---
         {
@@ -855,7 +855,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "In IISc's technique, guar gum is combined with the bacterium Sporosarcina pasteurii to create bricks from lunar and Martian soil simulants. The bacterium converts urea and calcium into calcium carbonate crystals, with guar gum helping to bind the soil particles together.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Artemis/Moon ---
         {
@@ -868,7 +868,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "National Space Day is celebrated in India on August 23, the date Chandrayaan-3's Vikram lander successfully touched down on the Moon's South Pole in 2023, making India the first country to land on the lunar south pole.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- ZSI ---
         {
@@ -881,7 +881,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "ZSI stands for Zoological Survey of India. It used DNA barcoding to correctly identify blackfly species (genus Simulium) that spread River Blindness (Onchocerciasis). The Zoological Survey of India is an autonomous organization under India's Ministry of Environment, Forests and Climate Change.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- S Ramakrishnan ---
         {
@@ -894,7 +894,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "The centre is named after S. Ramakrishnan, an IIT Madras alumnus and former ISRO Chairman who contributed significantly to the development of PSLV and GSLV MK3. ISRO Chairman V. Narayanan inaugurated the centre at IIT Madras on March 17, 2025.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Mars flyby ---
         {
@@ -907,7 +907,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "NASA's Europa Clipper performed a flyby maneuver at Mars in March 2025 to gain speed and trajectory for its long voyage to Jupiter's moon Europa. It will also perform an Earth flyby in December 2026 before arriving at Europa in April 2030.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Reusable rocket ---
         {
@@ -920,7 +920,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "ISRO's Next Generation Launch Vehicle (NGLV) will have a reusable booster stage (similar to SpaceX Falcon 9 concept) with two expendable upper stages. It uses a LOX-methane engine. The reusability is key to reducing the cost of space access.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Bird Flu ---
         {
@@ -933,7 +933,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Bird Flu (Avian Influenza) is caused by Influenza A virus, particularly strains H5N1 and H5N2. It is zoonotic (can spread from birds to humans under certain conditions). Mass culling of affected poultry is a standard control measure.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- PUNCH details ---
         {
@@ -946,7 +946,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "PUNCH stands for Polarimeter to Unify the Corona and Heliosphere. It is a NASA solar mission consisting of four small satellites that study the solar corona, solar winds, and coronal mass ejections (CMEs). It was launched alongside SPHEREx on March 12, 2025.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- LPSC ---
         {
@@ -959,7 +959,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "LPSC stands for Liquid Propulsion Systems Centre, an ISRO center responsible for developing liquid propulsion systems and engines. LPSC is developing the LOX-methane engine for the Next Generation Launch Vehicle (NGLV) and developed a spark torch igniter tested on March 3, 2025.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- ISRO Aditya distance ---
         {
@@ -972,7 +972,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Aditya-L1 was stationed at Lagrange Point L1, approximately 1.5 million km from Earth (towards the Sun). This position allows continuous observation of the Sun without eclipses. India launched Aditya-L1 in September 2023.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- GSLV MK3 / LVM3 ---
         {
@@ -985,7 +985,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "GSLV MK3 (Geosynchronous Satellite Launch Vehicle Mark III), also called LVM3 (Launch Vehicle Mark 3), is ISRO's heaviest launch vehicle. It is used for launching heavier communication satellites to GTO (Geostationary Transfer Orbit) and is also the designated launch vehicle for the Gaganyaan crewed mission.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- NISAR data ---
         {
@@ -998,7 +998,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "NISAR is designed to observe every part of Earth's surface once every 12 days, generating a massive volume of data. This frequent coverage helps track changes over time in glaciers, forests, earthquakes, and more. It is the world's first dual-frequency (L-band + S-band) SAR satellite.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Shubhanshu Shukla / Axiom-4 ---
         {
@@ -1011,7 +1011,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Group Captain Shubhanshu Shukla became the first Indian to board the International Space Station (ISS) as part of Axiom Mission 4 (Ax-4), launched on June 25, 2025 from Kennedy Space Center aboard SpaceX's Dragon spacecraft. He served as mission pilot. The mission concluded on July 15, 2025 after ~18 days on the ISS.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26077,
@@ -1023,7 +1023,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Wing Commander Rakesh Sharma was the first Indian to travel to space in 1984 aboard the Soviet Soyuz T-11 mission. Shubhanshu Shukla became the second Indian in space after a gap of over 40 years, as part of Axiom Mission 4 to the ISS in June 2025. Sunita Williams is an Indian-American NASA astronaut.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26078,
@@ -1035,7 +1035,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Axiom Mission 4 was commanded by Peggy Whitson, a former NASA astronaut and now an Axiom Space employee. The crew also included Shubhanshu Shukla (India/ISRO), Sławosz Uznański-Wiśniewski (Poland/ESA), and Tibor Kapu (Hungary). Shubhanshu Shukla served as mission pilot.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26079,
@@ -1047,7 +1047,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Four Gaganyatris (astronaut candidates) were selected by ISRO for the Gaganyaan programme: Group Capt. Shubhanshu Shukla, Group Capt. Prashanth Balakrishnan Nair, Group Capt. Ajit Krishnan, and Group Capt. Angad Pratap. All four were trained at Yuri Gagarin Cosmonaut Training Center in Russia.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 26080,
@@ -1059,7 +1059,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Axiom Mission 4 (Ax-4) was launched from Kennedy Space Center on June 25, 2025, using SpaceX's Falcon 9 rocket with Dragon spacecraft. The crew docked with the ISS and returned on July 15, 2025, splashing down in the Pacific Ocean near San Diego. Shubhanshu Shukla became the first Indian to board the ISS.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
     ]
 

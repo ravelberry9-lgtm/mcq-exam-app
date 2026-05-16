@@ -45,12 +45,9 @@ def seed():
     else:
         cur = conn.cursor()
 
-    # Idempotency check (uses parameterised query for both DB types)
-    ph = '%s' if USE_POSTGRES else '?'
-    cur.execute(f"SELECT COUNT(*) FROM questions WHERE id >= {ph} AND id <= {ph}", (25001, 25080))
-    if _fv(cur.fetchone()) >= 75:
-        conn.close()
-        return
+    # Force-refresh: delete and re-insert with correct folder/topic
+    cur.execute("DELETE FROM questions WHERE id >= 25001 AND id <= 25080")
+    conn.commit()
 
     ph = '%s' if USE_POSTGRES else '?'
     questions = [
@@ -65,7 +62,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Pobitora Wildlife Sanctuary is located in eastern Guwahati, Assam. It was established in 1998 and spans 48.81 sq km. It has the highest density of Greater One-Horned Rhinoceros in India and is part of the Indian Rhino Vision 2020 program.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25002,
@@ -77,7 +74,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "Corbett Tiger Reserve is located in the foothills of the Himalayas in Uttarakhand. It was established in 1936 as Hailey National Park and renamed Corbett National Park in 1957 to honor Jim Corbett. Its total area is 1,288.31 sq km.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25003,
@@ -89,7 +86,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Karimpuzha Wildlife Sanctuary is in Malappuram district, Kerala, covering 227.97 sq km on the western slopes of the Nilgiri Hills. It is part of the Nilgiri Biosphere Reserve under UNESCO's Man and Biosphere Programme and shares boundaries with Silent Valley NP (Kerala) and Mukurthi NP (Tamil Nadu).",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25004,
@@ -101,7 +98,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Nagarhole National Park, also known as Rajiv Gandhi National Park, is a notified Tiger Reserve and part of Project Tiger. It is located in Kodagu and Mysuru districts, Karnataka, and is named after the Nagarahole River.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25005,
@@ -113,7 +110,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "Balpakram National Park is located in the West Garo Hills district, Meghalaya, about 134 km from Shillong. It is known as the 'Land of Perpetual Winds' due to strong winds across the plateau. A rare Binturong (bearcat) was recently camera-trapped in its buffer zone.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25006,
@@ -125,7 +122,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Indravati National Park is located in Bijapur district, Chhattisgarh. It is named after the Indravati River, a tributary of the Godavari River. The river forms the northern and western boundaries of the park, also marking the Chhattisgarh–Maharashtra border.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25007,
@@ -137,7 +134,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The Indian Wild Ass Sanctuary is located in the state of Gujarat with a total area of 4,954 sq km, making it India's largest wildlife sanctuary.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25008,
@@ -149,7 +146,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Keoladeo National Park, also called Bharatpur Bird Sanctuary, is located in Rajasthan. It is a UNESCO World Heritage Site famous for hosting thousands of migratory birds each winter.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- New Tiger Reserves ---
         {
@@ -162,7 +159,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Ratapani Wildlife Sanctuary was declared the 8th tiger reserve of Madhya Pradesh in 2025. It spans over 890 sq km and serves as a vital corridor connecting the tiger populations of Panna and Satpura Tiger Reserves.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25010,
@@ -174,7 +171,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Madhav National Park in Shivpuri was declared Madhya Pradesh's 9th Tiger Reserve in March 2025, making MP the state with the highest number of tiger reserves.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Assam NP ---
         {
@@ -187,7 +184,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Shikhna Jwhwlao National Park in Assam was declared in 2024 and notified on February 16, 2025. It is the 3rd national park in Bodoland Territorial Region (BTR) and the 8th National Park in Assam.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- DPS Flamingo Lake ---
         {
@@ -200,7 +197,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "The Maharashtra State Wildlife Board approved the declaration of DPS Flamingo Lake as a conservation reserve. It is the first wetland linked to the Thane Creek Flamingo Sanctuary (TCFS) to receive such protection. The 30-acre lake is a key feeding and resting site for flamingos during high tide.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Tiger Statistics ---
         {
@@ -213,7 +210,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "The 2022 All India Tiger Estimation recorded 3,682 tigers in India (range 3,167–3,925), representing about 70% of the world's wild tiger population. This was up from 2,967 tigers in 2018.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25014,
@@ -225,7 +222,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "As of March 2025, there are 58 Tiger Reserves in India under Project Tiger, covering about 84,500 sq km. Project Tiger was launched in 1973 and is managed by the National Tiger Conservation Authority (NTCA).",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25015,
@@ -237,7 +234,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Madhya Pradesh has the highest number of tigers (785) among all Indian states as per the 2022 All India Tiger Estimation.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Ramsar Sites ---
         {
@@ -250,7 +247,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "In 2024, India added three new wetlands to its list of Ramsar Sites: Koonthankulam Bird Sanctuary, Koothankulam Wetland Complex (both in Tamil Nadu), and Hirekera Wetland (Karnataka), increasing the total to 85 Ramsar Sites covering around 14 lakh hectares.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25017,
@@ -262,7 +259,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "Hirekera Wetland in Karnataka was added as a new Ramsar Site in 2024. Tamil Nadu also added two new Ramsar sites (Koonthankulam Bird Sanctuary and Koothankulam Wetland Complex) in the same year.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- New Species ---
         {
@@ -275,7 +272,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Zingiber jagannathii Sahu & Priyadarshini was discovered in Similipal Biosphere Reserve, Odisha, in August 2024. It was found at 758m elevation in Kulipala's semi-evergreen forest and covers less than 1 sq km. The species honors Lord Jagannath.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25019,
@@ -287,7 +284,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "Channa nachi was discovered in Meghalaya, in a shallow slow-flowing stream near Chokpot village, which is part of the Simsang River system. The habitat consists of sand, leaf litter, and pebbles.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25020,
@@ -299,7 +296,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "In 2024, India recorded the addition of 683 new faunal species (459 new to science, 224 new to India) and 433 new floral taxa. Kerala led with 101 newly recorded species.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25021,
@@ -311,7 +308,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Three new frog species were discovered in early 2024 from the Kamlang–Namdapha biodiversity hotspot landscape in Arunachal Pradesh.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25022,
@@ -323,7 +320,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "A study led by Western Ghats-based scientist P. Gowri Shankar proposed that the king cobra is not one species but four distinct species. The Western Ghats species was named Ophiophagus kaalinga and is severely threatened / Critically Endangered.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- IUCN Status ---
         {
@@ -336,7 +333,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "The Indian Giant Flying Squirrel is listed as 'Least Concern' by IUCN. It was recently sighted in Ranikhet, Uttarakhand. It can glide up to 60 meters and is protected under Schedule II of the Wildlife Protection Act, 1972.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25024,
@@ -348,7 +345,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "The Himalayan Musk Deer is listed as Endangered on the IUCN Red List. Males have a musk gland, making them vulnerable to poaching. They are found in India, Nepal, Bhutan, Pakistan, and China. Listed under Schedule I of WPA 1972.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25025,
@@ -360,7 +357,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The Saola (Pseudoryx nghetinhensis), known as the 'Asian Unicorn', is found in the Annamite Mountains along the Vietnam–Laos border. It is Critically Endangered with only 50–300 individuals estimated. It was first discovered in 1992 during a joint survey by Vietnam's Ministry of Forestry and WWF.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25026,
@@ -372,7 +369,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The Binturong, also known as the bearcat, is listed as Vulnerable on the IUCN Red List. It is the largest civet in India. A rare sighting was reported in the buffer zone of Balpakram National Park, Meghalaya.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25027,
@@ -384,7 +381,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "According to the IUCN Red List, India has 1,174 threatened species. Some of the most Critically Endangered include the Gharial, Great Indian Bustard, Kashmir Stag, Pygmy Hog, and Namdapha Flying Squirrel.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25028,
@@ -396,7 +393,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "The Blyde Rondavel Flat Gecko was rediscovered in the Blyde River Canyon, Mpumalanga Province, South Africa after 34 years. It was first found in 1991 and had been listed as 'Data Deficient' by IUCN. The Endangered Wildlife Trust (EWT) confirmed its rediscovery — it is the 5th lost species found by EWT.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- COP29 ---
         {
@@ -409,7 +406,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "COP29 was held in Baku, Azerbaijan in November 2024. Its main outcome was the Baku Climate Unity Pact, which set a target of at least $1.3 trillion per year from all actors and at least $300 billion/year from developed countries by 2035.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25030,
@@ -421,7 +418,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "At COP29 in Baku 2024, developed countries agreed to lead mobilization of at least $300 billion per year by 2035. The overall target is $1.3 trillion/year from all actors. India criticized this as 'abysmally poor'. The Baku–Belém Roadmap to 1.3T was also launched.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25031,
@@ -433,7 +430,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "The Baku–Belém Roadmap to 1.3T refers to raising at least $1.3 trillion per year from all actors (governments, private sector, multilateral banks) for climate action. This was the overall target set in the Baku Climate Unity Pact at COP29.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- COP30 ---
         {
@@ -446,7 +443,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "COP30 was held in Belém, Brazil in November 2025 — the heart of the Amazon region. Key outcomes included the Belém Package, over 122 NDC submissions, and the launch of the Belém Mission to 1.5.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25033,
@@ -458,7 +455,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The Belém Package was approved at COP30 in Belém, Brazil (November 2025). Other outcomes included the Belém Mission to 1.5 (action-oriented platform), the Global Climate Finance Accountability Framework, and the submission of NDCs by 122+ Parties.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25034,
@@ -470,7 +467,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The Belém Mission to 1.5 is an action-oriented platform launched at COP30 to foster enhanced ambition and international cooperation across mitigation, adaptation, and investment — specifically aligned with limiting global warming to 1.5°C as per the Paris Agreement.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25035,
@@ -482,7 +479,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "COP30 parties agreed to call for efforts to at least triple adaptation finance by 2035 within the New Collective Quantified Goal (NCQG) on climate finance.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- COP sequence ---
         {
@@ -495,7 +492,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "COP31 is scheduled to be held in Australia in 2026. The COP sequence: COP28 = Dubai (UAE) 2023 → COP29 = Baku (Azerbaijan) Nov 2024 → COP30 = Belém (Brazil) Nov 2025 → COP31 = Australia 2026.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Project Dolphin ---
         {
@@ -508,7 +505,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "India achieved the milestone of satellite-tagging the first-ever Ganges River Dolphin on December 18, 2024, in Assam. This was led by the Wildlife Institute of India (WII) in collaboration with the Assam Forest Department and Aaranyak, under Project Dolphin.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25038,
@@ -520,7 +517,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "The first satellite-tagging of a Ganges River Dolphin was accomplished under Project Dolphin in December 2024 in Assam. Project Dolphin was launched in 2020 for conservation of Gangetic and Irrawaddy dolphins.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Rivers ---
         {
@@ -533,7 +530,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "The Chambal River flows through Madhya Pradesh, Rajasthan, and Uttar Pradesh. It originates from Bhadakla Falls near Janapav Hills, Indore (MP) and joins the Yamuna in Jalaun district, UP, covering 1,024 km. The National Chambal Sanctuary protects Gharial and Ganges dolphins.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25040,
@@ -545,7 +542,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Netravathi River (also called Nethravathi Nadi) is a major west-flowing river in Karnataka. It originates in the Kudremukh range of Chikkamagaluru district (Western Ghats) and drains into the Arabian Sea south of Mangaluru.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Yellow Sea ---
         {
@@ -558,7 +555,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "The Yellow Sea is a marginal sea of the Western Pacific Ocean. It is called Huang Hai in China and West Sea in North and South Korea. It gets its yellow color from sand particles blown from the Gobi Desert. It covers about 400,000 sq km with depths of 55–120 m.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25042,
@@ -570,7 +567,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "The Yellow Sea gets its yellow color from sand particles blown in from the Gobi Desert. It is bordered by China on the north and west, and North Korea and South Korea on the east.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Pollution ---
         {
@@ -583,7 +580,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Nurdles are small plastic pellets (1–5 mm) made of LDPE and HDPE, used as raw materials in plastic manufacturing. On May 27, 2025, large amounts were found along Thiruvananthapuram coast after the sinking of Liberian cargo ship MSC ELSA 3 on May 25, 2025. Marine animals can ingest them, causing health problems.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25044,
@@ -595,7 +592,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "The Liberian cargo ship MSC ELSA 3 sank on May 25, 2025, carrying containers with hazardous materials including plastic pellets (nurdles). By May 27, 2025, large amounts of nurdles were found along the coast of Thiruvananthapuram, Kerala.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Volcanoes ---
         {
@@ -608,7 +605,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Poas Volcano is located in Costa Rica, inside the Poás Volcano National Park. It is a composite stratovolcano standing 2,708 m above sea level with a crater about 1.5 km wide and 300 m deep — one of the world's largest active volcanic craters.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Forests ---
         {
@@ -621,7 +618,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Teak grows mainly in Moist Deciduous Forests. India holds 35% of the world's planted teak forests. According to FAO, Madhya Pradesh and Maharashtra have the largest areas of native teak forests in India.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25047,
@@ -633,7 +630,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "India holds 35% of the world's planted teak forests, with Asia contributing over 95% of global teak resources, according to the FAO Global Teak Resources and Market Assessment 2022.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Pobitora details ---
         {
@@ -646,7 +643,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Tamulidoba Beel is a major wetland within Pobitora Wildlife Sanctuary, Assam. Its drying up has been highlighted as a major threat to waterfowl habitat. Water hyacinth is another threat to wildlife in the sanctuary.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- WPA Schedule ---
         {
@@ -659,7 +656,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The Indian Giant Flying Squirrel (Petaurista philippensis) is protected under Schedule II of the Wildlife Protection Act (WPA), 1972, and is listed as 'Least Concern' by IUCN.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25050,
@@ -671,7 +668,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "The Himalayan Musk Deer is listed under Schedule I of the Wildlife Protection Act, 1972, which provides the highest level of protection, prohibiting hunting. It is also listed as Endangered by IUCN.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- COP General ---
         {
@@ -684,7 +681,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "COP stands for Conference of Parties. It is the annual meeting of countries that have signed the United Nations Framework Convention on Climate Change (UNFCCC). COP29 was held in Baku (2024) and COP30 in Belém, Brazil (2025).",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25052,
@@ -696,7 +693,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "COP28 was held in Dubai, United Arab Emirates in November–December 2023. It was notable for the first global stocktake under the Paris Agreement. COP29 followed in Baku, Azerbaijan in November 2024.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Biosphere Reserves ---
         {
@@ -709,7 +706,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Similipal Biosphere Reserve is located in Odisha. In August 2024, researchers from Maharaja Sriram Chandra Bhanja Deo University discovered the new wild ginger species Zingiber jagannathii here.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         {
             "id": 25054,
@@ -721,7 +718,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Karimpuzha Wildlife Sanctuary in Kerala is part of the Nilgiri Biosphere Reserve under UNESCO's Man and Biosphere Programme. It also shares boundaries with Silent Valley NP (Kerala) and Mukurthi NP (Tamil Nadu).",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Binturong ---
         {
@@ -734,7 +731,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The Binturong, also known as the bearcat, is the largest civet in India. It is an omnivorous mammal found in dense forests of South and Southeast Asia. It was camera-trapped in the buffer zone of Balpakram National Park, Meghalaya.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Carbon/NDC ---
         {
@@ -747,7 +744,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "NDC stands for Nationally Determined Contribution. It represents each country's plan to reduce greenhouse gas emissions and adapt to climate change impacts. By the end of COP30 in Belém, over 122 Parties had submitted updated NDCs.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Saola discovery ---
         {
@@ -760,7 +757,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The Saola was first discovered in 1992 during a joint survey by the Vietnamese Ministry of Forestry and the World Wide Fund for Nature (WWF). Its genome was recently mapped by an international team of scientists using tissue fragments from hunter-collected remains.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Chambal ---
         {
@@ -773,7 +770,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The Chambal River originates from Bhadakla Falls near Janapav Hills in Indore district, Madhya Pradesh, at an elevation of 843 metres. It flows about 1,024 km before joining the Yamuna River in Jalaun district, Uttar Pradesh.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- WII ---
         {
@@ -786,7 +783,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "The Wildlife Institute of India (WII) led the satellite-tagging of the first Ganges River Dolphin in Assam on December 18, 2024, in collaboration with the Assam Forest Department and Aaranyak NGO, under Project Dolphin.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Budget ---
         {
@@ -799,7 +796,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "In the 2025–26 budget, ₹290 crore (64% of the ₹450 crore Integrated Wildlife Habitats allocation) was earmarked for Project Tiger and Project Elephant, representing an 18% increase over 2024–25 revised estimates.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Corbett details ---
         {
@@ -812,7 +809,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Corbett Tiger Reserve was established in 1936 as Hailey National Park and was renamed Corbett National Park in 1957 to honor Jim Corbett. Rivers Ramganga, Pallaen, and Sonanadi flow through it.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- NTCA ---
         {
@@ -825,7 +822,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Project Tiger is managed by the National Tiger Conservation Authority (NTCA) under the Ministry of Environment, Forests and Climate Change (MoEFCC). It was launched in 1973 and currently covers 58 Tiger Reserves.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Paris Agreement ---
         {
@@ -838,7 +835,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "The Paris Agreement (2015) aims to hold global temperature increase to well below 2°C above pre-industrial levels and pursue efforts to limit it to 1.5°C. The 1.5°C target is the aspirational limit referenced in the Belém Mission to 1.5 at COP30.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- UNFCCC ---
         {
@@ -851,7 +848,7 @@ def seed():
             "correct_answer": "A",
             "explanation": "UNFCCC stands for United Nations Framework Convention on Climate Change. It is the international treaty under which the annual Conference of Parties (COP) is held. COP29 was in Baku (2024) and COP30 in Belém (2025).",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Coral/Marine ---
         {
@@ -864,7 +861,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "The Global Climate Finance Accountability Framework was launched at COP30 in Belém, Brazil (November 2025) to strengthen transparency, credibility, and trust in climate finance delivery.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Ramsar ---
         {
@@ -877,7 +874,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The Ramsar Convention on Wetlands (1971) is an international treaty for the conservation and sustainable use of wetlands. India has 85 Ramsar sites covering about 14 lakh hectares.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- BNHS ---
         {
@@ -890,7 +887,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "BNHS experts warned that wetland loss near Navi Mumbai International Airport (NMIA) may push birds — particularly flamingos — near the airport, raising bird strike risks. The DPS Flamingo Lake near Thane Creek Flamingo Sanctuary was approved as a Conservation Reserve to address this.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Namdapha ---
         {
@@ -903,7 +900,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Namdapha National Park is located in Arunachal Pradesh. The Kamlang–Namdapha landscape is a biodiversity hotspot where three new frog species (Gracixalus patkaiensis, Alcalus fontinalis, Nidirana noadihing) were discovered in early 2024.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Western Ghats ---
         {
@@ -916,7 +913,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "In 2024's record-breaking biodiversity year, Kerala led all states with 101 newly recorded species — of which 80 were entirely new to science and 21 were documented in India for the first time. Finds included reptiles, amphibians, butterflies, orchids, fungi, and lichens.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- CZA ---
         {
@@ -929,7 +926,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The 2024 report 'Plant Breeding Programmes in Indian Zoos: Assessment and Strategic Actions' by the Central Zoo Authority (CZA) highlighted a gap in conservation breeding for the Endangered Himalayan Musk Deer in Indian zoos.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Indravati River ---
         {
@@ -942,7 +939,7 @@ def seed():
             "correct_answer": "D",
             "explanation": "The Indravati River is a tributary of the Godavari River. It originates from the Dandakaranya range in Odisha and forms the northern and western boundaries of Indravati National Park in Chhattisgarh.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- WPA ---
         {
@@ -955,7 +952,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Under the Wildlife Protection Act 1972, Wildlife Sanctuaries are notified by state governments. However, the Central Government can also declare a National Park. No legislation by the state assembly is needed; declaration is by notification.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Tiger Census schedule ---
         {
@@ -968,7 +965,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "The All India Tiger Estimation (AITE) is conducted every 4 years. The 6th edition began in late 2025. The last (5th) estimation in 2022 showed 3,682 tigers, up from 2,967 in 2018.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- COP29 India response ---
         {
@@ -981,7 +978,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "India strongly criticized the $300 billion/year by 2035 climate finance goal agreed at COP29 Baku, calling it 'abysmally poor' and insufficient to address climate change. Developing countries broadly expressed discontent with the outcome.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Project Tiger launch ---
         {
@@ -994,7 +991,7 @@ def seed():
             "correct_answer": "B",
             "explanation": "Project Tiger was launched in India in 1973. It is managed by the National Tiger Conservation Authority (NTCA) under the Ministry of Environment, Forests and Climate Change (MoEFCC). India now has 58 Tiger Reserves.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Simsang River ---
         {
@@ -1007,7 +1004,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Channa nachi was discovered in a shallow slow-flowing stream near Chokpot village, which is part of the Simsang River system in Meghalaya. The Simsang River is a major river of the Garo Hills region.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Mangroves ---
         {
@@ -1020,7 +1017,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "The Sundarbans, the world's largest mangrove forest, is located in West Bengal (and extends into Bangladesh). It is a UNESCO World Heritage Site and home to the Royal Bengal Tiger. India has the world's second-largest mangrove area.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Project Dolphin ---
         {
@@ -1033,7 +1030,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Project Dolphin was launched in India in 2020 for the conservation of Gangetic and Irrawaddy dolphins. A landmark under this project was the satellite-tagging of the first Ganges River Dolphin in Assam on December 18, 2024.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Indian Rhino Vision ---
         {
@@ -1046,7 +1043,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Pobitora Wildlife Sanctuary in Assam is part of the Indian Rhino Vision 2020 program and has the highest density of Greater One-Horned Rhinoceros in India. The sanctuary spans 48.81 sq km in eastern Guwahati.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
         # --- Eusauropod ---
         {
@@ -1059,7 +1056,7 @@ def seed():
             "correct_answer": "C",
             "explanation": "Jinchuanloong niedu is a new genus of eusauropod dinosaur whose fossil was found in the lower Xinhe Formation near Jinchang city, Gansu Province, China, dating to the Middle Jurassic period, approximately 165 million years ago.",
             "folder": "AP_HC",
-            "topic": "National_Current_Affairs"
+            "topic": "International_Current_Affairs"
         },
     ]
 

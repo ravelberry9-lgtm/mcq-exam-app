@@ -608,21 +608,13 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Mideast War 2025-2026 MCQs (IDs 30001–30080) ──
+    # ── Auto-seed Mideast War 2025-2026 MCQs (IDs 30001–30080) [force-refresh] ──
     try:
-        ph = '%s' if USE_POSTGRES else '?'
-        cur_mew = db_exec(conn,
-            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
-            (30001, 30080))
-        mew_count = _fv(cur_mew.fetchone())
-        if mew_count < 75:
-            print(f"[startup] Mideast War MCQs: {mew_count}/80 — auto-seeding...")
-            import importlib
-            mew_mod = importlib.import_module('seed_mideast_war_mcq')
-            mew_mod.seed()
-            print("[startup] Mideast War seed complete.")
-        else:
-            print(f"[startup] Mideast War: {mew_count} questions already loaded.")
+        import importlib
+        print("[startup] Mideast War 2025-2026: refreshing data...")
+        mew_mod = importlib.import_module('seed_mideast_war_mcq')
+        mew_mod.seed()
+        print("[startup] Mideast War seed complete.")
     except Exception as _mew_e:
         print(f"[startup] Mideast War seed error: {_mew_e}")
         try: conn.rollback()
@@ -676,21 +668,13 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Environment & Climate MCQs (IDs 25001–25080) ──
+    # ── Auto-seed Environment & Climate MCQs (IDs 25001–25080) [force-refresh] ──
     try:
-        ph = '%s' if USE_POSTGRES else '?'
-        cur_env = db_exec(conn,
-            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
-            (25001, 25080))
-        env_count = _fv(cur_env.fetchone())
-        if env_count < 75:
-            print(f"[startup] Environment MCQs: {env_count}/80 — auto-seeding...")
-            import importlib
-            env_mod = importlib.import_module('seed_environment_mcq')
-            env_mod.seed()
-            print("[startup] Environment seed complete.")
-        else:
-            print(f"[startup] Environment: {env_count} questions already loaded.")
+        import importlib
+        print("[startup] Environment & Climate: refreshing data...")
+        env_mod = importlib.import_module('seed_environment_mcq')
+        env_mod.seed()
+        print("[startup] Environment seed complete.")
     except Exception as _env_e:
         print(f"[startup] Environment seed error: {_env_e}")
         try: conn.rollback()
