@@ -1171,16 +1171,16 @@ def seed():
         sql = """
             INSERT INTO questions
                 (id, question_text, option_a, option_b, option_c, option_d,
-                 correct_answer, explanation, topic, folder, difficulty, marks)
-            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                 correct_answer, explanation, topic, folder, difficulty)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
             ON CONFLICT (id) DO NOTHING
         """
     else:
         sql = """
             INSERT OR IGNORE INTO questions
                 (id, question_text, option_a, option_b, option_c, option_d,
-                 correct_answer, explanation, topic, folder, difficulty, marks)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+                 correct_answer, explanation, topic, folder, difficulty)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?)
         """
 
     for q in questions:
@@ -1188,7 +1188,7 @@ def seed():
             q["id"], q["question_text"],
             q["option_a"], q["option_b"], q["option_c"], q["option_d"],
             q["correct_answer"], q["explanation"],
-            q["topic"], q["folder"], q["difficulty"], q["marks"]
+            q["topic"], q["folder"], q["difficulty"]
         ))
 
     conn.commit()
