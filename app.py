@@ -615,6 +615,26 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed Mideast War 2025-2026 MCQs (IDs 30001–30080) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_mew = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (30001, 30080))
+        mew_count = _fv(cur_mew.fetchone())
+        if mew_count < 75:
+            print(f"[startup] Mideast War MCQs: {mew_count}/80 — auto-seeding...")
+            import importlib
+            mew_mod = importlib.import_module('seed_mideast_war_mcq')
+            mew_mod.seed()
+            print("[startup] Mideast War seed complete.")
+        else:
+            print(f"[startup] Mideast War: {mew_count} questions already loaded.")
+    except Exception as _mew_e:
+        print(f"[startup] Mideast War seed error: {_mew_e}")
+        try: conn.rollback()
+        except: pass
+
     # ── Auto-seed International Events & Appointments MCQs (IDs 29001–29080) ──
     try:
         ph = '%s' if USE_POSTGRES else '?'
