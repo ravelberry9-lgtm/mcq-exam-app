@@ -4,26 +4,53 @@ IDs: 26001–26080
 Folder: AP_HC
 Topic: National_Current_Affairs
 Cross-checked: GKToday Science & Technology MCQs (Page 1), ISRO, NASA, PIB
+NOTE: seed() runs DELETE+INSERT to force-refresh stale data.
 """
 
-import sqlite3, os
+import os, sys
 
-def get_db():
-    base = os.path.dirname(os.path.abspath(__file__))
-    db_path = os.path.join(base, "database.db")
-    conn = sqlite3.connect(db_path)
+DATABASE_URL = os.environ.get('DATABASE_URL', '')
+if DATABASE_URL.startswith('postgres://'):
+    DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://', 1)
+USE_POSTGRES = bool(DATABASE_URL)
+
+if USE_POSTGRES:
+    import psycopg2
+    import psycopg2.extras
+else:
+    import sqlite3
+
+DB_PATH = os.path.join(os.path.dirname(__file__), 'database.db')
+
+
+def get_conn():
+    if USE_POSTGRES:
+        return psycopg2.connect(DATABASE_URL)
+    conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
 
+
+def _fv(row):
+    if row is None:
+        return 0
+    if isinstance(row, dict):
+        return list(row.values())[0]
+    return list(row)[0]
+
+
 def seed():
-    conn = get_db()
-    cur = conn.cursor()
+    conn = get_conn()
+    if USE_POSTGRES:
+        cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+    else:
+        cur = conn.cursor()
 
     # Force-refresh: delete old and re-insert with updated 2025 data
     cur.execute("DELETE FROM questions WHERE id >= 26001 AND id <= 26080")
     conn.commit()
 
-    ph = "?"
+    ph = '%s' if USE_POSTGRES else '?'
     questions = [
         # --- ISRO ---
         {
@@ -1036,20 +1063,39 @@ def seed():
         },
     ]
 
+    if USE_POSTGRES:
+        sql = f"""INSERT INTO questions
+            (id, question_text, option_a, option_b, option_c, option_d,
+             correct_answer, explanation, folder, topic)
+            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})
+            ON CONFLICT (id) DO NOTHING"""
+    else:
+        sql = f"""INSERT OR IGNORE INTO questions
+            (id, question_text, option_a, option_b, option_c, option_d,
+             correct_answer, explanation, folder, topic)
+            VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})"""
+
+    if USE_POSTGRES:
+        cur2 = conn.cursor()
+    else:
+        cur2 = conn.cursor()
+
+    inserted = 0
     for q in questions:
-        cur.execute(
-            f"""INSERT OR IGNORE INTO questions
-                (id, question_text, option_a, option_b, option_c, option_d,
-                 correct_answer, explanation, folder, topic)
-                VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})""",
-            (q["id"], q["question_text"], q["option_a"], q["option_b"],
-             q["option_c"], q["option_d"], q["correct_answer"],
-             q["explanation"], q["folder"], q["topic"])
-        )
+        try:
+            cur2.execute(sql, (q["id"], q["question_text"], q["option_a"], q["option_b"],
+                               q["option_c"], q["option_d"], q["correct_answer"],
+                               q["explanation"], q["folder"], q["topic"]))
+            inserted += 1
+        except Exception as e:
+            print(f"[seed_science_tech] Skipping ID {q['id']}: {e}")
+            try: conn.rollback()
+            except: pass
 
     conn.commit()
     conn.close()
+    print(f"[seed_science_tech] Inserted {inserted}/{len(questions)} questions (IDs 26001–26080).")
+
 
 if __name__ == "__main__":
     seed()
-    print("Science & Technology MCQs seeded: IDs 26001–26080")

@@ -6,26 +6,53 @@ Topic: National_Current_Affairs (wildlife, protected areas, COP, species — Ind
 Cross-checked: GKToday Environment & Biodiversity MCQs (Pages 1-2), PIB, IUCN, NTCA
 """
 
-import sqlite3, os, importlib.util
+import os, sys
 
-def get_db():
-    base = os.path.dirname(os.path.abspath(__file__))
-    db_path = os.path.join(base, "database.db")
-    conn = sqlite3.connect(db_path)
+DATABASE_URL = os.environ.get('DATABASE_URL', '')
+if DATABASE_URL.startswith('postgres://'):
+    DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://', 1)
+USE_POSTGRES = bool(DATABASE_URL)
+
+if USE_POSTGRES:
+    import psycopg2
+    import psycopg2.extras
+else:
+    import sqlite3
+
+DB_PATH = os.path.join(os.path.dirname(__file__), 'database.db')
+
+
+def get_conn():
+    if USE_POSTGRES:
+        return psycopg2.connect(DATABASE_URL)
+    conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
 
-def seed():
-    conn = get_db()
-    cur = conn.cursor()
 
-    # Idempotency check
-    cur.execute("SELECT COUNT(*) FROM questions WHERE id >= 25001 AND id <= 25080")
-    if cur.fetchone()[0] >= 75:
+def _fv(row):
+    if row is None:
+        return 0
+    if isinstance(row, dict):
+        return list(row.values())[0]
+    return list(row)[0]
+
+
+def seed():
+    conn = get_conn()
+    if USE_POSTGRES:
+        cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+    else:
+        cur = conn.cursor()
+
+    # Idempotency check (uses parameterised query for both DB types)
+    ph = '%s' if USE_POSTGRES else '?'
+    cur.execute(f"SELECT COUNT(*) FROM questions WHERE id >= {ph} AND id <= {ph}", (25001, 25080))
+    if _fv(cur.fetchone()) >= 75:
         conn.close()
         return
 
-    ph = "?"
+    ph = '%s' if USE_POSTGRES else '?'
     questions = [
         # --- Wildlife Sanctuaries ---
         {
