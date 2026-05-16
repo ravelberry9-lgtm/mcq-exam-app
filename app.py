@@ -495,6 +495,26 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed Governance 500 MCQs ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_gov = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE folder={ph} AND topic={ph}",
+            ("AP_HC", "Governance"))
+        gov_count = _fv(cur_gov.fetchone())
+        if gov_count < 490:
+            print(f"[startup] Governance MCQs: {gov_count}/502 — auto-seeding...")
+            import importlib
+            gov_mod = importlib.import_module('seed_governance_500')
+            gov_mod.seed()
+            print("[startup] Governance seed complete.")
+        else:
+            print(f"[startup] Governance: {gov_count} questions already loaded.")
+    except Exception as _gov_e:
+        print(f"[startup] Governance seed error: {_gov_e}")
+        try: conn.rollback()
+        except: pass
+
     conn.close()
 
 
