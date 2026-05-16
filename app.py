@@ -162,6 +162,12 @@ def init_db():
             language TEXT DEFAULT 'English',
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )''')
+        cur.execute('''CREATE TABLE IF NOT EXISTS concept_notes (
+            tag TEXT PRIMARY KEY,
+            label TEXT NOT NULL,
+            label_te TEXT,
+            html TEXT NOT NULL
+        )''')
         conn.commit()
         cur.close()
     else:
@@ -243,6 +249,12 @@ def init_db():
                 correct_answer TEXT DEFAULT '',
                 language TEXT DEFAULT 'English',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE TABLE IF NOT EXISTS concept_notes (
+                tag TEXT PRIMARY KEY,
+                label TEXT NOT NULL,
+                label_te TEXT,
+                html TEXT NOT NULL
             );
         ''')
         conn.commit()
@@ -6298,6 +6310,67 @@ _NOTES_MAP = [
 ]
 _NOTES_BASE = os.path.join(os.path.dirname(__file__), 'static', 'notes', 'General_Science', 'Study_Notes')
 
+# ── Concept notes: qid range → concept tag ──
+CONCEPT_MAP = [
+    (23001, 23012, 'nobel_prize'),
+    (23013, 23017, 'grammy_awards'),
+    (23018, 23019, 'booker_prize'),
+    (23020, 23022, 'pulitzer_prize'),
+    (23023, 23024, 'ballon_dor'),
+    (23025, 23027, 'khel_ratna'),
+    (23028, 23032, 'golden_globes'),
+    (23033, 23040, 'grammy_awards'),
+    (23041, 23047, 'bafta_awards'),
+    (23048, 23060, 'oscars'),
+    (23061, 23066, 'padma_awards'),
+    (23067, 23075, 'bharat_ratna'),
+    (23076, 23080, 'india_awards'),
+]
+_concept_cache = {}   # tag -> html, loaded at startup
+
+def _load_concept_cache():
+    """Load all concept notes from DB into memory at startup. Auto-seeds if empty."""
+    global _concept_cache
+    try:
+        conn = get_db()
+        if USE_POSTGRES:
+            cur = conn.cursor()
+            cur.execute('SELECT tag, html FROM concept_notes')
+            rows = cur.fetchall()
+            cur.close()
+        else:
+            rows = conn.execute('SELECT tag, html FROM concept_notes').fetchall()
+        _concept_cache = {r[0]: r[1] for r in rows}
+        print(f'[concept_cache] Loaded {len(_concept_cache)} concept notes.')
+        if not _concept_cache:
+            print('[concept_cache] Empty — auto-seeding concept notes...')
+            try:
+                import importlib
+                cn_mod = importlib.import_module('seed_concept_notes')
+                print('[concept_cache] seed_concept_notes seeded successfully.')
+                # Reload into cache after seeding
+                conn2 = get_db()
+                if USE_POSTGRES:
+                    cur2 = conn2.cursor()
+                    cur2.execute('SELECT tag, html FROM concept_notes')
+                    rows2 = cur2.fetchall()
+                    cur2.close()
+                else:
+                    rows2 = conn2.execute('SELECT tag, html FROM concept_notes').fetchall()
+                _concept_cache = {r[0]: r[1] for r in rows2}
+                print(f'[concept_cache] Reloaded {len(_concept_cache)} concept notes after seed.')
+            except Exception as _se:
+                print(f'[concept_cache] Auto-seed failed: {_se}')
+    except Exception as e:
+        print(f'[concept_cache] Load failed: {e}')
+
+def _qid_to_tag(qid):
+    for lo, hi, tag in CONCEPT_MAP:
+        if lo <= qid <= hi:
+            return tag
+    return None
+
+
 import re as _re
 
 def _html_to_text(html):
@@ -6421,7 +6494,50 @@ def topic_notes_html(qid):
     except Exception as e:
         return '<p style="padding:20px;color:red">Error: ' + str(e) + '</p>', 500
 
+@app.route('/api/concept-note-html/<int:qid>')
+def concept_note_html(qid):
+    """Return concept note HTML for a given qid (from in-memory cache)."""
+    tag = _qid_to_tag(qid)
+    html = _concept_cache.get(tag) if tag else None
+    if not html:
+        # Fallback: serve topic-level notes file
+        return topic_notes_html(qid)
+    inject = (
+        '<style>'
+        '.bi-te,.te-td,.cover-te,.te-tag,[class*="te-"]{display:none!important}'
+        'span.lang-tag{display:none!important}'
+        'body{font-size:13px!important;padding:10px 14px!important;margin:0!important;'
+        'background:#fff!important;color:#1a1a2e!important;'
+        'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important}'
+        'h1,h2,h3,h4,h5{font-size:15px!important;color:#1a237e!important;'
+        'margin:10px 0 6px!important;font-weight:700!important}'
+        'table{width:100%!important;border-collapse:collapse!important;'
+        'font-size:12px!important;margin:8px 0!important}'
+        'th{background:#1a237e!important;color:#fff!important;padding:6px 8px!important;'
+        'text-align:left!important;font-size:12px!important}'
+        'td{border:1px solid #c5cae9!important;padding:5px 8px!important;'
+        'vertical-align:top!important;line-height:1.5!important}'
+        'tr:nth-child(even) td{background:#f0f2ff!important}'
+        'p,li{font-size:13px!important;line-height:1.65!important;margin:4px 0!important}'
+        'ul,ol{padding-left:18px!important;margin:4px 0!important}'
+        '.concept-cover{background:linear-gradient(135deg,#1a237e,#3949ab);'
+        'color:#fff!important;padding:12px 14px!important;margin:-10px -14px 12px!important;'
+        'border-radius:0 0 8px 8px!important}'
+        '.concept-cover h1{color:#fff!important;font-size:17px!important;margin:0 0 2px!important}'
+        '.concept-cover .sub{color:#c5cae9!important;font-size:12px!important}'
+        '.section-hdr{background:#e8eaf6!important;padding:5px 8px!important;'
+        'margin:10px 0 4px!important;border-left:3px solid #3949ab!important;'
+        'font-weight:700!important;font-size:13px!important;color:#1a237e!important}'
+        '.key-table th{background:#283593!important}'
+        '</style>'
+    )
+    full = '<!DOCTYPE html><html><head><meta charset="utf-8">'
+    full += '<meta name="viewport" content="width=device-width,initial-scale=1">'
+    full += inject + '</head><body>' + html + '</body></html>'
+    return full, 200, {'Content-Type': 'text/html; charset=utf-8'}
+
 @app.route('/api/ai-explain', methods=['POST'])
+
 def ai_explain():
     data = request.json or {}
     question    = data.get('question', '')
@@ -6463,6 +6579,7 @@ def ai_explain():
 
 # ── Run init_db on import (works with gunicorn on Railway AND locally) ──
 init_db()
+_load_concept_cache()
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
