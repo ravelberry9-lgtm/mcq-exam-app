@@ -515,23 +515,28 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed International Current Affairs MCQs (86 Qs) ──
+    # ── Auto-seed International Current Affairs MCQs (86 Qs) [force-refresh 2025-26] ──
     try:
         ph = '%s' if USE_POSTGRES else '?'
         cur_intl = db_exec(conn,
-            f"SELECT COUNT(*) FROM questions WHERE folder={ph} AND topic={ph}",
-            ("AP_HC", "International_Current_Affairs"))
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (20001, 20086))
         intl_count = _fv(cur_intl.fetchone())
-        if intl_count < 80:
-            print(f"[startup] Intl Current Affairs MCQs: {intl_count}/86 — auto-seeding...")
+        _intl_sentinel = db_exec(conn,
+            f"SELECT explanation FROM questions WHERE id={ph}", (20086,))
+        _intl_row = _intl_sentinel.fetchone()
+        _intl_marker = (_intl_row[0] if _intl_row else '') or ''
+        if intl_count < 86 or 'India-UK' not in _intl_marker:
+            print(f"[startup] Intl Orgs MCQs: {intl_count}/86 — force-refreshing 2025-26 data...")
             import importlib
             intl_mod = importlib.import_module('seed_intl_orgs_mcq')
+            importlib.reload(intl_mod)
             intl_mod.seed()
-            print("[startup] International Current Affairs seed complete.")
+            print("[startup] Intl Orgs seed complete (2025-26).")
         else:
-            print(f"[startup] Intl Current Affairs: {intl_count} questions already loaded.")
+            print(f"[startup] Intl Orgs: {intl_count} questions already loaded (2025-26).")
     except Exception as _intl_e:
-        print(f"[startup] Intl Current Affairs seed error: {_intl_e}")
+        print(f"[startup] Intl Orgs seed error: {_intl_e}")
         try: conn.rollback()
         except: pass
 
