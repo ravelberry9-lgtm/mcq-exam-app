@@ -6361,8 +6361,11 @@ CONCEPT_MAP = [
 _concept_cache = {}   # tag -> html, loaded at startup
 
 def _load_concept_cache():
-    """Load all concept notes from DB into memory at startup. Auto-seeds if empty."""
+    """Load all concept notes from DB into memory at startup. Auto-seeds if empty or incomplete."""
     global _concept_cache
+    _INTL_SENTINEL_TAGS = ['org_un_g20', 'summit_g20_g7_nato', 'conflict_sindoor',
+                           'env_wildlife', 'sci_isro_space', 'sports_cricket',
+                           'reports_global', 'events_leadership', 'mideast_2026_war']
     try:
         conn = get_db()
         if USE_POSTGRES:
@@ -6374,14 +6377,18 @@ def _load_concept_cache():
             rows = conn.execute('SELECT tag, html FROM concept_notes').fetchall()
         _concept_cache = {r[0]: r[1] for r in rows}
         print(f'[concept_cache] Loaded {len(_concept_cache)} concept notes.')
-        if not _concept_cache:
-            print('[concept_cache] Empty — auto-seeding concept notes...')
+        need_awards = not _concept_cache
+        need_intl = any(t not in _concept_cache for t in _INTL_SENTINEL_TAGS)
+        if need_awards or need_intl:
+            print(f'[concept_cache] Incomplete (awards={need_awards}, intl={need_intl}) — seeding...')
             try:
                 import importlib
-                cn_mod = importlib.import_module('seed_concept_notes')
-                print('[concept_cache] seed_concept_notes seeded successfully.')
-                cn_intl = importlib.import_module('seed_concept_notes_intl')
-                print('[concept_cache] seed_concept_notes_intl seeded successfully.')
+                if need_awards:
+                    cn_mod = importlib.import_module('seed_concept_notes')
+                    print('[concept_cache] seed_concept_notes seeded successfully.')
+                if need_intl:
+                    cn_intl = importlib.import_module('seed_concept_notes_intl')
+                    print('[concept_cache] seed_concept_notes_intl seeded successfully.')
                 # Reload into cache after seeding
                 conn2 = get_db()
                 if USE_POSTGRES:
