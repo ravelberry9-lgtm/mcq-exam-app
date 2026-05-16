@@ -615,6 +615,26 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed International Events & Appointments MCQs (IDs 29001–29080) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_iev = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (29001, 29080))
+        iev_count = _fv(cur_iev.fetchone())
+        if iev_count < 75:
+            print(f"[startup] Intl Events MCQs: {iev_count}/80 — auto-seeding...")
+            import importlib
+            iev_mod = importlib.import_module('seed_intl_events_mcq')
+            iev_mod.seed()
+            print("[startup] Intl Events seed complete.")
+        else:
+            print(f"[startup] Intl Events: {iev_count} questions already loaded.")
+    except Exception as _iev_e:
+        print(f"[startup] Intl Events seed error: {_iev_e}")
+        try: conn.rollback()
+        except: pass
+
     # ── Auto-seed Reports & Indices MCQs (IDs 28001–28080) ──
     try:
         ph = '%s' if USE_POSTGRES else '?'
