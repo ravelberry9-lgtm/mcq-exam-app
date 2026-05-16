@@ -6621,4 +6621,4 @@ if __name__ == '__main__':
         print(f"  📱 On your phone: http://{local_ip}:{port}")
         print(f"\n  Make sure phone is on same WiFi network!")
     print("="*55 + "\n")
-    app.run(host='
+    app.run(host='0.0.0.0', port=port, debug=False)
