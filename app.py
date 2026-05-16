@@ -6320,7 +6320,9 @@ CONCEPT_MAP = [
     (21041, 21080, 'summit_cop_davos'),
     # Conflicts & Geopolitics (22001-22080)
     (22001, 22016, 'conflict_sindoor'),
-    (22017, 22049, 'conflict_twelve_day'),
+    (22017, 22026, 'conflict_twelve_day'),   # Twelve-Day War (Israel-Iran June 2025)
+    (22027, 22040, 'mideast_2026_war'),      # 2026 Iran War questions in conflicts range
+    (22041, 22049, 'conflict_twelve_day'),   # Russia-Ukraine (note covers Ukraine section)
     (22050, 22080, 'conflict_global'),
     # Environment & Climate (25001-25080)
     (25001, 25028, 'env_wildlife'),
