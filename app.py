@@ -555,6 +555,26 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed Global Conflicts & Geopolitics MCQs (80 Qs, IDs 22001–22080) ──
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_conf = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (22001, 22080))
+        conf_count = _fv(cur_conf.fetchone())
+        if conf_count < 75:
+            print(f"[startup] Conflicts & Geopolitics MCQs: {conf_count}/80 — auto-seeding...")
+            import importlib
+            conf_mod = importlib.import_module('seed_conflicts_mcq')
+            conf_mod.seed()
+            print("[startup] Conflicts & Geopolitics seed complete.")
+        else:
+            print(f"[startup] Conflicts & Geopolitics: {conf_count} questions already loaded.")
+    except Exception as _conf_e:
+        print(f"[startup] Conflicts & Geopolitics seed error: {_conf_e}")
+        try: conn.rollback()
+        except: pass
+
     conn.close()
 
 
