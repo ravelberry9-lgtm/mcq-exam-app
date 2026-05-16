@@ -334,10 +334,10 @@ INTL_MCQS = [
     },
     {
         "id": 20040,
-        "question": "East Timor (Timor-Leste) became the 11th ASEAN member in November 2022 as an observer. Which country is the most recent FULL member of ASEAN?",
-        "option_a": "Timor-Leste", "option_b": "Cambodia", "option_c": "Myanmar", "option_d": "Brunei",
+        "question": "Which country became the 11th and most recent full member of ASEAN, admitted at the 47th ASEAN Summit in Kuala Lumpur in October 2025?",
+        "option_a": "Timor-Leste", "option_b": "Cambodia", "option_c": "Myanmar", "option_d": "Papua New Guinea",
         "correct_answer": "A",
-        "explanation": "ASEAN currently has 10 full members. Timor-Leste was granted observer status at the 47th ASEAN Summit in 2022 and is on track for full membership. Brunei (1984) and Vietnam (1995) were among later joiners. ASEAN's founding members (1967) were Thailand, Malaysia, Singapore, Indonesia, Philippines.",
+        "explanation": "ASEAN now has 11 full members. Timor-Leste (East Timor) was formally admitted as ASEAN's 11th member at the 47th ASEAN Summit in Kuala Lumpur, Malaysia (October 26-28, 2025) — ASEAN's first expansion since Cambodia joined in 1999 (a 26-year gap). Note: The Phnom Penh 2022 summit was the 40th ASEAN Summit, not the 47th. Brunei (1984) and Vietnam (1995) were among later joiners. ASEAN's founding members (1967) were Thailand, Malaysia, Singapore, Indonesia, Philippines.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     # ─── SCO (20041-20046) ─────────────────────────────────────────
