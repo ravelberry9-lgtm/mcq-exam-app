@@ -1100,4 +1100,12 @@ else:
         conn.execute("DELETE FROM concept_notes WHERE tag = ?", (tag,))
     for tag, label, label_te, html in NOTES:
         conn.execute(
-            "INSERT INTO concept_notes (tag, label, 
+            "INSERT INTO concept_notes (tag, label, label_te, html) VALUES (?, ?, ?, ?)",
+            (tag, label, label_te, html.strip())
+        )
+    conn.commit()
+
+conn.close()
+print(f"SUCCESS: Seeded {len(NOTES)} International Current Affairs concept notes into DB.")
+for tag, label, *_ in NOTES:
+    print(f"  • {tag:30s} — {label}")
