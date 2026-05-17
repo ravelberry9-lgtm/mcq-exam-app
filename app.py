@@ -6412,6 +6412,9 @@ def _load_concept_cache():
                     print('[concept_cache] seed_concept_notes_ap seeded successfully.')
                     cn_ap_divs = importlib.import_module('seed_concept_notes_ap_divs')
                     print('[concept_cache] seed_concept_notes_ap_divs seeded successfully.')
+                    cn_ap_q1to10 = importlib.import_module('seed_concept_notes_ap_q1to10')
+                    cn_ap_q1to10.seed()
+                    print('[concept_cache] seed_concept_notes_ap_q1to10 seeded successfully.')
                 # Reload into cache after seeding
                 conn2 = get_db()
                 if USE_POSTGRES:
