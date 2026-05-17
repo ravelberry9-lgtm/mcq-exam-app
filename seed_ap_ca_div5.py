@@ -4,6 +4,16 @@ seed_ap_ca_div5.py — AP Current Affairs Division 5: Art & Culture
 
 Sources: Eenadu Pratibha + AP Government + PIB + Web verified
 Covers: Classical arts, Folk arts, GI Tags, Festivals, UNESCO, Padma Awards, Cultural Events 2024-2026
+
+AUDIT CHANGES (2026-05-18):
+1. FIXED wrong correct_answer: "కుమ్మరి సారె గిన్నిస్ రికార్డు సాధించిన కళాకారుడు
+   ఏ జిల్లాకు చెందినవాడు?" — answer was "b" (అనంతపురం) but the section text
+   and question context clearly state Kakinada district (Tuni town). Corrected
+   to "c" (కాకినాడ).
+2. FIXED metadata in _seed_ap_ca_div5_notes_inner: chapter_title_te was set to
+   'AP వ్యవసాయం & నీటిపారుదల' and chapter_title_en to 'AP Agriculture &
+   Irrigation' — both are wrong. This is Art & Culture division. Corrected to
+   'AP కళలు & సంస్కృతి' / 'AP Art & Culture'.
 """
 import json as _json
 
@@ -125,7 +135,7 @@ MCQ_DATA = [
     (3, 1,
      "కుమ్మరి సారె గిన్నిస్ రికార్డు సాధించిన కళాకారుడు ఏ జిల్లాకు చెందినవాడు?",
      "విశాఖపట్నం", "అనంతపురం", "కాకినాడ", "గుంటూరు",
-     "b",
+     "c",
      "తిరుమలనీడి సాయి కాకినాడ జిల్లా తుని పట్టణానికి చెందినవాడు. 91 గ్రాముల అతి చిన్న మోటారు కుమ్మరి సారెకు డిసెంబరు 9, 2025న గిన్నిస్ సర్టిఫికెట్ అందింది."),
 
     (3, 2,
@@ -232,8 +242,8 @@ def _seed_ap_ca_div5_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force
         f"INSERT INTO study_notes (subject, topic, subtopic, chapter_num, chapter_title_te, chapter_title_en, pages_ref, sections_json) "
         f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph})",
         ('GK', 'AP_Current_Affairs', 'Division5', 5,
-         'AP వ్యవసాయం & నీటిపారుదల',
-         'AP Agriculture & Irrigation',
+         'AP కళలు & సంస్కృతి',
+         'AP Art & Culture',
          '', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
     if USE_POSTGRES: conn.commit()
     return {'success': True, 'message': 'AP CA Div5 notes seeded!'}

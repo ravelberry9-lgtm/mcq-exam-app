@@ -1,6 +1,13 @@
 """
 seed_ap_ca_div1.py — AP Current Affairs Division 1: 2024 Elections & Cabinet
 ఆంధ్రప్రదేశ్ కరెంట్ అఫైర్స్ — విభాగం 1: 2024 ఎన్నికలు & కేబినెట్
+
+AUDIT CHANGES (2026-05-18):
+1. FIXED wrong correct_answer: DCM పవన్ కళ్యాణ్ constituency question —
+   was "d" (అనకాపల్లి), corrected to "c" (పిఠాపురం). Pawan Kalyan won from
+   Pithapuram, not Anakkapalli. Key fact confirmed.
+2. REMOVED 2 junk MCQs: "ఎన్నికల ధర్మం?" (meaningless question/options) and
+   "JSP సఫలత సూచన?" (vague category question with no factual value).
 """
 import json as _json
 
@@ -190,7 +197,7 @@ MCQ_DATA = [
     (4, 2,
      "DCM పవన్ కళ్యాణ్ ఏ నియోజకవర్గం నుండి గెలిచారు?",
      "రాపూరు", "రాజమండ్రి", "పిఠాపురం", "అనకాపల్లి",
-     "d",
+     "c",
      "పవన్ కళ్యాణ్ పిఠాపురం నియోజకవర్గం (తూర్పు గోదావరి జిల్లా) నుండి గెలిచారు."),
 
     (4, 3,
@@ -517,17 +524,7 @@ MCQ_DATA = [
      "c",
      "నీరబ్ కుమార్ ప్రసాద్ (IAS 1992) ముఖ్య కార్యదర్శి."),
 
-    (0, 3,
-     "ఎన్నికల ధర్మం?",
-     "ఒకసారి", "రెండుసారి", "మూడుసారి", "నానానాసారి",
-     "d",
-     "2024 AP ఎన్నికలు ఒకసారిపాటు జరిగాయి."),
-
-    (1, 2,
-     "JSP సఫలత సూచన?",
-     "ఆర్థిక", "సంస్కృతిక", "సామాజిక", "రాజకీయ",
-     "d",
-     "JSP 21లో 21 గెలిచింది - పవన్ కళ్యాణ్ ప్రభావం."),
+    # Junk questions "ఎన్నికల ధర్మం?" and "JSP సఫలత సూచన?" removed by audit 2026-05-18
 
     (1, 3,
      "కూటమి గెలుపు సూచన?",

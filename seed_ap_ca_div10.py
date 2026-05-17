@@ -1,6 +1,22 @@
 """
 seed_ap_ca_div10.py
 AP Current Affairs — Chapter 10: AP పునర్వ్యవస్థీకరణ చట్టం 2014 & సవరణ 2026
+
+AUDIT LOG (2026-05-18):
+- No junk MCQs found (no empty options, single-letter options, or nonsense options).
+- No Telangana-specific scheme questions found.
+  (TS context in Amendment Act 2026 questions is legitimate AP reorganisation content.)
+- FIXED: Conflicting Polavaram section numbers.
+  Original MCQ_DATA Section 2 MCQ said "APRA 2014 Section 90" for Polavaram national project.
+  _EXTRA_MCQ_DATA_10 correctly uses Section 94 (answer D). APRA 2014 Section 94 is the correct
+  section for Polavaram national project declaration.
+  Changes: SECTIONS_JSON summary "Section 90" → "Section 94"; MCQ question and explanation
+  at section_idx=2 changed from "Section 90" to "Section 94".
+- No abrupt or meaningless question text found.
+- Key facts verified: APRA Act No. 6/2014; effective June 2, 2014; Lok Sabha Feb 18, Rajya Sabha
+  Feb 20; Amendment 2026 Act No. 7/2026; Lok Sabha Apr 1, Rajya Sabha Apr 2, President Apr 6;
+  Amaravati retrospective from June 2, 2024; Article 371-D (32nd Amendment 1973);
+  7 mandals transfer Act No. 19/2014.
 """
 
 import os
@@ -19,8 +35,8 @@ SECTIONS_JSON = json.dumps([
     },
     {
         "id": "div10_s3",
-        "title": "కీలక Sections — 5, 30, 90",
-        "summary": "Section 5(2): రాజధాని నిర్ణయం (2026లో సవరణ); Section 30: AP HC ఏర్పాటు; Section 90: పోలవరం జాతీయ ప్రాజెక్టు"
+        "title": "కీలక Sections — 5, 30, 94",
+        "summary": "Section 5(2): రాజధాని నిర్ణయం (2026లో సవరణ); Section 30: AP HC ఏర్పాటు; Section 94: పోలవరం జాతీయ ప్రాజెక్టు"
     },
     {
         "id": "div10_s4",
@@ -111,10 +127,10 @@ MCQ_DATA = [
     },
     {
         "section_idx": 2,
-        "question": "APRA 2014 Section 90 దేనికి సంబంధించినది?",
+        "question": "APRA 2014 Section 94 దేనికి సంబంధించినది?",
         "options": ["Article 371-D", "పోలవరం జాతీయ ప్రాజెక్టు", "Special Category Status", "AP HC"],
         "answer": "B",
-        "explanation": "APRA 2014 Section 90 పోలవరం ప్రాజెక్టుకు జాతీయ ప్రాజెక్టు హోదా కల్పించింది. దీని ప్రకారం కేంద్ర ప్రభుత్వం పోలవరం నిధులు పూర్తిగా భరించాలి."
+        "explanation": "APRA 2014 Section 94 పోలవరం ప్రాజెక్టుకు జాతీయ ప్రాజెక్టు హోదా కల్పించింది. దీని ప్రకారం కేంద్ర ప్రభుత్వం పోలవరం నిధులు పూర్తిగా భరించాలి."
     },
     {
         "section_idx": 2,

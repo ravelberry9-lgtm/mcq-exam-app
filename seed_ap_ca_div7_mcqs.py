@@ -1,6 +1,17 @@
 # -*- coding: utf-8 -*-
 # MCQ_DATA for AP CA Div7: AP History & Freedom Fighters
 # Format: (section_idx, difficulty, q_te, opt_a, opt_b, opt_c, opt_d, correct, explanation_te)
+#
+# AUDIT LOG (2026-05-18):
+# - WARNING: This file's MCQ_DATA is a near-complete duplicate of the additional MCQs
+#   already embedded in seed_ap_ca_div7.py's MCQ_DATA list.
+#   This standalone tuple file appears to be a secondary export; the canonical version
+#   with seeding functions is seed_ap_ca_div7.py.
+# - No junk MCQs found (no empty options, single-letter options, or nonsense options).
+# - No Telangana-specific questions found.
+# - All AP facts verified; no wrong answers found.
+# - No abrupt/meaningless question text found.
+# - FILE IS CLEAN — no changes to MCQ data required.
 
 MCQ_DATA = [
     # Section 0: Ancient Dynasties

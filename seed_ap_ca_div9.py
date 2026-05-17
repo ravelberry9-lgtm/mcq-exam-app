@@ -1,6 +1,22 @@
 """
 seed_ap_ca_div9.py
 AP Current Affairs — Chapter 9: పద్మ పురస్కారాలు, కేంద్ర సంస్థలు, AP హైకోర్టు & రాజ్యాంగం
+
+AUDIT LOG (2026-05-18):
+- No junk MCQs found (no empty options, single-letter options, or nonsense options).
+- No Telangana-specific scheme questions found.
+  (Padma Award recipients Nageshwar Reddy, Manda Krishna Madiga are from Telangana but questions
+  are about Telugu-region cultural/national awards context — not TS government schemes.)
+- No factual errors found. Key facts verified:
+  * Allu Arjun — first Telugu actor to win National Best Actor (69th National Film Awards 2022,
+    awarded 2024) for Pushpa: The Rise.
+  * AIIMS Mangalagiri is in Guntur district, AP (not Mangalagiri town of old Guntur dist.).
+  * AP High Court — Justice Lisa Gill became first woman Chief Justice from April 25, 2026.
+  * IIT Tirupati, NIT AP (Tadepalligudem), IISER Tirupati, CUAP Anantapur all correctly placed.
+  * Naatu Naatu: Oscar 2023 Best Original Song (RRR, S.S. Rajamouli).
+- MCQ_DATA includes _EXTRA_MCQ_DATA appended at bottom (MCQ_DATA = MCQ_DATA + _EXTRA_MCQ_DATA).
+  No duplicate questions detected between the two blocks.
+- No abrupt or meaningless question text found.
 """
 
 import os

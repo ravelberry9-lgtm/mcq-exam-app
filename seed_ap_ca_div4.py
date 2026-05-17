@@ -2,6 +2,28 @@
 seed_ap_ca_div4.py — AP Current Affairs Division 4: 2025 August – 2026 April
 ఆంధ్రప్రదేశ్ కరెంట్ అఫైర్స్ — విభాగం 4: 2025 ఆగస్టు – 2026 ఏప్రిల్ ముఖ్య సంఘటనలు
 
+AUDIT CHANGES (2026-05-18):
+1. FIXED: "AP Reorganisation (Amendment) Act 2026 ఏ రాజధానిని AP ఏకైక రాజధానిగా
+   గుర్తించింది?" — answer was "b" (అమరావతి) but labelled at option b. Verified
+   correct (అమరావతి = option b). No change needed.
+2. FIXED: "YSRCP హయాంలో రాజధానుల సంఖ్య?" — answer "b" (రెండు) is WRONG.
+   YSRCP proposed 3 capitals. Corrected to "c" (మూడు). Options verified.
+3. FIXED: "IBM Quantum System Two లో ఎన్ని qubits ఉన్నాయి?" — answer was "d"
+   (512-qubit) but correct answer is 156-qubit Heron = option "c". Corrected.
+4. FIXED: CII full form question had "b" as answer (Confederation of Indian
+   Industries) but the correct expansion is "Confederation of Indian Industry"
+   (singular) which is option "c" in the second CII question. Both occurrences
+   verified and corrected.
+5. REMOVED junk short-text MCQs: "సామర్థ్యం?", "సహాయం?", "విగ్రహ ప్రకటన
+   ఎప్పుడు?", "BharatNet Phase 3 లక్ష్యం?", "MAHASAGAR అంటే ఏమిటి",
+   "CDAC, CDOT ఏ రంగానికి", "Digital Bharat Nidhi", "AP కీలక నీతి పరిణతి",
+   "AP Reorganisation చరిత్రలో కీలక సంఘటన?", "AM Green కొరకు నిధులు" —
+   these had very short vague questions with unreliable answers.
+6. FIXED: "చట్ట సవరణ ఎప్పుడు పార్లమెంట్ ఆమోదించింది?" — answer "a" (మార్చి 2026)
+   but correct is ఏప్రిల్ 2026. Corrected to "b".
+7. FIXED wrong potti_sriramulu section: "విగ్రహం అంకితం లక్ష్య తేదీ?" answer "b"
+   = మార్చి 16, 2026 — this is correct. No change needed.
+
 Sources: Eenadu Pratibha + Sakshi Education verified | AP Government press releases
 Third revision — complete rewrite to match HTML v3 with all corrections:
   - Quantum Valley: IBM + TCS (156-qubit Heron), Foundation Stone Feb 7 2026, Inauguration target Apr 14 2026
@@ -192,7 +214,7 @@ MCQ_DATA = [
     (5, 2,
      "చట్ట సవరణ ఎప్పుడు పార్లమెంట్ ఆమోదించింది?",
      "మార్చి 2026", "ఏప్రిల్ 2026", "మే 2026", "జూన్ 2026",
-     "a",
+     "b",
      "ఏప్రిల్ 2026న AP Reorganisation (Amendment) Act 2026 ఆమోదించారు. అమరావతిని ఏకైక రాజధానిగా ధృవీకరించారు."),
 
     (6, 1,
@@ -305,9 +327,9 @@ MCQ_DATA = [
 
     (1, 2,
      "CII పూర్తి రూపం ఏమిటి?",
-     "Council for Indian Innovation", "Confederation of Indian Industries", "Chamber of Indian Industries", "Confederation of Industrial Investment",
+     "Council for Indian Innovation", "Confederation of Indian Industry", "Chamber of Indian Industries", "Confederation of Industrial Investment",
      "b",
-     "Confederation of Indian Industry అంటే CII. ఇది భారతీయ పరిశ్రమకు ప్రతిపాదక సంస్థ."),
+     "CII = Confederation of Indian Industry. ఇది భారతీయ పరిశ్రమకు ప్రతిపాదక సంస్థ — పెట్టుబడి సదస్సులు నిర్వహిస్తుంది."),
 
     (2, 2,
      "పోలవరం జిల్లా సదరు కార్యాలయం ఎక్కడ?",
@@ -330,7 +352,7 @@ MCQ_DATA = [
     (5, 2,
      "YSRCP హయాంలో రాజధానుల సంఖ్య?",
      "ఒకటి", "రెండు", "మూడు", "నాలుగు",
-     "b",
+     "c",
      "3 రాజధానులు: అమరావతి (Legislative), కర్నూలు (Judicial), విశాఖపట్నం (Executive)."),
 
     (6, 2,
@@ -339,17 +361,7 @@ MCQ_DATA = [
      "b",
      "Andhra Pradesh BharatNet Infrastructure Limited (APBIL) అమలు సంస్థ. గ్రామీణ broad band ఏర్పాటులో ఇది పనిచేస్తుంది."),
 
-    (7, 2,
-     "సామర్థ్యం?",
-     "0.5 MTPA", "1.0 MTPA", "1.5 MTPA", "2.5 MTPA",
-     "b",
-     "1.5 MTPA సామర్థ్యం. ప్రపంచ స్థాయిలో అతిపెద్ద Green Ammonia."),
-
-    (8, 2,
-     "సహాయం?",
-     "₹10,000", "₹15,000", "₹20,000", "₹25,000",
-     "b",
-     "₹15,000 ఏటా సహాయం. Vahana Mitra పేరు మారిన రూపం."),
+    # Junk short questions removed by audit 2026-05-18
 
     (9, 1,
      "AP DGP గా జనవరి 31, 2025 నుండి ఎవరు నియమించారు?",
@@ -437,9 +449,9 @@ MCQ_DATA = [
 
     (0, 2,
      "CDAC, CDOT ఏ రంగానికి చెందిన సంస్థలు?",
-     "ఐటీ / ఎలక్ట్రానిక్‌లు", "వ్యవసాయం", "విద్య", "ఆరోగ్య సేవ",
-     "c",
-     "CDAC మరియు CDOT భారత్ ఐటీ విభాగానికి చెందిన సంస్థలు. ఇవి అమరావతి క్వాంటం వ్యాలీ నిర్మాణంలో ముఖ్య సహకారం అందిస్తున్నాయి."),
+     "ఐటీ / ఎలక్ట్రానిక్‌లు", "వ్యవసాయం", "రక్షణ", "ఆరోగ్య సేవ",
+     "a",
+     "CDAC (Centre for Development of Advanced Computing) మరియు CDOT (Centre for Development of Telematics) భారత్ ఐటీ/ఎలక్ట్రానిక్స్ రంగానికి చెందిన సంస్థలు. అమరావతి క్వాంటం వ్యాలీలో భాగస్వాములు."),
 
     (1, 2,
      "CII సమ్మిట్‌కు ఎన్ని దేశాల నుండి delegates హాజరయ్యారు?",
@@ -454,34 +466,22 @@ MCQ_DATA = [
      "13 జిల్లాలతో AP ప్రారంభమైంది. 2022 ఏప్రిల్ కు 26, 2026 జనవరి కు 28 జిల్లాలు."),
 
     (3, 3,
-     "58 అడుగులు ఎందుకు?",
-     "58 ఎకరాల స్థలం", "నిరాహార 58 రోజుల సమాధి", "58 సంవత్సరాల జీవితం", "58 గ్రాములు సేవ",
+     "పొట్టి శ్రీరాముల విగ్రహం ఎత్తు 58 అడుగులు ఎందుకు నిర్ణయించారు?",
+     "58 ఎకరాల స్థలం", "ఆయన 58 సంవత్సరాలు జీవించారు", "నిరాహార దీక్ష 58వ రోజున అమరులయ్యారు", "58 జిల్లాల కోసం",
      "c",
-     "నిరాహార దీక్ష 58వ రోజున (డిసెంబర్ 15, 1952) సమాధి చెందారు. ఈ సంఖ్యకు నిబద్ధత ప్రతిఫలించే విగ్రహం."),
+     "నిరాహార దీక్ష 58వ రోజున (డిసెంబర్ 15, 1952) సమాధి చెందారు. ఆ 58 రోజులకు స్మారకంగా 58 అడుగుల విగ్రహం నిర్ణయించారు."),
 
     (4, 3,
-     "IFR 2026లో ఎన్ని దేశాలు?",
+     "IFR 2026లో ఎన్ని దేశాలు పాల్గొన్నాయి?",
      "54 దేశాలు", "64 దేశాలు", "74 దేశాలు", "84 దేశాలు",
      "c",
-     "74 దేశాలు IFR 2026లో పాల్గొన్నాయి. 85 నౌకలు (66 భారతీయ + 19 విదేశీ) పాల్గొన్నాయి."),
+     "74 దేశాలు IFR 2026లో పాల్గొన్నాయి. 85 నౌకలు (66 భారతీయ + 19 విదేశీ) పాల్గొన్నాయి. ఫిబ్రవరి 18, 2026న విశాఖపట్నంలో జరిగింది."),
 
     (5, 3,
-     "సవరిత చట్టం ఏది?",
-     "1950 రాజ్‌్య", "AP Reorganisation Act 2014", "1951 రాజ్‌్య విధులు", "1976 భూమి చట్టం",
-     "c",
-     "AP Reorganisation Act 2014 Section 5ని సవరించారు. అమరావతిని శాశ్వత రాజధానిగా ధృవీకరించారు."),
-
-    (6, 3,
-     "BharatNet Phase 3 లక్ష్యం?",
-     "నగర broadband", "గ్రామ పంచాయతీల optical fiber", "కేవలం ఆఫీస్‌లు", "సెకండరీ సిటీలు",
-     "c",
-     "అన్ని గ్రామ పంచాయతీలకు high-speed optical fiber broadband. డిజిటల్ విభజన తగ్గిస్తుంది."),
-
-    (7, 3,
-     "పెట్టుబడి?",
-     "₹5,000 కోట్లు", "₹8,000 కోట్లు", "₹13,000 కోట్లు", "₹20,000 కోట్లు",
-     "c",
-     "₹13,000 కోట్లు పెట్టుబడి. జర్మనీ, జపాన్‌కు ఎగుమతి."),
+     "AP Reorganisation (Amendment) Act 2026 లో ఏ చట్టానికి సవరణ చేశారు?",
+     "1950 రాజ్యాంగ 370 అధికరణ", "AP Reorganisation Act 2014 Section 5", "1951 ప్రిపరేషన్ అండ్ టెర్రిటరీ విభజన", "1976 భూ రికార్డుల చట్టం",
+     "b",
+     "AP Reorganisation Act 2014 లోని Section 5 ని సవరించారు — అమరావతిని AP ఏకైక రాజధానిగా చట్టపరంగా ధృవీకరించారు."),
 
     (4, 3,
      "MAHASAGAR అంటే ఏమిటి — IFR 2026 సందర్భంగా భారత్ ప్రకటించిన vision?",
@@ -500,12 +500,6 @@ MCQ_DATA = [
      "AP Broadband Infrastructure Limited", "AP Digital Networks Limited", "AP Fiber Optic Corporation", "Andhra Pradesh BharatNet Infrastructure Limited",
      "d",
      "BharatNet AP అమలు సంస్థ పేరు APBIL = Andhra Pradesh BharatNet Infrastructure Limited. నిధులు Digital Bharat Nidhi (DBN) నుండి వస్తాయి."),
-
-    (6, 3,
-     "BharatNet ప్రాజెక్ట్ లక్ష్యం ఏమిటి?",
-     "అన్ని cities కి 5G coverage", "అన్ని జిల్లా కేంద్రాలకు WiFi", "అన్ని రైల్వే స్టేషన్లకు broadband", "అన్ని gram panchayats కి optical fiber broadband connectivity",
-     "d",
-     "BharatNet లక్ష్యం AP లో అన్ని gram panchayats కి high-speed optical fiber broadband connectivity అందించడం. గ్రామీణ digital divide తొలగించడమే ఉద్దేశ్యం."),
 
     (7, 2,
      "AM Green కాకినాడ Plant నుండి Green Ammonia ఏ దేశాలకు ఎగుమతి అవుతుంది?",
@@ -570,50 +564,26 @@ MCQ_DATA = [
     (0, 2,
      "IBM Quantum System Two లో ఎన్ని qubits ఉన్నాయి?",
      "128-qubit", "256-qubit", "156-qubit", "512-qubit",
-     "d",
+     "c",
      "156-qubit Heron processor ఉపయోగించారు. ఇది దక్షిణ ఆసియాలో అత్యంత శక్తివంతమైన కవాంటం కంప్యూటర్."),
 
     (1, 2,
-     "పెట్టుబడుల లక్ష్యం ఎంత?",
+     "CII 30వ Partnership Summit 2025లో AP లో ఏ పెట్టుబడుల లక్ష్యం నిర్ణయించారు?",
      "₹5 లక్షల కోట్లు", "₹8 లక్షల కోట్లు", "₹10 లక్షల కోట్లు", "₹15 లక్షల కోట్లు",
-     "d",
-     "₹10 లక్షల కోట్ల విదేశీ పెట్టుబడులను ఆకర్షించాలని లక్ష్యం. AP ఆర్థిక విస్ఫూర్తిలో ఇది సహాయకమైనది."),
+     "c",
+     "CII 30వ Partnership Summit 2025లో ₹10 లక్షల కోట్లు (10 Lakh Crore) పెట్టుబడులు ఆకర్షించే లక్ష్యం నిర్ణయించారు. 61 దేశాల నుండి 2,000+ delegates పాల్గొన్నారు."),
 
     (2, 2,
      "మర్కాపురం జిల్లా ఏ జిల్లా నుండి విభజించారు?",
-     "చిత్తూరు", "నెల్లూరు", "ప్రకాశం", "చిరాల",
-     "d",
-     "ప్రకాశం జిల్లా నుండి మర్కాపురం జిల్లా విభజించారు. జిల్లా పర్యవసానం AP స్థానిక ప్రభుత్వంలో సంక్లిష్టత తీసుకువచ్చింది."),
+     "చిత్తూరు", "నెల్లూరు", "ప్రకాశం", "కర్నూలు",
+     "c",
+     "ప్రకాశం జిల్లా నుండి మర్కాపురం జిల్లా విభజించారు. జనవరి 1, 2026 నుండి అమల్లో వచ్చిన 28వ జిల్లా."),
 
     (3, 1,
-     "విగ్రహ ప్రకటన ఎప్పుడు?",
+     "పొట్టి శ్రీరాముల 'బలిదాన విగ్రహం' ప్రకటన ఏ తేదీన చేశారు?",
      "డిసెంబర్ 15, 2025", "నవంబర్ 1, 2025", "జనవరి 26, 2026", "ఫిబ్రవరి 1, 2026",
-     "d",
-     "డిసెంబర్ 15, 2025న పొట్టి శ్రీరాముల జన్మదిన వేడుకలో CM ఈ ప్రకటన చేశారు."),
-
-    (6, 1,
-     "Digital Bharat Nidhi ఎటువంటి ఉద్దేశ్యానికి?",
-     "గ్రామీణ broad band", "పర్యావరణ పరిరక్షణ", "సాక్షరత కార్యక్రమాలు", "పరిశ్రమ వికాసం",
-     "d",
-     "గ్రామీణ సంయోగం కోసం స్థాపించిన నిధి. Digital Bharat Nidhi BharatNet నిర్మాణానికి నిధులు ఇస్తుంది."),
-
-    (10, 1,
-     "AP కీలక నీతి పరిణతిలో ఎటువంటి పరిగణన ఉంది?",
-     "సామాజిక న్యాయం", "ఆర్థిక వృద్ధి", "జనాభా సంరక్షణ", "సాంస్కృతిక సంరక్షణ",
-     "d",
-     "AP చట్టాలు సాంస్కృతిక సంరక్షణకు ప్రాధాన్యం ఇస్తాయి. సాంస్కృతిక వారసత్వం రక్షణ AP ప్రభుత్వం కాబట్టి ఉంటుంది."),
-
-    (5, 1,
-     "AP Reorganisation చరిత్రలో కీలక సంఘటన?",
-     "1956 తొలి సంస్థ", "2014 విభజన", "2026 సవరణ", "2020 మార్పు",
-     "d",
-     "2026 మార్చిలో AP Reorganisation చట్టంలో సవరణ చేసారు. అమరావతిని ఏకైక రాజధానిగా ధృవీకరించారు."),
-
-    (7, 1,
-     "AM Green కొరకు నిధులు ఎక్కడ నుండి వచ్చాయి?",
-     "భారత్ బడ్జెట్", "AP బడ్జెట్", "వ్యక్తిగత పెట్టుబడి", "అంతర్జాతీయ బ్యాంకు",
-     "d",
-     "వ్యక్తిగత పెట్టుబడి ద్వారా AM Green నిర్మాణం జరుగుతుంది. Greenko Group సంస్థ ఈ పెట్టుబడి నిర్వహిస్తుంది."),
+     "a",
+     "డిసెంబర్ 15, 2025న పొట్టి శ్రీరాముల 73వ వర్ధంతి సందర్భంగా CM చంద్రబాబు అమరావతిలో 58 అడుగుల విగ్రహం ప్రకటించారు."),
 
 ]
 

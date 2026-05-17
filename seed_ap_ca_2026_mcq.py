@@ -128,89 +128,83 @@ def seed():
          "NFHS ప్రకారం ఆంధ్రప్రదేశ్ TFR 1.5, ఇది జాతీయ సగటు 2.1 కంటే చాలా తక్కువ. AP's TFR is 1.5 as per NFHS, much lower than national average of 2.1.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── Telangana Budget ──
+        # REMOVED 32011-32017: Telangana Budget, WEF Davos-Telangana, Gaddar Awards, TS GSDP — all Telangana-specific, removed from AP-only section.
+
+        # ── AP Speaker 2024 ──
+        # ADDED AP-specific replacement for removed TS questions (32011-32013)
         (32011,
-         "తెలంగాణ 2026-27 బడ్జెట్ మొత్తం ఎంత?\n(What is the total Telangana Budget 2026-27?)",
-         "A) రూ.2,50,000 కోట్లు",
-         "B) రూ.2,80,000 కోట్లు",
-         "C) రూ.3,24,234 కోట్లు",
-         "D) రూ.3,50,000 కోట్లు",
-         "C",
-         "తెలంగాణ 2026-27 బడ్జెట్ రూ.3,24,234 కోట్లు - రాష్ట్ర చరిత్రలో అతి పెద్ద బడ్జెట్. Telangana's Budget 2026-27 is Rs 3,24,234 crore - the largest budget in state history.",
+         "ఆంధ్రప్రదేశ్ శాసనసభ స్పీకర్ (2024) ఎవరు?\n(Who is the Speaker of AP Legislative Assembly 2024?)",
+         "A) అయన పాత్రుడు / Ayanna Patrudu",
+         "B) చంద్రబాబు నాయుడు / Chandrababu Naidu",
+         "C) పవన్ కళ్యాణ్ / Pawan Kalyan",
+         "D) నారా లోకేశ్ / Nara Lokesh",
+         "A",
+         "అయన పాత్రుడు 2024లో TDP-JSP-BJP కూటమి ప్రభుత్వంలో ఆంధ్రప్రదేశ్ శాసనసభ స్పీకర్‌గా ఎన్నికయ్యారు. Ayanna Patrudu was elected Speaker of the AP Legislative Assembly in 2024 under the TDP-JSP-BJP coalition government.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
         (32012,
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో వ్యవసాయ రంగానికి కేటాయింపు ఎంత?\n(Agriculture allocation in Telangana Budget 2026-27?)",
-         "A) రూ.25,000 కోట్లు",
-         "B) రూ.35,000 కోట్లు",
-         "C) రూ.47,267 కోట్లు",
-         "D) రూ.60,000 కోట్లు",
-         "C",
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో వ్యవసాయ రంగానికి రూ.47,267 కోట్లు కేటాయించారు. Agriculture was allocated Rs 47,267 crore in Telangana Budget 2026-27.",
+         "ఆంధ్రప్రదేశ్‌లో ఉప ముఖ్యమంత్రి (Deputy CM) ఎవరు?\n(Who is the Deputy Chief Minister of Andhra Pradesh?)",
+         "A) నారా లోకేశ్ / Nara Lokesh",
+         "B) పవన్ కళ్యాణ్ / Pawan Kalyan",
+         "C) పయ్యావుల కేశవ్ / Payyavula Keshav",
+         "D) వంగలపూడి అనిత / Vangalapudi Anitha",
+         "B",
+         "పవన్ కళ్యాణ్ (JSP) 2024లో ఆంధ్రప్రదేశ్ ఉప ముఖ్యమంత్రిగా పదవి చేపట్టారు. Pawan Kalyan (JSP) assumed office as Deputy Chief Minister of Andhra Pradesh in 2024.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
         (32013,
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో పట్టణాభివృద్ధికి కేటాయింపు ఎంత?\n(Urban development allocation in Telangana Budget 2026-27?)",
-         "A) రూ.25,000 కోట్లు",
-         "B) రూ.35,000 కోట్లు",
-         "C) రూ.47,387 కోట్లు",
-         "D) రూ.55,000 కోట్లు",
-         "C",
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో పట్టణాభివృద్ధికి రూ.47,387 కోట్లు కేటాయించారు. Urban development was allocated Rs 47,387 crore in Telangana Budget 2026-27.",
+         "ఆంధ్రప్రదేశ్‌లో IT & HRD మంత్రి ఎవరు?\n(Who is the IT & HRD Minister of Andhra Pradesh?)",
+         "A) పవన్ కళ్యాణ్ / Pawan Kalyan",
+         "B) నారా లోకేశ్ / Nara Lokesh",
+         "C) పయ్యావుల కేశవ్ / Payyavula Keshav",
+         "D) సత్యకుమార్ యాదవ్ / Satyakumar Yadav",
+         "B",
+         "నారా లోకేశ్ (TDP) ఆంధ్రప్రదేశ్‌లో IT & HRD మంత్రిగా పనిచేస్తున్నారు. Nara Lokesh (TDP) serves as the IT & HRD Minister of Andhra Pradesh.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── WEF Davos - Telangana ──
+        # ── AP Finance & Home Ministers ──
+        # ADDED AP-specific replacement for removed TS questions (32014-32017)
         (32014,
-         "దావోస్ WEF 2026లో తెలంగాణకు ఎంత పెట్టుబడి ఒప్పందాలు కుదిరాయి?\n(Investment agreements signed for Telangana at Davos WEF 2026?)",
-         "A) రూ.10,000 కోట్లు",
-         "B) రూ.18,000 కోట్లు",
-         "C) రూ.28,693 కోట్లు",
-         "D) రూ.50,000 కోట్లు",
+         "ఆంధ్రప్రదేశ్‌లో ఆర్థిక మంత్రి (Finance Minister) ఎవరు?\n(Who is the Finance Minister of Andhra Pradesh?)",
+         "A) నారా లోకేశ్ / Nara Lokesh",
+         "B) పవన్ కళ్యాణ్ / Pawan Kalyan",
+         "C) పయ్యావుల కేశవ్ / Payyavula Keshav",
+         "D) అనగాని సత్య ప్రసాద్ / Anagani Satya Prasad",
          "C",
-         "దావోస్ WEF 2026లో తెలంగాణకు రూ.28,693 కోట్ల పెట్టుబడి ఒప్పందాలు కుదిరాయి. Investment agreements worth Rs 28,693 crore were signed for Telangana at Davos WEF 2026.",
+         "పయ్యావుల కేశవ్ (TDP) ఆంధ్రప్రదేశ్‌లో ఆర్థిక మంత్రిగా పనిచేస్తున్నారు. Payyavula Keshav (TDP) serves as the Finance Minister of Andhra Pradesh.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
         (32015,
-         "దావోస్ WEF 2026లో తెలంగాణ తరఫున ఎన్ని MoU లు సంతకం చేయబడ్డాయి?\n(How many MoUs were signed for Telangana at Davos WEF 2026?)",
-         "A) 5",
-         "B) 7",
-         "C) 9",
-         "D) 12",
-         "C",
-         "దావోస్ WEF 2026లో తెలంగాణ 9 MoU లపై సంతకం చేసింది. 9 MoUs were signed for Telangana at Davos WEF 2026.",
+         "ఆంధ్రప్రదేశ్‌లో హోం మంత్రి (Home Minister) ఎవరు?\n(Who is the Home Minister of Andhra Pradesh?)",
+         "A) వంగలపూడి అనిత / Vangalapudi Anitha",
+         "B) పయ్యావుల కేశవ్ / Payyavula Keshav",
+         "C) కొండపల్లి శ్రీనివాస్ / Kondapalli Srinivas",
+         "D) నడేందర మనోహర్ / Nadendla Manohar",
+         "A",
+         "వంగలపూడి అనిత (TDP, పాయకారావుపేట నియోజకవర్గం) ఆంధ్రప్రదేశ్‌లో హోం మంత్రిగా పనిచేస్తున్నారు. Vangalapudi Anitha (TDP, Payakaraopeta constituency) serves as Home Minister of Andhra Pradesh.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── Telangana Cinema Awards ──
         (32016,
-         "తెలంగాణ 'గద్దర్ సినీ అవార్డులు-2025' ఏ నెలలో జరిగాయి?\n(In which month were Telangana Gaddar Cinema Awards-2025 held?)",
-         "A) సెప్టెంబర్ 2025",
-         "B) అక్టోబర్ 2025",
-         "C) నవంబర్ 2025",
-         "D) డిసెంబర్ 2025",
-         "D",
-         "తెలంగాణ 'గద్దర్ సినీ అవార్డులు-2025' డిసెంబర్ 2025లో హైదరాబాద్‌లో జరిగాయి. Telangana Gaddar Cinema Awards-2025 were held in Hyderabad in December 2025.",
-         "AP_HC", "AP_Current_Affairs_2026"),
-
-        # ── Telangana Socio-Economic ──
-        (32017,
-         "తెలంగాణ సామాజిక-ఆర్థిక నివేదిక 2026 ప్రకారం GSDP వృద్ధి రేటు ఎంత?\n(GSDP growth rate as per Telangana Socio-Economic Outlook 2026?)",
-         "A) 5.5%",
-         "B) 6.5%",
-         "C) 6.9%",
-         "D) 8.0%",
+         "ఆంధ్రప్రదేశ్‌లో ఆరోగ్య మంత్రి (Health Minister) ఎవరు?\n(Who is the Health Minister of Andhra Pradesh?)",
+         "A) నారా లోకేశ్ / Nara Lokesh",
+         "B) నడేందర మనోహర్ / Nadendla Manohar",
+         "C) సత్యకుమార్ యాదవ్ / Satyakumar Yadav",
+         "D) వంగలపూడి అనిత / Vangalapudi Anitha",
          "C",
-         "తెలంగాణ సామాజిక-ఆర్థిక నివేదిక 2026 ప్రకారం GSDP వృద్ధి రేటు 6.9%. Telangana's GSDP growth rate is 6.9% as per the Socio-Economic Outlook 2026.",
+         "సత్యకుమార్ యాదవ్ (BJP) ఆంధ్రప్రదేశ్‌లో ఆరోగ్య మంత్రిగా పనిచేస్తున్నారు — ఇది క్యాబినెట్‌లో ఏకైక BJP మంత్రి పోస్ట్. Satyakumar Yadav (BJP) serves as Health Minister of AP — the only BJP minister post in the cabinet.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        (32018,
-         "తెలంగాణ సామాజిక-ఆర్థిక నివేదిక 2026 ప్రకారం పేదరిక నిష్పత్తి ఎంత తగ్గింది?\n(Poverty ratio decline as per Telangana Socio-Economic Outlook 2026?)",
-         "A) 60% నుండి 30% కి",
-         "B) 41.5% నుండి 9.4% కి",
-         "C) 35% నుండి 15% కి",
-         "D) 50% నుండి 20% కి",
+        (32017,
+         "ఆంధ్రప్రదేశ్‌లో పవన్ కళ్యాణ్ ఏ నియోజకవర్గం నుండి గెలిచారు?\n(From which constituency did Pawan Kalyan win in AP 2024?)",
+         "A) భీమవరం / Bhimavaram",
+         "B) పిఠాపురం / Pithapuram",
+         "C) రాజమహేంద్రవరం / Rajahmundry",
+         "D) విజయవాడ / Vijayawada",
          "B",
-         "తెలంగాణ సామాజిక-ఆర్థిక నివేదిక 2026 ప్రకారం పేదరిక నిష్పత్తి 41.5% నుండి 9.4% కి తగ్గింది. Poverty ratio declined from 41.5% to 9.4% as per Telangana Socio-Economic Outlook 2026.",
+         "పవన్ కళ్యాణ్ 2024 AP ఎన్నికల్లో పిఠాపురం నియోజకవర్గం నుండి గెలిచారు. Pawan Kalyan won from the Pithapuram constituency in the 2024 AP elections.",
          "AP_HC", "AP_Current_Affairs_2026"),
+
+        # REMOVED 32018: Telangana poverty ratio — Telangana-specific, removed.
 
         # ── MILAN 2026 at Vizag ──
         (32019,
@@ -268,14 +262,16 @@ def seed():
          "AP_HC", "AP_Current_Affairs_2026"),
 
         # ── AP Agriculture ──
+        # VERIFY 32024: Under TDP 2024 govt, the scheme may be rebranded. YSR Rythu Bharosa was YSRCP's scheme.
+        # TDP continues it as "Rythu Bharosa" (dropping YSR prefix). Question reworded to avoid ambiguity.
         (32024,
-         "ఆంధ్రప్రదేశ్‌లో అయ్యన్న వ్యవసాయ ఆదాయ రక్షణ పథకం పేరు ఏమిటి?\n(Name of AP's farmer income protection scheme?)",
-         "A) Rythu Bandhu",
-         "B) YSR Rythu Bharosa",
-         "C) Annadata Sukhibhava",
-         "D) PM Kisan",
+         "ఆంధ్రప్రదేశ్‌లో రైతులకు ఆదాయ రక్షణ అందించే 'రైతు భరోసా' పథకం ఏ పార్టీ ప్రభుత్వం ప్రారంభించింది?\n(Which party government launched the 'Rythu Bharosa' farmer income support scheme in AP?)",
+         "A) TDP",
+         "B) YSRCP",
+         "C) BJP",
+         "D) Congress",
          "B",
-         "YSR Rythu Bharosa (YSR రైతు భరోసా) పథకం ఆంధ్రప్రదేశ్‌లో రైతులకు ఆదాయ రక్షణ అందిస్తోంది. YSR Rythu Bharosa scheme provides income protection to farmers in AP.",
+         "YSR రైతు భరోసా పథకం YSRCP (జగన్ రెడ్డి) ప్రభుత్వం ప్రారంభించింది; TDP ప్రభుత్వం దీన్ని 'రైతు భరోసా' గా కొనసాగిస్తోంది. YSR Rythu Bharosa was launched by YSRCP (Jagan Reddy) government; the TDP government continues it as 'Rythu Bharosa'.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
         # ── AP Districts ──
@@ -289,16 +285,7 @@ def seed():
          "ప్రస్తుతం ఆంధ్రప్రదేశ్‌లో 25 జిల్లాలు ఉన్నాయి. Currently there are 25 districts in Andhra Pradesh.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Districts ──
-        (32026,
-         "తెలంగాణలో ప్రస్తుతం ఎన్ని జిల్లాలు ఉన్నాయి?\n(How many districts are there in Telangana currently?)",
-         "A) 31",
-         "B) 33",
-         "C) 36",
-         "D) 38",
-         "B",
-         "తెలంగాణలో ప్రస్తుతం 33 జిల్లాలు ఉన్నాయి. Currently there are 33 districts in Telangana.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32026: Telangana districts count — Telangana-specific, removed.
 
         # ── AP Electricity ──
         (32027,
@@ -311,15 +298,17 @@ def seed():
          "ఆంధ్రప్రదేశ్ 2026లో తలసరి విద్యుత్ వినియోగం దాదాపు 1,800 kWh. AP's per capita power consumption in 2026 is approximately 1,800 kWh.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── Navaratnalu ──
+        # ── Super Six ──
+        # FIXED 32028: TDP-JSP-BJP coalition's election promises were called "Super Six" not "Navaratnalu".
+        # "Navaratnalu" was YSRCP's scheme bundle. TDP's 2024 election pledges = "Super Six" guarantees.
         (32028,
-         "ఆంధ్రప్రదేశ్ 2024 ఎన్నికల్లో TDP-JSP-BJP కూటమి ప్రభుత్వం ఏ ముఖ్య పథకాల సముచ్చయం ప్రారంభించింది?\n(Which welfare scheme bundle did TDP-JSP-BJP coalition launch in AP 2024?)",
-         "A) నవశక్తి పథకాలు",
-         "B) నవరత్నాలు / Navaratnalu",
-         "C) జగన్ పథకాలు",
-         "D) సుజల పథకాలు",
+         "ఆంధ్రప్రదేశ్ 2024 ఎన్నికల్లో TDP-JSP-BJP కూటమి ఇచ్చిన ముఖ్య ఎన్నికల హామీల సముచ్చయం పేరు ఏమిటి?\n(What is the name of TDP-JSP-BJP coalition's key election guarantee package in AP 2024?)",
+         "A) నవరత్నాలు / Navaratnalu",
+         "B) సూపర్ సిక్స్ / Super Six",
+         "C) జగన్ పథకాలు / Jagan Schemes",
+         "D) సుజల పథకాలు / Sujala Schemes",
          "B",
-         "TDP-JSP-BJP కూటమి ప్రభుత్వం 'నవరత్నాలు' పేరిట 9 ముఖ్య సంక్షేమ పథకాలు ప్రారంభించింది. TDP-JSP-BJP coalition launched 9 key welfare schemes called 'Navaratnalu'.",
+         "TDP-JSP-BJP కూటమి 2024 ఎన్నికల్లో 'సూపర్ సిక్స్' పేరిట 6 ముఖ్య హామీలు ఇచ్చింది. 'నవరత్నాలు' YSRCP పథకాల పేరు. The TDP-JSP-BJP coalition gave 'Super Six' election guarantees in 2024. 'Navaratnalu' was the name of YSRCP's scheme bundle.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
         # ── AP CM ──
@@ -333,16 +322,7 @@ def seed():
          "నారా చంద్రబాబు నాయుడు 2024 ఎన్నికల్లో TDP నేతృత్వంలో విజయం తర్వాత ఆంధ్రప్రదేశ్ ముఖ్యమంత్రిగా పదవి చేపట్టారు. Nara Chandrababu Naidu became CM of AP after TDP-led coalition victory in 2024 elections.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS CM ──
-        (32030,
-         "తెలంగాణ ప్రస్తుత ముఖ్యమంత్రి ఎవరు?\n(Who is the current Chief Minister of Telangana?)",
-         "A) కె. చంద్రశేఖర్ రావు / K. Chandrashekhar Rao",
-         "B) ఎ. రేవంత్ రెడ్డి / A. Revanth Reddy",
-         "C) మల్లారెడ్డి / Mallareddy",
-         "D) భట్టి విక్రమార్క / Bhatti Vikramarka",
-         "B",
-         "ఎ. రేవంత్ రెడ్డి 2023 ఎన్నికల్లో కాంగ్రెస్ విజయం తర్వాత తెలంగాణ ముఖ్యమంత్రిగా పదవి చేపట్టారు. A. Revanth Reddy became CM of Telangana after Congress victory in 2023 elections.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32030: Telangana CM — Telangana-specific, removed.
 
         # ── AP Port ──
         (32031,
@@ -355,16 +335,7 @@ def seed():
          "ఆంధ్రప్రదేశ్ ప్రభుత్వం మచిలీపట్నంను కొత్త అంతర్జాతీయ పోర్టుగా అభివృద్ధి చేస్తోంది. AP government is developing Machilipatnam as a new international port.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Water ──
-        (32032,
-         "తెలంగాణ Kaleshwaram ప్రాజెక్ట్ ఏ నదిపై నిర్మించారు?\n(Telangana's Kaleshwaram project is built on which river?)",
-         "A) కృష్ణా / Krishna",
-         "B) గోదావరి / Godavari",
-         "C) మూసి / Musi",
-         "D) భీమా / Bhima",
-         "B",
-         "కాళేశ్వరం లిఫ్ట్ ఇరిగేషన్ స్కీమ్ తెలంగాణలో గోదావరి నదిపై నిర్మించారు. Kaleshwaram Lift Irrigation Scheme in Telangana is built on the Godavari river.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32032: Telangana Kaleshwaram project — Telangana-specific, removed.
 
         # ── AP Education ──
         (32033,
@@ -377,16 +348,7 @@ def seed():
          "అమ్మఒడి పథకం బడికి వెళ్ళే పిల్లల తల్లులందరికీ రూ.15,000 సహాయం అందిస్తుంది. Amma Vodi scheme provides Rs 15,000 support to all mothers whose children attend school.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS GSDP ──
-        (32034,
-         "తెలంగాణ 2025-26 GSDP (Gross State Domestic Product) అంచనా ఎంత?\n(Telangana's GSDP estimate for 2025-26?)",
-         "A) రూ.10 లక్షల కోట్లు",
-         "B) రూ.14 లక్షల కోట్లు",
-         "C) రూ.17.82 లక్షల కోట్లు",
-         "D) రూ.20 లక్షల కోట్లు",
-         "C",
-         "తెలంగాణ 2025-26 GSDP అంచనా రూ.17.82 లక్షల కోట్లు. Telangana's GSDP estimate for 2025-26 is Rs 17.82 lakh crore.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32034: Telangana GSDP — Telangana-specific, removed.
 
         # ── AP MANRAS ──
         (32035,
@@ -410,16 +372,7 @@ def seed():
          "ఆంధ్రప్రదేశ్ 2026-27 బడ్జెట్‌లో SC/ST సంక్షేమానికి రూ.25,000 కోట్లకు పైగా కేటాయించారు. AP Budget 2026-27 allocated over Rs 25,000 crore for SC/ST welfare.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── Hyderabad Metro ──
-        (32037,
-         "హైదరాబాద్ మెట్రో రైల్ ఫేజ్-2 ఏ మార్గంలో విస్తరించనున్నది?\n(Hyderabad Metro Rail Phase-2 will be extended on which route?)",
-         "A) నాగోల్ నుండి రాయదుర్గం వరకు / Nagole to Rayadurgam",
-         "B) నాగోల్ నుండి ఓల్డ్ సిటీ వరకు / Nagole to Old City",
-         "C) సికింద్రాబాద్ నుండి బోయిన్‌పల్లి వరకు / Secunderabad to Boinpally",
-         "D) LB నగర్ నుండి హైటెక్ సిటీ వరకు / LB Nagar to Hitech City",
-         "A",
-         "హైదరాబాద్ మెట్రో రైల్ ఫేజ్-2 నాగోల్ నుండి రాయదుర్గం వరకు విస్తరించనున్నది. Hyderabad Metro Rail Phase-2 will be extended from Nagole to Rayadurgam.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32037: Hyderabad Metro Phase-2 — Telangana-specific (Hyderabad is in Telangana), removed.
 
         # ── AP Sports ──
         (32038,
@@ -443,16 +396,7 @@ def seed():
          "ఆంధ్రప్రదేశ్‌లో ECMS ద్వారా 41,863 కొత్త విద్యుత్ కనెక్షన్‌లు అందించారు. 41,863 new electricity connections were given through ECMS in AP.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Literacy ──
-        (32040,
-         "తెలంగాణ సామాజిక-ఆర్థిక నివేదిక 2026 ప్రకారం సాక్షరత రేటు ఎంత?\n(Literacy rate as per Telangana Socio-Economic Outlook 2026?)",
-         "A) 65.4%",
-         "B) 70.5%",
-         "C) 74.9%",
-         "D) 80.2%",
-         "C",
-         "తెలంగాణ సామాజిక-ఆర్థిక నివేదిక 2026 ప్రకారం సాక్షరత రేటు 74.9%. Literacy rate is 74.9% as per Telangana Socio-Economic Outlook 2026.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32040: Telangana literacy rate — Telangana-specific, removed.
 
         # ── AP NCP / BJP ──
         (32041,
@@ -465,16 +409,7 @@ def seed():
          "2024 ఆంధ్రప్రదేశ్ అసెంబ్లీ ఎన్నికల్లో TDP-JSP-BJP కూటమి 164 స్థానాలు గెలిచి ప్రభుత్వం ఏర్పాటు చేసింది. TDP-JSP-BJP coalition won 164 seats in 2024 AP Assembly elections and formed government.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Assembly ──
-        (32042,
-         "2023 తెలంగాణ అసెంబ్లీ ఎన్నికల్లో కాంగ్రెస్ పార్టీ ఎన్ని స్థానాలు గెలిచింది?\n(How many seats did Congress win in 2023 Telangana Assembly elections?)",
-         "A) 64",
-         "B) 68",
-         "C) 72",
-         "D) 80",
-         "A",
-         "2023 తెలంగాణ అసెంబ్లీ ఎన్నికల్లో కాంగ్రెస్ పార్టీ 64 స్థానాలు గెలిచి అధికారంలోకి వచ్చింది. Congress won 64 seats in 2023 Telangana Assembly elections and came to power.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32042: Telangana 2023 Assembly election results — Telangana-specific, removed.
 
         # ── AP Infrastructure ──
         (32043,
@@ -498,27 +433,8 @@ def seed():
          "అమరావతిలో అసెంబ్లీ కాంప్లెక్స్ వెలగపూడి ప్రాంతంలో నిర్మిస్తున్నారు. The Assembly complex in Amaravati is being built at Velagapudi.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Health ──
-        (32045,
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో ఆరోగ్య రంగానికి కేటాయింపు ఎంత?\n(Health allocation in Telangana Budget 2026-27?)",
-         "A) రూ.5,000 కోట్లు",
-         "B) రూ.8,814 కోట్లు",
-         "C) రూ.12,000 కోట్లు",
-         "D) రూ.15,000 కోట్లు",
-         "B",
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో ఆరోగ్య రంగానికి రూ.8,814 కోట్లు కేటాయించారు. Health was allocated Rs 8,814 crore in Telangana Budget 2026-27.",
-         "AP_HC", "AP_Current_Affairs_2026"),
-
-        # ── TS Revenue ──
-        (32046,
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో ఆదాయ రాబడి (Revenue Receipts) ఎంత?\n(Revenue Receipts in Telangana Budget 2026-27?)",
-         "A) రూ.1,80,000 కోట్లు",
-         "B) రూ.2,00,000 కోట్లు",
-         "C) రూ.2,34,408 కోట్లు",
-         "D) రూ.2,60,000 కోట్లు",
-         "C",
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో ఆదాయ రాబడి దాదాపు రూ.2,34,408 కోట్లు. Revenue Receipts in Telangana Budget 2026-27 are approximately Rs 2,34,408 crore.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32045: Telangana health allocation — Telangana-specific, removed.
+        # REMOVED 32046: Telangana revenue receipts — Telangana-specific, removed.
 
         # ── AP Investment Summit ──
         (32047,
@@ -542,16 +458,7 @@ def seed():
          "ఆంధ్రప్రదేశ్ ప్రత్యేక హోదా డిమాండ్ 2014 AP పునర్వ్యవస్థీకరణ చట్టం ప్రకారం ఉంది. AP's Special Category Status demand is under the 2014 AP Reorganisation Act.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS GRIHA ──
-        (32049,
-         "తెలంగాణలో గృహ లక్ష్మి పథకం అంటే ఏమిటి?\n(What is Gruha Lakshmi scheme in Telangana?)",
-         "A) నిరుపేదలకు ఉచిత ఇళ్లు / Free houses for poor",
-         "B) మహిళలకు ప్రతి నెల ఆర్థిక సహాయం / Monthly financial assistance to women",
-         "C) విద్యుత్ బిల్లు రాయితీ / Electricity bill subsidy",
-         "D) రైతులకు సహాయం / Farmer support",
-         "B",
-         "తెలంగాణ గృహ లక్ష్మి పథకం ఇంటి యజమాని మహిళలకు ప్రతి నెల రూ.2,500 ఆర్థిక సహాయం అందిస్తుంది. Telangana's Gruha Lakshmi scheme provides Rs 2,500 monthly financial assistance to women household heads.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32049: Telangana Gruha Lakshmi scheme — Telangana-specific, removed.
 
         # ── AP IHCL ──
         (32050,
@@ -564,27 +471,20 @@ def seed():
          "ఆంధ్రప్రదేశ్ ప్రభుత్వం విశాఖ స్టీల్ ప్లాంట్ ప్రైవేటీకరణను వ్యతిరేకిస్తూ కేంద్రంపై ఒత్తిడి తెస్తోంది. AP government opposes Vizag Steel Plant privatization and pressures the Centre.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── AP 2024 Promises ──
+        # ── AP 2024 Super Six Promises ──
+        # FIXED 32051: Replaced "Navaratnalu" framing with correct "Super Six" framing.
+        # TDP's 2024 Super Six included: welfare pension Rs 3,000, free bus pass for women, Amma Vodi, etc.
         (32051,
-         "చంద్రబాబు నాయుడు 2024 ఎన్నికల్లో ఇచ్చిన 'నవరత్నాలు' లో మొదటి హామీ ఏమిటి?\n(What is the first promise in Chandrababu Naidu's 2024 Navaratnalu?)",
-         "A) మహిళలకు ఉచిత బస్సు / Free bus for women",
-         "B) సంక్షేమ పెన్షన్ రూ.3,000 / Welfare pension Rs 3,000",
-         "C) అమ్మ ఒడి పునరుద్ధరణ / Amma Vodi restoration",
-         "D) యువతకు ఉద్యోగాలు / Jobs for youth",
-         "B",
-         "నవరత్నాలులో ముఖ్యమైన హామీ సంక్షేమ పెన్షన్ రూ.3,000 కి పెంచడం. The key promise in Navaratnalu is increasing welfare pension to Rs 3,000.",
+         "చంద్రబాబు నాయుడు 2024 ఎన్నికల్లో ఇచ్చిన 'సూపర్ సిక్స్' హామీల్లో NTR భరోసా పెన్షన్ ఎంత నిర్ణయించారు?\n(What pension amount was fixed under NTR Bharosa as part of Chandrababu's 2024 Super Six?)",
+         "A) రూ.1,500",
+         "B) రూ.2,000",
+         "C) రూ.3,000",
+         "D) రూ.5,000",
+         "C",
+         "TDP-JSP-BJP కూటమి 2024 'సూపర్ సిక్స్' హామీల ప్రకారం NTR భరోసా పెన్షన్ రూ.3,000 నిర్ణయించారు. Under TDP-JSP-BJP coalition's 2024 Super Six promises, NTR Bharosa pension was fixed at Rs 3,000.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Medigadda ──
-        (32052,
-         "తెలంగాణలో Medigadda barrage ఏ జిల్లాలో ఉంది?\n(Medigadda barrage in Telangana is in which district?)",
-         "A) నిజామాబాద్ / Nizamabad",
-         "B) జగిత్యాల / Jagtial",
-         "C) కరీంనగర్ / Karimnagar",
-         "D) పెద్దపల్లి / Peddapalli",
-         "B",
-         "మేడిగడ్డ బ్యారేజ్ తెలంగాణలో జగిత్యాల జిల్లాలో ఉంది. Medigadda barrage is located in Jagtial district of Telangana.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32052: Telangana Medigadda barrage — Telangana-specific, removed.
 
         # ── AP Highways ──
         (32053,
@@ -597,16 +497,7 @@ def seed():
          "ఆంధ్రప్రదేశ్‌లో అమరావతి-రాయలసీమ కారిడార్‌పై గ్రీన్‌ఫీల్డ్ హైవే ప్రాజెక్ట్ జరుగుతోంది. A Greenfield Highway project is underway on the Amaravati-Rayalaseema corridor in AP.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS IT ──
-        (32054,
-         "తెలంగాణలో IT పరిశ్రమ అత్యధికంగా ఏ ప్రాంతంలో కేంద్రీకృతమైంది?\n(IT industry in Telangana is concentrated in which area?)",
-         "A) సికింద్రాబాద్ / Secunderabad",
-         "B) హైటెక్ సిటీ / HITEC City",
-         "C) నాంపల్లి / Nampally",
-         "D) కూకట్‌పల్లి / Kukatpally",
-         "B",
-         "తెలంగాణలో IT పరిశ్రమ హైటెక్ సిటీ (HITEC City) లో కేంద్రీకృతమైంది. IT industry in Telangana is concentrated in HITEC City (Hyderabad Information Technology and Engineering Consultancy City).",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32054: Telangana IT HITEC City — Telangana-specific, removed.
 
         # ── AP Rivers ──
         (32055,
@@ -630,16 +521,7 @@ def seed():
          "SriCity SEZ ఆంధ్రప్రదేశ్‌లో చిత్తూరు జిల్లాలో ఉంది. SriCity SEZ is located in Chittoor district of Andhra Pradesh.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Industries ──
-        (32057,
-         "తెలంగాణలో ఫార్మా సిటీ ఏ జిల్లాలో నిర్మించనున్నది?\n(Pharma City in Telangana is being built in which district?)",
-         "A) రంగారెడ్డి / Rangareddy",
-         "B) సంగారెడ్డి / Sangareddy",
-         "C) మేడ్చల్ / Medchal",
-         "D) జిల్లాలు పంచుకుంటున్నాయి / Spans multiple districts",
-         "D",
-         "తెలంగాణ ఫార్మా సిటీ 'హైదరాబాద్ ఫార్మా సిటీ' రంగారెడ్డి జిల్లాలో నిర్మిస్తున్నారు. Hyderabad Pharma City is being built in Rangareddy district of Telangana.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32057: Telangana Pharma City district — Telangana-specific, removed.
 
         # ── AP Tourism ──
         (32058,
@@ -652,16 +534,7 @@ def seed():
          "తిరుమల-తిరుపతి ఆంధ్రప్రదేశ్‌లో ప్రపంచంలో అత్యధిక సందర్శకులను పొందే ఆధ్యాత్మిక కేంద్రం. Tirumala-Tirupati in AP is the spiritual centre with the highest number of visitors in the world.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS IT Exports ──
-        (32059,
-         "తెలంగాణ IT ఎగుమతుల విలువ 2024-25లో దాదాపు ఎంత?\n(Telangana's IT exports value in 2024-25 approximately?)",
-         "A) రూ.1 లక్ష కోట్లు",
-         "B) రూ.2.5 లక్షల కోట్లు",
-         "C) రూ.3.5 లక్షల కోట్లు",
-         "D) రూ.5 లక్షల కోట్లు",
-         "B",
-         "తెలంగాణ IT ఎగుమతుల విలువ 2024-25లో దాదాపు రూ.2.5 లక్షల కోట్లు. Telangana's IT exports were approximately Rs 2.5 lakh crore in 2024-25.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32059: Telangana IT exports — Telangana-specific, removed.
 
         # ── AP Renewable ──
         (32060,
@@ -685,16 +558,7 @@ def seed():
          "ఆంధ్రప్రదేశ్ జలచరాల ఉత్పత్తిలో (Aquaculture) జాతీయంగా 1వ స్థానంలో ఉంది. Andhra Pradesh ranks 1st nationally in Aquaculture production.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS IT Companies ──
-        (32062,
-         "హైదరాబాద్‌లో ఉన్న ప్రసిద్ధ IT కంపెనీ 'సైబర్ టవర్స్' ఏ ప్రాంతంలో ఉంది?\n(In which area of Hyderabad is the famous IT building 'Cyber Towers' located?)",
-         "A) బంజారాహిల్స్ / Banjara Hills",
-         "B) HITEC City / హైటెక్ సిటీ",
-         "C) జూబ్లీహిల్స్ / Jubilee Hills",
-         "D) మాదాపూర్ / Madhapur",
-         "B",
-         "సైబర్ టవర్స్ హైదరాబాద్‌లో HITEC City లో ఉంది. Cyber Towers is located in HITEC City, Hyderabad.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32062: Hyderabad Cyber Towers (Telangana) — Telangana-specific, removed.
 
         # ── AP SC/ST ──
         (32063,
@@ -718,38 +582,20 @@ def seed():
          "ఆంధ్రప్రదేశ్‌లో NTR భరోసా పెన్షన్ రూ.3,000 గా నిర్ణయించారు. NTR Bharosa pension in AP is Rs 3,000.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Welfare ──
-        (32065,
-         "తెలంగాణ 'అసరా' పెన్షన్ ప్రస్తుతం ఎంత?\n(Current amount of Telangana 'Asara' pension?)",
-         "A) రూ.1,000",
-         "B) రూ.2,016",
-         "C) రూ.3,000",
-         "D) రూ.2,500",
-         "B",
-         "తెలంగాణ 'అసరా' పెన్షన్ (సామాజిక భద్రత పెన్షన్) రూ.2,016 గా ఉంది. Telangana's 'Asara' pension (social security pension) is Rs 2,016.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32065: Telangana Asara pension — Telangana-specific, removed.
 
-        # ── AP Flood ──
+        # REMOVED DUPLICATE 32066: Same topic as Q32134 (2024 AP flood-hit districts). Replaced with AP-specific question.
         (32066,
-         "2024లో ఆంధ్రప్రదేశ్‌లో తీవ్రంగా నష్టపోయిన జిల్లాలు ఏవి (వరదలు)?\n(Which AP districts were severely flood-affected in 2024?)",
-         "A) కర్నూలు, అనంతపురం",
-         "B) కాకినాడ, ఏలూరు, నాంద్యాల",
-         "C) విశాఖపట్నం, తిరుపతి",
-         "D) గుంటూరు, నెల్లూరు",
+         "ఆంధ్రప్రదేశ్‌లో AIIMS (All India Institute of Medical Sciences) ఏ జిల్లాలో ఉంది?\n(In which AP district is AIIMS located?)",
+         "A) విశాఖపట్నం / Visakhapatnam",
+         "B) గుంటూరు / Guntur (మంగళగిరి / Mangalagiri)",
+         "C) కర్నూలు / Kurnool",
+         "D) తిరుపతి / Tirupati",
          "B",
-         "2024 వరదలలో ఆంధ్రప్రదేశ్‌లో కాకినాడ, ఏలూరు, నాంద్యాల జిల్లాలు తీవ్రంగా నష్టపోయాయి. Kakinada, Eluru, Nandyal districts in AP were severely flood-affected in 2024.",
+         "AIIMS మంగళగిరి, ఆంధ్రప్రదేశ్‌లో గుంటూరు జిల్లాలో ఉంది. AIIMS Mangalagiri is located in Guntur district of Andhra Pradesh.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Pharma ──
-        (32067,
-         "తెలంగాణ 'Pharma City' ప్రాజెక్ట్ ఎంత ఎకరాల్లో నిర్మిస్తున్నారు?\n(Telangana Pharma City project is being built on how many acres?)",
-         "A) 5,000 ఎకరాలు",
-         "B) 10,000 ఎకరాలు",
-         "C) 15,000 ఎకరాలు",
-         "D) 19,333 ఎకరాలు",
-         "D",
-         "తెలంగాణ ఫార్మా సిటీ 19,333 ఎకరాల్లో నిర్మిస్తున్నారు - ప్రపంచంలో అతి పెద్ద Pharma cluster. Telangana Pharma City is being built on 19,333 acres - world's largest pharma cluster.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32067: Telangana Pharma City acres — Telangana-specific, removed.
 
         # ── AP GDP ──
         (32068,
@@ -773,16 +619,7 @@ def seed():
          "AP కేంద్రీయ విశ్వవిద్యాలయం కర్నూలు జిల్లాలో ఉంది. AP Central University is located in Kurnool district.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS IT Hub ──
-        (32070,
-         "తెలంగాణలో Genome Valley ఏ జిల్లాలో ఉంది?\n(Genome Valley in Telangana is in which district?)",
-         "A) రంగారెడ్డి / Rangareddy",
-         "B) మేడ్చల్-మల్కాజిగిరి / Medchal-Malkajgiri",
-         "C) సంగారెడ్డి / Sangareddy",
-         "D) నిజామాబాద్ / Nizamabad",
-         "B",
-         "జీనోమ్ వ్యాలీ తెలంగాణలో మేడ్చల్-మల్కాజిగిరి జిల్లాలో ఉంది. Genome Valley is located in Medchal-Malkajgiri district of Telangana.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32070: Telangana Genome Valley — Telangana-specific, removed.
 
         # ── AP Water Resource ──
         (32071,
@@ -795,16 +632,7 @@ def seed():
          "పోలవరం ప్రాజెక్ట్ 7.2 లక్షల ఎకరాలకు నీటి సౌకర్యం కల్పిస్తుంది. Polavaram project will irrigate 7.2 lakh acres in AP.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Revanth Programs ──
-        (32072,
-         "తెలంగాణ 'పల్లె ప్రగతి' కార్యక్రమం ఉద్దేశ్యం ఏమిటి?\n(Objective of Telangana 'Palle Pragathi' programme?)",
-         "A) పట్టణ అభివృద్ధి / Urban development",
-         "B) గ్రామీణ అభివృద్ధి మరియు పరిశుభ్రత / Rural development and cleanliness",
-         "C) IT కేంద్రాల స్థాపన / IT center establishment",
-         "D) వ్యవసాయ అభివృద్ధి / Agricultural development",
-         "B",
-         "తెలంగాణ 'పల్లె ప్రగతి' కార్యక్రమం గ్రామీణ అభివృద్ధి మరియు పరిశుభ్రత లక్ష్యంగా నిర్వహిస్తారు. Telangana's 'Palle Pragathi' programme focuses on rural development and cleanliness.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32072: Telangana Palle Pragathi — Telangana-specific, removed.
 
         # ── AP Smart City ──
         (32073,
@@ -817,16 +645,7 @@ def seed():
          "ఆంధ్రప్రదేశ్‌లో Smart Cities Mission కింద విశాఖపట్నం మరియు కాకినాడ ఎంపికయ్యాయి. Visakhapatnam and Kakinada in AP were selected under Smart Cities Mission.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Rice Scheme ──
-        (32074,
-         "తెలంగాణ 'అన్న సముద్రం' పథకం అంటే ఏమిటి?\n(What is Telangana 'Anna Samudram' scheme?)",
-         "A) Subsidized canteen scheme",
-         "B) Free rice distribution scheme",
-         "C) Farmer income support",
-         "D) Food processing units",
-         "A",
-         "తెలంగాణ 'అన్న సముద్రం' పథకం ద్వారా పేద ప్రజలకు రాయితీ ధరలో భోజనం అందిస్తారు. Telangana's 'Anna Samudram' provides subsidized meals to the poor.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32074: Telangana Anna Samudram — Telangana-specific, removed.
 
         # ── AP Youth ──
         (32075,
@@ -839,16 +658,7 @@ def seed():
          "AP Skill Development Corporation NSDC తో కలిసి యువతకు నైపుణ్య శిక్షణ నిర్వహించింది. AP Skill Development Corporation conducted skill training in collaboration with NSDC.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Energy ──
-        (32076,
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో ఇంధన రంగానికి కేటాయింపు ఎంత?\n(Energy sector allocation in Telangana Budget 2026-27?)",
-         "A) రూ.25,000 కోట్లు",
-         "B) రూ.38,105 కోట్లు",
-         "C) రూ.50,000 కోట్లు",
-         "D) రూ.15,000 కోట్లు",
-         "B",
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో ఇంధన రంగానికి రూ.38,105 కోట్లు కేటాయించారు. Energy sector was allocated Rs 38,105 crore in Telangana Budget 2026-27.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32076: Telangana energy allocation — Telangana-specific, removed.
 
         # ── AP VIZAG Steel ──
         (32077,
@@ -861,16 +671,7 @@ def seed():
          "రాష్ట్రీయ ఇస్పాత్ నిగమ్ (RINL) ప్రధాన కార్యాలయం విశాఖపట్నంలో ఉంది. RINL (Vizag Steel Plant) head office is at Visakhapatnam.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── TS Economy ──
-        (32078,
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో విద్య రంగానికి కేటాయింపు ఎంత?\n(Education allocation in Telangana Budget 2026-27?)",
-         "A) రూ.15,000 కోట్లు",
-         "B) రూ.24,166 కోట్లు",
-         "C) రూ.30,000 కోట్లు",
-         "D) రూ.20,000 కోట్లు",
-         "B",
-         "తెలంగాణ 2026-27 బడ్జెట్‌లో విద్య రంగానికి రూ.24,166 కోట్లు కేటాయించారు. Education was allocated Rs 24,166 crore in Telangana Budget 2026-27.",
-         "AP_HC", "AP_Current_Affairs_2026"),
+        # REMOVED 32078: Telangana education allocation — Telangana-specific, removed.
 
         # ── AP Fintech ──
         (32079,
@@ -1543,14 +1344,15 @@ def seed():
          "అమరావతి రాజధాని కృష్ణా నది దక్షిణ ఒడ్డున నిర్మిస్తున్నారు. Amaravati capital is being built on the southern bank of the Krishna river.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
+        # REMOVED DUPLICATE 32145: Same as Q32025 (AP has 25 districts). Replaced with AP-specific question.
         (32145,
-         "AP లో 2022లో నూతనంగా ఏర్పడిన జిల్లాల ద్వారా మొత్తం జిల్లాలు ఎంత అయ్యాయి?\n(How many districts does AP have after 2022 reorganisation?)",
-         "A) 13",
-         "B) 17",
-         "C) 25",
-         "D) 33",
+         "AP లో 2022 జిల్లాల పునర్వ్యవస్థీకరణలో ఏ జిల్లా విభజించబడింది మరియు కొత్త జిల్లా ఏది?\n(Which district was split and what is the new district formed in AP 2022 reorganisation — example?)",
+         "A) గుంటూరు → గుంటూరు + పల్నాడు",
+         "B) కర్నూలు → కర్నూలు + నంద్యాల్",
+         "C) పైన రెండూ సరైనవే",
+         "D) విశాఖపట్నం → విశాఖ + అల్లూరి సీతారామరాజు",
          "C",
-         "2022 పునర్వ్యవస్థీకరణ తర్వాత ఆంధ్రప్రదేశ్‌లో మొత్తం 25 జిల్లాలు ఏర్పడ్డాయి. After the 2022 reorganisation, AP has a total of 25 districts.",
+         "2022 పునర్వ్యవస్థీకరణలో గుంటూరు → గుంటూరు + పల్నాడు, కర్నూలు → కర్నూలు + నంద్యాల్ వంటి జిల్లాలు విభజించబడ్డాయి. In 2022 reorganisation, Guntur was split into Guntur + Palnadu, and Kurnool into Kurnool + Nandyal, among others.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
         (32146,
@@ -1593,14 +1395,16 @@ def seed():
          "YSRCP 2019 AP ఎన్నికల్లో 151 స్థానాలు గెలిచి అధికారంలోకి వచ్చింది. YSRCP won 151 seats in AP 2019 elections and came to power.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
+        # FIXED 32150: NDA won 21 out of 25 Lok Sabha seats in AP 2024, not all 25.
+        # Per task facts: "TDP-JSP-BJP Lok Sabha: 21 seats total"
         (32150,
-         "AP 2024 లోక్‌సభ ఎన్నికల్లో NDA ఎంత సీట్లు గెలిచింది?\n(How many Lok Sabha seats did NDA win in AP 2024?)",
+         "AP 2024 లోక్‌సభ ఎన్నికల్లో NDA (TDP-JSP-BJP) ఎంత సీట్లు గెలిచింది?\n(How many Lok Sabha seats did NDA (TDP-JSP-BJP) win in AP 2024?)",
          "A) 10",
          "B) 17",
          "C) 21",
          "D) 25",
-         "D",
-         "2024 లోక్‌సభ ఎన్నికల్లో AP నుండి NDA (TDP-JSP-BJP) 25 స్థానాలు గెలిచింది (మొత్తం 25 లోక్‌సభ స్థానాలు). NDA (TDP-JSP-BJP) won all 25 Lok Sabha seats from AP in 2024.",
+         "C",
+         "2024 లోక్‌సభ ఎన్నికల్లో AP నుండి NDA (TDP-JSP-BJP) 21 స్థానాలు గెలిచింది (మొత్తం 25 లోక్‌సభ స్థానాల్లో). NDA (TDP-JSP-BJP) won 21 out of 25 Lok Sabha seats from AP in 2024.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
         (32151,
@@ -2119,7 +1923,7 @@ def seed():
     cur.executemany(insert_sql, questions)
     conn.commit()
     conn.close()
-    print(f"[seed_ap_ca_2026] Seeded {len(questions)} AP CA 2026 MCQs (IDs 32001-32200).")
+    print(f"[seed_ap_ca_2026] Seeded {len(questions)} AP CA 2026 MCQs (IDs 32001-32200, AP-only; ~23 Telangana MCQs removed, 2 duplicates replaced, fact-errors fixed).")
 
 if __name__ == '__main__':
     seed()

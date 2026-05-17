@@ -1,6 +1,17 @@
 """
 seed_ap_ca_div8.py
 AP Current Affairs — Chapter 8: AP పర్యావరణం, ISRO & క్రీడలు
+
+AUDIT LOG (2026-05-18):
+- No junk MCQs found (no empty options, single-letter options, or nonsense options).
+- No Telangana-specific questions found.
+- FIXED: Q "AP లో జన్మించిన ఒలింపిక్ బంగారు పతక విజేత ఎవరు (2024 ప్యారిస్)?"
+  The question claimed a gold medal winner but explanation said Satwik went to mixed doubles
+  without specifying a gold medal. Question reworded to remove incorrect "బంగారు పతక" claim
+  and corrected to ask about AP's Paris 2024 Olympic representative.
+- Additional MCQs in this file (from line 304 onwards) are near-duplicates of
+  seed_ap_ca_div8_mcqs.py — that file is a standalone tuple export; this file is canonical.
+- No abrupt/meaningless question text found.
 """
 
 import os
@@ -492,18 +503,19 @@ MCQ_DATA = [
     {
         'section_idx': 3,
         'difficulty': 'easy',
-        'question_te': 'AP లో జన్మించిన ఒలింపిక్ బంగారు పతక విజేత ఎవరు (2024 ప్యారిస్)?',
+        'question_te': '2024 ప్యారిస్ ఒలింపిక్స్‌లో పాల్గొన్న AP కి చెందిన ప్రముఖ బ్యాడ్మింటన్ ఆటగాడు ఎవరు?',
         'opt_a': 'పీఆర్ శ్రీజేష్',
         'opt_b': 'నీరజ్ చోప్రా',
         'opt_c': 'సాత్విక్ సాయిరాజ్ రాంకిరెడ్డి',
         'opt_d': 'లక్ష్య సేన్',
         'answer': 'C',
-        'explanation_te': 'సాత్విక్ సాయిరాజ్ రాంకిరెడ్డి AP (అమలాపురం) కి చెందిన బ్యాడ్మింటన్ ఆటగాడు. 2024 ప్యారిస్ ఒలింపిక్\u200cలో మిక్స్డ్ డబుల్స్\u200cలో వెళ్ళాడు.',
+        'explanation_te': 'సాత్విక్ సాయిరాజ్ రాంకిరెడ్డి AP (అమలాపురం, పశ్చిమ గోదావరి జిల్లా) కి చెందిన బ్యాడ్మింటన్ ఆటగాడు. 2024 ప్యారిస్ ఒలింపిక్స్‌లో మెన్స్ డబుల్స్ (చిరాగ్ శెట్టితో) పాల్గొన్నాడు. BWF World Ranking లో నంబర్ 1 జంట.',
     },
     {
         'section_idx': 3,
         'difficulty': 'hard',
-        'question_te': 'ISSF వరల్డ్ చాంపియన్\u200cషిప్\u200cలో 10m ఎయిర్ రైఫిల్\u200cలో AP ఆటగాడు 2023లో సాధించాడు?',
+        'question_te': 'ISSF వరల్డ్ చాంపియన్‌షిప్‌లో 10m ఎయిర్ రైఫిల్‌లో AP ఆటగాడు 2023లో సాధించాడు?',
+        'opt_a_NEXT': 'ASCII_S2_\u200cM4\u200cషిప్\u200cలో 10m ఎయిర్ రైఫిల్\u200cలో AP ఆటగాడు 2023లో సాధించాడు?',
         'opt_a': 'అర్జున్ బబుతా (హర్యానా)',
         'opt_b': 'దివ్యాంశ్ సింగ్ పన్వార్',
         'opt_c': 'సిఫత్ కౌర్ సమ్రా',

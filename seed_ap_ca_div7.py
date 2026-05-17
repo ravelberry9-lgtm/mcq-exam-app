@@ -1,6 +1,19 @@
 """
 seed_ap_ca_div7.py
 AP Current Affairs — Chapter 7: AP చరిత్ర & స్వాతంత్ర్య సమరయోధులు
+
+AUDIT LOG (2026-05-18):
+- No junk MCQs found (no empty options, single-letter options, or nonsense options).
+- No Telangana-specific questions found.
+  (Note: questions about Kakatiyas/Golconda reference Warangal/Hyderabad as historical facts,
+   not as TS-specific current affairs — these are legitimate AP history content.)
+- All AP facts verified; no wrong answers found.
+- No abrupt/meaningless question text found.
+- No duplicate questions with other div files found.
+- NOTE: seed_ap_ca_div7_mcqs.py contains MCQs in tuple format that largely overlap
+  with the additional MCQs already included in this file's MCQ_DATA list.
+  Those are standalone tuples without seeding logic; this file is the canonical version.
+- FILE IS CLEAN — no changes to MCQ data required.
 """
 
 import os
