@@ -1,7 +1,13 @@
 """
-seed_ap_ca_div6.py
+seed_ap_ca_div6_complete.py
 AP Current Affairs — Chapter 6: AP ఆర్థిక వ్యవస్థ, పరిశ్రమలు & మౌలిక సదుపాయాలు
 Complete seed file with 60 MCQs in tuple format and seed functions
+
+AUDIT LOG (2026-05-18):
+- WARNING: This file is an EXACT DUPLICATE of seed_ap_ca_div6.py.
+  Both files have identical MCQ_DATA, SECTIONS_JSON, and seed functions.
+  This file should be removed or consolidated to avoid double-seeding.
+  No changes made to MCQ data — data is clean (same as div6.py).
 """
 
 import os
