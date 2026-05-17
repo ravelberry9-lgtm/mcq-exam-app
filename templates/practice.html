@@ -166,7 +166,7 @@ body.fp .fp-ov{display:flex}
 .subtopic-hdr-lbl{font-size:12px;font-weight:700;color:#1a237e}
 .subtopic-actions{display:flex;gap:6px}
 .subtopic-act-btn{background:#fff;color:#1a237e;border:1.5px solid #c5cae9;border-radius:50px;padding:3px 11px;font-size:11px;font-weight:700;cursor:pointer}
-.subtopic-list{display:flex;flex-direction:column;gap:7px;max-height:220px;overflow-y:auto}
+.subtopic-list{display:flex;flex-direction:column;gap:7px;max-height:340px;overflow-y:auto}
 .subtopic-item{display:flex;align-items:center;gap:9px;background:#fff;border-radius:8px;padding:8px 11px;cursor:pointer;border:1.5px solid #c5cae9;transition:border-color .15s}
 .subtopic-item.selected{border-color:#3949ab;background:#f0f2ff}
 .subtopic-chk{width:16px;height:16px;accent-color:#1a237e;flex-shrink:0;cursor:pointer}
@@ -203,7 +203,7 @@ body.fp .fp-ov{display:flex}
   <p id="introDesc"></p>
   <div class="subtopic-box" id="subtopicBox" style="display:none">
     <div class="subtopic-hdr">
-      <span class="subtopic-hdr-lbl">&#127919; Select Topics to Practice</span>
+      <span class="subtopic-hdr-lbl">&#128218; Choose Topics to Practice</span>
       <div class="subtopic-actions">
         <button class="subtopic-act-btn" onclick="selectAllST()">All</button>
         <button class="subtopic-act-btn" onclick="clearAllST()">None</button>
@@ -302,7 +302,17 @@ const SUBTOPIC_MAP=[
   [29001,29080,'Intl Events & Appointments'],
   [30001,30080,'Mideast War 2025-26'],
   [31001,31300,'National Current Affairs'],
-  [32001,33200,'AP Current Affairs'],
+  [32001,32200,'AP CA - Cabinet & Elections 2024'],
+  [32201,32280,'AP CA - Economy & Budget'],
+  [32281,32360,'AP CA - Infrastructure & Capital'],
+  [32361,32440,'AP CA - Healthcare & Social'],
+  [32441,32520,'AP CA - Technology & IT'],
+  [32521,32600,'AP CA - Agriculture & Water'],
+  [32601,32730,'AP CA - Education & Culture'],
+  [32731,32800,'AP CA - History & Heritage'],
+  [32801,32880,'AP CA - Environment & Sports'],
+  [32881,32960,'AP CA - Awards & Institutions'],
+  [32961,33200,'AP CA - Reorganisation & Governance'],
 ];
 let _stMap=new Map(), _stSel=new Set();
 function _stName(id){for(const[a,b,n]of SUBTOPIC_MAP)if(id>=a&&id<=b)return n;return null;}
@@ -470,7 +480,8 @@ function restoreNormal(i,st){
   const fb=document.getElementById('fbPanel');
   fb.className='fb-panel show '+(st.ok?'ok-fb':'ng-fb');
   document.getElementById('fbLbl').textContent=st.ok?'✅ Correct!':'❌ Incorrect!';
-  document.getElementById('fbExp').textContent=st.exp||'';
+  const fbExpEl2=document.getElementById('fbExp');
+  fbExpEl2.textContent=st.exp||''; fbExpEl2.style.display=st.exp?'':'none';
   document.getElementById('nextWrap').classList.add('show');
   document.getElementById('nextBtn').textContent=(i+1>=filtQ.length)?'See Results \u{1F3C6}':'Next →';
   /* restore perplexity button */
@@ -491,7 +502,8 @@ function pick(i,chosen,correct_ans,exp,question){
   const fb=document.getElementById('fbPanel');
   fb.className='fb-panel show '+(ok?'ok-fb':'ng-fb');
   document.getElementById('fbLbl').textContent=ok?'✅ Correct!':'❌ Incorrect!';
-  document.getElementById('fbExp').textContent='';
+  const fbExpEl=document.getElementById('fbExp');
+  fbExpEl.textContent=exp||''; fbExpEl.style.display=exp?'':'none';
   document.getElementById('nextWrap').classList.add('show');
   document.getElementById('nextBtn').textContent=(i+1>=filtQ.length)?'See Results \u{1F3C6}':'Next →';
   updateScore(); fb.scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -722,7 +734,7 @@ function buildSubtopicUI(){
   for(const q of allQ){const n=_stName(q.id);if(n)_stMap.set(n,(_stMap.get(n)||0)+1);}
   const box=document.getElementById('subtopicBox');
   const list=document.getElementById('subtopicList');
-  if(!box||!list||_stMap.size<=1){if(box)box.style.display='none';return;}
+  if(!box||!list||_stMap.size===0){if(box)box.style.display='none';return;}
   _stSel=new Set(_stMap.keys());
   list.innerHTML='';
   for(const[name,cnt]of _stMap){
