@@ -68,19 +68,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .ai-res-src{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
 .ai-res-title{font-size:14px;font-weight:700;color:#1a237e;margin-bottom:7px;line-height:1.4}
 .ai-res-text{font-size:13px;line-height:1.7;color:#333;margin-bottom:10px}
-.ai-res-links{display:flex;gap:8px;flex-wrap:wrap}
-.ai-res-links a{font-size:12px;color:#1a237e;border:1.5px solid #c5cae9;border-radius:50px;padding:5px 12px;text-decoration:none;font-weight:600}
-.ai-res-links a.pplx{background:#1a237e;color:#fff;border-color:#1a237e}
-.ai-res-links a.goog{background:#fff;color:#1a73e8;border-color:#1a73e8;font-weight:700}
-.ai-spin{width:22px;height:22px;border:3px solid #e0e4ef;border-top-color:#1a237e;border-radius:50%;animation:spin .7s linear infinite;margin:12px auto}
-.ai-frame-wrap{border-top:1px solid #e8eaf6}
-.ai-frame{width:100%;height:260px;border:none;display:block;background:#fafafa}
-.fp-ai-body{padding:10px 12px;font-size:12.5px;line-height:1.65;color:var(--tx);min-height:40px}
-.ai-search-link{display:block;margin:6px 14px 12px;text-align:center}
-.ai-search-link a{display:inline-flex;align-items:center;gap:6px;background:#1a237e;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:7px 16px;border-radius:50px;opacity:.9}
-.ai-search-link a:active{opacity:.7}
-.fp-ai-search{text-align:center;padding:6px 12px 10px}
-.fp-ai-search a{display:inline-flex;align-items:center;gap:5px;background:#1a237e;color:#fff;text-decoration:none;font-size:11px;font-weight:700;padding:6px 14px;border-radius:50px;opacity:.9}
+.notes-pplx{text-align:center;padding:8px 14px 12px;display:none}
+.notes-panel.show .notes-pplx{display:block}
+.notes-pplx-btn{display:inline-flex;align-items:center;gap:6px;background:#1a237e;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:7px 18px;border-radius:50px;opacity:.9}
+.notes-pplx-btn:active{opacity:.7}
 /* swipe hint + next */
 .swipe-hint{text-align:center;padding:10px 14px 4px;font-size:12px;color:var(--txm);display:none}
 .swipe-hint.show{display:block}
@@ -234,13 +225,6 @@ body.fp .fp-ov{display:flex}
 <div id="qArea"></div>
 <div class="swipe-hint" id="swipeHint">&#8592; swipe to navigate</div>
 <div class="fb-panel" id="fbPanel"><div class="fb-lbl" id="fbLbl"></div><div class="fb-exp" id="fbExp"></div></div>
-<div class="ai-panel" id="aiPanel">
-  <div class="ai-header"><span class="ai-header-icon">&#x2728;</span><span>Explanation</span><span class="ai-source" id="aiSource"></span></div>
-  <div class="ai-body" id="aiBody"></div>
-  <div class="ai-frame-wrap" id="aiFrameWrap" style="display:none">
-    <iframe id="aiFrame" class="ai-frame" frameborder="0" scrolling="yes"></iframe>
-  </div>
-</div>
 <div class="notes-panel" id="notesPanel">
   <div class="notes-hdr" onclick="toggleNotes()">
     <span class="notes-hdr-icon">&#128218;</span>
@@ -250,6 +234,9 @@ body.fp .fp-ov{display:flex}
   </div>
   <div class="notes-body" id="notesBody">
     <iframe class="notes-frame" id="notesFrame" frameborder="0" src="about:blank"></iframe>
+  </div>
+  <div class="notes-pplx" id="notesPplx">
+    <a class="notes-pplx-btn" id="notesPplxBtn" href="#" target="_blank">&#x26A1; Search on Perplexity</a>
   </div>
 </div>
 <div class="next-wrap" id="nextWrap"><button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next &#8594;</button></div>
@@ -314,6 +301,8 @@ const SUBTOPIC_MAP=[
   [28001,28080,'Reports & Indices'],
   [29001,29080,'Intl Events & Appointments'],
   [30001,30080,'Mideast War 2025-26'],
+  [31001,31300,'National Current Affairs'],
+  [32001,33200,'AP Current Affairs'],
 ];
 let _stMap=new Map(), _stSel=new Set();
 function _stName(id){for(const[a,b,n]of SUBTOPIC_MAP)if(id>=a&&id<=b)return n;return null;}
@@ -357,7 +346,7 @@ function showIntro(){
   if(saved&&saved.answered>0){
     const pct=Math.round(saved.correct/saved.answered*100);
     document.getElementById('introDesc').textContent=
-      allQ.length+' questions  ·  '+saved.answered+' answered  ·  '+saved.correct+' correct';
+      allQ.length+' questions · '+saved.answered+' answered · '+saved.correct+' correct';
     document.getElementById('btnStart').style.display='none';
     document.getElementById('resumeInfo').textContent=
       '▶ Resume from Q'+(saved.idx+1)+' — '+pct+'% score so far';
@@ -461,7 +450,7 @@ function buildCards(){
 function showQ(i){
   document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('visible'));
   document.getElementById('fbPanel').classList.remove('show');
-  document.getElementById('aiPanel').classList.remove('show');
+  /* aiPanel removed */
   document.getElementById('nextWrap').classList.remove('show');
   document.getElementById('notesPanel').classList.remove('show');
   document.getElementById('notesBody').classList.remove('open');
@@ -484,13 +473,8 @@ function restoreNormal(i,st){
   document.getElementById('fbExp').textContent=st.exp||'';
   document.getElementById('nextWrap').classList.add('show');
   document.getElementById('nextBtn').textContent=(i+1>=filtQ.length)?'See Results \u{1F3C6}':'Next →';
-  /* restore explanation panel if it was shown */
-  if(st.aiText){
-    const ap=document.getElementById('aiPanel'); ap.classList.add('show');
-    const ab=document.getElementById('aiBody'); if(ab&&st.aiHTML) ab.innerHTML=st.aiHTML;
-    const sl=document.getElementById('aiSearchLink'),sa=document.getElementById('aiSearchA');
-    if(st.aiQ&&sl&&sa){sl.style.display='';sa.href='https://www.perplexity.ai/search?q='+encodeURIComponent(st.aiQ);}
-  }
+  /* restore perplexity button */
+  if(st.aiQ){_pplxQ=st.aiQ;_pplxA='';_updatePplxBtn();}
 }
 
 /* ── PICK OPTION ── */
@@ -507,45 +491,20 @@ function pick(i,chosen,correct_ans,exp,question){
   const fb=document.getElementById('fbPanel');
   fb.className='fb-panel show '+(ok?'ok-fb':'ng-fb');
   document.getElementById('fbLbl').textContent=ok?'✅ Correct!':'❌ Incorrect!';
-  document.getElementById('fbExp').textContent=exp||(ok?'Well done!':'Review the correct answer above.');
+  document.getElementById('fbExp').textContent='';
   document.getElementById('nextWrap').classList.add('show');
   document.getElementById('nextBtn').textContent=(i+1>=filtQ.length)?'See Results \u{1F3C6}':'Next →';
   updateScore(); fb.scrollIntoView({behavior:'smooth',block:'nearest'});
-  /* trigger AI */
-  loadAI(i, question, correct_ans, exp, false);
+  _pplxQ=question; _pplxA=correct_ans; _updatePplxBtn();
   if(filtQ[i] && filtQ[i].id) fetchNotes(filtQ[i].id);
   saveProgress();
 }
 
-/* ── EXPLANATION + SEARCH IFRAME ── */
-function loadAI(i, question, correct_ans, exp, isFP){
-  const panelId=isFP?'fpAi':'aiPanel';
-  const bodyId =isFP?'fpAiBody':'aiBody';
-  const panel=document.getElementById(panelId);
-  const body =document.getElementById(bodyId);
-  if(!panel||!body) return;
-
-  const eh=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  const pplx='https://www.perplexity.ai/search?q='+encodeURIComponent(question+' '+correct_ans);
-
-  /* Step 1: show DB explanation INSTANTLY */
-  const expHTML='<div class="ai-res-src">📋 Explanation</div>'+
-    '<div class="ai-res-text">'+eh(exp||'Correct answer: '+correct_ans)+'</div>'+
-    '<div class="ai-res-links"><a class="pplx" href="'+pplx+'" target="_blank">⚡ Perplexity ↗</a></div>';
-  body.innerHTML=expHTML;
-  if(states[i]){states[i].aiHTML=expHTML;states[i].aiQ=question;}
-  panel.classList.add('show');
-  if(!isFP) setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
-
-  /* Step 2: load search iframe (served from our own domain — no X-Frame-Options block) */
-  if(!isFP){
-    const wrap=document.getElementById('aiFrameWrap');
-    const frame=document.getElementById('aiFrame');
-    if(wrap&&frame){
-      frame.src='/search-frame?q='+encodeURIComponent(question)+'&a='+encodeURIComponent(correct_ans);
-      wrap.style.display='';
-    }
-  }
+/* ── PERPLEXITY URL TRACKER ── */
+let _pplxQ='', _pplxA='';
+function _updatePplxBtn(){
+  const btn=document.getElementById('notesPplxBtn');
+  if(btn&&(_pplxQ||_pplxA)) btn.href='https://www.perplexity.ai/search?q='+encodeURIComponent((_pplxQ+' '+_pplxA).trim());
 }
 
 function nextQuestion(){idx++;showQ(idx);window.scrollTo({top:0,behavior:'smooth'});}
@@ -561,7 +520,7 @@ function showSum(){
   clearProgress();
   document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('visible'));
   document.getElementById('fbPanel').classList.remove('show');
-  document.getElementById('aiPanel').classList.remove('show');
+  /* aiPanel removed */
   document.getElementById('nextWrap').classList.remove('show');
   document.getElementById('swipeHint').classList.remove('show');
   document.getElementById('notesPanel').classList.remove('show');
@@ -746,8 +705,6 @@ function fetchNotes(qid) {
     return;
   }
   panel.classList.add('show');
-  if(body)body.classList.add('open');
-  if(tog)tog.classList.add('open');
   if(lbl)lbl.textContent=label;
   frame.src='/api/concept-note-html/'+qid;
 }

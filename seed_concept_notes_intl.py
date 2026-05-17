@@ -1103,4 +1103,18 @@ else:
             "INSERT INTO concept_notes (tag, label, label_te, html) VALUES (?, ?, ?, ?)",
             (tag, label, label_te, html.strip())
         )
-    c
+    conn.commit()
+
+conn.close()
+print(f"SUCCESS: Seeded {len(NOTES)} International Current Affairs concept notes into DB.")
+for tag, label, *_ in NOTES:
+    print(f"  • {tag:30s} — {label}")
+label_te, html) VALUES (?, ?, ?, ?)",
+            (tag, label, label_te, html.strip())
+        )
+    conn.commit()
+
+conn.close()
+print(f"SUCCESS: Seeded {len(NOTES)} International Current Affairs concept notes into DB.")
+for tag, label, *_ in NOTES:
+    print(f"  • {tag:30s} — {label}")

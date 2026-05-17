@@ -6016,7 +6016,7 @@ def search_frame():
     q = request.args.get('q', '').strip()
     a = request.args.get('a', '').strip()
     if not q and not a:
-        return Response('<p>No query.</p>', content_type='text/html')
+        return Response('<p>No query.</p>', content_type='text/html; charset=utf-8')
 
     # Use correct answer as primary search term (much more relevant than full MCQ text)
     search_term = a if a else q
@@ -6115,7 +6115,7 @@ def search_frame():
 </div>
 </body></html>'''
 
-    return Response(html, content_type='text/html')
+    return Response(html, content_type='text/html; charset=utf-8')
 
 
 @app.route('/api/search-proxy')
@@ -6327,6 +6327,48 @@ CONCEPT_MAP = [
     # Mideast War (30001-30080)
     (30001, 30020, 'mideast_twelve_day'),
     (30021, 30080, 'mideast_2026_war'),
+    # National Current Affairs 2026 (31001-31300)
+    (31001, 31020, 'national_ca_budget'),
+    (31021, 31045, 'national_ca_polity'),
+    (31046, 31300, 'national_ca_misc'),
+    # AP CA 2026 — individual question concept notes (first 10 questions)
+    (32001, 32002, 'q_32001'),   # AP Budget 2026-27
+    (32003, 32003, 'q_32003'),   # Amaravati Capital Act
+    (32004, 32005, 'q_32004'),   # CRDA
+    (32006, 32007, 'q_32006'),   # Amarseva Masters Project
+    (32008, 32008, 'q_32008'),   # AP Logistics Policy 2025-2030
+    (32009, 32009, 'q_32009'),   # Women in AP Assembly
+    (32010, 32010, 'q_32010'),   # AP TFR
+    # AP Current Affairs 2026 — generic fallback ranges
+    (32001, 32040, 'ap_ca_budget'),
+    (32041, 32080, 'ap_ca_state'),
+    (32081, 32140, 'ap_ca_budget'),
+    (32141, 32200, 'ap_ca_state'),
+    # AP CA div questions (32201-33200) — 10 topic-cluster notes
+    # div1: Elections & Cabinet
+    (32201, 32290, 'ap_elections_cabinet'),
+    # div2: Super Six Schemes & Welfare
+    (32291, 32380, 'ap_super_six_schemes'),
+    # div3: Major Events Jan-Aug 2025
+    (32381, 32500, 'ap_events_2025'),
+    # div4: Major Events Aug 2025 – Apr 2026
+    (32501, 32600, 'ap_events_2026'),
+    # div5: Art, Culture & GI Tags
+    (32601, 32640, 'ap_art_culture'),
+    # div6: Economy, Industries & Infrastructure
+    (32641, 32730, 'ap_economy_infra'),
+    # div7: History & Freedom Fighters
+    (32731, 32800, 'ap_history'),
+    # div8: Environment, ISRO & Sports
+    (32801, 32880, 'ap_environment_sports'),
+    # div9: Padma Awards, HC & Institutions
+    (32881, 32960, 'ap_awards_institutions'),
+    # div10: APRA 2014 & 2026 Reorganisation
+    (32961, 33060, 'ap_reorganisation'),
+    # div7_mcqs: more History MCQs
+    (33061, 33130, 'ap_history'),
+    # div8_mcqs: more Environment/ISRO/Sports MCQs
+    (33131, 33200, 'ap_environment_sports'),
 ]
 _concept_cache = {}   # tag -> html, loaded at startup
 
@@ -6348,10 +6390,12 @@ def _load_concept_cache():
         _concept_cache = {r[0]: r[1] for r in rows}
         print(f'[concept_cache] Loaded {len(_concept_cache)} concept notes.')
         need_awards = not _concept_cache
-        # Always force-refresh intl concept notes to pick up updated 2025 index data
+        # Always force-refresh intl + national + AP concept notes to pick up updated data
         need_intl = True
-        if need_awards or need_intl:
-            print(f'[concept_cache] Refreshing concept notes (awards={need_awards}, intl={need_intl})...')
+        need_national = True
+        need_ap = True
+        if need_awards or need_intl or need_national or need_ap:
+            print(f'[concept_cache] Refreshing concept notes (awards={need_awards}, intl={need_intl}, national={need_national}, ap={need_ap})...')
             try:
                 import importlib
                 if need_awards:
@@ -6360,6 +6404,14 @@ def _load_concept_cache():
                 if need_intl:
                     cn_intl = importlib.import_module('seed_concept_notes_intl')
                     print('[concept_cache] seed_concept_notes_intl seeded successfully.')
+                if need_national:
+                    cn_nat = importlib.import_module('seed_concept_notes_national')
+                    print('[concept_cache] seed_concept_notes_national seeded successfully.')
+                if need_ap:
+                    cn_ap = importlib.import_module('seed_concept_notes_ap')
+                    print('[concept_cache] seed_concept_notes_ap seeded successfully.')
+                    cn_ap_divs = importlib.import_module('seed_concept_notes_ap_divs')
+                    print('[concept_cache] seed_concept_notes_ap_divs seeded successfully.')
                 # Reload into cache after seeding
                 conn2 = get_db()
                 if USE_POSTGRES:
