@@ -54,7 +54,7 @@ SECTIONS_JSON = json.dumps([
     {
         "id": "div6_s4",
         "title": "Google AI Hub & Quantum Computing",
-        "summary": "$15B పెట్టుబడి, విశాఖపట్నం AI hub, అమెరికా తర్వాత ప్రపంచంలో 2వ, IBM Quantum 133-Qubit"
+        "summary": "$15B పెట్టుబడి, విశాఖపట్నం AI hub, అమెరికా తర్వాత ప్రపంచంలో 2వ, IBM Quantum 156-qubit Heron (Amaravati AQCC)"
     },
     {
         "id": "div6_s5",
@@ -121,7 +121,7 @@ MCQ_DATA = [
     (4, 1, "Google పెట్టుబడి?", "$8 బిలియన్", "$10 బిలియన్", "$15 బిలియన్", "$20 బిలియన్", "c", "$15 బిలియన్ (5 సంవత్సరాలు)."),
     (4, 2, "Google AI Hub ప్రత్యేకత?", "ఆసియా అతిపెద్ద", "అమెరికా నుండి బయట అతిపెద్ద", "అమెరికా తర్వాత ప్రపంచంలో", "యూరప్ కంటే పెద్ద", "c", "అమెరికా తర్వాత ప్రపంచంలో అతిపెద్ద AI Hub."),
     (4, 1, "Google AI Hub నగరం?", "హైదరాబాద్", "విశాఖపట్నం", "అమరావతి", "విజయవాడ", "b", "విశాఖపట్నం."),
-    (4, 1, "IBM Quantum Computer Qubit సంఖ్య?", "100", "133", "150", "175", "b", "133-Qubit, 5K gates."),
+    (4, 1, "IBM Quantum System Two (అమరావతి AQCC) లో deploy చేస్తున్న Quantum Processor qubit సంఖ్య ఎంత?", "133 (Heron R1)", "156 (Heron R2)", "433 (Osprey)", "1121 (Condor)", "b", "IBM Quantum System Two at AQCC (Andhra Quantum Computing Centre, Amaravati) ఉపయోగిస్తుంది IBM Heron R2 chip — 156 qubits, 5K gate depth. (133-qubit was the older Heron R1 prototype; deployment is R2.)"),
     (4, 1, "IBM Quantum Computer నగరం?", "విశాఖపట్నం", "విజయవాడ", "అమరావతి", "తిరుపతి", "c", "అమరావతి AQCC."),
     (4, 1, "దేశంలోనే తొలి Quantum Hardware Test Beds ఎప్పుడు?", "జూన్ 14, 2025", "సెప్టెంబర్ 14, 2025", "ఏప్రిల్ 14, 2026", "జూలై 14, 2026", "c", "ఏప్రిల్ 14, 2026 (World Quantum Day)."),
     # NOTE (Batch D3): "Quantum Test Beds @ SRM Amaravati & Medha Towers Vijayawada" claim

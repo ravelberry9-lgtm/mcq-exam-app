@@ -1444,7 +1444,17 @@ def ap_ca_force_reseed():
         divs_to_seed = list(range(1, 11))
 
     import importlib
+    import traceback
     ph = '%s' if USE_POSTGRES else '?'
+
+    # Mcqs_inner functions accept different signatures across files (some have force= kwarg, some don't).
+    # We try the kwarg-form first, fall back to the positional form on TypeError.
+    def _call_mcqs_fn(fn, conn):
+        try:
+            return fn(conn, db_exec, row_to_dict, USE_POSTGRES, force=True)
+        except TypeError:
+            return fn(conn, db_exec, row_to_dict, USE_POSTGRES)
+
     results = []
     for ch_num in divs_to_seed:
         mod_name = f'seed_ap_ca_div{ch_num}'
@@ -1452,29 +1462,40 @@ def ap_ca_force_reseed():
         conn = get_db()
         try:
             mod = importlib.import_module(mod_name)
+            # Some seeder modules may have been edited; force-reimport to pick up changes.
+            mod = importlib.reload(mod)
             notes_fn = getattr(mod, f'_seed_{fn_suffix}_notes_inner')
             mcqs_fn  = getattr(mod, f'_seed_{fn_suffix}_mcqs_inner')
             notes_fn(conn, db_exec, row_to_dict, USE_POSTGRES, force=True)
             conn.commit()
-            mcqs_fn(conn, db_exec, row_to_dict, USE_POSTGRES)
+            _call_mcqs_fn(mcqs_fn, conn)
             conn.commit()
-            # Verify
+            # Verify (use _fv so it works on both Postgres RealDictRow and sqlite3.Row)
             nr = db_exec(conn,
                 f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
                 ('AP_Current_Affairs', ch_num)).fetchone()
             cnt = 0
             if nr:
-                nid = row_to_dict(nr).get('id') if nr else None
+                nd = row_to_dict(nr) or {}
+                nid = nd.get('id')
                 if nid is not None:
                     cr = db_exec(conn,
-                        f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}",
+                        f"SELECT COUNT(*) AS c FROM chapter_mcqs WHERE study_note_id={ph}",
                         (nid,)).fetchone()
-                    cnt = cr[0] if cr else 0
+                    cnt = _fv(cr)
             results.append({'div': ch_num, 'success': True, 'mcqs_loaded': cnt})
         except Exception as e:
             try: conn.rollback()
             except: pass
-            results.append({'div': ch_num, 'success': False, 'error': str(e)[:300]})
+            err_msg = f"{type(e).__name__}: {e}".strip()
+            if not err_msg.split(':', 1)[-1].strip():
+                err_msg = type(e).__name__
+            results.append({
+                'div': ch_num,
+                'success': False,
+                'error': err_msg[:300],
+                'trace': traceback.format_exc()[-400:],
+            })
         finally:
             try: conn.close()
             except: pass
@@ -1484,9 +1505,12 @@ def ap_ca_force_reseed():
     try:
         conn2 = get_db()
         cr = db_exec(conn2,
-            "SELECT COUNT(*) FROM chapter_mcqs cm JOIN study_notes sn ON cm.study_note_id=sn.id WHERE sn.topic='AP_Current_Affairs'"
+            "SELECT COUNT(*) AS c FROM chapter_mcqs cm JOIN study_notes sn ON cm.study_note_id=sn.id WHERE sn.topic=%s"
+            if USE_POSTGRES else
+            "SELECT COUNT(*) AS c FROM chapter_mcqs cm JOIN study_notes sn ON cm.study_note_id=sn.id WHERE sn.topic=?",
+            ('AP_Current_Affairs',)
         ).fetchone()
-        total = cr[0] if cr else 0
+        total = _fv(cr)
         try: conn2.close()
         except: pass
     except Exception: pass

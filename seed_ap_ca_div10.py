@@ -300,10 +300,7 @@ def _seed_ap_ca_div10_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force
         print("[div10-mcqs] study_note not found — skipping")
         return
     note_id = row_to_dict(row)['id']
-    cur2 = db_exec(conn, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
-    count = list(row_to_dict_fn(cur2.fetchone()).values())[0]
-    if count > 0 and not force:
-        return
+    # Always delete-then-reinsert so seed-file changes are reflected (force is ignored here).
     db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
     insert_sql = (
         f"INSERT INTO chapter_mcqs "
@@ -519,7 +516,7 @@ _EXTRA_MCQ_DATA_10 = [
         "explanation_te": "APRA 2014 Section 94 ప్రకారం పోలవరం జాతీయ ప్రాజెక్టుగా కేంద్ర ప్రభుత్వం పూర్తి నిధులు అందించాలి. ఇది AP రాష్ట్రానికి గొప్ప ప్రయోజనం."
     },
     {
-        "section_idx": 8,
+        "section_idx": 1,
         "difficulty": "easy",
         "question_te": "AP Reorganisation Act 2014 Rajya Sabha లో ఎందుకు వివాదాస్పదంగా ఆమోదించబడింది?",
         "opt_a": "ఆర్థిక కారణాలు",
