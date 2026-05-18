@@ -19,9 +19,9 @@ def seed():
 
     # Force-refresh: delete existing National CA 2026 MCQs
     if db_type == 'pg':
-        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31400")
+        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31450")
     else:
-        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31400")
+        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31450")
     conn.commit()
 
     questions = [
@@ -2339,13 +2339,13 @@ def seed():
 
         # ── India Environment Ramsar ──
         (31217,
-         "2025 నాటికి భారత్‌లో Ramsar చిత్తడి నేలల సైట్ల సంఖ్య ఎంత?\n(Number of Ramsar Wetland Sites in India by 2025?)",
-         "A) 50",
-         "B) 75",
-         "C) 85+",
-         "D) 100",
-         "C",
-         "**Ramsar Convention** (1971, Iran) — అంతర్జాతీయ ప్రాముఖ్యత గల చిత్తడి నేలల కన్వెన్షన్; భారత్ 1982లో సభ్యత్వం; 2025 నాటికి **89+ Ramsar Sites** (ఆసియాలో అతిపెద్ద నెట్‌వర్క్) — తమిళనాడు 18తో అగ్రస్థానం. **India has 89+ Ramsar Wetland Sites by 2025 — the largest network in Asia.**",
+         "ఏప్రిల్ 22, 2026 నాటికి భారత్‌లో Ramsar చిత్తడి నేలల సైట్ల సంఖ్య ఎంత?\n(Number of Ramsar Wetland Sites in India as of April 22, 2026?)",
+         "A) 75",
+         "B) 89",
+         "C) 95",
+         "D) 99",
+         "D",
+         "**Ramsar Convention** (1971, Iran) — అంతర్జాతీయ ప్రాముఖ్యత గల చిత్తడి నేలల కన్వెన్షన్; భారత్ 1982లో సభ్యత్వం. **ఏప్రిల్ 22, 2026 (Earth Day) నాటికి భారత్‌లో 99 Ramsar Sites** — ఆసియాలో అతిపెద్ద నెట్‌వర్క్; తమిళనాడు 20+ సైట్లతో అగ్రస్థానం. **India has 99 Ramsar Wetland Sites as of April 22, 2026 (Earth Day) — largest network in Asia.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Solar ──
@@ -4232,6 +4232,476 @@ def seed():
          "C",
          "2025-27 కాలానికి భారత్ IONS (Indian Ocean Naval Symposium) ఛైర్మన్‌షిప్ స్వీకరించింది — 16 సంవత్సరాల తర్వాత మళ్లీ. IONS 2008లో భారత నావికాదళ చొరవతో ప్రారంభమైంది. India assumed IONS (Indian Ocean Naval Symposium) chairmanship for 2025-27 — 16 years after its first chairmanship. IONS was launched in 2008 as an Indian Navy initiative.",
          "AP_HC", "National_Current_Affairs_2026"),
+
+        # ╔════════════════════════════════════════════════════════════╗
+        # ║  Phase 2 audit (2026-05-18) — IDs 31389-31430              ║
+        # ║  Topics: GST 2.0, IT Act 2025, Mission Mausam, Labour      ║
+        # ║  Codes, PM-DDKY, MIG-21, Rafale-M, NSGA, ICH, SIR,         ║
+        # ║  Swachh Vayu, CRS, Parties, 130th CAB, Yoga, Coastline,    ║
+        # ║  Waqf, Vande Bharat, ELI, Ramsar 99                        ║
+        # ╚════════════════════════════════════════════════════════════╝
+
+        # === 📅 2026 MCQ: gst_2026_reforms ===
+        (31389,
+         "GST 2.0 సంస్కరణలు (సెప్టెంబర్ 2025) — కొత్త GST స్లాబ్ నిర్మాణం ఏది? అమలులోకి వచ్చిన తేదీ?\n(GST 2.0 reforms (Sept 2025) — new GST slab structure and effective date?)",
+         "A) 5/12/18/28%; Jul 1, 2025",
+         "B) 5/18/40% (2-slab + sin/luxury); Sep 22, 2025",
+         "C) 0/12/24%; Oct 1, 2025",
+         "D) 5/15/30%; Jan 1, 2026",
+         "B",
+         "GST Council (3 సెప్టెంబర్ 2025) — 12% మరియు 28% స్లాబ్‌లను రద్దు చేసి 2-స్లాబ్ నిర్మాణానికి (5% & 18%) మారింది; sin/luxury goods (పాన్ మసాలా, పొగాకు, యాచ్‌లు, premium కార్లు)పై 40% ప్రత్యేక రేటు. **సెప్టెంబర్ 22, 2025** నుండి అమల్లోకి వచ్చింది. GST 2.0 (announced Sep 3, 2025 by GST Council) abolished 12% & 28% slabs, moving to a 2-slab structure (5% + 18%) with a 40% rate on sin/luxury goods; effective **Sep 22, 2025**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: gst_2026_reforms ===
+        (31390,
+         "GST 2.0 (సెప్టెంబర్ 22, 2025) ప్రకటనను నిర్వహించిన ప్రధానమంత్రి భాషణ ఏ ఈవెంట్‌లో? ఏ ట్యాక్స్ స్లాబ్‌లను రద్దు చేశారు?\n(GST 2.0 was announced after which event by PM Modi; which slabs were abolished?)",
+         "A) Republic Day; 5% & 18%",
+         "B) Independence Day 2025 (Aug 15); 12% & 28%",
+         "C) Diwali 2025; 5% & 28%",
+         "D) New Year 2026; 18% & 28%",
+         "B",
+         "ప్రధాని మోదీ ఆగస్టు 15, 2025 స్వాతంత్ర్య దినోత్సవ ప్రసంగంలో **\"Next-Gen GST reforms\"** ప్రకటించారు; GST Council (సెప్టెంబర్ 3, 2025) **12% & 28%** స్లాబ్‌లను రద్దు చేసి, 5%/18% + sin-luxury 40% నిర్మాణానికి మారింది. PM Modi announced Next-Gen GST reforms in his Aug 15, 2025 Independence Day speech; the GST Council on Sep 3, 2025 abolished the **12% and 28%** slabs.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: income_tax_act_2025 ===
+        (31391,
+         "Income-tax Act 2025 — పార్లమెంట్ ఆమోదం + రాష్ట్రపతి ఆమోదం + అమలులోకి వచ్చిన తేదీ ఏవి?\n(Income-tax Act 2025 — Parliament passage, Presidential assent, effective date?)",
+         "A) Jul 2025; Jul 2025; Jan 1, 2026",
+         "B) Aug 12, 2025; Aug 21, 2025; Apr 1, 2026",
+         "C) Sep 2025; Oct 2025; Apr 1, 2027",
+         "D) Mar 2025; Apr 2025; Apr 1, 2026",
+         "B",
+         "Income-tax Act, 2025 — పార్లమెంట్ **ఆగస్టు 12, 2025** న ఆమోదం; రాష్ట్రపతి ద్రౌపదీ ముర్ము **ఆగస్టు 21, 2025** న సంతకం; **ఏప్రిల్ 1, 2026** నుండి అమల్లోకి వచ్చి 1961 ఆదాయపన్ను చట్టాన్ని భర్తీ చేసింది. The Income-tax Act 2025 was passed by Parliament on **Aug 12, 2025**, received Presidential assent on **Aug 21, 2025**, and came into force on **Apr 1, 2026**, replacing the 1961 Act.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: income_tax_act_2025 ===
+        (31392,
+         "Income-tax Act 2025 — 1961 చట్టంతో పోలిస్తే నిర్మాణాత్మక మార్పులు ఏవి?\n(Income-tax Act 2025 — key structural changes vs 1961 Act?)",
+         "A) 819 → 536 sections; 23 chapters; \"Tax Year\" కాన్సెప్ట్",
+         "B) 500 → 700 sections; 30 chapters",
+         "C) 400 → 800 sections; 25 chapters",
+         "D) Same structure, only language change",
+         "A",
+         "Income-tax Act 2025 — 1961 చట్టంలోని **819 sections → 536 sections** కు తగ్గింపు; **23 chapters**; \"Previous Year + Assessment Year\" ద్వంద్వాన్ని తొలగించి ఏకీకృత **\"Tax Year\" (Apr 1-Mar 31)** అమలు; simplified language, tabular format. The Act reduced sections from **819 → 536**, organised into **23 chapters**, and replaced \"Previous Year/Assessment Year\" with a single **\"Tax Year\"** concept.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: mission_mausam ===
+        (31393,
+         "Mission Mausam — ప్రారంభం, నిర్వహణ మంత్రిత్వ శాఖ, వ్యయం + 2 సం. వ్యవధి?\n(Mission Mausam — launch date, ministry, outlay, duration?)",
+         "A) Sep 14, 2024 (PM Modi); MoES; Rs.2,000 cr / 2 years",
+         "B) Jan 1, 2025; MoEFCC; Rs.5,000 cr / 5 years",
+         "C) Aug 15, 2024; MoST; Rs.1,000 cr / 3 years",
+         "D) Oct 2, 2024; MoCA; Rs.3,000 cr / 4 years",
+         "A",
+         "Mission Mausam — కేంద్ర క్యాబినెట్ సెప్టెంబర్ 11, 2024 న ఆమోదించింది, ప్రధానమంత్రి మోదీ **సెప్టెంబర్ 14, 2024** న IMD 150వ స్థాపన దినోత్సవంలో లాంచ్ చేశారు; **MoES (భూ శాస్త్ర మంత్రిత్వ శాఖ)** నేతృత్వంలో **రూ.2,000 కోట్లు / 2 సం.** weather-ready, climate-smart Bharat. Mission Mausam was launched by PM Modi on **Sep 14, 2024** (IMD 150th anniversary); led by **MoES** with an outlay of **Rs.2,000 cr over 2 years**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: mission_mausam ===
+        (31394,
+         "Mission Mausam ను అమలు చేసే 3 సంస్థలు (MoES)?\n(Three MoES institutions implementing Mission Mausam?)",
+         "A) ISRO + DRDO + CSIR",
+         "B) IMD + IITM + NCMRWF",
+         "C) ICAR + IMD + INCOIS",
+         "D) NIO + IITM + NRSC",
+         "B",
+         "Mission Mausam — MoES పరిధిలోని **3 సంస్థలు**: (i) **IMD** (India Meteorological Dept), (ii) **IITM** (Indian Institute of Tropical Meteorology, Pune), (iii) **NCMRWF** (National Centre for Medium-Range Weather Forecasting, Noida) అమలు చేస్తాయి. Next-gen radars, supercomputers, AI/ML modelling. The 3 implementing MoES institutions are **IMD, IITM (Pune), and NCMRWF (Noida)**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: labour_codes_2025 ===
+        (31395,
+         "4 New Labour Codes — కేంద్ర ప్రభుత్వం notify చేసిన అమలు తేదీ + ఎన్ని కార్మిక చట్టాలను ఏకీకృతం చేస్తాయి?\n(Four Labour Codes — central notification date and how many labour laws consolidated?)",
+         "A) Apr 1, 2025; 25 laws",
+         "B) Nov 21, 2025; 29 labour laws",
+         "C) Jan 1, 2026; 35 laws",
+         "D) Jul 1, 2025; 20 laws",
+         "B",
+         "కేంద్ర ప్రభుత్వం **నవంబర్ 21, 2025** న 4 Labour Codes అన్నింటినీ ఏకకాలంలో notify చేసింది — **29 కేంద్ర కార్మిక చట్టాలను** 4 codes లో ఏకీకృతం: (1) Code on **Wages** 2019, (2) **Industrial Relations** Code 2020, (3) **Occupational Safety, Health & Working Conditions (OSH)** Code 2020, (4) **Social Security** Code 2020. The Centre notified all four Labour Codes on **Nov 21, 2025**, consolidating **29 central labour laws** into 4 codes.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: labour_codes_2025 ===
+        (31396,
+         "4 Labour Codes లో gig + platform workers కు సామాజిక భద్రత కవరేజీ అందించే Code ఏది?\n(Which Labour Code extends social security to gig and platform workers?)",
+         "A) Wage Code 2019",
+         "B) Industrial Relations Code 2020",
+         "C) OSH Code 2020",
+         "D) Social Security Code 2020",
+         "D",
+         "**Social Security Code 2020** — gig workers, platform workers, unorganised sector workers, fixed-term employees అందరికీ సామాజిక భద్రత (PF, ESI, maternity, life cover) విస్తరిస్తుంది; ఇది ESI + EPF + Maternity Benefit + Gratuity + Employee Compensation చట్టాలను ఏకీకృతం చేస్తుంది. The **Social Security Code 2020** is the first Indian labour law to extend social security to gig and platform workers along with the unorganised sector.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: pm_dhan_dhanya_krishi ===
+        (31397,
+         "PM ధన్-ధాన్య కృషి యోజన (Aug 15, 2025) — లక్ష్యిత జిల్లాలు, రైతులు, వార్షిక బడ్జెట్, వ్యవధి?\n(PM Dhan-Dhaanya Krishi Yojana (Aug 15, 2025) — districts, farmers, annual budget, duration?)",
+         "A) 50 / 50 lakh / Rs.10,000 cr / 3 years",
+         "B) 100 low-yield districts / 1.7 crore farmers / Rs.24,000 cr p.a. / 6 years",
+         "C) 200 / 2 crore / Rs.50,000 cr / 5 years",
+         "D) 75 / 1 crore / Rs.15,000 cr / 4 years",
+         "B",
+         "PM ధన్-ధాన్య కృషి యోజన — PM Modi 79వ స్వాతంత్ర్య దినోత్సవంలో (ఆగస్టు 15, 2025) ప్రకటించారు; **100 తక్కువ ఉత్పాదకత జిల్లాలు**, **1.7 కోట్ల రైతులు**; **రూ.24,000 కోట్లు సాలీనా** (2025-26 నుండి **6 సం.**); 11 శాఖల్లోని **36 కేంద్ర పథకాల** convergence (ప్రతి రాష్ట్రం నుండి కనీసం 1 జిల్లా). The scheme covers **100 low-yield districts, 1.7 crore farmers, Rs.24,000 cr/year for 6 years**, converging **36 central schemes** across 11 departments.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: mig21_decommissioning ===
+        (31398,
+         "MIG-21 యుద్ధ విమానం IAF నుండి విరమణ తేదీ + ప్రదేశం + సర్వీసు కాలం + భర్తీ?\n(MIG-21 retirement from IAF — date, place, service tenure, replacement?)",
+         "A) Aug 15, 2025; Hindon; 50 years; Su-30 MKI",
+         "B) Sep 26, 2025; Chandigarh AFS; 62 years (since 1963); LCA Tejas Mk-1A",
+         "C) Oct 2, 2025; Pathankot; 55 years; Rafale",
+         "D) Nov 26, 2025; Ambala; 60 years; HAL HF-24",
+         "B",
+         "**సెప్టెంబర్ 26, 2025** న **చండీగఢ్ AFS** లో MIG-21 Bison చివరి విమానం (23 స్క్వాడ్రన్ — \"Panthers\") నిర్వహించబడింది; **62 సం. సేవ** (1963 induction; మొదట 28 Sqn — \"First Supersonics\"); రక్షణ మంత్రి రాజ్‌నాథ్ సింగ్ హాజరయ్యారు; **LCA Tejas Mk-1A** తో భర్తీ. MIG-21 was decommissioned on **Sep 26, 2025** at **Chandigarh AFS** after **62 years** of service (since 1963), replaced by **LCA Tejas Mk-1A**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: rafale_m_naval_deal ===
+        (31399,
+         "Rafale-M ఒప్పందం — తేదీ + విమానాల సంఖ్య + ఖరీదు + ఎక్కడ deploy చేస్తారు?\n(Rafale-M deal — date, number of jets, cost, deployment carrier?)",
+         "A) Apr 28, 2025; 26 jets (22 single + 4 twin); Rs.~63,000 cr (~$7.5B); INS Vikrant",
+         "B) Jul 4, 2025; 36 jets; Rs.59,000 cr; INS Vikramaditya",
+         "C) Mar 1, 2025; 18 jets; Rs.50,000 cr; INS Vishal",
+         "D) Sep 1, 2025; 30 jets; Rs.80,000 cr; INS Arihant",
+         "A",
+         "**ఏప్రిల్ 28, 2025** న భారత్-ఫ్రాన్స్ IGA (Inter-Governmental Agreement) ద్వారా **26 Rafale-Marine** జెట్ల కొనుగోలు — 22 single-seat (carrier-capable, INS Vikrant కోసం) + 4 twin-seat trainer; **~$7.5 బిలియన్లు (~రూ.63,000 కోట్లు)**; విమానానికి ~$288M. భారత-ఫ్రాన్స్ మధ్య అతిపెద్ద defence deal. India signed IGA with France on **Apr 28, 2025** for **26 Rafale-M jets** (22 single + 4 twin) at **~Rs.63,000 cr (~$7.5B)**, for deployment on **INS Vikrant**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: nsga_2025 ===
+        (31400,
+         "National Sports Governance Act 2025 — రాష్ట్రపతి ఆమోద తేదీ + ఈ చట్టం ద్వారా ఏర్పడే tribunal?\n(National Sports Governance Act 2025 — Presidential assent date and tribunal established?)",
+         "A) Jul 21, 2025; Sports Court of India",
+         "B) Aug 18, 2025; National Sports Tribunal (Chair: sitting/former SC Judge or HC CJ)",
+         "C) Sep 1, 2025; Sports Disputes Panel",
+         "D) Dec 31, 2025; Athletes' Grievance Cell",
+         "B",
+         "National Sports Governance Act 2025 — పార్లమెంట్ ఆగస్టు 2025లో ఆమోదం; రాష్ట్రపతి సంతకం **ఆగస్టు 18, 2025**. 2011 Sports Code ను భర్తీ; **National Sports Tribunal** ఏర్పాటు — చైర్‌పర్సన్: సుప్రీం కోర్టు judge లేదా High Court Chief Justice (సిట్టింగ్/పదవీ విరమణ). The NSGA 2025 received Presidential assent on **Aug 18, 2025**, replacing the 2011 Sports Code and establishing the **National Sports Tribunal** (Chair: sitting/former SC judge or HC CJ).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: unesco_ich_india ===
+        (31401,
+         "డిసెంబర్ 2025 నాటికి UNESCO Intangible Cultural Heritage list లో భారత్ ఎన్ని elements కలిగి ఉంది? 16వ చేరిక ఏది?\n(India's UNESCO ICH elements count as of Dec 2025 and 16th addition?)",
+         "A) 15; Garba (2023)",
+         "B) 16; Deepavali (inscribed Dec 2025 at New Delhi 20th session)",
+         "C) 14; Vedic Chanting",
+         "D) 17; Holi",
+         "B",
+         "**డిసెంబర్ 2025** నాటికి భారత్ UNESCO ICH list లో **16 elements** కలిగి ఉంది. **16వ చేరిక: దీపావళి** — న్యూ ఢిల్లీ Red Fort వద్ద జరిగిన **20వ UNESCO ICH Committee session** (Dec 8-13, 2025) లో inscribed. 15వది గర్బా (Dec 2023). India has **16 ICH elements** as of Dec 2025; the **16th is Deepavali**, inscribed at the **20th UNESCO ICH Committee session** hosted by India at Red Fort, New Delhi (Dec 8-13, 2025).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: unesco_ich_india ===
+        (31402,
+         "20వ UNESCO ICH Committee session ఎక్కడ + ఎప్పుడు జరిగింది (భారత్ host)?\n(20th UNESCO ICH Committee session — venue and dates (India host)?)",
+         "A) Bharat Mandapam, New Delhi; Sep 2025",
+         "B) Red Fort, New Delhi; Dec 8-13, 2025",
+         "C) Mumbai; Oct 2025",
+         "D) Kolkata; Nov 2025",
+         "B",
+         "**20వ UNESCO Intergovernmental Committee for the Safeguarding of the Intangible Cultural Heritage** session — **న్యూ ఢిల్లీ Red Fort** వద్ద **డిసెంబర్ 8-13, 2025** లో జరిగింది (భారత్ host); ఇదే sessionలో దీపావళి (భారత 16వ ICH element) inscribed. The **20th UNESCO ICH Committee session** was hosted by India at the **Red Fort, New Delhi (Dec 8-13, 2025)**, where Deepavali was inscribed as India's 16th ICH.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: sir_bihar ===
+        (31403,
+         "ECI నిర్వహించిన SIR (Special Intensive Revision) — ఏ రాష్ట్రంలో + qualifying date + ఎన్ని సం. తర్వాత?\n(ECI's Special Intensive Revision — state, qualifying date, how many years after the last SIR?)",
+         "A) Uttar Pradesh; 2025; 15 yrs",
+         "B) Bihar; qualifying date Jul 1, 2025 (first SIR since 2003 — after 22 yrs)",
+         "C) West Bengal; 2026; 10 yrs",
+         "D) Tamil Nadu; 2025; 12 yrs",
+         "B",
+         "ECI **జూన్ 2025**లో **బీహార్‌లో Special Intensive Revision (SIR)** ప్రకటించింది — **qualifying date జూలై 1, 2025**; **2003 తర్వాత 22 సం. తర్వాత తొలి SIR**; 2025 Bihar Assembly ఎన్నికల ముందు. ADR (Association for Democratic Reforms) Supreme Court లో సవాలు చేసింది (Surya Kant + Joymalya Bagchi bench). The ECI's **Bihar SIR** had qualifying date **Jul 1, 2025** — first intensive revision since **2003** (22-yr gap); challenged in SC by ADR.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: swachh_vayu_sarvekshan_2024 ===
+        (31404,
+         "Swachh Vayu Sarvekshan 2024 (clean air city awards) — Million+ population winner; mid-sized winner ఏది?\n(Swachh Vayu Sarvekshan 2024 — Million+ population winner and mid-sized winner?)",
+         "A) Pune (Million+); Patna (mid)",
+         "B) Indore (Million+); Suryapet & Firozabad (mid-sized winners)",
+         "C) Surat (Million+); Hyderabad (mid)",
+         "D) Bengaluru (Million+); Lucknow (mid)",
+         "B",
+         "Swachh Vayu Sarvekshan 2024 (September 2024 ప్రకటన; MoEFCC; National Clean Air Programme కింద) — **ఇండోర్ (Million+ category)**, **సూర్యాపేట (Telangana) & ఫిరోజాబాద్ (UP)** mid-sized winners. Indore won the **Million+ category** and **Suryapet (TG) + Firozabad (UP)** won mid-sized in **Swachh Vayu Sarvekshan 2024**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: civil_registration_system ===
+        (31405,
+         "CRS Vital Statistics 2023 (ORGI report) — birth registration % + death registration %?\n(CRS Vital Statistics 2023 (ORGI report) — birth and death registration coverage?)",
+         "A) Birth ~95%; Death ~95%",
+         "B) Birth ~90%; Death ~83%",
+         "C) Birth ~75%; Death ~70%",
+         "D) Birth ~99%; Death ~60%",
+         "B",
+         "Civil Registration System (CRS) — Vital Statistics 2023 report (ORGI = Office of the Registrar General of India) ప్రకారం **birth registration ~90%**, **death registration ~83%**. Universal registration goal still pending. Per the ORGI CRS Vital Statistics 2023, **birth registration ~90%** and **death registration ~83%**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: eci_parties_count ===
+        (31406,
+         "ECI list (2025-26) ప్రకారం భారత్‌లో National Parties ఎన్ని? వాటిలో 2 ఏవి?\n(Per ECI list (2025-26), how many National Parties in India — name 2?)",
+         "A) 5; BJP, INC",
+         "B) 6; BJP, INC, CPI-M, BSP, NPP, AAP",
+         "C) 8; BJP, INC, CPI, CPI-M, BSP, NPP, AAP, AITC",
+         "D) 7; BJP, INC, CPI, NCP, BSP, NPP, AAP",
+         "B",
+         "ECI 2025-26 list — **6 National Parties**: **BJP, INC, CPI(M), BSP, NPP (National People's Party), AAP**. **~57 State parties**, **~2,800 unrecognised** parties. National status conditions: 6% votes in 4+ states లేదా 2% LS seats from 3+ states. ECI recognises **6 National Parties** (BJP, INC, CPI-M, BSP, NPP, AAP) along with ~57 State parties and ~2,800 unrecognised.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: 130th_const_amendment ===
+        (31407,
+         "130th Constitutional Amendment Bill 2025 — ప్రవేశ తేదీ + ముఖ్య నిబంధన?\n(130th Constitutional Amendment Bill 2025 — introduction date and key provision?)",
+         "A) Jul 2025; women reservation",
+         "B) Aug 20, 2025 (LS, Amit Shah); auto-removal of PM/CM/Min after 30 consecutive days of detention on charges with 5+ yrs imprisonment",
+         "C) Sep 2025; minimum age for MPs",
+         "D) Oct 2025; PM term limits",
+         "B",
+         "130వ రాజ్యాంగ సవరణ బిల్లు 2025 — హోం మంత్రి అమిత్ షా **ఆగస్టు 20, 2025** న లోక్‌సభలో ప్రవేశపెట్టారు. ముఖ్య నిబంధన: 5+ సం. శిక్షార్హత గల తీవ్రమైన ఆరోపణలపై **30 వరుస రోజులు అరెస్టులో** ఉంటే **PM/CM/మంత్రులు స్వయంచాలకంగా** పదవి కోల్పోతారు (31వ రోజు నుండి); Joint Committee కు రిఫర్ చేశారు. The **130th Constitutional Amendment Bill 2025**, introduced in LS on **Aug 20, 2025** by HM Amit Shah, mandates **auto-removal of PM/CM/Ministers** after **30 consecutive days of detention** on charges punishable by 5+ years' imprisonment.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: international_yoga_day_2025 ===
+        (31408,
+         "11వ International Yoga Day 2025 — తేదీ + ప్రధాన venue + థీమ్?\n(11th International Yoga Day 2025 — date, main venue, theme?)",
+         "A) Jun 21, 2025; New Delhi; 'Yoga for Vasudhaiva Kutumbakam'",
+         "B) Jun 21, 2025; RK Beach, Visakhapatnam (AP); 'Yoga for One Earth, One Health'",
+         "C) Jun 21, 2025; Rishikesh; 'Yoga for Climate'",
+         "D) Jun 21, 2025; Mysuru; 'Yoga for Wellness'",
+         "B",
+         "11వ అంతర్జాతీయ యోగా దినోత్సవం — **జూన్ 21, 2025**; ప్రధాన venue **RK Beach, విశాఖపట్నం, ఆంధ్రప్రదేశ్**; PM మోదీ నేతృత్వం; ~5 లక్షల మంది పాల్గొన్నారు; థీమ్: **\"Yoga for One Earth, One Health\"**. The 11th IYD was held on **Jun 21, 2025** at **RK Beach, Visakhapatnam (AP)** with PM Modi leading; theme: **\"Yoga for One Earth, One Health\"**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: coastline_revised ===
+        (31409,
+         "Naval Hydrographic Office (2023-24 survey) ప్రకారం భారత తీరరేఖ సవరించిన పొడవు ఎంత? మునుపు ఎంత?\n(India's revised coastline per Naval Hydrographic Office (2023-24 survey) — old vs new?)",
+         "A) 7,516 km → 9,000 km",
+         "B) 7,516 km (1970s) → 11,098.81 km (2023-24)",
+         "C) 7,516 km → 8,000 km",
+         "D) 5,000 km → 7,516 km",
+         "B",
+         "Naval Hydrographic Office (NHO) + Survey of India (2023-24 సర్వే) — 1970ల **7,516 km** (1:45 lakh స్కేల్) → **11,098.81 km** (1:2.5 lakh స్కేల్; LIDAR, GIS, satellite altimetry). +47.6% పెరుగుదల — territorial విస్తరణ కాదు, methodology upgrade మాత్రమే. India's coastline was revised from **7,516 km → 11,098.81 km** by NHO + Survey of India in **2023-24** using high-resolution charts (1:2.5 lakh scale).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: waqf_amendment_act_2025 ===
+        (31410,
+         "Waqf (Amendment) Act 2025 — alias + Presidential assent తేదీ + 1995 Waqf Act + 1923 Mussalman Waqf Act ను ఏ విధంగా treat చేస్తుంది?\n(Waqf Amendment Act 2025 — alias, Presidential assent, treatment of 1923 + 1995 Acts?)",
+         "A) UMEED Act; Apr 5, 2025; amends 1995 Act, repeals 1923 Mussalman Waqf Act",
+         "B) WAKF Act; Mar 2025; amends both",
+         "C) BHARAT Waqf Act; May 2025; new standalone",
+         "D) UNNATI Act; Jun 2025; replaces 1995 only",
+         "A",
+         "Waqf (Amendment) Act 2025 — alias **UMEED Act** (Unified Management Empowerment Efficiency and Development); రాష్ట్రపతి ద్రౌపదీ ముర్ము **ఏప్రిల్ 5, 2025** న ఆమోదం; **1995 Waqf Act ను సవరిస్తుంది**, **1923 Mussalman Waqf Act ను రద్దు చేస్తుంది**. ముఖ్య మార్పులు: Central Waqf Council + State Boards లో non-Muslim సభ్యులు, 2 మహిళలు తప్పనిసరి; 'Waqf-by-user' రద్దు; centralised digital portal. The **UMEED Act 2025** (Waqf Amendment), assented on **Apr 5, 2025**, amends the **1995 Waqf Act** and repeals the **1923 Mussalman Waqf Act**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: vande_bharat_2026 ===
+        (31411,
+         "Vande Bharat Express — ఫిబ్రవరి 2026 నాటికి మొత్తం services + తొలి Sleeper version ప్రారంభం?\n(Vande Bharat — total operational services as of Feb 2026 and first Sleeper inauguration?)",
+         "A) 100 services; Sleeper Nov 2025",
+         "B) ~164 services / 82 routes (Feb 2026); 1st Sleeper Howrah-Guwahati, Jan 17, 2026",
+         "C) 200 services; Sleeper Apr 2026",
+         "D) 120 services; Sleeper Dec 2025",
+         "B",
+         "Vande Bharat Express — **ఫిబ్రవరి 18, 2026** నాటికి **~164 services** **82 routes** లో; 274+ జిల్లాలు; మొదటి **Vande Bharat Sleeper Express** **జనవరి 17, 2026** న **Howrah-Guwahati** మార్గంలో ప్రారంభం; 16 AC sleeper coaches. 2026 చివరి నాటికి మరో 12 Sleeper trains planned. As of **Feb 18, 2026**, ~164 Vande Bharat services run on 82 routes; the 1st **Sleeper version** (Howrah-Guwahati) was inaugurated on **Jan 17, 2026**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: ramsar_99_sites ===
+        (31412,
+         "Earth Day (April 22, 2026) నాటికి భారత్ Ramsar Sites సంఖ్య? 99వది ఏ రాష్ట్రంలో?\n(India's Ramsar sites as of Earth Day Apr 22, 2026; 99th site state?)",
+         "A) 89; Tamil Nadu",
+         "B) 99; Shekha Jheel Bird Sanctuary, Aligarh dist, Uttar Pradesh (12th UP site)",
+         "C) 95; Gujarat",
+         "D) 100; Kerala",
+         "B",
+         "**ఏప్రిల్ 22, 2026 (Earth Day)** నాటికి భారత్ — **99 Ramsar Sites** (~13.6 లక్షల హెక్టార్లు; ఆసియాలో అత్యధికం). **99వ సైట్**: **శేఖా ఝీల్ Bird Sanctuary**, అలీగఢ్ జిల్లా, ఉత్తరప్రదేశ్ (UP 12వ site). జనవరి 2026 లో పట్నా Bird Sanctuary (UP) + ఛారీ-ధండ్ (గుజరాత్) చేరికలు. తమిళనాడు 20 sites తో 1వ స్థానం. India has **99 Ramsar sites** as of **Apr 22, 2026** — the 99th being **Shekha Jheel Bird Sanctuary (UP)**, the 12th UP site; Tamil Nadu leads with 20.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: pm_eli_scheme ===
+        (31413,
+         "PM Vikasit Bharat Employment-Linked Incentive (ELI) Scheme — Budget 2024-25 లో ప్రకటన; operational సం. ఏది?\n(PM Vikasit Bharat Employment-Linked Incentive (ELI) Scheme — operational year?)",
+         "A) Announced Budget 2023-24; operational 2024-25",
+         "B) Announced Budget 2024-25; operational 2025-26",
+         "C) Announced Budget 2025-26; operational 2026-27",
+         "D) Announced Budget 2022-23; operational 2023-24",
+         "B",
+         "Employment-Linked Incentive (ELI) Scheme — Budget 2024-25 (జూలై 2024)లో FM నిర్మలా సీతారామన్ ప్రకటించారు; **2025-26** నుండి operational; మొదటిసారి ఉద్యోగం పొందిన వారికి EPFO ద్వారా 1 నెల వేతనం (గరిష్ఠ రూ.15,000) నేరుగా బదిలీ; manufacturing + 4 కోట్ల employment లక్ష్యం, రూ.2 లక్షల కోట్ల వ్యయం. The ELI scheme was **announced in Budget 2024-25** and became **operational in 2025-26**, offering EPFO-linked subsidies to first-time employees and manufacturing firms.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: adi_vaani_app ===
+        (31414,
+         "PM Adi-Vaani App — లాంచ్ తేదీ + లక్ష్యం + ఏ Mission కింద?\n(PM Adi-Vaani App — launch date, purpose, mission?)",
+         "A) Aug 2025; financial inclusion; PMJDY",
+         "B) Jan 2026; preserve PVTG (Particularly Vulnerable Tribal Groups) languages — PM-JANMAN scheme",
+         "C) Mar 2026; weather alerts; Mission Mausam",
+         "D) Apr 2026; agri prices; PM Kisan",
+         "B",
+         "**PM Adi-Vaani App** — జనవరి 2026లో లాంచ్; PM-JANMAN (PM Janjati Adivasi Nyaya Maha Abhiyan, Nov 2023) initiative కింద **PVTG (Particularly Vulnerable Tribal Groups) భాషల సంరక్షణ + AI-driven translation** కోసం. PVTGs భాషలను digitize, voice-to-text కల్పిస్తుంది. The **PM Adi-Vaani App** (Jan 2026) under **PM-JANMAN** preserves Particularly Vulnerable Tribal Group (PVTG) languages using AI translation.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: ecinet_mobile_voting ===
+        (31415,
+         "ECINET — ECI launched (2025) unified platform; దాని ముఖ్య లక్ష్యం ఏది?\n(ECINET — ECI's unified platform launched 2025; main purpose?)",
+         "A) Voter education only",
+         "B) Unified digital portal consolidating 40+ existing ECI apps (Voter Helpline, cVIGIL, Suvidha, etc.) — single-login ecosystem for ~100 cr voters",
+         "C) Postal-ballot tracking only",
+         "D) Political-party fund disclosure",
+         "B",
+         "**ECINET** — Election Commission of India 2025లో లాంచ్ చేసిన ఏకీకృత డిజిటల్ ప్లాట్‌ఫారం; **40+ ECI apps** (Voter Helpline, cVIGIL, Suvidha, Saksham, KYC, IT applications) ను ఒకే portal లో అనుసంధానం; **~100 కోట్ల voters** కోసం single-login. Remote voting prototype పరీక్ష + ECINET ద్వారా future enablement. **ECINET** is ECI's 2025 unified portal consolidating **40+ existing ECI apps** for ~100 crore voters under a single-login ecosystem.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: envistats_india ===
+        (31416,
+         "EnviStats-India 2024 ఎవరు విడుదల చేస్తారు? అది ఏ లెక్కల వ్యవస్థను అనుసరిస్తుంది?\n(EnviStats-India 2024 is released by whom and follows which accounting framework?)",
+         "A) MoEFCC; UNFCCC",
+         "B) MoSPI; UN System of Environmental Economic Accounting (SEEA)",
+         "C) NITI Aayog; SDG framework",
+         "D) RBI; National Accounts",
+         "B",
+         "**EnviStats-India** — **MoSPI** (Ministry of Statistics & Programme Implementation) యొక్క annual environmental publication; **UN System of Environmental Economic Accounting (SEEA)** framework ను అనుసరిస్తుంది; నేల, నీరు, వనాలు, biodiversity, ecosystem services ను account చేస్తుంది. EnviStats-India 2024 — 7th edition (Aug 2024). **EnviStats-India** is published by **MoSPI** following the **UN SEEA** framework; the 2024 edition was its 7th.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: hces_2023_24 ===
+        (31417,
+         "NSSO HCES 2023-24 — విడుదల తేదీ + key finding (rural-urban consumption gap)?\n(NSSO HCES 2023-24 — release date and rural-urban gap finding?)",
+         "A) Sep 2024; gap widened",
+         "B) Feb 2024 (Factsheet); rural-urban consumption gap narrowed — rural MPCE Rs.3,773 vs urban Rs.6,459 (~71% gap, down from ~84%)",
+         "C) Jan 2025; no change",
+         "D) Jul 2024; gap doubled",
+         "B",
+         "**Household Consumption Expenditure Survey (HCES) 2023-24** — NSSO/MoSPI **ఫిబ్రవరి 2024**లో Factsheet విడుదల; మునుపటి 2011-12 సర్వే తర్వాత మొదటిది. **MPCE: గ్రామీణ రూ.3,773; పట్టణ రూ.6,459**; rural-urban consumption gap ~71% (2011-12 లో ~84% నుండి తగ్గింది). Used in CPI basket update, poverty estimates. The **HCES 2023-24** (NSSO/MoSPI) released its Factsheet in **Feb 2024**; rural MPCE Rs.3,773 vs urban Rs.6,459 — gap narrowed to **~71%** (from ~84%).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: vikasit_bharat_shiksha_abhiyan ===
+        (31418,
+         "Vikasit Bharat Shiksha Abhiyan — ఇది ఏ scheme కు renaming/upgrade?\n(Vikasit Bharat Shiksha Abhiyan — renaming/upgrade of which earlier scheme?)",
+         "A) Sarva Shiksha Abhiyan (SSA)",
+         "B) Samagra Shiksha (centralised school scheme: SSA + RMSA + Teacher Edu merged)",
+         "C) Rashtriya Madhyamik Shiksha Abhiyan (RMSA)",
+         "D) Mid-Day Meal Scheme",
+         "B",
+         "**Vikasit Bharat Shiksha Abhiyan** — **Samagra Shiksha** (2018 లో SSA + RMSA + Teacher Education ను విలీనం చేసి ప్రారంభించిన centralised school education scheme) యొక్క renaming/upgrade; Budget 2026-27 లో పెరిగిన కేటాయింపు. Pre-school నుండి 12వ తరగతి వరకు cover చేస్తుంది. **Vikasit Bharat Shiksha Abhiyan** is the renamed/upgraded **Samagra Shiksha** (which merged SSA + RMSA + Teacher Edu in 2018).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: pm_setu ===
+        (31419,
+         "PM SETU (Aspirational Bharat upgrade) — ఇది ఏ రంగానికి సంబంధించినది?\n(PM SETU — Aspirational Bharat upgrade — relates to which sector?)",
+         "A) Defence procurement",
+         "B) Skill development & training bridge — connecting youth to industry-ready employment",
+         "C) Border infrastructure",
+         "D) Rural water supply",
+         "B",
+         "**PM SETU** (Skill Enhancement & Training for Upskilling) — Aspirational Bharat initiative కింద **యువతను industry-ready employment** కోసం upskill చేయడానికి bridge scheme; Skill India + NSDC + ITI/Polytechnic ల అనుసంధానం; apprenticeship + placement support. PM SETU is a **skill development bridge** linking youth to industry-ready jobs under the Aspirational Bharat upgrade.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: ich_examples ===
+        (31420,
+         "UNESCO ICH list లో భారత్ నుండి ఈ క్రింది వాటిలో **ఇంకా inscribe చేయని** element ఏది?\n(Which of the following is NOT yet inscribed in UNESCO ICH list from India?)",
+         "A) Kumbh Mela (2017)",
+         "B) Yoga (2016)",
+         "C) Durga Puja in Kolkata (2021)",
+         "D) Bharatanatyam (NOT inscribed — classical dances generally not in ICH list)",
+         "D",
+         "భారత్ నుండి UNESCO ICH list లో **Bharatanatyam ఇంకా inscribe చేయలేదు** (శాస్త్రీయ నృత్యాలు సాధారణంగా list లో లేవు). Inscribed: Kutiyattam (2008), Vedic Chanting (2008), Ramlila (2008), Ramman (2009), Mudiyettu (2010), Kalbelia (2010), Chhau (2010), Buddhist Chanting Ladakh (2012), Sankirtana Manipur (2013), Thatheras of Jandiala Guru (2014), Yoga (2016), Kumbh Mela (2017), Durga Puja Kolkata (2021), Garba Gujarat (2023), Deepavali (2025). **Bharatanatyam is NOT yet inscribed** in the UNESCO ICH list (classical dances generally aren't); the 16 inscribed include Yoga, Kumbh Mela, Durga Puja, Garba, and Deepavali (2025).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: rafale_m_naval_deal ===
+        (31421,
+         "Rafale-M ఒప్పందంలో single-seat vs twin-seat variants distribution + ఒక విమానం approx cost?\n(Rafale-M deal — single vs twin-seat split and per-jet cost?)",
+         "A) 20 single + 6 twin; $200M each",
+         "B) 22 single (carrier-capable) + 4 twin-seat (shore-based DH); ~$288M each",
+         "C) 26 all twin-seat; $250M each",
+         "D) 18 single + 8 twin; $400M each",
+         "B",
+         "**26 Rafale-M ఒప్పందం** — 22 **single-seat carrier-capable** (INS Vikrant) + 4 **twin-seat (Rafale DH)** trainer (shore-based; twin-seater carrier-capable variant develop చేయలేదు); ఒక్కో విమానం **~$288 మిలియన్లు** (~రూ.2,400 కోట్లు); weapons, simulators, spares, 5 yrs logistics support బ్యాండిల్‌లో. The deal includes **22 single-seat (carrier-capable) + 4 twin-seat (Rafale DH, shore-based)** at **~$288M per aircraft**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: labour_codes_2025 ===
+        (31422,
+         "Code on Wages 2019 ద్వారా ఏకీకృతం అయిన 4 wage-related laws ఏవి?\n(Code on Wages 2019 — which 4 earlier wage laws were consolidated?)",
+         "A) Payment of Wages 1936 + Minimum Wages 1948 + Payment of Bonus 1965 + Equal Remuneration 1976",
+         "B) Trade Unions Act + Industrial Disputes Act + ID Act + ESI Act",
+         "C) Factories Act + Mines Act + Shops & Establishments Act + Dock Workers Act",
+         "D) Maternity Benefit + EPF Act + Gratuity Act + ESI Act",
+         "A",
+         "**Code on Wages 2019** — 4 wage-related చట్టాలను ఏకీకృతం: (i) **Payment of Wages Act 1936**, (ii) **Minimum Wages Act 1948**, (iii) **Payment of Bonus Act 1965**, (iv) **Equal Remuneration Act 1976**. National Floor Wage ప్రవేశపెట్టింది. The Code on Wages 2019 consolidated 4 wage laws: **Payment of Wages 1936, Minimum Wages 1948, Payment of Bonus 1965, Equal Remuneration 1976**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: gst_2026_reforms ===
+        (31423,
+         "GST 2.0 సంస్కరణల్లో 40% slab దేనికి applicable?\n(GST 2.0 — what does the 40% slab apply to?)",
+         "A) All FMCG items",
+         "B) Sin & luxury goods (pan masala, tobacco, aerated drinks, yachts, private aircraft, high-end cars)",
+         "C) Petroleum products",
+         "D) Gold & jewellery",
+         "B",
+         "GST 2.0 — **40% special rate** **sin & luxury goods**కు applicable: pan masala, tobacco, aerated drinks, yachts, private aircraft, premium/high-end cars. Revenue balance + fairness నిర్ధారించడానికి. Cess రద్దు చేసి 40% combined rate. The GST 2.0 **40% slab** applies to **sin and luxury goods**: pan masala, tobacco, aerated drinks, yachts, private aircraft, and high-end cars.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: pm_dhan_dhanya_krishi ===
+        (31424,
+         "PM ధన్-ధాన్య కృషి యోజన — ఎన్ని కేంద్ర పథకాలను converge చేస్తుంది? ఎన్ని శాఖలు ఉంటాయి?\n(PM Dhan-Dhaanya Krishi Yojana — how many central schemes converged across how many departments?)",
+         "A) 24 schemes / 8 departments",
+         "B) 36 central schemes / 11 departments",
+         "C) 50 schemes / 15 departments",
+         "D) 20 schemes / 6 departments",
+         "B",
+         "PM ధన్-ధాన్య కృషి యోజన — **11 శాఖల్లోని 36 కేంద్ర పథకాలను convergence**; దిగుబడి + cropping intensity + credit disbursement (3 indicators) ఆధారంగా **100 జిల్లాలు** ఎంపిక; ప్రతి రాష్ట్రం నుండి కనీసం 1 జిల్లా; ICAR-led monitoring. The scheme converges **36 central schemes across 11 departments** for 100 low-productivity districts.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: mig21_decommissioning ===
+        (31425,
+         "MIG-21 — IAF లోకి induction సం. + 1971 యుద్ధం + 1999 కార్గిల్ + 2019 Balakot — replacement aircraft పూర్తి name?\n(MIG-21 — IAF induction year, wars participated, and full name of replacement?)",
+         "A) 1965; only Kargil; HAL Marut",
+         "B) 1963; participated in 1965 + 1971 + Kargil 1999 + Balakot 2019; replaced by HAL LCA Tejas Mk-1A (Light Combat Aircraft)",
+         "C) 1970; only 1971; Su-30 MKI",
+         "D) 1955; all wars; Rafale only",
+         "B",
+         "MIG-21 — IAF induction **1963** (Soviet-supplied; భారత తొలి supersonic fighter); 1965 + 1971 యుద్ధాలు, Kargil 1999, Balakot 2019 airstrike లో పాల్గొంది; replacement **HAL Tejas Mk-1A (Light Combat Aircraft)** — indigenous 4.5-gen fighter. 28 Sqn (\"First Supersonics\") మొదట Chandigarh లో raised. MIG-21 was inducted in **1963**, fought in 1965/1971/Kargil/Balakot, and is being replaced by **HAL Tejas Mk-1A LCA**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: gst_2026_reforms ===
+        (31426,
+         "GST 2.0 ప్రకటించిన GST Council సమావేశం + GST Council ఛైర్‌పర్సన్ ఎవరు?\n(GST Council meeting that announced GST 2.0 — date and Chairperson?)",
+         "A) 55th GST Council, Sep 3, 2025; Union FM Nirmala Sitharaman (Council Chair ex officio)",
+         "B) 50th GST Council, Jan 2025; PM Modi",
+         "C) 56th GST Council, Oct 2025; RBI Governor",
+         "D) 52nd GST Council, Aug 2025; CEA",
+         "A",
+         "GST 2.0 — **సెప్టెంబర్ 3, 2025** న జరిగిన **55వ GST Council** సమావేశంలో ప్రకటన; GST Council Chairperson **Union Finance Minister Nirmala Sitharaman** (Article 279A ప్రకారం ex-officio); రాష్ట్రాల FM లు సభ్యులు. **సెప్టెంబర్ 22, 2025** నుండి అమల్లోకి. GST 2.0 was announced at the **55th GST Council meeting on Sep 3, 2025**, chaired by Union FM **Nirmala Sitharaman** (ex officio per Art. 279A).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: ramsar_99_sites ===
+        (31427,
+         "Earth Day 2026 — ఏది observe చేస్తారు + ఏ సంవత్సరం నుండి + 2026 థీమ్?\n(Earth Day — observed since which year and 2026 theme?)",
+         "A) Apr 22; since 1970; \"Planet vs Plastics\" (continued from 2024-25 campaign)",
+         "B) Jun 5; since 1972; \"Climate Action\"",
+         "C) Apr 22; since 1990; \"Restore our Earth\"",
+         "D) Mar 21; since 1980; \"One Earth\"",
+         "A",
+         "**Earth Day** — ఏప్రిల్ **22** న observe; **1970 నుండి** (US Sen. Gaylord Nelson ప్రారంభం); 2024-25 థీమ్ **\"Planet vs Plastics\"** (2026 వరకు పొడిగింపు); 2026 — earthday.org ద్వారా global mobilisation. ఈ తేదీనే భారత్ 99వ Ramsar site (Shekha Jheel) ప్రకటించింది. **Earth Day** is observed annually on **Apr 22** since **1970**; the **2024-26 campaign theme is \"Planet vs Plastics\"**.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: pm_eli_scheme ===
+        (31428,
+         "Employment-Linked Incentive (ELI) Scheme — మొత్తం budget outlay + employment లక్ష్యం?\n(ELI Scheme — total outlay and employment target?)",
+         "A) Rs.50,000 cr; 1 crore jobs",
+         "B) Rs.~2 lakh cr (PM Modi's package); ~4 crore jobs (incl. ~1 crore manufacturing) by 2027-28",
+         "C) Rs.10,000 cr; 50 lakh jobs",
+         "D) Rs.5 lakh cr; 10 crore jobs",
+         "B",
+         "Employment-Linked Incentive (ELI) Scheme — **PM's Package for Employment** కింద **~రూ.2 లక్షల కోట్లు** మొత్తం outlay; 5 years (2025-26 నుండి); ~**4 కోట్ల ఉద్యోగాలు** (manufacturing లో ~1 కోటి సహా); మొదటిసారి EPFO-registered ఉద్యోగులకు 1 నెల వేతనం (గరిష్ఠ రూ.15,000) DBT; employers కు manufacturing job creation incentive. The ELI scheme has an outlay of **~Rs.2 lakh crore** targeting **~4 crore jobs** (incl. ~1 cr in manufacturing) over 2025-26 to 2027-28.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: nsga_2025 ===
+        (31429,
+         "National Sports Governance Act 2025 — ఈ చట్టం లక్ష్యాలు (5 ముఖ్యాంశాలు)?\n(National Sports Governance Act 2025 — five main objectives?)",
+         "A) Only NOC funding",
+         "B) (i) Recognise sports federations, (ii) Establish governing bodies, (iii) Dispute-resolution Tribunal, (iv) Athlete welfare, (v) Align with international charters (IOC/FIFA/WADA)",
+         "C) Only anti-doping",
+         "D) Privatisation of sports",
+         "B",
+         "NSGA 2025 ముఖ్య లక్ష్యాలు: (i) **క్రీడా federations/sport bodies** గుర్తింపు, (ii) **governing bodies** ఏర్పాటు, (iii) **National Sports Tribunal** (dispute resolution), (iv) క్రీడాకారుల **welfare measures**, (v) **international sports charters** (IOC, FIFA, WADA) తో alignment. 2011 Sports Code ను replace. The 5 objectives of **NSGA 2025**: recognise sports bodies, establish governance, tribunal, athlete welfare, and international alignment.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: international_yoga_day_2026 ===
+        (31430,
+         "12వ International Yoga Day 2026 ఏ తేదీన? IDY observance UNGA ఎప్పుడు ప్రకటించింది?\n(12th International Yoga Day 2026 — date and when UNGA declared IDY?)",
+         "A) Jun 21, 2026; UNGA resolution Dec 11, 2014 (PM Modi initiative at UNGA Sep 27, 2014)",
+         "B) Jun 5, 2026; UNGA 2015",
+         "C) Jun 21, 2026; UNGA 2010",
+         "D) Aug 15, 2026; UNGA 2016",
+         "A",
+         "**12వ International Yoga Day** — **జూన్ 21, 2026** (Summer Solstice — ఉత్తరార్ధగోళంలో అతిపొడవైన పగలు). UNGA **Dec 11, 2014** resolution 69/131 ద్వారా IDY ప్రకటన; PM Modi **Sep 27, 2014** UNGA ప్రసంగంలో proposal; 177 దేశాలు co-sponsored. 1వ IDY: Jun 21, 2015. The **12th International Yoga Day** falls on **Jun 21, 2026**; UNGA declared IDY via **Resolution 69/131 on Dec 11, 2014**, after PM Modi's proposal at UNGA on Sep 27, 2014.",
+         "AP_HC", "National_Current_Affairs_2026"),
     ]
 
     if db_type == 'pg':
@@ -4249,7 +4719,7 @@ def seed():
     cur.executemany(insert_sql, questions)
     conn.commit()
     conn.close()
-    print(f"[seed_national_ca_2026] Seeded {len(questions)} National CA 2026 MCQs (IDs 31001-31388).")
+    print(f"[seed_national_ca_2026] Seeded {len(questions)} National CA 2026 MCQs (IDs 31001-31430).")
 
 if __name__ == '__main__':
     seed()

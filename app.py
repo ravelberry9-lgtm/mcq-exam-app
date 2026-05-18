@@ -527,25 +527,25 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed National Current Affairs 2026 MCQs (388 total: 300 existing + 88 PDF events) ──
-    # IDs 31001-31388. Sentinel check uses ID 31388 (last 2026 event). If missing, full re-seed.
+    # ── Auto-seed National CA 2026 MCQs (430: 300 base + 88 PDF + 42 gap-fill) ──
+    # IDs 31001-31430. Sentinel = ID 31430 (last gap-fill MCQ). Re-seed if missing.
     try:
         ph = '%s' if USE_POSTGRES else '?'
         cur_natl = db_exec(conn,
             f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
-            (31001, 31400))
+            (31001, 31450))
         natl_count = _fv(cur_natl.fetchone())
         _natl_sentinel = db_exec(conn,
-            f"SELECT explanation FROM questions WHERE id={ph}", (31388,))
+            f"SELECT explanation FROM questions WHERE id={ph}", (31430,))
         _natl_row = _natl_sentinel.fetchone()
-        # Trigger re-seed if count is below 388 OR the last 2026 sentinel row is missing
-        if natl_count < 388 or not _natl_row:
-            print(f"[startup] National CA 2026 MCQs: {natl_count}/388 — force-refreshing 2026 PDF data...")
+        # Trigger re-seed if count is below 430 OR the gap-fill sentinel row is missing
+        if natl_count < 430 or not _natl_row:
+            print(f"[startup] National CA 2026 MCQs: {natl_count}/430 — force-refreshing 2026 data...")
             import importlib
             natl_mod = importlib.import_module('seed_national_ca_2026_mcq')
             importlib.reload(natl_mod)
             natl_mod.seed()
-            print("[startup] National CA 2026 seed complete (300 base + 88 PDF events).")
+            print("[startup] National CA 2026 seed complete (300 base + 88 PDF + 42 gap-fill).")
         else:
             print(f"[startup] National CA 2026: {natl_count} questions already loaded.")
     except Exception as _natl_e:
@@ -6924,6 +6924,44 @@ CONCEPT_MAP = [
     (31386, 31386, 'natl_2026_foreign_relations'),    # New START Treaty (2010 US-Russia) expired Feb 5, 2026; talks Abu Dhabi
     (31387, 31387, 'natl_2026_misc'),                 # IICDEM Delhi Jan 21-23, 2026 (70 countries; largest election mgmt conf)
     (31388, 31388, 'natl_2026_naval_defense'),        # India IONS chairmanship 2025-27 (16 yrs later; launched 2008)
+    # ── Phase 2 audit (2026-05-18): 18 missing topics + partials, IDs 31389-31430 ──
+    (31389, 31390, 'natl_2026_gst_2026_reforms'),    # GST 2.0 — slabs + effective date (NEW TAG)
+    (31391, 31392, 'natl_2026_income_tax_2025'),     # IT Act 2025 — passage + structural changes (NEW TAG)
+    (31393, 31394, 'natl_2026_mission_mausam'),      # Mission Mausam — launch + 3 institutions (NEW TAG)
+    (31395, 31396, 'natl_2026_labour_codes'),        # 4 Labour Codes — notification + SS Code (NEW TAG)
+    (31397, 31397, 'natl_2026_agri_environment'),    # PM Dhan-Dhaanya Krishi Yojana (existing tag)
+    (31398, 31398, 'natl_2026_defence'),             # MIG-21 decommissioning Sep 26, 2025
+    (31399, 31399, 'natl_2026_naval_defense'),       # Rafale-M deal Apr 28, 2025 ($7.5B, 26 jets)
+    (31400, 31400, 'natl_2026_sports'),              # National Sports Governance Act 2025 (Aug 18, 2025)
+    (31401, 31402, 'natl_2026_ich'),                 # UNESCO ICH — India 16; 20th session Red Fort (NEW TAG)
+    (31403, 31403, 'natl_2026_legal_security'),      # SIR Bihar 2025 (ECI + SC challenge)
+    (31404, 31404, 'natl_2026_agri_environment'),    # Swachh Vayu Sarvekshan 2024 (Indore, Suryapet, Firozabad)
+    (31405, 31405, 'natl_2026_nfhs_tfr'),            # CRS Vital Stats 2023 — birth 90% death 83% (ORGI)
+    (31406, 31406, 'natl_2026_const_amendment'),     # ECI National Parties list (6 + ~57 + ~2800)
+    (31407, 31407, 'natl_2026_const_amendment'),     # 130th Const Amendment Bill 2025 — Aug 20 introduction
+    (31408, 31408, 'natl_2026_misc'),                # 11th IYD 2025 Visakhapatnam (Jun 21, RK Beach)
+    (31409, 31409, 'natl_2026_misc'),                # Coastline revised 11,098.81 km (NHO 2023-24)
+    (31410, 31410, 'natl_2026_legal_security'),      # Waqf (UMEED) Act 2025 — Apr 5 assent
+    (31411, 31411, 'natl_2026_infrastructure'),      # Vande Bharat — 164 services + Sleeper Jan 17, 2026
+    (31412, 31412, 'natl_2026_agri_environment'),    # India 99 Ramsar sites (Apr 22, 2026 — Shekha Jheel UP)
+    (31413, 31413, 'natl_2026_social_welfare_schemes'),  # ELI Scheme — announced Budget 2024-25, operational 2025-26
+    (31414, 31414, 'natl_2026_social_welfare_schemes'),  # PM Adi-Vaani App Jan 2026 (PM-JANMAN PVTG languages)
+    (31415, 31415, 'natl_2026_const_amendment'),     # ECINET — ECI's unified portal 2025
+    (31416, 31416, 'natl_2026_economic_indicators'), # EnviStats-India 2024 (MoSPI + UN SEEA)
+    (31417, 31417, 'natl_2026_economic_indicators'), # NSSO HCES 2023-24 (Feb 2024; rural/urban MPCE)
+    (31418, 31418, 'natl_2026_education_health'),    # Vikasit Bharat Shiksha Abhiyan = Samagra Shiksha upgrade
+    (31419, 31419, 'natl_2026_education_health'),    # PM SETU skill development bridge
+    (31420, 31420, 'natl_2026_ich'),                 # ICH list — Bharatanatyam NOT inscribed (which is NOT)
+    (31421, 31421, 'natl_2026_naval_defense'),       # Rafale-M variants split 22+4; cost ~$288M
+    (31422, 31422, 'natl_2026_labour_codes'),        # Code on Wages 2019 — 4 laws consolidated
+    (31423, 31423, 'natl_2026_gst_2026_reforms'),    # GST 2.0 — 40% slab (sin/luxury goods)
+    (31424, 31424, 'natl_2026_agri_environment'),    # PM-DDKY — 36 schemes / 11 departments converged
+    (31425, 31425, 'natl_2026_defence'),             # MIG-21 — induction 1963; wars; Tejas Mk-1A replacement
+    (31426, 31426, 'natl_2026_gst_2026_reforms'),    # GST 2.0 — 55th GST Council Sep 3, 2025 (FM Sitharaman Chair)
+    (31427, 31427, 'natl_2026_agri_environment'),    # Earth Day Apr 22 (since 1970); "Planet vs Plastics"
+    (31428, 31428, 'natl_2026_social_welfare_schemes'),  # ELI Scheme — Rs.2 L cr outlay; 4 cr jobs target
+    (31429, 31429, 'natl_2026_sports'),              # NSGA 2025 — 5 objectives
+    (31430, 31430, 'natl_2026_misc'),                # 12th IYD Jun 21, 2026; UNGA Dec 11, 2014 declaration
     # AP CA 2026 — individual question concept notes (first 10 questions)
     (32001, 32002, 'q_32001'),   # AP Budget 2026-27
     (32003, 32003, 'q_32003'),   # Amaravati Capital Act

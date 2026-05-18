@@ -1083,6 +1083,191 @@ NOTES.append(('natl_2026_paris_olympics',
 <p class="bi-te">పారిస్ 2024 టోక్యో 2020 (7 పతకాలు, 1 బంగారం)తో పోలిస్తే కొంత తగ్గుదల. ఒకే బంగారం కూడా రాలేదు; 6 సార్లు 4వ స్థానం. Khelo India, TOPS పథకాలపై చర్చ. భారత్ 2036 ఒలింపిక్స్‌ను అహ్మదాబాద్‌లో నిర్వహించాలని బిడ్; తదుపరి ఒలింపిక్స్ లాస్ ఏంజెల్స్ 2028.</p>
 """))
 
+# ═══════════════════════════════════════════════════════════════════
+#  27. GST 2.0 REFORMS — September 2025
+#  Linked from MCQs 31389-31390, 31423, 31426
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_gst_2026_reforms',
+              'GST 2.0 Reforms — September 2025',
+              'GST 2.0 సంస్కరణలు — సెప్టెంబర్ 2025', """
+<div class="concept-cover">
+  <h1>GST 2.0 Reforms (September 2025) &nbsp;<span class="bi-te">/ GST 2.0 సంస్కరణలు</span></h1>
+  <div class="sub">2-slab system (5% + 18%) + 40% sin/luxury • Effective Sep 22, 2025 • 55th GST Council</div>
+</div>
+
+<div class="section-hdr">Key Timeline / కీలక కాలవ్యవస్థ</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Announcement</td><td>PM Modi's <b>Independence Day speech, Aug 15, 2025</b> — promised "Next-Gen GST reforms"</td><td class="bi-te">ఆగస్టు 15, 2025 PM మోదీ ప్రసంగం</td></tr>
+<tr><td>GST Council Meeting</td><td><b>55th GST Council, Sep 3, 2025</b> — formal recommendation</td><td class="bi-te">55వ GST Council, సెప్టెంబర్ 3, 2025</td></tr>
+<tr><td>Effective date</td><td><b>September 22, 2025</b></td><td class="bi-te">సెప్టెంబర్ 22, 2025</td></tr>
+<tr><td>Council Chair</td><td>Union FM Nirmala Sitharaman (ex officio per Art. 279A)</td><td class="bi-te">FM నిర్మలా సీతారామన్ (Art 279A)</td></tr>
+</table>
+
+<div class="section-hdr">Slab Restructure / స్లాబ్ నిర్మాణ మార్పులు</div>
+<table class="key-table">
+<tr><th>Old (pre-Sep 2025)</th><th>New (GST 2.0)</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>5% / 12% / 18% / 28%</td><td><b>5% / 18% (2 main slabs)</b> + 40% sin/luxury</td><td class="bi-te">12% & 28% రద్దు</td></tr>
+<tr><td>Cess on luxury</td><td>Subsumed into 40% combined rate</td><td class="bi-te">Cess రద్దు</td></tr>
+</table>
+
+<div class="section-hdr">40% Slab Coverage / 40% స్లాబ్ పరిధి</div>
+<p>The <b>40% rate</b> applies to <b>sin and luxury goods</b>: pan masala, tobacco products, aerated drinks, yachts, private aircraft, and high-end / premium cars — ensuring revenue balance and fairness.</p>
+<p class="bi-te">40% రేటు — sin/luxury goods (pan masala, పొగాకు, aerated drinks, yachts, private aircraft, premium కార్లు)కు.</p>
+
+<div class="section-hdr">Compliance Simplification / అనుసరణ సరళీకరణ</div>
+<p>Registration and return filing simplified, refunds made faster, compliance costs reduced — easing burden on MSMEs and startups. GST 2.0 is the biggest indirect-tax rationalisation since GST's 2017 launch.</p>
+<p class="bi-te">GST 2.0 — 2017 GST ప్రారంభం తర్వాత అతిపెద్ద పరోక్ష పన్ను సంస్కరణ; MSME + startup మీద compliance భారం తగ్గింపు.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  28. INCOME-TAX ACT 2025 — Replaces 1961 Act
+#  Linked from MCQs 31391-31392
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_income_tax_2025',
+              'Income-tax Act 2025 — Replaces 1961 Act',
+              'ఆదాయ పన్ను చట్టం 2025', """
+<div class="concept-cover">
+  <h1>Income-tax Act 2025 &nbsp;<span class="bi-te">/ ఆదాయ పన్ను చట్టం 2025</span></h1>
+  <div class="sub">Passed Aug 12, 2025 • Assent Aug 21, 2025 • Effective Apr 1, 2026 • Replaces 1961 Act</div>
+</div>
+
+<div class="section-hdr">Legislative Timeline / శాసన కాలవ్యవస్థ</div>
+<table class="key-table">
+<tr><th>Event</th><th>Date</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Parliament passage</td><td><b>August 12, 2025</b></td><td class="bi-te">పార్లమెంట్ ఆమోదం</td></tr>
+<tr><td>Presidential assent</td><td><b>August 21, 2025</b> — President Droupadi Murmu</td><td class="bi-te">రాష్ట్రపతి ద్రౌపదీ ముర్ము ఆమోదం</td></tr>
+<tr><td>Effective from</td><td><b>April 1, 2026</b></td><td class="bi-te">ఏప్రిల్ 1, 2026 నుండి అమల్లోకి</td></tr>
+<tr><td>Replaces</td><td>Income Tax Act 1961 (64 years old)</td><td class="bi-te">1961 చట్టాన్ని భర్తీ (64 సం.)</td></tr>
+</table>
+
+<div class="section-hdr">Structural Changes / నిర్మాణాత్మక మార్పులు</div>
+<table class="key-table">
+<tr><th>Metric</th><th>1961 Act</th><th>2025 Act</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Sections</td><td>819</td><td><b>536</b></td><td class="bi-te">~283 sections తగ్గింపు</td></tr>
+<tr><td>Chapters</td><td>23</td><td><b>23</b></td><td class="bi-te">అదే 23 chapters</td></tr>
+<tr><td>Schedules</td><td>14</td><td>16</td><td class="bi-te">షెడ్యూల్‌లు</td></tr>
+<tr><td>Year concept</td><td>PY + AY (dual)</td><td><b>Single "Tax Year"</b> (Apr 1 – Mar 31)</td><td class="bi-te">ఏకీకృత "Tax Year"</td></tr>
+</table>
+
+<div class="section-hdr">Key Simplifications / ముఖ్య సరళీకరణలు</div>
+<p>Plain-language drafting; tabular formats; explanations and provisos removed; cross-references simplified. The dual <b>"Previous Year + Assessment Year"</b> concept (a perennial source of confusion) is replaced by a single <b>"Tax Year"</b> running Apr 1 – Mar 31. Tax rates / slabs are not changed by this Act — those continue to be set in annual Finance Bills.</p>
+<p class="bi-te">Plain-language drafting; "Previous Year + Assessment Year" ద్వంద్వాన్ని తొలగించి ఏకీకృత "Tax Year" (Apr 1 - Mar 31); పన్ను రేట్లు annual Finance Bill లో set అవుతాయి.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  29. MISSION MAUSAM — Weather/Climate Initiative
+#  Linked from MCQs 31393-31394
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_mission_mausam',
+              'Mission Mausam — Weather Initiative',
+              'మిషన్ మౌసమ్ — వాతావరణ చొరవ', """
+<div class="concept-cover">
+  <h1>Mission Mausam &nbsp;<span class="bi-te">/ మిషన్ మౌసమ్</span></h1>
+  <div class="sub">Launched Sep 14, 2024 by PM Modi • MoES • Rs.2,000 cr / 2 years • IMD + IITM + NCMRWF</div>
+</div>
+
+<div class="section-hdr">Key Facts / ముఖ్య విషయాలు</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Cabinet approval</td><td>September 11, 2024</td><td class="bi-te">క్యాబినెట్ సెప్టెంబర్ 11, 2024</td></tr>
+<tr><td>Launch by</td><td><b>PM Modi on Sep 14, 2024</b> at IMD's 150th anniversary</td><td class="bi-te">PM మోదీ సెప్టెంబర్ 14, 2024 — IMD 150 సం. వేడుకలు</td></tr>
+<tr><td>Outlay</td><td><b>Rs.2,000 crore</b> over <b>2 years</b></td><td class="bi-te">రూ.2,000 కోట్లు / 2 సం.</td></tr>
+<tr><td>Lead ministry</td><td><b>Ministry of Earth Sciences (MoES)</b></td><td class="bi-te">భూ శాస్త్ర మంత్రిత్వ శాఖ</td></tr>
+</table>
+
+<div class="section-hdr">Three Implementing Institutions / 3 అమలు సంస్థలు</div>
+<table class="key-table">
+<tr><th>Institution</th><th>Role</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>IMD</b> (India Meteorological Dept, New Delhi)</td><td>Operational weather forecasting; nowcasting; warnings</td><td class="bi-te">వాతావరణ పర్యవేక్షణ + హెచ్చరికలు</td></tr>
+<tr><td><b>IITM</b> (Indian Institute of Tropical Meteorology, Pune)</td><td>Research, Earth System Models, monsoon studies</td><td class="bi-te">పరిశోధన, Earth System Models</td></tr>
+<tr><td><b>NCMRWF</b> (National Centre for Medium-Range Weather Forecasting, Noida)</td><td>3-10 day forecasts; ensemble modelling; HPC</td><td class="bi-te">3-10 day forecasts; HPC</td></tr>
+</table>
+
+<div class="section-hdr">Technology Components / సాంకేతిక భాగాలు</div>
+<p>Next-generation <b>radars and satellite systems</b> with advanced sensors; <b>high-performance supercomputers</b>; <b>AI/ML modelling</b> for precision forecasting; improved Earth System Models; <b>GIS-based automated Decision Support System</b> for real-time data dissemination.</p>
+<p class="bi-te">Next-gen radars + satellites + supercomputers + AI/ML modelling + Earth System Models + GIS-based Decision Support System.</p>
+
+<div class="section-hdr">Beneficiary Sectors / ప్రయోజన పొందే రంగాలు</div>
+<p>Agriculture, disaster management, defence, environment, aviation, water resources, power, tourism, shipping, transport, energy, health.</p>
+<p class="bi-te">వ్యవసాయం, విపత్తు నిర్వహణ, రక్షణ, పర్యావరణం, విమానయానం, నీటి వనరులు, విద్యుత్, పర్యాటకం, షిప్పింగ్, రవాణా, శక్తి, ఆరోగ్యం.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  30. FOUR LABOUR CODES — Notified Nov 21, 2025
+#  Linked from MCQs 31395-31396, 31422
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_labour_codes',
+              'Four Labour Codes — Notified Nov 21, 2025',
+              '4 కార్మిక కోడ్‌లు — నవంబర్ 21, 2025 notification', """
+<div class="concept-cover">
+  <h1>Four Labour Codes &nbsp;<span class="bi-te">/ 4 కార్మిక కోడ్‌లు</span></h1>
+  <div class="sub">Notified Nov 21, 2025 • Consolidates 29 labour laws • Reform since 2019-20</div>
+</div>
+
+<div class="section-hdr">Notification & Scope / Notification మరియు పరిధి</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>All-four notified</td><td><b>November 21, 2025</b> — Government of India</td><td class="bi-te">నవంబర్ 21, 2025 — అన్నీ ఏకకాలంలో notify</td></tr>
+<tr><td>Laws consolidated</td><td><b>29 central labour laws</b> → 4 codes</td><td class="bi-te">29 కేంద్ర చట్టాలు → 4 codes</td></tr>
+<tr><td>Original passage</td><td>Code on Wages (2019); other 3 codes (2020)</td><td class="bi-te">Wages 2019; మిగతా 3 — 2020</td></tr>
+</table>
+
+<div class="section-hdr">The Four Codes / 4 కోడ్‌లు</div>
+<table class="key-table">
+<tr><th>#</th><th>Code</th><th>Consolidates</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>1</td><td><b>Code on Wages 2019</b></td><td>Payment of Wages 1936 + Minimum Wages 1948 + Payment of Bonus 1965 + Equal Remuneration 1976</td><td class="bi-te">4 wage చట్టాలు</td></tr>
+<tr><td>2</td><td><b>Industrial Relations (IR) Code 2020</b></td><td>Trade Unions 1926 + Industrial Employment (Standing Orders) 1946 + Industrial Disputes 1947</td><td class="bi-te">3 IR చట్టాలు</td></tr>
+<tr><td>3</td><td><b>Occupational Safety, Health &amp; Working Conditions (OSH) Code 2020</b></td><td>Factories Act 1948 + Mines Act 1952 + Plantations Labour 1951 + 10 more</td><td class="bi-te">13 OSH చట్టాలు</td></tr>
+<tr><td>4</td><td><b>Social Security Code 2020</b></td><td>EPF 1952 + ESI 1948 + Maternity Benefit 1961 + Gratuity 1972 + Employees Compensation 1923 + 4 more</td><td class="bi-te">9 SS చట్టాలు</td></tr>
+</table>
+
+<div class="section-hdr">Key Features / ముఖ్యాంశాలు</div>
+<p><b>National Floor Wage</b> introduced. <b>Gig and platform workers</b> now covered under <b>Social Security Code</b> — a first in Indian labour law. <b>Fixed-term employment</b> recognised in IR Code. <b>Worker</b> definition expanded; threshold for retrenchment under IR Code raised from 100 → 300 (factory closures need permission only above 300 workers).</p>
+<p class="bi-te">National Floor Wage; gig + platform workers SS Code కిందికి (భారత కార్మిక చట్టంలో మొదటిసారి); Fixed-term employment గుర్తింపు; retrenchment threshold 100 → 300.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  31. UNESCO INTANGIBLE CULTURAL HERITAGE — India's 16 Elements
+#  Linked from MCQs 31401-31402, 31420
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_ich',
+              'UNESCO Intangible Cultural Heritage — India',
+              'UNESCO అమూర్త సాంస్కృతిక వారసత్వం — భారత్', """
+<div class="concept-cover">
+  <h1>UNESCO Intangible Cultural Heritage (ICH) — India &nbsp;<span class="bi-te">/ UNESCO ICH — భారత్</span></h1>
+  <div class="sub">India: 16 elements (as of Dec 2025) • 20th ICH Session hosted at Red Fort, Delhi</div>
+</div>
+
+<div class="section-hdr">India's 16 ICH Elements (chronological) / 16 ICH అంశాలు</div>
+<table class="key-table">
+<tr><th>Year</th><th>Element</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>2008</td><td>Kutiyattam — Sanskrit theatre (Kerala)</td><td class="bi-te">కూటియాట్టం (కేరళ)</td></tr>
+<tr><td>2008</td><td>Tradition of Vedic Chanting</td><td class="bi-te">వేద పఠనం</td></tr>
+<tr><td>2008</td><td>Ramlila — traditional performance of Ramayana</td><td class="bi-te">రామ్‌లీలా</td></tr>
+<tr><td>2009</td><td>Ramman — religious festival & ritual theatre, Garhwal Himalayas</td><td class="bi-te">రామ్మన్</td></tr>
+<tr><td>2010</td><td>Mudiyettu — ritual theatre/dance drama (Kerala)</td><td class="bi-te">ముడియేట్టు</td></tr>
+<tr><td>2010</td><td>Kalbelia — folk songs/dances (Rajasthan)</td><td class="bi-te">కల్బేలియా</td></tr>
+<tr><td>2010</td><td>Chhau dance</td><td class="bi-te">ఛౌ నృత్యం</td></tr>
+<tr><td>2012</td><td>Buddhist Chanting of Ladakh</td><td class="bi-te">లడాఖ్ బౌద్ధ పఠనం</td></tr>
+<tr><td>2013</td><td>Sankirtana — ritual singing, drumming &amp; dancing (Manipur)</td><td class="bi-te">సంకీర్తన (మణిపూర్)</td></tr>
+<tr><td>2014</td><td>Thatheras of Jandiala Guru — traditional brass &amp; copper craft</td><td class="bi-te">తథేరాస్ (పంజాబ్)</td></tr>
+<tr><td>2016</td><td><b>Yoga</b></td><td class="bi-te">యోగా</td></tr>
+<tr><td>2017</td><td><b>Kumbh Mela</b></td><td class="bi-te">కుంభ మేళా</td></tr>
+<tr><td>2021</td><td><b>Durga Puja in Kolkata</b></td><td class="bi-te">కోల్‌కతా దుర్గా పూజ</td></tr>
+<tr><td>2023</td><td><b>Garba</b> of Gujarat (15th element)</td><td class="bi-te">గుజరాత్ గర్బా</td></tr>
+<tr><td>2025</td><td><b>Deepavali / Diwali</b> (16th element, inscribed Dec 2025 at New Delhi session)</td><td class="bi-te">దీపావళి — 16వ ICH</td></tr>
+</table>
+
+<div class="section-hdr">20th UNESCO ICH Committee Session — India Hosted / 20వ session</div>
+<p>India hosted the <b>20th session of the UNESCO Intergovernmental Committee for the Safeguarding of the Intangible Cultural Heritage</b> at the historic <b>Red Fort, New Delhi</b> from <b>December 8-13, 2025</b>. This was India's first time hosting the ICH Committee session. <b>Deepavali</b> was inscribed at this very session as India's 16th ICH element.</p>
+<p class="bi-te">భారత్ — 20వ UNESCO ICH Committee session ను Red Fort, న్యూ ఢిల్లీ లో డిసెంబర్ 8-13, 2025 న host చేసింది; ఇదే sessionలో దీపావళి (16వ ICH) inscribed.</p>
+
+<div class="section-hdr">Classical Dances NOT in ICH / ICH లో **లేని** శాస్త్రీయ నృత్యాలు</div>
+<p>Indian <b>classical dances</b> like <b>Bharatanatyam, Kathak, Kathakali, Kuchipudi, Odissi, Manipuri, Mohiniyattam, Sattriya</b> are recognised by India's <b>Sangeet Natak Akademi</b> but are <b>NOT individually inscribed</b> in the UNESCO ICH Representative List. However, related forms like <b>Kutiyattam</b> (Sanskrit theatre) and <b>Chhau</b> are inscribed.</p>
+<p class="bi-te">భారతీయ శాస్త్రీయ నృత్యాలు (భరతనాట్యం, కథక్, కథకళి, కూచిపూడి, ఒడిస్సీ, మణిపురి, మోహినీయాట్టం, సత్రియా) UNESCO ICH list లో **వ్యక్తిగతంగా inscribe కాలేదు** — సంగీత నాటక అకాడెమీ గుర్తింపు మాత్రమే.</p>
+"""))
+
 print(f"Loaded {len(NOTES)} National 2026 concept notes")
 
 # ════════════════════════════════════════════════════════════════
