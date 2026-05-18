@@ -217,11 +217,9 @@ MCQ_DATA = [
      "₹5,936 కోట్లు", "₹8,000 కోట్లు", "₹10,000 కోట్లు", "₹12,157.53 కోట్లు",
      "d",
      "పోలవరం మొత్తం పెండింగ్ బ్యాలెన్స్ గ్రాంట్ ₹12,157.53 కోట్లు. 2025-26 బడ్జెట్ కేటాయింపు: ₹5,936 కోట్లు."),
-    (5, 2,
-     "Amaravati 1S క్వాంటం కంప్యూటర్ ఏ సాంకేతిక పద్ధతి ఉపయోగిస్తుంది?",
-     "Photonic", "Superconducting", "Trapped Ion", "Silicon Spin",
-     "b",
-     "Amaravati 1S = Superconducting (సూపర్ కండక్టింగ్) క్వాంటం కంప్యూటర్. Amaravati 1Q = Photonic."),
+    # AUDIT D7 (Batch G): Removed MCQ — "Amaravati 1S / Amaravati 1Q" product naming was
+    # unsourced/fabricated. AP Quantum Valley uses IBM Quantum System Two with the Heron R2
+    # processor (156 qubits, superconducting). See div4 sec 0 for the canonical fact.
     (6, 1,
      "యోగాంధ్రలో విశాఖ తీరంలో ఎంత మంది పాల్గొని గిన్నిస్ రికార్డ్ సాధించారు?",
      "1 లక్ష మంది", "2 లక్షల మంది", "3.01 లక్షలు (3,00,105)", "5 లక్షల మంది",

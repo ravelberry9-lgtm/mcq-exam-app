@@ -328,17 +328,8 @@ def _seed_ap_ca_div10_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force
 
 # Additional MCQs for div10 appended
 _EXTRA_MCQ_DATA_10 = [
-    {
-        "section_idx": 1,
-        "difficulty": "easy",
-        "question_te": "AP Reorganisation Act 2014 Lok Sabha లో ఏ తేదీన ఆమోదం పొందింది?",
-        "opt_a": "ఫిబ్రవరి 14, 2014",
-        "opt_b": "ఫిబ్రవరి 18, 2014",
-        "opt_c": "ఫిబ్రవరి 20, 2014",
-        "opt_d": "ఫిబ్రవరి 22, 2014",
-        "answer": "B",
-        "explanation_te": "APRA 2014 Lok Sabha లో ఫిబ్రవరి 18, 2014న ఆమోదించబడింది. Rajya Sabha ఫిబ్రవరి 20, 2014న ఆమోదించింది."
-    },
+    # AUDIT D7 (Batch G): Removed duplicate — APRA 2014 Lok Sabha date already asked in
+    # original MCQ_DATA section 1 (line 93-97).
     {
         "section_idx": 1,
         "difficulty": "easy",
@@ -350,83 +341,12 @@ _EXTRA_MCQ_DATA_10 = [
         "answer": "C",
         "explanation_te": "APRA 2014 Rajya Sabha లో ఫిబ్రవరి 20, 2014న ఆమోదించబడింది. ఇది భారత పార్లమెంట్ ద్వారా చాలా వివాదాస్పదంగా ఆమోదించబడింది."
     },
-    {
-        "section_idx": 1,
-        "difficulty": "medium",
-        "question_te": "APRA 2014 Act Number ఏమిటి?",
-        "opt_a": "Act No. 2 of 2014",
-        "opt_b": "Act No. 4 of 2014",
-        "opt_c": "Act No. 6 of 2014",
-        "opt_d": "Act No. 10 of 2014",
-        "answer": "C",
-        "explanation_te": "Andhra Pradesh Reorganisation Act, 2014 — Act No. 6 of 2014. ఇది జూన్ 2, 2014న అమల్లోకి వచ్చింది."
-    },
-    {
-        "section_idx": 1,
-        "difficulty": "easy",
-        "question_te": "తెలంగాణ భారతదేశంలో ఎన్నవ రాష్ట్రంగా ఏర్పడింది?",
-        "opt_a": "27వ",
-        "opt_b": "28వ",
-        "opt_c": "29వ",
-        "opt_d": "30వ",
-        "answer": "C",
-        "explanation_te": "జూన్ 2, 2014న APRA 2014 అమలుతో తెలంగాణ భారతదేశంలో 29వ రాష్ట్రంగా అవతరించింది."
-    },
-    {
-        "section_idx": 2,
-        "difficulty": "easy",
-        "question_te": "APRA 2014 Section 30 దేనికి సంబంధించినది?",
-        "opt_a": "పోలవరం ప్రాజెక్టు",
-        "opt_b": "AP High Court ఏర్పాటు",
-        "opt_c": "జల వివాదాలు",
-        "opt_d": "ఆస్తుల విభజన",
-        "answer": "B",
-        "explanation_te": "APRA 2014 Section 30 AP కోసం ప్రత్యేక High Court ఏర్పాటు గురించి. ఇది జనవరి 1, 2019న అమరావతిలో ప్రారంభమైంది."
-    },
-    {
-        "section_idx": 2,
-        "difficulty": "medium",
-        "question_te": "APRA 2014 ఏ Section పోలవరం ప్రాజెక్టును జాతీయ ప్రాజెక్టుగా ప్రకటించింది?",
-        "opt_a": "Section 5",
-        "opt_b": "Section 30",
-        "opt_c": "Section 90",
-        "opt_d": "Section 94",
-        "answer": "D",
-        "explanation_te": "APRA 2014 Section 94 పోలవరం ప్రాజెక్టును (Indira Sagar Project) జాతీయ ప్రాజెక్టుగా ప్రకటించింది. కేంద్ర ప్రభుత్వం పూర్తి నిధులు అందించాలి."
-    },
-    {
-        "section_idx": 2,
-        "difficulty": "hard",
-        "question_te": "APRA 2014 Section 5(2) దేనికి సంబంధించినది?",
-        "opt_a": "హైదరాబాద్ ఉమ్మడి రాజధాని",
-        "opt_b": "AP రాజధాని నగర ఏర్పాటు (2026 సవరణ ద్వారా అమరావతి)",
-        "opt_c": "పోలవరం నిర్మాణం",
-        "opt_d": "జల పంపకం",
-        "answer": "B",
-        "explanation_te": "APRA 2014 Section 5(2) మొదట AP రాజధాని గురించి పేర్కొంది. 2026 సవరణ ద్వారా ఇది అమరావతి అని నిర్దిష్టంగా పేర్కొనబడింది."
-    },
-    {
-        "section_idx": 3,
-        "difficulty": "easy",
-        "question_te": "హైదరాబాద్ ఎంత కాలం ఉమ్మడి రాజధానిగా ఉండాలని APRA 2014 నిర్ణయించింది?",
-        "opt_a": "5 సంవత్సరాలు",
-        "opt_b": "10 సంవత్సరాలు",
-        "opt_c": "15 సంవత్సరాలు",
-        "opt_d": "అనిర్దిష్టంగా",
-        "answer": "B",
-        "explanation_te": "APRA 2014 ప్రకారం హైదరాబాద్ AP-తెలంగాణ రెండు రాష్ట్రాలకు 10 సంవత్సరాలు (2014-2024) ఉమ్మడి రాజధానిగా ఉంటుంది."
-    },
-    {
-        "section_idx": 3,
-        "difficulty": "medium",
-        "question_te": "Special Category Status (SCS) డిమాండ్ ఎవరు AP కి వాగ్దానం చేశారు?",
-        "opt_a": "నరేంద్ర మోదీ",
-        "opt_b": "మన్మోహన్ సింగ్",
-        "opt_c": "రాహుల్ గాంధీ",
-        "opt_d": "పి.వి. నరసింహారావు",
-        "answer": "B",
-        "explanation_te": "మన్మోహన్ సింగ్ (UPA ప్రభుత్వం) APRA 2014 ఆమోదం సమయంలో AP కి Special Category Status ఇస్తామని వాగ్దానం చేశారు. కానీ ఇది ఇంకా చట్టపూర్వకంగా అమలు కాలేదు."
-    },
+    # AUDIT D7 (Batch G): Removed 6 duplicates — these facts already covered in original
+    # MCQ_DATA: Act Number (line 85-89), Telangana 29th state (line 100-104), Section 30
+    # (line 122-126), Section 94 (line 130-133), Section 5(2) (line 116-119), 10-year joint
+    # capital (line 80-82). Kept the unique Rajya Sabha date question above.
+    # AUDIT D7 (Batch G): Removed duplicate — SCS Manmohan Singh promise already asked in
+    # original MCQ_DATA (line 144-148).
     {
         "section_idx": 3,
         "difficulty": "hard",
@@ -438,19 +358,10 @@ _EXTRA_MCQ_DATA_10 = [
         "answer": "C",
         "explanation_te": "APRA 2014 ప్రకారం ఉమ్మడి AP ఆస్తులు 58.32% (AP) : 41.68% (తెలంగాణ) నిష్పత్తిలో జనాభా ఆధారంగా విభజించబడ్డాయి."
     },
+    # AUDIT D7 (Batch G): Removed duplicate — 14th Finance Commission SCS Special Package
+    # recommendation already asked in original MCQ_DATA (line 152-154).
     {
         "section_idx": 4,
-        "difficulty": "easy",
-        "question_te": "14వ ఆర్థిక సంఘం AP SCS డిమాండ్ పై ఏ నిర్ణయం తీసుకుంది?",
-        "opt_a": "SCS మంజూరు చేసింది",
-        "opt_b": "SCS రద్దు చేసి Special Package ప్రతిపాదించింది",
-        "opt_c": "నిర్ణయం వాయిదా వేసింది",
-        "opt_d": "AP కి ఎటువంటి రాయితీలు ఇవ్వలేదు",
-        "answer": "B",
-        "explanation_te": "14వ ఆర్థిక సంఘం (2015) SCS పద్ధతిని రద్దు చేయాలని సిఫారసు చేసింది మరియు AP కి Special Package పద్ధతిలో నిధులు ఇవ్వాలని సూచించింది."
-    },
-    {
-        "section_idx": 5,
         "difficulty": "easy",
         "question_te": "AP Reorganisation Amendment Act 2026 Act Number ఏమిటి?",
         "opt_a": "Act No. 5 of 2026",
@@ -461,7 +372,7 @@ _EXTRA_MCQ_DATA_10 = [
         "explanation_te": "AP Reorganisation Amendment Act 2026 — Act No. 7 of 2026. ఇది అమరావతిని AP అధికారిక రాజధానిగా పేర్కొంది."
     },
     {
-        "section_idx": 5,
+        "section_idx": 4,
         "difficulty": "medium",
         "question_te": "2026 Amendment Act Lok Sabha లో ఏ తేదీన ఆమోదం పొందింది?",
         "opt_a": "మార్చి 31, 2026",
@@ -472,7 +383,7 @@ _EXTRA_MCQ_DATA_10 = [
         "explanation_te": "2026 AP Reorganisation Amendment Act Lok Sabha లో ఏప్రిల్ 1, 2026న ఆమోదించబడింది. Rajya Sabha ఏప్రిల్ 2 న, రాష్ట్రపతి ఏప్రిల్ 6న ఆమోదించారు."
     },
     {
-        "section_idx": 6,
+        "section_idx": 5,
         "difficulty": "medium",
         "question_te": "G.O.610 దేనికి సంబంధించినది?",
         "opt_a": "పోలవరం ప్రాజెక్టు",
@@ -483,7 +394,7 @@ _EXTRA_MCQ_DATA_10 = [
         "explanation_te": "G.O.610 AP లో విద్య-ఉద్యోగాలను 6 Zones లో విభజించి స్థానికులకు రక్షణ కల్పించే రోస్టర్ సిస్టమ్ గురించి. ఆర్టికల్ 371-D కింద అమలైంది."
     },
     {
-        "section_idx": 6,
+        "section_idx": 5,
         "difficulty": "easy",
         "question_te": "States Reorganisation Act 1956 ఏ ఆధారంగా రాష్ట్రాలను ఏర్పాటు చేసింది?",
         "opt_a": "మతం",
@@ -494,7 +405,7 @@ _EXTRA_MCQ_DATA_10 = [
         "explanation_te": "States Reorganisation Act 1956 భాష ఆధారంగా రాష్ట్రాలను పునర్వ్యవస్థీకరించింది. ఫజల్ అలీ కమిషన్ నివేదిక ఆధారంగా అమలైంది. తెలుగు మాట్లాడే ప్రాంతాలు కలిసి AP ఏర్పాటైంది."
     },
     {
-        "section_idx": 7,
+        "section_idx": 6,
         "difficulty": "hard",
         "question_te": "AP Reorganisation Amendment Act No. 19 of 2014 దేనికి సంబంధించినది?",
         "opt_a": "రాజధాని నిర్ణయం",
@@ -505,7 +416,7 @@ _EXTRA_MCQ_DATA_10 = [
         "explanation_te": "Amendment Act No. 19 of 2014 (జూలై 11, 2014) ఖమ్మం జిల్లా నుండి 7 మండలాలను తూ/ప గోదావరి జిల్లాలకు బదిలీ చేసింది. పోలవరం ప్రాజెక్టు నిర్మాణం కోసం."
     },
     {
-        "section_idx": 7,
+        "section_idx": 2,
         "difficulty": "medium",
         "question_te": "APRA 2014 ప్రకారం పోలవరం ప్రాజెక్టు నిర్మాణ నిధులు ఎవరు భరించాలి?",
         "opt_a": "AP రాష్ట్ర ప్రభుత్వం",
