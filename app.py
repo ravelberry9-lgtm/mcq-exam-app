@@ -6704,10 +6704,226 @@ CONCEPT_MAP = [
     (31113, 31114, 'natl_2026_social_welfare_schemes'), # UPI Jan 2026, PM Surya Ghar
     (31115, 31118, 'natl_2026_agri_environment'),    # Solar 100GW, Green H2, Forest cover, Tiger census
     (31119, 31120, 'natl_2026_economic_indicators'), # Forex $704B, FDI inflows
-    # 31121-31300 still mapped to legacy tags (will be remapped in subsequent chunks)
-    (31121, 31300, 'national_ca_misc'),
-    # 31301-31388 — new 2026 PDF MCQs mapped to natl_2026_* tags via seed_concept_notes_natl_2026.py
-    # (mapping for these added after chunk-by-chunk audit completes)
+    # 31121-31170 — Chunk 4 per-MCQ tag mapping (50 MCQs enriched)
+    (31121, 31122, 'natl_2026_economic_indicators'),  # GDP rank 5th, 4th by 2025
+    (31123, 31125, 'natl_2026_foreign_relations'),    # IMEC G20, QUAD members, UNSC 2021-22
+    (31126, 31126, 'natl_2026_legal_security'),       # DPDP Act 2023
+    (31127, 31128, 'natl_2026_misc'),                 # Nobel Peace (Nihon Hidankyo) + Nobel Lit (Han Kang)
+    (31129, 31129, 'natl_2026_padma_awards'),         # Dada Saheb Phalke - Mithun Chakraborty
+    (31130, 31130, 'natl_2026_appointments'),         # RBI Gov Sanjay Malhotra
+    (31131, 31131, 'natl_2026_economic_indicators'),  # RBI 25 bps cut
+    (31132, 31132, 'natl_2026_appointments'),         # CEC Rajiv Kumar
+    (31133, 31133, 'natl_2026_const_amendment'),      # ONOE - Kovind committee
+    (31134, 31134, 'natl_2026_industrial_schemes'),   # Semiconductor fab Dholera
+    (31135, 31137, 'natl_2026_economic_indicators'),  # Press Freedom, EoDB, Global Peace Index
+    (31138, 31139, 'natl_2026_social_welfare_schemes'),  # PMGKAY, PMJDY
+    (31140, 31140, 'natl_2026_foreign_relations'),    # Bangladesh quota movement
+    (31141, 31141, 'natl_2026_industrial_schemes'),   # Coal 1 BT target
+    (31142, 31142, 'natl_2026_infrastructure'),       # 5G Oct 2022
+    (31143, 31143, 'natl_2026_legal_security'),       # CJI Sanjiv Khanna
+    (31144, 31144, 'natl_2026_padma_awards'),         # Jnanpith Gulzar
+    (31145, 31145, 'natl_2026_economic_indicators'),  # Unicorns 118+
+    (31146, 31146, 'natl_2026_industrial_schemes'),   # PM E-DRIVE
+    (31147, 31148, 'natl_2026_social_welfare_schemes'),  # Ujjwala, POSHAN 2.0
+    (31149, 31149, 'natl_2026_economic_indicators'),  # External debt $700B
+    (31150, 31150, 'natl_2026_infrastructure'),       # Highways 34 km/day
+    (31151, 31151, 'natl_2026_misc'),                 # UNESCO World Heritage Sites
+    (31152, 31152, 'natl_2026_agri_environment'),     # Food grains 332 MT
+    (31153, 31153, 'natl_2026_foreign_relations'),    # India-USA trade $190B
+    (31154, 31154, 'natl_2026_space_isro'),           # Chandrayaan-3 Aug 23, 2023
+    (31155, 31156, 'natl_2026_industrial_schemes'),   # Generic medicines #1, Steel #2
+    (31157, 31157, 'natl_2026_infrastructure'),       # Vande Bharat 136+
+    (31158, 31158, 'natl_2026_appointments'),         # EAM Jaishankar
+    (31159, 31159, 'natl_2026_education_health'),     # AIIMS 22
+    (31160, 31160, 'natl_2026_budget_finance'),       # Ayushman 70+ ₹3,437 cr
+    (31161, 31161, 'natl_2026_agri_environment'),     # Milk #1
+    (31162, 31162, 'natl_2026_foreign_relations'),    # India-China Depsang/Demchok
+    (31163, 31163, 'natl_2026_agri_environment'),     # Fisheries #3
+    (31164, 31164, 'natl_2026_infrastructure'),       # DigiYatra aviation
+    (31165, 31165, 'natl_2026_naval_defense'),        # INS Arighat SSBN
+    (31166, 31166, 'natl_2026_legal_security'),       # Pahalgam attack
+    (31167, 31168, 'natl_2026_defence'),              # Op Sindoor (2 MCQs)
+    (31169, 31170, 'natl_2026_census_artemis'),       # Census 2011, India pop 2026
+    # ── Chunk 5 (31171-31220) granular mapping ──
+    (31171, 31171, 'natl_2026_space_isro'),           # InSPACe regulator
+    (31172, 31172, 'natl_2026_foreign_relations'),    # QUAD 2025 Washington DC
+    (31173, 31173, 'natl_2026_nfhs_tfr'),             # Literacy rate 77.7%
+    (31174, 31174, 'natl_2026_space_isro'),           # GSAT-N2 via Falcon 9
+    (31175, 31175, 'natl_2026_agri_environment'),     # Jal Jeevan Mission 95%+
+    (31176, 31176, 'natl_2026_economic_indicators'),  # 12 PSBs after mergers
+    (31177, 31177, 'natl_2026_industrial_schemes'),   # MSME 30% GDP
+    (31178, 31178, 'natl_2026_infrastructure'),       # Nuclear capacity 7,480 MW
+    (31179, 31179, 'natl_2026_economic_indicators'),  # CPI score 39/100
+    (31180, 31180, 'natl_2026_sports'),               # Kho-Kho World Cup 2025 India
+    (31181, 31181, 'natl_2026_infrastructure'),       # PM GatiShakti multimodal
+    (31182, 31182, 'natl_2026_foreign_relations'),    # India-Russia trade $66 bn
+    (31183, 31183, 'natl_2026_space_isro'),           # Space Policy 2023 private sector
+    (31184, 31184, 'natl_2026_foreign_relations'),    # WTO DG Ngozi Okonjo-Iweala
+    (31185, 31185, 'natl_2026_appointments'),         # Modi 3.0 senior ministers
+    (31186, 31186, 'natl_2026_economic_indicators'),  # IMF fastest growing economy
+    (31187, 31187, 'natl_2026_budget_finance'),       # NH allocation Rs 2.87 L cr
+    (31188, 31188, 'natl_2026_space_isro'),           # BAS 20 tonnes by 2035
+    (31189, 31189, 'natl_2026_agri_environment'),     # Agri credit Rs 20 L cr
+    (31190, 31190, 'natl_2026_infrastructure'),       # Power capacity 650 GW
+    (31191, 31191, 'natl_2026_industrial_schemes'),   # IndiaAI Mission Rs 10,372 cr
+    (31192, 31192, 'natl_2026_foreign_relations'),    # India SCO 2017 Astana
+    (31193, 31193, 'natl_2026_agri_environment'),     # IFFCO Nano Urea liquid
+    (31194, 31194, 'natl_2026_social_welfare_schemes'), # Aadhaar 138 cr
+    (31195, 31195, 'natl_2026_foreign_relations'),    # India-China border 3,488 km
+    (31196, 31196, 'natl_2026_const_amendment'),      # Ladakh UT 2019
+    (31197, 31197, 'natl_2026_legal_security'),       # CAA Mar 2024
+    (31198, 31198, 'natl_2026_legal_security'),       # IPC 377 Sept 2018
+    (31199, 31199, 'natl_2026_education_health'),     # Trachoma eliminated 2024
+    (31200, 31200, 'natl_2026_industrial_schemes'),   # Viksit Bharat 2047
+    (31201, 31201, 'natl_2026_misc'),                 # Maha Kumbh 2025 Prayagraj
+    (31202, 31202, 'natl_2026_misc'),                 # Maha Kumbh dates Jan13-Feb26
+    (31203, 31203, 'natl_2026_misc'),                 # Maha Kumbh 45 crore devotees
+    (31204, 31204, 'natl_2026_padma_awards'),         # Padma Vibhushan Sharda Sinha
+    (31205, 31205, 'natl_2026_education_health'),     # NEP 2020 15 years 5+3+3+4
+    (31206, 31206, 'natl_2026_education_health'),     # NEP mother tongue (answer = Grade 5; stem option C says Grade 8 — flagged)
+    (31207, 31207, 'natl_2026_sports'),               # KIYG 2025 Maharashtra
+    (31208, 31208, 'natl_2026_budget_finance'),       # 30% tax slab above Rs 24L
+    (31209, 31209, 'natl_2026_economic_indicators'),  # Exports $437 bn
+    (31210, 31210, 'natl_2026_industrial_schemes'),   # ISM Rs 76,000 cr
+    (31211, 31211, 'natl_2026_economic_indicators'),  # Trade deficit $200B+
+    (31212, 31212, 'natl_2026_appointments'),         # Modi Kuwait Order of Mubarak
+    (31213, 31213, 'natl_2026_defence'),              # Agni-5 5,000+ km
+    (31214, 31214, 'natl_2026_defence'),              # Pinaka MRLS
+    (31215, 31215, 'natl_2026_legal_security'),       # BNSS replaces CrPC
+    (31216, 31216, 'natl_2026_legal_security'),       # BSA replaces Evidence Act
+    (31217, 31217, 'natl_2026_agri_environment'),     # Ramsar 89+ sites
+    (31218, 31218, 'natl_2026_agri_environment'),     # PM-KUSUM solar pumps
+    (31219, 31219, 'natl_2026_social_welfare_schemes'), # AB-PMJAY 70+ Rs 5L
+    (31220, 31220, 'natl_2026_social_welfare_schemes'), # PMBJP Jan Aushadhi
+    # ── Chunk 6 (31221-31270) granular mapping ──
+    (31221, 31221, 'natl_2026_defence'),              # India defence exports Rs 50,000 cr by 2030
+    (31222, 31222, 'natl_2026_agri_environment'),     # PMFBY crop insurance
+    (31223, 31223, 'natl_2026_education_health'),     # Skill India Mission Rs 6,000 cr
+    (31224, 31224, 'natl_2026_industrial_schemes'),   # ONDC under Ministry of Commerce
+    (31225, 31225, 'natl_2026_sports'),               # Khel Ratna 2024/2025 - Gukesh
+    (31226, 31226, 'natl_2026_sports'),               # Gukesh 2024 World Chess Champion
+    (31227, 31227, 'natl_2026_education_health'),     # PM-ABHIM 1.5L+ AAMs/HWCs
+    (31228, 31228, 'natl_2026_space_isro'),           # Agnikul Cosmos Agnibaan 2024
+    (31229, 31229, 'natl_2026_industrial_schemes'),   # India EV 30% by 2030 target
+    (31230, 31230, 'natl_2026_economic_indicators'),  # India GDP per capita $3,900
+    (31231, 31231, 'natl_2026_naval_defense'),        # INS Vikrant Sep 2, 2022
+    (31232, 31232, 'natl_2026_nfhs_tfr'),             # UNFPA population stabilization 2047
+    (31233, 31233, 'natl_2026_agri_environment'),     # SBM-G Phase-2 1 lakh ODF Plus
+    (31234, 31234, 'natl_2026_foreign_relations'),    # 3rd IAFS New Delhi 2015
+    (31235, 31235, 'natl_2026_foreign_relations'),    # India-UK FTA signed 2025
+    (31236, 31236, 'natl_2026_infrastructure'),       # BharatNet broadband to GPs
+    (31237, 31237, 'natl_2026_industrial_schemes'),   # PM MITRA 7 textile parks
+    (31238, 31238, 'natl_2026_infrastructure'),       # Sagarmala port-led development
+    (31239, 31239, 'natl_2026_misc'),                 # Shanti Swarup Bhatnagar science award
+    (31240, 31240, 'natl_2026_legal_security'),       # CAQM NCR air quality regulator
+    (31241, 31241, 'natl_2026_space_isro'),           # PSLV-C60 SpaDeX
+    (31242, 31242, 'natl_2026_foreign_relations'),    # G20 2024 Rio de Janeiro
+    (31243, 31243, 'natl_2026_industrial_schemes'),   # MSME Micro Rs 1 cr definition
+    (31244, 31244, 'natl_2026_agri_environment'),     # India NDC 2030 climate target
+    (31245, 31245, 'natl_2026_legal_security'),       # India 25 High Courts
+    (31246, 31246, 'natl_2026_appointments'),         # SEBI Chair Tuhin Kanta Pandey 2025
+    (31247, 31247, 'natl_2026_infrastructure'),       # NIP Rs 111 lakh cr 2019-25
+    (31248, 31248, 'natl_2026_economic_indicators'),  # e-Rupee/Digital Rupee CBDC
+    (31249, 31249, 'natl_2026_legal_security'),       # SC SC/ST sub-classification verdict 2024
+    (31250, 31250, 'natl_2026_infrastructure'),       # 5G 20+ crore users by 2026
+    (31251, 31251, 'natl_2026_paris_olympics'),       # Paris 2024 hockey bronze (FLAG: Spain not Germany)
+    (31252, 31252, 'natl_2026_industrial_schemes'),   # EV Policy 2024 100% to 15% duty
+    (31253, 31253, 'natl_2026_social_welfare_schemes'),  # PMEGP (FLAG: answer key B vs C)
+    (31254, 31254, 'natl_2026_legal_security'),       # NJDG case tracking
+    (31255, 31255, 'natl_2026_appointments'),         # NITI Aayog CEO BVR Subrahmanyam
+    (31256, 31256, 'natl_2026_social_welfare_schemes'),  # PM CARES Fund Mar 2020
+    (31257, 31257, 'natl_2026_budget_finance'),       # Gold import duty 6%
+    (31258, 31258, 'natl_2026_budget_finance'),       # MSP Kharif 2025-26 (FLAG: 8-10%)
+    (31259, 31259, 'natl_2026_appointments'),         # Modi 3.0 women ministers (FLAG: 11 vs 7)
+    (31260, 31260, 'natl_2026_budget_finance'),       # Nuclear Mission private sector
+    (31261, 31261, 'natl_2026_agri_environment'),     # PM-AASHA MSP scheme
+    (31262, 31262, 'natl_2026_defence'),              # DRISHTI-10 UAV surveillance
+    (31263, 31263, 'natl_2026_agri_environment'),     # PMMSY fisheries Blue Revolution
+    (31264, 31264, 'natl_2026_budget_finance'),       # Disinvestment target Rs 65,000 cr
+    (31265, 31265, 'natl_2026_budget_finance'),       # WCD Rs 26,092 cr
+    (31266, 31266, 'natl_2026_sports'),               # 2025 All England Open (FLAG: Shi Yuqi not Axelsen)
+    (31267, 31267, 'natl_2026_budget_finance'),       # Telecom Rs 1.3 L cr
+    (31268, 31268, 'natl_2026_social_welfare_schemes'),  # NRLM 90 lakh SHGs
+    (31269, 31269, 'natl_2026_budget_finance'),       # North East Rs 5,900 cr
+    (31270, 31270, 'natl_2026_misc'),                 # India #1 Mica producer
+    # ── Chunk 7 (31271-31320) — granular mapping ──
+    (31271, 31271, 'natl_2026_industrial_schemes'),   # ONDC 1 crore+ users
+    (31272, 31272, 'natl_2026_misc'),                 # Ministry of Cooperation 2021
+    (31273, 31273, 'natl_2026_appointments'),         # CNS Admiral Tripathi
+    (31274, 31274, 'natl_2026_economic_indicators'),  # WPI inflation 1-2%
+    (31275, 31275, 'natl_2026_economic_indicators'),  # Petroleum imports $120B+
+    (31276, 31276, 'natl_2026_nfhs_tfr'),             # NFHS undernutrition 19.3%
+    (31277, 31277, 'natl_2026_agri_environment'),     # Horticulture 355 MT
+    (31278, 31278, 'natl_2026_space_isro'),           # Shubhanshu Shukla Ax-4
+    (31279, 31279, 'natl_2026_agri_environment'),     # SECI renewable energy
+    (31280, 31280, 'natl_2026_economic_indicators'),  # EPFO 8.15% (FLAG: 2023-24 rate was 8.25%)
+    (31281, 31281, 'natl_2026_appointments'),         # IRDAI Chairman Debasish Panda
+    (31282, 31282, 'natl_2026_budget_finance'),       # Health 2.5% of GDP
+    (31283, 31283, 'natl_2026_economic_indicators'),  # Coal India 773 MT
+    (31284, 31284, 'natl_2026_legal_security'),       # NALSA
+    (31285, 31285, 'natl_2026_space_isro'),           # LVM3 OneWeb 36 sats (FLAG: ambiguous stem)
+    (31286, 31286, 'natl_2026_agri_environment'),     # e-NAM platform
+    (31287, 31287, 'natl_2026_budget_finance'),       # Startup FoF Rs 10,000 cr
+    (31288, 31288, 'natl_2026_misc'),                 # Sahitya Akademi 2025 Jeet Thayil
+    (31289, 31289, 'natl_2026_economic_indicators'),  # National Income Rs 300 L cr
+    (31290, 31290, 'natl_2026_space_isro'),           # BAS 4 phases (FLAG: ISRO cites 5 modules)
+    (31291, 31291, 'natl_2026_agri_environment'),     # e-NAM 1,400 mandis
+    (31292, 31292, 'natl_2026_industrial_schemes'),   # Critical Minerals Mission
+    (31293, 31293, 'natl_2026_misc'),                 # Maharashtra Mahayuti 2024
+    (31294, 31294, 'natl_2026_misc'),                 # Jharkhand JMM-INDIA 2024
+    (31295, 31295, 'natl_2026_economic_indicators'),  # SEZ exports $113B
+    (31296, 31296, 'natl_2026_economic_indicators'),  # WHR 2025 Finland
+    (31297, 31297, 'natl_2026_misc'),                 # Nobel Physics 2024 Hopfield+Hinton
+    (31298, 31298, 'natl_2026_budget_finance'),       # PSU capex Rs 2L cr+
+    (31299, 31299, 'natl_2026_infrastructure'),       # RRTS Delhi-Meerut
+    (31300, 31300, 'natl_2026_social_welfare_schemes'), # PM Vishwakarma
+    # ── Chunk 7 (31301-31320) — Phase B Jan-Apr 2026 PDF MCQs ──
+    (31301, 31308, 'natl_2026_budget_finance'),       # Budget 2026-27 (8 MCQs: 9th budget, outlay, capex, GDP/FD, defence, edu/health, rail/road, ISRO)
+    (31309, 31312, 'natl_2026_budget_finance'),       # 16th Finance Commission (4 MCQs: report date, 41% share, AP share, Urbanization Premium)
+    (31313, 31314, 'natl_2026_infrastructure'),       # HSR corridors (2 MCQs: 7 corridors ~4000km, Hyderabad junction)
+    (31315, 31318, 'natl_2026_cricket_sports'),       # U-19 WC 2026 (4 MCQs: final date, win margin, Suryavanshi, 6th title)
+    (31319, 31320, 'natl_2026_republic_day'),         # 77th Republic Day 2026 (chief guests, Vande Mataram theme)
+    # ── Chunk 8 (31321-31388) — Final Phase B 2026 PDF MCQs (granular per-topic mapping) ──
+    (31321, 31322, 'natl_2026_republic_day'),         # 77th RD parade extras (Eurocorps outside Europe; LR-AShM hypersonic)
+    (31323, 31325, 'natl_2026_defence'),              # Gallantry awards 2026 (70 awardees; Ashok Chakra Shubhanshu Shukla; 3 Kirti; 18 Shaurya)
+    (31326, 31329, 'natl_2026_padma_awards'),         # Padma 2026 (131 total; Dharmendra/Achuthanandan posth Vibhushan; Rohit Sharma Bhushan)
+    (31330, 31332, 'natl_2026_isro_space'),           # LVM3-M6 BlueBird Block-2 (Dec 24 2025; 6,100 kg; 100th from SHAR; Tirupati AP)
+    (31333, 31335, 'natl_2026_defence'),              # DAC clearances (Rs 79,000 cr Dec 29, 2025; Rs 2.38 L cr Mar 27, 2026; S-400)
+    (31336, 31338, 'natl_2026_india_foreign'),        # Bharat-EU FTA Jan 27, 2026 ('Mother of All Deals'; 99% tariffs; Strategic Agenda 2030)
+    (31339, 31340, 'natl_2026_india_foreign'),        # Germany Chancellor Friedrich Merz visit Jan 12-13, 2026 (19 MoUs; Sabarmati kite fest)
+    (31341, 31343, 'natl_2026_india_foreign'),        # UAE Pres Sheikh MBZ visit Jan 19, 2026 ($200B by 2032; Dholera SIR)
+    (31344, 31344, 'natl_2026_india_foreign'),        # India-NZ FTA Dec 22, 2025 ($5B trade; $20B FDI)
+    (31345, 31346, 'natl_2026_education_health'),     # NITI Aayog Indian students abroad (13.35 lakh in 2024; AP #1)
+    (31347, 31348, 'natl_2026_agri_environment'),     # FAO Global Forest Resources Assessment Oct 22, 2025 (India 10th area; 3rd in annual gain)
+    (31349, 31350, 'natl_2026_industrial_schemes'),   # Electronics components scheme Jan 2, 2026 (22 proposals Rs 41,863 cr; AP: NPSPL/Sippa/Hindalco)
+    (31351, 31351, 'natl_2026_misc'),                 # VBYLD 2026 Jan 11-12 Delhi (Vivekananda jayanti; 5L+ youth)
+    (31352, 31353, 'natl_2026_industrial_schemes'),   # SBFAS+SBDS shipbuilding scheme Rs 44,700 cr (15-25% per ship; till Mar 2036)
+    (31354, 31356, 'natl_2026_appointments'),         # 9-Governor reshuffle Mar 5, 2026 (Shukla TG; Sandhu Delhi LG; Saxena Ladakh LG; Ravi WB; Arlekar TN)
+    (31357, 31357, 'natl_2026_appointments'),         # NITI Aayog CEO Nidhi Chhibber Feb 24, 2026
+    (31358, 31358, 'natl_2026_legal_security'),       # LS Speaker Om Birla no-conf motion defeated Mar 10, 2026 (NDA 293 vs INDIA 233)
+    (31359, 31359, 'natl_2026_legal_security'),       # Sonam Wangchuk released Mar 14, 2026 (NSA since Sep 26, 2025; Ladakh statehood)
+    (31360, 31360, 'natl_2026_legal_security'),       # Rouse Avenue Court acquits Kejriwal/Sisodia/Kavitha+23 Feb 27, 2026 (Delhi Excise)
+    (31361, 31362, 'natl_2026_defence'),              # SIPRI 2021-25 (Ukraine #1 importer 9.7%; Russia share India 70%→40%)
+    (31363, 31364, 'natl_2026_infrastructure'),       # Hydrogen train Feb 25, 2026 (Jind-Sonipat; 10 coaches; 110 kmph)
+    (31365, 31365, 'natl_2026_naval_defense'),        # INS Anjadip commissioned Vizag Feb 27, 2026 ('Dolphin Killer')
+    (31366, 31366, 'natl_2026_isro_space'),           # Skyroot Dhawan-3 cryogenic engine 145 sec test
+    (31367, 31368, 'natl_2026_india_foreign'),        # Raisina Dialogue 2026 (10th edition; Pres Alexander Stubb Finland; Sanskaar-Dridheekarana)
+    (31369, 31369, 'natl_2026_industrial_schemes'),   # 2nd Critical Minerals Summit Delhi FICCI Feb 19, 2026 (AP/TN/Odisha)
+    (31370, 31370, 'natl_2026_naval_defense'),        # 6th Goa Maritime Conclave Feb 21, 2026 (Adm Dinesh K Tripathi)
+    (31371, 31372, 'natl_2026_const_amendment'),      # 131st Const Amend Bill LS Apr 17, 2026 — DEFEATED 298/230 (needed 352); women 33%, LS 543→850
+    (31373, 31375, 'natl_2026_census_artemis'),       # NASA Artemis-2 Apr 2-11, 2026 (4 astronauts; Victor Glover 1st non-white to Moon orbit; Jeremy Hansen Canada)
+    (31376, 31377, 'natl_2026_census_artemis'),       # 16th Census of India Apr 1, 2026 (Rs 11,718 cr; self-enum + caste; mascots Janaganana/Janagan)
+    (31378, 31378, 'natl_2026_misc'),                 # 60th Jnanpith (2025) R. Vairamuthu Tamil Mar 14, 2026
+    (31379, 31379, 'natl_2026_cricket_sports'),       # BCCI Naman Awards Mar 15, 2026 (Polly Umrigar Shubman Gill + Smriti Mandhana 5th time)
+    (31380, 31380, 'natl_2026_legal_security'),       # Jan Vishwas 2.0 Apr 1-2, 2026 (79 laws, 784 provisions, 23 ministries decriminalised)
+    (31381, 31381, 'natl_2026_india_foreign'),        # SKorea Pres Lee Jae-myung visit Apr 19-21, 2026 (15 MoUs; $50B by 2030)
+    (31382, 31382, 'natl_2026_legal_security'),       # India declared naxal-free Apr 2026 (37 'Districts of Concern'; AP: Alluri Sitarama Raju)
+    (31383, 31383, 'natl_2026_industrial_schemes'),   # BHAVYA Mar 18, 2026 (Rs 28,602 cr; 100 industrial parks; UDAN Rs 28,840 cr; RELIEF Rs 497 cr)
+    (31384, 31384, 'natl_2026_legal_security'),       # CEC Gyanesh Kumar impeachment rejected by RS Chair C.P. Radhakrishnan Apr 6, 2026
+    (31385, 31385, 'natl_2026_education_health'),     # NCERT Deemed-to-be-University; CBSE 3-language Class 6; Akshaya Patra 500 cr meals Mar 17, 2026
+    (31386, 31386, 'natl_2026_foreign_relations'),    # New START Treaty (2010 US-Russia) expired Feb 5, 2026; talks Abu Dhabi
+    (31387, 31387, 'natl_2026_misc'),                 # IICDEM Delhi Jan 21-23, 2026 (70 countries; largest election mgmt conf)
+    (31388, 31388, 'natl_2026_naval_defense'),        # India IONS chairmanship 2025-27 (16 yrs later; launched 2008)
     # AP CA 2026 — individual question concept notes (first 10 questions)
     (32001, 32002, 'q_32001'),   # AP Budget 2026-27
     (32003, 32003, 'q_32003'),   # Amaravati Capital Act

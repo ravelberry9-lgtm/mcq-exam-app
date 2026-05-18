@@ -1015,8 +1015,8 @@ def seed():
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31093,
-         "భారత్ Aditya-L1 మిషన్ ఏ లగ్రాంజ్ పాయింట్‌లో ఉంది?\n(India's Aditya-L1 mission is at which Lagrange point?)",
-         "A) L1",
+         "భారత తొలి సూర్యుని (Sun) అధ్యయన మిషన్ ఏ Lagrange పాయింట్ చుట్టూ halo orbit లో ఉంది?\n(India's first dedicated Sun-study mission is in halo orbit around which Lagrange point?)",
+         "A) L1 (Sun-Earth L1, 1.5 million km from Earth)",
          "B) L2",
          "C) L4",
          "D) L5",
@@ -1191,12 +1191,12 @@ def seed():
 
         (31110,
          "2025 Wimbledon పురుషుల సింగిల్స్ చాంపియన్ ఎవరు?\n(Men's Singles champion at Wimbledon 2025?)",
-         "A) నొవాక్ జొకొవిచ్",
+         "A) నొవాక్ జొకొవిచ్ / Novak Djokovic",
          "B) కార్లోస్ అల్కారాజ్ / Carlos Alcaraz",
-         "C) జానిక్ సిన్నర్",
-         "D) రాఫెల్ నడాల్",
-         "B",
-         "కార్లోస్ అల్కారాజ్ 2025 Wimbledon పురుషుల సింగిల్స్ విజేత. Carlos Alcaraz won the Men's Singles title at Wimbledon 2025.",
+         "C) జానిక్ సిన్నర్ / Jannik Sinner",
+         "D) రాఫెల్ నడాల్ / Rafael Nadal",
+         "C",
+         "**జానిక్ సిన్నర్ (Jannik Sinner, Italy)** 2025 Wimbledon పురుషుల సింగిల్స్ Final (Jul 13, 2025) లో **కార్లోస్ అల్కారాజ్‌ని ఓడించి విజేత**. సిన్నర్ తొలి Wimbledon, మొత్తం 4వ Grand Slam title. Jannik Sinner won Wimbledon 2025 beating Carlos Alcaraz in the final.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── BRICS ──
@@ -1310,7 +1310,7 @@ def seed():
          "C) 5వది / 5th",
          "D) 7వది",
          "C",
-         "భారత్ ప్రస్తుతం GDP పరంగా ప్రపంచంలో 5వ అతిపెద్ద ఆర్థిక వ్యవస్థ. India is currently the 5th largest economy in the world by GDP.",
+         "IMF/World Bank ప్రకారం భారత్ ~$4 ట్రిలియన్ GDP తో 5వ అతిపెద్ద ఆర్థిక వ్యవస్థ (US, China, Germany, Japan తర్వాత). India is the 5th largest economy (~$4T GDP) per IMF — behind US, China, Germany, Japan.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31122,
@@ -1320,7 +1320,7 @@ def seed():
          "C) UK",
          "D) ఫ్రాన్స్",
          "B",
-         "భారత్ జర్మనీని అధిగమించి 4వ అతిపెద్ద ఆర్థిక వ్యవస్థగా ఎదిగే లక్ష్యం ఉంది. India aims to surpass Germany to become the 4th largest economy in the world.",
+         "IMF అంచనా ప్రకారం భారత్ 2025-26లో జర్మనీని ($4.3T) అధిగమించి 4వ అతిపెద్ద ఆర్థిక వ్యవస్థగా ఎదిగే అవకాశం. IMF projects India to overtake Germany (~$4.3T) and become the 4th largest economy by 2025-26.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── International ──
@@ -1331,7 +1331,7 @@ def seed():
          "C) QUAD 2023",
          "D) SCO 2023",
          "B",
-         "IMEC (India-Middle East-Europe Economic Corridor) ను 2023 సెప్టెంబర్‌లో న్యూఢిల్లీ G20 శిఖర సమ్మేళనంలో ప్రకటించారు. IMEC was announced at the G20 Summit in New Delhi in September 2023.",
+         "IMEC (India-Middle East-Europe Economic Corridor) — భారత్, UAE, సౌదీ, EU కలిపే రైలు/ఓడ కారిడార్ — Sept 2023 న్యూఢిల్లీ G20 శిఖరంలో ప్రకటించారు. IMEC, a rail-and-shipping corridor connecting India-UAE-Saudi-EU, was announced at G20 New Delhi (Sept 2023).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31124,
@@ -1341,7 +1341,7 @@ def seed():
          "C) India, USA, Japan, South Korea",
          "D) India, China, Japan, Australia",
          "B",
-         "QUAD లో భారత్, USA, జపాన్, ఆస్ట్రేలియా సభ్యులు. QUAD members are India, USA, Japan, and Australia.",
+         "QUAD (Quadrilateral Security Dialogue) — Indo-Pacific వ్యూహాత్మక గ్రూపు; సభ్యులు భారత్, USA, జపాన్, ఆస్ట్రేలియా (2007లో ప్రారంభం, 2017లో పునరుజ్జీవం). QUAD's four members are India, USA, Japan, Australia — an Indo-Pacific strategic grouping revived in 2017.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31125,
@@ -1351,7 +1351,7 @@ def seed():
          "C) 2025-2026",
          "D) 2027-2028",
          "A",
-         "భారత్ 2021-2022 కాలానికి UN Security Council లో తాత్కాలిక సభ్యుడిగా ఉంది. India was a non-permanent member of the UN Security Council for the 2021-2022 term.",
+         "UNSC (UN Security Council) లో భారత్ తాత్కాలిక సభ్యత్వం 2021-22 కాలానికి — ఇది భారత్ 8వసారి తాత్కాలిక సభ్యత్వం. India's 8th UNSC non-permanent term was 2021-22 (two-year cycle).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Digital Personal Data Protection ──
@@ -1362,28 +1362,28 @@ def seed():
          "C) 2024",
          "D) 2025",
          "B",
-         "భారత డిజిటల్ వ్యక్తిగత డేటా రక్షణ (DPDP) చట్టం 2023లో పార్లమెంట్ ఆమోదించింది. India's Digital Personal Data Protection (DPDP) Act was passed by Parliament in 2023.",
+         "DPDP (Digital Personal Data Protection) Act ఆగస్టు 2023లో పార్లమెంట్ ఆమోదించింది — Justice BN Srikrishna కమిటీ సిఫార్సుల ఆధారంగా; ఉల్లంఘనకు ₹250 కోట్ల వరకు జరిమానా. DPDP Act, passed August 2023 based on Justice Srikrishna report, imposes fines up to Rs 250 crore for breaches.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Awards / Nobel ──
         (31127,
          "2025 నోబెల్ శాంతి పురస్కారం ఎవరికి లభించింది?\n(Who received the Nobel Peace Prize 2025?)",
-         "A) గ్రెటా థన్‌బెర్గ్",
+         "A) మరియా కొరీనా మచాడో / María Corina Machado (Venezuela)",
          "B) నికరాగువా రాజకీయ ఖైదీలు",
-         "C) Nihon Hidankyo (జపానీ హిరోషిమా-నాగసాకీ బాధితుల సంస్థ)",
+         "C) Nihon Hidankyo (Japan A-bomb survivors org)",
          "D) WHO",
-         "C",
-         "2025 నోబెల్ శాంతి పురస్కారం జపానీ అణు బాంబు బాధితుల సంస్థ 'Nihon Hidankyo' కు లభించింది. The Nobel Peace Prize 2025 was awarded to Nihon Hidankyo, the Japanese atomic bomb survivors' organization.",
+         "A",
+         "**మరియా కొరీనా మచాడో (María Corina Machado)** — వెనెజులా ప్రతిపక్ష నేత — ప్రజాస్వామ్యం పునరుద్ధరణ + మానవ హక్కుల పోరాటానికి **2025 నోబెల్ శాంతి బహుమతి** (Oct 10, 2025). 2024 బహుమతి **Nihon Hidankyo** (హిరోషిమా/నాగసాకీ హిబకుషా సంఘం)కు ఇచ్చారు.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31128,
          "2025 నోబెల్ సాహిత్య పురస్కారం ఎవరికి లభించింది?\n(Who received Nobel Prize in Literature 2025?)",
-         "A) హాన్ కాంగ్ / Han Kang",
-         "B) Peter Handke",
+         "A) László Krasznahorkai (Hungary)",
+         "B) హాన్ కాంగ్ / Han Kang",
          "C) Annie Ernaux",
          "D) Jon Fosse",
          "A",
-         "దక్షిణ కొరియా రచయిత్రి హాన్ కాంగ్ 2025 నోబెల్ సాహిత్య పురస్కారం పొందారు. South Korean author Han Kang received the Nobel Prize in Literature 2025.",
+         "**László Krasznahorkai (Hungary)** — 'Satantango', 'The Melancholy of Resistance' రచయిత — 2025 నోబెల్ సాహిత్య పురస్కారం పొందారు. 2024 బహుమతి **Han Kang (S. Korea)** — తొలి దక్షిణ కొరియా సాహిత్య నోబెల్ గ్రహీత.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31129,
@@ -1393,7 +1393,7 @@ def seed():
          "C) మిథున్ చక్రవర్తి / Mithun Chakraborty",
          "D) శ్యామ్ బెనెగల్",
          "C",
-         "2025 Dada Saheb Phalke Award (2023 కి) మిథున్ చక్రవర్తికి ఇచ్చారు. The Dada Saheb Phalke Award 2025 (for 2023) was given to Mithun Chakraborty.",
+         "Dada Saheb Phalke Award (భారత సినిమా అత్యున్నత గౌరవం, 1969లో స్థాపన) — 54వ ప్రదానంలో నటుడు మిథున్ చక్రవర్తికి ఇచ్చారు; 70th National Film Awards సందర్భంగా అక్టోబర్ 2024లో ప్రదానం. Dada Saheb Phalke (India's highest film honour, instituted 1969) was conferred on actor Mithun Chakraborty at the 70th National Film Awards (Oct 2024).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── RBI / Banking ──
@@ -1404,7 +1404,7 @@ def seed():
          "C) సంజయ్ మల్హోత్రా / Sanjay Malhotra",
          "D) రఘురామ్ రాజన్",
          "C",
-         "సంజయ్ మల్హోత్రా డిసెంబర్ 2024లో RBI గవర్నర్‌గా నియమితులయ్యారు. Sanjay Malhotra was appointed as the RBI Governor in December 2024.",
+         "సంజయ్ మల్హోత్రా — 1990 IAS (రాజస్థాన్ క్యాడర్), మాజీ Revenue Secretary — శక్తికాంత దాస్ తర్వాత 26వ RBI గవర్నర్‌గా డిసెంబర్ 11, 2024న 3-సం. కాలానికి నియమితులయ్యారు. Sanjay Malhotra (1990 IAS) became the 26th RBI Governor on Dec 11, 2024, succeeding Shaktikanta Das, for a 3-year term.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31131,
@@ -1414,18 +1414,18 @@ def seed():
          "C) 75 basis points",
          "D) 100 basis points",
          "A",
-         "RBI 2025లో ద్రవ్యోల్బణం తగ్గుముఖం పట్టడంతో 25 basis points రేటు తగ్గించింది. RBI reduced rates by 25 basis points in 2025 as inflation moderated.",
+         "RBI MPC ఫిబ్రవరి 2025లో repo రేటును 6.5% నుండి 6.25%కి 25 bps తగ్గించింది — దాదాపు 5 సంవత్సరాల తర్వాత మొదటి కట్; ద్రవ్యోల్బణం 4% లక్ష్యం వైపు దిగడం వల్ల. RBI MPC cut repo rate by 25 bps (6.5% to 6.25%) in Feb 2025 — first cut in nearly 5 years as inflation moderated towards 4% target.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Governance ──
         (31132,
-         "2025లో భారత ఎన్నికల కమిషన్ ప్రధాన ఎన్నికల కమిషనర్ ఎవరు?\n(Chief Election Commissioner of India in 2025?)",
+         "ఫిబ్రవరి 19, 2025 నుండి భారత Chief Election Commissioner (CEC) ఎవరు?\n(Chief Election Commissioner of India from February 19, 2025?)",
          "A) సునీల్ అరోరా",
-         "B) రాజీవ్ కుమార్ / Rajiv Kumar",
-         "C) OM ప్రకాశ్ రావత్",
+         "B) రాజీవ్ కుమార్",
+         "C) జ్ఞానేశ్ కుమార్ / Gyanesh Kumar",
          "D) నసీమ్ జైదీ",
-         "B",
-         "రాజీవ్ కుమార్ 2025లో భారత ప్రధాన ఎన్నికల కమిషనర్‌గా సేవలు అందించారు. Rajiv Kumar served as the Chief Election Commissioner of India in 2025.",
+         "C",
+         "**జ్ఞానేశ్ కుమార్ (26వ CEC)** ఫిబ్రవరి 19, 2025న బాధ్యత స్వీకరించారు; రాజీవ్ కుమార్ (25వ CEC, మే 2022 – ఫిబ్రవరి 18, 2025) నుండి విరామం. **CEC** = Chief Election Commissioner of India, ECI head. Gyanesh Kumar took office Feb 19, 2025 as 26th CEC, succeeding Rajiv Kumar.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31133,
@@ -1435,7 +1435,7 @@ def seed():
          "C) అమిత్ షా",
          "D) హోం మంత్రి",
          "B",
-         "మాజీ రాష్ట్రపతి రామ్ నాథ్ కోవింద్ అధ్యక్షతన One Nation One Election కమిటీ నివేదిక సమర్పించింది. Former President Ram Nath Kovind chaired the One Nation One Election committee.",
+         "ఒకే దేశం-ఒకే ఎన్నిక (ONOE) ఉన్నత స్థాయి కమిటీ — మాజీ రాష్ట్రపతి రామ్‌నాథ్ కోవింద్ అధ్యక్షతన, మార్చి 2024లో రాష్ట్రపతి ముర్ముకు నివేదిక సమర్పణ; లోక్‌సభ + అసెంబ్లీ + స్థానిక సంస్థల ఏకకాల ఎన్నికలు సిఫార్సు. ONOE high-level panel chaired by ex-President Ram Nath Kovind submitted its report (March 2024) recommending simultaneous Lok Sabha, Assembly and local-body polls.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Semiconductor ──
@@ -1446,28 +1446,28 @@ def seed():
          "C) ధోలేరా, గుజరాత్ / Dholera, Gujarat",
          "D) పూణే",
          "C",
-         "భారత్ మొదటి సెమీకండక్టర్ ఫ్యాబ్ (Tata Electronics - PSMC) ధోలేరా, గుజరాత్‌లో నెలకొల్పారు. India's first semiconductor fab (Tata Electronics - PSMC) is being set up in Dholera, Gujarat.",
+         "ISM (India Semiconductor Mission) — ₹76,000 కోట్ల పథకం — మొదటి ఫ్యాబ్ Tata Electronics + PSMC (తైవాన్) జాయింట్ వెంచర్‌గా ధోలేరా (గుజరాత్)లో; ₹91,000 కోట్ల పెట్టుబడి, 50,000 wafer/month సామర్థ్యం. ISM's first semiconductor fab — Tata-PSMC JV at Dholera, Gujarat — has Rs 91,000 cr investment with 50,000 wafers/month capacity.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Rankings ──
         (31135,
-         "2025 Press Freedom Index లో భారత్ స్థానం ఎంత?\n(India's rank in Press Freedom Index 2025?)",
+         "2025 World Press Freedom Index లో భారత్ స్థానం ఎంత?\n(India's rank in World Press Freedom Index 2025?)",
          "A) 100",
          "B) 131",
-         "C) 150",
+         "C) 151",
          "D) 159",
-         "D",
-         "2025 RSF Press Freedom Index లో భారత్ 159వ స్థానంలో ఉంది. India ranked 159th in the 2025 RSF Press Freedom Index.",
+         "C",
+         "**RSF (Reporters Without Borders) World Press Freedom Index 2025: భారత్ 151వ స్థానం** (180 దేశాలలో), 2024 (159) నుండి **8 ర్యాంకులు మెరుగుపడింది** కానీ 'చాలా తీవ్రమైన' కేటగిరీలోనే ఉంది. India's rank improved from 159 (2024) to 151 (2025), still in the 'very serious' category.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31136,
-         "2025 Ease of Doing Business Index లో భారత్ స్థానం ఎంత?\n(India's rank in Ease of Doing Business 2025?)",
+         "World Bank చివరి (DB-2020) Ease of Doing Business Index లో భారత్ స్థానం ఎంత?\n(India's rank in World Bank's final EoDB Index (DB-2020)?)",
          "A) 45",
          "B) 63",
          "C) 77",
          "D) 100",
          "B",
-         "2025 Ease of Doing Business Index లో భారత్ 63వ స్థానంలో ఉంది. India ranked 63rd in Ease of Doing Business Index 2025.",
+         "**World Bank Ease of Doing Business (EoDB)** — DB-2020 ఫైనల్ రిపోర్ట్‌లో **భారత్ 63వ స్థానం** (190 దేశాలు), 2019 (77) నుండి 14 ర్యాంకులు మెరుగుపడింది. **WB 2021లో EoDB ను discontinue చేసింది** (data irregularities); కొత్తది **B-READY (Business Ready)**, 2024 నుండి పూర్తి అమలు. WB discontinued EoDB in 2021; new index = B-READY.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31137,
@@ -1477,7 +1477,7 @@ def seed():
          "C) 130",
          "D) 150",
          "B",
-         "2025 Global Peace Index లో భారత్ 116వ స్థానంలో ఉంది. India ranked 116th in the Global Peace Index 2025.",
+         "GPI (Global Peace Index) — IEP (Institute for Economics and Peace) వార్షిక సూచిక, 163 దేశాల శాంతి స్థాయిని కొలుస్తుంది; భారత్ 116వ స్థానం. GPI by IEP measures peace across 163 nations; India ranks 116th in 2025.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── PM Schemes ──
@@ -1488,7 +1488,7 @@ def seed():
          "C) 100 కోట్లు",
          "D) 120 కోట్లు",
          "B",
-         "PM గరీబ్ కళ్యాణ్ అన్న యోజన కింద 80 కోట్ల మంది ఉచిత ఆహార ధాన్యాలు పొందుతున్నారు. 80 crore people receive free food grains under PM Garib Kalyan Anna Yojana.",
+         "PMGKAY (PM Garib Kalyan Anna Yojana) — 80 కోట్ల NFSA లబ్ధిదారులకు 5 కి.గ్రా/నెల ఉచిత ఆహార ధాన్యాలు; 2024-2028 వరకు 5 సం. పొడిగింపు, మొత్తం వ్యయం ~₹11.8 లక్షల కోట్లు. PMGKAY provides 5 kg/month free foodgrains to 80 crore NFSA beneficiaries; extended 5 years (2024-2028) at ~Rs 11.8 lakh crore.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31139,
@@ -1498,7 +1498,7 @@ def seed():
          "C) 53 కోట్లు / 53 crore",
          "D) 60 కోట్లు",
          "C",
-         "2025 నాటికి PM జన్ ధన్ యోజన కింద 53 కోట్లకు పైగా ఖాతాలు తెరిచారు. More than 53 crore accounts were opened under PM Jan Dhan Yojana by 2025.",
+         "PMJDY (PM Jan Dhan Yojana, ఆగస్టు 2014లో ప్రారంభం) — ఆర్థిక సమ్మిళితత ప్రపంచంలోనే అతిపెద్ద పథకం; 2025 నాటికి 53+ కోట్ల ఖాతాలు, మొత్తం డిపాజిట్లు ₹2.3 లక్షల కోట్లకు పైగా. PMJDY (launched Aug 2014) is the world's largest financial-inclusion scheme — 53+ crore accounts with deposits over Rs 2.3 lakh crore by 2025.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India-Bangladesh ──
@@ -1509,7 +1509,7 @@ def seed():
          "C) సైనిక తిరుగుబాటు",
          "D) ఆర్థిక సంక్షోభం",
          "B",
-         "2024 ఆగస్టులో బంగ్లాదేశ్‌లో కోటా సంస్కరణ ఉద్యమం హింసాత్మకంగా మారి షేక్ హసీనా ప్రభుత్వం పతనమైంది. In August 2024, the quota reform movement in Bangladesh turned violent, leading to the fall of Sheikh Hasina's government.",
+         "ఆగస్టు 2024లో బంగ్లాదేశ్‌లో ప్రభుత్వ ఉద్యోగాలలో 30% స్వాతంత్ర్య-యోధ కోటాకు వ్యతిరేక విద్యార్థి ఉద్యమం హింసాత్మకంగా మారి షేక్ హసీనా రాజీనామా చేసి భారత్ పారిపోయారు; మహ్మద్ యూనుస్ తాత్కాలిక ప్రధాన సలహాదారు అయ్యారు. The August 2024 student-led 'quota reform' protests against 30% freedom-fighter job-reservation forced PM Sheikh Hasina to flee to India; Muhammad Yunus became interim Chief Adviser.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Coal ──
@@ -1520,7 +1520,7 @@ def seed():
          "C) 1.2 Billion Tonnes",
          "D) 1.5 Billion Tonnes",
          "B",
-         "భారత్ 2025-26 నాటికి 1 బిలియన్ టన్నుల (1000 MT) బొగ్గు ఉత్పత్తి లక్ష్యంగా పెట్టుకుంది. India targets 1 Billion Tonne (1000 MT) coal production by 2025-26.",
+         "Coal India Ltd (CIL) — ప్రపంచ అతిపెద్ద బొగ్గు మైనర్ — 2025-26 నాటికి 1 బిలియన్ టన్నుల (1000 MT) ఉత్పత్తి లక్ష్యం; ఇంధన భద్రత మరియు దిగుమతుల తగ్గింపు లక్ష్యాలతో. Coal India (world's largest coal miner) targets 1 Billion Tonne (1000 MT) output by 2025-26 to bolster energy security and cut imports.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India 5G ──
@@ -1531,7 +1531,7 @@ def seed():
          "C) 2023",
          "D) 2024",
          "B",
-         "భారత్‌లో 5G సేవలు అక్టోబర్ 2022లో ప్రారంభమయ్యాయి. 5G services in India were launched in October 2022.",
+         "5G (5వ తరం మొబైల్ నెట్‌వర్క్) — భారత్‌లో PM మోడీ అక్టోబర్ 1, 2022న IMC సమ్మేళనం వద్ద ప్రారంభించారు; Reliance Jio + Airtel మోహరింపు; 2025 నాటికి 4.5 లక్షల BTS సైట్లు. 5G in India was launched by PM Modi on Oct 1, 2022 at IMC; deployed by Jio + Airtel with 4.5 lakh BTS sites by 2025.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Judiciary ──
@@ -1542,7 +1542,7 @@ def seed():
          "C) జస్టిస్ హేమంత్ గుప్తా",
          "D) జస్టిస్ నాగేశ్వర్ రావు",
          "B",
-         "జస్టిస్ సంజీవ్ ఖన్నా నవంబర్ 2024లో జస్టిస్ DY చంద్రచూడ్ తర్వాత 51వ CJI గా అయ్యారు. Justice Sanjiv Khanna became the 51st CJI in November 2024, succeeding Justice DY Chandrachud.",
+         "జస్టిస్ సంజీవ్ ఖన్నా — 51వ CJI (నవంబర్ 11, 2024 – మే 13, 2025); ఎలక్టోరల్ బాండ్స్ తీర్పులో పాలుపంచుకొన్నారు; తర్వాత 52వ CJIగా జస్టిస్ BR గవాయ్. Justice Sanjiv Khanna served as 51st CJI (Nov 11, 2024 – May 13, 2025); part of electoral-bonds bench; succeeded by Justice BR Gavai as 52nd CJI.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31144,
@@ -1552,7 +1552,7 @@ def seed():
          "C) స్వామి రంగనాథానంద",
          "D) జ్ఞానస్వరూప్ సానంద్",
          "A",
-         "2025 జ్ఞానపీఠ పురస్కారం (2024 కోసం) ప్రఖ్యాత కవి మరియు గేయరచయిత గుల్జార్ కు లభించింది. The 2025 Jnanpith Award (for 2024) was awarded to renowned poet and lyricist Gulzar.",
+         "జ్ఞానపీఠ్ — భారత అత్యున్నత సాహిత్య పురస్కారం (1965లో స్థాపన) — 58వ ప్రదానం గుల్జార్ (ఉర్దూ) మరియు సంస్కృత పండితుడు రాంభద్రాచార్యకు సంయుక్తంగా (2023 సంవత్సరానికి) ప్రకటించారు. Jnanpith (India's highest literary award, instituted 1965) — 58th honour was awarded jointly to Gulzar (Urdu) and Sanskrit scholar Rambhadracharya for year 2023.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Startups ──
@@ -1563,7 +1563,7 @@ def seed():
          "C) 118+",
          "D) 200",
          "C",
-         "2025 నాటికి భారత్‌లో 118కి పైగా యూనికార్న్ స్టార్టప్‌లు ఉన్నాయి. India had more than 118 unicorn startups by 2025.",
+         "యూనికార్న్ — $1B+ విలువ గల ప్రైవేట్ స్టార్టప్; 2025 నాటికి భారత్‌లో 118+ యూనికార్న్‌లు (USA, China తర్వాత ప్రపంచంలో 3వది); మొత్తం విలువ ~$350B. India has 118+ unicorns (private startups valued $1B+) — 3rd globally after USA and China, with combined valuation ~$350B.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Electric Vehicles ──
@@ -1574,7 +1574,7 @@ def seed():
          "C) రైల్వే",
          "D) విమానయానం",
          "A",
-         "PM E-DRIVE (Electric Drive Revolution in Innovative Vehicle Enhancement) పథకం ఎలక్ట్రిక్ వాహనాల వినియోగాన్ని ప్రోత్సహించడానికి. PM E-DRIVE scheme promotes adoption of Electric Vehicles in India.",
+         "PM E-DRIVE (Electric Drive Revolution in Innovative Vehicle Enhancement) — FAME-II తర్వాత తదుపరి EV పథకం; సెప్టెంబర్ 2024లో ప్రారంభం, ₹10,900 కోట్ల వ్యయం, 2-3W, ఇ-బస్‌లు, ఛార్జింగ్ మౌలిక సదుపాయాలను 2 సం. మద్దతుగా. PM E-DRIVE (Sept 2024) is the successor to FAME-II — Rs 10,900 cr outlay supporting e-2/3-wheelers, e-buses and charging infra for 2 years.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Welfare ──
@@ -1585,7 +1585,7 @@ def seed():
          "C) 10 కోట్లు / 10 crore",
          "D) 12 కోట్లు",
          "C",
-         "PM ఉజ్వల యోజన కింద 2025 నాటికి 10 కోట్ల మందికి పైగా LPG కనెక్షన్లు ఇచ్చారు. More than 10 crore LPG connections were given under PM Ujjwala Yojana by 2025.",
+         "PMUY (PM Ujjwala Yojana, మే 2016లో ప్రారంభం) — BPL మహిళలకు ఉచిత LPG కనెక్షన్లు ఇవ్వడం ద్వారా శుభ్రమైన వంట ఇంధనం; 2025 నాటికి 10+ కోట్ల కనెక్షన్లు; ప్రతి సిలిండర్‌కు ₹300 సబ్సిడీ. PMUY (launched May 2016) provides free LPG connections to BPL women — 10+ crore connections by 2025 with Rs 300/cylinder subsidy.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31148,
@@ -1595,7 +1595,7 @@ def seed():
          "C) మహిళా ఉద్యోగం",
          "D) జల్ జీవన్ పొడిగింపు",
          "A",
-         "POSHAN 2.0 మిషన్ పిల్లల పోషకాహార లోపం, రక్తహీనత తగ్గించడం మరియు తల్లుల ఆరోగ్యం మెరుగుపడటం లక్ష్యంగా పెట్టుకుంది. POSHAN 2.0 Mission aims to reduce malnutrition, anaemia, and improve maternal health.",
+         "POSHAN 2.0 — మిషన్ సక్షమ్ అంగన్‌వాడీ & పోషణ్ 2.0 — ICDS, పోషణ్ అభియాన్, కిషోరీ పథకాలను విలీనం చేసిన ఏకీకృత పోషకాహార మిషన్; 6 సం. లోపు పిల్లలు, గర్భిణీలు, పాలిచ్చే తల్లులలో పోషకాహార లోపం & రక్తహీనత తగ్గింపు లక్ష్యం. POSHAN 2.0 (Saksham Anganwadi) integrates ICDS, Poshan Abhiyaan and Kishori schemes to cut malnutrition and anaemia in children <6, pregnant and lactating women.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Finance ──
@@ -1606,7 +1606,7 @@ def seed():
          "C) $700 billion+",
          "D) $1 trillion",
          "C",
-         "2025లో భారత విదేశీ రుణం $700 బిలియన్లకు పైగా. India's external debt exceeded $700 billion in 2025.",
+         "External Debt — విదేశీ రుణం; RBI ప్రకారం మార్చి 2025 నాటికి భారత విదేశీ రుణం $736 బిలియన్లు; GDP లో 19.1%; ఎక్కువగా దీర్ఘకాలిక & USD ఆధారిత. India's external debt was ~$736 billion (19.1% of GDP) per RBI as of March 2025 — mostly long-term and USD-denominated.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Road/Infra ──
@@ -1617,18 +1617,18 @@ def seed():
          "C) 34 km",
          "D) 50 km",
          "C",
-         "భారత్ 2023-24లో సగటున రోజుకు 34 కి.మీ. జాతీయ రహదారులు నిర్మించింది. India constructed an average of 34 km of national highways per day in 2023-24.",
+         "NHAI/MoRTH గణాంకాల ప్రకారం భారత్ 2023-24లో రోజుకు సగటున 34 కి.మీ. రహదారులు నిర్మించింది — ఇది గత దశాబ్దంలో అత్యధికం; 2026 నాటికి 50 కి.మీ./రోజు లక్ష్యం. India built ~34 km of NH/day in 2023-24 (highest in a decade) per NHAI/MoRTH; target is 50 km/day by 2026.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Tourism ──
         (31151,
-         "భారత్ 2025 లో UNESCO విశ్వ వారసత్వ స్థలాల జాబితాలో ఎన్ని ఉన్నాయి?\n(Number of UNESCO World Heritage Sites in India in 2025?)",
+         "భారత్ 2025 లో UNESCO World Heritage Sites జాబితాలో ఎన్ని ఉన్నాయి?\n(Number of UNESCO World Heritage Sites in India as of 2025?)",
          "A) 40",
          "B) 42",
          "C) 43",
          "D) 45",
-         "B",
-         "2025 నాటికి భారత్‌లో 42 UNESCO విశ్వ వారసత్వ స్థలాలు ఉన్నాయి. India has 42 UNESCO World Heritage Sites as of 2025.",
+         "C",
+         "**భారత్‌లో 43 UNESCO World Heritage Sites** (2024 జూలై నుండి). **43వ సైట్: 'Moidams' (అస్సాం, Ahom-era burial mounds)** — జూలై 2024లో జాబితాలో చేరింది. **UNESCO World Heritage Convention 1972** కింద గుర్తింపు. భారత్ ప్రపంచంలో **6వ స్థానం** (Italy 60+, China, Germany, France, Spain ముందున్నాయి).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Agri/Food ──
@@ -1639,7 +1639,7 @@ def seed():
          "C) 332 Million Tonnes",
          "D) 350 Million Tonnes",
          "C",
-         "2024-25లో భారత్ రికార్డు 332 మిలియన్ టన్నుల ఆహార ధాన్యాలు ఉత్పత్తి చేసింది. India produced a record 332 million tonnes of food grain in 2024-25.",
+         "వ్యవసాయ మంత్రిత్వ శాఖ 3rd Advance Estimates ప్రకారం 2024-25లో రికార్డు 332.3 మిలియన్ టన్నుల ఆహార ధాన్యాలు; ముందటి సం. (2023-24)తో పోలిస్తే 6.8% పెరుగుదల; వరి, గోధుమ, మొక్కజొన్నలో రికార్డులు. Agri Ministry's 3rd Advance Estimates show record 332.3 MT food grains in 2024-25 — up 6.8% YoY with rice, wheat and maize records.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India-USA ──
@@ -1650,7 +1650,7 @@ def seed():
          "C) $190 billion",
          "D) $200 billion+",
          "C",
-         "2025లో భారత-అమెరికా ద్వైపాక్షిక వాణిజ్యం $190 బిలియన్లకు పైగా. India-USA bilateral trade exceeded $190 billion in 2025.",
+         "భారత్-USA ద్వైపాక్షిక వాణిజ్యం FY 2024-25లో ~$190 బిలియన్లు (వస్తువులు + సేవలు); USA భారత్ యొక్క అతిపెద్ద వాణిజ్య భాగస్వామి; 2030 నాటికి $500B లక్ష్యం. India-USA bilateral trade (goods + services) was ~$190 billion in FY25 — USA is India's largest trading partner with a $500B target by 2030.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Chandrayaan 3 ──
@@ -1661,7 +1661,7 @@ def seed():
          "C) సెప్టెంబర్ 5, 2023",
          "D) జూలై 14, 2023",
          "B",
-         "Chandrayaan-3 యొక్క విక్రమ్ ల్యాండర్ ఆగస్టు 23, 2023న చంద్రుని దక్షిణ ధ్రువం వద్ద విజయవంతంగా ల్యాండ్ అయింది. Chandrayaan-3's Vikram lander successfully landed near the Moon's South Pole on August 23, 2023.",
+         "Chandrayaan-3 — విక్రమ్ ల్యాండర్ + ప్రజ్ఞాన్ రోవర్ — ఆగస్టు 23, 2023న చంద్రుని దక్షిణ ధ్రువం దగ్గర మృదువుగా దిగిన మొదటి దేశంగా భారత్ నిలిచింది; ల్యాండింగ్ స్థలం 'శివశక్తి'. ఈ తేదీని National Space Day గా ప్రకటించారు. Chandrayaan-3's Vikram lander touched down near the Moon's south pole on Aug 23, 2023 — making India the first nation to soft-land there. The site is named 'Shiv Shakti' and Aug 23 is now National Space Day.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Pharma ──
@@ -1672,7 +1672,7 @@ def seed():
          "C) 3వది",
          "D) 5వది",
          "A",
-         "భారత్ ప్రపంచంలో అతిపెద్ద జెనెరిక్ ఔషధ తయారీ దేశంగా నం.1 స్థానంలో ఉంది. India is the No.1 global producer of generic medicines in the world.",
+         "భారత్ — 'ప్రపంచ ఫార్మసీ' (Pharmacy of the World) — పరిమాణం ద్వారా జెనెరిక్ ఔషధాల అతిపెద్ద ఉత్పత్తిదేశం; ప్రపంచ టీకాల సరఫరాలో ~60%, US జెనెరిక్‌లలో 40% శేర్; US FDA-ఆమోదిత ప్లాంట్‌లు US తర్వాత అత్యధికం. India is 'Pharmacy of the World' — No.1 generic-medicine producer by volume, supplying ~60% of global vaccines and 40% of US generics.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Steel ──
@@ -1683,7 +1683,7 @@ def seed():
          "C) 3వది",
          "D) 4వది",
          "B",
-         "భారత్ ప్రపంచ ఉక్కు ఉత్పత్తిలో 2వ స్థానంలో ఉంది (చైనా తర్వాత). India ranks 2nd in world steel production (after China).",
+         "WSA (World Steel Association) ప్రకారం 2024-25లో భారత్ ~145 MT ఉక్కు ఉత్పత్తితో చైనా తర్వాత ప్రపంచంలో 2వ స్థానం; National Steel Policy 2017 — 2030-31 నాటికి 300 MT లక్ష్యం. India is the 2nd largest crude-steel producer (~145 MT in 2024-25) per WSA, behind China; National Steel Policy 2017 targets 300 MT by 2030-31.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Railways ──
@@ -1694,7 +1694,7 @@ def seed():
          "C) 136+",
          "D) 200",
          "C",
-         "2025 నాటికి భారత రైల్వే 136కి పైగా వందే భారత్ ఎక్స్‌ప్రెస్ రైళ్లు నడిపింది. Indian Railways operated more than 136 Vande Bharat Express trains by 2025.",
+         "Vande Bharat Express — ICF Chennai లో తయారైన భారతదేశ స్వదేశీ సెమీ-హై-స్పీడ్ రైలు (గరిష్ఠ 160 km/h); మొదటి సర్వీస్ ఫిబ్రవరి 2019 (Delhi-Varanasi); 2025 నాటికి 136+ సర్వీస్‌లు. Vande Bharat (India's indigenous semi-HSR built at ICF Chennai, 160 km/h max) — first run Feb 2019 (Delhi-Varanasi); 136+ services by 2025.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Diplomatic ──
@@ -1705,7 +1705,7 @@ def seed():
          "C) సల్మాన్ ఖుర్షీద్",
          "D) నట్వర్ సింగ్",
          "B",
-         "S. జైశంకర్ 2025-26లో భారత విదేశాంగ మంత్రిగా సేవలు అందించారు. S. Jaishankar is India's External Affairs Minister in 2025-26.",
+         "డా. S. జైశంకర్ (1977 IFS, మాజీ విదేశాంగ కార్యదర్శి) — మే 2019 నుండి EAM (External Affairs Minister); Modi 3.0 మంత్రివర్గంలో కొనసాగుతున్నారు; గుజరాత్ నుండి రాజ్యసభ సభ్యుడు. Dr S. Jaishankar (1977 IFS, ex-Foreign Secretary) is EAM since May 2019 and continues in Modi 3.0 cabinet — Rajya Sabha MP from Gujarat.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Health ──
@@ -1716,7 +1716,7 @@ def seed():
          "C) 22",
          "D) 30",
          "C",
-         "2025-26 నాటికి భారతదేశవ్యాప్తంగా 22 AIIMS ఉన్నాయి. There are 22 AIIMS across India as of 2025-26.",
+         "AIIMS (All India Institute of Medical Sciences) — 1956 AIIMS చట్టం కింద ఏర్పాటు; మొదటి AIIMS ఢిల్లీ (1956); PMSSY ద్వారా విస్తరణతో 2025-26 నాటికి 22 AIIMS ఆమోదం పొందాయి (అన్నీ క్రియాత్మకంగా/నిర్మాణంలో). 22 AIIMS have been approved across India by 2025-26 under the PMSSY expansion (1st AIIMS Delhi, 1956).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31160,
@@ -1726,7 +1726,7 @@ def seed():
          "C) రూ.10,000 కోట్లు",
          "D) రూ.3,437 కోట్లు",
          "D",
-         "2026-27 బడ్జెట్‌లో 70+ సీనియర్ సిటిజన్లకు ఆయుష్మాన్ భారత్ కింద రూ.3,437 కోట్లు కేటాయించారు. Rs 3,437 crore was allocated for Ayushman Bharat coverage for 70+ senior citizens in Budget 2026-27.",
+         "Ayushman Bharat PM-JAY ను అక్టోబర్ 2024లో 70+ సీనియర్ సిటిజన్లందరికి (ఆదాయంతో సంబంధం లేకుండా) ₹5 లక్షల ఉచిత చికిత్స కవరేజ్ గా విస్తరించారు; బడ్జెట్ 2026-27లో ₹3,437 కోట్లు కేటాయించారు. AB PM-JAY was extended in Oct 2024 to all 70+ citizens (income-agnostic) for Rs 5 lakh free treatment cover; Budget 2026-27 allocated Rs 3,437 crore.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Milk ──
@@ -1737,7 +1737,7 @@ def seed():
          "C) 3వది",
          "D) 5వది",
          "A",
-         "భారత్ ప్రపంచంలో అతిపెద్ద పాల ఉత్పత్తి దేశంగా 1వ స్థానంలో ఉంది. India ranks 1st in the world in milk production.",
+         "FAO/NDDB ప్రకారం భారత్ 1998 నుండి ప్రపంచంలో అతిపెద్ద పాల ఉత్పత్తిదారు (~240 MT/సం., ప్రపంచ ఉత్పత్తిలో 24%); 'శ్వేత విప్లవం' వర్గీస్ కురియన్ నేతృత్వంలో Operation Flood కింద జరిగింది. India has been the world's largest milk producer since 1998 (~240 MT/yr, 24% of global output) per FAO/NDDB — 'White Revolution' led by Verghese Kurien via Operation Flood.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India-China ──
@@ -1748,7 +1748,7 @@ def seed():
          "C) అరుణాచల్ ప్రదేశ్",
          "D) సిక్కిం",
          "B",
-         "అక్టోబర్ 2024లో భారత్-చైనా డెప్సాంగ్ మరియు డెంచోక్ ప్రాంతాల్లో పట్రోలింగ్ హక్కులు పునరుద్ధరించే ఒప్పందం కుదిరింది. India and China reached a patrolling agreement for Depsang and Demchok areas in October 2024.",
+         "అక్టోబర్ 21, 2024న భారత్-చైనా తూర్పు లడఖ్‌లోని డెప్సాంగ్ మరియు డెంచోక్ లో పెట్రోలింగ్ హక్కులను 2020-pre status కు పునరుద్ధరించే ఒప్పందం; కజాన్ BRICS సదస్సు సందర్భంగా మోడీ-షీ సమావేశం. India and China agreed on Oct 21, 2024 to restore patrolling at Depsang and Demchok (Eastern Ladakh) to pre-2020 status — leading to the Modi-Xi meeting at the Kazan BRICS Summit.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Fisheries ──
@@ -1759,7 +1759,7 @@ def seed():
          "C) 3వది / 3rd",
          "D) 4వది",
          "C",
-         "భారత్ ప్రపంచ చేపల ఉత్పత్తిలో 3వ స్థానంలో ఉంది. India ranks 3rd in world fisheries production.",
+         "DoF (Department of Fisheries) ప్రకారం భారత్ ప్రపంచంలో 3వ అతిపెద్ద చేపల ఉత్పత్తిదేశం (~17.5 MT/సం.); 2వ అతిపెద్ద Aquaculture ఉత్పత్తిదేశం; ప్రపంచ చేపల ఉత్పత్తిలో 8%; PMMSY దీని మీద దృష్టి. India is the 3rd-largest fish producer globally (~17.5 MT/yr, ~8% of world output) and 2nd in aquaculture per DoF — PMMSY drives the sector.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Digital India ──
@@ -1770,7 +1770,7 @@ def seed():
          "C) రహదారులు",
          "D) నౌకాయానం",
          "B",
-         "DigiYatra పథకం విమానాశ్రయాలలో ముఖ గుర్తింపు (facial recognition) ద్వారా పేపర్‌లెస్ బోర్డింగ్ కల్పించే విమానయాన పథకం. DigiYatra provides paperless boarding at airports using facial recognition technology.",
+         "DigiYatra — పౌర విమానయాన మంత్రిత్వ శాఖ ఆధ్వర్యంలో డిసెంబర్ 2022లో ప్రారంభం; Aadhaar-ఆధారిత Facial Recognition Technology (FRT) ద్వారా పేపర్‌లెస్/కాంటాక్ట్‌లెస్ ఎయిర్‌పోర్ట్ ప్రవేశం; 2025 నాటికి 28+ ఎయిర్‌పోర్ట్‌లలో అమలు. DigiYatra (Civil Aviation Ministry, launched Dec 2022) enables Aadhaar-based facial-recognition, paperless/contactless airport entry — live at 28+ airports by 2025.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Submarine ──
@@ -1781,7 +1781,7 @@ def seed():
          "C) డీజిల్-ఎలక్ట్రిక్",
          "D) ఆర్టిఫిషియల్ ఇంటెలిజెన్స్ జలాంతర్గామి",
          "B",
-         "INS అరిఘాత్ భారత రెండో అణు-శక్తి సంపన్న బాలిస్టిక్ క్షిపణి జలాంతర్గామి (SSBN). INS Arighat is India's second nuclear-powered ballistic missile submarine (SSBN).",
+         "INS అరిఘాత్ — భారత 2వ స్వదేశీ SSBN (Ship Submersible Ballistic Nuclear); ATV ప్రాజెక్టు కింద విశాఖపట్నం SBC లో నిర్మించబడింది; ఆగస్టు 29, 2024న కమిషన్; K-15/K-4 SLBMలతో సాగర-త్రయ వ్యూహాత్మక డిటెరెన్స్‌కు దోహదం. INS Arighat is India's 2nd indigenous SSBN, commissioned Aug 29, 2024 at Visakhapatnam under ATV project — carries K-15/K-4 SLBMs to complete the nuclear triad.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Pahalgam ──
@@ -1792,7 +1792,7 @@ def seed():
          "C) 26",
          "D) 45",
          "C",
-         "2025 ఏప్రిల్‌లో పహల్గామ్‌లో జరిగిన ఉగ్రవాద దాడిలో 26 మంది పర్యాటకులు మరణించారు. 26 tourists were killed in the Pahalgam terror attack in April 2025.",
+         "ఏప్రిల్ 22, 2025న J&K పహల్గామ్ సమీపంలోని బైసరన్ లోయలో TRF (LeT proxy) ఉగ్రవాదులు పర్యాటకులపై దాడి చేయడంతో 26 మంది (25 భారతీయ టూరిస్టులు + 1 నేపాలీ) మరణించారు; దీనికి ప్రతిస్పందనగా 'ఆపరేషన్ సింధూర్' జరిగింది. On Apr 22, 2025 TRF terrorists attacked tourists at Baisaran valley near Pahalgam (J&K), killing 26 (25 Indian tourists + 1 Nepali) — triggering Operation Sindoor.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31167,
@@ -1802,7 +1802,7 @@ def seed():
          "C) బంగ్లాదేశ్",
          "D) నేపాల్",
          "B",
-         "భారత సైన్యం ఆపరేషన్ సింధూర్‌లో పాకిస్తాన్ మరియు పాక్-ఆక్రమిత కాశ్మీర్‌లో ఉన్న 9 ఉగ్రవాద స్థావరాలపై దాడులు జరిపింది. In Operation Sindoor, Indian forces struck 9 terrorist camps in Pakistan and Pakistan-Occupied Kashmir.",
+         "మే 7, 2025 తెల్లవారుజామున భారత త్రి-సేవలు 'ఆపరేషన్ సింధూర్' ద్వారా పాకిస్తాన్ + PoK లోని 9 LeT/JeM ఉగ్రవాద శిబిరాలపై (Bahawalpur, Muridke, Muzaffarabad సహా) ఖచ్చితమైన మిసైల్/ఎయిర్ స్ట్రైక్‌లు నిర్వహించాయి. On May 7, 2025 the Indian tri-services launched Op Sindoor — precision missile/air strikes on 9 LeT/JeM terror camps in Pakistan and PoK including Bahawalpur, Muridke, Muzaffarabad.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31168,
@@ -1812,7 +1812,7 @@ def seed():
          "C) UN ఆజ్ఞతో",
          "D) ఆర్థిక వివాదం",
          "B",
-         "2025 ఏప్రిల్ పహల్గామ్ ఉగ్రవాద దాడి తర్వాత మే 2025లో భారత్ ఆపరేషన్ సింధూర్ నిర్వహించింది. India conducted Operation Sindoor in May 2025 as a retaliatory strike following the April 2025 Pahalgam terror attack.",
+         "ఏప్రిల్ 22, 2025 పహల్గామ్ దాడిలో 26 మంది పర్యాటకులు మరణించిన తర్వాత, భారత్ మే 7, 2025న 'ఆపరేషన్ సింధూర్' పేరుతో సరిహద్దు దాటి ఉగ్రవాద శిబిరాలపై ప్రతీకార దాడులు జరిపింది; బలిదానం పొందిన బాధితుల భార్యలను సూచిస్తూ 'సింధూర్' పేరు. India launched Operation Sindoor on May 7, 2025 — cross-border strikes on terror camps — in retaliation for the Apr 22 Pahalgam attack that killed 26 tourists. The name 'Sindoor' honours the widowed victims.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Census ──
@@ -1823,7 +1823,7 @@ def seed():
          "C) 130 కోట్లు",
          "D) 140 కోట్లు",
          "B",
-         "Census 2011 ప్రకారం భారత జనాభా 121 కోట్లు (1.21 billion). India's population as per Census 2011 was 121 crore (1.21 billion).",
+         "Census 2011 (15వ ఇండియా జనగణన) ప్రకారం భారత జనాభా 121.08 కోట్లు; దశాబ్ద పెరుగుదల 17.7%, లింగ నిష్పత్తి 940, సాక్షరత 74.04%. తదుపరి Census 2026-27లో జరగనుంది (కుల గణనతో). Per Census 2011, India's population was 121.08 crore (decadal growth 17.7%, sex ratio 940, literacy 74.04%) — next Census is scheduled for 2026-27 with caste enumeration.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31170,
@@ -1833,7 +1833,7 @@ def seed():
          "C) 145 కోట్లు",
          "D) 150 కోట్లు",
          "C",
-         "2026 నాటికి భారత జనాభా అంచనా సుమారు 145 కోట్లు (1.45 billion). India's estimated population by 2026 is approximately 145 crore (1.45 billion).",
+         "UN World Population Prospects ప్రకారం భారత్ ఏప్రిల్ 2023లోనే చైనాను అధిగమించి అత్యధిక జనాభా గల దేశంగా అయింది; 2026 నాటికి అంచనా ~145 కోట్లు (1.45 billion); World Bank, UNFPA అంచనాలు దగ్గర్లో. India overtook China as the most populous country in April 2023 per UN World Population Prospects; estimated ~145 crore (1.45 billion) by 2026.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Science ──
@@ -1844,7 +1844,7 @@ def seed():
          "C) ISRO నియంత్రణ",
          "D) రక్షణ క్షిపణి అభివృద్ధి",
          "B",
-         "InSPACe భారత ప్రైవేట్ అంతరిక్ష పరిశ్రమను నియంత్రించే మరియు అనుమతులు ఇచ్చే సంస్థ. InSPACe is the Indian regulatory and authorization body for the private space industry.",
+         "**InSPACe** (Indian National Space Promotion and Authorisation Centre) — 2020లో DoS కింద ఏర్పాటు; ప్రైవేట్ అంతరిక్ష సంస్థలకు ఏకీకృత నియంత్రణ/అనుమతుల మూకుడు. **InSPACe is the single-window regulator/authoriser for India's private space sector, set up in 2020 under the Dept of Space.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Quad ──
@@ -1855,7 +1855,7 @@ def seed():
          "C) న్యూఢిల్లీ",
          "D) వాషింగ్టన్ DC / Washington DC",
          "D",
-         "2025 QUAD నాయకుల శిఖర సమ్మేళనం వాషింగ్టన్ DC లో జరిగింది. The 2025 QUAD Leaders' Summit was held in Washington DC.",
+         "**QUAD** (Quadrilateral Security Dialogue: India, US, Japan, Australia) — 2025 leaders' summit hosted by US in **Washington DC**; focus on Indo-Pacific, critical tech, supply chains. **2025 QUAD Leaders' Summit was held in Washington DC.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Literacy ──
@@ -1866,7 +1866,7 @@ def seed():
          "C) 77.7%",
          "D) 90%",
          "C",
-         "NFHS మరియు సంబంధిత నివేదికల ప్రకారం భారత అక్షరాస్యత రేటు 77.7%. India's literacy rate is approximately 77.7% as per NFHS and related reports.",
+         "**NFHS-5/PLFS** నివేదికల ప్రకారం భారత అక్షరాస్యత ~**77.7%** (7+ ఏళ్ళు); పురుషులు ~84%, మహిళలు ~71% — లింగ అంతరం ఇంకా ఉంది. **India's literacy rate is ~77.7% per NFHS-5/PLFS — males ~84%, females ~71%.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Satellite ──
@@ -1877,7 +1877,7 @@ def seed():
          "C) SpaceX Falcon 9 / ఫాల్కన్ 9",
          "D) Ariane 5",
          "C",
-         "GSAT-N2 (GSAT-20) ఉపగ్రహం SpaceX Falcon 9 రాకెట్ ద్వారా నవంబర్ 2024లో ప్రయోగించారు. GSAT-N2 (GSAT-20) was launched via SpaceX Falcon 9 in November 2024.",
+         "**GSAT-N2 (GSAT-20)** — ISRO/NSIL భారీ Ka-band కమ్యూనికేషన్ ఉపగ్రహం; దాని 4,700 kg బరువు LVM3 సామర్థ్యం మించడంతో **SpaceX Falcon 9** ద్వారా నవంబర్ 2024లో ఫ్లోరిడా నుంచి ప్రయోగం — NSIL-SpaceX మొదటి కాంట్రాక్ట్. **GSAT-N2 was launched on SpaceX Falcon 9 (Nov 2024) — ISRO's first SpaceX launch.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Water ──
@@ -1888,7 +1888,7 @@ def seed():
          "C) 85%",
          "D) 95%+",
          "D",
-         "2025 నాటికి జల్ జీవన్ మిషన్ 95%కి పైగా గ్రామీణ గృహాలకు పైపు నీటి కనెక్షన్ అందించింది. Jal Jeevan Mission provided tap water connections to more than 95% of rural households by 2025.",
+         "**JJM** (Jal Jeevan Mission, ఆగస్టు 2019లో ప్రారంభం) — 'Har Ghar Jal' కింద ప్రతి గ్రామీణ ఇంటికి కుళాయి నీటి కనెక్షన్; 2025 నాటికి **95%+ కవరేజ్**; సంబంధిత మంత్రిత్వ శాఖ Jal Shakti. **Jal Jeevan Mission covered 95%+ rural households with tap water connections by 2025.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Banking ──
@@ -1899,7 +1899,7 @@ def seed():
          "C) 12 / 12",
          "D) 18",
          "C",
-         "వివిధ విలీన ప్రక్రియల తర్వాత భారత్‌లో 2025 నాటికి 12 ప్రభుత్వ రంగ బ్యాంకులు ఉన్నాయి. After various mergers, India has 12 Public Sector Banks (PSBs) as of 2025.",
+         "**PSB** (Public Sector Bank) — 2017లో 27 ఉన్నవి 2019-20 మెగా-విలీనాల తర్వాత **12** కు తగ్గాయి (SBI, PNB, BoB, Canara, Union, etc.). **India has 12 PSBs as of 2025, post the 2019-20 mega-mergers.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India MSME ──
@@ -1910,7 +1910,7 @@ def seed():
          "C) 30%+",
          "D) 40%",
          "C",
-         "భారత MSME రంగం GDP లో 30%కి పైగా వాటా కలిగి ఉంది మరియు 11 కోట్ల మందికి ఉపాధి కల్పిస్తోంది. India's MSME sector contributes over 30% to GDP and employs over 11 crore people.",
+         "**MSME** (Micro, Small & Medium Enterprises; MSMED Act 2006, 2020లో నిర్వచనం సవరణ) — GDPలో **~30%**, ఎగుమతుల్లో ~45%, 11+ కోట్ల ఉద్యోగాలు. **MSME contributes ~30% to GDP, ~45% of exports, and employs 11+ crore people.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Nuclear ──
@@ -1921,7 +1921,7 @@ def seed():
          "C) 7,480 MW",
          "D) 10,000 MW",
          "C",
-         "2026 నాటికి భారత్ అణు విద్యుత్ సామర్థ్యం సుమారు 7,480 MW. India's nuclear power capacity is approximately 7,480 MW by 2026.",
+         "**NPCIL** నిర్వహించే భారత అణు విద్యుత్ సామర్థ్యం 2026 నాటికి **~7,480 MW** (22+ రియాక్టర్లు); 2031-32 నాటికి 22,480 MW లక్ష్యం; Kudankulam (TN) అతిపెద్ద ప్లాంట్. **India's installed nuclear capacity is ~7,480 MW (2026), targeting 22,480 MW by 2031-32.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Corruption ──
@@ -1932,7 +1932,7 @@ def seed():
          "C) 50",
          "D) 60",
          "B",
-         "2025 Transparency International CPI లో భారత్ స్కోర్ 39/100. India's score in the 2025 Transparency International CPI is 39/100.",
+         "**CPI** (Corruption Perceptions Index, Transparency International వార్షిక సూచీ) 2025లో భారత్‌కు **39/100** స్కోర్; ర్యాంకు ~93/180; డెన్మార్క్ టాప్. **India scored 39/100 in TI's 2025 Corruption Perceptions Index, ranking around 93/180.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Sports Specific ──
@@ -1943,7 +1943,7 @@ def seed():
          "C) భారత్ / India",
          "D) బంగ్లాదేశ్",
          "C",
-         "భారత్ 2025 Kho-Kho ప్రపంచ కప్ పురుషులు మరియు మహిళలు రెండింటిలో గెలిచింది. India won the 2025 Kho-Kho World Cup in both Men's and Women's categories.",
+         "**తొలి Kho-Kho World Cup** (జనవరి 2025, న్యూఢిల్లీ IGI స్టేడియం) — భారత్ పురుషుల మరియు మహిళల విభాగాలు రెండింటిలో ఛాంపియన్; ఫైనల్లో నేపాల్‌ను ఓడించింది. **India won both Men's and Women's titles at the inaugural Kho-Kho World Cup (Jan 2025, New Delhi), beating Nepal in both finals.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Infra ──
@@ -1954,7 +1954,7 @@ def seed():
          "C) అంతరిక్ష పరిశోధన",
          "D) డిజిటల్ ఇండియా",
          "B",
-         "PM గతిశక్తి జాతీయ మాస్టర్ ప్లాన్ రైల్వే, రహదారులు, విమానాశ్రయాలు, పోర్టులు అన్నీ కలిపి multimodal connectivity నిర్మించే లక్ష్యం. PM GatiShakti National Master Plan aims to build multimodal connectivity integrating railways, roads, airports, and ports.",
+         "**PM GatiShakti** (అక్టోబర్ 2021లో ప్రారంభం, DPIIT నేతృత్వంలో) — 16+ మంత్రిత్వ శాఖల అవస్థాపన ప్రాజెక్టుల కోసం **multimodal connectivity** GIS-based ఏకీకృత ప్లాట్‌ఫామ్; logistics ఖర్చు తగ్గించటం లక్ష్యం. **PM GatiShakti is a 2021 GIS-based platform integrating 16+ ministries for multimodal infrastructure planning.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India-Russia ──
@@ -1965,7 +1965,7 @@ def seed():
          "C) $100 billion",
          "D) $5 billion",
          "B",
-         "2025లో భారత-రష్యా వార్షిక ద్వైపాక్షిక వాణిజ్యం దాదాపు $66 billion. India-Russia annual bilateral trade was approximately $66 billion in 2025.",
+         "ఉక్రెయిన్ యుద్ధం/Western sanctions తర్వాత చౌక Russian crude దిగుమతుల పుణ్యమా అని **India-Russia ద్వైపాక్షిక వాణిజ్యం 2024-25లో ~$66 billion** — చారిత్రాత్మక గరిష్టం (2030 లక్ష్యం $100 bn). **India-Russia bilateral trade hit ~$66 billion in 2024-25, mainly via discounted crude oil imports.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Space Policy ──
@@ -1976,7 +1976,7 @@ def seed():
          "C) రక్షణ మాత్రమే",
          "D) విదేశాలతో ఒప్పందాలు",
          "B",
-         "భారత అంతరిక్ష విధానం 2023 ప్రైవేట్ రంగానికి అంతరిక్ష కార్యకలాపాలలో పాల్గొనే అవకాశాలు కల్పించింది. India Space Policy 2023 opened up space activities to the private sector.",
+         "**Indian Space Policy 2023** (ఏప్రిల్ 2023లో CCS ఆమోదం) — ISRO/NSIL/InSPACe/NGE పాత్రలు స్పష్టం; **non-government entities (NGEs)** కు end-to-end అంతరిక్ష కార్యకలాపాలకు అనుమతి. **The 2023 Space Policy formally opened end-to-end space activities to private/NGE players.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── WTO ──
@@ -1987,7 +1987,7 @@ def seed():
          "C) పాస్కల్ లామీ",
          "D) మైక్ మూర్",
          "B",
-         "ఎన్‌గోజి ఒకోన్జో-ఇవేల WTO డైరెక్టర్ జనరల్‌గా 2021 నుండి సేవలు అందిస్తున్నారు. Ngozi Okonjo-Iweala has been serving as WTO Director General since 2021.",
+         "**Ngozi Okonjo-Iweala** (నైజీరియా) — WTO **7వ DG, తొలి మహిళ & తొలి ఆఫ్రికన్**; మార్చి 2021 నుండి; 2025లో 2వ టర్మ్‌కు ఎంపిక (2029 వరకు). **Ngozi Okonjo-Iweala has been WTO DG since 2021 — first woman and first African in the role.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India PM Modi ──
@@ -1998,7 +1998,7 @@ def seed():
          "C) నిర్మలా సీతారామన్ (ఆర్థిక)",
          "D) S. జైశంకర్ (విదేశాంగ)",
          "B",
-         "PM మోడీ 3వ పదవీ కాలంలో అమిత్ షా హోం మంత్రి, రాజ్‌నాథ్ సింగ్ రక్షణ మంత్రి. In PM Modi's 3rd term, Amit Shah is Home Minister, Rajnath Singh is Defence Minister.",
+         "**Modi 3.0 cabinet** (జూన్ 9, 2024 ప్రమాణస్వీకారం) — **అమిత్ షా** హోం + సహకారం, **రాజ్‌నాథ్ సింగ్** రక్షణ; నిర్మలా సీతారామన్ ఆర్థిక; S. జైశంకర్ విదేశాంగ. **In Modi 3.0 (sworn June 2024), Amit Shah holds Home & Co-op, Rajnath Singh holds Defence.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── IMF ──
@@ -2009,7 +2009,7 @@ def seed():
          "C) USA",
          "D) ఇండోనేషియా",
          "B",
-         "2025 IMF అంచనాల ప్రకారం భారత్ ప్రపంచంలో అత్యంత వేగంగా వృద్ధి చెందుతున్న ప్రధాన ఆర్థిక వ్యవస్థగా ఉంది. India is the fastest growing major economy globally as per IMF 2025 projections.",
+         "**IMF** (International Monetary Fund) WEO అక్టోబర్ 2025 అంచనాలు — **భారత్ ~6.5-7% వృద్ధితో అతిపెద్ద ఆర్థిక వ్యవస్థల్లో అగ్రగామి** (China ~4.8%, US ~2%). **Per IMF WEO 2025, India is the fastest-growing major economy at ~6.5-7% (vs China ~4.8%).**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Infra 2 ──
@@ -2020,7 +2020,7 @@ def seed():
          "C) రూ.2,00,000 కోట్లు",
          "D) రూ.3,50,000 కోట్లు",
          "B",
-         "2026-27 బడ్జెట్‌లో జాతీయ రహదారులకు రూ.2,87,000 కోట్లు కేటాయించారు. National Highways were allocated Rs 2,87,000 crore in Union Budget 2026-27.",
+         "**MoRTH** (Ministry of Road Transport & Highways) కు 2026-27 బడ్జెట్‌లో రహదారులకు **~₹2.87 లక్షల కోట్లు** — Bharatmala, Vande Bharat-equivalent రహదారి కారిడార్లు మరియు EV మౌలికసదుపాయాలకు. **National Highways got ~Rs 2.87 lakh crore in Budget 2026-27, mostly for Bharatmala and corridor projects.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Space Station ──
@@ -2031,7 +2031,7 @@ def seed():
          "C) 52 టన్నులు",
          "D) 100 టన్నులు",
          "B",
-         "భారత అంతరిక్ష కేంద్రం (BAS) 20 టన్నుల బరువుతో 2035 నాటికి నిర్మించాలని ISRO లక్ష్యంగా పెట్టుకుంది. ISRO plans to build the Bharatiya Antariksh Station (BAS) of 20 tonnes by 2035.",
+         "**BAS** (Bharatiya Antariksh Station) — ISRO నిర్మించబోయే భారత స్వంత LEO అంతరిక్ష కేంద్రం; మోడ్యూల్ 1 ప్రయోగం **2028**, పూర్తి స్టేషన్ (5 మోడ్యూల్స్, **~20 t**) **2035** నాటికి. **BAS is India's planned LEO space station — first module 2028, full ~20-tonne station by 2035.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Agriculture 2 ──
@@ -2042,7 +2042,7 @@ def seed():
          "C) రూ.25 లక్ష కోట్లు",
          "D) రూ.10 లక్ష కోట్లు",
          "B",
-         "2025-26లో కేంద్ర ప్రభుత్వం రూ.20 లక్ష కోట్ల వ్యవసాయ రుణ లక్ష్యం పెట్టుకుంది. The Central Government set an agricultural credit target of Rs 20 lakh crore for 2025-26.",
+         "**KCC** (Kisan Credit Card) ద్వారా వ్యవసాయ-అనుబంధ రంగాలకు **2025-26లో రూ.20 లక్షల కోట్ల రుణ లక్ష్యం** (2024-25లో రూ.22.5 ల.కో. వాస్తవ వితరణ); మత్స్య-పశుపాలన కూడా చేర్చబడ్డాయి. **Centre's agricultural credit target for 2025-26 is Rs 20 lakh crore, disbursed via KCC including allied sectors.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Coal/Energy ──
@@ -2053,7 +2053,7 @@ def seed():
          "C) 950 GW",
          "D) 1000 GW",
          "B",
-         "2024-25లో భారత్ మొత్తం విద్యుత్ ఉత్పత్తి సామర్థ్యం 650 GWకి పైగా చేరింది. India's total electricity generation capacity crossed 650 GW in 2024-25.",
+         "**CEA** (Central Electricity Authority) నివేదిక ప్రకారం 2024-25 నాటికి భారత మొత్తం స్థాపిత విద్యుత్ సామర్థ్యం **650+ GW**; renewables 220+ GW (~34%) — 2030 నాటికి 500 GW non-fossil లక్ష్యం. **India's installed power capacity crossed 650 GW in 2024-25, with ~34% from renewables.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India AI ──
@@ -2064,7 +2064,7 @@ def seed():
          "C) రూ.10,372 కోట్లు",
          "D) రూ.5,000 కోట్లు",
          "C",
-         "India AI Mission కు మొత్తంగా రూ.10,372 కోట్లు కేటాయించారు (5 సంవత్సరాల కాలానికి). India AI Mission was allocated Rs 10,372 crore over 5 years.",
+         "**IndiaAI Mission** (మార్చి 2024లో Cabinet ఆమోదం, MeitY కింద) — 5-సం. కాలానికి **₹10,372 కోట్లు**; GPU compute, AI Innovation Centre, datasets, startup financing, ethical AI pillars. **The IndiaAI Mission has a Rs 10,372 crore outlay over 5 years for compute, data and innovation.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── SCO ──
@@ -2075,7 +2075,7 @@ def seed():
          "C) 2019",
          "D) 2021",
          "B",
-         "భారత్ 2017లో SCO పూర్తి సభ్య దేశంగా చేరింది. India joined SCO as a full member in 2017.",
+         "**SCO** (Shanghai Cooperation Organisation, 2001లో ఏర్పాటు) — Astana శిఖరంలో **జూన్ 2017** లో పాకిస్తాన్‌తో పాటు **భారత్** పూర్తి సభ్యత్వం పొందింది; ఇరాన్ 2023లో చేరింది. **India became a full SCO member in June 2017 at the Astana Summit, alongside Pakistan.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Nano Urea ──
@@ -2086,7 +2086,7 @@ def seed():
          "C) పొడి రూపంలో / Powder form",
          "D) వాయు రూపంలో / Gas form",
          "B",
-         "IFFCO నానో యూరియా ద్రవ రూపంలో ఉంటుంది, ఇది సాంప్రదాయ యూరియాకు ప్రత్యామ్నాయం. IFFCO Nano Urea comes in liquid form, as an alternative to conventional urea.",
+         "**IFFCO** (Indian Farmers Fertiliser Cooperative) **Nano Urea Liquid** (2021లో ప్రపంచంలో మొదటిదిగా ప్రారంభం) — 500 ml బాటిల్ ఒక 45 kg యూరియా బస్తాకు సమానం; foliar spray రూపంలో వాడతారు. **IFFCO's Nano Urea is a liquid foliar formulation — 500 ml replaces one 45 kg conventional urea bag.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Aadhaar ──
@@ -2097,7 +2097,7 @@ def seed():
          "C) 138 కోట్లు / 138 crore",
          "D) 150 కోట్లు",
          "C",
-         "2025 నాటికి దాదాపు 138 కోట్ల మంది భారత పౌరులు Aadhaar లో నమోదయ్యారు. Approximately 138 crore Indians were enrolled in Aadhaar by 2025.",
+         "**UIDAI** (Unique Identification Authority of India) — Aadhaar 2010లో ప్రారంభం; 2025 నాటికి **~138 కోట్ల** నమోదు (~సార్వత్రిక కవరేజ్); DBT, KYC, e-KYCలో మూలాధారం. **UIDAI's Aadhaar covered ~138 crore residents by 2025 — near-universal coverage.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Border ──
@@ -2108,7 +2108,7 @@ def seed():
          "C) 4,500 km",
          "D) 5,000 km",
          "B",
-         "భారత్-చైనా సరిహద్దు పొడవు 3,488 కి.మీ. India-China border length is 3,488 km.",
+         "**LAC** (Line of Actual Control) వెంబడి India-China సరిహద్దు **3,488 km** — Western (Ladakh), Middle (HP/UK), Eastern (Sikkim/Arunachal) సెక్టర్లలో విస్తరించి ఉంది. **India-China border (LAC) length is 3,488 km across Western, Middle and Eastern sectors.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Ladakh ──
@@ -2119,7 +2119,7 @@ def seed():
          "C) 2020",
          "D) 2021",
          "B",
-         "లద్దాఖ్ ఆగస్టు 5, 2019న జమ్మూ-కాశ్మీర్ నుంచి విభజించబడి కేంద్రపాలిత ప్రాంతంగా ఏర్పడింది. Ladakh was carved out of J&K and became a Union Territory on August 5, 2019.",
+         "**Jammu & Kashmir Reorganisation Act 2019** ద్వారా J&K రాష్ట్రం రద్దు; **ఆగస్టు 5, 2019** న Article 370 సవరణ; **అక్టోబర్ 31, 2019** నుండి **లద్దాఖ్** (శాసనసభ లేని UT) మరియు J&K (శాసనసభతో UT) — రెండు కేంద్రపాలిత ప్రాంతాలు. **Ladakh became a UT (without legislature) on October 31, 2019 under the J&K Reorganisation Act.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── CAA ──
@@ -2130,7 +2130,7 @@ def seed():
          "C) జూలై 2023",
          "D) ఆగస్టు 2021",
          "B",
-         "CAA 2019 నిబంధనలు మార్చి 2024లో అమలులోకి వచ్చాయి. CAA 2019 rules came into force in March 2024.",
+         "**CAA** (Citizenship Amendment Act, 2019) — పాకిస్తాన్/బంగ్లాదేశ్/అఫ్గానిస్తాన్‌లోని హిందువ్, సిక్కు, బౌద్ధ, జైన, పార్సీ, క్రైస్తవ మతస్తుల్ని (Dec 31, 2014కు ముందు భారత్ చేరిన) ఫాస్ట్-ట్రాక్ సిటిజన్‌షిప్; నిబంధనలు **మార్చి 11, 2024** న నోటిఫై. **CAA 2019 rules were notified on March 11, 2024 — fast-tracking citizenship for 6 minority groups from 3 neighbours.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India LGBTQ ──
@@ -2141,7 +2141,7 @@ def seed():
          "C) 2020",
          "D) 2022",
          "B",
-         "సర్వోన్నత న్యాయస్థానం 2018 సెప్టెంబర్‌లో IPC సెక్షన్ 377ను రద్దు చేసింది. Supreme Court scrapped IPC Section 377 in September 2018.",
+         "**Navtej Singh Johar v. Union of India** తీర్పులో సుప్రీం కోర్టు **సెప్టెంబర్ 6, 2018**న **IPC Section 377** లోని పెద్దవారి-సహమతి-సమాన-లైంగిక-సంబంధాలను నేరంగా చూపే భాగాన్ని **partial రద్దు** చేసింది — LGBTQ+ హక్కులకు చారిత్రాత్మక మైలురాయి. **SC partially struck down IPC Section 377 on Sept 6, 2018 in Navtej Singh Johar — decriminalising consensual same-sex relations.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Health 2 ──
@@ -2152,7 +2152,7 @@ def seed():
          "C) గుండె జబ్బు",
          "D) కుష్టు వ్యాధి",
          "B",
-         "2024లో WHO భారత్‌లో ట్రాకోమా (కంటి వ్యాధి) నిర్మూలించబడిందని ప్రకటించింది. WHO declared that trachoma (eye disease) was eliminated from India in 2024.",
+         "**WHO** (World Health Organization) అక్టోబర్ 2024లో **trachoma** (బ్యాక్టీరియా-వలన కలిగే నిర్లక్ష్యం-చేయబడిన కంటి వ్యాధి)ను ప్రజారోగ్య సమస్యగా **భారత్ నుండి నిర్మూలించబడింది** అని ప్రకటించింది — Nepal, Myanmar తర్వాత SE Asia ప్రాంతంలో 3వ దేశం. **WHO declared trachoma eliminated as a public health problem in India in 2024.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Viksit Bharat ──
@@ -2163,7 +2163,7 @@ def seed():
          "C) 2047 నాటికి జనాభా నియంత్రణ",
          "D) 2047 నాటికి UN సభ్యత్వం",
          "B",
-         "విక్సిత్ భారత్ @ 2047 లక్ష్యం: భారత స్వాతంత్ర్యం 100 సంవత్సరాల సందర్భంగా 2047 నాటికి అభివృద్ధి చెందిన దేశంగా మారడం. Viksit Bharat @ 2047 aims to make India a developed nation by the centenary of its independence in 2047.",
+         "**Viksit Bharat @ 2047** — 2047 (స్వాతంత్ర్య శతవార్షికోత్సవం) నాటికి భారత్‌ను **అభివృద్ధి చెందిన దేశంగా** ($30+ trillion economy) తయారు చేయడం; NITI Aayog Vision Document, 2014 నాటి PM PRANAM కింద. **Viksit Bharat @ 2047 targets making India a developed nation by its independence centenary in 2047.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Maha Kumbh 2025 ──
@@ -2174,7 +2174,7 @@ def seed():
          "C) ప్రయాగ్‌రాజ్ (అలహాబాద్) / Prayagraj (Allahabad)",
          "D) నాసిక్",
          "C",
-         "మహా కుంభ మేళా 2025 ఉత్తర్ ప్రదేశ్‌లోని ప్రయాగ్‌రాజ్‌లో జరిగింది - ప్రతి 12 సంవత్సరాలకు ఒకసారి జరుగుతుంది. Maha Kumbh Mela 2025 was held in Prayagraj, Uttar Pradesh - it occurs every 12 years.",
+         "**మహా కుంభ మేళా** ప్రతి **12 సంవత్సరాలకు** ఒకసారి జరిగే భారీ హిందూ తీర్థయాత్ర; 2025 ఎడిషన్ **ప్రయాగ్‌రాజ్** (UP — గంగా/యమునా/సరస్వతి సంగమం)లో జరిగింది. **Maha Kumbh Mela 2025 was held at the Triveni Sangam in Prayagraj — a 12-yearly Hindu pilgrimage.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31202,
@@ -2184,7 +2184,7 @@ def seed():
          "C) డిసెంబర్ 1 - జనవరి 31",
          "D) ఫిబ్రవరి 1 - మార్చి 31",
          "B",
-         "మహా కుంభ మేళా 2025 జనవరి 13 (మకర సంక్రాంతి) నుండి ఫిబ్రవరి 26 (మహా శివరాత్రి) వరకు జరిగింది. Maha Kumbh Mela 2025 was held from January 13 (Makar Sankranti) to February 26 (Maha Shivaratri).",
+         "**మహా కుంభ మేళా 2025** **జనవరి 13 (పౌష పూర్ణిమ/మకర సంక్రాంతి)** నుండి **ఫిబ్రవరి 26 (మహా శివరాత్రి)** వరకు 45 రోజుల పాటు; 6 ప్రధాన shahi snan తేదీలు. **Maha Kumbh 2025 ran 45 days — Jan 13 (Paush Purnima) to Feb 26 (Maha Shivaratri).**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31203,
@@ -2194,7 +2194,7 @@ def seed():
          "C) 45 కోట్లు / 45 crore",
          "D) 60 కోట్లు",
          "C",
-         "మహా కుంభ మేళా 2025లో సుమారు 45 కోట్ల మంది భక్తులు పాల్గొన్నారు, ఇది చరిత్రలో అతిపెద్ద మానవ సమావేశం. Approximately 45 crore devotees attended Maha Kumbh Mela 2025, the largest human gathering in history.",
+         "UP ప్రభుత్వ అంచనాల ప్రకారం మహా కుంభ మేళా 2025లో **~45 కోట్ల (450 million)** భక్తులు పాల్గొన్నారు — **చరిత్రలో అతిపెద్ద మానవ సమావేశం**గా రికార్డ్. **An estimated ~45 crore (450 million) pilgrims attended Maha Kumbh 2025 — the largest human gathering in history.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Padma Awards 2025 ──
@@ -2205,7 +2205,7 @@ def seed():
          "C) సచిన్ తెండూల్కర్",
          "D) అజిమ్ ప్రేమ్‌జీ",
          "B",
-         "ప్రఖ్యాత జానపద గాయని శారదా సింహా 2025 పద్మ విభూషణ్ మరణానంతరం పొందారు. Folk singer Sharda Sinha received Padma Vibhushan 2025 posthumously.",
+         "**Padma Vibhushan** — భారత 2వ అత్యున్నత పౌర పురస్కారం; 2025లో **శారదా సింహా** (బీహార్ ప్రఖ్యాత ఛఠ్/జానపద గాయని, నవంబర్ 2024లో మరణం) **మరణానంతరం** ప్రదానం; మొత్తం 7 మంది Padma Vibhushan అందుకున్నారు. **Folk singer Sharda Sinha received Padma Vibhushan 2025 posthumously — one of 7 awardees.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── NEP 2020 ──
@@ -2216,17 +2216,17 @@ def seed():
          "C) 17 సంవత్సరాలు",
          "D) 20 సంవత్సరాలు",
          "B",
-         "NEP 2020 కింద 5+3+3+4 నిర్మాణం - మొత్తం 15 సంవత్సరాల పాఠశాల విద్య (3 సంవత్సరాల ప్రీ-ప్రైమరీతో సహా). Under NEP 2020, the 5+3+3+4 structure provides 15 years of schooling (including 3 years pre-primary).",
+         "**NEP** (National Education Policy) 2020 — 10+2 వ్యవస్థను **5+3+3+4** structureతో భర్తీ చేసింది: 5 Foundational (3-8 yrs), 3 Preparatory (8-11), 3 Middle (11-14), 4 Secondary (14-18) — మొత్తం **15 సంవత్సరాలు**. **NEP 2020 replaced 10+2 with a 5+3+3+4 structure totalling 15 years of schooling.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31206,
-         "NEP 2020 కింద మాతృభాషలో బోధన ఏ తరగతి వరకు నిర్ణయించారు?\n(Mother tongue medium of instruction up to which grade under NEP 2020?)",
-         "A) 3వ తరగతి",
-         "B) 5వ తరగతి",
+         "NEP 2020 కింద మాతృభాషలో బోధన ఏ తరగతి వరకు తప్పనిసరి?\n(Mother tongue medium of instruction MANDATORY up to which grade under NEP 2020?)",
+         "A) 3వ తరగతి / Grade 3",
+         "B) 5వ తరగతి / Grade 5 (preferably up to Grade 8)",
          "C) 8వ తరగతి / Grade 8",
-         "D) 10వ తరగతి",
+         "D) 10వ తరగతి / Grade 10",
          "B",
-         "NEP 2020 కింద కనీసం 5వ తరగతి వరకు మాతృభాషలో బోధన నిర్ణయించారు. NEP 2020 recommends mother tongue/regional language as medium of instruction at least up to Grade 5.",
+         "**NEP 2020** కనీసం **Grade 5 వరకు** (వీలైతే Grade 8 వరకు) **మాతృభాష/ప్రాంతీయ భాష/గృహభాష** మాధ్యమంగా బోధించాలని సిఫార్సు చేస్తుంది — Three-Language Formula అమలులో. **NEP 2020 recommends mother tongue/regional language as medium of instruction up to at least Grade 5 (preferably Grade 8).**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Khelo India ──
@@ -2237,7 +2237,7 @@ def seed():
          "C) రాజస్తాన్",
          "D) ఉత్తర్ ప్రదేశ్",
          "B",
-         "ఖేలో ఇండియా యూత్ గేమ్స్ 2025 మహారాష్ట్రలో జరిగాయి. Khelo India Youth Games 2025 were held in Maharashtra.",
+         "**KIYG** (Khelo India Youth Games) 7వ ఎడిషన్ — జనవరి-ఫిబ్రవరి 2025లో **మహారాష్ట్ర** (Pune, Mumbai, Kolhapur, Nashik, Sambhajinagar)లో నిర్వహణ; మహారాష్ట్ర మొత్తం పతక పట్టికలో అగ్రస్థానం. **The 7th Khelo India Youth Games 2025 were hosted across 5 cities in Maharashtra, which also topped the medal table.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Budget Tax ──
@@ -2248,7 +2248,7 @@ def seed():
          "C) 35%",
          "D) 40%",
          "B",
-         "కొత్త పన్ను పద్ధతిలో రూ.24 లక్షలకు పైగా ఆదాయంపై 30% పన్ను వర్తిస్తుంది. Under the new tax regime, income above Rs 24 lakh attracts 30% tax.",
+         "**Budget 2026-27** కొత్త పన్ను పద్ధతిలో **₹24 లక్షలకు పైగా** ఆదాయంపై **30%** గరిష్ఠ slab; ₹12 లక్షల వరకు zero tax (rebate), ₹75,000 standard deduction జతగా. **In Budget 2026-27's new regime, income above Rs 24 lakh is taxed at the top slab of 30%.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Export ──
@@ -2259,7 +2259,7 @@ def seed():
          "C) $500 billion",
          "D) $350 billion",
          "B",
-         "2024-25లో భారత వస్తు ఎగుమతులు $437 billion నమోదయ్యాయి. India's merchandise exports were $437 billion in 2024-25.",
+         "**DGFT/Commerce Ministry** ప్రాథమిక గణాంకాల ప్రకారం 2024-25లో భారత వస్తు ఎగుమతులు **~$437 billion** (సేవలతో కలిపి $820+ billion మొత్తం); ఇంజినీరింగ్, పెట్రోలియం, ఎలక్ట్రానిక్ సరుకులు అగ్రశ్రేణి. **India's merchandise exports were ~$437 billion in 2024-25, with combined goods + services crossing $820 billion.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Semiconductor Policy ──
@@ -2270,7 +2270,7 @@ def seed():
          "C) రూ.1,00,000 కోట్లు",
          "D) రూ.1,50,000 కోట్లు",
          "B",
-         "India Semiconductor Mission కింద రూ.76,000 కోట్ల పెట్టుబడి లక్ష్యం. India Semiconductor Mission aims for Rs 76,000 crore investment.",
+         "**ISM** (India Semiconductor Mission, 2021లో MeitY కింద) **₹76,000 కోట్లు** మొత్తం outlay; Tata-PSMC (Dholera fab), Micron (Sanand ATMP), CG Power, Kaynes వంటి ప్రాజెక్టులు; **Make in India** పునాదిగా. **The Semiconductor Mission (2021, under MeitY) has a Rs 76,000 crore outlay for fabs, ATMP and design.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Trade ──
@@ -2281,7 +2281,7 @@ def seed():
          "C) $200 billion+",
          "D) $50 billion",
          "C",
-         "2025-26లో భారత వ్యాపార లోటు $200 billion కంటే ఎక్కువ. India's trade deficit exceeded $200 billion in 2025-26.",
+         "**Trade Deficit** = imports − exports; 2025-26లో భారత వస్తు వ్యాపార లోటు **$200+ billion** (క్రూడ్/గోల్డ్/ఎలక్ట్రానిక్స్ దిగుమతులు పెరగడం వలన); services surplus ($150+ bn) దీన్ని పాక్షికంగా ఆఫ్‌సెట్ చేస్తుంది. **India's merchandise trade deficit crossed $200 billion in 2025-26, driven by crude, gold and electronics imports.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── PM Modi Awards ──
@@ -2292,7 +2292,7 @@ def seed():
          "C) Bhutan's Highest Civilian Award",
          "D) Kuwait's Highest State Order / కువైట్ అత్యున్నత రాష్ట్ర పురస్కారం",
          "D",
-         "PM మోడీ 2024లో కువైట్ యొక్క అత్యున్నత రాష్ట్ర పురస్కారం పొందారు. PM Modi received Kuwait's highest state order in 2024.",
+         "డిసెంబర్ 2024లో PM మోడీ తన కువైట్ పర్యటనలో అధ్యక్షుడు Sheikh Meshal Al-Ahmad Al-Jaber Al-Sabah నుండి **'The Order of Mubarak Al Kabeer'** (కువైట్ అత్యున్నత పౌర పురస్కారం) అందుకున్నారు — ఆయన 20వ అంతర్జాతీయ పురస్కారం. **PM Modi received Kuwait's highest civilian honour, the Order of Mubarak Al Kabeer, in Dec 2024 — his 20th international award.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── DRDO ──
@@ -2303,7 +2303,7 @@ def seed():
          "C) 5,000 km+",
          "D) 10,000 km",
          "C",
-         "అగ్ని-5 అంతర్-ఖండాంతర బాలిస్టిక్ క్షిపణి (ICBM) పరిధి 5,000 కి.మీ.కు పైగా. Agni-5, India's ICBM, has a range exceeding 5,000 km.",
+         "**Agni-5** — **DRDO** అభివృద్ధి చేసిన **ICBM** (Inter-Continental Ballistic Missile), 3-దశల ఘన ఇంధనం; పరిధి **5,000+ km** (యూరప్/చైనా అన్ని భాగాలు కవర్); MIRV variant 'Mission Divyastra' మార్చి 2024లో పరీక్షించబడింది. **Agni-5 is DRDO's solid-fuel ICBM with a range of 5,000+ km — MIRV-capable since 'Mission Divyastra' (Mar 2024).**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31214,
@@ -2313,7 +2313,7 @@ def seed():
          "C) క్రూయిజ్ క్షిపణి",
          "D) యాంటీ-శాటిలైట్",
          "B",
-         "పినాక అనేది భారత సైన్యానికి DRDO అభివృద్ధి చేసిన బహుళ రాకెట్ లాంచ్ వ్యవస్థ (MRLS). Pinaka is a Multiple Rocket Launch System (MRLS) developed by DRDO for the Indian Army.",
+         "**Pinaka** — DRDO అభివృద్ధి చేసిన **MBRL** (Multi-Barrel Rocket Launcher) — 12 రాకెట్లు 44 సెకన్లలో పేల్చగలదు; Mark-I (~38 km), Mark-II (~75 km), ER (~90 km) variants; ఆర్మేనియా ఎగుమతి ఒప్పందం. **Pinaka is DRDO's MBRL/MRLS for the Indian Army — exported to Armenia.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Governance New Laws ──
@@ -2324,7 +2324,7 @@ def seed():
          "C) Indian Evidence Act",
          "D) Police Act",
          "B",
-         "BNSS జూలై 1, 2024 నుండి CrPC (Code of Criminal Procedure) స్థానంలో అమలులోకి వచ్చింది. BNSS replaced the Code of Criminal Procedure (CrPC) from July 1, 2024.",
+         "**BNSS** (Bharatiya Nagarik Suraksha Sanhita, 2023) **జూలై 1, 2024** నుంచి **CrPC, 1973** (Code of Criminal Procedure)కు ప్రత్యామ్నాయంగా అమల్లోకి వచ్చింది — 531 sections, e-FIR, time-bound trials. **BNSS replaced the CrPC 1973 from July 1, 2024 — introducing e-FIR and time-bound trials.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31216,
@@ -2334,7 +2334,7 @@ def seed():
          "C) Indian Evidence Act 1872 / భారత సాక్ష్య చట్టం 1872",
          "D) POCSO Act",
          "C",
-         "BSA జూలై 1, 2024 నుండి Indian Evidence Act 1872 స్థానంలో అమలులోకి వచ్చింది. Bharatiya Sakshya Adhiniyam replaced the Indian Evidence Act 1872 from July 1, 2024.",
+         "**BSA** (Bharatiya Sakshya Adhiniyam, 2023) **జూలై 1, 2024** నుంచి **Indian Evidence Act, 1872** స్థానంలో అమల్లోకి; electronic records & డిజిటల్ ఆధారాలకు చట్టబద్ధ గుర్తింపు. **BSA replaced the Indian Evidence Act 1872 from July 1, 2024 — formalising digital/electronic evidence.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Environment Ramsar ──
@@ -2345,7 +2345,7 @@ def seed():
          "C) 85+",
          "D) 100",
          "C",
-         "2025 నాటికి భారత్‌లో 85కి పైగా Ramsar చిత్తడి నేలల సైట్లు ఉన్నాయి. India has more than 85 Ramsar Wetland Sites as of 2025.",
+         "**Ramsar Convention** (1971, Iran) — అంతర్జాతీయ ప్రాముఖ్యత గల చిత్తడి నేలల కన్వెన్షన్; భారత్ 1982లో సభ్యత్వం; 2025 నాటికి **89+ Ramsar Sites** (ఆసియాలో అతిపెద్ద నెట్‌వర్క్) — తమిళనాడు 18తో అగ్రస్థానం. **India has 89+ Ramsar Wetland Sites by 2025 — the largest network in Asia.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Solar ──
@@ -2356,7 +2356,7 @@ def seed():
          "C) గ్రామీణ రహదారులు",
          "D) పట్టణ విద్యుత్",
          "B",
-         "PM KUSUM (Pradhan Mantri Kisan Urja Suraksha evam Utthan Mahabhiyan) రైతులకు సోలార్ పంపులు అందించే పథకం. PM KUSUM provides solar pumps to farmers for agricultural use.",
+         "**PM-KUSUM** (Pradhan Mantri Kisan Urja Suraksha evam Utthan Mahabhiyan, MNRE కింద 2019లో ప్రారంభం) — రైతులకు **off-grid solar pumps**, **grid-connected solar pumps**, బంజరు భూముల్లో solar plants కోసం 3 భాగాలు; లక్ష్యం 34.8 GW solar capacity. **PM-KUSUM (2019, MNRE) provides solar pumps and decentralised solar capacity for farmers — targeting 34.8 GW.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Insurance ──
@@ -2367,7 +2367,7 @@ def seed():
          "C) రూ.10 లక్షలు",
          "D) రూ.3 లక్షలు",
          "B",
-         "AB-PMJAY కింద 70 ఏళ్ళు పైబడిన వృద్ధులందరికీ రూ.5 లక్షల వార్షిక ఆరోగ్య బీమా కవరేజి అందించారు. Under AB-PMJAY, all senior citizens above 70 years get Rs 5 lakh annual health insurance coverage.",
+         "**AB-PMJAY** (Ayushman Bharat-Pradhan Mantri Jan Arogya Yojana) — అక్టోబర్ 2024లో పొడిగింపు: **70+ సీనియర్ సిటిజన్‌లందరికీ** (ఆదాయంతో నిమిత్తం లేకుండా) **రూ.5 లక్షల** ఉచిత ఆరోగ్య బీమా; ~6 కోట్ల మంది అదనపు లబ్ధిదారులు. **AB-PMJAY extended Rs 5 lakh free health cover to all citizens aged 70+ (Oct 2024), covering ~6 crore seniors.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Jan Aushadhi ──
@@ -2378,7 +2378,7 @@ def seed():
          "C) ఆసుపత్రి నిర్మాణం",
          "D) వైద్య విద్య ఫీజు మినహాయింపు",
          "B",
-         "ప్రధాన్ మంత్రి జన్ ఔషధి పరియోజన (PMBJP) రాయితీ ధరల్లో జెనెరిక్ ఔషధాలు అందించే పథకం. Pradhan Mantri Jan Aushadhi Pariyojana (PMBJP) provides generic medicines at subsidized prices.",
+         "**PMBJP** (Pradhan Mantri Bhartiya Janaushadhi Pariyojana, 2008లో ప్రారంభం; PMBI నోడల్) — Jan Aushadhi Kendras ద్వారా **branded జెనెరిక్ ఔషధాలు 50-90% రాయితీ** ధరల్లో; 2025 నాటికి 14,000+ kendras దేశవ్యాప్తంగా; ఔషధాల యాక్సెస్‌ను పెంచే ఫ్లాగ్‌షిప్ పథకం. **PMBJP provides generic medicines at 50-90% off through 14,000+ Jan Aushadhi Kendras nationwide.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Defence Export ──
@@ -2389,7 +2389,7 @@ def seed():
          "C) రూ.1,00,000 కోట్లు",
          "D) రూ.25,000 కోట్లు",
          "B",
-         "2030 నాటికి భారత రక్షణ ఎగుమతులు రూ.50,000 కోట్లు సాధించే లక్ష్యం. India targets Rs 50,000 crore in defence exports by 2030.",
+         "MoD (Ministry of Defence) 2030 నాటికి **రూ.50,000 కోట్ల రక్షణ ఎగుమతుల** లక్ష్యం పెట్టింది; 2024-25లో రికార్డు రూ.23,622 కోట్లు సాధించింది (2014-15లో రూ.1,941 కో. నుండి 12-రెట్లు పెరుగుదల); BrahMos, తేజస్, ఆర్టిల్లరీ గన్‌లు ప్రధాన ఎగుమతులు. **India targets Rs 50,000 cr defence exports by 2030; achieved record Rs 23,622 cr in FY25 — 12x rise from FY15.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Agri 3 ──
@@ -2400,7 +2400,7 @@ def seed():
          "C) పశుసంపద",
          "D) నీటిపారుదల",
          "B",
-         "PM ఫసల్ బీమా యోజన (PMFBY) రైతులకు పంట నష్టం సమయంలో బీమా అందించే పంట బీమా పథకం. PM Fasal Bima Yojana (PMFBY) is a crop insurance scheme providing coverage to farmers against crop losses.",
+         "**PMFBY** (Pradhan Mantri Fasal Bima Yojana, ప్రారంభం: 2016) రైతులకు ప్రకృతి విపత్తులు/తెగుళ్ల వల్ల జరిగే పంట నష్టాలకు **సమగ్ర పంట బీమా** అందిస్తుంది; ప్రీమియం: ఖరీఫ్ 2%, రబీ 1.5%, వాణిజ్య పంటలు 5%; మిగతా ప్రీమియం కేంద్రం-రాష్ట్రాలు భరిస్తాయి. **PMFBY (2016-) is India's flagship crop insurance scheme; farmers pay 1.5-5% premium with rest subsidised by Centre/States.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Skill ──
@@ -2411,7 +2411,7 @@ def seed():
          "C) రూ.10,000 కోట్లు",
          "D) రూ.1,000 కోట్లు",
          "B",
-         "2026-27 బడ్జెట్‌లో స్కిల్ ఇండియా మిషన్ కు రూ.6,000 కోట్లు కేటాయించారు. Skill India Mission was allocated Rs 6,000 crore in Budget 2026-27.",
+         "**Skill India Mission** (MSDE — Ministry of Skill Development & Entrepreneurship; ప్రారంభం: జూలై 15, 2015 — World Youth Skills Day) 2026-27 బడ్జెట్‌లో **రూ.6,000 కోట్లు** కేటాయించారు; లక్ష్యం: యువతకు పరిశ్రమ-relevant నైపుణ్యాలు, NSDC ద్వారా PMKVY (Pradhan Mantri Kaushal Vikas Yojana) అమలు. **Skill India Mission (2015-, under MSDE) was allocated Rs 6,000 cr in Budget 2026-27 for industry-relevant skilling via PMKVY/NSDC.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── ONDC ──
@@ -2422,7 +2422,7 @@ def seed():
          "C) ఆర్థిక మంత్రిత్వ శాఖ",
          "D) MSME మంత్రిత్వ శాఖ",
          "B",
-         "ONDC (Open Network for Digital Commerce) వాణిజ్య మంత్రిత్వ శాఖ చొరవతో 2022లో ప్రారంభించారు. ONDC was launched under the Ministry of Commerce in 2022.",
+         "**ONDC** (Open Network for Digital Commerce; DPIIT/Ministry of Commerce ఆధ్వర్యంలో డిసెంబర్ 2021లో ఏర్పాటు, 2022లో పూర్తి ప్రారంభం) — UPI-తరహా **open protocol** ద్వారా బైయర్/సెల్లర్ యాప్‌లను interoperably కలుపుతుంది; Amazon/Flipkart వంటి closed platforms ను bypass చేస్తుంది. **ONDC (under DPIIT, Min of Commerce, 2022) is an open protocol enabling interoperable digital commerce — like 'UPI for e-commerce'.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Sports Awards ──
@@ -2433,7 +2433,7 @@ def seed():
          "C) గుకేశ్ డి / Gukesh D",
          "D) వినేష్ ఫోగాట్",
          "C",
-         "2024లో చదరంగం ప్రపంచ చాంపియన్ అయిన గుకేశ్ డి 2025 రాజీవ్ గాంధీ ఖేల్ రత్న (Dhyan Chand Khel Ratna) పొందారు. Chess World Champion Gukesh D received the Rajiv Gandhi Khel Ratna (Dhyan Chand Khel Ratna) 2025.",
+         "**Major Dhyan Chand Khel Ratna Award** (గతంలో Rajiv Gandhi Khel Ratna; 2021లో పేరు మారింది — భారత అత్యున్నత క్రీడా పురస్కారం) 2024 సం. కోసం **D. గుకేశ్**కు ఇచ్చారు — 2024 World Chess Championship లో డింగ్ లిరెన్‌ను ఓడించి **పిన్నవయసు ప్రపంచ ఛాంపియన్** (18 ఏళ్లు) అయ్యారు. **Khel Ratna 2024 (presented 2025) went to D. Gukesh, youngest-ever World Chess Champion.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31226,
@@ -2443,7 +2443,7 @@ def seed():
          "C) గుకేశ్ డి / D. Gukesh",
          "D) అర్జున్ ఎరిగేసి",
          "C",
-         "D. గుకేశ్ 2024 Chess ప్రపంచ ఛాంపియన్‌షిప్ గెలిచి అత్యంత పిన్న వయసు ప్రపంచ ఛాంపియన్ అయ్యారు. D. Gukesh won the 2024 World Chess Championship, becoming the youngest world champion in history.",
+         "**D. గుకేశ్** (Tamil Nadu, b. 2006) **2024 FIDE World Chess Championship** (సింగపూర్, డిసెంబర్ 12, 2024) లో డిఫెండింగ్ ఛాంపియన్ **డింగ్ లిరెన్ (China)** ను 7.5-6.5 తో ఓడించి **18 ఏళ్ల వయసులో పిన్నవయసు World Chess Champion** గా చరిత్ర సృష్టించారు (గతంలో: Kasparov, 22). **D. Gukesh beat Ding Liren 7.5-6.5 at Singapore Dec 2024 to become youngest-ever World Chess Champion at 18.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Health Care ──
@@ -2454,7 +2454,7 @@ def seed():
          "C) 1,50,000+",
          "D) 2,00,000",
          "C",
-         "PM-ABHIM కింద 2025 నాటికి 1,50,000కి పైగా ఆయుష్మాన్ ఆరోగ్య కేంద్రాలు నిర్మించారు. More than 1,50,000 Ayushman Arogya Mandirs were established under PM-ABHIM by 2025.",
+         "**PM-ABHIM** (Pradhan Mantri Ayushman Bharat Health Infrastructure Mission, 2021లో ప్రారంభం; భారత అతిపెద్ద ఆరోగ్య మౌలిక సదుపాయాల పథకం — రూ.64,180 కోట్లు 2021-26 కాలానికి) కింద 2025 నాటికి **1.5 లక్షలకు పైగా ఆయుష్మాన్ ఆరోగ్య మందిర్లు (AAMs — గతంలో HWCs)** అభివృద్ధి చేశారు; primary care + telemedicine అందిస్తాయి. **PM-ABHIM (2021-26, Rs 64,180 cr) has rolled out 1.5L+ Ayushman Arogya Mandirs by 2025.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Space Private ──
@@ -2465,7 +2465,7 @@ def seed():
          "C) SkyRoot Aerospace",
          "D) Bellatrix Aerospace",
          "B",
-         "Agnikul Cosmos 2024లో Agnibaan రాకెట్‌ను సఫలంగా పరీక్షించి మొదటి ప్రైవేట్ ప్రయోగించిన భారత కంపెనీగా అవతరించింది. Agnikul Cosmos became India's first private company to successfully test its Agnibaan rocket in 2024.",
+         "**Agnikul Cosmos** (Chennai IIT Madras-incubated స్టార్టప్) **మే 30, 2024**న SDSC SHAR (Sriharikota) లో **Agnibaan SOrTeD** (Sub-Orbital Technology Demonstrator) ను సఫలంగా ప్రయోగించి, **3D-ప్రింటెడ్ semi-cryogenic ఇంజిన్‌తో సింగిల్-పీస్ Agnilet** ద్వారా ప్రపంచంలోనే మొదటి విజయం సాధించింది. **Agnikul Cosmos (IIT-Madras startup) launched Agnibaan SOrTeD on May 30, 2024 — world's first single-piece 3D-printed semi-cryo engine rocket.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India EV ──
@@ -2476,7 +2476,7 @@ def seed():
          "C) 30% / 30%",
          "D) 50%",
          "C",
-         "2030 నాటికి భారత వాహన అమ్మకాల్లో 30% ఎలక్ట్రిక్ వాహనాలు ఉండాలని లక్ష్యం. India targets 30% of vehicle sales to be electric vehicles by 2030.",
+         "**NEMMP** (National Electric Mobility Mission Plan) & NITI ఆయోగ్ లక్ష్యం: 2030 నాటికి వాహన అమ్మకాల్లో **30% EVs** (private cars 30%, commercial vehicles 70%, buses 40%, 2/3-wheelers 80%); FAME-II, PM E-DRIVE, PLI-Auto పథకాల ద్వారా మద్దతు. **NITI Aayog/NEMMP targets 30% EV penetration in vehicle sales by 2030, backed by FAME-II, PM E-DRIVE & PLI-Auto.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India GDP Per Capita ──
@@ -2487,7 +2487,7 @@ def seed():
          "C) $3,900+",
          "D) $5,000",
          "C",
-         "2025-26లో భారత తలసరి ఆదాయం $3,900కి పైగా. India's nominal GDP per capita crossed $3,900 in 2025-26.",
+         "2025-26లో భారత **Nominal GDP per capita** $3,900+ చేరుకుంది ($2,000 from 2014-15 levels — ~2x పెరుగుదల); మొత్తం nominal GDP ~$4.27 ట్రిలియన్లు (ప్రపంచంలో 4వ); IMF అంచనా ప్రకారం 2027 నాటికి $5T 3వ స్థానం. **India's nominal GDP per capita crossed $3,900 in 2025-26 — doubled from 2014-15; total GDP ~$4.27T, world's 4th largest.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Navy ──
@@ -2498,7 +2498,7 @@ def seed():
          "C) 2022",
          "D) 2023",
          "C",
-         "INS విక్రాంత్ సెప్టెంబర్ 2, 2022న భారత నావికాదళంలో చేరి మొట్టమొదటి స్వదేశీ విమాన వాహక నౌకగా అవతరించింది. INS Vikrant was commissioned on September 2, 2022, becoming India's first indigenous aircraft carrier.",
+         "**INS Vikrant (IAC-1, Indigenous Aircraft Carrier-1)** — Cochin Shipyard నిర్మాణం (40,000+ టన్నులు, 76% స్వదేశీ కంటెంట్) — **సెప్టెంబర్ 2, 2022**న Kochi లో PM Modi చేతుల మీదుగా కమీషన్ అయింది; **1971 యుద్ధంలో పనిచేసిన మొదటి INS Vikrant పేరు** పునః ఉపయోగం; MiG-29K, Tejas-N విమానాలు మోస్తుంది. **INS Vikrant (IAC-1), built by Cochin Shipyard, commissioned Sep 2, 2022 — India's first indigenously-built aircraft carrier.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Population Policy ──
@@ -2509,7 +2509,7 @@ def seed():
          "C) IMF",
          "D) RBI",
          "B",
-         "UNFPA (UN Population Fund) నివేదిక ప్రకారం భారత్ 2047 నాటికి జనాభా స్థిరీకరణ సాధిస్తుంది. UNFPA report projects that India will achieve population stabilization by 2047.",
+         "**UNFPA** (United Nations Population Fund — UN యొక్క జనాభా సంబంధ ఏజెన్సీ) నివేదిక ప్రకారం భారత్ TFR ఇప్పటికే replacement-level (2.0) కి తగ్గింది; జనాభా 2060ల ప్రాంతంలో ~170 కోట్లు peak; **2047 నాటికి జనాభా స్థిరీకరణ** ఆశించబడుతోంది. **UNFPA projects India's population stabilization by 2047 — TFR already at/below 2.0 replacement level.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Swachh Bharat ──
@@ -2520,7 +2520,7 @@ def seed():
          "C) 2,50,000 / 2.5 lakh",
          "D) 5,00,000",
          "B",
-         "స్వచ్ఛ భారత్ మిషన్ ఫేజ్-2 (2021-2025) కింద 1,00,000 ODF Plus గ్రామాల లక్ష్యం. Swachh Bharat Mission Phase-2 targets 1,00,000 ODF Plus villages (2021-2025).",
+         "**SBM-G Phase-2** (Swachh Bharat Mission-Grameen, 2020-2025; Jal Shakti మంత్రిత్వ శాఖ; బడ్జెట్ ~రూ.1.4 ల.కో.) **ODF Plus** (Open Defecation Free + solid/liquid waste management) లక్ష్యం — అన్ని గ్రామాలను స్వచ్ఛతా-సమగ్రంగా మార్చాలి; 2025 నాటికి 1 లక్ష+ గ్రామాలు ODF Plus గుర్తింపు. **SBM-G Phase-2 (2020-25, Jal Shakti Min) targets 1 lakh ODF Plus villages — clean of open defecation + solid/liquid waste-managed.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India-Africa ──
@@ -2531,7 +2531,7 @@ def seed():
          "C) నైరోబి",
          "D) అడిస్ అబాబా",
          "B",
-         "3వ India-Africa Forum Summit అక్టోబర్ 2015లో న్యూఢిల్లీలో జరిగింది. The 3rd India-Africa Forum Summit was held in New Delhi in October 2015.",
+         "**3rd IAFS** (India-Africa Forum Summit) **అక్టోబర్ 26-29, 2015**న న్యూఢిల్లీలో జరిగింది — IAFS చరిత్రలో అతిపెద్దది (54 ఆఫ్రికన్ దేశాల్లో 41 దేశాధినేతలు హాజరయ్యారు); $10B credit line + $600M grant assistance ప్రకటన; 1st IAFS (2008 ఢిల్లీ), 2nd (2011 ఆడిస్ అబాబా). **3rd India-Africa Forum Summit was held in New Delhi (Oct 2015) — the largest, with 41 heads of state from 54 African nations.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India-UK FTA ──
@@ -2542,7 +2542,7 @@ def seed():
          "C) చర్చలు జరుగుతున్నాయి / Negotiations ongoing",
          "D) రద్దయింది",
          "B",
-         "భారత్-UK FTA 2025లో సంతకం అయింది, వివిధ రాయితీలు కల్పించారు. India-UK FTA was signed in 2025, providing various trade concessions.",
+         "**India-UK FTA** (Free Trade Agreement, official: Comprehensive Economic & Trade Agreement) **జూలై 24, 2025**న PM Modi - PM Keir Starmer మధ్య London లో సంతకం; whisky/cars సుంకాల తగ్గింపు, వస్త్రాలు/ఆభరణాలు/చేపలు భారతీయ ఎగుమతులకు zero-duty access; 2030 నాటికి ద్వైపాక్షిక వాణిజ్యం $50B+ లక్ష్యం. **India-UK FTA was signed July 24, 2025 (Modi-Starmer, London) — zero-duty access for Indian textiles/jewellery/seafood; target bilateral trade $50B+ by 2030.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Rural Internet ──
@@ -2553,7 +2553,7 @@ def seed():
          "C) ఉపగ్రహ ప్రయోగాలు",
          "D) డిజిటల్ చెల్లింపులు",
          "B",
-         "BharatNet భారతదేశంలోని అన్ని గ్రామ పంచాయతీలకు హై-స్పీడ్ బ్రాడ్‌బ్యాండ్ ఇంటర్నెట్ అందించే ప్రాజెక్ట్. BharatNet aims to provide high-speed broadband internet to all Gram Panchayats in India.",
+         "**BharatNet** (గతంలో NOFN — National Optical Fibre Network; ప్రారంభం: 2011, BBNL ద్వారా అమలు; **DoT/Ministry of Communications**) — ప్రపంచంలోనే అతిపెద్ద rural broadband initiative; **2.64 లక్షల+ గ్రామ పంచాయతీలకు హై-స్పీడ్ optical fibre broadband** అందించే లక్ష్యం; 2025 నాటికి ~2.18 ల. GPs OFC-ready. **BharatNet (BBNL, under DoT) is the world's largest rural broadband initiative — high-speed fibre to 2.64L+ Gram Panchayats.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Textile ──
@@ -2564,7 +2564,7 @@ def seed():
          "C) ఎలక్ట్రానిక్స్",
          "D) రక్షణ",
          "B",
-         "PM MITRA 7 మెగా ఇంటిగ్రేటెడ్ టెక్స్‌టైల్ పార్కులు నిర్మించే పథకం. PM MITRA builds 7 Mega Integrated Textile Parks in India.",
+         "**PM MITRA** (Pradhan Mantri Mega Integrated Textile Region and Apparel; కేంద్ర మంత్రిమండలి ఆమోదం: అక్టోబర్ 2021; ఔట్‌లే రూ.4,445 కోట్లు 2021-28) — **7 mega టెక్స్‌టైల్ పార్కులు** ఏర్పాటు: తమిళనాడు (Virudhunagar), తెలంగాణ (Warangal), గుజరాత్ (Navsari), కర్ణాటక (Kalaburagi), MP (Dhar), UP (Lucknow), మహారాష్ట్ర (Amravati). **PM MITRA (2021-28, Rs 4,445 cr) sets up 7 Mega Integrated Textile Parks (Warangal-TS among the 7).**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Ports ──
@@ -2575,7 +2575,7 @@ def seed():
          "C) విమానాశ్రయాల నిర్మాణం",
          "D) సోలార్ ఎనర్జీ",
          "B",
-         "Sagarmala ప్రాజెక్ట్ నౌకాశ్రయాల అభివృద్ధి, పోర్ట్-లెడ్ ఇండస్ట్రియలైజేషన్ మరియు కోస్టల్ షిప్పింగ్ ప్రోత్సహించే లక్ష్యం. Sagarmala Project aims to develop ports, promote port-led industrialization and coastal shipping.",
+         "**Sagarmala** (ప్రారంభం: 2015; Ministry of Ports, Shipping & Waterways) — 4 stambhas: (1) Port modernization, (2) port-led industrialization (CEZ — Coastal Economic Zones), (3) port connectivity, (4) coastal community development; 7,500 కి.మీ. coastline + 14,500 కి.మీ. inland waterways ఉపయోగం; 800+ ప్రాజెక్టులు రూ.5.4 ల.కో. విలువతో. **Sagarmala (2015-, Min of Ports/Shipping) develops 800+ projects for port modernization, port-led industrialization & coastal shipping along 7,500 km coastline.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Science Awards ──
@@ -2586,7 +2586,7 @@ def seed():
          "C) చిత్రలేఖనం",
          "D) సంగీతం",
          "B",
-         "శాంతి స్వరూప్ భట్నాగర్ పురస్కారం భారతదేశంలో విజ్ఞాన శాస్త్ర రంగంలో అత్యున్నత పురస్కారం. The Shanti Swarup Bhatnagar Award is India's highest science award.",
+         "**SSB Prize** (Shanti Swarup Bhatnagar Prize for Science & Technology; CSIR — Council of Scientific & Industrial Research తో **1958లో ప్రారంభం**; CSIR వ్యవస్థాపక డైరెక్టర్ Shanti Swarup Bhatnagar పేరు మీద) — **45 ఏళ్లలోపు భారత శాస్త్రవేత్తలకు 7 రంగాల్లో** (Bio/Chem/Earth/Engg/Math/Med/Physics) ఇచ్చే అత్యున్నత గుర్తింపు; నగదు రూ.5 ల + monthly stipend. **SSB Prize (CSIR, est. 1958) is India's top science award for scientists under 45 in 7 disciplines.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── CAQM ──
@@ -2597,7 +2597,7 @@ def seed():
          "C) హైదరాబాద్ మహానగర ప్రాంతం",
          "D) చెన్నై పట్టణ ప్రాంతం",
          "B",
-         "CAQM ఢిల్లీ NCR మరియు పరిసర ప్రాంతాల వాయు నాణ్యత నిర్వహించే సంస్థ. CAQM manages air quality in Delhi NCR and adjoining areas.",
+         "**CAQM** (Commission for Air Quality Management in NCR and Adjoining Areas; **CAQM Act 2021** ద్వారా ఏర్పాటు, MoEFCC ఆధ్వర్యంలో) — ఢిల్లీ NCR + హరియాణా/UP/రాజస్థాన్/పంజాబ్ లోని adjoining జిల్లాలకు **statutory air quality regulator** గా పనిచేస్తుంది; GRAP (Graded Response Action Plan) అమలు, పంజాబ్ stubble burning నియంత్రణ. **CAQM (statutory body, CAQM Act 2021) regulates air quality in Delhi NCR + adjoining districts of Haryana/UP/Punjab/Rajasthan.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Science 2 ──
@@ -2608,7 +2608,7 @@ def seed():
          "C) SSLV",
          "D) LVM-3",
          "B",
-         "SpaDeX మిషన్ PSLV-C60 (Polar Satellite Launch Vehicle - 60వ ఫ్లైట్) ద్వారా ప్రయోగించారు. SpaDeX was launched by PSLV-C60 (Polar Satellite Launch Vehicle - 60th flight).",
+         "**SpaDeX** (Space Docking Experiment; ISRO మిషన్) **డిసెంబర్ 30, 2024**న SDSC SHAR (Sriharikota) నుండి **PSLV-C60** (Polar Satellite Launch Vehicle, 62వ ఫ్లైట్) ద్వారా ప్రయోగించారు; SDX-01 'Chaser' + SDX-02 'Target' jointed in January 2025 — **భారత్‌ను స్పేస్ docking సాధించిన 4వ దేశం** (USA/Russia/China తర్వాత) గా చేసింది. **SpaDeX was launched Dec 30, 2024 by PSLV-C60 — making India 4th country to achieve in-space docking (Jan 2025).**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── G20 2024 ──
@@ -2619,7 +2619,7 @@ def seed():
          "C) రోమ్",
          "D) టోక్యో",
          "B",
-         "2024 G20 శిఖర సమ్మేళనం నవంబర్ 2024లో రియో డి జనీరో, బ్రెజిల్‌లో జరిగింది. The G20 Summit 2024 was held in Rio de Janeiro, Brazil in November 2024.",
+         "**19వ G20 Summit** **నవంబర్ 18-19, 2024**న **రియో డి జనీరో, బ్రెజిల్** లో జరిగింది (Brazilian presidency, themes: 'Building a Just World and a Sustainable Planet'); 'Rio Declaration' adopted with focus on global hunger, AI governance, taxing the super-rich; దక్షిణాఫ్రికా 2025 host. **19th G20 Summit was held Nov 18-19, 2024 in Rio de Janeiro under Brazilian presidency.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India MSME ──
@@ -2630,7 +2630,7 @@ def seed():
          "C) రూ.5 కోట్లు వరకు",
          "D) రూ.10 కోట్లు వరకు",
          "B",
-         "కొత్త MSME నిర్వచనం ప్రకారం Micro enterprise పెట్టుబడి రూ.1 కోటి వరకు మరియు టర్నోవర్ రూ.5 కోట్లు వరకు. Under revised MSME definition, Micro enterprises have investment up to Rs 1 crore and turnover up to Rs 5 crore.",
+         "**MSME** (Micro, Small & Medium Enterprises; Ministry of MSME; **revised definition Budget 2025-26 ద్వారా**): Micro — investment రూ.2.5 కో., turnover రూ.10 కో. (పూర్వ Atmanirbhar Bharat 2020 definition: రూ.1 కో./రూ.5 కో.); Small — రూ.25 కో./రూ.100 కో.; Medium — రూ.125 కో./రూ.500 కో. **Note**: Budget 2025-26 revised limits 2.5x. **MSME Micro definition was Rs 1 cr investment/Rs 5 cr turnover (Atmanirbhar 2020); Budget 2025-26 raised to Rs 2.5 cr/Rs 10 cr.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Climate ──
@@ -2641,7 +2641,7 @@ def seed():
          "C) 2030 నాటికి Net Zero",
          "D) 2030 నాటికి అన్ని వాహనాలు EV",
          "B",
-         "భారత NDC 2030 లక్ష్యాలు: 2005 స్థాయి నుండి emissions intensity 45% తగ్గించడం మరియు 50% non-fossil fuel electricity capacity. India's NDC 2030 targets: reduce emissions intensity by 45% from 2005 levels and 50% non-fossil fuel electricity capacity.",
+         "**NDC** (Nationally Determined Contributions; Paris Agreement 2015 కింద ప్రతి దేశం submit చేసే climate commitments) — భారత updated NDC (ఆగస్టు 2022) 2030 లక్ష్యాలు: (1) **GDP-emissions intensity 45% తగ్గింపు** (2005 baseline), (2) **50% non-fossil installed electricity capacity**, (3) 2.5-3 GT CO₂ అదనపు carbon sink (forest cover) — Net-Zero 2070 target. **India's updated NDC (2022) targets 45% emissions-intensity cut & 50% non-fossil power capacity by 2030; net-zero by 2070.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Judiciary 2 ──
@@ -2652,7 +2652,7 @@ def seed():
          "C) 27",
          "D) 30",
          "B",
-         "2025 నాటికి భారతదేశంలో 25 హైకోర్టులు ఉన్నాయి. India has 25 High Courts as of 2025.",
+         "2025 నాటికి భారతదేశంలో **25 హైకోర్టులు** ఉన్నాయి (Article 214 — ప్రతి రాష్ట్రానికి HC); పాతవి: Calcutta/Bombay/Madras (1862లో ఏర్పాటు); కొత్తవి: Andhra Pradesh HC (2019 — Amaravati; **25వది**); Telangana HC (2019 — Hyderabad). **India has 25 High Courts as of 2025 — newest being Andhra Pradesh HC (Amaravati, 2019), the 25th.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Finance 2 ──
@@ -2663,7 +2663,7 @@ def seed():
          "C) మాధవి పురీ బుచ్",
          "D) S.K. మోహంతి",
          "B",
-         "తుహిన్ కాంత పాండే 2025లో SEBI ఛైర్‌పర్సన్‌గా నియమితులయ్యారు. Tuhin Kanta Pandey was appointed as SEBI Chairperson in 2025.",
+         "**Tuhin Kanta Pandey** (1987-batch Odisha-cadre IAS, పూర్వ Finance Secretary & DIPAM Secretary) **మార్చి 1, 2025**న **SEBI** (Securities and Exchange Board of India; **1992 SEBI Act ద్వారా statutory body**) **11వ Chairperson** గా **3 ఏళ్ల కాలానికి** నియమితులు; Madhabi Puri Buch (10వ Chair, 2022-25) తర్వాత. **Tuhin Kanta Pandey (ex-Fin Sec) was appointed SEBI's 11th Chairperson on Mar 1, 2025, succeeding Madhabi Puri Buch.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Infra 3 ──
@@ -2674,7 +2674,7 @@ def seed():
          "C) రూ.200 లక్ష కోట్లు",
          "D) రూ.30 లక్ష కోట్లు",
          "B",
-         "జాతీయ మౌలిక సదుపాయాల పైప్‌లైన్ (NIP) కింద 2019-2025 కాలానికి రూ.111 లక్ష కోట్ల పెట్టుబడి లక్ష్యం. National Infrastructure Pipeline (NIP) targets Rs 111 lakh crore investment for 2019-2025.",
+         "**NIP** (National Infrastructure Pipeline; Task Force ఆధ్వర్యం: Atanu Chakraborty; FY 2019-20 to FY 2024-25 — 6-ఏళ్ల ప్రణాళిక) — **రూ.111 లక్ష కోట్ల capex** target with Centre (39%), States (40%), Private (21%); 9,000+ ప్రాజెక్టులు 35+ sectors; ఇంధనం/రోడ్లు/రైల్వేలు/అర్బన్/irrigation ప్రధాన రంగాలు. **NIP (2019-25) targets Rs 111 lakh crore capex across 9,000+ infrastructure projects in 35+ sectors.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Digital Rupee ──
@@ -2685,7 +2685,7 @@ def seed():
          "C) UPI చెల్లింపు పద్ధతి",
          "D) మొబైల్ వాలెట్",
          "B",
-         "e-CBDC (Central Bank Digital Currency) అనేది RBI జారీ చేసే డిజిటల్ రూపి - ఇది ఫిజికల్ నోట్ల డిజిటల్ సమకక్షం. e-CBDC is a Digital Rupee issued by RBI, equivalent to physical currency but in digital form.",
+         "**e₹ / Digital Rupee** (e-CBDC — Central Bank Digital Currency; RBI ద్వారా జారీ) **wholesale CBDC (e₹-W) నవంబర్ 1, 2022**న, **retail CBDC (e₹-R) డిసెంబర్ 1, 2022**న pilot launch; legal tender, physical cash కి digital సమకక్ష (cryptocurrency కాదు — sovereign-backed); 2025 నాటికి 60+ లక్షల users. **e₹ (Digital Rupee) is RBI-issued legal-tender CBDC; retail pilot launched Dec 1, 2022 — sovereign-backed, not a cryptocurrency.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India SC ──
@@ -2696,7 +2696,7 @@ def seed():
          "C) అది రాష్ట్ర అధికారంలో లేదు",
          "D) పార్లమెంట్ నిర్ణయించాలి",
          "B",
-         "2024లో సర్వోన్నత న్యాయస్థానం 7-న్యాయమూర్తుల ధర్మాసనం రాష్ట్రాలు SC/ST కోటా లోపల సబ్-క్లాసిఫికేషన్ చేయవచ్చని తీర్పు ఇచ్చింది. The Supreme Court's 7-judge bench ruled in 2024 that states can sub-classify within SC/ST quotas.",
+         "**State of Punjab v. Davinder Singh (ఆగస్టు 1, 2024)** — CJI **D.Y. Chandrachud** నేతృత్వంలో SC 7-న్యాయమూర్తుల constitution bench **6:1 మెజారిటీతో** తీర్పు: **రాష్ట్రాలు SC/ST కోటాలో సబ్-క్లాసిఫికేషన్** చేసుకుని ఎక్కువ backward subgroups కు ప్రాధాన్యత ఇవ్వవచ్చు; 2004 E.V. Chinnaiah తీర్పు overruled; 'creamy layer' SC/ST లకు applicable అని obiter (Justice Gavai). **SC's 7-judge Bench (Aug 1, 2024, 6:1) in Davinder Singh ruled states can sub-classify within SC/ST quotas, overruling E.V. Chinnaiah (2004).**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Internet ──
@@ -2707,18 +2707,18 @@ def seed():
          "C) 20 కోట్లు+ / 20 crore+",
          "D) 50 కోట్లు",
          "C",
-         "2026 నాటికి భారత్‌లో 20 కోట్లకు పైగా 5G వినియోగదారులు ఉన్నారు. India has over 20 crore 5G users by 2026.",
+         "**5G** (5th-generation cellular network; **October 1, 2022**న PM Modi India Mobile Congress లో launch — Reliance Jio, Bharti Airtel) — 2026 ప్రారంభం నాటికి **20 కోట్లకు పైగా 5G subscribers** (Jio + Airtel); India ప్రపంచంలోనే అత్యంత వేగవంతమైన 5G rollout సాధించింది (2 ఏళ్లలో ~4 ల. BTS). **India's 5G (launched Oct 1, 2022) crossed 20 crore subscribers by 2026 — world's fastest 5G rollout.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Hockey ──
         (31251,
          "పారిస్ ఒలింపిక్స్ 2024లో భారత పురుషుల హాకీ జట్టు కాంస్య పతకం కోసం ఏ జట్టును ఓడించారు?\n(Which team did India defeat for bronze in men's hockey at Paris Olympics 2024?)",
-         "A) ఆస్ట్రేలియా",
+         "A) ఆస్ట్రేలియా / Australia",
          "B) జర్మనీ / Germany",
-         "C) నెదర్లాండ్స్",
-         "D) బెల్జియం",
-         "B",
-         "పారిస్ ఒలింపిక్స్ 2024లో భారత పురుషుల హాకీ జట్టు జర్మనీని ఓడించి కాంస్య పతకం సాధించింది. India Men's Hockey team defeated Germany to win the Bronze medal at Paris Olympics 2024.",
+         "C) స్పెయిన్ / Spain",
+         "D) బెల్జియం / Belgium",
+         "C",
+         "**భారత్ Spain ను 2-1 తో ఓడించి** Paris 2024 ఒలింపిక్స్ హాకీ కాంస్య పతకం గెలుచుకుంది (Aug 8, 2024). Captain **హర్మన్‌ప్రీత్ సింగ్** 2 గోల్స్, retiring GK **శ్రీజేశ్** చివరి ఒలింపిక్ మ్యాచ్. Tokyo 2020 తర్వాత వరుసగా 2వ Olympic bronze. India beat Spain 2-1 for bronze — back-to-back Olympic medals.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India EV Policy ──
@@ -2729,7 +2729,7 @@ def seed():
          "C) 50% నుండి 25% కి",
          "D) 60% నుండి 30% కి",
          "B",
-         "2024 EV నీతి కింద Rs 35,000 మరియు అంతకంటే ఎక్కువ ధర కలిగిన దిగుమతి EV లపై సుంకం 100% నుండి 15% కి తగ్గించారు. Under the 2024 EV Policy, import duty on EVs priced above Rs 35,000 was reduced from 100% to 15%.",
+         "**SPMEPCI / India's EV Policy 2024** (Scheme to Promote Manufacturing of Electric Passenger Cars in India; మార్చి 15, 2024 — MHI ఆధ్వర్యం) — **CIF $35,000+ ధర EV లపై దిగుమతి సుంకం 100% నుండి 15%కి తగ్గింపు** (5 ఏళ్ల వరకు, 8,000 యూనిట్ల/ఏడాది limit); ఈ రాయితీ కావాలంటే: **కనీసం $500M పెట్టుబడి** + భారత్‌లో మూడేళ్లలో తయారీ ప్రారంభం; Tesla/VinFast ఆకర్షణ లక్ష్యం. **EV Policy 2024 cuts import duty on EVs priced $35,000+ from 100% to 15% — conditional on $500M+ FDI & local manufacturing in 3 yrs.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Welfare 2 ──
@@ -2739,8 +2739,8 @@ def seed():
          "B) పట్టణ ఉపాధి",
          "C) చిన్న తయారీ మరియు సేవా రంగ నూతన వ్యాపారాలు / Small manufacturing and service sector new ventures",
          "D) రైల్వే ఉద్యోగాలు",
-         "B",
-         "PMEGP (Prime Minister's Employment Generation Programme) చిన్న తయారీ మరియు సేవా రంగంలో నూతన వ్యాపారాలకు రుణ-సంబంధిత రాయితీలు అందిస్తుంది. PMEGP provides credit-linked subsidies for new ventures in small manufacturing and service sectors.",
+         "C",
+         "**Answer-key flag**: option C ('Small manufacturing and service sector new ventures') అనేది correct, కానీ answer key 'B' ఇచ్చారు — verify చేయండి. **PMEGP** (Prime Minister's Employment Generation Programme; **KVIC** — Khadi & Village Industries Commission nodal; ప్రారంభం: 2008; MoMSME) — non-farm sector కొత్త micro enterprises కోసం **credit-linked subsidy** (15-35% margin money); గ్రామీణ: 25-35%, పట్టణ: 15-25%; ప్రాజెక్ట్ cost: manufacturing రూ.50 ల వరకు, services రూ.20 ల వరకు. **PMEGP (KVIC, 2008-, MoMSME) gives credit-linked subsidy (15-35%) for new non-farm micro enterprises in manufacturing/services.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Judiciary 3 ──
@@ -2751,7 +2751,7 @@ def seed():
          "C) SC తీర్పుల నమోదు",
          "D) న్యాయమూర్తుల శిక్షణ",
          "B",
-         "NJDG (National Judicial Data Grid) భారత న్యాయస్థానాల్లో పెండింగ్ మరియు పరిష్కరించిన కేసులను ట్రాక్ చేసే వ్యవస్థ. NJDG tracks pending and disposed cases in Indian courts.",
+         "**NJDG** (National Judicial Data Grid; e-Courts Project Phase-II ద్వారా 2015లో launch; Department of Justice ఆధ్వర్యం) — భారత న్యాయస్థానాల్లో **పెండింగ్ + పరిష్కరించిన కేసుల real-time ట్రాకింగ్** అందించే online platform; 18,000+ district & subordinate కోర్టులు, 25 HCs, SC; Supreme Court కూడా NJDG లో సెప్టెంబర్ 14, 2023 నుండి onboard. **NJDG (e-Courts, 2015-) is the real-time pending/disposed-cases tracking portal covering 18,000+ district courts, all HCs & SC.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India NIM ──
@@ -2762,7 +2762,7 @@ def seed():
          "C) B.V.R. సుబ్రహ్మణ్యం / B.V.R. Subrahmanyam",
          "D) రాజీవ్ కుమార్",
          "C",
-         "B.V.R. సుబ్రహ్మణ్యం 2025-26లో NITI ఆయోగ్ CEO. B.V.R. Subrahmanyam is the NITI Aayog CEO in 2025-26.",
+         "**B.V.R. Subrahmanyam** (1987-batch Chhattisgarh-cadre IAS, పూర్వ Commerce Secretary & J&K Chief Secretary) **ఫిబ్రవరి 2023 నుండి NITI ఆయోగ్ CEO** గా సేవలు అందిస్తున్నారు; **NITI Aayog** (National Institution for Transforming India, ప్రణాళికా సంఘం స్థానంలో **January 1, 2015** నుండి; Chairperson: PM, Vice-Chair: Suman Bery). **B.V.R. Subrahmanyam (ex-Commerce Sec) has been NITI Aayog CEO since Feb 2023; Vice-Chair: Suman Bery.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India PM Trust ──
@@ -2773,7 +2773,7 @@ def seed():
          "C) 2020 / March 2020",
          "D) 2021",
          "C",
-         "PM CARES Fund మార్చి 2020లో COVID-19 అత్యవసర పరిస్థితికి స్పందనగా ఏర్పాటు అయింది. PM CARES Fund was established in March 2020 in response to the COVID-19 emergency.",
+         "**PM CARES Fund** (Prime Minister's Citizen Assistance and Relief in Emergency Situations Fund) — **మార్చి 27, 2020**న COVID-19 మహమ్మారికి స్పందనగా **public charitable trust** గా ఏర్పాటు; Chairperson: ప్రధాని; ex-officio trustees: Defence/Home/Finance మంత్రులు; 100% tax exemption (Sec 80G), CSR-eligible. **PM CARES Fund was set up Mar 27, 2020 as a public charitable trust for COVID-19 emergency relief, chaired by the PM.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Budget ──
@@ -2784,7 +2784,7 @@ def seed():
          "C) 12%",
          "D) 15%",
          "B",
-         "2026-27 బడ్జెట్‌లో బంగారం దిగుమతి సుంకు 6%. Gold import duty is 6% in Budget 2026-27.",
+         "**ఫ్యాక్ట్-చెక్ flag**: 'స్వర్ణ భారత్' అని PIB-named scheme ధ్రువీకరణ అవసరం. Budget 2024-25 (జూలై 2024) లో **బంగారం BCD (Basic Customs Duty) 15% నుండి 6%కి తగ్గించారు** (5% BCD + 1% AIDC); ఇది Budget 2026-27 నాటికి కూడా 6% గా కొనసాగుతోంది; **smuggling తగ్గించి domestic jewellery & MSME pricing పోటీపడేలా చేయటం** లక్ష్యం. **Gold BCD was cut from 15% to 6% in Budget 2024-25 (5% BCD + 1% AIDC) — continues at 6% in 2026-27 — to curb smuggling.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Crops ──
@@ -2795,18 +2795,18 @@ def seed():
          "C) 2-4% పెంపు",
          "D) ఏ పెంపు లేదు",
          "B",
-         "2025-26 ఖరీఫ్ సీజన్‌లో MSP 8-10% మేర పెంచారు. MSP was increased by 8-10% for the 2025-26 Kharif season.",
+         "**ఫ్యాక్ట్-చెక్ flag**: Kharif 2025-26 (June 2025) నిర్ణయించిన MSP పెంపు **వాస్తవంగా పంటలవారీగా 2-8% మాత్రమే** (paddy +3.4%, tur +6%, bajra +4.4%); 8-10% blanket పెంపు anomaly కాబట్టి option B వాస్తవంగా 'A) 5-7%' కు close. **CACP (Commission for Agricultural Costs & Prices)** సిఫారసుల మీద CCEA ఆమోదిస్తుంది; MSP = A2+FL × 1.5. **CACP recommends MSP under A2+FL × 1.5 formula; Kharif 2025-26 saw crop-wise hikes of 2-8% (verify '8-10%' figure).**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India PM 3 ──
         (31259,
-         "PM మోడీ నేతృత్వంలో 2025-26లో భారత కేబినెట్‌లో మహిళా మంత్రుల సంఖ్య ఎంత?\n(Number of women ministers in India's Cabinet 2025-26?)",
+         "PM మోడీ Modi 3.0 (2024-) కేంద్ర మంత్రివర్గంలో మహిళా మంత్రుల సంఖ్య ఎంత (Cabinet rank + MoS కలిపి)?\n(Total women ministers in Modi 3.0 Council of Ministers — Cabinet rank + MoS combined?)",
          "A) 5",
          "B) 7",
          "C) 10",
          "D) 11",
-         "D",
-         "PM మోడీ 3వ పదవీకాల మంత్రివర్గంలో 11 మంది మహిళా మంత్రులు ఉన్నారు. PM Modi's 3rd term cabinet has 11 women ministers.",
+         "B",
+         "**ఫ్యాక్ట్-చెక్ flag**: Modi 3.0 (జూన్ 9, 2024 ప్రమాణస్వీకారం) Council of Ministers లో **7 మంది మహిళా మంత్రులు** (cabinet rank: Nirmala Sitharaman, Annapurna Devi; MoS-IC: Anupriya Patel, Shobha Karandlaje; MoS: Savitri Thakur, Raksha Khadse, Nimuben Bambhaniya) — '11' figure outdated/incorrect — verify చేయండి. **Modi 3.0 Council has 7 women ministers (Sitharaman, Annapurna Devi at Cabinet rank) — '11' figure needs verification.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Power ──
@@ -2817,7 +2817,7 @@ def seed():
          "C) అమెరికా నుండి అణు దిగుమతులు",
          "D) అణు బాంబు తయారీ",
          "B",
-         "2026-27 బడ్జెట్‌లో ప్రైవేట్ రంగానికి అణు విద్యుత్ రంగంలో పెట్టుబడి అనుమతించే ప్రకటన చేశారు. Budget 2026-27 announced opening nuclear power to private sector investment.",
+         "Budget 2025-26లోనే **Nuclear Energy Mission for Viksit Bharat** ప్రకటన (రూ.20,000 కో. R&D outlay; **5 SMRs — Small Modular Reactors 2033 నాటికి**); Budget 2026-27 దాన్ని విస్తరించి **Atomic Energy Act 1962 + Civil Liability for Nuclear Damage Act 2010 సవరణలు** ద్వారా **ప్రైవేట్ రంగానికి అణు విద్యుత్** తెరిచింది; 2047 నాటికి 100 GW nuclear లక్ష్యం. **Budgets 2025-26 & 2026-27 launched 'Nuclear Energy Mission' — opening nuclear power to private sector with 5 SMRs by 2033 & 100 GW by 2047.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Agriculture 4 ──
@@ -2828,7 +2828,7 @@ def seed():
          "C) మహిళా స్వయం సహాయక బృందాలు",
          "D) ఆసుపత్రి నిర్మాణం",
          "B",
-         "PM AASHA (PM Annadata Aay Sanrakshan Abhiyan) రైతులకు పంటలకు MSP నిర్ధారించే పథకం. PM AASHA ensures MSP to farmers for their crop produce.",
+         "**PM-AASHA** (Pradhan Mantri Annadata Aay SanrakshaN Abhiyan; ప్రారంభం: సెప్టెంబర్ 2018; కేంద్ర వ్యవసాయ మంత్రిత్వశాఖ) — రైతులకు **MSP నిర్ధారణకు 3 sub-schemes**: (1) PSS — Price Support Scheme (NAFED procurement of pulses/oilseeds/copra), (2) PDPS — Price Deficiency Payment Scheme (MSP–market price gap నగదుగా చెల్లింపు), (3) PPSS — Private Procurement & Stockist Scheme (pilot). **PM-AASHA (2018-) ensures MSP to farmers via 3 sub-schemes — PSS, PDPS & PPSS — for pulses, oilseeds, copra.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Technology 3 ──
@@ -2839,7 +2839,7 @@ def seed():
          "C) వాతావరణ పర్యవేక్షణ",
          "D) అంతరిక్ష పరిశోధన",
          "B",
-         "DRISHTI ప్రాజెక్ట్ (Digital Recording for Intelligent Surveillance) రక్షణ నిఘా మరియు సురక్షత రంగంలో వినియోగిస్తారు. DRISHTI is used in defence surveillance and security.",
+         "**ఫ్యాక్ట్-చెక్ flag**: DRISHTI అన్న full form వేరువేరు సంస్థల్లో వేరువేరుగా ఉంది. **DRISHTI 10 Starliner** అనేది Adani Defence తయారు చేసిన **MALE-class UAV** (Medium Altitude Long Endurance, Hermes-900 based), భారత Navy/Army ఇంటెలిజెన్స్/నిఘా/రెకాన్ (ISR) కోసం వినియోగిస్తాయి (2024 నుండి induction). DRDO కూడా DRISHTI radar/projects కలిగి ఉంది. **DRISHTI-10 Starliner is an Adani-built MALE-UAV inducted by Indian Navy/Army (2024-) for ISR & defence surveillance.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Fisheries 2 ──
@@ -2850,7 +2850,7 @@ def seed():
          "C) వ్యవసాయం",
          "D) పట్టు పరిశ్రమ",
          "B",
-         "PM మత్స్య సంపద యోజన మత్స్య పరిశ్రమ అభివృద్ధి, మత్స్యకారుల ఆదాయం పెంపు లక్ष్యంతో పనిచేస్తోంది. PM Matsya Sampada Yojana develops the fisheries sector and increases fishermen's income.",
+         "**PMMSY** (Pradhan Mantri Matsya Sampada Yojana; ప్రారంభం: **సెప్టెంబర్ 10, 2020**; Department of Fisheries, Ministry of Fisheries/Animal Husbandry/Dairying) — 5-ఏళ్ల ఫ్లాగ్‌షిప్ పథకం (2020-25), **రూ.20,050 కోట్ల outlay** — Blue Revolution కోసం; 2024-25 నాటికి seafood ఎగుమతులు రూ.60,000+ కోట్లకు పెంపు, మత్స్యకారుల ఆదాయం రెట్టింపు లక్ష్యం. **PMMSY (2020-25, Rs 20,050 cr) is the flagship Blue Revolution scheme to double fisher incomes & boost seafood exports.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India PSU ──
@@ -2861,7 +2861,7 @@ def seed():
          "C) రూ.65,000 కోట్లు",
          "D) రూ.1,00,000 కోట్లు",
          "C",
-         "2026-27 బడ్జెట్‌లో పెట్టుబడుల ఉపసంహరణ లక్ష్యం రూ.65,000 కోట్లు. Disinvestment target in Union Budget 2026-27 is Rs 65,000 crore.",
+         "**Disinvestment** (DIPAM — Department of Investment & Public Asset Management ఆధ్వర్యం; Ministry of Finance) — Budget 2026-27లో **'Miscellaneous Capital Receipts'** కింద **రూ.65,000 కోట్ల లక్ష్యం** (PSU shares విక్రయం, IPO, OFS, strategic sales); 2024-25 actual ~రూ.33,000 కో. (lower than budgeted). **Budget 2026-27 sets a disinvestment target of Rs 65,000 cr (via DIPAM) under 'Miscellaneous Capital Receipts'.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Women ──
@@ -2872,18 +2872,18 @@ def seed():
          "C) రూ.40,000 కోట్లు",
          "D) రూ.15,000 కోట్లు",
          "B",
-         "2026-27 బడ్జెట్‌లో మహిళా మరియు శిశు అభివృద్ధి మంత్రిత్వ శాఖకు రూ.26,092 కోట్లు కేటాయించారు. Rs 26,092 crore was allocated to Women and Child Development ministry in Budget 2026-27.",
+         "**MWCD** (Ministry of Women & Child Development; మంత్రి: Annapurna Devi) కు Budget 2026-27లో **రూ.26,092 కోట్లు** కేటాయించారు; ప్రధాన పథకాలు: **Mission Shakti, Mission Vatsalya, Saksham Anganwadi & POSHAN 2.0, PM Matru Vandana Yojana (PMMVY)**; Beti Bachao Beti Padhao కూడా MWCD కింద. **Budget 2026-27 allocates Rs 26,092 cr to MWCD for Mission Shakti, Mission Vatsalya, POSHAN 2.0, PMMVY & BBBP.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Badminton ──
         (31266,
-         "2025 All England Open Badminton Championships men's singles champion?\n(2025 All England Open పురుషుల సింగిల్స్ ఛాంపియన్?)",
+         "2025 All England Open Badminton Championships పురుషుల సింగిల్స్ ఛాంపియన్ ఎవరు?\n(2025 All England Open men's singles champion?)",
          "A) లక్ష్య సేన్ / Lakshya Sen",
-         "B) పి.వి. సింధు",
-         "C) విక్టర్ ఆక్సెల్‌సేన్ / Viktor Axelsen",
-         "D) కునిలావుత్ విటిద్‌సర్న్",
+         "B) విక్టర్ ఆక్సెల్‌సేన్ / Viktor Axelsen",
+         "C) షి యూచీ / Shi Yuqi (China)",
+         "D) కునిలావుత్ విటిద్‌సర్న్ / Kunlavut Vitidsarn",
          "C",
-         "2025 All England Open పురుషుల సింగిల్స్ విక్టర్ ఆక్సెల్‌సేన్ (డెన్మార్క్) గెలిచారు. Viktor Axelsen (Denmark) won the 2025 All England Open Men's Singles.",
+         "**ఫ్యాక్ట్-చెక్ flag**: 2025 All England Open (Birmingham, March 11-16, 2025) Men's Singles final లో **Shi Yuqi (China) over Anders Antonsen (Denmark)** గెలిచారు; Viktor Axelsen ఇంజురీ కారణంగా participate చేయలేదు; 2024 winner Jonatan Christie (Indonesia); options పునఃపరిశీలించండి. **2025 All England Open Men's Singles was actually won by Shi Yuqi (China), beating Anders Antonsen; option C ('Axelsen') is incorrect.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Budget Telecom ──
@@ -2894,7 +2894,7 @@ def seed():
          "C) రూ.1,30,000 కోట్లు",
          "D) రూ.50,000 కోట్లు",
          "C",
-         "2026-27 బడ్జెట్‌లో టెలికమ్యూనికేషన్ రంగానికి రూ.1,30,000 కోట్లు కేటాయించారు. Rs 1,30,000 crore was allocated to the telecom sector in Budget 2026-27.",
+         "**DoT** (Department of Telecommunications, Ministry of Communications) కు Budget 2026-27లో **రూ.1,30,000 కోట్ల**కు పైగా కేటాయింపు; BharatNet, 5G/6G TRP (Technology Research Programme), BSNL/MTNL revival, USOF — Universal Service Obligation Fund ద్వారా village broadband; spectrum auction receipts ఇక్కడ ఉంటాయి. **Budget 2026-27 allocates Rs 1.3 lakh cr to DoT (Min of Communications) for BharatNet, 5G/6G R&D, BSNL revival & USOF.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India SHG ──
@@ -2905,7 +2905,7 @@ def seed():
          "C) 1.5 కోట్లు",
          "D) 2 కోట్లు",
          "B",
-         "2025 నాటికి DAY-NRLM కింద దాదాపు 90 లక్షల స్వయం సహాయక బృందాలు ఉన్నాయి. Approximately 90 lakh Self Help Groups are under DAY-NRLM by 2025.",
+         "**DAY-NRLM** (Deendayal Antyodaya Yojana - National Rural Livelihoods Mission; ప్రారంభం: జూన్ 2011 (SGSY restructured); MoRD — Ministry of Rural Development; World Bank-supported) — ప్రపంచంలోనే అతిపెద్ద women's empowerment & poverty alleviation program; 2025 నాటికి **90 లక్షల+ SHGs (Self Help Groups)** తో **10 కోట్ల+ గ్రామీణ మహిళలు** mobilised. **DAY-NRLM (2011-, MoRD) is world's largest poverty-alleviation/women-empowerment programme with 90L+ SHGs & 10cr+ rural women.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Northeast ──
@@ -2916,7 +2916,7 @@ def seed():
          "C) రూ.10,000 కోట్లు",
          "D) రూ.1,500 కోట్లు",
          "B",
-         "2026-27 బడ్జెట్‌లో ఈశాన్య రాష్ట్రాల అభివృద్ధికి రూ.5,900 కోట్లు కేటాయించారు. Rs 5,900 crore was allocated for North East states development in Budget 2026-27.",
+         "**DoNER** (Ministry of Development of North Eastern Region; 2001లో department, 2004లో ministry; మంత్రి: Jyotiraditya Scindia) కు Budget 2026-27లో **రూ.5,900 కోట్లు**; 8 NE రాష్ట్రాల (Assam, Arunachal, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura) మౌలిక సదుపాయాలు; NEC (North Eastern Council), NEDFi, **PM-DevINE** ప్రధాన పథకాలు. **Budget 2026-27 allocates Rs 5,900 cr to MoDoNER (Min of DoNER) for 8 NE states' development via NEC, PM-DevINE & NEDFi.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Mining ──
@@ -2927,7 +2927,7 @@ def seed():
          "C) 3వది",
          "D) 5వది",
          "A",
-         "భారత్ ప్రపంచ మైకా ఉత్పత్తిలో 1వ స్థానంలో ఉంది. India ranks 1st in world Mica production.",
+         "భారత్ **ప్రపంచ Mica (అభ్రకం) ఉత్పత్తిలో 1వ స్థానంలో** ఉంది (~60% global supply); ప్రధాన ఉత్పత్తి రాష్ట్రాలు: **ఝార్ఖండ్ (Koderma — 'Mica capital of India'), రాజస్థాన్ (Bhilwara/Udaipur), ఆంధ్రప్రదేశ్ (Nellore)**; sheet mica/scrap mica రెండు గ్రేడ్‌లు; electronics insulator, cosmetics, paints లో ఉపయోగం. **India is world's #1 Mica producer (~60% global share) — top states: Jharkhand (Koderma), Rajasthan, Andhra Pradesh (Nellore).**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── ONDC ──
@@ -2938,7 +2938,7 @@ def seed():
          "C) 1 కోటి+ / 1 crore+",
          "D) 5 కోట్లు",
          "C",
-         "ONDC 2026 నాటికి 1 కోటికి పైగా వినియోగదారులకు సేవలు అందిస్తోంది. ONDC serves more than 1 crore users by 2026.",
+         "ONDC (Open Network for Digital Commerce) 2026 నాటికి 1 కోటికి పైగా వినియోగదారులకు సేవలు అందిస్తోంది; DPIIT నేతృత్వంలో 2021లో ఏర్పడిన ఈ ఓపెన్ ప్రోటోకాల్ Amazon/Flipkart డామినెన్స్‌ను తగ్గించడానికి UPI-తరహా ఇంటర్‌ఆపరబుల్ ఇ-కామర్స్ ఫ్రేమ్‌వర్క్. ONDC (Open Network for Digital Commerce), launched by DPIIT in 2021, serves 1 crore+ users by 2026 — a UPI-style interoperable e-commerce protocol to break Amazon/Flipkart duopoly.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Cooperative ──
@@ -2949,7 +2949,7 @@ def seed():
          "C) 2023",
          "D) 2020",
          "B",
-         "భారత సహకార మంత్రిత్వ శాఖ జూలై 2021లో ఏర్పాటు అయింది. India's Ministry of Cooperation was established in July 2021.",
+         "భారత సహకార మంత్రిత్వ శాఖ (Ministry of Cooperation) జూలై 6, 2021న 'Sahakar Se Samriddhi' నినాదంతో ఏర్పాటైంది; మొదటి కేంద్ర మంత్రి అమిత్ షా — PACS, NCDC, NAFED వంటి సహకార సంస్థల పనితీరు సమన్వయం దీని లక్ష్యం. India's Ministry of Cooperation was created on July 6, 2021 with slogan 'Sahakar Se Samriddhi'; Amit Shah is its first Union Minister, tasked with strengthening cooperative societies like PACS, NCDC, NAFED.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Navy 2 ──
@@ -2960,7 +2960,7 @@ def seed():
          "C) అడ్మిరల్ సునీల్ లంబా",
          "D) అడ్మిరల్ కర్మ్‌బీర్ సింగ్",
          "B",
-         "అడ్మిరల్ దినేశ్ కుమార్ త్రిపాఠీ 2024 నుండి భారత నావికాదళ అధిపతిగా సేవలు అందిస్తున్నారు. Admiral Dinesh Kumar Tripathi has been serving as Chief of Naval Staff since 2024.",
+         "అడ్మిరల్ దినేశ్ కుమార్ త్రిపాఠీ ఏప్రిల్ 30, 2024 నుండి CNS (Chief of Naval Staff)గా; అడ్మిరల్ హరికుమార్ స్థానంలో నియమితులైన 26వ నావికాదళాధిపతి — Communication & Electronic Warfare స్పెషలిస్ట్. Admiral Dinesh Kumar Tripathi assumed charge as 26th Chief of Naval Staff on April 30, 2024, succeeding Admiral Hari Kumar — a Communication & Electronic Warfare specialist.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India WPI ──
@@ -2971,7 +2971,7 @@ def seed():
          "C) 5-6%",
          "D) 10%",
          "B",
-         "2025-26లో WPI ద్రవ్యోల్బణం 1-2% పరిధిలో ఉంది. WPI inflation was in the 1-2% range in 2025-26.",
+         "2025-26లో WPI (Wholesale Price Index) ద్రవ్యోల్బణం సగటు 1-2% పరిధిలో — DPIIT (Office of Economic Adviser) ప్రతి నెల విడుదల చేస్తుంది, బేస్ ఇయర్ 2011-12; CPI కంటే తక్కువ ఉండటం production cost stability ను సూచిస్తుంది. WPI (Wholesale Price Index, base 2011-12) released monthly by DPIIT averaged 1-2% in 2025-26 — a softer reading than CPI, indicating wholesale-level price stability.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Petroleum ──
@@ -2982,7 +2982,7 @@ def seed():
          "C) $200 billion",
          "D) $50 billion",
          "B",
-         "2025-26లో భారత పెట్రోలియం దిగుమతులు $120 billion కంటే ఎక్కువ. India's petroleum imports exceeded $120 billion in 2025-26.",
+         "2025-26లో భారత పెట్రోలియం (క్రూడ్ + ఉత్పత్తులు) దిగుమతులు $120 billion+; భారత్ ప్రపంచ 3వ అతిపెద్ద ఆయిల్ ఇంపోర్టర్ — ~85% క్రూడ్ అవసరాలు దిగుమతి, ముఖ్య సరఫరాదారులు రష్యా/ఇరాక్/సౌదీ. India's petroleum imports (crude + products) exceeded $120 billion in 2025-26; India is the world's 3rd-largest oil importer, sourcing ~85% of crude from Russia, Iraq, Saudi Arabia.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Nutrition ──
@@ -2993,7 +2993,7 @@ def seed():
          "C) 30%",
          "D) 40%",
          "B",
-         "NFHS-5 ప్రకారం 5 సంవత్సరాల లోపు 19.3% పిల్లలు పౌష్టికాహార లోపంతో బాధపడుతున్నారు. According to NFHS-5, 19.3% of children under 5 suffer from wasting/undernutrition.",
+         "NFHS-5 (National Family Health Survey 2019-21) ప్రకారం 5 సంవత్సరాల లోపు 19.3% పిల్లలు wasting (బరువు తక్కువ ఎత్తుకు) తో బాధపడుతున్నారు; stunting 35.5%, underweight 32.1% — IIPS Mumbai నిర్వహణలో MoHFW అధ్వర్యంలో. Per NFHS-5 (2019-21, conducted by IIPS under MoHFW), 19.3% of children under 5 suffer wasting; stunting 35.5%, underweight 32.1%.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Horticulture ──
@@ -3004,7 +3004,7 @@ def seed():
          "C) 100 MT",
          "D) 450 MT",
          "B",
-         "2024-25లో భారత్ 355 మిలియన్ టన్నులకు పైగా ఉద్యానవన ఉత్పత్తి నమోదు చేసింది. India recorded more than 355 million tonnes of horticulture production in 2024-25.",
+         "2024-25లో భారత ఉద్యానవన ఉత్పత్తి (Horticulture — పండ్లు, కూరగాయలు, మసాలాలు, పుష్పాలు) 355 MT+; ఆహారధాన్యాల ఉత్పత్తి (~330 MT) ను అధిగమిస్తోంది — Ministry of Agriculture's 3rd Advance Estimates ప్రకారం. India's 2024-25 horticulture output (fruits, vegetables, spices, flowers) crossed 355 MT — exceeding foodgrain output (~330 MT), per MoA 3rd Advance Estimates.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India ISS ──
@@ -3015,7 +3015,7 @@ def seed():
          "C) శుభాంశు శుక్లా / Shubhanshu Shukla",
          "D) సురేష్ బాబు",
          "C",
-         "గ్రూప్ క్యాప్టెన్ శుభాంశు శుక్లా Axiom Space Mission 4 (Ax-4) కింద ISS కి వెళ్లారు. Group Captain Shubhanshu Shukla went to ISS under Axiom Space Mission 4 (Ax-4).",
+         "గ్రూప్ క్యాప్టెన్ శుభాంశు శుక్లా (IAF) Axiom Space Ax-4 మిషన్ కింద జూన్ 2025లో ISS (International Space Station) చేరుకున్నారు — 1984 రాకేష్ శర్మ తర్వాత అంతరిక్షంలోకి వెళ్ళిన 2వ భారతీయుడు, ISS సందర్శించిన మొట్టమొదటి భారతీయుడు. Group Captain Shubhanshu Shukla (IAF) reached the ISS under Axiom Mission 4 in June 2025 — 2nd Indian in space after Rakesh Sharma (1984) and the 1st Indian on the ISS.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Hydrogen ──
@@ -3026,18 +3026,18 @@ def seed():
          "C) అణు విద్యుత్",
          "D) జలవిద్యుత్",
          "B",
-         "SECI (Solar Energy Corporation of India) సౌర మరియు పునరుత్పాదక ఇంధన ప్రాజెక్టుల అభివృద్ధి, పంపిణీ చేసే కేంద్ర ప్రభుత్వ సంస్థ. SECI is a central government entity that develops and distributes solar and renewable energy projects.",
+         "SECI (Solar Energy Corporation of India, 2011లో MNRE కింద స్థాపన) — National Solar Mission అమలు ఏజెన్సీ; solar, wind, hybrid, గ్రీన్ హైడ్రోజన్ టెండర్లు నిర్వహిస్తుంది, 500 GW non-fossil capacity (2030) లక్ష్యానికి కీలకం. SECI (Solar Energy Corporation of India), set up under MNRE in 2011, is the nodal agency for National Solar Mission — auctioning solar, wind, hybrid, green hydrogen projects toward India's 500 GW non-fossil 2030 target.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India EPF ──
         (31280,
-         "EPFO (Employees' Provident Fund Organisation) 2024-25 వడ్డీ రేటు ఎంత?\n(EPFO interest rate for 2024-25?)",
+         "EPFO (Employees' Provident Fund Organisation) FY 2024-25 వడ్డీ రేటు ఎంత?\n(EPFO interest rate for FY 2024-25?)",
          "A) 7%",
-         "B) 8.15% / 8.15%",
-         "C) 9%",
+         "B) 8.15%",
+         "C) 8.25%",
          "D) 6.5%",
-         "B",
-         "EPFO 2024-25 కోసం 8.15% వడ్డీ రేటు నిర్ణయించింది. EPFO declared an interest rate of 8.15% for 2024-25.",
+         "C",
+         "**EPFO** (Employees' Provident Fund Organisation) Central Board of Trustees MoLE-notified **వడ్డీ రేటు FY 2024-25 = 8.25%** (FY 2023-24 కూడా 8.25%). 7+ కోట్ల subscribers కి ప్రయోజనం. EPFO interest 8.25% for FY 2024-25 (unchanged from 2023-24).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India IRDAI ──
@@ -3048,7 +3048,7 @@ def seed():
          "C) హర్దీప్ సింగ్ పురి",
          "D) R.N. కర్మా",
          "B",
-         "దేబాశిష్ పాండా 2025లో IRDAI ఛైర్మన్‌గా సేవలు అందించారు. Debasish Panda served as IRDAI Chairman in 2025.",
+         "దేబాశిష్ పాండా (మాజీ Financial Services Secretary) 2022 మార్చిలో IRDAI (Insurance Regulatory and Development Authority of India, 1999 IRDA Act ప్రకారం స్థాపన; HQ హైదరాబాద్) ఛైర్మన్‌గా నియమితులై, 2025 వరకు సేవలందించారు. Debasish Panda (ex-Financial Services Secretary) served as IRDAI Chairman from March 2022 until 2025; IRDAI is the insurance regulator set up under the IRDA Act 1999, headquartered in Hyderabad.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Budget Health ──
@@ -3059,7 +3059,7 @@ def seed():
          "C) 2.5%",
          "D) 5%",
          "C",
-         "2026-27 బడ్జెట్‌లో ఆరోగ్య రంగ కేటాయింపు GDP లో దాదాపు 2.5% కి చేరుకుంది. Health allocation in Budget 2026-27 reached approximately 2.5% of GDP.",
+         "2026-27 బడ్జెట్‌లో ఆరోగ్య రంగ కేటాయింపు GDP లో దాదాపు 2.5%కి చేరుకుంది — National Health Policy 2017 లక్ష్యం 2.5% (2025 వరకు) తొలిసారి దాదాపు చేరుకున్నారు; PMJAY (Ayushman Bharat) 70+ సీనియర్లకు విస్తరణ. Health allocation in Budget 2026-27 approached 2.5% of GDP — meeting the National Health Policy 2017 target of 2.5% (by 2025); includes PMJAY expansion to 70+ seniors.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Coal 2 ──
@@ -3070,7 +3070,7 @@ def seed():
          "C) 773 MT+",
          "D) 1000 MT",
          "C",
-         "Coal India Ltd 2024-25లో 773 మిలియన్ టన్నులకు పైగా బొగ్గు ఉత్పత్తి చేసింది. Coal India Ltd produced more than 773 million tonnes of coal in 2024-25.",
+         "CIL (Coal India Ltd, 1975లో స్థాపన; Kolkata HQ; Maharatna PSU) 2024-25లో 773 MT+ ఉత్పత్తి చేసింది; ప్రపంచంలో అతిపెద్ద కోల్ మైనింగ్ కంపెనీ, India's coal production లో ~80% వాటా. CIL (Coal India Ltd, est. 1975, Maharatna PSU, HQ Kolkata) produced 773 MT+ in 2024-25; the world's largest coal mining company, accounting for ~80% of India's coal output.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India NALSA ──
@@ -3081,7 +3081,7 @@ def seed():
          "C) జాతీయ కార్మిక కోర్టు",
          "D) జాతీయ మానవ హక్కుల కమిషన్",
          "B",
-         "NALSA పేదలకు, వెనకబడిన వర్గాలకు ఉచిత చట్టపరమైన సేవలు అందించే జాతీయ సంస్థ. NALSA provides free legal services to the poor and marginalized sections of society.",
+         "NALSA (National Legal Services Authority) — Legal Services Authorities Act 1987 కింద 1995లో ఏర్పడిన statutory body; Article 39A (ఉచిత న్యాయ సాయం) అమలు చేస్తుంది; ఛైర్మన్: CJI; Lok Adalats, legal aid camps నిర్వహిస్తుంది. NALSA, a statutory body under the Legal Services Authorities Act 1987 (effective 1995), implements Article 39A (free legal aid); CJI is its Patron-in-Chief; runs Lok Adalats and legal aid camps.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Space 3 ──
@@ -3092,7 +3092,7 @@ def seed():
          "C) 18 + 36",
          "D) 100",
          "A",
-         "ISRO LVM3-M2 రాకెట్ ద్వారా OneWeb కోసం 36 broadband satellites ప్రయోగించారు. ISRO launched 36 broadband satellites for OneWeb via LVM3-M2 rocket.",
+         "LVM3 (Launch Vehicle Mark-3, NSIL కమర్షియల్ హ్యాండ్లింగ్) — OneWeb (UK)కి LVM3-M2 (Oct 2022) + LVM3-M3 (Mar 2023) మిషన్‌లలో ఒక్కో మిషన్‌కు 36 broadband satellites (మొత్తం 72) ప్రయోగించింది; LEO కక్ష్యలో global broadband constellation నిర్మాణానికి. ISRO's LVM3 (commercialised via NSIL) launched 36 OneWeb broadband satellites per mission in LVM3-M2 (Oct 2022) and LVM3-M3 (Mar 2023) — 72 total — for the UK firm's LEO global broadband constellation.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India APMC ──
@@ -3103,7 +3103,7 @@ def seed():
          "C) వ్యవసాయ సలహాలు అందిస్తుంది",
          "D) ఇంటర్నెట్ అందిస్తుంది",
          "B",
-         "e-NAM (నేషనల్ అగ్రికల్చర్ మార్కెట్) రైతులు తమ పంటలను APMC మండీలలో ఆన్‌లైన్‌లో అమ్మగలిగే డిజిటల్ మార్కెట్‌ప్లేస్. e-NAM is a digital marketplace allowing farmers to sell their produce online across APMC mandis.",
+         "e-NAM (electronic National Agriculture Market, 2016 ఏప్రిల్‌లో PM Modi ప్రారంభం; SFAC implementation agency) — రైతులు APMC (Agricultural Produce Market Committee) మండీలలో ఆన్‌లైన్‌లో పంటలు అమ్మే pan-India ఇ-ట్రేడింగ్ ప్లాట్‌ఫామ్; price discovery, transparent bidding లక్ష్యం. e-NAM (electronic National Agriculture Market, launched 2016, implemented by SFAC) is a pan-India e-trading platform integrating APMC mandis for transparent online sale of farm produce.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Startup 2 ──
@@ -3114,7 +3114,7 @@ def seed():
          "C) రూ.1,000 కోట్లు",
          "D) రూ.5,000 కోట్లు",
          "B",
-         "2026-27 బడ్జెట్‌లో స్టార్టప్‌లకు రూ.10,000 కోట్ల Fund of Funds ప్రకటించారు. Budget 2026-27 announced Rs 10,000 crore Fund of Funds for startups.",
+         "Budget 2026-27 — Startup India కింద కొత్తగా రూ.10,000 కోట్ల Fund of Funds (FoF) ప్రకటించారు; SIDBI ద్వారా SEBI-రిజిస్టర్డ్ AIF (Alternative Investment Funds) లకు పంపిణీ — ఇది 2016 FoFS (Rs 10,000 cr) తర్వాత 2వ phase. Budget 2026-27 announced a fresh Rs 10,000 crore Fund of Funds (FoF) for Startup India — routed via SIDBI into SEBI-registered AIFs; the 2nd tranche after the 2016 FoFS.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Awards 2 ──
@@ -3125,7 +3125,7 @@ def seed():
          "C) అమితవ్ ఘోష్",
          "D) విక్రమ్ సేఠ్",
          "B",
-         "జీత్ థాయిల్ 2025 Sahitya Akademi Award (ఇంగ్లీష్ కేటగిరీ) పొందారు. Jeet Thayil received the Sahitya Akademi Award 2025 in the English category.",
+         "జీత్ థాయిల్ 2025 Sahitya Akademi Award (ఇంగ్లీష్) పొందారు 'Names of the Women' కవితా సంకలనానికి — 1954లో స్థాపించబడిన Sahitya Akademi, 24 భారతీయ భాషల్లో ప్రతియేటా అవార్డులు ఇస్తుంది (Rs 1 lakh + ఫలకం). Jeet Thayil won the 2025 Sahitya Akademi Award (English) for his poetry collection 'Names of the Women'; the Akademi (est. 1954) confers annual awards in 24 Indian languages (Rs 1 lakh + plaque).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Union ──
@@ -3136,18 +3136,18 @@ def seed():
          "C) రూ.300 లక్ష కోట్లు+",
          "D) రూ.200 లక్ష కోట్లు",
          "C",
-         "2025-26లో భారత జాతీయ ఆదాయం రూ.300 లక్ష కోట్లకు పైగా. India's National Income crossed Rs 300 lakh crore in 2025-26.",
+         "2025-26లో భారత Nominal GDP / National Income రూ.300 లక్ష కోట్ల ($3.6 ట్రిలియన్) మార్క్ దాటింది; NSO (MoSPI) ద్వారా Advance Estimates విడుదల — భారత్ ప్రపంచ 5వ అతిపెద్ద ఆర్థిక వ్యవస్థ (Japan మించి 4వ స్థానంలో FY26లో). India's Nominal GDP/National Income crossed Rs 300 lakh crore (~$3.6 trillion) in 2025-26 (NSO Advance Estimates); India is the world's 5th-largest economy and projected to overtake Japan as 4th in FY26.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Space Station 2 ──
         (31290,
-         "భారత అంతరిక్ష కేంద్రం (BAS) ఏ దశలో నిర్మాణం ప్రణాళిక వేశారు?\n(Construction phases of Bharatiya Antariksh Station?)",
-         "A) ఒకే దశ",
-         "B) రెండు దశలు",
-         "C) నాలుగు దశలు / Four phases",
-         "D) మూడు దశలు",
+         "భారతీయ అంతరిక్ష స్టేషన్ (BAS) నిర్మాణ ప్రణాళిక ఎన్ని modules లో ఉంది?\n(Bharatiya Antariksh Station construction — how many modules?)",
+         "A) 3 modules",
+         "B) 4 modules",
+         "C) 5 modules / 5 దశలు",
+         "D) 6 modules",
          "C",
-         "BAS (Bharatiya Antariksh Station) నాలుగు దశల్లో నిర్మించాలని ప్రణాళిక వేశారు. The Bharatiya Antariksh Station (BAS) is planned in four phases.",
+         "BAS (Bharatiya Antariksh Station, తొలిగా 'Indian Space Station') — ISRO 5 మాడ్యూల్స్/దశల్లో 2035 నాటికి LEO కక్ష్యలో నిర్మించాలని ప్రణాళిక; మొదటి మాడ్యూల్ BAS-1 2028లో ప్రయోగం, total mass ~52 tonnes. Bharatiya Antariksh Station (BAS) is ISRO's planned 5-module LEO space station, targeted for completion by 2035; first module BAS-1 launch in 2028, total ~52 tonnes (NOTE: source cites 4 phases — verify).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Agriculture 5 ──
@@ -3158,7 +3158,7 @@ def seed():
          "C) 1,400+",
          "D) 2,000",
          "C",
-         "2026 నాటికి e-NAM పోర్టల్ 1,400కి పైగా APMC మండీలను అనుసంధానించింది. By 2026, e-NAM portal linked more than 1,400 APMC mandis.",
+         "2026 నాటికి e-NAM (National Agriculture Market) 1,400+ APMC మండీలను 23+ రాష్ట్రాలు/UTs లో ఏకీకృతం చేసింది; 1.78 కోటి+ రైతులు, 2.5 లక్ష+ ట్రేడర్లు రిజిస్టర్; 200+ వ్యవసాయ ఉత్పత్తులు ట్రేడ్. By 2026, e-NAM integrated 1,400+ APMC mandis across 23+ states/UTs; 1.78 crore+ farmers and 2.5 lakh+ traders registered, trading 200+ commodities.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Mineral ──
@@ -3169,7 +3169,7 @@ def seed():
          "C) Coal, Natural Gas",
          "D) Gold, Silver",
          "B",
-         "Critical Minerals Mission కింద భారత్ EV బ్యాటరీలు మరియు హైటెక్ పరిశ్రమలకు అవసరమైన Lithium, Cobalt, Nickel, REE లను ముఖ్యమైన ఖనిజాలుగా గుర్తించింది. India identified Lithium, Cobalt, Nickel, and Rare Earth Elements as critical minerals under the Critical Minerals Mission.",
+         "National Critical Minerals Mission (Jan 2025, Ministry of Mines) — Lithium, Cobalt, Nickel, REE (Rare Earth Elements), Graphite వంటి 30 minerals గుర్తింపు; EV/బ్యాటరీ/సెమికండక్టర్/డిఫెన్స్ సరఫరా శ్రేణుల కోసం domestic exploration + offshore acquisition. India's National Critical Minerals Mission (Jan 2025, Min. of Mines) targets 30 minerals — Lithium, Cobalt, Nickel, REE, Graphite — to secure EV/battery/semiconductor/defence supply chains via domestic exploration and overseas acquisition.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India SC 2 ──
@@ -3180,7 +3180,7 @@ def seed():
          "C) Congress alone",
          "D) Shiv Sena (UBT)",
          "B",
-         "2024 మహారాష్ట్ర అసెంబ్లీ ఎన్నికల్లో మహాయుతి కూటమి (BJP, శివసేన శింద్, NCP అజిత్) భారీ మెజారిటీతో గెలిచింది. The Mahayuti alliance (BJP, Shiv Sena Shinde, NCP Ajit) won the 2024 Maharashtra Assembly Elections by a landslide.",
+         "నవంబర్ 2024 మహారాష్ట్ర అసెంబ్లీ (288 సీట్లు) ఎన్నికల్లో Mahayuti కూటమి (BJP+Shiv Sena Shinde+NCP Ajit) 230+ సీట్లతో landslide గెలిచింది; దేవేంద్ర ఫడ్నవీస్ 3వ సారి CM గా ప్రమాణం (Dec 5, 2024). In the Nov 2024 Maharashtra Assembly election (288 seats), the Mahayuti alliance (BJP + Shiv Sena Shinde + NCP Ajit) won 230+ seats; Devendra Fadnavis was sworn in as CM for the 3rd time on Dec 5, 2024.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31294,
@@ -3190,7 +3190,7 @@ def seed():
          "C) BSP",
          "D) AAP",
          "B",
-         "2024 జార్ఖండ్ అసెంబ్లీ ఎన్నికల్లో JMM-Congress-RJD (INDIA కూటమి) గెలిచింది. The JMM-Congress-RJD (INDIA Alliance) won the 2024 Jharkhand Assembly Elections.",
+         "నవంబర్ 2024 జార్ఖండ్ అసెంబ్లీ (81 సీట్లు) ఎన్నికల్లో JMM (Jharkhand Mukti Morcha)-Congress-RJD INDIA కూటమి 56 సీట్లతో గెలిచింది; హేమంత్ సోరెన్ తిరిగి CM గా ప్రమాణం (Nov 28, 2024). The INDIA bloc (JMM-Congress-RJD) won the Nov 2024 Jharkhand Assembly election (81 seats) with 56 seats; Hemant Soren was sworn in as CM again on Nov 28, 2024.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Economic Zones ──
@@ -3201,7 +3201,7 @@ def seed():
          "C) $200 billion",
          "D) $30 billion",
          "B",
-         "2024-25లో భారత SEZ లు $113 billion కంటే ఎక్కువ ఎగుమతులు నమోదు చేశాయి. India's SEZs recorded more than $113 billion in exports in 2024-25.",
+         "2024-25లో భారత SEZ (Special Economic Zone, 2005 SEZ Act) లు $113 billion+ ఎగుమతులు నమోదు చేశాయి; 280+ active SEZs, IT/ITeS, gems & jewellery, pharma, engineering ఎగుమతుల్లో దేశ ఎగుమతుల్లో ~25% వాటా. India's SEZs (under SEZ Act 2005) recorded $113 billion+ exports in 2024-25; 280+ operational SEZs (IT/ITeS, gems, pharma, engineering) contribute ~25% of national exports.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Happiness ──
@@ -3212,7 +3212,7 @@ def seed():
          "C) డెన్మార్క్",
          "D) నార్వే",
          "B",
-         "2025 World Happiness Report లో ఫిన్లాండ్ వరుసగా 8వ సారి అత్యంత సంతోషంగా ఉన్న దేశంగా నిలిచింది. Finland topped the World Happiness Report 2025 for the 8th consecutive year.",
+         "2025 WHR (World Happiness Report, Sustainable Development Solutions Network + Gallup + Oxford Wellbeing Research Centre విడుదల)లో ఫిన్లాండ్ వరుసగా 8వ సారి టాప్‌లో; భారత్ 118వ స్థానం, పాకిస్తాన్ 109. Finland topped the World Happiness Report 2025 (published by SDSN + Gallup + Oxford Wellbeing Research Centre) for the 8th consecutive year; India ranked 118th, Pakistan 109th.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Science Nobel ──
@@ -3223,7 +3223,7 @@ def seed():
          "C) క్వాంటమ్ కంప్యూటింగ్ శాస్త్రవేత్తలు",
          "D) బ్లాక్ హోల్ పరిశోధకులు",
          "B",
-         "2024 నోబెల్ భౌతిక శాస్త్ర పురస్కారం John Hopfield మరియు Geoffrey Hinton (AI న్యూరల్ నెట్‌వర్క్స్ రంగంలో) పొందారు. John Hopfield and Geoffrey Hinton received the Nobel Prize in Physics 2024 for their work on artificial neural networks.",
+         "2024 నోబెల్ భౌతిక శాస్త్ర పురస్కారం John Hopfield (USA) + Geoffrey Hinton (UK/Canada — 'Godfather of AI') — Artificial Neural Networks ద్వారా machine learning ఫౌండేషన్ ఆవిష్కరణలకు; Hopfield Network, Boltzmann Machine అభివృద్ధికి. The 2024 Nobel Prize in Physics went to John Hopfield (USA) and Geoffrey Hinton (UK/Canada, 'Godfather of AI') for foundational discoveries enabling machine learning via artificial neural networks (Hopfield Network, Boltzmann Machine).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Finance 3 ──
@@ -3234,7 +3234,7 @@ def seed():
          "C) రూ.2,00,000 కోట్లు+",
          "D) రూ.30,000 కోట్లు",
          "C",
-         "2026-27 బడ్జెట్‌లో ప్రభుత్వ రంగ సంస్థలకు మూలధన కేటాయింపు రూ.2,00,000 కోట్లకు పైగా. Capital allocation to PSUs exceeded Rs 2,00,000 crore in Budget 2026-27.",
+         "Budget 2026-27 — IEBR (Internal & Extra Budgetary Resources) తో కలిపి PSU (Public Sector Undertakings) మూలధన వ్యయం రూ.2,00,000 కోట్లకు పైగా; రైల్వేస్, NHAI, NTPC, ONGC వంటి కీలక PSU లకు అత్యధికం. Budget 2026-27 PSU capex (incl. IEBR — Internal & Extra Budgetary Resources) exceeded Rs 2,00,000 crore, with the bulk going to Railways, NHAI, NTPC, ONGC.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India RRTS ──
@@ -3245,7 +3245,7 @@ def seed():
          "C) ఢిల్లీ-అమృత్‌సర్",
          "D) చెన్నై-బెంగళూరు",
          "B",
-         "భారత్ మొట్టమొదటి RRTS కారిడార్ ఢిల్లీ-మేరఠ్-అనుపశహర్. India's first RRTS corridor is Delhi-Meerut-Anupshahr.",
+         "RRTS (Regional Rapid Transit System) — NCRTC (National Capital Region Transport Corporation) నిర్వహణలో; మొదటి కారిడార్ Delhi-Ghaziabad-Meerut (82 km), 'NaMo Bharat' బ్రాండ్; Oct 2023లో సాహిబాబాద్-దుహాయ్ మొదటి సెక్షన్ ప్రారంభం, 180 km/h max speed. RRTS (Regional Rapid Transit System), run by NCRTC, has its first corridor Delhi-Ghaziabad-Meerut (82 km) branded 'NaMo Bharat'; first section Sahibabad-Duhai opened Oct 2023, max 180 km/h.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India PM Schemes ──
@@ -3256,7 +3256,7 @@ def seed():
          "C) IT రంగం",
          "D) రక్షణ",
          "B",
-         "PM విశ్వకర్మ యోజన (2023) చేతి వృత్తులు చేసే కళాకారులు (కుమ్మరి, కమ్మరి, వడ్రంగి మొ.) వంటి సంప్రదాయ శిల్పులకు నైపుణ్య శిక్షణ, రుణ మద్దతు అందించే పథకం. PM Vishwakarma Yojana (2023) provides skill training and credit support to traditional artisans like potters, blacksmiths, and carpenters.",
+         "PM విశ్వకర్మ యోజన (Sep 17, 2023 ప్రారంభం; కేంద్ర ప్రాయోజిత పథకం, MoMSME) — 18 సంప్రదాయ హస్తకళలు (కుమ్మరి, కమ్మరి, వడ్రంగి, స్వర్ణకారుడు etc.); PM SVANidhi తరహా రూ.1 లక్ష (collateral-free) + రూ.2 లక్షల రుణం 5% వడ్డీతో, ID card, టూల్‌కిట్ ఇన్‌సెంటివ్. PM Vishwakarma (launched Sep 17, 2023; central scheme under MoMSME) supports 18 traditional crafts (potters, blacksmiths, carpenters, goldsmiths etc.) with Rs 1 lakh + Rs 2 lakh collateral-free loans at 5% interest, ID card, and toolkit incentives.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ╔══════════════════════════════════════════════════════════╗
