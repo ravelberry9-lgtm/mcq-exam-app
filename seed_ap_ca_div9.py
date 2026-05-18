@@ -2,11 +2,11 @@
 seed_ap_ca_div9.py
 AP Current Affairs — Chapter 9: పద్మ పురస్కారాలు, కేంద్ర సంస్థలు, AP హైకోర్టు & రాజ్యాంగం
 
-AUDIT LOG (2026-05-18):
+AUDIT LOG (2026-05-18, revised):
 - No junk MCQs found (no empty options, single-letter options, or nonsense options).
-- No Telangana-specific scheme questions found.
-  (Padma Award recipients Nageshwar Reddy, Manda Krishna Madiga are from Telangana but questions
-  are about Telugu-region cultural/national awards context — not TS government schemes.)
+- 3 Telangana-only Padma award MCQs REMOVED (Nageshwar Reddy, Manda Krishna Madiga, Rama Reddy Mamidi)
+  to keep AP CA chapter focused on AP-specific content. Combined Telugu-states count MCQs retained.
+- 1 duplicate Article 371-D MCQ removed (kept the first occurrence).
 - No factual errors found. Key facts verified:
   * Allu Arjun — first Telugu actor to win National Best Actor (69th National Film Awards 2022,
     awarded 2024) for Pushpa: The Rise.
@@ -423,28 +423,9 @@ MCQ_DATA = [
         "answer": "B",
         "explanation_te": "Nandamuri Balakrishna కి 2025లో పద్మ భూషణ్ (Art రంగంలో) వచ్చింది. ఆయన NTR గారి పుత్రుడు; 100+ తెలుగు చిత్రాల్లో నటించారు. ఆంధ్రప్రదేశ్ నుండి."
     },
-    {
-        "section_idx": 1,
-        "difficulty": "easy",
-        "question_te": "2025లో పద్మ విభూషణ్ పొందిన తెలంగాణ వైద్య నిపుణుడు ఎవరు?",
-        "opt_a": "Dr. Duvvur Nageshwar Reddy",
-        "opt_b": "Dr. Guduru Venkat Rao",
-        "opt_c": "Dr. Nori Dattatreyudu",
-        "opt_d": "Dr. Palkonda Vijay Anand Reddy",
-        "answer": "A",
-        "explanation_te": "Dr. Duvvur Nageshwar Reddy కి 2025లో పద్మ విభూషణ్ (Medicine) వచ్చింది — తెలంగాణ నుండి. ఆయన Asian Institute of Gastroenterology వ్యవస్థాపకుడు; ప్రముఖ గ్యాస్ట్రోఎంటెరాలజిస్ట్."
-    },
-    {
-        "section_idx": 1,
-        "difficulty": "medium",
-        "question_te": "2025 Padma Shri — Public Affairs రంగంలో తెలంగాణ నుండి ఎవరికి వచ్చింది?",
-        "opt_a": "Kethavath Somlal",
-        "opt_b": "Manda Krishna Madiga",
-        "opt_c": "Kurella Vittalacharya",
-        "opt_d": "Dasari Kondappa",
-        "answer": "B",
-        "explanation_te": "Manda Krishna Madiga కి 2025 Padma Shri (Public Affairs) వచ్చింది. ఆయన Madiga Reservation Porata Samithi వ్యవస్థాపకుడు; SC వర్గీకరణ ఉద్యమ నేత. తెలంగాణ నుండి."
-    },
+    # REMOVED 2026-05-18 audit: 2 Telangana-only Padma award MCQs
+    # (Dr. Duvvur Nageshwar Reddy — Telangana medical; Manda Krishna Madiga — Telangana Public Affairs)
+    # AP exam should not test Telangana-only awardees.
     {
         "section_idx": 1,
         "difficulty": "medium",
@@ -511,19 +492,9 @@ MCQ_DATA = [
         "opt_c": "Shri Garimella Balakrishna Prasad",
         "opt_d": "Shri Gadde Babu Rajendra Prasad",
         "answer": "C",
-        "explanation_te": "Shri Garimella Balakrishna Prasad కి 2026లో Padma Shri మరణానంతరం (Posthumously) ఇచ్చారు — Art రంగంలో, Andhra Pradesh నుండి. Telangana నుండి Rama Reddy Mamidi కి కూడా Posthumous Padma Shri (Animal Husbandry)."
+        "explanation_te": "Shri Garimella Balakrishna Prasad కి 2026లో Padma Shri మరణానంతరం (Posthumously) ఇచ్చారు — Art రంగంలో, Andhra Pradesh నుండి."
     },
-    {
-        "section_idx": 1,
-        "difficulty": "hard",
-        "question_te": "2026 Padma Shri లో Telangana నుండి Animal Husbandry రంగంలో ఎవరు పురస్కారం పొందారు?",
-        "opt_a": "Shri Chandramouli Gaddamanugu",
-        "opt_b": "Shri Kumarasamy Thangaraj",
-        "opt_c": "Shri Guduru Venkat Rao",
-        "opt_d": "Shri Rama Reddy Mamidi",
-        "answer": "D",
-        "explanation_te": "Shri Rama Reddy Mamidi కి 2026 Padma Shri Animal Husbandry (పాడి పరిశ్రమ) రంగంలో మరణానంతరం ఇచ్చారు — Telangana నుండి. Kumarasamy Thangaraj మరియు Krishnamurty Balasubramanian — Science & Engineering రంగంలో Telangana నుండి Padma Shri."
-    },
+    # REMOVED 2026-05-18 audit: Telangana-only Padma Shri MCQ (Rama Reddy Mamidi — Telangana Animal Husbandry)
 
     # Section 5 — AP HC Chief Justice (additional)
     {
@@ -807,17 +778,7 @@ _EXTRA_MCQ_DATA = [
         "answer": "B",
         "explanation_te": "జస్టిస్ లీసా గిల్ ఏప్రిల్ 25, 2026న AP High Court తొలి మహిళా Chief Justice గా నియమితులయ్యారు."
     },
-    {
-        "section_idx": 6,
-        "difficulty": "easy",
-        "question_te": "ఆర్టికల్ 371-D ఏ రాష్ట్రానికి సంబంధించినది?",
-        "opt_a": "తెలంగాణ",
-        "opt_b": "ఆంధ్రప్రదేశ్",
-        "opt_c": "కర్ణాటక",
-        "opt_d": "ఒడిశా",
-        "answer": "B",
-        "explanation_te": "ఆర్టికల్ 371-D ఆంధ్రప్రదేశ్‌కి సంబంధించినది. ఇది 32వ రాజ్యాంగ సవరణ 1973 ద్వారా చేర్చబడింది. విద్య, ఉద్యోగాలలో స్థానిక పౌరులకు రక్షణ కల్పిస్తుంది."
-    },
+    # REMOVED 2026-05-18 audit: Duplicate of earlier Article 371-D MCQ (same answer = AP, same options pattern)
     {
         "section_idx": 6,
         "difficulty": "medium",
