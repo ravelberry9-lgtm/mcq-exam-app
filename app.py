@@ -6632,9 +6632,58 @@ CONCEPT_MAP = [
     (31018, 31018, 'natl_2026_defence'),            # Prithvi-3 missile
     (31019, 31019, 'natl_2026_isro_space'),         # NavIC-16
     (31020, 31020, 'natl_2026_defence'),            # MILAN 2026 naval exercise (Vizag)
-    # 31021-31300 still mapped to legacy tags (will be remapped in subsequent chunks)
-    (31021, 31045, 'national_ca_polity'),
-    (31046, 31300, 'national_ca_misc'),
+    # Chunk 2 (31021-31070) — properly split into topic groups (concept-note enrichment):
+    (31021, 31021, 'natl_2026_naval_defense'),       # MILAN 2026 participation
+    (31022, 31022, 'natl_2026_cricket_sports'),      # U19 Cricket WC 2026
+    (31023, 31023, 'natl_2026_foreign_relations'),   # Brazil Lula visit
+    (31024, 31025, 'natl_2026_space_isro'),          # NASA Artemis-2 (mission + crew size)
+    (31026, 31026, 'natl_2026_economic_indicators'), # WEF Davos 56th
+    (31027, 31027, 'natl_2026_foreign_relations'),   # India-USA Trump tariffs
+    (31028, 31028, 'natl_2026_social_welfare_schemes'), # Social media users
+    (31029, 31029, 'natl_2026_naval_defense'),       # Strait of Hormuz
+    (31030, 31030, 'natl_2026_naval_defense'),       # S-4 SSBN
+    (31031, 31031, 'natl_2026_social_welfare_schemes'), # AICTE
+    (31032, 31032, 'natl_2026_economic_indicators'), # Agri growth Eco Survey
+    (31033, 31033, 'natl_2026_economic_indicators'), # GST collections
+    (31034, 31034, 'natl_2026_economic_indicators'), # HDI rank
+    (31035, 31035, 'natl_2026_foreign_relations'),   # Israel-Hamas ceasefire mediators
+    (31036, 31036, 'natl_2026_economic_indicators'), # Internet users
+    (31037, 31037, 'natl_2026_space_isro'),          # Shubhanshu Shukla Axiom
+    (31038, 31038, 'natl_2026_agri_environment'),    # Jal Jeevan Mission
+    (31039, 31039, 'natl_2026_legal_security'),      # POCSO
+    (31040, 31040, 'natl_2026_foreign_relations'),   # SCO 2025 theme
+    (31041, 31041, 'natl_2026_education_health'),    # UGC online degrees
+    (31042, 31042, 'natl_2026_economic_indicators'), # CPI inflation target
+    (31043, 31043, 'natl_2026_naval_defense'),       # P-75I submarines
+    (31044, 31044, 'natl_2026_agri_environment'),    # Agri budget allocation
+    (31045, 31045, 'natl_2026_infrastructure'),      # NLP logistics
+    (31046, 31046, 'natl_2026_ukraine_war'),         # Russia-Ukraine status
+    (31047, 31047, 'natl_2026_agri_environment'),    # India COP NDC
+    (31048, 31048, 'natl_2026_cricket_sports'),      # Asian Games Nagoya
+    (31049, 31049, 'natl_2026_space_isro'),          # NavIC-16
+    (31050, 31050, 'natl_2026_economic_indicators'), # GHI rank
+    (31051, 31051, 'natl_2026_social_welfare_schemes'), # MGNREGS allocation
+    (31052, 31052, 'natl_2026_social_welfare_schemes'), # PMAY-G
+    (31053, 31053, 'natl_2026_economic_indicators'), # RBI repo rate
+    (31054, 31054, 'natl_2026_economic_indicators'), # Census 2026
+    (31055, 31055, 'natl_2026_social_welfare_schemes'), # Health allocation
+    (31056, 31056, 'natl_2026_social_welfare_schemes'), # Rural Dev allocation
+    (31057, 31057, 'natl_2026_education_health'),    # Education allocation
+    (31058, 31058, 'natl_2026_foreign_relations'),   # G20 Presidency
+    (31059, 31059, 'natl_2026_legal_security'),      # NIA DG
+    (31060, 31060, 'natl_2026_education_health'),    # NMC replaced MCI
+    (31061, 31061, 'natl_2026_foreign_relations'),   # Houthi country
+    (31062, 31062, 'natl_2026_cricket_sports'),      # WTC Final 2025
+    (31063, 31063, 'natl_2026_economic_indicators'), # India AI Mission
+    (31064, 31064, 'natl_2026_foreign_relations'),   # India-China GAP agreement
+    (31065, 31065, 'natl_2026_social_welfare_schemes'), # Ayushman Bharat 70+
+    (31066, 31066, 'natl_2026_agri_environment'),    # 500 GW RE target
+    (31067, 31067, 'natl_2026_infrastructure'),      # MSME budget
+    (31068, 31068, 'natl_2026_legal_security'),      # CJI Gavai (legal/judiciary)
+    (31069, 31069, 'natl_2026_space_isro'),          # Gaganyaan crew
+    (31070, 31070, 'natl_2026_foreign_relations'),   # India-Pakistan / Op Sindoor
+    # 31071-31300 still mapped to legacy tags (will be remapped in subsequent chunks)
+    (31071, 31300, 'national_ca_misc'),
     # 31301-31388 — new 2026 PDF MCQs mapped to natl_2026_* tags via seed_concept_notes_natl_2026.py
     # (mapping for these added after chunk-by-chunk audit completes)
     # AP CA 2026 — individual question concept notes (first 10 questions)

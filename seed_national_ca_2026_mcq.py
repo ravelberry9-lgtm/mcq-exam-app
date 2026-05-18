@@ -241,7 +241,7 @@ def seed():
          "C) 50+",
          "D) 60+",
          "C",
-         "MILAN 2026 నావికా విన్యాసాలలో 50కి పైగా దేశాల నౌకాదళాలు పాల్గొన్నాయి. More than 50 countries' navies participated in MILAN 2026.",
+         "MILAN 2026 (Multilateral Interaction, Vizag Feb 17-25)లో 50కి పైగా దేశాల నౌకాదళాలు పాల్గొన్నాయి. Over 50 countries' navies joined MILAN 2026 (Multilateral Interaction) at Visakhapatnam.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── U19 Cricket World Cup 2026 ──
@@ -252,7 +252,7 @@ def seed():
          "C) భారత్ / India",
          "D) పాకిస్తాన్ / Pakistan",
          "C",
-         "భారత్ ICC అండర్-19 క్రికెట్ ప్రపంచ కప్ 2026 గెలుచుకుంది. India won the ICC Under-19 Cricket World Cup 2026.",
+         "భారత్ ICC అండర్-19 క్రికెట్ ప్రపంచ కప్ 2026 గెలిచి, U19 ఛాంపియన్‌గా రికార్డు పొడిగించింది. India won the ICC U19 Cricket World Cup 2026, extending its record as most-titled U19 champion.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Brazil President Visit ──
@@ -263,7 +263,7 @@ def seed():
          "C) మిషెల్ టెమర్ / Michel Temer",
          "D) దిల్మా రొసెఫ్ / Dilma Rousseff",
          "B",
-         "బ్రెజిల్ అధ్యక్షుడు లులా డి సిల్వా మార్చి 2026లో భారత్ పర్యటించి PM మోడీతో ద్వైపాక్షిక సమావేశాలు నిర్వహించారు. Brazilian President Lula da Silva visited India in March 2026 and held bilateral meetings with PM Modi.",
+         "బ్రెజిల్ అధ్యక్షుడు లులా డి సిల్వా మార్చి 2026లో భారత్ సందర్శించి PM మోడీతో BRICS, వాణిజ్యం, రక్షణ గురించి చర్చలు జరిపారు. Brazilian President Lula da Silva visited India in March 2026, discussing BRICS, trade and defence with PM Modi.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── NASA Artemis-2 ──
@@ -274,7 +274,7 @@ def seed():
          "C) Space station resupply",
          "D) Jupiter exploration",
          "B",
-         "NASA ఆర్టెమిస్-2 మిషన్ 50 సంవత్సరాల తర్వాత మానవులతో చంద్రుని చుట్టూ చేసిన మొదటి అంతరిక్ష పర్యటన. NASA Artemis-2 is the first crewed mission to orbit the Moon in 50 years.",
+         "NASA ఆర్టెమిస్-2 — Apollo 17 (1972) తర్వాత 50 సం. తర్వాత తొలి మానవ చంద్ర యాత్ర (SLS రాకెట్ + ఓరియన్ క్యాప్సూల్). Artemis-2 is NASA's first crewed lunar flyby in 50 years (since Apollo 17, 1972) using SLS + Orion.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31025,
@@ -284,7 +284,7 @@ def seed():
          "C) 4",
          "D) 6",
          "C",
-         "ఆర్టెమిస్-2 మిషన్‌లో 4 వ్యోమగాములు ఉన్నారు. Artemis-2 mission had 4 astronauts.",
+         "ఆర్టెమిస్-2లో 4 వ్యోమగాములు: Wiseman, Glover, Koch (NASA) + Hansen (CSA, కెనడా). Artemis-2 has 4 astronauts: Wiseman, Glover, Koch (NASA) and Hansen (CSA, Canada).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── WEF Davos 2026 ──
@@ -295,7 +295,7 @@ def seed():
          "C) 56వది / 56th",
          "D) 57వది / 57th",
          "C",
-         "జనవరి 2026లో దావోస్‌లో 56వ వార్షిక WEF (వరల్డ్ ఎకనామిక్ ఫోరమ్) సమావేశం జరిగింది. The 56th Annual World Economic Forum (WEF) meeting was held at Davos in January 2026.",
+         "జనవరి 2026లో దావోస్‌లో 56వ WEF (World Economic Forum, 1971లో Klaus Schwab స్థాపన) సమావేశం జరిగింది. The 56th WEF (World Economic Forum, founded 1971 by Klaus Schwab) annual meeting was held at Davos in January 2026.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India-USA Trade ──
@@ -306,7 +306,7 @@ def seed():
          "C) Created trade friction and bilateral trade renegotiations",
          "D) India exempted from tariffs",
          "C",
-         "2026లో ట్రంప్ విధించిన సుంకాలు భారత్-అమెరికా వాణిజ్య సంబంధాలలో ఉద్రిక్తతలు సృష్టించాయి, ద్వైపాక్షిక వాణిజ్య చర్చలు జరిగాయి. Trump's tariffs in 2026 created trade friction leading to India-USA bilateral trade renegotiations.",
+         "ట్రంప్ 2.0 (జన 2025) పరస్పర సుంకాలు భారత ఎగుమతులపై 26-50% విధించాయి, ద్వైపాక్షిక చర్చలు ప్రారంభమయ్యాయి. Trump 2.0's reciprocal tariffs (Jan 2025) imposed 26-50% on Indian exports, triggering bilateral renegotiation.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Social Media ──
@@ -317,7 +317,7 @@ def seed():
          "C) 50 కోట్లు / 50 crore",
          "D) 100 కోట్లు / 100 crore",
          "B",
-         "2026 నాటికి భారత్‌లో సుమారు 26.5 కోట్ల (265 million) సోషల్ మీడియా వినియోగదారులు ఉన్నారు. India has approximately 265 million social media users by 2026.",
+         "2026 నాటికి భారత్‌లో సుమారు 26.5 కోట్ల సోషల్ మీడియా వినియోగదారులు (60 కో. ఇంటర్నెట్ యూజర్లలో). India has ~265 million social media users by 2026 (out of ~600 million internet users).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Strait of Hormuz ──
@@ -328,7 +328,7 @@ def seed():
          "C) సౌదీ అరేబియా మరియు యెమెన్ / Saudi Arabia and Yemen",
          "D) UAE మరియు బహ్రెయిన్ / UAE and Bahrain",
          "B",
-         "హర్ముజ్ జలసంధి ఇరాన్ మరియు ఒమాన్ మధ్య ఉంది. ప్రపంచ చమురు సరఫరాలో దీని ప్రాముఖ్యత అత్యధికం. The Strait of Hormuz is located between Iran and Oman, crucial for world oil supply.",
+         "హర్ముజ్ జలసంధి (~33 కి.మీ సన్నని) ఇరాన్-ఒమాన్ మధ్య; ప్రపంచ చమురులో ~20% ఇక్కడ నుండి. The Strait of Hormuz (~33 km narrowest) lies between Iran and Oman; ~20% of global oil passes through.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Navy S-4 Submarine ──
@@ -339,7 +339,7 @@ def seed():
          "C) కన్వెన్షనల్ / Conventional",
          "D) హైబ్రిడ్ / Hybrid",
          "B",
-         "S-4 జలాంతర్గామి అణు-శక్తి సంపన్న బాలిస్టిక్ క్షిపణి జలాంతర్గామి (SSBN). S-4 submarine is a nuclear-powered ballistic missile submarine (SSBN) of the Arihant class.",
+         "S-4 — అరిహంత్ శ్రేణి 4వ SSBN (Ship Submersible Ballistic Nuclear); భారత అణు త్రయాన్ని బలోపేతం చేస్తుంది. S-4 is the 4th Arihant-class SSBN (Ship Submersible Ballistic Nuclear), strengthening India's nuclear triad.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── AICTE ──
@@ -350,7 +350,7 @@ def seed():
          "C) 305",
          "D) 500",
          "C",
-         "2026లో AICTE కింద సుమారు 305 సంస్థలు ఉన్నాయి. Approximately 305 institutions are under AICTE in 2026.",
+         "AICTE (All India Council for Technical Education, 1987 చట్టం) — సాంకేతిక విద్యా నియంత్రణ సంస్థ; HQ న్యూఢిల్లీ. AICTE (All India Council for Technical Education, est. 1987) regulates technical education from New Delhi.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Poverty / Economy ──
@@ -361,7 +361,7 @@ def seed():
          "C) 3.8%",
          "D) 5.0%",
          "C",
-         "భారత ఆర్థిక సర్వే 2025-26 ప్రకారం వ్యవసాయ రంగం 2024-25లో 3.8% వృద్ధి నమోదు చేసింది. Agriculture sector grew at 3.8% in 2024-25 as per Economic Survey 2025-26.",
+         "ఆర్థిక సర్వే 2025-26 ప్రకారం వ్యవసాయం 2024-25లో 3.8% వృద్ధి సాధించింది (అంతకు ముందు సం. 1.4%). Per Economic Survey 2025-26, agriculture grew 3.8% in 2024-25 (vs 1.4% prior year).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── GST Revenue ──
@@ -372,7 +372,7 @@ def seed():
          "C) రూ.2,03,890 కోట్లు",
          "D) రూ.2,50,000 కోట్లు",
          "C",
-         "2024 డిసెంబర్‌లో GST వసూళ్లు రూ.2,03,890 కోట్లు. GST collections in December 2024 were Rs 2,03,890 crore.",
+         "2024 డిసెంబర్ GST (Goods & Services Tax) వసూళ్లు రూ.2,03,890 కో. — 2017 GST ప్రారంభం నుండి స్థిర వృద్ధి. December 2024 GST (Goods & Services Tax) collections were Rs 2,03,890 crore, continuing steady growth since 2017 rollout.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India HDI ──
@@ -383,7 +383,7 @@ def seed():
          "C) 130",
          "D) 140",
          "C",
-         "2025 HDI నివేదికలో భారత్ 130వ స్థానంలో ఉంది. India ranked 130th in the HDI 2025 report.",
+         "UNDP HDI (Human Development Index) 2025లో భారత్ 130/193 — ఆరోగ్యం, విద్య, జీవన ప్రమాణం ఆధారం. India ranked 130/193 in UNDP HDI (Human Development Index) 2025, based on health, education and income.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Palestine / Gaza ──
@@ -394,7 +394,7 @@ def seed():
          "C) రష్యా మరియు తుర్కియా / Russia and Turkey",
          "D) UN మాత్రమే / UN alone",
          "B",
-         "ఇజ్రాయెల్-హమాస్ మధ్య కాల్పుల విరమణ ఒప్పందానికి కతర్, ఈజిప్ట్ మరియు USA మధ్యవర్తిత్వం వహించాయి. Qatar, Egypt and USA mediated the Israel-Hamas ceasefire agreement.",
+         "ఫిబ్రవరి 2026 ఇజ్రాయెల్-హమాస్ కాల్పుల విరమణకు కతర్, ఈజిప్ట్, USA మధ్యవర్తిత్వం; బందీల విడుదల, సహాయ మార్గాలు అంశాలు. Qatar, Egypt and USA mediated the Feb 2026 Israel-Hamas ceasefire covering hostage release and aid corridors.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Internet Users ──
@@ -405,7 +405,7 @@ def seed():
          "C) 60 కోట్లు / 60 crore",
          "D) 80 కోట్లు / 80 crore",
          "C",
-         "2026 నాటికి భారత్‌లో సుమారు 60 కోట్ల (600 million) ఇంటర్నెట్ వినియోగదారులు ఉన్నారు. India has approximately 60 crore (600 million) internet users by 2026.",
+         "2026 నాటికి భారత్ ~60 కో. (600 మిలియన్) ఇంటర్నెట్ యూజర్లతో ప్రపంచంలో 2వ స్థానం (చైనా తర్వాత). India has ~600 million internet users by 2026, the world's 2nd-largest after China.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Shubhanshu Shukla / Space ──
@@ -416,7 +416,7 @@ def seed():
          "C) Boeing Starliner",
          "D) NASA Artemis",
          "A",
-         "భారత వ్యోమగామి శుభాంశు శుక్లా Axiom Space మిషన్‌లో ISS పర్యటనకు ఎంపికయ్యారు. Indian astronaut Shubhanshu Shukla was selected for an ISS mission via Axiom Space.",
+         "IAF గ్రూప్ కెప్టెన్ శుభాంశు శుక్లా Axiom-4 (Ax-4) మిషన్‌లో ISS చేరారు — రాకేశ్ శర్మ (1984) తర్వాత తొలి భారతీయుడు. IAF Group Capt Shubhanshu Shukla joined ISS via Axiom-4 (Ax-4), the first Indian since Rakesh Sharma (1984).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Jal Jeevan Mission ──
@@ -427,7 +427,7 @@ def seed():
          "C) నీటి సంరక్షణ పథకం / Water conservation scheme",
          "D) వ్యవసాయ నీటిపారుదల / Agricultural irrigation",
          "B",
-         "జల్ జీవన్ మిషన్ ప్రతి గ్రామీణ గృహానికి పైపు నీటి కనెక్షన్ అందించే లక్ష్యంతో పనిచేస్తోంది. Jal Jeevan Mission aims to provide tap water connections to every rural household in India.",
+         "జల్ జీవన్ మిషన్ (Aug 15, 2019) — ప్రతి గ్రామీణ గృహానికి FHTC (Functional Household Tap Connection) లక్ష్యం. Jal Jeevan Mission (launched Aug 15, 2019) targets FHTC (Functional Household Tap Connection) to every rural home.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── POCSO Data ──
@@ -438,7 +438,7 @@ def seed():
          "C) 2,081",
          "D) 5,000",
          "C",
-         "2024లో భారతదేశవ్యాప్తంగా సుమారు 2,081 POCSO కేసులు నమోదయ్యాయి. Approximately 2,081 POCSO cases were registered across India in 2024.",
+         "2024లో దేశవ్యాప్తంగా ~2,081 POCSO (Protection of Children from Sexual Offences Act, 2012) కేసులు. ~2,081 POCSO (Protection of Children from Sexual Offences Act, 2012) cases were registered nationwide in 2024.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India External Affairs ──
@@ -449,7 +449,7 @@ def seed():
          "C) Asian Unity Forward",
          "D) Digital Silk Road",
          "A",
-         "SCO 2025 శిఖర సమ్మేళనం థీమ్ 'Upholding the Shanghai Spirit'. The theme of SCO 2025 Summit was 'Upholding the Shanghai Spirit'.",
+         "SCO (Shanghai Cooperation Organisation) 2025 సమ్మిళిత థీమ్ 'Upholding the Shanghai Spirit', చైనా అతిథేయం. The SCO (Shanghai Cooperation Organisation) 2025 Summit theme was 'Upholding the Shanghai Spirit', hosted by China.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Education ──
@@ -460,7 +460,7 @@ def seed():
          "C) 2024",
          "D) 2026",
          "C",
-         "UGC 2024లో ఆన్‌లైన్ డిగ్రీలను గుర్తించే నిర్ణయం తీసుకుంది. UGC decided to recognize online degrees in 2024.",
+         "UGC (University Grants Commission, 1956) 2024లో ఆన్‌లైన్ డిగ్రీలను సాధారణ డిగ్రీలతో సమానంగా గుర్తించింది. UGC (University Grants Commission, est. 1956) in 2024 recognised online degrees as equivalent to regular degrees.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Inflation ──
@@ -471,7 +471,7 @@ def seed():
          "C) 6%",
          "D) 8%",
          "B",
-         "RBI 4% CPI ద్రవ్యోల్బణాన్ని లక్ష్యంగా నిర్ణయించింది, ఇది 2025-26లో కూడా వర్తిస్తుంది. RBI targets 4% CPI inflation, which applies to 2025-26 as well.",
+         "RBI CPI (Consumer Price Index) ద్రవ్యోల్బణ లక్ష్యం 4% (±2% సహన మండలి) — 2025-26కి కూడా వర్తిస్తుంది. RBI's CPI (Consumer Price Index) inflation target is 4% (±2% tolerance band), applicable to 2025-26.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Defence ──
@@ -482,7 +482,7 @@ def seed():
          "C) 9",
          "D) 12",
          "B",
-         "P-75I ప్రాజెక్ట్‌లో 6 అత్యాధునిక జలాంతర్గాముల నిర్మాణం జరుగుతోంది. 6 advanced submarines are being built under India's P-75I project.",
+         "P-75I — AIP (Air-Independent Propulsion) టెక్నాలజీతో 6 డీజిల్-ఎలక్ట్రిక్ జలాంతర్గాములు, MDL ముంబై వద్ద జర్మన్ సహకారం. P-75I builds 6 AIP (Air-Independent Propulsion) diesel-electric submarines at MDL Mumbai with German collaboration.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Agriculture ──
@@ -493,7 +493,7 @@ def seed():
          "C) రూ.2,00,000 కోట్లు",
          "D) రూ.1,50,000 కోట్లు",
          "B",
-         "2026-27 కేంద్ర బడ్జెట్‌లో వ్యవసాయ రంగానికి రూ.1,71,437 కోట్లు కేటాయించారు. Agriculture allocation in Union Budget 2026-27 is Rs 1,71,437 crore.",
+         "2026-27 బడ్జెట్‌లో వ్యవసాయానికి రూ.1,71,437 కో.; KCC పరిమితి రూ.3 ల → రూ.5 లక్షలకు పెంపు. Union Budget 2026-27 allocates Rs 1,71,437 crore to agriculture; KCC limit hiked from Rs 3 lakh to Rs 5 lakh.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Ports / Logistics ──
@@ -504,7 +504,7 @@ def seed():
          "C) Build 100 new airports",
          "D) Increase rail freight",
          "B",
-         "నేషనల్ లాజిస్టిక్స్ పాలసీ లక్ష్యం GDP లో 14% నుంచి 8% కి లాజిస్టిక్స్ ఖర్చు తగ్గించడం. The National Logistics Policy aims to reduce logistics cost from 14% to 8% of GDP.",
+         "NLP (National Logistics Policy, Sep 17, 2022) — లాజిస్టిక్స్ ఖర్చు GDPలో 14% నుండి 8%కి 2030 నాటికి తగ్గింపు లక్ష్యం. NLP (National Logistics Policy, Sep 17, 2022) aims to cut logistics cost from 14% to 8% of GDP by 2030.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Russia-Ukraine ──
@@ -515,7 +515,7 @@ def seed():
          "C) యుద్ధం కొనసాగుతోంది, శాంతి చర్చలు జరుగుతున్నాయి / War continues with peace negotiations ongoing",
          "D) NATO జోక్యం / NATO intervened militarily",
          "C",
-         "2025-26లో రష్యా-ఉక్రెయిన్ యుద్ధం కొనసాగుతోంది, అంతర్జాతీయ శాంతి చర్చలు జరుగుతున్నాయి. The Russia-Ukraine war continues in 2025-26 with international peace negotiations ongoing.",
+         "ఫిబ్రవరి 24, 2022లో ప్రారంభమైన రష్యా-ఉక్రెయిన్ యుద్ధం 2025-26లో కొనసాగుతోంది; ట్రంప్ నేతృత్వంలో శాంతి మధ్యవర్తిత్వం. The Russia-Ukraine war (began Feb 24, 2022) continues in 2025-26 with Trump-led peace mediation.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Environment ──
@@ -526,7 +526,7 @@ def seed():
          "C) 2030 నాటికి Net Zero",
          "D) 2060 నాటికి Net Zero",
          "B",
-         "భారత్ 2070 నాటికి Net Zero కర్బన ఉద్గారాలు సాధించే లక్ష్యాన్ని COP శిఖర సమ్మేళనాలలో ప్రకటించింది. India has committed to achieving Net Zero carbon emissions by 2070 at COP summits.",
+         "COP26 గ్లాస్గో (2021)లో భారత్ 2070 నాటికి Net Zero ప్రకటించింది; 2030 లక్ష్యం 500 GW RE. India announced Net Zero by 2070 at COP26 Glasgow (2021); 2030 target is 500 GW renewable capacity.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Sports ──
@@ -537,7 +537,7 @@ def seed():
          "C) హాంగ్‌కాంగ్ / Hong Kong",
          "D) బ్యాంకాక్, థాయిలాండ్ / Bangkok, Thailand",
          "A",
-         "2026 ఆసియా క్రీడలు నాగోయా, జపాన్‌లో జరిగాయి. The 2026 Asian Games were held in Nagoya, Japan.",
+         "20వ ఆసియా క్రీడలు 2026 నాగోయా (Aichi, జపాన్)లో OCA (Olympic Council of Asia) నేతృత్వంలో. The 20th Asian Games 2026 were held in Nagoya, Japan, organised by OCA (Olympic Council of Asia).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── ISRO ──
@@ -548,7 +548,7 @@ def seed():
          "C) NavIC-16",
          "D) NavIC-18",
          "C",
-         "ISRO జనవరి 2026లో PSLV ద్వారా NavIC-16 (IRNSS-16) ఉపగ్రహాన్ని విజయవంతంగా ప్రయోగించింది. ISRO successfully launched NavIC-16 (IRNSS-16) satellite via PSLV in January 2026.",
+         "ISRO జనవరి 2026లో PSLV ద్వారా NavIC-16 (Navigation with Indian Constellation) ఉపగ్రహాన్ని ప్రయోగించింది — GPSకి ప్రాంతీయ ప్రత్యామ్నాయం. ISRO launched NavIC-16 (Navigation with Indian Constellation) via PSLV in Jan 2026 — India's regional alternative to GPS.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Ranked ──
@@ -559,7 +559,7 @@ def seed():
          "C) 102",
          "D) 115",
          "C",
-         "2025 GHI నివేదికలో భారత్ 102వ స్థానంలో ఉంది. India ranked 102nd in the Global Hunger Index (GHI) 2025.",
+         "GHI (Global Hunger Index) 2025లో భారత్ 102వ స్థానం — Concern Worldwide & Welthungerhilfe ప్రచురణ. India ranked 102 in the GHI (Global Hunger Index) 2025, published by Concern Worldwide & Welthungerhilfe.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Rural ──
@@ -570,7 +570,7 @@ def seed():
          "C) రూ.86,000 కోట్లు",
          "D) రూ.1,00,000 కోట్లు",
          "B",
-         "MGNREGS కు 2026-27 కేంద్ర బడ్జెట్‌లో రూ.73,000 కోట్లు కేటాయించారు. MGNREGS was allocated Rs 73,000 crore in Union Budget 2026-27.",
+         "MGNREGS (Mahatma Gandhi National Rural Employment Guarantee Scheme, 2005)కు 2026-27 బడ్జెట్‌లో రూ.73,000 కో. MGNREGS (Mahatma Gandhi National Rural Employment Guarantee Scheme, 2005) gets Rs 73,000 crore in Budget 2026-27.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── PM Awards / Achievements ──
@@ -581,7 +581,7 @@ def seed():
          "C) AMRUT",
          "D) Pradhan Mantri Jan Dhan Yojana",
          "A",
-         "PM ఆవాస్ యోజన - గ్రామీణ్ పథకం ద్వారా గ్రామీణ ప్రాంతాల్లో పేద కుటుంబాలకు ఇళ్లు నిర్మించారు. PM Awaas Yojana - Gramin built houses for rural poor families.",
+         "PMAY-G (Pradhan Mantri Awaas Yojana - Gramin, ఏప్రిల్ 2016) ద్వారా గ్రామీణ పేదలకు పక్కా ఇళ్లు; లక్ష్యం 2024-29లో 2 కో. ఇళ్లు. PMAY-G (Pradhan Mantri Awaas Yojana - Gramin, launched April 2016) provides pucca houses to rural poor — target 2 crore houses in Phase-2 (2024-29).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Banking ──
@@ -592,7 +592,7 @@ def seed():
          "C) 6.5%",
          "D) 7.0%",
          "C",
-         "RBI 2025-26లో రెపో రేటు 6.5% గా నిర్ణయించింది. RBI maintained repo rate at 6.5% in 2025-26.",
+         "RBI (Reserve Bank of India) MPC 2025-26 ప్రారంభంలో రెపో రేటును 6.5%గా కొనసాగించింది. RBI's (Reserve Bank of India) MPC kept the repo rate at 6.5% at the start of 2025-26.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Population ──
@@ -603,7 +603,7 @@ def seed():
          "C) 2027",
          "D) 2028",
          "B",
-         "COVID ఆలస్యం తర్వాత భారత జనాభా గణన 2026కి నిర్ణయించారు. India's Census, delayed due to COVID, is planned for 2026.",
+         "2011 తర్వాత తొలి జనాభా గణన (COVID వల్ల ఆలస్యం) 2026లో ప్రారంభం — తొలి డిజిటల్/మొబైల్ యాప్ ఎన్యూమరేషన్. India's Census (first since 2011, delayed by COVID) starts 2026 — its first digital, mobile-app enumeration.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Health ──
@@ -614,7 +614,7 @@ def seed():
          "C) రూ.1,18,311 కోట్లు",
          "D) రూ.58,311 కోట్లు",
          "B",
-         "2026-27 కేంద్ర బడ్జెట్‌లో ఆరోగ్య రంగానికి రూ.98,311 కోట్లు కేటాయించారు. Health sector was allocated Rs 98,311 crore in Union Budget 2026-27.",
+         "2026-27 బడ్జెట్‌లో ఆరోగ్యానికి రూ.98,311 కో. — AB-PMJAY 70+ సీనియర్ సిటిజన్లకు విస్తరణతో. Health gets Rs 98,311 crore in Budget 2026-27, with AB-PMJAY extended to all citizens aged 70+.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Rural Dev ──
@@ -625,7 +625,7 @@ def seed():
          "C) రూ.3,66,808 కోట్లు",
          "D) రూ.1,00,000 కోట్లు",
          "B",
-         "2026-27 కేంద్ర బడ్జెట్‌లో గ్రామీణాభివృద్ధికి రూ.2,66,808 కోట్లు కేటాయించారు. Rural Development was allocated Rs 2,66,808 crore in Union Budget 2026-27.",
+         "2026-27 బడ్జెట్‌లో గ్రామీణాభివృద్ధికి రూ.2,66,808 కో. (MGNREGS, PMAY-G, PMGSY అన్నీ కలిపి). Rural Development gets Rs 2,66,808 crore in Budget 2026-27 (covering MGNREGS, PMAY-G, PMGSY).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Education Budget ──
@@ -636,7 +636,7 @@ def seed():
          "C) రూ.1,58,650 కోట్లు",
          "D) రూ.98,650 కోట్లు",
          "B",
-         "2026-27 కేంద్ర బడ్జెట్‌లో విద్య రంగానికి రూ.1,28,650 కోట్లు కేటాయించారు. Education was allocated Rs 1,28,650 crore in Union Budget 2026-27.",
+         "2026-27 బడ్జెట్‌లో విద్యకు రూ.1,28,650 కో. — NEP 2020 అమలు, పాఠశాల/ఉన్నత విద్యలో పెట్టుబడి. Education gets Rs 1,28,650 crore in Budget 2026-27, funding NEP 2020 implementation across school + higher ed.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── International Relations ──
@@ -647,7 +647,7 @@ def seed():
          "C) దక్షిణ ఆఫ్రికా / South Africa",
          "D) USA",
          "C",
-         "2025లో బ్రెజిల్ G20 అధ్యక్ష స్థానం నిర్వహించింది, 2025-26లో దక్షిణ ఆఫ్రికా అధ్యక్ష స్థానం తీసుకుంది. South Africa held the G20 Presidency in 2025-26.",
+         "2025-26 G20 అధ్యక్షత దక్షిణ ఆఫ్రికాకు (2024లో బ్రెజిల్ తర్వాత); థీమ్ 'Solidarity, Equality, Sustainability'. South Africa holds the 2025-26 G20 Presidency (after Brazil 2024); theme 'Solidarity, Equality, Sustainability'.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── NIA ──
@@ -658,7 +658,7 @@ def seed():
          "C) సదానంద గౌడ / Sadananda Gowda",
          "D) కార్తికేయన్ / Karthikeyan",
          "B",
-         "2026లో దినేశ్ కుమార్ NIA డైరెక్టర్ జనరల్‌గా నియమితులయ్యారు. Dinesh Kumar was appointed as DG of NIA in 2026.",
+         "దినేశ్ కుమార్ (IPS) NIA (National Investigation Agency, 2008లో 26/11 తర్వాత స్థాపన) DGగా 2026లో నియమితులయ్యారు. Dinesh Kumar (IPS) was appointed DG of NIA (National Investigation Agency, est. 2008 post-26/11) in 2026.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── NMC ──
@@ -669,7 +669,7 @@ def seed():
          "C) 2022",
          "D) 2024",
          "B",
-         "NMC (నేషనల్ మెడికల్ కమిషన్) 2020లో MCI (మెడికల్ కౌన్సిల్ ఆఫ్ ఇండియా) స్థానంలో వచ్చింది. NMC replaced MCI in 2020.",
+         "NMC (National Medical Commission) NMC చట్టం 2019 ప్రకారం 2020లో MCI (Medical Council of India, 1933) స్థానంలో వచ్చింది. NMC (National Medical Commission), per NMC Act 2019, replaced the MCI (Medical Council of India, est. 1933) in 2020.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── HOUTHI ──
@@ -680,7 +680,7 @@ def seed():
          "C) యెమెన్ / Yemen",
          "D) సిరియా / Syria",
          "C",
-         "హూతీ తిరుగుబాటుదారులు యెమెన్‌లో ఉన్నారు, వారు 2025-26లో ఎర్ర సముద్రంలో నౌకలపై దాడులు చేశారు. Houthi rebels are based in Yemen, and they attacked ships in the Red Sea in 2025-26.",
+         "హూతీ (Ansar Allah, షియా జైదీ) తిరుగుబాటుదారులు యెమెన్ ఉత్తరం (Sana'a) నుండి ఎర్ర సముద్రంలో నౌకలపై దాడి. Houthi (Ansar Allah, Shia Zaydi) rebels based in north Yemen (Sana'a) attacked Red Sea shipping.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Sports ──
@@ -691,7 +691,7 @@ def seed():
          "C) భారత్ / India",
          "D) దక్షిణ ఆఫ్రికా / South Africa",
          "C",
-         "భారత్ 2025 ICC World Test Championship Final గెలిచింది. India won the 2025 ICC World Test Championship Final.",
+         "భారత్ 2025 ICC WTC (World Test Championship) Final లార్డ్స్‌లో గెలిచింది — ఐస్‌ళ 2-సం. టెస్ట్ చక్రం ఛాంపియన్. India won the 2025 ICC WTC (World Test Championship) Final at Lord's — champions of the 2-year Test cycle.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India AI / Technology ──
@@ -702,7 +702,7 @@ def seed():
          "C) AI India Plus",
          "D) Make AI in India",
          "B",
-         "భారత ప్రభుత్వం 'India AI Mission' ద్వారా AI అవస్థాపన, పరిశోధన, స్టార్టప్‌లకు పెట్టుబడి పెట్టాలని నిర్ణయించింది. India's government launched the 'India AI Mission' to invest in AI infrastructure, research, and startups.",
+         "'IndiaAI Mission' (మార్చి 2024 ఆమోదం) — 5 సం.లో రూ.10,372 కో., MeitY కింద కంప్యూట్ + ఫౌండేషన్ మోడల్స్ + స్టార్టప్‌లకు. IndiaAI Mission (approved March 2024) — Rs.10,372 crore over 5 years under MeitY for compute, foundation models and startups.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India-China Border ──
@@ -713,7 +713,7 @@ def seed():
          "C) General Asia Peace Treaty",
          "D) Geographic Alignment Protocol",
          "B",
-         "2024 అక్టోబర్‌లో భారత్-చైనా మధ్య డెప్సాంగ్ మరియు డెంచోక్ ప్రాంతాల్లో గస్తీ హక్కులు పునరుద్ధరించే ఒప్పందం కుదిరింది. In October 2024, India and China reached an agreement to restore patrolling rights in Depsang and Demchok areas.",
+         "అక్టోబర్ 2024లో GAP (Galwan Area Patrol) ఒప్పందం — తూర్పు లడఖ్ డెప్సాంగ్/డెంచోక్ గస్తీ పునరుద్ధరణ, 4.5 సం. ప్రతిష్టంభనకు ముగింపు. The Oct 2024 GAP (Galwan Area Patrol) agreement restored patrolling at Depsang/Demchok, ending a 4.5-year standoff.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Welfare ──
@@ -724,7 +724,7 @@ def seed():
          "C) 70 ఏళ్ళు పైబడిన వారికి రూ.5 లక్షల కవరేజి / Rs 5 lakh coverage for those above 70",
          "D) అందరికి ఉచిత కవరేజి / Free coverage for all",
          "C",
-         "PM మోడీ 2024లో Ayushman Bharat విస్తరణ కింద 70 ఏళ్ళు పైబడిన పెద్దలందరికీ రూ.5 లక్షల ఆరోగ్య కవరేజి ప్రకటించారు. PM Modi extended Ayushman Bharat to provide Rs 5 lakh health coverage to all senior citizens above 70 years in 2024.",
+         "AB-PMJAY (Ayushman Bharat - PM Jan Arogya Yojana, సెప్టెం 2018) — అక్టోబర్ 2024లో 70+ సీనియర్లందరికీ ఆదాయంతో సంబంధం లేకుండా రూ.5 ల కవరేజి. AB-PMJAY (Ayushman Bharat - PM Jan Arogya Yojana, launched Sep 2018) was extended in Oct 2024 to give Rs 5 lakh cover to all citizens 70+ regardless of income.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Renewable Energy ──
@@ -735,7 +735,7 @@ def seed():
          "C) 500 GW",
          "D) 600 GW",
          "C",
-         "భారత్ 2030 నాటికి 500 GW పునరుత్పాదక ఇంధన సామర్థ్యం సాధించాలని లక్ష్యంగా పెట్టుకుంది. India targets 500 GW renewable energy capacity by 2030.",
+         "COP26 (2021)లో ప్రకటించిన లక్ష్యం — 2030 నాటికి 500 GW శిలాజేతర ఇంధన సామర్థ్యం; విద్యుత్‌లో 50% RE. India's COP26 (2021) target is 500 GW non-fossil capacity by 2030, with 50% of electricity from RE.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── MSME ──
@@ -746,7 +746,7 @@ def seed():
          "C) GST రద్దు / GST removal",
          "D) విదేశీ పెట్టుబడులు / Foreign investments only",
          "B",
-         "2026-27 కేంద్ర బడ్జెట్‌లో MSME లకు క్రెడిట్ హామీ పథకం విస్తరణ, ఆర్థిక సహాయం పెంపు ప్రకటించారు. Union Budget 2026-27 announced credit guarantee expansion and increased support for MSMEs.",
+         "2026-27 బడ్జెట్‌లో MSME (Micro, Small & Medium Enterprises, MSMED Act 2006) క్రెడిట్ హామీ + ముద్రా లోన్ విస్తరణ. Budget 2026-27 expanded credit guarantee and Mudra loans for MSMEs (Micro, Small & Medium Enterprises, MSMED Act 2006).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Judiciary ──
@@ -757,7 +757,7 @@ def seed():
          "C) B.R. గవాయ్ / B.R. Gavai",
          "D) హేమంత్ గుప్తా / Hemant Gupta",
          "C",
-         "2026లో జస్టిస్ B.R. గవాయ్ భారత సర్వోన్నత న్యాయస్థానం ముఖ్య న్యాయమూర్తిగా ఉన్నారు. Justice B.R. Gavai is the Chief Justice of India in 2026.",
+         "జస్టిస్ B.R. గవాయ్ — 52వ CJI (Chief Justice of India), మే 14, 2025 నుండి బాధ్యతలు; 2026 మే వరకు పదవీకాలం. Justice B.R. Gavai is the 52nd CJI (Chief Justice of India), in office from May 14, 2025 until May 2026.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Space ──
@@ -768,7 +768,7 @@ def seed():
          "C) 4",
          "D) 5",
          "B",
-         "గగన్‌యాన్ మిషన్‌లో 3 మంది వ్యోమగాముల బృందం అంతరిక్షానికి వెళ్తుంది. Gaganyaan mission will have a crew of 3 astronauts.",
+         "ISRO గగన్‌యాన్ — భారత తొలి మానవ అంతరిక్ష యాత్ర, 3 వ్యోమగాములు, 400 కి.మీ LEO కక్ష్యలో 3 రోజులు. ISRO's Gaganyaan, India's first crewed space mission, will fly 3 astronauts to 400 km LEO for 3 days.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India-Pakistan ──
@@ -779,7 +779,7 @@ def seed():
          "C) పహల్గామ్ ఉగ్రవాద దాడి మరియు ఆపరేషన్ సింధూర్ / Pahalgam terror attack and Operation Sindoor",
          "D) LOC శాంతి / LOC peace",
          "C",
-         "పహల్గామ్‌లో ఉగ్రవాద దాడి తర్వాత భారత్ 'ఆపరేషన్ సింధూర్' నిర్వహించి పాకిస్తాన్ ఉగ్రవాద స్థావరాలపై దాడులు చేసింది. After the Pahalgam terror attack, India conducted 'Operation Sindoor' striking terrorist bases in Pakistan.",
+         "ఏప్రిల్ 2025 పహల్గామ్ ఉగ్రదాడి (26 మరణాలు) తర్వాత మే 2025లో భారత్ 'ఆపరేషన్ సింధూర్' ద్వారా POK/పాకిస్తాన్ ఉగ్ర స్థావరాలపై దాడి. After the April 2025 Pahalgam terror attack (26 killed), India launched Operation Sindoor in May 2025 to strike terror bases in PoK/Pakistan.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Operation Sindoor ──

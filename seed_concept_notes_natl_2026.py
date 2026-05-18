@@ -611,6 +611,438 @@ NOTES.append(('natl_2026_waves_summit',
 <p class="bi-te">WAVES — హాలీవుడ్ (USA), హాలియు (కొరియా), చైనా/జపాన్‌లకు పోటీగా భారత్‌ను ప్రపంచ M&E శక్తి కేంద్రంగా నిలబెడుతుంది. భారత్ "విశ్వగురు" సృజనాత్మక ఆర్థిక లక్ష్యానికి అనుగుణం; అంతర్జాతీయ co-production ఒప్పందాలకు దోహదపడుతుంది.</p>
 """))
 
+# ═══════════════════════════════════════════════════════════════════
+#  15. NAVAL DEFENCE & MARITIME SECURITY 2026
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_naval_defense',
+              'Naval Defence & Maritime Security 2026',
+              'నావికా రక్షణ & సముద్ర భద్రత 2026', """
+<div class="concept-cover">
+  <h1>Naval Defence &amp; Maritime Security 2026 &nbsp;<span class="bi-te">/ నావికా రక్షణ 2026</span></h1>
+  <div class="sub">MILAN 2026 (Vizag) • S-4 SSBN • P-75I • Hormuz chokepoint</div>
+</div>
+
+<div class="section-hdr">MILAN 2026 — Multilateral Naval Exercise / MILAN 2026</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Full form</td><td><b>M</b>ultilateral <b>I</b>nteraction (originally 'Multilateral Naval Exercise')</td><td class="bi-te">బహుపాక్షిక నావికా విన్యాసం</td></tr>
+<tr><td>Host city</td><td><b>Visakhapatnam</b>, Andhra Pradesh</td><td class="bi-te">విశాఖపట్నం, ఆంధ్రప్రదేశ్</td></tr>
+<tr><td>Dates</td><td>February 17-25, 2026</td><td class="bi-te">ఫిబ్రవరి 17-25, 2026</td></tr>
+<tr><td>Countries</td><td><b>50+ navies</b> (74 nations across MILAN + IFR + IONS)</td><td class="bi-te">50కి పైగా నౌకాదళాలు</td></tr>
+<tr><td>Theme</td><td>'United Through Oceans'</td><td class="bi-te">'మహాసముద్రాల ద్వారా ఏకతా'</td></tr>
+<tr><td>Frequency</td><td>Biennial (every 2 years), hosted by Indian Navy</td><td class="bi-te">రెండు సం. కోసారి, భారత నౌకాదళం</td></tr>
+<tr><td>Special 2026</td><td>First joint hosting with IFR + IONS Symposium</td><td class="bi-te">తొలి IFR + IONS సమ్మిళిత నిర్వహణ</td></tr>
+</table>
+
+<div class="section-hdr">INS S-4 / Arihant-class SSBN / S-4 జలాంతర్గామి</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Class</td><td><b>Arihant-class</b> — 4th boat</td><td class="bi-te">అరిహంత్ శ్రేణి, 4వ నౌక</td></tr>
+<tr><td>Category</td><td><b>SSBN</b> = Ship Submersible Ballistic Nuclear (nuclear-powered)</td><td class="bi-te">అణు-శక్తి బాలిస్టిక్ క్షిపణి జలాంతర్గామి</td></tr>
+<tr><td>Builder</td><td>Ship Building Centre, Visakhapatnam</td><td class="bi-te">ఓడల నిర్మాణ కేంద్రం, విశాఖపట్నం</td></tr>
+<tr><td>Significance</td><td>Strengthens India's <b>nuclear triad</b> (land, air, sea)</td><td class="bi-te">భారత అణు త్రయాన్ని బలోపేతం</td></tr>
+</table>
+
+<div class="section-hdr">Project P-75I / ప్రాజెక్ట్ P-75I</div>
+<p><b>P-75I</b> = <b>6 advanced diesel-electric submarines</b> with AIP (Air-Independent Propulsion) technology under the Make-in-India initiative, built at MDL Mumbai with German ThyssenKrupp Marine Systems collaboration. The earlier <b>P-75 Scorpene class</b> delivered 6 boats (INS Kalvari series).</p>
+<p class="bi-te">P-75I — AIP టెక్నాలజీతో 6 అత్యాధునిక డీజిల్-ఎలక్ట్రిక్ జలాంతర్గాములు, MDL ముంబై వద్ద జర్మన్ సహకారంతో నిర్మాణం. మునుపటి P-75 స్కార్పీన్ — 6 నౌకలు (INS కల్వరి శ్రేణి).</p>
+
+<div class="section-hdr">Strait of Hormuz — Strategic Chokepoint / హర్ముజ్ జలసంధి</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Location</td><td>Between <b>Iran (north)</b> and <b>Oman (south, Musandam exclave)</b></td><td class="bi-te">ఇరాన్ - ఒమాన్ మధ్య</td></tr>
+<tr><td>Connects</td><td>Persian Gulf — Gulf of Oman — Arabian Sea</td><td class="bi-te">పర్షియన్ గల్ఫ్ — అరేబియా సముద్రం</td></tr>
+<tr><td>Width</td><td>~33 km at narrowest</td><td class="bi-te">అతి సన్నని భాగం ~33 కి.మీ</td></tr>
+<tr><td>Oil traffic</td><td>~20% of global oil + 30% of seaborne crude passes through</td><td class="bi-te">ప్రపంచ చమురులో ~20% ఇక్కడ నుండి</td></tr>
+</table>
+
+<div class="section-hdr">Defence Budget &amp; Sector / రక్షణ బడ్జెట్</div>
+<p>Defence allocation in Union Budget 2026-27 = <b>Rs.7.85 lakh crore</b> (+15% YoY) — highest among all ministries. India is now the world's <b>3rd-largest defence spender</b> after USA and China. Defence exports crossed Rs.21,000 crore in 2024-25.</p>
+<p class="bi-te">2026-27 బడ్జెట్‌లో రక్షణకు రూ.7.85 ల.కో. (+15%) — అత్యధికం. భారత్ ప్రపంచంలో 3వ అతిపెద్ద రక్షణ ఖర్చుదారు (USA, చైనా తర్వాత). 2024-25లో రక్షణ ఎగుమతులు రూ.21,000 కో. దాటాయి.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  16. CRICKET & SPORTS 2026
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_cricket_sports',
+              'Cricket & Sports 2026',
+              'క్రికెట్ & క్రీడలు 2026', """
+<div class="concept-cover">
+  <h1>Cricket &amp; Sports 2026 &nbsp;<span class="bi-te">/ క్రికెట్ & క్రీడలు 2026</span></h1>
+  <div class="sub">U19 WC • WTC Final • Asian Games Nagoya</div>
+</div>
+
+<div class="section-hdr">ICC U19 Cricket World Cup 2026 / U19 ప్రపంచ కప్ 2026</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Winner</td><td><b>India</b> (record extending title)</td><td class="bi-te">విజేత: భారత్</td></tr>
+<tr><td>Edition</td><td>15th ICC U19 Men's Cricket World Cup</td><td class="bi-te">15వ ఎడిషన్</td></tr>
+<tr><td>India's titles</td><td>Most-ever U19 World Cup titles</td><td class="bi-te">అత్యధిక U19 టైటిళ్లు</td></tr>
+</table>
+
+<div class="section-hdr">ICC World Test Championship Final 2025 / WTC ఫైనల్ 2025</div>
+<p><b>India</b> won the 2025 ICC World Test Championship Final at Lord's, capping a 2-year cycle. The WTC is cricket's premier Test format championship (launched 2019-21 cycle by ICC).</p>
+<p class="bi-te">భారత్ 2025 ICC వరల్డ్ టెస్ట్ ఛాంపియన్‌షిప్ ఫైనల్ లార్డ్స్‌లో గెలిచింది. WTC ICC టెస్ట్ ఫార్మాట్ ప్రధాన ఛాంపియన్‌షిప్ (2019-21 సైకిల్ నుండి ప్రారంభం).</p>
+
+<div class="section-hdr">2026 Asian Games — Nagoya, Japan / 2026 ఆసియా క్రీడలు</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Host</td><td><b>Nagoya, Japan</b> (Aichi prefecture)</td><td class="bi-te">నాగోయా, జపాన్</td></tr>
+<tr><td>Edition</td><td>20th Asian Games</td><td class="bi-te">20వ ఆసియా క్రీడలు</td></tr>
+<tr><td>Organising body</td><td>OCA (Olympic Council of Asia)</td><td class="bi-te">ఆసియా ఒలింపిక్ కౌన్సిల్</td></tr>
+<tr><td>Previous</td><td>Hangzhou 2022 (held Sep 2023) — India won 107 medals (28G/38S/41B)</td><td class="bi-te">హాంగ్‌ఝౌ 2022 — భారత్‌కు 107 పతకాలు</td></tr>
+</table>
+<p>Sports is a state subject in India with a Union Ministry of Youth Affairs &amp; Sports. <b>Khelo India</b> and <b>TOPS (Target Olympic Podium Scheme)</b> support elite athletes. India hosts the <b>Khelo India Youth Games</b> annually.</p>
+<p class="bi-te">క్రీడలు రాష్ట్ర అంశం, కేంద్ర యువజన వ్యవహారాలు & క్రీడల మంత్రిత్వ శాఖ ఉంది. ఖేలో ఇండియా, TOPS క్రీడాకారులకు మద్దతు. ఖేలో ఇండియా యూత్ గేమ్స్ ప్రతి సం. జరుగుతాయి.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  17. FOREIGN RELATIONS 2026
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_foreign_relations',
+              'India Foreign Relations 2026',
+              'భారత విదేశీ సంబంధాలు 2026', """
+<div class="concept-cover">
+  <h1>India Foreign Relations 2026 &nbsp;<span class="bi-te">/ భారత విదేశీ సంబంధాలు 2026</span></h1>
+  <div class="sub">Lula visit • Trump tariffs • Gaza ceasefire • SCO • India-China LAC</div>
+</div>
+
+<div class="section-hdr">Brazil — Lula's India Visit / బ్రెజిల్ - లులా పర్యటన</div>
+<p><b>Luiz Inácio Lula da Silva</b>, President of Brazil, visited India in <b>March 2026</b> as Chief Guest. Met PM Modi for bilateral talks covering trade, technology, BRICS coordination, and defence. Brazil-India trade target: <b>$20 billion by 2030</b>. Brazil held G20 Presidency in 2024.</p>
+<p class="bi-te">బ్రెజిల్ అధ్యక్షుడు లులా డి సిల్వా మార్చి 2026లో భారత్ సందర్శించారు, PM మోడీతో వాణిజ్యం, టెక్నాలజీ, BRICS, రక్షణ గురించి చర్చలు. వాణిజ్య లక్ష్యం: 2030 నాటికి $20 బిలియన్లు. 2024లో బ్రెజిల్ G20 అధ్యక్షత.</p>
+
+<div class="section-hdr">India-USA — Trump Tariffs 2026 / భారత్-USA</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Trigger</td><td>Trump 2.0 (Jan 2025) imposed reciprocal &amp; sector tariffs</td><td class="bi-te">ట్రంప్ 2.0 — పరస్పర సుంకాలు</td></tr>
+<tr><td>India tariffs</td><td>26-50% on select sectors (steel, auto, pharma intermediates)</td><td class="bi-te">ఎంపిక చేసిన రంగాలపై 26-50%</td></tr>
+<tr><td>India response</td><td>Bilateral renegotiation talks; partial countermeasures</td><td class="bi-te">ద్వైపాక్షిక చర్చలు</td></tr>
+<tr><td>Trade</td><td>USA = India's largest trading partner (~$130 bn bilateral)</td><td class="bi-te">USA — భారత అతిపెద్ద వాణిజ్య భాగస్వామి</td></tr>
+</table>
+
+<div class="section-hdr">Israel-Hamas Gaza Ceasefire (Feb 2026) / గాజా కాల్పుల విరమణ</div>
+<p>The phased Israel-Hamas ceasefire deal of <b>February 2026</b> was mediated by <b>Qatar, Egypt, and USA</b>. It provided for hostage release, prisoner exchange, and aid corridors. India backs the <b>two-state solution</b> for Palestine.</p>
+<p class="bi-te">ఇజ్రాయెల్-హమాస్ ఫిబ్రవరి 2026 ఒప్పందానికి కతర్, ఈజిప్ట్, USA మధ్యవర్తిత్వం. బందీల విడుదల, ఖైదీల మార్పిడి, సహాయ మార్గాలు. భారత్ ద్వి-రాష్ట్ర పరిష్కారానికి మద్దతు.</p>
+
+<div class="section-hdr">SCO Summit 2025 / SCO శిఖరం 2025</div>
+<p><b>SCO</b> (Shanghai Cooperation Organisation) 2025 Summit theme = <b>'Upholding the Shanghai Spirit'</b>, hosted by China. SCO has 10 members (incl. India, Pakistan, Iran, Belarus). India joined as full member in 2017.</p>
+<p class="bi-te">SCO 2025 సమ్మిళిత థీమ్: 'షాంఘై స్ఫూర్తిని కాపాడడం', చైనా అతిథేయం. SCO లో 10 సభ్యులు (భారత్, పాకిస్తాన్, ఇరాన్, బెలారస్ సహా). 2017లో భారత్ పూర్తి సభ్యత్వం.</p>
+
+<div class="section-hdr">Houthis &amp; Red Sea / హూతీలు & ఎర్ర సముద్రం</div>
+<p><b>Houthi rebels</b> (Ansar Allah, Shia Zaydi movement) are based in <b>Yemen</b>, controlling its north including Sana'a. Since late-2023 they attacked commercial vessels in the <b>Red Sea / Bab-el-Mandeb</b>, disrupting Suez Canal trade. India's Navy launched <b>Op Sankalp</b> for anti-piracy escort.</p>
+<p class="bi-te">హూతీ తిరుగుబాటుదారులు యెమెన్‌లో ఉన్నారు. 2023 చివరి నుండి ఎర్ర సముద్రంలో నౌకలపై దాడులు, సూయజ్ ట్రాఫిక్ దెబ్బ. భారత నౌకాదళం 'ఆపరేషన్ సంకల్ప్' ద్వారా దోపిడీ నిరోధక గస్తీ.</p>
+
+<div class="section-hdr">India-China LAC Agreement (Oct 2024) / భారత్-చైనా LAC</div>
+<p>In <b>October 2024</b>, India and China reached the <b>Galwan Area Patrol (GAP) Agreement</b> restoring patrolling rights at <b>Depsang and Demchok</b> in Eastern Ladakh, ending the 4.5-year standoff that began with the June 2020 Galwan clash. PM Modi met Xi Jinping at Kazan BRICS Summit (Oct 2024).</p>
+<p class="bi-te">అక్టోబర్ 2024లో భారత్-చైనా డెప్సాంగ్, డెంచోక్‌ల వద్ద గస్తీ హక్కులు పునరుద్ధరించే ఒప్పందం. జూన్ 2020 గల్వాన్ సంఘర్షణతో ప్రారంభమైన 4.5 సం. ప్రతిష్టంభనకు ముగింపు. కజాన్ BRICS లో మోడీ-జిన్‌పింగ్ సమావేశం.</p>
+
+<div class="section-hdr">G20 Presidency 2025-26 / G20 అధ్యక్షత</div>
+<p><b>South Africa</b> holds the G20 Presidency for 2025-26 (after Brazil 2024). Theme: 'Solidarity, Equality, Sustainability'. India hosted G20 in 2023 (New Delhi Declaration).</p>
+<p class="bi-te">2025-26 G20 అధ్యక్షత: దక్షిణ ఆఫ్రికా. థీమ్: 'సంఘీభావం, సమానత్వం, స్థిరత్వం'. 2023లో భారత్ అధ్యక్షత (న్యూఢిల్లీ డిక్లరేషన్).</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  18. SPACE & ISRO 2026
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_space_isro',
+              'Space & ISRO 2026',
+              'అంతరిక్షం & ISRO 2026', """
+<div class="concept-cover">
+  <h1>Space &amp; ISRO 2026 &nbsp;<span class="bi-te">/ అంతరిక్షం & ఇస్రో 2026</span></h1>
+  <div class="sub">Artemis-2 • Shubhanshu Shukla / Axiom-4 • NavIC-16 • Gaganyaan</div>
+</div>
+
+<div class="section-hdr">NASA Artemis-2 / NASA ఆర్టెమిస్-2</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Mission</td><td><b>First crewed lunar mission in 50 years</b> (since Apollo 17, Dec 1972)</td><td class="bi-te">50 సం. తర్వాత మానవులతో చంద్రుని మిషన్</td></tr>
+<tr><td>Crew</td><td><b>4 astronauts</b>: Reid Wiseman, Victor Glover, Christina Koch, Jeremy Hansen (CSA)</td><td class="bi-te">4 వ్యోమగాములు</td></tr>
+<tr><td>Type</td><td>Lunar flyby (no landing)</td><td class="bi-te">చంద్రుని చుట్టూ ప్రయాణం (దిగుట లేదు)</td></tr>
+<tr><td>Rocket / Capsule</td><td>SLS (Space Launch System) + Orion capsule</td><td class="bi-te">SLS రాకెట్ + ఓరియన్ క్యాప్సూల్</td></tr>
+<tr><td>Next</td><td>Artemis-3 (planned crewed landing 2027)</td><td class="bi-te">ఆర్టెమిస్-3 — క్రూడ్ లాండింగ్ 2027</td></tr>
+</table>
+
+<div class="section-hdr">Shubhanshu Shukla — Axiom-4 / శుభాంశు శుక్లా</div>
+<p>Indian Air Force Group Captain <b>Shubhanshu Shukla</b> flew as part of <b>Axiom-4 (Ax-4) mission</b> to the ISS in 2025 — the first Indian on the ISS and the first Indian in space since <b>Rakesh Sharma (Soyuz T-11, April 1984)</b>. Axiom Space is a private US firm partnered with SpaceX for crewed ISS missions. Shukla was awarded the <b>Ashok Chakra 2026</b> (highest peace-time gallantry award).</p>
+<p class="bi-te">భారత వాయుసేన గ్రూప్ కెప్టెన్ శుభాంశు శుక్లా 2025లో Axiom-4 మిషన్ ద్వారా ISS చేరారు — రాకేశ్ శర్మ (1984) తర్వాత తొలి భారతీయుడు ISS లో. Axiom స్పేస్ — SpaceX భాగస్వామ్యంతో అమెరికా ప్రైవేటు సంస్థ. శుక్లాకు 2026లో అశోక చక్ర.</p>
+
+<div class="section-hdr">ISRO Launches 2026 / ISRO ప్రయోగాలు</div>
+<table class="key-table">
+<tr><th>Mission</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>NavIC-16 (IRNSS-16)</b></td><td>Launched Jan 2026 via PSLV — strengthens India's regional satellite navigation</td><td class="bi-te">2026 జనవరి PSLV ద్వారా</td></tr>
+<tr><td>Gaganyaan</td><td>India's first crewed mission — <b>3 astronauts</b>, targeted 2026-27</td><td class="bi-te">3 వ్యోమగాములు</td></tr>
+<tr><td>Chandrayaan-4</td><td>Sample-return mission, late-2020s</td><td class="bi-te">శాంపిల్ తిరిగి తేవు మిషన్</td></tr>
+<tr><td>Budget 2026-27</td><td>Rs.13,705 crore for ISRO</td><td class="bi-te">ISRO బడ్జెట్ రూ.13,705 కో.</td></tr>
+</table>
+<p><b>NavIC</b> = <b>Nav</b>igation with <b>I</b>ndian <b>C</b>onstellation; regional alternative to GPS covering India + 1,500 km buffer; 7-satellite constellation (IRNSS series).</p>
+<p class="bi-te">NavIC — భారతీయ ఉపగ్రహాలతో నావిగేషన్; భారత్ + 1,500 కి.మీ. చుట్టు; 7 ఉపగ్రహాల కూటమి (IRNSS శ్రేణి). GPS కి ప్రాంతీయ ప్రత్యామ్నాయం.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  19. ECONOMIC INDICATORS 2026
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_economic_indicators',
+              'Economic Indicators & Global Rankings 2026',
+              'ఆర్థిక సూచికలు & ర్యాంకింగ్‌లు 2026', """
+<div class="concept-cover">
+  <h1>Economic Indicators &amp; Global Rankings 2026 &nbsp;<span class="bi-te">/ ఆర్థిక సూచికలు 2026</span></h1>
+  <div class="sub">WEF Davos • GST • Inflation • HDI • Internet • Census</div>
+</div>
+
+<div class="section-hdr">WEF Davos 2026 / WEF దావోస్ 2026</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Edition</td><td><b>56th Annual Meeting</b> of the World Economic Forum</td><td class="bi-te">56వ వార్షిక సమావేశం</td></tr>
+<tr><td>Venue / Date</td><td>Davos-Klosters, Switzerland, January 2026</td><td class="bi-te">దావోస్, స్విట్జర్లాండ్ — జనవరి 2026</td></tr>
+<tr><td>Founder</td><td>Klaus Schwab (1971)</td><td class="bi-te">క్లాస్ ష్వాబ్ (1971 స్థాపన)</td></tr>
+</table>
+
+<div class="section-hdr">Macro Indicators / స్థూల సూచికలు</div>
+<table class="key-table">
+<tr><th>Indicator</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>GST collections (Dec 2024)</td><td>Rs.2,03,890 crore</td><td class="bi-te">డిసెంబర్ 2024 GST వసూళ్లు</td></tr>
+<tr><td>CPI Inflation target</td><td><b>4% ± 2%</b> (RBI flexible target)</td><td class="bi-te">CPI ద్రవ్యోల్బణ లక్ష్యం 4% (±2%)</td></tr>
+<tr><td>Repo Rate (2025-26)</td><td>6.5%</td><td class="bi-te">రెపో రేటు 6.5%</td></tr>
+<tr><td>Agriculture growth 2024-25</td><td>3.8% (Eco Survey 2025-26)</td><td class="bi-te">వ్యవసాయ వృద్ధి 3.8%</td></tr>
+<tr><td>GDP growth target 2026-27</td><td>7%</td><td class="bi-te">GDP లక్ష్యం 7%</td></tr>
+</table>
+
+<div class="section-hdr">Global Indices — India's Rank / ప్రపంచ సూచికలలో భారత్</div>
+<table class="key-table">
+<tr><th>Index</th><th>India's rank</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>HDI 2025</b> (Human Development Index, UNDP)</td><td><b>130 / 193</b></td><td class="bi-te">HDI 130వ స్థానం</td></tr>
+<tr><td><b>GHI 2025</b> (Global Hunger Index)</td><td><b>102</b></td><td class="bi-te">GHI 102వ స్థానం</td></tr>
+</table>
+
+<div class="section-hdr">Digital India — User Base / డిజిటల్ ఇండియా</div>
+<table class="key-table">
+<tr><th>Item</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Internet users (2026)</td><td>~60 crore (~600 million)</td><td class="bi-te">ఇంటర్నెట్ వినియోగదారులు ~60 కోట్లు</td></tr>
+<tr><td>Social media users (2026)</td><td>~26.5 crore (~265 million)</td><td class="bi-te">సోషల్ మీడియా ~26.5 కోట్లు</td></tr>
+<tr><td>Smartphone users</td><td>~70 crore</td><td class="bi-te">స్మార్ట్‌ఫోన్ ~70 కోట్లు</td></tr>
+</table>
+
+<div class="section-hdr">Census 2026 / జనాభా గణన 2026</div>
+<p>India's <b>Census 2026</b> is the first since 2011 (delayed due to COVID-19). It will be the <b>first digital census</b> via mobile-app enumeration. The Census Act, 1948 governs the exercise; Registrar General of India (RGI) is the nodal body.</p>
+<p class="bi-te">2011 తర్వాత తొలి జనాభా గణన (COVID వల్ల ఆలస్యం). మొబైల్ యాప్ ద్వారా తొలి డిజిటల్ జనాభా గణన. భారత రిజిస్ట్రార్ జనరల్ (RGI) నిర్వహణ.</p>
+
+<div class="section-hdr">India AI Mission / ఇండియా AI మిషన్</div>
+<p><b>'IndiaAI Mission'</b> (approved March 2024) — Rs.10,372 crore over 5 years — focuses on compute capacity, foundation models, datasets, AI skilling, application development, and AI startup financing. Implemented via 'IndiaAI Independent Business Division' under MeitY.</p>
+<p class="bi-te">'ఇండియా AI మిషన్' — 5 సంలో రూ.10,372 కో. — కంప్యూట్ సామర్థ్యం, ఫౌండేషన్ మోడల్స్, డేటాసెట్లు, AI నైపుణ్యం, స్టార్టప్‌లు. MeitY కింద ఇండియా AI స్వతంత్ర విభాగం నిర్వహణ.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  20. SOCIAL WELFARE SCHEMES 2026
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_social_welfare_schemes',
+              'Social Welfare Schemes & Rural-Urban Development 2026',
+              'సామాజిక సంక్షేమ పథకాలు 2026', """
+<div class="concept-cover">
+  <h1>Social Welfare Schemes 2026 &nbsp;<span class="bi-te">/ సామాజిక సంక్షేమం 2026</span></h1>
+  <div class="sub">PMAY-G • MGNREGS • Ayushman Bharat • Health/Education/Rural allocations</div>
+</div>
+
+<div class="section-hdr">Union Budget 2026-27 — Welfare Allocations / సంక్షేమ కేటాయింపులు</div>
+<table class="key-table">
+<tr><th>Scheme/Sector</th><th>Allocation</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Rural Development</td><td>Rs.2,66,808 crore</td><td class="bi-te">గ్రామీణాభివృద్ధి రూ.2.66 ల.కో.</td></tr>
+<tr><td>MGNREGS</td><td>Rs.73,000 crore</td><td class="bi-te">MGNREGS రూ.73,000 కో.</td></tr>
+<tr><td>Education</td><td>Rs.1,28,650 crore</td><td class="bi-te">విద్య రూ.1.28 ల.కో.</td></tr>
+<tr><td>Health</td><td>Rs.98,311 crore</td><td class="bi-te">ఆరోగ్యం రూ.98,311 కో.</td></tr>
+<tr><td>Agriculture</td><td>Rs.1,71,437 crore</td><td class="bi-te">వ్యవసాయం రూ.1.71 ల.కో.</td></tr>
+</table>
+
+<div class="section-hdr">PMAY-Gramin / PM ఆవాస్ యోజన - గ్రామీణ్</div>
+<p><b>PMAY-G</b> (Pradhan Mantri Awaas Yojana - Gramin) launched April 2016 (renamed from IAY) — provides pucca houses to rural poor (BPL). Target: <b>2 crore houses by 2024-29 (Phase-2)</b>. Unit assistance: Rs.1.2 lakh (plain) / Rs.1.3 lakh (hilly). Beneficiaries identified using SECC 2011.</p>
+<p class="bi-te">PMAY-G ఏప్రిల్ 2016లో ప్రారంభం (IAY పేరు మార్పు). గ్రామీణ పేదలకు పక్కా ఇళ్లు. లక్ష్యం: 2024-29 ఫేజ్-2లో 2 కోట్ల ఇళ్లు. యూనిట్ సహాయం: రూ.1.2 ల (సాదా) / రూ.1.3 ల (కొండ).</p>
+
+<div class="section-hdr">MGNREGS / మహాత్మా గాంధీ గ్రామీణ ఉపాధి హామీ</div>
+<p><b>MGNREGS</b> = Mahatma Gandhi National Rural Employment Guarantee Scheme (Act 2005). Guarantees <b>100 days</b> wage employment per rural household per year. Demand-driven; if work not provided within 15 days, unemployment allowance payable. World's largest social safety net.</p>
+<p class="bi-te">MGNREGS — 2005 చట్టం. గ్రామీణ కుటుంబానికి సం. 100 రోజుల వేతన ఉపాధి హామీ. డిమాండ్ ఆధారిత; 15 రోజుల్లో పని ఇవ్వకపోతే నిరుద్యోగ భృతి. ప్రపంచంలో అతిపెద్ద సామాజిక భద్రతా వల.</p>
+
+<div class="section-hdr">Ayushman Bharat — PMJAY / ఆయుష్మాన్ భారత్</div>
+<p><b>AB-PMJAY</b> (launched Sep 2018) — world's largest health insurance scheme. Rs.5 lakh per family per year cashless cover for secondary/tertiary care. Original beneficiaries: 12.37 crore poor families (SECC). <b>2024 extension</b>: All citizens <b>aged 70+</b> covered regardless of income (announced by PM Modi, Oct 2024).</p>
+<p class="bi-te">AB-PMJAY (సెప్టెం 2018) — ప్రపంచంలో అతిపెద్ద ఆరోగ్య బీమా పథకం. కుటుంబానికి సం. రూ.5 లక్షల కవరేజి. 2024 విస్తరణ: 70 ఏళ్ళు పైబడిన అందరికీ — ఆదాయంతో సంబంధం లేకుండా.</p>
+
+<div class="section-hdr">AICTE / AICTE</div>
+<p><b>AICTE</b> = All India Council for Technical Education (statutory body est. 1987 under AICTE Act 1987). Regulates technical education (engg/MBA/MCA/pharmacy). Around <b>305+</b> approval-related institutions/regions in 2026 system (regional offices + approved categories). Headquartered New Delhi; current chairman: T.G. Sitharam.</p>
+<p class="bi-te">AICTE — 1987 చట్టం ద్వారా చట్టబద్ధ సంస్థ. ఇంజినీరింగ్/MBA/ఫార్మసీ సాంకేతిక విద్యను నియంత్రిస్తుంది. ముఖ్య కార్యాలయం న్యూఢిల్లీ.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  21. AGRICULTURE & ENVIRONMENT 2026
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_agri_environment',
+              'Agriculture, Environment & Renewable Energy 2026',
+              'వ్యవసాయం, పర్యావరణం & పునరుత్పాదక శక్తి 2026', """
+<div class="concept-cover">
+  <h1>Agriculture, Environment &amp; Renewable Energy 2026 &nbsp;<span class="bi-te">/ వ్యవసాయం & పర్యావరణం 2026</span></h1>
+  <div class="sub">Agri Rs.1.71 L cr • Net Zero 2070 • 500 GW RE • Jal Jeevan</div>
+</div>
+
+<div class="section-hdr">Agriculture — Budget 2026-27 / వ్యవసాయ బడ్జెట్</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Allocation</td><td>Rs.1,71,437 crore</td><td class="bi-te">రూ.1.71 ల.కో.</td></tr>
+<tr><td>KCC limit hike</td><td>Rs.3 lakh → <b>Rs.5 lakh</b></td><td class="bi-te">కిసాన్ క్రెడిట్ కార్డ్ — రూ.3 ల నుండి రూ.5 లక్షలకు</td></tr>
+<tr><td>Bharat-Vistar</td><td>Rs.150 cr AI tool for agriculture</td><td class="bi-te">Bharat-Vistar AI</td></tr>
+<tr><td>PM Dhan Dhanya Krishi Yojana</td><td>100 low-yield districts, 1.7 cr farmers</td><td class="bi-te">PM ధన్ ధాన్య కృషి</td></tr>
+<tr><td>Pulse Self-Sufficiency Mission</td><td>6-year pulse self-reliance</td><td class="bi-te">పప్పు స్వయం-సమృద్ధి మిషన్</td></tr>
+<tr><td>Sector growth 2024-25</td><td>3.8% (Eco Survey)</td><td class="bi-te">వృద్ధి 3.8%</td></tr>
+</table>
+
+<div class="section-hdr">Jal Jeevan Mission (JJM) / జల్ జీవన్ మిషన్</div>
+<p><b>JJM</b> launched <b>August 15, 2019</b> — aims to provide <b>Functional Household Tap Connection (FHTC) to every rural household</b> by 2024 (extended). Originally 32% rural coverage → over <b>15.7 crore households (~80%)</b> connected by 2025. Joint funding: 50:50 (states), 90:10 (NE/Himalayan), 100% (UTs without legislature).</p>
+<p class="bi-te">జల్ జీవన్ మిషన్ — 2019 ఆగస్టు 15. ప్రతి గ్రామీణ గృహానికి కార్యశీల కుళాయి కనెక్షన్. 32% నుండి 80%కి విస్తరణ (15.7 కో. గృహాలు). కేంద్రం-రాష్ట్ర భాగస్వామ్యం 50:50 (సాదా), 90:10 (NE/హిమాలయ), 100% (UTs).</p>
+
+<div class="section-hdr">Climate &amp; Net Zero / వాతావరణ లక్ష్యాలు</div>
+<table class="key-table">
+<tr><th>Commitment</th><th>Target</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Net Zero</td><td><b>2070</b> (announced COP26 Glasgow 2021)</td><td class="bi-te">2070 నాటికి నికర సున్నా</td></tr>
+<tr><td>Renewable energy</td><td><b>500 GW</b> non-fossil capacity by 2030</td><td class="bi-te">2030 నాటికి 500 GW RE</td></tr>
+<tr><td>Emissions intensity</td><td>Cut 45% by 2030 (vs 2005)</td><td class="bi-te">2005 ఆధారంతో 45% తగ్గింపు</td></tr>
+<tr><td>RE share in elec</td><td>50% from non-fossil by 2030</td><td class="bi-te">2030 నాటికి విద్యుత్ 50% RE</td></tr>
+</table>
+<p>India is the world's <b>4th-largest installed RE capacity</b> nation. PM Surya Ghar Muft Bijli Yojana (Feb 2024) targets 1 crore rooftop solar households.</p>
+<p class="bi-te">ప్రపంచంలో 4వ అతిపెద్ద RE సామర్థ్యం. PM సూర్య ఘర్ ముఫ్త్ బిజ్లీ (ఫిబ్రవరి 2024) — 1 కో. ఇళ్లపై రూఫ్‌టాప్ సోలార్.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  22. EDUCATION & HEALTH 2026
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_education_health',
+              'Education & Health — UGC, NMC, NEP 2026',
+              'విద్య & ఆరోగ్యం 2026', """
+<div class="concept-cover">
+  <h1>Education &amp; Health 2026 &nbsp;<span class="bi-te">/ విద్య & ఆరోగ్యం 2026</span></h1>
+  <div class="sub">UGC online degrees • NMC • Budget allocations</div>
+</div>
+
+<div class="section-hdr">Union Budget 2026-27 — Allocations / కేటాయింపులు</div>
+<table class="key-table">
+<tr><th>Sector</th><th>Allocation</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Education</td><td>Rs.1,28,650 crore</td><td class="bi-te">విద్య రూ.1.28 ల.కో.</td></tr>
+<tr><td>Health</td><td>Rs.98,311 crore</td><td class="bi-te">ఆరోగ్యం రూ.98,311 కో.</td></tr>
+</table>
+
+<div class="section-hdr">UGC — Online Degrees / UGC ఆన్‌లైన్ డిగ్రీలు</div>
+<p><b>UGC</b> = University Grants Commission (statutory body est. 1956 under UGC Act 1956). In <b>2024</b>, UGC notified regulations recognising <b>online degrees</b> as equivalent to regular degrees for employment and higher studies, provided issued by accredited universities (NAAC A+ or NIRF top 100, or 4+ years operational). Online programmes already permitted since 2018 Open & Distance Learning Regulations.</p>
+<p class="bi-te">UGC — 1956 చట్టం ద్వారా చట్టబద్ధ సంస్థ. 2024లో ఆన్‌లైన్ డిగ్రీలను సాధారణ డిగ్రీలతో సమానం అని ప్రకటించింది (NAAC A+ లేదా NIRF టాప్ 100 యూనివర్సిటీలు).</p>
+
+<div class="section-hdr">NMC — National Medical Commission / NMC</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Established</td><td><b>2020</b> via NMC Act, 2019 (notified Sep 25, 2020)</td><td class="bi-te">2020 (చట్టం 2019)</td></tr>
+<tr><td>Replaced</td><td><b>MCI</b> (Medical Council of India, 1933-2020)</td><td class="bi-te">MCI స్థానంలో</td></tr>
+<tr><td>HQ</td><td>New Delhi</td><td class="bi-te">న్యూఢిల్లీ</td></tr>
+<tr><td>Functions</td><td>Medical education + practice + ethics + UG/PG curriculum + NEET-PG/NExT</td><td class="bi-te">వైద్య విద్య, నీతి, పాఠ్యక్రమం</td></tr>
+<tr><td>Autonomous Boards</td><td>4: UG Medical Edu, PG Medical Edu, Medical Assessment &amp; Rating, Ethics &amp; Registration</td><td class="bi-te">4 స్వతంత్ర బోర్డులు</td></tr>
+</table>
+
+<div class="section-hdr">NEP 2020 — Quick Facts / NEP 2020</div>
+<p><b>NEP 2020</b> = National Education Policy, approved <b>July 29, 2020</b>. Replaced NEP 1986. Key reforms: <b>5+3+3+4 school structure</b>, multidisciplinary higher ed, multiple entry-exit, 6% GDP target on education, three-language formula, ABC (Academic Bank of Credits), NCrF (National Credit Framework).</p>
+<p class="bi-te">NEP 2020 — జూలై 29, 2020 ఆమోదం. 5+3+3+4 పాఠశాల నిర్మాణం, బహుళ-ప్రవేశ/నిష్క్రమణ, విద్యపై GDPలో 6% లక్ష్యం, త్రి-భాషా సూత్రం, ABC, NCrF.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  23. LEGAL & SECURITY — POCSO & NIA 2026
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_legal_security',
+              'POCSO & NIA — Legal & Security 2026',
+              'POCSO & NIA — చట్టం & భద్రత 2026', """
+<div class="concept-cover">
+  <h1>POCSO &amp; NIA — Legal &amp; Security 2026 &nbsp;<span class="bi-te">/ POCSO & NIA</span></h1>
+  <div class="sub">Child protection law • Anti-terror investigation agency</div>
+</div>
+
+<div class="section-hdr">POCSO Act / POCSO చట్టం</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Full form</td><td><b>P</b>rotection of <b>C</b>hildren from <b>S</b>exual <b>O</b>ffences Act</td><td class="bi-te">లైంగిక నేరాల నుండి పిల్లల రక్షణ చట్టం</td></tr>
+<tr><td>Year</td><td>Enacted <b>2012</b>; amended 2019 (death penalty for aggravated assault on minors)</td><td class="bi-te">2012 (2019 సవరణ)</td></tr>
+<tr><td>Applies to</td><td>Children below 18 years (gender-neutral)</td><td class="bi-te">18 ఏళ్ళ లోపు పిల్లలు</td></tr>
+<tr><td>Special features</td><td>Special POCSO courts, in-camera trial, child-friendly procedures, mandatory reporting</td><td class="bi-te">ప్రత్యేక POCSO కోర్టులు, in-camera విచారణ</td></tr>
+<tr><td>2024 cases</td><td>~2,081 POCSO cases registered nationwide</td><td class="bi-te">~2,081 కేసులు</td></tr>
+</table>
+
+<div class="section-hdr">NIA / NIA</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Full form</td><td><b>N</b>ational <b>I</b>nvestigation <b>A</b>gency</td><td class="bi-te">జాతీయ దర్యాప్తు సంస్థ</td></tr>
+<tr><td>Established</td><td><b>2008</b> via NIA Act, post-26/11 Mumbai attacks</td><td class="bi-te">2008 — 26/11 మెుంబై దాడుల తర్వాత</td></tr>
+<tr><td>Ministry</td><td>Ministry of Home Affairs (MHA)</td><td class="bi-te">హోం వ్యవహారాల మంత్రిత్వ శాఖ</td></tr>
+<tr><td>DG (2026)</td><td><b>Dinesh Kumar</b> (IPS)</td><td class="bi-te">డైరెక్టర్ జనరల్: దినేశ్ కుమార్</td></tr>
+<tr><td>HQ</td><td>New Delhi</td><td class="bi-te">న్యూఢిల్లీ</td></tr>
+<tr><td>Jurisdiction</td><td>Pan-India; can take suo motu cognisance of terrorism/UAPA matters (2019 amendment)</td><td class="bi-te">భారతదేశమంతటా; UAPA కేసులు</td></tr>
+</table>
+<p>NIA handles terror financing, cyber-terrorism, human trafficking, counterfeit currency, hijacking, and offences under the UAPA 1967. Special NIA Courts conduct trials.</p>
+<p class="bi-te">NIA — ఉగ్రవాద నిధులు, సైబర్ ఉగ్రవాదం, మానవ అక్రమ రవాణా, నకిలీ నోట్లు, విమాన అపహరణ, UAPA 1967 కేసులు. ప్రత్యేక NIA కోర్టుల్లో విచారణ.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  24. RUSSIA-UKRAINE WAR 2025-26
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_ukraine_war',
+              'Russia-Ukraine War 2025-26',
+              'రష్యా-ఉక్రెయిన్ యుద్ధం 2025-26', """
+<div class="concept-cover">
+  <h1>Russia-Ukraine War 2025-26 &nbsp;<span class="bi-te">/ రష్యా-ఉక్రెయిన్ యుద్ధం</span></h1>
+  <div class="sub">Began Feb 24, 2022 • Ongoing • Peace talks 2025-26</div>
+</div>
+
+<div class="section-hdr">Background &amp; Status / నేపథ్యం & స్థితి</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Start</td><td>February 24, 2022 — Russian invasion</td><td class="bi-te">ఫిబ్రవరి 24, 2022</td></tr>
+<tr><td>Russian President</td><td>Vladimir Putin</td><td class="bi-te">వ్లాదిమిర్ పుతిన్</td></tr>
+<tr><td>Ukrainian President</td><td>Volodymyr Zelenskyy</td><td class="bi-te">వొలొదిమిర్ జెలెన్‌స్కీ</td></tr>
+<tr><td>Status 2025-26</td><td>Active conflict + ongoing peace negotiations</td><td class="bi-te">కొనసాగుతోంది + శాంతి చర్చలు</td></tr>
+<tr><td>NATO</td><td>Provides military aid to Ukraine; no direct intervention</td><td class="bi-te">NATO — ఆయుధ సహాయం (ప్రత్యక్ష జోక్యం లేదు)</td></tr>
+</table>
+
+<div class="section-hdr">India's Position / భారత వైఖరి</div>
+<p>India maintains <b>strategic autonomy</b> — abstained on UNSC/UNGA resolutions; called for "dialogue and diplomacy". PM Modi told Putin "this is not an era of war" (SCO Samarkand 2022). India bought discounted Russian crude oil (now ~35% of imports). PM Modi visited Moscow (Jul 2024) and Kyiv (Aug 2024), the first Indian PM to visit Ukraine.</p>
+<p class="bi-te">భారత్ — వ్యూహాత్మక స్వేచ్ఛ. UNSC/UNGA తీర్మానాలలో గైర్హాజరు; "సంవాదం & దౌత్యం" కోసం పిలుపు. మోడీ పుతిన్‌తో "ఇది యుద్ధకాలం కాదు" (SCO 2022). రష్యా చమురు 35% దిగుమతి. మోడీ — మాస్కో (జూలై 2024), కైవ్ (ఆగస్టు 2024 — తొలి భారత PM ఉక్రెయిన్ సందర్శన).</p>
+
+<div class="section-hdr">2025-26 Peace Efforts / 2025-26 శాంతి ప్రయత్నాలు</div>
+<p>Trump's return (Jan 2025) accelerated peace mediation. Multiple rounds of US-Russia-Ukraine talks, ceasefire proposals, and territorial discussions ongoing. No final settlement as of mid-2026.</p>
+<p class="bi-te">ట్రంప్ తిరిగి రావడం (జన 2025) శాంతి మధ్యవర్తిత్వాన్ని వేగవంతం చేసింది. US-రష్యా-ఉక్రెయిన్ చర్చలు, కాల్పుల విరమణ ప్రతిపాదనలు. 2026 మధ్యనాటికి తుది ఒప్పందం లేదు.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  25. INFRASTRUCTURE & LOGISTICS 2026
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_infrastructure',
+              'Infrastructure, Logistics & MSME 2026',
+              'మౌలిక సదుపాయాలు & MSME 2026', """
+<div class="concept-cover">
+  <h1>Infrastructure, Logistics &amp; MSME 2026 &nbsp;<span class="bi-te">/ మౌలిక సదుపాయాలు & MSME</span></h1>
+  <div class="sub">NLP • Roads Rs.3.09 L cr • Railways Rs.2.78 L cr • MSME credit guarantee</div>
+</div>
+
+<div class="section-hdr">National Logistics Policy (NLP) / జాతీయ లాజిస్టిక్స్ పాలసీ</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Launched</td><td>September 17, 2022 by PM Modi</td><td class="bi-te">సెప్టెం 17, 2022 — PM మోదీ</td></tr>
+<tr><td>Goal</td><td>Reduce logistics cost from <b>~14% of GDP to 8%</b> by 2030</td><td class="bi-te">GDPలో 14% నుండి 8%కి తగ్గింపు</td></tr>
+<tr><td>Pillars</td><td>IDS (Integrated Digital System), ULIP (Unified Logistics Interface Platform), ELOG (Ease of Logistics), System Improvement</td><td class="bi-te">IDS, ULIP, ELOG</td></tr>
+<tr><td>LPI Rank</td><td>India 38/139 in World Bank LPI 2023 (up from 44 in 2018)</td><td class="bi-te">World Bank LPI 38వ స్థానం</td></tr>
+</table>
+
+<div class="section-hdr">Budget 2026-27 Infra Allocations / మౌలిక సదుపాయాల కేటాయింపులు</div>
+<table class="key-table">
+<tr><th>Sector</th><th>Allocation</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Capex (overall)</td><td>Rs.12.22 lakh crore</td><td class="bi-te">మూలధన వ్యయం రూ.12.22 ల.కో.</td></tr>
+<tr><td>Roads &amp; Highways</td><td>Rs.3.09 lakh crore</td><td class="bi-te">రోడ్లు రూ.3.09 ల.కో.</td></tr>
+<tr><td>Railways</td><td>Rs.2.78 lakh crore</td><td class="bi-te">రైల్వేలు రూ.2.78 ల.కో.</td></tr>
+<tr><td>HSR corridors</td><td>7 new High-Speed Rail corridors, ~4,000 km</td><td class="bi-te">7 HSR కారిడార్లు ~4,000 కి.మీ</td></tr>
+</table>
+
+<div class="section-hdr">MSME — Budget Announcements / MSME బడ్జెట్ ప్రకటనలు</div>
+<p><b>MSME</b> = Micro, Small &amp; Medium Enterprises (governed by MSMED Act 2006). Revised definition (2020) by combined investment + turnover thresholds. 2026-27 Budget: <b>credit guarantee cover expanded</b>, mudra loan limit hiked, capital support increased. MSME sector contributes ~30% of GDP and ~45% of exports.</p>
+<p class="bi-te">MSME — MSMED చట్టం 2006. 2020 సవరణ ద్వారా పెట్టుబడి + టర్నోవర్ ఆధారిత నిర్వచనం. 2026-27 బడ్జెట్: క్రెడిట్ హామీ విస్తరణ, ముద్రా లోన్ పరిమితి పెంపు, మూలధన మద్దతు. GDPలో ~30%, ఎగుమతుల్లో ~45% MSME వాటా.</p>
+"""))
+
 print(f"Loaded {len(NOTES)} National 2026 concept notes")
 
 # ════════════════════════════════════════════════════════════════
