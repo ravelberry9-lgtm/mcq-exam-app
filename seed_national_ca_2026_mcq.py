@@ -19,9 +19,9 @@ def seed():
 
     # Force-refresh: delete existing National CA 2026 MCQs
     if db_type == 'pg':
-        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31300")
+        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31400")
     else:
-        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31300")
+        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31400")
     conn.commit()
 
     questions = [
@@ -3258,6 +3258,892 @@ def seed():
          "B",
          "PM విశ్వకర్మ యోజన (2023) చేతి వృత్తులు చేసే కళాకారులు (కుమ్మరి, కమ్మరి, వడ్రంగి మొ.) వంటి సంప్రదాయ శిల్పులకు నైపుణ్య శిక్షణ, రుణ మద్దతు అందించే పథకం. PM Vishwakarma Yojana (2023) provides skill training and credit support to traditional artisans like potters, blacksmiths, and carpenters.",
          "AP_HC", "National_Current_Affairs_2026"),
+
+        # ╔══════════════════════════════════════════════════════════╗
+        # ║  📅 2026 MCQs (Jan-Apr 2026 monthly PDF events)          ║
+        # ║  Batch H+PDF audit (2026-05-18) — IDs 31301-31380        ║
+        # ║  To find: grep for "# === 📅 2026" in this file          ║
+        # ╚══════════════════════════════════════════════════════════╝
+
+        # === 📅 2026 MCQ: india_budget_2026_27 ===
+        (31301,
+         "2026-27 కేంద్ర బడ్జెట్‌ను నిర్మలా సీతారామన్ ఎన్నవ సారి ప్రవేశపెట్టారు?\n(Union Budget 2026-27 was Nirmala Sitharaman's which consecutive budget?)",
+         "A) 7వ / 7th",
+         "B) 8వ / 8th",
+         "C) 9వ / 9th",
+         "D) 10వ / 10th",
+         "C",
+         "ఫిబ్రవరి 1, 2026న నిర్మలా సీతారామన్ తన 9వ వరుస కేంద్ర బడ్జెట్ ప్రవేశపెట్టారు — మొరార్జీ దేశాయ్ తర్వాత అత్యధిక బడ్జెట్‌లు. On Feb 1, 2026, FM Nirmala Sitharaman presented her 9th consecutive Union Budget — the most after Morarji Desai.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_budget_2026_27 ===
+        (31302,
+         "2026-27 కేంద్ర బడ్జెట్‌లో మొత్తం వ్యయం ఎంత? (PDF inventory)\n(Total outlay in Union Budget 2026-27 as per PDF inventory?)",
+         "A) రూ.48.21 లక్షల కోట్లు / Rs.48.21 lakh cr",
+         "B) రూ.58.47 లక్షల కోట్లు / Rs.58.47 lakh cr",
+         "C) రూ.62.50 లక్షల కోట్లు / Rs.62.50 lakh cr",
+         "D) రూ.50.65 లక్షల కోట్లు / Rs.50.65 lakh cr",
+         "B",
+         "2026-27 బడ్జెట్ మొత్తం వ్యయం రూ.58.47 లక్షల కోట్లుగా ప్రకటించారు (PDF inventory ప్రకారం). Union Budget 2026-27 total outlay was Rs.58.47 lakh crore (per PDF inventory).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_budget_2026_27 ===
+        (31303,
+         "2026-27 బడ్జెట్‌లో మూలధన వ్యయం (Capex) ఎంత?\n(Capital expenditure (Capex) in Budget 2026-27?)",
+         "A) రూ.10.18 లక్షల కోట్లు",
+         "B) రూ.11.11 లక్షల కోట్లు",
+         "C) రూ.12.22 లక్షల కోట్లు",
+         "D) రూ.13.45 లక్షల కోట్లు",
+         "C",
+         "2026-27 బడ్జెట్‌లో మూలధన వ్యయం రూ.12.22 లక్షల కోట్లుగా నిర్ణయించారు. Capital expenditure in Budget 2026-27 is Rs.12.22 lakh crore.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_budget_2026_27 ===
+        (31304,
+         "2026-27 బడ్జెట్‌లో GDP వృద్ధి అంచనా ఎంత? ద్రవ్యలోటు ఎంత?\n(GDP growth estimate and Fiscal Deficit target in Budget 2026-27?)",
+         "A) GDP 6.5%, FD 4.5%",
+         "B) GDP 7%, FD 4.3%",
+         "C) GDP 7.5%, FD 4.4%",
+         "D) GDP 8%, FD 4.0%",
+         "B",
+         "బడ్జెట్ 2026-27లో GDP వృద్ధి 7%, ద్రవ్యలోటు GDP లో 4.3% లక్ష్యంగా నిర్ణయించారు. Budget 2026-27 projects GDP growth at 7% and Fiscal Deficit at 4.3% of GDP.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_budget_allocations_2026 ===
+        (31305,
+         "2026-27 బడ్జెట్‌లో రక్షణ రంగానికి ఎంత కేటాయించారు? గత ఏడాది కంటే ఎంత పెరుగుదల?\n(Defence allocation and YoY increase in Budget 2026-27?)",
+         "A) రూ.6.81 లక్షల కోట్లు, +10%",
+         "B) రూ.7.85 లక్షల కోట్లు, +15%",
+         "C) రూ.8.50 లక్షల కోట్లు, +20%",
+         "D) రూ.5.94 లక్షల కోట్లు, +8%",
+         "B",
+         "2026-27 బడ్జెట్‌లో రక్షణకు రూ.7.85 లక్షల కోట్లు (గత సంవత్సరం నుండి +15% పెరుగుదల) కేటాయించారు. Defence allocation in Budget 2026-27 is Rs.7.85 lakh crore, a 15% YoY increase.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_budget_allocations_2026 ===
+        (31306,
+         "2026-27 బడ్జెట్‌లో విద్యా రంగం, ఆరోగ్య రంగం కేటాయింపులు?\n(Education and Health allocations in Budget 2026-27?)",
+         "A) Edu Rs.1.25L cr, Health Rs.95K cr",
+         "B) Edu Rs.1.39 లక్షల కోట్లు, Health Rs.1.07 లక్షల కోట్లు",
+         "C) Edu Rs.1.50L cr, Health Rs.1.20L cr",
+         "D) Edu Rs.1.10L cr, Health Rs.85K cr",
+         "B",
+         "2026-27 బడ్జెట్‌లో విద్యకు రూ.1.39 లక్షల కోట్లు, ఆరోగ్యానికి రూ.1.07 లక్షల కోట్లు కేటాయించారు. Budget 2026-27 allocated Rs.1.39 lakh cr for Education and Rs.1.07 lakh cr for Health.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_budget_allocations_2026 ===
+        (31307,
+         "2026-27 బడ్జెట్‌లో రైల్వేలకు, రోడ్లు రవాణాకు ఎంత కేటాయించారు?\n(Railways and Roads allocations in Budget 2026-27?)",
+         "A) Railways Rs.2.52L cr, Roads Rs.2.78L cr",
+         "B) Railways Rs.2.78 లక్షల కోట్లు, Roads Rs.3.09 లక్షల కోట్లు",
+         "C) Railways Rs.3.00L cr, Roads Rs.3.50L cr",
+         "D) Railways Rs.2.40L cr, Roads Rs.2.65L cr",
+         "B",
+         "2026-27 బడ్జెట్‌లో రైల్వేలకు రూ.2.78 లక్షల కోట్లు, రోడ్డు రవాణాకు రూ.3.09 లక్షల కోట్లు కేటాయించారు. Railways got Rs.2.78 lakh cr and Roads got Rs.3.09 lakh cr in Budget 2026-27.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_budget_allocations_2026 ===
+        (31308,
+         "2026-27 బడ్జెట్‌లో ఇస్రోకు ఎంత కేటాయించారు?\n(ISRO allocation in Budget 2026-27?)",
+         "A) Rs.10,505 కోట్లు",
+         "B) Rs.12,200 కోట్లు",
+         "C) Rs.13,705 కోట్లు",
+         "D) Rs.15,000 కోట్లు",
+         "C",
+         "2026-27 బడ్జెట్‌లో ఇస్రోకు రూ.13,705 కోట్లు కేటాయించారు — చంద్రయాన్-4, గగన్‌యాన్ మిషన్‌ల కోసం. ISRO allocation in Budget 2026-27 is Rs.13,705 crore, supporting Chandrayaan-4 and Gaganyaan missions.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_16th_fin_comm ===
+        (31309,
+         "16వ ఆర్థిక సంఘం (16th Finance Commission) నివేదికను ఎప్పుడు సమర్పించారు? ఛైర్మన్ ఎవరు?\n(16th Finance Commission report submission date and Chair?)",
+         "A) Jan 1, 2026; N.K. Singh",
+         "B) Feb 1, 2026; Arvind Panagariya",
+         "C) Mar 1, 2026; Bibek Debroy",
+         "D) Feb 14, 2026; Y.V. Reddy",
+         "B",
+         "ఫిబ్రవరి 1, 2026న 16వ ఆర్థిక సంఘం (అధ్యక్షుడు: అరవింద్ పనగడియా) తన నివేదికను సమర్పించింది. The 16th Finance Commission, chaired by Arvind Panagariya, submitted its report on Feb 1, 2026.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_16th_fin_comm ===
+        (31310,
+         "16వ ఆర్థిక సంఘం రాష్ట్రాలకు సూచించిన పన్నుల వాటా శాతం ఎంత?\n(State share of divisible tax pool recommended by 16th Finance Commission?)",
+         "A) 32%",
+         "B) 41%",
+         "C) 42%",
+         "D) 45%",
+         "B",
+         "16వ ఆర్థిక సంఘం రాష్ట్రాలకు 41% పన్నుల వాటా సిఫార్సు చేసింది (15వ FC కూడా 41% ఇచ్చింది). The 16th FC recommended 41% state share in the divisible tax pool (same as 15th FC).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_16th_fin_comm ===
+        (31311,
+         "16వ ఆర్థిక సంఘం ఆంధ్ర ప్రదేశ్‌కు సూచించిన వాటా శాతం (15వ FC వాటాతో పోలిస్తే)?\n(AP's share recommended by 16th FC vs 15th FC?)",
+         "A) 4.22% (15వ FCలో 4.05%) — పెరుగుదల",
+         "B) 4.05% (15వ FCలో 4.22%) — తగ్గుదల",
+         "C) 4.50% (15వ FCలో 4.22%) — పెరుగుదల",
+         "D) 3.85% (15వ FCలో 4.05%) — తగ్గుదల",
+         "A",
+         "16వ ఆర్థిక సంఘం AP వాటాను 4.22%కు పెంచింది (15వ FCలో 4.05%). 16th FC raised AP's share to 4.22% (up from 4.05% in 15th FC).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_16th_fin_comm ===
+        (31312,
+         "16వ ఆర్థిక సంఘం ప్రవేశపెట్టిన 'Urbanization Premium' నిధి ఎంత?\n(Urbanization Premium grant introduced by 16th Finance Commission?)",
+         "A) Rs.5,000 కోట్లు",
+         "B) Rs.10,000 కోట్లు",
+         "C) Rs.15,000 కోట్లు",
+         "D) Rs.25,000 కోట్లు",
+         "B",
+         "16వ ఆర్థిక సంఘం పట్టణీకరణ ప్రోత్సాహకంగా రూ.10,000 కోట్ల 'Urbanization Premium' గ్రాంట్ ప్రవేశపెట్టింది. 16th FC introduced a Rs.10,000 crore Urbanization Premium grant.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_hsr_corridors ===
+        (31313,
+         "కేంద్ర ప్రభుత్వం ప్రకటించిన హై-స్పీడ్ రైల్ (HSR) కారిడార్‌ల సంఖ్య, మొత్తం పొడవు?\n(Number and total length of High-Speed Rail corridors announced?)",
+         "A) 5 కారిడార్లు, 3,000 km",
+         "B) 6 కారిడార్లు, 3,500 km",
+         "C) 7 కారిడార్లు, ~4,000 km",
+         "D) 8 కారిడార్లు, 5,000 km",
+         "C",
+         "కేంద్రం 7 HSR కారిడార్లు (~4,000 km) ప్రకటించింది — ముంబై-పూణే, పూణే-హైదరాబాద్, హైదరాబాద్-బెంగళూరు, హైదరాబాద్-చెన్నై, చెన్నై-బెంగళూరు, ఢిల్లీ-వారణాసి, వారణాసి-సిలిగురి. India announced 7 HSR corridors totalling ~4,000 km — Mum-Pune, Pune-Hyd, Hyd-Beng, Hyd-Chen, Chen-Beng, Del-Var, Var-Sil.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_hsr_corridors ===
+        (31314,
+         "ప్రతిపాదిత HSR కారిడార్లలో హైదరాబాద్ ఎన్ని కారిడార్‌ల జంక్షన్?\n(Hyderabad is junction of how many proposed HSR corridors?)",
+         "A) 1",
+         "B) 2",
+         "C) 3",
+         "D) 4",
+         "C",
+         "హైదరాబాద్ 3 HSR కారిడార్‌ల జంక్షన్ — పూణే-హైదరాబాద్, హైదరాబాద్-బెంగళూరు, హైదరాబాద్-చెన్నై. Hyderabad is a junction of 3 HSR corridors: Pune-Hyd, Hyd-Beng, Hyd-Chen.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_under19_wc_2026 ===
+        (31315,
+         "ICC U-19 పురుషుల క్రికెట్ ప్రపంచకప్ 2026 ఫైనల్ ఎప్పుడు, ఎక్కడ జరిగింది?\n(ICC U-19 Men's Cricket World Cup 2026 final — date and venue?)",
+         "A) Jan 26, 2026; Colombo",
+         "B) Feb 6, 2026; Harare",
+         "C) Feb 14, 2026; Cape Town",
+         "D) Mar 1, 2026; Dhaka",
+         "B",
+         "ICC U-19 ప్రపంచకప్ 2026 ఫైనల్ ఫిబ్రవరి 6, 2026న హరారే (జింబాబ్వే)లో జరిగింది. The ICC U-19 World Cup 2026 final was held on Feb 6, 2026, at Harare, Zimbabwe.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_under19_wc_2026 ===
+        (31316,
+         "U-19 ప్రపంచకప్ 2026 ఫైనల్‌లో భారత్ ఇంగ్లాండ్‌పై ఎన్ని పరుగుల తేడాతో గెలిచింది? భారత కెప్టెన్ ఎవరు?\n(India's win margin over England in U-19 WC 2026 final, and captain?)",
+         "A) 75 పరుగులు; Uday Saharan",
+         "B) 100 పరుగులు; Ayush Mhatre",
+         "C) 8 వికెట్లు; Yashasvi Jaiswal",
+         "D) 50 పరుగులు; Vaibhav Suryavanshi",
+         "B",
+         "U-19 WC 2026 ఫైనల్‌లో భారత్ ఇంగ్లాండ్‌పై 100 పరుగుల తేడాతో గెలిచింది. కెప్టెన్: ఆయుష్ మ్హాత్రే. India beat England by 100 runs in the U-19 WC 2026 final; captain Ayush Mhatre.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_under19_wc_2026 ===
+        (31317,
+         "U-19 ప్రపంచకప్ 2026లో 14 ఏళ్ళ 316 రోజుల వయసులో ఫైనల్‌లో 175 పరుగులు చేసి Player of the Match + Player of the Tournament గెలిచిన భారతీయుడు?\n(Indian who scored 175 in U-19 WC 2026 final at age 14y 316d and won Player of Match + Tournament?)",
+         "A) Ayush Mhatre",
+         "B) Uday Saharan",
+         "C) Vaibhav Suryavanshi",
+         "D) Sachin Dhas",
+         "C",
+         "వైభవ్ సూర్యవంశి (14 ఏళ్ళ 316 రోజులు) ఫైనల్‌లో 175 పరుగులు, టోర్నమెంట్‌లో 439 పరుగులు (SR 169.49) — Player of Match + Player of Tournament. Vaibhav Suryavanshi (aged 14y 316d) scored 175 in final, 439 runs at SR 169.49 in tournament — won both Player of Match and Player of Tournament.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_under19_wc_2026 ===
+        (31318,
+         "2026 U-19 ప్రపంచకప్ టైటిల్ భారత్‌కు ఎన్నవ ది?\n(U-19 WC 2026 was India's how many-th title?)",
+         "A) 4వ",
+         "B) 5వ",
+         "C) 6వ",
+         "D) 7వ",
+         "C",
+         "2026 U-19 ప్రపంచకప్ భారత్‌కు 6వ టైటిల్ — ఈ టోర్నమెంట్‌లో అత్యధికంగా టైటిల్‌లు సాధించిన దేశం. The 2026 U-19 WC was India's 6th title — the most by any country in this tournament.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_77th_republic_day ===
+        (31319,
+         "77వ గణతంత్ర దినోత్సవం (Jan 26, 2026) ముఖ్య అతిథులు ఎవరు?\n(Chief guests at 77th Republic Day, Jan 26, 2026?)",
+         "A) Emmanuel Macron + Olaf Scholz",
+         "B) Antonio Costa (EU Council) + Ursula von der Leyen (EC)",
+         "C) Joe Biden + Justin Trudeau",
+         "D) Fumio Kishida + Anthony Albanese",
+         "B",
+         "77వ గణతంత్ర దినోత్సవంలో EU Council అధ్యక్షుడు ఆంటోనియో కోస్టా + యూరోపియన్ కమిషన్ అధ్యక్షురాలు ఉర్సులా వాన్ డర్ లేయెన్ ముఖ్య అతిథులు. EU Council President Antonio Costa and EC President Ursula von der Leyen were chief guests at the 77th Republic Day.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_77th_republic_day ===
+        (31320,
+         "77వ గణతంత్ర దినోత్సవ-2026 థీమ్ ఏమిటి?\n(Theme of 77th Republic Day 2026?)",
+         "A) Naari Shakti",
+         "B) Viksit Bharat",
+         "C) 150 ఏళ్ళ వందేమాతరం / 150 years of Vande Mataram",
+         "D) Azadi ka Amrit Mahotsav",
+         "C",
+         "77వ గణతంత్ర దినోత్సవ థీమ్ — '150 ఏళ్ళ వందేమాతరం' (బంకిమ్ చంద్ర చటర్జీ 1875లో రాశారు). The 77th RD theme was '150 years of Vande Mataram' (composed by Bankim Chandra Chattopadhyay in 1875).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_77th_republic_day ===
+        (31321,
+         "77వ గణతంత్ర దినోత్సవ 2026లో మొదటిసారి యూరోప్ బయట కవాతు చేసిన EU సైనిక బృందం పేరు?\n(Which EU military contingent paraded outside Europe for the 1st time at RD 2026?)",
+         "A) Eurocorps",
+         "B) EU Battlegroup",
+         "C) French Foreign Legion",
+         "D) European Defence Force",
+         "A",
+         "Eurocorps (EU సైనిక బృందం) యూరోప్ బయట మొదటిసారి 77వ గణతంత్ర దినోత్సవ కవాతులో పాల్గొంది. Eurocorps marched at the 77th RD parade — the 1st time it deployed outside Europe.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_77th_republic_day ===
+        (31322,
+         "77వ గణతంత్ర దినోత్సవంలో ప్రదర్శించిన కొత్త భారతీయ హైపర్‌సోనిక్ ఆయుధం ఏది?\n(Which new hypersonic weapon was displayed at 77th Republic Day?)",
+         "A) BrahMos-II",
+         "B) Agni-V",
+         "C) LR-AShM (Long-Range Anti-Ship Missile)",
+         "D) Pralay",
+         "C",
+         "77వ గణతంత్ర దినోత్సవంలో LR-AShM హైపర్‌సోనిక్ యాంటీ-షిప్ క్షిపణి, Suryastra rocket, Bhairav కమాండో బెటాలియన్, రోబోటిక్ డాగ్స్ ప్రదర్శించారు. The 77th RD parade displayed LR-AShM hypersonic anti-ship missile, Suryastra rocket, Bhairav Light Commando Battalion (raised Oct 2025), Shaktiban regiment, and robotic dogs.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_gallantry_awards ===
+        (31323,
+         "2026 గణతంత్ర దినోత్సవం సందర్భంగా ఎంతమంది గ్యాలంట్రీ అవార్డులు ప్రకటించారు? అశోక చక్ర ఎవరికి?\n(Total gallantry awardees 2026, and who received Ashok Chakra?)",
+         "A) 65; Maj Arundeep Singh",
+         "B) 70; Gp Capt Shubhanshu Shukla (Axiom-4)",
+         "C) 80; Wg Cdr Abhinandan",
+         "D) 75; Naib Subedar Doleshwar Subba",
+         "B",
+         "2026లో 70 మందికి గ్యాలంట్రీ అవార్డులు ప్రకటించారు. ఒక్క అశోక చక్రను గ్రూప్ క్యాప్టెన్ శుభాంశు శుక్లా (Axiom-4 మిషన్)కు ఇచ్చారు. 70 personnel got gallantry awards in 2026; the lone Ashok Chakra went to Gp Capt Shubhanshu Shukla (Axiom-4 astronaut).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_gallantry_awards ===
+        (31324,
+         "2026లో ప్రకటించిన 3 కీర్తి చక్రాలలో గగన్‌యాన్ వ్యోమగామికి అవార్డు అందుకున్నవారు?\n(Among the 3 Kirti Chakras 2026, which Gaganyaan astronaut received one?)",
+         "A) Rakesh Sharma",
+         "B) Prashanth B Nair",
+         "C) Sirisha Bandla",
+         "D) Sunita Williams",
+         "B",
+         "2026లో 3 కీర్తి చక్రాలు — ప్రశాంత్ B నాయర్ (గగన్‌యాన్ astronaut), మేజర్ అరుందీప్ సింగ్, నాయిబ్ సుబేదార్ డోలేశ్వర్ సుబ్బా. The 3 Kirti Chakras 2026 went to Prashanth B Nair (Gaganyaan astronaut), Maj Arundeep Singh, and Naib Subedar Doleshwar Subba.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_gallantry_awards ===
+        (31325,
+         "2026లో ఎంతమందికి శౌర్య చక్రాలు ప్రకటించారు?\n(How many Shaurya Chakras announced in 2026?)",
+         "A) 12",
+         "B) 15",
+         "C) 18",
+         "D) 22",
+         "C",
+         "2026 గణతంత్ర దినోత్సవం సందర్భంగా 18 శౌర్య చక్రాలు ప్రకటించారు. 18 Shaurya Chakras were announced for 2026 Republic Day.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_padma_awards_2026 ===
+        (31326,
+         "2026 పద్మ అవార్డులు మొత్తం ఎంతమందికి ప్రకటించారు? ఎప్పుడు?\n(Total Padma awards 2026 and announcement date?)",
+         "A) 128; Jan 26, 2026",
+         "B) 131; Jan 25, 2026",
+         "C) 140; Feb 1, 2026",
+         "D) 125; Jan 25, 2026",
+         "B",
+         "జనవరి 25, 2026న 131 మందికి పద్మ అవార్డులు ప్రకటించారు — 5 పద్మవిభూషణ్, 13 పద్మభూషణ్, 113 పద్మశ్రీ. 131 Padma awards were announced on Jan 25, 2026 — 5 Padma Vibhushan, 13 Padma Bhushan, 113 Padma Shri.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_padma_awards_2026 ===
+        (31327,
+         "2026లో మరణానంతరం పద్మవిభూషణ్ అందుకున్న బాలీవుడ్ నటుడు ఎవరు?\n(Which Bollywood actor received Padma Vibhushan posthumously in 2026?)",
+         "A) Dilip Kumar",
+         "B) Dharmendra",
+         "C) Manoj Kumar",
+         "D) Shashi Kapoor",
+         "B",
+         "ధర్మేంద్ర (మరణానంతరం) 2026 పద్మ విభూషణ్ అందుకున్నారు. మిగతావారు — V.S. అచ్యుతానందన్ (మరణానంతరం), K.T. థామస్, N. రాజం, P. నారాయణన్. The 5 Padma Vibhushan 2026 awardees: Dharmendra (posthumous), V.S. Achuthanandan (posthumous), K.T. Thomas, N. Rajam, P. Narayanan.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_padma_awards_2026 ===
+        (31328,
+         "2026 పద్మ భూషణ్ అందుకున్న భారత క్రికెటర్ ఎవరు?\n(Which Indian cricketer received Padma Bhushan 2026?)",
+         "A) Virat Kohli",
+         "B) Rohit Sharma",
+         "C) MS Dhoni",
+         "D) Ravichandran Ashwin",
+         "B",
+         "రోహిత్ శర్మ 2026 పద్మ భూషణ్ అందుకున్నాడు. ఇతర అవార్డీలు — అల్కా యాజ్ఞిక్, మమ్ముట్టి, ఉదయ్ కోటక్, పీయూష్ పాండే (మరణానంతరం), విజయ్ అమృతరాజ్, నోరి దత్తాత్రేయుడు. Rohit Sharma was among the 13 Padma Bhushan 2026 awardees, alongside Alka Yagnik, Mammootty, Uday Kotak, Piyush Pandey (posth), Vijay Amritraj, Nori Dattatreyudu.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_padma_awards_2026 ===
+        (31329,
+         "2026 పద్మ విభూషణ్ అందుకున్న కేరళ మాజీ ముఖ్యమంత్రి (మరణానంతరం) ఎవరు?\n(Which former Kerala CM received Padma Vibhushan 2026 posthumously?)",
+         "A) E.K. Nayanar",
+         "B) V.S. Achuthanandan",
+         "C) Oommen Chandy",
+         "D) A.K. Antony",
+         "B",
+         "V.S. అచ్యుతానందన్ (కేరళ మాజీ CM, CPI(M)) 2026 పద్మవిభూషణ్ మరణానంతరం అందుకున్నారు. V.S. Achuthanandan (former Kerala CM, CPI(M)) received Padma Vibhushan 2026 posthumously.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: isro_lvm3_bluebird ===
+        (31330,
+         "ఇస్రో LVM3-M6 ఎప్పుడు, ఏ ఉపగ్రహాన్ని ప్రయోగించింది?\n(ISRO's LVM3-M6 launch date and satellite?)",
+         "A) Dec 24, 2025; BlueBird Block-2 (6,100 kg)",
+         "B) Jan 1, 2026; GSAT-24",
+         "C) Feb 5, 2026; OneWeb-19",
+         "D) Mar 15, 2026; NISAR",
+         "A",
+         "డిసెంబర్ 24, 2025న LVM3-M6 SDSC SHAR (తిరుపతి) నుండి 6,100 kg బరువు గల BlueBird Block-2 ఉపగ్రహాన్ని ప్రయోగించింది. On Dec 24, 2025, LVM3-M6 launched the 6,100 kg BlueBird Block-2 satellite from SDSC SHAR, Tirupati.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: isro_lvm3_bluebird ===
+        (31331,
+         "BlueBird Block-2 ఉపగ్రహ ప్రయోగానికి సంబంధించి ప్రత్యేకత ఏమిటి?\n(What was special about BlueBird Block-2 launch?)",
+         "A) ఇస్రో అత్యధిక బరువు పేలోడ్ + SHAR నుండి 100వ ఉపగ్రహ ప్రయోగం",
+         "B) తొలి అంగారక మిషన్",
+         "C) ఇస్రో మొదటి సూర్య మిషన్",
+         "D) చంద్రయాన్-4 prototype",
+         "A",
+         "6,100 kg BlueBird Block-2 ఇస్రో ఇప్పటివరకు ప్రయోగించిన అత్యంత భారీ పేలోడ్; SHAR నుండి 100వ ఉపగ్రహ ప్రయోగం. AST Space Mobile/NSIL వాణిజ్య ఒప్పందం. BlueBird Block-2 (6,100 kg) was India's heaviest-ever satellite payload and the 100th satellite launch from SHAR; commercial deal with AST Space Mobile / NSIL.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: isro_lvm3_bluebird ===
+        (31332,
+         "LVM3-M6 ప్రయోగ స్థలం ఎక్కడ ఉంది? ఏ రాష్ట్రంలో?\n(LVM3-M6 launch site location and state?)",
+         "A) Sriharikota, Tamil Nadu",
+         "B) Sriharikota, Andhra Pradesh (SDSC SHAR, Tirupati district)",
+         "C) Thumba, Kerala",
+         "D) Mahendragiri, Tamil Nadu",
+         "B",
+         "SDSC SHAR (సతీష్ ధవన్ స్పేస్ సెంటర్) తిరుపతి జిల్లా, ఆంధ్రప్రదేశ్‌లో ఉంది. SDSC SHAR is located in Tirupati district, Andhra Pradesh.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_defence_acq ===
+        (31333,
+         "డిసెంబర్ 29, 2025న DAC ఆమోదించిన రక్షణ ఒప్పందాల మొత్తం విలువ ఎంత?\n(Total value of defence deals cleared by DAC on Dec 29, 2025?)",
+         "A) Rs.45,000 కోట్లు",
+         "B) Rs.79,000 కోట్లు",
+         "C) Rs.1.20 లక్షల కోట్లు",
+         "D) Rs.2.38 లక్షల కోట్లు",
+         "B",
+         "డిసెంబర్ 29, 2025న DAC రూ.79,000 కోట్ల రక్షణ సేకరణలు ఆమోదించింది — పినాక extended-range, loiter munitions, డ్రోన్ detection. DAC cleared Rs.79,000 cr defence deals on Dec 29, 2025 — Pinaka extended-range, loiter munitions, drone detection systems.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_defence_acq ===
+        (31334,
+         "మార్చి 27, 2026న DAC ఆమోదించిన రక్షణ ప్యాకేజీ విలువ ఎంత?\n(DAC defence package approved on Mar 27, 2026?)",
+         "A) Rs.79,000 కోట్లు",
+         "B) Rs.1.45 లక్షల కోట్లు",
+         "C) Rs.2.38 లక్షల కోట్లు",
+         "D) Rs.3.50 లక్షల కోట్లు",
+         "C",
+         "మార్చి 27, 2026న DAC రూ.2.38 లక్షల కోట్ల ప్యాకేజీ ఆమోదించింది — S-400 స్క్వాడ్రన్‌లు, MTA, Su-30 overhauls, ధనుష్ హౌట్జర్‌లు. DAC cleared Rs.2.38 lakh cr package on Mar 27, 2026 — S-400 squadrons, MTA, Sukhoi-30 overhauls, Dhanush howitzers.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_defence_acq ===
+        (31335,
+         "మార్చి 2026 DAC ప్యాకేజీలో రష్యా నుండి కొనుగోలు చేస్తున్న ఎయిర్ డిఫెన్స్ సిస్టమ్ ఏది?\n(Which Russian air defence system features in Mar 2026 DAC package?)",
+         "A) Iron Dome",
+         "B) S-400 Triumf",
+         "C) Patriot PAC-3",
+         "D) David's Sling",
+         "B",
+         "మార్చి 2026 DAC ప్యాకేజీలో S-400 Triumf (రష్యా) స్క్వాడ్రన్‌లు ఉన్నాయి. The Mar 2026 DAC package includes additional S-400 Triumf (Russia) squadrons.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_bharat_eu_fta ===
+        (31336,
+         "Bharat-EU FTA (Mother of All Deals) ఎప్పుడు, ఎక్కడ సంతకం చేశారు?\n(Bharat-EU FTA aka 'Mother of All Deals' — signing date and place?)",
+         "A) Dec 22, 2025; Brussels",
+         "B) Jan 27, 2026; New Delhi",
+         "C) Feb 14, 2026; Strasbourg",
+         "D) Mar 5, 2026; Paris",
+         "B",
+         "జనవరి 27, 2026న న్యూఢిల్లీలో ఆంటోనియో కోస్టా + ఉర్సులా వాన్ డర్ లేయెన్‌తో 'Mother of All Deals' Bharat-EU FTA సంతకం చేశారు. The Bharat-EU FTA ('Mother of All Deals') was signed on Jan 27, 2026, in New Delhi with Antonio Costa and Ursula von der Leyen.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_bharat_eu_fta ===
+        (31337,
+         "Bharat-EU FTA కింద ఎంత శాతం భారత ఎగుమతులపై టారిఫ్‌లు రద్దు అవుతాయి?\n(Percentage of Indian export tariffs removed under Bharat-EU FTA?)",
+         "A) 75%",
+         "B) 85%",
+         "C) 95%",
+         "D) 99%",
+         "D",
+         "Bharat-EU FTA 99% భారత ఎగుమతుల టారిఫ్‌లను తొలగిస్తుంది; 'Strategic Agenda 2030' కూడా ప్రకటించారు. The FTA removes tariffs on 99% of Indian exports; 'Strategic Agenda 2030' was also announced.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_bharat_eu_fta ===
+        (31338,
+         "Bharat-EU FTAతో పాటు ప్రకటించిన దీర్ఘకాలిక సహకార ఫ్రేమ్‌వర్క్ పేరు?\n(Long-term cooperation framework announced alongside Bharat-EU FTA?)",
+         "A) Vision 2030",
+         "B) Strategic Agenda 2030",
+         "C) EU-India Roadmap 2035",
+         "D) Joint Action Plan 2040",
+         "B",
+         "Bharat-EU 'Strategic Agenda 2030' — ఆర్థిక, రక్షణ, పర్యావరణ, టెక్నాలజీ సహకార ఫ్రేమ్‌వర్క్. Bharat-EU 'Strategic Agenda 2030' framework covers economic, defence, climate, tech cooperation.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_germany_jan2026 ===
+        (31339,
+         "జనవరి 12-13, 2026న భారత పర్యటనకు వచ్చిన జర్మనీ ఛాన్సలర్ ఎవరు?\n(Germany Chancellor who visited India on Jan 12-13, 2026?)",
+         "A) Olaf Scholz",
+         "B) Friedrich Merz",
+         "C) Angela Merkel",
+         "D) Annalena Baerbock",
+         "B",
+         "జనవరి 12-13, 2026న జర్మనీ ఛాన్సలర్ ఫ్రెడరిక్ మెర్జ్ భారత పర్యటనకు వచ్చారు; 19 MoUs (రక్షణ, సెమికాన్, గ్రీన్-NH3) సంతకం చేశారు. Chancellor Friedrich Merz visited India on Jan 12-13, 2026; 19 MoUs signed (defence, semicon, green-NH3).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_germany_jan2026 ===
+        (31340,
+         "జనవరి 2026లో Modi-Merz ఇద్దరూ హాజరైన అంతర్జాతీయ గాలిపటాల ఉత్సవం (International Kite Festival 2026) ఎక్కడ జరిగింది?\n(Venue of International Kite Festival 2026 attended by Modi & Merz?)",
+         "A) Sabarmati riverfront, Ahmedabad",
+         "B) Marina Beach, Chennai",
+         "C) India Gate, Delhi",
+         "D) Juhu Beach, Mumbai",
+         "A",
+         "Modi-Merz అహ్మదాబాద్ సబర్మతి రివర్‌ఫ్రంట్‌లో International Kite Festival 2026లో పాల్గొన్నారు. Modi & Merz attended the International Kite Festival 2026 at Sabarmati riverfront, Ahmedabad.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_uae_jan2026 ===
+        (31341,
+         "జనవరి 19, 2026న భారతదేశ పర్యటనకు వచ్చిన UAE అధ్యక్షుడు ఎవరు?\n(UAE President who visited India on Jan 19, 2026?)",
+         "A) Mohammed bin Rashid Al Maktoum",
+         "B) Sheikh Mohammed bin Zayed Al Nahyan",
+         "C) Khalifa bin Zayed Al Nahyan",
+         "D) Hamdan bin Mohammed",
+         "B",
+         "జనవరి 19, 2026న UAE అధ్యక్షుడు షేక్ మహ్మద్ బిన్ జాయెద్ అల్ నహ్యాన్ భారత పర్యటనకు వచ్చారు. UAE President Sheikh Mohammed bin Zayed Al Nahyan visited India on Jan 19, 2026.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_uae_jan2026 ===
+        (31342,
+         "Jan 2026 భారత-UAE పర్యటనలో ప్రకటించిన 2032 ద్వైపాక్షిక వాణిజ్య లక్ష్యం ఎంత?\n(Bilateral trade target by 2032 announced during Jan 2026 India-UAE visit?)",
+         "A) $100 బిలియన్",
+         "B) $150 బిలియన్",
+         "C) $200 బిలియన్",
+         "D) $300 బిలియన్",
+         "C",
+         "భారత-UAE 2032 నాటికి $200B ద్వైపాక్షిక వాణిజ్య లక్ష్యం, SHANTI Act 2025, Dholera SIR, 'House of India' Abu Dhabi ప్రకటించారు. Target: $200B bilateral trade by 2032; SHANTI Act 2025, Dholera SIR, 'House of India' Abu Dhabi announced.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_uae_jan2026 ===
+        (31343,
+         "Jan 2026 భారత-UAE పర్యటనలో ఆమోదించిన ఆంధ్రప్రదేశ్/గుజరాత్ semicon project ఏది?\n(Which semicon/industrial project linked to India-UAE Jan 2026 visit?)",
+         "A) Dholera SIR (Gujarat)",
+         "B) Sricity (AP)",
+         "C) Sanand cluster (Gujarat)",
+         "D) Ratnagiri MIDC (Maharashtra)",
+         "A",
+         "ధోలేరా SIR (గుజరాత్) UAE పెట్టుబడుల కోసం హైలైట్ అయింది. Dholera SIR (Gujarat) was highlighted for UAE investment.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_nz_fta ===
+        (31344,
+         "భారత్-న్యూజిలాండ్ FTA ఎప్పుడు సంతకం చేశారు? లక్ష్యం ఏమిటి?\n(India-New Zealand FTA signing date and target?)",
+         "A) Dec 22, 2025; $5B trade in 5 yrs, $20B NZ FDI",
+         "B) Jan 19, 2026; $10B trade in 5 yrs",
+         "C) Feb 14, 2026; $15B trade in 7 yrs",
+         "D) Mar 1, 2026; $25B trade in 10 yrs",
+         "A",
+         "డిసెంబర్ 22, 2025న భారత్-NZ FTA సంతకం; 5 ఏళ్లలో $5B వాణిజ్యం, NZ నుండి $20B FDI లక్ష్యం. India-NZ FTA signed Dec 22, 2025; target $5B trade in 5 years and $20B NZ FDI.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_internat_higher_edu ===
+        (31345,
+         "NITI ఆయోగ్ నివేదిక (Dec 22, 2025) ప్రకారం 2024లో విదేశాల్లో చదువుకుంటున్న భారతీయ విద్యార్థుల సంఖ్య?\n(Indian students studying abroad in 2024 per NITI Aayog report Dec 22, 2025?)",
+         "A) 7.50 లక్షలు",
+         "B) 10.20 లక్షలు",
+         "C) 13.35 లక్షలు",
+         "D) 18.00 లక్షలు",
+         "C",
+         "NITI ఆయోగ్ నివేదిక (Dec 22, 2025) — 2024లో 13.35 లక్షల భారతీయ విద్యార్థులు విదేశాల్లో చదువుతున్నారు; భారత్ సుమారు $70B ఖర్చు. NITI Aayog Dec 22, 2025 report: 13.35 lakh Indian students studied abroad in 2024; India spends ~$70B.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_internat_higher_edu ===
+        (31346,
+         "విదేశాలకు పంపే విద్యార్థుల సంఖ్యలో రాష్ట్రాల్లో మొదటి స్థానంలో ఉన్నది?\n(Which state ranks 1st in number of students going abroad?)",
+         "A) తమిళనాడు",
+         "B) ఆంధ్రప్రదేశ్ (62,771 in 2018)",
+         "C) పంజాబ్",
+         "D) కేరళ",
+         "B",
+         "ఆంధ్రప్రదేశ్ విదేశీ విద్యార్థుల పంపిణీలో #1 (2018లో 62,771 మంది). Andhra Pradesh ranks 1st in students going abroad (62,771 in 2018).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_global_forest ===
+        (31347,
+         "FAO Global Forest Resources Assessment (Oct 22, 2025) ప్రకారం అటవీ విస్తీర్ణంలో భారత్ ర్యాంక్?\n(India's rank in forest area per FAO Global Forest Resources Assessment, Oct 22, 2025?)",
+         "A) 5వ",
+         "B) 8వ",
+         "C) 10వ (72,739 ha)",
+         "D) 12వ",
+         "C",
+         "FAO నివేదిక (Oct 22, 2025) — అటవీ విస్తీర్ణంలో భారత్ ప్రపంచంలో 10వ; టాప్-5: రష్యా, బ్రెజిల్, కెనడా, USA, చైనా. FAO Oct 22, 2025 — India ranks 10th globally in forest area (72,739 ha); Top 5: Russia, Brazil, Canada, USA, China.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_global_forest ===
+        (31348,
+         "FAO నివేదిక ప్రకారం వార్షిక అటవీ పెరుగుదలలో భారత్ ర్యాంక్?\n(India's rank in annual forest gain per FAO?)",
+         "A) 1వ",
+         "B) 2వ",
+         "C) 3వ (+1.91 లక్షల ha in 2025)",
+         "D) 5వ",
+         "C",
+         "వార్షిక అటవీ పెరుగుదలలో భారత్ 3వ స్థానం (చైనా, రష్యా తర్వాత), 2025లో +1.91 లక్షల హెక్టార్‌ల పెరుగుదల. India ranks 3rd in annual forest gain (after China and Russia) with +1.91 lakh ha in 2025.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_e_components ===
+        (31349,
+         "జనవరి 2, 2026న కేంద్రం ఆమోదించిన electronics components scheme విలువ, ప్రాజెక్టుల సంఖ్య?\n(Centre's electronics components scheme approval Jan 2, 2026 — value and number of projects?)",
+         "A) 15 projects, Rs.22,500 cr",
+         "B) 22 proposals, Rs.41,863 cr",
+         "C) 30 projects, Rs.50,000 cr",
+         "D) 18 proposals, Rs.35,000 cr",
+         "B",
+         "జనవరి 2, 2026న కేంద్రం 22 ఎలక్ట్రానిక్స్ కాంపోనెంట్స్ ప్రతిపాదనలు (Rs.41,863 కోట్లు) ఆమోదించింది — 8 రాష్ట్రాల్లో (AP తో సహా: NPSPL, Sippa Tech, Hindalco). Centre cleared 22 electronics components proposals worth Rs.41,863 crore on Jan 2, 2026, across 8 states including AP (NPSPL, Sippa Tech, Hindalco).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_e_components ===
+        (31350,
+         "Jan 2026 ఎలక్ట్రానిక్స్ కాంపోనెంట్స్ స్కీమ్ AP లో ఆమోదించబడిన కంపెనీలు?\n(Companies approved in AP under Jan 2026 e-components scheme?)",
+         "A) Foxconn, Wistron, TSMC",
+         "B) NPSPL, Sippa Tech, Hindalco",
+         "C) Reliance Jio, Adani, Tata",
+         "D) Samsung, LG, Sony",
+         "B",
+         "AP లో NPSPL, Sippa Tech, Hindalco — Jan 2026 ఎలక్ట్రానిక్స్ కాంపోనెంట్స్ స్కీమ్ కింద ఆమోదించబడ్డాయి. NPSPL, Sippa Tech, and Hindalco got AP approvals under the Jan 2026 e-components scheme.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_vbyld ===
+        (31351,
+         "Viksit Bharat Young Leaders Dialogue (VBYLD) 2026 ఎప్పుడు, ఎక్కడ జరిగింది? ఎవరి జయంతి సందర్భంగా?\n(VBYLD 2026 date, venue, and on whose birth anniversary?)",
+         "A) Jan 11-12, 2026; Delhi; Swami Vivekananda jayanti",
+         "B) Jan 25-26, 2026; Mumbai; Subhash Chandra Bose",
+         "C) Feb 14, 2026; Bengaluru; Saraswati puja",
+         "D) Mar 5, 2026; Delhi; Mahatma Gandhi",
+         "A",
+         "జనవరి 11-12, 2026న ఢిల్లీలో VBYLD-2026 జరిగింది (5L+ యువత); స్వామి వివేకానంద జయంతి (Jan 12) సందర్భంగా. VBYLD 2026 was held in Delhi on Jan 11-12, 2026 (5L+ youth) on Swami Vivekananda's birth anniversary.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_shipbuilding ===
+        (31352,
+         "కేంద్ర మంత్రిమండలి ఆమోదించిన SBFAS+SBDS shipbuilding scheme మొత్తం విలువ ఎంత?\n(Total value of SBFAS+SBDS shipbuilding scheme approved by Cabinet?)",
+         "A) Rs.22,500 కోట్లు",
+         "B) Rs.34,800 కోట్లు",
+         "C) Rs.44,700 కోట్లు",
+         "D) Rs.55,000 కోట్లు",
+         "C",
+         "Cabinet రూ.44,700 కోట్ల SBFAS (Shipbuilding Financial Assistance Scheme) + SBDS (Development Scheme) ఆమోదించింది; నౌకా నిర్మాణంపై 15-25% సహాయం; మార్చి 2036 వరకు చెల్లుబాటు. Cabinet approved Rs.44,700 crore SBFAS+SBDS shipbuilding scheme — 15-25% assistance per ship; valid till March 2036.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_shipbuilding ===
+        (31353,
+         "SBFAS shipbuilding scheme కింద ప్రతి నౌకకు ఎంత శాతం ఆర్థిక సహాయం?\n(Per-ship financial assistance under SBFAS shipbuilding scheme?)",
+         "A) 5-10%",
+         "B) 10-15%",
+         "C) 15-25%",
+         "D) 25-40%",
+         "C",
+         "SBFAS కింద ప్రతి నౌకకు 15-25% ఆర్థిక సహాయం, 2036 మార్చి వరకు చెల్లుబాటు. SBFAS provides 15-25% financial assistance per ship, valid till March 2036.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_governors_mar2026 ===
+        (31354,
+         "మార్చి 5, 2026న కేంద్రం ప్రకటించిన గవర్నర్ల (9 మంది) నియామకాల్లో తెలంగాణ గవర్నర్ ఎవరు?\n(Who became Telangana Governor in 9-Governor reshuffle on Mar 5, 2026?)",
+         "A) Jishnu Dev Varma",
+         "B) Shiv Pratap Shukla",
+         "C) R.N. Ravi",
+         "D) Rajendra Arlekar",
+         "B",
+         "మార్చి 5, 2026 గవర్నర్ల పునర్వ్యవస్థీకరణలో — తెలంగాణ: శివ్ ప్రతాప్ శుక్లా; మహారాష్ట్ర: జిష్ణు దేవ్ వర్మ; పశ్చిమ బెంగాల్: R.N. రవి; బీహార్: అతుల్ హస్నైన్; నాగాలాండ్: నంద్ కిషోర్ యాదవ్; హిమాచల్: కవీందర్ గుప్తా; తమిళనాడు: రాజేంద్ర అర్లేకర్; లడఖ్ LG: వినయ్ K. సక్సేనా; ఢిల్లీ LG: తరణ్‌జిత్ S. సంధు. In the Mar 5, 2026 reshuffle, Shiv Pratap Shukla became Telangana Governor.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_governors_mar2026 ===
+        (31355,
+         "మార్చి 5, 2026న కొత్తగా నియమించబడిన ఢిల్లీ లెఫ్టినెంట్ గవర్నర్ ఎవరు?\n(New Lt. Governor of Delhi appointed on Mar 5, 2026?)",
+         "A) Vinay K. Saxena",
+         "B) Taranjit Singh Sandhu",
+         "C) Manoj Sinha",
+         "D) Anil Baijal",
+         "B",
+         "మార్చి 5, 2026న తరణ్‌జిత్ సింగ్ సంధు ఢిల్లీ LG గా; వినయ్ K. సక్సేనా లడఖ్ LG గా నియమించబడ్డారు. Taranjit Singh Sandhu was appointed Delhi LG and Vinay K. Saxena became Ladakh LG on Mar 5, 2026.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_governors_mar2026 ===
+        (31356,
+         "మార్చి 5, 2026 గవర్నర్ల పునర్వ్యవస్థీకరణలో పశ్చిమ బెంగాల్, తమిళనాడు గవర్నర్లు?\n(West Bengal and Tamil Nadu Governors in Mar 5, 2026 reshuffle?)",
+         "A) WB: R.N. Ravi; TN: Rajendra Arlekar",
+         "B) WB: Arif Mohammed Khan; TN: R.N. Ravi",
+         "C) WB: Jagdeep Dhankhar; TN: Banwarilal Purohit",
+         "D) WB: Anandiben Patel; TN: C.V. Anand Bose",
+         "A",
+         "మార్చి 5, 2026లో పశ్చిమ బెంగాల్: R.N. రవి, తమిళనాడు: రాజేంద్ర అర్లేకర్ నియమించబడ్డారు. In Mar 5, 2026 reshuffle: R.N. Ravi became WB Governor and Rajendra Arlekar became TN Governor.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_neeti_aayog ===
+        (31357,
+         "ఫిబ్రవరి 24, 2026న NITI ఆయోగ్ కొత్త CEO గా ఎవరు నియమితులయ్యారు?\n(Who became NITI Aayog CEO on Feb 24, 2026?)",
+         "A) Amitabh Kant",
+         "B) BVR Subrahmanyam",
+         "C) Nidhi Chhibber (1994 IAS Chhattisgarh)",
+         "D) Parameswaran Iyer",
+         "C",
+         "ఫిబ్రవరి 24, 2026న నిధి చిబ్బర్ (1994 IAS, ఛత్తీస్‌గఢ్ క్యాడర్) NITI ఆయోగ్ CEO గా నియమితులయ్యారు. Nidhi Chhibber (1994 IAS Chhattisgarh cadre) was appointed NITI Aayog CEO on Feb 24, 2026.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_birla_motion ===
+        (31358,
+         "మార్చి 10, 2026న LS స్పీకర్ ఓం బిర్లాపై దాఖలైన నో-కాన్ఫిడెన్స్ తీర్మానం ఫలితం? NDA vs INDIA స్థానాలు?\n(Outcome of no-confidence motion vs LS Speaker Om Birla on Mar 10, 2026? NDA vs INDIA tally?)",
+         "A) Passed; NDA 233 vs INDIA 293",
+         "B) Defeated; NDA 293 vs INDIA 233 (113 MPs signed)",
+         "C) Withdrawn",
+         "D) Adjourned",
+         "B",
+         "మార్చి 10, 2026న ఓం బిర్లాపై INDIA కూటమి దాఖలు చేసిన (113 MPs సంతకాలు) నో-కాన్ఫిడెన్స్ తీర్మానం 293 (NDA) vs 233 (INDIA) తో ఓడిపోయింది. The no-confidence motion against Speaker Om Birla (signed by 113 MPs) was defeated on Mar 10, 2026 — NDA 293 vs INDIA 233.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_wangchuk_release ===
+        (31359,
+         "మార్చి 14, 2026న విడుదలైన లడఖ్ ఉద్యమ నేత ఎవరు? ఎప్పటి నుండి NSA కింద నిర్బంధంలో ఉన్నారు?\n(Ladakh activist released on Mar 14, 2026? When was he detained under NSA?)",
+         "A) Sonam Wangchuk; from Sep 26, 2025",
+         "B) Sajjad Hussain; from Aug 2025",
+         "C) Phunsok Stobdan; from Oct 2025",
+         "D) Thupstan Chhewang; from Nov 2025",
+         "A",
+         "మార్చి 14, 2026న సోనం వాంగ్‌చుక్ విడుదలయ్యారు; సెప్టెంబర్ 26, 2025 లడఖ్ రాష్ట్ర హోదా నిరసనల (4 మరణాలు) తర్వాత NSA కింద నిర్బంధంలో ఉన్నారు. Sonam Wangchuk was released on Mar 14, 2026; detained under NSA since Sep 26, 2025 (Ladakh statehood protests; 4 killed).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_kejriwal_clean_chit ===
+        (31360,
+         "ఢిల్లీ ఎక్సైజ్ పాలసీ కేసులో రౌస్ ఎవెన్యూ కోర్టు ఎవరందరిని క్లీన్ చిట్ ఇచ్చింది? తేదీ?\n(In Delhi Excise policy case — who was acquitted by Rouse Avenue Court and when?)",
+         "A) Feb 27, 2026; Kejriwal, Sisodia, Kavitha + 23 others (26 total)",
+         "B) Jan 15, 2026; Kejriwal alone",
+         "C) Mar 1, 2026; only Manish Sisodia",
+         "D) Apr 6, 2026; Bhagwant Mann",
+         "A",
+         "ఫిబ్రవరి 27, 2026న రౌస్ ఎవెన్యూ కోర్టు అరవింద్ కేజ్రీవాల్, మనీష్ సిసోడియా, K. కవిత + 23 ఇతరులను ఢిల్లీ ఎక్సైజ్ కేసులో నిర్దోషులుగా ప్రకటించింది. On Feb 27, 2026, Rouse Avenue Court acquitted Kejriwal, Sisodia, Kavitha and 23 others (26 total) in the Delhi Excise case.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_arms_imports ===
+        (31361,
+         "SIPRI 2021-25 నివేదిక ప్రకారం ప్రపంచంలో అతిపెద్ద ఆయుధ దిగుమతిదారు దేశం? వాటా ఎంత?\n(World's #1 arms importer 2021-25 per SIPRI and its share?)",
+         "A) India",
+         "B) Saudi Arabia",
+         "C) Ukraine (9.7%)",
+         "D) China",
+         "C",
+         "SIPRI 2021-25: ఉక్రెయిన్ #1 దిగుమతిదారు (9.7% వాటా). USA #1 ఎగుమతిదారు (42%); చైనా 1991 తర్వాత మొదటిసారి టాప్-10 ఆయుధ ఎగుమతిదారుల నుండి బయటపడింది. SIPRI 2021-25: Ukraine #1 arms importer (9.7%); US #1 exporter (42%); China dropped from top-10 exporters for the first time since 1991.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_arms_imports ===
+        (31362,
+         "SIPRI 2021-25 ప్రకారం భారత ఆయుధ దిగుమతుల్లో రష్యా వాటా ఎలా మారింది?\n(How did Russia's share in India's arms imports change per SIPRI 2021-25?)",
+         "A) 70% → 40%",
+         "B) 50% → 30%",
+         "C) 80% → 60%",
+         "D) 65% → 55%",
+         "A",
+         "SIPRI 2021-25: భారత ఆయుధ దిగుమతుల్లో రష్యా వాటా 70% → 40% కు తగ్గింది. Russia's share in India's arms imports dropped from 70% to 40% per SIPRI 2021-25.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_hydrogen_train ===
+        (31363,
+         "ఫిబ్రవరి 25, 2026న భారత్ ట్రయల్ రన్ చేసిన ప్రపంచంలోనే అతిపెద్ద హైడ్రోజన్ ట్రెయిన్ ఏ రూట్‌లో నడిచింది?\n(India's hydrogen train trial run route on Feb 25, 2026?)",
+         "A) Jind-Sonipat (Haryana, broad gauge)",
+         "B) Mumbai-Pune",
+         "C) Chennai-Bengaluru",
+         "D) Delhi-Jaipur",
+         "A",
+         "ఫిబ్రవరి 25, 2026న జింద్-సోనిపత్ (హర్యానా) రూట్‌లో — ప్రపంచంలోనే అతిపెద్ద హైడ్రోజన్ ట్రెయిన్ (broad gauge) — 10 కోచులు, 110 kmph ట్రయల్ రన్ చేశారు. India's hydrogen train (world's longest on BG: 10 coaches, 110 kmph) had trial run on Jind-Sonipat route, Haryana, on Feb 25, 2026.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_hydrogen_train ===
+        (31364,
+         "హైడ్రోజన్ ట్రెయిన్‌లో ఎన్ని కోచులు, గరిష్ఠ వేగం?\n(Number of coaches and max speed of India's hydrogen train?)",
+         "A) 6 coaches, 80 kmph",
+         "B) 8 coaches, 100 kmph",
+         "C) 10 coaches, 110 kmph",
+         "D) 12 coaches, 130 kmph",
+         "C",
+         "హైడ్రోజన్ ట్రెయిన్: 10 కోచులు, గరిష్ఠ వేగం 110 kmph. India's hydrogen train has 10 coaches with max speed 110 kmph.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_ins_anjadip ===
+        (31365,
+         "ఫిబ్రవరి 27, 2026న విశాఖపట్నంలో కమిషన్ చేయబడిన anti-submarine shallow water craft పేరు? మారుపేరు?\n(Anti-submarine shallow water craft commissioned at Vizag on Feb 27, 2026, and its nickname?)",
+         "A) INS Vikrant; 'Aircraft Killer'",
+         "B) INS Anjadip; 'Dolphin Killer'",
+         "C) INS Kavaratti; 'Sub Hunter'",
+         "D) INS Mormugao; 'Sea Eagle'",
+         "B",
+         "ఫిబ్రవరి 27, 2026న విశాఖలో INS Anjadip (anti-submarine shallow water craft, 'Dolphin Killer') కమిషన్. INS Anjadip — anti-submarine shallow water craft (nicknamed 'Dolphin Killer') — was commissioned at Visakhapatnam on Feb 27, 2026.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_dhawan_3 ===
+        (31366,
+         "Skyroot Aerospace విజయవంతంగా పరీక్షించిన cryogenic rocket engine పేరు? పరీక్ష వ్యవధి?\n(Cryogenic rocket engine successfully tested by Skyroot Aerospace and test duration?)",
+         "A) Vikram-1; 60 sec",
+         "B) Dhawan-3; 145 sec",
+         "C) SSLV; 90 sec",
+         "D) Agnibaan; 200 sec",
+         "B",
+         "Skyroot Aerospace Dhawan-3 cryogenic rocket engine 145 సెకన్లు విజయవంతంగా పరీక్షించింది. Skyroot Aerospace tested Dhawan-3 cryogenic rocket engine for 145 sec successfully.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_raisina ===
+        (31367,
+         "Raisina Dialogue 2026 (10వ ఎడిషన్) ముఖ్య అతిథి ఎవరు? థీమ్?\n(Chief guest and theme of Raisina Dialogue 2026 (10th edition)?)",
+         "A) Pres Alexander Stubb (Finland); 'Sanskaar-Dridheekarana'",
+         "B) Pres Lula (Brazil); 'Vasudhaiva Kutumbakam'",
+         "C) PM Sanae Takaichi (Japan); 'Indo-Pacific'",
+         "D) Pres Macron (France); 'Climate First'",
+         "A",
+         "మార్చి 5, 2026లో Raisina Dialogue 2026 (10వ ఎడిషన్) ప్రారంభించారు మోదీ; ముఖ్య అతిథి ఫిన్లాండ్ అధ్యక్షుడు అలెగ్జాండర్ స్టబ్; థీమ్ 'Sanskaar-Dridheekarana'. Raisina Dialogue 2026 (10th edition) opened by Modi on Mar 5, 2026; chief guest Finland Pres Alexander Stubb; theme 'Sanskaar-Dridheekarana'.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_raisina ===
+        (31368,
+         "Raisina Dialogue 2026 — ఇది ఎన్నవ ఎడిషన్?\n(Raisina Dialogue 2026 was which edition?)",
+         "A) 8వ",
+         "B) 9వ",
+         "C) 10వ",
+         "D) 12వ",
+         "C",
+         "Raisina Dialogue 2026 — 10వ ఎడిషన్; 'Sanskaar-Dridheekarana' థీమ్. Raisina Dialogue 2026 was the 10th edition with theme 'Sanskaar-Dridheekarana'.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_critical_minerals ===
+        (31369,
+         "ఫిబ్రవరి 19, 2026న ఢిల్లీలో FICCI నిర్వహించిన Critical Minerals Summit ఎన్నవది? భారత్‌లో ముఖ్య అరుదైన ఎర్త్‌ల రాష్ట్రాలు?\n(2nd Critical Minerals Summit on Feb 19, 2026 by FICCI in Delhi — main rare-earth states?)",
+         "A) AP, TN, Odisha",
+         "B) Maharashtra, Gujarat, Karnataka",
+         "C) Rajasthan, MP, Jharkhand",
+         "D) Kerala, West Bengal, Bihar",
+         "A",
+         "ఫిబ్రవరి 19, 2026న ఢిల్లీ FICCIలో 2వ Critical Minerals Summit; భారత్‌లో అరుదైన ఎర్త్ నిక్షేపాలు AP, TN, ఒడిశాలో ఎక్కువ. The 2nd Critical Minerals Summit was held in Delhi (FICCI) on Feb 19, 2026; rare earths are mainly in AP, TN, Odisha.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_goa_maritime ===
+        (31370,
+         "ఫిబ్రవరి 21, 2026న జరిగిన Goa Maritime Conclave ఎన్నవ ఎడిషన్? ప్రారంభించినది?\n(Edition of Goa Maritime Conclave on Feb 21, 2026 and who inaugurated?)",
+         "A) 5th; Adm. R. Hari Kumar",
+         "B) 6th; Adm. Dinesh K Tripathi",
+         "C) 7th; CDS Anil Chauhan",
+         "D) 4th; Adm. Karambir Singh",
+         "B",
+         "6వ Goa Maritime Conclave ఫిబ్రవరి 21, 2026న జరిగింది; నౌకాదళాధిపతి అడ్మిరల్ దినేష్ K. త్రిపాఠీ ప్రారంభించారు. The 6th Goa Maritime Conclave was held on Feb 21, 2026, inaugurated by Navy Chief Adm. Dinesh K Tripathi.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_131_amend_bill ===
+        (31371,
+         "ఏప్రిల్ 17, 2026న లోక్‌సభలో 131వ రాజ్యాంగ సవరణ బిల్లుపై ఓటింగ్ ఫలితం? అవసరమైన మెజారిటీ?\n(Voting outcome of 131st Constitutional Amendment Bill in LS on Apr 17, 2026? Required majority?)",
+         "A) 298 for / 230 against — DEFEATED (needed 352, two-thirds)",
+         "B) 352 for / 191 against — PASSED",
+         "C) 400 for / 143 against — PASSED",
+         "D) 250 for / 293 against — DEFEATED",
+         "A",
+         "ఏప్రిల్ 17, 2026న LSలో 131వ రాజ్యాంగ సవరణ బిల్లు 298 (అనుకూలం) / 230 (వ్యతిరేకం) — అవసరమైన 352 (3/2 మెజారిటీ) రాకపోవడంతో ఓడిపోయింది. The 131st Constitutional Amendment Bill in LS on Apr 17, 2026 got 298 for vs 230 against, needed 352 (two-thirds) — DEFEATED.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_131_amend_bill ===
+        (31372,
+         "131వ రాజ్యాంగ సవరణ బిల్లు ముఖ్య లక్ష్యం ఏమిటి?\n(Main objective of 131st Constitutional Amendment Bill?)",
+         "A) 2029 నాటికి మహిళలకు 33% రిజర్వేషన్ + LS సీట్లు 543→850 పెంపు",
+         "B) GST 2.0",
+         "C) One Nation One Election",
+         "D) UCC",
+         "A",
+         "131వ సవరణ: 2029 నాటికి మహిళలకు 33% రిజర్వేషన్; Delimitation Bill + UT Laws Bill అనుబంధం; LS సీట్లు 543→850 పెంపు. The 131st Amendment aimed at 33% women's reservation by 2029, linked Delimitation Bill + UT Laws Bill withdrawn; would have raised LS strength from 543 to 850.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_artemis_2 ===
+        (31373,
+         "NASA Artemis-2 మూన్ మిషన్ ఎప్పుడు ప్రయోగించబడింది? వ్యోమగాముల సంఖ్య?\n(NASA Artemis-2 Moon mission launch dates and number of astronauts?)",
+         "A) Apr 2-11, 2026; 4 astronauts (Wiseman, Glover, Koch, Hansen-Canadian)",
+         "B) Mar 15-25, 2026; 3 astronauts",
+         "C) Jan 20-30, 2026; 5 astronauts",
+         "D) Feb 1-10, 2026; 6 astronauts",
+         "A",
+         "Artemis-2 ఏప్రిల్ 2-11, 2026; 10 రోజులు; 4 వ్యోమగాములు — Reid Wiseman, Victor Glover, Christina Koch, Jeremy Hansen (కెనడియన్). Artemis-2 ran Apr 2-11, 2026; 10 days with 4 astronauts: Reid Wiseman, Victor Glover, Christina Koch, Jeremy Hansen (Canadian).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_artemis_2 ===
+        (31374,
+         "Artemis-2 మిషన్‌లో చంద్ర కక్ష్యకు వెళ్ళిన మొదటి non-white astronaut ఎవరు? ఎంత దూరం వెళ్ళారు?\n(Artemis-2: 1st non-white astronaut to reach Moon orbit and record distance from Earth?)",
+         "A) Christina Koch; 2,12,000 mi",
+         "B) Victor Glover; 2,52,760 mi (record beats Apollo-13)",
+         "C) Jeremy Hansen; 2,40,000 mi",
+         "D) Reid Wiseman; 2,30,000 mi",
+         "B",
+         "Victor Glover — చంద్ర కక్ష్యకు వెళ్ళిన మొదటి non-white astronaut. Artemis-2 భూమి నుండి 2,52,760 mi దూరం వెళ్ళి అపోలో-13 రికార్డ్ తోసిపుచ్చింది. Victor Glover became 1st non-white astronaut to Moon orbit; Artemis-2 went 2,52,760 mi from Earth (record, beating Apollo-13).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_artemis_2 ===
+        (31375,
+         "Artemis-2 మిషన్‌లో కెనడాకు చెందిన వ్యోమగామి ఎవరు?\n(Canadian astronaut on Artemis-2 mission?)",
+         "A) Chris Hadfield",
+         "B) Jeremy Hansen",
+         "C) David Saint-Jacques",
+         "D) Roberta Bondar",
+         "B",
+         "Jeremy Hansen — కెనడాకు చెందిన Artemis-2 వ్యోమగామి (గగన్ ప్రవేశం: Apollo-7 సహా). Jeremy Hansen was the Canadian astronaut on Artemis-2.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_census_apr2026 ===
+        (31376,
+         "ఏప్రిల్ 1, 2026 నుండి ప్రారంభమైన భారత జనాభా గణన ఎన్నవది? వ్యయం?\n(Which Census of India began on Apr 1, 2026 and its budget?)",
+         "A) 14వది; Rs.5,500 cr",
+         "B) 15వది; Rs.8,750 cr",
+         "C) 16వది; Rs.11,718 cr",
+         "D) 17వది; Rs.15,000 cr",
+         "C",
+         "16వ భారత జనాభా గణన ఏప్రిల్ 1, 2026న ప్రారంభమైంది. వ్యయం రూ.11,718 కోట్లు; ఫేజ్-1 house listing Sep 30, 2026 వరకు; ఫేజ్-2 ఫిబ్రవరి 2027; డిజిటల్, 16 భాషల్లో. The 16th Census of India began Apr 1, 2026; cost Rs.11,718 cr; Ph-1 house listing till Sep 30, 2026; Ph-2 Feb 2027; digital in 16 languages.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_census_apr2026 ===
+        (31377,
+         "2026 జనాభా గణనలో మొదటిసారిగా చేర్చిన రెండు లక్షణాలు?\n(Two firsts in Census 2026?)",
+         "A) Self-enumeration + Caste enumeration",
+         "B) Religion column + Language column",
+         "C) Aadhaar link + Voter ID link",
+         "D) DNA sampling + Iris scan",
+         "A",
+         "2026 జనాభా గణనలో మొదటిసారి — self-enumeration + caste enumeration; మస్కట్‌లు — జనగణన (మహిళ) + జనగన్ (పురుషుడు). 2026 Census firsts — self-enumeration & caste enumeration; mascots — Janaganana (woman) and Janagan (man).",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_jnanpith_2025 ===
+        (31378,
+         "60వ జ్ఞానపీఠ్ పురస్కారం (2025) ఎవరికి, ఎప్పుడు ప్రకటించారు?\n(60th Jnanpith Award (2025) — recipient and announcement date?)",
+         "A) Mar 14, 2026; R. Vairamuthu (Tamil Nadu, 3rd TN recipient)",
+         "B) Feb 14, 2026; Damodar Mauzo (Goa)",
+         "C) Jan 25, 2026; Vinod Kumar Shukla (Hindi)",
+         "D) Apr 1, 2026; Akkitham (Malayalam)",
+         "A",
+         "మార్చి 14, 2026న 60వ జ్ఞానపీఠ్ పురస్కారం (2025) తమిళ కవి R. వైరముత్తుకు ప్రకటించారు; ఆయన తమిళనాడు 3వ గ్రహీత; బహుమతి రూ.11 లక్షలు. On Mar 14, 2026, the 60th Jnanpith Award (2025) was announced for Tamil poet R. Vairamuthu — 3rd Tamil Nadu recipient; Rs.11 lakh prize.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_bcci_naman_2026 ===
+        (31379,
+         "మార్చి 15, 2026 BCCI Naman Awardsలో Polly Umrigar award (best male cricketer) ఎవరికి? Smriti Mandhana ఎన్నవసారి అందుకుంది?\n(BCCI Naman 2026 Polly Umrigar awardees? Smriti Mandhana — how many times?)",
+         "A) Shubman Gill + Smriti Mandhana (5th time)",
+         "B) Virat Kohli + Smriti Mandhana (4th time)",
+         "C) Rohit Sharma + Harmanpreet Kaur",
+         "D) Jasprit Bumrah + Deepti Sharma",
+         "A",
+         "మార్చి 15, 2026 BCCI Naman: Polly Umrigar — శుభ్‌మన్ గిల్ (TS) + స్మృతి మంధానా (5వ సారి); CK నాయుడు Lifetime — రోజర్ బిన్నీ, రాహుల్ ద్రవిడ్, మిథాలీ రాజ్. Mar 15, 2026 BCCI Naman: Polly Umrigar to Shubman Gill + Smriti Mandhana (5th time); CK Naidu Lifetime to Roger Binny, Rahul Dravid, Mithali Raj.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_jan_vishwas_2 ===
+        (31380,
+         "ఏప్రిల్ 1-2, 2026న LS+RS ఆమోదించిన Jan Vishwas 2.0 bill ఎన్ని కేంద్ర చట్టాలను, ఎన్ని నిబంధనలను decriminalize చేస్తుంది?\n(Jan Vishwas 2.0 bill passed by LS+RS on Apr 1-2, 2026 — central laws and provisions decriminalized?)",
+         "A) 50 laws, 500 provisions",
+         "B) 65 laws, 650 provisions",
+         "C) 79 laws, 784 provisions (23 ministries)",
+         "D) 100 laws, 1000 provisions",
+         "C",
+         "Jan Vishwas 2.0 (ఏప్రిల్ 1-2, 2026 LS+RS ఆమోదం) — 79 కేంద్ర చట్టాలలో 784 నిబంధనలను 23 మంత్రిత్వ శాఖల్లో decriminalize చేస్తుంది. Jan Vishwas 2.0 passed by LS+RS Apr 1-2, 2026 — decriminalises 784 provisions across 79 central laws spanning 23 ministries.",
+         "AP_HC", "National_Current_Affairs_2026"),
     ]
 
     if db_type == 'pg':
@@ -3275,7 +4161,7 @@ def seed():
     cur.executemany(insert_sql, questions)
     conn.commit()
     conn.close()
-    print(f"[seed_national_ca_2026] Seeded {len(questions)} National CA 2026 MCQs (IDs 31001-31300).")
+    print(f"[seed_national_ca_2026] Seeded {len(questions)} National CA 2026 MCQs (IDs 31001-31380).")
 
 if __name__ == '__main__':
     seed()

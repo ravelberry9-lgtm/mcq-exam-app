@@ -1,9 +1,10 @@
 """
 seed_intl_orgs_mcq.py
-86 GKToday-style MCQs — Topic: International Current Affairs → International Organisations
+GKToday-style MCQs — Topic: International Current Affairs → International Organisations
 Coverage: 2025–2026 events + structural GK (no 2022/2023-specific questions)
 Folder: AP_HC | Topic: International_Current_Affairs
-IDs: 20001–20086  |  Force-refresh: DELETE then INSERT
+IDs: 20001–20140  |  Force-refresh: DELETE then INSERT
+Batch H+PDF (2026-05-18): Added 54 new MCQs at 20087-20140 covering Jan-Apr 2026 events.
 """
 
 import os, sqlite3
@@ -715,6 +716,497 @@ INTL_MCQS = [
         "explanation": "The India-UK FTA (signed May 6, 2025) prioritised India's IT services exports, textiles, and pharmaceuticals getting preferential access to the UK market. The UK sought tariff reductions on Scotch whisky, cars, and improved investment access. The FTA followed the UK's departure from the EU (Brexit).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
+    # ╔══════════════════════════════════════════════════════════╗
+    # ║  📅 2026 MCQs (Jan-Apr 2026 monthly PDF events)          ║
+    # ║  Batch H+PDF audit (2026-05-18) — IDs 20087-20140        ║
+    # ║  To find: grep for "# === 📅 2026" in this file          ║
+    # ╚══════════════════════════════════════════════════════════╝
+    # === 📅 2026 MCQ: Operation Absolute Strike - Venezuela ===
+    {
+        "id": 20087,
+        "question": "Under which codename did the US launch its January 3, 2026 military operation against Venezuela that resulted in the capture of President Nicolás Maduro?",
+        "option_a": "Operation Desert Sabre", "option_b": "Operation Absolute Strike", "option_c": "Operation Bolivar Shield", "option_d": "Operation Caribbean Storm",
+        "correct_answer": "B",
+        "explanation": "The US launched 'Operation Absolute Strike' on January 3, 2026, deploying about 150 aircraft including F-22 Raptors, F-35 Lightning IIs and B-1 bombers to strike military bases around Caracas. President Nicolás Maduro was captured and taken to New York. Venezuela holds the world's largest proven oil reserves.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Venezuela oil reserves ===
+    {
+        "id": 20088,
+        "question": "Venezuela, the target of US 'Operation Absolute Strike' (January 2026), holds what share of the world's proven crude oil reserves at approximately 303 billion barrels?",
+        "option_a": "About 10%", "option_b": "About 15%", "option_c": "About 20%", "option_d": "About 30%",
+        "correct_answer": "C",
+        "explanation": "Venezuela has the world's largest proven oil reserves at about 303 billion barrels — roughly 20% of global reserves — surpassing even Saudi Arabia. Control over these reserves has been a key driver of US interest in the country. Operation Absolute Strike (Jan 3, 2026) targeted Caracas-area military bases.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Operation Absolute Strike aircraft ===
+    {
+        "id": 20089,
+        "question": "Approximately how many aircraft did the US deploy in 'Operation Absolute Strike' against Venezuela on January 3, 2026?",
+        "option_a": "50", "option_b": "100", "option_c": "150", "option_d": "250",
+        "correct_answer": "C",
+        "explanation": "About 150 US aircraft — including F-22 Raptor and F-35 Lightning II stealth fighters and B-1 Lancer bombers — were deployed in Operation Absolute Strike (Jan 3, 2026) targeting military bases around Caracas. President Maduro was captured and flown to New York.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Trump Greenland annexation EU response ===
+    {
+        "id": 20090,
+        "question": "In January 2026, how many EU countries (plus the UK) jointly condemned President Trump's renewed push to annex Greenland?",
+        "option_a": "5", "option_b": "8", "option_c": "12", "option_d": "15",
+        "correct_answer": "B",
+        "explanation": "Eight EU nations plus the United Kingdom jointly condemned Trump's renewed Greenland annexation bid in January 2026. The US retaliated with an additional 10% tariff on the 8 opposing EU countries. A trans-Atlantic deal signed by 25 ministers was frozen on January 13, 2026.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Greenland tariff retaliation ===
+    {
+        "id": 20091,
+        "question": "Following EU opposition to the US Greenland annexation plan (January 2026), what additional tariff did the US impose on the 8 opposing EU countries?",
+        "option_a": "5%", "option_b": "10%", "option_c": "15%", "option_d": "25%",
+        "correct_answer": "B",
+        "explanation": "The US imposed an additional 10% tariff on the 8 EU nations that opposed Trump's Greenland annexation plan. A trans-Atlantic deal earlier signed by 25 ministers was frozen on January 13, 2026, deepening the US-EU rift.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Iran Rial collapse ===
+    {
+        "id": 20092,
+        "question": "Amid nationwide protests against Ayatollah Khamenei's government from late December 2025, the Iranian rial collapsed to roughly what level against the US dollar?",
+        "option_a": "12,000 rial/USD", "option_b": "25,000 rial/USD", "option_c": "42,000 rial/USD", "option_d": "1,00,000 rial/USD",
+        "correct_answer": "C",
+        "explanation": "The Iranian rial collapsed to about 42,000 rial per US dollar during the unrest that began on December 28, 2025. Inflation soared to 42%. Nationwide protests targeted Supreme Leader Ayatollah Ali Khamenei's regime, prompting India to plan a major evacuation.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Operation Swadesh ===
+    {
+        "id": 20093,
+        "question": "What is the name of the operation launched by India in early 2026 to evacuate about 10,000 Indian nationals from Iran during the anti-Khamenei unrest?",
+        "option_a": "Operation Ganga", "option_b": "Operation Kaveri", "option_c": "Operation Swadesh", "option_d": "Operation Ajay",
+        "correct_answer": "C",
+        "explanation": "India launched 'Operation Swadesh' to evacuate approximately 10,000 Indian nationals from Iran amid the nationwide protests against the Khamenei government (from December 28, 2025). Earlier Indian evacuation operations include Ganga (Ukraine 2022), Kaveri (Sudan 2023) and Ajay (Israel 2023).",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Bangladesh Inquilab Manch leader killed ===
+    {
+        "id": 20094,
+        "question": "Who was the Inquilab Manch leader killed in Bangladesh on December 12, 2025, whose death triggered widespread unrest carrying into January 2026?",
+        "option_a": "Mahfuz Alam", "option_b": "Sharif Osman Hadi", "option_c": "Nahid Islam", "option_d": "Asif Mahmud",
+        "correct_answer": "B",
+        "explanation": "Sharif Osman Hadi, leader of the Inquilab Manch, was killed in Bangladesh on December 12, 2025. The killing triggered widespread unrest. Days later, Hindu Dipu Chandra Das was lynched in Mymensingh (December 18, 2025), continuing a pattern of over 2,600 attacks on Hindus in Bangladesh since August 2024.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Attacks on Hindus in Bangladesh ===
+    {
+        "id": 20095,
+        "question": "How many attacks on Hindus have been recorded in Bangladesh since August 2024, as reported during the January 2026 unrest?",
+        "option_a": "Over 600", "option_b": "Over 1,200", "option_c": "Over 2,600", "option_d": "Over 5,000",
+        "correct_answer": "C",
+        "explanation": "More than 2,600 attacks on Hindus have been recorded in Bangladesh since August 2024 (when the Sheikh Hasina government fell). Incidents include the lynching of Hindu Dipu Chandra Das in Mymensingh on December 18, 2025, and the killing of Inquilab Manch leader Sharif Osman Hadi on December 12, 2025.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Gaza Peace Council Davos ===
+    {
+        "id": 20096,
+        "question": "The Gaza Peace Council was launched at the WEF Davos summit on January 22, 2026. Who chairs the Council and who is its Director-General?",
+        "option_a": "Joe Biden as Chair; Tony Blair as DG", "option_b": "Donald Trump as Chair; Nickolay Mladenov as DG", "option_c": "António Guterres as Chair; Jared Kushner as DG", "option_d": "Emmanuel Macron as Chair; Tony Blair as DG",
+        "correct_answer": "B",
+        "explanation": "The Gaza Peace Council was launched at the World Economic Forum, Davos on January 22, 2026, with US President Donald Trump as Chair and Nickolay Mladenov as Director-General. The UN Security Council had approved the body on November 17, 2025. UAE, Pakistan and Saudi Arabia joined; India, China and Russia abstained.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Gaza Peace Council abstentions ===
+    {
+        "id": 20097,
+        "question": "Which three of these major powers abstained from joining the Gaza Peace Council launched at Davos (January 22, 2026)?",
+        "option_a": "USA, UK and France", "option_b": "India, China and Russia", "option_c": "Saudi Arabia, UAE and Pakistan", "option_d": "Germany, Japan and Brazil",
+        "correct_answer": "B",
+        "explanation": "India, China and Russia abstained from joining the Gaza Peace Council launched at WEF Davos on January 22, 2026. UAE, Pakistan and Saudi Arabia joined. The Council, chaired by President Trump with Nickolay Mladenov as DG, was approved by the UN Security Council on November 17, 2025.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Operation Hunter on ISIS in Syria ===
+    {
+        "id": 20098,
+        "question": "The US launched 'Operation Hunter' on January 10, 2026, against ISIS militants in Syria. Which Syrian President is cooperating with the US after the 2024 ouster of Bashar al-Assad?",
+        "option_a": "Hadi al-Bahra", "option_b": "Ahmad al-Shara", "option_c": "Riad Hijab", "option_d": "Muaz al-Khatib",
+        "correct_answer": "B",
+        "explanation": "Syrian President Ahmad al-Shara is cooperating with the US since the December 2024 ouster of Bashar al-Assad. 'Operation Hunter' (Jan 10, 2026) targeted ISIS positions in Syria. Al-Shara, leader of Hayat Tahrir al-Sham, became Syria's transitional president after Assad's fall.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: US airstrikes Sokoto Nigeria ===
+    {
+        "id": 20099,
+        "question": "On December 25-26, 2025, the US carried out airstrikes against ISIS-affiliated militants in Sokoto. Sokoto is a state in which country?",
+        "option_a": "Niger", "option_b": "Nigeria", "option_c": "Mali", "option_d": "Chad",
+        "correct_answer": "B",
+        "explanation": "Sokoto is a state in north-western Nigeria. US airstrikes targeted ISIS-affiliated Boko Haram militants in Sokoto on December 25-26, 2025. Boko Haram and ISWAP have waged a long insurgency across Nigeria's north and the Lake Chad basin.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Saudi airstrikes Mukulla Yemen ===
+    {
+        "id": 20100,
+        "question": "On December 30, 2025, Saudi Arabia carried out airstrikes on Mukalla port in Yemen against which group backed by the UAE?",
+        "option_a": "Houthi movement", "option_b": "Southern Transitional Council (STC)", "option_c": "Islah Party", "option_d": "Al-Qaeda in the Arabian Peninsula",
+        "correct_answer": "B",
+        "explanation": "Saudi airstrikes on December 30, 2025, targeted the Southern Transitional Council (STC) — a UAE-backed separatist group — at Mukalla port, Yemen. The strikes highlighted growing Saudi-UAE friction within the anti-Houthi coalition over southern Yemen's future.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Denmark ends postal service ===
+    {
+        "id": 20101,
+        "question": "Which country became the first in the world to officially end its traditional letter postal service, delivering its last letter on December 30, 2025?",
+        "option_a": "Sweden", "option_b": "Denmark", "option_c": "Norway", "option_d": "Netherlands",
+        "correct_answer": "B",
+        "explanation": "Denmark became the first country to officially end its traditional letter postal service on December 30, 2025. State-owned PostNord delivered the last letter after 400+ years of operation, citing a sharp fall in letter volumes. Parcel services continue.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: US withdraws from 66 bodies ===
+    {
+        "id": 20102,
+        "question": "On January 7, 2026, President Trump withdrew the US from how many international bodies/treaties?",
+        "option_a": "16", "option_b": "33", "option_c": "66", "option_d": "100",
+        "correct_answer": "C",
+        "explanation": "On January 7, 2026, the Trump administration withdrew the US from 66 international bodies and treaties — including the International Solar Alliance (ISA), IPCC, UN ECOSOC and UNFPA — citing 'America First' priorities. This was the largest single-day withdrawal in US diplomatic history.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: ISA US withdrawal ===
+    {
+        "id": 20103,
+        "question": "Which India-led international body was among the 66 organisations the US exited on January 7, 2026?",
+        "option_a": "International Big Cat Alliance", "option_b": "International Solar Alliance (ISA)", "option_c": "Global Biofuels Alliance", "option_d": "Coalition for Disaster Resilient Infrastructure",
+        "correct_answer": "B",
+        "explanation": "The International Solar Alliance (ISA), co-founded by India and France at COP21 (Paris, 2015) and headquartered in Gurugram, was among the 66 bodies the US exited on January 7, 2026. Others included the IPCC, UN ECOSOC and UNFPA.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Thailand-Cambodia ceasefire ===
+    {
+        "id": 20104,
+        "question": "The Thailand-Cambodia ceasefire of December 27, 2025, ending the July 2025 border war, was mediated by the Prime Minister of which country?",
+        "option_a": "Vietnam", "option_b": "Malaysia", "option_c": "Indonesia", "option_d": "Singapore",
+        "correct_answer": "B",
+        "explanation": "Malaysian Prime Minister Anwar Ibrahim mediated the Thailand-Cambodia ceasefire signed on December 27, 2025. The deal ended the July 2025 war over disputed border areas (including Preah Vihear). Malaysia chaired ASEAN in 2025.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Israel recognises Somaliland ===
+    {
+        "id": 20105,
+        "question": "On December 26, 2025, which country became the first in the world to formally recognise Somaliland as an independent state?",
+        "option_a": "United States", "option_b": "Ethiopia", "option_c": "Israel", "option_d": "United Arab Emirates",
+        "correct_answer": "C",
+        "explanation": "Israel became the first country to formally recognise Somaliland as an independent state on December 26, 2025. Somaliland declared independence from Somalia in 1991 but had remained unrecognised internationally for 34 years.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Somaliland separation year ===
+    {
+        "id": 20106,
+        "question": "In which year did Somaliland — formally recognised by Israel in December 2025 — declare its separation from Somalia?",
+        "option_a": "1977", "option_b": "1991", "option_c": "2001", "option_d": "2011",
+        "correct_answer": "B",
+        "explanation": "Somaliland declared independence from Somalia in 1991 following the collapse of the Siad Barre regime. After 34 years without international recognition, Israel became the first country to formally recognise Somaliland on December 26, 2025.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Shaksgam Valley area ===
+    {
+        "id": 20107,
+        "question": "On January 9, 2026, India objected to Chinese infrastructure in the Shaksgam Valley. What is the approximate area of the Shaksgam Valley which Pakistan ceded to China in 1963?",
+        "option_a": "1,800 sq km", "option_b": "3,200 sq km", "option_c": "5,180 sq km", "option_d": "8,500 sq km",
+        "correct_answer": "C",
+        "explanation": "The Shaksgam Valley covers about 5,180 sq km in the Trans-Karakoram Tract. Pakistan ceded it to China under the 1963 Sino-Pakistan Boundary Agreement; India does not recognise the transfer. India objected on January 9, 2026, to Chinese infrastructure activities there.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Shaksgam cession year ===
+    {
+        "id": 20108,
+        "question": "In which year did Pakistan cede the Shaksgam Valley to China — a cession India refuses to recognise and reiterated in its January 2026 protest?",
+        "option_a": "1948", "option_b": "1963", "option_c": "1971", "option_d": "1989",
+        "correct_answer": "B",
+        "explanation": "Pakistan ceded the Shaksgam Valley (~5,180 sq km) to China under the 1963 Sino-Pakistan Boundary Agreement. India does not recognise the transfer as Pakistan-occupied Kashmir is claimed by India. India also rejects the China-Pakistan Economic Corridor (CPEC) passing through PoK.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Coalition of the Willing Paris ===
+    {
+        "id": 20109,
+        "question": "The 'Coalition of the Willing' summit on the Russia-Ukraine war (January 6, 2026) was hosted in Paris and led by which leader?",
+        "option_a": "Friedrich Merz", "option_b": "Emmanuel Macron", "option_c": "Keir Starmer", "option_d": "Giorgia Meloni",
+        "correct_answer": "B",
+        "explanation": "French President Emmanuel Macron led the 'Coalition of the Willing' summit in Paris on January 6, 2026. The meeting focused on long-term security guarantees for Ukraine amid stalled US-Russia talks and discussed European-led military assurances.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: BRICS-2026 theme ===
+    {
+        "id": 20110,
+        "question": "What is the official theme of India's BRICS 2026 chairmanship, whose logo was launched on January 13, 2026?",
+        "option_a": "One Earth, One Family, One Future", "option_b": "Vikasam for All", "option_c": "Vasudhaiva Kutumbakam", "option_d": "Sabka Saath, Sabka Vikas",
+        "correct_answer": "B",
+        "explanation": "India launched the BRICS-2026 logo on January 13, 2026, with the theme 'Vikasam for All' (Development for All). India assumed the BRICS chairmanship on January 1, 2026; the BRICS Summit is scheduled for August/September 2026 in India.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: BRICS chair assumption date ===
+    {
+        "id": 20111,
+        "question": "When did India assume the BRICS chairmanship for 2026?",
+        "option_a": "January 1, 2026", "option_b": "January 13, 2026", "option_c": "February 1, 2026", "option_d": "April 1, 2026",
+        "correct_answer": "A",
+        "explanation": "India assumed the BRICS chairmanship on January 1, 2026, succeeding Brazil. The BRICS-2026 logo with theme 'Vikasam for All' was unveiled on January 13, 2026. The annual BRICS Summit is set for August/September 2026 in India.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: CAR Touadera 3rd term ===
+    {
+        "id": 20112,
+        "question": "On January 6, 2026, who was re-elected for a third term as President of the Central African Republic (CAR)?",
+        "option_a": "Faustin-Archange Touadéra", "option_b": "François Bozizé", "option_c": "Michel Djotodia", "option_d": "Catherine Samba-Panza",
+        "correct_answer": "A",
+        "explanation": "Faustin-Archange Touadéra won a third term as President of the Central African Republic (CAR) on January 6, 2026, following a 2023 constitutional amendment that removed term limits. He has been President of CAR since 2016.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: BNP wins Bangladesh election ===
+    {
+        "id": 20113,
+        "question": "In the Bangladesh general election results announced on February 18, 2026, the BNP secured how many of 300 parliamentary seats?",
+        "option_a": "152", "option_b": "186", "option_c": "209", "option_d": "247",
+        "correct_answer": "C",
+        "explanation": "The Bangladesh Nationalist Party (BNP) won 209 of 300 seats in the general election (results: February 18, 2026), routing rivals. The Awami League had been banned. The election ended the post-Hasina interim period led by Muhammad Yunus.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Tarek Rahman PM ===
+    {
+        "id": 20114,
+        "question": "Who was sworn in as Prime Minister of Bangladesh on February 17, 2026, following the BNP's election victory?",
+        "option_a": "Khaleda Zia", "option_b": "Tarek Rahman", "option_c": "Muhammad Yunus", "option_d": "Mirza Fakhrul Islam Alamgir",
+        "correct_answer": "B",
+        "explanation": "Tarek Rahman (Tarique Rahman), son of Khaleda Zia and acting BNP chairman, was sworn in as Bangladesh's Prime Minister on February 17, 2026, by President Mohammed Shahabuddin, after the BNP won 209/300 seats. The Awami League had been banned.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Awami League banned ===
+    {
+        "id": 20115,
+        "question": "Which major political party was banned in Bangladesh ahead of the February 2026 general elections?",
+        "option_a": "Bangladesh Nationalist Party (BNP)", "option_b": "Jatiya Party", "option_c": "Awami League", "option_d": "Jamaat-e-Islami",
+        "correct_answer": "C",
+        "explanation": "The Awami League (founded by Sheikh Mujibur Rahman) was banned in Bangladesh ahead of the February 2026 general elections, paving the way for the BNP's 209/300 seat victory and the swearing-in of Tarek Rahman as PM on February 17, 2026.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Japan first female PM ===
+    {
+        "id": 20116,
+        "question": "Following the LDP's mid-term victory on February 8, 2026, who became Japan's first-ever female Prime Minister?",
+        "option_a": "Yuriko Koike", "option_b": "Sanae Takaichi", "option_c": "Seiko Noda", "option_d": "Tomomi Inada",
+        "correct_answer": "B",
+        "explanation": "Sanae Takaichi (LDP) became Japan's first-ever female Prime Minister after the LDP won 316/465 seats in the February 8, 2026 mid-term election. Takaichi, a conservative protégé of late PM Shinzo Abe, broke a 70-year glass ceiling in Japanese politics.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: LDP seats Japan ===
+    {
+        "id": 20117,
+        "question": "In Japan's mid-term election on February 8, 2026, how many of the 465 lower-house seats did the Liberal Democratic Party (LDP) win?",
+        "option_a": "233", "option_b": "278", "option_c": "316", "option_d": "402",
+        "correct_answer": "C",
+        "explanation": "The Liberal Democratic Party (LDP) won 316 of 465 seats in Japan's lower house mid-term election on February 8, 2026, giving it a two-thirds supermajority. Sanae Takaichi was then sworn in as Japan's first female Prime Minister.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Moldova Transnistria ===
+    {
+        "id": 20118,
+        "question": "Around February 2026, tensions rose between Moldova and the breakaway Transnistria region. Who is the President of Moldova?",
+        "option_a": "Igor Dodon", "option_b": "Maia Sandu", "option_c": "Natalia Gavrilita", "option_d": "Dorin Recean",
+        "correct_answer": "B",
+        "explanation": "Maia Sandu is the President of Moldova. In February 2026, tensions with the breakaway Transnistria region (PMR) spiked, with approximately 1,500 Russian troops stationed there. Sandu's pro-EU government has pushed for closer Western integration.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: NATO Arctic Sentry exercise ===
+    {
+        "id": 20119,
+        "question": "Which NATO exercises launched on February 11, 2026, focus on securing the High North and Arctic region?",
+        "option_a": "Steadfast Defender and Cold Response", "option_b": "Arctic Sentry and Arctic Endurance", "option_c": "Northern Light and Trident Juncture", "option_d": "Nordic Response and Baltic Shield",
+        "correct_answer": "B",
+        "explanation": "NATO launched exercises 'Arctic Sentry' and 'Arctic Endurance' on February 11, 2026, to bolster security in the High North/Arctic region amid Russian and Chinese activity. The exercises follow Finland's (2023) and Sweden's (2024) accession to NATO.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Israel demolishes UNRWA HQ ===
+    {
+        "id": 20120,
+        "question": "In February 2026, Israel demolished the United Nations Relief and Works Agency (UNRWA) headquarters located in which East Jerusalem neighbourhood?",
+        "option_a": "Silwan", "option_b": "Sheikh Jarrah", "option_c": "Beit Hanina", "option_d": "Ras al-Amud",
+        "correct_answer": "B",
+        "explanation": "Israel demolished the UNRWA headquarters in Sheikh Jarrah, East Jerusalem, in February 2026, drawing international condemnation. UNRWA, founded in 1949, has been the primary aid agency for Palestinian refugees; Israel had outlawed its operations in late 2024.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Kashiwazaki-Kariwa restart ===
+    {
+        "id": 20121,
+        "question": "On February 3, 2026, Japan restarted Kashiwazaki-Kariwa, which holds what distinction?",
+        "option_a": "Japan's oldest nuclear plant", "option_b": "World's largest nuclear power plant", "option_c": "World's first floating nuclear plant", "option_d": "World's first thorium reactor",
+        "correct_answer": "B",
+        "explanation": "Kashiwazaki-Kariwa in Niigata Prefecture is the world's largest nuclear power plant by net capacity (~7,965 MW, 7 reactors). Japan restarted it on February 3, 2026 — the country's first nuclear plant restart since the 2011 Fukushima Daiichi disaster.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: First plant since Fukushima ===
+    {
+        "id": 20122,
+        "question": "The Kashiwazaki-Kariwa restart on February 3, 2026, was significant because it was Japan's first such restart since which event?",
+        "option_a": "1995 Kobe earthquake", "option_b": "2011 Fukushima Daiichi disaster", "option_c": "2016 Kumamoto earthquakes", "option_d": "2018 Hokkaido earthquake",
+        "correct_answer": "B",
+        "explanation": "The Kashiwazaki-Kariwa restart (Feb 3, 2026) was Japan's first nuclear plant restart since the March 11, 2011 Fukushima Daiichi disaster, which had led to a nationwide shutdown of nuclear power. Japan has been gradually reviving nuclear energy amid energy security concerns.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: France social media ban under-15 ===
+    {
+        "id": 20123,
+        "question": "On January 27, 2026, France voted (180-21) to ban social media for under-15s, becoming the second country in the world to do so. Which was the first?",
+        "option_a": "United Kingdom", "option_b": "Norway", "option_c": "Australia", "option_d": "Germany",
+        "correct_answer": "C",
+        "explanation": "Australia was the first country to legislate a social-media ban for minors (under-16) in late 2024. France's National Assembly voted 180-21 on January 27, 2026, to ban social media for under-15s, becoming the second country to enact such a ban.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Spain undocumented migrants ===
+    {
+        "id": 20124,
+        "question": "On January 27, 2026, which country, bucking the US/EU trend, voted to grant legal status to undocumented migrants?",
+        "option_a": "Italy", "option_b": "Portugal", "option_c": "Spain", "option_d": "Ireland",
+        "correct_answer": "C",
+        "explanation": "Spain voted on January 27, 2026, to grant legal status to undocumented migrants — moving against the broader US and EU trend of tightening migration policy. PM Pedro Sánchez's coalition cited demographic and labour-market needs.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: EU declares IRGC terrorist ===
+    {
+        "id": 20125,
+        "question": "In February 2026, the European Union formally declared which body a terrorist organisation and sanctioned 15 of its officials?",
+        "option_a": "Hezbollah", "option_b": "Iran's Revolutionary Guard Corps (IRGC)", "option_c": "Hamas Political Bureau", "option_d": "Houthi Ansar Allah",
+        "correct_answer": "B",
+        "explanation": "The EU formally designated Iran's Islamic Revolutionary Guard Corps (IRGC) as a terrorist organisation in February 2026, also sanctioning 15 IRGC officials. The move followed the December 2025 unrest in Iran and IRGC's role in regional proxy conflicts.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: South Africa expels Israeli ===
+    {
+        "id": 20126,
+        "question": "On January 30, 2026, South Africa expelled which Israeli diplomat?",
+        "option_a": "Ambassador Eli Belotsercovsky", "option_b": "Deputy Ambassador Ariel Seidman", "option_c": "Consul-General Dan Stav", "option_d": "Charge d'Affaires Yaron Sideman",
+        "correct_answer": "B",
+        "explanation": "South Africa expelled Israeli Deputy Ambassador Ariel Seidman on January 30, 2026, in protest against Israeli actions in Gaza and the demolition of the UNRWA headquarters. South Africa had earlier filed a genocide case against Israel at the ICJ (December 2023).",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Doomsday Clock 85 sec ===
+    {
+        "id": 20127,
+        "question": "The Bulletin of the Atomic Scientists set the 2026 Doomsday Clock to how many seconds to midnight in February 2026?",
+        "option_a": "100 seconds", "option_b": "90 seconds", "option_c": "89 seconds", "option_d": "85 seconds",
+        "correct_answer": "D",
+        "explanation": "The Bulletin of the Atomic Scientists set the Doomsday Clock at 85 seconds to midnight in February 2026 — the closest ever to symbolic 'midnight'. The 2025 setting was 89 seconds; the move closer cited nuclear, AI and climate risks.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Museveni 7th term ===
+    {
+        "id": 20128,
+        "question": "On January 17, 2026, Yoweri Museveni won his seventh term as President of Uganda with what vote share?",
+        "option_a": "58.40%", "option_b": "65.20%", "option_c": "71.65%", "option_d": "82.10%",
+        "correct_answer": "C",
+        "explanation": "Yoweri Museveni won a 7th term as President of Uganda on January 17, 2026, with 71.65% of the vote. Opposition leader Bobi Wine (Robert Kyagulanyi) of the NUP came second with 24.72%. Museveni has been in power since 1986.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: WEF Davos 2026 edition ===
+    {
+        "id": 20129,
+        "question": "The World Economic Forum (WEF) Annual Meeting held at Davos from January 19-23, 2026, was its which edition?",
+        "option_a": "54th", "option_b": "55th", "option_c": "56th", "option_d": "60th",
+        "correct_answer": "C",
+        "explanation": "The 56th WEF Annual Meeting was held at Davos-Klosters, Switzerland, from January 19-23, 2026, with the theme 'A Spirit of Dialogue'. About 3,000 delegates including 50+ heads of state attended. The Gaza Peace Council was launched on the sidelines (Jan 22).",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: WEF Davos 2026 theme ===
+    {
+        "id": 20130,
+        "question": "What was the theme of the 56th WEF Annual Meeting at Davos (January 19-23, 2026)?",
+        "option_a": "Cooperation in a Fragmented World", "option_b": "Collaboration for the Intelligent Age", "option_c": "A Spirit of Dialogue", "option_d": "Rebuilding Trust",
+        "correct_answer": "C",
+        "explanation": "'A Spirit of Dialogue' was the theme of the 56th WEF Annual Meeting at Davos (Jan 19-23, 2026), attended by ~3,000 delegates. The 55th edition (2025) had the theme 'Collaboration for the Intelligent Age'.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: BioAsia 2026 Hyderabad ===
+    {
+        "id": 20131,
+        "question": "The Genome Valley Excellence Award at the 23rd BioAsia at Hyderabad (Feb 17-18, 2026), themed 'TechBio Unleashed', was presented to whom?",
+        "option_a": "Dr. Soumya Swaminathan", "option_b": "Dr. Bruce L. Levine", "option_c": "Dr. Gagandeep Kang", "option_d": "Dr. Krishna Ella",
+        "correct_answer": "B",
+        "explanation": "Dr. Bruce L. Levine (University of Pennsylvania, pioneer of CAR-T cell therapy) received the Genome Valley Excellence Award at the 23rd BioAsia, held in Hyderabad on February 17-18, 2026. The theme was 'TechBio Unleashed', focusing on the convergence of biology and technology.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: New START expiry ===
+    {
+        "id": 20132,
+        "question": "Which arms-control treaty between the US and Russia expired on February 5, 2026, leaving no major nuclear arms limitation regime in force between the two powers?",
+        "option_a": "INF Treaty", "option_b": "Open Skies Treaty", "option_c": "New START Treaty", "option_d": "ABM Treaty",
+        "correct_answer": "C",
+        "explanation": "The New START Treaty (signed 2010, came into force 2011) expired on February 5, 2026 — leaving no bilateral nuclear arms limitation treaty between the US and Russia. The two sides agreed to restart talks; military-to-military communications were restored at a meeting in Abu Dhabi.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: New START original signing ===
+    {
+        "id": 20133,
+        "question": "In which year was the New START Treaty originally signed before it expired in February 2026?",
+        "option_a": "1991", "option_b": "2002", "option_c": "2010", "option_d": "2017",
+        "correct_answer": "C",
+        "explanation": "The New START Treaty was signed in Prague on April 8, 2010, by US President Barack Obama and Russian President Dmitry Medvedev, entering into force in 2011. It capped each side's deployed strategic nuclear warheads at 1,550 and expired on February 5, 2026.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Israel-Hezbollah war 2026 ===
+    {
+        "id": 20134,
+        "question": "A new Israel-Hezbollah war began on March 2, 2026, killing over 2,000 people in which country?",
+        "option_a": "Syria", "option_b": "Lebanon", "option_c": "Jordan", "option_d": "Iraq",
+        "correct_answer": "B",
+        "explanation": "The new Israel-Hezbollah war began on March 2, 2026, killing more than 2,000 people in Lebanon. A 10-day ceasefire was reached on April 17, 2026, after talks in Washington on April 14-15, 2026.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Israel-Lebanon ceasefire 2026 ===
+    {
+        "id": 20135,
+        "question": "When and where were the talks held that produced the April 17, 2026 Israel-Lebanon ceasefire?",
+        "option_a": "Cairo, April 10-11, 2026", "option_b": "Washington, April 14-15, 2026", "option_c": "Doha, April 12-13, 2026", "option_d": "Paris, April 8-9, 2026",
+        "correct_answer": "B",
+        "explanation": "Talks held in Washington from April 14-15, 2026, produced a 10-day Israel-Lebanon ceasefire announced on April 17, 2026, halting the Israel-Hezbollah war that had begun on March 2, 2026 and killed over 2,000 in Lebanon.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Operation Epic Fury ===
+    {
+        "id": 20136,
+        "question": "Under what name did the US and Israel launch joint strikes against Iran on February 28, 2026, killing Supreme Leader Ayatollah Khamenei on day one?",
+        "option_a": "Operation Rising Lion", "option_b": "Operation Epic Fury", "option_c": "Operation Iron Sword", "option_d": "Operation Persian Dawn",
+        "correct_answer": "B",
+        "explanation": "The US and Israel launched 'Operation Epic Fury' against Iran on February 28, 2026. Supreme Leader Ayatollah Ali Khamenei was killed on day one of the strikes. The operation marked a major escalation of the West Asia conflict.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Khamenei killed ===
+    {
+        "id": 20137,
+        "question": "Which Iranian leader was killed on the first day of 'Operation Epic Fury' (February 28, 2026)?",
+        "option_a": "President Masoud Pezeshkian", "option_b": "Supreme Leader Ayatollah Ali Khamenei", "option_c": "IRGC chief Hossein Salami", "option_d": "Foreign Minister Abbas Araghchi",
+        "correct_answer": "B",
+        "explanation": "Iran's Supreme Leader Ayatollah Ali Khamenei was killed on the first day of 'Operation Epic Fury' (February 28, 2026), a joint US-Israel air campaign. Khamenei had been Supreme Leader since 1989. The strike triggered global oil price spikes and emergency UN meetings.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Pakistan mediated US-Iran talks ===
+    {
+        "id": 20138,
+        "question": "The US-Iran talks held on April 11-12, 2026, mediated by Pakistan, took place in which city and ended in failure?",
+        "option_a": "Karachi", "option_b": "Lahore", "option_c": "Islamabad", "option_d": "Tehran",
+        "correct_answer": "C",
+        "explanation": "Pakistan mediated US-Iran talks at Islamabad on April 11-12, 2026, which ended in failure. The talks were held in the aftermath of 'Operation Epic Fury' (Feb 28, 2026) which had killed Ayatollah Khamenei, and amid ongoing tensions across West Asia.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Myanmar Min Aung Hlaing President ===
+    {
+        "id": 20139,
+        "question": "Who was elected President of Myanmar on April 9, 2026, securing 429 of 584 electoral college votes?",
+        "option_a": "Aung San Suu Kyi", "option_b": "Senior General Min Aung Hlaing", "option_c": "Win Myint", "option_d": "Myint Swe",
+        "correct_answer": "B",
+        "explanation": "Senior General Min Aung Hlaing, the junta chief who led the 2021 coup, was elected President of Myanmar on April 9, 2026, with 429/584 electoral college votes. General Soe Win was appointed army chief. Critics rejected the polls as a façade for continued military rule.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 📅 2026 MCQ: Nepal Balen Shah PM ===
+    {
+        "id": 20140,
+        "question": "Who was sworn in as Nepal's 47th and youngest-ever Prime Minister on March 27, 2026, at the age of 35?",
+        "option_a": "Sher Bahadur Deuba", "option_b": "Pushpa Kamal Dahal 'Prachanda'", "option_c": "Balen Shah", "option_d": "Rabi Lamichhane",
+        "correct_answer": "C",
+        "explanation": "Balen Shah (rapper-turned-politician, former Mayor of Kathmandu) was sworn in as Nepal's 47th Prime Minister on March 27, 2026 — the youngest ever at age 35. His predecessor KP Sharma Oli was arrested on March 28, 2026, for his crackdown on the 2025 Gen-Z protests (76 killed).",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
 ]
 
 
@@ -744,7 +1236,7 @@ def seed():
              correct_answer, explanation, folder, topic)
             VALUES (?,?,?,?,?,?,?,?,?,?)"""
 
-    cur.execute(delete_sql, (20001, 20086))
+    cur.execute(delete_sql, (20001, 20150))
     for q in INTL_MCQS:
         cur.execute(insert_sql, (
             q["id"], q["question"],
@@ -754,7 +1246,7 @@ def seed():
         ))
     conn.commit()
     conn.close()
-    print(f"[seed_intl_orgs] {len(INTL_MCQS)} International Orgs 2025-2026 MCQs seeded (IDs 20001-20086). Force-refreshed.")
+    print(f"[seed_intl_orgs] {len(INTL_MCQS)} International Orgs 2025-2026 MCQs seeded (IDs 20001-20140, DELETE range 20001-20150). Force-refreshed.")
 
 
 if __name__ == "__main__":

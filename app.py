@@ -6666,6 +6666,12 @@ def _load_concept_cache():
                 if need_national:
                     cn_nat = importlib.import_module('seed_concept_notes_national')
                     print('[concept_cache] seed_concept_notes_national seeded successfully.')
+                    # Batch H+PDF (2026-05-18) — 12 new bilingual concept notes for Jan-Apr 2026 National events
+                    try:
+                        cn_nat_2026 = importlib.import_module('seed_concept_notes_natl_2026')
+                        print('[concept_cache] seed_concept_notes_natl_2026 seeded successfully.')
+                    except Exception as _e_nat_2026:
+                        print(f'[concept_cache] seed_concept_notes_natl_2026 error: {_e_nat_2026}')
                 if need_ap:
                     cn_ap = importlib.import_module('seed_concept_notes_ap')
                     print('[concept_cache] seed_concept_notes_ap seeded successfully.')
