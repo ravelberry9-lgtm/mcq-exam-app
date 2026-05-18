@@ -553,32 +553,33 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed International Current Affairs MCQs (140 Qs total after Batch H+PDF) ──
-    # Original 86 (IDs 20001-20086) + 54 new 2026 events (IDs 20087-20140).
-    # Sentinel check uses ID 20140 (last 2026 event) — if missing, full re-seed.
+    # ── Auto-seed International Current Affairs MCQs (162 Qs total after Batch I) ──
+    # Original 86 (IDs 20001-20086) + 54 PDF 2026 events (IDs 20087-20140)
+    # + 22 Batch I coverage-gap MCQs (IDs 20141-20162).
+    # Sentinel check uses ID 20162 (last gap-fill MCQ) — if missing, full re-seed.
     try:
         ph = '%s' if USE_POSTGRES else '?'
         cur_intl = db_exec(conn,
             f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
-            (20001, 20150))
+            (20001, 20170))
         intl_count = _fv(cur_intl.fetchone())
         _intl_sentinel = db_exec(conn,
-            f"SELECT explanation FROM questions WHERE id={ph}", (20140,))
+            f"SELECT explanation FROM questions WHERE id={ph}", (20162,))
         _intl_row = _intl_sentinel.fetchone()
         _intl_marker = ''
         if _intl_row:
             _intl_dict = row_to_dict(_intl_row) or {}
             _intl_marker = _intl_dict.get('explanation') or ''
-        # Trigger re-seed if count is below 140 OR the 2026 sentinel row is missing
-        if intl_count < 140 or not _intl_row:
-            print(f"[startup] Intl Orgs MCQs: {intl_count}/140 — force-refreshing 2025-26 + 2026 data...")
+        # Trigger re-seed if count is below 162 OR the Batch-I sentinel row is missing
+        if intl_count < 162 or not _intl_row:
+            print(f"[startup] Intl Orgs MCQs: {intl_count}/162 — force-refreshing 2025-26 + 2026 + Batch I gap data...")
             import importlib
             intl_mod = importlib.import_module('seed_intl_orgs_mcq')
             importlib.reload(intl_mod)
             intl_mod.seed()
-            print("[startup] Intl Orgs seed complete (2025-26 + 2026).")
+            print("[startup] Intl Orgs seed complete (2025-26 + 2026 + Batch I).")
         else:
-            print(f"[startup] Intl Orgs: {intl_count} questions already loaded (2025-26 + 2026).")
+            print(f"[startup] Intl Orgs: {intl_count} questions already loaded (2025-26 + 2026 + Batch I).")
     except Exception as _intl_e:
         print(f"[startup] Intl Orgs seed error: {_intl_e}")
         try: conn.rollback()
@@ -6593,6 +6594,23 @@ CONCEPT_MAP = [
     (20017, 20039, 'org_brics_g7_nato'),
     (20040, 20070, 'org_quad_sco_asean'),
     (20071, 20086, 'org_env_other'),
+    # International Organisations — Batch I Coverage Gap MCQs (20141-20162)
+    (20141, 20141, 'org_un_g20'),                  # UNSC 2026-27 non-permanent members
+    (20142, 20142, 'org_env_other'),               # EU Council Pres Costa
+    (20143, 20143, 'org_env_other'),               # EU-India FTA Jan 2026
+    (20144, 20145, 'org_quad_sco_asean'),          # ASEAN PH 2026 chair + Cebu summit
+    (20146, 20147, 'org_env_other'),               # CHOGM Samoa 2024 + SG Botchwey
+    (20148, 20148, 'org_env_other'),               # UNESCO DG El-Enany
+    (20149, 20150, 'env_climate_cop'),             # COP30 Belém + TFFF
+    (20151, 20151, 'org_brics_g7_nato'),           # WTO MC14 Yaoundé
+    (20152, 20152, 'org_brics_g7_nato'),           # G7 France 2026 Évian
+    (20153, 20154, 'org_quad_sco_asean'),          # SCO Tianjin 2025 + Dev Bank
+    (20155, 20156, 'org_brics_g7_nato'),           # BRICS partners + India 2026 chair
+    (20157, 20158, 'org_env_other'),               # ICC Khan + US sanctions
+    (20159, 20159, 'org_env_other'),               # OECD Cormann
+    (20160, 20160, 'org_env_other'),               # UNESCO El-Enany country
+    (20161, 20161, 'org_quad_sco_asean'),          # ASEAN 11 members (Timor-Leste)
+    (20162, 20162, 'org_un_g20'),                  # India UNSC 2028-29 bid
     # Summits & Conferences (21001-21080)
     (21001, 21020, 'summit_g20_g7_nato'),
     (21021, 21040, 'summit_brics_sco_asean'),

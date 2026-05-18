@@ -3,8 +3,12 @@ seed_intl_orgs_mcq.py
 GKToday-style MCQs — Topic: International Current Affairs → International Organisations
 Coverage: 2025–2026 events + structural GK (no 2022/2023-specific questions)
 Folder: AP_HC | Topic: International_Current_Affairs
-IDs: 20001–20140  |  Force-refresh: DELETE then INSERT
+IDs: 20001–20162  |  Force-refresh: DELETE then INSERT
 Batch H+PDF (2026-05-18): Added 54 new MCQs at 20087-20140 covering Jan-Apr 2026 events.
+Batch I — Coverage Gap Audit (2026-05-18): Added 22 new MCQs at 20141-20162
+  covering UNSC 2026-27, EU leaders Costa/von der Leyen, EU-India FTA, ASEAN PH chair,
+  CHOGM 2024 Samoa, Commonwealth SG Botchwey, UNESCO DG El-Enany, COP30 Belém,
+  WTO MC14 Yaoundé, G7 France 2026, SCO Tianjin 2025, BRICS partners, ICC, OECD Cormann.
 """
 
 import os, sqlite3
@@ -1207,6 +1211,218 @@ INTL_MCQS = [
         "explanation": "Balen Shah (rapper-turned-politician, former Mayor of Kathmandu) was sworn in as Nepal's 47th Prime Minister on March 27, 2026 — the youngest ever at age 35. His predecessor KP Sharma Oli was arrested on March 28, 2026, for his crackdown on the 2025 Gen-Z protests (76 killed).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
+    # ╔══════════════════════════════════════════════════════════╗
+    # ║  📅 2026 Coverage-Gap MCQs (Batch I, 2026-05-18)         ║
+    # ║  IDs 20141-20162 — gaps found in 2025-26 audit           ║
+    # ║  Topics: UNSC 2026-27, EU leaders, ASEAN PH chair,       ║
+    # ║          UNESCO El-Enany, Commonwealth Botchwey, COP30,  ║
+    # ║          MC14 Cameroon, G7 France 2026, EU-India FTA,    ║
+    # ║          SCO Tianjin, BRICS partners.                    ║
+    # ╚══════════════════════════════════════════════════════════╝
+    # === 🆕 GAP MCQ: UNSC 2026-27 non-permanent ===
+    {
+        "id": 20141,
+        "question": "Which five countries began two-year terms as UN Security Council non-permanent members on January 1, 2026 (term 2026-27)?",
+        "option_a": "Algeria, Guyana, ROK, Sierra Leone, Slovenia",
+        "option_b": "Bahrain, Colombia, DR Congo, Latvia, Liberia",
+        "option_c": "Pakistan, Denmark, Greece, Panama, Somalia",
+        "option_d": "Ecuador, Japan, Malta, Mozambique, Switzerland",
+        "correct_answer": "B",
+        "explanation": "The UNGA elected Bahrain (186 votes), DR Congo (183), Liberia (181), Colombia (180) and Latvia (178) on June 3, 2025, as UNSC non-permanent members for the 2026-27 term. Latvia is a first-time member. They replaced Algeria, Guyana, South Korea, Sierra Leone and Slovenia (term 2024-25).",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: European Council President Costa ===
+    {
+        "id": 20142,
+        "question": "Who is the President of the European Council since December 1, 2024?",
+        "option_a": "Charles Michel", "option_b": "Donald Tusk", "option_c": "António Costa", "option_d": "Ursula von der Leyen",
+        "correct_answer": "C",
+        "explanation": "António Costa (Portugal), former PM of Portugal (2015-2024), is the President of the European Council since December 1, 2024, succeeding Charles Michel (Belgium). Ursula von der Leyen (Germany) continues as President of the European Commission (her 2nd term began December 2024).",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: EU-India FTA 2026 ===
+    {
+        "id": 20143,
+        "question": "On which date in 2026 did India and the European Union conclude the 'Mother of all Free Trade Deals' at the 16th EU-India Summit in New Delhi?",
+        "option_a": "January 13, 2026", "option_b": "January 27, 2026", "option_c": "February 14, 2026", "option_d": "March 5, 2026",
+        "correct_answer": "B",
+        "explanation": "India and the EU concluded their long-awaited Free Trade Agreement on January 27, 2026, at the 16th EU-India Summit in New Delhi. EC President Ursula von der Leyen called it 'the mother of all deals', creating a free trade zone of ~2 billion people. A Security & Defence Partnership and a mobility/migration pact were also signed.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: ASEAN 2026 Chair Philippines ===
+    {
+        "id": 20144,
+        "question": "Which country holds the ASEAN Chairmanship for 2026, with the theme 'Navigating Our Future, Together'?",
+        "option_a": "Malaysia", "option_b": "Singapore", "option_c": "Philippines", "option_d": "Vietnam",
+        "correct_answer": "C",
+        "explanation": "The Philippines holds the ASEAN Chairmanship for 2026 (theme: 'Navigating Our Future, Together'), under President Ferdinand Marcos Jr. The 48th ASEAN Summit was held in Cebu on May 8-9, 2026. Priorities: regional energy & food security, South China Sea Code of Conduct, ASEAN nationals' safety. Malaysia was Chair in 2025; Singapore is set to chair 2027.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: 48th ASEAN Summit Cebu ===
+    {
+        "id": 20145,
+        "question": "The 48th ASEAN Summit was held in May 2026 in which Philippine city?",
+        "option_a": "Manila", "option_b": "Quezon City", "option_c": "Cebu", "option_d": "Davao",
+        "correct_answer": "C",
+        "explanation": "The 48th ASEAN Summit was held in Cebu, Philippines, on May 8-9, 2026, under the Philippines' 2026 chairship. The 49th ASEAN Summit is scheduled for November 2026. ASEAN's 11 members now include Timor-Leste, admitted at the 47th ASEAN Summit (Kuala Lumpur, October 2025).",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: Commonwealth CHOGM 2024 Samoa ===
+    {
+        "id": 20146,
+        "question": "The 27th Commonwealth Heads of Government Meeting (CHOGM) was held in October 2024 in which country — the first CHOGM in a Pacific Small Island Developing State and the first chaired by King Charles III?",
+        "option_a": "Fiji", "option_b": "Samoa", "option_c": "Vanuatu", "option_d": "Papua New Guinea",
+        "correct_answer": "B",
+        "explanation": "CHOGM 2024 was held in Apia, Samoa, on October 25-26, 2024 — the first CHOGM in a Pacific SIDS and the first chaired by King Charles III as Head of the Commonwealth. The summit adopted the 'Apia Commonwealth Ocean Declaration for One Resilient Common Future' and elected Shirley Ayorkor Botchwey (Ghana) as next Secretary-General. The Commonwealth has 56 member states.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: Commonwealth SG Botchwey ===
+    {
+        "id": 20147,
+        "question": "Who became the 7th Commonwealth Secretary-General on April 1, 2025 — the first woman from Africa to hold the office?",
+        "option_a": "Patricia Scotland", "option_b": "Shirley Ayorkor Botchwey", "option_c": "Joshua Setipa", "option_d": "Mamadou Tangara",
+        "correct_answer": "B",
+        "explanation": "Shirley Ayorkor Botchwey (Ghana), a former Foreign Minister of Ghana (2017-2024), assumed office as the 7th Commonwealth Secretary-General on April 1, 2025 — the first woman from Africa in the post. She was elected at CHOGM 2024 in Apia, Samoa, succeeding Baroness Patricia Scotland (Dominica/UK). Commonwealth HQ: Marlborough House, London.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: UNESCO DG El-Enany ===
+    {
+        "id": 20148,
+        "question": "Who assumed office as the 12th Director-General of UNESCO on November 15, 2025, becoming the first Director-General from an Arab country?",
+        "option_a": "Audrey Azoulay", "option_b": "Khaled El-Enany", "option_c": "Firmin Edouard Matoko", "option_d": "Irina Bokova",
+        "correct_answer": "B",
+        "explanation": "Khaled El-Enany (Egypt), an Egyptologist and former Minister of Tourism & Antiquities, was elected DG of UNESCO in November 2025 with 172/174 votes and assumed office on November 15, 2025. He is the first DG from an Arab country and the second from Africa (after Senegal's Amadou-Mahtar Mbow). He succeeded Audrey Azoulay (France). UNESCO HQ: Paris.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: COP30 Belem outcome ===
+    {
+        "id": 20149,
+        "question": "COP30 was held in Belém, Brazil, in November 2025. What was the name of its main outcome document, a Portuguese term meaning 'collective efforts'?",
+        "option_a": "Belém Pact", "option_b": "Global Mutirão", "option_c": "Amazon Compact", "option_d": "Tropical Declaration",
+        "correct_answer": "B",
+        "explanation": "The COP30 main outcome document is called the 'global mutirão' — Portuguese for 'collective efforts'. COP30 ran November 10-22, 2025, in Belém, on the edge of the Amazon. Key outcomes: pledge to mobilise $1.3 trillion/year by 2035, triple adaptation finance by 2035, and launch of the Tropical Forest Forever Fund ($6.6 bn raised). The summit fell short of an explicit fossil-fuel phase-out roadmap.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: Tropical Forest Forever Fund ===
+    {
+        "id": 20150,
+        "question": "The 'Tropical Forest Forever Fund' (TFFF), launched at COP30 in Belém (November 2025), rewards countries for what action?",
+        "option_a": "Phasing out coal-fired power plants",
+        "option_b": "Conserving their tropical forests",
+        "option_c": "Achieving net-zero emissions by 2050",
+        "option_d": "Adopting electric vehicle mandates",
+        "correct_answer": "B",
+        "explanation": "The Tropical Forest Forever Fund (TFFF) — a Brazil-led mechanism launched at COP30, Belém (Nov 2025) — rewards countries for conserving tropical forests. It raised $6.6 billion with 53 country signatories. The fund supplements REDD+ and aims to provide predictable, performance-based finance for forest protection in the Global South.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: WTO MC14 Cameroon ===
+    {
+        "id": 20151,
+        "question": "The 14th WTO Ministerial Conference (MC14), held March 26-29, 2026, was hosted in which African capital — only the second WTO Ministerial held in Africa?",
+        "option_a": "Nairobi, Kenya", "option_b": "Abuja, Nigeria", "option_c": "Yaoundé, Cameroon", "option_d": "Addis Ababa, Ethiopia",
+        "correct_answer": "C",
+        "explanation": "MC14 was held at the Palais des Congrès in Yaoundé, Cameroon, from March 26-29, 2026 — only the second WTO Ministerial Conference hosted in Africa, after MC10 in Nairobi (2015). DG Ngozi Okonjo-Iweala (in her 2nd term) chaired discussions on dispute settlement reform, fisheries subsidies, and the e-commerce moratorium.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: G7 2026 France Évian ===
+    {
+        "id": 20152,
+        "question": "Which country holds the G7 Presidency in 2026 and will host the 52nd G7 Summit at Évian-les-Bains on June 15-17, 2026?",
+        "option_a": "United States", "option_b": "Germany", "option_c": "France", "option_d": "Italy",
+        "correct_answer": "C",
+        "explanation": "France holds the G7 Presidency for 2026 (its first since the 2019 Biarritz Summit). The 52nd G7 Summit will be held at Évian-les-Bains, Haute-Savoie, on June 15-17, 2026. President Emmanuel Macron set priorities around reducing global inequality and safeguarding financial stability. Canada hosted G7 2025 (Kananaskis).",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: SCO Tianjin 2025 ===
+    {
+        "id": 20153,
+        "question": "The 25th SCO Heads of State Summit — the largest in SCO history — was held in August-September 2025 in which Chinese city?",
+        "option_a": "Shanghai", "option_b": "Beijing", "option_c": "Tianjin", "option_d": "Qingdao",
+        "correct_answer": "C",
+        "explanation": "The 25th SCO Summit was held in Tianjin, China, on August 31 - September 1, 2025 — the largest SCO summit ever. Key outcomes: Tianjin Declaration; SCO Development Strategy 2026-2035; agreement to establish an SCO Development Bank; Laos accepted as a partner (taking SCO to a 27-nation family). PM Modi attended; Kyrgyzstan took over rotating SCO presidency for 2025-26.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: SCO Development Bank ===
+    {
+        "id": 20154,
+        "question": "Which major financial institution did SCO members agree to establish at the Tianjin Summit (September 2025)?",
+        "option_a": "SCO Climate Fund", "option_b": "SCO Development Bank", "option_c": "Eurasian Reserve Currency", "option_d": "SCO Investment Guarantee Agency",
+        "correct_answer": "B",
+        "explanation": "SCO members agreed at the Tianjin Summit (Sept 2025) to establish an SCO Development Bank to finance infrastructure and economic programmes — a long-discussed Chinese proposal. Other agreements: SCO Universal Center for Countering Security Challenges and Threats, Information Security Center, Center for Combating Transnational Organized Crime, and Anti-Drug Center.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: BRICS partner countries ===
+    {
+        "id": 20155,
+        "question": "Which of the following is NOT a BRICS Partner Country (a separate category introduced at the Kazan Summit 2024) as of 2026?",
+        "option_a": "Belarus", "option_b": "Cuba", "option_c": "Vietnam", "option_d": "Pakistan",
+        "correct_answer": "D",
+        "explanation": "BRICS Partner Countries (introduced at Kazan 2024) as of 2026 are: Belarus, Bolivia, Cuba, Kazakhstan, Malaysia, Nigeria, Thailand, Uganda, Uzbekistan and Vietnam (10 partners). Pakistan is NOT a BRICS partner. With 10 full members + 10 partners, BRICS-20 covers ~55-56% of world population.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: BRICS-2026 Summit location India ===
+    {
+        "id": 20156,
+        "question": "The 19th BRICS Summit, under India's 2026 chairmanship (theme 'Vikasam for All'), is scheduled for which month in India?",
+        "option_a": "April 2026", "option_b": "June 2026", "option_c": "August-September 2026", "option_d": "December 2026",
+        "correct_answer": "C",
+        "explanation": "India is hosting the 19th BRICS Summit in August-September 2026 under its 2026 chairmanship. The BRICS-2026 logo and theme 'Vikasam for All' (Development for All) were launched on January 13, 2026. India assumed the BRICS chair on January 1, 2026, succeeding Brazil.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: ICC Khan misconduct ===
+    {
+        "id": 20157,
+        "question": "ICC Chief Prosecutor Karim Khan stepped aside in May 2025 amid a UN-led inquiry into misconduct allegations. Which two officials took over the Office's day-to-day functions?",
+        "option_a": "Fatou Bensouda and James Stewart", "option_b": "Nazhat Shameem Khan and Mame Mandiaye Niang", "option_c": "Luis Moreno Ocampo and Cherif Bassiouni", "option_d": "Patricia Scotland and Antonio Tajani",
+        "correct_answer": "B",
+        "explanation": "After Karim Khan (UK) stepped aside in May 2025 pending a UN OIOS inquiry into misconduct allegations (which he denies), Deputy Prosecutors Nazhat Shameem Khan (Fiji) and Mame Mandiaye Niang (Senegal) took the lead at the ICC Office of the Prosecutor. The ICC is headquartered in The Hague; in November 2024 it issued arrest warrants against Israeli PM Netanyahu and former Defence Minister Gallant.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: ICC sanctions Trump 2025 ===
+    {
+        "id": 20158,
+        "question": "Which US administration activated sanctions against International Criminal Court (ICC) prosecutors and judges in February 2025?",
+        "option_a": "Biden administration", "option_b": "Trump (second term) administration", "option_c": "Harris administration", "option_d": "Obama administration",
+        "correct_answer": "B",
+        "explanation": "President Donald Trump (second term, from January 20, 2025) signed an executive order on February 6, 2025, imposing sanctions on ICC prosecutors and judges over the November 2024 arrest warrants against Israeli PM Netanyahu and former DM Gallant. The US is not an ICC member; the Rome Statute (1998) governs the Court.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: OECD Cormann ===
+    {
+        "id": 20159,
+        "question": "Who is the Secretary-General of the OECD since June 1, 2021, and was re-appointed for a second 5-year term?",
+        "option_a": "Angel Gurría", "option_b": "Mathias Cormann", "option_c": "José Manuel Salazar-Xirinachs", "option_d": "Laurence Boone",
+        "correct_answer": "B",
+        "explanation": "Mathias Cormann (Australia), former Australian Finance Minister, is the 6th OECD Secretary-General since June 1, 2021, and was re-appointed for a second 5-year term (2026-2031). The OECD (HQ: Paris) has 38 members; current accession candidates include Argentina, Indonesia, Brazil, Peru, Romania, Bulgaria, Croatia and Thailand. India is a 'Key Partner' (applied 2023).",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: UNESCO new DG country ===
+    {
+        "id": 20160,
+        "question": "UNESCO Director-General Khaled El-Enany (in office from November 15, 2025) is from which country?",
+        "option_a": "Morocco", "option_b": "Tunisia", "option_c": "Egypt", "option_d": "Algeria",
+        "correct_answer": "C",
+        "explanation": "Khaled El-Enany is from Egypt — a renowned Egyptologist and former Egyptian Minister of Tourism & Antiquities (2019-2022). He is UNESCO's 12th DG, the first from an Arab country, elected in November 2025 with 172 of 174 votes. Campaign slogan: 'UNESCO for the People'.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: ASEAN 11th member Timor-Leste ===
+    {
+        "id": 20161,
+        "question": "Following the admission of Timor-Leste at the 47th ASEAN Summit (Kuala Lumpur, October 2025), how many full members does ASEAN have as of 2026?",
+        "option_a": "9", "option_b": "10", "option_c": "11", "option_d": "12",
+        "correct_answer": "C",
+        "explanation": "ASEAN has 11 full members as of 2026, after Timor-Leste (East Timor) was admitted as the 11th member at the 47th ASEAN Summit in Kuala Lumpur (October 2025) — the first ASEAN expansion since Cambodia joined in 1999. The 10 prior members: Brunei, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore, Thailand, Vietnam. ASEAN Secretariat: Jakarta.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
+    # === 🆕 GAP MCQ: India UNSC 2028-29 bid ===
+    {
+        "id": 20162,
+        "question": "India has formally bid to serve as a non-permanent member of the UN Security Council for which two-year term — which would be its 9th term if elected?",
+        "option_a": "2026-27", "option_b": "2028-29", "option_c": "2030-31", "option_d": "2032-33",
+        "correct_answer": "B",
+        "explanation": "India has formally bid for a UNSC non-permanent seat for the 2028-29 term (Asia-Pacific group) — its 9th term if elected. India has previously served on the UNSC eight times, most recently in 2021-22. India continues to seek a permanent UNSC seat as part of the G4 (with Brazil, Germany, Japan), pushing for UNSC reform.",
+        "folder": "AP_HC", "topic": "International_Current_Affairs",
+    },
 ]
 
 
@@ -1236,7 +1452,7 @@ def seed():
              correct_answer, explanation, folder, topic)
             VALUES (?,?,?,?,?,?,?,?,?,?)"""
 
-    cur.execute(delete_sql, (20001, 20150))
+    cur.execute(delete_sql, (20001, 20170))
     for q in INTL_MCQS:
         cur.execute(insert_sql, (
             q["id"], q["question"],
@@ -1246,7 +1462,7 @@ def seed():
         ))
     conn.commit()
     conn.close()
-    print(f"[seed_intl_orgs] {len(INTL_MCQS)} International Orgs 2025-2026 MCQs seeded (IDs 20001-20140, DELETE range 20001-20150). Force-refreshed.")
+    print(f"[seed_intl_orgs] {len(INTL_MCQS)} International Orgs 2025-2026 MCQs seeded (IDs 20001-20162, DELETE range 20001-20170). Force-refreshed.")
 
 
 if __name__ == "__main__":
