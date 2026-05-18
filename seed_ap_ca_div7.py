@@ -8,6 +8,19 @@ AUDIT LOG (2026-05-18):
   per HTML source (div07_history_freedom_fighters.html) which clearly states
   "మే 4, 1897 (కొందరి ప్రకారం 1898)". The month is May, not July.
   Both MCQs with the wrong month were corrected.
+
+BATCH D2 AUDIT (2026-05-18):
+- FIXED state flower: was "సంపంగి (Champa)" → now "మల్లి/జాజి (Jasmine)" per
+  official AP tourism portal. (Some older sources list Water Lily — added note.)
+- FIXED state tree distractors: option labels "జువ్వి (నీమ్)" and "మేడి (Neem)"
+  incorrectly equated Ficus/Peepul with Neem. Cleaned up to: Neem / Ficus /
+  Peepul / Jamun — each correctly labelled.
+- FIXED state animal explanation: was "కర్నూలు జిల్లాలో" — corrected to
+  "నంద్యాల జిల్లా (Rollapadu WLS) మరియు తిరుపతి జిల్లాలో" per post-2022 districts.
+- FIXED district reorganisation explanation: was muddled "13→26→26+2=26".
+  Now: 13→26 in Apr 2022; Banaganapalle 2025 reorg kept count at 26.
+- REMOVED 1 duplicate MCQ: Alluri 125th jayanti year (asked twice at
+  section_idx 5 and section_idx 1).
 - VERIFIED: "వేయి స్తంభాల గుడి ఎక్కడ ఉంది?" (వరంగల్) — kept because it is
   legitimate AP history content (Kakatiya dynasty, a dynasty central to AP history);
   the note in the explanation that it is now in Telangana is accurate context.
@@ -526,17 +539,7 @@ MCQ_DATA = [
         'answer': 'B',
         'explanation_te': 'కందుకూరి వీరేశలింగం పంతులు తెలుగు సాహిత్య పితామహుడు మరియు సంఘ సంస్కర్త. వితంతు వివాహాలను ప్రోత్సహించాడు, బాలికల విద్య కోసం పోరాడాడు.',
     },
-    {
-        'section_idx': 1,
-        'difficulty': 'easy',
-        'question_te': 'అల్లూరి సీతారామ రాజు 125వ జయంతి ఏ సంవత్సరంలో జరిగింది?',
-        'opt_a': '2020',
-        'opt_b': '2021',
-        'opt_c': '2022',
-        'opt_d': '2023',
-        'answer': 'C',
-        'explanation_te': 'అల్లూరి సీతారామ రాజు 125వ జయంతి 2022లో జాతీయ స్థాయిలో నిర్వహించబడింది. PM మోదీ ఆయన విగ్రహాన్ని భీమవరంలో ఆవిష్కరించారు.',
-    },
+    # DUP REMOVED (Batch D2): "Alluri 125వ జయంతి ఏ సంవత్సరం?" was already asked at section_idx 5 above.
     {
         'section_idx': 1,
         'difficulty': 'hard',
@@ -689,18 +692,18 @@ MCQ_DATA = [
         'opt_c': 'నల్ల జింక (కృష్ణ జింక)',
         'opt_d': 'గజం',
         'answer': 'C',
-        'explanation_te': 'నల్ల జింక (Blackbuck / కృష్ణ జింక) AP రాష్ట్ర జంతువు. ఇది AP లో ముఖ్యంగా కర్నూలు జిల్లాలో కనుగొనబడుతుంది.',
+        'explanation_te': 'నల్ల జింక (Blackbuck / కృష్ణ జింక) AP రాష్ట్ర జంతువు. ఇది AP లో ముఖ్యంగా నంద్యాల జిల్లా (Rollapadu Wildlife Sanctuary) మరియు తిరుపతి జిల్లాలో కనుగొనబడుతుంది.',
     },
     {
         'section_idx': 4,
         'difficulty': 'medium',
-        'question_te': 'AP రాష్ట్ర పుష్పం ఏది?',
-        'opt_a': 'బంతి',
-        'opt_b': 'సంపంగి',
+        'question_te': 'AP రాష్ట్ర పుష్పం (state flower) ఏది?',
+        'opt_a': 'బంతి (Marigold)',
+        'opt_b': 'సంపంగి (Champa)',
         'opt_c': 'నల్లేరు',
-        'opt_d': 'జాజి',
-        'answer': 'B',
-        'explanation_te': 'సంపంగి (Champa/Plumeria) AP రాష్ట్ర పుష్పం. ఇది తెలుగు సంస్కృతిలో ముఖ్యమైన పూవు.',
+        'opt_d': 'మల్లి/జాజి (Jasmine)',
+        'answer': 'D',
+        'explanation_te': 'మల్లి (Jasmine / Mallika) AP రాష్ట్ర పుష్పం. తెలుగు సంస్కృతిలో జాజి, మల్లి, విరజాజి అనే రకాలు అన్నీ Jasmine కుటుంబానికి చెందినవే. (Some older sources list Water Lily; official AP tourism portal uses Jasmine.)',
     },
     {
         'section_idx': 4,
@@ -733,7 +736,7 @@ MCQ_DATA = [
         'opt_c': '2022',
         'opt_d': '2023',
         'answer': 'C',
-        'explanation_te': 'ఏప్రిల్ 4, 2022న AP ప్రభుత్వం 13 జిల్లాలను 26 జిల్లాలుగా విభజించింది. తర్వాత ఇవి 2 కొత్త జిల్లాలు చేర్చడంతో మొత్తం 26 జిల్లాలయ్యాయి.',
+        'explanation_te': 'ఏప్రిల్ 4, 2022న AP ప్రభుత్వం 13 జిల్లాలను 26 జిల్లాలుగా విభజించింది. ఇది AP చరిత్రలో అతిపెద్ద పరిపాలనా పునర్వ్యవస్థీకరణ. తదనంతరం 2025 జనవరిలో బనగానపల్లె జిల్లా పునర్వ్యవస్థీకరణ జరిగినా మొత్తం జిల్లాల సంఖ్య 26గానే ఉంది.',
     },
     {
         'section_idx': 5,
@@ -848,13 +851,13 @@ MCQ_DATA = [
     {
         'section_idx': 4,
         'difficulty': 'medium',
-        'question_te': 'AP రాష్ట్ర వృక్షం ఏది?',
-        'opt_a': 'వేప',
-        'opt_b': 'జువ్వి (నీమ్)',
-        'opt_c': 'మేడి (Neem)',
-        'opt_d': 'నేరేడు',
+        'question_te': 'AP రాష్ట్ర వృక్షం (state tree) ఏది?',
+        'opt_a': 'వేప (Neem)',
+        'opt_b': 'జువ్వి (Ficus)',
+        'opt_c': 'మేడి (Peepul)',
+        'opt_d': 'నేరేడు (Jamun)',
         'answer': 'A',
-        'explanation_te': 'వేప (Neem) AP రాష్ట్ర వృక్షం. ఇది AP అంతటా సహజంగా పెరిగే వృక్షం మరియు అనేక ఔషధ గుణాలు కలిగి ఉంది.',
+        'explanation_te': 'వేప (Neem / Azadirachta indica) AP రాష్ట్ర వృక్షం. ఇది AP అంతటా సహజంగా పెరిగే వృక్షం; అనేక ఔషధ గుణాలు కలిగి ఉంది.',
     },
     {
         'section_idx': 0,

@@ -1418,6 +1418,87 @@ def pyq_reseed():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+@app.route('/api/ap-ca/force-reseed')
+def ap_ca_force_reseed():
+    """Force-wipe and re-seed AP Current Affairs divisions from their current seed files.
+    Pass ?pin=<ADMIN_PIN>. Optional ?div=N (1-10) to reseed only one division;
+    omit ?div= to reseed all 10 divisions.
+
+    Each div seeder DELETEs all existing chapter_mcqs rows linked to that div's
+    study_note before re-inserting from the seed file's current MCQ_DATA. So MCQs
+    removed from the seed file (audit batches) will be flushed from the DB here.
+    """
+    if (request.args.get('pin') or '') != ADMIN_PIN:
+        return jsonify({'error': 'unauthorized'}), 401
+
+    div_param = request.args.get('div', '').strip()
+    if div_param:
+        try:
+            target_div = int(div_param)
+        except ValueError:
+            return jsonify({'error': 'invalid div param'}), 400
+        if not (1 <= target_div <= 10):
+            return jsonify({'error': 'div must be 1-10'}), 400
+        divs_to_seed = [target_div]
+    else:
+        divs_to_seed = list(range(1, 11))
+
+    import importlib
+    ph = '%s' if USE_POSTGRES else '?'
+    results = []
+    for ch_num in divs_to_seed:
+        mod_name = f'seed_ap_ca_div{ch_num}'
+        fn_suffix = f'ap_ca_div{ch_num}'
+        conn = get_db()
+        try:
+            mod = importlib.import_module(mod_name)
+            notes_fn = getattr(mod, f'_seed_{fn_suffix}_notes_inner')
+            mcqs_fn  = getattr(mod, f'_seed_{fn_suffix}_mcqs_inner')
+            notes_fn(conn, db_exec, row_to_dict, USE_POSTGRES, force=True)
+            conn.commit()
+            mcqs_fn(conn, db_exec, row_to_dict, USE_POSTGRES)
+            conn.commit()
+            # Verify
+            nr = db_exec(conn,
+                f"SELECT id FROM study_notes WHERE topic={ph} AND chapter_num={ph}",
+                ('AP_Current_Affairs', ch_num)).fetchone()
+            cnt = 0
+            if nr:
+                nid = row_to_dict(nr).get('id') if nr else None
+                if nid is not None:
+                    cr = db_exec(conn,
+                        f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}",
+                        (nid,)).fetchone()
+                    cnt = cr[0] if cr else 0
+            results.append({'div': ch_num, 'success': True, 'mcqs_loaded': cnt})
+        except Exception as e:
+            try: conn.rollback()
+            except: pass
+            results.append({'div': ch_num, 'success': False, 'error': str(e)[:300]})
+        finally:
+            try: conn.close()
+            except: pass
+
+    # Total count across all AP CA divisions
+    total = 0
+    try:
+        conn2 = get_db()
+        cr = db_exec(conn2,
+            "SELECT COUNT(*) FROM chapter_mcqs cm JOIN study_notes sn ON cm.study_note_id=sn.id WHERE sn.topic='AP_Current_Affairs'"
+        ).fetchone()
+        total = cr[0] if cr else 0
+        try: conn2.close()
+        except: pass
+    except Exception: pass
+
+    return jsonify({
+        'success': all(r.get('success') for r in results),
+        'divs_reseeded': len(results),
+        'total_ap_ca_mcqs_in_db': total,
+        'per_div': results,
+    })
+
+
 # ─────────────────────────────────────────────
 # HELPERS
 # ─────────────────────────────────────────────

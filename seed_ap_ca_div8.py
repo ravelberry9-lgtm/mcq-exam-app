@@ -11,6 +11,18 @@ AUDIT LOG (2026-05-18):
   badminton player at 2024 Paris Olympics (men's doubles with Chirag Shetty)
 - No Telangana-specific questions found/included.
 - seed_ap_ca_div8_mcqs.py is a standalone tuple export; this file is canonical.
+
+BATCH D2 AUDIT (2026-05-18):
+- FIXED fabricated "సెలూరు అభయారణ్యం" → replaced with the real "రోళ్లపాడు
+  వన్యప్రాణి అభయారణ్యం" (Rollapadu WLS, నందయాల జిల్లా) — the actual AP sanctuary
+  famous for Blackbucks & Great Indian Bustard. Seluru sanctuary does not exist.
+- FIXED AP forest area: was "~23,000 sq km / 17%" — corrected to "~29,800 sq km
+  / 18.27%" per ISFR 2023 (India State of Forest Report).
+- FIXED AP solar capacity: was "9 GW కంటే ఎక్కువ" — corrected to "~6 GW" per
+  MNRE 2024 official installed capacity data (utility + rooftop combined).
+- SOFTENED SHAR launch breakdown: was "88 success, 5 partial, 11 failure" — the
+  failure count was inflated. Replaced with "90%+ success rate; consult ISRO
+  official stats" to avoid claims that aren't ISRO-verified.
 """
 
 import os
@@ -285,7 +297,7 @@ MCQ_DATA = [
         "opt_c": "100",
         "opt_d": "104",
         "answer": "D",
-        "explanation_te": "డిసెంబర్ 2025 నాటికి SDSC SHAR నుండి మొత్తం 104 ప్రయోగాలు జరిగాయి (88 సఫలం, 5 పాక్షిక, 11 వైఫల్యం)."
+        "explanation_te": "డిసెంబర్ 2025 నాటికి SDSC SHAR నుండి మొత్తం 104 ప్రయోగ మిషన్‌లు (orbital launches) చేపట్టారు. విజయవంతమైన మిషన్ల శాతం 90% పైగా ఉంది. (Exact success/failure breakdown ISRO అధికారిక గణాంకాల కోసం చూడండి.)"
     },
     # Section 7 — Rapid revision
     {
@@ -524,13 +536,13 @@ MCQ_DATA = [
     {
         'section_idx': 4,
         'difficulty': 'easy',
-        'question_te': 'AP లో మొత్తం అడవుల విస్తీర్ణం సుమారు ఎంత?',
+        'question_te': 'AP లో మొత్తం అడవుల విస్తీర్ణం (ISFR 2023 ప్రకారం) సుమారు ఎంత?',
         'opt_a': '10,000 చ.కి.మీ',
         'opt_b': '23,000 చ.కి.మీ',
-        'opt_c': '50,000 చ.కి.మీ',
-        'opt_d': '5,000 చ.కి.మీ',
-        'answer': 'B',
-        'explanation_te': 'AP లో మొత్తం అడవుల విస్తీర్ణం సుమారు 23,000 చ.కి.మీ. రాష్ట్ర మొత్తం భూమిలో సుమారు 17% అడవులు ఉన్నాయి.',
+        'opt_c': '29,800 చ.కి.మీ',
+        'opt_d': '50,000 చ.కి.మీ',
+        'answer': 'C',
+        'explanation_te': 'India State of Forest Report (ISFR) 2023 ప్రకారం AP అడవుల విస్తీర్ణం ~29,784 చ.కి.మీ — రాష్ట్ర మొత్తం భౌగోళిక ప్రాంతంలో సుమారు 18.27%.',
     },
     {
         'section_idx': 5,
@@ -557,13 +569,13 @@ MCQ_DATA = [
     {
         'section_idx': 6,
         'difficulty': 'medium',
-        'question_te': 'AP లో Solar Energy సంస్థాపన సామర్థ్యం 2024 నాటికి ఎంత?',
-        'opt_a': '2 GW',
-        'opt_b': '5 GW',
-        'opt_c': '9 GW కంటే ఎక్కువ',
-        'opt_d': '1 GW',
-        'answer': 'C',
-        'explanation_te': 'AP 2024 నాటికి 9 GW కంటే ఎక్కువ Solar Energy సంస్థాపన సామర్థ్యం సాధించింది. AP సోలార్ శక్తిలో దేశంలో అగ్రగాముల్లో ఒకటి.',
+        'question_te': 'AP లో Solar Energy సంస్థాపన సామర్థ్యం (installed capacity) 2024 నాటికి సుమారు ఎంత?',
+        'opt_a': '~1 GW',
+        'opt_b': '~6 GW',
+        'opt_c': '~15 GW',
+        'opt_d': '~25 GW',
+        'answer': 'B',
+        'explanation_te': 'MNRE 2024 డేటా ప్రకారం AP లో installed solar capacity సుమారు 5.5–6 GW (utility + rooftop కలిపి). AP solar PLI పథకాల కింద గ్రీన్ హైడ్రోజన్ హబ్‌గా అభివృద్ధి చెందుతోంది.',
     },
     {
         'section_idx': 4,
@@ -623,13 +635,13 @@ MCQ_DATA = [
     {
         'section_idx': 5,
         'difficulty': 'easy',
-        'question_te': 'AP లో సెలూరు అభయారణ్యం ఎందుకు ప్రసిద్ధి?',
+        'question_te': 'AP లో రోళ్లపాడు వన్యప్రాణి అభయారణ్యం ఎందుకు ప్రసిద్ధి?',
         'opt_a': 'ఎర్ర చందనం',
-        'opt_b': 'నల్ల జింక (Blackbuck)',
+        'opt_b': 'నల్ల జింక (Blackbuck) & గ్రేట్ ఇండియన్ బస్టర్డ్',
         'opt_c': 'పులులు',
         'opt_d': 'ఏనుగులు',
         'answer': 'B',
-        'explanation_te': 'సెలూరు అభయారణ్యం ప్రకాశం జిల్లాలో నల్ల జింకలకు (Blackbuck/కృష్ణ జింక) ప్రసిద్ధి. కృష్ణ జింక AP రాష్ట్ర జంతువు.',
+        'explanation_te': 'రోళ్లపాడు వన్యప్రాణి అభయారణ్యం (Rollapadu Wildlife Sanctuary) నందయాల జిల్లాలో ఉంది — నల్ల జింకలకు (Blackbuck/కృష్ణ జింక) మరియు గ్రేట్ ఇండియన్ బస్టర్డ్ పక్షికి ప్రసిద్ధి. కృష్ణ జింక AP రాష్ట్ర జంతువు.',
     },
 ]
 

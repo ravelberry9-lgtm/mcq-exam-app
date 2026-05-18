@@ -11,6 +11,20 @@ AUDIT LOG (2026-05-18):
 - No duplicate questions with other div files found.
 - FILE IS CLEAN — no changes to MCQ data required.
 NOTE: seed_ap_ca_div6_complete.py is an exact duplicate of this file (same content).
+
+BATCH D3 AUDIT (2026-05-18):
+- MERGED 3 filler-stem Swarnandhra MCQs (Green Energy/పేదరిక/నీటి భద్రత స్థానం)
+  into ONE proper "first guiding principle" MCQ with distinct options.
+- FIXED "Swarnandhra 2047 ఆవిష్కారం" — replaced gibberish option "నెలూర్ జూన్"
+  with PM Modi / CM Naidu / DCM Pawan / NITI Aayog. Answer: CM Naidu.
+- REWROTE "సదస్సుకు ఆర్థిక సంస్థలు?" filler — now asks the CII summit host city.
+- REMOVED "BQRF సంక్షిప్త రూపం" — acronym "Bharat Quantum Reference Facilities"
+  could not be verified against any National Quantum Mission document.
+- REMOVED "Quantum Test Beds @ SRM Amaravati + Medha Towers" — locations claim
+  unverified against AP IT Dept official press releases.
+- REWROTE bare-stem port MCQs ("విశాఖపట్నం పోర్టు స్థితి?", "మచిలీపట్నం పోర్టు?")
+  into properly framed questions with full context.
+- REMOVED Barites duplicate (Section 2 question repeated in Section 5).
 """
 
 import os
@@ -75,10 +89,8 @@ MCQ_DATA = [
     (1, 1, "Swarnandhra 2047 మార్గదర్శక సూత్రాలు సంఖ్య?", "7", "8", "10", "12", "c", "10 మార్గదర్శక సూత్రాలు."),
     (1, 3, "Swarnandhra Action Units ఏ స్థాయిలో అందిస్తున్నారు?", "జిల్లా", "అసెంబ్లీ నియోజకవర్గం", "మండలం", "పాఞ్చాయితీ", "b", "175 అసెంబ్లీ నియోజకవర్గాలలో Action Units."),
     (1, 1, "తలసరి ఆదాయ లక్ష్యం?", "$25,000", "$35,000", "$43,000", "$50,000", "c", "తలసరి ఆదాయ లక్ష్యం $43,000."),
-    (1, 2, "Green Energy సూత్రం స్థానం?", "చిన్న అంశం", "ఐచ్ఛిక", "10 సూత్రాలలో ఒకటి", "నిర్ణయ సమయం", "c", "Green Energy 10 సూత్రాలలో ఒకటి."),
-    (1, 1, "పేదరిక నిర్మూలన స్థానం?", "చిన్న", "ఐచ్ఛిక", "1వ సూత్రం", "లేదు", "c", "పేదరిక నిర్మూలన 1వ సూత్రం."),
-    (1, 2, "నీటి భద్రత Swarnandhra లో?", "చిన్న భాగం", "రెండవ ప్రాధాన్యం", "ముఖ్య సూత్రం", "చిన్న", "c", "నీటి భద్రత ముఖ్య సూత్రాలలో ఒకటి."),
-    (1, 1, "Swarnandhra 2047 అవిష్కారం చేసిన వ్యక్తి?", "నెలూర్ జూన్", "చంద్రబాబు నాయుడు", "లోకేష్ నాయుడు", "కమిటీ", "b", "CM చంద్రబాబు నాయుడు ఆవిష్కారం."),
+    (1, 2, "Swarnandhra 2047 విజన్ 10 మార్గదర్శక సూత్రాల్లో మొదటి సూత్రం ఏది?", "Green Energy", "నీటి భద్రత", "పేదరిక నిర్మూలన", "డిజిటల్ గవర్నెన్స్", "c", "Swarnandhra 2047 విజన్‌లో పేదరిక నిర్మూలన 1వ మార్గదర్శక సూత్రం. మిగతా సూత్రాలలో Green Energy, నీటి భద్రత, మానవ మూలధనం, మౌలిక సదుపాయాలు ఉన్నాయి."),
+    (1, 1, "Swarnandhra 2047 విజన్‌ను ఎవరు ఆవిష్కరించారు?", "PM నరేంద్ర మోదీ", "CM చంద్రబాబు నాయుడు", "DCM పవన్ కళ్యాణ్", "నీతి ఆయోగ్ ఛైర్మన్", "b", "CM చంద్రబాబు నాయుడు డిసెంబర్ 14, 2024న Swarnandhra 2047 విజన్‌ను ఆవిష్కరించారు."),
 
     # Section 2: AP Agriculture Rankings (10 MCQs)
     (2, 1, "AP ఏ పంటల సాగులో దేశంలో 1వ స్థానం?", "గోధుమ", "మిరపకాయ", "గవారం", "చెరకు", "b", "AP 1వ స్థానం: మిరపకాయ, కోకో, ఆయిల్ పాం, పప్పాయి, టమాట, నిమ్మ."),
@@ -102,7 +114,7 @@ MCQ_DATA = [
     (3, 1, "CII సదస్సులో పాల్గొన్న దేశాలు?", "30", "38", "45", "55", "c", "45 దేశాలు."),
     (3, 2, "CII సదస్సులో పాల్గొన్న రంగాలు?", "8", "10", "12", "14", "c", "12 రంగాలు."),
     (3, 2, "CII సదస్సు నిర్ణీత కాలం?", "నవం 10-12", "నవం 14-15", "డిసం 1-2", "జనం 5-6", "b", "నవంబర్ 14-15, 2025."),
-    (3, 1, "సదస్సుకు ప్రతిభాశాలిన ఆర్థిక సంస్థలు?", "ఉన్నాయి", "లేవు", "పాక్షికం", "తెలియదు", "a", "అనేక దేశీయ-విదేశీ సంస్థలు."),
+    (3, 1, "CII Partnership Summit 2025 AP లో ఏ నగరంలో జరిగింది?", "విశాఖపట్నం", "విజయవాడ", "అమరావతి", "తిరుపతి", "a", "CII Partnership Summit విశాఖపట్నంలో నవంబర్ 14-15, 2025న జరిగింది. 45 దేశాలు, 12 రంగాలు, 16.31 లక్షల ఉద్యోగ అవకాశాలు."),
 
     # Section 4: Google AI Hub & Quantum Computing (10 MCQs)
     (4, 1, "Google-AP AI Hub ఒప్పందం ఏ తేదీన?", "సెప్టెంబర్ 2025", "అక్టోబర్ 14, 2025", "నవంబర్ 2025", "డిసెంబర్ 2025", "b", "అక్టోబర్ 14, 2025న దిల్లీ తాజ్ మాన్‌సింగ్ హోటల్."),
@@ -112,9 +124,13 @@ MCQ_DATA = [
     (4, 1, "IBM Quantum Computer Qubit సంఖ్య?", "100", "133", "150", "175", "b", "133-Qubit, 5K gates."),
     (4, 1, "IBM Quantum Computer నగరం?", "విశాఖపట్నం", "విజయవాడ", "అమరావతి", "తిరుపతి", "c", "అమరావతి AQCC."),
     (4, 1, "దేశంలోనే తొలి Quantum Hardware Test Beds ఎప్పుడు?", "జూన్ 14, 2025", "సెప్టెంబర్ 14, 2025", "ఏప్రిల్ 14, 2026", "జూలై 14, 2026", "c", "ఏప్రిల్ 14, 2026 (World Quantum Day)."),
-    (4, 1, "Quantum Test Beds నగరాలు?", "అమరావతి", "విజయవాడ", "SRM (అమరావతి) & Medha (విజయవాడ)", "తిరుపతి", "c", "SRM విశ్వవిద్యాలయం (అమరావతి) & Medha Towers (విజయవాడ)."),
+    # NOTE (Batch D3): "Quantum Test Beds @ SRM Amaravati & Medha Towers Vijayawada" claim
+    # could not be independently verified against AP IT Dept official press releases. MCQ removed
+    # until confirmed. Refer to AQCC (Andhra Quantum Computing Centre) details from official sources.
     (4, 2, "IBM అద్దె ధర?", "₹15/చ.అ.", "₹20/చ.అ.", "₹30/చ.అ.", "₹50/చ.అ.", "c", "₹30/చ.అ. (2,000 చ.అ.)."),
-    (4, 1, "BQRF సంక్షిప్త రూపం?", "Bharat Quantum", "Reference Facilities", "Bharat Quantum Reference Facilities", "Broad Quantum", "c", "Bharat Quantum Reference Facilities."),
+    # REMOVED (Batch D3 audit): "BQRF సంక్షిప్త రూపం?" — the acronym "Bharat Quantum Reference Facilities"
+    # could not be verified against any official Government of India Quantum Mission document.
+    # India's national programme is "National Quantum Mission (NQM)" launched April 2023.
 
     # Section 5: ArcelorMittal Steel & Mineral Resources (10 MCQs)
     (5, 1, "AMNS steel కర్మాగారం నగరం?", "విశాఖపట్నం", "నక్కపల్లి", "కర్నూలు", "చిత్తూరు", "b", "నక్కపల్లి, అనకాపల్లి జిల్లా."),
@@ -126,7 +142,7 @@ MCQ_DATA = [
     (5, 1, "Ilmenite సంచయాలు?", "100 MT", "150 MT", "178.75 MT", "220 MT", "c", "178.75 MT."),
     (5, 1, "Sillimanite సంచయాలు?", "50 MT", "70 MT", "81.85 MT", "100 MT", "c", "81.85 MT."),
     (5, 1, "Garnet సంచయాలు?", "45 MT", "60 MT", "67.30 MT", "75 MT", "c", "67.30 MT."),
-    (5, 2, "Barites ఉత్పత్తిలో AP స్థానం?", "1వ", "2వ", "3వ", "4వ", "a", "AP 1వ స్థానం (కడప జిల్లా)."),
+    # DUP REMOVED (Batch D3): "Barites — AP rank 1st" was already asked in Section 2 (line 93). Same fact, same options.
 
     # Section 6: Infrastructure — Ports & Airports (10 MCQs)
     (6, 1, "AP ప్రధాన పోర్టు?", "కృష్ణపట్నం", "విశాఖపట్నం", "కాకినాడ", "గంగవరం", "b", "విశాఖపట్నం — Eastern Coast అతిపెద్ద."),
@@ -135,8 +151,8 @@ MCQ_DATA = [
     (6, 1, "AP అంతర్జాతీయ విమానాశ్రయాలు సంఖ్య?", "2", "3", "4", "5", "b", "3 (విశాఖపట్నం, తిరుపతి, విజయవాడ)."),
     (6, 1, "భోగాపురం విమానాశ్రయం నిర్మాత?", "Airports Authority", "GMR Group", "Adani Enterprises", "Reliance Infrastructure", "b", "GMR Group."),
     (6, 2, "AP దేశీయ విమానాశ్రయాలు?", "2", "3", "4", "5", "a", "2 (రాజమహేంద్రవరం, దొనకొండ)."),
-    (6, 1, "విశాఖపట్నం పోర్టు స్థితి?", "Major పోర్టు", "Non-major", "మీడియం", "చిన్న", "a", "Major పోర్టు."),
-    (6, 2, "మచిలీపట్నం పోర్టు?", "Major", "Non-major", "గ్రీన్‌ఫీల్డ్", "చిన్న", "c", "గ్రీన్‌ఫీల్డ్ పోర్టు."),
+    (6, 1, "AP లో Government of India చే మేజర్ పోర్ట్ హోదా కలిగిన పోర్టు ఏది?", "విశాఖపట్నం", "కృష్ణపట్నం", "కాకినాడ", "గంగవరం", "a", "విశాఖపట్నం పోర్టు AP లో ఏకైక మేజర్ పోర్ట్ (Government of India administered). మిగిలినవి AP Maritime Board కింద non-major ports."),
+    (6, 2, "మచిలీపట్నం వద్ద కొత్తగా అభివృద్ధి చేస్తున్న పోర్టు ఏ రకానికి చెందుతుంది?", "Major", "Non-major (existing)", "గ్రీన్‌ఫీల్డ్ పోర్టు", "Captive", "c", "మచిలీపట్నం గ్రీన్‌ఫీల్డ్ పోర్టుగా (నుండి కొత్తగా నిర్మిస్తున్న) అభివృద్ధి జరుగుతోంది. AP లో 4 గ్రీన్‌ఫీల్డ్ పోర్టులు: భావనపాడు, రామాయపట్నం, మచిలీపట్నం, కాకినాడ SEZ."),
     (6, 1, "గ్రీన్‌ఫీల్డ్ పోర్టుల సంఖ్య (నిర్మాణంలో)?", "2", "3", "4", "5", "c", "4 (భావనపాడు, రామాయపట్నం, మచిలీపట్నం, కాకినాడ SEZ)."),
     (6, 2, "AP పోర్టుల స్థానాల్లో rank?", "1వ", "2వ", "3వ", "4వ", "c", "3వ (కార్గోలో)."),
 ]
