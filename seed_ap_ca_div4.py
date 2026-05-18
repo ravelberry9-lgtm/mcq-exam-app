@@ -118,32 +118,245 @@ SECTIONS_JSON = [
     {
         "title": "AP Budget 2026-27 — ₹3,32,205 కోట్లు (Payyavula Keshav)",
         "sub": "Presented Feb 14, 2026 | FM Payyavula Keshav (3rd consecutive) | Revenue receipts ₹2,34,140 cr | Capex ₹53,915 cr (16%)",
-        "audio": "ఫిబ్రవరి 14, 2026న ఆర్థిక మంత్రి పయ్యావుల కేశవ్ AP Budget 2026-27 ప్రవేశపెట్టారు — మొత్తం ₹3,32,205.34 కోట్లు. ఇది ఆయన వరుసగా 3వ బడ్జెట్. రెవెన్యూ ఆదాయం ₹2,34,140 కోట్లు; రెవెన్యూ లోటు ₹22,002.50 కోట్లు; ద్రవ్య లోటు (Fiscal deficit) ₹75,868 కోట్లు; మూలధన వ్యయం (Capex) ₹53,915 కోట్లు (బడ్జెట్‌లో 16%). వ్యవసాయ బడ్జెట్: ₹53,752.12 కోట్లు (మంత్రి అచ్చెన్నాయుడు); అన్నదాత సుఖీభవ ₹6,600 కోట్లు; AP GSDP ₹17.62 లక్షల కోట్లు (వ్యవసాయ వాటా 33.2%); AP వ్యవసాయ వృద్ధి 7.83% (జాతీయ 0.80% తో పోలిస్తే). అమరావతి నిర్మాణానికి ₹6,000 కోట్లు; World Bank+ADB రుణం ₹13,500 కోట్లు; పోలవరం ముందస్తు ₹6,105 కోట్లు. క్వాంటం వ్యాలీకి ₹10 కోట్లు; AP Fibernet ₹252.67 కోట్లు; AP Space Application Centre ₹8.05 కోట్లు."
+        "audio": "ఫిబ్రవరి 14, 2026న ఆర్థిక మంత్రి పయ్యావుల కేశవ్ AP Budget 2026-27 ప్రవేశపెట్టారు — మొత్తం ₹3,32,205.34 కోట్లు. ఇది ఆయన వరుసగా 3వ బడ్జెట్. రెవెన్యూ ఆదాయం ₹2,34,140 కోట్లు; రెవెన్యూ లోటు ₹22,002.50 కోట్లు; ద్రవ్య లోటు (Fiscal deficit) ₹75,868 కోట్లు; మూలధన వ్యయం (Capex) ₹53,915 కోట్లు (బడ్జెట్‌లో 16%). వ్యవసాయ బడ్జెట్: ₹53,752.12 కోట్లు (మంత్రి అచ్చెన్నాయుడు); అన్నదాత సుఖీభవ ₹6,600 కోట్లు; AP GSDP ₹17.62 లక్షల కోట్లు (వ్యవసాయ వాటా 33.2%); AP వ్యవసాయ వృద్ధి 7.83% (జాతీయ 0.80% తో పోలిస్తే). అమరావతి నిర్మాణానికి ₹6,000 కోట్లు; World Bank+ADB రుణం ₹13,500 కోట్లు; పోలవరం ముందస్తు ₹6,105 కోట్లు. క్వాంటం వ్యాలీకి ₹10 కోట్లు; AP Fibernet ₹252.67 కోట్లు; AP Space Application Centre ₹8.05 కోట్లు.",
+        "html": """<div class="concept-cover">
+  <h1>AP Budget 2026-27 &nbsp;<span class="bi-te">/ AP బడ్జెట్ 2026-27</span></h1>
+  <div class="sub">Feb 14, 2026 • FM Payyavula Keshav (3rd consecutive) • Rs.3,32,205.34 crore</div>
+</div>
+
+<p><b>Headline:</b> Finance Minister Payyavula Keshav (Uravakonda, Anantapur) tabled the Andhra Pradesh Budget 2026-27 in the Assembly on <b>February 14, 2026</b>. Total outlay Rs.3,32,205.34 crore — his 3rd consecutive AP budget. Theme: "Swarnandhra Pradesh @ 2047" with continued focus on Super Six schemes, Polavaram, and Amaravati.</p>
+<p class="bi-te">ఆర్థిక మంత్రి పయ్యావుల కేశవ్ ఫిబ్రవరి 14, 2026న AP బడ్జెట్ 2026-27 ప్రవేశపెట్టారు — మొత్తం ₹3,32,205.34 కోట్లు. ఇది ఆయన వరుసగా 3వ బడ్జెట్. "స్వర్ణాంధ్రప్రదేశ్ @ 2047" థీమ్‌తో సూపర్ సిక్స్ + పోలవరం + అమరావతి కేంద్రంగా.</p>
+
+<div class="section-hdr">Key Fiscal Numbers / కీలక ఆర్థిక గణాంకాలు</div>
+<table class="key-table">
+<tr><th>Item</th><th>Amount (Rs. crore)</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Total Budget Outlay</b></td><td><b>3,32,205.34</b></td><td class="bi-te">మొత్తం బడ్జెట్</td></tr>
+<tr><td>Revenue Receipts</td><td>2,34,140</td><td class="bi-te">రెవెన్యూ ఆదాయం</td></tr>
+<tr><td>Revenue Deficit</td><td>22,002.50</td><td class="bi-te">రెవెన్యూ లోటు</td></tr>
+<tr><td>Fiscal Deficit</td><td>75,868</td><td class="bi-te">ద్రవ్య లోటు</td></tr>
+<tr><td>Capital Expenditure (Capex)</td><td>53,915 (16% of budget)</td><td class="bi-te">మూలధన వ్యయం</td></tr>
+<tr><td>Agriculture Budget</td><td>53,752.12</td><td class="bi-te">వ్యవసాయ బడ్జెట్ (అచ్చెన్నాయుడు)</td></tr>
+<tr><td>Annadata Sukhibhava</td><td>6,600</td><td class="bi-te">అన్నదాత సుఖీభవ</td></tr>
+</table>
+
+<div class="section-hdr">Capital City &amp; Major Projects / అమరావతి + భారీ ప్రాజెక్టులు</div>
+<table class="key-table">
+<tr><th>Project</th><th>Allocation</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Amaravati construction</td><td>Rs.6,000 cr (state) + Rs.13,500 cr (WB+ADB loan)</td><td class="bi-te">అమరావతి నిర్మాణం</td></tr>
+<tr><td>Polavaram advance</td><td>Rs.6,105 crore</td><td class="bi-te">పోలవరం ముందస్తు</td></tr>
+<tr><td>Quantum Valley (Amaravati)</td><td>Rs.10 crore</td><td class="bi-te">క్వాంటం వ్యాలీ</td></tr>
+<tr><td>AP Fibernet</td><td>Rs.252.67 crore</td><td class="bi-te">AP ఫైబర్‌నెట్</td></tr>
+<tr><td>AP Space Application Centre</td><td>Rs.8.05 crore</td><td class="bi-te">AP స్పేస్ సెంటర్</td></tr>
+</table>
+
+<p><b>Economic context:</b> AP GSDP is Rs.17.62 lakh crore; agriculture's share is 33.2%. AP's agricultural growth at <b>7.83%</b> sharply outpaces the national average of <b>0.80%</b> — a key talking point. The fiscal deficit at Rs.75,868 cr translates to roughly 4.3% of GSDP, slightly above FRBM targets but within the borrowing window approved by the Centre.</p>
+<p class="bi-te">AP GSDP ₹17.62 లక్షల కోట్లు; వ్యవసాయ వాటా 33.2%. AP వ్యవసాయ వృద్ధి 7.83% — జాతీయ సగటు 0.80% తో పోలిస్తే చాలా అధికం. ద్రవ్య లోటు GSDP లో ~4.3% — FRBM లక్ష్యం కంటే కొంచెం ఎక్కువ, కానీ కేంద్రం ఇచ్చిన borrowing limit లోపలే.</p>
+
+<p><b>Trivia:</b> Keshav is the only AP FM to present 3 consecutive budgets in the current Naidu-IV tenure (2024-25, 2025-26, 2026-27). The 2025-26 budget was Rs.3,22,359 crore — so 2026-27 represents a ~3% nominal expansion.</p>"""
     },
     {
         "title": "కేంద్ర బడ్జెట్ 2026-27 — AP కేటాయింపులు",
         "sub": "Feb 1, 2026 | Polavaram ₹3,320.39 cr | Amaravati ₹1,561 cr (ADB+IBRD) | Industrial Corridors ₹3,000 cr | 4 SEZ Ports ₹400.37 cr",
-        "audio": "ఫిబ్రవరి 1, 2026న కేంద్ర ఆర్థిక మంత్రి కేంద్ర బడ్జెట్ 2026-27 ప్రవేశపెట్టారు. AP కి ముఖ్య కేటాయింపులు: పోలవరం ప్రాజెక్ట్‌కు ₹3,320.39 కోట్లు; అమరావతికి ₹1,561 కోట్లు (ADB + IBRD రుణాల ద్వారా); విశాఖ-చెన్నై, చెన్నై-బెంగళూరు, హైదరాబాద్-బెంగళూరు పారిశ్రామిక కారిడార్లకు ₹3,000 కోట్లు. 4 SEZ పోర్టులు — రామాయపట్నం, మచిలీపట్నం, భావనపాడు, కాకినాడ — కు ₹400.37 కోట్లు. 71 కొత్త అన్న కాంటీన్లు మంజూరు (మొత్తం 275 రాష్ట్రంలో). అరకు ట్రెక్కింగ్ ట్రయల్స్ కూడా ప్రకటించారు."
+        "audio": "ఫిబ్రవరి 1, 2026న కేంద్ర ఆర్థిక మంత్రి కేంద్ర బడ్జెట్ 2026-27 ప్రవేశపెట్టారు. AP కి ముఖ్య కేటాయింపులు: పోలవరం ప్రాజెక్ట్‌కు ₹3,320.39 కోట్లు; అమరావతికి ₹1,561 కోట్లు (ADB + IBRD రుణాల ద్వారా); విశాఖ-చెన్నై, చెన్నై-బెంగళూరు, హైదరాబాద్-బెంగళూరు పారిశ్రామిక కారిడార్లకు ₹3,000 కోట్లు. 4 SEZ పోర్టులు — రామాయపట్నం, మచిలీపట్నం, భావనపాడు, కాకినాడ — కు ₹400.37 కోట్లు. 71 కొత్త అన్న కాంటీన్లు మంజూరు (మొత్తం 275 రాష్ట్రంలో). అరకు ట్రెక్కింగ్ ట్రయల్స్ కూడా ప్రకటించారు.",
+        "html": """<div class="concept-cover">
+  <h1>Union Budget 2026-27 — AP Allocations &nbsp;<span class="bi-te">/ కేంద్ర బడ్జెట్ 2026-27</span></h1>
+  <div class="sub">Feb 1, 2026 • FM Nirmala Sitharaman • Special focus on AP infra</div>
+</div>
+
+<p><b>Headline:</b> The Union Budget 2026-27, presented by Finance Minister Nirmala Sitharaman on <b>February 1, 2026</b>, contained several specific allocations for Andhra Pradesh covering Polavaram, Amaravati, industrial corridors, port-SEZs, and the Anna Canteen network.</p>
+<p class="bi-te">కేంద్ర ఆర్థిక మంత్రి నిర్మలా సీతారామన్ ఫిబ్రవరి 1, 2026న కేంద్ర బడ్జెట్ 2026-27 ప్రవేశపెట్టారు. AP కి పోలవరం, అమరావతి, పారిశ్రామిక కారిడార్లు, SEZ పోర్టులు, అన్న కాంటీన్లకు ప్రత్యేక కేటాయింపులు చేశారు.</p>
+
+<div class="section-hdr">AP-Specific Allocations / AP కోసం కేటాయింపులు</div>
+<table class="key-table">
+<tr><th>Project / Scheme</th><th>Amount (Rs. crore)</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Polavaram Project</b></td><td>3,320.39</td><td class="bi-te">పోలవరం ప్రాజెక్ట్</td></tr>
+<tr><td><b>Amaravati capital</b></td><td>1,561 (via ADB + IBRD loans)</td><td class="bi-te">అమరావతి (ADB+IBRD రుణాల ద్వారా)</td></tr>
+<tr><td>Industrial Corridors (3)</td><td>3,000</td><td class="bi-te">వైజాగ్-చెన్నై + చెన్నై-బెంగళూరు + హైదరాబాద్-బెంగళూరు</td></tr>
+<tr><td>4 SEZ Ports</td><td>400.37</td><td class="bi-te">రామాయపట్నం, మచిలీపట్నం, భావనపాడు, కాకినాడ</td></tr>
+<tr><td>New Anna Canteens</td><td>71 sanctioned (state total: 275)</td><td class="bi-te">71 కొత్త అన్న కాంటీన్లు</td></tr>
+<tr><td>Araku Trekking Trails</td><td>Announced (tourism push)</td><td class="bi-te">అరకు ట్రెక్కింగ్ ట్రయల్స్</td></tr>
+</table>
+
+<div class="section-hdr">Industrial Corridors Touching AP / AP లో పారిశ్రామిక కారిడార్లు</div>
+<table class="key-table">
+<tr><th>Corridor</th><th>AP Stretch / Cities</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>VCIC (Vizag-Chennai)</td><td>Srikakulam to Nellore via Vizag, Kakinada</td><td class="bi-te">విశాఖ-చెన్నై కారిడార్</td></tr>
+<tr><td>CBIC (Chennai-Bengaluru)</td><td>Chittoor district</td><td class="bi-te">చెన్నై-బెంగళూరు కారిడార్</td></tr>
+<tr><td>HBIC (Hyderabad-Bengaluru)</td><td>Anantapur, Kurnool</td><td class="bi-te">హైదరాబాద్-బెంగళూరు కారిడార్</td></tr>
+</table>
+
+<p><b>Why this matters:</b> The Centre's Rs.1,561 cr for Amaravati — routed through Asian Development Bank (ADB) and IBRD (World Bank) loans — is the second tranche under the 2024 special package. Combined with the state's own Rs.6,000 cr in the AP budget two weeks later (Feb 14, 2026), Amaravati received over Rs.20,000 cr in committed funding within a single budget cycle.</p>
+<p class="bi-te">కేంద్రం నుండి అమరావతికి ₹1,561 కోట్లు ADB + IBRD రుణాల ద్వారా వచ్చాయి (2024 ప్రత్యేక ప్యాకేజీ కింద 2వ tranche). రాష్ట్ర బడ్జెట్ (ఫిబ్రవరి 14, 2026) లోని ₹6,000 కోట్లతో కలిపి, ఒకే బడ్జెట్ సైకిల్‌లో అమరావతికి ₹20,000+ కోట్లు ప్రకటించబడ్డాయి.</p>
+
+<p><b>4 Greenfield SEZ Ports:</b> Ramayapatnam (Prakasam), Machilipatnam (Krishna), Bhavanapadu (Srikakulam), Kakinada (under SEZ-port framework) — together Rs.400.37 cr Centre share for breakwater + dredging works.</p>"""
     },
     {
         "title": "16వ SIPB — ₹39,436.84 కోట్లు పెట్టుబడులు + Adani Konaseema Data Centre",
         "sub": "Apr 7, 2026 | 31 firms approved | 1,11,278 jobs | Adani Konaseema Data Centre ₹87,520 cr (largest ever)",
-        "audio": "ఏప్రిల్ 7, 2026న 16వ State Investment Promotion Board (SIPB) సమావేశం AP లో ₹39,436.84 కోట్లు పెట్టుబడులు అమోదించింది. 31 సంస్థల ప్రతిపాదనలకు ఆమోదం; మొత్తం 1,11,278 ప్రత్యక్ష ఉద్యోగాలు సృష్టి. ముఖ్యమైన పెట్టుబడులు: Clean Renewable Energy, Essar Renewables, NPSPL Specialty Chemicals (కుప్పం), Tata, మరియు Adani Konaseema Data Centre ₹87,520 కోట్లు (AP చరిత్రలోనే అతిపెద్ద single investment). జనవరి 8, 2026న AP కేబినెట్ ₹20,252 కోట్లు పెట్టుబడులు 14 ప్రాజెక్టులకు అమోదించింది — వీటిలో GMR-Mansas Aviation Educity (భీమిలి, 186.68 ఎకరాలు, AP మొదటి integrated education-innovation city, భోగాపురం దగ్గర)."
+        "audio": "ఏప్రిల్ 7, 2026న 16వ State Investment Promotion Board (SIPB) సమావేశం AP లో ₹39,436.84 కోట్లు పెట్టుబడులు అమోదించింది. 31 సంస్థల ప్రతిపాదనలకు ఆమోదం; మొత్తం 1,11,278 ప్రత్యక్ష ఉద్యోగాలు సృష్టి. ముఖ్యమైన పెట్టుబడులు: Clean Renewable Energy, Essar Renewables, NPSPL Specialty Chemicals (కుప్పం), Tata, మరియు Adani Konaseema Data Centre ₹87,520 కోట్లు (AP చరిత్రలోనే అతిపెద్ద single investment). జనవరి 8, 2026న AP కేబినెట్ ₹20,252 కోట్లు పెట్టుబడులు 14 ప్రాజెక్టులకు అమోదించింది — వీటిలో GMR-Mansas Aviation Educity (భీమిలి, 186.68 ఎకరాలు, AP మొదటి integrated education-innovation city, భోగాపురం దగ్గర).",
+        "html": """<div class="concept-cover">
+  <h1>16th SIPB &amp; Adani Konaseema Data Centre &nbsp;<span class="bi-te">/ 16వ SIPB</span></h1>
+  <div class="sub">Apr 7, 2026 • Rs.39,436.84 cr approved • 31 firms • 1,11,278 direct jobs</div>
+</div>
+
+<p><b>Headline:</b> The 16th State Investment Promotion Board (SIPB) meeting, chaired by CM N. Chandrababu Naidu in Amaravati on <b>April 7, 2026</b>, cleared 31 proposals totalling <b>Rs.39,436.84 crore</b> with employment potential of 1,11,278 direct jobs. The marquee approval was the <b>Adani Konaseema Data Centre</b> at Rs.87,520 crore — the single largest private investment ever cleared by AP.</p>
+<p class="bi-te">ఏప్రిల్ 7, 2026న CM చంద్రబాబు నాయుడు అధ్యక్షతన అమరావతిలో 16వ SIPB సమావేశం 31 ప్రతిపాదనలను ₹39,436.84 కోట్లకు ఆమోదించింది (1,11,278 ప్రత్యక్ష ఉద్యోగాలు). అదానీ కోనసీమ డేటా సెంటర్ ₹87,520 కోట్లు — AP చరిత్రలో అతిపెద్ద ఏకైక పెట్టుబడి.</p>
+
+<div class="section-hdr">Major SIPB-16 Approvals / 16వ SIPB ముఖ్య ఆమోదాలు</div>
+<table class="key-table">
+<tr><th>Company / Project</th><th>Investment</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Adani Konaseema Data Centre</b></td><td><b>Rs.87,520 cr</b> (largest ever)</td><td class="bi-te">అదానీ కోనసీమ డేటా సెంటర్</td></tr>
+<tr><td>Clean Renewable Energy</td><td>(part of 31)</td><td class="bi-te">క్లీన్ రెన్యూవబుల్ ఎనర్జీ</td></tr>
+<tr><td>Essar Renewables</td><td>(part of 31)</td><td class="bi-te">ఎస్సార్ రెన్యూవబుల్స్</td></tr>
+<tr><td>NPSPL Specialty Chemicals</td><td>Kuppam (Chittoor)</td><td class="bi-te">NPSPL — కుప్పంలో</td></tr>
+<tr><td>Tata Group</td><td>(part of 31)</td><td class="bi-te">టాటా గ్రూప్</td></tr>
+<tr><td><b>Total SIPB-16 outlay</b></td><td><b>Rs.39,436.84 cr</b></td><td class="bi-te">31 సంస్థల మొత్తం</td></tr>
+</table>
+
+<div class="section-hdr">AP Cabinet Pre-SIPB Approvals (Jan 8, 2026) / కేబినెట్ ముందస్తు అమోదం</div>
+<table class="key-table">
+<tr><th>Detail</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Cabinet approval date</td><td>Jan 8, 2026</td><td class="bi-te">కేబినెట్ ఆమోదం</td></tr>
+<tr><td>Projects approved</td><td>14</td><td class="bi-te">14 ప్రాజెక్టులు</td></tr>
+<tr><td>Total investment</td><td>Rs.20,252 cr</td><td class="bi-te">₹20,252 కోట్లు</td></tr>
+<tr><td>Flagship: GMR-Mansas Aviation Educity</td><td>Bheemli — 186.68 acres</td><td class="bi-te">భీమిలి (భోగాపురం దగ్గర)</td></tr>
+</table>
+
+<p><b>Adani Konaseema Data Centre — why it matters:</b> A 1.5 GW hyperscale data centre + Green Hydrogen cluster spread over Konaseema district (former East Godavari). At Rs.87,520 cr, it is more than 2x the combined investment of the remaining 30 SIPB-16 approvals. The project is expected to anchor AP's bid to become the country's largest data-hosting state by 2030, leveraging the state's renewable energy + sea-cable landing advantages at Kakinada/Konaseema.</p>
+<p class="bi-te">అదానీ కోనసీమ డేటా సెంటర్ — 1.5 GW హైపర్‌స్కేల్ డేటా సెంటర్ + గ్రీన్ హైడ్రోజన్ క్లస్టర్, కోనసీమ జిల్లాలో. ₹87,520 కోట్లు — మిగతా 30 SIPB ఆమోదాల కంటే 2 రెట్లు ఎక్కువ. AP ని 2030 నాటికి దేశంలో అతిపెద్ద డేటా-హోస్టింగ్ రాష్ట్రంగా మార్చడం లక్ష్యం (renewable energy + sea-cable landing వంటి ప్రయోజనాలు).</p>
+
+<p><b>GMR-Mansas Aviation Educity (Bheemili):</b> First integrated education-innovation city in AP, on 186.68 acres near Bhogapuram international airport. Designed as aviation + aerospace + AI training hub with foreign-university tie-ups.</p>"""
     },
     {
         "title": "AP సంక్షేమ పథకాలు 2026 — Indradhanussu, Sthrishakti, Deepam 2.0, Super Nari",
         "sub": "Free RTC for divyangulu (2L) | Sthrishakti ₹1,420 cr | Deepam 2.0 ₹2,601 cr (3 free cylinders) | NTR Bharosa ₹27,719 cr | PNG subsidy ₹2,400/yr",
-        "audio": "AP ప్రభుత్వం 2026లో అనేక సంక్షేమ పథకాలు ప్రారంభించింది. 'ఇంద్రధనుస్సు' — దివ్యాంగులకు (~2 లక్షల మంది) ఉచిత RTC ప్రయాణం (మార్చి 18, 2026న CM మంగళగిరిలో ప్రారంభించారు, RTC కి ₹207 కోట్లు). 'స్త్రీశక్తి' ₹1,420 కోట్లు; 'దీపం 2.0' ₹2,601 కోట్లు (సంవత్సరానికి 3 ఉచిత గ్యాస్ సిలిండర్లు); NTR భరోసా పెన్షన్లు ₹27,719 కోట్లు. మహిళా దినోత్సవం (మార్చి 8, 2026) నాడు అమరావతి పరేడ్ గ్రౌండ్స్‌లో CM 'విద్యాలక్ష్మి' & 'NTR కల్యాణలక్ష్మి' (₹1,000 కోట్లు చొప్పున) పథకాలు, AI 'సూపర్ నారి' యాప్ ప్రారంభించారు; 6.81 లక్షల SHG మహిళలకు ₹10,102 కోట్ల చెక్కులు అందజేశారు. ఏప్రిల్ 10, 2026 — PNG (పైప్డ్ నేచురల్ గ్యాస్) connection లకు సంవత్సరానికి ₹2,400 సబ్సిడీ (6 వాయిదాలలో). MSME Revival Policy 4.0 (2026-31) — ₹500 కోట్లు revival fund. AP వ్యవసాయ రుణ బకాయిల్లో రెండవ స్థానం (₹3.75 లక్షల కోట్లు)."
+        "audio": "AP ప్రభుత్వం 2026లో అనేక సంక్షేమ పథకాలు ప్రారంభించింది. 'ఇంద్రధనుస్సు' — దివ్యాంగులకు (~2 లక్షల మంది) ఉచిత RTC ప్రయాణం (మార్చి 18, 2026న CM మంగళగిరిలో ప్రారంభించారు, RTC కి ₹207 కోట్లు). 'స్త్రీశక్తి' ₹1,420 కోట్లు; 'దీపం 2.0' ₹2,601 కోట్లు (సంవత్సరానికి 3 ఉచిత గ్యాస్ సిలిండర్లు); NTR భరోసా పెన్షన్లు ₹27,719 కోట్లు. మహిళా దినోత్సవం (మార్చి 8, 2026) నాడు అమరావతి పరేడ్ గ్రౌండ్స్‌లో CM 'విద్యాలక్ష్మి' & 'NTR కల్యాణలక్ష్మి' (₹1,000 కోట్లు చొప్పున) పథకాలు, AI 'సూపర్ నారి' యాప్ ప్రారంభించారు; 6.81 లక్షల SHG మహిళలకు ₹10,102 కోట్ల చెక్కులు అందజేశారు. ఏప్రిల్ 10, 2026 — PNG (పైప్డ్ నేచురల్ గ్యాస్) connection లకు సంవత్సరానికి ₹2,400 సబ్సిడీ (6 వాయిదాలలో). MSME Revival Policy 4.0 (2026-31) — ₹500 కోట్లు revival fund. AP వ్యవసాయ రుణ బకాయిల్లో రెండవ స్థానం (₹3.75 లక్షల కోట్లు).",
+        "html": """<div class="concept-cover">
+  <h1>AP Welfare Schemes 2026 &nbsp;<span class="bi-te">/ AP సంక్షేమ పథకాలు 2026</span></h1>
+  <div class="sub">Indradhanussu • Sthrishakti • Deepam 2.0 • Super Nari • NTR Bharosa</div>
+</div>
+
+<p><b>Headline:</b> 2026 was a record welfare year for AP. Six major schemes — Indradhanussu (disabled persons), Sthrishakti (women), Deepam 2.0 (LPG), NTR Bharosa (pensions), Vidyalakshmi (education), and the AI Super Nari app — together cover over 1 crore beneficiaries with cumulative outlay exceeding Rs.42,000 crore.</p>
+<p class="bi-te">2026 AP కి సంక్షేమ సంవత్సరం. 6 ప్రధాన పథకాలు — ఇంద్రధనుస్సు, స్త్రీశక్తి, దీపం 2.0, NTR భరోసా, విద్యాలక్ష్మి, AI సూపర్ నారి — కలిపి 1 కోటి+ లబ్ధిదారులకు, ₹42,000+ కోట్ల కేటాయింపు.</p>
+
+<div class="section-hdr">Scheme-wise Allocations / పథకవారీ కేటాయింపులు</div>
+<table class="key-table">
+<tr><th>Scheme</th><th>Allocation / Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Indradhanussu</b> (Mar 18, 2026)</td><td>Free RTC travel for ~2 lakh divyangulu; Rs.207 cr to RTC</td><td class="bi-te">ఇంద్రధనుస్సు — దివ్యాంగులకు ఉచిత RTC</td></tr>
+<tr><td><b>Sthrishakti</b></td><td>Rs.1,420 crore (women SHGs)</td><td class="bi-te">స్త్రీశక్తి</td></tr>
+<tr><td><b>Deepam 2.0</b></td><td>Rs.2,601 cr — 3 free LPG cylinders/year</td><td class="bi-te">దీపం 2.0 — 3 ఉచిత గ్యాస్</td></tr>
+<tr><td><b>NTR Bharosa</b> (pensions)</td><td>Rs.27,719 crore</td><td class="bi-te">NTR భరోసా పెన్షన్లు</td></tr>
+<tr><td>Vidyalakshmi (Mar 8, 2026)</td><td>Rs.1,000 cr (education for girls)</td><td class="bi-te">విద్యాలక్ష్మి</td></tr>
+<tr><td>NTR Kalyanalakshmi (Mar 8, 2026)</td><td>Rs.1,000 cr (wedding assistance)</td><td class="bi-te">NTR కల్యాణలక్ష్మి</td></tr>
+<tr><td>PNG subsidy (Apr 10, 2026)</td><td>Rs.2,400/yr (6 instalments)</td><td class="bi-te">PNG సబ్సిడీ సంవత్సరానికి ₹2,400</td></tr>
+</table>
+
+<div class="section-hdr">Women's Day Launches — Amaravati Parade Grounds (Mar 8, 2026)</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Vidyalakshmi + NTR Kalyanalakshmi launched</td><td>Rs.1,000 cr each</td><td class="bi-te">CM ప్రారంభించారు</td></tr>
+<tr><td><b>AI 'Super Nari' app</b></td><td>Launched — women safety + entrepreneurship</td><td class="bi-te">సూపర్ నారి యాప్</td></tr>
+<tr><td>SHG cheques distributed</td><td>Rs.10,102 cr to 6.81 lakh SHG women</td><td class="bi-te">6.81 లక్షల SHG మహిళలకు ₹10,102 కోట్లు</td></tr>
+</table>
+
+<p><b>MSME Revival Policy 4.0 (2026-31):</b> Rs.500 crore revival fund for sick units, plus interest subvention and one-time settlement options. This is AP's 4th iteration of MSME policy and the first under the current Naidu government.</p>
+<p class="bi-te">MSME Revival Policy 4.0 (2026-31) — sick units కోసం ₹500 కోట్లు revival fund + interest subvention + OTS options. ఇది AP లో 4వ MSME policy.</p>
+
+<p><b>Context:</b> AP currently ranks 2nd nationally in agricultural loan outstandings at Rs.3.75 lakh crore. The welfare push is partly a response to rural distress as well as a key plank of the alliance's Super Six promises.</p>"""
     },
     {
         "title": "AP 3 ఆర్థిక ప్రాంతాలు (Economic Regions) — VER, AER, TER",
         "sub": "March 2026 | Vizag Economic Region | Amaravati Economic Region (9 districts) | Tirupati Economic Region (9 districts) | Target 2047: $2.4 trillion",
-        "audio": "మార్చి 2026లో AP ప్రభుత్వం రాష్ట్రాన్ని 3 ఆర్థిక ప్రాంతాలుగా (Economic Regions) విభజించింది — VER (Vizag Economic Region), AER (Amaravati Economic Region, 9 జిల్లాలు), TER (Tirupati Economic Region, 9 జిల్లాలు). 2047 నాటికి AP ఆర్థిక వ్యవస్థను $2.4 trillion కు చేర్చడం లక్ష్యం. International Horticulture Hub: ₹30,000 కోట్లు పెట్టుబడితో రాయలసీమ 4 జిల్లాలు + ప్రకాశం (303 మండలాలు, 201 క్లస్టర్లు, 36 లక్షల ఎకరాల లక్ష్యం). అమరావతి ఔటర్ రింగ్ రోడ్ — 189.4 km 6-lane, కేంద్రం అనుమతి. తెలుగు సాంస్కృతిక కేంద్రం (Telugu Cultural Centre) నీరుకొండ, అమరావతి — ₹119.27 కోట్లు, 5 ఎకరాలు (AP కేబినెట్ మార్చి 10, 2026న ఆమోదం). AP Judicial Academy + HC Judges' Guest House పుచుకపాలెం (Amaravati) — ₹165 కోట్లు, CJI జస్టిస్ సూర్యకాంత్ ఫౌండేషన్ వేశారు."
+        "audio": "మార్చి 2026లో AP ప్రభుత్వం రాష్ట్రాన్ని 3 ఆర్థిక ప్రాంతాలుగా (Economic Regions) విభజించింది — VER (Vizag Economic Region), AER (Amaravati Economic Region, 9 జిల్లాలు), TER (Tirupati Economic Region, 9 జిల్లాలు). 2047 నాటికి AP ఆర్థిక వ్యవస్థను $2.4 trillion కు చేర్చడం లక్ష్యం. International Horticulture Hub: ₹30,000 కోట్లు పెట్టుబడితో రాయలసీమ 4 జిల్లాలు + ప్రకాశం (303 మండలాలు, 201 క్లస్టర్లు, 36 లక్షల ఎకరాల లక్ష్యం). అమరావతి ఔటర్ రింగ్ రోడ్ — 189.4 km 6-lane, కేంద్రం అనుమతి. తెలుగు సాంస్కృతిక కేంద్రం (Telugu Cultural Centre) నీరుకొండ, అమరావతి — ₹119.27 కోట్లు, 5 ఎకరాలు (AP కేబినెట్ మార్చి 10, 2026న ఆమోదం). AP Judicial Academy + HC Judges' Guest House పుచుకపాలెం (Amaravati) — ₹165 కోట్లు, CJI జస్టిస్ సూర్యకాంత్ ఫౌండేషన్ వేశారు.",
+        "html": """<div class="concept-cover">
+  <h1>AP 3 Economic Regions — VER, AER, TER &nbsp;<span class="bi-te">/ 3 ఆర్థిక ప్రాంతాలు</span></h1>
+  <div class="sub">March 2026 • Swarnandhra @ 2047 vision • Target: $2.4 trillion economy</div>
+</div>
+
+<p><b>Headline:</b> In March 2026 the AP government re-organised the state into three Economic Regions for planning, investment, and infrastructure purposes — VER (Vizag), AER (Amaravati), TER (Tirupati). The structure underpins the Swarnandhra @ 2047 vision of taking AP's economy from ~$170 billion (2025) to <b>$2.4 trillion by 2047</b>.</p>
+<p class="bi-te">మార్చి 2026లో AP ప్రభుత్వం రాష్ట్రాన్ని 3 ఆర్థిక ప్రాంతాలుగా విభజించింది — VER (Vizag), AER (Amaravati, 9 జిల్లాలు), TER (Tirupati, 9 జిల్లాలు). 2047 నాటికి $2.4 trillion ఆర్థిక వ్యవస్థగా మార్చడం లక్ష్యం.</p>
+
+<div class="section-hdr">3 Economic Regions / 3 ఆర్థిక ప్రాంతాలు</div>
+<table class="key-table">
+<tr><th>Region</th><th>Anchor City</th><th>Coverage</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>VER</b> (Vizag Economic Region)</td><td>Visakhapatnam</td><td>North coastal districts</td><td class="bi-te">విశాఖ ఆర్థిక ప్రాంతం</td></tr>
+<tr><td><b>AER</b> (Amaravati Economic Region)</td><td>Amaravati</td><td><b>9 districts</b> (central + delta)</td><td class="bi-te">అమరావతి ఆర్థిక ప్రాంతం — 9 జిల్లాలు</td></tr>
+<tr><td><b>TER</b> (Tirupati Economic Region)</td><td>Tirupati</td><td><b>9 districts</b> (south + Rayalaseema)</td><td class="bi-te">తిరుపతి ఆర్థిక ప్రాంతం — 9 జిల్లాలు</td></tr>
+</table>
+
+<div class="section-hdr">Flagship Projects Across Regions / కీలక ప్రాజెక్టులు</div>
+<table class="key-table">
+<tr><th>Project</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>International Horticulture Hub</b></td><td>Rs.30,000 cr — Rayalaseema 4 districts + Prakasam; 303 mandals, 201 clusters, target 36 lakh acres</td><td class="bi-te">అంతర్జాతీయ హార్టికల్చర్ హబ్</td></tr>
+<tr><td>Amaravati Outer Ring Road (ORR)</td><td>189.4 km, 6-lane; Centre approved</td><td class="bi-te">అమరావతి ఔటర్ రింగ్ రోడ్</td></tr>
+<tr><td>Telugu Cultural Centre, Neerukonda</td><td>Rs.119.27 cr, 5 acres (Cabinet Mar 10, 2026)</td><td class="bi-te">తెలుగు సాంస్కృతిక కేంద్రం, నీరుకొండ</td></tr>
+<tr><td>AP Judicial Academy + HC Judges' Guest House</td><td>Puchakapalem (Amaravati) — Rs.165 cr; foundation by CJI Justice Surya Kant</td><td class="bi-te">AP Judicial Academy</td></tr>
+</table>
+
+<p><b>Horticulture Hub details:</b> The Rs.30,000 crore International Horticulture Hub spans Rayalaseema's 4 districts (Anantapur, Kurnool, YSR-Kadapa, Sri Sathya Sai) plus Prakasam — 303 mandals, 201 horticulture clusters, with a target to bring 36 lakh acres under high-value crops (mango, citrus, banana, pomegranate, dragon fruit) by 2030. Anantapur — already India's 2nd-largest mango producer — anchors the hub.</p>
+<p class="bi-te">హార్టికల్చర్ హబ్ — రాయలసీమ 4 జిల్లాలు + ప్రకాశం; 303 మండలాలు, 201 క్లస్టర్లు, 36 లక్షల ఎకరాల లక్ష్యం (మామిడి, నిమ్మ, అరటి, దానిమ్మ, డ్రాగన్ ఫ్రూట్). అనంతపురం — భారత్‌లో 2వ అతిపెద్ద మామిడి ఉత్పత్తిదారు — హబ్ కేంద్రంగా ఉంది.</p>
+
+<p><b>Cultural &amp; Judicial infrastructure:</b> The Telugu Cultural Centre at Neerukonda is the first formal state-level Telugu language and arts institute since AP bifurcation. The AP Judicial Academy at Puchakapalem (foundation laid by CJI Justice Surya Kant) gives AP its first in-state judicial training facility — earlier judges were trained at NJA Bhopal or Hyderabad. Combined Rs.284+ crore across both signals Amaravati's anchor-role within AER.</p>
+<p class="bi-te">తెలుగు సాంస్కృతిక కేంద్రం (నీరుకొండ) — విభజన తర్వాత మొదటి తెలుగు భాష/కళలు సంస్థ. AP Judicial Academy (పుచకపాలెం) — CJI జస్టిస్ సూర్యకాంత్ ఫౌండేషన్; ఇంతకు ముందు AP న్యాయమూర్తులు NJA భోపాల్ లేదా హైదరాబాద్ వెళ్ళేవారు.</p>"""
     },
     {
         "title": "Padma Shri 2026 (AP) & ఇతర చిన్న సంఘటనలు",
         "sub": "4 Padma Shri awardees | RD 2026 at Amaravati (first time) | Bhogapuram Airport 1st landing | Water Budget | Export Index 5th",
-        "audio": "Padma Shri 2026లో 4 AP నుండి అవార్డులు: మగంటి మురళి మోహన్ (కళలు), గద్దె బాబు రాజేంద్ర ప్రసాద్ (కళలు), గరిమెళ్ళ బాలకృష్ణ ప్రసాద్ (మరణానంతరం, కళలు/సంగీతం), వెంపటి కుటుంబ శాస్త్రి (సాహిత్యం/సంస్కృతం). జనవరి 26, 2026 — 77వ గణతంత్ర దినోత్సవం మొదటిసారిగా అమరావతిలో జరిగింది (రాయపూడి, సీడ్ యాక్సెస్ రోడ్ సమీపం, 22 ఎకరాలు). గవర్నర్ అబ్దుల్ నజీర్ జెండా ఎగురవేశారు; ఇంతకు ముందు విజయవాడ ఇందిరా గాంధీ స్టేడియంలో జరిగేది. జనవరి 4, 2026 — అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం (భోగాపురం, విజయనగరం) లో మొదటి test flight (ఢిల్లీ నుండి) ల్యాండ్ అయింది; GMR Group నిర్మాణం; PM మోదీ జూన్ 26, 2026న ప్రారంభించనున్నారు. AP Water Budget 2026-27 — భారతదేశంలో మొదటి రాష్ట్రం (అవసరం 1,490 TMC), జల జీవన్ మిషన్ పేరు 'అమరజీవి జలధార వాటర్‌గ్రిడ్' గా మార్చారు. Dugarajupatnam Port (తిరుపతి జిల్లా) కొత్త greenfield పోర్ట్ + ship-repair cluster అనుమతి (Dec 29, 2025); village secretariats పేరు 'స్వర్ణ గ్రామ/వార్డ్' గా మార్పు; HANUMAN Project (Wildlife-Human Conflict Foundation, పవన్ కల్యాణ్ chairperson, March 3 World Wildlife Day నాడు మంగళగిరి APSP grounds, 100 vehicles). NITI Aayog Export Preparedness Index 2024 (Jan 14, 2026 విడుదల) — AP 5వ స్థానం (60.65 marks); seafood exports లో AP 1వ (60% జాతీయ వాటా, ₹24,679 కోట్లు). AP retail inflation 7.57% → 1.39% (2025-26). Ease of Living Index 2024 — తిరుపతి + విజయవాడ టాప్ 10 భారత నగరాల్లో. CM చంద్రబాబు WEF Davos 2026 (Jan 19-23, 56వ WEF) కు హాజరయ్యారు. PPP medical colleges — 6,250 beds, 1,500 seats. AP Police AI Project — 8 AI modules (Annamayya/చిత్తూరు/Guntur); IIT Madras AI Tutor 42,230 govt schools. కొత్త VC లు: Dravidian Univ. (చిన్న మల్లయ్య లక్షినేని), SKD Univ. (NVR జ్యోతికుమార్). AP NRI Cell Centre Berlin లో ప్రారంభం; AP Govt OTT platform 2026లో launch."
+        "audio": "Padma Shri 2026లో 4 AP నుండి అవార్డులు: మగంటి మురళి మోహన్ (కళలు), గద్దె బాబు రాజేంద్ర ప్రసాద్ (కళలు), గరిమెళ్ళ బాలకృష్ణ ప్రసాద్ (మరణానంతరం, కళలు/సంగీతం), వెంపటి కుటుంబ శాస్త్రి (సాహిత్యం/సంస్కృతం). జనవరి 26, 2026 — 77వ గణతంత్ర దినోత్సవం మొదటిసారిగా అమరావతిలో జరిగింది (రాయపూడి, సీడ్ యాక్సెస్ రోడ్ సమీపం, 22 ఎకరాలు). గవర్నర్ అబ్దుల్ నజీర్ జెండా ఎగురవేశారు; ఇంతకు ముందు విజయవాడ ఇందిరా గాంధీ స్టేడియంలో జరిగేది. జనవరి 4, 2026 — అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం (భోగాపురం, విజయనగరం) లో మొదటి test flight (ఢిల్లీ నుండి) ల్యాండ్ అయింది; GMR Group నిర్మాణం; PM మోదీ జూన్ 26, 2026న ప్రారంభించనున్నారు. AP Water Budget 2026-27 — భారతదేశంలో మొదటి రాష్ట్రం (అవసరం 1,490 TMC), జల జీవన్ మిషన్ పేరు 'అమరజీవి జలధార వాటర్‌గ్రిడ్' గా మార్చారు. Dugarajupatnam Port (తిరుపతి జిల్లా) కొత్త greenfield పోర్ట్ + ship-repair cluster అనుమతి (Dec 29, 2025); village secretariats పేరు 'స్వర్ణ గ్రామ/వార్డ్' గా మార్పు; HANUMAN Project (Wildlife-Human Conflict Foundation, పవన్ కల్యాణ్ chairperson, March 3 World Wildlife Day నాడు మంగళగిరి APSP grounds, 100 vehicles). NITI Aayog Export Preparedness Index 2024 (Jan 14, 2026 విడుదల) — AP 5వ స్థానం (60.65 marks); seafood exports లో AP 1వ (60% జాతీయ వాటా, ₹24,679 కోట్లు). AP retail inflation 7.57% → 1.39% (2025-26). Ease of Living Index 2024 — తిరుపతి + విజయవాడ టాప్ 10 భారత నగరాల్లో. CM చంద్రబాబు WEF Davos 2026 (Jan 19-23, 56వ WEF) కు హాజరయ్యారు. PPP medical colleges — 6,250 beds, 1,500 seats. AP Police AI Project — 8 AI modules (Annamayya/చిత్తూరు/Guntur); IIT Madras AI Tutor 42,230 govt schools. కొత్త VC లు: Dravidian Univ. (చిన్న మల్లయ్య లక్షినేని), SKD Univ. (NVR జ్యోతికుమార్). AP NRI Cell Centre Berlin లో ప్రారంభం; AP Govt OTT platform 2026లో launch.",
+        "html": """<div class="concept-cover">
+  <h1>Padma Shri 2026 (AP) &amp; Other Key Events &nbsp;<span class="bi-te">/ Padma Shri 2026 &amp; ఇతర సంఘటనలు</span></h1>
+  <div class="sub">4 AP awardees • RD-2026 at Amaravati (first time) • Bhogapuram first landing • Water Budget • Export Index 5th</div>
+</div>
+
+<p><b>Headline:</b> 2026 was a marquee year for AP recognition and "firsts" — 4 Padma Shri awardees, the first-ever Republic Day parade held at Amaravati, the first test landing at Bhogapuram (Alluri Sitarama Raju) International Airport, India's first State Water Budget, and the cabinet approval of Dugarajupatnam greenfield port.</p>
+<p class="bi-te">2026 AP కి గుర్తింపు సంవత్సరం — 4 Padma Shri అవార్డులు, మొదటిసారి అమరావతిలో గణతంత్ర దినోత్సవం, భోగాపురం ఎయిర్‌పోర్ట్ మొదటి test landing, భారతదేశంలో మొదటి State Water Budget, Dugarajupatnam greenfield పోర్ట్ ఆమోదం.</p>
+
+<div class="section-hdr">Padma Shri 2026 — AP Awardees / AP నుండి 4 అవార్డులు</div>
+<table class="key-table">
+<tr><th>#</th><th>Awardee</th><th>Field</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>1</td><td>Maganti Murali Mohan</td><td>Arts</td><td class="bi-te">మగంటి మురళి మోహన్ — కళలు</td></tr>
+<tr><td>2</td><td>Gadde Babu Rajendra Prasad</td><td>Arts</td><td class="bi-te">గద్దె బాబు రాజేంద్ర ప్రసాద్ — కళలు</td></tr>
+<tr><td>3</td><td>Garimella Balakrishna Prasad (posthumous)</td><td>Arts/Music</td><td class="bi-te">గరిమెళ్ళ బాలకృష్ణ ప్రసాద్ — మరణానంతరం (సంగీతం)</td></tr>
+<tr><td>4</td><td>Vempati Kutumba Sastri</td><td>Literature / Sanskrit</td><td class="bi-te">వెంపటి కుటుంబ శాస్త్రి — సాహిత్యం / సంస్కృతం</td></tr>
+</table>
+
+<div class="section-hdr">First-Time Events at Amaravati / అమరావతిలో మొదటిసారి</div>
+<table class="key-table">
+<tr><th>Event</th><th>Date</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Republic Day 2026 at Amaravati</b> (first time)</td><td>Jan 26, 2026</td><td class="bi-te">22 ఎకరాలు, Seed Access Rd, రాయపూడి; Governor అబ్దుల్ నజీర్ జెండా ఎగురవేశారు</td></tr>
+<tr><td><b>Bhogapuram Airport</b> — first test landing (from Delhi)</td><td>Jan 4, 2026</td><td class="bi-te">అల్లూరి సీతారామరాజు International Airport; GMR Group; PM Modi inauguration Jun 26, 2026</td></tr>
+<tr><td><b>AP Water Budget 2026-27</b> — 1st state in India</td><td>Feb 2026</td><td class="bi-te">1,490 TMC అవసరం; "అమరజీవి జలధార Watergrid"</td></tr>
+<tr><td><b>Dugarajupatnam Port</b> approved (greenfield + ship-repair)</td><td>Dec 29, 2025</td><td class="bi-te">తిరుపతి జిల్లా</td></tr>
+</table>
+
+<div class="section-hdr">Rankings &amp; Indices / జాతీయ ర్యాంకింగ్‌లు</div>
+<table class="key-table">
+<tr><th>Index / Ranking</th><th>AP Position</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>NITI Aayog Export Preparedness Index 2024 (released Jan 14, 2026)</td><td><b>5th nationally</b> (60.65 marks)</td><td class="bi-te">AP 5వ స్థానం</td></tr>
+<tr><td>Seafood exports</td><td><b>1st (60% national share, Rs.24,679 cr)</b></td><td class="bi-te">సముద్ర ఆహారం — AP 1వ</td></tr>
+<tr><td>Retail inflation</td><td>7.57% → <b>1.39%</b> (2025-26)</td><td class="bi-te">రిటైల్ ద్రవ్యోల్బణం తగ్గుదల</td></tr>
+<tr><td>Ease of Living Index 2024</td><td>Tirupati + Vijayawada in top 10</td><td class="bi-te">తిరుపతి + విజయవాడ టాప్ 10</td></tr>
+</table>
+
+<div class="section-hdr">Other Key Initiatives / ఇతర కీలక చర్యలు</div>
+<table class="key-table">
+<tr><th>Initiative</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>HANUMAN Project</b> (Wildlife-Human Conflict)</td><td>Launched Mar 3, 2026 (World Wildlife Day) by Pawan Kalyan at Mangalagiri APSP; 100 vehicles</td><td class="bi-te">హనుమాన్ ప్రాజెక్ట్ — పవన్ కల్యాణ్</td></tr>
+<tr><td>AP Police AI Project</td><td>8 AI modules (Annamayya, Chittoor, Guntur)</td><td class="bi-te">AP Police AI</td></tr>
+<tr><td>IIT Madras AI Tutor</td><td>For <b>42,230 govt schools</b></td><td class="bi-te">IIT Madras AI ట్యూటర్</td></tr>
+<tr><td>New VCs</td><td>Dravidian Univ — Chinna Mallaiah Lakshineni; SKD Univ — NVR Jyotikumar</td><td class="bi-te">కొత్త VC లు</td></tr>
+<tr><td>AP NRI Cell — Berlin</td><td>Opened 2026</td><td class="bi-te">AP NRI సెల్ బెర్లిన్</td></tr>
+<tr><td>AP Govt OTT Platform</td><td>Launched 2026 — first state-run OTT</td><td class="bi-te">AP ప్రభుత్వ OTT</td></tr>
+<tr><td>Village Secretariats renamed</td><td>"Swarna Grama / Ward"</td><td class="bi-te">"స్వర్ణ గ్రామ / వార్డు"</td></tr>
+<tr><td>CM at WEF Davos 2026</td><td>Jan 19-23 (56th WEF)</td><td class="bi-te">CM చంద్రబాబు WEF</td></tr>
+<tr><td>PPP medical colleges</td><td>6,250 beds, 1,500 seats</td><td class="bi-te">PPP వైద్య కళాశాలలు</td></tr>
+</table>
+
+<p><b>Why RD-2026 at Amaravati matters:</b> Until 2025 the AP state-level Republic Day parade was held at Indira Gandhi Municipal Stadium, Vijayawada. The shift to a 22-acre venue near Seed Access Road, Rayapudi, marks Amaravati's first formal use as the state ceremonial capital after the AP Reorganisation (Amendment) Act 2026 made Amaravati the sole legal capital.</p>
+<p class="bi-te">RD-2026 ప్రాముఖ్యత: 2025 వరకు AP రాష్ట్రస్థాయి గణతంత్ర దినోత్సవ పరేడ్ విజయవాడ ఇందిరా గాంధీ స్టేడియంలో జరిగేది. 22 ఎకరాల Seed Access Rd (రాయపూడి) వద్దకు మార్పు — AP Reorganisation (Amendment) Act 2026 తర్వాత అమరావతి ఏకైక రాజధానిగా మారిన తర్వాత ఇది మొదటి అధికారిక వేడుక.</p>
+
+<p><b>Bhogapuram (Alluri Sitarama Raju Intl. Airport):</b> Built by GMR Group at Vizianagaram district. First test landing on <b>Jan 4, 2026</b> was a chartered flight from Delhi. PM Narendra Modi is scheduled to inaugurate commercial operations on <b>June 26, 2026</b>. The airport eases pressure on Visakhapatnam airport and is expected to anchor north-coastal tourism (Araku, Lambasingi).</p>
+<p class="bi-te">భోగాపురం (అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం) — GMR Group నిర్మాణం, విజయనగరం జిల్లా. మొదటి test landing జనవరి 4, 2026న ఢిల్లీ నుండి. PM మోదీ జూన్ 26, 2026న కమర్షియల్ ఆపరేషన్స్ ప్రారంభించనున్నారు.</p>"""
     },
 ]
 

@@ -26,47 +26,380 @@ SECTIONS_JSON = json.dumps([
     {
         "id": "div9_s1",
         "title": "పరీక్ష కోసం కీలక భావనలు",
-        "summary": "పద్మ పురస్కారాలు, జాతీయ పురస్కారాలు, కేంద్ర సంస్థలు, AP హైకోర్టు, రాజ్యాంగ అంశాలు — పరీక్ష హాట్‌స్పాట్‌లు"
+        "sub": "Exam Hotspots — Padma Awards, Institutions, HC & Constitution",
+        "summary": "పద్మ పురస్కారాలు, జాతీయ పురస్కారాలు, కేంద్ర సంస్థలు, AP హైకోర్టు, రాజ్యాంగ అంశాలు — పరీక్ష హాట్‌స్పాట్‌లు",
+        "html": """<div class="concept-cover">
+  <h1>Exam Hotspots — Awards &amp; Institutions &nbsp;<span class="bi-te">/ పరీక్ష కీలక భావనలు</span></h1>
+  <div class="sub">Padma Awards • National Awards • Central Institutions • AP HC • Constitution</div>
+</div>
+
+<div class="section-hdr">Civilian Awards Hierarchy / పౌర పురస్కారాల క్రమం</div>
+<table class="key-table">
+<tr><th>Rank</th><th>Award</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>1 (highest)</td><td><b>Bharat Ratna</b></td><td class="bi-te">భారత రత్న — అత్యున్నతం</td></tr>
+<tr><td>2</td><td><b>Padma Vibhushan</b></td><td class="bi-te">పద్మ విభూషణ్</td></tr>
+<tr><td>3</td><td><b>Padma Bhushan</b></td><td class="bi-te">పద్మ భూషణ్</td></tr>
+<tr><td>4</td><td><b>Padma Shri</b></td><td class="bi-te">పద్మ శ్రీ</td></tr>
+</table>
+<p><b>Announcement:</b> Padma awards are announced on <b>Republic Day (Jan 26)</b> every year and conferred by the President in March/April at Rashtrapati Bhavan.</p>
+
+<div class="section-hdr">Exam Hotspots Snapshot / పరీక్ష హాట్‌స్పాట్‌లు</div>
+<table class="key-table">
+<tr><th>Topic</th><th>Key fact</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>2026 Padma Awards (Telugu)</td><td>12 awardees: 1 PB + 11 PS</td><td class="bi-te">12 తెలుగు గ్రహీతలు</td></tr>
+<tr><td>Oscar 2023</td><td>'Naatu Naatu' (RRR) — Best Original Song</td><td class="bi-te">నాటు నాటు — MM కీరవాణి</td></tr>
+<tr><td>69th National Film Award</td><td>Allu Arjun — first Telugu Best Actor</td><td class="bi-te">తొలి తెలుగు Best Actor</td></tr>
+<tr><td>AP High Court CJ</td><td>Justice Lisa Gill (6th CJ, since Apr 25, 2026)</td><td class="bi-te">6వ CJ — తొలి మహిళా CJ</td></tr>
+<tr><td>AP districts</td><td>28 (since Jan 1, 2026)</td><td class="bi-te">28 జిల్లాలు (2026 జన. 1)</td></tr>
+<tr><td>Article 371-D</td><td>32nd Amendment, 1973 — AP local-area protection</td><td class="bi-te">32వ సవరణ 1973</td></tr>
+<tr><td>APRA 2014</td><td>Act No. 6/2014 — effective Jun 2, 2014</td><td class="bi-te">జూన్ 2, 2014</td></tr>
+<tr><td>APRA Amendment 2026</td><td>Act No. 7/2026 — Amaravati as capital</td><td class="bi-te">అమరావతి రాజధాని</td></tr>
+</table>
+<p class="bi-te">పద్మ పురస్కారాల క్రమం: భారత రత్న → పద్మ విభూషణ్ → పద్మ భూషణ్ → పద్మ శ్రీ. గణతంత్ర దినం (జనవరి 26) నాడు ప్రకటిస్తారు, మార్చి-ఏప్రిల్‌లో రాష్ట్రపతి భవన్‌లో ప్రదానం చేస్తారు.</p>"""
     },
     {
         "id": "div9_s2",
         "title": "పద్మ పురస్కారాలు — AP వ్యక్తులు",
-        "summary": "2025: Balakrishna (PB), Nageshwar Reddy (PV-TG), Manda Krishna Madiga (PS-TG) = 7 Telugu; 2026: Nori (PB-USA), 4 AP Shri, 7 TG Shri = 12 Telugu; SP బాలసుబ్రహ్మణ్యం PV 2021; K. విశ్వనాథ్ PV 2017"
+        "sub": "Padma Awards — AP Personalities (2025 & 2026)",
+        "summary": "2025: Balakrishna (PB), Nageshwar Reddy (PV-TG), Manda Krishna Madiga (PS-TG) = 7 Telugu; 2026: Nori (PB-USA), 4 AP Shri, 7 TG Shri = 12 Telugu; SP బాలసుబ్రహ్మణ్యం PV 2021; K. విశ్వనాథ్ PV 2017",
+        "html": """<div class="concept-cover">
+  <h1>Padma Awards — AP Personalities &nbsp;<span class="bi-te">/ పద్మ పురస్కారాలు — AP</span></h1>
+  <div class="sub">2026: 131 total (5 PV + 13 PB + 113 PS) • AP — 4 Padma Shri • Nori PB</div>
+</div>
+
+<div class="section-hdr">2026 Padma Awards — National Snapshot / 2026 జాతీయ చిత్రం</div>
+<table class="key-table">
+<tr><th>Category</th><th>Count</th><th>Notable</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Total 2026</b></td><td><b>131</b> awards</td><td>Announced Jan 25, 2026</td><td class="bi-te">మొత్తం 131</td></tr>
+<tr><td>Padma Vibhushan</td><td><b>5</b></td><td>Dharmendra (posth.), V.S. Achuthanandan (posth.), K.T. Thomas, N. Rajam, P. Narayanan</td><td class="bi-te">5 పద్మ విభూషణ్</td></tr>
+<tr><td>Padma Bhushan</td><td><b>13</b></td><td>Alka Yagnik, Mammootty, Uday Kotak, Piyush Pandey (posth.), Vijay Amritraj, <b>Nori Dattatreyudu</b>, Rohit Sharma</td><td class="bi-te">13 పద్మ భూషణ్</td></tr>
+<tr><td>Padma Shri</td><td>113</td><td>Across art, science, public affairs, social work</td><td class="bi-te">113 పద్మ శ్రీ</td></tr>
+</table>
+
+<div class="section-hdr">2026 Padma Awards — AP Awardees (4) / 2026 AP గ్రహీతలు</div>
+<table class="key-table">
+<tr><th>Recipient</th><th>Award</th><th>Field</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Dr. Nori Dattatreyudu</b> (USA-based)</td><td>Padma Bhushan</td><td>Medicine (Oncology)</td><td class="bi-te">తెలుగు సంతతి వైద్యుడు</td></tr>
+<tr><td>Maganti Murali Mohan</td><td>Padma Shri</td><td>Art</td><td class="bi-te">మాగంటి మురళీ మోహన్</td></tr>
+<tr><td>Gadde Babu Rajendra Prasad</td><td>Padma Shri</td><td>Art</td><td class="bi-te">గద్దె బాబు రాజేంద్ర ప్రసాద్</td></tr>
+<tr><td>Garimella Balakrishna Prasad</td><td>Padma Shri (Posthumous)</td><td>Art</td><td class="bi-te">గరిమెళ్ళ — మరణానంతరం</td></tr>
+<tr><td>Vempaty Kutumba Sastry</td><td>Padma Shri</td><td>Literature &amp; Education (Sanskrit)</td><td class="bi-te">వేంపటి కుటుంబశాస్త్రి</td></tr>
+</table>
+<p><b>Telugu states total 2026:</b> 12 awardees — 1 Padma Bhushan (Nori, USA-based AP-origin) + 4 AP Padma Shri + 7 Telangana Padma Shri.</p>
+
+<div class="section-hdr">2025 Padma Awards — AP Awardees / 2025 AP గ్రహీతలు</div>
+<table class="key-table">
+<tr><th>Recipient</th><th>Award</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Nandamuri Balakrishna</b></td><td>Padma Bhushan (Art)</td><td class="bi-te">నందమూరి బాలకృష్ణ — NTR కుమారుడు</td></tr>
+<tr><td>Madugula Nagaphani Sarma</td><td>Padma Shri (Literature)</td><td class="bi-te">అవధాని</td></tr>
+<tr><td>K.L. Krishna</td><td>Padma Shri (Lit &amp; Edu)</td><td class="bi-te">K.L. కృష్ణ — ఆర్థిక శాస్త్రవేత్త</td></tr>
+<tr><td>Miriyala Apparao</td><td>Padma Shri Posthumous (Burrakatha)</td><td class="bi-te">మిర్యాల అప్పారావు — తాడేపల్లిగూడెం</td></tr>
+<tr><td>Vadiraj Panchamukhi</td><td>Padma Shri (Music)</td><td class="bi-te">వాదిరాజ్ పంచముఖి</td></tr>
+</table>
+
+<div class="section-hdr">Historic AP Padma Award Holders / చారిత్రక AP గ్రహీతలు</div>
+<table class="key-table">
+<tr><th>Recipient</th><th>Award &amp; Year</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>SP Balasubrahmanyam</td><td>Padma Vibhushan 2021 (Posthumous)</td><td class="bi-te">SPB — నెల్లూరు</td></tr>
+<tr><td>K. Viswanath</td><td>Padma Shri 1992; Dadasaheb Phalke 2016</td><td class="bi-te">K. విశ్వనాథ్ — శంకరాభరణం</td></tr>
+<tr><td>Chiranjeevi</td><td>Padma Bhushan 2006</td><td class="bi-te">చిరంజీవి — నరసాపురం</td></tr>
+<tr><td>SS Rajamouli</td><td>Padma Shri 2012</td><td class="bi-te">SS రాజమౌళి — RRR/బాహుబలి</td></tr>
+<tr><td>PV Sindhu</td><td>Padma Shri 2015; Padma Bhushan 2020</td><td class="bi-te">PV సింధు</td></tr>
+</table>
+<p class="bi-te">2026 Padma Awards (జన. 25 ప్రకటన): తెలుగు రాష్ట్రాల నుండి 12 మంది. Dr. Nori కి USA నుండి Padma Bhushan; AP నుండి 4 Padma Shri (Vempaty Kutumba Sastry — Literature, మిగతా ముగ్గురు Art); Garimella మరణానంతరం.</p>"""
     },
     {
         "id": "div9_s3",
         "title": "Oscar & అంతర్జాతీయ పురస్కారాలు",
-        "summary": "Oscar 2023: నాటు నాటు (RRR) — MM కీరవాణి; 69వ NFA: అల్లు అర్జున్ Best Actor (Pushpa) — తొలి తెలుగు నటుడు; DSP Best Music (Songs); 70వ NFA: Karthikeya 2 (Best Telugu); 71వ NFA: Bhagavanth Kesari (Best Telugu), Baby (Screenplay+Playback)"
+        "sub": "Oscar & National Film Awards — Telugu Wins",
+        "summary": "Oscar 2023: నాటు నాటు (RRR) — MM కీరవాణి; 69వ NFA: అల్లు అర్జున్ Best Actor (Pushpa) — తొలి తెలుగు నటుడు; DSP Best Music (Songs); 70వ NFA: Karthikeya 2 (Best Telugu); 71వ NFA: Bhagavanth Kesari (Best Telugu), Baby (Screenplay+Playback)",
+        "html": """<div class="concept-cover">
+  <h1>Oscar &amp; National Film Awards &nbsp;<span class="bi-te">/ Oscar &amp; జాతీయ పురస్కారాలు</span></h1>
+  <div class="sub">Naatu Naatu Oscar 2023 • Allu Arjun first Telugu Best Actor (NFA)</div>
+</div>
+
+<div class="section-hdr">'Naatu Naatu' — Oscar 2023 / నాటు నాటు ఆస్కార్</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Film</td><td>RRR (Director: SS Rajamouli)</td><td class="bi-te">RRR (SS రాజమౌళి)</td></tr>
+<tr><td>Award ceremony</td><td><b>95th Academy Awards (2023)</b></td><td class="bi-te">95వ Academy Awards</td></tr>
+<tr><td>Category</td><td>Best Original Song</td><td class="bi-te">Best Original Song</td></tr>
+<tr><td>Music</td><td>M.M. Keeravani (West Godavari — Kovvur)</td><td class="bi-te">MM కీరవాణి (కొవ్వూరు)</td></tr>
+<tr><td>Lyrics</td><td>Chandrabose</td><td class="bi-te">చంద్రబోస్</td></tr>
+<tr><td>Golden Globe</td><td>Won earlier in 2023 (Best Original Song)</td><td class="bi-te">Golden Globe కూడా</td></tr>
+</table>
+
+<div class="section-hdr">69th National Film Awards (2022 films) / 69వ జాతీయ పురస్కారాలు</div>
+<table class="key-table">
+<tr><th>Award</th><th>Winner</th><th>Film</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Best Actor</b></td><td>Allu Arjun</td><td>Pushpa: The Rise</td><td class="bi-te">తొలి తెలుగు Best Actor</td></tr>
+<tr><td>Best Music (Songs)</td><td>Devi Sri Prasad</td><td>Pushpa: The Rise</td><td class="bi-te">DSP</td></tr>
+<tr><td>Best Music (Background)</td><td>M.M. Keeravani</td><td>RRR</td><td class="bi-te">MM కీరవాణి</td></tr>
+<tr><td>Best Telugu Film</td><td>Uppena</td><td>—</td><td class="bi-te">ఉప్పెన</td></tr>
+</table>
+
+<div class="section-hdr">70th &amp; 71st NFA — Best Telugu Film / 70-71 NFA Telugu</div>
+<table class="key-table">
+<tr><th>Edition (year films)</th><th>Best Telugu Film</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>70th NFA (2022)</td><td>Karthikeya 2</td><td class="bi-te">కార్తికేయ 2</td></tr>
+<tr><td>71st NFA (2023)</td><td><b>Bhagavanth Kesari</b> (Balakrishna; Anil Ravipudi)</td><td class="bi-te">భగవంత్ కేసరి</td></tr>
+<tr><td>71st NFA — Best Screenplay</td><td>Sai Rajesh — Baby</td><td class="bi-te">Baby — Sai రాజేష్</td></tr>
+<tr><td>71st NFA — Best Playback (Male)</td><td>PVNS Rohith — 'Premistunna' (Baby)</td><td class="bi-te">Baby — 'ప్రేమిస్తున్నా'</td></tr>
+</table>
+<p class="bi-te">Pushpa: The Rise (2021 డిసెంబర్) చిత్రానికి అల్లు అర్జున్ తొలి తెలుగు Best Actor — తెలుగు సినిమా చరిత్రలో ఇది ఒక మైలురాయి. DSP అదే చిత్రానికి Best Music (Songs); MM కీరవాణి అదే వేడుకలో RRR కి Best Music (Background) సాధించారు.</p>"""
     },
     {
         "id": "div9_s4",
         "title": "సాహిత్య & సాంస్కృతిక పురస్కారాలు",
-        "summary": "విశ్వనాథ సత్యనారాయణ — జ్ఞానపీఠ పురస్కారం 1970 (మొదటి తెలుగు జ్ఞానపీఠ); దాదాసాహేబ్ ఫాల్కే 2016 = K. విశ్వనాథ్; సాహిత్య అకాడమి"
+        "sub": "Literary & Cultural Awards — Telugu Recipients",
+        "summary": "విశ్వనాథ సత్యనారాయణ — జ్ఞానపీఠ పురస్కారం 1970 (మొదటి తెలుగు జ్ఞానపీఠ); దాదాసాహేబ్ ఫాల్కే 2016 = K. విశ్వనాథ్; సాహిత్య అకాడమి",
+        "html": """<div class="concept-cover">
+  <h1>Literary &amp; Cultural Awards &nbsp;<span class="bi-te">/ సాహిత్య-సాంస్కృతిక పురస్కారాలు</span></h1>
+  <div class="sub">Jnanpith • Dadasaheb Phalke • Sahitya Akademi</div>
+</div>
+
+<div class="section-hdr">Telugu Jnanpith Awardees / తెలుగు జ్ఞానపీఠ్ గ్రహీతలు</div>
+<table class="key-table">
+<tr><th>Recipient</th><th>Year</th><th>Notable work</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Viswanatha Satyanarayana</b></td><td><b>1970 (1st Telugu)</b></td><td>Ramayana Kalpavruksham</td><td class="bi-te">విశ్వనాథ సత్యనారాయణ — తొలి తెలుగు జ్ఞానపీఠ్</td></tr>
+<tr><td>C. Narayana Reddy (Sinare)</td><td>1988 (2nd Telugu)</td><td>Viswambhara</td><td class="bi-te">సినారె — విశ్వంభర</td></tr>
+<tr><td>Ravuri Bharadwaja</td><td>2012 (3rd Telugu)</td><td>Pakudu Rallu</td><td class="bi-te">రావూరి భరద్వాజ</td></tr>
+</table>
+
+<div class="section-hdr">Dadasaheb Phalke Award / దాదాసాహేబ్ ఫాల్కే</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Field</td><td>Highest award in Indian cinema (lifetime achievement)</td><td class="bi-te">భారత సినిమా అత్యున్నత పురస్కారం</td></tr>
+<tr><td><b>K. Viswanath</b></td><td>2016 (conferred 2017)</td><td class="bi-te">K. విశ్వనాథ్ — శంకరాభరణం, సాగర సంగమం</td></tr>
+<tr><td>Akkineni Nageswara Rao (ANR)</td><td>1990</td><td class="bi-te">అక్కినేని నాగేశ్వరరావు</td></tr>
+<tr><td>B.N. Reddy</td><td>1974</td><td class="bi-te">బి.ఎన్. రెడ్డి (Vauhini)</td></tr>
+<tr><td>L.V. Prasad</td><td>1982</td><td class="bi-te">L.V. ప్రసాద్</td></tr>
+<tr><td>D. Rama Naidu</td><td>2009</td><td class="bi-te">డి. రామానాయుడు (Suresh Productions)</td></tr>
+</table>
+
+<div class="section-hdr">Sahitya Akademi &amp; Cultural Awards / సాహిత్య అకాడమి</div>
+<p>The Sahitya Akademi Award is given annually in Telugu literature. The Kendra Sahitya Akademi (founded 1954) recognises one Telugu work each year. K. Viswanath also received Padma Shri (1992) for his contribution to cinema.</p>
+<p class="bi-te">విశ్వనాథ సత్యనారాయణ 'రామాయణ కల్పవృక్షం' కోసం 1970లో తొలి తెలుగు జ్ఞానపీఠ్ పొందారు. K. విశ్వనాథ్ 2016 దాదాసాహేబ్ ఫాల్కే + 1992 పద్మ శ్రీ గ్రహీత — ఆయనకు పద్మ విభూషణ్ రాలేదు. తెలుగు జ్ఞానపీఠ్ గ్రహీతలు మొత్తం 3 మంది (1970/1988/2012).</p>"""
     },
     {
         "id": "div9_s5",
         "title": "కేంద్ర విద్యా సంస్థలు — AP",
-        "summary": "IIT తిరుపతి (2015), NIT AP-తాడేపల్లిగూడెం (2015), AIIMS మంగళగిరి (2020/2022), CUAP అనంతపురం (2014/2016), IISER తిరుపతి (2015)"
+        "sub": "Central Educational Institutions in AP (APRA 2014 grants)",
+        "summary": "IIT తిరుపతి (2015), NIT AP-తాడేపల్లిగూడెం (2015), AIIMS మంగళగిరి (2020/2022), CUAP అనంతపురం (2014/2016), IISER తిరుపతి (2015)",
+        "html": """<div class="concept-cover">
+  <h1>Central Educational Institutions — AP &nbsp;<span class="bi-te">/ AP కేంద్ర విద్యా సంస్థలు</span></h1>
+  <div class="sub">APRA 2014 schedule guarantees — IIT, NIT, AIIMS, CUAP, IISER, IIIT</div>
+</div>
+
+<div class="section-hdr">Premier Institutions / ప్రధాన సంస్థలు</div>
+<table class="key-table">
+<tr><th>Institution</th><th>Location</th><th>Estd.</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>IIT Tirupati</b></td><td>Yerpedu, Tirupati district</td><td>2015</td><td class="bi-te">9వ IIT (APRA 2014 వాగ్దానం)</td></tr>
+<tr><td><b>NIT Andhra Pradesh</b></td><td>Tadepalligudem, Eluru district</td><td>2015</td><td class="bi-te">31 NITs లో ఒకటి</td></tr>
+<tr><td><b>AIIMS Mangalagiri</b></td><td>Mangalagiri, Guntur district</td><td>Foundation 2018; OPD 2018; full operation 2022</td><td class="bi-te">PMSSY కింద</td></tr>
+<tr><td><b>CUAP</b> (Central University of AP)</td><td>Janthaluru, Anantapur district</td><td>2014 (Act); 2016 temp campus</td><td class="bi-te">కేంద్రీయ విశ్వవిద్యాలయం</td></tr>
+<tr><td><b>IISER Tirupati</b></td><td>Tirupati district</td><td>2015</td><td class="bi-te">5వ IISER</td></tr>
+<tr><td>IIIT Sri City</td><td>Chittoor district</td><td>2013 (PPP model)</td><td class="bi-te">IIIT శ్రీ సిటీ</td></tr>
+<tr><td>IIM Visakhapatnam</td><td>Vizag (Andhra University campus initially)</td><td>2015</td><td class="bi-te">IIM విశాఖపట్నం</td></tr>
+<tr><td>IIPE</td><td>Indian Institute of Petroleum &amp; Energy — Visakhapatnam</td><td>2016</td><td class="bi-te">IIPE</td></tr>
+</table>
+
+<div class="section-hdr">APRA 2014 Schedule XIII Background / APRA 2014 నేపథ్యం</div>
+<p>The Andhra Pradesh Reorganisation Act, 2014 (Section 93 + Schedule XIII) committed the Centre to establish several premier institutions in AP including IIT, NIT, AIIMS, IIM, IISER, IIIT, Central University, Petroleum University, Agricultural University, Tribal University and a National Institute of Disaster Management. Most have been operationalised between 2014-2022; the Tribal University at Vizianagaram is the most recent addition.</p>
+
+<div class="section-hdr">Quick District-wise Map / జిల్లాల వారీ</div>
+<table class="key-table">
+<tr><th>District</th><th>Central institution</th></tr>
+<tr><td>Tirupati</td><td>IIT, IISER, SVIMS</td></tr>
+<tr><td>Guntur</td><td>AIIMS Mangalagiri</td></tr>
+<tr><td>Eluru</td><td>NIT AP (Tadepalligudem)</td></tr>
+<tr><td>Anantapur</td><td>CUAP (Janthaluru)</td></tr>
+<tr><td>Visakhapatnam</td><td>IIM, IIPE, GITAM, Andhra University</td></tr>
+<tr><td>Chittoor</td><td>IIIT Sri City</td></tr>
+</table>
+<p class="bi-te">AIIMS మంగళగిరి గుంటూరు జిల్లాలో ఉంది (పాత గుంటూరు డివిజన్‌లోని మంగళగిరి పట్టణం). 2018లో OPD ప్రారంభించి 2022లో పూర్తి స్థాయిలో పనిచేస్తోంది. PMSSY (ప్రధాన మంత్రి స్వాస్థ్య సురక్ష యోజన) కింద APRA 2014 వాగ్దానంగా మంజూరైంది.</p>"""
     },
     {
         "id": "div9_s6",
         "title": "AP హైకోర్టు",
-        "summary": "AP పునర్విభజన చట్టం 2014 సెక్షన్ 30; జన. 1, 2019 అమరావతిలో ప్రత్యేక AP HC; Justice Dhiraj Singh Thakur (5వ CJ, Jul 2023–Apr 2026); Justice Lisa Gill — 6వ CJ, AP HC తొలి మహిళా CJ (Apr 25, 2026)"
+        "sub": "AP High Court — Establishment & Chief Justices",
+        "summary": "AP పునర్విభజన చట్టం 2014 సెక్షన్ 30; జన. 1, 2019 అమరావతిలో ప్రత్యేక AP HC; Justice Dhiraj Singh Thakur (5వ CJ, Jul 2023–Apr 2026); Justice Lisa Gill — 6వ CJ, AP HC తొలి మహిళా CJ (Apr 25, 2026)",
+        "html": """<div class="concept-cover">
+  <h1>AP High Court &nbsp;<span class="bi-te">/ AP హైకోర్టు</span></h1>
+  <div class="sub">Estd. Jan 1, 2019 at Amaravati • APRA 2014 Section 30 • 6th CJ Lisa Gill (first woman CJ)</div>
+</div>
+
+<div class="section-hdr">Establishment / స్థాపన</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Statutory basis</td><td>APRA 2014 — <b>Section 30</b></td><td class="bi-te">APRA 2014 సెక్షన్ 30</td></tr>
+<tr><td>Date of establishment</td><td><b>January 1, 2019</b></td><td class="bi-te">జనవరి 1, 2019</td></tr>
+<tr><td>Location</td><td>Amaravati (temporary at Justice City, Nelapadu, Guntur dist.)</td><td class="bi-te">అమరావతి (నేలపాడు)</td></tr>
+<tr><td>Pre-2019 arrangement</td><td>Hyderabad HC served both AP &amp; TS (2014-2018)</td><td class="bi-te">2014-2018 ఉమ్మడి హైదరాబాద్ HC</td></tr>
+<tr><td>Sanctioned strength</td><td>37 judges (incl. CJ)</td><td class="bi-te">37 న్యాయమూర్తులు</td></tr>
+</table>
+
+<div class="section-hdr">Chief Justices of AP HC / AP HC ప్రధాన న్యాయమూర్తులు</div>
+<table class="key-table">
+<tr><th>#</th><th>Chief Justice</th><th>Tenure</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>1</td><td>Justice C. Praveen Kumar (Acting)</td><td>Jan 1, 2019 – Mar 31, 2019</td><td class="bi-te">తొలి (ఆక్టింగ్)</td></tr>
+<tr><td>1 (regular)</td><td>Justice Jitendra Kumar Maheshwari</td><td>Mar 7, 2019 – Jan 6, 2021</td><td class="bi-te">JK మహేశ్వరి — తొలి సాధారణ CJ</td></tr>
+<tr><td>2</td><td>Justice Arup Kumar Goswami</td><td>Jan 7, 2021 – Sep 10, 2021</td><td class="bi-te">అరూప్ కుమార్ గోస్వామి</td></tr>
+<tr><td>3</td><td>Justice Prashant Kumar Mishra</td><td>Oct 11, 2021 – May 18, 2023</td><td class="bi-te">ప్రశాంత్ కుమార్ మిశ్రా</td></tr>
+<tr><td>4</td><td>Justice K. Lakshmana Rao (Acting)</td><td>May 19, 2023 – Jul 27, 2023</td><td class="bi-te">ఆక్టింగ్</td></tr>
+<tr><td>5</td><td>Justice Dhiraj Singh Thakur</td><td>Jul 28, 2023 – Apr 24, 2026 (retired)</td><td class="bi-te">5వ CJ — ధీరజ్ సింగ్ ఠాకూర్</td></tr>
+<tr><td><b>6</b></td><td><b>Justice Lisa Gill</b></td><td><b>Apr 25, 2026 — present</b></td><td class="bi-te"><b>6వ CJ — తొలి మహిళా CJ</b></td></tr>
+</table>
+
+<p><b>Justice Lisa Gill — historic firsts:</b> Transferred from Punjab &amp; Haryana High Court, she was sworn in as AP HC judge in March 2026 and elevated to Chief Justice on Apr 25, 2026 following Justice Thakur's retirement on Apr 24, 2026. She is the <b>first woman Chief Justice in the history of the Andhra Pradesh High Court</b>. Recommended by the Supreme Court Collegium and notified by the Centre under Article 217 (transfer/appointment of HC judges).</p>
+<p class="bi-te">జస్టిస్ లిసా గిల్ Punjab &amp; Haryana HC నుండి బదిలీ అయి మార్చి 2026లో AP HC న్యాయమూర్తిగా ప్రమాణం చేశారు. ఏప్రిల్ 24, 2026న జస్టిస్ ఠాకూర్ పదవీ విరమణ చేయగా, ఏప్రిల్ 25, 2026న 6వ CJ గా ప్రమాణ స్వీకారం చేశారు — AP HC చరిత్రలో తొలి మహిళా ప్రధాన న్యాయమూర్తి. (గమనిక: AP HC 2019లోనే విడిగా ఏర్పడింది; దీని ముందు ఉమ్మడి హైదరాబాద్ HC.)</p>"""
     },
     {
         "id": "div9_s7",
         "title": "రాజ్యాంగం & AP",
-        "summary": "ఆర్టికల్ 371-డి (32వ సవరణ 1973); APRA 2014 ముఖ్యాంశాలు; ప్రత్యేక హోదా డిమాండ్; APRA సవరణ 2026"
+        "sub": "Constitution & AP — Article 371-D, APRA, SCS",
+        "summary": "ఆర్టికల్ 371-డి (32వ సవరణ 1973); APRA 2014 ముఖ్యాంశాలు; ప్రత్యేక హోదా డిమాండ్; APRA సవరణ 2026",
+        "html": """<div class="concept-cover">
+  <h1>Constitution &amp; AP &nbsp;<span class="bi-te">/ రాజ్యాంగం &amp; AP</span></h1>
+  <div class="sub">Article 371-D • APRA 2014 • Special Category Status • APRA Amendment 2026</div>
+</div>
+
+<div class="section-hdr">Article 371-D / ఆర్టికల్ 371-డి</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Inserted by</td><td><b>32nd Constitutional Amendment, 1973</b></td><td class="bi-te">32వ సవరణ 1973</td></tr>
+<tr><td>Applies to</td><td>Andhra Pradesh (and Telangana since 2014)</td><td class="bi-te">AP (మరియు తెలంగాణ)</td></tr>
+<tr><td>Purpose</td><td>Local-area reservation in education &amp; state-government employment</td><td class="bi-te">స్థానిక రిజర్వేషన్</td></tr>
+<tr><td>Presidential Order</td><td>AP Public Employment (Organisation of Local Cadres) Order, 1975</td><td class="bi-te">1975 Presidential Order</td></tr>
+<tr><td>G.O. 610</td><td>1985 — implemented 6-zone roster system for non-gazetted posts</td><td class="bi-te">G.O.610 — 6 Zones</td></tr>
+<tr><td>Survives bifurcation</td><td>Yes — applies to both successor states</td><td class="bi-te">విభజన తర్వాత కూడా</td></tr>
+</table>
+
+<div class="section-hdr">APRA 2014 — Key Provisions / APRA 2014 ముఖ్యాంశాలు</div>
+<table class="key-table">
+<tr><th>Section</th><th>Provision</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Section 3</td><td>Creation of Telangana state</td><td class="bi-te">తెలంగాణ ఏర్పాటు</td></tr>
+<tr><td>Section 5</td><td>Capital — "new capital" (originally undefined; amended 2026)</td><td class="bi-te">రాజధాని</td></tr>
+<tr><td>Section 8</td><td>Hyderabad common capital for 10 years</td><td class="bi-te">హైదరాబాద్ 10 సం. ఉమ్మడి</td></tr>
+<tr><td>Section 24</td><td>Lok Sabha 25 + Rajya Sabha 11 for AP</td><td class="bi-te">LS 25 + RS 11</td></tr>
+<tr><td>Section 30</td><td>AP High Court establishment</td><td class="bi-te">AP HC ఏర్పాటు</td></tr>
+<tr><td>Section 93 + Schedule XIII</td><td>IIT/NIT/AIIMS/IIM/IISER etc. promises</td><td class="bi-te">కేంద్ర సంస్థలు</td></tr>
+<tr><td><b>Section 94</b></td><td><b>Polavaram declared National Project</b></td><td class="bi-te">పోలవరం జాతీయ ప్రాజెక్టు</td></tr>
+</table>
+
+<div class="section-hdr">Special Category Status (SCS) / ప్రత్యేక హోదా</div>
+<p>SCS was promised by PM Manmohan Singh on the floor of Rajya Sabha during the APRA 2014 debate (Feb 20, 2014) — but it was <b>not written into the Act</b>. The <b>14th Finance Commission (2015)</b> recommended abolishing the SCS framework entirely (except for the existing 11 NE/hilly states), and NITI Aayog formalised this in 2015 by replacing the Planning Commission. The Centre's alternative was a Special Assistance / Special Package (loans + grants for backward districts, Polavaram, Amaravati). The SCS demand remains politically alive in AP.</p>
+
+<div class="section-hdr">APRA Amendment 2026 / APRA సవరణ 2026</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Title</td><td>AP Reorganisation (Amendment) Act, 2026</td><td class="bi-te">2026 సవరణ చట్టం</td></tr>
+<tr><td>Act No.</td><td><b>Act No. 7 of 2026</b></td><td class="bi-te">Act No. 7/2026</td></tr>
+<tr><td>Lok Sabha</td><td>Apr 1, 2026</td><td class="bi-te">LS — ఏప్రిల్ 1</td></tr>
+<tr><td>Rajya Sabha</td><td>Apr 2, 2026</td><td class="bi-te">RS — ఏప్రిల్ 2</td></tr>
+<tr><td>President's assent</td><td>Apr 6, 2026 (Droupadi Murmu, Art. 111)</td><td class="bi-te">రాష్ట్రపతి — ఏప్రిల్ 6</td></tr>
+<tr><td>What it amends</td><td>Section 5(2) — names <b>"Amaravati"</b> as AP capital</td><td class="bi-te">Section 5(2) — అమరావతి</td></tr>
+<tr><td>Retrospective from</td><td>June 2, 2024</td><td class="bi-te">జూన్ 2, 2024 నుండి</td></tr>
+<tr><td>Significance</td><td>3rd amendment to APRA 2014; 1st state capital named in central law</td><td class="bi-te">3వ APRA సవరణ</td></tr>
+</table>
+<p class="bi-te">2026 సవరణ APRA 2014కి 3వ సవరణ. మూల చట్టంలో "new capital" అని మాత్రమే ఉండేది — 2026లో "Amaravati" అని పేరుతో సవరించారు. ఏ రాష్ట్ర రాజధాని కేంద్ర చట్టంలో పేరు ద్వారా చేర్చిన మొదటి ఉదాహరణ ఇదే.</p>"""
     },
     {
         "id": "div9_s8",
         "title": "AP జిల్లాలు & రాజ్యాంగ పదవులు",
-        "summary": "13→26 జిల్లాలు (ఏప్రిల్ 2022)→28 జిల్లాలు (జన. 1, 2026); గవర్నర్ S. అబ్దుల్ నజీర్; CM చంద్రబాబు (జూన్ 12, 2024); 175 అసెంబ్లీ, 25 LS, 11 RS స్థానాలు"
+        "sub": "AP Districts & Constitutional Posts (Current Status)",
+        "summary": "13→26 జిల్లాలు (ఏప్రిల్ 2022)→28 జిల్లాలు (జన. 1, 2026); గవర్నర్ S. అబ్దుల్ నజీర్; CM చంద్రబాబు (జూన్ 12, 2024); 175 అసెంబ్లీ, 25 LS, 11 RS స్థానాలు",
+        "html": """<div class="concept-cover">
+  <h1>AP Districts &amp; Constitutional Posts &nbsp;<span class="bi-te">/ AP జిల్లాలు &amp; రాజ్యాంగ పదవులు</span></h1>
+  <div class="sub">28 districts (Jan 1, 2026) • Gov Abdul Nazeer • CM Naidu • 175 + 25 + 11</div>
+</div>
+
+<div class="section-hdr">District Evolution / జిల్లాల చరిత్ర</div>
+<table class="key-table">
+<tr><th>Date</th><th>Districts</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Jun 2, 2014</td><td>13 (post-bifurcation)</td><td class="bi-te">13 జిల్లాలు</td></tr>
+<tr><td>Apr 4, 2022</td><td><b>26</b> (YSRCP reorganisation)</td><td class="bi-te">26 జిల్లాలు</td></tr>
+<tr><td><b>Jan 1, 2026</b></td><td><b>28</b> — added Polavaram + Markapuram</td><td class="bi-te">28 జిల్లాలు (TDP)</td></tr>
+</table>
+<p>The two new districts added on Jan 1, 2026 are <b>Polavaram</b> (HQ Rampachodavaram, 12 mandals, ~3.5 lakh population) and <b>Markapuram</b> (HQ Markapuram town, 21 mandals). Annamayya district HQ moved from Rayachoti to Madanapalle. Kadapa now has the most mandals.</p>
+
+<div class="section-hdr">Constitutional Posts / రాజ్యాంగ పదవులు</div>
+<table class="key-table">
+<tr><th>Post</th><th>Holder</th><th>Since</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Governor</td><td>Justice S. Abdul Nazeer</td><td>Feb 2023</td><td class="bi-te">జస్టిస్ ఎస్. అబ్దుల్ నజీర్</td></tr>
+<tr><td>Chief Minister</td><td>N. Chandrababu Naidu (4th term)</td><td>Jun 12, 2024</td><td class="bi-te">17వ AP CM</td></tr>
+<tr><td>Deputy CM</td><td>K. Pawan Kalyan (JSP)</td><td>Jun 12, 2024</td><td class="bi-te">DCM పవన్ కళ్యాణ్</td></tr>
+<tr><td>Assembly Speaker</td><td>Ch. Ayyanna Patrudu</td><td>Jun 2024</td><td class="bi-te">అయ్యన్నపాత్రుడు</td></tr>
+<tr><td>HC Chief Justice</td><td>Justice Lisa Gill (6th CJ)</td><td>Apr 25, 2026</td><td class="bi-te">లిసా గిల్</td></tr>
+<tr><td>Chief Secretary</td><td>G. Sai Prasad (IAS 1991)</td><td>Mar 1, 2026</td><td class="bi-te">జి. సాయి ప్రసాద్</td></tr>
+<tr><td>DGP</td><td>Harish Kumar Gupta (IPS 1992)</td><td>Jan 31, 2025</td><td class="bi-te">హరీష్ కుమార్ గుప్తా</td></tr>
+</table>
+
+<div class="section-hdr">Legislature Strength / శాసన సంఖ్య</div>
+<table class="key-table">
+<tr><th>Body</th><th>Seats</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Lok Sabha (AP)</td><td><b>25</b> (delimitation expected after 2026 census)</td><td class="bi-te">25 LS (delimitation తర్వాత మారవచ్చు)</td></tr>
+<tr><td>Rajya Sabha (AP)</td><td>11</td><td class="bi-te">11 RS</td></tr>
+<tr><td>Legislative Assembly</td><td>175</td><td class="bi-te">175 అసెంబ్లీ</td></tr>
+<tr><td>Legislative Council</td><td>58</td><td class="bi-te">58 శాసన మండలి</td></tr>
+</table>
+<p class="bi-te">జనవరి 1, 2026 నుండి AP లో 28 జిల్లాలు — పోలవరం (HQ రంపచోడవరం) మరియు మార్కాపురం (HQ మార్కాపురం పట్టణం) కొత్తగా జోడించబడ్డాయి. లోక్‌సభ స్థానాలు 25 — తదుపరి delimitation 2026 జనాభా గణన ఆధారంగా మాత్రమే జరుగుతుంది (అప్పటివరకు 25 అలానే ఉంటుంది).</p>"""
     },
     {
         "id": "div9_s9",
         "title": "పరీక్ష రేపిడ్ రివిజన్",
-        "summary": "పద్మ పురస్కారాలు, పురస్కారాలు, సంస్థలు, హైకోర్టు, రాజ్యాంగం — సంక్షిప్త పట్టిక"
+        "sub": "Rapid Revision — One-Page Cheat Sheet",
+        "summary": "పద్మ పురస్కారాలు, పురస్కారాలు, సంస్థలు, హైకోర్టు, రాజ్యాంగం — సంక్షిప్త పట్టిక",
+        "html": """<div class="concept-cover">
+  <h1>Rapid Revision — Cheat Sheet &nbsp;<span class="bi-te">/ సంక్షిప్త పట్టిక</span></h1>
+  <div class="sub">All Division 9 high-yield facts in one place</div>
+</div>
+
+<div class="section-hdr">Padma Awards Snapshot / పద్మ సంక్షిప్తం</div>
+<table class="key-table">
+<tr><th>Year</th><th>Telugu awardees</th></tr>
+<tr><td>2026</td><td>1 PB (Nori, USA) + 4 AP PS + 7 TG PS = 12 total</td></tr>
+<tr><td>2025</td><td>5 AP (Balakrishna PB + 4 PS) + 2 TG = 7 total</td></tr>
+<tr><td>2021</td><td>SP Balasubrahmanyam — Padma Vibhushan (Posthumous)</td></tr>
+<tr><td>2020</td><td>PV Sindhu — Padma Bhushan</td></tr>
+<tr><td>2016 (Phalke)</td><td>K. Viswanath</td></tr>
+<tr><td>2006</td><td>Chiranjeevi — Padma Bhushan</td></tr>
+<tr><td>2012</td><td>SS Rajamouli — Padma Shri</td></tr>
+</table>
+
+<div class="section-hdr">Films &amp; Awards / సినిమా</div>
+<table class="key-table">
+<tr><th>Year</th><th>Win</th></tr>
+<tr><td>Oscar 2023 (95th)</td><td>'Naatu Naatu' (RRR) — Best Original Song (MM Keeravani / Chandrabose)</td></tr>
+<tr><td>69th NFA</td><td>Allu Arjun — Best Actor (Pushpa: The Rise); DSP — Best Music (Songs)</td></tr>
+<tr><td>70th NFA</td><td>Karthikeya 2 — Best Telugu Film</td></tr>
+<tr><td>71st NFA</td><td>Bhagavanth Kesari — Best Telugu Film; Baby — Best Screenplay (Sai Rajesh) + Best Male Playback (PVNS Rohith)</td></tr>
+<tr><td>Jnanpith</td><td>Viswanatha Satyanarayana 1970 (1st), Sinare 1988, Ravuri 2012</td></tr>
+</table>
+
+<div class="section-hdr">Central Institutions in AP / కేంద్ర సంస్థలు</div>
+<table class="key-table">
+<tr><th>Institution</th><th>Location</th></tr>
+<tr><td>IIT</td><td>Tirupati (2015)</td></tr>
+<tr><td>NIT</td><td>Tadepalligudem, Eluru (2015)</td></tr>
+<tr><td>AIIMS</td><td>Mangalagiri, Guntur</td></tr>
+<tr><td>CUAP</td><td>Janthaluru, Anantapur</td></tr>
+<tr><td>IISER</td><td>Tirupati (2015)</td></tr>
+<tr><td>IIM</td><td>Visakhapatnam</td></tr>
+</table>
+
+<div class="section-hdr">Constitution &amp; Legislature / రాజ్యాంగం</div>
+<table class="key-table">
+<tr><th>Item</th><th>Fact</th></tr>
+<tr><td>Article 371-D</td><td>32nd Amendment, 1973 (AP local-area reservation)</td></tr>
+<tr><td>AP HC estd.</td><td>Jan 1, 2019 (APRA 2014 §30)</td></tr>
+<tr><td>AP HC current CJ</td><td>Justice Lisa Gill (6th, since Apr 25, 2026) — 1st woman CJ</td></tr>
+<tr><td>APRA 2014</td><td>Act No. 6/2014 — effective Jun 2, 2014</td></tr>
+<tr><td>APRA Amendment 2026</td><td>Act No. 7/2026 — Amaravati capital (retrospective from Jun 2, 2024)</td></tr>
+<tr><td>AP districts</td><td>28 (since Jan 1, 2026)</td></tr>
+<tr><td>AP seats</td><td>175 Assembly + 25 LS + 11 RS + 58 Council</td></tr>
+</table>
+<p class="bi-te">పరీక్ష ముందు 5-నిమిషాల రివిజన్ కోసం ఈ పట్టికను చూడండి. 2026 ముఖ్యాంశాలు: లిసా గిల్ (Apr 25 — 6వ CJ); APRA సవరణ Act 7/2026 (అమరావతి); 28 జిల్లాలు (Jan 1).</p>"""
     }
 ], ensure_ascii=False)
 

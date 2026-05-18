@@ -32,42 +32,306 @@ SECTIONS_JSON = json.dumps([
     {
         "id": "div8_s1",
         "title": "పరీక్ష కోసం కీలక భావనలు",
-        "summary": "జాతీయ ఉద్యానవనాలు, పులుల అభయారణ్యాలు, ISRO SDSC SHAR, AP క్రీడావీరులు — పరీక్ష హాట్‌స్పాట్‌లు"
+        "sub": "Environment, ISRO & Sports — Exam Hotspots",
+        "summary": "జాతీయ ఉద్యానవనాలు, పులుల అభయారణ్యాలు, ISRO SDSC SHAR, AP క్రీడావీరులు — పరీక్ష హాట్‌స్పాట్‌లు",
+        "html": """<div class="concept-cover">
+  <h1>Environment, ISRO &amp; Sports &nbsp;<span class="bi-te">/ పర్యావరణం, ISRO &amp; క్రీడలు</span></h1>
+  <div class="sub">National parks • Wildlife sanctuaries • SDSC SHAR • Star athletes</div>
+</div>
+
+<div class="section-hdr">Exam Hotspots / పరీక్ష ముఖ్యాంశాలు</div>
+<table class="key-table">
+<tr><th>Theme</th><th>Why it matters</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>National Parks (3)</td><td>Papikonda, Rajiv Gandhi (Lankamala), Sri Venkateswara</td><td class="bi-te">3 జాతీయ ఉద్యానవనాలు</td></tr>
+<tr><td>Tiger Reserve</td><td>NSTR — India's largest at ~3,728 sq km</td><td class="bi-te">నాగార్జునసాగర్-శ్రీశైలం పులుల అభయారణ్యం</td></tr>
+<tr><td>Wildlife Sanctuaries</td><td>Coringa (mangroves), Koundinya (elephants), Rollapadu (GIB/Blackbuck)</td><td class="bi-te">కొరింగ, కౌండిణ్య, రోళ్లపాడు</td></tr>
+<tr><td>SDSC SHAR</td><td>India's only orbital launchport; 100th launch was NVS-02 (Jan 29, 2025)</td><td class="bi-te">100వ ప్రయోగం NVS-02</td></tr>
+<tr><td>AP athletes</td><td>PV Sindhu, Kidambi Srikanth, P. Gopichand, Satwiksairaj Rankireddy</td><td class="bi-te">PV సింధు, శ్రీకాంత్, గోపీచంద్</td></tr>
+</table>
+
+<div class="section-hdr">AP at a Glance — Environment / AP పర్యావరణ సారాంశం</div>
+<table class="key-table">
+<tr><th>Metric</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Forest area (ISFR 2023)</td><td><b>~29,784 sq km</b> ≈ <b>18.27%</b> of state</td><td class="bi-te">~29,784 చ.కి.మీ / 18.27%</td></tr>
+<tr><td>National parks</td><td>3</td><td class="bi-te">3 జాతీయ ఉద్యానవనాలు</td></tr>
+<tr><td>Wildlife sanctuaries</td><td>13</td><td class="bi-te">13 వన్యప్రాణి అభయారణ్యాలు</td></tr>
+<tr><td>Ramsar sites</td><td>Kolleru, Pulicat (shared with TN)</td><td class="bi-te">కొల్లేరు, పులికాట్ — రామ్‌సర్</td></tr>
+<tr><td>Solar capacity (2024)</td><td>~6 GW (MNRE — utility + rooftop)</td><td class="bi-te">~6 GW సోలార్ సామర్థ్యం</td></tr>
+<tr><td>State Animal / Bird</td><td>Blackbuck / Indian Roller</td><td class="bi-te">కృష్ణ జింక / పాల పిట్ట</td></tr>
+</table>
+
+<p><b>How to revise this division:</b> Memorise the 3 national parks with their districts, then the 13 sanctuary-headliner pairings (Coringa→mangroves, Koundinya→elephants, Rollapadu→GIB+Blackbuck). For ISRO, anchor on the SDSC SHAR location (Tirupati district), the 100th launch (NVS-02, Jan 29 2025), and SpaDeX docking (Jan 16, 2025). Sports: medals, dates, and titles.</p>
+<p class="bi-te">3 జాతీయ ఉద్యానవనాలు + 13 అభయారణ్యాల హెడ్‌లైనర్‌లు, SDSC SHAR (తిరుపతి జిల్లా), NVS-02 (జన 29, 2025), SpaDeX (జన 16, 2025) — ఈ నాలుగు యాంకర్ ఫాక్ట్‌లతో విభాగం పూర్తిగా క్లియర్.</p>"""
     },
     {
         "id": "div8_s2",
         "title": "జాతీయ ఉద్యానవనాలు",
-        "summary": "పాపికొండలు, రాజీవ్ గాంధీ జాతీయ ఉద్యానవనం (నాగార్జునసాగర్-శ్రీశైలం), శ్రీ వేంకటేశ్వర జాతీయ ఉద్యానవనం"
+        "sub": "National Parks of Andhra Pradesh",
+        "summary": "పాపికొండలు, రాజీవ్ గాంధీ జాతీయ ఉద్యానవనం (నాగార్జునసాగర్-శ్రీశైలం), శ్రీ వేంకటేశ్వర జాతీయ ఉద్యానవనం",
+        "html": """<div class="concept-cover">
+  <h1>National Parks of AP &nbsp;<span class="bi-te">/ AP జాతీయ ఉద్యానవనాలు</span></h1>
+  <div class="sub">3 National Parks — Papikonda • Rajiv Gandhi (Lankamala) • Sri Venkateswara</div>
+</div>
+
+<div class="section-hdr">The Three AP National Parks / మూడు జాతీయ ఉద్యానవనాలు</div>
+<table class="key-table">
+<tr><th>Park</th><th>District(s)</th><th>Area</th><th>Famous for</th></tr>
+<tr><td><b>Papikonda NP</b></td><td>West Godavari, Eluru, Alluri Sitarama Raju</td><td>~1,012 sq km</td><td>Godavari river boat safari; tigers, leopards</td></tr>
+<tr><td><b>Rajiv Gandhi NP</b> (Lankamala)</td><td>Kadapa (YSR)</td><td>~2.4 sq km (very small; largely WLS)</td><td>Slender Loris; dry deciduous</td></tr>
+<tr><td><b>Sri Venkateswara NP</b></td><td>Tirupati, Chittoor</td><td>~353 sq km</td><td>Red Sanders, Talakona waterfall, slender loris</td></tr>
+</table>
+
+<div class="section-hdr">Key Distinctions / గుర్తుంచుకోవలసిన విషయాలు</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Largest NP in AP</td><td>Papikonda (~1,012 sq km)</td><td class="bi-te">పాపికొండలు అతిపెద్దది</td></tr>
+<tr><td>NP on Godavari river</td><td>Papikonda (boat safari)</td><td class="bi-te">పాపికొండలు — గోదావరి బోట్ సఫారీ</td></tr>
+<tr><td>NP with Red Sanders</td><td>Sri Venkateswara NP (Seshachalam hills)</td><td class="bi-te">శ్రీ వేంకటేశ్వర NP — Red Sanders</td></tr>
+<tr><td>NSTR status</td><td>Tiger Reserve / WLS — NOT a National Park</td><td class="bi-te">NSTR పులుల అభయారణ్యం (NP కాదు)</td></tr>
+<tr><td>NSTR total area</td><td>~3,728 sq km (AP share ~3,568 sq km)</td><td class="bi-te">మొత్తం ~3,728 చ.కి.మీ</td></tr>
+</table>
+
+<p><b>NSTR — special note:</b> Nagarjunasagar-Srisailam Tiger Reserve is India's <b>largest tiger reserve</b> by area, but it is a <i>Wildlife Sanctuary + Tiger Reserve</i>, not a National Park. It spans AP (Nandyal, Prakasam, Palnadu) and Telangana. Often confused with Rajiv Gandhi NP — they are different.</p>
+<p class="bi-te">NSTR భారతదేశ అతిపెద్ద పులుల అభయారణ్యం (~3,728 చ.కి.మీ) — ఇది అభయారణ్యం + Tiger Reserve, జాతీయ ఉద్యానవనం కాదు. AP (నంద్యాల, ప్రకాశం, పల్నాడు) మరియు తెలంగాణలో విస్తరించి ఉంది.</p>
+
+<p><b>2026 update:</b> Papikonda eco-tourism circuit expanded under AP Tourism's River Cruise initiative; new boat permits issued for tribal-owned operators. Sri Venkateswara NP saw enhanced Red Sanders Anti-Smuggling Task Force deployment after the 2024 Supreme Court orders.</p>
+<p class="bi-te">పాపికొండలు ఎకో టూరిజమ్ సర్క్యూట్ విస్తరణ; Red Sanders Anti-Smuggling Task Force బలోపేతం.</p>"""
     },
     {
         "id": "div8_s3",
         "title": "వన్యప్రాణి అభయారణ్యాలు",
-        "summary": "కొరింగ మడ అడవులు, కౌండిణ్య ఏనుగుల అభయారణ్యం, రోళ్లపాడు GIB అభయారణ్యం (నందయాల జిల్లా), పులికాట్ సరస్సు"
+        "sub": "Wildlife Sanctuaries & Wetlands",
+        "summary": "కొరింగ మడ అడవులు, కౌండిణ్య ఏనుగుల అభయారణ్యం, రోళ్లపాడు GIB అభయారణ్యం (నందయాల జిల్లా), పులికాట్ సరస్సు",
+        "html": """<div class="concept-cover">
+  <h1>Wildlife Sanctuaries &amp; Wetlands &nbsp;<span class="bi-te">/ వన్యప్రాణి అభయారణ్యాలు</span></h1>
+  <div class="sub">13 WLS in AP • 2 Ramsar wetlands • Headliner-by-headliner</div>
+</div>
+
+<div class="section-hdr">Marquee Sanctuaries / ప్రధాన అభయారణ్యాలు</div>
+<table class="key-table">
+<tr><th>Sanctuary</th><th>District</th><th>Famous for</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Coringa WLS</b></td><td>Kakinada</td><td>AP's largest mangrove; Irrawaddy dolphins; Olive Ridley nesting</td><td class="bi-te">కొరింగ — మడ అడవులు, కాకినాడ</td></tr>
+<tr><td><b>Koundinya WLS</b></td><td>Chittoor</td><td>AP's only elephant sanctuary; near Karnataka border</td><td class="bi-te">కౌండిణ్య — ఏకైక ఏనుగుల అభయారణ్యం</td></tr>
+<tr><td><b>Rollapadu WLS</b></td><td><b>Nandyal</b> (formerly Kurnool)</td><td>Great Indian Bustard (GIB) + Blackbuck (state animal)</td><td class="bi-te">రోళ్లపాడు — GIB &amp; కృష్ణ జింక, నంద్యాల జిల్లా</td></tr>
+<tr><td>Nelapattu WLS</td><td>Tirupati (formerly Nellore)</td><td>Spot-billed Pelicans, Painted Storks — bird haven</td><td class="bi-te">నేలపట్టు — పక్షుల అభయారణ్యం</td></tr>
+<tr><td>Pulicat Lake WLS</td><td>Tirupati (AP) + Tamil Nadu</td><td>India's 2nd largest brackish lagoon; flamingoes</td><td class="bi-te">పులికాట్ — 2వ అతిపెద్ద ఉప్పు సరస్సు</td></tr>
+<tr><td>Sri Lankamalleswara WLS</td><td>Kadapa</td><td>Slender Loris (Jerdon's Courser nearby)</td><td class="bi-te">శ్రీ లంకమలెశ్వర</td></tr>
+<tr><td>Sri Penusila Narasimha WLS</td><td>Nellore</td><td>Velikonda hills; dry deciduous forest</td><td class="bi-te">శ్రీ పేనుశిల నరసింహ</td></tr>
+</table>
+
+<div class="section-hdr">Ramsar Wetland Sites / రామ్‌సర్ సైట్లు</div>
+<table class="key-table">
+<tr><th>Site</th><th>District</th><th>Year listed</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Kolleru Lake</b></td><td>Eluru, West Godavari</td><td>2002</td><td class="bi-te">కొల్లేరు — తాజా నీటి సరస్సు</td></tr>
+<tr><td><b>Pulicat Lake</b></td><td>Tirupati (AP share) + TN</td><td>2002</td><td class="bi-te">పులికాట్ — ఉప్పు సరస్సు</td></tr>
+<tr><td><b>Coringa</b> mangroves</td><td>Kakinada</td><td>Added in 2024 — AP's 3rd Ramsar site</td><td class="bi-te">కొరింగ — 2024లో జతచేయబడింది</td></tr>
+</table>
+
+<p><b>Rollapadu — critical fix:</b> Located in <b>Nandyal district</b> (carved out of Kurnool in the 2022 reorganisation). It is famous for the critically endangered <b>Great Indian Bustard</b> (Jatayuvu) and large herds of <b>Blackbuck</b> — AP's state animal. The earlier-mentioned "Seluru sanctuary" was a fabricated name and does not exist; Rollapadu is the authentic AP GIB sanctuary.</p>
+<p class="bi-te">రోళ్లపాడు అభయారణ్యం నంద్యాల జిల్లాలో (2022 పునర్‌వ్యవస్థీకరణలో కర్నూలు నుండి విడిపోయింది). Great Indian Bustard (జటాయువు) మరియు కృష్ణ జింకలకు (AP రాష్ట్ర జంతువు) ప్రసిద్ధి. "సెలూరు అభయారణ్యం" అనేది తప్పు — రోళ్లపాడు మాత్రమే నిజమైన GIB అభయారణ్యం.</p>"""
     },
     {
         "id": "div8_s4",
         "title": "ISRO — SDSC SHAR",
-        "summary": "శ్రీహరికోట స్పేస్ సెంటర్ (తిరుపతి జిల్లా); 100వ ప్రయోగం NVS-02 (జన. 29, 2025); SpaDeX స్పేస్ డాకింగ్ (డిసె. 2024)"
+        "sub": "Satish Dhawan Space Centre — Sriharikota",
+        "summary": "శ్రీహరికోట స్పేస్ సెంటర్ (తిరుపతి జిల్లా); 100వ ప్రయోగం NVS-02 (జన. 29, 2025); SpaDeX స్పేస్ డాకింగ్ (డిసె. 2024)",
+        "html": """<div class="concept-cover">
+  <h1>ISRO — SDSC SHAR &nbsp;<span class="bi-te">/ సతీష్ ధవన్ స్పేస్ సెంటర్</span></h1>
+  <div class="sub">India's only orbital launchport • Tirupati district • 100+ launches</div>
+</div>
+
+<div class="section-hdr">SDSC SHAR Basics / SDSC SHAR ప్రాథమికాంశాలు</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Full name</td><td>Satish Dhawan Space Centre — Sriharikota High Altitude Range</td><td class="bi-te">సతీష్ ధవన్ స్పేస్ సెంటర్</td></tr>
+<tr><td>Named after</td><td>Satish Dhawan (former ISRO Chairman 1972-84; renamed 2002)</td><td class="bi-te">2002లో పునర్నామకరణం</td></tr>
+<tr><td>Location</td><td><b>Sriharikota island, Tirupati district</b>, AP — near Pulicat lake</td><td class="bi-te">శ్రీహరికోట — తిరుపతి జిల్లా (పులికాట్ సరస్సు పక్కన)</td></tr>
+<tr><td>Established</td><td>October 1, 1971</td><td class="bi-te">అక్టోబర్ 1, 1971</td></tr>
+<tr><td>Launch pads</td><td>FLP (First) + SLP (Second); 3rd SLV pad under construction</td><td class="bi-te">FLP + SLP (3వది నిర్మాణంలో)</td></tr>
+</table>
+
+<div class="section-hdr">Landmark 2024-25 Launches / 2024-25 కీలక ప్రయోగాలు</div>
+<table class="key-table">
+<tr><th>Mission</th><th>Date</th><th>Rocket</th><th>Significance</th></tr>
+<tr><td><b>SpaDeX</b></td><td>Dec 30, 2024</td><td>PSLV-C60</td><td>SDX01 + SDX02 — Space Docking Experiment</td></tr>
+<tr><td>SpaDeX Docking</td><td><b>Jan 16, 2025</b></td><td>—</td><td>India 4th country to dock in space (after US, Russia, China)</td></tr>
+<tr><td><b>NVS-02 (100th launch)</b></td><td>Jan 29, 2025</td><td>GSLV-F15</td><td>NavIC navigation satellite; SDSC SHAR's <b>100th orbital launch</b></td></tr>
+<tr><td>EOS-08</td><td>Aug 16, 2024</td><td>SSLV-D3</td><td>Earth observation; SSLV's 3rd flight (operational)</td></tr>
+<tr><td><b>BlueBird Block-2</b></td><td>Dec 24, 2025</td><td>LVM3-M5 (GSLV Mk-III)</td><td>AST SpaceMobile's heaviest commercial cargo from SHAR (~6,100 kg)</td></tr>
+</table>
+
+<div class="section-hdr">Earlier Marquee Missions / గత ముఖ్య మిషన్లు</div>
+<table class="key-table">
+<tr><th>Mission</th><th>Date</th><th>Highlights</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Chandrayaan-3</td><td>Jul 14, 2023 (launch); Aug 23, 2023 (landing)</td><td>4th country to soft-land Moon; 1st on south pole</td><td class="bi-te">చంద్రయాన్-3 — చంద్ర దక్షిణ ధ్రువం</td></tr>
+<tr><td>Aditya-L1</td><td>Sep 2, 2023</td><td>India's 1st solar observatory</td><td class="bi-te">ఆదిత్య-L1 — సూర్య అధ్యయనం</td></tr>
+<tr><td>Mangalyaan (MOM)</td><td>Nov 5, 2013</td><td>India's 1st interplanetary mission</td><td class="bi-te">మంగళయాన్</td></tr>
+</table>
+
+<p><b>By December 2025</b>, SDSC SHAR had conducted 104+ orbital launch missions with an overall success rate above 90%. The BlueBird Block-2 launch on Dec 24, 2025 set the record for the heaviest commercial cargo from Indian soil (~6,100 kg per satellite, five units). For exact success/failure splits, consult ISRO's official statistics.</p>
+<p class="bi-te">డిసెంబర్ 2025 నాటికి SDSC SHAR నుండి 104+ ఆర్బిటల్ మిషన్లు; విజయవంతమైన శాతం 90%+. BlueBird Block-2 (డిసె 24, 2025) భారత గడ్డ నుండి అతి భారీ వాణిజ్య పేలోడ్ (~6,100 కిలోలు).</p>"""
     },
     {
         "id": "div8_s5",
         "title": "AP క్రీడావీరులు",
-        "summary": "PV సింధు — రియో రజతం, టోక్యో కాంస్యం; కిడంబి శ్రీకాంత్ — BWF 2021 రజతం; గోపీచంద్ — గురువు; నితేష్ కుమార్ — Para Olympics స్వర్ణం"
+        "sub": "AP's Sporting Legends",
+        "summary": "PV సింధు — రియో రజతం, టోక్యో కాంస్యం; కిడంబి శ్రీకాంత్ — BWF 2021 రజతం; గోపీచంద్ — గురువు; నితేష్ కుమార్ — Para Olympics స్వర్ణం",
+        "html": """<div class="concept-cover">
+  <h1>AP's Sporting Legends &nbsp;<span class="bi-te">/ AP క్రీడావీరులు</span></h1>
+  <div class="sub">Sindhu • Srikanth • Gopichand • Satwik • Nitesh — badminton heartland</div>
+</div>
+
+<div class="section-hdr">Badminton Stars / బ్యాడ్మింటన్ తారలు</div>
+<table class="key-table">
+<tr><th>Player</th><th>Origin</th><th>Major achievements</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>PV Sindhu</b></td><td>Hyderabad / AP roots</td><td>Rio 2016 Silver, Tokyo 2020 Bronze; BWF World Champion 2019; Paris 2024 flag-bearer; BWF Athletes Commission 2025</td><td class="bi-te">PV సింధు — 2 ఒలింపిక్ పతకాలు</td></tr>
+<tr><td><b>Kidambi Srikanth</b></td><td>Born Feb 7, 1993, Guntur</td><td>BWF World Ch'ship 2021 Silver (1st Indian man); 4 Superseries titles 2017; Thomas Cup 2022 champion</td><td class="bi-te">కిడంబి శ్రీకాంత్</td></tr>
+<tr><td><b>Pullela Gopichand</b></td><td>Nagandla, Prakasam</td><td>All England Champion 2001; coach of Sindhu &amp; Srikanth; Padma Bhushan 2014; Dronacharya 2009</td><td class="bi-te">పుల్లేల గోపీచంద్</td></tr>
+<tr><td><b>Satwiksairaj Rankireddy</b></td><td>Amalapuram, Konaseema (E. Godavari)</td><td>Men's doubles (with Chirag Shetty); BWF World No. 1 2023; Paris 2024 Olympian</td><td class="bi-te">సాత్విక్ సాయిరాజ్ రాంకిరెడ్డి</td></tr>
+</table>
+
+<div class="section-hdr">Other Olympians &amp; Paralympians / ఇతర ఒలింపియన్లు</div>
+<table class="key-table">
+<tr><th>Player</th><th>Sport</th><th>Achievement</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Nitesh Kumar</b></td><td>Para-Badminton</td><td>Paris 2024 Paralympics <b>Gold</b> (SL3 singles)</td><td class="bi-te">నితేష్ కుమార్ — పారిస్ స్వర్ణం</td></tr>
+<tr><td>Karnam Malleswari</td><td>Weightlifting</td><td>1st Indian woman Olympic medallist (Sydney 2000 Bronze)</td><td class="bi-te">కర్ణం మల్లేశ్వరి</td></tr>
+<tr><td>Pusarla Venkata Sindhu</td><td>(see above)</td><td>Khel Ratna 2016, Padma Bhushan 2020</td><td class="bi-te">PV సింధు పురస్కారాలు</td></tr>
+<tr><td>Krishnam Raju Gadiraju</td><td>Shooting</td><td>AP shooting star; multiple national champion</td><td class="bi-te">కృష్ణం రాజు</td></tr>
+</table>
+
+<p><b>2024-25 milestones:</b> Sindhu was flag-bearer at the Paris 2024 Olympics Opening Ceremony — a rare honour. In 2025 she was elected to the BWF Athletes Commission. Satwik &amp; Chirag reclaimed BWF top-3 doubles ranking. Nitesh Kumar's Paralympic gold (Sep 2024) made him the first Indian male para-badminton Paralympic champion.</p>
+<p class="bi-te">పారిస్ 2024 ఒలింపిక్స్ Opening Ceremony లో PV సింధు భారత్ జెండా ఆజమాయిషీదారు. 2025లో BWF Athletes Commission సభ్యురాలిగా ఎన్నికైంది. నితేష్ కుమార్ — తొలి భారత మగ Para-Badminton ఒలింపిక్ స్వర్ణం.</p>"""
     },
     {
         "id": "div8_s6",
         "title": "పర్యావరణ కరెంట్ అఫైర్స్",
-        "summary": "Red Sanders రక్షణ, ఆలివ్ రిడ్లీ తాబేళ్ళు, పాపికొండలు ఎకో టూరిజమ్, AP Green Hydrogen Policy"
+        "sub": "Environment Current Affairs & Policy",
+        "summary": "Red Sanders రక్షణ, ఆలివ్ రిడ్లీ తాబేళ్ళు, పాపికొండలు ఎకో టూరిజమ్, AP Green Hydrogen Policy",
+        "html": """<div class="concept-cover">
+  <h1>Environment Current Affairs &nbsp;<span class="bi-te">/ పర్యావరణ కరెంట్ అఫైర్స్</span></h1>
+  <div class="sub">Red Sanders • Olive Ridleys • Green Hydrogen • Coringa Ramsar</div>
+</div>
+
+<div class="section-hdr">Conservation Headlines / పర్యావరణ ప్రధాన వార్తలు</div>
+<table class="key-table">
+<tr><th>Topic</th><th>2024-2026 update</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Red Sanders</b> (Pterocarpus santalinus)</td><td>CITES Appendix II protected; endemic to Seshachalam, Veligonda hills (Kadapa, Tirupati, Chittoor, Nandyal); Anti-Smuggling Task Force strengthened 2024</td><td class="bi-te">ఎర్ర చందనం — శేషాచలం, వేలికొండ; రాయలసీమ</td></tr>
+<tr><td><b>Olive Ridley turtles</b></td><td>Mass nesting at Coringa &amp; Srikurmam every Nov-Feb; AP Forest Dept hatchery 2025-26</td><td class="bi-te">ఆలివ్ రిడ్లీ తాబేళ్ళు — కొరింగ, శ్రీకూర్మం</td></tr>
+<tr><td><b>Coringa Ramsar</b></td><td>Designated as India's 80th Ramsar site in 2024 — AP's 3rd</td><td class="bi-te">కొరింగ — 80వ రామ్‌సర్ సైట్ (2024)</td></tr>
+<tr><td><b>Green Hydrogen Hub</b></td><td>AP Green Hydrogen Policy 2023 → Pudimadaka (Anakapalli) selected as National Green Hydrogen Mission Hub in 2024; NTPC + Reliance investment</td><td class="bi-te">పుడిమడక — గ్రీన్ హైడ్రోజన్ హబ్</td></tr>
+<tr><td><b>Solar capacity</b></td><td>~6 GW installed (MNRE 2024 — utility + rooftop); target 10 GW by 2030</td><td class="bi-te">~6 GW సోలార్ సామర్థ్యం</td></tr>
+</table>
+
+<div class="section-hdr">Policy &amp; Bodies / విధానాలు మరియు సంస్థలు</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>AP State Biodiversity Board</td><td>Established 2006 under Biological Diversity Act 2002</td><td class="bi-te">AP State Biodiversity Board</td></tr>
+<tr><td>AP Pollution Control Board (APPCB)</td><td>HQ Vijayawada; air quality monitoring across 16 cities</td><td class="bi-te">APPCB — విజయవాడ</td></tr>
+<tr><td>Mission LiFE in AP</td><td>State action plan launched 2023; eco-clubs in 10,000+ schools</td><td class="bi-te">Mission LiFE</td></tr>
+<tr><td>AP Climate Action Plan</td><td>Released Dec 2024; targets net-zero 2070 aligning with India's NDC</td><td class="bi-te">AP వాతావరణ కార్యాచరణ ప్రణాళిక</td></tr>
+</table>
+
+<p><b>Red Sanders globally:</b> Pterocarpus santalinus grows ONLY in a small belt of Andhra Pradesh — Seshachalam, Lankamala, Veligonda and Palakonda hills (i.e., Kadapa, Tirupati, Chittoor, Annamayya, Nandyal districts). Its red heartwood is internationally prized for Japanese musical instruments (shamisen) and Chinese furniture — driving heavy smuggling. CITES Appendix II since 1995.</p>
+<p class="bi-te">Red Sanders ప్రపంచంలో AP లోనే ఒక చిన్న ప్రాంతంలో పెరుగుతుంది — శేషాచలం, లంకమల, వేలికొండ, పాలకొండ (కడప, తిరుపతి, చిత్తూరు, అన్నమయ్య, నంద్యాల). అంతర్జాతీయంగా అత్యంత విలువైనది (జపాన్ షామిసెన్, చైనా ఫర్నిచర్) — అందుకే అక్రమ రవాణా తీవ్రంగా జరుగుతుంది.</p>"""
     },
     {
         "id": "div8_s7",
         "title": "పర్యావరణ సంఖ్యలు",
-        "summary": "ముఖ్య సంఖ్యలు: నాగార్జునసాగర్ వైశాల్యం, కొరింగ మడ జాతులు, SDSC SHAR మొత్తం ప్రయోగాలు"
+        "sub": "Numbers, Areas & Statistics",
+        "summary": "ముఖ్య సంఖ్యలు: నాగార్జునసాగర్ వైశాల్యం, కొరింగ మడ జాతులు, SDSC SHAR మొత్తం ప్రయోగాలు",
+        "html": """<div class="concept-cover">
+  <h1>Key Numbers &amp; Statistics &nbsp;<span class="bi-te">/ ముఖ్య సంఖ్యలు</span></h1>
+  <div class="sub">Area • Species count • Launch tally • Capacity</div>
+</div>
+
+<div class="section-hdr">Areas &amp; Extents / వైశాల్యాలు</div>
+<table class="key-table">
+<tr><th>Metric</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>AP forest cover (ISFR 2023)</td><td><b>~29,784 sq km</b> ≈ <b>18.27%</b> of state</td><td class="bi-te">~29,784 చ.కి.మీ / 18.27%</td></tr>
+<tr><td>NSTR Tiger Reserve</td><td>~3,728 sq km (total); AP share ~3,568</td><td class="bi-te">NSTR ~3,728 చ.కి.మీ</td></tr>
+<tr><td>Papikonda NP</td><td>~1,012 sq km</td><td class="bi-te">పాపికొండలు ~1,012</td></tr>
+<tr><td>Sri Venkateswara NP</td><td>~353 sq km</td><td class="bi-te">శ్రీ వేంకటేశ్వర ~353</td></tr>
+<tr><td>Coringa mangroves</td><td>~235 sq km (AP's largest)</td><td class="bi-te">కొరింగ ~235 చ.కి.మీ</td></tr>
+<tr><td>Pulicat Lake (total)</td><td>~759 sq km (AP share ~84%)</td><td class="bi-te">పులికాట్ ~759 చ.కి.మీ</td></tr>
+<tr><td>Kolleru Lake</td><td>~308 sq km (Asia's largest freshwater)</td><td class="bi-te">కొల్లేరు ~308 చ.కి.మీ</td></tr>
+</table>
+
+<div class="section-hdr">Biodiversity &amp; Species / జీవవైవిధ్యం</div>
+<table class="key-table">
+<tr><th>Item</th><th>Count</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Coringa mangrove species</td><td>35+</td><td class="bi-te">కొరింగ — 35+ మడ జాతులు</td></tr>
+<tr><td>AP wildlife sanctuaries</td><td>13</td><td class="bi-te">13 అభయారణ్యాలు</td></tr>
+<tr><td>AP national parks</td><td>3</td><td class="bi-te">3 జాతీయ ఉద్యానవనాలు</td></tr>
+<tr><td>AP tiger reserves</td><td>1 (NSTR; Nallamala)</td><td class="bi-te">1 పులుల అభయారణ్యం</td></tr>
+<tr><td>AP elephant reserve</td><td>1 (Rayala — Koundinya)</td><td class="bi-te">1 ఏనుగుల అభయారణ్యం</td></tr>
+<tr><td>AP Ramsar sites</td><td>3 (Kolleru, Pulicat, Coringa)</td><td class="bi-te">3 రామ్‌సర్ సైట్లు</td></tr>
+</table>
+
+<div class="section-hdr">ISRO &amp; Energy / ISRO &amp; విద్యుత్</div>
+<table class="key-table">
+<tr><th>Metric</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>SDSC SHAR launches (by Dec 2025)</td><td>104+ (success rate &gt; 90%)</td><td class="bi-te">104+ ప్రయోగాలు</td></tr>
+<tr><td>SDSC SHAR 100th launch</td><td>NVS-02 / GSLV-F15 — Jan 29, 2025</td><td class="bi-te">100వ ప్రయోగం — NVS-02</td></tr>
+<tr><td>SDSC SHAR established</td><td>Oct 1, 1971</td><td class="bi-te">అక్టోబర్ 1, 1971</td></tr>
+<tr><td>AP solar installed (2024)</td><td>~6 GW</td><td class="bi-te">~6 GW</td></tr>
+<tr><td>AP wind installed</td><td>~4.1 GW</td><td class="bi-te">~4.1 GW గాలిమర</td></tr>
+<tr><td>AP total power capacity</td><td>~26 GW (all sources)</td><td class="bi-te">~26 GW మొత్తం</td></tr>
+</table>
+
+<p class="bi-te">అన్ని సంఖ్యలు ISFR 2023, MNRE 2024, ISRO అధికారిక గణాంకాల ఆధారంగా. పరీక్షల కోసం ఈ క్లుప్త పట్టిక ఒక్కసారి చదివితే చాలు.</p>"""
     },
     {
         "id": "div8_s8",
         "title": "పరీక్ష రేపిడ్ రివిజన్",
-        "summary": "పర్యావరణం, ISRO, క్రీడలు — సంక్షిప్త పట్టిక"
+        "sub": "Rapid Revision — Environment, ISRO, Sports",
+        "summary": "పర్యావరణం, ISRO, క్రీడలు — సంక్షిప్త పట్టిక",
+        "html": """<div class="concept-cover">
+  <h1>Rapid Revision Sheet &nbsp;<span class="bi-te">/ పరీక్ష రేపిడ్ రివిజన్</span></h1>
+  <div class="sub">Div8 must-know facts in one screen</div>
+</div>
+
+<div class="section-hdr">Environment One-Liners / పర్యావరణ ఏక-పంక్తి</div>
+<table class="key-table">
+<tr><th>Question</th><th>Answer</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>National parks in AP</td><td>3 — Papikonda, Rajiv Gandhi (Lankamala), Sri Venkateswara</td><td class="bi-te">3 NPs</td></tr>
+<tr><td>Largest tiger reserve in India</td><td>NSTR (~3,728 sq km)</td><td class="bi-te">NSTR అతిపెద్దది</td></tr>
+<tr><td>AP forest cover (ISFR 2023)</td><td>~29,784 sq km / 18.27%</td><td class="bi-te">~29,784 చ.కి.మీ</td></tr>
+<tr><td>AP's only elephant sanctuary</td><td>Koundinya WLS (Chittoor)</td><td class="bi-te">కౌండిణ్య</td></tr>
+<tr><td>GIB &amp; Blackbuck sanctuary</td><td>Rollapadu (Nandyal district)</td><td class="bi-te">రోళ్లపాడు — నంద్యాల</td></tr>
+<tr><td>India's 2nd largest brackish lagoon</td><td>Pulicat Lake</td><td class="bi-te">పులికాట్</td></tr>
+<tr><td>AP Ramsar sites</td><td>3 (Kolleru 2002, Pulicat 2002, Coringa 2024)</td><td class="bi-te">3 రామ్‌సర్ సైట్లు</td></tr>
+<tr><td>Red Sanders region</td><td>Seshachalam, Veligonda hills — Rayalaseema</td><td class="bi-te">శేషాచలం / రాయలసీమ</td></tr>
+<tr><td>AP solar installed</td><td>~6 GW (MNRE 2024)</td><td class="bi-te">~6 GW</td></tr>
+<tr><td>Green Hydrogen Hub</td><td>Pudimadaka (Anakapalli)</td><td class="bi-te">పుడిమడక</td></tr>
+</table>
+
+<div class="section-hdr">ISRO One-Liners / ISRO ఏక-పంక్తి</div>
+<table class="key-table">
+<tr><th>Question</th><th>Answer</th></tr>
+<tr><td>SDSC SHAR location</td><td>Sriharikota island, <b>Tirupati district</b></td></tr>
+<tr><td>SDSC SHAR named after</td><td>Satish Dhawan (former ISRO Chairman)</td></tr>
+<tr><td>SDSC SHAR established</td><td>October 1, 1971</td></tr>
+<tr><td>SDSC SHAR 100th launch</td><td>NVS-02 on GSLV-F15, <b>Jan 29, 2025</b></td></tr>
+<tr><td>India's first space docking</td><td>SpaDeX — Jan 16, 2025 (4th country)</td></tr>
+<tr><td>Chandrayaan-3 landing</td><td>Aug 23, 2023 (Moon south pole)</td></tr>
+<tr><td>Aditya-L1 launch</td><td>Sep 2, 2023</td></tr>
+<tr><td>Heaviest cargo from SHAR</td><td>BlueBird Block-2 — Dec 24, 2025 (~6,100 kg/sat)</td></tr>
+</table>
+
+<div class="section-hdr">Sports One-Liners / క్రీడలు ఏక-పంక్తి</div>
+<table class="key-table">
+<tr><th>Question</th><th>Answer</th></tr>
+<tr><td>PV Sindhu Olympic medals</td><td>Rio 2016 Silver + Tokyo 2020 Bronze</td></tr>
+<tr><td>Paris 2024 flag-bearer (India)</td><td>PV Sindhu (with Sharath Kamal)</td></tr>
+<tr><td>BWF Athletes Commission 2025</td><td>PV Sindhu elected</td></tr>
+<tr><td>Kidambi Srikanth — major medal</td><td>BWF Worlds 2021 Silver (1st Indian man)</td></tr>
+<tr><td>Satwik Rankireddy partner</td><td>Chirag Shetty (men's doubles)</td></tr>
+<tr><td>Gopichand — All England year</td><td>2001</td></tr>
+<tr><td>Nitesh Kumar — Paris 2024</td><td>Paralympic Gold (SL3)</td></tr>
+<tr><td>Karnam Malleswari</td><td>Sydney 2000 Bronze — 1st Indian woman Olympic medal</td></tr>
+</table>
+
+<p class="bi-te">ఈ మూడు పట్టికలు — పర్యావరణం, ISRO, క్రీడలు — విభాగం 8 ఆఖరి నిమిషం రివిజన్‌కు చాలు. ముఖ్యంగా 2024-25 ISRO మైలురాళ్ళు, రోళ్లపాడు జిల్లా (నంద్యాల) తప్పనిసరిగా గుర్తుంచుకోండి.</p>"""
     }
 ], ensure_ascii=False)
 

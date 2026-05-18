@@ -4144,6 +4144,94 @@ def seed():
          "C",
          "Jan Vishwas 2.0 (ఏప్రిల్ 1-2, 2026 LS+RS ఆమోదం) — 79 కేంద్ర చట్టాలలో 784 నిబంధనలను 23 మంత్రిత్వ శాఖల్లో decriminalize చేస్తుంది. Jan Vishwas 2.0 passed by LS+RS Apr 1-2, 2026 — decriminalises 784 provisions across 79 central laws spanning 23 ministries.",
          "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_skorea_lee_visit ===
+        (31381,
+         "ఏప్రిల్ 19-21, 2026న భారత్ సందర్శించిన దక్షిణ కొరియా అధ్యక్షుడు ఎవరు? ఎన్ని MoUలు సంతకం చేశారు, 2030 నాటికి ద్వైపాక్షిక వాణిజ్య లక్ష్యం ఎంత?\n(South Korean President who visited India Apr 19-21, 2026 — MoUs signed and 2030 bilateral trade target?)",
+         "A) యూన్ సుక్-యోల్ / Yoon Suk-yeol; 10 MoUs; $40B",
+         "B) లీ జే-మ్యూంగ్ / Lee Jae-myung; 15 MoUs; $50B by 2030",
+         "C) మూన్ జే-ఇన్ / Moon Jae-in; 12 MoUs; $30B",
+         "D) పార్క్ గుయెన్-హై / Park Geun-hye; 8 MoUs; $25B",
+         "B",
+         "ఏప్రిల్ 19-21, 2026న దక్షిణ కొరియా అధ్యక్షుడు లీ జే-మ్యూంగ్ భారత్ సందర్శించారు; 15 MoUలు (పోర్టు సహకారం, ICT, FTA upgrade) సంతకం; 2030 నాటికి $50 బిలియన్ల ద్వైపాక్షిక వాణిజ్య లక్ష్యం. South Korean President Lee Jae-myung visited India Apr 19-21, 2026; 15 MoUs signed (port cooperation, ICT, FTA upgrade); bilateral trade target $50 billion by 2030.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_naxal_free ===
+        (31382,
+         "ఏప్రిల్ 2026లో కేంద్రం భారత్‌ను naxal-free గా ప్రకటించింది; \"Districts of Concern\" కింద ఎన్ని జిల్లాలు ఉన్నాయి? AP నుండి ఏది ఉంది?\n(Centre declared India naxal-free in Apr 2026 — districts under \"Districts of Concern\" and AP district included?)",
+         "A) 25 districts; Parvathipuram Manyam",
+         "B) 37 districts; Alluri Sitarama Raju (AP)",
+         "C) 50 districts; Vizianagaram",
+         "D) 42 districts; Anakapalli",
+         "B",
+         "ఏప్రిల్ 2026లో కేంద్ర ప్రభుత్వం భారత్ naxal-free గా ప్రకటించింది; 37 జిల్లాలు \"Districts of Concern\" కింద ఉంచారు, వాటిలో AP లోని అల్లూరి సీతారామ రాజు జిల్లా ఒకటి. Apr 2026: Centre declared India naxal-free; 37 districts placed under \"Districts of Concern\", including Alluri Sitarama Raju district of AP.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_bhavya_udan_relief ===
+        (31383,
+         "మార్చి 18, 2026న ప్రకటించిన BHAVYA పథకం (Bharat Audyogik Vikas Yojana) వ్యయం, పరిధి ఏమిటి? Modified UDAN, RELIEF కేటాయింపులు?\n(BHAVYA scheme announced Mar 18, 2026 — outlay/scope; Modified UDAN and RELIEF allocations?)",
+         "A) రూ.10,000 cr; 50 parks; UDAN రూ.15,000 cr; RELIEF రూ.200 cr",
+         "B) రూ.28,602 cr; 100 industrial parks; UDAN రూ.28,840 cr; RELIEF రూ.497 cr",
+         "C) రూ.50,000 cr; 200 parks; UDAN రూ.30,000 cr; RELIEF రూ.1000 cr",
+         "D) రూ.20,000 cr; 75 parks; UDAN రూ.20,000 cr; RELIEF రూ.300 cr",
+         "B",
+         "మార్చి 18, 2026 క్యాబినెట్ — BHAVYA (Bharat Audyogik Vikas Yojana) రూ.28,602 కోట్లతో 100 పారిశ్రామిక పార్కులు; Modified UDAN రూ.28,840 కోట్లు; RELIEF (ఎగుమతిదారులకు) రూ.497 కోట్లు. Mar 18, 2026: BHAVYA Rs.28,602 cr for 100 industrial parks; Modified UDAN Rs.28,840 cr; RELIEF (for exporters) Rs.497 cr.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_cec_impeachment ===
+        (31384,
+         "ఏప్రిల్ 6, 2026న CEC జ్ఞానేశ్ కుమార్‌పై ఇంపీచ్‌మెంట్ నోటీసును ఎవరు తిరస్కరించారు?\n(Who rejected the impeachment notice against CEC Gyanesh Kumar on Apr 6, 2026?)",
+         "A) లోక్‌సభ స్పీకర్ ఓం బిర్లా / LS Speaker Om Birla",
+         "B) RS ఛైర్మన్ జగదీప్ ధన్‌ఖడ్ / RS Chairman Jagdeep Dhankhar",
+         "C) RS ఛైర్మన్ సి.పి. రాధాకృష్ణన్ / RS Chairman C.P. Radhakrishnan",
+         "D) రాష్ట్రపతి ద్రౌపదీ ముర్ము / President Droupadi Murmu",
+         "C",
+         "ఏప్రిల్ 6, 2026న ప్రధాన ఎన్నికల కమిషనర్ జ్ఞానేశ్ కుమార్‌పై ప్రతిపక్షం దాఖలు చేసిన ఇంపీచ్‌మెంట్ నోటీసును రాజ్యసభ ఛైర్మన్ సి.పి. రాధాకృష్ణన్ తిరస్కరించారు. On Apr 6, 2026, the impeachment notice against CEC Gyanesh Kumar was rejected by Rajya Sabha Chairman C.P. Radhakrishnan.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_ncert_cbse_akshaya ===
+        (31385,
+         "2026లో NCERT కు మంజూరైన హోదా; CBSE 3-language policy ఏ తరగతి నుండి అమలు; మార్చి 17, 2026 అక్షయ పాత్ర మైలురాయి?\n(2026 NCERT status; CBSE 3-language policy class; Akshaya Patra milestone Mar 17, 2026?)",
+         "A) Central University; Class 5; 300 cr meals",
+         "B) Deemed-to-be-University; Class 6 (2026-27); 500 cr meals",
+         "C) Autonomous Body; Class 8; 400 cr meals",
+         "D) IIIT; Class 3; 250 cr meals",
+         "B",
+         "2026లో NCERT కు Deemed-to-be-University హోదా మంజూరైంది. CBSE 3-language policy 2026-27 నుండి 6వ తరగతి నుండి అమలు. మార్చి 17, 2026 — అక్షయ పాత్ర ఫౌండేషన్ 500 కోట్ల భోజనాల మైలురాయి దాటింది. NCERT granted Deemed-to-be-University status in 2026; CBSE 3-language policy from Class 6 (2026-27); Akshaya Patra crossed 500 crore meals milestone on Mar 17, 2026.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_new_start_treaty ===
+        (31386,
+         "ఫిబ్రవరి 5, 2026న ఏ US-Russia అణ్వాయుధ ఒప్పందం ముగిసింది? చర్చలు ఎక్కడ పునః ప్రారంభమయ్యాయి?\n(Which US-Russia nuclear arms treaty expired on Feb 5, 2026; talks resumed where?)",
+         "A) INF Treaty; Geneva",
+         "B) New START Treaty (2010); Abu Dhabi (military-military comms restored)",
+         "C) SALT-II; Vienna",
+         "D) ABM Treaty; Moscow",
+         "B",
+         "ఫిబ్రవరి 5, 2026న 2010 New START Treaty (US-Russia నూతన వ్యూహాత్మక అణ్వాయుధ తగ్గింపు ఒప్పందం) ముగిసింది. చర్చలు అబూ ధాబీలో పునః ప్రారంభమయ్యాయి; military-military communications పునరుద్ధరించారు. The 2010 New START Treaty (US-Russia) expired on Feb 5, 2026; talks restarted at Abu Dhabi; military-military communications restored.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_iicdem ===
+        (31387,
+         "జనవరి 21-23, 2026న ఢిల్లీలో జరిగిన అతిపెద్ద ఎన్నికల నిర్వహణ సమావేశం ఏది? ఎన్ని దేశాలు పాల్గొన్నాయి?\n(Largest election management conference held in Delhi Jan 21-23, 2026 — number of participating countries?)",
+         "A) IIDEM; 50 countries",
+         "B) IICDEM (International Conf. on Election Management); 70 countries",
+         "C) EMI Summit; 60 countries",
+         "D) IFES Conclave; 45 countries",
+         "B",
+         "జనవరి 21-23, 2026న ఢిల్లీలో IICDEM (International Conference on Election Management) జరిగింది; 70 దేశాలు పాల్గొన్న ప్రపంచంలోనే అతిపెద్ద ఎన్నికల నిర్వహణ సమావేశం. Jan 21-23, 2026: IICDEM (International Conference on Election Management) held at Delhi — largest election management conference in the world, with 70 countries participating.",
+         "AP_HC", "National_Current_Affairs_2026"),
+
+        # === 📅 2026 MCQ: india_ions_chairmanship ===
+        (31388,
+         "2025-27 కాలానికి భారత్ ఏ సంస్థ ఛైర్మన్‌షిప్ స్వీకరించింది? ఎన్ని సంవత్సరాల తర్వాత?\n(India assumed chairmanship of which body for 2025-27 — after how many years?)",
+         "A) IORA; 8 years",
+         "B) BIMSTEC; 12 years",
+         "C) IONS (Indian Ocean Naval Symposium); 16 years later",
+         "D) SAARC; 20 years",
+         "C",
+         "2025-27 కాలానికి భారత్ IONS (Indian Ocean Naval Symposium) ఛైర్మన్‌షిప్ స్వీకరించింది — 16 సంవత్సరాల తర్వాత మళ్లీ. IONS 2008లో భారత నావికాదళ చొరవతో ప్రారంభమైంది. India assumed IONS (Indian Ocean Naval Symposium) chairmanship for 2025-27 — 16 years after its first chairmanship. IONS was launched in 2008 as an Indian Navy initiative.",
+         "AP_HC", "National_Current_Affairs_2026"),
     ]
 
     if db_type == 'pg':
@@ -4161,7 +4249,7 @@ def seed():
     cur.executemany(insert_sql, questions)
     conn.commit()
     conn.close()
-    print(f"[seed_national_ca_2026] Seeded {len(questions)} National CA 2026 MCQs (IDs 31001-31380).")
+    print(f"[seed_national_ca_2026] Seeded {len(questions)} National CA 2026 MCQs (IDs 31001-31388).")
 
 if __name__ == '__main__':
     seed()

@@ -38,42 +38,289 @@ SECTIONS_JSON = json.dumps([
     {
         "id": "div7_s1",
         "title": "పరీక్ష కోసం కీలక భావనలు",
-        "summary": "AP చారిత్రిక స్వరూపం, పరీక్ష మూలాంశాలు — రాజవంశాల క్రమం, రాజధానులు, స్వాతంత్ర్య సమరయోధుల తేదీలు"
+        "sub": "AP History & Freedom Movement — Exam Roadmap",
+        "summary": "AP చారిత్రిక స్వరూపం, పరీక్ష మూలాంశాలు — రాజవంశాల క్రమం, రాజధానులు, స్వాతంత్ర్య సమరయోధుల తేదీలు",
+        "html": """<div class="concept-cover">
+  <h1>AP History &amp; Freedom Fighters &nbsp;<span class="bi-te">/ AP చరిత్ర &amp; స్వాతంత్ర్య సమరయోధులు</span></h1>
+  <div class="sub">Dynasty timeline • Freedom movement • State formation milestones</div>
+</div>
+
+<div class="section-hdr">High-Yield Concept Map / అత్యధిక మార్కుల అంశాలు</div>
+<table class="key-table">
+<tr><th>Theme</th><th>Why it matters</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Dynasty sequence</td><td>Satavahana → Ikshvaku → E. Chalukya → Kakatiya → Vijayanagara → Reddy → Qutb Shahi → Nizam</td><td class="bi-te">రాజవంశాల కాలక్రమం</td></tr>
+<tr><td>Capitals</td><td>Amaravati / Dhanyakataka, Vengi, Warangal, Hampi, Kondaveedu, Golconda</td><td class="bi-te">రాజధానులు</td></tr>
+<tr><td>Freedom fighters</td><td>Alluri, Potti Sriramulu, Uyyalawada, Tanguturi Prakasam, Kandukuri</td><td class="bi-te">స్వాతంత్ర్య సమరయోధులు</td></tr>
+<tr><td>State formation</td><td>1953 Andhra State → 1956 AP → 2014 division → 2022 (26 dist.) → Dec 2025 (28 dist.)</td><td class="bi-te">AP ఏర్పాటు క్రమం</td></tr>
+</table>
+
+<div class="section-hdr">AP State Symbols (2026) / రాష్ట్ర చిహ్నాలు</div>
+<table class="key-table">
+<tr><th>Symbol</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>State Animal</td><td><b>Blackbuck</b> (Krishna Jinka) — Rollapadu WLS, Nandyal dist.</td><td class="bi-te">కృష్ణ జింక — రోళ్లపాడు, నంద్యాల జిల్లా</td></tr>
+<tr><td>State Bird</td><td><b>Indian Roller</b> (Pala Pitta)</td><td class="bi-te">పాల పిట్ట</td></tr>
+<tr><td>State Tree</td><td><b>Neem</b> (Vepa)</td><td class="bi-te">వేప</td></tr>
+<tr><td>State Flower</td><td><b>Jasmine</b> (Malli / Jaji)</td><td class="bi-te">మల్లి / జాజి</td></tr>
+<tr><td>Districts (Dec 2025)</td><td><b>28</b> (13 → 26 in Apr 2022; Polavaram &amp; Markapuram added Dec 2025)</td><td class="bi-te">28 జిల్లాలు (పోలవరం + మార్కాపురం కొత్తవి)</td></tr>
+</table>
+
+<p><b>Why these themes:</b> AP CA papers consistently mix ancient dynasties (capital + founder), titled freedom fighters (birudu), and the precise dates of the 1953-1956 state formation cycle. Add the 2022 and 2025 district reorganisations and the cycle is complete.</p>
+<p class="bi-te">పరీక్షల్లో రాజవంశాల రాజధానులు + స్థాపకులు, స్వాతంత్ర్య సమరయోధుల బిరుదులు, 1953-1956 రాష్ట్ర ఏర్పాటు తేదీలు తరచూ అడుగుతారు. 2022 + 2025 జిల్లాల పునర్‌వ్యవస్థీకరణ కూడా ముఖ్యం.</p>"""
     },
     {
         "id": "div7_s2",
         "title": "ప్రాచీన రాజవంశాలు",
-        "summary": "సాతవాహనులు, ఇక్ష్వాకులు, పూర్వ చాళుక్యులు (వేంగి), కాకతీయులు, విజయనగర సామ్రాజ్యం, రెడ్డి రాజ్యం, కుతుబ్ షాహీలు, నిజాంలు"
+        "sub": "Ancient & Medieval Dynasties of Andhra",
+        "summary": "సాతవాహనులు, ఇక్ష్వాకులు, పూర్వ చాళుక్యులు (వేంగి), కాకతీయులు, విజయనగర సామ్రాజ్యం, రెడ్డి రాజ్యం, కుతుబ్ షాహీలు, నిజాంలు",
+        "html": """<div class="concept-cover">
+  <h1>Ancient &amp; Medieval Dynasties &nbsp;<span class="bi-te">/ ప్రాచీన రాజవంశాలు</span></h1>
+  <div class="sub">Satavahana to Nizam — 2,000 years of Andhra rule</div>
+</div>
+
+<div class="section-hdr">Dynasty-by-Dynasty Reference / రాజవంశాల పట్టిక</div>
+<table class="key-table">
+<tr><th>Dynasty</th><th>Period</th><th>Capital</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Satavahana</b></td><td>c. 230 BCE – 220 CE</td><td>Amaravati / Dhanyakataka, Pratishthana</td><td class="bi-te">శాతవాహనులు — అమరావతి / ధాన్యకటకం</td></tr>
+<tr><td>Ikshvaku</td><td>3rd century CE</td><td>Vijayapuri (Nagarjunakonda)</td><td class="bi-te">ఇక్ష్వాకులు — విజయపురి</td></tr>
+<tr><td>Eastern Chalukya</td><td>624 – 1075 CE</td><td>Vengi (West Godavari)</td><td class="bi-te">పూర్వ చాళుక్యులు — వేంగి</td></tr>
+<tr><td><b>Kakatiya</b></td><td>c. 1083 – 1323 CE</td><td>Orugallu / Warangal</td><td class="bi-te">కాకతీయులు — వరంగల్ (ఓరుగల్లు)</td></tr>
+<tr><td>Reddy Kingdom</td><td>1325 – 1448 CE</td><td>Kondaveedu, Rajahmundry</td><td class="bi-te">రెడ్డి రాజ్యం — కొండవీడు</td></tr>
+<tr><td><b>Vijayanagara</b></td><td>1336 – 1646 CE</td><td>Hampi (now Karnataka)</td><td class="bi-te">విజయనగర సామ్రాజ్యం — హంపి</td></tr>
+<tr><td>Qutb Shahi</td><td>1518 – 1687 CE</td><td>Golconda → Hyderabad</td><td class="bi-te">కుతుబ్ షాహీలు — గోల్కొండ</td></tr>
+<tr><td>Nizam (Asaf Jahi)</td><td>1724 – 1948 CE</td><td>Hyderabad</td><td class="bi-te">నిజాంలు — హైదరాబాద్</td></tr>
+</table>
+
+<div class="section-hdr">Key Rulers &amp; Titles / ప్రముఖ పాలకులు మరియు బిరుదులు</div>
+<table class="key-table">
+<tr><th>Ruler</th><th>Dynasty</th><th>Notable fact</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Gautamiputra Satakarni</td><td>Satavahana</td><td>Greatest Satavahana king (c. 106-130 CE)</td><td class="bi-te">గౌతమీపుత్ర సాతకర్ణి</td></tr>
+<tr><td>Rudrama Devi</td><td>Kakatiya</td><td>First female ruler; Marco Polo praised her</td><td class="bi-te">రుద్రమదేవి — మొదటి మహిళా పాలకురాలు</td></tr>
+<tr><td>Ganapati Deva</td><td>Kakatiya</td><td>Longest-reigning Kakatiya (1199-1262)</td><td class="bi-te">గణపతి దేవుడు</td></tr>
+<tr><td>Harihara I + Bukka I</td><td>Vijayanagara</td><td>Co-founders (1336 CE)</td><td class="bi-te">హరిహర I + బుక్క రాయ I — స్థాపకులు</td></tr>
+<tr><td><b>Krishnadevaraya</b></td><td>Vijayanagara</td><td>"Andhra Bhoja"; 1509-1529; Ashtadiggajas</td><td class="bi-te">కృష్ణదేవరాయలు — "ఆంధ్రభోజుడు"</td></tr>
+</table>
+
+<p><b>Key dates to memorise:</b> Kakatiyas fell in 1323 (Ghiyas-ud-din Tughlaq). Vijayanagara collapsed after Battle of Talikota (1565). Golconda fell to Aurangzeb in 1687. Asaf Jahi rule began 1724.</p>
+<p class="bi-te">గుర్తుంచుకోవలసిన తేదీలు: కాకతీయుల పతనం 1323 (తుగ్లక్). విజయనగర పతనం 1565 తాళికోట యుద్ధం. గోల్కొండ 1687లో ఔరంగజేబు చేత పతనం. నిజాంల పాలన 1724లో మొదలు.</p>"""
     },
     {
         "id": "div7_s3",
         "title": "స్వాతంత్ర్య సమరయోధులు",
-        "summary": "అల్లూరి సీతారామ రాజు, పొట్టి శ్రీరాముల్లు, ఉయ్యాలవాడ నరసింహారెడ్డి, టంగుటూరి ప్రకాశం పంతులు, కందుకూరి వీరేశలింగం"
+        "sub": "Freedom Fighters of Andhra — Birth, Movement, Death",
+        "summary": "అల్లూరి సీతారామ రాజు, పొట్టి శ్రీరాముల్లు, ఉయ్యాలవాడ నరసింహారెడ్డి, టంగుటూరి ప్రకాశం పంతులు, కందుకూరి వీరేశలింగం",
+        "html": """<div class="concept-cover">
+  <h1>Freedom Fighters of Andhra &nbsp;<span class="bi-te">/ స్వాతంత్ర్య సమరయోధులు</span></h1>
+  <div class="sub">Birudu • Movement • Key dates</div>
+</div>
+
+<div class="section-hdr">Major Freedom Fighters / ప్రముఖ సమరయోధులు</div>
+<table class="key-table">
+<tr><th>Fighter</th><th>Birudu (Title)</th><th>Movement</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Alluri Sitarama Raju</b></td><td>Manyam Veerudu</td><td>Rampa Rebellion 1922-24</td><td class="bi-te">అల్లూరి — మన్యం వీరుడు</td></tr>
+<tr><td><b>Potti Sriramulu</b></td><td>Amarajeevi</td><td>58-day fast for Andhra State, 1952</td><td class="bi-te">పొట్టి శ్రీరాముల్లు — అమరజీవి</td></tr>
+<tr><td>Uyyalawada Narasimha Reddy</td><td>Renadu Veerudu</td><td>1846 revolt against EIC (first armed uprising)</td><td class="bi-te">ఉయ్యాలవాడ నరసింహారెడ్డి</td></tr>
+<tr><td>Tanguturi Prakasam</td><td>Andhra Kesari</td><td>Simon Commission protest, Madras 1928; first AP CM</td><td class="bi-te">టంగుటూరి ప్రకాశం — ఆంధ్ర కేసరి</td></tr>
+<tr><td>Kandukuri Veeresalingam</td><td>Gadya Tikkana</td><td>Social reformer; widow remarriage</td><td class="bi-te">కందుకూరి వీరేశలింగం — గద్య తిక్కన</td></tr>
+</table>
+
+<div class="section-hdr">Key Dates / కీలక తేదీలు</div>
+<table class="key-table">
+<tr><th>Event</th><th>Date</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Alluri birth</td><td><b>May 4, 1897</b> (some sources 1898)</td><td class="bi-te">అల్లూరి జననం: మే 4, 1897</td></tr>
+<tr><td>Alluri death (Koyyuru)</td><td>May 7, 1924 (shot by British)</td><td class="bi-te">అల్లూరి మరణం: మే 7, 1924</td></tr>
+<tr><td>Alluri 125th Jayanti</td><td>July 4, 2022 (PM Modi unveiled statue, Bhimavaram)</td><td class="bi-te">అల్లూరి 125వ జయంతి — జులై 4, 2022</td></tr>
+<tr><td>Potti Sriramulu fast</td><td>Oct 19 – Dec 15, 1952 (58 days)</td><td class="bi-te">పొట్టి దీక్ష: 58 రోజులు</td></tr>
+<tr><td>Potti Sriramulu death</td><td>Dec 15, 1952 — observed as <b>Amarajeevi Day</b></td><td class="bi-te">అమరజీవి దినం: డిసె 15</td></tr>
+<tr><td>Uyyalawada execution</td><td>Feb 22, 1847 (hanged at Koilakuntla)</td><td class="bi-te">ఉయ్యాలవాడ ఉరి: ఫిబ్రవరి 22, 1847</td></tr>
+</table>
+
+<p><b>Why Alluri stands out:</b> Led the Rampa Rebellion (Aug 22, 1922 onwards) against the British Madras Forest Act, fusing Adivasi grievances with the wider freedom struggle. His Bhimavaram statue (30 ft, "Statue of Tribal Pride") was unveiled by PM Modi on July 4, 2022.</p>
+<p class="bi-te">అల్లూరి 1922 ఆగస్టు 22న రంప తిరుగుబాటు మొదలుపెట్టి బ్రిటీష్ అటవీ చట్టానికి వ్యతిరేకంగా గిరిజన పోరాటం నడిపాడు. భీమవరంలో 30 అడుగుల "గిరిజన ఆత్మగౌరవ విగ్రహం" జులై 4, 2022న ప్రధాని మోదీ ఆవిష్కరించారు.</p>"""
     },
     {
         "id": "div7_s4",
         "title": "AP రాష్ట్రం ఏర్పాటు — చారిత్రిక క్రమం",
-        "summary": "1920 డిమాండ్ → 1952 పొట్టి నిరాహారదీక్ష → అక్టో 1, 1953 ఆంధ్ర రాష్ట్రం → నవం 1, 1956 AP ఏర్పాటు → 2014 విభజన"
+        "sub": "Formation of Andhra Pradesh — Chronology",
+        "summary": "1920 డిమాండ్ → 1952 పొట్టి నిరాహారదీక్ష → అక్టో 1, 1953 ఆంధ్ర రాష్ట్రం → నవం 1, 1956 AP ఏర్పాటు → 2014 విభజన",
+        "html": """<div class="concept-cover">
+  <h1>Formation of Andhra Pradesh &nbsp;<span class="bi-te">/ AP రాష్ట్ర ఏర్పాటు</span></h1>
+  <div class="sub">1920 demand → 1953 Andhra State → 1956 AP → 2014 division → 2025 28 districts</div>
+</div>
+
+<div class="section-hdr">Chronology of Statehood / రాష్ట్ర ఏర్పాటు కాలక్రమం</div>
+<table class="key-table">
+<tr><th>Date</th><th>Event</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>1913</td><td>1st Andhra Mahasabha (Bapatla) demands separate Telugu province</td><td class="bi-te">మొదటి ఆంధ్ర మహాసభ — బాపట్ల</td></tr>
+<tr><td>Oct 19, 1952</td><td>Potti Sriramulu begins fast at Madras</td><td class="bi-te">పొట్టి నిరాహారదీక్ష ఆరంభం</td></tr>
+<tr><td>Dec 15, 1952</td><td>Potti Sriramulu dies on day 58</td><td class="bi-te">పొట్టి మరణం — 58వ రోజు</td></tr>
+<tr><td><b>Oct 1, 1953</b></td><td><b>Andhra State formed</b> from Madras Presidency; capital <b>Kurnool</b>; 1st CM Tanguturi Prakasam</td><td class="bi-te">ఆంధ్ర రాష్ట్రం ఏర్పాటు — కర్నూలు రాజధాని</td></tr>
+<tr><td><b>Nov 1, 1956</b></td><td><b>Andhra Pradesh formed</b> (States Reorganisation Act); Andhra + Telangana Telugu districts; capital <b>Hyderabad</b>; 1st CM Neelam Sanjiva Reddy</td><td class="bi-te">AP ఏర్పాటు — హైదరాబాద్ రాజధాని</td></tr>
+<tr><td>Jun 2, 2014</td><td>AP Reorganisation Act 2014 — Telangana bifurcated; residual AP capital Hyderabad (10-yr shared)</td><td class="bi-te">AP విభజన — తెలంగాణ ఏర్పాటు</td></tr>
+<tr><td>Apr 4, 2022</td><td>AP districts reorganised: 13 → <b>26</b></td><td class="bi-te">13 → 26 జిల్లాలు</td></tr>
+<tr><td><b>Dec 2025</b></td><td>Polavaram + Markapuram carved out → <b>28 districts</b></td><td class="bi-te"><b>28 జిల్లాలు</b> (పోలవరం + మార్కాపురం కొత్తవి)</td></tr>
+</table>
+
+<div class="section-hdr">First-time AP Leaders / మొదటి నేతలు</div>
+<table class="key-table">
+<tr><th>Position</th><th>First holder</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>1st CM, Andhra State (1953)</td><td>Tanguturi Prakasam Pantulu</td><td class="bi-te">టంగుటూరి ప్రకాశం</td></tr>
+<tr><td><b>1st CM, AP (1956)</b></td><td>Neelam Sanjiva Reddy</td><td class="bi-te">నీలం సంజీవ రెడ్డి</td></tr>
+<tr><td>1st Governor, AP (1956)</td><td>C.M. Trivedi</td><td class="bi-te">సి.ఎం. త్రివేది</td></tr>
+<tr><td>1st CM, residual AP (2014)</td><td>N. Chandrababu Naidu</td><td class="bi-te">చంద్రబాబు నాయుడు</td></tr>
+</table>
+
+<p><b>State formation logic:</b> Andhra State (1953) was the first linguistic state of post-Independence India and triggered the States Reorganisation Commission (Fazl Ali, 1953). Its recommendations were enacted via the SR Act, 1956 — which created AP on November 1, 1956.</p>
+<p class="bi-te">ఆంధ్ర రాష్ట్రం (1953) స్వాతంత్ర్యానంతర భారతదేశంలో మొదటి భాషా రాష్ట్రం — ఇది రాష్ట్రాల పునర్వ్యవస్థీకరణ కమిషన్ (ఫజల్ అలీ) కు దారితీసింది; SR Act 1956 ద్వారా నవంబర్ 1, 1956న AP ఏర్పాటైంది.</p>"""
     },
     {
         "id": "div7_s5",
         "title": "ముఖ్య వ్యక్తులు",
-        "summary": "సర్ ఆర్థర్ కాటన్, విశ్వనాధ సత్యనారాయణ, నీలం సంజీవ రెడ్డి, దుర్గాబాయి దేశ్‌ముఖ్"
+        "sub": "Notable Figures of Andhra History",
+        "summary": "సర్ ఆర్థర్ కాటన్, విశ్వనాధ సత్యనారాయణ, నీలం సంజీవ రెడ్డి, దుర్గాబాయి దేశ్‌ముఖ్",
+        "html": """<div class="concept-cover">
+  <h1>Notable Figures &nbsp;<span class="bi-te">/ ముఖ్య వ్యక్తులు</span></h1>
+  <div class="sub">Engineers • Litterateurs • Statesmen • Reformers</div>
+</div>
+
+<div class="section-hdr">Engineers &amp; Statesmen / ఇంజినీర్లు మరియు రాజనీతిజ్ఞులు</div>
+<table class="key-table">
+<tr><th>Person</th><th>Known for</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Sir Arthur Cotton</b></td><td>Designed Dowleswaram Anicut (Godavari Barrage), 1852 — saved Godavari delta from famine</td><td class="bi-te">సర్ ఆర్థర్ కాటన్ — ధవళేశ్వరం ఆనకట్ట 1852</td></tr>
+<tr><td>K.L. Rao</td><td>Union Irrigation Minister; pioneer of Nagarjuna Sagar</td><td class="bi-te">కె.ఎల్. రావు</td></tr>
+<tr><td><b>Neelam Sanjiva Reddy</b></td><td>1st CM of AP (1956-60); later 6th President of India (1977-82)</td><td class="bi-te">నీలం సంజీవ రెడ్డి — మొదటి CM &amp; భారత 6వ రాష్ట్రపతి</td></tr>
+<tr><td>P.V. Narasimha Rao</td><td>9th PM of India (1991-96); architect of 1991 reforms</td><td class="bi-te">పి.వి. నరసింహారావు — 9వ ప్రధాని</td></tr>
+</table>
+
+<div class="section-hdr">Litterateurs &amp; Reformers / రచయితలు మరియు సంస్కర్తలు</div>
+<table class="key-table">
+<tr><th>Person</th><th>Known for</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Viswanatha Satyanarayana</b></td><td>Kavi Samrat; <i>Ramayana Kalpavruksham</i>; Jnanpith 1970 (1st Telugu)</td><td class="bi-te">విశ్వనాధ సత్యనారాయణ — కవి సమ్రాట్</td></tr>
+<tr><td>C. Narayana Reddy</td><td>Jnanpith 1988; <i>Vishwambhara</i></td><td class="bi-te">సినారే</td></tr>
+<tr><td>Kandukuri Veeresalingam</td><td>"Gadya Tikkana"; widow-remarriage pioneer (1881)</td><td class="bi-te">కందుకూరి వీరేశలింగం</td></tr>
+<tr><td><b>Durgabai Deshmukh</b></td><td>Constituent Assembly member; founded Andhra Mahila Sabha (1937); Padma Vibhushan</td><td class="bi-te">దుర్గాబాయి దేశ్‌ముఖ్ — ఆంధ్ర మహిళా సభ స్థాపకి</td></tr>
+<tr><td>Sarojini Naidu</td><td>"Nightingale of India"; 1st Indian woman Governor (UP, 1947)</td><td class="bi-te">సరోజినీ నాయుడు</td></tr>
+</table>
+
+<p><b>Sir Arthur Cotton in AP memory:</b> The Godavari Barrage at Dowleswaram (East Godavari) — built 1847-52 — turned the famine-prone delta into India's "rice bowl." Cotton is celebrated even today; the modern barrage built in 1970 retains his name plaque, and his birthday (May 15) is observed in delta districts.</p>
+<p class="bi-te">సర్ ఆర్థర్ కాటన్ ధవళేశ్వరం ఆనకట్ట (1847-52) ద్వారా క్షామపీడిత గోదావరి డెల్టాను "ధాన్యాగారం"గా మార్చారు. మే 15 (ఆయన పుట్టినరోజు) డెల్టా జిల్లాల్లో ఇప్పటికీ ఆరాధిస్తారు.</p>"""
     },
     {
         "id": "div7_s6",
         "title": "చారిత్రిక స్మారకాలు — ఇటీవలి కరెంట్ అఫైర్స్",
-        "summary": "అమరావతి UNESCO ప్రతిపాదన, అల్లూరి 125వ జయంతి 2022, అమరజీవి దినం డిసె 15, AP Formation Day నవం 1"
+        "sub": "Historical Monuments — Recent Current Affairs",
+        "summary": "అమరావతి UNESCO ప్రతిపాదన, అల్లూరి 125వ జయంతి 2022, అమరజీవి దినం డిసె 15, AP Formation Day నవం 1",
+        "html": """<div class="concept-cover">
+  <h1>Heritage &amp; Anniversaries &nbsp;<span class="bi-te">/ చారిత్రిక స్మారకాలు</span></h1>
+  <div class="sub">UNESCO bids • Centenaries • Annual commemorations</div>
+</div>
+
+<div class="section-hdr">Recent Heritage Highlights / తాజా చారిత్రిక సంఘటనలు</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Amaravati Stupa</td><td>On India's UNESCO World Heritage Tentative List (2024); Mauryan-Satavahana Buddhist site</td><td class="bi-te">అమరావతి స్తూపం — UNESCO ప్రతిపాదిత జాబితా</td></tr>
+<tr><td><b>Alluri 125th Jayanti</b></td><td>Jul 4, 2022 — PM Modi unveiled 30-ft "Statue of Tribal Pride" at Bhimavaram</td><td class="bi-te">అల్లూరి 125వ జయంతి — భీమవరం</td></tr>
+<tr><td>Lepakshi UNESCO bid</td><td>Lepakshi temple (Sri Sathya Sai dist) added to India's Tentative List 2022</td><td class="bi-te">లేపాక్షి — శ్రీ సత్యసాయి జిల్లా</td></tr>
+<tr><td>Nagarjunakonda</td><td>Ikshvaku capital; submerged 1960 by Nagarjuna Sagar dam; relics moved to island museum</td><td class="bi-te">నాగార్జునకొండ</td></tr>
+<tr><td>Gandikota</td><td>"Grand Canyon of India" — Pemmasani Nayaka fort, Kadapa district</td><td class="bi-te">గండికోట — కడప జిల్లా</td></tr>
+</table>
+
+<div class="section-hdr">Annual Commemorations / వార్షిక దినోత్సవాలు</div>
+<table class="key-table">
+<tr><th>Date</th><th>Day</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Nov 1</b></td><td>AP Formation Day (1956)</td><td class="bi-te">AP ఆవిర్భావ దినం</td></tr>
+<tr><td>Oct 1</td><td>Andhra State Day (1953)</td><td class="bi-te">ఆంధ్ర రాష్ట్ర దినం</td></tr>
+<tr><td><b>Dec 15</b></td><td>Amarajeevi Potti Sriramulu Day</td><td class="bi-te">అమరజీవి దినం — పొట్టి శ్రీరాముల్లు</td></tr>
+<tr><td>May 7</td><td>Alluri Sitarama Raju Vardhanti</td><td class="bi-te">అల్లూరి వర్ధంతి</td></tr>
+<tr><td>Jul 4</td><td>Alluri Jayanti</td><td class="bi-te">అల్లూరి జయంతి</td></tr>
+<tr><td>Feb 22</td><td>Uyyalawada Narasimha Reddy Vardhanti</td><td class="bi-te">ఉయ్యాలవాడ వర్ధంతి</td></tr>
+</table>
+
+<p><b>2026 update:</b> Amaravati's stupa nomination dossier is being prepared for full UNESCO submission. The Endowments Department has accelerated conservation of Lepakshi, Gandikota and Srisailam under the Heritage Restoration Mission launched in 2025.</p>
+<p class="bi-te">అమరావతి స్తూప UNESCO పూర్తి ప్రతిపాదన పత్రాలు సిద్ధమవుతున్నాయి. 2025లో ప్రారంభమైన Heritage Restoration Mission కింద లేపాక్షి, గండికోట, శ్రీశైలం పునరుద్ధరణ వేగవంతమైంది.</p>"""
     },
     {
         "id": "div7_s7",
         "title": "ముఖ్య పురావస్తు / చారిత్రిక ప్రాంతాలు",
-        "summary": "అమరావతి స్తూప, నాగార్జునకొండ, హంపి, వేంగి, కొండవీడు కోట, లేపాక్షి"
+        "sub": "Key Archaeological & Historical Sites",
+        "summary": "అమరావతి స్తూప, నాగార్జునకొండ, హంపి, వేంగి, కొండవీడు కోట, లేపాక్షి",
+        "html": """<div class="concept-cover">
+  <h1>Key Archaeological Sites &nbsp;<span class="bi-te">/ చారిత్రిక ప్రాంతాలు</span></h1>
+  <div class="sub">Buddhist • Hindu • Forts • Capitals</div>
+</div>
+
+<div class="section-hdr">Buddhist Heritage / బౌద్ధ వారసత్వం</div>
+<table class="key-table">
+<tr><th>Site</th><th>District</th><th>Significance</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Amaravati Stupa</b></td><td>Palnadu</td><td>Mahayana Buddhist site; ASI museum; UNESCO tentative</td><td class="bi-te">అమరావతి — పల్నాడు జిల్లా</td></tr>
+<tr><td>Nagarjunakonda</td><td>Now in Telangana side post-1960 submergence</td><td>Ikshvaku capital; relics on island museum</td><td class="bi-te">నాగార్జునకొండ</td></tr>
+<tr><td>Bhattiprolu</td><td>Bapatla</td><td>3rd century BCE stupa; earliest Telugu Brahmi inscriptions</td><td class="bi-te">భట్టిప్రోలు</td></tr>
+<tr><td>Salihundam</td><td>Srikakulam</td><td>Buddhist stupa on Vamsadhara river</td><td class="bi-te">సాలిహుండం</td></tr>
+</table>
+
+<div class="section-hdr">Forts &amp; Temples / కోటలు మరియు దేవాలయాలు</div>
+<table class="key-table">
+<tr><th>Site</th><th>District</th><th>Built by / Period</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Lepakshi</b></td><td>Sri Sathya Sai</td><td>Vijayanagara (16th c.) — hanging pillar, Veerabhadra temple</td><td class="bi-te">లేపాక్షి — శ్రీ సత్యసాయి జిల్లా</td></tr>
+<tr><td>Kondaveedu Fort</td><td>Palnadu (near Guntur)</td><td>Reddy Kingdom 14th c.</td><td class="bi-te">కొండవీడు కోట</td></tr>
+<tr><td>Kondapalli Fort</td><td>NTR district</td><td>14th c. Musunuri Nayakas; later Qutb Shahi</td><td class="bi-te">కొండపల్లి కోట</td></tr>
+<tr><td><b>Gandikota Fort</b></td><td>Kadapa</td><td>"Grand Canyon of India"; Pemmasani Nayakas on Penna river</td><td class="bi-te">గండికోట — కడప</td></tr>
+<tr><td>Srikalahasti</td><td>Tirupati</td><td>Vayu (air) lingam — Pancha Bhuta sthala</td><td class="bi-te">శ్రీకాళహస్తి — తిరుపతి</td></tr>
+<tr><td>Srisailam</td><td>Nandyal</td><td>Jyotirlinga + Shakti Peetha (rare dual status)</td><td class="bi-te">శ్రీశైలం — నంద్యాల</td></tr>
+</table>
+
+<p><b>Vengi:</b> The Eastern Chalukya capital (Pedavegi village, West Godavari district) is now a major ASI excavation site — Roman coins, Buddhist viharas, and 7th-century Chalukya inscriptions have been unearthed. Plans for an open-air archaeological park are under way (2025-26).</p>
+<p class="bi-te">వేంగి — పూర్వ చాళుక్యుల రాజధాని (పెదవేగి గ్రామం, పశ్చిమ గోదావరి). ASI తవ్వకాల్లో రోమన్ నాణేలు, బౌద్ధ విహారాలు, 7వ శతాబ్ద చాళుక్య శాసనాలు దొరికాయి. ఓపెన్-ఎయిర్ ఆర్కియాలజికల్ పార్క్ ప్రణాళికలు 2025-26లో ఉన్నాయి.</p>"""
     },
     {
         "id": "div7_s8",
         "title": "పరీక్ష రేపిడ్ రివిజన్",
-        "summary": "రాజవంశాలు, స్వాతంత్ర్య సమరయోధులు, AP ఏర్పాటు తేదీలు — సంక్షిప్త పట్టిక"
+        "sub": "Rapid Revision — Compact Table",
+        "summary": "రాజవంశాలు, స్వాతంత్ర్య సమరయోధులు, AP ఏర్పాటు తేదీలు — సంక్షిప్త పట్టిక",
+        "html": """<div class="concept-cover">
+  <h1>Rapid Revision Sheet &nbsp;<span class="bi-te">/ పరీక్ష రేపిడ్ రివిజన్</span></h1>
+  <div class="sub">All div7 must-know facts in one screen</div>
+</div>
+
+<div class="section-hdr">One-Line Facts / ఏక-పంక్తి వాస్తవాలు</div>
+<table class="key-table">
+<tr><th>Question</th><th>Answer</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>AP Formation Day</td><td>Nov 1, 1956 (SR Act)</td><td class="bi-te">నవంబర్ 1, 1956</td></tr>
+<tr><td>Andhra State Day</td><td>Oct 1, 1953 (1st linguistic state)</td><td class="bi-te">అక్టోబర్ 1, 1953</td></tr>
+<tr><td>Andhra State 1st capital</td><td>Kurnool</td><td class="bi-te">కర్నూలు</td></tr>
+<tr><td>1st CM Andhra State</td><td>Tanguturi Prakasam ("Andhra Kesari")</td><td class="bi-te">టంగుటూరి ప్రకాశం</td></tr>
+<tr><td>1st CM AP (1956)</td><td>Neelam Sanjiva Reddy (later President)</td><td class="bi-te">నీలం సంజీవ రెడ్డి</td></tr>
+<tr><td>AP bifurcation date</td><td>June 2, 2014</td><td class="bi-te">జూన్ 2, 2014</td></tr>
+<tr><td>Districts (Dec 2025)</td><td><b>28</b> (13→26 in 2022; +Polavaram +Markapuram 2025)</td><td class="bi-te"><b>28 జిల్లాలు</b></td></tr>
+<tr><td>State Animal</td><td>Blackbuck (Rollapadu WLS, Nandyal)</td><td class="bi-te">కృష్ణ జింక</td></tr>
+<tr><td>State Bird</td><td>Indian Roller (Pala Pitta)</td><td class="bi-te">పాల పిట్ట</td></tr>
+<tr><td>State Tree</td><td>Neem (Vepa)</td><td class="bi-te">వేప</td></tr>
+<tr><td>State Flower</td><td>Jasmine (Malli / Jaji)</td><td class="bi-te">మల్లి / జాజి</td></tr>
+</table>
+
+<div class="section-hdr">Freedom Fighters Cheat-Sheet / సమరయోధుల సారాంశం</div>
+<table class="key-table">
+<tr><th>Fighter</th><th>Birudu</th><th>Key date</th></tr>
+<tr><td>Alluri Sitarama Raju</td><td>Manyam Veerudu</td><td>Born May 4, 1897; died May 7, 1924</td></tr>
+<tr><td>Potti Sriramulu</td><td>Amarajeevi</td><td>Died Dec 15, 1952 (58-day fast)</td></tr>
+<tr><td>Uyyalawada Narasimha Reddy</td><td>Renadu Veerudu</td><td>Hanged Feb 22, 1847</td></tr>
+<tr><td>Tanguturi Prakasam</td><td>Andhra Kesari</td><td>Madras 1928 Simon protest</td></tr>
+<tr><td>Kandukuri Veeresalingam</td><td>Gadya Tikkana</td><td>First widow remarriage 1881</td></tr>
+</table>
+
+<div class="section-hdr">Dynasties Quick-Glance / రాజవంశాల చిట్కా</div>
+<table class="key-table">
+<tr><th>Dynasty</th><th>Capital</th><th>Period</th></tr>
+<tr><td>Satavahana</td><td>Amaravati / Dhanyakataka</td><td>230 BCE-220 CE</td></tr>
+<tr><td>Ikshvaku</td><td>Vijayapuri (Nagarjunakonda)</td><td>3rd c. CE</td></tr>
+<tr><td>E. Chalukya</td><td>Vengi</td><td>624-1075 CE</td></tr>
+<tr><td>Kakatiya</td><td>Warangal</td><td>1083-1323 CE</td></tr>
+<tr><td>Reddy</td><td>Kondaveedu</td><td>1325-1448 CE</td></tr>
+<tr><td>Vijayanagara</td><td>Hampi</td><td>1336-1646 CE</td></tr>
+<tr><td>Qutb Shahi</td><td>Golconda</td><td>1518-1687 CE</td></tr>
+<tr><td>Asaf Jahi (Nizam)</td><td>Hyderabad</td><td>1724-1948 CE</td></tr>
+</table>
+
+<p class="bi-te">పైన పేర్కొన్న తేదీలు, బిరుదులు, రాజధానులు పరీక్షల్లో అత్యధికంగా అడిగే అంశాలు — ఒక్కసారి కరెక్ట్‌గా గుర్తుంచుకుంటే విభాగం 7 సగం పూర్తి.</p>"""
     }
 ], ensure_ascii=False)
 

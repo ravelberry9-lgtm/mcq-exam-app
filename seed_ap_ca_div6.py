@@ -33,38 +33,276 @@ import json
 SECTIONS_JSON = json.dumps([
     {
         "id": "div6_s0",
-        "title": "AP GSDP & ఆర్థిక స్నాప్‌షాట్ 2024-25",
-        "summary": "GSDP ₹16.41 లక్షల కోట్లు, వృద్ధి 12.5%, వాస్తవ వృద్ధి 8.21% (7వ స్థానం), GDP సహకారం 4.72%"
+        "title": "AP GSDP & ఆర్థిక స్నాప్‌షాట్ 2024-25 → 2026-27",
+        "sub": "GSDP FY24-25 Rs.16.41 L-cr | FY25-26 ~Rs.17.62 L-cr | Real growth 8.21% (7th nationally)",
+        "summary": "GSDP ₹16.41 లక్షల కోట్లు (FY24-25); FY25-26 ~₹17.62 లక్షల కోట్లు. వృద్ధి 12.5%; వాస్తవ వృద్ధి 8.21% (7వ స్థానం); GDP సహకారం 4.72%. AP Budget 2026-27 ₹3,32,205 కోట్లు (FM Payyavula Keshav, 3rd consecutive). Retail inflation 7.57% → 1.39%. 16th FC AP share 4.22%.",
+        "html": """<div class="concept-cover">
+  <h1>AP GSDP &amp; Economic Snapshot &nbsp;<span class="bi-te">/ AP ఆర్థిక స్నాప్‌షాట్</span></h1>
+  <div class="sub">FY24-25 GSDP Rs.16.41 L-cr • FY25-26 Rs.17.62 L-cr • Real growth 8.21% (7th)</div>
+</div>
+
+<div class="section-hdr">GSDP Snapshot / GSDP స్నాప్‌షాట్</div>
+<table class="key-table">
+<tr><th>Metric</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>GSDP FY24-25</td><td>Rs.16.41 lakh crore (current prices)</td><td class="bi-te">2024-25 GSDP</td></tr>
+<tr><td>GSDP FY25-26</td><td>~Rs.17.62 lakh crore (per Budget 2026-27)</td><td class="bi-te">2025-26 అంచనా</td></tr>
+<tr><td>Real growth rate</td><td>8.21% (7th in India)</td><td class="bi-te">వాస్తవ వృద్ధి 8.21% (7వ స్థానం)</td></tr>
+<tr><td>Nominal growth</td><td>12.5%</td><td class="bi-te">12.5% నామమాత్ర వృద్ధి</td></tr>
+<tr><td>National GDP share</td><td>4.72%</td><td class="bi-te">భారత GDP లో AP వాటా</td></tr>
+<tr><td>Agri growth (FY25-26)</td><td><b>7.83% (vs national 0.80%)</b></td><td class="bi-te">వ్యవసాయ వృద్ధి 7.83%</td></tr>
+</table>
+
+<div class="section-hdr">AP Budget 2026-27 (Feb 14, 2026) / AP బడ్జెట్</div>
+<table class="key-table">
+<tr><th>Item</th><th>Amount</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Total outlay</td><td>Rs.3,32,205.34 crore</td><td class="bi-te">మొత్తం ₹3.32 లక్షల కోట్లు</td></tr>
+<tr><td>Revenue receipts</td><td>Rs.2,34,140 crore</td><td class="bi-te">ఆదాయ ఆదాయాలు</td></tr>
+<tr><td>Revenue deficit</td><td>Rs.22,002.50 crore</td><td class="bi-te">ఆదాయ లోటు</td></tr>
+<tr><td>Fiscal deficit</td><td>Rs.75,868 crore</td><td class="bi-te">ద్రవ్య లోటు</td></tr>
+<tr><td>Capex</td><td>Rs.53,915 crore (16% of budget)</td><td class="bi-te">మూలధన వ్యయం</td></tr>
+<tr><td>FM</td><td>Payyavula Keshav (Uravakonda, 3rd consecutive)</td><td class="bi-te">పయ్యావుల కేశవ్ — 3వ సారి</td></tr>
+</table>
+
+<div class="section-hdr">Key Indicators / ముఖ్య సూచికలు</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th></tr>
+<tr><td>Retail inflation (2025-26)</td><td><b>Dropped 7.57% → 1.39%</b></td></tr>
+<tr><td>16th Finance Commission share</td><td><b>AP 4.22%</b> (was 4.05% under 15th FC)</td></tr>
+<tr><td>NITI Export Preparedness Index 2024</td><td><b>AP ranks 5th nationally (60.65 marks)</b></td></tr>
+<tr><td>AP exports 2024</td><td>Rs.1.65 lakh crore</td></tr>
+<tr><td>Seafood exports</td><td><b>AP #1 — 60% national share (Rs.24,679 cr)</b></td></tr>
+</table>
+<p class="bi-te">AP retail ద్రవ్యోల్బణం 7.57% నుండి 1.39%కి తగ్గింది. 16వ ఆర్థిక సంఘం వాటా 4.22% (15వ FC లో 4.05%). NITI Export Preparedness Index లో AP 5వ స్థానం. సముద్ర ఆహార ఎగుమతుల్లో AP దేశంలో 1వ (60% జాతీయ వాటా, ₹24,679 కోట్లు).</p>"""
     },
     {
         "id": "div6_s1",
         "title": "Swarnandhra 2047 విజన్",
-        "summary": "2047 లక్ష్యం GSDP $2.4T, తలసరి $43000, నిరంతర వృద్ధి 15%, 10 మార్గదర్శక సూత్రాలు"
+        "sub": "Unveiled Dec 14, 2024 by CM Naidu | Target $2.4T GSDP | 10 guiding principles",
+        "summary": "Swarnandhra 2047 విజన్ — CM చంద్రబాబు డిసెంబర్ 14, 2024న ఆవిష్కరించారు. 2047 GSDP లక్ష్యం $2.4 ట్రిలియన్; తలసరి $43,000; నిరంతర వృద్ధి 15%; 10 మార్గదర్శక సూత్రాలు. Action Units 175 అసెంబ్లీ నియోజకవర్గ స్థాయిలో. 3 Economic Regions (Mar 2026): VER (Vizag), AER (Amaravati, 9 districts), TER (Tirupati, 9 districts).",
+        "html": """<div class="concept-cover">
+  <h1>Swarnandhra 2047 Vision &nbsp;<span class="bi-te">/ స్వర్ణాంధ్ర 2047</span></h1>
+  <div class="sub">CM Naidu • Dec 14, 2024 • $2.4T GSDP target • 10 guiding principles</div>
+</div>
+
+<div class="section-hdr">Vision Targets / లక్ష్యాలు</div>
+<table class="key-table">
+<tr><th>Metric (by 2047)</th><th>Target</th><th class="bi-te">తెలుగు</th></tr>
+<tr><td>GSDP</td><td><b>$2.4 trillion</b></td><td class="bi-te">$2.4 ట్రిలియన్</td></tr>
+<tr><td>Per capita income</td><td>$43,000</td><td class="bi-te">తలసరి $43,000</td></tr>
+<tr><td>Sustained growth rate</td><td>15% per year</td><td class="bi-te">నిరంతర వృద్ధి 15%</td></tr>
+<tr><td>Action Units</td><td>One per Assembly constituency (175 total)</td><td class="bi-te">175 అసెంబ్లీ నియోజకవర్గాల్లో Action Units</td></tr>
+<tr><td>Unveiled by</td><td>CM N. Chandrababu Naidu, Dec 14, 2024</td><td class="bi-te">CM చంద్రబాబు ఆవిష్కరించారు</td></tr>
+</table>
+
+<div class="section-hdr">10 Guiding Principles / 10 మార్గదర్శక సూత్రాలు</div>
+<table class="key-table">
+<tr><th>#</th><th>Principle</th></tr>
+<tr><td>1</td><td>Poverty eradication (పేదరిక నిర్మూలన)</td></tr>
+<tr><td>2</td><td>Water security (నీటి భద్రత)</td></tr>
+<tr><td>3</td><td>Green energy</td></tr>
+<tr><td>4</td><td>Human capital — health + education</td></tr>
+<tr><td>5</td><td>Infrastructure</td></tr>
+<tr><td>6</td><td>Skill ecosystem &amp; jobs</td></tr>
+<tr><td>7</td><td>Digital governance</td></tr>
+<tr><td>8</td><td>Innovation &amp; technology</td></tr>
+<tr><td>9</td><td>Sustainability &amp; climate resilience</td></tr>
+<tr><td>10</td><td>Inclusive growth (welfare-led economy)</td></tr>
+</table>
+
+<div class="section-hdr">3 Economic Regions (March 2026) / 3 ఆర్థిక ప్రాంతాలు</div>
+<table class="key-table">
+<tr><th>Region</th><th>Centre</th><th>Districts</th><th class="bi-te">తెలుగు</th></tr>
+<tr><td>VER</td><td>Visakhapatnam</td><td>Northern AP</td><td class="bi-te">విశాఖ ఆర్థిక ప్రాంతం</td></tr>
+<tr><td>AER</td><td>Amaravati</td><td>9 districts (Central)</td><td class="bi-te">అమరావతి — 9 జిల్లాలు</td></tr>
+<tr><td>TER</td><td>Tirupati</td><td>9 districts (Rayalaseema-South)</td><td class="bi-te">తిరుపతి — 9 జిల్లాలు</td></tr>
+</table>
+<p class="bi-te">3 ఆర్థిక ప్రాంతాలు (VER/AER/TER) Swarnandhra 2047 అమలుకు పెట్టుబడుల ఆకర్షణ హబ్‌లుగా పనిచేస్తాయి.</p>"""
     },
     {
         "id": "div6_s2",
         "title": "AP వ్యవసాయ & జలసంపద rankings",
-        "summary": "AP 1వ: మిరపకాయ, కోకో (41%), ఆయిల్ పాం, టమాట, నిమ్మ; 2వ: మామిడి, జీడిపప్పు; రొయ్యల 70%"
+        "sub": "1st: chilli, cocoa (41% nat), oil palm, tomato, lime | 2nd: mango, cashew | Shrimp 70% national",
+        "summary": "AP 1వ స్థానం: మిరపకాయ, కోకో (41% జాతీయ), ఆయిల్ పామ్, పప్పాయి, టమాట, నిమ్మ. 2వ స్థానం: మామిడి, జీడిపప్పు. రొయ్యల ఎగుమతుల్లో 70% జాతీయ వాటా. International Horticulture Hub ₹30,000 కోట్లు — 10 రాయలసీమ+ప్రకాశం జిల్లాలు, 303 మండలాలు, 201 క్లస్టర్లు, 36 లక్షల ఎకరాలు. AP వ్యవసాయ వృద్ధి 7.83% (జాతీయ 0.80%).",
+        "html": """<div class="concept-cover">
+  <h1>AP Agriculture &amp; Aquaculture Rankings &nbsp;<span class="bi-te">/ AP వ్యవసాయ rankings</span></h1>
+  <div class="sub">1st: chilli, cocoa, oil palm, tomato, lime • 2nd: mango, cashew • Shrimp 70%</div>
+</div>
+
+<div class="section-hdr">AP Crop Rankings (National) / జాతీయ ర్యాంకింగ్‌లు</div>
+<table class="key-table">
+<tr><th>Crop</th><th>AP rank</th><th>National share / notes</th></tr>
+<tr><td><b>Chilli (mirchi)</b></td><td>1st</td><td>Guntur Sannam chilli + state-wide; major exports</td></tr>
+<tr><td><b>Cocoa</b></td><td>1st</td><td>41% of India's cocoa</td></tr>
+<tr><td>Oil Palm</td><td>1st</td><td>Largest cultivation area</td></tr>
+<tr><td>Papaya</td><td>1st</td><td></td></tr>
+<tr><td>Tomato</td><td>1st</td><td></td></tr>
+<tr><td>Lime (Lemon)</td><td>1st</td><td></td></tr>
+<tr><td>Mango</td><td>2nd</td><td>Banaganapalle (GI tag)</td></tr>
+<tr><td>Cashew</td><td>2nd</td><td>Major nut</td></tr>
+<tr><td>Barites</td><td>1st</td><td>Kadapa district — only major reserve in India</td></tr>
+</table>
+
+<div class="section-hdr">Aquaculture / జలచర పెంపకం</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Shrimp exports</td><td><b>70% of India's national exports</b></td><td class="bi-te">70% జాతీయ వాటా</td></tr>
+<tr><td>Seafood exports (2024)</td><td>Rs.24,679 crore (60% national share, AP #1)</td><td class="bi-te">AP 1వ — ₹24,679 కోట్లు</td></tr>
+<tr><td>Coastal length</td><td>~974 km (2nd longest in India after Gujarat)</td><td class="bi-te">974 కి.మీ. తీరం (2వ)</td></tr>
+</table>
+
+<div class="section-hdr">International Horticulture Hub 2026 / అంతర్జాతీయ హార్టికల్చర్ హబ్</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th></tr>
+<tr><td>Investment</td><td><b>Rs.30,000 crore</b></td></tr>
+<tr><td>Coverage</td><td>10 districts (Rayalaseema + Prakasam)</td></tr>
+<tr><td>Scope</td><td>303 mandals • 201 clusters • <b>36 lakh acres target</b></td></tr>
+<tr><td>Announced</td><td>AP Budget 2026-27 (Feb 14, 2026)</td></tr>
+</table>
+
+<p><b>Annadata Sukhibhava Rs.6,600 cr</b> (AP-funded part); combined with PM-KISAN gives farmers Rs.20,000/year. AP agri growth <b>7.83%</b> vs national 0.80% — top agricultural state by growth rate FY25-26.</p>
+<p class="bi-te">అన్నదాత సుఖీభవ ₹6,600 కోట్లు; PM-KISAN తో కలిపి రైతుకు సంవత్సరానికి ₹20,000. AP వ్యవసాయ వృద్ధి 7.83% — జాతీయ 0.80% కంటే అత్యధికం.</p>"""
     },
     {
         "id": "div6_s3",
         "title": "CII Partnership Summit 2025",
-        "summary": "30వ సదస్సు, నవం 14-15, విశాఖపట్నం; ₹13.26 లక్ష పెట్టుబడులు, 613 MoU, 16.31 లక్ష ఉద్యోగాలు"
+        "sub": "30th edition | Nov 14-15, 2025 | Visakhapatnam | 45 countries | Rs.13.26 L-cr | 613 MoU | 16.31 L jobs",
+        "summary": "CII Partnership Summit 30వ సదస్సు — నవంబర్ 14-15, 2025, విశాఖపట్నం. 45 దేశాలు, 12 రంగాలు, ₹13.26 లక్షల కోట్ల పెట్టుబడులు, 613 MoUs, 16.31 లక్షల ఉద్యోగాలు సృష్టి. CM చంద్రబాబు హోస్ట్; PM మోదీ ముఖ్య అతిథి. ఇది AP 'Visit AP - Choose AP' ప్రచారానికి కీలక ఈవెంట్.",
+        "html": """<div class="concept-cover">
+  <h1>CII Partnership Summit 2025 &nbsp;<span class="bi-te">/ CII సదస్సు 2025</span></h1>
+  <div class="sub">30th edition • Nov 14-15, 2025 • Visakhapatnam • Rs.13.26 L-cr investments</div>
+</div>
+
+<div class="section-hdr">Key Numbers / ముఖ్య గణాంకాలు</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Edition</td><td>30th CII Partnership Summit</td><td class="bi-te">30వ సదస్సు</td></tr>
+<tr><td>Dates</td><td>November 14-15, 2025</td><td class="bi-te">నవం 14-15, 2025</td></tr>
+<tr><td>Host city</td><td>Visakhapatnam</td><td class="bi-te">విశాఖపట్నం</td></tr>
+<tr><td>Country participation</td><td><b>45 countries</b></td><td class="bi-te">45 దేశాలు</td></tr>
+<tr><td>Sectors covered</td><td>12 industry sectors</td><td class="bi-te">12 రంగాలు</td></tr>
+<tr><td>Investments announced</td><td><b>Rs.13.26 lakh crore</b></td><td class="bi-te">₹13.26 లక్షల కోట్లు</td></tr>
+<tr><td>MoUs signed</td><td>613</td><td class="bi-te">613 ఒప్పందాలు</td></tr>
+<tr><td>Direct jobs target</td><td><b>16.31 lakh</b></td><td class="bi-te">16.31 లక్షల ఉద్యోగాలు</td></tr>
+</table>
+
+<div class="section-hdr">Key Investments / కీలక పెట్టుబడులు</div>
+<table class="key-table">
+<tr><th>Company</th><th>Investment</th><th>Focus</th></tr>
+<tr><td>ReNew Power</td><td>Rs.82,000 crore</td><td>Renewable energy</td></tr>
+<tr><td>Adani Group (later Konaseema)</td><td>Rs.87,520 crore</td><td>Data centre</td></tr>
+<tr><td>Google AI Hub</td><td>$15 billion (~Rs.1.25 L cr)</td><td>Vizag — 2nd largest globally outside US</td></tr>
+<tr><td>ArcelorMittal-Nippon (AMNS)</td><td>Rs.1.5 lakh crore</td><td>Nakkapalli steel plant — 24 MT capacity</td></tr>
+</table>
+
+<p><b>Strategic context:</b> AP launched its "Visit AP — Choose AP" investment-attraction campaign timed to this summit. The 16th SIPB (April 2026) added another Rs.39,436 cr across 31 firms — making the 6-month post-summit pipeline cumulatively Rs.13.65+ lakh cr.</p>
+<p class="bi-te">"Visit AP - Choose AP" ప్రచారంతో AP పెట్టుబడుల ఆకర్షణ తీవ్రతరం. ఈ సదస్సు తర్వాత 16వ SIPB (ఏప్రిల్ 2026) ₹39,436 కోట్లు మరిగి జోడించింది.</p>"""
     },
     {
         "id": "div6_s4",
         "title": "Google AI Hub & Quantum Computing",
-        "summary": "$15B పెట్టుబడి, విశాఖపట్నం AI hub, అమెరికా తర్వాత ప్రపంచంలో 2వ, IBM Quantum 156-qubit Heron (Amaravati AQCC)"
+        "sub": "Google Oct 14, 2025 ($15B Vizag AI hub) | IBM Quantum System Two — 156-qubit Heron R2 (Amaravati AQCC)",
+        "summary": "Google-AP AI Hub ఒప్పందం: అక్టోబర్ 14, 2025న ఢిల్లీ తాజ్ మాన్‌సింగ్ హోటల్ లో సంతకం; $15 బిలియన్ పెట్టుబడి (5 సంవత్సరాలు); విశాఖపట్నం; అమెరికా తర్వాత ప్రపంచంలో 2వ అతిపెద్ద Google AI hub. IBM Quantum System Two: Heron R2 156-qubit, 5K gate depth — Amaravati Quantum Computing Centre (AQCC). National Quantum Mission (NQM) ఏప్రిల్ 2023 framework. Foundation Stone Feb 7, 2026.",
+        "html": """<div class="concept-cover">
+  <h1>Google AI Hub &amp; IBM Quantum &nbsp;<span class="bi-te">/ Google AI &amp; IBM క్వాంటం</span></h1>
+  <div class="sub">Google $15B Vizag AI Hub • IBM 156-qubit Heron R2 at Amaravati AQCC</div>
+</div>
+
+<div class="section-hdr">Google-AP AI Hub / Google AI Hub</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Agreement date</td><td>October 14, 2025 (Delhi Taj Mansingh Hotel)</td><td class="bi-te">అక్టోబర్ 14, 2025</td></tr>
+<tr><td>Investment</td><td><b>$15 billion (5 years)</b></td><td class="bi-te">$15 బిలియన్</td></tr>
+<tr><td>Location</td><td>Visakhapatnam</td><td class="bi-te">విశాఖపట్నం</td></tr>
+<tr><td>Global ranking</td><td><b>2nd largest Google AI Hub outside the United States</b></td><td class="bi-te">అమెరికా తర్వాత ప్రపంచంలో 2వ</td></tr>
+<tr><td>Focus</td><td>Generative AI infrastructure, AI training/inference, data centre cluster</td><td class="bi-te">AI infra + డేటా సెంటర్</td></tr>
+</table>
+
+<div class="section-hdr">IBM Quantum @ Amaravati AQCC</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Facility</td><td>Andhra Quantum Computing Centre (AQCC)</td><td class="bi-te">అమరావతి క్వాంటం కంప్యూటింగ్ సెంటర్</td></tr>
+<tr><td>Hardware</td><td>IBM Quantum System Two</td><td class="bi-te">IBM క్వాంటం సిస్టమ్ టు</td></tr>
+<tr><td>Processor</td><td><b>Heron R2 — 156 qubits</b>, 5K gate depth</td><td class="bi-te">156 క్యూబిట్‌లు</td></tr>
+<tr><td>Foundation Stone</td><td>February 7, 2026</td><td class="bi-te">ఫిబ్రవరి 7, 2026</td></tr>
+<tr><td>Dedication</td><td>April 14, 2026 (World Quantum Day)</td><td class="bi-te">ఏప్రిల్ 14, 2026</td></tr>
+<tr><td>IBM rental</td><td>Rs.30/sq.ft (2,000 sq.ft) AP government building</td><td class="bi-te">₹30/చ.అ. అద్దె</td></tr>
+<tr><td>Partner</td><td>TCS (IT partner); L&amp;T, CDAC, CDOT, IITs (50+ orgs)</td><td class="bi-te">IT భాగస్వామి TCS</td></tr>
+<tr><td>National framework</td><td>National Quantum Mission (NQM) — April 2023 launch</td><td class="bi-te">జాతీయ క్వాంటం మిషన్ (NQM) — 2023</td></tr>
+</table>
+<p><b>Note:</b> 133-qubit was IBM Heron R1 (Dec 2023 prototype). The deployed processor at Amaravati AQCC is R2 (156 qubits, Nov 2024 family release).</p>
+<p class="bi-te">133 క్యూబిట్‌లు Heron R1 (పూర్వ ప్రోటోటైప్); అమరావతిలో Deployed R2 — 156 క్యూబిట్‌లు.</p>"""
     },
     {
         "id": "div6_s5",
         "title": "ArcelorMittal Steel & ఖనిజ సంపద",
-        "summary": "AMNS నక్కపల్లి, ₹1.5 లక్ష పెట్టుబడి, 24 MT సామర్థ్యం, Heavy Minerals 359.79 MT"
+        "sub": "AMNS Nakkapalli Rs.1.5 L-cr | 24 MT capacity | Heavy Minerals 359.79 MT | RINL revival",
+        "summary": "AMNS (ArcelorMittal Nippon Steel) నక్కపల్లి (అనకాపల్లి జిల్లా): ₹1.5 లక్షల కోట్ల పెట్టుబడి, 24 MT సామర్థ్యం (2 దశలు), శంకుస్థాపన మార్చి 23, 2026 — CM చంద్రబాబు నిర్వహించారు. AP భారీ ఖనిజాలు (మార్చి 2026): 359.79 MT, 25 deposits — Ilmenite 178.75 MT, Sillimanite 81.85 MT, Garnet 67.30 MT. RINL ఒక స్వతంత్ర CPSE (SAIL కి అనుబంధం కాదు). AP Barites ఉత్పత్తిలో దేశంలో 1వ స్థానం (కడప).",
+        "html": """<div class="concept-cover">
+  <h1>AMNS Steel &amp; Mineral Wealth &nbsp;<span class="bi-te">/ AMNS స్టీల్ &amp; ఖనిజాలు</span></h1>
+  <div class="sub">AMNS Nakkapalli Rs.1.5 L-cr (24 MT) • Heavy minerals 359.79 MT • RINL independent CPSE</div>
+</div>
+
+<div class="section-hdr">ArcelorMittal Nippon Steel (AMNS) Nakkapalli</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Location</td><td><b>Nakkapalli (Anakapalli district)</b></td><td class="bi-te">నక్కపల్లి, అనకాపల్లి జిల్లా</td></tr>
+<tr><td>Foundation</td><td>March 23, 2026 by CM Chandrababu</td><td class="bi-te">మార్చి 23, 2026 శంకుస్థాపన</td></tr>
+<tr><td>Investment</td><td>Rs.1.5 lakh crore</td><td class="bi-te">₹1.5 లక్షల కోట్లు</td></tr>
+<tr><td>Capacity</td><td><b>24 MT</b> in two phases</td><td class="bi-te">24 MT (2 దశలు)</td></tr>
+<tr><td>Type</td><td>Integrated steel plant (Joint venture: ArcelorMittal + Nippon Steel)</td><td class="bi-te">జాయింట్ వెంచర్</td></tr>
+</table>
+
+<div class="section-hdr">AP Heavy Mineral Reserves (March 2026) / AP ఖనిజ సంపద</div>
+<table class="key-table">
+<tr><th>Mineral</th><th>Reserves</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Total heavy minerals</td><td>359.79 MT (25 deposits)</td><td class="bi-te">మొత్తం 359.79 MT</td></tr>
+<tr><td>Ilmenite</td><td>178.75 MT</td><td class="bi-te">ఇల్మనైట్</td></tr>
+<tr><td>Sillimanite</td><td>81.85 MT</td><td class="bi-te">సిల్లిమనైట్</td></tr>
+<tr><td>Garnet</td><td>67.30 MT</td><td class="bi-te">గార్నెట్</td></tr>
+<tr><td>Barites</td><td><b>AP #1 in India (Kadapa district)</b></td><td class="bi-te">బారైట్స్ — దేశంలో 1వ (కడప)</td></tr>
+</table>
+
+<div class="section-hdr">RINL Status / RINL స్థితి</div>
+<p>RINL (Rashtriya Ispat Nigam Limited, the Visakhapatnam Steel Plant) is an <b>independent CPSE</b> — NOT a SAIL subsidiary. As of 2026 the central government's revival package continues; FY25-26 output and modernisation milestones are key exam facts.</p>
+<p class="bi-te">RINL (RINL = విశాఖ స్టీల్ ప్లాంట్) స్వతంత్ర CPSE — SAIL కి అనుబంధ సంస్థ కాదు. 2026లో కేంద్రప్రభుత్వ revival package కొనసాగుతోంది.</p>"""
     },
     {
         "id": "div6_s6",
         "title": "మౌలిక సదుపాయాలు — పోర్టులు, విమానాశ్రయాలు",
-        "summary": "విశాఖ Major పోర్టు, 5 Non-major, 3 అంతర్జాతీయ విమానాశ్రయాలు, భోగాపురం GMR Group"
+        "sub": "Major: Vizag | 5 Non-major | 4 Greenfield | 3 International airports | Bhogapuram first landing Jan 4, 2026",
+        "summary": "AP లో 1 Major Port (విశాఖ — GoI-administered), 5 Non-major (కృష్ణపట్నం, గంగవరం, కాకినాడ, రావా, భావనపాడు — AP Maritime Board), 4 Greenfield నిర్మాణంలో (భావనపాడు, రామాయపట్నం, మచిలీపట్నం, కాకినాడ SEZ). కొత్తగా Dugarajupatnam Port (తిరుపతి జిల్లా) ఆమోదం (Dec 2025). 3 అంతర్జాతీయ విమానాశ్రయాలు: విశాఖ, తిరుపతి, విజయవాడ. భోగాపురం 'అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం' (GMR Group) — తొలి ల్యాండింగ్ జనవరి 4, 2026; PM మోదీ ఆగస్టు 26, 2026 ప్రారంభించనున్నారు. AP Ports కార్గోలో దేశంలో 3వ స్థానం.",
+        "html": """<div class="concept-cover">
+  <h1>AP Infrastructure — Ports &amp; Airports &nbsp;<span class="bi-te">/ AP మౌలిక సదుపాయాలు</span></h1>
+  <div class="sub">1 Major Port • 5 Non-major • 4 Greenfield • 3 Intl Airports • Bhogapuram debut Jan 4, 2026</div>
+</div>
+
+<div class="section-hdr">Ports / AP పోర్టులు</div>
+<table class="key-table">
+<tr><th>Port</th><th>Type</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Visakhapatnam</b></td><td><b>Major Port</b> (Government of India administered)</td><td class="bi-te">విశాఖ — ఏకైక మేజర్ పోర్ట్</td></tr>
+<tr><td>Krishnapatnam</td><td>Non-major (AP Maritime Board)</td><td class="bi-te">కృష్ణపట్నం</td></tr>
+<tr><td>Gangavaram</td><td>Non-major (Adani-owned)</td><td class="bi-te">గంగవరం</td></tr>
+<tr><td>Kakinada</td><td>Non-major (deep + anchorage)</td><td class="bi-te">కాకినాడ</td></tr>
+<tr><td>Rawa</td><td>Non-major</td><td class="bi-te">రావా</td></tr>
+<tr><td>Bhavanapadu</td><td>Non-major / under development</td><td class="bi-te">భావనపాడు</td></tr>
+<tr><td>Greenfield (4 under construction)</td><td>Bhavanapadu, Ramayapatnam, Machilipatnam, Kakinada SEZ</td><td class="bi-te">4 గ్రీన్‌ఫీల్డ్ నిర్మాణంలో</td></tr>
+<tr><td><b>Dugarajupatnam</b> (Dec 2025 approved)</td><td>New greenfield + ship-repair cluster, Tirupati dist</td><td class="bi-te">డుగరాజుపట్నం — తిరుపతి జిల్లా</td></tr>
+<tr><td>AP Ports national rank (cargo)</td><td><b>3rd in India</b></td><td class="bi-te">కార్గోలో 3వ స్థానం</td></tr>
+</table>
+
+<div class="section-hdr">Airports / విమానాశ్రయాలు</div>
+<table class="key-table">
+<tr><th>Airport</th><th>Type</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Visakhapatnam</td><td>International</td><td class="bi-te">విశాఖపట్నం</td></tr>
+<tr><td>Tirupati (Renigunta)</td><td>International</td><td class="bi-te">తిరుపతి (రేణిగుంట)</td></tr>
+<tr><td>Vijayawada (Gannavaram)</td><td>International</td><td class="bi-te">విజయవాడ (గన్నవరం)</td></tr>
+<tr><td><b>Bhogapuram (Vizianagaram)</b></td><td>Alluri Sitarama Raju International — under construction, GMR Group</td><td class="bi-te">భోగాపురం — GMR Group</td></tr>
+<tr><td>Rajamahendravaram</td><td>Domestic</td><td class="bi-te">రాజమహేంద్రవరం</td></tr>
+<tr><td>Donakonda</td><td>Domestic (proposed)</td><td class="bi-te">దొనకొండ</td></tr>
+</table>
+
+<p><b>Bhogapuram milestones:</b> First test landing was a flight from Delhi on <b>January 4, 2026</b>. PM Modi expected to inaugurate June 26, 2026. The terminal is named "Alluri Sitarama Raju International Airport" — honouring the freedom fighter from this region.</p>
+<p class="bi-te">భోగాపురం: తొలి test landing జనవరి 4, 2026; PM మోదీ జూన్ 26, 2026న ప్రారంభించనున్నారు. "అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం" అని పేరు.</p>"""
     }
 ], ensure_ascii=False)
 
