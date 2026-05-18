@@ -33,7 +33,7 @@ def seed():
          "C) ఫిబ్రవరి 28, 2026 / February 28, 2026",
          "D) మార్చి 1, 2026 / March 1, 2026",
          "B",
-         "కేంద్ర ఆర్థికమంత్రి నిర్మలా సీతారామన్ ఫిబ్రవరి 1, 2026న 2026-27 కేంద్ర బడ్జెట్‌ను సమర్పించారు. Budget 2026-27 was presented by FM Nirmala Sitharaman on February 1, 2026.",
+         "FM **నిర్మలా సీతారామన్ ఫిబ్రవరి 1, 2026**న 2026-27 కేంద్ర బడ్జెట్ సమర్పించారు — ఆమె **9వ వరుస బడ్జెట్** (Modi 3.0 ప్రభుత్వ 2వ పూర్తి బడ్జెట్; మొరార్జీ దేశాయ్ తర్వాత అత్యధికం). Theme: **Vikasit Bharat**. మొత్తం వ్యయం ₹50.65 లక్షల కోట్లు; మూలధన వ్యయం ₹11.11 లక్షల కోట్లు; ద్రవ్యలోటు లక్ష్యం GDP లో 4.4%. **FM Sitharaman presented Union Budget 2026-27 on Feb 1, 2026 — her 9th consecutive budget**.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31002,
@@ -108,13 +108,13 @@ def seed():
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31009,
-         "77వ గణతంత్ర దినోత్సవానికి ముఖ్య అతిథిగా ఎవరు విచ్చేశారు?\n(Who was the chief guest at India's 77th Republic Day?)",
-         "A) ఇండోనేషియా అధ్యక్షుడు ప్రభోవో సుబియాంటో / Indonesian President Prabowo Subianto",
-         "B) ఫ్రాన్స్ అధ్యక్షుడు ఇమ్మాన్యుయేల్ మాక్రాన్ / French President Emmanuel Macron",
-         "C) రష్యా అధ్యక్షుడు పుతిన్ / Russian President Putin",
-         "D) జర్మనీ చాన్సలర్ / German Chancellor",
+         "77వ గణతంత్ర దినోత్సవానికి (జనవరి 26, 2026) ముఖ్య అతిథులుగా ఎవరు విచ్చేశారు?\n(Who were the chief guests at India's 77th Republic Day on January 26, 2026?)",
+         "A) EU కౌన్సిల్ ప్రెసిడెంట్ ఆంటోనియో కోస్టా + EC ప్రెసిడెంట్ ఉర్సులా ఫాన్ డెర్ లీయెన్ / EU Council Pres. António Costa + EC Pres. Ursula von der Leyen",
+         "B) ఇండోనేషియా అధ్యక్షుడు ప్రభోవో సుబియాంటో / Indonesian President Prabowo Subianto",
+         "C) ఫ్రాన్స్ అధ్యక్షుడు ఇమ్మాన్యుయేల్ మాక్రాన్ / French President Emmanuel Macron",
+         "D) రష్యా అధ్యక్షుడు పుతిన్ / Russian President Putin",
          "A",
-         "ఇండోనేషియా అధ్యక్షుడు ప్రభోవో సుబియాంటో 77వ గణతంత్ర దినోత్సవానికి ముఖ్య అతిథిగా విచ్చేశారు. Indonesian President Prabowo Subianto was the chief guest at the 77th Republic Day.",
+         "77వ గణతంత్ర దినోత్సవానికి (Jan 26, 2026) **EU కౌన్సిల్ అధ్యక్షుడు ఆంటోనియో కోస్టా + EC అధ్యక్షురాలు ఉర్సులా ఫాన్ డెర్ లీయెన్** ముఖ్య అతిథులుగా విచ్చేశారు. మొదటిసారిగా **EU సైనిక బృందం యూరోప్ బయట ఒక విదేశీ పరేడ్‌లో మార్చ్ చేసింది**. India-EU FTA Jan 27, 2026న సంతకం చేశారు. (ప్రభోవో సుబియాంటో **76వ RD (Jan 26, 2025) ముఖ్య అతిథి** — 77వది కాదు.)",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── 16th Finance Commission ──

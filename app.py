@@ -6622,10 +6622,21 @@ CONCEPT_MAP = [
     # Mideast War (30001-30080)
     (30001, 30020, 'mideast_twelve_day'),
     (30021, 30080, 'mideast_2026_war'),
-    # National Current Affairs 2026 (31001-31300)
-    (31001, 31020, 'national_ca_budget'),
+    # ── National Current Affairs 2026 (31001-31388) ──
+    # Chunk 1 (31001-31020) — properly split into topic groups per Batch I (concept-note enrichment):
+    (31001, 31007, 'natl_2026_budget_finance'),     # Union Budget 2026-27 (7 MCQs)
+    (31008, 31009, 'natl_2026_republic_day'),       # 77th Republic Day (2 MCQs)
+    (31010, 31013, 'natl_2026_budget_finance'),     # 16th FC + GDP/Eco Survey (already in budget note)
+    (31014, 31015, 'natl_2026_nfhs_tfr'),           # NFHS / TFR (2 MCQs)
+    (31016, 31017, 'natl_2026_waves_summit'),       # WAVES 2025 Mumbai (2 MCQs)
+    (31018, 31018, 'natl_2026_defence'),            # Prithvi-3 missile
+    (31019, 31019, 'natl_2026_isro_space'),         # NavIC-16
+    (31020, 31020, 'natl_2026_defence'),            # MILAN 2026 naval exercise (Vizag)
+    # 31021-31300 still mapped to legacy tags (will be remapped in subsequent chunks)
     (31021, 31045, 'national_ca_polity'),
     (31046, 31300, 'national_ca_misc'),
+    # 31301-31388 — new 2026 PDF MCQs mapped to natl_2026_* tags via seed_concept_notes_natl_2026.py
+    # (mapping for these added after chunk-by-chunk audit completes)
     # AP CA 2026 — individual question concept notes (first 10 questions)
     (32001, 32002, 'q_32001'),   # AP Budget 2026-27
     (32003, 32003, 'q_32003'),   # Amaravati Capital Act

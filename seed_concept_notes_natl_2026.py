@@ -526,6 +526,91 @@ NOTES.append(('natl_2026_misc',
 <p class="bi-te">అక్షయ పాత్ర ఫౌండేషన్ — మార్చి 17, 2026న చారిత్రాత్మక <b>500 కోట్ల భోజనాల</b> మైలురాయి అధిగమించింది. ప్రపంచంలోనే అతిపెద్ద NGO పాఠశాల భోజన పథకం.</p>
 """))
 
+# ═══════════════════════════════════════════════════════════════════
+#  13. NFHS / Total Fertility Rate (TFR) — Population Data
+#  Linked from MCQs 31014-31015
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_nfhs_tfr',
+              'NFHS — India Total Fertility Rate (TFR)',
+              'NFHS — భారత సంతానోత్పత్తి రేటు (TFR)', """
+<div class="concept-cover">
+  <h1>NFHS &amp; India's Total Fertility Rate &nbsp;<span class="bi-te">/ NFHS &amp; భారత TFR</span></h1>
+  <div class="sub">India TFR 2.1 (replacement) • S. India well below • Implications for 2026 delimitation</div>
+</div>
+
+<div class="section-hdr">India's TFR — Key Numbers / భారత TFR కీలక గణాంకాలు</div>
+<table class="key-table">
+<tr><th>Region / State</th><th>TFR (NFHS-5, 2019-21)</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>India (national average)</b></td><td><b>2.0–2.1</b> (replacement level)</td><td class="bi-te">భారత TFR — జనాభా స్థిరీకరణ స్థాయి</td></tr>
+<tr><td>Andhra Pradesh</td><td>1.7</td><td class="bi-te">ఆంధ్రప్రదేశ్</td></tr>
+<tr><td><b>Telangana</b></td><td><b>1.6</b></td><td class="bi-te">తెలంగాణ — జాతీయ సగటు కంటే తక్కువ</td></tr>
+<tr><td>Tamil Nadu</td><td>1.8</td><td class="bi-te">తమిళనాడు</td></tr>
+<tr><td>Kerala</td><td>1.8</td><td class="bi-te">కేరళ</td></tr>
+<tr><td>Karnataka</td><td>1.7</td><td class="bi-te">కర్ణాటక</td></tr>
+<tr><td>Uttar Pradesh</td><td>2.4</td><td class="bi-te">ఉత్తరప్రదేశ్</td></tr>
+<tr><td>Bihar</td><td>3.0 (highest)</td><td class="bi-te">బిహార్ — అత్యధికం</td></tr>
+</table>
+
+<div class="section-hdr">What is TFR? / TFR అంటే ఏమిటి?</div>
+<p><b>Total Fertility Rate</b> = average number of children per woman in her reproductive years. <b>2.1 is the population replacement level</b> — below this, the population stabilises (without migration). India crossed below 2.1 in some surveys post-2022 — a major demographic shift.</p>
+<p class="bi-te">TFR అంటే ఒక మహిళ తన పునరుత్పత్తి వయస్సులో సంతానోత్పత్తి చేసే సగటు పిల్లల సంఖ్య. <b>2.1 జనాభా స్థిరీకరణ స్థాయి</b> — దీని కంటే తక్కువ TFR ఉంటే (వలసలు లేకుండా) జనాభా తగ్గుతుంది.</p>
+
+<div class="section-hdr">NFHS — National Family Health Survey / జాతీయ కుటుంబ ఆరోగ్య సర్వే</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Conducted by</td><td>MoHFW + IIPS (Mumbai) + ICF Macro</td><td class="bi-te">కేంద్ర ఆరోగ్య మంత్రిత్వ శాఖ + IIPS</td></tr>
+<tr><td>Latest round</td><td>NFHS-5 (2019-21)</td><td class="bi-te">NFHS-5</td></tr>
+<tr><td>Covers</td><td>Fertility, mortality, contraception, nutrition, women's health</td><td class="bi-te">సంతానోత్పత్తి, మరణాలు, పోషకాహారం</td></tr>
+<tr><td>Sample</td><td>~6.4 lakh households</td><td class="bi-te">~6.4 లక్షల ఇళ్లు</td></tr>
+</table>
+
+<div class="section-hdr">Why this matters / ఇది ఎందుకు ముఖ్యం?</div>
+<p>The TFR gap between North (UP/Bihar) and South (TN/KL/TS/AP) is at the heart of the <b>2026 delimitation debate</b>. After the next Census, LS seats may be reallocated based on population — Northern states stand to gain seats; Southern states (which controlled population growth) stand to lose proportional representation. AP/TS Chief Ministers have raised concerns publicly.</p>
+<p class="bi-te">ఉత్తర-దక్షిణ TFR అంతరం 2026 delimitation చర్చకు మూలం. Census తర్వాత LS స్థానాలు జనాభా ఆధారంగా పునఃకేటాయించబడితే — జనాభా నియంత్రణ చేసిన దక్షిణ రాష్ట్రాలు (AP/TS/TN/KL) ఎక్కువ సీట్లు కోల్పోయే ప్రమాదం. AP/TS ముఖ్యమంత్రులు ఈ విషయంలో ఆందోళన వ్యక్తం చేస్తున్నారు.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  14. WAVES 2025 — World Audio Visual Summit (Mumbai)
+#  Linked from MCQs 31016-31017
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_waves_summit',
+              'WAVES 2025 — World Audio Visual & Entertainment Summit',
+              'WAVES 2025 — ప్రపంచ ఆడియో విజువల్ సమ్మిట్', """
+<div class="concept-cover">
+  <h1>WAVES 2025 &nbsp;<span class="bi-te">/ WAVES 2025 సమ్మిట్</span></h1>
+  <div class="sub">Mumbai • May 1-4, 2025 • Theme: Connecting Creators, Connecting Countries</div>
+</div>
+
+<div class="section-hdr">WAVES 2025 — Key Facts / కీలక వివరాలు</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Full form</td><td><b>W</b>orld <b>A</b>udio <b>V</b>isual &amp; <b>E</b>ntertainment <b>S</b>ummit</td><td class="bi-te">ప్రపంచ ఆడియో విజువల్ & ఎంటర్‌టైన్‌మెంట్ సమ్మిట్</td></tr>
+<tr><td>Host city</td><td><b>Mumbai</b> (India's media capital)</td><td class="bi-te">ముంబై — భారత మీడియా రాజధాని</td></tr>
+<tr><td>Dates</td><td>May 1-4, 2025 (4 days)</td><td class="bi-te">మే 1-4, 2025</td></tr>
+<tr><td>Inaugurated by</td><td>PM Narendra Modi</td><td class="bi-te">PM నరేంద్ర మోదీ ప్రారంభించారు</td></tr>
+<tr><td>Theme</td><td><b>'Connecting Creators, Connecting Countries'</b></td><td class="bi-te">'క్రియేటర్లను కలుపుతూ, దేశాలను కలుపుతూ'</td></tr>
+<tr><td>Countries</td><td>~80 countries participated</td><td class="bi-te">~80 దేశాలు పాల్గొన్నాయి</td></tr>
+<tr><td>Significance</td><td>India's <b>first</b> global summit dedicated to M&amp;E sector</td><td class="bi-te">భారత తొలి అంతర్జాతీయ M&E సమ్మిట్</td></tr>
+</table>
+
+<div class="section-hdr">India's M&amp;E Sector — Stats / భారత M&E రంగం</div>
+<table class="key-table">
+<tr><th>Item</th><th>Value</th></tr>
+<tr><td>Current size (2024)</td><td>~$28 billion</td></tr>
+<tr><td>2030 target</td><td><b>$100 billion</b></td></tr>
+<tr><td>Workforce</td><td>~25 lakh jobs (direct + indirect)</td></tr>
+<tr><td>Growth rate</td><td>~10% CAGR</td></tr>
+</table>
+
+<div class="section-hdr">Pavilions &amp; Highlights / ముఖ్యాంశాలు</div>
+<p>WAVES 2025 had dedicated pavilions for <b>VFX, Animation, Gaming, OTT, Music, Films, News &amp; Broadcasting</b>. The "Bharat Pavilion" showcased India's creative economy. Inaugural <b>Creator Awards</b> were instituted to recognise digital content creators.</p>
+<p class="bi-te">WAVES 2025లో VFX, యానిమేషన్, గేమింగ్, OTT, సంగీతం, సినిమా, వార్తల కోసం ప్రత్యేక పెవిలియన్లు ఉన్నాయి. "భారత్ పెవిలియన్" — భారత సృజనాత్మక ఆర్థిక వ్యవస్థను చూపించింది. ప్రారంభ Creator Awards ప్రారంభించారు.</p>
+
+<div class="section-hdr">Why it matters / ఇది ఎందుకు ముఖ్యం?</div>
+<p>WAVES positions India as a global M&amp;E powerhouse alongside Hollywood (USA), Hallyu (Korea), and content giants like China &amp; Japan. The summit aligns with India's "Bharat — VishvaGuru" creative-economy ambitions and competes for international co-production deals.</p>
+<p class="bi-te">WAVES — హాలీవుడ్ (USA), హాలియు (కొరియా), చైనా/జపాన్‌లకు పోటీగా భారత్‌ను ప్రపంచ M&E శక్తి కేంద్రంగా నిలబెడుతుంది. భారత్ "విశ్వగురు" సృజనాత్మక ఆర్థిక లక్ష్యానికి అనుగుణం; అంతర్జాతీయ co-production ఒప్పందాలకు దోహదపడుతుంది.</p>
+"""))
+
 print(f"Loaded {len(NOTES)} National 2026 concept notes")
 
 # ════════════════════════════════════════════════════════════════
