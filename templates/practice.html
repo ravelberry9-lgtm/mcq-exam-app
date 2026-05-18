@@ -302,17 +302,18 @@ const SUBTOPIC_MAP=[
   [29001,29080,'Intl Events & Appointments'],
   [30001,30080,'Mideast War 2025-26'],
   [31001,31300,'National Current Affairs'],
-  [32001,32200,'AP CA - Cabinet & Elections 2024'],
-  [32201,32280,'AP CA - Economy & Budget'],
-  [32281,32360,'AP CA - Infrastructure & Capital'],
-  [32361,32440,'AP CA - Healthcare & Social'],
-  [32441,32520,'AP CA - Technology & IT'],
-  [32521,32600,'AP CA - Agriculture & Water'],
-  [32601,32730,'AP CA - Education & Culture'],
-  [32731,32800,'AP CA - History & Heritage'],
-  [32801,32880,'AP CA - Environment & Sports'],
-  [32881,32960,'AP CA - Awards & Institutions'],
-  [32961,33200,'AP CA - Reorganisation & Governance'],
+  // ── AP Current Affairs 2026 ── unified with Quiz section's chapter_mcqs (550 audited MCQs).
+  // Synthetic IDs assigned by backend: div N → 32_N00 + offset (e.g. div1 = 32101..32199).
+  [32101,32199,'AP CA · Div 1: Elections & Cabinet'],
+  [32201,32299,'AP CA · Div 2: Super Six Schemes'],
+  [32301,32399,'AP CA · Div 3: Events Jan-Aug 2025'],
+  [32401,32499,'AP CA · Div 4: Events Aug 2025 - Apr 2026'],
+  [32501,32599,'AP CA · Div 5: Art, Culture & GI Tags'],
+  [32601,32699,'AP CA · Div 6: Economy & Industries'],
+  [32701,32799,'AP CA · Div 7: History & Freedom Fighters'],
+  [32801,32899,'AP CA · Div 8: Environment, ISRO & Sports'],
+  [32901,32999,'AP CA · Div 9: Padma, HC & Institutions'],
+  [33001,33099,'AP CA · Div 10: APRA 2014 & 2026'],
 ];
 let _stMap=new Map(), _stSel=new Set();
 function _stName(id){for(const[a,b,n]of SUBTOPIC_MAP)if(id>=a&&id<=b)return n;return null;}

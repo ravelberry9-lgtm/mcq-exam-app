@@ -1418,6 +1418,88 @@ def pyq_reseed():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+@app.route('/api/ap-hc-ca/archive-and-delete')
+def ap_hc_ca_archive_and_delete():
+    """Archive the legacy `questions` table rows for AP_HC AP Current Affairs 2026
+    (IDs 32001-33200, folder='AP_HC', topic='AP_Current_Affairs_2026') to a JSON file
+    in the workspace, then DELETE them. After this runs, the AP HC tile is served
+    from chapter_mcqs (via the route override above).
+
+    Pass ?pin=<ADMIN_PIN>&confirm=YES to execute. Without confirm=YES, returns a
+    dry-run preview (row count + first 3 rows).
+    """
+    if (request.args.get('pin') or '') != ADMIN_PIN:
+        return jsonify({'error': 'unauthorized'}), 401
+
+    ph = '%s' if USE_POSTGRES else '?'
+    confirm = (request.args.get('confirm') or '').upper() == 'YES'
+
+    conn = get_db()
+    try:
+        # Count + sample rows that would be archived/deleted
+        cur = db_exec(conn, f"""
+            SELECT id, question_text, option_a, option_b, option_c, option_d,
+                   correct_answer, difficulty, explanation, folder, topic
+            FROM questions
+            WHERE folder={ph} AND topic={ph}
+            ORDER BY id
+        """, ('AP_HC', 'AP_Current_Affairs_2026'))
+        all_rows = [row_to_dict(r) for r in cur.fetchall()]
+        total = len(all_rows)
+
+        if not confirm:
+            return jsonify({
+                'mode': 'dry-run',
+                'rows_that_would_be_affected': total,
+                'sample_first_3': all_rows[:3],
+                'next_step': 'Add &confirm=YES to actually archive + delete'
+            })
+
+        # Archive to JSON
+        import os, json as _json, datetime
+        archive_dir = os.path.join(os.path.dirname(__file__), 'archives')
+        os.makedirs(archive_dir, exist_ok=True)
+        stamp = datetime.datetime.utcnow().strftime('%Y%m%d-%H%M%S')
+        archive_path = os.path.join(archive_dir, f'ap_hc_ap_ca_2026_{stamp}.json')
+        with open(archive_path, 'w', encoding='utf-8') as f:
+            _json.dump({
+                'archived_at_utc': stamp,
+                'source_table': 'questions',
+                'filter': {'folder': 'AP_HC', 'topic': 'AP_Current_Affairs_2026'},
+                'total_rows': total,
+                'rows': all_rows,
+            }, f, ensure_ascii=False, indent=2)
+
+        # Delete
+        db_exec(conn, f"""
+            DELETE FROM questions
+            WHERE folder={ph} AND topic={ph}
+        """, ('AP_HC', 'AP_Current_Affairs_2026'))
+        conn.commit()
+
+        # Verify post-delete
+        cur2 = db_exec(conn, f"""
+            SELECT COUNT(*) AS c FROM questions
+            WHERE folder={ph} AND topic={ph}
+        """, ('AP_HC', 'AP_Current_Affairs_2026'))
+        remaining = _fv(cur2.fetchone())
+
+        return jsonify({
+            'mode': 'executed',
+            'archived_to': archive_path,
+            'rows_archived': total,
+            'rows_deleted': total - remaining,
+            'rows_remaining_after_delete': remaining,
+        })
+    except Exception as e:
+        try: conn.rollback()
+        except: pass
+        return jsonify({'success': False, 'error': str(e)[:300]}), 500
+    finally:
+        try: conn.close()
+        except: pass
+
+
 @app.route('/api/ap-ca/force-reseed')
 def ap_ca_force_reseed():
     """Force-wipe and re-seed AP Current Affairs divisions from their current seed files.
@@ -2402,6 +2484,48 @@ def practice(folder, topic):
 def practice_questions(folder, topic):
     conn = get_db()
     ph = '%s' if USE_POSTGRES else '?'
+
+    # ── Special case: AP HC "AP Current Affairs 2026" subtopic
+    #    Unified with the Quiz section — pulls from chapter_mcqs (topic='AP_Current_Affairs')
+    #    so that AP HC users see the same audited 550 MCQs as Quiz section.
+    #    Synthetic IDs are assigned so the existing SUBTOPIC_MAP filtering works:
+    #        div N → IDs 32_N00 + offset (e.g. div1 = 32101..32144, div2 = 32201..)
+    if folder == 'AP_HC' and topic == 'AP_Current_Affairs_2026':
+        cur = db_exec(conn, f"""
+            SELECT cm.id, cm.q_te, cm.opt_a, cm.opt_b, cm.opt_c, cm.opt_d,
+                   cm.correct, cm.difficulty, cm.explanation_te,
+                   sn.chapter_num AS div_num
+            FROM chapter_mcqs cm
+            JOIN study_notes sn ON cm.study_note_id = sn.id
+            WHERE sn.topic = {ph}
+            ORDER BY sn.chapter_num, cm.id
+        """, ('AP_Current_Affairs',))
+        rows = []
+        per_div_counter = {}
+        for r in cur.fetchall():
+            d = row_to_dict(r)
+            div = int(d.get('div_num') or 0)
+            per_div_counter[div] = per_div_counter.get(div, 0) + 1
+            synthetic_id = 32000 + div * 100 + per_div_counter[div]
+            rows.append({
+                'id': synthetic_id,
+                'question_text': d.get('q_te') or '',
+                'option_a': d.get('opt_a') or '',
+                'option_b': d.get('opt_b') or '',
+                'option_c': d.get('opt_c') or '',
+                'option_d': d.get('opt_d') or '',
+                'correct_answer': d.get('correct') or '',
+                'difficulty': d.get('difficulty') or 1,
+                'explanation': d.get('explanation_te') or '',
+            })
+        conn.close()
+        # Shuffle here so RANDOM() ordering is preserved without breaking the
+        # synthetic-id deterministic assignment above.
+        import random
+        random.shuffle(rows)
+        return jsonify({'questions': rows, 'total': len(rows)})
+
+    # Default path — questions table lookup
     cur = db_exec(conn, f"""
         SELECT id, question_text, option_a, option_b, option_c, option_d,
                correct_answer, difficulty, explanation
