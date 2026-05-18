@@ -6682,8 +6682,30 @@ CONCEPT_MAP = [
     (31068, 31068, 'natl_2026_legal_security'),      # CJI Gavai (legal/judiciary)
     (31069, 31069, 'natl_2026_space_isro'),          # Gaganyaan crew
     (31070, 31070, 'natl_2026_foreign_relations'),   # India-Pakistan / Op Sindoor
-    # 31071-31300 still mapped to legacy tags (will be remapped in subsequent chunks)
-    (31071, 31300, 'national_ca_misc'),
+    # Chunk 3 (31071-31120) — properly split into topic groups (concept-note enrichment):
+    (31071, 31071, 'natl_2026_foreign_relations'),   # Op Sindoor May 2025
+    (31072, 31072, 'natl_2026_budget_finance'),      # Digital Agriculture Mission (Budget 2026-27)
+    (31073, 31073, 'natl_2026_foreign_relations'),   # Houthi - Red Sea attacks
+    (31074, 31074, 'natl_2026_budget_finance'),      # Parliament Budget Session start
+    (31075, 31075, 'natl_2026_space_isro'),          # NISAR ISRO-NASA satellite
+    (31076, 31076, 'natl_2026_economic_indicators'), # CPI 2025 - India rank 91
+    (31077, 31077, 'natl_2026_economic_indicators'), # Gender Gap Report 2025 - India 131
+    (31078, 31078, 'natl_2026_economic_indicators'), # World Happiness Report 2025 - India 118
+    (31079, 31079, 'natl_2026_naval_defense'),       # IONS 2026 Vizag
+    (31080, 31080, 'natl_2026_economic_indicators'), # GII 2025 - India 38
+    (31081, 31087, 'natl_2026_budget_finance'),      # Budget 2026-27 schemes (PM Kisan, Viksit Bharat, tax slabs, startup, PMAY, FDI insurance, Mudra)
+    (31088, 31093, 'natl_2026_space_isro'),          # SpaDeX (3 Qs), Gaganyaan G1, Chandrayaan-4, Aditya-L1
+    (31094, 31097, 'natl_2026_paris_olympics'),      # Paris Olympics 2024 (4 Qs) - NEW TAG
+    (31098, 31099, 'natl_2026_legal_security'),      # Three new criminal laws (BNS/BNSS/BSA)
+    (31100, 31103, 'natl_2026_defence'),             # Tejas MK-1A, Defence exports, CDS Anil Chauhan, Agniveer
+    (31104, 31105, 'natl_2026_padma_awards'),        # Bharat Ratna 2024 (5 awardees, LK Advani living)
+    (31106, 31110, 'natl_2026_cricket_sports'),      # T20 WC 2024 (2 Qs), Chess Olympiad 2025 (2 Qs), Wimbledon 2025
+    (31111, 31112, 'natl_2026_foreign_relations'),   # BRICS expansion + 2025 summit Brazil
+    (31113, 31114, 'natl_2026_social_welfare_schemes'), # UPI Jan 2026, PM Surya Ghar
+    (31115, 31118, 'natl_2026_agri_environment'),    # Solar 100GW, Green H2, Forest cover, Tiger census
+    (31119, 31120, 'natl_2026_economic_indicators'), # Forex $704B, FDI inflows
+    # 31121-31300 still mapped to legacy tags (will be remapped in subsequent chunks)
+    (31121, 31300, 'national_ca_misc'),
     # 31301-31388 — new 2026 PDF MCQs mapped to natl_2026_* tags via seed_concept_notes_natl_2026.py
     # (mapping for these added after chunk-by-chunk audit completes)
     # AP CA 2026 — individual question concept notes (first 10 questions)

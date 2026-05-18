@@ -3,7 +3,7 @@
 seed_concept_notes_natl_2026.py
 Rich bilingual (English + Telugu) concept notes for National Current Affairs 2026 MCQs.
 Topics: Budget, RD, Padma Awards, ISRO, Defence, Foreign Policy, Sports, Census, Const Amendment, etc.
-~12 concept notes covering IDs 31301-31380 (Batch H+PDF 2026).
+~26 concept notes covering IDs 31001-31120 + 31301-31380 (Batch H+PDF 2026 + chunk-1/2/3 enrichment).
 Tag prefix: 'natl_2026_'
 """
 import os, sys
@@ -1041,6 +1041,46 @@ NOTES.append(('natl_2026_infrastructure',
 <div class="section-hdr">MSME — Budget Announcements / MSME బడ్జెట్ ప్రకటనలు</div>
 <p><b>MSME</b> = Micro, Small &amp; Medium Enterprises (governed by MSMED Act 2006). Revised definition (2020) by combined investment + turnover thresholds. 2026-27 Budget: <b>credit guarantee cover expanded</b>, mudra loan limit hiked, capital support increased. MSME sector contributes ~30% of GDP and ~45% of exports.</p>
 <p class="bi-te">MSME — MSMED చట్టం 2006. 2020 సవరణ ద్వారా పెట్టుబడి + టర్నోవర్ ఆధారిత నిర్వచనం. 2026-27 బడ్జెట్: క్రెడిట్ హామీ విస్తరణ, ముద్రా లోన్ పరిమితి పెంపు, మూలధన మద్దతు. GDPలో ~30%, ఎగుమతుల్లో ~45% MSME వాటా.</p>
+"""))
+
+# ═══════════════════════════════════════════════════════════════════
+#  26. PARIS OLYMPICS 2024 — INDIA'S CAMPAIGN
+# ═══════════════════════════════════════════════════════════════════
+NOTES.append(('natl_2026_paris_olympics',
+              'Paris Olympics 2024 — India Performance',
+              'పారిస్ ఒలింపిక్స్ 2024 — భారత ప్రదర్శన', """
+<div class="concept-cover">
+  <h1>Paris Olympics 2024 — India Performance &nbsp;<span class="bi-te">/ పారిస్ ఒలింపిక్స్ 2024</span></h1>
+  <div class="sub">July 26 - Aug 11, 2024 • 33rd Summer Olympics • India: 6 medals (1 Silver, 5 Bronze)</div>
+</div>
+
+<div class="section-hdr">Games Overview / క్రీడల సింహావలోకనం</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Edition</td><td><b>33rd Summer Olympics</b> (Games of the XXXIII Olympiad)</td><td class="bi-te">33వ వేసవి ఒలింపిక్స్</td></tr>
+<tr><td>Host city</td><td><b>Paris, France</b> (3rd time after 1900, 1924)</td><td class="bi-te">పారిస్, ఫ్రాన్స్</td></tr>
+<tr><td>Dates</td><td>July 26 — August 11, 2024</td><td class="bi-te">జూలై 26 — ఆగస్టు 11, 2024</td></tr>
+<tr><td>Nations</td><td>206 NOCs + Refugee Olympic Team</td><td class="bi-te">206 దేశాలు + శరణార్థి జట్టు</td></tr>
+<tr><td>Mascot</td><td>Phryges</td><td class="bi-te">ప్రిజెస్</td></tr>
+<tr><td>Medal table topper</td><td>USA (40G) tied with China (40G) — USA top by total</td><td class="bi-te">USA & చైనా 40 బంగారాలతో సమం, USA మొత్తం పతకాల్లో అగ్రస్థానం</td></tr>
+</table>
+
+<div class="section-hdr">India's Medal Haul — 6 Medals / భారత పతకాలు</div>
+<table class="key-table">
+<tr><th>Athlete</th><th>Sport / Event</th><th>Medal</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Neeraj Chopra</b></td><td>Athletics — Javelin Throw (89.45 m)</td><td>Silver</td><td class="bi-te">నీరజ్ చోప్రా — జావెలిన్ — రజతం</td></tr>
+<tr><td><b>Manu Bhaker</b></td><td>Shooting — 10m Air Pistol (Women)</td><td>Bronze</td><td class="bi-te">మనుభాకర్ — 10మీ ఎయిర్ పిస్టల్</td></tr>
+<tr><td><b>Manu Bhaker + Sarabjot Singh</b></td><td>Shooting — 10m Mixed Team Pistol</td><td>Bronze</td><td class="bi-te">మనుభాకర్ + సర్బ్‌జోత్ — మిక్స్‌డ్ టీం</td></tr>
+<tr><td><b>Swapnil Kusale</b></td><td>Shooting — 50m Rifle 3 Positions (Men)</td><td>Bronze</td><td class="bi-te">స్వప్నిల్ కుసాలే — 50మీ రైఫిల్</td></tr>
+<tr><td><b>Indian Men's Hockey Team</b></td><td>Hockey — Bronze playoff vs Spain</td><td>Bronze</td><td class="bi-te">పురుషుల హాకీ జట్టు — కాంస్యం</td></tr>
+<tr><td><b>Aman Sehrawat</b></td><td>Wrestling — Men's Freestyle 57 kg</td><td>Bronze</td><td class="bi-te">అమన్ సెహ్రావత్ — రెజ్లింగ్</td></tr>
+</table>
+<p>India finished <b>71st</b> on the medal table with <b>1 Silver + 5 Bronze = 6 total</b> (vs 7 medals at Tokyo 2020). <b>Manu Bhaker</b> became the <b>first independent-India athlete to win 2 medals at a single Olympics</b>. <b>Aman Sehrawat</b> became India's <b>youngest individual Olympic medallist</b> (21 years 24 days). Indian Men's Hockey won back-to-back Olympic bronzes (Tokyo 2020 + Paris 2024) — first time since 1968-72.</p>
+<p class="bi-te">భారత్ పతక పట్టికలో 71వ స్థానం; మొత్తం 6 (1 రజతం + 5 కాంస్యాలు). మనుభాకర్ ఒకే ఒలింపిక్స్‌లో 2 పతకాలు గెలిచిన తొలి స్వతంత్ర-భారత క్రీడాకారిణి. అమన్ సెహ్రావత్ (21 సం. 24 రోజులు) భారత అతి చిన్న వ్యక్తిగత ఒలింపిక్ పతక విజేత. పురుషుల హాకీ జట్టు వరుసగా రెండు ఒలింపిక్స్‌లో కాంస్యం — 1968-72 తర్వాత తొలిసారి.</p>
+
+<div class="section-hdr">Why It Matters / ఎందుకు ముఖ్యం</div>
+<p>Paris 2024 marked a slight regression from Tokyo 2020 (7 medals, 1G). India missed gold for the first time since Tokyo and lost <b>6 fourth-place finishes</b> — narrow misses in shooting, archery, badminton. Sparked debate on the <b>Khelo India</b> and <b>TOPS</b> programmes. India is bidding to host <b>2036 Olympics</b> (Ahmedabad). The next Olympics will be <b>Los Angeles 2028</b>.</p>
+<p class="bi-te">పారిస్ 2024 టోక్యో 2020 (7 పతకాలు, 1 బంగారం)తో పోలిస్తే కొంత తగ్గుదల. ఒకే బంగారం కూడా రాలేదు; 6 సార్లు 4వ స్థానం. Khelo India, TOPS పథకాలపై చర్చ. భారత్ 2036 ఒలింపిక్స్‌ను అహ్మదాబాద్‌లో నిర్వహించాలని బిడ్; తదుపరి ఒలింపిక్స్ లాస్ ఏంజెల్స్ 2028.</p>
 """))
 
 print(f"Loaded {len(NOTES)} National 2026 concept notes")

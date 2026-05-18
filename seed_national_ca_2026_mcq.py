@@ -685,13 +685,13 @@ def seed():
 
         # ── India Sports ──
         (31062,
-         "2025 ICC World Test Championship Final ఎవరు గెలిచారు?\n(Who won the 2025 ICC World Test Championship Final?)",
+         "2025 ICC World Test Championship (WTC) Final ఎవరు గెలిచారు?\n(Who won the 2025 ICC WTC Final?)",
          "A) ఇంగ్లాండ్ / England",
          "B) ఆస్ట్రేలియా / Australia",
          "C) భారత్ / India",
          "D) దక్షిణ ఆఫ్రికా / South Africa",
-         "C",
-         "భారత్ 2025 ICC WTC (World Test Championship) Final లార్డ్స్‌లో గెలిచింది — ఐస్‌ళ 2-సం. టెస్ట్ చక్రం ఛాంపియన్. India won the 2025 ICC WTC (World Test Championship) Final at Lord's — champions of the 2-year Test cycle.",
+         "D",
+         "**దక్షిణ ఆఫ్రికా (South Africa) 2025 ICC WTC Final** ను Lord's, London లో జూన్ 2025న గెలిచింది — ఆస్ట్రేలియాపై విజయం. South Africa's తొలి ICC సీనియర్ ట్రోఫీ. **WTC** = World Test Championship, ICC 2-year Test cycle. భారత్ ఈ సీజన్‌లో Final కు అర్హత పొందలేదు.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India AI / Technology ──
@@ -790,7 +790,7 @@ def seed():
          "C) మే 2025 / May 2025",
          "D) మే 2026 / May 2026",
          "C",
-         "ఆపరేషన్ సింధూర్ మే 2025లో పహల్గామ్ ఉగ్రవాద దాడి తర్వాత నిర్వహించారు. Operation Sindoor was conducted in May 2025 following the Pahalgam terror attack.",
+         "ఆపరేషన్ సింధూర్ మే 2025లో ఏప్రిల్ 2025 పహల్గామ్ ఉగ్రవాద దాడి (26 మరణాలు) తర్వాత PoK/పాకిస్తాన్ ఉగ్ర స్థావరాలపై దాడిగా నిర్వహించారు. Operation Sindoor was India's May 2025 strike on terror bases in PoK/Pakistan following the April 2025 Pahalgam terror attack (26 killed).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Digital ──
@@ -834,7 +834,7 @@ def seed():
          "C) భారత్ - జపాన్ / India - Japan",
          "D) భారత్ - ఫ్రాన్స్ / India - France",
          "B",
-         "NISAR (NASA-ISRO Synthetic Aperture Radar) ఉపగ్రహం ISRO మరియు NASA సంయుక్త ప్రాజెక్ట్. NISAR is a joint project of ISRO (India) and NASA (USA).",
+         "NISAR (NASA-ISRO Synthetic Aperture Radar) — ISRO (భారత్) మరియు NASA (USA) సంయుక్త Earth-observation ఉపగ్రహం; జూలై 2025లో శ్రీహరికోట SDSC నుండి GSLV-F16 ద్వారా ప్రయోగించారు. NISAR is a joint ISRO-NASA Earth-observation satellite launched July 2025 from Sriharikota aboard GSLV-F16.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Environment ──
@@ -845,7 +845,7 @@ def seed():
          "C) 91",
          "D) 101",
          "C",
-         "Transparency International యొక్క 2025 CPI నివేదికలో భారత్ 91వ స్థానంలో ఉంది. India ranked 91st in Transparency International's CPI 2025 report.",
+         "Transparency International యొక్క 2025 CPI (Corruption Perceptions Index) నివేదికలో భారత్ 180 దేశాలలో 91వ స్థానంలో. India ranked 91st of 180 countries in Transparency International's CPI (Corruption Perceptions Index) 2025.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Gender ──
@@ -856,7 +856,7 @@ def seed():
          "C) 131",
          "D) 150",
          "C",
-         "WEF యొక్క 2025 Global Gender Gap Report లో భారత్ 131వ స్థానంలో ఉంది. India ranked 131st in WEF's Global Gender Gap Report 2025.",
+         "WEF (World Economic Forum) యొక్క 2025 Global Gender Gap Report లో భారత్ 148 దేశాల్లో 131వ స్థానంలో. India ranked 131st of 148 countries in WEF's Global Gender Gap Report 2025.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Happiness ──
@@ -878,7 +878,7 @@ def seed():
          "C) విశాఖపట్నం / Visakhapatnam",
          "D) ముంబై / Mumbai",
          "C",
-         "IONS 2026 విశాఖపట్నంలో MILAN 2026తో పాటు జరిగింది. IONS 2026 was held at Visakhapatnam along with MILAN 2026.",
+         "IONS (Indian Ocean Naval Symposium) 2026 విశాఖపట్నంలో MILAN 2026 & IFR తో కలిపి జరిగింది; భారత నౌకాదళం హోస్ట్ చేసిన బహుపాక్షిక నావికా వేదిక. IONS (Indian Ocean Naval Symposium) 2026 was held in Visakhapatnam alongside MILAN 2026 and IFR — a multilateral naval forum hosted by the Indian Navy.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India GII ──
@@ -889,7 +889,7 @@ def seed():
          "C) 38",
          "D) 50",
          "C",
-         "2025 GII నివేదికలో భారత్ 38వ స్థానంలో ఉంది. India ranked 38th in the Global Innovation Index (GII) 2025.",
+         "2025 GII (Global Innovation Index, WIPO) నివేదికలో భారత్ 38వ స్థానంలో; 2015లో 81వ నుండి స్థిరంగా మెరుగుపడింది. India ranked 38th in WIPO's Global Innovation Index (GII) 2025, a steady rise from 81st in 2015.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Budget 2026-27 Additional ──
@@ -971,7 +971,7 @@ def seed():
          "C) జనవరి 15, 2025",
          "D) ఫిబ్రవరి 2025",
          "B",
-         "ISRO యొక్క SpaDeX మిషన్ డిసెంబర్ 30, 2024న PSLV-C60 ద్వారా ప్రయోగించారు. ISRO's SpaDeX mission was launched on December 30, 2024 via PSLV-C60.",
+         "ISRO యొక్క SpaDeX (Space Docking Experiment) మిషన్ డిసెంబర్ 30, 2024న శ్రీహరికోట నుండి PSLV-C60 ద్వారా ప్రయోగించారు. ISRO's SpaDeX (Space Docking Experiment) was launched on December 30, 2024 aboard PSLV-C60 from Sriharikota.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31089,
@@ -1021,7 +1021,7 @@ def seed():
          "C) L4",
          "D) L5",
          "A",
-         "Aditya-L1 సూర్యుడిని అధ్యయనం చేసే భారత మొదటి అంతరిక్ష మిషన్, సూర్య-భూమి L1 లగ్రాంజ్ పాయింట్‌లో ఉంది. Aditya-L1 is India's first space mission to study the Sun, positioned at the Sun-Earth L1 Lagrange point.",
+         "ఆదిత్య-L1 — సూర్యుడిని అధ్యయనం చేసే భారత మొదటి అంతరిక్ష మిషన్; భూమి నుండి ~15 లక్షల కి.మీ. దూరంలోని సూర్య-భూమి L1 లగ్రాంజ్ పాయింట్‌లోని హాలో కక్ష్యలో ఉంది (సెప్టెంబర్ 2023 ప్రయోగం). Aditya-L1 is India's first solar observatory mission, in a halo orbit around the Sun-Earth L1 Lagrange point ~1.5 million km from Earth (launched September 2023).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Paris Olympics 2024 ──
@@ -1032,7 +1032,7 @@ def seed():
          "C) 6",
          "D) 7",
          "C",
-         "పారిస్ ఒలింపిక్స్ 2024లో భారత్ 6 పతకాలు (1 రజత, 5 కాంస్య) సాధించింది. India won 6 medals (1 Silver, 5 Bronze) at Paris Olympics 2024.",
+         "పారిస్ ఒలింపిక్స్ 2024లో భారత్ 6 పతకాలు (1 రజత, 5 కాంస్య) సాధించి పతక పట్టికలో 71వ స్థానంలో నిలిచింది. India won 6 medals (1 Silver + 5 Bronze) at Paris Olympics 2024, finishing 71st on the medal table.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31095,
@@ -1052,7 +1052,7 @@ def seed():
          "C) రాహి సర్నోబత్ / Rahi Sarnobat",
          "D) హీనా సిద్ధూ / Heena Sidhu",
          "B",
-         "మనుభాకర్ పారిస్ ఒలింపిక్స్ 2024లో షూటింగ్‌లో రెండు కాంస్య పతకాలు సాధించి చరిత్ర సృష్టించారు. Manu Bhaker won two Bronze medals in shooting at Paris Olympics 2024, a historic achievement.",
+         "మనుభాకర్ పారిస్ ఒలింపిక్స్ 2024లో 10m ఎయిర్ పిస్టల్ & 10m మిక్స్‌డ్ టీం పిస్టల్‌లో రెండు కాంస్యాలు సాధించి, ఒకే ఒలింపిక్స్‌లో 2 పతకాలు గెలిచిన తొలి స్వతంత్ర-భారత క్రీడాకారిణిగా చరిత్ర సృష్టించారు. Manu Bhaker won two Bronze medals (10m Air Pistol & 10m Mixed Team Pistol) at Paris 2024 — the first independent-India athlete to win 2 medals at a single Olympics.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31097,
@@ -1073,7 +1073,7 @@ def seed():
          "C) NDPS, POCSO, IPC",
          "D) BNS, CrPC, BSA",
          "B",
-         "జూలై 1, 2024 నుండి భారతీయ న్యాయ సంహిత (BNS), భారతీయ నాగరిక్ సురక్ష సంహిత (BNSS), భారతీయ సాక్ష్య అధినియమ్ (BSA) అమలులోకి వచ్చాయి. Bharatiya Nyaya Sanhita (BNS), Bharatiya Nagarik Suraksha Sanhita (BNSS), and Bharatiya Sakshya Adhiniyam (BSA) came into effect from July 1, 2024.",
+         "జూలై 1, 2024 నుండి BNS (IPC స్థానంలో), BNSS (CrPC స్థానంలో), BSA (IEA స్థానంలో) — మూడు కొత్త నేర న్యాయ చట్టాలు అమలులోకి వచ్చాయి. From July 1, 2024, three new criminal codes took effect: BNS (replacing IPC), BNSS (replacing CrPC), and BSA (replacing Indian Evidence Act).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31099,
@@ -1135,7 +1135,7 @@ def seed():
          "C) 5",
          "D) 7",
          "C",
-         "2024లో 5 మందికి భారత్ రత్న పురస్కారం ఇచ్చారు: LK అద్వానీ, కర్పూరి ఠాకూర్, PV నరసింహారావు, MS స్వామినాథన్, చౌధరి చరణ్ సింగ్. In 2024, 5 persons were awarded Bharat Ratna: LK Advani, Karpoori Thakur, PV Narasimha Rao, MS Swaminathan, Chaudhary Charan Singh.",
+         "2024లో 5 మందికి భారత్ రత్న (అత్యున్నత పౌర పురస్కారం) ఇచ్చారు: LK అద్వానీ, కర్పూరి ఠాకూర్, PV నరసింహారావు, MS స్వామినాథన్, చౌధరి చరణ్ సింగ్ — ఒకే సం. అత్యధికం. In 2024, 5 persons received Bharat Ratna (India's highest civilian award) — LK Advani, Karpoori Thakur, PV Narasimha Rao, MS Swaminathan, Chaudhary Charan Singh — the most in a single year.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31105,
@@ -1156,7 +1156,7 @@ def seed():
          "C) పాకిస్తాన్",
          "D) భారత్ / India",
          "D",
-         "భారత్ 2024 T20 ప్రపంచ కప్ గెలుచుకుంది, ఫైనల్‌లో దక్షిణ ఆఫ్రికాను ఓడించారు. India won the 2024 T20 World Cup, defeating South Africa in the final.",
+         "భారత్ 2024 ICC పురుషుల T20 ప్రపంచ కప్ గెలిచింది, బార్బడోస్ ఫైనల్‌లో దక్షిణ ఆఫ్రికాను 7 పరుగుల తేడాతో ఓడించి 2013 తర్వాత ICC ట్రోఫీ నిష్కామ నిరీక్షణకు ముగింపు పలికింది. India won the 2024 ICC Men's T20 World Cup, beating South Africa by 7 runs in the Barbados final — ending an ICC trophy drought since 2013.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31107,
@@ -1207,7 +1207,7 @@ def seed():
          "C) 6",
          "D) 8",
          "B",
-         "2024 BRICS శిఖర సమ్మేళనంలో 4 కొత్త దేశాలు (UAE, ఇథియోపియా, ఇరాన్, ఈజిప్ట్) చేరాయి. 4 new countries (UAE, Ethiopia, Iran, Egypt) joined BRICS in 2024.",
+         "జనవరి 2024లో BRICS (Brazil, Russia, India, China, South Africa) లోకి 4 కొత్త దేశాలు (UAE, ఇథియోపియా, ఇరాన్, ఈజిప్ట్) చేరాయి; సౌదీ ఆహ్వానం స్వీకరించలేదు. In January 2024, 4 new countries (UAE, Ethiopia, Iran, Egypt) joined BRICS; Saudi Arabia held back from accepting the invitation.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31112,
@@ -1290,7 +1290,7 @@ def seed():
          "C) $704 billion",
          "D) $800 billion",
          "C",
-         "2024-25లో భారత విదేశీ మారక నిల్వలు $704 billion కి చేరి రికార్డు స్థాయికి చేరాయి. India's forex reserves reached a record high of $704 billion in 2024-25.",
+         "2024-25లో భారత విదేశీ మారక నిల్వలు (forex reserves) RBI వద్ద $704 billion రికార్డు స్థాయికి చేరాయి — ప్రపంచంలో 4వ అతిపెద్ద నిల్వలు (చైనా, జపాన్, స్విట్జర్లాండ్ తర్వాత). India's forex reserves at RBI hit a record $704 billion in 2024-25 — the 4th-largest in the world after China, Japan, and Switzerland.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31120,
