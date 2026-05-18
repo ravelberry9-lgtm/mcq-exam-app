@@ -140,6 +140,14 @@
                         style="border-color:{{ tile_accent }};color:{{ tile_accent }}">
                   📝 Exam
                 </button>
+                {# 📖 Notes button — for AP CA 2026, link to the rich bilingual concept notes
+                   (shared with Quiz section's chapter_mcqs after Option B unification). #}
+                {% if topic == 'AP_Current_Affairs_2026' %}
+                <a class="aphc-btn aphc-notes" href="/notes/GK/AP_Current_Affairs"
+                   style="border-color:{{ tile_accent }};color:{{ tile_accent }}">
+                  📖 Notes
+                </a>
+                {% endif %}
               </div>
             </div>
             {% endfor %}
@@ -464,7 +472,11 @@
 }
 .aphc-btn:active { transform: scale(0.95); opacity: 0.85; }
 .aphc-practice { color: #fff; }
-.aphc-exam     { background: rgba(255,255,255,0.9) !important; }
+.aphc-exam     { background: rgba(255,255,255,0.9) !important; border-width:1px; border-style:solid; }
+.aphc-notes    { background: rgba(255,255,255,0.9) !important; border-width:1px; border-style:solid; }
+/* When the Notes button is present, the tile has 3 buttons — make them wrap nicely on narrow screens */
+.aphc-tile .aphc-btns { flex-wrap: wrap; }
+.aphc-tile .aphc-btns .aphc-btn { min-width: 78px; }
 
 /* ── Folder accordion ── */
 .folder-block { border-bottom: 1px solid var(--border); }
