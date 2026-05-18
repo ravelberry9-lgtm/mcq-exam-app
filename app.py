@@ -1616,12 +1616,33 @@ def get_folder_tree():
         FROM questions GROUP BY folder, topic ORDER BY folder, topic
     ''')
     rows = [row_to_dict(r) for r in cur.fetchall()]
-    conn.close()
     for row in rows:
         folder = row['folder']
         if folder not in tree:
             tree[folder] = {}
         tree[folder][row['topic']] = row['count']
+
+    # ── Virtual entry: AP_HC > AP_Current_Affairs_2026 sourced from chapter_mcqs.
+    #    The legacy rows in `questions` table were archived+deleted as part of
+    #    Option B unification (2026-05). The practice route override at
+    #    /api/practice-questions/AP_HC/AP_Current_Affairs_2026 reads from
+    #    chapter_mcqs (topic='AP_Current_Affairs') instead. To keep the AP HC
+    #    home-page tile visible, surface a synthetic count here.
+    try:
+        cur2 = db_exec(conn, '''
+            SELECT COUNT(*) AS c FROM chapter_mcqs cm
+            JOIN study_notes sn ON cm.study_note_id = sn.id
+            WHERE sn.topic = 'AP_Current_Affairs'
+        ''')
+        ca_count = _fv(cur2.fetchone())
+        if ca_count > 0:
+            if 'AP_HC' not in tree:
+                tree['AP_HC'] = {}
+            tree['AP_HC']['AP_Current_Affairs_2026'] = ca_count
+    except Exception:
+        pass
+
+    conn.close()
     return tree
 
 
@@ -1629,8 +1650,21 @@ def get_folder_totals():
     conn = get_db()
     cur = db_exec(conn, 'SELECT folder, COUNT(*) as count FROM questions GROUP BY folder')
     rows = [row_to_dict(r) for r in cur.fetchall()]
+    # Add the virtual AP_HC AP_Current_Affairs_2026 count from chapter_mcqs into AP_HC total
+    try:
+        cur2 = db_exec(conn, '''
+            SELECT COUNT(*) AS c FROM chapter_mcqs cm
+            JOIN study_notes sn ON cm.study_note_id = sn.id
+            WHERE sn.topic = 'AP_Current_Affairs'
+        ''')
+        ca_count = _fv(cur2.fetchone())
+    except Exception:
+        ca_count = 0
     conn.close()
-    return {r['folder']: r['count'] for r in rows}
+    totals = {r['folder']: r['count'] for r in rows}
+    if ca_count > 0:
+        totals['AP_HC'] = totals.get('AP_HC', 0) + ca_count
+    return totals
 
 
 def get_chapter_mcq_tree():
