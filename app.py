@@ -6415,6 +6415,19 @@ def _load_concept_cache():
                     cn_ap_q1to10 = importlib.import_module('seed_concept_notes_ap_q1to10')
                     cn_ap_q1to10.seed()
                     print('[concept_cache] seed_concept_notes_ap_q1to10 seeded successfully.')
+                    # Div-level concept notes seeders
+                    for _cn_mod_name in [
+                        'seed_concept_notes_div1div2',
+                        'seed_concept_notes_div3div4',
+                        'seed_concept_notes_div5div6div7',
+                        'seed_concept_notes_div8div9div10',
+                    ]:
+                        try:
+                            _cn_mod = importlib.import_module(_cn_mod_name)
+                            _cn_mod.seed()
+                            print(f'[concept_cache] {_cn_mod_name} seeded successfully.')
+                        except Exception as _e:
+                            print(f'[concept_cache] WARNING: {_cn_mod_name} failed: {_e}')
                 # Reload into cache after seeding
                 conn2 = get_db()
                 if USE_POSTGRES:
