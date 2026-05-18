@@ -3,15 +3,14 @@ seed_ap_ca_div8.py
 AP Current Affairs — Chapter 8: AP పర్యావరణం, ISRO & క్రీడలు
 
 AUDIT LOG (2026-05-18):
-- No junk MCQs found (no empty options, single-letter options, or nonsense options).
-- No Telangana-specific questions found.
-- FIXED: Q "AP లో జన్మించిన ఒలింపిక్ బంగారు పతక విజేత ఎవరు (2024 ప్యారిస్)?"
-  The question claimed a gold medal winner but explanation said Satwik went to mixed doubles
-  without specifying a gold medal. Question reworded to remove incorrect "బంగారు పతక" claim
-  and corrected to ask about AP's Paris 2024 Olympic representative.
-- Additional MCQs in this file (from line 304 onwards) are near-duplicates of
-  seed_ap_ca_div8_mcqs.py — that file is a standalone tuple export; this file is canonical.
-- No abrupt/meaningless question text found.
+- FIXED: రోళ్లపాడు జిల్లా — "పల్నాడు జిల్లా" was wrong. Corrected to "నందయాల జిల్లా"
+  per HTML source: "రోళ్లపాడు వన్యప్రాణి అభయారణ్యం — నందయాల జిల్లా (పూర్వం కర్నూలు)"
+- FIXED: SDSC SHAR location — "నెల్లూరు జిల్లా" was wrong. Corrected to "తిరుపతి జిల్లా"
+  per HTML source: "శ్రీహరికోట — తిరుపతి జిల్లా, AP (పులికాట్ సరస్సు పక్కన)"
+- FIXED: Satwik Rankireddy question/explanation — no gold medal claim; correct as AP
+  badminton player at 2024 Paris Olympics (men's doubles with Chirag Shetty)
+- No Telangana-specific questions found/included.
+- seed_ap_ca_div8_mcqs.py is a standalone tuple export; this file is canonical.
 """
 
 import os
@@ -31,12 +30,12 @@ SECTIONS_JSON = json.dumps([
     {
         "id": "div8_s3",
         "title": "వన్యప్రాణి అభయారణ్యాలు",
-        "summary": "కొరింగ మడ అడవులు, కౌండిణ్య ఏనుగుల అభయారణ్యం, రోళ్లపాడు GIB అభయారణ్యం, పులికాట్ సరస్సు"
+        "summary": "కొరింగ మడ అడవులు, కౌండిణ్య ఏనుగుల అభయారణ్యం, రోళ్లపాడు GIB అభయారణ్యం (నందయాల జిల్లా), పులికాట్ సరస్సు"
     },
     {
         "id": "div8_s4",
         "title": "ISRO — SDSC SHAR",
-        "summary": "శ్రీహరికోట స్పేస్ సెంటర్; 100వ ప్రయోగం NVS-02 (జన. 29, 2025); SpaDeX స్పేస్ డాకింగ్ (డిసె. 2024)"
+        "summary": "శ్రీహరికోట స్పేస్ సెంటర్ (తిరుపతి జిల్లా); 100వ ప్రయోగం NVS-02 (జన. 29, 2025); SpaDeX స్పేస్ డాకింగ్ (డిసె. 2024)"
     },
     {
         "id": "div8_s5",
@@ -150,7 +149,7 @@ MCQ_DATA = [
         "opt_c": "Great Indian Bustard (జటాయువు)",
         "opt_d": "పెలికాన్",
         "answer": "C",
-        "explanation_te": "రోళ్లపాడు (పల్నాడు జిల్లా) Great Indian Bustard (GIB) కోసం ప్రసిద్ధి. GIB అత్యంత అంతరించిపోయే పక్షి; AP రాష్ట్ర జంతువు Blackbuck కూడా ఇక్కడ ఉంటుంది."
+        "explanation_te": "రోళ్లపాడు (నందయాల జిల్లా — పూర్వం కర్నూలు జిల్లా) Great Indian Bustard (GIB) కోసం ప్రసిద్ధి. GIB అత్యంత అంతరించిపోయే పక్షి; AP రాష్ట్ర జంతువు Blackbuck కూడా ఇక్కడ ఉంటుంది."
     },
     {
         "section_idx": 2,
@@ -309,7 +308,7 @@ MCQ_DATA = [
         "opt_c": "కృష్ణజింక (Blackbuck)",
         "opt_d": "సింహం",
         "answer": "C",
-        "explanation_te": "AP రాష్ట్ర జంతువు కృష్ణజింక (Blackbuck / Indian Antelope). రోళ్లపాడు వన్యప్రాణి అభయారణ్యంలో ప్రసిద్ధి. రాష్ట్ర పక్షి: Indian Rose-ringed Parakeet."
+        "explanation_te": "AP రాష్ట్ర జంతువు కృష్ణజింక (Blackbuck / Indian Antelope). రోళ్లపాడు వన్యప్రాణి అభయారణ్యంలో (నందయాల జిల్లా) ప్రసిద్ధి. రాష్ట్ర పక్షి: Indian Rose-ringed Parakeet."
     },
 
     # --- additional MCQs ---
@@ -377,18 +376,18 @@ MCQ_DATA = [
         'opt_c': 'హ్రాదరేసర్వాయర్',
         'opt_d': 'ISRO ప్రయోగ కేంద్రం',
         'answer': 'B',
-        'explanation_te': 'పులికాట్ సరస్సు భారతదేశంలో 2వ అతి పెద్ద ఉప్పు సరస్సు. ఇది నెల్లూరు జిల్లాలో ఉంది మరియు శీతాకాలంలో ఫ్లమింగో వలసలకు ప్రసిద్ధి.',
+        'explanation_te': 'పులికాట్ సరస్సు భారతదేశంలో 2వ అతి పెద్ద ఉప్పు సరస్సు. ఇది తిరుపతి జిల్లాలో ఉంది మరియు శీతాకాలంలో ఫ్లమింగో వలసలకు ప్రసిద్ధి.',
     },
     {
         'section_idx': 1,
         'difficulty': 'medium',
-        'question_te': 'కోరింగ వన్యప్రాణి అభయారణ్యం ఏ జిల్లాలో ఉంది?',
+        'question_te': 'కొరింగ వన్యప్రాణి అభయారణ్యం ఏ జిల్లాలో ఉంది?',
         'opt_a': 'విశాఖపట్నం',
         'opt_b': 'కాకినాడ (తూర్పు గోదావరి)',
         'opt_c': 'కృష్ణా',
         'opt_d': 'నెల్లూరు',
         'answer': 'B',
-        'explanation_te': 'కోరింగ వన్యప్రాణి అభయారణ్యం కాకినాడ జిల్లాలో మడ అడవులకు ప్రసిద్ధి. ఇది ఒలీవ్ రిడ్లీ తాబేళ్ళ గూళ్ళకు ముఖ్యమైన స్థలం.',
+        'explanation_te': 'కొరింగ వన్యప్రాణి అభయారణ్యం కాకినాడ జిల్లాలో మడ అడవులకు ప్రసిద్ధి. ఇది ఆలివ్ రిడ్లీ తాబేళ్ళ గూళ్ళకు ముఖ్యమైన స్థలం.',
     },
     {
         'section_idx': 2,
@@ -396,10 +395,10 @@ MCQ_DATA = [
         'question_te': 'ISRO SDSC SHAR కేంద్రం ఎక్కడ ఉంది?',
         'opt_a': 'బెంగళూరు',
         'opt_b': 'హైదరాబాద్',
-        'opt_c': 'శ్రీహరికోట (నెల్లూరు జిల్లా)',
-        'opt_d': 'తిరుపతి',
+        'opt_c': 'శ్రీహరికోట (తిరుపతి జిల్లా)',
+        'opt_d': 'నెల్లూరు పట్టణం',
         'answer': 'C',
-        'explanation_te': 'ISRO సతీష్ ధవన్ స్పేస్ సెంటర్ (SDSC SHAR) నెల్లూరు జిల్లా శ్రీహరికోటలో ఉంది. ఇది భారతదేశంలో ప్రయోగ వాహనాల ప్రయోగ కేంద్రం.',
+        'explanation_te': 'ISRO సతీష్ ధవన్ స్పేస్ సెంటర్ (SDSC SHAR) తిరుపతి జిల్లాలోని శ్రీహరికోటలో ఉంది (పులికాట్ సరస్సు పక్కన). ఇది భారతదేశంలో ప్రయోగ వాహనాల ప్రయోగ కేంద్రం.',
     },
     {
         'section_idx': 2,
@@ -465,7 +464,7 @@ MCQ_DATA = [
         'opt_c': 'క్రికెట్',
         'opt_d': 'షూటింగ్',
         'answer': 'B',
-        'explanation_te': 'PV సింధు (పుసర్ల వెంకట సింధు) బ్యాడ్మింటన్ క్రీడలో ప్రపంచ ప్రసిద్ధి. ఆమె 2016 (రజత), 2020 (కాంస్య) ఒలింపిక్ పతకాలు మరియు 2019 BWF వరల్డ్ చాంపియన్\u200cషిప్ గెలిచింది.',
+        'explanation_te': 'PV సింధు (పుసర్ల వెంకట సింధు) బ్యాడ్మింటన్ క్రీడలో ప్రపంచ ప్రసిద్ధి. ఆమె రియో 2016 (రజత), టోక్యో 2020 (కాంస్య) ఒలింపిక్ పతకాలు మరియు 2019 BWF వరల్డ్ చాంపియన్‌షిప్ గెలిచింది.',
     },
     {
         'section_idx': 3,
@@ -476,29 +475,18 @@ MCQ_DATA = [
         'opt_c': 'రజత (2016), కాంస్య (2020)',
         'opt_d': 'రజత (2016), బంగారం (2020)',
         'answer': 'C',
-        'explanation_te': 'PV సింధు రియో 2016 ఒలింపిక్\u200cలో రజత పతకం, టోక్యో 2020 ఒలింపిక్\u200cలో కాంస్య పతకం గెలిచింది. ఆమె AP, హైదరాబాద్ కి చెందిన ఆటగాళ్ళు.',
+        'explanation_te': 'PV సింధు రియో 2016 ఒలింపిక్‌లో రజత పతకం, టోక్యో 2020 ఒలింపిక్‌లో కాంస్య పతకం గెలిచింది. ఆమె హైదరాబాద్ కి చెందిన తెలుగు క్రీడాకారిణి.',
     },
     {
         'section_idx': 3,
         'difficulty': 'medium',
-        'question_te': 'AP లో Padma Shri 2020 బ్యాడ్మింటన్ కి ఎవరు పొందారు?',
-        'opt_a': 'PV సింధు',
-        'opt_b': 'సాయినా నేహ్వాల్',
-        'opt_c': 'PV సింధు కోచ్ పుల్లెల గోపీచంద్',
-        'opt_d': 'కరణ్ మెహ్తా',
-        'answer': 'C',
-        'explanation_te': 'పుల్లెల గోపీచంద్ 2014లో Padma Bhushan పొందాడు. ఆయన బ్యాడ్మింటన్ కోచ్ మరియు నాగందల, ప్రకాశం జిల్లా సంబంధీకుడు. 2009లో Dronacharya Award పొందాడు.',
-    },
-    {
-        'section_idx': 3,
-        'difficulty': 'medium',
-        'question_te': 'AP లో జన్మించిన రెజ్లర్ సుశీల్ కుమార్ ఒలింపిక్ పతకాలు?',
-        'opt_a': 'AP కి సంబంధించినవి కావు',
-        'opt_b': 'రజత (2012 లండన్), కాంస్య (2008 బీజింగ్)',
-        'opt_c': 'రజత, బంగారం',
-        'opt_d': 'కాంస్య రెండు',
-        'answer': 'B',
-        'explanation_te': 'సుశీల్ కుమార్ రెజ్లింగ్\u200cలో 2008 బీజింగ్\u200cలో కాంస్యం, 2012 లండన్\u200cలో రజతం గెలిచాడు. ఆయన ఢిల్లీ కి చెందినవాడు, AP కి కాదు.',
+        'question_te': 'పుల్లేల గోపీచంద్ ఏ ముఖ్య పురస్కారాలు పొందారు?',
+        'opt_a': 'Padma Bhushan (2014), Dronacharya Award (2009)',
+        'opt_b': 'Padma Vibhushan (2017), Arjuna Award',
+        'opt_c': 'Padma Shri (2020), Rajiv Gandhi Khel Ratna',
+        'opt_d': 'Padma Bhushan (2020), Dronacharya Award (2014)',
+        'answer': 'A',
+        'explanation_te': 'పుల్లేల గోపీచంద్ — AP బ్యాడ్మింటన్ కోచ్; నాగందల, ప్రకాశం జిల్లా. Padma Bhushan (2014), Dronacharya Award (2009), 2001 All England Champion.',
     },
     {
         'section_idx': 3,
@@ -509,19 +497,7 @@ MCQ_DATA = [
         'opt_c': 'సాత్విక్ సాయిరాజ్ రాంకిరెడ్డి',
         'opt_d': 'లక్ష్య సేన్',
         'answer': 'C',
-        'explanation_te': 'సాత్విక్ సాయిరాజ్ రాంకిరెడ్డి AP (అమలాపురం, పశ్చిమ గోదావరి జిల్లా) కి చెందిన బ్యాడ్మింటన్ ఆటగాడు. 2024 ప్యారిస్ ఒలింపిక్స్‌లో మెన్స్ డబుల్స్ (చిరాగ్ శెట్టితో) పాల్గొన్నాడు. BWF World Ranking లో నంబర్ 1 జంట.',
-    },
-    {
-        'section_idx': 3,
-        'difficulty': 'hard',
-        'question_te': 'ISSF వరల్డ్ చాంపియన్‌షిప్‌లో 10m ఎయిర్ రైఫిల్‌లో AP ఆటగాడు 2023లో సాధించాడు?',
-        'opt_a_NEXT': 'ASCII_S2_\u200cM4\u200cషిప్\u200cలో 10m ఎయిర్ రైఫిల్\u200cలో AP ఆటగాడు 2023లో సాధించాడు?',
-        'opt_a': 'అర్జున్ బబుతా (హర్యానా)',
-        'opt_b': 'దివ్యాంశ్ సింగ్ పన్వార్',
-        'opt_c': 'సిఫత్ కౌర్ సమ్రా',
-        'opt_d': 'ఎల్లేన్ అషిటే',
-        'answer': 'A',
-        'explanation_te': 'అర్జున్ బబుతా హర్యానాకు చెందినవాడు. AP నుండి షూటింగ్\u200cలో అనేక ఆటగాళ్ళు ఉన్నారు. AP సంబంధిత ప్రశ్న.',
+        'explanation_te': 'సాత్విక్ సాయిరాజ్ రాంకిరెడ్డి AP (అమలాపురం, తూర్పు గోదావరి జిల్లా) కి చెందిన బ్యాడ్మింటన్ ఆటగాడు. 2024 ప్యారిస్ ఒలింపిక్స్‌లో మెన్స్ డబుల్స్‌లో (చిరాగ్ శెట్టితో) పాల్గొన్నాడు. BWF World Ranking లో నంబర్ 1 జంట.',
     },
     {
         'section_idx': 4,
@@ -537,13 +513,13 @@ MCQ_DATA = [
     {
         'section_idx': 4,
         'difficulty': 'medium',
-        'question_te': 'AP లో ఏ ప్రాజెక్టు జాతీయ ప్రాజెక్టుగా APRA 2014 లో గుర్తించబడింది?',
+        'question_te': 'AP లో ఏ ప్రాజెక్టు జాతీయ ప్రాజెక్టుగా APRA 2014 Section 94 లో గుర్తించబడింది?',
         'opt_a': 'నాగార్జునసాగర్',
         'opt_b': 'పోలవరం ప్రాజెక్టు',
         'opt_c': 'శ్రీశైలం',
         'opt_d': 'తెలుగుగంగ',
         'answer': 'B',
-        'explanation_te': 'పోలవరం ప్రాజెక్టు AP Reorganisation Act 2014 సెక్షన్ 94 ద్వారా జాతీయ ప్రాజెక్టుగా గుర్తించబడింది. ఇది పూర్తిగా కేంద్ర ప్రభుత్వ నిధులతో నిర్మించబడుతుంది.',
+        'explanation_te': 'పోలవరం ప్రాజెక్టు AP Reorganisation Act 2014 Section 94 ద్వారా జాతీయ ప్రాజెక్టుగా గుర్తించబడింది. ఇది పూర్తిగా కేంద్ర ప్రభుత్వ నిధులతో నిర్మించబడుతుంది.',
     },
     {
         'section_idx': 4,
@@ -557,52 +533,30 @@ MCQ_DATA = [
         'explanation_te': 'AP లో మొత్తం అడవుల విస్తీర్ణం సుమారు 23,000 చ.కి.మీ. రాష్ట్ర మొత్తం భూమిలో సుమారు 17% అడవులు ఉన్నాయి.',
     },
     {
-        'section_idx': 4,
-        'difficulty': 'medium',
-        'question_te': 'AP లో కాప్పు సెంచురీ (Kappus Centuary) అంటే ఏమిటి?',
-        'opt_a': 'ఆయుర్వేద మొక్కల వనం',
-        'opt_b': '100 ఏళ్ళ నాటి చెట్లకు హెరిటేజ్ హోదా',
-        'opt_c': 'కాప్పు జాతి రక్షణ ప్రాంతం',
-        'opt_d': 'వెదురు అడవి',
-        'answer': 'B',
-        'explanation_te': 'AP ప్రభుత్వం 100 సంవత్సరాల కంటే పాత చెట్లను Heritage Trees గా ప్రకటించి అడవి కాప్పు (సెంటీనల్ ట్రీ) హోదా ఇస్తుంది.',
-    },
-    {
         'section_idx': 5,
         'difficulty': 'medium',
         'question_te': 'నాగార్జునసాగర్-శ్రీశైలం పులుల అభయారణ్యం (మొత్తం) ఎంత విస్తీర్ణం కలిగి ఉంది?',
-        'opt_a': '~3,500 చ.కి.మీ',
+        'opt_a': '~3,728 చ.కి.మీ',
         'opt_b': '~2,000 చ.కి.మీ',
         'opt_c': '~5,000 చ.కి.మీ',
         'opt_d': '~8,000 చ.కి.మీ',
         'answer': 'A',
-        'explanation_te': 'NSTR మొత్తం ~3,500 చ.కి.మీ విస్తీర్ణం కలిగి AP-తెలంగాణ రాష్ట్రాల మీదుగా విస్తరించి ఉంది. ఇది భారతదేశంలో అతిపెద్ద పులుల అభయారణ్యాలలో ఒకటి.',
+        'explanation_te': 'NSTR మొత్తం ~3,728 చ.కి.మీ విస్తీర్ణం కలిగి AP-తెలంగాణ రాష్ట్రాల మీదుగా విస్తరించి ఉంది. ఇది భారతదేశంలో అతిపెద్ద పులుల అభయారణ్యం.',
     },
     {
         'section_idx': 5,
         'difficulty': 'easy',
-        'question_te': 'AP లో ఏ వన్యప్రాణి అభయారణ్యం ఒలీవ్ రిడ్లీ తాబేళ్ళకు ప్రసిద్ధి?',
+        'question_te': 'AP లో ఏ వన్యప్రాణి అభయారణ్యం ఆలివ్ రిడ్లీ తాబేళ్ళకు ప్రసిద్ధి?',
         'opt_a': 'నాగార్జునసాగర్',
         'opt_b': 'పాపికొండలు',
-        'opt_c': 'కోరింగ',
-        'opt_d': 'నెలపట్టు',
+        'opt_c': 'కొరింగ',
+        'opt_d': 'నేలపట్టు',
         'answer': 'C',
-        'explanation_te': 'కోరింగ వన్యప్రాణి అభయారణ్యం కాకినాడ జిల్లాలో ఒలీవ్ రిడ్లీ తాబేళ్ళ గూళ్ళకు ముఖ్యమైన స్థలం. మడ అడవులకు కూడా ప్రసిద్ధి.',
+        'explanation_te': 'కొరింగ వన్యప్రాణి అభయారణ్యం కాకినాడ జిల్లాలో ఆలివ్ రిడ్లీ తాబేళ్ళ గూళ్ళకు ముఖ్యమైన స్థలం. మడ అడవులకు కూడా ప్రసిద్ధి.',
     },
     {
         'section_idx': 6,
         'difficulty': 'medium',
-        'question_te': 'AP లో క్లైమేట్ చేంజ్ కార్యాచరణ ప్రణాళికలో ఏ లక్ష్యం ఉంది?',
-        'opt_a': '2030 నాటికి 100% పునరుత్పాదక శక్తి',
-        'opt_b': '2030 నాటికి కార్బన్ న్యూట్రల్ అవ్వడం',
-        'opt_c': 'ఆర్\u200cటీఇ అమలు',
-        'opt_d': '1 కోటి ఉద్యోగాలు',
-        'answer': 'B',
-        'explanation_te': 'AP ప్రభుత్వం Swarnandhra విజన్ లో 2030 నాటికి పర్యావరణ కార్బన్ న్యూట్రల్ లక్ష్యాలను చేర్చింది. గ్రీన్ ఎనర్జీ 10 మార్గదర్శక సూత్రాలలో ఒకటి.',
-    },
-    {
-        'section_idx': 6,
-        'difficulty': 'easy',
         'question_te': 'AP లో Solar Energy సంస్థాపన సామర్థ్యం 2024 నాటికి ఎంత?',
         'opt_a': '2 GW',
         'opt_b': '5 GW',
@@ -614,13 +568,13 @@ MCQ_DATA = [
     {
         'section_idx': 4,
         'difficulty': 'hard',
-        'question_te': 'శేషాచలం కొండలలో ఏ ఖనిజం ముఖ్యంగా దొరుకుతుంది?',
+        'question_te': 'శేషాచలం కొండలలో ఏ అరుదైన వృక్ష జాతి ముఖ్యంగా కనిపిస్తుంది?',
         'opt_a': 'బొగ్గు',
         'opt_b': 'ఎర్ర చందనం (Red Sanders)',
         'opt_c': 'ఇనుమురాయి',
         'opt_d': 'అల్యూమినా',
         'answer': 'B',
-        'explanation_te': 'శేషాచలం కొండలు (చిత్తూరు, కడప జిల్లాలు) ఎర్ర చందనానికి (Red Sanders) ప్రసిద్ధి. ఇది CITES రక్షిత జాతి మరియు అంతర్జాతీయంగా 1 కిలో $100,000 కంటే ఎక్కువ ధర పలుకుతుంది.',
+        'explanation_te': 'శేషాచలం కొండలు (చిత్తూరు, కడప జిల్లాలు) ఎర్ర చందనానికి (Red Sanders) ప్రసిద్ధి. ఇది CITES రక్షిత జాతి మరియు అంతర్జాతీయంగా అత్యంత విలువైన వృక్ష జాతి.',
     },
     {
         'section_idx': 2,
@@ -645,26 +599,15 @@ MCQ_DATA = [
         'explanation_te': 'చంద్రయాన్-3 ఆగస్టు 23, 2023న చంద్రుని దక్షిణ ధ్రువ ప్రాంతంలో సురక్షితంగా దిగింది. ఈ ఘనత సాధించిన 4వ దేశంగా భారతదేశం నిలిచింది.',
     },
     {
-        'section_idx': 3,
-        'difficulty': 'medium',
-        'question_te': 'AP లో తెలుగు ఆటగాళ్ళు ఆడిన ప్రపంచ కప్ (2023 క్రికెట్) లో మంచి ప్రదర్శన చేసిన ఆటగాడు?',
-        'opt_a': 'శుభమన్ గిల్',
-        'opt_b': 'KS భరత్ (AP రెడ్డి)',
-        'opt_c': 'విరాట్ కోహ్లి',
-        'opt_d': 'రోహిత్ శర్మ',
-        'answer': 'B',
-        'explanation_te': 'KS భరత్ AP కి చెందిన క్రికెటర్. ఆయన 2023 ODI వరల్డ్ కప్ స్క్వాడ్\u200cలో ఉన్నాడు మరియు AP రంజీ జట్టు వికెట్ కీపర్.',
-    },
-    {
         'section_idx': 1,
         'difficulty': 'medium',
-        'question_te': 'AP లో నెలపట్టు అభయారణ్యం ఎందుకు ప్రసిద్ధి?',
+        'question_te': 'AP లో నేలపట్టు అభయారణ్యం ఎందుకు ప్రసిద్ధి?',
         'opt_a': 'పులులు',
         'opt_b': 'ఫ్లమింగో మరియు తెల్ల పెలికాన్లు',
         'opt_c': 'ఏనుగులు',
         'opt_d': 'ఆదివాసీ జాతులు',
         'answer': 'B',
-        'explanation_te': 'నెలపట్టు అభయారణ్యం నెల్లూరు జిల్లాలో ఉంది. శీతాకాలంలో ఫ్లమింగో మరియు తెల్ల పెలికాన్లు వలస వస్తాయి, ఇది పక్షి పరిశీలకులకు ప్రసిద్ధ స్థానం.',
+        'explanation_te': 'నేలపట్టు అభయారణ్యం నెల్లూరు జిల్లాలో ఉంది. శీతాకాలంలో ఫ్లమింగో మరియు తెల్ల పెలికాన్లు వలస వస్తాయి, ఇది పక్షి పరిశీలకులకు ప్రసిద్ధ స్థానం.',
     },
     {
         'section_idx': 0,
@@ -740,7 +683,7 @@ def _seed_ap_ca_div8_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=
         return
     note_id = row_to_dict(row)['id']
     cur2 = db_exec(conn, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
-    count = list(row_to_dict_fn(cur2.fetchone()).values())[0]
+    count = list(row_to_dict(cur2.fetchone()).values())[0]
     if count > 0 and not force:
         return
     db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
