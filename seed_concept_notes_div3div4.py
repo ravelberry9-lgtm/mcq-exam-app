@@ -348,22 +348,26 @@ IBM Quantum System Two:
   Also: L&T, CDAC, CDOT, IITs, 50+ organisations
 • Significance: South Asia's most powerful quantum computer
 
-BQRF — Bharat Quantum Reference Facilities:
-• Amaravati 1S = Superconducting quantum computer (SRM University, Amaravati)
-  — built by Qubit Force startup (smaller testbed machine)
-• Amaravati 1Q = Photonic quantum computer (Medhatowers, Vijayawada)
-  — built by Qubit Force startup (smaller testbed machine)
-• These BQRF computers were inaugurated April 14, 2026 by CM Chandrababu
-• NOTE: Qubit Force built the smaller BQRF machines; IBM+TCS building the
-  main IBM Quantum System Two
+Main quantum computer:
+• IBM Quantum System Two with 156-qubit Heron processor — primary hardware
+• Main partners: IBM (hardware) + TCS (IT services)
+• Other partners: L&T, CDAC, CDOT, IITs, 50+ technology firms
+• Foundation Stone: Feb 7, 2026 — CM Chandrababu + Union Minister Jitendra Singh
+• Inauguration target: April 14, 2026 (World Quantum Day + Ambedkar Jayanti)
+
+Timeline:
+• Aug 2025: LTIMindtree + 50+ firms joined the initiative (planning phase)
+• Nov 2025: AP Quantum Computing Policy released
+• Feb 7, 2026: Foundation Stone laid
+• Apr 14, 2026: Inauguration target
 
 Common mistakes:
-WRONG: "Qubit Force is the main builder" → CORRECT: IBM + TCS (main system)
+WRONG: "Microsoft Quantum / Google Sycamore is the builder" → CORRECT: IBM + TCS
 WRONG: "August 2025 = inauguration" → CORRECT: Aug 2025 = planning; Inauguration = Apr 14, 2026
 WRONG: "Foundation Stone 2025" → CORRECT: Foundation Stone = Feb 7, 2026
 
 Time from idea to inauguration: ~8 months (August 2025 → April 2026 = record time)''',
-            'tags_json': '["Quantum Valley","Amaravati","IBM","TCS","156-qubit","Qubit Force","BQRF","Apr 2026"]',
+            'tags_json': '["Quantum Valley","Amaravati","IBM","TCS","156-qubit","BQRF","Apr 2026","Heron processor"]',
             'lang': 'en'
         },
 

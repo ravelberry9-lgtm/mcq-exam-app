@@ -49,7 +49,7 @@ SECTIONS_JSON = [
     {
         "title": "అమరావతి క్వాంటం వ్యాలీ — IBM + TCS (156-qubit Heron)",
         "sub": "Foundation Stone Feb 7, 2026 | IBM Quantum System Two | Inauguration target Apr 14, 2026",
-        "audio": "AP ప్రభుత్వం అమరావతిలో క్వాంటం వ్యాలీ ఏర్పాటు చేసింది. ఆగస్టు 2025లో LTIMindtree తో పాటు 50 పైగా సంస్థలు చేరాయి. నవంబర్ 2025లో AP Quantum Computing Policy విడుదలైంది. ఫిబ్రవరి 7, 2026న CM చంద్రబాబు నాయుడు + కేంద్ర మంత్రి జితేంద్ర సింగ్ ఫౌండేషన్ స్టోన్ వేశారు. IBM Quantum System Two — 156-qubit Heron processor — IBM మరియు TCS (Tata Consultancy Services) సహా L&T, CDAC, IITs పాల్గొంటున్నాయి. ఏప్రిల్ 14, 2026 (World Quantum Day + అంబేద్కర్ జయంతి) నాడు అంకితం లక్ష్యం. తప్పు: Qubit Force నిర్మించింది అని చెప్పడం; నిజం: IBM + TCS."
+        "audio": "AP ప్రభుత్వం అమరావతిలో క్వాంటం వ్యాలీ ఏర్పాటు చేసింది. ఆగస్టు 2025లో LTIMindtree తో పాటు 50 పైగా సంస్థలు చేరాయి. నవంబర్ 2025లో AP Quantum Computing Policy విడుదలైంది. ఫిబ్రవరి 7, 2026న CM చంద్రబాబు నాయుడు + కేంద్ర మంత్రి జితేంద్ర సింగ్ ఫౌండేషన్ స్టోన్ వేశారు. IBM Quantum System Two — 156-qubit Heron processor — IBM మరియు TCS (Tata Consultancy Services) సహా L&T, CDAC, IITs పాల్గొంటున్నాయి. ఏప్రిల్ 14, 2026 (World Quantum Day + అంబేద్కర్ జయంతి) నాడు అంకితం లక్ష్యం. తప్పు: Microsoft Quantum లేదా Google Sycamore నిర్మించింది అని చెప్పడం; నిజం: IBM + TCS."
     },
     {
         "title": "CII 30వ పార్టనర్‌షిప్ సమ్మిట్ — విశాఖపట్నం, నవంబర్ 14-15, 2025",
@@ -132,9 +132,9 @@ MCQ_DATA = [
 
     (0, 3,
      "అమరావతి క్వాంటం వ్యాలీ గురించి ఏది తప్పు?",
-     "Qubit Force ముఖ్య నిర్మాత", "IBM Quantum System Two వాడతారు", "156-qubit Heron processor", "TCS భాగస్వామి",
+     "Microsoft Quantum ముఖ్య భాగస్వామి", "IBM Quantum System Two వాడతారు", "156-qubit Heron processor", "TCS భాగస్వామి",
      "a",
-     "Qubit Force ఒక చిన్న hardware testbed మాత్రమే — ముఖ్య నిర్మాత కాదు. ముఖ్య భాగస్వాములు IBM + TCS. Foundation Stone: Feb 7, 2026 (ఆగస్టు 2025 కాదు)."),
+     "Amaravati Quantum Valley ముఖ్య భాగస్వాములు = IBM + TCS (Microsoft Quantum కాదు). Hardware = IBM Quantum System Two (156-qubit Heron processor). Foundation Stone: Feb 7, 2026; Inauguration target: Apr 14, 2026."),
 
     (1, 1,
      "30వ CII Partnership Summit 2025 ఎక్కడ జరిగింది?",
@@ -202,12 +202,6 @@ MCQ_DATA = [
      "a",
      "నవంబర్ 14-15, 2025న విశాఖపట్నంలో 30వ CII Partnership Summit జరిగింది. భారత ఉప రాష్ట్రపతి ఈ కార్యక్రమ ప్రారంభించారు."),
 
-    (2, 1,
-     "AP జిల్లాలు 28కి అధికారికంగా పెరిగిన తేదీ?",
-     "జనవరి 1, 2026", "డిసెంబర్ 31, 2025", "డిసెంబర్ 29, 2025", "జనవరి 15, 2026",
-     "a",
-     "జనవరి 1, 2026 నుండి AP జిల్లాలు 26 నుండి 28కి పెరిగాయి. రెండు కొత్త జిల్లాలు - పోలవరం మరియు మర్కాపురం ఏర్పాటు చేయబడ్డాయి."),
-
     (3, 1,
      "పొట్టి శ్రీరాముల విగ్రహం ఎక్కడ నిర్మిస్తారు?",
      "అమరావతి", "నెల్లూరు", "చిరాల", "విజయవాడ",
@@ -221,28 +215,28 @@ MCQ_DATA = [
      "ఫిబ్రవరి 18, 2026న విశాఖపట్నంలో అంతర్జాతీయ ఫ్లీట్ రివ్యూ జరిగింది. భారత రాష్ట్రపతి సమీక్షించారు."),
 
     (5, 2,
-     "చట్ట సవరణ ఎప్పుడు పార్లమెంట్ ఆమోదించింది?",
+     "AP Reorganisation (Amendment) Act 2026 ను పార్లమెంట్ ఏ నెలలో ఆమోదించింది?",
      "మార్చి 2026", "ఏప్రిల్ 2026", "మే 2026", "జూన్ 2026",
      "b",
-     "ఏప్రిల్ 2026న AP Reorganisation (Amendment) Act 2026 ఆమోదించారు. అమరావతిని ఏకైక రాజధానిగా ధృవీకరించారు."),
+     "AP Reorganisation (Amendment) Act 2026 (Act No. 7/2026) ను ఏప్రిల్ 2026లో పార్లమెంట్ ఆమోదించింది (Lok Sabha: Apr 1; Rajya Sabha: Apr 2; President assent: Apr 6, 2026). అమరావతిని ఏకైక రాజధానిగా (retrospectively from June 2, 2024) ధృవీకరించారు."),
 
     (6, 1,
-     "AP BharatNet Phase 3 నిధులు?",
+     "AP BharatNet Phase 3 కోసం కేంద్ర ప్రభుత్వం ఎంత నిధులు కేటాయించింది?",
      "₹2,432 కోట్లు", "₹1,000 కోట్లు", "₹3,500 కోట్లు", "₹5,000 కోట్లు",
      "a",
-     "₹2,432 కోట్లు BharatNet Phase 3 కు కేటాయించారు. Digital Bharat Nidhi నుండి నిధులు వచ్చాయి."),
+     "BharatNet Phase 3 AP లో గ్రామీణ ఇంటర్నెట్ సదుపాయం కోసం కేంద్ర ప్రభుత్వం ₹2,432 కోట్లు కేటాయించింది. నిధి మూలం: Digital Bharat Nidhi (DBN). అన్ని గ్రామ పంచాయతీలకు high-speed broadband connectivity లక్ష్యం."),
 
     (7, 1,
-     "AM Green కాకినాడ పరిశ్రమ?",
-     "Green Ammonia", "Iron Steel", "Petroleum", "Textile",
+     "కాకినాడలో AM Green ఏ రకమైన పరిశ్రమను ఏర్పాటు చేస్తోంది?",
+     "Green Ammonia (హరిత అమ్మోనియా)", "Iron & Steel", "Petroleum Refinery", "Textile Manufacturing",
      "a",
-     "Green Ammonia పరిశ్రమ. ప్రపంచపు అతిపెద్ద ప్లాంట్."),
+     "AM Green కాకినాడలో ప్రపంచపు అతిపెద్ద Green Ammonia (హరిత అమ్మోనియా) ప్లాంట్ ఏర్పాటు చేస్తోంది — సామర్థ్యం 1.5 MTPA, పెట్టుబడి ₹13,000 కోట్లు. AM Green = Greenko Group అనుబంధ సంస్థ."),
 
     (8, 1,
-     "Auto Driverla Sevalo ఎప్పుడు?",
-     "అక్టోబర్ 4, 2025", "ఆగస్టు 15", "సెప్టెంబర్ 1", "నవంబర్ 1",
+     "AP ప్రభుత్వం 'Auto Driverla Sevalo' పథకాన్ని ఏ తేదీన ప్రారంభించింది?",
+     "అక్టోబర్ 4, 2025", "ఆగస్టు 15, 2025", "సెప్టెంబర్ 1, 2025", "నవంబర్ 1, 2025",
      "a",
-     "అక్టోబర్ 4, 2025న ప్రారంభమైంది. Auto, Cab, Maxi Cab drivers కు సహాయం."),
+     "AP ప్రభుత్వం 'Auto Driverla Sevalo' పథకాన్ని అక్టోబర్ 4, 2025న ప్రారంభించింది — Auto, Cab, Maxi Cab drivers కు ఆర్థిక సహాయం; Super Six Schemes లో భాగంగా (ఏడాదికి ₹15,000)."),
 
     (4, 1,
      "IFR 2026 థీమ్ ఏమిటి?",
@@ -273,12 +267,6 @@ MCQ_DATA = [
      "Section 3", "Section 5", "Section 4", "Section 7",
      "b",
      "AP Reorganisation (Amendment) Act 2026 = 2014 AP Reorganisation Act లోని Section 5 కి సవరణ. Section 5 రాజధాని నగరాన్ని నిర్ణయించే section."),
-
-    (5, 2,
-     "YSRCP ప్రభుత్వం ప్రతిపాదించిన మూడు రాజధానుల్లో Judicial Capital (న్యాయ రాజధాని) ఏది?",
-     "అమరావతి", "కర్నూలు", "విశాఖపట్నం", "నెల్లూరు",
-     "b",
-     "YSRCP ప్రభుత్వం మూడు రాజధానులు: అమరావతి (Legislative), కర్నూలు (Judicial), విశాఖపట్నం (Executive). 2026 Amendment Act తర్వాత అమరావతి మాత్రమే రాజధాని."),
 
     (5, 3,
      "AP Reorganisation Act మొదట ఏ సంవత్సరంలో పార్లమెంట్ ఆమోదించింది?",
