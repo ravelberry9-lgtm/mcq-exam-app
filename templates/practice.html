@@ -478,8 +478,10 @@ function showQ(i){
 function restoreNormal(i,st){
   const ol=document.getElementById('ol'+i); if(!ol) return;
   ol.querySelectorAll('.opt').forEach(b=>b.classList.add('locked'));
-  const cb=document.getElementById('o'+i+'_'+st.chosen); if(cb) cb.classList.add(st.ok?'ok-ans':'ng-ans');
-  if(!st.ok){const kb=document.getElementById('o'+i+'_'+filtQ[i].correct_answer);if(kb)kb.classList.add('ok-ans');}
+  const _chosenU=String(st.chosen||'').toUpperCase();
+  const _correctU=String(filtQ[i].correct_answer||'').toUpperCase();
+  const cb=document.getElementById('o'+i+'_'+_chosenU); if(cb) cb.classList.add(st.ok?'ok-ans':'ng-ans');
+  if(!st.ok){const kb=document.getElementById('o'+i+'_'+_correctU);if(kb)kb.classList.add('ok-ans');}
   const fb=document.getElementById('fbPanel');
   fb.className='fb-panel show '+(st.ok?'ok-fb':'ng-fb');
   document.getElementById('fbLbl').textContent=st.ok?'✅ Correct!':'❌ Incorrect!';
@@ -497,11 +499,15 @@ function pick(i,chosen,correct_ans,exp,question){
   const btns=ol.querySelectorAll('.opt');
   if(btns[0].classList.contains('locked')) return;
   btns.forEach(b=>b.classList.add('locked'));
-  const ok=chosen===correct_ans;
+  // Normalise both to uppercase — fixes case-sensitivity bug where chapter_mcqs stores
+  // lowercase ('c') but buttons emit uppercase ('C'), causing strict === to fail.
+  const _chosenU=String(chosen||'').toUpperCase();
+  const _correctU=String(correct_ans||'').toUpperCase();
+  const ok=_chosenU===_correctU;
   if(!states[i]){answered++;if(ok)correct++;else wrong++;}
-  states[i]={done:true,chosen,ok,exp,aiHTML:null,aiQ:null};
-  const cb=document.getElementById('o'+i+'_'+chosen); if(cb) cb.classList.add(ok?'ok-ans':'ng-ans');
-  if(!ok){const kb=document.getElementById('o'+i+'_'+correct_ans);if(kb)kb.classList.add('ok-ans');}
+  states[i]={done:true,chosen:_chosenU,ok,exp,aiHTML:null,aiQ:null};
+  const cb=document.getElementById('o'+i+'_'+_chosenU); if(cb) cb.classList.add(ok?'ok-ans':'ng-ans');
+  if(!ok){const kb=document.getElementById('o'+i+'_'+_correctU);if(kb)kb.classList.add('ok-ans');}
   const fb=document.getElementById('fbPanel');
   fb.className='fb-panel show '+(ok?'ok-fb':'ng-fb');
   document.getElementById('fbLbl').textContent=ok?'✅ Correct!':'❌ Incorrect!';
@@ -590,8 +596,10 @@ function renderFP(i){
 
   if(st&&st.done){
     document.querySelectorAll('#fpOl .fp-opt').forEach(b=>b.classList.add('locked'));
-    const ce=document.getElementById('fpo_'+st.chosen); if(ce) ce.classList.add(st.ok?'ok-ans':'ng-ans');
-    if(!st.ok){const ke=document.getElementById('fpo_'+filtQ[i].correct_answer);if(ke)ke.classList.add('ok-ans');}
+    const _chosenU2=String(st.chosen||'').toUpperCase();
+    const _correctU2=String(filtQ[i].correct_answer||'').toUpperCase();
+    const ce=document.getElementById('fpo_'+_chosenU2); if(ce) ce.classList.add(st.ok?'ok-ans':'ng-ans');
+    if(!st.ok){const ke=document.getElementById('fpo_'+_correctU2);if(ke)ke.classList.add('ok-ans');}
     const fb=document.getElementById('fpFb');
     fb.className='fp-fb show '+(st.ok?'ok-fb':'ng-fb');
     document.getElementById('fpFbL').textContent=st.ok?'✅ Correct!':'❌ Incorrect!';
@@ -613,11 +621,14 @@ function fpPick(chosen,correct_ans,exp,question){
   const btns=ol.querySelectorAll('.fp-opt');
   if(btns[0].classList.contains('locked')) return;
   btns.forEach(b=>b.classList.add('locked'));
-  const ok=chosen===correct_ans, i=fpIdx;
+  // Normalise both to uppercase — same case-sensitivity fix as pick().
+  const _chosenU=String(chosen||'').toUpperCase();
+  const _correctU=String(correct_ans||'').toUpperCase();
+  const ok=_chosenU===_correctU, i=fpIdx;
   if(!states[i]){answered++;if(ok)correct++;else wrong++;}
-  states[i]={done:true,chosen,ok,exp,aiHTML:null,aiQ:null};
-  const ce=document.getElementById('fpo_'+chosen); if(ce) ce.classList.add(ok?'ok-ans':'ng-ans');
-  if(!ok){const ke=document.getElementById('fpo_'+correct_ans);if(ke)ke.classList.add('ok-ans');}
+  states[i]={done:true,chosen:_chosenU,ok,exp,aiHTML:null,aiQ:null};
+  const ce=document.getElementById('fpo_'+_chosenU); if(ce) ce.classList.add(ok?'ok-ans':'ng-ans');
+  if(!ok){const ke=document.getElementById('fpo_'+_correctU);if(ke)ke.classList.add('ok-ans');}
   const fb=document.getElementById('fpFb');
   fb.className='fp-fb show '+(ok?'ok-fb':'ng-fb');
   document.getElementById('fpFbL').textContent=ok?'✅ Correct!':'❌ Incorrect!';

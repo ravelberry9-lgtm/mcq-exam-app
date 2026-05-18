@@ -2058,12 +2058,12 @@ def seed():
 
         # ── India AI ──
         (31191,
-         "India AI Mission కింద 2026-27 బడ్జెట్‌లో కేటాయింపు ఎంత?\n(India AI Mission allocation in Budget 2026-27?)",
+         "India AI Mission కు మొత్తం కేటాయింపు (5 సంవత్సరాల కాలానికి) ఎంత?\n(Total allocation for India AI Mission over 5 years?)",
          "A) రూ.500 కోట్లు",
          "B) రూ.2,000 కోట్లు",
          "C) రూ.10,372 కోట్లు",
          "D) రూ.5,000 కోట్లు",
-         "B",
+         "C",
          "India AI Mission కు మొత్తంగా రూ.10,372 కోట్లు కేటాయించారు (5 సంవత్సరాల కాలానికి). India AI Mission was allocated Rs 10,372 crore over 5 years.",
          "AP_HC", "National_Current_Affairs_2026"),
 
@@ -3086,10 +3086,10 @@ def seed():
 
         # ── India Space 3 ──
         (31285,
-         "ISRO OneWeb ఒప్పందం కింద 2023లో ఎన్ని ఉపగ్రహాలు నింగిలోకి పంపారు?\n(Satellites launched for OneWeb by ISRO in 2023?)",
-         "A) 36",
-         "B) 72",
-         "C) 36 (LVM3-M2)",
+         "ISRO OneWeb ఒప్పందం కింద LVM3-M2 (2022) + LVM3-M3 (2023) — ప్రతి మిషన్‌లో ఎన్ని ఉపగ్రహాలు పంపారు?\n(Satellites per launch in ISRO's OneWeb missions LVM3-M2 & M3?)",
+         "A) 36 ఉపగ్రహాలు ప్రతి మిషన్‌లో / 36 each",
+         "B) 72 — రెండు మిషన్‌లలో మొత్తం / 72 total across both",
+         "C) 18 + 36",
          "D) 100",
          "A",
          "ISRO LVM3-M2 రాకెట్ ద్వారా OneWeb కోసం 36 broadband satellites ప్రయోగించారు. ISRO launched 36 broadband satellites for OneWeb via LVM3-M2 rocket.",
