@@ -9,6 +9,9 @@ AUDIT CHANGES (2026-05-18):
    was "b" (₹1,250/month), corrected to "b" which is numerically correct
    (₹15,000 ÷ 12 = ₹1,250). Answer kept but noted that the official
    communication is ₹15,000/year not monthly; question corrected to annual.
+3. FIXED invented fact: '3 నెలల సమయం' for Deepam 2.0 cylinder delivery wait —
+   replaced with correct fact: 48 గంటలు (48 hours) refund per div02 HTML.
+   Source: div02_govt_schemes.html ground truth.
 """
 import json as _json
 
@@ -334,10 +337,10 @@ MCQ_DATA = [
      'దీపం 2.0 = లెనో 2.0 (మెరుగుపడిన, రీ-లాంచ్డ పథకం). TDP 2014-19 అసలు, ఇప్పుడు 2.0.'),
 
     (1, 2,
-     'దీపం 2.0 ఉచిత సిలిండర్ వర్ణీకరణకు ఆపూర్తి సమయం ఎంత?',
-     'ఒక నెల', '2 నెలలు', '3 నెలలు', '6 నెలలు',
-     'c',
-     'దీపం 2.0 సిలిండర్ నమోదు చేసిన తర్వాత విస్తరణానికి 3 నెలల సమయం ఇస్తారు.'),
+     'దీపం 2.0 కింద సిలిండర్ ఖర్చు చెల్లించిన తర్వాత డబ్బు అకౌంట్‌కు ఎంత సమయంలో వస్తుంది?',
+     '24 గంటలు', '48 గంటలు', '72 గంటలు', '7 రోజులు',
+     'b',
+     'దీపం 2.0 కింద సిలిండర్ ఖర్చు చెల్లించిన తర్వాత 48 గంటల్లో డబ్బు తిరిగి అకౌంట్‌కు వస్తుంది.'),
 
     (1, 3,
      'దీపం 2.0 నిధి కేటాయింపు రాష్ట్రం నుండి కేంద్రం సపోర్టు ఉందా?',

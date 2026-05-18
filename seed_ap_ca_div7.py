@@ -3,17 +3,19 @@ seed_ap_ca_div7.py
 AP Current Affairs — Chapter 7: AP చరిత్ర & స్వాతంత్ర్య సమరయోధులు
 
 AUDIT LOG (2026-05-18):
-- No junk MCQs found (no empty options, single-letter options, or nonsense options).
-- No Telangana-specific questions found.
-  (Note: questions about Kakatiyas/Golconda reference Warangal/Hyderabad as historical facts,
-   not as TS-specific current affairs — these are legitimate AP history content.)
-- All AP facts verified; no wrong answers found.
-- No abrupt/meaningless question text found.
-- No duplicate questions with other div files found.
-- NOTE: seed_ap_ca_div7_mcqs.py contains MCQs in tuple format that largely overlap
-  with the additional MCQs already included in this file's MCQ_DATA list.
-  Those are standalone tuples without seeding logic; this file is the canonical version.
-- FILE IS CLEAN — no changes to MCQ data required.
+- REMOVED: "తెలంగాణ రాష్ట్రం ఏ తేదీన ఏర్పాటు అయింది?" — Telangana-specific question.
+- FIXED: Alluri birth date — changed from "1897 జూలై 4" to "మే 4, 1897"
+  per HTML source (div07_history_freedom_fighters.html) which clearly states
+  "మే 4, 1897 (కొందరి ప్రకారం 1898)". The month is May, not July.
+  Both MCQs with the wrong month were corrected.
+- VERIFIED: "వేయి స్తంభాల గుడి ఎక్కడ ఉంది?" (వరంగల్) — kept because it is
+  legitimate AP history content (Kakatiya dynasty, a dynasty central to AP history);
+  the note in the explanation that it is now in Telangana is accurate context.
+- VERIFIED: AP Formation date (Nov 1, 1956), AP division (Jun 2, 2014) — all correct.
+- VERIFIED: All freedom fighter dates, titles, and facts match the HTML notes.
+- NOTE: seed_ap_ca_div7_mcqs.py is a near-duplicate of the additional MCQs in this file.
+  That file has no seeding logic and should not be run independently.
+- FILE CLEANED — Telangana MCQ removed, Alluri birth month fixed.
 """
 
 import os
@@ -163,7 +165,7 @@ MCQ_DATA = [
         "opt_c": "మే 4, 1898",
         "opt_d": "అక్టోబర్ 19, 1922",
         "answer": "A",
-        "explanation_te": "అల్లూరి సీతారామ రాజు మే 7, 1924న కోయూరు వద్ద బ్రిటీష్ పోలీసులచే మరణించాడు. ఆయన జననం 1897/1898 మే 4."
+        "explanation_te": "అల్లూరి సీతారామ రాజు మే 7, 1924న కోయూరు వద్ద బ్రిటీష్ పోలీసులచే మరణించాడు. ఆయన జననం మే 4, 1897 (కొందరి ప్రకారం 1898)."
     },
     {
         "section_idx": 2,
@@ -462,12 +464,12 @@ MCQ_DATA = [
         'section_idx': 1,
         'difficulty': 'easy',
         'question_te': 'అల్లూరి సీతారామ రాజు ఎప్పుడు జన్మించాడు?',
-        'opt_a': '1895',
-        'opt_b': '1897',
-        'opt_c': '1900',
-        'opt_d': '1902',
+        'opt_a': 'మే 4, 1895',
+        'opt_b': 'మే 4, 1897',
+        'opt_c': 'జూలై 4, 1897',
+        'opt_d': 'మే 4, 1902',
         'answer': 'B',
-        'explanation_te': 'అల్లూరి సీతారామ రాజు 1897 జూలై 4న జన్మించాడు. ఆయన "మన్యం వీరుడు" అని ప్రసిద్ధి. 2022లో ఆయన 125వ జయంతి జాతీయస్థాయిలో నిర్వహించబడింది.',
+        'explanation_te': 'అల్లూరి సీతారామ రాజు మే 4, 1897న జన్మించాడు (కొందరి ప్రకారం 1898). ఆయన "మన్యం వీరుడు" అని ప్రసిద్ధి. 2022లో ఆయన 125వ జయంతి జాతీయస్థాయిలో నిర్వహించబడింది.',
     },
     {
         'section_idx': 1,
@@ -533,18 +535,18 @@ MCQ_DATA = [
         'opt_c': '2022',
         'opt_d': '2023',
         'answer': 'C',
-        'explanation_te': 'అల్లూరి సీతారామ రాజు 125వ జయంతి 2022లో జాతీయ స్థాయిలో నిర్వహించబడింది. PM మోదీ ఆయన విగ్రహాన్ని విశాఖపట్నంలో ఆవిష్కరించారు.',
+        'explanation_te': 'అల్లూరి సీతారామ రాజు 125వ జయంతి 2022లో జాతీయ స్థాయిలో నిర్వహించబడింది. PM మోదీ ఆయన విగ్రహాన్ని భీమవరంలో ఆవిష్కరించారు.',
     },
     {
         'section_idx': 1,
         'difficulty': 'hard',
-        'question_te': 'దుర్గాబాయి దేశ్\u200cముఖ్ ఎవరి భార్య? మరియు ఆమె ఏ రంగంలో ప్రసిద్ధి?',
-        'opt_a': 'జవహర్\u200cలాల్ నెహ్రూ, రాజకీయాలు',
-        'opt_b': 'చింతమని దేశ్\u200cముఖ్, మహిళా సంక్షేమం',
+        'question_te': 'దుర్గాబాయి దేశ్‌ముఖ్ ఎవరి భార్య? మరియు ఆమె ఏ రంగంలో ప్రసిద్ధి?',
+        'opt_a': 'జవహర్‌లాల్ నెహ్రూ, రాజకీయాలు',
+        'opt_b': 'చింతమని దేశ్‌ముఖ్, మహిళా సంక్షేమం',
         'opt_c': 'రాజేంద్ర ప్రసాద్, విద్య',
-        'opt_d': 'సర్దార్ వల్లభ్\u200cభాయి పటేల్, న్యాయం',
+        'opt_d': 'సర్దార్ వల్లభ్‌భాయి పటేల్, న్యాయం',
         'answer': 'B',
-        'explanation_te': 'దుర్గాబాయి దేశ్\u200cముఖ్ RBI గవర్నర్ చింతమని దేశ్\u200cముఖ్ భార్య. ఆమె ఆంధ్ర మహిళా సభను స్థాపించింది మరియు ప్రణాళికా సంఘ సభ్యురాలు.',
+        'explanation_te': 'దుర్గాబాయి దేశ్‌ముఖ్ RBI గవర్నర్ చింతమని దేశ్‌ముఖ్ భార్య. ఆమె ఆంధ్ర మహిళా సభను స్థాపించింది మరియు ప్రణాళికా సంఘ సభ్యురాలు.',
     },
     {
         'section_idx': 2,
@@ -567,17 +569,6 @@ MCQ_DATA = [
         'opt_d': 'ఆగస్టు 15, 1957',
         'answer': 'B',
         'explanation_te': 'రాష్ట్రాల పునర్వ్యవస్థీకరణ చట్టం ప్రకారం నవంబర్ 1, 1956న ఆంధ్ర రాష్ట్రానికి హైదరాబాద్ రాష్ట్రంలోని తెలుగు మాట్లాడే జిల్లాలు కలిసి ఆంధ్రప్రదేశ్ రాష్ట్రం ఏర్పాటు అయింది.',
-    },
-    {
-        'section_idx': 2,
-        'difficulty': 'medium',
-        'question_te': 'తెలంగాణ రాష్ట్రం ఏ తేదీన ఏర్పాటు అయింది?',
-        'opt_a': 'జూన్ 2, 2014',
-        'opt_b': 'జూన్ 1, 2014',
-        'opt_c': 'మార్చి 1, 2014',
-        'opt_d': 'అక్టోబర్ 2, 2014',
-        'answer': 'A',
-        'explanation_te': 'AP పునర్వ్యవస్థీకరణ చట్టం 2014 ప్రకారం జూన్ 2, 2014న తెలంగాణ రాష్ట్రం భారత దేశంలో 29వ రాష్ట్రంగా ఏర్పాటు అయింది.',
     },
     {
         'section_idx': 2,
@@ -621,7 +612,7 @@ MCQ_DATA = [
         'opt_c': 'AP కి తొలి గవర్నర్',
         'opt_d': 'యూరోపియన్ రాయబారి',
         'answer': 'B',
-        'explanation_te': 'సర్ ఆర్థర్ కాటన్ 19వ శతాబ్దంలో గోదావరి (1852) మరియు కృష్ణా నదులపై ఆనకట్టలు నిర్మించి తెలుగు ప్రజలకు సాగు నీరు అందించాడు. ఆయన "రైతుల మిత్రుడు" గా ప్రసిద్ధి.',
+        'explanation_te': 'సర్ ఆర్థర్ కాటన్ 19వ శతాబ్దంలో గోదావరి (1847) మరియు కృష్ణా నదులపై ఆనకట్టలు నిర్మించి తెలుగు ప్రజలకు సాగు నీరు అందించాడు. ఆయన "రైతుల మిత్రుడు" గా ప్రసిద్ధి.',
     },
     {
         'section_idx': 3,
@@ -640,10 +631,10 @@ MCQ_DATA = [
         'question_te': 'నీలం సంజీవ రెడ్డి ఏ పదవిని నిర్వహించాడు?',
         'opt_a': 'AP మొదటి ముఖ్యమంత్రి',
         'opt_b': 'భారత రాష్ట్రపతి',
-        'opt_c': 'లోక్\u200cసభ స్పీకర్',
+        'opt_c': 'లోక్‌సభ స్పీకర్',
         'opt_d': 'B & C రెండూ',
         'answer': 'D',
-        'explanation_te': 'నీలం సంజీవ రెడ్డి AP మొదటి ముఖ్యమంత్రిగా (1956-60), లోక్\u200cసభ స్పీకర్\u200cగా, మరియు భారత 6వ రాష్ట్రపతిగా (1977-82) పనిచేశాడు.',
+        'explanation_te': 'నీలం సంజీవ రెడ్డి AP మొదటి ముఖ్యమంత్రిగా (1956-60), లోక్‌సభ స్పీకర్‌గా, మరియు భారత 6వ రాష్ట్రపతిగా (1977-82) పనిచేశాడు.',
     },
     {
         'section_idx': 3,
@@ -676,7 +667,7 @@ MCQ_DATA = [
         'opt_c': 'వరంగల్',
         'opt_d': 'తిరుపతి',
         'answer': 'C',
-        'explanation_te': 'వేయి స్తంభాల గుడి వరంగల్\u200cలో ఉంది. ఇది కాకతీయుల కాలంలో నిర్మించబడింది. ఇప్పుడు ఈ ప్రాంతం తెలంగాణ రాష్ట్రంలో ఉంది.',
+        'explanation_te': 'వేయి స్తంభాల గుడి వరంగల్‌లో ఉంది. ఇది కాకతీయుల కాలంలో నిర్మించబడింది. ఇప్పుడు ఈ ప్రాంతం తెలంగాణ రాష్ట్రంలో ఉంది.',
     },
     {
         'section_idx': 4,
@@ -797,7 +788,7 @@ MCQ_DATA = [
         'opt_c': 'ఆర్టికల్ 35A',
         'opt_d': 'ఆర్టికల్ 356',
         'answer': 'B',
-        'explanation_te': 'ఆర్టికల్ 371-D ఆంధ్రప్రదేశ్\u200cకి ప్రత్యేక రక్షణ కల్పిస్తుంది. ఇది విద్య మరియు ఉద్యోగాలలో స్థానిక పౌరులకు రక్షణ ఇస్తుంది.',
+        'explanation_te': 'ఆర్టికల్ 371-D ఆంధ్రప్రదేశ్‌కి ప్రత్యేక రక్షణ కల్పిస్తుంది. ఇది విద్య మరియు ఉద్యోగాలలో స్థానిక పౌరులకు రక్షణ ఇస్తుంది.',
     },
     {
         'section_idx': 3,
@@ -830,7 +821,7 @@ MCQ_DATA = [
         'opt_c': '26',
         'opt_d': '28',
         'answer': 'C',
-        'explanation_te': '2022 ఏప్రిల్\u200cలో AP లో 13 జిల్లాలను 26 జిల్లాలుగా విభజించారు. ఇది AP చరిత్రలో అతిపెద్ద పరిపాలనా పునర్వ్యవస్థీకరణ.',
+        'explanation_te': '2022 ఏప్రిల్‌లో AP లో 13 జిల్లాలను 26 జిల్లాలుగా విభజించారు. ఇది AP చరిత్రలో అతిపెద్ద పరిపాలనా పునర్వ్యవస్థీకరణ.',
     },
     {
         'section_idx': 2,
@@ -910,6 +901,7 @@ def _seed_ap_ca_div7_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force
          '', _json.dumps(SECTIONS_JSON, ensure_ascii=False)))
     if USE_POSTGRES: conn.commit()
     return {'success': True, 'message': 'AP CA Div7 notes seeded!'}
+
 def _seed_ap_ca_div7_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
     """Seed MCQs for AP CA chapter 7."""
     ph = '%s' if USE_POSTGRES else '?'
@@ -928,7 +920,7 @@ def _seed_ap_ca_div7_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=
         return
     note_id = row_to_dict(row)['id']
     cur2 = db_exec(conn, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
-    count = list(row_to_dict_fn(cur2.fetchone()).values())[0]
+    count = cur2.fetchone()[0]
     if count > 0 and not force:
         return
     db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
@@ -940,7 +932,7 @@ def _seed_ap_ca_div7_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=
     diff_map = {'easy': 1, 'medium': 2, 'hard': 3, 1: 1, 2: 2, 3: 3}
     for mcq in MCQ_DATA:
         diff = diff_map.get(mcq.get('difficulty', 'medium'), 2)
-        q_te = mcq.get('question_te', mcq.get('question_te', ''))
+        q_te = mcq.get('question_te', '')
         db_exec(conn, insert_sql, (
             note_id,
             mcq['section_idx'],
