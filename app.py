@@ -527,26 +527,58 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed International Current Affairs MCQs (86 Qs) [force-refresh 2025-26] ──
+    # ── Auto-seed National Current Affairs 2026 MCQs (388 total: 300 existing + 88 PDF events) ──
+    # IDs 31001-31388. Sentinel check uses ID 31388 (last 2026 event). If missing, full re-seed.
+    try:
+        ph = '%s' if USE_POSTGRES else '?'
+        cur_natl = db_exec(conn,
+            f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
+            (31001, 31400))
+        natl_count = _fv(cur_natl.fetchone())
+        _natl_sentinel = db_exec(conn,
+            f"SELECT explanation FROM questions WHERE id={ph}", (31388,))
+        _natl_row = _natl_sentinel.fetchone()
+        # Trigger re-seed if count is below 388 OR the last 2026 sentinel row is missing
+        if natl_count < 388 or not _natl_row:
+            print(f"[startup] National CA 2026 MCQs: {natl_count}/388 — force-refreshing 2026 PDF data...")
+            import importlib
+            natl_mod = importlib.import_module('seed_national_ca_2026_mcq')
+            importlib.reload(natl_mod)
+            natl_mod.seed()
+            print("[startup] National CA 2026 seed complete (300 base + 88 PDF events).")
+        else:
+            print(f"[startup] National CA 2026: {natl_count} questions already loaded.")
+    except Exception as _natl_e:
+        print(f"[startup] National CA 2026 seed error: {_natl_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed International Current Affairs MCQs (140 Qs total after Batch H+PDF) ──
+    # Original 86 (IDs 20001-20086) + 54 new 2026 events (IDs 20087-20140).
+    # Sentinel check uses ID 20140 (last 2026 event) — if missing, full re-seed.
     try:
         ph = '%s' if USE_POSTGRES else '?'
         cur_intl = db_exec(conn,
             f"SELECT COUNT(*) FROM questions WHERE id>={ph} AND id<={ph}",
-            (20001, 20086))
+            (20001, 20150))
         intl_count = _fv(cur_intl.fetchone())
         _intl_sentinel = db_exec(conn,
-            f"SELECT explanation FROM questions WHERE id={ph}", (20086,))
+            f"SELECT explanation FROM questions WHERE id={ph}", (20140,))
         _intl_row = _intl_sentinel.fetchone()
-        _intl_marker = (_intl_row[0] if _intl_row else '') or ''
-        if intl_count < 86 or 'India-UK' not in _intl_marker:
-            print(f"[startup] Intl Orgs MCQs: {intl_count}/86 — force-refreshing 2025-26 data...")
+        _intl_marker = ''
+        if _intl_row:
+            _intl_dict = row_to_dict(_intl_row) or {}
+            _intl_marker = _intl_dict.get('explanation') or ''
+        # Trigger re-seed if count is below 140 OR the 2026 sentinel row is missing
+        if intl_count < 140 or not _intl_row:
+            print(f"[startup] Intl Orgs MCQs: {intl_count}/140 — force-refreshing 2025-26 + 2026 data...")
             import importlib
             intl_mod = importlib.import_module('seed_intl_orgs_mcq')
             importlib.reload(intl_mod)
             intl_mod.seed()
-            print("[startup] Intl Orgs seed complete (2025-26).")
+            print("[startup] Intl Orgs seed complete (2025-26 + 2026).")
         else:
-            print(f"[startup] Intl Orgs: {intl_count} questions already loaded (2025-26).")
+            print(f"[startup] Intl Orgs: {intl_count} questions already loaded (2025-26 + 2026).")
     except Exception as _intl_e:
         print(f"[startup] Intl Orgs seed error: {_intl_e}")
         try: conn.rollback()
