@@ -43,7 +43,7 @@ def seed():
          "C) రూ.45,65,345 కోట్లు",
          "D) రూ.55,65,345 కోట్లు",
          "B",
-         "2026-27 కేంద్ర బడ్జెట్‌లో మొత్తం వ్యయం రూ.50,65,345 కోట్లు. Total expenditure in Union Budget 2026-27 is Rs 50,65,345 crore.",
+         "Union Budget 2026-27 మొత్తం వ్యయం **₹50,65,345 కోట్లు** (~₹50.65 లక్షల కోట్లు). మూలధన వ్యయం (capex) ₹11,11,111 కోట్లు (16%); రెవెన్యూ రసీదులు ~₹34.20 లక్షల కోట్లు; ద్రవ్యలోటు GDP లో 4.4%. 16వ ఆర్థిక సంఘం ప్రకారం AP వాటా 4.22% (15వ FC లో 4.05% నుండి పెరిగింది).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31003,
@@ -53,7 +53,7 @@ def seed():
          "C) రూ.11,11,111 కోట్లు",
          "D) రూ.10,00,000 కోట్లు",
          "C",
-         "2026-27 కేంద్ర బడ్జెట్‌లో మూలధన వ్యయం రూ.11,11,111 కోట్లు. Capital expenditure in Union Budget 2026-27 is Rs 11,11,111 crore.",
+         "Union Budget 2026-27 **మూలధన వ్యయం (Capex) = ₹11,11,111 కోట్లు** — మొత్తం వ్యయంలో **~22%**. 2024-25 RE తో పోలిస్తే ~21.9% వృద్ధి. Modi 3.0 ప్రభుత్వ infra-led growth strategy. ముఖ్య కేటాయింపులు: Defence ₹6.81 L-cr, Railways ₹2.52 L-cr, Roads ₹3.09 L-cr.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31004,
@@ -63,7 +63,7 @@ def seed():
          "C) రూ.12 లక్షలు",
          "D) రూ.15 లక్షలు",
          "C",
-         "2026-27 కేంద్ర బడ్జెట్‌లో కొత్త పన్ను పద్ధతిలో రూ.12 లక్షల వరకు ఆదాయంపై పన్ను లేదు. Income up to Rs 12 lakh is tax-free under the new tax regime in Budget 2026-27.",
+         "Budget 2026-27 **New Tax Regime (NTR)**: ₹12 లక్షల వరకు ఆదాయంపై **శూన్య ఆదాయ పన్ను** (2024-25 లో ₹7 L). + ₹75,000 standard deduction = effective **₹12.75 L tax-free**. New slabs: 0-4L Nil; 4-8L 5%; 8-12L 10%; 12-16L 15%; 16-20L 20%; 20-24L 25%; 24L+ 30%. Old tax regime ఇప్పటికీ optional.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31005,
@@ -73,7 +73,7 @@ def seed():
          "C) రూ.7,81,210 కోట్లు",
          "D) రూ.4,81,210 కోట్లు",
          "B",
-         "2026-27 కేంద్ర బడ్జెట్‌లో రక్షణ రంగానికి రూ.6,81,210 కోట్లు కేటాయించారు. Defence allocation in Union Budget 2026-27 is Rs 6,81,210 crore.",
+         "Defence allocation 2026-27 = **₹6,81,210 కోట్లు** (~₹6.81 లక్షల కోట్లు) — మొత్తం బడ్జెట్‌లో ~13%; **2వ అతిపెద్ద మంత్రిత్వ శాఖ** (Railways తర్వాత). 2024-25 RE ₹6,21,940 cr నుండి +9.5% వృద్ధి. Capex ~28% defence allocation. ముఖ్య కొనుగోళ్లు: S-400 squadrons, Pinaka extended-range rockets, Sukhoi-30 overhauls, MTA aircraft.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31006,
@@ -83,7 +83,7 @@ def seed():
          "C) రూ.1,80,000 కోట్లు",
          "D) రూ.3,00,000 కోట్లు",
          "B",
-         "2026-27 కేంద్ర బడ్జెట్‌లో రైల్వేలకు రూ.2,52,200 కోట్లు కేటాయించారు. Railways allocation in Union Budget 2026-27 is Rs 2,52,200 crore.",
+         "Railways allocation 2026-27 = **₹2,52,200 కోట్లు** (~₹2.52 లక్షల కోట్లు) — **రికార్డ్ స్థాయి**. ముఖ్య ప్రాజెక్టులు: **7 కొత్త High-Speed Rail (HSR) corridors** announced — Mumbai-Pune, Pune-Hyderabad, Hyderabad-Bengaluru, Hyderabad-Chennai, Chennai-Bengaluru, Delhi-Varanasi, Varanasi-Siliguri (~4,000 km total). Plus Vande Bharat fleet విస్తరణ, స్టేషన్ పునరభివృద్ధి.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31007,
@@ -93,7 +93,7 @@ def seed():
          "C) GDP లో 4.4%",
          "D) GDP లో 5%",
          "C",
-         "2025-26లో ద్రవ్యలోటు GDP లో 4.4% లక్ష్యంగా నిర్ణయించారు. Fiscal Deficit target for 2025-26 is 4.4% of GDP.",
+         "**ద్రవ్యలోటు (Fiscal Deficit)** = ప్రభుత్వ మొత్తం వ్యయం − మొత్తం రెవెన్యూ (loans except). 2025-26 లక్ష్యం **GDP లో 4.4%** (2024-25 RE 4.8% నుండి తగ్గింపు). **FRBM Act 2003** glide path ప్రకారం 2026-27లో కూడా 4.4% target. భారత్ credit-rating agencies కు 4.5% by 2025-26 వాగ్దానం చేసింది — త్వరగా achieve చేసింది.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Republic Day 2026 ──
@@ -104,7 +104,7 @@ def seed():
          "C) ఆగస్టు 15, 2026 / August 15, 2026",
          "D) నవంబర్ 26, 2025 / November 26, 2025",
          "A",
-         "భారత 77వ గణతంత్ర దినోత్సవం జనవరి 26, 2026న జరిగింది. India's 77th Republic Day was celebrated on January 26, 2026.",
+         "**77వ గణతంత్ర దినోత్సవం = జనవరి 26, 2026** (Kartavya Path, New Delhi). Theme: **'150 Years of Vande Mataram'** (Bankim Chandra's 1875 song's 150 ఏళ్ళ గౌరవార్థం). President Murmu parade review. తొలి ప్రదర్శనలు: **Bhairav Light Commando Battalion** (Oct 2025), **Shaktiban regiment**, **Suryastra rocket system**, **LR-AShM hypersonic missile**, robotic dogs.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31009,
@@ -125,7 +125,7 @@ def seed():
          "C) వై.వి. రెడ్డి / Y.V. Reddy",
          "D) రఘురామ్ రాజన్ / Raghuram Rajan",
          "A",
-         "మాజీ NITI ఆయోగ్ వైస్ ఛైర్మన్ డాక్టర్ అర్విందు పనగారియా 16వ ఆర్థిక సంఘం ఛైర్మన్. Former NITI Aayog Vice Chairman Dr. Arvind Panagariya is Chairman of 16th Finance Commission.",
+         "**16వ ఆర్థిక సంఘం (16th Finance Commission) Chairman = Dr. అర్విందు పనగారియా** — మాజీ NITI ఆయోగ్ Vice Chairman (2015-17), Columbia University ఆర్థికవేత్త. **Constituted Dec 2023; Report tabled Feb 1, 2026**. Other members: Dr. Manoj Panda, Annie George Mathew, Dr. Niranjan Rajadhyaksha (each Article 280 ప్రకారం రాష్ట్రపతి నియామకం).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31011,
@@ -135,7 +135,7 @@ def seed():
          "C) 2027-2032",
          "D) 2024-2029",
          "B",
-         "16వ ఆర్థిక సంఘం సిఫారసులు 2026-2031 కాలానికి వర్తిస్తాయి. 16th Finance Commission recommendations cover the period 2026-2031.",
+         "16వ ఆర్థిక సంఘం (16th FC) సిఫారసులు **2026-2031 (5 సంవత్సరాలు)** వర్తిస్తాయి. **రాష్ట్రాల వాటా 41%** (15వ FC నుండి మారలేదు). మొత్తం grants ₹9.47 లక్షల కోట్లు; స్థానిక సంస్థలకు ₹7.91 లక్షల కోట్లు. **AP వాటా 4.22%** (15వ FC లో 4.05% నుండి పెరిగింది); **TS వాటా 2.17%**. కొత్త 'Urbanization Premium' ₹10,000 cr added.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India GDP / Economic Survey ──
@@ -146,7 +146,7 @@ def seed():
          "C) 7.4%",
          "D) 8.4%",
          "B",
-         "భారత ఆర్థిక సర్వే 2025-26 ప్రకారం 2024-25లో GDP వృద్ధి రేటు 6.4%. India's GDP growth rate in 2024-25 is 6.4% as per Economic Survey 2025-26.",
+         "**Economic Survey 2025-26** ప్రకారం **FY2024-25లో భారత GDP real growth = 6.4%** — FY2023-24 (8.2%) నుండి slowdown. **Economic Survey** = ప్రభుత్వం పార్లమెంటు బడ్జెట్ ముందురోజు సమర్పించే ఆర్థిక డాక్యుమెంట్ (Chief Economic Advisor ద్వారా రూపొందిస్తారు). భారత్ ప్రపంచంలో 5వ అతిపెద్ద ఆర్థిక వ్యవస్థ (~$4 trillion nominal GDP).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31013,
@@ -156,7 +156,7 @@ def seed():
          "C) 7.0-7.5%",
          "D) 8.0-8.5%",
          "B",
-         "భారత ఆర్థిక సర్వే 2025-26 ప్రకారం 2025-26లో GDP వృద్ధి 6.5-6.7% అంచనా. Economic Survey projects India's GDP growth at 6.5-6.7% for 2025-26.",
+         "Economic Survey 2025-26 ప్రకారం **FY2025-26 GDP వృద్ధి అంచనా = 6.5-6.7%** (real terms). Drivers: rural demand recovery (good monsoon), services sector resilience, capex push. Risks: global slowdown, geopolitical tensions (Russia-Ukraine, Middle East), oil price volatility. భారత్ ప్రపంచంలో **fastest-growing major economy**గా కొనసాగుతుంది.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── TFR Data ──
@@ -177,7 +177,7 @@ def seed():
          "C) 1.6",
          "D) 1.4",
          "C",
-         "NFHS ప్రకారం తెలంగాణ TFR 1.6, ఇది జాతీయ స్థాయి కంటే తక్కువ. Telangana's TFR is 1.6 as per NFHS, lower than national average.",
+         "**Telangana TFR = 1.6** (NFHS-5, 2019-21) — భారత జాతీయ సగటు 2.1 కంటే గణనీయంగా తక్కువ. **TFR** = సంతానోత్పత్తి రేటు (avg children per woman). 2.1 = replacement level; దాని కంటే తక్కువ → జనాభా తగ్గుదల ధోరణి. దక్షిణ భారత రాష్ట్రాలు (AP 1.7, TN 1.8, KL 1.8) దేశ సగటు కంటే తక్కువ. ఈ గ్యాప్ **2026 delimitation చర్చకు మూలం** — Population-based seat allocation వలన దక్షిణ రాష్ట్రాలు LS సీట్లు కోల్పోయే ప్రమాదం.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── WAVES 2025 ──
@@ -188,7 +188,7 @@ def seed():
          "C) హైదరాబాద్ / Hyderabad",
          "D) చెన్నై / Chennai",
          "A",
-         "WAVES 2025 (World Audio Visual & Entertainment Summit) ముంబైలో జరిగింది. WAVES 2025 was held in Mumbai.",
+         "**WAVES 2025** (**W**orld **A**udio **V**isual &amp; **E**ntertainment **S**ummit) — భారత తొలి అంతర్జాతీయ Media & Entertainment సమ్మిట్ — **Mumbai లో మే 1-4, 2025** న జరిగింది. PM Modi ప్రారంభించారు; ~80 దేశాలు పాల్గొన్నాయి. Theme: 'Connecting Creators, Connecting Countries'. భారత M&E పరిశ్రమ ~$28B (2024) → లక్ష్యం $100B (2030).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31017,
@@ -198,7 +198,7 @@ def seed():
          "C) Global Media for Peace",
          "D) Creative Economy First",
          "B",
-         "WAVES 2025 థీమ్: 'Connecting Creators, Connecting Countries'. మీడియా & ఎంటర్‌టైన్‌మెంట్ పరిశ్రమకు సంబంధించిన ఈ సమ్మేళనం ముంబైలో జరిగింది. WAVES 2025 theme was 'Connecting Creators, Connecting Countries'.",
+         "WAVES 2025 theme: **'Connecting Creators, Connecting Countries'**. **WAVES** = **W**orld **A**udio **V**isual &amp; **E**ntertainment **S**ummit — Mumbai లో మే 2025న భారత తొలి అంతర్జాతీయ M&E summit. PM Modi ప్రారంభించారు. VFX, Animation, Gaming, OTT, Music, Films, Broadcasting పెవిలియన్లు; Bharat Pavilion + Creator Awards. M&E పరిశ్రమ 2030 నాటికి $100B లక్ష్యం.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Prithvi Missile ──
@@ -209,7 +209,7 @@ def seed():
          "C) 316 కి.మీ.",
          "D) 500 కి.మీ.",
          "C",
-         "డిసెంబర్ 2025లో DRDO పరీక్షించిన ప్రృథ్వీ-3 బాలిస్టిక్ క్షిపణి పరిధి 316 కి.మీ. The Prithvi-3 ballistic missile tested by DRDO in December 2025 has a range of 316 km.",
+         "**Prithvi-3 (Dhanush)** = Prithvi క్షిపణి కుటుంబ నావికా variant. **Range = 316 km**, payload 250-500 kg (conventional/nuclear). DRDO **December 2025**లో పరీక్ష చేసింది. **Prithvi family** = short-range surface-to-surface ballistic missiles (Prithvi-I: 150 km, Prithvi-II: 350 km, Prithvi-III/Dhanush: 350-500 km naval variant). భారత nuclear triad లో భాగం (పక్కన Agni land + K-15/K-4 submarine missiles).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── NavIC / PSLV ──
@@ -220,7 +220,7 @@ def seed():
          "C) SLS",
          "D) SSLV",
          "B",
-         "జనవరి 2026లో PSLV ద్వారా NavIC-16 ఉపగ్రహాన్ని (IRNSS-16) ప్రయోగించారు. The NavIC-16 (IRNSS-16) satellite was launched by PSLV in January 2026.",
+         "**NavIC-16 (IRNSS-1K)** = **PSLV-C58** ద్వారా **జనవరి 2026** లో Satish Dhawan Space Centre (Sriharikota) నుండి ప్రయోగం. **NavIC** = **Nav**igation with **I**ndian **C**onstellation — భారత regional GNSS (Global Navigation Satellite System) — 7 ఉపగ్రహాల constellation; భారత్ + 1500 km సుత్తు ప్రాంతం cover. **IRNSS** = Indian Regional Navigation Satellite System (NavIC కి original నామం). GPS (USA), GLONASS (Russia), Galileo (EU), BeiDou (China) లకు సమాన.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── MILAN 2026 ──
@@ -231,7 +231,7 @@ def seed():
          "C) విశాఖపట్నం / Visakhapatnam",
          "D) చెన్నై / Chennai",
          "C",
-         "MILAN 2026 నావికా విన్యాసాలు విశాఖపట్నంలో జరిగాయి. India's biennial multilateral naval exercise MILAN 2026 was conducted at Visakhapatnam.",
+         "**MILAN 2026** నావికా విన్యాసాలు = **Visakhapatnam (Feb 17-25, 2026)**. **MILAN** = **M**ultilateral **I**nteraction (acronym shortened over years; originally 'Multilateral Naval Exercise'). భారత Navy host చేసే **biennial flagship multilateral naval exercise** — Naval ties + maritime cooperation లక్ష్యం. **MILAN 2026 special**: IFR (International Fleet Review) + IONS Symposium తో కలిపి **first joint hosting** (74 దేశాలు, 71 యుద్ధ నౌకలు). Theme: 'United Through Oceans'. President Murmu చీఫ్ గెస్ట్.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31021,
