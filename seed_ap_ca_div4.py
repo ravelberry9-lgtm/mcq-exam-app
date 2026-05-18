@@ -23,6 +23,15 @@ AUDIT CHANGES (2026-05-18):
    but correct is ఏప్రిల్ 2026. Corrected to "b".
 7. FIXED wrong potti_sriramulu section: "విగ్రహం అంకితం లక్ష్య తేదీ?" answer "b"
    = మార్చి 16, 2026 — this is correct. No change needed.
+8. FIXED: CII 30th Summit countries — was "61 దేశాలు" (wrong); HTML notes say
+   45 దేశాలు. Corrected answer in 2 questions + SECTIONS_JSON audio.
+9. FIXED: "AP Quantum Policy కానిది?" — negated question was confusing; rewritten
+   as positive question "ఏ నెలలో విడుదలైంది?" with answer "b" (నవంబర్ 2025).
+10. FIXED: Yogandhra MCQs in div3/div3_enriched — participant count was "5 లక్షల"
+    (target figure, NOT actual); HTML ground truth = 3.01 లక్షలు (3,00,105) with
+    Guinness confirmation. Corrected answer from "d" to "c" in both files.
+11. FIXED: "2014 AP విభజన తర్వాత ఎన్ని జిల్లాలు?" — answer was "c" (15 జిల్లాలు)
+    but HTML notes clearly state 13 జిల్లాలు. Corrected to "b" (13 జిల్లాలు).
 
 Sources: Eenadu Pratibha + Sakshi Education verified | AP Government press releases
 Third revision — complete rewrite to match HTML v3 with all corrections:
@@ -45,7 +54,7 @@ SECTIONS_JSON = [
     {
         "title": "CII 30వ పార్టనర్‌షిప్ సమ్మిట్ — విశాఖపట్నం, నవంబర్ 14-15, 2025",
         "sub": "30th CII Partnership Summit | 61 Countries | ₹10 Lakh Crore investment target | VP inaugurated",
-        "audio": "నవంబర్ 14-15, 2025న విశాఖపట్నంలో 30వ CII Partnership Summit జరిగింది. CII అంటే Confederation of Indian Industry. భారత ఉప రాష్ట్రపతి సి.పి. రాధాకృష్ణన్ ప్రారంభించారు. కేంద్ర మంత్రి పీయూష్ గోయల్ అధ్యక్షత; CM చంద్రబాబు సహ అధ్యక్షత. 61 దేశాల నుండి 2000 పైగా delegates పాల్గొన్నారు. ₹10 లక్షల కోట్ల పెట్టుబడులు ఆకర్షించే లక్ష్యం నిర్ణయించారు."
+        "audio": "నవంబర్ 14-15, 2025న విశాఖపట్నంలో 30వ CII Partnership Summit జరిగింది. CII అంటే Confederation of Indian Industry. భారత ఉప రాష్ట్రపతి సి.పి. రాధాకృష్ణన్ ప్రారంభించారు. కేంద్ర మంత్రి పీయూష్ గోయల్ అధ్యక్షత; CM చంద్రబాబు సహ అధ్యక్షత. 45 దేశాల నుండి 2000 పైగా delegates పాల్గొన్నారు. ₹10 లక్షల కోట్ల పెట్టుబడులు ఆకర్షించే లక్ష్యం నిర్ణయించారు."
     },
     {
         "title": "AP 28 జిల్లాలు — పోలవరం & మర్కాపురం (జనవరి 1, 2026)",
@@ -142,8 +151,8 @@ MCQ_DATA = [
     (1, 2,
      "CII 30వ Partnership Summit 2025లో ఎన్ని దేశాలు పాల్గొన్నాయి?",
      "61 దేశాలు", "45 దేశాలు", "52 దేశాలు", "74 దేశాలు",
-     "a",
-     "CII 30వ Partnership Summit 2025లో 61 దేశాల నుండి 2,000 పైగా delegates పాల్గొన్నారు. ₹10 లక్షల కోట్ల పెట్టుబడులు ఆకర్షించే లక్ష్యం నిర్ణయించారు."),
+     "b",
+     "CII 30వ Partnership Summit 2025లో 45 దేశాల నుండి 2,000 పైగా delegates పాల్గొన్నారు. ₹10 లక్షల కోట్ల పెట్టుబడులు ఆకర్షించే లక్ష్యం నిర్ణయించారు."),
 
     (1, 3,
      "CII 30వ Partnership Summit 2025లో ఏ మొత్తం పెట్టుబడులు ఆకర్షించే లక్ష్యం నిర్ణయించారు?",
@@ -320,10 +329,10 @@ MCQ_DATA = [
      "Auto Driverla Sevalo పథకంలో 2.9 లక్షల మంది అర్హులైన drivers లబ్ధిదారులు. Auto, Cab, Maxi Cab drivers అందరికీ వర్తిస్తుంది."),
 
     (0, 3,
-     "AP Quantum Computing Policy విడుదల కానిది ఏ నెలలో?",
+     "AP Quantum Computing Policy ఏ నెలలో విడుదలైంది?",
      "సెప్టెంబర్ 2025", "నవంబర్ 2025", "జనవరి 2026", "ఫిబ్రవరి 2026",
      "b",
-     "నవంబర్ 2025లో AP ప్రభుత్వం AP Quantum Computing Policy విడుదల చేసింది. ఇది కవాంటం టెక్నాలజీ రంగంలో AP ను గ్లోబల్ నేతృత్వానికి తీసుకెళ్లాలని రూపకల్పన చేయబడింది."),
+     "AP Quantum Computing Policy నవంబర్ 2025లో విడుదలైంది. ఇది Quantum Valley కి సంస్థాగత framework అందించింది."),
 
     (1, 2,
      "CII పూర్తి రూపం ఏమిటి?",
@@ -455,15 +464,15 @@ MCQ_DATA = [
 
     (1, 2,
      "CII సమ్మిట్‌కు ఎన్ని దేశాల నుండి delegates హాజరయ్యారు?",
-     "41 దేశాలు", "51 దేశాలు", "61 దేశాలు", "71 దేశాలు",
-     "c",
-     "61 దేశాల నుండి 2000 పైగా ప్రతినిధులు హాజరయ్యారు. అంతర్జాతీయ సహకారానికి ఈ సమ్మిట్ ముఖ్యమైన వేదిక."),
+     "41 దేశాలు", "45 దేశాలు", "61 దేశాలు", "71 దేశాలు",
+     "b",
+     "45 దేశాల నుండి 2000 పైగా ప్రతినిధులు హాజరయ్యారు. అంతర్జాతీయ సహకారానికి ఈ సమ్మిట్ ముఖ్యమైన వేదిక."),
 
     (2, 3,
      "2014 AP విభజన తర్వాత ఎన్ని జిల్లాలు?",
      "10 జిల్లాలు", "13 జిల్లాలు", "15 జిల్లాలు", "18 జిల్లాలు",
-     "c",
-     "13 జిల్లాలతో AP ప్రారంభమైంది. 2022 ఏప్రిల్ కు 26, 2026 జనవరి కు 28 జిల్లాలు."),
+     "b",
+     "2014 విభజన తర్వాత Residuary AP లో 13 జిల్లాలు మాత్రమే ఉన్నాయి. YSRCP 2022 ఏప్రిల్ 4న 13 → 26 జిల్లాలకు విభజించింది; TDP 2026 జనవరి 1న 26 → 28 జిల్లాలకు పెంచింది."),
 
     (3, 3,
      "పొట్టి శ్రీరాముల విగ్రహం ఎత్తు 58 అడుగులు ఎందుకు నిర్ణయించారు?",
