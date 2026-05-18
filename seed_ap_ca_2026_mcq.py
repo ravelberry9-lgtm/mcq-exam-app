@@ -1,3 +1,14 @@
+"""
+seed_ap_ca_2026_mcq.py — AP Current Affairs 2026 MCQs (Q32001–Q32200)
+AP exam only — Telangana MCQs already removed from previous audit.
+
+AUDIT CHANGES (2026-05-18):
+1. FIXED Q32051: NTR Bharosa pension was wrong (Rs 3,000), corrected to Rs 4,000/month
+   basic pension for elderly/widows. Source: div02_govt_schemes.html ground truth.
+2. FIXED Q32064: Same NTR Bharosa pension error — Rs 3,000 → Rs 4,000/month.
+3. FIXED Q32025: AP districts count was wrong (25) — corrected to 28 (from Jan 2026,
+   after Dec 29 2025 cabinet added Polavaram + Markapur). Source: div01 HTML.
+"""
 import os
 import sys
 
@@ -275,14 +286,15 @@ def seed():
          "AP_HC", "AP_Current_Affairs_2026"),
 
         # ── AP Districts ──
+        # FIXED 32025: AP has 28 districts as of Jan 2026 (26 → 28 after Dec 29 2025 cabinet adding Polavaram + Markapur).
         (32025,
-         "ప్రస్తుతం ఆంధ్రప్రదేశ్‌లో ఎన్ని జిల్లాలు ఉన్నాయి?\n(How many districts are there in Andhra Pradesh currently?)",
+         "జనవరి 2026 నుండి ఆంధ్రప్రదేశ్‌లో ఎన్ని జిల్లాలు ఉన్నాయి?\n(How many districts does Andhra Pradesh have from January 2026?)",
          "A) 13",
-         "B) 17",
-         "C) 25",
-         "D) 26",
-         "C",
-         "ప్రస్తుతం ఆంధ్రప్రదేశ్‌లో 25 జిల్లాలు ఉన్నాయి. Currently there are 25 districts in Andhra Pradesh.",
+         "B) 26",
+         "C) 27",
+         "D) 28",
+         "D",
+         "డిసెంబరు 29, 2025 మంత్రివర్గ నిర్ణయం తర్వాత పోలవరం + మార్కాపురం కొత్త జిల్లాలు ఏర్పడ్డాయి, జిల్లాల సంఖ్య 26 నుండి 28కి పెరిగింది. After Dec 29 2025 cabinet decision adding Polavaram and Markapur, AP district count increased from 26 to 28.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
         # REMOVED 32026: Telangana districts count — Telangana-specific, removed.
@@ -471,17 +483,17 @@ def seed():
          "ఆంధ్రప్రదేశ్ ప్రభుత్వం విశాఖ స్టీల్ ప్లాంట్ ప్రైవేటీకరణను వ్యతిరేకిస్తూ కేంద్రంపై ఒత్తిడి తెస్తోంది. AP government opposes Vizag Steel Plant privatization and pressures the Centre.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
-        # ── AP 2024 Super Six Promises ──
-        # FIXED 32051: Replaced "Navaratnalu" framing with correct "Super Six" framing.
-        # TDP's 2024 Super Six included: welfare pension Rs 3,000, free bus pass for women, Amma Vodi, etc.
+        # ── AP 2024 NTR Bharosa Pension ──
+        # FIXED 32051: NTR Bharosa basic pension is Rs 4,000/month per div02 HTML ground truth.
+        # Earlier comment was wrong (Rs 3,000). Corrected answer to D (Rs 4,000).
         (32051,
-         "చంద్రబాబు నాయుడు 2024 ఎన్నికల్లో ఇచ్చిన 'సూపర్ సిక్స్' హామీల్లో NTR భరోసా పెన్షన్ ఎంత నిర్ణయించారు?\n(What pension amount was fixed under NTR Bharosa as part of Chandrababu's 2024 Super Six?)",
+         "TDP ప్రభుత్వం 2024లో ప్రారంభించిన NTR భరోసా పెన్షన్ (వృద్ధులు/వితంతువులు) basic మొత్తం ఎంత?\n(What is the basic NTR Bharosa pension amount for elderly/widows launched by TDP in 2024?)",
          "A) రూ.1,500",
          "B) రూ.2,000",
          "C) రూ.3,000",
-         "D) రూ.5,000",
-         "C",
-         "TDP-JSP-BJP కూటమి 2024 'సూపర్ సిక్స్' హామీల ప్రకారం NTR భరోసా పెన్షన్ రూ.3,000 నిర్ణయించారు. Under TDP-JSP-BJP coalition's 2024 Super Six promises, NTR Bharosa pension was fixed at Rs 3,000.",
+         "D) రూ.4,000",
+         "D",
+         "NTR భరోసా basic pension రూ.4,000/నెల (వృద్ధులు, వితంతువులు తదితరులు). పూర్తి వికలాంగులకు రూ.15,000/నెల. NTR Bharosa basic pension is Rs 4,000/month. Fully disabled persons get Rs 15,000/month.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
         # REMOVED 32052: Telangana Medigadda barrage — Telangana-specific, removed.
@@ -572,14 +584,15 @@ def seed():
          "AP_HC", "AP_Current_Affairs_2026"),
 
         # ── AP Pensions ──
+        # FIXED 32064: NTR Bharosa basic pension is Rs 4,000/month per div02 HTML ground truth, NOT Rs 3,000.
         (32064,
-         "ఆంధ్రప్రదేశ్‌లో NTR భరోసా పెన్షన్ ప్రస్తుతం ఎంత?\n(Current amount of NTR Bharosa pension in AP?)",
+         "ఆంధ్రప్రదేశ్‌లో NTR భరోసా పెన్షన్ (basic — వృద్ధులు/వితంతువులు) ప్రస్తుతం ఎంత?\n(Current basic NTR Bharosa pension amount in AP for elderly/widows?)",
          "A) రూ.1,000",
          "B) రూ.2,000",
          "C) రూ.3,000",
-         "D) రూ.5,000",
-         "C",
-         "ఆంధ్రప్రదేశ్‌లో NTR భరోసా పెన్షన్ రూ.3,000 గా నిర్ణయించారు. NTR Bharosa pension in AP is Rs 3,000.",
+         "D) రూ.4,000",
+         "D",
+         "ఆంధ్రప్రదేశ్‌లో NTR భరోసా basic pension రూ.4,000/నెల (వృద్ధులు, వితంతువులు తదితరులు). పూర్తి వికలాంగులకు రూ.15,000/నెల. NTR Bharosa basic pension in AP is Rs 4,000/month; fully disabled get Rs 15,000/month.",
          "AP_HC", "AP_Current_Affairs_2026"),
 
         # REMOVED 32065: Telangana Asara pension — Telangana-specific, removed.
