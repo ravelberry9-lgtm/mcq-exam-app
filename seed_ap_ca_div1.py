@@ -31,42 +31,275 @@ SECTIONS_JSON = [
     {
         "title": "2024 AP అసెంబ్లీ ఎన్నికలు",
         "sub": "AP Assembly Elections 2024 — Basic Details",
-        "audio": "2024 ఆంధ్రప్రదేశ్ శాసనసభ ఎన్నికలు మే 13, 2024న జరిగాయి. ఫలితాలు జూన్ 4, 2024న ప్రకటించారు. మొత్తం 175 అసెంబ్లీ సీట్లకు ఎన్నికలు జరిగాయి. మెజారిటీ మార్క్ 88. పోలింగ్ శాతం 81.86%. దార్సి నియోజకవర్గంలో అత్యధిక పోలింగ్ 90.91%. తిరుపతి నియోజకవర్గంలో అత్యల్ప పోలింగ్ 63.32%. ఇది లోక్‌సభ ఎన్నికలతో పాటు ఒకేసారి జరిగింది."
+        "audio": "2024 ఆంధ్రప్రదేశ్ శాసనసభ ఎన్నికలు మే 13, 2024న జరిగాయి. ఫలితాలు జూన్ 4, 2024న ప్రకటించారు. మొత్తం 175 అసెంబ్లీ సీట్లకు ఎన్నికలు జరిగాయి. మెజారిటీ మార్క్ 88. పోలింగ్ శాతం 81.86%. దార్సి నియోజకవర్గంలో అత్యధిక పోలింగ్ 90.91%. తిరుపతి నియోజకవర్గంలో అత్యల్ప పోలింగ్ 63.32%. ఇది లోక్‌సభ ఎన్నికలతో పాటు ఒకేసారి జరిగింది.",
+        "html": """<div class="concept-cover">
+  <h1>2024 AP Assembly Elections &nbsp;<span class="bi-te">/ 2024 AP అసెంబ్లీ ఎన్నికలు</span></h1>
+  <div class="sub">Single phase • May 13, 2024 • 175 seats • Held with Lok Sabha</div>
+</div>
+
+<div class="section-hdr">Election Schedule / ఎన్నికల షెడ్యూల్</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Total seats</td><td>175 Assembly + 25 Lok Sabha</td><td class="bi-te">175 అసెంబ్లీ + 25 లోక్‌సభ</td></tr>
+<tr><td>Polling date</td><td>May 13, 2024 (single phase)</td><td class="bi-te">మే 13, 2024 (ఒకే విడత)</td></tr>
+<tr><td>Counting</td><td>June 4, 2024</td><td class="bi-te">జూన్ 4, 2024</td></tr>
+<tr><td>Held with</td><td>18th Lok Sabha Elections</td><td class="bi-te">18వ లోక్‌సభ ఎన్నికలతో పాటు</td></tr>
+<tr><td>Majority mark</td><td>88 seats</td><td class="bi-te">మెజారిటీ మార్క్: 88</td></tr>
+<tr><td>Total voters</td><td>~4.09 crore (~40.9 million)</td><td class="bi-te">~4.09 కోట్ల ఓటర్లు</td></tr>
+</table>
+
+<div class="section-hdr">Polling Statistics / పోలింగ్ గణాంకాలు</div>
+<table class="key-table">
+<tr><th>Metric</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Overall turnout</td><td><b>81.86%</b></td><td class="bi-te">మొత్తం పోలింగ్ శాతం</td></tr>
+<tr><td>Highest turnout constituency</td><td>Darsi (Prakasam) — 90.91%</td><td class="bi-te">దార్సి, ప్రకాశం జిల్లా</td></tr>
+<tr><td>Lowest turnout constituency</td><td>Tirupati — 63.32%</td><td class="bi-te">తిరుపతి</td></tr>
+<tr><td>Postal ballots</td><td>~4.5 lakh (employees, defence, NRI)</td><td class="bi-te">పోస్టల్ బ్యాలెట్లు</td></tr>
+</table>
+
+<p><b>Result preview:</b> The TDP-JSP-BJP coalition won 164 of 175 Assembly seats — a record sweep. YSRCP collapsed from 151 (2019) to 11 seats. Chandrababu Naidu (TDP) sworn in as 17th AP CM on June 12, 2024 (4th term).</p>
+<p class="bi-te">కూటమి (TDP-JSP-BJP) 164 సీట్లు గెలిచి భారీ విజయం సాధించింది. YSRCP 151 → 11 సీట్లకు పడిపోయింది. చంద్రబాబు 4వసారి AP CM గా జూన్ 12, 2024న ప్రమాణ స్వీకారం చేశారు.</p>"""
     },
     {
         "title": "కూటమి విజయం",
         "sub": "TDP-JSP-BJP Alliance Victory — Seat Count & Vote Share",
-        "audio": "TDP-JSP-BJP కూటమి మొత్తం 164 సీట్లు గెలుచుకుంది. TDP 144 నియోజకవర్గాల్లో 135 సీట్లు గెలిచింది. JSP 21 నియోజకవర్గాల్లో పోటీ చేసి 21 సీట్లూ గెలిచింది (100% strike rate!). BJP 10 నియోజకవర్గాల్లో 8 సీట్లు గెలిచింది. కూటమి మొత్తం ఓట్ల శాతం 53% కంటే ఎక్కువ. YSRCP 175 సీట్లు పోటీ చేసి కేవలం 11 సీట్లు గెలిచింది. 2019లో YSRCP 151 సీట్లు గెలిచింది."
+        "audio": "TDP-JSP-BJP కూటమి మొత్తం 164 సీట్లు గెలుచుకుంది. TDP 144 నియోజకవర్గాల్లో 135 సీట్లు గెలిచింది. JSP 21 నియోజకవర్గాల్లో పోటీ చేసి 21 సీట్లూ గెలిచింది (100% strike rate!). BJP 10 నియోజకవర్గాల్లో 8 సీట్లు గెలిచింది. కూటమి మొత్తం ఓట్ల శాతం 53% కంటే ఎక్కువ. YSRCP 175 సీట్లు పోటీ చేసి కేవలం 11 సీట్లు గెలిచింది. 2019లో YSRCP 151 సీట్లు గెలిచింది.",
+        "html": """<div class="concept-cover">
+  <h1>TDP-JSP-BJP Alliance Victory &nbsp;<span class="bi-te">/ కూటమి విజయం</span></h1>
+  <div class="sub">164/175 seats • 53.7% vote share • Historic sweep</div>
+</div>
+
+<div class="section-hdr">Party-wise Seat Results / పార్టీవారీ ఫలితాలు</div>
+<table class="key-table">
+<tr><th>Party</th><th>Contested</th><th>Won</th><th>Strike rate</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>TDP</b></td><td>144</td><td><b>135</b></td><td>93.75%</td><td class="bi-te">TDP — 135 సీట్లు</td></tr>
+<tr><td><b>JSP</b></td><td>21</td><td><b>21</b></td><td><b>100%</b></td><td class="bi-te">JSP — 100% స్ట్రైక్ రేట్</td></tr>
+<tr><td><b>BJP</b></td><td>10</td><td><b>8</b></td><td>80.00%</td><td class="bi-te">BJP — 8 సీట్లు</td></tr>
+<tr><td><b>Alliance total</b></td><td>175</td><td><b>164</b></td><td>93.71%</td><td class="bi-te"><b>కూటమి మొత్తం 164</b></td></tr>
+<tr><td>YSRCP</td><td>175</td><td>11</td><td>6.29%</td><td class="bi-te">YSRCP 175 లో 11 మాత్రమే</td></tr>
+<tr><td>INC + Others</td><td>175+</td><td>0</td><td>0%</td><td class="bi-te">కాంగ్రెస్ + ఇతరులు 0</td></tr>
+</table>
+
+<div class="section-hdr">Vote-Share Comparison / ఓట్ల శాతం పోలిక</div>
+<table class="key-table">
+<tr><th>Party</th><th>2019 vote%</th><th>2024 vote%</th><th>Swing</th></tr>
+<tr><td>TDP</td><td>39.17%</td><td>45.60%</td><td>+6.43</td></tr>
+<tr><td>JSP</td><td>5.53%</td><td>~6.25%</td><td>+0.72</td></tr>
+<tr><td>BJP</td><td>0.84%</td><td>~2.83%</td><td>+1.99</td></tr>
+<tr><td><b>Alliance</b></td><td>~45.5%</td><td><b>~53.68%</b></td><td>+8.18</td></tr>
+<tr><td>YSRCP</td><td>49.95%</td><td>39.37%</td><td>-10.58</td></tr>
+</table>
+
+<p><b>Why a record sweep:</b> The TDP-JSP-BJP seat-sharing was precisely tuned (TDP 144, JSP 21, BJP 10) with no overlap. Combined with the YSRCP's ~10-point vote loss and high anti-incumbency, the alliance converted vote-share into a seat avalanche. Notably, the YSRCP's 39.37% vote (still 2nd highest) yielded just 11 seats — a textbook FPTP collapse.</p>
+<p class="bi-te">కూటమి సీట్ల కేటాయింపు నిర్దుష్టంగా (TDP 144 + JSP 21 + BJP 10 = 175) ఏ సీటులోనూ overlap లేకుండా జరిగింది. YSRCP వ్యతిరేకత మరియు 10 శాతం ఓట్ల పతనంతో కూటమి సీట్లుగా మారింది. YSRCP 39.37% ఓట్లు ఉన్నా కేవలం 11 సీట్లు — FPTP వ్యవస్థలో classic collapse.</p>"""
     },
     {
         "title": "లోక్‌సభ ఫలితాలు AP",
         "sub": "Lok Sabha 2024 Results — AP (25 Seats)",
-        "audio": "ఆంధ్రప్రదేశ్ నుండి మొత్తం 25 లోక్‌సభ స్థానాలు ఉన్నాయి. TDP 17 స్థానాల్లో పోటీ చేసి 16 గెలిచింది. JSP 2 స్థానాల్లో 2 గెలిచింది (కాకినాడ: తంగెళ్ళ ఉదయ్ శ్రీనివాస్; మచిలీపట్నం: వల్లభనేని బాలశౌరి). BJP 6 స్థానాల్లో 3 గెలిచింది. కూటమి మొత్తం 21 లోక్‌సభ స్థానాలు గెలిచింది. YSRCP 25 స్థానాల్లో 4 మాత్రమే గెలిచింది. పవన్ కళ్యాణ్ పిఠాపురం అసెంబ్లీ MLA మాత్రమే — ఆయన లోక్‌సభ ఎన్నికల్లో పోటీ చేయలేదు. పిఠాపురం పరిధిలో కాకినాడ లోక్‌సభ స్థానంలో JSP తంగెళ్ళ ఉదయ్ శ్రీనివాస్ గెలిచారు."
+        "audio": "ఆంధ్రప్రదేశ్ నుండి మొత్తం 25 లోక్‌సభ స్థానాలు ఉన్నాయి. TDP 17 స్థానాల్లో పోటీ చేసి 16 గెలిచింది. JSP 2 స్థానాల్లో 2 గెలిచింది (కాకినాడ: తంగెళ్ళ ఉదయ్ శ్రీనివాస్; మచిలీపట్నం: వల్లభనేని బాలశౌరి). BJP 6 స్థానాల్లో 3 గెలిచింది. కూటమి మొత్తం 21 లోక్‌సభ స్థానాలు గెలిచింది. YSRCP 25 స్థానాల్లో 4 మాత్రమే గెలిచింది. పవన్ కళ్యాణ్ పిఠాపురం అసెంబ్లీ MLA మాత్రమే — ఆయన లోక్‌సభ ఎన్నికల్లో పోటీ చేయలేదు. పిఠాపురం పరిధిలో కాకినాడ లోక్‌సభ స్థానంలో JSP తంగెళ్ళ ఉదయ్ శ్రీనివాస్ గెలిచారు.",
+        "html": """<div class="concept-cover">
+  <h1>Lok Sabha 2024 — AP Results &nbsp;<span class="bi-te">/ లోక్‌సభ ఫలితాలు AP</span></h1>
+  <div class="sub">25 LS seats • Alliance won 21 • YSRCP won 4</div>
+</div>
+
+<div class="section-hdr">Seat Allocation & Results / సీట్ల కేటాయింపు మరియు ఫలితాలు</div>
+<table class="key-table">
+<tr><th>Party</th><th>Contested</th><th>Won</th><th>Strike rate</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>TDP</b></td><td>17</td><td><b>16</b></td><td>94.12%</td><td class="bi-te">TDP — 16 సీట్లు</td></tr>
+<tr><td><b>JSP</b></td><td>2</td><td><b>2</b></td><td>100%</td><td class="bi-te">JSP — Kakinada + Machilipatnam</td></tr>
+<tr><td><b>BJP</b></td><td>6</td><td><b>3</b></td><td>50%</td><td class="bi-te">BJP — 3 సీట్లు</td></tr>
+<tr><td><b>Alliance total</b></td><td>25</td><td><b>21</b></td><td>84%</td><td class="bi-te"><b>కూటమి 21</b></td></tr>
+<tr><td>YSRCP</td><td>25</td><td>4</td><td>16%</td><td class="bi-te">YSRCP 4 (2019: 22)</td></tr>
+</table>
+
+<div class="section-hdr">JSP Lok Sabha Winners / JSP లోక్‌సభ విజేతలు</div>
+<table class="key-table">
+<tr><th>Constituency</th><th>Winner</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Kakinada</td><td>Tangella Uday Srinivas</td><td class="bi-te">తంగెళ్ళ ఉదయ్ శ్రీనివాస్</td></tr>
+<tr><td>Machilipatnam</td><td>Vallabhaneni Balashowry</td><td class="bi-te">వల్లభనేని బాలశౌరి</td></tr>
+</table>
+
+<p><b>Pawan Kalyan's situation:</b> JSP chief Pawan Kalyan contested ONLY the Pithapuram Assembly seat (won) — he did NOT contest any Lok Sabha seat in 2024. Within Pithapuram's LS-overlap area, the Kakinada Lok Sabha seat went to fellow JSP candidate Tangella Uday Srinivas.</p>
+<p class="bi-te">పవన్ కళ్యాణ్ పిఠాపురం అసెంబ్లీ స్థానం మాత్రమే పోటీ చేసి గెలిచారు — ఆయన లోక్‌సభ ఎన్నికల్లో పోటీ చేయలేదు. పిఠాపురం పరిధిలోని కాకినాడ లోక్‌సభ స్థానంలో JSP తంగెళ్ళ ఉదయ్ శ్రీనివాస్ గెలిచారు.</p>
+
+<p><b>National impact:</b> The TDP became the 3rd-largest party in NDA at the Centre with its 16 LS seats (after BJP 240 and JD-U 12), giving Naidu a crucial role in coalition arithmetic. Two TDP MPs joined the Union Cabinet — K. Ram Mohan Naidu (Civil Aviation) and Pemmasani Chandra Sekhar (MoS, Rural Development).</p>
+<p class="bi-te">జాతీయ స్థాయిలో TDP 16 LS సీట్లతో NDA లో 3వ అతిపెద్ద పార్టీగా మారింది. K. రామ్ మోహన్ నాయుడు (పౌర విమానయాన మంత్రి) మరియు పెమ్మసాని చంద్రశేఖర్ (గ్రామీణాభివృద్ధి సహాయ మంత్రి) కేంద్ర కేబినెట్ లో చేరారు.</p>"""
     },
     {
         "title": "కేబినెట్ నిర్మాణం",
         "sub": "Cabinet Formation — Composition & Key Dates",
-        "audio": "నాల్గవ నాయుడు మంత్రివర్గం జూన్ 12, 2024న శపథ స్వీకారం చేసింది. జూన్ 14, 2024న పోర్ట్‌ఫోలియో పంపిణీ జరిగింది. మొత్తం 25 మంత్రులు (CM తో సహా). TDP నుండి 21, JSP నుండి 3, BJP నుండి 1 మంత్రి. 17 మంది తొలిసారి మంత్రులు (first-timers). 3 మంది మహిళా మంత్రులు. 8 మంది BC వర్గాల మంత్రులు. 2 SC, 1 ST, 1 Muslim మంత్రులు."
+        "audio": "నాల్గవ నాయుడు మంత్రివర్గం జూన్ 12, 2024న శపథ స్వీకారం చేసింది. జూన్ 14, 2024న పోర్ట్‌ఫోలియో పంపిణీ జరిగింది. మొత్తం 25 మంత్రులు (CM తో సహా). TDP నుండి 21, JSP నుండి 3, BJP నుండి 1 మంత్రి. 17 మంది తొలిసారి మంత్రులు (first-timers). 3 మంది మహిళా మంత్రులు. 8 మంది BC వర్గాల మంత్రులు. 2 SC, 1 ST, 1 Muslim మంత్రులు.",
+        "html": """<div class="concept-cover">
+  <h1>Cabinet Formation 2024 &nbsp;<span class="bi-te">/ కేబినెట్ నిర్మాణం</span></h1>
+  <div class="sub">25 ministers (incl. CM) • Sworn-in Jun 12 • Portfolios Jun 14</div>
+</div>
+
+<div class="section-hdr">Key Dates / కీలక తేదీలు</div>
+<table class="key-table">
+<tr><th>Event</th><th>Date</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Election results</td><td>June 4, 2024</td><td class="bi-te">ఎన్నికల ఫలితాలు</td></tr>
+<tr><td>4th Naidu cabinet oath</td><td>June 12, 2024</td><td class="bi-te">శపథ స్వీకారం</td></tr>
+<tr><td>Portfolio allocation</td><td>June 14, 2024</td><td class="bi-te">పోర్ట్‌ఫోలియో పంపిణీ</td></tr>
+<tr><td>Venue</td><td>Kesarapalli, NTR District (near Vijayawada)</td><td class="bi-te">కేసరపల్లి, NTR జిల్లా</td></tr>
+</table>
+
+<div class="section-hdr">Cabinet Composition / కేబినెట్ కూర్పు</div>
+<table class="key-table">
+<tr><th>Category</th><th>Count</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Total ministers (incl. CM)</td><td><b>25</b></td><td class="bi-te">మొత్తం 25 మంత్రులు</td></tr>
+<tr><td>From TDP</td><td>21</td><td class="bi-te">TDP నుండి</td></tr>
+<tr><td>From JSP</td><td>3</td><td class="bi-te">JSP నుండి</td></tr>
+<tr><td>From BJP</td><td>1</td><td class="bi-te">BJP నుండి (సత్యకుమార్ యాదవ్)</td></tr>
+<tr><td>First-time ministers</td><td>17</td><td class="bi-te">తొలిసారి మంత్రులు</td></tr>
+<tr><td>Women ministers</td><td>3</td><td class="bi-te">మహిళా మంత్రులు</td></tr>
+<tr><td>BC ministers</td><td>8</td><td class="bi-te">BC వర్గాల మంత్రులు</td></tr>
+<tr><td>SC / ST / Muslim</td><td>2 / 1 / 1</td><td class="bi-te">SC / ST / ముస్లిం</td></tr>
+</table>
+
+<p><b>Social engineering:</b> The cabinet had the highest BC representation (8 out of 25 = 32%) in any AP cabinet to date — a deliberate signal aligned with the alliance's election messaging. The single Muslim minister is Nasyam Mohammad Farooq (TDP, Nandyal) holding Law & Justice + Minority Welfare.</p>
+<p class="bi-te">8 మంది BC మంత్రులు (32%) — AP చరిత్రలో అతిపెద్ద BC ప్రాతినిధ్యం. ఏకైక ముస్లిం మంత్రి నాస్యం మొహమ్మద్ ఫారూఖ్ (నంద్యాల) Law & Justice, Minority Welfare పోర్ట్‌ఫోలియో నిర్వహిస్తారు.</p>"""
     },
     {
         "title": "CM & DCM — పదవులు",
         "sub": "Chief Minister & Deputy CM Details",
-        "audio": "ముఖ్యమంత్రి నల్లపాటి చంద్రబాబు నాయుడు కుప్పం నియోజకవర్గం నుండి. ఇది ఆయన నాల్గవ సారి ముఖ్యమంత్రి పదవి. TDP స్థాపకుడు NTR (నందమూరి తారక రామారావు) 1982లో స్థాపించారు. CBN GAD, Law & Order, Public Enterprises నిర్వహిస్తారు. ఉపముఖ్యమంత్రి పవన్ కళ్యాణ్ JSP నాయకుడు, పిఠాపురం నుండి. పంచాయతీ రాజ్, గ్రామీణాభివృద్ధి, అడవులు, పర్యావరణం, సైన్స్ అండ్ టెక్నాలజీ పోర్ట్‌ఫోలియో."
+        "audio": "ముఖ్యమంత్రి నల్లపాటి చంద్రబాబు నాయుడు కుప్పం నియోజకవర్గం నుండి. ఇది ఆయన నాల్గవ సారి ముఖ్యమంత్రి పదవి. TDP స్థాపకుడు NTR (నందమూరి తారక రామారావు) 1982లో స్థాపించారు. CBN GAD, Law & Order, Public Enterprises నిర్వహిస్తారు. ఉపముఖ్యమంత్రి పవన్ కళ్యాణ్ JSP నాయకుడు, పిఠాపురం నుండి. పంచాయతీ రాజ్, గ్రామీణాభివృద్ధి, అడవులు, పర్యావరణం, సైన్స్ అండ్ టెక్నాలజీ పోర్ట్‌ఫోలియో.",
+        "html": """<div class="concept-cover">
+  <h1>CM & DCM Profiles &nbsp;<span class="bi-te">/ CM &amp; DCM పదవులు</span></h1>
+  <div class="sub">Naidu (4th term, Kuppam) • Pawan Kalyan (DCM, Pithapuram)</div>
+</div>
+
+<div class="section-hdr">Chief Minister — N. Chandrababu Naidu</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Full name</td><td>Nara Chandrababu Naidu (NCBN)</td><td class="bi-te">నల్లపాటి చంద్రబాబు నాయుడు</td></tr>
+<tr><td>Born</td><td>April 20, 1950, Naravaripalle (Chittoor)</td><td class="bi-te">ఏప్రిల్ 20, 1950</td></tr>
+<tr><td>Constituency</td><td><b>Kuppam</b> (Chittoor) — 9th win</td><td class="bi-te">కుప్పం (చిత్తూరు)</td></tr>
+<tr><td>Party</td><td>TDP (founded by NTR, March 29, 1982)</td><td class="bi-te">TDP (NTR 1982లో స్థాపన)</td></tr>
+<tr><td>Tenure</td><td><b>4th term</b> as CM (1995-99, 1999-2004, 2014-19, 2024-)</td><td class="bi-te">4వసారి ముఖ్యమంత్రి</td></tr>
+<tr><td>Sworn in</td><td>June 12, 2024 (17th CM of AP)</td><td class="bi-te">17వ AP ముఖ్యమంత్రి</td></tr>
+<tr><td>Portfolios</td><td>GAD, Law &amp; Order, Public Enterprises, Real Time Governance</td><td class="bi-te">GAD + Law &amp; Order + PE</td></tr>
+</table>
+
+<div class="section-hdr">Deputy CM — K. Pawan Kalyan</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Full name</td><td>Konidela Kalyan Babu (stage: Pawan Kalyan)</td><td class="bi-te">కొణిదెల కళ్యాణ్ బాబు</td></tr>
+<tr><td>Born</td><td>September 2, 1971, Bapatla</td><td class="bi-te">సెప్టెంబర్ 2, 1971</td></tr>
+<tr><td>Constituency</td><td><b>Pithapuram</b> (Kakinada dist) — first-time MLA</td><td class="bi-te">పిఠాపురం (కాకినాడ జిల్లా)</td></tr>
+<tr><td>Party</td><td>Jana Sena Party (JSP) — founded March 14, 2014</td><td class="bi-te">జనసేన పార్టీ (2014)</td></tr>
+<tr><td>Profession</td><td>Actor (elder brother: Chiranjeevi)</td><td class="bi-te">నటుడు (అన్న: చిరంజీవి)</td></tr>
+<tr><td>Portfolios</td><td>Panchayati Raj, Rural Development, Forests, Environment, Science &amp; Tech</td><td class="bi-te">పంచాయతీ రాజ్ + గ్రామీణాభివృద్ధి + అడవులు + పర్యావరణం + S&amp;T</td></tr>
+</table>
+
+<p><b>Historic firsts:</b> This is the first AP cabinet with a Deputy CM since 2014 division. JSP joining the cabinet (3 ministers) ended its three-decade outsider phase. Naidu's 4th term makes him the longest-serving AP CM cumulatively (over 14 years across terms).</p>
+<p class="bi-te">2014 విభజన తర్వాత AP లో మొదటి ఉపముఖ్యమంత్రి. JSP నుండి 3 మంత్రులు ప్రభుత్వంలో చేరారు. చంద్రబాబు 4 సార్లు మొత్తంగా 14+ సంవత్సరాలు ముఖ్యమంత్రిగా — AP చరిత్రలో ఎక్కువ కాలం.</p>"""
     },
     {
         "title": "కీలక మంత్రులు — పోర్ట్‌ఫోలియో",
         "sub": "Key Ministers and their Portfolios",
-        "audio": "నారా లోకేష్ HRD (విద్య), IT ఎలక్ట్రానిక్స్, RTG. వంగలపూడి అనిత Home Affairs, Disaster Management. పయ్యావుల కేశవ్ Finance, Planning, Commercial Taxes — 2025-26 బడ్జెట్ ₹3,22,359 కోట్లు. సత్యకుమార్ యాదవ్ (BJP, ధర్మవరం) Health, Medical Education — BJP నుండి ఏకైక మంత్రి. నాస్యం మొహమ్మద్ ఫారూఖ్ (నంద్యాల) Law & Justice, Minority Welfare — ఏకైక ముస్లిం మంత్రి. కొలుసు పార్థసారథి (నూజివీడు, కృష్ణా జిల్లా) Housing, I&PR. గొట్టిపాటి రవికుమార్ Energy. మండిపల్లి రాంప్రసాద్ రెడ్డి (రాయచోటి) Transport, Youth & Sports. అనగాని సత్యప్రసాద్ Revenue, Stamps & Registration."
+        "audio": "నారా లోకేష్ HRD (విద్య), IT ఎలక్ట్రానిక్స్, RTG. వంగలపూడి అనిత Home Affairs, Disaster Management. పయ్యావుల కేశవ్ Finance, Planning, Commercial Taxes — 2025-26 బడ్జెట్ ₹3,22,359 కోట్లు. సత్యకుమార్ యాదవ్ (BJP, ధర్మవరం) Health, Medical Education — BJP నుండి ఏకైక మంత్రి. నాస్యం మొహమ్మద్ ఫారూఖ్ (నంద్యాల) Law & Justice, Minority Welfare — ఏకైక ముస్లిం మంత్రి. కొలుసు పార్థసారథి (నూజివీడు, కృష్ణా జిల్లా) Housing, I&PR. గొట్టిపాటి రవికుమార్ Energy. మండిపల్లి రాంప్రసాద్ రెడ్డి (రాయచోటి) Transport, Youth & Sports. అనగాని సత్యప్రసాద్ Revenue, Stamps & Registration.",
+        "html": """<div class="concept-cover">
+  <h1>Key Ministers — Portfolios &nbsp;<span class="bi-te">/ కీలక మంత్రులు</span></h1>
+  <div class="sub">Lokesh (HRD/IT) • Anita (Home) • Keshav (Finance) • Yadav (Health)</div>
+</div>
+
+<div class="section-hdr">High-Profile Portfolios / ముఖ్య పోర్ట్‌ఫోలియోలు</div>
+<table class="key-table">
+<tr><th>Minister</th><th>Constituency</th><th>Portfolios</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Nara Lokesh</b></td><td>Mangalagiri (Guntur)</td><td>HRD (Education), IT &amp; Electronics, Real-Time Governance</td><td class="bi-te">నారా లోకేష్ (CBN కుమారుడు)</td></tr>
+<tr><td><b>Vangalapudi Anita</b></td><td>Payakaraopeta (Anakapalli)</td><td>Home Affairs, Disaster Management</td><td class="bi-te">వంగలపూడి అనిత (హోం)</td></tr>
+<tr><td><b>Payyavula Keshav</b></td><td>Uravakonda (Anantapur)</td><td>Finance, Planning, Commercial Taxes</td><td class="bi-te">పయ్యావుల కేశవ్ (ఆర్థిక మంత్రి)</td></tr>
+<tr><td><b>Satyakumar Yadav</b> (BJP)</td><td>Dharmavaram (Anantapur)</td><td>Health, Medical Education, Family Welfare</td><td class="bi-te">సత్యకుమార్ యాదవ్ — BJP ఏకైక మంత్రి</td></tr>
+<tr><td><b>Nasyam Mohammad Farooq</b></td><td>Nandyal</td><td>Law &amp; Justice, Minority Welfare</td><td class="bi-te">నాస్యం మొహమ్మద్ ఫారూఖ్ — ఏకైక ముస్లిం మంత్రి</td></tr>
+</table>
+
+<div class="section-hdr">Other Important Portfolios / ఇతర ముఖ్య పోర్ట్‌ఫోలియోలు</div>
+<table class="key-table">
+<tr><th>Minister</th><th>Portfolio</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Kolusu Parthasarathy</td><td>Housing, I&amp;PR</td><td class="bi-te">కొలుసు పార్థసారథి (నూజివీడు, కృష్ణా)</td></tr>
+<tr><td>Gottipati Ravikumar</td><td>Energy</td><td class="bi-te">గొట్టిపాటి రవికుమార్ (అద్దంకి)</td></tr>
+<tr><td>Mandipalli Ramprasad Reddy</td><td>Transport, Youth &amp; Sports</td><td class="bi-te">మండిపల్లి రాంప్రసాద్ రెడ్డి (రాయచోటి)</td></tr>
+<tr><td>Anagani Satya Prasad</td><td>Revenue, Stamps &amp; Registration</td><td class="bi-te">అనగాని సత్యప్రసాద్</td></tr>
+<tr><td>P. Narayana</td><td>Municipal Administration &amp; Urban Development (MAUD)</td><td class="bi-te">P. నారాయణ — MAUD</td></tr>
+<tr><td>Nimmala Ramanaidu</td><td>Water Resources</td><td class="bi-te">నిమ్మల రమానాయుడు (పాలకొల్లు)</td></tr>
+</table>
+
+<p><b>Budget 2025-26:</b> Finance Minister Payyavula Keshav presented the AP 2025-26 budget on February 28, 2025 totalling <b>₹3,22,359 crore</b> — with allocations for Super Six schemes, Polavaram, Amaravati. Subsequent 2026-27 Budget tabled in February 2026 with continued Super Six focus.</p>
+<p class="bi-te">పయ్యావుల కేశవ్ ఫిబ్రవరి 28, 2025న 2025-26 బడ్జెట్ ₹3,22,359 కోట్లు సమర్పించారు. సూపర్ సిక్స్ + పోలవరం + అమరావతి కేటాయింపులు.</p>"""
     },
     {
         "title": "JSP మంత్రులు & ఇతర మంత్రులు",
         "sub": "JSP Ministers & Other Key Ministers",
-        "audio": "JSP నుండి 3 మంత్రులు: పవన్ కళ్యాణ్ (DCM), నాదెండ్ల మనోహర్ (Civil Supplies, Consumer Affairs), కందుల దుర్గేష్ (Tourism, Culture & Cinematography). ఇతర TDP మంత్రులు: P. నారాయణ — MAUD. నిమ్మల రమానాయుడు (పాలకొల్లు) — Water Resources. BC జనార్దన్ రెడ్డి (బనగానపల్లె) — Roads & Buildings, Infrastructure & Investments. కొండపల్లి శ్రీనివాస్ (గజపతినగరం) — MSME, SERP, NRI Affairs. డోలా శ్రీ బాలవీరాంజనేయ స్వామి (కొండపి SC) — Social Welfare, Disabled & Senior Citizen Welfare. వాసంసెట్టి సుభాష్ (రామచంద్రాపురం) — Labour, Factories & Boilers. కొలు రవీంద్ర (మచిలీపట్నం) — Mines & Geology, Excise. అనం రమానారాయణ రెడ్డి (ఆత్మకూరు) — Endowments. తి.గ. భారతి (కర్నూల్) — Industries & Commerce, Food Processing."
+        "audio": "JSP నుండి 3 మంత్రులు: పవన్ కళ్యాణ్ (DCM), నాదెండ్ల మనోహర్ (Civil Supplies, Consumer Affairs), కందుల దుర్గేష్ (Tourism, Culture & Cinematography). ఇతర TDP మంత్రులు: P. నారాయణ — MAUD. నిమ్మల రమానాయుడు (పాలకొల్లు) — Water Resources. BC జనార్దన్ రెడ్డి (బనగానపల్లె) — Roads & Buildings, Infrastructure & Investments. కొండపల్లి శ్రీనివాస్ (గజపతినగరం) — MSME, SERP, NRI Affairs. డోలా శ్రీ బాలవీరాంజనేయ స్వామి (కొండపి SC) — Social Welfare, Disabled & Senior Citizen Welfare. వాసంసెట్టి సుభాష్ (రామచంద్రాపురం) — Labour, Factories & Boilers. కొలు రవీంద్ర (మచిలీపట్నం) — Mines & Geology, Excise. అనం రమానారాయణ రెడ్డి (ఆత్మకూరు) — Endowments. తి.గ. భారతి (కర్నూల్) — Industries & Commerce, Food Processing.",
+        "html": """<div class="concept-cover">
+  <h1>JSP & Remaining Ministers &nbsp;<span class="bi-te">/ JSP &amp; ఇతర మంత్రులు</span></h1>
+  <div class="sub">3 JSP cabinet ministers • Constituency-wise allocation</div>
+</div>
+
+<div class="section-hdr">JSP Ministers (3) / JSP నుండి 3 మంత్రులు</div>
+<table class="key-table">
+<tr><th>Minister</th><th>Constituency</th><th>Portfolio</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Pawan Kalyan</b></td><td>Pithapuram (Kakinada)</td><td>Deputy CM + Panchayati Raj/Rural Dev/Forests/Env/S&amp;T</td><td class="bi-te">DCM — JSP అధ్యక్షుడు</td></tr>
+<tr><td>Nadendla Manohar</td><td>Tenali (Guntur)</td><td>Civil Supplies, Consumer Affairs, Food Safety</td><td class="bi-te">నాదెండ్ల మనోహర్</td></tr>
+<tr><td>Kandula Durgesh</td><td>Nidadavolu (East Godavari)</td><td>Tourism, Culture &amp; Cinematography</td><td class="bi-te">కందుల దుర్గేష్</td></tr>
+</table>
+
+<div class="section-hdr">Remaining TDP Ministers / ఇతర TDP మంత్రులు</div>
+<table class="key-table">
+<tr><th>Minister</th><th>Constituency</th><th>Portfolio</th></tr>
+<tr><td>BC Janardhan Reddy</td><td>Banaganapalle</td><td>Roads &amp; Buildings, Infrastructure &amp; Investments</td></tr>
+<tr><td>Kondapalli Srinivas</td><td>Gajapathinagaram</td><td>MSME, SERP, NRI Affairs</td></tr>
+<tr><td>Dola Sri Balaveeranjaneya Swamy</td><td>Kondapi (SC)</td><td>Social Welfare, Disabled &amp; Senior Citizen Welfare</td></tr>
+<tr><td>Vasamsetti Subhash</td><td>Ramachandrapuram</td><td>Labour, Factories &amp; Boilers</td></tr>
+<tr><td>Kollu Ravindra</td><td>Machilipatnam</td><td>Mines &amp; Geology, Excise</td></tr>
+<tr><td>Anam Ramanarayana Reddy</td><td>Atmakur</td><td>Endowments</td></tr>
+<tr><td>T.G. Bharati</td><td>Kurnool</td><td>Industries &amp; Commerce, Food Processing</td></tr>
+<tr><td>Kollabathula Manikya Vara Prasada Rao</td><td>Pendurthi</td><td>BC Welfare, Information &amp; Public Relations</td></tr>
+</table>
+
+<p><b>Women ministers (3):</b> Vangalapudi Anita (Home), T.G. Bharati (Industries), Savita (Tribal Welfare). <b>SC ministers (2):</b> Dola Swamy + one more. <b>ST minister (1):</b> Gummadi Sandhya Rani (Kuruba, ST Welfare).</p>
+<p class="bi-te">3 మహిళా మంత్రులు: వంగలపూడి అనిత (హోం), తి.గ. భారతి (పరిశ్రమలు), సవిత (గిరిజన సంక్షేమం). 2 SC, 1 ST మంత్రులు ఉన్నారు.</p>"""
     },
     {
         "title": "రాజ్యాంగ పదవులు & ముఖ్య వ్యక్తులు",
         "sub": "Constitutional Positions & Key Officials",
-        "audio": "ఆంధ్రప్రదేశ్ గవర్నర్ జస్టిస్ ఎస్. అబ్దుల్ నజీర్, ఫిబ్రవరి 2023 నుండి (మాజీ సుప్రీంకోర్టు న్యాయమూర్తి). శాసనసభ స్పీకర్ చింతకాయల అయ్యన్నపాత్రుడు (TDP, నర్సీపట్నం), జూన్ 2024లో ఎన్నుకున్నారు. డిప్యూటీ స్పీకర్ రఘురామ కృష్ణ రాజు (TDP, ఉండి). శాసనమండలి చైర్మన్ కొయ్యే మోషేన్ రాజు — YSRCP పాలన నుండి కొనసాగుతున్నారు. DGP హరీష్ కుమార్ గుప్తా (IPS 1992 batch, జనవరి 31, 2025 నుండి). AP రాష్ట్రసభ స్థానాలు 11. ముఖ్య కార్యదర్శి జి. సాయి ప్రసాద్ (IAS 1991 batch, మార్చి 1, 2026 నుండి). పయ్యావుల కేశవ్ ఆర్థికమంత్రిగా ఫిబ్రవరి 28, 2025న 2025-26 బడ్జెట్ ₹3,22,359 కోట్లు సమర్పించారు."
+        "audio": "ఆంధ్రప్రదేశ్ గవర్నర్ జస్టిస్ ఎస్. అబ్దుల్ నజీర్, ఫిబ్రవరి 2023 నుండి (మాజీ సుప్రీంకోర్టు న్యాయమూర్తి). శాసనసభ స్పీకర్ చింతకాయల అయ్యన్నపాత్రుడు (TDP, నర్సీపట్నం), జూన్ 2024లో ఎన్నుకున్నారు. డిప్యూటీ స్పీకర్ రఘురామ కృష్ణ రాజు (TDP, ఉండి). శాసనమండలి చైర్మన్ కొయ్యే మోషేన్ రాజు — YSRCP పాలన నుండి కొనసాగుతున్నారు. DGP హరీష్ కుమార్ గుప్తా (IPS 1992 batch, జనవరి 31, 2025 నుండి). AP రాష్ట్రసభ స్థానాలు 11. ముఖ్య కార్యదర్శి జి. సాయి ప్రసాద్ (IAS 1991 batch, మార్చి 1, 2026 నుండి). పయ్యావుల కేశవ్ ఆర్థికమంత్రిగా ఫిబ్రవరి 28, 2025న 2025-26 బడ్జెట్ ₹3,22,359 కోట్లు సమర్పించారు.",
+        "html": """<div class="concept-cover">
+  <h1>Constitutional &amp; Bureaucratic Posts &nbsp;<span class="bi-te">/ రాజ్యాంగ పదవులు</span></h1>
+  <div class="sub">Governor • Speaker • DGP • CS • HC CJ</div>
+</div>
+
+<div class="section-hdr">Constitutional Posts / రాజ్యాంగ పదవులు</div>
+<table class="key-table">
+<tr><th>Post</th><th>Holder</th><th>Since</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Governor</b></td><td>Justice S. Abdul Nazeer</td><td>Feb 2023</td><td class="bi-te">జస్టిస్ ఎస్. అబ్దుల్ నజీర్ (మాజీ సుప్రీంకోర్టు న్యాయమూర్తి)</td></tr>
+<tr><td>Assembly Speaker</td><td>Chintakayala Ayyanna Patrudu</td><td>Jun 2024</td><td class="bi-te">చింతకాయల అయ్యన్నపాత్రుడు (TDP, నర్సీపట్నం)</td></tr>
+<tr><td>Deputy Speaker</td><td>Raghurama Krishnam Raju</td><td>Jun 2024</td><td class="bi-te">రఘురామ కృష్ణం రాజు (TDP, ఉండి)</td></tr>
+<tr><td>Council Chairman</td><td>Koyye Moshenu Raju</td><td>Cont. from YSRCP era</td><td class="bi-te">కొయ్యే మోషేన్ రాజు</td></tr>
+<tr><td>High Court CJ</td><td>Justice Lisa Gill (6th CJ)</td><td>Apr 25, 2026</td><td class="bi-te">జస్టిస్ లిసా గిల్ (6వ CJ)</td></tr>
+</table>
+
+<div class="section-hdr">Top Bureaucracy / అధికారిక పదవులు</div>
+<table class="key-table">
+<tr><th>Post</th><th>Officer</th><th>Batch</th><th>Since</th></tr>
+<tr><td><b>Chief Secretary</b></td><td>G. Sai Prasad</td><td>IAS 1991</td><td>Mar 1, 2026</td></tr>
+<tr><td><b>DGP</b></td><td>Harish Kumar Gupta</td><td>IPS 1992</td><td>Jan 31, 2025</td></tr>
+<tr><td>Finance Secretary</td><td>Peeyush Kumar</td><td>IAS</td><td>—</td></tr>
+</table>
+<p class="bi-te">CS: జి. సాయి ప్రసాద్ (IAS 1991 batch, మార్చి 1, 2026 నుండి). గతంలో: నీరబ్ కుమార్ ప్రసాద్ (Jun-Dec 2024) → కె. విజయానంద్ (Jan-Feb 2026) → జి. సాయి ప్రసాద్.</p>
+<p class="bi-te">DGP: హరీష్ కుమార్ గుప్తా (IPS 1992 batch, జనవరి 31, 2025 నుండి).</p>
+
+<div class="section-hdr">AP Legislature Strength / AP శాసనం</div>
+<table class="key-table">
+<tr><th>Body</th><th>Seats</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Lok Sabha (AP)</td><td>25</td><td class="bi-te">25 లోక్‌సభ స్థానాలు</td></tr>
+<tr><td>Rajya Sabha (AP)</td><td>11</td><td class="bi-te">11 రాజ్యసభ స్థానాలు</td></tr>
+<tr><td>Legislative Assembly</td><td>175 (+1 nom. Anglo-Indian abolished 2020)</td><td class="bi-te">175 శాసనసభ స్థానాలు</td></tr>
+<tr><td>Legislative Council</td><td>58</td><td class="bi-te">58 శాసన మండలి స్థానాలు</td></tr>
+</table>
+
+<p><b>Budget context:</b> FM Payyavula Keshav tabled the AP 2025-26 budget on February 28, 2025 totalling <b>₹3,22,359 crore</b>. The 2026-27 budget was tabled in February 2026 by the same FM, continuing Super Six allocations alongside Polavaram, Amaravati capital city development, and Quantum Valley.</p>
+<p class="bi-te">2025-26 బడ్జెట్ ₹3,22,359 కోట్లు ఫిబ్రవరి 28, 2025న పయ్యావుల కేశవ్ సమర్పించారు. 2026-27 బడ్జెట్ ఫిబ్రవరి 2026లో సమర్పించబడింది.</p>"""
     },
 ]
 

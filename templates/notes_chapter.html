@@ -356,6 +356,59 @@
   [data-theme="dark"] .sec-dur { background:#2a1f10; color:#c8860a; border-color:#4a3520; }
   [data-theme="dark"] .live-timer { background:#2a1f10; color:#f0a030; border-color:#4a3520; }
   [data-theme="dark"] .completion-card { background:#0d1e0d; border-color:#4caf50; }
+
+  /* ── Batch H2 — Rich bilingual concept-note styling (matches Intl CA pattern) ── */
+  .sec-rich-html { font-size:14px; line-height:1.7; }
+  .sec-rich-html .concept-cover {
+    background:linear-gradient(135deg,#fff8e1,#ffe0b2);
+    border:1px solid #e0b070; border-radius:10px;
+    padding:14px 16px; margin:0 0 14px 0;
+  }
+  .sec-rich-html .concept-cover h1 {
+    margin:0 0 4px 0; font-size:17px; font-weight:800; color:#5d3a00;
+  }
+  .sec-rich-html .concept-cover .sub {
+    font-size:12.5px; color:#8a5a20; font-weight:600;
+  }
+  .sec-rich-html .section-hdr {
+    background:#1a237e; color:#fff;
+    padding:7px 12px; border-radius:6px;
+    font-weight:700; font-size:13.5px;
+    margin:14px 0 8px 0;
+  }
+  .sec-rich-html .key-table {
+    width:100%; border-collapse:collapse;
+    margin:6px 0 12px 0; font-size:13px;
+  }
+  .sec-rich-html .key-table th,
+  .sec-rich-html .key-table td {
+    border:1px solid #d8c89a; padding:6px 9px;
+    text-align:left; vertical-align:top;
+  }
+  .sec-rich-html .key-table th {
+    background:#fdf3d3; font-weight:700; color:#5d3a00;
+  }
+  .sec-rich-html .key-table .bi-te,
+  .sec-rich-html p.bi-te,
+  .sec-rich-html span.bi-te {
+    color:#1a237e; font-family:'Noto Sans Telugu', sans-serif;
+  }
+  .sec-rich-html p { margin:6px 0; }
+  .sec-rich-html b, .sec-rich-html strong { color:#5d3a00; }
+  [data-theme="dark"] .sec-rich-html .concept-cover {
+    background:linear-gradient(135deg,#2a1f10,#3a2a15);
+    border-color:#5a4520;
+  }
+  [data-theme="dark"] .sec-rich-html .concept-cover h1 { color:#f0a030; }
+  [data-theme="dark"] .sec-rich-html .concept-cover .sub { color:#c8860a; }
+  [data-theme="dark"] .sec-rich-html .section-hdr { background:#3d4f9e; }
+  [data-theme="dark"] .sec-rich-html .key-table th { background:#3a2a15; color:#f0a030; }
+  [data-theme="dark"] .sec-rich-html .key-table th,
+  [data-theme="dark"] .sec-rich-html .key-table td { border-color:#5a4520; }
+  [data-theme="dark"] .sec-rich-html .key-table .bi-te,
+  [data-theme="dark"] .sec-rich-html p.bi-te { color:#9fa8da; }
+  [data-theme="dark"] .sec-rich-html b,
+  [data-theme="dark"] .sec-rich-html strong { color:#f0a030; }
 </style>
 
 <!-- Hidden HTML5 audio player for recorded mode -->
@@ -477,7 +530,12 @@
       </div>
     </div>
     <div class="sec-body" id="body-{{ loop.index0 }}">
-      <p style="white-space:pre-line;">{{ sec.audio }}</p>
+      {# Render rich bilingual HTML if present (Batch H2 upgrade); fall back to plain audio text. #}
+      {% if sec.html %}
+        <div class="sec-rich-html">{{ sec.html|safe }}</div>
+      {% else %}
+        <p style="white-space:pre-line;">{{ sec.audio or sec.summary or '' }}</p>
+      {% endif %}
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">
         <button class="play-btn" onclick="event.stopPropagation(); playSec({{ loop.index0 }})">🔊 ఈ సెక్షన్ వినండి</button>
         <button class="bm-btn" id="bmbtn-{{ loop.index0 }}" onclick="event.stopPropagation(); toggleBookmark({{ loop.index0 }})">📌 Bookmark</button>
