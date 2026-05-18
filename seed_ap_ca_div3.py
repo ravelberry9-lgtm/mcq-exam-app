@@ -305,17 +305,9 @@ def _seed_ap_ca_div3_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=
 
     note_id = row_to_dict(note_row)['id']
 
-    existing_count = db_exec(
-        conn,
-        f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}",
-        (note_id,)
-    ).fetchone()[0]
-
-    if existing_count > 0 and not force:
-        return
-
-    if force:
-        db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
+    # Always delete-then-reinsert so seed-file changes are reflected.
+    # (Previous count-check used `cur.fetchone()[0]` which raises KeyError on Postgres dict-rows.)
+    db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
 
     for (sec_idx, diff, q_te, a, b, c, d, ans, exp_te) in MCQ_DATA:
         db_exec(conn, f"""

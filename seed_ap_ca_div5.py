@@ -264,10 +264,7 @@ def _seed_ap_ca_div5_mcqs_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=
         print("[div5-mcqs] study_note not found — skipping")
         return
     note_id = row_to_dict(row)['id']
-    cur2 = db_exec(conn, f"SELECT COUNT(*) FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
-    count = cur2.fetchone()[0]
-    if count > 0 and not force:
-        return
+    # Always delete-then-reinsert so seed-file changes are reflected (Postgres dict-row safe).
     db_exec(conn, f"DELETE FROM chapter_mcqs WHERE study_note_id={ph}", (note_id,))
     insert_sql = (
         f"INSERT INTO chapter_mcqs "
