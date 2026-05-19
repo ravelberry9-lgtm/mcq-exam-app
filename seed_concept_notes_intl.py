@@ -234,7 +234,15 @@ NOTES.append(('summit_g20_g7_nato', 'G20, G7 & NATO Summits 2025', 'G20, G7 & NA
 <tr><td>Host</td><td>PM Mark Carney (Liberal Party, Canada's new PM since March 14, 2025)</td><td class="bi-te">PM మార్క్ కార్ని అతిథ్యం</td></tr>
 <tr><td>Trump</td><td>Left after ~12 hours — cited Israel-Iran Twelve-Day War; threatened 35% tariffs on Canada</td><td class="bi-te">ట్రంప్ 12 గంటల్లో వెళ్లిపోయాడు</td></tr>
 <tr><td>Outcomes</td><td>AI, quantum, critical minerals agreement; $300B frozen Russian assets discussed; China overcapacity criticised</td><td class="bi-te">AI, క్వాంటమ్ ఒప్పందం</td></tr>
-<tr><td>Next G7</td><td>France, 2026</td><td class="bi-te">తదుపరి: ఫ్రాన్స్ 2026</td></tr>
+<tr><td>Next G7</td><td><b>France (Évian-les-Bains)</b>, 2026 — PM Michel Barnier (transitioning leadership)</td><td class="bi-te">తదుపరి: ఫ్రాన్స్ ఎవియన్-లెస్-బ్యాన్ 2026</td></tr>
+</table>
+
+<div class="section-hdr">G20 2026 USA Chair — Transition / G20 2026 USA అధ్యక్షత</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th><th class="bi-te">వివరణ</th></tr>
+<tr><td>Handover</td><td><b>January 12, 2026</b> — South Africa passed G20 presidency to USA (Miami Beach chair)</td><td class="bi-te">జనవరి 12, 2026 — SA నుండి USA అధ్యక్షత బదిలీ</td></tr>
+<tr><td>2026 Theme</td><td>USA priority: Energy security, economic growth, development (Trump 2.0 isolationist emphasis)</td><td class="bi-te">ఇంధన భద్రత, ఆర్థిక వృద్ధి, అభివృద్ధి</td></tr>
+<tr><td>Tensions</td><td>Brazil (former BRICS chair) &amp; India (upcoming BRICS chair) differ on debt relief, climate finance — USA likely to deprioritize</td><td class="bi-te">భారత్ వాతావరణ ఆర్థిక సమస్యలు</td></tr>
 </table>
 
 <div class="section-hdr">NATO Hague Summit — June 24-25, 2025</div>
@@ -266,7 +274,7 @@ NOTES.append(('summit_brics_sco_asean', 'BRICS, SCO & ASEAN Summits 2025', 'BRIC
 <tr><td>Indonesia</td><td>Present as BRICS's 11th full member (joined Jan 6, 2025)</td><td class="bi-te">ఇండోనేషియా 11వ సభ్యుడు</td></tr>
 <tr><td>10 new partners</td><td>Belarus, Bolivia, Kazakhstan, Cuba, Malaysia, Nigeria, Thailand, Uganda, Uzbekistan, Vietnam</td><td class="bi-te">10 కొత్త భాగస్వామి దేశాలు</td></tr>
 <tr><td>Pakistan</td><td>NOT admitted as BRICS partner at Rio 2025</td><td class="bi-te">పాకిస్తాన్ చేర్చబడలేదు</td></tr>
-<tr><td>2026 Summit</td><td>New Delhi, India — Sep 12-13, 2026 (India's BRICS Chairmanship)</td><td class="bi-te">2026 శిఖరాగ్రం: న్యూ ఢిల్లీ</td></tr>
+<tr><td>2026 BRICS Chair India</td><td><b>August–September 2026</b> — India chairs BRICS 2026; 18th BRICS Summit in <b>New Delhi</b>, <b>September 12-13, 2026</b>; India's themes: Technological innovation, South-South cooperation, inclusive development, sustainable growth</td><td class="bi-te">2026 భారత్ అధ్యక్షత; న్యూ ఢిల్లీ శిఖరాగ్రం సెప్టెంబర్ 12-13</td></tr>
 </table>
 
 <div class="section-hdr">25th SCO Summit — Tianjin, China, Aug 31–Sep 1, 2025</div>
@@ -287,7 +295,7 @@ NOTES.append(('summit_brics_sco_asean', 'BRICS, SCO & ASEAN Summits 2025', 'BRIC
 <tr><td>Timor-Leste</td><td>Formally admitted as ASEAN's <b>11th member</b> — first expansion since Cambodia joined 1999 (26-year gap)</td><td class="bi-te">తిమోర్-లెస్టే 11వ సభ్యుడు — 1999 తర్వాత మొదటి విస్తరణ</td></tr>
 <tr><td>KL Peace Accord</td><td>Thailand &amp; Cambodia signed peace accord; Trump &amp; Anwar Ibrahim as witnesses</td><td class="bi-te">థాయ్-కంబోడియా శాంతి ఒప్పందం</td></tr>
 <tr><td>ASEAN-China FTA</td><td>FTA 3.0 Upgrade Protocol signed — deepening trade with China</td><td class="bi-te">ASEAN-చైనా FTA 3.0 సంతకం</td></tr>
-<tr><td>Next chair</td><td>Philippines — 2026</td><td class="bi-te">తదుపరి: ఫిలిప్పీన్స్ 2026</td></tr>
+<tr><td>ASEAN 2026 Philippines Chair</td><td><b>Philippines chairs ASEAN 2026</b>; summit venue likely <b>Cebu</b>; themes expected: cybersecurity, climate adaptation, ASEAN-China trade deepening post-FTA 3.0</td><td class="bi-te">ఫిలిప్పీన్స్ ASEAN 2026 చేయర్; సెబు వెన్యూ</td></tr>
 </table>
 """))
 
@@ -306,7 +314,7 @@ NOTES.append(('summit_cop_davos', 'COP Summits & WEF Davos 2025-26', 'COP శి
 <tr><th>COP</th><th>Location</th><th>Key Outcome</th><th class="bi-te">ముఖ్య ఫలితం</th></tr>
 <tr><td>COP28 (2023)</td><td>Dubai, UAE</td><td>First global stocktake; first language on 'transitioning away from fossil fuels'; Loss &amp; Damage Fund launched</td><td class="bi-te">మొదటి శిలాజ ఇంధన మార్పిడి భాష; Loss &amp; Damage ఫండ్</td></tr>
 <tr><td>COP29 (Nov 2024)</td><td>Baku, Azerbaijan</td><td>Baku Climate Unity Pact; developed nations to lead <b>$300 billion/year by 2035</b>; Baku-Belém Roadmap to $1.3T; India called it 'abysmally low'</td><td class="bi-te">అభివృద్ధి చెందిన దేశాలు 2035 నాటికి $300B/సంవత్సరం; భారత్ 'చాలా తక్కువ' అని విమర్శించింది</td></tr>
-<tr><td>COP30 (Nov 2025)</td><td>Belém, Brazil</td><td>Belém Package; Baku-Belém Roadmap: <b>$1.3 trillion/year by 2035</b> from ALL actors; Belém Mission to 1.5°C; triple adaptation finance by 2035; Global Climate Finance Accountability Framework</td><td class="bi-te">Baku-Belém Roadmap: 2035 నాటికి $1.3T/సంవత్సరం; అనుకూలన ఫైనాన్స్ 3x పెంపు</td></tr>
+<tr><td>COP30 (Nov 2025)</td><td>Belém, Brazil</td><td>Belém Package — <b>Global Mutirão</b> (collective action pledges); Baku-Belém Roadmap: <b>$1.3 trillion/year by 2035</b> from ALL actors (governments + private + development banks); <b>Transformative Finance Task Force (TFFF) pledged $6.6B</b> for climate-nature solutions; Belém Mission to 1.5°C; triple adaptation finance by 2035 (~$300B/year); Global Climate Finance Accountability Framework (GCFAF)</td><td class="bi-te">Belém Package — Global Mutirão సమిష్టి చర్య; 2035 నాటికి $1.3T/సంవత్సరం; TFFF $6.6B; అనుకూలన ఫైనాన్స్ 3x పెంపు</td></tr>
 <tr><td>COP31 (2026)</td><td>Australia</td><td>Scheduled — next COP</td><td class="bi-te">తదుపరి COP — ఆస్ట్రేలియా 2026</td></tr>
 </table>
 <p><b>COP</b> = Conference of Parties under UNFCCC (United Nations Framework Convention on Climate Change). Paris Agreement (COP21, 2015): limit warming to well below 2°C, pursue 1.5°C. NDC = Nationally Determined Contribution — each country's emission reduction plan.</p>
@@ -541,7 +549,8 @@ print("Part 2 appended — Conflicts (3) + Environment (2) = 12 total so far")
 
 # ═══════════════════════════════════════════════════════
 #  13. SCIENCE & TECHNOLOGY — ISRO & Space Missions
-#      IDs: 26001-26040
+#      IDs: 26001-26040 (original) + 26081-26092, 26106-26108, 26110, 26114,
+#           26116-26118, 26122-26125, 26129 (May 19, 2026 freshness gap-fill)
 # ═══════════════════════════════════════════════════════
 NOTES.append(('sci_isro_space', 'ISRO & Space Missions', 'ISRO & అంతరిక్ష యాత్రలు', """
 <div class="concept-cover">
@@ -553,7 +562,7 @@ NOTES.append(('sci_isro_space', 'ISRO & Space Missions', 'ISRO & అంతరి
 <table class="key-table">
 <tr><th>Mission</th><th>Key Facts</th><th class="bi-te">వివరణ</th></tr>
 <tr><td>Chandrayaan-3</td><td>Soft landed Moon's South Pole — <b>August 23, 2023</b>; India = 4th country to soft-land (USA, USSR, China); Lander: Vikram; Rover: Pragyan ('wisdom'); <b>National Space Day = Aug 23</b></td><td class="bi-te">ఆగస్టు 23, 2023 — చంద్రుడి దక్షిణ ధ్రువంలో అవతరణ; ఆగస్టు 23 = జాతీయ అంతరిక్ష దినం</td></tr>
-<tr><td>Aditya-L1</td><td>India's first solar mission — stationed at Lagrange Point <b>L1</b> (~1.5 million km from Earth); instrument SUIT (Solar Ultraviolet Imaging Telescope) made rare plasma event observation</td><td class="bi-te">L1 లాగ్రాంజ్ పాయింట్‌లో అమర్చబడింది; SUIT సాధనం</td></tr>
+<tr><td>Aditya-L1</td><td>India's first solar mission — stationed at Lagrange Point <b>L1</b> (~1.5 million km from Earth); instrument SUIT (Solar Ultraviolet Imaging Telescope) made rare plasma event observation; <b>1st anniversary (Sept 2024) marked significant solar activity monitoring</b> — observations of solar wind, coronal mass ejections, and magnetic field data</td><td class="bi-te">L1 లాగ్రాంజ్ పాయింట్‌లో అమర్చబడింది; SUIT సాధనం; తొలి సంవత్సరం సోలార్ కార్యకలాపాల పర్యవేక్షణ</td></tr>
 <tr><td>SpaDeX</td><td>Space Docking Experiment — 2 satellites (~220 kg each) demonstrate docking/undocking in Low Earth Orbit; technology needed for Gaganyaan &amp; lunar sample return</td><td class="bi-te">అంతరిక్ష డాకింగ్ ప్రయోగం — LEO లో 2 ఉపగ్రహాలు</td></tr>
 <tr><td>NISAR</td><td>NASA-ISRO Synthetic Aperture Radar — <b>first joint India-NASA Earth observation mission</b>; launched July 30, 2025 (GSLV-F16); first dual-frequency SAR (L-band + S-band); studies earthquakes, glaciers, forests; observes every part of Earth every 12 days</td><td class="bi-te">NASA-ISRO సంయుక్త భూ పరిశీలన మిషన్; ద్వి-ఆవృత్తి SAR; జులై 30, 2025 ప్రయోగం</td></tr>
 <tr><td>PSLV-C61/EOS-09</td><td>Earth Observation Satellite-09 — launched May 18, 2025</td><td class="bi-te">మే 18, 2025 ప్రయోగం</td></tr>
@@ -562,6 +571,9 @@ NOTES.append(('sci_isro_space', 'ISRO & Space Missions', 'ISRO & అంతరి
 <tr><td>LUPEX</td><td>Lunar Polar Exploration Mission — joint ISRO + JAXA (Japan); study water ice at lunar south pole</td><td class="bi-te">ISRO + JAXA సంయుక్త చంద్ర ధ్రువ అన్వేషణ</td></tr>
 <tr><td>Chandrayaan-4</td><td>Planned sample-return mission from Moon</td><td class="bi-te">చంద్రుని నమూనా తిరిగి తేవడం</td></tr>
 <tr><td><b>Axiom Mission 4 (Ax-4)</b></td><td>Launched <b>June 25, 2025</b> (SpaceX Falcon 9 + Dragon); <b>Gp. Capt. Shubhanshu Shukla</b> — mission pilot; <b>first Indian to board ISS</b>; returned July 15, 2025 (18-day mission); 2nd Indian in space after Rakesh Sharma (1984); Shukla is one of 4 Gaganyatris; Commander: Peggy Whitson (Axiom Space)</td><td class="bi-te">జూన్ 25, 2025 — శుభాంశు శుక్లా మొదటి భారతీయుడిగా ISS లో అడుగుపెట్టారు; 40+ సంవత్సరాల తర్వాత 2వ భారతీయ అంతరిక్షయాత్రికుడు</td></tr>
+<tr><td><b>BlueBird Block-2</b></td><td>Launched <b>December 24, 2025</b> via <b>LVM3-M6</b> (heaviest payload: <b>6,100 kg</b>); satellite developed by ISRO for Earth observation; <b>100th launch from Satish Dhawan Space Centre (SDSCC), Sriharikota</b>; milestone celebrates 40 years of SDSCC operations</td><td class="bi-te">డిసెం. 24, 2025 — LVM3-M6 ద్వారా ప్రయోగం; 6,100 kg పేలోడ్; శతిష్ ధవన్ SDSCC నుండి 100వ ప్రయోగం</td></tr>
+<tr><td><b>NavIC-16 (PSLV-C58)</b></td><td>Autonomous Regional Navigation Satellite System — <b>January 2026</b> launch; IndNav upgrades with enhanced positioning accuracy for civil &amp; military applications; India's own 8-satellite constellation independent of GPS</td><td class="bi-te">జనవరి 2026 — నావిక్-16; భారత స్వాధీన నావిగేషన్ వ్యవస్థ</td></tr>
+<tr><td><b>Bharatiya Antariksh Station (BAS)</b></td><td><b>5 modules</b> planned (not 4 phases): (1) Core Module — life support + control (2) Laboratory Module-1 & Lab Module-2 (3) Logistics Module (4) Power/Thermal Module; targeting 2032-2035 operation; India's first space station replacing ISS dependency post-2030</td><td class="bi-te">BAS — 5 మాడ్యూళ్లు; 2032-2035 నాటికి ఆపరేటింగ్ లక్ష్యం; ISS ఆధారపడటం తొలగించడానికి</td></tr>
 </table>
 
 <div class="section-hdr">NASA Key Missions 2025 / NASA ముఖ్య యాత్రలు</div>
@@ -586,7 +598,8 @@ NOTES.append(('sci_isro_space', 'ISRO & Space Missions', 'ISRO & అంతరి
 
 # ═══════════════════════════════════════════════════════
 #  14. SCIENCE & TECHNOLOGY — AI, Biotech & Other Tech
-#      IDs: 26041-26080
+#      IDs: 26041-26080 (original) + 26093-26105, 26109, 26111-26113,
+#           26115, 26119-26121, 26126-26128, 26130 (May 19, 2026 freshness gap-fill)
 # ═══════════════════════════════════════════════════════
 NOTES.append(('sci_tech', 'AI, Biotech & Other Science', 'AI, బయోటెక్ & ఇతర విజ్ఞానం', """
 <div class="concept-cover">
@@ -619,6 +632,24 @@ NOTES.append(('sci_tech', 'AI, Biotech & Other Science', 'AI, బయోటెక
 <tr><td>Multiple Sclerosis (MS)</td><td>Autoimmune — immune attacks brain &amp; spinal cord</td><td>~1 million in USA, 2.8 million worldwide; gut microbiome role discovered</td><td class="bi-te">మెదడు &amp; వెన్నుపాముపై రోగనిరోధక దాడి</td></tr>
 <tr><td>Bird Flu (Avian Influenza)</td><td>Influenza A — H5N1, H5N2</td><td>Zoonotic (can spread to humans); mammalian adaptation concern in 2025</td><td class="bi-te">జూనోటిక్ — జంతువుల నుండి మానవులకు వ్యాపించవచ్చు</td></tr>
 <tr><td>Polio (PNG 2025)</td><td>Poliovirus</td><td>Papua New Guinea WHO-declared outbreak 2025; only Afghanistan &amp; Pakistan remain polio-endemic</td><td class="bi-te">PNG 2025 పోలియో ప్రకోపం; అఫ్ఘానిస్తాన్ &amp; పాకిస్తాన్ మాత్రమే ఎండమిక్</td></tr>
+</table>
+
+<div class="section-hdr">AI Large Language Models 2025-26 / AI భాషా నమూనాలు</div>
+<table class="key-table">
+<tr><th>Model</th><th>Developer</th><th>Release Date / Key Feature</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>GPT-5</b></td><td>OpenAI</td><td><b>August 2025</b> — multimodal reasoning; claimed "early AGI" capabilities; trained on 2025 data; more energy-efficient than GPT-4</td><td class="bi-te">ఆగస్టు 2025 — బహుళ-మోడ్ సాధన; AGI సామర్థ్యాలు</td></tr>
+<tr><td><b>Claude Opus 4</b></td><td>Anthropic</td><td>Released <b>May 2025</b> — enhanced reasoning, reduced hallucinations; improved safety benchmarks; supports 200K token context (6 months data)</td><td class="bi-te">మే 2025 — తర్కణ సంపర్కం; గల్లూసినేషన్‌లు తగ్గించారు</td></tr>
+<tr><td><b>Gemini 3 (Gemini 2.0)</b></td><td>Google DeepMind</td><td><b>December 2024</b> (Gemini 2.0) + ongoing Gemini 3 development — vision + audio + video reasoning; multimodal</td><td class="bi-te">డిసెం. 2024 Gemini 2.0; దృశ్య, ఆడియో, వీడియో సాధన</td></tr>
+<tr><td><b>DeepSeek R1</b></td><td>DeepSeek (China)</td><td>Released early 2026 — open-source reasoning model; outperforms GPT-4 on benchmark tests (competitive); lower inference cost</td><td class="bi-te">2026 — ఓపెన్-సోర్స్; GPT-4 తో పోటీ; తక్కువ ఖర్చు</td></tr>
+<tr><td><b>IBM Heron R2</b></td><td>IBM Quantum</td><td><b>156-qubit</b> quantum processor; located at Amaravati Advanced Quantum Computing Centre (AQCC), India; error mitigation, entanglement-based operations</td><td class="bi-te">156-క్యూబిట్ కোয়ాంటం ప్రసెసర్; అమరావతిలో AQCC</td></tr>
+</table>
+
+<div class="section-hdr">India's AI & Quantum Mission / భారత AI & క్వాంటం మిషన్</div>
+<table class="key-table">
+<tr><th>Program</th><th>Focus / Budget</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>IndiaAI Mission</b></td><td>Launched 2024 by Ministry of Electronics &amp; IT; aims to build India's sovereign AI ecosystem; budget allocation ~Rs. 10,000+ crore over 5 years; targets foundation models, cloud infrastructure, R&D hubs</td><td class="bi-te">ఇండియాAI — సార్వభౌమ AI ఈకోసిస్టమ్; Rs. 10,000 కోటి+ బడ్జెట్</td></tr>
+<tr><td><b>Mission Mausam</b></td><td><b>Rs. 2,000 crore</b> weather prediction &amp; climate science program; AI-powered forecasting, climate resilience; operated by Ministry of Earth Sciences</td><td class="bi-te">మిషన్ ముసుమ్ — Rs. 2,000 కోటి; AI-శక్తిచాలిత వాతావరణ సూచన</td></tr>
+<tr><td><b>CRISPR Casgevy (Edits)</b></td><td>FDA-approved gene therapy (Dec 2023); treats sickle-cell disease &amp; beta-thalassemia by editing patient's own blood cells; real-world deployment in India pilot trials 2025-26</td><td class="bi-te">CRISPR జన్యు చికిత్స — సిక్కిల్-సెల్ & బీటా-థలసీమియా నిరాకరణ</td></tr>
 </table>
 
 <div class="section-hdr">Japan AI Law 2025</div>
@@ -803,6 +834,7 @@ NOTES.append(('reports_global', 'Global Reports & Rankings', 'ప్రపంచ
 <div class="section-hdr">SIPRI — Nuclear Warheads 2025</div>
 <table class="key-table">
 <tr><th>Country</th><th>Warheads (SIPRI 2025)</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>GLOBAL TOTAL</b></td><td><b>~12,241</b> warheads (2025 estimate)</td><td class="bi-te">ప్రపంచ మొత్తం ~12,241 అణ్వాయుధాలు</td></tr>
 <tr><td>Russia</td><td><b>5,459</b> (largest arsenal)</td><td class="bi-te">రష్యా — అత్యధిక అణ్వాయుధాలు</td></tr>
 <tr><td>USA</td><td><b>5,177</b></td><td class="bi-te">USA</td></tr>
 <tr><td>China</td><td>~500</td><td class="bi-te">చైనా</td></tr>
@@ -861,6 +893,7 @@ NOTES.append(('reports_economic', 'Development & Economic Indices', 'అభి�
 <tr><td>Global Gender Gap 2025</td><td>WEF</td><td>India: <b>131/146</b> (score 64.4%)</td><td>Iceland (consistently #1)</td><td class="bi-te">WEF జెండర్ గ్యాప్ 2025: భారత్ 131వ (64.4%); ఐస్‌లాండ్ అగ్రస్థానం</td></tr>
 <tr><td>UNFPA SOWP 2025</td><td>UNFPA</td><td>Theme: 'The Real Fertility Crisis' — both very high AND very low fertility pose challenges</td><td>—</td><td class="bi-te">UNFPA: అత్యంత అధిక & అత్యంత తక్కువ జననాల రెండూ సవాళ్లు</td></tr>
 <tr><td>India TFR</td><td>NFHS-5</td><td>India TFR = 2.0 (NFHS-5, 2019-21) — below replacement level of 2.1 for first time</td><td>—</td><td class="bi-te">భారత్ TFR 2.0 — మొదటిసారి 2.1 కంటే తక్కువ</td></tr>
+<tr><td>Henley Passport Index 2025</td><td>Henley & Partners</td><td>India: <b>85/195</b> — measures visa-free access to countries</td><td>UAE (rank 1)</td><td class="bi-te">హెన్లీ పాస్‌పోర్ట్ సూచిక: భారత్ 85వ — వీసా-ముక్త ప్రవేశాధికారం</td></tr>
 </table>
 
 <div class="section-hdr">Health & Education Reports</div>
@@ -868,6 +901,8 @@ NOTES.append(('reports_economic', 'Development & Economic Indices', 'అభి�
 <tr><th>Report</th><th>Publisher</th><th>Key Finding</th><th class="bi-te">వివరణ</th></tr>
 <tr><td>Global TB Report</td><td>WHO</td><td>India = 26% of global TB burden (highest); India target: eliminate TB by 2025 (5 years before SDG 2030)</td><td class="bi-te">భారత్ — 26% ప్రపంచ TB భారం; 2025 నాటికి TB నిర్మూలన లక్ష్యం</td></tr>
 <tr><td>UNESCO GEM Report</td><td>UNESCO (Paris)</td><td>272 million children out of school globally</td><td class="bi-te">272 మిలియన్ పిల్లలు పాఠశాలకు వెళ్ళడం లేదు</td></tr>
+<tr><td>FAO SOFI Report 2025</td><td>FAO (jointly with IFAD, UNICEF, WFP, WHO)</td><td><b>673 million</b> people hunger-affected globally in 2024; undernourishment rising post-pandemic</td><td class="bi-te">FAO SOFI 2025: 673 మిలియన్ ఆకలితో బాధపడిన వారు ప్రపంచవ్యాప్తంగా</td></tr>
+<tr><td>Multidimensional Poverty Index 2025</td><td>Oxford Poverty & Human Development Initiative (OPHI)</td><td>India: <b>16.4%</b> MPI incidence (233M in acute multidimensional poverty); substantial progress since 2006 (54%)</td><td class="bi-te">MPI 2025: భారత్ 16.4% MPI ఘటన; 2006 నుండి గణనీయ పురోగతి</td></tr>
 <tr><td>WESP 2025</td><td>UN DESA</td><td>Global GDP growth: 2.4%; India: 6.3% — fastest major economy</td><td class="bi-te">ప్రపంచ GDP వృద్ధి 2.4%; భారత్ 6.3%</td></tr>
 <tr><td>PGI 2.0</td><td>Ministry of Education, India</td><td>73 indicators, 6 domains, 1000 points; Chandigarh topped; Meghalaya at bottom</td><td class="bi-te">PGI 2.0: చండీగఢ్ అగ్రస్థానం; మేఘాలయ చివర</td></tr>
 <tr><td>Global Debt</td><td>UNCTAD (Geneva)</td><td>Global public debt reached record $102 trillion</td><td class="bi-te">ప్రపంచ రుణం రికార్డు $102 ట్రిలియన్</td></tr>
@@ -911,13 +946,25 @@ NOTES.append(('events_leadership', 'World Leadership Changes 2025-26', 'ప్�
 <div class="section-hdr">Nobel Prize 2025 Winners / నోబెల్ 2025</div>
 <table class="key-table">
 <tr><th>Category</th><th>Winner</th><th class="bi-te">వివరణ</th></tr>
-<tr><td>Peace</td><td>María Corina Machado (Venezuela) — democratic rights activist</td><td class="bi-te">వెనెజుయెలా ప్రజాస్వామ్య హక్కుల ఉద్యమకారుడు</td></tr>
-<tr><td>Literature</td><td>László Krasznahorkai (Hungary) — Hungary's first Nobel in Literature</td><td class="bi-te">హంగేరీ మొదటి సాహిత్య నోబెల్</td></tr>
+<tr><td>Peace</td><td><b>María Corina Machado (Venezuela)</b> — democratic rights activist; first Venezuelan recipient in 45+ years</td><td class="bi-te">వెనెజుయెలా ప్రజాస్వామ్య హక్కుల ఉద్యమకారుడు</td></tr>
+<tr><td>Literature</td><td><b>László Krasznahorkai (Hungary)</b> — Hungarian writer; Hungary's first Nobel in Literature</td><td class="bi-te">హంగేరీ మొదటి సాహిత్య నోబెల్</td></tr>
 <tr><td>Medicine</td><td>Mary Brunkow, Fred Ramsdell, Shimon Sakaguchi — peripheral immune tolerance</td><td class="bi-te">రోగనిరోధక సహనంపై పరిశోధన</td></tr>
 <tr><td>Physics</td><td>John Clarke, Michel Devoret, John Martinis — macroscopic quantum tunneling</td><td class="bi-te">క్వాంటమ్ టన్నెలింగ్ ఆవిష్కరణ</td></tr>
 <tr><td>Chemistry</td><td>Susumu Kitagawa, Richard Robson, Omar Yaghi — metal-organic frameworks (MOFs)</td><td class="bi-te">మెటల్-ఆర్గానిక్ ఫ్రేమ్‌వర్క్‌లు</td></tr>
 <tr><td>Economics</td><td>Joel Mokyr, Philippe Aghion, Peter Howitt — innovation &amp; long-term economic growth</td><td class="bi-te">ఆవిష్కరణ & దీర్ఘకాలిక ఆర్థిక వృద్ధి</td></tr>
+<tr><td>Turing Award 2025</td><td><b>Gilles Brassard &amp; Charles Bennett</b> (IBM + University of Montreal) — quantum key distribution (BB84 protocol); $1 million prize</td><td class="bi-te">QKD & BB84 ప్రోటోకాల్; చరిత్రకం కోఆ క్వాంటమ్ సంకేతం</td></tr>
+<tr><td>International Gandhi Peace Prize 2025</td><td><b>Graça Machel</b> (Mozambique) — human rights activist, children's rights advocate; widow of Nelson Mandela</td><td class="bi-te">గ్రాస మాచెల్ — మానవ హక్కుల రక్షకుడు; మండేలా భార్య</td></tr>
 </table>
+
+<div class="section-hdr">India's Dadasaheb Phalke Award 2025 / భారత దాదాసాહేబ్ ఫాల్కే</div>
+<table class="key-table">
+<tr><th>Award</th><th>Winner / Date</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>75th Dadasaheb Phalke Award</b> (not 77th)</td><td><b>Mohanlal</b> (Malayalam actor) — <b>September 23, 2025</b> — <b>India's first Malayalam cinema recipient</b>; career spanning 45+ years; 150+ films; Prime Minister Modi presented award</td><td class="bi-te">మోహన్‌లాల్ — సెప్టెంబర్ 23, 2025; మలయాళం సినిమా నుండి మొదటి గ్రహీత; 45+ సంవత్సరాలు కెరీర్</td></tr>
+</table>
+
+<div class="section-hdr">Padma Awards 2026 / భారత పద్మ పురస్కారాలు 2026</div>
+<p>Republic Day 2026 (January 26) — India announced Padma Awards. Notable winners from AP (Andhra Pradesh): <b>Maganti Murali Mohan</b> (Padma Shri), <b>Gadde Babu Rajendra Prasad</b> (Padma Shri), <b>Garimella Balakrishna Prasad — posthumous</b> (Padma Shri), <b>Vempati Kutumba Sastri</b> (Padma Shri). Total AP Padma Shri 2026 = <b>4 awardees</b>.</p>
+<p class="bi-te">రిపబ్లిక్ డే 2026 (జనవరి 26) — భారత పద్మ పురస్కారాలు. AP నుండి: ముంగంటి మురలి మోహన్, గద్దె బాబు రాజేంద్ర ప్రసాద్, గరిమెళ్ల బాలకృష్ణ ప్రసాద్ (మరణానంతరం), వెంపటి కుతుంబ శాస్త్రి (పద్మశ్రీ). AP మొత్తం 2026: 4 పద్మశ్రీ గ్రహీతలు.</p>
 """))
 
 # ═══════════════════════════════════════════════════════
@@ -1094,7 +1141,7 @@ NOTES.append(('intl_2026_us_global_ops', 'US Global Military Operations 2026', '
 <table class="key-table">
 <tr><th>Operation</th><th>Date</th><th>Target / Outcome</th><th class="bi-te">వివరణ</th></tr>
 <tr><td><b>Operation Absolute Strike</b></td><td>January 3, 2026</td><td>Venezuela — Pres. <b>Nicolás Maduro captured</b> and flown to New York; ~150 aircraft used (F-22 Raptor, F-35 Lightning II, B-1 Lancer); Venezuela holds 303 billion barrels oil reserves (~20% world)</td><td class="bi-te">జనవరి 3 — వెనెజుయెలాపై; మదురో అరెస్ట్; న్యూయార్క్‌కు తరలింపు; 150 యుద్ధవిమానాలు</td></tr>
-<tr><td><b>Operation Hunter</b></td><td>January 10, 2026</td><td>Syria — ISIS strongholds; Pres. <b>Ahmed al-Shara</b> cooperated (since Bashar al-Assad's ouster Dec 2024); coordinated counter-terror strikes</td><td class="bi-te">జనవరి 10 — సిరియాలో ISISపై; అల్-షరా సహకారం</td></tr>
+<tr><td><b>Operation Hawkeye Strike</b></td><td>January 10, 2026</td><td>Syria — ISIS strongholds; Pres. <b>Ahmed al-Shara</b> cooperated (since Bashar al-Assad's ouster Dec 2024); coordinated counter-terror strikes</td><td class="bi-te">జనవరి 10 — సిరియాలో ISISపై; అల్-షరా సహకారం</td></tr>
 <tr><td>Nigeria-Sokoto strikes</td><td>December 25-26, 2025</td><td>US strikes vs <b>Boko Haram + ISIS-West Africa</b> in Sokoto state; coordinated with Nigerian military</td><td class="bi-te">డిసెం. 25-26 — నైజీరియా సోకోటోలో బోకో హరామ్‌పై</td></tr>
 <tr><td>Saudi Arabia in Yemen</td><td>December 30, 2025</td><td>Saudi air strikes on <b>Mukulla port</b> (Yemen) against Southern Transitional Council (STC) forces; Houthi-related escalation</td><td class="bi-te">డిసెం. 30 — యెమెన్ ముకుళ్ళా పోర్ట్ సౌదీ దాడులు</td></tr>
 </table>
@@ -1215,11 +1262,11 @@ NOTES.append(('intl_2026_israel_actions', "Israel's Foreign Policy 2026", 'ఇ�
 <table class="key-table">
 <tr><th>Date</th><th>Action</th><th class="bi-te">వివరణ</th></tr>
 <tr><td><b>Dec 26, 2025</b></td><td>Israel becomes the <b>first country in the world to recognise Somaliland</b> as an independent state (separated from Somalia in 1991, sought recognition for 35 years)</td><td class="bi-te">డిసెం. 26 — సోమాలిల్యాండ్‌ను గుర్తించిన మొదటి దేశం</td></tr>
-<tr><td>February 2026</td><td>Israel demolishes <b>UNRWA HQ</b> in East Jerusalem's Sheikh Jarrah neighbourhood — destroying the UN Relief & Works Agency's Palestinian refugee operations base</td><td class="bi-te">ఫిబ్రవరి — తూర్పు జెరూసలెం షేక్ జర్రాలోని UNRWA HQ నేలమట్టం</td></tr>
+<tr><td><b>Jan 20, 2026</b></td><td>Israel demolishes <b>UNRWA HQ</b> in East Jerusalem's Sheikh Jarrah neighbourhood — destroying the UN Relief & Works Agency's Palestinian refugee operations base</td><td class="bi-te">జనవరి 20 — తూర్పు జెరూసలెం షేక్ జర్రాలోని UNRWA HQ నేలమట్టం</td></tr>
 <tr><td>Mar 2, 2026</td><td><b>Israel-Hezbollah War</b> erupts — concurrent with Iran War; <b>2,000+ killed in Lebanon</b></td><td class="bi-te">మార్చి 2 — ఇజ్రాయెల్-హిజ్బుల్లా యుద్ధం; 2,000+ లెబనాన్‌లో మరణాలు</td></tr>
 <tr><td><b>Mar 30, 2026</b></td><td>Knesset passes <b>mandatory death penalty</b> law for Palestinians convicted of attacking Israeli citizens</td><td class="bi-te">మార్చి 30 — పాలస్తీనియన్లపై దాడి కేసుల్లో తప్పనిసరి మరణ శిక్ష చట్టం</td></tr>
 <tr><td>Apr 14-15, 2026</td><td>Israel-Lebanon ceasefire talks in <b>Washington DC</b></td><td class="bi-te">ఏప్రిల్ 14-15 — వాషింగ్టన్ చర్చలు</td></tr>
-<tr><td><b>Apr 17, 2026</b></td><td>Israel-Lebanon <b>10-day ceasefire</b> announced</td><td class="bi-te">ఏప్రిల్ 17 — 10 రోజుల కదనవిరమణ</td></tr>
+<tr><td><b>Apr 16, 2026</b></td><td>Israel-Lebanon <b>ceasefire</b> begins (concluded concurrent with 2026 Iran War)</td><td class="bi-te">ఏప్రిల్ 16 — ఇజ్రాయెల్-లెబనాన్ కదనవిరమణం ప్రారంభం</td></tr>
 </table>
 
 <div class="section-hdr">Somaliland Recognition Significance / సోమాలిల్యాండ్ గుర్తింపు ప్రాముఖ్యత</div>
