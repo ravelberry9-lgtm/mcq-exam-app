@@ -49,7 +49,7 @@ SECTIONS_JSON = json.dumps([
         "summary": "GSDP ₹16.41 లక్షల కోట్లు (FY24-25); FY25-26 ₹18.30 లక్షల కోట్లు (PRS India; current prices; 14% నామమాత్ర వృద్ధి); FY26-27 ప్రొజెక్షన్ ₹19.75 లక్షల కోట్లు (12% వృద్ధి). Q2 FY25-26 AP వాస్తవ వృద్ధి 11.28% (జాతీయ GDP 8.7% కంటే ఎక్కువ — డిసెంబర్ 2025 ప్రభుత్వ ప్రకటన). GDP సహకారం 4.72%. AP Budget 2026-27 ₹3,32,205 కోట్లు (FM Payyavula Keshav, 3rd consecutive). Retail inflation 7.57% → 1.39%. 16th FC AP share 4.22%.",
         "html": """<div class="concept-cover">
   <h1>AP GSDP &amp; Economic Snapshot &nbsp;<span class="bi-te">/ AP ఆర్థిక స్నాప్‌షాట్</span></h1>
-  <div class="sub">FY24-25 GSDP Rs.16.41 L-cr • FY25-26 Rs.17.62 L-cr • Real growth 8.21% (7th)</div>
+  <div class="sub">FY24-25 GSDP Rs.16.41 L-cr • FY25-26 Rs.18.30 L-cr • Real growth 8.21% (7th) | Q2 FY25-26 growth 11.28%</div>
 </div>
 
 <div class="section-hdr">GSDP Snapshot / GSDP స్నాప్‌షాట్</div>

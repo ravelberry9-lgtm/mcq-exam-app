@@ -233,8 +233,8 @@ SECTIONS_JSON = json.dumps([
 <tr><td><b>Indian Hockey Team</b></td><td>Bronze (beat Spain 2-1)</td><td>Back-to-back Olympic bronze (Tokyo 2020 + Paris 2024)</td><td class="bi-te">హాకీ — వరుసగా 2 ఒలింపిక్ కాంస్యాలు</td></tr>
 <tr><td>Total India tally</td><td>6 medals (1 silver + 5 bronze)</td><td>Paris 2024 final count</td><td class="bi-te">భారత్ — 6 పతకాలు</td></tr>
 </table>
-<p><b>Looking ahead — Asian Games 2026:</b> The 20th Asian Games are scheduled for September 19 – October 4, 2026 in Aichi-Nagoya, Japan. Several AP athletes (Satwik, Sindhu, Nitesh) are in contention. The 2030 Asian Games will be hosted in Doha (announced 2024).</p>
-<p class="bi-te">2026 ఆసియా క్రీడలు (20వవి) జపాన్‌లోని ఐచి-నాగోయాలో సెప్టెంబర్ 19 – అక్టోబర్ 4, 2026లో జరగనున్నాయి. సాత్విక్, సింధు, నితేష్ వంటి AP క్రీడాకారులు ప్రాతినిధ్యం వహించనున్నారు.</p>"""
+<p><b>2025-26 International Sport Headlines:</b> In cricket, <b>South Africa won the 2025 T20 World Cup</b> (beat Australia at Lord's). Badminton saw <b>Jannik Sinner win Wimbledon 2025</b> (tennis); <b>Shi Yuqi (China) won All England Open 2025</b> (badminton). These milestones set the stage for AP's own athletes at the <b>2026 Asian Games (Aichi-Nagoya, Japan, Sep 19 – Oct 4)</b>, where several AP athletes (Satwik, Sindhu, Nitesh) are in contention for medals.</p>
+<p class="bi-te">2025-26 అంతర్జాతీయ క్రీడలు: దక్షిణాఫ్రికా 2025 T20 WC విజయం; జనిక్ సిన్నర్ విమ్బిల్డన్ 2025; షి యుక్సీ ఆల్ ఇంగ్లాండ్ 2025. 2026 ఆసియా క్రీడలు (20వవి) జపాన్‌లోని ఐచి-నాగోయాలో సెప్టెంబర్ 19 – అక్టోబర్ 4, 2026లో జరగనున్నాయి. సాత్విక్, సింధు, నితేష్ వంటి AP క్రీడాకారులు పతకాల కోసం ప్రయత్నిస్తారు.</p>"""
     },
     {
         "id": "div8_s6",
