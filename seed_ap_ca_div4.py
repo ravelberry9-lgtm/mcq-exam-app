@@ -163,8 +163,8 @@ SECTIONS_JSON = [
 <tr><td>AP Space Application Centre</td><td>Rs.8.05 crore</td><td class="bi-te">AP స్పేస్ సెంటర్</td></tr>
 </table>
 
-<p><b>Economic context:</b> AP GSDP is Rs.17.62 lakh crore; agriculture's share is 33.2%. AP's agricultural growth at <b>7.83%</b> sharply outpaces the national average of <b>0.80%</b> — a key talking point. The fiscal deficit at Rs.75,868 cr translates to roughly 4.3% of GSDP, slightly above FRBM targets but within the borrowing window approved by the Centre.</p>
-<p class="bi-te">AP GSDP ₹17.62 లక్షల కోట్లు; వ్యవసాయ వాటా 33.2%. AP వ్యవసాయ వృద్ధి 7.83% — జాతీయ సగటు 0.80% తో పోలిస్తే చాలా అధికం. ద్రవ్య లోటు GSDP లో ~4.3% — FRBM లక్ష్యం కంటే కొంచెం ఎక్కువ, కానీ కేంద్రం ఇచ్చిన borrowing limit లోపలే.</p>
+<p><b>Economic context:</b> AP GSDP FY25-26 is <b>Rs.18.30 lakh crore</b> (up from Rs.16.41 L-cr in FY24-25 — 14% nominal growth per PRS India); agriculture's share is 33.2%. AP's agricultural growth at <b>7.83%</b> sharply outpaces the national average of <b>0.80%</b> — a key talking point. The fiscal deficit at Rs.75,868 cr translates to roughly 4.3% of GSDP, slightly above FRBM targets but within the borrowing window approved by the Centre.</p>
+<p class="bi-te">AP GSDP FY25-26 ₹18.30 లక్షల కోట్లు (FY24-25 నుండి ₹16.41 L-cr నుండి పెరిగింది — 14% నామమాత్ర వృద్ధి); వ్యవసాయ వాటా 33.2%. AP వ్యవసాయ వృద్ధి 7.83% — జాతీయ సగటు 0.80% తో పోలిస్తే చాలా అధికం. ద్రవ్య లోటు GSDP లో ~4.3% — FRBM లక్ష్యం కంటే కొంచెం ఎక్కువ, కానీ కేంద్రం ఇచ్చిన borrowing limit లోపలే.</p>
 
 <p><b>Trivia:</b> Keshav is the only AP FM to present 3 consecutive budgets in the current Naidu-IV tenure (2024-25, 2025-26, 2026-27). The 2025-26 budget was Rs.3,22,359 crore — so 2026-27 represents a ~3% nominal expansion.</p>"""
     },
@@ -1007,10 +1007,10 @@ MCQ_DATA = [
      "అన్నదాత సుఖీభవకి ₹6,600 కోట్లు కేటాయించారు."),
 
     (11, 3,
-     "AP GSDP 2026లో ఎంత? వ్యవసాయ వాటా శాతం?",
-     "₹15.20 లక్షల కోట్లు; 28%", "₹17.62 లక్షల కోట్లు; 33.2%", "₹19.50 లక్షల కోట్లు; 38%", "₹21.00 లక్షల కోట్లు; 41%",
+     "AP GSDP FY25-26లో ఎంత? వ్యవసాయ వాటా శాతం?",
+     "₹15.20 లక్షల కోట్లు; 28%", "₹18.30 లక్షల కోట్లు; 33.2%", "₹19.50 లక్షల కోట్లు; 38%", "₹21.00 లక్షల కోట్లు; 41%",
      "b",
-     "AP GSDP ₹17.62 లక్షల కోట్లు; వ్యవసాయ వాటా 33.2%. AP వ్యవసాయ వృద్ధి 7.83% (జాతీయ 0.80%)."),
+     "AP GSDP FY25-26 ₹18.30 లక్షల కోట్లు (FY24-25 నుండి ₹16.41 L-cr నుండి పెరిగింది — 14% నామమాత్ర వృద్ధి); వ్యవసాయ వాటా 33.2%. AP వ్యవసాయ వృద్ధి 7.83% (జాతీయ 0.80%)."),
 
     (11, 2,
      "AP Budget 2026-27లో అమరావతి నిర్మాణానికి ఎంత కేటాయించారు?",
