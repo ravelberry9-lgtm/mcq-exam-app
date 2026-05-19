@@ -21,6 +21,25 @@ AUDIT LOG (2026-05-18):
   `html` (concept-cover, section-hdr, key-table, bi-te), matching the seed_ap_ca_div1 pattern.
   HTML covers APRA 2014 dates/Acts, Sections 5/24/30/94, SCS+14th FC, 2026 Amendment timeline,
   Article 371-D + G.O. 610, 7-mandals list, and a rapid-revision sheet.
+
+AUDIT LOG (2026-05-19, freshness pass):
+- FIXED stale fact: Section 2 MCQ (section_idx=2, AP HC date) said "Justice Rakesh Kumar
+  మొదటి Chief Justice" — WRONG. Corrected to Justice C. Praveen Kumar (first Acting CJ) and
+  Justice J.K. Maheshwari (first regular CJ, sworn-in Oct 2019). Also added Lisa Gill =
+  current 6th CJ (Apr 25, 2026, first woman CJ) reference.
+- VERIFIED via web (May 2026): APRA 2026 Amendment Act = Act No. 7/2026; LS Apr 1, RS Apr 2,
+  Pres assent Apr 6. Section 5(2) amended; "Amaravati" formally named; retrospective from
+  Jun 2, 2024. New Explanation 2 inserted (covers all CRDA Act 2014-notified areas).
+  This is the 1st instance in independent India where Parliament named a state's capital
+  city by name in a central law.
+- VERIFIED 7-mandals transfer = Act No. 19/2014 (Jul 11, 2014). After 2022 district
+  reorganisation, the 4 East-Godavari-side mandals (Kunavaram, V.R.Puram, Chintur, Nellipaka)
+  moved to Alluri Sitarama Raju (ASR) district; the 3 West-Godavari-side mandals
+  (Velerupadu, Kukunoor, Burgampahad-partial) moved to Eluru district.
+- VERIFIED 28 districts post Dec 31, 2025 notification (effective Jan 1, 2026). Polavaram
+  + Markapuram added to 26-district map.
+- ADDED gap-fill MCQs at end of _EXTRA_MCQ_DATA_10 (Apr 2026 Amendment specifics, 28-district
+  notification, Article 3+111 basis, "Amaravati" definition under CRDA Act).
 """
 
 import os
@@ -384,7 +403,7 @@ MCQ_DATA = [
         "question": "AP High Court ఏ తేదీన అమరావతిలో ఏర్పాటైంది?",
         "options": ["జూన్ 2, 2017", "జనవరి 1, 2019", "మార్చి 1, 2019", "జూలై 1, 2020"],
         "answer": "B",
-        "explanation": "APRA 2014 Section 30 కింద AP కి ప్రత్యేక High Court జనవరి 1, 2019న అమరావతిలో ఏర్పాటైంది. Justice Rakesh Kumar మొదటి Chief Justice."
+        "explanation": "APRA 2014 Section 30 కింద AP కి ప్రత్యేక High Court జనవరి 1, 2019న అమరావతిలో ఏర్పాటైంది. Justice C. Praveen Kumar తొలి ఆక్టింగ్ CJ; Justice J.K. Maheshwari తొలి సాధారణ (regular) CJ (2019 అక్టోబర్). ప్రస్తుత 6వ CJ — Justice Lisa Gill (ఏప్రిల్ 25, 2026 నుండి, తొలి మహిళా CJ)."
     },
     # Section 3 — SCS
     {
@@ -705,6 +724,96 @@ _EXTRA_MCQ_DATA_10 = [
         "opt_d": "1947–2014",
         "answer": "C",
         "explanation_te": "ఉమ్మడి ఆంధ్రప్రదేశ్ నవంబర్ 1, 1956 (రాష్ట్రాల పునర్వ్యవస్థీకరణ) నుండి జూన్ 1, 2014 (APRA అమలు) వరకు 58 సంవత్సరాలు ఉంది."
+    },
+
+    # ── 2026-05-19 freshness gap-fill MCQs ─────────────────────────────────────
+    {
+        "section_idx": 4,
+        "difficulty": "hard",
+        "question_te": "APRA Amendment Act 2026 Section 5(2) లో కొత్త Explanation 2 ఏమి చెబుతుంది?",
+        "opt_a": "అమరావతి అంటే కేవలం రాజధాని గ్రామం వెంకటపాలెం మాత్రమే",
+        "opt_b": "AP CRDA Act 2014 కింద notified అన్ని రాజధాని ప్రాంతాలు అమరావతి కింద వస్తాయి",
+        "opt_c": "హైదరాబాద్ ఇంకా ఉమ్మడి రాజధానిగా కొనసాగుతుంది",
+        "opt_d": "3-రాజధాని విధానం పునరుద్ధరించబడుతుంది",
+        "answer": "B",
+        "explanation_te": "Amendment Act 2026 Section 5(2) లో కొత్త Explanation 2 ఇనిర్ట్ చేసింది — 'Amaravati' అంటే AP Capital Region Development Authority (CRDA) Act, 2014 కింద notified అన్ని capital city areas (~217 sq km) అని స్పష్టం చేసింది. ఇది 2020 YSRCP 3-రాజధాని ప్రతిపాదనను చట్టబద్ధంగా రద్దు చేసింది."
+    },
+    {
+        "section_idx": 4,
+        "difficulty": "medium",
+        "question_te": "APRA Amendment Act 2026 ను లోక్‌సభలో ఎవరు ప్రవేశపెట్టారు?",
+        "opt_a": "నరేంద్ర మోదీ",
+        "opt_b": "అమిత్ షా (హోంమంత్రి)",
+        "opt_c": "నిర్మలా సీతారామన్",
+        "opt_d": "రాజ్‌నాథ్ సింగ్",
+        "answer": "B",
+        "explanation_te": "హోంమంత్రి అమిత్ షా AP Reorganisation (Amendment) Bill 2026 ను లోక్‌సభలో ప్రవేశపెట్టారు (మార్చి చివర్లో). ఏప్రిల్ 1న LS, ఏప్రిల్ 2న RS ఆమోదించాయి; ఏప్రిల్ 6న రాష్ట్రపతి అంగీకారం (Act No. 7/2026). స్వతంత్ర భారతంలో ఒక రాష్ట్ర రాజధాని పేరు కేంద్ర చట్టంలో పేర్కొనడం ఇదే తొలిసారి."
+    },
+    {
+        "section_idx": 4,
+        "difficulty": "hard",
+        "question_te": "APRA Amendment Act 2026 రాజ్యాంగపరమైన ఆధారం ఏది?",
+        "opt_a": "Article 1 + Article 14",
+        "opt_b": "Article 3 + Article 111",
+        "opt_c": "Article 368 (Constitutional Amendment)",
+        "opt_d": "Article 249",
+        "answer": "B",
+        "explanation_te": "APRA Amendment Act 2026 Article 3 (Parliament's power to alter areas/boundaries/names of States) + Article 111 (President's assent to Bills) కింద చేశారు. ఇది ordinary law (Article 368 constitutional amendment కాదు) కాబట్టి సాధారణ మెజారిటీతోనే ఆమోదం సరిపోతుంది."
+    },
+    {
+        "section_idx": 6,
+        "difficulty": "medium",
+        "question_te": "2022 జిల్లాల పునర్వ్యవస్థీకరణ తర్వాత, 7-మండలాల్లోని తూర్పు గోదావరి వైపు 4 మండలాలు ఏ కొత్త జిల్లాలో చేరాయి?",
+        "opt_a": "కోనసీమ",
+        "opt_b": "కాకినాడ",
+        "opt_c": "Alluri Sitarama Raju (ASR) జిల్లా",
+        "opt_d": "తూర్పు గోదావరి (అలానే)",
+        "answer": "C",
+        "explanation_te": "2022 ఏప్రిల్‌లో జిల్లాల పునర్వ్యవస్థీకరణ తర్వాత, 7 మండలాల్లోని తూర్పు 4 మండలాలు (Kunavaram, V.R.Puram, Chintur, Nellipaka) కొత్తగా ఏర్పడిన Alluri Sitarama Raju (ASR) జిల్లాలో; పశ్చిమ 3 (Velerupadu, Kukunoor, Burgampahad-partial) ఏలూరు జిల్లాలో చేరాయి. Polavaram జిల్లా (2026) లో ASR అతిపెద్ద దోహదకారి."
+    },
+    {
+        "section_idx": 0,
+        "difficulty": "medium",
+        "question_te": "AP 28 జిల్లాల Final Notification ఏ తేదీన జారీ అయింది?",
+        "opt_a": "నవంబర్ 1, 2025",
+        "opt_b": "డిసెంబర్ 31, 2025",
+        "opt_c": "జనవరి 1, 2026",
+        "opt_d": "ఏప్రిల్ 1, 2026",
+        "answer": "B",
+        "explanation_te": "AP ప్రభుత్వం డిసెంబర్ 31, 2025న 28 జిల్లాల కొత్త mandal/revenue division final notification జారీ చేసింది; కొత్త అడ్మినిస్ట్రేటివ్ ఆర్రేంజ్‌మెంట్స్ జనవరి 1, 2026 నుండి అమల్లోకి వచ్చాయి. 13 → 26 (2022) → 28 (2026) — కొత్తవి: పోలవరం (HQ రంపచోడవరం), మార్కాపురం (HQ మార్కాపురం)."
+    },
+    {
+        "section_idx": 2,
+        "difficulty": "hard",
+        "question_te": "AP High Court తొలి regular Chief Justice ఎవరు (Acting CJ కాకుండా)?",
+        "opt_a": "Justice C. Praveen Kumar",
+        "opt_b": "Justice J.K. Maheshwari",
+        "opt_c": "Justice Arup Kumar Goswami",
+        "opt_d": "Justice Rakesh Kumar",
+        "answer": "B",
+        "explanation_te": "Justice Jitendra Kumar Maheshwari అక్టోబర్ 7, 2019న AP HC తొలి regular (స్థాయి) Chief Justice గా ప్రమాణస్వీకారం చేశారు (Governor Biswabhusan Harichandan ప్రమాణం చేయించారు). అంతకుముందు Justice C. Praveen Kumar జనవరి 1, 2019 నుండి తొలి Acting CJ గా ఉన్నారు. ప్రస్తుత 6వ CJ — Justice Lisa Gill (ఏప్రిల్ 25, 2026, తొలి మహిళా CJ)."
+    },
+    {
+        "section_idx": 5,
+        "difficulty": "medium",
+        "question_te": "131వ రాజ్యాంగ సవరణ బిల్లు 2026 — ఏ Article సవరించాలని ప్రతిపాదించింది?",
+        "opt_a": "Article 80 (Rajya Sabha)",
+        "opt_b": "Article 82 (delimitation; women's reservation fast-track)",
+        "opt_c": "Article 370",
+        "opt_d": "Article 356",
+        "answer": "B",
+        "explanation_te": "131వ Constitutional Amendment Bill 2026 Article 82 ను సవరించాలని ప్రతిపాదించింది — 2026 జనాభా గణన కాకుండా 2011 census ఆధారంగా delimitation చేసి, 106వ సవరణ (2023) ప్రకారం 33% మహిళా రిజర్వేషన్‌ను fast-track చేయడం లక్ష్యం. ఏప్రిల్ 17, 2026న Lok Sabha లో ఓడిపోయింది (298/352)."
+    },
+    {
+        "section_idx": 7,
+        "difficulty": "medium",
+        "question_te": "7 మండలాల బదిలీ తర్వాత పోలవరం ప్రాజెక్టు ఏ ఇరిగేషన్ సామర్థ్యం కల్పిస్తుంది?",
+        "opt_a": "~3 లక్షల ఎకరాలు",
+        "opt_b": "~5 లక్షల ఎకరాలు",
+        "opt_c": "~7.2 లక్షల ఎకరాలు",
+        "opt_d": "~10 లక్షల ఎకరాలు",
+        "answer": "C",
+        "explanation_te": "Polavaram Multipurpose Irrigation Project ~7.2 లక్షల ఎకరాల పంట భూమికి సాగునీరు అందిస్తుంది (తూర్పు + పశ్చిమ గోదావరి + కృష్ణా delta), 960 MW విద్యుత్ ఉత్పత్తి, విశాఖపట్నం పారిశ్రామిక & తాగునీటి అవసరాలు తీరుస్తుంది. APRA 2014 Section 94 ప్రకారం జాతీయ ప్రాజెక్టు హోదాతో కేంద్రం పూర్తి నిధులు భరిస్తోంది."
     }
 ]
 

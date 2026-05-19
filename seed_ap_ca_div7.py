@@ -2,6 +2,17 @@
 seed_ap_ca_div7.py
 AP Current Affairs — Chapter 7: AP చరిత్ర & స్వాతంత్ర్య సమరయోధులు
 
+FRESHNESS AUDIT (2026-05-19):
+- STALE-FIX: State Bird — was "Indian Roller / Pala Pitta" (that's Telangana's).
+  AP's official state bird since June 2018 is the Rose-ringed Parakeet (Rama Chiluka).
+  Updated SECTIONS_JSON s1 + s8 + state-bird MCQ; added State Fish (Striped Murrel).
+- STALE-FIX: 26-districts MCQ in section_idx 5 — updated to 28 (Polavaram + Markapuram
+  carved out w.e.f. Dec 31, 2025) per Cabinet GO; explanation refreshed.
+- STALE-FIX: state-bird MCQ at section_idx 4 — option (b) was "Indian Roller (Pala Pitta)"
+  combined with a vague "Roller/Parakeet" muddle. Cleaned to explicit Rose-ringed Parakeet.
+- ADDED gap-fill MCQs: 28 districts (Dec 2025), State Fish, Madanapalle proposal,
+  Andhra Mahasabha 1913 Bapatla, Talikota 1565 detail, Amaravati capital 2026 status.
+
 AUDIT LOG (2026-05-18):
 - REMOVED: "తెలంగాణ రాష్ట్రం ఏ తేదీన ఏర్పాటు అయింది?" — Telangana-specific question.
 - FIXED: Alluri birth date — changed from "1897 జూలై 4" to "మే 4, 1897"
@@ -58,7 +69,7 @@ SECTIONS_JSON = json.dumps([
 <table class="key-table">
 <tr><th>Symbol</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
 <tr><td>State Animal</td><td><b>Blackbuck</b> (Krishna Jinka) — Rollapadu WLS, Nandyal dist.</td><td class="bi-te">కృష్ణ జింక — రోళ్లపాడు, నంద్యాల జిల్లా</td></tr>
-<tr><td>State Bird</td><td><b>Indian Roller</b> (Pala Pitta)</td><td class="bi-te">పాల పిట్ట</td></tr>
+<tr><td>State Bird</td><td><b>Rose-ringed Parakeet</b> (Rama Chiluka) — changed 2018 post-bifurcation</td><td class="bi-te">రామ చిలుక (పాల పిట్ట కాదు; అది తెలంగాణది)</td></tr>
 <tr><td>State Tree</td><td><b>Neem</b> (Vepa)</td><td class="bi-te">వేప</td></tr>
 <tr><td>State Flower</td><td><b>Jasmine</b> (Malli / Jaji)</td><td class="bi-te">మల్లి / జాజి</td></tr>
 <tr><td>Districts (Dec 2025)</td><td><b>28</b> (13 → 26 in Apr 2022; Polavaram &amp; Markapuram added Dec 2025)</td><td class="bi-te">28 జిల్లాలు (పోలవరం + మార్కాపురం కొత్తవి)</td></tr>
@@ -292,9 +303,10 @@ SECTIONS_JSON = json.dumps([
 <tr><td>AP bifurcation date</td><td>June 2, 2014</td><td class="bi-te">జూన్ 2, 2014</td></tr>
 <tr><td>Districts (Dec 2025)</td><td><b>28</b> (13→26 in 2022; +Polavaram +Markapuram 2025)</td><td class="bi-te"><b>28 జిల్లాలు</b></td></tr>
 <tr><td>State Animal</td><td>Blackbuck (Rollapadu WLS, Nandyal)</td><td class="bi-te">కృష్ణ జింక</td></tr>
-<tr><td>State Bird</td><td>Indian Roller (Pala Pitta)</td><td class="bi-te">పాల పిట్ట</td></tr>
+<tr><td>State Bird</td><td>Rose-ringed Parakeet (Rama Chiluka) — 2018 change</td><td class="bi-te">రామ చిలుక</td></tr>
 <tr><td>State Tree</td><td>Neem (Vepa)</td><td class="bi-te">వేప</td></tr>
 <tr><td>State Flower</td><td>Jasmine (Malli / Jaji)</td><td class="bi-te">మల్లి / జాజి</td></tr>
+<tr><td>State Fish</td><td>Striped Murrel (Korramatta)</td><td class="bi-te">కొర్రమట్ట (స్ట్రైప్డ్ మర్రెల్)</td></tr>
 </table>
 
 <div class="section-hdr">Freedom Fighters Cheat-Sheet / సమరయోధుల సారాంశం</div>
@@ -922,13 +934,13 @@ MCQ_DATA = [
     {
         'section_idx': 4,
         'difficulty': 'easy',
-        'question_te': 'AP రాష్ట్రపక్షి ఏది?',
-        'opt_a': 'నెమలి',
-        'opt_b': 'రోజ్-రింగ్డ్ పారాకీట్ (ఇండియన్ రోజ్-రింగ్డ్ పారాకీట్)',
-        'opt_c': 'రాయి గువ్వ',
+        'question_te': 'AP రాష్ట్రపక్షి ఏది? (2018లో మార్పు తర్వాత)',
+        'opt_a': 'పాల పిట్ట (Indian Roller)',
+        'opt_b': 'రామ చిలుక (Rose-ringed Parakeet)',
+        'opt_c': 'నెమలి',
         'opt_d': 'కోయిల',
         'answer': 'B',
-        'explanation_te': 'AP రాష్ట్రపక్షి రోజ్-రింగ్డ్ పారాకీట్ (Indian Rose-ringed Parakeet). ఇది AP అంతటా కనుగొనబడే సాధారణ పక్షి.',
+        'explanation_te': 'AP రాష్ట్రపక్షి — రామ చిలుక (Rose-ringed Parakeet / Psittacula krameri). 2018 జూన్‌లో పాల పిట్ట (Indian Roller) నుండి రామ చిలుక గా మార్చారు. పాల పిట్ట ఇప్పుడు తెలంగాణ రాష్ట్రపక్షి.',
     },
     {
         'section_idx': 4,
@@ -1065,13 +1077,13 @@ MCQ_DATA = [
     {
         'section_idx': 5,
         'difficulty': 'medium',
-        'question_te': 'AP లో మొత్తం జిల్లాల సంఖ్య (2022 పునర్వ్యవస్థీకరణ తర్వాత) ఎంత?',
+        'question_te': 'AP లో మొత్తం జిల్లాల సంఖ్య (మే 2026 నాటికి) ఎంత?',
         'opt_a': '13',
-        'opt_b': '25',
-        'opt_c': '26',
-        'opt_d': '28',
+        'opt_b': '26',
+        'opt_c': '28',
+        'opt_d': '29',
         'answer': 'C',
-        'explanation_te': '2022 ఏప్రిల్‌లో AP లో 13 జిల్లాలను 26 జిల్లాలుగా విభజించారు. ఇది AP చరిత్రలో అతిపెద్ద పరిపాలనా పునర్వ్యవస్థీకరణ.',
+        'explanation_te': 'ఏప్రిల్ 4, 2022న 13 → 26 జిల్లాలుగా పునర్‌వ్యవస్థీకరణ; డిసెంబర్ 31, 2025 నుండి అమల్లోకి వచ్చిన పోలవరం (HQ: రంపచోడవరం) + మార్కాపురం రెండు కొత్త జిల్లాలతో మొత్తం 28 జిల్లాలు. మదనపల్లె ప్రతిపాదన మిగిలిపోయింది.',
     },
     {
         'section_idx': 2,
@@ -1116,6 +1128,107 @@ MCQ_DATA = [
         'opt_d': 'నాగార్జునకొండ ప్రాంతం',
         'answer': 'B',
         'explanation_te': 'రెడ్డి రాజ్యం 14వ-15వ శతాబ్దంలో కొండవీడును కేంద్రంగా తీర ఆంధ్ర ప్రాంతంలో పాలించింది. ప్రోలయ వేమారెడ్డి ఈ వంశం స్థాపకుడు.',
+    },
+
+    # === FRESHNESS GAP-FILL MCQs (Audit 2026-05-19) ===
+    {
+        'section_idx': 0,
+        'difficulty': 'easy',
+        'question_te': 'AP రాష్ట్ర చేప (state fish) ఏది?',
+        'opt_a': 'రోహు',
+        'opt_b': 'కట్ల',
+        'opt_c': 'కొర్రమట్ట (Striped Murrel / Channa striata)',
+        'opt_d': 'బంగారు తీగ',
+        'answer': 'C',
+        'explanation_te': 'AP రాష్ట్ర చేప — Striped Murrel (Channa striata), తెలుగులో కొర్రమట్ట. ICAR-NBFGR జాబితా ప్రకారం AP & తెలంగాణ రెండూ మర్రెల్ ను ఎంచుకున్నాయి. (రోహు ఉత్తరప్రదేశ్ రాష్ట్ర చేప.)',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'medium',
+        'question_te': 'డిసెంబర్ 31, 2025 నుండి AP లో కొత్తగా ఏ రెండు జిల్లాలు ఏర్పడ్డాయి?',
+        'opt_a': 'మదనపల్లె + తిరుపతి',
+        'opt_b': 'పోలవరం + మార్కాపురం',
+        'opt_c': 'శ్రీకాకుళం + విజయనగరం',
+        'opt_d': 'అమరావతి + కృష్ణా',
+        'answer': 'B',
+        'explanation_te': 'మంత్రివర్గ ఆమోదంతో డిసెంబర్ 31, 2025 నుండి పోలవరం (HQ: రంపచోడవరం) మరియు మార్కాపురం జిల్లాలు ఏర్పడ్డాయి — మొత్తం 28 జిల్లాలు. మదనపల్లె ప్రతిపాదన ప్రక్రియలో ఉంది.',
+    },
+    {
+        'section_idx': 0,
+        'difficulty': 'easy',
+        'question_te': 'AP నూతన రాజధానిగా అమరావతి అధికారిక హోదా ఏ సంవత్సరం వచ్చింది?',
+        'opt_a': '2014',
+        'opt_b': '2020',
+        'opt_c': '2024',
+        'opt_d': '2026',
+        'answer': 'D',
+        'explanation_te': 'జూన్ 2, 2014న AP విభజన; 10-సంవత్సరాల హైదరాబాద్ ఉమ్మడి రాజధాని కాలం ముగిసిన తర్వాత 2026లో అమరావతి AP అధికారిక రాజధానిగా గుర్తింపు పొందింది. గుంటూరు జిల్లాలో ఉంది.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'hard',
+        'question_te': 'తాళికోట (బనిహట్టి) యుద్ధం ఎప్పుడు జరిగింది? ఎవరు పతనమయ్యారు?',
+        'opt_a': '1336 — విజయనగర స్థాపన',
+        'opt_b': '1565 — విజయనగర సామ్రాజ్యం దక్కన్ సుల్తానుల చేతిలో పతనం',
+        'opt_c': '1687 — గోల్కొండ పతనం',
+        'opt_d': '1323 — కాకతీయ పతనం',
+        'answer': 'B',
+        'explanation_te': '1565 జనవరి 23న తాళికోట (బనిహట్టి/రక్కస-తంగడి) యుద్ధంలో దక్కన్ సుల్తానుల (బీజాపూర్, అహ్మదనగర్, గోల్కొండ, బీదర్) ఐక్యకూటమి విజయనగర సామ్రాజ్యాన్ని (అళియ రామరాయలు) ఓడించింది.',
+    },
+    {
+        'section_idx': 2,
+        'difficulty': 'medium',
+        'question_te': 'మొదటి ఆంధ్ర మహాసభ ఏ సంవత్సరం, ఎక్కడ జరిగింది?',
+        'opt_a': '1903 — విజయవాడ',
+        'opt_b': '1913 — బాపట్ల',
+        'opt_c': '1920 — నాగపూర్',
+        'opt_d': '1937 — గుంటూరు',
+        'answer': 'B',
+        'explanation_te': '1913 మే 26లో బాపట్లలో మొదటి ఆంధ్ర మహాసభ జరిగింది — తెలుగు మాట్లాడే ప్రాంతానికి ప్రత్యేక రాష్ట్రం డిమాండ్ చేస్తూ ప్రారంభమైన అధికారిక ఉద్యమం.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'medium',
+        'question_te': 'పాల పిట్ట (Indian Roller) ప్రస్తుతం ఏ రాష్ట్రాలకు రాష్ట్ర పక్షి?',
+        'opt_a': 'AP మాత్రమే',
+        'opt_b': 'తెలంగాణ, ఒడిశా, కర్ణాటకలకు; AP కాదు',
+        'opt_c': 'తమిళనాడు, కేరళలకు',
+        'opt_d': 'మహారాష్ట్రకు',
+        'answer': 'B',
+        'explanation_te': 'పాల పిట్ట (Coracias benghalensis) ప్రస్తుతం తెలంగాణ, ఒడిశా, కర్ణాటకలకు రాష్ట్ర పక్షి. AP 2018 జూన్‌లో రామ చిలుకను రాష్ట్ర పక్షిగా అధికారికం చేసింది.',
+    },
+    {
+        'section_idx': 5,
+        'difficulty': 'easy',
+        'question_te': 'మదనపల్లె కొత్త జిల్లాగా ఎక్కడ ప్రతిపాదన ఉంది?',
+        'opt_a': 'ఇప్పటికే ఏర్పడింది',
+        'opt_b': 'ప్రతిపాదన దశలో ఉంది — చిత్తూరు/అన్నమయ్య ప్రాంతం నుండి',
+        'opt_c': 'రద్దు అయింది',
+        'opt_d': 'NTR జిల్లాలో కలిసిపోయింది',
+        'answer': 'B',
+        'explanation_te': 'మదనపల్లె జిల్లా ప్రతిపాదన (చిత్తూరు/అన్నమయ్య ప్రాంతం నుండి) నవంబర్ 2025 ప్రకటనలో ఉంది; కానీ డిసెంబర్ 31, 2025 GOలో పోలవరం + మార్కాపురం మాత్రమే అమల్లోకి వచ్చాయి. మదనపల్లె ప్రతిపాదన దశలోనే.',
+    },
+    {
+        'section_idx': 6,
+        'difficulty': 'medium',
+        'question_te': 'భట్టిప్రోలు బుద్ధిస్ట్ స్తూపం గురించి ముఖ్య విషయం ఏది?',
+        'opt_a': 'ఇది గుప్తుల కాలం నాటిది',
+        'opt_b': 'క్రీ.పూ. 3వ శతాబ్దం — తొలి తెలుగు బ్రాహ్మీ శాసనాలు ఉన్నాయి',
+        'opt_c': 'విజయనగర కాలం నాటిది',
+        'opt_d': 'మౌర్యుల కాలం తర్వాత నిర్మించబడింది కాదు',
+        'answer': 'B',
+        'explanation_te': 'భట్టిప్రోలు (బాపట్ల జిల్లా) క్రీ.పూ. 3వ శతాబ్దం బుద్ధిస్ట్ స్తూపం; ఇక్కడ తొలి తెలుగు బ్రాహ్మీ శాసనాలు లభించాయి — తెలుగు లిపి పరిణామంలో కీలక సాక్ష్యం.',
+    },
+    {
+        'section_idx': 7,
+        'difficulty': 'easy',
+        'question_te': 'AP రాష్ట్ర చిహ్నాలు — సరిగా జతపరచు: (1) జంతువు (2) పక్షి (3) వృక్షం (4) పుష్పం',
+        'opt_a': 'పులి, పాల పిట్ట, వేప, తామర',
+        'opt_b': 'కృష్ణ జింక, రామ చిలుక, వేప, మల్లి',
+        'opt_c': 'ఏనుగు, నెమలి, రావి, బంతి',
+        'opt_d': 'కృష్ణ జింక, పాల పిట్ట, రావి, జాజి',
+        'answer': 'B',
+        'explanation_te': 'AP 2018+ రాష్ట్ర చిహ్నాలు: జంతువు = కృష్ణ జింక (Blackbuck); పక్షి = రామ చిలుక (Rose-ringed Parakeet) — 2018లో పాల పిట్ట నుండి మార్పు; వృక్షం = వేప (Neem); పుష్పం = మల్లి/జాజి (Jasmine).',
     },
 ]
 

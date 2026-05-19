@@ -2,6 +2,20 @@
 seed_ap_ca_div4.py — AP Current Affairs Division 4: 2025 August – 2026 April
 ఆంధ్రప్రదేశ్ కరెంట్ అఫైర్స్ — విభాగం 4: 2025 ఆగస్టు – 2026 ఏప్రిల్ ముఖ్య సంఘటనలు
 
+FRESHNESS AUDIT 2026-05-19 — Stale-fact fix + May 2026 gap-fill (Section 17 added):
+  - FIXED: Adani "Konaseema" Data Centre → corrected to Adani-Google **Vizag**
+    (Madhurawada area, 601 acres, 1 GW AI, Feb 18 2026 cabinet land transfer).
+    Sec 13 audio + html + 1 MCQ updated. Konaseema mis-attribution is widespread;
+    canonical fact: Visakhapatnam/Anakapalli, AdaniConneX + Google partnership.
+  - NEW Section 17: May 2026 events — AMCA Puttaparthi foundation (May 15, 2026,
+    Rs.16,000 cr / Rs.15,803 cr, Rajnath Singh + CM, 600-acre DRDO/ADA, 5th-gen
+    stealth fighter, 7,500 jobs); 17th SIPB (Rs.2,01,023 cr / 25 projects /
+    39,067 jobs — Reliance Vizag Data Centre Rs.1,08,010 cr; Reliance Solar
+    Sri Sathya Sai Rs.51,300 cr; Adani Hydro Pumped Storage Kadapa Rs.12,297 cr;
+    Royal Enfield Tirupati Rs.2,508 cr); Adarana 3.0 toddy/artisan scheme
+    (Rs.1,000 cr, 70-90% subsidy, free mopeds + climbing kits).
+  - +10 new MCQs at end of MCQ_DATA covering sec 17.
+
 BATCH H+PDF AUDIT (2026-05-18) — Major Additions for Jan-Apr 2026 events:
   - NEW SECTIONS (11-17): AP Budget 2026-27 (Payyavula Keshav, Rs.3,32,205 cr);
     Amaravati Legal Capital (AP Reorg Amendment Apr 2026, Section 5(2));
@@ -191,21 +205,21 @@ SECTIONS_JSON = [
 <p><b>4 Greenfield SEZ Ports:</b> Ramayapatnam (Prakasam), Machilipatnam (Krishna), Bhavanapadu (Srikakulam), Kakinada (under SEZ-port framework) — together Rs.400.37 cr Centre share for breakwater + dredging works.</p>"""
     },
     {
-        "title": "16వ SIPB — ₹39,436.84 కోట్లు పెట్టుబడులు + Adani Konaseema Data Centre",
-        "sub": "Apr 7, 2026 | 31 firms approved | 1,11,278 jobs | Adani Konaseema Data Centre ₹87,520 cr (largest ever)",
-        "audio": "ఏప్రిల్ 7, 2026న 16వ State Investment Promotion Board (SIPB) సమావేశం AP లో ₹39,436.84 కోట్లు పెట్టుబడులు అమోదించింది. 31 సంస్థల ప్రతిపాదనలకు ఆమోదం; మొత్తం 1,11,278 ప్రత్యక్ష ఉద్యోగాలు సృష్టి. ముఖ్యమైన పెట్టుబడులు: Clean Renewable Energy, Essar Renewables, NPSPL Specialty Chemicals (కుప్పం), Tata, మరియు Adani Konaseema Data Centre ₹87,520 కోట్లు (AP చరిత్రలోనే అతిపెద్ద single investment). జనవరి 8, 2026న AP కేబినెట్ ₹20,252 కోట్లు పెట్టుబడులు 14 ప్రాజెక్టులకు అమోదించింది — వీటిలో GMR-Mansas Aviation Educity (భీమిలి, 186.68 ఎకరాలు, AP మొదటి integrated education-innovation city, భోగాపురం దగ్గర).",
+        "title": "16వ SIPB — ₹39,436.84 కోట్లు పెట్టుబడులు + Adani-Google Vizag Data Centre",
+        "sub": "Apr 7, 2026 | 31 firms approved | 1,11,278 jobs | Adani-Google Vizag (Madhurawada) Data Centre ₹87,520 cr (largest ever)",
+        "audio": "ఏప్రిల్ 7, 2026న 16వ State Investment Promotion Board (SIPB) సమావేశం AP లో ₹39,436.84 కోట్లు పెట్టుబడులు అమోదించింది. 31 సంస్థల ప్రతిపాదనలకు ఆమోదం; మొత్తం 1,11,278 ప్రత్యక్ష ఉద్యోగాలు సృష్టి. ముఖ్యమైన పెట్టుబడులు: Clean Renewable Energy, Essar Renewables, NPSPL Specialty Chemicals (కుప్పం), Tata, మరియు Adani-Google Vizag Data Centre ₹87,520 కోట్లు (విశాఖపట్నం మాధురవాడ ప్రాంతం, 601 ఎకరాలు — AP చరిత్రలోనే అతిపెద్ద single investment, ఫిబ్రవరి 18, 2026న కేబినెట్ భూ బదిలీ). జనవరి 8, 2026న AP కేబినెట్ ₹20,252 కోట్లు పెట్టుబడులు 14 ప్రాజెక్టులకు అమోదించింది — వీటిలో GMR-Mansas Aviation Educity (భీమిలి, 186.68 ఎకరాలు, AP మొదటి integrated education-innovation city, భోగాపురం దగ్గర).",
         "html": """<div class="concept-cover">
-  <h1>16th SIPB &amp; Adani Konaseema Data Centre &nbsp;<span class="bi-te">/ 16వ SIPB</span></h1>
+  <h1>16th SIPB &amp; Adani-Google Vizag Data Centre &nbsp;<span class="bi-te">/ 16వ SIPB</span></h1>
   <div class="sub">Apr 7, 2026 • Rs.39,436.84 cr approved • 31 firms • 1,11,278 direct jobs</div>
 </div>
 
-<p><b>Headline:</b> The 16th State Investment Promotion Board (SIPB) meeting, chaired by CM N. Chandrababu Naidu in Amaravati on <b>April 7, 2026</b>, cleared 31 proposals totalling <b>Rs.39,436.84 crore</b> with employment potential of 1,11,278 direct jobs. The marquee approval was the <b>Adani Konaseema Data Centre</b> at Rs.87,520 crore — the single largest private investment ever cleared by AP.</p>
-<p class="bi-te">ఏప్రిల్ 7, 2026న CM చంద్రబాబు నాయుడు అధ్యక్షతన అమరావతిలో 16వ SIPB సమావేశం 31 ప్రతిపాదనలను ₹39,436.84 కోట్లకు ఆమోదించింది (1,11,278 ప్రత్యక్ష ఉద్యోగాలు). అదానీ కోనసీమ డేటా సెంటర్ ₹87,520 కోట్లు — AP చరిత్రలో అతిపెద్ద ఏకైక పెట్టుబడి.</p>
+<p><b>Headline:</b> The 16th State Investment Promotion Board (SIPB) meeting, chaired by CM N. Chandrababu Naidu in Amaravati on <b>April 7, 2026</b>, cleared 31 proposals totalling <b>Rs.39,436.84 crore</b> with employment potential of 1,11,278 direct jobs. The marquee approval was the <b>Adani-Google Vizag (Madhurawada) Data Centre</b> at Rs.87,520 crore (~USD 10 bn) — a 1 GW hyperscale AI data-centre on 601 acres of Visakhapatnam/Anakapalli district land transferred by Cabinet on Feb 18, 2026; this is the single largest private investment ever cleared by AP. <i>(Note: this project is sometimes mis-attributed to Konaseema; the canonical location is Visakhapatnam, Madhurawada area.)</i></p>
+<p class="bi-te">ఏప్రిల్ 7, 2026న CM చంద్రబాబు నాయుడు అధ్యక్షతన అమరావతిలో 16వ SIPB సమావేశం 31 ప్రతిపాదనలను ₹39,436.84 కోట్లకు ఆమోదించింది (1,11,278 ప్రత్యక్ష ఉద్యోగాలు). అదానీ-గూగుల్ విశాఖ డేటా సెంటర్ ₹87,520 కోట్లు (~USD 10 bn) — విశాఖపట్నం మాధురవాడ ప్రాంతం 601 ఎకరాల్లో 1 GW హైపర్‌స్కేల్ AI డేటా సెంటర్. ఫిబ్రవరి 18, 2026న కేబినెట్ భూ బదిలీ. AP చరిత్రలో అతిపెద్ద ఏకైక పెట్టుబడి. <i>(గమనిక: కొన్నిసార్లు 'కోనసీమ' అని తప్పుగా చెప్పబడుతుంది; నిజమైన ప్రాంతం విశాఖపట్నం.)</i></p>
 
 <div class="section-hdr">Major SIPB-16 Approvals / 16వ SIPB ముఖ్య ఆమోదాలు</div>
 <table class="key-table">
 <tr><th>Company / Project</th><th>Investment</th><th class="bi-te">వివరణ</th></tr>
-<tr><td><b>Adani Konaseema Data Centre</b></td><td><b>Rs.87,520 cr</b> (largest ever)</td><td class="bi-te">అదానీ కోనసీమ డేటా సెంటర్</td></tr>
+<tr><td><b>Adani-Google Vizag Data Centre (Madhurawada)</b></td><td><b>Rs.87,520 cr</b> (largest ever)</td><td class="bi-te">అదానీ-గూగుల్ విశాఖ డేటా సెంటర్</td></tr>
 <tr><td>Clean Renewable Energy</td><td>(part of 31)</td><td class="bi-te">క్లీన్ రెన్యూవబుల్ ఎనర్జీ</td></tr>
 <tr><td>Essar Renewables</td><td>(part of 31)</td><td class="bi-te">ఎస్సార్ రెన్యూవబుల్స్</td></tr>
 <tr><td>NPSPL Specialty Chemicals</td><td>Kuppam (Chittoor)</td><td class="bi-te">NPSPL — కుప్పంలో</td></tr>
@@ -222,8 +236,8 @@ SECTIONS_JSON = [
 <tr><td>Flagship: GMR-Mansas Aviation Educity</td><td>Bheemli — 186.68 acres</td><td class="bi-te">భీమిలి (భోగాపురం దగ్గర)</td></tr>
 </table>
 
-<p><b>Adani Konaseema Data Centre — why it matters:</b> A 1.5 GW hyperscale data centre + Green Hydrogen cluster spread over Konaseema district (former East Godavari). At Rs.87,520 cr, it is more than 2x the combined investment of the remaining 30 SIPB-16 approvals. The project is expected to anchor AP's bid to become the country's largest data-hosting state by 2030, leveraging the state's renewable energy + sea-cable landing advantages at Kakinada/Konaseema.</p>
-<p class="bi-te">అదానీ కోనసీమ డేటా సెంటర్ — 1.5 GW హైపర్‌స్కేల్ డేటా సెంటర్ + గ్రీన్ హైడ్రోజన్ క్లస్టర్, కోనసీమ జిల్లాలో. ₹87,520 కోట్లు — మిగతా 30 SIPB ఆమోదాల కంటే 2 రెట్లు ఎక్కువ. AP ని 2030 నాటికి దేశంలో అతిపెద్ద డేటా-హోస్టింగ్ రాష్ట్రంగా మార్చడం లక్ష్యం (renewable energy + sea-cable landing వంటి ప్రయోజనాలు).</p>
+<p><b>Adani-Google Vizag Data Centre — why it matters:</b> A 1 GW hyperscale AI data centre + green-energy infrastructure on 601 acres in Visakhapatnam/Anakapalli (Madhurawada area), partnership between AdaniConneX (Adani Enterprises + EdgeConneX JV) and Raiden Infotech (Google subsidiary). At Rs.87,520 cr (~USD 10 bn), it is more than 2x the combined investment of the remaining 30 SIPB-16 approvals. Part of Google's ~USD 15 billion India AI Hub vision (2026-2030). Cabinet land transfer: Feb 18, 2026. Anchors AP's bid to become the country's largest data-hosting state by 2030, leveraging Vizag's subsea-cable landings + renewable energy.</p>
+<p class="bi-te">అదానీ-గూగుల్ విశాఖ డేటా సెంటర్ — 1 GW హైపర్‌స్కేల్ AI డేటా సెంటర్, విశాఖపట్నం/అనకాపల్లి (మాధురవాడ ప్రాంతం), 601 ఎకరాలు. AdaniConneX + Google (Raiden Infotech) భాగస్వామ్యం. ₹87,520 కోట్లు (~USD 10 bn) — మిగతా 30 SIPB ఆమోదాల కంటే 2 రెట్లు ఎక్కువ. Google ~USD 15 bn India AI Hub vision (2026-30) లో భాగం. ఫిబ్రవరి 18, 2026 కేబినెట్ భూ బదిలీ. విశాఖలో subsea-cable landings + renewable energy ప్రయోజనాలు.</p>
 
 <p><b>GMR-Mansas Aviation Educity (Bheemili):</b> First integrated education-innovation city in AP, on 186.68 acres near Bhogapuram international airport. Designed as aviation + aerospace + AI training hub with foreign-university tie-ups.</p>"""
     },
@@ -357,6 +371,11 @@ SECTIONS_JSON = [
 
 <p><b>Bhogapuram (Alluri Sitarama Raju Intl. Airport):</b> Built by GMR Group at Vizianagaram district. First test landing on <b>Jan 4, 2026</b> was a chartered flight from Delhi. PM Narendra Modi is scheduled to inaugurate commercial operations on <b>June 26, 2026</b>. The airport eases pressure on Visakhapatnam airport and is expected to anchor north-coastal tourism (Araku, Lambasingi).</p>
 <p class="bi-te">భోగాపురం (అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం) — GMR Group నిర్మాణం, విజయనగరం జిల్లా. మొదటి test landing జనవరి 4, 2026న ఢిల్లీ నుండి. PM మోదీ జూన్ 26, 2026న కమర్షియల్ ఆపరేషన్స్ ప్రారంభించనున్నారు.</p>"""
+    },
+    {
+        "title": "మే 2026 సంఘటనలు — AMCA పుట్టపర్తి + 17వ SIPB + ఆదరణ 3.0",
+        "sub": "May 15, 2026 AMCA foundation ₹16,000 cr Puttaparthi | 17th SIPB Rs.2.01 lakh cr | Adarana 3.0 Rs.1,000 cr",
+        "audio": "మే 15, 2026న కేంద్ర రక్షణ మంత్రి రాజ్‌నాథ్ సింగ్ + CM చంద్రబాబు పుట్టపర్తి (శ్రీ సత్యసాయి జిల్లా)లో AMCA (Advanced Medium Combat Aircraft) Integration and Flight-Testing Centre కు శంకుస్థాపన చేశారు. ప్రాజెక్ట్ విలువ ₹15,803 కోట్లు (~₹16,000 కోట్లు), 600 ఎకరాలు DRDO/ADA కు ఉచితంగా బదిలీ. 7,500 ఉద్యోగాలు సృష్టి. భారత మొదటి 5వ తరం stealth fighter aircraft ప్రాజెక్ట్. 17వ SIPB సమావేశం CM చంద్రబాబు అధ్యక్షతన ₹2,01,023 కోట్లు పెట్టుబడులు ఆమోదించింది — 25 ప్రాజెక్టులు, 39,067 ఉద్యోగాలు. ముఖ్య ఆమోదాలు: Reliance Industries విశాఖ Data Centre ₹1,08,010 కోట్లు, Reliance Solar+BESS శ్రీ సత్యసాయి జిల్లా ₹51,300 కోట్లు (20,000 ఉద్యోగాలు), Adani Hydro Pumped Storage కడప ₹12,297 కోట్లు, Royal Enfield తిరుపతి ₹2,508 కోట్లు. ఆదరణ 3.0 పథకం: ₹1,000 కోట్లు — టోడ్డి టాపర్లకు ఉచిత mopeds + 90% subsidy climbing kits; కళాకారులకు 70% subsidy."
     },
 ]
 
@@ -1036,7 +1055,7 @@ MCQ_DATA = [
      "b",
      "4 SEZ ports కు ₹400.37 కోట్లు. 71 కొత్త అన్న కాంటీన్లు కూడా మంజూరు (మొత్తం 275 రాష్ట్రంలో)."),
 
-    # 2026: ─── Section 13: 16th SIPB Apr 7 (Rs.39,436 cr) + Adani Konaseema Data Centre ───
+    # 2026: ─── Section 13: 16th SIPB Apr 7 (Rs.39,436 cr) + Adani-Google Vizag Data Centre ───
     (13, 1,
      "16వ SIPB సమావేశం ఏ తేదీన జరిగింది?",
      "మార్చి 7, 2026", "ఏప్రిల్ 7, 2026", "మే 1, 2026", "ఫిబ్రవరి 14, 2026",
@@ -1051,9 +1070,9 @@ MCQ_DATA = [
 
     (13, 1,
      "AP చరిత్రలో అతిపెద్ద single investment ఏది? ఎంత?",
-     "Reliance Green Energy ₹50,000 cr", "Adani Konaseema Data Centre ₹87,520 cr", "TCS Amaravati ₹40,000 cr", "Tata Auto Hub ₹65,000 cr",
+     "Reliance Green Energy ₹50,000 cr", "Adani-Google Vizag Data Centre ₹87,520 cr", "TCS Amaravati ₹40,000 cr", "Tata Auto Hub ₹65,000 cr",
      "b",
-     "Adani Konaseema Data Centre ₹87,520 కోట్లు — AP చరిత్రలో అతిపెద్ద single investment. 16వ SIPB (Apr 7, 2026) లో ఆమోదం."),
+     "Adani-Google Vizag Data Centre ₹87,520 కోట్లు (~USD 10 bn) — విశాఖపట్నం మాధురవాడ ప్రాంతం 601 ఎకరాలు, 1 GW హైపర్‌స్కేల్ AI డేటా సెంటర్. AP చరిత్రలో అతిపెద్ద single investment. ఫిబ్రవరి 18, 2026న కేబినెట్ భూ బదిలీ; 16వ SIPB (ఏప్రిల్ 7, 2026) లో ఆమోదం. (గమనిక: కొన్నిసార్లు 'కోనసీమ' అని తప్పుగా చెప్పబడుతుంది; నిజమైన ప్రాంతం విశాఖపట్నం.)"),
 
     (13, 2,
      "16వ SIPB సమావేశంలో ఎన్ని ప్రత్యక్ష ఉద్యోగాలు సృష్టి అవుతాయి?",
@@ -1315,6 +1334,67 @@ MCQ_DATA = [
      "5 modules; విశాఖ/విజయవాడ/తిరుపతి", "8 modules; అన్నమయ్య/చిత్తూరు/గుంటూరు", "10 modules; కడప/నెల్లూరు/కర్నూలు", "6 modules; పశ్చిమ గోదావరి/తూర్పు గోదావరి",
      "b",
      "AP Police AI Project — 8 AI modules; అన్నమయ్య, చిత్తూరు, గుంటూరు జిల్లాలలో అమలు. IIT Madras AI Tutor 42,230 govt schools."),
+
+    # 2026: ─── Section 17: MAY 2026 GAP-FILL — AMCA Puttaparthi + 17th SIPB + Adarana 3.0 ───
+    (17, 1,
+     "AMCA (Advanced Medium Combat Aircraft) Integration & Flight-Testing Centre కు శంకుస్థాపన ఎక్కడ, ఏ తేదీన జరిగింది?",
+     "మే 15, 2026 — పుట్టపర్తి (శ్రీ సత్యసాయి జిల్లా)", "ఏప్రిల్ 14, 2026 — అమరావతి", "మే 1, 2026 — విశాఖపట్నం", "మార్చి 16, 2026 — తిరుపతి",
+     "a",
+     "మే 15, 2026న కేంద్ర రక్షణ మంత్రి రాజ్‌నాథ్ సింగ్ + CM చంద్రబాబు పుట్టపర్తి (శ్రీ సత్యసాయి జిల్లా) లో AMCA Core Integration & Flight Testing Centre కు శంకుస్థాపన చేశారు."),
+
+    (17, 1,
+     "AMCA పుట్టపర్తి ప్రాజెక్ట్ విలువ ఎంత? ఎన్ని ఉద్యోగాలు?",
+     "₹10,000 కోట్లు; 5,000 ఉద్యోగాలు", "₹15,803 కోట్లు (~₹16,000 కోట్లు); 7,500 ఉద్యోగాలు", "₹20,000 కోట్లు; 10,000 ఉద్యోగాలు", "₹25,000 కోట్లు; 12,000 ఉద్యోగాలు",
+     "b",
+     "AMCA Integration & Flight-Testing Centre ప్రాజెక్ట్ విలువ ₹15,803 కోట్లు (~₹16,000 కోట్లు). 7,500 ఉద్యోగాలు సృష్టి. భారత మొదటి 5వ తరం stealth fighter aircraft."),
+
+    (17, 2,
+     "AMCA ప్రాజెక్ట్ కి AP కేబినెట్ ఎన్ని ఎకరాలు DRDO/ADA కు ఉచితంగా బదిలీ చేసింది?",
+     "300 ఎకరాలు", "450 ఎకరాలు", "600 ఎకరాలు", "1,000 ఎకరాలు",
+     "c",
+     "AP కేబినెట్ 600 ఎకరాలు (2.4 sq.km.) పుట్టపర్తి విమానాశ్రయం వద్ద DRDO కు ఉచితంగా బదిలీ చేసింది — 150 ఎకరాలు Integration & Flight Testing Complex కు + 200 ఎకరాలు satellite office/township కు. Runway 9,800 ft (3 km) కు పొడిగింపు."),
+
+    (17, 1,
+     "17వ SIPB సమావేశంలో మొత్తం ఎంత పెట్టుబడులు ఆమోదించారు?",
+     "₹39,436.84 కోట్లు", "₹1,00,000 కోట్లు", "₹2,01,023 కోట్లు", "₹3,32,205 కోట్లు",
+     "c",
+     "17వ SIPB సమావేశం (మే 2026) — CM చంద్రబాబు అధ్యక్షతన ₹2,01,023 కోట్లు పెట్టుబడులు ఆమోదించింది (25 ప్రాజెక్టులు, 39,067 ఉద్యోగాలు). 16వ SIPB (Apr 7) లో ఆమోదం ₹39,436.84 కోట్లు మాత్రమే."),
+
+    (17, 2,
+     "17వ SIPB లో అతిపెద్ద ఆమోదం ఏది?",
+     "Adani Hydro Pumped Storage కడప ₹12,297 కోట్లు", "Royal Enfield తిరుపతి ₹2,508 కోట్లు", "Reliance Industries విశాఖ Data Centre ₹1,08,010 కోట్లు", "Reliance Solar+BESS శ్రీ సత్యసాయి ₹51,300 కోట్లు",
+     "c",
+     "17వ SIPB లో అతిపెద్ద ఆమోదం: Reliance Industries విశాఖ Data Centre ₹1,08,010 కోట్లు. ఇతరాలు: Reliance Solar+BESS Sri Sathya Sai ₹51,300 cr (20,000 ఉద్యోగాలు), Adani Hydro Pumped Storage కడప ₹12,297 cr, Royal Enfield తిరుపతి ₹2,508 cr."),
+
+    (17, 2,
+     "Reliance Solar + Battery Energy Storage System (BESS) ప్రాజెక్ట్ AP లో ఏ జిల్లాలో నిర్మిస్తారు? ఎన్ని ఉద్యోగాలు?",
+     "విశాఖ; 10,000", "శ్రీ సత్యసాయి జిల్లా; 20,000", "కడప; 15,000", "తిరుపతి; 8,000",
+     "b",
+     "Reliance Solar + BESS ప్రాజెక్ట్ శ్రీ సత్యసాయి జిల్లాలో ₹51,300 కోట్లు పెట్టుబడితో. ~20,000 మంది ఉద్యోగాలు. 17వ SIPB ఆమోదం."),
+
+    (17, 2,
+     "Royal Enfield motorcycle manufacturing facility AP లో ఏ జిల్లాలో స్థాపిస్తారు?",
+     "విశాఖ", "అమరావతి", "శ్రీ సత్యసాయి", "తిరుపతి",
+     "d",
+     "Royal Enfield motorcycle manufacturing facility తిరుపతి జిల్లాలో — ₹2,508 కోట్లు పెట్టుబడి. 17వ SIPB (మే 2026) లో ఆమోదం."),
+
+    (17, 3,
+     "Adani Hydro Pumped Storage ప్రాజెక్ట్ AP లో ఎక్కడ? విలువ ఎంత?",
+     "విశాఖ ₹50,000 cr", "కడప ₹12,297 cr", "నెల్లూరు ₹8,000 cr", "కర్నూలు ₹15,000 cr",
+     "b",
+     "Adani Hydro Energy Eleven — Pumped Storage Project కడప జిల్లాలో ₹12,297 కోట్లు పెట్టుబడితో. 17వ SIPB మే 2026 లో ఆమోదం."),
+
+    (17, 1,
+     "ఆదరణ 3.0 పథకం దేనికి, ఎంత కేటాయింపుతో?",
+     "విద్యార్థులు ₹500 cr", "టోడ్డి టాపర్లు + కళాకారులు ₹1,000 cr", "రైతులు ₹2,000 cr", "మహిళలు ₹1,500 cr",
+     "b",
+     "ఆదరణ 3.0 పథకం — BC/SC/ST/Minority/BPL కుటుంబాల టోడ్డి టాపర్లు + కళాకారులకు ₹1,000 కోట్లు. టోడ్డి టాపర్లకు ఉచిత mopeds + 90% subsidy climbing kits; కళాకారులకు 70% subsidy పరికరాలు."),
+
+    (17, 2,
+     "Adani-Google విశాఖ Data Centre (₹87,520 cr) నిజమైన ప్రాంతం ఏది? ఎన్ని ఎకరాలు?",
+     "కోనసీమ జిల్లా; 500 ఎకరాలు", "కాకినాడ; 800 ఎకరాలు", "విశాఖపట్నం/అనకాపల్లి (మాధురవాడ); 601 ఎకరాలు", "విజయవాడ; 400 ఎకరాలు",
+     "c",
+     "Adani-Google Data Centre నిజమైన ప్రాంతం = విశాఖపట్నం/అనకాపల్లి (మాధురవాడ ప్రాంతం), 601 ఎకరాలు. AdaniConneX (Adani+EdgeConneX JV) + Raiden Infotech (Google subsidiary) భాగస్వామ్యం. 1 GW హైపర్‌స్కేల్ AI; Google ~USD 15 bn India AI Hub vision (2026-30) లో భాగం. ఫిబ్రవరి 18, 2026న కేబినెట్ భూ బదిలీ. ('కోనసీమ' తప్పుడు పేరు.)"),
 
 ]
 

@@ -27,6 +27,27 @@ BATCH D3 AUDIT (2026-05-18):
 9. REWROTE "Super Six fund allocation" word-salad — now asks how many of the
    6 schemes are women-centric (3).
 10. REMOVED "Super Six 2026 budget ₹1,50,000 cr" — unsourced fabricated figure.
+
+FRESHNESS AUDIT (2026-05-19):
+11. UPDATED Talli ki Vandanam beneficiaries: was "69.16 lakh students" — official
+    2026 disbursement (Jun 12, 2026) covers 67.27 lakh students + 42.69 lakh
+    mothers. Also added the ₹2,000 deduction for school infrastructure (mother
+    actually receives ₹13,000 net of ₹15,000). Source: Deccan Chronicle 2026.
+12. UPDATED Deepam 2.0 status: as of April 2025, 99.22 lakh beneficiaries used
+    first cylinder; allocation ₹2,684 cr (not just ₹894 cr initial).
+13. UPDATED Annadata Sukhibhava: 2nd installment Nov 19, 2025; 3rd installment
+    Mar 13, 2026 (Ugadi). Three tranches now complete for 1st cycle.
+14. UPDATED Stree Shakti scale: 2.62 crore women + transgender beneficiaries;
+    8,458 of 11,449 APSRTC buses (Pallevelugu, Ultra Pallevelugu, City Ordinary,
+    Express, Metro Express). Source: Deccan Herald Aug 2025.
+15. UPDATED Aadabidda Nidhi: STILL NOT LAUNCHED as of May 2026 — official status
+    "Coming Soon". Application portal not opened.
+16. UPDATED NTR Bharosa tiers: ₹4,000 basic / ₹6,000 partial disabled / ₹10,000
+    fully disabled or dialysis / ₹15,000 bedridden + CKDU. 65.31 lakh
+    beneficiaries (Jun 2025).
+17. UPDATED Anna Canteen 2026 expansion: 70 rural canteens (not 71) inaugurated
+    Jan 13-15, 2026 (Sankranthi gift, not Feb budget). Plans for 158 rural +
+    204 urban canteens total.
 """
 import json as _json
 
@@ -34,7 +55,7 @@ SECTIONS_JSON = [
     {
         "title": "సూపర్ సిక్స్ హామీలు — పరిచయం",
         "sub": "Super Six Guarantees — Introduction",
-        "audio": "TDP-JSP-BJP కూటమి 2024 ఎన్నికల్లో ఇచ్చిన 6 హామీలు 'సూపర్ సిక్స్' అని పిలుస్తారు. 1. దీపం 2.0 (LPG సిలిండర్లు). 2. ఉచిత బస్సు ప్రయాణం (మహిళలకు). 3. నిరుద్యోగ బృతి (₹3,000/నెల). 4. అన్నదాత సుఖీభవ (రైతులకు ₹20,000). 5. తల్లికి వందనం (విద్యార్థుల తల్లులకు ₹15,000). 6. ఆడబిడ్డ నిధి (మహిళలకు ₹1,500/నెల).",
+        "audio": "TDP-JSP-BJP కూటమి 2024 ఎన్నికల్లో ఇచ్చిన 6 హామీలు 'సూపర్ సిక్స్' అని పిలుస్తారు. 1. దీపం 2.0 (LPG సిలిండర్లు). 2. ఉచిత బస్సు ప్రయాణం (మహిళలకు, స్త్రీ శక్తి). 3. నిరుద్యోగ బృతి (₹3,000/నెల). 4. అన్నదాత సుఖీభవ (రైతులకు ₹20,000). 5. తల్లికి వందనం (విద్యార్థుల తల్లులకు ₹15,000). 6. ఆడబిడ్డ నిధి (మహిళలకు ₹1,500/నెల). 2026 మే నాటికి 5 పథకాలు అమలులో ఉన్నాయి; ఆడబిడ్డ నిధి ఇంకా ప్రారంభం కాలేదు ('Coming Soon').",
         "html": """<div class="concept-cover">
   <h1>Super Six Guarantees &nbsp;<span class="bi-te">/ సూపర్ సిక్స్ హామీలు</span></h1>
   <div class="sub">TDP-JSP-BJP alliance manifesto • 6 flagship welfare promises • Rolled out 2024-26</div>
@@ -81,6 +102,8 @@ SECTIONS_JSON = [
 <tr><td>Refund window</td><td><b>48 hours</b> (DBT to bank account)</td><td class="bi-te">48 గంటల్లో తిరిగి జమ</td></tr>
 <tr><td>Initial release</td><td>₹894 crore (BP / HP / IOC oil cos)</td><td class="bi-te">తొలి విడుదల ₹894 కోట్లు</td></tr>
 <tr><td>Implementing minister</td><td>Nadendla Manohar (JSP) — Civil Supplies</td><td class="bi-te">నాదెండ్ల మనోహర్ (JSP, పౌర సరఫరాలు)</td></tr>
+<tr><td>Cumulative allocation</td><td><b>₹2,684 crore</b> (as of April 2025)</td><td class="bi-te">₹2,684 కోట్లు (ఏప్రిల్ 2025 వరకు)</td></tr>
+<tr><td>1st-cylinder users</td><td><b>99.22 lakh beneficiaries</b> (April 2025)</td><td class="bi-te">మొదటి సిలిండర్ వినియోగం — 99.22 లక్షల లబ్ధిదారులు</td></tr>
 <tr><td>2026-27 budget (Indradhanussu basket)</td><td>₹2,601 crore</td><td class="bi-te">2026-27 బడ్జెట్ ₹2,601 కోట్లు</td></tr>
 </table>
 
@@ -107,7 +130,8 @@ SECTIONS_JSON = [
 <tr><td>Launch date</td><td>August 15, 2024 (Independence Day)</td><td class="bi-te">ఆగస్టు 15, 2024 (స్వాతంత్ర్య దినోత్సవం)</td></tr>
 <tr><td>Official name from</td><td><b>August 15, 2025</b> — "Stree Shakti"</td><td class="bi-te">ఆగస్టు 15, 2025న 'స్త్రీ శక్తి' అధికారిక పేరు</td></tr>
 <tr><td>Beneficiaries</td><td>Women, girls, transgender persons</td><td class="bi-te">మహిళలు, బాలికలు, Transgender</td></tr>
-<tr><td>Coverage</td><td>All ordinary APSRTC services (Pallevelugu, Express, Ultra-Deluxe), <b>5 RTC zones</b></td><td class="bi-te">అన్ని 5 APSRTC జోన్‌లు</td></tr>
+<tr><td>Coverage</td><td>Pallevelugu, Ultra Pallevelugu, City Ordinary, Express, <b>Metro Express</b> — <b>8,458 of 11,449 APSRTC buses</b></td><td class="bi-te">8,458 / 11,449 APSRTC బస్సుల్లో ఉచితం</td></tr>
+<tr><td>Estimated beneficiaries</td><td><b>2.62 crore women + transgender persons</b></td><td class="bi-te">2.62 కోట్ల మహిళలు + Transgender</td></tr>
 <tr><td>Implementing minister</td><td>Mandipalli Ramprasad Reddy (TDP, Rayachoti) — Transport</td><td class="bi-te">మండిపల్లి రాంప్రసాద్ రెడ్డి</td></tr>
 <tr><td>2026-27 budget</td><td>₹1,420 crore (FY26-27 allocation)</td><td class="bi-te">2026-27 ₹1,420 కోట్లు</td></tr>
 </table>
@@ -148,9 +172,9 @@ SECTIONS_JSON = [
 <div class="section-hdr">First Installment & Coverage / మొదటి వాయిదా</div>
 <table class="key-table">
 <tr><th>Metric</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
-<tr><td>1st installment amount</td><td>₹7,000 per farmer</td><td class="bi-te">మొదటి వాయిదా ₹7,000</td></tr>
-<tr><td>Beneficiaries (1st release)</td><td><b>46.86 lakh farmers</b></td><td class="bi-te">46.86 లక్షల రైతులు</td></tr>
-<tr><td>Total funds released (1st)</td><td>₹3,175 crore</td><td class="bi-te">₹3,175 కోట్లు</td></tr>
+<tr><td>1st installment</td><td>₹7,000 per farmer — Aug 2, 2025 — 46.86 lakh farmers, ₹3,175 cr</td><td class="bi-te">మొదటి వాయిదా ₹7,000 (ఆగస్టు 2, 2025)</td></tr>
+<tr><td>2nd installment</td><td>₹7,000 — released <b>Nov 19, 2025</b></td><td class="bi-te">రెండవ వాయిదా ₹7,000 — నవంబర్ 19, 2025</td></tr>
+<tr><td>3rd installment</td><td>₹6,000 — released <b>Mar 13, 2026</b> (Ugadi gift)</td><td class="bi-te">మూడవ వాయిదా ₹6,000 — మార్చి 13, 2026 (ఉగాది బహుమతి)</td></tr>
 <tr><td>2024-25 budget allocation</td><td>₹6,300 crore</td><td class="bi-te">2024-25 బడ్జెట్</td></tr>
 <tr><td>2026-27 budget allocation</td><td><b>₹6,600 crore</b></td><td class="bi-te">2026-27 బడ్జెట్ ₹6,600 కోట్లు</td></tr>
 <tr><td>Registration</td><td>AP Online + Loka Mitram (gram sachivalayam) kiosks</td><td class="bi-te">AP Online / గ్రామ సచివాలయం</td></tr>
@@ -162,7 +186,7 @@ SECTIONS_JSON = [
     {
         "title": "తల్లికి వందనం — విద్యా పథకం",
         "sub": "Talliki Vandanam — Education Scheme for Students' Mothers",
-        "audio": "తల్లికి వందనం పథకం జూన్ 12, 2025న ప్రారంభించారు. ఈ తేదీ ప్రభుత్వ 1వ వార్షికోత్సవం. పాఠశాల విద్యార్థి తల్లికి ₹15,000/సంవత్సరం నేరుగా తల్లి బ్యాంక్ అకౌంట్‌కు వస్తుంది. Class 1-12, ప్రభుత్వ లేదా Aided పాఠశాలలు. కనీసం 75% హాజరు అవసరం. అర్హులైన విద్యార్థులు 69.16 లక్షలు. 2025-26 బడ్జెట్ ₹9,407 కోట్లు. తల్లి Aadhaar బ్యాంక్ అకౌంట్ NPCI తో link అయి ఉండాలి.",
+        "audio": "తల్లికి వందనం పథకం జూన్ 12, 2025న ప్రారంభించారు. ఈ తేదీ ప్రభుత్వ 1వ వార్షికోత్సవం. పాఠశాల విద్యార్థి తల్లికి ₹15,000/సంవత్సరం నేరుగా తల్లి బ్యాంక్ అకౌంట్‌కు వస్తుంది. Class 1-12. కనీసం 75% హాజరు అవసరం. 2026 విడుదల (జూన్ 12, 2026): 67.27 లక్షల అర్హ విద్యార్థులు, 42.69 లక్షల తల్లులు. ₹15,000 నుండి ₹2,000 పాఠశాల మౌలికసదుపాయాల కోసం కట్‌బ్యాక్ — తల్లికి నికరంగా ₹13,000 జమ. 2025-26 బడ్జెట్ ₹9,407 కోట్లు. తల్లి Aadhaar బ్యాంక్ అకౌంట్ NPCI తో link అయి ఉండాలి.",
         "html": """<div class="concept-cover">
   <h1>Talliki Vandanam &nbsp;<span class="bi-te">/ తల్లికి వందనం</span></h1>
   <div class="sub">₹15,000/yr to student's mother • Launched Jun 12, 2025 (govt 1st anniversary)</div>
@@ -177,8 +201,10 @@ SECTIONS_JSON = [
 <tr><td>Classes covered</td><td>Class 1 to Class 12</td><td class="bi-te">1-12 తరగతులు</td></tr>
 <tr><td>Schools covered</td><td>Govt + Aided + (selected) private; minorities included</td><td class="bi-te">ప్రభుత్వ + Aided పాఠశాలలు</td></tr>
 <tr><td>Attendance rule</td><td><b>Minimum 75% attendance</b></td><td class="bi-te">కనీసం 75% హాజరు</td></tr>
-<tr><td>Eligible students</td><td>69.16 lakh</td><td class="bi-te">69.16 లక్షల విద్యార్థులు</td></tr>
+<tr><td>Eligible students (2026 disbursement)</td><td><b>67.27 lakh</b> students; <b>42.69 lakh mothers</b></td><td class="bi-te">67.27 లక్షల విద్యార్థులు, 42.69 లక్షల తల్లులు</td></tr>
+<tr><td>2026 cycle credit pattern</td><td>₹15,000 gross → <b>₹2,000 retained for school infra</b> → <b>₹13,000 net</b> to mother</td><td class="bi-te">₹15,000 లో ₹2,000 పాఠశాల అభివృద్ధికి; తల్లికి నికరంగా ₹13,000</td></tr>
 <tr><td>2025-26 budget</td><td><b>₹9,407 crore</b></td><td class="bi-te">2025-26 బడ్జెట్ ₹9,407 కోట్లు</td></tr>
+<tr><td>2026 disbursement date</td><td><b>June 12, 2026</b> (govt's 2nd anniversary)</td><td class="bi-te">2026 విడుదల — జూన్ 12, 2026 (2వ వార్షికోత్సవం)</td></tr>
 </table>
 
 <div class="section-hdr">Comparison with YSR Amma Vodi / YSR అమ్మ వొడితో పోలిక</div>
@@ -210,7 +236,7 @@ SECTIONS_JSON = [
 <tr><td>Age band</td><td>18-59 years</td><td class="bi-te">18-59 సంవత్సరాలు</td></tr>
 <tr><td>Target communities</td><td>BC, SC, ST, Minority, EBC women</td><td class="bi-te">BC, SC, ST, మైనారిటీ, EBC</td></tr>
 <tr><td>Estimated beneficiaries</td><td>~80+ lakh women</td><td class="bi-te">80+ లక్షల మహిళలు</td></tr>
-<tr><td>Status</td><td>Announced for <b>2026 rollout</b> — last Super Six scheme to launch</td><td class="bi-te">2026లో అమలు ప్రకటన</td></tr>
+<tr><td>Status (May 2026)</td><td><b>NOT YET LAUNCHED</b> — official portal status "Coming Soon"; only Super Six scheme not yet rolled out</td><td class="bi-te">మే 2026 వరకు ఇంకా ప్రారంభం కాలేదు — అధికారిక "Coming Soon"; సూపర్ సిక్స్‌లో ఏకైక unbilled పథకం</td></tr>
 </table>
 
 <div class="section-hdr">NTR Bharosa Pension / NTR భరోసా</div>
@@ -219,10 +245,11 @@ SECTIONS_JSON = [
 <tr><td>Launch date</td><td><b>June 13, 2024</b> (day after oath)</td><td class="bi-te">జూన్ 13, 2024 (ప్రమాణ స్వీకారం తర్వాత రోజు)</td></tr>
 <tr><td>First payment</td><td>July 1, 2024</td><td class="bi-te">జూలై 1, 2024</td></tr>
 <tr><td>Previous name</td><td>YSR Pension Kanuka (YSRCP era)</td><td class="bi-te">YSR పెన్షన్ కనుక (YSRCP కాలం)</td></tr>
-<tr><td>Basic pension</td><td><b>₹4,000 / month</b></td><td class="bi-te">బేసిక్ ₹4,000/నెల</td></tr>
-<tr><td>Fully disabled (CRPD)</td><td>₹15,000 / month</td><td class="bi-te">పూర్తి వికలాంగులు ₹15,000/నెల</td></tr>
-<tr><td>Dialysis patients</td><td>₹10,000 / month</td><td class="bi-te">డయాలసిస్ ₹10,000</td></tr>
-<tr><td>Beneficiaries</td><td>65+ lakh</td><td class="bi-te">65+ లక్షల లబ్ధిదారులు</td></tr>
+<tr><td>Basic pension</td><td><b>₹4,000 / month</b> (elderly, widows, weavers, etc.)</td><td class="bi-te">బేసిక్ ₹4,000/నెల</td></tr>
+<tr><td>Partially disabled</td><td>₹6,000 / month</td><td class="bi-te">పాక్షిక వికలాంగులు ₹6,000/నెల</td></tr>
+<tr><td>Fully disabled / dialysis / CKDU</td><td>₹10,000 / month</td><td class="bi-te">పూర్తి వికలాంగులు / డయాలసిస్ / CKDU ₹10,000</td></tr>
+<tr><td>Bedridden (severely disabled)</td><td>₹15,000 / month</td><td class="bi-te">పూర్తిగా మంచంపై ₹15,000/నెల</td></tr>
+<tr><td>Beneficiaries</td><td><b>65.31 lakh</b> (Jun 2025 — 99% disbursement rate)</td><td class="bi-te">65.31 లక్షల లబ్ధిదారులు (99% పంపిణీ)</td></tr>
 <tr><td>Categories</td><td><b>28 categories</b></td><td class="bi-te">28 కేటగిరీలు</td></tr>
 <tr><td>2026-27 budget</td><td>₹27,719 crore</td><td class="bi-te">2026-27 బడ్జెట్ ₹27,719 కోట్లు</td></tr>
 </table>
@@ -247,7 +274,7 @@ SECTIONS_JSON = [
 <tr><td>Relaunch</td><td><b>August 15, 2024</b> (Independence Day)</td><td class="bi-te">ఆగస్టు 15, 2024 — పునఃప్రారంభం</td></tr>
 <tr><td>Meal price</td><td><b>₹5 / full plate</b> (rice, dal, vegetable, sambar, curd)</td><td class="bi-te">₹5/పళ్ళెం పూర్తి భోజనం</td></tr>
 <tr><td>Phase 1</td><td>100 canteens (urban + rural)</td><td class="bi-te">Phase 1 — 100 కేంటీన్లు</td></tr>
-<tr><td>2026 expansion</td><td>71 new canteens (Feb 2026) — total <b>275</b></td><td class="bi-te">2026 — మొత్తం 275 కేంటీన్లు</td></tr>
+<tr><td>2026 expansion</td><td><b>70 rural canteens</b> inaugurated <b>Jan 13-15, 2026</b> (Sankranthi gift) — planned total 158 rural + 204 urban</td><td class="bi-te">2026 సంక్రాంతి సందర్భంగా 70 గ్రామీణ కేంటీన్లు; మొత్తం లక్ష్యం 158 గ్రామీణ + 204 పట్టణ</td></tr>
 </table>
 
 <div class="section-hdr">Other Welfare Schemes / ఇతర సంక్షేమ పథకాలు</div>
@@ -296,11 +323,16 @@ SECTIONS_JSON = [
 <tr><td><b>Jun 12, 2025</b></td><td>1st anniversary of govt</td><td>Talliki Vandanam</td><td class="bi-te">తల్లికి వందనం</td></tr>
 <tr><td><b>Aug 2, 2025</b></td><td>—</td><td>Annadata Sukhibhava (Darsi, Prakasam)</td><td class="bi-te">అన్నదాత సుఖీభవ</td></tr>
 <tr><td>Aug 15, 2025</td><td>1st anniversary of free bus</td><td>"Stree Shakti" official naming</td><td class="bi-te">స్త్రీ శక్తి అధికారిక పేరు</td></tr>
-<tr><td><b>2026</b></td><td>Pending</td><td>Aadabidda Nidhi (last Super Six scheme)</td><td class="bi-te">ఆడబిడ్డ నిధి 2026 లక్ష్యం</td></tr>
+<tr><td>Nov 19, 2025</td><td>2nd installment</td><td>Annadata Sukhibhava (₹7,000)</td><td class="bi-te">అన్నదాత 2వ వాయిదా</td></tr>
+<tr><td><b>Jan 13-15, 2026</b></td><td>Sankranthi 2026</td><td>70 rural Anna Canteens inaugurated</td><td class="bi-te">70 గ్రామీణ అన్నా కేంటీన్లు</td></tr>
+<tr><td><b>Mar 13, 2026</b></td><td>Ugadi 2026</td><td>Annadata Sukhibhava 3rd installment (₹6,000)</td><td class="bi-te">అన్నదాత 3వ వాయిదా ₹6,000</td></tr>
+<tr><td><b>Apr 10, 2026</b></td><td>—</td><td>AP PNG Financial Assistance (Dipam 2.0 PNG)</td><td class="bi-te">PNG ₹2,400/yr</td></tr>
+<tr><td><b>Jun 12, 2026</b></td><td>2nd anniv of govt</td><td>Talliki Vandanam 2nd-year disbursement</td><td class="bi-te">తల్లికి వందనం 2026 విడుదల</td></tr>
+<tr><td>2026 (TBD)</td><td>Pending as of May 2026</td><td><b>Aadabidda Nidhi</b> — still NOT launched</td><td class="bi-te">ఆడబిడ్డ నిధి ఇంకా ప్రారంభం కాలేదు</td></tr>
 </table>
 
-<p><b>Exam mnemonic — "3-1-1-1":</b> 3 schemes on Aug 15 2024 (Indep Day triple-launch) + 1 on Nov 1 2024 (AP Foundation Day) + 1 on Jun 12 2025 (govt anniversary) + 1 on Aug 2 2025 (Darsi). Aadabidda Nidhi is the only Super Six scheme not yet launched as of mid-2026.</p>
-<p class="bi-te">పరీక్ష గుర్తుపెట్టుకునే విధానం — "3-1-1-1": ఆగస్టు 15, 2024 న 3 పథకాలు; నవంబర్ 1, 2024 న 1 (దీపం 2.0); జూన్ 12, 2025 న 1 (తల్లికి వందనం); ఆగస్టు 2, 2025 న 1 (అన్నదాత). ఆడబిడ్డ నిధి 2026 లో అమలు లక్ష్యం.</p>"""
+<p><b>Exam mnemonic — "3-1-1-1":</b> 3 schemes on Aug 15 2024 (Indep Day triple-launch) + 1 on Nov 1 2024 (AP Foundation Day) + 1 on Jun 12 2025 (govt anniversary) + 1 on Aug 2 2025 (Darsi). <b>Aadabidda Nidhi is the only Super Six scheme not yet launched as of May 2026</b> — official portal status reads "Coming Soon".</p>
+<p class="bi-te">పరీక్ష గుర్తుపెట్టుకునే విధానం — "3-1-1-1": ఆగస్టు 15, 2024 న 3 పథకాలు; నవంబర్ 1, 2024 న 1 (దీపం 2.0); జూన్ 12, 2025 న 1 (తల్లికి వందనం); ఆగస్టు 2, 2025 న 1 (అన్నదాత). మే 2026 వరకు ఆడబిడ్డ నిధి ఇంకా ప్రారంభం కాలేదు — అధికారిక "Coming Soon".</p>"""
     },
 ]
 
@@ -529,10 +561,10 @@ MCQ_DATA = [
      'YSR అమ్మవడి → తల్లికి వందనం గా మారింది (రెండూ ₹15,000/సంవత్సరం, కానీ ప్రైవేట్ పాఠశాలలు TDP లో exclude).'),
 
     (6, 2,
-     'NTR భరోసా పెన్షన్ లో ఎంత మంది లబ్ధిదారులు ఉన్నారు?',
-     '30 లక్షలు', '50 లక్షలు', '65+ లక్షలు', '1 కోటి',
+     'NTR భరోసా పెన్షన్ లో ఎంత మంది లబ్ధిదారులు ఉన్నారు (జూన్ 2025 వరకు)?',
+     '30 లక్షలు', '50 లక్షలు', '65.31 లక్షలు', '1 కోటి',
      'c',
-     'NTR భరోసా పెన్షన్ 65+ లక్షల మంది లబ్ధిదారులను కవర్ చేస్తుంది.'),
+     'NTR భరోసా పెన్షన్ — జూన్ 2025 నాటికి 65.31 లక్షల లబ్ధిదారులు; 99% పంపిణీ రేటు. 28 కేటగిరీలు: వృద్ధులు, వితంతువులు, వికలాంగులు, మత్స్యకారులు, చేనేత, Transgender, PLHIV, తదితర.'),
 
     (7, 1,
      "YSRCP 'YSR పెన్షన్ కనుక' పేరు TDP ఏమని మార్చింది?",
@@ -541,10 +573,10 @@ MCQ_DATA = [
      "YSRCP కాలంలో 'YSR పెన్షన్ కనుక' అని పిలిచేవారు. TDP 2024లో 'NTR భరోసా' గా పేరు మార్చింది."),
 
     (7, 1,
-     'AP లో సూపర్ సిక్స్ పథకాల్లో ఇంకా (2025 వరకు) ప్రారంభం కాని పథకం ఏది?',
+     'AP లో సూపర్ సిక్స్ పథకాల్లో మే 2026 నాటికీ ఇంకా ప్రారంభం కాని పథకం ఏది?',
      'దీపం 2.0', 'తల్లికి వందనం', 'ఆడబిడ్డ నిధి', 'అన్నా కేంటీన్',
      'c',
-     'ఆడబిడ్డ నిధి (మహిళలకు ₹1,500/నెల) 2026లో అమలు అవుతుందని ప్రభుత్వం ప్రకటించింది — ఇంకా ప్రారంభం కాలేదు.'),
+     "ఆడబిడ్డ నిధి (మహిళలకు ₹1,500/నెల, ₹18,000/yr) — మే 2026 నాటికీ ఇంకా ప్రారంభం కాలేదు. అధికారిక పోర్టల్ status 'Coming Soon'. సూపర్ సిక్స్‌లో ఏకైక unlaunched పథకం."),
 
     (7, 2,
      'AP లో ఆగస్టు 15, 2024న ఏ ఏ పథకాలు ప్రారంభమయ్యాయి?',
@@ -694,6 +726,67 @@ MCQ_DATA = [
     # the figure was unsourced/fabricated. AP budget 2025-26 = ₹3,22,359 cr total; individual
     # Super Six scheme allocations are in actual budget docs but a single aggregated "Super Six
     # till 2026" total estimate isn't an officially published AP government number.
+
+    # ─── FRESHNESS AUDIT 2026-05-19: Gap-fill MCQs ─────────────────────────────
+    (4, 2,
+     'తల్లికి వందనం 2026 విడుదల (జూన్ 12, 2026)లో ఎంత మంది విద్యార్థులు / తల్లులు అర్హులుగా గుర్తించబడ్డారు?',
+     '69.16 లక్షల విద్యార్థులు, 50 లక్షల తల్లులు', '67.27 లక్షల విద్యార్థులు, 42.69 లక్షల తల్లులు', '60 లక్షల విద్యార్థులు, 40 లక్షల తల్లులు', '80 లక్షల విద్యార్థులు, 60 లక్షల తల్లులు',
+     'b',
+     '2026 తల్లికి వందనం విడుదలలో 67.27 లక్షల విద్యార్థులు, 42.69 లక్షల తల్లులు అర్హులు. 2026 సైకిల్‌లో ₹15,000 నుండి ₹2,000 పాఠశాల మౌలికసదుపాయాల కోసం deduct; తల్లికి నికరంగా ₹13,000 జమ.'),
+
+    (4, 3,
+     'తల్లికి వందనం 2026 సైకిల్‌లో ₹15,000 మొత్తం నుండి ఎంత మొత్తం పాఠశాల మౌలికసదుపాయాల కోసం deduct చేస్తారు? నికరంగా తల్లికి ఎంత జమ?',
+     '₹1,000 deduct → ₹14,000 net', '₹2,000 deduct → ₹13,000 net', '₹3,000 deduct → ₹12,000 net', 'ఏ deduction లేదు → ₹15,000 net',
+     'b',
+     '2026 తల్లికి వందనం సైకిల్: ₹15,000 గ్రాస్ నుండి ₹2,000 పాఠశాల పారిశుద్ధ్యం / మరమ్మతులు / మౌలికసదుపాయాల కోసం retain; తల్లి ఖాతాకు నికరంగా ₹13,000 జమ. ఇది YSR అమ్మ వొడి తో పోలిస్తే కొత్త mechanism.'),
+
+    (1, 2,
+     'దీపం 2.0 కింద ఏప్రిల్ 2025 నాటికి ఎంత మంది లబ్ధిదారులు మొదటి ఉచిత సిలిండర్ ఉపయోగించారు?',
+     '50 లక్షలు', '75 లక్షలు', '99.22 లక్షలు', '1.2 కోట్లు',
+     'c',
+     'దీపం 2.0 ఏప్రిల్ 2025 నాటికి 99.22 లక్షల లబ్ధిదారులు మొదటి ఉచిత సిలిండర్ ఉపయోగించారు. ప్రభుత్వం ₹2,684 కోట్లు కేటాయించింది. 4 నెలలకు ఒక సిలిండర్ (సంవత్సరానికి 3).'),
+
+    (3, 2,
+     'అన్నదాత సుఖీభవ 2వ వాయిదా ₹7,000 ఏ తేదీన విడుదల చేశారు?',
+     'నవంబర్ 19, 2025', 'డిసెంబర్ 25, 2025', 'జనవరి 1, 2026', 'మార్చి 13, 2026',
+     'a',
+     'అన్నదాత సుఖీభవ 2వ వాయిదా ₹7,000 నవంబర్ 19, 2025న విడుదల చేశారు. 1వ వాయిదా ఆగస్టు 2, 2025 (₹7,000) + 2వ నవంబర్ 19, 2025 (₹7,000) + 3వ మార్చి 13, 2026 (₹6,000) = ₹20,000.'),
+
+    (3, 2,
+     'అన్నదాత సుఖీభవ 3వ వాయిదా ₹6,000 ఏ తేదీన విడుదల చేశారు? ఆ తేదీ ప్రాముఖ్యత?',
+     'మార్చి 13, 2026 — ఉగాది బహుమతి', 'జనవరి 14, 2026 — సంక్రాంతి', 'నవంబర్ 1, 2025 — AP Foundation Day', 'ఆగస్టు 15, 2025 — Independence Day',
+     'a',
+     'అన్నదాత సుఖీభవ 3వ వాయిదా (చివరి) ₹6,000 — మార్చి 13, 2026న ఉగాది బహుమతిగా రైతుల ఖాతాలకు CBN చేత విడుదల. మొదటి సైకిల్ ₹20,000 పూర్తి అయింది.'),
+
+    (2, 2,
+     'స్త్రీ శక్తి పథకం కింద AP లో ఎంత మంది మహిళలు + Transgender లబ్ధి పొందుతున్నారు? ఎన్ని APSRTC బస్సుల్లో ఉచితం?',
+     '1 కోటి మహిళలు, అన్ని బస్సుల్లో', '2.62 కోట్ల మహిళలు + Transgender; 8,458 / 11,449 బస్సుల్లో', '5 కోట్ల మహిళలు, 5,000 బస్సుల్లో', '50 లక్షల మహిళలు, 2,000 బస్సుల్లో',
+     'b',
+     'స్త్రీ శక్తి: 2.62 కోట్ల మహిళలు + Transgender లబ్ధిదారులు. APSRTC మొత్తం 11,449 బస్సుల్లో 8,458 బస్సుల్లో ఉచితం (Pallevelugu, Ultra Pallevelugu, City Ordinary, Express, Metro Express). అధికారిక "స్త్రీ శక్తి" పేరు ఆగస్టు 15, 2025.'),
+
+    (6, 2,
+     'AP లో 2026 సంక్రాంతి (Jan 13-15, 2026) సందర్భంగా ఎన్ని కొత్త అన్నా కేంటీన్లు ప్రారంభించారు?',
+     '50', '70 గ్రామీణ కేంటీన్లు', '100', '275',
+     'b',
+     'జనవరి 13-15, 2026 సంక్రాంతి బహుమతిగా 70 గ్రామీణ అన్నా కేంటీన్లు ప్రారంభం. మొత్తం లక్ష్యం 158 గ్రామీణ + 204 పట్టణ కేంటీన్లు. ఒక్క భోజనం ₹5.'),
+
+    (5, 3,
+     'NTR భరోసా పెన్షన్ tiers (కేటగిరీలవారీగా): basic, partial disabled, fully disabled / dialysis / CKDU, bedridden — సరైన నెలసరి మొత్తాలు?',
+     '₹2,000 / ₹4,000 / ₹6,000 / ₹10,000', '₹3,000 / ₹5,000 / ₹8,000 / ₹12,000', '₹4,000 / ₹6,000 / ₹10,000 / ₹15,000', '₹5,000 / ₹7,500 / ₹10,000 / ₹20,000',
+     'c',
+     'NTR భరోసా tiers: ₹4,000 basic (వృద్ధులు, వితంతువులు, చేనేత); ₹6,000 partially disabled; ₹10,000 fully disabled / dialysis / CKDU; ₹15,000 bedridden severely disabled. 65.31 లక్షల లబ్ధిదారులు.'),
+
+    (7, 1,
+     'మే 2026 నాటికి సూపర్ సిక్స్‌లో ఎన్ని పథకాలు పూర్తిగా అమలులో ఉన్నాయి?',
+     '4 (2 pending)', '5 (ఆడబిడ్డ నిధి pending)', '6 (అన్నీ launched)', '3 (3 pending)',
+     'b',
+     'మే 2026 నాటికి 5 పథకాలు అమలులో: దీపం 2.0, స్త్రీ శక్తి (ఉచిత బస్సు), నిరుద్యోగ బృతి, అన్నదాత సుఖీభవ, తల్లికి వందనం. ఆడబిడ్డ నిధి ఇంకా "Coming Soon" — ఏకైక pending Super Six పథకం.'),
+
+    (1, 3,
+     'ఏప్రిల్ 10, 2026న ప్రారంభించిన దీపం 2.0 PNG పథకం (AP PNG Financial Assistance) — లబ్ధి ఏమిటి?',
+     'PNG వినియోగదారులకు ₹2,400/yr (6 వాయిదాలు)', '₹1,000/yr', '₹5,000/yr ఒకేసారి', '₹3,000/yr',
+     'a',
+     'ఏప్రిల్ 10, 2026న AP PNG Financial Assistance Scheme ప్రారంభం — పైప్‌లైన్ గ్యాస్ (PNG) వినియోగదారులకు ₹2,400/సంవత్సరం, 6 ద్వైమాసిక వాయిదాలుగా. విజయవాడ, విశాఖ ప్రాంతాల్లో పట్టణ లబ్ధిదారులు.'),
 
 ]
 

@@ -17,6 +17,28 @@ AUDIT LOG (2026-05-18, revised):
 - MCQ_DATA includes _EXTRA_MCQ_DATA appended at bottom (MCQ_DATA = MCQ_DATA + _EXTRA_MCQ_DATA).
   No duplicate questions detected between the two blocks.
 - No abrupt or meaningless question text found.
+
+AUDIT LOG (2026-05-19, freshness pass):
+- FIXED stale CUAP location: MCQ said "నందేడు (Nandedu)" — corrected to జంతలూరు (Janthaluru),
+  BK Samudram mandal, Anantapur (verified via Wikipedia + CUAP website). Transit campus year
+  also corrected from "2016" to "2018" (JNTU-A transit; permanent campus operational Aug 2024).
+- VERIFIED via web (May 2026): Lisa Gill = 6th CJ AP HC, sworn in Apr 25, 2026 (notified Apr 22);
+  predecessor Dhiraj Singh Thakur retired Apr 24, 2026. First woman CJ in AP HC history.
+- VERIFIED Padma 2026 AP awardees (4): Maganti Murali Mohan (Art-PS), Gadde Babu Rajendra
+  Prasad (Art-PS), Garimella Balakrishna Prasad (Art-PS posthumous), Vempaty Kutumba Sastry
+  (Lit & Edu-PS) + Nori Dattatreyudu (Medicine-PB, USA-based AP-origin).
+- VERIFIED AP districts now 28 (notified Dec 31, 2025; effective Jan 1, 2026; new: Polavaram +
+  Markapuram). AP Lok Sabha = 25, Rajya Sabha = 11, Assembly = 175, Council = 58 — pre-2026
+  delimitation. AP Governor = S. Abdul Nazeer (Feb 2023); CM = Chandrababu Naidu (Jun 12, 2024);
+  Speaker = Ch. Ayyanna Patrudu; CS = G. Sai Prasad IAS 1991 (Mar 1, 2026); DGP = Harish Kumar
+  Gupta IPS 1992 (Jan 31, 2025, 2-yr fixed tenure).
+- VERIFIED APRA Amendment Act 2026 = Act No. 7/2026; LS Apr 1, RS Apr 2, Pres assent Apr 6;
+  Section 5(2) amended; Amaravati named; retrospective from Jun 2, 2024; 3rd amendment to APRA.
+- VERIFIED Bharat Ratna 2024 = 5 awardees (Karpoori Thakur, LK Advani, MS Swaminathan,
+  PV Narasimha Rao, Chaudhary Charan Singh) conferred Mar 30, 2024 by Pres. Murmu.
+- VERIFIED 131st CAB defeated Apr 17, 2026 (women's reservation; 298/352 needed under Art 368).
+- ADDED gap-fill MCQs at end of _EXTRA_MCQ_DATA: AP CS, AP DGP, Bharat Ratna 2024, district
+  notification date, 131st CAB, Justice Thakur tenure, AP Speaker, 2026 Padma AP count.
 """
 
 import os
@@ -197,7 +219,7 @@ SECTIONS_JSON = json.dumps([
 <tr><td><b>IIT Tirupati</b></td><td>Yerpedu, Tirupati district</td><td>2015</td><td class="bi-te">9వ IIT (APRA 2014 వాగ్దానం)</td></tr>
 <tr><td><b>NIT Andhra Pradesh</b></td><td>Tadepalligudem, Eluru district</td><td>2015</td><td class="bi-te">31 NITs లో ఒకటి</td></tr>
 <tr><td><b>AIIMS Mangalagiri</b></td><td>Mangalagiri, Guntur district</td><td>Foundation 2018; OPD 2018; full operation 2022</td><td class="bi-te">PMSSY కింద</td></tr>
-<tr><td><b>CUAP</b> (Central University of AP)</td><td>Janthaluru, Anantapur district</td><td>2014 (Act); 2016 temp campus</td><td class="bi-te">కేంద్రీయ విశ్వవిద్యాలయం</td></tr>
+<tr><td><b>CUAP</b> (Central University of AP)</td><td>Janthaluru, BK Samudram mandal, Anantapur district</td><td>2014 (Act); 2018 transit campus (JNTU-A); 2024 permanent campus</td><td class="bi-te">కేంద్రీయ విశ్వవిద్యాలయం (జంతలూరు)</td></tr>
 <tr><td><b>IISER Tirupati</b></td><td>Tirupati district</td><td>2015</td><td class="bi-te">5వ IISER</td></tr>
 <tr><td>IIIT Sri City</td><td>Chittoor district</td><td>2013 (PPP model)</td><td class="bi-te">IIIT శ్రీ సిటీ</td></tr>
 <tr><td>IIM Visakhapatnam</td><td>Vizag (Andhra University campus initially)</td><td>2015</td><td class="bi-te">IIM విశాఖపట్నం</td></tr>
@@ -383,7 +405,7 @@ SECTIONS_JSON = json.dumps([
 <tr><td>IIT</td><td>Tirupati (2015)</td></tr>
 <tr><td>NIT</td><td>Tadepalligudem, Eluru (2015)</td></tr>
 <tr><td>AIIMS</td><td>Mangalagiri, Guntur</td></tr>
-<tr><td>CUAP</td><td>Janthaluru, Anantapur</td></tr>
+<tr><td>CUAP</td><td>Janthaluru (BK Samudram mandal), Anantapur</td></tr>
 <tr><td>IISER</td><td>Tirupati (2015)</td></tr>
 <tr><td>IIM</td><td>Visakhapatnam</td></tr>
 </table>
@@ -647,11 +669,11 @@ MCQ_DATA = [
         "difficulty": "hard",
         "question_te": "CUAP (Central University of Andhra Pradesh) ఏ జిల్లాలో ఉంది?",
         "opt_a": "నెల్లూరు",
-        "opt_b": "అనంతపురం (నందేడు)",
+        "opt_b": "అనంతపురం (జంతలూరు, బి.కె. సముద్రం మండలం)",
         "opt_c": "కర్నూలు",
         "opt_d": "చిత్తూరు",
         "answer": "B",
-        "explanation_te": "CUAP (Central University of Andhra Pradesh) అనంతపురం జిల్లాలోని నందేడులో ఉంది. 2014లో స్థాపించి 2016లో తాత్కాలిక ప్యాంపస్ ప్రారంభించారు."
+        "explanation_te": "CUAP (Central University of Andhra Pradesh) అనంతపురం జిల్లా బి.కె. సముద్రం మండలంలోని జంతలూరు (Janthaluru) గ్రామంలో ఉంది (491.3 ఎకరాలు). 2014లో స్థాపించి, 2018లో JNTU అనంతపురం ట్రాన్సిట్ క్యాంపస్‌లో ప్రారంభించి, ఆగస్టు 2024 నుండి శాశ్వత క్యాంపస్ ప్రారంభం."
     },
     # Section 5 — AP High Court
     {
@@ -1185,6 +1207,129 @@ _EXTRA_MCQ_DATA = [
         "opt_d": "ఏప్రిల్ 6, 2026",
         "answer": "C",
         "explanation_te": "2026 సవరణ చట్టం జూన్ 2, 2024 నుండి (Retrospectively) అమరావతిని AP రాజధానిగా గుర్తించింది. ఇది 2024 ఎన్నికల తర్వాత TDP ప్రభుత్వం అమరావతి రాజధాని అవ్వాలని నిర్ణయించిన తేదీ."
+    },
+
+    # ── 2026-05-19 freshness gap-fill MCQs ─────────────────────────────────────
+    {
+        "section_idx": 1,
+        "difficulty": "easy",
+        "question_te": "2026 పద్మ శ్రీ పొందిన మాజీ లోక్‌సభ సభ్యుడు (రాజమండ్రి), 350+ చిత్రాలలో నటించిన AP నటుడు ఎవరు?",
+        "opt_a": "Gadde Babu Rajendra Prasad",
+        "opt_b": "Maganti Murali Mohan",
+        "opt_c": "Vempaty Kutumba Sastry",
+        "opt_d": "Garimella Balakrishna Prasad",
+        "answer": "B",
+        "explanation_te": "Maganti Murali Mohan కి 2026లో Art రంగంలో Padma Shri వచ్చింది. ఆయన రాజమండ్రి (Rajahmundry) నియోజకవర్గం మాజీ MP; 5 దశాబ్దాల కెరీర్‌లో 350+ తెలుగు చిత్రాల్లో నటించారు; నిర్మాతగానూ ప్రసిద్ధులు."
+    },
+    {
+        "section_idx": 1,
+        "difficulty": "medium",
+        "question_te": "2026 పద్మ శ్రీ — Vempaty Kutumba Sastry ఏ రంగంలో ప్రసిద్ధులు?",
+        "opt_a": "కూచిపూడి నృత్యం",
+        "opt_b": "సంస్కృత సాహిత్యం & విద్య (Rashtriya Sanskrit Sansthan మాజీ VC)",
+        "opt_c": "వైద్య విజ్ఞానం",
+        "opt_d": "క్రీడలు",
+        "answer": "B",
+        "explanation_te": "Vempaty Kutumba Sastry కి 2026 Padma Shri (Literature & Education) వచ్చింది. ఆయన Rashtriya Sanskrit Sansthan మాజీ Vice-Chancellor, Sri Chandrasekharendra Saraswathi Viswa Mahavidyalaya Chancellor; సంస్కృత వ్యాకరణ, కావ్యశాస్త్రాల్లో ప్రామాణికులు."
+    },
+    {
+        "section_idx": 5,
+        "difficulty": "hard",
+        "question_te": "Justice Lisa Gill ను AP HC CJ గా రాష్ట్రపతి ఎప్పుడు నియమించారు (Notification తేదీ)?",
+        "opt_a": "మార్చి 6, 2026",
+        "opt_b": "ఏప్రిల్ 22, 2026",
+        "opt_c": "ఏప్రిల్ 24, 2026",
+        "opt_d": "ఏప్రిల్ 25, 2026",
+        "answer": "B",
+        "explanation_te": "రాష్ట్రపతి ద్రౌపదీ ముర్ము ఏప్రిల్ 22, 2026న Justice Lisa Gill ను AP HC ప్రధాన న్యాయమూర్తిగా (ఏప్రిల్ 25, 2026 నుండి అమల్లోకి వచ్చేలా) నియమించారు. ఆమె మార్చి 6, 2026న AP HC కి బదిలీ అయ్యారు; ఏప్రిల్ 25న ప్రమాణస్వీకారం."
+    },
+    {
+        "section_idx": 5,
+        "difficulty": "medium",
+        "question_te": "AP HC ప్రస్తుత Sanctioned Strength (CJ తో సహా న్యాయమూర్తుల సంఖ్య) ఎంత?",
+        "opt_a": "28",
+        "opt_b": "31",
+        "opt_c": "37",
+        "opt_d": "41",
+        "answer": "C",
+        "explanation_te": "AP High Court Sanctioned Strength 37 న్యాయమూర్తులు (Chief Justice తో సహా). న్యాయపరమైన పెండింగ్ కేసులు 2 లక్షలకు పైగా ఉన్నాయి. ప్రస్తుత CJ — Justice Lisa Gill (6వ, తొలి మహిళా CJ)."
+    },
+    {
+        "section_idx": 7,
+        "difficulty": "medium",
+        "question_te": "AP ప్రస్తుత Chief Secretary ఎవరు (మే 2026 నాటికి)?",
+        "opt_a": "K. విజయానంద్",
+        "opt_b": "G. సాయి ప్రసాద్ (IAS 1991)",
+        "opt_c": "నీలమ్ సాహ్ని",
+        "opt_d": "ఎల్.వి. సుబ్రహ్మణ్యం",
+        "answer": "B",
+        "explanation_te": "G. సాయి ప్రసాద్ (IAS 1991 బ్యాచ్, AP cadre) మార్చి 1, 2026 నుండి AP Chief Secretary గా పనిచేస్తున్నారు. ఆయన K. విజయానంద్ స్థానంలో నియమితులయ్యారు. మే 2026లో 6-నెలల service extension పొందారు."
+    },
+    {
+        "section_idx": 7,
+        "difficulty": "medium",
+        "question_te": "AP ప్రస్తుత DGP ఎవరు మరియు ఏ IPS బ్యాచ్‌కు చెందినవారు?",
+        "opt_a": "Dwaraka Tirumala Rao (IPS 1990)",
+        "opt_b": "Harish Kumar Gupta (IPS 1992)",
+        "opt_c": "K.V. రాజేంద్రనాథ రెడ్డి (IPS 1989)",
+        "opt_d": "Gautam Sawang (IPS 1986)",
+        "answer": "B",
+        "explanation_te": "Harish Kumar Gupta (IPS 1992 — 45వ RR బ్యాచ్) జనవరి 31, 2025న AP DGP గా బాధ్యతలు స్వీకరించారు. మునుపటి DGP Dwaraka Tirumala Rao జనవరి 31, 2025న పదవీ విరమణ చేశారు. Harish Kumar Gupta కి 2-yr fixed tenure ఇచ్చారు."
+    },
+    {
+        "section_idx": 7,
+        "difficulty": "easy",
+        "question_te": "ప్రస్తుత AP శాసనసభ స్పీకర్ ఎవరు?",
+        "opt_a": "Tammineni Sitaram",
+        "opt_b": "Kodela Siva Prasada Rao",
+        "opt_c": "Ch. Ayyanna Patrudu (చింతకాయల అయ్యన్నపాత్రుడు)",
+        "opt_d": "K.E. Krishnamurthy",
+        "answer": "C",
+        "explanation_te": "Chintakayala Ayyanna Patrudu జూన్ 2024 నుండి AP 16వ శాసనసభ స్పీకర్‌గా పనిచేస్తున్నారు. ఆయన నర్సీపట్నం (Visakhapatnam) నుండి TDP MLA. ఇంతకుముందు 1995-2004 వరకు TDP ప్రభుత్వంలో మంత్రిగా ఉన్నారు."
+    },
+    {
+        "section_idx": 7,
+        "difficulty": "medium",
+        "question_te": "AP లో 28 జిల్లాల ఏర్పాటు Final Notification ఏ తేదీన జారీ అయింది?",
+        "opt_a": "డిసెంబర్ 1, 2025",
+        "opt_b": "డిసెంబర్ 31, 2025",
+        "opt_c": "జనవరి 1, 2026",
+        "opt_d": "జనవరి 26, 2026",
+        "answer": "B",
+        "explanation_te": "AP ప్రభుత్వం డిసెంబర్ 31, 2025న కొత్త 28 జిల్లాల final notification జారీ చేసింది; కొత్త administrative arrangements జనవరి 1, 2026 నుండి అమల్లోకి వచ్చాయి. కొత్త జిల్లాలు: పోలవరం (HQ రంపచోడవరం) + మార్కాపురం (HQ మార్కాపురం)."
+    },
+    {
+        "section_idx": 0,
+        "difficulty": "medium",
+        "question_te": "Bharat Ratna 2024 లో ఎంతమంది గ్రహీతలు?",
+        "opt_a": "3",
+        "opt_b": "4",
+        "opt_c": "5",
+        "opt_d": "7",
+        "answer": "C",
+        "explanation_te": "2024లో మొత్తం 5 మందికి భారత రత్న ప్రకటించారు: Karpoori Thakur (మరణానంతరం), LK Advani, MS Swaminathan (మరణానంతరం), PV నరసింహ రావు (మరణానంతరం), Chaudhary Charan Singh (మరణానంతరం). రాష్ట్రపతి ద్రౌపదీ ముర్ము మార్చి 30, 2024న రాష్ట్రపతి భవన్‌లో ప్రదానం చేశారు."
+    },
+    {
+        "section_idx": 0,
+        "difficulty": "hard",
+        "question_te": "Bharat Ratna 2024 గ్రహీతలలో మాజీ ప్రధానమంత్రి (తెలుగు మూలాలు) ఎవరు?",
+        "opt_a": "LK Advani",
+        "opt_b": "Karpoori Thakur",
+        "opt_c": "PV నరసింహ రావు",
+        "opt_d": "Chaudhary Charan Singh",
+        "answer": "C",
+        "explanation_te": "PV నరసింహ రావు (పాములపర్తి వెంకట నరసింహ రావు) — 9వ ప్రధానమంత్రి (1991-1996); 1991 ఆర్థిక సంస్కరణల పితామహుడు; Karimnagar జిల్లా (అప్పటి ఉమ్మడి AP) జన్మస్థలం. 2024లో మరణానంతర భారత రత్నతో గౌరవించారు."
+    },
+    {
+        "section_idx": 6,
+        "difficulty": "medium",
+        "question_te": "131వ రాజ్యాంగ సవరణ బిల్లు 2026 (మహిళా రిజర్వేషన్ delimitation fast-track) లోక్‌సభలో ఏం జరిగింది?",
+        "opt_a": "ఏకగ్రీవంగా ఆమోదించారు",
+        "opt_b": "ఏప్రిల్ 17, 2026న ఓడిపోయింది (298/352 ఓట్లు)",
+        "opt_c": "ఇంకా చర్చలో ఉంది",
+        "opt_d": "రాష్ట్రపతి తిరస్కరించారు",
+        "answer": "B",
+        "explanation_te": "131వ రాజ్యాంగ సవరణ బిల్లు 2026 (Article 82 సవరణ — 2011 జనాభా ఆధారంగా delimitation, మహిళలకు 33% రిజర్వేషన్ fast-track) ఏప్రిల్ 17, 2026న Lok Sabha లో ఓడిపోయింది. 528 House strength లో కేవలం 298 ఓట్లు వచ్చాయి — Art 368 ప్రకారం 352 (2/3 special majority) అవసరం. దక్షిణ + NE రాష్ట్రాలు delimitation వల్ల ప్రాతినిధ్యం తగ్గుతుందని వ్యతిరేకించాయి."
     }
 ]
 

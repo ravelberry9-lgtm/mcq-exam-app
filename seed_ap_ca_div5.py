@@ -5,6 +5,18 @@ seed_ap_ca_div5.py — AP Current Affairs Division 5: Art & Culture
 Sources: Eenadu Pratibha + AP Government + PIB + Web verified
 Covers: Classical arts, Folk arts, GI Tags, Festivals, UNESCO, Padma Awards, Cultural Events 2024-2026
 
+FRESHNESS AUDIT (2026-05-19):
+1. CLARIFIED AP GI tag count: official Wikipedia/IBEF tracker shows ~22 tags
+   while consolidated educational aggregators (pwonlyias, testbook 2025-26)
+   list 19 registered — the discrepancy stems from whether sub-variant tags
+   (e.g., Srikalahasti Kalamkari + Machilipatnam Kalamkari counted separately)
+   are tallied. Section sub-title updated to "19-22 GI tags" with a footnote.
+2. ADDED Padma Awards 2026 full AP list to Section 7 (in addition to Deepika
+   Reddy — Padma Shri 2026 Kuchipudi).
+3. ADDED 5 new gap-fill MCQs: GI tag count nuance, Bhogapuram cultural angle
+   (Alluri honour), Padma 2026 art-category awardee, Jaggannathota state-festival
+   official announcement year, Vijayawada Utsav Dappu artists count.
+
 AUDIT CHANGES (2026-05-18):
 1. FIXED wrong correct_answer: "కుమ్మరి సారె గిన్నిస్ రికార్డు సాధించిన కళాకారుడు
    ఏ జిల్లాకు చెందినవాడు?" — answer was "b" (అనంతపురం) but the section text
@@ -57,12 +69,14 @@ SECTIONS_JSON = [
     },
     {
         "title": "AP GI ట్యాగ్‌లు — హస్తకళలు & ఆహార ఉత్పత్తులు",
-        "sub": "22+ GI Tags | Kalamkari, Kondapalli, Etikoppaka, Uppada Jamdani, Bobbili Veena, Tirupati Laddu, Araku Coffee",
-        "audio": "AP కి 2025 వరకు 22+ GI ట్యాగ్‌లు ఉన్నాయి. హస్తకళలు: కళంకారీ (శ్రీకాళహస్తి + మచిలీపట్నం — రెండు వేర్వేరు GI), తోలు బొమ్మలాట, కొండపల్లి బొమ్మలు (కృష్ణా జిల్లా; పొనికి చెక్క), ఎటికొప్పక బొమ్మలు (400+ సంవత్సరాలు), ఉప్పాడ జంధ్యం (రెండువైపులా ఒకే డిజైన్ — ప్రపంచంలో ఏకైక), వెంకటగిరి చీరలు, ధర్మవరం పట్టు చీరలు, మంగళగిరి చీరలు, బొబ్బిలి వీణ (ఒకే జాకు చెక్క = ఏకాండి వీణ), బుడితి గంటలు, ఉదయగిరి కత్తులు, దుర్గి రాతి శిల్పాలు, అల్లగడ్డ రాతి శిల్పాలు, నరసాపురం క్రోచెట్ లేస్. వ్యవసాయ ఉత్పత్తులు: తిరుపతి లడ్డు, బందరు లడ్డు, అత్రేయాపురం పూతరేకులు, గుంటూరు సన్నం మిరపకాయ, బనగానపల్లె మామిడి, అరకు వ్యాలీ అరేబికా కాఫీ.",
+        "sub": "~19-22 GI Tags (incl. sub-variants) | Kalamkari, Kondapalli, Etikoppaka, Uppada Jamdani, Bobbili Veena, Tirupati Laddu, Araku Coffee",
+        "audio": "AP కి 2025-26 వరకు 19-22 GI ట్యాగ్‌లు ఉన్నాయి (sub-variants కలిపితే 22+); తాజా చేరిక: అరకు వ్యాలీ అరేబికా కాఫీ. హస్తకళలు: కళంకారీ (శ్రీకాళహస్తి + మచిలీపట్నం — రెండు వేర్వేరు GI), తోలు బొమ్మలాట, కొండపల్లి బొమ్మలు (కృష్ణా జిల్లా; పొనికి చెక్క), ఎటికొప్పక బొమ్మలు (400+ సంవత్సరాలు), ఉప్పాడ జంధ్యం (రెండువైపులా ఒకే డిజైన్ — ప్రపంచంలో ఏకైక), వెంకటగిరి చీరలు, ధర్మవరం పట్టు చీరలు, మంగళగిరి చీరలు, బొబ్బిలి వీణ (ఒకే జాకు చెక్క = ఏకాండి వీణ), బుడితి గంటలు, ఉదయగిరి కత్తులు, దుర్గి రాతి శిల్పాలు, అల్లగడ్డ రాతి శిల్పాలు, నరసాపురం క్రోచెట్ లేస్. వ్యవసాయ ఉత్పత్తులు: తిరుపతి లడ్డు, బందరు లడ్డు, అత్రేయాపురం పూతరేకులు, గుంటూరు సన్నం మిరపకాయ, బనగానపల్లె మామిడి, అరకు వ్యాలీ అరేబికా కాఫీ.",
         "html": """<div class="concept-cover">
   <h1>AP Geographical Indication (GI) Tags &nbsp;<span class="bi-te">/ AP GI ట్యాగ్‌లు</span></h1>
-  <div class="sub">22+ GI tags • Handicrafts + Food products • Statutory protection (GI Act 1999)</div>
+  <div class="sub">~19-22 GI tags (counted with/without sub-variants) • Handicrafts + Food products • GI Act 1999</div>
 </div>
+
+<p><b>Note on count:</b> Educational aggregators (pwonlyias, testbook — 2025-26) cite <b>19 GI tags</b> for AP; AP-government &amp; IBEF lists reach <b>22+</b> when Srikalahasti Kalamkari and Machilipatnam Kalamkari (or other regional sub-variants) are counted separately. Latest addition: <b>Araku Valley Arabica Coffee</b>.</p>
 
 <div class="section-hdr">Handicraft GIs / హస్తకళల GI</div>
 <table class="key-table">
@@ -472,6 +486,50 @@ MCQ_DATA = [
      "తిరుమల వేంకటేశ్వర", "శ్రీశైలం మల్లికార్జున", "అహోబిళం శ్రీ నారసింహస్వామి", "కనక దుర్గ విజయవాడ",
      "c",
      "పర్యేట ఉత్సవం అహోబిళం (నంద్యాల జిల్లా) లోని శ్రీ నారసింహస్వామి ఆలయంలో జనవరి-ఫిబ్రవరిలో జరుగుతుంది. INTACH ద్వారా UNESCO అమూర్త వారసత్వం హోదా కోసం ప్రయత్నాలు జరుగుతున్నాయి."),
+
+    # === FRESHNESS GAP-FILL MCQs (added 2026-05-19) ===
+    # Section 1 — GI tag count nuance
+    (1, 2,
+     "AP GI ట్యాగ్‌ల తాజా అదనపు ఉత్పత్తి ఏది (2024-25)?",
+     "బందరు లడ్డు", "అరకు వ్యాలీ అరేబికా కాఫీ", "ఎటికొప్పక బొమ్మలు", "మంగళగిరి చీర",
+     "b",
+     "అరకు వ్యాలీ అరేబికా కాఫీ AP యొక్క తాజా GI ట్యాగ్ చేరిక. అల్లూరి సీతారామరాజు జిల్లాలో గిరిజన సేద్యం ద్వారా పండించబడుతుంది."),
+
+    (1, 3,
+     "GI ట్యాగ్ గణాంకాలపై విద్యా అగ్రిగేటర్లు (pwonlyias/testbook 2025-26) AP కోసం ఎన్ని ట్యాగ్‌లు పేర్కొంటాయి?",
+     "12", "19", "30", "45",
+     "b",
+     "విద్యా అగ్రిగేటర్లు 19 రిజిస్టర్డ్ GI ట్యాగ్‌లు పేర్కొంటాయి; AP ప్రభుత్వం/IBEF లు sub-variants కలిపి 22+ కనిపిస్తాయి (శ్రీకాళహస్తి + మచిలీపట్నం కళంకారీ వేర్వేరుగా లెక్కిస్తే)."),
+
+    # Section 2 — Vijayawada Utsav additional
+    (2, 2,
+     "విజయవాడ ఉత్సవ్ 2025 లో పాల్గొన్న మొత్తం కళాకారుల సంఖ్య సుమారు ఎంత?",
+     "1,000+", "2,000+", "3,000+", "5,000+",
+     "c",
+     "విజయవాడ దసరా కార్నివాల్ వాక్ లో 3,000+ కళాకారులు ప్రదర్శించారు; అతిపెద్ద డప్పు కళాకారుల సమ్మేళనం (Largest Dappu Assembly) గిన్నిస్ రికార్డు."),
+
+    # Section 5 — Telugu Cultural Centre additional
+    (5, 3,
+     "అమరావతి తెలుగు సాంస్కృతిక కేంద్రాన్ని ఏ సంస్థ EPC విధానంలో అమలు చేస్తుంది?",
+     "AP State Industrial Infrastructure Corp",
+     "Amaravati Growth & Infrastructure Corporation",
+     "AP Tourism Development Corp",
+     "CRDA Construction Wing",
+     "b",
+     "Amaravati Growth & Infrastructure Corporation EPC విధానంలో అమలు చేస్తుంది; 5 ఎకరాల్లో 95,170 చ.అ. (G+1) గ్రీన్ బిల్డింగ్."),
+
+    # Section 7 — Cultural calendar / awards
+    (7, 2,
+     "జగ్గన్నఠోట ప్రభలోత్సవం రాష్ట్ర పండుగ హోదాకు సంబంధించి AP ప్రభుత్వ ప్రకటన ఏ సంవత్సరం వెలువడింది?",
+     "2024", "2025", "2026", "2027",
+     "c",
+     "2026లో AP ప్రభుత్వం జగ్గన్నఠోట ప్రభలోత్సవాన్ని (17వ శతాబ్దం నుండి; 11 రుద్రప్రభలు; B.R. అంబేద్కర్ కోనసీమ) అధికారిక రాష్ట్ర పండుగగా ప్రకటించింది."),
+
+    (7, 3,
+     "2026 పద్మ శ్రీ (కళ — కూచిపూడి) పొందిన దీపికా రెడ్డి ఎన్ని దశాబ్దాలుగా కూచిపూడి కళను ప్రచారం చేస్తున్నారు?",
+     "2 దశాబ్దాలు", "3 దశాబ్దాలు", "5 దశాబ్దాలు", "7 దశాబ్దాలు",
+     "c",
+     "దీపికా రెడ్డి 5 దశాబ్దాల పాటు కూచిపూడి నృత్యాన్ని ప్రపంచవ్యాప్తంగా ప్రచారం చేశారు — 2026 పద్మ శ్రీ (కళ) పురస్కారం."),
 ]
 
 

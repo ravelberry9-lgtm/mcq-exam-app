@@ -2,6 +2,28 @@
 seed_ap_ca_div8.py
 AP Current Affairs — Chapter 8: AP పర్యావరణం, ISRO & క్రీడలు
 
+FRESHNESS AUDIT (2026-05-19):
+- STALE-FIX: SECTIONS_JSON s1 — "State Animal / Bird: Blackbuck / Indian Roller" was wrong.
+  AP's state bird since June 2018 is the Rose-ringed Parakeet (Rama Chiluka).
+  Indian Roller / Pala Pitta is Telangana's state bird. Updated.
+- STALE-FIX: MCQ at section_idx 7 ("AP రాష్ట్ర జంతువు ఏది?") — explanation said
+  "రాష్ట్ర పక్షి: Indian Rose-ringed Parakeet" which is correct but contradicted the
+  s1 table. Both now aligned to Rose-ringed Parakeet.
+- STALE-FIX: National Parks count MCQ at section_idx 0 — said "2 NPs" which contradicts
+  every HTML section that lists 3 (Papikonda, Rajiv Gandhi/Lankamala, Sri Venkateswara).
+  Corrected to 3.
+- STALE-FIX: BlueBird Block-2 rocket was listed as "LVM3-M5" — official ISRO designation
+  is LVM3-M6 (6th operational flight of LVM3, the heaviest commercial cargo ever from
+  Indian soil, ~6,100 kg payload, surpassing OneWeb's 5,700 kg record).
+- STALE-FIX: SHAR section had "AP solar 6 GW" — confirmed via MNRE 2024 data;
+  utility-scale ~5.5 GW + rooftop pushes ~6 GW combined; kept.
+- ADDED Paris 2024 medal context (Manu Bhaker 2 bronzes — first post-Independence Indian
+  with 2 medals same Games; Aman Sehrawat youngest Indian Olympic medallist; Hockey
+  team beat Spain for back-to-back bronze; Neeraj Chopra silver).
+- ADDED gap-fill MCQs: BlueBird Block-2 details, Asian Games 2026 Nagoya, Coringa
+  Ramsar 2024, Papikonda district Eluru/Alluri, Vande Bharat from Tirupati, LVM3-M6,
+  Pulicat AP-TN border, Aditya-L1 L1 point.
+
 AUDIT LOG (2026-05-18):
 - FIXED: రోళ్లపాడు జిల్లా — "పల్నాడు జిల్లా" was wrong. Corrected to "నందయాల జిల్లా"
   per HTML source: "రోళ్లపాడు వన్యప్రాణి అభయారణ్యం — నందయాల జిల్లా (పూర్వం కర్నూలు)"
@@ -57,7 +79,7 @@ SECTIONS_JSON = json.dumps([
 <tr><td>Wildlife sanctuaries</td><td>13</td><td class="bi-te">13 వన్యప్రాణి అభయారణ్యాలు</td></tr>
 <tr><td>Ramsar sites</td><td>Kolleru, Pulicat (shared with TN)</td><td class="bi-te">కొల్లేరు, పులికాట్ — రామ్‌సర్</td></tr>
 <tr><td>Solar capacity (2024)</td><td>~6 GW (MNRE — utility + rooftop)</td><td class="bi-te">~6 GW సోలార్ సామర్థ్యం</td></tr>
-<tr><td>State Animal / Bird</td><td>Blackbuck / Indian Roller</td><td class="bi-te">కృష్ణ జింక / పాల పిట్ట</td></tr>
+<tr><td>State Animal / Bird</td><td>Blackbuck / <b>Rose-ringed Parakeet</b> (Rama Chiluka — 2018 change)</td><td class="bi-te">కృష్ణ జింక / రామ చిలుక (పాల పిట్ట కాదు)</td></tr>
 </table>
 
 <p><b>How to revise this division:</b> Memorise the 3 national parks with their districts, then the 13 sanctuary-headliner pairings (Coringa→mangroves, Koundinya→elephants, Rollapadu→GIB+Blackbuck). For ISRO, anchor on the SDSC SHAR location (Tirupati district), the 100th launch (NVS-02, Jan 29 2025), and SpaDeX docking (Jan 16, 2025). Sports: medals, dates, and titles.</p>
@@ -157,7 +179,7 @@ SECTIONS_JSON = json.dumps([
 <tr><td>SpaDeX Docking</td><td><b>Jan 16, 2025</b></td><td>—</td><td>India 4th country to dock in space (after US, Russia, China)</td></tr>
 <tr><td><b>NVS-02 (100th launch)</b></td><td>Jan 29, 2025</td><td>GSLV-F15</td><td>NavIC navigation satellite; SDSC SHAR's <b>100th orbital launch</b></td></tr>
 <tr><td>EOS-08</td><td>Aug 16, 2024</td><td>SSLV-D3</td><td>Earth observation; SSLV's 3rd flight (operational)</td></tr>
-<tr><td><b>BlueBird Block-2</b></td><td>Dec 24, 2025</td><td>LVM3-M5 (GSLV Mk-III)</td><td>AST SpaceMobile's heaviest commercial cargo from SHAR (~6,100 kg)</td></tr>
+<tr><td><b>BlueBird Block-2 (BlueBird-6)</b></td><td>Dec 24, 2025</td><td><b>LVM3-M6</b> (6th LVM3 op flight)</td><td>AST SpaceMobile direct-to-mobile satellite; <b>heaviest payload ever from Indian soil</b> ~6,100 kg (beat OneWeb 5,700 kg); 223 sq m phased array — largest commercial comsat in LEO</td></tr>
 </table>
 
 <div class="section-hdr">Earlier Marquee Missions / గత ముఖ్య మిషన్లు</div>
@@ -168,8 +190,8 @@ SECTIONS_JSON = json.dumps([
 <tr><td>Mangalyaan (MOM)</td><td>Nov 5, 2013</td><td>India's 1st interplanetary mission</td><td class="bi-te">మంగళయాన్</td></tr>
 </table>
 
-<p><b>By December 2025</b>, SDSC SHAR had conducted 104+ orbital launch missions with an overall success rate above 90%. The BlueBird Block-2 launch on Dec 24, 2025 set the record for the heaviest commercial cargo from Indian soil (~6,100 kg per satellite, five units). For exact success/failure splits, consult ISRO's official statistics.</p>
-<p class="bi-te">డిసెంబర్ 2025 నాటికి SDSC SHAR నుండి 104+ ఆర్బిటల్ మిషన్లు; విజయవంతమైన శాతం 90%+. BlueBird Block-2 (డిసె 24, 2025) భారత గడ్డ నుండి అతి భారీ వాణిజ్య పేలోడ్ (~6,100 కిలోలు).</p>"""
+<p><b>By December 2025</b>, SDSC SHAR had conducted 104+ orbital launch missions with an overall success rate above 90%. The <b>LVM3-M6 / BlueBird Block-2 launch on Dec 24, 2025</b> set the record for the <b>heaviest payload ever from Indian soil</b> — a single 6,100 kg satellite (surpassing OneWeb's previous 5,700 kg record). The satellite is the largest commercial communications satellite ever placed in LEO, with a 223 sq m phased array, and provides direct-to-mobile cellular broadband for AST SpaceMobile (USA). For exact success/failure splits, consult ISRO's official statistics.</p>
+<p class="bi-te">డిసెంబర్ 2025 నాటికి SDSC SHAR నుండి 104+ ఆర్బిటల్ మిషన్లు; విజయవంతమైన శాతం 90%+. LVM3-M6 / BlueBird Block-2 (డిసె 24, 2025) — భారత గడ్డ నుండి అతి భారీ పేలోడ్ ~6,100 కిలోలు (గతంలో OneWeb 5,700 కిలోలు రికార్డ్ బద్దలు). LEO లో అతి పెద్ద వాణిజ్య కమ్యూనికేషన్ ఉపగ్రహం — 223 చ.మీ phased array.</p>"""
     },
     {
         "id": "div8_s5",
@@ -199,8 +221,20 @@ SECTIONS_JSON = json.dumps([
 <tr><td>Krishnam Raju Gadiraju</td><td>Shooting</td><td>AP shooting star; multiple national champion</td><td class="bi-te">కృష్ణం రాజు</td></tr>
 </table>
 
-<p><b>2024-25 milestones:</b> Sindhu was flag-bearer at the Paris 2024 Olympics Opening Ceremony — a rare honour. In 2025 she was elected to the BWF Athletes Commission. Satwik &amp; Chirag reclaimed BWF top-3 doubles ranking. Nitesh Kumar's Paralympic gold (Sep 2024) made him the first Indian male para-badminton Paralympic champion.</p>
-<p class="bi-te">పారిస్ 2024 ఒలింపిక్స్ Opening Ceremony లో PV సింధు భారత్ జెండా ఆజమాయిషీదారు. 2025లో BWF Athletes Commission సభ్యురాలిగా ఎన్నికైంది. నితేష్ కుమార్ — తొలి భారత మగ Para-Badminton ఒలింపిక్ స్వర్ణం.</p>"""
+<p><b>2024-25 milestones:</b> Sindhu was flag-bearer at the Paris 2024 Olympics Opening Ceremony (with Sharath Kamal). In 2025 she was elected to the BWF Athletes Commission. Satwik &amp; Chirag reclaimed BWF top-3 doubles ranking. Nitesh Kumar's Paralympic gold (Sep 2024) made him the first Indian male para-badminton Paralympic champion.</p>
+
+<div class="section-hdr">India @ Paris 2024 — Wider Context / పారిస్ 2024 సందర్భం</div>
+<table class="key-table">
+<tr><th>Athlete / team</th><th>Medal</th><th>Why it matters</th><th class="bi-te">వివరణ</th></tr>
+<tr><td><b>Manu Bhaker</b></td><td>2 Bronze (10m air pistol + mixed team w/ Sarabjot Singh)</td><td><b>First Indian post-Independence with 2 medals in a single Olympics</b></td><td class="bi-te">మను భాకర్ — ఒకే ఒలింపిక్‌లో 2 పతకాలు సాధించిన మొదటి స్వాతంత్ర్యానంతర భారతీయురాలు</td></tr>
+<tr><td>Neeraj Chopra</td><td>Silver (Javelin)</td><td>India's only silver at Paris 2024</td><td class="bi-te">నీరజ్ చోప్రా — ఏకైక రజతం</td></tr>
+<tr><td>Swapnil Kusale</td><td>Bronze (50m rifle 3-positions)</td><td>India's 3rd shooting bronze at Paris</td><td class="bi-te">స్వప్నిల్ కుసాలే</td></tr>
+<tr><td><b>Aman Sehrawat</b></td><td>Bronze (men's 57 kg freestyle wrestling)</td><td><b>Youngest Indian Olympic medallist ever</b> (~21)</td><td class="bi-te">అమన్ సెహ్రావత్ — అతి చిన్న భారత ఒలింపిక్ పతక విజేత</td></tr>
+<tr><td><b>Indian Hockey Team</b></td><td>Bronze (beat Spain 2-1)</td><td>Back-to-back Olympic bronze (Tokyo 2020 + Paris 2024)</td><td class="bi-te">హాకీ — వరుసగా 2 ఒలింపిక్ కాంస్యాలు</td></tr>
+<tr><td>Total India tally</td><td>6 medals (1 silver + 5 bronze)</td><td>Paris 2024 final count</td><td class="bi-te">భారత్ — 6 పతకాలు</td></tr>
+</table>
+<p><b>Looking ahead — Asian Games 2026:</b> The 20th Asian Games are scheduled for September 19 – October 4, 2026 in Aichi-Nagoya, Japan. Several AP athletes (Satwik, Sindhu, Nitesh) are in contention. The 2030 Asian Games will be hosted in Doha (announced 2024).</p>
+<p class="bi-te">2026 ఆసియా క్రీడలు (20వవి) జపాన్‌లోని ఐచి-నాగోయాలో సెప్టెంబర్ 19 – అక్టోబర్ 4, 2026లో జరగనున్నాయి. సాత్విక్, సింధు, నితేష్ వంటి AP క్రీడాకారులు ప్రాతినిధ్యం వహించనున్నారు.</p>"""
     },
     {
         "id": "div8_s6",
@@ -315,7 +349,7 @@ SECTIONS_JSON = json.dumps([
 <tr><td>India's first space docking</td><td>SpaDeX — Jan 16, 2025 (4th country)</td></tr>
 <tr><td>Chandrayaan-3 landing</td><td>Aug 23, 2023 (Moon south pole)</td></tr>
 <tr><td>Aditya-L1 launch</td><td>Sep 2, 2023</td></tr>
-<tr><td>Heaviest cargo from SHAR</td><td>BlueBird Block-2 — Dec 24, 2025 (~6,100 kg/sat)</td></tr>
+<tr><td>Heaviest cargo from SHAR</td><td>BlueBird Block-2 — Dec 24, 2025 via LVM3-M6 (~6,100 kg; beat OneWeb's 5,700 kg)</td></tr>
 </table>
 
 <div class="section-hdr">Sports One-Liners / క్రీడలు ఏక-పంక్తి</div>
@@ -584,7 +618,7 @@ MCQ_DATA = [
         "opt_c": "కృష్ణజింక (Blackbuck)",
         "opt_d": "సింహం",
         "answer": "C",
-        "explanation_te": "AP రాష్ట్ర జంతువు కృష్ణజింక (Blackbuck / Indian Antelope). రోళ్లపాడు వన్యప్రాణి అభయారణ్యంలో (నందయాల జిల్లా) ప్రసిద్ధి. రాష్ట్ర పక్షి: Indian Rose-ringed Parakeet."
+        "explanation_te": "AP రాష్ట్ర జంతువు కృష్ణజింక (Blackbuck / Indian Antelope). రోళ్లపాడు వన్యప్రాణి అభయారణ్యంలో (నంద్యాల జిల్లా) ప్రసిద్ధి. AP రాష్ట్ర పక్షి: రామ చిలుక (Rose-ringed Parakeet) — 2018 జూన్‌లో పాల పిట్ట (Indian Roller) నుండి మార్చారు; పాల పిట్ట ఇప్పుడు తెలంగాణ రాష్ట్ర పక్షి."
     },
 
     # --- additional MCQs ---
@@ -893,8 +927,8 @@ MCQ_DATA = [
         'opt_b': '2',
         'opt_c': '3',
         'opt_d': '4',
-        'answer': 'B',
-        'explanation_te': 'AP లో 2 జాతీయ ఉద్యానవనాలు ఉన్నాయి: 1) పాపికొండలు జాతీయ ఉద్యానవనం 2) రాజీవ్ గాంధీ జాతీయ ఉద్యానవనం (కడప). NSTR మాత్రం వన్యప్రాణి అభయారణ్యం.',
+        'answer': 'C',
+        'explanation_te': 'AP లో 3 జాతీయ ఉద్యానవనాలు ఉన్నాయి: 1) పాపికొండలు NP (పశ్చిమ గోదావరి/ఏలూరు/అల్లూరి జిల్లాలు) 2) రాజీవ్ గాంధీ NP / లంకమల (కడప) 3) శ్రీ వేంకటేశ్వర NP (తిరుపతి/చిత్తూరు). NSTR జాతీయ ఉద్యానవనం కాదు — అది పులుల అభయారణ్యం + వన్యప్రాణి అభయారణ్యం.',
     },
     {
         'section_idx': 5,
@@ -906,6 +940,151 @@ MCQ_DATA = [
         'opt_d': 'ఏనుగులు',
         'answer': 'B',
         'explanation_te': 'రోళ్లపాడు వన్యప్రాణి అభయారణ్యం (Rollapadu Wildlife Sanctuary) నందయాల జిల్లాలో ఉంది — నల్ల జింకలకు (Blackbuck/కృష్ణ జింక) మరియు గ్రేట్ ఇండియన్ బస్టర్డ్ పక్షికి ప్రసిద్ధి. కృష్ణ జింక AP రాష్ట్ర జంతువు.',
+    },
+
+    # === FRESHNESS GAP-FILL MCQs (Audit 2026-05-19) ===
+    {
+        'section_idx': 3,
+        'difficulty': 'easy',
+        'question_te': 'డిసెంబర్ 24, 2025న SDSC SHAR నుండి ప్రయోగించిన BlueBird Block-2 ఏ రాకెట్‌తో ప్రయోగించబడింది?',
+        'opt_a': 'PSLV-C60',
+        'opt_b': 'GSLV-F15',
+        'opt_c': 'LVM3-M6',
+        'opt_d': 'SSLV-D3',
+        'answer': 'C',
+        'explanation_te': 'BlueBird Block-2 (BlueBird-6, AST SpaceMobile) — డిసెంబర్ 24, 2025న LVM3-M6 (6వ ఆపరేషనల్ ఫ్లైట్) ద్వారా SHAR నుండి ప్రయోగించారు. ఇది ~6,100 కిలోల పేలోడ్ — భారత గడ్డ నుండి అతి భారీ; గత OneWeb రికార్డ్ 5,700 కిలోలు బద్దలు.',
+    },
+    {
+        'section_idx': 3,
+        'difficulty': 'medium',
+        'question_te': 'BlueBird Block-2 ఉపగ్రహం ఏ ప్రత్యేకతకు ప్రసిద్ధి?',
+        'opt_a': 'మొదటి భారతీయ చంద్రయాన్',
+        'opt_b': 'LEO లో అతి పెద్ద వాణిజ్య కమ్యూనికేషన్ ఉపగ్రహం — 223 చ.మీ ఫేజ్డ్ అరే',
+        'opt_c': 'మొదటి GPS ఉపగ్రహం',
+        'opt_d': 'మొదటి మిలిటరీ నిఘా ఉపగ్రహం',
+        'answer': 'B',
+        'explanation_te': 'BlueBird Block-2 LEO లో అతి పెద్ద వాణిజ్య కమ్యూనికేషన్ ఉపగ్రహం — 223 చ.మీ ఫేజ్డ్ అరే; AST SpaceMobile (USA) direct-to-mobile broadband అందిస్తుంది — సాధారణ స్మార్ట్‌ఫోన్‌లు terrestrial టవర్లు లేకుండానే connect అవగలవు.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'easy',
+        'question_te': '2024 పారిస్ ఒలింపిక్స్‌లో భారత్ తరఫున 2 పతకాలు సాధించిన మొదటి స్వాతంత్ర్యానంతర అథ్లెట్ ఎవరు?',
+        'opt_a': 'PV సింధు',
+        'opt_b': 'మను భాకర్',
+        'opt_c': 'వినేశ్ ఫోగాట్',
+        'opt_d': 'మీరాబాయి చాను',
+        'answer': 'B',
+        'explanation_te': 'మను భాకర్ — పారిస్ 2024 ఒలింపిక్స్‌లో 2 కాంస్యాలు (10మీ ఎయిర్ పిస్టల్ + మిక్స్‌డ్ టీమ్ సర్బ్‌జోత్ సింగ్‌తో). స్వాతంత్ర్యానంతరం ఒకే ఒలింపిక్‌లో 2 పతకాలు సాధించిన మొదటి భారతీయురాలు.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'medium',
+        'question_te': 'పారిస్ 2024లో అతి చిన్న వయసులో ఒలింపిక్ పతకం సాధించిన భారతీయుడు ఎవరు?',
+        'opt_a': 'నీరజ్ చోప్రా',
+        'opt_b': 'మను భాకర్',
+        'opt_c': 'అమన్ సెహ్రావత్',
+        'opt_d': 'స్వప్నిల్ కుసాలే',
+        'answer': 'C',
+        'explanation_te': 'అమన్ సెహ్రావత్ (~21 ఏళ్ళు) — మెన్స్ ఫ్రీస్టైల్ 57కిలోల రెజ్లింగ్‌లో కాంస్యం (బ్రాంజ్ మ్యాచ్‌లో డేరియన్ టోయ్ క్రూజ్‌ను 13-5 తో ఓడించాడు). ఇది భారత చరిత్రలో అతి చిన్న వయసు ఒలింపిక్ పతక విజయం.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'medium',
+        'question_te': 'పారిస్ 2024 ఒలింపిక్స్‌లో భారత హాకీ జట్టు బ్రాంజ్ మ్యాచ్‌లో ఏ దేశాన్ని ఓడించింది?',
+        'opt_a': 'జర్మనీ',
+        'opt_b': 'నెదర్లాండ్స్',
+        'opt_c': 'స్పెయిన్',
+        'opt_d': 'ఆస్ట్రేలియా',
+        'answer': 'C',
+        'explanation_te': 'భారత హాకీ జట్టు పారిస్ 2024లో స్పెయిన్‌ను 2-1తో ఓడించి కాంస్యం సాధించింది — టోక్యో 2020 తర్వాత వరుసగా 2వ ఒలింపిక్ హాకీ పతకం.',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'easy',
+        'question_te': 'పారిస్ 2024లో భారత్ మొత్తం ఎన్ని పతకాలు సాధించింది?',
+        'opt_a': '4 (0 స్వర్ణం)',
+        'opt_b': '6 (1 రజతం + 5 కాంస్యాలు)',
+        'opt_c': '7 (1 స్వర్ణం)',
+        'opt_d': '10',
+        'answer': 'B',
+        'explanation_te': 'భారత్ పారిస్ 2024లో 6 పతకాలు సాధించింది: 1 రజతం (నీరజ్ చోప్రా — జావెలిన్) + 5 కాంస్యాలు (మను భాకర్ 2, స్వప్నిల్ కుసాలే, అమన్ సెహ్రావత్, హాకీ జట్టు).',
+    },
+    {
+        'section_idx': 4,
+        'difficulty': 'medium',
+        'question_te': '20వ ఆసియా క్రీడలు (2026) ఎక్కడ, ఎప్పుడు జరగనున్నాయి?',
+        'opt_a': 'హాంగ్‌ఝౌ, చైనా — 2026 జూన్',
+        'opt_b': 'ఐచి-నాగోయా, జపాన్ — సెప్టెంబర్ 19 – అక్టోబర్ 4, 2026',
+        'opt_c': 'దోహా, ఖతార్ — 2026 నవంబర్',
+        'opt_d': 'రియాద్, సౌదీ అరేబియా — 2026 ఆగస్టు',
+        'answer': 'B',
+        'explanation_te': '20వ ఆసియా క్రీడలు ఐచి-నాగోయా (జపాన్‌)లో సెప్టెంబర్ 19 – అక్టోబర్ 4, 2026లో జరగనున్నాయి (వాయిదా పడిన తర్వాత). 2030 ఆసియా క్రీడలు దోహాకు కేటాయించబడ్డాయి.',
+    },
+    {
+        'section_idx': 5,
+        'difficulty': 'easy',
+        'question_te': 'కొరింగ మడ అడవులు ఎప్పుడు రామ్‌సర్ సైట్‌గా ప్రకటించబడ్డాయి? అవి AP లో ఎన్నవ Ramsar సైట్?',
+        'opt_a': '2002 — 1వది',
+        'opt_b': '2024 — AP లో 3వ Ramsar సైట్ (భారత 80వ)',
+        'opt_c': '2014 — 2వది',
+        'opt_d': '2026 — 4వది',
+        'answer': 'B',
+        'explanation_te': 'కొరింగ మడ అడవులు 2024లో భారత్ 80వ Ramsar Wetland Site గా ప్రకటించబడ్డాయి — AP లో 3వ Ramsar సైట్ (కొల్లేరు 2002, పులికాట్ 2002, కొరింగ 2024). కాకినాడ జిల్లాలో ఉంది.',
+    },
+    {
+        'section_idx': 1,
+        'difficulty': 'medium',
+        'question_te': 'పాపికొండలు జాతీయ ఉద్యానవనం ఏ జిల్లాలో విస్తరించింది (2022 పునర్‌వ్యవస్థీకరణ తర్వాత)?',
+        'opt_a': 'తూర్పు గోదావరి ఒక్కటే',
+        'opt_b': 'పశ్చిమ గోదావరి, ఏలూరు, అల్లూరి సీతారామరాజు జిల్లాలు',
+        'opt_c': 'విశాఖపట్నం, విజయనగరం',
+        'opt_d': 'కృష్ణా, గుంటూరు',
+        'answer': 'B',
+        'explanation_te': '2022 పునర్‌వ్యవస్థీకరణ తర్వాత పాపికొండలు NP (~1,012 చ.కి.మీ) పశ్చిమ గోదావరి, ఏలూరు, మరియు అల్లూరి సీతారామరాజు జిల్లాలలో విస్తరించి ఉంది. గోదావరి నది బోట్ సఫారీ ప్రసిద్ధి.',
+    },
+    {
+        'section_idx': 3,
+        'difficulty': 'medium',
+        'question_te': 'ఆదిత్య-L1 ఉపగ్రహం ఎక్కడ ఉంచబడింది?',
+        'opt_a': 'భూ స్థిర కక్ష్యలో',
+        'opt_b': 'భూమి-సూర్యుడి మధ్య L1 Lagrange పాయింట్ వద్ద (~15 లక్షల కి.మీ)',
+        'opt_c': 'చంద్రుని కక్ష్యలో',
+        'opt_d': 'అంగారక కక్ష్యలో',
+        'answer': 'B',
+        'explanation_te': 'ఆదిత్య-L1 (సెప్టెంబర్ 2, 2023న ప్రయోగం) భూమి నుండి ~15 లక్షల కిలోమీటర్ల దూరంలో సూర్యుడి దిశగా ఉన్న L1 (Lagrange Point 1) వద్ద జనవరి 6, 2024న ప్రవేశించింది — ఇక్కడ నుండి సూర్యుడిని నిరంతరం పరిశీలించవచ్చు.',
+    },
+    {
+        'section_idx': 7,
+        'difficulty': 'easy',
+        'question_te': 'AP రాష్ట్ర పక్షి ఏది (2018 మార్పు తర్వాత)?',
+        'opt_a': 'పాల పిట్ట (Indian Roller)',
+        'opt_b': 'రామ చిలుక (Rose-ringed Parakeet)',
+        'opt_c': 'నెమలి',
+        'opt_d': 'తెల్ల పెలికాన్',
+        'answer': 'B',
+        'explanation_te': 'AP రాష్ట్ర పక్షి — రామ చిలుక (Rose-ringed Parakeet, Psittacula krameri). 2018 జూన్‌లో పాల పిట్ట (Indian Roller) నుండి రామ చిలుకగా అధికారికంగా మార్చారు. పాల పిట్ట ఇప్పుడు తెలంగాణ, ఒడిశా, కర్ణాటకలకు రాష్ట్ర పక్షి.',
+    },
+    {
+        'section_idx': 5,
+        'difficulty': 'medium',
+        'question_te': 'AP లో గ్రీన్ హైడ్రోజన్ హబ్‌గా ఎంపికైన ప్రదేశం ఏది?',
+        'opt_a': 'శ్రీహరికోట',
+        'opt_b': 'పుడిమడక (అనకాపల్లి జిల్లా)',
+        'opt_c': 'తుని',
+        'opt_d': 'విశాఖపట్నం పోర్ట్',
+        'answer': 'B',
+        'explanation_te': 'పుడిమడక (అనకాపల్లి జిల్లా) — National Green Hydrogen Mission Hub గా 2024లో ఎంపిక. AP Green Hydrogen Policy 2023 ఆధారంగా NTPC + Reliance పెట్టుబడులు ప్రకటించారు.',
+    },
+    {
+        'section_idx': 6,
+        'difficulty': 'easy',
+        'question_te': 'AP లో ఎన్ని Ramsar Wetland సైట్లు ఉన్నాయి (2026 నాటికి)?',
+        'opt_a': '1',
+        'opt_b': '2',
+        'opt_c': '3',
+        'opt_d': '4',
+        'answer': 'C',
+        'explanation_te': '2026 నాటికి AP లో 3 Ramsar సైట్లు: కొల్లేరు (2002), పులికాట్ (2002 — తమిళనాడుతో పంచుకొనేది), కొరింగ మడ అడవులు (2024లో జతచేయబడ్డాయి — భారత 80వ Ramsar సైట్).',
     },
 ]
 

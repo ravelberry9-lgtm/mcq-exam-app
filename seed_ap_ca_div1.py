@@ -23,7 +23,22 @@ BATCH D1 AUDIT (2026-05-18):
    Retained 3 well-framed bureaucracy MCQs (CS, DGP, Governor appointment).
 7. FIXED Pithapuram district: was "తూర్పు గోదావరి", corrected to "కాకినాడ"
    (Pithapuram moved to Kakinada district in the 2022 reorganisation).
-Result: ~84 MCQs → ~40 MCQs, all well-framed with full context.
+
+FRESHNESS AUDIT (2026-05-19):
+8. UPDATED CS predecessor chain: was "Nirab Kumar Prasad → K. Vijayanand → G. Sai
+   Prasad". Web confirms K. Vijayanand was direct predecessor (no Nirab Kumar
+   Prasad in chain). Source: Indianmasterminds, indianbureaucracy.com.
+9. UPDATED Lisa Gill detail: confirmed FIRST WOMAN CJ of AP HC; transferred from
+   P&H HC Mar 6, 2026; appointment order Apr 22, 2026; oath Apr 25, 2026 at Lok
+   Bhavan. Predecessor: Justice Dhiraj Singh Thakur (retired Apr 24, 2026).
+10. UPDATED 2026-27 Budget: ₹3,32,205 cr presented Feb 14, 2026 by Payyavula
+    Keshav (file previously said only "tabled in February 2026").
+11. UPDATED DGP Harish Kumar Gupta: announcement Jan 29, 2025; took charge Jan
+    31, 2025 (after Dwaraka Tirumala Rao's retirement); made full-time DGP in
+    May 2025 for 2-yr tenure.
+12. NO CABINET RESHUFFLE confirmed as of May 2026 — July 2025 speculation only,
+    nothing implemented. All 25 ministers still in post.
+Result: ~84 MCQs → ~40 MCQs → ~50 MCQs (with new fresh-fact MCQs added).
 """
 import json as _json
 
@@ -224,8 +239,8 @@ SECTIONS_JSON = [
 <tr><td>Nimmala Ramanaidu</td><td>Water Resources</td><td class="bi-te">నిమ్మల రమానాయుడు (పాలకొల్లు)</td></tr>
 </table>
 
-<p><b>Budget 2025-26:</b> Finance Minister Payyavula Keshav presented the AP 2025-26 budget on February 28, 2025 totalling <b>₹3,22,359 crore</b> — with allocations for Super Six schemes, Polavaram, Amaravati. Subsequent 2026-27 Budget tabled in February 2026 with continued Super Six focus.</p>
-<p class="bi-te">పయ్యావుల కేశవ్ ఫిబ్రవరి 28, 2025న 2025-26 బడ్జెట్ ₹3,22,359 కోట్లు సమర్పించారు. సూపర్ సిక్స్ + పోలవరం + అమరావతి కేటాయింపులు.</p>"""
+<p><b>Budget 2025-26 &amp; 2026-27:</b> Finance Minister Payyavula Keshav presented the AP 2025-26 budget on February 28, 2025 totalling <b>₹3,22,359 crore</b>. The 2026-27 budget was presented on <b>February 14, 2026</b> totalling <b>₹3,32,205 crore</b> — with allocations for Super Six schemes, Polavaram, Amaravati capital city and infrastructure-led growth.</p>
+<p class="bi-te">పయ్యావుల కేశవ్ — 2025-26 బడ్జెట్ ₹3,22,359 కోట్లు (ఫిబ్రవరి 28, 2025); 2026-27 బడ్జెట్ ₹3,32,205 కోట్లు (ఫిబ్రవరి 14, 2026). సూపర్ సిక్స్ + పోలవరం + అమరావతి కేటాయింపులు.</p>"""
     },
     {
         "title": "JSP మంత్రులు & ఇతర మంత్రులు",
@@ -263,7 +278,7 @@ SECTIONS_JSON = [
     {
         "title": "రాజ్యాంగ పదవులు & ముఖ్య వ్యక్తులు",
         "sub": "Constitutional Positions & Key Officials",
-        "audio": "ఆంధ్రప్రదేశ్ గవర్నర్ జస్టిస్ ఎస్. అబ్దుల్ నజీర్, ఫిబ్రవరి 2023 నుండి (మాజీ సుప్రీంకోర్టు న్యాయమూర్తి). శాసనసభ స్పీకర్ చింతకాయల అయ్యన్నపాత్రుడు (TDP, నర్సీపట్నం), జూన్ 2024లో ఎన్నుకున్నారు. డిప్యూటీ స్పీకర్ రఘురామ కృష్ణ రాజు (TDP, ఉండి). శాసనమండలి చైర్మన్ కొయ్యే మోషేన్ రాజు — YSRCP పాలన నుండి కొనసాగుతున్నారు. DGP హరీష్ కుమార్ గుప్తా (IPS 1992 batch, జనవరి 31, 2025 నుండి). AP రాష్ట్రసభ స్థానాలు 11. ముఖ్య కార్యదర్శి జి. సాయి ప్రసాద్ (IAS 1991 batch, మార్చి 1, 2026 నుండి). పయ్యావుల కేశవ్ ఆర్థికమంత్రిగా ఫిబ్రవరి 28, 2025న 2025-26 బడ్జెట్ ₹3,22,359 కోట్లు సమర్పించారు.",
+        "audio": "ఆంధ్రప్రదేశ్ గవర్నర్ జస్టిస్ ఎస్. అబ్దుల్ నజీర్, ఫిబ్రవరి 2023 నుండి (మాజీ సుప్రీంకోర్టు న్యాయమూర్తి). శాసనసభ స్పీకర్ చింతకాయల అయ్యన్నపాత్రుడు (TDP, నర్సీపట్నం), జూన్ 2024లో ఎన్నుకున్నారు. డిప్యూటీ స్పీకర్ రఘురామ కృష్ణ రాజు (TDP, ఉండి). శాసనమండలి చైర్మన్ కొయ్యే మోషేన్ రాజు — YSRCP పాలన నుండి కొనసాగుతున్నారు. AP హైకోర్టు ప్రధాన న్యాయమూర్తి జస్టిస్ లిసా గిల్ — ఏప్రిల్ 25, 2026 నుండి (AP HC కు మొదటి మహిళా CJ; పంజాబ్-హరియాణా HC నుండి బదిలీ). DGP హరీష్ కుమార్ గుప్తా (IPS 1992 batch, జనవరి 31, 2025 నుండి). AP రాజ్యసభ స్థానాలు 11. ముఖ్య కార్యదర్శి జి. సాయి ప్రసాద్ (IAS 1991 batch, మార్చి 1, 2026 నుండి). పయ్యావుల కేశవ్ ఆర్థికమంత్రిగా ఫిబ్రవరి 14, 2026న 2026-27 బడ్జెట్ ₹3,32,205 కోట్లు సమర్పించారు.",
         "html": """<div class="concept-cover">
   <h1>Constitutional &amp; Bureaucratic Posts &nbsp;<span class="bi-te">/ రాజ్యాంగ పదవులు</span></h1>
   <div class="sub">Governor • Speaker • DGP • CS • HC CJ</div>
@@ -276,7 +291,7 @@ SECTIONS_JSON = [
 <tr><td>Assembly Speaker</td><td>Chintakayala Ayyanna Patrudu</td><td>Jun 2024</td><td class="bi-te">చింతకాయల అయ్యన్నపాత్రుడు (TDP, నర్సీపట్నం)</td></tr>
 <tr><td>Deputy Speaker</td><td>Raghurama Krishnam Raju</td><td>Jun 2024</td><td class="bi-te">రఘురామ కృష్ణం రాజు (TDP, ఉండి)</td></tr>
 <tr><td>Council Chairman</td><td>Koyye Moshenu Raju</td><td>Cont. from YSRCP era</td><td class="bi-te">కొయ్యే మోషేన్ రాజు</td></tr>
-<tr><td>High Court CJ</td><td>Justice Lisa Gill (6th CJ)</td><td>Apr 25, 2026</td><td class="bi-te">జస్టిస్ లిసా గిల్ (6వ CJ)</td></tr>
+<tr><td>High Court CJ</td><td>Justice Lisa Gill — <b>1st woman CJ of AP HC</b></td><td>Apr 25, 2026</td><td class="bi-te">జస్టిస్ లిసా గిల్ — AP HC మొదటి మహిళా CJ</td></tr>
 </table>
 
 <div class="section-hdr">Top Bureaucracy / అధికారిక పదవులు</div>
@@ -286,8 +301,8 @@ SECTIONS_JSON = [
 <tr><td><b>DGP</b></td><td>Harish Kumar Gupta</td><td>IPS 1992</td><td>Jan 31, 2025</td></tr>
 <tr><td>Finance Secretary</td><td>Peeyush Kumar</td><td>IAS</td><td>—</td></tr>
 </table>
-<p class="bi-te">CS: జి. సాయి ప్రసాద్ (IAS 1991 batch, మార్చి 1, 2026 నుండి). గతంలో: నీరబ్ కుమార్ ప్రసాద్ (Jun-Dec 2024) → కె. విజయానంద్ (Jan-Feb 2026) → జి. సాయి ప్రసాద్.</p>
-<p class="bi-te">DGP: హరీష్ కుమార్ గుప్తా (IPS 1992 batch, జనవరి 31, 2025 నుండి).</p>
+<p class="bi-te">CS: జి. సాయి ప్రసాద్ (IAS 1991 batch, మార్చి 1, 2026 నుండి). పూర్వ CS కె. విజయానంద్ తదుపరి బాధ్యతలు. మే 2026లో జి. సాయి ప్రసాద్‌కు 6-నెలల పదవీ కాలం పొడిగింపు (జూన్ 1 – నవంబర్ 30, 2026).</p>
+<p class="bi-te">DGP: హరీష్ కుమార్ గుప్తా (IPS 1992 batch). జనవరి 29, 2025న నియామకం ప్రకటన; జనవరి 31, 2025న బాధ్యతలు. మే 2025లో 2-సంవత్సరాల పదవీ కాలంతో పూర్తికాల DGP గా.</p>
 
 <div class="section-hdr">AP Legislature Strength / AP శాసనం</div>
 <table class="key-table">
@@ -298,8 +313,8 @@ SECTIONS_JSON = [
 <tr><td>Legislative Council</td><td>58</td><td class="bi-te">58 శాసన మండలి స్థానాలు</td></tr>
 </table>
 
-<p><b>Budget context:</b> FM Payyavula Keshav tabled the AP 2025-26 budget on February 28, 2025 totalling <b>₹3,22,359 crore</b>. The 2026-27 budget was tabled in February 2026 by the same FM, continuing Super Six allocations alongside Polavaram, Amaravati capital city development, and Quantum Valley.</p>
-<p class="bi-te">2025-26 బడ్జెట్ ₹3,22,359 కోట్లు ఫిబ్రవరి 28, 2025న పయ్యావుల కేశవ్ సమర్పించారు. 2026-27 బడ్జెట్ ఫిబ్రవరి 2026లో సమర్పించబడింది.</p>"""
+<p><b>Budget context:</b> FM Payyavula Keshav tabled the AP 2025-26 budget on February 28, 2025 totalling <b>₹3,22,359 crore</b>. The 2026-27 budget was tabled on <b>February 14, 2026</b> by the same FM, totalling <b>₹3,32,205 crore</b>, continuing Super Six allocations alongside Polavaram, Amaravati capital city development, and Quantum Valley.</p>
+<p class="bi-te">2025-26 బడ్జెట్ ₹3,22,359 కోట్లు ఫిబ్రవరి 28, 2025న పయ్యావుల కేశవ్ సమర్పించారు. 2026-27 బడ్జెట్ ₹3,32,205 కోట్లు ఫిబ్రవరి 14, 2026న సమర్పించబడింది.</p>"""
     },
 ]
 
@@ -553,9 +568,9 @@ MCQ_DATA = [
 
     (7, 2,
      "AP ముఖ్య కార్యదర్శి (Chief Secretary) ఎవరు (మార్చి 2026 నుండి)?",
-     "నీరబ్ కుమార్ ప్రసాద్", "కె. విజయానంద్", "జి. సాయి ప్రసాద్", "హరీష్ కుమార్ గుప్తా",
-     "c",
-     "జి. సాయి ప్రసాద్ (IAS 1991 batch) మార్చి 1, 2026 నుండి AP ముఖ్య కార్యదర్శి. గతంలో: నీరబ్ కుమార్ ప్రసాద్ (Jun–Dec 2024) → కె. విజయానంద్ (Jan–Feb 2026)."),
+     "కె. విజయానంద్", "జి. సాయి ప్రసాద్", "హరీష్ కుమార్ గుప్తా", "నీరబ్ కుమార్ ప్రసాద్",
+     "b",
+     "జి. సాయి ప్రసాద్ (IAS 1991 batch) మార్చి 1, 2026 నుండి AP ముఖ్య కార్యదర్శి; పూర్వ CS కె. విజయానంద్ తదుపరి బాధ్యతలు. మే 2026లో జి. సాయి ప్రసాద్‌కు 6-నెలల పదవీ కాలం పొడిగింపు (జూన్ 1 – నవంబర్ 30, 2026)."),
 
     # AUDIT 2026-05-18 (Batch D1): Removed ~44 junk-stem duplicate MCQs.
     # Bare-stem framing like "JSP విజయం?", "AP లోక్‌సభ స్థానాలు?", "Health మంత్రి?"
@@ -573,6 +588,37 @@ MCQ_DATA = [
      "రాష్ట్ర విధానసభ", "రాష్ట్రపతి", "లోక్‌సభ", "ఉచ్చ న్యాయాలయం",
      "b",
      "AP గవర్నర్ రాష్ట్రపతి ద్వారా నియమితుడయ్యారు."),
+
+    # ─── FRESHNESS AUDIT 2026-05-19: Gap-fill MCQs ─────────────────────────────
+    (7, 2,
+     "AP హైకోర్టు మొదటి మహిళా ప్రధాన న్యాయమూర్తి ఎవరు? ఏ తేదీ నుండి?",
+     "జస్టిస్ ఎస్. అబ్దుల్ నజీర్, 2023", "జస్టిస్ ధీరజ్ సింగ్ ఠాకూర్, 2024", "జస్టిస్ లిసా గిల్, ఏప్రిల్ 25, 2026", "జస్టిస్ సి.ఎ. సోమశేఖర, 2025",
+     "c",
+     "జస్టిస్ లిసా గిల్ ఏప్రిల్ 25, 2026న AP హైకోర్టు ప్రధాన న్యాయమూర్తిగా ప్రమాణ స్వీకారం చేశారు — AP HC కు మొదటి మహిళా CJ. పంజాబ్-హరియాణా HC నుండి మార్చి 6, 2026న బదిలీ; రాష్ట్రపతి ఏప్రిల్ 22, 2026న నియామకం ప్రకటించారు. పూర్వ CJ జస్టిస్ ధీరజ్ సింగ్ ఠాకూర్ ఏప్రిల్ 24, 2026న పదవీ విరమణ."),
+
+    (7, 2,
+     "AP 2026-27 బడ్జెట్‌ను ఏ తేదీన సమర్పించారు? మొత్తం ఎంత?",
+     "ఫిబ్రవరి 28, 2026 — ₹3,22,359 కోట్లు", "ఫిబ్రవరి 14, 2026 — ₹3,32,205 కోట్లు", "మార్చి 1, 2026 — ₹3,50,000 కోట్లు", "జనవరి 31, 2026 — ₹3,00,000 కోట్లు",
+     "b",
+     "ఆర్థిక మంత్రి పయ్యావుల కేశవ్ ఫిబ్రవరి 14, 2026న 2026-27 AP బడ్జెట్ ₹3,32,205 కోట్లు సమర్పించారు. 2025-26 బడ్జెట్ ₹3,22,359 కోట్లు (Feb 28, 2025) తో పోలిస్తే ~₹10,000 కోట్ల పెరుగుదల."),
+
+    (7, 3,
+     "AP DGP హరీష్ కుమార్ గుప్తా IPS బ్యాచ్ ఏది? పూర్తికాల DGP గా ఏ తేదీన నియమితులయ్యారు?",
+     "IPS 1992 batch; మే 2025లో 2-సంవత్సరాల పదవీ కాలం", "IPS 1990 batch; జనవరి 2025లో", "IPS 1995 batch; జూన్ 2024లో", "IPS 1992 batch; జనవరి 31, 2025న పూర్తికాల",
+     "a",
+     "హరీష్ కుమార్ గుప్తా IPS 1992 batch. జనవరి 29, 2025న నియామకం ప్రకటన; జనవరి 31, 2025న పూర్వ DGP ద్వారకా తిరుమల రావు పదవీ విరమణ తర్వాత బాధ్యతలు. మే 2025లో రాష్ట్ర ప్రభుత్వం పూర్తికాల DGP గా 2-సంవత్సరాల పదవీ కాలంతో నియమించింది."),
+
+    (7, 3,
+     "మే 2026లో AP CS జి. సాయి ప్రసాద్‌కు ఎంత కాలం పదవీ పొడిగింపు ఇచ్చారు?",
+     "3 నెలలు", "6 నెలలు (జూన్ 1 – నవంబర్ 30, 2026)", "1 సంవత్సరం", "పొడిగింపు లేదు",
+     "b",
+     "మే 2026లో AP ప్రభుత్వం CS జి. సాయి ప్రసాద్‌కు 6-నెలల పదవీ పొడిగింపు మంజూరు చేసింది — జూన్ 1, 2026 నుండి నవంబర్ 30, 2026 వరకు."),
+
+    (7, 2,
+     "జస్టిస్ లిసా గిల్ AP హైకోర్టు CJ గా బాధ్యతలు చేపట్టకముందు ఏ HC నుండి బదిలీ అయ్యారు?",
+     "మద్రాస్ HC", "కర్ణాటక HC", "ఢిల్లీ HC", "పంజాబ్-హరియాణా HC",
+     "d",
+     "జస్టిస్ లిసా గిల్ పంజాబ్-హరియాణా హైకోర్టు నుండి AP HC కు మార్చి 6, 2026న బదిలీ అయ్యారు; ఏప్రిల్ 25, 2026న CJ గా ప్రమాణ స్వీకారం. ఆమె AP HC కు మొదటి మహిళా CJ."),
 
 ]
 

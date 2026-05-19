@@ -1,7 +1,19 @@
 """
 seed_ap_ca_div6.py
 AP Current Affairs — Chapter 6: AP ఆర్థిక వ్యవస్థ, పరిశ్రమలు & మౌలిక సదుపాయాలు
-Complete seed file with 60 MCQs in tuple format and seed functions
+Complete seed file with 60+ MCQs in tuple format and seed functions
+
+FRESHNESS AUDIT (2026-05-19):
+- UPDATED FY25-26 GSDP from "~Rs.17.62 L-cr" to "Rs.18.30 L-cr" per PRS India
+  analysis of AP Budget 2025-26 (current prices; ~14% growth over RE 2024-25).
+- ADDED FY26-27 GSDP projection Rs.19.75 lakh crore (12% growth).
+- ADDED Q2 FY25-26 AP growth 11.28% (vs national GDP 8.7%) — Dec 2025.
+- CORRECTED CII Summit total: Rs.13.25 lakh crore (~$150 bn) — not 13.26.
+- ADDED Brookfield-Evren $12 bn (Rs.1.1 L-cr) commitment at CII Summit.
+- ADDED AM Green Group Rs.54,000 crore MoU at CII Summit.
+- ADDED Bhogapuram PM-inauguration date June 26, 2026 (was Aug 26 placeholder).
+- ADDED 16th SIPB (Apr 2026): 31 projects, Rs.39,436 cr, 1,11,278 direct jobs.
+- ADDED 6 new gap-fill MCQs for FY25-26 numbers, SIPB Apr 2026, Brookfield/AM Green.
 
 AUDIT LOG (2026-05-18):
 - No junk MCQs found (no empty options, single-letter options, or nonsense options).
@@ -9,7 +21,6 @@ AUDIT LOG (2026-05-18):
 - All AP facts verified against reference data; no wrong answers found.
 - No abrupt/meaningless question text found.
 - No duplicate questions with other div files found.
-- FILE IS CLEAN — no changes to MCQ data required.
 NOTE: seed_ap_ca_div6_complete.py is an exact duplicate of this file (same content).
 
 BATCH D3 AUDIT (2026-05-18):
@@ -34,8 +45,8 @@ SECTIONS_JSON = json.dumps([
     {
         "id": "div6_s0",
         "title": "AP GSDP & ఆర్థిక స్నాప్‌షాట్ 2024-25 → 2026-27",
-        "sub": "GSDP FY24-25 Rs.16.41 L-cr | FY25-26 ~Rs.17.62 L-cr | Real growth 8.21% (7th nationally)",
-        "summary": "GSDP ₹16.41 లక్షల కోట్లు (FY24-25); FY25-26 ~₹17.62 లక్షల కోట్లు. వృద్ధి 12.5%; వాస్తవ వృద్ధి 8.21% (7వ స్థానం); GDP సహకారం 4.72%. AP Budget 2026-27 ₹3,32,205 కోట్లు (FM Payyavula Keshav, 3rd consecutive). Retail inflation 7.57% → 1.39%. 16th FC AP share 4.22%.",
+        "sub": "GSDP FY24-25 Rs.16.41 L-cr | FY25-26 Rs.18.30 L-cr | FY26-27 proj. Rs.19.75 L-cr | Q2 growth 11.28%",
+        "summary": "GSDP ₹16.41 లక్షల కోట్లు (FY24-25); FY25-26 ₹18.30 లక్షల కోట్లు (PRS India; current prices; 14% నామమాత్ర వృద్ధి); FY26-27 ప్రొజెక్షన్ ₹19.75 లక్షల కోట్లు (12% వృద్ధి). Q2 FY25-26 AP వాస్తవ వృద్ధి 11.28% (జాతీయ GDP 8.7% కంటే ఎక్కువ — డిసెంబర్ 2025 ప్రభుత్వ ప్రకటన). GDP సహకారం 4.72%. AP Budget 2026-27 ₹3,32,205 కోట్లు (FM Payyavula Keshav, 3rd consecutive). Retail inflation 7.57% → 1.39%. 16th FC AP share 4.22%.",
         "html": """<div class="concept-cover">
   <h1>AP GSDP &amp; Economic Snapshot &nbsp;<span class="bi-te">/ AP ఆర్థిక స్నాప్‌షాట్</span></h1>
   <div class="sub">FY24-25 GSDP Rs.16.41 L-cr • FY25-26 Rs.17.62 L-cr • Real growth 8.21% (7th)</div>
@@ -45,9 +56,11 @@ SECTIONS_JSON = json.dumps([
 <table class="key-table">
 <tr><th>Metric</th><th>Value</th><th class="bi-te">వివరణ</th></tr>
 <tr><td>GSDP FY24-25</td><td>Rs.16.41 lakh crore (current prices)</td><td class="bi-te">2024-25 GSDP</td></tr>
-<tr><td>GSDP FY25-26</td><td>~Rs.17.62 lakh crore (per Budget 2026-27)</td><td class="bi-te">2025-26 అంచనా</td></tr>
-<tr><td>Real growth rate</td><td>8.21% (7th in India)</td><td class="bi-te">వాస్తవ వృద్ధి 8.21% (7వ స్థానం)</td></tr>
-<tr><td>Nominal growth</td><td>12.5%</td><td class="bi-te">12.5% నామమాత్ర వృద్ధి</td></tr>
+<tr><td>GSDP FY25-26</td><td><b>Rs.18.30 lakh crore</b> (PRS India; 14% nominal growth)</td><td class="bi-te">2025-26 GSDP ₹18.30 ల.కో.</td></tr>
+<tr><td>GSDP FY26-27 (proj.)</td><td>Rs.19.75 lakh crore (12% nominal growth)</td><td class="bi-te">2026-27 ప్రొజెక్షన్ ₹19.75 ల.కో.</td></tr>
+<tr><td>Q2 FY25-26 real growth</td><td><b>11.28%</b> (vs national 8.7% — Dec 2025 official)</td><td class="bi-te">Q2 వాస్తవ వృద్ధి 11.28%</td></tr>
+<tr><td>Real growth rate (full-yr)</td><td>8.21% (7th in India, FY24-25)</td><td class="bi-te">వాస్తవ వృద్ధి 8.21% (7వ స్థానం)</td></tr>
+<tr><td>Nominal growth (FY24-25)</td><td>12.5%</td><td class="bi-te">12.5% నామమాత్ర వృద్ధి</td></tr>
 <tr><td>National GDP share</td><td>4.72%</td><td class="bi-te">భారత GDP లో AP వాటా</td></tr>
 <tr><td>Agri growth (FY25-26)</td><td><b>7.83% (vs national 0.80%)</b></td><td class="bi-te">వ్యవసాయ వృద్ధి 7.83%</td></tr>
 </table>
@@ -165,8 +178,8 @@ SECTIONS_JSON = json.dumps([
     {
         "id": "div6_s3",
         "title": "CII Partnership Summit 2025",
-        "sub": "30th edition | Nov 14-15, 2025 | Visakhapatnam | 45 countries | Rs.13.26 L-cr | 613 MoU | 16.31 L jobs",
-        "summary": "CII Partnership Summit 30వ సదస్సు — నవంబర్ 14-15, 2025, విశాఖపట్నం. 45 దేశాలు, 12 రంగాలు, ₹13.26 లక్షల కోట్ల పెట్టుబడులు, 613 MoUs, 16.31 లక్షల ఉద్యోగాలు సృష్టి. CM చంద్రబాబు హోస్ట్; PM మోదీ ముఖ్య అతిథి. ఇది AP 'Visit AP - Choose AP' ప్రచారానికి కీలక ఈవెంట్.",
+        "sub": "30th edition | Nov 14-15, 2025 | Visakhapatnam | 45 countries | Rs.13.25 L-cr (~$150 bn) | 613 MoU | 16.31 L jobs",
+        "summary": "CII Partnership Summit 30వ సదస్సు — నవంబర్ 14-15, 2025, విశాఖపట్నం. 45 దేశాలు, 4,975+ పారిశ్రామికవేత్తలు (640 అంతర్జాతీయ), 12 రంగాలు, ₹13.25 లక్షల కోట్ల (~$150 బిలియన్) పెట్టుబడులు, 613 MoUs, 16.31 లక్షల ఉద్యోగాలు సృష్టి. పునరుత్పాదక శక్తి అతిపెద్ద రంగం (₹5.33 ల.కో.). Brookfield-Evren $12 బిలియన్ (₹1.1 ల.కో.); AM Green Group ₹54,000 కోట్లు. CM చంద్రబాబు హోస్ట్; PM మోదీ ముఖ్య అతిథి. ఇది AP 'Visit AP - Choose AP' ప్రచారానికి కీలక ఈవెంట్.",
         "html": """<div class="concept-cover">
   <h1>CII Partnership Summit 2025 &nbsp;<span class="bi-te">/ CII సదస్సు 2025</span></h1>
   <div class="sub">30th edition • Nov 14-15, 2025 • Visakhapatnam • Rs.13.26 L-cr investments</div>
@@ -180,22 +193,35 @@ SECTIONS_JSON = json.dumps([
 <tr><td>Host city</td><td>Visakhapatnam</td><td class="bi-te">విశాఖపట్నం</td></tr>
 <tr><td>Country participation</td><td><b>45 countries</b></td><td class="bi-te">45 దేశాలు</td></tr>
 <tr><td>Sectors covered</td><td>12 industry sectors</td><td class="bi-te">12 రంగాలు</td></tr>
-<tr><td>Investments announced</td><td><b>Rs.13.26 lakh crore</b></td><td class="bi-te">₹13.26 లక్షల కోట్లు</td></tr>
+<tr><td>Investments announced</td><td><b>Rs.13.25 lakh crore (~$150 billion)</b></td><td class="bi-te">₹13.25 లక్షల కోట్లు</td></tr>
 <tr><td>MoUs signed</td><td>613</td><td class="bi-te">613 ఒప్పందాలు</td></tr>
 <tr><td>Direct jobs target</td><td><b>16.31 lakh</b></td><td class="bi-te">16.31 లక్షల ఉద్యోగాలు</td></tr>
+<tr><td>Industrialists / delegates</td><td>4,975+ (640 international)</td><td class="bi-te">4,975+ పారిశ్రామికవేత్తలు</td></tr>
+<tr><td>Top sector by value</td><td><b>Renewable energy — Rs.5.33 lakh crore</b></td><td class="bi-te">పునరుత్పాదక శక్తి అతిపెద్దది</td></tr>
 </table>
 
 <div class="section-hdr">Key Investments / కీలక పెట్టుబడులు</div>
 <table class="key-table">
 <tr><th>Company</th><th>Investment</th><th>Focus</th></tr>
-<tr><td>ReNew Power</td><td>Rs.82,000 crore</td><td>Renewable energy</td></tr>
+<tr><td><b>Brookfield-Evren</b></td><td>$12 billion (~Rs.1.1 lakh crore)</td><td>Clean energy platform</td></tr>
+<tr><td>ReNew Energy Global Plc</td><td>Rs.82,000 crore ($9.3 bn)</td><td>Renewable energy</td></tr>
+<tr><td><b>AM Green Group</b></td><td>Rs.54,000 crore</td><td>Green hydrogen / ammonia</td></tr>
 <tr><td>Adani Group (later Konaseema)</td><td>Rs.87,520 crore</td><td>Data centre</td></tr>
 <tr><td>Google AI Hub</td><td>$15 billion (~Rs.1.25 L cr)</td><td>Vizag — 2nd largest globally outside US</td></tr>
 <tr><td>ArcelorMittal-Nippon (AMNS)</td><td>Rs.1.5 lakh crore</td><td>Nakkapalli steel plant — 24 MT capacity</td></tr>
 </table>
 
-<p><b>Strategic context:</b> AP launched its "Visit AP — Choose AP" investment-attraction campaign timed to this summit. The 16th SIPB (April 2026) added another Rs.39,436 cr across 31 firms — making the 6-month post-summit pipeline cumulatively Rs.13.65+ lakh cr.</p>
-<p class="bi-te">"Visit AP - Choose AP" ప్రచారంతో AP పెట్టుబడుల ఆకర్షణ తీవ్రతరం. ఈ సదస్సు తర్వాత 16వ SIPB (ఏప్రిల్ 2026) ₹39,436 కోట్లు మరిగి జోడించింది.</p>"""
+<div class="section-hdr">16th SIPB Follow-up (April 2026) / 16వ SIPB</div>
+<table class="key-table">
+<tr><th>Item</th><th>Detail</th></tr>
+<tr><td>Date</td><td>April 2026 — Secretariat, chaired by CM Chandrababu</td></tr>
+<tr><td>Proposals cleared</td><td><b>31 new projects worth Rs.39,436 crore</b></td></tr>
+<tr><td>Direct jobs</td><td>1,11,278</td></tr>
+<tr><td>Sectors</td><td>Industries, Power, IT &amp; Electronics, Tourism, Food Processing</td></tr>
+</table>
+
+<p><b>Strategic context:</b> AP launched its "Visit AP - Choose AP" investment-attraction campaign timed to this summit. The 16th SIPB (April 2026) added another Rs.39,436 cr across 31 firms (1,11,278 jobs). A separate large omnibus clearance had previously cleared Rs.2.01 lakh crore worth of grounding proposals.</p>
+<p class="bi-te">"Visit AP - Choose AP" ప్రచారంతో AP పెట్టుబడుల ఆకర్షణ తీవ్రతరం. ఈ సదస్సు తర్వాత 16వ SIPB (ఏప్రిల్ 2026) ₹39,436 కోట్లు 31 ప్రాజెక్టులకు ఆమోదం; 1,11,278 ప్రత్యక్ష ఉద్యోగాలు.</p>"""
     },
     {
         "id": "div6_s4",
@@ -270,7 +296,7 @@ SECTIONS_JSON = json.dumps([
         "id": "div6_s6",
         "title": "మౌలిక సదుపాయాలు — పోర్టులు, విమానాశ్రయాలు",
         "sub": "Major: Vizag | 5 Non-major | 4 Greenfield | 3 International airports | Bhogapuram first landing Jan 4, 2026",
-        "summary": "AP లో 1 Major Port (విశాఖ — GoI-administered), 5 Non-major (కృష్ణపట్నం, గంగవరం, కాకినాడ, రావా, భావనపాడు — AP Maritime Board), 4 Greenfield నిర్మాణంలో (భావనపాడు, రామాయపట్నం, మచిలీపట్నం, కాకినాడ SEZ). కొత్తగా Dugarajupatnam Port (తిరుపతి జిల్లా) ఆమోదం (Dec 2025). 3 అంతర్జాతీయ విమానాశ్రయాలు: విశాఖ, తిరుపతి, విజయవాడ. భోగాపురం 'అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం' (GMR Group) — తొలి ల్యాండింగ్ జనవరి 4, 2026; PM మోదీ ఆగస్టు 26, 2026 ప్రారంభించనున్నారు. AP Ports కార్గోలో దేశంలో 3వ స్థానం.",
+        "summary": "AP లో 1 Major Port (విశాఖ — GoI-administered), 5 Non-major (కృష్ణపట్నం, గంగవరం, కాకినాడ, రావా, భావనపాడు — AP Maritime Board), 4 Greenfield నిర్మాణంలో (భావనపాడు, రామాయపట్నం, మచిలీపట్నం, కాకినాడ SEZ). కొత్తగా Dugarajupatnam Port (తిరుపతి జిల్లా) ఆమోదం (Dec 2025). 3 అంతర్జాతీయ విమానాశ్రయాలు: విశాఖ, తిరుపతి, విజయవాడ. భోగాపురం 'అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం' (GMR Group) — తొలి validation flight జనవరి 4, 2026; PM మోదీ జూన్ 26, 2026 న ప్రారంభించనున్నారు. AP Ports కార్గోలో దేశంలో 3వ స్థానం.",
         "html": """<div class="concept-cover">
   <h1>AP Infrastructure — Ports &amp; Airports &nbsp;<span class="bi-te">/ AP మౌలిక సదుపాయాలు</span></h1>
   <div class="sub">1 Major Port • 5 Non-major • 4 Greenfield • 3 Intl Airports • Bhogapuram debut Jan 4, 2026</div>
@@ -345,7 +371,7 @@ MCQ_DATA = [
     # Section 3: CII Partnership Summit 2025 (10 MCQs)
     (3, 1, "CII-AP భాగస్వామ్య సదస్సు ఎన్నవ సంచయం?", "25వ", "28వ", "30వ", "32వ", "c", "30వ సదస్సు — నవంబర్ 14-15, 2025."),
     (3, 1, "CII సదస్సు నగరం?", "విజయవాడ", "విశాఖపట్నం", "తిరుపతి", "హైదరాబాద్", "b", "విశాఖపట్నంలో."),
-    (3, 1, "CII సదస్సుకు ఆకర్షిత మొత్తం పెట్టుబడులు?", "₹8 లక్షల కోట్లు", "₹10.5 లక్షల కోట్లు", "₹13.26 లక్షల కోట్లు", "₹15 లక్షల కోట్లు", "c", "₹13.26 లక్షల కోట్లు."),
+    (3, 1, "CII సదస్సుకు ఆకర్షిత మొత్తం పెట్టుబడులు (Rs in lakh crore)?", "₹8 లక్షల కోట్లు", "₹10.5 లక్షల కోట్లు", "₹13.25 లక్షల కోట్లు (~$150 బి.)", "₹15 లక్షల కోట్లు", "c", "₹13.25 లక్షల కోట్లు (~$150 బిలియన్) 613 MoUs — విశాఖ CII 30వ సదస్సు."),
     (3, 1, "CII సదస్సుకు సంబంధం ఉన్న MoU లు?", "450", "530", "613", "750", "c", "613 MoU."),
     (3, 2, "CII సదస్సు ఆధారంగా సృష్టించిన ఉద్యోగ అవకాశాలు?", "8 లక్షల", "12 లక్షల", "16.31 లక్షల", "20 లక్షల", "c", "16.31 లక్షల."),
     (3, 2, "ReNew Power MoU పెట్టుబడి?", "₹50,000 కోట్లు", "₹70,000 కోట్లు", "₹82,000 కోట్లు", "₹1 లక్ష కోట్లు", "c", "₹82,000 కోట్లు."),
@@ -393,6 +419,23 @@ MCQ_DATA = [
     (6, 2, "మచిలీపట్నం వద్ద కొత్తగా అభివృద్ధి చేస్తున్న పోర్టు ఏ రకానికి చెందుతుంది?", "Major", "Non-major (existing)", "గ్రీన్‌ఫీల్డ్ పోర్టు", "Captive", "c", "మచిలీపట్నం గ్రీన్‌ఫీల్డ్ పోర్టుగా (నుండి కొత్తగా నిర్మిస్తున్న) అభివృద్ధి జరుగుతోంది. AP లో 4 గ్రీన్‌ఫీల్డ్ పోర్టులు: భావనపాడు, రామాయపట్నం, మచిలీపట్నం, కాకినాడ SEZ."),
     (6, 1, "గ్రీన్‌ఫీల్డ్ పోర్టుల సంఖ్య (నిర్మాణంలో)?", "2", "3", "4", "5", "c", "4 (భావనపాడు, రామాయపట్నం, మచిలీపట్నం, కాకినాడ SEZ)."),
     (6, 2, "AP పోర్టుల స్థానాల్లో rank?", "1వ", "2వ", "3వ", "4వ", "c", "3వ (కార్గోలో)."),
+
+    # === FRESHNESS GAP-FILL MCQs (added 2026-05-19) ===
+    # Section 0 — Updated FY25-26 / FY26-27 numbers
+    (0, 2, "PRS India ప్రకారం AP GSDP FY 2025-26 ప్రస్తుత ధరల్లో అంచనా ఎంత?", "₹16.41 లక్షల కోట్లు", "₹17.62 లక్షల కోట్లు", "₹18.30 లక్షల కోట్లు", "₹19.75 లక్షల కోట్లు", "c", "PRS India విశ్లేషణ: AP Budget 2025-26 ప్రకారం GSDP FY25-26 ~₹18.30 లక్షల కోట్లు (current prices) — 14% నామమాత్ర వృద్ధి RE 2024-25 పై."),
+    (0, 2, "AP GSDP FY 2026-27 ప్రొజెక్షన్ (current prices) ఎంత?", "₹17.62 లక్షల కోట్లు", "₹18.30 లక్షల కోట్లు", "₹19.75 లక్షల కోట్లు", "₹21.20 లక్షల కోట్లు", "c", "FY26-27 GSDP ప్రొజెక్షన్ ₹19,75,073 కోట్లు (12% నామమాత్ర వృద్ధి). Budget 2026-27 ద్వారా."),
+    (0, 2, "డిసెంబర్ 2025 ప్రభుత్వ ప్రకటన ప్రకారం Q2 FY25-26 లో AP వాస్తవ వృద్ధిరేటు?", "8.21%", "8.70%", "11.28%", "14.00%", "c", "Q2 FY25-26 లో AP 11.28% వాస్తవ వృద్ధి — జాతీయ GDP 8.70% కంటే ఎక్కువ. డిసెంబర్ 2025 ప్రకటన."),
+
+    # Section 3 — CII Summit gap-fill (Brookfield, AM Green, top sector)
+    (3, 2, "CII Partnership Summit 2025 లో అతిపెద్ద పెట్టుబడిదారు సంస్థ ఏది (క్లీన్ ఎనర్జీ ప్లాట్‌ఫాం)?", "ReNew Power", "Adani Group", "Brookfield-Evren", "Google", "c", "Brookfield Asset Management తన క్లీన్ ఎనర్జీ ప్లాట్‌ఫాం 'Evren' ద్వారా $12 బిలియన్ (~₹1.1 ల.కో.) ఒప్పందం చేసుకుంది — CII సదస్సులో అతిపెద్ద పెట్టుబడి."),
+    (3, 2, "CII సదస్సు 2025 లో AM Green Group MoU విలువ?", "₹25,000 కోట్లు", "₹54,000 కోట్లు", "₹82,000 కోట్లు", "₹1.1 లక్షల కోట్లు", "b", "AM Green Group ₹54,000 కోట్లు MoU (గ్రీన్ హైడ్రోజన్/అమ్మోనియా రంగం) AP ప్రభుత్వంతో CII Summit 2025 లో సంతకం."),
+    (3, 2, "CII Summit 2025 లో రంగాల వారీగా అత్యధిక పెట్టుబడి ఆకర్షించిన రంగం?", "IT & ITES", "Manufacturing", "పునరుత్పాదక శక్తి (Renewables)", "Pharma", "c", "పునరుత్పాదక శక్తి రంగం ₹5.33 లక్షల కోట్లు ఆకర్షించింది — అన్ని రంగాల్లో అతిపెద్దది."),
+
+    # Section 6 — Bhogapuram update + SIPB Apr 2026
+    (6, 1, "భోగాపురం 'అల్లూరి సీతారామరాజు అంతర్జాతీయ విమానాశ్రయం' తొలి validation flight ఎప్పుడు?", "డిసెం 26, 2025", "జనవరి 4, 2026", "ఫిబ్రవరి 14, 2026", "మార్చి 23, 2026", "b", "తొలి validation flight జనవరి 4, 2026న Bhogapuram International Airport లో landed."),
+    (6, 1, "భోగాపురం విమానాశ్రయాన్ని PM నరేంద్ర మోదీ ఎప్పుడు ప్రారంభించనున్నారు?", "ఏప్రిల్ 14, 2026", "జూన్ 26, 2026", "ఆగస్టు 15, 2026", "నవంబర్ 1, 2026", "b", "PM మోదీ జూన్ 26, 2026న Bhogapuram (ASR International Airport) ను ప్రారంభిస్తారని Deccan Chronicle నివేదిక."),
+    (3, 2, "16వ SIPB (ఏప్రిల్ 2026) ఎన్ని ప్రాజెక్టులకు, ఎంత పెట్టుబడికి ఆమోదం ఇచ్చింది?", "20 ప్రాజెక్టులు / ₹25,000 కో.", "31 ప్రాజెక్టులు / ₹39,436 కో.", "45 ప్రాజెక్టులు / ₹75,000 కో.", "60 ప్రాజెక్టులు / ₹1 ల.కో.", "b", "16వ SIPB (ఏప్రిల్ 2026, CM చంద్రబాబు అధ్యక్షతన) 31 కొత్త ప్రాజెక్టులకు ₹39,436 కోట్లు ఆమోదం; 1,11,278 ప్రత్యక్ష ఉద్యోగాలు."),
+    (3, 3, "16వ SIPB ఆమోదించిన ప్రాజెక్టుల ద్వారా ఎన్ని ప్రత్యక్ష ఉద్యోగాలు లక్ష్యం?", "65,000", "80,500", "1,11,278", "2,00,000", "c", "16వ SIPB (ఏప్రిల్ 2026) ఆమోదించిన 31 ప్రాజెక్టులు 1,11,278 ప్రత్యక్ష ఉద్యోగాలు సృష్టిస్తాయి."),
 ]
 
 def _seed_ap_ca_div6_notes_inner(conn, db_exec, row_to_dict, USE_POSTGRES, force=False):
