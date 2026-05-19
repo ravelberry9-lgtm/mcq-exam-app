@@ -26,8 +26,8 @@ def check_question_option_mismatch():
 
     # Get all questions
     cursor.execute("""
-        SELECT id, question_te, question_en, option_a, option_b, option_c, option_d, answer
-        FROM mcqs
+        SELECT id, q_te, q_en, opt_a, opt_b, opt_c, opt_d, correct
+        FROM chapter_mcqs
         LIMIT 1000
     """)
 
@@ -35,6 +35,8 @@ def check_question_option_mismatch():
     malformed = []
 
     for q_id, q_te, q_en, opt_a, opt_b, opt_c, opt_d, ans in questions:
+        # Rename for compatibility
+        option_a, option_b, option_c, option_d = opt_a, opt_b, opt_c, opt_d
         # Pattern 1: IBM Quantum questions with agricultural prices
         if 'IBM' in (q_te or '') and ('₹' in (opt_a or '') or '₹' in (opt_b or '')):
             if 'क्विंटल' in (opt_a or '') or 'క.ఎ.' in (opt_a or ''):
