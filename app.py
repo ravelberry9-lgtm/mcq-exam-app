@@ -597,7 +597,7 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Global Conflicts & Geopolitics MCQs (80 Qs, IDs 22001–22080) [force-refresh 2025-26] ──
+    # ── Auto-seed Global Conflicts & Geopolitics MCQs (102 Qs, IDs 22001–22102) [force-refresh 2025-26; freshness audit May 19, 2026] ──
     try:
         import importlib
         print("[startup] Conflicts & Geopolitics: refreshing 2025-2026 data...")
@@ -6563,7 +6563,7 @@ def search_proxy():
 _NOTES_MAP = [
     (20001, 20086, "intl_organisations_notes.html",       "International Organisations"),
     (21001, 21080, "summits_conferences_notes.html",       "Summits & Conferences 2025-26"),
-    (22001, 22080, "conflicts_geopolitics_notes.html",     "Conflicts & Geopolitics 2025-26"),
+    (22001, 22102, "conflicts_geopolitics_notes.html",     "Conflicts & Geopolitics 2025-26"),
     (23001, 23080, "awards_honours_notes.html",            "Awards & Honours 2025-26"),
     (25001, 25080, "environment_climate_notes.html",       "Environment & Climate 2025-26"),
     (26001, 26080, "science_technology_notes.html",        "Science & Technology 2025-26"),
@@ -6615,12 +6615,28 @@ CONCEPT_MAP = [
     (21001, 21020, 'summit_g20_g7_nato'),
     (21021, 21040, 'summit_brics_sco_asean'),
     (21041, 21080, 'summit_cop_davos'),
-    # Conflicts & Geopolitics (22001-22080)
-    (22001, 22016, 'conflict_sindoor'),
+    # Conflicts & Geopolitics (22001-22102)
+    (22001, 22012, 'conflict_sindoor'),
+    (22013, 22013, 'intl_2026_iran_crisis'),  # Op Swadesh Iran evacuation (rewritten May 19, 2026)
+    (22014, 22016, 'conflict_sindoor'),
     (22017, 22026, 'conflict_twelve_day'),   # Twelve-Day War (Israel-Iran June 2025)
     (22027, 22040, 'mideast_2026_war'),      # 2026 Iran War questions in conflicts range
     (22041, 22049, 'conflict_twelve_day'),   # Russia-Ukraine (note covers Ukraine section)
     (22050, 22080, 'conflict_global'),
+    # Conflicts & Geopolitics — May 19, 2026 freshness gap-fill (22081-22102)
+    (22081, 22084, 'intl_2026_iran_crisis'),         # Op Epic Fury, Op Swadesh, Larijani, Islamabad talks
+    (22085, 22086, 'intl_2026_israel_actions'),      # Israel-Lebanon War Mar 2; Apr 17 Washington ceasefire
+    (22087, 22088, 'intl_2026_gaza_peace_council'),  # Gaza Peace Council Jan 22 Davos; India/China/Russia abstain
+    (22089, 22089, 'intl_2026_israel_actions'),      # Knesset mandatory death penalty Mar 30
+    (22090, 22090, 'intl_2026_israel_actions'),      # Israel recognises Somaliland Dec 26
+    (22091, 22092, 'intl_2026_us_global_ops'),       # Op Hunter (Syria); Saudi Mukulla port strike
+    (22093, 22094, 'intl_2026_trump_isolationism'),  # 66-body withdrawal Jan 7; Greenland annexation push
+    (22095, 22095, 'intl_2026_paris_coalition_thailand'), # Paris Coalition of Willing Jan 6
+    (22096, 22096, 'intl_2026_nuclear_security'),    # New START expiry Feb 5
+    (22097, 22098, 'intl_2026_bangladesh_crisis'),   # BNP Feb 18 election; Tarek Rahman PM
+    (22099, 22099, 'intl_2026_democratic_elections'),# Min Aung Hlaing elected Apr 9 Myanmar
+    (22100, 22100, 'intl_2026_nepal_political_change'), # Balen Shah PM Mar 27; Oli arrest
+    (22101, 22102, 'intl_2026_india_neighbors'),     # Shaksgam objection Jan 9; Lipulekh trade Apr 2026
     # Environment & Climate (25001-25080)
     (25001, 25028, 'env_wildlife'),
     (25029, 25080, 'env_climate_cop'),
