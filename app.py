@@ -609,7 +609,7 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Awards & Honours MCQs (80 Qs, IDs 23001–23080) [force-refresh 2025-26] ──
+    # ── Auto-seed Awards & Honours MCQs (92 Qs, IDs 23001–23092) [force-refresh 2025-26 — May 19, 2026 audit] ──
     try:
         import importlib
         print("[startup] Awards & Honours: refreshing 2025-2026 data...")
@@ -6564,7 +6564,7 @@ _NOTES_MAP = [
     (20001, 20086, "intl_organisations_notes.html",       "International Organisations"),
     (21001, 21080, "summits_conferences_notes.html",       "Summits & Conferences 2025-26"),
     (22001, 22102, "conflicts_geopolitics_notes.html",     "Conflicts & Geopolitics 2025-26"),
-    (23001, 23080, "awards_honours_notes.html",            "Awards & Honours 2025-26"),
+    (23001, 23092, "awards_honours_notes.html",            "Awards & Honours 2025-26"),
     (25001, 25080, "environment_climate_notes.html",       "Environment & Climate 2025-26"),
     (26001, 26080, "science_technology_notes.html",        "Science & Technology 2025-26"),
     (27001, 27080, "sports_current_affairs_notes.html",    "Sports Current Affairs 2025-26"),
@@ -6576,7 +6576,7 @@ _NOTES_BASE = os.path.join(os.path.dirname(__file__), 'static', 'notes', 'Genera
 
 # ── Concept notes: qid range → concept tag ──
 CONCEPT_MAP = [
-    # Awards & Honours (23001-23080)
+    # Awards & Honours (23001-23092)
     (23001, 23012, 'nobel_prize'),
     (23013, 23017, 'grammy_awards'),
     (23018, 23019, 'booker_prize'),
@@ -6589,6 +6589,17 @@ CONCEPT_MAP = [
     (23048, 23060, 'oscars'),
     (23061, 23066, 'padma_awards'),
     (23067, 23080, 'other_awards'),
+    (23081, 23081, 'other_awards'),       # Time POY 2025 Architects of AI
+    (23082, 23082, 'other_awards'),       # Earthshot 2025 Rio
+    (23083, 23083, 'other_awards'),       # Templeton 2025 Patriarch Bartholomew
+    (23084, 23084, 'other_awards'),       # World Food Prize 2025 Hungria
+    (23085, 23085, 'other_awards'),       # Right Livelihood 2025
+    (23086, 23086, 'other_awards'),       # Indira Gandhi Peace 2024 Bachelet
+    (23087, 23088, 'padma_awards'),       # Padma 2026 Uday Kotak & N. Rajam
+    (23089, 23089, 'other_awards'),       # Turing 2025 BB84
+    (23090, 23090, 'other_awards'),       # Educate Girls Magsaysay
+    (23091, 23091, 'booker_prize'),       # Booker 2025 Szalay first Hungarian-British
+    (23092, 23092, 'nobel_prize'),        # Sakharov 2024 Machado & González
     # International Organisations (20001-20086)
     (20001, 20016, 'org_un_g20'),
     (20017, 20039, 'org_brics_g7_nato'),
