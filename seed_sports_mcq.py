@@ -1,6 +1,9 @@
 """
-seed_sports_mcq.py – Sports 2025-2026 MCQs (IDs 27001-27080)
-All questions strictly 2025 to 16 May 2026. Force-refresh: deletes old range first.
+seed_sports_mcq.py – Sports 2025-2026 MCQs (IDs 27001-27095)
+All questions strictly 2025 to 19 May 2026. Force-refresh: deletes old range first.
+Updated May 19, 2026: fixed Q27046 (Wimbledon women); added 27081-27095 covering
+WTC 2025 (SA), UCL 2025 (PSG), Ballon d'Or 2025 (Dembele), U19 WC 2026 (Suryavanshi),
+AO 2026 (Alcaraz), BCCI Naman 2026, All England 2025, Khel Ratna 2024, Paris 2024 medals.
 """
 import os, sqlite3
 
@@ -31,7 +34,7 @@ def seed():
     ph = "%s" if USE_POSTGRES else "?"
 
     # Force-refresh: delete stale data in this ID range
-    cur.execute(f"DELETE FROM questions WHERE id>={ph} AND id<={ph}", (27001, 27080))
+    cur.execute(f"DELETE FROM questions WHERE id>={ph} AND id<={ph}", (27001, 27095))
     conn.commit()
 
     questions = [
@@ -674,13 +677,13 @@ def seed():
         },
         {
             "id": 27046,
-            "question_text": "Which player dominated Women's Grand Slam tennis in 2025 by winning Wimbledon and the US Open?",
+            "question_text": "All four Women's Grand Slams in 2025 were won by different players. Who won Wimbledon 2025 Women's Singles?",
             "option_a": "Coco Gauff",
             "option_b": "Madison Keys",
             "option_c": "Iga Swiatek",
             "option_d": "Aryna Sabalenka",
-            "correct_answer": "D",
-            "explanation": "Aryna Sabalenka won the US Open 2025 Women's title, while Iga Swiatek won Wimbledon 2025. Coco Gauff won the French Open and Madison Keys claimed the Australian Open in 2025 — making all four Grand Slam women's titles go to different players.",
+            "correct_answer": "C",
+            "explanation": "Iga Swiatek won Wimbledon 2025 Women's Singles. The four 2025 Women's Grand Slams went to four different champions: Australian Open → Madison Keys, French Open → Coco Gauff, Wimbledon → Iga Swiatek, US Open → Aryna Sabalenka.",
             "topic": "International_Current_Affairs",
             "folder": "AP_HC",
             "difficulty": "medium",
@@ -1164,6 +1167,217 @@ def seed():
             "folder": "AP_HC",
             "difficulty": "hard",
             "marks": 1
+        },
+        # ─── Gap-fill May 19, 2026: WTC 2025, UCL 2025, Ballon d'Or 2025, U19 WC 2026, AO 2026, BCCI Naman 2026, All England 2025, Khel Ratna 2024, Paris 2024 medals (27081-27095) ───
+        {
+            "id": 27081,
+            "question_text": "Who won the ICC World Test Championship (WTC) Final 2025 held at Lord's, London from June 11-14, 2025?",
+            "option_a": "Australia",
+            "option_b": "India",
+            "option_c": "South Africa",
+            "option_d": "England",
+            "correct_answer": "C",
+            "explanation": "South Africa won the 2025 ICC World Test Championship Final at Lord's, defeating Australia by 5 wickets to claim the 3rd edition of the WTC. This was South Africa's first ICC title since 1998 and the Mace was lifted by captain Temba Bavuma.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27082,
+            "question_text": "Who was named Player of the Match in the 2025 WTC Final at Lord's for his match-winning 136 in South Africa's chase?",
+            "option_a": "Temba Bavuma",
+            "option_b": "Kagiso Rabada",
+            "option_c": "Aiden Markram",
+            "option_d": "Quinton de Kock",
+            "correct_answer": "C",
+            "explanation": "Aiden Markram scored 136 in the second innings to anchor South Africa's chase of 282 — a Lord's record chase in a Test final. He was named Player of the Match. South Africa won by 5 wickets, ending their long ICC title drought.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "hard",
+            "marks": 1
+        },
+        {
+            "id": 27083,
+            "question_text": "Which club won the UEFA Champions League 2024-25, their first-ever European Cup title?",
+            "option_a": "Inter Milan",
+            "option_b": "Manchester City",
+            "option_c": "Real Madrid",
+            "option_d": "Paris Saint-Germain (PSG)",
+            "correct_answer": "D",
+            "explanation": "Paris Saint-Germain (PSG) won their first-ever UEFA Champions League title on May 31, 2025, defeating Inter Milan 5-0 in the final at the Allianz Arena, Munich. It was the largest margin in any UCL final and completed a continental treble for Luis Enrique's PSG.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27084,
+            "question_text": "Who won the 2025 Ballon d'Or, awarded on September 22, 2025 in Paris?",
+            "option_a": "Lamine Yamal",
+            "option_b": "Vinicius Jr.",
+            "option_c": "Ousmane Dembele",
+            "option_d": "Erling Haaland",
+            "correct_answer": "C",
+            "explanation": "Ousmane Dembele (PSG, France) won the 2025 Ballon d'Or with 1,380 points, ahead of Lamine Yamal (1,059 points). Dembele was the first French player to win the award while at PSG, after a 37-goal, 15-assist season that brought PSG the Champions League treble.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27085,
+            "question_text": "India won the ICC U-19 Cricket World Cup 2026 final on February 6, 2026 in Harare. By how many runs did they beat England?",
+            "option_a": "75 runs",
+            "option_b": "100 runs",
+            "option_c": "118 runs",
+            "option_d": "143 runs",
+            "correct_answer": "B",
+            "explanation": "India beat England by 100 runs in the U-19 Cricket World Cup 2026 final at Harare on February 6, 2026. India posted 411/9 (with Vaibhav Suryavanshi's 175 off 80 balls) and bowled England out for 311. This was India's record-extending 6th U-19 World Cup title.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27086,
+            "question_text": "Vaibhav Suryavanshi scored the highest individual score in any ICC World Cup final at the U-19 WC 2026. What was his score?",
+            "option_a": "139",
+            "option_b": "152",
+            "option_c": "175",
+            "option_d": "200*",
+            "correct_answer": "C",
+            "explanation": "Vaibhav Suryavanshi (14-year-old) scored 175 off 80 balls (15 fours, 15 sixes) in the U-19 WC 2026 final vs England — the highest individual score in any ICC World Cup final across all age groups. He finished as Player of the Tournament with 439 runs at SR 169.49.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27087,
+            "question_text": "Who won the men's singles title at the Australian Open 2026, becoming the youngest man to complete the career Grand Slam in singles?",
+            "option_a": "Jannik Sinner",
+            "option_b": "Novak Djokovic",
+            "option_c": "Carlos Alcaraz",
+            "option_d": "Alexander Zverev",
+            "correct_answer": "C",
+            "explanation": "Carlos Alcaraz won the 2026 Australian Open men's singles, beating Novak Djokovic 2-6, 6-2, 6-3, 7-5. It was Alcaraz's first AO title and 7th Grand Slam overall, making him the youngest man in tennis history to complete the career Grand Slam. Defending champion Sinner lost to Djokovic in the semifinal.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27088,
+            "question_text": "Who was named Best International Cricketer (Men) at the BCCI Naman Awards 2026 ceremony held on March 15, 2026?",
+            "option_a": "Rohit Sharma",
+            "option_b": "Jasprit Bumrah",
+            "option_c": "Virat Kohli",
+            "option_d": "Shubman Gill",
+            "correct_answer": "D",
+            "explanation": "Shubman Gill (India's Test and ODI captain) won the Polly Umrigar Award for Best International Cricketer (Men) at the BCCI Naman Awards 2026 held in New Delhi on March 15, 2026. It was his second Polly Umrigar Award. Smriti Mandhana won Best Women's Cricketer for a record 5th time.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27089,
+            "question_text": "At the BCCI Naman Awards 2026, who received the Col. C.K. Nayudu Lifetime Achievement Award (Men)?",
+            "option_a": "Sachin Tendulkar and Sunil Gavaskar",
+            "option_b": "Roger Binny and Rahul Dravid",
+            "option_c": "Kapil Dev and MS Dhoni",
+            "option_d": "VVS Laxman and Anil Kumble",
+            "correct_answer": "B",
+            "explanation": "ODI World Cup-winners Roger Binny (1983) and Rahul Dravid (2024 T20 WC head coach) jointly received the Col. C.K. Nayudu Lifetime Achievement Award at BCCI Naman Awards 2026. Mithali Raj got the women's Lifetime Achievement Award.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "hard",
+            "marks": 1
+        },
+        {
+            "id": 27090,
+            "question_text": "Who won the men's singles title at the All England Open Badminton Championships 2025 (held March 2025 in Birmingham)?",
+            "option_a": "Viktor Axelsen",
+            "option_b": "Anders Antonsen",
+            "option_c": "Shi Yuqi",
+            "option_d": "Lakshya Sen",
+            "correct_answer": "C",
+            "explanation": "Shi Yuqi (China) won the men's singles at the All England Open 2025, defeating Lee Chia-Hao of Chinese Taipei 21-17, 21-19. In women's singles, An Se-Young of South Korea defeated Wang Zhi Yi to claim the title.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27091,
+            "question_text": "Who won the women's singles title at the All England Open Badminton Championships 2025?",
+            "option_a": "Carolina Marin",
+            "option_b": "Tai Tzu Ying",
+            "option_c": "PV Sindhu",
+            "option_d": "An Se-Young",
+            "correct_answer": "D",
+            "explanation": "An Se-Young (South Korea) won the women's singles title at the All England Open 2025, defeating Wang Zhi Yi (China) 13-21, 21-18, 21-18 in the final on March 16, 2025 in Birmingham.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27092,
+            "question_text": "Which four Indian athletes were conferred the Major Dhyan Chand Khel Ratna Award 2024 by President Murmu on January 17, 2025?",
+            "option_a": "Neeraj Chopra, PV Sindhu, Mirabai Chanu, Bajrang Punia",
+            "option_b": "Manu Bhaker, D Gukesh, Harmanpreet Singh, Praveen Kumar",
+            "option_c": "Rohit Sharma, Smriti Mandhana, Lakshya Sen, Manika Batra",
+            "option_d": "Rishabh Pant, Sumit Antil, Sift Kaur Samra, Pramod Bhagat",
+            "correct_answer": "B",
+            "explanation": "The four 2024 Khel Ratna awardees were: Manu Bhaker (shooting; Paris 2024 double bronze), D. Gukesh (chess; 2024 World Chess Champion), Harmanpreet Singh (hockey captain; Paris 2024 bronze) and Praveen Kumar (para high jump gold at Paralympics 2024). Presented January 17, 2025 at Rashtrapati Bhawan.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "easy",
+            "marks": 1
+        },
+        {
+            "id": 27093,
+            "question_text": "India won 6 medals at the Paris Olympics 2024. What was the medal breakdown?",
+            "option_a": "2 gold, 2 silver, 2 bronze",
+            "option_b": "1 gold, 1 silver, 4 bronze",
+            "option_c": "0 gold, 1 silver, 5 bronze",
+            "option_d": "1 gold, 2 silver, 3 bronze",
+            "correct_answer": "C",
+            "explanation": "India won 6 medals at the Paris Olympics 2024 — 0 gold, 1 silver (Neeraj Chopra javelin), 5 bronze (Manu Bhaker x2 shooting, Swapnil Kusale shooting, men's hockey, Aman Sehrawat wrestling). It was India's worst medal count in three Olympic cycles.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27094,
+            "question_text": "Manu Bhaker became the first Indian to win two medals at a single edition of the Olympics at Paris 2024. In which event did she win her second bronze (with Sarabjot Singh)?",
+            "option_a": "10m air rifle mixed team",
+            "option_b": "25m pistol individual",
+            "option_c": "10m air pistol mixed team",
+            "option_d": "50m rifle 3 positions",
+            "correct_answer": "C",
+            "explanation": "Manu Bhaker won her second Paris 2024 bronze in the 10m air pistol mixed team event partnered with Sarabjot Singh, after first winning bronze in the women's 10m air pistol individual. She is the first Indian to win two medals at a single Olympic edition since 1900.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "medium",
+            "marks": 1
+        },
+        {
+            "id": 27095,
+            "question_text": "Which of the following correctly pairs a 2025 sports event with its result?",
+            "option_a": "WTC Final 2025 → India beat Australia at Lord's; UCL 2024-25 → Real Madrid won",
+            "option_b": "WTC Final 2025 → South Africa beat Australia at Lord's (5 wickets); UCL 2024-25 → PSG beat Inter Milan 5-0",
+            "option_c": "WTC Final 2025 → Australia retained title; UCL 2024-25 → Manchester City won",
+            "option_d": "WTC Final 2025 → SA beat India; UCL 2024-25 → Bayern Munich won",
+            "correct_answer": "B",
+            "explanation": "Option B is correct: South Africa beat Australia by 5 wickets at Lord's (June 11-14, 2025) to win their maiden WTC and first ICC title since 1998; PSG beat Inter Milan 5-0 at Allianz Arena, Munich on May 31, 2025 for their first-ever UEFA Champions League title.",
+            "topic": "International_Current_Affairs",
+            "folder": "AP_HC",
+            "difficulty": "hard",
+            "marks": 1
         }
     ]
 
@@ -1194,7 +1408,7 @@ def seed():
     conn.commit()
     cur.close()
     conn.close()
-    print(f"[seed_sports_mcq] Inserted {len(questions)} Sports 2025-2026 questions (IDs 27001-27080).")
+    print(f"[seed_sports_mcq] Inserted {len(questions)} Sports 2025-2026 questions (IDs 27001-27095).")
 
 if __name__ == "__main__":
     seed()

@@ -1,9 +1,26 @@
 """
 Seed: Science, Space & Technology — Current Affairs 2024-2026
-IDs: 26001–26080
+IDs: 26001–26130 (original 26001-26080 + freshness gap-fill 26081-26130)
 Folder: AP_HC
 Topic: National_Current_Affairs
-Cross-checked: GKToday Science & Technology MCQs (Page 1), ISRO, NASA, PIB
+Cross-checked: GKToday Science & Technology MCQs, ISRO, NASA, PIB, WebSearch (May 2026)
+
+Freshness gap-fill (26081-26130) added May 19, 2026 — covers:
+  - NASA Artemis-2 (Apr 2-11, 2026, 252,760 mi record)
+  - ISRO BlueBird Block-2 / LVM3-M6 (Dec 24, 2025, 100th SHAR launch)
+  - NavIC-16 / IRNSS-1K (PSLV-C58 Jan 2026)
+  - Bharatiya Antariksh Station (BAS, 5 modules, 2028-35)
+  - Chandrayaan-4 sample return + LUPEX
+  - SpaceX Starship IFT-9 to IFT-12 (2025-26)
+  - IBM Quantum System Two Heron R2 (156-qubit, Amaravati AQCC)
+  - Nobel Physics 2025 (Clarke/Devoret/Martinis — macroscopic quantum tunnelling)
+  - Nobel Chemistry 2025 (Kitagawa/Robson/Yaghi — MOFs)
+  - Nobel Medicine 2025 (Brunkow/Ramsdell/Sakaguchi — peripheral immune tolerance)
+  - OpenAI GPT-5 (Aug 2025) + Gemini 3.0 + DeepSeek R1 + Claude Opus 4
+  - Mission Mausam (Sep 2024); CRISPR Casgevy approvals
+  - Apple Vision Pro 2, Meta Quest 4, AI agents
+  - CERN HL-LHC
+
 NOTE: seed() runs DELETE+INSERT to force-refresh stale data.
 """
 
@@ -46,8 +63,8 @@ def seed():
     else:
         cur = conn.cursor()
 
-    # Force-refresh: delete old and re-insert with updated 2025 data
-    cur.execute("DELETE FROM questions WHERE id >= 26001 AND id <= 26080")
+    # Force-refresh: delete old and re-insert with updated 2025-26 data
+    cur.execute("DELETE FROM questions WHERE id >= 26001 AND id <= 26130")
     conn.commit()
 
     ph = '%s' if USE_POSTGRES else '?'
@@ -157,7 +174,7 @@ def seed():
             "option_c": "5th",
             "option_d": "6th",
             "correct_answer": "B",
-            "explanation": "Gaganyaan will make India the 4th nation to independently send humans to space, after USA, Russia (USSR), and China. The first crewed mission (Gaganyaan-4) is targeted for 2027–28. Uncrewed test flights (Gaganyaan-1, -2, -3) are planned for 2025–26.",
+            "explanation": "Gaganyaan will make India the 4th nation to independently send humans to space, after USA, Russia (USSR), and China. The first crewed mission (Gaganyaan-4) is targeted for 2027. Uncrewed test flight Gaganyaan-G1 (with Vyommitra humanoid robot) is scheduled for December 2025, followed by G2 (2026) and G3 (2027) before the crewed flight.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -496,13 +513,13 @@ def seed():
         # --- Gaganyaan ---
         {
             "id": 26037,
-            "question_text": "The first crewed Gaganyaan mission is targeted for which year?",
+            "question_text": "The first crewed Gaganyaan mission (Gaganyaan-4) is targeted for which year as per the revised ISRO schedule announced in 2025?",
             "option_a": "2025",
             "option_b": "2026",
-            "option_c": "2027–28",
+            "option_c": "2027",
             "option_d": "2030",
             "correct_answer": "C",
-            "explanation": "The first crewed Gaganyaan mission (Gaganyaan-4) is targeted for 2027–28. Before this, three uncrewed test flights (Gaganyaan-1, -2, -3) are planned for 2025–26. The European Space Agency (ESA) is also supporting Indian human spaceflight missions.",
+            "explanation": "The first crewed Gaganyaan mission (Gaganyaan-4) is targeted for 2027. Before this, three uncrewed test flights are planned: Gaganyaan-G1 (Dec 2025, with the Vyommitra humanoid robot), G2 (2026), and G3 (2027). Crew Module Recovery trials began in 2024-25. The European Space Agency (ESA) and NASA also support Indian human spaceflight.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1061,6 +1078,655 @@ def seed():
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
+        # ════════════════════════════════════════════════════════════
+        # FRESHNESS GAP-FILL — 2025-26 Sci-Tech (added May 19, 2026)
+        # IDs: 26081-26130
+        # ════════════════════════════════════════════════════════════
+        # --- NASA Artemis-2 (Apr 2-11, 2026) ---
+        {
+            "id": 26081,
+            "question_text": "NASA's Artemis-2 mission, which made history as the first crewed lunar mission since Apollo 17, was launched on which date in 2026?",
+            "option_a": "March 14, 2026",
+            "option_b": "April 2, 2026",
+            "option_c": "April 11, 2026",
+            "option_d": "May 5, 2026",
+            "correct_answer": "B",
+            "explanation": "NASA's Artemis-2 was launched on April 2, 2026 from Kennedy Space Center using the Space Launch System (SLS) rocket and Orion spacecraft. The 10-day crewed lunar flyby mission concluded with a successful splashdown on April 11, 2026 in the Pacific Ocean off the coast of California — the first crewed Moon mission since Apollo 17 in 1972.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        {
+            "id": 26082,
+            "question_text": "Artemis-2 carried four astronauts on a lunar flyby. The mission set a new distance record by travelling how far from Earth?",
+            "option_a": "1,52,760 miles",
+            "option_b": "2,52,760 miles",
+            "option_c": "3,52,760 miles",
+            "option_d": "4,52,760 miles",
+            "correct_answer": "B",
+            "explanation": "Artemis-2 travelled 2,52,760 miles (~4,06,800 km) from Earth, looping behind the Moon — a new record for the farthest distance ever travelled by humans, surpassing Apollo 13's 1970 record. The crew: Reid Wiseman (Commander, NASA), Victor Glover (Pilot, NASA), Christina Koch (Mission Specialist, NASA) and Jeremy Hansen (Mission Specialist, CSA — first Canadian to fly to the Moon).",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        {
+            "id": 26083,
+            "question_text": "Which Canadian astronaut on Artemis-2 became the first non-American to fly to the Moon?",
+            "option_a": "Chris Hadfield",
+            "option_b": "Jeremy Hansen",
+            "option_c": "David Saint-Jacques",
+            "option_d": "Joshua Kutryk",
+            "correct_answer": "B",
+            "explanation": "Jeremy Hansen of the Canadian Space Agency (CSA) became the first non-American (and first Canadian) to fly to the Moon as a Mission Specialist on Artemis-2 (April 2-11, 2026). The launch vehicle was NASA's Space Launch System (SLS) carrying the Orion spacecraft.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- ISRO BlueBird Block-2 / LVM3-M6 (Dec 24, 2025) ---
+        {
+            "id": 26084,
+            "question_text": "ISRO's LVM3-M6 mission launched on December 24, 2025 from Sriharikota was historic for which reason?",
+            "option_a": "First Indian lunar sample-return mission",
+            "option_b": "100th launch from Satish Dhawan Space Centre, SHAR, carrying the heaviest commercial payload",
+            "option_c": "First indigenous reusable launch vehicle test",
+            "option_d": "First Indian astronaut training flight",
+            "correct_answer": "B",
+            "explanation": "LVM3-M6, launched on December 24, 2025, marked the 100th launch from Satish Dhawan Space Centre (SHAR), Sriharikota. It deployed AST SpaceMobile's BlueBird Block-2 satellite — the heaviest commercial payload (~6,500 kg) ever launched by ISRO. The BlueBird Block-2 is one of the world's largest commercial communication satellites with a 64 sq.m antenna array.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        {
+            "id": 26085,
+            "question_text": "The BlueBird Block-2 satellite launched by ISRO's LVM3-M6 in December 2025 was built by which company?",
+            "option_a": "SpaceX (USA)",
+            "option_b": "AST SpaceMobile (USA)",
+            "option_c": "OneWeb (UK)",
+            "option_d": "Eutelsat (France)",
+            "correct_answer": "B",
+            "explanation": "BlueBird Block-2 was built by AST SpaceMobile (USA). It is one of the largest commercial satellites with a 64 sq.m phased-array antenna designed to deliver direct-to-cell broadband 5G connectivity from space — connecting standard smartphones without ground infrastructure. NSIL signed the commercial launch contract with AST SpaceMobile.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- NavIC-16 / IRNSS-1K (PSLV-C58 Jan 2026) ---
+        {
+            "id": 26086,
+            "question_text": "ISRO launched the NavIC navigation satellite NVS-02/IRNSS-1K (also called NavIC-16) on January 29, 2025 using which launch vehicle?",
+            "option_a": "PSLV-C58",
+            "option_b": "GSLV-F15",
+            "option_c": "LVM3-M5",
+            "option_d": "SSLV-D3",
+            "correct_answer": "B",
+            "explanation": "ISRO launched NVS-02 (the second second-generation NavIC satellite) on January 29, 2025, using GSLV-F15 from Sriharikota. NavIC (Navigation with Indian Constellation) is India's regional satellite navigation system covering India and a 1,500 km region around it, designed as an indigenous alternative to GPS.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Bharatiya Antariksh Station (BAS) ---
+        {
+            "id": 26087,
+            "question_text": "The Bharatiya Antariksh Station (BAS), India's planned indigenous space station, will consist of how many modules in its final configuration?",
+            "option_a": "3 modules",
+            "option_b": "4 modules",
+            "option_c": "5 modules",
+            "option_d": "6 modules",
+            "correct_answer": "C",
+            "explanation": "The Bharatiya Antariksh Station (BAS) will have 5 modules. The first module (BAS-1) is targeted for launch in 2028 and the full station is to be operational by 2035. It will orbit Earth at ~400 km and weigh approximately 52 tonnes when complete — India's own crewed space station, supporting microgravity research and crewed missions.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        {
+            "id": 26088,
+            "question_text": "The first module of the Bharatiya Antariksh Station (BAS-1) is targeted to be launched by ISRO in which year?",
+            "option_a": "2026",
+            "option_b": "2027",
+            "option_c": "2028",
+            "option_d": "2030",
+            "correct_answer": "C",
+            "explanation": "The first module of Bharatiya Antariksh Station (BAS-1) is targeted for 2028, with the full 5-module station operational by 2035. The Cabinet approved the BAS project in September 2024 as part of the Gaganyaan extension and India's roadmap to a crewed Moon landing by 2040.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Chandrayaan-4 ---
+        {
+            "id": 26089,
+            "question_text": "Chandrayaan-4, approved by the Union Cabinet, is designed to demonstrate which capability?",
+            "option_a": "First crewed Indian Moon landing",
+            "option_b": "Lunar sample return to Earth",
+            "option_c": "Permanent base on the lunar south pole",
+            "option_d": "Lunar farside soft landing",
+            "correct_answer": "B",
+            "explanation": "Chandrayaan-4 was approved by the Union Cabinet on September 18, 2024. It will demonstrate lunar sample-return technology — collecting samples from the Moon's south polar region and bringing them back to Earth. The mission has a complex 5-module architecture launched on two separate LVM3 rockets and is targeted for 2027.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- SpaceX Starship IFT-9 to IFT-12 ---
+        {
+            "id": 26090,
+            "question_text": "SpaceX successfully completed the maiden Starship Block-3 orbital test (IFT-12) in 2025. The Starship is the world's most powerful rocket — how tall does the full Super Heavy + Starship stack measure?",
+            "option_a": "~100 metres",
+            "option_b": "~120 metres",
+            "option_c": "~150 metres",
+            "option_d": "~200 metres",
+            "correct_answer": "B",
+            "explanation": "The full SpaceX Super Heavy + Starship stack measures approximately 120 m (~395 ft) — the tallest and most powerful rocket ever built, producing ~74 MN of thrust at lift-off. After failures in IFT-7, 8 and 9 (early 2025), SpaceX achieved Booster catch with the launch tower's 'Mechazilla' chopsticks and successful Starship upper-stage demos through IFT-11 and IFT-12 (late 2025/early 2026).",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- IBM Quantum System Two / Heron R2 / Amaravati ---
+        {
+            "id": 26091,
+            "question_text": "Andhra Pradesh inaugurated the Amaravati Quantum Computing Centre (AQCC) in January 2026. Which quantum processor does it host?",
+            "option_a": "Google Willow (105-qubit)",
+            "option_b": "IBM Quantum System Two with Heron R2 (156-qubit)",
+            "option_c": "IonQ Forte (32-qubit)",
+            "option_d": "Microsoft Majorana 1",
+            "correct_answer": "B",
+            "explanation": "The Amaravati Quantum Computing Centre (AQCC), inaugurated by the Andhra Pradesh government in January 2026 as part of the 'Quantum Valley' initiative, hosts IBM's Quantum System Two with the 156-qubit Heron R2 processor — the largest quantum computer deployed in India. The centre is a joint initiative of AP government, IBM and TCS.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        {
+            "id": 26092,
+            "question_text": "IBM's Heron R2 processor, deployed at the Amaravati Quantum Computing Centre, has how many qubits?",
+            "option_a": "127 qubits",
+            "option_b": "133 qubits",
+            "option_c": "156 qubits",
+            "option_d": "1,121 qubits",
+            "correct_answer": "C",
+            "explanation": "IBM's Heron R2 processor has 156 qubits, an upgraded version of the earlier 133-qubit Heron R1. It powers IBM Quantum System Two, which is now operational at the Amaravati Quantum Computing Centre (AQCC) — part of Andhra Pradesh's 'Quantum Valley' initiative announced in 2025.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Nobel Physics 2025 ---
+        {
+            "id": 26093,
+            "question_text": "The 2025 Nobel Prize in Physics was awarded jointly to John Clarke, Michel Devoret and John Martinis for their discovery of which quantum phenomenon?",
+            "option_a": "Topological phases of matter",
+            "option_b": "Macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit",
+            "option_c": "Quantum entanglement in photons",
+            "option_d": "Boson-Higgs mechanism",
+            "correct_answer": "B",
+            "explanation": "The 2025 Nobel Prize in Physics was awarded jointly to John Clarke (UK/US), Michel H. Devoret (France/US) and John M. Martinis (US) for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit. Their work on Josephson junctions in the 1980s laid the groundwork for today's superconducting qubits used in quantum computers.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Nobel Chemistry 2025 ---
+        {
+            "id": 26094,
+            "question_text": "The 2025 Nobel Prize in Chemistry was awarded to Susumu Kitagawa, Richard Robson and Omar Yaghi for developing what?",
+            "option_a": "CRISPR/Cas9 gene editing",
+            "option_b": "Lithium-ion batteries",
+            "option_c": "Metal-Organic Frameworks (MOFs)",
+            "option_d": "Click chemistry",
+            "correct_answer": "C",
+            "explanation": "The 2025 Nobel Prize in Chemistry was awarded jointly to Susumu Kitagawa (Japan), Richard Robson (UK/Australia) and Omar M. Yaghi (Jordan/US) for the development of Metal-Organic Frameworks (MOFs). MOFs are porous crystalline materials with vast internal surface areas, used in carbon capture, hydrogen storage, water harvesting from desert air, and drug delivery.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Nobel Medicine 2025 ---
+        {
+            "id": 26095,
+            "question_text": "The 2025 Nobel Prize in Physiology or Medicine was awarded for discoveries about which immunological concept?",
+            "option_a": "mRNA vaccines",
+            "option_b": "Peripheral immune tolerance",
+            "option_c": "CAR-T cell therapy",
+            "option_d": "Innate immunity Toll-like receptors",
+            "correct_answer": "B",
+            "explanation": "The 2025 Nobel Prize in Physiology or Medicine was awarded jointly to Mary E. Brunkow (US), Fred Ramsdell (US) and Shimon Sakaguchi (Japan) for discoveries concerning peripheral immune tolerance. They identified regulatory T cells (Tregs) and the FOXP3 gene — explaining how the immune system avoids attacking the body's own tissues, a foundation for treating autoimmune diseases.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- OpenAI GPT-5 ---
+        {
+            "id": 26096,
+            "question_text": "OpenAI released GPT-5, its new flagship reasoning model, in which month and year?",
+            "option_a": "April 2025",
+            "option_b": "August 2025",
+            "option_c": "December 2025",
+            "option_d": "January 2026",
+            "correct_answer": "B",
+            "explanation": "OpenAI released GPT-5 on August 7, 2025, with default unified-reasoning, native multimodal input (text, images, audio, video) and a Pro tier. It replaced GPT-4o and the o-series as ChatGPT's default model. A 'GPT-5 Pro' tier provides extended reasoning for the most complex tasks.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Google Gemini 3.0 ---
+        {
+            "id": 26097,
+            "question_text": "Google DeepMind released Gemini 3.0, its most advanced AI model, in which month of 2025?",
+            "option_a": "March 2025",
+            "option_b": "August 2025",
+            "option_c": "October 2025",
+            "option_d": "December 2025",
+            "correct_answer": "D",
+            "explanation": "Google DeepMind released Gemini 3.0 (with Gemini 3 Pro variant) in November-December 2025 as its most capable multimodal AI model — featuring 'agentic' capabilities, the Antigravity agent IDE, and an expanded 1-million-token context window. It powers Google Search's AI Mode and AI Studio.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- DeepSeek R1 ---
+        {
+            "id": 26098,
+            "question_text": "DeepSeek R1, the open-source reasoning AI model released in January 2025 that triggered a global AI stock-market reaction, was developed by a company from which country?",
+            "option_a": "USA",
+            "option_b": "China",
+            "option_c": "South Korea",
+            "option_d": "India",
+            "correct_answer": "B",
+            "explanation": "DeepSeek R1 was released on January 20, 2025 by DeepSeek, a Hangzhou-based Chinese AI company. The open-weights reasoning model achieved performance comparable to OpenAI's o1 at a fraction of the training cost, triggering an ~$1 trillion drop in US tech stocks (including a $600 billion loss for NVIDIA) on January 27, 2025.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Anthropic Claude Opus 4 ---
+        {
+            "id": 26099,
+            "question_text": "Anthropic, the US AI safety company, released Claude Opus 4 — its most capable model — in which month of 2025?",
+            "option_a": "March 2025",
+            "option_b": "May 2025",
+            "option_c": "August 2025",
+            "option_d": "November 2025",
+            "correct_answer": "B",
+            "explanation": "Anthropic released Claude Opus 4 in May 2025 as the most capable model in the Claude 4 family, with leading-edge coding, agentic and reasoning abilities. Opus 4 introduced extended thinking and hybrid reasoning modes. Claude Opus 4.5 followed in late 2025.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- AI Agents (Operator, Manus) ---
+        {
+            "id": 26100,
+            "question_text": "OpenAI launched 'Operator', its autonomous AI agent that can browse the web and complete tasks on behalf of users, in which month of 2025?",
+            "option_a": "January 2025",
+            "option_b": "March 2025",
+            "option_c": "July 2025",
+            "option_d": "October 2025",
+            "correct_answer": "A",
+            "explanation": "OpenAI launched 'Operator' on January 23, 2025 as a research preview for ChatGPT Pro subscribers in the US. Built on the Computer-Using Agent (CUA) model, Operator autonomously browses the web, fills forms and books services. China's 'Manus' AI agent (Butterfly Effect AI) launched in March 2025 as a competing general-purpose autonomous agent.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Mission Mausam ---
+        {
+            "id": 26101,
+            "question_text": "Mission Mausam, launched by the Government of India in September 2024 to make India 'weather-ready and climate-smart', is led by which ministry?",
+            "option_a": "Ministry of Environment, Forests & Climate Change",
+            "option_b": "Ministry of Earth Sciences",
+            "option_c": "Ministry of Science and Technology",
+            "option_d": "Ministry of Agriculture",
+            "correct_answer": "B",
+            "explanation": "Mission Mausam was approved by the Union Cabinet on September 11, 2024 with a Rs 2,000 crore outlay for 2024-26. Led by the Ministry of Earth Sciences (MoES) and implemented by IMD, IITM (Pune) and NCMRWF, it aims at high-accuracy weather forecasts, cloud-seeding research and a 'Bharat Forecasting System' to make India weather-ready and climate-smart.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- CRISPR Casgevy ---
+        {
+            "id": 26102,
+            "question_text": "Casgevy (exa-cel), the world's first approved CRISPR/Cas9 gene-editing therapy, treats which conditions?",
+            "option_a": "Type-1 diabetes and Crohn's disease",
+            "option_b": "Sickle cell disease and transfusion-dependent beta thalassemia",
+            "option_c": "Alzheimer's disease and Parkinson's disease",
+            "option_d": "Cystic fibrosis and Duchenne muscular dystrophy",
+            "correct_answer": "B",
+            "explanation": "Casgevy (exagamglogene autotemcel / exa-cel), developed by Vertex Pharmaceuticals and CRISPR Therapeutics, is the world's first approved CRISPR/Cas9 gene-editing therapy. It treats sickle cell disease (SCD) and transfusion-dependent beta thalassemia. Approved by UK MHRA (Nov 2023), US FDA (Dec 2023), EMA (Feb 2024), and expanded to additional countries through 2025.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- HL-LHC ---
+        {
+            "id": 26103,
+            "question_text": "CERN's HL-LHC (High-Luminosity Large Hadron Collider) upgrade, scheduled to start operations in 2030, is designed to do what?",
+            "option_a": "Discover the Higgs boson for the first time",
+            "option_b": "Increase the LHC's luminosity (collision rate) by a factor of about 10",
+            "option_c": "Detect dark matter particles for the first time",
+            "option_d": "Replace the LHC with a circular muon collider",
+            "correct_answer": "B",
+            "explanation": "The High-Luminosity Large Hadron Collider (HL-LHC) is a major CERN upgrade designed to increase the LHC's luminosity (proton collision rate) by approximately 10 times — from ~1 to ~7.5 × 10^34 cm^-2 s^-1. Civil works are nearing completion in 2025-26, with first beams targeted for 2030. It will deliver ~3000/fb integrated luminosity over its lifetime.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Apple Vision Pro 2 ---
+        {
+            "id": 26104,
+            "question_text": "Apple released the Vision Pro 2 (M5 chip variant), the successor to its 2024 mixed-reality headset, in which year?",
+            "option_a": "Late 2024",
+            "option_b": "Mid 2025",
+            "option_c": "Late 2025",
+            "option_d": "Early 2026",
+            "correct_answer": "C",
+            "explanation": "Apple released the updated Vision Pro (M5 chip variant, often called 'Vision Pro 2025') in October 2025 — featuring the new M5 processor, longer battery life and a redesigned Dual Knit Band. A larger redesign with a lighter, lower-cost variant is expected in 2026-27.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Meta Quest 4 / Quest 3S ---
+        {
+            "id": 26105,
+            "question_text": "Meta launched the Quest 3S, a more affordable mixed-reality VR headset, in which month of 2024?",
+            "option_a": "March 2024",
+            "option_b": "June 2024",
+            "option_c": "October 2024",
+            "option_d": "December 2024",
+            "correct_answer": "C",
+            "explanation": "Meta launched the Quest 3S on October 15, 2024 at a starting price of $299 — making mixed-reality more affordable than the $499 Quest 3. It shares the Snapdragon XR2 Gen 2 chip with Quest 3 but uses older Fresnel lenses. Meta's flagship Quest 4 is expected in 2026.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Aditya-L1 first-year observations ---
+        {
+            "id": 26106,
+            "question_text": "Aditya-L1 completed one year of solar observations at Lagrange Point L1 in January 2025. Which of its key instruments captured a major Coronal Mass Ejection (CME) during the 2024-25 solar maximum?",
+            "option_a": "PAPA (Plasma Analyser Package for Aditya)",
+            "option_b": "VELC (Visible Emission Line Coronagraph)",
+            "option_c": "ASPEX (Aditya Solar wind Particle Experiment)",
+            "option_d": "All of the above",
+            "correct_answer": "D",
+            "explanation": "During its first year of observations (January 2024-25), Aditya-L1's full payload suite — VELC, SUIT, SoLEXS, HEL1OS, ASPEX, PAPA and MAG — captured multiple major Coronal Mass Ejections (CMEs) and solar flares during Solar Cycle 25's maximum. VELC was the first Indian space-based coronagraph to observe the Sun's corona at 1.05 solar radii.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- NISAR data delivery ---
+        {
+            "id": 26107,
+            "question_text": "After NISAR's successful launch on July 30, 2025, when did it begin delivering its first L-band and S-band science data publicly?",
+            "option_a": "August 2025",
+            "option_b": "October 2025",
+            "option_c": "January 2026",
+            "option_d": "April 2026",
+            "correct_answer": "B",
+            "explanation": "NISAR commissioning (in-orbit checkout and antenna deployment of the 12-metre AstroMesh reflector) was completed by mid-October 2025. NASA and ISRO released the first public L-band and S-band SAR images in October-November 2025, with the full mission science phase beginning early 2026.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Vyommitra humanoid robot ---
+        {
+            "id": 26108,
+            "question_text": "Vyommitra, ISRO's humanoid robot scheduled to fly aboard the uncrewed Gaganyaan-G1 mission, is designed to do what?",
+            "option_a": "Conduct EVA (spacewalks) outside the crew module",
+            "option_b": "Simulate human functions to test life-support and monitor onboard systems",
+            "option_c": "Pilot the spacecraft autonomously to the Moon",
+            "option_d": "Build the Bharatiya Antariksh Station modules in orbit",
+            "correct_answer": "B",
+            "explanation": "Vyommitra (Sanskrit for 'Space Friend') is a half-humanoid robot built by ISRO's Inertial Systems Unit. It will fly aboard the uncrewed Gaganyaan-G1 test mission (Dec 2025) to simulate human functions, monitor onboard systems, perform life-support experiments and respond to commands — validating crew safety before the crewed Gaganyaan-4 mission.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Quantum Mission ---
+        {
+            "id": 26109,
+            "question_text": "The National Quantum Mission (NQM), launched by the Government of India, has an outlay of Rs 6,003.65 crore over which period?",
+            "option_a": "2022-26",
+            "option_b": "2023-31",
+            "option_c": "2024-30",
+            "option_d": "2025-35",
+            "correct_answer": "B",
+            "explanation": "The National Quantum Mission (NQM) was approved by the Union Cabinet on April 19, 2023 with an outlay of Rs 6,003.65 crore for 2023-31 (8 years). It aims to develop quantum computers (50-1000 physical qubits), satellite-based secure quantum communication, magnetometers and atomic clocks. Four T-Hubs lead R&D: IISc, IITs Madras-Bombay-Delhi.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Tianwen-2 ---
+        {
+            "id": 26110,
+            "question_text": "China launched Tianwen-2, its second deep-space exploration mission, in May 2025 to collect samples from which target?",
+            "option_a": "Mars",
+            "option_b": "Comet 67P",
+            "option_c": "Near-Earth asteroid 2016 HO3 (Kamo'oalewa)",
+            "option_d": "Jupiter's moon Europa",
+            "correct_answer": "C",
+            "explanation": "Tianwen-2 was launched on May 29, 2025 by China's CNSA. It is a dual-target mission: first, collect samples from the near-Earth quasi-satellite asteroid 2016 HO3 (Kamo'oalewa) and return them to Earth around 2027, then continue to explore main-belt comet 311P/PANSTARRS through 2035. It is China's first sample-return mission from an asteroid.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Bharat 6G Alliance ---
+        {
+            "id": 26111,
+            "question_text": "India launched the 'Bharat 6G Vision' document and the Bharat 6G Alliance to make India a global leader in 6G technology by which year?",
+            "option_a": "2028",
+            "option_b": "2030",
+            "option_c": "2035",
+            "option_d": "2040",
+            "correct_answer": "B",
+            "explanation": "PM Modi released the 'Bharat 6G Vision' document on March 23, 2023, with the goal of making India a global leader in 6G technology by 2030. The Bharat 6G Alliance (industry-academia consortium) was launched in July 2023. By 2025, India had filed over 200 patents on 6G technology under this initiative.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Aravind / India BharatGen / IndiaAI ---
+        {
+            "id": 26112,
+            "question_text": "The IndiaAI Mission, approved by the Union Cabinet in March 2024 with a Rs 10,371 crore outlay, aims to do what?",
+            "option_a": "Build a sovereign Large Language Model (LLM) and supply 10,000+ GPUs for AI compute",
+            "option_b": "Train 1 million AI engineers by 2030",
+            "option_c": "Replace foreign AI services in government with Indian alternatives by 2026",
+            "option_d": "Set up AI courts to resolve technology disputes",
+            "correct_answer": "A",
+            "explanation": "The IndiaAI Mission (approved March 7, 2024) has 7 pillars, including: building sovereign foundational AI models / LLMs (BharatGen launched 2024); providing 10,000+ GPUs for shared compute under IndiaAI Compute; setting up the AI Innovation Centre, Datasets Platform, AI Application Development, FutureSkills Programme, Startup Financing and Safe & Trusted AI.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Semiconductor Mission ---
+        {
+            "id": 26113,
+            "question_text": "India's first semiconductor manufacturing plant, by Tata Electronics and Powerchip Semiconductor Manufacturing (PSMC), is being built in which state?",
+            "option_a": "Gujarat (Dholera)",
+            "option_b": "Karnataka (Mysuru)",
+            "option_c": "Tamil Nadu (Sriperumbudur)",
+            "option_d": "Andhra Pradesh (Visakhapatnam)",
+            "correct_answer": "A",
+            "explanation": "India's first commercial semiconductor fab is being built by Tata Electronics + Powerchip Semiconductor Manufacturing Corp (PSMC, Taiwan) in Dholera, Gujarat. Foundation laid March 13, 2024; investment Rs 91,000 crore; first chips expected by end-2026. Three other approved units (Tata Assam ATMP, Micron Sanand, CG Power Sanand) are also under construction.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- ISRO SpaDeX docking success ---
+        {
+            "id": 26114,
+            "question_text": "ISRO's SpaDeX mission successfully achieved India's first in-space docking of two satellites (SDX-01 'Chaser' and SDX-02 'Target') on which date?",
+            "option_a": "December 30, 2024",
+            "option_b": "January 16, 2025",
+            "option_c": "March 21, 2025",
+            "option_d": "May 18, 2025",
+            "correct_answer": "B",
+            "explanation": "SpaDeX achieved India's first successful in-space docking on January 16, 2025, making India the 4th country to demonstrate docking in space (after USA, Russia/USSR and China). The Chaser (SDX-01) and Target (SDX-02) satellites — ~220 kg each — were launched on December 30, 2024 by PSLV-C60. Undocking was successfully performed on March 13, 2025.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Quantum chip — Google Willow / Microsoft Majorana ---
+        {
+            "id": 26115,
+            "question_text": "Google unveiled 'Willow', a 105-qubit quantum chip, in December 2024. Microsoft followed with which quantum chip in February 2025, based on topological qubits using Majorana zero modes?",
+            "option_a": "Azure Quantum",
+            "option_b": "Majorana 1",
+            "option_c": "Topo Q1",
+            "option_d": "Surface Code S1",
+            "correct_answer": "B",
+            "explanation": "Microsoft unveiled 'Majorana 1' on February 19, 2025 — the world's first quantum chip built on a 'topological core' using topoconductor materials (indium arsenide + aluminium superconductor) to host Majorana zero modes. Microsoft claims this enables a path to a million-qubit topological quantum computer. Google's Willow (Dec 2024) is a 105-qubit superconducting chip demonstrating exponential error suppression.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Indian Space Policy ---
+        {
+            "id": 26116,
+            "question_text": "The Union Cabinet approved 100% Foreign Direct Investment (FDI) in India's space sector through the automatic route up to 49-100% in February 2024. Which segment allows the highest 100% FDI under the automatic route?",
+            "option_a": "Satellite manufacturing & operation",
+            "option_b": "Satellite components and sub-systems manufacturing",
+            "option_c": "Launch vehicles and their associated systems",
+            "option_d": "Ground segment / user segment",
+            "correct_answer": "B",
+            "explanation": "Under the amended FDI policy for the space sector (effective Feb 2024): (a) Satellite components/sub-systems manufacturing — 100% via automatic route; (b) Satellite manufacturing & operation, data products, ground segment — up to 74% via automatic, beyond by government route; (c) Launch vehicles & associated systems — up to 49% via automatic, beyond by government route.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Pixxel hyperspectral / Indian space startups ---
+        {
+            "id": 26117,
+            "question_text": "Indian space-tech startup Pixxel launched its first three Firefly hyperspectral satellites in January 2025, building the world's most advanced commercial hyperspectral constellation. Pixxel is based in which Indian city?",
+            "option_a": "Hyderabad",
+            "option_b": "Bengaluru",
+            "option_c": "Chennai",
+            "option_d": "Pune",
+            "correct_answer": "B",
+            "explanation": "Pixxel, headquartered in Bengaluru and co-founded by Awais Ahmed and Kshitij Khandelwal in 2019, launched its first three Firefly hyperspectral satellites on January 14, 2025 via SpaceX Transporter-12. They form part of a planned 6-satellite Firefly constellation followed by 18 'Honeybees', offering 5-metre resolution hyperspectral imagery for agriculture, mining and climate monitoring.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Agnikul / Skyroot ---
+        {
+            "id": 26118,
+            "question_text": "Agnikul Cosmos successfully launched 'Agnibaan SOrTeD' in May 2024 — the world's first rocket powered by which type of engine?",
+            "option_a": "Hybrid solid-liquid engine",
+            "option_b": "Single-piece 3D-printed semi-cryogenic engine",
+            "option_c": "Methalox electric pump-fed engine",
+            "option_d": "Aerospike nozzle engine",
+            "correct_answer": "B",
+            "explanation": "Agnikul Cosmos (IIT Madras incubated startup, Chennai) launched 'Agnibaan SOrTeD' (Sub-Orbital Technology Demonstrator) on May 30, 2024 from India's first private launchpad 'Dhanush' at SDSC SHAR. It used the world's first single-piece 3D-printed semi-cryogenic 'Agnilet' engine (LOX + aviation kerosene). Skyroot's Vikram-1 orbital flight is targeted for 2025-26.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- WHO H5N1 cattle outbreak ---
+        {
+            "id": 26119,
+            "question_text": "In 2024-25 the H5N1 'bird flu' virus crossed species barriers and caused a major outbreak in which unexpected mammalian host in the United States?",
+            "option_a": "Pigs",
+            "option_b": "Dairy cattle",
+            "option_c": "Domestic dogs",
+            "option_d": "Sheep",
+            "correct_answer": "B",
+            "explanation": "Starting March 2024, H5N1 highly pathogenic avian influenza spread among dairy cattle in the USA — the first widespread mammal-to-mammal outbreak of H5N1. By 2025, it had spread to over 1,000 dairy herds across 17+ states, with several human cases (mostly in farm workers). WHO and CDC continue to monitor the spillover risk to humans.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- mpox emergency ---
+        {
+            "id": 26120,
+            "question_text": "The WHO declared mpox (formerly monkeypox) a Public Health Emergency of International Concern (PHEIC) for the second time in August 2024 due to the spread of which new variant?",
+            "option_a": "Clade Ia",
+            "option_b": "Clade Ib",
+            "option_c": "Clade IIa",
+            "option_d": "Clade IIb",
+            "correct_answer": "B",
+            "explanation": "WHO declared mpox a PHEIC for the second time on August 14, 2024, driven by the rapid spread of the more virulent Clade Ib (subclade of Clade I) starting from the Democratic Republic of Congo (DRC) and spreading to neighbouring African countries. The PHEIC was lifted in September 2025 after coordinated vaccination campaigns slowed transmission.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Asteroid 2024 YR4 ---
+        {
+            "id": 26121,
+            "question_text": "Asteroid 2024 YR4, discovered in December 2024, briefly raised global attention in early 2025 because of what?",
+            "option_a": "It was the largest asteroid ever discovered near Earth",
+            "option_b": "Its short-lived elevated impact probability (~3%) for a December 22, 2032 Earth impact",
+            "option_c": "It was confirmed to contain valuable platinum-group metals",
+            "option_d": "It was the first asteroid found to have its own moon",
+            "correct_answer": "B",
+            "explanation": "Asteroid 2024 YR4 (discovered Dec 27, 2024 by ATLAS, Chile) — a 40-90 metre near-Earth asteroid — reached a 3.1% Torino-scale-3 impact probability for December 22, 2032 in February 2025, the highest ever recorded for a sizeable asteroid. Further observations rapidly reduced Earth-impact probability to near zero by late February 2025, but raised a small (~4%) chance of lunar impact in 2032.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Polaris Dawn ---
+        {
+            "id": 26122,
+            "question_text": "SpaceX's Polaris Dawn mission (September 2024) achieved which historic spaceflight milestone?",
+            "option_a": "First all-civilian crew to orbit the Moon",
+            "option_b": "First privately funded commercial spacewalk (EVA)",
+            "option_c": "First crewed flight on Starship",
+            "option_d": "First mission to land on Mars",
+            "correct_answer": "B",
+            "explanation": "Polaris Dawn (launched Sep 10, 2024; commander: Jared Isaacman) was a SpaceX private crewed mission on Crew Dragon Resilience. On September 12, 2024 it achieved the world's first privately funded commercial spacewalk (EVA), with Isaacman and Sarah Gillis stepping out of the Dragon capsule. It also reached the highest Earth orbit since Apollo (~1,400 km).",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Sunita Williams stranded / Boeing Starliner ---
+        {
+            "id": 26123,
+            "question_text": "NASA astronauts Sunita Williams and Butch Wilmore, who were unexpectedly stranded on the ISS for over 9 months due to Boeing Starliner technical issues, finally returned to Earth in March 2025 aboard which spacecraft?",
+            "option_a": "Boeing Starliner (uncrewed return)",
+            "option_b": "SpaceX Crew Dragon Freedom (Crew-9 mission)",
+            "option_c": "Soyuz MS-25",
+            "option_d": "NASA Orion test capsule",
+            "correct_answer": "B",
+            "explanation": "Sunita Williams (Indian-American, Cmdr) and Butch Wilmore launched on Boeing Starliner CFT (June 5, 2024) for a planned 8-day stay. Due to helium leaks and thruster issues, Starliner returned uncrewed in Sep 2024. They eventually returned to Earth on March 18, 2025 aboard SpaceX Crew Dragon Freedom (as part of Crew-9), splashing down off the Florida coast after 286 days in space.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Hayabusa2 / OSIRIS-REx / asteroid samples ---
+        {
+            "id": 26124,
+            "question_text": "Scientists analysing OSIRIS-REx samples from asteroid Bennu, returned to Earth in September 2023, reported in early 2025 the detection of which significant prebiotic compounds?",
+            "option_a": "All 20 amino acids of life",
+            "option_b": "Amino acids (including 14 of the 20 used in proteins) and the 5 nucleobases of DNA/RNA",
+            "option_c": "Functional DNA strands",
+            "option_d": "Living microorganisms",
+            "correct_answer": "B",
+            "explanation": "January 2025 studies of OSIRIS-REx Bennu samples (Nature & Nature Astronomy) reported amino acids — including 14 of the 20 used in proteins (proteinogenic) — plus all five nucleobases of DNA/RNA (adenine, guanine, cytosine, thymine, uracil), salts and complex organic compounds. These findings strengthen the hypothesis that the building blocks of life were delivered to Earth by asteroids.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- ISRO POEM-4 / SpaDeX hosted experiments ---
+        {
+            "id": 26125,
+            "question_text": "ISRO's POEM-4 (PSLV Orbital Experimental Module-4), flown on PSLV-C60 in December 2024, hosted 24 experiments including India's first space-grown crop. Which seed was germinated in microgravity?",
+            "option_a": "Spinach (Spinacia oleracea)",
+            "option_b": "Cowpea (Vigna unguiculata)",
+            "option_c": "Tomato (Solanum lycopersicum)",
+            "option_d": "Rice (Oryza sativa)",
+            "correct_answer": "B",
+            "explanation": "On the POEM-4 platform (PSLV-C60, Dec 30, 2024), ISRO's CROPS (Compact Research module for Orbital Plant Studies) successfully germinated cowpea (Vigna unguiculata) seeds in microgravity within 4 days — the first Indian space-grown crop. POEM-4 hosted 24 experiments from ISRO, IN-SPACe-recognised startups and Indian academic institutions.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- 5G/6G India deployment ---
+        {
+            "id": 26126,
+            "question_text": "By the end of 2025, India had crossed how many 5G base station sites, making it the world's second-largest 5G deployment after China?",
+            "option_a": "1 lakh sites",
+            "option_b": "3 lakh sites",
+            "option_c": "5 lakh sites",
+            "option_d": "10 lakh sites",
+            "correct_answer": "C",
+            "explanation": "India crossed 5 lakh (500,000) 5G base station sites by the end of 2025, having launched 5G commercially on October 1, 2022. India is the world's second-largest 5G market after China. The Bharat 6G Vision (March 2023) targets India as a 6G leader by 2030.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Wormlike spaghetti ozone / scientific discovery ---
+        {
+            "id": 26127,
+            "question_text": "Scientists confirmed in 2024-25 that the Antarctic ozone hole is showing signs of recovery, with full healing now expected by which decade?",
+            "option_a": "2030s",
+            "option_b": "2040s",
+            "option_c": "2060s",
+            "option_d": "2080s",
+            "correct_answer": "C",
+            "explanation": "The UN/WMO Scientific Assessment of Ozone Depletion (released January 2023, updated 2024-25) confirms that the Antarctic ozone hole is on track to fully heal by around 2066, with the Arctic recovering by ~2045 and the rest of the world by 2040 — provided Montreal Protocol compliance continues. The 2024 ozone hole was smaller than in recent years.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Stargate Project ---
+        {
+            "id": 26128,
+            "question_text": "The 'Stargate' AI infrastructure project, announced by US President Donald Trump on January 21, 2025, is a $500 billion partnership of OpenAI with which other companies?",
+            "option_a": "Microsoft and NVIDIA",
+            "option_b": "SoftBank and Oracle",
+            "option_c": "Google and Amazon",
+            "option_d": "Meta and IBM",
+            "correct_answer": "B",
+            "explanation": "The 'Stargate Project', announced at the White House on January 21, 2025, is a $500 billion AI infrastructure initiative over four years, partnering OpenAI with SoftBank, Oracle and MGX (UAE). It aims to build the largest AI data centres in the US — starting with a $100 billion immediate investment in Texas — to support next-generation AI training and deployment.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- INS Arnala / DRDO Nirbhay ---
+        {
+            "id": 26129,
+            "question_text": "DRDO successfully test-fired the long-range Land-Attack Cruise Missile (LRLACM) in November 2024 from Chandipur, with a strike range of approximately?",
+            "option_a": "300 km",
+            "option_b": "500 km",
+            "option_c": "1,000 km",
+            "option_d": "2,000 km",
+            "correct_answer": "C",
+            "explanation": "DRDO successfully test-fired the Long Range Land Attack Cruise Missile (LRLACM) — derived from the Nirbhay missile — from ITR Chandipur, Odisha on November 12, 2024. The subsonic missile has a strike range of approximately 1,000 km, can carry conventional or nuclear warheads, and is being inducted by all three Indian armed forces (Army, Navy, Air Force) under the Make-in-India programme.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Gemini Robotics / embodied AI ---
+        {
+            "id": 26130,
+            "question_text": "Google DeepMind launched 'Gemini Robotics' models in March 2025 — based on Gemini 2.0 — to enable what?",
+            "option_a": "Generating 3D avatars for the metaverse",
+            "option_b": "Robots that understand natural language and perform real-world physical tasks",
+            "option_c": "Self-driving car perception systems",
+            "option_d": "Drone swarms for military reconnaissance",
+            "correct_answer": "B",
+            "explanation": "Google DeepMind launched 'Gemini Robotics' and 'Gemini Robotics-ER' (Embodied Reasoning) on March 12, 2025 — Vision-Language-Action (VLA) models built on Gemini 2.0 that bring AI into the physical world. They enable robots to understand natural language commands, reason about physical environments and perform complex manipulation tasks, with partner Apptronik integrating it into humanoid robots.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
     ]
 
     if USE_POSTGRES:
@@ -1094,7 +1760,7 @@ def seed():
 
     conn.commit()
     conn.close()
-    print(f"[seed_science_tech] Inserted {inserted}/{len(questions)} questions (IDs 26001–26080).")
+    print(f"[seed_science_tech] Inserted {inserted}/{len(questions)} questions (IDs 26001–26130).")
 
 
 if __name__ == "__main__":

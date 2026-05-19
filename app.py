@@ -585,7 +585,7 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Summits & Conferences MCQs (80 Qs, IDs 21001–21080) [force-refresh 2025-26] ──
+    # ── Auto-seed Summits & Conferences MCQs (100 Qs, IDs 21001–21100) [force-refresh 2025-26; freshness audit May 19, 2026 added 21081-21100] ──
     try:
         import importlib
         print("[startup] Summits & Conferences: refreshing 2025-2026 data...")
@@ -641,10 +641,10 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Mideast War 2025-2026 MCQs (IDs 30001–30080) [force-refresh] ──
+    # ── Auto-seed Mideast War 2024-2026 MCQs (IDs 30001–30100) [force-refresh May 2026] ──
     try:
         import importlib
-        print("[startup] Mideast War 2025-2026: refreshing data...")
+        print("[startup] Mideast War 2024-2026: refreshing data...")
         mew_mod = importlib.import_module('seed_mideast_war_mcq')
         mew_mod.seed()
         print("[startup] Mideast War seed complete.")
@@ -653,7 +653,7 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed International Events & Appointments MCQs (IDs 29001–29080) [force-refresh 2025-26] ──
+    # ── Auto-seed International Events & Appointments MCQs (IDs 29001–29100) [force-refresh 2025-26] ──
     try:
         import importlib
         print("[startup] Intl Events & Appointments: refreshing 2025-2026 data...")
@@ -665,10 +665,10 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Reports & Indices MCQs (IDs 28001–28080) [force-refresh 2025] ──
+    # ── Auto-seed Reports & Indices MCQs (IDs 28001–28105) [force-refresh 2025-26] ──
     try:
         import importlib
-        print("[startup] Reports & Indices 2025: refreshing data...")
+        print("[startup] Reports & Indices 2025-26: refreshing data...")
         rep_mod = importlib.import_module('seed_reports_mcq')
         rep_mod.seed()
         print("[startup] Reports & Indices seed complete.")
@@ -677,7 +677,7 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Sports Current Affairs MCQs (IDs 27001–27080) [force-refresh 2025-26] ──
+    # ── Auto-seed Sports Current Affairs MCQs (IDs 27001–27095) [force-refresh 2025-26 + May 19, 2026 gap-fill] ──
     try:
         import importlib
         print("[startup] Sports 2025-2026: refreshing data...")
@@ -689,7 +689,7 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Science & Technology MCQs (IDs 26001–26080) [force-refresh 2025-26] ──
+    # ── Auto-seed Science & Technology MCQs (IDs 26001–26130) [force-refresh 2025-26 + May 19, 2026 gap-fill] ──
     try:
         import importlib
         print("[startup] Science & Tech 2025-2026: refreshing data...")
@@ -701,7 +701,7 @@ def init_db():
         try: conn.rollback()
         except: pass
 
-    # ── Auto-seed Environment & Climate MCQs (IDs 25001–25080) [force-refresh] ──
+    # ── Auto-seed Environment & Climate MCQs (IDs 25001–25100) [force-refresh] ──
     try:
         import importlib
         print("[startup] Environment & Climate: refreshing data...")
@@ -6562,15 +6562,15 @@ def search_proxy():
 # ── Topic Notes: extract clean English text from HTML notes file for a question ──
 _NOTES_MAP = [
     (20001, 20086, "intl_organisations_notes.html",       "International Organisations"),
-    (21001, 21080, "summits_conferences_notes.html",       "Summits & Conferences 2025-26"),
+    (21001, 21100, "summits_conferences_notes.html",       "Summits & Conferences 2025-26"),
     (22001, 22102, "conflicts_geopolitics_notes.html",     "Conflicts & Geopolitics 2025-26"),
     (23001, 23092, "awards_honours_notes.html",            "Awards & Honours 2025-26"),
-    (25001, 25080, "environment_climate_notes.html",       "Environment & Climate 2025-26"),
-    (26001, 26080, "science_technology_notes.html",        "Science & Technology 2025-26"),
-    (27001, 27080, "sports_current_affairs_notes.html",    "Sports Current Affairs 2025-26"),
-    (28001, 28080, "reports_indices_notes.html",           "Rankings, Reports & Indices 2025-26"),
-    (29001, 29080, "intl_events_appointments_notes.html",  "International Events & Appointments 2025-26"),
-    (30001, 30080, "mideast_war_2025_26_notes.html",       "Israel-Iran-America War 2025-26"),
+    (25001, 25100, "environment_climate_notes.html",       "Environment & Climate 2025-26"),
+    (26001, 26130, "science_technology_notes.html",        "Science & Technology 2025-26"),
+    (27001, 27095, "sports_current_affairs_notes.html",    "Sports Current Affairs 2025-26"),
+    (28001, 28105, "reports_indices_notes.html",           "Rankings, Reports & Indices 2025-26"),
+    (29001, 29100, "intl_events_appointments_notes.html",  "International Events & Appointments 2025-26"),
+    (30001, 30100, "mideast_war_2025_26_notes.html",       "Mideast War 2024-26 (Iran/Gaza/Lebanon/Syria)"),
 ]
 _NOTES_BASE = os.path.join(os.path.dirname(__file__), 'static', 'notes', 'General_Science', 'Study_Notes')
 
@@ -6622,10 +6622,27 @@ CONCEPT_MAP = [
     (20160, 20160, 'org_env_other'),               # UNESCO El-Enany country
     (20161, 20161, 'org_quad_sco_asean'),          # ASEAN 11 members (Timor-Leste)
     (20162, 20162, 'org_un_g20'),                  # India UNSC 2028-29 bid
-    # Summits & Conferences (21001-21080)
+    # Summits & Conferences (21001-21100)
     (21001, 21020, 'summit_g20_g7_nato'),
     (21021, 21040, 'summit_brics_sco_asean'),
     (21041, 21080, 'summit_cop_davos'),
+    # ── Summits & Conferences May 19, 2026 freshness gap-fill (21081-21100) ──
+    (21081, 21082, 'summit_cop_davos'),          # EU-India FTA Jan 27 2026 (Costa+vonderLeyen)
+    (21083, 21083, 'summit_g20_g7_nato'),        # G20 Johannesburg opening-day declaration adoption
+    (21084, 21084, 'summit_brics_sco_asean'),    # CHOGM Samoa Apia Ocean Declaration
+    (21085, 21086, 'summit_cop_davos'),          # TFFF $6.7B + Mutirão
+    (21087, 21087, 'summit_cop_davos'),          # Raisina Dialogue 2026 Stubb
+    (21088, 21088, 'summit_brics_sco_asean'),    # APEC Shenzhen 2026
+    (21089, 21089, 'summit_brics_sco_asean'),    # ASEAN Cebu 48th 2026
+    (21090, 21090, 'summit_cop_davos'),          # Gaza Board of Peace Davos 2026
+    (21091, 21091, 'summit_cop_davos'),          # UNGA 80 Baerbock theme
+    (21092, 21092, 'summit_g20_g7_nato'),        # G7 Évian 2026 dates
+    (21093, 21095, 'summit_g20_g7_nato'),        # AU permanent G20; G20 handover; Mission 300
+    (21096, 21096, 'summit_cop_davos'),          # India-UK CETA ratification timing
+    (21097, 21097, 'summit_brics_sco_asean'),    # ASEAN chair sequence 2024-27
+    (21098, 21098, 'summit_g20_g7_nato'),        # 2026 summits mixed match
+    (21099, 21099, 'summit_brics_sco_asean'),    # Quad summit status May 2026
+    (21100, 21100, 'summit_cop_davos'),          # Summit themes 2025-26 (mixed)
     # Conflicts & Geopolitics (22001-22102)
     (22001, 22012, 'conflict_sindoor'),
     (22013, 22013, 'intl_2026_iran_crisis'),  # Op Swadesh Iran evacuation (rewritten May 19, 2026)
@@ -6648,25 +6665,93 @@ CONCEPT_MAP = [
     (22099, 22099, 'intl_2026_democratic_elections'),# Min Aung Hlaing elected Apr 9 Myanmar
     (22100, 22100, 'intl_2026_nepal_political_change'), # Balen Shah PM Mar 27; Oli arrest
     (22101, 22102, 'intl_2026_india_neighbors'),     # Shaksgam objection Jan 9; Lipulekh trade Apr 2026
-    # Environment & Climate (25001-25080)
+    # Environment & Climate (25001-25100) — wildlife / climate-COP split
     (25001, 25028, 'env_wildlife'),
-    (25029, 25080, 'env_climate_cop'),
+    (25029, 25080, 'env_climate_cop'),  # original COP29/30 block (refreshed May 19, 2026 to Global Mutirão + TFFF)
+    # 2025-26 freshness gap-fill (added May 19, 2026) — IDs 25081-25100
+    (25081, 25082, 'env_climate_cop'),   # WMO 1.55°C; UNEP Emissions Gap 2025
+    (25083, 25084, 'env_wildlife'),      # CBD COP16.2 Rome $200B; Cali Fund DSI
+    (25085, 25085, 'env_climate_cop'),   # INC-5.2 Geneva plastic treaty
+    (25086, 25087, 'env_wildlife'),      # UNOC3 Nice; BBNJ 120-day entry
+    (25088, 25088, 'env_wildlife'),      # Ramsar COP15 Victoria Falls
+    (25089, 25089, 'env_wildlife'),      # CITES CoP20 Samarkand
+    (25090, 25091, 'env_climate_cop'),   # Mission Mausam; ISFR 2023
+    (25092, 25094, 'env_climate_cop'),   # LA wildfires; NASA 2024; La Niña
+    (25095, 25096, 'env_climate_cop'),   # Bonn SB62; WMO Air Quality Bulletin
+    (25097, 25098, 'env_climate_cop'),   # TFFF Norway $3B; COP31 Australia
+    (25099, 25100, 'env_wildlife'),      # CITES 77 species; Tamil Nadu Ramsar lead
     # Science & Technology (26001-26080)
     (26001, 26040, 'sci_isro_space'),
     (26041, 26080, 'sci_tech'),
-    # Sports (27001-27080)
+    # Science & Technology — May 19, 2026 Freshness Gap-Fill (26081-26130)
+    (26081, 26083, 'sci_isro_space'),    # Artemis-2 (NASA crewed Moon flyby)
+    (26084, 26086, 'sci_isro_space'),    # LVM3-M6 BlueBird-2 + NVS-02
+    (26087, 26089, 'sci_isro_space'),    # BAS (Bharatiya Antariksh Station) + Chandrayaan-4
+    (26090, 26090, 'sci_isro_space'),    # SpaceX Starship IFT-9 to IFT-12
+    (26091, 26092, 'sci_tech'),          # IBM Heron R2 + Amaravati AQCC
+    (26093, 26095, 'sci_tech'),          # Nobel Physics/Chemistry/Medicine 2025
+    (26096, 26100, 'sci_tech'),          # GPT-5, Gemini 3.0, DeepSeek R1, Claude Opus 4, Operator
+    (26101, 26102, 'sci_tech'),          # Mission Mausam + CRISPR Casgevy
+    (26103, 26103, 'sci_tech'),          # CERN HL-LHC
+    (26104, 26105, 'sci_tech'),          # Apple Vision Pro 2 + Meta Quest 3S
+    (26106, 26108, 'sci_isro_space'),    # Aditya-L1 first year + NISAR first data + Vyommitra
+    (26109, 26109, 'sci_tech'),          # National Quantum Mission
+    (26110, 26110, 'sci_isro_space'),    # Tianwen-2
+    (26111, 26113, 'sci_tech'),          # Bharat 6G + IndiaAI Mission + Semiconductor (Dholera)
+    (26114, 26114, 'sci_isro_space'),    # SpaDeX docking success Jan 16, 2025
+    (26115, 26115, 'sci_tech'),          # Microsoft Majorana 1 + Google Willow
+    (26116, 26118, 'sci_isro_space'),    # FDI space policy + Pixxel + Agnikul
+    (26119, 26121, 'sci_tech'),          # H5N1 cattle + mpox PHEIC + 2024 YR4 asteroid
+    (26122, 26125, 'sci_isro_space'),    # Polaris Dawn + Sunita Williams return + OSIRIS-REx + POEM-4
+    (26126, 26127, 'sci_tech'),          # 5G/6G + ozone recovery
+    (26128, 26128, 'sci_tech'),          # Stargate $500B AI project
+    (26129, 26129, 'sci_isro_space'),    # DRDO LRLACM Nirbhay
+    (26130, 26130, 'sci_tech'),          # Gemini Robotics
+    # Sports (27001-27095)
     (27001, 27023, 'sports_cricket'),
     (27024, 27048, 'sports_chess_tennis'),
     (27049, 27080, 'sports_football_others'),
-    # Reports & Indices (28001-28080)
+    # ── 2025-26 freshness gap-fill (May 19, 2026) ──
+    (27081, 27082, 'sports_cricket'),         # WTC Final 2025 (SA beat AUS at Lord's)
+    (27083, 27084, 'sports_football_others'), # UCL 2024-25 (PSG) + Ballon d'Or 2025 (Dembele)
+    (27085, 27086, 'sports_cricket'),         # U-19 WC 2026 (India, Suryavanshi 175)
+    (27087, 27087, 'sports_chess_tennis'),    # AO 2026 men's (Alcaraz)
+    (27088, 27089, 'sports_cricket'),         # BCCI Naman Awards 2026
+    (27090, 27091, 'sports_football_others'), # All England Open 2025 (Shi Yuqi, An Se-Young)
+    (27092, 27094, 'sports_football_others'), # Khel Ratna 2024 + Paris 2024 medals + Manu Bhaker
+    (27095, 27095, 'sports_football_others'), # Combo: WTC 2025 + UCL 2025
+    # Reports & Indices (28001-28105)
     (28001, 28044, 'reports_global'),
     (28045, 28080, 'reports_economic'),
-    # Intl Events & Appointments (29001-29080)
+    # ── 2025-26 freshness gap-fill (added May 19, 2026) ──
+    (28081, 28081, 'reports_economic'),   # EIU Democracy Index 2024
+    (28082, 28083, 'reports_global'),     # Henley Passport Index 2025
+    (28084, 28084, 'reports_global'),     # Global Peace Index 2025
+    (28085, 28086, 'reports_global'),     # World Happiness Report 2025
+    (28087, 28087, 'reports_economic'),   # SDG Index 2025
+    (28088, 28089, 'reports_global'),     # SIPRI Yearbook 2025
+    (28090, 28090, 'reports_global'),     # UNHCR Mid-Year Trends 2025
+    (28091, 28092, 'reports_global'),     # UNEP Emissions Gap 2025
+    (28093, 28093, 'reports_global'),     # WMO State of Global Climate 2024
+    (28094, 28095, 'reports_global'),     # FAO SOFI 2025
+    (28096, 28097, 'reports_global'),     # Global MPI 2025
+    (28098, 28099, 'reports_economic'),   # B-READY 2024
+    (28100, 28100, 'reports_global'),     # CCPI 2026
+    (28101, 28101, 'reports_economic'),   # SDG South Asia neighbours
+    (28102, 28102, 'reports_economic'),   # GII 2025 clusters
+    (28103, 28103, 'reports_global'),     # CCPI 2026 top 4
+    (28104, 28104, 'reports_global'),     # WMO 2025 update
+    (28105, 28105, 'reports_global'),     # GRFC 2025 Sudan
+    # Intl Events & Appointments (29001-29100)
     (29001, 29040, 'events_leadership'),
     (29041, 29080, 'events_global'),
-    # Mideast War (30001-30080)
+    (29081, 29100, 'events_leadership'),  # Gap-fill: new leaders & multilateral appointments 2024-26
+    # Mideast War (30001-30100)
     (30001, 30020, 'mideast_twelve_day'),
     (30021, 30080, 'mideast_2026_war'),
+    # 30081-30100 → all map to mideast_2026_war (Gaza/Hamas, Syria/al-Sharaa, UNRWA,
+    # Knesset death penalty, Saudi-UAE Mukalla, India Swades/Sindhu, Islamabad Talks)
+    (30081, 30100, 'mideast_2026_war'),
     # ── National Current Affairs 2026 (31001-31388) ──
     # Chunk 1 (31001-31020) — properly split into topic groups per Batch I (concept-note enrichment):
     (31001, 31007, 'natl_2026_budget_finance'),     # Union Budget 2026-27 (7 MCQs)

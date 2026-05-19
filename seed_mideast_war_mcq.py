@@ -1,7 +1,20 @@
 """
-Seed: Israel–Iran–America War 2025–2026 MCQs
-IDs 30001–30080 | Topic: National_Current_Affairs
-Covers: Twelve-Day War (June 2025) + 2026 Iran War (Feb 28, 2026 – present)
+Seed: Mideast War 2024–2026 MCQs
+IDs 30001–30100 | Topic: International_Current_Affairs | Folder: AP_HC
+Covers:
+  - Twelve-Day War (June 13-24, 2025) + Op Midnight Hammer (US, June 21-22)
+  - 2026 Iran War / Op Epic Fury (Feb 28 – May 5, 2026)
+  - Israel-Lebanon War (Mar 2 – Apr 16, 2026) + May 15 ceasefire extension
+  - Islamabad Talks (Apr 11-12, 2026, failed)
+  - Gaza ceasefires (Jan 19, 2025 + Oct 2025 Trump 20-point plan)
+  - Hamas leadership: Haniyeh (Jul 2024 Tehran), Sinwar (Oct 2024 Rafah)
+  - Nasrallah killed (Sep 2024 Beirut)
+  - Syria: Assad ousted Dec 8, 2024; al-Sharaa President; Trump meeting May 14, 2025
+  - UNRWA HQ demolition (Jan 20, 2026 Sheikh Jarrah)
+  - Knesset death-penalty law (Mar 30, 2026)
+  - Saudi-UAE Mukalla rift (Dec 30, 2025)
+  - India: Operation Swades (Jan 2026) + Operation Sindhu (post Feb 2026)
+Last refreshed: May 19, 2026
 Run standalone: python seed_mideast_war_mcq.py
 Auto-run: called from app.py init_db()
 """
@@ -68,9 +81,9 @@ QUESTIONS = [
      "C", "Iran retaliated with over 550 ballistic missiles and over 1,000 suicide drones during the Twelve-Day War (June 2025), hitting civilian population centres, hospitals, and military/energy/government sites in Israel.",
      "AP_HC", "International_Current_Affairs"),
 
-    (30006, "On which date did the United States directly bomb Iranian nuclear sites during the Twelve-Day War?",
-     "June 15, 2025", "June 18, 2025", "June 22, 2025", "June 24, 2025",
-     "C", "The United States bombed three Iranian nuclear sites (Natanz, Isfahan, Fordow) on June 22, 2025, during the Twelve-Day War. Iran then retaliated by firing missiles at the US military base Al Udeid in Qatar.",
+    (30006, "The US strikes on Iran's nuclear sites (Natanz, Fordow, Isfahan) on June 21-22, 2025 were codenamed:",
+     "Operation Praying Mantis", "Operation Midnight Hammer", "Operation Inherent Resolve", "Operation Desert Storm II",
+     "B", "'Operation Midnight Hammer' was the US codename for the June 21-22, 2025 strikes during the Twelve-Day War. It involved 7 B-2 Spirit stealth bombers flying 37 hours from Missouri, dropping GBU-57 Massive Ordnance Penetrator bunker-busters on Fordow — the first operational use of the GBU-57. Over 125 aircraft participated. Iran retaliated by striking Al Udeid Air Base in Qatar.",
      "AP_HC", "International_Current_Affairs"),
 
     (30007, "After the US bombed its nuclear sites on June 22, 2025, Iran retaliated by striking which US military base?",
@@ -212,19 +225,19 @@ QUESTIONS = [
      "C", "According to US and Israel, 190+ ballistic missile launchers were destroyed in the 2026 Iran War, along with 155 naval vessels destroyed or damaged. Iran also lost 6,000+ military personnel per US-Israel estimates.",
      "AP_HC", "International_Current_Affairs"),
 
-    (30034, "Who mediated the conditional ceasefire announced on April 8, 2026, in the Iran War?",
-     "Turkey", "Qatar", "Pakistan", "Oman",
-     "C", "Pakistan mediated the conditional ceasefire declared on April 8, 2026 between the conflicting parties. Despite the ceasefire, both sides continued small-scale attacks on each other.",
+    (30034, "Pakistan mediated the Islamabad Talks (April 11-12, 2026) between the US and Iran. The talks ended:",
+     "With a comprehensive nuclear deal", "Without a deal after 21 hours of negotiations", "With Iran reopening the Strait of Hormuz", "With the US lifting all sanctions",
+     "B", "The Islamabad Talks (April 11-12, 2026), mediated by Pakistan PM Shehbaz Sharif, Field Marshal Asim Munir, and FM Ishaq Dar, lasted 21 hours over 3 rounds but ended without a deal. Key disagreements: Iran's nuclear programme, Strait of Hormuz status, and $6 billion in frozen Iranian assets.",
      "AP_HC", "International_Current_Affairs"),
 
-    (30035, "The 2026 Lebanon War was a direct consequence of the 2026 Iran War. How many civilians and militants were killed in Lebanon?",
-     "500+", "1,000+", "2,000+", "5,000+",
-     "B", "The 2026 Lebanon War (escalation of Hezbollah-Israel conflict) killed more than 2,000 civilians and militants. Hezbollah alone lost 1,000–1,900 fighters in this phase of the conflict.",
+    (30035, "The 2026 Israel-Lebanon War (March 2 – April 16, 2026) was triggered by which event?",
+     "Hezbollah's invasion of northern Israel", "Hezbollah firing rockets at Israel following the US-Israel assassination of Khamenei", "An Israeli ground invasion of southern Lebanon", "A Hezbollah drone strike on Tel Aviv",
+     "B", "The 2026 Israel-Lebanon War erupted on March 2, 2026 when Hezbollah fired rockets at Israel following the US-Israel assassination of Supreme Leader Ali Khamenei (Feb 28, 2026 in Operation Epic Fury). A ceasefire was reached on April 16, 2026 after Washington talks.",
      "AP_HC", "International_Current_Affairs"),
 
-    (30036, "Which event on May 7, 2026 showed the ceasefire of April 8 was fragile?",
-     "Iran fired missiles at Tel Aviv", "Israel struck Beirut, killing an alleged Hezbollah leader", "USA bombed Fordow again", "Iran closed Hormuz again",
-     "B", "On May 7, 2026 — despite the April 8 conditional ceasefire — Israel conducted a large strike on Beirut, targeting and killing an alleged Hezbollah leader. This showed the ceasefire was conditional and fragile.",
+    (30036, "On May 15, 2026, after a third round of Washington talks, the porous Israel-Lebanon ceasefire was:",
+     "Cancelled by Israel", "Extended by 45 days", "Permanently formalised", "Replaced by a peace treaty",
+     "B", "On May 15, 2026, after a third ambassador-level round of US-hosted Washington talks (following April 14 and April 23 rounds), the US announced a 45-day extension of the porous Israel-Lebanon ceasefire. Hezbollah disarmament remained the key unresolved demand. At least 657 people had been killed by Israeli attacks in Lebanon since the ceasefire began.",
      "AP_HC", "International_Current_Affairs"),
 
     (30037, "US Defense Secretary during the 2026 Iran War was:",
@@ -443,9 +456,9 @@ QUESTIONS = [
      "B", "The IAEA Board of Governors passed a resolution on June 12, 2025 (the day before the Twelve-Day War began) declaring Iran non-compliant with its nuclear safeguards obligations. The resolution was tabled by USA, UK, France, and Germany.",
      "AP_HC", "International_Current_Affairs"),
 
-    (30077, "The conditional ceasefire of April 8, 2026, mediated by Pakistan, was between which parties?",
-     "Israel and Hezbollah only", "USA, Israel, Iran and its regional allies", "Iran and Saudi Arabia", "UN-brokered ceasefire between all parties",
-     "B", "Pakistan mediated a conditional ceasefire on April 8, 2026 between the USA + Israel on one side and Iran + its regional allies (Hezbollah, Houthis, PMF) on the other side. Both sides continued small-scale attacks.",
+    (30077, "Operation Epic Fury (the US codename for the 2026 Iran war that began Feb 28, 2026) was paired with what Israeli codename?",
+     "Operation Iron Sword", "Operation Roaring Lion", "Operation Rising Lion II", "Operation Northern Shield",
+     "B", "The Feb 28, 2026 US-Israel campaign was codenamed 'Operation Epic Fury' by the Pentagon and 'Operation Roaring Lion' by Israel. (The June 2025 Twelve-Day War was Israel's 'Operation Rising Lion'.) Epic Fury officially concluded on May 5, 2026.",
      "AP_HC", "International_Current_Affairs"),
 
     (30078, "How many Hezbollah fighters were killed in the 2026 Lebanon War phase (per US-Israel estimates)?",
@@ -462,6 +475,122 @@ QUESTIONS = [
      "To prevent Iran from building a nuclear weapon", "To destroy Iran's ballistic missile capabilities", "To seize Iran's oil resources and redistribute them", "To forestall an imminent Iranian threat",
      "C", "While the US cited multiple rationales — preventing nuclear weapons, destroying missile capabilities, forestalling threats, and regime change — 'seizing Iran's oil and redistributing it' was NOT a stated official US rationale (though critics alleged this as a motive).",
      "AP_HC", "International_Current_Affairs"),
+
+    # ══════════════════════════════════════════
+    # SECTION G: GAZA, HAMAS LEADERSHIP, UNRWA (2024-2026)
+    # ══════════════════════════════════════════
+
+    (30081, "Yahya Sinwar, Hamas's political bureau chief and architect of the October 7, 2023 attacks, was killed by Israeli forces on:",
+     "July 31, 2024 in Tehran", "October 16, 2024 in Rafah, Gaza", "September 27, 2024 in Beirut", "January 19, 2025 in Khan Younis",
+     "B", "Yahya Sinwar was killed on October 16, 2024 during a chance encounter with an IDF patrol in the southern Gazan city of Rafah. He had succeeded Ismail Haniyeh as Hamas political bureau chief in August 2024. His body was identified through dental records and DNA. He was succeeded by his brother Mohammed Sinwar (later killed by Israel in 2025).",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30082, "Ismail Haniyeh, Hamas's political bureau chief, was assassinated on July 31, 2024 in which city?",
+     "Doha, Qatar", "Beirut, Lebanon", "Tehran, Iran", "Istanbul, Turkey",
+     "C", "Ismail Haniyeh was assassinated in Tehran, Iran on July 31, 2024 — almost certainly by Israel — while attending the inauguration of new Iranian President Masoud Pezeshkian. The killing in Iran's capital was a major intelligence embarrassment for Tehran. Yahya Sinwar succeeded him on August 6, 2024.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30083, "Hassan Nasrallah, the long-time Hezbollah Secretary General, was killed by Israel on:",
+     "July 30, 2024 in Beirut", "September 27, 2024 in Beirut", "November 26, 2024 in Tyre", "October 16, 2024 in Damascus",
+     "B", "Hassan Nasrallah was killed on September 27, 2024 in a massive Israeli airstrike on Hezbollah's underground headquarters in Dahieh (southern Beirut suburbs). Israel used bunker-buster bombs. Hashem Safieddine (designated successor) was killed days later. Naim Qassem eventually became Secretary General.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30084, "The first Israel-Hamas Gaza ceasefire of 2025 took effect on:",
+     "January 19, 2025", "February 15, 2025", "March 18, 2025", "May 1, 2025",
+     "A", "The first phase of the Gaza ceasefire took effect on January 19, 2025, after an agreement announced January 15, 2025. Phase 1 ran until March 18, 2025, with 33 Israeli hostages and ~2,000 Palestinian prisoners released. The deal was brokered by the US (Trump's incoming team + Biden), Qatar, and Egypt.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30085, "The October 2025 Gaza peace plan that produced the second major ceasefire was a 20-point plan announced by:",
+     "UN Secretary-General Guterres", "US President Donald Trump", "Egyptian President Sisi", "Qatar's Emir Tamim",
+     "B", "The October 2025 Gaza ceasefire was anchored on President Donald Trump's 20-point peace plan. The last 20 living Israeli hostages were released around October 13, 2025, along with ~2,000 Palestinian prisoners. As of May 2026, Phase 2 talks remain stalled over Hamas disarmament.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30086, "The last body of the 28 deceased Israeli hostages, Ran Gvili, was recovered by the IDF on:",
+     "October 13, 2025", "December 25, 2025", "January 26, 2026", "March 1, 2026",
+     "C", "Ran Gvili's body, the last of the 28 deceased Israeli hostages held in Gaza, was recovered by the IDF on January 26, 2026. This completed the return of all hostages (living and deceased) under the October 2025 Trump plan.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30087, "Israeli forces demolished the UNRWA headquarters compound on January 20, 2026 in which neighbourhood of East Jerusalem?",
+     "Silwan", "Sheikh Jarrah", "Beit Hanina", "Mount of Olives",
+     "B", "On January 20, 2026, Israeli forces — accompanied by far-right National Security Minister Itamar Ben-Gvir — demolished the UNRWA headquarters in the Sheikh Jarrah neighbourhood of occupied East Jerusalem. The compound was set on fire and looted. UN Secretary-General Guterres condemned it. Israel cited a 2024 Knesset law banning UNRWA.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30088, "Who is the current UNRWA Commissioner-General who called the January 2026 demolition 'an unprecedented attack against a UN agency'?",
+     "Antonio Guterres", "Philippe Lazzarini", "Pierre Krahenbuhl", "Volker Turk",
+     "B", "Philippe Lazzarini, UNRWA Commissioner-General, condemned the January 20, 2026 demolition of the Sheikh Jarrah headquarters as 'an unprecedented attack against a United Nations agency and its premises' and called it a 'wake-up call' for the world.",
+     "AP_HC", "International_Current_Affairs"),
+
+    # ══════════════════════════════════════════
+    # SECTION H: SYRIA TRANSITION (2024-2026)
+    # ══════════════════════════════════════════
+
+    (30089, "Bashar al-Assad's regime in Syria was overthrown on December 8, 2024 by rebel forces led by:",
+     "Free Syrian Army (FSA)", "Hayat Tahrir al-Sham (HTS)", "Syrian Democratic Forces (SDF)", "Kurdish YPG",
+     "B", "Bashar al-Assad's regime fell on December 8, 2024 after a rapid 11-day offensive led by Hayat Tahrir al-Sham (HTS), under Abu Mohammed al-Jolani (later known by his real name Ahmed al-Sharaa). Assad fled to Moscow. The fall ended 53 years of Assad-family rule.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30090, "Syria's new President since December 2024 (formerly known as Abu Mohammed al-Jolani) is:",
+     "Mohammed Ghazi al-Jalali", "Ahmed al-Sharaa", "Abu Mohammed al-Golani", "Hadi al-Bahra",
+     "B", "Ahmed al-Sharaa (the real name of Abu Mohammed al-Jolani) became Syria's transitional President in December 2024 after HTS overthrew Assad. He met Trump in Riyadh on May 14, 2025 — a meeting that capped a stunning year for the 43-year-old former al-Qaeda commander. US sanctions on Syria were lifted by Trump's executive order in 2025.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30091, "On May 14, 2025, US President Trump met Syrian President Ahmed al-Sharaa in which city?",
+     "Damascus", "Washington DC", "Riyadh, Saudi Arabia", "Doha, Qatar",
+     "C", "Trump met al-Sharaa in Riyadh on May 14, 2025, hosted by Saudi Crown Prince MBS. Trump subsequently issued an executive order revoking the US Syria sanctions programme. The UN Security Council also lifted terror-related sanctions on al-Sharaa.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30092, "The US-Jordan joint airstrikes on ISIS targets in Syria on January 10, 2026 (90+ precision munitions on 35+ targets) were codenamed:",
+     "Operation Inherent Resolve II", "Operation Hawkeye Strike", "Operation Hunter", "Operation Iron Justice",
+     "B", "Operation Hawkeye Strike was ordered by President Trump on December 19, 2025 in response to an ISIS ambush near Palmyra on December 13, 2025 that killed 2 US soldiers and a US civilian interpreter. The strikes on January 10, 2026 involved F-15Es, A-10s, AC-130Js, MQ-9s, and Jordanian F-16s.",
+     "AP_HC", "International_Current_Affairs"),
+
+    # ══════════════════════════════════════════
+    # SECTION I: ISRAEL DOMESTIC + REGIONAL (2026)
+    # ══════════════════════════════════════════
+
+    (30093, "On March 30, 2026, the Knesset passed a controversial law (62-48 vote) prescribing what punishment for West Bank residents convicted of deadly terror acts?",
+     "Life imprisonment without parole", "Mandatory death penalty (by hanging)", "Deportation to Gaza", "House demolition",
+     "B", "The Knesset passed the 'Death Penalty for Terrorists Law' 62-48 on March 30, 2026. It mandates death by hanging as the default punishment for West Bank residents convicted of deadly terror by military courts (with execution within 90 days). In practice it applies only to Palestinians, not Israeli Jews. Strongly pushed by Ben-Gvir's Otzma Yehudit. ACRI and Adalah filed petitions same day calling it racially discriminatory.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30094, "On December 30, 2025, Saudi Arabia's Royal Saudi Air Force struck a Yemeni port over an alleged UAE weapons shipment to the STC separatists. The port was:",
+     "Hodeidah", "Aden", "Mukalla", "Port Sudan",
+     "C", "Saudi Arabia struck Mukalla port in Hadramout province on December 30, 2025, targeting an alleged UAE weapons shipment from Fujairah to the Southern Transitional Council (STC) separatists. The Saudi-backed Presidential Leadership Council demanded UAE forces leave Yemen within 24 hours; the UAE announced voluntary withdrawal of its remaining forces — an unprecedented rift between the two Gulf powers.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30095, "The Southern Transitional Council (STC), targeted by Saudi strikes on Mukalla in December 2025, was historically backed by which country?",
+     "Iran", "Saudi Arabia", "United Arab Emirates (UAE)", "Qatar",
+     "C", "The Southern Transitional Council (STC) is a Yemeni separatist movement backed primarily by the UAE. The December 30, 2025 Mukalla strike marked an unprecedented public clash between Saudi Arabia and UAE — historical partners in the Saudi-led coalition against the Houthis.",
+     "AP_HC", "International_Current_Affairs"),
+
+    # ══════════════════════════════════════════
+    # SECTION J: INDIA EVACUATION + DIPLOMACY (2026)
+    # ══════════════════════════════════════════
+
+    (30096, "India's January 2026 operation to evacuate ~10,000 Indian citizens (mostly students) from Iran amid protests and instability was named:",
+     "Operation Sindhu", "Operation Swades", "Operation Ganga", "Operation Kaveri",
+     "B", "Operation Swades was launched by India in mid-January 2026 to bring back its citizens from Iran. About 10,000 Indians were in Iran (2,500-3,000 medical students plus businesspeople and professionals). It was triggered by the largest Iranian protests since 1979 and the security crackdown.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30097, "Following the February 28, 2026 outbreak of the Iran war, India launched a second evacuation operation from Iran (and later Israel). This operation was called:",
+     "Operation Swades", "Operation Sindhu", "Operation Vande Bharat", "Operation Devi Shakti",
+     "B", "Operation Sindhu was India's evacuation of nationals from Iran (and later Israel) due to the deteriorating situation from the 2026 Iran war. By June 24, 2026, 1,100 Indians from Iran and Israel had arrived in India; 3,170 students were ultimately evacuated under the operation.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30098, "The Islamabad Talks of April 11-12, 2026 were led on the US side by Vice President JD Vance, alongside special envoys Steve Witkoff and:",
+     "Mike Pompeo", "Jared Kushner", "Robert O'Brien", "Marco Rubio",
+     "B", "The 300-member US delegation at the Islamabad Talks (April 11-12, 2026) was led by Vice President JD Vance, alongside special envoys Steve Witkoff and Jared Kushner. The 70-member Iranian team was led by parliamentary speaker Mohammad Bagher Ghalibaf with FM Abbas Araghchi.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30099, "After the death of Supreme Leader Ali Khamenei in Operation Epic Fury (Feb 28, 2026), Iran's interim leadership was announced by:",
+     "President Masoud Pezeshkian", "Ali Larijani (Secretary of Supreme National Security Council)", "Mojtaba Khamenei", "Speaker Mohammad Bagher Ghalibaf",
+     "B", "Ali Larijani, Secretary of Iran's Supreme National Security Council, announced a temporary leadership council after Khamenei's death on Feb 28, 2026. (Note: in some accounts Larijani was himself targeted by Israeli strikes during the war.) Larijani ruled out immediate talks, dramatically reshaping Iran's wartime succession.",
+     "AP_HC", "International_Current_Affairs"),
+
+    (30100, "Operation Epic Fury, the US codename for the 2026 Iran war, officially concluded on which date?",
+     "April 8, 2026", "April 16, 2026", "May 5, 2026", "May 15, 2026",
+     "C", "Operation Epic Fury — the US codename for joint US-Israel military operations against Iran that began February 28, 2026 — officially concluded on May 5, 2026, following the failed Islamabad Talks (April 11-12) and subsequent diplomatic stabilisation efforts. Separately, the porous Israel-Lebanon ceasefire from April 16 was extended 45 days on May 15, 2026.",
+     "AP_HC", "International_Current_Affairs"),
 ]
 
 
@@ -473,7 +602,7 @@ def seed():
         cur_chk = conn.cursor()
 
     # Force-refresh: delete and re-insert to fix folder/topic if wrong
-    cur_chk.execute("DELETE FROM questions WHERE id >= 30001 AND id <= 30080")
+    cur_chk.execute("DELETE FROM questions WHERE id >= 30001 AND id <= 30100")
     conn.commit()
 
     ph = '%s' if USE_POSTGRES else '?'
@@ -501,7 +630,7 @@ def seed():
                 pass
 
     conn.commit()
-    print(f"[seed_mideast_war_mcq] Inserted {inserted}/{len(QUESTIONS)} questions (IDs 30001–30080).")
+    print(f"[seed_mideast_war_mcq] Inserted {inserted}/{len(QUESTIONS)} questions (IDs 30001–30100).")
     conn.close()
 
 

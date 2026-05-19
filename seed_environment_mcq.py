@@ -1,9 +1,14 @@
 """
 Seed: Environment & Climate — Current Affairs 2024-2026
-IDs: 25001–25080
+IDs: 25001–25100  (80 original + 20 freshness gap-fill added May 19, 2026)
 Folder: AP_HC
 Topic: National_Current_Affairs (wildlife, protected areas, COP, species — India-centric)
-Cross-checked: GKToday Environment & Biodiversity MCQs (Pages 1-2), PIB, IUCN, NTCA
+Cross-checked: GKToday, PIB, IUCN, NTCA, WMO, UNEP, CBD, CITES, Ramsar, UNFCCC
+Freshness audit (May 19, 2026): refreshed Ramsar count (85→99), COP30 outcomes
+(Belém Package → Global Mutirão + TFFF $6.7B), added 2025-26 events: WMO 1.55°C,
+UNEP Emissions Gap 2025 (2.3-2.5°C), CBD COP16.2 Rome + Cali Fund, INC-5.2 Geneva,
+UNOC3 Nice + BBNJ ratifications, Ramsar COP15 Victoria Falls, CITES CoP20 Samarkand,
+Mission Mausam, ISFR 2023, LA wildfires Jan 2025, Bonn SB62, Shekha Jheel 99th Ramsar.
 """
 
 import os, sys
@@ -46,7 +51,7 @@ def seed():
         cur = conn.cursor()
 
     # Force-refresh: delete and re-insert with correct folder/topic
-    cur.execute("DELETE FROM questions WHERE id >= 25001 AND id <= 25080")
+    cur.execute("DELETE FROM questions WHERE id >= 25001 AND id <= 25100")
     conn.commit()
 
     ph = '%s' if USE_POSTGRES else '?'
@@ -239,25 +244,25 @@ def seed():
         # --- Ramsar Sites ---
         {
             "id": 25016,
-            "question_text": "After the addition of three new wetlands in 2024, what is India's total number of Ramsar sites?",
-            "option_a": "75",
-            "option_b": "80",
-            "option_c": "85",
-            "option_d": "92",
+            "question_text": "As of April 22, 2026 (World Earth Day), what is India's total number of Ramsar sites — the highest in Asia?",
+            "option_a": "85",
+            "option_b": "92",
+            "option_c": "99",
+            "option_d": "105",
             "correct_answer": "C",
-            "explanation": "In 2024, India added three new wetlands to its list of Ramsar Sites: Koonthankulam Bird Sanctuary, Koothankulam Wetland Complex (both in Tamil Nadu), and Hirekera Wetland (Karnataka), increasing the total to 85 Ramsar Sites covering around 14 lakh hectares.",
+            "explanation": "As of April 22, 2026, India has 99 Ramsar Sites covering approximately 13,60,805 hectares — the highest count in Asia. Tamil Nadu leads all states with 20 Ramsar sites. The 99th site, Shekha Jheel Bird Sanctuary in Aligarh district, Uttar Pradesh, was designated in April 2026.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
         {
             "id": 25017,
-            "question_text": "Hirekera Wetland, which was added as a new Ramsar Site in 2024, is located in which state?",
-            "option_a": "Maharashtra",
-            "option_b": "Tamil Nadu",
-            "option_c": "Andhra Pradesh",
-            "option_d": "Karnataka",
-            "correct_answer": "D",
-            "explanation": "Hirekera Wetland in Karnataka was added as a new Ramsar Site in 2024. Tamil Nadu also added two new Ramsar sites (Koonthankulam Bird Sanctuary and Koothankulam Wetland Complex) in the same year.",
+            "question_text": "Shekha Jheel Bird Sanctuary, designated as India's 99th Ramsar Site in April 2026, is located in which state?",
+            "option_a": "Madhya Pradesh",
+            "option_b": "Uttar Pradesh",
+            "option_c": "Bihar",
+            "option_d": "Rajasthan",
+            "correct_answer": "B",
+            "explanation": "Shekha Jheel Bird Sanctuary in Aligarh district, Uttar Pradesh became India's 99th Ramsar Site in April 2026, taking India's tally to the highest in Asia. Since 2014, India has added 67 new Ramsar sites.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -435,49 +440,49 @@ def seed():
         # --- COP30 ---
         {
             "id": 25032,
-            "question_text": "COP30, held in November 2025, took place in which city of Brazil?",
+            "question_text": "COP30, held from November 10-22, 2025, took place in which city of Brazil — the heart of the Amazon?",
             "option_a": "São Paulo",
             "option_b": "Rio de Janeiro",
             "option_c": "Manaus",
             "option_d": "Belém",
             "correct_answer": "D",
-            "explanation": "COP30 was held in Belém, Brazil in November 2025 — the heart of the Amazon region. Key outcomes included the Belém Package, over 122 NDC submissions, and the launch of the Belém Mission to 1.5.",
+            "explanation": "COP30 was held in Belém (state of Pará), Brazil from November 10-22, 2025 — the first COP in the Amazon region. Key outcomes included the 'Global Mutirão' decision package, launch of the Tropical Forests Forever Facility (TFFF) with over $6.7 billion in pledges, and a call to triple adaptation finance by 2035.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
         {
             "id": 25033,
-            "question_text": "Which package was approved at COP30 in Belém, 2025?",
-            "option_a": "Amazon Pact",
-            "option_b": "Belém Package",
-            "option_c": "Paris Plus Agreement",
-            "option_d": "Brazil Climate Deal",
-            "correct_answer": "B",
-            "explanation": "The Belém Package was approved at COP30 in Belém, Brazil (November 2025). Other outcomes included the Belém Mission to 1.5 (action-oriented platform), the Global Climate Finance Accountability Framework, and the submission of NDCs by 122+ Parties.",
+            "question_text": "The final decision package adopted at COP30 in Belém November 2025 was named after which Tupi-Guarani concept meaning 'collective effort'?",
+            "option_a": "Mutirão",
+            "option_b": "Tupinambá",
+            "option_c": "Quilombola",
+            "option_d": "Maloca",
+            "correct_answer": "A",
+            "explanation": "The 'Global Mutirão' package was adopted at COP30 on November 22, 2025. 'Mutirão' is an Indigenous Tupi-Guarani concept meaning collective effort. The 150+ pages of decision text invoked the idea of humanity uniting in a global mutirão against climate change.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
         {
             "id": 25034,
-            "question_text": "The 'Belém Mission to 1.5' launched at COP30 refers to what?",
-            "option_a": "A reforestation programme for 1.5 billion trees",
-            "option_b": "An action platform to limit global warming to 1.5°C",
-            "option_c": "A $1.5 trillion climate fund",
-            "option_d": "Reducing carbon emissions by 1.5% annually",
+            "question_text": "The Tropical Forests Forever Facility (TFFF), launched at COP30 Belém on November 6, 2025, mobilized how much in initial pledges by close of COP30?",
+            "option_a": "Over $1 billion",
+            "option_b": "Over $6.7 billion",
+            "option_c": "Over $30 billion",
+            "option_d": "Over $100 billion",
             "correct_answer": "B",
-            "explanation": "The Belém Mission to 1.5 is an action-oriented platform launched at COP30 to foster enhanced ambition and international cooperation across mitigation, adaptation, and investment — specifically aligned with limiting global warming to 1.5°C as per the Paris Agreement.",
+            "explanation": "TFFF closed COP30 with over US$6.7 billion in pledges endorsed by 66 countries. Norway pledged $3 billion, Germany €1 billion over ten years, Brazil $1 billion (matched by Indonesia), France €500 million. The fund pays countries up to $4/hectare/year to keep tropical forests intact, with at least 20% to Indigenous/local communities. Medium-term target: $125 billion.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
         {
             "id": 25035,
-            "question_text": "COP30 in Belém 2025 called for tripling of which type of climate finance by 2035?",
+            "question_text": "The COP30 'Global Mutirão' decision called for at least tripling of which type of climate finance by 2035?",
             "option_a": "Mitigation finance",
             "option_b": "Technology transfer finance",
             "option_c": "Adaptation finance",
             "option_d": "Loss and damage finance",
             "correct_answer": "C",
-            "explanation": "COP30 parties agreed to call for efforts to at least triple adaptation finance by 2035 within the New Collective Quantified Goal (NCQG) on climate finance.",
+            "explanation": "The Global Mutirão decision at COP30 Belém called for efforts to at least triple adaptation finance for developing countries by 2035 from 2025 levels, within the broader New Collective Quantified Goal (NCQG) on climate finance.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -679,7 +684,7 @@ def seed():
             "option_c": "Convention on Pollution",
             "option_d": "Compact of Participants",
             "correct_answer": "A",
-            "explanation": "COP stands for Conference of Parties. It is the annual meeting of countries that have signed the United Nations Framework Convention on Climate Change (UNFCCC). COP29 was held in Baku (2024) and COP30 in Belém, Brazil (2025).",
+            "explanation": "COP stands for Conference of Parties. It is the annual meeting of countries that have signed the UN Framework Convention on Climate Change (UNFCCC). COP29 was held in Baku (2024), COP30 in Belém, Brazil (Nov 10-22, 2025) which adopted the 'Global Mutirão' package, and COP31 is scheduled for Australia 2026.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -742,7 +747,7 @@ def seed():
             "option_c": "Net Decarbonisation Commitment",
             "option_d": "Non-Deforestation Clause",
             "correct_answer": "B",
-            "explanation": "NDC stands for Nationally Determined Contribution. It represents each country's plan to reduce greenhouse gas emissions and adapt to climate change impacts. By the end of COP30 in Belém, over 122 Parties had submitted updated NDCs.",
+            "explanation": "NDC stands for Nationally Determined Contribution. It represents each country's plan to reduce greenhouse gas emissions and adapt to climate change. Per UNEP Emissions Gap Report 2025, full NDC implementation puts the world on a 2.3-2.5°C warming path (vs 2.6-2.8°C in 2024 report) — barely moving the needle versus Paris targets.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -833,7 +838,7 @@ def seed():
             "option_c": "2°C",
             "option_d": "Both 1.5°C and 2°C (with 1.5°C as aspiration)",
             "correct_answer": "D",
-            "explanation": "The Paris Agreement (2015) aims to hold global temperature increase to well below 2°C above pre-industrial levels and pursue efforts to limit it to 1.5°C. The 1.5°C target is the aspirational limit referenced in the Belém Mission to 1.5 at COP30.",
+            "explanation": "The Paris Agreement (2015) aims to hold global temperature increase to well below 2°C above pre-industrial levels and pursue efforts to limit it to 1.5°C. Per WMO State of Global Climate 2024 (Mar 2025), 2024 was the first calendar year above 1.5°C with global mean temperature at 1.55±0.13°C above the 1850-1900 baseline.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -846,20 +851,20 @@ def seed():
             "option_c": "Universal Framework for Carbon and Climate Control",
             "option_d": "UN Forum for Climate Cooperation",
             "correct_answer": "A",
-            "explanation": "UNFCCC stands for United Nations Framework Convention on Climate Change. It is the international treaty under which the annual Conference of Parties (COP) is held. COP29 was in Baku (2024) and COP30 in Belém (2025).",
+            "explanation": "UNFCCC stands for United Nations Framework Convention on Climate Change. It is the international treaty under which the annual Conference of Parties (COP) is held. COP29 was in Baku (2024) and COP30 in Belém (Nov 2025) which adopted the Global Mutirão package and launched the TFFF.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
-        # --- Coral/Marine ---
+        # --- TFFF mechanics ---
         {
             "id": 25065,
-            "question_text": "The Global Climate Finance Accountability Framework was launched at which COP?",
-            "option_a": "COP27",
-            "option_b": "COP28",
-            "option_c": "COP29",
-            "option_d": "COP30",
-            "correct_answer": "D",
-            "explanation": "The Global Climate Finance Accountability Framework was launched at COP30 in Belém, Brazil (November 2025) to strengthen transparency, credibility, and trust in climate finance delivery.",
+            "question_text": "Under the Tropical Forests Forever Facility (TFFF) launched at COP30 Belém 2025, what minimum share of payments must go to Indigenous Peoples and local communities?",
+            "option_a": "5%",
+            "option_b": "10%",
+            "option_c": "20%",
+            "option_d": "50%",
+            "correct_answer": "C",
+            "explanation": "TFFF requires that at least 20% of payments to forest countries flow directly to Indigenous Peoples and local communities. Countries that maintain intact tropical forests receive up to $4 per hectare annually. The medium-term goal is a $125 billion fund ($25B sovereign + $100B institutional).",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1058,6 +1063,269 @@ def seed():
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
+        # ═══════════════════════════════════════════════════════════════
+        # 2025-26 Freshness gap-fill (added May 19, 2026) — IDs 25081-25100
+        # ═══════════════════════════════════════════════════════════════
+        # --- WMO State of Global Climate 2024 ---
+        {
+            "id": 25081,
+            "question_text": "According to the WMO State of the Global Climate 2024 report (released March 2025), what was the 2024 global mean surface temperature above the 1850-1900 pre-industrial baseline?",
+            "option_a": "1.28°C",
+            "option_b": "1.45°C",
+            "option_c": "1.55°C",
+            "option_d": "2.10°C",
+            "correct_answer": "C",
+            "explanation": "The WMO State of the Global Climate 2024 (released March 19, 2025) confirmed 2024 as the warmest year on record at 1.55 ± 0.13°C above the 1850-1900 pre-industrial baseline — the first calendar year more than 1.5°C above pre-industrial. Long-term warming is currently 1.34-1.41°C.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- UNEP Emissions Gap Report 2025 ---
+        {
+            "id": 25082,
+            "question_text": "The UNEP Emissions Gap Report 2025 'Off Target' projects what warming range by 2100 under full NDC implementation?",
+            "option_a": "1.5-1.8°C",
+            "option_b": "1.9-2.2°C",
+            "option_c": "2.3-2.5°C",
+            "option_d": "3.0-3.5°C",
+            "correct_answer": "C",
+            "explanation": "UNEP Emissions Gap Report 2025 'Off Target' (Nov 2025) projects 2.3-2.5°C warming by 2100 under full NDC implementation, and 2.8°C under current policies. To align with 1.5°C, emissions must fall 55% from 2019 levels by 2035; for 2°C, 35%. The improvement vs 2024 report (2.6-2.8°C) is mostly methodological.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- CBD COP16 + Rome ---
+        {
+            "id": 25083,
+            "question_text": "The resumed CBD COP16.2 session in Rome (February 25-27, 2025) agreed to mobilize how much in annual biodiversity finance by 2030?",
+            "option_a": "$30 billion",
+            "option_b": "$100 billion",
+            "option_c": "$200 billion",
+            "option_d": "$500 billion",
+            "correct_answer": "C",
+            "explanation": "CBD COP16.2 in Rome (Feb 25-27, 2025) reached agreement on a roadmap to mobilize $200 billion per year by 2030 for biodiversity, with $20 billion/year in international flows by 2025 scaling to $30 billion by 2030. The original COP16 in Cali, Colombia (Oct-Nov 2024) was suspended for lack of quorum.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Cali Fund ---
+        {
+            "id": 25084,
+            "question_text": "The 'Cali Fund', launched at CBD COP16.2 in Rome on February 26, 2025, collects contributions from industries using which resource?",
+            "option_a": "Fossil fuels",
+            "option_b": "Digital Sequence Information (DSI) on genetic resources",
+            "option_c": "Rare earth minerals",
+            "option_d": "Marine plastics",
+            "correct_answer": "B",
+            "explanation": "The Cali Fund was launched in Rome (Feb 26, 2025) by UNDP and UNEP for the fair and equitable sharing of benefits from Digital Sequence Information (DSI) on genetic resources. Pharmaceutical, biotech, and cosmetics industries contribute, with at least 50% directed to Indigenous Peoples and local communities.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- INC-5.2 Plastic Treaty ---
+        {
+            "id": 25085,
+            "question_text": "INC-5.2, the resumed UN Plastic Treaty negotiations held in August 2025, took place in which city?",
+            "option_a": "Busan",
+            "option_b": "Nairobi",
+            "option_c": "Geneva",
+            "option_d": "Paris",
+            "correct_answer": "C",
+            "explanation": "INC-5.2 was held in Geneva, Switzerland from August 5-15, 2025, with 2,600+ participants from 183 countries. Like INC-5 in Busan (Nov-Dec 2024), it ended without consensus. Divisions persisted between the High Ambition Coalition (production caps) and oil-producing states (Saudi Arabia, Russia, Iran). A future resumed session is to be announced.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- UNOC3 Nice ---
+        {
+            "id": 25086,
+            "question_text": "The 3rd UN Ocean Conference (UNOC3) was co-hosted by France and Costa Rica in June 2025 in which city?",
+            "option_a": "Lisbon",
+            "option_b": "Nice",
+            "option_c": "Marseille",
+            "option_d": "San José",
+            "correct_answer": "B",
+            "explanation": "UNOC3 was held in Nice, France from June 9-13, 2025, co-hosted with Costa Rica. Outcomes included 19 new BBNJ (High Seas Treaty) ratifications taking the total to 50 + EU, with the treaty's 60-ratification threshold for entry into force expected to be reached before September 23, 2025.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- BBNJ Treaty ---
+        {
+            "id": 25087,
+            "question_text": "The BBNJ Agreement (High Seas Treaty) enters into force how many days after the 60th instrument of ratification is deposited at the UN?",
+            "option_a": "30 days",
+            "option_b": "60 days",
+            "option_c": "90 days",
+            "option_d": "120 days",
+            "correct_answer": "D",
+            "explanation": "The BBNJ Agreement (Biodiversity Beyond National Jurisdiction) enters into force 120 days after the 60th ratification is deposited. After UNOC3 in Nice (June 2025), the count reached 50 + EU, with France expecting the 60-threshold before Sept 23, 2025 — bringing the treaty into force by January 2026.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Ramsar COP15 Zimbabwe ---
+        {
+            "id": 25088,
+            "question_text": "Ramsar COP15, the 15th Meeting of the Conference of the Contracting Parties to the Convention on Wetlands (July 23-31, 2025), was held in which African resort city?",
+            "option_a": "Cape Town",
+            "option_b": "Kigali",
+            "option_c": "Victoria Falls",
+            "option_d": "Nairobi",
+            "correct_answer": "C",
+            "explanation": "Ramsar COP15 was held in Victoria Falls, Zimbabwe from July 23-31, 2025. It adopted the 'Victoria Falls Declaration' on wetland restoration, a new Strategic Plan with 4 goals/18 targets, 25 resolutions, and a 4.1% core budget increase to CHF 15.5 million for 2025-2027.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- CITES CoP20 Samarkand ---
+        {
+            "id": 25089,
+            "question_text": "CITES CoP20, held November 24 - December 5, 2025, was the first Conference of Parties of CITES hosted in Central Asia. Which city hosted it?",
+            "option_a": "Astana, Kazakhstan",
+            "option_b": "Samarkand, Uzbekistan",
+            "option_c": "Bishkek, Kyrgyzstan",
+            "option_d": "Tashkent, Uzbekistan",
+            "correct_answer": "B",
+            "explanation": "CITES CoP20 was held in Samarkand, Uzbekistan (Nov 24 - Dec 5, 2025) — the first CITES CoP in Central Asia. Delegates adopted 353 decisions and added 77 new species to the CITES Appendices, including okapi, striped hyena, several geckos, tarantulas, ginseng, aloes, guggul and Brazilwood.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Mission Mausam ---
+        {
+            "id": 25090,
+            "question_text": "'Mission Mausam', launched by the Government of India on September 14, 2024, has what total outlay for 2024-26?",
+            "option_a": "₹500 crore",
+            "option_b": "₹1,000 crore",
+            "option_c": "₹2,000 crore",
+            "option_d": "₹5,000 crore",
+            "correct_answer": "C",
+            "explanation": "Mission Mausam was launched on September 14, 2024 with a total outlay of ₹2,000 crore for 2024-26 to make India weather-ready and climate-smart. It is implemented by IMD, IITM Pune (which is building a unique cloud chamber), and NCMRWF for improved nowcasting, weather modification (rainfall, hail, fog) and air-quality forecasts.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- ISFR 2023 ---
+        {
+            "id": 25091,
+            "question_text": "Per the India State of Forest Report (ISFR) 2023 — the 18th edition — India's forest cover is approximately what percentage of its geographical area?",
+            "option_a": "19.45%",
+            "option_b": "21.76%",
+            "option_c": "24.62%",
+            "option_d": "27.10%",
+            "correct_answer": "B",
+            "explanation": "ISFR 2023 (released Dec 2024) reports India's forest cover at 7,15,343 sq km (21.76%) and tree cover at 1,12,014 sq km (3.41%), totalling 25.17% of geographical area (8,27,357 sq km). Forest+tree cover increased 1,445 sq km since 2021. Chhattisgarh saw the largest increase (684 sq km).",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- LA Wildfires Jan 2025 ---
+        {
+            "id": 25092,
+            "question_text": "The deadly Palisades and Eaton wildfires that struck the Los Angeles area in January 2025 were primarily fanned by which wind phenomenon?",
+            "option_a": "Chinook winds",
+            "option_b": "Foehn winds",
+            "option_c": "Santa Ana winds",
+            "option_d": "Mistral winds",
+            "correct_answer": "C",
+            "explanation": "The Jan 7-31, 2025 LA wildfires (14 fires) killed 31 people, destroyed 18,000+ structures and burned 57,529 acres. Palisades Fire (23,448 acres, 12 deaths) and Eaton Fire (Altadena, 19 deaths) were driven by hurricane-force Santa Ana winds reaching 100 mph, combined with drought and low humidity.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- NASA 2024 warmest ---
+        {
+            "id": 25093,
+            "question_text": "Per NASA GISS, by how much was Earth's surface temperature in 2024 above the 1951-1980 baseline — confirming 2024 as the warmest year on record?",
+            "option_a": "0.85°C",
+            "option_b": "1.28°C",
+            "option_c": "1.55°C",
+            "option_d": "2.10°C",
+            "correct_answer": "B",
+            "explanation": "NASA GISS confirmed 2024 was the warmest year on record at 1.28°C (2.30°F) above the 1951-1980 baseline, topping 2023's record. Vs the 1850-1900 pre-industrial baseline, 2024 was ~1.47°C warmer (NASA). The streak: 15 consecutive months (Jun 2023 - Aug 2024) of monthly temperature records.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- La Niña 2025-26 ---
+        {
+            "id": 25094,
+            "question_text": "Per NOAA's ENSO Diagnostic Discussion, which phase of the El Niño-Southern Oscillation prevailed during the 2025-26 northern winter?",
+            "option_a": "Strong El Niño",
+            "option_b": "Weak La Niña",
+            "option_c": "Strong La Niña",
+            "option_d": "ENSO-neutral with no anomaly",
+            "correct_answer": "B",
+            "explanation": "NOAA's Climate Prediction Center favored a weak La Niña (3-month Niño-3.4 between -0.5°C and -0.9°C) through Dec-Jan-Feb 2025-26 with 51% probability, transitioning to ENSO-neutral by Jan-Mar 2026 (61% chance). El Niño is then likely to re-emerge by May-Jul 2026 (82% chance).",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Bonn SB62 ---
+        {
+            "id": 25095,
+            "question_text": "The Bonn Climate Change Conference (SB62), the 62nd session of the UNFCCC Subsidiary Bodies held June 16-26, 2025, achieved progress mainly on which work programme?",
+            "option_a": "Loss and Damage Fund operationalisation",
+            "option_b": "Just Transition Work Programme",
+            "option_c": "Article 6 carbon markets",
+            "option_d": "Global Stocktake",
+            "correct_answer": "B",
+            "explanation": "SB62 in Bonn (June 16-26, 2025) made meaningful progress on the Just Transition Work Programme — the final text recognises human rights, Indigenous knowledge and participatory processes. The session was delayed nearly 2 days by Saudi Arabia (mitigation) and India (agriculture) blocking the agenda. GGA (Global Goal on Adaptation) talks failed.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- WMO Air Quality & Climate Bulletin 2025 ---
+        {
+            "id": 25096,
+            "question_text": "The WMO Air Quality and Climate Bulletin No. 5 (September 2025) emphasised what 'vicious cycle' linking climate and air pollution?",
+            "option_a": "Ozone depletion and skin cancer",
+            "option_b": "Climate change, wildfires and PM2.5 air pollution",
+            "option_c": "Methane leaks and stratospheric warming",
+            "option_d": "Coral bleaching and ocean acidification",
+            "correct_answer": "B",
+            "explanation": "WMO Air Quality and Climate Bulletin No. 5 (Sept 4, 2025) highlighted the vicious cycle of climate change, wildfires and PM2.5 air pollution. For the first time it used three different models to estimate 2024 PM2.5 anomalies. Wildfire PM2.5 concentrated over Chile, Brazil, Ecuador, Canada, central Africa and Siberia.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- COP30 sponsor countries ---
+        {
+            "id": 25097,
+            "question_text": "Which country pledged the single largest contribution ($3 billion) to the Tropical Forests Forever Facility (TFFF) launched at COP30 Belém?",
+            "option_a": "Germany",
+            "option_b": "France",
+            "option_c": "Norway",
+            "option_d": "United States",
+            "correct_answer": "C",
+            "explanation": "Norway announced $3 billion to TFFF — the largest single sovereign pledge. Germany pledged €1 billion (over 10 years), Brazil $1 billion (matched by Indonesia), and France €500 million (with conditions). Total TFFF pledges at COP30 close exceeded $6.7 billion from 66 endorsing countries.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- COP31 host 2026 ---
+        {
+            "id": 25098,
+            "question_text": "Which country was confirmed to host COP31 in 2026 after resolving a long-running bid dispute with Turkey?",
+            "option_a": "Canada",
+            "option_b": "Australia (in partnership with Pacific Island states)",
+            "option_c": "South Africa",
+            "option_d": "India",
+            "correct_answer": "B",
+            "explanation": "Australia will host COP31 in 2026, in partnership with Pacific Island states, after Turkey's competing bid was resolved at COP30 Belém. The COP sequence: COP28 = Dubai 2023; COP29 = Baku 2024; COP30 = Belém Nov 2025; COP31 = Australia 2026; COP32 (the African group's turn) is expected to be in Ethiopia 2027.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- CITES CoP20 species count ---
+        {
+            "id": 25099,
+            "question_text": "At CITES CoP20 in Samarkand (Nov-Dec 2025), approximately how many new species were added to the CITES Appendices regulating international wildlife trade?",
+            "option_a": "27",
+            "option_b": "51",
+            "option_c": "77",
+            "option_d": "114",
+            "correct_answer": "C",
+            "explanation": "CITES CoP20 in Samarkand reviewed 50 listing proposals and added 77 new species to the Appendices. Notable additions covered okapi, striped hyena, multiple gecko species, giant galliwasp, tarantulas, frogs, songbirds, ginseng, palms, spurges, aloes, guggul, padouk and Brazilwood. Delegates adopted 353 decisions across 114 agenda items.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
+        # --- Ramsar India Tamil Nadu lead ---
+        {
+            "id": 25100,
+            "question_text": "Which Indian state has the highest number of Ramsar Sites as of April 2026, when India's total reached 99 (highest in Asia)?",
+            "option_a": "Uttar Pradesh",
+            "option_b": "Kerala",
+            "option_c": "Tamil Nadu",
+            "option_d": "West Bengal",
+            "correct_answer": "C",
+            "explanation": "Tamil Nadu leads all Indian states with 20 Ramsar sites as of April 2026, when India's national total reached 99 (highest in Asia) after Shekha Jheel Bird Sanctuary (UP) was designated as the 99th site. India has added 67 new Ramsar sites since 2014.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
     ]
 
     for q in questions:
@@ -1076,4 +1344,4 @@ def seed():
 
 if __name__ == "__main__":
     seed()
-    print("Environment & Climate MCQs seeded: IDs 25001–25080")
+    print("Environment & Climate MCQs seeded: IDs 25001–25100")
