@@ -7003,6 +7003,33 @@ def search_proxy():
     return FR(fallback_page(), 200, content_type='text/html; charset=utf-8')
 
 
+@app.route('/api/topic-notes-html/<int:qid>')
+def topic_notes_html(qid):
+    """Serve notes HTML with Perplexity button removed."""
+    import re
+    fname, label = None, None
+    for lo, hi, f, lbl in _NOTES_MAP:
+        if lo <= qid <= hi:
+            fname, label = f, lbl
+            break
+    if not fname:
+        return '<p style="font-family:sans-serif;padding:20px;color:#888">No study notes for this topic.</p>', 404
+    path = os.path.join(_NOTES_BASE, fname)
+    if not os.path.exists(path):
+        return '<p style="font-family:sans-serif;padding:20px;color:#888">Notes file not found.</p>', 404
+    try:
+        html = open(path, 'r', encoding='utf-8').read()
+        # Remove all Perplexity buttons and links
+        html = re.sub(r'<button[^>]*(?:perplexity|pplx)[^>]*>.*?</button>', '', html, flags=re.DOTALL | re.IGNORECASE)
+        html = re.sub(r'<a[^>]*(?:perplexity|pplx)[^>]*>.*?</a>', '', html, flags=re.DOTALL | re.IGNORECASE)
+        html = re.sub(r'<div[^>]*class=["\']notes-pplx[^>]*>.*?</div>', '', html, flags=re.DOTALL | re.IGNORECASE)
+        html = re.sub(r'⚡\s*Search on Perplexity', '', html, flags=re.IGNORECASE)
+        html = re.sub(r'Search on Perplexity', '', html, flags=re.IGNORECASE)
+        return html, 200, {'Content-Type': 'text/html; charset=utf-8'}
+    except Exception as e:
+        return f'<p style="font-family:sans-serif;padding:20px;color:#888">Error loading notes: {str(e)}</p>', 500
+
+
 # ─────────────────────────────────────────────
 # AI EXPLANATION ENDPOINT (Perplexity or DB fallback)
 # ─────────────────────────────────────────────

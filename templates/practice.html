@@ -625,7 +625,7 @@ function renderFP(i){
     ['A','B','C','D'].map((k,n)=>'<button class="fp-opt" id="fpo_'+k+'" onclick="fpPick(\''+k+'\',\''+ea(q.correct_answer)+'\',\''+ea(q.explanation||'')+'\',\''+ea(q.question_text)+'\')">'+'<span class="ok-key">'+k+'</span><span class="opt-text">'+eh([q.option_a,q.option_b,q.option_c,q.option_d][n])+'</span></button>').join('')+
     '</div>'+
     '<div class="fp-fb" id="fpFb"><div class="fp-fb-lbl" id="fpFbL"></div><div class="fp-fb-exp" id="fpFbE"></div></div>'+
-    '<div class="fp-ai" id="fpAi"><div class="fp-ai-hdr"><span>&#128269;</span><span>Search Results</span></div><div class="fp-ai-body" id="fpAiBody"></div><div class="fp-ai-search"><a id="fpAiSearch" href="#" target="_blank" rel="noopener">&#128269; Search on Perplexity</a></div></div>';
+    '<div class="fp-ai" id="fpAi"><div class="fp-ai-hdr"><span>&#128269;</span><span>Search Results</span></div><div class="fp-ai-body" id="fpAiBody"></div></div>';
 
   if(st&&st.done){
     document.querySelectorAll('#fpOl .fp-opt').forEach(b=>b.classList.add('locked'));
