@@ -65,7 +65,7 @@ def seed():
             "option_c": "Manipur",
             "option_d": "Meghalaya",
             "correct_answer": "B",
-            "explanation": "Pobitora Wildlife Sanctuary is located in eastern Guwahati, Assam. It was established in 1998 and spans 48.81 sq km. It has the highest density of Greater One-Horned Rhinoceros in India and is part of the Indian Rhino Vision 2020 program.",
+            "explanation": "Pobitora Wildlife Sanctuary is located in eastern Guwahati, Assam, established in 1998 and spanning 48.81 sq km. It has the highest density of Greater One-Horned Rhinoceros in India and is part of the Indian Rhino Vision 2020 program, a critical biodiversity conservation initiative. The sanctuary protects this endangered species (listed under Schedule I of the Wildlife Protection Act) amid Assam's shifting cultivation pressures and river dynamics, demonstrating India's commitment to species recovery in biodiversity hotspots.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -77,7 +77,7 @@ def seed():
             "option_c": "Gujarat",
             "option_d": "Uttarakhand",
             "correct_answer": "D",
-            "explanation": "Corbett Tiger Reserve is located in the foothills of the Himalayas in Uttarakhand. It was established in 1936 as Hailey National Park and renamed Corbett National Park in 1957 to honor Jim Corbett. Its total area is 1,288.31 sq km.",
+            "explanation": "Corbett Tiger Reserve spans 1,288.31 sq km in the Himalayan foothills of Uttarakhand, established in 1936 as Hailey National Park and renamed in 1957 to honor conservationist Jim Corbett. As India's flagship tiger reserve under Project Tiger, it exemplifies habitat protection essential for India's 2070 Net-Zero targets and biodiversity conservation amid climate-driven habitat fragmentation. The reserve's management addresses transboundary water security via rivers Ramganga, Pallaen, and Sonanadi, crucial for downstream Himalayan communities.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -89,7 +89,7 @@ def seed():
             "option_c": "Kerala",
             "option_d": "Tamil Nadu",
             "correct_answer": "C",
-            "explanation": "Karimpuzha Wildlife Sanctuary is in Malappuram district, Kerala, covering 227.97 sq km on the western slopes of the Nilgiri Hills. It is part of the Nilgiri Biosphere Reserve under UNESCO's Man and Biosphere Programme and shares boundaries with Silent Valley NP (Kerala) and Mukurthi NP (Tamil Nadu).",
+            "explanation": "Karimpuzha Wildlife Sanctuary covers 227.97 sq km in Malappuram district, Kerala, on the Nilgiri Hills' western slopes and is part of the UNESCO Man and Biosphere Programme Nilgiri Biosphere Reserve. This biodiversity hotspot protects endemic Western Ghats species amid climate change impacts on forest hydrology and water security for Kerala. Its transboundary linkages with Silent Valley NP (Kerala) and Mukurthi NP (Tamil Nadu) demonstrate integrated landscape conservation crucial for species migration corridors.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -101,7 +101,7 @@ def seed():
             "option_c": "Odisha",
             "option_d": "Maharashtra",
             "correct_answer": "B",
-            "explanation": "Nagarhole National Park, also known as Rajiv Gandhi National Park, is a notified Tiger Reserve and part of Project Tiger. It is located in Kodagu and Mysuru districts, Karnataka, and is named after the Nagarahole River.",
+            "explanation": "Nagarhole National Park spans Kodagu and Mysuru districts in Karnataka and is a Tiger Reserve under Project Tiger, named after the Nagarahole River. This reserve protects critical Western Ghats biodiversity in an area threatened by climate-driven rainfall variability and agricultural encroachment. The park's river systems are vital for water security in the region, aligning with India's broader wetland conservation strategy under the Ramsar Convention.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -113,7 +113,7 @@ def seed():
             "option_c": "Tripura",
             "option_d": "Mizoram",
             "correct_answer": "A",
-            "explanation": "Balpakram National Park is located in the West Garo Hills district, Meghalaya, about 134 km from Shillong. It is known as the 'Land of Perpetual Winds' due to strong winds across the plateau. A rare Binturong (bearcat) was recently camera-trapped in its buffer zone.",
+            "explanation": "Balpakram National Park spans the West Garo Hills district in Meghalaya, 134 km from Shillong, famed for persistent plateau winds that shape its microclimate. The park protects rare species including the Vulnerable Binturong, recently camera-trapped in its buffer zone, demonstrating successful species monitoring. Meghalaya's high rainfall and biodiverse forests are critical for water security in the Northeast India region and support forest carbon sequestration vital to India's 2070 Net-Zero pathway.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -125,7 +125,7 @@ def seed():
             "option_c": "Chhattisgarh",
             "option_d": "Odisha",
             "correct_answer": "C",
-            "explanation": "Indravati National Park is located in Bijapur district, Chhattisgarh. It is named after the Indravati River, a tributary of the Godavari River. The river forms the northern and western boundaries of the park, also marking the Chhattisgarh–Maharashtra border.",
+            "explanation": "Indravati National Park in Bijapur district, Chhattisgarh protects biodiversity in a region strategically important for water security along the Godavari Basin. The Indravati River, which forms the park's northern and western boundaries (marking the Chhattisgarh–Maharashtra border), is critical for transboundary water management and downstream communities. This reserve exemplifies conservation challenges in India's mineral-rich zones where mining pressures conflict with forest ecosystem protection and climate resilience.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -137,7 +137,7 @@ def seed():
             "option_c": "Madhya Pradesh",
             "option_d": "Maharashtra",
             "correct_answer": "B",
-            "explanation": "The Indian Wild Ass Sanctuary is located in the state of Gujarat with a total area of 4,954 sq km, making it India's largest wildlife sanctuary.",
+            "explanation": "The Indian Wild Ass Sanctuary spans 4,954 sq km in Gujarat's Little Rann of Kutch, making it India's largest wildlife sanctuary. This arid-zone reserve protects the endemic Indian Wild Ass (Equus hemionus khur) and supports grassland ecosystems essential for carbon storage in dryland regions. The sanctuary faces climate-driven water scarcity challenges, requiring integrated water management aligned with India's water security and drought resilience goals under the 2070 Net-Zero framework.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -149,7 +149,7 @@ def seed():
             "option_c": "Rajasthan",
             "option_d": "Haryana",
             "correct_answer": "C",
-            "explanation": "Keoladeo National Park, also called Bharatpur Bird Sanctuary, is located in Rajasthan. It is a UNESCO World Heritage Site famous for hosting thousands of migratory birds each winter.",
+            "explanation": "Keoladeo National Park (Bharatpur Bird Sanctuary) in Rajasthan is a UNESCO World Heritage Site hosting thousands of migratory birds annually, making it critical for regional biodiversity and migratory species conservation. Climate change is altering migration patterns and water availability in the park, affecting Asia's bird populations. India's wetland protection strategy under the Ramsar Convention (99 sites as of April 2026) positions such reserves as essential for climate-resilient ecosystems.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -162,7 +162,7 @@ def seed():
             "option_c": "Bandhavgarh and Sanjay",
             "option_d": "Bori and Satpura",
             "correct_answer": "B",
-            "explanation": "Ratapani Wildlife Sanctuary was declared the 8th tiger reserve of Madhya Pradesh in 2025. It spans over 890 sq km and serves as a vital corridor connecting the tiger populations of Panna and Satpura Tiger Reserves.",
+            "explanation": "Ratapani Wildlife Sanctuary's 2025 designation as Madhya Pradesh's 8th Tiger Reserve reflects India's commitment to Project Tiger's landscape-connectivity approach. Spanning 890 sq km, it links Panna and Satpura tiger populations, addressing genetic diversity and climate resilience amid habitat fragmentation. This expansion supports India's goal of sustaining 3,682+ tigers (70% of world's wild tigers) and demonstrates the role of corridor management in species adaptation to climate-driven habitat shifts.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -174,7 +174,7 @@ def seed():
             "option_c": "9th",
             "option_d": "10th",
             "correct_answer": "C",
-            "explanation": "Madhav National Park in Shivpuri was declared Madhya Pradesh's 9th Tiger Reserve in March 2025, making MP the state with the highest number of tiger reserves.",
+            "explanation": "Madhav National Park's March 2025 designation as Madhya Pradesh's 9th Tiger Reserve solidifies MP's leadership in Project Tiger implementation, supporting India's biodiversity conservation targets. This 526 sq km reserve protects forest ecosystems in central India's monsoon belt, increasingly vulnerable to climate variability affecting rainfall patterns. The designation reflects India's strategic prioritization of protected areas as carbon sinks and climate-resilient zones essential for the 2070 Net-Zero commitment.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -187,7 +187,7 @@ def seed():
             "option_c": "Nagaland",
             "option_d": "Meghalaya",
             "correct_answer": "B",
-            "explanation": "Shikhna Jwhwlao National Park in Assam was declared in 2024 and notified on February 16, 2025. It is the 3rd national park in Bodoland Territorial Region (BTR) and the 8th National Park in Assam.",
+            "explanation": "Shikhna Jwhwlao National Park's February 2025 notification as Assam's 8th and Bodoland Territorial Region's 3rd national park strengthens Northeast India's biodiversity protection network. The park protects endemic species and forest ecosystems vital for regional water security and carbon sequestration. Assam's expanding protected areas align with India's broader strategy to enhance 25.17% forest+tree cover (ISFR 2023) and build climate resilience in flood-prone regions.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -200,7 +200,7 @@ def seed():
             "option_c": "Odisha",
             "option_d": "Karnataka",
             "correct_answer": "A",
-            "explanation": "The Maharashtra State Wildlife Board approved the declaration of DPS Flamingo Lake as a conservation reserve. It is the first wetland linked to the Thane Creek Flamingo Sanctuary (TCFS) to receive such protection. The 30-acre lake is a key feeding and resting site for flamingos during high tide.",
+            "explanation": "Maharashtra's 2025 approval of DPS Flamingo Lake (30 acres) as a conservation reserve protects critical migratory bird habitat threatened by coastal development and climate change. This action addresses ecosystem fragmentation in Mumbai's Thane Creek Flamingo Sanctuary, supporting biodiversity hotspot management aligned with the Ramsar Convention (India's 99 sites as of April 2026). The designation mitigates climate-driven habitat loss affecting Asia's migratory bird populations.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -213,7 +213,7 @@ def seed():
             "option_c": "3,682",
             "option_d": "4,012",
             "correct_answer": "C",
-            "explanation": "The 2022 All India Tiger Estimation recorded 3,682 tigers in India (range 3,167–3,925), representing about 70% of the world's wild tiger population. This was up from 2,967 tigers in 2018.",
+            "explanation": "The 2022 All India Tiger Estimation (AITE) recorded 3,682 tigers (range 3,167–3,925), representing 70% of global wild tiger population and demonstrating successful Project Tiger conservation. The increase from 2,967 tigers in 2018 reflects landscape connectivity and habitat protection efforts. Climate-resilient tiger habitat management remains essential as species face temperature shifts, prey availability changes, and human-wildlife conflict intensification in India's 2070 Net-Zero pathway.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -225,7 +225,7 @@ def seed():
             "option_c": "58",
             "option_d": "62",
             "correct_answer": "C",
-            "explanation": "As of March 2025, there are 58 Tiger Reserves in India under Project Tiger, covering about 84,500 sq km. Project Tiger was launched in 1973 and is managed by the National Tiger Conservation Authority (NTCA).",
+            "explanation": "As of March 2025, India's 58 Tiger Reserves under Project Tiger (launched 1973) cover 84,500 sq km and form a biodiversity network supporting species recovery. Managed by the National Tiger Conservation Authority (NTCA), these reserves provide ecosystem services including carbon sequestration and water regulation essential for climate resilience. India's tiger recovery narrative demonstrates how protected areas contribute to both species conservation and climate mitigation targets aligned with the 2070 Net-Zero commitment.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -237,7 +237,7 @@ def seed():
             "option_c": "Madhya Pradesh",
             "option_d": "Assam",
             "correct_answer": "C",
-            "explanation": "Madhya Pradesh has the highest number of tigers (785) among all Indian states as per the 2022 All India Tiger Estimation.",
+            "explanation": "Madhya Pradesh leads with 785 tigers in the 2022 AITE, reflecting successful multi-reserve landscape management across Kanha, Panna, Satpura, and Bandhavgarh reserves. This concentration demonstrates the state's contribution to India's global species leadership and climate-smart conservation. MP's forest governance, particularly in the Deccan region, exemplifies integration of biodiversity protection with landscape-level climate adaptation amid monsoon variability and deforestation pressures.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -250,7 +250,7 @@ def seed():
             "option_c": "99",
             "option_d": "105",
             "correct_answer": "C",
-            "explanation": "As of April 22, 2026, India has 99 Ramsar Sites covering approximately 13,60,805 hectares — the highest count in Asia. Tamil Nadu leads all states with 20 Ramsar sites. The 99th site, Shekha Jheel Bird Sanctuary in Aligarh district, Uttar Pradesh, was designated in April 2026.",
+            "explanation": "As of April 22, 2026, India's 99 Ramsar sites (13,60,805 hectares) represent Asia's largest wetland protection network, surpassing China. These 67 new designations since 2014 strengthen water security in freshwater ecosystems facing climate-driven water stress and monsoon variability. Wetland protection aligns with India's water security strategy under COP commitments, supporting biodiversity while providing ecosystem services crucial for climate resilience and carbon storage.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -262,7 +262,7 @@ def seed():
             "option_c": "Bihar",
             "option_d": "Rajasthan",
             "correct_answer": "B",
-            "explanation": "Shekha Jheel Bird Sanctuary in Aligarh district, Uttar Pradesh became India's 99th Ramsar Site in April 2026, taking India's tally to the highest in Asia. Since 2014, India has added 67 new Ramsar sites.",
+            "explanation": "Shekha Jheel Bird Sanctuary in Aligarh, Uttar Pradesh's April 2026 designation as India's 99th Ramsar site reflects commitment to protecting North India's critical wetland ecosystems amid climate-driven hydrological changes. The Ganges Plain's wetlands face unprecedented water stress from groundwater depletion and monsoon unpredictability. This designation strengthens India's Ramsar network for biodiversity conservation and supports migratory species adaptation to climate shifts affecting wetland productivity.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -275,7 +275,7 @@ def seed():
             "option_c": "Tamil Nadu",
             "option_d": "Jharkhand",
             "correct_answer": "B",
-            "explanation": "Zingiber jagannathii Sahu & Priyadarshini was discovered in Similipal Biosphere Reserve, Odisha, in August 2024. It was found at 758m elevation in Kulipala's semi-evergreen forest and covers less than 1 sq km. The species honors Lord Jagannath.",
+            "explanation": "Zingiber jagannathii was discovered in Similipal Biosphere Reserve, Odisha in August 2024, highlighting India's exceptional 2024 biodiversity record of 683 new faunal species. This discovery in semi-evergreen forests at 758m elevation emphasizes Eastern Ghats' significance as a biodiversity hotspot facing climate-driven habitat fragmentation. The species' restricted range (<1 sq km) exemplifies urgency of protected area expansion to safeguard endemic species in climate-vulnerable forest ecosystems.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -287,7 +287,7 @@ def seed():
             "option_c": "Tripura",
             "option_d": "Sikkim",
             "correct_answer": "A",
-            "explanation": "Channa nachi was discovered in Meghalaya, in a shallow slow-flowing stream near Chokpot village, which is part of the Simsang River system. The habitat consists of sand, leaf litter, and pebbles.",
+            "explanation": "Channa nachi, discovered in Meghalaya's Simsang River system in 2024, exemplifies Northeast India's exceptional freshwater biodiversity and critically highlights climate vulnerability of stream-dependent species. The Garo Hills' high rainfall makes these freshwater ecosystems crucial for regional water security and aquatic species survival. Climate change threatens habitat integrity through temperature fluctuations, precipitation pattern shifts, and flow regime alterations in India's water-rich Northeast region.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -299,7 +299,7 @@ def seed():
             "option_c": "683",
             "option_d": "812",
             "correct_answer": "C",
-            "explanation": "In 2024, India recorded the addition of 683 new faunal species (459 new to science, 224 new to India) and 433 new floral taxa. Kerala led with 101 newly recorded species.",
+            "explanation": "India's 2024 biodiversity milestone of 683 new faunal species (459 new to science, 224 new to India) plus 433 floral taxa reflects exceptional taxonomic capacity supporting CBD targets. Kerala's leadership with 101 species highlights Western Ghats' global significance as a megadiverse region. These discoveries underscore urgency of biodiversity protection amid climate change and habitat loss—essential for meeting the CBD's 2030 goals on species conservation and ecosystem restoration.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -311,7 +311,7 @@ def seed():
             "option_c": "Arunachal Pradesh",
             "option_d": "Manipur",
             "correct_answer": "C",
-            "explanation": "Three new frog species were discovered in early 2024 from the Kamlang–Namdapha biodiversity hotspot landscape in Arunachal Pradesh.",
+            "explanation": "Three new frog species discovered in 2024 from Arunachal Pradesh's Kamlang–Namdapha biodiversity hotspot underscore this region's exceptional amphibian diversity—a biodiversity treasure threatened by climate-driven habitat loss. This landscape serves as a transboundary biodiversity corridor linking India, Myanmar, and southern China. Amphibians' sensitivity to temperature and moisture changes makes their conservation critical for monitoring climate impacts on forest ecosystem health in India's 2070 pathway.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -323,7 +323,7 @@ def seed():
             "option_c": "Ophiophagus hannah",
             "option_d": "Ophiophagus ghati",
             "correct_answer": "B",
-            "explanation": "A study led by Western Ghats-based scientist P. Gowri Shankar proposed that the king cobra is not one species but four distinct species. The Western Ghats species was named Ophiophagus kaalinga and is severely threatened / Critically Endangered.",
+            "explanation": "The 2024 taxonomic revision splitting king cobras into four species (Ophiophagus kaalinga in Western Ghats as Critically Endangered) reveals hidden biodiversity requiring distinct conservation strategies. This discovery emphasizes India's need for species-specific protection frameworks amid climate-driven habitat loss in biodiversity hotspots. Western Ghats' endemic reptile populations face unprecedented threats from deforestation, coffee plantations, and temperature shifts affecting forest microhabitats.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -336,7 +336,7 @@ def seed():
             "option_c": "Critically Endangered",
             "option_d": "Least Concern",
             "correct_answer": "D",
-            "explanation": "The Indian Giant Flying Squirrel is listed as 'Least Concern' by IUCN. It was recently sighted in Ranikhet, Uttarakhand. It can glide up to 60 meters and is protected under Schedule II of the Wildlife Protection Act, 1972.",
+            "explanation": "The Indian Giant Flying Squirrel, listed as Least Concern by IUCN and protected under Schedule II of India's Wildlife Protection Act, depends on intact forest canopies. Recent sightings in Uttarakhand's Himalayan forests underscore the species' reliance on continuous forest cover—increasingly threatened by climate-driven tree mortality and fragmentation. Its 60-meter gliding capacity makes it vulnerable to landscape-level habitat discontinuity exacerbated by climate change.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -348,7 +348,7 @@ def seed():
             "option_c": "Endangered",
             "option_d": "Critically Endangered",
             "correct_answer": "C",
-            "explanation": "The Himalayan Musk Deer is listed as Endangered on the IUCN Red List. Males have a musk gland, making them vulnerable to poaching. They are found in India, Nepal, Bhutan, Pakistan, and China. Listed under Schedule I of WPA 1972.",
+            "explanation": "The Himalayan Musk Deer is listed as Endangered by IUCN and receives highest protection under Schedule I of India's Wildlife Protection Act. Poaching pressure on males for their musk gland combined with climate-driven alpine habitat loss (warming-induced treeline shifts, snow pattern changes) threatens populations across India, Nepal, Bhutan, Pakistan, and China. This transboundary species exemplifies need for coordinated international conservation aligned with COP climate commitments.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -360,7 +360,7 @@ def seed():
             "option_c": "Cambodia and Thailand",
             "option_d": "China and Laos",
             "correct_answer": "B",
-            "explanation": "The Saola (Pseudoryx nghetinhensis), known as the 'Asian Unicorn', is found in the Annamite Mountains along the Vietnam–Laos border. It is Critically Endangered with only 50–300 individuals estimated. It was first discovered in 1992 during a joint survey by Vietnam's Ministry of Forestry and WWF.",
+            "explanation": "The Saola (Critically Endangered, 50–300 individuals), discovered in 1992 in Annamite Mountains along the Vietnam–Laos border, exemplifies biodiversity hotspot vulnerability. This transboundary species faces habitat loss from deforestation, poaching, and climate-driven forest degradation. The Saola's genome mapping (2024) advances conservation genetics research, supporting international recovery efforts aligned with CITES and CBD commitments to prevent species extinction in Southeast Asia's threatened forests.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -372,7 +372,7 @@ def seed():
             "option_c": "Endangered",
             "option_d": "Critically Endangered",
             "correct_answer": "B",
-            "explanation": "The Binturong, also known as the bearcat, is listed as Vulnerable on the IUCN Red List. It is the largest civet in India. A rare sighting was reported in the buffer zone of Balpakram National Park, Meghalaya.",
+            "explanation": "The Binturong (Asia's largest civet, Vulnerable status) exemplifies camera-trap discovery success in India's protected areas. The rare Meghalaya sighting in Balpakram's buffer zone indicates forest connectivity recovery in Northeast India. This species' presence signals healthy forest structure amid threats from habitat loss and climate-driven vegetation shifts. Binturong conservation demonstrates India's expanding species monitoring capacity essential for tracking climate impacts on wildlife populations.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -384,7 +384,7 @@ def seed():
             "option_c": "1,450",
             "option_d": "2,200",
             "correct_answer": "B",
-            "explanation": "According to the IUCN Red List, India has 1,174 threatened species. Some of the most Critically Endangered include the Gharial, Great Indian Bustard, Kashmir Stag, Pygmy Hog, and Namdapha Flying Squirrel.",
+            "explanation": "India's 1,174 IUCN-threatened species (Gharial, Great Indian Bustard, Kashmir Stag, Pygmy Hog, Namdapha Flying Squirrel among Critically Endangered) demand urgent integrated conservation. Climate change exacerbates extinction risk through habitat degradation, prey depletion, and phenological mismatches. India's biodiversity crisis intersects climate action—species conservation contributes to ecosystem carbon storage while building resilience critical for the 2070 Net-Zero pathway and climate adaptation.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -396,7 +396,7 @@ def seed():
             "option_c": "South Africa",
             "option_d": "Botswana",
             "correct_answer": "C",
-            "explanation": "The Blyde Rondavel Flat Gecko was rediscovered in the Blyde River Canyon, Mpumalanga Province, South Africa after 34 years. It was first found in 1991 and had been listed as 'Data Deficient' by IUCN. The Endangered Wildlife Trust (EWT) confirmed its rediscovery — it is the 5th lost species found by EWT.",
+            "explanation": "The Blyde Rondavel Flat Gecko's 2024 rediscovery in South Africa's Blyde River Canyon—34 years after 1991 discovery—demonstrates climate and habitat fragmentation's impacts on endemic species. This 'lost species' recovery exemplifies reconnecting conservation with biodiversity hotspots under climate stress. South Africa's successes in species recovery align with global CBD targets on halting biodiversity loss, lessons applicable to India's megadiverse regions facing similar climate-driven species threats.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -409,7 +409,7 @@ def seed():
             "option_c": "Baku",
             "option_d": "Istanbul",
             "correct_answer": "C",
-            "explanation": "COP29 was held in Baku, Azerbaijan in November 2024. Its main outcome was the Baku Climate Unity Pact, which set a target of at least $1.3 trillion per year from all actors and at least $300 billion/year from developed countries by 2035.",
+            "explanation": "COP29 in Baku (November 2024) established the Baku Climate Unity Pact targeting $1.3 trillion/year from all actors, with $300 billion/year from developed countries by 2035. India criticized the finance goal as 'abysmally poor,' highlighting equity tensions in global climate action. This outcome reflects ongoing challenges in operationalizing climate finance for developing nations' adaptation needs, particularly acute as 2024 recorded 1.55°C warming above pre-industrial levels.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -421,7 +421,7 @@ def seed():
             "option_c": "$500 billion per year by 2030",
             "option_d": "$1 trillion per year by 2040",
             "correct_answer": "B",
-            "explanation": "At COP29 in Baku 2024, developed countries agreed to lead mobilization of at least $300 billion per year by 2035. The overall target is $1.3 trillion/year from all actors. India criticized this as 'abysmally poor'. The Baku–Belém Roadmap to 1.3T was also launched.",
+            "explanation": "COP29's $300 billion/year target by 2035 from developed countries represents critical climate finance commitment amid heated equity debates. India's strong criticism reflects developing nations' stance that adaptation finance remains inadequate for climate-vulnerable regions facing increased extreme weather. The finance architecture directly impacts India's adaptation priorities (water security, renewable energy scaling to 500 GW, disaster resilience) essential for inclusive development aligned with 2070 Net-Zero targets.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -433,7 +433,7 @@ def seed():
             "option_c": "1.3°C temperature limit",
             "option_d": "1.3 billion tonnes CO2 reduction",
             "correct_answer": "A",
-            "explanation": "The Baku–Belém Roadmap to 1.3T refers to raising at least $1.3 trillion per year from all actors (governments, private sector, multilateral banks) for climate action. This was the overall target set in the Baku Climate Unity Pact at COP29.",
+            "explanation": "The Baku–Belém Roadmap targets $1.3 trillion/year from governments, private sector, and multilateral banks for climate action. This ambitious mobilization is essential for transitioning developing economies like India toward renewable energy (500 GW solar target) and climate resilience. The finance framework must support mitigation (fossil fuel phase-out), adaptation (water security, disaster risk reduction), and loss/damage compensation for climate-vulnerable nations.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -446,7 +446,7 @@ def seed():
             "option_c": "Manaus",
             "option_d": "Belém",
             "correct_answer": "D",
-            "explanation": "COP30 was held in Belém (state of Pará), Brazil from November 10-22, 2025 — the first COP in the Amazon region. Key outcomes included the 'Global Mutirão' decision package, launch of the Tropical Forests Forever Facility (TFFF) with over $6.7 billion in pledges, and a call to triple adaptation finance by 2035.",
+            "explanation": "COP30 in Belém (November 10-22, 2025)—the first COP in the Amazon—adopted the Global Mutirão decision calling for tripled adaptation finance by 2035 and launched TFFF with $6.7 billion in pledges. This landmark recognizes tropical forests' critical role in climate stabilization and biodiversity protection. The Amazon's deforestation crisis directly threatens global climate targets; Belém's hosting symbolizes urgency of forest conservation aligned with India's tropical forest protection strategies.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -458,7 +458,7 @@ def seed():
             "option_c": "Quilombola",
             "option_d": "Maloca",
             "correct_answer": "A",
-            "explanation": "The 'Global Mutirão' package was adopted at COP30 on November 22, 2025. 'Mutirão' is an Indigenous Tupi-Guarani concept meaning collective effort. The 150+ pages of decision text invoked the idea of humanity uniting in a global mutirão against climate change.",
+            "explanation": "COP30's Global Mutirão package (adopted November 22, 2025) invokes the Indigenous Tupi-Guarani concept of collective community effort, reflecting climate action's need for unified global mobilization. The 150-page decision text emphasizes Indigenous knowledge and community participation essential for climate-resilient forest management. This framing aligns with India's recognition of tribal communities' role in biodiversity conservation and the Paris Agreement's emphasis on just, inclusive climate transitions.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -470,7 +470,7 @@ def seed():
             "option_c": "Over $30 billion",
             "option_d": "Over $100 billion",
             "correct_answer": "B",
-            "explanation": "TFFF closed COP30 with over US$6.7 billion in pledges endorsed by 66 countries. Norway pledged $3 billion, Germany €1 billion over ten years, Brazil $1 billion (matched by Indonesia), France €500 million. The fund pays countries up to $4/hectare/year to keep tropical forests intact, with at least 20% to Indigenous/local communities. Medium-term target: $125 billion.",
+            "explanation": "TFFF mobilized $6.7 billion from 66 countries (Norway $3B, Germany €1B, Brazil $1B matched by Indonesia, France €500M) by COP30's close, targeting $125B medium-term. The facility pays up to $4/hectare/year for forest conservation with 20% minimum to Indigenous communities. This mechanism directly supports tropical forest protection critical for global climate stabilization—forests store 2+ years of global CO2 emissions, essential for Paris Agreement targets and nature-positive development transitions.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -482,7 +482,7 @@ def seed():
             "option_c": "Adaptation finance",
             "option_d": "Loss and damage finance",
             "correct_answer": "C",
-            "explanation": "The Global Mutirão decision at COP30 Belém called for efforts to at least triple adaptation finance for developing countries by 2035 from 2025 levels, within the broader New Collective Quantified Goal (NCQG) on climate finance.",
+            "explanation": "COP30's tripling of adaptation finance by 2035 reflects recognition of climate vulnerability's disproportionate impact on developing nations. India's adaptation priorities—water security amid Himalayan glacier melt, flood/drought resilience, agricultural productivity under monsoon stress—require accelerated finance mobilization. This commitment aligns with India's 2070 Net-Zero pathway incorporating climate-resilient infrastructure, biodiversity protection, and disaster risk reduction essential for climate justice.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -495,7 +495,7 @@ def seed():
             "option_c": "Kenya",
             "option_d": "India",
             "correct_answer": "B",
-            "explanation": "COP31 is scheduled to be held in Australia in 2026. The COP sequence: COP28 = Dubai (UAE) 2023 → COP29 = Baku (Azerbaijan) Nov 2024 → COP30 = Belém (Brazil) Nov 2025 → COP31 = Australia 2026.",
+            "explanation": "Australia's 2026 COP31 hosting (following Belém COP30, November 2025) shifts climate leadership focus to the Indo-Pacific region vulnerable to climate impacts. The COP sequence—Dubai (2023), Baku (2024), Belém (2025), Australia (2026)—demonstrates rotating regional responsibility for global climate governance. Australia's unique climate challenges (droughts, wildfires, coral bleaching) align with developing nations' climate vulnerability narratives central to adaptation finance debates.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -508,7 +508,7 @@ def seed():
             "option_c": "Uttar Pradesh",
             "option_d": "Assam",
             "correct_answer": "D",
-            "explanation": "India achieved the milestone of satellite-tagging the first-ever Ganges River Dolphin on December 18, 2024, in Assam. This was led by the Wildlife Institute of India (WII) in collaboration with the Assam Forest Department and Aaranyak, under Project Dolphin.",
+            "explanation": "The December 18, 2024 satellite-tagging of India's first Ganges River Dolphin in Assam (led by WII, Assam Forest Department, Aaranyak) marks transformative Project Dolphin progress. Real-time movement tracking reveals river habitat use patterns under climate-driven hydrological stress. Ganges dolphins' endangered status reflects river degradation from pollution, dam operations, and water extraction—conservation directly addressing India's transboundary water security and ecosystem restoration critical for 2070 Net-Zero pathways.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -520,7 +520,7 @@ def seed():
             "option_c": "Project Dolphin",
             "option_d": "Project Aqua",
             "correct_answer": "C",
-            "explanation": "The first satellite-tagging of a Ganges River Dolphin was accomplished under Project Dolphin in December 2024 in Assam. Project Dolphin was launched in 2020 for conservation of Gangetic and Irrawaddy dolphins.",
+            "explanation": "Project Dolphin (launched 2020) exemplifies India's integrated aquatic ecosystem conservation combining species protection with river health monitoring. The December 2024 Ganges dolphin satellite-tagging (Assam) advances understanding of freshwater megafauna responses to dam operations and pollution. This project aligns with India's water security strategy and transboundary cooperation frameworks for shared Ganges-Brahmaputra basin management under climate change stress.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -533,7 +533,7 @@ def seed():
             "option_c": "Gujarat, Rajasthan and Haryana",
             "option_d": "Maharashtra, MP and Chhattisgarh",
             "correct_answer": "A",
-            "explanation": "The Chambal River flows through Madhya Pradesh, Rajasthan, and Uttar Pradesh. It originates from Bhadakla Falls near Janapav Hills, Indore (MP) and joins the Yamuna in Jalaun district, UP, covering 1,024 km. The National Chambal Sanctuary protects Gharial and Ganges dolphins.",
+            "explanation": "The Chambal River (1,024 km, originating Indore's Bhadakla Falls, joining Yamuna at Jalaun) flows through MP, Rajasthan, and UP. The National Chambal Sanctuary protects Gharials and Ganges dolphins amid river degradation from dams and pollution. Transboundary coordination among three states is essential for water management under climate-driven flow stress and flood risks affecting 60+ million downstream users dependent on Chambal-Yamuna water security.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -545,7 +545,7 @@ def seed():
             "option_c": "Kerala",
             "option_d": "Tamil Nadu",
             "correct_answer": "B",
-            "explanation": "Netravathi River (also called Nethravathi Nadi) is a major west-flowing river in Karnataka. It originates in the Kudremukh range of Chikkamagaluru district (Western Ghats) and drains into the Arabian Sea south of Mangaluru.",
+            "explanation": "The Netravathi River (originating Kudremukh range, Chikkamagaluru, Western Ghats) drains to Arabian Sea south of Mangaluru, Karnataka. This west-flowing river faces climate-driven flow variability from monsoon shifts and deforestation. The river system supports biodiversity and local livelihoods while providing hydropower and irrigation. Western Ghats river conservation aligns with India's water security strategy and carbon sequestration through forest protection.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -558,7 +558,7 @@ def seed():
             "option_c": "Arctic Ocean",
             "option_d": "Pacific Ocean",
             "correct_answer": "D",
-            "explanation": "The Yellow Sea is a marginal sea of the Western Pacific Ocean. It is called Huang Hai in China and West Sea in North and South Korea. It gets its yellow color from sand particles blown from the Gobi Desert. It covers about 400,000 sq km with depths of 55–120 m.",
+            "explanation": "The Yellow Sea (Huang Hai/West Sea) is a Western Pacific marginal sea covering 400,000 sq km with 55–120 m depths, bordered by China, North Korea, and South Korea. Climate change is altering temperature regimes, fish stock distributions, and monsoon patterns critical to fisheries. The sea's strategic geopolitical importance intersects with environmental pressures from pollution and overfishing, exemplifying how ocean conservation intersects climate action and maritime security.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -570,7 +570,7 @@ def seed():
             "option_c": "Sand particles from Gobi Desert",
             "option_d": "Industrial effluents",
             "correct_answer": "C",
-            "explanation": "The Yellow Sea gets its yellow color from sand particles blown in from the Gobi Desert. It is bordered by China on the north and west, and North Korea and South Korea on the east.",
+            "explanation": "Yellow Sea's characteristic color derives from Gobi Desert sand particles blown by winds—a natural indicator of East Asian climate and desertification pressures. Climate change is intensifying dust storms and altering sediment transport patterns affecting ocean productivity. This phenomenon illustrates interconnections between terrestrial desertification, atmospheric circulation shifts, and marine ecosystem health—highlighting urgency of integrated land-ocean climate action.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -583,7 +583,7 @@ def seed():
             "option_c": "Heavy metal pollutants from industrial effluents",
             "option_d": "Dead coral fragments",
             "correct_answer": "B",
-            "explanation": "Nurdles are small plastic pellets (1–5 mm) made of LDPE and HDPE, used as raw materials in plastic manufacturing. On May 27, 2025, large amounts were found along Thiruvananthapuram coast after the sinking of Liberian cargo ship MSC ELSA 3 on May 25, 2025. Marine animals can ingest them, causing health problems.",
+            "explanation": "Nurdles (1–5 mm plastic pellets: LDPE/HDPE) represent microplastic pollution threatening marine ecosystems and food webs. The May 2025 MSC ELSA 3 sinking along Kerala's coast highlighted pollution risks from shipping accidents—increasingly frequent amid climate-driven storm intensification. Marine animal ingestion of nurdles causes bioaccumulation and toxic exposure. India's plastic pollution crisis intersects climate change, requiring urgent international plastic treaty implementation (INC negotiations ongoing).",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -595,7 +595,7 @@ def seed():
             "option_c": "SS Prestige",
             "option_d": "MV Wakashio",
             "correct_answer": "A",
-            "explanation": "The Liberian cargo ship MSC ELSA 3 sank on May 25, 2025, carrying containers with hazardous materials including plastic pellets (nurdles). By May 27, 2025, large amounts of nurdles were found along the coast of Thiruvananthapuram, Kerala.",
+            "explanation": "The MSC ELSA 3's May 25, 2025 sinking released nurdles along Thiruvananthapuram, demonstrating ocean pollution risks from maritime shipping amid climate change. Extreme weather intensification increases shipping accidents and spills. This incident underscores India's coastal vulnerability to transboundary pollution and the need for strengthened marine spatial planning, port infrastructure resilience, and international maritime regulation—critical components of ocean health under climate change.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -608,7 +608,7 @@ def seed():
             "option_c": "Costa Rica",
             "option_d": "Nicaragua",
             "correct_answer": "C",
-            "explanation": "Poas Volcano is located in Costa Rica, inside the Poás Volcano National Park. It is a composite stratovolcano standing 2,708 m above sea level with a crater about 1.5 km wide and 300 m deep — one of the world's largest active volcanic craters.",
+            "explanation": "Poas Volcano (Costa Rica, 2,708 m elevation, 1.5 km-wide crater) exemplifies volcanic systems' climate interactions. Active volcanic emissions release sulfur aerosols temporarily cooling the atmosphere while causing regional air quality degradation. Climate change alters volcanic hydrology and gas release patterns; volcanic eruptions impact atmospheric circulation and precipitation. Costa Rica's Poás National Park protects biodiversity in volcanic regions facing ecosystem shifts from climate change and volcanic hazards.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -621,7 +621,7 @@ def seed():
             "option_c": "Tropical Evergreen Forest",
             "option_d": "Coniferous Forest",
             "correct_answer": "B",
-            "explanation": "Teak grows mainly in Moist Deciduous Forests. India holds 35% of the world's planted teak forests. According to FAO, Madhya Pradesh and Maharashtra have the largest areas of native teak forests in India.",
+            "explanation": "Teak thrives in Moist Deciduous Forests where monsoon precipitation and dry seasons regulate growth rings valued for durability. India's 35% global teak holdings (MP and Maharashtra leading) represent critical forest carbon stocks and livelihoods. Climate change threatens teak productivity through altered monsoon patterns and pest pressure. Sustainable teak management aligns with India's ISFR 2023 forest cover expansion (21.76%) and timber economy's transition toward climate-smart forestry.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -633,7 +633,7 @@ def seed():
             "option_c": "35%",
             "option_d": "50%",
             "correct_answer": "C",
-            "explanation": "India holds 35% of the world's planted teak forests, with Asia contributing over 95% of global teak resources, according to the FAO Global Teak Resources and Market Assessment 2022.",
+            "explanation": "India's 35% of global planted teak forests (Asia's 95% total) represents significant renewable timber resource and carbon sequestration potential. Teak plantations contribute to ISFR 2023 goals of 25.17% forest+tree cover through afforestation. Climate-smart teak management—combining yield with biodiversity and water conservation—exemplifies Green Growth strategy aligning forest livelihoods with mitigation and adaptation objectives under India's 2070 Net-Zero targets.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -646,7 +646,7 @@ def seed():
             "option_c": "Manas NP",
             "option_d": "Nameri NP",
             "correct_answer": "B",
-            "explanation": "Tamulidoba Beel is a major wetland within Pobitora Wildlife Sanctuary, Assam. Its drying up has been highlighted as a major threat to waterfowl habitat. Water hyacinth is another threat to wildlife in the sanctuary.",
+            "explanation": "Tamulidoba Beel's drying within Pobitora Wildlife Sanctuary epitomizes climate-driven wetland degradation threatening waterfowl and the rhino habitat. Seasonal water stress, monsoon unpredictability, and hyacinth invasion exemplify complex ecosystem responses to climate change. Wetland restoration through water harvesting and invasive species management is critical for Ramsar site protection (India's 99 sites) and species survival. Pobitora's rehabilitation aligns with water security and biodiversity conservation under 2070 pathways.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -659,7 +659,7 @@ def seed():
             "option_c": "Schedule III",
             "option_d": "Schedule IV",
             "correct_answer": "B",
-            "explanation": "The Indian Giant Flying Squirrel (Petaurista philippensis) is protected under Schedule II of the Wildlife Protection Act (WPA), 1972, and is listed as 'Least Concern' by IUCN.",
+            "explanation": "The Indian Giant Flying Squirrel's Schedule II protection under WPA 1972 reflects intermediate conservation priority despite Least Concern status. This framework allows regulated use while preventing overexploitation. Schedule framework integration with IUCN Red List informs adaptive management responding to climate-driven habitat loss. India's wildlife protection architecture exemplifies how legal frameworks support biodiversity conservation amid ecosystem changes.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -671,7 +671,7 @@ def seed():
             "option_c": "Schedule II",
             "option_d": "Schedule I",
             "correct_answer": "D",
-            "explanation": "The Himalayan Musk Deer is listed under Schedule I of the Wildlife Protection Act, 1972, which provides the highest level of protection, prohibiting hunting. It is also listed as Endangered by IUCN.",
+            "explanation": "Schedule I (highest protection, zero hunting) listing of the Endangered Himalayan Musk Deer reflects conservation urgency amid poaching pressure and climate-driven alpine habitat loss. WPA 1972's Schedule framework provides legal enforcement for species survival. International cooperation with Nepal, Bhutan, Pakistan, and China through CITES ensures transboundary musk deer protection aligning with climate adaptation for high-altitude biodiversity hotspots.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -684,7 +684,7 @@ def seed():
             "option_c": "Convention on Pollution",
             "option_d": "Compact of Participants",
             "correct_answer": "A",
-            "explanation": "COP stands for Conference of Parties. It is the annual meeting of countries that have signed the UN Framework Convention on Climate Change (UNFCCC). COP29 was held in Baku (2024), COP30 in Belém, Brazil (Nov 10-22, 2025) which adopted the 'Global Mutirão' package, and COP31 is scheduled for Australia 2026.",
+            "explanation": "COP (Conference of Parties) is the annual UNFCCC decision-making body where signatories negotiate climate action commitments. The COP sequence—Baku (Nov 2024), Belém (Nov 2025), Australia (2026)—demonstrates evolving climate governance addressing 1.55°C warming (2024 record). India's active participation at COPs advocates for climate justice, renewable energy deployment (500 GW target), and adaptation finance for developing-nation climate resilience.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -696,7 +696,7 @@ def seed():
             "option_c": "UAE (Dubai)",
             "option_d": "Egypt",
             "correct_answer": "C",
-            "explanation": "COP28 was held in Dubai, United Arab Emirates in November–December 2023. It was notable for the first global stocktake under the Paris Agreement. COP29 followed in Baku, Azerbaijan in November 2024.",
+            "explanation": "COP28 (Dubai, November-December 2023) marked historic first loss-and-damage fund operationalization and first global stocktake assessing Paris Agreement progress. The stocktake revealed emissions gap persists despite NDC improvements. Dubai's hosting by an oil-producing nation symbolized tensions between fossil fuel interests and climate action—themes dominating subsequent COPs emphasizing rapid renewable energy transition and developing-nation adaptation priorities.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -709,7 +709,7 @@ def seed():
             "option_c": "Odisha",
             "option_d": "West Bengal",
             "correct_answer": "C",
-            "explanation": "Similipal Biosphere Reserve is located in Odisha. In August 2024, researchers from Maharaja Sriram Chandra Bhanja Deo University discovered the new wild ginger species Zingiber jagannathii here.",
+            "explanation": "Similipal Biosphere Reserve (Odisha) exemplifies Eastern Ghats' biodiversity richness through 2024 discovery of Zingiber jagannathii and broader faunal additions (683 species in 2024). UNESCO Man and Biosphere Programme integration supports integrated landscape management addressing climate change impacts on forest hydrology and species ranges. Similipal's semi-evergreen forests are critical carbon sinks and climate-resilient ecosystems supporting India's 25.17% forest+tree cover expansion.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -721,7 +721,7 @@ def seed():
             "option_c": "Indravati National Park",
             "option_d": "Balpakram National Park",
             "correct_answer": "B",
-            "explanation": "Karimpuzha Wildlife Sanctuary in Kerala is part of the Nilgiri Biosphere Reserve under UNESCO's Man and Biosphere Programme. It also shares boundaries with Silent Valley NP (Kerala) and Mukurthi NP (Tamil Nadu).",
+            "explanation": "Karimpuzha Wildlife Sanctuary's integration within Nilgiri Biosphere Reserve (UNESCO-MAB, Kerala-Tamil Nadu border) exemplifies transboundary biodiversity governance linking Silent Valley NP and Mukurthi NP. This landscape approach addresses climate-driven species range shifts requiring corridor connectivity. Western Ghats biosphere reserves protect endemic species and water sources vital for downstream communities—ecosystems facing unprecedented pressure from climate-driven temperature increases and monsoon stress.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -734,7 +734,7 @@ def seed():
             "option_c": "Weasel family",
             "option_d": "Marten family",
             "correct_answer": "B",
-            "explanation": "The Binturong, also known as the bearcat, is the largest civet in India. It is an omnivorous mammal found in dense forests of South and Southeast Asia. It was camera-trapped in the buffer zone of Balpakram National Park, Meghalaya.",
+            "explanation": "The Binturong (Asia's largest Vulnerable civet, herbivorous-frugivorous diet) demonstrates forest health through its presence in Balpakram's buffer zone, indicating intact dense forest canopy and prey availability. This camera-trap discovery exemplifies India's expanding species monitoring capacity essential for tracking climate impacts on mesofauna. Binturong conservation reflects ecosystem connectivity needs amid forest fragmentation driving species adaptation challenges in Northeast India's climate-sensitive regions.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -747,7 +747,7 @@ def seed():
             "option_c": "Net Decarbonisation Commitment",
             "option_d": "Non-Deforestation Clause",
             "correct_answer": "B",
-            "explanation": "NDC stands for Nationally Determined Contribution. It represents each country's plan to reduce greenhouse gas emissions and adapt to climate change. Per UNEP Emissions Gap Report 2025, full NDC implementation puts the world on a 2.3-2.5°C warming path (vs 2.6-2.8°C in 2024 report) — barely moving the needle versus Paris targets.",
+            "explanation": "Nationally Determined Contributions (NDCs) form the Paris Agreement's cornerstone—each nation's mitigation and adaptation pledges. UNEP Emissions Gap Report 2025 projects full NDC implementation yields only 2.3-2.5°C warming by 2100, requiring 55% emissions cuts by 2035 for 1.5°C alignment. India's NDCs target 500 GW renewables, 2070 Net-Zero, and forest cover expansion—exemplifying how NDCs translate climate commitments into development pathways balancing adaptation and mitigation.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -760,7 +760,7 @@ def seed():
             "option_c": "WCS (Wildlife Conservation Society)",
             "option_d": "CITES",
             "correct_answer": "B",
-            "explanation": "The Saola was first discovered in 1992 during a joint survey by the Vietnamese Ministry of Forestry and the World Wide Fund for Nature (WWF). Its genome was recently mapped by an international team of scientists using tissue fragments from hunter-collected remains.",
+            "explanation": "The Saola's 1992 discovery by Vietnamese Ministry of Forestry and WWF revealed an entirely new ungulate species in Annamite Mountains—demonstrating tropical forest biodiversity richness. Its 2024 genome mapping advances conservation genomics for Critically Endangered species recovery. The Saola exemplifies transboundary conservation urgency: habitat loss from deforestation, poaching, and climate-driven forest degradation threaten extinction of this 'Asian Unicorn,' requiring international cooperation on forest protection.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -773,7 +773,7 @@ def seed():
             "option_c": "Pachmarhi hills",
             "option_d": "Maikala Range",
             "correct_answer": "B",
-            "explanation": "The Chambal River originates from Bhadakla Falls near Janapav Hills in Indore district, Madhya Pradesh, at an elevation of 843 metres. It flows about 1,024 km before joining the Yamuna River in Jalaun district, Uttar Pradesh.",
+            "explanation": "Chambal River originates at Bhadakla Falls (843 m elevation, Indore's Janapav Hills) and flows 1,024 km to join Yamuna, supporting 60+ million people across MP, Rajasthan, UP. Climate-driven flow variability, dam operations, and pollution threaten Chambal's ecosystem services. The National Chambal Sanctuary's Gharial and dolphin populations depend on river health—making transboundary water management critical for species survival and millions of livelihoods under climate change stress.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -786,7 +786,7 @@ def seed():
             "option_c": "Wildlife Institute of India (WII)",
             "option_d": "Salim Ali Centre for Ornithology (SACON)",
             "correct_answer": "C",
-            "explanation": "The Wildlife Institute of India (WII) led the satellite-tagging of the first Ganges River Dolphin in Assam on December 18, 2024, in collaboration with the Assam Forest Department and Aaranyak NGO, under Project Dolphin.",
+            "explanation": "WII's December 2024 Ganges dolphin satellite-tagging (partnering Assam Forest Department, Aaranyak) demonstrates India's expanding research capacity for real-time species monitoring. Real-time tracking reveals river habitat use patterns, movement corridors, and responses to hydrological changes. This data advances understanding of climate impacts on Endangered freshwater cetaceans and informs adaptive management for species survival amid river degradation and flow regulation—critical for Project Dolphin's success.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -799,7 +799,7 @@ def seed():
             "option_c": "Project Dolphin and Project Sea Turtle",
             "option_d": "Project Snow Leopard and Project Hangul",
             "correct_answer": "B",
-            "explanation": "In the 2025–26 budget, ₹290 crore (64% of the ₹450 crore Integrated Wildlife Habitats allocation) was earmarked for Project Tiger and Project Elephant, representing an 18% increase over 2024–25 revised estimates.",
+            "explanation": "India's 2025-26 budget allocation of ₹290 crore for Project Tiger and Elephant (18% increase, 64% of ₹450 crore wildlife habitat budget) demonstrates government commitment to megafauna conservation. These flagship projects anchor larger ecosystem protection strategies supporting biodiversity and climate resilience. Budget allocation reflects India's prioritization of species recovery alongside carbon sequestration through forest protection—investments essential for 2070 Net-Zero targets and wildlife-climate action integration.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -812,7 +812,7 @@ def seed():
             "option_c": "Ramganga National Park",
             "option_d": "Uttarakhand Forest Reserve",
             "correct_answer": "B",
-            "explanation": "Corbett Tiger Reserve was established in 1936 as Hailey National Park and was renamed Corbett National Park in 1957 to honor Jim Corbett. Rivers Ramganga, Pallaen, and Sonanadi flow through it.",
+            "explanation": "Corbett Tiger Reserve's 1936 establishment as Hailey National Park (renamed 1957 for Jim Corbett) represents India's pioneer approach to protected area management. This 1,288 sq km reserve and its river systems (Ramganga, Pallaen, Sonanadi) provide ecosystem services including water regulation and carbon storage. Corbett exemplifies how flagship reserves support landscape-level conservation addressing climate-driven habitat fragmentation and ensuring species survival in Himalayan regions facing accelerated warming.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -825,7 +825,7 @@ def seed():
             "option_c": "Central Zoo Authority (CZA)",
             "option_d": "Indian Board for Wildlife (IBWL)",
             "correct_answer": "B",
-            "explanation": "Project Tiger is managed by the National Tiger Conservation Authority (NTCA) under the Ministry of Environment, Forests and Climate Change (MoEFCC). It was launched in 1973 and currently covers 58 Tiger Reserves.",
+            "explanation": "NTCA (under Ministry of Environment, Forests and Climate Change) manages Project Tiger, launched in 1973 across 58 reserves covering 84,500 sq km. India's tiger recovery—from near extinction to 3,682 animals (70% of global population) by 2022—demonstrates successful landscape-level conservation. Climate-smart reserve management integrating water security, forest health, and community livelihood supports ecosystem services essential for India's 2070 Net-Zero pathways.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -838,7 +838,7 @@ def seed():
             "option_c": "2°C",
             "option_d": "Both 1.5°C and 2°C (with 1.5°C as aspiration)",
             "correct_answer": "D",
-            "explanation": "The Paris Agreement (2015) aims to hold global temperature increase to well below 2°C above pre-industrial levels and pursue efforts to limit it to 1.5°C. Per WMO State of Global Climate 2024 (Mar 2025), 2024 was the first calendar year above 1.5°C with global mean temperature at 1.55±0.13°C above the 1850-1900 baseline.",
+            "explanation": "Paris Agreement (2015) targets 'well below 2°C' with 1.5°C aspiration. WMO's March 2025 confirmation that 2024 exceeded 1.5°C (1.55±0.13°C above 1850-1900) signals urgent need for accelerated climate action. The 1.5°C overshoot reflects cumulative anthropogenic emissions and warming commitments in the climate system. India's 2070 Net-Zero target and NDC commitments embody Paris Agreement response, requiring rapid renewable energy deployment and forest protection to bend emissions curves.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -851,7 +851,7 @@ def seed():
             "option_c": "Universal Framework for Carbon and Climate Control",
             "option_d": "UN Forum for Climate Cooperation",
             "correct_answer": "A",
-            "explanation": "UNFCCC stands for United Nations Framework Convention on Climate Change. It is the international treaty under which the annual Conference of Parties (COP) is held. COP29 was in Baku (2024) and COP30 in Belém (Nov 2025) which adopted the Global Mutirão package and launched the TFFF.",
+            "explanation": "UNFCCC (established 1992, entered force 1994) provides the legal architecture for international climate governance through annual COP meetings. The COP process (Baku 2024, Belém Nov 2025, Australia 2026) negotiates binding commitments on mitigation, adaptation, and finance. India's UNFCCC participation advances climate justice advocacy, renewable energy scaling (500 GW), and developing-nation adaptation finance mobilization essential for equitable climate action.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -864,7 +864,7 @@ def seed():
             "option_c": "20%",
             "option_d": "50%",
             "correct_answer": "C",
-            "explanation": "TFFF requires that at least 20% of payments to forest countries flow directly to Indigenous Peoples and local communities. Countries that maintain intact tropical forests receive up to $4 per hectare annually. The medium-term goal is a $125 billion fund ($25B sovereign + $100B institutional).",
+            "explanation": "TFFF's 20% minimum for Indigenous and local communities reflects recognition of their forest stewardship roles in biodiversity protection and carbon sequestration. The $4/hectare/year payment mechanism incentivizes forest conservation as climate mitigation while supporting community livelihoods. This climate finance approach aligns with India's recognition of tribal communities' conservation contributions in protected areas and integrated biodiversity management—models integrating climate action with development justice.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -877,7 +877,7 @@ def seed():
             "option_c": "Coral Reefs",
             "option_d": "Mountain Grasslands",
             "correct_answer": "B",
-            "explanation": "The Ramsar Convention on Wetlands (1971) is an international treaty for the conservation and sustainable use of wetlands. India has 85 Ramsar sites covering about 14 lakh hectares.",
+            "explanation": "Ramsar Convention (1971) protects wetlands as critical ecosystems providing water storage, flood regulation, carbon sequestration, and biodiversity support. India's 99 Ramsar sites (13,60,805 hectares as of April 2026, Asia's highest) exemplify wetland conservation amid climate-driven hydrological stress. These ecosystems face unprecedented pressure from water extraction, pollution, and extreme weather patterns—wetland restoration and protection are essential for water security and climate resilience in India's water-stressed regions.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -890,7 +890,7 @@ def seed():
             "option_c": "Noise pollution affecting flamingo breeding",
             "option_d": "Air quality degradation from airport emissions",
             "correct_answer": "B",
-            "explanation": "BNHS experts warned that wetland loss near Navi Mumbai International Airport (NMIA) may push birds — particularly flamingos — near the airport, raising bird strike risks. The DPS Flamingo Lake near Thane Creek Flamingo Sanctuary was approved as a Conservation Reserve to address this.",
+            "explanation": "BNHS analysis of NMIA-adjacent wetland loss identified cascading risks: displaced flamingo populations seeking alternative habitats raise aviation safety concerns. The DPS Flamingo Lake's 2025 Conservation Reserve approval demonstrates integrative solutions balancing infrastructure development with ecosystem protection. This exemplifies climate-resilient coastal planning where wetland protection provides dual benefits: migratory species conservation and human safety amid extreme weather intensification.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -903,7 +903,7 @@ def seed():
             "option_c": "Arunachal Pradesh",
             "option_d": "Meghalaya",
             "correct_answer": "C",
-            "explanation": "Namdapha National Park is located in Arunachal Pradesh. The Kamlang–Namdapha landscape is a biodiversity hotspot where three new frog species (Gracixalus patkaiensis, Alcalus fontinalis, Nidirana noadihing) were discovered in early 2024.",
+            "explanation": "Namdapha National Park (Arunachal Pradesh, Kamlang–Namdapha biodiversity hotspot) exemplifies Northeast India's exceptional amphibian diversity—three new frog species discovered in 2024. This landscape's transboundary linkages (India-Myanmar-China) require integrated protection amid climate-driven habitat loss. Amphibians serve as climate change indicators; their sensitivity to temperature and moisture stress reveals ecosystem vulnerability. Namdapha protection supports Indian commitment to CBD 2030 goals on biodiversity conservation.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -916,7 +916,7 @@ def seed():
             "option_c": "101",
             "option_d": "143",
             "correct_answer": "C",
-            "explanation": "In 2024's record-breaking biodiversity year, Kerala led all states with 101 newly recorded species — of which 80 were entirely new to science and 21 were documented in India for the first time. Finds included reptiles, amphibians, butterflies, orchids, fungi, and lichens.",
+            "explanation": "Kerala's 2024 leadership with 101 new species (80 new to science, 21 new to India) underscores Western Ghats' extraordinary biodiversity and research capacity. These discoveries—reptiles, amphibians, butterflies, orchids, fungi, lichens—reveal ecosystem complexity threatened by climate-driven habitat loss and fragmentation. Kerala's findings contribute to India's 683 total new faunal species in 2024, advancing global biodiversity knowledge critical for developing climate-smart conservation strategies for megadiverse regions.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -929,7 +929,7 @@ def seed():
             "option_c": "Snow Leopard",
             "option_d": "Pygmy Hog",
             "correct_answer": "B",
-            "explanation": "The 2024 report 'Plant Breeding Programmes in Indian Zoos: Assessment and Strategic Actions' by the Central Zoo Authority (CZA) highlighted a gap in conservation breeding for the Endangered Himalayan Musk Deer in Indian zoos.",
+            "explanation": "CZA's 2024 report identifying Himalayan Musk Deer breeding gap in zoos underscores challenges in ex-situ conservation for climate-vulnerable alpine species. Genetic rescue and captive breeding programs complement in-situ protection amid habitat loss. Musk deer breeding programs require temperature-controlled facilities vulnerable to rising ambient temperatures—exemplifying how climate change complicates zoo-based conservation. Such programs support wild population recovery while preserving genetic diversity essential for species adaptation.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -942,7 +942,7 @@ def seed():
             "option_c": "Narmada",
             "option_d": "Godavari",
             "correct_answer": "D",
-            "explanation": "The Indravati River is a tributary of the Godavari River. It originates from the Dandakaranya range in Odisha and forms the northern and western boundaries of Indravati National Park in Chhattisgarh.",
+            "explanation": "Indravati River (originating Dandakaranya range, Odisha) as Godavari tributary manages transboundary flows across Odisha-Chhattisgarh-Maharashtra. The Indravati National Park protects this river's biodiversity amid climate-driven flow variability and dam impacts. River ecosystems face unprecedented stress from flood/drought extremes, thermal pollution, and habitat degradation. Indravati conservation exemplifies transboundary water cooperation essential for Godavari Basin's water security and ecosystem health under climate change.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -955,7 +955,7 @@ def seed():
             "option_c": "State Government, and Central Government can also declare a National Park",
             "option_d": "District Collector with state approval",
             "correct_answer": "C",
-            "explanation": "Under the Wildlife Protection Act 1972, Wildlife Sanctuaries are notified by state governments. However, the Central Government can also declare a National Park. No legislation by the state assembly is needed; declaration is by notification.",
+            "explanation": "WPA 1972's decentralized framework—state governments declaring sanctuaries, central government declaring national parks—enables adaptive governance responsive to regional biodiversity and climate conditions. This federal structure supports landscape-scale conservation addressing climate vulnerability through coordinated protection. Recent expansions (58 tiger reserves, 99 Ramsar sites) demonstrate institutional capacity for rapid scaling of climate-resilient protected area networks essential for India's 2070 Net-Zero pathway.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -968,7 +968,7 @@ def seed():
             "option_c": "5 years",
             "option_d": "10 years",
             "correct_answer": "B",
-            "explanation": "The All India Tiger Estimation (AITE) is conducted every 4 years. The 6th edition began in late 2025. The last (5th) estimation in 2022 showed 3,682 tigers, up from 2,967 in 2018.",
+            "explanation": "AITE's 4-year cycle provides data to track tiger population trends and evaluate Project Tiger effectiveness. The 2022 AITE (5th edition: 3,682 tigers, up from 2,967 in 2018) demonstrates recovery despite climate-driven habitat pressures. The 6th AITE (started late 2025) will assess how climate change alters tiger populations, prey availability, and human-wildlife conflicts. Such regular monitoring is essential for adaptive management supporting tiger survival amid ecosystem changes.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -981,7 +981,7 @@ def seed():
             "option_c": "Abysmally poor",
             "option_d": "Highly ambitious",
             "correct_answer": "C",
-            "explanation": "India strongly criticized the $300 billion/year by 2035 climate finance goal agreed at COP29 Baku, calling it 'abysmally poor' and insufficient to address climate change. Developing countries broadly expressed discontent with the outcome.",
+            "explanation": "India's 'abysmally poor' critique of COP29's $300B/year by 2035 target reflects global equity tensions—developing nations' adaptation needs vastly exceed pledged finance. India's water security challenges (glacier melt, monsoon stress, groundwater depletion), renewable energy transition costs (500 GW target), and climate disaster impacts require proportionate finance. This stance drives demands for loss-and-damage mechanisms and climate reparations reflecting historical emission inequities.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -994,7 +994,7 @@ def seed():
             "option_c": "1980",
             "option_d": "1985",
             "correct_answer": "B",
-            "explanation": "Project Tiger was launched in India in 1973. It is managed by the National Tiger Conservation Authority (NTCA) under the Ministry of Environment, Forests and Climate Change (MoEFCC). India now has 58 Tiger Reserves.",
+            "explanation": "Project Tiger (launched 1973, NTCA-managed) transformed conservation policy from hunting to landscape-scale ecosystem protection. This 50+ year initiative grew from near-extinction to 3,682 tigers by 2022, exemplifying long-term institutional commitment. Climate change now challenges tiger survival through habitat degradation, prey depletion, and extreme weather impacts. Project Tiger's evolution toward climate-smart adaptation—corridor connectivity, watershed management, community integration—positions it as model for biodiversity conservation under climate stress.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1007,7 +1007,7 @@ def seed():
             "option_c": "Meghalaya",
             "option_d": "Tripura",
             "correct_answer": "C",
-            "explanation": "Channa nachi was discovered in a shallow slow-flowing stream near Chokpot village, which is part of the Simsang River system in Meghalaya. The Simsang River is a major river of the Garo Hills region.",
+            "explanation": "Channa nachi's discovery in Meghalaya's Simsang River system (Garo Hills, near Chokpot village) demonstrates freshwater species richness in Northeast India's high-rainfall regions. Stream-dwelling species face climate threats from temperature increases and precipitation pattern shifts affecting water flow and habitat quality. The Simsang system's biodiversity requires watershed protection and integrated river basin management aligned with India's water security strategy and wetland conservation under Ramsar commitments.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1020,7 +1020,7 @@ def seed():
             "option_c": "West Bengal",
             "option_d": "Tamil Nadu",
             "correct_answer": "C",
-            "explanation": "The Sundarbans, the world's largest mangrove forest, is located in West Bengal (and extends into Bangladesh). It is a UNESCO World Heritage Site and home to the Royal Bengal Tiger. India has the world's second-largest mangrove area.",
+            "explanation": "Sundarbans (West Bengal-Bangladesh, world's largest mangrove, UNESCO World Heritage Site) faces existential climate threats: sea-level rise, salinity intrusion, cyclone intensification, and tiger habitat loss. This 10,000+ sq km ecosystem provides livelihoods for millions while storing massive carbon reserves. India's 2nd-largest mangrove areas require urgent protection through climate adaptation—mangrove restoration, dyke reinforcement, community-based management—essential for coastal resilience and carbon storage under 2070 Net-Zero targets.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1033,7 +1033,7 @@ def seed():
             "option_c": "2020",
             "option_d": "2022",
             "correct_answer": "C",
-            "explanation": "Project Dolphin was launched in India in 2020 for the conservation of Gangetic and Irrawaddy dolphins. A landmark under this project was the satellite-tagging of the first Ganges River Dolphin in Assam on December 18, 2024.",
+            "explanation": "Project Dolphin (2020) addresses freshwater cetacean conservation amid river ecosystem degradation from dams, pollution, and water extraction. The December 2024 Ganges dolphin satellite-tagging breakthrough enables real-time tracking of responses to flow regulation and thermal stress. Dolphin populations serve as indicator species for river health—their recovery signals ecosystem restoration potential. Project Dolphin's integration with water resource management exemplifies climate-smart river governance supporting both species survival and human water security.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1046,7 +1046,7 @@ def seed():
             "option_c": "Pobitora WLS",
             "option_d": "Orang NP",
             "correct_answer": "C",
-            "explanation": "Pobitora Wildlife Sanctuary in Assam is part of the Indian Rhino Vision 2020 program and has the highest density of Greater One-Horned Rhinoceros in India. The sanctuary spans 48.81 sq km in eastern Guwahati.",
+            "explanation": "Pobitora (48.81 sq km, eastern Guwahati) anchors Indian Rhino Vision 2020, protecting the world's highest Greater One-Horned Rhino density. Climate change threatens Pobitora through monsoon alterations, flooding, and wetland drying (Tamulidoba Beel). This small sanctuary exemplifies conservation challenges in climate-vulnerable regions requiring robust disaster risk reduction, invasive species management, and transboundary cooperation with Bangladesh. Rhino conservation success demonstrates landscape-scale approaches' potential under climate stress.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1059,7 +1059,7 @@ def seed():
             "option_c": "Middle Jurassic (~165 million years ago)",
             "option_d": "Triassic (~230 million years ago)",
             "correct_answer": "C",
-            "explanation": "Jinchuanloong niedu is a new genus of eusauropod dinosaur whose fossil was found in the lower Xinhe Formation near Jinchang city, Gansu Province, China, dating to the Middle Jurassic period, approximately 165 million years ago.",
+            "explanation": "Jinchuanloong niedu (Middle Jurassic, ~165 million years, Gansu Province, Xinhe Formation) exemplifies paleontological discoveries revealing ancient climate and biodiversity. Dinosaur-era climate shifts inform understanding of current warming trajectories and ecosystem responses to rapid temperature changes. Fossil discoveries demonstrate Earth's capacity for extreme climate variability—lessons applicable to predicting current climate change impacts on biodiversity. Paleoclimate insights support conservation strategy development for species facing unprecedented modern warming.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1075,7 +1075,7 @@ def seed():
             "option_c": "1.55°C",
             "option_d": "2.10°C",
             "correct_answer": "C",
-            "explanation": "The WMO State of the Global Climate 2024 (released March 19, 2025) confirmed 2024 as the warmest year on record at 1.55 ± 0.13°C above the 1850-1900 pre-industrial baseline — the first calendar year more than 1.5°C above pre-industrial. Long-term warming is currently 1.34-1.41°C.",
+            "explanation": "WMO's March 2025 confirmation of 2024 warming at 1.55°C (±0.13°C) above 1850-1900 baseline marks a critical climate threshold—first calendar year exceeding Paris Agreement's 1.5°C aspiration. Long-term trend (1.34-1.41°C) shows relentless warming acceleration. This trajectory demands immediate emissions cuts (55% by 2035 per UNEP) and adaptation finance tripling. India's 2070 Net-Zero target and renewable energy (500 GW) represent critical national responses to this accelerating climate crisis.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1088,7 +1088,7 @@ def seed():
             "option_c": "2.3-2.5°C",
             "option_d": "3.0-3.5°C",
             "correct_answer": "C",
-            "explanation": "UNEP Emissions Gap Report 2025 'Off Target' (Nov 2025) projects 2.3-2.5°C warming by 2100 under full NDC implementation, and 2.8°C under current policies. To align with 1.5°C, emissions must fall 55% from 2019 levels by 2035; for 2°C, 35%. The improvement vs 2024 report (2.6-2.8°C) is mostly methodological.",
+            "explanation": "UNEP's November 2025 'Off Target' report projects 2.3-2.5°C warming even with full NDC implementation—showing critical gap between commitments and climate reality. Achieving 1.5°C requires 55% emissions cuts by 2035; 2°C requires 35%. India's NDC enhancement focusing on renewable energy (500 GW) and forest expansion contributes to global mitigation, but scaling remains urgent. This emissions gap underscores why adaptation finance and loss-and-damage mechanisms are essential complements to mitigation for climate-vulnerable nations.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1101,7 +1101,7 @@ def seed():
             "option_c": "$200 billion",
             "option_d": "$500 billion",
             "correct_answer": "C",
-            "explanation": "CBD COP16.2 in Rome (Feb 25-27, 2025) reached agreement on a roadmap to mobilize $200 billion per year by 2030 for biodiversity, with $20 billion/year in international flows by 2025 scaling to $30 billion by 2030. The original COP16 in Cali, Colombia (Oct-Nov 2024) was suspended for lack of quorum.",
+            "explanation": "CBD COP16.2 (Rome, Feb 25-27, 2025) finalized $200 billion/year biodiversity finance roadmap—scaling from $20 billion/year international flows (2025) to $30 billion (2030). This commitment responds to CBD 2030 targets for halting species loss and ecosystem degradation. Biodiversity finance directly supports climate adaptation through ecosystem restoration, wetland protection, and species conservation. India's 99 Ramsar sites and 1,174 threatened species require substantial finance for implementation of CBD targets aligned with climate resilience.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1114,7 +1114,7 @@ def seed():
             "option_c": "Rare earth minerals",
             "option_d": "Marine plastics",
             "correct_answer": "B",
-            "explanation": "The Cali Fund was launched in Rome (Feb 26, 2025) by UNDP and UNEP for the fair and equitable sharing of benefits from Digital Sequence Information (DSI) on genetic resources. Pharmaceutical, biotech, and cosmetics industries contribute, with at least 50% directed to Indigenous Peoples and local communities.",
+            "explanation": "Cali Fund (launched Rome, Feb 26, 2025, UNDP/UNEP) mobilizes pharmaceutical, biotech, and cosmetics industry contributions from Digital Sequence Information (genetic data) usage—with 50% minimum to Indigenous/local communities. This mechanism ensures equitable benefit-sharing from biodiversity while funding conservation. India's 683 newly documented species in 2024 and genetic diversity in biodiversity hotspots position the country as major DSI beneficiary. The fund supports conservation financing while recognizing Indigenous knowledge contributions to climate-resilient ecosystem management.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1127,7 +1127,7 @@ def seed():
             "option_c": "Geneva",
             "option_d": "Paris",
             "correct_answer": "C",
-            "explanation": "INC-5.2 was held in Geneva, Switzerland from August 5-15, 2025, with 2,600+ participants from 183 countries. Like INC-5 in Busan (Nov-Dec 2024), it ended without consensus. Divisions persisted between the High Ambition Coalition (production caps) and oil-producing states (Saudi Arabia, Russia, Iran). A future resumed session is to be announced.",
+            "explanation": "INC-5.2 (Geneva, August 5-15, 2025) continued plastic treaty gridlock between High Ambition Coalition (production caps) and oil-producing states (Saudi Arabia, Russia, Iran). The impasse reflects competing economic interests versus environmental urgency—nurdles pollution (Kerala, May 2025) exemplifies costs of inadequate action. India's 2024 plastic crisis intersects climate change and pollution; a binding plastic treaty is essential for ocean health and climate resilience. Continued negotiations are critical for global plastic circularity and pollution prevention.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1140,7 +1140,7 @@ def seed():
             "option_c": "Marseille",
             "option_d": "San José",
             "correct_answer": "B",
-            "explanation": "UNOC3 was held in Nice, France from June 9-13, 2025, co-hosted with Costa Rica. Outcomes included 19 new BBNJ (High Seas Treaty) ratifications taking the total to 50 + EU, with the treaty's 60-ratification threshold for entry into force expected to be reached before September 23, 2025.",
+            "explanation": "UNOC3 (Nice, June 9-13, 2025) catalyzed BBNJ treaty ratification momentum—19 new signatories brought total to 50+EU, approaching the 60-ratification threshold for entry into force (projected January 2026). This landmark agreement establishes marine protected areas and genetic resource sharing, essential for ocean health and climate resilience. India's ocean governance aligns with BBNJ principles through coastal protection and marine biodiversity conservation, critical as ocean warming and acidification threaten fisheries supporting millions.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1153,7 +1153,7 @@ def seed():
             "option_c": "90 days",
             "option_d": "120 days",
             "correct_answer": "D",
-            "explanation": "The BBNJ Agreement (Biodiversity Beyond National Jurisdiction) enters into force 120 days after the 60th ratification is deposited. After UNOC3 in Nice (June 2025), the count reached 50 + EU, with France expecting the 60-threshold before Sept 23, 2025 — bringing the treaty into force by January 2026.",
+            "explanation": "BBNJ (Biodiversity Beyond National Jurisdiction) enters into force 120 days after 60th ratification—projected for January 2026. This historic agreement establishes high seas marine protected areas and equitable benefit-sharing from marine genetic resources. Entry into force will revolutionize ocean governance for climate adaptation—marine ecosystems are critical carbon sinks. India's ratification will support regional ocean conservation and climate resilience in the Indian Ocean facing warming, acidification, and biodiversity loss.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1166,7 +1166,7 @@ def seed():
             "option_c": "Victoria Falls",
             "option_d": "Nairobi",
             "correct_answer": "C",
-            "explanation": "Ramsar COP15 was held in Victoria Falls, Zimbabwe from July 23-31, 2025. It adopted the 'Victoria Falls Declaration' on wetland restoration, a new Strategic Plan with 4 goals/18 targets, 25 resolutions, and a 4.1% core budget increase to CHF 15.5 million for 2025-2027.",
+            "explanation": "Ramsar COP15 (Victoria Falls, July 23-31, 2025) adopted restoration-focused 'Victoria Falls Declaration' (4 goals/18 targets), signaling urgent wetland protection response to climate-driven water stress and ecosystem collapse. India's 99 Ramsar sites (13,60,805 hectares) and budget increases reflect commitment to wetland conservation—critical for water security, biodiversity, and carbon storage. Wetland restoration aligns with climate adaptation strategies addressing monsoon variability and extreme flood/drought cycles under India's 2070 Net-Zero framework.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1179,10 +1179,7 @@ def seed():
             "option_c": "Bishkek, Kyrgyzstan",
             "option_d": "Tashkent, Uzbekistan",
             "correct_answer": "B",
-            "explanation": "CITES CoP20 was held in Samarkand, Uzbekistan (Nov 24 - Dec 5, 2025) — the first CITES CoP in Central Asia. Delegates adopted 353 decisions and added 77 new species to the CITES Appendices, including okapi, striped hyena, several geckos, tarantulas, ginseng, aloes, guggul and Brazilwood.",
-            "folder": "AP_HC",
-            "topic": "International_Current_Affairs"
-        },
+            "explanation": "CITES CoP20 (Samarkand, Nov 24-Dec 5, 2025) added 77 species to Appendices (okapi, striped hyena, geckos, tarantulas, guggul, ginseng, aloes, brazilwood)—reflecting global urgency to regulate wildlife trade amid climate-driven extinction risk. CITES protects 1,174 threatened species in India from overexploitation. Trade regulation complements habitat protection and climate adaptation, essential for species survival as climate change compounds poaching pressure. Guggul listing demonstrates recognition of medicinal plant value in conservation."
         # --- Mission Mausam ---
         {
             "id": 25090,
@@ -1192,7 +1189,7 @@ def seed():
             "option_c": "₹2,000 crore",
             "option_d": "₹5,000 crore",
             "correct_answer": "C",
-            "explanation": "Mission Mausam was launched on September 14, 2024 with a total outlay of ₹2,000 crore for 2024-26 to make India weather-ready and climate-smart. It is implemented by IMD, IITM Pune (which is building a unique cloud chamber), and NCMRWF for improved nowcasting, weather modification (rainfall, hail, fog) and air-quality forecasts.",
+            "explanation": "Mission Mausam (₹2,000 crore, 2024-26) advances India's climate-smart weather capabilities through IMD, IITM Pune, and NCMRWF. Enhanced nowcasting, weather modification, and air-quality forecasting support disaster risk reduction, agricultural planning, and renewable energy integration—critical for climate resilience. The program exemplifies India's Green Growth strategy combining weather forecasting innovation with climate adaptation for development. Enhanced early warning systems directly reduce climate disaster impacts on vulnerable populations and agriculture-dependent livelihoods.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1205,7 +1202,7 @@ def seed():
             "option_c": "24.62%",
             "option_d": "27.10%",
             "correct_answer": "B",
-            "explanation": "ISFR 2023 (released Dec 2024) reports India's forest cover at 7,15,343 sq km (21.76%) and tree cover at 1,12,014 sq km (3.41%), totalling 25.17% of geographical area (8,27,357 sq km). Forest+tree cover increased 1,445 sq km since 2021. Chhattisgarh saw the largest increase (684 sq km).",
+            "explanation": "ISFR 2023 (December 2024) documents India's 21.76% forest cover (7,15,343 sq km) and 3.41% tree cover (1,12,014 sq km), totalling 25.17%—a trajectory toward India's afforestation targets. The 1,445 sq km increase since 2021 (Chhattisgarh leading with 684 sq km) demonstrates expanding carbon sinks essential for climate mitigation. Forest cover expansion supports biodiversity protection while contributing to India's 2070 Net-Zero commitment through enhanced carbon sequestration—critical as forests remain threatened by agriculture, mining, and urbanization pressures.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1218,7 +1215,7 @@ def seed():
             "option_c": "Santa Ana winds",
             "option_d": "Mistral winds",
             "correct_answer": "C",
-            "explanation": "The Jan 7-31, 2025 LA wildfires (14 fires) killed 31 people, destroyed 18,000+ structures and burned 57,529 acres. Palisades Fire (23,448 acres, 12 deaths) and Eaton Fire (Altadena, 19 deaths) were driven by hurricane-force Santa Ana winds reaching 100 mph, combined with drought and low humidity.",
+            "explanation": "LA's January 2025 wildfires (14 fires, 31 deaths, 18,000+ structures lost) driven by Santa Ana winds (100 mph gusts) exemplify compound climate impacts: intense droughts, low humidity, and fire-prone winds combine catastrophically. Climate change is intensifying wildfire seasons globally—Canada 2024, Australia 2019-20, California annually. These extreme weather cascades foreshadow India's climate vulnerabilities: monsoon shifts, drought-flood cycles, and increasing fire risk in Himalayan and central Indian forests requiring enhanced disaster preparedness and climate adaptation investment.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1231,7 +1228,7 @@ def seed():
             "option_c": "1.55°C",
             "option_d": "2.10°C",
             "correct_answer": "B",
-            "explanation": "NASA GISS confirmed 2024 was the warmest year on record at 1.28°C (2.30°F) above the 1951-1980 baseline, topping 2023's record. Vs the 1850-1900 pre-industrial baseline, 2024 was ~1.47°C warmer (NASA). The streak: 15 consecutive months (Jun 2023 - Aug 2024) of monthly temperature records.",
+            "explanation": "NASA GISS confirmed 2024's 1.28°C above 1951-1980 baseline (1.47°C above 1850-1900 pre-industrial), establishing new temperature record. The 15-month streak of consecutive records (June 2023-August 2024) signals accelerating warming trajectory. Ocean heat content reached record highs, intensifying monsoon variability and extreme weather. This warming trajectory directly threatens India's agriculture, water resources, and vulnerable populations—underscoring urgency of rapid renewable energy deployment (500 GW) and climate adaptation financing for resilience.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1244,7 +1241,7 @@ def seed():
             "option_c": "Strong La Niña",
             "option_d": "ENSO-neutral with no anomaly",
             "correct_answer": "B",
-            "explanation": "NOAA's Climate Prediction Center favored a weak La Niña (3-month Niño-3.4 between -0.5°C and -0.9°C) through Dec-Jan-Feb 2025-26 with 51% probability, transitioning to ENSO-neutral by Jan-Mar 2026 (61% chance). El Niño is then likely to re-emerge by May-Jul 2026 (82% chance).",
+            "explanation": "NOAA's weak La Niña forecast (Dec-Feb 2025-26, 51% probability) followed by ENSO-neutral transition and El Niño re-emergence (May-Jul 2026, 82%) directly impacts India's monsoon patterns. La Niña typically enhances monsoon precipitation while El Niño suppresses it—critical for agriculture, hydropower, and water security. This ENSO cycle variation requires adaptive water management and crop planning. India's monsoon predictability and climate adaptation strategies must account for ENSO teleconnections central to South Asian climate variability.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1257,7 +1254,7 @@ def seed():
             "option_c": "Article 6 carbon markets",
             "option_d": "Global Stocktake",
             "correct_answer": "B",
-            "explanation": "SB62 in Bonn (June 16-26, 2025) made meaningful progress on the Just Transition Work Programme — the final text recognises human rights, Indigenous knowledge and participatory processes. The session was delayed nearly 2 days by Saudi Arabia (mitigation) and India (agriculture) blocking the agenda. GGA (Global Goal on Adaptation) talks failed.",
+            "explanation": "SB62 (Bonn, June 16-26, 2025) advanced Just Transition Work Programme recognizing human rights, Indigenous knowledge, and participatory processes—critical for equitable climate action. India's agricultural negotiating stance blocked GGA progress, asserting that adaptation finance must prioritize developing nations' food security amid climate stress. This reflects India's position that climate justice requires balancing mitigation with adaptation investment protecting vulnerable populations and agricultural systems facing monsoon uncertainty and water stress.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1270,7 +1267,7 @@ def seed():
             "option_c": "Methane leaks and stratospheric warming",
             "option_d": "Coral bleaching and ocean acidification",
             "correct_answer": "B",
-            "explanation": "WMO Air Quality and Climate Bulletin No. 5 (Sept 4, 2025) highlighted the vicious cycle of climate change, wildfires and PM2.5 air pollution. For the first time it used three different models to estimate 2024 PM2.5 anomalies. Wildfire PM2.5 concentrated over Chile, Brazil, Ecuador, Canada, central Africa and Siberia.",
+            "explanation": "WMO Bulletin No. 5 (September 2025) documented climate-wildfire-PM2.5 feedback cycle: warming intensifies fire seasons; wildfires emit massive PM2.5 concentrations (Chile, Brazil, Ecuador, Canada, Africa, Siberia); aerosols alter atmospheric heating and precipitation. India faces similar dynamics—rising temperatures intensify agricultural burning (Punjab, Haryana) and forest fires (Himalayan regions) creating severe winter air pollution. Breaking this cycle requires integrated climate-air quality strategies combining wildfire prevention, renewable energy transition, and clean cooking fuels in India's Green Growth agenda.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1283,7 +1280,7 @@ def seed():
             "option_c": "Norway",
             "option_d": "United States",
             "correct_answer": "C",
-            "explanation": "Norway announced $3 billion to TFFF — the largest single sovereign pledge. Germany pledged €1 billion (over 10 years), Brazil $1 billion (matched by Indonesia), and France €500 million (with conditions). Total TFFF pledges at COP30 close exceeded $6.7 billion from 66 endorsing countries.",
+            "explanation": "Norway's $3 billion TFFF pledge (November 2025) demonstrates commitment to tropical forest protection—critical for global climate stabilization. This financing mechanism, supporting forests at $4/hectare/year with 20% minimum to Indigenous communities, recognizes forests' irreplaceable carbon storage and biodiversity value. India's tropical forest protection (through tiger reserves, sacred groves, tribal territories) benefits from TFFF framework. International forest financing aligns with India's afforestation targets and climate adaptation strategy under 2070 Net-Zero commitment.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1296,7 +1293,7 @@ def seed():
             "option_c": "South Africa",
             "option_d": "India",
             "correct_answer": "B",
-            "explanation": "Australia will host COP31 in 2026, in partnership with Pacific Island states, after Turkey's competing bid was resolved at COP30 Belém. The COP sequence: COP28 = Dubai 2023; COP29 = Baku 2024; COP30 = Belém Nov 2025; COP31 = Australia 2026; COP32 (the African group's turn) is expected to be in Ethiopia 2027.",
+            "explanation": "Australia's COP31 hosting (2026, partnering Pacific Island states) shifts climate leadership to Indo-Pacific region facing acute climate impacts: coral bleaching, sea-level rise, intensifying cyclones. Australia's climate challenges—droughts, wildfires, heatwaves—align with global warming patterns expected under 1.5-2°C scenarios. This COP sequence (Dubai, Baku, Belém, Australia, Ethiopia 2027) demonstrates rotating regional responsibility for climate governance, essential for building inclusive global consensus on ambitious climate action.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1309,7 +1306,7 @@ def seed():
             "option_c": "77",
             "option_d": "114",
             "correct_answer": "C",
-            "explanation": "CITES CoP20 in Samarkand reviewed 50 listing proposals and added 77 new species to the Appendices. Notable additions covered okapi, striped hyena, multiple gecko species, giant galliwasp, tarantulas, frogs, songbirds, ginseng, palms, spurges, aloes, guggul, padouk and Brazilwood. Delegates adopted 353 decisions across 114 agenda items.",
+            "explanation": "CITES CoP20's 77 new Appendix species listings (okapi, striped hyena, geckos, tarantulas, guggul, ginseng, aloes, brazilwood) represent urgent response to wildlife trade-driven extinction risk compounded by climate change. Guggul listing reflects recognition of overexploited medicinal plant value. Trade regulation combined with habitat protection and climate adaptation forms integrated approach to species conservation. India's 1,174 IUCN-threatened species require CITES protections preventing international trafficking that exploits climate-stressed wild populations.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },
@@ -1322,7 +1319,7 @@ def seed():
             "option_c": "Tamil Nadu",
             "option_d": "West Bengal",
             "correct_answer": "C",
-            "explanation": "Tamil Nadu leads all Indian states with 20 Ramsar sites as of April 2026, when India's national total reached 99 (highest in Asia) after Shekha Jheel Bird Sanctuary (UP) was designated as the 99th site. India has added 67 new Ramsar sites since 2014.",
+            "explanation": "Tamil Nadu's 20 Ramsar sites (highest state-level designation) reflect South Indian wetland biodiversity and leadership in protection. India's 99 Ramsar sites (13,60,805 hectares, 67 additions since 2014) position Asia's wetland conservation network. These ecosystems face climate-driven water stress, monsoon variability, and saltwater intrusion—demanding urgent restoration investment. Ramsar wetland protection aligns with water security strategies, biodiversity conservation, and carbon storage critical for India's 2070 Net-Zero pathway and climate resilience under intensifying climate change impacts.",
             "folder": "AP_HC",
             "topic": "International_Current_Affairs"
         },

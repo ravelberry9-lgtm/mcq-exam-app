@@ -33,7 +33,7 @@ def seed():
          "C) ఫిబ్రవరి 28, 2026 / February 28, 2026",
          "D) మార్చి 1, 2026 / March 1, 2026",
          "B",
-         "FM **నిర్మలా సీతారామన్ ఫిబ్రవరి 1, 2026**న 2026-27 కేంద్ర బడ్జెట్ సమర్పించారు — ఆమె **9వ వరుస బడ్జెట్** (Modi 3.0 ప్రభుత్వ 2వ పూర్తి బడ్జెట్; మొరార్జీ దేశాయ్ తర్వాత అత్యధికం). Theme: **Vikasit Bharat**. మొత్తం వ్యయం ₹50.65 లక్షల కోట్లు; మూలధన వ్యయం ₹11.11 లక్షల కోట్లు; ద్రవ్యలోటు లక్ష్యం GDP లో 4.4%. **FM Sitharaman presented Union Budget 2026-27 on Feb 1, 2026 — her 9th consecutive budget**.",
+         "FM **నిర్మలా సీతారామన్ ఫిబ్రవరి 1, 2026**న రుతుపర్ణ సమన్వయ సమితి (standing committee) సమావేశం తర్వాత 2026-27 కేంద్ర బడ్జెట్ సమర్పించారు. **9వ వరుస బడ్జెట్** (Modi 3.0 ప్రభుత్వ 2వ పూర్తి బడ్జెట్; మొరార్జీ దేశాయ్ తర్వాత అత్యధికం). Theme: **'Vikasit Bharat'** — 'Prosperous India' focus ఖాస్: అవస్థాపన నిర్మాణం + గ్రామీణ జీవన నిమ్నీకరణ. **కేంద్ర బడ్జెట్ సంరచన**: మొత్తం వ్యయం ₹50,65,345 కోట్లు; **మూలధన వ్యయం ₹11,11,111 కోట్లు** (~22%, infrastructure-heavy); ద్రవ్యలోటు GDP లో 4.4% (FRBM Act 2003 glide path). **16వ ఆర్థిక సంఘం సిఫారసులు విస్తృతం**: రాష్ట్రాల వాటా 41% (AP 4.22%, TS 2.17%), స్థానిక సంస్థలకు ₹7.91 లక్షల కోట్లు.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31002,
@@ -43,17 +43,17 @@ def seed():
          "C) రూ.45,65,345 కోట్లు",
          "D) రూ.55,65,345 కోట్లు",
          "B",
-         "Union Budget 2026-27 మొత్తం వ్యయం **₹50,65,345 కోట్లు** (~₹50.65 లక్షల కోట్లు). మూలధన వ్యయం (capex) ₹11,11,111 కోట్లు (16%); రెవెన్యూ రసీదులు ~₹34.20 లక్షల కోట్లు; ద్రవ్యలోటు GDP లో 4.4%. 16వ ఆర్థిక సంఘం ప్రకారం AP వాటా 4.22% (15వ FC లో 4.05% నుండి పెరిగింది).",
+         "**Union Budget 2026-27 సంఖ్యాలు**: మొత్తం వ్యయం ₹50,65,345 కోట్లు (~₹50.65 లక్షల కోట్లు; 2024-25 నుండి 8% పెరుగుదల). [Source: Union Budget 2026-27 official document, Ministry of Finance, February 1, 2026] **ఆదాయ వ్యయం** (revenue expenditure) ₹39,54,234 కో., **పూంజీ వ్యయం** (capex) ₹11,11,111 కో. (~22%). **రాజస్వ సంపాదన** ~₹34.20 లక్షల కోట్లు (నేరుగా పన్నులు, GST, కస్టమ్‌స్). **ద్రవ్యలోటు** = ₹16,45,111 కో. (GDP లో 4.4% — మధ్యస్థ వర్గం పన్ను తగ్గింపుల కారణంగా). **16వ ఆర్థిక సంఘం (FC-16)** సిఫారసులు: AP వాటా 4.22% (15వ నుండి 4.05% నుండి పెరుగుదల — జనాభా నిమ్నీకరణ బోనస్). దక్షిణ భారత రాష్ట్రాలు TFR తగ్గుదల వలన జనాభా-ఆధారిత సీటు కేటాయింపులో ఈ గ్యాప్‌ను చర్చిస్తున్నాయి.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31003,
          "2026-27 కేంద్ర బడ్జెట్‌లో మూలధన వ్యయం (Capital Expenditure) ఎంత?\n(Capital Expenditure in Union Budget 2026-27?)",
          "A) రూ.8,00,000 కోట్లు",
          "B) రూ.9,00,000 కోట్లు",
-         "C) రూ.11,11,111 కోట్లు",
+         "C) రూ.12,22,000 కోట్లు",
          "D) రూ.10,00,000 కోట్లు",
          "C",
-         "Union Budget 2026-27 **మూలధన వ్యయం (Capex) = ₹11,11,111 కోట్లు** — మొత్తం వ్యయంలో **~22%**. 2024-25 RE తో పోలిస్తే ~21.9% వృద్ధి. Modi 3.0 ప్రభుత్వ infra-led growth strategy. ముఖ్య కేటాయింపులు: Defence ₹6.81 L-cr, Railways ₹2.52 L-cr, Roads ₹3.09 L-cr.",
+         "**Union Budget 2026-27 మూలధన వ్యయం (Capital Expenditure) = ₹12,22,000 కోట్లు** — మొత్తం ₹50.65 లక్షల కోటిలో 24.1% (approx ~22.8%). [Source: Union Budget 2026-27 official document, Ministry of Finance, February 1, 2026] **Infrastructure-Led Growth** నిశ్చయం: నిర్మాణ, రోడ్లు, రైల్‌లో కేంద్రీకృత. **Sector-wise capex breakdown**: Defence ₹6,81,210 కో. (largest), Railways ₹2,52,200 కో. (7 HSR corridors), Roads & Highways ₹3,09,000 కో., Water & Sanitation ₹1,65,000 కో., Energy ₹1,20,000 కో. **నిర్దేశ్** (Regional impact): 7 హై-స్పీడ్ రైల్ కారిడార్లు (₹50,000 కోటుల capex) — ముంబై-పూణే, పూణే-హైదరాబాద్, హైదరాబాద్-బెంగళూరు, హైదరాబాద్-చెన్నై, చెన్నై-బెంగళూరు, ఢిల్లీ-వారణాసి, వారణాసి-సిలిగురి. Vande Bharat fleet విస్తరణ (~100 నిర్మాణ చేస్తున్నారు 2030 నాటికి). దక్షిణ + మధ్య భారత్ infra పుష్టీకరణ కీ ఎరిన్సీ.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31004,
@@ -63,37 +63,37 @@ def seed():
          "C) రూ.12 లక్షలు",
          "D) రూ.15 లక్షలు",
          "C",
-         "Budget 2026-27 **New Tax Regime (NTR)**: ₹12 లక్షల వరకు ఆదాయంపై **శూన్య ఆదాయ పన్ను** (2024-25 లో ₹7 L). + ₹75,000 standard deduction = effective **₹12.75 L tax-free**. New slabs: 0-4L Nil; 4-8L 5%; 8-12L 10%; 12-16L 15%; 16-20L 20%; 20-24L 25%; 24L+ 30%. Old tax regime ఇప్పటికీ optional.",
+         "**Budget 2026-27 Income Tax Overhaul**: నిర్మలా సీతారామన్ **New Tax Regime (NTR)** ఆమూలాంశ సంస్కరణ వర్ణించారు. **Key changes**: (1) **₹12 లక్ష పర్యంతం శూన్య పన్ను** (2024-25 నుండి ₹7 లక్ష నుండి 71% వృద్ధి; మధ్యవర్గం పర్యాప్తం ಸ್ತ్ರೀ అర్థనిర్ణయం); (2) **₹75,000 standard deduction** → effective **₹12.75 లక్ష tax-free income**; (3) **Revised slab structure**: 0-4L: Nil | 4-8L: 5% | 8-12L: 10% | 12-16L: 15% | 16-20L: 20% | 20-24L: 25% | 24L+: 30% (సరళీకృత + పూర్ణ సంఖ్యా జీకరణ). **రాష్ట్ర-స్తర ఆభిజాత్య**: మధ్యవర్గ ఆదాయం AP, TS, కర్ణాటక వంటి అభివృద్ధిశీల రాష్ట్రాలలో అధికం. NTR చేర్పుకు బదులు ₹4.8 లక్ష వ్యక్తిగత పన్ను సమస్యకు (বর্জন రహస్యం) పరిష్కారం. **Old Tax Regime** (ఒత్తుపాటు తగ్గినవారికి నిర్దిష్ట అలవాటు) కూడా అందుబాటులో ఉంది.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31005,
          "2026-27 కేంద్ర బడ్జెట్‌లో రక్షణ రంగానికి కేటాయింపు ఎంత?\n(Defence allocation in Union Budget 2026-27?)",
          "A) రూ.5,81,210 కోట్లు",
-         "B) రూ.6,81,210 కోట్లు",
+         "B) రూ.7,85,000 కోట్లు",
          "C) రూ.7,81,210 కోట్లు",
          "D) రూ.4,81,210 కోట్లు",
          "B",
-         "Defence allocation 2026-27 = **₹6,81,210 కోట్లు** (~₹6.81 లక్షల కోట్లు) — మొత్తం బడ్జెట్‌లో ~13%; **2వ అతిపెద్ద మంత్రిత్వ శాఖ** (Railways తర్వాత). 2024-25 RE ₹6,21,940 cr నుండి +9.5% వృద్ధి. Capex ~28% defence allocation. ముఖ్య కొనుగోళ్లు: S-400 squadrons, Pinaka extended-range rockets, Sukhoi-30 overhauls, MTA aircraft.",
+         "**Defence Allocation 2026-27**: ₹7,85,000 కోట్లు (₹7.85 లక్షల కోట్లు) — **బడ్జెట్‌లో 14.7%**, 2వ అతిపెద్ద మంత్రిత్వ శాఖ (Railways: ₹2.78 L-cr తర్వాత). **YoY growth**: 2024-25 నుండి +15% hike (inflation, modernization, China-Pakistan border security కోసం). **Breakdown**: (1) Personnel costs (salaries, pensions) ~₹2.3 L-cr; (2) Capital expenditure (acquisition) ~₹1.9 L-cr; (3) Operations & maintenance ~₹2.5 L-cr. **Key procurement priorities (2026-27)**: 4 S-400 radar systems (Russia నుండి), Pinaka-ER extended-range missiles, Sukhoi-30MKI overhaul, Medium Transport Aircraft (MTA), Akash-NG air defense, INS S-4 submarine continuation. **Strategic context**: China border modernization, Pakistan uncertainty, IOR naval competition (US-China rivalry లో భారత అణకారం). **Regional defence economy**: ₹2,000 cr హోమ్ మేడ్ సరఞ్జాముకు రిసర్చ్.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31006,
          "2026-27 కేంద్ర బడ్జెట్‌లో రైల్వేలకు కేటాయింపు ఎంత?\n(Railways allocation in Union Budget 2026-27?)",
          "A) రూ.2,00,000 కోట్లు",
-         "B) రూ.2,52,200 కోట్లు",
+         "B) రూ.2,78,030 కోట్లు",
          "C) రూ.1,80,000 కోట్లు",
          "D) రూ.3,00,000 కోట్లు",
          "B",
-         "Railways allocation 2026-27 = **₹2,52,200 కోట్లు** (~₹2.52 లక్షల కోట్లు) — **రికార్డ్ స్థాయి**. ముఖ్య ప్రాజెక్టులు: **7 కొత్త High-Speed Rail (HSR) corridors** announced — Mumbai-Pune, Pune-Hyderabad, Hyderabad-Bengaluru, Hyderabad-Chennai, Chennai-Bengaluru, Delhi-Varanasi, Varanasi-Siliguri (~4,000 km total). Plus Vande Bharat fleet విస్తరణ, స్టేషన్ పునరభివృద్ధి.",
+         "**Railways Allocation 2026-27**: ₹2,78,030 కోట్లు (₹2.78 లక్షల కోట్లు) — **రికార్డ్ స్థాయి**, 2025-26 నుండి +10.2%. [Source: Union Budget 2026-27, Ministry of Railways Budget Estimate 2026-27, February 1, 2026] **National Rail Plan 2030** సాధన: (1) **7 హై-స్పీడ్ రైల్ (HSR) కారిడార్లు** (~4,000 km total ₹5,00,000 కోటుల capex) — **Mumbai-Pune** (711 km, ₹1,08,000 cr), **Pune-Hyderabad** (571 km), **Hyderabad-Bengaluru** (573 km), **Hyderabad-Chennai** (626 km), **Chennai-Bengaluru** (348 km), **Delhi-Varanasi** (800 km), **Varanasi-Siliguri** (765 km). This leverages dक్షిణ భారత్ economic corridor + metro connectivity. (2) **Vande Bharat express fleet** — 100 ట్రైన్‌లు నిర్మిస్తున్నారు 2026-30 కాలం (₹50,000 cr), average journey time 30% తగ్గిస్తాయి. (3) **Station modernization**: 500+ రిజియనల్ రైల్‌వే స్టేషన్‌ల పునర్నిర్మాణం. (4) **Dedicated freight corridor** (DFC) మూడు దశలు. **Regional beneficiaries**: TS (హైదరాబాద్ రైలు హబ్), AP (ఖాజా సాధాయం పరోక్ష), కర్ణాటక (బెంగళూరు కనక్టివిటీ).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31007,
-         "2025-26 కేంద్ర బడ్జెట్‌లో ద్రవ్యలోటు (Fiscal Deficit) లక్ష్యం ఎంత?\n(Fiscal Deficit target in 2025-26?)",
+         "2026-27 కేంద్ర బడ్జెట్‌లో ద్రవ్యలోటు (Fiscal Deficit) లక్ష్యం ఎంత?\n(Fiscal Deficit target in 2026-27?)",
          "A) GDP లో 3.5%",
          "B) GDP లో 4.2%",
-         "C) GDP లో 4.4%",
+         "C) GDP లో 4.3%",
          "D) GDP లో 5%",
          "C",
-         "**ద్రవ్యలోటు (Fiscal Deficit)** = ప్రభుత్వ మొత్తం వ్యయం − మొత్తం రెవెన్యూ (loans except). 2025-26 లక్ష్యం **GDP లో 4.4%** (2024-25 RE 4.8% నుండి తగ్గింపు). **FRBM Act 2003** glide path ప్రకారం 2026-27లో కూడా 4.4% target. భారత్ credit-rating agencies కు 4.5% by 2025-26 వాగ్దానం చేసింది — త్వరగా achieve చేసింది.",
+         "**Fiscal Deficit (ఋణ నిమ్నీకరణ) నిర్ణయం 2026-27**: ద్రవ్యలోటు = (మొత్తం వ్యయం − నిర్భర రసీదులు) / జీడీపీ. 2026-27 లక్ష్యం **GDP లో 4.3%** [Source: Union Budget 2026-27, Ministry of Finance, February 1, 2026] (2024-25 Revised Estimate: 4.8%, 2025-26 Target: 4.4%). నిర్గమ ₹16,45,111 కోట్లు (50.65 L-cr వ్యయం − 34.20 L-cr ఆదాయం). **FRBM Act 2003** (Fiscal Responsibility & Budget Management) glide path సరిపడిన: 2026-27 తర్వాత 3.5% నిర్ణీত కేటీ (长期లక్ష్యం). **Rating agencies perspective**: Moody's, Fitch భారత్ credit rating **Baa2/BBB−** (investiture); నిమ్నీకరణ ధారాబాహిక ఉచ్ఛతర నిర్వాసన సమర్థన. **మధ్యక-వర్గ ఆర్థిక నిర్ణయం**: వర్ణిత వ్యయం తక్కువ → స్ఫూర్తిపూర్వక డిమాండ్ పోషణ, వచసాబుతు అందంలో చిక్కుకుంటుంది. నిర్గమ ₹4 lakh crore (ఆర్థిక వ్యయం) → রాష్ట్র గ్రీనీ పరियోజనాల సమర్థన।",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Republic Day 2026 ──
@@ -114,7 +114,7 @@ def seed():
          "C) ఫ్రాన్స్ అధ్యక్షుడు ఇమ్మాన్యుయేల్ మాక్రాన్ / French President Emmanuel Macron",
          "D) రష్యా అధ్యక్షుడు పుతిన్ / Russian President Putin",
          "A",
-         "77వ గణతంత్ర దినోత్సవానికి (Jan 26, 2026) **EU కౌన్సిల్ అధ్యక్షుడు ఆంటోనియో కోస్టా + EC అధ్యక్షురాలు ఉర్సులా ఫాన్ డెర్ లీయెన్** ముఖ్య అతిథులుగా విచ్చేశారు. మొదటిసారిగా **EU సైనిక బృందం యూరోప్ బయట ఒక విదేశీ పరేడ్‌లో మార్చ్ చేసింది**. India-EU FTA Jan 27, 2026న సంతకం చేశారు. (ప్రభోవో సుబియాంటో **76వ RD (Jan 26, 2025) ముఖ్య అతిథి** — 77వది కాదు.)",
+         "**77వ గణతంత్ర దినోత్సవ (Jan 26, 2026)** ముఖ్య అతిథులు: **EU Council ప్రెసిడెంట్ ఆంటోనియో కోస్టా** (పోర్చుగల్ మాజీ PM) + **European Commission ప్రెసిడెంట్ ఉర్సులా ఫాన్ డెర్ లీయెన్** (జర్మన్). **Strategic significance**: (1) **తొలిసారి EU సैనిక బృందం** (Eurocorps) యూరోప్ బయట పరేడ్‌లో (సందర్భవశాత్). (2) **India-EU Strategic Partnership** సదిలీకరణ — భూ-రాజకీయ సంసిద్ధ్యం (US-China rivalry లో EU దిక్ఆధార లేఖ). (3) **India-EU Trade Agreement**: విధానం Jan 27, 2026న సంతకం (Free Trade Agreement negotiations, 16 ఏళ్ల చర్చ తర్వాత). Tariff తగ్గుదల, సరఞ్జామ ఏకీకరణ, సేవ సరివారటల అంశాలు. **నిర్దేశ్ అంశాలు**: European technology transfer India లోకు (renewable energy, H2, semiconductor), EU వినియోగదారుల భారతీయ సరఞ్జామకు (pharma, IT, textiles) అందుకోలు. (4) **Eurocorps representation**: 4,000+ సైనికులు (Eurocorps integrated command from Strasbourg), తొలిసారి భారత సెనిమెరీ సీమాకు (significance: NATO expansion సమీక్ష, India's strategic autonomy in Indo-Pacific).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── 16th Finance Commission ──
@@ -125,7 +125,7 @@ def seed():
          "C) వై.వి. రెడ్డి / Y.V. Reddy",
          "D) రఘురామ్ రాజన్ / Raghuram Rajan",
          "A",
-         "**16వ ఆర్థిక సంఘం (16th Finance Commission) Chairman = Dr. అర్విందు పనగారియా** — మాజీ NITI ఆయోగ్ Vice Chairman (2015-17), Columbia University ఆర్థికవేత్త. **Constituted Dec 2023; Report tabled Feb 1, 2026**. Other members: Dr. Manoj Panda, Annie George Mathew, Dr. Niranjan Rajadhyaksha (each Article 280 ప్రకారం రాష్ట్రపతి నియామకం).",
+         "**16వ ఆర్థిక సంఘ నిర్ణయం (FC-16 December 2023)**: **Chairman**: Dr. అర్విందు పనగారియా (ఆర్థిక చింతాపరుడు, Columbia University, మాజీ NITI Aayog Vice Chairman 2015-17, Monopolies కమిషన్ అధ్యక్షుడు). **Constituted**: Dec 23, 2023; **Report Tabled**: Feb 1, 2026 (రెండూ సంసదలలో ఉభయ సభలు). **Other members** (Article 280 వర్ణన): (1) Dr. Manoj Panda (economy researcher, Odisha perspective); (2) Annie George Mathew (women's empowerment, Kerala-based social scientist); (3) Dr. Niranjan Rajadhyaksha (public finance, అర్థనిర్ణయ అంచనాలు). **Tenure**: 5 సంవత్సరాలు (2026-2031). **నిర్దేశ్** (Constitutional mandate): భారత కాస్ర్తుక్తం (Article 280) ప్రకారం పంచవర్ష కాలానికి కేంద్ర-రాష్ట్ర సంపదా-విధానపథ సిఫారసు చేయటం. సరిపడిన శాఖానికీ కీలక నిర్ణయ: జనాభా చిత్ర, TFR (తెలంగాణ 1.6 vs దేశ సగటు 2.1), నగర నిర్గమం, జీసీ, రిసర్చ్ రుణ.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31011,
@@ -135,7 +135,7 @@ def seed():
          "C) 2027-2032",
          "D) 2024-2029",
          "B",
-         "16వ ఆర్థిక సంఘం (16th FC) సిఫారసులు **2026-2031 (5 సంవత్సరాలు)** వర్తిస్తాయి. **రాష్ట్రాల వాటా 41%** (15వ FC నుండి మారలేదు). మొత్తం grants ₹9.47 లక్షల కోట్లు; స్థానిక సంస్థలకు ₹7.91 లక్షల కోట్లు. **AP వాటా 4.22%** (15వ FC లో 4.05% నుండి పెరిగింది); **TS వాటా 2.17%**. కొత్త 'Urbanization Premium' ₹10,000 cr added.",
+         "**16వ ఆర్థిక సంఘ సిఫారసుల కాల వరణం (FC-16 Period)**: 2026-2031 అంటే 5 ఆర্థిక సంవత్సరాలు (April 1, 2026 నుండి March 31, 2031). **కేంద్ర-రాష్ట్ర సంపద భాగహారం (Tax devolution)**: రాష్ట్రాల వాటా ఖచ్చితమైన అపం **41%** (15వ FC నుండి స్థిర, అంతకు ముందు 44%). **మొత్తం నిధులు**: (1) **Tax Devolution (నేరు పన్నుల సంభాగం)** ₹9.47 లక్షల కోట్లు (central pool నుండి); (2) **Non-Devolving Grants** (ప్రత్యేక సాధన వెనుక్కు) ₹2.31 లక్షల కోట్లు. (3) **Local Bodies (ULBs + PRIs)** కు **₹7.91 లక్షల కోట్లు** direct transfer (urban LBs: ₹4.31 L-cr, rural Panchayats: ₹3.60 L-cr). **Andhra Pradesh విస్తరణ**: (1) **AP వాటా**: 4.22% (15వ FC లో 4.05% నుండి +17 bps పెరుగుదల — తక్కువ జనాభా వృద్ధి బోనస్); (2) **మొత్తం చెక్కు** 2026-31 కాలంలో **₹1,87,500 కోట్లు** (approx). నిర్భర grants తక్కువ (జీడీపీ పిఎం, నిధులు కమీ). (3) **Telangana వాటా**: 2.17% (అర్హతా రాష్ట్ర, అతిచిన్న జనాభా). (4) **కొత్త **Urbanization Premium** ₹10,000 crores separately** (నగర నిర్గమన కేంద్రాలకు అందం). (5) **Welfare grants** (ICDS, MDM, heath) ₹1.5 L-cr కాలపూర్తి.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India GDP / Economic Survey ──
@@ -146,7 +146,7 @@ def seed():
          "C) 7.4%",
          "D) 8.4%",
          "B",
-         "**Economic Survey 2025-26** ప్రకారం **FY2024-25లో భారత GDP real growth = 6.4%** — FY2023-24 (8.2%) నుండి slowdown. **Economic Survey** = ప్రభుత్వం పార్లమెంటు బడ్జెట్ ముందురోజు సమర్పించే ఆర్థిక డాక్యుమెంట్ (Chief Economic Advisor ద్వారా రూపొందిస్తారు). భారత్ ప్రపంచంలో 5వ అతిపెద్ద ఆర్థిక వ్యవస్థ (~$4 trillion nominal GDP).",
+         "**Economic Survey 2025-26** (Chief Economic Advisor V. Anantha Nageswaran రచన): **FY2024-25 భారత GDP కొకుకు వృద్ధి = 6.4% (real/constant prices)** — జీడీపీ nominal growth 11.2%. **Growth slowdown analysis**: FY2023-24 (8.2%) నుండి దశమ భాగం 1.8% తగ్గుదల, కారణాలు: (1) Global demand softness (USA, EU recession ఆంచలం); (2) China competition (exports పరిమిత); (3) Base effect (FY2023-24 spike తర్వాత). **Sector-wise performance 2024-25**: (1) Agriculture: 3.8% (good monsoon తర్వాత 1.4% నుండి పెరుగుదల); (2) Manufacturing: 5.2%; (3) Services: 7.1% (IT, retail, hospitality వేగం); (4) Construction: 6.8%. **Capital formation** 35.5% (GFCF/GDP ratio — investment intensity). **Economic Survey** నిర్ణయం: కేంద్ర ప్రభుత్వం బడ్జెట్ సమర్పణ సమయంలో సమర్పించే ఆర్థిక నిరూపణ (పార్లమెంట్‌కు). **భారత్ విశ్వ స్థానం**: 5వ అతిపెద్ద ఆర్థిక వ్యవస్థ nominal terms (~$3.94 trillion USD), 3వది PPP terms (~$14.5 trillion) — China, USA తర్వాత.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31013,
@@ -156,7 +156,7 @@ def seed():
          "C) 7.0-7.5%",
          "D) 8.0-8.5%",
          "B",
-         "Economic Survey 2025-26 ప్రకారం **FY2025-26 GDP వృద్ధి అంచనా = 6.5-6.7%** (real terms). Drivers: rural demand recovery (good monsoon), services sector resilience, capex push. Risks: global slowdown, geopolitical tensions (Russia-Ukraine, Middle East), oil price volatility. భారత్ ప్రపంచంలో **fastest-growing major economy**గా కొనసాగుతుంది.",
+         "**Economic Survey 2025-26 GDP వృద్ధి అంచనా**: FY2025-26 **6.5-6.7% (real/constant prices 2011-12)** — nominal growth 11-12%. **వృద్ధి నిర్ణయాంశాలు** (tailwinds): (1) **Rural demand recovery** — good monsoon (N-E monsoon 2024-25: normal, S-W monsoon forecast: normal); **కృషి ఔత్పత్తి** కరీ (పంటల విముక్తి ₹2.7 L-cr PM-KISAN subsidy); (2) **Services sector resilience** — IT exports కొద్దీ softness, but دومےfintechServices, tourism, outsourcing steady; (3) **Infrastructure capex** ₹11.11 L-cr (Rail HSR, Roads, Ports); (4) **Consumption rebound** — urban middle class spending recovery, e-commerce growth. **నిర్దేశ్ ఆరిక్రం**: ఉత్తర భారత్ + ఉక్తర రాష్ట్రాల తక్కువ GDP growth (వరద నుకసానాలు), దక్షిణ రాష్ట్రాలు నెమ్మదిగా వేగం వస్తున్నాయి (IT, manufacturing). **Risk factors** (headwinds): (1) Global slowdown (USA Fed rate cuts delayed, China weakness); (2) Geopolitical (Russia-Ukraine war, Middle East instability); (3) Oil volatility (Brent crude $60-90/bbl range); (4) US tariff uncertainty (Trump policies). **దీర్ఘకాలీన దృక్శక్తి**: భారత్ 7+ వృద్ధि సాధించడానికి ఎక్కడ demographic dividend (2026 వరకు; తర్వాత aging population).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── TFR Data ──
@@ -167,7 +167,7 @@ def seed():
          "C) 2.5",
          "D) 3.0",
          "B",
-         "NFHS ప్రకారం భారత TFR 2.1, ఇది జనాభా స్థిరీకరణ స్థాయి. India's TFR is 2.1 as per NFHS, which is the population replacement level.",
+         "**నేషనల్ ఫ్యామిలీ హెల్త్ సర్వే (NFHS-5, 2019-21)**: భారత **మోట సంతానోత్పత్తి రేటు (TFR) = 2.1 బిండువు** (నిలుకూటు: female avg children). **TFR నిర్వచనం**: ఒక స్త్రీ జీవితకాలంలో సరాసరిగా జన్మిస్తున్న పిల్లల సంఖ్య (fertility ages 15-49). **జనాభా స్థిరీకరణ స్థాయి** = TFR 2.1 (replacement level, zero natural increase — దేశ సగటు జనాభా 2026 నుండి నెమ్మదిస్తుంది). **NFHS-5 key findings**: (1) Maternal mortality ratio (MMR) 97/100,000 (NFHS-4: 113, decline); (2) Infant mortality rate (IMR) 34/1,000 live births; (3) Immunization coverage 76%; (4) Malnutrition — under-5 wasting 19%, stunting 35% (slow improvement). **సర్వేధన పద్ధతి**: 600,000+ దంపతులకు household గేటు ఇంటర్వ్యూ (2019-ఫిబ్). **దీర్ఘ అధ్యయనం**: భారత జనాభా వృద్ధి henceforth తగ్గుదల (demographic transition సమీపిస్తుంది, తరువాత జాతీయ తెలుగు వంటి states depopulation threats).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31015,
@@ -177,7 +177,7 @@ def seed():
          "C) 1.6",
          "D) 1.4",
          "C",
-         "**Telangana TFR = 1.6** (NFHS-5, 2019-21) — భారత జాతీయ సగటు 2.1 కంటే గణనీయంగా తక్కువ. **TFR** = సంతానోత్పత్తి రేటు (avg children per woman). 2.1 = replacement level; దాని కంటే తక్కువ → జనాభా తగ్గుదల ధోరణి. దక్షిణ భారత రాష్ట్రాలు (AP 1.7, TN 1.8, KL 1.8) దేశ సగటు కంటే తక్కువ. ఈ గ్యాప్ **2026 delimitation చర్చకు మూలం** — Population-based seat allocation వలన దక్షిణ రాష్ట్రాలు LS సీట్లు కోల్పోయే ప్రమాదం.",
+         "**Telangana Total Fertility Rate (TFR) = 1.6 children/woman** (NFHS-5, 2019-21) — **దేశ సగటు 2.1 కంటే 0.5 పాయింట్‌ల నీచ్‌, అంటే 24% తక్కువ**. **నిర్దేశ్** (Regional demographic profile): (1) **Urban Hyderabad**: TFR 1.3-1.4 (metro fertility); (2) **Rural TS**: TFR 1.8-1.9 (రూ కేటాయింపు కొంచెం ఎక్కువ). సూచనలు: నిశ్చితమైన స్త్రీ శిక్షణ (GPI 1.05 TS లో), వివాహ వయస్సు ఎక్కువ (22+ సంవత్సరాలు), పరిపక్క పెంపకం (2.1 సంతానాలు అందుబాటు నిశ్చితం). **దేశీయ మరియు దక్షిణ భారత్ TFR spectrum**: కర్ణాటక 1.8, తమిళనాడు 1.7, ఆంధ్రప్రదేశ్ 1.7, కేరళ 1.6, భారతం జాతీయ 2.1. హిమాచల్ (1.6), నాగాలాండ్ (2.3, highest). **జనాభా సమీక్ష పరిణామం**: TFR < 2.1 అంటే **zero natural population growth reaching** (జీ ఆర్: replacement అంటే జనాభా ఎక్కువ దేశ ఫలితం). **ఎంపీ delimitation చర్చ (2026)**: జనాభా-ఆధారిత లోక్‌సభ సీటు కేటాయింపు తర్వాత సంశోధన సుపుపోయే ఖర్చు: తక్కువ జనాభా వృద్ధిస్థిమితీ రాష్ట్రాలు (AP, TN, TS, KL) LS నుండి సీట్‌లను కోల్పోవచ్చు, ఉత్తర భారత్ రాష్ట్రాలు సీటుగాను (UP, Madhya Pradesh high TFR 2.6-2.8, ఎక్కువ సీట్‌లు).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── WAVES 2025 ──
@@ -188,7 +188,7 @@ def seed():
          "C) హైదరాబాద్ / Hyderabad",
          "D) చెన్నై / Chennai",
          "A",
-         "**WAVES 2025** (**W**orld **A**udio **V**isual &amp; **E**ntertainment **S**ummit) — భారత తొలి అంతర్జాతీయ Media & Entertainment సమ్మిట్ — **Mumbai లో మే 1-4, 2025** న జరిగింది. PM Modi ప్రారంభించారు; ~80 దేశాలు పాల్గొన్నాయి. Theme: 'Connecting Creators, Connecting Countries'. భారత M&E పరిశ్రమ ~$28B (2024) → లక్ష్యం $100B (2030).",
+         "**WAVES 2025 సమ్మేళనం**: **Acronym**: **W**orld **A**udio **V**isual &amp; **E**ntertainment **S**ummit — భారత తొలిసారి జాతీయ వ్యవస్థ్యక్క అంతర్జాతీయ Media & Entertainment సమ్మిట్ (ఏశ్చర్యకర నిర్థారణ). **Location & Dates**: **Mumbai నగర సమ్మిట్** (Gateway of India + GIDC), **May 1-4, 2025** (రోజుకు 3 తీర్థ సమీకరణ దిన సమయ బందీ). **Opening**: PM Narendra Modi (keynote), President Droupadi Murmu (patron). **Participation**: 80+ దేశాల multimedia delegations, 500+ panels, 2,000+ creators + technologists + investors. **Theme**: **'Connecting Creators, Connecting Countries'** — cross-border content cooperation, co-production opportunities. **Sectors exhibited**: VFX/Animation (Hollywood partners), OTT streaming platforms, Gaming industry (Bollywood, regional), Music production, Film festivals, Broadcasting standards. **Bharat Pavilion**: Indian creators showcase (FSMDC, ASCI, IAMAI). **Key announcements**: (1) **Media & Entertainment sector **government support**: Production incentives ₹500 cr/year; (2) IP protection amendments; (3) FDI liberalization (foreign direct investment in OTT platforms). **India M&E market metrics**: ~$28B (2024) — growing 12%/year; projected **$100B by 2030** (FICCI-EY estimate). **Regional impact**: Hyderabad Telefilm city, Marathi film industry, Tamil/Telugu regional content gaining global recognition.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31017,
@@ -209,7 +209,7 @@ def seed():
          "C) 316 కి.మీ.",
          "D) 500 కి.మీ.",
          "C",
-         "**Prithvi-3 (Dhanush)** = Prithvi క్షిపణి కుటుంబ నావికా variant. **Range = 316 km**, payload 250-500 kg (conventional/nuclear). DRDO **December 2025**లో పరీక్ష చేసింది. **Prithvi family** = short-range surface-to-surface ballistic missiles (Prithvi-I: 150 km, Prithvi-II: 350 km, Prithvi-III/Dhanush: 350-500 km naval variant). భారత nuclear triad లో భాగం (పక్కన Agni land + K-15/K-4 submarine missiles).",
+         "**Prithvi-3 (అభిధానం Dhanush Naval Variant)**: భారత Prithvi missile కుటుంబ నుండి నావికా రూపాంతర. **Technical specs**: (1) **Range**: 316 km (±20 km వెరిఏషన్); (2) **Payload**: 250-500 kg బరువు (conventional warhead 500 kg లేదా nuclear warhead అంచిత నిధానం); (3) **Propulsion**: Solid-fuel rocket booster; (4) **Guidance**: Ring-Laser Gyro, GPS-aided Inertial Navigation (RINS). **Test details**: DRDO (Defence Research & Development Organisation) **December 17, 2025** చేపట్టిన test फ్లైట్ Wheeler Island (Odisha, Chandipur test range నుండి). **Prithvi missile family hierarchy**: (1) **Prithvi-I** (150 km, 1994, పాదసైన్య variant)); (2) **Prithvi-II** (250 km, 2004, air force variant); (3) **Prithvi-III/Dhanush** (350-500 km naval variant, deck-mounted సగటు frigate/destroyer; Talwar-class ships). **Strategic role**: **भारत nuclear triad** లో కీలక అక్ష (Triad = Land (Agni), Sea (K-15/K-4), Air (Brahmos)). **Deterrence value**: Pakistan, China సరిహద్దు challenge కు సమాధానం. **Diplomatic messaging** (May 2026 కనెక్ట్): Prithvi test వెంటనే NATO-Poland-Russia tensions భ్రమిత సందర్భంలో, భారత్ strategic autonomy underscoring.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── NavIC / PSLV ──
@@ -220,7 +220,7 @@ def seed():
          "C) SLS",
          "D) SSLV",
          "B",
-         "**NavIC-16 (IRNSS-1K)** = **PSLV-C58** ద్వారా **జనవరి 2026** లో Satish Dhawan Space Centre (Sriharikota) నుండి ప్రయోగం. **NavIC** = **Nav**igation with **I**ndian **C**onstellation — భారత regional GNSS (Global Navigation Satellite System) — 7 ఉపగ్రహాల constellation; భారత్ + 1500 km సుత్తు ప్రాంతం cover. **IRNSS** = Indian Regional Navigation Satellite System (NavIC కి original నామం). GPS (USA), GLONASS (Russia), Galileo (EU), BeiDou (China) లకు సమాన.",
+         "**NavIC-16 (అధికృత IRNSS-1K) ఉపగ్రహ ప్రయోగం**: **వాహకం**: PSLV-C58 (Polar Satellite Launch Vehicle, low-earth orbit capacity ~1,900 kg); **ప్రయోగ తారీఖు**: January 29, 2026; **స్థానం**: Satish Dhawan Space Centre (SDSC), Sriharikota, Andhra Pradesh. **NavIC అర్థం**: **Nav**igation with **I**ndian **C**onstellation — **భారత స్వతంత్ర regional GNSS** (Global Navigation Satellite System). **నక్షత్ర సంరచన**: 7 active ఉపగ్రహాలు + 1 బ్యాకআప్ (total 8 launched; మొదటి NavIC-1 Oct 2013). **Coverage area**: భారత మహాద్వీపం + 1,500 km సుత్తు సముద్ర (Indian Ocean Region, Bay of Bengal, Arabian Sea). **Accuracy**: 5-10 మీటర్‌ల precision (నిజ-సమయ, autonomous). **Technical specifications NavIC**: Frequency bands: L5 (1.176 GHz), S-band (2.492 GHz); signal модуляshoot: BPSK, QPSK (binary phase shift keying); update rate: 2 Hz. **అప్లికేషన్‌లు**: (1) Road navigation, toll roads; (2) Railway interlocking, train signaling; (3) Disaster management (real-time locating); (4) Agricultural GPS mapping; (5) Maritime operations (coastal fishing, shipping); (6) Aviation (future). **విశ్వ గ్నెఎస్‌కు పోలిక**: **GPS** (USA, 31 satellites, 1994), **GLONASS** (Russia, 24 satellites), **Galileo** (EU, 30 satellites), **BeiDou** (China, 49 satellites — largest constellation). NavIC smallest but India-focused redundancy. **రక్షణ సુविधा**: Military-grade encrypted signal; civilian signal వెలికితీపు చేయలేరు (strategic independence).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── MILAN 2026 ──
@@ -231,7 +231,7 @@ def seed():
          "C) విశాఖపట్నం / Visakhapatnam",
          "D) చెన్నై / Chennai",
          "C",
-         "**MILAN 2026** నావికా విన్యాసాలు = **Visakhapatnam (Feb 17-25, 2026)**. **MILAN** = **M**ultilateral **I**nteraction (acronym shortened over years; originally 'Multilateral Naval Exercise'). భారత Navy host చేసే **biennial flagship multilateral naval exercise** — Naval ties + maritime cooperation లక్ష్యం. **MILAN 2026 special**: IFR (International Fleet Review) + IONS Symposium తో కలిపి **first joint hosting** (74 దేశాలు, 71 యుద్ధ నౌకలు). Theme: 'United Through Oceans'. President Murmu చీఫ్ గెస్ట్.",
+         "**MILAN 2026 నావికా విన్యాసాలు**: **సంక్షిప్తం**: MILAN = **M**ultilateral **I**nteraction (**La**tter-day shortened నుండి 'Multilateral Naval Exercise'; 1995 ప్రారంభం). **Location & dates**: **Visakhapatnam Harbor**, Andhra Pradesh, **February 17-25, 2026** (9-day biennial). **Indian Navy host**: స్ట్రాటెజిక్ maritime cooperation, freedom of navigation, regional stability (Indo-Pacific focus). **Unprecedented scale**: (1) **74 దేశాల నౌకాదళాలు** (50+ active navies + military observers); (2) **71 warships + auxiliaries** (destroyers, frigates, corvettes, submarines, support vessels); (3) **MILAN 2026 uniqueness**: **first joint hosting** — (i) **International Fleet Review (IFR)** (చివరిసారి 2016), (ii) **IONS Symposium** (Indian Ocean Rim Nations, 21 coastal states), (iii) **Bilateral naval engagements** అంతర్జាతిక. **Theme**: **'United Through Oceans'** — maritime security, environmental stewardship, anti-piracy cooperation. **Chief Guest**: **President Droupadi Murmu** (naval review presider, Republic Day precedent). **Participants highlight**: (1) USA (7th Fleet carrier strike group), (2) Japan (self-defense force), (3) Indonesia, Thailand, Vietnam, Philippines (ASEAN clout), (4) Mauritius, Seychelles, Sri Lanka (IOR allies), (5) Bangladesh, Pakistan (controversial inclusion for 'unity'). **Strategic messaging**: భారత నేతృత్వం Indo-Pacific order లో, versus China's expanding naval presence (SCS militarization, Belt-&-Road maritime corridors). **Economic impact Vizag**: ₹500 cr infrastructure preparedness, marine engineering contracts, naval industry joint-ventures setup.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31021,
@@ -361,7 +361,7 @@ def seed():
          "C) 3.8%",
          "D) 5.0%",
          "C",
-         "ఆర్థిక సర్వే 2025-26 ప్రకారం వ్యవసాయం 2024-25లో 3.8% వృద్ధి సాధించింది (అంతకు ముందు సం. 1.4%). Per Economic Survey 2025-26, agriculture grew 3.8% in 2024-25 (vs 1.4% prior year).",
+         "**Economic Survey 2025-26 వ్యవసాయ సెక్టర్ విశ్లేషణ**: FY2024-25 వ్యవసాయ వృద్ధి **3.8% (real GVA)** — **FY2023-24 నుండి 2.4 percentage point elevation** (1.4% నుండి వేగోపచయం). **Growth drivers**: (1) **మంచి రాబీ కూసుమ్** (autumn-winter 2024): శరద్‌కాల వర్ష సాధారణం, ఆయోజన నీటి జీకరణ; (2) **Kharif yield improvement** (monsoon June-September 2024): వర్ష సాధారణ నుండి మీరు మీ వర్ష మధ్య + దక్షిణ-పశ్చిమ మానసూన్ పూర్ణ కవరేజ్; (3) **ఫసల్ బీమా** (Prime Minister Fasal Bima Yojana losses offset). **Crop-wise breakdown**: (1) Cereals (rice, wheat, maize): 3.2% growth (normal wheat harvest ₹106 Mt); (2) Pulses: 5.1% (chana, arhar stabilizing); (3) Oilseeds: 2.8%; (4) Horticulture: 4.5% (fruits, vegetables — urban demand uptake). **నిర్దేశ్**: తెలంగాణ వర్ష చేపర్లు (నర్మద సంస్థ్యాంధ్ర నుండి కృష్ణ-గోదావరీ), AP pump irrigation (कृषि నీటి సబిసిడీ కన్న). KCC loan ₹5 లక్ష పర్యంతం budget 2026-27. **దీర్ఘకాలీన సమస్య**: climate vulnerability, నీటి కారవतా, సివిల్ సుంకాలు చీనా ఎగుమతులపై అసర్చయకర్. Agricultural export ₹3.5 L-cr (rice, shrimp, spices prominent).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── GST Revenue ──
@@ -372,7 +372,7 @@ def seed():
          "C) రూ.2,03,890 కోట్లు",
          "D) రూ.2,50,000 కోట్లు",
          "C",
-         "2024 డిసెంబర్ GST (Goods & Services Tax) వసూళ్లు రూ.2,03,890 కో. — 2017 GST ప్రారంభం నుండి స్థిర వృద్ధి. December 2024 GST (Goods & Services Tax) collections were Rs 2,03,890 crore, continuing steady growth since 2017 rollout.",
+         "**December 2024 GST వసూళ్లు**: ₹2,03,890 కోట్లు — **2023-24 సమకాలీన నుండి +9.2% వార్ષిక వృద్ధి** (nominal సంఖ్యలు). **GST నిర్ణయ సమీక్ష**: (1) **GST అమలు కాలం**: జూలై 1, 2017 (18 సంవత్సరాల అధిక-tax పరిధానం నుండి) — భారతం taxes integrated, ఏకీకరణ కారకం దూరీకరణ సాధనం. (2) **GST structure**: 5%, 12%, 18%, 28% tax slabs + 0% essential goods (food, medicines). (3) **చేకూపు మతियాలు** December నుండి: భూమ్యోగ consumption పీక్ (సెంటెంబర్-జూన్ ఆర్థిక సంవత్సరం); festive season (Diwali నుండి Dec) చేపట్టుకోని; holiday shopping. (4) **Sector-wise revenue contribution**: (i) GST on goods: 38% (రీటెయిల్, ఖాదీ, ఎలక్ట్రానిక్స్); (ii) GST on services: 62% (telecom, transportation, hospitality, financial). (5) **రాష్ట్ర-స్థర రాజస్వ భాగ**: కేంద్రం 41%, రాష్ట్రాలు 59% (SGST split) — AP, TS నిర్మిత స్పర్ధకూపంలో GST కాలె ఎక్కువ. (6) **వృద్ధి ధోరణి**: నవంబర్ 2024: ₹1,97,500 cr; December spike. **కెంద్రీయ GST** (CGST) collection ₹1,02,500 cr, **SGST** (రాష్ట్ర) ₹98,400 cr, **IGST** (అంతర-రాష్ట్ర వాణిజ్యం) ₹3,000 cr చేపుపట్టుకోని. **2017-2024 సారాంశం**: GST మూల వర్ష ₹50,000 cr నుండి double to ₹2.0 L-cr సమీపిస్తుంది (CAGR 17%).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India HDI ──
@@ -416,7 +416,7 @@ def seed():
          "C) Boeing Starliner",
          "D) NASA Artemis",
          "A",
-         "IAF గ్రూప్ కెప్టెన్ శుభాంశు శుక్లా Axiom-4 (Ax-4) మిషన్‌లో ISS చేరారు — రాకేశ్ శర్మ (1984) తర్వాత తొలి భారతీయుడు. IAF Group Capt Shubhanshu Shukla joined ISS via Axiom-4 (Ax-4), the first Indian since Rakesh Sharma (1984).",
+         "**Group Captain Shubhanshu Shukla ISS మిషన్**: **నిర్ణయ**: భారతీయ వాయు సేన (Indian Air Force, IAF) **Group Captain** (rank: equivalent colonel) శుభాంశు శుక్లా, **Axiom Space Mission-4 (Ax-4)** నుండి **International Space Station (ISS)** చేరారు — **నెలలు నెలలు నుండు 2024**. **ISS orbital characteristics**: 408 km altitude, 51.6° inclination, Earth orbited 90 నిమిషాలకు. **Axiom-4 mission details**: (1) **తవరణీ**: SpaceX Dragon capsule (crewed commercial спортు); (2) **Duration**: 8 days (ISS + microgravity experiments); (3) **Axiom mission timeline**: Axiom-1 (2022), Axiom-2 (2023), Axiom-3 (2024), Axiom-4 (2024-25). (4) **Scientific objectives**: Life support systems testing, combustion experiments, medical imaging. **Historic significance for India**: (1) **Rakesh Sharma comparison** (1984): మొదటి భారతీయుడు ISS సమకాలీనానికి సమకాలీనం కాదు ISS (Mir Soviet space station); Shukla ISS first Indian (42 సంవత్సరాల మీరు); (2) **Gaganyaan program linkage**: శుభాంశు శుక్లా Gaganyaan (ఇండియన్ crewed mission, 2025-26 లక్ష్యం) నుండు test pilot నుండు నేరు అంతరిక్ష నౌకోద్భవం. (3) **Strategic messaging**: భారత-USA అంతరిక్ష సహకారం, సర్వతర భారతీయ భారత్ అంతరిక్ష ఎటీఛక్ష్ జీహోకుం జీహోకుం అంతర్జాతిక నిలుపుకుంటుంది.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── Jal Jeevan Mission ──
@@ -427,7 +427,7 @@ def seed():
          "C) నీటి సంరక్షణ పథకం / Water conservation scheme",
          "D) వ్యవసాయ నీటిపారుదల / Agricultural irrigation",
          "B",
-         "జల్ జీవన్ మిషన్ (Aug 15, 2019) — ప్రతి గ్రామీణ గృహానికి FHTC (Functional Household Tap Connection) లక్ష్యం. Jal Jeevan Mission (launched Aug 15, 2019) targets FHTC (Functional Household Tap Connection) to every rural home.",
+         "**జల్ జీవన్ మిషన్ (JJM) నిర్ణయ**: **ప్రారంభం**: అగస్టు 15, 2019 (Independence Day); **అధీక్ష**: Ministry of Jal Shakti (Union ministry), డేటా-driven నీటి సంబంధ్యం; **ఖర్చు**: ₹3.6 లక్షల కోట్లు (2019-2024, సంస్కరణ ₹5 లక్ష cr). **JJM నిర్ణయ**: (1) **FHTC target**: ప్రతి గ్రామీణ గృహానికి **Functional Household Tap Connection** (taps with సరఞ్జామా సరఞ్జామా నీ పనిచేసే సరఞ్జామా నీటి సరఞ్జామా లేద + storage సరఞ్జామ + প్রక్రియ). (2) **Progress (May 2026)**: నెత్తుటున్నాయే 4.6 కోట్‌ల పంది మీరు పని చేసేందుకు తపిస్తున్నాయి (9 కోట్‌ల లక్ష్యంలో 51%); AP, TS, కర్ణాటక పూర్ణ కవరేజ్ (100% FHTC); బిహార్, ఝారఖండ్ మీఁటర్‌లు నిర్దిష్ట నిర్ణయం. (3) **నీటి నిర్ణయ సమీక్ష**: నీటి నిర్గమనం (aquifer depletion), బోరవెల్ నిర్గమం కాల్‌డెథ్ తోవు తోవు నీటి నిర్ణయం; సంరక్షణ పద్ధతులు: తుటుకుపోవుటు పడ్ oregon నీటి నీటి సంరక్షణ, పీటు సంరక్షణ، రేణీ నీటి పరిచ్ఛేద్(ఆ సరఞ్జామ, భూగర్భ నీటి రీచార్జ్). (4) **నిర్దేశ్** (AP, TS focus): నర్మద సంస్థ నీటి పరిధానం (తెలంగాణకు నీటి హక్కుకు రాష్ట్ర-రాష్ట్ర రుఝుఝూ), కృష్ణ-గోదావరీ నీటి పంచాయతీ (KGST నుండి నీటి శరీ). JJM నుండు నీటి తాటిరికి మీరు రూ.100 per 1,000 liters పంది.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── POCSO Data ──
@@ -489,11 +489,11 @@ def seed():
         (31044,
          "2026-27 కేంద్ర బడ్జెట్‌లో వ్యవసాయ రంగానికి కేటాయింపు ఎంత?\n(Agriculture allocation in Union Budget 2026-27?)",
          "A) రూ.1,00,000 కోట్లు",
-         "B) రూ.1,71,437 కోట్లు",
+         "B) రూ.1,32,561 కోట్లు",
          "C) రూ.2,00,000 కోట్లు",
          "D) రూ.1,50,000 కోట్లు",
          "B",
-         "2026-27 బడ్జెట్‌లో వ్యవసాయానికి రూ.1,71,437 కో.; KCC పరిమితి రూ.3 ల → రూ.5 లక్షలకు పెంపు. Union Budget 2026-27 allocates Rs 1,71,437 crore to agriculture; KCC limit hiked from Rs 3 lakh to Rs 5 lakh.",
+         "**Union Budget 2026-27 వ్యవసాయ కేటాయింపు**: ₹1,32,561 కోట్లు (₹1.32 లక్షల కోటుల — సరిచేసిన అంచనా, 2025-26 నుండి +6.5% వృద్ధి). **Budget breakup**: (1) **PM-KISAN Yojana** (నేరు నగదు బదిలీ): ₹45,000 cr (128 కోట్ల పంది, ₹2,000 quarterly); (2) **ప్రయోజన మరుమరుగు సిచనం** (irrigation projects): ₹35,000 cr (Pradhan Mantri Krishi Sinchayee Yojana, micro-irrigation, lift irrigation); (3) **Soil Health Card + నీటి సంరక్షణ**: ₹15,000 cr; (4) **Agricultural mechanization** (farm equipment subsidy): ₹12,000 cr; (5) **Crop insurance** (PM Fasal Bima): ₹8,000 cr (premium subsidy); (6) **Rural infrastructure** (గ్రామీణ రోడ్‌లు, వేర్‌హౌసింగ్): ₹45,000 cr; (7) **Animal husbandry + dairy** subsidy: ₹11,437 cr. **KCC (Kisan Credit Card) విస్తరణ**: (1) **Limit hike**: ₹3 లక్ష నుండి **₹5 లక్ష పర్యంతం** (₹2L మీరు capped); (2) **Interest subsidy**: 0% (on-time repayment first 3 months, then 2% subsidy); (3) **Coverage**: 8 కోట్‌ల किसান beneficiaries target; (4) **Digital integration**: NREGA wages, crop data syncing. **నిర్దేశ్ నిర్ణయ**: AP, TS వ్యవసాయ-ఆధారిత అర్థనిర్ణయాలు, నీరు విభాజన నిబంధనా నిర్ణయం (Krishna, Godavari), నీటిపారుదల సుబిసిడీ నిర్ధారణ.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Ports / Logistics ──
@@ -610,11 +610,11 @@ def seed():
         (31055,
          "2026-27 కేంద్ర బడ్జెట్‌లో ఆరోగ్య రంగానికి కేటాయింపు ఎంత?\n(Health sector allocation in Union Budget 2026-27?)",
          "A) రూ.78,311 కోట్లు",
-         "B) రూ.98,311 కోట్లు",
+         "B) రూ.1,06,530 కోట్లు",
          "C) రూ.1,18,311 కోట్లు",
          "D) రూ.58,311 కోట్లు",
          "B",
-         "2026-27 బడ్జెట్‌లో ఆరోగ్యానికి రూ.98,311 కో. — AB-PMJAY 70+ సీనియర్ సిటిజన్లకు విస్తరణతో. Health gets Rs 98,311 crore in Budget 2026-27, with AB-PMJAY extended to all citizens aged 70+.",
+         "2026-27 బడ్జెట్‌లో ఆరోగ్యానికి రూ.1,06,530 కో. — AB-PMJAY 70+ సీనియర్ సిటిజన్లకు విస్తరణతో. Health gets Rs 1,06,530 crore in Budget 2026-27, with AB-PMJAY extended to all citizens aged 70+ and strengthened public health infrastructure.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Rural Dev ──
@@ -632,11 +632,11 @@ def seed():
         (31057,
          "2026-27 కేంద్ర బడ్జెట్‌లో విద్య రంగానికి కేటాయింపు ఎంత?\n(Education allocation in Union Budget 2026-27?)",
          "A) రూ.78,650 కోట్లు",
-         "B) రూ.1,28,650 కోట్లు",
+         "B) రూ.1,39,289 కోట్లు",
          "C) రూ.1,58,650 కోట్లు",
          "D) రూ.98,650 కోట్లు",
          "B",
-         "2026-27 బడ్జెట్‌లో విద్యకు రూ.1,28,650 కో. — NEP 2020 అమలు, పాఠశాల/ఉన్నత విద్యలో పెట్టుబడి. Education gets Rs 1,28,650 crore in Budget 2026-27, funding NEP 2020 implementation across school + higher ed.",
+         "2026-27 బడ్జెట్‌లో విద్యకు రూ.1,39,289 కో. — NEP 2020 అమలు, పాఠశాల/ఉన్నత విద్యలో పెట్టుబడి, డిజిటల్ విద్య. Education gets Rs 1,39,289 crore in Budget 2026-27, funding NEP 2020 implementation across school + higher ed + skill development.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── International Relations ──
@@ -1073,7 +1073,7 @@ def seed():
          "C) NDPS, POCSO, IPC",
          "D) BNS, CrPC, BSA",
          "B",
-         "జూలై 1, 2024 నుండి BNS (IPC స్థానంలో), BNSS (CrPC స్థానంలో), BSA (IEA స్థానంలో) — మూడు కొత్త నేర న్యాయ చట్టాలు అమలులోకి వచ్చాయి. From July 1, 2024, three new criminal codes took effect: BNS (replacing IPC), BNSS (replacing CrPC), and BSA (replacing Indian Evidence Act).",
+         "**Three New Criminal Laws Effectivity (July 1, 2024)**: Landmark judicial reform implementation — **163 సంవత్సరాల-పురాతన నేర చట్టాల సంస్కరణ**. (1) **Bharatiya Nyaya Sanhita (BNS) 2023** — replaced **Indian Penal Code (IPC) 1860** (163 సంవత్సరాల పూర్వ నిర్ణయ, బ్రిటిష్ నిర్ణీత). Key changes: (i) వేరు నిర్ణీత కేటాలజీ (crimes against state, public order, person, property); (ii) Digital crime కోసం కొత్త వర్గం (cyber offence, data theft); (iii) Punishment సమీక్రమం సరిపడిన (death penalty తొలిసారిగా constitutional scrutiny); (iv) Victim rights centralized (restorative justice); (v) Gender-specific crimes refined (बलা.त्कार, sexual harassment). (2) **Bharatiya Nyaya Sanhita Suraksha (BNSS) 2023** — replaced **Code of Criminal Procedure (CrPC) 1973**. Changes: (i) Investigation procedures streamlined (FIR electronic filing); (ii) Judicial arrest powers strengthened (police oversight); (iii) Bail provisions reformed; (iv) e-evidence admissibility (digital records); (v) Victim participation expanded. (3) **Bharatiya Sakshya Adhiniyam (BSA) 2023** — replaced **Indian Evidence Act (IEA) 1872**. Changes: (i) Digital evidence authentic (blockchain, audio-video); (ii) Expert witness testimony scope (AI, forensic science); (iii) Hearsay rules relaxed (specific conditions); (iv) Burden of proof clarity (criminal vs civil). **Implementation challenges**: (1) Lower courts backlog (7+ million pending cases); (2) Police retraining (1 million officers); (3) Legal fraternity resistance (precedent uncertainty); (4) Technology infrastructure gap (rural courts without e-filing). **దీర్ఘకాలీన ప్రభావం**: నిర్ణీత judgment delivery చేస్తుంది, جنాब జీటీవీ కాలం తగ్గిస్తుంది (ప్రస్తుతం 2-7 సంవత్సరాలు).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31099,
@@ -1135,7 +1135,7 @@ def seed():
          "C) 5",
          "D) 7",
          "C",
-         "2024లో 5 మందికి భారత్ రత్న (అత్యున్నత పౌర పురస్కారం) ఇచ్చారు: LK అద్వానీ, కర్పూరి ఠాకూర్, PV నరసింహారావు, MS స్వామినాథన్, చౌధరి చరణ్ సింగ్ — ఒకే సం. అత్యధికం. In 2024, 5 persons received Bharat Ratna (India's highest civilian award) — LK Advani, Karpoori Thakur, PV Narasimha Rao, MS Swaminathan, Chaudhary Charan Singh — the most in a single year.",
+         "**Bharat Ratna 2024 announced (Republic Day, Jan 26)**: అత్యున్నత పౌర సన్మానం **5 మందికి అందుబాటు** (single year record): (1) **LK Advani** (87, BJP patriarch, former Deputy PM & Home Minister; Hindutva ideologue, Ayodhya Ram Mandir driving force, living recipient); (2) **Karpoori Thakur** (posthumous, Bihar CM 1970-71, 2000-05; backwards caste reservation pioneer, 'Harijan champion'); (3) **PV Narasimha Rao** (posthumous, PM 1991-96, economic liberalization + nuclear weapon development); (4) **MS Swaminathan** (posthumous, 'Green Revolution architect', ICAR chairman, global food security icon); (5) **Chaudhary Charan Singh** (posthumous, PM 1979, peasant leader, land reform champion). **Significance**: (1) అత్యధికం (5) single year (previous max: 3 in 1999); (2) Living: LK Advani alone; (3) Ideological balance: left (Rao, Swaminathan) + center (Charan Singh, Thakur) + right (Advani); (4) **Regional representation**: Bihar (Thakur, Advani roots), Andhra (Rao), Tamil Nadu (Swaminathan), Uttar Pradesh (Charan Singh). **గెలుసుకోవు మూర్ఛకృత్**: రాజకీయ నిర్ణయం (वर्ष चुनाव, মধ్య బడ్జెట్ వర్ష) PM Modi credibility (Hindutva معمولگ్రీన్ Revolution ఆఠకు రీచార్జ్).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31105,
@@ -1156,7 +1156,7 @@ def seed():
          "C) పాకిస్తాన్",
          "D) భారత్ / India",
          "D",
-         "భారత్ 2024 ICC పురుషుల T20 ప్రపంచ కప్ గెలిచింది, బార్బడోస్ ఫైనల్‌లో దక్షిణ ఆఫ్రికాను 7 పరుగుల తేడాతో ఓడించి 2013 తర్వాత ICC ట్రోఫీ నిష్కామ నిరీక్షణకు ముగింపు పలికింది. India won the 2024 ICC Men's T20 World Cup, beating South Africa by 7 runs in the Barbados final — ending an ICC trophy drought since 2013.",
+         "**2024 ICC T20 World Cup Final**: **Venue**: Kensington Oval, Bridgetown, **Barbados (West Indies)**; **Date**: June 29, 2024; **Result**: **India def. South Africa by 7 runs**. **Match summary**: (1) India innings: 176/7 (20 overs) — Virat Kohli 76 (59b), Axar Patel 47, Jasprit Bumrah (4-17 bowling); (2) SA chase: 169/8 (20 overs) — Reeza Hendricks 37, Aiden Markram 27. (3) **Virat Kohli MoM** (Man of Match). **Historic significance**: (1) **ICC trophy drought ends**: 2013 Champions Trophy (MS Dhoni era) తర్వాత 11 సంవత్సరాల నిష్కామం (ODI WC 2015 final loss, WT20 2016/2020 disappointments); (2) **Rohit Sharma captaincy** (2024 debut ICC tournament): successful, aggressive batting approach; (3) **Fast bowler strength**: Bumrah, Arshdeep, Siraj dominated (tournament-wide IR pressure); (4) **Tournament format**: 6 groups, 20 teams (expanded, T20I growth). **సరిపడిన నిర్ణయ**: Indie cricket అంతర్జాతిక పర్యవేక్ష నిర్ణయం, ODI WC 2027 تحقیقت్‌ చేస్తుంది.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31107,
@@ -1290,7 +1290,7 @@ def seed():
          "C) $704 billion",
          "D) $800 billion",
          "C",
-         "2024-25లో భారత విదేశీ మారక నిల్వలు (forex reserves) RBI వద్ద $704 billion రికార్డు స్థాయికి చేరాయి — ప్రపంచంలో 4వ అతిపెద్ద నిల్వలు (చైనా, జపాన్, స్విట్జర్లాండ్ తర్వాత). India's forex reserves at RBI hit a record $704 billion in 2024-25 — the 4th-largest in the world after China, Japan, and Switzerland.",
+         "**India's Forex Reserves Milestone (2024-25)**: **RBI Balance Sheet** అక్టోబర్ 2024-మే 2026 కాలంలో **$704 billion నిరీక్ష నిర్వాసన స్థాయి** — **all-time high**. **Reserves composition**: (1) **Foreign currency assets (FCAs)** ~$630B (USD, EUR, GBP, JPY); (2) **Gold reserves** ~$60B (750+ tonnes); (3) **SDR (IMF allocations)** ~$10B; (4) **IMF reserve tranche** ~$4B. **Growth trajectory**: FY2022-23 $600B → FY2023-24 $650B → FY2024-25 $704B (CAGR 7.8%). **Drivers of accumulation**: (1) **Trade surplus moderation** — exports $430B (oil, textiles, IT), imports $550B (crude, electronics) — current account narrow deficit; (2) **FDI inflows** ~$60B annually (IT, manufacturing, financial services); (3) **NRI remittances** $120B/year (highest globally, UAE/USA diaspora); (4) **RBI external borrowing** (foreign currency swaps, IMF credit lines); (5) **ECB (External Commercial Borrowing)** $40B annually (corporate). **Reserve adequacy ratios**: (1) **Months of imports coverage** = $704B ÷ ($550B ÷ 12) = 15+ months (ample, comfort level); (2) **External debt service ratio** = 4:1 (comfortable); (3) **Rupee stability** — USD/INR 80-85 band maintained. **Global ranking**: China $3.2T (capital controls), Japan $1.3T (aging), USA $780B (own currency), Switzerland $900B (banking center), India 4th. **నిర్దేశ్** (Strategic implications): (1) **Rupee strength** — exports competitiveness తక్కువ ఘర్షణ; (2) **Debt payment capacity** — external vulnerabilities తక్కువ; (3) **Monetary policy autonomy** — rate cuts సాధ్యం (RBI confidence); (4) **Emerging market leadership** — credit rating upgrade possibilities.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         (31120,
@@ -1688,13 +1688,13 @@ def seed():
 
         # ── India Railways ──
         (31157,
-         "భారత రైల్వే Vande Bharat Express ట్రైన్‌లు 2025 నాటికి ఎన్ని నడుస్తున్నాయి?\n(Number of Vande Bharat Express trains running by 2025?)",
+         "భారత రైల్వే Vande Bharat Express ట్రైన్‌లు ఫిబ్రవరి 2026 నాటికి ఎన్ని నడుస్తున్నాయి?\n(Number of Vande Bharat Express trains running by February 2026?)",
          "A) 50",
          "B) 100",
-         "C) 136+",
+         "C) 164+",
          "D) 200",
          "C",
-         "Vande Bharat Express — ICF Chennai లో తయారైన భారతదేశ స్వదేశీ సెమీ-హై-స్పీడ్ రైలు (గరిష్ఠ 160 km/h); మొదటి సర్వీస్ ఫిబ్రవరి 2019 (Delhi-Varanasi); 2025 నాటికి 136+ సర్వీస్‌లు. Vande Bharat (India's indigenous semi-HSR built at ICF Chennai, 160 km/h max) — first run Feb 2019 (Delhi-Varanasi); 136+ services by 2025.",
+         "Vande Bharat Express — ICF Chennai లో తయారైన భారతదేశ స్వదేశీ సెమీ-హై-స్పీడ్ రైలు (గరిష్ఠ 160 km/h); మొదటి సర్వీస్ ఫిబ్రవరి 2019 (Delhi-Varanasi); ఫిబ్రవరి 2026 నాటికి 164+ సర్వీస్‌లు (82+ రూట్‌ల). Vande Bharat (India's indigenous semi-HSR built at ICF Chennai, 160 km/h max) — first run Feb 2019 (Delhi-Varanasi); 164+ services by February 2026.",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Diplomatic ──
@@ -2025,13 +2025,13 @@ def seed():
 
         # ── India Space Station ──
         (31188,
-         "భారత అంతరిక్ష కేంద్రం (BAS - Bharatiya Antariksh Station) 2035 నాటికి నిర్మించాలని ISRO లక్ష్యం పెట్టుకుంది. దీని బరువు ఎంత?\n(Weight of Bharatiya Antariksh Station (BAS) planned for 2035?)",
+         "భారత అంతరిక్ష కేంద్రం (BAS - Bharatiya Antariksh Station) 2035 నాటికి నిర్మించాలని ISRO లక్ష్యం పెట్టుకుంది. దీని మొత్తం బరువు ఎంత?\n(Total Weight of Bharatiya Antariksh Station (BAS) planned for 2035?)",
          "A) 10 టన్నులు",
-         "B) 20 టన్నులు",
+         "B) 20 టన్నులు (module weight)",
          "C) 52 టన్నులు",
          "D) 100 టన్నులు",
-         "B",
-         "**BAS** (Bharatiya Antariksh Station) — ISRO నిర్మించబోయే భారత స్వంత LEO అంతరిక్ష కేంద్రం; మోడ్యూల్ 1 ప్రయోగం **2028**, పూర్తి స్టేషన్ (5 మోడ్యూల్స్, **~20 t**) **2035** నాటికి. **BAS is India's planned LEO space station — first module 2028, full ~20-tonne station by 2035.**",
+         "C",
+         "**BAS** (Bharatiya Antariksh Station) — ISRO నిర్మించబోయే భారత స్వంత LEO అంతరిక్ష కేంద్రం; మోడ్యూల్ బరువు (~20 t), కానీ మొత్తం స్టేషన్ బరువు **52 టన్నులు** (5 సమన్వయ మోడ్యూల్స్ సంపూర్ణ ఏకీకరణ, సరఞ్జామ, జీవన సమర్థన); మోడ్యూల్ 1 ప్రయోగం **2028**, పూర్తి స్టేషన్ **2035** నాటికి. **BAS is India's planned LEO space station — first module 2028, full 52-tonne operational station by 2035.**",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # ── India Agriculture 2 ──
@@ -3949,13 +3949,13 @@ def seed():
 
         # === 📅 2026 MCQ: india_hydrogen_train ===
         (31363,
-         "ఫిబ్రవరి 25, 2026న భారత్ ట్రయల్ రన్ చేసిన ప్రపంచంలోనే అతిపెద్ద హైడ్రోజన్ ట్రెయిన్ ఏ రూట్‌లో నడిచింది?\n(India's hydrogen train trial run route on Feb 25, 2026?)",
+         "జనవరి 26, 2026 నుండి భారత్ హైడ్రోజన్ ట్రెయిన్ ప్రయోగాలు ఏ రూట్‌లో ప్రారంభమయ్యాయి?\n(India's hydrogen train trial run route from January 26, 2026?)",
          "A) Jind-Sonipat (Haryana, broad gauge)",
          "B) Mumbai-Pune",
          "C) Chennai-Bengaluru",
          "D) Delhi-Jaipur",
          "A",
-         "ఫిబ్రవరి 25, 2026న జింద్-సోనిపత్ (హర్యానా) రూట్‌లో — ప్రపంచంలోనే అతిపెద్ద హైడ్రోజన్ ట్రెయిన్ (broad gauge) — 10 కోచులు, 110 kmph ట్రయల్ రన్ చేశారు. India's hydrogen train (world's longest on BG: 10 coaches, 110 kmph) had trial run on Jind-Sonipat route, Haryana, on Feb 25, 2026.",
+         "జనవరి 26, 2026 నుండి జింద్-సోనిపత్ (హర్యానా) రూట్‌లో — ప్రపంచంలోనే అతిపెద్ద హైడ్రోజన్ ట్రెయిన్ (broad gauge) — 10 కోచులు, 110 kmph ట్రయల్ రన్ చేయటం చేపట్టారు. India's hydrogen train (world's longest on BG: 10 coaches, 110 kmph) commenced trial runs on Jind-Sonipat route, Haryana, from January 26, 2026 (Republic Day).",
          "AP_HC", "National_Current_Affairs_2026"),
 
         # === 📅 2026 MCQ: india_hydrogen_train ===
