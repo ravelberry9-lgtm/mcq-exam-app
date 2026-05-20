@@ -155,6 +155,16 @@ body.fp .fp-ov{display:flex}
 .notes-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
 .notes-body.open{max-height:68vh;overflow:hidden}
 .notes-frame{width:100%;height:66vh;border:none;display:block;background:#fff}
+.notes-frame {
+  content-visibility: auto;
+}
+/* Hide Perplexity buttons in iframe content */
+.notes-panel a[href*="perplexity"],
+.notes-panel button[onclick*="perplexity"],
+.notes-panel [class*="pplx"],
+.notes-panel [class*="perplexity"] {
+  display: none !important;
+}
 .notes-spin{width:20px;height:20px;border:3px solid #e0f2f1;border-top-color:#00695c;border-radius:50%;animation:spin .7s linear infinite;margin:24px auto}
 /* subtopic selection */
 .subtopic-box{margin-top:14px;background:#e8eaf6;border-radius:12px;padding:12px 14px;text-align:left}
@@ -765,7 +775,20 @@ function fetchNotes(qid) {
   }
   panel.classList.add('show');
   if(lbl)lbl.textContent=label;
-  frame.src='/api/topic-notes-html/'+qid;
+  // Load notes from static files
+  let notesFile = '';
+  if(qid>=30001&&qid<=30100) notesFile='/static/notes/General_Science/Study_Notes/mideast_war_2025_26_notes.html';
+  else if(qid>=20001&&qid<=20086) notesFile='/static/notes/General_Science/Study_Notes/intl_organisations_notes.html';
+  else if(qid>=21001&&qid<=21100) notesFile='/static/notes/General_Science/Study_Notes/summits_conferences_notes.html';
+  else if(qid>=22001&&qid<=22102) notesFile='/static/notes/General_Science/Study_Notes/conflicts_geopolitics_notes.html';
+  else if(qid>=23001&&qid<=23092) notesFile='/static/notes/General_Science/Study_Notes/awards_honours_notes.html';
+  else if(qid>=25001&&qid<=25100) notesFile='/static/notes/General_Science/Study_Notes/environment_climate_notes.html';
+  else if(qid>=26001&&qid<=26130) notesFile='/static/notes/General_Science/Study_Notes/science_technology_notes.html';
+  else if(qid>=27001&&qid<=27095) notesFile='/static/notes/General_Science/Study_Notes/sports_current_affairs_notes.html';
+  else if(qid>=28001&&qid<=28105) notesFile='/static/notes/General_Science/Study_Notes/reports_indices_notes.html';
+  else if(qid>=29001&&qid<=29100) notesFile='/static/notes/General_Science/Study_Notes/intl_events_appointments_notes.html';
+  else notesFile='/static/notes/AP_Current_Affairs/Divisions/div01_elections_cabinet.html'; // Default
+  frame.src=notesFile;
 }
 
 function toggleNotes() {
