@@ -7397,20 +7397,15 @@ def topic_notes_html(qid):
         html = open(path, 'r', encoding='utf-8').read()
         inject = (
             '<style>'
-            '.bi-te,.te-td,.cover-te,.te-tag,[class*="te-"]{display:none!important}'
-            'span.lang-tag{display:none!important}'
-            '.cover{page-break-after:normal!important;border:none!important;'
-            'box-shadow:none!important;margin:0!important;padding:4px 0!important}'
-            'body{font-size:13px!important;padding:10px 14px!important;margin:0!important;'
-            'background:#fff!important;color:#1a1a2e!important;'
-            'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important}'
-            'h1,h2,h3,h4,h5{font-size:15px!important;color:#1a237e!important;'
-            'margin:10px 0 6px!important;font-weight:700!important}'
-            'table{width:100%!important;border-collapse:collapse!important;'
-            'font-size:12px!important;margin:8px 0!important}'
-            'th{background:#1a237e!important;color:#fff!important;padding:6px 8px!important;'
-            'text-align:left!important;font-size:12px!important}'
-            'td{border:1px solid #c5cae9!important;padding:5px 8px!important;'
-            'vertical-align:top!important;line-height:1.5!important}'
-            'tr:nth-child(even) td{background:#f0f2ff!important}'
-            'p,li{font-size:13px!importa                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+            'p,li{font-size:13px!important}'
+            '</style>'
+        )
+        html = html.replace('</head>', inject + '</head>')
+        return html
+    except Exception as e:
+        return ('<p style="font-family:sans-serif;padding:20px;color:#888">'
+                'Error loading notes: ' + str(e) + '</p>'), 500
+
+
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0', port=5000)
