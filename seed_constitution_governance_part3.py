@@ -200,7 +200,7 @@ The dissolution safeguard reflects constitutional design: while President has fo
 
     # Q63 - ID: 31613
     (2, 3,
-     "Constitutional framework for joint sessions of Parliament addresses which legislative necessity:\nთెguా: సంసద్ సంయుక్త సమావేశం కోసం సంవిధానిక చట్రం ఈ శాసన అవసరం సంబోధిస్తుంది:",
+     "Constitutional framework for joint sessions of Parliament addresses primarily resolving deadlock between Lok Sabha and Rajya Sabha on ordinary bills.\nసంసద్ సంయుక్త సమావేశం కోసం సంవిధానిక చట్రం ప్రధానంగా సాధారణ బిల్లుల్లో సభల మధ్య గతిరోధం సమాధానం.",
      "Resolving deadlock between Lok Sabha and Rajya Sabha on ordinary bills / సాధారణ బిల్లుల్లో సభల మధ్య గతిరోధం సమाధานం",
      "Constitutional amendment procedures when state ratification required / సంవిధానిక సవరణ విధానం రాష్ట్ర ఆమోదనం అవసరమైనప్పుడు",
      "Election of President and Vice-President / రాష్ట్రపతి మరియు ఉపరాష్ట్రపతి ఎన్నికలు",
@@ -471,7 +471,7 @@ The constitutional tension: Should party members have freedom to change affiliat
 
     # Q75 - ID: 31625
     (2, 2,
-     "Constitutional procedures distinguishing Lok Sabha from Rajya Sabha legislative authority address:\nთెguా: లోక్ సభకు భిన్నమైన రాజ్య సభ శాసన అధికారం తేడా సంవిధానిక విధానం సంబోధిస్తుంది:",
+     "Constitutional procedures distinguishing Lok Sabha from Rajya Sabha legislative authority address Lok Sabha supremacy on fiscal matters and ordinary bills vs Rajya Sabha's federal representation role.\nలోక్ సభకు భిన్నమైన రాజ్య సభ శాసన అధికారం తేడా లోక్ సభ ఆర్థిక ఆధిపత్యం vs రాజ్య సభ సమాఖ్య భూమిక.",
      "Fundamental rights protection vs state autonomy balance / ప్రాథమిక హక్కుల సంరక్షణ vs రాష్ట్ర స్వయంపాలన",
      "Lok Sabha supremacy on fiscal matters and ordinary bills vs Rajya Sabha's federal representation role / లోక్ సభ ఆర్థిక ఆధిపత్యం vs రాజ్య సభ సమాఖ్య భూమిక",
      "Judicial review applicability differently to each house / ప్రతిটి సభకు భిన్నమైన న్యాయ సమీక్ష",
