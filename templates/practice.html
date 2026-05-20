@@ -258,10 +258,18 @@ body.fp .fp-ov{display:flex}
   <div class="notes-body" id="notesBody">
     <iframe class="notes-frame" id="notesFrame" frameborder="0" src="about:blank"></iframe>
   </div>
-  <div class="notes-pplx" id="notesPplx">
-    <a class="notes-pplx-btn" id="notesPplxBtn" href="#" target="_blank">&#x26A1; Search on Perplexity</a>
-  </div>
 </div>
+<div id="aiButtonsSection" style="margin:12px 14px; padding:12px 14px; background:#f5f5f5; border-radius:10px; display:none;">
+  <div style="font-size: 12px; font-weight: 700; color: #666; margin-bottom: 10px; text-transform: uppercase;">Search on AI:</div>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+    <button onclick="searchOnAI('perplexity')" style="background: #22c55e; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🔍 Perplexity</button>
+    <button onclick="searchOnAI('chatgpt')" style="background: #00a67e; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🤖 ChatGPT</button>
+    <button onclick="searchOnAI('claude')" style="background: #1a237e; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🧠 Claude</button>
+    <button onclick="searchOnAI('gemini')" style="background: #ea4335; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">✨ Gemini</button>
+  </div>
+  <div id="copyFeedback" style="font-size: 11px; color: #2e7d32; margin-top: 8px; display: none;">✅ Question copied to clipboard!</div>
+</div>
+
 <div class="next-wrap" id="nextWrap"><button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next &#8594;</button></div>
 
 <div class="sum-card" id="sumCard">
@@ -501,11 +509,15 @@ function showQ(i){
   document.getElementById('notesPanel').classList.remove('show');
   document.getElementById('notesBody').classList.remove('open');
   document.getElementById('notesToggle').classList.remove('open');
+  document.getElementById('aiButtonsSection').style.display = 'none';
+  document.getElementById('copyFeedback').style.display = 'none';
   if(i>=filtQ.length){showSum();return;}
   idx=i;
   const c=document.getElementById('qc'+i); if(c) c.classList.add('visible');
   const st=states[i]; if(st&&st.done) restoreNormal(i,st);
   updateProg(i);
+  // Show AI buttons section when answer is shown
+  if(st&&st.done) document.getElementById('aiButtonsSection').style.display = '';
 }
 
 function restoreNormal(i,st){
@@ -895,6 +907,53 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   }
 });
+
+/* ── SEARCH ON AI WITH QUESTION COPY ── */
+function searchOnAI(aiName){
+  if(idx < 0 || idx >= filtQ.length) return;
+  const q = filtQ[idx];
+
+  // Get current date dynamically
+  const today = new Date();
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const dateStr = months[today.getMonth()] + ' ' + today.getDate() + ', ' + today.getFullYear();
+
+  // Build the full question text with options
+  let fullQuestion = 'Q' + (idx + 1) + ': ' + q.question_text + '\n\n';
+  fullQuestion += 'Options:\n';
+  fullQuestion += 'A) ' + q.option_a + '\n';
+  fullQuestion += 'B) ' + q.option_b + '\n';
+  fullQuestion += 'C) ' + q.option_c + '\n';
+  fullQuestion += 'D) ' + q.option_d + '\n\n';
+  fullQuestion += '---\n';
+  fullQuestion += 'Note: Get me up to date information as of "' + dateStr + '"';
+
+  // Copy to clipboard
+  navigator.clipboard.writeText(fullQuestion).then(() => {
+    // Show feedback
+    const feedback = document.getElementById('copyFeedback');
+    if(feedback){
+      feedback.style.display = '';
+      setTimeout(() => { feedback.style.display = 'none'; }, 2000);
+    }
+
+    // Open AI in new tab
+    let aiUrl = '';
+    if(aiName === 'perplexity'){
+      aiUrl = 'https://www.perplexity.ai/';
+    } else if(aiName === 'chatgpt'){
+      aiUrl = 'https://chatgpt.com/';
+    } else if(aiName === 'claude'){
+      aiUrl = 'https://claude.ai/';
+    } else if(aiName === 'gemini'){
+      aiUrl = 'https://gemini.google.com/app';
+    }
+    window.open(aiUrl, '_blank');
+  }).catch(err => {
+    alert('Failed to copy to clipboard. Please try again.');
+    console.error(err);
+  });
+}
 
 load();
 </script>
