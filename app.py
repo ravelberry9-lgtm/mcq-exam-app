@@ -7738,7 +7738,8 @@ def topic_notes(qid):
 
 @app.route('/api/topic-notes-html/<int:qid>')
 def topic_notes_html(qid):
-    """Serve notes HTML with Telugu hidden and mobile CSS injected."""
+    """Serve notes HTML with Telugu hidden, mobile CSS injected, and Perplexity button removed."""
+    import re
     fname, label = None, None
     for lo, hi, f, lbl in _NOTES_MAP:
         if lo <= qid <= hi:
@@ -7753,9 +7754,14 @@ def topic_notes_html(qid):
                 'Notes file not found.</p>'), 404
     try:
         html = open(path, 'r', encoding='utf-8').read()
+        # Remove Perplexity button/link and related containers
+        html = re.sub(r'<div[^>]*class=["\']notes-pplx[^>]*>.*?</div>', '', html, flags=re.DOTALL | re.IGNORECASE)
+        html = re.sub(r'<a[^>]*notes.*?pplx[^>]*>.*?</a>', '', html, flags=re.DOTALL | re.IGNORECASE)
+        html = re.sub(r'Search on Perplexity', '', html, flags=re.IGNORECASE)
         inject = (
             '<style>'
             'p,li{font-size:13px!important}'
+            '.notes-pplx{display:none!important}'
             '</style>'
         )
         html = html.replace('</head>', inject + '</head>')
