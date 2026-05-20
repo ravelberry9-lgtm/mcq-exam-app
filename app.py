@@ -7754,14 +7754,21 @@ def topic_notes_html(qid):
                 'Notes file not found.</p>'), 404
     try:
         html = open(path, 'r', encoding='utf-8').read()
-        # Remove Perplexity button/link and related containers
+        # Remove Perplexity button/link and related containers - multiple patterns
         html = re.sub(r'<div[^>]*class=["\']notes-pplx[^>]*>.*?</div>', '', html, flags=re.DOTALL | re.IGNORECASE)
-        html = re.sub(r'<a[^>]*notes.*?pplx[^>]*>.*?</a>', '', html, flags=re.DOTALL | re.IGNORECASE)
+        html = re.sub(r'<a[^>]*(id=["\']notesPplxBtn|class=["\']notes-pplx-btn)[^>]*>.*?</a>', '', html, flags=re.DOTALL | re.IGNORECASE)
+        html = re.sub(r'<button[^>]*(?:perplexity|pplx)[^>]*>.*?</button>', '', html, flags=re.DOTALL | re.IGNORECASE)
+        html = re.sub(r'<a[^>]*(?:perplexity|pplx)[^>]*>.*?</a>', '', html, flags=re.DOTALL | re.IGNORECASE)
+        html = re.sub(r'⚡\s*Search on Perplexity', '', html, flags=re.IGNORECASE)
         html = re.sub(r'Search on Perplexity', '', html, flags=re.IGNORECASE)
+        html = re.sub(r'<div[^>]*>\s*<a[^>]*href=["\']https://www\.perplexity\.ai[^>]*>.*?</a>\s*</div>', '', html, flags=re.DOTALL | re.IGNORECASE)
         inject = (
             '<style>'
             'p,li{font-size:13px!important}'
             '.notes-pplx{display:none!important}'
+            '.notes-pplx-btn{display:none!important}'
+            'a[href*="perplexity"]{display:none!important}'
+            'button[onclick*="perplexity"]{display:none!important}'
             '</style>'
         )
         html = html.replace('</head>', inject + '</head>')
