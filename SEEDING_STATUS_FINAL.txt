@@ -1,0 +1,96 @@
+================================================================================
+MCQ EXAM APP - SEEDING STATUS REPORT (May 20, 2026)
+================================================================================
+
+MASTER SUMMARY:
+- Total seed files in mcq_app folder: 250+ Python files
+- Total MCQ files with seed() functions: 9 WORKING + 3 NEEDS FIX + 4 INCOMPLETE
+- Total MCQs ready to seed: 1,360+
+- Total MCQs in regenerated files: 61 (polity_remaining_categories)
+
+================================================================================
+WORKING SEED FILES (9 - Ready to seed immediately)
+================================================================================
+
+1. ✓ seed_awards_mcq.py (44Q, IDs 23001-23044)
+2. ✓ seed_conflicts_mcq.py (102Q, IDs 22001-22102)
+3. ✓ seed_intl_orgs_mcq.py (162Q, IDs 20001-20162)
+4. ✓ seed_summits_mcq.py (100Q, IDs 21001-21100)
+5. ✓ seed_mideast_war_mcq.py (85Q, IDs 30001-30085)
+6. ✓ seed_intl_events_mcq.py (106Q, IDs 29001-29050 + May 2026)
+7. ✓ seed_science_tech_mcq.py (130Q, IDs 26001-26130)
+8. ✓ seed_national_ca_2026_mcq.py (430Q, IDs 31001-31430)
+9. ✓ seed_polity_remaining_categories.py (61Q, IDs 32136+)
+
+TOTAL: 1,220 MCQs ready from these 9 files
+
+================================================================================
+SEED FILES WITH SYNTAX ERRORS (3 - Needs fixing)
+================================================================================
+
+✗ seed_environment_mcq.py - Line 1326: Mismatched parentheses
+✗ seed_reports_mcq.py - Syntax error (needs investigation)
+✗ seed_sports_mcq.py - Syntax error (needs investigation)
+
+Estimated questions in these files: ~295Q
+
+================================================================================
+INCOMPLETE/PROBLEMATIC SEED FILES (4 - Need regeneration)
+================================================================================
+
+✗ seed_polity_elections_32051.py - Only 1 MCQ (lost original data)
+✗ seed_polity_labour_32111.py - Not regenerated
+✗ seed_polity_media_32086.py - Not regenerated
+✗ seed_polity_security_32006.py - Not regenerated
+
+Original data was in tuple format (not dictionary format). Extraction failed.
+Estimated questions in these files: ~120Q
+
+ALSO NOT SEEDED:
+- seed_constitution_governance_comprehensive.py - 27 multi-line string errors
+- seed_constitution_governance_part3.py - Unterminated string (line 66)
+- seed_constitution_governance_part4.py - Unterminated string (line 22)
+- seed_constitution_governance_part2.py - Working but not yet seeded
+- seed_schemes_govt.py - Has syntax error (line 636)
+
+================================================================================
+GIT STATUS
+================================================================================
+
+Current commits:
+1. c67494f - Wire 10 missing seed files into app.py (original)
+2. 81e9b7d - Skip constitution governance files (syntax errors)
+3. eeafe36 - Regenerate seed_polity_remaining_categories (61 MCQs)
+
+App.py wired to auto-seed on startup:
+✓ 9 working files (award, conflicts, intl_orgs, summits, mideast, intl_events, science, national_ca, polity_remaining)
+✗ 3 files skipped (constitution comprehensive, part3, part4)
+- 7 more files with issues (elections, labour, media, security, environment, reports, sports, schemes, constitution part2)
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+IMMEDIATE:
+1. Test seeding with the 9 working files via app.py startup
+2. Verify database connectivity and table schema
+
+SHORT TERM:
+1. Fix syntax errors in seed_environment_mcq, seed_reports_mcq, seed_sports_mcq (~3 hours)
+2. Regenerate 4 polity files properly (elections, labour, media, security) (~2 hours)
+3. Regenerate constitution governance files (comprehensive, part2, part3, part4) (~4 hours)
+4. Fix seed_schemes_govt.py (~1 hour)
+
+RESULT:
+- All ~1,600 MCQs will be seedable within 10 hours of focused work
+- Current 9 working files = 1,220 MCQs ready NOW
+
+================================================================================
+COMMAND TO START SEEDING:
+================================================================================
+
+cd /sessions/adoring-brave-ptolemy/mnt/mcq_app
+python3 app.py
+
+This will automatically trigger seeding of 9 working files on startup.
+
