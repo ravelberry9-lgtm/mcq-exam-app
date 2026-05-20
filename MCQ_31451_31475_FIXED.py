@@ -218,7 +218,7 @@ MCQ_DATA = [
     "B) ఇ-నిర్వహణ ప్లాటఫారం, ఆన్‌లైన్ ఫిర్యాదు నిరాకరణ / E-governance platforms and complaint redressal",
     "C) కాగితపు కార్యకలాపాల పెరుగుదల / Increasing paperwork",
     "D) ఎటువంటి చర్య లేదు / No initiatives",
-    "D",
+    "B",
     "భారత నగర స్థానిక నిర్వహకులు ఇ-నిర్వహణకు ప్రాధాన్యం ఇచ్చారు. ఆన్‌లైన్ బిల్ల చెల్లింపు, అనుమతి దరఖాస్తు, ఫిర్యాదు నిరాకరణ, నాగరిక ఆందోళన సంహితలు చేర్చబడ్డాయి. నిలువు సిటీ ప్రకల్పనల కింద అనేక నగరాలలో సంపూర్ణ డిజిటల్ నగరపాలక విధానం చర్యలో ఉంది.\nIndia's Urban Local Bodies implement e-governance platforms, online bill payments, digital permit systems, and citizen grievance redressal mechanisms. By May 2026, most major cities provide comprehensive online municipal services improving transparency and citizen engagement.",
     'AP_HC',
     'National_Current_Affairs_2026'),
