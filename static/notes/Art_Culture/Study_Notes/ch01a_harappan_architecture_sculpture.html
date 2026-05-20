@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1 – Indian Architecture, Sculpture & Pottery | Art & Culture</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   PRINT + PAGE SETUP
+═══════════════════════════════════════════ */
+@page {
+  size: A4;
+  margin: 18mm 16mm 16mm 16mm;
+  @top-center {
+    content: "Chapter 1 – Indian Architecture, Sculpture & Pottery";
+    font-size: 8pt;
+    color: #888;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  @bottom-center {
+    content: "AP High Court Section Officer 2026 | Art & Culture";
+    font-size: 7.5pt;
+    color: #aaa;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  @bottom-right {
+    content: counter(page);
+    font-size: 8pt;
+    color: #888;
+    font-family: 'Fira Mono', monospace;
+  }
+}
+
+@media print {
+  .page-break { page-break-before: always; }
+  .no-break    { page-break-inside: avoid; }
+  body { background: #fff !important; }
+  .screen-header { display: none; }
+}
+
+/* ═══════════════════════════════════════════
+   BASE
+═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --a4: 794px;
+  --brick:    #9b3a1a;   /* terracotta brick */
+  --brick-lt: #c4623a;
+  --mud:      #6b4226;
+  --sand:     #e8d5b0;
+  --cream:    #fdf8f2;
+  --green:    #2e6b4f;
+  --blue:     #2b4f8a;
+  --gold:     #b8860b;
+  --text:     #1e1209;
+  --subtext:  #5c3d20;
+  --border:   #d4b896;
+  --tel-bg:   #f5f9ff;
+  --tel-bdr:  #2b4f8a;
+  --mem-bg:   #f0f9f2;
+  --mem-bdr:  #2e6b4f;
+  --exam-bg:  #fffbec;
+  --exam-bdr: #d4a017;
+}
+
+body {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  background: #e8e0d5;
+  color: var(--text);
+  font-size: 10.5pt;
+  line-height: 1.65;
+}
+
+/* ═══════════════════════════════════════════
+   A4 WRAPPER
+═══════════════════════════════════════════ */
+.a4-page {
+  width: var(--a4);
+  min-height: 1123px;
+  background: #ffffff;
+  margin: 18px auto;
+  padding: 18mm 16mm 16mm 16mm;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.18);
+  position: relative;
+}
+
+/* Screen running header */
+.screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 5px;
+  margin-bottom: 12px;
+}
+.screen-header .sh-left {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 7.5pt;
+  color: #444;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.screen-header .sh-right {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  color: #555;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════
+   CHAPTER COVER
+═══════════════════════════════════════════ */
+.chapter-cover {
+  border: 2.5px solid var(--brick);
+  border-radius: 4px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  background: #fffdf9;
+  position: relative;
+}
+.chapter-cover::before {
+  content: '';
+  position: absolute;
+  top: 6px; left: 6px; right: 6px; bottom: 6px;
+  border: 1px solid var(--sand);
+  border-radius: 2px;
+  pointer-events: none;
+}
+.ch-tag {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brick);
+  background: #fce8dc;
+  border: 1px solid #e8b898;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+.ch-title-en {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 20pt;
+  font-weight: 700;
+  color: var(--brick);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.ch-title-te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 14pt;
+  color: var(--mud);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.ch-meta {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+}
+.ch-meta-item {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9pt;
+  color: #3a2200;
+  font-weight: 600;
+}
+.ch-meta-item strong {
+  color: var(--brick);
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION HEADING
+═══════════════════════════════════════════ */
+.sec-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 20px 0 8px;
+  border-bottom: 2px solid var(--brick);
+  padding-bottom: 4px;
+}
+.sec-heading .sec-num {
+  font-family: 'Fira Mono', monospace;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #fff;
+  background: var(--brick);
+  padding: 1px 7px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.sec-heading h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 13pt;
+  font-weight: 700;
+  color: var(--brick);
+}
+.sec-heading .te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10pt;
+  color: var(--subtext);
+  font-weight: 400;
+}
+
+.sub-heading {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10pt;
+  font-weight: 700;
+  color: var(--mud);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin: 14px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sub-heading::before {
+  content: '';
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--brick-lt);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════
+   BILINGUAL BLOCK
+═══════════════════════════════════════════ */
+.bilingual {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0 12px;
+}
+.bi-en {
+  padding: 9px 12px;
+  background: #fffdf9;
+  font-size: 10pt;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+.bi-en .lang-tag {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+.bi-te {
+  padding: 9px 12px;
+  background: var(--tel-bg);
+  border-left: 3px solid var(--tel-bdr);
+  font-family: 'Tiro Telugu', serif;
+  font-size: 11pt;
+  color: #162040;
+  line-height: 1.95;
+}
+.bi-te .lang-tag {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  color: #2255aa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+.bi-te .kw { color: var(--brick); font-weight: 700; }
+.bi-te .kw2 { color: var(--blue); font-weight: 700; }
+.bi-te .kw3 { color: var(--green); font-weight: 700; }
+
+/* standalone Telugu story block */
+.telugu-story {
+  background: var(--tel-bg);
+  border-left: 3px solid var(--tel-bdr);
+  border: 1px solid #c8d8ee;
+  border-left-width: 3px;
+  border-radius: 4px;
+  padding: 10px 13px;
+  font-family: 'Tiro Telugu', serif;
+  font-size: 11pt;
+  color: #162040;
+  line-height: 2;
+  margin: 8px 0 12px;
+}
+.telugu-story .ts-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  color: #2255aa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.telugu-story .kw  { color: var(--brick); font-weight: 700; }
+.telugu-story .kw2 { color: var(--blue); font-weight: 700; }
+.telugu-story .kw3 { color: var(--green); font-weight: 700; }
+
+/* ═══════════════════════════════════════════
+   TABLE
+═══════════════════════════════════════════ */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+  margin: 8px 0 14px;
+}
+.styled-table caption {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  color: #fff;
+  background: var(--brick);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-align: left;
+  margin-bottom: 0;
+  padding: 5px 9px;
+  border-radius: 4px 4px 0 0;
+}
+.styled-table thead tr { background: var(--mud); }
+.styled-table thead th {
+  color: #fff;
+  padding: 6px 9px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  text-align: left;
+  border: 1px solid #a06a3a;
+}
+.styled-table thead th .te-th {
+  font-family: 'Tiro Telugu', serif;
+  font-weight: 400;
+  font-size: 8.5pt;
+  display: block;
+  opacity: 0.85;
+  margin-top: 1px;
+}
+.styled-table tbody tr:nth-child(odd)  { background: #fffdf9; }
+.styled-table tbody tr:nth-child(even) { background: #faf3eb; }
+.styled-table td {
+  padding: 6px 9px;
+  border: 1px solid #ddd0be;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.styled-table td .te-td {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10pt;
+  color: #1a2a50;
+  display: block;
+  margin-top: 3px;
+  line-height: 1.85;
+}
+.styled-table td strong { color: var(--brick); }
+.tag-sm {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  background: #fce8dc;
+  color: var(--brick);
+  border: 1px solid #e8b898;
+  padding: 1px 5px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-left: 3px;
+}
+
+/* ═══════════════════════════════════════════
+   MEMORY BOX
+═══════════════════════════════════════════ */
+.memory-box {
+  background: var(--mem-bg);
+  border: 1px solid #a8d4b8;
+  border-left: 4px solid var(--mem-bdr);
+  border-radius: 4px;
+  padding: 9px 12px;
+  margin: 8px 0 12px;
+}
+.memory-box .mem-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a5c35;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.memory-box .mnemonic {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--mud);
+  margin-bottom: 3px;
+  letter-spacing: 0.03em;
+}
+.memory-box .mnem-exp {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9pt;
+  color: #1a3a25;
+  margin-bottom: 6px;
+}
+.memory-box .mem-te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10.5pt;
+  color: #0d2a18;
+  line-height: 1.9;
+  border-top: 1px dashed #a8d4b8;
+  padding-top: 6px;
+  margin-top: 3px;
+}
+.memory-box .mem-te .kw { color: var(--mem-bdr); font-weight: 700; }
+
+/* ═══════════════════════════════════════════
+   EXAM ALERT
+═══════════════════════════════════════════ */
+.exam-alert {
+  background: var(--exam-bg);
+  border: 1px solid #e0c060;
+  border-left: 4px solid var(--gold);
+  border-radius: 4px;
+  padding: 9px 12px;
+  margin: 8px 0 12px;
+}
+.exam-alert .ea-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7a4e00;
+  margin-bottom: 5px;
+}
+.exam-alert ul {
+  padding-left: 14px;
+  margin: 0;
+}
+.exam-alert li {
+  font-size: 9.5pt;
+  margin: 3px 0;
+  line-height: 1.55;
+}
+.exam-alert li strong { color: var(--brick); }
+.exam-alert .ea-te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10pt;
+  color: #3a2800;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed #e0c060;
+  line-height: 1.9;
+}
+
+/* ═══════════════════════════════════════════
+   KEY POINTS
+═══════════════════════════════════════════ */
+.keypoints {
+  list-style: none;
+  margin: 6px 0 12px;
+  padding: 0;
+}
+.keypoints li {
+  display: flex;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 10pt;
+  line-height: 1.55;
+}
+.keypoints li:last-child { border-bottom: none; }
+.keypoints li .kp-num {
+  flex-shrink: 0;
+  width: 20px; height: 20px;
+  background: var(--brick);
+  color: #fff;
+  border-radius: 50%;
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  font-weight: 500;
+}
+.keypoints li .kp-body .te-kp {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10.5pt;
+  color: #1a2a50;
+  display: block;
+  margin-top: 3px;
+  line-height: 1.9;
+}
+
+/* ═══════════════════════════════════════════
+   CLASSIFICATION TREE (CSS)
+═══════════════════════════════════════════ */
+.tree-wrap {
+  margin: 10px 0 14px;
+  padding: 12px;
+  background: #fffdf9;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.tree-title {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #3a2200;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.tree-root {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.tree-root-box {
+  background: var(--brick);
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 4px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+.tree-root-box::after {
+  content: '';
+  position: absolute;
+  bottom: -14px; left: 50%;
+  transform: translateX(-50%);
+  width: 2px; height: 14px;
+  background: var(--border);
+}
+.tree-root-box .te-box {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 8.5pt;
+  font-weight: 400;
+  display: block;
+  opacity: 0.88;
+  margin-top: 2px;
+}
+.tree-connector-h {
+  height: 2px;
+  background: var(--border);
+  width: 84%;
+  margin: 14px auto 0;
+  position: relative;
+}
+.tree-branches {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2%;
+  margin-top: 0;
+  position: relative;
+}
+.tree-branch-line {
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 2px;
+  background: var(--border);
+}
+.tree-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  padding-top: 14px;
+}
+.tree-node::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 2px; height: 14px;
+  background: var(--border);
+}
+.tree-node-box {
+  background: var(--mud);
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8pt;
+  font-weight: 600;
+  text-align: center;
+  min-width: 90px;
+  max-width: 108px;
+  line-height: 1.3;
+}
+.tree-node-box .node-num {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 2px;
+}
+.tree-node-box .te-node {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 8pt;
+  font-weight: 400;
+  display: block;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+.tree-node-box.active {
+  background: var(--brick);
+  box-shadow: 0 2px 8px rgba(155,58,26,0.3);
+}
+
+/* DIFF TABLE compare 3 columns */
+.diff-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 14px;
+  font-size: 9.5pt;
+}
+.diff-table th {
+  background: var(--mud);
+  color: #fff;
+  padding: 7px 10px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  border: 1px solid #a06a3a;
+  text-align: center;
+}
+.diff-table th .te-th {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 8.5pt;
+  font-weight: 400;
+  display: block;
+  margin-top: 2px;
+  opacity: 0.88;
+}
+.diff-table td {
+  border: 1px solid #ddd0be;
+  padding: 7px 10px;
+  vertical-align: top;
+  line-height: 1.55;
+}
+.diff-table tr:nth-child(odd) td { background: #fffdf9; }
+.diff-table tr:nth-child(even) td { background: #faf3eb; }
+.diff-table td .te-td {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10pt;
+  color: #1a2050;
+  display: block;
+  margin-top: 3px;
+  line-height: 1.85;
+}
+.diff-table td strong { color: var(--brick); }
+.diff-table .row-label {
+  background: #e8d8c0;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 700;
+  font-size: 9pt;
+  color: #3a1a00;
+  text-align: center;
+}
+.diff-table .row-label .te-td {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 9pt;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  background: #fef6ed;
+  border: 1px solid var(--sand);
+  border-left: 4px solid var(--brick-lt);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 6px 0 12px;
+  font-size: 10pt;
+}
+.highlight-box .hb-te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10.5pt;
+  line-height: 1.95;
+  color: #1a1206;
+  margin-top: 4px;
+}
+.highlight-box .kw  { color: var(--brick);  font-weight: 700; }
+.highlight-box .kw2 { color: var(--blue);   font-weight: 700; }
+.highlight-box .kw3 { color: var(--green);  font-weight: 700; }
+
+/* POTTERY compare boxes */
+.two-col {
+  display: flex;
+  gap: 10px;
+  margin: 8px 0 12px;
+}
+.col-box {
+  flex: 1;
+  border-radius: 4px;
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+}
+.col-box.c-brick { border-top: 3px solid var(--brick); background: #fff7f3; }
+.col-box.c-blue  { border-top: 3px solid var(--blue);  background: #f3f7ff; }
+.col-box h4 {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+.col-box.c-brick h4 { color: var(--brick); }
+.col-box.c-blue  h4 { color: var(--blue);  }
+.col-box h4 .te-h {
+  font-family: 'Tiro Telugu', serif;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 9pt;
+  font-weight: 400;
+  display: block;
+  margin-top: 1px;
+}
+.col-box ul {
+  padding-left: 13px;
+  margin: 0;
+}
+.col-box li {
+  font-size: 9pt;
+  margin: 3px 0;
+  line-height: 1.5;
+}
+.col-box li .te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 9.5pt;
+  display: block;
+  color: #1a2050;
+  line-height: 1.8;
+}
+
+/* SEAL ANIMALS */
+.seal-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 7px 0 12px;
+}
+.seal-item {
+  background: #fce8dc;
+  border: 1px solid #e8b898;
+  border-radius: 3px;
+  padding: 4px 10px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: var(--brick);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.seal-item .te-seal {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 8.5pt;
+  font-weight: 400;
+  color: var(--mud);
+  margin-top: 2px;
+}
+.seal-item.most-common {
+  background: var(--brick);
+  color: #fff;
+  border-color: var(--mud);
+}
+.seal-item.most-common .te-seal { color: #fce8dc; }
+
+/* PAGE FOOTER (screen only) */
+.screen-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 5px;
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  color: #555;
+  font-weight: 600;
+}
+
+/* DIVIDER */
+hr.div {
+  border: none;
+  border-top: 1.5px dashed var(--border);
+  margin: 16px 0;
+}
+
+/* IMPORTANT NOTE */
+.important-note {
+  border: 1.5px solid var(--brick-lt);
+  border-radius: 4px;
+  padding: 7px 11px;
+  background: #fff7f3;
+  font-size: 9.5pt;
+  margin: 7px 0 12px;
+}
+.important-note .in-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7a2200;
+  font-weight: 700;
+  margin-bottom: 3px;
+  display: block;
+}
+.important-note .in-te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10.5pt;
+  color: #1a1206;
+  line-height: 1.9;
+  margin-top: 4px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ████████████████████████████████████████████████
+     PAGE 1 — CHAPTER COVER + INTRO CONCEPTS
+█████████████████████████████████████████████████ -->
+<div class="a4-page">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · INDIAN ARCHITECTURE, SCULPTURE &amp; POTTERY · ART &amp; CULTURE</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <!-- Chapter Cover -->
+  <div class="chapter-cover no-break">
+    <div class="ch-tag">Chapter 1 · Art &amp; Culture · AP High Court Section Officer 2026</div>
+    <div class="ch-title-en">Indian Architecture,<br>Sculpture &amp; Pottery</div>
+    <div class="ch-title-te">భారతీయ వాస్తుశిల్పం, శిల్పకళ మరియు కుండల కళ</div>
+    <div class="ch-meta">
+      <div class="ch-meta-item"><strong>Pages:</strong> 1 – 40</div>
+      <div class="ch-meta-item"><strong>Sub-topics:</strong> 1.1 Ancient · 1.2 Medieval · 1.3 Modern</div>
+      <div class="ch-meta-item"><strong>UPSC Weightage:</strong> High (5–8 qs/year)</div>
+    </div>
+  </div>
+
+  <!-- INTRO BILINGUAL -->
+  <div class="sec-heading">
+    <div class="sec-num">INTRO</div>
+    <h2>What are Architecture, Sculpture &amp; Pottery? <span class="te">— వీటి అర్థం ఏమిటి?</span></h2>
+  </div>
+
+  <div class="bilingual">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Concept</span>
+      Despite being two very different kinds of art, <strong>sculpture and architecture are strongly intertwined</strong>. Architecture is defined as the art of designing and constructing usable buildings. Sculptures are defined as 3-D pieces of fine artwork used primarily as a medium of expression.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+      చాలా మంది విద్యార్థులకు ఒక సందేహం వస్తుంది — వాస్తుశిల్పం (Architecture), శిల్పకళ (Sculpture), మరియు కుండల కళ (Pottery) అనేవి వేర్వేరా? అవన్నీ ఒకే విషయంలో భాగమా? అని.<br><br>
+      వాస్తవానికి ఇవి <span class="kw">మూడూ వేర్వేరు కళారూపాలు</span> — కానీ చరిత్రలో ఇవి ఒకదానితో మరొకటి ముడిపడి ఉన్నాయి. <span class="kw">వాస్తుశిల్పం</span> అంటే భవనాలను అందంగా, పటిష్టంగా నిర్మించే కళ. <span class="kw2">శిల్పకళ</span> అంటే రాయి, లోహం, మట్టి వంటి వస్తువులతో మూడు పరిమాణాల (3D) కళాకృతులు చేయడం. <span class="kw3">కుండల కళ</span> అంటే మట్టిని అచ్చులో వేసి నిప్పులో కాల్చి పాత్రలు, విగ్రహాలు తయారు చేయడం.
+    </div>
+  </div>
+
+  <!-- DIFFERENCE TABLE -->
+  <div class="sub-heading">Difference Between Architecture, Sculpture &amp; Pottery</div>
+  <table class="diff-table no-break">
+    <thead>
+      <tr>
+        <th style="width:18%">Aspect <span class="te-th">విషయం</span></th>
+        <th style="width:28%">Architecture <span class="te-th">వాస్తుశిల్పం</span></th>
+        <th style="width:28%">Sculpture <span class="te-th">శిల్పకళ</span></th>
+        <th style="width:26%">Pottery <span class="te-th">కుండల కళ</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Definition <span class="te-td">నిర్వచనం</span></td>
+        <td>Art of designing &amp; constructing usable buildings
+          <span class="te-td">ఉపయోగపడే భవనాలను రూపొందించే కళ</span></td>
+        <td>3-D fine artwork as medium of expression
+          <span class="te-td">వ్యక్తీకరణకు మాధ్యమంగా 3D కళాకృతులు</span></td>
+        <td>Forming vessels &amp; objects with clay, fired at high temperatures
+          <span class="te-td">మట్టిని అచ్చులో వేసి నిప్పులో కాల్చడం</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Material <span class="te-td">వస్తువు</span></td>
+        <td>Stone, wood, glass, metal, sand (mix of materials)
+          <span class="te-td">రాయి, చెక్క, లోహం, ఇసుక (వివిధ వస్తువులు)</span></td>
+        <td>Usually <strong>single material</strong> — stone, bronze, ivory
+          <span class="te-td">సాధారణంగా ఒకే వస్తువు — రాయి, కంచు, దంతం</span></td>
+        <td>Clay and other ceramic materials
+          <span class="te-td">మట్టి మరియు సిరామిక్ వస్తువులు</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Science <span class="te-td">శాస్త్రం</span></td>
+        <td>Requires engineering, maths, accurate measurements
+          <span class="te-td">ఇంజినీరింగ్, గణితం, కొలతలు అవసరం</span></td>
+        <td>Creativity &amp; imagination; less dependent on measurements
+          <span class="te-td">సృజనాత్మకత ముఖ్యం; కొలతలు తక్కువ ముఖ్యం</span></td>
+        <td>Fired at high temperatures for hardness
+          <span class="te-td">పటిష్టత కోసం అధిక ఉష్ణోగ్రతలో కాల్చాలి</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Examples <span class="te-td">ఉదాహరణలు</span></td>
+        <td><strong>Taj Mahal, Khajuraho, Red Fort</strong>
+          <span class="te-td">తాజ్ మహల్, ఖజురాహో, ఎర్రకోట</span></td>
+        <td><strong>Nataraja, Dancing Girl, Gandhara Buddha</strong>
+          <span class="te-td">నటరాజ, నాట్యకత్తె, గాంధార బుద్ధుడు</span></td>
+        <td><strong>Earthenware, Stoneware, Porcelain</strong>
+          <span class="te-td">మట్టి పాత్రలు, రాయి పాత్రలు, పింగాణీ</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Types of Pottery <span class="te-td">కుండల రకాలు</span></td>
+        <td colspan="3">Major types of pottery: <strong>Earthenware</strong> (low-fired clay) · <strong>Stoneware</strong> (high-fired, non-porous) · <strong>Porcelain</strong> (finest quality, white, translucent)
+          <span class="te-td">కుండల ముఖ్య రకాలు: <strong>ఎర్త్‌వేర్</strong> (తక్కువ ఉష్ణోగ్రత కాల్చినవి) · <strong>స్టోన్‌వేర్</strong> (అధిక ఉష్ణోగ్రత, నీరు చొరబడదు) · <strong>పోర్సెలైన్</strong> (అత్యుత్తమ నాణ్యత, తెలుపు, పారదర్శకత)</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="screen-footer">
+    <span>Ch 1 · Introduction</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 1</span>
+  </div>
+</div><!-- end a4-page -->
+
+
+<!-- ████████████████████████████████████████████████
+     PAGE 2 — CLASSIFICATION OF ANCIENT INDIAN ARCHITECTURE
+█████████████████████████████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · CLASSIFICATION OF ANCIENT INDIAN ARCHITECTURE</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">1.1</div>
+    <h2>Classification of Ancient Indian Architecture <span class="te">— వర్గీకరణ</span></h2>
+  </div>
+
+  <!-- TREE DIAGRAM -->
+  <div class="tree-wrap no-break">
+    <div class="tree-title">Classification of Ancient Indian Architecture — భారత ప్రాచీన వాస్తుశిల్పం వర్గీకరణ</div>
+    <div class="tree-root">
+      <div class="tree-root-box">
+        Ancient Indian Architecture
+        <span class="te-box">ప్రాచీన భారత వాస్తుశిల్పం</span>
+      </div>
+    </div>
+    <div class="tree-connector-h"></div>
+    <div class="tree-branches" style="margin-top:0;">
+      <div class="tree-branch-line"></div>
+      <div class="tree-node">
+        <div class="tree-node-box active">
+          <span class="node-num">① NOW</span>
+          Harappan Art &amp; Architecture
+          <span class="te-node">హరప్పా కళ</span>
+        </div>
+      </div>
+      <div class="tree-node">
+        <div class="tree-node-box">
+          <span class="node-num">②</span>
+          Mauryan Art &amp; Architecture
+          <span class="te-node">మౌర్య కళ</span>
+        </div>
+      </div>
+      <div class="tree-node">
+        <div class="tree-node-box">
+          <span class="node-num">③</span>
+          Post Mauryan Art &amp; Architecture
+          <span class="te-node">మౌర్యానంతర కళ</span>
+        </div>
+      </div>
+      <div class="tree-node">
+        <div class="tree-node-box">
+          <span class="node-num">④</span>
+          Gupta Art &amp; Architecture
+          <span class="te-node">గుప్త కళ</span>
+        </div>
+      </div>
+      <div class="tree-node">
+        <div class="tree-node-box">
+          <span class="node-num">⑤</span>
+          South Indian Temple Architecture
+          <span class="te-node">దక్షిణ దేవాలయాలు</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="telugu-story">
+    <span class="ts-label">తెలుగు — నేపథ్య వివరణ (Why This Classification Matters)</span>
+    ఒక్క నిమిషం ఆలోచించండి — భారత వాస్తుశిల్పాన్ని మనం ఒక్కో కాలానికి విభజించడం ఎందుకు? ఎందుకంటే ప్రతి కాలంలో పాలకులు వేరే, మతం వేరే, నిర్మాణ శైలి వేరే! <span class="kw">హరప్పా</span> కాలంలో నగర ప్రణాళిక అద్భుతంగా ఉండేది. తర్వాత <span class="kw">మౌర్యులు</span> వచ్చి స్తూపాలు, స్తంభాలు నిర్మించారు. మధ్యలో <span class="kw2">మౌర్యానంతర కాలంలో</span> శాతవాహనులు, కుషాను వంటి రాజులు బౌద్ధ గుహలు, శిల్పాలు చేశారు. <span class="kw3">గుప్తులు</span> అధికారంలోకి వచ్చాక హిందూ దేవాలయాలు అభివృద్ధి చెందాయి. చివరగా <span class="kw">దక్షిణ భారత శైలి</span> — ద్రావిడ, నాయర్ శైలులు — పల్లవులు, చోళులు నిర్మించిన భవ్యమైన దేవాలయాలు. ఇప్పుడు మనం ఈ క్రమంలో చదువుకుందాం!
+  </div>
+
+  <hr class="div">
+
+  <!-- HARAPPAN HEADING -->
+  <div class="sec-heading">
+    <div class="sec-num">1.1-A</div>
+    <h2>Harappan Art &amp; Architecture <span class="te">— హరప్పా కళ మరియు వాస్తుశిల్పం</span></h2>
+  </div>
+
+  <div class="highlight-box no-break">
+    <strong>Period:</strong> 3300 BCE – 1500 BCE &nbsp;|&nbsp; <strong>Also called:</strong> Indus Valley Civilization / India's First Urban Civilization
+    <div class="hb-te">
+      <span class="kw">కాలం: 3300 BCE నుండి 1500 BCE</span> వరకు. దీన్నే <span class="kw">సింధూ నది నాగరికత</span> లేదా <span class="kw">భారతదేశపు మొదటి పట్టణ నాగరికత</span> అని కూడా అంటారు. ముఖ్య స్థలాలు: <span class="kw2">హరప్పా</span> (ఇప్పటి పాకిస్తాన్‌లో రావి నది ఒడ్డున), <span class="kw2">మొహెంజో-దారో</span> (సింధు నది ఒడ్డున), మరియు <span class="kw3">లోథాల్</span> (గుజరాత్, భారతదేశం).
+    </div>
+  </div>
+
+  <!-- ARCHITECTURE SUB-SECTION -->
+  <div class="sub-heading">Town Planning &amp; Architecture — పట్టణ ప్రణాళిక</div>
+
+  <ul class="keypoints">
+    <li>
+      <div class="kp-num">1</div>
+      <div class="kp-body">
+        <strong>Grid Pattern Town Planning</strong> — Roads cut at perfect right angles (North-South &amp; East-West grid).
+        <span class="te-kp"><span style="color:var(--brick);font-weight:700">గ్రిడ్ నమూనా పట్టణ ప్రణాళిక</span> — రోడ్లు అన్నీ 90° కోణంలో కలుస్తాయి. ఉత్తర-దక్షిణ, తూర్పు-పడమర దిశలలో సమాంతరంగా ఉంటాయి. ఈ రోజు మనం చూసే చదరంగపు నమూనా పట్టణాలకు ఇదే ఆదర్శం!</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">2</div>
+      <div class="kp-body">
+        <strong>Two-Part City</strong> — (i) Upper Citadel (raised, for rulers/elite) and (ii) Lower Town (for common people).
+        <span class="te-kp">నగరం రెండు భాగాలుగా విభజించబడింది: <span style="color:var(--brick);font-weight:700">ఎగువ కోట (Citadel)</span> — ఇది ఎత్తైన వేదికపై నిర్మించబడింది, పాలకులు, పురోహితులు నివసించేవారు. <span style="color:var(--blue);font-weight:700">దిగువ పట్టణం (Lower Town)</span> — సామాన్య ప్రజలు, శ్రామికులు నివసించేవారు. ఈ రెండు వర్గాల మధ్య స్పష్టమైన వేర్పాటు నాగరికతలో సామాజిక వ్యవస్థ ఎంత అభివృద్ధి చెందిందో చూపిస్తుంది.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">3</div>
+      <div class="kp-body">
+        <strong>Burnt Bricks (కాల్చిన ఇటుకలు)</strong> — Bricks standardised in ratio 1:2:4. Gypsum mortar used as cementing agent.
+        <span class="te-kp">ఆలోచించండి — 3000 సంవత్సరాల క్రితం, మిగతా ప్రపంచం ఇంకా పచ్చి ఇటుకలు వాడుతున్న సమయంలో, హరప్పా ప్రజలు <span style="color:var(--brick);font-weight:700">కాల్చిన ఇటుకలు</span> వాడేవారు. కాల్చిన ఇటుక వర్షానికి కరగదు, చాలా కాలం మన్నుతుంది. ఇంకా ఆశ్చర్యమేమిటంటే — ఇటుకల నిష్పత్తి <span style="color:var(--blue);font-weight:700">1:2:4</span> గా స్థిరీకరించబడింది. ఇది వారి ఇంజినీరింగ్ తెలివితేటలకు నిదర్శనం!</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">4</div>
+      <div class="kp-body">
+        <strong>Great Bath (మహాస్నాన కుండం)</strong> — Located at Mohenjo-daro. 12m × 7m × 2.4m deep. Waterproofed with bitumen. Used for ritual/religious bathing.
+        <span class="te-kp">మొహెంజో-దారోలో నిర్మించిన <span style="color:var(--brick);font-weight:700">మహాస్నాన కుండం</span> ప్రపంచంలో మొట్టమొదటి పెద్ద స్నానాల కొలను! దీని కొలతలు: 12 మీటర్లు × 7 మీటర్లు × 2.4 మీటర్లు లోతు. నీరు చొరబడకుండా ఉండేందుకు <span style="color:var(--blue);font-weight:700">బిటుమెన్ (Bitumen)</span> అనే చమురు పదార్థం లేపారు — ఇది నేటి waterproofing వంటిదే! ఇది మత శుద్ధి కోసం వాడేవారు. నేటి హిందూ మత ఆచారాలకు ఇది ఆదర్శమని చరిత్రకారులు అభిప్రాయపడుతున్నారు.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">5</div>
+      <div class="kp-body">
+        <strong>Underground Drainage System (భూగర్భ మురుగు వ్యవస్థ)</strong> — Covered drains under streets. Most sophisticated drainage of the ancient world.
+        <span class="te-kp">హరప్పా ప్రజల అత్యంత అద్భుతమైన సాంకేతిక విజయం — <span style="color:var(--brick);font-weight:700">భూగర్భ మురుగు కాలువల వ్యవస్థ</span>. ప్రతి ఇంటి నుండి వ్యర్థ జలం వీధి కాలువలకు, అక్కడ నుండి పెద్ద కాలువలకు వెళ్ళేది. కాలువలు రాతి పలకలతో కప్పబడి ఉండేవి. ఇది ప్రాచీన ప్రపంచంలో ఏ నాగరికతకూ లేని వ్యవస్థ! ఐరోపాలో ఇలాంటి వ్యవస్థ 3000 సంవత్సరాల తర్వాత వచ్చింది.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">6</div>
+      <div class="kp-body">
+        <strong>Granaries (ధాన్యాగారాలు)</strong> — Largest building at Harappa. Intelligently designed with air ducts. Workers lived in single-room houses nearby.
+        <span class="te-kp"><span style="color:var(--brick);font-weight:700">ధాన్యాగారాలు</span> హరప్పాలో అతి పెద్ద నిర్మాణాలు. ఇవి తెలివిగా రూపొందించబడ్డాయి — <span style="color:var(--blue);font-weight:700">గాలి రంధ్రాలు (Air Ducts)</span> ఉండేవి, తద్వారా ధాన్యం తడవకుండా, చెడిపోకుండా నిల్వ ఉండేది. ఇది వారి ఆహార నిర్వహణ వ్యవస్థ ఎంత శాస్త్రీయంగా ఉండేదో చూపిస్తుంది.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">7</div>
+      <div class="kp-body">
+        <strong>Port at Lothal (లోథాల్ నౌకాశ్రయం)</strong> — Lothal in Gujarat had India's first dockyard. Evidence of trade with Mesopotamia.
+        <span class="te-kp">గుజరాత్‌లోని <span style="color:var(--brick);font-weight:700">లోథాల్</span> స్థలంలో భారతదేశపు మొట్టమొదటి <span style="color:var(--blue);font-weight:700">నౌకాశ్రయం (Dockyard)</span> కనుగొనబడింది. ఇక్కడ నుండి <span style="color:var(--green);font-weight:700">మెసొపొటేమియా (ఇప్పటి ఇరాక్)</span> తో వ్యాపారం జరిగేది — ఇది అంతర్జాతీయ వ్యాపారానికి భారతదేశం ఎంత ముందు నిలిచిందో చూపిస్తుంది.</span>
+      </div>
+    </li>
+  </ul>
+
+  <div class="screen-footer">
+    <span>Ch 1.1 · Harappan Architecture</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 2</span>
+  </div>
+</div><!-- end a4-page -->
+
+
+<!-- ████████████████████████████████████████████████
+     PAGE 3 — HARAPPAN SCULPTURE, SEALS, POTTERY, ORNAMENTS
+█████████████████████████████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1.1 · HARAPPAN SCULPTURE · SEALS · POTTERY · ORNAMENTS</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <!-- SCULPTURE -->
+  <div class="sec-heading">
+    <div class="sec-num">1.1-B</div>
+    <h2>Harappan Sculpture <span class="te">— హరప్పా శిల్పకళ</span></h2>
+  </div>
+
+  <div class="telugu-story">
+    <span class="ts-label">తెలుగు — నేపథ్యం</span>
+    హరప్పా శిల్పాలు గురించి చెప్పేముందు ఒక విషయం అర్థం చేసుకోండి — ఆ కాలంలో శిల్పాలు రాతి నుండి, కంచు (bronze) నుండి, మరియు టెర్రకోట (కాల్చిన మట్టి) నుండి చేసేవారు. ప్రతి శిల్పం ఆ నాగరికత గురించి ఒక కథ చెప్తుంది. ముఖ్యంగా మూడు శిల్పాలు పరీక్షలో తరచుగా వస్తాయి — వాటిని పూర్తిగా అర్థం చేసుకుందాం.
+  </div>
+
+  <table class="styled-table no-break">
+    <caption>Famous Harappan Sculptures — ప్రసిద్ధ హరప్పా శిల్పాలు</caption>
+    <thead>
+      <tr>
+        <th style="width:22%">Sculpture <span class="te-th">శిల్పం</span></th>
+        <th style="width:18%">Material <span class="te-th">వస్తువు</span></th>
+        <th style="width:20%">Found At <span class="te-th">కనుగొన్న చోటు</span></th>
+        <th style="width:40%">Key Features <span class="te-th">ముఖ్య లక్షణాలు</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Priest-King (పూజారి రాజు)</strong> <span class="tag-sm">MOST FAMOUS</span>
+          <span class="te-td">పూజారి రాజు విగ్రహం</span></td>
+        <td>Steatite (సాబు రాయి / Soap stone)
+          <span class="te-td">మెత్తని తెల్లటి రాయి</span></td>
+        <td>Mohenjo-daro
+          <span class="te-td">మొహెంజో-దారో</span></td>
+        <td>Trefoil design on shawl; eyes half-closed in meditation; elongated figure draped in shawl
+          <span class="te-td">శాలువాపై మూడు రేకుల (trefoil) పూల నమూనా; అర్ధంగా మూసిన కళ్ళు — ధ్యానస్థితి. ఇది పూజారి రాజు విగ్రహమని భావిస్తారు — రాజు మరియు మతాధికారి ఒకే వ్యక్తి అయి ఉండవచ్చు.</span></td>
+      </tr>
+      <tr>
+        <td><strong>Dancing Girl (నాట్యకత్తె)</strong>
+          <span class="te-td">నాట్యకత్తె కంచు విగ్రహం</span></td>
+        <td>Bronze (కంచు) — <strong>Lost Wax Method</strong>
+          <span class="te-td">మైనపు పోత (Cire Perdue) పద్ధతి</span></td>
+        <td>Mohenjo-daro
+          <span class="te-td">మొహెంజో-దారో</span></td>
+        <td>Right hand on hip; left arm full of bangles (to shoulder); nude; tribhanga posture; 4 inches tall
+          <span class="te-td">కుడి చేయి నడుముపై; ఎడమ చేతిపై మోచేయి వరకు గాజులు; నిలువు త్రిభంగ భంగిమ (Tribhanga); కేవలం 4 అంగుళాల ఎత్తు — అయినా అద్భుత శిల్పం!</span></td>
+      </tr>
+      <tr>
+        <td><strong>Male Torso (పురుష మేను)</strong>
+          <span class="te-td">పురుషుని మేను శిల్పం</span></td>
+        <td>Red Sandstone (ఎర్ర ఇసుక రాయి)
+          <span class="te-td"></span></td>
+        <td>Harappa
+          <span class="te-td">హరప్పా</span></td>
+        <td>Socket holes on neck &amp; shoulders for attaching separate head &amp; arms
+          <span class="te-td">మెడపై మరియు భుజాలపై <span style="color:var(--brick);font-weight:700">రంధ్రాలు</span> ఉన్నాయి — తల మరియు చేతులు వేర్వేరుగా తయారు చేసి అమర్చేవారు. ఇది శిల్పకళలో అసెంబ్లీ పద్ధతి వాడిన ఆధారం!</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="important-note no-break">
+    <span class="in-label">⚡ Deep Note — Lost Wax Method (మైనపు పోత పద్ధతి)</span>
+    The Dancing Girl was made using the <strong>Lost Wax / Cire Perdue method</strong>: First a wax model is made → covered with clay → heated (wax melts and flows out → "lost") → molten bronze poured into hollow clay mold → cooled → clay broken → bronze sculpture!
+    <div class="in-te">
+      నాట్యకత్తె విగ్రహాన్ని <span style="color:var(--brick);font-weight:700">మైనపు పోత పద్ధతి (Lost Wax / Cire Perdue)</span> లో తయారు చేశారు. ఇది ఎలా పని చేస్తుందంటే: ముందు మైనంతో శిల్పం తయారు చేస్తారు → దాన్ని మట్టితో కప్పుతారు → నిప్పులో పెడితే మైనం కరిగి ఖాళీ అవుతుంది → ఆ ఖాళీలో కరిగిన కంచు పోస్తారు → చల్లారిన తర్వాత మట్టి పగులగొడతారు → శిల్పం తయారు! ఇది ఇంకా నేటికీ వాడే పద్ధతే.
+    </div>
+  </div>
+
+  <!-- SEALS -->
+  <div class="sub-heading">Seals (ముద్రలు) — Harappan Seals</div>
+
+  <div class="bilingual">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Facts</span>
+      Seals were used for <strong>trade, commerce, identification</strong> and as amulets. Material: mostly <strong>steatite</strong>; also copper, gold, ivory. Script on seals: <strong>Pictographic — still undeciphered</strong>. Direction of writing: <strong>Right to Left</strong> (Boustrophedon style). Total seals found: <strong>2000+</strong>. Most seals are <strong>square</strong> in shape.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు — వివరణ</span>
+      హరప్పా ముద్రలు (Seals) అంటే ఏమిటంటే — ఈ రోజు మనం <span class="kw">రబ్బర్ స్టాంప్</span> వాడినట్లే, ఆ కాలంలో వ్యాపారులు తమ <span class="kw">గుర్తింపు కోసం ఈ ముద్రలు వాడేవారు</span>. వ్యాపార సరుకులపై ముద్ర వేయడం ద్వారా "ఇది నా సరుకు" అని చూపించేవారు. ముద్రలు ముఖ్యంగా <span class="kw">స్టీటైట్ రాయిలో</span> చేసేవారు. ముద్రలపై రాత ఇంకా <span class="kw2">అర్థం కాలేదు</span> — ఇది పరిశోధకులకు ఇంకా పెద్ద సవాలు! రాత <span class="kw">కుడి వైపు నుండి ఎడమ వైపుకు</span> చదువుతారు.
+    </div>
+  </div>
+
+  <div class="sub-heading">Animals on Seals — ముద్రలపై జంతువులు</div>
+  <div class="seal-grid">
+    <div class="seal-item most-common">Unicorn ★<span class="te-seal">ఏకశృంగి (అత్యంత సాధారణం)</span></div>
+    <div class="seal-item">Humped Bull<span class="te-seal">మూపురపు ఎద్దు</span></div>
+    <div class="seal-item">Rhinoceros<span class="te-seal">ఖడ్గమృగం</span></div>
+    <div class="seal-item">Tiger<span class="te-seal">పులి</span></div>
+    <div class="seal-item">Elephant<span class="te-seal">ఏనుగు</span></div>
+    <div class="seal-item">Crocodile<span class="te-seal">మొసలి</span></div>
+    <div class="seal-item">Buffalo<span class="te-seal">గేదె</span></div>
+    <div class="seal-item">Bison<span class="te-seal">జంగలి దున్న</span></div>
+  </div>
+
+  <!-- POTTERY -->
+  <div class="sub-heading">Pottery — కుండల కళ</div>
+  <div class="two-col no-break">
+    <div class="col-box c-brick">
+      <h4>Plain Pottery <span class="te-h">సాదా కుండలు</span></h4>
+      <ul>
+        <li>No decoration / paintings
+          <span class="te">ఎటువంటి చిత్రాలు లేకుండా సాదాగా ఉంటాయి</span></li>
+        <li>Used for grain &amp; water storage
+          <span class="te">ధాన్యం మరియు నీటి నిల్వ కోసం</span></li>
+        <li>Wheel-made, practical use
+          <span class="te">కుమ్మరి చక్రంతో తయారు చేసేవారు</span></li>
+      </ul>
+    </div>
+    <div class="col-box c-blue">
+      <h4>Painted Pottery <span class="te-h">చిత్రిత కుండలు</span></h4>
+      <ul>
+        <li><strong>Black paint on Red background</strong>
+          <span class="te">ఎర్ర నేపథ్యంపై నల్ల రంగు — దీన్నే Red Pottery అంటారు</span></li>
+        <li>Motifs: trees, birds, animals, geometric designs
+          <span class="te">చెట్లు, పక్షులు, జంతువులు, రేఖాగణిత నమూనాలు</span></li>
+        <li>Decorative, religious &amp; ceremonial use
+          <span class="te">అలంకారం, మత కార్యక్రమాలకు వాడేవారు</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ORNAMENTS -->
+  <div class="sub-heading">Ornaments — ఆభరణాలు</div>
+  <table class="styled-table no-break">
+    <thead>
+      <tr>
+        <th>Ornament Type <span class="te-th">ఆభరణం రకం</span></th>
+        <th>Material <span class="te-th">వస్తువు</span></th>
+        <th>Who Wore? <span class="te-th">ఎవరు ధరించేవారు?</span></th>
+        <th>Special Note <span class="te-th">ముఖ్య విషయం</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Necklaces, Fillets <span class="te-td">హారాలు, పట్టీలు</span></td>
+        <td>Gold, Silver, Copper, Precious stones <span class="te-td">బంగారం, వెండి, రాగి, రత్నాలు</span></td>
+        <td>Both men &amp; women <span class="te-td">స్త్రీ పురుషులు ఇద్దరూ</span></td>
+        <td>Gemstones imported from far places <span class="te-td">రత్నాలు దూర ప్రాంతాల నుండి దిగుమతి</span></td>
+      </tr>
+      <tr>
+        <td>Girdles, Anklets <span class="te-td">నడికట్టు, కాలి అందెలు</span></td>
+        <td>Gold, Silver <span class="te-td">బంగారం, వెండి</span></td>
+        <td>Mostly women <span class="te-td">ఎక్కువగా స్త్రీలు</span></td>
+        <td rowspan="2">Rich wore expensive cotton &amp; wool; poor wore cheap clay ornaments <span class="te-td">ధనవంతులకు పత్తి, ఉన్ని వస్త్రాలు; పేదలకు మట్టి ఆభరణాలు</span></td>
+      </tr>
+      <tr>
+        <td>Finger rings, Earrings <span class="te-td">వేలి ఉంగరాలు, చెవి దుద్దులు</span></td>
+        <td>Gold, Terracotta <span class="te-td">బంగారం, కాల్చిన మట్టి</span></td>
+        <td>Both <span class="te-td">ఇద్దరూ</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- MEMORY + EXAM BOX -->
+  <div class="memory-box no-break">
+    <div class="mem-label">🧠 Memory Trick — గుర్తుంచుకోవడానికి</div>
+    <div class="mnemonic">"G–B–D–C–G–P–S" → "Good Buildings Drain, Cities Grow, Pottery Shines"</div>
+    <div class="mnem-exp"><strong>G</strong>rid Planning · <strong>B</strong>urnt Bricks · <strong>D</strong>rainage · <strong>C</strong>itadel+Lower Town · <strong>G</strong>ranaries · <strong>P</strong>ottery · <strong>S</strong>eals</div>
+    <div class="mem-te kw">హరప్పా 7 ముఖ్య లక్షణాలు: <span style="color:var(--mud)">గ్రిడ్ — కాల్చిన ఇటుకలు — మురుగు — కోట+పట్టణం — ధాన్యాగారం — కుండలు — ముద్రలు</span>. ఈ 7 గుర్తుపెట్టుకుంటే హరప్పా గురించి ఏ ప్రశ్నకైనా సమాధానం చెప్పగలరు!</div>
+  </div>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Exam Focus — తప్పకుండా గుర్తుపెట్టుకోండి</div>
+    <ul>
+      <li><strong>Dancing Girl</strong> → Bronze → <strong>Lost Wax (Cire Perdue)</strong> method → Mohenjo-daro</li>
+      <li><strong>Priest King</strong> → Steatite → Mohenjo-daro → Trefoil design on shawl</li>
+      <li><strong>Male Torso</strong> → Red Sandstone → Harappa → Socket holes for head &amp; arms</li>
+      <li><strong>Great Bath</strong> → Mohenjo-daro → Waterproofed with <strong>Bitumen</strong> → Ritual purpose</li>
+      <li>Seals script = <strong>Pictographic, Right to Left, STILL UNDECIPHERED</strong></li>
+      <li>Most common seal animal = <strong>Unicorn (ఏకశృంగి)</strong></li>
+      <li>Pottery: <strong>Plain</strong> (storage) vs <strong>Painted</strong> (Black on Red background)</li>
+      <li>First Dockyard of India = <strong>Lothal, Gujarat</strong></li>
+    </ul>
+    <div class="ea-te">
+      📌 <strong>పరీక్షలో తరచుగా వచ్చే ప్రశ్నలు:</strong> నాట్యకత్తె శిల్పం ఏ పద్ధతిలో చేశారు? (Lost Wax) | మహాస్నాన కుండం ఎక్కడ ఉంది? (మొహెంజో-దారో) | ముద్రలపై అత్యంత సాధారణ జంతువు ఏది? (ఏకశృంగి) | లోథాల్ దేనికి ప్రసిద్ధి? (మొదటి నౌకాశ్రయం) | హరప్పా లిపి ఇంకా అర్థం కాలేదు — ఈ విషయం పరీక్షలో నేరుగా వస్తుంది!
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.1 · Harappan Sculpture · Seals · Pottery</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 3</span>
+  </div>
+</div><!-- end a4-page -->
+
+</body>
+</html>

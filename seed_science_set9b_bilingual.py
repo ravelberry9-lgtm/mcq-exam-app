@@ -1,0 +1,70 @@
+import sqlite3, os
+
+SOURCE = 'Science_Set9B_Appliances_Devices_Ext'
+DB = os.path.join(os.path.dirname(__file__), 'database.db')
+
+questions = [
+    ('The principle behind a transformer is\\nతెలుగు: ట్రాన్స్‌ఫార్మర్ పని చేయడానికి ఆధారమైన సూత్రం ఏమిటి?', 'Electromagnetic induction / విద్యుదయస్కాంత ప్రేరణ', 'Static electricity / స్థిర విద్యుత్', 'Ohm\'s law / ఓమ్ నియమం', 'Newton\'s law / న్యూటన్ నియమం', 'A', 'M', '', 1),
+    ('A step-up transformer\\nతెలుగు: స్టెప్-అప్ ట్రాన్స్‌ఫార్మర్ ఏమి చేస్తుంది?', 'Increases voltage / వోల్టేజ్ పెంచుతుంది', 'Decreases voltage / వోల్టేజ్ తగ్గిస్తుంది', 'Increases current / విద్యుత్ ప్రవాహం పెంచుతుంది', 'Converts AC to DC / AC ని DC గా మారుస్తుంది', 'A', 'M', '', 2),
+    ('An electric motor converts\\nతెలుగు: ఎలక్ట్రిక్ మోటార్ దేనిని దేనిగా మారుస్తుంది?', 'Mechanical energy to electrical / యాంత్రిక శక్తిని విద్యుత్‌గా', 'Electrical energy to mechanical / విద్యుత్ శక్తిని యాంత్రికంగా', 'Electrical to heat / విద్యుత్‌ను ఉష్ణంగా', 'Heat to electrical / ఉష్ణాన్ని విద్యుత్‌గా', 'B', 'M', '', 3),
+    ('The device used to convert AC to DC is\\nతెలుగు: AC ని DC గా మార్చే పరికరం ఏమిటి?', 'Transformer / ట్రాన్స్‌ఫార్మర్', 'Rectifier / రెక్టిఫయర్', 'Inverter / ఇన్వర్టర్', 'Oscillator / ఆసిలేటర్', 'B', 'M', '', 4),
+    ('LED stands for\\nతెలుగు: LED అంటే ఏమిటి?', 'Light emitting device / లైట్ ఎమిటింగ్ డివైస్', 'Light energy diode / లైట్ ఎనర్జీ డయోడ్', 'Light emitting diode / లైట్ ఎమిటింగ్ డయోడ్', 'Low energy display / లో ఎనర్జీ డిస్‌ప్లే', 'C', 'M', '', 5),
+    ('Fax machines use which technology?\\nతెలుగు: ఫ్యాక్స్ మెషీన్‌లు ఏ సాంకేతికతను వాడుతాయి?', 'Scanning and transmission of images / చిత్రాల స్కానింగ్ మరియు ప్రసారం', 'Voice over internet / ఇంటర్నెట్ ద్వారా వాయిస్', 'Video conferencing / వీడియో కాన్ఫరెన్సింగ్', 'Satellite communication / ఉపగ్రహ సంచారం', 'A', 'M', '', 6),
+    ('A refrigerator works on the principle of\\nతెలుగు: రెఫ్రిజిరేటర్ ఏ సూత్రం ఆధారంగా పనిచేస్తుంది?', 'Evaporation and condensation / బాష్పీభవనం మరియు సంఘనీభవనం', 'Combustion / దహనం', 'Electromagnetic induction / విద్యుదయస్కాంత ప్రేరణ', 'Nuclear fission / అణు విభజన', 'A', 'M', '', 7),
+    ('The CPU of a computer stands for\\nతెలుగు: కంప్యూటర్ CPU అంటే ఏమిటి?', 'Central power unit / సెంట్రల్ పవర్ యూనిట్', 'Central processing unit / సెంట్రల్ ప్రాసెసింగ్ యూనిట్', 'Computer power unit / కంప్యూటర్ పవర్ యూనిట్', 'Central printer unit / సెంట్రల్ ప్రింటర్ యూనిట్', 'B', 'M', '', 8),
+    ('The microwave oven heats food using\\nతెలుగు: మైక్రోవేవ్ ఓవెన్ ఆహారాన్ని ఏ రకమైన కిరణాలతో వేడిచేస్తుంది?', 'Infrared rays / పరారుణ కిరణాలు', 'Microwave radiation / మైక్రోవేవ్ వికిరణం', 'UV rays / UV కిరణాలు', 'X-rays / X-కిరణాలు', 'B', 'M', '', 9),
+    ('The device that measures electric power is\\nతెలుగు: విద్యుత్ శక్తిని కొలవడానికి ఉపయోగించే పరికరం ఏమిటి?', 'Voltmeter / వోల్ట్‌మీటర్', 'Ammeter / అమ్మీటర్', 'Wattmeter / వాట్‌మీటర్', 'Galvanometer / గాల్వనోమీటర్', 'C', 'M', '', 10),
+    ('Solar panels convert solar energy into\\nతెలుగు: సోలార్ ప్యానెల్‌లు సూర్య శక్తిని దేనిగా మారుస్తాయి?', 'Mechanical energy / యాంత్రిక శక్తి', 'Electrical energy / విద్యుత్ శక్తి', 'Heat energy / ఉష్ణ శక్తి', 'Chemical energy / రసాయన శక్తి', 'B', 'M', '', 11),
+    ('The device that amplifies electric signals is\\nతెలుగు: విద్యుత్ సంకేతాలను వివర్ధించే పరికరం ఏమిటి?', 'Transformer / ట్రాన్స్‌ఫార్మర్', 'Transistor / ట్రాన్సిస్టర్', 'Resistor / రెసిస్టర్', 'Capacitor / కెపాసిటర్', 'B', 'M', '', 12),
+    ('GPS stands for\\nతెలుగు: GPS అంటే ఏమిటి?', 'Global position system / గ్లోబల్ పొజిషన్ సిస్టం', 'Global positioning system / గ్లోబల్ పొజిషనింగ్ సిస్టం', 'General position system / జనరల్ పొజిషన్ సిస్టం', 'Ground position satellite / గ్రౌండ్ పొజిషన్ శాటిలైట్', 'B', 'M', '', 13),
+    ('An electrocardiograph (ECG) records\\nతెలుగు: ECG దేనిని రికార్డు చేస్తుంది?', 'Brain activity / మెదడు కార్యకలాపాలు', 'Heart electrical activity / హృదయ విద్యుత్ కార్యకలాపాలు', 'Muscle strength / కండరాల బలం', 'Blood pressure / రక్తపోటు', 'B', 'M', '', 14),
+    ('A generator converts\\nతెలుగు: జనరేటర్ దేనిని దేనిగా మారుస్తుంది?', 'Electrical energy to mechanical / విద్యుత్‌ను యాంత్రికంగా', 'Mechanical energy to electrical / యాంత్రికాన్ని విద్యుత్‌గా', 'Chemical to electrical / రసాయనాన్ని విద్యుత్‌గా', 'Heat to electrical / ఉష్ణాన్ని విద్యుత్‌గా', 'B', 'M', '', 15),
+    ('The MRI machine uses\\nతెలుగు: MRI మెషీన్ ఏమి ఉపయోగిస్తుంది?', 'X-rays / X-కిరణాలు', 'Gamma rays / గామా కిరణాలు', 'Magnetic fields and radio waves / అయస్కాంత క్షేత్రాలు మరియు రేడియో తరంగాలు', 'Ultrasound / అతిశబ్దం', 'C', 'M', '', 16),
+    ('The telephone was invented by\\nతెలుగు: టెలిఫోన్‌ను ఎవరు కనుగొన్నారు?', 'Thomas Edison / థామస్ ఎడిసన్', 'Graham Bell / గ్రాహం బెల్', 'Marconi / మార్కోని', 'Tesla / టెస్లా', 'B', 'M', '', 17),
+    ('A capacitor stores energy in the form of\\nతెలుగు: కెపాసిటర్ ఏ రూపంలో శక్తిని నిల్వ చేస్తుంది?', 'Magnetic field / అయస్కాంత క్షేత్రం', 'Electric field / విద్యుత్ క్షేత్రం', 'Chemical energy / రసాయన శక్తి', 'Heat / వేడి', 'B', 'M', '', 18),
+    ('Radar was developed during\\nతెలుగు: రాడార్ ఏ సమయంలో అభివృద్ధి చేయబడింది?', 'World War I / మొదటి ప్రపంచ యుద్ధం', 'World War II / రెండవ ప్రపంచ యుద్ధం', 'Cold War / శీతల యుద్ధం', 'Gulf War / గల్ఫ్ యుద్ధం', 'B', 'M', '', 19),
+    ('An inverter converts\\nతెలుగు: ఇన్వర్టర్ దేనిని దేనిగా మారుస్తుంది?', 'AC to DC / AC ని DC గా', 'DC to AC / DC ని AC గా', 'High voltage to low / అధిక వోల్టేజ్ తక్కువగా', 'Low voltage to high / తక్కువ వోల్టేజ్ అధికంగా', 'B', 'M', '', 20),
+    ('The electric bulb was invented by\\nతెలుగు: విద్యుత్ బల్బును ఎవరు కనుగొన్నారు?', 'Nikola Tesla / నికోలా టెస్లా', 'Graham Bell / గ్రాహం బెల్', 'Thomas Edison / థామస్ ఎడిసన్', 'Marconi / మార్కోని', 'C', 'M', '', 21),
+    ('A transistor was invented at\\nతెలుగు: ట్రాన్సిస్టర్‌ను ఎక్కడ కనుగొన్నారు?', 'MIT / MIT', 'Bell Laboratories / బెల్ లేబొరేటరీలు', 'CERN / CERN', 'NASA / NASA', 'B', 'M', '', 22),
+    ('The device that stores electrical charge is\\nతెలుగు: విద్యుత్ భారాన్ని నిల్వ చేసే పరికరం ఏమిటి?', 'Resistor / రెసిస్టర్', 'Capacitor / కెపాసిటర్', 'Transistor / ట్రాన్సిస్టర్', 'Diode / డయోడ్', 'B', 'M', '', 23),
+    ('CT scan stands for\\nతెలుగు: CT స్కాన్ అంటే ఏమిటి?', 'Computed tomography / కంప్యూటెడ్ టోమోగ్రఫీ', 'Complete tomography / కంప్లీట్ టోమోగ్రఫీ', 'Central tomography / సెంట్రల్ టోమోగ్రఫీ', 'Critical testing scan / క్రిటికల్ టెస్టింగ్ స్కాన్', 'A', 'M', '', 24),
+    ('The principle of a dynamo is based on\\nతెలుగు: డైనమో సూత్రం దేని ఆధారంగా ఉంటుంది?', 'Faraday\'s law of electromagnetic induction / ఫారడే విద్యుదయస్కాంత ప్రేరణ నియమం', 'Newton\'s law of gravitation / న్యూటన్ గురుత్వాకర్షణ నియమం', 'Ohm\'s law / ఓమ్ నియమం', 'Boyle\'s law / బాయిల్ నియమం', 'A', 'M', '', 25),
+    ('Which device converts sound to electrical signals?\\nతెలుగు: శబ్దాన్ని విద్యుత్ సంకేతాలుగా మార్చే పరికరం ఏమిటి?', 'Speaker / స్పీకర్', 'Microphone / మైక్రోఫోన్', 'Amplifier / యాంప్లిఫయర్', 'Oscillator / ఆసిలేటర్', 'B', 'M', '', 26),
+    ('A loudspeaker converts\\nతెలుగు: లౌడ్‌స్పీకర్ దేనిని దేనిగా మారుస్తుంది?', 'Sound to electricity / శబ్దాన్ని విద్యుత్‌గా', 'Electricity to sound / విద్యుత్‌ను శబ్దంగా', 'Light to electricity / కాంతిని విద్యుత్‌గా', 'Heat to sound / వేడిని శబ్దంగా', 'B', 'M', '', 27),
+    ('An electric fuse works on the principle of\\nతెలుగు: విద్యుత్ ఫ్యూజ్ ఏ సూత్రం ఆధారంగా పనిచేస్తుంది?', 'Magnetic effect of current / విద్యుత్ యొక్క అయస్కాంత ప్రభావం', 'Heating effect of current / విద్యుత్ యొక్క ఉష్ణ ప్రభావం', 'Chemical effect of current / విద్యుత్ యొక్క రసాయన ప్రభావం', 'Electrolytic effect / ఎలక్ట్రోలైటిక్ ప్రభావం', 'B', 'M', '', 28),
+    ('Photovoltaic cell converts\\nతెలుగు: ఫోటోవోల్టాయిక్ సెల్ దేనిని దేనిగా మారుస్తుంది?', 'Electrical to light / విద్యుత్‌ను కాంతిగా', 'Light to electrical / కాంతిని విద్యుత్‌గా', 'Heat to electrical / ఉష్ణాన్ని విద్యుత్‌గా', 'Chemical to electrical / రసాయనాన్ని విద్యుత్‌గా', 'B', 'M', '', 29),
+    ('The device used to measure electric current in a circuit is\\nతెలుగు: సర్కిట్‌లో విద్యుత్ ప్రవాహాన్ని కొలవడానికి ఉపయోగించే పరికరం ఏమిటి?', 'Voltmeter / వోల్ట్‌మీటర్', 'Ammeter / అమ్మీటర్', 'Ohmmeter / ఓమ్‌మీটర్', 'Wattmeter / వాట్‌మీటర్', 'B', 'M', '', 30),
+    ('A semiconductor diode allows current to flow in\\nతెలుగు: సెమీకండక్టర్ డయోడ్ విద్యుత్ ప్రవాహాన్ని ఏ దిశలో అనుమతిస్తుంది?', 'Both directions / రెండు దిశల్లో', 'One direction only / ఒకే దిశలో', 'No direction / ఏ దిశలో అనుమతించదు', 'Depends on voltage / వోల్టేజ్ పై ఆధారపడి', 'B', 'M', '', 31),
+    ('The first computer was called\\nతెలుగు: మొదటి కంప్యూటర్ పేరు ఏమిటి?', 'UNIVAC / UNIVAC', 'ENIAC / ENIAC', 'IBM / IBM', 'Apple / ఆపిల్', 'B', 'M', '', 32),
+    ('An electric iron uses the\\nతెలుగు: ఎలక్ట్రిక్ ఐరన్ ఏ ప్రభావాన్ని ఉపయోగిస్తుంది?', 'Magnetic effect of current / విద్యుత్ అయస్కాంత ప్రభావం', 'Heating effect of current / విద్యుత్ ఉష్ణ ప్రభావం', 'Chemical effect of current / విద్యుత్ రసాయన ప్రభావం', 'Photoelectric effect / ఫోటోఎలెక్ట్రిక్ ప్రభావం', 'B', 'M', '', 33),
+    ('The binary number system uses digits\\nతెలుగు: బైనరీ నంబర్ సిస్టమ్ ఏ అంకెలను ఉపయోగిస్తుంది?', '0 and 1 / 0 మరియు 1', '1 and 2 / 1 మరియు 2', '0 to 9 / 0 నుండి 9', 'A to Z / A నుండి Z', 'A', 'M', '', 34),
+    ('Wireless technology uses\\nతెలుగు: వైర్‌లెస్ సాంకేతికత ఏమి ఉపయోగిస్తుంది?', 'Sound waves / శబ్ద తరంగాలు', 'Radio waves / రేడియో తరంగాలు', 'Light waves / కాంతి తరంగాలు', 'Water waves / నీటి తరంగాలు', 'B', 'M', '', 35),
+    ('Electroplating uses which principle?\\nతెలుగు: ఎలక్ట్రోప్లేటింగ్ ఏ సూత్రాన్ని ఉపయోగిస్తుంది?', 'Electromagnetic induction / విద్యుదయస్కాంత ప్రేరణ', 'Electrolysis / విద్యుత్ విఘటనం', 'Static electricity / స్థిర విద్యుత్', 'Photoelectric effect / ఫోటోఎలెక్ట్రిక్ ప్రభావం', 'B', 'M', '', 36),
+    ('Magnetic tape stores data as\\nతెలుగు: మాగ్నటిక్ టేప్ డేటాను ఏ రూపంలో నిల్వ చేస్తుంది?', 'Light patterns / కాంతి నమూనాలు', 'Magnetic patterns / అయస్కాంత నమూనాలు', 'Electrical charges / విద్యుత్ భారాలు', 'Chemical changes / రసాయన మార్పులు', 'B', 'M', '', 37),
+    ('The principle of X-ray imaging is based on\\nతెలుగు: X-కిరణ చిత్రణ ఏ సూత్రం ఆధారంగా ఉంటుంది?', 'Reflection of X-rays / X-కిరణాల పరావర్తనం', 'Differential absorption of X-rays / X-కిరణాల వేర్వేరు శోషణ', 'Emission of X-rays / X-కిరణాల వెలువడటం', 'Refraction of X-rays / X-కిరణాల వక్రీభవనం', 'B', 'M', '', 38),
+    ('A fan converts electrical energy to\\nతెలుగు: ఫ్యాన్ విద్యుత్ శక్తిని దేనిగా మారుస్తుంది?', 'Heat energy / ఉష్ణ శక్తి', 'Light energy / కాంతి శక్తి', 'Mechanical energy / యాంత్రిక శక్తి', 'Chemical energy / రసాయన శక్తి', 'C', 'M', '', 39),
+    ('Bluetooth technology uses\\nతెలుగు: బ్లూటూత్ సాంకేతికత ఏమి ఉపయోగిస్తుంది?', 'Infrared waves / పరారుణ తరంగాలు', 'Radio waves / రేడియో తరంగాలు', 'Sound waves / శబ్ద తరంగాలు', 'Visible light / కనిపించే కాంతి', 'B', 'M', '', 40),
+    ('The resolution of a microscope depends on\\nతెలుగు: సూక్ష్మదర్శిని విభేదన శక్తి దేనిపై ఆధారపడి ఉంటుంది?', 'Magnification power / వివర్ధన శక్తి', 'Wavelength of light used / ఉపయోగించిన కాంతి తరంగదైర్ఘ్యం', 'Brightness of light / కాంతి తేజస్సు', 'Size of the lens / కటకం పరిమాణం', 'B', 'M', '', 41),
+    ('ISRO stands for\\nతెలుగు: ISRO అంటే ఏమిటి?', 'Indian Space Research Organisation / భారత అంతరిక్ష పరిశోధన సంస్థ', 'International Space Research Organisation / అంతర్జాతీయ అంతరిక్ష పరిశోధన సంస్థ', 'Indian Satellite Radio Organisation / భారత ఉపగ్రహ రేడియో సంస్థ', 'Indian Scientific Research Organisation / భారత శాస్త్రీయ పరిశోధన సంస్థ', 'A', 'M', '', 42),
+    ('An oscilloscope is used to\\nతెలుగు: ఆసిలోస్కోప్ దేనికి ఉపయోగిస్తారు?', 'Generate electric signals / విద్యుత్ సంకేతాలు ఉత్పత్తి చేయడానికి', 'Display wave forms of signals / సంకేతాల తరంగ రూపాలు ప్రదర్శించడానికి', 'Amplify electric signals / విద్యుత్ సంకేతాలు వివర్ధించడానికి', 'Store electric energy / విద్యుత్ శక్తి నిల్వ చేయడానికి', 'B', 'M', '', 43),
+    ('A dialysis machine replaces the function of\\nతెలుగు: డయాలసిస్ మెషీన్ ఏ అవయవ పని చేస్తుంది?', 'Heart / హృదయం', 'Lungs / ఊపిరితిత్తులు', 'Kidney / మూత్రపిండం', 'Liver / కాలేయం', 'C', 'M', '', 44),
+    ('WIFI stands for\\nతెలుగు: WiFi అంటే ఏమిటి?', 'Wireless fidelity / వైర్‌లెస్ ఫిడిలిటీ', 'Wire frequency / వైర్ ఫ్రీక్వెన్సీ', 'Wireless frequency internet / వైర్‌లెస్ ఫ్రీక్వెన్సీ ఇంటర్నెట్', 'Wideband fidelity / వైడ్‌బ్యాండ్ ఫిడిలిటీ', 'A', 'M', '', 45),
+    ('The device used to detect hidden metals is\\nతెలుగు: దాచిన లోహాలను గుర్తించే పరికరం ఏమిటి?', 'Metal detector / మెటల్ డిటెక్టర్', 'Seismograph / సీస్మోగ్రాఫ్', 'Barometer / బారోమీటర్', 'Geiger counter / గైగర్ కౌంటర్', 'A', 'M', '', 46),
+    ('A Geiger counter detects\\nతెలుగు: గైగర్ కౌంటర్ దేనిని గుర్తిస్తుంది?', 'Sound waves / శబ్ద తరంగాలు', 'Radioactive radiation / రేడియోధార్మిక వికిరణం', 'Magnetic fields / అయస్కాంత క్షేత్రాలు', 'Gravitational waves / గురుత్వ తరంగాలు', 'B', 'M', '', 47),
+    ('Integrated circuits (ICs) were developed in the\\nతెలుగు: ఇంటిగ్రేటెడ్ సర్కిట్‌లు (ICs) ఏ దశాబ్దంలో అభివృద్ధి చేయబడ్డాయి?', '1940s / 1940లలో', '1950s / 1950లలో', '1960s / 1960లలో', '1970s / 1970లలో', 'C', 'M', '', 48),
+    ('An ATM machine primarily uses\\nతెలుగు: ATM మెషీన్ ప్రధానంగా ఏ సాంకేతికత ఉపయోగిస్తుంది?', 'Biometric technology / బయోమెట్రిక్ సాంకేతికత', 'Magnetic strip/chip on card / కార్డ్‌పై మాగ్నటిక్ స్ట్రిప్/చిప్', 'Optical technology / ఆప్టికల్ సాంకేతికత', 'Sound recognition / శబ్ద గుర్తింపు', 'B', 'M', '', 49),
+    ('A UPS in computers stands for\\nతెలుగు: కంప్యూటర్లలో UPS అంటే ఏమిటి?', 'Universal power supply / యూనివర్సల్ పవర్ సప్లై', 'Uninterruptible power supply / నిరంతర విద్యుత్ సరఫరా', 'Under power system / అండర్ పవర్ సిస్టమ్', 'Utility power server / యుటిలిటీ పవర్ సర్వర్', 'B', 'M', '', 50),
+]
+
+def seed():
+    con = sqlite3.connect(DB); cur = con.cursor()
+    cur.execute("DELETE FROM questions WHERE source_file=?", (SOURCE,))
+    cur.executemany(
+        """INSERT INTO questions (folder,topic,source_file,question_text,option_a,option_b,option_c,option_d,correct_answer,difficulty,explanation,question_order)
+           VALUES ('GK','General_Science',?,?,?,?,?,?,?,?,?,?)""",
+        [(SOURCE, *q) for q in questions])
+    con.commit()
+    n = cur.execute("SELECT COUNT(*) FROM questions WHERE source_file=?",(SOURCE,)).fetchone()[0]
+    con.close(); print(f"Inserted {n} from {SOURCE}")
+
+if __name__ == '__main__': seed()

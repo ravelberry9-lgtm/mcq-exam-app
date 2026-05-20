@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Admin Login{% endblock %}
+{% block content %}
+<div class="main" style="max-width:380px;margin:60px auto;padding:20px;">
+  <div class="card" style="text-align:center;">
+    <div style="font-size:48px;margin-bottom:12px;">🔐</div>
+    <div style="font-size:20px;font-weight:800;color:var(--primary);margin-bottom:6px;">Admin Access</div>
+    <div style="font-size:13px;color:var(--text-muted);margin-bottom:24px;">Enter your PIN to continue</div>
+
+    {% if error %}
+    <div style="background:#fce4ec;color:#c62828;padding:10px;border-radius:8px;margin-bottom:16px;font-size:13px;font-weight:600;">
+      {{ error }}
+    </div>
+    {% endif %}
+
+    <form method="POST" action="/admin-login">
+      <div class="form-group">
+        <input type="password" name="pin" class="form-control"
+               placeholder="Enter PIN" maxlength="8"
+               style="text-align:center;font-size:24px;letter-spacing:8px;"
+               autofocus autocomplete="off">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" style="margin-top:8px;">
+        🔓 Enter Admin
+      </button>
+    </form>
+
+    <div style="margin-top:16px;">
+      <a href="/" style="font-size:13px;color:var(--text-muted);">← Back to Home</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

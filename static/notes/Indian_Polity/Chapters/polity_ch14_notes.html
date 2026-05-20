@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 14 — Parliamentary Procedures | Indian Polity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+    background: #eef2f7;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px;
+    background: #fff;
+    padding: 13mm 12mm 11mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+    color: #fff;
+    border-radius: 9px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .hbadge {
+    background: rgba(255,255,255,0.2);
+    border-radius: 7px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .htitle h1 { font-size: 18px; font-weight: 700; }
+  .htitle h2 { font-size: 13.5px; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+  .hmeta { margin-left: auto; text-align: right; font-size: 13px; opacity: 0.8; line-height: 1.7; }
+
+  /* SECTION HEADING */
+  .sh {
+    font-size: 14px;
+    font-weight: 700;
+    color: #283593;
+    background: #e8eaf6;
+    border-left: 5px solid #5c6bc0;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 11px 0 7px;
+    letter-spacing: 0.3px;
+  }
+
+  /* GRIDS */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+
+  /* CARD */
+  .card {
+    background: #f5f7ff;
+    border: 1.5px solid #c5cae9;
+    border-radius: 7px;
+    padding: 8px 10px;
+  }
+  .ch {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1a237e;
+    border-bottom: 1px solid #c5cae9;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
+  }
+
+  /* FACT ROWS */
+  .fact { margin: 3px 0; font-size: 14.5px; }
+  .fact::before { content: "• "; color: #5c6bc0; font-weight: 700; }
+  .k  { font-weight: 700; color: #1a237e; }
+  .kg { font-weight: 700; color: #1b5e20; }
+  .kt { font-weight: 700; color: #004d40; }
+  .kr { font-weight: 700; color: #b71c1c; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    background: #3949ab;
+    color: #fff;
+    padding: 5px 7px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td { padding: 4px 7px; border-bottom: 1px solid #e8eaf6; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) td { background: #f0f2ff; }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .tg { background: #e8f5e9; color: #1b5e20; }
+  .tb { background: #e3f2fd; color: #0d47a1; }
+  .tp { background: #ede7f6; color: #4527a0; }
+  .tt { background: #e0f7fa; color: #00695c; }
+  .tr { background: #ffebee; color: #b71c1c; }
+  .to { background: #fff3e0; color: #e65100; }
+
+  /* PILLS */
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .pill {
+    background: #3949ab;
+    color: #fff;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .pg { background: #2e7d32; }
+  .pb { background: #0d47a1; }
+
+  /* HIGHLIGHT BOX */
+  .hbox {
+    background: #fff8e1;
+    border-left: 4px solid #f9a825;
+    border-radius: 0 6px 6px 0;
+    padding: 6px 10px;
+    margin: 6px 0;
+    font-size: 14px;
+  }
+
+  /* SOURCE GRID */
+  .sgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+  .sitem {
+    background: #e8eaf6;
+    border: 1.5px solid #9fa8da;
+    border-radius: 6px;
+    padding: 5px 6px;
+    text-align: center;
+  }
+  .sc { font-size: 13px; font-weight: 700; color: #283593; }
+  .sv { font-size: 12.5px; color: #37474f; margin-top: 2px; line-height: 1.35; }
+
+  .footer {
+    border-top: 1.5px solid #c5cae9;
+    margin-top: 10px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ PAGE 1 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 14</div>
+    <div class="htitle">
+      <h1>Parliamentary Procedures — పార్లమెంటరీ విధానాలు</h1>
+      <h2>Indian Polity · Lakshmikanth · APPSC Group 2 · Art.107–368</h2>
+    </div>
+    <div class="hmeta">8 Sections · 60 MCQs<br>Telugu + English</div>
+  </div>
+
+  <!-- KEY ARTICLES OVERVIEW -->
+  <div class="sh">📜 ముఖ్య అనుచ్ఛేదాలు (Key Articles)</div>
+  <div class="sgrid">
+    <div class="sitem"><div class="sc">Art.107–111</div><div class="sv">Bills — General<br>Ordinary/Money/Financial</div></div>
+    <div class="sitem"><div class="sc">Art.109–110</div><div class="sv">Money Bill<br>(LS Only, RS 14 days)</div></div>
+    <div class="sitem"><div class="sc">Art.112</div><div class="sv">Annual Financial<br>Statement (Budget)</div></div>
+    <div class="sitem"><div class="sc">Art.113–116</div><div class="sv">Estimates, Appropriation,<br>Supplementary, Vote on Acct</div></div>
+    <div class="sitem"><div class="sc">Art.117</div><div class="sv">Financial Bill<br>Special Provisions</div></div>
+    <div class="sitem"><div class="sc">Art.105/194</div><div class="sv">Parliamentary Privileges<br>Immunity, Freedom</div></div>
+    <div class="sitem"><div class="sc">Art.118</div><div class="sv">Rules of Procedure<br>(Each House)</div></div>
+    <div class="sitem"><div class="sc">Art.368</div><div class="sv">Constitutional Amendment<br>3 Types of Majority</div></div>
+  </div>
+
+  <!-- SECTION 14.1 — TYPES OF BILLS -->
+  <div class="sh">📋 14.1 బిల్లుల రకాలు (Types of Bills) — Art.107–111, 117</div>
+  <table>
+    <thead>
+      <tr><th style="width:24%">బిల్లు రకం</th><th style="width:46%">వివరణ (Details)</th><th>Articles</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>సాధారణ బిల్లు<br>(Ordinary Bill)</b></td>
+        <td>రెండు సభలలోనూ ప్రవేశపెట్టవచ్చు; రెండూ ఆమోదించాలి<br>(Can be introduced in either House; both must pass)</td>
+        <td><span class="tag tb">Art.107–111</span></td>
+      </tr>
+      <tr>
+        <td><b>మనీ బిల్లు<br>(Money Bill)</b></td>
+        <td>కేవలం <span class="k">లోక్‌సభలో మాత్రమే</span> ప్రవేశపెట్టాలి; RS గరిష్టంగా <span class="k">14 రోజులు</span>; Speaker నిర్ణయం తుది<br>(Only LS; RS 14 days only; Speaker certifies)</td>
+        <td><span class="tag tb">Art.109–110</span></td>
+      </tr>
+      <tr>
+        <td><b>ఫైనాన్షియల్ బిల్లు<br>(Financial Bill)</b></td>
+        <td>ఆర్థిక అంశాలు + ఇతర విషయాలు; మనీ బిల్లు కాదు<br>(Financial + other matters; not a Money Bill)</td>
+        <td><span class="tag tb">Art.117</span></td>
+      </tr>
+      <tr>
+        <td><b>రాజ్యాంగ సవరణ<br>(Constitution Amend.)</b></td>
+        <td>ప్రత్యేక మెజారిటీ; <span class="kr">Joint Sitting వర్తించదు</span>; రాష్ట్రపతి తిరస్కరించలేరు (24వ సవరణ)<br>(Special Majority; no Joint Sitting; President must assent)</td>
+        <td><span class="tag tb">Art.368</span></td>
+      </tr>
+      <tr>
+        <td><b>ప్రైవేట్ మెంబర్ బిల్లు<br>(Private Member Bill)</b></td>
+        <td>మంత్రి కాని సభ్యుడు ప్రవేశపెడతారు; ప్రతి శుక్రవారం 2.5 గంటలు; <span class="kr">చాలా అరుదుగా ఆమోదం</span><br>(Non-minister member; Fridays 2.5 hrs; rarely passed)</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="hbox">
+    <b>మనీ బిల్లు (Art.110) నిర్వచనం:</b> పన్నుల విధింపు/రద్దు, Consolidated Fund నుండి వ్యయం, ప్రభుత్వ అప్పులు — వీటిలో <span class="k">ఏదైనా ఒకటే</span> ఉంటే మనీ బిల్లు. <span class="k">స్పీకర్ నిర్ణయం తుది</span>.<br>
+    <b>Money Bill (Art.110):</b> Imposition/abolition of tax, expenditure from Consolidated Fund, borrowing — if <em>solely</em> these → Money Bill. Speaker's certification is final.
+  </div>
+
+  <!-- SECTION 14.2 — STAGES OF A BILL -->
+  <div class="sh">📜 14.2 బిల్లు దశలు (Stages of a Bill)</div>
+  <table>
+    <thead>
+      <tr><th style="width:8%">దశ</th><th style="width:28%">పేరు (Name)</th><th>వివరణ (Details)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>1</b></td><td><b>మొదటి పఠనం (First Reading)</b></td><td>పరిచయం మాత్రమే — శీర్షిక చదవడం; <span class="kr">చర్చ ఉండదు</span> (Introduction only; no debate)</td></tr>
+      <tr><td><b>2</b></td><td><b>రెండవ పఠనం (Second Reading)</b></td><td>సాధారణ చర్చ → కమిటీ దశ → నివేదిక పరిశీలన (3 ఉప-దశలు) (General debate → Committee stage → Report consideration)</td></tr>
+      <tr><td><b>3</b></td><td><b>కమిటీ దశ (Committee Stage)</b></td><td>Select Committee / Joint Committee / సభలో పరిశీలన (Clause-by-clause examination)</td></tr>
+      <tr><td><b>4</b></td><td><b>మూడవ పఠనం (Third Reading)</b></td><td>మొత్తం బిల్లుపై <span class="k">తుది ఓటింగ్</span> (Final vote on entire Bill)</td></tr>
+      <tr><td><b>5</b></td><td><b>ఇతర సభ (Other House)</b></td><td>అదే దశలు పునరావృతమవుతాయి (Same stages repeated)</td></tr>
+      <tr><td><b>6</b></td><td><b>రాష్ట్రపతి ఆమోదం</b></td><td>సంతకం / తిరిగి పంపించడం / Pocket Veto (Assent / Reconsideration / Pocket Veto)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 14.3 — QUESTION HOUR -->
+  <div class="sh">🎤 14.3 ప్రశ్నోత్తర సమయం (Question Hour) &amp; జీరో అవర్ (Zero Hour)</div>
+  <table>
+    <thead>
+      <tr><th style="width:22%">రకం (Type)</th><th style="width:22%">సమాధానం</th><th style="width:20%">అనుబంధ ప్రశ్నలు</th><th style="width:18%">నోటీసు</th><th>విశేషం</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>స్టార్డ్ (★)<br>(Starred)</b></td>
+        <td><span class="k">మౌఖిక (Oral)</span></td>
+        <td><span class="tag tg">✓ అనుమతి</span></td>
+        <td><span class="k">10 రోజులు</span></td>
+        <td>Supplementary Questions అడగవచ్చు</td>
+      </tr>
+      <tr>
+        <td><b>అన్‌స్టార్డ్<br>(Unstarred)</b></td>
+        <td><span class="k">వ్రాతపూర్వక (Written)</span></td>
+        <td><span class="tag tr">✗ అనుమతి లేదు</span></td>
+        <td><span class="k">10 రోజులు</span></td>
+        <td>Written reply placed on table</td>
+      </tr>
+      <tr>
+        <td><b>షార్ట్ నోటీస్<br>(Short Notice)</b></td>
+        <td><span class="k">మౌఖిక (Oral)</span></td>
+        <td><span class="tag tg">✓ అనుమతి</span></td>
+        <td><span class="kr">&lt;10 రోజులు</span></td>
+        <td>అత్యవసర అంశాలకు</td>
+      </tr>
+      <tr>
+        <td><b>జీరో అవర్<br>(Zero Hour)</b></td>
+        <td>మంత్రి నిర్ణయిస్తారు</td>
+        <td>—</td>
+        <td><span class="kr">నోటీసు లేదు</span></td>
+        <td>12:00 PM నుండి; <span class="kr">రాజ్యాంగంలో లేదు</span> — భారతీయ ఆవిష్కరణ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">Indian Polity · Lakshmikanth · Chapter 14: Parliamentary Procedures · APPSC Group 2 · Page 1 of 3</div>
+</div>
+
+<!-- ════════════════ PAGE 2 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 14</div>
+    <div class="htitle">
+      <h1>Motions · Budget · Committees — తీర్మానాలు · బడ్జెట్ · కమిటీలు</h1>
+      <h2>Adjournment · No-Confidence · Cut Motions · PAC · Estimates · CoPU · DRSCs</h2>
+    </div>
+    <div class="hmeta">APPSC Group 2<br>Lakshmikanth</div>
+  </div>
+
+  <!-- SECTION 14.4 — MOTIONS -->
+  <div class="sh">⚖️ 14.4 తీర్మానాలు (Parliamentary Motions)</div>
+  <table>
+    <thead>
+      <tr><th style="width:22%">తీర్మానం</th><th style="width:15%">సభ</th><th style="width:20%">మద్దతు</th><th>ఆమోదమైతే పరిణామం</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>వాయిదా తీర్మానం<br>(Adjournment Motion)</b></td>
+        <td><span class="k">LS మాత్రమే</span></td>
+        <td>కనీసం <span class="k">50 సభ్యులు</span></td>
+        <td>ప్రభుత్వ <span class="kr">నైతిక ఓటమి</span> (Moral defeat; CoM resignation not mandatory)</td>
+      </tr>
+      <tr>
+        <td><b>అవిశ్వాస తీర్మానం<br>(No-Confidence Motion)</b></td>
+        <td><span class="k">LS మాత్రమే</span></td>
+        <td>కనీసం <span class="k">50 సభ్యులు</span></td>
+        <td>ప్రభుత్వం <span class="kr">తప్పనిసరిగా రాజీనామా</span> చేయాలి; <span class="k">10 రోజులలోపు</span> చర్చ (LS Rule 198)</td>
+      </tr>
+      <tr>
+        <td><b>నిందా తీర్మానం<br>(Censure Motion)</b></td>
+        <td><span class="k">LS మాత్రమే</span></td>
+        <td>—</td>
+        <td><span class="kg">రాజీనామా అవసరం లేదు</span> — నైతిక ఒత్తిడి మాత్రమే</td>
+      </tr>
+      <tr>
+        <td><b>కాలింగ్ అటెన్షన్<br>(Calling Attention)</b></td>
+        <td><span class="k">రెండు సభలూ</span></td>
+        <td>—</td>
+        <td>మంత్రి వివరణ ఇవ్వాలి; Indian parliamentary practice</td>
+      </tr>
+      <tr>
+        <td><b>విశ్వాస తీర్మానం<br>(Confidence Motion)</b></td>
+        <td><span class="k">LS మాత్రమే</span></td>
+        <td>—</td>
+        <td>ప్రభుత్వం మెజారిటీ నిరూపించుకోవాలి (Floor Test)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="hbox">
+    <b>మొదటి అవిశ్వాస తీర్మానం:</b> <span class="k">1963</span> — J.B. Kripalani (Nehru Govt లో).<br>
+    <b>ఒక్క ఓటు తేడాపై పడిన ప్రభుత్వం:</b> <span class="k">వాజ్‌పేయి Govt 1999</span> (ఒక్క ఓటు తేడాపై).<br>
+    <b>NCM and Censure difference:</b> NCM passed → CoM must resign. Censure passed → No mandatory resignation.
+  </div>
+
+  <!-- CUT MOTIONS -->
+  <div class="sh" style="margin-top:8px">✂️ కట్ మోషన్లు (Cut Motions) — Budget Demands</div>
+  <div class="g3">
+    <div class="card">
+      <div class="ch"><span class="kr">Policy Cut</span></div>
+      <div class="fact">డిమాండ్‌ను <span class="k">₹1</span>కు తగ్గించడం</div>
+      <div class="fact">ప్రభుత్వ విధానాన్ని వ్యతిరేకించడానికి</div>
+      <div class="fact">ఆమోదమైతే: Govt రాజీనామా సమానం</div>
+    </div>
+    <div class="card">
+      <div class="ch"><span class="to">Economy Cut</span></div>
+      <div class="fact">నిర్దిష్ట మొత్తం తగ్గించడం</div>
+      <div class="fact">వ్యయంలో పొదుపు కోసం</div>
+      <div class="fact">నిర్దిష్ట రకమైన వ్యయంపై అభ్యంతరం</div>
+    </div>
+    <div class="card">
+      <div class="ch"><span class="kg">Token Cut</span></div>
+      <div class="fact">డిమాండ్‌ను <span class="k">₹100</span>కు తగ్గించడం</div>
+      <div class="fact">నిర్దిష్ట సమస్య చర్చించడానికి</div>
+      <div class="fact">Symbolic — protest వ్యక్తపరచడానికి</div>
+    </div>
+  </div>
+
+  <!-- SECTION 14.5 — BUDGET -->
+  <div class="sh">💰 14.5 బడ్జెట్ విధానం (Budget Procedure) — Art.112–117</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">📋 ముఖ్య అనుచ్ఛేదాలు</div>
+      <div class="fact"><span class="tag tb">Art.112</span> వార్షిక ఆర్థిక వివరణ (Annual Financial Statement = Budget)</div>
+      <div class="fact"><span class="tag tb">Art.113</span> పార్లమెంట్‌లో అంచనాలు (Estimates laid before Parliament)</div>
+      <div class="fact"><span class="tag tb">Art.114</span> అప్రూప్రియేషన్ బిల్లు (Appropriation Bill — Consolidated Fund)</div>
+      <div class="fact"><span class="tag tb">Art.115</span> అదనపు/అనుబంధ అంచనాలు (Supplementary Grants)</div>
+      <div class="fact"><span class="tag tb">Art.116</span> వోట్ ఆన్ అకౌంట్ / Vote of Credit / Exceptional Grant</div>
+      <div class="fact"><span class="tag tb">Art.117</span> ఫైనాన్షియల్ బిల్లులకు ప్రత్యేక నిబంధనలు</div>
+    </div>
+    <div class="card">
+      <div class="ch">📖 బడ్జెట్ పరిభాష (Budget Terminology)</div>
+      <div class="fact"><span class="k">గిలోటిన్ (Guillotine):</span> బడ్జెట్ చివరి రోజు చర్చించని డిమాండ్లన్నీ ఒకేసారి ఓటింగ్</div>
+      <div class="fact"><span class="k">వోట్ ఆన్ అకౌంట్:</span> బడ్జెట్ ఆమోదానికి ముందు తాత్కాలిక వ్యయ అనుమతి (సాధారణంగా 2 నెలలు)</div>
+      <div class="fact"><span class="k">అప్రూప్రియేషన్ బిల్లు:</span> Consolidated Fund నుండి ధనం తీసుకోవడానికి పార్లమెంట్ ఆమోదం — మనీ బిల్లు</div>
+      <div class="fact"><span class="k">ఫైనాన్స్ బిల్లు:</span> కొత్త పన్నులు విధింపు; ఆమోదం లేకపోతే Govt రాజీనామా</div>
+    </div>
+  </div>
+
+  <!-- SECTION 14.6 — PARLIAMENTARY COMMITTEES -->
+  <div class="sh">🏛️ 14.6 పార్లమెంటరీ కమిటీలు (Parliamentary Committees)</div>
+  <table>
+    <thead>
+      <tr><th style="width:20%">కమిటీ</th><th style="width:20%">సభ్యులు</th><th style="width:22%">అధ్యక్షుడు</th><th>పని</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>PAC</b><br>(Public Accounts Committee)</td>
+        <td><span class="k">22</span> (15 LS + 7 RS)</td>
+        <td><span class="k">ప్రతిపక్ష సభ్యుడు</span><br>(1967 నుండి ఆచారం)</td>
+        <td>CAG నివేదికలు పరిశీలన — <span class="k">వ్యయం తర్వాత</span>; స్థాపన: <span class="k">1921</span> (M-C Reforms ఫలితంగా)</td>
+      </tr>
+      <tr>
+        <td><b>Estimates Committee</b></td>
+        <td><span class="k">30</span> (<span class="kr">కేవలం LS</span> నుండి)</td>
+        <td><span class="k">పాలకపక్ష సభ్యుడు</span></td>
+        <td>బడ్జెట్ అంచనాలు — <span class="k">వ్యయానికి ముందు</span>; అతిపెద్ద కమిటీ</td>
+      </tr>
+      <tr>
+        <td><b>CoPU</b><br>(Committee on Public Undertakings)</td>
+        <td><span class="k">22</span> (15 LS + 7 RS)</td>
+        <td>—</td>
+        <td>ప్రభుత్వ రంగ సంస్థల పని పరిశీలన</td>
+      </tr>
+      <tr>
+        <td><b>DRSCs</b><br>(Departmental Standing Committees)</td>
+        <td><span class="k">31</span> (21 LS + 10 RS)</td>
+        <td>—</td>
+        <td>మంత్రిత్వ శాఖల పర్యవేక్షణ; <span class="k">24 కమిటీలు</span>; <span class="k">1993</span>లో ప్రారంభం</td>
+      </tr>
+      <tr>
+        <td><b>BAC</b><br>(Business Advisory Committee)</td>
+        <td>—</td>
+        <td>Speaker (LS) / Chairman (RS)</td>
+        <td>సమావేశ సమయ నిర్ణయం (Time allocation for business)</td>
+      </tr>
+      <tr>
+        <td><b>Privileges Committee</b></td>
+        <td>—</td>
+        <td>—</td>
+        <td>పార్లమెంటరీ హక్కుల ఉల్లంఘన విచారణ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="hbox">
+    <b>PAC vs Estimates Committee తేడా:</b> PAC = post-audit (వ్యయం తర్వాత, CAG నివేదిక ఆధారంగా); Estimates Committee = pre-budget (వ్యయానికి ముందు సూచనలు).<br>
+    <b>PAC Chairman:</b> Always from Opposition (convention since 1967). Estimates Committee = Ruling party member.
+  </div>
+
+  <div class="footer">Indian Polity · Lakshmikanth · Chapter 14: Parliamentary Procedures · APPSC Group 2 · Page 2 of 3</div>
+</div>
+
+<!-- ════════════════ PAGE 3 ════════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="hbadge">Chapter 14</div>
+    <div class="htitle">
+      <h1>Constitutional Amendment · Privileges · Quick Reference</h1>
+      <h2>Art.368 — 3 Types · Art.105 · Parliamentary Terms · APPSC PYQs</h2>
+    </div>
+    <div class="hmeta">APPSC Group 2<br>Lakshmikanth</div>
+  </div>
+
+  <!-- SECTION 14.7 — CONSTITUTIONAL AMENDMENT -->
+  <div class="sh">📜 14.7 రాజ్యాంగ సవరణ విధానం (Constitutional Amendment) — Art.368</div>
+  <table>
+    <thead>
+      <tr><th style="width:32%">రకం (Type)</th><th style="width:28%">మెజారిటీ (Majority)</th><th>ఉదాహరణలు (Examples)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>సాధారణ మెజారిటీ<br>(Simple Majority)</b></td>
+        <td>హాజరైన వారిలో సగానికి పైగా (50%+ of present &amp; voting)</td>
+        <td>కొత్త రాష్ట్రాల ఏర్పాటు (Art.3), జాతీయ భాషల అదనం (8వ షెడ్యూల్), నూతన UT ఏర్పాటు</td>
+      </tr>
+      <tr>
+        <td><b>ప్రత్యేక మెజారిటీ<br>(Special Majority)</b></td>
+        <td>మొత్తం సభ్యత్వంలో 50%+ <em>మరియు</em> ఓటింగ్‌లో 2/3 (Both Houses separately)</td>
+        <td>ప్రాథమిక హక్కులు, DPSPs, అత్యధిక అంశాలు — రాజ్యాంగంలో చాలా భాగం</td>
+      </tr>
+      <tr>
+        <td><b>ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాల ఆమోదం<br>(Special Majority + ½ States)</b></td>
+        <td>పై రెండూ + కనీసం <span class="k">½ రాష్ట్రాల</span> శాసనసభల ఆమోదం (Simple Majority)</td>
+        <td>రాష్ట్రపతి ఎన్నిక (Art.54-55), SC అధికారిత (Art.130), 7వ షెడ్యూల్ (Lists), LS/RS లో రాష్ట్రాల ప్రాతినిధ్యం</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="g2" style="margin-top:7px">
+    <div class="card">
+      <div class="ch">🔑 రాజ్యాంగ సవరణ — ముఖ్య నియమాలు</div>
+      <div class="fact">రాజ్యాంగ సవరణ బిల్లుకు <span class="kr">Joint Sitting జరగదు</span></div>
+      <div class="fact">రాష్ట్రపతి తిరస్కరించలేరు — <span class="k">24వ సవరణ (1971)</span></div>
+      <div class="fact">రాష్ట్రపతి <span class="k">తప్పనిసరిగా ఆమోదం</span> తెలపాలి</div>
+      <div class="fact">ఏ సభలోనైనా ప్రవేశపెట్టవచ్చు (Joint Sitting లేదు)</div>
+    </div>
+    <div class="card">
+      <div class="ch">📋 ముఖ్యమైన సవరణలు (Key Amendments)</div>
+      <div class="fact"><span class="k">42వ సవరణ 1976</span> — Mini Constitution</div>
+      <div class="fact"><span class="k">44వ సవరణ 1978</span> — Art.352 మార్పులు (Armed Rebellion)</div>
+      <div class="fact"><span class="k">52వ సవరణ 1985</span> — Anti-Defection (10వ షెడ్యూల్)</div>
+      <div class="fact"><span class="k">91వ సవరణ 2003</span> — CoM పరిమాణం 15% LS</div>
+      <div class="fact"><span class="k">104వ సవరణ 2020</span> — Anglo-Indian seats రద్దు</div>
+    </div>
+  </div>
+
+  <!-- SECTION 14.8 — PARLIAMENTARY PRIVILEGES & QUICK REF -->
+  <div class="sh">⚡ 14.8 పార్లమెంటరీ హక్కులు &amp; వేగ సూచిక (Privileges &amp; Quick Reference)</div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch">🛡️ పార్లమెంటరీ హక్కులు (Art.105)</div>
+      <div class="fact">సభలో మాట్లాడిన విషయంపై <span class="k">Court proceedings లేవు</span></div>
+      <div class="fact">Arrest immunity: <span class="k">Civil cases</span> లో session సమయంలో మాత్రమే</div>
+      <div class="fact">Criminal cases కు <span class="kr">వర్తించదు</span></div>
+      <div class="fact">Contempt of House: బయటి వ్యక్తులకూ వర్తిస్తుంది</div>
+      <div class="fact">రాష్ట్ర శాసనసభలకు: <span class="tag tb">Art.194</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">📖 సమావేశ పరిభాష (Parliamentary Terms)</div>
+      <div class="fact"><span class="k">Lame-Duck Session:</span> కొత్త LS ఎన్నికల తర్వాత పాత సభ్యుల సమావేశం</div>
+      <div class="fact"><span class="k">Guillotine:</span> చర్చించని బడ్జెట్ డిమాండ్లన్నీ ఒకేసారి ఓటింగ్</div>
+      <div class="fact"><span class="k">Whip:</span> పార్టీ ఓటింగ్ ఆదేశం; 3-Line Whip = తప్పనిసరి హాజరు</div>
+      <div class="fact"><span class="k">Closure Motion:</span> చర్చ వెంటనే ముగించి ఓటింగ్‌కు పెట్టమని కోరడం</div>
+      <div class="fact"><span class="k">Quorum:</span> మొత్తంలో 1/10 (LS≈55; RS≈25)</div>
+    </div>
+  </div>
+
+  <!-- BILLS LAPSE TABLE -->
+  <div class="sh" style="margin-top:8px">📋 Bills Lapse vs Survive — ముఖ్యమైన నియమం</div>
+  <table>
+    <thead>
+      <tr><th style="width:25%">పరిస్థితి (Situation)</th><th style="width:37%">LS లో Originated Bills</th><th>RS లో Originated Bills</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Prorogation (సమావేశం ముగింపు)</b></td>
+        <td><span class="kg">Lapse కావు ✓</span> (business survives)</td>
+        <td><span class="kg">Lapse కావు ✓</span></td>
+      </tr>
+      <tr>
+        <td><b>LS Dissolution (రద్దు)</b></td>
+        <td>LS లో pending → <span class="kr">Lapse అవుతాయి ✗</span><br>LS pass చేసి RS లో pending → <span class="kr">Lapse ✗</span></td>
+        <td>RS pass చేసి LS లో pending → <span class="kg">Lapse కావు ✓</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- QUICK REFERENCE -->
+  <div class="sh" style="margin-top:8px">⚡ APPSC కోసం వేగంగా గుర్తుంచుకోండి (Quick Reference)</div>
+  <div class="g3">
+    <div class="card">
+      <div class="ch">🔑 Bills</div>
+      <div class="fact">మనీ బిల్లు: <span class="k">LS మాత్రమే</span></div>
+      <div class="fact">RS: <span class="k">14 రోజులు</span> మాత్రమే</div>
+      <div class="fact">Speaker: <span class="k">తుది నిర్ణయం</span></div>
+      <div class="fact">Pocket Veto: <span class="k">జైల్ సింగ్ — 1986</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">🔑 Motions</div>
+      <div class="fact">1st NCM: <span class="k">1963</span> (J.B.Kripalani)</div>
+      <div class="fact">NCM: <span class="k">10 రోజులలోపు</span> చర్చ</div>
+      <div class="fact">NCM: <span class="k">LS మాత్రమే</span></div>
+      <div class="fact">Zero Hour: <span class="kr">రాజ్యాంగంలో లేదు</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">🔑 Committees</div>
+      <div class="fact">PAC Chairman: <span class="k">ప్రతిపక్షం</span></div>
+      <div class="fact">Estimates: <span class="k">30 — LS మాత్రమే</span></div>
+      <div class="fact">PAC స్థాపన: <span class="k">1921</span></div>
+      <div class="fact">DRSCs: <span class="k">24 కమిటీలు, 1993</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">🔑 Amendment (Art.368)</div>
+      <div class="fact">Joint Sitting: <span class="kr">జరగదు</span></div>
+      <div class="fact">24వ సవరణ: President <span class="k">తప్పనిసరి</span></div>
+      <div class="fact">½ రాష్ట్రాలు: President Election,<br>7th Schedule కి కావాలి</div>
+    </div>
+    <div class="card">
+      <div class="ch">🔑 Budget</div>
+      <div class="fact">Guillotine: <span class="k">చివరి రోజు అన్నీ ఓటింగ్</span></div>
+      <div class="fact">Vote on Account: <span class="k">2 నెలలు</span></div>
+      <div class="fact">Appropriation Bill: <span class="k">మనీ బిల్లు</span></div>
+      <div class="fact">Policy Cut: <span class="k">₹1</span></div>
+    </div>
+    <div class="card">
+      <div class="ch">🔑 Privileges</div>
+      <div class="fact">Art.105: Parliament</div>
+      <div class="fact">Art.194: State Legislature</div>
+      <div class="fact">Criminal: <span class="kr">immunity లేదు</span></div>
+      <div class="fact">Civil: <span class="kg">session లో immunity ✓</span></div>
+    </div>
+  </div>
+
+  <div class="footer">Indian Polity · Lakshmikanth · Chapter 14: Parliamentary Procedures · APPSC Group 2 · Page 3 of 3</div>
+</div>
+
+</body>
+</html>

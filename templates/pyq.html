@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block title %}APHC PYQ Practice{% endblock %}
+{% block content %}
+<div class="main">
+
+<div class="card" style="background: linear-gradient(135deg,#1b5e20,#43a047); color: white; border: none;">
+  <div style="font-size: 22px; font-weight: 800;">📜 APHC Previous Year Questions</div>
+  <div style="opacity: 0.9; font-size: 13px; margin-top: 4px;">Practice with real questions from AP High Court exams (2021-2025)</div>
+  <div style="margin-top: 10px; display: flex; gap: 12px; flex-wrap: wrap;">
+    <div style="background: rgba(255,255,255,0.2); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 700;">
+      {{ total }} Total Questions
+    </div>
+    <div style="background: rgba(255,255,255,0.2); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 700;">
+      {{ topics|length }} Topics
+    </div>
+    <div style="background: rgba(255,255,255,0.2); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 700;">
+      {{ years|length }} Years
+    </div>
+  </div>
+</div>
+
+{% if total == 0 %}
+<div class="card" style="text-align: center; padding: 40px 20px;">
+  <div style="font-size: 50px; margin-bottom: 12px;">📭</div>
+  <div style="font-size: 18px; font-weight: 700; color: var(--text-muted);">No PYQ questions loaded yet</div>
+  <div style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">Run the seed script to load questions from previous papers.</div>
+</div>
+{% else %}
+
+<!-- Student Name -->
+<div class="card">
+  <div class="card-title">👤 Your Name</div>
+  <div class="form-group" style="margin-bottom: 0;">
+    <input type="text" id="studentName" class="form-control" placeholder="Enter your name (optional)" maxlength="60" style="font-size: 16px;">
+  </div>
+</div>
+
+<!-- Exam Settings -->
+<div class="card">
+  <div class="card-title">🕐 Exam Settings</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <div class="form-group">
+      <label class="form-label">Number of Questions</label>
+      <input type="number" id="numQuestions" class="form-control" value="40" min="1" max="{{ total }}">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Time (minutes)</label>
+      <input type="number" id="duration" class="form-control" value="45" min="1" max="180">
+    </div>
+  </div>
+</div>
+
+<!-- Topic Filter -->
+<div class="card">
+  <div class="card-title" style="cursor: pointer;" onclick="toggleSection('topicSection')">
+    🏷️ Filter by Topic
+    <span style="margin-left: auto; font-size: 12px; color: var(--text-muted);" id="topicCount">All selected</span>
+    <span id="topicChevron" style="margin-left: 8px; transition: transform 0.2s;">▼</span>
+  </div>
+  <div id="topicSection">
+    <div style="margin-bottom: 10px;">
+      <button class="btn" style="padding: 6px 14px; font-size: 12px; background: var(--primary); color: white; border-radius: 20px;" onclick="selectAllTopics()">Select All</button>
+      <button class="btn" style="padding: 6px 14px; font-size: 12px; background: #e0e4ef; color: var(--text); border-radius: 20px;" onclick="deselectAllTopics()">Deselect All</button>
+    </div>
+    {% for t in topics %}
+    <label style="display: flex; align-items: center; gap: 10px; padding: 8px 4px; border-bottom: 1px solid var(--border); cursor: pointer;">
+      <input type="checkbox" class="topic-cb" value="{{ t.topic }}" checked
+             style="width: 18px; height: 18px; accent-color: var(--primary);">
+      <div style="flex: 1;">
+        <div style="font-size: 14px; font-weight: 600;">{{ t.topic.replace('_', ' ') }}</div>
+      </div>
+      <span class="badge badge-folder">{{ t.count }}</span>
+    </label>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Year Filter -->
+<div class="card">
+  <div class="card-title" style="cursor: pointer;" onclick="toggleSection('yearSection')">
+    📅 Filter by Year
+    <span style="margin-left: auto; font-size: 12px; color: var(--text-muted);" id="yearCount">All selected</span>
+    <span id="yearChevron" style="margin-left: 8px; transition: transform 0.2s;">▼</span>
+  </div>
+  <div id="yearSection">
+    <div style="margin-bottom: 10px;">
+      <button class="btn" style="padding: 6px 14px; font-size: 12px; background: var(--primary); color: white; border-radius: 20px;" onclick="selectAllYears()">Select All</button>
+      <button class="btn" style="padding: 6px 14px; font-size: 12px; background: #e0e4ef; color: var(--text); border-radius: 20px;" onclick="deselectAllYears()">Deselect All</button>
+    </div>
+    {% for y in years %}
+    <label style="display: flex; align-items: center; gap: 10px; padding: 8px 4px; border-bottom: 1px solid var(--border); cursor: pointer;">
+      <input type="checkbox" class="year-cb" value="{{ y.year }}" checked
+             style="width: 18px; height: 18px; accent-color: #ff6f00;">
+      <div style="flex: 1;">
+        <div style="font-size: 14px; font-weight: 600;">{{ y.year }}</div>
+      </div>
+      <span class="badge" style="background: #fff3e0; color: #e65100;">{{ y.count }}</span>
+    </label>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Start Button -->
+<div id="summaryBar" style="position: sticky; bottom: 0; background: white; border-top: 2px solid var(--border); padding: 12px 16px; margin: 0 -16px; box-shadow: 0 -4px 20px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+    <div>
+      <div style="font-weight: 700; color: #1b5e20;" id="filterSummary">All questions selected</div>
+      <div style="font-size: 12px; color: var(--text-muted);" id="filterDetails"></div>
+    </div>
+    <button class="btn" style="background: #1b5e20; color: white; min-width: 130px;" onclick="startPyqExam()" id="startBtn">
+      🚀 Start Exam
+    </button>
+  </div>
+</div>
+
+<div style="height: 80px;"></div>
+{% endif %}
+
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+// Restore saved name
+const savedName = localStorage.getItem('mcq_student_name');
+if (savedName && document.getElementById('studentName'))
+  document.getElementById('studentName').value = savedName;
+
+function toggleSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = el.style.display === 'none' ? '' : 'none';
+}
+
+function selectAllTopics() { document.querySelectorAll('.topic-cb').forEach(c => c.checked = true); updateSummary(); }
+function deselectAllTopics() { document.querySelectorAll('.topic-cb').forEach(c => c.checked = false); updateSummary(); }
+function selectAllYears() { document.querySelectorAll('.year-cb').forEach(c => c.checked = true); updateSummary(); }
+function deselectAllYears() { document.querySelectorAll('.year-cb').forEach(c => c.checked = false); updateSummary(); }
+
+// Update summary on changes
+document.addEventListener('change', function(e) {
+  if (e.target.classList.contains('topic-cb') || e.target.classList.contains('year-cb')) updateSummary();
+});
+
+function updateSummary() {
+  const topics = [...document.querySelectorAll('.topic-cb:checked')].map(c => c.value);
+  const years = [...document.querySelectorAll('.year-cb:checked')].map(c => c.value);
+  const totalTopics = document.querySelectorAll('.topic-cb').length;
+  const totalYears = document.querySelectorAll('.year-cb').length;
+
+  const tc = document.getElementById('topicCount');
+  const yc = document.getElementById('yearCount');
+  if (tc) tc.textContent = topics.length === totalTopics ? 'All selected' : topics.length + '/' + totalTopics + ' selected';
+  if (yc) yc.textContent = years.length === totalYears ? 'All selected' : years.length + '/' + totalYears + ' selected';
+
+  const fs = document.getElementById('filterSummary');
+  const fd = document.getElementById('filterDetails');
+  if (fs) fs.textContent = topics.length + ' topics, ' + years.length + ' years selected';
+  if (fd) fd.textContent = years.map(y => y).join(', ');
+}
+
+async function startPyqExam() {
+  const topics = [...document.querySelectorAll('.topic-cb:checked')].map(c => c.value);
+  const years = [...document.querySelectorAll('.year-cb:checked')].map(c => c.value);
+  const numQuestions = parseInt(document.getElementById('numQuestions').value) || 40;
+  const duration = parseInt(document.getElementById('duration').value) || 45;
+  const studentName = (document.getElementById('studentName').value || '').trim() || 'Student';
+  localStorage.setItem('mcq_student_name', studentName);
+
+  if (topics.length === 0) { showToast('Select at least one topic!', 'error'); return; }
+  if (years.length === 0) { showToast('Select at least one year!', 'error'); return; }
+
+  const btn = document.getElementById('startBtn');
+  btn.disabled = true;
+  btn.textContent = 'Loading...';
+
+  try {
+    const resp = await fetch('/api/pyq-start-exam', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topics, years, num_questions: numQuestions, duration, student_name: studentName })
+    });
+    const data = await resp.json();
+    if (data.error) {
+      showToast(data.error, 'error');
+      btn.disabled = false; btn.textContent = '🚀 Start Exam';
+    } else {
+      sessionStorage.setItem('exam_' + data.session_id, JSON.stringify(data));
+      window.location.href = '/exam/' + data.session_id;
+    }
+  } catch(e) {
+    showToast('Error starting exam. Try again.', 'error');
+    btn.disabled = false; btn.textContent = '🚀 Start Exam';
+  }
+}
+</script>
+{% endblock %}

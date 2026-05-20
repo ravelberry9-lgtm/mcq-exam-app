@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1.1-B – Mauryan Art & Architecture | Art & Culture</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   PRINT + PAGE SETUP
+══════════════════════════════════════ */
+@page {
+  size: A4;
+  margin: 18mm 16mm 16mm 16mm;
+}
+@media print {
+  .page-break { page-break-before: always; }
+  .no-break    { page-break-inside: avoid; }
+  body { background: #fff !important; }
+  .screen-header, .screen-footer { display: block; }
+}
+
+/* ══════════════════════════════════════
+   BASE
+══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --a4:       794px;
+  --brick:    #9b3a1a;
+  --brick-lt: #c4623a;
+  --mud:      #6b4226;
+  --sand:     #e8d5b0;
+  --cream:    #fdf8f2;
+  --green:    #2e6b4f;
+  --blue:     #2b4f8a;
+  --gold:     #7a4e00;
+  --text:     #1e1209;
+  --subtext:  #3a2200;
+  --border:   #d4b896;
+  --tel-bg:   #f5f9ff;
+  --tel-bdr:  #2b4f8a;
+  --mem-bg:   #f0f9f2;
+  --mem-bdr:  #1a5c35;
+  --exam-bg:  #fffbec;
+  --exam-bdr: #7a4e00;
+}
+
+body {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  background: #e0d8cc;
+  color: var(--text);
+  font-size: 10.5pt;
+  line-height: 1.65;
+}
+
+/* ══════════════════════════════════════
+   A4 WRAPPER
+══════════════════════════════════════ */
+.a4-page {
+  width: var(--a4);
+  min-height: 1123px;
+  background: #ffffff;
+  margin: 18px auto;
+  padding: 15mm 16mm 14mm 16mm;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.18);
+  position: relative;
+}
+
+/* ── SCREEN HEADER ── */
+.screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 5px;
+  margin-bottom: 11px;
+}
+.screen-header .sh-left {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 7.5pt;
+  color: #1a1206;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+.screen-header .sh-right {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  color: #1a1206;
+  font-weight: 600;
+}
+
+/* ── SCREEN FOOTER ── */
+.screen-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 5px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  color: #1a1206;
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════
+   SECTION HEADING
+══════════════════════════════════════ */
+.sec-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 16px 0 7px;
+  border-bottom: 2px solid var(--brick);
+  padding-bottom: 4px;
+}
+.sec-heading .sec-num {
+  font-family: 'Fira Mono', monospace;
+  font-size: 8pt;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brick);
+  padding: 1px 7px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.sec-heading h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 12.5pt;
+  font-weight: 700;
+  color: var(--brick);
+  line-height: 1.2;
+}
+.sec-heading .te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10pt;
+  color: var(--subtext);
+  font-weight: 400;
+}
+
+.sub-heading {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #fff;
+  background: var(--mud);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin: 13px 0 6px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sub-heading .te-sh {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 9pt;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #f8e8d8;
+}
+
+/* ══════════════════════════════════════
+   BILINGUAL BLOCK
+══════════════════════════════════════ */
+.bilingual {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 7px 0 11px;
+}
+.bi-en {
+  padding: 8px 11px;
+  background: #fffdf9;
+  font-size: 10pt;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+.bi-en .lang-tag {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  color: #1a1206;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+.bi-te {
+  padding: 8px 11px;
+  background: var(--tel-bg);
+  border-left: 3px solid var(--tel-bdr);
+  font-family: 'Tiro Telugu', serif;
+  font-size: 11pt;
+  color: #0e1a35;
+  line-height: 1.95;
+}
+.bi-te .lang-tag {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  color: #2255aa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+.bi-te .kw  { color: var(--brick);  font-weight: 700; }
+.bi-te .kw2 { color: var(--blue);   font-weight: 700; }
+.bi-te .kw3 { color: var(--green);  font-weight: 700; }
+
+/* TELUGU STORY */
+.telugu-story {
+  background: var(--tel-bg);
+  border: 1px solid #c0d0e8;
+  border-left: 3px solid var(--tel-bdr);
+  border-radius: 4px;
+  padding: 9px 12px;
+  font-family: 'Tiro Telugu', serif;
+  font-size: 11pt;
+  color: #0e1a35;
+  line-height: 2;
+  margin: 7px 0 11px;
+}
+.telugu-story .ts-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  color: #002080;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.telugu-story .kw  { color: var(--brick);  font-weight: 700; }
+.telugu-story .kw2 { color: var(--blue);   font-weight: 700; }
+.telugu-story .kw3 { color: var(--green);  font-weight: 700; }
+.telugu-story .kw4 { color: #7a2e8a;       font-weight: 700; }
+
+/* ══════════════════════════════════════
+   TABLES
+══════════════════════════════════════ */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+  margin: 7px 0 12px;
+}
+.styled-table caption {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--brick);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: left;
+  padding: 6px 10px;
+  border-radius: 4px 4px 0 0;
+  font-size: 9.5pt;
+}
+.styled-table thead tr { background: var(--mud); }
+.styled-table thead th {
+  color: #fff;
+  padding: 6px 8px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  text-align: left;
+  border: 1px solid #9a6238;
+}
+.styled-table thead th .te-th {
+  font-family: 'Tiro Telugu', serif;
+  font-weight: 400;
+  font-size: 8.5pt;
+  display: block;
+  opacity: 1;
+  color: #f8e8d8;
+  margin-top: 1px;
+}
+.styled-table tbody tr:nth-child(odd)  { background: #fffdf9; }
+.styled-table tbody tr:nth-child(even) { background: #faf3eb; }
+.styled-table td {
+  padding: 6px 8px;
+  border: 1px solid #ddd0be;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.styled-table td .te-td {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10pt;
+  color: #0e1a35;
+  display: block;
+  margin-top: 3px;
+  line-height: 1.85;
+}
+.styled-table td strong { color: var(--brick); }
+.tag-sm { color: #6a1a00 !important;
+  font-family: 'Fira Mono', monospace;
+  font-size: 8pt;
+  background: #fce8dc;
+  color: var(--brick);
+  border: 1px solid #e8b898;
+  padding: 1px 4px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* ── COMPARE TABLE (2 sides) ── */
+.compare-wrap {
+  display: flex;
+  gap: 10px;
+  margin: 7px 0 12px;
+}
+.compare-col {
+  flex: 1;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.compare-col .col-head {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #fff;
+  padding: 5px 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.compare-col.left .col-head  { background: var(--brick); }
+.compare-col.right .col-head { background: var(--blue); }
+.compare-col .col-head .te-ch {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 8.5pt;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  display: block;
+  color: #f8e8d8;
+}
+.compare-col table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+}
+.compare-col table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid #e8d8c0;
+  vertical-align: top;
+  line-height: 1.45;
+  background: #fffdf9;
+}
+.compare-col table tr:nth-child(even) td { background: #faf3eb; }
+.compare-col table td .te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 9.5pt;
+  color: #0e1a35;
+  display: block;
+  margin-top: 2px;
+  line-height: 1.8;
+}
+
+/* ══════════════════════════════════════
+   MEMORY BOX
+══════════════════════════════════════ */
+.memory-box {
+  background: var(--mem-bg);
+  border: 1px solid #98c8a8;
+  border-left: 4px solid var(--mem-bdr);
+  border-radius: 4px;
+  padding: 8px 11px;
+  margin: 7px 0 11px;
+}
+.memory-box .mem-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0a3a20;
+  margin-bottom: 4px;
+}
+.memory-box .mnemonic {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--mud);
+  margin-bottom: 3px;
+}
+.memory-box .mnem-exp {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9pt;
+  color: #0a2018;
+  margin-bottom: 6px;
+}
+.memory-box .mem-te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10.5pt;
+  color: #0a2018;
+  line-height: 1.9;
+  border-top: 1px dashed #98c8a8;
+  padding-top: 5px;
+  margin-top: 3px;
+}
+.memory-box .mem-te .kw { color: var(--mem-bdr); font-weight: 700; }
+
+/* ══════════════════════════════════════
+   EXAM ALERT
+══════════════════════════════════════ */
+.exam-alert {
+  background: var(--exam-bg);
+  border: 1px solid #d4b840;
+  border-left: 4px solid var(--gold);
+  border-radius: 4px;
+  padding: 8px 11px;
+  margin: 7px 0 11px;
+}
+.exam-alert .ea-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5a3400;
+  margin-bottom: 4px;
+}
+.exam-alert ul { padding-left: 14px; margin: 0; }
+.exam-alert li { font-size: 9.5pt; margin: 3px 0; line-height: 1.55; }
+.exam-alert li strong { color: var(--brick); }
+.exam-alert .ea-te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10pt;
+  color: #3a2800;
+  margin-top: 6px;
+  padding-top: 5px;
+  border-top: 1px dashed #d4b840;
+  line-height: 1.9;
+}
+
+/* ══════════════════════════════════════
+   KEY POINTS
+══════════════════════════════════════ */
+.keypoints { list-style: none; margin: 5px 0 11px; padding: 0; }
+.keypoints li {
+  display: flex;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 10pt;
+  line-height: 1.5;
+}
+.keypoints li:last-child { border-bottom: none; }
+.keypoints li .kp-num {
+  flex-shrink: 0;
+  width: 20px; height: 20px;
+  background: var(--brick);
+  color: #fff;
+  border-radius: 50%;
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  font-weight: 600;
+}
+.keypoints li .kp-body .te-kp {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10.5pt;
+  color: #0e1a35;
+  display: block;
+  margin-top: 3px;
+  line-height: 1.9;
+}
+
+/* ══════════════════════════════════════
+   HIGHLIGHT / NOTE BOXES
+══════════════════════════════════════ */
+.highlight-box {
+  background: #fef6ed;
+  border: 1px solid var(--sand);
+  border-left: 4px solid var(--brick-lt);
+  border-radius: 4px;
+  padding: 7px 11px;
+  margin: 5px 0 11px;
+  font-size: 10pt;
+}
+.highlight-box .hb-te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10.5pt;
+  line-height: 1.95;
+  color: #1a1206;
+  margin-top: 4px;
+}
+.highlight-box .kw  { color: var(--brick);  font-weight: 700; }
+.highlight-box .kw2 { color: var(--blue);   font-weight: 700; }
+.highlight-box .kw3 { color: var(--green);  font-weight: 700; }
+
+.deep-note {
+  border: 1.5px solid var(--brick-lt);
+  border-radius: 4px;
+  padding: 7px 11px;
+  background: #fff7f3;
+  font-size: 9.5pt;
+  margin: 6px 0 11px;
+}
+.deep-note .dn-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6a1000;
+  font-weight: 700;
+  margin-bottom: 3px;
+  display: block;
+}
+.deep-note .dn-te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10.5pt;
+  color: #1a1206;
+  line-height: 1.9;
+  margin-top: 4px;
+}
+.deep-note .kw  { color: var(--brick);  font-weight: 700; }
+.deep-note .kw2 { color: var(--blue);   font-weight: 700; }
+.deep-note .kw3 { color: var(--green);  font-weight: 700; }
+
+/* ══════════════════════════════════════
+   STUPA DIAGRAM (CSS)
+══════════════════════════════════════ */
+.stupa-diagram {
+  display: flex;
+  gap: 18px;
+  margin: 7px 0 12px;
+  align-items: flex-start;
+}
+.stupa-visual {
+  flex-shrink: 0;
+  width: 170px;
+  background: #fffdf9;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stupa-visual .sv-title {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: #1a1206;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+/* Yasti */
+.s-yasti {
+  width: 4px; height: 22px;
+  background: var(--brick);
+  border-radius: 2px;
+  margin: 0 auto 0;
+}
+/* Chattra */
+.s-chattra-wrap { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-bottom: 2px; }
+.s-chattra { border-radius: 50%; border: 2px solid var(--brick); }
+.s-c1 { width: 28px; height: 8px; }
+.s-c2 { width: 38px; height: 8px; }
+.s-c3 { width: 48px; height: 8px; }
+/* Harmika */
+.s-harmika { width: 52px; height: 16px; background: #e8c898; border: 2px solid var(--mud); border-radius: 2px; margin: 1px auto; }
+/* Anda */
+.s-anda { width: 110px; height: 58px; background: #f0e0c8; border: 2px solid var(--mud); border-radius: 55px 55px 0 0; margin: 0 auto; }
+/* Medhi */
+.s-medhi { width: 120px; height: 12px; background: #d8b880; border: 2px solid var(--mud); }
+/* Pradakshina */
+.s-prada { width: 130px; height: 10px; background: #c8a860; border: 2px solid var(--mud); }
+/* Torana */
+.s-torana-wrap { display: flex; justify-content: space-between; width: 130px; margin-top: 2px; }
+.s-torana { width: 8px; height: 18px; background: var(--brick); border-radius: 1px; }
+/* Label strip */
+.s-label-strip { margin-top: 6px; width: 100%; }
+.s-lrow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 2px 0;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 7.5pt;
+  color: #1a1206;
+  font-weight: 600;
+}
+.s-lrow .s-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.stupa-parts {
+  flex: 1;
+}
+.stupa-parts table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+}
+.stupa-parts table thead tr { background: var(--mud); }
+.stupa-parts table thead th {
+  color: #ffffff;
+  padding: 5px 7px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  border: 1px solid #9a6238;
+  text-align: left;
+}
+.stupa-parts table td {
+  padding: 5px 7px;
+  border: 1px solid #ddd0be;
+  vertical-align: top;
+  line-height: 1.45;
+}
+.stupa-parts table tr:nth-child(odd) td  { background: #fffdf9; }
+.stupa-parts table tr:nth-child(even) td { background: #faf3eb; }
+.stupa-parts table td .te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 9.5pt;
+  color: #0e1a35;
+  display: block;
+  margin-top: 2px;
+  line-height: 1.8;
+}
+.stupa-parts table td strong { color: var(--brick); }
+
+/* ══════════════════════════════════════
+   PILLAR PARTS DIAGRAM (CSS)
+══════════════════════════════════════ */
+.pillar-diagram {
+  display: flex;
+  gap: 18px;
+  margin: 7px 0 12px;
+  align-items: flex-start;
+}
+.pillar-visual {
+  flex-shrink: 0;
+  width: 140px;
+  background: #fffdf9;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pillar-visual .pv-title {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: #1a1206;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.p-finial   { width:38px; height:20px; background:#e8c898; border:2px solid var(--mud); border-radius:50%; margin:0 auto 2px; display:flex; align-items:center; justify-content:center; font-size:6pt; color:#555; font-family:'Fira Mono',monospace; }
+.p-abacus   { width:52px; height:14px; background:#d4a870; border:2px solid var(--mud); margin:0 auto 2px; border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:6pt; color:#fff; font-family:'Fira Mono',monospace; }
+.p-capital  { width:60px; height:28px; background:#c4986a; border:2px solid var(--mud); margin:0 auto 2px; border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:6pt; color:#fff; font-family:'Fira Mono',monospace; font-weight:600; text-align:center; line-height:1.2; }
+.p-shaft    { width:22px; height:90px; background: linear-gradient(180deg,#e8d0a8 0%,#c8a870 100%); border:2px solid var(--mud); margin:0 auto 0; border-radius:2px 2px 0 0; }
+.p-base     { width:50px; height:12px; background:#b87848; border:2px solid var(--mud); margin:0 auto; border-radius:0 0 2px 2px; }
+.p-label-strip { margin-top:6px; width:100%; }
+.p-lrow {
+  display:flex; align-items:center; gap:4px;
+  font-family:'Source Sans 3',sans-serif; font-size:7.5pt; color:#1a1206;
+  margin:2px 0;
+  font-weight: 600;
+}
+.p-lrow .p-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+/* ══════════════════════════════════════
+   MUDRA GRID
+══════════════════════════════════════ */
+.mudra-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 7px 0 12px;
+}
+.mudra-card {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fffdf9;
+  overflow: hidden;
+}
+.mudra-card .mc-head {
+  background: var(--mud);
+  color: #fff;
+  padding: 4px 9px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+}
+.mudra-card .mc-head .te-mc {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 8.5pt;
+  font-weight: 400;
+  display: block;
+  color: #f8e8d8;
+  margin-top: 1px;
+}
+.mudra-card .mc-body {
+  padding: 5px 9px;
+  font-size: 9pt;
+  line-height: 1.5;
+  color: var(--text);
+}
+.mudra-card .mc-body .te-body {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 9.5pt;
+  color: #0e1a35;
+  display: block;
+  margin-top: 3px;
+  line-height: 1.8;
+}
+
+/* ══════════════════════════════════════
+   DIVIDER
+══════════════════════════════════════ */
+hr.div {
+  border: none;
+  border-top: 1.5px dashed var(--border);
+  margin: 14px 0;
+}
+
+/* ══════════════════════════════════════
+   COURT vs POPULAR TWO-BOX
+══════════════════════════════════════ */
+.two-box {
+  display: flex;
+  gap: 10px;
+  margin: 7px 0 12px;
+}
+.tbox {
+  flex: 1;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.tbox .tb-head {
+  padding: 5px 10px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tbox.t-brick .tb-head { background: var(--brick); }
+.tbox.t-blue  .tb-head { background: var(--blue); }
+.tbox.t-green .tb-head { background: var(--green); }
+.tbox .tb-head .te-tbh {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 8.5pt;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  display: block;
+  color: #f8e8d8;
+}
+.tbox .tb-body {
+  padding: 7px 10px;
+  background: #fffdf9;
+}
+.tbox .tb-body ul { padding-left: 13px; margin: 0; }
+.tbox .tb-body li { font-size: 9pt; margin: 3px 0; line-height: 1.5; }
+.tbox .tb-body li .te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 9.5pt;
+  color: #0e1a35;
+  display: block;
+  line-height: 1.8;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ████████████████████████████████████████████████
+     PAGE 4 — MAURYAN ART: OVERVIEW + COURT vs POPULAR + PILLARS
+█████████████████████████████████████████████████ -->
+<div class="a4-page">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · MAURYAN ART &amp; ARCHITECTURE · 322 BCE – 185 BCE</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <!-- HEADING -->
+  <div class="sec-heading">
+    <div class="sec-num">1.1-C</div>
+    <h2>Mauryan Art &amp; Architecture <span class="te">— మౌర్య కళ మరియు వాస్తుశిల్పం</span></h2>
+  </div>
+
+  <div class="highlight-box no-break">
+    <strong>Period:</strong> 322 BCE – 185 BCE &nbsp;|&nbsp;
+    <strong>Key Rulers:</strong> Chandragupta Maurya, Bindusara, <strong>Ashoka (Most Important)</strong><br>
+    <strong>Capital:</strong> Pataliputra (ఇప్పటి Patna, Bihar)
+    <div class="hb-te">
+      మౌర్య సామ్రాజ్యం భారతదేశంలో మొట్టమొదటి <span class="kw">సుదూర వ్యాప్త సామ్రాజ్యం</span>. చంద్రగుప్త మౌర్యుడు స్థాపించాడు. కానీ <span class="kw">అశోకుడు (273–232 BCE)</span> హయాంలో కళ, వాస్తుశిల్పం అత్యున్నత స్థాయికి చేరుకున్నాయి. అశోకుడు కళింగ యుద్ధం (261 BCE) తర్వాత బౌద్ధమతాన్ని స్వీకరించి, దేశమంతటా <span class="kw2">స్తూపాలు, స్తంభాలు, గుహలు</span> నిర్మించాడు — ఇవే మౌర్య కళకు ప్రధాన ఆధారాలు.
+    </div>
+  </div>
+
+  <!-- COURT vs POPULAR -->
+  <div class="sub-heading">Classification of Mauryan Art <span class="te-sh" style="color:#f8e8d8;">— మౌర్య కళ వర్గీకరణ</span></div>
+
+  <div class="two-box no-break">
+    <div class="tbox t-brick">
+      <div class="tb-head">
+        Court Art (రాజాశ్రయ కళ)
+        <span class="te-tbh">రాజులు నిర్మించినవి / ఆదేశించినవి</span>
+      </div>
+      <div class="tb-body">
+        <ul>
+          <li>Commissioned by Mauryan rulers for political &amp; religious purposes
+            <span class="te">రాజులు రాజకీయ, మత ప్రయోజనాల కోసం ఆదేశించినవి</span></li>
+          <li><strong>Palaces</strong> — Chandragupta Maurya's palace at Pataliputra
+            <span class="te"><strong>రాజభవనాలు</strong> — చంద్రగుప్తుని భవనం పాటలీపుత్రలో ఉండేది</span></li>
+          <li><strong>Pillars (స్తంభాలు)</strong> — Ashokan pillars across empire
+            <span class="te"><strong>స్తంభాలు</strong> — అశోకుని శాసన స్తంభాలు దేశమంతటా</span></li>
+          <li><strong>Stupas (స్తూపాలు)</strong> — Buddhist burial mounds
+            <span class="te"><strong>స్తూపాలు</strong> — బౌద్ధ సమాధి టిబ్బలు</span></li>
+          <li><strong>Caves (గుహలు)</strong> — Rock-cut caves for monks
+            <span class="te"><strong>గుహలు</strong> — సన్యాసులకు నివాసం కోసం</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tbox t-blue">
+      <div class="tb-head">
+        Popular Art (జన కళ)
+        <span class="te-tbh">సామాన్య ప్రజల కళ</span>
+      </div>
+      <div class="tb-body">
+        <ul>
+          <li>Created by gifted individuals as personal expression
+            <span class="te">ప్రతిభావంతులైన వ్యక్తులు స్వంత భావ వ్యక్తీకరణగా చేసినవి</span></li>
+          <li><strong>Sculptures (శిల్పాలు)</strong> — Yaksha, Yakshi figures
+            <span class="te"><strong>శిల్పాలు</strong> — యక్ష, యక్షి విగ్రహాలు</span></li>
+          <li><strong>Pottery (కుండలు)</strong> — NBPW (Northern Black Polished Ware)
+            <span class="te"><strong>కుండలు</strong> — ఉత్తర నల్ల మెరుపు కుండలు</span></li>
+          <li>Less formal; reflects everyday life &amp; folk beliefs
+            <span class="te">తక్కువ అధికారికంగా; దైనందిన జీవితం, జన విశ్వాసాలను ప్రతిబింబిస్తుంది</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — లోతైన నేపథ్యం</span>
+    మౌర్య కళను అర్థం చేసుకోవడానికి అశోకుడి జీవితం అర్థం చేసుకోవాలి. అశోకుడు మొదట్లో చాలా యుద్ధప్రియుడు. కానీ <span class="kw">కళింగ యుద్ధంలో (261 BCE)</span> లక్షల మంది చనిపోవడం చూసి మనసు విరిగింది. బౌద్ధమతాన్ని స్వీకరించాడు. తర్వాత అతను చేసిన పని ఏమిటంటే — <span class="kw2">బౌద్ధ ధర్మాన్ని ప్రజలకు చేర్చడానికి</span> స్తంభాలపై శాసనాలు చెక్కించాడు, స్తూపాలు నిర్మించాడు, సన్యాసులకు గుహలు కేటాయించాడు. ఇవన్నీ ఒకేసారి రాజకీయ ప్రకటన, మత ప్రచారం, మరియు కళాత్మక వ్యక్తీకరణ అయ్యాయి. అందుకే <span class="kw3">మౌర్య కళ = అశోకుని కళ</span> అని చెప్పవచ్చు.
+  </div>
+
+  <!-- ASHOKAN PILLARS -->
+  <div class="sub-heading">Ashokan Pillars — అశోకుని స్తంభాలు <span class="te-sh" style="color:#f8e8d8;">(Most Important for Exam)</span></div>
+
+  <!-- PILLAR DIAGRAM -->
+  <div class="pillar-diagram no-break">
+    <div class="pillar-visual">
+      <div class="pv-title">Ashokan Pillar Structure</div>
+      <div class="p-finial">Finial</div>
+      <div class="p-abacus">Abacus</div>
+      <div class="p-capital">Capital<br>(Animal)</div>
+      <div class="p-shaft"></div>
+      <div class="p-base"></div>
+      <div class="p-label-strip">
+        <div class="p-lrow"><div class="p-dot" style="background:#e8c898;border:1px solid #9a6238;"></div> Finial (చివర విగ్రహం)</div>
+        <div class="p-lrow"><div class="p-dot" style="background:#d4a870;border:1px solid #9a6238;"></div> Abacus (పర్షియన్ నమూనా)</div>
+        <div class="p-lrow"><div class="p-dot" style="background:#c4986a;border:1px solid #9a6238;"></div> Capital Figure (జంతు విగ్రహం)</div>
+        <div class="p-lrow"><div class="p-dot" style="background:#c8a870;border:1px solid #9a6238;"></div> Shaft (ఏకశిల)</div>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <table class="styled-table" style="margin:0;">
+        <thead>
+          <tr>
+            <th style="width:22%">Part <span class="te-th">భాగం</span></th>
+            <th>Description <span class="te-th">వివరణ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Shaft</strong> (దండం)
+              <span class="te-td">స్తంభం యొక్క ఉడ్డు భాగం</span></td>
+            <td>Single piece of stone (monolith) — Chunar sandstone. Well polished. 40–50 feet tall.
+              <span class="te-td"><span style="color:var(--brick);font-weight:700">ఒకే రాతి ముక్కతో (Monolith)</span> చేసిన దండం — చునార్ ఇసుక రాయి. చాలా మెరుగు పెట్టబడింది. 40–50 అడుగుల ఎత్తు!</span></td>
+          </tr>
+          <tr>
+            <td><strong>Capital</strong> (అగ్రభాగం)
+              <span class="te-td">పై భాగంలో జంతు విగ్రహం</span></td>
+            <td>Animal figures: <strong>Lion (సింహం), Bull (ఎద్దు), Elephant (ఏనుగు), Horse (గుర్రం)</strong>. Usually circular or rectangular base.
+              <span class="te-td">జంతువుల విగ్రహాలు — సింహం, ఎద్దు, ఏనుగు, గుర్రం. వృత్తాకార లేదా చతురస్రాకార ఆధారంపై నిలబడతాయి.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Abacus</strong>
+              <span class="te-td">Capital క్రింది అందమైన భాగం</span></td>
+            <td>Decorated with floral, animal &amp; geometric motifs. Persian influence seen here.
+              <span class="te-td">పూలు, జంతువులు, రేఖాగణిత నమూనాలతో అలంకరించబడింది. ఇక్కడ <span style="color:var(--blue);font-weight:700">పర్షియన్ ప్రభావం</span> స్పష్టంగా కనిపిస్తుంది.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Finial</strong>
+              <span class="te-td">అత్యంత పైన ఉన్న భాగం</span></td>
+            <td>Lotus shaped (Inverted) OR Bell-shaped. Dharma Chakra on top in Sarnath pillar.
+              <span class="te-td">తలక్రిందుల తామర పూల ఆకారం లేదా గంట ఆకారం. సారనాథ్ స్తంభంపై <span style="color:var(--brick);font-weight:700">ధర్మ చక్రం</span> ఉంటుంది.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="deep-note no-break">
+    <span class="dn-label">⭐ Most Famous — Sarnath Lion Capital (సారనాథ్ సింహ స్తంభం)</span>
+    This pillar capital has <strong>4 lions standing back-to-back</strong> on a circular abacus decorated with 4 animals (lion, elephant, horse, bull) separated by 4 Dharma Chakras. A <strong>large Dharma Chakra</strong> sits on top. This capital is India's <strong>National Emblem</strong>. The Dharma Chakra is on the <strong>National Flag</strong>.
+    <div class="dn-te">
+      సారనాథ్ సింహ స్తంభ శీర్షం — <span class="kw">భారతదేశపు జాతీయ చిహ్నం (National Emblem)</span>! ఇందులో 4 సింహాలు వీపు వీపు ఆనించి నిలబడి ఉంటాయి. కింద గుండ్రని abacusపై 4 జంతువులు (సింహం, ఏనుగు, గుర్రం, ఎద్దు) మరియు 4 ధర్మ చక్రాలు ఉన్నాయి. పైన పెద్ద ధర్మ చక్రం ఉంది — ఇదే <span class="kw2">జాతీయ జెండాలోని అశోక చక్రం</span>! పరీక్షలో ఇది చాలా ముఖ్యమైన అంశం.
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.1-C · Mauryan Art — Overview &amp; Pillars</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 4</span>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████████████████████
+     PAGE 5 — PILLARS vs PERSIAN + STUPAS + CAVES
+█████████████████████████████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · MAURYAN ART — PILLAR COMPARISONS · STUPAS · CAVES</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <!-- MAURYAN vs PERSIAN PILLARS -->
+  <div class="sub-heading">Mauryan Pillar vs Persian (Achaemenian) Pillar <span class="te-sh" style="color:#f8e8d8;">— పోలిక</span></div>
+
+  <div class="compare-wrap no-break">
+    <div class="compare-col left">
+      <div class="col-head">Mauryan (Ashokan) Pillar
+        <span class="te-ch">మౌర్య (అశోక) స్తంభం</span>
+      </div>
+      <table>
+        <tr><td>Shaft is <strong>monolithic</strong> (single stone)
+          <span class="te">దండం <span style="color:var(--brick);font-weight:700">ఏకశిల</span> (ఒకే రాయి ముక్క)</span></td></tr>
+        <tr><td>Shape of lotus is different from Persian pillar
+          <span class="te">తామర పూవు ఆకారం పర్షియన్ కంటే భిన్నంగా ఉంటుంది</span></td></tr>
+        <tr><td>Shaft is <strong>simple &amp; smooth</strong> surface
+          <span class="te">దండం సరళంగా, నున్నగా ఉంటుంది</span></td></tr>
+        <tr><td><strong>Capital figure is absent</strong> in Mauryan pillar shaft
+          <span class="te">దండంపై capital figure ఉండదు</span></td></tr>
+        <tr><td>Proclamations begin in <strong>3rd person</strong>, then move to 1st person
+          <span class="te">శాసనాలు మొదట మూడో పురుషంలో, తర్వాత మొదటి పురుషంలో మారతాయి</span></td></tr>
+        <tr><td>Both empires inscribed <strong>Buddhist teachings &amp; court orders</strong>
+          <span class="te">రెండు సామ్రాజ్యాలు బౌద్ధ బోధనలు, రాజాజ్ఞలు చెక్కాయి</span></td></tr>
+      </table>
+    </div>
+    <div class="compare-col right">
+      <div class="col-head">Persian (Achaemenian) Pillar
+        <span class="te-ch">పర్షియన్ (అక్మీనిడ్) స్తంభం</span>
+      </div>
+      <table>
+        <tr><td>Shaft made of <strong>multiple stone segments</strong> (aggregated)
+          <span class="te">దండం అనేక రాయి ముక్కలను పేర్చి చేస్తారు</span></td></tr>
+        <tr><td>Fluted (ridged) surface on shaft
+          <span class="te">దండంపై నిలువు పాళ్ళు (fluting) ఉంటాయి</span></td></tr>
+        <tr><td>The architectural scheme is <strong>complex</strong>
+          <span class="te">నిర్మాణ నమూనా చాలా క్లిష్టంగా ఉంటుంది</span></td></tr>
+        <tr><td>Capital figure is part of a larger architectural scheme
+          <span class="te">Capital figure పెద్ద నిర్మాణ నమూనాలో భాగం</span></td></tr>
+        <tr><td>Achaemenid pillars were part of grand halls (Persepolis)
+          <span class="te">పర్షెపోలిస్‌లోని పెద్ద హాళ్ళలో భాగంగా ఉండేవి</span></td></tr>
+        <tr><td><strong>Similarities:</strong> Both used polished stones, carved motifs
+          <span class="te">పోలికలు: రెండూ పాలిష్ రాళ్ళు, చెక్కిన నమూనాలు వాడాయి</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="memory-box no-break">
+    <div class="mem-label">🧠 Memory Trick — స్తంభాల పోలిక గుర్తుపెట్టుకోవడానికి</div>
+    <div class="mnemonic">Maurya = "MONO-SMOOTH" &nbsp;|&nbsp; Persian = "MULTI-FLUTED"</div>
+    <div class="mnem-exp">Mauryan: <strong>Mono</strong>lithic shaft · <strong>Smooth</strong> surface · Simple &amp; standalone · 3rd person inscriptions<br>
+    Persian: <strong>Multi</strong>-segment shaft · <strong>Fluted</strong> (ridged) surface · Complex architectural scheme</div>
+    <div class="mem-te">గుర్తు సూత్రం: మౌర్య స్తంభం = <span class="kw">"ఒకే రాయి, నున్నగా"</span>. పర్షియన్ స్తంభం = <span class="kw">"అనేక ముక్కలు, పాళ్ళతో"</span>. పరీక్షలో రెండింటి మధ్య తేడా అడిగితే ఈ రెండు మాటలు చాలు!</div>
+  </div>
+
+  <hr class="div">
+
+  <!-- STUPAS -->
+  <div class="sub-heading">Stupas — స్తూపాలు <span class="te-sh" style="color:#f8e8d8;">(Buddhist Burial Mounds)</span></div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — స్తూపం అంటే ఏమిటి?</span>
+    <span class="kw">స్తూపం</span> అంటే బౌద్ధ మతంలో అత్యంత పవిత్రమైన నిర్మాణం. బుద్ధుడు లేదా ఇతర బౌద్ధ మహాపురుషుల <span class="kw">అస్తికలు (relics)</span> లేదా వారు ఉపయోగించిన వస్తువులను భూమిలో పాతిపెట్టి, దాని పైన మట్టి టిబ్బ వేసి, చుట్టూ రాయి కట్టడం నిర్మించేవారు — ఇదే స్తూపం. ఇది సమాధి + పూజా స్థలం కలిపిన నిర్మాణం. అశోకుడు బుద్ధుని అస్తికలను విభజించి <span class="kw2">84,000 స్తూపాలు</span> నిర్మించాడని చెప్తారు — అందులో <span class="kw">సాంచి స్తూపం</span> అత్యంత ప్రసిద్ధమైనది!
+  </div>
+
+  <!-- STUPA DIAGRAM -->
+  <div class="stupa-diagram no-break">
+    <div class="stupa-visual">
+      <div class="sv-title">Stupa Cross-Section</div>
+      <div class="s-yasti"></div>
+      <div class="s-chattra-wrap">
+        <div class="s-chattra s-c1"></div>
+        <div class="s-chattra s-c2"></div>
+        <div class="s-chattra s-c3"></div>
+      </div>
+      <div class="s-harmika"></div>
+      <div class="s-anda"></div>
+      <div class="s-medhi"></div>
+      <div class="s-prada"></div>
+      <div class="s-torana-wrap">
+        <div class="s-torana"></div>
+        <div class="s-torana"></div>
+      </div>
+      <div class="s-label-strip">
+        <div class="s-lrow"><div class="s-dot" style="background:var(--brick);"></div>Yasti (యష్టి)</div>
+        <div class="s-lrow"><div class="s-dot" style="background:var(--brick);opacity:0.6;"></div>Chattra (3 ఛత్రాలు)</div>
+        <div class="s-lrow"><div class="s-dot" style="background:#e8c898;border:1px solid #9a6238;"></div>Harmika (హర్మిక)</div>
+        <div class="s-lrow"><div class="s-dot" style="background:#f0e0c8;border:1px solid #9a6238;"></div>Anda (అండ)</div>
+        <div class="s-lrow"><div class="s-dot" style="background:#d8b880;border:1px solid #9a6238;"></div>Medhi (మేధి)</div>
+        <div class="s-lrow"><div class="s-dot" style="background:#c8a860;border:1px solid #9a6238;"></div>Pradakshina Path</div>
+        <div class="s-lrow"><div class="s-dot" style="background:var(--brick);"></div>Torana (తోరణం)</div>
+      </div>
+    </div>
+    <div class="stupa-parts">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:28%">Part <span class="te-th">భాగం</span></th>
+            <th>Meaning &amp; Detail <span class="te-th">అర్థం &amp; వివరణ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Anda</strong> (అండ)
+              <span class="te">గుమ్మటం</span></td>
+            <td>Hemispherical dome — symbolic of the sky / heaven. Core is a mound of dirt. Made of <strong>unburnt bricks, outer surface covered with burnt bricks using gypsum mortar</strong>.
+              <span class="te">అర్ధగోళాకార గుమ్మటం — ఆకాశాన్ని, స్వర్గాన్ని సూచిస్తుంది. లోపల పచ్చి ఇటుకలు, బయట కాల్చిన ఇటుకలు.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Harmika</strong> (హర్మిక)
+              <span class="te">పై వేదిక</span></td>
+            <td>Square railing on top of the Anda — represents the abode of gods.
+              <span class="te">అండపై చతుర్భుజాకార రాతి కంచె — దేవతల నివాసాన్ని సూచిస్తుంది.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Yasti</strong> (యష్టి)
+              <span class="te">కొనగోలు కర్ర</span></td>
+            <td>Central mast rising from Harmika. Represents the cosmic axis.
+              <span class="te">హర్మిక మధ్యలో నిలబడిన కొనగోలు — విశ్వ అక్షాన్ని సూచిస్తుంది.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Chattra</strong> (ఛత్రం)
+              <span class="te">గొడుగులు</span></td>
+            <td>3 umbrella discs on Yasti — represent 3 jewels of Buddhism: Buddha, Dharma, Sangha.
+              <span class="te">యష్టిపై 3 గొడుగులు — బౌద్ధమతపు 3 రత్నాలకు (బుద్ధ, ధర్మ, సంఘ) చిహ్నం.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Medhi</strong> (మేధి)
+              <span class="te">వేదిక</span></td>
+            <td>Raised circular terrace around the stupa base. Used for pradakshina (circumambulation).
+              <span class="te">స్తూపం ఆధారం చుట్టూ ఎత్తైన వేదిక — ప్రదక్షిణ చేయడానికి.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Torana</strong> (తోరణం)
+              <span class="te">ద్వారం</span></td>
+            <td>Decorated gateways (4 directions). Carved with <strong>Jataka stories, life of Buddha</strong>. Most elaborate part of Stupa art.
+              <span class="te">4 దిక్కులలో అలంకారమైన ద్వారాలు — జాతక కథలు, బుద్ధుని జీవిత దృశ్యాలు చెక్కబడ్డాయి. స్తూప కళలో అత్యంత విశేషమైన భాగం.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Pradakshina Path</strong>
+              <span class="te">ప్రదక్షిణ మార్గం</span></td>
+            <td>Ambulatory path for walking around the stupa during worship.
+              <span class="te">స్తూపాన్ని చుట్టూ తిరిగే పూజా మార్గం.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAMOUS STUPAS TABLE -->
+  <table class="styled-table no-break">
+    <caption>Famous Stupas in India — ప్రసిద్ధ స్తూపాలు</caption>
+    <thead>
+      <tr>
+        <th>Stupa <span class="te-th">స్తూపం</span></th>
+        <th>Location <span class="te-th">స్థలం</span></th>
+        <th>Special Feature <span class="te-th">విశేషం</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Sanchi Stupa</strong> <span class="tag-sm">MOST FAMOUS</span>
+          <span class="te-td">సాంచి స్తూపం</span></td>
+        <td>Madhya Pradesh <span class="te-td">మధ్యప్రదేశ్</span></td>
+        <td>Oldest stone stupa; built by Ashoka; 4 elaborate Toranas; UNESCO World Heritage Site
+          <span class="te-td">అత్యంత పురాతన రాతి స్తూపం; అశోకుడు నిర్మించాడు; 4 అద్భుత తోరణాలు; UNESCO వారసత్వ స్థలం</span></td>
+      </tr>
+      <tr>
+        <td><strong>Dhamek Stupa</strong>
+          <span class="te-td">ధమేక్ స్తూపం</span></td>
+        <td>Sarnath, Varanasi, UP <span class="te-td">సారనాథ్</span></td>
+        <td>Built where Buddha gave his first sermon (Dharmachakra Pravartana)
+          <span class="te-td">బుద్ధుడు మొదటి ప్రవచనం ఇచ్చిన స్థలంలో నిర్మించబడింది</span></td>
+      </tr>
+      <tr>
+        <td><strong>Amaravati Stupa</strong>
+          <span class="te-td">అమరావతి స్తూపం</span></td>
+        <td>Andhra Pradesh <span class="te-td">ఆంధ్రప్రదేశ్</span></td>
+        <td>White marble carvings; Satavahana period; known for dynamic narrative sculptures
+          <span class="te-td">తెల్ల పాలరాయి చెక్కడాలు; శాతవాహన కాలం; చలనాత్మక కథన శిల్పాలకు ప్రసిద్ధి</span></td>
+      </tr>
+      <tr>
+        <td><strong>Bharhut Stupa</strong>
+          <span class="te-td">భార్హుత్ స్తూపం</span></td>
+        <td>Madhya Pradesh <span class="te-td">మధ్యప్రదేశ్</span></td>
+        <td>Post-Mauryan; earliest narrative sculptures; Jataka stories carved on railings
+          <span class="te-td">మౌర్యానంతర కాలం; అత్యంత ప్రాచీన కథన శిల్పాలు; జాతక కథలు</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- CAVES -->
+  <div class="sub-heading">Mauryan Caves — మౌర్య గుహలు <span class="te-sh" style="color:#f8e8d8;">(Rock-cut Architecture)</span></div>
+
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English — Key Facts</span>
+      During the Mauryan period, caves were used as <strong>viharas (living quarters)</strong> for monks. They show a <strong>highly polished interior finish</strong>. Apart from court art (caves commissioned by rulers), cave-dwelling communities expressed <strong>popular art through sculpture and pottery</strong>.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      మౌర్య కాలంలో బౌద్ధ సన్యాసులు నివసించడానికి రాళ్ళను తొలచి గుహలు తయారు చేశారు. వీటికి <span class="kw">విహారాలు</span> అంటారు. ఈ గుహల లోపలి గోడలు <span class="kw2">అద్దంలా మెరిసేట్లు పాలిష్</span> చేయబడ్డాయి — ఇది మౌర్య కళకు ప్రత్యేకమైన లక్షణం! బయటి నుండి చూస్తే సాదా రాయి, లోపల అత్యంత నున్నటి గోడలు — ఇది ఆనాటి శిల్పుల నైపుణ్యాన్ని చూపిస్తుంది.
+    </div>
+  </div>
+
+  <table class="styled-table no-break">
+    <caption>Famous Mauryan Caves — ప్రసిద్ధ మౌర్య గుహలు</caption>
+    <thead>
+      <tr>
+        <th style="width:25%">Cave <span class="te-th">గుహ</span></th>
+        <th style="width:22%">Location <span class="te-th">స్థలం</span></th>
+        <th>Feature <span class="te-th">విశేషం</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Barabar Caves</strong> (4 caves) <span class="tag-sm">MAURYAN</span>
+          <span class="te-td">బరాబర్ గుహలు</span></td>
+        <td>Gaya, Bihar <span class="te-td">గయా, బిహార్</span></td>
+        <td>Oldest rock-cut caves in India; made for <strong>Ajivikas</strong> (not Buddhists!) by <strong>Emperor Ashoka</strong> himself; mirror-like polished walls. <em>Note: Do NOT confuse with Nagarjuni Caves (3 caves nearby) — those were by Dasharatha.</em>
+          <span class="te-td">భారతదేశంలో అత్యంత పురాతన రాతి గుహలు; <strong>అశోకుడు స్వయంగా</strong> ఆజీవకులకు (బౌద్ధులు కాదు!) నిర్మించాడు; అద్దం వంటి పాలిష్ గోడలు. ⚠️ పక్కనే ఉన్న నాగార్జున గుహలు (3) — దశరథుడు నిర్మించాడు. రెండూ ఆజీవకులకే!</span></td>
+      </tr>
+      <tr>
+        <td><strong>Nagarjuni Caves</strong> (3 caves)
+          <span class="te-td">నాగార్జుని గుహలు</span></td>
+        <td>Gaya, Bihar <span class="te-td">గయా, బిహార్</span></td>
+        <td>Also made by Dasharatha; for Ajivikas; same polished style
+          <span class="te-td">దశరథుడు ఆజీవకులకు నిర్మించాడు; అదే పాలిష్ శైలి</span></td>
+      </tr>
+      <tr>
+        <td><strong>Udayagiri-Khandagiri</strong> (Odisha)
+          <span class="te-td">ఉదయగిరి-ఖండగిరి</span></td>
+        <td>Bhubaneswar, Odisha <span class="te-td">ఒడిశా</span></td>
+        <td>Post-Mauryan; Jain caves; made by Kalinga king Kharavela; Hathigumpha inscription
+          <span class="te-td">మౌర్యానంతర కాలం; జైన గుహలు; కళింగ రాజు ఖారవేలుడు నిర్మించాడు; హాతిగుంఫ శాసనం ప్రసిద్ధి</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Exam Focus — మౌర్య కళలో తప్పక గుర్తుపెట్టుకోండి</div>
+    <ul>
+      <li><strong>Sarnath Lion Capital</strong> → India's <strong>National Emblem</strong> → 4 lions back-to-back</li>
+      <li>Ashokan Pillar → <strong>Monolithic shaft</strong> → Chunar sandstone → 4 parts (Shaft, Capital, Abacus, Finial)</li>
+      <li>Stupa → <strong>Anda</strong> (dome) + <strong>Harmika</strong> + <strong>Yasti + 3 Chattras</strong> + Torana + Medhi + Pradakshina Path</li>
+      <li>Sanchi Stupa → MP → <strong>UNESCO</strong> → Oldest stone stupa → Built by Ashoka</li>
+      <li><strong>Barabar Caves (4 caves)</strong> → Oldest rock-cut caves → Made for <strong>Ajivikas</strong> (NOT Buddhists) → by <strong>Emperor Ashoka</strong> himself → Mirror-polished walls</li>
+      <li><strong>Nagarjuni Caves (3 caves)</strong> → Also Ajivikas → by <strong>Dasharatha</strong> (Ashoka's grandson) → same polished style → Bihar</li>
+      <li>⚠️ Exam trick: Barabar = <strong>Ashoka</strong>; Nagarjuni = <strong>Dasharatha</strong>. BOTH for Ajivikas. NEITHER for Buddhists!</li>
+      <li>Dhamek Stupa → Sarnath → Site of <strong>Buddha's first sermon</strong></li>
+      <li>NBPW (Northern Black Polished Ware) → Mauryan pottery → Luxury items</li>
+    </ul>
+    <div class="ea-te">
+      📌 <strong>పరీక్షలో తరచుగా వచ్చే ప్రశ్నలు:</strong> జాతీయ చిహ్నం ఏ స్తంభం నుండి వచ్చింది? (సారనాథ్ సింహ స్తంభం) | అత్యంత పురాతన రాతి గుహలు ఎక్కడ? (బరాబర్, బిహార్) | సాంచి స్తూపం ఎవరు నిర్మించాడు? (అశోకుడు) | బరాబర్ గుహలు ఎవరికి నిర్మించారు? (ఆజీవకులకు — బౌద్ధులకు కాదు!) — ఈ చివరి అంశం ట్రిక్ ప్రశ్నగా వస్తుంది!
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.1-C · Mauryan Art — Pillars · Stupas · Caves</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 5</span>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████████████████████
+     PAGE 6 — MAURYAN SCULPTURE · POTTERY · BUDDHA MUDRAS
+█████████████████████████████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · MAURYAN SCULPTURE · POTTERY · BUDDHA MUDRAS</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <!-- SCULPTURES -->
+  <div class="sec-heading">
+    <div class="sec-num">1.1-D</div>
+    <h2>Mauryan Sculpture &amp; Pottery <span class="te">— మౌర్య శిల్పాలు మరియు కుండలు</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — నేపథ్యం</span>
+    మౌర్య కాలంలో రెండు రకాల శిల్పాలు వచ్చాయి. ఒకటి — <span class="kw">రాజాశ్రయ శిల్పాలు</span> (Court Art) — అశోకుని స్తంభాల మీద సింహం, ఎద్దు వంటి జంతు శిల్పాలు. ఇవి రాజు గొప్పతనాన్ని, అధికారాన్ని చూపించడానికి. రెండు — <span class="kw2">జన కళ శిల్పాలు</span> (Popular Art) — ప్రజల విశ్వాసాలకు సంబంధించిన <span class="kw3">యక్ష, యక్షి</span> విగ్రహాలు. యక్షులు అంటే ప్రకృతి దేవతలు — వర్షం, సంపద, రక్షణ ఇస్తారని నమ్మేవారు. ఈ రెండూ కలిసి మౌర్య శిల్పకళను సంపూర్ణంగా చేస్తాయి.
+  </div>
+
+  <table class="styled-table no-break">
+    <caption>Famous Mauryan Sculptures — ప్రసిద్ధ మౌర్య శిల్పాలు</caption>
+    <thead>
+      <tr>
+        <th style="width:26%">Sculpture <span class="te-th">శిల్పం</span></th>
+        <th style="width:20%">Location <span class="te-th">స్థలం</span></th>
+        <th>Features <span class="te-th">విశేషాలు</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Yaksha figure</strong> (Parkham Yaksha) <span class="tag-sm">POPULAR ART</span>
+          <span class="te-td">యక్ష విగ్రహం</span></td>
+        <td>Mathura <span class="te-td">మథుర</span></td>
+        <td>Massive frontal figure; both human and animal forms depicted; vigorous &amp; carved stone
+          <span class="te-td">పెద్ద ముందు భాగం చూపే విగ్రహం; మనిషి మరియు జంతు రూపాలు; బలమైన చెక్కిన రాయి శిల్పం</span></td>
+      </tr>
+      <tr>
+        <td><strong>Didarganj Yakshi</strong> <span class="tag-sm">POPULAR ART</span>
+          <span class="te-td">దిదర్‌గంజ్ యక్షి</span></td>
+        <td>Patna, Bihar <span class="te-td">పాటనా</span></td>
+        <td>Most famous Yakshi; found at Patna; chowrie-bearer; <strong>extremely polished</strong> Chunar sandstone; torso is nude
+          <span class="te-td">అత్యంత ప్రసిద్ధ యక్షి విగ్రహం; చమరీ పంఖా పట్టుకుని; చాలా మెరుపు గల చునార్ ఇసుక రాయి; నగ్న మేను</span></td>
+      </tr>
+      <tr>
+        <td><strong>Red Sandstone Male Torso</strong>
+          <span class="te-td">ఎర్ర రాయి పురుష మేను</span></td>
+        <td>Lohanipur, Patna <span class="te-td">పాటనా దగ్గర</span></td>
+        <td>Shows advanced knowledge of human anatomy; belongs to Jain tradition
+          <span class="te-td">మానవ శరీర రచన యొక్క అభివృద్ధి చెందిన జ్ఞానాన్ని చూపిస్తుంది; జైన సంప్రదాయానికి చెందినది</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- POTTERY -->
+  <div class="sub-heading">Mauryan Pottery — మౌర్య కుండలు <span class="te-sh" style="color:#f8e8d8;">(NBPW)</span></div>
+
+  <div class="bilingual no-break">
+    <div class="bi-en">
+      <span class="lang-tag">English</span>
+      Pottery of Mauryan period is generally referred to as <strong>NBPW — Northern Black Polished Ware</strong>. Characterised by its black paint and lustrous surface. Was used as <strong>luxury items</strong>. The torso of a nude male figure was found at Didarganj. Kaushambi and Pataliputra were the main centres of NBPW pottery.
+    </div>
+    <div class="bi-te">
+      <span class="lang-tag">తెలుగు వివరణ</span>
+      మౌర్య కాలపు కుండలను <span class="kw">NBPW — Northern Black Polished Ware (ఉత్తర నల్ల మెరుపు కుండలు)</span> అంటారు. ఈ కుండల విశేషం ఏమిటంటే — అవి <span class="kw2">నల్లటి మెరుపు రంగులో</span> మెరిసిపోతాయి! ఇవి సామాన్య కుండలు కాదు — <span class="kw">విలాసవంతమైన వస్తువులు</span>. ధనవంతులు, రాజ వంశస్థులు ఉపయోగించేవారు. కౌశాంబి మరియు పాటలీపుత్ర ఈ కుండల తయారీకి ప్రధాన కేంద్రాలు. NBPW ను గుర్తు పెట్టుకోవడానికి: <span class="kw3">"Northern Black Polished Ware = Mauryan Luxury Pottery"</span>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <!-- BUDDHA MUDRAS -->
+  <div class="sec-heading">
+    <div class="sec-num">1.1-E</div>
+    <h2>Various Mudras Related to Buddha <span class="te">— బుద్ధుడికి సంబంధించిన ముద్రలు</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — ముద్రలు అంటే ఏమిటి?</span>
+    బుద్ధుని విగ్రహాలలో <span class="kw">చేతుల భంగిమలు</span> చాలా ముఖ్యమైనవి — వీటిని <span class="kw">ముద్రలు</span> అంటారు. ప్రతి ముద్ర ఒక నిర్దిష్ట సందేశం ఇస్తుంది. ఉదాహరణకు — బుద్ధుడు ధర్మాన్ని బోధిస్తున్నప్పుడు ఒక ముద్ర, ధ్యానంలో ఉన్నప్పుడు మరొక ముద్ర, భయాన్ని పోగొట్టేటప్పుడు వేరే ముద్ర. ఇవి <span class="kw2">చేతుల్తో మాట్లాడే భాష</span>! పరీక్షలో ముద్ర పేరు చూపించి అర్థం అడగడం లేదా అర్థం చూపించి ముద్ర పేరు అడగడం జరుగుతుంది.
+  </div>
+
+  <div class="mudra-grid">
+    <div class="mudra-card no-break">
+      <div class="mc-head">1. Bhumisparsha Mudra
+        <span class="te-mc">భూమి స్పర్శ ముద్ర</span>
+      </div>
+      <div class="mc-body">
+        Right hand touching the earth; symbolises the <strong>moment of Buddha's enlightenment</strong>. Earth witnesses his enlightenment.
+        <span class="te-body">కుడి చేయి భూమిని తాకుతుంది — బుద్ధుడు <span style="color:var(--brick);font-weight:700">జ్ఞానోదయం పొందిన క్షణాన్ని</span> సూచిస్తుంది. "భూమి సాక్షిగా నా జ్ఞానోదయం" అని అర్థం. అత్యంత ప్రసిద్ధమైన ముద్ర.</span>
+      </div>
+    </div>
+    <div class="mudra-card no-break">
+      <div class="mc-head">2. Dhyana Mudra
+        <span class="te-mc">ధ్యాన ముద్ర</span>
+      </div>
+      <div class="mc-body">
+        Both hands placed on the lap, palms facing up. Indicates <strong>meditation</strong>. Also called <strong>Samadhi</strong> mudra.
+        <span class="te-body">రెండు చేతులూ ఒళ్ళో ఉంచి, అరచేతులు పైకి చూస్తాయి — <span style="color:var(--brick);font-weight:700">ధ్యానాన్ని</span> సూచిస్తుంది. సమాధి ముద్ర అని కూడా అంటారు.</span>
+      </div>
+    </div>
+    <div class="mudra-card no-break">
+      <div class="mc-head">3. Vitarka Mudra
+        <span class="te-mc">వితర్క ముద్ర</span>
+      </div>
+      <div class="mc-body">
+        Right hand raised with index finger touching thumb. Indicates <strong>teaching, discussion, intellectual debate</strong>.
+        <span class="te-body">కుడి చేయి పైకి ఎత్తి, చూపుడు వేలు బొటన వేలును తాకుతుంది — <span style="color:var(--brick);font-weight:700">బోధన, చర్చ, మేధో వాదనను</span> సూచిస్తుంది.</span>
+      </div>
+    </div>
+    <div class="mudra-card no-break">
+      <div class="mc-head">4. Abhaya Mudra
+        <span class="te-mc">అభయ ముద్ర</span>
+      </div>
+      <div class="mc-body">
+        Right hand raised with palm facing outward. Symbolises <strong>fearlessness and strength</strong>. Blessing gesture.
+        <span class="te-body">కుడి చేయి పైకి ఎత్తి, అరచేయి బయటివైపు చూస్తుంది — <span style="color:var(--brick);font-weight:700">నిర్భయత, బలాన్ని</span> సూచిస్తుంది. "భయపడకు" అని ఆశీర్వదించే ముద్ర.</span>
+      </div>
+    </div>
+    <div class="mudra-card no-break">
+      <div class="mc-head">5. Anjali Mudra
+        <span class="te-mc">అంజలి ముద్ర</span>
+      </div>
+      <div class="mc-body">
+        Both palms pressed together. Indicates <strong>greeting, adoration, salutation</strong>. Also called Namaskara mudra.
+        <span class="te-body">రెండు చేతులూ జోడించడం — <span style="color:var(--brick);font-weight:700">నమస్కారం, పూజ, అభివాదనను</span> సూచిస్తుంది. Yoga mudra, Namaskara mudra అని కూడా అంటారు.</span>
+      </div>
+    </div>
+    <div class="mudra-card no-break">
+      <div class="mc-head">6. Dharmachakra Mudra
+        <span class="te-mc">ధర్మచక్ర ముద్ర</span>
+      </div>
+      <div class="mc-body">
+        Both hands at chest level, turning the wheel of Dharma. Represents <strong>turning the wheel of Dharma (first sermon at Sarnath)</strong>.
+        <span class="te-body">రెండు చేతులూ ఛాతీ స్థాయిలో ధర్మ చక్రాన్ని తిప్పే భంగిమలో — <span style="color:var(--brick);font-weight:700">సారనాథ్‌లో మొదటి ధర్మ ప్రవచనాన్ని</span> సూచిస్తుంది. "ధర్మ చక్ర ప్రవర్తన" కు చిహ్నం.</span>
+      </div>
+    </div>
+    <div class="mudra-card no-break">
+      <div class="mc-head">7. Varada Mudra
+        <span class="te-mc">వరద ముద్ర</span>
+      </div>
+      <div class="mc-body">
+        Right hand pointing downward, palm outward — <strong>charity, compassion, granting wishes</strong>. Better known in Korea and Japan.
+        <span class="te-body">కుడి చేయి కిందికి చూపుతూ, అరచేయి బయటివైపు — <span style="color:var(--brick);font-weight:700">దాతృత్వం, కరుణ, వరాలిచ్చే భంగిమ</span>. కొరియా, జపాన్‌లో ఎక్కువగా కనిపిస్తుంది.</span>
+      </div>
+    </div>
+    <div class="mudra-card no-break">
+      <div class="mc-head">8. Vajra Mudra
+        <span class="te-mc">వజ్ర ముద్ర</span>
+      </div>
+      <div class="mc-body">
+        Fist with index finger pointing up — symbolises <strong>supreme enlightenment</strong>. Setting in motion the wheel of law.
+        <span class="te-body">పిడికిలి పట్టి చూపుడు వేలు పైకి చూస్తుంది — <span style="color:var(--brick);font-weight:700">సర్వోత్కృష్ట జ్ঞানోదయాన్ని, ధర్మ చక్ర చలనాన్ని</span> సూచిస్తుంది.</span>
+      </div>
+    </div>
+    <div class="mudra-card no-break">
+      <div class="mc-head">9. Uttarabodhi Mudra
+        <span class="te-mc">ఉత్తరబోధి ముద్ర</span>
+      </div>
+      <div class="mc-body">
+        Both index fingers touching, pointing upward — <strong>supreme enlightenment</strong>. Better known in Korea &amp; Japan.
+        <span class="te-body">రెండు చేతుల చూపుడు వేళ్ళు తాకుతూ పైకి చూస్తాయి — <span style="color:var(--brick);font-weight:700">సర్వోత్కృష్ట జ్ఞానోదయాన్ని</span> సూచిస్తుంది.</span>
+      </div>
+    </div>
+    <div class="mudra-card no-break">
+      <div class="mc-head">10. Karana Mudra
+        <span class="te-mc">కరణ ముద్ర</span>
+      </div>
+      <div class="mc-body">
+        Index &amp; little finger extended, middle fingers bent — <strong>warding off evil</strong>. Also indicates granting blessings.
+        <span class="te-body">చూపుడు వేలు మరియు చిటికెన వేలు చాచి, మధ్య వేళ్ళు వంచడం — <span style="color:var(--brick);font-weight:700">చెడును తరిమివేయడాన్ని</span> సూచిస్తుంది.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="memory-box no-break">
+    <div class="mem-label">🧠 Mudras Quick Recall — ముద్రలు గుర్తుపెట్టుకోండి</div>
+    <div class="mnemonic">"B–D–V–A–A–D–V–V–U–K"</div>
+    <div class="mnem-exp">
+      <strong>B</strong>humisparsha (Earth·Enlightenment) · <strong>D</strong>hyana (Meditation) · <strong>V</strong>itarka (Teaching) · <strong>A</strong>bhaya (Fearless) · <strong>A</strong>njali (Greeting) · <strong>D</strong>harmachakra (1st Sermon) · <strong>V</strong>arada (Charity) · <strong>V</strong>ajra (Supreme Enlightenment) · <strong>U</strong>ttarabodhi · <strong>K</strong>arana (Ward Evil)
+    </div>
+    <div class="mem-te">
+      ముఖ్యమైనవి: <span class="kw">భూమిస్పర్శ</span> (జ్ఞానోదయం) · <span class="kw">ధ్యాన</span> (ధ్యానం) · <span class="kw">అభయ</span> (నిర్భయత) · <span class="kw">ధర్మచక్ర</span> (మొదటి ప్రవచనం) · <span class="kw">వితర్క</span> (బోధన) — పరీక్షలో ఈ 5 తరచుగా వస్తాయి!
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.1-D,E · Mauryan Sculpture · Pottery · Buddha Mudras</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 6</span>
+  </div>
+</div>
+
+</body>
+</html>

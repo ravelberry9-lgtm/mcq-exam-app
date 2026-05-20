@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1.1-F – Post-Mauryan Art | Art & Culture</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 18mm 16mm 16mm 16mm; }
+@media print {
+  .page-break { page-break-before: always; }
+  .no-break    { page-break-inside: avoid; }
+  body { background: #fff !important; }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --a4:       794px;
+  --brick:    #9b3a1a;
+  --brick-lt: #c4623a;
+  --mud:      #6b4226;
+  --sand:     #e8d5b0;
+  --green:    #1e5c38;
+  --blue:     #1a3e7a;
+  --purple:   #5a2a7a;
+  --gold:     #5a3400;
+  --text:     #1a1206;
+  --subtext:  #2c1800;
+  --border:   #d4b896;
+  --tel-bg:   #eef4ff;
+  --tel-bdr:  #1a3e7a;
+  --mem-bg:   #edf7f0;
+  --mem-bdr:  #1e5c38;
+  --exam-bg:  #fffbec;
+  --exam-bdr: #5a3400;
+}
+
+body {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  background: #ddd5c8;
+  color: var(--text);
+  font-size: 10.5pt;
+  line-height: 1.65;
+}
+
+.a4-page {
+  width: var(--a4);
+  min-height: 1123px;
+  background: #ffffff;
+  margin: 18px auto;
+  padding: 14mm 16mm 13mm 16mm;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.18);
+}
+
+/* ── HEADER / FOOTER ── */
+.screen-header {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 5px; margin-bottom: 10px;
+}
+.screen-header .sh-left {
+  font-family: 'Source Sans 3', sans-serif; font-size: 7.5pt;
+  color: #1a1206; font-weight: 700; letter-spacing: 0.04em;
+}
+.screen-header .sh-right {
+  font-family: 'Fira Mono', monospace; font-size: 7.5pt;
+  color: #1a1206; font-weight: 600;
+}
+.screen-footer {
+  border-top: 1px solid var(--border); padding-top: 5px; margin-top: 10px;
+  display: flex; justify-content: space-between;
+  font-family: 'Fira Mono', monospace; font-size: 7.5pt;
+  color: #1a1206; font-weight: 600;
+}
+
+/* ── SECTION HEADING ── */
+.sec-heading {
+  display: flex; align-items: baseline; gap: 8px;
+  margin: 14px 0 7px; border-bottom: 2px solid var(--brick); padding-bottom: 4px;
+}
+.sec-heading .sec-num {
+  font-family: 'Fira Mono', monospace; font-size: 8pt; font-weight: 600;
+  color: #fff; background: var(--brick); padding: 1px 7px; border-radius: 2px; flex-shrink: 0;
+}
+.sec-heading h2 {
+  font-family: 'Libre Baskerville', serif; font-size: 12.5pt; font-weight: 700; color: var(--brick);
+}
+.sec-heading .te { font-family: 'Tiro Telugu', serif; font-size: 10pt; color: var(--subtext); }
+
+.sub-heading {
+  font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700;
+  color: #fff; background: var(--mud); text-transform: uppercase;
+  letter-spacing: 0.07em; margin: 12px 0 6px; padding: 4px 10px; border-radius: 3px;
+}
+.sub-heading .te-sh { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+/* ── BILINGUAL ── */
+.bilingual { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin: 6px 0 10px; }
+.bi-en {
+  padding: 8px 11px; background: #fffdf9; font-size: 10pt;
+  border-bottom: 1px solid var(--border); line-height: 1.6;
+}
+.bi-en .lang-tag {
+  font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #1a1206;
+  text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 3px; font-weight: 700;
+}
+.bi-te {
+  padding: 8px 11px; background: var(--tel-bg); border-left: 3px solid var(--tel-bdr);
+  font-family: 'Tiro Telugu', serif; font-size: 11pt; color: #0a1428; line-height: 1.95;
+}
+.bi-te .lang-tag {
+  font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #0a2060;
+  text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 3px; font-weight: 700;
+}
+.bi-te .kw  { color: var(--brick);  font-weight: 700; }
+.bi-te .kw2 { color: var(--blue);   font-weight: 700; }
+.bi-te .kw3 { color: var(--green);  font-weight: 700; }
+.bi-te .kw4 { color: var(--purple); font-weight: 700; }
+
+/* ── TELUGU STORY ── */
+.telugu-story {
+  background: var(--tel-bg); border: 1px solid #b8ccee; border-left: 3px solid var(--tel-bdr);
+  border-radius: 4px; padding: 9px 12px; font-family: 'Tiro Telugu', serif;
+  font-size: 11pt; color: #0a1428; line-height: 2; margin: 6px 0 10px;
+}
+.telugu-story .ts-label {
+  font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #0a2060;
+  text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 4px; font-weight: 700;
+}
+.telugu-story .kw  { color: var(--brick);  font-weight: 700; }
+.telugu-story .kw2 { color: var(--blue);   font-weight: 700; }
+.telugu-story .kw3 { color: var(--green);  font-weight: 700; }
+.telugu-story .kw4 { color: var(--purple); font-weight: 700; }
+
+/* ── TABLES ── */
+.styled-table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 6px 0 10px; }
+.styled-table caption {
+  font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700;
+  color: #ffffff; background: var(--brick); text-transform: uppercase;
+  letter-spacing: 0.06em; text-align: left; padding: 5px 9px; border-radius: 4px 4px 0 0;
+}
+.styled-table thead tr { background: var(--mud); }
+.styled-table thead th {
+  color: #ffffff; padding: 6px 8px; font-family: 'Source Sans 3', sans-serif;
+  font-size: 8.5pt; font-weight: 700; text-align: left; border: 1px solid #8a5228;
+}
+.styled-table thead th .te-th {
+  font-family: 'Tiro Telugu', serif; font-weight: 400; font-size: 8.5pt;
+  display: block; color: #f8e8d8; margin-top: 1px;
+}
+.styled-table tbody tr:nth-child(odd)  { background: #fffdf9; }
+.styled-table tbody tr:nth-child(even) { background: #faf3eb; }
+.styled-table td { padding: 6px 8px; border: 1px solid #ddd0be; vertical-align: top; line-height: 1.5; }
+.styled-table td .te-td {
+  font-family: 'Tiro Telugu', serif; font-size: 10pt; color: #0a1428;
+  display: block; margin-top: 3px; line-height: 1.85;
+}
+.styled-table td strong { color: var(--brick); }
+.tag-sm {
+  font-family: 'Fira Mono', monospace; font-size: 7.5pt; background: #fce8dc;
+  color: #6a1000; border: 1px solid #c89070; padding: 1px 5px; border-radius: 2px; display: inline-block; font-weight: 600;
+}
+
+/* ── THREE SCHOOL CARDS ── */
+.school-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px; margin: 7px 0 12px;
+}
+.school-card { border-radius: 4px; border: 1px solid var(--border); overflow: hidden; }
+.school-card .sc-head {
+  padding: 6px 9px; font-family: 'Source Sans 3', sans-serif;
+  font-size: 8.5pt; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.school-card .sc-head .te-sch {
+  font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400;
+  text-transform: none; letter-spacing: 0; display: block; color: #f8e8d8; margin-top: 2px;
+}
+.school-card.gandhara .sc-head { background: #2b4f8a; }
+.school-card.mathura  .sc-head { background: #9b3a1a; }
+.school-card.amaravati .sc-head { background: #1e5c38; }
+.school-card .sc-body { padding: 8px 9px; background: #fffdf9; }
+.school-card .sc-body .sc-row {
+  display: flex; gap: 5px; padding: 3px 0; border-bottom: 1px dashed #e0ccb0; font-size: 8.5pt;
+}
+.school-card .sc-body .sc-row:last-child { border-bottom: none; }
+.school-card .sc-body .sc-row .sc-label {
+  font-family: 'Fira Mono', monospace; font-size: 7pt; font-weight: 700;
+  color: #1a1206; flex-shrink: 0; width: 62px; padding-top: 1px;
+}
+.school-card .sc-body .sc-row .sc-val { font-size: 8.5pt; color: #1a1206; line-height: 1.4; }
+.school-card .sc-body .sc-row .sc-val .te {
+  font-family: 'Tiro Telugu', serif; font-size: 9pt; color: #0a1428; display: block; line-height: 1.8; margin-top: 2px;
+}
+
+/* ── COMPARISON TABLE 3-WAY ── */
+.comp3 { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 6px 0 10px; }
+.comp3 th {
+  padding: 6px 8px; font-family: 'Source Sans 3', sans-serif; font-size: 8.5pt;
+  font-weight: 700; border: 1px solid #8a5228; text-align: center; color: #fff;
+}
+.comp3 th.aspect-h { background: #3a2a14; }
+.comp3 th.g-h { background: #2b4f8a; }
+.comp3 th.m-h { background: #9b3a1a; }
+.comp3 th.a-h { background: #1e5c38; }
+.comp3 th .te-th { font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400; display: block; color: #f8e8d8; margin-top: 1px; }
+.comp3 td { padding: 6px 8px; border: 1px solid #ddd0be; vertical-align: top; line-height: 1.45; font-size: 9pt; }
+.comp3 tr:nth-child(odd) td  { background: #fffdf9; }
+.comp3 tr:nth-child(even) td { background: #faf3eb; }
+.comp3 td .te { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; color: #0a1428; display: block; margin-top: 2px; line-height: 1.8; }
+.comp3 td strong { color: var(--brick); }
+.comp3 .aspect-col { background: #f0e4d0 !important; font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 8.5pt; color: #2c1800; text-align: center; }
+.comp3 .aspect-col .te { font-family: 'Tiro Telugu', serif; font-size: 9pt; color: #2c1800; text-align: center; }
+
+/* ── MEMORY BOX ── */
+.memory-box {
+  background: var(--mem-bg); border: 1px solid #8acca0; border-left: 4px solid var(--mem-bdr);
+  border-radius: 4px; padding: 8px 11px; margin: 6px 0 10px;
+}
+.memory-box .mem-label {
+  font-family: 'Fira Mono', monospace; font-size: 7.5pt; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: #0a3a20; margin-bottom: 4px;
+}
+.memory-box .mnemonic { font-family: 'Libre Baskerville', serif; font-size: 10.5pt; font-weight: 700; color: var(--mud); margin-bottom: 3px; }
+.memory-box .mnem-exp { font-family: 'Source Sans 3', sans-serif; font-size: 9pt; color: #0a2018; margin-bottom: 5px; }
+.memory-box .mem-te {
+  font-family: 'Tiro Telugu', serif; font-size: 10.5pt; color: #0a1a10; line-height: 1.9;
+  border-top: 1px dashed #8acca0; padding-top: 5px; margin-top: 3px;
+}
+.memory-box .mem-te .kw { color: var(--mem-bdr); font-weight: 700; }
+
+/* ── EXAM ALERT ── */
+.exam-alert {
+  background: var(--exam-bg); border: 1px solid #c8a830; border-left: 4px solid var(--exam-bdr);
+  border-radius: 4px; padding: 8px 11px; margin: 6px 0 10px;
+}
+.exam-alert .ea-label {
+  font-family: 'Fira Mono', monospace; font-size: 7.5pt; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: #4a2800; margin-bottom: 4px;
+}
+.exam-alert ul { padding-left: 14px; margin: 0; }
+.exam-alert li { font-size: 9.5pt; margin: 3px 0; line-height: 1.55; }
+.exam-alert li strong { color: var(--brick); }
+.exam-alert .ea-te {
+  font-family: 'Tiro Telugu', serif; font-size: 10pt; color: #2c1800;
+  margin-top: 6px; padding-top: 5px; border-top: 1px dashed #c8a830; line-height: 1.9;
+}
+
+/* ── HIGHLIGHT BOX ── */
+.highlight-box {
+  background: #fef6ed; border: 1px solid var(--sand); border-left: 4px solid var(--brick-lt);
+  border-radius: 4px; padding: 7px 11px; margin: 5px 0 10px; font-size: 10pt;
+}
+.highlight-box .hb-te {
+  font-family: 'Tiro Telugu', serif; font-size: 10.5pt; line-height: 1.95; color: #1a1206; margin-top: 4px;
+}
+.highlight-box .kw  { color: var(--brick);  font-weight: 700; }
+.highlight-box .kw2 { color: var(--blue);   font-weight: 700; }
+.highlight-box .kw3 { color: var(--green);  font-weight: 700; }
+
+/* ── KEY POINTS ── */
+.keypoints { list-style: none; margin: 5px 0 10px; padding: 0; }
+.keypoints li { display: flex; gap: 8px; padding: 5px 0; border-bottom: 1px dashed var(--border); font-size: 10pt; line-height: 1.5; }
+.keypoints li:last-child { border-bottom: none; }
+.keypoints li .kp-num {
+  flex-shrink: 0; width: 20px; height: 20px; background: var(--brick); color: #fff;
+  border-radius: 50%; font-family: 'Fira Mono', monospace; font-size: 7pt;
+  display: flex; align-items: center; justify-content: center; margin-top: 2px; font-weight: 600;
+}
+.keypoints li .kp-body .te-kp {
+  font-family: 'Tiro Telugu', serif; font-size: 10.5pt; color: #0a1428;
+  display: block; margin-top: 3px; line-height: 1.9;
+}
+
+/* ── DEEP NOTE ── */
+.deep-note {
+  border: 1.5px solid var(--brick-lt); border-radius: 4px; padding: 7px 11px;
+  background: #fff7f3; font-size: 9.5pt; margin: 5px 0 10px;
+}
+.deep-note .dn-label {
+  font-family: 'Fira Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #6a1000; font-weight: 700; margin-bottom: 3px; display: block;
+}
+.deep-note .dn-te { font-family: 'Tiro Telugu', serif; font-size: 10.5pt; color: #1a1206; line-height: 1.9; margin-top: 4px; }
+.deep-note .kw  { color: var(--brick);  font-weight: 700; }
+.deep-note .kw2 { color: var(--blue);   font-weight: 700; }
+.deep-note .kw3 { color: var(--green);  font-weight: 700; }
+
+/* ── TWO-BOX ── */
+.two-box { display: flex; gap: 10px; margin: 6px 0 10px; }
+.tbox { flex: 1; border-radius: 4px; border: 1px solid var(--border); overflow: hidden; }
+.tbox .tb-head {
+  padding: 5px 10px; font-family: 'Source Sans 3', sans-serif; font-size: 9pt;
+  font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.tbox.t-brick .tb-head { background: var(--brick); }
+.tbox.t-blue  .tb-head { background: var(--blue); }
+.tbox.t-green .tb-head { background: var(--green); }
+.tbox.t-purple .tb-head { background: var(--purple); }
+.tbox .tb-head .te-tbh {
+  font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400;
+  text-transform: none; letter-spacing: 0; display: block; color: #f8e8d8;
+}
+.tbox .tb-body { padding: 7px 10px; background: #fffdf9; }
+.tbox .tb-body ul { padding-left: 13px; margin: 0; }
+.tbox .tb-body li { font-size: 9pt; margin: 3px 0; line-height: 1.5; }
+.tbox .tb-body li .te { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; color: #0a1428; display: block; line-height: 1.8; }
+
+/* ── CAVES TABLE SPECIAL ── */
+.caves-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin: 6px 0 10px; }
+.cave-card { border-radius: 4px; border: 1px solid var(--border); overflow: hidden; }
+.cave-card .cc-head {
+  padding: 5px 9px; background: var(--mud); color: #fff;
+  font-family: 'Source Sans 3', sans-serif; font-size: 8.5pt; font-weight: 700;
+}
+.cave-card .cc-head .cc-loc {
+  font-family: 'Fira Mono', monospace; font-size: 7pt; color: #f8e8d8; display: block; margin-top: 1px; font-weight: 600;
+}
+.cave-card .cc-body { padding: 7px 9px; background: #fffdf9; font-size: 9pt; line-height: 1.5; }
+.cave-card .cc-body .te {
+  font-family: 'Tiro Telugu', serif; font-size: 9.5pt; color: #0a1428; display: block; margin-top: 3px; line-height: 1.85;
+}
+.cave-card .cc-body strong { color: var(--brick); }
+
+/* ── HR ── */
+hr.div { border: none; border-top: 1.5px dashed var(--border); margin: 12px 0; }
+</style>
+</head>
+<body>
+
+<!-- ████████████████████████████████
+     PAGE 7 — POST-MAURYAN OVERVIEW + 3 SCHOOLS INTRO
+█████████████████████████████████ -->
+<div class="a4-page">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · POST-MAURYAN ART &amp; ARCHITECTURE · 200 BCE – 300 CE</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">1.1-F</div>
+    <h2>Post-Mauryan Art &amp; Architecture <span class="te">— మౌర్యానంతర కళ</span></h2>
+  </div>
+
+  <div class="highlight-box no-break">
+    <strong>Period:</strong> 200 BCE – 300 CE &nbsp;|&nbsp;
+    <strong>Key Dynasties:</strong> Shungas, Kushanas, Satavahanas, Shakas, Yavanas (Indo-Greeks)
+    <div class="hb-te">
+      మౌర్య సామ్రాజ్యం పతనం తర్వాత (185 BCE) భారతదేశం అనేక చిన్న రాజ్యాలుగా విడిపోయింది. ఈ కాలంలో <span class="kw">శుంగులు, కుషాన్లు, శాతవాహనులు</span> అధికారంలోకి వచ్చారు. ఈ కాలంలో అత్యంత ముఖ్యమైన విషయం ఏమిటంటే — <span class="kw2">బుద్ధుని మొదటిసారి మానవ రూపంలో చిత్రించడం</span> ఇక్కడే మొదలైంది! ముందు మౌర్య కాలంలో బుద్ధుని <span class="kw3">చిహ్నాల ద్వారా</span> (పదిముద్రలు, ధర్మచక్రం) చూపించేవారు. ఈ కాలంలో మొదటిసారి <span class="kw">గాంధార, మథుర, అమరావతి</span> అనే మూడు ప్రధాన శిల్పకళా పాఠశాలలు ఉద్భవించాయి.
+    </div>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — మూడు పాఠశాలల కథ</span>
+    ఒక్కసారి ఆలోచించండి — ఒకే కాలంలో, మూడు వేర్వేరు ప్రదేశాలలో, మూడు వేర్వేరు బుద్ధుని శిల్పాలు తయారవుతున్నాయి. <span class="kw">గాంధారలో</span> (ఇప్పటి పాకిస్తాన్, అఫ్ఘానిస్తాన్) గ్రీకు యోధుల వంటి శిల్పాలు వస్తున్నాయి — ముఖం గ్రీకు, ఆచారం భారతీయ! <span class="kw2">మథురలో</span> (ఉత్తరప్రదేశ్) పూర్తి భారతీయ శైలిలో శిల్పాలు వస్తున్నాయి — బలమైన, నిండైన రూపాలు. <span class="kw3">అమరావతిలో</span> (ఆంధ్రప్రదేశ్) సన్నగా, వంగి, నాట్యం చేస్తున్నట్లు శిల్పాలు వస్తున్నాయి. ఈ మూడూ వేర్వేరే అయినా అన్నీ బుద్ధుని చూపించే ప్రయత్నమే! ఇది భారతీయ శిల్పకళలో అత్యంత ఆసక్తికరమైన కాలం.
+  </div>
+
+  <!-- THREE SCHOOL CARDS -->
+  <div class="sub-heading">Three Major Sculpture Schools — మూడు ప్రధాన శిల్పకళా పాఠశాలలు</div>
+  <div class="school-grid no-break">
+    <div class="school-card gandhara">
+      <div class="sc-head">① Gandhara School
+        <span class="te-sch">గాంధార పాఠశాల</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row">
+          <div class="sc-label">REGION</div>
+          <div class="sc-val">NW Frontier — Pakistan, Afghanistan
+            <span class="te">వాయువ్య సరిహద్దు — పాకిస్తాన్, అఫ్ఘానిస్తాన్</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">PATRON</div>
+          <div class="sc-val">Kushana rulers (కుషాన్ పాలకులు)
+            <span class="te">కుషాన్ రాజులు ఆదరించారు</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">MATERIAL</div>
+          <div class="sc-val"><strong>Grey/Blue-grey schist stone</strong>
+            <span class="te">బూడిద/నీలి-బూడిద స్కిస్ట్ రాయి</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">INFLUENCE</div>
+          <div class="sc-val"><strong>Greek &amp; Roman (Hellenistic)</strong>
+            <span class="te">గ్రీకు-రోమన్ (హెల్లెనిస్టిక్) ప్రభావం</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">KEY FEATURE</div>
+          <div class="sc-val">Buddha depicted in <strong>Greek-Roman form</strong> — wavy hair, muscular body, toga-like robe
+            <span class="te">బుద్ధుడు గ్రీకు రూపంలో — అలలు అలలు జుట్టు, బలమైన శరీరం</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">DEVELOPED</div>
+          <div class="sc-val">N.West area of Sonth &amp; Kanakilla
+            <span class="te">సోంత్ మరియు కనకిల్లా ప్రాంతంలో</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-card mathura">
+      <div class="sc-head">② Mathura School
+        <span class="te-sch">మథుర పాఠశాల</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row">
+          <div class="sc-label">REGION</div>
+          <div class="sc-val">Mathura, UP (Krishna river banks)
+            <span class="te">మథుర, ఉ.ప్ర. — కృష్ణా నది ఒడ్డు</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">PATRON</div>
+          <div class="sc-val">Kushana rulers (కుషాన్ పాలకులు)
+            <span class="te">కుషాన్ రాజులు — హిందూ, జైన, బౌద్ధ</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">MATERIAL</div>
+          <div class="sc-val"><strong>Spotted red sandstone</strong>
+            <span class="te">మచ్చల ఎర్ర ఇసుక రాయి</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">INFLUENCE</div>
+          <div class="sc-val"><strong>Indigenous / Indian</strong> — NOT influenced by external cultures
+            <span class="te">స్వదేశీ భారతీయ శైలి — బయటి ప్రభావం లేదు</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">KEY FEATURE</div>
+          <div class="sc-val">Buddha has <strong>shaved head, Indian features</strong>; 3 religions depicted (Hindu, Buddhist, Jain)
+            <span class="te">బుద్ధుడికి గుండు తల, భారతీయ ముఖ లక్షణాలు; మూడు మతాలు చిత్రించబడ్డాయి</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">CENTRES</div>
+          <div class="sc-val">Mathura, Sonth &amp; Kanakilla; Nagaujunakonda
+            <span class="te">మథుర, నాగార్జున కొండ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-card amaravati">
+      <div class="sc-head">③ Amaravati School
+        <span class="te-sch">అమరావతి పాఠశాల</span>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row">
+          <div class="sc-label">REGION</div>
+          <div class="sc-val">Krishna-Godavari delta, Andhra Pradesh
+            <span class="te">కృష్ణా-గోదావరి డెల్టా, ఆంధ్రప్రదేశ్</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">PATRON</div>
+          <div class="sc-val">Satavahana rulers (శాతవాహన పాలకులు)
+            <span class="te">శాతవాహన రాజులు ఆదరించారు</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">MATERIAL</div>
+          <div class="sc-val"><strong>White marble</strong>
+            <span class="te">తెల్లటి పాలరాయి</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">INFLUENCE</div>
+          <div class="sc-val">Developed <strong>independently</strong> — NOT influenced by external cultures
+            <span class="te">స్వతంత్రంగా అభివృద్ధి — బయట ప్రభావం లేదు</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">KEY FEATURE</div>
+          <div class="sc-val"><strong>Tribhanga posture</strong> — bodies bent in 3 places; dynamic &amp; narrative sculptures
+            <span class="te">త్రిభంగ భంగిమ — శరీరం 3 చోట్ల వంగుతుంది; కదలికలతో కూడిన కథన శిల్పాలు</span>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-label">STYLE</div>
+          <div class="sc-val">Ivory-like fine quality; slender elegant forms
+            <span class="te">దంతంలా సూక్ష్మంగా; సన్నగా, అందంగా</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.1-F · Post-Mauryan Art — Three Schools Overview</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 7</span>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████
+     PAGE 8 — DETAILED 3-WAY COMPARISON + GANDHARA DEEP DIVE
+█████████████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · THREE SCHOOLS — DETAILED COMPARISON</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sub-heading">Differences Between Gandhara, Mathura &amp; Amaravati Schools <span class="te-sh">— వివరణాత్మక పోలిక</span></div>
+
+  <table class="comp3 no-break">
+    <thead>
+      <tr>
+        <th class="aspect-h" style="width:16%">Aspect <span class="te-th">విషయం</span></th>
+        <th class="g-h" style="width:28%">Gandhara <span class="te-th">గాంధార పాఠశాల</span></th>
+        <th class="m-h" style="width:28%">Mathura <span class="te-th">మథుర పాఠశాల</span></th>
+        <th class="a-h" style="width:28%">Amaravati <span class="te-th">అమరావతి పాఠశాల</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="aspect-col">Location <span class="te">ప్రాంతం</span></td>
+        <td>NW India — Pakistan, Afghanistan
+          <span class="te">వాయువ్య భారతదేశం</span></td>
+        <td>UP — Krishna river banks
+          <span class="te">ఉ.ప్ర. — కృష్ణా నది ఒడ్డు</span></td>
+        <td>Andhra Pradesh — Krishna-Godavari delta
+          <span class="te">ఆంధ్రప్రదేశ్ — కృష్ణా-గోదావరి డెల్టా</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Material <span class="te">వస్తువు</span></td>
+        <td><strong>Grey/Blue schist</strong> stone
+          <span class="te">బూడిద/నీలి రంగు స్కిస్ట్ రాయి</span></td>
+        <td><strong>Spotted Red sandstone</strong>
+          <span class="te">మచ్చల ఎర్ర ఇసుక రాయి</span></td>
+        <td><strong>White marble</strong>
+          <span class="te">తెల్లటి పాలరాయి</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Patron <span class="te">పోషకులు</span></td>
+        <td>Kushana rulers
+          <span class="te">కుషాన్ పాలకులు</span></td>
+        <td>Kushana rulers
+          <span class="te">కుషాన్ పాలకులు</span></td>
+        <td>Satavahana rulers
+          <span class="te">శాతవాహన పాలకులు</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Influence <span class="te">ప్రభావం</span></td>
+        <td><strong>Greek-Roman (Hellenistic)</strong> — heavy foreign influence
+          <span class="te">గ్రీకు-రోమన్ హెల్లెనిస్టిక్ ప్రభావం అధికం</span></td>
+        <td><strong>Indigenous (స్వదేశీ)</strong> — NOT influenced by external cultures
+          <span class="te">స్వదేశీ భారతీయ శైలి — బయట ప్రభావం లేదు</span></td>
+        <td><strong>Independent development</strong> — NOT influenced externally
+          <span class="te">స్వతంత్ర అభివృద్ధి — బయట ప్రభావం లేదు</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Buddha's Hair <span class="te">జుట్టు</span></td>
+        <td><strong>Wavy, curly hair</strong> — Greek style
+          <span class="te">అలల జుట్టు — గ్రీకు శైలి</span></td>
+        <td><strong>Shaved head</strong> (ushnisha — hair bump)
+          <span class="te">గుండు తల (ఉష్ణీష — జుట్టు పింటి)</span></td>
+        <td><strong>Tight curls</strong> on head
+          <span class="te">బిగుతైన ముడుచుకున్న జుట్టు</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Body <span class="te">శరీరం</span></td>
+        <td>Muscular, heavy — Greek athlete body; toga-like robe
+          <span class="te">కండరాలతో బలమైన శరీరం; తోగా వంటి వస్త్రం</span></td>
+        <td>Full, rounded body; thin cloth visible on body
+          <span class="te">నిండైన, గుండ్రని శరీరం; పలుచని వస్త్రం కనిపిస్తుంది</span></td>
+        <td>Slender, S-shaped body — <strong>Tribhanga</strong> posture
+          <span class="te">సన్నటి S-ఆకార శరీరం — త్రిభంగ భంగిమ</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Face <span class="te">ముఖం</span></td>
+        <td>Greek/Roman face — sharp nose, deep-set eyes
+          <span class="te">గ్రీకు/రోమన్ ముఖ లక్షణాలు — పదునైన ముక్కు</span></td>
+        <td>Indian face features — smiling, serene expression
+          <span class="te">భారతీయ ముఖ లక్షణాలు — చిరునవ్వు, శాంత భావం</span></td>
+        <td>Dynamic, animated expression
+          <span class="te">చలనశీల, ఉత్సాహభరిత భావం</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Halo <span class="te">ఆభ వలయం</span></td>
+        <td>Plain halo — simple circle
+          <span class="te">సాదా ఆభ వలయం</span></td>
+        <td>Decorated halo — floral patterns
+          <span class="te">అలంకారమైన ఆభ వలయం — పుష్ప నమూనాలు</span></td>
+        <td>Elaborate decorated halo
+          <span class="te">విస్తృతంగా అలంకరించిన ఆభ వలయం</span></td>
+      </tr>
+      <tr>
+        <td class="aspect-col">Style of Narrative <span class="te">కథన శైలి</span></td>
+        <td>Jataka stories but influenced by Hellenistic style
+          <span class="te">జాతక కథలు కానీ హెల్లెనిస్టిక్ శైలిలో</span></td>
+        <td>All 3 religions — <strong>Hindu, Buddhist, Jain</strong> depicted
+          <span class="te">మూడు మతాలు చిత్రించబడ్డాయి</span></td>
+        <td>Narrative <strong>Jataka stories</strong>; <strong>dynamic body bends</strong> used extensively
+          <span class="te">జాతక కథల కథనం; శరీర వంపులు అధికంగా</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="deep-note no-break">
+    <span class="dn-label">⭐ Critical Point — Gandhara &amp; Mathura: Same Patron, Different Style!</span>
+    Both Gandhara and Mathura schools were patronised by the <strong>same Kushana rulers</strong>, yet their styles are completely different. Gandhara was in the Greek-influenced northwest, while Mathura was in the indigenous heartland. This shows that the <strong>location &amp; local tradition</strong> matters more than who funds the art.
+    <div class="dn-te">
+      ఒక ఆసక్తికరమైన విషయం: <span class="kw">గాంధార మరియు మథుర రెండూ కుషాన్ రాజులే పోషించారు</span>! కానీ రెండు శైలులు పూర్తిగా వేర్వేరు. ఎందుకు? ఎందుకంటే గాంధారలో గ్రీకు సంస్కృతి ప్రభావం ఉండేది (అలెగ్జాండర్ దండయాత్ర తర్వాత), మథురలో స్వచ్ఛమైన భారతీయ సంప్రదాయం ఉండేది. ఇది ఒక గొప్ప పాఠం — <span class="kw2">కళను ఆదరించేవారు ఒకరే అయినా, కళాకారుల స్థానిక పరిసరాలు కళకు రంగు అద్దుతాయి!</span>
+    </div>
+  </div>
+
+  <div class="memory-box no-break">
+    <div class="mem-label">🧠 Memory Trick — మూడు పాఠశాలలు గుర్తుపెట్టుకోవడానికి</div>
+    <div class="mnemonic">"G–M–A" = "Grey–Red–White" &nbsp;&nbsp;|&nbsp;&nbsp; "Greek–Indian–Dynamic"</div>
+    <div class="mnem-exp">
+      <strong>G</strong>andhara → <strong>Grey</strong> schist → <strong>Greek</strong> influence → Wavy hair<br>
+      <strong>M</strong>athura → <strong>Red</strong> sandstone → <strong>Indian/indigenous</strong> → Shaved head<br>
+      <strong>A</strong>maravati → <strong>White</strong> marble → <strong>Dynamic/Tribhanga</strong> → Slender body
+    </div>
+    <div class="mem-te">
+      <span class="kw">గాంధార = బూడిద రాయి + గ్రీకు ముఖం + అలల జుట్టు</span><br>
+      <span class="kw">మథుర = ఎర్ర రాయి + భారతీయ ముఖం + గుండు తల</span><br>
+      <span class="kw">అమరావతి = తెల్ల పాలరాయి + త్రిభంగ భంగిమ + సన్నటి శరీరం</span><br>
+      పరీక్షలో "Which school used grey schist?" వంటి ప్రశ్నలు వస్తాయి — GMA సూత్రం గుర్తుపెట్టుకోండి!
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.1-F · Three Schools Detailed Comparison</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 8</span>
+  </div>
+</div>
+
+
+<!-- ████████████████████████████████
+     PAGE 9 — GUPTA ART + POST-MAURYAN CAVES (AJANTA, ELLORA)
+█████████████████████████████████ -->
+<div class="a4-page page-break">
+  <div class="screen-header">
+    <span class="sh-left">CH 1 · GUPTA ART &amp; ARCHITECTURE · POST-MAURYAN CAVES</span>
+    <span class="sh-right">AP HIGH COURT SO 2026</span>
+  </div>
+
+  <div class="sec-heading">
+    <div class="sec-num">1.1-G</div>
+    <h2>Gupta Art &amp; Architecture — "Golden Period" <span class="te">— గుప్త కళ — "స్వర్ణ యుగం"</span></h2>
+  </div>
+
+  <div class="highlight-box no-break">
+    <strong>Period:</strong> 4th – 6th Century CE &nbsp;|&nbsp; <strong>Key Rulers:</strong> Chandragupta I, Samudragupta, Chandragupta II (Vikramaditya)
+    <div class="hb-te">
+      గుప్త కాలాన్ని <span class="kw">"భారతీయ వాస్తుశిల్పం యొక్క స్వర్ణ యుగం"</span> అంటారు. ఎందుకంటే ఈ కాలంలో <span class="kw2">హిందూ దేవాలయ నిర్మాణ శైలి</span> అభివృద్ధి చెందింది. బౌద్ధ, జైన శిల్పాలు తమ అత్యుత్తమ స్థాయికి చేరాయి. <span class="kw3">అజంతా గుహల చిత్రలేఖనం</span> ఈ కాలంలోనే విస్తరించింది. ముఖ్యంగా గుప్త కాలంలో నిర్మించిన దేవాలయాలు <span class="kw">నాగర శైలి</span>కి పునాది వేశాయి.
+    </div>
+  </div>
+
+  <div class="sub-heading">Key Features of Gupta Architecture — గుప్త వాస్తుశిల్పం లక్షణాలు</div>
+  <ul class="keypoints no-break">
+    <li>
+      <div class="kp-num">1</div>
+      <div class="kp-body">
+        <strong>Hindu Temple Development</strong> — First major Hindu temples built during Gupta period. They patronised Brahmanical (Hindu), Buddhist, and Jain art.
+        <span class="te-kp"><span style="color:var(--brick);font-weight:700">హిందూ దేవాలయాల అభివృద్ధి</span> — మొదటి ప్రధాన హిందూ దేవాలయాలు గుప్త కాలంలో నిర్మించబడ్డాయి. హిందూ, బౌద్ధ, జైన మూడు మతాలకూ సమాన ఆదరణ లభించింది.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">2</div>
+      <div class="kp-body">
+        <strong>Rock-cut &amp; Structural Temples both developed</strong> — Two types of temple construction appear simultaneously.
+        <span class="te-kp"><span style="color:var(--brick);font-weight:700">రాతి తొలచిన గుహ దేవాలయాలు</span> మరియు <span style="color:var(--blue);font-weight:700">స్వతంత్ర నిర్మిత దేవాలయాలు</span> రెండూ ఒకేసారి అభివృద్ధి చెందాయి.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">3</div>
+      <div class="kp-body">
+        <strong>Gupta Sculpture</strong> — Reached its pinnacle. Mathura school continued. Sarnath school emerged — serene, spiritual Buddha figures with transparent drapery.
+        <span class="te-kp"><span style="color:var(--brick);font-weight:700">గుప్త శిల్పకళ</span> తన ఉన్నత స్థాయికి చేరింది. సారనాథ్ పాఠశాల ఉద్భవించింది — <span style="color:var(--blue);font-weight:700">పారదర్శకమైన వస్త్రం కనిపించే</span> శాంత, ఆధ్యాత్మిక బుద్ధ విగ్రహాలు.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">4</div>
+      <div class="kp-body">
+        <strong>Dashavatara Temple, Deogarh (UP)</strong> — Best example of Gupta temple architecture. Panchayatana style (main shrine + 4 subsidiary shrines at corners).
+        <span class="te-kp"><span style="color:var(--brick);font-weight:700">దశావతార దేవాలయం, దేవగఢ్ (ఉ.ప్ర.)</span> — గుప్త దేవాలయ వాస్తుశిల్పానికి ఉత్తమ ఉదాహరణ. <span style="color:var(--green);font-weight:700">పంచాయతన శైలి</span> — కేంద్ర మందిరం + 4 మూలల్లో 4 చిన్న మందిరాలు.</span>
+      </div>
+    </li>
+    <li>
+      <div class="kp-num">5</div>
+      <div class="kp-body">
+        <strong>Udayagiri Caves, MP</strong> — Most important Udayagiri caves. Cave 5 has the famous Varaha relief (Vishnu saving Earth). Two of the most important Gupta period caves.
+        <span class="te-kp"><span style="color:var(--brick);font-weight:700">ఉదయగిరి గుహలు, మధ్యప్రదేశ్</span> — గుప్త కాలపు అత్యంత ముఖ్యమైన గుహలు. గుహ 5లో <span style="color:var(--blue);font-weight:700">వరాహ శిల్పం</span> ఉంది — విష్ణువు వరాహ అవతారంలో భూమిని రక్షిస్తున్న దృశ్యం.</span>
+      </div>
+    </li>
+  </ul>
+
+  <hr class="div">
+
+  <!-- AJANTA & ELLORA -->
+  <div class="sec-heading">
+    <div class="sec-num">1.1-H</div>
+    <h2>Ajanta &amp; Ellora Caves <span class="te">— అజంతా మరియు ఎల్లోరా గుహలు</span></h2>
+  </div>
+
+  <div class="telugu-story no-break">
+    <span class="ts-label">తెలుగు — అజంతా మరియు ఎల్లోరా గురించి తెలుసుకోండి</span>
+    అజంతా మరియు ఎల్లోరా గురించి చెప్పుకోవాలంటే — ఇవి రెండూ మహారాష్ట్రలో ఉన్నాయి, రెండూ రాతి గుహలు, రెండూ UNESCO వారసత్వ స్థలాలు — కానీ వీటి మధ్య చాలా తేడాలు ఉన్నాయి. <span class="kw">అజంతా = చిత్రలేఖనానికి (Paintings) ప్రసిద్ధి</span>. <span class="kw2">ఎల్లోరా = శిల్పాలకు (Sculptures) మరియు వాస్తుశిల్పానికి ప్రసిద్ధి</span>. అజంతా గుహలు అన్నీ <span class="kw3">బౌద్ధ మతానికి</span> సంబంధించినవి. ఎల్లోరా గుహలలో <span class="kw">హిందూ, బౌద్ధ, జైన</span> మూడు మతాల గుహలు కలిసి ఉన్నాయి — ఇది మత సహనానికి చిహ్నం!
+  </div>
+
+  <div class="caves-grid no-break">
+    <div class="cave-card">
+      <div class="cc-head">Ajanta Caves — అజంతా గుహలు
+        <span class="cc-loc">📍 Aurangabad, Maharashtra | Sahyadri hills | Waghora River</span>
+      </div>
+      <div class="cc-body">
+        <strong>Total:</strong> 29 caves (4 Chaityas + 25 Viharas)
+        <span class="te">మొత్తం 29 గుహలు — 4 చైత్యాలు + 25 విహారాలు</span>
+        <strong>Religion:</strong> Buddhist only <span class="te">కేవలం బౌద్ధ మత గుహలు</span>
+        <strong>Famous for:</strong> <strong>Paintings (చిత్రలేఖనం)</strong> — murals on walls &amp; ceilings
+        <span class="te">గోడలు మరియు కప్పులపై చిత్రాలకు ప్రసిద్ధి</span>
+        <strong>Period:</strong> 2nd century BCE to 6th century CE
+        <span class="te">2వ శతాబ్దం BCE నుండి 6వ శతాబ్దం CE వరకు</span>
+        <strong>Technique:</strong> Fresco-secco method (lime plaster base)
+        <span class="te">సున్నపు పూత పద్ధతిలో గోడలపై చిత్రాలు</span>
+        <strong>Famous caves:</strong> Cave 1 (Bodhisattva Padmapani, Vajrapani), Cave 2 (ceiling paintings), Cave 16 &amp; 17 (Dying Princess)
+        <span class="te">గుహ 1 — బోధిసత్వ పద్మపాణి; గుహ 16 — మరణిస్తున్న రాకుమారి</span>
+      </div>
+    </div>
+
+    <div class="cave-card">
+      <div class="cc-head">Ellora Caves — ఎల్లోరా గుహలు
+        <span class="cc-loc">📍 Aurangabad, Maharashtra | 100 km from Ajanta</span>
+      </div>
+      <div class="cc-body">
+        <strong>Total:</strong> 34 caves (12 Buddhist + 17 Hindu + 5 Jain)
+        <span class="te">మొత్తం 34 గుహలు — 12 బౌద్ధ + 17 హిందూ + 5 జైన</span>
+        <strong>Religion:</strong> <strong>All 3 religions</strong> — Hindu, Buddhist, Jain
+        <span class="te">మూడు మతాలు — హిందూ, బౌద్ధ, జైన కలిసి ఉన్నాయి</span>
+        <strong>Famous for:</strong> <strong>Sculptures &amp; Architecture</strong>
+        <span class="te">శిల్పాలు మరియు వాస్తుశిల్పానికి ప్రసిద్ధి</span>
+        <strong>Period:</strong> 5th to 11th century CE
+        <span class="te">5వ శతాబ్దం CE నుండి 11వ శతాబ్దం CE వరకు</span>
+        <strong>Most famous:</strong> <strong>Kailash Temple (Cave 16)</strong> — largest monolithic rock-cut temple; Rashtrakuta king Krishna I; dedicated to Shiva
+        <span class="te">కైలాశ దేవాలయం (గుహ 16) — ప్రపంచంలో అతి పెద్ద ఏకశిలా రాతి దేవాలయం; రాష్ట్రకూట రాజు కృష్ణ I నిర్మించాడు</span>
+      </div>
+    </div>
+
+    <div class="cave-card">
+      <div class="cc-head">Ajanta Paintings — అజంతా చిత్రాల విశేషాలు
+        <span class="cc-loc">📍 Jataka stories · Bodhisattvas · Court life scenes</span>
+      </div>
+      <div class="cc-body">
+        <strong>Subject:</strong> Jataka stories, Buddha's life, court &amp; social scenes
+        <span class="te">జాతక కథలు, బుద్ధుని జీవితం, రాజసభ దృశ్యాలు</span>
+        <strong>Colors used:</strong> Red ochre, yellow ochre, green, blue lapis lazuli, black (from lamp soot)
+        <span class="te">ఎర్ర ఖనిజ రంగు, పసుపు, ఆకుపచ్చ, నీలి లాపిస్ రాయి, నల్ల దీప మసి</span>
+        <strong>Famous paintings:</strong> Bodhisattva Padmapani (Cave 1), Dying Princess (Cave 16), Flying Apsaras
+        <span class="te">బోధిసత్వ పద్మపాణి (గుహ 1) — అత్యంత ప్రసిద్ధమైన అజంతా చిత్రం</span>
+        <strong>Note:</strong> Ajanta is the <strong>only surviving example of Buddhist painting</strong> in India from this era
+        <span class="te">అజంతా ఈ కాలానికి సంబంధించిన బౌద్ధ చిత్రలేఖనానికి మిగిలి ఉన్న ఏకైక ఉదాహరణ</span>
+      </div>
+    </div>
+
+    <div class="cave-card">
+      <div class="cc-head">Bagh Caves — బాఘ్ గుహలు
+        <span class="cc-loc">📍 Vindhya Hills, Madhya Pradesh | Baghini River</span>
+      </div>
+      <div class="cc-body">
+        <strong>Total:</strong> Group of 9 Buddhist caves
+        <span class="te">9 బౌద్ధ గుహల సమూహం</span>
+        <strong>Famous for:</strong> Paintings similar to Ajanta but <strong>more vibrant in colour</strong>
+        <span class="te">అజంతాను పోలిన చిత్రాలు కానీ మరింత ప్రకాశవంతమైన రంగులు</span>
+        <strong>Cave 4:</strong> Sabha Mandapa — the most elaborate
+        <span class="te">గుహ 4 — సభ మండపం — అత్యంత విస్తారమైన నిర్మాణం</span>
+        <strong>Architecture:</strong> Architecturally similar to Ajanta caves in terms of design &amp; execution
+        <span class="te">నిర్మాణ రీత్యా అజంతా గుహలను పోలి ఉంటుంది</span>
+        <strong>Period:</strong> 5th–6th century CE (Gupta period)
+        <span class="te">5వ–6వ శతాబ్దం CE — గుప్త కాలం</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="exam-alert no-break">
+    <div class="ea-label">⚡ Exam Focus — Post-Mauryan + Gupta తప్పక గుర్తుపెట్టుకోండి</div>
+    <ul>
+      <li><strong>Gandhara</strong> = Grey schist + Greek-Roman + Kushana + NW India + Wavy hair</li>
+      <li><strong>Mathura</strong> = Red sandstone + Indigenous Indian + Kushana + UP + Shaved head + All 3 religions</li>
+      <li><strong>Amaravati</strong> = White marble + Satavahana + AP + Tribhanga + Dynamic narrative</li>
+      <li><strong>Ajanta</strong> = 29 caves + Buddhist only + <strong>Paintings</strong> + Maharashtra + Fresco-secco</li>
+      <li><strong>Ellora</strong> = 34 caves + <strong>All 3 religions</strong> + Sculptures + Kailash Temple (Cave 16)</li>
+      <li><strong>Kailash Temple, Ellora</strong> = Largest <strong>monolithic</strong> rock-cut temple + Rashtrakuta Krishna I</li>
+      <li><strong>Dashavatara Temple, Deogarh</strong> = Best Gupta temple + Panchayatana style</li>
+      <li><strong>Udayagiri Caves (MP)</strong> = Gupta period + Varaha sculpture (Cave 5)</li>
+    </ul>
+    <div class="ea-te">
+      📌 <strong>పరీక్షలో ట్రిక్ ప్రశ్నలు:</strong> అజంతా అంటే చిత్రాలు (Paintings), ఎల్లోరా అంటే శిల్పాలు (Sculptures) — ఇది తరచుగా తప్పుగా పారేస్తారు. అజంతాలో 3 మతాలా? లేదు — కేవలం బౌద్ధం! ఎల్లోరాలో చిత్రాలా? లేదు — శిల్పాలు &amp; వాస్తుశిల్పం! గాంధార vs మథుర — రెండూ కుషాన్ పాలకులే పోషించారు కానీ శైలులు వేర్వేరు — ఇది తప్పకుండా వస్తుంది!
+    </div>
+  </div>
+
+  <div class="screen-footer">
+    <span>Ch 1.1-G,H · Gupta Art · Ajanta · Ellora · Bagh Caves</span>
+    <span>AP High Court Section Officer 2026 · Art &amp; Culture</span>
+    <span>Page 9</span>
+  </div>
+</div>
+
+</body>
+</html>
