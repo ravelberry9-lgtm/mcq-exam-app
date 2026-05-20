@@ -593,14 +593,14 @@ QUESTIONS = [
     # WMO 2025 follow-up
     (28104, "WMO has stated that 2025 is likely to be:",
      "The coldest year of the past decade", "Among the warmest two or three years on record", "Below the 1.5°C threshold", "Tied exactly with 2024",
-     "B", "WMO confirmed in late 2025 that 2025 is set to be the second or third warmest year on record, continuing the exceptionally high warming trend after 2024 (the first year >1.5°C). Back-to-back record warm years signal that global warming is accelerating rather than stabilizing; for India, this trajectory means increasingly frequent extreme weather events (heat waves, floods, droughts) requiring intensified climate adaptation. India's National Action Plan on Climate Change Adaptation must shift from mainstreaming to crisis mode—scaling water security, drought-resistant agriculture, flood management, heat stress protocols, and early warning systems to protect vulnerable populations from accelerating climate impacts.
+     "B", "WMO confirmed in late 2025 that 2025 is set to be the second or third warmest year on record, continuing the exceptionally high warming trend after 2024 (the first year >1.5°C). Back-to-back record warm years signal that global warming is accelerating rather than stabilizing; for India, this trajectory means increasingly frequent extreme weather events (heat waves, floods, droughts) requiring intensified climate adaptation. India's National Action Plan on Climate Change Adaptation must shift from mainstreaming to crisis mode—scaling water security, drought-resistant agriculture, flood management, heat stress protocols, and early warning systems to protect vulnerable populations from accelerating climate impacts.",
+     "AP_HC", "International_Current_Affairs"),
 
     # GRFC 2025 — Sudan famine
     (28105, "The Global Report on Food Crises (GRFC) 2025 identified which country as having the world's worst current famine and largest displacement crisis?",
      "Yemen", "Afghanistan", "Sudan", "Ethiopia",
      "C", "GRFC 2025 (GNAFC + FSIN) and UNHCR Global Trends 2024 both identified Sudan as the world's largest displacement and food crisis—with confirmed famine conditions and 14.3 million displaced (6+ million IDPs, 5+ million cross-border refugees). Sudan's humanitarian catastrophe reflects rapid military conflict escalation (2023-2025), destroyed food systems, and humanitarian access restrictions. India's response—humanitarian aid, UNSC engagement, refugee absorption from the region—demonstrates commitment to humanitarian responsibility; however, Sudan's scale and duration highlight the limits of humanitarian aid without conflict resolution, reinforcing India's diplomatic push for ceasefire negotiations and conflict prevention mechanisms.",
      "AP_HC", "International_Current_Affairs"),
-]
 ]
 
 

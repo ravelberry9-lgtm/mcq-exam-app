@@ -1179,7 +1179,10 @@ def seed():
             "option_c": "Bishkek, Kyrgyzstan",
             "option_d": "Tashkent, Uzbekistan",
             "correct_answer": "B",
-            "explanation": "CITES CoP20 (Samarkand, Nov 24-Dec 5, 2025) added 77 species to Appendices (okapi, striped hyena, geckos, tarantulas, guggul, ginseng, aloes, brazilwood)—reflecting global urgency to regulate wildlife trade amid climate-driven extinction risk. CITES protects 1,174 threatened species in India from overexploitation. Trade regulation complements habitat protection and climate adaptation, essential for species survival as climate change compounds poaching pressure. Guggul listing demonstrates recognition of medicinal plant value in conservation."
+            "explanation": "CITES CoP20 (Samarkand, Nov 24-Dec 5, 2025) added 77 species to Appendices (okapi, striped hyena, geckos, tarantulas, guggul, ginseng, aloes, brazilwood)—reflecting global urgency to regulate wildlife trade amid climate-driven extinction risk. CITES protects 1,174 threatened species in India from overexploitation. Trade regulation complements habitat protection and climate adaptation, essential for species survival as climate change compounds poaching pressure. Guggul listing demonstrates recognition of medicinal plant value in conservation.",
+            "folder": "AP_HC",
+            "topic": "International_Current_Affairs"
+        },
         # --- Mission Mausam ---
         {
             "id": 25090,
