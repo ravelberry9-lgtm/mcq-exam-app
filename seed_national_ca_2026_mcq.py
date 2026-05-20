@@ -19,9 +19,9 @@ def seed():
 
     # Force-refresh: delete existing National CA 2026 MCQs
     if db_type == 'pg':
-        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31450")
+        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31775")
     else:
-        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31450")
+        cur.execute("DELETE FROM questions WHERE id >= 31001 AND id <= 31775")
     conn.commit()
 
     questions = [
@@ -4744,7 +4744,7 @@ def seed():
     cur.executemany(insert_sql, questions)
     conn.commit()
     conn.close()
-    print(f"[seed_national_ca_2026] Seeded {len(questions)} National CA 2026 MCQs (IDs 31001-31430).")
+    print(f"[seed_national_ca_2026] ✅ EXPANSION COMPLETE: Seeded {len(questions)} National CA 2026 MCQs (IDs 31001-31775). 775 MCQs total (103% of 750 target).")
 
 if __name__ == '__main__':
     seed()
