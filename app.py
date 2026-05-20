@@ -168,6 +168,18 @@ def init_db():
             label_te TEXT,
             html TEXT NOT NULL
         )''')
+        cur.execute('''CREATE TABLE IF NOT EXISTS explanation_history (
+            id SERIAL PRIMARY KEY,
+            mcq_id INTEGER NOT NULL REFERENCES questions(id) ON DELETE CASCADE,
+            explanation_text TEXT,
+            edited_by VARCHAR(100) DEFAULT 'Anonymous',
+            edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            version_number INTEGER DEFAULT 1,
+            is_current BOOLEAN DEFAULT TRUE,
+            UNIQUE(mcq_id, version_number)
+        )''')
+        cur.execute('CREATE INDEX IF NOT EXISTS idx_explanation_mcq ON explanation_history(mcq_id)')
+        cur.execute('CREATE INDEX IF NOT EXISTS idx_explanation_current ON explanation_history(is_current, mcq_id)')
         conn.commit()
         cur.close()
     else:
@@ -256,6 +268,18 @@ def init_db():
                 label_te TEXT,
                 html TEXT NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS explanation_history (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                mcq_id INTEGER NOT NULL REFERENCES questions(id),
+                explanation_text TEXT,
+                edited_by VARCHAR(100) DEFAULT 'Anonymous',
+                edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                version_number INTEGER DEFAULT 1,
+                is_current INTEGER DEFAULT 1,
+                UNIQUE(mcq_id, version_number)
+            );
+            CREATE INDEX IF NOT EXISTS idx_explanation_mcq ON explanation_history(mcq_id);
+            CREATE INDEX IF NOT EXISTS idx_explanation_current ON explanation_history(is_current, mcq_id);
         ''')
         conn.commit()
 
@@ -1699,6 +1723,118 @@ def intl_force_reseed():
         'total_ap_hc_questions': total,
         'per_module': results,
     })
+
+
+# ─────────────────────────────────────────────────────────────────────────────────
+# EXPLANATION EDITOR API
+# ─────────────────────────────────────────────────────────────────────────────────
+
+@app.route('/api/mcq/<int:mcq_id>/explanation', methods=['GET'])
+def get_explanation(mcq_id):
+    """Get current explanation + version history"""
+    try:
+        conn = get_db()
+
+        # Get current explanation from questions table
+        cur = db_exec(conn, 'SELECT explanation FROM questions WHERE id = ?', (mcq_id,))
+        q_row = cur.fetchone()
+        if not q_row:
+            return jsonify({'error': 'Question not found'}), 404
+
+        current_explanation = q_row[0] if isinstance(q_row, tuple) else q_row.get('explanation')
+
+        # Get version history (newest first)
+        cur = db_exec(conn, '''
+            SELECT id, explanation_text, edited_by, edited_at, version_number, is_current
+            FROM explanation_history
+            WHERE mcq_id = ?
+            ORDER BY version_number DESC
+            LIMIT 50
+        ''', (mcq_id,))
+
+        if USE_POSTGRES:
+            history = [dict(row) for row in cur.fetchall()]
+        else:
+            history = [dict(row) for row in cur.fetchall()]
+
+        # Format timestamps
+        for item in history:
+            if isinstance(item.get('edited_at'), str):
+                item['edited_at'] = item['edited_at']
+            else:
+                item['edited_at'] = str(item.get('edited_at', ''))
+
+        conn.close()
+
+        return jsonify({
+            'current_explanation': current_explanation,
+            'mcq_id': mcq_id,
+            'history': history,
+            'total_versions': len(history)
+        })
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/mcq/<int:mcq_id>/explanation/save', methods=['POST'])
+def save_explanation(mcq_id):
+    """Save new explanation version"""
+    try:
+        data = request.get_json()
+        explanation_text = data.get('explanation_text', '').strip()
+        edited_by = data.get('edited_by', 'Anonymous')
+
+        if not explanation_text:
+            return jsonify({'error': 'Explanation cannot be empty'}), 400
+
+        conn = get_db()
+
+        # Verify question exists
+        cur = db_exec(conn, 'SELECT id FROM questions WHERE id = ?', (mcq_id,))
+        if not cur.fetchone():
+            conn.close()
+            return jsonify({'error': 'Question not found'}), 404
+
+        # Mark all current versions as not current
+        db_exec(conn,
+            'UPDATE explanation_history SET is_current = ? WHERE mcq_id = ?',
+            (False, mcq_id)
+        )
+
+        # Get next version number
+        cur = db_exec(conn,
+            'SELECT MAX(version_number) FROM explanation_history WHERE mcq_id = ?',
+            (mcq_id,)
+        )
+        max_version = _fv(cur.fetchone()) or 0
+        next_version = max_version + 1
+
+        # Insert new version
+        db_exec(conn, '''
+            INSERT INTO explanation_history
+            (mcq_id, explanation_text, edited_by, version_number, is_current)
+            VALUES (?, ?, ?, ?, ?)
+        ''', (mcq_id, explanation_text, edited_by, next_version, True))
+
+        # Update questions table with latest explanation
+        db_exec(conn,
+            'UPDATE questions SET explanation = ? WHERE id = ?',
+            (explanation_text, mcq_id)
+        )
+
+        conn.commit()
+        conn.close()
+
+        return jsonify({
+            'success': True,
+            'version_number': next_version,
+            'timestamp': datetime.now().isoformat(),
+            'message': f'Explanation saved as version {next_version}'
+        })
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 
 @app.route('/api/ap-ca/force-reseed')
