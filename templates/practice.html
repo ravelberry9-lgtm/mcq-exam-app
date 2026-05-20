@@ -173,6 +173,29 @@ body.fp .fp-ov{display:flex}
 .subtopic-name{flex:1;font-size:12.5px;font-weight:600;color:#1a1a2e}
 .subtopic-cnt{font-size:11px;color:#6b7280;font-weight:600;white-space:nowrap}
 .subtopic-warn{font-size:11px;color:#c62828;padding:4px 0 0;display:none}
+
+/* ── EDIT EXPLANATION BUTTON ── */
+.edit-exp-btn { background: linear-gradient(135deg,#ff6f00,#ffa000); color: white; border: none; padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; width: 100%; margin-top: 12px; transition: all 0.15s; display: block; box-shadow: 0 2px 8px rgba(255,111,0,0.2); }
+.edit-exp-btn:hover { background: linear-gradient(135deg,#e55100,#f57f17); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255,111,0,0.3); }
+
+/* ── EXPLANATION EDITOR MODAL ── */
+.exp-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 300; align-items: center; justify-content: center; padding: 20px; }
+.exp-modal-overlay.open { display: flex; }
+.exp-modal { background: white; border-radius: 16px; padding: 24px; max-width: 500px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+.exp-modal h3 { font-size: 18px; margin-bottom: 12px; color: #1a237e; }
+.exp-modal-label { font-size: 12px; font-weight: 700; color: #666; margin-bottom: 8px; text-transform: uppercase; }
+.exp-textarea { width: 100%; min-height: 200px; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 13px; resize: vertical; }
+.exp-textarea:focus { outline: none; border-color: #1a237e; }
+.exp-hint { font-size: 11px; color: #999; margin-top: 6px; }
+.exp-modal-btns { display: flex; gap: 10px; margin-top: 18px; }
+.exp-modal-btns button { flex: 1; padding: 11px; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; }
+.exp-save { background: #1a237e; color: white; }
+.exp-cancel { background: #f0f0f0; color: #333; }
+.exp-save:hover { background: #0d1b4b; }
+.exp-cancel:hover { background: #ddd; }
+.exp-saving { color: #666; font-size: 12px; margin-top: 10px; }
+.exp-success { color: #2e7d32; font-size: 12px; margin-top: 10px; font-weight: 600; }
+.exp-error { color: #c62828; font-size: 12px; margin-top: 10px; }
 </style>
 </head>
 <body>
@@ -464,7 +487,8 @@ function buildCards(){
       '<div class="q-text">'+eh(q.question_text)+'</div>'+
       '<div class="opts-list" id="ol'+i+'">'+
       ['A','B','C','D'].map((k,n)=>'<button class="opt" id="o'+i+'_'+k+'" onclick="pick('+i+',\''+k+'\',\''+ea(q.correct_answer)+'\',\''+ea(q.explanation||'')+'\',\''+ea(q.question_text)+'\')">'+'<span class="ok-key">'+k+'</span><span class="opt-text">'+eh([q.option_a,q.option_b,q.option_c,q.option_d][n])+'</span></button>').join('')+
-      '</div>';
+      '</div>'+
+      '<button class="edit-exp-btn" onclick="openExpModal('+i+')">✏️ Edit Explanation</button>';
     area.appendChild(c);
   });
 }
@@ -787,7 +811,101 @@ function clearAllST(){
   document.querySelectorAll('#subtopicList input').forEach(cb=>{cb.checked=false;cb.closest('.subtopic-item').classList.remove('selected');});
   const w=document.getElementById('subtopicWarn');if(w)w.style.display='';
 }
+
+/* ── EXPLANATION EDITOR ── */
+let currentEditingIdx = null;
+let currentEditingMcqId = null;
+
+function openExpModal(i){
+  if(i<0 || i>=filtQ.length) return;
+  currentEditingIdx = i;
+  const q = filtQ[i];
+  currentEditingMcqId = q.id;
+  document.getElementById('expQId').textContent = q.id;
+  document.getElementById('expTextarea').value = q.explanation || '';
+  document.getElementById('expSaving').style.display = 'none';
+  document.getElementById('expSuccess').style.display = 'none';
+  document.getElementById('expError').style.display = 'none';
+  document.getElementById('expModalOverlay').classList.add('open');
+}
+
+function closeExpModal(){
+  document.getElementById('expModalOverlay').classList.remove('open');
+  currentEditingIdx = null;
+  currentEditingMcqId = null;
+}
+
+async function saveExplanation(){
+  const text = document.getElementById('expTextarea').value.trim();
+  if(!text){
+    document.getElementById('expError').textContent = '⚠️ Explanation cannot be empty';
+    document.getElementById('expError').style.display = '';
+    return;
+  }
+
+  document.getElementById('expSaving').style.display = '';
+  document.getElementById('expSuccess').style.display = 'none';
+  document.getElementById('expError').style.display = 'none';
+
+  try {
+    const resp = await fetch(`/api/mcq/${currentEditingMcqId}/explanation/save`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ explanation_text: text, edited_by: 'Practice User' })
+    });
+    const result = await resp.json();
+    if(result.error){
+      document.getElementById('expError').textContent = '❌ ' + result.error;
+      document.getElementById('expError').style.display = '';
+      document.getElementById('expSaving').style.display = 'none';
+      return;
+    }
+
+    // Update the question object in memory
+    if(currentEditingIdx >= 0 && currentEditingIdx < filtQ.length){
+      filtQ[currentEditingIdx].explanation = text;
+    }
+
+    document.getElementById('expSaving').style.display = 'none';
+    document.getElementById('expSuccess').style.display = '';
+    setTimeout(closeExpModal, 2000);
+  } catch(e) {
+    document.getElementById('expError').textContent = '❌ Failed to save: ' + e.message;
+    document.getElementById('expError').style.display = '';
+    document.getElementById('expSaving').style.display = 'none';
+  }
+}
+
+// Close modal on overlay click
+document.addEventListener('DOMContentLoaded', ()=>{
+  const overlay = document.getElementById('expModalOverlay');
+  if(overlay){
+    overlay.addEventListener('click', (e)=>{
+      if(e.target === overlay) closeExpModal();
+    });
+  }
+});
+
 load();
 </script>
+
+<!-- EXPLANATION EDITOR MODAL -->
+<div class="exp-modal-overlay" id="expModalOverlay">
+  <div class="exp-modal">
+    <h3>✏️ Edit Explanation</h3>
+    <div class="exp-modal-label">Question ID: <span id="expQId">?</span></div>
+    <label class="exp-modal-label">Enter or paste explanation:</label>
+    <textarea class="exp-textarea" id="expTextarea" placeholder="Paste explanation from Perplexity, ChatGPT, or type your own..."></textarea>
+    <div class="exp-hint">💡 Tip: For bilingual explanations, use format: "Telugu text&#10;English text"</div>
+    <div class="exp-saving" id="expSaving" style="display:none;">⏳ Saving...</div>
+    <div class="exp-success" id="expSuccess" style="display:none;">✅ Saved successfully!</div>
+    <div class="exp-error" id="expError" style="display:none;"></div>
+    <div class="exp-modal-btns">
+      <button class="exp-save" onclick="saveExplanation()">💾 Save Changes</button>
+      <button class="exp-cancel" onclick="closeExpModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
