@@ -1623,6 +1623,84 @@ def ap_hc_ca_archive_and_delete():
         except: pass
 
 
+@app.route('/api/natl-ca/force-reseed')
+def natl_ca_force_reseed():
+    """Force-wipe and re-seed National Current Affairs 2026 MCQs (IDs 31001-31430).
+    Pass ?pin=<ADMIN_PIN>. Calls seed_national_ca_2026_mcq.seed() which DELETEs
+    the ID range then re-INSERTs from the current seed file.
+    """
+    if (request.args.get('pin') or '') != ADMIN_PIN:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        import importlib
+        natl_mod = importlib.import_module('seed_national_ca_2026_mcq')
+        importlib.reload(natl_mod)
+        natl_mod.seed()
+        # Verify count
+        ph = '%s' if USE_POSTGRES else '?'
+        conn = get_db()
+        cur = db_exec(conn,
+            f"SELECT COUNT(*) AS c FROM questions WHERE id>={ph} AND id<={ph}",
+            (31001, 31450))
+        count = _fv(cur.fetchone())
+        try: conn.close()
+        except: pass
+        return jsonify({
+            'success': True,
+            'message': f'National CA reseeded — {count} MCQs loaded (IDs 31001-31430).',
+            'total': count,
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)[:300]}), 500
+
+
+@app.route('/api/intl/force-reseed')
+def intl_force_reseed():
+    """Force-wipe and re-seed International Current Affairs from all 10 Intl seed files.
+    Pass ?pin=<ADMIN_PIN>. Re-imports each module and calls its seed function.
+    """
+    if (request.args.get('pin') or '') != ADMIN_PIN:
+        return jsonify({'error': 'unauthorized'}), 401
+    intl_modules = [
+        'seed_intl_orgs_mcq', 'seed_summits_mcq', 'seed_conflicts_mcq',
+        'seed_awards_mcq', 'seed_environment_mcq', 'seed_science_tech_mcq',
+        'seed_sports_mcq', 'seed_reports_mcq', 'seed_intl_events_mcq',
+        'seed_mideast_war_mcq',
+    ]
+    results = []
+    import importlib
+    for mod_name in intl_modules:
+        try:
+            mod = importlib.import_module(mod_name)
+            importlib.reload(mod)
+            # Each Intl seeder uses a seed() function
+            if hasattr(mod, 'seed'):
+                mod.seed()
+                results.append({'module': mod_name, 'success': True})
+            else:
+                results.append({'module': mod_name, 'success': False, 'error': 'no seed() fn'})
+        except Exception as e:
+            results.append({'module': mod_name, 'success': False, 'error': str(e)[:200]})
+    # Total Intl count
+    ph = '%s' if USE_POSTGRES else '?'
+    conn = get_db()
+    try:
+        cur = db_exec(conn,
+            f"SELECT COUNT(*) AS c FROM questions WHERE folder={ph}",
+            ('AP_HC',))
+        total = _fv(cur.fetchone())
+    except Exception:
+        total = 0
+    try: conn.close()
+    except: pass
+    return jsonify({
+        'success': all(r.get('success') for r in results),
+        'modules_reseeded': len([r for r in results if r.get('success')]),
+        'total_ap_hc_questions': total,
+        'per_module': results,
+    })
+
+
 @app.route('/api/ap-ca/force-reseed')
 def ap_ca_force_reseed():
     """Force-wipe and re-seed AP Current Affairs divisions from their current seed files.
