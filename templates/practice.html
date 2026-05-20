@@ -777,7 +777,7 @@ function fetchNotes(qid) {
   if(lbl)lbl.textContent=label;
   // Load notes from static files
   let notesFile = '';
-  if(qid>=30001&&qid<=30100) notesFile='/static/notes/General_Science/Study_Notes/mideast_war_2025_26_notes.html';
+  if(qid>=30001&&qid<=30100) notesFile='/MIDDLE_EAST_WAR_2024_2026_COMPLETE_NOTES_ENGLISH.html';
   else if(qid>=20001&&qid<=20086) notesFile='/static/notes/General_Science/Study_Notes/intl_organisations_notes.html';
   else if(qid>=21001&&qid<=21100) notesFile='/static/notes/General_Science/Study_Notes/summits_conferences_notes.html';
   else if(qid>=22001&&qid<=22102) notesFile='/static/notes/General_Science/Study_Notes/conflicts_geopolitics_notes.html';
@@ -787,6 +787,10 @@ function fetchNotes(qid) {
   else if(qid>=27001&&qid<=27095) notesFile='/static/notes/General_Science/Study_Notes/sports_current_affairs_notes.html';
   else if(qid>=28001&&qid<=28105) notesFile='/static/notes/General_Science/Study_Notes/reports_indices_notes.html';
   else if(qid>=29001&&qid<=29100) notesFile='/static/notes/General_Science/Study_Notes/intl_events_appointments_notes.html';
+  // AP Current Affairs divisions (31001+)
+  else if(qid>=31001&&qid<=31100) notesFile='/static/notes/AP_Current_Affairs/Divisions/div01_elections_cabinet.html';
+  else if(qid>=31101&&qid<=31200) notesFile='/static/notes/AP_Current_Affairs/Divisions/div02_govt_schemes.html';
+  else if(qid>=31201&&qid<=31300) notesFile='/static/notes/AP_Current_Affairs/Divisions/div03_events_jan_aug2025.html';
   else notesFile='/static/notes/AP_Current_Affairs/Divisions/div01_elections_cabinet.html'; // Default
   frame.src=notesFile;
 }
