@@ -527,6 +527,126 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+    # ── Auto-seed Constitution & Governance Comprehensive MCQs ──
+    try:
+        import importlib
+        print("[startup] Constitution & Governance Comprehensive: seeding...")
+        const_mod = importlib.import_module('seed_constitution_governance_comprehensive')
+        const_mod.seed()
+        print("[startup] Constitution & Governance Comprehensive seed complete.")
+    except Exception as _const_e:
+        print(f"[startup] Constitution & Governance Comprehensive seed error: {_const_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Constitution & Governance Part 2 MCQs ──
+    try:
+        import importlib
+        print("[startup] Constitution & Governance Part 2: seeding...")
+        const2_mod = importlib.import_module('seed_constitution_governance_part2')
+        const2_mod.seed()
+        print("[startup] Constitution & Governance Part 2 seed complete.")
+    except Exception as _const2_e:
+        print(f"[startup] Constitution & Governance Part 2 seed error: {_const2_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Constitution & Governance Part 3 MCQs ──
+    try:
+        import importlib
+        print("[startup] Constitution & Governance Part 3: seeding...")
+        const3_mod = importlib.import_module('seed_constitution_governance_part3')
+        const3_mod.seed()
+        print("[startup] Constitution & Governance Part 3 seed complete.")
+    except Exception as _const3_e:
+        print(f"[startup] Constitution & Governance Part 3 seed error: {_const3_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Constitution & Governance Part 4 MCQs ──
+    try:
+        import importlib
+        print("[startup] Constitution & Governance Part 4: seeding...")
+        const4_mod = importlib.import_module('seed_constitution_governance_part4')
+        const4_mod.seed()
+        print("[startup] Constitution & Governance Part 4 seed complete.")
+    except Exception as _const4_e:
+        print(f"[startup] Constitution & Governance Part 4 seed error: {_const4_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Polity Elections & Electoral Commission MCQs (35 Qs, IDs 32051-32085) ──
+    try:
+        import importlib
+        print("[startup] Polity Elections & Electoral Commission: seeding...")
+        pol_elec_mod = importlib.import_module('seed_polity_elections_32051')
+        pol_elec_mod.seed()
+        print("[startup] Polity Elections seed complete.")
+    except Exception as _pol_elec_e:
+        print(f"[startup] Polity Elections seed error: {_pol_elec_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Polity Labour Rights MCQs (25 Qs, IDs 32111-32135) ──
+    try:
+        import importlib
+        print("[startup] Polity Labour Rights: seeding...")
+        pol_labour_mod = importlib.import_module('seed_polity_labour_32111')
+        pol_labour_mod.seed()
+        print("[startup] Polity Labour Rights seed complete.")
+    except Exception as _pol_labour_e:
+        print(f"[startup] Polity Labour Rights seed error: {_pol_labour_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Polity Media & Press Freedom MCQs (25 Qs, IDs 32086-32110) ──
+    try:
+        import importlib
+        print("[startup] Polity Media & Press Freedom: seeding...")
+        pol_media_mod = importlib.import_module('seed_polity_media_32086')
+        pol_media_mod.seed()
+        print("[startup] Polity Media & Press Freedom seed complete.")
+    except Exception as _pol_media_e:
+        print(f"[startup] Polity Media & Press Freedom seed error: {_pol_media_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Polity Police & Internal Security MCQs (45 Qs, IDs 32006-32050) ──
+    try:
+        import importlib
+        print("[startup] Polity Police & Internal Security: seeding...")
+        pol_sec_mod = importlib.import_module('seed_polity_security_32006')
+        pol_sec_mod.seed()
+        print("[startup] Polity Police & Internal Security seed complete.")
+    except Exception as _pol_sec_e:
+        print(f"[startup] Polity Police & Internal Security seed error: {_pol_sec_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Polity Remaining Categories MCQs ──
+    try:
+        import importlib
+        print("[startup] Polity Remaining Categories: seeding...")
+        pol_rem_mod = importlib.import_module('seed_polity_remaining_categories')
+        pol_rem_mod.seed()
+        print("[startup] Polity Remaining Categories seed complete.")
+    except Exception as _pol_rem_e:
+        print(f"[startup] Polity Remaining Categories seed error: {_pol_rem_e}")
+        try: conn.rollback()
+        except: pass
+
+    # ── Auto-seed Central Government Schemes MCQs (60 Qs) ──
+    try:
+        import importlib
+        print("[startup] Central Government Schemes: seeding...")
+        schemes_mod = importlib.import_module('seed_schemes_govt')
+        schemes_mod.seed()
+        print("[startup] Central Government Schemes seed complete.")
+    except Exception as _schemes_e:
+        print(f"[startup] Central Government Schemes seed error: {_schemes_e}")
+        try: conn.rollback()
+        except: pass
+
     # ── Auto-seed National CA 2026 MCQs (430: 300 base + 88 PDF + 42 gap-fill) ──
     # IDs 31001-31430. Sentinel = ID 31430 (last gap-fill MCQ). Re-seed if missing.
     try:
@@ -7323,119 +7443,4 @@ def topic_notes_html(qid):
             'td{border:1px solid #c5cae9!important;padding:5px 8px!important;'
             'vertical-align:top!important;line-height:1.5!important}'
             'tr:nth-child(even) td{background:#f0f2ff!important}'
-            'p,li{font-size:13px!important;line-height:1.65!important;margin:4px 0!important}'
-            'ul,ol{padding-left:18px!important;margin:4px 0!important}'
-            '.bilingual{display:block!important}'
-            '.en-td,.en-col,.bi-en{display:table-cell!important}'
-            '</style>'
-        )
-        if '</head>' in html:
-            html = html.replace('</head>', inject + '</head>', 1)
-        else:
-            html = inject + html
-        return html, 200, {'Content-Type': 'text/html; charset=utf-8'}
-    except Exception as e:
-        return '<p style="padding:20px;color:red">Error: ' + str(e) + '</p>', 500
-
-@app.route('/api/concept-note-html/<int:qid>')
-def concept_note_html(qid):
-    """Return concept note HTML for a given qid (from in-memory cache)."""
-    tag = _qid_to_tag(qid)
-    html = _concept_cache.get(tag) if tag else None
-    if not html:
-        # Fallback: serve topic-level notes file
-        return topic_notes_html(qid)
-    inject = (
-        '<style>'
-        '.bi-te,.te-td,.cover-te,.te-tag,[class*="te-"]{display:none!important}'
-        'span.lang-tag{display:none!important}'
-        'body{font-size:13px!important;padding:10px 14px!important;margin:0!important;'
-        'background:#fff!important;color:#1a1a2e!important;'
-        'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important}'
-        'h1,h2,h3,h4,h5{font-size:15px!important;color:#1a237e!important;'
-        'margin:10px 0 6px!important;font-weight:700!important}'
-        'table{width:100%!important;border-collapse:collapse!important;'
-        'font-size:12px!important;margin:8px 0!important}'
-        'th{background:#1a237e!important;color:#fff!important;padding:6px 8px!important;'
-        'text-align:left!important;font-size:12px!important}'
-        'td{border:1px solid #c5cae9!important;padding:5px 8px!important;'
-        'vertical-align:top!important;line-height:1.5!important}'
-        'tr:nth-child(even) td{background:#f0f2ff!important}'
-        'p,li{font-size:13px!important;line-height:1.65!important;margin:4px 0!important}'
-        'ul,ol{padding-left:18px!important;margin:4px 0!important}'
-        '.concept-cover{background:linear-gradient(135deg,#1a237e,#3949ab);'
-        'color:#fff!important;padding:12px 14px!important;margin:-10px -14px 12px!important;'
-        'border-radius:0 0 8px 8px!important}'
-        '.concept-cover h1{color:#fff!important;font-size:17px!important;margin:0 0 2px!important}'
-        '.concept-cover .sub{color:#c5cae9!important;font-size:12px!important}'
-        '.section-hdr{background:#e8eaf6!important;padding:5px 8px!important;'
-        'margin:10px 0 4px!important;border-left:3px solid #3949ab!important;'
-        'font-weight:700!important;font-size:13px!important;color:#1a237e!important}'
-        '.key-table th{background:#283593!important}'
-        '</style>'
-    )
-    full = '<!DOCTYPE html><html><head><meta charset="utf-8">'
-    full += '<meta name="viewport" content="width=device-width,initial-scale=1">'
-    full += inject + '</head><body>' + html + '</body></html>'
-    return full, 200, {'Content-Type': 'text/html; charset=utf-8'}
-
-@app.route('/api/ai-explain', methods=['POST'])
-
-def ai_explain():
-    data = request.json or {}
-    question    = data.get('question', '')
-    answer      = data.get('answer', '')
-    explanation = data.get('explanation', '')
-
-    api_key = os.environ.get('PERPLEXITY_API_KEY', '')
-    if not api_key:
-        fallback = explanation or ('The correct answer is ' + answer + '.')
-        return jsonify({'text': fallback, 'source': 'db'})
-
-    prompt = (
-        f"Question: {question}\n"
-        f"Correct Answer: {answer}\n\n"
-        f"Explain in 2-3 clear sentences why this answer is correct. "
-        f"Be concise and educational."
-    )
-    try:
-        import requests as req
-        r = req.post(
-            'https://api.perplexity.ai/chat/completions',
-            headers={
-                'Authorization': f'Bearer {api_key}',
-                'Content-Type': 'application/json'
-            },
-            json={
-                'model': 'sonar',
-                'messages': [{'role': 'user', 'content': prompt}],
-                'max_tokens': 220
-            },
-            timeout=10
-        )
-        text = r.json()['choices'][0]['message']['content'].strip()
-        return jsonify({'text': text, 'source': 'perplexity'})
-    except Exception as e:
-        fallback = explanation or ('The correct answer is ' + answer + '.')
-        return jsonify({'text': fallback, 'source': 'db'})
-
-
-# ── Run init_db on import (works with gunicorn on Railway AND locally) ──
-init_db()
-_load_concept_cache()
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    print("\n" + "="*55)
-    print("  📚 MCQ EXAM APP — STARTED")
-    print(f"  DB: {'PostgreSQL ☁️' if USE_POSTGRES else 'SQLite 💾'}")
-    print("="*55)
-    if not USE_POSTGRES:
-        import socket
-        try: local_ip = socket.gethostbyname(socket.gethostname())
-        except: local_ip = "127.0.0.1"
-        print(f"\n  💻 On this PC:    http://localhost:{port}")
-        print(f"  📱 On your phone: http://{local_ip}:{port}")
-        print(f"\n  Make sure phone is on same WiFi network!")
-    print("="*55 + "\n")
-    app.run(host='0.0.0.0', port=port, debug=False)
+            'p,li{font-size:13px!importa
