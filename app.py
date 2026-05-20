@@ -180,6 +180,15 @@ def init_db():
         )''')
         cur.execute('CREATE INDEX IF NOT EXISTS idx_explanation_mcq ON explanation_history(mcq_id)')
         cur.execute('CREATE INDEX IF NOT EXISTS idx_explanation_current ON explanation_history(is_current, mcq_id)')
+        cur.execute('''CREATE TABLE IF NOT EXISTS flagged_questions (
+            id SERIAL PRIMARY KEY,
+            device_id TEXT NOT NULL,
+            mcq_id INTEGER NOT NULL REFERENCES questions(id) ON DELETE CASCADE,
+            flagged_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(device_id, mcq_id)
+        )''')
+        cur.execute('CREATE INDEX IF NOT EXISTS idx_flagged_device ON flagged_questions(device_id)')
+        cur.execute('CREATE INDEX IF NOT EXISTS idx_flagged_mcq ON flagged_questions(mcq_id)')
         conn.commit()
         cur.close()
     else:
@@ -280,6 +289,15 @@ def init_db():
             );
             CREATE INDEX IF NOT EXISTS idx_explanation_mcq ON explanation_history(mcq_id);
             CREATE INDEX IF NOT EXISTS idx_explanation_current ON explanation_history(is_current, mcq_id);
+            CREATE TABLE IF NOT EXISTS flagged_questions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                device_id TEXT NOT NULL,
+                mcq_id INTEGER NOT NULL REFERENCES questions(id),
+                flagged_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                UNIQUE(device_id, mcq_id)
+            );
+            CREATE INDEX IF NOT EXISTS idx_flagged_device ON flagged_questions(device_id);
+            CREATE INDEX IF NOT EXISTS idx_flagged_mcq ON flagged_questions(mcq_id);
         ''')
         conn.commit()
 
@@ -1837,6 +1855,104 @@ def save_explanation(mcq_id):
         return jsonify({'error': str(e)}), 500
 
 
+# ─────────────────────────────────────────────────────────────────────────────────
+# FLAGGED QUESTIONS API
+# ─────────────────────────────────────────────────────────────────────────────────
+
+@app.route('/api/flagged-questions/toggle', methods=['POST'])
+def toggle_flagged_question():
+    """Toggle flag status for a question"""
+    try:
+        data = request.get_json()
+        mcq_id = data.get('mcq_id')
+        device_id = data.get('device_id')
+
+        if not mcq_id or not device_id:
+            return jsonify({'error': 'Missing mcq_id or device_id'}), 400
+
+        conn = get_db()
+
+        # Check if already flagged
+        cur = db_exec(conn, 'SELECT id FROM flagged_questions WHERE device_id = ? AND mcq_id = ?',
+                     (device_id, mcq_id))
+        existing = cur.fetchone()
+
+        if existing:
+            # Remove flag
+            db_exec(conn, 'DELETE FROM flagged_questions WHERE device_id = ? AND mcq_id = ?',
+                   (device_id, mcq_id))
+            conn.commit()
+            conn.close()
+            return jsonify({'success': True, 'flagged': False, 'message': 'Flag removed'})
+        else:
+            # Add flag
+            db_exec(conn,
+                   'INSERT INTO flagged_questions (device_id, mcq_id) VALUES (?, ?)',
+                   (device_id, mcq_id))
+            conn.commit()
+            conn.close()
+            return jsonify({'success': True, 'flagged': True, 'message': 'Question flagged'})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/flagged-questions/<device_id>')
+def get_flagged_questions(device_id):
+    """Get all flagged question IDs for a device"""
+    try:
+        conn = get_db()
+        cur = db_exec(conn, 'SELECT mcq_id FROM flagged_questions WHERE device_id = ? ORDER BY mcq_id',
+                     (device_id,))
+
+        if USE_POSTGRES:
+            flagged_ids = [row[0] for row in cur.fetchall()]
+        else:
+            flagged_ids = [row[0] for row in cur.fetchall()]
+
+        conn.close()
+        return jsonify({'flagged_ids': flagged_ids, 'count': len(flagged_ids)})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/flagged-questions/check', methods=['POST'])
+def check_flagged_status():
+    """Check which MCQs are flagged"""
+    try:
+        data = request.get_json()
+        mcq_ids = data.get('mcq_ids', [])
+        device_id = data.get('device_id')
+
+        if not device_id:
+            return jsonify({'error': 'Missing device_id'}), 400
+
+        conn = get_db()
+
+        # Get all flagged MCQs for this device
+        placeholders = ','.join('?' * len(mcq_ids)) if mcq_ids else ''
+        if placeholders:
+            cur = db_exec(conn,
+                         f'SELECT mcq_id FROM flagged_questions WHERE device_id = ? AND mcq_id IN ({placeholders})',
+                         [device_id] + mcq_ids)
+        else:
+            cur = db_exec(conn, 'SELECT mcq_id FROM flagged_questions WHERE device_id = ?', (device_id,))
+
+        if USE_POSTGRES:
+            flagged_ids = [row[0] for row in cur.fetchall()]
+        else:
+            flagged_ids = [row[0] for row in cur.fetchall()]
+
+        conn.close()
+
+        flagged_status = {mcq_id: (mcq_id in flagged_ids) for mcq_id in mcq_ids}
+        return jsonify({'flagged_status': flagged_status})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 @app.route('/api/ap-ca/force-reseed')
 def ap_ca_force_reseed():
     """Force-wipe and re-seed AP Current Affairs divisions from their current seed files.
@@ -2098,6 +2214,11 @@ def start_exam():
     pyq_topics   = data.get('pyq_topics', [])
     pyq_years    = data.get('pyq_years', [])
 
+    # ── Practice mode & question range ─────────────────────────────────
+    practice_mode = data.get('practice_mode', 'fresh')  # 'fresh' or 'flagged'
+    from_question = data.get('from_question')
+    to_question   = data.get('to_question')
+
     diff_set = set(d.upper() for d in difficulties) if difficulties else {'E','M','H'}
     diff_int_map = {'E': 1, 'M': 2, 'H': 3}
     diff_ints = [diff_int_map[d] for d in diff_set if d in diff_int_map]
@@ -2241,6 +2362,28 @@ def start_exam():
         except Exception as _pe:
             print(f'[start-exam] pyq fetch error: {_pe}')
 
+    # ── Apply practice mode filter (flagged only) ──────────────────────
+    if practice_mode == 'flagged':
+        try:
+            ph = '%s' if USE_POSTGRES else '?'
+            cur = db_exec(conn,
+                f'SELECT mcq_id FROM flagged_questions WHERE device_id={ph}',
+                (device_id,))
+            flagged_ids = set([r['mcq_id'] for r in cur.fetchall()])
+            all_questions = [q for q in all_questions if q['id'] in flagged_ids]
+            # extra_items (quiz/pyq) are not flagged, so exclude them for 'flagged' mode
+            extra_items = []
+        except Exception as e:
+            print(f'[start-exam] flagged filter error: {e}')
+
+    # ── Apply question range filter ────────────────────────────────────
+    if from_question or to_question:
+        from_q = from_question if from_question else 1
+        to_q = to_question if to_question else 999999
+        all_questions = [q for q in all_questions if (q.get('question_number') or q.get('id')) >= from_q and (q.get('question_number') or q.get('id')) <= to_q]
+        # Extra items (quiz/pyq) don't have question_number, so filter by id range
+        extra_items = [q for q in extra_items if int(q.get('id', '0').split('_')[-1]) >= from_q and int(q.get('id', '0').split('_')[-1]) <= to_q]
+
     if not all_questions and not extra_items:
         conn.close()
         return jsonify({'error': 'No questions found for the selected filters'}), 400
@@ -2272,6 +2415,7 @@ def start_exam():
         'sources': sources, 'difficulties': list(diff_set),
         'quiz_count': quiz_count, 'pyq_count': pyq_count,
         'device_id': device_id, 'student_name': student_name,
+        'practice_mode': practice_mode, 'from_question': from_question, 'to_question': to_question,
     }
     db_exec(conn, f'INSERT INTO exam_sessions (id, config, questions) VALUES ({ph},{ph},{ph})',
             (session_id, json.dumps(config), json.dumps(session_questions)))
