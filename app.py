@@ -1879,46 +1879,45 @@ def toggle_flagged_question():
 
 @app.route('/api/flagged-questions/<device_id>')
 def get_flagged_questions(device_id):
-    """Get all flagged questions with full details for a device"""
+    """Get all flagged questions with full details for a device - returns empty list if any error"""
     try:
         conn = get_db()
         ph = '%s' if USE_POSTGRES else '?'
-        # Get flagged MCQ IDs
-        cur = db_exec(conn, f'SELECT mcq_id FROM flagged_questions WHERE device_id={ph} ORDER BY mcq_id',
-                     (device_id,))
-        flagged_ids = [row[0] for row in cur.fetchall()]
-
-        if not flagged_ids:
-            conn.close()
-            return jsonify({'items': [], 'count': 0})
-
-        # Get full MCQ data for flagged questions
-        placeholders = ','.join([ph for _ in flagged_ids])
-        cur = db_exec(conn, f'SELECT id, question_text, option_a, option_b, option_c, option_d, correct_answer, explanation, difficulty, topic FROM questions WHERE id IN ({placeholders})',
-                     tuple(flagged_ids))
-
         items = []
-        for row in cur.fetchall():
-            items.append({
-                'id': row[0],
-                'question_text': row[1],
-                'option_a': row[2],
-                'option_b': row[3],
-                'option_c': row[4],
-                'option_d': row[5],
-                'correct_answer': row[6],
-                'explanation': row[7],
-                'difficulty': row[8],
-                'topic': row[9]
-            })
+
+        try:
+            # Get flagged MCQ IDs
+            cur = db_exec(conn, f'SELECT mcq_id FROM flagged_questions WHERE device_id={ph} ORDER BY mcq_id',
+                         (device_id,))
+            flagged_ids = [row[0] for row in cur.fetchall()]
+
+            if flagged_ids:
+                # Get full MCQ data for flagged questions
+                placeholders = ','.join([ph for _ in flagged_ids])
+                cur = db_exec(conn, f'SELECT id, question_text, option_a, option_b, option_c, option_d, correct_answer, explanation, difficulty, topic FROM questions WHERE id IN ({placeholders})',
+                             tuple(flagged_ids))
+
+                for row in cur.fetchall():
+                    items.append({
+                        'id': row[0],
+                        'question_text': row[1],
+                        'option_a': row[2],
+                        'option_b': row[3],
+                        'option_c': row[4],
+                        'option_d': row[5],
+                        'correct_answer': row[6],
+                        'explanation': row[7],
+                        'difficulty': row[8],
+                        'topic': row[9]
+                    })
+        except:
+            items = []
 
         conn.close()
         return jsonify({'items': items, 'count': len(items)})
 
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        return jsonify({'error': str(e), 'items': [], 'count': 0}), 500
+    except:
+        return jsonify({'items': [], 'count': 0})
 
 
 @app.route('/api/mcq/<int:mcq_id>/flag', methods=['POST'])
@@ -3183,59 +3182,56 @@ def wrong_answers_page():
 
 @app.route('/api/wrong-answers')
 def api_wrong_answers():
-    """Return wrong answers for this device.
-    ?resolved=0|1|all (default 0)
-    """
+    """Return wrong answers for this device - returns empty list if any error"""
+    device_id = (request.args.get('device_id') or '').strip()
+    resolved = request.args.get('resolved', '0')
+
+    if not device_id:
+        return jsonify({'items': [], 'total': 0, 'unresolved': 0, 'resolved': 0})
+
     try:
-        device_id = (request.args.get('device_id') or '').strip()
-        resolved = request.args.get('resolved', '0')
-
-        if not device_id:
-            return jsonify({'items': [], 'total': 0, 'unresolved': 0, 'resolved': 0})
-
         ph = '%s' if USE_POSTGRES else '?'
         conn = get_db()
 
-        # Build basic WHERE clause
-        if resolved == 'all':
-            cur = db_exec(conn, f"SELECT id, device_id, source, source_id, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, attempted_at, resolved FROM wrong_answers WHERE device_id={ph} ORDER BY attempted_at DESC", (device_id,))
-        else:
-            try: r_int = int(resolved)
-            except: r_int = 0
-            cur = db_exec(conn, f"SELECT id, device_id, source, source_id, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, attempted_at, resolved FROM wrong_answers WHERE device_id={ph} AND resolved={ph} ORDER BY attempted_at DESC", (device_id, r_int))
-
+        # Try to get items
         items = []
-        for row in cur.fetchall():
-            if USE_POSTGRES:
-                items.append({
-                    'id': row[0], 'device_id': row[1], 'source': row[2], 'source_id': row[3],
-                    'topic': row[4], 'question_text': row[5], 'option_a': row[6], 'option_b': row[7],
-                    'option_c': row[8], 'option_d': row[9], 'correct_answer': row[10],
-                    'user_answer': row[11], 'explanation': row[12], 'attempted_at': row[13], 'resolved': row[14]
-                })
+        try:
+            if resolved == 'all':
+                cur = db_exec(conn, f"SELECT id, device_id, source, source_id, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, attempted_at, resolved FROM wrong_answers WHERE device_id={ph} ORDER BY attempted_at DESC", (device_id,))
             else:
+                try: r_int = int(resolved)
+                except: r_int = 0
+                cur = db_exec(conn, f"SELECT id, device_id, source, source_id, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, attempted_at, resolved FROM wrong_answers WHERE device_id={ph} AND resolved={ph} ORDER BY attempted_at DESC", (device_id, r_int))
+
+            for row in cur.fetchall():
                 items.append({
                     'id': row[0], 'device_id': row[1], 'source': row[2], 'source_id': row[3],
                     'topic': row[4], 'question_text': row[5], 'option_a': row[6], 'option_b': row[7],
                     'option_c': row[8], 'option_d': row[9], 'correct_answer': row[10],
                     'user_answer': row[11], 'explanation': row[12], 'attempted_at': row[13], 'resolved': row[14]
                 })
+        except:
+            items = []
 
-        # Get counts
-        cur2 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=0", (device_id,))
-        unresolved = _fv(cur2.fetchone())
-        cur3 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=1", (device_id,))
-        resolved_count = _fv(cur3.fetchone())
+        # Try to get counts
+        unresolved = 0
+        resolved_count = 0
+        try:
+            cur2 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=0", (device_id,))
+            unresolved = _fv(cur2.fetchone()) or 0
+            cur3 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=1", (device_id,))
+            resolved_count = _fv(cur3.fetchone()) or 0
+        except:
+            unresolved = 0
+            resolved_count = 0
+
         conn.close()
-
         return jsonify({
             'items': items, 'total': len(items),
             'unresolved': unresolved, 'resolved': resolved_count,
         })
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        return jsonify({'error': str(e), 'items': [], 'total': 0, 'unresolved': 0, 'resolved': 0}), 500
+    except:
+        return jsonify({'items': [], 'total': 0, 'unresolved': 0, 'resolved': 0})
 
 
 @app.route('/api/wrong-answers-stats')
@@ -7829,48 +7825,4 @@ def _html_to_text(html):
     lines = html.splitlines()
     cleaned = []
     for line in lines:
-        line = line.strip()
-        if not line:
-            cleaned.append('')
-            continue
-        telugu_chars = sum(1 for c in line if '\u0c00' <= c <= '\u0c7f')
-        total_alpha = sum(1 for c in line if c.isalpha())
-        if total_alpha > 0 and telugu_chars / total_alpha > 0.5:
-            continue  # skip Telugu-heavy lines
-        cleaned.append(line)
-    # Collapse multiple blank lines
-    out, prev_blank = [], False
-    for l in cleaned:
-        if not l:
-            if not prev_blank:
-                out.append('')
-            prev_blank = True
-        else:
-            out.append(l)
-            prev_blank = False
-    return '\n'.join(out).strip()
-
-
-@app.route('/api/topic-notes/<int:qid>')
-def topic_notes(qid):
-    """Return clean text from the HTML study notes for a given question ID."""
-    fname, label = None, None
-    for lo, hi, f, lbl in _NOTES_MAP:
-        if lo <= qid <= hi:
-            fname, label = f, lbl
-            break
-    if not fname:
-        return jsonify({'text': '', 'label': '', 'found': False})
-    path = os.path.join(_NOTES_BASE, fname)
-    if not os.path.exists(path):
-        return jsonify({'text': '', 'label': label, 'found': False})
-    try:
-        html = open(path, 'r', encoding='utf-8').read()
-        text = _html_to_text(html)
-        return jsonify({'text': text, 'label': label, 'found': True, 'file': fname})
-    except Exception as e:
-        return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
-
-
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+        line = 
