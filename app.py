@@ -1814,28 +1814,7 @@ def save_explanation(mcq_id):
             conn.close()
             return jsonify({'error': 'Question not found'}), 404
 
-        # Mark all current versions as not current
-        db_exec(conn,
-            'UPDATE explanation_history SET is_current = ? WHERE mcq_id = ?',
-            (False, mcq_id)
-        )
-
-        # Get next version number
-        cur = db_exec(conn,
-            'SELECT MAX(version_number) FROM explanation_history WHERE mcq_id = ?',
-            (mcq_id,)
-        )
-        max_version = _fv(cur.fetchone()) or 0
-        next_version = max_version + 1
-
-        # Insert new version
-        db_exec(conn, '''
-            INSERT INTO explanation_history
-            (mcq_id, explanation_text, edited_by, version_number, is_current)
-            VALUES (?, ?, ?, ?, ?)
-        ''', (mcq_id, explanation_text, edited_by, next_version, True))
-
-        # Update questions table with latest explanation
+        # Update questions table with explanation
         db_exec(conn,
             'UPDATE questions SET explanation = ? WHERE id = ?',
             (explanation_text, mcq_id)
@@ -1846,9 +1825,8 @@ def save_explanation(mcq_id):
 
         return jsonify({
             'success': True,
-            'version_number': next_version,
             'timestamp': datetime.now().isoformat(),
-            'message': f'Explanation saved as version {next_version}'
+            'message': 'Explanation saved successfully'
         })
 
     except Exception as e:
