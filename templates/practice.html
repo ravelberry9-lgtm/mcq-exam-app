@@ -770,4 +770,466 @@ function saveWrongAnswer(mcq_id,user_answer){
 /* ── PICK OPTION ── */
 function pick(i,chosen,correct_ans,exp,question){
   const ol=document.getElementById('ol'+i); if(!ol) return;
-  const btns=ol.querySelec
+  const btns=ol.querySelectorAll('.opt');
+  if(btns[0].classList.contains('locked')) return;
+  btns.forEach(b=>b.classList.add('locked'));
+  // Normalise both to uppercase — fixes case-sensitivity bug where chapter_mcqs stores
+  // lowercase ('c') but buttons emit uppercase ('C'), causing strict === to fail.
+  const _chosenU=String(chosen||'').toUpperCase();
+  const _correctU=String(correct_ans||'').toUpperCase();
+  const ok=_chosenU===_correctU;
+  if(!states[i]){answered++;if(ok)correct++;else wrong++;}
+  states[i]={done:true,chosen:_chosenU,ok,exp,aiHTML:null,aiQ:null};
+  const cb=document.getElementById('o'+i+'_'+_chosenU); if(cb) cb.classList.add(ok?'ok-ans':'ng-ans');
+  if(!ok){const kb=document.getElementById('o'+i+'_'+_correctU);if(kb)kb.classList.add('ok-ans');}
+  const fb=document.getElementById('fbPanel');
+  fb.className='fb-panel show '+(ok?'ok-fb':'ng-fb');
+  document.getElementById('fbLbl').textContent=ok?'✅ Correct!':'❌ Incorrect!';
+  const fbExpEl=document.getElementById('fbExp');
+  fbExpEl.textContent=exp||''; fbExpEl.style.display=exp?'':'none';
+  document.getElementById('nextWrap').classList.add('show');
+  document.getElementById('aiButtonsSection').style.display = 'block';
+  document.getElementById('nextBtn').textContent=(i+1>=filtQ.length)?'See Results \u{1F3C6}':'Next →';
+  updateScore(); fb.scrollIntoView({behavior:'smooth',block:'nearest'});
+  if(filtQ[i] && filtQ[i].id) fetchNotes(filtQ[i].id);
+  // Save wrong answer to backend if incorrect
+  if(!ok && filtQ[i] && filtQ[i].id){
+    saveWrongAnswer(filtQ[i].id,_chosenU);
+  }
+  saveProgress();
+}
+
+/* ── PERPLEXITY URL TRACKER REMOVED ── */
+
+function nextQuestion(){idx++;showQ(idx);window.scrollTo({top:0,behavior:'smooth'});}
+function prevQuestion(){if(idx>0){idx--;showQ(idx);window.scrollTo({top:0,behavior:'smooth'});}}
+
+function updateScore(){document.getElementById('scoreChip').textContent=correct+' / '+answered;}
+function updateProg(i){
+  document.getElementById('progFill').style.width=(filtQ.length>0?(i/filtQ.length*100):0)+'%';
+  updateScore();
+}
+
+function showSum(){
+  clearProgress();
+  document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('visible'));
+  document.getElementById('fbPanel').classList.remove('show');
+  /* aiPanel removed */
+  document.getElementById('nextWrap').classList.remove('show');
+  document.getElementById('swipeHint').classList.remove('show');
+  document.getElementById('notesPanel').classList.remove('show');
+  document.getElementById('notesBody').classList.remove('open');
+  document.getElementById('notesToggle').classList.remove('open');
+  const tot=filtQ.length, pct=tot>0?Math.round(correct/tot*100):0;
+  const ic=pct>=80?'\u{1F3C6}':pct>=60?'\u{1F44D}':pct>=40?'\u{1F4DA}':'\u{1F4AA}';
+  document.getElementById('sumIcon').textContent=ic;
+  document.getElementById('sumPct').textContent=pct+'%';
+  document.getElementById('sumSub').textContent=correct+' correct out of '+tot;
+  document.getElementById('sCorrect').textContent=correct;
+  document.getElementById('sWrong').textContent=wrong;
+  document.getElementById('sTotal').textContent=tot;
+  document.getElementById('progFill').style.width='100%';
+  document.getElementById('scoreChip').textContent=correct+' / '+tot;
+  document.getElementById('sumCard').classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ════ FULL PAGE MODE ════ */
+function enterFP(){
+  if(!started||!filtQ.length){startPractice();setTimeout(_openFP,80);return;}
+  _openFP();
+}
+function _openFP(){
+  fpMode=true; fpIdx=idx;
+  document.body.classList.add('fp');
+  document.getElementById('fpBtn').textContent='⊞';
+  document.getElementById('fpSum').classList.remove('show');
+  document.getElementById('fpVp').style.display='';
+  renderFP(fpIdx);
+}
+function exitFP(){
+  fpMode=false;
+  document.body.classList.remove('fp');
+  document.getElementById('fpBtn').textContent='⛶';
+  idx=fpIdx; showQ(idx);
+}
+
+function renderFP(i){
+  if(i>=filtQ.length){showFPSum();return;}
+  const q=filtQ[i], st=states[i];
+  const dc=q.difficulty==='Easy'?'diff-Easy':q.difficulty==='Hard'?'diff-Hard':'diff-Medium';
+  document.getElementById('fpCard').innerHTML=
+    '<div class="fp-qmeta"><span class="fp-qnum">Q'+(i+1)+'/'+filtQ.length+'</span><span class="diff '+dc+'">'+q.difficulty+'</span></div>'+
+    '<div class="fp-qtxt">'+eh(q.question_text)+'</div>'+
+    '<div class="fp-opts" id="fpOl">'+
+    ['A','B','C','D'].map((k,n)=>'<button class="fp-opt" id="fpo_'+k+'" onclick="fpPick(\''+k+'\',\''+ea(q.correct_answer)+'\',\''+ea(q.explanation||'')+'\',\''+ea(q.question_text)+'\')">'+'<span class="ok-key">'+k+'</span><span class="opt-text">'+eh([q.option_a,q.option_b,q.option_c,q.option_d][n])+'</span></button>').join('')+
+    '</div>'+
+    '<div class="fp-fb" id="fpFb"><div class="fp-fb-lbl" id="fpFbL"></div><div class="fp-fb-exp" id="fpFbE"></div></div>'+
+    '<div class="fp-ai" id="fpAi"><div class="fp-ai-hdr"><span>&#128269;</span><span>Search Results</span></div><div class="fp-ai-body" id="fpAiBody"></div></div>';
+
+  if(st&&st.done){
+    document.querySelectorAll('#fpOl .fp-opt').forEach(b=>b.classList.add('locked'));
+    const _chosenU2=String(st.chosen||'').toUpperCase();
+    const _correctU2=String(filtQ[i].correct_answer||'').toUpperCase();
+    const ce=document.getElementById('fpo_'+_chosenU2); if(ce) ce.classList.add(st.ok?'ok-ans':'ng-ans');
+    if(!st.ok){const ke=document.getElementById('fpo_'+_correctU2);if(ke)ke.classList.add('ok-ans');}
+    const fb=document.getElementById('fpFb');
+    fb.className='fp-fb show '+(st.ok?'ok-fb':'ng-fb');
+    document.getElementById('fpFbL').textContent=st.ok?'✅ Correct!':'❌ Incorrect!';
+    document.getElementById('fpFbE').textContent=st.exp||'';
+    if(st.aiHTML){document.getElementById('fpAi').classList.add('show');const fb2=document.getElementById('fpAiBody');if(fb2)fb2.innerHTML=st.aiHTML;const fps=document.getElementById('fpAiSearch');if(fps&&st.aiQ)fps.href='https://www.perplexity.ai/search?q='+encodeURIComponent(st.aiQ);}
+  }
+
+  const wrap=document.getElementById('fpWrap');
+  wrap.classList.remove('snap'); wrap.style.transform='translateX(0)'; wrap.style.opacity='1';
+  document.getElementById('fpCard').scrollTop=0;
+  document.getElementById('fpCnt').textContent=(i+1)+'/'+filtQ.length;
+  document.getElementById('fpSc').textContent=correct+'/'+answered;
+  document.getElementById('fpProg').style.width=(i/filtQ.length*100)+'%';
+  fpIdx=i;
+}
+
+function fpPick(chosen,correct_ans,exp,question){
+  const ol=document.getElementById('fpOl'); if(!ol) return;
+  const btns=ol.querySelectorAll('.fp-opt');
+  if(btns[0].classList.contains('locked')) return;
+  btns.forEach(b=>b.classList.add('locked'));
+  // Normalise both to uppercase — same case-sensitivity fix as pick().
+  const _chosenU=String(chosen||'').toUpperCase();
+  const _correctU=String(correct_ans||'').toUpperCase();
+  const ok=_chosenU===_correctU, i=fpIdx;
+  if(!states[i]){answered++;if(ok)correct++;else wrong++;}
+  states[i]={done:true,chosen:_chosenU,ok,exp,aiHTML:null,aiQ:null};
+  const ce=document.getElementById('fpo_'+_chosenU); if(ce) ce.classList.add(ok?'ok-ans':'ng-ans');
+  if(!ok){const ke=document.getElementById('fpo_'+_correctU);if(ke)ke.classList.add('ok-ans');}
+  const fb=document.getElementById('fpFb');
+  fb.className='fp-fb show '+(ok?'ok-fb':'ng-fb');
+  document.getElementById('fpFbL').textContent=ok?'✅ Correct!':'❌ Incorrect!';
+  document.getElementById('fpFbE').textContent=exp||(ok?'Well done!':'Review the correct answer.');
+  document.getElementById('fpSc').textContent=correct+'/'+answered;
+  document.getElementById('scoreChip').textContent=correct+' / '+answered;
+  fb.scrollIntoView({behavior:'smooth',block:'nearest'});
+  loadAI(i, question, correct_ans, exp, true);
+}
+
+function showFPSum(){
+  const tot=filtQ.length, pct=tot>0?Math.round(correct/tot*100):0;
+  const ic=pct>=80?'\u{1F3C6}':pct>=60?'\u{1F44D}':pct>=40?'\u{1F4DA}':'\u{1F4AA}';
+  document.getElementById('fpVp').style.display='none';
+  document.getElementById('fpSum').classList.add('show');
+  document.getElementById('fpSi').textContent=ic;
+  document.getElementById('fpSp').textContent=pct+'%';
+  document.getElementById('fpSs').textContent=correct+' correct out of '+tot;
+  document.getElementById('fpC').textContent=correct;
+  document.getElementById('fpW').textContent=wrong;
+  document.getElementById('fpSk').textContent=tot-answered;
+  document.getElementById('fpProg').style.width='100%';
+}
+function fpRestart(){
+  document.getElementById('fpSum').classList.remove('show');
+  document.getElementById('fpVp').style.display='';
+  idx=0;correct=0;wrong=0;answered=0;states={};
+  applyFilter();buildCards();renderFP(0);
+}
+
+/* ════ SMOOTH DRAG SWIPE (FP only) ════ */
+(function(){
+  let sx=0,sy=0,dragging=false,locked=false,horiz=false;
+  const THRESH=0.28;
+  function vp(){return document.getElementById('fpVp');}
+  function wrap(){return document.getElementById('fpWrap');}
+  vp().addEventListener('touchstart',function(e){
+    if(!fpMode||anim) return;
+    sx=e.touches[0].clientX; sy=e.touches[0].clientY;
+    dragging=true; locked=false; horiz=false;
+    const w=wrap(); w.classList.remove('snap'); w.style.transform='translateX(0)'; w.style.opacity='1';
+  },{passive:true});
+  vp().addEventListener('touchmove',function(e){
+    if(!dragging||!fpMode) return;
+    const dx=e.touches[0].clientX-sx, dy=e.touches[0].clientY-sy;
+    if(!locked){if(Math.abs(dx)>8||Math.abs(dy)>8){horiz=Math.abs(dx)>Math.abs(dy);locked=true;} return;}
+    if(!horiz) return;
+    e.preventDefault();
+    const w=wrap();
+    w.style.transform='translateX('+dx+'px)';
+    w.style.opacity=Math.max(0.35,1-Math.abs(dx)/(window.innerWidth*0.9));
+  },{passive:false});
+  vp().addEventListener('touchend',function(e){
+    if(!dragging||!fpMode) return; dragging=false;
+    if(!horiz) return;
+    const dx=e.changedTouches[0].clientX-sx, W=window.innerWidth;
+    const commit=Math.abs(dx)>W*THRESH;
+    const w=wrap();
+    if(commit&&dx<0&&fpIdx<filtQ.length-1){
+      anim=true; w.classList.add('snap'); w.style.transform='translateX(-110%)'; w.style.opacity='0';
+      setTimeout(()=>{renderFP(fpIdx+1);anim=false;},320);
+    } else if(commit&&dx>0&&fpIdx>0){
+      anim=true; w.classList.add('snap'); w.style.transform='translateX(110%)'; w.style.opacity='0';
+      setTimeout(()=>{renderFP(fpIdx-1);anim=false;},320);
+    } else {
+      w.classList.add('snap'); w.style.transform='translateX(0)'; w.style.opacity='1';
+    }
+  },{passive:true});
+}());
+
+/* normal mode swipe */
+let _sx=0,_sy=0,_st=0;
+document.addEventListener('touchstart',e=>{_sx=e.touches[0].clientX;_sy=e.touches[0].clientY;_st=Date.now();},{passive:true});
+document.addEventListener('touchend',e=>{
+  if(fpMode||!started) return;
+  const dx=e.changedTouches[0].clientX-_sx, dy=e.changedTouches[0].clientY-_sy;
+  if(Math.abs(dx)<50||Math.abs(dy)>Math.abs(dx)*.75||Date.now()-_st>500) return;
+  if(dx<0) nextQuestion(); else prevQuestion();
+},{passive:true});
+
+function eh(t){if(!t)return'';return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function ea(t){if(!t)return'';return String(t).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;').replace(/\n/g,' ');}
+
+/* ── STUDY NOTES ── */
+const _notesCache = {};
+function fetchNotes(qid) {
+  const panel = document.getElementById('notesPanel');
+  const body  = document.getElementById('notesBody');
+  const frame = document.getElementById('notesFrame');
+  const lbl   = document.getElementById('notesLabel');
+  const tog   = document.getElementById('notesToggle');
+  if (!panel || !frame) return;
+  // Only show panel if qid is in a known topic range
+  let label = null;
+  for(const[a,b,n]of SUBTOPIC_MAP){if(qid>=a&&qid<=b){label=n;break;}}
+  if(!label){
+    panel.classList.remove('show');
+    if(body)body.classList.remove('open');
+    if(tog)tog.classList.remove('open');
+    return;
+  }
+  panel.classList.add('show');
+  if(lbl)lbl.textContent=label;
+  // Load notes from static files
+  let notesFile = '';
+  if(qid>=30001&&qid<=30100) notesFile='/MIDDLE_EAST_WAR_2024_2026_COMPLETE_NOTES_ENGLISH.html';
+  else if(qid>=20001&&qid<=20086) notesFile='/static/notes/General_Science/Study_Notes/intl_organisations_notes.html';
+  else if(qid>=21001&&qid<=21100) notesFile='/static/notes/General_Science/Study_Notes/summits_conferences_notes.html';
+  else if(qid>=22001&&qid<=22102) notesFile='/static/notes/General_Science/Study_Notes/conflicts_geopolitics_notes.html';
+  else if(qid>=23001&&qid<=23092) notesFile='/static/notes/General_Science/Study_Notes/awards_honours_notes.html';
+  else if(qid>=25001&&qid<=25100) notesFile='/static/notes/General_Science/Study_Notes/environment_climate_notes.html';
+  else if(qid>=26001&&qid<=26130) notesFile='/static/notes/General_Science/Study_Notes/science_technology_notes.html';
+  else if(qid>=27001&&qid<=27095) notesFile='/static/notes/General_Science/Study_Notes/sports_current_affairs_notes.html';
+  else if(qid>=28001&&qid<=28105) notesFile='/static/notes/General_Science/Study_Notes/reports_indices_notes.html';
+  else if(qid>=29001&&qid<=29100) notesFile='/static/notes/General_Science/Study_Notes/intl_events_appointments_notes.html';
+  // AP Current Affairs divisions (31001+)
+  else if(qid>=31001&&qid<=31100) notesFile='/static/notes/AP_Current_Affairs/Divisions/div01_elections_cabinet.html';
+  else if(qid>=31101&&qid<=31200) notesFile='/static/notes/AP_Current_Affairs/Divisions/div02_govt_schemes.html';
+  else if(qid>=31201&&qid<=31300) notesFile='/static/notes/AP_Current_Affairs/Divisions/div03_events_jan_aug2025.html';
+  else notesFile='/static/notes/AP_Current_Affairs/Divisions/div01_elections_cabinet.html'; // Default
+  frame.src=notesFile;
+}
+
+function toggleNotes() {
+  const body = document.getElementById('notesBody');
+  const tog  = document.getElementById('notesToggle');
+  if (!body) return;
+  body.classList.toggle('open');
+  if (tog) tog.classList.toggle('open');
+}
+
+function buildSubtopicUI(){
+  _stMap=new Map();
+  for(const q of allQ){const n=_stName(q.id);if(n)_stMap.set(n,(_stMap.get(n)||0)+1);}
+  const box=document.getElementById('subtopicBox');
+  const list=document.getElementById('subtopicList');
+  if(!box||!list||_stMap.size===0){if(box)box.style.display='none';return;}
+  _stSel=new Set(_stMap.keys());
+  list.innerHTML='';
+  for(const[name,cnt]of _stMap){
+    const sid='st_'+name.replace(/\W+/g,'_');
+    const row=document.createElement('label');
+    row.className='subtopic-item selected';
+    row.htmlFor=sid;
+    row.innerHTML='<input type="checkbox" class="subtopic-chk" id="'+sid+'" value="'+name+'" checked>'+'<span class="subtopic-name">'+name+'</span>'+'<span class="subtopic-cnt">'+cnt+' Qs</span>';
+    row.querySelector('input').addEventListener('change',function(){toggleST(name,this.checked,row);});
+    list.appendChild(row);
+  }
+  box.style.display='';
+}
+function toggleST(name,on,row){
+  if(on){_stSel.add(name);if(row)row.classList.add('selected');}
+  else{_stSel.delete(name);if(row)row.classList.remove('selected');}
+  const w=document.getElementById('subtopicWarn');
+  if(w)w.style.display=_stSel.size===0?'':'none';
+}
+function selectAllST(){
+  _stSel=new Set(_stMap.keys());
+  document.querySelectorAll('#subtopicList input').forEach(cb=>{cb.checked=true;cb.closest('.subtopic-item').classList.add('selected');});
+  const w=document.getElementById('subtopicWarn');if(w)w.style.display='none';
+}
+function clearAllST(){
+  _stSel.clear();
+  document.querySelectorAll('#subtopicList input').forEach(cb=>{cb.checked=false;cb.closest('.subtopic-item').classList.remove('selected');});
+  const w=document.getElementById('subtopicWarn');if(w)w.style.display='';
+}
+
+/* ── EXPLANATION EDITOR ── */
+let currentEditingIdx = null;
+let currentEditingMcqId = null;
+
+function openExpModal(i){
+  if(i<0 || i>=filtQ.length) return;
+  currentEditingIdx = i;
+  const q = filtQ[i];
+  currentEditingMcqId = q.id;
+
+  // Build search query from question
+  const searchQuery = encodeURIComponent(q.question_text || '');
+
+  // Set AI search URLs
+  document.getElementById('searchChatGPT').href = 'https://chatgpt.com/?q=' + searchQuery;
+  document.getElementById('searchClaude').href = 'https://claude.ai/?q=' + searchQuery;
+  document.getElementById('searchGemini').href = 'https://gemini.google.com/app?q=' + searchQuery;
+
+  document.getElementById('expQId').textContent = q.id;
+  document.getElementById('expTextarea').value = q.explanation || '';
+  document.getElementById('expSaving').style.display = 'none';
+  document.getElementById('expSuccess').style.display = 'none';
+  document.getElementById('expError').style.display = 'none';
+  document.getElementById('expModalOverlay').classList.add('open');
+}
+
+function closeExpModal(){
+  document.getElementById('expModalOverlay').classList.remove('open');
+  currentEditingIdx = null;
+  currentEditingMcqId = null;
+}
+
+async function saveExplanation(){
+  const text = document.getElementById('expTextarea').value.trim();
+  if(!text){
+    document.getElementById('expError').textContent = '⚠️ Explanation cannot be empty';
+    document.getElementById('expError').style.display = '';
+    return;
+  }
+
+  document.getElementById('expSaving').style.display = '';
+  document.getElementById('expSuccess').style.display = 'none';
+  document.getElementById('expError').style.display = 'none';
+
+  try {
+    const resp = await fetch(`/api/mcq/${currentEditingMcqId}/explanation/save`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ explanation_text: text, edited_by: 'Practice User' })
+    });
+    const result = await resp.json();
+    if(result.error){
+      document.getElementById('expError').textContent = '❌ ' + result.error;
+      document.getElementById('expError').style.display = '';
+      document.getElementById('expSaving').style.display = 'none';
+      return;
+    }
+
+    // Update the question object in memory
+    if(currentEditingIdx >= 0 && currentEditingIdx < filtQ.length){
+      filtQ[currentEditingIdx].explanation = text;
+    }
+
+    document.getElementById('expSaving').style.display = 'none';
+    document.getElementById('expSuccess').style.display = '';
+    setTimeout(closeExpModal, 2000);
+  } catch(e) {
+    document.getElementById('expError').textContent = '❌ Failed to save: ' + e.message;
+    document.getElementById('expError').style.display = '';
+    document.getElementById('expSaving').style.display = 'none';
+  }
+}
+
+// Close modal on overlay click
+document.addEventListener('DOMContentLoaded', ()=>{
+  const overlay = document.getElementById('expModalOverlay');
+  if(overlay){
+    overlay.addEventListener('click', (e)=>{
+      if(e.target === overlay) closeExpModal();
+    });
+  }
+});
+
+/* ── SEARCH ON AI WITH QUESTION COPY ── */
+function searchOnAI(aiName){
+  if(idx < 0 || idx >= filtQ.length) return;
+  const q = filtQ[idx];
+
+  // Get current date dynamically
+  const today = new Date();
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const dateStr = months[today.getMonth()] + ' ' + today.getDate() + ', ' + today.getFullYear();
+
+  // Build the full question text with options
+  let fullQuestion = 'Q' + (idx + 1) + ': ' + q.question_text + '\n\n';
+  fullQuestion += 'Options:\n';
+  fullQuestion += 'A) ' + q.option_a + '\n';
+  fullQuestion += 'B) ' + q.option_b + '\n';
+  fullQuestion += 'C) ' + q.option_c + '\n';
+  fullQuestion += 'D) ' + q.option_d + '\n\n';
+  fullQuestion += '---\n';
+  fullQuestion += 'Note: Get me up to date information as of "' + dateStr + '"';
+
+  // Copy to clipboard
+  navigator.clipboard.writeText(fullQuestion).then(() => {
+    // Show feedback
+    const feedback = document.getElementById('copyFeedback');
+    if(feedback){
+      feedback.style.display = '';
+      setTimeout(() => { feedback.style.display = 'none'; }, 2000);
+    }
+
+    // Open AI in new tab
+    let aiUrl = '';
+    if(aiName === 'perplexity'){
+      aiUrl = 'https://www.perplexity.ai/';
+    } else if(aiName === 'chatgpt'){
+      aiUrl = 'https://chatgpt.com/';
+    } else if(aiName === 'claude'){
+      aiUrl = 'https://claude.ai/';
+    } else if(aiName === 'gemini'){
+      aiUrl = 'https://gemini.google.com/app';
+    }
+    window.open(aiUrl, '_blank');
+  }).catch(err => {
+    alert('Failed to copy to clipboard. Please try again.');
+    console.error(err);
+  });
+}
+
+load();
+</script>
+
+<!-- EXPLANATION EDITOR MODAL -->
+<div class="exp-modal-overlay" id="expModalOverlay">
+  <div class="exp-modal">
+    <h3>✏️ Edit Explanation</h3>
+    <div class="exp-modal-label">Question ID: <span id="expQId">?</span></div>
+
+    <!-- AI Search Options -->
+    <div style="margin-bottom: 14px;">
+      <div class="exp-modal-label">Search on AI (to get explanation):</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+        <a class="ai-search-btn" id="searchChatGPT" target="_blank" style="background: #00a67e; color: white; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🤖 ChatGPT</a>
+        <a class="ai-search-btn" id="searchClaude" target="_blank" style="background: #1a237e; color: white; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🧠 Claude</a>
+        <a class="ai-search-btn" id="searchGemini" target="_blank" style="background: #ea4335; color: white; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">✨ Gemini</a>
+      </div>
+    </div>
+
+    <label class="exp-modal-label">Enter or paste explanation:</label>
+    <textarea class="exp-textarea" id="expTextarea" placeholder="Paste explanation from Perplexity, ChatGPT, or type your own..."></textarea>
+    <div class="exp-hint">💡 Tip: For bilingual explanations, use format: "Telugu text&#10;English text"</div>
+    <div class="exp-saving" id="expSaving" style="display:none;">⏳ Saving...</div>
+    <div class="exp-success" id="expSuccess" style="display:none;">✅ Saved successfully!</div>
+    <div class="exp-error" id="expError" style="display:none;"></div>
+    <div class="exp-modal-btns">
+      <button class="exp-save" onclick="saveExplanation()">💾 Save Changes</button>
+      <button class="exp-cancel" onclick="closeExpModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
