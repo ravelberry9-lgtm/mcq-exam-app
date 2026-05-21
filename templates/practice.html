@@ -522,7 +522,7 @@ function showQ(i){
   const st=states[i]; if(st&&st.done) restoreNormal(i,st);
   updateProg(i);
   // Show AI buttons section when answer is shown
-  if(st&&st.done) document.getElementById('aiButtonsSection').style.display = '';
+  if(st&&st.done) document.getElementById('aiButtonsSection').style.display = 'block';
 }
 
 function restoreNormal(i,st){
@@ -538,6 +538,7 @@ function restoreNormal(i,st){
   const fbExpEl2=document.getElementById('fbExp');
   fbExpEl2.textContent=st.exp||''; fbExpEl2.style.display=st.exp?'':'none';
   document.getElementById('nextWrap').classList.add('show');
+  document.getElementById('aiButtonsSection').style.display = 'block';
   document.getElementById('nextBtn').textContent=(i+1>=filtQ.length)?'See Results \u{1F3C6}':'Next →';
 }
 
@@ -562,6 +563,7 @@ function pick(i,chosen,correct_ans,exp,question){
   const fbExpEl=document.getElementById('fbExp');
   fbExpEl.textContent=exp||''; fbExpEl.style.display=exp?'':'none';
   document.getElementById('nextWrap').classList.add('show');
+  document.getElementById('aiButtonsSection').style.display = 'block';
   document.getElementById('nextBtn').textContent=(i+1>=filtQ.length)?'See Results \u{1F3C6}':'Next →';
   updateScore(); fb.scrollIntoView({behavior:'smooth',block:'nearest'});
   if(filtQ[i] && filtQ[i].id) fetchNotes(filtQ[i].id);
