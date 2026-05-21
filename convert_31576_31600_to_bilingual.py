@@ -275,4 +275,4 @@ if 31600 in mcq_bilingual_data:
     data = mcq_bilingual_data[31600]
     print(f"Question:\n{data['question']}\n")
     print(f"Option A: {data['optA']}\n")
-    print(f"Answer: {data['answer']}\n")
+    print(f"Answer: {d
