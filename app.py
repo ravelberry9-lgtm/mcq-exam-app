@@ -136,6 +136,7 @@ def init_db():
             source TEXT NOT NULL DEFAULT 'chapter',
             source_id INTEGER,
             exam_session_id TEXT,
+            folder TEXT,
             topic TEXT,
             question_text TEXT NOT NULL,
             option_a TEXT, option_b TEXT, option_c TEXT, option_d TEXT,
@@ -245,6 +246,7 @@ def init_db():
                 source TEXT NOT NULL DEFAULT 'chapter',
                 source_id INTEGER,
                 exam_session_id TEXT,
+                folder TEXT,
                 topic TEXT,
                 question_text TEXT NOT NULL,
                 option_a TEXT, option_b TEXT, option_c TEXT, option_d TEXT,
@@ -1963,7 +1965,7 @@ def save_wrong_answer(mcq_id):
 
         # Get the question details
         ph = '%s' if USE_POSTGRES else '?'
-        cur = db_exec(conn, f'SELECT question_text, option_a, option_b, option_c, option_d, correct_answer, explanation, topic FROM questions WHERE id = {ph}',
+        cur = db_exec(conn, f'SELECT question_text, option_a, option_b, option_c, option_d, correct_answer, explanation, topic, folder FROM questions WHERE id = {ph}',
                      (mcq_id,))
         row = cur.fetchone()
 
@@ -1971,17 +1973,17 @@ def save_wrong_answer(mcq_id):
             conn.close()
             return jsonify({'error': 'Question not found'}), 404
 
-        q_text, opt_a, opt_b, opt_c, opt_d, correct, exp, topic = row if USE_POSTGRES else (row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
+        q_text, opt_a, opt_b, opt_c, opt_d, correct, exp, topic, folder = row if USE_POSTGRES else (row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8])
 
         # Insert or update wrong answer
         user_answer = data.get('user_answer', '')
 
         db_exec(conn,
-               f"INSERT INTO wrong_answers (device_id, source, source_id, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, resolved) "
-               f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},0) "
+               f"INSERT INTO wrong_answers (device_id, source, source_id, folder, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, resolved) "
+               f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},0) "
                f"ON CONFLICT (device_id, source, source_id) DO UPDATE SET "
                f"  user_answer=EXCLUDED.user_answer, attempted_at=CURRENT_TIMESTAMP, resolved=0, resolved_at=NULL",
-               (device_id, 'chapter', mcq_id, topic, q_text, opt_a, opt_b, opt_c, opt_d, correct, user_answer, exp))
+               (device_id, 'chapter', mcq_id, folder, topic, q_text, opt_a, opt_b, opt_c, opt_d, correct, user_answer, exp))
 
         conn.commit()
         conn.close()
@@ -3178,24 +3180,63 @@ def wrong_answers_page():
 
 @app.route('/api/wrong-answers')
 def api_wrong_answers():
-    """Return wrong answers for this device. ?resolved=0|1|all (default 0)"""
+    """Return wrong answers for this device.
+    ?resolved=0|1|all (default 0)
+    ?folder=FOLDER&topic=TOPIC (optional filter)
+    ?subject=SUBJECT&chapter=CHAPTER (optional filter for audio chapters)
+    """
     device_id = (request.args.get('device_id') or '').strip()
     resolved = request.args.get('resolved', '0')
+    folder = (request.args.get('folder') or '').strip()
+    topic = (request.args.get('topic') or '').strip()
+    subject = (request.args.get('subject') or '').strip()
+    chapter = (request.args.get('chapter') or '').strip()
+
     if not device_id:
         return jsonify({'items': [], 'total': 0})
+
     ph = '%s' if USE_POSTGRES else '?'
     conn = get_db()
-    if resolved == 'all':
-        cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE device_id={ph} ORDER BY attempted_at DESC", (device_id,))
-    else:
+
+    # Build WHERE clause
+    where_clauses = [f"device_id={ph}"]
+    params = [device_id]
+
+    if resolved != 'all':
         try: r_int = int(resolved)
         except: r_int = 0
-        cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE device_id={ph} AND resolved={ph} ORDER BY attempted_at DESC", (device_id, r_int))
+        where_clauses.append(f"resolved={ph}")
+        params.append(r_int)
+
+    # Filter by folder and topic (regular questions)
+    if folder and topic:
+        where_clauses.append(f"folder={ph} AND topic={ph}")
+        params.extend([folder, topic])
+    # Filter by subject and chapter (audio chapters)
+    elif subject and chapter:
+        where_clauses.append(f"folder={ph} AND topic={ph}")
+        params.extend([subject, chapter])
+
+    where_sql = " AND ".join(where_clauses)
+
+    cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE {where_sql} ORDER BY attempted_at DESC", params)
     items = [row_to_dict(r) for r in cur.fetchall()]
-    # Counts
-    cur2 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=0", (device_id,))
+
+    # Counts for the filtered results
+    count_params = [device_id]
+    count_where = [f"device_id={ph}"]
+    if folder and topic:
+        count_where.append(f"folder={ph} AND topic={ph}")
+        count_params.extend([folder, topic])
+    elif subject and chapter:
+        count_where.append(f"folder={ph} AND topic={ph}")
+        count_params.extend([subject, chapter])
+
+    count_where_sql = " AND ".join(count_where)
+
+    cur2 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE {count_where_sql} AND resolved=0", count_params)
     unresolved = _fv(cur2.fetchone())
-    cur3 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=1", (device_id,))
+    cur3 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE {count_where_sql} AND resolved=1", count_params)
     resolved_count = _fv(cur3.fetchone())
     conn.close()
     return jsonify({
@@ -7802,41 +7843,3 @@ def _html_to_text(html):
         telugu_chars = sum(1 for c in line if '\u0c00' <= c <= '\u0c7f')
         total_alpha = sum(1 for c in line if c.isalpha())
         if total_alpha > 0 and telugu_chars / total_alpha > 0.5:
-            continue  # skip Telugu-heavy lines
-        cleaned.append(line)
-    # Collapse multiple blank lines
-    out, prev_blank = [], False
-    for l in cleaned:
-        if not l:
-            if not prev_blank:
-                out.append('')
-            prev_blank = True
-        else:
-            out.append(l)
-            prev_blank = False
-    return '\n'.join(out).strip()
-
-
-@app.route('/api/topic-notes/<int:qid>')
-def topic_notes(qid):
-    """Return clean text from the HTML study notes for a given question ID."""
-    fname, label = None, None
-    for lo, hi, f, lbl in _NOTES_MAP:
-        if lo <= qid <= hi:
-            fname, label = f, lbl
-            break
-    if not fname:
-        return jsonify({'text': '', 'label': '', 'found': False})
-    path = os.path.join(_NOTES_BASE, fname)
-    if not os.path.exists(path):
-        return jsonify({'text': '', 'label': label, 'found': False})
-    try:
-        html = open(path, 'r', encoding='utf-8').read()
-        text = _html_to_text(html)
-        return jsonify({'text': text, 'label': label, 'found': True, 'file': fname})
-    except Exception as e:
-        return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
-
-
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)

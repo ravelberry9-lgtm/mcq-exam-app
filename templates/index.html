@@ -140,7 +140,7 @@
                         style="border-color:{{ tile_accent }};color:{{ tile_accent }}">
                   📝 Exam
                 </button>
-                <a class="aphc-btn aphc-wrong" href="/wrong-answers"
+                <a class="aphc-btn aphc-wrong" href="/wrong-answers?folder=AP_HC&topic={{ topic }}"
                    style="border-color:{{ tile_accent }};color:{{ tile_accent }}">
                   🚩 Wrong/Flag
                 </a>
@@ -201,7 +201,7 @@
                     📝 Exam
                   </a>
                   <!-- WRONG/FLAG Tile -->
-                  <a href="/wrong-answers" class="tile-btn" style="background: linear-gradient(135deg, #c62828, #ff9800); color: white; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                  <a href="/wrong-answers?folder={{ folder }}&topic={{ topic }}" class="tile-btn" style="background: linear-gradient(135deg, #c62828, #ff9800); color: white; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
                     🚩 Wrong/Flag
                   </a>
                 </div>
@@ -257,9 +257,8 @@
                     📝 Exam
                   </a>
                   <!-- WRONG/FLAG Tile -->
-                  <a href="/wrong-answers" class="tile-btn" style="background: linear-gradient(135deg, #c62828, #ff9800); color: white; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                  <a href="/wrong-answers?subject={{ subject }}&chapter=Ch{{ ch.chapter_num }}" class="tile-btn" style="background: linear-gradient(135deg, #c62828, #ff9800); color: white; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
                     🚩 Wrong/Flag
-                  </a>
                   </a>
                   <a class="tile-btn tile-read" href="/read-notes" aria-label="Study Guide">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
@@ -728,47 +727,4 @@ function selectChip(el) {
 }
 
 function selectMode(el) {
-  document.querySelectorAll('.qs-chip[data-mode]').forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-  _qsMode = el.dataset.mode;
-}
-
-function startQuickQuiz() {
-  const btn = document.getElementById('qsStartBtn');
-  btn.disabled = true;
-  btn.textContent = 'Starting…';
-  const count = _qsCount === 0 ? _qsAvail : _qsCount;
-  const payload = {
-    folder: _qsFolder, topic: _qsTopic,
-    count: count, mode: _qsMode,
-    device_id: _devId, student_name: 'Student',
-  };
-  // Include note_id for chapter-specific quizzes (Audio Notes chapters)
-  if (_qsNoteId) payload.note_id = _qsNoteId;
-
-  fetch('/api/start-quick-exam', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'same-origin',
-    body: JSON.stringify(payload)
-  })
-  .then(r => r.json())
-  .then(d => {
-    if (d.session_id) {
-      window.location.href = '/exam/' + d.session_id;
-    } else {
-      showToast(d.error || 'Could not start exam', 'error');
-      btn.disabled = false;
-      btn.textContent = '⚡ Start Exam';
-    }
-  })
-  .catch(() => {
-    showToast('Network error — try again', 'error');
-    btn.disabled = false;
-    btn.textContent = '⚡ Start Exam';
-  });
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuizSheet(); });
-</script>
-{% endblock %}
+  document.query
