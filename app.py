@@ -1917,7 +1917,9 @@ def get_flagged_questions(device_id):
         return jsonify({'items': items, 'count': len(items)})
 
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e), 'items': [], 'count': 0}), 500
 
 
 @app.route('/api/mcq/<int:mcq_id>/flag', methods=['POST'])
@@ -3187,64 +3189,59 @@ def api_wrong_answers():
     ?folder=FOLDER&topic=TOPIC (optional filter)
     ?subject=SUBJECT&chapter=CHAPTER (optional filter for audio chapters)
     """
-    device_id = (request.args.get('device_id') or '').strip()
-    resolved = request.args.get('resolved', '0')
-    folder = (request.args.get('folder') or '').strip()
-    topic = (request.args.get('topic') or '').strip()
-    subject = (request.args.get('subject') or '').strip()
-    chapter = (request.args.get('chapter') or '').strip()
+    try:
+        device_id = (request.args.get('device_id') or '').strip()
+        resolved = request.args.get('resolved', '0')
+        folder = (request.args.get('folder') or '').strip()
+        topic = (request.args.get('topic') or '').strip()
+        subject = (request.args.get('subject') or '').strip()
+        chapter = (request.args.get('chapter') or '').strip()
 
-    if not device_id:
-        return jsonify({'items': [], 'total': 0})
+        if not device_id:
+            return jsonify({'items': [], 'total': 0, 'unresolved': 0, 'resolved': 0})
 
-    ph = '%s' if USE_POSTGRES else '?'
-    conn = get_db()
+        ph = '%s' if USE_POSTGRES else '?'
+        conn = get_db()
 
-    # Build WHERE clause
-    where_clauses = [f"device_id={ph}"]
-    params = [device_id]
+        # Build WHERE clause
+        where_clauses = [f"device_id={ph}"]
+        params = [device_id]
 
-    if resolved != 'all':
-        try: r_int = int(resolved)
-        except: r_int = 0
-        where_clauses.append(f"resolved={ph}")
-        params.append(r_int)
+        if resolved != 'all':
+            try: r_int = int(resolved)
+            except: r_int = 0
+            where_clauses.append(f"resolved={ph}")
+            params.append(r_int)
 
-    # Filter by folder and topic (regular questions)
-    if folder and topic:
-        where_clauses.append(f"folder={ph} AND topic={ph}")
-        params.extend([folder, topic])
-    # Filter by subject and chapter (audio chapters)
-    elif subject and chapter:
-        where_clauses.append(f"folder={ph} AND topic={ph}")
-        params.extend([subject, chapter])
+        # Try to filter by folder and topic if provided
+        try:
+            if folder and topic:
+                where_clauses.append(f"folder={ph} AND topic={ph}")
+                params.extend([folder, topic])
+            elif subject and chapter:
+                where_clauses.append(f"folder={ph} AND topic={ph}")
+                params.extend([subject, chapter])
+        except:
+            pass  # Folder column might not exist yet, continue without filtering
 
-    where_sql = " AND ".join(where_clauses)
+        where_sql = " AND ".join(where_clauses)
 
-    cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE {where_sql} ORDER BY attempted_at DESC", params)
-    items = [row_to_dict(r) for r in cur.fetchall()]
+        cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE {where_sql} ORDER BY attempted_at DESC", params)
+        items = [row_to_dict(r) for r in cur.fetchall()]
 
-    # Counts for the filtered results
-    count_params = [device_id]
-    count_where = [f"device_id={ph}"]
-    if folder and topic:
-        count_where.append(f"folder={ph} AND topic={ph}")
-        count_params.extend([folder, topic])
-    elif subject and chapter:
-        count_where.append(f"folder={ph} AND topic={ph}")
-        count_params.extend([subject, chapter])
-
-    count_where_sql = " AND ".join(count_where)
-
-    cur2 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE {count_where_sql} AND resolved=0", count_params)
-    unresolved = _fv(cur2.fetchone())
-    cur3 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE {count_where_sql} AND resolved=1", count_params)
-    resolved_count = _fv(cur3.fetchone())
-    conn.close()
-    return jsonify({
-        'items': items, 'total': len(items),
-        'unresolved': unresolved, 'resolved': resolved_count,
-    })
+        # Get counts - always check by device_id only for reliability
+        count_params = [device_id]
+        cur2 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=0", count_params)
+        unresolved = _fv(cur2.fetchone())
+        cur3 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=1", count_params)
+        resolved_count = _fv(cur3.fetchone())
+        conn.close()
+        return jsonify({
+            'items': items, 'total': len(items),
+            'unresolved': unresolved, 'resolved': resolved_count,
+        })
+    except Exception as e:
+        return jsonify({'error': str(e), 'items': [], 'total': 0, 'unresolved': 0, 'resolved': 0}), 500
 
 
 @app.route('/api/wrong-answers-stats')
@@ -7839,47 +7836,4 @@ def _html_to_text(html):
     cleaned = []
     for line in lines:
         line = line.strip()
-        if not line:
-            cleaned.append('')
-            continue
-        telugu_chars = sum(1 for c in line if '\u0c00' <= c <= '\u0c7f')
-        total_alpha = sum(1 for c in line if c.isalpha())
-        if total_alpha > 0 and telugu_chars / total_alpha > 0.5:
-            continue  # skip Telugu-heavy lines
-        cleaned.append(line)
-    # Collapse multiple blank lines
-    out, prev_blank = [], False
-    for l in cleaned:
-        if not l:
-            if not prev_blank:
-                out.append('')
-            prev_blank = True
-        else:
-            out.append(l)
-            prev_blank = False
-    return '\n'.join(out).strip()
-
-
-@app.route('/api/topic-notes/<int:qid>')
-def topic_notes(qid):
-    """Return clean text from the HTML study notes for a given question ID."""
-    fname, label = None, None
-    for lo, hi, f, lbl in _NOTES_MAP:
-        if lo <= qid <= hi:
-            fname, label = f, lbl
-            break
-    if not fname:
-        return jsonify({'text': '', 'label': '', 'found': False})
-    path = os.path.join(_NOTES_BASE, fname)
-    if not os.path.exists(path):
-        return jsonify({'text': '', 'label': label, 'found': False})
-    try:
-        html = open(path, 'r', encoding='utf-8').read()
-        text = _html_to_text(html)
-        return jsonify({'text': text, 'label': label, 'found': True, 'file': fname})
-    except Exception as e:
-        return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
-
-
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+        if 
