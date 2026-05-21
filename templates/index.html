@@ -733,38 +733,4 @@ function startQuickQuiz() {
   const btn = document.getElementById('qsStartBtn');
   btn.disabled = true;
   btn.textContent = 'Starting…';
-  const count = _qsCount === 0 ? _qsAvail : _qsCount;
-  const payload = {
-    folder: _qsFolder, topic: _qsTopic,
-    count: count, mode: _qsMode,
-    device_id: _devId, student_name: 'Student',
-  };
-  // Include note_id for chapter-specific quizzes (Audio Notes chapters)
-  if (_qsNoteId) payload.note_id = _qsNoteId;
-
-  fetch('/api/start-quick-exam', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'same-origin',
-    body: JSON.stringify(payload)
-  })
-  .then(r => r.json())
-  .then(d => {
-    if (d.session_id) {
-      window.location.href = '/exam/' + d.session_id;
-    } else {
-      showToast(d.error || 'Could not start exam', 'error');
-      btn.disabled = false;
-      btn.textContent = '⚡ Start Exam';
-    }
-  })
-  .catch(() => {
-    showToast('Network error — try again', 'error');
-    btn.disabled = false;
-    btn.textContent = '⚡ Start Exam';
-  });
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuizSheet(); });
-</script>
-{% endblock %}
+  const count = _qsCount =
