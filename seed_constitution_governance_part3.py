@@ -511,8 +511,4 @@ The Supreme Court in cases addressing committee functioning (2021-2024) reaffirm
 The constitutional tension: While government controls majority parliamentary time and legislative agenda, constitution reserves Parliament capacity for independent oversight. The balance: government pursues legislation through majority; opposition and committees conduct scrutiny. This reflects parliamentary principle—executive serves at legislature's pleasure; legislature retains independent oversight authority despite executive's parliamentary emergence.
 
 The post-2020 period tested this balance. Government's commanding Lok Sabha majority (2021-2024) meant opposition faced procedural constraints (reduced question hour, shorter sitting days). However, constitutional independence mechanisms survived: committees functioned, opposition questioned, oversight occurred. Constitutional design proved resilient despite political imbalances.",
-     "Article 75 continuous confidence requirement | Committees' constitutional authority (Articles 118-120) | Opposition committee chair conventions | Witness protection from executive retaliation | PAC and other statutory committees | Committee functional independence despite executive cooperation challenges"),
-
-]
-
-QUESTIONS_PART3 = PARLIAMENTARY_SYSTEM_MCQS + LEGISLATIVE_STRUCTURE_MCQS
+     "Article 75 continuous confidence requirement | Committees' constitutional authority (Articles 118-120) | Opposition committee chair conventions | W
