@@ -357,7 +357,8 @@ body.fp .fp-ov{display:flex}
 <script>
 const FOLDER = '{{ folder }}';
 const TOPIC  = '{{ topic }}';
-let allQ=[], filtQ=[], idx=0, correct=0, wrong=0, answered=0, filter='all', started=false, states={}, fpMode=false, fpIdx=0, anim=false;
+const INITIAL_MODE = '{{ mode or "practice" }}';
+let allQ=[], filtQ=[], idx=0, correct=0, wrong=0, answered=0, filter='all', started=false, states={}, fpMode=false, fpIdx=0, anim=false, currentMode='practice';
 const SUBTOPIC_MAP=[
   [20001,20086,'International Organisations'],
   [20087,20140,'Intl CA 2026 (Jan-Apr PDFs)'],
@@ -452,6 +453,11 @@ function showIntro(){
   }
   buildSubtopicUI();
   document.getElementById('introCard').style.display='';
+
+  // Auto-select mode if specified in URL
+  if(INITIAL_MODE==='practice' || INITIAL_MODE==='exam'){
+    setTimeout(()=>selectMode(INITIAL_MODE),100);
+  }
 }
 
 function resumePractice(){
@@ -631,7 +637,8 @@ async function loadFlaggedQuestions(){
     const r=await fetch('/api/flagged-questions/'+encodeURIComponent(deviceId));
     if(!r.ok)return;
     const data=await r.json();
-    const flaggedIds=new Set(data.flagged_mcq_ids||[]);
+    const items=data.items||[];
+    const flaggedIds=new Set(items.map(item=>item.id||0));
     // Mark all flagged questions in states
     allQ.forEach((q,i)=>{
       if(flaggedIds.has(q.id)){
@@ -742,6 +749,15 @@ function restoreNormal(i,st){
   document.getElementById('nextBtn').textContent=(i+1>=filtQ.length)?'See Results \u{1F3C6}':'Next →';
 }
 
+/* ── SAVE WRONG ANSWER TO BACKEND ── */
+function saveWrongAnswer(mcq_id,user_answer){
+  fetch('/api/mcq/'+mcq_id+'/wrong',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({user_answer:user_answer})
+  }).catch(e=>console.log('Wrong answer save failed',e));
+}
+
 /* ── PICK OPTION ── */
 function pick(i,chosen,correct_ans,exp,question){
   const ol=document.getElementById('ol'+i); if(!ol) return;
@@ -767,6 +783,10 @@ function pick(i,chosen,correct_ans,exp,question){
   document.getElementById('nextBtn').textContent=(i+1>=filtQ.length)?'See Results \u{1F3C6}':'Next →';
   updateScore(); fb.scrollIntoView({behavior:'smooth',block:'nearest'});
   if(filtQ[i] && filtQ[i].id) fetchNotes(filtQ[i].id);
+  // Save wrong answer to backend if incorrect
+  if(!ok && filtQ[i] && filtQ[i].id){
+    saveWrongAnswer(filtQ[i].id,_chosenU);
+  }
   saveProgress();
 }
 

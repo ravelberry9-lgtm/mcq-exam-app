@@ -1952,6 +1952,45 @@ def flag_mcq(mcq_id):
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/api/mcq/<int:mcq_id>/wrong', methods=['POST'])
+def save_wrong_answer(mcq_id):
+    """Save a wrong answer from practice mode"""
+    try:
+        data = request.get_json()
+        device_id = request.headers.get('User-Agent', 'anonymous')
+
+        conn = get_db()
+
+        # Get the question details
+        ph = '%s' if USE_POSTGRES else '?'
+        cur = db_exec(conn, f'SELECT question_text, option_a, option_b, option_c, option_d, correct_answer, explanation, topic FROM questions WHERE id = {ph}',
+                     (mcq_id,))
+        row = cur.fetchone()
+
+        if not row:
+            conn.close()
+            return jsonify({'error': 'Question not found'}), 404
+
+        q_text, opt_a, opt_b, opt_c, opt_d, correct, exp, topic = row if USE_POSTGRES else (row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
+
+        # Insert or update wrong answer
+        user_answer = data.get('user_answer', '')
+
+        db_exec(conn,
+               f"INSERT INTO wrong_answers (device_id, source, source_id, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, resolved) "
+               f"VALUES ({ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},{ph},0) "
+               f"ON CONFLICT (device_id, source, source_id) DO UPDATE SET "
+               f"  user_answer=EXCLUDED.user_answer, attempted_at=CURRENT_TIMESTAMP, resolved=0, resolved_at=NULL",
+               (device_id, 'chapter', mcq_id, topic, q_text, opt_a, opt_b, opt_c, opt_d, correct, user_answer, exp))
+
+        conn.commit()
+        conn.close()
+        return jsonify({'success': True, 'mcq_id': mcq_id})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 @app.route('/api/flagged-questions/check', methods=['POST'])
 def check_flagged_status():
     """Check which MCQs are flagged"""
@@ -3028,7 +3067,8 @@ def result(session_id):
 
 @app.route('/practice/<folder>/<topic>')
 def practice(folder, topic):
-    return render_template('practice.html', folder=folder, topic=topic)
+    mode = request.args.get('mode', 'practice')  # Default to practice mode
+    return render_template('practice.html', folder=folder, topic=topic, mode=mode)
 
 @app.route('/api/practice-questions/<folder>/<topic>')
 def practice_questions(folder, topic):

@@ -22,6 +22,46 @@
     </div>
   </div>
 
+  <!-- ── Main Mode Tiles ── -->
+  <section aria-label="Main modes">
+    <div class="launch-grid">
+
+      <!-- PRACTICE Mode -->
+      <a href="#" onclick="showTopicsForMode('practice'); return false;" class="launch-tile" style="--c1:#1a237e;--c2:#3949ab;" aria-label="Practice Mode — learn and practice questions">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H9m-9 5A2.5 2.5 0 019 13m-8 10.5h10m-10-10L19.5 3M9 12l6.5-6.5M9 21l10-10"/></svg>
+        </div>
+        <div class="lt-name">PRACTICE</div>
+        <div class="lt-desc">Learn & practice</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+      <!-- EXAM Mode -->
+      <a href="#" onclick="showTopicsForMode('exam'); return false;" class="launch-tile" style="--c1:#bf360c;--c2:#e64a19;" aria-label="Exam Mode — timed tests">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="lt-name">EXAM</div>
+        <div class="lt-desc">Timed tests</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+      <!-- WRONG/FLAG Mode -->
+      <a href="/wrong-answers" class="launch-tile" style="--c1:#c62828;--c2:#ff9800;" aria-label="Wrong & Flagged — review mistakes">
+        <div class="lt-blob"></div>
+        <div class="lt-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="lt-name">WRONG/FLAG</div>
+        <div class="lt-desc">Review mistakes</div>
+        <div class="lt-arrow">→</div>
+      </a>
+
+    </div>
+  </section>
+
   <!-- ── Quick Launch Tiles ── -->
   <section aria-label="Quick launch">
     <div class="launch-grid">
@@ -136,7 +176,7 @@
                   ⚡ Practice
                 </a>
                 <button class="aphc-btn aphc-exam"
-                        onclick="openQuizSheet('AP_HC','{{ topic }}',{{ count }},null)"
+                        onclick="openQuizSheetWithMode('AP_HC','{{ topic }}',{{ count }},null)"
                         style="border-color:{{ tile_accent }};color:{{ tile_accent }}">
                   📝 Exam
                 </button>
@@ -189,7 +229,7 @@
                 </div>
                 <div class="tile-actions">
                   <button class="tile-btn tile-quiz"
-                          onclick="openQuizSheet('{{ folder }}','{{ topic }}',{{ count }},null)"
+                          onclick="openQuizSheetWithMode('{{ folder }}','{{ topic }}',{{ count }},null)"
                           aria-label="Quick quiz: {{ topic.replace('_',' ') }}">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     Quiz
@@ -247,7 +287,7 @@
                 </div>
                 <div class="tile-actions">
                   <button class="tile-btn tile-quiz"
-                          onclick="openQuizSheet('{{ subject }}','Ch{{ ch.chapter_num }}',{{ ch.count }},{{ ch.note_id }})"
+                          onclick="openQuizSheetWithMode('{{ subject }}','Ch{{ ch.chapter_num }}',{{ ch.count }},{{ ch.note_id }})"
                           aria-label="Quiz: Chapter {{ ch.chapter_num }}">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     Quiz
@@ -715,6 +755,27 @@ function closeQuizSheet() {
   // Reset start button so it's never stuck in "Starting…" state
   const btn = document.getElementById('qsStartBtn');
   if (btn) { btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
+}
+
+// ── Navigate to practice mode with selected mode ──
+function showTopicsForMode(mode) {
+  // Store the mode in sessionStorage so it persists when a topic is selected
+  sessionStorage.setItem('practiceMode', mode);
+  // Scroll to topics section (already on home)
+  document.getElementById('folders').scrollIntoView({behavior:'smooth'});
+}
+
+// ── Navigate to practice with selected mode or open quiz sheet ──
+function openQuizSheetWithMode(folder, topic, avail, noteId) {
+  const mode = sessionStorage.getItem('practiceMode');
+  if(mode === 'practice' || mode === 'exam'){
+    // Navigate directly to practice page with mode
+    window.location.href = '/practice/' + folder + '/' + topic + '?mode=' + mode;
+    sessionStorage.removeItem('practiceMode');  // Clear the mode after use
+  } else {
+    // Use normal quiz sheet for custom exams
+    openQuizSheet(folder, topic, avail, noteId);
+  }
 }
 
 function selectChip(el) {
