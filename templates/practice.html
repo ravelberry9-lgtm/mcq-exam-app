@@ -247,11 +247,11 @@ body.fp .fp-ov{display:flex}
   <div class="intro-icon">&#127919;</div>
   <h3 id="introTitle">Select Mode</h3>
   <p id="introDesc">Choose how you want to study</p>
-  <div id="modeSection" style="margin:20px 0;">
+  <div id="modeSection" style="margin:20px 0; display:none;">
     <div style="display:flex; flex-direction:column; gap:10px;">
-      <button onclick="selectMode('practice')" style="padding:16px; background:linear-gradient(135deg,#1a237e,#3949ab); color:white; border:none; border-radius:12px; font-size:16px; font-weight:600; cursor:pointer;">📝 PRACTICE - Learn & Answer</button>
-      <button onclick="selectMode('exam')" style="padding:16px; background:#fff; border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">📋 EXAM - Timed Test</button>
-      <button onclick="selectMode('wrongflag')" style="padding:16px; background:#fff; border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">🚩 WRONG/FLAG - Review Mistakes</button>
+      <button onclick="selectMode('practice')" style="padding:16px; background:linear-gradient(135deg,#1a237e,#3949ab); color:white; border:none; border-radius:12px; font-size:16px; font-weight:600; cursor:pointer;">📝 PRACTICE</button>
+      <button onclick="selectMode('exam')" style="padding:16px; background:#fff; border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">📋 EXAM</button>
+      <button onclick="selectMode('wrongflag')" style="padding:16px; background:#fff; border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">🚩 WRONG/FLAG</button>
     </div>
   </div>
   <div class="subtopic-box" id="subtopicBox" style="display:none">
@@ -433,19 +433,24 @@ function loadSaved(){try{return JSON.parse(localStorage.getItem(SAVE_KEY)||'null
 
 function showIntro(){
   document.getElementById('introTitle').textContent=TOPIC.replace(/_/g,' ');
-  document.getElementById('introDesc').textContent=allQ.length+' questions available';
-  document.getElementById('modeSection').innerHTML=
-    '<div style="display:flex; flex-direction:column; gap:10px;">'+
-    '<button onclick="selectMode(\'practice\')" style="padding:16px; background:linear-gradient(135deg,#1a237e,#3949ab); color:white; border:none; border-radius:12px; font-size:16px; font-weight:600; cursor:pointer;">📝 PRACTICE - Learn & Answer</button>'+
-    '<button onclick="selectMode(\'exam\')" style="padding:16px; background:#fff; border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">📋 EXAM - Timed Test</button>'+
-    '<button onclick="selectMode(\'wrongflag\')" style="padding:16px; background:#fff; border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">🚩 WRONG/FLAG - Review Mistakes</button>'+
-    '</div>';
   const saved=loadSaved();
+
+  // Show mode selector
+  document.getElementById('modeSection').style.display='block';
+  document.getElementById('subtopicBox').style.display='none';
+  document.getElementById('btnStart').style.display='none';
+  document.getElementById('resumeBox').style.display='none';
+
   if(saved&&saved.answered>0){
     const pct=Math.round(saved.correct/saved.answered*100);
     document.getElementById('introDesc').innerHTML=
-      allQ.length+' questions · '+saved.answered+' answered · '+saved.correct+' correct<br><small style="color:var(--txm);margin-top:8px;display:block">▶ Resume from Q'+(saved.idx+1)+' — '+pct+'% score</small>';
+      allQ.length+' questions · '+saved.answered+' answered · '+saved.correct+' correct<br><br>'+
+      '<button onclick="resumePractice()" style="background:var(--pr);color:#fff;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;font-weight:600;margin-right:8px;">▶ Resume</button>'+
+      '<button onclick="clearProgress();showIntro();" style="background:#fff;color:var(--pr);border:2px solid var(--pr);border-radius:8px;padding:10px 20px;cursor:pointer;font-weight:600;">Fresh</button>';
+  } else {
+    document.getElementById('introDesc').textContent=allQ.length+' questions available';
   }
+  buildSubtopicUI();
   }
   buildSubtopicUI();
   document.getElementById('introCard').style.display='';
@@ -487,57 +492,37 @@ let currentMode='practice';
 function selectMode(mode){
   currentMode=mode;
   if(mode==='practice'){
-    started=true;
     document.getElementById('introCard').style.display='none';
-    document.getElementById('modeSelector').style.display='flex';
-    document.getElementById('difficultyFilter').style.display='flex';
     document.getElementById('qArea').style.display='';
-    document.getElementById('wrongSection').classList.remove('show');
-    document.getElementById('flagSection').classList.remove('show');
     startPractice();
   } else if(mode==='exam'){
-    started=true;
     document.getElementById('introCard').style.display='none';
-    document.getElementById('modeSelector').style.display='flex';
-    document.getElementById('difficultyFilter').style.display='flex';
     document.getElementById('qArea').style.display='';
-    document.getElementById('wrongSection').classList.remove('show');
-    document.getElementById('flagSection').classList.remove('show');
     clearProgress();
     startPractice();
   } else if(mode==='wrongflag'){
-    document.getElementById('introCard').style.display='none';
-    document.getElementById('modeSelector').style.display='flex';
-    document.getElementById('difficultyFilter').style.display='none';
-    document.getElementById('qArea').style.display='none';
-    document.getElementById('wrongSection').classList.remove('show');
-    document.getElementById('flagSection').classList.remove('show');
     showWrongFlagMenu();
   }
 }
 
-function setMode(mode,btn){
-  document.querySelectorAll('#modeSelector .chip').forEach(b=>b.style.background='#fff');
-  document.querySelectorAll('#modeSelector .chip').forEach(b=>b.style.color='var(--pr)');
-  btn.style.background='linear-gradient(135deg,#1a237e,#3949ab)';
-  btn.style.color='white';
-  selectMode(mode);
-}
-
 function showWrongFlagMenu(){
   document.getElementById('introCard').style.display='block';
-  document.getElementById('introTitle').textContent='Wrong or Flagged?';
-  document.getElementById('introDesc').textContent='Select what you want to review';
+  document.getElementById('introTitle').textContent='Review';
+  document.getElementById('introDesc').textContent='';
   document.getElementById('modeSection').innerHTML=
     '<div style="display:flex; flex-direction:column; gap:10px;">'+
     '<button onclick="showWrongAnswersMode()" style="padding:16px; background:#fce4ec; border:2px solid #f48fb1; border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:#880e4f;">❌ WRONG ANSWERS</button>'+
     '<button onclick="showFlaggedMode()" style="padding:16px; background:#fff3e0; border:2px solid #ffb74d; border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:#e65100;">🚩 FLAGGED QUESTIONS</button>'+
-    '<button onclick="goBack()" style="padding:16px; background:var(--nb); border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">↩️ BACK</button>'+
+    '<button onclick="location.reload()" style="padding:16px; background:var(--nb); border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">↩️ BACK</button>'+
     '</div>';
+  document.getElementById('modeSection').style.display='block';
 }
 
 function showWrongAnswersMode(){
   document.getElementById('introCard').style.display='none';
+  document.getElementById('modeSelector').style.display='none';
+  document.getElementById('difficultyFilter').style.display='none';
+  document.getElementById('qArea').style.display='none';
   document.getElementById('wrongSection').classList.add('show');
   showWrongAnswers();
   window.scrollTo({top:0,behavior:'smooth'});
@@ -545,6 +530,9 @@ function showWrongAnswersMode(){
 
 function showFlaggedMode(){
   document.getElementById('introCard').style.display='none';
+  document.getElementById('modeSelector').style.display='none';
+  document.getElementById('difficultyFilter').style.display='none';
+  document.getElementById('qArea').style.display='none';
   document.getElementById('flagSection').classList.add('show');
   showFlaggedQuestions();
   window.scrollTo({top:0,behavior:'smooth'});

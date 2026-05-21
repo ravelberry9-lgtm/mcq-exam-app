@@ -140,8 +140,8 @@
 
 <div class="wa-wrap">
   <div class="wa-hero">
-    <h1>⚠️ Wrong Answers</h1>
-    <p>Every question you got wrong is collected here. Practice them until you get them right — they then move to the Resolved tab.</p>
+    <h1 id="heroTitle">❌ Wrong Answers</h1>
+    <p id="heroDesc">Every question you got wrong is collected here. Practice them until you get them right — they then move to the Resolved tab.</p>
     <div class="wa-stats">
       <span class="wa-stat-pill" id="waUnresolvedPill">… unresolved</span>
       <span class="wa-stat-pill" id="waResolvedPill">… resolved</span>
@@ -153,9 +153,18 @@
     <a href="/" class="btn btn-outline btn-block">← Home</a>
   </div>
 
-  <div class="wa-tabs" role="tablist">
-    <button class="wa-tab active" data-tab="0" onclick="showTab(this,0)">Unresolved</button>
-    <button class="wa-tab" data-tab="1" onclick="showTab(this,1)">Resolved</button>
+  <!-- Top Section Selector -->
+  <div class="wa-tabs" role="tablist" style="margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 0;">
+    <button class="wa-tab active" data-tab="wrong" onclick="switchSection(this,'wrong')">❌ Wrong Answers</button>
+    <button class="wa-tab" data-tab="flagged" onclick="switchSection(this,'flagged')">🚩 Flagged</button>
+  </div>
+
+  <!-- Wrong Answers Tabs -->
+  <div id="wrongAnswersSection">
+    <div class="wa-tabs" role="tablist">
+      <button class="wa-tab active" data-tab="0" onclick="showTab(this,0)">Unresolved</button>
+      <button class="wa-tab" data-tab="1" onclick="showTab(this,1)">Resolved</button>
+    </div>
   </div>
 
   <div id="waList"></div>
@@ -189,9 +198,33 @@ let _devId = localStorage.getItem('mcq_device_id');
 if (!_devId) { _devId = 'web_' + Math.random().toString(36).slice(2,9); localStorage.setItem('mcq_device_id', _devId); }
 
 let currentResolvedFilter = 0;
+let currentSection = 'wrong'; // 'wrong' or 'flagged'
+
+function switchSection(btn, section) {
+  document.querySelectorAll('div.wa-tabs[role="tablist"]:first').querySelectorAll('.wa-tab').forEach(t => t.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  currentSection = section;
+  currentResolvedFilter = 0;
+
+  if(section === 'wrong') {
+    document.getElementById('heroTitle').textContent = '❌ Wrong Answers';
+    document.getElementById('heroDesc').textContent = 'Every question you got wrong is collected here. Practice them until you get them right.';
+    document.getElementById('wrongAnswersSection').style.display = '';
+    document.getElementById('waPracticeBtn').style.display = '';
+    // Reset tabs
+    document.querySelectorAll('#wrongAnswersSection .wa-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('#wrongAnswersSection .wa-tab')[0].classList.add('active');
+  } else if(section === 'flagged') {
+    document.getElementById('heroTitle').textContent = '🚩 Flagged Questions';
+    document.getElementById('heroDesc').textContent = 'Questions you manually flagged for review.';
+    document.getElementById('wrongAnswersSection').style.display = 'none';
+    document.getElementById('waPracticeBtn').style.display = 'none';
+  }
+  loadList();
+}
 
 function showTab(btn, val) {
-  document.querySelectorAll('.wa-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#wrongAnswersSection .wa-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   currentResolvedFilter = val;
   loadList();
@@ -335,25 +368,42 @@ async function loadList() {
   const list = document.getElementById('waList');
   list.innerHTML = '<div class="wa-empty"><div class="wa-empty-ico">⏳</div>Loading…</div>';
   try {
-    const r = await fetch(`/api/wrong-answers?device_id=${encodeURIComponent(_devId)}&resolved=${currentResolvedFilter}`);
-    const d = await r.json();
-    document.getElementById('waUnresolvedPill').textContent = `${d.unresolved} unresolved`;
-    document.getElementById('waResolvedPill').textContent  = `${d.resolved} resolved`;
-    document.getElementById('waPracticeBtn').disabled = (d.unresolved === 0);
+    let url, d;
 
-    if (!d.items || !d.items.length) {
-      list.innerHTML = `
-        <div class="wa-empty">
-          <div class="wa-empty-ico">${currentResolvedFilter==1?'🏆':'🎯'}</div>
-          <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;">
-            ${currentResolvedFilter==1?'No resolved wrong answers yet':'No unresolved wrong answers!'}
-          </div>
-          <div style="font-size:13px;line-height:1.6;">
-            ${currentResolvedFilter==1?'Once you re-answer wrong questions correctly, they move here.':'Take an exam and any wrong answers will appear here for review.'}
-          </div>
-        </div>`;
-      return;
+    if(currentSection === 'wrong') {
+      const r = await fetch(`/api/wrong-answers?device_id=${encodeURIComponent(_devId)}&resolved=${currentResolvedFilter}`);
+      d = await r.json();
+      document.getElementById('waUnresolvedPill').textContent = `${d.unresolved} unresolved`;
+      document.getElementById('waResolvedPill').textContent  = `${d.resolved} resolved`;
+      document.getElementById('waPracticeBtn').disabled = (d.unresolved === 0);
+
+      if (!d.items || !d.items.length) {
+        list.innerHTML = `
+          <div class="wa-empty">
+            <div class="wa-empty-ico">${currentResolvedFilter==1?'🏆':'🎯'}</div>
+            <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;">
+              ${currentResolvedFilter==1?'No resolved wrong answers yet':'No unresolved wrong answers!'}
+            </div>
+            <div style="font-size:13px;line-height:1.6;">
+              ${currentResolvedFilter==1?'Once you re-answer wrong questions correctly, they move here.':'Take an exam and any wrong answers will appear here for review.'}
+            </div>
+          </div>`;
+        return;
+      }
+    } else if(currentSection === 'flagged') {
+      const r = await fetch(`/api/flagged-questions/${encodeURIComponent(_devId)}`);
+      d = await r.json();
+      if (!d.items || !d.items.length) {
+        list.innerHTML = `
+          <div class="wa-empty">
+            <div class="wa-empty-ico">🚩</div>
+            <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;">No flagged questions yet</div>
+            <div style="font-size:13px;line-height:1.6;">Questions you flag during practice appear here for easy review.</div>
+          </div>`;
+        return;
+      }
     }
+
     list.innerHTML = d.items.map(renderCard).join('');
   } catch(e) {
     list.innerHTML = `<div class="wa-empty"><div class="wa-empty-ico">😞</div>Error loading: ${escapeHtml(e.message)}</div>`;

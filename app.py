@@ -1877,19 +1877,41 @@ def toggle_flagged_question():
 
 @app.route('/api/flagged-questions/<device_id>')
 def get_flagged_questions(device_id):
-    """Get all flagged question IDs for a device"""
+    """Get all flagged questions with full details for a device"""
     try:
         conn = get_db()
+        # Get flagged MCQ IDs
         cur = db_exec(conn, 'SELECT mcq_id FROM flagged_questions WHERE device_id = ? ORDER BY mcq_id',
                      (device_id,))
+        flagged_ids = [row[0] for row in cur.fetchall()]
 
-        if USE_POSTGRES:
-            flagged_ids = [row[0] for row in cur.fetchall()]
-        else:
-            flagged_ids = [row[0] for row in cur.fetchall()]
+        if not flagged_ids:
+            conn.close()
+            return jsonify({'items': [], 'count': 0})
+
+        # Get full MCQ data for flagged questions
+        placeholders = ','.join(['?' for _ in flagged_ids])
+        cur = db_exec(conn, f'SELECT id, question_text, option_a, option_b, option_c, option_d, correct_answer, explanation, difficulty, folder, topic FROM questions WHERE id IN ({placeholders})',
+                     tuple(flagged_ids))
+
+        items = []
+        for row in cur.fetchall():
+            items.append({
+                'id': row[0],
+                'question_text': row[1],
+                'option_a': row[2],
+                'option_b': row[3],
+                'option_c': row[4],
+                'option_d': row[5],
+                'correct_answer': row[6],
+                'explanation': row[7],
+                'difficulty': row[8],
+                'folder': row[9],
+                'topic': row[10]
+            })
 
         conn.close()
-        return jsonify({'flagged_ids': flagged_ids, 'count': len(flagged_ids)})
+        return jsonify({'items': items, 'count': len(items)})
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
