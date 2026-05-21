@@ -1895,6 +1895,41 @@ def get_flagged_questions(device_id):
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/api/mcq/<int:mcq_id>/flag', methods=['POST'])
+def flag_mcq(mcq_id):
+    """Flag or unflag an MCQ"""
+    try:
+        data = request.get_json()
+        flagged = data.get('flagged', False)
+        # Use browser fingerprint or session ID as device_id
+        device_id = request.headers.get('User-Agent', 'anonymous')
+
+        conn = get_db()
+
+        if flagged:
+            # Check if already flagged
+            cur = db_exec(conn, 'SELECT id FROM flagged_questions WHERE device_id = ? AND mcq_id = ?',
+                         (device_id, mcq_id))
+            if not cur.fetchone():
+                # Add flag
+                db_exec(conn,
+                       'INSERT INTO flagged_questions (device_id, mcq_id) VALUES (?, ?)',
+                       (device_id, mcq_id))
+            conn.commit()
+            conn.close()
+            return jsonify({'success': True, 'flagged': True})
+        else:
+            # Remove flag
+            db_exec(conn, 'DELETE FROM flagged_questions WHERE device_id = ? AND mcq_id = ?',
+                   (device_id, mcq_id))
+            conn.commit()
+            conn.close()
+            return jsonify({'success': True, 'flagged': False})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 @app.route('/api/flagged-questions/check', methods=['POST'])
 def check_flagged_status():
     """Check which MCQs are flagged"""

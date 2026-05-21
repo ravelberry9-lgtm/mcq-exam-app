@@ -181,8 +181,19 @@ body.fp .fp-ov{display:flex}
 .subtopic-warn{font-size:11px;color:#c62828;padding:4px 0 0;display:none}
 
 /* ── EDIT EXPLANATION BUTTON ── */
-.edit-exp-btn { background: linear-gradient(135deg,#ff6f00,#ffa000); color: white; border: none; padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; width: 100%; margin-top: 12px; transition: all 0.15s; display: block; box-shadow: 0 2px 8px rgba(255,111,0,0.2); }
+.edit-exp-btn { background: linear-gradient(135deg,#ff6f00,#ffa000); color: white; border: none; padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.15s; display: block; box-shadow: 0 2px 8px rgba(255,111,0,0.2); }
 .edit-exp-btn:hover { background: linear-gradient(135deg,#e55100,#f57f17); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255,111,0,0.3); }
+.flag-btn { border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: all 0.15s; box-shadow: 0 2px 8px rgba(255,152,0,0.2); }
+.flag-btn:hover { transform: scale(1.1); box-shadow: 0 4px 12px rgba(255,152,0,0.3); }
+.flag-btn.flagged { background: #ffb74d !important; transform: scale(1.15); }
+/* Wrong/Flag Section */
+.wrong-section { display: none; }
+.wrong-section.show { display: block; }
+.wrong-card { margin: 14px 14px 0; background: var(--card); border-radius: var(--R); box-shadow: var(--sh); overflow: hidden; padding: 12px 14px; border-left: 4px solid #ff6f00; }
+.wrong-q-text { font-size: 14px; font-weight: 600; line-height: 1.5; margin-bottom: 8px; }
+.wrong-status { font-size: 12px; color: var(--txm); margin-bottom: 8px; }
+.wrong-status.answer-wrong { color: #c62828; }
+.wrong-status.flagged-q { color: #ff9800; }
 
 /* ── EXPLANATION EDITOR MODAL ── */
 .exp-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 300; align-items: center; justify-content: center; padding: 20px; }
@@ -217,7 +228,13 @@ body.fp .fp-ov{display:flex}
 </div>
 <div class="prog-wrap"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
 
-<div class="filter-strip">
+<div class="filter-strip" id="viewSelector">
+  <button class="chip active" onclick="setView('practice',this)">Practice</button>
+  <button class="chip" onclick="setView('wrong',this)">❌ Wrong</button>
+  <button class="chip" onclick="setView('flag',this)">🚩 Flag</button>
+</div>
+
+<div class="filter-strip" id="difficultyFilter" style="display:flex;">
   <button class="chip active" onclick="setFilter('all',this)">All</button>
   <button class="chip" onclick="setFilter('Easy',this)">Easy</button>
   <button class="chip" onclick="setFilter('Medium',this)">Medium</button>
@@ -252,6 +269,14 @@ body.fp .fp-ov{display:flex}
 </div>
 
 <div id="qArea"></div>
+<div class="wrong-section" id="wrongSection">
+  <div id="wrongList"></div>
+  <div class="empty" id="wrongEmpty" style="display:none;">No wrong answers yet.</div>
+</div>
+<div class="wrong-section" id="flagSection">
+  <div id="flagList"></div>
+  <div class="empty" id="flagEmpty" style="display:none;">No flagged questions yet.</div>
+</div>
 <div class="swipe-hint" id="swipeHint">&#8592; swipe to navigate</div>
 <div class="fb-panel" id="fbPanel"><div class="fb-lbl" id="fbLbl"></div><div class="fb-exp" id="fbExp"></div></div>
 <div id="aiButtonsSection" style="margin:12px 14px; padding:12px 14px; background:#f5f5f5; border-radius:10px; display:none;">
@@ -376,6 +401,7 @@ async function load() {
     allQ=d.questions||[];
     document.getElementById('loadWrap').style.display='none';
     if(!allQ.length){document.getElementById('qArea').innerHTML='<div class="empty">No questions found.</div>';document.getElementById('fpBtn').style.display='none';return;}
+    loadFlaggedQuestions();
     showIntro();
   } catch(e) {
     clearTimeout(t);
@@ -450,6 +476,136 @@ function applyFilter(){
   for(let i=filtQ.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[filtQ[i],filtQ[j]]=[filtQ[j],filtQ[i]];}
 }
 
+/* ── VIEW SELECTION (Practice vs Wrong vs Flag) ── */
+let currentView='practice';
+function setView(view,btn){
+  currentView=view;
+  document.querySelectorAll('#viewSelector .chip').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('qArea').style.display='none';
+  document.getElementById('wrongSection').classList.remove('show');
+  document.getElementById('flagSection').classList.remove('show');
+
+  if(view==='practice'){
+    document.getElementById('qArea').style.display='';
+    document.getElementById('difficultyFilter').style.display='flex';
+  } else if(view==='wrong'){
+    document.getElementById('difficultyFilter').style.display='none';
+    document.getElementById('wrongSection').classList.add('show');
+    showWrongAnswers();
+  } else if(view==='flag'){
+    document.getElementById('difficultyFilter').style.display='none';
+    document.getElementById('flagSection').classList.add('show');
+    showFlaggedQuestions();
+  }
+}
+
+/* ── FLAG QUESTION ── */
+function toggleFlag(i){
+  const q=filtQ[i];
+  if(!q)return;
+  const btn=document.getElementById('flagBtn'+i);
+  if(!states[i])states[i]={done:false,chosen:'',ok:false,exp:'',aiHTML:null,aiQ:null};
+  states[i].flagged=!states[i].flagged;
+  if(btn){
+    btn.classList.toggle('flagged',states[i].flagged);
+  }
+  // Save to backend
+  fetch('/api/mcq/'+q.id+'/flag',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({flagged:states[i].flagged})
+  }).catch(e=>console.log('Flag save failed',e));
+  saveProgress();
+}
+
+function showWrongAnswers(){
+  const wrongList=document.getElementById('wrongList');
+  wrongList.innerHTML='';
+  const wrongQs=[];
+  allQ.forEach((q,i)=>{
+    const st=states[i];
+    if(st&&!st.ok&&st.done){
+      wrongQs.push({q,st,idx:i});
+    }
+  });
+  if(!wrongQs.length){
+    document.getElementById('wrongEmpty').style.display='';
+    return;
+  }
+  document.getElementById('wrongEmpty').style.display='none';
+  wrongQs.forEach(({q,st,idx})=>{
+    const card=document.createElement('div');
+    card.className='wrong-card';
+    card.innerHTML=
+      '<div class="wrong-q-text">'+eh(q.question_text)+'</div>'+
+      '<div class="wrong-status answer-wrong">❌ Answered wrong</div>'+
+      (st.exp?'<div style="font-size:12px;color:var(--tx);margin-top:6px;">Your answer: '+st.chosen+'</div>':'')+
+      (st.exp?'<div style="font-size:12px;color:var(--tx);margin-top:4px;">'+st.exp+'</div>':'')+
+      '<button onclick="retryQuestion('+idx+')" style="width:100%;margin-top:8px;padding:8px;background:var(--pr);color:#fff;border:none;border-radius:6px;font-size:12px;cursor:pointer">Retry This Question</button>';
+    wrongList.appendChild(card);
+  });
+}
+
+function showFlaggedQuestions(){
+  const flagList=document.getElementById('flagList');
+  flagList.innerHTML='';
+  const flaggedQs=[];
+  allQ.forEach((q,i)=>{
+    const st=states[i];
+    if(st&&st.flagged){
+      flaggedQs.push({q,st,idx:i});
+    }
+  });
+  if(!flaggedQs.length){
+    document.getElementById('flagEmpty').style.display='';
+    return;
+  }
+  document.getElementById('flagEmpty').style.display='none';
+  flaggedQs.forEach(({q,st,idx})=>{
+    const card=document.createElement('div');
+    card.className='wrong-card';
+    let answerInfo='';
+    if(st.done){
+      answerInfo='<div style="font-size:12px;color:var(--tx);margin-top:4px;">Your answer: '+st.chosen+' '+(st.ok?'✅':'❌')+'</div>';
+    }
+    card.innerHTML=
+      '<div class="wrong-q-text">'+eh(q.question_text)+'</div>'+
+      '<div class="wrong-status flagged-q">🚩 Flagged</div>'+
+      answerInfo+
+      (st.exp?'<div style="font-size:12px;color:var(--tx);margin-top:4px;">'+st.exp+'</div>':'')+
+      '<button onclick="retryQuestion('+idx+')" style="width:100%;margin-top:8px;padding:8px;background:var(--pr);color:#fff;border:none;border-radius:6px;font-size:12px;cursor:pointer">Retry This Question</button>';
+    flagList.appendChild(card);
+  });
+}
+
+function retryQuestion(i){
+  currentView='practice';
+  const btn=document.querySelector('#viewSelector .chip:first-child');
+  setView('practice',btn);
+  idx=i;
+  showQ(i);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* Load flagged questions on startup */
+async function loadFlaggedQuestions(){
+  try{
+    const deviceId=navigator.userAgent;
+    const r=await fetch('/api/flagged-questions/'+encodeURIComponent(deviceId));
+    if(!r.ok)return;
+    const data=await r.json();
+    const flaggedIds=new Set(data.flagged_mcq_ids||[]);
+    // Mark all flagged questions in states
+    allQ.forEach((q,i)=>{
+      if(flaggedIds.has(q.id)){
+        if(!states[i])states[i]={done:false,chosen:'',ok:false,exp:'',aiHTML:null,aiQ:null};
+        states[i].flagged=true;
+      }
+    });
+  }catch(e){console.log('Failed to load flagged questions',e);}
+}
+
 /* ── START ── */
 function goBack(){
   if(started){
@@ -501,8 +657,16 @@ function buildCards(){
       '<div class="opts-list" id="ol'+i+'">'+
       ['A','B','C','D'].map((k,n)=>'<button class="opt" id="o'+i+'_'+k+'" onclick="pick('+i+',\''+k+'\',\''+ea(q.correct_answer)+'\',\''+ea(q.explanation||'')+'\',\''+ea(q.question_text)+'\')">'+'<span class="ok-key">'+k+'</span><span class="opt-text">'+eh([q.option_a,q.option_b,q.option_c,q.option_d][n])+'</span></button>').join('')+
       '</div>'+
-      '<button class="edit-exp-btn" onclick="openExpModal('+i+')">✏️ Edit Explanation</button>';
+      '<div style="display:flex;gap:8px;margin-top:12px;">'+
+      '<button class="edit-exp-btn" style="flex:1" onclick="openExpModal('+i+')">✏️ Edit Explanation</button>'+
+      '<button class="flag-btn" id="flagBtn'+i+'" onclick="toggleFlag('+i+')" style="flex:0.4;background:#ff9800;padding:10px 8px;text-align:center;">🚩</button>'+
+      '</div>';
     area.appendChild(c);
+    // Set flag button state
+    const flagBtn=document.getElementById('flagBtn'+i);
+    if(states[i]&&states[i].flagged&&flagBtn){
+      flagBtn.classList.add('flagged');
+    }
   });
 }
 
