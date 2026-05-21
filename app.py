@@ -7763,47 +7763,5 @@ def topic_notes(qid):
         return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
 
 
-@app.route('/api/topic-notes-html/<int:qid>')
-def topic_notes_html(qid):
-    """Serve notes HTML with Telugu hidden, mobile CSS injected, and Perplexity button removed."""
-    import re
-    fname, label = None, None
-    for lo, hi, f, lbl in _NOTES_MAP:
-        if lo <= qid <= hi:
-            fname, label = f, lbl
-            break
-    if not fname:
-        return ('<p style="font-family:sans-serif;padding:20px;color:#888">'
-                'No study notes for this topic.</p>'), 404
-    path = os.path.join(_NOTES_BASE, fname)
-    if not os.path.exists(path):
-        return ('<p style="font-family:sans-serif;padding:20px;color:#888">'
-                'Notes file not found.</p>'), 404
-    try:
-        html = open(path, 'r', encoding='utf-8').read()
-        # Remove Perplexity button/link and related containers - multiple patterns
-        html = re.sub(r'<div[^>]*class=["\']notes-pplx[^>]*>.*?</div>', '', html, flags=re.DOTALL | re.IGNORECASE)
-        html = re.sub(r'<a[^>]*(id=["\']notesPplxBtn|class=["\']notes-pplx-btn)[^>]*>.*?</a>', '', html, flags=re.DOTALL | re.IGNORECASE)
-        html = re.sub(r'<button[^>]*(?:perplexity|pplx)[^>]*>.*?</button>', '', html, flags=re.DOTALL | re.IGNORECASE)
-        html = re.sub(r'<a[^>]*(?:perplexity|pplx)[^>]*>.*?</a>', '', html, flags=re.DOTALL | re.IGNORECASE)
-        html = re.sub(r'⚡\s*Search on Perplexity', '', html, flags=re.IGNORECASE)
-        html = re.sub(r'Search on Perplexity', '', html, flags=re.IGNORECASE)
-        html = re.sub(r'<div[^>]*>\s*<a[^>]*href=["\']https://www\.perplexity\.ai[^>]*>.*?</a>\s*</div>', '', html, flags=re.DOTALL | re.IGNORECASE)
-        inject = (
-            '<style>'
-            'p,li{font-size:13px!important}'
-            '.notes-pplx{display:none!important}'
-            '.notes-pplx-btn{display:none!important}'
-            'a[href*="perplexity"]{display:none!important}'
-            'button[onclick*="perplexity"]{display:none!important}'
-            '</style>'
-        )
-        html = html.replace('</head>', inject + '</head>')
-        return html
-    except Exception as e:
-        return ('<p style="font-family:sans-serif;padding:20px;color:#888">'
-                'Error loading notes: ' + str(e) + '</p>'), 500
-
-
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=5000)
