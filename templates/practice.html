@@ -228,10 +228,10 @@ body.fp .fp-ov{display:flex}
 </div>
 <div class="prog-wrap"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
 
-<div class="filter-strip" id="viewSelector">
-  <button class="chip active" onclick="setView('practice',this)">Practice</button>
-  <button class="chip" onclick="setView('wrong',this)">❌ Wrong</button>
-  <button class="chip" onclick="setView('flag',this)">🚩 Flag</button>
+<div class="filter-strip" id="modeSelector" style="display:none; gap:12px; padding:12px 14px;">
+  <button class="chip active" onclick="setMode('practice',this)" style="flex:1; background:linear-gradient(135deg,#1a237e,#3949ab); color:white; border:none;">📝 PRACTICE</button>
+  <button class="chip" onclick="setMode('exam',this)" style="flex:1; background:#fff; border:1.5px solid var(--br);">📋 EXAM</button>
+  <button class="chip" onclick="setMode('wrongflag',this)" style="flex:1; background:#fff; border:1.5px solid var(--br);">🚩 WRONG/FLAG</button>
 </div>
 
 <div class="filter-strip" id="difficultyFilter" style="display:flex;">
@@ -245,8 +245,15 @@ body.fp .fp-ov{display:flex}
 
 <div class="intro-card" id="introCard" style="display:none">
   <div class="intro-icon">&#127919;</div>
-  <h3 id="introTitle">Practice Mode</h3>
-  <p id="introDesc"></p>
+  <h3 id="introTitle">Select Mode</h3>
+  <p id="introDesc">Choose how you want to study</p>
+  <div id="modeSection" style="margin:20px 0;">
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <button onclick="selectMode('practice')" style="padding:16px; background:linear-gradient(135deg,#1a237e,#3949ab); color:white; border:none; border-radius:12px; font-size:16px; font-weight:600; cursor:pointer;">📝 PRACTICE - Learn & Answer</button>
+      <button onclick="selectMode('exam')" style="padding:16px; background:#fff; border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">📋 EXAM - Timed Test</button>
+      <button onclick="selectMode('wrongflag')" style="padding:16px; background:#fff; border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">🚩 WRONG/FLAG - Review Mistakes</button>
+    </div>
+  </div>
   <div class="subtopic-box" id="subtopicBox" style="display:none">
     <div class="subtopic-hdr">
       <span class="subtopic-hdr-lbl">&#128218; Choose Topics to Practice</span>
@@ -425,21 +432,20 @@ function clearProgress(){try{localStorage.removeItem(SAVE_KEY);}catch(e){}}
 function loadSaved(){try{return JSON.parse(localStorage.getItem(SAVE_KEY)||'null');}catch(e){return null;}}
 
 function showIntro(){
-  document.getElementById('introTitle').textContent=TOPIC.replace(/_/g,' ')+' Practice';
+  document.getElementById('introTitle').textContent=TOPIC.replace(/_/g,' ');
+  document.getElementById('introDesc').textContent=allQ.length+' questions available';
+  document.getElementById('modeSection').innerHTML=
+    '<div style="display:flex; flex-direction:column; gap:10px;">'+
+    '<button onclick="selectMode(\'practice\')" style="padding:16px; background:linear-gradient(135deg,#1a237e,#3949ab); color:white; border:none; border-radius:12px; font-size:16px; font-weight:600; cursor:pointer;">📝 PRACTICE - Learn & Answer</button>'+
+    '<button onclick="selectMode(\'exam\')" style="padding:16px; background:#fff; border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">📋 EXAM - Timed Test</button>'+
+    '<button onclick="selectMode(\'wrongflag\')" style="padding:16px; background:#fff; border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">🚩 WRONG/FLAG - Review Mistakes</button>'+
+    '</div>';
   const saved=loadSaved();
   if(saved&&saved.answered>0){
     const pct=Math.round(saved.correct/saved.answered*100);
-    document.getElementById('introDesc').textContent=
-      allQ.length+' questions · '+saved.answered+' answered · '+saved.correct+' correct';
-    document.getElementById('btnStart').style.display='none';
-    document.getElementById('resumeInfo').textContent=
-      '▶ Resume from Q'+(saved.idx+1)+' — '+pct+'% score so far';
-    document.getElementById('resumeBox').style.display='';
-  } else {
-    document.getElementById('introDesc').textContent=
-      allQ.length+' questions · tap to answer · swipe to skip';
-    document.getElementById('btnStart').style.display='';
-    document.getElementById('resumeBox').style.display='none';
+    document.getElementById('introDesc').innerHTML=
+      allQ.length+' questions · '+saved.answered+' answered · '+saved.correct+' correct<br><small style="color:var(--txm);margin-top:8px;display:block">▶ Resume from Q'+(saved.idx+1)+' — '+pct+'% score</small>';
+  }
   }
   buildSubtopicUI();
   document.getElementById('introCard').style.display='';
@@ -476,28 +482,72 @@ function applyFilter(){
   for(let i=filtQ.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[filtQ[i],filtQ[j]]=[filtQ[j],filtQ[i]];}
 }
 
-/* ── VIEW SELECTION (Practice vs Wrong vs Flag) ── */
-let currentView='practice';
-function setView(view,btn){
-  currentView=view;
-  document.querySelectorAll('#viewSelector .chip').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('qArea').style.display='none';
-  document.getElementById('wrongSection').classList.remove('show');
-  document.getElementById('flagSection').classList.remove('show');
-
-  if(view==='practice'){
-    document.getElementById('qArea').style.display='';
+/* ── MODE SELECTION (Practice, Exam, Wrong/Flag) ── */
+let currentMode='practice';
+function selectMode(mode){
+  currentMode=mode;
+  if(mode==='practice'){
+    started=true;
+    document.getElementById('introCard').style.display='none';
+    document.getElementById('modeSelector').style.display='flex';
     document.getElementById('difficultyFilter').style.display='flex';
-  } else if(view==='wrong'){
+    document.getElementById('qArea').style.display='';
+    document.getElementById('wrongSection').classList.remove('show');
+    document.getElementById('flagSection').classList.remove('show');
+    startPractice();
+  } else if(mode==='exam'){
+    started=true;
+    document.getElementById('introCard').style.display='none';
+    document.getElementById('modeSelector').style.display='flex';
+    document.getElementById('difficultyFilter').style.display='flex';
+    document.getElementById('qArea').style.display='';
+    document.getElementById('wrongSection').classList.remove('show');
+    document.getElementById('flagSection').classList.remove('show');
+    clearProgress();
+    startPractice();
+  } else if(mode==='wrongflag'){
+    document.getElementById('introCard').style.display='none';
+    document.getElementById('modeSelector').style.display='flex';
     document.getElementById('difficultyFilter').style.display='none';
-    document.getElementById('wrongSection').classList.add('show');
-    showWrongAnswers();
-  } else if(view==='flag'){
-    document.getElementById('difficultyFilter').style.display='none';
-    document.getElementById('flagSection').classList.add('show');
-    showFlaggedQuestions();
+    document.getElementById('qArea').style.display='none';
+    document.getElementById('wrongSection').classList.remove('show');
+    document.getElementById('flagSection').classList.remove('show');
+    showWrongFlagMenu();
   }
+}
+
+function setMode(mode,btn){
+  document.querySelectorAll('#modeSelector .chip').forEach(b=>b.style.background='#fff');
+  document.querySelectorAll('#modeSelector .chip').forEach(b=>b.style.color='var(--pr)');
+  btn.style.background='linear-gradient(135deg,#1a237e,#3949ab)';
+  btn.style.color='white';
+  selectMode(mode);
+}
+
+function showWrongFlagMenu(){
+  document.getElementById('introCard').style.display='block';
+  document.getElementById('introTitle').textContent='Wrong or Flagged?';
+  document.getElementById('introDesc').textContent='Select what you want to review';
+  document.getElementById('modeSection').innerHTML=
+    '<div style="display:flex; flex-direction:column; gap:10px;">'+
+    '<button onclick="showWrongAnswersMode()" style="padding:16px; background:#fce4ec; border:2px solid #f48fb1; border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:#880e4f;">❌ WRONG ANSWERS</button>'+
+    '<button onclick="showFlaggedMode()" style="padding:16px; background:#fff3e0; border:2px solid #ffb74d; border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:#e65100;">🚩 FLAGGED QUESTIONS</button>'+
+    '<button onclick="goBack()" style="padding:16px; background:var(--nb); border:2px solid var(--br); border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; color:var(--pr);">↩️ BACK</button>'+
+    '</div>';
+}
+
+function showWrongAnswersMode(){
+  document.getElementById('introCard').style.display='none';
+  document.getElementById('wrongSection').classList.add('show');
+  showWrongAnswers();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showFlaggedMode(){
+  document.getElementById('introCard').style.display='none';
+  document.getElementById('flagSection').classList.add('show');
+  showFlaggedQuestions();
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 /* ── FLAG QUESTION ── */
