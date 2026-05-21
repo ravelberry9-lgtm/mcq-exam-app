@@ -1882,8 +1882,9 @@ def get_flagged_questions(device_id):
     """Get all flagged questions with full details for a device"""
     try:
         conn = get_db()
+        ph = '%s' if USE_POSTGRES else '?'
         # Get flagged MCQ IDs
-        cur = db_exec(conn, 'SELECT mcq_id FROM flagged_questions WHERE device_id = ? ORDER BY mcq_id',
+        cur = db_exec(conn, f'SELECT mcq_id FROM flagged_questions WHERE device_id={ph} ORDER BY mcq_id',
                      (device_id,))
         flagged_ids = [row[0] for row in cur.fetchall()]
 
@@ -1892,7 +1893,7 @@ def get_flagged_questions(device_id):
             return jsonify({'items': [], 'count': 0})
 
         # Get full MCQ data for flagged questions
-        placeholders = ','.join(['?' for _ in flagged_ids])
+        placeholders = ','.join([ph for _ in flagged_ids])
         cur = db_exec(conn, f'SELECT id, question_text, option_a, option_b, option_c, option_d, correct_answer, explanation, difficulty, folder, topic FROM questions WHERE id IN ({placeholders})',
                      tuple(flagged_ids))
 
@@ -7842,43 +7843,4 @@ def _html_to_text(html):
             cleaned.append('')
             continue
         telugu_chars = sum(1 for c in line if '\u0c00' <= c <= '\u0c7f')
-        total_alpha = sum(1 for c in line if c.isalpha())
-        if total_alpha > 0 and telugu_chars / total_alpha > 0.5:
-            continue  # skip Telugu-heavy lines
-        cleaned.append(line)
-    # Collapse multiple blank lines
-    out, prev_blank = [], False
-    for l in cleaned:
-        if not l:
-            if not prev_blank:
-                out.append('')
-            prev_blank = True
-        else:
-            out.append(l)
-            prev_blank = False
-    return '\n'.join(out).strip()
-
-
-@app.route('/api/topic-notes/<int:qid>')
-def topic_notes(qid):
-    """Return clean text from the HTML study notes for a given question ID."""
-    fname, label = None, None
-    for lo, hi, f, lbl in _NOTES_MAP:
-        if lo <= qid <= hi:
-            fname, label = f, lbl
-            break
-    if not fname:
-        return jsonify({'text': '', 'label': '', 'found': False})
-    path = os.path.join(_NOTES_BASE, fname)
-    if not os.path.exists(path):
-        return jsonify({'text': '', 'label': label, 'found': False})
-    try:
-        html = open(path, 'r', encoding='utf-8').read()
-        text = _html_to_text(html)
-        return jsonify({'text': text, 'label': label, 'found': True, 'file': fname})
-    except Exception as e:
-        return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
-
-
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+        total_alpha = su
