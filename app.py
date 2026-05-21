@@ -3192,28 +3192,23 @@ def api_wrong_answers():
     try:
         ph = '%s' if USE_POSTGRES else '?'
         conn = get_db()
-
-        # Try to get items
         items = []
+
+        # Get items - use SELECT * for flexibility
         try:
             if resolved == 'all':
-                cur = db_exec(conn, f"SELECT id, device_id, source, source_id, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, attempted_at, resolved FROM wrong_answers WHERE device_id={ph} ORDER BY attempted_at DESC", (device_id,))
+                cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE device_id={ph} ORDER BY attempted_at DESC", (device_id,))
             else:
                 try: r_int = int(resolved)
                 except: r_int = 0
-                cur = db_exec(conn, f"SELECT id, device_id, source, source_id, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, attempted_at, resolved FROM wrong_answers WHERE device_id={ph} AND resolved={ph} ORDER BY attempted_at DESC", (device_id, r_int))
+                cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE device_id={ph} AND resolved={ph} ORDER BY attempted_at DESC", (device_id, r_int))
 
             for row in cur.fetchall():
-                items.append({
-                    'id': row[0], 'device_id': row[1], 'source': row[2], 'source_id': row[3],
-                    'topic': row[4], 'question_text': row[5], 'option_a': row[6], 'option_b': row[7],
-                    'option_c': row[8], 'option_d': row[9], 'correct_answer': row[10],
-                    'user_answer': row[11], 'explanation': row[12], 'attempted_at': row[13], 'resolved': row[14]
-                })
-        except:
-            items = []
+                items.append(row_to_dict(row))
+        except Exception as e:
+            pass  # Silent fail - return empty list if query fails
 
-        # Try to get counts
+        # Get counts
         unresolved = 0
         resolved_count = 0
         try:
@@ -7869,4 +7864,4 @@ def topic_notes(qid):
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=5000)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
