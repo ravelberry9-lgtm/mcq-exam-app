@@ -1,0 +1,62 @@
+═══════════════════════════════════════════════════════════════════════════
+  MCQ APP - WRONG ANSWERS FIX - DEPLOYMENT QUICK REFERENCE
+═══════════════════════════════════════════════════════════════════════════
+
+COMMIT READY FOR DEPLOYMENT
+──────────────────────────
+Commit ID: 82a57a9
+Message: "Fix: Use SELECT * with row_to_dict() for flexible wrong_answers API retrieval"
+
+WHAT WAS FIXED
+──────────────
+Issue: Wrong answers not displaying in UI even though data exists in database
+Cause: Hardcoded column selection with positional index mapping (brittle)
+Fix: Changed to flexible SELECT * with row_to_dict() conversion
+
+EXACTLY WHAT CHANGED IN app.py
+──────────────────────────────
+Location: /api/wrong-answers endpoint (lines 3192-3214)
+
+BEFORE (Broken):
+    cur = db_exec(conn, f"SELECT id, device_id, source, source_id, topic, ... FROM wrong_answers WHERE device_id={ph} ...")
+    for row in cur.fetchall():
+        items.append({
+            'id': row[0], 'device_id': row[1], 'source': row[2], ...  # ← Breaks if schema changes
+        })
+
+AFTER (Fixed):
+    cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE device_id={ph} ...")
+    for row in cur.fetchall():
+        items.append(row_to_dict(row))  # ← Works with any schema variations
+
+DEPLOYMENT INSTRUCTIONS
+──────────────────────
+From your local machine:
+  1. cd path/to/mcq_exam_app
+  2. git pull origin main           # Get latest changes
+  3. git push origin main           # Push the 2 local commits
+  4. Wait 2-3 minutes for Railway auto-deploy
+
+Status:
+  ✓ Code committed and ready
+  ✗ Needs to be pushed to GitHub
+  ⏳ Will auto-deploy to Railway once pushed
+
+TESTING AFTER DEPLOYMENT
+────────────────────────
+1. Answer a question incorrectly in practice mode
+2. Verify it shows in "Wrong Answers" section
+3. Try flagging a question
+4. Toggle between "Wrong" and "Flagged" tabs
+5. Both should work without errors
+
+IF STILL NOT WORKING
+───────────────────
+Check:
+  1. Railway logs for error messages
+  2. Database has wrong_answers data: SELECT COUNT(*) FROM wrong_answers;
+  3. API returns JSON: /api/wrong-answers?device_id=test
+
+Still broken? See DEPLOYMENT_SUMMARY.md for fallback plan.
+
+═══════════════════════════════════════════════════════════════════════════
