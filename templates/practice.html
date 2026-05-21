@@ -254,6 +254,15 @@ body.fp .fp-ov{display:flex}
 <div id="qArea"></div>
 <div class="swipe-hint" id="swipeHint">&#8592; swipe to navigate</div>
 <div class="fb-panel" id="fbPanel"><div class="fb-lbl" id="fbLbl"></div><div class="fb-exp" id="fbExp"></div></div>
+<div id="aiButtonsSection" style="margin:12px 14px; padding:12px 14px; background:#f5f5f5; border-radius:10px; display:none;">
+  <div style="font-size: 12px; font-weight: 700; color: #666; margin-bottom: 10px; text-transform: uppercase;">Search on AI:</div>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+    <button onclick="searchOnAI('chatgpt')" style="background: #00a67e; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🤖 ChatGPT</button>
+    <button onclick="searchOnAI('claude')" style="background: #1a237e; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🧠 Claude</button>
+    <button onclick="searchOnAI('gemini')" style="background: #ea4335; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">✨ Gemini</button>
+  </div>
+  <div id="copyFeedback" style="font-size: 11px; color: #2e7d32; margin-top: 8px; display: none;">✅ Question copied to clipboard!</div>
+</div>
 <div class="notes-panel" id="notesPanel">
   <div class="notes-hdr" onclick="toggleNotes()">
     <span class="notes-hdr-icon">&#128218;</span>
@@ -265,17 +274,6 @@ body.fp .fp-ov{display:flex}
     <iframe class="notes-frame" id="notesFrame" frameborder="0" src="about:blank"></iframe>
   </div>
 </div>
-<div id="aiButtonsSection" style="margin:12px 14px; padding:12px 14px; background:#f5f5f5; border-radius:10px; display:none;">
-  <div style="font-size: 12px; font-weight: 700; color: #666; margin-bottom: 10px; text-transform: uppercase;">Search on AI:</div>
-  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-    <button onclick="searchOnAI('perplexity')" style="background: #22c55e; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🔍 Perplexity</button>
-    <button onclick="searchOnAI('chatgpt')" style="background: #00a67e; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🤖 ChatGPT</button>
-    <button onclick="searchOnAI('claude')" style="background: #1a237e; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🧠 Claude</button>
-    <button onclick="searchOnAI('gemini')" style="background: #ea4335; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">✨ Gemini</button>
-  </div>
-  <div id="copyFeedback" style="font-size: 11px; color: #2e7d32; margin-top: 8px; display: none;">✅ Question copied to clipboard!</div>
-</div>
-
 <div class="next-wrap" id="nextWrap"><button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next &#8594;</button></div>
 
 <div class="sum-card" id="sumCard">
