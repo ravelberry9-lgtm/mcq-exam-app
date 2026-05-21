@@ -851,7 +851,6 @@ function openExpModal(i){
   const searchQuery = encodeURIComponent(q.question_text || '');
 
   // Set AI search URLs
-  document.getElementById('searchPerplexity').href = 'https://www.perplexity.ai/search?q=' + searchQuery;
   document.getElementById('searchChatGPT').href = 'https://chatgpt.com/?q=' + searchQuery;
   document.getElementById('searchClaude').href = 'https://claude.ai/?q=' + searchQuery;
   document.getElementById('searchGemini').href = 'https://gemini.google.com/app?q=' + searchQuery;
@@ -981,7 +980,6 @@ load();
     <div style="margin-bottom: 14px;">
       <div class="exp-modal-label">Search on AI (to get explanation):</div>
       <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
-        <a class="ai-search-btn" id="searchPerplexity" target="_blank" style="background: #22c55e; color: white; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🔍 Perplexity</a>
         <a class="ai-search-btn" id="searchChatGPT" target="_blank" style="background: #00a67e; color: white; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🤖 ChatGPT</a>
         <a class="ai-search-btn" id="searchClaude" target="_blank" style="background: #1a237e; color: white; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">🧠 Claude</a>
         <a class="ai-search-btn" id="searchGemini" target="_blank" style="background: #ea4335; color: white; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">✨ Gemini</a>
