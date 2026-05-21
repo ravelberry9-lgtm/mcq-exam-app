@@ -3186,16 +3186,10 @@ def wrong_answers_page():
 def api_wrong_answers():
     """Return wrong answers for this device.
     ?resolved=0|1|all (default 0)
-    ?folder=FOLDER&topic=TOPIC (optional filter)
-    ?subject=SUBJECT&chapter=CHAPTER (optional filter for audio chapters)
     """
     try:
         device_id = (request.args.get('device_id') or '').strip()
         resolved = request.args.get('resolved', '0')
-        folder = (request.args.get('folder') or '').strip()
-        topic = (request.args.get('topic') or '').strip()
-        subject = (request.args.get('subject') or '').strip()
-        chapter = (request.args.get('chapter') or '').strip()
 
         if not device_id:
             return jsonify({'items': [], 'total': 0, 'unresolved': 0, 'resolved': 0})
@@ -3203,44 +3197,45 @@ def api_wrong_answers():
         ph = '%s' if USE_POSTGRES else '?'
         conn = get_db()
 
-        # Build WHERE clause
-        where_clauses = [f"device_id={ph}"]
-        params = [device_id]
-
-        if resolved != 'all':
+        # Build basic WHERE clause
+        if resolved == 'all':
+            cur = db_exec(conn, f"SELECT id, device_id, source, source_id, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, attempted_at, resolved FROM wrong_answers WHERE device_id={ph} ORDER BY attempted_at DESC", (device_id,))
+        else:
             try: r_int = int(resolved)
             except: r_int = 0
-            where_clauses.append(f"resolved={ph}")
-            params.append(r_int)
+            cur = db_exec(conn, f"SELECT id, device_id, source, source_id, topic, question_text, option_a, option_b, option_c, option_d, correct_answer, user_answer, explanation, attempted_at, resolved FROM wrong_answers WHERE device_id={ph} AND resolved={ph} ORDER BY attempted_at DESC", (device_id, r_int))
 
-        # Try to filter by folder and topic if provided
-        try:
-            if folder and topic:
-                where_clauses.append(f"folder={ph} AND topic={ph}")
-                params.extend([folder, topic])
-            elif subject and chapter:
-                where_clauses.append(f"folder={ph} AND topic={ph}")
-                params.extend([subject, chapter])
-        except:
-            pass  # Folder column might not exist yet, continue without filtering
+        items = []
+        for row in cur.fetchall():
+            if USE_POSTGRES:
+                items.append({
+                    'id': row[0], 'device_id': row[1], 'source': row[2], 'source_id': row[3],
+                    'topic': row[4], 'question_text': row[5], 'option_a': row[6], 'option_b': row[7],
+                    'option_c': row[8], 'option_d': row[9], 'correct_answer': row[10],
+                    'user_answer': row[11], 'explanation': row[12], 'attempted_at': row[13], 'resolved': row[14]
+                })
+            else:
+                items.append({
+                    'id': row[0], 'device_id': row[1], 'source': row[2], 'source_id': row[3],
+                    'topic': row[4], 'question_text': row[5], 'option_a': row[6], 'option_b': row[7],
+                    'option_c': row[8], 'option_d': row[9], 'correct_answer': row[10],
+                    'user_answer': row[11], 'explanation': row[12], 'attempted_at': row[13], 'resolved': row[14]
+                })
 
-        where_sql = " AND ".join(where_clauses)
-
-        cur = db_exec(conn, f"SELECT * FROM wrong_answers WHERE {where_sql} ORDER BY attempted_at DESC", params)
-        items = [row_to_dict(r) for r in cur.fetchall()]
-
-        # Get counts - always check by device_id only for reliability
-        count_params = [device_id]
-        cur2 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=0", count_params)
+        # Get counts
+        cur2 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=0", (device_id,))
         unresolved = _fv(cur2.fetchone())
-        cur3 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=1", count_params)
+        cur3 = db_exec(conn, f"SELECT COUNT(*) FROM wrong_answers WHERE device_id={ph} AND resolved=1", (device_id,))
         resolved_count = _fv(cur3.fetchone())
         conn.close()
+
         return jsonify({
             'items': items, 'total': len(items),
             'unresolved': unresolved, 'resolved': resolved_count,
         })
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         return jsonify({'error': str(e), 'items': [], 'total': 0, 'unresolved': 0, 'resolved': 0}), 500
 
 
@@ -7828,55 +7823,4 @@ def _html_to_text(html):
     html = re.sub(r'<[^>]+>', '', html)
     # Decode entities
     for ent, ch in [('&amp;','&'),('&lt;','<'),('&gt;','>'),('&nbsp;',' '),
-                    ('&#39;',"'"),('&quot;','"'),('&ndash;','–'),('&mdash;','—'),
-                    ('&bull;','•'),('&copy;','©'),('&trade;','™')]:
-        html = html.replace(ent, ch)
-    # Filter out lines that are mostly Telugu (Unicode range 0C00-0C7F)
-    lines = html.splitlines()
-    cleaned = []
-    for line in lines:
-        line = line.strip()
-        if not line:
-            cleaned.append('')
-            continue
-        telugu_chars = sum(1 for c in line if '\u0c00' <= c <= '\u0c7f')
-        total_alpha = sum(1 for c in line if c.isalpha())
-        if total_alpha > 0 and telugu_chars / total_alpha > 0.5:
-            continue  # skip Telugu-heavy lines
-        cleaned.append(line)
-    # Collapse multiple blank lines
-    out, prev_blank = [], False
-    for l in cleaned:
-        if not l:
-            if not prev_blank:
-                out.append('')
-            prev_blank = True
-        else:
-            out.append(l)
-            prev_blank = False
-    return '\n'.join(out).strip()
-
-
-@app.route('/api/topic-notes/<int:qid>')
-def topic_notes(qid):
-    """Return clean text from the HTML study notes for a given question ID."""
-    fname, label = None, None
-    for lo, hi, f, lbl in _NOTES_MAP:
-        if lo <= qid <= hi:
-            fname, label = f, lbl
-            break
-    if not fname:
-        return jsonify({'text': '', 'label': '', 'found': False})
-    path = os.path.join(_NOTES_BASE, fname)
-    if not os.path.exists(path):
-        return jsonify({'text': '', 'label': label, 'found': False})
-    try:
-        html = open(path, 'r', encoding='utf-8').read()
-        text = _html_to_text(html)
-        return jsonify({'text': text, 'label': label, 'found': True, 'file': fname})
-    except Exception as e:
-        return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
-
-
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+            
