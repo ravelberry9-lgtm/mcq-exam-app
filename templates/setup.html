@@ -469,4 +469,99 @@ async function startExam() {
   const studentName = document.getElementById('studentName').value.trim() || 'Student';
   localStorage.setItem('mcq_student_name', studentName);
 
-  // Validate at least one so
+  // Validate at least one source has questions
+  let total = 0;
+  const selections = {};
+
+  if (activeSources.has('main')) {
+    document.querySelectorAll('.topic-input').forEach(inp => {
+      const v = parseInt(inp.value) || 0;
+      if (v > 0) {
+        const f = inp.dataset.folder, t = inp.dataset.topic;
+        if (!selections[f]) selections[f] = {};
+        selections[f][t] = v;
+        total += v;
+      }
+    });
+  }
+
+  const quizCount = activeSources.has('quiz') ? (parseInt(document.getElementById('quizCount').value) || 0) : 0;
+  const pyqCount  = activeSources.has('pyq')  ? (parseInt(document.getElementById('pyqCount').value)  || 0) : 0;
+  total += quizCount + pyqCount;
+
+  if (total === 0) {
+    showToast('Please select at least one question!', 'error');
+    return;
+  }
+  if (activeDiffs.size === 0) {
+    showToast('Select at least one difficulty level!', 'error');
+    return;
+  }
+
+  const btn = document.getElementById('startBtn');
+  btn.disabled = true;
+  btn.textContent = 'Loading...';
+
+  try {
+    // Get question range
+    const fromQuestion = parseInt(document.getElementById('fromQuestion').value) || null;
+    const toQuestion = parseInt(document.getElementById('toQuestion').value) || null;
+
+    // Validate range
+    if ((fromQuestion || toQuestion) && fromQuestion && toQuestion && fromQuestion > toQuestion) {
+      showToast('From question must be less than or equal to To question!', 'error');
+      btn.disabled = false;
+      btn.textContent = '🚀 Start Exam';
+      return;
+    }
+
+    const payload = {
+      mode, duration,
+      selections,
+      device_id:    deviceId,
+      student_name: studentName,
+      // New fields
+      sources:      [...activeSources],
+      difficulties: [...activeDiffs],
+      quiz_count:   quizCount,
+      quiz_topics:  [...selectedQuizTopics],
+      pyq_count:    pyqCount,
+      pyq_topics:   [...selectedPyqTopics],
+      pyq_years:    [...selectedPyqYears],
+      // Practice mode and question range
+      practice_mode: practiceMode,
+      from_question: fromQuestion,
+      to_question:   toQuestion,
+    };
+
+    const resp = await fetch('/api/start-exam', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await resp.json();
+    if (data.error) {
+      showToast(data.error, 'error');
+      btn.disabled = false;
+      btn.textContent = '🚀 Start Exam';
+    } else {
+      sessionStorage.setItem('exam_' + data.session_id, JSON.stringify(data));
+      window.location.href = '/exam/' + data.session_id;
+    }
+  } catch(e) {
+    showToast('Error starting exam. Try again.', 'error');
+    btn.disabled = false;
+    btn.textContent = '🚀 Start Exam';
+  }
+}
+
+async function resetSeen() {
+  await fetch('/api/reset-seen', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({device_id: deviceId})
+  });
+  showToast('Question history reset!', 'success');
+}
+</script>
+{% endblock %}

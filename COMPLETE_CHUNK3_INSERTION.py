@@ -101,4 +101,9 @@ def main():
     except SyntaxError as e:
         print(f"✗ AST validation failed: {e}")
         # Restore from git if validation fails
-        im
+        import subprocess
+        subprocess.run(['git', 'checkout', seed_file], cwd='/sessions/adoring-brave-ptolemy/mnt/mcq_app')
+        raise
+
+if __name__ == "__main__":
+    main()

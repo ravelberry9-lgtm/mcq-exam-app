@@ -540,3 +540,350 @@ function goToQuestion(idx) {
 function navigate(dir) {
   const next = currentIdx + dir;
   if (next >= 0 && next < questions.length) {
+    goToQuestion(next);
+  }
+}
+
+function selectAnswer(qIdx, key) {
+  const q = questions[qIdx];
+  answers[q.id] = key;
+
+  // Update option buttons
+  q.options.forEach(opt => {
+    const btn = document.getElementById('opt_' + qIdx + '_' + opt.key);
+    if (btn) btn.classList.toggle('selected', opt.key === key);
+  });
+
+  // Update dot
+  const dot = document.getElementById('qdot_' + qIdx);
+  if (dot) dot.classList.add('answered');
+
+  updateProgress();
+}
+
+function updateNav() {
+  document.getElementById('prevBtn').disabled = currentIdx === 0;
+  document.getElementById('nextBtn').disabled = currentIdx === questions.length - 1;
+  document.getElementById('progressText').textContent = `Q ${currentIdx+1} / ${questions.length}`;
+}
+
+function updateProgress() {
+  const answered = Object.keys(answers).length;
+  const total = questions.length;
+  document.getElementById('answeredText').textContent = answered + ' / ' + total;
+  document.getElementById('progressFill').style.width = (answered/total*100) + '%';
+
+  // Update current dot
+  questions.forEach((q, idx) => {
+    const dot = document.getElementById('qdot_' + idx);
+    if (!dot) return;
+    dot.classList.toggle('answered', !!answers[q.id]);
+    dot.classList.toggle('current', idx === currentIdx);
+    // Keep flagged class if it exists
+    if (document.getElementById('flag_' + idx)?.classList.contains('active')) {
+      dot.classList.add('flagged');
+    }
+  });
+}
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimerDisplay();
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      submitExam(true);
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const mins = Math.floor(timeLeft / 60);
+  const secs = timeLeft % 60;
+  const el = document.getElementById('timer');
+  el.textContent = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+
+  el.classList.remove('warning', 'danger');
+  const banner = document.getElementById('timerBanner');
+
+  if (timeLeft <= 60) {
+    el.classList.add('danger');
+    banner.style.display = 'block';
+    banner.classList.add('danger-level');
+    banner.textContent = '🚨 Less than 1 minute! Submit now!';
+  } else if (timeLeft <= 300) {
+    el.classList.add('warning');
+    if (!warnedFive) {
+      warnedFive = true;
+      banner.style.display = 'block';
+      banner.classList.remove('danger-level');
+      banner.textContent = '⏰ 5 minutes remaining — start wrapping up!';
+    }
+  }
+}
+
+function confirmSubmit() {
+  if (examSubmitted) return;
+  const answered = Object.keys(answers).length;
+  const unanswered = questions.length - answered;
+  document.getElementById('submitModalText').innerHTML =
+    `You've answered <strong>${answered}</strong> of <strong>${questions.length}</strong> questions.` +
+    (unanswered > 0 ? `<br><br>⚠️ <strong>${unanswered} question(s)</strong> are unanswered. They will be marked incorrect.` : '<br><br>✅ All questions answered!') +
+    `<br><br>Once submitted, you cannot change your answers.`;
+  document.getElementById('submitModal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('submitModal').classList.remove('open');
+}
+
+async function submitExam(autoSubmit = false) {
+  if (examSubmitted) return;
+  examSubmitted = true;
+  clearInterval(timerInterval);
+  closeModal();
+
+  // Show loading
+  document.getElementById('examMain').innerHTML = '<div class="loading"><div class="spinner"></div><div>Evaluating your answers...</div></div>';
+  document.getElementById('navBar').style.display = 'none';
+
+  try {
+    const resp = await fetch('/api/submit-exam', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ session_id: SESSION_ID, answers: answers })
+    });
+    const result = await resp.json();
+
+    if (result.error) {
+      alert('Error: ' + result.error);
+      return;
+    }
+
+    // Store results
+    sessionStorage.setItem('result_' + SESSION_ID, JSON.stringify(result));
+    window.location.href = '/result/' + SESSION_ID;
+  } catch(e) {
+    alert('Failed to submit. Please try again.');
+    examSubmitted = false;
+  }
+}
+
+function escapeHtml(text) {
+  if (!text) return '';
+  return text.toString()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/\n/g, '<br>');
+}
+
+// BOOKMARKS
+function toggleBookmark(idx) {
+  const key = 'bm_' + idx;
+  if (bookmarks.has(idx)) {
+    bookmarks.delete(idx);
+    document.getElementById('bm_' + idx).classList.remove('active');
+    document.getElementById('qdot_' + idx)?.classList.remove('bookmarked');
+  } else {
+    bookmarks.add(idx);
+    document.getElementById('bm_' + idx).classList.add('active');
+    document.getElementById('qdot_' + idx)?.classList.add('bookmarked');
+  }
+  // Save to sessionStorage for result page
+  sessionStorage.setItem('bookmarks_' + SESSION_ID, JSON.stringify([...bookmarks]));
+}
+
+// FLAGS
+function getDeviceId() {
+  let deviceId = sessionStorage.getItem('device_id');
+  if (!deviceId) {
+    deviceId = 'device_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    sessionStorage.setItem('device_id', deviceId);
+  }
+  return deviceId;
+}
+
+function toggleFlag(idx) {
+  const q = questions[idx];
+  const deviceId = getDeviceId();
+
+  fetch('/api/flagged-questions/toggle', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ mcq_id: q.id, device_id: deviceId })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.flagged) {
+      document.getElementById('flag_' + idx).classList.add('active');
+      document.getElementById('qdot_' + idx)?.classList.add('flagged');
+    } else {
+      document.getElementById('flag_' + idx).classList.remove('active');
+      document.getElementById('qdot_' + idx)?.classList.remove('flagged');
+    }
+  })
+  .catch(e => console.error('Flag error:', e));
+}
+
+async function loadFlagStatus() {
+  const deviceId = getDeviceId();
+  const mcqIds = questions.map(q => q.id);
+
+  try {
+    const resp = await fetch('/api/flagged-questions/check', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ device_id: deviceId, mcq_ids: mcqIds })
+    });
+    const data = await resp.json();
+
+    if (data.flagged_status) {
+      questions.forEach((q, idx) => {
+        const btn = document.getElementById('flag_' + idx);
+        if (btn && data.flagged_status[q.id]) {
+          btn.classList.add('active');
+          document.getElementById('qdot_' + idx)?.classList.add('flagged');
+        }
+      });
+    }
+  } catch(e) {
+    console.error('Error loading flag status:', e);
+  }
+}
+
+// Start
+loadExam();
+
+// ── bfcache fix ──────────────────────────────────────────────────────────────
+// When user presses Back from the result page, the browser may restore this
+// page from the back-forward cache exactly as it was mid-submission (spinner
+// visible, examSubmitted=true). Detect this and redirect to the result page
+// so they never get stuck on "Evaluating your answers..." forever.
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted && examSubmitted) {
+    window.location.replace('/result/' + SESSION_ID);
+  }
+});
+
+// Prevent accidental back navigation
+window.addEventListener('beforeunload', (e) => {
+  if (!examSubmitted && Object.keys(answers).length > 0) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+
+// ── EXPLANATION EDITOR ──────────────────────────────────────────────────────
+
+let currentEditingMcqId = null;
+
+function openExplanationEditor(qIdx) {
+  const q = questions[qIdx];
+  currentEditingMcqId = q.id;
+
+  document.getElementById('modalMcqId').textContent = q.id;
+  document.getElementById('explanationTextarea').value = q.explanation || '';
+  document.getElementById('explanationSaving').style.display = 'none';
+  document.getElementById('explanationSuccess').style.display = 'none';
+  document.getElementById('explanationError').style.display = 'none';
+
+  loadExplanationHistory(q.id);
+  document.getElementById('explanationModalOverlay').classList.add('open');
+}
+
+function closeExplanationModal() {
+  document.getElementById('explanationModalOverlay').classList.remove('open');
+  currentEditingMcqId = null;
+}
+
+async function loadExplanationHistory(mcqId) {
+  try {
+    const resp = await fetch(`/api/mcq/${mcqId}/explanation`);
+    const data = await resp.json();
+    if (data.error) { console.error('Error loading history:', data.error); return; }
+    if (data.history && data.history.length > 0) {
+      const historySection = document.getElementById('explanationHistorySection');
+      const historyList = document.getElementById('explanationHistoryList');
+      historyList.innerHTML = '';
+      data.history.forEach((version) => {
+        const isCurrent = version.is_current;
+        const timestamp = new Date(version.edited_at).toLocaleString();
+        const versionHtml = `<div class="version-item ${isCurrent ? 'current' : ''}"><div class="version-header"><span class="version-badge ${isCurrent ? 'current' : ''}">${isCurrent ? '✓ Current' : `Version ${version.version_number}`}</span><span>${timestamp}</span></div><div class="version-info">Edited by: ${version.edited_by || 'Anonymous'}</div><div class="version-text">${escapeHtml(version.explanation_text || '')}</div></div>`;
+        historyList.innerHTML += versionHtml;
+      });
+      historySection.style.display = '';
+    } else {
+      document.getElementById('explanationHistorySection').style.display = 'none';
+    }
+  } catch(e) { console.error('Failed to load history:', e); }
+}
+
+async function saveExplanation() {
+  const explanationText = document.getElementById('explanationTextarea').value.trim();
+  if (!explanationText) {
+    document.getElementById('explanationError').textContent = '⚠️ Explanation cannot be empty';
+    document.getElementById('explanationError').style.display = '';
+    return;
+  }
+  document.getElementById('explanationSaving').style.display = '';
+  document.getElementById('explanationSuccess').style.display = 'none';
+  document.getElementById('explanationError').style.display = 'none';
+  try {
+    const resp = await fetch(`/api/mcq/${currentEditingMcqId}/explanation/save`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ explanation_text: explanationText, edited_by: 'User' })
+    });
+    const result = await resp.json();
+    if (result.error) {
+      document.getElementById('explanationError').textContent = '❌ ' + result.error;
+      document.getElementById('explanationError').style.display = '';
+      document.getElementById('explanationSaving').style.display = 'none';
+      return;
+    }
+    const qIdx = questions.findIndex(q => q.id === currentEditingMcqId);
+    if (qIdx >= 0) { questions[qIdx].explanation = explanationText; }
+    document.getElementById('explanationSaving').style.display = 'none';
+    document.getElementById('explanationSuccess').style.display = '';
+    await loadExplanationHistory(currentEditingMcqId);
+    setTimeout(() => { closeExplanationModal(); }, 2000);
+  } catch(e) {
+    document.getElementById('explanationError').textContent = '❌ Failed to save: ' + e.message;
+    document.getElementById('explanationError').style.display = '';
+    document.getElementById('explanationSaving').style.display = 'none';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('explanationModalOverlay');
+  if (overlay) { overlay.addEventListener('click', (e) => { if (e.target === overlay) closeExplanationModal(); }); }
+});
+</script>
+
+<!-- Explanation Editor Modal -->
+<div class="explanation-modal-overlay" id="explanationModalOverlay">
+  <div class="explanation-modal">
+    <h2>📝 Edit Explanation - MCQ <span id="modalMcqId">?</span></h2>
+    <div class="explanation-modal-body">
+      <div class="explanation-label">Current Explanation:</div>
+      <textarea class="explanation-textarea" id="explanationTextarea" placeholder="Paste explanation from Perplexity, ChatGPT, or type your own..."></textarea>
+      <div class="explanation-hint">💡 Tip: For bilingual explanations, use format: "Telugu text&#10;English text"</div>
+      <div class="explanation-saving" id="explanationSaving">⏳ Saving...</div>
+      <div class="explanation-success" id="explanationSuccess">✅ Saved successfully!</div>
+      <div class="explanation-error" id="explanationError"></div>
+    </div>
+    <div class="explanation-history" id="explanationHistorySection" style="display:none;">
+      <div class="explanation-history-title">📚 Version History:</div>
+      <div id="explanationHistoryList"></div>
+    </div>
+    <div class="explanation-modal-buttons">
+      <button class="btn-save-explanation" onclick="saveExplanation()">💾 Save Changes</button>
+      <button class="btn-cancel-explanation" onclick="closeExplanationModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
