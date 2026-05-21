@@ -22,46 +22,6 @@
     </div>
   </div>
 
-  <!-- ── Main Mode Tiles ── -->
-  <section aria-label="Main modes">
-    <div class="launch-grid">
-
-      <!-- PRACTICE Mode -->
-      <a href="#" onclick="showTopicsForMode('practice'); return false;" class="launch-tile" style="--c1:#1a237e;--c2:#3949ab;" aria-label="Practice Mode — learn and practice questions">
-        <div class="lt-blob"></div>
-        <div class="lt-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H9m-9 5A2.5 2.5 0 019 13m-8 10.5h10m-10-10L19.5 3M9 12l6.5-6.5M9 21l10-10"/></svg>
-        </div>
-        <div class="lt-name">PRACTICE</div>
-        <div class="lt-desc">Learn & practice</div>
-        <div class="lt-arrow">→</div>
-      </a>
-
-      <!-- EXAM Mode -->
-      <a href="#" onclick="showTopicsForMode('exam'); return false;" class="launch-tile" style="--c1:#bf360c;--c2:#e64a19;" aria-label="Exam Mode — timed tests">
-        <div class="lt-blob"></div>
-        <div class="lt-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        </div>
-        <div class="lt-name">EXAM</div>
-        <div class="lt-desc">Timed tests</div>
-        <div class="lt-arrow">→</div>
-      </a>
-
-      <!-- WRONG/FLAG Mode -->
-      <a href="/wrong-answers" class="launch-tile" style="--c1:#c62828;--c2:#ff9800;" aria-label="Wrong & Flagged — review mistakes">
-        <div class="lt-blob"></div>
-        <div class="lt-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
-        <div class="lt-name">WRONG/FLAG</div>
-        <div class="lt-desc">Review mistakes</div>
-        <div class="lt-arrow">→</div>
-      </a>
-
-    </div>
-  </section>
-
   <!-- ── Quick Launch Tiles ── -->
   <section aria-label="Quick launch">
     <div class="launch-grid">
@@ -176,7 +136,7 @@
                   ⚡ Practice
                 </a>
                 <button class="aphc-btn aphc-exam"
-                        onclick="openQuizSheetWithMode('AP_HC','{{ topic }}',{{ count }},null)"
+                        onclick="openQuizSheet('AP_HC','{{ topic }}',{{ count }},null)"
                         style="border-color:{{ tile_accent }};color:{{ tile_accent }}">
                   📝 Exam
                 </button>
@@ -227,20 +187,18 @@
                   <div class="tile-topic-name">{{ topic.replace('_',' ') }}</div>
                   <div class="tile-q-count">{{ count }} Qs</div>
                 </div>
-                <div class="tile-actions">
-                  <button class="tile-btn tile-quiz"
-                          onclick="openQuizSheetWithMode('{{ folder }}','{{ topic }}',{{ count }},null)"
-                          aria-label="Quick quiz: {{ topic.replace('_',' ') }}">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    Quiz
-                  </button>
-                  <a class="tile-btn tile-notes" href="/notes/{{ folder }}" aria-label="Audio Notes">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
-                    Audio
+                <div class="tile-actions" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+                  <!-- PRACTICE Tile -->
+                  <a href="/practice/{{ folder }}/{{ topic }}?mode=practice" class="tile-btn" style="background: linear-gradient(135deg, #1a237e, #3949ab); color: white; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    ⚡ Practice
                   </a>
-                  <a class="tile-btn tile-read" href="/read-notes" aria-label="Study Guide">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-                    Guide
+                  <!-- EXAM Tile -->
+                  <a href="/practice/{{ folder }}/{{ topic }}?mode=exam" class="tile-btn" style="background: linear-gradient(135deg, #bf360c, #e64a19); color: white; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    📝 Exam
+                  </a>
+                  <!-- WRONG/FLAG Tile -->
+                  <a href="/wrong-answers" class="tile-btn" style="background: linear-gradient(135deg, #c62828, #ff9800); color: white; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    🚩 Wrong/Flag
                   </a>
                 </div>
               </div>
@@ -285,18 +243,19 @@
                   <div class="tile-topic-name">Ch {{ ch.chapter_num }}: {{ ch.title }}</div>
                   <div class="tile-q-count">{{ ch.count }} Qs</div>
                 </div>
-                <div class="tile-actions">
-                  <button class="tile-btn tile-quiz"
-                          onclick="openQuizSheetWithMode('{{ subject }}','Ch{{ ch.chapter_num }}',{{ ch.count }},{{ ch.note_id }})"
-                          aria-label="Quiz: Chapter {{ ch.chapter_num }}">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    Quiz
-                  </button>
-                  <a class="tile-btn tile-notes"
-                     href="/notes/{{ ch.sn_subject }}/{{ subject }}"
-                     aria-label="Open chapter notes">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
-                    Listen
+                <div class="tile-actions" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+                  <!-- PRACTICE Tile -->
+                  <a href="/practice/{{ subject }}/Ch{{ ch.chapter_num }}?mode=practice" class="tile-btn" style="background: linear-gradient(135deg, #1a237e, #3949ab); color: white; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    ⚡ Practice
+                  </a>
+                  <!-- EXAM Tile -->
+                  <a href="/practice/{{ subject }}/Ch{{ ch.chapter_num }}?mode=exam" class="tile-btn" style="background: linear-gradient(135deg, #bf360c, #e64a19); color: white; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    📝 Exam
+                  </a>
+                  <!-- WRONG/FLAG Tile -->
+                  <a href="/wrong-answers" class="tile-btn" style="background: linear-gradient(135deg, #c62828, #ff9800); color: white; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    🚩 Wrong/Flag
+                  </a>
                   </a>
                   <a class="tile-btn tile-read" href="/read-notes" aria-label="Study Guide">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
@@ -744,4 +703,68 @@ function openQuizSheet(folder, topic, avail, noteId) {
   if (btn) { btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
 
   const ol = document.getElementById('qsOverlay');
-  o
+  ol.classList.add('open');
+  ol.removeAttribute('aria-hidden');
+}
+
+function closeQuizSheet() {
+  const ol = document.getElementById('qsOverlay');
+  ol.classList.remove('open');
+  ol.setAttribute('aria-hidden', 'true');
+  // Reset start button so it's never stuck in "Starting…" state
+  const btn = document.getElementById('qsStartBtn');
+  if (btn) { btn.disabled = false; btn.textContent = '⚡ Start Exam'; }
+}
+
+function selectChip(el) {
+  if (el.disabled) return;
+  document.querySelectorAll('.qs-chip[data-n]').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  _qsCount = parseInt(el.dataset.n);
+}
+
+function selectMode(el) {
+  document.querySelectorAll('.qs-chip[data-mode]').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  _qsMode = el.dataset.mode;
+}
+
+function startQuickQuiz() {
+  const btn = document.getElementById('qsStartBtn');
+  btn.disabled = true;
+  btn.textContent = 'Starting…';
+  const count = _qsCount === 0 ? _qsAvail : _qsCount;
+  const payload = {
+    folder: _qsFolder, topic: _qsTopic,
+    count: count, mode: _qsMode,
+    device_id: _devId, student_name: 'Student',
+  };
+  // Include note_id for chapter-specific quizzes (Audio Notes chapters)
+  if (_qsNoteId) payload.note_id = _qsNoteId;
+
+  fetch('/api/start-quick-exam', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
+    body: JSON.stringify(payload)
+  })
+  .then(r => r.json())
+  .then(d => {
+    if (d.session_id) {
+      window.location.href = '/exam/' + d.session_id;
+    } else {
+      showToast(d.error || 'Could not start exam', 'error');
+      btn.disabled = false;
+      btn.textContent = '⚡ Start Exam';
+    }
+  })
+  .catch(() => {
+    showToast('Network error — try again', 'error');
+    btn.disabled = false;
+    btn.textContent = '⚡ Start Exam';
+  });
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuizSheet(); });
+</script>
+{% endblock %}
