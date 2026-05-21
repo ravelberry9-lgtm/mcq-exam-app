@@ -203,9 +203,10 @@ const _folder = _urlParams.get('folder') || '';
 const _topic = _urlParams.get('topic') || '';
 const _subject = _urlParams.get('subject') || '';
 const _chapter = _urlParams.get('chapter') || '';
+const _section = _urlParams.get('section') || 'wrong';
 
 let currentResolvedFilter = 0;
-let currentSection = 'wrong'; // 'wrong' or 'flagged'
+let currentSection = _section; // 'wrong' or 'flagged'
 
 function switchSection(btn, section) {
   document.querySelectorAll('div.wa-tabs[role="tablist"]:first').querySelectorAll('.wa-tab').forEach(t => t.classList.remove('active'));
@@ -339,6 +340,20 @@ function copyModalPrompt() {
 document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('researchModal');
   if (overlay) overlay.addEventListener('click', e => { if (e.target === overlay) closeResearchModal(); });
+
+  // Initialize correct section based on URL parameter
+  if (_section !== 'wrong') {
+    const tabs = document.querySelectorAll('.wa-tab');
+    let targetBtn = null;
+    tabs.forEach(tab => {
+      if (_section === 'flagged' && tab.textContent.includes('Flagged')) {
+        targetBtn = tab;
+      }
+    });
+    if (targetBtn) {
+      switchSection(targetBtn, _section);
+    }
+  }
 });
 
 function renderCard(item) {
@@ -377,4 +392,73 @@ async function loadList() {
   try {
     let url, d;
 
-    if(currentSe
+    if(currentSection === 'wrong') {
+      let apiUrl = `/api/wrong-answers?device_id=${encodeURIComponent(_devId)}&resolved=${currentResolvedFilter}`;
+      if (_folder && _topic) {
+        apiUrl += `&folder=${encodeURIComponent(_folder)}&topic=${encodeURIComponent(_topic)}`;
+      } else if (_subject && _chapter) {
+        apiUrl += `&subject=${encodeURIComponent(_subject)}&chapter=${encodeURIComponent(_chapter)}`;
+      }
+      const r = await fetch(apiUrl);
+      d = await r.json();
+      document.getElementById('waUnresolvedPill').textContent = `${d.unresolved} unresolved`;
+      document.getElementById('waResolvedPill').textContent  = `${d.resolved} resolved`;
+      document.getElementById('waPracticeBtn').disabled = (d.unresolved === 0);
+
+      if (!d.items || !d.items.length) {
+        list.innerHTML = `
+          <div class="wa-empty">
+            <div class="wa-empty-ico">${currentResolvedFilter==1?'🏆':'🎯'}</div>
+            <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;">
+              ${currentResolvedFilter==1?'No resolved wrong answers yet':'No unresolved wrong answers!'}
+            </div>
+            <div style="font-size:13px;line-height:1.6;">
+              ${currentResolvedFilter==1?'Once you re-answer wrong questions correctly, they move here.':'Take an exam and any wrong answers will appear here for review.'}
+            </div>
+          </div>`;
+        return;
+      }
+    } else if(currentSection === 'flagged') {
+      const r = await fetch(`/api/flagged-questions/${encodeURIComponent(_devId)}`);
+      d = await r.json();
+      if (!d.items || !d.items.length) {
+        list.innerHTML = `
+          <div class="wa-empty">
+            <div class="wa-empty-ico">🚩</div>
+            <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;">No flagged questions yet</div>
+            <div style="font-size:13px;line-height:1.6;">Questions you flag during practice appear here for easy review.</div>
+          </div>`;
+        return;
+      }
+    }
+
+    list.innerHTML = d.items.map(renderCard).join('');
+  } catch(e) {
+    list.innerHTML = `<div class="wa-empty"><div class="wa-empty-ico">😞</div>Error loading: ${escapeHtml(e.message)}</div>`;
+  }
+}
+
+async function startPractice() {
+  const btn = document.getElementById('waPracticeBtn');
+  btn.disabled = true; btn.textContent = 'Building exam…';
+  try {
+    const r = await fetch('/api/start-wrong-answers-exam', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({device_id: _devId, student_name: 'Student'})
+    });
+    const d = await r.json();
+    if (d.session_id) {
+      window.location.href = '/exam/' + d.session_id;
+    } else {
+      showToast(d.error || 'Could not build practice exam', 'error');
+      btn.disabled = false; btn.textContent = '⚡ Practice My Wrong Answers';
+    }
+  } catch(e) {
+    showToast('Network error — try again', 'error');
+    btn.disabled = false; btn.textContent = '⚡ Practice My Wrong Answers';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadList);
+</script>
+{% endblock %}
