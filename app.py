@@ -7814,29 +7814,4 @@ def _html_to_text(html):
         else:
             out.append(l)
             prev_blank = False
-    return '\n'.join(out).strip()
-
-
-@app.route('/api/topic-notes/<int:qid>')
-def topic_notes(qid):
-    """Return clean text from the HTML study notes for a given question ID."""
-    fname, label = None, None
-    for lo, hi, f, lbl in _NOTES_MAP:
-        if lo <= qid <= hi:
-            fname, label = f, lbl
-            break
-    if not fname:
-        return jsonify({'text': '', 'label': '', 'found': False})
-    path = os.path.join(_NOTES_BASE, fname)
-    if not os.path.exists(path):
-        return jsonify({'text': '', 'label': label, 'found': False})
-    try:
-        html = open(path, 'r', encoding='utf-8').read()
-        text = _html_to_text(html)
-        return jsonify({'text': text, 'label': label, 'found': True, 'file': fname})
-    except Exception as e:
-        return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
-
-
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    return 

@@ -74,4 +74,4 @@ print(f"Category: {questions_31501_31525[24][7]}")
 
 print("\n\nTotal MCQs created: " + str(len(questions_31501_31525)))
 print("Folder changed to: AP_HC")
-print("Format: TELUGU\\nENGLISH bilingual with \\n separator")
+print("Format: TELUGU\\nENGLISH bilingual with \\n separator"
