@@ -1,7 +1,7 @@
 """
 seed_intl_orgs_mcq.py
 GKToday-style MCQs — Topic: International Current Affairs → International Organisations
-Coverage: 2025–2026 events + structural GK (no 2022/2023-specific questions)
+Coverage: 2025–2026 events + structural GK (curated 2026-05-23: deleted 24 stale/trivial MCQs, fixed BRICS facts) (no 2022/2023-specific questions)
 Folder: AP_HC | Topic: International_Current_Affairs
 IDs: 20001–20162  |  Force-refresh: DELETE then INSERT
 Batch H+PDF (2026-05-18): Added 54 new MCQs at 20087-20140 covering Jan-Apr 2026 events.
@@ -19,7 +19,6 @@ if DATABASE_URL.startswith("postgres://"):
 USE_POSTGRES = bool(DATABASE_URL)
 
 INTL_MCQS = [
-    # ─── UNITED NATIONS (20001-20008) ──────────────────────────────
     {
         "id": 20001,
         "question": "The headquarters of the United Nations (UN) is located in which city?",
@@ -62,10 +61,10 @@ INTL_MCQS = [
     },
     {
         "id": 20006,
-        "question": "India is currently serving as a non-permanent member of the UN Security Council for 2028-29. How many non-permanent members does the UNSC have?",
+        "question": "India has announced its candidacy for the UN Security Council as a non-permanent member for 2028-29. How many non-permanent members does the UNSC have?",
         "option_a": "5", "option_b": "8", "option_c": "10", "option_d": "12",
         "correct_answer": "C",
-        "explanation": "The UNSC has 10 non-permanent members elected by the UNGA for staggered 2-year renewable terms from five geographic groups: Africa (3), Latin America (2), Asia-Pacific (2), Western Europe including Canada (2), Eastern Europe (1). India's election for 2028-29 marks its ninth UNSC term since the UN's founding (previously serving 1950-51, 1967-68, 1972-73, 1977-78, 1984-85, 1991-92, 2011-12, 2021-22). India's last non-permanent term (2021-22) was significant for India's active diplomacy on maritime security, counter-terrorism, and UNSC reform advocacy. India's recurring UNSC presence underscores its role as a major stakeholder in international peace, security, and governance. India continues the G4 push for UNSC permanent seat expansion to reflect global power distribution and ensure developing-world voice in global security decisions.",
+        "explanation": "The UNSC has 10 non-permanent members elected by the UNGA for staggered 2-year renewable terms from five geographic groups: Africa (3), Latin America (2), Asia-Pacific (2), Western Europe including Canada (2), Eastern Europe (1). India's candidacy for 2028-29 (if elected) would mark its ninth UNSC term since the UN's founding (previously serving 1950-51, 1967-68, 1972-73, 1977-78, 1984-85, 1991-92, 2011-12, 2021-22). India's last non-permanent term (2021-22) was significant for India's active diplomacy on maritime security, counter-terrorism, and UNSC reform advocacy. India's recurring UNSC presence underscores its role as a major stakeholder in international peace, security, and governance. India continues the G4 push for UNSC permanent seat expansion to reflect global power distribution and ensure developing-world voice in global security decisions.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
@@ -84,7 +83,6 @@ INTL_MCQS = [
         "explanation": "'Solidarity, Equality, Sustainability' was South Africa's G20 2025 theme, rooted in Ubuntu philosophy. India's G20 2023 theme was 'Vasudhaiva Kutumbakam' and Brazil's G20 2024 theme was 'Building a Just World and a Sustainable Planet.'",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ─── G20 (20009-20016) ─────────────────────────────────────────
     {
         "id": 20009,
         "question": "Which major G20 member was absent from the G20 Johannesburg Summit 2025?",
@@ -95,18 +93,10 @@ INTL_MCQS = [
     },
     {
         "id": 20010,
-        "question": "Which country will host the G20 Summit in 2026, becoming the first country to host it twice in five years?",
+        "question": "Which country will host the G20 Summit in 2026, marking its third time hosting (previously in 2008 and 2009)?",
         "option_a": "India", "option_b": "China", "option_c": "United States", "option_d": "Germany",
         "correct_answer": "C",
         "explanation": "USA will host the G20 in 2026 (Miami Beach). The USA previously hosted in 2008 (Washington D.C.) and 2009 (Pittsburgh). South Africa handed the G20 Presidency to the USA on January 12, 2026.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
-        "id": 20011,
-        "question": "The G20 was established in 1999. Which body did it replace as the primary economic forum among major economies?",
-        "option_a": "G7", "option_b": "G8", "option_c": "G22 (Dean's Group)", "option_d": "G15",
-        "correct_answer": "C",
-        "explanation": "G20 was established on September 26, 1999, emerging from the G22 (Dean's Group) and G33 meetings. It was created in response to the 1997-98 Asian financial crisis. G20 Finance Ministers first met in Berlin, December 1999.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
@@ -126,14 +116,6 @@ INTL_MCQS = [
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
-        "id": 20014,
-        "question": "Which country hosted the G20 Summit in 2024 under the theme 'Building a Just World and a Sustainable Planet'?",
-        "option_a": "India", "option_b": "Argentina", "option_c": "South Africa", "option_d": "Brazil",
-        "correct_answer": "D",
-        "explanation": "Brazil hosted the 19th G20 Summit in Rio de Janeiro on November 18-19, 2024. Theme: 'Building a Just World and a Sustainable Planet.' Brazilian priorities included hunger eradication (Global Alliance Against Hunger), climate finance reform, and taxing ultra-wealthy individuals.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
         "id": 20015,
         "question": "The G20 collectively represents approximately what percentage of world GDP?",
         "option_a": "60%", "option_b": "75%", "option_c": "85%", "option_d": "95%",
@@ -143,27 +125,26 @@ INTL_MCQS = [
     },
     {
         "id": 20016,
-        "question": "Where is the 18th BRICS Summit 2025 hosted and who holds the BRICS Chairship in 2025?",
+        "question": "Where is the 17th BRICS Summit 2025 hosted and who holds the BRICS Chairship in 2025?",
         "option_a": "Russia; Russia", "option_b": "India; India", "option_c": "Brazil; Brazil", "option_d": "China; China",
         "correct_answer": "C",
-        "explanation": "Brazil holds the BRICS Chairship in 2025 and is hosting the 18th BRICS Summit. The 2025 BRICS theme is 'Strengthening South-South Cooperation for a More Inclusive and Sustainable Governance.' Russia hosted BRICS 2024 (Kazan Summit, October 2024).",
+        "explanation": "Brazil holds the BRICS Chairship in 2025 and is hosting the 17th BRICS Summit. The 2025 BRICS theme is 'Strengthening South-South Cooperation for a More Inclusive and Sustainable Governance.' Russia hosted BRICS 2024 (Kazan Summit, October 2024).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ─── BRICS (20017-20023) ────────────────────────────────────────
     {
         "id": 20017,
         "question": "Which country joined BRICS as a full member on January 6, 2025, becoming the first Southeast Asian nation in the bloc?",
         "option_a": "Malaysia", "option_b": "Vietnam", "option_c": "Thailand", "option_d": "Indonesia",
         "correct_answer": "D",
-        "explanation": "Indonesia became BRICS's 11th full member on January 6, 2025—the first Southeast Asian nation admitted. Indonesia's accession under BRICS's expanding membership (initiated at India's 2023 Presidency) signals BRICS's strategic pivot toward Global South heavyweight economies beyond original BRICs. Current BRICS membership: Brazil (Latin America), Russia (Eurasia), India (South Asia), China (East Asia), South Africa (Africa), Egypt (Africa), Ethiopia (Africa), Iran (Western Asia), UAE (Gulf), Saudi Arabia (Gulf), Indonesia (Southeast Asia). Indonesia's 270+ million population (world's 4th largest) and role as ASEAN anchor strengthens BRICS's claim to represent developing-world interests against Western economic dominance. The expansion reflects India's strategic diplomacy (alongside China and Brazil) to build coalitions countering Western hegemony, promoting de-dollarization through BRICS payment systems, and advancing Global South voice in international governance.",
+        "explanation": "Indonesia became BRICS's 10th full member on January 6, 2025—the first Southeast Asian nation admitted. Indonesia's accession under BRICS's expanding membership (initiated at India's 2023 Presidency) signals BRICS's strategic pivot toward Global South heavyweight economies beyond original BRICs. Current BRICS membership: Brazil (Latin America), Russia (Eurasia), India (South Asia), China (East Asia), South Africa (Africa), Egypt (Africa), Ethiopia (Africa), Iran (Western Asia), UAE (Gulf), Saudi Arabia (Gulf), Indonesia (Southeast Asia). Indonesia's 270+ million population (world's 4th largest) and role as ASEAN anchor strengthens BRICS's claim to represent developing-world interests against Western economic dominance. The expansion reflects India's strategic diplomacy (alongside China and Brazil) to build coalitions countering Western hegemony, promoting de-dollarization through BRICS payment systems, and advancing Global South voice in international governance.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
         "id": 20018,
         "question": "How many countries are full members of BRICS as of 2025, following Indonesia's accession?",
-        "option_a": "6", "option_b": "9", "option_c": "11", "option_d": "13",
-        "correct_answer": "C",
-        "explanation": "BRICS has 11 full members as of January 2025: original 5 (Brazil, Russia, India, China, South Africa) + Egypt, Ethiopia, Iran, UAE, Saudi Arabia (all joined January 1, 2024) + Indonesia (January 6, 2025). Several more countries are BRICS Partner States.",
+        "option_a": "10", "option_b": "9", "option_c": "11", "option_d": "13",
+        "correct_answer": "A",
+        "explanation": "BRICS has 10 full members as of January 2025: original 5 (Brazil, Russia, India, China, South Africa) + Egypt, Ethiopia, Iran, UAE, Saudi Arabia (all joined January 1, 2024) + Indonesia (January 6, 2025). Note: Saudi Arabia accepted BRICS invitation but has not formally joined. Several more countries are BRICS Partner States.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
@@ -175,30 +156,6 @@ INTL_MCQS = [
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
-        "id": 20020,
-        "question": "BRICS originally began as 'BRIC' (without South Africa). Who coined the term 'BRIC' in 2001?",
-        "option_a": "IMF economist Olivier Blanchard", "option_b": "Goldman Sachs economist Jim O'Neill", "option_c": "World Bank President James Wolfensohn", "option_d": "WTO DG Mike Moore",
-        "correct_answer": "B",
-        "explanation": "Jim O'Neill of Goldman Sachs coined the term 'BRIC' in his 2001 paper 'Building Better Global Economic BRICs.' The first formal BRIC summit was held in Yekaterinburg, Russia in June 2009. South Africa joined in 2010, making it BRICS.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
-        "id": 20021,
-        "question": "Five countries joined BRICS as full members on January 1, 2024. Which country, though invited, declined BRICS membership?",
-        "option_a": "Turkey", "option_b": "Nigeria", "option_c": "Argentina", "option_d": "Mexico",
-        "correct_answer": "C",
-        "explanation": "Argentina was invited to join BRICS in 2023 but declined in December 2023 — new President Javier Milei, an economic libertarian, reversed the previous government's decision. The five countries that did join on January 1, 2024 were Egypt, Ethiopia, Iran, UAE, and Saudi Arabia.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
-        "id": 20022,
-        "question": "The 17th BRICS Summit 2024 was held in Kazan, Russia. Which key geopolitical issue dominated discussions?",
-        "option_a": "China-Taiwan tensions", "option_b": "Russia's isolation and the war in Ukraine", "option_c": "North Korea's nuclear programme", "option_d": "India-Pakistan conflict",
-        "correct_answer": "B",
-        "explanation": "The 17th BRICS Summit (Kazan, Russia, October 22-24, 2024) was significant for Russia hosting despite Western sanctions over the Ukraine war. The summit discussed BRICS expansion, de-dollarisation, and a new payment system alternative to SWIFT. India's PM Modi attended.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
         "id": 20023,
         "question": "The BRICS Contingent Reserve Arrangement (CRA) was established in 2015. What is its primary purpose?",
         "option_a": "Fund climate projects", "option_b": "Provide short-term liquidity support to members during balance-of-payment crises", "option_c": "Replace IMF loans", "option_d": "Finance infrastructure across Africa",
@@ -206,7 +163,6 @@ INTL_MCQS = [
         "explanation": "The BRICS Contingent Reserve Arrangement (CRA), agreed at the 6th BRICS Summit (Fortaleza, Brazil, July 2014) and operationalized July 2015, provides emergency financial support to BRICS members facing balance-of-payments crises. Initial capitalization: $100 billion. Contribution structure reflects economic weight: China $41B, Brazil $18B, Russia $18B, India $18B, South Africa $5B. The CRA operates independently of IMF conditionalities, representing BRICS's challenge to Western-dominated financial architecture. It complements the New Development Bank (NDB, founded 2015). As a founding BRICS member and significant CRA contributor, India benefits from this alternative liquidity mechanism, reducing dependence on IMF surveillance and Western-imposed structural adjustments. The CRA exemplifies BRICS's broader de-dollarization agenda, promoting regional financial cooperation and South-South development finance.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ─── G7 (20024-20029) ──────────────────────────────────────────
     {
         "id": 20024,
         "question": "Which country hosted the G7 Summit in 2025 at Kananaskis, Alberta?",
@@ -221,22 +177,6 @@ INTL_MCQS = [
         "option_a": "USA, UK, France, Germany, Japan, Canada, Italy", "option_b": "USA, UK, France, Germany, Japan, Canada, Australia", "option_c": "USA, UK, France, Germany, Japan, India, Italy", "option_d": "USA, UK, France, Germany, Russia, Canada, Italy",
         "correct_answer": "A",
         "explanation": "G7 = USA, UK, France, Germany, Japan, Canada, Italy (+EU as non-enumerated member). Russia was suspended from G8 after Crimea annexation (2014) — now G7. India, Australia, and others are frequent invited partners but not full G7 members.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
-        "id": 20026,
-        "question": "Which country hosted the G7 Summit in 2024 under the theme 'For the Mediterranean, for humanity, for the future'?",
-        "option_a": "Germany", "option_b": "Japan", "option_c": "Italy", "option_d": "France",
-        "correct_answer": "C",
-        "explanation": "Italy hosted the 50th G7 Summit in Puglia (Borgo Egnazia) on June 13-15, 2024. Theme: 'For the Mediterranean, for humanity, for the future.' India PM Modi attended. Key outcomes: Ukraine aid, AI governance, migration, and climate.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
-        "id": 20027,
-        "question": "G7 originally began as G6 in 1975 with 6 founding members. Which country joined in 1976 to make it G7?",
-        "option_a": "Japan", "option_b": "Italy", "option_c": "Canada", "option_d": "Germany",
-        "correct_answer": "C",
-        "explanation": "G6 was founded in November 1975 (Rambouillet, France) by USA, UK, France, Germany, Japan, Italy. Canada joined in 1976 to make it G7. The EU joined as a non-enumerated member in 1977. Russia joined in 1998 making it G8, but was suspended in 2014.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
@@ -255,7 +195,6 @@ INTL_MCQS = [
         "explanation": "The G7 Kananaskis 2025 Summit communiqué criticised China for 'non-market practices' and 'overcapacity' — particularly in electric vehicles, solar panels, and steel — that were flooding global markets and undercutting Western manufacturers. This reflected rising G7-China trade tensions.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ─── QUAD (20030-20033) ─────────────────────────────────────────
     {
         "id": 20030,
         "question": "The Quadrilateral Security Dialogue (QUAD) consists of which four countries?",
@@ -288,7 +227,6 @@ INTL_MCQS = [
         "explanation": "AUKUS = Australia, UK, USA — a security partnership announced in September 2021. Its centrepiece is providing Australia with nuclear-powered (not nuclear-armed) submarines. AUKUS Pillar II covers AI, quantum, cyber, and hypersonics. It is separate from but complementary to QUAD.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ─── NATO (20034-20040) ─────────────────────────────────────────
     {
         "id": 20034,
         "question": "How many member countries does NATO have as of 2025, following Sweden's accession?",
@@ -345,7 +283,6 @@ INTL_MCQS = [
         "explanation": "ASEAN now has 11 full members. Timor-Leste (East Timor) was formally admitted as ASEAN's 11th member at the 47th ASEAN Summit in Kuala Lumpur, Malaysia (October 26-28, 2025) — ASEAN's first expansion since Cambodia joined in 1999 (a 26-year gap). Note: The Phnom Penh 2022 summit was the 40th ASEAN Summit, not the 47th. Brunei (1984) and Vietnam (1995) were among later joiners. ASEAN's founding members (1967) were Thailand, Malaysia, Singapore, Indonesia, Philippines.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ─── SCO (20041-20046) ─────────────────────────────────────────
     {
         "id": 20041,
         "question": "How many full member countries does the SCO have as of 2025, following Belarus's accession?",
@@ -379,14 +316,6 @@ INTL_MCQS = [
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
-        "id": 20045,
-        "question": "Which country, a SCO member, was NOT present at the SCO Heads of Government meeting in Islamabad, Pakistan in October 2024?",
-        "option_a": "China", "option_b": "Russia", "option_c": "India", "option_d": "Kazakhstan",
-        "correct_answer": "C",
-        "explanation": "India's PM Modi did not attend the SCO meeting in Islamabad, Pakistan (October 2024) due to strained India-Pakistan relations. India was represented at a lower level. This highlighted the diplomatic complexities within SCO given that India and Pakistan are both members.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
         "id": 20046,
         "question": "The SCO's 'Shanghai Spirit' is based on which core principles?",
         "option_a": "Military alliance, nuclear deterrence, free trade", "option_b": "Mutual trust, mutual benefit, equality, consultation, respect for diversity, non-alignment", "option_c": "Democratic governance, human rights, rule of law", "option_d": "Common currency, open borders, free movement",
@@ -394,7 +323,6 @@ INTL_MCQS = [
         "explanation": "The 'Shanghai Spirit' enshrined in the 2001 Shanghai Convention constitutes SCO's foundational ideology: (1) mutual trust between states, (2) mutual benefit in cooperation, (3) equality of all members regardless of size/power, (4) consultation and consensus in decision-making, (5) respect for each member's sovereignty, cultural diversity, and development paths, (6) commitment to peaceful resolution of disputes. Explicitly rejecting military bloc architecture (unlike NATO collective-defense model), SCO emphasizes non-interference in internal affairs and pursuit of common development. This framework accommodates diverse political systems (democratic to authoritarian), competing interests (India-Pakistan rivalry, China-Russia power dynamics), and different foreign-policy orientations. The Shanghai Spirit's emphasis on consensus and non-coercion reflects developing-world rejection of Western-dominated hegemonic orders. For India, the Shanghai Spirit provides legitimacy for multi-aligned foreign policy—engaging both QUAD (Western alliance) and SCO simultaneously without contradiction. However, implementation gaps (India-Pakistan tensions, China's dominance) test the spirit's practical viability.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ─── IMF & WORLD BANK (20047-20053) ────────────────────────────
     {
         "id": 20047,
         "question": "Who is the current Managing Director of the International Monetary Fund (IMF) serving her second term from 2024?",
@@ -451,7 +379,6 @@ INTL_MCQS = [
         "explanation": "Ngozi Okonjo-Iweala (Nigeria) is WTO Director-General—first African and first woman elected to the position. She assumed office March 1, 2021, after consensus selection, and began her second 4-year term in 2025. Career: former Finance Minister of Nigeria (2003-06, 2011-15), Managing Director at World Bank (2012-2019), bringing development economics expertise to WTO. Her DG priorities: (1) resolving Appellate Body crisis (non-functional since 2019 due to US-China dispute settlement blockade), (2) reviving stalled multilateral negotiations (fisheries subsidies, e-commerce, agriculture reform), (3) addressing inequality between developed and developing members, (4) climate and environmental goods trade, (5) pandemic vaccine access and intellectual property reform. For India, Okonjo-Iweala's leadership represents developing-world voice in trade governance. India, as WTO's largest developing economy and influential voice in Doha Round, G20, and G33 coalitions, engages actively on agricultural reform (protecting Indian farmer interests) and climate-goods trade. WTO has 166 members (2025), with India playing mediating role between developed and developing-country coalitions on key trade issues.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ─── WHO & HEALTH ORGS (20054-20058) ───────────────────────────
     {
         "id": 20054,
         "question": "Which country re-withdrew from the World Health Organization (WHO) in January 2025?",
@@ -492,7 +419,6 @@ INTL_MCQS = [
         "explanation": "IAEA HQ is in Vienna, Austria. Rafael Grossi (Argentina) has been IAEA DG since December 2019. He replaced Yukiya Amano (Japan) who served 2009-2019. The IAEA monitors nuclear activities globally and promotes peaceful use of nuclear energy.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ─── ASEAN & REGIONAL (20059-20064) ────────────────────────────
     {
         "id": 20059,
         "question": "Which country held the ASEAN Chairship in 2025?",
@@ -534,28 +460,11 @@ INTL_MCQS = [
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
-        "id": 20064,
-        "question": "The African Union Commission Chairperson since 2021 is from which country?",
-        "option_a": "Nigeria", "option_b": "South Africa", "option_c": "Senegal", "option_d": "Kenya",
-        "correct_answer": "C",
-        "explanation": "Moussa Faki Mahamat (Chad) was AU Commission Chairperson from 2017-2025. Mauritania's Abdel-Fattah al-Sisi held AU Presidency in 2019. Senegal's Macky Sall was AU Chairperson in 2022. The AU Chairship rotates — held by Ethiopia's PM Abiy Ahmed in 2025.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # ─── TRADE & ECONOMIC ORGS (20065-20070) ───────────────────────
-    {
         "id": 20065,
         "question": "The WTO Appellate Body has been non-functional since 2019. What caused this?",
         "option_a": "China withdrew from the WTO", "option_b": "USA blocked new appointments to the Appellate Body, leaving it without quorum", "option_c": "India and Brazil boycotted WTO dispute proceedings", "option_d": "WTO reformed its dispute settlement system under the MC13 agreement",
         "correct_answer": "B",
         "explanation": "WTO Appellate Body (final appeals court for trade disputes between nations) collapsed December 2019 when USA unilaterally blocked new judicial appointments, rendering it below minimum 3-judge quorum (maximum 7 judges authorized). USA rationale: Appellate Body exceeded mandate, prevented member recourse, and favored developing countries in rulings (US perception of bias). The Appellate Body crisis represents WTO's deepest institutional breakdown since 1995 founding. Consequences: (1) countries unable to appeal unfavorable trade dispute panels (first-instance), (2) absence of uniform legal precedent, (3) erosion of dispute settlement predictability (WTO's core function). Workaround: Multi-Party Interim Appeal Arbitration Arrangement (MPIA, 2020)—142 countries (including India) participate, using agreed arbitrators rather than permanent judges. Deeper issue: WTO governance—US dominance (blocking mechanism) versus developing-country coalition (India, Brazil, South Africa, group of 77) seeking reform favoring agricultural access, IP protection easing, climate tech transfer. For India: Appellate Body crisis strengthens alternative dispute mechanisms (BRICS courts, regional arbitration) and validates India's WTO reform advocacy. India pushes: (1) UNSC-style permanent representation in WTO decision-making, (2) special provisions for least-developed countries, (3) climate goods trade preferences. The paralysis underscores WTO's legitimacy crisis amid rising trade protectionism and great-power competition.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
-        "id": 20066,
-        "question": "The 13th WTO Ministerial Conference (MC13) was held in February 2024 in which city?",
-        "option_a": "Geneva", "option_b": "Abu Dhabi", "option_c": "Nairobi", "option_d": "Buenos Aires",
-        "correct_answer": "B",
-        "explanation": "MC13 was held in Abu Dhabi, UAE, in February 2024. Key outcomes included extending the e-commerce moratorium and fisheries subsidies negotiations. The MC14 is planned for 2026. Previous WTO Ministerial Conferences: Geneva (MC12, 2022), Buenos Aires (MC11, 2017).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
@@ -567,14 +476,6 @@ INTL_MCQS = [
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
-        "id": 20068,
-        "question": "India and MERCOSUR (South American trade bloc) signed a Preferential Trade Agreement in which year?",
-        "option_a": "2009", "option_b": "2015", "option_c": "2004", "option_d": "2019",
-        "correct_answer": "C",
-        "explanation": "India-MERCOSUR Preferential Trade Agreement (PTA) was signed in 2004 and came into effect in June 2009. MERCOSUR (Southern Common Market) = Brazil, Argentina, Uruguay, Paraguay. India-MERCOSUR trade has grown significantly; discussions on a more comprehensive FTA are ongoing.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
         "id": 20069,
         "question": "The RCEP (Regional Comprehensive Economic Partnership) trade agreement covers approximately what percentage of global GDP?",
         "option_a": "20%", "option_b": "30%", "option_c": "40%", "option_d": "50%",
@@ -582,15 +483,6 @@ INTL_MCQS = [
         "explanation": "RCEP (effective January 1, 2022) covers ~30% of global GDP (~$26.3 trillion), ~30% global population (~2.3 billion), making it the world's largest free trade agreement by economic output and population. RCEP comprises 15 countries: 10 ASEAN members (Brunei, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore, Thailand, Vietnam) + Australia, China, Japan, South Korea, New Zealand. India notably declined RCEP membership at November 2019 ASEAN-led negotiations, citing concerns: (1) projected large trade deficits with China (Indian manufacturing less competitive), (2) weak protections for Indian services/IT sectors, (3) cheaper Chinese goods/agricultural imports harming Indian farmers and MSMEs, (4) insufficient exemptions on tariff reduction schedules. India's RCEP exclusion reflects New Delhi's strategic calculus: maintaining manufacturing protection and agricultural support versus regional integration. Instead, India pursues bilateral/plurilateral partnerships (India-UAE CEPA, India-UK FTA, Quad technology cooperation) to access markets while protecting domestic constituencies. RCEP's success (China-Japan first bilateral trade agreement; regional supply-chain integration) demonstrates India's strategic positioning challenge: balancing trade liberalization with protectionist pressures.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    {
-        "id": 20070,
-        "question": "The India-Middle East-Europe Economic Corridor (IMEC) was announced at which summit in 2023 and reconfirmed in 2025?",
-        "option_a": "COP28 Dubai", "option_b": "QUAD Summit Tokyo", "option_c": "G20 New Delhi Summit", "option_d": "G7 Hiroshima Summit",
-        "correct_answer": "C",
-        "explanation": "IMEC (India-Middle East-Europe Economic Corridor) was formally launched at the G20 New Delhi Summit on September 9, 2023, with PM Modi, US President Biden, Saudi Arabia's Crown Prince, UAE President, and EU representatives. The initiative comprises two interconnected corridors: (1) India-Gulf Corridor linking Indian ports (Mumbai, Jawaharlal Nehru Port Trust) via maritime and rail to Gulf states (UAE, Saudi Arabia), facilitating export of Indian goods, (2) Gulf-Europe Corridor extending from Gulf through Jordan/Israel to Europe (via ports, rail, digitized logistics). Partners: India, UAE, Saudi Arabia, Jordan, Israel, USA, EU. Financing: World Bank, major development banks. Strategic objectives: (1) counter China's Belt and Road Initiative (BRI) dominance in Asia-Europe trade, (2) diversify trade routes beyond Suez Canal dependency, (3) boost India's role as crucial link between Asia-Europe commerce, (4) strengthen India-Arab ties and Israel normalization (controversial given Palestinian concerns), (5) enhance supply-chain resilience post-COVID. IMEC complements India's multipolarity strategy: combining QUAD security partnership with economic corridors reducing China's leverage. By 2025, IMEC feasibility studies progressed; formal construction timelines discussed for port modernization, rail electrification, and digital customs integration—critical for India's trade competitiveness.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # ─── ENVIRONMENT & CLIMATE ORGS (20071-20076) ──────────────────
     {
         "id": 20071,
         "question": "The United Nations Ocean Conference 3 (UNOC3) was held in 2025. Which city hosted it?",
@@ -624,15 +516,6 @@ INTL_MCQS = [
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
-        "id": 20075,
-        "question": "The 'Loss and Damage' fund agreed at COP27 (Egypt, 2022) became fully operational. Which institution is hosting this fund?",
-        "option_a": "UNDP", "option_b": "World Bank", "option_c": "IMF", "option_d": "ADB",
-        "correct_answer": "B",
-        "explanation": "Loss and Damage (L&D) Fund, negotiated over 30+ years at COPs, was finally agreed at COP27 (Sharm el-Sheikh, Egypt, November 2022) and operationalized at COP28 (Dubai, December 2023) with World Bank as interim trustee. L&D Fund addresses 'unavoidable' climate impacts beyond mitigation/adaptation scope: sea-level rise threatening small island states, extreme weather destroying infrastructure, drought causing famines. Fund size: initial $700 million pledged (COP28); target $100 billion+ annually (unfunded gap). Allocation: 50% for vulnerable countries, 25% for LDCs/SIDs, 25% for Africa. Governance: 50-member board with developing-country majority (reflecting equity principle). For India: L&D Fund critical because: (1) India's extreme climate vulnerability (monsoons, glacial melts, sea-level rise affecting 7,500km coastline), (2) India's development-rights advocacy (climate change caused by developed nations' historical emissions), (3) India's large poor population exposed to climate shocks (agriculture-dependent, monsoon-reliant). India negotiated hard at COP27-28 for: (1) L&D Fund without conditionalities, (2) differentiation (developed countries contribute more), (3) accessible financing (minimal red-tape disbursement). World Bank hosting reflects compromise: accessible institution but developed-country institutional bias concerns. India pushes for dedicated L&D governance structure independent of climate mitigation/adaptation frameworks by 2030.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # ─── INTELLIGENCE, DEFENCE & OTHER GROUPINGS (20076-20086) ─────
-    {
         "id": 20076,
         "question": "The 'Five Eyes' intelligence-sharing alliance consists of which five countries?",
         "option_a": "G7 minus Japan and Italy", "option_b": "USA, UK, Canada, Australia, New Zealand", "option_c": "QUAD nations plus UK", "option_d": "NATO's founding five members",
@@ -646,14 +529,6 @@ INTL_MCQS = [
         "option_a": "Hard military power and deterrence", "option_b": "Non-alignment, no military alliances, and cooperative security", "option_c": "Western liberal democratic values", "option_d": "Nuclear deterrence and non-proliferation",
         "correct_answer": "B",
         "explanation": "The SCO and 'Shanghai Spirit' explicitly reject military blocs and alliances. SCO focuses on non-traditional security threats (terrorism, separatism, extremism — the 'Three Evils'). This distinguishes it from NATO. Despite including rival nations (India-Pakistan, India-China), SCO maintains a cooperative framework.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    {
-        "id": 20078,
-        "question": "The Rome-based United Nations food agencies include FAO, WFP, and IFAD. Which of these specifically focuses on providing EMERGENCY food aid?",
-        "option_a": "FAO", "option_b": "WFP", "option_c": "IFAD", "option_d": "Codex Alimentarius Commission",
-        "correct_answer": "B",
-        "explanation": "WFP (World Food Programme) provides emergency food aid and humanitarian assistance. FAO (Food and Agriculture Organization) focuses on food security and agricultural development. IFAD (International Fund for Agricultural Development) finances rural agricultural projects. All three are based in Rome.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
     {
@@ -720,12 +595,6 @@ INTL_MCQS = [
         "explanation": "India-UK FTA (signed May 6, 2025) culminated three years of negotiations, representing major bilateral commerce agreement post-Brexit. Core Indian priorities: (1) IT services—facilitating easier visa access and work permits for Indian software engineers, reducing non-tariff barriers (major British demand), (2) textiles and apparel—preferential tariff access for Indian garment and yarn exports, (3) pharmaceuticals—reducing tariffs on generic drugs and APIs, reciprocal IP protection. UK priorities: tariff elimination for Scotch whisky (major revenue), automobiles, leather goods, improved FDI access. Trade scope: $19+ billion annual (2024), with UK importing ~$13B Indian goods, exporting ~$6B. Strategic significance: (1) demonstrates India's post-Brexit Britain pivot as alternative growth market, (2) strengthens India-UK '2030 Roadmap' partnership (security, tech, education), (3) builds India's bilateral FTA portfolio (UAE, Japan, Thailand, Australia existing), (4) positions India favorably against RCEP (which India excluded from) by securing major developed-nation market access. The FTA includes sustainability clauses and labour standards—aligning with UK's post-Brexit regulatory agenda. For India, the agreement opens UK's £2T+ services market to Indian IT professionals while providing guaranteed market access for pharmaceutical generics critical to India's global health mission.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ╔══════════════════════════════════════════════════════════╗
-    # ║  📅 2026 MCQs (Jan-Apr 2026 monthly PDF events)          ║
-    # ║  Batch H+PDF audit (2026-05-18) — IDs 20087-20140        ║
-    # ║  To find: grep for "# === 📅 2026" in this file          ║
-    # ╚══════════════════════════════════════════════════════════╝
-    # === 📅 2026 MCQ: Operation Absolute Strike - Venezuela ===
     {
         "id": 20087,
         "question": "Under which codename did the US launch its January 3, 2026 military operation against Venezuela that resulted in the capture of President Nicolás Maduro?",
@@ -734,7 +603,6 @@ INTL_MCQS = [
         "explanation": "The US launched 'Operation Absolute Strike' on January 3, 2026, deploying about 150 aircraft including F-22 Raptors, F-35 Lightning IIs and B-1 bombers to strike military bases around Caracas. President Nicolás Maduro was captured and taken to New York. Venezuela holds the world's largest proven oil reserves.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Venezuela oil reserves ===
     {
         "id": 20088,
         "question": "Venezuela, the target of US 'Operation Absolute Strike' (January 2026), holds what share of the world's proven crude oil reserves at approximately 303 billion barrels?",
@@ -743,16 +611,6 @@ INTL_MCQS = [
         "explanation": "Venezuela has the world's largest proven oil reserves at about 303 billion barrels — roughly 20% of global reserves — surpassing even Saudi Arabia. Control over these reserves has been a key driver of US interest in the country. Operation Absolute Strike (Jan 3, 2026) targeted Caracas-area military bases.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Operation Absolute Strike aircraft ===
-    {
-        "id": 20089,
-        "question": "Approximately how many aircraft did the US deploy in 'Operation Absolute Strike' against Venezuela on January 3, 2026?",
-        "option_a": "50", "option_b": "100", "option_c": "150", "option_d": "250",
-        "correct_answer": "C",
-        "explanation": "About 150 US aircraft — including F-22 Raptor and F-35 Lightning II stealth fighters and B-1 Lancer bombers — were deployed in Operation Absolute Strike (Jan 3, 2026) targeting military bases around Caracas. President Maduro was captured and flown to New York.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # === 📅 2026 MCQ: Trump Greenland annexation EU response ===
     {
         "id": 20090,
         "question": "In January 2026, how many EU countries (plus the UK) jointly condemned President Trump's renewed push to annex Greenland?",
@@ -761,7 +619,6 @@ INTL_MCQS = [
         "explanation": "Eight EU nations plus the United Kingdom jointly condemned Trump's renewed Greenland annexation bid in January 2026. The US retaliated with an additional 10% tariff on the 8 opposing EU countries. A trans-Atlantic deal signed by 25 ministers was frozen on January 13, 2026.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Greenland tariff retaliation ===
     {
         "id": 20091,
         "question": "Following EU opposition to the US Greenland annexation plan (January 2026), what additional tariff did the US impose on the 8 opposing EU countries?",
@@ -770,7 +627,6 @@ INTL_MCQS = [
         "explanation": "The US imposed an additional 10% tariff on the 8 EU nations that opposed Trump's Greenland annexation plan. A trans-Atlantic deal earlier signed by 25 ministers was frozen on January 13, 2026, deepening the US-EU rift.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Iran Rial collapse ===
     {
         "id": 20092,
         "question": "Amid nationwide protests against Ayatollah Khamenei's government from late December 2025, the Iranian rial collapsed to roughly what level against the US dollar?",
@@ -779,7 +635,6 @@ INTL_MCQS = [
         "explanation": "The Iranian rial collapsed to about 42,000 rial per US dollar during the unrest that began on December 28, 2025. Inflation soared to 42%. Nationwide protests targeted Supreme Leader Ayatollah Ali Khamenei's regime, prompting India to plan a major evacuation.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Operation Swadesh ===
     {
         "id": 20093,
         "question": "What is the name of the operation launched by India in early 2026 to evacuate about 10,000 Indian nationals from Iran during the anti-Khamenei unrest?",
@@ -788,7 +643,6 @@ INTL_MCQS = [
         "explanation": "India launched 'Operation Swadesh' to evacuate approximately 10,000 Indian nationals from Iran amid the nationwide protests against the Khamenei government (from December 28, 2025). Earlier Indian evacuation operations include Ganga (Ukraine 2022), Kaveri (Sudan 2023) and Ajay (Israel 2023).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Bangladesh Inquilab Manch leader killed ===
     {
         "id": 20094,
         "question": "Who was the Inquilab Manch leader killed in Bangladesh on December 12, 2025, whose death triggered widespread unrest carrying into January 2026?",
@@ -797,16 +651,6 @@ INTL_MCQS = [
         "explanation": "Sharif Osman Hadi, leader of the Inquilab Manch, was killed in Bangladesh on December 12, 2025. The killing triggered widespread unrest. Days later, Hindu Dipu Chandra Das was lynched in Mymensingh (December 18, 2025), continuing a pattern of over 2,600 attacks on Hindus in Bangladesh since August 2024.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Attacks on Hindus in Bangladesh ===
-    {
-        "id": 20095,
-        "question": "How many attacks on Hindus have been recorded in Bangladesh since August 2024, as reported during the January 2026 unrest?",
-        "option_a": "Over 600", "option_b": "Over 1,200", "option_c": "Over 2,600", "option_d": "Over 5,000",
-        "correct_answer": "C",
-        "explanation": "More than 2,600 attacks on Hindus have been recorded in Bangladesh since August 2024 (when the Sheikh Hasina government fell). Incidents include the lynching of Hindu Dipu Chandra Das in Mymensingh on December 18, 2025, and the killing of Inquilab Manch leader Sharif Osman Hadi on December 12, 2025.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # === 📅 2026 MCQ: Gaza Peace Council Davos ===
     {
         "id": 20096,
         "question": "The Gaza Peace Council was launched at the WEF Davos summit on January 22, 2026. Who chairs the Council and who is its Director-General?",
@@ -815,7 +659,6 @@ INTL_MCQS = [
         "explanation": "The Gaza Peace Council was launched at the World Economic Forum, Davos on January 22, 2026, with US President Donald Trump as Chair and Nickolay Mladenov as Director-General. The UN Security Council had approved the body on November 17, 2025. UAE, Pakistan and Saudi Arabia joined; India, China and Russia abstained.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Gaza Peace Council abstentions ===
     {
         "id": 20097,
         "question": "Which three of these major powers abstained from joining the Gaza Peace Council launched at Davos (January 22, 2026)?",
@@ -824,7 +667,6 @@ INTL_MCQS = [
         "explanation": "India, China and Russia abstained from joining the Gaza Peace Council launched at WEF Davos on January 22, 2026. UAE, Pakistan and Saudi Arabia joined. The Council, chaired by President Trump with Nickolay Mladenov as DG, was approved by the UN Security Council on November 17, 2025.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Operation Hunter on ISIS in Syria ===
     {
         "id": 20098,
         "question": "The US launched 'Operation Hunter' on January 10, 2026, against ISIS militants in Syria. Which Syrian President is cooperating with the US after the 2024 ouster of Bashar al-Assad?",
@@ -833,7 +675,6 @@ INTL_MCQS = [
         "explanation": "Syrian President Ahmad al-Shara is cooperating with the US since the December 2024 ouster of Bashar al-Assad. 'Operation Hunter' (Jan 10, 2026) targeted ISIS positions in Syria. Al-Shara, leader of Hayat Tahrir al-Sham, became Syria's transitional president after Assad's fall.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: US airstrikes Sokoto Nigeria ===
     {
         "id": 20099,
         "question": "On December 25-26, 2025, the US carried out airstrikes against ISIS-affiliated militants in Sokoto. Sokoto is a state in which country?",
@@ -842,7 +683,6 @@ INTL_MCQS = [
         "explanation": "Sokoto is a state in north-western Nigeria. US airstrikes targeted ISIS-affiliated Boko Haram militants in Sokoto on December 25-26, 2025. Boko Haram and ISWAP have waged a long insurgency across Nigeria's north and the Lake Chad basin.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Saudi airstrikes Mukulla Yemen ===
     {
         "id": 20100,
         "question": "On December 30, 2025, Saudi Arabia carried out airstrikes on Mukalla port in Yemen against which group backed by the UAE?",
@@ -851,7 +691,6 @@ INTL_MCQS = [
         "explanation": "Saudi airstrikes on December 30, 2025, targeted the Southern Transitional Council (STC) — a UAE-backed separatist group — at Mukalla port, Yemen. The strikes highlighted growing Saudi-UAE friction within the anti-Houthi coalition over southern Yemen's future.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Denmark ends postal service ===
     {
         "id": 20101,
         "question": "Which country became the first in the world to officially end its traditional letter postal service, delivering its last letter on December 30, 2025?",
@@ -860,7 +699,6 @@ INTL_MCQS = [
         "explanation": "Denmark became the first country to officially end its traditional letter postal service on December 30, 2025. State-owned PostNord delivered the last letter after 400+ years of operation, citing a sharp fall in letter volumes. Parcel services continue.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: US withdraws from 66 bodies ===
     {
         "id": 20102,
         "question": "On January 7, 2026, President Trump withdrew the US from how many international bodies/treaties?",
@@ -869,7 +707,6 @@ INTL_MCQS = [
         "explanation": "On January 7, 2026, the Trump administration withdrew the US from 66 international bodies and treaties — including the International Solar Alliance (ISA), IPCC, UN ECOSOC and UNFPA — citing 'America First' priorities. This was the largest single-day withdrawal in US diplomatic history.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: ISA US withdrawal ===
     {
         "id": 20103,
         "question": "Which India-led international body was among the 66 organisations the US exited on January 7, 2026?",
@@ -878,7 +715,6 @@ INTL_MCQS = [
         "explanation": "The International Solar Alliance (ISA), co-founded by India and France at COP21 (Paris, 2015) and headquartered in Gurugram, was among the 66 bodies the US exited on January 7, 2026. Others included the IPCC, UN ECOSOC and UNFPA.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Thailand-Cambodia ceasefire ===
     {
         "id": 20104,
         "question": "The Thailand-Cambodia ceasefire of December 27, 2025, ending the July 2025 border war, was mediated by the Prime Minister of which country?",
@@ -887,7 +723,6 @@ INTL_MCQS = [
         "explanation": "Malaysian Prime Minister Anwar Ibrahim mediated the Thailand-Cambodia ceasefire signed on December 27, 2025. The deal ended the July 2025 war over disputed border areas (including Preah Vihear). Malaysia chaired ASEAN in 2025.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Israel recognises Somaliland ===
     {
         "id": 20105,
         "question": "On December 26, 2025, which country became the first in the world to formally recognise Somaliland as an independent state?",
@@ -896,16 +731,6 @@ INTL_MCQS = [
         "explanation": "Israel became the first country to formally recognise Somaliland as an independent state on December 26, 2025. Somaliland declared independence from Somalia in 1991 but had remained unrecognised internationally for 34 years.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Somaliland separation year ===
-    {
-        "id": 20106,
-        "question": "In which year did Somaliland — formally recognised by Israel in December 2025 — declare its separation from Somalia?",
-        "option_a": "1977", "option_b": "1991", "option_c": "2001", "option_d": "2011",
-        "correct_answer": "B",
-        "explanation": "Somaliland declared independence from Somalia in 1991 following the collapse of the Siad Barre regime. After 34 years without international recognition, Israel became the first country to formally recognise Somaliland on December 26, 2025.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # === 📅 2026 MCQ: Shaksgam Valley area ===
     {
         "id": 20107,
         "question": "On January 9, 2026, India objected to Chinese infrastructure in the Shaksgam Valley. What is the approximate area of the Shaksgam Valley which Pakistan ceded to China in 1963?",
@@ -914,16 +739,6 @@ INTL_MCQS = [
         "explanation": "The Shaksgam Valley covers about 5,180 sq km in the Trans-Karakoram Tract. Pakistan ceded it to China under the 1963 Sino-Pakistan Boundary Agreement; India does not recognise the transfer. India objected on January 9, 2026, to Chinese infrastructure activities there.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Shaksgam cession year ===
-    {
-        "id": 20108,
-        "question": "In which year did Pakistan cede the Shaksgam Valley to China — a cession India refuses to recognise and reiterated in its January 2026 protest?",
-        "option_a": "1948", "option_b": "1963", "option_c": "1971", "option_d": "1989",
-        "correct_answer": "B",
-        "explanation": "Pakistan ceded the Shaksgam Valley (~5,180 sq km) to China under the 1963 Sino-Pakistan Boundary Agreement. India does not recognise the transfer as Pakistan-occupied Kashmir is claimed by India. India also rejects the China-Pakistan Economic Corridor (CPEC) passing through PoK.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # === 📅 2026 MCQ: Coalition of the Willing Paris ===
     {
         "id": 20109,
         "question": "The 'Coalition of the Willing' summit on the Russia-Ukraine war (January 6, 2026) was hosted in Paris and led by which leader?",
@@ -932,7 +747,6 @@ INTL_MCQS = [
         "explanation": "French President Emmanuel Macron led the 'Coalition of the Willing' summit in Paris on January 6, 2026. The meeting focused on long-term security guarantees for Ukraine amid stalled US-Russia talks and discussed European-led military assurances.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: BRICS-2026 theme ===
     {
         "id": 20110,
         "question": "What is the official theme of India's BRICS 2026 chairmanship, whose logo was launched on January 13, 2026?",
@@ -941,7 +755,6 @@ INTL_MCQS = [
         "explanation": "India launched the BRICS-2026 logo on January 13, 2026, with the theme 'Vikasam for All' (Development for All). India assumed the BRICS chairmanship on January 1, 2026; the BRICS Summit is scheduled for August/September 2026 in India.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: BRICS chair assumption date ===
     {
         "id": 20111,
         "question": "When did India assume the BRICS chairmanship for 2026?",
@@ -950,7 +763,6 @@ INTL_MCQS = [
         "explanation": "India assumed the BRICS chairmanship on January 1, 2026, succeeding Brazil. The BRICS-2026 logo with theme 'Vikasam for All' was unveiled on January 13, 2026. The annual BRICS Summit is set for August/September 2026 in India.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: CAR Touadera 3rd term ===
     {
         "id": 20112,
         "question": "On January 6, 2026, who was re-elected for a third term as President of the Central African Republic (CAR)?",
@@ -959,7 +771,6 @@ INTL_MCQS = [
         "explanation": "Faustin-Archange Touadéra won a third term as President of the Central African Republic (CAR) on January 6, 2026, following a 2023 constitutional amendment that removed term limits. He has been President of CAR since 2016.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: BNP wins Bangladesh election ===
     {
         "id": 20113,
         "question": "In the Bangladesh general election results announced on February 18, 2026, the BNP secured how many of 300 parliamentary seats?",
@@ -968,7 +779,6 @@ INTL_MCQS = [
         "explanation": "The Bangladesh Nationalist Party (BNP) won 209 of 300 seats in the general election (results: February 18, 2026), routing rivals. The Awami League had been banned. The election ended the post-Hasina interim period led by Muhammad Yunus.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Tarek Rahman PM ===
     {
         "id": 20114,
         "question": "Who was sworn in as Prime Minister of Bangladesh on February 17, 2026, following the BNP's election victory?",
@@ -977,7 +787,6 @@ INTL_MCQS = [
         "explanation": "Tarek Rahman (Tarique Rahman), son of Khaleda Zia and acting BNP chairman, was sworn in as Bangladesh's Prime Minister on February 17, 2026, by President Mohammed Shahabuddin, after the BNP won 209/300 seats. The Awami League had been banned.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Awami League banned ===
     {
         "id": 20115,
         "question": "Which major political party was banned in Bangladesh ahead of the February 2026 general elections?",
@@ -986,7 +795,6 @@ INTL_MCQS = [
         "explanation": "The Awami League (founded by Sheikh Mujibur Rahman) was banned in Bangladesh ahead of the February 2026 general elections, paving the way for the BNP's 209/300 seat victory and the swearing-in of Tarek Rahman as PM on February 17, 2026.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Japan first female PM ===
     {
         "id": 20116,
         "question": "Following the LDP's mid-term victory on February 8, 2026, who became Japan's first-ever female Prime Minister?",
@@ -995,16 +803,6 @@ INTL_MCQS = [
         "explanation": "Sanae Takaichi (LDP) became Japan's first-ever female Prime Minister after the LDP won 316/465 seats in the February 8, 2026 mid-term election. Takaichi, a conservative protégé of late PM Shinzo Abe, broke a 70-year glass ceiling in Japanese politics.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: LDP seats Japan ===
-    {
-        "id": 20117,
-        "question": "In Japan's mid-term election on February 8, 2026, how many of the 465 lower-house seats did the Liberal Democratic Party (LDP) win?",
-        "option_a": "233", "option_b": "278", "option_c": "316", "option_d": "402",
-        "correct_answer": "C",
-        "explanation": "The Liberal Democratic Party (LDP) won 316 of 465 seats in Japan's lower house mid-term election on February 8, 2026, giving it a two-thirds supermajority. Sanae Takaichi was then sworn in as Japan's first female Prime Minister.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # === 📅 2026 MCQ: Moldova Transnistria ===
     {
         "id": 20118,
         "question": "Around February 2026, tensions rose between Moldova and the breakaway Transnistria region. Who is the President of Moldova?",
@@ -1013,7 +811,6 @@ INTL_MCQS = [
         "explanation": "Maia Sandu is the President of Moldova. In February 2026, tensions with the breakaway Transnistria region (PMR) spiked, with approximately 1,500 Russian troops stationed there. Sandu's pro-EU government has pushed for closer Western integration.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: NATO Arctic Sentry exercise ===
     {
         "id": 20119,
         "question": "Which NATO exercises launched on February 11, 2026, focus on securing the High North and Arctic region?",
@@ -1022,7 +819,6 @@ INTL_MCQS = [
         "explanation": "NATO launched exercises 'Arctic Sentry' and 'Arctic Endurance' on February 11, 2026, to bolster security in the High North/Arctic region amid Russian and Chinese activity. The exercises follow Finland's (2023) and Sweden's (2024) accession to NATO.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Israel demolishes UNRWA HQ ===
     {
         "id": 20120,
         "question": "In February 2026, Israel demolished the United Nations Relief and Works Agency (UNRWA) headquarters located in which East Jerusalem neighbourhood?",
@@ -1031,7 +827,6 @@ INTL_MCQS = [
         "explanation": "Israel demolished the UNRWA headquarters in Sheikh Jarrah, East Jerusalem, in February 2026, drawing international condemnation. UNRWA, founded in 1949, has been the primary aid agency for Palestinian refugees; Israel had outlawed its operations in late 2024.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Kashiwazaki-Kariwa restart ===
     {
         "id": 20121,
         "question": "On February 3, 2026, Japan restarted Kashiwazaki-Kariwa, which holds what distinction?",
@@ -1040,34 +835,6 @@ INTL_MCQS = [
         "explanation": "Kashiwazaki-Kariwa in Niigata Prefecture is the world's largest nuclear power plant by net capacity (~7,965 MW, 7 reactors). Japan restarted it on February 3, 2026 — the country's first nuclear plant restart since the 2011 Fukushima Daiichi disaster.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: First plant since Fukushima ===
-    {
-        "id": 20122,
-        "question": "The Kashiwazaki-Kariwa restart on February 3, 2026, was significant because it was Japan's first such restart since which event?",
-        "option_a": "1995 Kobe earthquake", "option_b": "2011 Fukushima Daiichi disaster", "option_c": "2016 Kumamoto earthquakes", "option_d": "2018 Hokkaido earthquake",
-        "correct_answer": "B",
-        "explanation": "The Kashiwazaki-Kariwa restart (Feb 3, 2026) was Japan's first nuclear plant restart since the March 11, 2011 Fukushima Daiichi disaster, which had led to a nationwide shutdown of nuclear power. Japan has been gradually reviving nuclear energy amid energy security concerns.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # === 📅 2026 MCQ: France social media ban under-15 ===
-    {
-        "id": 20123,
-        "question": "On January 27, 2026, France voted (180-21) to ban social media for under-15s, becoming the second country in the world to do so. Which was the first?",
-        "option_a": "United Kingdom", "option_b": "Norway", "option_c": "Australia", "option_d": "Germany",
-        "correct_answer": "C",
-        "explanation": "Australia was the first country to legislate a social-media ban for minors (under-16) in late 2024. France's National Assembly voted 180-21 on January 27, 2026, to ban social media for under-15s, becoming the second country to enact such a ban.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # === 📅 2026 MCQ: Spain undocumented migrants ===
-    {
-        "id": 20124,
-        "question": "On January 27, 2026, which country, bucking the US/EU trend, voted to grant legal status to undocumented migrants?",
-        "option_a": "Italy", "option_b": "Portugal", "option_c": "Spain", "option_d": "Ireland",
-        "correct_answer": "C",
-        "explanation": "Spain voted on January 27, 2026, to grant legal status to undocumented migrants — moving against the broader US and EU trend of tightening migration policy. PM Pedro Sánchez's coalition cited demographic and labour-market needs.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # === 📅 2026 MCQ: EU declares IRGC terrorist ===
     {
         "id": 20125,
         "question": "In February 2026, the European Union formally declared which body a terrorist organisation and sanctioned 15 of its officials?",
@@ -1076,7 +843,6 @@ INTL_MCQS = [
         "explanation": "The EU formally designated Iran's Islamic Revolutionary Guard Corps (IRGC) as a terrorist organisation in February 2026, also sanctioning 15 IRGC officials. The move followed the December 2025 unrest in Iran and IRGC's role in regional proxy conflicts.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: South Africa expels Israeli ===
     {
         "id": 20126,
         "question": "On January 30, 2026, South Africa expelled which Israeli diplomat?",
@@ -1085,7 +851,6 @@ INTL_MCQS = [
         "explanation": "South Africa expelled Israeli Deputy Ambassador Ariel Seidman on January 30, 2026, in protest against Israeli actions in Gaza and the demolition of the UNRWA headquarters. South Africa had earlier filed a genocide case against Israel at the ICJ (December 2023).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Doomsday Clock 85 sec ===
     {
         "id": 20127,
         "question": "The Bulletin of the Atomic Scientists set the 2026 Doomsday Clock to how many seconds to midnight in February 2026?",
@@ -1094,7 +859,6 @@ INTL_MCQS = [
         "explanation": "The Bulletin of the Atomic Scientists set the Doomsday Clock at 85 seconds to midnight in February 2026 — the closest ever to symbolic 'midnight'. The 2025 setting was 89 seconds; the move closer cited nuclear, AI and climate risks.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Museveni 7th term ===
     {
         "id": 20128,
         "question": "On January 17, 2026, Yoweri Museveni won his seventh term as President of Uganda with what vote share?",
@@ -1103,7 +867,6 @@ INTL_MCQS = [
         "explanation": "Yoweri Museveni won a 7th term as President of Uganda on January 17, 2026, with 71.65% of the vote. Opposition leader Bobi Wine (Robert Kyagulanyi) of the NUP came second with 24.72%. Museveni has been in power since 1986.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: WEF Davos 2026 edition ===
     {
         "id": 20129,
         "question": "The World Economic Forum (WEF) Annual Meeting held at Davos from January 19-23, 2026, was its which edition?",
@@ -1112,7 +875,6 @@ INTL_MCQS = [
         "explanation": "The 56th WEF Annual Meeting was held at Davos-Klosters, Switzerland, from January 19-23, 2026, with the theme 'A Spirit of Dialogue'. About 3,000 delegates including 50+ heads of state attended. The Gaza Peace Council was launched on the sidelines (Jan 22).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: WEF Davos 2026 theme ===
     {
         "id": 20130,
         "question": "What was the theme of the 56th WEF Annual Meeting at Davos (January 19-23, 2026)?",
@@ -1121,16 +883,6 @@ INTL_MCQS = [
         "explanation": "'A Spirit of Dialogue' was the theme of the 56th WEF Annual Meeting at Davos (Jan 19-23, 2026), attended by ~3,000 delegates. The 55th edition (2025) had the theme 'Collaboration for the Intelligent Age'.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: BioAsia 2026 Hyderabad ===
-    {
-        "id": 20131,
-        "question": "The Genome Valley Excellence Award at the 23rd BioAsia at Hyderabad (Feb 17-18, 2026), themed 'TechBio Unleashed', was presented to whom?",
-        "option_a": "Dr. Soumya Swaminathan", "option_b": "Dr. Bruce L. Levine", "option_c": "Dr. Gagandeep Kang", "option_d": "Dr. Krishna Ella",
-        "correct_answer": "B",
-        "explanation": "Dr. Bruce L. Levine (University of Pennsylvania, pioneer of CAR-T cell therapy) received the Genome Valley Excellence Award at the 23rd BioAsia, held in Hyderabad on February 17-18, 2026. The theme was 'TechBio Unleashed', focusing on the convergence of biology and technology.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # === 📅 2026 MCQ: New START expiry ===
     {
         "id": 20132,
         "question": "Which arms-control treaty between the US and Russia expired on February 5, 2026, leaving no major nuclear arms limitation regime in force between the two powers?",
@@ -1139,16 +891,6 @@ INTL_MCQS = [
         "explanation": "The New START Treaty (signed 2010, came into force 2011) expired on February 5, 2026 — leaving no bilateral nuclear arms limitation treaty between the US and Russia. The two sides agreed to restart talks; military-to-military communications were restored at a meeting in Abu Dhabi.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: New START original signing ===
-    {
-        "id": 20133,
-        "question": "In which year was the New START Treaty originally signed before it expired in February 2026?",
-        "option_a": "1991", "option_b": "2002", "option_c": "2010", "option_d": "2017",
-        "correct_answer": "C",
-        "explanation": "The New START Treaty was signed in Prague on April 8, 2010, by US President Barack Obama and Russian President Dmitry Medvedev, entering into force in 2011. It capped each side's deployed strategic nuclear warheads at 1,550 and expired on February 5, 2026.",
-        "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
-    # === 📅 2026 MCQ: Israel-Hezbollah war 2026 ===
     {
         "id": 20134,
         "question": "A new Israel-Hezbollah war began on March 2, 2026, killing over 2,000 people in which country?",
@@ -1157,7 +899,6 @@ INTL_MCQS = [
         "explanation": "The new Israel-Hezbollah war began on March 2, 2026, killing more than 2,000 people in Lebanon. A 10-day ceasefire was reached on April 17, 2026, after talks in Washington on April 14-15, 2026.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Israel-Lebanon ceasefire 2026 ===
     {
         "id": 20135,
         "question": "When and where were the talks held that produced the April 17, 2026 Israel-Lebanon ceasefire?",
@@ -1166,7 +907,6 @@ INTL_MCQS = [
         "explanation": "Talks held in Washington from April 14-15, 2026, produced a 10-day Israel-Lebanon ceasefire announced on April 17, 2026, halting the Israel-Hezbollah war that had begun on March 2, 2026 and killed over 2,000 in Lebanon.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Operation Epic Fury ===
     {
         "id": 20136,
         "question": "Under what name did the US and Israel launch joint strikes against Iran on February 28, 2026, killing Supreme Leader Ayatollah Khamenei on day one?",
@@ -1175,7 +915,6 @@ INTL_MCQS = [
         "explanation": "The US and Israel launched 'Operation Epic Fury' against Iran on February 28, 2026. Supreme Leader Ayatollah Ali Khamenei was killed on day one of the strikes. The operation marked a major escalation of the West Asia conflict.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Khamenei killed ===
     {
         "id": 20137,
         "question": "Which Iranian leader was killed on the first day of 'Operation Epic Fury' (February 28, 2026)?",
@@ -1184,7 +923,6 @@ INTL_MCQS = [
         "explanation": "Iran's Supreme Leader Ayatollah Ali Khamenei was killed on the first day of 'Operation Epic Fury' (February 28, 2026), a joint US-Israel air campaign. Khamenei had been Supreme Leader since 1989. The strike triggered global oil price spikes and emergency UN meetings.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Pakistan mediated US-Iran talks ===
     {
         "id": 20138,
         "question": "The US-Iran talks held on April 11-12, 2026, mediated by Pakistan, took place in which city and ended in failure?",
@@ -1193,7 +931,6 @@ INTL_MCQS = [
         "explanation": "Pakistan mediated US-Iran talks at Islamabad on April 11-12, 2026, which ended in failure. The talks were held in the aftermath of 'Operation Epic Fury' (Feb 28, 2026) which had killed Ayatollah Khamenei, and amid ongoing tensions across West Asia.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Myanmar Min Aung Hlaing President ===
     {
         "id": 20139,
         "question": "Who was elected President of Myanmar on April 9, 2026, securing 429 of 584 electoral college votes?",
@@ -1202,7 +939,6 @@ INTL_MCQS = [
         "explanation": "Senior General Min Aung Hlaing, the junta chief who led the 2021 coup, was elected President of Myanmar on April 9, 2026, with 429/584 electoral college votes. General Soe Win was appointed army chief. Critics rejected the polls as a façade for continued military rule.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 📅 2026 MCQ: Nepal Balen Shah PM ===
     {
         "id": 20140,
         "question": "Who was sworn in as Nepal's 47th and youngest-ever Prime Minister on March 27, 2026, at the age of 35?",
@@ -1211,15 +947,6 @@ INTL_MCQS = [
         "explanation": "Balen Shah (rapper-turned-politician, former Mayor of Kathmandu) was sworn in as Nepal's 47th Prime Minister on March 27, 2026 — the youngest ever at age 35. His predecessor KP Sharma Oli was arrested on March 28, 2026, for his crackdown on the 2025 Gen-Z protests (76 killed).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # ╔══════════════════════════════════════════════════════════╗
-    # ║  📅 2026 Coverage-Gap MCQs (Batch I, 2026-05-18)         ║
-    # ║  IDs 20141-20162 — gaps found in 2025-26 audit           ║
-    # ║  Topics: UNSC 2026-27, EU leaders, ASEAN PH chair,       ║
-    # ║          UNESCO El-Enany, Commonwealth Botchwey, COP30,  ║
-    # ║          MC14 Cameroon, G7 France 2026, EU-India FTA,    ║
-    # ║          SCO Tianjin, BRICS partners.                    ║
-    # ╚══════════════════════════════════════════════════════════╝
-    # === 🆕 GAP MCQ: UNSC 2026-27 non-permanent ===
     {
         "id": 20141,
         "question": "Which five countries began two-year terms as UN Security Council non-permanent members on January 1, 2026 (term 2026-27)?",
@@ -1231,7 +958,6 @@ INTL_MCQS = [
         "explanation": "The UNGA elected Bahrain (186 votes), DR Congo (183), Liberia (181), Colombia (180) and Latvia (178) on June 3, 2025, as UNSC non-permanent members for the 2026-27 term. Latvia is a first-time member. They replaced Algeria, Guyana, South Korea, Sierra Leone and Slovenia (term 2024-25).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: European Council President Costa ===
     {
         "id": 20142,
         "question": "Who is the President of the European Council since December 1, 2024?",
@@ -1240,7 +966,6 @@ INTL_MCQS = [
         "explanation": "António Costa (Portugal), former PM of Portugal (2015-2024), is the President of the European Council since December 1, 2024, succeeding Charles Michel (Belgium). Ursula von der Leyen (Germany) continues as President of the European Commission (her 2nd term began December 2024).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: EU-India FTA 2026 ===
     {
         "id": 20143,
         "question": "On which date in 2026 did India and the European Union conclude the 'Mother of all Free Trade Deals' at the 16th EU-India Summit in New Delhi?",
@@ -1249,7 +974,6 @@ INTL_MCQS = [
         "explanation": "India and the EU concluded their long-awaited Free Trade Agreement on January 27, 2026, at the 16th EU-India Summit in New Delhi. EC President Ursula von der Leyen called it 'the mother of all deals', creating a free trade zone of ~2 billion people. A Security & Defence Partnership and a mobility/migration pact were also signed.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: ASEAN 2026 Chair Philippines ===
     {
         "id": 20144,
         "question": "Which country holds the ASEAN Chairmanship for 2026, with the theme 'Navigating Our Future, Together'?",
@@ -1258,7 +982,6 @@ INTL_MCQS = [
         "explanation": "The Philippines holds the ASEAN Chairmanship for 2026 (theme: 'Navigating Our Future, Together'), under President Ferdinand Marcos Jr. The 48th ASEAN Summit was held in Cebu on May 8-9, 2026. Priorities: regional energy & food security, South China Sea Code of Conduct, ASEAN nationals' safety. Malaysia was Chair in 2025; Singapore is set to chair 2027.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: 48th ASEAN Summit Cebu ===
     {
         "id": 20145,
         "question": "The 48th ASEAN Summit was held in May 2026 in which Philippine city?",
@@ -1267,7 +990,6 @@ INTL_MCQS = [
         "explanation": "The 48th ASEAN Summit was held in Cebu, Philippines, on May 8-9, 2026, under the Philippines' 2026 chairship. The 49th ASEAN Summit is scheduled for November 2026. ASEAN's 11 members now include Timor-Leste, admitted at the 47th ASEAN Summit (Kuala Lumpur, October 2025).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: Commonwealth CHOGM 2024 Samoa ===
     {
         "id": 20146,
         "question": "The 27th Commonwealth Heads of Government Meeting (CHOGM) was held in October 2024 in which country — the first CHOGM in a Pacific Small Island Developing State and the first chaired by King Charles III?",
@@ -1276,7 +998,6 @@ INTL_MCQS = [
         "explanation": "CHOGM 2024 was held in Apia, Samoa, on October 25-26, 2024 — the first CHOGM in a Pacific SIDS and the first chaired by King Charles III as Head of the Commonwealth. The summit adopted the 'Apia Commonwealth Ocean Declaration for One Resilient Common Future' and elected Shirley Ayorkor Botchwey (Ghana) as next Secretary-General. The Commonwealth has 56 member states.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: Commonwealth SG Botchwey ===
     {
         "id": 20147,
         "question": "Who became the 7th Commonwealth Secretary-General on April 1, 2025 — the first woman from Africa to hold the office?",
@@ -1285,7 +1006,6 @@ INTL_MCQS = [
         "explanation": "Shirley Ayorkor Botchwey (Ghana), a former Foreign Minister of Ghana (2017-2024), assumed office as the 7th Commonwealth Secretary-General on April 1, 2025 — the first woman from Africa in the post. She was elected at CHOGM 2024 in Apia, Samoa, succeeding Baroness Patricia Scotland (Dominica/UK). Commonwealth HQ: Marlborough House, London.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: UNESCO DG El-Enany ===
     {
         "id": 20148,
         "question": "Who assumed office as the 12th Director-General of UNESCO on November 15, 2025, becoming the first Director-General from an Arab country?",
@@ -1294,7 +1014,6 @@ INTL_MCQS = [
         "explanation": "Khaled El-Enany (Egypt), an Egyptologist and former Minister of Tourism & Antiquities, was elected DG of UNESCO in November 2025 with 172/174 votes and assumed office on November 15, 2025. He is the first DG from an Arab country and the second from Africa (after Senegal's Amadou-Mahtar Mbow). He succeeded Audrey Azoulay (France). UNESCO HQ: Paris.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: COP30 Belem outcome ===
     {
         "id": 20149,
         "question": "COP30 was held in Belém, Brazil, in November 2025. What was the name of its main outcome document, a Portuguese term meaning 'collective efforts'?",
@@ -1303,7 +1022,6 @@ INTL_MCQS = [
         "explanation": "The COP30 main outcome document is called the 'global mutirão' — Portuguese for 'collective efforts'. COP30 ran November 10-22, 2025, in Belém, on the edge of the Amazon. Key outcomes: pledge to mobilise $1.3 trillion/year by 2035, triple adaptation finance by 2035, and launch of the Tropical Forest Forever Fund ($6.6 bn raised). The summit fell short of an explicit fossil-fuel phase-out roadmap.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: Tropical Forest Forever Fund ===
     {
         "id": 20150,
         "question": "The 'Tropical Forest Forever Fund' (TFFF), launched at COP30 in Belém (November 2025), rewards countries for what action?",
@@ -1315,7 +1033,6 @@ INTL_MCQS = [
         "explanation": "The Tropical Forest Forever Fund (TFFF) — a Brazil-led mechanism launched at COP30, Belém (Nov 2025) — rewards countries for conserving tropical forests. It raised $6.6 billion with 53 country signatories. The fund supplements REDD+ and aims to provide predictable, performance-based finance for forest protection in the Global South.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: WTO MC14 Cameroon ===
     {
         "id": 20151,
         "question": "The 14th WTO Ministerial Conference (MC14), held March 26-29, 2026, was hosted in which African capital — only the second WTO Ministerial held in Africa?",
@@ -1324,7 +1041,6 @@ INTL_MCQS = [
         "explanation": "MC14 was held at the Palais des Congrès in Yaoundé, Cameroon, from March 26-29, 2026 — only the second WTO Ministerial Conference hosted in Africa, after MC10 in Nairobi (2015). DG Ngozi Okonjo-Iweala (in her 2nd term) chaired discussions on dispute settlement reform, fisheries subsidies, and the e-commerce moratorium.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: G7 2026 France Évian ===
     {
         "id": 20152,
         "question": "Which country holds the G7 Presidency in 2026 and will host the 52nd G7 Summit at Évian-les-Bains on June 15-17, 2026?",
@@ -1333,7 +1049,6 @@ INTL_MCQS = [
         "explanation": "France holds the G7 Presidency for 2026 (its first since the 2019 Biarritz Summit). The 52nd G7 Summit will be held at Évian-les-Bains, Haute-Savoie, on June 15-17, 2026. President Emmanuel Macron set priorities around reducing global inequality and safeguarding financial stability. Canada hosted G7 2025 (Kananaskis).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: SCO Tianjin 2025 ===
     {
         "id": 20153,
         "question": "The 25th SCO Heads of State Summit — the largest in SCO history — was held in August-September 2025 in which Chinese city?",
@@ -1342,7 +1057,6 @@ INTL_MCQS = [
         "explanation": "The 25th SCO Summit was held in Tianjin, China, on August 31 - September 1, 2025 — the largest SCO summit ever. Key outcomes: Tianjin Declaration; SCO Development Strategy 2026-2035; agreement to establish an SCO Development Bank; Laos accepted as a partner (taking SCO to a 27-nation family). PM Modi attended; Kyrgyzstan took over rotating SCO presidency for 2025-26.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: SCO Development Bank ===
     {
         "id": 20154,
         "question": "Which major financial institution did SCO members agree to establish at the Tianjin Summit (September 2025)?",
@@ -1351,7 +1065,6 @@ INTL_MCQS = [
         "explanation": "SCO members agreed at the Tianjin Summit (Sept 2025) to establish an SCO Development Bank to finance infrastructure and economic programmes — a long-discussed Chinese proposal. Other agreements: SCO Universal Center for Countering Security Challenges and Threats, Information Security Center, Center for Combating Transnational Organized Crime, and Anti-Drug Center.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: BRICS partner countries ===
     {
         "id": 20155,
         "question": "Which of the following is NOT a BRICS Partner Country (a separate category introduced at the Kazan Summit 2024) as of 2026?",
@@ -1360,7 +1073,6 @@ INTL_MCQS = [
         "explanation": "BRICS Partner Countries (introduced at Kazan 2024) as of 2026 are: Belarus, Bolivia, Cuba, Kazakhstan, Malaysia, Nigeria, Thailand, Uganda, Uzbekistan and Vietnam (10 partners). Pakistan is NOT a BRICS partner. With 10 full members + 10 partners, BRICS-20 covers ~55-56% of world population.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: BRICS-2026 Summit location India ===
     {
         "id": 20156,
         "question": "The 19th BRICS Summit, under India's 2026 chairmanship (theme 'Vikasam for All'), is scheduled for which month in India?",
@@ -1369,7 +1081,6 @@ INTL_MCQS = [
         "explanation": "India is hosting the 19th BRICS Summit in August-September 2026 under its 2026 chairmanship. The BRICS-2026 logo and theme 'Vikasam for All' (Development for All) were launched on January 13, 2026. India assumed the BRICS chair on January 1, 2026, succeeding Brazil.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: ICC Khan misconduct ===
     {
         "id": 20157,
         "question": "ICC Chief Prosecutor Karim Khan stepped aside in May 2025 amid a UN-led inquiry into misconduct allegations. Which two officials took over the Office's day-to-day functions?",
@@ -1378,7 +1089,6 @@ INTL_MCQS = [
         "explanation": "After Karim Khan (UK) stepped aside in May 2025 pending a UN OIOS inquiry into misconduct allegations (which he denies), Deputy Prosecutors Nazhat Shameem Khan (Fiji) and Mame Mandiaye Niang (Senegal) took the lead at the ICC Office of the Prosecutor. The ICC is headquartered in The Hague; in November 2024 it issued arrest warrants against Israeli PM Netanyahu and former Defence Minister Gallant.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: ICC sanctions Trump 2025 ===
     {
         "id": 20158,
         "question": "Which US administration activated sanctions against International Criminal Court (ICC) prosecutors and judges in February 2025?",
@@ -1387,7 +1097,6 @@ INTL_MCQS = [
         "explanation": "President Donald Trump (second term, from January 20, 2025) signed an executive order on February 6, 2025, imposing sanctions on ICC prosecutors and judges over the November 2024 arrest warrants against Israeli PM Netanyahu and former DM Gallant. The US is not an ICC member; the Rome Statute (1998) governs the Court.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: OECD Cormann ===
     {
         "id": 20159,
         "question": "Who is the Secretary-General of the OECD since June 1, 2021, and was re-appointed for a second 5-year term?",
@@ -1396,7 +1105,6 @@ INTL_MCQS = [
         "explanation": "Mathias Cormann (Australia), former Australian Finance Minister, is the 6th OECD Secretary-General since June 1, 2021, and was re-appointed for a second 5-year term (2026-2031). The OECD (HQ: Paris) has 38 members; current accession candidates include Argentina, Indonesia, Brazil, Peru, Romania, Bulgaria, Croatia and Thailand. India is a 'Key Partner' (applied 2023).",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: UNESCO new DG country ===
     {
         "id": 20160,
         "question": "UNESCO Director-General Khaled El-Enany (in office from November 15, 2025) is from which country?",
@@ -1405,7 +1113,6 @@ INTL_MCQS = [
         "explanation": "Khaled El-Enany is from Egypt — a renowned Egyptologist and former Egyptian Minister of Tourism & Antiquities (2019-2022). He is UNESCO's 12th DG, the first from an Arab country, elected in November 2025 with 172 of 174 votes. Campaign slogan: 'UNESCO for the People'.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: ASEAN 11th member Timor-Leste ===
     {
         "id": 20161,
         "question": "Following the admission of Timor-Leste at the 47th ASEAN Summit (Kuala Lumpur, October 2025), how many full members does ASEAN have as of 2026?",
@@ -1414,7 +1121,6 @@ INTL_MCQS = [
         "explanation": "ASEAN has 11 full members as of 2026, after Timor-Leste (East Timor) was admitted as the 11th member at the 47th ASEAN Summit in Kuala Lumpur (October 2025) — the first ASEAN expansion since Cambodia joined in 1999. The 10 prior members: Brunei, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore, Thailand, Vietnam. ASEAN Secretariat: Jakarta.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
     },
-    # === 🆕 GAP MCQ: India UNSC 2028-29 bid ===
     {
         "id": 20162,
         "question": "India has formally bid to serve as a non-permanent member of the UN Security Council for which two-year term — which would be its 9th term if elected?",
@@ -1422,9 +1128,8 @@ INTL_MCQS = [
         "correct_answer": "B",
         "explanation": "India has formally bid for a UNSC non-permanent seat for 2028-29 (representing Asia-Pacific regional group)—its 9th term if elected. India's eight prior UNSC terms: 1950-51 (founding period), 1967-68, 1972-73, 1977-78, 1984-85, 1991-92, 2011-12, 2021-22 (most recent). The 2028-29 bid reflects India's institutional commitment to global governance. Simultaneously, India, as part of the G4 coalition (Brazil, Germany, Japan), continues advocating for UNSC permanent membership expansion to reflect 21st-century geopolitics: (1) India's 1.4B+ population, major developing economy, permanent security council membership justification, (2) Germany as Europe's largest economy (excluded since WWII), (3) Brazil as Latin America's leading power, (4) Japan as Asia's technological leader. G4 unified position: UNSC expansion from 5 permanent members to 11 (adding India, Brazil, Germany, Japan + 2 African representatives) would improve legitimacy and representativeness. Obstacles: P5 (especially China, Russia) oppose expansion diluting their veto power; developing countries contest P5 expansion inequity. India's dual strategy: secure repeat non-permanent seats while long-term pushing permanent membership—demonstrating sustained commitment to multilateral governance and Global South leadership.",
         "folder": "AP_HC", "topic": "International_Current_Affairs",
-    },
+    }
 ]
-
 
 def seed():
     if USE_POSTGRES:

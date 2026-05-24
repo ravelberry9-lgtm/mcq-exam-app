@@ -54,7 +54,7 @@ QUESTIONS = [
 
     (28003, "Which country ranked 1st in the World Press Freedom Index 2025?",
      "Norway", "Sweden", "Finland", "Denmark",
-     "C", "Finland topped the World Press Freedom Index 2025, with Estonia and Netherlands in the top three. Nordic and Northern European countries consistently rank highest due to strong institutional protections for journalists, transparent governance, and rule of law. This benchmark is significant for emerging democracies like India, which aspires to strengthened press freedoms as part of its democratic consolidation strategy outlined in various human rights and governance reports.",
+     "A", "Norway topped the World Press Freedom Index 2025 for the 9th consecutive year, with Estonia and Netherlands in the top three. Nordic and Northern European countries consistently rank highest due to strong institutional protections for journalists, transparent governance, and rule of law. This benchmark is significant for emerging democracies like India, which aspires to strengthened press freedoms as part of its democratic consolidation strategy outlined in various human rights and governance reports.",
      "AP_HC", "International_Current_Affairs"),
 
     (28004, "What was the USA's rank in the World Press Freedom Index 2025?",
@@ -286,7 +286,7 @@ QUESTIONS = [
 
     (28048, "Global military expenditure reached what record level in 2024 according to SIPRI?",
      "$1.8 trillion", "$2.1 trillion", "$2.4 trillion", "$2.8 trillion",
-     "C", "Global military expenditure reached a record ~$2.4 trillion in 2024 according to SIPRI. This unprecedented spending—4.2% of global GDP and up 50% since 2014—reflects rising geopolitical tensions, regional conflicts (Ukraine, Middle East, South China Sea), and arms races. India, spending approximately $70-72 billion annually (2.8% of budget), is modernizing its military to counter China and Pakistan while managing fiscal constraints; India advocates for reducing global military spending and redirecting resources to development, positioning military efficiency and indigenous defense manufacturing as pathways to cost containment.",
+     "D", "Global military expenditure reached a record ~$2.7 trillion ($2,718 billion) in 2024 according to SIPRI Yearbook 2025 — the steepest year-on-year rise (9.4%) since the Cold War end. This unprecedented spending—reflects rising geopolitical tensions, regional conflicts (Ukraine, Middle East, South China Sea), and arms races. India, spending approximately $70-72 billion annually (2.8% of budget), is modernizing its military to counter China and Pakistan while managing fiscal constraints; India advocates for reducing global military spending and redirecting resources to development, positioning military efficiency and indigenous defense manufacturing as pathways to cost containment.",
      "AP_HC", "International_Current_Affairs"),
 
     (28049, "The Global Peace Index is published by which organisation?",

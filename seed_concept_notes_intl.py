@@ -1008,7 +1008,7 @@ NOTES.append(('events_global', 'Global Events & India Diplomacy 2025-26', 'ప�
 <tr><td>Grammy 2025 (67th)</td><td>Kendrick Lamar's 'Not Like Us' — Record of the Year + Song of the Year</td><td class="bi-te">67వ గ్రామీ 2025 — కెండ్రిక్ లామర్</td></tr>
 <tr><td>Oscars 97th (2025)</td><td>'Anora' (dir. Sean Baker) — Best Picture, Director, Actress (Mikey Madison), Screenplay; Adrien Brody — Best Actor</td><td class="bi-te">97వ ఆస్కార్ 2025 — 'అనోరా'; అడ్రియన్ బ్రోడీ — బెస్ట్ ఆక్టర్</td></tr>
 <tr><td>WTO DG</td><td>Ngozi Okonjo-Iweala (Nigeria) — first African + first woman WTO DG; re-appointed; HQ Geneva</td><td class="bi-te">నోగ్జి ఒకోంజో-ఇవెలా — మొదటి ఆఫ్రికన్ + మొదటి మహిళా WTO DG</td></tr>
-<tr><td>CPTPP Chair 2025</td><td>Japan chairs CPTPP 2025; 11 members; UK joined 2024</td><td class="bi-te">CPTPP 2025 అధ్యక్షత: జపాన్</td></tr>
+<tr><td>CPTPP Chair 2025</td><td>Australia chairs CPTPP 2025 (Vietnam chairs 2026); 12 members including UK (joined Dec 2024)</td><td class="bi-te">CPTPP 2025 అధ్యక్షత: ఆస్ట్రేలియా</td></tr>
 </table>
 """))
 

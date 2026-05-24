@@ -132,8 +132,8 @@ QUESTIONS = [
      "AP_HC", "International_Current_Affairs"),
 
     (30016, "Israeli civilian casualties in the Twelve-Day War were:",
-     "5 civilians killed, 500 wounded", "32 civilians + 1 soldier killed, 3,238 wounded", "120 civilians killed, 8,000 wounded", "200 civilians killed",
-     "B", "Israel suffered 32 civilians and 1 off-duty soldier killed, with 3,238 wounded in the Twelve-Day War. Iran's retaliation with 550+ missiles and 1,000+ drones targeted Israeli cities.",
+     "5 civilians killed, 500 wounded", "28 civilians + 1 soldier killed, 3,238 wounded", "120 civilians killed, 8,000 wounded", "200 civilians killed",
+     "B", "Israel suffered 28 civilians and 1 off-duty soldier killed (total 29 Israeli fatalities), with 3,238 wounded in the Twelve-Day War. Iran's retaliation with 550+ missiles and 1,000+ drones targeted Israeli cities.",
      "AP_HC", "International_Current_Affairs"),
 
     (30017, "The ceasefire that ended the Twelve-Day War on June 24, 2025 was brokered by:",

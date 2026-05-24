@@ -105,7 +105,7 @@
         {% set hc_topics = tree['AP_HC'] %}
         <div class="aphc-section">
           <div class="aphc-header">
-            <span class="aphc-label">⚖️ AP HIGH COURT</span>
+            <span class="aphc-label">⚖️ AP HIGH COURT &amp; CURRENT AFFAIRS</span>
             <span class="aphc-total">{{ totals.get('AP_HC',0) }} Questions</span>
           </div>
           <div class="aphc-grid">
@@ -120,6 +120,11 @@
               {% set tile_bg = '#e3f2fd' %}
               {% set tile_accent = '#1565c0' %}
               {% set tile_light = '#bbdefb' %}
+            {% elif topic == 'AP_Current_Affairs_2026' %}
+              {% set tile_icon = '📰' %}
+              {% set tile_bg = '#fff8e1' %}
+              {% set tile_accent = '#e65100' %}
+              {% set tile_light = '#ffe082' %}
             {% else %}
               {% set tile_icon = '📋' %}
               {% set tile_bg = '#f3e5f5' %}
@@ -769,6 +774,16 @@ function startQuickQuiz() {
       btn.textContent = '⚡ Start Exam';
     }
   })
+  .catch(() => {
+    showToast('Network error — try again', 'error');
+    btn.disabled = false;
+    btn.textContent = '⚡ Start Exam';
+  });
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuizSheet(); });
+</script>
+{% endblock %}
   .catch(() => {
     showToast('Network error — try again', 'error');
     btn.disabled = false;
