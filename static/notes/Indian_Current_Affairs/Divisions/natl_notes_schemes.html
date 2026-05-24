@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welfare Schemes | National CA 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 16mm 14mm 14mm 14mm; }
+@media print {
+  .no-break { page-break-inside: avoid; }
+  .page-break { page-break-before: always; }
+  body { background: #fff !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --brick: #9b3a1a; --mud: #6b4226; --sand: #e8d5b0;
+  --green: #1a5030; --blue: #1a3a78; --gold: #b8860b;
+  --text: #1e1209; --border: #d4b896; --bg: #fdf8f2;
+  --tel-bg: #eef4ff; --tel-bdr: #1a3a78; --alert: #7a1010;
+}
+body { font-family: 'Libre Baskerville', Georgia, serif; background: #ddd5c8;
+       color: var(--text); font-size: 9.5pt; line-height: 1.55; }
+.a4 { width: 794px; min-height: 1123px; background: #fff; margin: 16px auto;
+      padding: 13mm 14mm 12mm; box-shadow: 0 2px 18px rgba(0,0,0,.18); }
+.doc-header { background: linear-gradient(135deg, #1a5030, #0e3020);
+              color: #fff; border-radius: 5px; padding: 13px 16px; margin-bottom: 12px; }
+.dh-title { font-size: 14.5pt; font-weight: 700; letter-spacing: .02em; }
+.dh-te { font-family: 'Tiro Telugu', serif; font-size: 11pt; color: #a8e8c8; margin: 3px 0 6px; }
+.dh-meta { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #88c8a8;
+           display: flex; gap: 12px; flex-wrap: wrap; }
+.dh-meta span { background: rgba(255,255,255,.12); padding: 2px 8px; border-radius: 2px; }
+.sec-hdr { background: var(--mud); color: #fff; padding: 5px 11px; border-radius: 3px;
+           margin: 14px 0 7px; font-family: 'Source Sans 3', sans-serif;
+           font-size: 10pt; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+.sec-hdr .te { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; color: #f8e8d8; }
+.sec-hdr2 { background: var(--blue); color: #fff; padding: 4px 11px; border-radius: 3px;
+            margin: 11px 0 6px; font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; }
+.sec-hdr2 .te { font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400; color: #c8d8f8; }
+.sec-hdr3 { background: var(--green); color: #fff; padding: 3px 10px; border-radius: 3px;
+            margin: 9px 0 5px; font-family: 'Source Sans 3', sans-serif; font-size: 9pt; font-weight: 700; }
+table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 6px 0; }
+th { background: var(--mud); color: #fff; padding: 5px 8px; text-align: left; font-size: 8.5pt; }
+th.blue { background: var(--blue); }
+th.green { background: var(--green); }
+th.brick { background: var(--brick); }
+td { border: 1px solid var(--border); padding: 4px 7px; vertical-align: top; }
+tr:nth-child(even) td { background: #fdf4ec; }
+.te-cell { font-family: 'Tiro Telugu', serif; font-size: 9pt; line-height: 1.7; color: #0a1a40; }
+.highlight-row td { background: #fff3cd !important; font-weight: 700; }
+.new-row td { background: #d5f5e3 !important; font-weight: 700; }
+.red-row td { background: #fee2e2 !important; font-weight: 700; }
+.num-col { font-family: 'Fira Mono', monospace; font-weight: 700; color: var(--brick); }
+.alert-box { background: #fff3e0; border-left: 4px solid #e65100; border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.info-box { background: #e8f4fd; border-left: 4px solid var(--blue); border-radius: 3px;
+            padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.green-box { background: #e8f8f0; border-left: 4px solid var(--green); border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.red-box { background: #fdeeee; border-left: 4px solid var(--alert); border-radius: 3px;
+           padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.te-block { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; line-height: 1.85;
+            color: #0a1a40; background: var(--tel-bg); border-top: 1px solid var(--tel-bdr);
+            padding: 5px 9px; margin-top: 4px; border-radius: 0 0 3px 3px; }
+.badge { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 7.5pt;
+         font-weight: 700; margin: 1px; }
+.b-new { background: #d5f5e3; color: #1a5030; border: 1px solid #a8d8b8; }
+.b-blue { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+.b-warn { background: #fef3c7; color: #92400e; border: 1px solid #f6d860; }
+.b-red { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+.sum-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+.sg { background: #fff; border-radius: 6px; padding: 10px; text-align: center; border: 2px solid; }
+.sg-blue { border-color: var(--blue); }
+.sg-green { border-color: var(--green); }
+.sg-brick { border-color: var(--brick); }
+.sg-gold { border-color: var(--gold); }
+.sg-num { font-size: 17pt; font-weight: 800; display: block; line-height: 1.1; }
+.sg-lbl { font-size: 7pt; color: #666; margin-top: 3px; font-family: 'Source Sans 3', sans-serif; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+p { margin: 5px 0; }
+ul { margin-left: 18px; margin-top: 4px; }
+li { margin-bottom: 3px; }
+.kw { background: #d0e8ff; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.kw-green { background: #c8f0d8; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.kw-red { background: #ffd8d8; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.mono { font-family: 'Fira Mono', monospace; font-size: 8.5pt; }
+hr.div { border: none; border-top: 1.5px dashed var(--border); margin: 10px 0; }
+.scheme-tag { display: inline-block; background: #e8f8f0; border: 1px solid #1a5030;
+              color: #1a5030; font-family:'Source Sans 3',sans-serif; font-size:8pt;
+              font-weight:700; padding:2px 8px; border-radius:3px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="a4">
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="dh-title">Welfare Schemes | National CA 2026</div>
+  <div class="dh-te">సంక్షేమ పథకాలు | PMJDY | VB-G RAM G Act 2025 (MGNREGA replaced) | PM-KISAN | MUDRA | PMAY | Ayushman Bharat | సమగ్ర నోట్స్</div>
+  <div class="dh-meta">
+    <span>📅 Verified: May 2026</span>
+    <span>🎯 AP High Court SO 2026</span>
+    <span>📍 Sources: PIB / PMJDY.gov.in / MoRD / NHA</span>
+    <span>🏛️ Ministry: Finance / Rural Dev / Health</span>
+  </div>
+</div>
+
+<!-- SUMMARY GRID -->
+<div class="sum-grid">
+  <div class="sg sg-green"><span class="sg-num" style="color:var(--green)">58.2Cr</span><div class="sg-lbl">PMJDY Beneficiaries (May 2026)<br><span style="font-family:'Tiro Telugu',serif">జన్ ధన్ లబ్ధిదారులు</span></div></div>
+  <div class="sg sg-blue"><span class="sg-num" style="color:var(--blue)">43.5Cr</span><div class="sg-lbl">Ayushman Cards issued (Feb 2026)<br><span style="font-family:'Tiro Telugu',serif">ఆయుష్మాన్ కార్డులు</span></div></div>
+  <div class="sg sg-brick"><span class="sg-num" style="color:var(--brick)">₹4L+Cr</span><div class="sg-lbl">PM-KISAN total disbursement<br><span style="font-family:'Tiro Telugu',serif">PM-KISAN మొత్తం బదిలీ</span></div></div>
+  <div class="sg sg-gold"><span class="sg-num" style="color:var(--gold)">13.61L</span><div class="sg-lbl">PMAY-U 2.0 Sanctioned (Feb 2026)<br><span style="font-family:'Tiro Telugu',serif">PMAY-U 2.0 మంజూరైన ఇళ్ళు</span></div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: PMJDY -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>1. PMJDY — PM Jan Dhan Yojana <span class="te">/ ప్రధాన మంత్రి జన్ ధన్ యోజన</span></span></div>
+
+<div class="scheme-tag">Launched: August 28, 2014 | Ministry of Finance (Dept. of Financial Services)</div>
+<div class="green-box no-break">
+  <strong>India's largest financial inclusion scheme.</strong> PM Jan Dhan Yojana (PMJDY) was launched on <span class="kw">August 28, 2014</span> with the mission to provide universal banking access. As of <span class="kw">May 13, 2026</span>: <span class="kw">58.20 crore beneficiaries</span> with total balance of <span class="kw">₹3,02,667 crore</span>.
+  <div class="te-block">ప్రధాన మంత్రి జన్ ధన్ యోజన (PMJDY) — <strong>ఆగస్ట్ 28, 2014</strong>న ప్రారంభం. భారత్‌లో అతిపెద్ద ఆర్థిక చేరిక పథకం. మే 13, 2026 నాటికి: <strong>58.20 కోట్ల లబ్ధిదారులు</strong>, ఖాతాలలో మొత్తం నిల్వ: <strong>₹3,02,667 కోట్లు</strong>.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="3" class="green">PMJDY — Key Statistics (as on May 13, 2026)</th></tr>
+  <tr><th style="width:38%">Parameter / అంశం</th><th style="width:32%">Value / విలువ</th><th style="width:30%">Note / గమనిక</th></tr>
+  <tr class="new-row"><td><strong>Total Beneficiaries</strong><br><span class="te-cell">మొత్తం లబ్ధిదారులు</span></td><td class="num-col">58.20 crore</td><td>As of May 13, 2026</td></tr>
+  <tr><td><strong>Total Balance</strong><br><span class="te-cell">మొత్తం నిల్వ</span></td><td class="num-col">₹3,02,667 crore</td><td>~₹3 lakh crore</td></tr>
+  <tr><td><strong>Women Account Holders</strong><br><span class="te-cell">మహిళా ఖాతాదారులు</span></td><td class="num-col">55.7%</td><td>~32 crore women</td></tr>
+  <tr><td><strong>Rural / Semi-urban accounts</strong><br><span class="te-cell">గ్రామీణ ఖాతాలు</span></td><td class="num-col">~67%</td><td>2/3 in rural areas</td></tr>
+  <tr><td><strong>RuPay Debit Cards</strong><br><span class="te-cell">రూ-పే డెబిట్ కార్డులు</span></td><td class="num-col">39.15 crore</td><td>As of Oct 2025</td></tr>
+  <tr><td><strong>Bank Mitras (BCs)</strong><br><span class="te-cell">బ్యాంక్ మిత్రలు</span></td><td class="num-col">13.55 lakh</td><td>Branchless banking agents</td></tr>
+  <tr class="highlight-row"><td><strong>11th Anniversary</strong></td><td class="num-col">August 28, 2025</td><td>Celebrated with new targets</td></tr>
+</table>
+
+<div class="info-box no-break">
+  <strong>PMJDY Benefits Package:</strong> Zero-balance account | RuPay Debit Card | <span class="kw">₹2 lakh accident insurance</span> (via RuPay) | <span class="kw">₹30,000 life insurance</span> | Overdraft up to <span class="kw">₹10,000</span> (eligible accounts) | DBT (Direct Benefit Transfer) linkage | Mobile banking access.
+  <div class="te-block">PMJDY ప్రయోజనాలు: జీరో బ్యాలెన్స్ ఖాతా | రూ-పే డెబిట్ కార్డు | రూ-పే ద్వారా <strong>₹2 లక్షల ప్రమాద బీమా</strong> | <strong>₹30,000 జీవిత బీమా</strong> | అర్హులకు <strong>₹10,000 ఓవర్ డ్రాఫ్ట్</strong> | DBT (ప్రత్యక్ష ప్రయోజన బదిలీ) లింకేజ్.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: MGNREGA → VB-G RAM G ACT 2025 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>2. VB-G RAM G Act, 2025 — MGNREGA Replaced <span class="te">/ గ్రామీణ ఉపాధి హామీ పథకం — నూతన చట్టం</span></span></div>
+
+<div class="scheme-tag">Passed: December 2025 (Winter Session) | Notified: May 11, 2026 | Effective: July 1, 2026 | Ministry of Rural Development</div>
+
+<div class="alert-box no-break" style="border-color:#c00;background:#fff5f5;">
+  <strong>⚠️ CURRENT AFFAIRS ALERT:</strong> The <strong>VB-G RAM G Act, 2025</strong> (Viksit Bharat — Guarantee for Rozgar and Ajeevika Mission Gramin Act, 2025) was passed by Parliament in the <strong>Winter Session, December 2025</strong>, replacing MGNREGA. It was notified on <strong>May 11, 2026</strong> and comes into force nationwide from <strong>July 1, 2026</strong>. The key enhancement: employment guarantee raised from <strong>100 days → 125 days</strong> per rural household per year.
+  <div class="te-block">విక్సిత్ భారత్ — గ్యారెంటీ ఫర్ రోజ్‌గార్ అండ్ ఆజీవికా మిషన్ (గ్రామీణ్) చట్టం, 2025 [VB-G RAM G Act, 2025] డిసెంబర్ 2025 శీతాకాల సమావేశంలో ఆమోదించబడింది. MGNREGA (100 రోజులు) స్థానంలో <strong>125 రోజుల</strong> వేతన ఉపాధి హామీ కల్పిస్తుంది. మే 11, 2026న నోటిఫై; <strong>జూలై 1, 2026</strong> నుండి దేశవ్యాప్తంగా అమలు.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="2" style="background:#8b0000;color:#fff;">VB-G RAM G Act, 2025 — Key Facts (Current Affairs)</th></tr>
+  <tr><th style="width:40%">Parameter / అంశం</th><th style="width:60%">Detail / వివరాలు</th></tr>
+  <tr><td><strong>Full Name</strong></td><td>Viksit Bharat — Guarantee for Rozgar and Ajeevika Mission (Gramin) Act, 2025</td></tr>
+  <tr><td><strong>Short Name</strong></td><td>VB-G RAM G Act, 2025</td></tr>
+  <tr><td><strong>Introduced</strong></td><td>Lok Sabha, December 16, 2025</td></tr>
+  <tr><td><strong>Passed by Parliament</strong></td><td>December 18–19, 2025 (Winter Session) — amid opposition protests</td></tr>
+  <tr class="highlight-row"><td><strong>Notified / Effective</strong><br><span class="te-cell">నోటిఫై / అమలు</span></td><td>Notified: <strong>May 11, 2026</strong> | Effective: <strong>July 1, 2026</strong> (nationwide)</td></tr>
+  <tr class="highlight-row"><td><strong>Employment Guarantee</strong><br><span class="te-cell">ఉపాధి హామీ</span></td><td><strong>125 days/year</strong> per rural household (↑ from 100 days under MGNREGA)</td></tr>
+  <tr><td><strong>Replaces</strong></td><td>MGNREGA (Mahatma Gandhi National Rural Employment Guarantee Act, 2005)</td></tr>
+  <tr><td><strong>Wage Payment</strong></td><td>Weekly wage payment (within 15 days — same as MGNREGA); DBT mode</td></tr>
+  <tr><td><strong>New Feature</strong></td><td>Pre-planned works; budget-capped fiscal predictability; convergence with Viksit Bharat 2047</td></tr>
+  <tr><td><strong>Name Controversy</strong></td><td>Row over removing "Mahatma Gandhi" from name; Budget 2026 announced new MG-named scheme</td></tr>
+  <tr><td><strong>Budget 2026-27</strong></td><td class="num-col">₹86,000 crore (Rural Employment)</td></tr>
+  <tr><td><strong>FY 2024-25 Person-days</strong></td><td class="num-col">268.44 crore (fell to 210.73 crore in FY 2025-26)</td></tr>
+  <tr><td><strong>Cumulative (2006–2026)</strong></td><td class="num-col">~4,870 crore person-days (1,660 cr in UPA era + 3,210 cr in NDA era)</td></tr>
+</table>
+
+<div class="info-box no-break" style="margin-top:8px;">
+  <strong>MGNREGA Background (for context):</strong> Enacted 2005; effective Feb 2, 2006. Originally named NREGA; renamed Mahatma Gandhi NREGA in 2009. Guaranteed 100 days/year per rural household. Covered all rural districts. Budget 2025-26: ₹86,000 crore. Now replaced by VB-G RAM G Act, 2025 from July 1, 2026.
+  <div class="te-block">MGNREGA నేపథ్యం: 2005లో చట్టం; 2006 ఫిబ్రవరి 2 నుండి అమలు. 2009లో మహాత్మ గాంధీ NREGA గా పేరు మార్పు. 100 రోజుల హామీ. ఇప్పుడు VB-G RAM G Act, 2025 దీన్ని జూలై 1, 2026 నుండి స్థానంలో వచ్చింది.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: PM-KISAN -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>3. PM-KISAN — Farmer Income Support <span class="te">/ రైతు ఆదాయ సహాయం</span></span></div>
+
+<div class="scheme-tag">Launched: February 24, 2019 | Ministry of Agriculture &amp; Farmers' Welfare</div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="green">PM-KISAN (Pradhan Mantri Kisan Samman Nidhi) — Key Facts</th></tr>
+  <tr><th style="width:40%">Parameter / అంశం</th><th style="width:60%">Detail / వివరాలు</th></tr>
+  <tr><td><strong>Launch Date</strong></td><td>February 24, 2019 (Gorakhpur, UP)</td></tr>
+  <tr class="highlight-row"><td><strong>Benefit / ప్రయోజనం</strong></td><td><strong>₹6,000 per year</strong> in 3 equal instalments of <strong>₹2,000</strong> each (Apr-Jul, Aug-Nov, Dec-Mar)</td></tr>
+  <tr><td><strong>Eligibility</strong></td><td>All landholding farmer families (no size restriction); excludes income tax payers, institutional landholders, govt employees</td></tr>
+  <tr><td><strong>21st Instalment</strong></td><td>₹18,000 crore released; benefited <strong>9 crore</strong> farmers</td></tr>
+  <tr class="new-row"><td><strong>22nd Instalment</strong></td><td>Released in <strong>March 2026</strong></td></tr>
+  <tr class="new-row"><td><strong>Total Disbursement</strong></td><td><strong>₹4 lakh crore+</strong> since inception (to over 11 crore farmers)</td></tr>
+  <tr><td><strong>DBT Mode</strong></td><td>Direct transfer to farmers' bank/PM-Jan Dhan accounts; eKYC mandatory</td></tr>
+</table>
+
+<div class="te-block">
+PM-KISAN ముఖ్య విషయాలు: <strong>ఫిబ్రవరి 24, 2019</strong>న ప్రారంభం. ప్రతి రైతు కుటుంబానికి సంవత్సరానికి <strong>₹6,000</strong> (3 విడతలలో ₹2,000 చొప్పున). 22వ విడత: <strong>మార్చి 2026</strong>లో విడుదల. ప్రారంభం నుండి <strong>₹4 లక్షల కోట్లు+</strong> బదిలీ.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: MUDRA / PMMY -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>4. MUDRA / PMMY — Micro Enterprise Loans <span class="te">/ సూక్ష్మ వ్యాపార రుణాలు</span></span></div>
+
+<div class="scheme-tag">Launched: April 8, 2015 | MUDRA = Micro Units Development &amp; Refinance Agency Ltd.</div>
+
+<table class="no-break">
+  <tr><th colspan="3" class="green">PMMY — Pradhan Mantri MUDRA Yojana: 3 Categories</th></tr>
+  <tr><th style="width:25%">Category / వర్గం</th><th style="width:35%">Loan Amount / రుణ మొత్తం</th><th style="width:40%">Target / లక్ష్య వర్గం</th></tr>
+  <tr><td><strong>Shishu / శిశు</strong></td><td class="num-col">Up to ₹50,000</td><td>Startup / new entrepreneurs</td></tr>
+  <tr><td><strong>Kishore / కిశోర్</strong></td><td class="num-col">₹50,001 – ₹5 lakh</td><td>Established micro businesses needing scale-up</td></tr>
+  <tr class="new-row"><td><strong>Tarun / తరుణ్</strong></td><td class="num-col">₹5 lakh – ₹10 lakh</td><td>Mature businesses seeking expansion</td></tr>
+</table>
+
+<table class="no-break" style="margin-top:8px">
+  <tr><th colspan="2" class="green">MUDRA — Latest Statistics</th></tr>
+  <tr><td style="width:40%"><strong>FY 2025-26 Loans Sanctioned</strong></td><td class="num-col"><strong>4.93 crore</strong> loans</td></tr>
+  <tr><td><strong>FY 2025-26 Amount Disbursed</strong></td><td class="num-col"><strong>₹6,04,398 crore</strong></td></tr>
+  <tr><td><strong>Launch Year</strong></td><td>April 8, 2015; MUDRA is a subsidiary of SIDBI</td></tr>
+  <tr><td><strong>Tarun+ Category</strong></td><td>Extended to ₹20 lakh (Tarun Plus) in Budget 2024</td></tr>
+  <tr><td><strong>No Collateral</strong></td><td>Loans up to ₹10 lakh without collateral</td></tr>
+  <tr><td><strong>Focus Beneficiaries</strong></td><td>SC/ST, women entrepreneurs, non-farm micro enterprises</td></tr>
+</table>
+
+<div class="te-block">
+MUDRA / PMMY: <strong>ఏప్రిల్ 8, 2015</strong>న ప్రారంభం. 3 వర్గాలు: శిశు (₹50,000 వరకు) | కిశోర్ (₹50,001–₹5 లక్షలు) | తరుణ్ (₹5–₹10 లక్షలు). FY 2025-26: <strong>4.93 కోట్ల రుణాలు</strong> మంజూరు; <strong>₹6,04,398 కోట్లు</strong> పంపిణీ. జామీను లేకుండా ₹10 లక్షల వరకు రుణాలు.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: PMAY — HOUSING FOR ALL -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>5. PMAY — Housing for All <span class="te">/ అందరికీ ఇళ్ళు</span></span></div>
+
+<div class="sec-hdr2"><span>5a. PMAY-U 2.0 — New Phase (Current Affairs) <span class="te">/ PMAY-U 2.0 — కొత్త దశ</span></span></div>
+<div class="scheme-tag">PMAY-U 2.0 Launched: September 1, 2024 | Ministry of Housing &amp; Urban Affairs | Current phase for exam</div>
+
+<div class="green-box no-break">
+  <strong>PMAY-U 2.0</strong> — The new phase of the urban housing scheme, launched on <span class="kw">September 1, 2024</span>. As of <span class="kw">February 23, 2026</span> (PIB): <span class="kw">13.61 lakh houses sanctioned</span> under PMAY-U 2.0. Notably, <span class="kw">96%</span> of all sanctioned houses under PMAY-U 2.0 are in the name of the <span class="kw">female head of the household</span> or in joint name — a landmark for women's property rights.
+  <div class="te-block">PMAY-U 2.0 — <strong>సెప్టెంబర్ 1, 2024</strong>న ప్రారంభించిన కొత్త దశ. ఫిబ్రవరి 23, 2026 నాటికి (PIB): <strong>13.61 లక్షల ఇళ్ళు మంజూరు</strong>. ముఖ్యమైన విషయం: PMAY-U 2.0 కింద మంజూరైన ఇళ్ళలో <strong>96%</strong> మహిళా గృహ యజమాని పేరిట లేదా సంయుక్తంగా నమోదు చేయబడ్డాయి.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="3" class="blue">PMAY-U 2.0 — Key Facts (Current Affairs 2024-26)</th></tr>
+  <tr><th style="width:38%">Parameter / అంశం</th><th style="width:30%">Value / విలువ</th><th style="width:32%">Note / గమనిక</th></tr>
+  <tr class="new-row"><td><strong>Launch Date / ప్రారంభ తేదీ</strong></td><td class="num-col">September 1, 2024</td><td>2nd phase; new scheme</td></tr>
+  <tr class="highlight-row"><td><strong>Houses Sanctioned (Feb 2026)</strong><br><span class="te-cell">మంజూరైన ఇళ్ళు (PIB)</span></td><td class="num-col"><strong>13.61 lakh</strong></td><td>Source: PIB Feb 23, 2026</td></tr>
+  <tr class="new-row"><td><strong>Female Ownership</strong><br><span class="te-cell">మహిళా యాజమాన్యం</span></td><td class="num-col"><strong>96%</strong></td><td>In female/joint name — landmark figure</td></tr>
+  <tr><td><strong>4 Implementation Verticals</strong></td><td colspan="2">Beneficiary Led Construction (BLC) | Affordable Housing in Partnership (AHP) | Affordable Rental Housing (ARH) | Interest Subsidy Scheme</td></tr>
+  <tr><td><strong>Target Beneficiaries</strong></td><td>EWS / LIG / MIG categories</td><td>Urban poor and middle class</td></tr>
+  <tr><td><strong>PMAY-U Phase 1 (background)</strong></td><td>2015–2024 (closed Mar 2022; extended Dec 2025 for completion)</td><td>~1.25 crore sanctioned; historical context only</td></tr>
+</table>
+
+<div class="sec-hdr2"><span>5b. PMAY-Gramin (PMAY-G) <span class="te">/ గ్రామీణ గృహ నిర్మాణ పథకం</span></span></div>
+<div class="scheme-tag">Launched: November 20, 2016 (redesigned from IAY) | Ministry of Rural Development</div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="green">PMAY-G — Key Facts</th></tr>
+  <tr><td style="width:40%"><strong>Original Target (Phase 1 &amp; 2)</strong></td><td>2.95 crore houses (by March 2024)</td></tr>
+  <tr><td><strong>FY 2025-26 Target</strong></td><td>32.9 lakh houses (as of July 2025)</td></tr>
+  <tr><td><strong>FY 2025-26 Sanctioned</strong></td><td>25.6 lakh houses</td></tr>
+  <tr><td><strong>New Target (additional)</strong></td><td>84.37 lakh new houses (Phase 3)</td></tr>
+  <tr class="highlight-row"><td><strong>Unit Assistance</strong><br><span class="te-cell">ఇంటి సహాయం</span></td><td>₹1.20 lakh (plain areas); ₹1.30 lakh (hills/NE/difficult areas) + MGNREGA 90/95 days support</td></tr>
+  <tr><td><strong>SECC-2011 basis</strong></td><td>Permanent waitlists using Socio-Economic and Caste Census</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: AYUSHMAN BHARAT (AB-PMJAY) -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>6. Ayushman Bharat — AB-PMJAY <span class="te">/ ఆయుష్మాన్ భారత్ — ఆరోగ్య పథకం</span></span></div>
+
+<div class="scheme-tag">Launched: September 23, 2018 | National Health Authority (NHA) | Ministry of Health</div>
+
+<div class="red-box no-break">
+  <strong>World's largest government-funded health insurance scheme.</strong> AB-PMJAY provides <span class="kw">₹5 lakh/family/year</span> health coverage for secondary and tertiary hospitalization. Major expansion in 2024: All senior citizens aged <span class="kw">70+ years</span> now covered under <span class="kw">Ayushman Vay Vandana Yojana</span>.
+  <div class="te-block">ప్రపంచంలో అతిపెద్ద ప్రభుత్వ ఆర్థిక ఆరోగ్య బీమా పథకం. AB-PMJAY: <strong>₹5 లక్షల/కుటుంబ/సంవత్సరం</strong> ఆస్పత్రి ఖర్చుల కవరేజ్. 2024 విస్తరణ: <strong>70+ సంవత్సరాల వయసున్న అన్ని సీనియర్ సిటిజన్లు</strong> "ఆయుష్మాన్ వయ వందన యోజన" కింద కవర్ చేయబడ్డారు.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="3" class="blue">AB-PMJAY — Key Statistics</th></tr>
+  <tr><th style="width:38%">Parameter / అంశం</th><th style="width:32%">Value / విలువ</th><th style="width:30%">Note / గమనిక</th></tr>
+  <tr><td><strong>Launch Date</strong></td><td>September 23, 2018</td><td>PM Modi, Ranchi, Jharkhand</td></tr>
+  <tr><td><strong>Health Cover</strong><br><span class="te-cell">ఆరోగ్య కవరేజ్</span></td><td class="num-col">₹5 lakh/family/year</td><td>All secondary &amp; tertiary care</td></tr>
+  <tr><td><strong>Initial Beneficiary Families</strong></td><td class="num-col">10.74 crore families</td><td>Bottom 40% by SECC-2011</td></tr>
+  <tr class="new-row"><td><strong>70+ Year Expansion</strong><br><span class="te-cell">70+ సంవత్సరాల విస్తరణ</span></td><td>Approved <strong>September 2024</strong></td><td><strong>Ayushman Vay Vandana Yojana</strong>; ~4.5 crore additional senior citizens</td></tr>
+  <tr class="highlight-row"><td><strong>Ayushman Cards Issued</strong><br><span class="te-cell">ఆయుష్మాన్ కార్డులు</span></td><td class="num-col"><strong>43.52 crore</strong></td><td>As of Feb 28, 2026 (PIB)</td></tr>
+  <tr><td><strong>Empanelled Hospitals</strong><br><span class="te-cell">జాబితా ఆసుపత్రులు</span></td><td class="num-col">29,000+</td><td>Govt. + private hospitals</td></tr>
+  <tr><td><strong>Cashless Treatment</strong></td><td>Yes — at all empanelled hospitals</td><td>No premium from beneficiary</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 7: PMJJBY + PMSBY + APY -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>7. Social Security — PMJJBY | PMSBY | APY <span class="te">/ సామాజిక భద్రత పథకాలు</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="4" class="blue">Insurance &amp; Pension Schemes — Comparison Table</th></tr>
+  <tr><th style="width:20%">Scheme</th><th style="width:25%">Type / రకం</th><th style="width:27%">Cover / కవరేజ్</th><th style="width:28%">Premium / విశేషాలు</th></tr>
+  <tr>
+    <td><strong>PMJJBY</strong><br><span class="te-cell">PM జీవన్ జ్యోతి బీమా</span></td>
+    <td>Life Insurance<br><span class="te-cell">జీవిత బీమా</span></td>
+    <td class="num-col"><strong>₹2 lakh</strong> on death (any cause)</td>
+    <td>₹436/year | Age: 18–50 | Launched: May 9, 2015 | <strong>27.43 crore</strong> cumulative (PIB May 2026)</td>
+  </tr>
+  <tr>
+    <td><strong>PMSBY</strong><br><span class="te-cell">PM సురక్ష బీమా</span></td>
+    <td>Accident Insurance<br><span class="te-cell">ప్రమాద బీమా</span></td>
+    <td class="num-col"><strong>₹2 lakh</strong> (death/total disability)<br><strong>₹1 lakh</strong> (partial disability)</td>
+    <td>₹20/year | Age: 18–70 | Launched: May 9, 2015 | <strong>~50 crore</strong> enrolled (PIB June 2025)</td>
+  </tr>
+  <tr class="highlight-row">
+    <td><strong>APY</strong><br><span class="te-cell">అటల్ పెన్షన్ యోజన</span></td>
+    <td>Pension (Unorganised sector)<br><span class="te-cell">పెన్షన్</span></td>
+    <td class="num-col"><strong>₹1,000 – ₹5,000</strong>/month (5 tiers) after age 60</td>
+    <td>Contribution varies by age/amount | Launched: May 9, 2015 | PFRDA</td>
+  </tr>
+</table>
+
+<div class="info-box no-break">
+  <strong>PMJJBY Claims (PIB, May 9, 2026):</strong> On its 11th anniversary, the scheme has settled claims worth <span class="kw">₹21,512.50 crore</span> for over <span class="kw">10,75,625 families</span>. All three insurance/pension schemes were launched on the same date: <span class="kw">May 9, 2015</span>.
+  <div class="te-block">PMJJBY 11వ వార్షికోత్సవం (మే 9, 2026): పథకం ప్రారంభం నుండి <strong>10,75,625 కుటుంబాలకు</strong> <strong>₹21,512.50 కోట్ల</strong> పరిహారం చెల్లించబడింది. PMJJBY + PMSBY + APY — మూడూ ఒకే రోజు (<strong>మే 9, 2015</strong>) ప్రారంభమయ్యాయి.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 8: DAY-NRLM / LAKHPATI DIDI -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>8. DAY-NRLM &amp; Lakhpati Didi <span class="te">/ మహిళా సంఘాలు — లఖ్‌పతి దీదీ</span></span></div>
+
+<div class="scheme-tag">DAY-NRLM: Deendayal Antyodaya Yojana – National Rural Livelihood Mission | Ministry of Rural Development</div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="green">DAY-NRLM — Self-Help Groups (SHGs) Key Data</th></tr>
+  <tr><td style="width:42%"><strong>Total Women in SHGs / SHG సభ్యులు</strong></td><td class="num-col"><strong>10+ crore women</strong></td></tr>
+  <tr><td><strong>Total SHGs mobilised</strong></td><td class="num-col">~90 lakh SHGs</td></tr>
+  <tr><td><strong>Bank Linkage</strong></td><td class="num-col">₹10+ lakh crore credit linkage since inception</td></tr>
+  <tr class="new-row"><td><strong>Lakhpati Didi Target</strong><br><span class="te-cell">లఖ్‌పతి దీదీ లక్ష్యం</span></td><td class="num-col"><strong>3 crore women</strong> to earn ₹1 lakh+ annual income (Budget 2024-25 target)</td></tr>
+  <tr><td><strong>Original target</strong></td><td>2 crore Lakhpati Didis (raised to 3 crore in Interim Budget 2024)</td></tr>
+  <tr><td><strong>Achieved by 2025</strong></td><td>1 crore+ Lakhpati Didis already created (PIB)</td></tr>
+</table>
+
+<div class="te-block">
+DAY-NRLM (దీన్‌దయాళ్ అంత్యోదయ యోజన — జాతీయ గ్రామీణ జీవనోపాధి మిషన్): <strong>10 కోట్ల+</strong> మహిళలు స్వయం సహాయక సంఘాలలో సభ్యులు. <strong>లఖ్‌పతి దీదీ</strong>: ₹1 లక్ష+ వార్షిక ఆదాయం పొందే మహిళలు — లక్ష్యం <strong>3 కోట్ల మంది</strong> (బడ్జెట్ 2024 లక్ష్యం). 2025 నాటికి 1 కోటి+ లఖ్‌పతి దీదీలు సాధించబడ్డారు.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 9: QUICK-REFERENCE TABLE -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>9. Master Quick-Reference — All Schemes <span class="te">/ అన్ని పథకాల సారాంశం</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="5" class="mud">Welfare Schemes at a Glance — AP HC SO 2026</th></tr>
+  <tr><th style="width:18%">Scheme / పథకం</th><th style="width:18%">Launch / ప్రారంభం</th><th style="width:20%">Ministry / మంత్రిత్వం<

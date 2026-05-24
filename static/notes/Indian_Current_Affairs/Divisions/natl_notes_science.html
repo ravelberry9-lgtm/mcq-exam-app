@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science &amp; Technology | National CA 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 16mm 14mm 14mm 14mm; }
+@media print {
+  .no-break { page-break-inside: avoid; }
+  .page-break { page-break-before: always; }
+  body { background: #fff !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --brick: #9b3a1a; --mud: #6b4226; --sand: #e8d5b0;
+  --green: #1a5030; --blue: #1a3a78; --gold: #b8860b;
+  --text: #1e1209; --border: #d4b896; --bg: #fdf8f2;
+  --tel-bg: #eef4ff; --tel-bdr: #1a3a78; --alert: #7a1010;
+  --sci: #1a4a6b; --space: #0e2a5a; --energy: #1a5030;
+}
+body { font-family: 'Libre Baskerville', Georgia, serif; background: #ddd5c8;
+       color: var(--text); font-size: 9.5pt; line-height: 1.55; }
+.a4 { width: 794px; min-height: 1123px; background: #fff; margin: 16px auto;
+      padding: 13mm 14mm 12mm; box-shadow: 0 2px 18px rgba(0,0,0,.18); }
+.doc-header { background: linear-gradient(135deg, #0e2a5a, #1a3a78, #0a3d2b);
+              color: #fff; border-radius: 5px; padding: 13px 16px; margin-bottom: 12px; }
+.dh-title { font-size: 14.5pt; font-weight: 700; letter-spacing: .02em; }
+.dh-te { font-family: 'Tiro Telugu', serif; font-size: 11pt; color: #c8d8f8; margin: 3px 0 6px; }
+.dh-meta { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #a8c0f0;
+           display: flex; gap: 12px; flex-wrap: wrap; }
+.dh-meta span { background: rgba(255,255,255,.12); padding: 2px 8px; border-radius: 2px; }
+.sec-hdr { background: var(--space); color: #fff; padding: 5px 11px; border-radius: 3px;
+           margin: 14px 0 7px; font-family: 'Source Sans 3', sans-serif;
+           font-size: 10pt; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+.sec-hdr .te { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; color: #c8d8f8; }
+.sec-hdr2 { background: var(--blue); color: #fff; padding: 4px 11px; border-radius: 3px;
+            margin: 11px 0 6px; font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; }
+.sec-hdr2 .te { font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400; color: #c8d8f8; }
+.sec-hdr3 { background: var(--green); color: #fff; padding: 3px 10px; border-radius: 3px;
+            margin: 9px 0 5px; font-family: 'Source Sans 3', sans-serif; font-size: 9pt; font-weight: 700; }
+table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 6px 0; }
+th { background: var(--space); color: #fff; padding: 5px 8px; text-align: left; font-size: 8.5pt; }
+th.blue { background: var(--blue); }
+th.green { background: var(--green); }
+th.brick { background: var(--brick); }
+th.gold { background: var(--gold); }
+td { border: 1px solid var(--border); padding: 4px 7px; vertical-align: top; }
+tr:nth-child(even) td { background: #f0f5ff; }
+.te-cell { font-family: 'Tiro Telugu', serif; font-size: 9pt; line-height: 1.7; color: #0a1a40; }
+.highlight-row td { background: #fff3cd !important; font-weight: 700; }
+.new-row td { background: #d5f5e3 !important; font-weight: 700; }
+.num-col { font-family: 'Fira Mono', monospace; font-weight: 700; color: var(--brick); }
+.alert-box { background: #fff3e0; border-left: 4px solid #e65100; border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.info-box { background: #e8f0fd; border-left: 4px solid var(--blue); border-radius: 3px;
+            padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.green-box { background: #e8f8f0; border-left: 4px solid var(--green); border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.space-box { background: #e8eeff; border-left: 4px solid var(--space); border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.red-box { background: #fdeeee; border-left: 4px solid var(--alert); border-radius: 3px;
+           padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.te-block { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; line-height: 1.85;
+            color: #0a1a40; background: var(--tel-bg); border-top: 1px solid var(--tel-bdr);
+            padding: 5px 9px; margin-top: 4px; border-radius: 0 0 3px 3px; }
+.mcq-box { background: #fffbe6; border: 1.5px solid #d4a017; border-radius: 4px;
+           padding: 6px 10px; margin: 6px 0; font-size: 8.5pt; }
+.mcq-q { font-weight: 700; color: #5a3000; margin-bottom: 3px; }
+.mcq-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; color: #333; }
+.mcq-ans { margin-top: 3px; color: var(--green); font-weight: 700; font-family: 'Fira Mono', monospace; font-size: 8pt; }
+.badge { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 7.5pt;
+         font-weight: 700; margin: 1px; }
+.b-new { background: #d5f5e3; color: #1a5030; border: 1px solid #a8d8b8; }
+.b-blue { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+.b-gold { background: #fef3c7; color: #92400e; border: 1px solid #f6d860; }
+.b-space { background: #dde8ff; color: #0e2a5a; border: 1px solid #93a8fd; }
+.sum-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+.sg { background: #fff; border-radius: 6px; padding: 10px; text-align: center; border: 2px solid; }
+.sg-space { border-color: var(--space); }
+.sg-green { border-color: var(--green); }
+.sg-brick { border-color: var(--brick); }
+.sg-gold { border-color: var(--gold); }
+.sg-num { font-size: 17pt; font-weight: 800; display: block; line-height: 1.1; }
+.sg-lbl { font-size: 7pt; color: #666; margin-top: 3px; font-family: 'Source Sans 3', sans-serif; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+p { margin: 5px 0; }
+.kw { background: #d0e8ff; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.kw-green { background: #c8f0d8; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.kw-gold { background: #fef3c7; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.mono { font-family: 'Fira Mono', monospace; font-size: 8.5pt; }
+hr.div { border: none; border-top: 1.5px dashed var(--border); margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="a4">
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="dh-title">Science &amp; Technology | National CA 2026</div>
+  <div class="dh-te">విజ్ఞాన శాస్త్రం మరియు సాంకేతిక పరిజ్ఞానం | ISRO | AI | రక్షణ సాంకేతికత | ఇంధనం | నోబెల్ 2025</div>
+  <div class="dh-meta">
+    <span>📅 Period: Jan 2025 – May 23, 2026</span>
+    <span>🎯 AP High Court SO 2026</span>
+    <span>🚀 Sources: ISRO / DRDO / PIB / MeitY</span>
+    <span>🔬 Focus: 2026 Events</span>
+  </div>
+</div>
+
+<!-- SUMMARY GRID -->
+<div class="sum-grid">
+  <div class="sg sg-space"><span class="sg-num" style="color:var(--space)">4th</span><div class="sg-lbl">Space docking country (SpaDeX)<br><span style="font-family:'Tiro Telugu',serif">డాకింగ్ సాంకేతికత 4వ దేశం</span></div></div>
+  <div class="sg sg-green"><span class="sg-num" style="color:var(--green)">₹10,372</span><div class="sg-lbl">IndiaAI Mission (crore, 5 yrs)<br><span style="font-family:'Tiro Telugu',serif">AI మిషన్ కేటాయింపు కోట్లు</span></div></div>
+  <div class="sg sg-brick"><span class="sg-num" style="color:var(--brick)">500 GW</span><div class="sg-lbl">Renewable energy NDC 2030 target<br><span style="font-family:'Tiro Telugu',serif">పునరుత్పాదక ఇంధన లక్ష్యం</span></div></div>
+  <div class="sg sg-gold"><span class="sg-num" style="color:var(--gold)">₹76,000</span><div class="sg-lbl">India Semiconductor Mission (crore)<br><span style="font-family:'Tiro Telugu',serif">సెమీకండక్టర్ మిషన్ పెట్టుబడి</span></div></div>
+</div>
+
+<!-- ═══════════════════════ SECTION 1: ISRO & SPACE ═══════════════════════ -->
+<div class="sec-hdr"><span>1. ISRO &amp; Space Missions 2025–26 <span class="te">/ ISRO మరియు అంతరిక్ష యాత్రలు</span></span></div>
+
+<div class="sec-hdr2"><span>1a. SpaDeX — Space Docking Experiment <span class="te">/ అంతరిక్ష డాకింగ్ ప్రయోగం</span></span></div>
+<div class="space-box no-break">
+  <strong>SpaDeX (Space Docking Experiment)</strong> — ISRO launched <strong>December 30, 2024</strong> via <span class="kw">PSLV-C60</span> from Sriharikota. Two small spacecraft (SDX01 — Chaser; SDX02 — Target) successfully docked in orbit on <strong>January 16, 2025</strong>.<br>
+  <strong>Significance:</strong> India became the <span class="kw">4th country</span> to achieve space docking technology (after USA, USSR/Russia, China). Essential for future Gaganyaan, Chandrayaan-4, and Bharatiya Antariksh Station missions.
+  <div class="te-block">
+    SpaDeX — <strong>డిసెంబర్ 30, 2024</strong>న PSLV-C60 ద్వారా ప్రయోగించారు. రెండు చిన్న నౌకలు (SDX01: Chaser; SDX02: Target) <strong>జనవరి 16, 2025</strong>న కక్ష్యలో విజయవంతంగా డాక్ చేశాయి. భారత్ అంతరిక్ష డాకింగ్ సాధించిన <strong>4వ దేశం</strong> (USA, USSR/Russia, China తర్వాత). భవిష్యత్తు Gaganyaan, Chandrayaan-4, BAS కు అత్యవసరం.
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31088] ISRO SpaDeX మిషన్ ఏ తేదీన ప్రయోగించారు?</div>
+  <div class="mcq-opts"><span>A) నవంబర్ 2024</span><span><strong>B) డిసెంబర్ 30, 2024 ✓</strong></span><span>C) జనవరి 15, 2025</span><span>D) ఫిబ్రవరి 2025</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31090] SpaDeX తర్వాత అంతరిక్ష డాకింగ్ సాధించిన 4వ దేశం? — అంతకు ముందు దేశాలు?</div>
+  <div class="mcq-opts"><span>A) USA, USSR, Japan</span><span><strong>B) USA, USSR/Russia, China ✓</strong></span><span>C) USA, China, Japan</span><span>D) USA, France, China</span></div>
+</div>
+
+<div class="sec-hdr2"><span>1b. NVS-02 / NavIC — NavIC Constellation 2025 <span class="te">/ నావిక్ నక్షత్ర సముదాయం</span></span></div>
+<div class="info-box no-break">
+  <strong>NVS-02</strong> (NavIC Validated Satellite-02) launched <strong>January 29, 2025</strong> via <span class="kw">GSLV-F15 (Mk-II)</span> from Satish Dhawan Space Centre, Sriharikota — ISRO's <strong>100th Sriharikota mission</strong>. Part of 2nd-generation NavIC series. Added L1 civil signal (GPS-compatible). Weight: 2,232 kg; 12-year lifespan.<br>
+  <strong>NavIC</strong> = Navigation with Indian Constellation — India's own GNSS covering the subcontinent + 1,500 km radius.
+  <div class="te-block">
+    NVS-02 — <strong>జనవరి 29, 2025</strong>న GSLV-F15 ద్వారా ప్రయోగించారు — ISRO <strong>శ్రీహరికోట 100వ ప్రయోగం</strong>. 2వ తరం NavIC ఉపగ్రహం; L1 civil signal (GPS అనుకూలత) అదనంగా. NavIC = Navigation with Indian Constellation — భారత స్వతంత్ర GNSS; కవరేజ్: భారత్ + 1,500 km చుట్టు.
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31019] NVS-02ని ఏ రాకెట్ వాహకం ద్వారా పంపారు?</div>
+  <div class="mcq-opts"><span><strong>A) GSLV-F15 (Mk-II) ✓</strong></span><span>B) PSLV-C58</span><span>C) SLS</span><span>D) SSLV</span></div>
+</div>
+
+<div class="sec-hdr2"><span>1c. LVM3-M6 / BlueBird Block-2 — Dec 2025 <span class="te">/ LVM3-M6 ప్రయోగం</span></span></div>
+<div class="info-box no-break">
+  <strong>LVM3-M6</strong> launched <strong>December 24, 2025</strong> carrying <span class="kw">BlueBird Block-2</span> (AST SpaceMobile's satellite, 6,100 kg — heaviest ISRO commercial payload ever) from Sriharikota. Commercial launch for US-based AST SpaceMobile (direct-to-device broadband from space).
+  <div class="te-block">
+    LVM3-M6 — <strong>డిసెంబర్ 24, 2025</strong>న BlueBird Block-2 (6,100 kg — ఇస్రో అత్యధిక వాణిజ్య పేలోడ్) ప్రయోగించింది. AST SpaceMobile (USA) కంపెనీ — నేరుగా మొబైల్ పరికరాలకు అంతరిక్షం నుండి broadband.
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31330] ISRO LVM3-M6 ఏ ఉపగ్రహాన్ని ప్రయోగించింది?</div>
+  <div class="mcq-opts"><span><strong>A) Dec 24, 2025; BlueBird Block-2 (6,100 kg) ✓</strong></span><span>B) Jan 1, 2026; GSAT-24</span><span>C) Feb 5, 2026; OneWeb-19</span><span>D) Mar 15, 2026; NISAR</span></div>
+</div>
+
+<div class="sec-hdr2"><span>1d. Gaganyaan &amp; Future Missions <span class="te">/ గగన్‌యాన్ మరియు భవిష్యత్తు మిషన్లు</span></span></div>
+<table class="no-break">
+  <tr><th colspan="3" class="blue">ISRO Upcoming / Active Missions (2025–2030)</th></tr>
+  <tr><th style="width:22%">Mission</th><th style="width:38%">Details</th><th style="width:40%">Telugu / తెలుగు వివరణ</th></tr>
+  <tr>
+    <td><strong>Gaganyaan G1</strong><br><span class="badge b-gold">2026</span></td>
+    <td>First <em>uncrewed</em> test flight (G1) — scheduled <strong>2026</strong>. Crewed mission (3 astronauts): 2027. 4 astronauts selected: Prasanth Balakrishnan Nair, Ajit Krishnan, Angad Pratap, Shubhanshu Shukla.</td>
+    <td><span class="te-cell">మొదటి uncrewed పరీక్ష ఫ్లైట్ (G1): <strong>2026</strong>. Crewed: 2027. 4 వ్యోమగాముల నిర్ణయం: నాయర్, కృష్ణన్, అంగద్, శుక్లా.</span></td>
+  </tr>
+  <tr class="new-row">
+    <td><strong>Chandrayaan-4</strong><br><span class="badge b-space">2028</span></td>
+    <td>Lunar <strong>sample return</strong> mission — first by India. Will bring back Moon soil/rock samples. Building on Chandrayaan-3 (Aug 23, 2023 landing).</td>
+    <td><span class="te-cell">చంద్రుడి నేల నమూనాలు భూమికి తీసుకురావడం — భారత తొలి lunar sample return మిషన్.</span></td>
+  </tr>
+  <tr>
+    <td><strong>Aditya-L1</strong><br><span class="badge b-new">Active 2025</span></td>
+    <td>India's first dedicated Sun-study satellite; halo orbit around <strong>L1 Lagrange point</strong> (1.5 million km from Earth). Launched Sep 2, 2023. Sending solar corona / CME data in 2025.</td>
+    <td><span class="te-cell">భారత తొలి సూర్య అధ్యయన మిషన్ — <strong>L1 Lagrange పాయింట్</strong> చుట్టూ halo orbit. 2025లో సక్రియంగా ఉంది.</span></td>
+  </tr>
+  <tr class="new-row">
+    <td><strong>BAS</strong><br><span class="badge b-space">2035</span></td>
+    <td><strong>Bharatiya Antariksh Station</strong> — India's own space station. Target: 2035. Will replace ISS dependency.</td>
+    <td><span class="te-cell">భారతీయ అంతరిక్ష కేంద్రం — 2035 నాటికి నిర్మించాలని లక్ష్యం.</span></td>
+  </tr>
+  <tr>
+    <td><strong>NISAR</strong><br><span class="badge b-gold">2025</span></td>
+    <td>NASA–ISRO Synthetic Aperture Radar — joint satellite for Earth observation (agriculture, disasters, ice). Launch: 2025 via GSLV.</td>
+    <td><span class="te-cell">NASA + ISRO సంయుక్త ఉపగ్రహం — భూ పరిశీలన (వ్యవసాయం, విపత్తులు, మంచు). 2025లో ప్రయోగం.</span></td>
+  </tr>
+</table>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31091] Gaganyaan మొదటి uncrewed పరీక్ష ఫ్లైట్ (G1) ఏ సంవత్సరం?</div>
+  <div class="mcq-opts"><span>A) 2025</span><span><strong>B) 2026 ✓</strong></span><span>C) 2027</span><span>D) 2028</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31092] Chandrayaan-4 మిషన్ ముఖ్య లక్ష్యం?</div>
+  <div class="mcq-opts"><span>A) మానవులను దించడం</span><span><strong>B) Lunar sample return ✓</strong></span><span>C) దక్షిణ ధ్రువం</span><span>D) కక్ష్యలో స్టేషన్</span></div>
+</div>
+
+<div class="sec-hdr2"><span>1e. GSAT-20 &amp; Commercial Launches <span class="te">/ వాణిజ్య ప్రయోగాలు</span></span></div>
+<div class="info-box no-break">
+  <strong>GSAT-20 (GSAT-N2)</strong> — launched <strong>November 2024</strong> via <span class="kw">SpaceX Falcon 9</span> (first ISRO satellite on a private US rocket) from Cape Canaveral. High-throughput communication satellite (broadband for Andaman &amp; Nicobar, Lakshadweep, Northeast, aviation/maritime).<br>
+  <strong>Skyroot Aerospace</strong> — India's first private rocket company; tested cryogenic engine <span class="kw">Dhawan-II</span> in 2025 (200 seconds burn duration — longest by Indian private sector).
+  <div class="te-block">
+    GSAT-20: <strong>SpaceX Falcon 9</strong> ద్వారా ప్రయోగించిన తొలి ISRO ఉపగ్రహం. High-throughput broadband — A&amp;N, Lakshadweep, NE కవరేజ్. Skyroot Aerospace — భారత మొదటి ప్రైవేట్ రాకెట్ కంపెనీ; Dhawan-II cryogenic engine 200 సెకన్ల పరీక్ష (2025).
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31174] GSAT-20 ని ఏ రాకెట్‌తో ప్రయోగించారు?</div>
+  <div class="mcq-opts"><span>A) PSLV</span><span>B) GSLV</span><span><strong>C) SpaceX Falcon 9 ✓</strong></span><span>D) Ariane 5</span></div>
+</div>
+
+<div class="sec-hdr2"><span>1f. Shubhanshu Shukla — Axiom Space Ax-4 <span class="te">/ శుభాంశు శుక్లా</span></span></div>
+<div class="green-box no-break">
+  <strong>Shubhanshu Shukla</strong> — IAF Group Captain, selected as India's astronaut for <span class="kw">Axiom Space Mission 4 (Ax-4)</span> to ISS. India's second person in space (after Rakesh Sharma, 1984). Mission: 2025 (aboard SpaceX Crew Dragon). Conducting microgravity science experiments. Also one of 4 Gaganyaan astronauts.
+  <div class="te-block">
+    <strong>శుభాంశు శుక్లా</strong> — IAF గ్రూప్ కెప్టెన్; Axiom Space Mission 4 (Ax-4) ద్వారా ISS (అంతర్జాతీయ అంతరిక్ష కేంద్రం)కు వెళ్లారు. రాకేష్ శర్మ (1984) తర్వాత అంతరిక్షంలో అడుగుపెట్టిన రెండో భారతీయుడు. Gaganyaan 4 వ్యోమగాముల్లో ఒకరు.
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31278] Axiom Space Mission 4 (Ax-4) లో పాల్గొన్న భారత వ్యోమగామి?</div>
+  <div class="mcq-opts"><span>A) రాకేష్ శర్మ</span><span>B) కల్పనా చావ్లా</span><span><strong>C) శుభాంశు శుక్లా ✓</strong></span><span>D) సురేష్ బాబు</span></div>
+</div>
+
+<div class="sec-hdr2"><span>1g. NASA Artemis-2 — April 2026 <span class="te">/ ఆర్టెమిస్-2 మూన్ మిషన్</span></span></div>
+<div class="space-box no-break">
+  <strong>NASA Artemis-2</strong> — First crewed lunar flyby mission since Apollo 17 (1972). Launched <strong>April 1–10, 2026</strong>. Crew: <strong>4 astronauts</strong> — Reid Wiseman (CDR), Victor Glover (Pilot, first Black American on Moon trajectory), Christina Koch (first woman), Jeremy Hansen (Canada, first non-US on lunar mission). Orbit: Lunar free-return trajectory (~10 days). No landing — orbital pass.
+  <div class="te-block">
+    NASA Artemis-2 — <strong>ఏప్రిల్ 1-10, 2026</strong>న ప్రయోగం; 4 వ్యోమగాముల బృందం (Wiseman, Glover, Koch, Hansen). 1972 Apollo-17 తర్వాత తొలి crewed lunar mission. Jeremy Hansen — కెనడా నుండి చంద్ర మిషన్‌లో తొలి non-US వ్యోమగామి. Landing కాదు — orbital flyby.
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31373] NASA Artemis-2 ఎప్పుడు ప్రయోగించారు? వ్యోమగాముల సంఖ్య?</div>
+  <div class="mcq-opts"><span><strong>A) Apr 1-10, 2026; 4 astronauts ✓</strong></span><span>B) Mar 15-25, 2026; 3</span><span>C) Jan 20-30, 2026; 5</span><span>D) Feb 1-10, 2026; 6</span></div>
+</div>
+
+<!-- ═══════════════════════ SECTION 2: AI & DIGITAL INDIA ═══════════════════════ -->
+<div class="sec-hdr"><span>2. AI &amp; Digital India 2025–26 <span class="te">/ కృత్రిమ మేధ మరియు డిజిటల్ భారత్</span></span></div>
+
+<div class="sec-hdr2"><span>2a. IndiaAI Mission <span class="te">/ ఇండియా AI మిషన్</span></span></div>
+<div class="green-box no-break">
+  <strong>IndiaAI Mission</strong> — Cabinet approved <strong>March 2024</strong>; operationalized 2025. Total outlay: <span class="kw">₹10,372 crore</span> over 5 years under <strong>MeitY</strong>. Key pillars: (1) <strong>Compute Infrastructure</strong> — 10,000+ GPU cluster (shared AI compute for startups, academia); (2) <strong>Foundation Models</strong> — Indian language AI models; (3) <strong>AI in Governance</strong> — public service delivery; (4) <strong>Safe &amp; Trusted AI</strong> — ethics, deepfake detection.<br>
+  <strong>Budget 2026-27</strong>: Additional ₹2,000 crore for AI Centers of Excellence (CoE) in IITs.
+  <div class="te-block">
+    IndiaAI Mission (మార్చి 2024 ఆమోదం) — MeitY కింద <strong>₹10,372 కోట్లు</strong> (5 సం). 10,000+ GPU cluster; భారత భాషల AI మోడళ్ళు; ప్రభుత్వ సేవల్లో AI. Budget 2026-27లో IIT AI CoE లకు ₹2,000 కోట్లు అదనంగా.
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31191] India AI Mission కు మొత్తం కేటాయింపు (5 సంవత్సరాలు)?</div>
+  <div class="mcq-opts"><span>A) ₹500 కోట్లు</span><span>B) ₹2,000 కోట్లు</span><span><strong>C) ₹10,372 కోట్లు ✓</strong></span><span>D) ₹5,000 కోట్లు</span></div>
+</div>
+
+<div class="sec-hdr2"><span>2b. 5G Rollout &amp; Next Steps <span class="te">/ 5G విస్తరణ</span></span></div>
+<table class="no-break">
+  <tr><th colspan="3" class="blue">Digital Connectivity — Key Facts</th></tr>
+  <tr><th style="width:35%">Topic</th><th style="width:30%">Key Figure</th><th style="width:35%">Telugu</th></tr>
+  <tr><td>5G launch in India</td><td class="num-col">October 2022</td><td><span class="te-cell">భారత్‌లో 5G ప్రారంభం: అక్టోబర్ 2022</span></td></tr>
+  <tr><td>5G users (2026)</td><td class="num-col">20 crore+</td><td><span class="te-cell">2026 నాటికి 20 కోట్ల+ 5G వినియోగదారులు</span></td></tr>
+  <tr><td>Internet users (2026)</td><td class="num-col">~90 crore</td><td><span class="te-cell">2026 నాటికి ~90 కోట్ల ఇంటర్నెట్ వినియోగదారులు</span></td></tr>
+  <tr class="new-row"><td>BharatNet — goal</td><td class="num-col">All gram panchayats</td><td><span class="te-cell">BharatNet — అన్ని గ్రామ పంచాయతీలకు ఆప్టికల్ ఫైబర్</span></td></tr>
+  <tr><td>DPDP Act passed</td><td class="num-col">2023</td><td><span class="te-cell">డిజిటల్ వ్యక్తిగత డేటా రక్షణ చట్టం — 2023</span></td></tr>
+  <tr><td>Digital Rupee (e-CBDC)</td><td class="num-col">RBI issued 2022+</td><td><span class="te-cell">RBI డిజిటల్ రూపీ — కేంద్ర బ్యాంక్ డిజిటల్ కరెన్సీ (crypto కాదు)</span></td></tr>
+  <tr class="new-row"><td>ONDC users (2026)</td><td class="num-col">10 crore+</td><td><span class="te-cell">ONDC: ఓపెన్ నెట్‌వర్క్ ఫర్ డిజిటల్ కామర్స్ — 10 కోట్ల+ వినియోగదారులు</span></td></tr>
+  <tr><td>EV import duty cut (2024 policy)</td><td class="num-col">100% → 15%</td><td><span class="te-cell">EV దిగుమతి సుంకం 100% నుండి 15%కు తగ్గింపు (2024 నీతి)</span></td></tr>
+</table>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31142] భారత్‌లో 5G సేవలు ఎప్పుడు ప్రారంభమయ్యాయి?</div>
+  <div class="mcq-opts"><span>A) 2021</span><span><strong>B) 2022 ✓</strong></span><span>C) 2023</span><span>D) 2024</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31126] DPDP Act ఏ సంవత్సరం అమలులోకి వచ్చింది?</div>
+  <div class="mcq-opts"><span>A) 2022</span><span><strong>B) 2023 ✓</strong></span><span>C) 2024</span><span>D) 2025</span></div>
+</div>
+
+
+<div class="sec-hdr2"><span>2c. India AI Impact Summit 2026 <span class="te">/ ఇండియా AI ఇంపాక్ట్ సమ్మిట్ 2026</span></span></div>
+<div class="green-box no-break">
+  <strong>India AI Impact Summit 2026</strong> — Organized by <strong>MeitY / IndiaAI</strong>. India's first global AI summit; world's first AI summit hosted by a <span class="kw">Global South</span> nation.<br>
+  <strong>Dates:</strong> February 16–21, 2026 (Leaders' Plenary: Feb 19–20) &nbsp;|&nbsp; <strong>Venue:</strong> <span class="kw">Bharat Mandapam, New Delhi</span><br>
+  <strong>Inaugurated by:</strong> PM Narendra Modi (February 19, 2026)<br>
+  <strong>Scale:</strong> <span class="kw">100+ countries</span>, 20+ heads of state, 60+ ministers, ~6 lakh in-person attendees<br>
+  <strong>Tech CEOs present:</strong> Sam Altman (OpenAI), Sundar Pichai (Google), Satya Nadella (Microsoft), Dario Amodei (Anthropic), Demis Hassabis (Google DeepMind), Mukesh Ambani (Reliance), Bill Gates<br>
+  <strong>World Leaders:</strong> Emmanuel Macron (France), Ant&oacute;nio Guterres (UN Secretary-General)<br>
+  <table style="margin-top:8px;width:100%;font-size:9pt;border-collapse:collapse">
+    <tr><th class="blue" colspan="2">Key Outcomes / ముఖ్య ఫలితాలు</th></tr>
+    <tr><td style="width:42%;padding:4px 6px;border:1px solid #cde"><strong>New Delhi Declaration</strong></td><td style="padding:4px 6px;border:1px solid #cde">Adopted by <strong>92 countries</strong> — inclusive, equitable AI governance framework</td></tr>
+    <tr><td style="padding:4px 6px;border:1px solid #cde"><strong>Frontier AI Commitments</strong></td><td style="padding:4px 6px;border:1px solid #cde">13 leading AI developers signed commitments (New Delhi Frontier AI Impact Commitments)</td></tr>
+    <tr><td style="padding:4px 6px;border:1px solid #cde"><strong>Global AI Impact Commons</strong></td><td style="padding:4px 6px;border:1px solid #cde">New platform for sharing AI models and use-cases globally</td></tr>
+    <tr><td style="padding:4px 6px;border:1px solid #cde"><strong>Investment Committed</strong></td><td style="padding:4px 6px;border:1px solid #cde"><span class="kw">USD 200 billion+</span> in AI investments announced</td></tr>
+    <tr><td style="padding:4px 6px;border:1px solid #cde"><strong>Sovereign GPU boost</strong></td><td style="padding:4px 6px;border:1px solid #cde">India added <span class="kw">20,000 GPUs</span> to national sovereign compute</td></tr>
+    <tr><td style="padding:4px 6px;border:1px solid #cde"><strong>Guinness World Record</strong></td><td style="padding:4px 6px;border:1px solid #cde">2.5 lakh AI responsibility pledges in 24 hours</td></tr>
+    <tr><td style="padding:4px 6px;border:1px solid #cde"><strong>Equitable AI Playbook</strong></td><td style="padding:4px 6px;border:1px solid #cde">ILO — Equitable AI Transition Playbook released</td></tr>
+  </table>
+  <div class="te-block" style="margin-top:8px">
+    ఇండియా AI ఇంపాక్ట్ సమ్మిట్ 2026: <strong>భారత్ మండపం, న్యూఢిల్లీ</strong>; ఫిబ్రవరి 16–21, 2026; PM మోడీ ఫిబ్రవరి 19న ప్రారంభించారు. <strong>100+ దేశాలు</strong>; గ్లోబల్ సౌత్ జాతి నిర్వహించిన మొట్టమొదటి AI సమ్మిట్. Sam Altman, Sundar Pichai, Satya Nadella, Dario Amodei, Demis Hassabis హాజరయ్యారు. <strong>న్యూఢిల్లీ డిక్లరేషన్</strong>: 92 దేశాలు; <strong>USD 200 బిలియన్+</strong> పెట్టుబడులు; 20,000 GPUs జోడింపు; గిన్నిస్ రికార్డ్ (2.5 లక్షల AI బాధ్యతా ప్రతిజ్ఞలు 24 గంటల్లో).
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31790] India AI Impact Summit 2026 ఎక్కడ జరిగింది?</div>
+  <div class="mcq-opts"><span>A) Vigyan Bhawan, Delhi</span><span><strong>B) Bharat Mandapam, New Delhi ✓</strong></span><span>C) Yashobhoomi, Delhi</span><span>D) Hyderabad International Convention Centre</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31791] India AI Impact Summit 2026 కి హాజరైన CEO (OpenAI)?</div>
+  <div class="mcq-opts"><span><strong>A) Sam Altman ✓</strong></span><span>B) Elon Musk</span><span>C) Jensen Huang</span><span>D) Mark Zuckerberg</span></div>
+</div>
+
+<!-- ═══════════════════════ SECTION 3: DEFENCE TECHNOLOGY ═══════════════════════ -->
+<div class="sec-hdr"><span>3. Defence Technology 2025–26 <span class="te">/ రక్షణ సాంకేతికత — DRDO</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="4" class="brick">DRDO / India Defence Tech — Key Weapons &amp; Systems</th></tr>
+  <tr><th style="width:20%">Weapon / System</th><th style="width:25%">Key Specs</th><th style="width:25%">Event (2025-26)</th><th style="width:30%">Telugu</th></tr>
+  <tr>
+    <td><strong>Prithvi-3</strong><br>(Dhanush Naval)</td>
+    <td>Range: <strong>316 km</strong>; Payload: 500 kg; Solid fuel; RINS guidance</td>
+    <td>Test: <strong>Dec 17, 2025</strong> — Wheeler Island (Odisha)</td>
+    <td><span class="te-cell">డిసెంబర్ 2025న పరీక్ష; 316 కి.మీ. పరిధి; నావికా రూపాంతర</span></td>
+  </tr>
+  <tr class="new-row">
+    <td><strong>Agni-5</strong></td>
+    <td>Range: <strong>5,000 km+</strong>; MIRV capable (Multiple Independently Targetable Re-entry Vehicles)</td>
+    <td>MIRV test (Mission Divyastra) <strong>Mar 2024</strong></td>
+    <td><span class="te-cell">5,000 కి.మీ.+ పరిధి; MIRV సాంకేతికత (Mission Divyastra)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Pinaka MRLS</strong></td>
+    <td>Multi-barrel Rocket Launch System; range 45–90 km (extended 120 km)</td>
+    <td>Export to Armenia 2025; France deal discussions</td>
+    <td><span class="te-cell">బహుళ రాకెట్ లాంచ్ వ్యవస్థ; ఆర్మేనియాకు ఎగుమతి 2025</span></td>
+  </tr>
+  <tr class="new-row">
+    <td><strong>BrahMos</strong></td>
+    <td>Supersonic cruise missile; 290–800 km; India-Russia joint</td>
+    <td>Philippines delivered BrahMos missiles <strong>2024</strong>; more orders 2025</td>
+    <td><span class="te-cell">ఫిలిప్పీన్స్‌కు BrahMos సరఫరా 2024; 2025లో మరిన్ని ఆర్డర్లు</span></td>
+  </tr>
+  <tr>
+    <td><strong>LR-AShM</strong></td>
+    <td>Long-Range Anti-Ship Hypersonic Missile — new</td>
+    <td>Displayed at <strong>Republic Day Jan 26, 2026</strong></td>
+    <td><span class="te-cell">జనవరి 26, 2026 గణతంత్ర దినోత్సవంలో తొలిసారి ప్రదర్శన</span></td>
+  </tr>
+  <tr class="new-row">
+    <td><strong>INS Arighat</strong></td>
+    <td>SSBN (Nuclear-powered Ballistic Missile Submarine); 2nd Arihant-class</td>
+    <td>Commissioned <strong>Aug 2024</strong>; operationally active 2025</td>
+    <td><span class="te-cell">అణు-శక్తి బాలిస్టిక్ క్షిపణి జలాంతర్గామి — 2024లో కమిషన్</span></td>
+  </tr>
+  <tr>
+    <td><strong>INS Nilgiri</strong></td>
+    <td>Project-17A stealth frigate; first of 7</td>
+    <td>Commissioned <strong>Jan 15, 2025</strong> at Vizag</td>
+    <td><span class="te-cell">స్టెల్త్ ఫ్రిగేట్ — జనవరి 2025న కమిషన్</span></td>
+  </tr>
+  <tr class="new-row">
+    <td><strong>Tejas Mk-2</strong></td>
+    <td>Advanced LCA; 83 kN engine; multi-role; 2,200 km range</td>
+    <td>Development ongoing; first flight target 2026</td>
+    <td><span class="te-cell">అభివృద్ధి కొనసాగుతోంది; తొలి ఎగురు 2026 లక్ష్యం</span></td>
+  </tr>
+</table>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31018] డిసెంబర్ 2025లో పరీక్షించిన Prithvi-3 క్షిపణి పరిధి?</div>
+  <div class="mcq-opts"><span>A) 150 కి.మీ.</span><span>B) 200 కి.మీ.</span><span><strong>C) 316 కి.మీ. ✓</strong></span><span>D) 500 కి.మీ.</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31213] DRDO Agni-5 క్షిపణి పరిధి?</div>
+  <div class="mcq-opts"><span>A) 1,000 km</span><span>B) 3,000 km</span><span><strong>C) 5,000 km+ ✓</strong></span><span>D) 10,000 km</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31322] 77వ గణతంత్ర దినోత్సవంలో ప్రదర్శించిన కొత్త hypersonic ఆయుధం?</div>
+  <div class="mcq-opts"><span>A) BrahMos-II</span><span>B) Agni-V</span><span><strong>C) LR-AShM ✓</strong></span><span>D) Pralay</span></div>
+</div>
+
+<!-- ═══════════════════════ SECTION 4: ENERGY & CLIMATE ═══════════════════════ -->
+<div class="sec-hdr"><span>4. Energy, Climate &amp; Environment 2025–26 <span class="te">/ ఇంధనం, వాతావరణం మరియు పర్యావరణం</span></span></div>
+
+<div class="sec-hdr2"><span>4a. Renewable Energy &amp; Solar <span class="te">/ పునరుత్పాదక ఇంధనం మరియు సూర్యశక్తి</span></span></div>
+<div class="green-box no-break">
+  India's <strong>NDC 2030 target</strong>: <span class="kw">500 GW non-fossil fuel capacity</span>. Installed renewable capacity by <strong>March 2026 = ~274 GW</strong> (solar + wind + hydro + others). Solar alone ~100 GW+.<br>
+  <strong>PM Surya Ghar: Muft Bijli Yojana</strong> (Feb 2024): rooftop solar for 1 crore homes; up to 300 units/month free electricity; subsidy up to ₹78,000.<br>
+  <strong>Hydrogen Train Trial</strong>: India's first hydrogen-powered train trial began <strong>January 26, 2026</strong> on <span class="kw">Jind–Sonipat route</span> (Haryana); 6 coaches, 140 km/h max speed.
+  <div class="te-block">
+    NDC 2030 లక్ష్యం: <strong>500 GW</strong> non-fossil fuel. మార్చి 2026 నాటికి ~274 GW renewable వ్యవస్థాపన. PM Surya Ghar (ఫిబ్రవరి 2024): 1 కోటి ఇళ్ళకు rooftop solar; 300 units/నెల ఉచిత. <strong>హైడ్రోజన్ ట్రెయిన్ పరీక్ష</strong>: జనవరి 26, 2026న జిండ్-సోనిపట్ రూటులో ప్రారంభం; 6 కోచులు; 140 km/h.
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31066] భారత్ 2030 నాటికి సాధించాలనుకున్న పునరుత్పాదక ఇంధన లక్ష్యం (NDC)?</div>
+  <div class="mcq-opts"><span>A) 300 GW</span><span>B) 400 GW</span><span><strong>C) 500 GW ✓</strong></span><span>D) 600 GW</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31363] భారత హైడ్రోజన్ ట్రెయిన్ పరీక్షలు ఏ రూట్‌లో ప్రారంభమయ్యాయి?</div>
+  <div class="mcq-opts"><span>A) Delhi–Agra</span><span><strong>B) Jind–Sonipat (Haryana) ✓</strong></span><span>C) Mumbai–Pune</span><span>D) Chennai–Bengaluru</span></div>
+</div>
+
+<div class="sec-hdr2"><span>4b. Green Hydrogen, Nuclear &amp; EV <span class="te">/ గ్రీన్ హైడ్రోజన్, అణు మరియు ఎలక్ట్రిక్ వాహనాలు</span></span></div>
+<table class="no-break">
+  <tr><th colspan="3" class="green">Energy Transition — Numbers to Remember</th></tr>
+  <tr><th style="width:40%">Topic</th><th style="width:25%">Key Number</th><th style="width:35%">Telugu</th></tr>
+  <tr><td>Green Hydrogen Mission 2030 target</td><td class="num-col"><strong>5 MTPA</strong></td><td><span class="te-cell">2030 నాటికి 5 MTPA హైడ్రోజన్ ఉత్పత్తి లక్ష్యం</span></td></tr>
+  <tr><td>Nuclear power capacity (2026)</td><td class="num-col"><strong>~7,480 MW</strong></td><td><span class="te-cell">2026 నాటికి ~7,480 MW అణు విద్యుత్</span></td></tr>
+  <tr class="new-row"><td>Nuclear Budget 2026-27 announcement</td><td class="num-col"><strong>Private sector opened</strong></td><td><span class="te-cell">2026-27 బడ్జెట్: ప్రైవేట్ రంగానికి అణు విద్యుత్ తెరచారు</span></td></tr>
+  <tr><td>EV target in vehicle sales by 2030</td><td class="num-col"><strong>30%</strong></td><td><span class="te-cell">2030 నాటికి 30% వాహన అమ్మకాలు EV</span></td></tr>
+  <tr><td>India NDC — Net Zero year</td><td class="num-col"><strong>2070</strong></td><td><span class="te-cell">భారత్ Net Zero లక్ష్యం సంవత్సరం: 2070</span></td></tr>
+  <tr><td>COP30 location</td><td class="num-col"><strong>Belém, Brazil — 2025</strong></td><td><span class="te-cell">COP30: Belém, Brazil; నవంబర్ 2025</span></td></tr>
+</table>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31047] భారత్ Net Zero లక్ష్యం సంవత్సరం?</div>
+  <div class="mcq-opts"><span>A) 2050</span><span><strong>B) 2070 ✓</strong></span><span>C) 2030</span><span>D) 2060</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31260] Budget 2026-27లో అణు విద్యుత్‌కు ముఖ్యమైన నిర్ణయం?</div>
+  <div class="mcq-opts"><span>A) కర్మాగారాల మూసివేత</span><span><strong>B) ప్రైవేట్ రంగానికి అణు విద్యుత్ తెరవడం ✓</strong></span><span>C) USA నుండి దిగుమతులు</span><span>D) అణు బాంబు తయారీ</span></div>
+</div>
+
+<!-- ═══════════════════════ SECTION 5: SEMICONDUCTOR & INNOVATION ═══════════════════════ -->
+<div class="sec-hdr"><span>5. Semiconductor, Quantum &amp; Innovation <span class="te">/ సెమీకండక్టర్, క్వాంటమ్ మరియు నవ్యత</span></span></div>
+
+<div class="two-col no-break">
+  <div>
+    <div class="sec-hdr3">India Semiconductor Mission (ISM)</div>
+    <div class="space-box">
+      Total investment: <span class="kw">₹76,000 crore</span>. Three approved fabs:<br>
+      1. <strong>Tata Electronics–PSMC</strong> (Taiwan) — <span class="kw">Dholera, Gujarat</span> — 28nm chip fab; ₹91,000 crore<br>
+      2. <strong>CG Power–Renesas–Stars Microelectronics</strong> — Sanand, Gujarat — OSAT<br>
+      3. <strong>Tata Electronics–OSAT</strong> — Morigaon, Assam — chip assembly &amp; testing
+      <div class="te-block">మొదటి సెమీకండక్టర్ ఫ్యాబ్: <strong>ధోలేరా, గుజరాత్</strong> (Tata-PSMC). ISM పెట్టుబడి: <strong>₹76,000 కోట్లు</strong>. 3 ఆమోదిత ఫ్యాక్టరీలు.</div>
+    </div>
+    <div class="mcq-box">
+      <div class="mcq-q">Q [31134] మొదటి semiconductor fab ఎక్కడ?</div>
+      <div class="mcq-opts"><span>A) Bengaluru</span><span>B) Hyderabad</span><span><strong>C) Dholera, Gujarat ✓</strong></span><span>D) Pune</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="sec-hdr3">National Quantum Mission (NQM)</div>
+    <div class="space-box">
+      Approved <strong>April 2023</strong>; Budget: <span class="kw">₹6,003 crore</span> (2023–31, 8 years). Goals: 50–1000 qubit quantum computers; satellite-based quantum communication; quantum cryptography; 4 Thematic Hubs (T-Hubs) at premier institutes. India among select few countries with national quantum mission.
+      <div class="te-block">జాతీయ క్వాంటమ్ మిషన్: ₹6,003 కోట్లు (2023-31). 50-1000 qubit కంప్యూటర్లు; quantum satellite communication; 4 T-Hub కేంద్రాలు.</div>
+    </div>
+    <div class="sec-hdr3">Critical Minerals (2025)</div>
+    <div class="space-box">
+      India declared <strong>30 critical minerals</strong> (Lithium, Cobalt, Nickel, Rare Earth Elements, etc.) for EV batteries, semiconductors, defence. Mining rights auctioned 2025.
+      <div class="te-block">30 క్రిటికల్ మినరల్స్ (Lithium, Cobalt, REE…) — EV బ్యాటరీ, semicond., రక్షణ కోసం.</div>
+    </div>
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31210] India Semiconductor Mission మొత్తం పెట్టుబడి?</div>
+  <div class="mcq-opts"><span>A) ₹50,000 కోట్లు</span><span><strong>B) ₹76,000 కోట్లు ✓</strong></span><span>C) ₹1,00,000 కోట్లు</span><span>D) ₹1,50,000 కోట్లు</span></div>
+</div>
+
+<div class="info-box no-break">
+  <strong>IFFCO Nano Urea</strong> — World's first nano liquid urea (500 ml bottle = 1 bag of urea). Reduces soil and water pollution; increases yield. Launched 2021, scaled 2025.<br>
+  <strong>Global Innovation Index (GII) 2025</strong>: India ranked <span class="kw">39th</span> (up from 40th in 2024) — highest ever. Published by WIPO.<br>
+  <strong>India's first private rocket</strong>: <strong>Skyroot Aerospace</strong> successfully launched Vikram-S (Nov 2022). Dhawan-II cryo engine tested 2025.
+  <div class="te-block">
+    IFFCO నానో యూరియా: ప్రపంచ తొలి నానో లిక్విడ్ యూరియా — 500 ml = 1 బస్తా యూరియా. GII 2025: భారత్ 39వ స్థానం (WIPO). Skyroot Aerospace: తొలి ప్రైవేట్ రాకెట్ కంపెనీ.
+  </div>
+</div>
+
+<!-- ═══════════════════════ SECTION 6: HEALTH SCIENCE 2025 ═══════════════════════ -->
+<div class="sec-hdr"><span>6. Health Science &amp; Medical Tech 2025–26 <span class="te">/ ఆరోగ్య విజ్ఞానం మరియు వైద్య సాంకేతికత</span></span></div>
+
+<div class="two-col no-break">
+  <div>
+    <div class="sec-hdr3">HMPV Scare — Jan 2025</div>
+    <div class="alert-box">
+      <strong>Human Metapneumovirus (HMPV)</strong> — respiratory virus re-emerged in China Jan 2025. India confirmed isolated cases but <strong>no outbreak declared</strong>. Causes flu-like symptoms; affects elderly &amp; children. ICMR monitored. Not new — discovered 2001; no vaccine yet.
+      <div class="te-block">HMPV — శ్వాసకోశ వైరస్; జనవరి 2025న చైనాలో పెరిగింది; భారత్‌లో విడి కేసులు మాత్రమే. ICMR నిఘా. వ్యాక్సిన్ లేదు.</div>
+    </div>
+  </div>
+  <div>
+    <div class="sec-hdr3">AIIMS Expansion 2025-26</div>
+    <div class="green-box">
+      Total <strong>AIIMS in India (2025-26) = 22</strong>. Original AIIMS Delhi (1956). New AIIMS: Vijayawada (AP), Bibinagar (Telangana), Madurai, Darbhanga, Awantipora (J&amp;K) among recently added. Budget 2026-27: ₹8,500 crore for NHM.
+      <div class="te-block">2025-26 నాటికి భారత్‌లో మొత్తం <strong>22 AIIMS</strong>. AP: విజయవాడ AIIMS. తెలంగాణ: బిబినగర్ AIIMS.</div>
+    </div>
+  </div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31159] 2025-26లో AIIMS మొత్తం సంఖ్య?</div>
+  <div class="mcq-opts"><span>A) 15</span><span>B) 18</span><span><strong>C) 22 ✓</strong></span><span>D) 25</span></div>
+</div>
+
+<!-- ═══════════════════════ SECTION 7: NOBEL PRIZES 2025 ═══════════════════════ -->
+<div class="sec-hdr"><span>7. Nobel Prizes 2025 <span class="te">/ నోబెల్ పురస్కారాలు 2025</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="4" class="gold">Nobel Prize Winners 2025 (Announced October 2025)</th></tr>
+  <tr><th style="width:18%">Category</th><th style="width:28%">Winner(s)</th><th style="width:24%">Country</th><th style="width:30%">Reason / Telugu</th></tr>
+  <tr class="new-row">
+    <td><strong>Physics</strong><br><span class="te-cell">భౌతిక శాస్త్రం</span></td>
+    <td><strong>John Clarke + Michel H. Devoret + John M. Martinis</strong></td>
+    <td>USA</td>
+    <td>Discovery of macroscopic quantum mechanical tunnelling &amp; energy quantisation in an electric circuit (superconducting qubits — foundation of quantum computing)<br><span class="te-cell">సూపర్‌కండక్టింగ్ క్వాంటమ్ సర్క్యూట్‌లో మాక్రోస్కోపిక్ క్వాంటమ్ టన్నెలింగ్ ఆవిష్కరణ</span></td>
+  </tr>
+  <tr>
+    <td><strong>Chemistry</strong><br><span class="te-cell">రసాయన శాస్త్రం</span></td>
+    <td><strong>Susumu Kitagawa + Richard Robson + Omar M. Yaghi</strong></td>
+    <td>Japan / Australia / USA</td>
+    <td>Development of metal–organic frameworks (MOFs) — porous materials with enormous surface area for gas storage, separation, catalysis<br><span class="te-cell">మెటల్–ఆర్గానిక్ ఫ్రేమ్‌వర్క్‌లు (MOFs) అభివృద్ధి — భారీ ఉపరితల వైశాల్యంతో శ్రవణ పదార్థాలు</span></td>
+  </tr>
+  <tr class="new-row">
+    <td><strong>Medicine / Physiology</strong><br><span class="te-cell">వైద్య శాస్త్రం</span></td>
+    <td><strong>Mary E. Brunkow + Frederick J. Ramsdell + Shimon Sakaguchi</strong></td>
+    <td>USA / Japan</td>
+    <td>Discoveries concerning peripheral immune tolerance — how the body's immune system avoids attacking its own cells (Treg cells / FOXP3)<br><span class="te-cell">పరిధీయ రోగనిరోధక సహనశీలత — స్వయం దాడి నివారణ విధానం (Treg కణాలు)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Peace</strong><br><span class="te-cell">శాంతి</span></td>
+    <td><strong>María Corina Machado</strong></td>
+    <td>Venezuela</td>
+    <td>Democracy restoration struggle in Venezuela<br><span class="te-cell">వెనెజులాలో ప్రజాస్వామ్య పోరాటానికి</span></td>
+  </tr>
+  <tr class="new-row">
+    <td><strong>Literature</strong><br><span class="te-cell">సాహిత్యం</span></td>
+    <td><strong>László Krasznahorkai</strong></td>
+    <td>Hungary</td>
+    <td>Works exploring decay, totalitarianism, and the human condition<br><span class="te-cell">మానవ స్థితి, నిరంకుశత్వంపై లోతైన రచనలు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Economics</strong><br><span class="te-cell">ఆర్థిక శాస్త్రం</span></td>
+    <td><strong>Joel Mokyr + Philippe Aghion + Peter Howitt</strong></td>
+    <td>USA / France / Canada</td>
+    <td>Explaining innovation-driven economic growth — prerequisites for sustained growth (Mokyr) &amp; creative destruction theory (Aghion + Howitt)<br><span class="te-cell">నవీన ఆర్థిక వృద్ధి సిద్ధాంతం — సృజనాత్మక విధ్వంసం &amp; దీర్ఘకాలిక వృద్ధి పరిస్థితులు</span></td>
+  </tr>
+</table>
+
+<div class="alert-box no-break">
+  <strong>⚡ Exam Note — Nobel 2025 vs 2024 (Common Confusion):</strong>
+  <br>• <strong>Nobel Physics 2024</strong> = Hopfield + Hinton (AI/ML neural networks) — "Godfather of AI"
+  <br>• <strong>Nobel Physics 2025</strong> = Clarke + Devoret + Martinis (superconducting qubits / quantum computing hardware)
+  <br>• <strong>Nobel Chemistry 2024</strong> = Baker + Hassabis + Jumper (AlphaFold protein structure)
+  <br>• <strong>Nobel Chemistry 2025</strong> = Kitagawa + Robson + Yaghi (Metal-Organic Frameworks / MOFs)
+  <br>• <strong>Nobel Medicine 2024</strong> = Ambros + Ruvkun (microRNA)
+  <br>• <strong>Nobel Medicine 2025</strong> = Brunkow + Ramsdell + Sakaguchi (immune tolerance / Treg cells)
+  <div class="te-block">గమనిక: 2024 vs 2025 Nobel గ్రహీతలను పరీక్షలో గందరగోళపడవద్దు. Chemistry 2025 = MOFs (AlphaFold కాదు); Medicine 2025 = Immune Tolerance (microRNA కాదు); Economics 2025 = Mokyr+Aghion+Howitt (Acemoglu కాదు).</div>
+</div>
+
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31297] 2024 Nobel Physics ఎవరికి వచ్చింది?</div>
+  <div class="mcq-opts"><span>A) హిగ్స్ బోసన్ శాస్త్రవేత్తలు</span><span><strong>B) John Hopfield &amp; Geoffrey Hinton (AI/ML) ✓</strong></span><span>C) Quantum computing</span><span>D) Black hole</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [NEW] Nobel Physics 2025 ఎవరికి వచ్చింది?</div>
+  <div class="mcq-opts"><span><strong>A) Clarke + Devoret + Martinis (superconducting qubits) ✓</strong></span><span>B) Hopfield + Hinton (AI/ML)</span><span>C) Higgs + Englert</span><span>D) Penrose + Genzel</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [NEW] Nobel Chemistry 2025 ఎవరికి? వారి కనుగొనిన విషయం ఏమిటి?</div>
+  <div class="mcq-opts"><span>A) Baker + Hassabis (AlphaFold)</span><span><strong>B) Kitagawa + Robson + Yaghi (MOFs — Metal-Organic Frameworks) ✓</strong></span><span>C) Moungi Bawendi (quantum dots)</span><span>D) Carolyn Bertozzi</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [NEW] Nobel Medicine/Physiology 2025 ఎవరికి?</div>
+  <div class="mcq-opts"><span>A) Ambros + Ruvkun (microRNA)</span><span>B) Svante Pääbo (ancient DNA)</span><span><strong>C) Brunkow + Ramsdell + Sakaguchi (peripheral immune tolerance) ✓</strong></span><span>D) Karikó + Weissman (mRNA)</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [NEW] Nobel Economics 2025 — విజేతలు ఎవరు?</div>
+  <div class="mcq-opts"><span>A) Acemoglu + Johnson + Robinson (institutions)</span><span><strong>B) Mokyr + Aghion + Howitt (innovation-driven growth) ✓</strong></span><span>C) Duflo + Banerjee (poverty)</span><span>D) Angrist + Imbens (causality)</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31127] 2025 Nobel Peace Prize ఎవరికి?</div>
+  <div class="mcq-opts"><span><strong>A) María Corina Machado (Venezuela) ✓</strong></span><span>B) Nicaragua prisoners</span><span>C) Nihon Hidankyo</span><span>D) WHO</span></div>
+</div>
+<div class="mcq-box no-break">
+  <div class="mcq-q">Q [31128] 2025 Nobel Literature ఎవరికి?</div>
+  <div class="mcq-opts"><span><strong>A) László Krasznahorkai (Hungary) ✓</strong></span><span>B) Han Kang</span><span>C) Annie Ernaux</span><span>D) Jon Fosse</span></div>
+</div>
+
+<!-- ═══════════════════════ SECTION 8: QUICK RECALL ═══════════════════════ -->
+<div class="sec-hdr"><span>8. Quick Recall — Science &amp; Tech Numbers <span class="te">/ శీఘ్ర సమీక్ష — సంఖ్యలు</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="3" class="blue">Science &amp; Tech — Memory Numbers for Exam</th></tr>
+  <tr><th style="width:40%">Topic / అంశం</th><th style="width:28%">Key Number</th><th style="width:32%">Extra Fact</th></tr>
+  <tr><td>SpaDeX launch date</td><td class="num-col"><strong>Dec 30, 2024</strong></td><td>PSLV-C60; docking Jan 16, 2025</td></tr>
+  <tr><td>SpaDeX — India became Nth country</td><td class="num-col"><strong>4th</strong></td><td>After USA, USSR/Russia, China</td></tr>
+  <tr><td>NVS-02 launch + rocket</td><td class="num-col"><strong>Jan 29, 2025; GSLV-F15</strong></td><td>ISRO's 100th Sriharikota mission</td></tr>
+  <tr><td>LVM3-M6 + payload</td><td class="num-col"><strong>Dec 24, 2025; BlueBird 6,100 kg</strong></td><td>Heaviest ISRO commercial payload</td></tr>
+  <tr><td>Gaganyaan G1 (uncrewed) target year</td><td class="num-col"><strong>2026</strong></td><td>Crewed mission 2027</td></tr>
+  <tr><td>Artemis-2 launch + crew</td><td class="num-col"><strong>Apr 2026; 4 astronauts</strong></td><td>First crewed lunar flyby since 1972</td></tr>
+  <tr><td>IndiaAI Mission allocation</td><td class="num-col"><strong>₹10,372 crore / 5 yrs</strong></td><td>MeitY; 10,000+ GPU cluster</td></tr>
+  <tr class="new-row"><td>India AI Impact Summit 2026 — venue</td><td class="num-col"><strong>Bharat Mandapam, New Delhi</strong></td><td>Feb 16–21, 2026; inaugurated by PM Modi Feb 19</td></tr>
+  <tr><td>AI Summit — New Delhi Declaration</td><td class="num-col"><strong>92 countries</strong></td><td>Sam Altman, Sundar Pichai, Satya Nadella attended</td></tr>
+  <tr><td>AI Summit — investment commitment</td><td class="num-col"><strong>USD 200 billion+</strong></td><td>India added 20,000 GPUs; Guinness Record: 2.5L pledges</td></tr>
+  <tr><td>5G launch in India</td><td class="num-col"><strong>October 2022</strong></td><td>5G users 2026: 20 crore+</td></tr>
+  <tr><td>DPDP Act year</td><td class="num-col"><strong>2023</strong></td><td>Digital Personal Data Protection</td></tr>
+  <tr><td>India Semiconductor Mission</td><td class="num-col"><strong>₹76,000 crore</strong></td><td>1st fab: Dholera, Gujarat (Tata-PSMC)</td></tr>
+  <tr><td>National Quantum Mission</td><td class="num-col"><strong>₹6,003 crore (2023–31)</strong></td><td>50–1000 qubit computers target</td></tr>
+  <tr><td>NDC renewable energy 2030</td><td class="num-col"><strong>500 GW</strong></td><td>Installed Mar 2026: ~274 GW</td></tr>
+  <tr><td>Green Hydrogen Mission 2030</td><td class="num-col"><strong>5 MTPA</strong></td><td>National Green Hydrogen Mission</td></tr>
+  <tr><td>India Net Zero target year</td><td class="num-col"><strong>2070</strong></td><td>NDC at COP26</td></tr>
+  <tr><td>Nuclear power (2026)</td><td class="num-col"><strong>~7,480 MW</strong></td><td>Budget 2026-27: private sector opened</td></tr>
+  <tr><td>Hydrogen train trial — route</td><td class="num-col"><strong>Jind–Sonipat</strong></td><td>Jan 26, 2026; Haryana</td></tr>
+  <tr><td>EV target 2030</td><td class="num-col"><strong>30%</strong></td><td>Of total vehicle sales</td></tr>
+  <tr><td>Prithvi-3 range</td><td class="num-col"><strong>316 km</strong></td><td>Tested Dec 2025; naval variant</td></tr>
+  <tr><td>Agni-5 range</td><td class="num-col"><strong>5,000 km+</strong></td><td>MIRV test: Mission Divyastra (Mar 2024)</td></tr>
+  <tr><td>AIIMS total (2025-26)</td><td class="num-col"><strong>22</strong></td><td>AP: Vijayawada; TS: Bibinagar</td></tr>
+  <tr><td>GII 2025 India rank</td><td class="num-col"><strong>39th</strong></td><td>Highest ever; WIPO</td></tr>
+  <tr><td>Nobel Physics 2024</td><td class="num-col"><strong>Hopfield + Hinton (AI)</strong></td><td>"Godfather of AI" — AI/ML neural networks</td></tr>
+  <tr><td>Nobel Physics 2025</td><td class="num-col"><strong>Clarke + Devoret + Martinis</strong></td><td>Superconducting qubits / quantum tunnelling in circuits</td></tr>
+  <tr><td>Nobel Chemistry 2024</td><td class="num-col"><strong>Baker+Hassabis+Jumper</strong></td><td>AlphaFold / protein structure prediction</td></tr>
+  <tr><td>Nobel Chemistry 2025</td><td class="num-col"><strong>Kitagawa+Robson+Yaghi</strong></td><td>Metal-Organic Frameworks (MOFs)</td></tr>
+  <tr><td>Nobel Medicine 2024</td><td class="num-col"><strong>Ambros + Ruvkun</strong></td><td>microRNA discovery</td></tr>
+  <tr><td>Nobel Medicine 2025</td><td class="num-col"><strong>Brunkow+Ramsdell+Sakaguchi</strong></td><td>Peripheral immune tolerance (Treg / FOXP3)</td></tr>
+  <tr><td>Nobel Peace 2025</td><td class="num-col"><strong>María Corina Machado</strong></td><td>Venezuela democracy</td></tr>
+  <tr><td>Nobel Literature 2025</td><td class="num-col"><strong>László Krasznahorkai</strong></td><td>Hungary</td></tr>
+  <tr><td>Nobel Economics 2024</td><td class="num-col"><strong>Acemoglu, Johnson, Robinson</strong></td><td>Institutions &amp; prosperity</td></tr>
+  <tr><td>Nobel Economics 2025</td><td class="num-col"><strong>Mokyr + Aghion + Howitt</strong></td><td>Innovation-driven economic growth / creative destruction</td></tr>
+</table>
+
+<div class="te-block" style="margin-top:8px; border-radius:3px; border-top: 2px solid var(--tel-bdr);">
+  <strong>Telugu Summary / తెలుగు సారాంశం:</strong><br>
+  <strong>SpaDeX</strong> (డిసెంబర్ 30, 2024) — PSLV-C60 ద్వారా; జనవరి 16, 2025న డాకింగ్ విజయం; భారత్ <strong>4వ దేశం</strong>. <strong>NVS-02</strong> (జనవరి 29, 2025) — GSLV-F15; ISRO 100వ శ్రీహరికోట మిషన్. <strong>LVM3-M6</strong> (డిసెంబర్ 24, 2025) — BlueBird Block-2 (6,100 kg). <strong>Gaganyaan G1</strong>: 2026 uncrewed; crewed 2027. <strong>Artemis-2</strong>: ఏప్రిల్ 2026; 4 మంది. IndiaAI Mission: <strong>₹10,372 కోట్లు</strong>; <strong>India AI Impact Summit 2026</strong>: భారత్ మండపం, న్యూఢిల్లీ; 92 దేశాల న్యూఢిల్లీ డిక్లరేషన్; USD 200B+ పెట్టుబడులు; Sam Altman/Sundar Pichai/Satya Nadella హాజరు. Semiconductor Mission: <strong>₹76,000 కోట్లు</strong>; Dholera fab. NDC 2030: <strong>500 GW</strong>; Net Zero: <strong>2070</strong>. Nobel 2024 Physics: Hopfield+Hinton (AI); Nobel 2025 Physics: Clarke+Devoret+Martinis (Superconducting Qubits); Nobel 2024 Chemistry: AlphaFold; Nobel 2025 Chemistry: Kitagawa+Robson+Yaghi (MOFs); Nobel 2024 Medicine: Ambros+Ruvkun (microRNA); Nobel 2025 Medicine: Brunkow+Ramsdell+Sakaguchi (Immune Tolerance); Nobel 2025 Peace: Machado (Venezuela); Nobel 2025 Literature: Krasznahorkai (Hungary); Nobel 2025 Economics: Mokyr+Aghion+Howitt (Innovation Growth).
+</div>
+
+</div><!-- end .a4 -->
+</body>
+</html>
