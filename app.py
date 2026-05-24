@@ -847,6 +847,28 @@ def init_db():
         try: conn.rollback()
         except: pass
 
+
+    # ── Curate International CA to 260 KEPT MCQs (Deep Audit May 2026) ──────────
+    # Delete all International_Current_Affairs MCQs NOT in the audited whitelist.
+    # KEPT_IDS = 260 IDs selected after multi-round AP-examiner quality audit.
+    try:
+        _intl_kept_ids = (20002, 20003, 20005, 20006, 20013, 21001, 21003, 21005, 21006, 21009, 21011, 21012, 21015, 21016, 21019, 21021, 21022, 21024, 21026, 21028, 21029, 21030, 21031, 21032, 21033, 21035, 21036, 21037, 22001, 22002, 22003, 22004, 22008, 22009, 22010, 22013, 22015, 22017, 23001, 23002, 23003, 23004, 23005, 23006, 23011, 23013, 23014, 23015, 23016, 23017, 23018, 23019, 23020, 23023, 23024, 23025, 23026, 23027, 23028, 23033, 23034, 23041, 23047, 23048, 23049, 23050, 23059, 23060, 23061, 23062, 23063, 23064, 23065, 23066, 23068, 23069, 23070, 23073, 23078, 23079, 23081, 23086, 23087, 23088, 23090, 25001, 25002, 25003, 25004, 25008, 26001, 26002, 26003, 26004, 26005, 26006, 26007, 26009, 26010, 27001, 27002, 27003, 27005, 27006, 27007, 27009, 27010, 27011, 27013, 27016, 27017, 27018, 27019, 27020, 27022, 27025, 27026, 27028, 27030, 27031, 27033, 27034, 27035, 27040, 27041, 27043, 27044, 27046, 27047, 27048, 27050, 27055, 27057, 27058, 27061, 27062, 27063, 27068, 27070, 27071, 27073, 27074, 27076, 27077, 27078, 27080, 27081, 27082, 27083, 27084, 27086, 27087, 27088, 27089, 27092, 27093, 27094, 27095, 28001, 28002, 28007, 28008, 28009, 28011, 28012, 28016, 28017, 28018, 28019, 28025, 28026, 28027, 28029, 28032, 28037, 28048, 28050, 28051, 28053, 29001, 29003, 29004, 29005, 29006, 29007, 29008, 29009, 29010, 29013, 29014, 29023, 29028, 29032, 29033, 29039, 29041, 29042, 29043, 29044, 29045, 29046, 29049, 29051, 29052, 29056, 29066, 29072, 29073, 29074, 29077, 29078, 29083, 29084, 29086, 29087, 29094, 29095, 29096, 29097, 29099, 29100, 29102, 29104, 29108, 29112, 30001, 30002, 30004, 30006, 30007, 30012, 30014, 30017, 30021, 30023, 30025, 30028, 30034, 30035, 30042, 30046, 30054, 30061, 30062, 30063, 30064, 30065, 30069, 30076, 30077, 30081, 30082, 30084, 30085, 30089, 30090, 30091, 30096, 30097, 30099,)
+        ph = '%s' if USE_POSTGRES else '?'
+        placeholders = ','.join([ph] * len(_intl_kept_ids))
+        _del_cur = db_exec(conn,
+            f"DELETE FROM questions WHERE folder='AP_HC' AND topic='International_Current_Affairs' AND id NOT IN ({placeholders})",
+            _intl_kept_ids)
+        _deleted = _del_cur.rowcount if _del_cur else 0
+        conn.commit()
+        if _deleted > 0:
+            print(f"[startup] Intl CA curation: deleted {_deleted} non-kept MCQs → 260 remain.")
+        else:
+            print("[startup] Intl CA curation: already at 260 MCQs (no deletions needed).")
+    except Exception as _cur_e:
+        print(f"[startup] Intl CA curation error: {_cur_e}")
+        try: conn.rollback()
+        except: pass
+
     conn.close()
 
 
@@ -7862,8 +7884,4 @@ def topic_notes(qid):
         text = _html_to_text(html)
         return jsonify({'text': text, 'label': label, 'found': True, 'file': fname})
     except Exception as e:
-        return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
-
-
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+        return jsonify({'text': '', 'label':
