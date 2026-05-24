@@ -3645,6 +3645,7 @@ def read_notes_home():
         'Indian_Current_Affairs': 'Indian Current Affairs',
         'Indian_Economy':      'Indian Economy',
         'Art_Culture':         'Art & Culture',
+        'International_Current_Affairs': 'International Current Affairs',
     }
     _SECTION_ICONS = {
         'AP_Geography':        '🗺️',
@@ -3653,6 +3654,7 @@ def read_notes_home():
         'Indian_Current_Affairs': '📡',
         'Indian_Economy':      '💹',
         'Art_Culture':         '🎭',
+        'International_Current_Affairs': '🌐',
     }
     _SUBSECTION_LABELS = {
         'Chapters':       'Chapters',
