@@ -7884,4 +7884,7 @@ def topic_notes(qid):
         text = _html_to_text(html)
         return jsonify({'text': text, 'label': label, 'found': True, 'file': fname})
     except Exception as e:
-        return jsonify({'text': '', 'label':
+        return jsonify({'text': '', 'label': label, 'found': False, 'error': str(e)})
+
+if __name__ == '__main__':
+    app.run(debug=False)
