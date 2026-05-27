@@ -4,6 +4,38 @@ from .config import Config
 from .db import db
 
 
+def _patch_schema(engine) -> None:
+    """Idempotently add columns/tables that may be missing in older DB schemas.
+
+    Uses PostgreSQL's ADD COLUMN IF NOT EXISTS so it is safe to run on every
+    startup.  SQLite (local dev) doesn't support IF NOT EXISTS on ALTER TABLE,
+    so we catch and swallow those errors.
+    """
+    from sqlalchemy import inspect, text
+
+    insp = inspect(engine)
+    existing_tables = set(insp.get_table_names())
+
+    with engine.connect() as conn:
+        # ── questions.subject_id ──────────────────────────────────────────
+        if "questions" in existing_tables:
+            q_cols = {c["name"] for c in insp.get_columns("questions")}
+            if "subject_id" not in q_cols:
+                try:
+                    conn.execute(text(
+                        "ALTER TABLE questions "
+                        "ADD COLUMN IF NOT EXISTS subject_id INTEGER "
+                        "REFERENCES subjects(id)"
+                    ))
+                    conn.execute(text(
+                        "CREATE INDEX IF NOT EXISTS ix_questions_subject_id "
+                        "ON questions (subject_id)"
+                    ))
+                    conn.commit()
+                except Exception:
+                    conn.rollback()
+
+
 def create_app(config_class: type = Config) -> Flask:
     app = Flask(
         __name__,
@@ -16,8 +48,9 @@ def create_app(config_class: type = Config) -> Flask:
 
     from . import models  # noqa: F401
 
-    # Ensure all tables exist (idempotent — safe on every restart)
+    # Apply schema patches then ensure all tables exist
     with app.app_context():
+        _patch_schema(db.engine)
         db.create_all()
 
     from .routes.public import bp as public_bp
