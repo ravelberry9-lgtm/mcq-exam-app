@@ -15,6 +15,11 @@ def create_app(config_class: type = Config) -> Flask:
     db.init_app(app)
 
     from . import models  # noqa: F401
+
+    # Ensure all tables exist (idempotent — safe on every restart)
+    with app.app_context():
+        db.create_all()
+
     from .routes.public import bp as public_bp
     app.register_blueprint(public_bp)
 
