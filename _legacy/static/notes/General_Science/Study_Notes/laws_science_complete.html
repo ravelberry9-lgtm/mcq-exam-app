@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laws, Discoveries & Scientific Facts | General Science Study Notes</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.6; color: #222; background: #f9f9f9; margin: 0; padding: 16px; }
+  h1 { background: linear-gradient(135deg, #1a237e, #283593); color: white; padding: 18px 24px; border-radius: 10px; margin-bottom: 8px; font-size: 1.5em; }
+  h2 { background: linear-gradient(135deg, #283593, #3949ab); color: white; padding: 10px 18px; border-radius: 7px; margin: 20px 0 8px 0; font-size: 1.15em; }
+  h3 { color: #283593; border-left: 4px solid #3949ab; padding-left: 10px; margin: 14px 0 6px 0; font-size: 1.05em; }
+  .subtitle { color: #ccc; font-size: 0.9em; margin-top: 4px; }
+  .section { background: white; border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); break-inside: avoid; page-break-inside: avoid; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.92em; table-layout: fixed; word-wrap: break-word; }
+  th { background: #3949ab; color: white; padding: 8px 6px; text-align: left; }
+  td { padding: 7px 6px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+  tr:nth-child(even) { background: #f5f5f5; }
+  tr:hover { background: #e8eaf6; }
+  .bilingual { display: flex; flex-direction: column; }
+  .bi-en { font-weight: 500; }
+  .bi-te { color: #555; font-size: 0.88em; }
+  .lang-tag { display: inline-block; font-size: 0.7em; padding: 1px 5px; border-radius: 3px; margin-right: 4px; font-weight: bold; }
+  .lang-en { background: #e3f2fd; color: #1565c0; }
+  .lang-te { background: #fce4ec; color: #c62828; }
+  .te-td { display: block; color: #555; font-size: 0.85em; margin-top: 2px; }
+  .cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .memory-box { background: #e8eaf6; border: 2px solid #3949ab; border-radius: 8px; padding: 12px 16px; margin: 10px 0; break-inside: avoid; page-break-inside: avoid; }
+  .memory-box h4 { color: #1a237e; margin: 0 0 8px 0; font-size: 1em; }
+  .formula { font-family: monospace; background: #fff8e1; border: 1px solid #f9a825; border-radius: 4px; padding: 2px 8px; display: inline-block; font-size: 0.95em; }
+  .key-fact { background: #fff9c4; border-left: 4px solid #f9a825; padding: 6px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+  .highlight { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 6px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+  .warning { background: #fce4ec; border-left: 4px solid #c62828; padding: 6px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.78em; font-weight: bold; margin-left: 6px; }
+  .badge-blue { background: #bbdefb; color: #1565c0; }
+  .badge-green { background: #c8e6c9; color: #2e7d32; }
+  .badge-red { background: #ffcdd2; color: #b71c1c; }
+  .badge-yellow { background: #fff9c4; color: #f57f17; }
+  .recap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin: 10px 0; }
+  .recap-item { background: #e8eaf6; border-radius: 6px; padding: 10px 12px; break-inside: avoid; page-break-inside: avoid; }
+  .ri-num { display: inline-block; background: #3949ab; color: white; border-radius: 50%; width: 22px; height: 22px; text-align: center; line-height: 22px; font-size: 0.8em; font-weight: bold; margin-right: 6px; }
+  ul { margin: 6px 0; padding-left: 20px; }
+  li { margin-bottom: 3px; }
+  .toc { background: #e8eaf6; border-radius: 8px; padding: 12px 20px; margin-bottom: 16px; }
+  .toc a { color: #283593; text-decoration: none; display: inline-block; margin: 3px 12px 3px 0; font-size: 0.92em; }
+  .toc a:hover { text-decoration: underline; }
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: white !important; padding: 0 !important; margin: 0 !important; font-size: 11pt; }
+    table { page-break-inside: avoid !important; break-inside: avoid !important; width: 100% !important; }
+    thead { display: table-header-group !important; }
+    tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    td, th { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .section { page-break-inside: avoid !important; break-inside: avoid !important; box-shadow: none !important; border: 1px solid #ccc !important; margin-bottom: 12px !important; }
+    .memory-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .exam-trap { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .key-fact { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .recap-item { page-break-inside: avoid !important; break-inside: avoid !important; }
+    h2, h3, h4 { page-break-after: avoid !important; break-after: avoid !important; }
+    .toc { display: none !important; }
+    .cols-2, .cols-3, .recap-grid { display: block !important; }
+    .recap-item { display: inline-block !important; width: 45% !important; margin: 4px !important; vertical-align: top !important; }
+    th { background: #2e7d32 !important; color: white !important; }
+    tr:nth-child(even) { background: #f5f5f5 !important; }
+  }
+    .section { box-shadow: none; border: 1px solid #ddd; }
+  }
+  @media (max-width: 600px) {
+    .cols-2, .cols-3 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div style="break-inside:avoid;page-break-inside:avoid;">
+<h1>⚗️ Laws, Discoveries &amp; Scientific Facts
+  <div class="subtitle">Model Sets 27–34 | APPSC/TSPSC General Science | శాస్త్రీయ నియమాలు మరియు ఆవిష్కరణలు</div>
+</h1>
+
+<div class="toc">
+  <strong>Quick Navigation:</strong>
+  <a href="#laws">Scientific Laws</a>
+  <a href="#theories">Major Theories</a>
+  <a href="#discoveries">Discoveries &amp; Inventors</a>
+  <a href="#instruments">Scientific Instruments</a>
+  <a href="#facts">Common Facts</a>
+  <a href="#everyday">Everyday Science</a>
+  <a href="#india">India &amp; Science</a>
+  <a href="#misc">Miscellaneous</a>
+  <a href="#recap">Quick Reference</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: SCIENTIFIC LAWS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="laws">
+<h2>⚖️ 1. Scientific Laws | శాస్త్రీయ నియమాలు</h2>
+
+<h3>Newton's Laws of Motion | న్యూటన్ చలన నియమాలు</h3>
+<div class="cols-2">
+  <div class="memory-box">
+    <h4>Newton's 3 Laws (1687)</h4>
+    <ul>
+      <li><b>1st Law (Inertia / జడత్వం):</b> A body continues in its state of rest or uniform motion unless acted upon by an external force. <span class="te-td">బయటి బలం లేనంత వరకు వస్తువు తన స్థితిని మార్చుకోదు</span></li>
+      <li><b>2nd Law (F=ma):</b> Force = mass × acceleration. Rate of change of momentum = applied force. <span class="te-td">బలం = ద్రవ్యరాశి × త్వరణం</span></li>
+      <li><b>3rd Law (Action-Reaction):</b> Every action has an equal and opposite reaction. <span class="te-td">ప్రతి చర్యకు సమాన మరియు వ్యతిరేక ప్రతిచర్య ఉంటుంది</span></li>
+    </ul>
+  </div>
+  <div class="memory-box">
+    <h4>Newton's Law of Gravitation</h4>
+    <p>Every two masses attract each other with a force proportional to product of masses and inversely proportional to square of distance. <span class="te-td">రెండు వస్తువుల మధ్య గురుత్వాకర్షణ బలం</span></p>
+    <p class="formula">F = G·m₁·m₂ / r²</p>
+    <p>G = 6.674 × 10⁻¹¹ N·m²/kg² (Universal Gravitational Constant)<br>
+    g = 9.8 m/s² (acceleration due to gravity on Earth)<br>
+    g on Moon = 1/6th of Earth</p>
+  </div>
+</div>
+
+<h3>Laws of Thermodynamics &amp; Gases | ఉష్ణగతిక నియమాలు</h3>
+<table>
+  <tr><th style="width:22%">Law / నియమం</th><th style="width:30%">Statement</th><th style="width:25%">Telugu / తెలుగు</th><th style="width:23%">Formula/Key Point</th></tr>
+  <tr>
+    <td><b>Boyle's Law</b><span class="te-td">బాయిల్ నియమం (1662)</span></td>
+    <td>At constant temperature, pressure is inversely proportional to volume</td>
+    <td>స్థిర ఉష్ణోగ్రత వద్ద పీడనం మరియు ఘనపరిమాణం విలోమ అనుపాతంలో ఉంటాయి</td>
+    <td class="formula">P ∝ 1/V → PV = constant</td>
+  </tr>
+  <tr>
+    <td><b>Charles's Law</b><span class="te-td">చార్లెస్ నియమం (1787)</span></td>
+    <td>At constant pressure, volume is directly proportional to absolute temperature</td>
+    <td>స్థిర పీడనం వద్ద ఘనపరిమాణం మరియు ఉష్ణోగ్రత అనుపాతంలో ఉంటాయి</td>
+    <td class="formula">V ∝ T → V/T = constant</td>
+  </tr>
+  <tr>
+    <td><b>Gay-Lussac's Law</b></td>
+    <td>At constant volume, pressure is directly proportional to absolute temperature</td>
+    <td>స్థిర ఘనపరిమాణం వద్ద పీడనం మరియు ఉష్ణోగ్రత అనుపాతంలో</td>
+    <td class="formula">P ∝ T → P/T = constant</td>
+  </tr>
+  <tr>
+    <td><b>Avogadro's Law</b><span class="te-td">అవోగాడ్రో నియమం</span></td>
+    <td>Equal volumes of all gases at same T and P contain equal number of molecules</td>
+    <td>సమాన ఉష్ణోగ్రత మరియు పీడనం వద్ద సమాన ఘనపరిమాణంలో అన్ని వాయువులలో సమాన అణువులు</td>
+    <td>Avogadro's number = <b>6.022 × 10²³</b></td>
+  </tr>
+  <tr>
+    <td><b>1st Law of Thermodynamics</b></td>
+    <td>Energy can neither be created nor destroyed; only converted (Conservation of Energy)</td>
+    <td>శక్తి సంరక్షణ నియమం — శక్తి సృష్టించబడదు నాశనం కాదు</td>
+    <td class="formula">ΔU = Q - W</td>
+  </tr>
+  <tr>
+    <td><b>2nd Law of Thermodynamics</b></td>
+    <td>Heat flows spontaneously from hot to cold body. Entropy of universe always increases.</td>
+    <td>వేడి స్వచ్ఛందంగా వేడి నుండి చల్లని వస్తువుకు ప్రవహిస్తుంది</td>
+    <td>Entropy (disorder) always increases</td>
+  </tr>
+</table>
+
+<h3>Laws of Electricity &amp; Magnetism | విద్యుత్ మరియు అయస్కాంత నియమాలు</h3>
+<table>
+  <tr><th style="width:22%">Law</th><th style="width:35%">Statement</th><th style="width:25%">Telugu</th><th style="width:18%">Formula</th></tr>
+  <tr>
+    <td><b>Ohm's Law</b><span class="te-td">ఓమ్ నియమం (1827)</span></td>
+    <td>Voltage is directly proportional to current at constant temperature</td>
+    <td>స్థిర ఉష్ణోగ్రత వద్ద విద్యుత్ వోల్టేజ్ విద్యుత్ ప్రవాహానికి అనుపాతంలో</td>
+    <td class="formula">V = IR</td>
+  </tr>
+  <tr>
+    <td><b>Faraday's 1st Law (EMI)</b><span class="te-td">ఫారడే మొదటి నియమం</span></td>
+    <td>Whenever magnetic flux changes, an EMF is induced</td>
+    <td>అయస్కాంత ప్రవాహం మారినప్పుడు ప్రేరిత EMF ఉత్పన్నమవుతుంది</td>
+    <td>e = -dΦ/dt</td>
+  </tr>
+  <tr>
+    <td><b>Faraday's 2nd Law (Electrolysis)</b></td>
+    <td>Mass of substance deposited is proportional to charge passed &amp; equivalent weight</td>
+    <td>విద్యుద్విశ్లేషణలో నిక్షేపించిన పదార్థం విద్యుత్ పరిమాణానికి అనుపాతం</td>
+    <td>m = ZIt</td>
+  </tr>
+  <tr>
+    <td><b>Coulomb's Law</b></td>
+    <td>Force between two charges is proportional to product of charges, inversely proportional to square of distance</td>
+    <td>రెండు విద్యుత్ ఆవేశాల మధ్య బలం</td>
+    <td class="formula">F = kq₁q₂/r²</td>
+  </tr>
+</table>
+
+<h3>Laws of Optics, Mechanics &amp; Others | ఇతర నియమాలు</h3>
+<table>
+  <tr><th style="width:24%">Law</th><th style="width:38%">Statement / Key Point</th><th style="width:38%">Telugu / Details</th></tr>
+  <tr>
+    <td><b>Snell's Law of Refraction</b><span class="te-td">స్నెల్ వక్రీభవన నియమం</span></td>
+    <td>n₁ sin θ₁ = n₂ sin θ₂. The ratio of sines of angles of incidence and refraction = refractive index ratio</td>
+    <td>కాంతి ఒక మాధ్యమం నుండి మరొక మాధ్యమంలోకి వెళ్ళేటప్పుడు వంగుతుంది</td>
+  </tr>
+  <tr>
+    <td><b>Archimedes' Principle</b><span class="te-td">ఆర్కిమిడీస్ సూత్రం</span></td>
+    <td>A body immersed in a fluid experiences buoyancy = weight of fluid displaced. Explains why ships float.</td>
+    <td>ద్రవంలో మునిగిన వస్తువుపై ఊర్థ్వ బలం = స్థానభ్రంశం చెందిన ద్రవ బరువుకు సమానం</td>
+  </tr>
+  <tr>
+    <td><b>Pascal's Law</b><span class="te-td">పాస్కల్ నియమం</span></td>
+    <td>Pressure applied to an enclosed fluid is transmitted equally in all directions. Basis of hydraulic systems.</td>
+    <td>ద్రవంలో వేసిన పీడనం అన్ని దిశలలో సమంగా ప్రసారమవుతుంది — హైడ్రాలిక్ లిఫ్ట్ సూత్రం</td>
+  </tr>
+  <tr>
+    <td><b>Bernoulli's Principle</b><span class="te-td">బెర్నౌలీ సూత్రం</span></td>
+    <td>In a flowing fluid, increase in velocity causes decrease in pressure. Explains aircraft lift.</td>
+    <td>ద్రవ వేగం పెరిగితే పీడనం తగ్గుతుంది — విమానం ఎగరడానికి కారణం</td>
+  </tr>
+  <tr>
+    <td><b>Hooke's Law</b><span class="te-td">హుక్ నియమం</span></td>
+    <td>Within elastic limit, stress is proportional to strain. Basis of spring scales.</td>
+    <td>స్థితిస్థాపక పరిమితిలో వత్తిడి మరియు వికృతి అనుపాతంలో ఉంటాయి</td>
+  </tr>
+  <tr>
+    <td><b>Mendel's Laws</b><span class="te-td">మెండెల్ నియమాలు</span></td>
+    <td>1. Law of Segregation — alleles separate during gamete formation<br>2. Law of Independent Assortment — different gene pairs sort independently</td>
+    <td>వేర్పాటు నియమం మరియు స్వతంత్ర వితరణ నియమం — జన్యుశాస్త్ర పితామహుడు</td>
+  </tr>
+  <tr>
+    <td><b>Hardy-Weinberg Law</b></td>
+    <td>Allele frequencies in a population remain constant if no evolutionary forces act. Basis of population genetics.</td>
+    <td>పరిణామ శక్తులు పని చేయకపోతే జనాభాలో జన్యు ఆవృత్తులు స్థిరంగా ఉంటాయి</td>
+  </tr>
+  <tr>
+    <td><b>Law of Conservation of Mass</b><span class="te-td">ద్రవ్యరాశి సంరక్షణ నియమం</span></td>
+    <td>Lavoisier (1789): Matter can neither be created nor destroyed in a chemical reaction.</td>
+    <td>రసాయన చర్యలో ద్రవ్యరాశి సృష్టించబడదు లేదా నాశనం కాదు — లావోజియే</td>
+  </tr>
+  <tr>
+    <td><b>Law of Conservation of Momentum</b></td>
+    <td>Total momentum of a system remains constant unless external force acts.</td>
+    <td>బయటి బలం లేనంత వరకు వ్యవస్థ మొత్తం ద్రవ్యవేగం స్థిరంగా ఉంటుంది</td>
+  </tr>
+</table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: MAJOR THEORIES -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="theories">
+<h2>🔬 2. Major Scientific Theories | ప్రధాన శాస్త్రీయ సిద్ధాంతాలు</h2>
+
+<table>
+  <tr><th style="width:22%">Theory / సిద్ధాంతం</th><th style="width:20%">Proposed By / Year</th><th style="width:30%">Key Points</th><th style="width:28%">Telugu / తెలుగు</th></tr>
+  <tr>
+    <td><b>Cell Theory</b><span class="te-td">కణ సిద్ధాంతం</span></td>
+    <td>Schleiden (1838), Schwann (1839), Virchow (1855)</td>
+    <td>All living things are made of cells; cell is the basic unit of life; all cells arise from pre-existing cells</td>
+    <td>అన్ని జీవులు కణాలతో తయారు; కణమే జీవన ప్రాథమిక యూనిట్; కణాలు కణాల నుండే ఏర్పడతాయి</td>
+  </tr>
+  <tr>
+    <td><b>Germ Theory of Disease</b><span class="te-td">రోగ క్రిమి సిద్ధాంతం</span></td>
+    <td>Louis Pasteur &amp; Robert Koch (1860s–1870s)</td>
+    <td>Diseases are caused by microorganisms (germs). Koch's postulates identify causative agent.</td>
+    <td>సూక్ష్మజీవులు (క్రిములు) వ్యాధులకు కారణం — పాశ్చర్ మరియు కోచ్ సిద్ధాంతం</td>
+  </tr>
+  <tr>
+    <td><b>Theory of Evolution by Natural Selection</b><span class="te-td">సహజ వరణ పరిణామ సిద్ధాంతం</span></td>
+    <td>Charles Darwin (1859) — <em>On the Origin of Species</em></td>
+    <td>Organisms with favourable variations survive and reproduce; "Survival of the fittest" (Spencer's phrase)</td>
+    <td>అనుకూల వైవిధ్యాలు గల జీవులు మనుగడ సాగిస్తాయి — "అర్హుల మనుగడ"</td>
+  </tr>
+  <tr>
+    <td><b>Atomic Theory</b><span class="te-td">పరమాణు సిద్ధాంతం</span></td>
+    <td>John Dalton (1808)</td>
+    <td>Matter is made of indivisible atoms; atoms of same element are identical; atoms combine in whole-number ratios</td>
+    <td>పదార్థం విభజించలేని పరమాణువులతో తయారు — డాల్టన్ పరమాణు సిద్ధాంతం</td>
+  </tr>
+  <tr>
+    <td><b>Special &amp; General Relativity</b><span class="te-td">సాపేక్ష సిద్ధాంతం</span></td>
+    <td>Albert Einstein (1905 &amp; 1915)</td>
+    <td>Special: E=mc²; speed of light is constant. General: gravity is curvature of spacetime.</td>
+    <td>E=mc² — శక్తి మరియు ద్రవ్యరాశి సమానమైనవి; గురుత్వం = స్థలకాలం వక్రత</td>
+  </tr>
+  <tr>
+    <td><b>Big Bang Theory</b><span class="te-td">మహా విస్ఫోటన సిద్ధాంతం</span></td>
+    <td>Georges Lemaître (1927); Hubble evidence (1929)</td>
+    <td>Universe began ~13.8 billion years ago from a singularity. Universe is still expanding.</td>
+    <td>విశ్వం 13.8 బిలియన్ సంవత్సరాల క్రితం ప్రారంభమైంది; విశ్వం విస్తరిస్తూ ఉంది</td>
+  </tr>
+  <tr>
+    <td><b>Plate Tectonics Theory</b><span class="te-td">ఫలక విరూపణ సిద్ధాంతం</span></td>
+    <td>Alfred Wegener (Continental Drift, 1912); Plate tectonics confirmed 1960s</td>
+    <td>Earth's crust is divided into tectonic plates; earthquakes, volcanoes occur at plate boundaries</td>
+    <td>భూమి పై పొర టెక్టోనిక్ ఫలకాలుగా విభజితమై కదులుతుంది — భూకంపాలు, అగ్నిపర్వతాలకు కారణం</td>
+  </tr>
+  <tr>
+    <td><b>Quantum Theory</b><span class="te-td">క్వాంటమ్ సిద్ధాంతం</span></td>
+    <td>Max Planck (1900); Bohr model (1913)</td>
+    <td>Energy is emitted/absorbed in discrete packets called quanta (photons). Bohr: electrons in fixed orbits.</td>
+    <td>శక్తి క్వాంటమ్ (పొటాన్) అనే చిన్న ప్రమాణాలలో విడుదలవుతుంది</td>
+  </tr>
+  <tr>
+    <td><b>Kinetic Theory of Gases</b><span class="te-td">వాయువుల గతిక సిద్ధాంతం</span></td>
+    <td>Maxwell, Boltzmann (19th century)</td>
+    <td>Gas consists of molecules in constant random motion; temperature is average kinetic energy of molecules</td>
+    <td>ఉష్ణోగ్రత = అణువుల సగటు గతిజ శక్తి</td>
+  </tr>
+  <tr>
+    <td><b>Oparin-Haldane (Origin of Life)</b><span class="te-td">జీవోత్పత్తి సిద్ధాంతం</span></td>
+    <td>Oparin (1924), Haldane (1929); Miller-Urey experiment (1953)</td>
+    <td>Life originated from chemical evolution in primordial soup; first organisms were anaerobic prokaryotes (~3.5 Bya)</td>
+    <td>జీవం మొదట సముద్ర రసాయన పరిణామం ద్వారా ఉద్భవించింది</td>
+  </tr>
+</table>
+
+<div class="cols-2">
+  <div class="key-fact">
+    <b>E = mc²</b> — Einstein's mass-energy equivalence. c = 3 × 10⁸ m/s (speed of light)
+    <span class="te-td">ద్రవ్యరాశి మరియు శక్తి ఒకదానిని మరొకటిగా మార్చవచ్చు</span>
+  </div>
+  <div class="key-fact">
+    <b>Hubble's Law:</b> Galaxies recede at speed proportional to distance (v = H₀d). Proof of expanding universe.
+    <span class="te-td">విశ్వం విస్తరణకు ఆధారం — హబుల్ నియమం</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: DISCOVERIES & INVENTORS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="discoveries">
+<h2>💡 3. Famous Discoveries &amp; Inventors | ప్రసిద్ధ ఆవిష్కరణలు మరియు ఆవిష్కర్తలు</h2>
+
+<table>
+  <tr><th style="width:28%">Discovery / Invention<br>ఆవిష్కరణ</th><th style="width:22%">Inventor / Year<br>ఆవిష్కర్త / సంవత్సరం</th><th style="width:25%">Key Detail</th><th style="width:25%">Telugu / తెలుగు</th></tr>
+  <tr>
+    <td><b>X-Rays</b></td>
+    <td>Wilhelm Röntgen (1895)</td>
+    <td>First Nobel Prize in Physics (1901)</td>
+    <td>ఎక్స్-కిరణాలు — రాంట్గన్ (1895)</td>
+  </tr>
+  <tr>
+    <td><b>Radioactivity</b></td>
+    <td>Henri Becquerel (1896)</td>
+    <td>Marie Curie discovered Radium (1898) &amp; Polonium; first woman Nobel laureate</td>
+    <td>రేడియోధార్మికత — బెక్యురెల్; రేడియం — మేరీ క్యూరీ</td>
+  </tr>
+  <tr>
+    <td><b>Penicillin</b></td>
+    <td>Alexander Fleming (1928)</td>
+    <td>First antibiotic; Florey &amp; Chain developed it for use (1940). Nobel 1945.</td>
+    <td>మొదటి యాంటీబయోటిక్ — ఫ్లెమింగ్ (1928)</td>
+  </tr>
+  <tr>
+    <td><b>Insulin</b></td>
+    <td>Frederick Banting &amp; Charles Best (1921)</td>
+    <td>Nobel Prize 1923. Used for treating diabetes mellitus.</td>
+    <td>ఇన్సులిన్ — బాంటింగ్ మరియు బెస్ట్ (1921) — మధుమేహ చికిత్స</td>
+  </tr>
+  <tr>
+    <td><b>DNA Double Helix</b></td>
+    <td>Watson &amp; Crick (1953)</td>
+    <td>Using X-ray data by Rosalind Franklin. Nobel 1962.</td>
+    <td>DNA ద్వంద్వ కుండలాకార నిర్మాణం — వాట్సన్ మరియు క్రిక్ (1953)</td>
+  </tr>
+  <tr>
+    <td><b>Polio Vaccine</b></td>
+    <td>Jonas Salk (1955)</td>
+    <td>Killed virus vaccine. Sabin developed oral polio vaccine (OPV, 1961).</td>
+    <td>పోలియో టీకా — జోనాస్ సాల్క్ (1955)</td>
+  </tr>
+  <tr>
+    <td><b>Smallpox Vaccine</b></td>
+    <td>Edward Jenner (1796)</td>
+    <td>First vaccine ever developed; used cowpox to immunise against smallpox.</td>
+    <td>మొదటి వ్యాక్సిన్ — జెన్నర్ (1796) — మశూచి వ్యాక్సిన్</td>
+  </tr>
+  <tr>
+    <td><b>Blood Groups (ABO)</b></td>
+    <td>Karl Landsteiner (1901)</td>
+    <td>Nobel 1930. Rh factor discovered by Landsteiner &amp; Wiener (1940).</td>
+    <td>రక్త సమూహాలు (A, B, AB, O) — లాండ్‌స్టైనర్ (1901)</td>
+  </tr>
+  <tr>
+    <td><b>Telephone</b></td>
+    <td>Alexander Graham Bell (1876)</td>
+    <td>First practical telephone. Patent No. 174465.</td>
+    <td>టెలిఫోన్ — బెల్ (1876)</td>
+  </tr>
+  <tr>
+    <td><b>Electric Bulb (Incandescent)</b></td>
+    <td>Thomas Edison (1879)</td>
+    <td>Also invented gramophone, motion pictures. "Wizard of Menlo Park."</td>
+    <td>విద్యుత్ బల్బ్ — థామస్ ఎడిసన్ (1879)</td>
+  </tr>
+  <tr>
+    <td><b>Radio (Wireless)</b></td>
+    <td>Guglielmo Marconi (1895)</td>
+    <td>First transatlantic radio signal (1901). Nobel 1909.</td>
+    <td>రేడియో — మార్కోని (1895)</td>
+  </tr>
+  <tr>
+    <td><b>Television</b></td>
+    <td>John Logie Baird (1926)</td>
+    <td>First working television system.</td>
+    <td>టెలివిజన్ — బెయిర్డ్ (1926)</td>
+  </tr>
+  <tr>
+    <td><b>Dynamite</b></td>
+    <td>Alfred Nobel (1867)</td>
+    <td>Swedish chemist; established Nobel Prizes (first awarded 1901).</td>
+    <td>డైనమైట్ — ఆల్ఫ్రెడ్ నోబెల్ (1867); నోబెల్ బహుమతి స్థాపకుడు</td>
+  </tr>
+  <tr>
+    <td><b>Raman Effect</b></td>
+    <td>C.V. Raman (1928)</td>
+    <td>Inelastic scattering of light by molecules. Nobel Prize in Physics 1930. National Science Day = 28 Feb.</td>
+    <td>రామన్ ప్రభావం — సీవీ రామన్ (1928) — భారత్‌కు మొదటి నోబెల్ విజ్ఞాన శాస్త్రం</td>
+  </tr>
+  <tr>
+    <td><b>Radio Waves / Plant Physiology</b></td>
+    <td>Jagadish Chandra Bose (1895–1900)</td>
+    <td>Proved plants have life; pioneered microwave research. Invented Crescograph.</td>
+    <td>జగదీష్ చంద్రబోస్ — మొక్కలలో జీవం నిరూపించారు; క్రెస్కో గ్రాఫ్ ఆవిష్కరించారు</td>
+  </tr>
+  <tr>
+    <td><b>Electron</b></td>
+    <td>J.J. Thomson (1897)</td>
+    <td>Discovered using cathode ray tube; Nobel 1906. Atomic model: "Plum pudding model."</td>
+    <td>ఎలెక్ట్రాన్ — J.J. థామ్సన్ (1897) — కాథోడ్ కిరణ ప్రయోగం</td>
+  </tr>
+  <tr>
+    <td><b>Proton / Nucleus</b></td>
+    <td>Ernest Rutherford (1911/1919)</td>
+    <td>Gold foil experiment — nuclear model of atom. Proton named 1919.</td>
+    <td>పరమాణు కేంద్రకం — రదర్ఫర్డ్; బంగారు రేకు ప్రయోగం</td>
+  </tr>
+  <tr>
+    <td><b>Neutron</b></td>
+    <td>James Chadwick (1932)</td>
+    <td>Nobel 1935. Neutrons have no charge, mass ≈ proton.</td>
+    <td>న్యూట్రాన్ — చాడ్విక్ (1932)</td>
+  </tr>
+  <tr>
+    <td><b>Bacteria (microscope)</b></td>
+    <td>Antonie van Leeuwenhoek (1674–1683)</td>
+    <td>Father of Microbiology. First to observe bacteria and protozoa.</td>
+    <td>బ్యాక్టీరియా మొదట చూసినవారు — లీవెన్‌హుక్ — సూక్ష్మజీవి శాస్త్రం పితామహుడు</td>
+  </tr>
+  <tr>
+    <td><b>Cells (first observed)</b></td>
+    <td>Robert Hooke (1665)</td>
+    <td>Observed in cork; named "cells" in <em>Micrographia</em>.</td>
+    <td>కణాలను మొదట చూసినవారు — రాబర్ట్ హుక్ (1665) — కార్క్‌లో</td>
+  </tr>
+  <tr>
+    <td><b>Oxygen</b></td>
+    <td>Joseph Priestley (1774); Scheele (1772)</td>
+    <td>Lavoisier named it "Oxygen" (1779); proved its role in combustion.</td>
+    <td>ఆక్సిజన్ — ప్రీస్ట్లీ (1774); లావోజియే నామకరణం</td>
+  </tr>
+  <tr>
+    <td><b>Periodic Table</b></td>
+    <td>Dmitri Mendeleev (1869)</td>
+    <td>Arranged elements by atomic weight; predicted undiscovered elements (Ga, Sc, Ge).</td>
+    <td>ఆవర్తన పట్టిక — మెండెలీవ్ (1869); ద్రవ్యరాశి క్రమంలో అమర్చారు</td>
+  </tr>
+</table>
+
+<div class="memory-box">
+  <h4>🏆 Indian Nobel Laureates in Science | భారతీయ నోబెల్ విజేతలు</h4>
+  <ul>
+    <li><b>C.V. Raman</b> — Physics 1930 (Raman Effect — inelastic scattering of light) <span class="te-td">భౌతిక శాస్త్రం 1930</span></li>
+    <li><b>Har Gobind Khorana</b> — Medicine 1968 (genetic code, protein synthesis) <span class="te-td">ఔషధ శాస్త్రం 1968</span></li>
+    <li><b>Subrahmanyan Chandrasekhar</b> — Physics 1983 (stellar evolution, Chandrasekhar limit = 1.4 solar masses) <span class="te-td">చంద్రశేఖర్ పరిమితి</span></li>
+    <li><b>Venkatraman Ramakrishnan</b> — Chemistry 2009 (structure of ribosome) <span class="te-td">రైబోజోమ్ నిర్మాణం</span></li>
+  </ul>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: SCIENTIFIC INSTRUMENTS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="instruments">
+<h2>🔭 4. Scientific Instruments | శాస్త్రీయ పరికరాలు</h2>
+
+<div class="cols-2">
+<div>
+<table>
+  <tr><th style="width:40%">Instrument / పరికరం</th><th style="width:60%">Measures / Used For</th></tr>
+  <tr><td><b>Thermometer</b><span class="te-td">థర్మామీటర్</span></td><td>Temperature / ఉష్ణోగ్రత</td></tr>
+  <tr><td><b>Barometer</b><span class="te-td">బారోమీటర్</span></td><td>Atmospheric pressure / వాతావరణ పీడనం</td></tr>
+  <tr><td><b>Hygrometer</b><span class="te-td">హైగ్రోమీటర్</span></td><td>Humidity of air / వాయు తేమ శాతం</td></tr>
+  <tr><td><b>Anemometer</b><span class="te-td">అనెమోమీటర్</span></td><td>Wind speed / గాలి వేగం</td></tr>
+  <tr><td><b>Seismograph</b><span class="te-td">భూకంప మాపిని</span></td><td>Earthquakes / intensity of seismic waves</td></tr>
+  <tr><td><b>Lactometer</b><span class="te-td">లాక్టోమీటర్</span></td><td>Purity/density of milk / పాల స్వచ్ఛత</td></tr>
+  <tr><td><b>Hydrometer</b><span class="te-td">హైడ్రోమీటర్</span></td><td>Relative density of liquids / ద్రవ సాపేక్ష సాంద్రత</td></tr>
+  <tr><td><b>Ammeter</b><span class="te-td">అమ్మీటర్</span></td><td>Electric current (amperes) / విద్యుత్ ప్రవాహం</td></tr>
+  <tr><td><b>Voltmeter</b><span class="te-td">వోల్ట్‌మీటర్</span></td><td>Electric voltage / విద్యుత్ వోల్టేజ్</td></tr>
+  <tr><td><b>Galvanometer</b><span class="te-td">గాల్వనోమీటర్</span></td><td>Detects small electric currents</td></tr>
+  <tr><td><b>Manometer</b><span class="te-td">మానోమీటర్</span></td><td>Gas pressure / వాయు పీడనం</td></tr>
+  <tr><td><b>Altimeter</b><span class="te-td">అల్టీమీటర్</span></td><td>Altitude (height above sea level) / ఎత్తు కొలత</td></tr>
+  <tr><td><b>Speedometer</b><span class="te-td">స్పీడోమీటర్</span></td><td>Speed of vehicle / వాహన వేగం</td></tr>
+  <tr><td><b>Odometer</b><span class="te-td">ఒడోమీటర్</span></td><td>Distance travelled by vehicle / వాహనం ప్రయాణించిన దూరం</td></tr>
+  <tr><td><b>Tachometer</b><span class="te-td">టాకోమీటర్</span></td><td>Speed of rotation (RPM) / భ్రమణ వేగం</td></tr>
+  <tr><td><b>Stethoscope</b><span class="te-td">స్టెతస్కోప్</span></td><td>Heartbeat and lung sounds / గుండె శ్వాస శబ్దాలు</td></tr>
+</table>
+</div>
+<div>
+<table>
+  <tr><th style="width:40%">Instrument / పరికరం</th><th style="width:60%">Measures / Used For</th></tr>
+  <tr><td><b>Sphygmomanometer</b><span class="te-td">స్ఫిగ్మోమానోమీటర్</span></td><td>Blood pressure / రక్తపోటు</td></tr>
+  <tr><td><b>Electrocardiograph (ECG)</b></td><td>Electrical activity of heart / గుండె విద్యుత్ కార్యకలాపాలు</td></tr>
+  <tr><td><b>Electroencephalograph (EEG)</b></td><td>Brain's electrical activity / మెదడు విద్యుత్ కార్యకలాపాలు</td></tr>
+  <tr><td><b>Microscope</b><span class="te-td">సూక్ష్మదర్శిని</span></td><td>Magnifies tiny objects / చిన్న వస్తువులను విస్తరించి చూపిస్తుంది</td></tr>
+  <tr><td><b>Telescope</b><span class="te-td">దూరదర్శిని</span></td><td>Distant objects (stars, planets) / దూరపు వస్తువులు</td></tr>
+  <tr><td><b>Periscope</b><span class="te-td">పెరిస్కోప్</span></td><td>Seeing over obstacles (submarines) / అడ్డంకుల పైన చూడటానికి</td></tr>
+  <tr><td><b>Calorimeter</b><span class="te-td">కేలోరిమీటర్</span></td><td>Heat energy / ఉష్ణ శక్తి కొలత</td></tr>
+  <tr><td><b>Photometer</b><span class="te-td">ఫోటోమీటర్</span></td><td>Light intensity / కాంతి తీవ్రత</td></tr>
+  <tr><td><b>Spectrometer</b><span class="te-td">స్పెక్ట్రోమీటర్</span></td><td>Spectrum analysis of light / కాంతి వర్ణ పట్టిక విశ్లేషణ</td></tr>
+  <tr><td><b>Geiger Counter</b><span class="te-td">గీగర్ కౌంటర్</span></td><td>Radioactivity / రేడియోధార్మికత కొలత</td></tr>
+  <tr><td><b>Crescograph</b><span class="te-td">క్రెస్కోగ్రాఫ్</span></td><td>Growth of plants (invented by J.C. Bose) / మొక్కల పెరుగుదల</td></tr>
+  <tr><td><b>Audiometer</b><span class="te-td">ఆడియోమీటర్</span></td><td>Intensity of sound; hearing acuity / శ్రవణ శక్తి</td></tr>
+  <tr><td><b>Salinometer</b></td><td>Salinity of water / నీటి లవణీయత</td></tr>
+  <tr><td><b>Gravimeter</b></td><td>Variations in gravitational field</td></tr>
+  <tr><td><b>Magnetometer</b></td><td>Magnetic field strength / అయస్కాంత క్షేత్ర బలం</td></tr>
+  <tr><td><b>Pyrometer</b><span class="te-td">పైరోమీటర్</span></td><td>Very high temperatures (furnaces) / అత్యధిక ఉష్ణోగ్రతలు</td></tr>
+</table>
+</div>
+</div>
+
+<div class="memory-box">
+  <h4>🧠 Instrument Memory Tricks</h4>
+  <div class="cols-3">
+    <div><b>Baro</b>meter → <b>B</b>arometric pressure (Baro = weight/pressure in Greek)</div>
+    <div><b>Hygro</b>meter → <b>Hygro</b> = moisture → measures humidity</div>
+    <div><b>Lacto</b>meter → <b>Lacto</b> = milk → measures milk purity</div>
+    <div><b>Seismo</b>graph → <b>Seismos</b> = earthquake (Greek)</div>
+    <div><b>Crescograph</b> → Invented by J.C. Bose (India's pride)</div>
+    <div><b>Sphygmo</b>manometer → measures Blood Pressure (Sphygmos = pulse)</div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: COMMON SCIENTIFIC FACTS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="facts">
+<h2>📊 5. Common Scientific Facts | సాధారణ శాస్త్రీయ విషయాలు</h2>
+
+<div class="cols-2">
+<div>
+<h3>Atmosphere Composition | వాతావరణ కూర్పు</h3>
+<table>
+  <tr><th>Gas / వాయువు</th><th>% by Volume</th><th>Notes</th></tr>
+  <tr><td><b>Nitrogen (N₂)</b><span class="te-td">నైట్రోజన్</span></td><td><b>78.09%</b></td><td>Most abundant gas in atmosphere</td></tr>
+  <tr><td><b>Oxygen (O₂)</b><span class="te-td">ఆక్సిజన్</span></td><td><b>20.95%</b></td><td>Supports combustion and life</td></tr>
+  <tr><td><b>Argon (Ar)</b><span class="te-td">ఆర్గాన్</span></td><td><b>0.93%</b></td><td>Most abundant noble gas</td></tr>
+  <tr><td><b>CO₂</b><span class="te-td">కార్బన్ డయాక్సైడ్</span></td><td><b>0.04%</b></td><td>Greenhouse gas; increasing due to human activity</td></tr>
+  <tr><td>Water vapour (H₂O)</td><td>Variable (0–4%)</td><td>Varies with humidity</td></tr>
+  <tr><td>Ozone (O₃)</td><td>Trace</td><td>Stratosphere; shields UV radiation</td></tr>
+</table>
+</div>
+<div>
+<h3>Human Body Constants | మానవ శరీర స్థిరాంకాలు</h3>
+<table>
+  <tr><th>Parameter</th><th>Normal Value</th></tr>
+  <tr><td><b>Body temperature</b><span class="te-td">శరీర ఉష్ణోగ్రత</span></td><td><b>37°C / 98.6°F</b></td></tr>
+  <tr><td><b>Blood pH</b><span class="te-td">రక్త pH</span></td><td><b>7.35–7.45</b> (slightly alkaline)</td></tr>
+  <tr><td><b>Normal BP</b><span class="te-td">సాధారణ రక్తపోటు</span></td><td><b>120/80 mmHg</b></td></tr>
+  <tr><td><b>Heart rate</b><span class="te-td">హృదయ స్పందన</span></td><td><b>72 beats/min</b></td></tr>
+  <tr><td><b>Breathing rate</b><span class="te-td">శ్వాస రేటు</span></td><td><b>12–20 breaths/min</b></td></tr>
+  <tr><td><b>RBC lifespan</b><span class="te-td">RBC జీవితకాలం</span></td><td><b>120 days</b></td></tr>
+  <tr><td><b>WBC lifespan</b></td><td>13–20 days</td></tr>
+  <tr><td><b>Haemoglobin</b></td><td>Men: 13.5–17.5 g/dL; Women: 12–15.5 g/dL</td></tr>
+  <tr><td><b>Total chromosomes</b><span class="te-td">గుణసూత్రాలు</span></td><td><b>46</b> (23 pairs)</td></tr>
+  <tr><td><b>Total bones (adult)</b><span class="te-td">ఎముకలు</span></td><td><b>206</b></td></tr>
+  <tr><td><b>Teeth (adult)</b><span class="te-td">పళ్ళు</span></td><td><b>32</b></td></tr>
+  <tr><td><b>Brain weight</b><span class="te-td">మెదడు బరువు</span></td><td>~1.4 kg</td></tr>
+</table>
+</div>
+</div>
+
+<h3>Animal &amp; Nature Records | జంతు మరియు ప్రకృతి రికార్డులు</h3>
+<div class="cols-2">
+<table>
+  <tr><th style="width:45%">Record / రికార్డు</th><th style="width:55%">Answer / జవాబు</th></tr>
+  <tr><td><b>Fastest animal (land)</b><span class="te-td">భూమిపై వేగవంతమైన జంతువు</span></td><td>Cheetah / చీతా — 110–120 km/h</td></tr>
+  <tr><td><b>Fastest animal (overall)</b></td><td>Peregrine falcon / పెరెగ్రిన్ పక్షి — 320 km/h (dive)</td></tr>
+  <tr><td><b>Largest mammal</b><span class="te-td">అతి పెద్ద క్షీరద జంతువు</span></td><td>Blue whale / నీలి తిమింగలం — up to 30 m</td></tr>
+  <tr><td><b>Largest land animal</b><span class="te-td">అతి పెద్ద భూ జంతువు</span></td><td>African elephant / ఆఫ్రికన్ ఏనుగు</td></tr>
+  <tr><td><b>Tallest animal</b><span class="te-td">అత్యంత పొడవైన జంతువు</span></td><td>Giraffe / జిరాఫీ</td></tr>
+  <tr><td><b>Longest snake</b><span class="te-td">పొడవైన పాము</span></td><td>Reticulated python / రెటిక్యులేటెడ్ పైథాన్</td></tr>
+  <tr><td><b>Most poisonous snake (India)</b></td><td>King cobra / కింగ్ కోబ్రా</td></tr>
+  <tr><td><b>Smallest mammal</b></td><td>Etruscan shrew (by weight)</td></tr>
+</table>
+<table>
+  <tr><th style="width:45%">Record / రికార్డు</th><th style="width:55%">Answer / జవాబు</th></tr>
+  <tr><td><b>Longest-lived animal</b><span class="te-td">అత్యధిక కాలం జీవించే జంతువు</span></td><td>Ocean quahog clam (~500 years)</td></tr>
+  <tr><td><b>Largest bird</b><span class="te-td">అతి పెద్ద పక్షి</span></td><td>Ostrich / నిప్పు కోడి (Struthio camelus) — cannot fly</td></tr>
+  <tr><td><b>Smallest bird</b></td><td>Bee hummingbird (Cuba)</td></tr>
+  <tr><td><b>Largest fish</b><span class="te-td">అతి పెద్ద చేప</span></td><td>Whale shark / తిమింగల సొరచేప</td></tr>
+  <tr><td><b>Fastest fish</b></td><td>Sailfish — ~110 km/h</td></tr>
+  <tr><td><b>Lightest gas</b><span class="te-td">అత్యంత తేలికైన వాయువు</span></td><td>Hydrogen (H₂) / హైడ్రోజన్</td></tr>
+  <tr><td><b>Densest element</b><span class="te-td">అత్యధిక సాంద్రత</span></td><td>Osmium (Os) — 22.59 g/cm³</td></tr>
+  <tr><td><b>Hardest natural substance</b></td><td>Diamond (Mohs 10) / వజ్రం</td></tr>
+</table>
+</div>
+
+<div class="cols-2">
+  <div class="key-fact"><b>Speed of Light:</b> 3 × 10⁸ m/s (in vacuum) <span class="te-td">కాంతి వేగం = 3 × 10⁸ మీ/సె</span></div>
+  <div class="key-fact"><b>Speed of Sound:</b> 343 m/s (in air at 20°C); faster in water (~1480 m/s) and solids <span class="te-td">శబ్ద వేగం గాలిలో 343 మీ/సె</span></div>
+  <div class="key-fact"><b>Absolute Zero:</b> −273.15°C = 0 Kelvin — lowest possible temperature <span class="te-td">సంపూర్ణ శూన్యం = −273°C</span></div>
+  <div class="key-fact"><b>1 Light Year:</b> 9.46 × 10¹⁵ m — distance light travels in 1 year <span class="te-td">కాంతి సంవత్సరం = కాంతి 1 సంవత్సరంలో ప్రయాణించే దూరం</span></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: EVERYDAY SCIENCE -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="everyday">
+<h2>🌈 6. Everyday Science Explained | రోజువారీ శాస్త్రం</h2>
+
+<table>
+  <tr><th style="width:28%">Phenomenon / దృగ్విషయం</th><th style="width:40%">Scientific Explanation</th><th style="width:32%">Telugu / తెలుగు</th></tr>
+  <tr>
+    <td><b>Why is the sky blue?</b><span class="te-td">ఆకాశం నీలంగా ఉండటానికి కారణం?</span></td>
+    <td><b>Rayleigh scattering</b> — shorter wavelength (blue) light is scattered more by atmosphere than red light</td>
+    <td>రేలే వెదజల్లడం — నీలి కాంతి (తక్కువ తరంగదైర్ఘ్యం) వాతావరణంలో ఎక్కువగా చెదరుతుంది</td>
+  </tr>
+  <tr>
+    <td><b>Why is the sunset red/orange?</b><span class="te-td">సూర్యాస్తమయం ఎర్రగా ఉంటుంది</span></td>
+    <td>At sunset, light travels longer path through atmosphere; blue scattered away, only red/orange wavelengths reach eyes</td>
+    <td>సూర్యాస్తమయంలో కాంతి ఎక్కువ మార్గం ప్రయాణిస్తుంది; నీలి చెదిరిపోవడంతో ఎర్రకాంతి మాత్రమే కనిపిస్తుంది</td>
+  </tr>
+  <tr>
+    <td><b>How does a rainbow form?</b><span class="te-td">ఇంద్రధనుస్సు ఎలా ఏర్పడుతుంది?</span></td>
+    <td><b>Dispersion</b> + <b>Refraction</b> + <b>Total Internal Reflection</b> inside water droplets. VIBGYOR order.</td>
+    <td>నీటి చుక్కలలో వక్రీభవనం + పూర్ణ అంతరిక పరావర్తనం + వర్ణ వికీర్ణం — VIBGYOR క్రమంలో రంగులు</td>
+  </tr>
+  <tr>
+    <td><b>Why does iron rust?</b><span class="te-td">ఇనుము తుప్పు పట్టడానికి కారణం</span></td>
+    <td>Iron reacts with oxygen and water to form hydrated iron oxide (Fe₂O₃·nH₂O). Oxidation reaction.</td>
+    <td>ఇనుము + ఆక్సిజన్ + నీరు → హైడ్రేటెడ్ ఇనుప ఆక్సైడ్ (తుప్పు) — ఆక్సీకరణ చర్య</td>
+  </tr>
+  <tr>
+    <td><b>Why does sweating cool us?</b><span class="te-td">చెమట వల్ల చల్లబడటం</span></td>
+    <td>Evaporation of sweat requires <b>latent heat</b> absorbed from skin surface → body temperature drops</td>
+    <td>చెమట ఆవిరయ్యేటప్పుడు చర్మం నుండి గుప్త ఉష్ణం గ్రహిస్తుంది → శరీరం చల్లబడుతుంది</td>
+  </tr>
+  <tr>
+    <td><b>Why does cooking take longer at high altitude?</b><span class="te-td">ఎత్తైన ప్రదేశాలలో వంట ఆలస్యం</span></td>
+    <td>Lower atmospheric pressure at high altitudes → water boils below 100°C → food takes longer to cook</td>
+    <td>ఎత్తైన చోట వాతావరణ పీడనం తక్కువ → నీరు 100°C కన్నా తక్కువ ఉష్ణోగ్రతకే మరుగుతుంది → వంట ఆలస్యం</td>
+  </tr>
+  <tr>
+    <td><b>Why do stars twinkle?</b><span class="te-td">నక్షత్రాలు మినుకు మినుకు మెరవడం</span></td>
+    <td>Atmospheric refraction — light from stars bends as it passes through varying density layers of atmosphere</td>
+    <td>వాతావరణ వక్రీభవనం — వివిధ ఘనత పొరల గుండా నక్షత్ర కాంతి వంగడం వల్ల</td>
+  </tr>
+  <tr>
+    <td><b>Why does a ship float?</b><span class="te-td">నాయకం నీటిలో తేలడం</span></td>
+    <td>Archimedes' principle — buoyancy force (weight of displaced water) = weight of ship. Hollow shape increases volume.</td>
+    <td>ఆర్కిమిడీస్ సూత్రం — స్థానభ్రంశం చెందిన నీటి బరువు = నాయకం బరువు</td>
+  </tr>
+  <tr>
+    <td><b>Why is soap slippery?</b><span class="te-td">సబ్బు జారు జారుగా ఉండటం</span></td>
+    <td>Soap reduces surface tension of water (surfactant action); hydrophilic head + hydrophobic tail surrounds grease</td>
+    <td>సబ్బు నీటి ఉపరితల తన్యతను తగ్గిస్తుంది — గ్రీజును తొలగించే సర్ఫాక్టెంట్</td>
+  </tr>
+  <tr>
+    <td><b>Why does ice float on water?</b><span class="te-td">మంచు నీటిపై తేలడం</span></td>
+    <td>Ice is less dense than liquid water (anomalous expansion of water below 4°C). Water is densest at 4°C.</td>
+    <td>4°C కన్నా తక్కువ ఉష్ణోగ్రతలో నీరు విస్తరిస్తుంది; మంచు సాంద్రత తక్కువ</td>
+  </tr>
+  <tr>
+    <td><b>How does a microwave oven work?</b></td>
+    <td>Microwaves cause water molecules to vibrate rapidly → heat generated within food by molecular friction</td>
+    <td>సూక్ష్మ తరంగాలు నీటి అణువులను వేగంగా కంపిస్తాయి → అంతర్గత ఉష్ణం ఉత్పన్నమవుతుంది</td>
+  </tr>
+  <tr>
+    <td><b>Why is the sea salty?</b><span class="te-td">సముద్రపు నీరు ఉప్పగా ఉండటం</span></td>
+    <td>Rivers carry dissolved salts (mainly NaCl) from land; water evaporates but salts remain, accumulating over millions of years</td>
+    <td>నదులు భూమి నుండి లవణాలను మోసుకొస్తాయి; నీరు ఆవిరవుతుంది కానీ లవణాలు సముద్రంలో పేరుకుంటాయి</td>
+  </tr>
+</table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 7: INDIA & SCIENCE -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="india">
+<h2>🇮🇳 7. India &amp; Science | భారత్ మరియు శాస్త్రం</h2>
+
+<h3>ISRO Missions | ISRO కార్యక్రమాలు</h3>
+<table>
+  <tr><th style="width:22%">Mission</th><th style="width:15%">Year</th><th style="width:35%">Key Achievement</th><th style="width:28%">Telugu / తెలుగు</th></tr>
+  <tr><td><b>Aryabhata</b></td><td>1975</td><td>India's first satellite; launched by Soviet Union</td><td>భారత్ మొదటి ఉపగ్రహం — సోవియట్ యూనియన్ ప్రయోగించింది</td></tr>
+  <tr><td><b>SLV-3</b></td><td>1980</td><td>India's first indigenous satellite launch vehicle; headed by A.P.J. Abdul Kalam</td><td>భారత మొదటి స్వదేశీ రాకెట్ — కలామ్ నేతృత్వం</td></tr>
+  <tr><td><b>INSAT-1B</b></td><td>1983</td><td>First successful communication satellite</td><td>మొదటి సక్సెస్‌ఫుల్ కమ్యూనికేషన్ ఉపగ్రహం</td></tr>
+  <tr><td><b>IRS-1A</b></td><td>1988</td><td>India's first remote sensing satellite</td><td>మొదటి రిమోట్ సెన్సింగ్ ఉపగ్రహం</td></tr>
+  <tr><td><b>Chandrayaan-1</b></td><td>2008</td><td>Discovered water molecules on Moon; M3 instrument by NASA confirmed</td><td>చంద్రుడిపై నీటి అణువులు కనుగొన్నారు</td></tr>
+  <tr><td><b>Chandrayaan-2</b></td><td>2019</td><td>Orbiter still active; Vikram lander crash-landed near south pole</td><td>ఆర్బిటర్ ఇంకా పని చేస్తుంది; విక్రమ్ ల్యాండర్ విఫలమైంది</td></tr>
+  <tr><td><b>Chandrayaan-3</b></td><td>2023</td><td>Successful soft landing near Moon's south pole — India 4th country to land on Moon</td><td>చంద్రుడి దక్షిణ ధ్రువం దగ్గర సాఫ్ట్ ల్యాండింగ్ — చంద్రయాన్-3 విజయం</td></tr>
+  <tr><td><b>Mangalyaan (MOM)</b></td><td>2013/2014</td><td>Mars Orbiter Mission — first Asian country to reach Mars orbit; first attempt succeeded</td><td>మంగళయాన్ — మొదటి ప్రయత్నంలోనే మంగళుడి కక్ష్యలోకి ప్రవేశించిన మొదటి ఆసియా దేశం</td></tr>
+  <tr><td><b>GSLV / PSLV</b></td><td>ongoing</td><td>PSLV — workhorse rocket; GSLV — heavier payloads with cryogenic engine</td><td>PSLV — విశ్వసనీయ రాకెట్; GSLV — అతి పెద్ద భారాలకు</td></tr>
+  <tr><td><b>Aditya-L1</b></td><td>2023</td><td>India's first solar mission; placed at Lagrange Point 1 to study Sun</td><td>భారత్ మొదటి సూర్య పరిశోధన మిషన్</td></tr>
+</table>
+
+<div class="cols-2">
+<div>
+<h3>Notable Indian Scientists | ప్రముఖ భారతీయ శాస్త్రవేత్తలు</h3>
+<table>
+  <tr><th style="width:35%">Scientist</th><th style="width:65%">Contribution / విజయం</th></tr>
+  <tr><td><b>C.V. Raman</b></td><td>Raman Effect (1928); Nobel Prize 1930; National Science Day = 28 Feb</td></tr>
+  <tr><td><b>Jagadish Chandra Bose</b></td><td>Proved plant sensitivity; crescograph; pioneer in microwave optics (1890s)</td></tr>
+  <tr><td><b>Homi J. Bhabha</b></td><td>Father of Indian nuclear programme; established TIFR (1945) and BARC</td></tr>
+  <tr><td><b>A.P.J. Abdul Kalam</b></td><td>Missile Man of India; SLV-3, Agni, Prithvi; 11th President of India (2002–2007)</td></tr>
+  <tr><td><b>Vikram Sarabhai</b></td><td>Father of Indian space programme; established ISRO (1969)</td></tr>
+  <tr><td><b>M.S. Swaminathan</b></td><td>Father of Green Revolution in India; HYV wheat/rice; World Food Prize</td></tr>
+  <tr><td><b>Srinivasa Ramanujan</b></td><td>Mathematical genius; number theory, infinite series; born 22 Dec (National Mathematics Day)</td></tr>
+  <tr><td><b>Satyen Bose</b></td><td>Bose-Einstein statistics; Bosons named after him</td></tr>
+  <tr><td><b>Har Gobind Khorana</b></td><td>Nobel Medicine 1968; genetic code interpretation</td></tr>
+  <tr><td><b>S. Chandrasekhar</b></td><td>Nobel Physics 1983; Chandrasekhar limit (1.4 M☉) for white dwarf stars</td></tr>
+</table>
+</div>
+<div>
+<h3>Important Science Days &amp; Facts | ముఖ్యమైన దినాలు</h3>
+<table>
+  <tr><th style="width:55%">Day / దినం</th><th style="width:45%">Date / Reason</th></tr>
+  <tr><td><b>National Science Day</b><span class="te-td">జాతీయ విజ్ఞాన దినం</span></td><td>28 February (Raman Effect anniversary)</td></tr>
+  <tr><td><b>World Environment Day</b><span class="te-td">ప్రపంచ పర్యావరణ దినం</span></td><td>5 June</td></tr>
+  <tr><td><b>World Health Day</b><span class="te-td">ప్రపంచ ఆరోగ్య దినం</span></td><td>7 April</td></tr>
+  <tr><td><b>World AIDS Day</b></td><td>1 December</td></tr>
+  <tr><td><b>World Water Day</b><span class="te-td">ప్రపంచ జల దినం</span></td><td>22 March</td></tr>
+  <tr><td><b>National Mathematics Day</b></td><td>22 December (Ramanujan's birthday)</td></tr>
+  <tr><td><b>World Ozone Day</b></td><td>16 September (Montreal Protocol anniversary)</td></tr>
+  <tr><td><b>Earth Day</b><span class="te-td">భూమి దినం</span></td><td>22 April</td></tr>
+  <tr><td><b>ISRO founded</b></td><td>1969 by Vikram Sarabhai</td></tr>
+  <tr><td><b>DRDO founded</b></td><td>1958</td></tr>
+  <tr><td><b>BARC (Mumbai)</b></td><td>Bhabha Atomic Research Centre — nuclear research</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 8: MISCELLANEOUS SCIENCE FACTS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="misc">
+<h2>🧪 8. Miscellaneous Science Facts | వివిధ శాస్త్రీయ విషయాలు</h2>
+
+<div class="cols-2">
+<div>
+<h3>Special Substances | ప్రత్యేక పదార్థాలు</h3>
+<table>
+  <tr><th style="width:35%">Name / పేరు</th><th style="width:65%">Description / వివరణ</th></tr>
+  <tr>
+    <td><b>Laughing Gas</b><span class="te-td">నవ్వించే వాయువు</span></td>
+    <td>Nitrous Oxide (N₂O) — used as anaesthetic; causes laughter when inhaled in small amounts</td>
+  </tr>
+  <tr>
+    <td><b>Dry Ice</b><span class="te-td">పొడి మంచు</span></td>
+    <td>Solid Carbon Dioxide (CO₂) — sublimes directly from solid to gas; used in refrigeration and fog effects</td>
+  </tr>
+  <tr>
+    <td><b>Heavy Water</b><span class="te-td">భారీ నీరు</span></td>
+    <td>Deuterium oxide (D₂O) — hydrogen replaced by deuterium (²H); used as moderator in nuclear reactors</td>
+  </tr>
+  <tr>
+    <td><b>Philosopher's Stone</b></td>
+    <td>Mythical substance; in chemistry refers to catalyst; modern: Enzyme = biological catalyst</td>
+  </tr>
+  <tr>
+    <td><b>Aqua Regia</b><span class="te-td">రాజ జలం</span></td>
+    <td>3:1 HCl:HNO₃ mixture — dissolves gold and platinum; "royal water"</td>
+  </tr>
+  <tr>
+    <td><b>Ozone (O₃)</b></td>
+    <td>Allotrope of oxygen; stratospheric ozone shields UV radiation; ground-level ozone is a pollutant</td>
+  </tr>
+  <tr>
+    <td><b>Freon (CFC)</b></td>
+    <td>Chlorofluorocarbon — used in refrigerants/ACs; destroys ozone layer; banned by Montreal Protocol (1987)</td>
+  </tr>
+  <tr>
+    <td><b>Tear Gas</b><span class="te-td">కన్నీటి వాయువు</span></td>
+    <td>CS gas (2-chlorobenzalmalononitrile) or CN gas — causes eye irritation and tears</td>
+  </tr>
+</table>
+</div>
+<div>
+<h3>Acronyms in Science | సంక్షిప్తాలు</h3>
+<table>
+  <tr><th style="width:30%">Acronym</th><th style="width:70%">Full Form / Meaning</th></tr>
+  <tr><td><b>SONAR</b></td><td><b>SO</b>und <b>N</b>avigation <b>A</b>nd <b>R</b>anging — uses sound waves to detect underwater objects (submarines, fish)</td></tr>
+  <tr><td><b>RADAR</b></td><td><b>Ra</b>dio <b>D</b>etection <b>A</b>nd <b>R</b>anging — uses radio waves to detect aircraft, ships; developed WWII</td></tr>
+  <tr><td><b>LASER</b></td><td><b>L</b>ight <b>A</b>mplification by <b>S</b>timulated <b>E</b>mission of <b>R</b>adiation — coherent, monochromatic light</td></tr>
+  <tr><td><b>LED</b></td><td><b>L</b>ight <b>E</b>mitting <b>D</b>iode — semiconductor that emits light when current passes; energy efficient</td></tr>
+  <tr><td><b>DNA</b></td><td><b>D</b>eoxyribo<b>N</b>ucleic <b>A</b>cid — hereditary material in cells</td></tr>
+  <tr><td><b>RNA</b></td><td><b>R</b>ibo<b>N</b>ucleic <b>A</b>cid — helps in protein synthesis</td></tr>
+  <tr><td><b>ATP</b></td><td><b>A</b>denosine <b>T</b>ri<b>P</b>hosphate — energy currency of cell</td></tr>
+  <tr><td><b>MRI</b></td><td><b>M</b>agnetic <b>R</b>esonance <b>I</b>maging — uses magnetic fields to image body; no radiation</td></tr>
+  <tr><td><b>CT Scan</b></td><td><b>C</b>omputed <b>T</b>omography — uses X-rays from multiple angles</td></tr>
+  <tr><td><b>GPS</b></td><td><b>G</b>lobal <b>P</b>ositioning <b>S</b>ystem — satellites for navigation</td></tr>
+  <tr><td><b>ISRO</b></td><td><b>I</b>ndian <b>S</b>pace <b>R</b>esearch <b>O</b>rganisation — HQ: Bengaluru</td></tr>
+  <tr><td><b>DRDO</b></td><td><b>D</b>efence <b>R</b>esearch &amp; <b>D</b>evelopment <b>O</b>rganisation — HQ: New Delhi</td></tr>
+</table>
+</div>
+</div>
+
+<h3>Units &amp; Measurements | ఏకకాలు మరియు కొలతలు</h3>
+<div class="cols-2">
+<table>
+  <tr><th style="width:35%">Quantity / రాశి</th><th style="width:35%">SI Unit</th><th style="width:30%">Symbol</th></tr>
+  <tr><td>Length / దూరం</td><td>Metre</td><td>m</td></tr>
+  <tr><td>Mass / ద్రవ్యరాశి</td><td>Kilogram</td><td>kg</td></tr>
+  <tr><td>Time / కాలం</td><td>Second</td><td>s</td></tr>
+  <tr><td>Temperature / ఉష్ణోగ్రత</td><td>Kelvin</td><td>K</td></tr>
+  <tr><td>Electric current / విద్యుత్ ప్రవాహం</td><td>Ampere</td><td>A</td></tr>
+  <tr><td>Luminous intensity / కాంతి తీవ్రత</td><td>Candela</td><td>cd</td></tr>
+  <tr><td>Amount of substance</td><td>Mole</td><td>mol</td></tr>
+</table>
+<table>
+  <tr><th style="width:40%">Derived Quantity</th><th style="width:35%">SI Unit</th><th style="width:25%">Named After</th></tr>
+  <tr><td>Force / బలం</td><td>Newton (N)</td><td>Newton</td></tr>
+  <tr><td>Energy/Work / శక్తి</td><td>Joule (J)</td><td>Joule</td></tr>
+  <tr><td>Power / శక్తి రేటు</td><td>Watt (W)</td><td>Watt</td></tr>
+  <tr><td>Electric charge</td><td>Coulomb (C)</td><td>Coulomb</td></tr>
+  <tr><td>Voltage / వోల్టేజ్</td><td>Volt (V)</td><td>Volta</td></tr>
+  <tr><td>Resistance / నిరోధం</td><td>Ohm (Ω)</td><td>Ohm</td></tr>
+  <tr><td>Frequency / పౌనఃపున్యం</td><td>Hertz (Hz)</td><td>Hertz</td></tr>
+  <tr><td>Pressure / పీడనం</td><td>Pascal (Pa)</td><td>Pascal</td></tr>
+</table>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 9: QUICK REFERENCE / RECAP -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="recap">
+<h2>⚡ Quick Reference — Top 40 Must-Know Facts | త్వరిత సూచన</h2>
+<div class="recap-grid">
+
+  <div class="recap-item"><span class="ri-num">1</span><b>Newton's 1st Law</b> = Law of Inertia (జడత్వ నియమం)<br><b>2nd Law</b> = F=ma<br><b>3rd Law</b> = Action = Reaction</div>
+
+  <div class="recap-item"><span class="ri-num">2</span><b>Boyle's Law</b>: PV = constant (constant T)<br><b>Charles's Law</b>: V/T = constant (constant P)<br><span class="te-td">స్థిర ఉష్ణోగ్రత vs స్థిర పీడనం</span></div>
+
+  <div class="recap-item"><span class="ri-num">3</span><b>Ohm's Law</b>: V = IR (1827)<br><b>Faraday's Law</b>: changing magnetic flux → induced EMF<br><span class="te-td">విద్యుత్ నియమాలు</span></div>
+
+  <div class="recap-item"><span class="ri-num">4</span><b>Archimedes</b>: buoyancy = weight of displaced fluid<br><b>Pascal</b>: pressure transmitted equally in all directions<br><b>Bernoulli</b>: speed↑ → pressure↓</div>
+
+  <div class="recap-item"><span class="ri-num">5</span><b>E = mc²</b> — Einstein's mass-energy equivalence<br>c = 3 × 10⁸ m/s (speed of light)<br><span class="te-td">ద్రవ్యరాశి-శక్తి సమతుల్యత</span></div>
+
+  <div class="recap-item"><span class="ri-num">6</span><b>X-Rays</b> → Röntgen (1895)<br><b>Radioactivity</b> → Becquerel (1896)<br><b>Radium</b> → Marie Curie (1898)</div>
+
+  <div class="recap-item"><span class="ri-num">7</span><b>Penicillin</b> → Alexander Fleming (1928)<br><b>Insulin</b> → Banting &amp; Best (1921)<br><b>Blood groups ABO</b> → Landsteiner (1901)</div>
+
+  <div class="recap-item"><span class="ri-num">8</span><b>DNA double helix</b> → Watson &amp; Crick (1953)<br><b>Polio vaccine</b> → Jonas Salk (1955)<br><b>Smallpox vaccine</b> → Jenner (1796)</div>
+
+  <div class="recap-item"><span class="ri-num">9</span><b>Telephone</b> → Bell (1876)<br><b>Electric bulb</b> → Edison (1879)<br><b>Radio</b> → Marconi (1895)<br><b>TV</b> → Baird (1926)</div>
+
+  <div class="recap-item"><span class="ri-num">10</span><b>Raman Effect</b> → C.V. Raman (1928) — Nobel 1930<br>National Science Day = <b>28 February</b><br><span class="te-td">రామన్ ప్రభావం</span></div>
+
+  <div class="recap-item"><span class="ri-num">11</span><b>Electron</b> → J.J. Thomson (1897)<br><b>Nucleus/Proton</b> → Rutherford (1911/1919)<br><b>Neutron</b> → Chadwick (1932)</div>
+
+  <div class="recap-item"><span class="ri-num">12</span><b>Periodic Table</b> → Mendeleev (1869) — by atomic weight<br><b>Modern periodic table</b> → by atomic number (Moseley)<br><span class="te-td">ఆవర్తన పట్టిక</span></div>
+
+  <div class="recap-item"><span class="ri-num">13</span><b>Sky is blue</b> → Rayleigh scattering (shorter λ scattered more)<br><b>Sunset is red</b> → blue light scattered away; only red remains<br><span class="te-td">ఆకాశం నీలం</span></div>
+
+  <div class="recap-item"><span class="ri-num">14</span><b>Rainbow</b> = Refraction + TIR + Dispersion in water droplets<br>Order: VIBGYOR<br><span class="te-td">ఇంద్రధనుస్సు</span></div>
+
+  <div class="recap-item"><span class="ri-num">15</span><b>Iron rusts</b>: Fe + O₂ + H₂O → Fe₂O₃·nH₂O (oxidation)<br><b>Sweating cools</b>: evaporation absorbs latent heat<br><span class="te-td">తుప్పు మరియు చెమట</span></div>
+
+  <div class="recap-item"><span class="ri-num">16</span><b>Laughing gas</b> = N₂O (Nitrous oxide)<br><b>Dry ice</b> = Solid CO₂ (sublimes)<br><b>Heavy water</b> = D₂O (nuclear moderator)</div>
+
+  <div class="recap-item"><span class="ri-num">17</span><b>SONAR</b> = Sound Navigation And Ranging<br><b>RADAR</b> = Radio Detection And Ranging<br><b>LASER</b> = Light Amplification by Stimulated Emission of Radiation</div>
+
+  <div class="recap-item"><span class="ri-num">18</span><b>Atmosphere</b>: N₂ (78%) + O₂ (21%) + Ar (0.93%) + CO₂ (0.04%)<br><span class="te-td">వాతావரణ కూర్పు</span></div>
+
+  <div class="recap-item"><span class="ri-num">19</span><b>Normal body temp</b>: 37°C / 98.6°F<br><b>BP</b>: 120/80 mmHg<br><b>Heart rate</b>: 72 beats/min<br><b>Bones</b>: 206 (adults)</div>
+
+  <div class="recap-item"><span class="ri-num">20</span><b>Fastest land animal</b>: Cheetah (110–120 km/h)<br><b>Largest mammal</b>: Blue whale<br><b>Tallest animal</b>: Giraffe<br><b>Largest bird</b>: Ostrich</div>
+
+  <div class="recap-item"><span class="ri-num">21</span><b>Speed of light</b>: 3 × 10⁸ m/s<br><b>Speed of sound (air)</b>: 343 m/s<br><b>Absolute zero</b>: −273.15°C = 0 K</div>
+
+  <div class="recap-item"><span class="ri-num">22</span><b>Big Bang</b>: ~13.8 billion years ago (Lemaître 1927)<br><b>Hubble's Law</b>: universe is expanding<br><span class="te-td">మహా విస్ఫోటనం</span></div>
+
+  <div class="recap-item"><span class="ri-num">23</span><b>Plate Tectonics</b>: Wegener's Continental Drift (1912)<br>Earthquakes + volcanoes at plate boundaries<br><span class="te-td">ఫలక విరూపణ సిద్ధాంతం</span></div>
+
+  <div class="recap-item"><span class="ri-num">24</span><b>Germ theory</b>: Pasteur &amp; Koch (1860s–70s)<br>Diseases caused by microorganisms<br><span class="te-td">రోగ క్రిమి సిద్ధాంతం</span></div>
+
+  <div class="recap-item"><span class="ri-num">25</span><b>Darwin</b> (1859): Natural Selection — "Survival of the fittest"<br>Book: <em>On the Origin of Species</em><br><span class="te-td">సహజ వరణ పరిణామ సిద్ధాంతం</span></div>
+
+  <div class="recap-item"><span class="ri-num">26</span><b>Thermometer</b>: temperature | <b>Barometer</b>: air pressure<br><b>Hygrometer</b>: humidity | <b>Seismograph</b>: earthquakes<br><b>Lactometer</b>: milk purity</div>
+
+  <div class="recap-item"><span class="ri-num">27</span><b>Sphygmomanometer</b>: blood pressure<br><b>Stethoscope</b>: heartbeat<br><b>Crescograph</b>: plant growth (J.C. Bose)<br><b>Geiger counter</b>: radioactivity</div>
+
+  <div class="recap-item"><span class="ri-num">28</span><b>ISRO founded</b>: 1969 (Vikram Sarabhai)<br><b>Aryabhata satellite</b>: 1975 (first Indian satellite)<br><b>Mangalyaan</b>: 2013–14 (first Asian Mars mission)</div>
+
+  <div class="recap-item"><span class="ri-num">29</span><b>Chandrayaan-1</b> (2008): water on Moon<br><b>Chandrayaan-3</b> (2023): soft landing near Moon's south pole<br>India = 4th country to land on Moon</div>
+
+  <div class="recap-item"><span class="ri-num">30</span><b>Homi Bhabha</b>: Father of Indian nuclear programme<br><b>Vikram Sarabhai</b>: Father of Indian space programme<br><b>Kalam</b>: Missile Man of India</div>
+
+  <div class="recap-item"><span class="ri-num">31</span><b>Avogadro's number</b>: 6.022 × 10²³ mol⁻¹<br><b>Gravitational constant G</b>: 6.674 × 10⁻¹¹ N·m²/kg²<br><b>g (Earth)</b>: 9.8 m/s²</div>
+
+  <div class="recap-item"><span class="ri-num">32</span><b>Aqua Regia</b>: 3HCl + HNO₃ — dissolves gold/platinum<br><b>Laughing gas</b>: N₂O<br><b>Ozone</b>: O₃ — shields UV (stratosphere)</div>
+
+  <div class="recap-item"><span class="ri-num">33</span><b>SI base units</b>: m, kg, s, K, A, mol, cd<br><b>Force</b>: Newton | <b>Energy</b>: Joule | <b>Power</b>: Watt<br><b>Pressure</b>: Pascal</div>
+
+  <div class="recap-item"><span class="ri-num">34</span><b>Hardy-Weinberg Law</b>: allele frequencies stable without evolution<br><b>Mendel's laws</b>: segregation + independent assortment<br><span class="te-td">జన్యు జనాభా నియమాలు</span></div>
+
+  <div class="recap-item"><span class="ri-num">35</span><b>Water densest</b> at 4°C; ice less dense → floats<br><b>Boiling point of water</b> decreases at high altitude (lower pressure)<br><span class="te-td">నీటి ప్రత్యేక ధర్మాలు</span></div>
+
+  <div class="recap-item"><span class="ri-num">36</span><b>Snell's Law</b>: n₁ sinθ₁ = n₂ sinθ₂ (refraction)<br><b>Stars twinkle</b>: atmospheric refraction<br><b>Planets don't twinkle</b>: they appear as discs</div>
+
+  <div class="recap-item"><span class="ri-num">37</span><b>Ramanujan</b>: mathematical genius; National Math Day = 22 Dec<br><b>Chandrasekhar limit</b>: 1.4 solar masses (Nobel 1983)<br><b>Bose-Einstein statistics</b>: Satyendra Nath Bose</div>
+
+  <div class="recap-item"><span class="ri-num">38</span><b>J.C. Bose</b>: plant life sensitivity; crescograph; microwave pioneer<br><b>M.S. Swaminathan</b>: Green Revolution in India; HYV crops<br><b>SLV-3</b>: Kalam (1980)</div>
+
+  <div class="recap-item"><span class="ri-num">39</span><b>Quantum theory</b>: Planck (1900) — energy in quanta<br><b>Bohr model</b> (1913): electrons in fixed orbits<br><b>Uncertainty Principle</b>: Heisenberg</div>
+
+  <div class="recap-item"><span class="ri-num">40</span><b>1st Law of Thermodynamics</b>: Conservation of Energy<br><b>2nd Law</b>: Entropy always increases; heat flows hot→cold<br><span class="te-td">ఉష్ణగతిక నియమాలు</span></div>
+
+</div>
+</div>
+
+<div style="background:#1a237e;color:white;padding:10px 18px;border-radius:8px;margin-top:16px;font-size:0.85em;">
+  <b>📚 Laws, Discoveries &amp; Scientific Facts</b> | Model Sets 27–34 | APPSC/TSPSC General Science
+  | DIV-balanced ✓ | Telugu bilingual ✓ | Print-ready ✓
+</div>
+
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Ch 3C — Folk & Traditional Performing Arts of AP | Art & Culture | APPSC</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page{size:A4 portrait;margin:16mm 14mm 14mm 14mm}
+@media print{.page-break{page-break-before:always}.no-break{page-break-inside:avoid}body{background:#fff!important}.screen-hdr{display:none}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brick:#9b3a1a;--mud:#6b4226;--sand:#e8d5b0;--green:#1e5c38;--blue:#1a3e7a;
+  --text:#1a1206;--border:#d4b896;
+  --tel-bg:#fff8f0;--tel-bdr:#8b4513;
+  --en-bg:#fafaf7;--en-bdr:#5a2d0c;
+  --shock:#fce4ec;--shock-bdr:#c62828;
+  --alert:#fffbec;--alert-bdr:#b8860b;
+  --mem:#f0f9f2;--mem-bdr:#1e5c38;
+  --pyq-bg:#fffde7;--pyq-bdr:#c8a200;
+  --recap:linear-gradient(135deg,#6b4226,#9b3a1a)
+}
+body{font-family:'Libre Baskerville',Georgia,serif;background:#ddd5c8;color:var(--text);font-size:10.5pt;line-height:1.65}
+.a4{width:794px;min-height:1123px;background:#fff;margin:18px auto;padding:14mm 16mm;box-shadow:0 2px 18px rgba(0,0,0,.18)}
+
+.screen-hdr{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:4px;margin-bottom:10px;font-family:'Fira Mono',monospace;font-size:7pt;color:#666;font-weight:600}
+
+.ch-cover{border:2.5px solid var(--brick);border-radius:5px;padding:20px 22px;margin-bottom:14px;background:#fff9f5;position:relative}
+.ch-cover::before{content:'';position:absolute;top:5px;left:5px;right:5px;bottom:5px;border:1px solid var(--border);border-radius:3px;pointer-events:none}
+.ch-tag{font-family:'Fira Mono',monospace;font-size:7pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brick);background:#fdf0e8;border:1px solid var(--border);display:inline-block;padding:2px 8px;border-radius:2px;margin-bottom:9px}
+.ch-title-en{font-family:'Libre Baskerville',serif;font-size:19pt;font-weight:700;color:var(--brick);margin-bottom:4px}
+.ch-title-te{font-family:'Tiro Telugu',serif;font-size:13pt;color:var(--mud);margin-bottom:10px;line-height:1.7}
+.ch-meta{display:flex;gap:14px;flex-wrap:wrap;font-family:'Source Sans 3',sans-serif;font-size:8.5pt;color:#6b3a1a}
+.ch-meta strong{color:var(--mud)}
+
+.sec-heading{display:flex;align-items:center;gap:10px;margin:12px 0 7px}
+.sec-num{background:var(--brick);color:#fff;font-family:'Fira Mono',monospace;font-size:7.5pt;font-weight:700;padding:3px 9px;border-radius:3px;flex-shrink:0;letter-spacing:.05em}
+.sec-heading h2{font-family:'Source Sans 3',sans-serif;font-size:10.5pt;font-weight:700;color:var(--mud);border-bottom:2px solid var(--border);padding-bottom:3px;flex:1}
+.sec-heading h2 .te{font-family:'Tiro Telugu',serif;font-size:9.5pt;font-weight:400;color:var(--brick);margin-left:6px}
+
+.bilingual{border:1px solid var(--border);border-radius:5px;overflow:hidden;margin:7px 0 10px}
+.bi-en{background:var(--en-bg);border-left:4px solid var(--en-bdr);padding:9px 12px;font-size:9.5pt;line-height:1.65}
+.bi-te{background:var(--tel-bg);border-left:4px solid var(--tel-bdr);padding:9px 12px;font-family:'Tiro Telugu',serif;font-size:10pt;line-height:1.9;color:#3a1a06}
+.lang-tag{font-family:'Fira Mono',monospace;font-size:7pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:5px}
+.bi-en .lang-tag{color:var(--en-bdr)}
+.bi-te .lang-tag{color:var(--tel-bdr)}
+.bi-en .kw{color:var(--brick);font-weight:700}
+.bi-te .kw{color:#7a2800;font-weight:700}
+.bi-te .kw2{color:#1b5e20;font-weight:700}
+.bi-te .kw3{color:#b71c1c;font-weight:700}
+
+.sub-heading{font-family:'Source Sans 3',sans-serif;font-size:9pt;font-weight:700;color:#fff;background:linear-gradient(90deg,#6b4226,#9b3a1a);padding:4px 10px;border-radius:3px;margin:9px 0 6px;letter-spacing:.03em}
+
+.keypoints{list-style:none;margin:5px 0 10px;padding:0}
+.keypoints li{display:flex;gap:8px;padding:5px 0;border-bottom:1px dashed #e0c9a8;font-size:9.5pt;line-height:1.55}
+.keypoints li:last-child{border-bottom:none}
+.kp-num{flex-shrink:0;width:19px;height:19px;background:var(--brick);color:#fff;border-radius:50%;font-family:'Fira Mono',monospace;font-size:7pt;display:flex;align-items:center;justify-content:center;margin-top:2px;font-weight:700}
+.kp-body .te-kp{font-family:'Tiro Telugu',serif;font-size:9.5pt;color:#3a1a06;display:block;margin-top:3px;line-height:1.85}
+
+.memory-box{background:var(--mem);border:1px solid #a8d4b8;border-left:4px solid var(--mem-bdr);border-radius:4px;padding:9px 12px;margin:7px 0 10px}
+.mem-label{font-family:'Fira Mono',monospace;font-size:7.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1a5c35;margin-bottom:5px}
+.mnemonic{font-family:'Libre Baskerville',serif;font-size:11pt;font-weight:700;color:#2e4a26;margin-bottom:3px}
+.mnem-exp{font-family:'Source Sans 3',sans-serif;font-size:9pt;color:#1a3a25;margin-bottom:6px}
+.mem-te{font-family:'Tiro Telugu',serif;font-size:10pt;color:#0d2a18;line-height:1.9;border-top:1px dashed #a8d4b8;padding-top:6px;margin-top:3px}
+.mem-te .kw{color:var(--mem-bdr);font-weight:700}
+
+.exam-alert{background:var(--alert);border:1px solid #e0c060;border-left:4px solid #c8a200;border-radius:4px;padding:8px 12px;margin:7px 0 10px}
+.ea-label{font-family:'Fira Mono',monospace;font-size:7.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a5500;margin-bottom:5px}
+.exam-alert ul{padding-left:14px;margin:0}
+.exam-alert li{font-size:9pt;margin:3px 0;line-height:1.55}
+.exam-alert li strong{color:#7a2200}
+.ea-te{font-family:'Tiro Telugu',serif;font-size:9.5pt;color:#3a2800;margin-top:6px;padding-top:6px;border-top:1px dashed #e0c060;line-height:1.9}
+
+.shock-box{background:var(--shock);border-left:4px solid var(--shock-bdr);border-radius:4px;padding:8px 11px;margin:7px 0}
+.shock-box .box-title{font-family:'Fira Mono',monospace;font-size:7.5pt;font-weight:700;color:var(--shock-bdr);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+
+.highlight-box{border:1.5px solid var(--brick);border-radius:4px;padding:8px 12px;background:#fff9f5;margin:7px 0 10px;font-size:9.5pt;line-height:1.6}
+.highlight-box .hl-label{font-family:'Fira Mono',monospace;font-size:7pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brick);margin-bottom:5px}
+.highlight-box .hl-te{font-family:'Tiro Telugu',serif;font-size:10pt;color:#3a1a06;line-height:1.9;margin-top:5px;border-top:1px dashed var(--border);padding-top:5px}
+
+table{width:100%;border-collapse:collapse;margin:6px 0 10px;font-size:8.5pt}
+th{background:var(--brick);color:#fff;padding:5px 8px;font-family:'Source Sans 3',sans-serif;font-size:8pt;font-weight:700;text-align:left}
+td{padding:5px 8px;border:1px solid var(--border);vertical-align:top;line-height:1.5}
+tr:nth-child(even) td{background:#fdf7f0}
+td strong{color:#6b2800}
+.te-td{font-family:'Tiro Telugu',serif;font-size:8.5pt;color:#3a1a06;display:block;margin-top:2px;line-height:1.75}
+
+.key-num{background:#e8d5b0;color:#6b2800;font-family:'Fira Mono',monospace;font-size:7.5pt;font-weight:700;padding:1px 6px;border-radius:3px}
+.exam-tag{background:#c62828;color:#fff;font-family:'Fira Mono',monospace;font-size:7pt;font-weight:700;padding:1px 6px;border-radius:3px}
+.trick-tag{background:#e65100;color:#fff;font-family:'Fira Mono',monospace;font-size:7pt;font-weight:700;padding:1px 6px;border-radius:3px}
+.ap-tag{background:#1a3e7a;color:#fff;font-family:'Fira Mono',monospace;font-size:7pt;font-weight:700;padding:1px 6px;border-radius:3px}
+.gi-tag{background:#1e5c38;color:#fff;font-family:'Fira Mono',monospace;font-size:7pt;font-weight:700;padding:1px 6px;border-radius:3px}
+.pyq-num{background:#c8a200;color:#3a2800;font-family:'Fira Mono',monospace;font-size:7pt;font-weight:700;padding:1px 6px;border-radius:3px}
+.new-tag{background:#1b5e20;color:#fff;font-family:'Fira Mono',monospace;font-size:7pt;font-weight:700;padding:1px 6px;border-radius:3px}
+.unesco-tag{background:#003580;color:#fff;font-family:'Fira Mono',monospace;font-size:7pt;font-weight:700;padding:1px 6px;border-radius:3px}
+
+.pyq-item{border:1px solid var(--border);border-radius:4px;margin:5px 0;overflow:hidden}
+.pyq-q{background:#fff9f5;padding:6px 10px;font-size:8.5pt;line-height:1.5;border-bottom:1px solid #e0c9a8}
+.pyq-a{background:var(--tel-bg);padding:5px 10px;font-size:8.5pt}
+.pyq-a .te{font-family:'Tiro Telugu',serif;font-size:8.5pt;color:#3a1a06;display:block;margin-top:3px;line-height:1.8}
+
+.recap-box{background:var(--recap);color:#fff;border-radius:6px;padding:11px 14px;margin:8px 0}
+.recap-box .box-title{font-family:'Fira Mono',monospace;font-size:8pt;font-weight:700;color:#e8d5b0;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}
+.recap-item{display:flex;gap:7px;margin:4px 0;font-size:8.5pt;line-height:1.5}
+.recap-item .ri-num{font-family:'Fira Mono',monospace;font-size:8pt;font-weight:700;color:#f9c825;flex-shrink:0;min-width:20px}
+.recap-te{font-family:'Tiro Telugu',serif;font-size:8.5pt;color:#f5dfc0;line-height:1.8}
+
+.trap-sheet{width:100%;border-collapse:collapse;margin:7px 0;font-size:8pt}
+.trap-sheet thead th{background:#3a1a06;color:#e8d5b0;padding:5px 9px;font-family:'Fira Mono',monospace;font-size:7.5pt;text-align:left;letter-spacing:.05em}
+.trap-sheet tbody td{padding:5px 8px;border:1px solid var(--border);vertical-align:top;line-height:1.5}
+.trap-sheet tbody tr:nth-child(even) td{background:#fdf7f0}
+.trap-wrong{color:#c62828;font-weight:700}
+.trap-right{color:#1b5e20;font-weight:700}
+
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0}
+.col-box{border-radius:4px;padding:8px 11px;border:1px solid var(--border)}
+.col-box.c-en{border-top:3px solid var(--en-bdr);background:#faf8f5}
+.col-box.c-te{border-top:3px solid var(--tel-bdr);background:var(--tel-bg)}
+.col-box h4{font-family:'Source Sans 3',sans-serif;font-size:8.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;color:var(--mud)}
+.col-box ul{padding-left:13px;margin:0}
+.col-box li{font-size:8.5pt;margin:3px 0;line-height:1.5}
+.col-box li .te{font-family:'Tiro Telugu',serif;font-size:9pt;display:block;color:#3a1a06;line-height:1.8}
+
+.page-break{page-break-before:always}
+.no-break{page-break-inside:avoid}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ COVER PAGE ══════════════════ -->
+<div class="a4">
+<div class="screen-hdr"><span>CH 3C · FOLK & TRADITIONAL PERFORMING ARTS OF AP · ART & CULTURE</span><span>APPSC / HIGH COURT SO 2026</span></div>
+<div class="ch-cover no-break">
+  <div class="ch-tag">Chapter 3C · Art & Culture · APPSC / High Court Assistant 2026</div>
+  <div class="ch-title-en">Folk &amp; Traditional Performing Arts of Andhra Pradesh</div>
+  <div class="ch-title-te">ఆంధ్రప్రదేశ్ జానపద మరియు సాంప్రదాయ కళారూపాలు</div>
+  <div class="ch-meta">
+    <div><strong>Topics:</strong> Burrakatha · Harikatha · Tolu Bommalata · Kolattam · Dhimsa · Veeranatyam · Kalapam · UNESCO ICH List</div>
+    <div><strong>Exam Weight:</strong> 3–5 questions per exam · AP-specific high-yield topic</div>
+  </div>
+</div>
+
+<!-- ══════ SECTION 1: INTRODUCTION ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§1</span>
+  <h2>Introduction to Folk Arts of AP <span class="te">AP జానపద కళలు — పరిచయం</span></h2>
+</div>
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Key Concept</span>
+    <strong>Folk arts</strong> are artistic traditions that are passed down through generations within a community, orally and through practice, without formal codification. They are <strong>community-based, region-specific</strong> and reflect the daily life, beliefs, and social structures of ordinary people. Unlike <strong>classical arts</strong> (which are formally codified, have written grammar/shastra, and are recognized by bodies like the Sangeet Natak Akademi), folk arts are flexible, improvised, and performed in local dialects. Andhra Pradesh has <span class="kw">one of India's richest and most diverse folk art traditions</span>, including performing arts (dance, drama, puppetry), narrative arts (storytelling), and ritual arts. The AP government actively promotes folk arts through institutions like the <strong>AP Akademi of Arts &amp; Culture</strong>.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+    <span class="kw">జానపద కళలు</span> అంటే తరతరాలుగా మౌఖికంగా మరియు ఆచరణ ద్వారా ఒక సమాజంలో ప్రసారమయ్యే కళారూపాలు — వాటికి లిఖిత వ్యాకరణం ఉండదు. <span class="kw">శాస్త్రీయ కళలకు</span> (కూచిపూడి, కర్ణాటక సంగీతం వంటివి) సంగీత నాటక అకాడమీ గుర్తింపు ఉంటుంది; పాఠ్యపుస్తకాలు ఉంటాయి. జానపద కళలు స్వేచ్ఛగా, స్థానిక భాషలో, సమాజ అవసరాలకు అనుగుణంగా మారుతూ ఉంటాయి. <span class="kw2">ఆంధ్రప్రదేశ్</span> భారతదేశంలోనే అత్యంత సమృద్ధమైన జానపద కళా సంప్రదాయాన్ని కలిగి ఉంది.
+  </div>
+</div>
+
+<div class="cols-2 no-break">
+<div class="col-box c-en">
+  <h4>Classical vs Folk Arts — Key Differences</h4>
+  <ul>
+    <li><strong>Classical:</strong> Formal grammar (shastra), written texts, Sangeet Natak Akademi recognition</li>
+    <li><strong>Folk:</strong> Oral tradition, community-based, no fixed rules, local dialect</li>
+    <li><strong>Classical:</strong> Performed by trained artists in auditoriums</li>
+    <li><strong>Folk:</strong> Performed outdoors, in villages, during festivals</li>
+    <li><strong>Classical:</strong> Individual excellence focused</li>
+    <li><strong>Folk:</strong> Community participation, social function</li>
+  </ul>
+</div>
+<div class="col-box c-te">
+  <h4>శాస్త్రీయం vs జానపదం — తేడాలు</h4>
+  <ul>
+    <li><span class="te">శాస్త్రీయం = లిఖిత వ్యాకరణం, అకాడమీ గుర్తింపు</span></li>
+    <li><span class="te">జానపదం = మౌఖిక సంప్రదాయం, నియమ నిబంధనలు లేవు</span></li>
+    <li><span class="te">శాస్త్రీయం = రంగస్థలంపై ప్రదర్శన</span></li>
+    <li><span class="te">జానపదం = పల్లెలలో, పండుగ సందర్భాలలో</span></li>
+    <li><span class="te">శాస్త్రీయం = వ్యక్తిగత నైపుణ్యం ప్రధానం</span></li>
+    <li><span class="te">జానపదం = సమాజ భాగస్వామ్యం, సామాజిక ప్రయోజనం</span></li>
+  </ul>
+</div>
+</div>
+</div><!-- end cover page -->
+
+<!-- ══════════════════ PAGE 2: BURRAKATHA & HARIKATHA ══════════════════ -->
+<div class="a4 page-break">
+<div class="screen-hdr"><span>CH 3C · BURRAKATHA · HARIKATHA · AP FOLK ARTS</span><span>PAGE 2</span></div>
+
+<!-- ══════ SECTION 2: BURRAKATHA ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§2</span>
+  <h2>Burrakatha — Narrative Folk Performance <span class="te">బుర్రకథ — జానపద కథాగానం</span></h2>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Key Concept</span>
+    <strong>Burrakatha</strong> is one of Andhra Pradesh's most iconic folk performing arts — a <span class="kw">narrative storytelling tradition combining music, dance, and dramatic performance</span>. The word "Burrakatha" comes from the instrument <span class="kw">Burra</span> (also called Thamboora or Jamidika — a small earthen pot with strings/membrane used as a percussion instrument) + <span class="kw">Katha</span> (story). The performance involves <strong>three performers</strong>: (1) the <strong>Kathakadu</strong> (main narrator/protagonist) who holds the Burra and narrates the story through song and speech; (2) the <strong>Hasyakadu</strong> (comedian — provides comic relief, social commentary, audience interaction); (3) the <strong>Rajakadu</strong> (second assistant — provides chorus, supports narration). Traditionally performed by the <strong>Jangam community</strong> (devotees of Lord Shiva). <span class="kw">Used extensively during the freedom struggle</span> for spreading nationalist messages, and post-independence by the AP government for literacy campaigns, family planning awareness, and social reform programs. Themes include mythological stories (Ramayana, Mahabharata), historical heroes (Alluri Sitarama Raju, Uyyalawada Narasimha Reddy), and social issues.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+    <span class="kw">బుర్రకథ</span> = <span class="kw">బుర్ర</span> (మట్టి కుండ వాయిద్యం) + <span class="kw">కథ</span> (కథానికం). ముగ్గురు కళాకారులు కలిసి ప్రదర్శిస్తారు: <span class="kw">కథకుడు</span> (ప్రధాన కథకుడు — బుర్ర పట్టుకుంటాడు), <span class="kw2">హాస్యకాడు</span> (హాస్యం, సామాజిక వ్యాఖ్యానం చేస్తాడు), <span class="kw">రాజకాడు</span> (రెండో సహాయకుడు). <span class="kw">జంగం సంఘం</span> వారు సాంప్రదాయికంగా ఈ కళను అభ్యసించేవారు. స్వాతంత్ర్య పోరాటంలో జాతీయ సందేశాలు వ్యాప్తి చేయడానికి ఉపయోగించారు. ఆ తర్వాత AP ప్రభుత్వం <span class="kw3">అక్షరాస్యత, కుటుంబ నియంత్రణ</span> ప్రచారాలకు ఉపయోగించింది.
+  </div>
+</div>
+
+<ul class="keypoints no-break">
+  <li><span class="kp-num">1</span><div class="kp-body">Instrument: <strong>Burra</strong> = small earthen pot with membrane/strings — gives the art form its name <span class="te-kp">వాయిద్యం: బుర్ర (మట్టి కుండ) — దీని పేరు మీదనే బుర్రకథ అని పిలుస్తారు</span></div></li>
+  <li><span class="kp-num">2</span><div class="kp-body">Three performers: <strong>Kathakadu + Hasyakadu + Rajakadu</strong> — fixed roles, no substitution <span class="te-kp">ముగ్గురు కళాకారులు: కథకుడు + హాస్యకాడు + రాజకాడు — స్థిరమైన పాత్రలు</span></div></li>
+  <li><span class="kp-num">3</span><div class="kp-body">Community: <strong>Jangam community</strong> (Shiva devotees) — traditional practitioners <span class="te-kp">జంగం సమాజం (శివ భక్తులు) — సాంప్రదాయ కళాకారులు</span></div></li>
+  <li><span class="kp-num">4</span><div class="kp-body">Freedom struggle use: spread messages of <strong>nationalism, anti-colonial resistance</strong> through Burrakatha <span class="te-kp">స్వాతంత్ర్య పోరాటంలో జాతీయ సందేశాలు వ్యాప్తి చేశారు</span></div></li>
+  <li><span class="kp-num">5</span><div class="kp-body">Post-independence: AP government campaigns — <strong>literacy, family planning, health awareness</strong> <span class="te-kp">స్వాతంత్ర్యం తర్వాత: అక్షరాస్యత, కుటుంబ నియంత్రణ ప్రచారాలకు ఉపయోగించారు</span></div></li>
+  <li><span class="kp-num">6</span><div class="kp-body">Themes: Ramayana, Mahabharata, Alluri Sitarama Raju, Uyyalawada Narasimha Reddy, social issues <span class="te-kp">పురాణ కథలు, చారిత్రక వీరుల కథలు, సామాజిక సమస్యలు</span></div></li>
+  <li><span class="kp-num">7</span><div class="kp-body">Famous artist: <strong>Nagaiah</strong> — legendary Burrakatha performer; also Mandula Anjalaiah <span class="te-kp">ప్రసిద్ధ కళాకారుడు: నాగయ్య (పండిత నాగయ్య)</span></div></li>
+</ul>
+
+<!-- ══════ SECTION 3: HARIKATHA ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§3</span>
+  <h2>Harikatha — Devotional Storytelling <span class="te">హరికథ — భక్తి కథాగానం</span></h2>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Key Concept</span>
+    <strong>Harikatha</strong> (హరికథ) is a <span class="kw">devotional storytelling art form</span> that combines narration, song, music, and occasional dance. "Hari" = Lord Vishnu; "Katha" = story. The performer is called <span class="kw">Harikatha Das</span> (Harikathakar). Stories are drawn from the Puranas (Bhagavatam, Vishnu Purana), Ramayana, and Mahabharata. Accompanied by instruments including <strong>Harmonium, Tabla, and Violin</strong>. Harikatha has a strong tradition in both AP and Telangana. The <span class="kw">key difference from Burrakatha</span>: Harikatha is <strong>purely devotional/religious</strong> in character — it seeks to inspire spiritual devotion; Burrakatha is primarily a <strong>social/narrative art</strong> that can address any theme including secular and political topics.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+    <span class="kw">హరికథ</span> = <span class="kw">హరి</span> (విష్ణువు) + <span class="kw">కథ</span> (కథానికం). ప్రదర్శకుడిని <span class="kw">హరికథా దాసు</span> అని పిలుస్తారు. భాగవతం, రామాయణం, మహాభారతం నుండి కథలు చెబుతారు. <span class="kw2">హార్మోనియం, తబలా, వయొలిన్</span> సహకార వాయిద్యాలు. <span class="kw3">తేడా గుర్తుంచుకోండి:</span> హరికథ = పూర్తిగా భక్తి ప్రధానం; బుర్రకథ = సామాజిక/వర్ణనాత్మకం (మత విషయాలు మాత్రమే కాదు).
+  </div>
+</div>
+
+<div class="exam-alert no-break">
+  <div class="ea-label">⚡ Burrakatha vs Harikatha — Key Differences (High Exam Frequency)</div>
+  <ul>
+    <li><strong>Burrakatha:</strong> Burra instrument (earthen pot); 3 performers; social + mythological themes; Jangam community; used for social campaigns</li>
+    <li><strong>Harikatha:</strong> Harmonium/Tabla; 1 main performer (Harikatha Das); ONLY devotional themes; Vaishnava tradition</li>
+    <li><strong>TRAP:</strong> Both involve storytelling and singing — but Burrakatha can be secular; Harikatha is always devotional</li>
+    <li><strong>TRAP:</strong> Burrakatha has 3 specific performers with fixed roles; Harikatha typically has 1 main performer + musicians</li>
+  </ul>
+  <div class="ea-te">బుర్రకథ = బుర్ర వాయిద్యం; ముగ్గురు కళాకారులు; సామాజిక+పురాణ కథలు | హరికథ = హార్మోనియం; ఒక హరికథా దాసు; కేవలం భక్తి కథలు</div>
+</div>
+</div><!-- end page 2 -->
+
+<!-- ══════════════════ PAGE 3: TOLU BOMMALATA & KOLATTAM ══════════════════ -->
+<div class="a4 page-break">
+<div class="screen-hdr"><span>CH 3C · TOLU BOMMALATA · KOLATTAM · DHIMSA</span><span>PAGE 3</span></div>
+
+<!-- ══════ SECTION 4: TOLU BOMMALATA ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§4</span>
+  <h2>Tolu Bommalata — Leather Shadow Puppetry <span class="te">తోలు బొమ్మలాట — నీడ బొమ్మల ప్రదర్శన</span></h2>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Key Concept</span>
+    <strong>Tolu Bommalata</strong> (తోలు బొమ్మలాట) is AP's renowned <span class="kw">leather shadow puppet theatre</span>. "Tolu" = leather; "Bomma" = puppet/doll; "Lata" = play/performance. Large translucent puppets are crafted from <strong>goat or deer hide</strong>, treated to become semi-transparent, and intricately carved with decorative perforations. These puppets are held <strong>behind a white cloth screen</strong> with a bright light source behind them — the shadows and coloured light create spectacular visual effects on the screen. The puppets can be <strong>2–5 feet tall</strong>, some as large as 5 feet. Stories are exclusively from Ramayana and Mahabharata. Traditionally practiced by the <span class="kw">Killekyata community</span> (also called Nakashi or puppeteers). Major centres: <strong>Nimmalakunta (Kurnool district, AP)</strong> and <strong>Narayanpet (now in Telangana)</strong>. The art has <span class="kw">GI Tag recognition</span> for AP's leather puppet tradition. UNESCO has noted it as an <strong>endangered traditional art form</strong>. It has been used as a diplomatic gift to showcase AP's cultural heritage internationally.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+    <span class="kw">తోలు బొమ్మలాట</span> = <span class="kw">తోలు</span> (చర్మం) + <span class="kw">బొమ్మ</span> (బొమ్మ) + <span class="kw">లాట</span> (ఆట). మేక లేదా జింక చర్మంతో తయారుచేసిన పారదర్శక బొమ్మలు. తెల్లటి తెరవెనుక కాంతి ఉంచి, నీడ ప్రదర్శన చేస్తారు. బొమ్మలు <span class="kw">2–5 అడుగుల</span> ఎత్తు ఉంటాయి. <span class="kw3">కిల్లేకాట</span> సమాజం వారు ప్రదర్శిస్తారు. ప్రధాన కేంద్రాలు: <span class="kw2">నిమ్మలకుంట (కర్నూలు జిల్లా, AP)</span> మరియు నారాయణపేట (ఇప్పుడు తెలంగాణలో). <span class="kw">GI ట్యాగ్</span> ఉంది — AP చర్మ బొమ్మల కళ. UNESCO దీన్ని అంతరించిపోతున్న కళగా గుర్తించింది.
+  </div>
+</div>
+
+<ul class="keypoints no-break">
+  <li><span class="kp-num">1</span><div class="kp-body">Material: <strong>Goat/deer hide</strong> — semi-transparent after treatment; decorated with perforations <span class="te-kp">మేక/జింక చర్మం — పారదర్శకంగా తయారుచేస్తారు; అలంకార రంధ్రాలతో అలంకరిస్తారు</span></div></li>
+  <li><span class="kp-num">2</span><div class="kp-body">Screen: White cloth + light behind = <strong>coloured shadow projections</strong> <span class="te-kp">తెల్లటి తెర + వెనుక కాంతి = రంగుల నీడ ప్రదర్శన</span></div></li>
+  <li><span class="kp-num">3</span><div class="kp-body">Community: <strong>Killekyata community</strong> (traditional puppeteer artisans of AP) <span class="te-kp">కిల్లేకాట సమాజం — సాంప్రదాయ బొమ్మలాట కళాకారులు</span></div></li>
+  <li><span class="kp-num">4</span><div class="kp-body">Size: <strong>2–5 feet tall</strong> — much larger than most puppets in India <span class="te-kp">2–5 అడుగుల ఎత్తు — భారతదేశంలో అతి పెద్ద బొమ్మలలో ఒకటి</span></div></li>
+  <li><span class="kp-num">5</span><div class="kp-body"><strong>GI Tag</strong> — AP leather puppet tradition officially recognized <span class="ap-tag">AP GI</span> <span class="te-kp">GI ట్యాగ్ గుర్తింపు పొందింది</span></div></li>
+  <li><span class="kp-num">6</span><div class="kp-body"><strong>UNESCO attention</strong> — listed as endangered traditional art requiring safeguarding <span class="te-kp">UNESCO — అంతరించిపోతున్న కళగా గుర్తింపు పొందింది</span></div></li>
+  <li><span class="kp-num">7</span><div class="kp-body">Stories: Only Ramayana &amp; Mahabharata — sacred themes only <span class="te-kp">కథలు: కేవలం రామాయణం మరియు మహాభారతం</span></div></li>
+</ul>
+
+<div class="exam-alert no-break">
+  <div class="ea-label">⚡ Puppet Traditions — Comparison Trap</div>
+  <ul>
+    <li><strong>Tolu Bommalata (AP)</strong> = Leather SHADOW puppets; Killekyata community; huge 2–5 ft puppets</li>
+    <li><strong>Kathputli (Rajasthan)</strong> = String puppets (marionettes); cloth/wood; Nat community</li>
+    <li><strong>Pavakoothu (Kerala)</strong> = String puppets; leather puppets (Tholpavakoothu = Kerala leather shadow)</li>
+    <li><strong>Tholpavakoothu (Kerala)</strong> = Kerala's leather shadow puppet — different from AP's Tolu Bommalata</li>
+    <li><strong>Yampuri (Bihar)</strong> = Rod puppets; no strings used</li>
+    <li><strong>TRAP:</strong> Leather shadow puppets exist in BOTH AP (Tolu Bommalata) and Kerala (Tholpavakoothu) — know which is which!</li>
+  </ul>
+  <div class="ea-te">తోలు బొమ్మలాట (AP) = చర్మ నీడ బొమ్మలు; కిల్లేకాట సమాజం | కత్‌పుట్లి (రాజస్థాన్) = దారపు బొమ్మలు | తొల్పావకూత్తు (కేరళ) = కేరళ చర్మ నీడ బొమ్మలు</div>
+</div>
+
+<!-- ══════ SECTION 5: KOLATTAM ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§5</span>
+  <h2>Kolattam — Stick Dance <span class="te">కొలాట్టం — కర్రల నృత్యం</span></h2>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Key Concept</span>
+    <strong>Kolattam</strong> (కొలాట్టం) is a vibrant folk dance performed primarily by women, in which participants dance in circles while rhythmically striking <span class="kw">decorated sticks</span> against each other. The word derives from "Kollu" (stick) + "Attam" (play/dance). Performed during major festivals: <strong>Sankranti, Ugadi, Karthika Masam, and Navaratri</strong>. Performers wear colorful traditional costumes. Kolattam is also performed during the <strong>Brahmotsavam festival at Tirumala</strong>. While conceptually similar to Gujarat's Garba (group circular dance), it is distinct in its use of sticks and its specific ritual contexts. Different from Karnataka's <strong>Dollu Kunitha</strong> (drum dance).
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+    <span class="kw">కొలాట్టం</span> = <span class="kw">కొలు</span> (కర్ర) + <span class="kw">అట్టం</span> (ఆట/నృత్యం). స్త్రీలు వృత్తాకారంగా నిలబడి, చేతులలో అలంకారమైన కర్రలతో తాళం వేస్తూ నృత్యం చేస్తారు. <span class="kw2">సంక్రాంతి, ఉగాది, కార్తీకమాసం, నవరాత్రి</span> సందర్భాలలో ప్రదర్శిస్తారు. తిరుమల <span class="kw">బ్రహ్మోత్సవం</span>లో కూడా ప్రదర్శిస్తారు. గుజరాత్ గర్బాను పోలి ఉంటుంది — కానీ కర్రలు ఉంటాయి.
+  </div>
+</div>
+</div><!-- end page 3 -->
+
+<!-- ══════════════════ PAGE 4: DHIMSA, VEERANATYAM, KALAPAM ══════════════════ -->
+<div class="a4 page-break">
+<div class="screen-hdr"><span>CH 3C · DHIMSA · VEERANATYAM · KALAPAM · YAKSHAGANA</span><span>PAGE 4</span></div>
+
+<!-- ══════ SECTION 6: DHIMSA ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§6</span>
+  <h2>Dhimsa — Tribal Folk Dance <span class="te">ధింసా — గిరిజన జానపద నృత్యం</span></h2>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Key Concept</span>
+    <strong>Dhimsa</strong> (ధింసా) is a traditional tribal folk dance of the <span class="kw">Kondh, Porja, and Savara tribes</span> of AP, found mainly in the tribal areas of <strong>Vizianagaram and Visakhapatnam districts</strong> and the <strong>Araku Valley</strong> region. It is a <span class="kw">group dance</span> performed by both men and women together in a circle or line formation. The dance is characterized by energetic, colorful movements with simple but highly rhythmic footwork. Dhimsa is performed to celebrate harvests, nature, and community festivals. Instruments used are simple and minimal — traditional drums and wind instruments. The dance reflects the close connection of tribal communities with nature and agricultural cycles.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+    <span class="kw">ధింసా</span> — <span class="kw">కొందు, పోర్జా మరియు సావర</span> గిరిజన తెగల సాంప్రదాయిక నృత్యం. <span class="kw2">విజయనగరం, విశాఖపట్నం జిల్లాలు</span> మరియు <span class="kw">అరకు లోయ</span> ప్రాంతంలో ప్రసిద్ధి. స్త్రీ పురుషులు కలిసి వృత్తంలో నిలబడి నృత్యం చేస్తారు. పంటకోత మరియు ప్రకృతి పండుగ సందర్భాలలో ప్రదర్శిస్తారు. సాధారణ కానీ తాళబద్ధమైన అడుగులు వేస్తారు.
+  </div>
+</div>
+
+<!-- ══════ SECTION 7: VEERANATYAM ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§7</span>
+  <h2>Veeranatyam — Devotional Warrior Dance <span class="te">వీరనాట్యం — భక్తి వీర నృత్యం</span></h2>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Key Concept</span>
+    <strong>Veeranatyam</strong> (వీరనాట్యం) is a <span class="kw">devotional dance performed as an offering to Lord Shiva</span>. The name means "dance of the brave/warriors." Traditionally performed by the <span class="kw">Veeramusti community</span> (also called Musti or Veerakshatriya) in Andhra Pradesh and Telangana. Performers carry <strong>sharp weapons (swords, tridents)</strong>, perform <strong>fire-walking</strong>, and display acts of courage as devotional offerings. Performed during festivals at Shiva temples, especially during Mahashivaratri and other Shaivite festivals. The dance is intensely energetic and represents the dual qualities of <strong>courage (Veerata) and devotion (Bhakti)</strong>.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+    <span class="kw">వీరనాట్యం</span> — శివుడికి అర్పించే భక్తి నృత్యం. <span class="kw">వీరముష్టి సమాజం</span> వారు ప్రదర్శిస్తారు. కళాకారులు <span class="kw2">కత్తులు, త్రిశూలాలు</span> పట్టుకుని, అగ్ని మీద నడుస్తారు. శివాలయ పండుగలలో, ముఖ్యంగా <span class="kw">మహాశివరాత్రి</span>లో ప్రదర్శిస్తారు. <span class="kw3">వీరత + భక్తి</span> రెండూ కలిసి ఉంటాయి.
+  </div>
+</div>
+
+<!-- ══════ SECTION 8: KALAPAM ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§8</span>
+  <h2>Kalapam — Dialogue Dance Drama <span class="te">కలాపం — సంవాద నృత్య నాటకం</span></h2>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Key Concept</span>
+    <strong>Kalapam</strong> (కలాపం) is a unique dance-drama tradition that forms the <span class="kw">historical origin of classical Kuchipudi dance</span>. It involves dialogues (Kalapa = dialogue) between characters, combining dance, music, and philosophy. Two famous Kalapam traditions: (1) <strong>Bhama Kalapam</strong> — features Satyabhama (Krishna's wife) expressing her jealousy and devotion; the male character of Satyabhama was traditionally played by a male dancer; (2) <strong>Golla Kalapam</strong> — a dialogue between a milkmaid (Golla = cowherder/milkmaid) and a philosopher/Brahmin — features <span class="kw">social commentary</span> criticizing caste discrimination, embedded within a devotional framework. The Kuchipudi village tradition of Kalapam performances evolved over centuries into the full-fledged classical Kuchipudi dance style recognized today.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+    <span class="kw">కలాపం</span> = సంవాద నృత్య నాటకం. <span class="kw">కూచిపూడి శాస్త్రీయ నృత్యానికి మూలం</span>. రెండు ముఖ్యమైన రకాలు: <span class="kw2">భామా కలాపం</span> (సత్యభామ పాత్ర — కృష్ణుని భార్య; పురుషుడు స్త్రీ పాత్ర వేస్తాడు) మరియు <span class="kw2">గొల్ల కలాపం</span> (గొల్ల స్త్రీ మరియు పండితుడి మధ్య సంవాదం — కుల వివక్షపై సామాజిక విమర్శ). కూచిపూడి గ్రామంలో ఈ కలాపం ప్రదర్శనలు క్రమంగా శాస్త్రీయ కూచిపూడి నృత్యంగా అభివృద్ధి చెందాయి.
+  </div>
+</div>
+
+<!-- ══════ SECTION 9: YAKSHAGANA ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§9</span>
+  <h2>Yakshagana — Music Drama Tradition <span class="te">యక్షగానం — సంగీత నాటక సంప్రదాయం</span></h2>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Key Concept</span>
+    <strong>Yakshagana</strong> (యక్షగానం) is a traditional <span class="kw">music-dance-drama</span> form combining elaborate costumes, music, dance, and improvised dialogue. It is primarily a <span class="kw">Karnataka tradition</span> (Mangalore, Udupi, Dakshina Kannada region) but has significant influence in AP border areas. Performances are typically all-night affairs. The term "Yaksha" refers to semi-divine beings. Note: Yakshagana should not be confused with <strong>Kuchipudi Yakshagana</strong> — the Andhra tradition of Yakshagana dance-dramas that preceded and influenced classical Kuchipudi. Key difference: Karnataka Yakshagana = folk theatre with improvised dialogue; AP Kuchipudi Yakshagana = more formalized dance-drama tradition.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+    <span class="kw">యక్షగానం</span> — సంగీత, నాట్య, నాటక మేళవింపు. ప్రధానంగా <span class="kw">కర్ణాటక</span> (మంగళూరు, ఉడిపి) సంప్రదాయం. AP సరిహద్దు ప్రాంతాలలో కూడా ప్రభావం ఉంది. రాత్రంతా ప్రదర్శన జరుగుతుంది. <span class="kw3">గుర్తుంచుకోండి:</span> కర్ణాటక యక్షగానం ≠ కూచిపూడి యక్షగానం — రెండూ వేరు వేరు సంప్రదాయాలు.
+  </div>
+</div>
+</div><!-- end page 4 -->
+
+<!-- ══════════════════ PAGE 5: UNESCO ICH LIST ══════════════════ -->
+<div class="a4 page-break">
+<div class="screen-hdr"><span>CH 3C · UNESCO INTANGIBLE CULTURAL HERITAGE — INDIA COMPLETE LIST</span><span>PAGE 5</span></div>
+
+<!-- ══════ SECTION 10: UNESCO ICH ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§10</span>
+  <h2>UNESCO Intangible Cultural Heritage — India's Complete List <span class="te">UNESCO — భారతదేశ అమూర్త సాంస్కృతిక వారసత్వం</span></h2>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Key Concept</span>
+    The <strong>UNESCO Convention for the Safeguarding of the Intangible Cultural Heritage (2003)</strong> created the Representative List of Intangible Cultural Heritage (ICH) of Humanity. India has had elements inscribed since 2008. As of 2025, India has <span class="kw">16 elements on the UNESCO ICH Representative List</span> (Garba 2023 = 15th; Deepavali 2025 at Red Fort, Delhi = 16th). Thatheras of Jandiala Guru (2014) is often missed — include it. "Intangible" = cannot be touched — includes oral traditions, performing arts, social practices, knowledge about nature, and traditional craftsmanship. Different from UNESCO World Heritage Sites (which are tangible — buildings, natural sites).
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లోతైన వివరణ</span>
+    <span class="kw">UNESCO అమూర్త సాంస్కృతిక వారసత్వం (ICH)</span> — 2003 సమావేశం ప్రకారం గుర్తింపు పొందిన వారసత్వం. <span class="kw">అమూర్తం</span> = స్పర్శించలేనిది — మౌఖిక సంప్రదాయాలు, కళలు, ఆచారాలు, జ్ఞానం. భారతదేశానికి ప్రస్తుతం <span class="kw2">16 ICH అంశాలు</span> ఉన్నాయి (2025 నాటికి — దీపావళి తో 16వది). జాండియాలా గురు థతేరా (2014) తప్పిపోవడం సర్వసాధారణం — గుర్తుంచుకోండి. UNESCO ప్రపంచ వారసత్వ స్థలాలు (WHS) = స్థావరాలు, ప్రకృతి ప్రాంతాలు (స్పర్శించగలిగేవి) — ICH నుండి వేరుగా గుర్తుంచుకోండి.
+  </div>
+</div>
+
+<table class="no-break">
+<thead>
+  <tr><th>Year సంవత్సరం</th><th>ICH Element అమూర్త వారసత్వం</th><th>State / Region రాష్ట్రం</th><th>Note గమనిక</th></tr>
+</thead>
+<tbody>
+  <tr><td><strong>2008</strong></td><td><strong>Vedic Chanting</strong><span class="te-td">వేద పఠనం</span></td><td>Pan-India</td><td>Oral tradition of reciting Vedas; oldest inscription</td></tr>
+  <tr><td><strong>2008</strong></td><td><strong>Ramlila</strong><span class="te-td">రామ్‌లీలా</span></td><td>North India (UP)</td><td>Traditional performance of Ramayana — Varanasi famous</td></tr>
+  <tr><td><strong>2008</strong></td><td><strong>Kutiyattam Sanskrit Theatre</strong><span class="te-td">కూటియాట్టం</span></td><td>Kerala</td><td>World's oldest living theatre tradition; UNESCO 2001 (first proclamation)</td></tr>
+  <tr><td><strong>2009</strong></td><td><strong>Ramman</strong><span class="te-td">రమ్మన్</span></td><td>Uttarakhand (Garhwal)</td><td>Religious festival and ritual theatre of Garhwal Himalayas</td></tr>
+  <tr><td><strong>2010</strong></td><td><strong>Mudiyettu</strong><span class="te-td">ముడియెట్టు</span></td><td>Kerala</td><td>Ritual theatre and dance drama of Kerala</td></tr>
+  <tr><td><strong>2010</strong></td><td><strong>Kalbelia folk songs and dances</strong><span class="te-td">కల్బేలియా నృత్యం</span></td><td>Rajasthan</td><td>Kalbelia community snake charmer dances</td></tr>
+  <tr><td><strong>2010</strong></td><td><strong>Chhau dance</strong><span class="te-td">ఛావ్ నృత్యం</span></td><td>West Bengal, Jharkhand, Odisha</td><td>Warrior martial dance — 3 styles: Seraikella, Mayurbhanj, Purulia</td></tr>
+  <tr><td><strong>2012</strong></td><td><strong>Buddhist chanting of Ladakh</strong><span class="te-td">లడఖ్ బౌద్ధ జపం</span></td><td>Ladakh (J&amp;K)</td><td>Sacred Buddhist chanting tradition of Himalayan monasteries</td></tr>
+  <tr><td><strong>2013</strong></td><td><strong>Sankirtana of Manipur</strong><span class="te-td">మణిపూర్ సంకీర్తన</span></td><td>Manipur</td><td>Ritual singing, drumming and dancing of Manipur; Pung drum</td></tr>
+  <tr><td><strong>2014</strong></td><td><strong>Thatheras of Jandiala Guru — Traditional brass &amp; copper craft</strong><span class="te-td">జాండియాలా గురు థతేరా — ఇత్తడి-రాగి చేతివృత్తి</span></td><td>Punjab</td><td>Traditional utensil-making by hammering metal sheets; Thathera community of Jandiala Guru near Amritsar</td></tr>
+  <tr><td><strong>2016</strong></td><td><strong>Yoga</strong><span class="te-td">యోగా</span></td><td>Pan-India</td><td>Inscribed on UNESCO ICH list 2016; NOT WHS</td></tr>
+  <tr><td><strong>2016</strong></td><td><strong>Nowruz / Navroz</strong><span class="te-td">నవ్రోజ్</span></td><td>Multi-national (Iran, India etc.)</td><td>Persian New Year — joint inscription by multiple countries</td></tr>
+  <tr><td><strong>2017</strong></td><td><strong>Kumbh Mela</strong><span class="te-td">కుంభమేళా</span></td><td>UP, MP, Rajasthan, Maharashtra</td><td>World's largest peaceful gathering; Prayagraj, Haridwar, Ujjain, Nashik</td></tr>
+  <tr><td><strong>2021</strong></td><td><strong>Durga Puja (Kolkata)</strong><span class="te-td">దుర్గా పూజ (కోల్‌కతా)</span></td><td>West Bengal</td><td>Kolkata's Durga Puja festival — community worship and cultural expression</td></tr>
+  <tr><td><strong>2023</strong></td><td><strong>Garba of Gujarat</strong><span class="te-td">గుజరాత్ గర్బా</span></td><td>Gujarat</td><td>India's 15th ICH element (2023); circular Navratri folk dance; Kasane, Botswana session</td></tr>
+  <tr style="background:#fff8c0"><td><strong>2025</strong> ★</td><td><strong>Deepavali / Diwali</strong><span class="te-td">దీపావళి</span></td><td>Pan-India</td><td>India's 16th ICH element; Festival of Lights; 20th ICH session at Red Fort, New Delhi (Dec 2025) — India's first ICH hosting</td></tr>
+</tbody>
+</table>
+
+<div class="memory-box no-break">
+  <div class="mem-label">Memory Trick — UNESCO ICH India (16 Elements — Latest: Deepavali 2025)</div>
+  <div class="mnemonic">"V-R-K | R | M-K-C | B | S | T | Y-N | K | D | G | Dp"</div>
+  <div class="mnem-exp">
+    <strong>2008:</strong> Vedic chanting, Ramlila, Kutiyattam |
+    <strong>2009:</strong> Ramman |
+    <strong>2010:</strong> Mudiyettu, Kalbelia, Chhau |
+    <strong>2012:</strong> Buddhist chanting (Ladakh) |
+    <strong>2013:</strong> Sankirtana |
+    <strong>2016:</strong> Yoga, Navroz |
+    <strong>2017:</strong> Kumbh Mela |
+    <strong>2021:</strong> Durga Puja |
+    <strong>2023:</strong> Garba
+  </div>
+  <div class="mem-te">
+    <span class="kw">గుర్తుంచుకునే విధానం:</span> "వేద రామ్ కూటి | రమ్మన్ | ముది కల్బే ఛావ్ | బౌద్ధ | సంకీర్తన | యోగ నవ్రోజ్ | కుంభ | దుర్గ | గర్బా" — ప్రతి పదం మొదటి అక్షరం ఒక ICH అంశం
+  </div>
+</div>
+
+<div class="exam-alert no-break">
+  <div class="ea-label">⚡ UNESCO ICH Exam Traps — Very High Frequency</div>
+  <ul>
+    <li><strong>Garba (Gujarat) = 2023</strong> — most recently inscribed; do NOT say it was inscribed earlier</li>
+    <li><strong>Kuchipudi is NOT on UNESCO ICH list</strong> — it is recognized as classical by Sangeet Natak Akademi but NOT UNESCO ICH</li>
+    <li><strong>Tolu Bommalata is NOT UNESCO ICH</strong> — only UNESCO attention as endangered art; no formal ICH inscription</li>
+    <li><strong>Yoga (2016)</strong> is on ICH list — NOT World Heritage Site (WHS)</li>
+    <li><strong>Kutiyattam (Kerala)</strong> was UNESCO Masterpiece of Oral Heritage 2001; then formally inscribed on ICH 2008</li>
+    <li><strong>Chhau (2010)</strong> — 3 styles from 3 states: Seraikella Chhau (Jharkhand), Mayurbhanj Chhau (Odisha), Purulia Chhau (West Bengal)</li>
+    <li><strong>Kumbh Mela (2017)</strong> inscribed on ICH — 4 cities: Prayagraj, Haridwar, Ujjain, Nashik — held in rotation</li>
+    <li><strong>Durga Puja (2021)</strong> — specifically Kolkata's Durga Puja; NOT all Durga Puja celebrations</li>
+  </ul>
+  <div class="ea-te">గర్బా = 2023 (అత్యంత తాజా) | కూచిపూడి UNESCO ICH లో లేదు | తోలు బొమ్మలాట ICH లో లేదు | యోగా ICH లో ఉంది, WHS లో కాదు | కుంభమేళా = 2017 ICH</div>
+</div>
+</div><!-- end page 5 -->
+
+<!-- ══════════════════ PAGE 6: COMPARISON TABLE & QUICK REVISION ══════════════════ -->
+<div class="a4 page-break">
+<div class="screen-hdr"><span>CH 3C · COMPARISON TABLE · PYQs · TRAP SHEET · RECAP</span><span>REVISION PAGE</span></div>
+
+<!-- ══════ COMPARISON TABLE ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">§CT</span>
+  <h2>AP Folk Arts — Master Comparison Table <span class="te">AP జానపద కళలు — సమగ్ర పోలిక పట్టిక</span></h2>
+</div>
+
+<table class="no-break">
+<thead>
+  <tr>
+    <th>Art Form కళారూపం</th>
+    <th>Type రకం</th>
+    <th>Community / Practitioners</th>
+    <th>Instrument వాయిద్యం</th>
+    <th>Theme / Occasion</th>
+    <th>Special Feature ప్రత్యేకత</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><strong>Burrakatha</strong><span class="te-td">బుర్రకథ</span></td>
+    <td>Narrative folk storytelling<span class="te-td">కథాగానం</span></td>
+    <td>Jangam community<span class="te-td">జంగం సమాజం</span></td>
+    <td>Burra (earthen pot)<span class="te-td">బుర్ర (మట్టి కుండ)</span></td>
+    <td>Mythological + social; freedom struggle<span class="te-td">పురాణ + సామాజిక కథలు</span></td>
+    <td>3 performers (Kathakadu, Hasyakadu, Rajakadu)<span class="te-td">ముగ్గురు కళాకారులు</span></td>
+  </tr>
+  <tr>
+    <td><strong>Harikatha</strong><span class="te-td">హరికథ</span></td>
+    <td>Devotional storytelling<span class="te-td">భక్తి కథాగానం</span></td>
+    <td>Vaishnava tradition<span class="te-td">వైష్ణవ సంప్రదాయం</span></td>
+    <td>Harmonium, Tabla, Violin</td>
+    <td>Puranas, Ramayana, Mahabharata<span class="te-td">పురాణ కథలు మాత్రమే</span></td>
+    <td>1 Harikatha Das + musicians; purely devotional<span class="te-td">కేవలం భక్తి ప్రధానం</span></td>
+  </tr>
+  <tr>
+    <td><strong>Tolu Bommalata</strong><span class="te-td">తోలు బొమ్మలాట</span></td>
+    <td>Shadow puppetry<span class="te-td">నీడ బొమ్మలాట</span></td>
+    <td>Killekyata community<span class="te-td">కిల్లేకాట సమాజం</span></td>
+    <td>Screen + light; traditional drums</td>
+    <td>Ramayana, Mahabharata only<span class="te-td">రామాయణం, మహాభారతం మాత్రమే</span></td>
+    <td>GI Tag; UNESCO endangered; 2–5 ft puppets<span class="te-td">GI ట్యాగ్; UNESCO అంతరించిపోతున్న కళ</span></td>
+  </tr>
+  <tr>
+    <td><strong>Kolattam</strong><span class="te-td">కొలాట్టం</span></td>
+    <td>Stick dance — group<span class="te-td">కర్ర నృత్యం</span></td>
+    <td>Women performers<span class="te-td">స్త్రీలు ప్రదర్శిస్తారు</span></td>
+    <td>Decorated sticks + songs<span class="te-td">అలంకార కర్రలు</span></td>
+    <td>Sankranti, Ugadi, Karthika, Brahmotsavam<span class="te-td">పండుగ సందర్భాలు</span></td>
+    <td>Circular group dance; stick-clapping rhythm<span class="te-td">వృత్తాకార నృత్యం; కర్రల తాళం</span></td>
+  </tr>
+  <tr>
+    <td><strong>Dhimsa</strong><span class="te-td">ధింసా</span></td>
+    <td>Tribal group dance<span class="te-td">గిరిజన నృత్యం</span></td>
+    <td>Kondh, Porja, Savara tribes<span class="te-td">కొందు, పోర్జా, సావర తెగలు</span></td>
+    <td>Traditional drums, wind instruments</td>
+    <td>Harvest festival; nature celebration<span class="te-td">పంటకోత పండుగ</span></td>
+    <td>Vizianagaram, Vizag, Araku Valley<span class="te-td">విజయనగరం, విశాఖ, అరకు లోయ</span></td>
+  </tr>
+  <tr>
+    <td><strong>Veeranatyam</strong><span class="te-td">వీరనాట్యం</span></td>
+    <td>Devotional warrior dance<span class="te-td">భక్తి వీర నృత్యం</span></td>
+    <td>Veeramusti community<span class="te-td">వీరముష్టి సమాజం</span></td>
+    <td>Traditional drums, cymbals</td>
+    <td>Shiva temples; Mahashivaratri<span class="te-td">శివాలయ పండుగలు</span></td>
+    <td>Fire-walking; sharp weapons; courage + devotion<span class="te-td">అగ్ని పరీక్ష; కత్తులు; వీరత + భక్తి</span></td>
+  </tr>
+  <tr>
+    <td><strong>Kalapam</strong><span class="te-td">కలాపం</span></td>
+    <td>Dialogue dance-drama<span class="te-td">సంవాద నృత్య నాటకం</span></td>
+    <td>Kuchipudi village artists<span class="te-td">కూచిపూడి కళాకారులు</span></td>
+    <td>Mridangam, Violin, Harmonium</td>
+    <td>Temple festivals; Vaishnava occasions<span class="te-td">ఆలయ పండుగలు</span></td>
+    <td>Origin of Kuchipudi classical dance<span class="te-td">కూచిపూడి శాస్త్రీయ నృత్యానికి మూలం</span></td>
+  </tr>
+</tbody>
+</table>
+
+<!-- ══════ PYQs ══════ -->
+<div class="sec-heading no-break">
+  <span class="sec-num">PYQ</span>
+  <h2>Previous Year Questions <span class="te">గత సంవత్సరాల ప్రశ్నలు</span></h2>
+</div>
+
+<div class="cols-2">
+<div class="pyq-item no-break">
+  <div class="pyq-q"><span class="pyq-num">PYQ 1</span> The instrument used in Burrakatha is?<span class="te-td">బుర్రకథలో ఉపయోగించే వాయిద్యం?</span></div>
+  <div class="pyq-a">✅ <strong>Burra</strong> — small earthen pot with membrane/strings<span class="te"> బుర్ర — మట్టి కుండ వాయిద్యం</span></div>
+</div>
+<div class="pyq-item no-break">
+  <div class="pyq-q"><span class="pyq-num">PYQ 2</span> Tolu Bommalata is practiced by which community?<span class="te-td">తోలు బొమ్మలాటను ఏ సమాజం ప్రదర్శిస్తుంది?</span></div>
+  <div class="pyq-a">✅ <strong>Killekyata community</strong> — traditional puppeteers of AP<span class="te"> కిల్లేకాట సమాజం</span></div>
+</div>
+<div class="pyq-item no-break">
+  <div class="pyq-q"><span class="pyq-num">PYQ 3</span> Dhimsa dance is performed by which tribes?<span class="te-td">ధింసా నృత్యం ఏ గిరిజన తెగలు చేస్తారు?</span></div>
+  <div class="pyq-a">✅ <strong>Kondh, Porja, Savara</strong> — Vizianagaram/Vizag/Araku region<span class="te"> కొందు, పోర్జా, సావర — విజయనగరం/అరకు</span></div>
+</div>
+<div class="pyq-item no-break">
+  <div class="pyq-q"><span class="pyq-num">PYQ 4</span> Most recently inscribed Indian element on UNESCO ICH list?<span class="te-td">UNESCO ICH లో అత్యంత తాజా భారత అంశం?</span></div>
+  <div class="pyq-a">✅ <strong>Garba of Gujarat — 2023</strong><span class="te"> గుజరాత్ గర్బా — 2023</span></div>
+</div>
+<div class="pyq-item no-break">
+  <div class="pyq-q"><span class="pyq-num">PYQ 5</span> Golla Kalapam involves dialogue between?<span class="te-td">గొల్ల కలాపంలో సంవాదం ఎవరి మధ్య?</span></div>
+  <div class="pyq-a">✅ <strong>Milkmaid (Golla) and a Brahmin/philosopher</strong> — social commentary on caste<span class="te"> గొల్ల స్త్రీ మరియు పండితుడి మధ్య — కుల వివక్షపై విమర్శ</span></div>
+</div>
+<div class="pyq-item no-break">
+  <div class="pyq-q"><span class="pyq-num">PYQ 6</span> Kalapam is considered the origin of which classical dance?<span class="te-td">కలాపం ఏ శాస్త్రీయ నృత్యానికి మూలం?</span></div>
+  <div class="pyq-a">✅ <strong>Kuchipudi classical dance</strong><span class="te"> కూచిపూడి శాస్త్రీయ నృత్యం</span></div>
+</div>
+<div class="pyq-item no-break">
+  <div class="pyq-q"><span class="pyq-num">PYQ 7</span> Kumbh Mela UNESCO ICH inscription year?<span class="te-td">కుంభమేళా UNESCO ICH సంవత్సరం?</span></div>
+  <div class="pyq-a">✅ <strong>2017</strong><span class="te"> 2017</span></div>
+</div>
+<div class="pyq-item no-break">
+  <div class="pyq-q"><span class="pyq-num">PYQ 8</span> Veeranatyam is performed by which community as offering to which deity?<span class="te-td">వీరనాట్యం ఏ సమాజం చేస్తారు? ఏ దైవానికి అర్పించారు?</span></div>
+  <div class="pyq-a">✅ <strong>Veeramusti community</strong> — offered to <strong>Lord Shiva</strong><span class="te"> వీరముష్టి సమాజం — శివుడికి అర్పణగా</span></div>
+</div>
+</div>
+
+<!-- ══════ RECAP BOX ══════ -->
+<div class="recap-box no-break" style="margin-top:10px">
+  <div class="box-title">Speed Revision — AP Folk Arts Top Facts</div>
+  <div class="recap-item"><span class="ri-num">1</span><div>Burrakatha = Burra instrument; 3 performers (Kathakadu, Hasyakadu, Rajakadu); Jangam community; social + freedom struggle <span class="recap-te">బుర్రకథ = బుర్ర; ముగ్గురు; జంగం సమాజం</span></div></div>
+  <div class="recap-item"><span class="ri-num">2</span><div>Harikatha = devotional ONLY; Harikatha Das; Harmonium + Tabla; Puranas/Ramayana/Mahabharata <span class="recap-te">హరికథ = కేవలం భక్తి; హరికథా దాసు</span></div></div>
+  <div class="recap-item"><span class="ri-num">3</span><div>Tolu Bommalata = leather shadow puppets; Killekyata community; GI Tag; UNESCO endangered; 2–5 ft puppets <span class="recap-te">తోలు బొమ్మలాట = చర్మ నీడ బొమ్మలు; GI ట్యాగ్</span></div></div>
+  <div class="recap-item"><span class="ri-num">4</span><div>Dhimsa = Kondh/Porja/Savara tribes; Vizianagaram + Araku; harvest celebration <span class="recap-te">ధింసా = కొందు/పోర్జా; అరకు లోయ</span></div></div>
+  <div class="recap-item"><span class="ri-num">5</span><div>Kalapam = origin of Kuchipudi; Bhama Kalapam + Golla Kalapam; social commentary embedded <span class="recap-te">కలాపం = కూచిపూడి మూలం; భామా కలాపం + గొల్ల కలాపం</span></div></div>
+  <div class="recap-item"><span class="ri-num">6</span><div>UNESCO ICH India = 16 elements; latest = Deepavali 2025 (Red Fort, Delhi); Garba = 15th (2023); Thatheras of Punjab (2014) often missed; Yoga = ICH not WHS <span class="recap-te">UNESCO ICH = 16 అంశాలు; తాజా = దీపావళి 2025 (రెడ్ ఫోర్ట్); గర్బా = 15వ (2023); థతేరా పంజాబ్ (2014) తరచుగా మిస్సవుతుంది; యోగా = ICH, WHS కాదు</span></div></div>
+  <div class="recap-item"><span class="ri-num">7</span><div>Kuchipudi NOT on UNESCO ICH; Tolu Bommalata NOT on UNESCO ICH — common exam trap! <span class="recap-te">కూచిపూడి + తోలు బొమ్మలాట = UNESCO ICH లో లేవు — పరీక్ష ఉచ్చు!</span></div></div>
+</div>
+
+<!-- ══════ TRAP SHEET ══════ -->
+<div class="sub-heading">MEGA TRAP SHEET — AP Folk Arts</div>
+<table class="trap-sheet no-break">
+<thead><tr><th>Topic అంశం</th><th class="trap-wrong">Common Mistake</th><th class="trap-right">Correct Answer</th></tr></thead>
+<tbody>
+<tr><td>Burrakatha instrument</td><td class="trap-wrong">Veena / Harmonium</td><td class="trap-right">Burra = earthen pot with strings/membrane</td></tr>
+<tr><td>Burrakatha performers</td><td class="trap-wrong">1 performer (solo)</td><td class="trap-right">3 performers — Kathakadu + Hasyakadu + Rajakadu</td></tr>
+<tr><td>Harikatha themes</td><td class="trap-wrong">Social + devotional (like Burrakatha)</td><td class="trap-right">ONLY devotional — Puranas, Ramayana, Mahabharata</td></tr>
+<tr><td>Tolu Bommalata — material</td><td class="trap-wrong">Cloth or wood puppets</td><td class="trap-right">Leather (goat/deer hide) — shadow puppets</td></tr>
+<tr><td>Tolu Bommalata — UNESCO</td><td class="trap-wrong">UNESCO ICH inscription</td><td class="trap-right">UNESCO ATTENTION as endangered art — NOT formally inscribed on ICH list</td></tr>
+<tr><td>Kuchipudi — UNESCO ICH</td><td class="trap-wrong">Kuchipudi is on UNESCO ICH list</td><td class="trap-right">Kuchipudi is NOT on UNESCO ICH — only Sangeet Natak Akademi classical recognition</td></tr>
+<tr><td>Garba UNESCO year</td><td class="trap-wrong">2016 or 2021</td><td class="trap-right">2023 — most recently inscribed Indian ICH element</td></tr>
+<tr><td>Yoga — UNESCO type</td><td class="trap-wrong">World Heritage Site (WHS)</td><td class="trap-right">UNESCO ICH (Intangible) — inscribed 2016</td></tr>
+<tr><td>Chhau styles</td><td class="trap-wrong">Only 1 state</td><td class="trap-right">3 styles: Seraikella (Jharkhand), Mayurbhanj (Odisha), Purulia (West Bengal)</td></tr>
+<tr><td>Dhimsa — which districts</td><td class="trap-wrong">Guntur / Krishna</td><td class="trap-right">Vizianagaram, Visakhapatnam — Araku Valley tribal area</td></tr>
+<tr><td>Kalapam — Golla Kalapam</td><td class="trap-wrong">Temple worship only</td><td class="trap-right">Social commentary + devotional — milkmaid vs philosopher dialogue</td></tr>
+</tbody>
+</table>
+
+</div><!-- end revision page -->
+
+</body>
+</html>

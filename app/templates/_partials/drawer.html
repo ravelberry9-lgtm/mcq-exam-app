@@ -1,0 +1,39 @@
+{# Side drawer · renders nav tree from nav_items table (surface='menu') #}
+<div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Main menu" aria-hidden="true">
+  <div class="drawer-header">
+    <div class="drawer-user">
+      <div class="drawer-avatar">{{ (user_name or 'R')[0] | upper }}</div>
+      <div>
+        <p class="drawer-name">{{ user_name or "Welcome" }}</p>
+        <p class="drawer-sub">{{ app_title }}</p>
+      </div>
+    </div>
+    <button class="drawer-close" id="drawer-close" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="drawer-nav">
+    {% macro render_node(node) %}
+      {% if node.children %}
+        <details class="drawer-group">
+          <summary class="drawer-item">
+            {% if node.icon %}<span class="drawer-icon-{{ node.icon }}"></span>{% endif %}
+            <span class="drawer-label">{{ node.label_te }} <span class="drawer-en">{{ node.label_en }}</span></span>
+            <svg class="drawer-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="drawer-children">
+            {% for child in node.children %}{{ render_node(child) }}{% endfor %}
+          </div>
+        </details>
+      {% else %}
+        <a class="drawer-item" href="{{ node.url or '#' }}">
+          {% if node.icon %}<span class="drawer-icon-{{ node.icon }}"></span>{% endif %}
+          <span class="drawer-label">{{ node.label_te }} <span class="drawer-en">{{ node.label_en }}</span></span>
+        </a>
+      {% endif %}
+    {% endmacro %}
+    {% for node in menu_tree %}{{ render_node(node) }}{% endfor %}
+  </nav>
+</aside>

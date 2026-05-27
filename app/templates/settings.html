@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}అమరికలు · Settings · {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <h1>అమరికలు</h1>
+  <p class="subtitle">Settings</p>
+</div>
+
+<form action="/settings" method="post" class="settings-form">
+  <fieldset class="settings-group">
+    <legend>భాష · Language</legend>
+    <p class="hint">Choose what shows on each question, note, and option.</p>
+    <label class="radio">
+      <input type="radio" name="lang" value="te" {% if lang_pref == 'te' %}checked{% endif %}>
+      <span>తెలుగు మాత్రమే · Telugu only</span>
+    </label>
+    <label class="radio">
+      <input type="radio" name="lang" value="en" {% if lang_pref == 'en' %}checked{% endif %}>
+      <span>English only</span>
+    </label>
+    <label class="radio">
+      <input type="radio" name="lang" value="both" {% if lang_pref == 'both' or not lang_pref %}checked{% endif %}>
+      <span>రెండూ · Both (recommended)</span>
+    </label>
+  </fieldset>
+  <button class="primary-btn" type="submit">Save</button>
+</form>
+{% endblock %}

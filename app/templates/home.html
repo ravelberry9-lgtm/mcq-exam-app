@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="empty-home">
+  <svg class="empty-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 18h6"/><path d="M10 22h4"/>
+    <path d="M15.09 14a4 4 0 0 0 1.7-2.5 6 6 0 1 0-9.58 0A4 4 0 0 0 8.91 14"/>
+  </svg>
+  <h1>ఈ రోజు ఏం చదవాలి?</h1>
+  <p class="subtitle">What would you like to study today?</p>
+  <p class="hint">Tap the menu icon at the top-left to pick a subject, an exam, or open settings.</p>
+
+  {% if quick_subjects %}
+  <div class="quick-row">
+    <p class="quick-label">త్వరిత ప్రారంభం · Quick start</p>
+    <div class="quick-chips">
+      {% for s in quick_subjects %}
+      <a class="chip" href="/practice/{{ s.slug }}">{{ s.name_te }} <span class="chip-en">{{ s.name_en }}</span></a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

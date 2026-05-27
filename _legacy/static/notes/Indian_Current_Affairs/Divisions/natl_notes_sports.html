@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports &amp; Games | National CA 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 16mm 14mm 14mm 14mm; }
+@media print {
+  .no-break { page-break-inside: avoid; }
+  .page-break { page-break-before: always; }
+  body { background: #fff !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --brick: #9b3a1a; --mud: #6b4226; --sand: #e8d5b0;
+  --green: #1a5030; --blue: #1a3a78; --gold: #b8860b;
+  --text: #1e1209; --border: #d4b896; --bg: #fdf8f2;
+  --tel-bg: #eef4ff; --tel-bdr: #1a3a78; --alert: #7a1010;
+}
+body { font-family: 'Libre Baskerville', Georgia, serif; background: #ddd5c8;
+       color: var(--text); font-size: 9.5pt; line-height: 1.55; }
+.a4 { width: 794px; min-height: 1123px; background: #fff; margin: 16px auto;
+      padding: 13mm 14mm 12mm; box-shadow: 0 2px 18px rgba(0,0,0,.18); }
+.doc-header { background: linear-gradient(135deg, #6b1a1a, #4a0e0e);
+              color: #fff; border-radius: 5px; padding: 13px 16px; margin-bottom: 12px; }
+.dh-title { font-size: 14.5pt; font-weight: 700; letter-spacing: .02em; }
+.dh-te { font-family: 'Tiro Telugu', serif; font-size: 11pt; color: #f8c8a8; margin: 3px 0 6px; }
+.dh-meta { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #e8a888;
+           display: flex; gap: 12px; flex-wrap: wrap; }
+.dh-meta span { background: rgba(255,255,255,.12); padding: 2px 8px; border-radius: 2px; }
+.sec-hdr { background: var(--mud); color: #fff; padding: 5px 11px; border-radius: 3px;
+           margin: 14px 0 7px; font-family: 'Source Sans 3', sans-serif;
+           font-size: 10pt; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+.sec-hdr .te { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; color: #f8e8d8; }
+.sec-hdr2 { background: var(--blue); color: #fff; padding: 4px 11px; border-radius: 3px;
+            margin: 11px 0 6px; font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; }
+.sec-hdr2 .te { font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400; color: #c8d8f8; }
+.sec-hdr3 { background: var(--green); color: #fff; padding: 3px 10px; border-radius: 3px;
+            margin: 9px 0 5px; font-family: 'Source Sans 3', sans-serif; font-size: 9pt; font-weight: 700; }
+table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 6px 0; }
+th { background: var(--mud); color: #fff; padding: 5px 8px; text-align: left; font-size: 8.5pt; }
+th.blue { background: var(--blue); }
+th.green { background: var(--green); }
+th.brick { background: var(--brick); }
+th.gold { background: var(--gold); }
+td { border: 1px solid var(--border); padding: 4px 7px; vertical-align: top; }
+tr:nth-child(even) td { background: #fdf4ec; }
+.te-cell { font-family: 'Tiro Telugu', serif; font-size: 9pt; line-height: 1.7; color: #0a1a40; }
+.highlight-row td { background: #fff3cd !important; font-weight: 700; }
+.new-row td { background: #d5f5e3 !important; font-weight: 700; }
+.gold-row td { background: #fff8dc !important; font-weight: 700; }
+.silver-row td { background: #f0f0f0 !important; }
+.bronze-row td { background: #fde8d0 !important; }
+.num-col { font-family: 'Fira Mono', monospace; font-weight: 700; color: var(--brick); }
+.alert-box { background: #fff3e0; border-left: 4px solid #e65100; border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.info-box { background: #e8f4fd; border-left: 4px solid var(--blue); border-radius: 3px;
+            padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.green-box { background: #e8f8f0; border-left: 4px solid var(--green); border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.red-box { background: #fdeeee; border-left: 4px solid var(--alert); border-radius: 3px;
+           padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.gold-box { background: #fffbea; border-left: 4px solid var(--gold); border-radius: 3px;
+            padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.te-block { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; line-height: 1.85;
+            color: #0a1a40; background: var(--tel-bg); border-top: 1px solid var(--tel-bdr);
+            padding: 5px 9px; margin-top: 4px; border-radius: 0 0 3px 3px; }
+.badge { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 7.5pt;
+         font-weight: 700; margin: 1px; }
+.b-gold { background: #fff3cd; color: #7a4f00; border: 1px solid #f0c040; }
+.b-silver { background: #e8e8e8; color: #444; border: 1px solid #bbb; }
+.b-bronze { background: #ffe4cc; color: #7a3a00; border: 1px solid #d0905a; }
+.b-new { background: #d5f5e3; color: #1a5030; border: 1px solid #a8d8b8; }
+.b-blue { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+.sum-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+.sg { background: #fff; border-radius: 6px; padding: 10px; text-align: center; border: 2px solid; }
+.sg-blue { border-color: var(--blue); }
+.sg-green { border-color: var(--green); }
+.sg-brick { border-color: var(--brick); }
+.sg-gold { border-color: var(--gold); }
+.sg-num { font-size: 17pt; font-weight: 800; display: block; line-height: 1.1; }
+.sg-lbl { font-size: 7pt; color: #666; margin-top: 3px; font-family: 'Source Sans 3', sans-serif; }
+p { margin: 5px 0; }
+ul { margin-left: 18px; margin-top: 4px; }
+li { margin-bottom: 3px; }
+.kw { background: #d0e8ff; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.kw-green { background: #c8f0d8; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.kw-gold { background: #fff3cd; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.mono { font-family: 'Fira Mono', monospace; font-size: 8.5pt; }
+hr.div { border: none; border-top: 1.5px dashed var(--border); margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="a4">
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="dh-title">Sports &amp; Games | National CA 2026</div>
+  <div class="dh-te">క్రీడలు | పారిస్ ఒలింపిక్స్ 2024 | క్రికెట్ ICC టైటిల్స్ | చెస్ | అర్జున అవార్డు | సమగ్ర నోట్స్</div>
+  <div class="dh-meta">
+    <span>📅 Verified: May 2026</span>
+    <span>🎯 AP High Court SO 2026</span>
+    <span>🏅 Paris Olympics: July 26 – Aug 11, 2024</span>
+    <span>🏏 ICC T20 WC 2026 Winner: India</span>
+  </div>
+</div>
+
+<!-- SUMMARY GRID -->
+<div class="sum-grid">
+  <div class="sg sg-gold"><span class="sg-num" style="color:var(--gold)">6</span><div class="sg-lbl">India's Paris 2024 Olympic Medals<br><span style="font-family:'Tiro Telugu',serif">ఒలింపిక్ పతకాలు</span></div></div>
+  <div class="sg sg-brick"><span class="sg-num" style="color:var(--brick)">3</span><div class="sg-lbl">ICC T20 World Cups won by India<br><span style="font-family:'Tiro Telugu',serif">T20 ప్రపంచ కప్‌లు</span></div></div>
+  <div class="sg sg-blue"><span class="sg-num" style="color:var(--blue)">18</span><div class="sg-lbl">Gukesh's age as Chess World Champion<br><span style="font-family:'Tiro Telugu',serif">గుకేశ్ వయసు (చెస్ చాంపియన్)</span></div></div>
+  <div class="sg sg-green"><span class="sg-num" style="color:var(--green)">7</span><div class="sg-lbl">India's total ICC Men's titles<br><span style="font-family:'Tiro Telugu',serif">మొత్తం ICC టైటిల్స్</span></div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: PARIS OLYMPICS 2024 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>1. Paris Olympics 2024 — India's Performance <span class="te">/ పారిస్ ఒలింపిక్స్ 2024</span></span></div>
+
+<div class="gold-box no-break">
+  <strong>Paris 2024 Summer Olympics</strong> — Dates: <span class="kw">July 26 – August 11, 2024</span> | Host City: <span class="kw">Paris, France</span> | India finished ranked <span class="kw">71st</span> on the medals table. India won <span class="kw">6 medals (1 Silver + 5 Bronze)</span> — joint second-best ever for India (equal to London 2012).
+  <div class="te-block">పారిస్ 2024 వేసవి ఒలింపిక్స్: <strong>జూలై 26 – ఆగస్ట్ 11, 2024</strong> | పారిస్, ఫ్రాన్స్. భారత్: <strong>6 పతకాలు (1 రజతం + 5 కంచు)</strong> — 71వ స్థానం. ఇది లండన్ 2012తో సమానంగా భారత్ యొక్క రెండవ అత్యుత్తమ ఒలింపిక్ పనితీరు.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="5" class="gold">India's 6 Medals at Paris Olympics 2024</th></tr>
+  <tr><th style="width:5%">#</th><th style="width:22%">Athlete / క్రీడాకారుడు</th><th style="width:20%">Medal / పతకం</th><th style="width:25%">Sport / Event</th><th style="width:28%">Historic Note / విశేషం</th></tr>
+
+  <tr class="bronze-row">
+    <td>1</td>
+    <td><strong>Manu Bhaker</strong></td>
+    <td><span class="badge b-bronze">🥉 Bronze</span></td>
+    <td>Shooting — 10m Air Pistol (Women)</td>
+    <td>First Indian <em>woman</em> shooter to win an Olympic medal</td>
+  </tr>
+  <tr class="bronze-row">
+    <td>2</td>
+    <td><strong>Manu Bhaker + Sarabjot Singh</strong></td>
+    <td><span class="badge b-bronze">🥉 Bronze</span></td>
+    <td>Shooting — 10m Air Pistol (Mixed Team)</td>
+    <td>Manu became 1st Indian to win <strong>2 medals in same Olympics</strong> since independence</td>
+  </tr>
+  <tr class="bronze-row">
+    <td>3</td>
+    <td><strong>Swapnil Kusale</strong></td>
+    <td><span class="badge b-bronze">🥉 Bronze</span></td>
+    <td>Shooting — 50m Rifle 3 Positions (Men)</td>
+    <td>India's third shooting medal at Paris 2024</td>
+  </tr>
+  <tr class="bronze-row">
+    <td>4</td>
+    <td><strong>Indian Men's Hockey Team</strong></td>
+    <td><span class="badge b-bronze">🥉 Bronze</span></td>
+    <td>Field Hockey</td>
+    <td>2nd consecutive Olympic bronze (Tokyo 2020 + Paris 2024)</td>
+  </tr>
+  <tr class="silver-row">
+    <td>5</td>
+    <td><strong>Neeraj Chopra</strong></td>
+    <td><span class="badge b-silver">🥈 Silver</span></td>
+    <td>Athletics — Javelin Throw (Men)</td>
+    <td>89.45 m; Gold: Arshad Nadeem (PAK) 92.97 m (world record)</td>
+  </tr>
+  <tr class="bronze-row">
+    <td>6</td>
+    <td><strong>Aman Sehrawat</strong></td>
+    <td><span class="badge b-bronze">🥉 Bronze</span></td>
+    <td>Wrestling — Freestyle 57 kg (Men)</td>
+    <td>Youngest Indian Olympic medal winner (21 years)</td>
+  </tr>
+</table>
+
+<div class="info-box no-break">
+  <strong>Notable near-misses at Paris 2024:</strong> <span class="kw">Vinesh Phogat</span> (wrestling) reached the final (would have been gold) but was disqualified for being 100g overweight at weigh-in. She filed appeal with Court of Arbitration for Sport (CAS) seeking silver — rejected. Lakshya Sen (badminton) lost bronze medal play-off.
+  <div class="te-block">పారిస్ 2024లో గుండె కోత నిరాశలు: <strong>వినేష్ ఫొగాట్</strong> (రెజ్లింగ్) ఫైనల్‌కు చేరింది కానీ వెయిన్-ఇన్‌లో 100 గ్రాముల అధిక బరువు వల్ల అనర్హత. CAS (క్రీడా మధ్యవర్తిత్వ న్యాయస్థానం) విజ్ఞప్తిని తిరస్కరించింది. లక్ష్య సేన్ (బ్యాడ్మింటన్) కంచు పతక ప్లేఆఫ్‌లో నిరాశ.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="3" class="blue">Paris 2024 Olympics — Fast Facts</th></tr>
+  <tr><td style="width:38%"><strong>Venue / నగరం</strong></td><td colspan="2">Paris, France | July 26 – August 11, 2024</td></tr>
+  <tr><td><strong>Total Countries</strong></td><td colspan="2">206 NOCs participated</td></tr>
+  <tr><td><strong>Overall Medal Table Topper</strong></td><td colspan="2">USA (40 gold, 44 silver, 42 bronze = 126 total)</td></tr>
+  <tr><td><strong>India's Rank</strong></td><td colspan="2">71st | Total: 6 medals (1 Silver, 5 Bronze)</td></tr>
+  <tr><td><strong>India's Flag Bearer (Opening)</strong></td><td colspan="2">PV Sindhu (badminton) + Sharath Kamal (table tennis)</td></tr>
+  <tr><td><strong>India's Flag Bearer (Closing)</strong></td><td colspan="2">Manu Bhaker</td></tr>
+  <tr class="highlight-row"><td><strong>India's Best-Ever Olympics</strong></td><td colspan="2">London 2012: 6 medals (2 silver, 4 bronze); Paris 2024: 6 medals (1 silver, 5 bronze) — equal count</td></tr>
+  <tr><td><strong>Previous record: Tokyo 2020</strong></td><td colspan="2">7 medals (1 gold — Neeraj Chopra, 2 silver, 4 bronze)</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: CRICKET — ICC TITLES -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>2. Cricket — ICC Titles 2024–2026 <span class="te">/ ICC క్రికెట్ టైటిల్స్</span></span></div>
+
+<div class="green-box no-break">
+  <strong>India's Cricket Dominance 2024–2026:</strong> India won <span class="kw">three back-to-back ICC titles</span> — T20 World Cup 2024, Champions Trophy 2025, and T20 World Cup 2026. This gives India a total of <span class="kw">7 ICC men's titles</span>. India is the only team to win ICC titles in 2024, 2025 and 2026 consecutively.
+  <div class="te-block">భారత క్రికెట్ ఆధిపత్యం 2024-2026: ICC T20 వరల్డ్ కప్ 2024 + చాంపియన్స్ ట్రోఫీ 2025 + ICC T20 వరల్డ్ కప్ 2026 — వరుసగా <strong>మూడు ICC టైటిల్స్</strong>. భారత్ మొత్తం ICC మెన్స్ టైటిల్స్: <strong>7</strong>.</div>
+</div>
+
+<div class="sec-hdr2"><span>2a. ICC T20 World Cup 2024 <span class="te">/ ICC T20 వరల్డ్ కప్ 2024</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="green">T20 World Cup 2024 — Key Facts</th></tr>
+  <tr><td style="width:35%"><strong>Edition</strong></td><td>9th ICC Men's T20 World Cup</td></tr>
+  <tr><td><strong>Host(s)</strong></td><td>USA + West Indies (joint hosts)</td></tr>
+  <tr><td><strong>Dates</strong></td><td>June 1–29, 2024</td></tr>
+  <tr class="gold-row"><td><strong>Winner / విజేత</strong></td><td>🏆 <strong>INDIA</strong> (under Rohit Sharma)</td></tr>
+  <tr><td><strong>Final</strong></td><td>India vs South Africa | India won by <strong>7 runs</strong></td></tr>
+  <tr><td><strong>Final Venue</strong></td><td>Kensington Oval, Barbados, West Indies</td></tr>
+  <tr><td><strong>Player of the Tournament</strong></td><td>Jasprit Bumrah (India)</td></tr>
+  <tr><td><strong>India's record</strong></td><td>Won all 8 matches; unbeaten throughout the tournament</td></tr>
+  <tr><td><strong>Significance</strong></td><td>India's 2nd T20 WC title (1st in 2007 under Dhoni); 17-year gap bridged</td></tr>
+</table>
+
+<div class="te-block">
+ICC T20 వరల్డ్ కప్ 2024: జూన్ 1–29, 2024 | USA + వెస్ట్ ఇండీస్. <strong>విజేత: భారత్</strong> (రోహిత్ శర్మ నేతృత్వం). ఫైనల్: భారత్ vs దక్షిణాఫ్రికా — <strong>7 పరుగుల తేడాతో</strong> భారత్ గెలుపు (కింగ్స్‌టన్ ఓవల్, బార్బడోస్). టోర్నమెంట్ అంతటా అజేయంగా నిలిచింది. 2007 తర్వాత (17 సంవత్సరాలు) భారత్ రెండవ T20 WC టైటిల్.
+</div>
+
+<div class="sec-hdr2"><span>2b. ICC Champions Trophy 2025 <span class="te">/ ICC చాంపియన్స్ ట్రోఫీ 2025</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="blue">Champions Trophy 2025 — Key Facts</th></tr>
+  <tr><td style="width:35%"><strong>Edition</strong></td><td>9th ICC Champions Trophy</td></tr>
+  <tr><td><strong>Host</strong></td><td>Pakistan Cricket Board (PCB) — but India played at neutral venue Dubai</td></tr>
+  <tr><td><strong>Dates</strong></td><td>February 19 – March 9, 2025</td></tr>
+  <tr class="gold-row"><td><strong>Winner / విజేత</strong></td><td>🏆 <strong>INDIA</strong> (under Rohit Sharma)</td></tr>
+  <tr><td><strong>Final</strong></td><td>India vs New Zealand | India won by <strong>4 wickets</strong></td></tr>
+  <tr><td><strong>Final Venue</strong></td><td>Dubai International Cricket Stadium, Dubai (March 9, 2025)</td></tr>
+  <tr><td><strong>NZ score / India chased</strong></td><td>NZ: 251/7; India: 252/6 (49 overs)</td></tr>
+  <tr><td><strong>India's Total ICC Titles</strong></td><td>This was India's <strong>7th ICC title</strong> overall</td></tr>
+</table>
+
+<div class="sec-hdr2"><span>2c. ICC T20 World Cup 2026 <span class="te">/ ICC T20 వరల్డ్ కప్ 2026</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="brick">T20 World Cup 2026 — Key Facts</th></tr>
+  <tr><td style="width:35%"><strong>Edition</strong></td><td>10th ICC Men's T20 World Cup</td></tr>
+  <tr><td><strong>Host</strong></td><td>India (home edition)</td></tr>
+  <tr><td><strong>Dates</strong></td><td>February–March 2026</td></tr>
+  <tr class="gold-row"><td><strong>Winner / విజేత</strong></td><td>🏆 <strong>INDIA</strong> (3rd T20 WC title; 2nd consecutively)</td></tr>
+  <tr><td><strong>Final</strong></td><td>India vs New Zealand | India won by <strong>96 runs</strong></td></tr>
+  <tr><td><strong>Final Venue</strong></td><td>Narendra Modi Stadium (Sardar Patel Stadium), Ahmedabad | March 8, 2026</td></tr>
+  <tr><td><strong>Scores</strong></td><td>India: 255/5 (20 overs); New Zealand: 159 (19 overs)</td></tr>
+  <tr><td><strong>Semi-final</strong></td><td>India beat England by <strong>7 runs</strong> (253/7 vs 246/7)</td></tr>
+  <tr class="highlight-row"><td><strong>Significance</strong></td><td>India's <strong>3rd T20 WC title</strong> (2007, 2024, 2026); India holds consecutive titles (2024 + 2026); only team to win 3 T20 WCs</td></tr>
+</table>
+
+<div class="info-box no-break">
+  <strong>India's ICC Titles — Complete List (7 titles):</strong>
+  <ul>
+    <li>ODI World Cup: <span class="kw">1983</span> (Kapil Dev), <span class="kw">2011</span> (MS Dhoni)</li>
+    <li>Champions Trophy: <span class="kw">2002</span> (joint, with Sri Lanka), <span class="kw">2013</span> (Dhoni), <span class="kw">2025</span> (Rohit Sharma)</li>
+    <li>T20 World Cup: <span class="kw">2007</span> (Dhoni), <span class="kw">2024</span> (Rohit Sharma), <span class="kw">2026</span> (Rohit Sharma)</li>
+  </ul>
+  <div class="te-block">భారత్ మొత్తం ICC టైటిల్స్ (7): ODI వరల్డ్ కప్: 1983 + 2011 | చాంపియన్స్ ట్రోఫీ: 2002 (జాయింట్) + 2013 + 2025 | T20 వరల్డ్ కప్: 2007 + 2024 + 2026. <strong>రోహిత్ శర్మ</strong> నాయకత్వంలో: T20 WC 2024, చాంపియన్స్ ట్రోఫీ 2025, T20 WC 2026 — <strong>మూడు ICC టైటిల్స్</strong>.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: CHESS — GUKESH -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>3. Chess — D. Gukesh: Youngest World Champion <span class="te">/ చెస్ — గుకేశ్ ప్రపంచ చాంపియన్</span></span></div>
+
+<div class="gold-box no-break">
+  <strong>D. Gukesh Dommaraju</strong> became the <span class="kw">18th World Chess Champion</span> and the <span class="kw">youngest ever</span> at age <span class="kw">18 years, 8 months, 14 days</span>. He defeated China's Ding Liren in the 2024 FIDE World Chess Championship in <span class="kw">Singapore</span> on <span class="kw">December 12, 2024</span>, by <span class="kw">7.5–6.5</span> (14-game match).
+  <div class="te-block">D. గుకేశ్ దొమ్మరాజు — <strong>18వ ప్రపంచ చెస్ చాంపియన్</strong>; అన్నివేళల అత్యంత పిన్న వయసులో (18 సంవత్సరాలు, 8 నెలలు, 14 రోజులు). చైనా యొక్క డింగ్ లిరెన్‌ను <strong>డిసెంబర్ 12, 2024</strong>న సింగపూర్‌లో <strong>7.5–6.5</strong>తో ఓడించాడు.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="gold">D. Gukesh — Key Facts</th></tr>
+  <tr><td style="width:38%"><strong>Full Name</strong></td><td>Dommaraju Gukesh (D. Gukesh)</td></tr>
+  <tr><td><strong>Born / జన్మించిన తేదీ</strong></td><td>May 29, 2006 (Chennai, Tamil Nadu)</td></tr>
+  <tr><td><strong>Championship Title</strong></td><td>2024 FIDE World Chess Championship (18th Champion)</td></tr>
+  <tr><td><strong>Age at Win</strong></td><td><strong>18 years, 8 months, 14 days</strong> (youngest ever — beating Magnus Carlsen's record)</td></tr>
+  <tr><td><strong>Opponent</strong></td><td>Ding Liren (China; 17th World Champion, won in 2023)</td></tr>
+  <tr><td><strong>Venue</strong></td><td>Singapore | December 2024 (14-game match)</td></tr>
+  <tr class="gold-row"><td><strong>Result</strong></td><td><strong>7.5 – 6.5</strong> in favour of Gukesh</td></tr>
+  <tr><td><strong>Sponsors / Training</strong></td><td>ONGC; trained with several grandmasters; endorsed by FIDE</td></tr>
+  <tr class="new-row"><td><strong>Award received</strong></td><td><strong>Major Dhyan Chand Khel Ratna Award 2024</strong> (India's highest sports honour)</td></tr>
+  <tr><td><strong>Other Achievement</strong></td><td>Became youngest winner of FIDE Candidates Tournament 2024 (Gukesh qualified before championship)</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: U-19 WORLD CUP 2026 + OTHER SPORTS -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>4. Other Key India Sports Achievements 2024–2026 <span class="te">/ ఇతర ముఖ్య క్రీడా విజయాలు</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="4" class="brick">India's Key Sports Wins / Milestones 2024–2026</th></tr>
+  <tr><th style="width:28%">Event / పోటీ</th><th style="width:20%">Date / తేదీ</th><th style="width:22%">India's Achievement</th><th style="width:30%">Key Player / Note</th></tr>
+
+  <tr class="gold-row"><td><strong>ICC U-19 Men's T20 World Cup 2026</strong><br><span class="te-cell">అండర్-19 T20 వరల్డ్ కప్</span></td><td>Early 2026</td><td>🏆 <strong>India Won</strong></td><td>Captain: <strong>Ayush Mhatre</strong>; India U-19 national champions</td></tr>
+  <tr><td><strong>Paris Olympics 2024 — Hockey</strong></td><td>Aug 2024</td><td>🥉 Bronze Medal</td><td>Captain: Harmanpreet Singh; India's 2nd consecutive Olympic bronze</td></tr>
+  <tr><td><strong>Neeraj Chopra — Diamond League</strong></td><td>2024</td><td>Won 2024 Diamond League Finals (javelin)</td><td>Lausanne, Switzerland; throw ~88+ m; Neeraj continues dominance</td></tr>
+  <tr><td><strong>India Hockey — Asian Champions Trophy 2024</strong></td><td>Sep 2024</td><td>🥇 Won</td><td>Moqi, China; India beat China in final</td></tr>
+  <tr><td><strong>Badminton — PV Sindhu</strong></td><td>2024–25</td><td>Continued BWF circuit presence</td><td>Last Olympic gold was Tokyo 2020 (silver); Paris 2024 group stage exit</td></tr>
+  <tr class="new-row"><td><strong>Chess: Gukesh — World Champion</strong></td><td>Dec 2024</td><td>Youngest-ever World Chess Champion</td><td>18 yrs; defeated Ding Liren; Khel Ratna 2024</td></tr>
+  <tr><td><strong>ICC Women's T20 WC 2024</strong></td><td>Oct 2024</td><td>India did not win; NZ won</td><td>Held in UAE; India lost in group stage</td></tr>
+  <tr><td><strong>ICC T20 World Cup 2024 (Men)</strong></td><td>Jun 2024</td><td>🏆 India won</td><td>Rohit Sharma; final vs SA; 7 runs</td></tr>
+  <tr><td><strong>ICC Champions Trophy 2025 (Men)</strong></td><td>Mar 2025</td><td>🏆 India won</td><td>7th ICC title; final vs NZ; Dubai; 4 wickets</td></tr>
+  <tr><td><strong>ICC T20 World Cup 2026 (Men)</strong></td><td>Mar 2026</td><td>🏆 India won (3rd title)</td><td>Ahmedabad; final vs NZ; 96 runs; consec. title</td></tr>
+</table>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4b: 2026 COMMONWEALTH GAMES (GLASGOW) -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>4b. 2026 Commonwealth Games — Glasgow <span class="te">/ 2026 కామన్వెల్త్ గేమ్స్ — గ్లాస్గో</span></span></div>
+
+<div class="info-box no-break">
+  <strong>2026 Commonwealth Games (XXIII Edition)</strong> — Host city: <span class="kw">Glasgow, Scotland, United Kingdom</span>. Dates: <span class="kw">July 23 – August 2, 2026</span>. Glasgow previously hosted the 2014 Commonwealth Games and is taking over on short notice after Australia withdrew.
+  <div class="te-block">2026 కామన్వెల్త్ గేమ్స్ (XXIII వ ఎడిషన్) — ఆతిథ్య నగరం: <strong>గ్లాస్గో, స్కాట్లాండ్, యూనైటెడ్ కింగ్‌డమ్</strong>. తేదీలు: <strong>జులై 23 – ఆగస్ట్ 2, 2026</strong>. గ్లాస్గో ఇంతకుముందు 2014 కామన్వెల్త్ గేమ్స్‌కు ఆతిథ్యం ఇచ్చింది.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="brick">2026 Commonwealth Games — Key Facts</th></tr>
+  <tr><th style="width:35%">Parameter / వివరం</th><th style="width:65%">Detail / సమాచారం</th></tr>
+  <tr><td><strong>Edition / ఎడిషన్</strong></td><td>XXIII Commonwealth Games (23rd edition)</td></tr>
+  <tr class="highlight-row"><td><strong>Host City / ఆతిథ్య నగరం</strong></td><td><span class="kw">Glasgow, Scotland, United Kingdom</span> — previously hosted 2014 CWG</td></tr>
+  <tr><td><strong>Dates / తేదీలు</strong></td><td><span class="kw">July 23 – August 2, 2026</span></td></tr>
+  <tr><td><strong>Sports Programme / క్రీడలు</strong></td><td><strong>10 sports</strong>: Athletics, Swimming, Gymnastics, Boxing, Judo, Track Cycling, Weightlifting, Wrestling, Lawn Bowls, Netball + <strong>6 Para sports</strong></td></tr>
+  <tr><td><strong>Scale / పరిమాణం</strong></td><td>Much smaller than usual CWG (typically 20+ sports) — reduced programme due to Glasgow taking over on short notice</td></tr>
+  <tr class="highlight-row"><td><strong>Originally Awarded To / మొదట కేటాయించిన దేశం</strong></td><td>Victoria, Australia → Australia withdrew in <span class="kw">July 2023</span> citing cost overruns → awarded to Glasgow</td></tr>
+  <tr><td><strong>Next Host / తదుపరి ఆతిథ్యం</strong></td><td><span class="kw">Ahmedabad, India — 2030</span> (Centenary Games: 100 years of Commonwealth Games)</td></tr>
+  <tr><td><strong>India Context / భారత సందర్భం</strong></td><td>India will field athletes across multiple disciplines; CWG is a major international multi-sport platform for India</td></tr>
+</table>
+
+<div class="alert-box no-break">
+  <strong>⚠️ Exam Alert — 2026 CWG:</strong>
+  Host = <span class="kw">Glasgow</span> (Scotland, UK) | Dates = <span class="kw">July 23 – Aug 2, 2026</span> | Edition = <span class="kw">XXIII</span> | Sports = <span class="kw">10 sports + 6 Para sports</span> | Originally: Victoria, Australia withdrew (July 2023, cost overruns) | Next CWG = <span class="kw">Ahmedabad 2030</span> (Centenary Games).
+  <div class="te-block">2026 CWG: ఆతిథేయి = <strong>గ్లాస్గో</strong> (స్కాట్లాండ్, UK) | తేదీలు = జులై 23 – ఆగస్ట్ 2, 2026 | ఎడిషన్ = XXIII | క్రీడలు = 10 + 6 పారా స్పోర్ట్స్ | మొదట విక్టోరియా (ఆస్ట్రేలియా) → వెనుదిరిగింది (జులై 2023, ఖర్చుల కారణంగా) → గ్లాస్గోకు అవకాశం | తదుపరి CWG = <strong>అహ్మదాబాద్ 2030</strong> (శతాబ్ది గేమ్స్).</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: SPORTS AWARDS 2024 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>5. National Sports Awards 2024 <span class="te">/ జాతీయ క్రీడా అవార్డులు 2024</span></span></div>
+
+<div class="info-box no-break">
+  <strong>India's National Sports Awards</strong> — Highest honours in Indian sports. Presented by the President of India at Rashtrapati Bhavan on National Sports Day (August 29 — Dhyan Chand's birthday).
+  <div class="te-block">భారత జాతీయ క్రీడా అవార్డులు — అత్యున్నత క్రీడా పురస్కారాలు. జాతీయ క్రీడా దినం (ఆగస్ట్ 29 — మేజర్ ధ్యాన్‌చంద్ జయంతి)న రాష్ట్రపతి భవన్‌లో రాష్ట్రపతిచే ప్రదానం.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="3" class="gold">National Sports Awards 2024</th></tr>
+  <tr><th style="width:30%">Award / అవార్డు</th><th style="width:38%">Recipient(s) / గ్రహీత(లు)</th><th style="width:32%">Sport / క్రీడ</th></tr>
+  <tr class="gold-row"><td><strong>Major Dhyan Chand Khel Ratna</strong><br><span class="te-cell">ఖేల్ రత్న అవార్డు</span></td><td><strong>D. Gukesh</strong> (Chess)<br><strong>Harmanpreet Singh</strong> (Hockey)</td><td>Chess; Field Hockey</td></tr>
+  <tr><td><strong>Arjuna Award</strong><br><span class="te-cell">అర్జున అవార్డు</span></td><td>Jyothi Yarraji (Athletics — 100m hurdles), Annnu Rani (Javelin), Salima Tete (Hockey), Sift Kaur Samra (Shooting) + others</td><td>Multiple sports</td></tr>
+  <tr><td><strong>Dronacharya Award (Lifetime)</strong><br><span class="te-cell">ద్రోణాచార్య అవార్డు</span></td><td>S.Murugan Krishnan (Shooting), Radhakrishnan Nair (Athletics) + others</td><td>Coaches</td></tr>
+  <tr><td><strong>Dhyan Chand Award (Lifetime)</strong></td><td>For contribution to sports after retirement from active play</td><td>Lifetime achievement</td></tr>
+</table>
+
+<div class="alert-box no-break">
+  <strong>⚠️ Exam Alert — Khel Ratna 2024:</strong> <span class="kw">D. Gukesh</span> (World Chess Champion) and <span class="kw">Harmanpreet Singh</span> (Hockey Captain, led team to 2 Olympic bronzes) both received the Major Dhyan Chand Khel Ratna Award 2024.
+  <div class="te-block">ఖేల్ రత్న 2024 గ్రహీతలు: <strong>D. గుకేశ్</strong> (ప్రపంచ చెస్ చాంపియన్) మరియు <strong>హర్మన్‌ప్రీత్ సింగ్</strong> (హాకీ కెప్టెన్; 2 ఒలింపిక్ కంచు పతకాలు నేతృత్వం) — ఇద్దరికీ మేజర్ ధ్యాన్‌చంద్ ఖేల్ రత్న 2024 అవార్డు.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: QUICK REFERENCE -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>6. Quick-Reference — Sports Data Points <span class="te">/ త్వరిత సూచన — క్రీడా గణాంకాలు</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="brick">Key Sports Facts for AP HC SO 2026 Exam</th></tr>
+  <tr><th style="width:50%">Question Trigger / ప్రశ్న</th><th style="width:50%">Answer / సమాధానం</th></tr>
+  <tr><td>Paris 2024 Olympics host city / తేదీలు</td><td class="num-col">Paris, France | July 26 – August 11, 2024</td></tr>
+  <tr><td>India's total medals at Paris 2024</td><td class="num-col">6 medals (1 Silver + 5 Bronze); 71st rank</td></tr>
+  <tr><td>India's silver medal at Paris 2024</td><td class="num-col">Neeraj Chopra — Javelin (89.45 m)</td></tr>
+  <tr><td>Manu Bhaker's medals at Paris 2024</td><td class="num-col">2 Bronze (individual 10m + mixed team with Sarabjot Singh)</td></tr>
+  <tr><td>India hockey at Paris 2024</td><td class="num-col">Bronze medal (captain: Harmanpreet Singh)</td></tr>
+  <tr><td>Youngest Indian Olympic medalist Paris 2024</td><td class="num-col">Aman Sehrawat (wrestling, 21 years)</td></tr>
+  <tr><td>Vinesh Phogat at Paris 2024</td><td class="num-col">Disqualified in final (100g overweight); CAS appeal rejected</td></tr>
+  <tr><td>ICC T20 WC 2024 winner / venue</td><td class="num-col">India (beat SA by 7 runs); USA + West Indies</td></tr>
+  <tr><td>ICC T20 WC 2024 Player of Tournament</td><td class="num-col">Jasprit Bumrah</td></tr>
+  <tr><td>ICC Champions Trophy 2025 winner / venue</td><td class="num-col">India (beat NZ by 4 wkts); Dubai; March 9, 2025</td></tr>
+  <tr><td>ICC T20 WC 2026 winner / venue</td><td class="num-col">India (beat NZ by 96 runs); Ahmedabad; March 8, 2026</td></tr>
+  <tr><td>India's T20 World Cup wins total</td><td class="num-col">3 titles (2007, 2024, 2026) — most in world</td></tr>
+  <tr><td>India's total ICC men's titles</td><td class="num-col">7 titles</td></tr>
+  <tr><td>Gukesh — age/event</td><td class="num-col">Youngest WC Champion; 18 yrs 8 mon 14 days; Dec 12, 2024</td></tr>
+  <tr><td>Gukesh defeated whom / score</td><td class="num-col">Ding Liren (China); 7.5–6.5; Singapore</td></tr>
+  <tr><td>Khel Ratna 2024 winners</td><td class="num-col">D. Gukesh (Chess) + Harmanpreet Singh (Hockey)</td></tr>
+  <tr><td>India U-19 T20 WC 2026 captain</td><td class="num-col">Ayush Mhatre</td></tr>
+  <tr><td>Neeraj Chopra gold / silver (Paris 2024)</td><td class="num-col">Silver; Gold went to Arshad Nadeem (Pakistan) with 92.97 m WR</td></tr>
+  <tr><td>India men's hockey captain (Paris 2024)</td><td class="num-col">Harmanpreet Singh</td></tr>
+  <tr><td>National Sports Day date / tribute</td><td class="num-col">August 29 — Birth anniversary of Major Dhyan Chand</td></tr>
+</table>
+
+<div class="green-box no-break" style="margin-top:10px">
+  <strong>📌 India's Remarkable Sports Streak 2023–2026:</strong><br>
+  ODI World Cup 2023 → Final (lost to Australia) → T20 WC 2024 → <span class="kw-gold">WON</span> → Champions Trophy 2025 → <span class="kw-gold">WON</span> → T20 WC 2026 → <span class="kw-gold">WON</span>. India won 22 of its last ~24 ICC white-ball matches across formats 2024-2026.
+  <div class="te-block">భారత క్రీడా అద్భుత శ్రేణి: ODI వరల్డ్ కప్ 2023 → ఫైనల్ (ఆస్ట్రేలియాతో ఓటమి) → T20 WC 2024 → <strong>గెలుపు</strong> → చాంపియన్స్ ట్రోఫీ 2025 → <strong>గెలుపు</strong> → T20 WC 2026 → <strong>గెలుపు</strong>. 2024-2026లో ICC వైట్-బాల్ మ్యాచ్‌లలో 24లో 22 గెలుపులు.</div>
+</div>
+
+</div><!-- .a4 -->
+</body>
+</html>

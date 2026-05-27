@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}విషయాలు · Subjects · {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <h1>విషయాలు</h1>
+  <p class="subtitle">Subjects · pick one to start practicing</p>
+</div>
+
+<div class="subject-list">
+  {% for s in subjects %}
+  <div class="subject-row-wrap">
+    <a class="subject-row" href="/practice/{{ s.slug }}">
+      <div class="subject-meta">
+        <p class="subject-te">{{ s.name_te }}</p>
+        <p class="subject-en">{{ s.name_en }} · {{ s.chapter_count }} chapters · {{ s.question_count }} Q</p>
+      </div>
+      <svg class="row-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+    {% if s.chapter_count > 0 %}
+    <a class="notes-link" href="{{ url_for('notes.chapter_list', subject_slug=s.slug) }}">📖 Notes</a>
+    {% endif %}
+  </div>
+  {% else %}
+  <p class="empty">No subjects seeded yet. Run <code>python scripts/seed_dev.py</code>.</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Admin · Notes{% endblock %}
+{% block content %}
+<div class="admin-wrap">
+  <div class="admin-header">
+    <div>
+      <a href="{{ url_for('admin.index') }}" class="back-link">← Admin</a>
+      <h2>Chapter Notes</h2>
+    </div>
+    <a href="{{ url_for('admin.logout') }}" class="btn-logout">Logout</a>
+  </div>
+  {% for subject in subjects %}
+    <details class="subject-group" open>
+      <summary>{{ subject.name_en }} <span class="te">{{ subject.name_te }}</span></summary>
+      <table class="ch-table">
+        <thead><tr><th>#</th><th>Chapter</th><th></th></tr></thead>
+        <tbody>
+        {% for ch in chapters_by_subject.get(subject.id, []) %}
+          <tr>
+            <td>{{ ch.chapter_num }}</td>
+            <td>{{ ch.title_en }}</td>
+            <td>
+              <a href="{{ url_for('admin.notes_edit', chapter_id=ch.id) }}" class="edit-btn">Edit</a>
+            </td>
+          </tr>
+        {% else %}
+          <tr><td colspan="3" class="empty">No chapters yet.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </details>
+  {% endfor %}
+</div>
+<style>
+.admin-wrap{max-width:60rem;margin:0 auto;padding:1.5rem 1rem}
+.admin-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem}
+.admin-header h2{margin:.25rem 0 0}
+.back-link{font-size:.8rem;color:var(--accent,#3b82f6);text-decoration:none}
+.btn-logout{padding:.4rem .8rem;background:transparent;border:1px solid var(--border,#334155);border-radius:.375rem;color:var(--text-2,#94a3b8);text-decoration:none;font-size:.875rem}
+.subject-group{border:1px solid var(--border,#334155);border-radius:.5rem;margin-bottom:.75rem;overflow:hidden}
+.subject-group summary{padding:.75rem 1rem;cursor:pointer;font-weight:600;color:var(--text-1,#f1f5f9);background:var(--surface-2,#1e293b)}
+.subject-group summary .te{font-weight:400;color:var(--text-2,#94a3b8);margin-left:.5rem;font-size:.9rem}
+.ch-table{width:100%;border-collapse:collapse;font-size:.875rem}
+.ch-table th,.ch-table td{padding:.4rem .75rem;text-align:left;border-bottom:1px solid var(--border,#334155)}
+.ch-table th{color:var(--text-2,#94a3b8);font-weight:500}
+.edit-btn{color:var(--accent,#3b82f6);text-decoration:none;font-size:.8rem}
+.empty{color:var(--text-2,#94a3b8);font-style:italic}
+</style>
+{% endblock %}

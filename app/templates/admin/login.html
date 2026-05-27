@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Admin Login{% endblock %}
+{% block content %}
+<div class="admin-login-wrap">
+  <div class="admin-login-card">
+    <h2>Admin Access</h2>
+    <p class="admin-hint">నిర్వాహక పేజీ · Enter PIN to continue</p>
+    {% if error %}
+      <p class="admin-error">{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+      <label for="pin">PIN</label>
+      <input type="password" id="pin" name="pin" inputmode="numeric"
+             autocomplete="current-password" autofocus maxlength="20"
+             placeholder="••••">
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+</div>
+<style>
+.admin-login-wrap{display:flex;justify-content:center;padding:4rem 1rem}
+.admin-login-card{background:var(--surface-2,#1e293b);border:1px solid var(--border,#334155);border-radius:.75rem;padding:2rem;width:min(24rem,100%)}
+.admin-login-card h2{margin-top:0;color:var(--text-1,#f1f5f9)}
+.admin-hint{color:var(--text-2,#94a3b8);font-size:.875rem;margin-top:-.5rem}
+.admin-error{background:#7f1d1d;color:#fca5a5;padding:.5rem .75rem;border-radius:.375rem;font-size:.875rem}
+.admin-login-card label{display:block;margin-bottom:.25rem;font-size:.875rem;color:var(--text-2,#94a3b8)}
+.admin-login-card input{width:100%;box-sizing:border-box;padding:.5rem .75rem;border:1px solid var(--border,#334155);border-radius:.375rem;background:var(--surface-3,#0f172a);color:var(--text-1,#f1f5f9);font-size:1.125rem;letter-spacing:.25rem;margin-bottom:1rem}
+.admin-login-card button{width:100%;padding:.6rem;background:var(--accent,#1e40af);color:#fff;border:none;border-radius:.375rem;font-size:1rem;cursor:pointer}
+.admin-login-card button:hover{opacity:.9}
+</style>
+{% endblock %}

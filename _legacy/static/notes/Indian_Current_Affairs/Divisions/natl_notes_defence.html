@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Defence &amp; Security | National CA 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 16mm 14mm 14mm 14mm; }
+@media print {
+  .no-break { page-break-inside: avoid; }
+  .page-break { page-break-before: always; }
+  body { background: #fff !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --brick: #9b3a1a; --mud: #6b4226; --sand: #e8d5b0;
+  --green: #1a5030; --blue: #1a3a78; --gold: #b8860b;
+  --text: #1e1209; --border: #d4b896; --bg: #fdf8f2;
+  --tel-bg: #eef4ff; --tel-bdr: #1a3a78; --alert: #7a1010;
+}
+body { font-family: 'Libre Baskerville', Georgia, serif; background: #ddd5c8;
+       color: var(--text); font-size: 9.5pt; line-height: 1.55; }
+.a4 { width: 794px; min-height: 1123px; background: #fff; margin: 16px auto;
+      padding: 13mm 14mm 12mm; box-shadow: 0 2px 18px rgba(0,0,0,.18); }
+.doc-header { background: linear-gradient(135deg, #1a3a78, #0e2050);
+              color: #fff; border-radius: 5px; padding: 13px 16px; margin-bottom: 12px; }
+.dh-title { font-size: 14.5pt; font-weight: 700; letter-spacing: .02em; }
+.dh-te { font-family: 'Tiro Telugu', serif; font-size: 11pt; color: #c8d8f8; margin: 3px 0 6px; }
+.dh-meta { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #a8c0f0;
+           display: flex; gap: 12px; flex-wrap: wrap; }
+.dh-meta span { background: rgba(255,255,255,.12); padding: 2px 8px; border-radius: 2px; }
+.sec-hdr { background: var(--mud); color: #fff; padding: 5px 11px; border-radius: 3px;
+           margin: 14px 0 7px; font-family: 'Source Sans 3', sans-serif;
+           font-size: 10pt; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+.sec-hdr .te { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; color: #f8e8d8; }
+.sec-hdr2 { background: var(--blue); color: #fff; padding: 4px 11px; border-radius: 3px;
+            margin: 11px 0 6px; font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; }
+.sec-hdr2 .te { font-family: 'Tiro Telugu', serif; font-size: 8.5pt; font-weight: 400; color: #c8d8f8; }
+.sec-hdr3 { background: var(--green); color: #fff; padding: 3px 10px; border-radius: 3px;
+            margin: 9px 0 5px; font-family: 'Source Sans 3', sans-serif; font-size: 9pt; font-weight: 700; }
+table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 6px 0; }
+th { background: var(--mud); color: #fff; padding: 5px 8px; text-align: left; font-size: 8.5pt; }
+th.blue { background: var(--blue); }
+th.green { background: var(--green); }
+th.brick { background: var(--brick); }
+td { border: 1px solid var(--border); padding: 4px 7px; vertical-align: top; }
+tr:nth-child(even) td { background: #fdf4ec; }
+.te-cell { font-family: 'Tiro Telugu', serif; font-size: 9pt; line-height: 1.7; color: #0a1a40; }
+.highlight-row td { background: #fff3cd !important; font-weight: 700; }
+.new-row td { background: #d5f5e3 !important; font-weight: 700; }
+.red-row td { background: #fee2e2 !important; font-weight: 700; }
+.num-col { font-family: 'Fira Mono', monospace; font-weight: 700; color: var(--brick); }
+.alert-box { background: #fff3e0; border-left: 4px solid #e65100; border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.info-box { background: #e8f4fd; border-left: 4px solid var(--blue); border-radius: 3px;
+            padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.green-box { background: #e8f8f0; border-left: 4px solid var(--green); border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.red-box { background: #fdeeee; border-left: 4px solid var(--alert); border-radius: 3px;
+           padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.te-block { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; line-height: 1.85;
+            color: #0a1a40; background: var(--tel-bg); border-top: 1px solid var(--tel-bdr);
+            padding: 5px 9px; margin-top: 4px; border-radius: 0 0 3px 3px; }
+.badge { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 7.5pt;
+         font-weight: 700; margin: 1px; }
+.b-new { background: #d5f5e3; color: #1a5030; border: 1px solid #a8d8b8; }
+.b-blue { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+.b-warn { background: #fef3c7; color: #92400e; border: 1px solid #f6d860; }
+.b-red { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+.sum-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+.sg { background: #fff; border-radius: 6px; padding: 10px; text-align: center; border: 2px solid; }
+.sg-blue { border-color: var(--blue); }
+.sg-green { border-color: var(--green); }
+.sg-brick { border-color: var(--brick); }
+.sg-gold { border-color: var(--gold); }
+.sg-num { font-size: 17pt; font-weight: 800; display: block; line-height: 1.1; }
+.sg-lbl { font-size: 7pt; color: #666; margin-top: 3px; font-family: 'Source Sans 3', sans-serif; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+p { margin: 5px 0; }
+ul { margin-left: 18px; margin-top: 4px; }
+li { margin-bottom: 3px; }
+.kw { background: #d0e8ff; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.kw-green { background: #c8f0d8; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.kw-red { background: #ffd8d8; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.mono { font-family: 'Fira Mono', monospace; font-size: 8.5pt; }
+hr.div { border: none; border-top: 1.5px dashed var(--border); margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="a4">
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="dh-title">Defence &amp; Security | National CA 2026</div>
+  <div class="dh-te">రక్షణ మరియు భద్రత | ఆపరేషన్ సింధూర్ | బడ్జెట్ | సేకరణలు | DRDO సాధనలు | సమగ్ర నోట్స్</div>
+  <div class="dh-meta">
+    <span>📅 Verified: May 2026</span>
+    <span>🎯 AP High Court SO 2026</span>
+    <span>📍 Sources: PIB / MoD / DRDO / MEA</span>
+    <span>⚔️ Operation Sindoor: May 7–10, 2025</span>
+  </div>
+</div>
+
+<!-- SUMMARY GRID -->
+<div class="sum-grid">
+  <div class="sg sg-brick"><span class="sg-num" style="color:var(--brick)">₹7.85L</span><div class="sg-lbl">Defence Budget 2026-27 (crore)<br><span style="font-family:'Tiro Telugu',serif">రక్షణ బడ్జెట్ (లక్ష కోట్లు)</span></div></div>
+  <div class="sg sg-blue"><span class="sg-num" style="color:var(--blue)">9</span><div class="sg-lbl">Terror camps struck (Op. Sindoor)<br><span style="font-family:'Tiro Telugu',serif">ఆపరేషన్ సింధూర్ — 9 శిబిరాలు</span></div></div>
+  <div class="sg sg-green"><span class="sg-num" style="color:var(--green)">₹38,424</span><div class="sg-lbl">Defence Exports FY 2025-26 (crore)<br><span style="font-family:'Tiro Telugu',serif">రక్షణ ఎగుమతులు (కోట్లు)</span></div></div>
+  <div class="sg sg-gold"><span class="sg-num" style="color:var(--gold)">100+</span><div class="sg-lbl">Countries receiving India's defence exports<br><span style="font-family:'Tiro Telugu',serif">ఎగుమతి గమ్యస్థాన దేశాలు</span></div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: DEFENCE BUDGET 2026-27 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>1. Defence Budget 2026-27 <span class="te">/ రక్షణ బడ్జెట్ 2026-27</span></span></div>
+
+<div class="red-box no-break">
+  <strong>All-Time High:</strong> India's Defence Budget 2026-27 stands at <span class="kw">₹7,85,000 crore</span> (₹7.85 lakh crore) — an increase of <span class="kw">₹1,03,468 crore (+15.2%)</span> over 2025-26. This is the highest ever defence allocation in India's history, described as a <em>strategic response to Operation Sindoor</em>.
+  <div class="te-block">భారత రక్షణ బడ్జెట్ 2026-27: <strong>₹7.85 లక్ష కోట్లు</strong> — అన్నివేళలా అత్యధిక కేటాయింపు. గత సంవత్సరంపై <strong>+15.2%</strong> పెంపు (₹1,03,468 కోట్లు అదనంగా). ఆపరేషన్ సింధూర్ తర్వాత వ్యూహాత్మక ప్రతిస్పందనగా పేర్కొంటున్నారు.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="3" class="brick">Defence Budget 2026-27 — Key Figures</th></tr>
+  <tr><th style="width:38%">Parameter / అంశం</th><th style="width:32%">Value / విలువ</th><th style="width:30%">Note / గమనిక</th></tr>
+  <tr class="red-row"><td><strong>Total Defence Budget</strong><br><span class="te-cell">మొత్తం రక్షణ బడ్జెట్</span></td><td class="num-col">₹7,85,000 crore</td><td>All-time high; ≈8.1% of Union Budget</td></tr>
+  <tr><td><strong>Excl. Pensions</strong><br><span class="te-cell">పెన్షన్లు మినహాయించి</span></td><td class="num-col">₹6,13,340 crore</td><td>~$67.03 billion</td></tr>
+  <tr><td><strong>YoY Increase</strong><br><span class="te-cell">సంవత్సర పెంపు</span></td><td class="num-col">+₹1,03,468 crore (+15.2%)</td><td>Over FY 2025-26</td></tr>
+  <tr class="highlight-row"><td><strong>Domestic Capital Procurement</strong><br><span class="te-cell">దేశీయ పెట్టుబడి సేకరణ</span></td><td class="num-col">₹1,39,000 crore</td><td>75% of capital for domestic industry</td></tr>
+  <tr><td><strong>Budget in 2013-14</strong><br><span class="te-cell">2013-14 బడ్జెట్</span></td><td class="num-col">₹2,53,000 crore</td><td>Has grown 3× in 12 years</td></tr>
+  <tr><td><strong>Budget in 2025-26</strong></td><td class="num-col">₹6,81,532 crore</td><td>Previous year baseline</td></tr>
+  <tr class="new-row"><td><strong>Target: Domestic Mfg</strong><br><span class="te-cell">దేశీయ ఉత్పత్తి లక్ష్యం</span></td><td class="num-col">₹1,75,000 crore by 2025</td><td>'Make in India' defence goal</td></tr>
+</table>
+
+<div class="info-box no-break">
+  <strong>Exam Alert:</strong> 75% of capital acquisition budget is reserved for <span class="kw">domestic industry</span>. Defence budget as % of GDP: approximately <span class="kw">~2.0% of GDP</span> (2026-27). India aims to become a <span class="kw">top-5 global defence manufacturer</span>.
+  <div class="te-block">పరీక్ష గమనిక: పెట్టుబడి కేటాయింపులో 75% <strong>దేశీయ పరిశ్రమ</strong>కే కేటాయిస్తున్నారు. GDP లో రక్షణ వ్యయం: ~2.0%. భారత లక్ష్యం: ప్రపంచంలో టాప్-5 రక్షణ తయారీ దేశాలలో ఒకటిగా నిలవడం.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: OPERATION SINDOOR -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>2. Operation Sindoor — May 7–10, 2025 <span class="te">/ ఆపరేషన్ సింధూర్</span></span></div>
+
+<div class="alert-box no-break">
+  <strong>Operation Sindoor</strong> was India's largest military strike on Pakistani soil since 1971. Launched on <span class="kw">May 7, 2025</span>, in retaliation for the <strong>Pahalgam terror attack (April 22, 2025)</strong> in which <span class="kw">26 civilians were killed</span> by Pakistan-backed The Resistance Front (TRF). Over <span class="kw">88 hours</span>, Indian Armed Forces destroyed <span class="kw">9 terror camps</span> inside Pakistan/PoK.
+  <div class="te-block"><strong>ఆపరేషన్ సింధూర్</strong> — 1971 తర్వాత పాకిస్తాన్ భూభాగంపై భారత్ యొక్క అతిపెద్ద సైనిక దాడి. పహల్గామ్ ఉగ్రవాద దాడి (ఏప్రిల్ 22, 2025; 26 మంది మృతి) కు ప్రతీకారంగా మే 7, 2025న ప్రారంభమైంది. 88 గంటలలో పాకిస్తాన్/PoKలోని 9 ఉగ్రవాద శిబిరాలు నాశనమయ్యాయి.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="brick">Operation Sindoor — Complete Timeline &amp; Key Facts</th></tr>
+  <tr><th style="width:35%">Event / సంఘటన</th><th style="width:65%">Detail / వివరాలు</th></tr>
+  <tr><td><strong>Trigger / కారణం</strong><br><span class="te-cell">ప్రారంభ కారణం</span></td><td>Pahalgam terror attack — <strong>April 22, 2025</strong>; 26 tourists killed by TRF (The Resistance Front, Pakistan-backed militant group)</td></tr>
+  <tr class="red-row"><td><strong>Operation Launch</strong><br><span class="te-cell">ఆపరేషన్ ప్రారంభం</span></td><td><strong>May 7, 2025 — 00:15 IST</strong>; India launched precision missile strikes deep inside Pakistan</td></tr>
+  <tr><td><strong>Duration / వ్యవధి</strong></td><td><strong>4 days</strong> — May 7 to May 10, 2025 (88-hour sustained operation)</td></tr>
+  <tr class="highlight-row"><td><strong>Targets / లక్ష్యాలు</strong><br><span class="te-cell">దాడి లక్ష్యాలు</span></td><td><strong>9 terror camps</strong> inside Pakistan and Pakistan-Occupied Kashmir (PoK), including Muridke (LeT HQ) and Bahawalpur (JeM HQ)</td></tr>
+  <tr><td><strong>Weapons Used</strong><br><span class="te-cell">వాడిన ఆయుధాలు</span></td><td>Precision-guided missiles, BrahMos cruise missiles, Rafale jets with SCALP missiles, Loitering Munitions</td></tr>
+  <tr><td><strong>Briefing Officers</strong><br><span class="te-cell">ప్రెస్ బ్రీఫింగ్ అధికారులు</span></td><td>Col. <strong>Sofia Qureshi</strong> (Army) &amp; Wing Cdr. <strong>Vyomika Singh</strong> (IAF) — first women officers to brief a war operation</td></tr>
+  <tr class="new-row"><td><strong>Ceasefire / విరమణ</strong><br><span class="te-cell">యుద్ధ విరమణ</span></td><td><strong>May 10, 2025</strong> — US-mediated ceasefire; India asserted full right of self-defence</td></tr>
+  <tr><td><strong>Significance</strong><br><span class="te-cell">ప్రాముఖ్యత</span></td><td>Most serious India-Pakistan military confrontation in decades; India demonstrated cross-border precision strike capability</td></tr>
+</table>
+
+<div class="info-box no-break">
+  <strong>⚠️ Exam Alert — Operation Sindoor:</strong> Dates are key: Pahalgam attack = <span class="kw">April 22</span>; Operation launched = <span class="kw">May 7</span>; Ceasefire = <span class="kw">May 10, 2025</span>. Camps struck = <span class="kw">9</span>. Notable briefing officers: <span class="kw">Col. Sofia Qureshi</span> &amp; <span class="kw">Wing Cdr. Vyomika Singh</span>.
+  <div class="te-block">పరీక్ష హైలైట్: పహల్గామ్ దాడి = ఏప్రిల్ 22; ఆపరేషన్ సింధూర్ ప్రారంభం = <strong>మే 7</strong>; విరమణ = <strong>మే 10, 2025</strong>; నాశనం చేసిన శిబిరాలు = <strong>9</strong>. యుద్ధ బ్రీఫింగ్ ఇచ్చిన మహిళా అధికారులు: కల్నల్ సోఫియా ఖురేషీ (సేన) + వింగ్ కమాండర్ వ్యోమిక సింగ్ (వాయుసేన).</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: KEY DEFENCE ACQUISITIONS FY 2024-25 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>3. Key Defence Acquisitions FY 2024-25 <span class="te">/ ప్రధాన రక్షణ సేకరణలు</span></span></div>
+
+<div class="green-box no-break">
+  <strong>DAC Clearances FY 2024-25:</strong> India's Defence Acquisition Council (DAC) approved deals worth <span class="kw">₹1,44,716 crore</span> in September 2024 alone — the largest single-month clearance ever. Total FY 2024-25 domestic procurement (capital): <span class="kw">₹1.3 lakh crore</span>, utilising 80% of the budget domestically.
+  <div class="te-block">రక్షణ సేకరణ మండలి (DAC) సెప్టెంబర్ 2024లో ఒక్కనెలలో <strong>₹1,44,716 కోట్లు</strong> విలువైన ఒప్పందాలకు అనుమతి ఇచ్చింది — అత్యధిక మాసిక అనుమతి. FY 2024-25లో మొత్తం దేశీయ పెట్టుబడి సేకరణ: <strong>₹1.3 లక్ష కోట్లు</strong> (80% బడ్జెట్ దేశంలోనే వినియోగం).</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="4" class="green">Major Defence Deals 2024-25 — Categorised</th></tr>
+  <tr><th style="width:25%">System / వ్యవస్థ</th><th style="width:20%">Value / విలువ</th><th style="width:25%">Partner / భాగస్వామి</th><th style="width:30%">Significance / ప్రాముఖ్యత</th></tr>
+
+  <tr><td colspan="4" style="background:#f0f8ff; font-family:'Source Sans 3',sans-serif; font-weight:700; padding:4px 8px; color:var(--blue);">✈️ Air Force Acquisitions</td></tr>
+  <tr><td>156 LCH Prachand Helicopters<br><span class="te-cell">LCH ప్రచండ్ హెలికాప్టర్లు</span></td><td class="num-col">₹62,700+ crore</td><td>HAL (Tumkur)</td><td>India's first indigenous dedicated attack helicopter; high-altitude ops (Ladakh/NE)</td></tr>
+  <tr><td>31 MQ-9B Drones<br><span class="te-cell">MQ-9B డ్రోన్లు</span></td><td class="num-col">$4 billion</td><td>General Atomics (USA)</td><td>ISR &amp; precision strike; shared among IAF, Navy, Army</td></tr>
+  <tr><td>12 Su-30MKI Aircraft<br><span class="te-cell">Su-30MKI విమానాలు</span></td><td class="num-col">₹13,500 crore</td><td>HAL</td><td>62.6% indigenous content; combat fleet expansion</td></tr>
+  <tr><td>56 C295 Transport Aircraft<br><span class="te-cell">C295 రవాణా విమానాలు</span></td><td class="num-col">€2.5 billion</td><td>Airbus + Tata (Gujarat)</td><td>First private-sector military aircraft manufacturing in India</td></tr>
+
+  <tr><td colspan="4" style="background:#f0fff4; font-family:'Source Sans 3',sans-serif; font-weight:700; padding:4px 8px; color:var(--green);">🚢 Navy Acquisitions</td></tr>
+  <tr><td>BrahMos Cruise Missiles (Naval)<br><span class="te-cell">బ్రహ్మోస్ క్షిపణులు (నావికా)</span></td><td class="num-col">₹20,506.65 crore</td><td>BrahMos Aerospace (BAPL)</td><td>Visakhapatnam-class &amp; Talwar-class warships; Mach 3, 450 km range</td></tr>
+  <tr><td>Varunastra Torpedoes<br><span class="te-cell">వరుణాస్త్ర టార్పెడోలు</span></td><td class="num-col">Approved Mar 2025</td><td>BDL / NSTL</td><td>Ship-launched; 40 km range; autonomous guidance; 250 kg warhead</td></tr>
+
+  <tr><td colspan="4" style="background:#fff5f0; font-family:'Source Sans 3',sans-serif; font-weight:700; padding:4px 8px; color:var(--brick);">🪖 Army Acquisitions</td></tr>
+  <tr><td>307 ATAGS Artillery Guns<br><span class="te-cell">ATAGS ఫిరంగులు</span></td><td class="num-col">₹6,900 crore</td><td>Bharat Forge</td><td>155mm/52-cal; 48 km range; signed Mar 26, 2025; DRDO-developed</td></tr>
+  <tr><td>100 More K9 Vajra-T Howitzers<br><span class="te-cell">K9 వజ్ర-T హావిట్జర్లు</span></td><td class="num-col">₹9,600 crore</td><td>L&amp;T</td><td>Self-propelled; 40 km range; Ladakh &amp; Rajasthan terrain</td></tr>
+  <tr><td>Pinaka Rocket Systems<br><span class="te-cell">పినాకా రాకెట్ వ్యవస్థలు</span></td><td class="num-col">₹10,000+ crore</td><td>EEL + MIL</td><td>Up to 75 km range; area denial + HE pre-fragmented rockets (Jan 2025)</td></tr>
+  <tr><td>NAMIS (Nag Missile System)<br><span class="te-cell">నాగ్ క్షిపణి వ్యవస్థ</span></td><td class="num-col">₹1,801 crore</td><td>AVNL (DRDO)</td><td>13 NAMICA carriers + 293 Nag missiles; fire-and-forget anti-tank (Mar 2025)</td></tr>
+  <tr><td>Future Ready Combat Vehicles<br><span class="te-cell">భవిష్యత్ యుద్ధ వాహనాలు (FRCV)</span></td><td class="num-col">Approved Sep 2024</td><td>Indian industry + FTP</td><td>Replaces ageing T-72 tanks; AI-enabled, next-gen MBT project</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: DRDO ACHIEVEMENTS 2025 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>4. DRDO Achievements 2025 <span class="te">/ DRDO సాధనలు 2025</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="3" class="blue">DRDO Key Milestones 2025 — Missile &amp; Technology Tests</th></tr>
+  <tr><th style="width:28%">System / వ్యవస్థ</th><th style="width:38%">Achievement / సాధన</th><th style="width:34%">Significance / ప్రాముఖ్యత</th></tr>
+  <tr class="new-row"><td><strong>Hypersonic Missile</strong><br><span class="te-cell">హైపర్సోనిక్ క్షిపణి</span></td><td>Successfully tested; range <strong>&gt;1,500 km</strong>; speeds near <strong>Mach 10</strong>; two-stage propulsion + hypersonic glide phase</td><td>Highly evasive; places India in elite club (USA, Russia, China)</td></tr>
+  <tr class="new-row"><td><strong>Scramjet Engine</strong><br><span class="te-cell">స్క్రామ్జెట్ ఇంజిన్</span></td><td>Continuous test for <strong>1,200 seconds (20 minutes)</strong> at DRDO lab, Hyderabad — world record for sustained scramjet duration</td><td>Global milestone in hypersonic propulsion technology</td></tr>
+  <tr><td><strong>Agni-Prime (Agni-P)</strong><br><span class="te-cell">అగ్ని-P క్షిపణి</span></td><td>Successfully flight-tested <strong>September 2025</strong>; canisterised IRBM; range <strong>1,000–2,000 km</strong>; mobile launcher; two solid-fuel stages</td><td>Replaces older liquid-fuel missiles; rapid deployment</td></tr>
+  <tr><td><strong>Pralay Missile (Salvo)</strong><br><span class="te-cell">ప్రళయ్ క్షిపణి (సాల్వో)</span></td><td>Salvo launch of <strong>2 Pralay missiles</strong> from single launcher; <strong>December 2025</strong>, Odisha coast; range 150–500 km; quasi-ballistic, manoeuvres in-flight</td><td>Saturates enemy air defence; tactical battlefield role</td></tr>
+  <tr><td><strong>Astra BVR Missile</strong><br><span class="te-cell">అస్త్ర క్షిపణి</span></td><td>Integration progressing on <strong>Su-30MKI, Tejas Mk1A</strong> (IAF &amp; Navy platforms); beyond-visual-range air-to-air missile</td><td>Reduces dependence on Russian R-77 &amp; French MICA missiles</td></tr>
+  <tr><td><strong>BrahMos-NG</strong><br><span class="te-cell">బ్రహ్మోస్-NG</span></td><td>Development &amp; drop-test preparation; significantly smaller/lighter than original BrahMos; powered flight trials anticipated</td><td>More platforms (submarines, smaller jets) can carry it</td></tr>
+  <tr class="highlight-row"><td><strong>72-Hour Feat (May 2025)</strong><br><span class="te-cell">72 గంటల్లో 3 పరీక్షలు</span></td><td>DRDO tested <strong>3 major defence technologies</strong> within 72 hours: precision glide weapons, hypersonic propulsion system, and missile test</td><td>Demonstrated India's accelerated R&amp;D pace post-Operation Sindoor</td></tr>
+</table>
+
+<div class="info-box no-break">
+  <strong>ATAGS by DRDO:</strong> Advanced Towed Artillery Gun System (ATAGS) — co-developed by DRDO + Bharat Forge — is India's most advanced indigenous artillery gun. 307 ordered in March 2025 at ₹6,900 crore. Fires at 48 km range with high accuracy. One of the finest guns globally.
+  <div class="te-block">ATAGS (అడ్వాన్స్డ్ టోడ్ ఆర్టిలరీ గన్ సిస్టమ్) — DRDO + భారత్ ఫోర్జ్ కలిసి అభివృద్ధి చేశారు. 307 తుపాకులు మార్చి 2025లో ₹6,900 కోట్లకు ఆర్డర్. 48 కిమీ దూరం వరకు కచ్చితత్వంతో కొట్టగలదు. ప్రపంచంలో అత్యుత్తమ ఫిరంగులలో ఒకటి.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: DEFENCE EXPORTS -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>5. Defence Exports — Record Growth <span class="te">/ రక్షణ ఎగుమతులు — రికార్డు వృద్ధి</span></span></div>
+
+<div class="green-box no-break">
+  <strong>FY 2025-26 Record:</strong> India's defence exports reached an all-time high of <span class="kw">₹38,424 crore (&gt;$4 billion)</span> in FY 2025-26, a growth of <span class="kw">62%</span> over FY 2024-25 (₹23,622 crore). From ₹686 crore in 2013-14, exports have surged <span class="kw">56× in 12 years</span>. Target: ₹50,000 crore by 2029.
+  <div class="te-block">FY 2025-26లో రక్షణ ఎగుమతులు అన్నివేళల రికార్డు: <strong>₹38,424 కోట్లు (>$4 బిలియన్)</strong>, FY 2024-25 కంటే <strong>62% వృద్ధి</strong>. 2013-14లో కేవలం ₹686 కోట్లు — ఇప్పుడు 56 రెట్లు పెరిగింది. లక్ష్యం: 2029 నాటికి ₹50,000 కోట్లు.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="3" class="green">India's Defence Export Growth (Year-wise)</th></tr>
+  <tr><th style="width:30%">Financial Year</th><th style="width:35%">Export Value / విలువ</th><th style="width:35%">Note / గమనిక</th></tr>
+  <tr><td>FY 2013-14</td><td class="num-col">₹686 crore</td><td>Baseline year</td></tr>
+  <tr><td>FY 2021-22</td><td class="num-col">₹12,815 crore</td><td>Post-pandemic recovery</td></tr>
+  <tr><td>FY 2022-23</td><td class="num-col">₹15,920 crore</td><td>~$1.9 billion</td></tr>
+  <tr><td>FY 2023-24</td><td class="num-col">₹21,083 crore</td><td>~$2.5 billion</td></tr>
+  <tr><td>FY 2024-25</td><td class="num-col">₹23,622 crore (~$2.76 bn)</td><td>+12.04% over FY24; PIB Apr 1, 2025</td></tr>
+  <tr class="new-row"><td><strong>FY 2025-26</strong></td><td class="num-col"><strong>₹38,424 crore (&gt;$4 bn)</strong></td><td><strong>ALL-TIME HIGH; +62%</strong> over FY25</td></tr>
+  <tr class="highlight-row"><td><strong>Target / లక్ష్యం</strong></td><td class="num-col"><strong>₹50,000 crore</strong></td><td>By 2029; Aatmanirbhar Bharat goal</td></tr>
+</table>
+
+<table class="no-break" style="margin-top:8px">
+  <tr><th colspan="2" class="green">Defence Exports — Fast Facts</th></tr>
+  <tr><td style="width:45%"><strong>Destination Countries / గమ్యస్థానాలు</strong></td><td>80+ countries (FY 2025-26 specific; cumulative: 100+ countries historically) including USA, France, Armenia, Philippines, Egypt</td></tr>
+  <tr><td><strong>Largest Importer of Indian Defence</strong></td><td>USA (largest buyer of Indian defence goods)</td></tr>
+  <tr><td><strong>Key Export Items</strong></td><td>BrahMos missiles, Dornier aircraft, ammunition, ALH Dhruv helicopters, patrol vessels, radars, bulletproof jackets</td></tr>
+  <tr><td><strong>BrahMos Exports</strong></td><td>Philippines (signed 2022, delivered 2024); negotiations with Indonesia, Vietnam, others</td></tr>
+  <tr><td><strong>BrahMos Aerospace Revenue 2025</strong></td><td>Surpassed ₹5,200 crore; Lucknow plant producing ~100 missiles/year</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: INDIA-CHINA BORDER (LAC) UPDATE -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>6. India-China LAC Border — Disengagement 2024-25 <span class="te">/ భారత్-చైనా సరిహద్దు</span></span></div>
+
+<div class="info-box no-break">
+  <strong>Historic Breakthrough:</strong> After 4+ years of standoff following the <span class="kw">Galwan Valley clash (June 2020)</span>, India and China reached a comprehensive disengagement agreement on <span class="kw">October 21, 2024</span>, covering <span class="kw">Depsang Plains</span> and <span class="kw">Demchok</span> — the last two remaining friction points in eastern Ladakh.
+  <div class="te-block">చారిత్రాత్మక పరిణామం: 2020 గల్వాన్ నదీ ఘర్షణ తర్వాత 4+ సంవత్సరాల ప్రతిష్టంభన అనంతరం, భారత్-చైనా <strong>అక్టోబర్ 21, 2024</strong>న <strong>దెప్సాంగ్</strong> మరియు <strong>డెమ్‌చోక్</strong>లో పూర్తి నిర్వీర్యీకరణ ఒప్పందం కుదుర్చుకున్నాయి.</div>
+</div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="blue">India-China LAC Disengagement — Key Facts</th></tr>
+  <tr><th style="width:38%">Parameter / అంశం</th><th style="width:62%">Detail / వివరాలు</th></tr>
+  <tr><td><strong>Agreement Date</strong></td><td><strong>October 21, 2024</strong></td></tr>
+  <tr><td><strong>Friction Points Resolved</strong><br><span class="te-cell">పరిష్కారమైన వివాదాస్పద స్థలాలు</span></td><td><strong>Depsang Plains</strong> (Western Sector) &amp; <strong>Demchok</strong> (Western Sector); last two unresolved points since 2020</td></tr>
+  <tr><td><strong>Earlier Disengagements</strong></td><td>Galwan (2020), Pangong Tso (Feb 2021), Gogra-Hot Springs (Sep 2022)</td></tr>
+  <tr class="new-row"><td><strong>Patrolling Restored</strong><br><span class="te-cell">గస్తీ పునరుద్ధరణ</span></td><td>Patrolling resumed at pre-2020 levels at Depsang and Demchok; verification by both armies using physical inspection + drones</td></tr>
+  <tr><td><strong>Indian Delegation</strong></td><td>EAM Dr. S. Jaishankar confirmed agreement in Parliament (Feb 7, 2025)</td></tr>
+  <tr><td><strong>Broader Context</strong></td><td>India maintained LAC infrastructure build-up; 3,488 km total LAC length; India completed major infrastructure projects (roads, bridges, tunnels) in border areas</td></tr>
+</table>
+
+<div class="alert-box no-break">
+  <strong>Exam Tip — LAC key data:</strong> LAC = Line of Actual Control; Total length = <span class="kw">3,488 km</span>. Galwan clash = <span class="kw">June 15-16, 2020</span>; 20 Indian soldiers martyred. Final disengagement = <span class="kw">October 21, 2024</span> (Depsang + Demchok). <strong>LAC vs LOC</strong>: LAC = India-China; LOC = India-Pakistan.
+  <div class="te-block">పరీక్ష గమనిక: LAC (వాస్తవ నియంత్రణ రేఖ) = <strong>3,488 కిమీ</strong> మొత్తం పొడవు. గల్వాన్ ఘర్షణ = జూన్ 15-16, 2020 (20 మంది భారత సైనికులు వీరమరణం). చివరి నిర్వీర్యీకరణ = <strong>అక్టోబర్ 21, 2024</strong> (దెప్సాంగ్ + డెమ్‌చోక్). LAC = భారత్-చైనా; LOC = భారత్-పాకిస్తాన్.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 7: KEY MILITARY EXERCISES 2025 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>7. Major Military Exercises 2025 <span class="te">/ ప్రధాన సైనిక విన్యాసాలు 2025</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="4" class="blue">India's Major Military Exercises 2025</th></tr>
+  <tr><th style="width:22%">Exercise / విన్యాసం</th><th style="width:20%">Countries / దేశాలు</th><th style="width:18%">Force / సేన</th><th style="width:40%">Key Fact / ముఖ్య విషయం</th></tr>
+
+  <tr class="new-row"><td><strong>Talisman Sabre 2025</strong></td><td>India + Australia + others (multilateral)</td><td>Army / Tri-services</td><td><strong>India's FIRST-EVER participation</strong> in this exercise; 11th edition; Australia-led; July 2025</td></tr>
+  <tr><td><strong>Yudh Abhyas 2025</strong><br><span class="te-cell">యుద్ధ అభ్యాస్</span></td><td>India &amp; USA</td><td>Army</td><td><strong>21st edition</strong>; Fort Wainwright, Alaska; commenced Sep 1, 2025; premier bilateral Army exercise</td></tr>
+  <tr><td><strong>Cyclone 2025</strong></td><td>India &amp; Egypt</td><td>Army</td><td>Rajasthan, India; Feb 10–23, 2025; bilateral joint exercise</td></tr>
+  <tr><td><strong>Varuna 2025</strong></td><td>India &amp; France</td><td>Navy</td><td>Annual bilateral naval exercise; Indo-Pacific partnership focus</td></tr>
+  <tr><td><strong>Malabar 2025</strong></td><td>India, USA &amp; Japan</td><td>Navy (Tri)</td><td>Annual trilateral; anti-submarine warfare, carrier operations</td></tr>
+  <tr><td><strong>SLINEX 2025</strong></td><td>India &amp; Sri Lanka</td><td>Navy</td><td>Annual bilateral; maritime security, HADR operations</td></tr>
+  <tr><td><strong>Vajra Prahar 2025</strong></td><td>India &amp; USA</td><td>Special Forces</td><td>Annual Special Forces exercise; counter-terrorism focus</td></tr>
+  <tr><td><strong>Garuda Shakti 2025</strong></td><td>India &amp; Indonesia</td><td>Special Forces</td><td>Bilateral; jungle warfare and counter-terrorism training</td></tr>
+  <tr><td><strong>Shakti 2025</strong></td><td>India &amp; France</td><td>Army</td><td>Bilateral; held alternately in India and France</td></tr>
+  <tr><td><strong>Tasman Saber 2025</strong></td><td>India + Australia (part of)</td><td>Multilateral</td><td>Under Talisman Sabre umbrella; India's first participation milestone</td></tr>
+</table>
+
+<div class="info-box no-break">
+  <strong>Exam Trick — Exercise Memory Aid:</strong> <span class="kw">Yudh Abhyas</span> = India-USA (Army) | <span class="kw">Malabar</span> = India-USA-Japan (Navy) | <span class="kw">Varuna</span> = India-France (Navy) | <span class="kw">Shakti</span> = India-France (Army) | <span class="kw">SLINEX</span> = India-Sri Lanka | <span class="kw">Tasman/Talisman Sabre</span> = Australia-led multilateral.
+  <div class="te-block">పరీక్ష ట్రిక్: యుద్ధ అభ్యాస్ = భారత్-అమెరికా (సేన) | మలబార్ = భారత్-అమెరికా-జపాన్ (నావికా) | వరుణ = భారత్-ఫ్రాన్స్ (నావికా) | శక్తి = భారత్-ఫ్రాన్స్ (సేన) | SLINEX = భారత్-శ్రీలంక | తాలిస్మాన్ సేబర్ = ఆస్ట్రేలియా నేతృత్వం (2025లో భారత్ తొలిసారి పాల్గొంది).</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SECTION 8: QUICK REFERENCE — DEFENCE FACTS TABLE -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="sec-hdr"><span>8. Quick-Reference — Defence Data Points <span class="te">/ త్వరిత సూచన పట్టిక</span></span></div>
+
+<table class="no-break">
+  <tr><th colspan="2" class="brick">Key Defence Figures for AP HC SO 2026 Exam</th></tr>
+  <tr><th style="width:50%">Question Trigger / ప్రశ్న</th><th style="width:50%">Answer / సమాధానం</th></tr>
+  <tr><td>Defence Budget 2026-27 total / రక్షణ బడ్జెట్</td><td class="num-col">₹7,85,000 crore (₹7.85 lakh crore)</td></tr>
+  <tr><td>Increase over last year / పెంపు</td><td class="num-col">+₹1,03,468 crore (+15.2%)</td></tr>
+  <tr><td>Domestic procurement reservation / దేశీయ సేకరణ</td><td class="num-col">75% of capital acquisition budget</td></tr>
+  <tr><td>Operation Sindoor dates / ఆపరేషన్ తేదీలు</td><td class="num-col">May 7–10, 2025</td></tr>
+  <tr><td>Pahalgam attack date / పహల్గామ్ దాడి</td><td class="num-col">April 22, 2025 (26 killed)</td></tr>
+  <tr><td>Terror camps struck / నాశనమైన శిబిరాలు</td><td class="num-col">9 camps (inside Pakistan/PoK)</td></tr>
+  <tr><td>Defence exports FY 2024-25 / ఎగుమతులు</td><td class="num-col">₹23,622 crore (~$2.76 billion)</td></tr>
+  <tr><td>Defence exports FY 2025-26 (all-time high)</td><td class="num-col">₹38,424 crore (>$4 billion)</td></tr>
+  <tr><td>Defence export growth from 2013-14 to 2025-26</td><td class="num-col">₹686 cr → ₹38,424 cr (56× increase)</td></tr>
+  <tr><td>India-China disengagement (Depsang/Demchok)</td><td class="num-col">October 21, 2024</td></tr>
+  <tr><td>LAC total length / LAC పొడవు</td><td class="num-col">3,488 km</td></tr>
+  <tr><td>Galwan clash / గల్వాన్ ఘర్షణ</td><td class="num-col">June 15-16, 2020</td></tr>
+  <tr><td>LCH Prachand deal / ప్రచండ్ ఒప్పందం</td><td class="num-col">156 helicopters, ₹62,700+ crore, HAL</td></tr>
+  <tr><td>MQ-9B drone deal / MQ-9B డ్రోన్ ఒప్పందం</td><td class="num-col">31 drones, $4 billion, General Atomics</td></tr>
+  <tr><td>Scramjet endurance test / స్క్రామ్జెట్ పరీక్ష</td><td class="num-col">1,200 seconds (20 min) — global record</td></tr>
+  <tr><td>Agni-P test date / అగ్ని-P పరీక్ష</td><td class="num-col">September 2025; range 1,000–2,000 km</td></tr>
+  <tr><td>India's first Talisman Sabre year / తాలిస్మాన్ సేబర్</td><td class="num-col">2025 (11th edition; Australia-led)</td></tr>
+  <tr><td>Yudh Abhyas 2025 edition / యుద్ధ అభ్యాస్ ఎడిషన్</td><td class="num-col">21st edition; Fort Wainwright, Alaska</td></tr>
+</table>
+
+<div class="green-box no-break" style="margin-top:10px">
+  <strong>📌 Aatmanirbhar Bharat in Defence:</strong> India's defence manufacturing output has doubled. Domestic procurement reservation raised to 75%. C295 aircraft being manufactured in Vadodara, Gujarat (Tata-Airbus). ATAGS, LCH Prachand, Pinaka, BrahMos, Varunastra — all indigenously developed. India aims to be among world's top-5 defence manufacturers by 2047.
+  <div class="te-block"><strong>ఆత్మనిర్భర్ భారత్ రక్షణలో:</strong> దేశీయ రక్షణ ఉత్పత్తి రెట్టింపైంది. దేశీయ సేకరణ రిజర్వేషన్ 75%కి పెంచారు. C295 విమానాలు వడోదర, గుజరాత్‌లో (టాటా-ఎయిర్‌బస్) తయారవుతున్నాయి. ATAGS, LCH ప్రచండ్, పినాకా, బ్రహ్మోస్, వరుణాస్త్ర — అన్నీ స్వదేశీ అభివృద్ధి. 2047 నాటికి ప్రపంచంలో టాప్-5 రక్షణ తయారీ దేశంగా లక్ష్యం.</div>
+</div>
+
+</div><!-- .a4 -->
+</body>
+</html>

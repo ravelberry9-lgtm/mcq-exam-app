@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atoms, Reactions &amp; Materials — Complete Chemistry Notes</title>
+<style>
+:root{--pri:#0d2346;--acc:#1565c0;--acc2:#0288d1;--bg:#e8f0fe;--bg2:#f0f7ff;--en-border:#1565c0;--te-border:#6a1b9a;--shock:#b71c1c;--exam:#e65100;--mem:#1b5e20;--hi:#4a148c;}
+@page{size:A4;margin:14mm 13mm 14mm 13mm;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:13.8pt;line-height:1.45;color:#1a1a2e;background:#fff;}
+.page{width:184mm;min-height:267mm;padding:6mm 0;position:relative;}
+.page-break{page-break-after:always;break-after:page;}
+.cover{background:linear-gradient(135deg,var(--pri) 0%,#1a237e 60%,#283593 100%);color:#fff;border-radius:6px;padding:12mm 12mm 9mm;text-align:center;margin-bottom:5mm;}
+.cover-tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);border-radius:20px;display:inline-block;padding:3px 14px;font-size:11.2pt;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3mm;}
+.cover h1{font-size:27.0pt;font-weight:800;letter-spacing:-0.3px;margin-bottom:2mm;}
+.cover h1 span{color:#90caf9;}
+.cover h2{font-size:15.8pt;font-weight:400;color:#bbdefb;margin-bottom:2mm;}
+.cover-te{font-size:14.2pt;color:#90caf9;margin-bottom:2mm;}
+.cover-meta{display:flex;justify-content:center;gap:14px;font-size:11.7pt;color:#bbdefb;flex-wrap:wrap;margin-top:2mm;}
+.cover-meta span{background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 10px;}
+.topics-bar{background:rgba(255,255,255,0.1);border-radius:4px;padding:4px 10px;font-size:11.2pt;color:#e3f2fd;margin-top:3mm;line-height:1.8;}
+.sec-head{background:var(--pri);color:#fff;padding:4px 10px;border-radius:4px;font-size:14.2pt;font-weight:700;margin:4mm 0 2mm;letter-spacing:0.3px;display:flex;justify-content:space-between;align-items:center;}
+.sec-head .te{font-size:12.0pt;font-weight:400;color:#90caf9;}
+.sub-head{background:var(--bg);color:var(--pri);padding:3px 8px;border-radius:3px;font-size:13.0pt;font-weight:700;margin:3mm 0 1.5mm;border-left:4px solid var(--acc);}
+.bilingual{border:1px solid #b0bec5;border-radius:5px;margin-bottom:3mm;overflow:hidden;}
+.bi-en{background:#fff;border-left:4px solid var(--en-border);padding:5px 8px;font-size:12.8pt;line-height:1.5;}
+.bi-te{background:#f3e5f5;border-left:4px solid var(--te-border);padding:5px 8px;font-size:12.5pt;line-height:1.5;color:#4a148c;}
+.lang-tag{display:inline-block;font-size:10.2pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:3px;margin-bottom:3px;}
+.bi-en .lang-tag{background:var(--en-border);color:#fff;}
+.bi-te .lang-tag{background:var(--te-border);color:#fff;}
+.shock-box{border:2px solid var(--shock);background:#fff3f3;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:12.5pt;}
+.shock-box .shock-title{color:var(--shock);font-weight:700;font-size:12.8pt;margin-bottom:3px;}
+.exam-alert{border:2px solid var(--exam);background:#fff8f0;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:12.5pt;}
+.exam-alert .ea-title{color:var(--exam);font-weight:700;font-size:12.8pt;margin-bottom:3px;}
+.memory-box{border:2px solid var(--mem);background:#f1f8e9;border-radius:5px;padding:5px 9px;margin-bottom:3mm;font-size:12.5pt;}
+.memory-box .mem-title{color:var(--mem);font-weight:700;font-size:12.8pt;margin-bottom:3px;}
+.exam-tag{background:#b71c1c;color:#fff;font-size:9.8pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px;}
+.te-tag{background:#6a1b9a;color:#fff;font-size:9.8pt;font-weight:700;padding:1px 5px;border-radius:3px;}
+table{width:100%;border-collapse:collapse;font-size:12.5pt;margin-bottom:3mm;}
+th{background:var(--pri);color:#fff;padding:4px 7px;text-align:left;font-weight:600;font-size:12.0pt;}
+td{padding:3px 7px;border:1px solid #cfd8dc;vertical-align:top;}
+tr:nth-child(even) td{background:#f0f7ff;}
+.te-td{display:block;color:#6a1b9a;font-size:11.4pt;margin-top:1px;}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:3mm;}
+ul{padding-left:16px;margin-bottom:2mm;}
+li{margin-bottom:2px;font-size:12.6pt;}
+table{break-inside:avoid;page-break-inside:avoid;max-width:100%;table-layout:fixed;word-wrap:break-word;overflow-wrap:break-word;}
+tr{break-inside:avoid;page-break-inside:avoid;}
+thead{display:table-header-group;}
+td,th{word-wrap:break-word;overflow-wrap:break-word;}
+.bilingual{break-inside:avoid;page-break-inside:avoid;}
+.shock-box{break-inside:avoid;page-break-inside:avoid;}
+.exam-alert{break-inside:avoid;page-break-inside:avoid;}
+.memory-box{break-inside:avoid;page-break-inside:avoid;}
+.cols-2{break-inside:avoid;page-break-inside:avoid;}
+.sec-head{break-after:avoid;page-break-after:avoid;}
+.sub-head{break-after:avoid;page-break-after:avoid;}
+@media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: white !important; padding: 0 !important; margin: 0 !important; font-size: 11pt; }
+    table { page-break-inside: avoid !important; break-inside: avoid !important; width: 100% !important; }
+    thead { display: table-header-group !important; }
+    tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    td, th { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .section { page-break-inside: avoid !important; break-inside: avoid !important; box-shadow: none !important; border: 1px solid #ccc !important; margin-bottom: 12px !important; }
+    .memory-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .exam-trap { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .key-fact { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .recap-item { page-break-inside: avoid !important; break-inside: avoid !important; }
+    h2, h3, h4 { page-break-after: avoid !important; break-after: avoid !important; }
+    .toc { display: none !important; }
+    .cols-2, .cols-3, .recap-grid { display: block !important; }
+    .recap-item { display: inline-block !important; width: 45% !important; margin: 4px !important; vertical-align: top !important; }
+    th { background: #2e7d32 !important; color: white !important; }
+    tr:nth-child(even) { background: #f5f5f5 !important; }
+  }.cols-2{grid-template-columns:1fr 1fr;}table{font-size:11pt;}.page{width:184mm;}}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page page-break">
+<div class="cover">
+  <div class="cover-tag">General Science &middot; APPSC / TSPSC Complete Notes</div>
+  <h1>Atoms, Reactions <span>&amp; Materials</span></h1>
+  <h2>Complete Chemistry Notes &mdash; Chapters 3, 4 &amp; 6 Combined</h2>
+  <div class="cover-te">పరమాణువులు, చర్యలు మరియు పదార్థాలు &middot; సమగ్ర రసాయన శాస్త్ర గమనికలు</div>
+  <div class="cover-meta">
+    <span>18 Pages A4</span>
+    <span>NCERT Class 9 &amp; 10</span>
+    <span>Bilingual English &amp; Telugu</span>
+    <span>APPSC / TSPSC / UPSC</span>
+  </div>
+  <div class="topics-bar">
+    Topics: Atomic Structure &middot; Radioactivity &middot; Nuclear Fission &amp; Fusion &middot; Nuclear Reactor &middot; Carbon Dating &middot; Physical &amp; Chemical Changes &middot; Separation Techniques &middot; Combustion &amp; Reaction Types &middot; Catalysis &middot; Industrial Processes &middot; Acids, Bases &amp; pH &middot; Synthetic Fibres &middot; Rubber, Glass &amp; Plastics &middot; Soaps &amp; Detergents<br>
+    విషయాలు: పరమాణు నిర్మాణం &middot; రేడియోధర్మిత్వం &middot; విభజన &amp; సంలీనం &middot; అణు రియాక్టర్ &middot; కార్బన్ డేటింగ్ &middot; భౌతిక &amp; రాసాయనిక మార్పులు &middot; వేర్పాటు పద్ధతులు &middot; పరిశ్రమ ప్రక్రియలు &middot; ఆమ్లాలు, క్షారాలు &middot; సంశ్లేషిత ఫైబర్లు &middot; సబ్బులు &amp; డిటర్జెంట్లు
+  </div>
+</div>
+</div><!-- end page 1 -->
+
+<!-- PAGE 2: ATOMIC STRUCTURE -->
+<div class="page page-break">
+<div class="sec-head">Atomic Structure — Models of the Atom <span class="te">పరమాణు నిర్మాణం — పరమాణు నమూనాలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  The concept of the atom has evolved through several scientific models. <b>John Dalton (1808)</b> proposed that all matter is made of tiny, indivisible particles called atoms. He described the atom as a solid, indivisible sphere with no internal structure — like a billiard ball. All atoms of the same element are identical, and atoms of different elements differ in mass and properties. Dalton's model could not explain why cathode rays were deflected by electric fields, which suggested atoms had charged particles inside.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  పరమాణువు యొక్క భావన అనేక శాస్త్రీయ నమూనాల ద్వారా అభివృద్ధి చెందింది. <b>జాన్ డాల్టన్ (1808)</b> సమస్త పదార్థం పరమాణువులు అనే చిన్న, విభజించలేని కణాలతో తయారైందని ప్రతిపాదించారు. ఆయన పరమాణువును ఒక దృఢమైన, విభజించలేని గోళంగా వర్ణించారు — బిలియర్డ్ బంతి వలె. ఒకే మూలకం యొక్క అన్ని పరమాణువులు ఒకేలా ఉంటాయి, వేర్వేరు మూలకాల పరమాణువులు ద్రవ్యరాశి మరియు గుణాలలో భిన్నంగా ఉంటాయి.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>J.J. Thomson (1897)</b> discovered the electron using cathode ray tubes and proposed the <b>Plum Pudding Model</b>. According to this model, the atom is a uniform sphere of positive charge in which electrons (negative charges) are embedded like plums in a pudding. The total positive charge equals the total negative charge, making the atom electrically neutral. However, this model could not explain the results of Rutherford's scattering experiment.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>జె.జె. థామ్సన్ (1897)</b> కాథోడ్ రే గొట్టాలను ఉపయోగించి ఎలక్ట్రాన్‌ను కనుగొన్నారు మరియు <b>ప్లమ్ పుడ్డింగ్ నమూనా</b>ను ప్రతిపాదించారు. ఈ నమూనా ప్రకారం, పరమాణువు ధనావేశ పదార్థంతో నిండిన ఒక ఏకరీతి గోళం, దానిలో ఎలక్ట్రాన్లు (రుణావేశాలు) పుడ్డింగ్‌లో ద్రాక్షపళ్ళు వలె అమర్చబడి ఉంటాయి. మొత్తం ధనావేశం మరియు మొత్తం రుణావేశం సమానంగా ఉంటాయి.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Ernest Rutherford (1911)</b> conducted the famous <b>Gold Foil Experiment</b> (Geiger-Marsden experiment) in which a beam of alpha particles was fired at a thin gold foil. Observations: most alpha particles passed straight through (atom is mostly empty space), some were deflected at large angles (positive nucleus repels positive alpha), and a very few bounced straight back (nucleus is very small but contains all positive charge and almost all mass). This led to the <b>Nuclear Model</b>: the atom has a tiny, dense, positively charged nucleus at the centre, and electrons revolve around it in circular orbits. Limitation: an orbiting electron would lose energy continuously and spiral into the nucleus — but atoms are stable.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ఎర్నెస్ట్ రూథర్‌ఫోర్డ్ (1911)</b> ప్రసిద్ధమైన <b>బంగారు రేకు ప్రయోగం</b> నిర్వహించారు — ఆల్ఫా కణాల పుంజాన్ని సన్నని బంగారు రేకుపై ప్రసరించారు. పరిశీలనలు: చాలా ఆల్ఫా కణాలు నేరుగా దాటిపోయాయి (పరమాణువు చాలా ఖాళీ స్థలంతో నిండి ఉంది), కొన్ని పెద్ద కోణాలలో వక్రీభవించాయి (ధనావేశ కేంద్రకం ధనావేశ ఆల్ఫాలను వికర్షించింది), కొద్దిమాత్రం నేరుగా వెనక్కి వచ్చాయి. ఫలితంగా <b>కేంద్రక నమూనా</b> వచ్చింది: పరమాణువు మధ్యలో చిన్న, దట్టమైన, ధనావేశ కేంద్రకం ఉంటుంది; ఎలక్ట్రాన్లు దాని చుట్టూ వృత్తాకార కక్ష్యలలో తిరుగుతాయి.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Niels Bohr (1913)</b> proposed that electrons revolve around the nucleus only in certain allowed <b>quantised orbits</b> (energy shells: K, L, M, N). Electrons in a particular orbit do not radiate energy. When an electron jumps from a higher energy orbit to a lower one, it emits energy as light (emission spectrum). When it absorbs energy, it jumps to a higher orbit (absorption). This model successfully explained the hydrogen spectrum. The shells are filled in order: K shell holds up to 2, L up to 8, M up to 18, N up to 32 electrons.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>నీల్స్ బోర్ (1913)</b> ఎలక్ట్రాన్లు కేంద్రకం చుట్టూ నిర్దిష్టమైన అనుమతించిన <b>క్వాంటైజ్డ్ కక్ష్యలలో</b> (శక్తి పొరలు: K, L, M, N) మాత్రమే తిరుగుతాయని ప్రతిపాదించారు. ఒక ఎలక్ట్రాన్ అధిక శక్తి కక్ష్య నుండి తక్కువ శక్తి కక్ష్యకు దుమికినప్పుడు కాంతి రూపంలో శక్తిని విడుదల చేస్తుంది. శక్తిని శోషించినప్పుడు ఉన్నత కక్ష్యకు జంప్ చేస్తుంది. K కక్ష్య గరిష్టంగా 2, L కక్ష్య 8, M కక్ష్య 18, N కక్ష్య 32 ఎలక్ట్రాన్లను కలిగి ఉంటుంది.
+  </div>
+</div>
+
+<div class="sub-head">Sub-atomic Particles / అవపరమాణు కణాలు</div>
+<table>
+  <thead><tr><th>Particle / కణం</th><th>Charge / ఆవేశం</th><th>Mass (amu) / ద్రవ్యరాశి</th><th>Location / స్థానం</th><th>Discoverer / కనుగొన్నవారు</th></tr></thead>
+  <tbody>
+    <tr><td>Proton (ప్రోటాన్)<span class="te-td">ప్రోటాన్</span></td><td>+1<span class="te-td">ధనావేశం</span></td><td>1.0073<span class="te-td">1 amu</span></td><td>Nucleus / కేంద్రకం</td><td>Rutherford (1919)</td></tr>
+    <tr><td>Neutron (న్యూట్రాన్)<span class="te-td">న్యూట్రాన్</span></td><td>0<span class="te-td">తటస్థం</span></td><td>1.0087<span class="te-td">1 amu</span></td><td>Nucleus / కేంద్రకం</td><td>Chadwick (1932)</td></tr>
+    <tr><td>Electron (ఎలక్ట్రాన్)<span class="te-td">ఎలక్ట్రాన్</span></td><td>-1<span class="te-td">రుణావేశం</span></td><td>0.000549<span class="te-td">1/1836 amu</span></td><td>Orbits / కక్ష్యలలో</td><td>J.J. Thomson (1897)</td></tr>
+  </tbody>
+</table>
+
+<div class="sub-head">Atomic Models Timeline / పరమాణు నమూనాల కాలక్రమం</div>
+<table>
+  <thead><tr><th>Scientist / శాస్త్రవేత్త</th><th>Year</th><th>Model / నమూనా</th><th>Key Idea / ముఖ్య విషయం</th><th>Limitation / లోపం</th></tr></thead>
+  <tbody>
+    <tr><td>Dalton<span class="te-td">డాల్టన్</span></td><td>1808</td><td>Solid sphere<span class="te-td">దృఢ గోళం</span></td><td>Indivisible atom<span class="te-td">అవిభాజ్య పరమాణువు</span></td><td>Could not explain charged particles<span class="te-td">ఆవేశ కణాలను వివరించలేదు</span></td></tr>
+    <tr><td>Thomson<span class="te-td">థామ్సన్</span></td><td>1897</td><td>Plum pudding<span class="te-td">ప్లమ్ పుడ్డింగ్</span></td><td>Electrons embedded in positive sphere<span class="te-td">ధనావేశ గోళంలో ఎలక్ట్రాన్లు</span></td><td>Could not explain scattering<span class="te-td">వెదజల్లడాన్ని వివరించలేదు</span></td></tr>
+    <tr><td>Rutherford<span class="te-td">రూథర్‌ఫోర్డ్</span></td><td>1911</td><td>Nuclear model<span class="te-td">కేంద్రక నమూనా</span></td><td>Tiny dense nucleus at centre<span class="te-td">మధ్యలో కేంద్రకం</span></td><td>Could not explain atomic stability<span class="te-td">స్థిరత్వాన్ని వివరించలేదు</span></td></tr>
+    <tr><td>Bohr<span class="te-td">బోర్</span></td><td>1913</td><td>Quantised orbits<span class="te-td">క్వాంటైజ్డ్ కక్ష్యలు</span></td><td>Fixed energy shells K,L,M,N<span class="te-td">స్థిర శక్తి పొరలు</span></td><td>Only explained H atom spectrum<span class="te-td">హైడ్రోజన్ వర్ణపటం మాత్రమే</span></td></tr>
+  </tbody>
+</table>
+
+<div class="memory-box">
+  <div class="mem-title">Memory Aid: Atomic Model Order / పరమాణు నమూనాల క్రమం</div>
+  <b>D-T-R-B</b> &rarr; <b>D</b>alton (solid sphere) &rarr; <b>T</b>homson (plum pudding) &rarr; <b>R</b>utherford (nuclear) &rarr; <b>B</b>ohr (quantised orbits). Proton in Nucleus, Electron in Orbit, Neutron neutral in Nucleus.<br>
+  <span style="color:#1b5e20">D-T-R-B క్రమం గుర్తుంచుకోండి. ప్రోటాన్ కేంద్రకంలో (+), ఎలక్ట్రాన్ కక్ష్యలో (-), న్యూట్రాన్ కేంద్రకంలో (0).</span>
+</div>
+</div><!-- end page 2 -->
+
+<!-- PAGE 3: ATOMIC TERMS -->
+<div class="page page-break">
+<div class="sec-head">Atomic Terms — Z, A, Isotopes, Isobars, Isotones <span class="te">పరమాణు పదాలు — Z, A, ఐసోటోపులు, ఐసోబార్లు, ఐసోటోన్లు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  The <b>Atomic Number (Z)</b> of an element is equal to the number of protons in the nucleus of its atom. It also equals the number of electrons in a neutral atom. The atomic number uniquely identifies an element — no two different elements can have the same atomic number. For example, all carbon atoms have Z = 6 (6 protons), and all oxygen atoms have Z = 8. The <b>Mass Number (A)</b> is the total number of protons and neutrons in the nucleus: A = Z + number of neutrons. The number of neutrons = A - Z. For example, carbon-12 has A = 12, Z = 6, so it has 12 - 6 = 6 neutrons.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  ఒక మూలకం యొక్క <b>పరమాణు సంఖ్య (Z)</b> దాని పరమాణువు కేంద్రకంలో ఉన్న ప్రోటాన్ల సంఖ్యకు సమానం. తటస్థ పరమాణువులో ఎలక్ట్రాన్ల సంఖ్యకు కూడా సమానం. పరమాణు సంఖ్య ఒక మూలకాన్ని ప్రత్యేకంగా గుర్తిస్తుంది. ఉదాహరణకు కార్బన్ Z=6, ఆక్సిజన్ Z=8. <b>ద్రవ్యరాశి సంఖ్య (A)</b> కేంద్రకంలో ప్రోటాన్లు మరియు న్యూట్రాన్ల మొత్తం సంఖ్య: A = Z + న్యూట్రాన్ల సంఖ్య. న్యూట్రాన్ల సంఖ్య = A - Z.
+  </div>
+</div>
+
+<div class="sub-head">Isotopes / ఐసోటోపులు</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Isotopes</b> are atoms of the same element that have the same atomic number (Z) but different mass numbers (A). They have the same number of protons but different numbers of neutrons. Isotopes have identical chemical properties (because chemical properties depend on the number of electrons, which equals Z) but different physical properties such as density, melting point, and rate of diffusion. Important isotopes: Hydrogen has three isotopes — Protium (H-1, no neutrons), Deuterium (H-2, one neutron), and Tritium (H-3, two neutrons). Carbon has C-12 (stable, used as the standard for atomic mass) and C-14 (radioactive, used in carbon dating). Uranium has U-235 (fissile, used in reactors and bombs) and U-238 (most abundant, converted to Pu-239 in fast breeder reactors).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ఐసోటోపులు</b> ఒకే పరమాణు సంఖ్య (Z) ఉన్నా వేర్వేరు ద్రవ్యరాశి సంఖ్యలు (A) కలిగిన అదే మూలకం యొక్క పరమాణువులు. ఇవి ఒకే రసాయనిక గుణాలు కలిగి ఉంటాయి (ఎలక్ట్రాన్ల సంఖ్య ఒకటే) కానీ భౌతిక గుణాలు వేర్వేరు. హైడ్రోజన్ ఐసోటోపులు: H-1 (ప్రోటియం), H-2 (డ్యూటీరియం), H-3 (ట్రిటియం). కార్బన్: C-12 (స్థిరమైనది), C-14 (రేడియోధర్మి, కార్బన్ డేటింగ్‌లో వాడతారు). యురేనియం: U-235 (విచ్ఛేద్యం), U-238 (అత్యంత సమృద్ధి).
+  </div>
+</div>
+
+<div class="sub-head">Isobars and Isotones / ఐసోబార్లు మరియు ఐసోటోన్లు</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Isobars</b> are atoms of different elements that have the same mass number (A) but different atomic numbers (Z). They have different numbers of protons and neutrons, but the total (protons + neutrons) is the same. Example: Argon-40 (Z=18, N=22) and Calcium-40 (Z=20, N=20) are isobars — both have A = 40. <b>Isotones</b> are atoms of different elements that have the same number of neutrons but different atomic numbers and mass numbers. Example: Carbon-14 (Z=6, N=8) and Nitrogen-15 (Z=7, N=8) are isotones — both have 8 neutrons.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ఐసోబార్లు</b> వేర్వేరు మూలకాల పరమాణువులు అయినా ఒకే ద్రవ్యరాశి సంఖ్య (A) కలిగి, వేర్వేరు పరమాణు సంఖ్యలు (Z) కలిగి ఉంటాయి. ఉదాహరణ: Ar-40 (Z=18) మరియు Ca-40 (Z=20) — రెండూ A=40. <b>ఐసోటోన్లు</b> వేర్వేరు మూలకాల పరమాణువులు అయినా ఒకే న్యూట్రాన్ల సంఖ్య కలిగి ఉంటాయి. ఉదాహరణ: C-14 మరియు N-15 — రెండూ 8 న్యూట్రాన్లు కలిగి ఉంటాయి.
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Term / పదం</th><th>Same / సమానం</th><th>Different / భిన్నం</th><th>Example / ఉదాహరణ</th></tr></thead>
+  <tbody>
+    <tr><td>Isotope<span class="te-td">ఐసోటోప్</span></td><td>Z (protons)<span class="te-td">ప్రోటాన్లు</span></td><td>A, neutrons<span class="te-td">న్యూట్రాన్లు</span></td><td>H-1, H-2, H-3; C-12, C-14; U-235, U-238</td></tr>
+    <tr><td>Isobar<span class="te-td">ఐసోబార్</span></td><td>A (mass number)<span class="te-td">ద్రవ్యరాశి సంఖ్య</span></td><td>Z, neutrons<span class="te-td">ప్రోటాన్లు, న్యూట్రాన్లు</span></td><td>Ar-40 &amp; Ca-40; K-40 &amp; Ca-40</td></tr>
+    <tr><td>Isotone<span class="te-td">ఐసోటోన్</span></td><td>N (neutrons)<span class="te-td">న్యూట్రాన్లు</span></td><td>Z, A<span class="te-td">ప్రోటాన్లు, ద్రవ్యరాశి సంఖ్య</span></td><td>C-14 &amp; N-15 (N=8 each)</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-alert">
+  <div class="ea-title">Exam Alert: Common Mistakes / పరీక్ష హెచ్చరిక</div>
+  Isotopes = same element (same Z, different A). Isobars = same mass number (same A, different Z) — different elements. Isotones = same neutron count. In APPSC/TSPSC exams, confusing isotopes with isobars is a very common error. C-14 and N-15 are isotones (not isotopes — they are different elements).<br>
+  <span style="color:#e65100">ఐసోటోపులు అదే మూలకం (Z సమానం, A వేరు). ఐసోబార్లు అదే ద్రవ్యరాశి (A సమానం, Z వేరు). ఐసోటోన్లు అదే న్యూట్రాన్ సంఖ్య.</span>
+</div>
+</div><!-- end page 3 -->
+
+<!-- PAGE 4: RADIOACTIVITY -->
+<div class="page page-break">
+<div class="sec-head">Radioactivity — Alpha, Beta, and Gamma Radiation <span class="te">రేడియోధర్మిత్వం — ఆల్ఫా, బీటా మరియు గామా వికిరణం</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Radioactivity</b> is the spontaneous disintegration of the nucleus of an unstable atom with the emission of radiation. It was discovered by <b>Henri Becquerel in 1896</b> when he found that uranium salts emitted radiation that could expose a photographic plate even in the dark. Marie Curie and Pierre Curie further studied radioactivity and discovered the radioactive elements polonium and radium. The term "radioactivity" was coined by Marie Curie. Radioactivity is a nuclear property — it is not affected by temperature, pressure, or chemical combination.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>రేడియోధర్మిత్వం</b> అనేది అస్థిరమైన పరమాణువు యొక్క కేంద్రకం స్వయంచాలకంగా విచ్ఛిన్నమై వికిరణాలను విడుదల చేయడం. దీన్ని <b>హెన్రీ బెక్వెరెల్ 1896లో</b> కనుగొన్నారు — యురేనియం లవణాలు చీకటిలో కూడా ఫోటోగ్రాఫిక్ ప్లేట్‌ను ఎక్స్‌పోజ్ చేయగలిగే వికిరణాలను విడుదల చేస్తాయని గుర్తించారు. మేరీ క్యూరీ పోలోనియం మరియు రేడియం మూలకాలను కనుగొన్నారు మరియు "రేడియోధర్మిత్వం" అనే పదాన్ని ప్రవేశపెట్టారు.
+  </div>
+</div>
+
+<div class="sub-head">Types of Radiation / వికిరణ రకాలు</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Alpha (α) radiation</b> consists of alpha particles, each of which is identical to a helium-4 nucleus (two protons and two neutrons). Alpha particles carry a charge of +2. They have the highest ionising power (they cause the most ionisation per unit path) but the lowest penetrating power — a sheet of paper or a few centimetres of air can stop them. They are the most dangerous when ingested or inhaled because they deposit all their energy in a small volume of tissue. <b>Beta (β) radiation</b> consists of fast-moving electrons emitted from the nucleus when a neutron converts to a proton. Beta particles carry a charge of -1. They have intermediate penetrating power — a few millimetres of aluminium can stop them. They have intermediate ionising power. <b>Gamma (γ) radiation</b> consists of high-energy electromagnetic waves (photons) emitted from the nucleus. Gamma rays carry no charge and have no mass. They have the highest penetrating power — several centimetres of lead or thick concrete are required to stop them. They have the lowest ionising power per unit path.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ఆల్ఫా (α) వికిరణం</b> ఆల్ఫా కణాలతో కూడి ఉంటుంది; ప్రతి కణం హీలియం-4 కేంద్రకం (2 ప్రోటాన్లు + 2 న్యూట్రాన్లు) వంటిది, +2 ఆవేశం. ఇవి అత్యధిక అయనీకరణ శక్తి కలిగి ఉంటాయి కానీ అతి తక్కువ ప్రవేశ శక్తి — ఒక కాగితపు పొరే ఆపగలదు. <b>బీటా (β) వికిరణం</b> వేగంగా కదిలే ఎలక్ట్రాన్లు (-1 ఆవేశం). మధ్యస్థ ప్రవేశ శక్తి — అల్యూమినియం పొర ఆపుతుంది. <b>గామా (γ) వికిరణం</b> అధిక శక్తి విద్యుదయస్కాంత తరంగాలు (ఫోటాన్లు), ఆవేశం లేదు. అత్యధిక ప్రవేశ శక్తి — సీసం/కాంక్రీట్ మాత్రమే ఆపగలదు.
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Type<br>రకం</th><th>Nature<br>స్వభావం</th><th>Charge<br>ఆవేశం</th><th>Penetrating Power<br>ప్రవేశ శక్తి</th><th>Ionising Power<br>అయనీకరణ</th><th>Stopped By<br>ఏది ఆపుతుంది</th><th>Medical Use<br>వైద్య వినియోగం</th></tr></thead>
+  <tbody>
+    <tr><td>Alpha (α)<span class="te-td">ఆల్ఫా</span></td><td>He nucleus (2p+2n)<span class="te-td">హీలియం కేంద్రకం</span></td><td>+2</td><td>Lowest<span class="te-td">అతి తక్కువ</span></td><td>Highest<span class="te-td">అత్యధికం</span></td><td>Paper / sheet<span class="te-td">కాగితం</span></td><td>Radium-226 in cancer (implants)<span class="te-td">కేన్సర్ చికిత్స</span></td></tr>
+    <tr><td>Beta (β)<span class="te-td">బీటా</span></td><td>Fast electron<span class="te-td">వేగమైన ఎలక్ట్రాన్</span></td><td>-1</td><td>Medium<span class="te-td">మధ్యస్థం</span></td><td>Medium<span class="te-td">మధ్యస్థం</span></td><td>Aluminium (few mm)<span class="te-td">అల్యూమినియం</span></td><td>I-131 for thyroid<span class="te-td">థైరాయిడ్ చికిత్స</span></td></tr>
+    <tr><td>Gamma (γ)<span class="te-td">గామా</span></td><td>EM radiation (photon)<span class="te-td">విద్యుదయస్కాంత తరంగం</span></td><td>0</td><td>Highest<span class="te-td">అత్యధికం</span></td><td>Lowest<span class="te-td">అతి తక్కువ</span></td><td>Lead / thick concrete<span class="te-td">సీసం / కాంక్రీట్</span></td><td>Co-60 for cancer radiotherapy<span class="te-td">కేన్సర్ రేడియోథెరపీ</span></td></tr>
+  </tbody>
+</table>
+
+<div class="shock-box">
+  <div class="shock-title">Key Fact: Penetrating vs Ionising Power / ప్రవేశ శక్తి వర్సెస్ అయనీకరణ శక్తి</div>
+  Penetrating power: α &lt; β &lt; γ (gamma penetrates most). Ionising power: α &gt; β &gt; γ (alpha ionises most). These two properties are <b>opposite in order</b>. Alpha is most dangerous inside the body (highest ionising), while gamma is most dangerous from outside (highest penetrating).<br>
+  <span style="color:#b71c1c">ప్రవేశ శక్తి: α &lt; β &lt; γ. అయనీకరణ శక్తి: α &gt; β &gt; γ. ఈ రెండు అనుక్రమాలు వ్యతిరేకం.</span>
+</div>
+
+<div class="sub-head">Half-Life and Radioactive Decay / అర్ధ-జీవిత కాలం</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  The <b>half-life</b> of a radioactive isotope is the time required for half of the atoms in a given sample to undergo radioactive decay. It is a fixed property of each isotope and cannot be changed by any physical or chemical means. For example, if a sample contains 1000 radioactive atoms and the half-life is 1 day, after 1 day 500 atoms remain, after 2 days 250 remain, after 3 days 125 remain, and so on. Half-lives range from fractions of a second (for highly unstable isotopes) to billions of years (for nearly stable isotopes like U-238, half-life = 4.5 billion years).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>అర్ధ-జీవిత కాలం</b> అనేది ఒక రేడియోధర్మి నమూనాలోని సగం పరమాణువులు క్షయమవడానికి పట్టే సమయం. ఇది ప్రతి ఐసోటోప్‌కు స్థిరమైన గుణం; దాన్ని ఏ భౌతిక లేదా రసాయన పద్ధతితోనూ మార్చలేం. U-238 అర్ధ-జీవిత కాలం 4.5 బిలియన్ సంవత్సరాలు.
+  </div>
+</div>
+</div><!-- end page 4 -->
+
+<!-- PAGE 5: NUCLEAR FISSION & FUSION -->
+<div class="page page-break">
+<div class="sec-head">Nuclear Fission and Fusion — Atom Bomb and Hydrogen Bomb <span class="te">అణు విభజన మరియు సంలీనం — అణు బాంబు మరియు హైడ్రోజన్ బాంబు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Nuclear Fission</b> is the process by which a heavy nucleus splits into two or more lighter nuclei when bombarded by a neutron, releasing a tremendous amount of energy and two or three neutrons. The classic reaction is: U-235 + 1 neutron → Ba-141 + Kr-92 + 3 neutrons + energy. The three neutrons released can each cause fission of three more U-235 nuclei, producing 9 neutrons, which then cause 27 fissions, and so on — this is called a <b>chain reaction</b>. In an <b>uncontrolled chain reaction</b> (as in an atom bomb), the energy is released almost instantaneously as an explosion. In a <b>controlled chain reaction</b> (as in a nuclear reactor), the rate of fission is controlled to produce a steady supply of heat energy. The atom bomb uses fission of U-235 or Pu-239. Einstein's equation E = mc² shows that even a small loss of mass (m) is converted to an enormous amount of energy (E), since c (speed of light) = 3 × 10⁸ m/s.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>అణు విభజన (ఫిషన్)</b> అనేది ఒక న్యూట్రాన్ బాంబుమారు చేయడం వల్ల భారీ కేంద్రకం రెండు లేదా అంత కంటే ఎక్కువ తేలికైన కేంద్రకాలుగా విడిపోయే ప్రక్రియ, ఇందులో విపరీతమైన శక్తి మరియు 2-3 న్యూట్రాన్లు విడుదలవుతాయి. U-235 + 1 న్యూట్రాన్ → Ba-141 + Kr-92 + 3 న్యూట్రాన్లు + శక్తి. విడుదలైన న్యూట్రాన్లు మళ్ళీ ఇతర కేంద్రకాలను విభజిస్తాయి — దీన్ని <b>శ్రేణి చర్య</b> అంటారు. అనియంత్రిత శ్రేణి చర్య = అణు బాంబు. నియంత్రిత శ్రేణి చర్య = అణు రియాక్టర్. అణు బాంబు U-235 లేదా Pu-239 విభజన ఉపయోగిస్తుంది. E = mc².
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Nuclear Fusion</b> is the process by which two light nuclei combine to form a heavier nucleus with the release of enormous energy. The most important fusion reaction involves deuterium (²H) and tritium (³H): ²H + ³H → ⁴He + 1 neutron + 17.6 MeV energy. Fusion releases far more energy per unit mass than fission. Fusion is the source of energy in the Sun and stars — the Sun fuses approximately 600 million tonnes of hydrogen per second. For fusion to occur, the nuclei must be brought very close together, which requires extremely high temperatures (millions of degrees Celsius) to overcome their mutual electrostatic repulsion — this is why fusion is also called a <b>thermonuclear reaction</b>. The <b>hydrogen bomb (H-bomb)</b> uses fusion of deuterium and tritium, triggered by a fission (atom) bomb to provide the initial high temperature.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>అణు సంలీనం (ఫ్యూజన్)</b> రెండు తేలికైన కేంద్రకాలు కలిసి ఒక భారీ కేంద్రకాన్ని ఏర్పరచడం, ఇందులో విపరీతమైన శక్తి విడుదలవుతుంది. ²H + ³H → ⁴He + 1 న్యూట్రాన్ + 17.6 MeV. సూర్యుడి శక్తి మూలం అణు సంలీనమే. సంలీనానికి కోట్ల డిగ్రీల ఉష్ణోగ్రత అవసరం అందుకే దీన్ని ఉష్ణ-అణు చర్య అంటారు. <b>హైడ్రోజన్ బాంబు (H-బాంబు)</b> అణు బాంబు (ఫిషన్) ద్వారా అవసరమైన ప్రారంభ ఉష్ణోగ్రత సృష్టించి D+T సంలీనాన్ని ప్రేరేపిస్తుంది.
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Feature / లక్షణం</th><th>Nuclear Fission / అణు విభజన</th><th>Nuclear Fusion / అణు సంలీనం</th></tr></thead>
+  <tbody>
+    <tr><td>Process<span class="te-td">ప్రక్రియ</span></td><td>Heavy nucleus splits<span class="te-td">భారీ కేంద్రకం విభజన</span></td><td>Light nuclei combine<span class="te-td">తేలికైన కేంద్రకాలు కలయిక</span></td></tr>
+    <tr><td>Fuel<span class="te-td">ఇంధనం</span></td><td>U-235 or Pu-239<span class="te-td">యురేనియం-235 లేదా ప్లుటోనియం-239</span></td><td>Deuterium + Tritium (H isotopes)<span class="te-td">డ్యూటీరియం + ట్రిటియం</span></td></tr>
+    <tr><td>Energy released<span class="te-td">విడుదలైన శక్తి</span></td><td>Very large<span class="te-td">చాలా అధికం</span></td><td>Even larger (per unit mass)<span class="te-td">మరింత అధికం (ద్రవ్యరాశి దృష్ట్యా)</span></td></tr>
+    <tr><td>Temperature needed<span class="te-td">అవసరమైన ఉష్ణోగ్రత</span></td><td>Room temperature possible (with initiating neutron)<span class="te-td">సాధారణ ఉష్ణోగ్రత సాధ్యం</span></td><td>Millions of degrees °C<span class="te-td">కోట్ల డిగ్రీలు అవసరం</span></td></tr>
+    <tr><td>Radioactive waste<span class="te-td">రేడియోధర్మి వ్యర్థాలు</span></td><td>Yes — significant waste<span class="te-td">అవును — ముఖ్యమైన వ్యర్థాలు</span></td><td>Minimal (He + neutron)<span class="te-td">నామమాత్రం</span></td></tr>
+    <tr><td>Weapon application<span class="te-td">ఆయుధ వినియోగం</span></td><td>Atom bomb (A-bomb)<span class="te-td">అణు బాంబు</span></td><td>Hydrogen bomb (H-bomb)<span class="te-td">హైడ్రోజన్ బాంబు</span></td></tr>
+    <tr><td>Natural occurrence<span class="te-td">సహజ సంభవం</span></td><td>Not naturally<span class="te-td">సహజంగా జరగదు</span></td><td>Sun and stars<span class="te-td">సూర్యుడు మరియు నక్షత్రాలలో</span></td></tr>
+  </tbody>
+</table>
+</div><!-- end page 5 -->
+
+<!-- PAGE 6: NUCLEAR REACTOR -->
+<div class="page page-break">
+<div class="sec-head">Nuclear Reactor — Components and Working <span class="te">అణు రియాక్టర్ — భాగాలు మరియు పని విధానం</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  A <b>nuclear reactor</b> is a device in which a controlled nuclear fission chain reaction takes place to generate heat, which is then used to produce electricity. In the reactor, the fission of U-235 is maintained in a controlled manner so that exactly one neutron from each fission event causes the next fission — this is called a <b>self-sustaining critical chain reaction</b>. The heat produced in the reactor core is transferred by a coolant to a steam generator, where it boils water to produce steam, which drives a turbine connected to a generator to produce electricity.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>అణు రియాక్టర్</b> అనేది నియంత్రిత అణు విభజన శ్రేణి చర్య ద్వారా వేడిని ఉత్పత్తి చేసి విద్యుత్తును ఉత్పత్తి చేసే పరికరం. రియాక్టర్‌లో U-235 యొక్క విభజన నియంత్రిత పద్ధతిలో జరుగుతుంది — ప్రతి విభజన నుండి ఒక్క న్యూట్రాన్ తదుపరి విభజనను ప్రేరేపిస్తుంది (క్రిటికల్ శ్రేణి చర్య). వేడిని శీతలకారి మోస్తుంది, ఆవిరి ద్వారా టర్బైన్ తిప్పబడి విద్యుత్తు ఉత్పత్తి అవుతుంది.
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Component<br>భాగం</th><th>Material Used<br>వాడే పదార్థం</th><th>Function<br>పని</th></tr></thead>
+  <tbody>
+    <tr><td>Fuel<span class="te-td">ఇంధనం</span></td><td>Enriched U-235 or Pu-239<span class="te-td">U-235 లేదా Pu-239</span></td><td>Undergoes fission to release energy<span class="te-td">విభజన ద్వారా శక్తి విడుదల</span></td></tr>
+    <tr><td>Moderator<span class="te-td">మోడరేటర్</span></td><td>Graphite or Heavy water (D₂O)<span class="te-td">గ్రాఫైట్ లేదా భారీ నీరు</span></td><td>Slows down fast neutrons to thermal speeds so they can cause fission<span class="te-td">వేగమైన న్యూట్రాన్లను నెమ్మదించడం</span></td></tr>
+    <tr><td>Coolant<span class="te-td">శీతలకారి</span></td><td>Heavy water, light water, or CO₂ gas<span class="te-td">భారీ నీరు లేదా సాధారణ నీరు</span></td><td>Removes heat from the reactor core to the steam generator<span class="te-td">వేడిని కోర్ నుండి తీసివేయడం</span></td></tr>
+    <tr><td>Control Rods<span class="te-td">నియంత్రణ కడ్డీలు</span></td><td>Cadmium or Boron steel<span class="te-td">కాడ్మియం లేదా బోరాన్</span></td><td>Absorb excess neutrons to control the rate of the chain reaction<span class="te-td">అదనపు న్యూట్రాన్లను శోషించి శ్రేణి చర్య రేటును నియంత్రించడం</span></td></tr>
+    <tr><td>Reflector<span class="te-td">రిఫ్లెక్టర్</span></td><td>Graphite or Beryllium<span class="te-td">గ్రాఫైట్ లేదా బెరిలియం</span></td><td>Reflects neutrons back into the core to reduce wastage<span class="te-td">న్యూట్రాన్లను కోర్‌లోకి తిప్పి పంపడం</span></td></tr>
+    <tr><td>Shielding<span class="te-td">రక్షణ కవచం</span></td><td>Thick concrete and lead<span class="te-td">మందమైన కాంక్రీట్ మరియు సీసం</span></td><td>Absorbs radiation to protect workers and environment<span class="te-td">వికిరణాలను శోషించి రక్షణ కల్పించడం</span></td></tr>
+  </tbody>
+</table>
+
+<div class="sub-head">Fast Breeder Reactor / ఫాస్ట్ బ్రీడర్ రియాక్టర్</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  A <b>Fast Breeder Reactor (FBR)</b> uses fast neutrons (no moderator) and converts the non-fissile U-238 (which makes up 99.3% of natural uranium) into fissile Pu-239 through neutron capture. Thus it "breeds" more fuel than it consumes. India's fast breeder reactor programme is centred at Kalpakkam (PFBR — Prototype Fast Breeder Reactor). India's nuclear power stations include TAPS (Tarapur, Maharashtra), RAPS (Rawatbhata, Rajasthan), MAPS (Kalpakkam, Tamil Nadu), NAPS (Narora, UP), KAPS (Kakrapar, Gujarat), and Kaiga (Karnataka).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ఫాస్ట్ బ్రీడర్ రియాక్టర్</b> మోడరేటర్ లేకుండా వేగమైన న్యూట్రాన్లను ఉపయోగిస్తుంది. ఇది విభజన సాధ్యం కాని U-238 (సహజ యురేనియంలో 99.3%)ని Pu-239గా మార్చి అదనపు ఇంధనాన్ని ఉత్పత్తి చేస్తుంది. భారతదేశంలో కల్పాక్కం (PFBR), టారాపూర్ (TAPS), రావత్‌భాటా (RAPS), కైగా (కర్నాటక) వంటి అణు విద్యుత్ కేంద్రాలు ఉన్నాయి.
+  </div>
+</div>
+
+<div class="exam-alert">
+  <div class="ea-title">Exam Alert: Nuclear Reactor Quick Facts</div>
+  Moderator slows neutrons (graphite / D₂O). Control rods absorb neutrons (Cadmium / Boron). Coolant removes heat (D₂O / light water). Atom bomb = uncontrolled fission. Nuclear reactor = controlled fission. H-bomb = fusion triggered by fission. Fast Breeder Reactor = breeds Pu-239 from U-238.<br>
+  <span style="color:#e65100">మోడరేటర్ = న్యూట్రాన్లను నెమ్మదించడం. నియంత్రణ కడ్డీలు = న్యూట్రాన్లను శోషించడం. FBR = U-238 నుండి Pu-239 ఉత్పత్తి.</span>
+</div>
+</div><!-- end page 6 -->
+
+<!-- PAGE 7: CARBON DATING -->
+<div class="page page-break">
+<div class="sec-head">Carbon Dating and Radioactive Age Estimation <span class="te">కార్బన్ డేటింగ్ మరియు రేడియోధర్మి వయో అంచనా</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Carbon Dating (Radiocarbon Dating)</b> is a method used to determine the age of organic (carbon-containing) materials, developed by Willard Libby in 1949. It relies on the radioactive isotope carbon-14 (C-14 or ¹⁴C), which has a half-life of approximately <b>5730 years</b>. Carbon-14 is continuously produced in the upper atmosphere when cosmic ray neutrons bombard nitrogen-14 atoms: ¹⁴N + n → ¹⁴C + ¹H. This C-14 combines with oxygen to form radioactive CO₂, which is absorbed by plants during photosynthesis. Animals absorb C-14 by eating plants. As long as an organism is alive, the ratio of C-14 to C-12 in its body remains constant (same as in the atmosphere). Once the organism dies, it stops taking in carbon, and the C-14 in its body begins to decay without replacement. By measuring how much C-14 remains in a sample and comparing it to the known initial ratio, scientists can calculate how long the organism has been dead. Carbon dating is effective for organic materials up to about 50,000 years old.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>కార్బన్ డేటింగ్</b> సేంద్రియ పదార్థాల వయసు అంచనా వేసే పద్ధతి; విల్లార్డ్ లిబ్బీ 1949లో దీన్ని అభివృద్ధి చేశారు. ఇది రేడియోధర్మి ఐసోటోప్ కార్బన్-14 (అర్ధ-జీవిత కాలం <b>5730 సంవత్సరాలు</b>) పై ఆధారపడింది. జీవించి ఉన్నంత కాలం జీవులలో C-14/C-12 నిష్పత్తి స్థిరంగా ఉంటుంది. మరణానంతరం C-14 క్షయమవుతుంది. మిగిలిన C-14 పరిమాణాన్ని కొలిచి జీవి మరణించిన కాలం అంచనా వేయవచ్చు. ఇది 50,000 సంవత్సరాల వరకు పని చేస్తుంది.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  For dating very old rocks, minerals, and geological formations (millions to billions of years), <b>Uranium-Lead dating</b> is used instead. U-238 decays ultimately to stable Pb-206 with a half-life of 4.5 billion years, and U-235 decays to Pb-207 with a half-life of 704 million years. By measuring the ratio of uranium to lead in a rock sample, geologists can estimate the age of the rock very accurately. Other radioactive dating methods include Potassium-Argon dating (for volcanic rocks, half-life of K-40 = 1.25 billion years) and Rubidium-Strontium dating. Radioactive dating has been used to determine that the Earth is approximately 4.5 billion years old.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  చాలా పురాతన శిలలు మరియు భూగర్భ నిర్మాణాల వయసు అంచనా వేయడానికి <b>యురేనియం-లెడ్ డేటింగ్</b> వాడతారు. U-238 చివరకు Pb-206గా మారుతుంది (అర్ధ-జీవిత కాలం 4.5 బిలియన్ సంవత్సరాలు). శిలలో యురేనియం మరియు సీసం నిష్పత్తి ద్వారా శిల వయసు అంచనా వేయవచ్చు. భూమి వయసు దాదాపు 4.5 బిలియన్ సంవత్సరాలు అని నిర్ధారించబడింది.
+  </div>
+</div>
+
+<div class="memory-box">
+  <div class="mem-title">Carbon Dating Key Facts / కార్బన్ డేటింగ్ ముఖ్య వాస్తవాలు</div>
+  C-14 half-life = 5730 years. Effective range = up to ~50,000 years. Used for: fossils, mummies, ancient wood, charcoal, cloth. U-238 half-life = 4.5 billion years. Used for: rocks, Earth's age. Potassium-40 half-life = 1.25 billion years. Used for: volcanic rocks.<br>
+  <span style="color:#1b5e20">C-14 అర్ధ-జీవిత కాలం = 5730 సంవత్సరాలు. 50,000 సంవత్సరాల వరకు పని చేస్తుంది. U-238 అర్ధ-జీవిత కాలం = 4.5 బిలియన్ సంవత్సరాలు.</span>
+</div>
+</div><!-- end page 7 -->
+
+<!-- PAGE 8: PHYSICAL VS CHEMICAL CHANGES -->
+<div class="page page-break">
+<div class="sec-head">Physical and Chemical Changes <span class="te">భౌతిక మరియు రాసాయనిక మార్పులు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  A <b>Physical Change</b> is a change in which the physical properties of a substance are altered (such as size, shape, state, colour, or texture) without any change in its chemical composition. No new substance is formed. Physical changes are generally reversible. Examples include: melting of ice (solid → liquid water), boiling of water (liquid → steam), dissolving sugar in water (composition unchanged), bending an iron rod, and stretching a rubber band. When a piece of platinum wire is heated in a flame, it glows red-hot — this is a physical change because no new substance is formed, and the platinum returns to its original state on cooling.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>భౌతిక మార్పు</b> అనేది పదార్థం యొక్క రసాయన సంఘటన మారకుండా కేవలం భౌతిక గుణాలు (పరిమాణం, ఆకారం, స్థితి) మారే మార్పు. కొత్త పదార్థం ఏర్పడదు. సాధారణంగా తిరుగు వేయదగినవి. ఉదాహరణలు: మంచు కరగడం, నీరు మరుగడం, చక్కెర నీటిలో కరగడం, ఇనుప కడ్డీ వంచడం, ప్లాటినం తీగ కాల్చినప్పుడు ఎర్రగా మెరవడం (భౌతిక మార్పు).
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  A <b>Chemical Change</b> is a change in which one or more new substances are formed with different chemical properties. The original substance cannot easily be recovered. Chemical changes involve breaking and forming of chemical bonds, and are usually accompanied by energy changes (heat, light, or sound), change in colour, production of gas, or formation of a precipitate. Examples include: rusting of iron (Fe + O₂ + H₂O → Fe₂O₃·xH₂O, an oxidation reaction), burning of wood or paper, souring of milk (lactic acid forms), cooking of food, decomposition of lead nitrate on heating [2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂], and the decomposition of green copper carbonate on heating to form black copper oxide.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>రాసాయనిక మార్పు</b> అనేది ఒక లేదా అంత కంటే ఎక్కువ కొత్త పదార్థాలు ఏర్పడే మార్పు. అసలు పదార్థాన్ని తిరిగి పొందడం సాధారణంగా సాధ్యం కాదు. ఉదాహరణలు: ఇనుప తుప్పు (Fe + O₂ + H₂O → Fe₂O₃), కట్టె కాలడం, పాలు పుల్లబడటం, ఆహారం వండటం, లెడ్ నైట్రేట్ వేడిమి వల్ల విచ్ఛిన్నం [2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂].
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Feature / లక్షణం</th><th>Physical Change / భౌతిక మార్పు</th><th>Chemical Change / రాసాయనిక మార్పు</th></tr></thead>
+  <tbody>
+    <tr><td>New substance?<span class="te-td">కొత్త పదార్థం?</span></td><td>No<span class="te-td">లేదు</span></td><td>Yes<span class="te-td">అవును</span></td></tr>
+    <tr><td>Reversible?<span class="te-td">తిరుగు వేయగలమా?</span></td><td>Usually yes<span class="te-td">సాధారణంగా అవును</span></td><td>Usually no<span class="te-td">సాధారణంగా కాదు</span></td></tr>
+    <tr><td>Energy change?<span class="te-td">శక్తి మార్పు?</span></td><td>Small<span class="te-td">తక్కువ</span></td><td>Significant<span class="te-td">అధికం</span></td></tr>
+    <tr><td>Examples<span class="te-td">ఉదాహరణలు</span></td><td>Melting ice, boiling water, bending iron, dissolving sugar<span class="te-td">మంచు కరగడం, నీరు మరుగడం, చక్కెర కరగడం</span></td><td>Rusting, burning, souring milk, digestion, photosynthesis<span class="te-td">తుప్పు, కాలడం, పాలు పుల్లబడటం, జీర్ణం</span></td></tr>
+    <tr><td>Chemical composition<span class="te-td">రాసాయనిక సంఘటన</span></td><td>Unchanged<span class="te-td">మారదు</span></td><td>Changed<span class="te-td">మారుతుంది</span></td></tr>
+  </tbody>
+</table>
+
+<div class="exam-alert">
+  <div class="ea-title">Exam Alert: Tricky Examples / పరీక్ష హెచ్చరిక</div>
+  Dissolving salt in water = Physical (the salt can be recovered by evaporation). Burning of a candle = BOTH physical (melting wax) and chemical (wax burning). Rusting = Chemical change (irreversible, new compound Fe₂O₃ forms). Platinum wire glowing red-hot = Physical change (no new substance). Milk souring = Chemical change (lactic acid formed).<br>
+  <span style="color:#e65100">ఉప్పు నీటిలో కరగడం = భౌతిక. కొవ్వొత్తి కాలడం = రెండు రకాలు. తుప్పు = రాసాయనిక. ప్లాటినం మెరవడం = భౌతిక.</span>
+</div>
+</div><!-- end page 8 -->
+
+<!-- PAGE 9: SEPARATION TECHNIQUES -->
+<div class="page page-break">
+<div class="sec-head">Separation Techniques — Methods and Principles <span class="te">వేర్పాటు పద్ధతులు — విధానాలు మరియు సూత్రాలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  Mixtures can be separated into their components by making use of differences in their physical properties. The choice of separation technique depends on the nature of the mixture and the physical properties of the components. No chemical reaction is involved in separation — the components retain their original chemical identities. The principal methods include distillation, magnetic separation, filtration, evaporation, winnowing, fractional distillation, chromatography, and centrifugation.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  మిశ్రమాలను వాటి భాగాల భౌతిక గుణాలలో తేడాలను ఉపయోగించి వేరు చేయవచ్చు. వేర్పాటు పద్ధతి ఎంపిక మిశ్రమం స్వభావం మరియు భాగాల భౌతిక గుణాలపై ఆధారపడుతుంది. వేర్పాటులో ఎలాంటి రాసాయనిక చర్య జరగదు. ప్రధాన పద్ధతులు: స్వేదనం, అయస్కాంత వేర్పాటు, వడపోత, గాలిలో వేర్పాటు, భిన్నకాల స్వేదనం, వర్ణలేఖనం, కేంద్రాపసార వేర్పాటు.
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Mixture / మిశ్రమం</th><th>Method / పద్ధతి</th><th>Principle / సూత్రం</th><th>Example / ఉదాహరణ</th></tr></thead>
+  <tbody>
+    <tr><td>Iron + sand<span class="te-td">ఇనుప పొడి + ఇసుక</span></td><td>Magnetic separation<span class="te-td">అయస్కాంత వేర్పాటు</span></td><td>Iron is magnetic, sand is not<span class="te-td">ఇనుప అయస్కాంత ఆకర్షణ</span></td><td>Iron filings from sand mixture<span class="te-td">ఇసుకలో ఇనుప పొడి</span></td></tr>
+    <tr><td>Sand + water<span class="te-td">ఇసుక + నీరు</span></td><td>Filtration<span class="te-td">వడపోత</span></td><td>Sand does not dissolve; water passes through filter<span class="te-td">కరగని పదార్థాన్ని వడపోయడం</span></td><td>Muddy water purification<span class="te-td">మురికి నీరు శుద్ధి</span></td></tr>
+    <tr><td>Salt + water<span class="te-td">ఉప్పు + నీరు</span></td><td>Evaporation / Distillation<span class="te-td">ఆవిరి / స్వేదనం</span></td><td>Water evaporates; salt remains<span class="te-td">నీరు ఆవిరవుతుంది</span></td><td>Sea water → sea salt<span class="te-td">సముద్రపు నీటి నుండి ఉప్పు</span></td></tr>
+    <tr><td>Alcohol + water<span class="te-td">ఆల్కహాల్ + నీరు</span></td><td>Distillation<span class="te-td">స్వేదనం</span></td><td>Different boiling points (alcohol 78°C, water 100°C)<span class="te-td">వేర్వేరు మరుగుబిందువులు</span></td><td>Alcohol purification<span class="te-td">ఆల్కహాల్ శుద్ధి</span></td></tr>
+    <tr><td>Grain + chaff<span class="te-td">ధాన్యం + పొట్టు</span></td><td>Winnowing<span class="te-td">గాలిలో వేర్పాటు</span></td><td>Chaff lighter, blown away by wind; grain falls<span class="te-td">పొట్టు తేలికగా గాలితో పోతుంది</span></td><td>Wheat/rice cleaning<span class="te-td">గోధుమ/వరి శుద్ధి</span></td></tr>
+    <tr><td>Petroleum fractions<span class="te-td">పెట్రోలియం భాగాలు</span></td><td>Fractional distillation<span class="te-td">భిన్నకాల స్వేదనం</span></td><td>Close but different boiling points<span class="te-td">దగ్గిరగా ఉన్న మరుగుబిందువులు</span></td><td>LPG, petrol, kerosene, diesel from crude oil<span class="te-td">ముడి చమురు నుండి LPG, పెట్రోల్</span></td></tr>
+    <tr><td>Ink pigments / mixture<span class="te-td">సిరా వర్ణాలు</span></td><td>Chromatography<span class="te-td">వర్ణలేఖనం</span></td><td>Different affinities for mobile/stationary phases<span class="te-td">వేర్వేరు అనుబంధ శక్తులు</span></td><td>Separating dyes, blood analysis, food colours<span class="te-td">రంగులు, రక్త విశ్లేషణ</span></td></tr>
+    <tr><td>Cream from milk<span class="te-td">పాలలో వెన్న</span></td><td>Centrifugation<span class="te-td">కేంద్రాపసార వేర్పాటు</span></td><td>Denser particles settle at bottom due to centrifugal force<span class="te-td">ఘనత తేడా వల్ల కేంద్రాపసార బలం</span></td><td>Cream from milk; blood components<span class="te-td">పాలలో వెన్న వేర్పాటు; రక్త భాగాలు</span></td></tr>
+  </tbody>
+</table>
+
+<div class="sub-head">Threshing vs Winnowing / నూర్పిడి వర్సెస్ గాలిలో వేర్పాటు</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Threshing</b> is the process of separating the grain from the stalk of the plant by beating the harvested crop against a hard surface or using a threshing machine. Threshing separates the grain from the stalk. <b>Winnowing</b> is the process that comes after threshing — it separates the grain from the chaff (the light outer husk). In winnowing, the threshed material is tossed into the air; the wind blows away the lighter chaff while the heavier grain falls to the ground.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>నూర్పిడి (Threshing)</b> అనేది కోసిన పంట నుండి ధాన్యాన్ని కాడ నుండి వేరు చేసే ప్రక్రియ. <b>గాలిలో వేర్పాటు (Winnowing)</b> నూర్పిడి తర్వాత జరిగే ప్రక్రియ — ధాన్యాన్ని పొట్టు (తేలికైన తొక్క) నుండి వేరు చేస్తుంది. తొక్క గాలికి ఎగిరి పోతుంది, ధాన్యం కిందపడుతుంది.
+  </div>
+</div>
+</div><!-- end page 9 -->
+
+<!-- PAGE 10: SUBLIMATION & SPECIAL PHENOMENA -->
+<div class="page page-break">
+<div class="sec-head">Sublimation and Special Chemical Phenomena <span class="te">సబ్లిమేషన్ మరియు ప్రత్యేక రాసాయనిక దృగ్విషయాలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Sublimation</b> is the process by which a solid directly converts into vapour without passing through the liquid state, upon heating. The reverse process (vapour directly solidifying) is called <b>deposition</b> (or reverse sublimation). Sublimation occurs in substances where the vapour pressure at the solid surface reaches atmospheric pressure before the melting point is reached. Substances that sublime include: <b>Camphor</b> (used in religious ceremonies; also sublimes at room temperature slowly), <b>Dry ice</b> (solid carbon dioxide, CO₂, sublimes at -78.5°C), <b>Iodine</b> (purple vapour on gentle heating), <b>Naphthalene</b> (mothballs), and <b>Ammonium chloride (NH₄Cl)</b>. Sublimation is used as a separation technique to purify substances like camphor or iodine from non-volatile impurities.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>సబ్లిమేషన్</b> అనేది ఒక ఘన పదార్థం ద్రవ స్థితికి వెళ్ళకుండా నేరుగా ఆవిరిగా మారే ప్రక్రియ. దీనికి విరుద్ధ ప్రక్రియను డిపొజిషన్ అంటారు. సబ్లిమేషన్ జరిగే పదార్థాలు: <b>కర్పూరం</b> (పూజలలో వాడతారు), <b>పొడి మంచు</b> (CO₂, -78.5°C వద్ద సబ్లిమ్ అవుతుంది), <b>అయోడిన్</b> (వేడి చేస్తే ఊదా వర్ణ ఆవిరి), <b>నాఫ్థలీన్</b> (మాత్ బాల్స్), <b>అమోనియం క్లోరైడ్ (NH₄Cl)</b>. సబ్లిమేషన్ అశుద్ధి తొలగించడానికి వాడే వేర్పాటు పద్ధతి.
+  </div>
+</div>
+
+<div class="sub-head">Efflorescence and Deliquescence / అపజలీభవనం మరియు ఆర్ద్రగ్రాహకత</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Efflorescence</b> is the process by which a crystalline substance spontaneously loses its water of crystallisation to the atmosphere, resulting in a powdery residue on the surface. The substance that undergoes efflorescence is called efflorescent. Example: Washing soda crystals (Na₂CO₃·10H₂O) when exposed to air lose their 10 water molecules and become anhydrous sodium carbonate (Na₂CO₃), which is a white powder: Na₂CO₃·10H₂O → Na₂CO₃ + 10H₂O. <b>Deliquescence</b> is the property of certain substances to absorb moisture from the atmosphere to such an extent that they eventually dissolve in the absorbed water and form a solution. Deliquescent substances include: calcium chloride (CaCl₂), sodium hydroxide (NaOH), potassium carbonate (K₂CO₃), and concentrated sulfuric acid (H₂SO₄).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>అపజలీభవనం (Efflorescence)</b> అనేది ఒక స్ఫటిక పదార్థం వాతావరణానికి తన స్ఫటికీకరణ నీటిని కోల్పోయే ప్రక్రియ. ఉదాహరణ: వాషింగ్ సోడా స్ఫటికాలు (Na₂CO₃·10H₂O) గాలికి వదిలితే 10 నీటి అణువులు కోల్పోయి తెల్లని పొడి (Na₂CO₃) అవుతాయి. <b>ఆర్ద్రగ్రాహకత (Deliquescence)</b> అనేది కొన్ని పదార్థాలు వాతావరణం నుండి నీటి ఆవిరిని శోషించి చివరకు ద్రావణంగా మారే గుణం. ఉదాహరణలు: CaCl₂, NaOH, K₂CO₃, H₂SO₄ (గాఢమైనది).
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Phenomenon / దృగ్విషయం</th><th>Definition / నిర్వచనం</th><th>Examples / ఉదాహరణలు</th></tr></thead>
+  <tbody>
+    <tr><td>Sublimation<span class="te-td">సబ్లిమేషన్</span></td><td>Solid → vapour directly (no liquid stage)<span class="te-td">ఘన → ఆవిరి (ద్రవ స్థితి లేకుండా)</span></td><td>Camphor, Dry ice (CO₂), Iodine, Naphthalene, NH₄Cl<span class="te-td">కర్పూరం, పొడి మంచు, అయోడిన్, నాఫ్థలీన్</span></td></tr>
+    <tr><td>Efflorescence<span class="te-td">అపజలీభవనం</span></td><td>Loss of water of crystallisation to atmosphere<span class="te-td">స్ఫటికీకరణ నీటిని వాతావరణానికి కోల్పోవడం</span></td><td>Na₂CO₃·10H₂O, CuSO₄·5H₂O, FeSO₄·7H₂O<span class="te-td">సోడా స్ఫటికాలు</span></td></tr>
+    <tr><td>Deliquescence<span class="te-td">ఆర్ద్రగ్రాహకత</span></td><td>Absorbs moisture from air and dissolves<span class="te-td">గాలి నుండి తేమను శోషించి కరగడం</span></td><td>CaCl₂, NaOH, KOH, K₂CO₃, conc. H₂SO₄<span class="te-td">కాల్షియం క్లోరైడ్, సోడియం హైడ్రాక్సైడ్</span></td></tr>
+    <tr><td>Hygroscopy<span class="te-td">పర్యావరణ తేమ శోషణ</span></td><td>Absorbs moisture but does not dissolve<span class="te-td">తేమ శోషిస్తుంది కానీ కరగదు</span></td><td>Silica gel, CaCl₂ (sometimes), P₂O₅<span class="te-td">సిలికా జెల్</span></td></tr>
+  </tbody>
+</table>
+</div><!-- end page 10 -->
+
+<!-- PAGE 11: COMBUSTION & REACTION TYPES -->
+<div class="page page-break">
+<div class="sec-head">Combustion, Oxidation-Reduction, and Reaction Types <span class="te">దహనం, జారణ-క్షయణం మరియు చర్య రకాలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Combustion</b> is a rapid chemical reaction between a fuel and an oxidant (usually oxygen) that produces heat and light. For combustion to occur, three things must be present simultaneously — fuel, oxygen, and heat (ignition temperature). This is called the <b>fire triangle</b>. <b>Complete combustion</b> occurs when sufficient oxygen is available — carbon burns to carbon dioxide (CO₂) and hydrogen burns to water (H₂O). The flame is blue. <b>Incomplete combustion</b> occurs when oxygen is limited — carbon forms carbon monoxide (CO, toxic) and soot (carbon particles). The flame is yellow/orange and smoky. Carbon monoxide is a dangerous, odourless gas that binds to haemoglobin more tightly than oxygen, causing asphyxiation.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>దహనం</b> అనేది ఇంధనం మరియు ఆక్సిజన్ మధ్య వేగమైన రాసాయనిక చర్య, దీనిలో వేడి మరియు కాంతి ఉత్పత్తి అవుతాయి. దహనానికి అవసరమైన మూడు విషయాలు: ఇంధనం, ఆక్సిజన్, మరియు ఇగ్నిషన్ ఉష్ణోగ్రత — దీన్ని <b>అగ్ని త్రికోణం</b> అంటారు. <b>సంపూర్ణ దహనం</b>: తగినంత ఆక్సిజన్ ఉంటే CO₂ + H₂O ఏర్పడతాయి (నీలి జ్వాల). <b>అసంపూర్ణ దహనం</b>: ఆక్సిజన్ తక్కువైతే CO + మసి ఏర్పడతాయి (పసుపు జ్వాల). CO విష వాయువు — హీమోగ్లోబిన్‌కు ఆక్సిజన్ కంటే బలంగా అతుక్కుంటుంది.
+  </div>
+</div>
+
+<div class="sub-head">Exothermic and Endothermic Reactions / వేడి విడుదల మరియు వేడి శోషణ చర్యలు</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Exothermic reactions</b> are those in which energy (heat) is released to the surroundings. The products have less energy than the reactants. Examples include combustion (burning of fuels), neutralisation (acid + base → salt + water + heat), respiration (glucose + oxygen → CO₂ + H₂O + energy), and dissolving NaOH in water. <b>Endothermic reactions</b> are those in which energy (heat) is absorbed from the surroundings. The products have more energy than the reactants. Examples include photosynthesis (CO₂ + H₂O → glucose + O₂, requires light energy), decomposition of limestone (CaCO₃ → CaO + CO₂, requires heat), dissolving ammonium chloride or ammonium nitrate in water, and cooking of food.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ఉష్ణ-విడుదల చర్యలు (Exothermic)</b>: వేడి విడుదల అవుతుంది. ఉదాహరణలు: దహనం, తటస్థీకరణ (ఆమ్లం + క్షారం → లవణం + నీరు + వేడి), శ్వాసక్రియ, NaOH నీటిలో కరగడం. <b>ఉష్ణ-శోషణ చర్యలు (Endothermic)</b>: వేడి శోషించబడుతుంది. ఉదాహరణలు: కిరణజన్య సంయోగక్రియ (CO₂ + H₂O → గ్లూకోజ్ + O₂), సున్నం శిల విభజన (CaCO₃ → CaO + CO₂), NH₄Cl నీటిలో కరగడం.
+  </div>
+</div>
+
+<div class="sub-head">Oxidation and Reduction (Redox Reactions) / జారణం మరియు క్షయణం</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Oxidation</b> is defined as: (1) gain of oxygen, (2) loss of hydrogen, or (3) loss of electrons. <b>Reduction</b> is the opposite: (1) loss of oxygen, (2) gain of hydrogen, or (3) gain of electrons. In every redox reaction, oxidation and reduction occur simultaneously — one substance is oxidised while another is reduced. The substance that causes oxidation of another (and itself gets reduced) is the <b>oxidising agent</b>. The substance that causes reduction of another (and itself gets oxidised) is the <b>reducing agent</b>. Example: CuO + H₂ → Cu + H₂O. Here, CuO is reduced (loses oxygen, is the oxidising agent) and H₂ is oxidised (gains oxygen, is the reducing agent).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>జారణం (Oxidation)</b>: ఆక్సిజన్ లభించడం, హైడ్రోజన్ కోల్పోవడం, లేదా ఎలక్ట్రాన్లు కోల్పోవడం. <b>క్షయణం (Reduction)</b>: ఆక్సిజన్ కోల్పోవడం, హైడ్రోజన్ లభించడం, లేదా ఎలక్ట్రాన్లు లభించడం. ప్రతి రెడాక్స్ చర్యలో జారణం మరియు క్షయణం ఏకకాలంలో జరుగుతాయి. ఉదాహరణ: CuO + H₂ → Cu + H₂O. ఇక్కడ CuO క్షయణం చెందుతుంది (జారకం), H₂ జారణం చెందుతుంది (క్షయకం).
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Reaction Type / చర్య రకం</th><th>Definition / నిర్వచనం</th><th>Example / ఉదాహరణ</th></tr></thead>
+  <tbody>
+    <tr><td>Combustion<span class="te-td">దహనం</span></td><td>Rapid oxidation with heat and light<span class="te-td">వేడి + కాంతితో వేగమైన జారణం</span></td><td>C + O₂ → CO₂ + heat+light<span class="te-td">కార్బన్ దహనం</span></td></tr>
+    <tr><td>Exothermic<span class="te-td">ఉష్ణ-విడుదల</span></td><td>Releases heat to surroundings<span class="te-td">పరిసరాలకు వేడి విడుదల</span></td><td>Burning, Neutralisation, Respiration<span class="te-td">దహనం, తటస్థీకరణ, శ్వాసక్రియ</span></td></tr>
+    <tr><td>Endothermic<span class="te-td">ఉష్ణ-శోషణ</span></td><td>Absorbs heat from surroundings<span class="te-td">పరిసరాల నుండి వేడి శోషణ</span></td><td>Photosynthesis, CaCO₃ decomposition<span class="te-td">కిరణజన్య సంయోగం, సున్నం శిల</span></td></tr>
+    <tr><td>Oxidation<span class="te-td">జారణం</span></td><td>Gain of O₂ / loss of H₂ / loss of e⁻<span class="te-td">ఆక్సిజన్ లభించడం / ఎలక్ట్రాన్ కోల్పోవడం</span></td><td>Fe → Fe²⁺ (rusting)<span class="te-td">ఇనుప తుప్పు</span></td></tr>
+    <tr><td>Reduction<span class="te-td">క్షయణం</span></td><td>Loss of O₂ / gain of H₂ / gain of e⁻<span class="te-td">ఆక్సిజన్ కోల్పోవడం / ఎలక్ట్రాన్ లభించడం</span></td><td>CuO + H₂ → Cu + H₂O<span class="te-td">కాపర్ ఆక్సైడ్ క్షయణం</span></td></tr>
+    <tr><td>Redox<span class="te-td">రెడాక్స్</span></td><td>Oxidation and reduction simultaneously<span class="te-td">జారణం మరియు క్షయణం ఏకకాలంలో</span></td><td>CuO + H₂ → Cu + H₂O (both occur)<span class="te-td">ఏకకాలంలో రెండూ</span></td></tr>
+  </tbody>
+</table>
+</div><!-- end page 11 -->
+
+<!-- PAGE 12: CATALYSIS -->
+<div class="page page-break">
+<div class="sec-head">Catalysis — Catalysts, Enzymes, and Reaction Rate <span class="te">కాటాలిసిస్ — ఉత్ప్రేరకాలు, ఎంజైమ్లు మరియు చర్య వేగం</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  A <b>catalyst</b> is a substance that increases the rate of a chemical reaction without being permanently consumed or chemically changed at the end of the reaction. The process of using a catalyst to increase reaction rate is called <b>catalysis</b>. Catalysts work by providing an alternative reaction pathway with a lower activation energy — this allows more molecules to react per unit time. Although the catalyst participates in intermediate steps, it is regenerated at the end. A catalyst does not change the products formed or the equilibrium position; it only affects the speed of reaching equilibrium.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ఉత్ప్రేరకం (Catalyst)</b> అనేది రాసాయనిక చర్య వేగాన్ని పెంచే పదార్థం, కానీ చర్య చివరలో అది శాశ్వతంగా వినియోగించబడదు లేదా మారదు. ఈ ప్రక్రియను <b>కాటాలిసిస్</b> అంటారు. ఉత్ప్రేరకం తక్కువ యాక్టివేషన్ శక్తితో ప్రత్యామ్నాయ చర్య మార్గాన్ని అందించడం ద్వారా పని చేస్తుంది. ఇది ఉత్పన్నాలు లేదా సమతుల్య స్థానాన్ని మార్చదు; కేవలం సమతుల్యాన్ని చేరుకునే వేగాన్ని పెంచుతుంది.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Positive catalyst</b> (or simply "catalyst"): Increases the rate of reaction. Example: Manganese dioxide (MnO₂) in the decomposition of hydrogen peroxide (2H₂O₂ → 2H₂O + O₂ — without MnO₂ this is very slow, but with MnO₂ it is rapid). Vanadium pentoxide (V₂O₅) in the Contact Process for H₂SO₄ manufacture. Iron (Fe) in the Haber Process for ammonia. Platinum (Pt) in the Ostwald Process for nitric acid. <b>Negative catalyst (inhibitor)</b>: Decreases the rate of reaction. Example: Glycerol or acetanilide slows down the decomposition of H₂O₂ (used to stabilise H₂O₂ during storage). <b>Autocatalyst</b>: One of the products of the reaction acts as a catalyst. Example: In the oxidation of oxalic acid by KMnO₄, the Mn²⁺ ions produced act as a catalyst for further reaction.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ధనాత్మక ఉత్ప్రేరకం</b>: చర్య వేగాన్ని పెంచుతుంది. ఉదాహరణ: MnO₂ (H₂O₂ విచ్ఛేదనంలో), V₂O₅ (కాంటాక్ట్ ప్రక్రియలో), Fe (హేబర్ ప్రక్రియలో), Pt (ఆస్ట్‌వాల్డ్ ప్రక్రియలో). <b>రుణాత్మక ఉత్ప్రేరకం (నిరోధకం)</b>: చర్య వేగాన్ని తగ్గిస్తుంది. ఉదాహరణ: గ్లిసరాల్ H₂O₂ నిల్వలో స్థిరీకరణకు వాడతారు. <b>స్వయం-ఉత్ప్రేరకం</b>: చర్య ఉత్పన్నమే ఉత్ప్రేరకంగా పని చేయడం. ఉదాహరణ: KMnO₄ + ఆక్సాలిక్ ఆమ్లం చర్యలో Mn²⁺.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Enzymes</b> are biological catalysts — they are protein molecules that catalyse biochemical reactions in living organisms. Enzymes are highly specific (each enzyme catalyses only a specific reaction or type of reaction), work at body temperature and near-neutral pH, and can be denatured by heat or extreme pH. Examples: <b>Amylase</b> (in saliva, converts starch to maltose), <b>Pepsin</b> (in stomach, digests proteins in acidic conditions), <b>Lipase</b> (digests fats), <b>Zymase</b> (in yeast, converts glucose to ethanol and CO₂ — fermentation). <b>Promoter</b>: A substance that increases the efficiency of a catalyst without itself being a catalyst. Example: Molybdenum (Mo) is added to iron in the Haber Process as a promoter. <b>Catalyst poison</b>: A substance that deactivates a catalyst permanently. Example: Carbon monoxide (CO) poisons the platinum catalyst in fuel cells.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ఎంజైమ్లు</b> జైవిక ఉత్ప్రేరకాలు — జీవులలో జీవ రాసాయనిక చర్యలను వేగవంతం చేసే ప్రోటీన్ అణువులు. ఎంజైమ్లు అత్యంత నిర్దిష్టమైనవి. ఉదాహరణలు: <b>అమైలేజ్</b> (లాలాజలంలో, స్టార్చ్‌ను మాల్టోజ్‌గా మారుస్తుంది), <b>పెప్సిన్</b> (జీర్ణాశయంలో, ప్రొటీన్లు జీర్ణం), <b>లైపేజ్</b> (కొవ్వులు జీర్ణం), <b>జైమేజ్</b> (ఈస్ట్‌లో, గ్లూకోజ్ → ఇథనాల్ + CO₂). <b>ప్రమోటర్</b>: ఉత్ప్రేరక సామర్థ్యాన్ని పెంచే పదార్థం. <b>ఉత్ప్రేరక విషం</b>: ఉత్ప్రేరకాన్ని నిష్క్రియపరచే పదార్థం (CO, Pt ని విషపూరితం చేస్తుంది).
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Term / పదం</th><th>Definition / నిర్వచనం</th><th>Example / ఉదాహరణ</th></tr></thead>
+  <tbody>
+    <tr><td>Catalyst<span class="te-td">ఉత్ప్రేరకం</span></td><td>Increases rate without being consumed<span class="te-td">వేగం పెంచుతుంది, వినియోగించబడదు</span></td><td>MnO₂ (H₂O₂ decomposition), Fe (Haber)<span class="te-td"></span></td></tr>
+    <tr><td>Negative catalyst / Inhibitor<span class="te-td">రుణాత్మక ఉత్ప్రేరకం</span></td><td>Decreases rate of reaction<span class="te-td">చర్య వేగాన్ని తగ్గిస్తుంది</span></td><td>Glycerol in H₂O₂ storage<span class="te-td">గ్లిసరాల్</span></td></tr>
+    <tr><td>Enzyme<span class="te-td">ఎంజైమ్</span></td><td>Biological (protein) catalyst<span class="te-td">జైవిక (ప్రొటీన్) ఉత్ప్రేరకం</span></td><td>Amylase, Pepsin, Lipase, Zymase<span class="te-td">అమైలేజ్, పెప్సిన్</span></td></tr>
+    <tr><td>Promoter<span class="te-td">ప్రమోటర్</span></td><td>Increases catalyst efficiency<span class="te-td">ఉత్ప్రేరక సామర్థ్యం పెంచుతుంది</span></td><td>Molybdenum in Haber Process<span class="te-td">మాలిబ్డినం</span></td></tr>
+    <tr><td>Catalyst poison<span class="te-td">ఉత్ప్రేరక విషం</span></td><td>Permanently deactivates catalyst<span class="te-td">ఉత్ప్రేరకాన్ని నిష్క్రియపరుస్తుంది</span></td><td>CO poisons Pt catalyst<span class="te-td">CO ప్లాటినమ్‌ను విషపూరితం చేస్తుంది</span></td></tr>
+    <tr><td>Autocatalysis<span class="te-td">స్వయం-కాటాలిసిస్</span></td><td>Product acts as catalyst<span class="te-td">ఉత్పన్నమే ఉత్ప్రేరకం</span></td><td>Mn²⁺ in KMnO₄ + oxalic acid<span class="te-td">Mn²⁺ స్వయం-ఉత్ప్రేరకం</span></td></tr>
+  </tbody>
+</table>
+</div><!-- end page 12 -->
+
+<!-- PAGE 13: INDUSTRIAL PROCESSES -->
+<div class="page page-break">
+<div class="sec-head">Industrial Chemical Processes — Haber, Contact, Solvay, Ostwald <span class="te">పారిశ్రామిక రాసాయనిక ప్రక్రియలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Haber Process</b> — for manufacture of Ammonia (NH₃): N₂ + 3H₂ ⇌ 2NH₃ (reversible). Catalyst: Iron (Fe) with molybdenum as promoter. Conditions: 450°C temperature and 200 atm pressure. The reaction is exothermic (ΔH = -92 kJ/mol) and forward reaction is favoured by high pressure and low temperature (Le Chatelier's principle), but low temperature slows rate, so a compromise temperature of 450°C is used. Ammonia is used to make fertilisers (urea, ammonium sulphate), explosives, and synthetic fibres (nylon). Fritz Haber developed this process; Carl Bosch industrialised it — hence also called Haber-Bosch process.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>హేబర్ ప్రక్రియ</b> — అమ్మోనియా (NH₃) తయారీ కోసం: N₂ + 3H₂ ⇌ 2NH₃. ఉత్ప్రేరకం: ఇనుము (Fe) + మాలిబ్డినం (ప్రమోటర్). పరిస్థితులు: 450°C మరియు 200 atm పీడనం. ఉష్ణ-విడుదల చర్య. అమ్మోనియా ఎరువులు (యూరియా, అమోనియం సల్ఫేట్), పేలుడు పదార్థాలు, నైలాన్ తయారీకి వాడతారు. ఫ్రిట్జ్ హేబర్ ఈ ప్రక్రియను అభివృద్ధి చేశారు.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Contact Process</b> — for manufacture of Sulphuric Acid (H₂SO₄): Step 1: S + O₂ → SO₂ (burning of sulphur). Step 2: 2SO₂ + O₂ → 2SO₃ (catalyst = V₂O₅ at 450°C, 1-2 atm). Step 3: SO₃ + H₂SO₄ → H₂S₂O₇ (oleum). Step 4: H₂S₂O₇ + H₂O → 2H₂SO₄. (SO₃ cannot be directly dissolved in water as it forms acid mist — hence oleum route is used). H₂SO₄ is called the "King of Chemicals" because it has the highest industrial production volume globally and is used in fertilisers, petroleum refining, batteries (lead-acid), and dyes.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>కాంటాక్ట్ ప్రక్రియ</b> — సల్ఫ్యూరిక్ ఆమ్లం (H₂SO₄) తయారీ కోసం: S + O₂ → SO₂ → (V₂O₅, 450°C) → SO₃ → ఓలియం → H₂SO₄. V₂O₅ ఉత్ప్రేరకం. H₂SO₄ను "రసాయనాల రాజు" అంటారు ఎందుకంటే ఇది అత్యధికంగా ఉత్పత్తి అయ్యే పారిశ్రామిక రసాయనం. ఎరువులు, బ్యాటరీలు, రిఫైనింగ్‌కు వాడతారు.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Solvay Process</b> — for manufacture of Sodium Carbonate (Na₂CO₃, washing soda) and Sodium Bicarbonate (NaHCO₃, baking soda): Brine (saturated NaCl solution) is saturated with ammonia, then CO₂ is passed through it — NaHCO₃ precipitates out (less soluble). NaHCO₃ is filtered and heated to give Na₂CO₃ (soda ash): 2NaHCO₃ → Na₂CO₃ + H₂O + CO₂. NH₃ is recovered by treating ammonium chloride with calcium hydroxide. <b>Ostwald Process</b> — for manufacture of Nitric Acid (HNO₃): NH₃ is oxidised over platinum catalyst: 4NH₃ + 5O₂ → 4NO + 6H₂O (700-900°C). Then: 2NO + O₂ → 2NO₂. Then: 3NO₂ + H₂O → 2HNO₃ + NO.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>సోల్వే ప్రక్రియ</b> — సోడియం కార్బోనేట్ (Na₂CO₃, వాషింగ్ సోడా) మరియు సోడియం బైకార్బోనేట్ (NaHCO₃, బేకింగ్ సోడా) తయారీ: తృప్తి NaCl ద్రావణానికి NH₃ మరియు CO₂ పంపి NaHCO₃ అవక్షేపాన్ని వేర్పాటు చేసి, వేడి చేసి Na₂CO₃ పొందుతారు. <b>ఆస్ట్‌వాల్డ్ ప్రక్రియ</b> — నైట్రిక్ ఆమ్లం (HNO₃) తయారీ: NH₃ → (Pt, 700-900°C) → NO → NO₂ → HNO₃.
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Process / ప్రక్రియ</th><th>Product / ఉత్పన్నం</th><th>Catalyst / ఉత్ప్రేరకం</th><th>Conditions / పరిస్థితులు</th><th>Key Use / వినియోగం</th></tr></thead>
+  <tbody>
+    <tr><td>Haber Process<span class="te-td">హేబర్ ప్రక్రియ</span></td><td>Ammonia (NH₃)<span class="te-td">అమ్మోనియా</span></td><td>Iron (Fe) + Mo promoter<span class="te-td">ఇనుము + మాలిబ్డినం</span></td><td>450°C, 200 atm<span class="te-td">450°C, 200 atm పీడనం</span></td><td>Fertilisers, explosives, nylon<span class="te-td">ఎరువులు, పేలుడు పదార్థాలు</span></td></tr>
+    <tr><td>Contact Process<span class="te-td">కాంటాక్ట్ ప్రక్రియ</span></td><td>Sulphuric acid (H₂SO₄)<span class="te-td">సల్ఫ్యూరిక్ ఆమ్లం</span></td><td>Vanadium pentoxide (V₂O₅)<span class="te-td">వెనేడియం పెంటాక్సైడ్</span></td><td>450°C, 1-2 atm<span class="te-td">450°C</span></td><td>Fertilisers, batteries, dyes<span class="te-td">ఎరువులు, బ్యాటరీలు</span></td></tr>
+    <tr><td>Solvay Process<span class="te-td">సోల్వే ప్రక్రియ</span></td><td>Na₂CO₃ (washing soda) + NaHCO₃<span class="te-td">వాషింగ్ సోడా</span></td><td>No catalyst<span class="te-td">ఉత్ప్రేరకం లేదు</span></td><td>Room temperature<span class="te-td">సాధారణ ఉష్ణోగ్రత</span></td><td>Glass, detergents, paper<span class="te-td">గాజు, డిటర్జెంట్లు, కాగితం</span></td></tr>
+    <tr><td>Ostwald Process<span class="te-td">ఆస్ట్‌వాల్డ్ ప్రక్రియ</span></td><td>Nitric acid (HNO₃)<span class="te-td">నైట్రిక్ ఆమ్లం</span></td><td>Platinum (Pt)<span class="te-td">ప్లాటినం</span></td><td>700-900°C<span class="te-td">700-900°C</span></td><td>Fertilisers, explosives, dyes<span class="te-td">ఎరువులు, పేలుడు పదార్థాలు</span></td></tr>
+  </tbody>
+</table>
+</div><!-- end page 13 -->
+
+<!-- PAGE 14: ACIDS, BASES & pH -->
+<div class="page page-break">
+<div class="sec-head">Acids, Bases, and the pH Scale <span class="te">ఆమ్లాలు, క్షారాలు మరియు pH స్కేల్</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Acids</b> are substances that produce hydrogen ions (H⁺, or more precisely H₃O⁺ — hydronium ions) when dissolved in water. Acids have a sour taste (like lemon, vinegar), turn blue litmus paper red, and have a pH less than 7. <b>Bases</b> are substances that produce hydroxide ions (OH⁻) in water. Bases have a bitter taste, feel soapy/slippery to the touch, turn red litmus paper blue, and have a pH greater than 7. An <b>alkali</b> is a base that is soluble in water. <b>Neutralisation</b> is the reaction between an acid and a base to form a salt and water: Acid + Base → Salt + Water (e.g., HCl + NaOH → NaCl + H₂O). This reaction releases heat (exothermic).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ఆమ్లాలు</b> నీటిలో కరిగినప్పుడు హైడ్రోజన్ అయాన్లు (H⁺ / H₃O⁺) ఉత్పత్తి చేస్తాయి. ఆమ్లాలు పుల్లగా ఉంటాయి, నీలి లిట్మస్‌ను ఎరుపుగా మారుస్తాయి, pH < 7. <b>క్షారాలు</b> OH⁻ అయాన్లు ఉత్పత్తి చేస్తాయి. చేదు రుచి, సబ్బు వంటి స్పర్శ, ఎర్ర లిట్మస్‌ను నీలంగా మారుస్తాయి, pH > 7. నీటిలో కరిగే క్షారం = ఆల్కలీ. <b>తటస్థీకరణ</b>: ఆమ్లం + క్షారం → లవణం + నీరు (ఉష్ణ-విడుదల చర్య).
+  </div>
+</div>
+
+<div class="sub-head">Strong and Weak Acids / బలమైన మరియు బలహీనమైన ఆమ్లాలు</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Strong acids</b> completely dissociate (ionise) in water, producing a high concentration of H⁺ ions. Examples: Hydrochloric acid (HCl), Sulphuric acid (H₂SO₄), and Nitric acid (HNO₃). <b>Weak acids</b> only partially dissociate, producing fewer H⁺ ions. Examples: Acetic acid (CH₃COOH — in vinegar), Carbonic acid (H₂CO₃ — in soda water), Phosphoric acid (H₃PO₄), and Citric acid (in lemon). <b>Strong bases</b>: NaOH (caustic soda), KOH (caustic potash), Ca(OH)₂ (lime water). <b>Weak bases</b>: NH₄OH (ammonium hydroxide), Mg(OH)₂ (milk of magnesia).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>బలమైన ఆమ్లాలు</b> నీటిలో పూర్తిగా అయనీభవిస్తాయి: HCl, H₂SO₄, HNO₃. <b>బలహీనమైన ఆమ్లాలు</b> పాక్షికంగా మాత్రమే అయనీభవిస్తాయి: CH₃COOH (వినెగర్), H₂CO₃ (సోడా నీటిలో), H₃PO₄, సిట్రిక్ ఆమ్లం (నిమ్మకాయలో). <b>బలమైన క్షారాలు</b>: NaOH, KOH, Ca(OH)₂. <b>బలహీనమైన క్షారాలు</b>: NH₄OH, Mg(OH)₂.
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Acid / ఆమ్లం</th><th>Formula</th><th>Source / వనరు</th><th>Common Use / వినియోగం</th></tr></thead>
+  <tbody>
+    <tr><td>Hydrochloric acid<span class="te-td">హైడ్రోక్లోరిక్ ఆమ్లం</span></td><td>HCl</td><td>Stomach (gastric juice)<span class="te-td">జీర్ణాశయం</span></td><td>Digestion, pickling metals<span class="te-td">జీర్ణం, లోహ శుద్ధి</span></td></tr>
+    <tr><td>Sulphuric acid<span class="te-td">సల్ఫ్యూరిక్ ఆమ్లం</span></td><td>H₂SO₄</td><td>Industrial (Contact process)<span class="te-td">పారిశ్రామిక</span></td><td>Batteries, fertilisers, dyes<span class="te-td">బ్యాటరీలు, ఎరువులు</span></td></tr>
+    <tr><td>Nitric acid<span class="te-td">నైట్రిక్ ఆమ్లం</span></td><td>HNO₃</td><td>Industrial (Ostwald)<span class="te-td">పారిశ్రామిక</span></td><td>Fertilisers, explosives<span class="te-td">ఎరువులు, పేలుడు పదార్థాలు</span></td></tr>
+    <tr><td>Acetic acid<span class="te-td">ఎసిటిక్ ఆమ్లం</span></td><td>CH₃COOH</td><td>Vinegar, fermentation<span class="te-td">వినెగర్</span></td><td>Food preservative, flavouring<span class="te-td">ఆహార పరిరక్షణ</span></td></tr>
+    <tr><td>Carbonic acid<span class="te-td">కార్బోనిక్ ఆమ్లం</span></td><td>H₂CO₃</td><td>Soda water, blood<span class="te-td">సోడా నీరు</span></td><td>Fizzy drinks, body pH regulation<span class="te-td">శరీర pH నిర్వహణ</span></td></tr>
+  </tbody>
+</table>
+
+<div class="sub-head">pH Scale / pH స్కేల్</div>
+<table>
+  <thead><tr><th>pH Value</th><th>Nature / స్వభావం</th><th>Example / ఉదాహరణ</th></tr></thead>
+  <tbody>
+    <tr><td>0 - 2</td><td>Strongly acidic<span class="te-td">బలంగా ఆమ్లం</span></td><td>Battery acid (H₂SO₄, pH 0), Gastric acid (pH 1-2)<span class="te-td">బ్యాటరీ ఆమ్లం, జఠర రసం</span></td></tr>
+    <tr><td>3 - 4</td><td>Acidic<span class="te-td">ఆమ్లం</span></td><td>Vinegar (pH 3), Lemon juice (pH 2-3), Soda (pH 4)<span class="te-td">వినెగర్, నిమ్మరసం</span></td></tr>
+    <tr><td>5 - 6</td><td>Weakly acidic<span class="te-td">బలహీన ఆమ్లం</span></td><td>Rainwater (pH 5.6), Milk (pH 6.3-6.6), Coffee (pH 5)<span class="te-td">వర్షపు నీరు, పాలు</span></td></tr>
+    <tr><td>7</td><td>Neutral<span class="te-td">తటస్థం</span></td><td>Pure water (pH 7), Blood (pH 7.35-7.45)<span class="te-td">స్వచ్ఛమైన నీరు, రక్తం</span></td></tr>
+    <tr><td>8 - 9</td><td>Weakly basic<span class="te-td">బలహీన క్షారం</span></td><td>Seawater (pH 8), Baking soda (pH 8.3), Egg white (pH 9)<span class="te-td">సముద్రపు నీరు, బేకింగ్ సోడా</span></td></tr>
+    <tr><td>10 - 12</td><td>Basic<span class="te-td">క్షారం</span></td><td>Milk of magnesia (pH 10.5), Lime water (pH 12)<span class="te-td">సున్నం నీరు</span></td></tr>
+    <tr><td>13 - 14</td><td>Strongly basic<span class="te-td">బలమైన క్షారం</span></td><td>NaOH solution (pH 14), Oven cleaners<span class="te-td">NaOH ద్రావణం</span></td></tr>
+  </tbody>
+</table>
+</div><!-- end page 14 -->
+
+<!-- PAGE 15: SYNTHETIC FIBRES -->
+<div class="page page-break">
+<div class="sec-head">Synthetic Fibres — Natural, Semi-synthetic, and Synthetic <span class="te">సంశ్లేషిత ఫైబర్లు — సహజ, అర్ధ-సంశ్లేషిత మరియు సంశ్లేషిత</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Fibres</b> are long, thin, thread-like structures used to make fabrics and textiles. They are classified into natural and synthetic (man-made) fibres. <b>Natural fibres</b> come from plant or animal sources: <b>Cotton</b> is made of cellulose, a natural polymer obtained from the seed pod of the cotton plant. It is soft, absorbs moisture, and is comfortable in summer. <b>Silk</b> is a protein fibre (fibroin) produced by silkworms (Bombyx mori) from the cocoon; the process is called sericulture. It is lustrous and smooth. <b>Wool</b> is a protein fibre (keratin) obtained from the fleece of sheep, goat (cashmere, pashmina), camel, or rabbit (angora). It traps air and provides insulation. <b>Jute</b> is a plant fibre (lignocellulose) used for making gunny bags.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>ఫైబర్లు</b> వస్త్రాలు తయారు చేయడానికి వాడే దీర్ఘమైన, సన్నటి, దారపు నిర్మాణాలు. సహజ మరియు సంశ్లేషిత ఫైబర్లు అని వర్గీకరిస్తారు. <b>పత్తి</b> సెల్యులోజ్ (సహజ బహుళఘటకం)తో తయారు; మృదువైనది, చల్లదనం ఇచ్చేది. <b>పట్టు</b> ప్రొటీన్ ఫైబర్ (ఫైబ్రాయిన్); పట్టుపురుగుల గూళ్ళ నుండి; రేషమ్ పెంపకం = సెరికల్చర్. <b>ఉన్ని</b> కెరాటిన్ ప్రొటీన్; గొర్రెల, మేకల ఉన్ని నుండి. <b>జనపనార</b> జనపనార మొక్క నుండి; సంచులకు వాడతారు.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Rayon</b> is a semi-synthetic fibre. It is made from cellulose (from wood pulp) that is chemically processed and regenerated — hence it is also called regenerated cellulose fibre or artificial silk. It has a silk-like lustre and drape, absorbs moisture, and is less expensive than natural silk. It was the first man-made fibre. <b>Nylon</b> was the first purely synthetic (petroleum-based) fibre, developed by DuPont in 1935. It is a polyamide (amide linkages). Nylon has the highest tensile strength of all fibres, is resistant to abrasion and moisture, does not absorb water, and has great elasticity. Uses: toothbrush bristles, parachutes, ropes, stockings, shirts. <b>Polyester (Terylene/Dacron)</b> is made from ethylene glycol + terephthalic acid (ester linkages). It is wrinkle-resistant, strong, and holds its shape well. <b>Acrylic</b> (polyacrylonitrile — PAN) is used as artificial wool; it is warmer than natural wool and moth-resistant.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>రేయాన్</b> అర్ధ-సంశ్లేషిత ఫైబర్; కలప గుజ్జు నుండి సెల్యులోజ్‌ను రాసాయనికంగా ప్రక్రియ చేసి తయారు చేస్తారు; కృత్రిమ పట్టు అంటారు. మొదటి మానవ-నిర్మిత ఫైబర్. <b>నైలాన్</b> మొదటి పూర్తి సంశ్లేషిత ఫైబర్; DuPont 1935లో అభివృద్ధి చేసింది; పాలిఅమైడ్. అన్ని ఫైబర్లలో అత్యధిక తన్యత బలం. టూత్‌బ్రష్, పారాచూట్, దారాలు. <b>పాలియెస్టర్ (టెర్లీన్)</b> ఎస్టర్ బంధాలు; ముడతలకు నిరోధకత. <b>ఆక్రిలిక్</b> కృత్రిమ ఉన్ని; పాలిఆక్రిలోనైట్రైల్; నిజమైన ఉన్ని కంటే వెచ్చగా ఉంటుంది.
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Fibre / ఫైబర్</th><th>Type / రకం</th><th>Chemistry / రసాయన శాస్త్రం</th><th>Key Property / ముఖ్య గుణం</th><th>Key Fact / ముఖ్య వాస్తవం</th></tr></thead>
+  <tbody>
+    <tr><td>Cotton<span class="te-td">పత్తి</span></td><td>Natural (plant)<span class="te-td">సహజ (మొక్క)</span></td><td>Cellulose<span class="te-td">సెల్యులోజ్</span></td><td>Soft, moisture-absorbing<span class="te-td">మృదు, ఆర్ద్రత శోషణ</span></td><td>Best for summer<span class="te-td">వేసవికి అనుకూలం</span></td></tr>
+    <tr><td>Silk<span class="te-td">పట్టు</span></td><td>Natural (animal)<span class="te-td">సహజ (జంతువు)</span></td><td>Fibroin protein<span class="te-td">ఫైబ్రాయిన్ ప్రొటీన్</span></td><td>Lustrous, smooth<span class="te-td">మెరపు, మృదువు</span></td><td>Sericulture; Bombyx mori silkworm<span class="te-td">సెరికల్చర్</span></td></tr>
+    <tr><td>Wool<span class="te-td">ఉన్ని</span></td><td>Natural (animal)<span class="te-td">సహజ (జంతువు)</span></td><td>Keratin protein<span class="te-td">కెరాటిన్ ప్రొటీన్</span></td><td>Warm, insulating<span class="te-td">వెచ్చని, ఉష్ణం నిల్వ</span></td><td>From sheep fleece<span class="te-td">గొర్రె ఉన్ని</span></td></tr>
+    <tr><td>Rayon<span class="te-td">రేయాన్</span></td><td>Semi-synthetic<span class="te-td">అర్ధ-సంశ్లేషిత</span></td><td>Regenerated cellulose<span class="te-td">పునర్జీవిత సెల్యులోజ్</span></td><td>Silk-like, absorbent<span class="te-td">పట్టు వంటిది</span></td><td>First man-made fibre; artificial silk<span class="te-td">మొదటి మానవ-నిర్మిత ఫైబర్</span></td></tr>
+    <tr><td>Nylon<span class="te-td">నైలాన్</span></td><td>Synthetic<span class="te-td">సంశ్లేషిత</span></td><td>Polyamide (amide linkages)<span class="te-td">పాలిఅమైడ్</span></td><td>Highest tensile strength<span class="te-td">అత్యధిక తన్యత బలం</span></td><td>First synthetic fibre; DuPont 1935<span class="te-td">మొదటి సంశ్లేషిత ఫైబర్</span></td></tr>
+    <tr><td>Polyester<span class="te-td">పాలియెస్టర్</span></td><td>Synthetic<span class="te-td">సంశ్లేషిత</span></td><td>Ester linkages<span class="te-td">ఎస్టర్ బంధాలు</span></td><td>Wrinkle-resistant<span class="te-td">ముడతలకు నిరోధకత</span></td><td>Terylene/Dacron; PET for bottles<span class="te-td">టెర్లీన్, PET బాటిళ్ళు</span></td></tr>
+    <tr><td>Acrylic<span class="te-td">ఆక్రిలిక్</span></td><td>Synthetic<span class="te-td">సంశ్లేషిత</span></td><td>Polyacrylonitrile (PAN)<span class="te-td">పాలిఆక్రిలోనైట్రైల్</span></td><td>Warm, wool-like<span class="te-td">వెచ్చని, ఉన్ని వంటి</span></td><td>Artificial wool; moth-resistant<span class="te-td">కృత్రిమ ఉన్ని</span></td></tr>
+  </tbody>
+</table>
+</div><!-- end page 15 -->
+
+<!-- PAGE 16: RUBBER, GLASS & PLASTICS -->
+<div class="page page-break">
+<div class="sec-head">Rubber, Glass, and Plastics — Properties and Types <span class="te">రబ్బరు, గాజు మరియు ప్లాస్టిక్లు — గుణాలు మరియు రకాలు</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Natural Rubber</b> is a natural polymer of isoprene (2-methyl-1,3-butadiene), with the chemical formula (C₅H₈)ₙ. It is obtained as latex from the rubber tree <i>Hevea brasiliensis</i>. Latex is coagulated by adding acetic acid or formic acid. Natural rubber is soft and sticky in summer, brittle in winter, and has poor tensile strength and elasticity. <b>Vulcanisation</b> is the process of heating rubber with sulphur (3-5%) at 150°C. It was discovered by Charles Goodyear in 1839 accidentally. Vulcanisation creates cross-links between polymer chains by sulphur bridges, making rubber harder, stronger, more elastic, and resistant to temperature changes. Tyres contain 25-30% carbon black (lamp black), which is added to improve tensile strength, resistance to abrasion, and UV resistance. Synthetic rubbers include Neoprene (polychloroprene, oil-resistant), Buna-S (styrene-butadiene rubber, most widely used in tyres), and Buna-N (oil-resistant, used in fuel hoses).
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>సహజ రబ్బరు</b> ఐసోప్రీన్ యొక్క సహజ బహుళఘటకం (C₅H₈)ₙ. రబ్బరు చెట్టు (<i>Hevea brasiliensis</i>) నుండి లాటెక్స్ రూపంలో పొందుతారు; ఎసిటిక్ ఆమ్లం కలిపి గడ్డకట్టిస్తారు. <b>వల్కనీకరణ</b>: రబ్బరు + సల్ఫర్ (3-5%) 150°C వద్ద వేడి చేయడం; చార్లెస్ గుడ్‌ఇయర్ 1839లో ప్రమాదవశాత్తూ కనుగొన్నారు. వల్కనీకరణ వల్ల రబ్బరు గట్టిగా, బలంగా, అధిక స్థితిస్థాపకత కలిగి ఉంటుంది. టైర్లలో 25-30% కార్బన్ బ్లాక్ కలుపుతారు (తన్యత బలం పెంచడానికి).
+  </div>
+</div>
+
+<div class="sub-head">Glass Types / గాజు రకాలు</div>
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  Glass is a super-cooled liquid (amorphous solid). Common glass (soda-lime glass) is made by fusing silica (SiO₂), soda (Na₂CO₃), and lime (CaO). <b>Pyrex glass</b> (borosilicate glass, containing B₂O₃) has a very low coefficient of thermal expansion and is heat-resistant — used in laboratory glassware, ovenware, and telescope mirrors. <b>Flint glass</b> (lead glass, containing PbO) has a high refractive index and dispersion — used for optical lenses, cut glass, and crystal ware. <b>Soda-lime glass</b> (ordinary glass) is used for windows, bottles, and electric bulbs. Glass is etched using hydrofluoric acid (HF). Blue colour in glass is due to cobalt oxide (CoO). Glass fibres (fibre optics) are used for high-speed data transmission.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  గాజు అస్ఫాటికమైన ఘన పదార్థం (అతి-శీతల ద్రవం). సాధారణ గాజు (సోడా-లైమ్ గ్లాస్) SiO₂ + Na₂CO₃ + CaO కలిపి తయారు చేస్తారు. <b>పైరెక్స్ గాజు</b> (B₂O₃ కలిగి) తక్కువ ఉష్ణ విస్తరణ — ప్రయోగశాల కాచు సామాను. <b>ఫ్లింట్ గాజు</b> (PbO కలిగి) అధిక వక్రీభవన సూచిక — ఆప్టికల్ లెన్స్‌లు. <b>సోడా-లైమ్ గాజు</b> కిటికీలు, బాటిళ్ళు. HF తో గాజు ఎచింగ్ చేస్తారు. CoO (కోబాల్ట్ ఆక్సైడ్) గాజుకు నీలి రంగు ఇస్తుంది.
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Glass Type / గాజు రకం</th><th>Composition / సంఘటన</th><th>Key Property / ముఖ్య గుణం</th><th>Use / వినియోగం</th></tr></thead>
+  <tbody>
+    <tr><td>Soda-lime glass<span class="te-td">సోడా-లైమ్ గాజు</span></td><td>SiO₂ + Na₂CO₃ + CaO<span class="te-td"></span></td><td>Cheap, easy to mould<span class="te-td">చౌక, సులభంగా అచ్చు</span></td><td>Windows, bottles, bulbs<span class="te-td">కిటికీలు, బాటిళ్ళు</span></td></tr>
+    <tr><td>Pyrex/Borosilicate glass<span class="te-td">పైరెక్స్ గాజు</span></td><td>SiO₂ + B₂O₃ + Al₂O₃<span class="te-td"></span></td><td>Heat-resistant, low expansion<span class="te-td">వేడికి నిరోధకత</span></td><td>Lab glassware, ovenware, telescopes<span class="te-td">ప్రయోగశాల కాచు సామాను</span></td></tr>
+    <tr><td>Flint/Lead glass<span class="te-td">ఫ్లింట్ గాజు</span></td><td>SiO₂ + PbO + K₂O<span class="te-td"></span></td><td>High refractive index, sparkles<span class="te-td">అధిక వక్రీభవనం</span></td><td>Optical lenses, crystal ware<span class="te-td">ఆప్టికల్ లెన్స్‌లు</span></td></tr>
+    <tr><td>Cobalt glass<span class="te-td">కోబాల్ట్ గాజు</span></td><td>Soda-lime + CoO<span class="te-td"></span></td><td>Deep blue colour<span class="te-td">నీలి రంగు</span></td><td>Decorative; detecting boric acid<span class="te-td">అలంకరణ</span></td></tr>
+  </tbody>
+</table>
+
+<div class="sub-head">Thermoplastics vs Thermosetting Plastics / ఉష్ణ-ప్లాస్టిక్లు వర్సెస్ ఉష్ణ-స్థిర ప్లాస్టిక్లు</div>
+<table>
+  <thead><tr><th>Feature / లక్షణం</th><th>Thermoplastics / ఉష్ణ-ప్లాస్టిక్లు</th><th>Thermosetting / ఉష్ణ-స్థిర ప్లాస్టిక్లు</th></tr></thead>
+  <tbody>
+    <tr><td>On heating<span class="te-td">వేడి చేస్తే</span></td><td>Softens, can be remoulded<span class="te-td">మృదువై, మళ్ళీ అచ్చు వేయవచ్చు</span></td><td>Chars/burns, cannot be remoulded<span class="te-td">కాలిపోతుంది, మళ్ళీ అచ్చు వేయలేం</span></td></tr>
+    <tr><td>Structure<span class="te-td">నిర్మాణం</span></td><td>Linear/branched polymer chains<span class="te-td">రేఖీయ/శాఖల బహుళఘటకం</span></td><td>Cross-linked 3D network<span class="te-td">3D క్రాస్-లింక్డ్ నెట్‌వర్క్</span></td></tr>
+    <tr><td>Recyclable?<span class="te-td">రీసైకిల్ చేయగలమా?</span></td><td>Yes<span class="te-td">అవును</span></td><td>No<span class="te-td">కాదు</span></td></tr>
+    <tr><td>Examples<span class="te-td">ఉదాహరణలు</span></td><td>PVC, PET, Polyethylene, Nylon, Polystyrene<span class="te-td">PVC, PET, పాలిఎథిలీన్, నైలాన్</span></td><td>Bakelite, Melamine, Urea-formaldehyde<span class="te-td">బేకిలైట్, మెలమైన్</span></td></tr>
+    <tr><td>Key use<span class="te-td">వినియోగం</span></td><td>Bottles, pipes, bags, packaging<span class="te-td">బాటిళ్ళు, పైపులు, సంచులు</span></td><td>Electrical switches, kitchenware, handles<span class="te-td">ఎలక్ట్రికల్ స్విచ్‌లు, కుక్కర్ హాండిల్స్</span></td></tr>
+  </tbody>
+</table>
+
+<table>
+<thead><tr><th>Important Plastic / ముఖ్యమైన ప్లాస్టిక్</th><th>Full Name / పూర్తి పేరు</th><th>Key Property &amp; Use / లక్షణం మరియు వినియోగం</th></tr></thead>
+<tr>
+  <td><b>Teflon</b><span class="te-td">టెఫ్లాన్</span></td>
+  <td>PTFE — Polytetrafluoroethylene<span class="te-td">పాలీటెట్రాఫ్లోరోఇథిలీన్</span></td>
+  <td>Non-stick coating; highest chemical resistance; lowest friction coefficient; used in non-stick cookware, electrical insulation, and medical implants<span class="te-td">నాన్-స్టిక్ పూత; అత్యధిక రసాయన నిరోధకత; వంట పాత్రలు, విద్యుత్ అవాహకం</span></td>
+</tr>
+<tr>
+  <td><b>Bakelite</b><span class="te-td">బేకిలైట్</span></td>
+  <td>First synthetic plastic (Leo Baekeland, 1907)<span class="te-td">మొదటి కృత్రిమ ప్లాస్టిక్</span></td>
+  <td>Thermosetting; electrical switches, radio cabinets, handles; cannot be re-moulded once set<span class="te-td">విద్యుత్ స్విచ్‌లు, రేడియో కేబినెట్లు; మళ్ళీ అచ్చు వేయలేం</span></td>
+</tr>
+<tr>
+  <td><b>PVC</b><span class="te-td">PVC</span></td>
+  <td>Polyvinyl Chloride<span class="te-td">పాలీవినైల్ క్లోరైడ్</span></td>
+  <td>Water pipes, electrical wire insulation, flooring, raincoats; rigid or flexible depending on plasticiser added<span class="te-td">నీటి పైపులు, వైర్ అవాహకం, రెయిన్‌కోట్లు</span></td>
+</tr>
+<tr>
+  <td><b>Polythene</b><span class="te-td">పాలిథీన్</span></td>
+  <td>Polyethylene (HDPE / LDPE)<span class="te-td">పాలీఇథిలీన్</span></td>
+  <td>Most widely produced plastic; bags, bottles, toys; HDPE = rigid containers; LDPE = flexible films and bags<span class="te-td">అత్యధికంగా ఉత్పత్తి అయ్యే ప్లాస్టిక్; సంచులు, బాటిళ్ళు</span></td>
+</tr>
+<tr>
+  <td><b>Thermocol</b><span class="te-td">థర్మాకోల్</span></td>
+  <td>Expanded Polystyrene (EPS)<span class="te-td">విస్తరించిన పాలీస్టైరీన్</span></td>
+  <td>Thermal insulation, packaging material; disposable cups and plates; very low density<span class="te-td">ఉష్ణ అవాహకత, ప్యాకేజింగ్; చాలా తక్కువ సాంద్రత</span></td>
+</tr>
+</table>
+</div><!-- end page 16 -->
+
+<!-- PAGE 17: SOAPS & DETERGENTS -->
+<div class="page page-break">
+<div class="sec-head">Soaps and Detergents — Chemistry and Action <span class="te">సబ్బులు మరియు డిటర్జెంట్లు — రసాయన శాస్త్రం మరియు పని విధానం</span></div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Soap</b> is the sodium or potassium salt of a long-chain fatty acid. It is made by the process of <b>saponification</b> — the reaction of a fat or oil (triglyceride) with sodium hydroxide (NaOH) or potassium hydroxide (KOH): Fat/Oil + NaOH → Soap + Glycerol. <b>Hard soap</b> (using NaOH, sodium salt) is used as laundry and bathing soap. <b>Soft soap</b> (using KOH, potassium salt) is softer and used in shaving creams and liquid soaps. The process of adding common salt (NaCl) to the soap mixture to precipitate the soap out of the aqueous layer is called <b>salting out</b>. The soap floats on the top and can be separated. Glycerol (glycerine) is a valuable by-product of saponification, used in cosmetics and medicines.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>సబ్బు</b> దీర్ఘ-శ్రేణి కొవ్వు ఆమ్లాల సోడియం లేదా పొటాషియం లవణం. <b>సపోనిఫికేషన్</b> ద్వారా తయారు చేస్తారు — కొవ్వు/నూనె + NaOH → సబ్బు + గ్లిసరాల్. <b>హార్డ్ సబ్బు</b> (NaOH తో) బట్టలు ఉతకడానికి; <b>సాఫ్ట్ సబ్బు</b> (KOH తో) క్షౌరం క్రీమ్‌లకు వాడతారు. <b>లవణీయత బహిష్కరణ (Salting out)</b>: సాధారణ ఉప్పు (NaCl) కలిపి సబ్బును అవక్షేపించడం. గ్లిసరాల్ సపోనిఫికేషన్ యొక్క విలువైన ఉప-ఉత్పన్నం.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  A soap molecule has a long hydrophobic (water-repelling) hydrocarbon tail and a hydrophilic (water-attracting) carboxylate head (COO⁻Na⁺). When soap is added to oily water, the hydrophobic tails of soap molecules embed themselves in the oil, while the hydrophilic heads face outward toward water. This forms a spherical structure called a <b>micelle</b>. The micelle surrounds and emulsifies the oil droplet, which is then carried away when rinsed with water. <b>Soap does not work in hard water</b> because hard water contains calcium (Ca²⁺) and magnesium (Mg²⁺) ions, which react with soap to form insoluble precipitates (scum): 2C₁₇H₃₅COONa + CaCl₂ → (C₁₇H₃₅COO)₂Ca↓ + 2NaCl. The scum wastes soap, leaves stains on clothes, and clogs pores on skin.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  సబ్బు అణువుకు జలవిద్వేషి (hydrophobic) హైడ్రోకార్బన్ తోక మరియు జలస్నేహి (hydrophilic) కార్బోక్సిలేట్ తల ఉంటాయి. నూనె నీటికి సబ్బు కలిపినప్పుడు, సబ్బు అణువులు నూనె చుట్టూ <b>మైసెల్లు</b> ఏర్పరుస్తాయి — నూనె బిందువు నీటిలో సుళువుగా కొట్టుకుపోతుంది. <b>కఠిన నీటిలో సబ్బు పని చేయదు</b> — Ca²⁺/Mg²⁺ అయాన్లు సబ్బుతో చేరి కరగని అవక్షేపాన్ని (స్కమ్) ఏర్పరుస్తాయి.
+  </div>
+</div>
+
+<div class="bilingual">
+  <div class="bi-en"><span class="lang-tag">EN</span>
+  <b>Detergents</b> are synthetic cleaning agents that are sodium salts of long-chain alkyl sulphonates or alkyl benzene sulphonates. Unlike soap, detergents can work in hard water because the calcium and magnesium salts of sulphonate are soluble in water (no scum forms). Detergents are also more effective in cold water. However, some detergents are not biodegradable (those with branched hydrocarbon chains) and can cause water pollution. Modern detergents are made biodegradable by using straight-chain alkyl groups. Detergent washing powders also contain builders (sodium tripolyphosphate, to soften water), fluorescent brighteners (optical brightening agents, OBA), enzymes (protease to remove protein stains), and bleach.
+  </div>
+  <div class="bi-te"><span class="lang-tag">TE</span>
+  <b>డిటర్జెంట్లు</b> సంశ్లేషిత శుభ్రపరిచే పదార్థాలు — సోడియం అల్కైల్ సల్ఫోనేట్ లవణాలు. కఠిన నీటిలో కూడా పని చేస్తాయి (Ca²⁺/Mg²⁺ సల్ఫోనేట్ కరిగే లవణాలు, స్కమ్ ఏర్పడదు). చల్లని నీటిలో కూడా వేగంగా పని చేస్తాయి. కొన్ని డిటర్జెంట్లు జీవ-విచ్ఛేద్యం కాకపోవడం వల్ల నీటి కాలుష్యానికి దారి తీస్తాయి. ఆధునిక డిటర్జెంట్లు జీవ-విచ్ఛేద్యంగా తయారు చేస్తారు.
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Feature / లక్షణం</th><th>Soap / సబ్బు</th><th>Detergent / డిటర్జెంట్</th></tr></thead>
+  <tbody>
+    <tr><td>Chemical type<span class="te-td">రాసాయన రకం</span></td><td>Sodium/Potassium salt of fatty acid<span class="te-td">కొవ్వు ఆమ్లం లవణం</span></td><td>Sodium alkyl sulphonate<span class="te-td">అల్కైల్ సల్ఫోనేట్ లవణం</span></td></tr>
+    <tr><td>Works in hard water?<span class="te-td">కఠిన నీటిలో?</span></td><td>No — forms scum<span class="te-td">కాదు — స్కమ్ ఏర్పడుతుంది</span></td><td>Yes — no scum<span class="te-td">అవును — స్కమ్ లేదు</span></td></tr>
+    <tr><td>Biodegradable?<span class="te-td">జీవ-విచ్ఛేద్యం?</span></td><td>Yes<span class="te-td">అవును</span></td><td>Sometimes no<span class="te-td">కొన్నిసార్లు కాదు</span></td></tr>
+    <tr><td>Made from<span class="te-td">తయారీ</span></td><td>Animal fats / vegetable oils + NaOH<span class="te-td">జంతు కొవ్వు / నూనె + NaOH</span></td><td>Petroleum-derived chemicals<span class="te-td">పెట్రోలియం ఉత్పన్నాలు</span></td></tr>
+    <tr><td>Cold water effectiveness<span class="te-td">చల్లని నీటిలో</span></td><td>Less effective<span class="te-td">తక్కువ సమర్థవంతం</span></td><td>More effective<span class="te-td">అధిక సమర్థవంతం</span></td></tr>
+    <tr><td>Examples<span class="te-td">ఉదాహరణలు</span></td><td>Laundry soap, bathing soap, shaving soap<span class="te-td">స్నాన సబ్బు, బట్టల సబ్బు</span></td><td>Surf, Ariel, Tide, shampoo, dishwash liquid<span class="te-td">సర్ఫ్, ఆరియెల్, షాంపూ</span></td></tr>
+  </tbody>
+</table>
+</div><!-- end page 17 -->
+
+<!-- PAGE 18: QUICK REFERENCE -->
+<div class="page page-break">
+<div class="sec-head">Quick Reference — All Key Facts for APPSC/TSPSC <span class="te">శీఘ్ర సూచన — అన్ని ముఖ్య వాస్తవాలు</span></div>
+
+<div class="memory-box">
+  <div class="mem-title">Atomic Structure Quick Facts / పరమాణు నిర్మాణం ముఖ్య వాస్తవాలు</div>
+  Dalton (solid sphere, 1808) → Thomson (plum pudding, 1897, discovered electron) → Rutherford (nuclear model, 1911, gold foil experiment) → Bohr (quantised orbits K/L/M/N, 1913). Proton discovered by Rutherford (1919). Neutron discovered by Chadwick (1932). Atomic number (Z) = protons. Mass number (A) = protons + neutrons. Isotopes: same Z, different A (H-1/H-2/H-3; C-12/C-14; U-235/U-238). Isobars: same A (Ar-40 &amp; Ca-40). Isotones: same neutrons (C-14 &amp; N-15).<br>
+  <span style="color:#1b5e20">పరమాణు సంఖ్య Z = ప్రోటాన్లు. ద్రవ్యరాశి సంఖ్య A = ప్రోటాన్లు + న్యూట్రాన్లు. ఐసోటోపులు: Z సమానం. ఐసోబార్లు: A సమానం. ఐసోటోన్లు: న్యూట్రాన్లు సమానం.</span>
+</div>
+
+<div class="shock-box">
+  <div class="shock-title">Nuclear Physics Quick Facts / అణు భౌతిక శాస్త్రం ముఖ్య వాస్తవాలు</div>
+  Radioactivity discovered by Henri Becquerel (1896). Marie Curie coined "radioactivity"; discovered Po and Ra. Alpha (He nucleus, +2, paper stops, most ionising). Beta (electron, -1, Al stops, medium). Gamma (EM wave, 0, lead stops, most penetrating, least ionising). Penetrating: α &lt; β &lt; γ. Ionising: α &gt; β &gt; γ. Fission = heavy splits (U-235 + n → Ba + Kr + 3n, atom bomb). Fusion = light nuclei combine (D+T, H-bomb, sun's energy). E = mc². Chain reaction = neutrons trigger more fissions. C-14 half-life = 5730 years (carbon dating, up to 50,000 years). U-238 half-life = 4.5 billion years (rock dating). Moderator (graphite/D₂O) = slows neutrons. Control rods (Cd/B) = absorb neutrons. Fast Breeder Reactor = U-238 → Pu-239.<br>
+  <span style="color:#b71c1c">అణు బాంబు = ఫిషన్ (U-235/Pu-239). హైడ్రోజన్ బాంబు = ఫ్యూజన్ (D+T). C-14 అర్ధ-జీవిత కాలం 5730 సంవత్సరాలు. మోడరేటర్ = గ్రాఫైట్/D₂O. నియంత్రణ కడ్డీలు = కాడ్మియం/బోరాన్.</span>
+</div>
+
+<div class="exam-alert">
+  <div class="ea-title">Separation, Changes and Reactions Quick Facts / వేర్పాటు, మార్పులు ముఖ్య వాస్తవాలు</div>
+  Physical change: no new substance (melting, boiling, dissolving, bending, Pt glowing). Chemical change: new substance (rusting, burning, souring, decomposition). Rusting = Fe + O₂ + H₂O → Fe₂O₃·xH₂O. Lead nitrate: 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂. Sublimation: camphor, dry ice (CO₂), iodine, naphthalene, NH₄Cl. Efflorescence: Na₂CO₃·10H₂O loses water. Deliquescence: CaCl₂, NaOH absorb moisture. Exothermic: combustion, neutralisation, respiration. Endothermic: photosynthesis, CaCO₃ decomposition. Oxidation = gain O/lose H/lose e⁻. Reduction = lose O/gain H/gain e⁻. Haber: Fe, 450°C, 200 atm, NH₃. Contact: V₂O₅, 450°C, H₂SO₄. Ostwald: Pt, 700-900°C, HNO₃. Solvay: Na₂CO₃/NaHCO₃.<br>
+  <span style="color:#e65100">కర్పూరం సబ్లిమ్ అవుతుంది. పొడి మంచు = CO₂. హేబర్ = Fe, 450°C, 200 atm → NH₃. కాంటాక్ట్ = V₂O₅ → H₂SO₄. H₂SO₄ = "రసాయనాల రాజు".</span>
+</div>
+
+<div class="memory-box">
+  <div class="mem-title">Materials Quick Facts / పదార్థాలు ముఖ్య వాస్తవాలు</div>
+  Nylon = first synthetic fibre (polyamide, DuPont 1935, highest tensile strength). Rayon = first man-made fibre (semi-synthetic, artificial silk). Acrylic = artificial wool (PAN). Polyester = Terylene/Dacron (ester bonds). Vulcanisation = rubber + S, 150°C (Goodyear, 1839). Carbon black in tyres = improves tensile strength. Pyrex = borosilicate glass (heat-resistant). Flint glass = PbO (high refractive index). Blue glass = CoO. HF etches glass. Thermoplastics = remoldable (PVC, PET, Nylon). Thermosetting = cannot remould (Bakelite, Melamine). Soap = saponification (fat + NaOH). Hard soap = NaOH. Soft soap = KOH. Salting out = NaCl added to precipitate soap. Detergent works in hard water; soap does not. Galvanisation = Zn coating on iron to prevent rusting. Annealing = slow cooling of glass/metal to relieve internal stress.<br>
+  <span style="color:#1b5e20">నైలాన్ = మొదటి సంశ్లేషిత ఫైబర్. రేయాన్ = అర్ధ-సంశ్లేషిత. వల్కనీకరణ = రబ్బరు + సల్ఫర్. బేకిలైట్ = థర్మో-స్థిర ప్లాస్టిక్. సబ్బు కఠిన నీటిలో పని చేయదు. డిటర్జెంట్ పని చేస్తుంది.</span>
+</div>
+
+<table>
+  <thead><tr><th colspan="2">Complete Chemistry Quick Reference Table / సమగ్ర రసాయన శాస్త్రం సూచన పట్టిక</th></tr></thead>
+  <tbody>
+    <tr><td><b>Camphor sublimes</b> (does not melt at normal pressure)</td><td>కర్పూరం సబ్లిమ్ అవుతుంది</td></tr>
+    <tr><td><b>Dry ice = solid CO₂</b> (sublimes at -78.5°C)</td><td>పొడి మంచు = ఘన CO₂</td></tr>
+    <tr><td><b>Galvanisation</b> = coating iron with zinc to prevent rusting</td><td>గాల్వనైజేషన్ = Zn పూత వేయడం</td></tr>
+    <tr><td><b>Annealing</b> = slow cooling of glass or metal to relieve stress</td><td>అన్నీలింగ్ = నెమ్మదిగా చల్లబరచడం</td></tr>
+    <tr><td><b>Nylon</b> = first purely synthetic fibre (polyamide, 1935, DuPont)</td><td>నైలాన్ = మొదటి సంశ్లేషిత ఫైబర్</td></tr>
+    <tr><td><b>C-14 half-life</b> = 5730 years (carbon dating)</td><td>C-14 అర్ధ-జీవిత కాలం = 5730 సంవత్సరాలు</td></tr>
+    <tr><td><b>Atom bomb</b> = uncontrolled fission of U-235 or Pu-239</td><td>అణు బాంబు = నియంత్రణ లేని U-235/Pu-239 విభజన</td></tr>
+    <tr><td><b>H-bomb</b> = fusion of deuterium + tritium (triggered by fission bomb)</td><td>హైడ్రోజన్ బాంబు = ఫ్యూజన్ (విభజన ద్వారా ప్రేరేపించబడుతుంది)</td></tr>
+    <tr><td><b>pH of blood</b> = 7.35–7.45 (slightly alkaline)</td><td>రక్తం pH = 7.35–7.45 (కొద్దిగా క్షారీయం)</td></tr>
+    <tr><td><b>Haber process</b> = N₂ + 3H₂ → 2NH₃ (450°C, 200 atm, Fe catalyst)</td><td>హేబర్ ప్రక్రియ = అమ్మోనియా తయారీ</td></tr>
+    <tr><td><b>Contact process</b> = SO₃ + H₂O → H₂SO₄ (V₂O₅ catalyst, 450°C)</td><td>కాంటాక్ట్ ప్రక్రియ = సల్ఫ్యూరిక్ ఆమ్లం</td></tr>
+    <tr><td><b>Solvay process</b> = Na₂CO₃ (washing soda) production from NaCl + CO₂ + NH₃</td><td>సాల్వే ప్రక్రియ = సోడాష్ తయారీ</td></tr>
+    <tr><td><b>Ostwald process</b> = HNO₃ from NH₃ (Pt/Rh catalyst)</td><td>ఆస్ట్వాల్డ్ ప్రక్రియ = నైట్రిక్ ఆమ్లం</td></tr>
+    <tr><td><b>Teflon (PTFE)</b> = non-stick; highest chemical resistance; lowest friction</td><td>టెఫ్లాన్ = నాన్-స్టిక్; అత్యధిక రసాయన నిరోధకత</td></tr>
+    <tr><td><b>Bakelite</b> = first synthetic plastic (Leo Baekeland, 1907); thermosetting</td><td>బేకిలైట్ = మొదటి కృత్రిమ ప్లాస్టిక్ (1907)</td></tr>
+    <tr><td><b>Radioactivity discovered</b> by Henri Becquerel (1896) in uranium</td><td>రేడియోధర్మిత్వం = హెన్రీ బెకెరెల్ (1896)</td></tr>
+    <tr><td><b>Moderator</b> in nuclear reactor = Graphite or Heavy water (D₂O)</td><td>మాడరేటర్ = గ్రాఫైట్ లేదా భారమైన నీరు</td></tr>
+    <tr><td><b>Control rods</b> = Cadmium or Boron (absorb neutrons)</td><td>నియంత్రణ కడ్డీలు = కేడ్మియం లేదా బోరాన్</td></tr>
+  </tbody>
+</table>
+</div><!-- end page 18 -->
+
+</body>
+</html>

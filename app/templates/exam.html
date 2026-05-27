@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ exam.name_te }} · {{ exam.name_en }} · {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <h1>{{ exam.name_te }}</h1>
+  <p class="subtitle">{{ exam.name_en }} · {{ exam.conducting_body }}</p>
+</div>
+
+<div class="exam-tree">
+  {% for paper in papers %}
+  <section class="exam-paper">
+    <header class="exam-paper-head">
+      <div>
+        <p class="exam-paper-title">{{ paper.name_te }} <span class="exam-paper-en">{{ paper.name_en }}</span></p>
+        <p class="exam-paper-meta">{{ paper.total_marks }} marks{% if paper.duration_min %} · {{ paper.duration_min }} min{% endif %}</p>
+      </div>
+    </header>
+    {% for section in paper.sections %}
+    <div class="exam-section">
+      <div class="exam-section-head">
+        {% if section.section_label %}<span class="exam-section-label">{{ section.section_label }}</span>{% endif %}
+        <div class="exam-section-meta">
+          <p class="exam-section-title">{{ section.name_te }} <span class="exam-section-en">{{ section.name_en }}</span></p>
+          <p class="exam-section-marks">{{ section.marks }} M</p>
+        </div>
+      </div>
+      <ul class="exam-chapters">
+        {% for ch in section.chapters %}
+        <li>
+          <a href="/practice/{{ ch.subject_slug }}">
+            {{ ch.title_te }} <span class="exam-ch-en">{{ ch.title_en }}</span>
+            <span class="exam-ch-q">{{ ch.q_count }} Q</span>
+          </a>
+        </li>
+        {% else %}
+        <li class="empty"><em>No chapters mapped yet</em></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNESCO ICH — India's Intangible Cultural Heritage 2025 | National CA 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 16mm 14mm 14mm 14mm; }
+@media print {
+  .no-break { page-break-inside: avoid; }
+  .page-break { page-break-before: always; }
+  body { background: #fff !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --brick: #9b3a1a; --mud: #6b4226; --sand: #e8d5b0;
+  --green: #1a5030; --blue: #1a3a78; --gold: #b8860b;
+  --text: #1e1209; --border: #d4b896; --bg: #fdf8f2;
+  --tel-bg: #eef4ff; --tel-bdr: #1a3a78; --alert: #7a1010;
+}
+body { font-family: 'Libre Baskerville', Georgia, serif; background: #ddd5c8;
+       color: var(--text); font-size: 9.5pt; line-height: 1.55; }
+.a4 { width: 794px; min-height: 1123px; background: #fff; margin: 16px auto;
+      padding: 13mm 14mm 12mm; box-shadow: 0 2px 18px rgba(0,0,0,.18); }
+/* ── HEADER ── */
+.doc-header { background: linear-gradient(135deg, #1a3a78, #0e2050);
+              color: #fff; border-radius: 5px; padding: 13px 16px; margin-bottom: 12px; }
+.dh-title { font-size: 14.5pt; font-weight: 700; letter-spacing: .02em; }
+.dh-te { font-family: 'Tiro Telugu', serif; font-size: 11pt; color: #c8d8f8; margin: 3px 0 6px; }
+.dh-meta { font-family: 'Fira Mono', monospace; font-size: 7.5pt; color: #a8c0f0;
+           display: flex; gap: 12px; flex-wrap: wrap; }
+.dh-meta span { background: rgba(255,255,255,.12); padding: 2px 8px; border-radius: 2px; }
+/* ── SECTION HEADER ── */
+.sec-hdr { background: var(--mud); color: #fff; padding: 5px 11px; border-radius: 3px;
+           margin: 14px 0 7px; font-family: 'Source Sans 3', sans-serif;
+           font-size: 10pt; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+.sec-hdr .te { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; color: #f8e8d8; }
+.sec-hdr2 { background: var(--blue); color: #fff; padding: 4px 11px; border-radius: 3px;
+            margin: 11px 0 6px; font-family: 'Source Sans 3', sans-serif; font-size: 9.5pt; font-weight: 700; }
+.sec-hdr2 .te { font-family: 'Tiro Telugu', serif; font-size: 9pt; font-weight: 400; color: #c8d8f8; }
+/* ── TABLES ── */
+table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 6px 0; }
+th { background: var(--mud); color: #fff; padding: 5px 8px; text-align: left; font-size: 8.5pt; }
+th.blue { background: var(--blue); }
+td { border: 1px solid var(--border); padding: 4px 7px; vertical-align: top; }
+tr:nth-child(even) td { background: #fdf4ec; }
+.te-cell { font-family: 'Tiro Telugu', serif; font-size: 9pt; line-height: 1.7; color: #0a1a40; }
+.highlight-row td { background: #fff3cd !important; font-weight: 700; }
+.new-row td { background: #d5f5e3 !important; font-weight: 700; }
+.year-col { font-family: 'Fira Mono', monospace; font-weight: 700; color: var(--brick); width: 48px; }
+/* ── BOXES ── */
+.alert-box { background: #fff3e0; border-left: 4px solid #e65100; border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.info-box { background: #e8f4fd; border-left: 4px solid var(--blue); border-radius: 3px;
+            padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.green-box { background: #e8f8f0; border-left: 4px solid var(--green); border-radius: 3px;
+             padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.red-box { background: #fdeeee; border-left: 4px solid var(--alert); border-radius: 3px;
+           padding: 7px 10px; margin: 7px 0; font-size: 9pt; }
+.te-block { font-family: 'Tiro Telugu', serif; font-size: 9.5pt; line-height: 1.85;
+            color: #0a1a40; background: var(--tel-bg); border-top: 1px solid var(--tel-bdr);
+            padding: 5px 9px; margin-top: 4px; border-radius: 0 0 3px 3px; }
+/* ── BADGES ── */
+.badge { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 7.5pt; font-weight: 700; margin: 1px; }
+.b-new { background: #d5f5e3; color: #1a5030; border: 1px solid #a8d8b8; }
+.b-old { background: #eee; color: #555; border: 1px solid #ccc; }
+.b-warn { background: #fef3c7; color: #92400e; border: 1px solid #f6d860; }
+.b-blue { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+/* ── SUMMARY GRID ── */
+.sum-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+.sg { background: #fff; border-radius: 6px; padding: 10px; text-align: center;
+      border: 2px solid; }
+.sg-blue { border-color: var(--blue); }
+.sg-green { border-color: var(--green); }
+.sg-brick { border-color: var(--brick); }
+.sg-gold { border-color: var(--gold); }
+.sg-num { font-size: 24pt; font-weight: 800; display: block; line-height: 1.1; }
+.sg-lbl { font-size: 7.5pt; color: #666; margin-top: 3px; font-family: 'Source Sans 3', sans-serif; }
+/* ── MISC ── */
+p { margin: 5px 0; }
+ul { margin-left: 18px; margin-top: 4px; }
+li { margin-bottom: 3px; }
+.kw { background: #d0e8ff; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.kw-green { background: #c8f0d8; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.kw-red { background: #ffd8d8; padding: 0 3px; border-radius: 2px; font-weight: 700; }
+.mono { font-family: 'Fira Mono', monospace; font-size: 8.5pt; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.trap-num { font-family: 'Fira Mono', monospace; font-weight: 700; color: var(--alert); margin-right: 4px; }
+</style>
+</head>
+<body>
+<div class="a4">
+
+<!-- ═══════════════════════ HEADER ═══════════════════════ -->
+<div class="doc-header">
+  <div class="dh-title">UNESCO Intangible Cultural Heritage (ICH) — India 2025</div>
+  <div class="dh-te">యూనెస్కో అగోచర సాంస్కృతిక వారసత్వం — భారత్ 2025 | సమగ్ర అధ్యయన నోట్స్</div>
+  <div class="dh-meta">
+    <span>📅 Fresh as of May 23, 2026</span>
+    <span>🎯 AP High Court SO 2026</span>
+    <span>📍 Source: UNESCO + Year Book 2026</span>
+    <span>✅ 16 ICH Elements (India)</span>
+  </div>
+</div>
+
+<!-- SUMMARY GRID -->
+<div class="sum-grid">
+  <div class="sg sg-blue"><span class="sg-num" style="color:var(--blue)">16</span><div class="sg-lbl">India's ICH Elements<br><span style="font-family:'Tiro Telugu',serif">భారత్ ICH మూలకాలు</span></div></div>
+  <div class="sg sg-green"><span class="sg-num" style="color:var(--green)">44</span><div class="sg-lbl">India's UNESCO World Heritage Sites (May 2026)<br><span style="font-family:'Tiro Telugu',serif">ప్రపంచ వారసత్వ ప్రదేశాలు</span></div></div>
+  <div class="sg sg-brick"><span class="sg-num" style="color:var(--brick)">2008</span><div class="sg-lbl">First ICH inscription (Kutiyattam)<br><span style="font-family:'Tiro Telugu',serif">మొదటి ICH నమోదు</span></div></div>
+  <div class="sg sg-gold"><span class="sg-num" style="color:var(--gold)">2025</span><div class="sg-lbl">Latest — Deepavali inscribed<br><span style="font-family:'Tiro Telugu',serif">తాజా — దీపావళి</span></div></div>
+</div>
+
+<!-- ═══ SECTION 1: WHAT IS ICH ═══ -->
+<div class="sec-hdr"><span>1. What is UNESCO ICH? <span class="te">/ యూనెస్కో ICH అంటే ఏమిటి?</span></span></div>
+
+<p><strong>Intangible Cultural Heritage (ICH)</strong> refers to living traditions, expressions, knowledge and skills transmitted from generation to generation — including performing arts, oral traditions, social practices, rituals, festive events, and traditional craftsmanship.</p>
+<div class="te-block">అగోచర సాంస్కృతిక వారసత్వం (ICH) అంటే తరం నుండి తరానికి అందించే సజీవ సంప్రదాయాలు, వ్యక్తీకరణలు, జ్ఞానం మరియు నైపుణ్యాలు — ప్రదర్శన కళలు, మౌఖిక సంప్రదాయాలు, సామాజిక ఆచారాలు, ఉత్సవాలు, సాంప్రదాయ చేతివృత్తులు మొదలైనవి.</div>
+
+<div class="sec-hdr2"><span>Five Domains of ICH <span class="te">/ ICH యొక్క 5 రంగాలు</span></span></div>
+<div class="no-break">
+<table>
+<tr><th>Domain</th><th>Examples from India</th><th class="te-cell">వివరణ (Telugu)</th></tr>
+<tr><td><strong>Oral traditions &amp; expressions</strong></td><td>Vedic Chanting, Ramlila</td><td class="te-cell">మౌఖిక సంప్రదాయాలు</td></tr>
+<tr><td><strong>Performing arts</strong></td><td>Kutiyattam, Chhau, Kalbelia, Mudiyettu</td><td class="te-cell">ప్రదర్శన కళలు</td></tr>
+<tr><td><strong>Social practices &amp; rituals</strong></td><td>Kumbh Mela, Durga Puja, Ramman, Deepavali</td><td class="te-cell">సామాజిక ఆచారాలు, ఉత్సవాలు</td></tr>
+<tr><td><strong>Knowledge about nature &amp; universe</strong></td><td>Yoga</td><td class="te-cell">ప్రకృతి జ్ఞానం</td></tr>
+<tr><td><strong>Traditional craftsmanship</strong></td><td>Thatheras of Jandiala Guru, Buddhist Chanting of Ladakh</td><td class="te-cell">సాంప్రదాయ చేతివృత్తులు</td></tr>
+</table>
+</div>
+
+<div class="info-box"><strong>Key body:</strong> UNESCO Intergovernmental Committee for the Safeguarding of the Intangible Cultural Heritage (meets annually in December). India ratified the 2003 ICH Convention in September 2005.
+<div class="te-block">భారత్ 2005 సెప్టెంబర్‌లో UNESCO 2003 ICH కన్వెన్షన్‌ను ఆమోదించింది. ప్రతి సంవత్సరం డిసెంబర్‌లో అంతర్ప్రభుత్వ కమిటీ సమావేశం జరుగుతుంది.</div></div>
+
+<!-- ═══ SECTION 2: INDIA'S 16 ICH ELEMENTS ═══ -->
+<div class="sec-hdr"><span>2. India's 16 ICH Elements — Complete List <span class="te">/ భారత్ 16 ICH మూలకాలు — పూర్తి జాబితా</span></span></div>
+
+<div class="alert-box">⚠️ <strong>Exam Trap:</strong> India has <span class="kw">16 ICH elements</span> (as of Dec 2025 session). <span class="kw-red">NOT 15, NOT 14.</span> Garba = 15th (2023); Deepavali = 16th (2025). Navroz is counted as a multinational element shared with 12+ countries — India's total is <strong>16</strong> including it.
+<div class="te-block">⚠️ పరీక్ష జాగ్రత్త: భారత్‌కు 16 ICH మూలకాలు ఉన్నాయి. గర్బా = 15వ (2023); దీపావళి = 16వ (2025).</div></div>
+
+<div class="no-break">
+<table>
+<tr><th class="year-col">Year</th><th>ICH Element</th><th>Category / State</th><th class="te-cell">తెలుగు వివరణ</th></tr>
+<tr><td class="year-col">2008</td><td><strong>Kutiyattam</strong> — Sanskrit Theatre</td><td>Performing Arts · Kerala</td><td class="te-cell">కూటియాట్టం — సంస్కృత నాటకం (కేరళ)</td></tr>
+<tr><td class="year-col">2008</td><td><strong>Tradition of Vedic Chanting</strong></td><td>Oral Tradition · Pan-India</td><td class="te-cell">వేద పఠనం సంప్రదాయం</td></tr>
+<tr><td class="year-col">2008</td><td><strong>Ramlila</strong> — traditional performance of Ramayana</td><td>Performing Arts · UP, HP, Bihar</td><td class="te-cell">రామ్‌లీలా (రామాయణ ప్రదర్శన)</td></tr>
+<tr><td class="year-col">2009</td><td><strong>Ramman</strong> — religious festival &amp; ritual theatre, Garhwal</td><td>Ritual &amp; Festival · Uttarakhand</td><td class="te-cell">రామ్మన్ (ఉత్తరాఖండ్)</td></tr>
+<tr><td class="year-col">2010</td><td><strong>Mudiyettu</strong> — ritual theatre and dance drama</td><td>Performing Arts · Kerala</td><td class="te-cell">ముడియేట్టు (కేరళ)</td></tr>
+<tr><td class="year-col">2010</td><td><strong>Kalbelia</strong> — folk songs and dances</td><td>Performing Arts · Rajasthan</td><td class="te-cell">కల్బేలియా జానపద నృత్యాలు (రాజస్థాన్)</td></tr>
+<tr><td class="year-col">2010</td><td><strong>Chhau</strong> dance</td><td>Performing Arts · W. Bengal, Jharkhand, Odisha</td><td class="te-cell">ఛౌ నృత్యం (పశ్చిమ బెంగాల్, జార్ఖండ్, ఒడిశా)</td></tr>
+<tr><td class="year-col">2012</td><td><strong>Buddhist Chanting of Ladakh</strong></td><td>Oral Tradition · Ladakh (J&amp;K)</td><td class="te-cell">లడాఖ్ బౌద్ధ పఠనం</td></tr>
+<tr><td class="year-col">2013</td><td><strong>Sankirtana</strong> — ritual singing, drumming &amp; dancing</td><td>Performing Arts · Manipur</td><td class="te-cell">సంకీర్తన (మణిపూర్)</td></tr>
+<tr><td class="year-col">2014</td><td><strong>Thatheras of Jandiala Guru</strong> — traditional brass &amp; copper craft</td><td>Craftsmanship · Punjab</td><td class="te-cell">తథేరాస్ చేతివృత్తి (పంజాబ్)</td></tr>
+<tr><td class="year-col">2016</td><td><strong>Yoga</strong></td><td>Knowledge System · Pan-India</td><td class="te-cell">యోగా</td></tr>
+<tr><td class="year-col">2017</td><td><strong>Kumbh Mela</strong></td><td>Social Practice · UP (Prayagraj, Haridwar, Nashik, Ujjain)</td><td class="te-cell">కుంభ మేళా (ప్రయాగ్‌రాజ్, హరిద్వార్, నాసిక్, ఉజ్జైన్)</td></tr>
+<tr><td class="year-col">2021</td><td><strong>Durga Puja in Kolkata</strong></td><td>Festive Event · West Bengal</td><td class="te-cell">కోల్‌కతా దుర్గా పూజ (పశ్చిమ బెంగాల్)</td></tr>
+<tr class="highlight-row"><td class="year-col">2023</td><td><strong>Garba of Gujarat</strong> — 15th element</td><td>Performing Arts · Gujarat</td><td class="te-cell">గుజరాత్ గర్బా నృత్యం — 15వ మూలకం</td></tr>
+<tr class="new-row"><td class="year-col">2025</td><td>🆕 <strong>Deepavali / Diwali</strong> — 16th element</td><td>Festive Event · Pan-India</td><td class="te-cell">🆕 దీపావళి / దివాళి — 16వ మరియు తాజా మూలకం</td></tr>
+</table>
+</div>
+
+<div class="green-box"><strong>Memory Tip / గుర్తుంచుకోండి:</strong><br>
+<span class="mono">2008 (3) → 2009 (1) → 2010 (3) → 2012 (1) → 2013 (1) → 2014 (1) → 2016 (1) → 2017 (1) → 2021 (1) → 2023 (1) → 2025 (1) = 15 total</span><br>
+<strong>3 + 1 + 3 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 15</strong>
+</div>
+
+<!-- ═══ SECTION 3: ICH SESSION 2025 ═══ -->
+<div class="sec-hdr page-break"><span>3. UNESCO ICH Committee Session — Diwali Inscribed <span class="te">/ ICH సదస్సు — దీపావళి నమోదు</span></span></div>
+
+<div class="no-break">
+<table>
+<tr><th class="blue" colspan="2">20th Session — UNESCO ICH Intergovernmental Committee 2025 / 20వ ICH అంతర్ప్రభుత్వ కమిటీ సదస్సు</th></tr>
+<tr><td style="width:35%"><strong>Location / స్థానం</strong></td><td><strong>New Delhi, India</strong> (న్యూ ఢిల్లీ, భారత్) 🇮🇳 — <em>India hosted this session</em></td></tr>
+<tr><td><strong>Dates / తేదీలు</strong></td><td>December 8–12, 2025 (Mon–Fri)</td></tr>
+<tr><td><strong>Nominations reviewed</strong></td><td>67 elements — 11 Urgent Safeguarding + 54 Representative List + 2 transfers</td></tr>
+<tr><td><strong>Chair / అధ్యక్షుడు</strong></td><td>H.E. Vishal V. Sharma — India's Permanent Delegate to UNESCO (chaired the session)</td></tr>
+<tr><td><strong>India's New Inscription</strong></td><td>🆕 <strong>Deepavali / Diwali</strong> — India's 16th ICH element</td></tr>
+<tr><td><strong>Next Session / తదుపరి</strong></td><td>December 2026 — Jiayuguan, <strong>China</strong> (చైనా)</td></tr>
+</table>
+</div>
+
+<p style="margin-top:7px"><strong>Significance of Diwali inscription / దీపావళి నమోదు ప్రాముఖ్యత:</strong></p>
+<div class="no-break">
+<table>
+<tr><th>Aspect</th><th>Details</th><th class="te-cell">తెలుగు వివరణ</th></tr>
+<tr><td>Festival</td><td>Deepavali — festival of lights, celebrated across India and globally by Indian diaspora</td><td class="te-cell">దీపావళి — వెలుతురు పండుగ, భారత్ మరియు ప్రవాస భారతీయులు జరుపుకుంటారు</td></tr>
+<tr><td>Significance</td><td>Marks victory of light over darkness, knowledge over ignorance, good over evil</td><td class="te-cell">వెలుతురు — చీకటిపై, జ్ఞానం — అజ్ఞానంపై, మంచి — చెడుపై విజయాన్ని సూచిస్తుంది</td></tr>
+<tr><td>Global reach</td><td>Observed in 100+ countries; includes lighting of diyas, fireworks, exchange of sweets</td><td class="te-cell">100+ దేశాల్లో జరుపుకుంటారు; దీపాలు వెలిగించడం, మిఠాయి పంచడం</td></tr>
+<tr><td>Historic</td><td>First Hindu festival to receive UNESCO ICH recognition; joins Kumbh Mela and Durga Puja</td><td class="te-cell">UNESCO ICH గుర్తింపు పొందిన మొదటి హిందూ పండుగ (కుంభమేళా, దుర్గాపూజ తర్వాత)</td></tr>
+</table>
+</div>
+
+<!-- ═══ SECTION 4: OTHER GLOBAL ICH 2025 INSCRIPTIONS ═══ -->
+<div class="sec-hdr2"><span>Other Major Global Inscriptions at 2025 Session <span class="te">/ 2025 సదస్సులో ఇతర ముఖ్య ICH నమోదులు</span></span></div>
+
+<div class="no-break">
+<table>
+<tr><th>Country</th><th>ICH Element Inscribed</th><th class="te-cell">వివరణ</th></tr>
+<tr><td><strong>Bangladesh</strong></td><td>Tangail saree weaving (టాంగైల్ చీర నేత)</td><td class="te-cell">బంగ్లాదేశ్ — టాంగైల్ చీర నేత కళ</td></tr>
+<tr><td><strong>Afghanistan</strong></td><td>Afghan miniature painting — Bezad style (అఫ్ఘాన్ సూక్ష్మ చిత్రకళ)</td><td class="te-cell">అఫ్ఘానిస్తాన్ — సూక్ష్మ చిత్రకళ (బేజాద్ శైలి)</td></tr>
+<tr><td><strong>Iran + others</strong></td><td>Parthian traditional dance (పార్థియన్ నృత్యం)</td><td class="te-cell">ఇరాన్ — పార్థియన్ సాంప్రదాయ నృత్యం</td></tr>
+<tr><td><strong>Switzerland</strong></td><td>Yodeling — traditional choral singing (యోడలింగ్)</td><td class="te-cell">స్విట్జర్లాండ్ — యోడలింగ్ (ఆల్పైన్ గానం)</td></tr>
+<tr><td><strong>Vietnam</strong></td><td>Dang He folk block-printing textile craft</td><td class="te-cell">వియత్నాం — జానపద వస్త్ర ముద్రణ కళ</td></tr>
+<tr><td><strong>Philippines</strong></td><td>Asin Ti-Bok — traditional sea salt making (Bahoal Island)</td><td class="te-cell">ఫిలిప్పీన్స్ — సాంప్రదాయ సముద్ర ఉప్పు తయారీ</td></tr>
+<tr><td><strong>Panama</strong></td><td>Quincha house construction (సాంప్రదాయ ఇంటి నిర్మాణం)</td><td class="te-cell">పనామా — క్వించా ఇంటి నిర్మాణ విధానం</td></tr>
+<tr><td><strong>Portugal</strong></td><td>Moliceiro boat carpenter's craft</td><td class="te-cell">పోర్చుగల్ — మోలిసేరో నావ నిర్మాణ కళ</td></tr>
+<tr><td><strong>Uzbekistan</strong></td><td>Kovit craft tradition</td><td class="te-cell">ఉజ్బెకిస్తాన్ — కోవిత్ కళ సంప్రదాయం</td></tr>
+<tr><td><strong>Kenya</strong></td><td>Maasai community spiritual dance</td><td class="te-cell">కెన్యా — మాసాయి సమాజ ఆధ్యాత్మిక నృత్యం</td></tr>
+</table>
+</div>
+
+<!-- ═══ SECTION 5: UNESCO WHS — INDIA ═══ -->
+<div class="sec-hdr"><span>4. UNESCO World Heritage Sites — India (May 2026) <span class="te">/ UNESCO ప్రపంచ వారసత్వ ప్రదేశాలు</span></span></div>
+
+<div class="alert-box">🎯 <strong>Key Exam Fact:</strong> India has <span class="kw">44 UNESCO World Heritage Sites</span> as of May 2026.<br>
+Breakdown: <strong>34 Cultural + 7 Natural + 3 Mixed = 44 total</strong>
+<div class="te-block">మే 2026 నాటికి భారత్‌కు <strong>44 UNESCO ప్రపంచ వారసత్వ ప్రదేశాలు</strong> ఉన్నాయి: 34 సాంస్కృతిక + 7 ప్రకృతి + 3 మిశ్రమ.</div></div>
+
+<div class="no-break">
+<table>
+<tr><th>WHS No.</th><th>Site</th><th>Year</th><th>Type</th></tr>
+<tr><td>42nd</td><td><strong>Hoysala Temples</strong> (Karnataka — Belur, Halebidu, Somnathapura)</td><td>2023</td><td>Cultural</td></tr>
+<tr><td>43rd</td><td><strong>Moidams</strong> — Mound-Burial System of the Ahom Dynasty (Assam)</td><td>2024</td><td>Cultural</td></tr>
+<tr class="new-row"><td>44th</td><td>🆕 <strong>Maratha Military Landscapes</strong> (Maharashtra — 12 forts)</td><td>July 2025</td><td>Cultural</td></tr>
+</table>
+</div>
+
+<div class="info-box"><strong>Maratha Military Landscapes (44th WHS):</strong> Inscribed at the 47th World Heritage Committee session in July 2025. Covers 12 forts including <strong>Raigad, Shivneri, Pratapgad</strong> and others associated with the Maratha Empire. Recognized for outstanding universal value as military architecture and Chhatrapati Shivaji Maharaj's legacy.
+<div class="te-block">మరాఠా మిలిటరీ ల్యాండ్‌స్కేప్స్ (44వ WHS) — జూలై 2025లో నమోదైంది. 12 కోటలు: రాయ్‌గఢ్, శివనేరి, ప్రతాప్‌గఢ్ మొదలైనవి. ఛత్రపతి శివాజీ మహారాజ్ వారసత్వానికి గుర్తింపు.</div></div>
+
+<!-- ═══ SECTION 6: UNESCO CREATIVE CITIES ═══ -->
+<div class="sec-hdr2"><span>UNESCO Creative Cities — India <span class="te">/ UNESCO క్రియేటివ్ సిటీస్ — భారత్</span></span></div>
+
+<div class="no-break">
+<table>
+<tr><th>City</th><th>Creative Field</th><th class="te-cell">వివరణ</th></tr>
+<tr><td><strong>Lucknow</strong> 🆕</td><td>Gastronomy (పాకశాస్త్రం)</td><td class="te-cell">లక్నో — UNESCO క్రియేటివ్ సిటీ ఆఫ్ గ్యాస్ట్రోనమీ (2025)</td></tr>
+<tr><td>Jaipur</td><td>Crafts and Folk Art</td><td class="te-cell">జైపూర్ — క్రాఫ్ట్స్ &amp; ఫోక్ ఆర్ట్</td></tr>
+<tr><td>Varanasi</td><td>Creative City of Music</td><td class="te-cell">వారణాసి — సంగీత నగరం</td></tr>
+<tr><td>Chennai</td><td>Creative City of Music</td><td class="te-cell">చెన్నై — సంగీత నగరం</td></tr>
+<tr><td>Mumbai</td><td>Film</td><td class="te-cell">ముంబై — చలన చిత్రం</td></tr>
+<tr><td>Hyderabad</td><td>Gastronomy</td><td class="te-cell">హైదరాబాద్ — పాకశాస్త్రం</td></tr>
+<tr><td>Kozhikode</td><td>Literature</td><td class="te-cell">కోఝికోడ్ — సాహిత్యం</td></tr>
+<tr><td>Srinagar</td><td>Crafts and Folk Art</td><td class="te-cell">శ్రీనగర్ — క్రాఫ్ట్స్ &amp; ఫోక్ ఆర్ట్</td></tr>
+</table>
+</div>
+
+<!-- ═══ SECTION 7: KEY DISTINCTIONS ═══ -->
+<div class="sec-hdr page-break"><span>5. Critical Distinctions &amp; Exam Traps <span class="te">/ ముఖ్యమైన తేడాలు &amp; పరీక్ష జాగ్రత్తలు</span></span></div>
+
+<div class="two-col">
+<div>
+<div class="red-box" style="margin-bottom:8px">
+  <strong><span class="trap-num">TRAP 1</span>Classical Dances NOT individually in ICH</strong><br>
+  Bharatanatyam, Kathak, Odissi, Kuchipudi, Manipuri, Mohiniyattam, Sattriya — recognized by <strong>Sangeet Natak Akademi</strong> but <strong>NOT inscribed</strong> in UNESCO ICH individually.<br>
+  Exception: <span class="kw">Kutiyattam</span> (Sanskrit theatre, Kerala) IS in ICH (2008).<br>
+  <span class="kw">Chhau</span> (combining dance + martial arts) IS in ICH (2010).
+  <div class="te-block" style="font-size:8.5pt">భారతనాట్యం, కథక్, ఒడిస్సీ, కూచిపూడి, మణిపురి, మోహినీయాట్టం, సత్రియా — సంగీత నాటక అకాడెమీ గుర్తింపు మాత్రమే; UNESCO ICH లో <strong>వ్యక్తిగతంగా నమోదు కాలేదు</strong>.</div>
+</div>
+
+<div class="red-box">
+  <strong><span class="trap-num">TRAP 2</span>ICH ≠ World Heritage Site</strong><br>
+  ICH = <strong>living traditions</strong> (intangible — non-physical)<br>
+  WHS = <strong>physical monuments/places</strong> (Taj Mahal, Ajanta, etc.)<br>
+  Governed by different UNESCO conventions: ICH (2003 Convention) vs WHS (1972 Convention)
+  <div class="te-block" style="font-size:8.5pt">ICH = జీవన సంప్రదాయాలు (అగోచర); WHS = భౌతిక స్మారకాలు. రెండూ వేర్వేరు UNESCO కన్వెన్షన్‌ల కింద.</div>
+</div>
+</div>
+
+<div>
+<div class="red-box" style="margin-bottom:8px">
+  <strong><span class="trap-num">TRAP 3</span>Session location — 20th vs 19th</strong><br>
+  Diwali inscribed at 20th session held in <span class="kw">New Delhi, India</span> (Dec 8–12, 2025).<br>
+  <span class="kw-red">NOT in Paraguay</span> — Paraguay (Asunción) hosted the <strong>19th session (2024)</strong>.<br>
+  Next 21st session (2026): <span class="kw">Jiayuguan, China</span>
+  <div class="te-block" style="font-size:8.5pt">దీపావళి 20వ ICH సదస్సులో న్యూ ఢిల్లీ, భారత్‌లో నమోదైంది (డిసెంబర్ 8–12, 2025). పరాగ్వే 19వ సదస్సు (2024) వేదిక. 21వ సదస్సు: చైనా.</div>
+</div>
+
+<div class="red-box">
+  <strong><span class="trap-num">TRAP 4</span>Garba = 15th; Diwali = 16th</strong><br>
+  Garba of Gujarat inscribed in <span class="kw">2023</span> = India's <span class="kw">15th</span> ICH element.<br>
+  Deepavali (2025) = India's <span class="kw">16th</span> ICH element.<br>
+  Total India ICH count = <span class="kw">16</span> (including Navroz as a multinational element).
+  <div class="te-block" style="font-size:8.5pt">గర్బా (2023) = 15వ ICH మూలకం. దీపావళి (2025) = 16వ ICH మూలకం.</div>
+</div>
+</div>
+</div>
+
+<!-- ═══ SECTION 8: QUICK FACTS TABLE ═══ -->
+<div class="sec-hdr"><span>6. Quick Facts — ICH Chronology <span class="te">/ త్వరిత వాస్తవాలు</span></span></div>
+
+<div class="no-break">
+<table>
+<tr><th>Question</th><th>Answer</th><th class="te-cell">తెలుగు</th></tr>
+<tr><td>First Indian ICH element</td><td>Kutiyattam (Sanskrit Theatre, Kerala) — 2008</td><td class="te-cell">మొదటిది: కూటియాట్టం (2008)</td></tr>
+<tr><td>Three 2008 inscriptions</td><td>Kutiyattam + Vedic Chanting + Ramlila</td><td class="te-cell">2008లో 3 నమోదులు</td></tr>
+<tr><td>Only Craft element</td><td>Thatheras of Jandiala Guru (brass/copper — Punjab, 2014)</td><td class="te-cell">తథేరాస్ (పంజాబ్, 2014) — ఏకైక చేతివృత్తి</td></tr>
+<tr><td>Kumbh Mela (year)</td><td>2017 — 4 cities: Prayagraj, Haridwar, Nashik, Ujjain</td><td class="te-cell">కుంభమేళా 2017 — 4 నగరాలు</td></tr>
+<tr><td>Durga Puja (year)</td><td>2021 — Kolkata, West Bengal</td><td class="te-cell">దుర్గాపూజ 2021 — కోల్‌కతా</td></tr>
+<tr><td>Yoga (year + category)</td><td>2016 — Knowledge about nature and universe</td><td class="te-cell">యోగా 2016 — ప్రకృతి జ్ఞానం</td></tr>
+<tr><td>Garba (year)</td><td>2023 — 15th element</td><td class="te-cell">గర్బా 2023 — 15వ మూలకం</td></tr>
+<tr><td>Diwali (year)</td><td>2025 — 16th element, inscribed at New Delhi session</td><td class="te-cell">దీపావళి 2025 — 16వ మూలకం, న్యూ ఢిల్లీలో</td></tr>
+<tr><td>India's WHS count (May 2026)</td><td>44 (34 Cultural + 7 Natural + 3 Mixed)</td><td class="te-cell">44 ప్రపంచ వారసత్వ ప్రదేశాలు</td></tr>
+<tr><td>Newest WHS (India)</td><td>Maratha Military Landscapes (44th) — July 2025</td><td class="te-cell">మరాఠా మిలిటరీ ల్యాండ్‌స్కేప్స్ (44వ) — 2025</td></tr>
+<tr><td>India ratified ICH convention</td><td>September 2005</td><td class="te-cell">సెప్టెంబర్ 2005లో ICH కన్వెన్షన్ ఆమోదం</td></tr>
+<tr><td>Next ICH session (2026)</td><td>Jiayuguan, China</td><td class="te-cell">2026 సదస్సు: జియాయుగ్వాన్, చైనా</td></tr>
+</table>
+</div>
+
+<!-- ═══ SECTION 9: AP CONTEXT ═══ -->
+<div class="sec-hdr2"><span>AP &amp; Telangana Cultural Heritage — ICH Relevance <span class="te">/ ఆంధ్రప్రదేశ్ &amp; తెలంగాణ వారసత్వం</span></span></div>
+<div class="no-break">
+<table>
+<tr><th>Element</th><th>State</th><th>Status</th><th class="te-cell">వివరణ</th></tr>
+<tr><td>Kuchipudi classical dance</td><td>Andhra Pradesh</td><td><span class="badge b-warn">SNA recognized — NOT in ICH</span></td><td class="te-cell">కూచిపూడి — AP శాస్త్రీయ నృత్యం, ICH లో లేదు</td></tr>
+<tr><td>Burrakatha</td><td>Andhra Pradesh</td><td><span class="badge b-old">State-level recognition</span></td><td class="te-cell">బుర్రకథ — AP జానపద కళ</td></tr>
+<tr><td>Perini Sivatandavam</td><td>Telangana</td><td><span class="badge b-old">Revived form</span></td><td class="te-cell">పేరిణి శివతాండవం — తెలంగాణ</td></tr>
+<tr><td>Warangal/Kakatiya Temples</td><td>Telangana</td><td><span class="badge b-warn">UNESCO Tentative WHS List</span></td><td class="te-cell">వరంగల్ కాకతీయ దేవాలయాలు — UNESCO తాత్కాలిక జాబితా</td></tr>
+</table>
+</div>
+
+<!-- FOOTER NOTE -->
+<div class="info-box" style="margin-top:12px">
+  <strong>Study Tip:</strong> For AP High Court SO exam, focus on: (1) India's 16 ICH elements with years, (2) Diwali as 16th inscribed at New Delhi session (Dec 2025), (3) India's 44 WHS with latest 3 additions, (4) Classical dances NOT in ICH individually. These are high-probability topics.
+  <div class="te-block">పరీక్ష కోసం దృష్టి: (1) 16 ICH మూలకాలు + సంవత్సరాలు, (2) దీపావళి = 16వ, న్యూ ఢిల్లీలో (డిసెంబర్ 2025), (3) 44 WHS, (4) శాస్త్రీయ నృత్యాలు ICH లో లేవు.</div>
+</div>
+
+</div><!-- end .a4 -->
+</body>
+</html>
+                                                      

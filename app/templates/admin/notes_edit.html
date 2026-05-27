@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block title %}Admin · Edit Notes · {{ chapter.title_en }}{% endblock %}
+{% block content %}
+<div class="admin-wrap">
+  <div class="admin-header">
+    <div>
+      <a href="{{ url_for('admin.notes_list') }}" class="back-link">← Chapter List</a>
+      <h2>{{ chapter.title_en }}</h2>
+      <p class="chapter-meta">
+        {{ subject.name_en }} · Chapter {{ chapter.chapter_num }}
+        {% if note.heading_en %} · <em>{{ note.heading_en }}</em>{% endif %}
+      </p>
+    </div>
+    <a href="{{ url_for('admin.logout') }}" class="btn-logout">Logout</a>
+  </div>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for cat, msg in messages %}
+      <div class="flash flash-{{ cat }}">{{ msg }}</div>
+    {% endfor %}
+  {% endwith %}
+
+  <form method="POST" class="notes-form">
+    <div class="heading-row">
+      <div class="field-group">
+        <label>Section Heading (English)</label>
+        <input type="text" name="heading_en" value="{{ note.heading_en or '' }}"
+               placeholder="Section heading in English">
+      </div>
+      <div class="field-group">
+        <label>Section Heading (Telugu)</label>
+        <input type="text" name="heading_te" value="{{ note.heading_te or '' }}"
+               placeholder="తెలుగు శీర్షిక">
+      </div>
+    </div>
+
+    <div class="pane-row">
+      <div class="pane">
+        <div class="pane-header">
+          <span class="pane-lang">🇮🇳 Telugu (body_te)</span>
+          <span class="pane-hint">Paste sanitized HTML here</span>
+        </div>
+        <textarea name="body_te" class="code-editor" spellcheck="false"
+                  placeholder="తెలుగు HTML కంటెంట్ ఇక్కడ పేస్ట్ చేయండి...">{{ note.body_te or '' }}</textarea>
+      </div>
+      <div class="pane">
+        <div class="pane-header">
+          <span class="pane-lang">🇬🇧 English (body_en)</span>
+          <span class="pane-hint">Paste sanitized HTML here</span>
+        </div>
+        <textarea name="body_en" class="code-editor" spellcheck="false"
+                  placeholder="Paste English HTML content here...">{{ note.body_en or '' }}</textarea>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <button type="submit" class="btn-save">Save Notes</button>
+      <span class="sanitize-note">
+        HTML is auto-sanitized on save (allowed: p, h1-h6, ul, ol, li, table, a, img, strong, em, etc.)
+      </span>
+    </div>
+  </form>
+
+  {% if note.body_te or note.body_en %}
+  <div class="preview-section">
+    <h3>Preview</h3>
+    <div class="preview-grid">
+      <div class="preview-pane">
+        <div class="preview-label">Telugu</div>
+        <div class="preview-body">{{ note.body_te|safe }}</div>
+      </div>
+      <div class="preview-pane">
+        <div class="preview-label">English</div>
+        <div class="preview-body">{{ note.body_en|safe }}</div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<style>
+.admin-wrap{max-width:80rem;margin:0 auto;padding:1.5rem 1rem}
+.admin-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}
+.admin-header h2{margin:.25rem 0 0}
+.chapter-meta{margin:.25rem 0 0;font-size:.85rem;color:var(--text-2,#94a3b8)}
+.back-link{font-size:.8rem;color:var(--accent,#3b82f6);text-decoration:none}
+.btn-logout{padding:.4rem .8rem;background:transparent;border:1px solid var(--border,#334155);border-radius:.375rem;color:var(--text-2,#94a3b8);text-decoration:none;font-size:.875rem}
+.flash{padding:.6rem 1rem;border-radius:.375rem;margin-bottom:1rem;font-size:.875rem}
+.flash-success{background:#14532d;color:#86efac}
+.flash-error{background:#7f1d1d;color:#fca5a5}
+.notes-form{display:flex;flex-direction:column;gap:1rem}
+.heading-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field-group{display:flex;flex-direction:column;gap:.25rem}
+.field-group label{font-size:.8rem;color:var(--text-2,#94a3b8)}
+.field-group input{padding:.45rem .6rem;border:1px solid var(--border,#334155);border-radius:.375rem;background:var(--surface-2,#1e293b);color:var(--text-1,#f1f5f9);font-size:.9rem}
+.pane-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.pane{display:flex;flex-direction:column;border:1px solid var(--border,#334155);border-radius:.5rem;overflow:hidden}
+.pane-header{display:flex;justify-content:space-between;align-items:center;padding:.5rem .75rem;background:var(--surface-2,#1e293b);border-bottom:1px solid var(--border,#334155)}
+.pane-lang{font-weight:600;font-size:.875rem;color:var(--text-1,#f1f5f9)}
+.pane-hint{font-size:.75rem;color:var(--text-2,#94a3b8)}
+.code-editor{width:100%;box-sizing:border-box;min-height:28rem;padding:.75rem;background:var(--surface-3,#0f172a);color:var(--text-1,#f1f5f9);border:none;resize:vertical;font-family:monospace;font-size:.8rem;line-height:1.6}
+.action-bar{display:flex;align-items:center;gap:1rem}
+.btn-save{padding:.55rem 1.5rem;background:var(--accent,#1e40af);color:#fff;border:none;border-radius:.375rem;font-size:1rem;cursor:pointer;font-weight:600}
+.btn-save:hover{opacity:.9}
+.sanitize-note{font-size:.75rem;color:var(--text-2,#94a3b8)}
+.preview-section{margin-top:2rem}
+.preview-section h3{margin-bottom:.75rem;color:var(--text-2,#94a3b8);font-size:.9rem;text-transform:uppercase;letter-spacing:.05em}
+.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.preview-pane{border:1px solid var(--border,#334155);border-radius:.5rem;overflow:hidden}
+.preview-label{padding:.4rem .75rem;font-size:.75rem;font-weight:600;color:var(--text-2,#94a3b8);background:var(--surface-2,#1e293b);border-bottom:1px solid var(--border,#334155)}
+.preview-body{padding:1rem;color:var(--text-1,#f1f5f9);font-size:.9rem;line-height:1.7}
+.preview-body p{margin:.5em 0}
+.preview-body h1,.preview-body h2,.preview-body h3{margin:.75em 0 .25em;color:var(--text-1,#f1f5f9)}
+.preview-body table{border-collapse:collapse;width:100%;font-size:.85rem}
+.preview-body th,.preview-body td{border:1px solid var(--border,#334155);padding:.3rem .5rem}
+@media(max-width:700px){.pane-row,.heading-row,.preview-grid{grid-template-columns:1fr}}
+</style>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}{{ subject.name_te }} · Practice · {{ app_title }}{% endblock %}
+
+{% block content %}
+{% if question %}
+<article class="qcard" id="qcard" data-question-id="{{ question.id }}" data-correct="{{ question.correct_answer }}">
+
+  <div class="qcard-progress"><div class="qcard-progress-fill" style="width:{{ progress_pct }}%"></div></div>
+
+  <div class="qcard-meta">
+    <span class="qcard-tag">{{ subject.name_en }} · {{ chapter.title_en }} · Q {{ q_index }}/{{ q_total }}</span>
+    <span class="qcard-diff" data-difficulty="{{ question.difficulty }}">{{ difficulty_label }}</span>
+    {% if question.chapter_id %}
+    <a class="notes-chip" href="{{ url_for('notes.chapter_list', subject_slug=subject.slug) }}" title="Read chapter notes">📖</a>
+    {% endif %}
+  </div>
+
+  <div class="qcard-body">
+    <p class="qtext-te">{{ question.question_te }}</p>
+    <p class="qtext-en">{{ question.question_en }}</p>
+
+    <div class="options" role="radiogroup" aria-label="Answer options">
+      {% for key in ['a','b','c','d','e'] %}
+        {% if question.options_en.get(key) %}
+        <button class="option" data-key="{{ key }}" type="button" role="radio" aria-checked="false">
+          <span class="option-key">{{ key | upper }}</span>
+          <span class="option-text">
+            <span class="opt-en">{{ question.options_en.get(key) }}</span>
+            <span class="opt-te">{{ question.options_te.get(key) }}</span>
+          </span>
+          <span class="option-mark" aria-hidden="true"></span>
+        </button>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="confidence" id="confidence">
+      <p class="conf-label">ఎంత ఖచ్చితంగా? · How sure are you?</p>
+      <div class="conf-row" role="radiogroup" aria-label="Confidence">
+        {% for n in [1,2,3,4,5] %}
+        <button class="conf-pill" data-conf="{{ n }}" type="button" role="radio" aria-checked="false">{{ n }}</button>
+        {% endfor %}
+      </div>
+      <div class="conf-anchors">
+        <span>Guess<br><span class="anchor-te">ఊహ</span></span>
+        <span>Maybe</span>
+        <span>50/50</span>
+        <span>Likely</span>
+        <span>Certain<br><span class="anchor-te">ఖచ్చితం</span></span>
+      </div>
+    </div>
+
+    <button class="primary-btn submit-btn" id="submit-btn" type="button" disabled>
+      సమాధానం పంపు · Submit answer
+    </button>
+
+    <div class="feedback" id="feedback" hidden>
+      <div class="feedback-message" id="feedback-msg"></div>
+      <div class="feedback-explanation">
+        <p class="exp-label">వివరణ · Explanation</p>
+        <p class="exp-te">{{ question.explanation_te }}</p>
+        <p class="exp-en">{{ question.explanation_en }}</p>
+      </div>
+      <div class="feedback-actions">
+        <a class="next-btn" href="{{ next_url }}">తదుపరి · Next →</a>
+      </div>
+    </div>
+
+  </div>
+</article>
+{% else %}
+<div class="empty-home">
+  <p class="subtitle">No questions yet for <strong>{{ subject.name_en }}</strong>.</p>
+  <p class="hint">Add content via admin (Phase 3) or run <code>python scripts/seed_dev.py</code>.</p>
+  <a class="primary-btn" href="/subjects">← Back to subjects</a>
+</div>
+{% endif %}
+{% endblock %}

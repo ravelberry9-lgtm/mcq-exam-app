@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ subject.name_te }} · Notes · {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <a class="back-link" href="/subjects">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    విషయాలు · Subjects
+  </a>
+  <h1>
+    <span class="bilingual-te">{{ subject.name_te }}</span>
+    <span class="bilingual-en">{{ subject.name_en }}</span>
+  </h1>
+  <p class="subtitle">అధ్యాయాలు చదవండి · Read chapters</p>
+</div>
+
+<div class="chapter-list">
+  {% for row in chapters %}
+  {% set ch = row.chapter %}
+  {% set status = row.status %}
+  {% set note_count = row.note_count %}
+  <a class="chapter-row status-{{ status }}"
+     href="{{ url_for('notes.reader', subject_slug=subject.slug, chapter_num=ch.chapter_num) }}">
+    <div class="chapter-num">{{ ch.chapter_num }}</div>
+    <div class="chapter-meta">
+      <p class="chapter-te">{{ ch.title_te }}</p>
+      <p class="chapter-en">{{ ch.title_en }}{% if note_count %} · {{ note_count }} sections{% endif %}</p>
+    </div>
+    <div class="chapter-status-icon" aria-label="{{ status }}">
+      {% if status == 'completed' %}
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-success,#22c55e)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      {% elif status == 'in_progress' %}
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      {% else %}
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-muted,#9ca3af)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      {% endif %}
+    </div>
+  </a>
+  {% else %}
+  <p class="empty">ఈ విషయంలో అధ్యాయాలు లేవు · No chapters for this subject yet.</p>
+  {% endfor %}
+</div>
+
+<div class="subject-actions">
+  <a class="btn-secondary" href="{{ url_for('public.practice', subject_slug=subject.slug) }}">Practice MCQs →</a>
+</div>
+{% endblock %}

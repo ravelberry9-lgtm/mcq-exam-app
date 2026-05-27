@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 7 – Colonial & Modern Architecture in India | Art & Culture</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tiro+Telugu&family=Source+Sans+3:wght@400;600;700&family=Fira+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 16mm 16mm;
+  @top-center {
+    content: "Chapter 7 – Colonial & Modern Architecture in India";
+    font-size: 8pt; color: #888;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  @bottom-center {
+    content: "AP High Court Assistant Exam 2026 | Art & Culture";
+    font-size: 7.5pt; color: #aaa;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  @bottom-right {
+    content: counter(page);
+    font-size: 8pt; color: #888;
+    font-family: 'Fira Mono', monospace;
+  }
+}
+@media print {
+  .page-break { page-break-before: always; }
+  .no-break    { page-break-inside: avoid; }
+  body { background: #fff !important; }
+  .screen-header { display: none; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --a4: 794px;
+  --brick:    #9b3a1a;
+  --brick-lt: #c4623a;
+  --mud:      #6b4226;
+  --sand:     #e8d5b0;
+  --green:    #1a5030;
+  --blue:     #1a3a78;
+  --gold:     #5a3400;
+  --text:     #1a1206;
+  --subtext:  #5c3d20;
+  --border:   #d4b896;
+  --bg:       #fdf8f0;
+  --tel-bg:   #eef4ff;
+  --tel-bdr:  #1a3a78;
+  --mem-bg:   #f0f9f2;
+  --mem-bdr:  #1a5030;
+  --exam-bg:  #fffbec;
+  --exam-bdr: #d4a017;
+}
+body {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  background: #e8e0d5;
+  color: var(--text);
+  font-size: 10.5pt;
+  line-height: 1.65;
+}
+.a4-page {
+  width: var(--a4);
+  min-height: 1123px;
+  background: var(--bg);
+  margin: 18px auto;
+  padding: 18mm 16mm 16mm 16mm;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.18);
+  position: relative;
+}
+.screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 5px;
+  margin-bottom: 12px;
+}
+.screen-header .sh-left {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 7.5pt; color: #444;
+  letter-spacing: 0.04em; font-weight: 600;
+}
+.screen-header .sh-right {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7.5pt; color: #555; font-weight: 600;
+}
+/* CHAPTER COVER */
+.chapter-cover {
+  border: 2.5px solid var(--brick);
+  border-radius: 4px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  background: #fffdf9;
+  position: relative;
+}
+.chapter-cover::before {
+  content: '';
+  position: absolute;
+  top: 6px; left: 6px; right: 6px; bottom: 6px;
+  border: 1px solid var(--sand);
+  border-radius: 2px;
+  pointer-events: none;
+}
+.ch-tag {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--brick);
+  background: #fce8dc;
+  border: 1px solid #e8b898;
+  display: inline-block;
+  padding: 2px 8px; border-radius: 2px;
+  margin-bottom: 10px;
+}
+.ch-title-en {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 19pt; font-weight: 700;
+  color: var(--brick); line-height: 1.2; margin-bottom: 6px;
+}
+.ch-title-te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 13pt; color: var(--mud);
+  margin-bottom: 12px; line-height: 1.5;
+}
+.ch-meta {
+  display: flex; gap: 18px; flex-wrap: wrap;
+  margin-top: 10px; padding-top: 10px;
+  border-top: 1px dashed var(--border);
+}
+.ch-meta-item {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9pt; color: #3a2200; font-weight: 600;
+}
+.ch-meta-item strong { color: var(--brick); font-weight: 700; }
+/* SECTION HEADINGS */
+.sec-heading {
+  display: flex; align-items: baseline; gap: 8px;
+  margin: 22px 0 8px;
+  border-bottom: 2px solid var(--brick);
+  padding-bottom: 4px;
+}
+.sec-heading .sec-num {
+  font-family: 'Fira Mono', monospace;
+  font-size: 8pt; font-weight: 500;
+  color: #fff; background: var(--brick);
+  padding: 1px 7px; border-radius: 2px; flex-shrink: 0;
+}
+.sec-heading h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 13pt; font-weight: 700; color: var(--brick);
+}
+.sec-heading .te {
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10pt; color: var(--subtext); font-weight: 400;
+}
+.sub-heading {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10pt; font-weight: 700;
+  color: var(--mud); text-transform: uppercase;
+  letter-spacing: 0.07em; margin: 14px 0 6px;
+  display: flex; align-items: center; gap: 6px;
+}
+.sub-heading::before {
+  content: '';
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--brick-lt);
+  border-radius: 50%; flex-shrink: 0;
+}
+.sub-heading2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 10.5pt; font-weight: 700;
+  color: var(--blue);
+  margin: 12px 0 5px;
+  padding-left: 10px;
+  border-left: 3px solid var(--blue);
+}
+/* BILINGUAL BLOCKS */
+.bilingual {
+  border: 1px solid var(--border);
+  border-radius: 4px; overflow: hidden;
+  margin: 8px 0 12px;
+}
+.bi-en {
+  padding: 9px 12px; background: #fffdf9;
+  font-size: 10pt;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+.bi-en .lang-tag {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt; color: #555;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  display: block; margin-bottom: 3px; font-weight: 700;
+}
+.bi-te {
+  padding: 9px 12px;
+  background: var(--tel-bg);
+  border-left: 3px solid var(--tel-bdr);
+  font-family: 'Tiro Telugu', serif;
+  font-size: 11pt; color: #162040; line-height: 1.95;
+}
+.bi-te .lang-tag {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt; color: #2255aa;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  display: block; margin-bottom: 3px; font-weight: 700;
+}
+.bi-te .kw  { color: var(--brick); font-weight: 700; }
+.bi-te .kw2 { color: var(--blue);  font-weight: 700; }
+.bi-te .kw3 { color: var(--green); font-weight: 700; }
+.telugu-story {
+  background: var(--tel-bg);
+  border: 1px solid #c8d8ee;
+  border-left: 3px solid var(--tel-bdr);
+  border-radius: 4px;
+  padding: 10px 13px;
+  font-family: 'Tiro Telugu', serif;
+  font-size: 11pt; color: #162040; line-height: 2;
+  margin: 8px 0 12px;
+}
+.telugu-story .ts-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt; color: #2255aa;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  font-weight: 700; display: block; margin-bottom: 4px;
+}
+/* BUILDING CARDS */
+.building-card {
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  margin: 8px 0 14px;
+  overflow: hidden;
+  background: #fffdf9;
+}
+.bc-header {
+  background: var(--brick);
+  color: #fff;
+  padding: 6px 12px;
+  display: flex; align-items: baseline; gap: 10px;
+  flex-wrap: wrap;
+}
+.bc-name {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 10.5pt; font-weight: 700;
+}
+.bc-year {
+  font-family: 'Fira Mono', monospace;
+  font-size: 8pt; opacity: 0.85;
+}
+.bc-tag {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt;
+  background: rgba(255,255,255,0.2);
+  padding: 1px 6px; border-radius: 2px;
+  margin-left: auto;
+}
+.bc-body {
+  padding: 9px 12px;
+}
+.bc-body ul {
+  list-style: none; padding: 0;
+}
+.bc-body ul li {
+  font-size: 9.5pt; color: var(--text);
+  padding: 2px 0 2px 14px; position: relative;
+}
+.bc-body ul li::before {
+  content: '▸';
+  position: absolute; left: 0;
+  color: var(--brick-lt); font-size: 8pt;
+}
+.bc-te {
+  background: var(--tel-bg);
+  border-top: 1px solid #c8d8ee;
+  padding: 7px 12px;
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10.5pt; color: #162040; line-height: 1.9;
+}
+/* MEMORY BOXES */
+.memory-box {
+  background: var(--mem-bg);
+  border: 2px solid var(--mem-bdr);
+  border-radius: 5px;
+  padding: 12px 14px;
+  margin: 12px 0;
+}
+.memory-box .mem-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt; font-weight: 700;
+  color: var(--mem-bdr);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  display: block; margin-bottom: 6px;
+}
+.memory-box .mnemonic {
+  font-family: 'Fira Mono', monospace;
+  font-size: 12pt; font-weight: 700;
+  color: var(--green); letter-spacing: 0.08em;
+}
+.memory-box p {
+  font-size: 9.5pt; color: var(--text); margin-top: 5px;
+}
+/* COMPARISON TABLE */
+.comp-table {
+  width: 100%; border-collapse: collapse;
+  margin: 10px 0 16px;
+  font-size: 9pt;
+}
+.comp-table th {
+  background: var(--brick);
+  color: #fff;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9pt; font-weight: 700;
+  padding: 7px 9px; text-align: left;
+}
+.comp-table td {
+  padding: 6px 9px;
+  border: 1px solid var(--border);
+  vertical-align: top; line-height: 1.5;
+}
+.comp-table tr:nth-child(even) td {
+  background: #fdf5ec;
+}
+.comp-table tr:nth-child(odd) td {
+  background: #fffdf9;
+}
+.comp-table .row-head {
+  font-weight: 700; color: var(--mud);
+  background: #f5e8d8 !important;
+  font-family: 'Source Sans 3', sans-serif;
+}
+/* EXAM ALERT */
+.exam-alert {
+  background: var(--exam-bg);
+  border: 2px solid var(--exam-bdr);
+  border-radius: 5px;
+  padding: 12px 14px; margin: 16px 0;
+}
+.exam-alert .ea-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 8pt; font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  display: block; margin-bottom: 6px;
+}
+.exam-alert ul {
+  list-style: none; padding: 0;
+}
+.exam-alert ul li {
+  font-size: 9.5pt; padding: 2px 0 2px 16px;
+  position: relative; color: var(--text);
+}
+.exam-alert ul li::before {
+  content: '★';
+  position: absolute; left: 0;
+  color: var(--exam-bdr); font-size: 9pt;
+}
+/* FACT BOX */
+.fact-box {
+  background: #f0f4ff;
+  border: 1px solid #aabcee;
+  border-left: 3px solid var(--blue);
+  border-radius: 4px;
+  padding: 9px 12px; margin: 8px 0 12px;
+}
+.fact-box .fb-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt; font-weight: 700;
+  color: var(--blue); text-transform: uppercase;
+  letter-spacing: 0.1em; display: block; margin-bottom: 4px;
+}
+.fact-box p, .fact-box ul { font-size: 9.5pt; line-height: 1.6; }
+.fact-box ul { list-style: disc; padding-left: 16px; }
+/* ARCHITECT PROFILE */
+.architect-profile {
+  border: 1.5px solid var(--gold);
+  border-radius: 5px; overflow: hidden;
+  margin: 10px 0 14px;
+}
+.ap-header {
+  background: var(--gold);
+  color: #fff;
+  padding: 6px 12px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 11pt; font-weight: 700;
+}
+.ap-header span {
+  font-family: 'Fira Mono', monospace;
+  font-size: 8pt; opacity: 0.8; margin-left: 8px;
+}
+.ap-body {
+  padding: 9px 12px; background: #fffdf5;
+  font-size: 9.5pt; line-height: 1.6;
+}
+.ap-te {
+  background: var(--tel-bg);
+  border-top: 1px solid #c8d8ee;
+  padding: 7px 12px;
+  font-family: 'Tiro Telugu', serif;
+  font-size: 10.5pt; color: #162040; line-height: 1.95;
+}
+/* KEY-VALUE INLINE */
+.kv { display: flex; gap: 6px; flex-wrap: wrap; margin: 3px 0; }
+.kv .k { font-weight: 700; color: var(--mud); min-width: 130px; font-size: 9.5pt; }
+.kv .v { font-size: 9.5pt; color: var(--text); }
+/* UNESCO */
+.unesco-box {
+  background: #e8f4ff;
+  border: 1.5px solid #1a5fa0;
+  border-radius: 5px;
+  padding: 10px 13px; margin: 10px 0;
+}
+.unesco-box .ub-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 7pt; font-weight: 700;
+  color: #1a5fa0; text-transform: uppercase;
+  letter-spacing: 0.1em; display: block; margin-bottom: 5px;
+}
+.col2 {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  margin: 8px 0;
+}
+@media (max-width: 820px) {
+  .a4-page { width: 100%; padding: 14px; }
+  .col2 { grid-template-columns: 1fr; }
+}
+strong { color: var(--brick); }
+em { color: var(--mud); }
+p { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<!-- ═══════════════════════════════ PAGE 1 ═══════════════════════════════ -->
+<div class="a4-page">
+<div class="screen-header">
+  <span class="sh-left">ART &amp; CULTURE · CH 07 · COLONIAL &amp; MODERN ARCHITECTURE IN INDIA</span>
+  <span class="sh-right">AP HIGH COURT ASSISTANT EXAM 2026</span>
+</div>
+
+<!-- CHAPTER COVER -->
+<div class="chapter-cover no-break">
+  <span class="ch-tag">Chapter 07 · Art &amp; Culture</span>
+  <div class="ch-title-en">Colonial &amp; Modern Architecture in India</div>
+  <div class="ch-title-te">భారతదేశంలో వలసవాద మరియు ఆధునిక వాస్తుశిల్పం</div>
+  <div class="ch-meta">
+    <span class="ch-meta-item"><strong>Period:</strong> 18th Century – Present</span>
+    <span class="ch-meta-item"><strong>Topics:</strong> Neo-Classical · Indo-Gothic · Indo-Saracenic · Lutyens' Delhi · Modern Architects</span>
+    <span class="ch-meta-item"><strong>Exam:</strong> AP High Court Assistant 2026</span>
+  </div>
+</div>
+
+<!-- QUICK VOCABULARY -->
+<div class="no-break">
+<div class="sec-heading">
+  <span class="sec-num">VOCAB</span>
+  <h2>Key Terms</h2>
+  <span class="te">ముఖ్య పదాలు</span>
+</div>
+<table class="comp-table" style="font-size:9pt;">
+  <tr>
+    <th>English Term</th><th>Telugu / Meaning</th>
+    <th>English Term</th><th>Telugu / Meaning</th>
+  </tr>
+  <tr>
+    <td><strong>Architecture</strong></td><td>వాస్తుశిల్పం</td>
+    <td><strong>Colonial</strong></td><td>వలసవాద కాలం</td>
+  </tr>
+  <tr>
+    <td><strong>Gothic</strong></td><td>గాతిక్ శైలి</td>
+    <td><strong>Dome</strong></td><td>గుమ్మటం</td>
+  </tr>
+  <tr>
+    <td><strong>Colonnade</strong></td><td>స్తంభాల వరస</td>
+    <td><strong>Architect</strong></td><td>వాస్తుశిల్పి</td>
+  </tr>
+  <tr>
+    <td><strong>Parliament</strong></td><td>సంసద్ భవన్</td>
+    <td><strong>Vernacular</strong></td><td>స్థానిక నిర్మాణ శైలి</td>
+  </tr>
+  <tr>
+    <td><strong>Minaret</strong></td><td>మీనారు (స్తంభం)</td>
+    <td><strong>Brutalism</strong></td><td>కాంక్రీట్ నిర్మాణ శైలి</td>
+  </tr>
+</table>
+</div>
+
+<!-- SECTION 1: COLONIAL ARCHITECTURE -->
+<div class="sec-heading">
+  <span class="sec-num">§1</span>
+  <h2>Colonial Architecture in India — Three Main Styles</h2>
+  <span class="te">భారతదేశంలో వలసవాద వాస్తుశిల్పం</span>
+</div>
+
+<p style="font-size:9.5pt; margin-bottom:8px;">The British colonial period (18th–20th century) introduced three distinct architectural styles to India, each blending European forms with Indian elements.</p>
+
+<div class="bilingual">
+  <div class="bi-en">
+    <span class="lang-tag">English</span>
+    British rule brought three major styles: <strong>Neo-Classical</strong> (Greek/Roman forms), <strong>Indo-Gothic</strong> (Gothic Revival + Indian), and <strong>Indo-Saracenic</strong> (Mughal + Gothic fusion). These reflect the colonial power's desire to both impress and integrate with local traditions.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు</span>
+    బ్రిటీష్ పాలనలో మూడు ప్రధాన <span class="kw">వాస్తుశిల్పం</span> శైలులు వచ్చాయి: <span class="kw2">నియో-క్లాసికల్</span> (గ్రీకు/రోమన్), <span class="kw2">ఇండో-గాతిక్</span> (గాతిక్ + భారతీయ), మరియు <span class="kw3">ఇండో-సారసెనిక్</span> (మొఘల్ + గాతిక్). ఇవి <span class="kw">వలసవాద కాలం</span>నాటి శైలులు.
+  </div>
+</div>
+
+<!-- STYLE A: NEO-CLASSICAL -->
+<div class="sub-heading">A. Neo-Classical Architecture (European Classical)</div>
+<div class="fact-box no-break">
+  <span class="fb-label">Style Features</span>
+  <ul>
+    <li>Introduced by: British East India Company (18th–19th century)</li>
+    <li>Greek/Roman columns (Doric, Ionic, Corinthian), pediments, symmetrical facades</li>
+    <li>Grand domes, colonnades, porticos — projecting power and permanence</li>
+    <li>Primarily in Calcutta (Kolkata) and Bombay (Mumbai)</li>
+  </ul>
+</div>
+
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Victoria Memorial, Kolkata</span>
+    <span class="bc-year">1921</span>
+    <span class="bc-tag">NEO-CLASSICAL</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Built in <strong>white Makrana marble</strong> (same marble as Taj Mahal)</li>
+      <li>Blend of <strong>Italian Renaissance + Mughal</strong> elements</li>
+      <li>Designed by <strong>William Emerson</strong>, President of RIBA</li>
+      <li>16 allegorical statues; spreads over <strong>25 acres</strong>; central dome 56m high</li>
+      <li>Now a <strong>museum</strong> under Ministry of Culture; dedicated to Queen Victoria</li>
+    </ul>
+  </div>
+  <div class="bc-te">విక్టోరియా మెమోరియల్ (1921) — తెల్ల మకరానా మార్బుల్‌తో నిర్మించారు. విలియం ఎమెర్సన్ రూపకల్పన. ఇటాలియన్ రెనైసాన్స్ + మొఘల్ శైలుల మేళవింపు. ఇప్పుడు మ్యూజియంగా ఉంది.</div>
+</div>
+
+<div class="col2">
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Town Hall, Mumbai</span>
+    <span class="bc-year">1833</span>
+    <span class="bc-tag">NEO-CLASSICAL</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li><strong>Doric columns</strong> — finest example of Neo-Classical in India</li>
+      <li>Now houses the Asiatic Society of Mumbai library</li>
+    </ul>
+  </div>
+  <div class="bc-te">ముంబై టౌన్ హాల్ (1833) — డోరిక్ స్తంభాలతో నిర్మితమైన నియో-క్లాసికల్ మేలైన నమూనా.</div>
+</div>
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Raj Bhavan (Govt. House), Kolkata</span>
+    <span class="bc-year">1803</span>
+    <span class="bc-tag">NEO-CLASSICAL</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Modeled on <strong>Kedleston Hall, Derbyshire, England</strong></li>
+      <li>Designed by Charles Wyatt; residence of Viceroy</li>
+    </ul>
+  </div>
+  <div class="bc-te">రాజ్ భవన్, కోల్‌కతా — ఇంగ్లండ్‌లోని కెడిల్స్టన్ హాల్ నమూనాపై నిర్మించారు.</div>
+</div>
+</div>
+
+</div><!-- end page 1 -->
+
+<!-- ═══════════════════════════════ PAGE 2 ═══════════════════════════════ -->
+<div class="a4-page page-break">
+<div class="screen-header">
+  <span class="sh-left">ART &amp; CULTURE · CH 07 · INDO-GOTHIC &amp; INDO-SARACENIC</span>
+  <span class="sh-right">AP HIGH COURT ASSISTANT EXAM 2026</span>
+</div>
+
+<!-- STYLE B: INDO-GOTHIC -->
+<div class="sub-heading">B. Indo-Gothic / Gothic Revival Architecture</div>
+
+<div class="fact-box no-break">
+  <span class="fb-label">Style Features</span>
+  <ul>
+    <li>Pointed arches, flying buttresses, ribbed vaults, stained glass, tall spires</li>
+    <li>Gothic elements combined with Indian decorative craftsmanship</li>
+    <li>Primarily developed in Bombay (Mumbai) — 1860s–1890s</li>
+    <li>Major patrons: Bombay Municipal Corporation, colonial government</li>
+  </ul>
+</div>
+
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Chhatrapati Shivaji Maharaj Terminus (CST / Victoria Terminus)</span>
+    <span class="bc-year">1888</span>
+    <span class="bc-tag">UNESCO WHS · INDO-GOTHIC</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li><strong>UNESCO World Heritage Site (2004)</strong></li>
+      <li>Designed by <strong>F.W. Stevens</strong> (Frederick William Stevens)</li>
+      <li>Called the <em>"Jewel of Victorian Gothic"</em></li>
+      <li>Blend of Victorian Gothic architecture + Indian craftsmanship (gargoyles, peacocks, tigers)</li>
+      <li>Took <strong>10 years to build</strong>; 500 workers involved</li>
+      <li>Central dome, pointed arches, flying buttresses + Indian decorative elements</li>
+      <li>Headquarters of Central Railway; busiest railway station in Asia</li>
+    </ul>
+  </div>
+  <div class="bc-te">
+    ఛత్రపతి శివాజీ మహారాజ్ టెర్మినస్ (1888) — యునెస్కో ప్రపంచ వారసత్వ స్థలం (2004). F.W. స్టీవెన్స్ రూపకల్పన. విక్టోరియన్ గాతిక్ + భారతీయ చేతిపని మేళవింపు. "విక్టోరియన్ గాతిక్ రత్నం" అని పిలుస్తారు. 10 సంవత్సరాలు నిర్మించారు.
+  </div>
+</div>
+
+<div class="col2">
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Bombay High Court</span>
+    <span class="bc-year">1878</span>
+    <span class="bc-tag">INDO-GOTHIC</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Gothic with Indian decorative elements</li>
+      <li>Part of UNESCO 2018 Victorian Gothic &amp; Art Deco Ensemble</li>
+      <li>Figures of Justice and Mercy atop the towers</li>
+    </ul>
+  </div>
+  <div class="bc-te">బాంబే హైకోర్ట్ (1878) — ఇండో-గాతిక్ శైలి. 2018 UNESCO సమిష్టి భాగం.</div>
+</div>
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Mumbai University Library &amp; Rajabai Clock Tower</span>
+    <span class="bc-year">1878</span>
+    <span class="bc-tag">INDO-GOTHIC</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Designed by <strong>Sir George Gilbert Scott</strong></li>
+      <li>Inspired by <strong>Giotto's Campanile, Florence</strong></li>
+      <li>85m tall; Indo-Gothic with Indian statues</li>
+    </ul>
+  </div>
+  <div class="bc-te">రాజాభాయ్ క్లాక్ టవర్ (1878) — గిల్బర్ట్ స్కాట్ రూపకల్పన. ఫ్లోరెన్స్‌లోని జియోట్టో క్యాంపనీల్ స్ఫూర్తి.</div>
+</div>
+</div>
+
+<!-- STYLE C: INDO-SARACENIC -->
+<div class="sub-heading">C. Indo-Saracenic Architecture (Mughal-Gothic Hybrid)</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English</span>
+    <strong>Indo-Saracenic</strong> style deliberately fused Mughal/Islamic elements (pointed arches, domes, minarets, chattris) with Gothic Revival elements (ribbed vaults, spires) and sometimes Hindu/Jain motifs. Patronized by both the British and Indian princes (Maharajas). Also called "Mughal-Gothic" or "Saracenic Revival."
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు</span>
+    <span class="kw">ఇండో-సారసెనిక్</span> శైలి మొఘల్/ఇస్లామిక్ అంశాలను (గుమ్మటాలు, మీనారులు, పాయింటెడ్ ఆర్చ్‌లు) గాతిక్ అంశాలతో కలిపింది. బ్రిటీష్ పాలకులు మరియు భారతీయ రాజులు ఇద్దరూ ప్రోత్సహించారు.
+  </div>
+</div>
+
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Gateway of India, Mumbai</span>
+    <span class="bc-year">1924</span>
+    <span class="bc-tag">INDO-SARACENIC</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Designed by <strong>George Wittet</strong></li>
+      <li>Influenced by <strong>16th-century Gujarati Muslim architecture</strong></li>
+      <li>Built in <strong>basalt + yellow Kharodi stone</strong></li>
+      <li><strong>26 meters</strong> high arch; commemorates visit of King George V &amp; Queen Mary (1911)</li>
+      <li>Last British troops departed through Gateway (1948) — symbolic end of British Raj</li>
+    </ul>
+  </div>
+  <div class="bc-te">
+    గేట్‌వే ఆఫ్ ఇండియా (1924) — జార్జ్ విట్టెట్ రూపకల్పన. 16వ శతాబ్దపు గుజరాతీ ముస్లిం <span class="kw2">వాస్తుశిల్పం</span> ప్రభావం. 26 మీ. ఎత్తు. 1948లో చివరి బ్రిటీష్ సైనికులు ఇక్కడ నుండే వెళ్ళారు.
+  </div>
+</div>
+
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Mysore Palace (Amba Vilas Palace)</span>
+    <span class="bc-year">1912</span>
+    <span class="bc-tag">INDO-SARACENIC · LARGEST</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Designed by <strong>Henry Irwin</strong></li>
+      <li>Largest Indo-Saracenic palace in India</li>
+      <li>Original palace burnt in Durga Dassara of <strong>1897</strong>; present rebuilt in 1912</li>
+      <li>Illuminated with <strong>97,000 bulbs</strong> during Dasara festival</li>
+      <li>Blend of Hindu, Muslim, Rajput, and Gothic styles</li>
+    </ul>
+  </div>
+  <div class="bc-te">మైసూర్ ప్యాలెస్ (1912) — హెన్రీ ఇర్విన్ రూపకల్పన. భారతదేశంలో అతిపెద్ద ఇండో-సారసెనిక్ రాజభవనం. దసరా సమయంలో 97,000 బల్బులతో వెలిగిస్తారు.</div>
+</div>
+
+<div class="col2">
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">CSM Vastu Sangrahalaya (Prince of Wales Museum)</span>
+    <span class="bc-year">1923</span>
+    <span class="bc-tag">INDO-SARACENIC</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Designed by <strong>George Wittet</strong></li>
+      <li>Central dome inspired by <strong>Gol Gumbaz, Bijapur</strong></li>
+      <li>Premier art museum of Mumbai</li>
+    </ul>
+  </div>
+  <div class="bc-te">ఛత్రపతి శివాజీ మ్యూజియం (1923) — జార్జ్ విట్టెట్. గోల్ గుంబజ్ స్ఫూర్తితో గుమ్మటం.</div>
+</div>
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Laxmi Vilas Palace, Vadodara</span>
+    <span class="bc-year">1890</span>
+    <span class="bc-tag">INDO-SARACENIC</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Designed by <strong>Robert Fellowes Chisholm</strong></li>
+      <li><strong>4× the size of Buckingham Palace</strong></li>
+      <li>Built for Maharaja Sayajirao Gaekwad III</li>
+    </ul>
+  </div>
+  <div class="bc-te">లక్ష్మీ విలాస్ ప్యాలెస్ (1890) — బకింగ్‌హామ్ ప్యాలెస్‌కు 4 రెట్లు పెద్దది. చిషోల్మ్ రూపకల్పన.</div>
+</div>
+</div>
+
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Madras High Court</span>
+    <span class="bc-year">1892</span>
+    <span class="bc-tag">INDO-SARACENIC · LARGEST COURT COMPLEX IN ASIA</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Designed by <strong>Henry Irwin</strong> (same architect as Mysore Palace)</li>
+      <li><strong>Largest court complex in Asia</strong></li>
+      <li>Distinctive red-brick Indo-Saracenic style with domes and minarets</li>
+      <li>Houses one of the oldest High Courts in India (est. 1862)</li>
+    </ul>
+  </div>
+  <div class="bc-te">మద్రాస్ హైకోర్ట్ (1892) — హెన్రీ ఇర్విన్ రూపకల్పన. ఆసియాలో అతిపెద్ద న్యాయస్థాన సముదాయం. ఇండో-సారసెనిక్ శైలి.</div>
+</div>
+
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Umaid Bhawan Palace, Jodhpur</span>
+    <span class="bc-year">1943</span>
+    <span class="bc-tag">LAST GREAT PALACE OF INDIA</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Last great palace built in India; Indo-Saracenic + Art Deco blend</li>
+      <li>Built during great famine to provide employment to locals</li>
+      <li>Part hotel, part museum, part royal residence</li>
+    </ul>
+  </div>
+  <div class="bc-te">ఉమైద్ భవన్ ప్యాలెస్ (1943) — భారతదేశంలో నిర్మించిన చివరి గొప్ప రాజభవనం.</div>
+</div>
+
+</div><!-- end page 2 -->
+
+<!-- ═══════════════════════════════ PAGE 3 ═══════════════════════════════ -->
+<div class="a4-page page-break">
+<div class="screen-header">
+  <span class="sh-left">ART &amp; CULTURE · CH 07 · COMPARISON TABLE &amp; LUTYENS' DELHI</span>
+  <span class="sh-right">AP HIGH COURT ASSISTANT EXAM 2026</span>
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="sec-heading">
+  <span class="sec-num">§2</span>
+  <h2>Comparison: Three Colonial Styles</h2>
+  <span class="te">మూడు వలసవాద శైలుల పోలిక</span>
+</div>
+
+<div class="no-break">
+<table class="comp-table">
+  <tr>
+    <th>Feature / లక్షణం</th>
+    <th>Neo-Classical<br>నియో-క్లాసికల్</th>
+    <th>Indo-Gothic<br>ఇండో-గాతిక్</th>
+    <th>Indo-Saracenic<br>ఇండో-సారసెనిక్</th>
+  </tr>
+  <tr>
+    <td class="row-head">Origin</td>
+    <td>Greek/Roman Classical</td>
+    <td>English Gothic Revival</td>
+    <td>Mughal/Islamic + Gothic</td>
+  </tr>
+  <tr>
+    <td class="row-head">Period</td>
+    <td>Late 18th–early 19th c.</td>
+    <td>Mid–late 19th c.</td>
+    <td>Late 19th–early 20th c.</td>
+  </tr>
+  <tr>
+    <td class="row-head">Key Features</td>
+    <td>Columns, pediments, symmetry, domes, colonnades</td>
+    <td>Pointed arches, flying buttresses, ribbed vaults, spires</td>
+    <td>Domes, minarets, Mughal arches, chattris, Gothic spires</td>
+  </tr>
+  <tr>
+    <td class="row-head">Best Example</td>
+    <td>Victoria Memorial, Kolkata (1921)</td>
+    <td>CST, Mumbai (1888) — UNESCO WHS</td>
+    <td>Mysore Palace (1912); Gateway of India (1924)</td>
+  </tr>
+  <tr>
+    <td class="row-head">Key Architect</td>
+    <td>William Emerson (Victoria Memorial)</td>
+    <td>F.W. Stevens (CST)</td>
+    <td>George Wittet; Henry Irwin</td>
+  </tr>
+  <tr>
+    <td class="row-head">UNESCO</td>
+    <td>—</td>
+    <td>CST (2004); Victorian Gothic &amp; Art Deco Ensemble (2018)</td>
+    <td>—</td>
+  </tr>
+  <tr>
+    <td class="row-head">Primary City</td>
+    <td>Kolkata (Calcutta)</td>
+    <td>Mumbai (Bombay)</td>
+    <td>Mumbai, Mysore, Chennai, Vadodara</td>
+  </tr>
+  <tr>
+    <td class="row-head">Telugu</td>
+    <td>నియో-క్లాసికల్ — స్తంభాల వరస, గుమ్మటాలు</td>
+    <td>ఇండో-గాతిక్ — పాయింటెడ్ ఆర్చ్‌లు, స్పైర్లు</td>
+    <td>ఇండో-సారసెనిక్ — మొఘల్+గాతిక్ మేళవింపు</td>
+  </tr>
+</table>
+</div>
+
+<!-- MEMORY TRICK -->
+<div class="memory-box no-break">
+  <span class="mem-label">Memory Trick — Colonial Style Architects</span>
+  <div class="mnemonic">W-S-W-I-H-G</div>
+  <p><strong>W</strong>illiam Emerson (Victoria Memorial) · <strong>S</strong>tevens F.W. (CST) · <strong>W</strong>ittet George (Gateway + Prince of Wales Museum) · <strong>I</strong>rwin Henry (Mysore Palace + Madras HC) · <strong>H</strong>ogg? No — <strong>C</strong>hisholm (Laxmi Vilas) · <strong>G</strong>ilbert Scott (Rajabai Tower)</p>
+  <p style="margin-top:6px; color:var(--green);"><strong>Mnemonic:</strong> "<em>Will Stevens Watch Irwin Chisholm Giotto?</em>" — W·S·W·I·C·G</p>
+</div>
+
+<!-- SECTION 2: LUTYENS' DELHI -->
+<div class="sec-heading">
+  <span class="sec-num">§3</span>
+  <h2>New Delhi — Lutyens' Delhi (1912–1930s)</h2>
+  <span class="te">లూట్యెన్స్ ఢిల్లీ — కొత్త ఢిల్లీ</span>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English</span>
+    In <strong>1911</strong>, King George V announced the transfer of India's capital from Calcutta to Delhi at the Delhi Durbar. The task of designing New Delhi was given to two British architects: <strong>Edwin Lutyens</strong> (chief designer) and <strong>Herbert Baker</strong>. They created a grand planned city blending Classical, Mughal, and South Indian (Sanchi-inspired) elements.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు</span>
+    1911లో జార్జ్ V రాజు ఢిల్లీ దర్బార్‌లో రాజధానిని కలకత్తా నుండి ఢిల్లీకి మార్చాలని ప్రకటించారు. <span class="kw2">ఎడ్విన్ లూట్యెన్స్</span> మరియు <span class="kw2">హెర్బర్ట్ బేకర్</span> కొత్త ఢిల్లీని రూపకల్పన చేశారు.
+  </div>
+</div>
+
+<div class="architect-profile no-break">
+  <div class="ap-header">Edwin Lutyens &amp; Herbert Baker <span>Chief Architects, New Delhi</span></div>
+  <div class="ap-body">
+    <div class="kv"><span class="k">Style:</span><span class="v">Classical + Mughal + South Indian (Sanchi stupa influence)</span></div>
+    <div class="kv"><span class="k">Period:</span><span class="v">1912–1930s</span></div>
+    <div class="kv"><span class="k">Key buildings by Lutyens:</span><span class="v">Rashtrapati Bhavan, India Gate, National Archives</span></div>
+    <div class="kv"><span class="k">Key buildings by Baker:</span><span class="v">Parliament House (Sansad Bhavan), North &amp; South Blocks (Secretariat)</span></div>
+    <div class="kv"><span class="k">Stone used:</span><span class="v">Red Dholpur sandstone (North/South Blocks); Bharatpur stone</span></div>
+  </div>
+  <div class="ap-te">లూట్యెన్స్ రాష్ట్రపతి భవన్ మరియు ఇండియా గేట్ రూపకల్పన చేశారు. బేకర్ సంసద్ భవన్ మరియు నార్త్-సౌత్ బ్లాక్‌లు చేశారు.</div>
+</div>
+
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Rashtrapati Bhavan (formerly Viceroy's House)</span>
+    <span class="bc-year">Completed 1929</span>
+    <span class="bc-tag">LUTYENS · LARGEST PRESIDENTIAL RESIDENCE</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Designed by <strong>Edwin Lutyens</strong></li>
+      <li><strong>340 rooms</strong>; 2.5 km of corridors; spreads over <strong>320 acres</strong></li>
+      <li><strong>Largest residence of any head of state globally</strong></li>
+      <li>Dome inspired by <strong>Sanchi Stupa</strong> (South Indian Buddhist influence)</li>
+      <li>Mughal Garden (now renamed <strong>Amrit Udyan</strong>) — open to public in spring</li>
+      <li>Darbar Hall — used for swearing-in ceremonies</li>
+      <li>Blend: Classical columns + Mughal chattris + Sanchi dome = unique synthesis</li>
+    </ul>
+  </div>
+  <div class="bc-te">
+    రాష్ట్రపతి భవన్ — లూట్యెన్స్ రూపకల్పన. 340 గదులు, 320 ఎకరాలు. ప్రపంచంలోనే అతిపెద్ద అధ్యక్ష నివాసం. గుమ్మటం సాంచి స్తూపం స్ఫూర్తి. ముఘల్ గార్డెన్ ఇప్పుడు అమృత్ ఉద్యాన్.
+  </div>
+</div>
+
+<div class="col2">
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Parliament House (Sansad Bhavan)</span>
+    <span class="bc-year">1927</span>
+    <span class="bc-tag">BAKER · CIRCULAR</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Designed by <strong>Herbert Baker</strong></li>
+      <li>Circular colonnaded building; <strong>144 columns</strong></li>
+      <li><strong>47m high</strong> central dome</li>
+      <li>Three chambers: Lok Sabha, Rajya Sabha, Central Hall</li>
+    </ul>
+  </div>
+  <div class="bc-te">సంసద్ భవన్ (1927) — బేకర్ రూపకల్పన. వృత్తాకార భవనం, 144 స్తంభాలు, 47 మీ. గుమ్మటం.</div>
+</div>
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">New Parliament Building</span>
+    <span class="bc-year">2023</span>
+    <span class="bc-tag">MODERN</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Designed by <strong>Bimal Patel</strong> (HCP Design, Planning &amp; Management)</li>
+      <li><strong>Triangular footprint</strong>; Lok Sabha chamber 888 seats</li>
+      <li><strong>Sengol</strong> (sceptre from Tamil tradition) installed</li>
+    </ul>
+  </div>
+  <div class="bc-te">కొత్త సంసద్ భవన్ (2023) — బిమల్ పటేల్ రూపకల్పన. సెంగోల్ ఏర్పాటు. త్రిభుజ ఆకృతి.</div>
+</div>
+</div>
+
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">India Gate (All India War Memorial)</span>
+    <span class="bc-year">1931</span>
+    <span class="bc-tag">LUTYENS · WAR MEMORIAL</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li>Designed by <strong>Edwin Lutyens</strong></li>
+      <li><strong>42 meters</strong> tall; inspired by Arc de Triomphe, Paris</li>
+      <li>Commemorates <strong>90,000 Indian soldiers</strong> who died in World War I (1914–18) and the Afghan War</li>
+      <li>"Amar Jawan Jyoti" — eternal flame (now merged with National War Memorial flame, 2022)</li>
+      <li>Names of ~13,000 soldiers inscribed on the walls</li>
+    </ul>
+  </div>
+  <div class="bc-te">ఇండియా గేట్ (1931) — లూట్యెన్స్ రూపకల్పన. 42 మీ. ఎత్తు. మొదటి ప్రపంచ యుద్ధంలో మరణించిన 90,000 భారతీయ సైనికుల జ్ఞాపకార్థం.</div>
+</div>
+
+<div class="memory-box no-break">
+  <span class="mem-label">Memory — Lutyens Delhi Key Facts</span>
+  <div class="mnemonic">1911 → 1927 → 1929 → 1931</div>
+  <p><strong>1911</strong>: Capital transfer announced (Delhi Durbar) · <strong>1927</strong>: Parliament completed (Baker) · <strong>1929</strong>: Rashtrapati Bhavan completed (Lutyens) · <strong>1931</strong>: India Gate &amp; New Delhi inaugurated</p>
+  <p style="margin-top:5px;"><strong>Lutyens = Rashtrapati Bhavan + India Gate</strong> &nbsp;|&nbsp; <strong>Baker = Parliament + North/South Blocks</strong></p>
+</div>
+
+</div><!-- end page 3 -->
+
+<!-- ═══════════════════════════════ PAGE 4 ═══════════════════════════════ -->
+<div class="a4-page page-break">
+<div class="screen-header">
+  <span class="sh-left">ART &amp; CULTURE · CH 07 · POST-INDEPENDENCE MODERN ARCHITECTURE</span>
+  <span class="sh-right">AP HIGH COURT ASSISTANT EXAM 2026</span>
+</div>
+
+<!-- SECTION 3: POST-INDEPENDENCE -->
+<div class="sec-heading">
+  <span class="sec-num">§4</span>
+  <h2>Post-Independence Modern Architecture</h2>
+  <span class="te">స్వాతంత్ర్యానంతర ఆధునిక వాస్తుశిల్పం</span>
+</div>
+
+<!-- LE CORBUSIER -->
+<div class="sub-heading">A. Le Corbusier — Chandigarh (1950s)</div>
+
+<div class="architect-profile no-break">
+  <div class="ap-header">Le Corbusier (Charles-Édouard Jeanneret-Gris) <span>Swiss-French Architect · 1887–1965</span></div>
+  <div class="ap-body">
+    <div class="kv"><span class="k">Nationality:</span><span class="v">Swiss-French</span></div>
+    <div class="kv"><span class="k">Commissioned by:</span><span class="v">PM Jawaharlal Nehru for Chandigarh (1950)</span></div>
+    <div class="kv"><span class="k">Style:</span><span class="v">Brutalism, Modernism — reinforced concrete, bold geometric forms</span></div>
+    <div class="kv"><span class="k">Nehru's vision:</span><span class="v">"Let Chandigarh be a new town, symbolic of the freedom of India..."</span></div>
+    <div class="kv"><span class="k">Chandigarh:</span><span class="v">First planned city of independent India; capital of Punjab (later Punjab + Haryana)</span></div>
+  </div>
+  <div class="ap-te">ले कॉर्बूजिए — <span class="kw2">ఛండీగఢ్</span> నిర్మాత. స్వతంత్ర భారతదేశం యొక్క మొదటి ప్రణాళికాబద్ధ నగరం. నెహ్రూ దార్శనికత: "ఛండీగఢ్ భారత స్వేచ్ఛకు చిహ్నంగా ఉండాలి."</div>
+</div>
+
+<div class="building-card no-break">
+  <div class="bc-header">
+    <span class="bc-name">Capitol Complex, Chandigarh</span>
+    <span class="bc-year">1950s</span>
+    <span class="bc-tag">UNESCO WHS 2016 · LE CORBUSIER</span>
+  </div>
+  <div class="bc-body">
+    <ul>
+      <li><strong>UNESCO World Heritage Site (2016)</strong> — "The Architectural Work of Le Corbusier"</li>
+      <li>Includes: <strong>High Court of Punjab &amp; Haryana, Secretariat, Vidhan Sabha (Legislative Assembly)</strong></li>
+      <li><strong>Open Hand Monument</strong> — symbol of peace and reconciliation; rotates with wind</li>
+      <li>High Court: Concrete curved roof; colorful <strong>brise-soleil</strong> (sun breakers/screens)</li>
+      <li>Style: Brutalism — raw concrete (béton brut), bold forms, functional aesthetics</li>
+    </ul>
+  </div>
+  <div class="bc-te">
+    కాపిటల్ కాంప్లెక్స్, ఛండీగఢ్ — 2016 UNESCO ప్రపంచ వారసత్వ స్థలం. హైకోర్ట్, సెక్రటేరియట్, విధాన్ సభ ఇందులో ఉన్నాయి. ఓపెన్ హ్యాండ్ మాన్యుమెంట్ (శాంతికి చిహ్నం).
+  </div>
+</div>
+
+<!-- LOUIS KAHN -->
+<div class="sub-heading">B. Louis Kahn — IIM Ahmedabad (1962–1974)</div>
+
+<div class="architect-profile no-break">
+  <div class="ap-header">Louis Isadore Kahn <span>American Architect · 1901–1974</span></div>
+  <div class="ap-body">
+    <div class="kv"><span class="k">Nationality:</span><span class="v">American (Estonian-born)</span></div>
+    <div class="kv"><span class="k">Key work in India:</span><span class="v">IIM Ahmedabad (Indian Institute of Management)</span></div>
+    <div class="kv"><span class="k">Period:</span><span class="v">1962–1974</span></div>
+    <div class="kv"><span class="k">Features:</span><span class="v">Brick + concrete; circular arches within square frames; geometric play of light and shadow</span></div>
+    <div class="kv"><span class="k">Philosophy:</span><span class="v">Dialogue between tradition (brick arches) and modernity (concrete); "served and servant spaces"</span></div>
+  </div>
+  <div class="ap-te">లూయిస్ కాన్ — అమెరికన్ <span class="kw2">వాస్తుశిల్పి</span>. IIM అహ్మదాబాద్ రూపకల్పన (1962–74). ఇటుక + కాంక్రీట్; వృత్తాకార ఆర్చ్‌లు వర్గాకార ఫ్రేమ్‌లలో.</div>
+</div>
+
+<!-- CHARLES CORREA -->
+<div class="sub-heading">C. Charles Correa — Father of Modern Indian Architecture</div>
+
+<div class="architect-profile no-break">
+  <div class="ap-header">Charles Correa <span>1930–2015 · Goa-born</span></div>
+  <div class="ap-body">
+    <div class="kv"><span class="k">Title:</span><span class="v"><strong>"Father of Modern Indian Architecture"</strong></span></div>
+    <div class="kv"><span class="k">Born:</span><span class="v">Secunderabad (Hyderabad), 1930; worked from Goa &amp; Mumbai</span></div>
+    <div class="kv"><span class="k">Key works:</span><span class="v">Jawahar Kala Kendra (Jaipur), British Council Building (Delhi), ISRO Satellite Centre, Kanchanjunga Apartments (Mumbai), Bharat Bhavan (Bhopal)</span></div>
+    <div class="kv"><span class="k">Philosophy:</span><span class="v">Climate-responsive design; open-to-sky spaces; use of local materials; tube housing for low-income</span></div>
+    <div class="kv"><span class="k">Award:</span><span class="v">Padma Shri (1972), Padma Vibhushan (2006), RIBA Gold Medal (1984)</span></div>
+  </div>
+  <div class="ap-te">
+    చార్లెస్ కోరియా (1930–2015) — "ఆధునిక భారత <span class="kw2">వాస్తుశిల్పానికి</span> పితామహుడు". జవహర్ కళా కేంద్రం (జైపూర్), ISRO సెంటర్, కాంచన్‌జుంగా అపార్ట్‌మెంట్స్ రూపకల్పన. వాతావరణ-అనుకూల నిర్మాణ శైలి.
+  </div>
+</div>
+
+<!-- BV DOSHI -->
+<div class="sub-heading">D. Balkrishna Doshi (BV Doshi) — Pritzker Prize Winner</div>
+
+<div class="architect-profile no-break">
+  <div class="ap-header">Balkrishna Vithaldas Doshi (BV Doshi) <span>1927–2023 · Pune-born</span></div>
+  <div class="ap-body">
+    <div class="kv"><span class="k">Historic Achievement:</span><span class="v"><strong>First Indian to win the Pritzker Architecture Prize (2018)</strong> — "Nobel Prize of Architecture"</span></div>
+    <div class="kv"><span class="k">Training:</span><span class="v">Worked with Le Corbusier (Chandigarh) and Louis Kahn (IIM Ahmedabad)</span></div>
+    <div class="kv"><span class="k">Key works:</span><span class="v">
+      Aranya Housing, Indore (affordable housing for 80,000+ poor residents);
+      Sangath (his own studio, Ahmedabad);
+      IIM Bangalore;
+      Amdavad ni Gufa (underground gallery with M.F. Husain, Ahmedabad)
+    </span></div>
+    <div class="kv"><span class="k">Philosophy:</span><span class="v">Humanistic, affordable, community-driven; architecture as a living organism</span></div>
+    <div class="kv"><span class="k">Other Awards:</span><span class="v">Padma Shri (1976); Padma Bhushan (2020); Aga Khan Award for Architecture</span></div>
+  </div>
+  <div class="ap-te">
+    బి.వి. దోషి (1927–2023) — 2018 <span class="kw">ప్రిట్జ్కర్ అవార్డు</span> గెలుచుకున్న మొదటి భారతీయుడు. అరణ్య హౌసింగ్, ఇండోర్ (పేదల కోసం నివాసాలు); సంగాత్ స్టూడియో, అహ్మదాబాద్; IIM బెంగళూరు. మానవీయ, సరసమైన నిర్మాణ శైలి.
+  </div>
+</div>
+
+<div class="memory-box no-break">
+  <span class="mem-label">Memory — Post-Independence Modern Architects</span>
+  <div class="mnemonic">Le Co–Ka–Co–Do</div>
+  <p><strong>Le</strong> Corbusier (Chandigarh) · <strong>Co</strong>rrea Charles (Father of Modern Ind. Arch.) · <strong>Ka</strong>hn Louis (IIM Ahmedabad) · <strong>Co</strong>rrea again · <strong>Do</strong>shi BV (Pritzker 2018)</p>
+  <p style="margin-top:5px; color: var(--brick);"><strong>Key fact: BV Doshi = First Indian Pritzker (2018) | Chandigarh Capitol = UNESCO 2016</strong></p>
+</div>
+
+</div><!-- end page 4 -->
+
+<!-- ═══════════════════════════════ PAGE 5 ═══════════════════════════════ -->
+<div class="a4-page page-break">
+<div class="screen-header">
+  <span class="sh-left">ART &amp; CULTURE · CH 07 · VERNACULAR ARCHITECTURE &amp; UNESCO SITES</span>
+  <span class="sh-right">AP HIGH COURT ASSISTANT EXAM 2026</span>
+</div>
+
+<!-- SECTION 4: VERNACULAR -->
+<div class="sec-heading">
+  <span class="sec-num">§5</span>
+  <h2>Vernacular Architecture Traditions of India</h2>
+  <span class="te">భారతదేశంలో స్థానిక నిర్మాణ సంప్రదాయాలు</span>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English</span>
+    Vernacular architecture refers to indigenous, locally adapted building traditions that use regional materials, respond to local climate, and reflect cultural practices — without formal architectural training.
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు</span>
+    <span class="kw">స్థానిక నిర్మాణ శైలి</span> అంటే స్థానిక వాతావరణం, సంస్కృతి, సంప్రదాయాలకు అనుగుణంగా స్థానిక పదార్థాలతో నిర్మించే సాంప్రదాయిక నిర్మాణాలు.
+  </div>
+</div>
+
+<table class="comp-table">
+  <tr>
+    <th>Region / ప్రాంతం</th>
+    <th>Key Features</th>
+    <th>Notable Examples</th>
+    <th>Telugu Notes</th>
+  </tr>
+  <tr>
+    <td class="row-head">Kerala<br>కేరళ</td>
+    <td>Sloped roofs (heavy rain); wooden pillars; inner courtyards (<em>nalukettu</em>); <em>tharavad</em> (ancestral home)</td>
+    <td>Vadakkunathan Temple (Thrissur); traditional nālukettu homes</td>
+    <td>వాలుగా ఉండే కప్పులు, కలప స్తంభాలు, నాలుకెట్టు (4 wing courtyard)</td>
+  </tr>
+  <tr>
+    <td class="row-head">Rajasthan<br>రాజస్థాన్</td>
+    <td>Haveli architecture — jharokha (overhanging balcony), courtyard, jali screens; Shekhawati painted havelis; stepwells</td>
+    <td>Chand Baori (Abhaneri); Rani ki Vav, Patan (UNESCO); Patwon ki Haveli (Jaisalmer)</td>
+    <td>హవేలీ — జరోఖా బాల్కనీలు, జాలీ పర్దాలు; ముఖ్యంగా షేఖావాటి చిత్రాలు</td>
+  </tr>
+  <tr>
+    <td class="row-head">Bengal<br>బెంగాల్</td>
+    <td>Terracotta temples (Bishnupur); Malla king patronage; Pancharatna / Navaratna ratna style (multi-spired); char-chala (four-roof profile)</td>
+    <td>Bishnupur Temples (Bankura district); Ras Mancha (1587)</td>
+    <td>బిష్ణుపూర్ టెర్రకోట దేవాలయాలు — మల్ల రాజుల పోషణ; పంచరత్న శైలి</td>
+  </tr>
+  <tr>
+    <td class="row-head">Andhra Pradesh / Telangana<br>ఆంధ్రప్రదేశ్ / తెలంగాణ</td>
+    <td>Baked brick architecture; Kakatiya stone temples with star-shaped jagati (platform); white-limestone stucco (chunam finish) — Nayaka period</td>
+    <td>Ramappa Temple (UNESCO, Kakatiya); Thousand Pillar Temple, Warangal; Lepakshi (Vijayanagara)</td>
+    <td>కాకతీయ నక్షత్రాకార జగతి; చునాం (సున్నపు పూత) నాయక శైలి; రామప్ప దేవాలయం UNESCO</td>
+  </tr>
+  <tr>
+    <td class="row-head">Gujarat<br>గుజరాత్</td>
+    <td>Wooden havelis; <em>pols</em> (gated communities with shared spaces); stepwells (<em>vav</em>)</td>
+    <td>Rani ki Vav, Patan (UNESCO 2014); Sidi Saiyyed Mosque (jali); old city of Ahmedabad (UNESCO 2017)</td>
+    <td>రాణీ కి వావ్ (UNESCO 2014); అహ్మదాబాద్ పాత నగరం (UNESCO 2017); పోల్ గేటెడ్ కమ్యూనిటీలు</td>
+  </tr>
+  <tr>
+    <td class="row-head">Himachal Pradesh<br>హిమాచల్ ప్రదేశ్</td>
+    <td>Pagoda style (multi-tiered sloping roofs); Kath-kuni construction (alternating wood + stone layers, no mortar)</td>
+    <td>Hidimba Devi Temple (Manali); Chamba temples; Sarahan Bhimakali Temple</td>
+    <td>పగోడా శైలి; కాత్-కుని నిర్మాణం — మోర్టార్ లేకుండా కలప+రాయి పర్యాయంగా</td>
+  </tr>
+</table>
+
+<div class="telugu-story no-break">
+  <span class="ts-label">తెలుగు — ఆంధ్రప్రదేశ్/తెలంగాణ వాస్తుశిల్పం</span>
+  ఆంధ్రప్రదేశ్ మరియు తెలంగాణలో <span class="kw">కాకతీయ</span> రాజుల కాలంలో ప్రత్యేకమైన <span class="kw2">వాస్తుశిల్పం</span> అభివృద్ధి చెందింది. <span class="kw">రామప్ప దేవాలయం</span> (UNESCO 2021) నక్షత్రాకార జగతి (ప్లాట్‌ఫారమ్), తేలే ఇటుకలు (floating bricks), మరియు అద్భుతమైన శిల్పాలతో నిర్మించారు. నాయక కాలంలో <span class="kw3">చునాం (chunam)</span> — సున్నపు పూత నిర్మాణ శైలి అభివృద్ధి చెందింది. లేపాక్షి, తాడిపత్రి నాయక శైలి దేవాలయాలు పేరొందినవి.
+</div>
+
+<!-- SECTION 5: UNESCO -->
+<div class="sec-heading">
+  <span class="sec-num">§6</span>
+  <h2>UNESCO World Heritage Sites — Architecture</h2>
+  <span class="te">UNESCO ప్రపంచ వారసత్వ స్థలాలు — వాస్తుశిల్పం</span>
+</div>
+
+<div class="unesco-box no-break">
+  <span class="ub-label">UNESCO WHS — Key Architecture Sites (Exam Relevant)</span>
+  <table class="comp-table" style="margin-top:6px;">
+    <tr>
+      <th>Site / స్థలం</th>
+      <th>Year</th>
+      <th>Significance</th>
+    </tr>
+    <tr>
+      <td><strong>Chhatrapati Shivaji Terminus (CST), Mumbai</strong></td>
+      <td>2004</td>
+      <td>Victorian Gothic + Indian craft; designed by F.W. Stevens</td>
+    </tr>
+    <tr>
+      <td><strong>Capitol Complex, Chandigarh</strong></td>
+      <td>2016</td>
+      <td>Le Corbusier; only modern architecture WHS in India; includes Open Hand Monument</td>
+    </tr>
+    <tr>
+      <td><strong>Victorian Gothic &amp; Art Deco Ensembles of Mumbai</strong></td>
+      <td>2018</td>
+      <td>CST, Bombay HC, Oval Maidan buildings; unique 19th–20th c. ensemble</td>
+    </tr>
+    <tr>
+      <td><strong>Rani-ki-Vav (Queen's Stepwell), Patan, Gujarat</strong></td>
+      <td>2014</td>
+      <td>Solanki dynasty, 11th century; 7 levels; 500+ sculptures; inverted temple design</td>
+    </tr>
+    <tr>
+      <td><strong>Qutb Minar Complex, Delhi</strong></td>
+      <td>1993</td>
+      <td>First UNESCO WHS in Delhi; earliest mosque in India (Quwwat-ul-Islam)</td>
+    </tr>
+    <tr>
+      <td><strong>Humayun's Tomb, Delhi</strong></td>
+      <td>1993</td>
+      <td>First garden-tomb in Indian subcontinent; inspiration for Taj Mahal</td>
+    </tr>
+    <tr>
+      <td><strong>Ramappa Temple, Telangana</strong></td>
+      <td>2021</td>
+      <td>Kakatiya; floating bricks; star-shaped jagati; only temple named after its sculptor</td>
+    </tr>
+    <tr>
+      <td><strong>Historic City of Ahmedabad</strong></td>
+      <td>2017</td>
+      <td>First Indian city to get UNESCO WHS status; pols, mosques, temples</td>
+    </tr>
+  </table>
+</div>
+
+<div class="memory-box no-break">
+  <span class="mem-label">Memory — UNESCO Architecture WHS Years</span>
+  <div class="mnemonic">93 · 04 · 14 · 16 · 17 · 18 · 21</div>
+  <p>
+    <strong>1993</strong>: Qutb Minar + Humayun's Tomb (both Delhi) ·
+    <strong>2004</strong>: CST Mumbai ·
+    <strong>2014</strong>: Rani ki Vav ·
+    <strong>2016</strong>: Chandigarh Capitol (Le Corbusier) ·
+    <strong>2017</strong>: Ahmedabad City ·
+    <strong>2018</strong>: Victorian Gothic Mumbai ·
+    <strong>2021</strong>: Ramappa Temple (Telangana)
+  </p>
+</div>
+
+</div><!-- end page 5 -->
+
+<!-- ═══════════════════════════════ PAGE 6 ═══════════════════════════════ -->
+<div class="a4-page page-break">
+<div class="screen-header">
+  <span class="sh-left">ART &amp; CULTURE · CH 07 · BILINGUAL SUMMARY &amp; EXAM ALERT</span>
+  <span class="sh-right">AP HIGH COURT ASSISTANT EXAM 2026</span>
+</div>
+
+<!-- BILINGUAL SUMMARY -->
+<div class="sec-heading">
+  <span class="sec-num">§7</span>
+  <h2>Bilingual Quick Summary</h2>
+  <span class="te">ద్విభాషా సారాంశం</span>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Colonial Architecture Summary</span>
+    <strong>Three Colonial Styles:</strong> (1) <strong>Neo-Classical</strong> — Greek/Roman columns, Victoria Memorial (Kolkata, 1921, William Emerson), Town Hall Mumbai (1833). (2) <strong>Indo-Gothic</strong> — Pointed arches, CST Mumbai (1888, F.W. Stevens, UNESCO 2004), Rajabai Tower (Gilbert Scott). (3) <strong>Indo-Saracenic</strong> — Mughal + Gothic, Gateway of India (1924, George Wittet), Mysore Palace (1912, Henry Irwin — largest), Madras HC (1892, Irwin — largest court complex in Asia), Laxmi Vilas Palace (Chisholm — 4× Buckingham Palace).
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — వలసవాద వాస్తుశిల్పం సారాంశం</span>
+    మూడు <span class="kw">వలసవాద</span> శైలులు: (1) <span class="kw2">నియో-క్లాసికల్</span> — స్తంభాలు, విక్టోరియా మెమోరియల్ (కోల్‌కతా, 1921). (2) <span class="kw">ఇండో-గాతిక్</span> — పాయింటెడ్ ఆర్చ్‌లు, CST ముంబై (1888, UNESCO). (3) <span class="kw3">ఇండో-సారసెనిక్</span> — మొఘల్+గాతిక్, గేట్‌వే ఆఫ్ ఇండియా (1924), మైసూర్ ప్యాలెస్ (1912), మద్రాస్ హైకోర్ట్ (1892 — ఆసియాలో అతిపెద్ద కోర్ట్).
+  </div>
+</div>
+
+<div class="bilingual no-break">
+  <div class="bi-en">
+    <span class="lang-tag">English — Lutyens' Delhi &amp; Modern Architecture</span>
+    <strong>Lutyens' Delhi:</strong> Capital shifted 1911 (Delhi Durbar). Lutyens = Rashtrapati Bhavan (340 rooms, 320 acres, Sanchi dome) + India Gate (42m, 90,000 soldiers). Baker = Parliament (144 columns) + Secretariat Blocks. New Parliament (2023) by Bimal Patel. <strong>Modern:</strong> Le Corbusier = Chandigarh (1950s, UNESCO 2016). Louis Kahn = IIM Ahmedabad. Charles Correa = "Father of Modern Indian Architecture." BV Doshi = First Indian Pritzker Prize (2018).
+  </div>
+  <div class="bi-te">
+    <span class="lang-tag">తెలుగు — లూట్యెన్స్ ఢిల్లీ మరియు ఆధునిక వాస్తుశిల్పం</span>
+    లూట్యెన్స్: <span class="kw">రాష్ట్రపతి భవన్</span> (340 గదులు, 320 ఎకరాలు, సాంచి గుమ్మటం) + <span class="kw2">ఇండియా గేట్</span> (42 మీ.). బేకర్: <span class="kw">సంసద్ భవన్</span> (144 స్తంభాలు). ఆధునికం: <span class="kw3">లే కార్బూజిర్</span> — ఛండీగఢ్ (UNESCO 2016). <span class="kw3">బి.వి. దోషి</span> — మొదటి భారతీయ ప్రిట్జ్కర్ (2018). <span class="kw">చార్లెస్ కోరియా</span> — "ఆధునిక భారత వాస్తుశిల్పానికి పితామహుడు".
+  </div>
+</div>
+
+<!-- QUICK REFERENCE TABLE -->
+<div class="sub-heading">Quick Reference — Architects &amp; Their Masterworks</div>
+
+<div class="no-break">
+<table class="comp-table">
+  <tr>
+    <th>Architect / వాస్తుశిల్పి</th>
+    <th>Nationality</th>
+    <th>Key Work(s) in India</th>
+    <th>Special Fact</th>
+  </tr>
+  <tr>
+    <td><strong>William Emerson</strong></td>
+    <td>British</td>
+    <td>Victoria Memorial, Kolkata (1921)</td>
+    <td>White Makrana marble; 25 acres</td>
+  </tr>
+  <tr>
+    <td><strong>F.W. Stevens</strong></td>
+    <td>British</td>
+    <td>CST / Victoria Terminus, Mumbai (1888)</td>
+    <td>UNESCO WHS 2004; "Jewel of Victorian Gothic"</td>
+  </tr>
+  <tr>
+    <td><strong>George Wittet</strong></td>
+    <td>British</td>
+    <td>Gateway of India (1924); Prince of Wales Museum (1923)</td>
+    <td>Both Indo-Saracenic; Gateway 26m arch</td>
+  </tr>
+  <tr>
+    <td><strong>Henry Irwin</strong></td>
+    <td>British</td>
+    <td>Mysore Palace (1912); Madras High Court (1892)</td>
+    <td>Mysore = largest Indo-Saracenic palace; Madras HC = largest court complex in Asia</td>
+  </tr>
+  <tr>
+    <td><strong>Gilbert Scott</strong></td>
+    <td>British</td>
+    <td>Rajabai Clock Tower, Mumbai (1878)</td>
+    <td>Inspired by Giotto's Campanile, Florence</td>
+  </tr>
+  <tr>
+    <td><strong>R.F. Chisholm</strong></td>
+    <td>British</td>
+    <td>Laxmi Vilas Palace, Vadodara (1890)</td>
+    <td>4× size of Buckingham Palace</td>
+  </tr>
+  <tr>
+    <td><strong>Edwin Lutyens</strong></td>
+    <td>British</td>
+    <td>Rashtrapati Bhavan (1929); India Gate (1931)</td>
+    <td>Sanchi-inspired dome; largest presidential home globally</td>
+  </tr>
+  <tr>
+    <td><strong>Herbert Baker</strong></td>
+    <td>British</td>
+    <td>Parliament House (1927); N&amp;S Blocks</td>
+    <td>144 columns; circular building</td>
+  </tr>
+  <tr>
+    <td><strong>Le Corbusier</strong></td>
+    <td>Swiss-French</td>
+    <td>Capitol Complex, Chandigarh (1950s)</td>
+    <td>UNESCO WHS 2016; Brutalism; Open Hand</td>
+  </tr>
+  <tr>
+    <td><strong>Louis Kahn</strong></td>
+    <td>American</td>
+    <td>IIM Ahmedabad (1962–74)</td>
+    <td>Brick + concrete; arches within squares</td>
+  </tr>
+  <tr>
+    <td><strong>Charles Correa</strong></td>
+    <td>Indian (Goa)</td>
+    <td>Jawahar Kala Kendra; British Council Building</td>
+    <td>"Father of Modern Indian Architecture"</td>
+  </tr>
+  <tr>
+    <td><strong>BV Doshi</strong></td>
+    <td>Indian (Pune)</td>
+    <td>Aranya Housing; Sangath; IIM Bangalore</td>
+    <td>First Indian Pritzker Prize (2018)</td>
+  </tr>
+  <tr>
+    <td><strong>Bimal Patel</strong></td>
+    <td>Indian</td>
+    <td>New Parliament Building (2023)</td>
+    <td>Triangular; Sengol installed; HCP Design</td>
+  </tr>
+</table>
+</div>
+
+<!-- EXAM ALERT -->
+<div class="exam-alert no-break">
+  <span class="ea-label">★ Exam Alert — High-Frequency Questions for AP High Court Assistant</span>
+  <ul>
+    <li><strong>CST (Victoria Terminus)</strong> — UNESCO WHS year (2004); designer F.W. Stevens; "Jewel of Victorian Gothic"</li>
+    <li><strong>BV Doshi</strong> — First Indian Pritzker Prize winner (2018); Aranya Housing project</li>
+    <li><strong>Gateway of India</strong> — George Wittet; Indo-Saracenic; 1924; 26m; Gujarati Muslim influence</li>
+    <li><strong>Rashtrapati Bhavan</strong> — Lutyens; 340 rooms; 320 acres; dome = Sanchi Stupa; world's largest presidential residence</li>
+    <li><strong>Capitol Complex Chandigarh</strong> — Le Corbusier; UNESCO 2016; Open Hand Monument</li>
+    <li><strong>Mysore Palace</strong> — Henry Irwin; 1912; largest Indo-Saracenic palace; 97,000 bulbs (Dasara)</li>
+    <li><strong>Madras High Court</strong> — Henry Irwin; 1892; largest court complex in Asia</li>
+    <li><strong>Laxmi Vilas Palace</strong> — 4× Buckingham Palace; Chisholm; Vadodara</li>
+    <li><strong>Chandigarh</strong> — first planned city of independent India; capital of Punjab then Punjab + Haryana</li>
+    <li><strong>Parliament House</strong> — Baker; 1927; 144 columns; New Parliament (2023) by Bimal Patel; Sengol</li>
+    <li><strong>India Gate</strong> — Lutyens; 42m; 90,000 soldiers; WWI memorial</li>
+    <li><strong>Victorian Gothic &amp; Art Deco Ensemble Mumbai</strong> — UNESCO 2018; includes CST + Bombay HC + Oval Maidan</li>
+    <li><strong>Rani ki Vav</strong> — Patan, Gujarat; UNESCO 2014; Solanki dynasty; 11th century; 7 levels</li>
+    <li><strong>Charles Correa</strong> — "Father of Modern Indian Architecture"; Jawahar Kala Kendra; climate-responsive design</li>
+    <li><strong>Victoria Memorial</strong> — William Emerson; 1921; white Makrana marble; Italian Renaissance + Mughal</li>
+  </ul>
+</div>
+
+<div class="telugu-story no-break">
+  <span class="ts-label">తెలుగు — పరీక్ష సారాంశం</span>
+  AP హైకోర్ట్ అసిస్టెంట్ పరీక్షకు ముఖ్యమైన అంశాలు: (1) <span class="kw">CST ముంబై</span> — F.W. స్టీవెన్స్, UNESCO 2004. (2) <span class="kw2">బి.వి. దోషి</span> — మొదటి ప్రిట్జ్కర్ (2018). (3) <span class="kw">మద్రాస్ హైకోర్ట్</span> — హెన్రీ ఇర్విన్, ఆసియాలో అతిపెద్ద న్యాయస్థానం. (4) <span class="kw3">రాష్ట్రపతి భవన్</span> — లూట్యెన్స్, 340 గదులు, సాంచి గుమ్మటం. (5) <span class="kw">గేట్‌వే ఆఫ్ ఇండియా</span> — జార్జ్ విట్టెట్, 1924. (6) <span class="kw2">ఛండీగఢ్ క్యాపిటల్</span> — లే కార్బూజిర్, UNESCO 2016. (7) <span class="kw">మైసూర్ ప్యాలెస్</span> — హెన్రీ ఇర్విన్, 1912, అతిపెద్ద ఇండో-సారసెనిక్.
+</div>
+
+<div style="text-align:center; margin-top:18px; padding-top:10px; border-top: 1px dashed var(--border);">
+  <span style="font-family:'Fira Mono',monospace; font-size:8pt; color:#888; letter-spacing:0.1em;">
+    CH 07 · COLONIAL &amp; MODERN ARCHITECTURE IN INDIA · AP HIGH COURT ASSISTANT EXAM 2026
+  </span>
+</div>
+
+</div><!-- end page 6 -->
+</body>
+</html>
