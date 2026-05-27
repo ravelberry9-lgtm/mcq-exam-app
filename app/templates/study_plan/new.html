@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}New Study Plan · {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <a class="back-link" href="/">← Home</a>
+  <h1>చదువు ప్రణాళిక · Study Plan</h1>
+  <p class="subtitle">Set your target and track your progress</p>
+</div>
+
+<form class="plan-form" action="{{ url_for('study_plan.create') }}" method="POST">
+  <div class="form-group">
+    <label for="name">Plan name</label>
+    <input type="text" id="name" name="name"
+           placeholder="e.g. APPSC Group 2 2026"
+           value="APPSC Group 2 Prep" class="form-input">
+  </div>
+
+  <div class="form-group">
+    <label for="exam_id">Exam (optional)</label>
+    <select id="exam_id" name="exam_id" class="form-input">
+      <option value="">— No specific exam —</option>
+      {% for exam in exams %}
+      <option value="{{ exam.id }}">{{ exam.name_en }} · {{ exam.name_te }}</option>
+      {% endfor %}
+    </select>
+    <p class="form-hint">Selecting an exam orders chapters by its official syllabus.</p>
+  </div>
+
+  <div class="form-group">
+    <label for="target_date">Target exam date</label>
+    <input type="date" id="target_date" name="target_date"
+           class="form-input"
+           min="{{ today }}"
+           value="{{ default_date }}">
+    <p class="form-hint">We'll calculate daily pacing from today to this date.</p>
+  </div>
+
+  <button type="submit" class="primary-btn">
+    ప్రణాళిక ప్రారంభించండి · Start Plan →
+  </button>
+</form>
+{% endblock %}
