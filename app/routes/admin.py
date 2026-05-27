@@ -173,9 +173,30 @@ def notes_edit(chapter_id: int):
 
 # ── One-time seed runner ──────────────────────────────────────────────
 
+def _run_script(script_path):
+    """Run a script and yield its output lines."""
+    yield f"--- Running {os.path.basename(script_path)} ---\n"
+    try:
+        proc = subprocess.Popen(
+            [sys.executable, script_path],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            env={**os.environ},
+        )
+        for line in proc.stdout:
+            yield line
+        proc.wait()
+        yield f"Exit code: {proc.returncode}\n\n"
+        return proc.returncode
+    except Exception as exc:
+        yield f"ERROR: {exc}\n"
+        return 1
+
+
 @bp.route("/seed", methods=["GET", "POST"])
 def seed():
-    """Run seed_exam_group2.py against the live DB and stream output."""
+    """Run seed_dev.py then seed_exam_group2.py against the live DB."""
     guard = _require_auth()
     if guard:
         return guard
@@ -187,27 +208,34 @@ def seed():
         os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
         "scripts",
     )
-    script = os.path.join(scripts_dir, "seed_exam_group2.py")
 
     def generate():
-        yield "Running seed_exam_group2.py ...\n\n"
-        try:
-            proc = subprocess.Popen(
-                [sys.executable, script],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-                env={**os.environ},
-            )
-            for line in proc.stdout:
-                yield line
-            proc.wait()
-            yield f"\n\nExit code: {proc.returncode}\n"
-            if proc.returncode == 0:
-                yield "DONE: Seed completed successfully.\n"
-            else:
-                yield "ERROR: Seed exited with errors.\n"
-        except Exception as exc:
-            yield f"ERROR: {exc}\n"
+        rc = 0
+        for script_name in ["seed_dev.py", "seed_exam_group2.py"]:
+            script = os.path.join(scripts_dir, script_name)
+            last_rc = 0
+            yield f"--- Running {script_name} ---\n"
+            try:
+                proc = subprocess.Popen(
+                    [sys.executable, script],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True,
+                    env={**os.environ},
+                )
+                for line in proc.stdout:
+                    yield line
+                proc.wait()
+                last_rc = proc.returncode
+                yield f"Exit code: {last_rc}\n\n"
+            except Exception as exc:
+                yield f"ERROR launching {script_name}: {exc}\n\n"
+                last_rc = 1
+            if last_rc != 0:
+                rc = last_rc
+        if rc == 0:
+            yield "ALL DONE: Both seed scripts completed successfully.\n"
+        else:
+            yield "FINISHED WITH ERRORS: check output above.\n"
 
     return Response(generate(), mimetype="text/plain")
