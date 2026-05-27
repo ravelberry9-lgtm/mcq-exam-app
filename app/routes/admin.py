@@ -6,10 +6,10 @@ Phase 3 scope: paste-HTML + save only.
 PIN: 1234 (change via ADMIN_PIN env var).
 Not production-grade — cookie-based session token.
 """
-import hashlib, secrets
+import hashlib, secrets, subprocess, sys, os
 from flask import (
     Blueprint, render_template, request, redirect,
-    url_for, session, flash, current_app
+    url_for, session, flash, current_app, Response
 )
 import bleach
 
@@ -136,7 +136,6 @@ def notes_edit(chapter_id: int):
     chapter = Chapter.query.get_or_404(chapter_id)
     subject = Subject.query.get(chapter.subject_id)
 
-    # Get or create section 1 note
     note = Note.query.filter_by(chapter_id=chapter_id, section_num=1).first()
     if note is None:
         note = Note(
@@ -170,3 +169,45 @@ def notes_edit(chapter_id: int):
         subject=subject,
         note=note,
     )
+
+
+# ── One-time seed runner ──────────────────────────────────────────────
+
+@bp.route("/seed", methods=["GET", "POST"])
+def seed():
+    """Run seed_exam_group2.py against the live DB and stream output."""
+    guard = _require_auth()
+    if guard:
+        return guard
+
+    if request.method == "GET":
+        return render_template("admin/seed.html")
+
+    scripts_dir = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+        "scripts",
+    )
+    script = os.path.join(scripts_dir, "seed_exam_group2.py")
+
+    def generate():
+        yield "Running seed_exam_group2.py ...\n\n"
+        try:
+            proc = subprocess.Popen(
+                [sys.executable, script],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                env={**os.environ},
+            )
+            for line in proc.stdout:
+                yield line
+            proc.wait()
+            yield f"\n\nExit code: {proc.returncode}\n"
+            if proc.returncode == 0:
+                yield "DONE: Seed completed successfully.\n"
+            else:
+                yield "ERROR: Seed exited with errors.\n"
+        except Exception as exc:
+            yield f"ERROR: {exc}\n"
+
+    return Response(generate(), mimetype="text/plain")
