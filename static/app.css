@@ -1,4 +1,4 @@
-/* APPSC prep · v3 stylesheet · Phase 1
+/* APPSC prep Â· v3 stylesheet Â· Phase 1
    Design locked at v4/v6. Single file, CSS variables for theming,
    light + dark mode, mobile-first, Telugu-aware spacing. */
 
@@ -61,7 +61,7 @@ body {
 button, input, select, textarea { font: inherit; color: inherit; }
 a { color: inherit; text-decoration: none; }
 
-/* ── App header ───────────────────────────────────── */
+/* ââ App header âââââââââââââââââââââââââââââââââââââ */
 .app-header {
   position: sticky; top: 0; z-index: 20;
   display: flex; align-items: center; gap: 12px;
@@ -81,7 +81,7 @@ a { color: inherit; text-decoration: none; }
 .app-header button:hover { background: var(--bg-2); }
 .app-header button:active { transform: scale(0.96); }
 
-/* ── Main column ──────────────────────────────────── */
+/* ââ Main column ââââââââââââââââââââââââââââââââââââ */
 .app-main {
   max-width: 720px;
   margin: 0 auto;
@@ -89,7 +89,7 @@ a { color: inherit; text-decoration: none; }
   min-height: calc(100vh - 60px);
 }
 
-/* ── Empty home ───────────────────────────────────── */
+/* ââ Empty home âââââââââââââââââââââââââââââââââââââ */
 .empty-home {
   text-align: center;
   padding: 40px 20px;
@@ -121,12 +121,12 @@ a { color: inherit; text-decoration: none; }
 .chip:hover { background: var(--accent-bg); }
 .chip-en { color: var(--fg-3); font-size: 11px; margin-left: 6px; }
 
-/* ── Page head (Subjects, Settings) ───────────────── */
+/* ââ Page head (Subjects, Settings) âââââââââââââââââ */
 .page-head { margin: 8px 0 20px; }
 .page-head h1 { font-size: 22px; font-weight: 500; margin: 0 0 4px; }
 .page-head .subtitle { font-size: 13px; color: var(--fg-2); margin: 0; }
 
-/* ── Subject list ─────────────────────────────────── */
+/* ââ Subject list âââââââââââââââââââââââââââââââââââ */
 .subject-list { display: flex; flex-direction: column; gap: 8px; }
 .subject-row {
   display: flex; align-items: center; gap: 12px;
@@ -143,7 +143,7 @@ a { color: inherit; text-decoration: none; }
 .empty { padding: 20px; color: var(--fg-2); text-align: center; }
 .empty code { background: var(--bg-2); padding: 2px 6px; border-radius: 4px; font-size: 12px; }
 
-/* ── Question card ────────────────────────────────── */
+/* ââ Question card ââââââââââââââââââââââââââââââââââ */
 .qcard {
   background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-md);
   overflow: hidden;
@@ -180,7 +180,7 @@ body[data-lang="en"] .opt-te,
 body[data-lang="en"] .exp-te,
 body[data-lang="en"] .anchor-te { display: none; }
 
-/* ── Options ──────────────────────────────────────── */
+/* ââ Options ââââââââââââââââââââââââââââââââââââââââ */
 .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
 .option {
   display: flex; align-items: center; gap: 12px;
@@ -207,7 +207,7 @@ body[data-lang="en"] .anchor-te { display: none; }
 .option.is-wrong .option-key, .option.is-wrong .opt-en, .option.is-wrong .opt-te { color: var(--danger); }
 .option.is-dim { opacity: 0.5; }
 
-/* ── Confidence selector ──────────────────────────── */
+/* ââ Confidence selector ââââââââââââââââââââââââââââ */
 .confidence {
   margin: 18px 0;
   padding: 14px;
@@ -234,7 +234,7 @@ body[data-lang="en"] .anchor-te { display: none; }
 }
 .conf-anchors .anchor-te { display: block; opacity: 0.7; margin-top: 1px; }
 
-/* ── Primary button + submit ──────────────────────── */
+/* ââ Primary button + submit ââââââââââââââââââââââââ */
 .primary-btn, .submit-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   padding: 14px 20px; width: 100%;
@@ -247,7 +247,7 @@ body[data-lang="en"] .anchor-te { display: none; }
 .primary-btn:active, .submit-btn:active:not(:disabled) { transform: scale(0.99); }
 .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-/* ── Feedback (post-submit) ───────────────────────── */
+/* ââ Feedback (post-submit) âââââââââââââââââââââââââ */
 .feedback { margin-top: 16px; }
 .feedback-message {
   padding: 12px 14px; border-radius: var(--radius-md); margin-bottom: 12px;
@@ -273,7 +273,7 @@ body[data-lang="en"] .anchor-te { display: none; }
   border-radius: var(--radius-md); font-size: 14px; font-weight: 500;
 }
 
-/* ── Settings form ────────────────────────────────── */
+/* ââ Settings form ââââââââââââââââââââââââââââââââââ */
 .settings-form {
   background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-md);
   padding: 16px;
@@ -293,7 +293,7 @@ body[data-lang="en"] .anchor-te { display: none; }
 .radio input { accent-color: var(--accent); }
 .radio input:checked + span { font-weight: 500; }
 
-/* ── Side drawer ──────────────────────────────────── */
+/* ââ Side drawer ââââââââââââââââââââââââââââââââââââ */
 .drawer-backdrop {
   position: fixed; inset: 0; z-index: 30;
   background: rgba(0, 0, 0, 0.4);
@@ -364,7 +364,7 @@ body[data-lang="en"] .anchor-te { display: none; }
 .drawer-icon-settings { mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>"); -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>"); }
 .drawer-icon-lock { mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='11' width='18' height='11' rx='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>"); -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='11' width='18' height='11' rx='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>"); }
 
-/* ── Exam syllabus tree ───────────────────────────── */
+/* ââ Exam syllabus tree âââââââââââââââââââââââââââââ */
 .exam-tree { display: flex; flex-direction: column; gap: 16px; }
 .exam-paper {
   background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-md);
