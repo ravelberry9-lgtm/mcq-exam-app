@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}{{ subject.name_te }} Â· {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <a class="back-link" href="{{ url_for('public.subjects') }}">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    à°µà°¿à°·à°¯à°¾à°²à± Â· Subjects
+  </a>
+  <h1>{{ subject.name_te }}</h1>
+  <p class="subtitle">{{ subject.name_en }} Â· {{ chapters | length }} chapters Â· {{ total_q }} questions</p>
+</div>
+
+<!-- Quick action cards -->
+<div class="subject-hub-cards">
+  <a class="hub-card" href="{{ url_for('notes.chapter_list', subject_slug=subject.slug) }}">
+    <div class="hub-card-icon">ð</div>
+    <div class="hub-card-label">
+      <strong>à°¨à±à°à±à°¸à±</strong>
+      <span>Read Notes</span>
+    </div>
+  </a>
+  <a class="hub-card" href="{{ url_for('public.practice', subject_slug=subject.slug) }}">
+    <div class="hub-card-icon">â</div>
+    <div class="hub-card-label">
+      <strong>MCQ à°¸à°¾à°§à°¨</strong>
+      <span>Practice MCQs</span>
+    </div>
+  </a>
+  <a class="hub-card" href="{{ url_for('study_plan.new_plan') }}">
+    <div class="hub-card-icon">ð¯</div>
+    <div class="hub-card-label">
+      <strong>à°¸à±à°à°¡à± à°ªà±à°²à°¾à°¨à±</strong>
+      <span>Study Plan</span>
+    </div>
+  </a>
+</div>
+
+<!-- Chapter list -->
+{% if chapters %}
+<p class="section-heading">à°à°§à±à°¯à°¾à°¯à°¾à°²à± Â· Chapters</p>
+<div class="chapter-list">
+  {% for row in chapters %}
+  {% set ch = row.chapter %}
+  <div class="chapter-row chapter-hub-row">
+    <div class="chapter-num">{{ ch.chapter_num }}</div>
+    <div class="chapter-meta">
+      <p class="chapter-te">{{ ch.title_te }}</p>
+      <p class="chapter-en">{{ ch.title_en }}{% if row.q_count %} Â· {{ row.q_count }} Q{% endif %}</p>
+    </div>
+    <div class="chapter-hub-actions">
+      <a class="chapter-action-btn" href="{{ url_for('notes.reader', subject_slug=subject.slug, chapter_num=ch.chapter_num) }}">ð Notes</a>
+      {% if row.q_count > 0 %}
+      <a class="chapter-action-btn chapter-action-mcq" href="{{ url_for('public.practice', subject_slug=subject.slug) }}">â MCQs</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p class="empty">à° à°µà°¿à°·à°¯à°à°²à± à°à°§à±à°¯à°¾à°¯à°¾à°²à± à°²à±à°µà± Â· No chapters yet.</p>
+{% endif %}
+
+{% endblock %}
