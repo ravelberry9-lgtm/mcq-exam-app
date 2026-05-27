@@ -215,3 +215,66 @@ Expected: 6737 questions, 41 tests pass.
 | Deploy | Railway second service `mcq-app-v2` (see RAILWAY_NEXT_STEPS.md) |
 
 **⚠️ Before deploying:** change `ADMIN_PIN` env var from default `1234`.
+
+---
+
+## Phase 5 + 4.5 Addition (Session 3 — 2026-05-27)
+
+### Phase 5 — Timed Exam Flow
+
+| Route | Description |
+|---|---|
+| `POST /exam/<slug>/paper/<num>/start` | Create ExamSession from syllabus questions, redirect to take page |
+| `GET /exam-session/<id>` | Timed exam: question card, countdown, answer grid, auto-save |
+| `POST /exam-session/<id>/answer` | Save or clear a single answer (AJAX, idempotent) |
+| `POST /exam-session/<id>/submit` | Score exam, lock session |
+| `GET /exam-session/<id>/results` | Score card, per-question review with explanations |
+
+New files: `app/routes/exam_session.py`, `app/templates/exam_session/take.html`, `app/templates/exam_session/results.html`, `tests/test_exam_session.py` (16 tests)
+
+`exam.html` updated with "▶ Start Exam" button per paper.
+
+### Phase 4.5 — Study Plans
+
+| Route | Description |
+|---|---|
+| `GET /plan/new` | Wizard: pick exam + target date |
+| `POST /plan/create` | Create plan, auto-pause existing active plan |
+| `GET /plan/` | Dashboard: progress ring, pacing calc, today suggestions |
+| `POST /plan/api/<id>/pause` | Pause plan |
+
+Pacing logic: `chapters/day = (total - completed) / days_until_exam`
+
+New files: `app/routes/study_plan.py`, `app/templates/study_plan/new.html`, `app/templates/study_plan/dashboard.html`, `tests/test_study_plan.py` (11 tests)
+
+### Railway Deployment (New service)
+- Service `mcq-exam-app` created in project `upbeat-forgiveness`
+- Connected to `ravelberry9-lgtm/mcq-exam-app` branch `main`
+- 8 env vars configured: SECRET_KEY (random hex-32), FLASK_DEBUG=0,
+  DATABASE_URL=${{Postgres.DATABASE_URL}}, ADMIN_PIN=1234,
+  APP_TITLE, APP_TITLE_TE, ACCENT_COLOR=#6366f1, DEFAULT_LANG=both
+- Deployment triggered — check Railway dashboard for build status
+- **After first deploy**: run `flask db upgrade && python scripts/seed_exam_group2.py`
+  then `python scripts/migrate_from_legacy.py` to load the 6,737 questions
+
+### Git State
+- **Commit:** `1f69eb0` — feat(v3): phase 5 exam flow + phase 4.5 study plans
+- **Tag:** `phase-5-complete`
+- **Push:** Run `git push origin main --tags` from your terminal
+
+### Test totals: 67/67 passing
+| Suite | Tests |
+|---|---|
+| test_smoke | 6 |
+| test_phase1 | 9 |
+| test_admin | 8 |
+| test_notes | 17 |
+| test_exam_session | 16 |
+| test_study_plan | 11 |
+
+### Remaining phases
+| Phase | Description |
+|---|---|
+| 6 | Leaderboard / social (optional) |
+| 7 | Cutover — point domain to mcq-exam-app, decommission old `web` service |
+| — | **Post-deploy**: change ADMIN_PIN from default `1234` |
