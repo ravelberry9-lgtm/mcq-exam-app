@@ -75,18 +75,21 @@ def reader(subject_slug, chapter_num):
     prev_num = nums[idx - 1] if idx > 0 else None
     next_num = nums[idx + 1] if idx >= 0 and idx < len(nums) - 1 else None
 
+    has_content = any((n.body_en or n.body_te) for n in notes)
+
     return render_template(
         "notes/reader.html",
         subject=subject,
         chapter=chapter,
         notes=notes,
+        has_content=has_content,
         progress_status=progress_status,
         prev_num=prev_num,
         next_num=next_num,
     )
 
 
-# ── Progress API ──────────────────────────────────────────────────
+# ââ Progress API ââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 @bp.route("/api/progress/<int:chapter_id>/complete", methods=["POST"])
 def progress_complete(chapter_id):
@@ -108,7 +111,7 @@ def progress_complete(chapter_id):
 
 @bp.route("/api/progress/<int:chapter_id>/open", methods=["POST"])
 def progress_open(chapter_id):
-    """Record a chapter open — sets status to in_progress if not already completed."""
+    """Record a chapter open â sets status to in_progress if not already completed."""
     chapter = Chapter.query.get_or_404(chapter_id)
     device_id = _device_id()
     prog = ChapterProgress.query.filter_by(
