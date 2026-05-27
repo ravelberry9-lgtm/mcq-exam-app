@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Study Plan · {{ plan.name }} · {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <h1>{{ plan.name }}</h1>
+  <p class="subtitle">లక్ష్య తేదీ · Target: {{ plan.target_date.strftime('%d %b %Y') }} · {{ days_left }} days left</p>
+</div>
+
+<div class="plan-overview">
+  <div class="plan-ring-wrap">
+    <svg class="plan-ring" viewBox="0 0 120 120" width="120" height="120">
+      <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-muted,#e5e7eb)" stroke-width="12"/>
+      <circle cx="60" cy="60" r="50" fill="none"
+              stroke="var(--accent)" stroke-width="12"
+              stroke-dasharray="{{ (completion_pct / 100 * 314.16) | round(1) }} 314.16"
+              stroke-dashoffset="78.54"
+              stroke-linecap="round"
+              transform="rotate(-90 60 60)"/>
+      <text x="60" y="65" text-anchor="middle" class="ring-pct-text">{{ completion_pct }}%</text>
+    </svg>
+  </div>
+  <div class="plan-stats">
+    <div class="stat-card stat-correct"><span class="stat-num">{{ completed }}</span><span class="stat-label">Completed</span></div>
+    <div class="stat-card"><span class="stat-num">{{ in_progress }}</span><span class="stat-label">In progress</span></div>
+    <div class="stat-card stat-skip"><span class="stat-num">{{ not_started }}</span><span class="stat-label">Not started</span></div>
+    <div class="stat-card"><span class="stat-num">{{ pacing }}</span><span class="stat-label">Chapters/day needed</span></div>
+  </div>
+</div>
+
+{% if today_suggestions %}
+<div class="plan-today">
+  <h2>ఈరోజు చదవండి · Read today</h2>
+  {% for ch in today_suggestions %}
+  <a class="chapter-row status-{{ ch.status }}"
+     href="{{ url_for('notes.reader', subject_slug=ch.subject_slug, chapter_num=ch.chapter_num) }}">
+    <div class="chapter-meta">
+      <p class="chapter-te">{{ ch.title_te }}</p>
+      <p class="chapter-en">{{ ch.subject_en }} · {{ ch.title_en }} · ~{{ ch.est_read_minutes }} min</p>
+    </div>
+    <svg class="row-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}
+
+<details class="plan-all-chapters">
+  <summary>All chapters ({{ total }})</summary>
+  <div class="chapter-list">
+    {% for ch in chapters %}
+    <a class="chapter-row status-{{ ch.status }}"
+       href="{{ url_for('notes.reader', subject_slug=ch.subject_slug, chapter_num=ch.chapter_num) }}">
+      <div class="chapter-meta">
+        <p class="chapter-te">{{ ch.title_te }}</p>
+        <p class="chapter-en">{{ ch.subject_en }} · {{ ch.title_en }}</p>
+      </div>
+      <div class="chapter-status-icon">
+        {% if ch.status == 'completed' %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-success,#22c55e)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        {% elif ch.status == 'in_progress' %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        {% else %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-muted,#9ca3af)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</details>
+
+<div class="plan-actions">
+  <form action="{{ url_for('study_plan.pause_plan', plan_id=plan.id) }}" method="POST" style="display:inline">
+    <button type="submit" class="btn-secondary">Pause plan</button>
+  </form>
+  <a class="btn-secondary" href="{{ url_for('study_plan.new') }}">New plan</a>
+</div>
+{% endblock %}
