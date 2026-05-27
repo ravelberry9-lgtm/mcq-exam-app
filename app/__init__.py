@@ -4,36 +4,45 @@ from .config import Config
 from .db import db
 
 
-def _patch_schema(engine) -> None:
-    """Idempotently add columns/tables that may be missing in older DB schemas.
+# v3 columns that must exist on the questions table
+_V3_QUESTION_COLS = {"subject_id", "chapter_id", "source_type", "options_en"}
 
-    Uses PostgreSQL's ADD COLUMN IF NOT EXISTS so it is safe to run on every
-    startup.  SQLite (local dev) doesn't support IF NOT EXISTS on ALTER TABLE,
-    so we catch and swallow those errors.
+
+def _patch_schema(engine) -> None:
+    """Ensure the DB schema matches v3.
+
+    The Railway Postgres DB may contain tables from the legacy app with an
+    older schema.  This function detects and fixes those mismatches on every
+    startup so the app never crashes due to missing columns.
+
+    Strategy:
+    - If the questions table is missing v3-required columns, drop it (and its
+      dependents) so db.create_all() can recreate it with the full v3 layout.
+    - Otherwise just add the subject_id column if somehow still missing.
     """
     from sqlalchemy import inspect, text
 
     insp = inspect(engine)
     existing_tables = set(insp.get_table_names())
 
-    with engine.connect() as conn:
-        # ── questions.subject_id ──────────────────────────────────────────
-        if "questions" in existing_tables:
-            q_cols = {c["name"] for c in insp.get_columns("questions")}
-            if "subject_id" not in q_cols:
-                try:
-                    conn.execute(text(
-                        "ALTER TABLE questions "
-                        "ADD COLUMN IF NOT EXISTS subject_id INTEGER "
-                        "REFERENCES subjects(id)"
-                    ))
-                    conn.execute(text(
-                        "CREATE INDEX IF NOT EXISTS ix_questions_subject_id "
-                        "ON questions (subject_id)"
-                    ))
-                    conn.commit()
-                except Exception:
-                    conn.rollback()
+    if "questions" not in existing_tables:
+        return  # nothing to patch; db.create_all() will create it fresh
+
+    q_cols = {c["name"] for c in insp.get_columns("questions")}
+
+    if not _V3_QUESTION_COLS.issubset(q_cols):
+        # Old-schema questions table — drop it and let create_all() rebuild
+        with engine.connect() as conn:
+            try:
+                conn.execute(text("DROP TABLE IF EXISTS user_question_state CASCADE"))
+                conn.execute(text("DROP TABLE IF EXISTS questions CASCADE"))
+                conn.commit()
+            except Exception:
+                conn.rollback()
+        return  # create_all() will rebuild with correct schema
+
+    # Table has v3 columns — nothing to do
+    return
 
 
 def create_app(config_class: type = Config) -> Flask:
@@ -48,7 +57,7 @@ def create_app(config_class: type = Config) -> Flask:
 
     from . import models  # noqa: F401
 
-    # Apply schema patches then ensure all tables exist
+    # Fix any legacy schema mismatches, then ensure all tables exist
     with app.app_context():
         _patch_schema(db.engine)
         db.create_all()
