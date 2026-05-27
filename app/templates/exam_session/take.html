@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}{{ es.config.exam_name_en }} · Paper {{ es.config.paper_num }} · {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="exam-take" id="exam-take"
+     data-session-id="{{ es.id }}"
+     data-duration="{{ es.config.duration_min * 60 }}"
+     data-remaining="{{ remaining_seconds }}">
+
+  <div class="exam-timer-bar">
+    <div class="exam-timer-info">
+      <span class="exam-label">{{ es.config.paper_name_te }} · {{ es.config.paper_name_en }}</span>
+      <span class="exam-timer" id="exam-timer">--:--</span>
+    </div>
+    <div class="exam-progress-wrap">
+      <div class="exam-progress-fill" id="exam-progress-fill"
+           style="width:{{ (answered_count / q_total * 100) | int }}%"></div>
+    </div>
+    <div class="exam-progress-label">
+      {{ answered_count }} / {{ q_total }} answered
+    </div>
+  </div>
+
+  <article class="qcard exam-qcard" id="qcard"
+           data-question-id="{{ question.id }}">
+
+    <div class="qcard-meta">
+      <span class="qcard-tag">Q {{ q_idx }} / {{ q_total }}</span>
+      <span class="qcard-diff" data-difficulty="{{ question.difficulty }}">
+        {{ {'E':'Easy','M':'Medium','H':'Hard'}.get(question.difficulty, question.difficulty) }}
+      </span>
+    </div>
+
+    <div class="qcard-body">
+      <p class="qtext-te">{{ question.question_te }}</p>
+      <p class="qtext-en">{{ question.question_en }}</p>
+
+      <div class="options" role="radiogroup" aria-label="Answer options">
+        {% for key in ['a','b','c','d','e'] %}
+          {% if question.options_en and question.options_en.get(key) %}
+          <button class="option {% if current_answer == key %}option-selected{% endif %}"
+                  data-key="{{ key }}" type="button">
+            <span class="option-key">{{ key | upper }}</span>
+            <span class="option-text">
+              <span class="opt-en">{{ question.options_en.get(key) }}</span>
+              <span class="opt-te">{{ question.options_te.get(key) if question.options_te else '' }}</span>
+            </span>
+          </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </article>
+
+  <nav class="exam-nav">
+    {% if q_idx > 1 %}
+    <a class="btn-nav" href="?q={{ q_idx - 1 }}">← Prev</a>
+    {% else %}
+    <span class="btn-nav btn-nav-disabled">← Prev</span>
+    {% endif %}
+
+    <button class="btn-clear-answer" id="btn-clear" type="button"
+            {% if not current_answer %}disabled{% endif %}>
+      Clear
+    </button>
+
+    {% if q_idx < q_total %}
+    <a class="btn-nav btn-nav-primary" href="?q={{ q_idx + 1 }}">Next →</a>
+    {% else %}
+    <button class="btn-nav btn-nav-primary" id="btn-submit-exam" type="button">
+      Submit Exam
+    </button>
+    {% endif %}
+  </nav>
+
+  <div class="exam-grid-wrap">
+    <p class="exam-grid-label">Question navigator</p>
+    <div class="exam-grid" id="exam-grid">
+      {% for i in range(1, q_total + 1) %}
+      {% set qid_here = es.question_ids[i-1] | string %}
+      <a class="exam-grid-cell
+                {% if es.answers and es.answers.get(qid_here) %}answered{% endif %}
+                {% if i == q_idx %}current{% endif %}"
+         href="?q={{ i }}">{{ i }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <form id="submit-form" action="{{ url_for('exam_session.submit', session_id=es.id) }}"
+        method="POST" hidden></form>
+</div>
+
+<script>
+(function () {
+  const sessionId = document.getElementById("exam-take").dataset.sessionId;
+  const remaining = parseInt(document.getElementById("exam-take").dataset.remaining, 10);
+  const timerEl = document.getElementById("exam-timer");
+  const progressFill = document.getElementById("exam-progress-fill");
+  let secondsLeft = remaining;
+
+  function tick() {
+    if (secondsLeft <= 0) {
+      timerEl.textContent = "00:00";
+      timerEl.classList.add("timer-expired");
+      document.getElementById("submit-form").submit();
+      return;
+    }
+    const m = Math.floor(secondsLeft / 60);
+    const s = secondsLeft % 60;
+    timerEl.textContent = String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+    if (secondsLeft < 300) timerEl.classList.add("timer-warning");
+    secondsLeft--;
+    setTimeout(tick, 1000);
+  }
+  tick();
+
+  document.querySelectorAll(".option").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".option").forEach(function (b) {
+        b.classList.remove("option-selected");
+      });
+      btn.classList.add("option-selected");
+      document.getElementById("btn-clear").disabled = false;
+      saveAnswer(btn.dataset.key);
+    });
+  });
+
+  function saveAnswer(chosen) {
+    const qid = document.getElementById("qcard").dataset.questionId;
+    fetch("/exam-session/" + sessionId + "/answer", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "same-origin",
+      body: JSON.stringify({ question_id: qid, chosen: chosen }),
+    }).then(function (r) { return r.json(); }).then(function (data) {
+      if (data.answered_count !== undefined) {
+        document.querySelector(".exam-progress-label").textContent =
+          data.answered_count + " / {{ q_total }} answered";
+        const pct = Math.round(data.answered_count / {{ q_total }} * 100);
+        progressFill.style.width = pct + "%";
+        const cells = document.querySelectorAll(".exam-grid-cell");
+        if (cells.length >= {{ q_idx }}) {
+          cells[{{ q_idx - 1 }}].classList.add("answered");
+        }
+      }
+    }).catch(function () {});
+  }
+
+  document.getElementById("btn-clear")?.addEventListener("click", function () {
+    document.querySelectorAll(".option").forEach(function (b) {
+      b.classList.remove("option-selected");
+    });
+    this.disabled = true;
+    const qid = document.getElementById("qcard").dataset.questionId;
+    fetch("/exam-session/" + sessionId + "/answer", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "same-origin",
+      body: JSON.stringify({ question_id: qid, chosen: "" }),
+    });
+  });
+
+  document.getElementById("btn-submit-exam")?.addEventListener("click", function () {
+    if (confirm("Submit exam? You cannot change answers after submitting.")) {
+      document.getElementById("submit-form").submit();
+    }
+  });
+})();
+</script>
+{% endblock %}
