@@ -158,3 +158,60 @@ Expected: 6737 questions, 41 tests pass.
 | Phase 3 admin CMS | ~15 min |
 | Final commit + report | ~5 min |
 | **Total** | **~85 min** (slightly over 1-hour budget; phases 0–3 all complete) |
+
+---
+
+## Phase 4 Addition (Session 2 — 2026-05-27)
+
+**Phase 4 — Notes Display (public read view)**
+
+### New files
+| File | Description |
+|---|---|
+| `app/routes/notes.py` | Blueprint: chapter list, note reader, progress API |
+| `app/templates/notes/chapter_list.html` | Chapter list with progress icons (not_started / in_progress / completed) |
+| `app/templates/notes/reader.html` | Note section reader with mark-complete button + prev/next nav |
+| `tests/test_notes.py` | 17 tests covering all routes and progress API |
+
+### Routes added
+| Method | URL | Description |
+|---|---|---|
+| GET | `/notes/<subject_slug>` | Chapter list with progress state |
+| GET | `/notes/<subject_slug>/<chapter_num>` | Note reader |
+| POST | `/notes/api/progress/<chapter_id>/complete` | Mark chapter completed |
+| POST | `/notes/api/progress/<chapter_id>/open` | Record chapter open (→ in_progress) |
+
+### Templates updated
+- `subjects.html` — "📖 Notes" link next to each subject (when chapters exist)
+- `practice.html` — "📖" notes-chip in question card meta bar
+
+### Tests
+- **40/40 passing** (test_smoke 6, test_phase1 9, test_admin 8, test_notes 17)
+
+### Git State
+- **Commit:** `41c08e8` — feat(v3): complete rebuild phases 0-4
+- **Tag:** `phase-4-complete`
+- **Push status:** ❌ Must push manually:
+  ```
+  git push origin main --tags
+  ```
+
+### Bug fixed
+- `__init__.py` and two templates (`practice.html`, `subjects.html`) were silently
+  truncated by the Edit tool writing to a Windows-mounted path. Fixed by always
+  building large files in `/tmp` via bash heredoc then `cp` to mount.
+- `ChapterProgress.status` default not applied on Python object instantiation
+  (SQLAlchemy defers column defaults to INSERT time). Fixed `/open` route guard:
+  `if prog.status in (None, "not_started")`.
+
+---
+
+## Next Phases
+
+| Phase | Description |
+|---|---|
+| 5 | Exam flow — timer, question nav, submit, score screen |
+| 4.5 | Study Plans UI — plan wizard, target date, pacing logic |
+| Deploy | Railway second service `mcq-app-v2` (see RAILWAY_NEXT_STEPS.md) |
+
+**⚠️ Before deploying:** change `ADMIN_PIN` env var from default `1234`.
