@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Seed Database · Admin · {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <h1>🌱 Seed Database</h1>
+  <p class="subtitle">Runs <code>seed_exam_group2.py</code> against the live database.</p>
+</div>
+
+<div style="max-width:640px;margin:2rem auto;">
+  <p>Inserts the APPSC Group 2 exam structure (papers, sections, syllabus items).
+     The script is idempotent — safe to run multiple times.</p>
+
+  <form method="POST" id="seed-form">
+    <button class="primary-btn" type="submit" id="run-btn">▶ Run Seed</button>
+  </form>
+
+  <pre id="output" style="margin-top:1.5rem;background:#1e1e2e;color:#cdd6f4;
+       padding:1rem;border-radius:8px;white-space:pre-wrap;min-height:4rem;
+       font-size:.85rem;display:none;"></pre>
+</div>
+
+<script>
+document.getElementById('seed-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('run-btn');
+  const out = document.getElementById('output');
+  btn.disabled = true;
+  btn.textContent = '⏳ Running…';
+  out.style.display = 'block';
+  out.textContent = '';
+
+  try {
+    const resp = await fetch(window.location.href, {method:'POST', credentials:'same-origin'});
+    const reader = resp.body.getReader();
+    const dec = new TextDecoder();
+    while (true) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      out.textContent += dec.decode(value);
+      out.scrollTop = out.scrollHeight;
+    }
+    btn.textContent = '✅ Done — reload page to run again';
+  } catch(err) {
+    out.textContent += '\nFetch error: ' + err;
+    btn.disabled = false;
+    btn.textContent = '▶ Run Seed';
+  }
+});
+</script>
+{% endblock %}
