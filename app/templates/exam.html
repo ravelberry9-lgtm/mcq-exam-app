@@ -15,6 +15,11 @@
         <p class="exam-paper-title">{{ paper.name_te }} <span class="exam-paper-en">{{ paper.name_en }}</span></p>
         <p class="exam-paper-meta">{{ paper.total_marks }} marks{% if paper.duration_min %} · {{ paper.duration_min }} min{% endif %}</p>
       </div>
+      <form action="{{ url_for('exam_session.start', slug=exam.slug, paper_num=paper.paper_num) }}" method="POST">
+        <button class="btn-start-exam" type="submit">
+          ▶ Start Exam · పరీక్ష ప్రారంభించండి
+        </button>
+      </form>
     </header>
     {% for section in paper.sections %}
     <div class="exam-section">
@@ -32,6 +37,7 @@
             {{ ch.title_te }} <span class="exam-ch-en">{{ ch.title_en }}</span>
             <span class="exam-ch-q">{{ ch.q_count }} Q</span>
           </a>
+          <a class="notes-chip" href="{{ url_for('notes.chapter_list', subject_slug=ch.subject_slug) }}" title="Read notes">📖</a>
         </li>
         {% else %}
         <li class="empty"><em>No chapters mapped yet</em></li>

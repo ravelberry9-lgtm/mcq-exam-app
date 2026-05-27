@@ -24,6 +24,12 @@ def create_app(config_class: type = Config) -> Flask:
     from .routes.notes import bp as notes_bp
     app.register_blueprint(notes_bp)
 
+    from .routes.exam_session import bp as exam_session_bp
+    app.register_blueprint(exam_session_bp)
+
+    from .routes.study_plan import bp as study_plan_bp
+    app.register_blueprint(study_plan_bp)
+
     @app.context_processor
     def inject_globals():
         from .services.nav import build_tree
