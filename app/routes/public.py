@@ -11,9 +11,9 @@ from ..models import (
 bp = Blueprint("public", __name__)
 
 DIFFICULTY_LABEL = {
-    "E": "Easy Â· à°¸à±à°²à°­à°",
-    "M": "Medium Â· à°®à°§à±à°¯à°®à°",
-    "H": "Hard Â· à°à°·à±à°à°",
+    "E": "Easy · సులభం",
+    "M": "Medium · మధ్యమం",
+    "H": "Hard · కష్టం",
 }
 
 
@@ -95,7 +95,7 @@ def practice(subject_slug):
     question = questions[q_idx - 1]
     chapter = Chapter.query.get(question.chapter_id) if question.chapter_id else None
     if chapter is None:
-        chapter = type("Anon", (), {"title_en": "â", "title_te": "â"})()
+        chapter = type("Anon", (), {"title_en": "—", "title_te": "—"})()
     progress_pct = round((q_idx - 1) / max(q_total, 1) * 100)
     next_url = (
         url_for("public.practice", subject_slug=subject_slug, i=q_idx + 1)
@@ -182,21 +182,21 @@ def api_answer():
 
 def _coaching_te(correct, confidence):
     if correct and confidence >= 4:
-        return "à°®à°à°à°¿à°¦à°¿! à°®à±à°°à± à°¸à°°à±à°¨à± à°à°µà°¾à°¬à± à°à°à±à°à°¾à°°à±."
+        return "మంచిది! మీరు సరెనే జవాబు ఇచ్చారు."
     if correct and confidence <= 2:
-        return "à°¸à°°à±à°à°¦à°¿, à°à°¾à°¨à± à°®à± à°¬à±à°¦à±à°§à°¿à°¨à°¿ à°¨à°®à±à°®à°à°¡à°¿."
+        return "సరైంది, కానీ మీ బుద్ధిని నమ్మండి."
     if not correct and confidence >= 4:
-        return "à°®à±à°°à± à°à°à±à°à°¿à°¤à°à°à°¾ à°à°¨à±à°¨à°¾à°°à±, à°à°¾à°¨à± à°¤à°ªà±à°ªà±. à°¨à±à°®à±à°®à°¦à°¿à°à°¾ à°à°¦à°µà°à°¡à°¿."
-    return "à°¤à°ªà±à°ªà°¯à°¿à°à°¦à°¿. à°µà°¿à°µà°°à°£ à°à±à°¡à°à°¡à°¿."
+        return "మీరు ఖచ్చితంగా అన్నారు, కానీ తప్పు. నెమ్మదిగా చదవండి."
+    return "తప్పయింది. వివరణ చూడండి."
 
 
 def _coaching_en(correct, confidence):
     if correct and confidence >= 4:
-        return "Good â your confidence matched the outcome."
+        return "Good — your confidence matched the outcome."
     if correct and confidence <= 2:
         return "Correct, but you weren't sure. Trust your reasoning more next time."
     if not correct and confidence >= 4:
-        return "You were confident but wrong â slow down on similar questions."
+        return "You were confident but wrong — slow down on similar questions."
     return "Wrong this time. Read the explanation."
 
 
