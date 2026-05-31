@@ -5,9 +5,6 @@ scripts/load_content.py
 Idempotent bulk-loader: reads data/content.db (the pre-built migrated SQLite)
 and inserts everything into the live PostgreSQL database via SQLAlchemy.
 
-If data/content.db is absent but data/content.db.gz exists, it is decompressed
-automatically before use.
-
 Tables populated (in order):
   subjects → chapters → notes → questions → pages
 
@@ -21,7 +18,7 @@ Safety:
   • Can be re-run safely multiple times
 """
 
-import sys, os, json, sqlite3, gzip, shutil
+import sys, os, json, sqlite3
 from pathlib import Path
 from datetime import datetime
 
@@ -29,7 +26,6 @@ DRY = "--dry" in sys.argv
 
 ROOT      = Path(__file__).resolve().parent.parent
 DATA_DB   = ROOT / "data" / "content.db"
-DATA_DB_GZ = ROOT / "data" / "content.db.gz"
 
 sys.path.insert(0, str(ROOT))
 
@@ -58,24 +54,11 @@ def _now():
     return datetime.utcnow()
 
 
-def _ensure_db():
-    """Decompress content.db.gz → content.db if needed."""
-    if DATA_DB.exists():
-        return
-    if DATA_DB_GZ.exists():
-        print(f"Decompressing {DATA_DB_GZ.name} → {DATA_DB.name} …")
-        DATA_DB.parent.mkdir(parents=True, exist_ok=True)
-        with gzip.open(DATA_DB_GZ, "rb") as f_in, open(DATA_DB, "wb") as f_out:
-            shutil.copyfileobj(f_in, f_out)
-        print(f"  decompressed: {DATA_DB.stat().st_size:,} bytes")
-    else:
-        print(f"ERROR: content DB not found at {DATA_DB} (nor .gz)")
-        sys.exit(1)
-
-
 # ── Main loader ───────────────────────────────────────────────────
 def main():
-    _ensure_db()
+    if not DATA_DB.exists():
+        print(f"ERROR: content DB not found at {DATA_DB}")
+        sys.exit(1)
 
     src = sqlite3.connect(str(DATA_DB))
     src.row_factory = sqlite3.Row
@@ -169,15 +152,14 @@ def main():
         db.session.flush()
         print(f"  inserted {ins['chapters']}, skipped {skipped['chapters']}")
 
-        # ── 3. Notes ─────────────────────────────────────────────
-        print("Loading notes …")
-        # Build (chapter_id, section_num) set of existing notes in live DB
-        existing_notes = set(
-            (n.chapter_id, n.section_num)
-            for n in db.session.execute(
-                db.select(Note.chapter_id, Note.section_num)
-            ).all()
-        )
+        # ── 3. Notes — upsert (insert or update) ─────────────────
+        print("Loading notes (upsert) …")
+        # Build (chapter_id, section_num) → Note object map for existing notes
+        existing_notes_map = {
+            (n.chapter_id, n.section_num): n
+            for n in Note.query.all()
+        }
+        updated_notes = 0
 
         for r in src.execute("SELECT * FROM notes ORDER BY chapter_id, section_num"):
             live_ch_id = src_ch_to_live_ch.get(r["chapter_id"])
@@ -185,28 +167,34 @@ def main():
                 skipped["notes"] += 1
                 continue
             key = (live_ch_id, r["section_num"])
-            if key in existing_notes:
-                skipped["notes"] += 1
-                continue
-            n = Note(
-                chapter_id  = live_ch_id,
-                section_num = r["section_num"],
-                heading_en  = r["heading_en"] or "",
-                heading_te  = r["heading_te"] or "",
-                body_en     = r["body_en"] or "",
-                body_te     = r["body_te"] or "",
-            )
-            db.session.add(n)
-            existing_notes.add(key)
-            ins["notes"] += 1
+            existing = existing_notes_map.get(key)
+            if existing:
+                # Update body content (content quality may have improved)
+                existing.heading_en = r["heading_en"] or ""
+                existing.heading_te = r["heading_te"] or ""
+                existing.body_en    = r["body_en"] or ""
+                existing.body_te    = r["body_te"] or ""
+                updated_notes += 1
+            else:
+                n = Note(
+                    chapter_id  = live_ch_id,
+                    section_num = r["section_num"],
+                    heading_en  = r["heading_en"] or "",
+                    heading_te  = r["heading_te"] or "",
+                    body_en     = r["body_en"] or "",
+                    body_te     = r["body_te"] or "",
+                )
+                db.session.add(n)
+                existing_notes_map[key] = n
+                ins["notes"] += 1
 
             # Flush in batches to avoid huge transactions
-            if ins["notes"] % 500 == 0:
+            if (ins["notes"] + updated_notes) % 500 == 0:
                 db.session.flush()
-                print(f"    … {ins['notes']} notes flushed")
+                print(f"    … {ins['notes']} inserted, {updated_notes} updated")
 
         db.session.flush()
-        print(f"  inserted {ins['notes']}, skipped {skipped['notes']}")
+        print(f"  inserted {ins['notes']}, updated {updated_notes}, skipped {skipped['notes']}")
 
         # ── 4. Questions ─────────────────────────────────────────
         import hashlib
@@ -275,16 +263,4 @@ def main():
         for table, count in ins.items():
             print(f"  {table:10s}  inserted {count:5d}  skipped {skipped[table]:5d}")
 
-        # Final live counts
-        print()
-        print("Live DB counts after load:")
-        print(f"  subjects  : {Subject.query.count()}")
-        print(f"  chapters  : {Chapter.query.count()}")
-        print(f"  notes     : {Note.query.count()}")
-        print(f"  questions : {Question.query.count()}")
-
-    src.close()
-
-
-if __name__ == "__main__":
-    main()
+        # Fin
