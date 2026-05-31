@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Parse AP History Notes Â· Admin Â· {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <h1>ð Parse AP History Notes</h1>
+  <p class="subtitle">Re-imports AP History HTML chapter files into the live database.</p>
+</div>
+
+<div style="max-width:640px;margin:2rem auto;">
+  <p>Reads the 12 chapter HTML files from
+     <code>static/notes/AP_History/Chapters/</code> (ch01âch12),
+     extracts each <code>&lt;section&gt;</code> as a Note record, and
+     replaces the existing <em>ap_history</em> chapters + notes in the database.
+  </p>
+  <p><strong>When to use:</strong> after editing any AP History HTML file and
+     pushing to GitHub (Railway will redeploy the file; then click Run here to sync the DB).</p>
+
+  <form method="POST" id="parse-form">
+    <button class="primary-btn" type="submit" id="run-btn">â¶ Run Parse</button>
+  </form>
+
+  <pre id="output" style="margin-top:1.5rem;background:var(--bg-2,#1e1e2e);color:var(--text,#cdd6f4);
+       padding:1rem;border-radius:8px;white-space:pre-wrap;min-height:4rem;display:none;font-size:.85rem;"></pre>
+</div>
+
+<script>
+document.getElementById('parse-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('run-btn');
+  const out = document.getElementById('output');
+  btn.disabled = true;
+  btn.textContent = 'â³ Parsingâ¦ (may take ~30 s)';
+  out.style.display = 'block';
+  out.textContent = '';
+
+  const resp = await fetch(window.location.href, {method:'POST', credentials:'same-origin'});
+  const reader = resp.body.getReader();
+  const decoder = new TextDecoder();
+  while (true) {
+    const {done, value} = await reader.read();
+    if (done) break;
+    out.textContent += decoder.decode(value);
+    out.scrollTop = out.scrollHeight;
+  }
+  btn.textContent = 'â Done';
+});
+</script>
+{% endblock %}
