@@ -1,10 +1,10 @@
 """
 app/routes/admin.py
-Minimal admin CMS â PIN gate + paste-HTML notes editor.
+Minimal admin CMS — PIN gate + paste-HTML notes editor.
 
 Phase 3 scope: paste-HTML + save only.
 PIN: 1234 (change via ADMIN_PIN env var).
-Not production-grade â cookie-based session token.
+Not production-grade — cookie-based session token.
 """
 import hashlib, secrets, subprocess, sys, os
 from flask import (
@@ -18,7 +18,7 @@ from ..models import Subject, Chapter, Note
 
 bp = Blueprint("admin", __name__, url_prefix="/admin")
 
-# ââ HTML tag allowlist (educational bilingual notes) ââââââââââââââ
+# ── HTML tag allowlist (educational bilingual notes) ──────────────
 ALLOWED_TAGS = [
     "p", "br", "hr",
     "h1", "h2", "h3", "h4", "h5", "h6",
@@ -50,7 +50,7 @@ def _sanitize(html: str) -> str:
     )
 
 
-# ââ PIN gate helpers ââââââââââââââââââââââââââââââââââââââââââââââ
+# ── PIN gate helpers ──────────────────────────────────────────────
 
 def _is_authed() -> bool:
     token = session.get("admin_token")
@@ -71,7 +71,7 @@ def _require_auth():
     return None
 
 
-# ââ Routes ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+# ── Routes ────────────────────────────────────────────────────────
 
 @bp.route("/", methods=["GET"])
 def index():
@@ -172,7 +172,7 @@ def notes_edit(chapter_id: int):
     )
 
 
-# ââ One-time seed runner ââââââââââââââââââââââââââââââââââââââââââ
+# ── One-time seed runner ──────────────────────────────────────────
 
 @bp.route("/seed", methods=["GET", "POST"])
 def seed():
@@ -184,7 +184,7 @@ def seed():
     if request.method == "GET":
         return render_template("admin/seed.html")
 
-    # POST â stream the script output back as plain text
+    # POST — stream the script output back as plain text
     scripts_dir = os.path.join(
         os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
         "scripts",
@@ -217,7 +217,7 @@ def seed():
 
 @bp.route("/load-content", methods=["GET", "POST"])
 def load_content():
-    """Run scripts/load_content.py â bulk-loads data/content.db into production DB."""
+    """Run scripts/load_content.py — bulk-loads data/content.db into production DB."""
     guard = _require_auth()
     if guard:
         return guard
@@ -248,9 +248,9 @@ def load_content():
             if proc.returncode == 0:
                 yield "DONE: Content loaded successfully.\n"
             else:
-                yield "ERROR: load_content.py exited with errors â see above.\n"
+                yield "ERROR: load_content.py exited with errors — see above.\n"
         except Exception as exc:
-  2         yield f"ERROR: {exc}\n"
+            yield f"ERROR: {exc}\n"
 
     return Response(generate(), mimetype="text/plain")
 
@@ -263,7 +263,7 @@ def parse_ap_history():
     Re-parse AP History HTML chapter files from static/notes/AP_History/Chapters/
     and reload into the live database.
 
-    Use this whenever the HTML chapter files have been updated and deployed â
+    Use this whenever the HTML chapter files have been updated and deployed —
     it replaces all ap_history chapters + notes with freshly parsed content.
     """
     guard = _require_auth()
@@ -276,7 +276,7 @@ def parse_ap_history():
     scripts_dir = os.path.join(
         os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
         "scripts",
-  2 )
+    )
     script = os.path.join(scripts_dir, "parse_ap_history_notes.py")
 
     def generate():
@@ -296,7 +296,7 @@ def parse_ap_history():
             if proc.returncode == 0:
                 yield "DONE: AP History notes parsed and loaded successfully.\n"
             else:
-                yield "ERROR: parse_ap_history_notes.py exited with errors â see above.\n"
+                yield "ERROR: parse_ap_history_notes.py exited with errors — see above.\n"
         except Exception as exc:
             yield f"ERROR: {exc}\n"
 
