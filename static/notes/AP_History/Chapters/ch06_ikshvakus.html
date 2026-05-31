@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>అధ్యాయం 6 — ఇక్ష్వాకులు (విజయపురి)</title>
+<style>
+
+  /* ===== A4 PRINT PAGE NUMBERS ===== */
+  @page {
+    size: A4;
+    margin: 2cm 1.8cm 2cm 1.8cm;
+    @bottom-center {
+      content: "— Page " counter(page) " —";
+      font-family: 'Liberation Sans', Arial, sans-serif;
+      font-size: 10pt;
+      color: #6b4423;
+    }
+    @top-right {
+      content: "Chapter 6 — Ikshvakus of Vijayapuri";
+      font-family: 'Liberation Sans', Arial, sans-serif;
+      font-size: 9pt;
+      color: #8b4513;
+      font-style: italic;
+    }
+    @bottom-left {
+      content: "APPSC Group I & II — AP History";
+      font-family: 'Liberation Sans', Arial, sans-serif;
+      font-size: 8pt;
+      color: #8b4513;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans Telugu', 'Mandali', 'Gautami', system-ui, -apple-system, sans-serif;
+    line-height: 1.75;
+    color: #3a2410;
+    background: linear-gradient(180deg, #faf6ee 0%, #fefcf7 100%);
+    margin: 0; padding: 0;
+  }
+  .container { max-width: 980px; margin: 0 auto; padding: 24px 28px 80px; }
+  h1 { font-size: 2.1rem; color: #5c3a1c; border-bottom: 3px solid #c97b3a; padding-bottom: 12px; margin-bottom: 4px; line-height: 1.3; }
+  h2 { font-size: 1.55rem; color: #8b4513; margin-top: 2.2rem; margin-bottom: 0.6rem; border-left: 5px solid #c97b3a; padding-left: 12px; line-height: 1.35; }
+  h3 { font-size: 1.22rem; color: #a14217; margin-top: 1.6rem; margin-bottom: 0.4rem; }
+  h4 { font-size: 1.06rem; color: #8b4513; margin-top: 1.1rem; margin-bottom: 0.3rem; }
+  p { margin: 0.6rem 0; }
+  .subtitle { color: #8b4513; font-size: 1.05rem; margin-top: 4px; margin-bottom: 18px; }
+  .eng { font-style: italic; font-size: 0.92em; color: #6b4423; }
+  .imp { color: #a14217; font-weight: 700; }
+  .bold { font-weight: 700; color: #5c3a1c; }
+  ul, ol { margin: 0.4rem 0 0.8rem 0; padding-left: 1.6rem; }
+  li { margin-bottom: 0.35rem; }
+  .nav { background: #f0e3c8; border: 1px solid #d4a017; border-radius: 8px; padding: 14px 18px; margin: 18px 0 28px; font-size: 0.95rem; }
+  .nav strong { color: #5c3a1c; display: block; margin-bottom: 6px; }
+  .nav a { color: #8b4513; text-decoration: none; margin-right: 14px; display: inline-block; padding: 2px 0; }
+  .nav a:hover { text-decoration: underline; color: #a14217; }
+  .section { margin-bottom: 2.4rem; page-break-inside: auto; }
+  .key-box { background: #fff4e0; border-left: 5px solid #c97b3a; padding: 12px 16px; border-radius: 6px; margin: 1rem 0; page-break-inside: avoid; }
+  .tip-box { background: #fef7d8; border-left: 5px solid #d4a017; padding: 12px 16px; border-radius: 6px; margin: 1rem 0; page-break-inside: avoid; }
+  .alert-box { background: #fde9d8; border-left: 5px solid #a14217; padding: 12px 16px; border-radius: 6px; margin: 1rem 0; page-break-inside: avoid; }
+  .info-box { background: #e6f0d8; border-left: 5px solid #7a9d3e; padding: 12px 16px; border-radius: 6px; margin: 1rem 0; page-break-inside: avoid; }
+  .purple-box { background: #ede4f2; border-left: 5px solid #6b4880; padding: 12px 16px; border-radius: 6px; margin: 1rem 0; page-break-inside: avoid; }
+  .brown-box { background: #ede0c8; border-left: 5px solid #8b4513; padding: 12px 16px; border-radius: 6px; margin: 1rem 0; page-break-inside: avoid; }
+  .key-box strong, .tip-box strong, .alert-box strong, .info-box strong, .purple-box strong, .brown-box strong { color: #5c3a1c; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; page-break-inside: auto; }
+  th, td { border: 1px solid #c9a878; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #ede0c8; color: #5c3a1c; font-weight: 700; }
+  tr:nth-child(even) td { background: #faf3e3; }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; orphans: 3; widows: 3; }
+  .king-card { background: #fff8e7; border: 1px solid #d4a017; border-radius: 8px; padding: 14px 16px; margin: 1rem 0; page-break-inside: avoid; }
+  .king-card h4 { margin-top: 0; color: #8b4513; border-bottom: 1px solid #d4a017; padding-bottom: 4px; }
+  .king-card .meta { font-size: 0.88rem; color: #6b4423; margin-bottom: 8px; }
+  .chip { display: inline-block; padding: 2px 9px; border-radius: 12px; font-size: 0.82rem; font-weight: 700; margin: 2px 4px 2px 0; background: #ede0c8; color: #5c3a1c; }
+  .chip.red { background: #f4d4c4; color: #a14217; }
+  .chip.green { background: #d8e8c4; color: #4a6b1f; }
+  .chip.gold { background: #f4e4a8; color: #7c5a07; }
+  .chip.purple { background: #e0d4ea; color: #5c3a8b; }
+  .chip.blue { background: #d4e0ed; color: #2c4a6b; }
+  .svg-wrap { text-align: center; margin: 1.4rem 0; padding: 10px; background: #fff8e7; border: 1px solid #d4a017; border-radius: 8px; page-break-inside: avoid; overflow-x: auto; }
+  .svg-wrap svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  .svg-caption { font-size: 0.88rem; color: #6b4423; margin-top: 6px; font-style: italic; text-align: center; }
+  .map-wrap { text-align: center; margin: 1.4rem 0; padding: 10px; background: #fff8e7; border: 1px solid #d4a017; border-radius: 8px; page-break-inside: avoid; }
+  .map-wrap img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 4px; }
+  footer { text-align: center; margin-top: 50px; padding-top: 18px; border-top: 1px solid #d4a017; color: #6b4423; font-size: 0.88rem; }
+  @media (max-width: 680px) {
+    .container { padding: 14px 14px 50px; }
+    h1 { font-size: 1.55rem; } h2 { font-size: 1.25rem; } h3 { font-size: 1.08rem; }
+    body { font-size: 0.96rem; } table { font-size: 0.86rem; }
+    th, td { padding: 6px 7px; } .nav a { display: block; margin: 4px 0; }
+  }
+  @media print {
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>అధ్యాయం 6 — ఇక్ష్వాకులు (విజయపురి)</h1>
+<p class="subtitle">శాతవాహన అనంతరం కృష్ణా లోయలో 85 ఏళ్ళ బౌద్ధ-బ్రాహ్మణ సంయోగ సామ్రాజ్యం <span class="eng">(c. 225-310 CE)</span></p>
+
+<div class="nav">
+<strong>విషయసూచిక <span class="eng">(Contents)</span></strong>
+<a href="#sec1">1. పరిచయం</a>
+<a href="#sec2">2. పదకోశం</a>
+<a href="#sec3">3. వంశ మూలాలు</a>
+<a href="#sec4">4. రాజధాని విజయపురి</a>
+<a href="#sec5">5. చారిత్రక ఆధారాలు</a>
+<a href="#sec6">6. రాజవంశం</a>
+<a href="#sec7">7. చామ్తముల I</a>
+<a href="#sec8">8. వీరపురుషదత్త</a>
+<a href="#sec9">9. ఎహువుల చామ్తముల II</a>
+<a href="#sec10">10. రుద్రపురుషదత్త</a>
+<a href="#sec11">11. శాసనాలు</a>
+<a href="#sec12">12. రాణుల పాత్ర</a>
+<a href="#sec13">13. పరిపాలన</a>
+<a href="#sec14">14. సాంఘిక-ఆర్థిక జీవితం</a>
+<a href="#sec15">15. మతం — ద్వంద్వ నిర్మాణం</a>
+<a href="#sec16">16. విజయపురి నగర నిర్మాణం</a>
+<a href="#sec17">17. మహాచైత్యం</a>
+<a href="#sec18">18. ఇక్ష్వాకు కళ</a>
+<a href="#sec19">19. AP లో ఇక్ష్వాకు స్థలాలు</a>
+<a href="#sec20">20. పతనం &amp; వారసులు</a>
+<a href="#sec21">21. సారాంశం</a>
+</div>
+
+<!-- ============== SECTION 1 ============== -->
+<div class="section" id="sec1">
+<h2>1. పరిచయం <span class="eng">(Introduction)</span></h2>
+
+<p>శాతవాహన సామ్రాజ్యం సుమారు క్రీ.శ. 225లో అంతరించిన తర్వాత కృష్ణా లోయలో ఏర్పడిన శూన్యతను పూరించిన తొలి ప్రధాన రాజవంశం <span class="imp">ఇక్ష్వాకులు</span> <span class="eng">(Ikshvakus)</span>. వీరు సుమారు క్రీ.శ. 225 నుండి 310 వరకు — అంటే సుమారు <span class="bold">82-85 ఏళ్ళు</span> — దక్షిణ కృష్ణా లోయలో పరిపాలించారు. వారి రాజధాని <span class="imp">విజయపురి</span> <span class="eng">(Vijayapuri)</span>, ఆధునిక నాగార్జునకొండ ప్రాంతానికి సమీపంలో. శాసనాలలో ఈ రాజధాని "సిరిపర్వతే విజయపురే" <span class="eng">(Siriparvate Vijayapure)</span> అని పేర్కొనబడింది — అంటే శ్రీపర్వతంపై విజయపురి అని. కేవలు నలుగురు రాజులతో చిన్న వంశమైనప్పటికీ, ఈ రాజవంశం భారత చరిత్రలో అపూర్వమైన ముద్ర వేసింది.</p>
+
+<p>ఇక్ష్వాకు రాజవంశ ప్రాముఖ్యత అనేక కారణాల వలన అసాధారణమైనది. మొదటగా, శాతవాహన అనంతరం ఆంధ్రప్రాంతంలో స్థిరపడిన <span class="bold">తొలి స్వతంత్ర సామ్రాజ్యం</span>. రెండవది, వీరి కాలంలో విజయపురి దక్షిణ భారతదేశంలో <span class="bold">అతి పెద్ద బౌద్ధ కేంద్రంగా</span> రూపొందింది — 30కి పైగా బౌద్ధ విహారాలు, అనేక చైత్యాలు, స్తూపాలు ఇక్కడ నిర్మించబడ్డాయి. మూడవది, ఈ వంశంలో ఒక విలక్షణమైన లక్షణం గోచరిస్తుంది: <span class="bold">రాజులు బ్రాహ్మణ యజ్ఞాలు చేశారు, రాణులు బౌద్ధాన్ని పోషించారు</span> — ఈ ద్వంద్వ-ధర్మ నమూనా భారతీయ చరిత్రలో అత్యంత అరుదైనది. నాలుగవది, వీరి కాలంలో విజయపురిలో శ్రీలంక, కశ్మీర, గంధార, యవన, చైనా, కళింగ తదితర దేశాల నుండి బౌద్ధ సన్యాసులు వచ్చారు — ఇది అంతర్జాతీయ బౌద్ధ పీఠంగా విజయపురి పాత్రను తెలుపుతుంది. తదుపరి కాలంలో వచ్చిన పల్లవులు, బ్రహత్ఫలాయనులు, సాలంకాయనులు అందరూ ఈ ఇక్ష్వాకుల నేల నుండే ఉద్భవించారు.</p>
+
+<div class="info-box">
+<strong>ఎందుకు చదవాలి? <span class="eng">(Why This Dynasty Matters for APPSC)</span></strong>
+<ul>
+<li><span class="bold">APPSC Group I &amp; II పాత ప్రశ్నలలో</span> ఈ వంశం నుండి స్థిరంగా 3–5 ప్రశ్నలు వస్తాయి — రాజుల పేర్లు, శాసనాలు, బౌద్ధ కేంద్రాలు, మహాచైత్య నిర్మాణం.</li>
+<li><span class="bold">మహాచైత్యం</span> <span class="eng">(Mahachaitya)</span> — నాగార్జునకొండ స్తూపం — AP రాష్ట్ర చిహ్నాలలో ఒకటి; ప్రపంచ వారసత్వ ప్రతిపాదిత జాబితాలో (2014) చేర్చబడింది.</li>
+<li><span class="bold">పాటగండిగుడెం రాగి శాసనాలు</span> <span class="eng">(Patagandigudem copper plates)</span> — భారత ఉపఖండంలో <span class="imp">అత్యంత పురాతనమైన రాగి-రేకు దాన-శాసనం (మాధ్యమం దృష్ట్యా; భాష ప్రధానంగా ప్రాకృతం, సంస్కృత ఆవాహన మాత్రమే; పూర్తి-సంస్కృత హిరహదగల్లి శాసనం కొంత తర్వాతిది)</span> ఈ వంశానికి చెందినది.</li>
+<li><span class="bold">వంశ నామ సంప్రదాయం</span> (మాతృనామాలు) అర్థం చేసుకుంటే శాతవాహన-ఇక్ష్వాకు నిరంతరత స్పష్టమవుతుంది.</li>
+<li><span class="bold">నాగార్జునసాగర్ జలాశయం</span> నిర్మాణం వల్ల ముంపుకు గురైన ఈ స్థలాన్ని AP చరిత్ర పరిచయంలో తప్పక అర్థం చేసుకోవాలి.</li>
+</ul>
+</div>
+
+<div class="key-box">
+<strong>త్వరిత వాస్తవాలు <span class="eng">(Quick Facts)</span></strong>
+<ul>
+<li><span class="bold">జాతి/వంశ వాదన:</span> సూర్యవంశ ఇక్ష్వాకు <span class="eng">(Solar Ikshvaku)</span> వంశీయులమని వారి వాదన; చారిత్రకంగా నిరూపించబడలేదు</li>
+<li><span class="bold">కాలం:</span> సుమారు క్రీ.శ. 225 – 310 (~82-85 ఏళ్ళు)</li>
+<li><span class="bold">రాజధాని:</span> విజయపురి <span class="eng">(Vijayapuri)</span> — ఆధునిక నాగార్జునకొండ</li>
+<li><span class="bold">స్థాపకుడు:</span> వాశిష్ఠీపుత్ర సిరి చామ్తముల I <span class="eng">(Vasishthiputra Siri Chamtamula I)</span></li>
+<li><span class="bold">చివరి రాజు:</span> వాశిష్ఠీపుత్ర రుద్రపురుషదత్త <span class="eng">(Vasishthiputra Rudrapurushadatta)</span></li>
+<li><span class="bold">రాజుల మతం:</span> బ్రాహ్మణ-వైదిక <span class="eng">(Vedic Brahmanical)</span> (అశ్వమేధ, వాజపేయ యజ్ఞాలు); రాణులు బౌద్ధ పోషకులు</li>
+<li><span class="bold">ముఖ్య స్థలం:</span> విజయపురి (మహాచైత్యం, 30+ విహారాలు) — ఇప్పుడు నాగార్జునసాగర్ జలాశయంలో మునిగిపోయింది</li>
+<li><span class="bold">పతన కారణం:</span> పల్లవ రాజు సింహవర్మ విజయపురి స్వాధీనం; అభీర దండయాత్ర (అనిశ్చితం)</li>
+</ul>
+</div>
+
+</div>
+
+<!-- ============== SECTION 2 ============== -->
+<div class="section" id="sec2">
+<h2>2. పదకోశం <span class="eng">(Glossary)</span></h2>
+
+<h3>2.1 సాధారణ పదాలు — నిర్మాణ, లిపి, వాస్తు పదకోశం <span class="eng">(General Terms)</span></h3>
+
+<table>
+<thead><tr><th>తెలుగు పదం</th><th>ఆంగ్లం <span class="eng">(English)</span></th><th>వివరణ</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">బ్రాహ్మీ లిపి</span></td>
+  <td><span class="eng">Brahmi Script</span></td>
+  <td>ఇక్ష్వాకు శాసనాలలో ఉపయోగించిన లిపి; ఎడమ నుండి కుడికి చదువుతారు; ప్రాచీన భారత లిపులలో అత్యంత ముఖ్యమైనది</td>
+</tr>
+<tr>
+  <td><span class="bold">ప్రాకృతం</span></td>
+  <td><span class="eng">Prakrit</span></td>
+  <td>ఇక్ష్వాకు శాసనాల ప్రధాన భాష; సంస్కృతానికి ప్రజా రూపం. <span class="imp">సంస్కృతం కేవలం చివరి శాసనాలలో మాత్రమే</span></td>
+</tr>
+<tr>
+  <td><span class="bold">మాతృనామం</span></td>
+  <td><span class="eng">Matronymic</span></td>
+  <td>తల్లి పేరుతో కుమారుడిని పిలిచే సంప్రదాయం. "వాశిష్ఠీపుత్ర" = వాశిష్ఠి కుమారుడు; "మాతరీపుత్ర" = మాతరి కుమారుడు</td>
+</tr>
+<tr>
+  <td><span class="bold">ధాతు-గర్భ</span></td>
+  <td><span class="eng">Dhatu-garbha (Relic Chamber)</span></td>
+  <td>స్తూపంలో బుద్ధుని అవశేషాలు (ధాతువులు) భద్రపరచే ముఖ్య కక్ష్య. నాగార్జునకొండ మహాచైత్యంలో వాయవ్య దిక్కు పైన దొరికింది</td>
+</tr>
+<tr>
+  <td><span class="bold">చైత్యం</span></td>
+  <td><span class="eng">Chaitya</span></td>
+  <td>బుద్ధుడి స్తూపం లేదా పూజా మందిరం; ఇక్ష్వాకు కాలంలో ఇవి సర్వత్రా నిర్మించబడ్డాయి</td>
+</tr>
+<tr>
+  <td><span class="bold">విహారం</span></td>
+  <td><span class="eng">Vihara</span></td>
+  <td>బౌద్ధ సన్యాసులు నివాసం చేసే ఆశ్రమం / మఠం. విజయపురిలో 30కి పైగా విహారాలు దొరికాయి</td>
+</tr>
+<tr>
+  <td><span class="bold">స్తూపం</span></td>
+  <td><span class="eng">Stupa</span></td>
+  <td>బుద్ధుని ధాతువులు లేదా స్మరణకు నిర్మించిన అర్ధగోళాకార ఇటుక-రాతి సమాధి. మహాచైత్యం ఒక భారీ స్తూపం</td>
+</tr>
+<tr>
+  <td><span class="bold">ఆయక స్తంభం</span></td>
+  <td><span class="eng">Ayaka Pillar</span></td>
+  <td>స్తూపానికి నాలుగు దిక్కులలో వేదికలపై నిలిపిన ఐదేసి స్తంభాలు (మొత్తం 20). బుద్ధుని ఐదు ముఖ్య ఘట్టాలకు సంకేతం. ఇక్ష్వాకు నిర్మాణ విశేషం</td>
+</tr>
+<tr>
+  <td><span class="bold">హర్మికా</span></td>
+  <td><span class="eng">Harmika</span></td>
+  <td>స్తూపం శీర్షంపై చతురస్రాకార రాతి చట్రం; యష్టి (గొడుగు మాస్ట్)కు ఆధారం</td>
+</tr>
+<tr>
+  <td><span class="bold">వేదిక</span></td>
+  <td><span class="eng">Vedika (Railing)</span></td>
+  <td>స్తూపం చుట్టూ నిర్మించిన రక్షణ-అలంకరణ కంచె. నాగార్జునకొండలో <span class="imp">కలప-ఇటుక</span> వేదిక — అమరావతిలో వలె రాతి వేదిక కాదు</td>
+</tr>
+<tr>
+  <td><span class="bold">యష్టి</span></td>
+  <td><span class="eng">Yashti (Umbrella Mast)</span></td>
+  <td>స్తూప శిఖరంపైన మాస్ట్; దానిపై ఛత్రాలు (గొడుగులు) అమరుస్తారు</td>
+</tr>
+<tr>
+  <td><span class="bold">చూనం</span></td>
+  <td><span class="eng">Chunam (Shell-lime Plaster)</span></td>
+  <td>శంఖాల నుండి తయారైన సున్నం. స్తూప బాహ్య తలాన్ని నున్నగా పూతపోస్తారు. ఆంధ్ర శిల్పకళ విశేషం</td>
+</tr>
+<tr>
+  <td><span class="bold">మహాచైత్యం</span></td>
+  <td><span class="eng">Mahachaitya (Great Stupa)</span></td>
+  <td>విజయపురిలో నిర్మించబడిన అతి పెద్ద బౌద్ధ స్తూపం; వ్యాసం సుమారు 32.3 మీటర్లు; చామ్తిసిరి 10 సంవత్సరాలు పోషించింది</td>
+</tr>
+<tr>
+  <td><span class="bold">ద్వారపాలుడు</span></td>
+  <td><span class="eng">Dvarapala (Door Guardian)</span></td>
+  <td>ద్వార రక్షక శిల్పాలు. విజయపురి రాజభవనంలో శక (స్కైథియన్) ద్వారపాల శిల్పాలు దొరికాయి — వీరపురుషదత్త శక రాజకుమారిని వివాహం చేసుకున్నందుకు సంకేతం</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2 వంశ + మత పదకోశం <span class="eng">(Dynastic and Religious Terms)</span></h3>
+
+<table>
+<thead><tr><th>పదం</th><th>అర్థం / వివరణ</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">విభజ్యవాద</span> <span class="eng">(Vibhajyavada)</span></td>
+  <td>థేరవాద <span class="eng">(Theravada)</span>కు అనుసంధానమైన బౌద్ధ శాఖ. విజయపురి సైట్ 38 విహారం ఈ శాఖకు చెందిన కశ్మీర, గంధార, యవన సన్యాసులకు నిలయంగా ఉండేది</td>
+</tr>
+<tr>
+  <td><span class="bold">బహుశ్రుతీయ</span> <span class="eng">(Bahushrutiya)</span></td>
+  <td>మహాసాంఘిక <span class="eng">(Mahasamghika)</span> ఉప-శాఖ. ఎహువుల చామ్తముల II రాణి మహాదేవి భట్టిదేవ ఈ శాఖకు విహారం దానం చేసింది</td>
+</tr>
+<tr>
+  <td><span class="bold">అపరమహావినసేలీయ</span> <span class="eng">(Aparamahavinaseliya)</span></td>
+  <td>మహాసాంఘిక ఉప-శాఖ. ఉపాసిక చంద్రశ్రీ ఎహువుల కాలంలో ఈ శాఖకు దానాలు చేసింది</td>
+</tr>
+<tr>
+  <td><span class="bold">మహిషాసక</span> <span class="eng">(Mahishasaka)</span></td>
+  <td>స్థవిర <span class="eng">(Sthavira)</span> సంప్రదాయానికి చెందిన బౌద్ధ శాఖ. వీరపురుషదత్త కుమార్తె మహాదేవి కోదబలిశ్రీ ఈ శాఖకు మఠం నిర్మించింది</td>
+</tr>
+<tr>
+  <td><span class="bold">మహావిహారవాసిన్ / థేరవాద</span> <span class="eng">(Mahaviharavasin / Theravada)</span></td>
+  <td>శ్రీలంక (తంపమ్నిదీప) థేరవాద సన్యాసులు. బోధిసిరి వీరికి కంటకసేల వద్ద చైత్యం + వరండాల సభాగృహం నిర్మించింది</td>
+</tr>
+<tr>
+  <td><span class="bold">మహాసాంఘిక</span> <span class="eng">(Mahasamghika)</span></td>
+  <td>థేరవాదానికి భిన్నమైన బౌద్ధ శాఖ; బహుశ్రుతీయ, అపరమహావినసేలీయ ఈ శాఖ ఉప-విభాగాలు</td>
+</tr>
+<tr>
+  <td><span class="bold">మహాసేనాపతి</span> <span class="eng">(Mahasenapati)</span></td>
+  <td>ప్రధాన సేనాధిపతి / సైన్యాధ్యక్షుడు. ఖందవిశాఖ (దానక కుటుంబం) ఉదాహరణ — రాజపుత్రికను వివాహం చేసుకోవడం ద్వారా సైనిక అభిజాత్యాన్ని రాజ కుటుంబంతో కలిపారు</td>
+</tr>
+<tr>
+  <td><span class="bold">మహాతలవర</span> <span class="eng">(Mahatalavara)</span></td>
+  <td>ప్రాంతీయ పాలనా అధికారి; ఇక్ష్వాకు పరిపాలనలో ముఖ్య హోదా</td>
+</tr>
+<tr>
+  <td><span class="bold">ఉపాసిక</span> <span class="eng">(Upasika)</span></td>
+  <td>బుద్ధుడిని విశ్వసించే గృహస్థ స్త్రీ; సన్యాసిని కాదు. బోధిసిరి, చంద్రశ్రీ ఉపాసికలు — వీరు నేరుగా బౌద్ధ సంఘాలకు దానం చేశారు</td>
+</tr>
+<tr>
+  <td><span class="bold">ధమ్మకథిక</span> <span class="eng">(Dhammakathika)</span></td>
+  <td>ధర్మ ఉపదేశకుడు / బౌద్ధ ప్రసంగీకుడు; విజయపురి శాసనాలలో ప్రస్తావన</td>
+</tr>
+<tr>
+  <td><span class="bold">అవభృథ</span> <span class="eng">(Avabhritha)</span></td>
+  <td>అశ్వమేధ యజ్ఞం తర్వాత స్నానం చేయించే పవిత్రీకరణ తొట్టె <span class="eng">(purificatory tank)</span>. చామ్తముల I నిర్వహించిన అశ్వమేధానికి సంబంధించిన తొట్టె విజయపురిలో దొరికింది</td>
+</tr>
+<tr>
+  <td><span class="bold">కూర్మ-చితి</span> <span class="eng">(Kurma-chiti)</span></td>
+  <td>తాబేలు ఆకారపు యజ్ఞ వేదిక <span class="eng">(tortoise-shaped altar)</span>. చామ్తముల I అశ్వమేధం నిర్వహించినట్లు పురావస్తు ఆధారంగా ధృవీకరించే వస్తువు</td>
+</tr>
+<tr>
+  <td><span class="bold">అశ్వమేధ యజ్ఞం</span> <span class="eng">(Ashvamedha)</span></td>
+  <td>గుర్రాన్ని ఒక సంవత్సరం స్వేచ్ఛగా విడిచి, దానిని అడ్డుకున్న రాజులను జయించి తిరిగి తీసుకువచ్చి బలి ఇచ్చే చక్రవర్తి యజ్ఞం. చామ్తముల I ఈ యజ్ఞం జరిపినట్లు శాసన ఆధారాలున్నాయి</td>
+</tr>
+<tr>
+  <td><span class="bold">వాజపేయ యజ్ఞం</span> <span class="eng">(Vajapeya)</span></td>
+  <td>రథ పందెం + 17 జంతువుల బలి జరిపే క్షత్రియ సార్వభౌమత్వ యజ్ఞం. చామ్తముల I ఈ యజ్ఞం కూడా జరిపాడు</td>
+</tr>
+<tr>
+  <td><span class="bold">అగ్నిష్టోమ యజ్ఞం</span> <span class="eng">(Agnishtoma)</span></td>
+  <td>సోమరసం అర్పించే వైదిక యజ్ఞం. చామ్తముల I జరిపిన యజ్ఞాలలో ఒకటి</td>
+</tr>
+<tr>
+  <td><span class="bold">ఛాయా-స్తంభం</span> <span class="eng">(Chhaya-stambha / Memorial Pillar)</span></td>
+  <td>మరణించిన వ్యక్తి స్మారకంగా నిలిపే స్తంభం. విజయపురి అంతటా పలు ఛాయా-స్తంభాలు దొరికాయి; రుద్రపురుషదత్త కాలంలో అతని తల్లి వమ్మభట్టకు ఒకటి నిలిపారు</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<!-- ============== SECTION 3 ============== -->
+<div class="section" id="sec3">
+<h2>3. వంశ మూలాలు — సూర్యవంశీయ ఇక్ష్వాకుల వాదన <span class="eng">(Origins)</span></h2>
+
+<h3>3.1 సూర్యవంశ వాదన — ఒక వంశ అస్తిత్వ దాఖలు <span class="eng">(Solar Ikshvaku Claim)</span></h3>
+
+<p>ఇక్ష్వాకు రాజులు, ముఖ్యంగా మూడవ రాజు ఎహువుల చామ్తముల II యొక్క శాసనాలు, తమను <span class="imp">సూర్యవంశ ఇక్ష్వాకు వంశీయులు</span> <span class="eng">(Solar-line Ikshvakus)</span> అని పేర్కొంటాయి — అయోధ్య ఇక్ష్వాకు వంశానికి వారసులమని వారి వాదన. ఈ వంశం రామాయణంలోని శ్రీరామచంద్రుడి వంశంగా హిందూ పురాణాలలో పేరు పొందింది. విజయపురి ఇక్ష్వాకులు ఈ పౌరాణిక హోదాను తమ రాజకీయ చట్రబద్ధతకు ఉపయోగించుకున్నారు. <span class="bold">అయితే ఈ వంశ వాదన ఒక రాజకీయ ప్రకటన మాత్రమే; చారిత్రకంగా నిరూపించబడలేదు.</span> ఇది ఆనాటి రాజవంశాలు తమ అధికారానికి పురాణ ఆధారం కల్పించుకునే సాధారణ పద్ధతి.</p>
+
+<h3>3.2 పార్గిటర్ అభిప్రాయం — ద్రావిడ మూలాల ప్రశ్న <span class="eng">(Pargiter's View)</span></h3>
+
+<p>చారిత్రకుడు <span class="bold">F.E. పార్గిటర్</span> <span class="eng">(F.E. Pargiter)</span> ఒక భిన్నమైన దృక్కోణం ప్రతిపాదించాడు: మూల ఇక్ష్వాకులు వాస్తవానికి ద్రావిడ జాతికి చెందిన వారు; రామాయణ-పురాణ సాహిత్యం తదుపరి కాలంలో వారిని సూర్యవంశ అయోధ్య వంశంతో అనుసంధించింది. అంటే, విజయపురి ఇక్ష్వాకులు మూలతః ఆంధ్ర ప్రాంత స్థానిక రాజకీయ శక్తి; పురాణ "సూర్యవంశ" అనుసంధానం తదుపరి సాంస్కృతిక ఆర్యీకరణ ఫలితం అని పార్గిటర్ అభిప్రాయం. ఈ దృక్కోణం ఆంధ్ర ప్రాంతంలో వారి ఆవిర్భావానికి స్థానిక నేల సంబంధాన్ని నొక్కి చెప్పుతుంది.</p>
+
+<h3>3.3 పురాణ గుర్తింపు — "శ్రీపార్వతీయ ఆంధ్రులు" <span class="eng">(Puranic "Shriparvatiya Andhras")</span></h3>
+
+<p>మత్స్య పురాణం <span class="eng">(Matsya Purana)</span> "శ్రీపార్వతీయ ఆంధ్రులు" <span class="eng">(Shriparvatiya Andhras)</span> అనే రాజవంశాన్ని పేర్కొంటుంది — అంటే "శ్రీపర్వతంపై ఆంధ్ర పాలకులు" అని. ఆధునిక పరిశోధకులు ఈ వర్ణనను విజయపురి ఇక్ష్వాకులతో సమానం చేశారు, ఎందుకంటే ఈ వంశం యొక్క శాసనాలు పదే పదే <span class="bold">"సిరిపర్వతే విజయపురే"</span> అని రాసుకున్నాయి — అంటే "శ్రీపర్వతంపై విజయపురి" అని. పురాణ పేరు మరియు శాసనాల భాష ఒకే స్థలాన్ని సూచిస్తున్నాయి. ఈ అనుసంధానం దాదాపు నిశ్చయంగా పరిగణించబడుతోంది.</p>
+
+<h3>3.4 శాతవాహనులతో సంబంధం — భౌగోళిక వారసత్వం <span class="eng">(Relation to Satavahanas)</span></h3>
+
+<p>ఇక్ష్వాకులు శాతవాహన సామ్రాజ్యం తర్వాత ఒకే ప్రాంతంలో పాలించిన రాజవంశం — అందువలన వారు శాతవాహనుల <span class="bold">భౌగోళిక వారసులు</span> <span class="eng">(geographic successors)</span>. నాగార్జునకొండలో జరిపిన తవ్వకాలలో శాతవాహన నాణేలు (గౌతమీపుత్ర, పులుమావి, యజ్ఞ శాతకర్ణి కాలంవి) మరియు ఒక గౌతమీపుత్ర విజయ శాతకర్ణి శాసనం దొరికాయి — ఇవి ఈ స్థలంలో శాతవాహన ఉనికిని నిరూపిస్తాయి. అయితే, ఇక్ష్వాకులు శాతవాహనులకు సామంతులని నిరూపించే ఆధారం ఏదీ లేదు. వారు శాతవాహన పతనం తర్వాత ఏర్పడిన రాజకీయ శూన్యాన్ని పూరించారు — శాతవాహన అనుమతితో కాదు, స్వతంత్రంగా.</p>
+
+<h3>3.5 "ఆంధ్ర ఇక్ష్వాకులు" — ఏ పేరు వాడాలి? <span class="eng">(Nomenclature)</span></h3>
+
+<p>చారిత్రకులు ఈ రాజవంశాన్ని "ఆంధ్ర ఇక్ష్వాకులు" <span class="eng">(Andhra Ikshvakus)</span> లేదా "విజయపురి ఇక్ష్వాకులు" <span class="eng">(Ikshvakus of Vijayapuri)</span> అని పిలుస్తారు. ఈ విశేషణాలు పౌరాణిక అయోధ్య ఇక్ష్వాకు వంశం నుండి వేరు చేయడానికి ఉపయోగపడతాయి. రాముడి వంశమైన ఆర్య ఇక్ష్వాకులు ఉత్తర భారతంలో ఉన్నారు; ఆంధ్ర ఇక్ష్వాకులు కృష్ణా లోయకు చెందినవారు — ఇవి రెండు వేర్వేరు రాజకీయ సమూహాలు.</p>
+
+<div class="alert-box">
+<strong>సాధారణ తప్పిదం <span class="eng">(Common Mistake)</span> — జాగ్రత్త!</strong>
+<p>"ఇక్ష్వాకులు శాతవాహన సామంతులు" అని చెప్పడం <span class="imp">తప్పు</span>. ఇది పాత పాఠ్యపుస్తకాల అతిగా సరళీకృత వాదన. వాస్తవంలో, ఇక్ష్వాకులు శాతవాహన సామంతులు అని నిరూపించే శాసన, నాణెం, లేదా పురావస్తు ఆధారం ఏదీ లేదు. వారు శాతవాహన అనంతరం స్వతంత్రంగా ఆవిర్భవించిన రాజవంశం. "సామంతుల నుండి స్వాతంత్య్రం తీసుకున్నారు" అని కాదు — "ఆ ప్రాంతంలో అధికారాన్ని స్వతంత్రంగా స్థాపించారు" అని మాత్రమే చెప్పవచ్చు.</p>
+</div>
+
+</div>
+
+<!-- ============== SECTION 4 ============== -->
+<div class="section" id="sec4">
+<h2>4. రాజధాని విజయపురి <span class="eng">(Capital — Vijayapuri / Nagarjunakonda)</span></h2>
+
+<h3>4.1 అసలు పేరు మరియు ఆధునిక పేరు <span class="eng">(Original Name vs Modern Name)</span></h3>
+
+<p>ఇక్ష్వాకు కాలంలో ఈ నగరానికి <span class="imp">విజయపురి</span> అని పేరు. వారి శాసనాలన్నీ "సిరిపర్వతే విజయపురే" <span class="eng">(Siriparvate Vijayapure)</span> అని రాశాయి — అంటే "శ్రీపర్వతంపై విజయపురి" అని. "విజయపురి" అంటే విజయం యొక్క నగరం. <span class="bold">ఆధునిక "నాగార్జునకొండ" అనే పేరు మధ్యకాలంలో ఏర్పడింది</span> — మహాయాన బౌద్ధ తత్త్వవేత్త నాగార్జునుడి పేరు మీద. అయితే నాగార్జునుడికి ఈ స్థలానికి ప్రత్యక్ష సంబంధం నిరూపించబడలేదు; ఆ అనుసంధానం తప్పుగా ఏర్పడిన ఒక మధ్యకాల నిర్ణయం. APPSC పరీక్షలలో <span class="imp">ఇక్ష్వాకుల రాజధాని పేరు "విజయపురి"</span> అని రాయడం నిర్ధుష్టం.</p>
+
+<h3>4.2 భౌగోళికత <span class="eng">(Geography)</span></h3>
+
+<p>విజయపురి దక్షిణ కృష్ణా లోయలో, నల్లమల కొండల ఉపశాఖలైన శ్రీపర్వత కొండల మధ్య లోయలో ఉంది. ఈ లోయకు మూడు వైపులా కొండలు, ఒక వైపున కృష్ణానది ఆవరించి సహజ రక్షణగా నిలిచాయి. ఆధునిక పరిపాలనలో ఇది <span class="bold">పల్నాడు జిల్లా, మాచర్ల మండలం</span>, ఆంధ్రప్రదేశ్‌లో భాగం. స్థల స్థానాంకాలు: <span class="bold">16°31'ఉ. 79°14'తూ.</span> <span class="eng">(16°31'N 79°14'E)</span>. కృష్ణానది ఈ స్థలానికి ఉత్తర దిక్కున ప్రవహించి సహజ రేవు ఏర్పడింది — పురాతన వాణిజ్యానికి, బౌద్ధ సన్యాసుల రాకపోకలకు ఇది సహాయపడింది.</p>
+
+<h3>4.3 నాగార్జునసాగర్ ముంపు <span class="eng">(Submersion under Nagarjuna Sagar)</span></h3>
+
+<p>స్వాతంత్య్రానంతర భారతదేశంలో కృష్ణా నదిపై నాగార్జునసాగర్ జలాశయం నిర్మాణం 1955లో మొదలై 1967లో పూర్తయింది. ఈ ఆనకట్ట నీటి నిండికితో విజయపురి మొత్తం మునిగిపోయింది — సుమారు 1960 నాటికి పూర్తి ముంపు జరిగింది. <span class="bold">ఇప్పుడు మిగిలి ఉన్నది నాగార్జునకొండ ద్వీపం</span> మాత్రమే — అది పూర్వం నాగార్జున కొండ అనే కొండ శిఖరం; ఇప్పుడు జలాశయంలో ద్వీపంగా మిగిలింది. ఈ ద్వీపంపై పునర్నిర్మించిన స్తూపాలు, విహారాలు మరియు 1966లో ప్రారంభమైన సంగ్రహాలయం ఉన్నాయి. రాజభవన పునాదులు, చిన్న స్తూపాలు, ఓడరేవు నిర్మాణాలు శాశ్వతంగా మునిగిపోయాయి.</p>
+
+<h3>4.4 పునరాగమన కాలక్రమం — 1926 నుండి 2014 వరకు <span class="eng">(Rediscovery Timeline)</span></h3>
+
+<table>
+<thead><tr><th>సంవత్సరం</th><th>సంఘటన</th><th>ముఖ్య వ్యక్తి / సంస్థ</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">1926</span></td>
+  <td>స్థానిక పాఠశాల ఉపాధ్యాయుడు సురపరాజు వెంకటరామయ్య ఒక స్తంభాన్ని గుర్తించాడు; ఫ్రెంచ్ పురావస్తు శాస్త్రవేత్త గాబ్రియేల్ జువో-దుబ్రేయి <span class="eng">(Gabriel Jouveau-Dubreuil)</span> తొలి అన్వేషణ జరిపాడు</td>
+  <td>వెంకటరామయ్య; జువో-దుబ్రేయి</td>
+</tr>
+<tr>
+  <td><span class="bold">1927–1931</span></td>
+  <td>ASI తరపున <span class="bold">A.H. లాంగ్‌హర్స్ట్</span> <span class="eng">(A.H. Longhurst)</span> క్రమబద్ధ తవ్వకాలు జరిపాడు; మహాచైత్యం, అనేక విహారాలు వెలుగులోకి వచ్చాయి</td>
+  <td>లాంగ్‌హర్స్ట్, ASI</td>
+</tr>
+<tr>
+  <td><span class="bold">1929–1930</span></td>
+  <td><span class="imp">J.Ph. వోగెల్</span> <span class="eng">(J.Ph. Vogel)</span> ప్రాకృత శాసనాలను <span class="bold">ఎపిగ్రాఫియా ఇండికా</span> <span class="eng">(Epigraphia Indica)</span> సంపుటి XX లో ప్రచురించాడు — ఇది ఇక్ష్వాకులను ఒక స్వతంత్ర రాజవంశంగా <span class="imp">మొట్టమొదట గుర్తించిన</span> పరిశోధన</td>
+  <td>J.Ph. వోగెల్</td>
+</tr>
+<tr>
+  <td><span class="bold">1938</span></td>
+  <td>T.N. రామచంద్రన్ <span class="eng">(T.N. Ramachandran)</span> రెండవ అన్వేషణ; MASI 54 నివేదిక</td>
+  <td>రామచంద్రన్, ASI</td>
+</tr>
+<tr>
+  <td><span class="bold">1954–1960</span></td>
+  <td>జలాశయ నిర్మాణానికి ముందు <span class="bold">R. సుబ్రహ్మణ్యం</span> <span class="eng">(R. Subrahmanyam)</span> నేతృత్వంలో అత్యవసర రక్షణ తవ్వకాలు; నిర్మాణ అవశేషాలు పొరుగు ప్రాంతాలకు తరలించబడ్డాయి</td>
+  <td>సుబ్రహ్మణ్యం, MASI</td>
+</tr>
+<tr>
+  <td><span class="bold">1966</span></td>
+  <td>నాగార్జునకొండ ద్వీపంపై పునర్నిర్మిత స్మారకాలు, సంగ్రహాలయం ప్రారంభం</td>
+  <td>ASI, ప్రభుత్వం</td>
+</tr>
+<tr>
+  <td><span class="bold">1975</span></td>
+  <td>సుబ్రహ్మణ్యం MASI 75 నివేదిక ప్రచురణ — 1954-60 తవ్వకాల పూర్తి నివేదిక</td>
+  <td>సుబ్రహ్మణ్యం</td>
+</tr>
+<tr>
+  <td><span class="bold">2014</span></td>
+  <td>UNESCO ప్రపంచ వారసత్వ తాత్కాలిక జాబితాలో <span class="eng">(Tentative List)</span> నాగార్జునకొండ చేర్పు — ఇంకా పూర్తి నమోదు కాలేదు</td>
+  <td>UNESCO, భారత ప్రభుత్వం</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<!-- ============== SECTION 5 ============== -->
+<div class="section" id="sec5">
+<h2>5. చారిత్రక ఆధారాలు <span class="eng">(Historical Sources)</span></h2>
+
+<div class="info-box">
+<strong>సమకాలీన సాహిత్యం ఎందుకు లేదు? <span class="eng">(Why No Contemporary Literary Record?)</span></strong>
+<p>ఇక్ష్వాకు రాజవంశం కేవలం 82-85 ఏళ్ళు పాలించింది — ఒక చిన్న, కేంద్రీకృత రాజవంశం. వారు మహాసాహిత్య సంప్రదాయం నెలకొల్పలేదు; వారి ఆస్థానంలో శాసన లేదా కావ్య రచయితలు అంతగా ఉన్న ఆధారాలు లేవు. అంతేకాదు, వారి భాష ప్రాకృతం — అప్పటికి సంస్కృతం రాజకీయ సాహిత్య భాషగా స్థిరపడలేదు. అందువల్ల ఇక్ష్వాకు చరిత్ర <span class="imp">పూర్తిగా శిలాశాసన-నాణెం-పురావస్తు ఆధారాలపై</span> ఆధారపడింది. ఇది శాసన శాస్త్ర విద్యార్థులకు వరం అయినా, సాహిత్య చరిత్రకారులకు ఒక అడ్డంకి.</p>
+</div>
+
+<h3>5.1 శాసనాలు — ప్రధాన ఆధారం <span class="eng">(Inscriptions)</span></h3>
+
+<p>విజయపురిలో 80కి పైగా ప్రాకృత-బ్రాహ్మీ <span class="eng">(Prakrit-Brahmi)</span> శాసనాలు దొరికాయి — ఇవి ఇక్ష్వాకు చరిత్రను పునర్నిర్మించటానికి ప్రధాన ఆధారం. ఈ శాసనాలు ముఖ్యంగా మూడు రకాలు:</p>
+
+<table>
+<thead><tr><th>శాసన రకం</th><th>ఉదాహరణలు</th><th>విషయం</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">ఆయక స్తంభ శాసనాలు</span></td>
+  <td>మహాచైత్యం యొక్క 16 శాసనాలు (చామ్తిసిరి కాలంవి); బోధిసిరి శాసనం</td>
+  <td>రాజ స్త్రీల దానాలు, బౌద్ధ సమాజాలతో సంబంధాలు, బౌద్ధ సన్యాసుల మూలాలు</td>
+</tr>
+<tr>
+  <td><span class="bold">స్మారక స్తంభ శాసనాలు (ఛాయా-స్తంభాలు)</span></td>
+  <td>రెంటాల శాసనం (చామ్తముల I, 5వ పాలన సంవత్సరం); కేసనపల్లి స్తంభ శాసనం (చామ్తముల I, 13వ సంవత్సరం); రుద్రపురుషదత్త 11వ సంవత్సరం వమ్మభట్ట స్మారకం</td>
+  <td>రాజు పేర్లు, పాలనా సంవత్సరాలు, రాజమాతల వివరాలు</td>
+</tr>
+<tr>
+  <td><span class="bold">రాగి పత్ర శాసనాలు</span></td>
+  <td>పాటగండిగుడెం రాగి పత్రాలు <span class="eng">(Patagandigudem copper plates)</span> — ఎహువుల పాలన కాలం</td>
+  <td>భూ అనుదాన చర్యలు; <span class="imp">భారత ఉపఖండంలో అత్యంత పురాతన రాగి పత్ర చార్టర్</span> (అప్పటి వరకు తెలిసిన ఆధారంపై)</td>
+</tr>
+</tbody>
+</table>
+
+<p>ఈ శాసనాలను మొట్టమొదటిగా క్రమబద్ధంగా ప్రచురించినవాడు <span class="imp">J.Ph. వోగెల్</span>. ఆయన 1929-30లో <span class="bold">ఎపిగ్రాఫియా ఇండికా</span> సంపుటి XXలో ఈ ప్రాకృత శాసనాలు ప్రచురించాడు — అదే ఇక్ష్వాకులను ఒక స్వతంత్ర రాజవంశంగా మొట్టమొదట అకడెమిక్ జగత్తుకు పరిచయం చేసింది.</p>
+
+<div class="alert-box">
+<strong>తప్పిదం జాగ్రత్త:</strong> "ఇక్ష్వాకు శాసనాలు సంస్కృతంలో ఉన్నాయి" అని చెప్పడం <span class="imp">తప్పు</span>. వాస్తవంలో శాసనాలు <span class="bold">ప్రాకృతంలో</span> ఉన్నాయి. సంస్కృతం కేవలం చివరి శాసనాలలో (ఎహువుల కాలపు సర్వదేవ స్తంభ శాసనాలు) కనిపిస్తుంది.
+</div>
+
+<h3>5.2 నాణేలు <span class="eng">(Coins)</span></h3>
+
+<p>ఇక్ష్వాకు నాణేలు సీసం <span class="eng">(lead)</span> మరియు పోటిన్ <span class="eng">(potin — రాగి + తగరం + సీసం మిశ్రమ లోహం; "తీసి" కాదు "తగరం" = tin)</span>తో తయారయ్యాయి. ఈ నాణేలపై ముఖ్య చిత్రాలు: ఏనుగు (అత్యధిక), సింహం (రాజ చిహ్నం, చామ్తముల I అశ్వమేధ రకం నాణేలలో), ఉజ్జయిని చిహ్నం (4-గోళాల నమూనా — శాతవాహన వారసత్వం), వృషభం, శంఖం, స్వస్తిక. <span class="bold">బంగారు నాణేలు ఇక్ష్వాకులు జారీ చేయలేదు</span> — విజయపురిలో దొరికిన రోమన్ బంగారు నాణేలు (అవురేయి) దిగుమతి వస్తువులు, ఇక్ష్వాకు నాణేలు కాదు.</p>
+
+<p>2024లో ఒక ముఖ్యమైన కనుగొనుట: తెలంగాణలోని <span class="bold">ఫణిగిరి, సూర్యాపేట జిల్లా</span>లో <span class="imp">3,730 సీసం నాణేలు</span> దొరికాయి — ఇది ఇప్పటి వరకు తెలిసిన అతి పెద్ద ఇక్ష్వాకు నాణెం నిక్షేపం.</p>
+
+<h3>5.3 పురావస్తు ఆధారాలు <span class="eng">(Archaeological Evidence)</span></h3>
+
+<p>విజయపురిలో తవ్వకాలు క్రింది దశలుగా జరిగాయి: లాంగ్‌హర్స్ట్ (1927-31) మహాచైత్యం, ముఖ్య విహారాలు వెలుగులోకి తెచ్చాడు; రామచంద్రన్ (1938) MASI 54 నివేదిక తయారు చేశాడు; సుబ్రహ్మణ్యం (1954-60) అత్యవసర రక్షణ తవ్వకాలు జరిపి MASI 75 నివేదిక ప్రచురించాడు. ఈ తవ్వకాలలో రాజభవన ప్రాంగణం, 30కి పైగా బౌద్ధ విహారాలు, బహుళ హిందూ దేవాలయాలు, స్టేడియం, ఓడరేవు నిర్మాణాలు, అవభృథ తొట్టెలు, కూర్మ-చితి (తాబేలు వేదిక) బయటపడ్డాయి.</p>
+
+<h3>5.4 విదేశీ ఆధారాలు <span class="eng">(Foreign Accounts)</span></h3>
+
+<p>బయట నుండి వచ్చిన ఆధారాలు విజయపురి అంతర్జాతీయ సంబంధాలను నిరూపిస్తాయి. స్థల తవ్వకాలలో రోమన్ చక్రవర్తుల బంగారు నాణేలు దొరికాయి: <span class="bold">టైబీరియస్</span> <span class="eng">(Tiberius, క్రీ.శ. 14-37)</span>, <span class="bold">ఫస్టీనా</span> <span class="eng">(Faustina the Elder; d. c. 140 CE — posthumous DIVA FAVSTINA coinage 141-161)</span>, <span class="bold">ఆంటోనినస్ పయస్</span> <span class="eng">(Antoninus Pius)</span> — ఇవి రోమన్-ఇక్ష్వాకు వాణిజ్య సంబంధాలను సూచిస్తాయి. రాజభవన ప్రాంగణంలో గ్రీకు మద్య దేవత <span class="bold">డయోనిసస్ శిల్ప ఫలకం</span> <span class="eng">(Dionysus relief)</span> దొరికింది. శ్రీలంక బౌద్ధ వనరుల ప్రస్తావనలు విజయపురితో నేరుగా సంబంధం చూపుతాయి; సైట్ 38 విహారం (చూళధమ్మగిరి) ముఖ్యంగా శ్రీలంక సన్యాసుల నివాసం.</p>
+
+<h3>5.5 పురాణ ఆధారాలు <span class="eng">(Puranic References)</span></h3>
+
+<p>మత్స్య పురాణం "శ్రీపార్వతీయ ఆంధ్రులు" అనే రాజవంశాన్ని పేర్కొంటుంది. పేరు మరియు ఇక్ష్వాకు శాసనాల భాష (సిరిపర్వతే విజయపురే) సరిపోలడం వల్ల, చారిత్రకులు ఈ పురాణ ప్రస్తావన ఇక్ష్వాకులను సూచిస్తుందని నిర్ధారించారు.</p>
+
+</div>
+
+<!-- ============== SECTION 6 ============== -->
+<div class="section" id="sec6">
+<h2>6. రాజవంశం — నలుగురు రాజులు <span class="eng">(The Four Kings)</span></h2>
+
+<p>ఇక్ష్వాకు రాజవంశంలో <span class="bold">నలుగురు రాజులు</span> మాత్రమే పాలించారు — సుమారు 82-85 ఏళ్ళు. ఈ నలుగురూ మాతృనామ సంప్రదాయాన్ని పాటించారు: వారి పేర్లు తల్లి యొక్క గోత్ర నామం మీద ఆధారపడి ఉన్నాయి. ఇది శాతవాహన కాలంలో ఉన్న సంప్రదాయ కొనసాగింపు. ఈ రాజుల శాసనాలు "పాలన సంవత్సరాల" ద్వారా మాత్రమే తేదీలు నమోదు చేశాయి — ఒక సామ్రాజ్య కాల శకం లేదు. అందువల్ల, పాలన కాలాలు శాస్త్రజ్ఞుల పద్ధతిపై ఆధారపడి కొంచెం భిన్నంగా ఉంటాయి.</p>
+
+<table>
+<thead>
+  <tr>
+    <th>#</th>
+    <th>తెలుగు పేరు</th>
+    <th>సంస్కృత / ఆంగ్ల నామం <span class="eng">(Sanskrit/English Name)</span></th>
+    <th>కృష్ణ మూర్తి తేదీలు (1977) <span class="eng">(Krishna Murthy 1977)</span></th>
+    <th>ఉపిందర్ సింగ్ తేదీలు (2016) <span class="eng">(Upinder Singh 2016)</span></th>
+    <th>ఒక్క వాక్య విశేషం</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <td><span class="bold">1</span></td>
+  <td><span class="imp">వాశిష్ఠీపుత్ర సిరి చామ్తముల I</span></td>
+  <td><span class="eng">Vasishthiputra Siri Chamtamula I</span></td>
+  <td>సు. క్రీ.శ. 227–250</td>
+  <td>సు. క్రీ.శ. 210–250</td>
+  <td>రాజవంశ స్థాపకుడు; అగ్నిష్టోమ, వాజపేయ, <span class="bold">అశ్వమేధ</span> యజ్ఞాలు జరిపాడు; కేసనపల్లి శాసనంలో వంశ స్థాపకునిగా పేర్కొనబడ్డాడు</td>
+</tr>
+<tr>
+  <td><span class="bold">2</span></td>
+  <td><span class="imp">మాతరీపుత్ర వీరపురుషదత్త</span></td>
+  <td><span class="eng">Mathariputra Virapurushadatta</span></td>
+  <td>సు. క్రీ.శ. 250–274</td>
+  <td>సు. క్రీ.శ. 250–275</td>
+  <td>గొప్ప రాజు; అత్యంత సుదీర్ఘ పాలన (24వ పాలన సంవత్సరం వరకు శాసనాలున్నాయి); ఉజ్జయిని మహాక్షత్రప కుమార్తె రుద్రధారభట్టారిక <span class="eng">(Rudradhara-bhattarika)</span>ను వివాహం చేసుకున్నాడు</td>
+</tr>
+<tr>
+  <td><span class="bold">3</span></td>
+  <td><span class="imp">వాశిష్ఠీపుత్ర ఎహువుల చామ్తముల II</span></td>
+  <td><span class="eng">Vasishthiputra Ehuvula Chamtamula II</span></td>
+  <td>సు. క్రీ.శ. 274–297</td>
+  <td>సు. క్రీ.శ. 275–297/300</td>
+  <td>దేవాలయ నిర్మాత (సర్వదేవ, పుష్పభద్రస్వామి, నోడగీశ్వర, కార్తికేయ, అష్టభుజస్వామి); పాటగండిగుడెం రాగి పత్రాలు జారీ చేశాడు</td>
+</tr>
+<tr>
+  <td><span class="bold">4</span></td>
+  <td><span class="imp">వాశిష్ఠీపుత్ర రుద్రపురుషదత్త</span></td>
+  <td><span class="eng">Vasishthiputra Rudrapurushadatta</span></td>
+  <td>సు. క్రీ.శ. 297–309</td>
+  <td>సు. క్రీ.శ. 300–325</td>
+  <td>చివరి రాజు; చివరి శాసనం 11వ పాలన సంవత్సరానికి (సు. క్రీ.శ. 309) చెందినది; పల్లవ రాజు సింహవర్మ దండయాత్రలో రాజ్యం అంతమైంది</td>
+</tr>
+</tbody>
+</table>
+
+<p>పై పట్టికలో రెండు పండిత అభిప్రాయాలు నమోదు చేశాం ఎందుకంటే ఇక్ష్వాకు శాసనాలు <span class="bold">పాలన సంవత్సరాలు మాత్రమే</span> నమోదు చేశాయి — ఒక సామ్రాజ్య శకం (క్రీ.పూ. లేదా క్రీ.శ. ఆరంభ సంవత్సరం) ఉపయోగించలేదు. అందువల్ల పాలన 1వ సంవత్సరం అంటే సరిగ్గా ఏ క్రీ.శ. సంవత్సరానికి సమానమో శాస్త్రజ్ఞులు వేర్వేరు విధానాలతో గణించారు. పరీక్షలలో సుమారు తేదీలు (approximate dates) మాత్రమే ఇవ్వాలి; ఒక నిర్దిష్ట ఏడాదిని ధృవంగా చెప్పటం సరికాదు.</p>
+
+<div class="info-box">
+<strong>విజయపురిలో హిందూ ఆలయ సంఖ్య — 5 vs 18 <span class="eng">(Vijayapuri's Hindu Temples — 5 Named vs 18 Excavated)</span></strong>
+<p>శాసనాల ద్వారా <span class="imp">5 ప్రత్యేక ఆలయాలు మాత్రమే పేరుతో</span> నమోదైనా, ASI తవ్వకాల్లో <span class="imp">కృష్ణా నది తీరం వెంట 18 బ్రాహ్మణీయ ఆలయాలు</span> బయటపడ్డాయి (Live History India; Soundararajan 2006). అంటే ఇక్ష్వాకు రాజధానిలో బౌద్ధ-హిందూ సహ-అస్తిత్వం పుస్తకాలు సాధారణంగా చెప్పేదానికంటే చాలా ఎక్కువ. <span class="bold">"రాజులు వేదిక-బ్రాహ్మణీయులు, రాణులు బౌద్ధులు"</span> అనే ద్వంద్వ-ధర్మ నమూనా ఈ పెద్ద హిందూ-ఆలయ సంఖ్యకు పునాది.</p>
+</div>
+
+
+<div class="key-box">
+<strong>ముఖ్య గమనిక — మాతృనామ సంప్రదాయం <span class="eng">(Key Note: Matronymic Convention)</span></strong>
+<p>ఇక్ష్వాకు రాజుల పేర్లలో "పుత్ర" అనే పదం తల్లి గోత్ర నామం తర్వాత వస్తుంది:</p>
+<ul>
+  <li><span class="bold">వాశిష్ఠీపుత్ర</span> <span class="eng">(Vasishthiputra)</span> = వాశిష్ఠి గోత్ర తల్లి కుమారుడు. "వాశిష్ఠి" అనేది వసిష్ఠ బ్రాహ్మణ గోత్రానికి స్త్రీలింగ రూపం. చామ్తముల I, ఎహువుల చామ్తముల II, రుద్రపురుషదత్త — ముగ్గురూ వాశిష్ఠీపుత్రులు.</li>
+  <li><span class="bold">మాతరీపుత్ర</span> <span class="eng">(Mathariputra)</span> = మాతరి గోత్ర/వంశ-నామం తల్లి కుమారుడు. వీరపురుషదత్త మాతరీపుత్రుడు.</li>
+</ul>
+<p>ఈ సంప్రదాయం శాతవాహన కాలంలో ("గౌతమీపుత్ర" = గౌతమి కుమారుడు) మొదలై ఇక్ష్వాకుల కాలానికి కొనసాగింది. ఇది <span class="imp">స్త్రీ గోత్రాన్ని ఉన్నత స్థానంలో ఉంచే ఆంధ్ర-దక్కన్ సంప్రదాయం</span> — ఉత్తర భారత పితృనామ సంప్రదాయానికి (తండ్రి పేరు) భిన్నంగా ఉంటుంది.</p>
+</div>
+
+
+<h3>6.1 రాజవంశ కాలరేఖ <span class="eng">(Dynasty Timeline)</span></h3>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="280" fill="#fdf4e0"/>
+
+  <!-- Time axis -->
+  <line x1="50" y1="200" x2="780" y2="200" stroke="#5c3a1c" stroke-width="2"/>
+
+  <!-- Year marks (every 25 years, 225-325 CE = 100 years over 730px = 7.3 px/yr) -->
+  <!-- 225 CE at x=50, 325 CE at x=780 -->
+  <g font-size="10" fill="#5c3a1c" text-anchor="middle">
+    <line x1="50" y1="195" x2="50" y2="205" stroke="#5c3a1c"/>
+    <text x="50" y="220">225</text>
+    <line x1="232.5" y1="195" x2="232.5" y2="205" stroke="#5c3a1c"/>
+    <text x="232.5" y="220">250</text>
+    <line x1="415" y1="195" x2="415" y2="205" stroke="#5c3a1c"/>
+    <text x="415" y="220">275</text>
+    <line x1="597.5" y1="195" x2="597.5" y2="205" stroke="#5c3a1c"/>
+    <text x="597.5" y="220">300</text>
+    <line x1="780" y1="195" x2="780" y2="205" stroke="#5c3a1c"/>
+    <text x="780" y="220">325 CE</text>
+  </g>
+  <text x="415" y="245" text-anchor="middle" font-size="11" fill="#6b4423" font-style="italic">(క్రీ.శ. — Common Era)</text>
+
+  <!-- King bars - using Krishna Murthy dates -->
+  <!-- Chamtamula I: 227-250 CE => x=64.6 to 232.5 -->
+  <rect x="65" y="60" width="167" height="22" fill="#c97b3a" stroke="#5c3a1c" stroke-width="1.5"/>
+  <text x="148" y="76" text-anchor="middle" font-size="11" font-weight="bold" fill="white">చామ్తముల I</text>
+  <text x="148" y="50" text-anchor="middle" font-size="9" fill="#5c3a1c">227-250 (~23 ఏళ్ళు)</text>
+
+  <!-- Virapurushadatta: 250-274 CE => x=232.5 to 408 -->
+  <rect x="232.5" y="90" width="175" height="22" fill="#a14217" stroke="#5c3a1c" stroke-width="1.5"/>
+  <text x="320" y="106" text-anchor="middle" font-size="11" font-weight="bold" fill="white">వీరపురుషదత్త</text>
+  <text x="320" y="130" text-anchor="middle" font-size="9" fill="#5c3a1c">250-274 (~24 ఏళ్ళు) ★</text>
+
+  <!-- Ehuvula Chamtamula II: 274-297 CE => x=408 to 575.5 -->
+  <rect x="408" y="60" width="167" height="22" fill="#d4a017" stroke="#5c3a1c" stroke-width="1.5"/>
+  <text x="491" y="76" text-anchor="middle" font-size="11" font-weight="bold" fill="white">ఎహువుల II</text>
+  <text x="491" y="50" text-anchor="middle" font-size="9" fill="#5c3a1c">274-297 (~23 ఏళ్ళు)</text>
+
+  <!-- Rudrapurushadatta: 297-309 CE => x=575.5 to 663 -->
+  <rect x="575.5" y="90" width="87.5" height="22" fill="#6b4880" stroke="#5c3a1c" stroke-width="1.5"/>
+  <text x="619" y="106" text-anchor="middle" font-size="11" font-weight="bold" fill="white">రుద్రపురుషదత్త</text>
+  <text x="619" y="130" text-anchor="middle" font-size="9" fill="#5c3a1c">297-309</text>
+
+  <!-- Pallava conquest annotation -->
+  <line x1="670" y1="115" x2="670" y2="195" stroke="#a14217" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="670" y="155" font-size="9" fill="#a14217" font-style="italic" text-anchor="middle">పల్లవ-అభీర</text>
+  <text x="670" y="167" font-size="9" fill="#a14217" font-style="italic" text-anchor="middle">పతనం ~310 CE</text>
+
+  <!-- Key events markers -->
+  <!-- Mahachaitya construction (~256-266 CE — Virapurushadatta yr 6 to yr 16) -->
+  <g transform="translate(280, 175)">
+    <circle r="5" fill="#7a9d3e" stroke="#4a6b1f" stroke-width="1.5"/>
+    <text x="0" y="-8" text-anchor="middle" font-size="8" fill="#4a6b1f" font-weight="bold">మహాచైత్యం</text>
+  </g>
+  <!-- 278 CE Vaishnava temple -->
+  <g transform="translate(435, 175)">
+    <circle r="5" fill="#5a85ad" stroke="#3a6890" stroke-width="1.5"/>
+    <text x="0" y="-8" text-anchor="middle" font-size="8" fill="#3a6890" font-weight="bold">278 CE వైష్ణవ ఆలయం</text>
+  </g>
+  <!-- Patagandigudem copper plates -->
+  <g transform="translate(490, 175)">
+    <circle r="5" fill="#d4a017" stroke="#7c5a07" stroke-width="1.5"/>
+    <text x="0" y="-12" text-anchor="middle" font-size="8" fill="#7c5a07" font-weight="bold">పటగండిగూడెం రాగి-రేకులు</text>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#5c3a1c">ఇక్ష్వాకు రాజవంశ కాలరేఖ — ~క్రీ.శ. 227-309</text>
+  <text x="400" y="36" text-anchor="middle" font-size="10" fill="#6b4423" font-style="italic">(Krishna Murthy 1977 తేదీలు; ★ = పీక్ రాజు)</text>
+</svg>
+<div class="svg-caption">4 ఇక్ష్వాకు రాజులు, 82-85 సంవత్సరాల పాలన (స్కాలర్‌ను బట్టి); నాగార్జునకొండ మహాచైత్యం + 278 CE వైష్ణవ ఆలయం + పటగండిగూడెం రాగి-రేకులు ముఖ్య మైలురాళ్ళు</div>
+</div>
+
+</div>
+
+<!-- ============== SECTION 7 ============== -->
+<div class="section" id="sec7">
+<h2>7. వాశిష్ఠీపుత్ర సిరి చామ్తముల I — స్థాపకుడు <span class="eng">(Founder, c. 227-250 CE)</span></h2>
+
+<div class="king-card">
+<h4>వాశిష్ఠీపుత్ర సిరి చామ్తముల I <span class="eng">(Vasishthiputra Siri Chamtamula I)</span> — స్థాపకుడు</h4>
+<p class="meta">
+  <span class="chip red">క్రీ.శ. c. 227–250 <span class="eng">(Krishna Murthy 1977)</span></span>
+  <span class="chip red">క్రీ.శ. c. 210–250 <span class="eng">(Upinder Singh 2016)</span></span>
+</p>
+<p class="meta">
+  <span class="bold">వంశం:</span> వాశిష్ఠి గోత్ర తల్లికి పుత్రుడు <span class="eng">(matronymic — son of a Vasishthi-gotra mother)</span>; పితృనామం తెలియదు. శాసనాలు "వాశిష్ఠీపుత్ర" అనే మాతృనామాన్ని మాత్రమే ఇస్తాయి.
+</p>
+<span class="chip gold">రాజవంశ స్థాపకుడు <span class="eng">(Founder)</span></span>
+<span class="chip gold">యజ్ఞ-రాజు <span class="eng">(Yajna-Raja)</span></span>
+<span class="chip green">అశ్వమేధ రాజు <span class="eng">(Ashvamedha-King)</span></span>
+<span class="chip purple">కేసనపల్లి స్థాపక శాసనం <span class="eng">(Kesanapalli founder inscription)</span></span>
+<p>ఇక్ష్వాకు రాజవంశానికి పునాది వేసిన రాజు వాశిష్ఠీపుత్ర సిరి చామ్తముల I. శాసనాలు అతన్ని <span class="imp">ఇక్ష్వాకు వంశ స్థాపకుడు</span> అని స్పష్టంగా పేర్కొంటున్నాయి. కేవలం నలుగురు రాజులతో మాత్రమే ఈ వంశం పాలించినప్పటికీ, చామ్తముల I యొక్క యజ్ఞ కార్యక్రమాలు, కుటుంబ సంబంధాలు, మరియు అతని కాలపు శాసనాలు ఇక్ష్వాకు సంస్కృతికి పునాది అయ్యాయి.</p>
+</div>
+
+<h3>7.1 స్థాపన సందర్భం <span class="eng">(Founding Context)</span></h3>
+
+<p>శాతవాహన సామ్రాజ్యం క్రీ.శ. ~225 నాటికి విచ్ఛిన్నమైన తర్వాత కృష్ణా లోయలో రాజకీయ శూన్యత ఏర్పడింది. ఈ శూన్యతను పూరించిన శక్తిగా చామ్తముల I ఉద్భవించాడు. అతను శాతవాహన సామంతుడు అనే పాఠ్యపుస్తక వాదన <span class="imp">నిరూపితం కాలేదు</span>; శాసనాలు ఎక్కడా అతన్ని సామంతుడిగా పేర్కొనడం లేదు. కృష్ణ్ మూర్తి (1977) మరియు ఇతర చరిత్రకారులు అతన్ని శాతవాహన అనంతర శూన్యంలో స్వతంత్రంగా అధికారంలోకి వచ్చిన రాజుగా భావిస్తున్నారు. విజయపురిలో శాతవాహన నాణేలు (గౌతమీపుత్ర, పులుమావి, యజ్ఞ శాతకర్ణి) మరియు ఒక శాతవాహన శాసనం కూడా దొరికాయి — ఇవి శాతవాహన ఉనికిని నిరూపిస్తాయి, కానీ ఇక్ష్వాకు సామంతత్వాన్ని కాదు.</p>
+
+<div class="alert-box">
+<strong>సాధారణ తప్పిదం:</strong> "ఇక్ష్వాకులు శాతవాహన సామంతులు" అని పాఠ్యపుస్తకాలు చెబుతాయి — కానీ ఇది చారిత్రకంగా నిరూపించబడలేదు. సత్యం: వారు శాతవాహన అనంతర శూన్యాన్ని స్వతంత్రంగా పూరించారు.
+</div>
+
+<h3>7.2 యజ్ఞ నిర్వహణ <span class="eng">(Yajna Performance)</span></h3>
+
+<p>చామ్తముల I <span class="imp">ఇక్ష్వాకు వంశంలో యజ్ఞాలు నిర్వహించినట్టు ఆధారాలున్న ఏకైక రాజు</span>. అతను మూడు యజ్ఞాలు నిర్వహించాడు:</p>
+
+<ul>
+<li><span class="bold">అగ్నిష్టోమ యజ్ఞం</span> <span class="eng">(Agnishtoma)</span> — సోమ రస సమర్పణతో కూడిన ఒక దిన వేద యజ్ఞం; రాజు యొక్క ధార్మిక పవిత్రత స్థాపనకు</li>
+<li><span class="bold">వాజపేయ యజ్ఞం</span> <span class="eng">(Vajapeya)</span> — "రథ పందెం యజ్ఞం"; 17 జంతు బలిదానాలతో కూడిన క్షత్రియ సార్వభౌమత్వ ప్రకటన</li>
+<li><span class="bold">అశ్వమేధ యజ్ఞం</span> <span class="eng">(Ashvamedha)</span> — "గుర్రపు యజ్ఞం"; అత్యున్నత సార్వభౌమత్వ యజ్ఞం. ఒక గుర్రాన్ని ఒక సంవత్సరం పాటు వదిలిపెట్టి దానిని అడ్డుకున్న రాజ్యాలను జయించి, తిరిగి తీసుకువచ్చి బలి ఇస్తారు. విజయవంతంగా జరిగితే చక్రవర్తిత్వానికి ధృవీకరణ.</li>
+</ul>
+
+<p>ఈ యజ్ఞాలు కృష్ణ మూర్తి (1977, పు. 4), హచ్.పి. రే (2003, పు. 140), మరియు ఎస్. చతోపాధ్యాయ (1974, పు. 116) వంటి పండితులు నమోదు చేశారు. <span class="imp">ఇక్ష్వాకు వంశంలో మిగిలిన మూడు రాజులకు ఇలాంటి యజ్ఞ ఆధారాలు లేవు</span> — ఈ యజ్ఞ నిర్వహణ చామ్తముల I కి మాత్రమే ప్రత్యేకం.</p>
+
+<h3>7.3 యజ్ఞాల పురాతత్వ సాక్ష్యాలు <span class="eng">(Archaeological Proofs of Yajnas)</span></h3>
+
+<p>చామ్తముల I యొక్క యజ్ఞ నిర్వహణకు కేవలం శాసనాల ఆధారాలు మాత్రమే కాదు — పురాతత్వ తవ్వకాలు ప్రత్యక్ష సాక్ష్యాలు కూడా ఇస్తున్నాయి:</p>
+
+<table>
+<thead><tr><th>పురాతత్వ సాక్ష్యం</th><th>స్వరూపం</th><th>ప్రాముఖ్యత</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">అశ్వమేధ-రూప నాణేలు</span> <span class="eng">(Ashvamedha-type coins)</span></td>
+  <td>గుర్రం చిత్రంతో సింహ-గుర్తు నాణేలు</td>
+  <td>యజ్ఞ నిర్వహణకు రాజకీయ ప్రకటనగా ముద్రించిన నాణేలు; చామ్తముల I రాజసత్తను అశ్వమేధ రాజుగా ప్రకటిస్తాయి</td>
+</tr>
+<tr>
+  <td><span class="bold">అవభ్రిత తొట్టె</span> <span class="eng">(Avabhritha tank — purificatory bath)</span></td>
+  <td>పురాతన ఇటుక తొట్టె; సున్నం పూత; కోట వెలుపల పశ్చిమంగా</td>
+  <td>అశ్వమేధ యజ్ఞం తర్వాత రాజు అవభ్రిత స్నానం చేసే పవిత్ర స్నాన కుండం; కోట బయట తవ్వకాలలో దొరికింది</td>
+</tr>
+<tr>
+  <td><span class="bold">కూర్మ-చితి</span> <span class="eng">(Kurma-chiti — tortoise-shaped altar)</span></td>
+  <td>ఆమె-ఆకారపు ఇటుక బలిపీఠం; అవభ్రిత తొట్టె నుండి ~30 అడుగుల దూరంలో</td>
+  <td>వేద యజ్ఞ విధానంలో నిర్దేశించిన తాబేలు ఆకారపు యజ్ఞ వేదిక; ఈ నిర్మాణం యజ్ఞ స్థలాన్ని ఖచ్చితంగా గుర్తిస్తుంది</td>
+</tr>
+<tr>
+  <td><span class="bold">గుర్రపు అస్థిపంజరం</span> <span class="eng">(Horse skeleton)</span></td>
+  <td>తవ్వకాలలో దొరికిన గుర్రపు ఎముకలు</td>
+  <td>అశ్వమేధ యజ్ఞంలో బలి అర్పించిన గుర్రానికి ప్రత్యక్ష పురాతత్వ నిదర్శనం; ఇది ఇతర ఏ ఆంధ్ర రాజవంశంలోనూ నమోదు కాలేదు</td>
+</tr>
+</tbody>
+</table>
+
+<h3>7.4 ముఖ్య శాసనాలు <span class="eng">(Key Inscriptions)</span></h3>
+
+<p>చామ్తముల I కు సంబంధించి రెండు ముఖ్యమైన శాసనాలు వంశ చరిత్రకు పునాది వేస్తున్నాయి:</p>
+
+<div class="key-box">
+<strong>రెంటాల శాసనం <span class="eng">(Rentala Inscription)</span> — పాలన సం. 5</strong>
+<p>"సిరి చామ్తముల" అని అతన్ని పేరుతో మొదటిసారి నమోదు చేసిన శాసనం. ఇక్ష్వాకు రాజులందరూ మాతృనామ సంప్రదాయాన్ని (వాశిష్ఠీపుత్ర, మాతరీపుత్ర) శాతవాహనుల నుండి కొనసాగించారు. ఈ శాసనం ఐదవ పాలన సంవత్సరానిది; సంపూర్ణ తేదీ పండిత సంవత్సరాల ఆధారంగా నిర్ణయించాల్సి ఉంది.</p>
+</div>
+
+<div class="key-box">
+<strong>కేసనపల్లి స్తంభ శాసనం <span class="eng">(Kesanapalli Pillar Inscription)</span> — పాలన సం. 13</strong>
+<p>ఈ శాసనం చామ్తముల I ని <span class="imp">"ఇక్ష్వాకు వంశ స్థాపకుడు"</span> అని స్పష్టంగా ప్రకటిస్తుంది. 13వ పాలన సంవత్సరానిది. ఈ శాసనమే అతని స్థాపకత్వానికి ముఖ్య ఆధారం; తదుపరి శాసనాలు ఈ వంశ పేరును గుర్తిస్తూనే ఉన్నాయి.</p>
+</div>
+
+<h3>7.5 కుటుంబ సంబంధాలు <span class="eng">(Family Relationships)</span></h3>
+
+<p>చామ్తముల I కుటుంబ సభ్యులు ఇక్ష్వాకు ద్వంద్వ-ధర్మ నమూనాకు మూలకారణం:</p>
+
+<table>
+<thead><tr><th>వ్యక్తి</th><th>సంబంధం</th><th>విశేషణం</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">చామ్తిసిరి <span class="eng">(Chamtisiri)</span></span></td>
+  <td>చామ్తముల I సోదరి; వీరపురుషదత్త అత్త తల్లి</td>
+  <td><span class="imp">అత్యంత ముఖ్య బౌద్ధ దాత</span> — మహాచైత్యం నిర్మాణాన్ని 10 వరుస సంవత్సరాలు పోషించింది; ఆయక స్తంభాలపై 16 శాసనాలలో పేరు ప్రస్తావన</td>
+</tr>
+<tr>
+  <td><span class="bold">హమ్మసిరి <span class="eng">(Hammasri)</span></span></td>
+  <td>చామ్తిసిరికి ఉదరీయ సోదరి <span class="eng">(uterine sister)</span></td>
+  <td>మహాచైత్యంలో చామ్తిసిరితో కలిసి బౌద్ధ దాత</td>
+</tr>
+<tr>
+  <td><span class="bold">ఆదవి చామ్తిసిరి <span class="eng">(Adavi Chamtisri)</span></span></td>
+  <td>చామ్తముల I కుమార్తె</td>
+  <td>మహాసేనాపతి ఖమ్దవిషఖను వివాహమాడింది — ధనక కుటుంబానికి చెందిన సైనిక అభిజాత వర్గంతో రాజ కుటుంబ సంబంధం; మహాచైత్యంలో దాత</td>
+</tr>
+</tbody>
+</table>
+
+<p>గమనించాల్సిన విషయం ఏమిటంటే: చామ్తముల I స్వయంగా <span class="bold">వేద యజ్ఞాలు (అశ్వమేధ, వాజపేయ, అగ్నిష్టోమ) నిర్వహించి బ్రాహ్మణత్వాన్ని ఆచరిస్తే, అతని సోదరీలు చామ్తిసిరి, హమ్మసిరి మరియు కుమార్తె ఆదవి చామ్తిసిరి మొదటి నుండే బౌద్ధ దాతలుగా నిలిచారు</span>. ఇది ఇక్ష్వాకు ద్వంద్వ-ధర్మ నమూనా స్థాపకుని పాలనాకాలం నుండే ప్రారంభమైందని తెలుపుతుంది.</p>
+
+<div class="info-box">
+<strong>ద్వంద్వ మత నమూనా ఇక్కడే మొదలు <span class="eng">(The Dual Religion Model Begins Here)</span></strong>
+<p>చామ్తముల I స్వయంగా అశ్వమేధ-యజపేయ-అగ్నిష్టోమ యజ్ఞాలు నిర్వహించిన యజ్ఞ-రాజు. కానీ అదే సమయంలో అతని సోదరీమణులు — చామ్తిసిరి, హమ్మసిరి — విజయపురి మహాచైత్య నిర్మాణంలో ప్రముఖ బౌద్ధ దాతలయ్యారు. అతని కుమార్తె ఆదవి చామ్తిసిరి కూడా మహాచైత్యంలో దాత. అంటే <span class="imp">రాజు-బ్రాహ్మణం / కుటుంబ స్త్రీలు-బౌద్ధం</span> అనే నమూనా మొదటి రాజు పాలన కాలం నుండే ప్రారంభమైంది — తదుపరి మూడు తరాలలో ఈ సంప్రదాయం మరింత బలపడింది.</p>
+</div>
+
+</div>
+
+<!-- ============== SECTION 8 ============== -->
+<div class="section" id="sec8">
+<h2>8. మాతరీపుత్ర వీరపురుషదత్త — గొప్ప రాజు <span class="eng">(Greatest King, c. 250-274 CE)</span></h2>
+
+<div class="king-card">
+<h4>మాతరీపుత్ర వీరపురుషదత్త <span class="eng">(Mathariputra Virapurushadatta)</span> — గొప్ప రాజు</h4>
+<p class="meta">
+  <span class="chip red">క్రీ.శ. c. 250–274 <span class="eng">(Krishna Murthy 1977)</span></span>
+  <span class="chip red">క్రీ.శ. c. 250–275 <span class="eng">(Upinder Singh 2016)</span></span>
+</p>
+<p class="meta">
+  <span class="bold">వంశం:</span> మాతరి గోత్ర తల్లికి పుత్రుడు <span class="eng">(matronymic — son of a Mathari-gotra mother)</span>; చామ్తముల I కుమారుడు. శాసనాలు "మాతరీపుత్ర" అనే మాతృనామాన్ని ఉపయోగిస్తాయి.
+</p>
+<span class="chip gold">అత్యంత గొప్ప పాలన <span class="eng">(Greatest Reign)</span></span>
+<span class="chip green">రాణుల ద్వారా బౌద్ధ పోషణ <span class="eng">(Buddhist Patronage via Queens)</span></span>
+<span class="chip blue">శక వివాహ మైత్రి <span class="eng">(Saka Marriage Alliance)</span></span>
+<span class="chip purple">మహాచైత్య నిర్మాణ కాలం <span class="eng">(Mahachaitya Period)</span></span>
+<p>ఇక్ష్వాకు రాజవంశంలో అత్యంత మహత్తరమైన పాలన వీరపురుషదత్తుది. 24వ పాలన సంవత్సరం వరకు శాసనాలు నమోదయ్యాయి — ఇది ఇక్ష్వాకు రాజులలో అత్యంత పొడవైన నిరూపిత పాలనకాలం. ఇతని కాలంలోనే విజయపురి దక్షిణ భారతదేశంలో అతి పెద్ద బౌద్ధ కేంద్రంగా ఎదిగింది; మహాచైత్యం ఇతని కాలంలో నిర్మితమైంది; అంతర్జాతీయ బౌద్ధ సంఘాలు ఇక్కడ స్థిరపడ్డాయి.</p>
+</div>
+
+<h3>8.1 "గొప్పరాజు" ఎందుకు? <span class="eng">(Why "Greatest"?)</span></h3>
+
+<p>వీరపురుషదత్తుని ఇక్ష్వాకు వంశంలో అత్యంత మహత్తరుడిగా పరిగణించడానికి మూడు ప్రధాన కారణాలు:</p>
+
+<ul>
+<li><span class="bold">అత్యంత పొడవైన పాలనకాలం:</span> 24వ పాలన సంవత్సరం వరకు శాసనాలు నమోదయ్యాయి — మిగిలిన రాజులకంటే చాలా ఎక్కువ</li>
+<li><span class="bold">మహాచైత్య నిర్మాణం:</span> ఇతని పాలన కాలంలో విజయపురి మహాచైత్యం నిర్మించబడింది — ఆంధ్రప్రాంతంలోనే కాదు, దక్షిణ భారతదేశంలో అతి పెద్ద బౌద్ధ స్తూపాలలో ఒకటి</li>
+<li><span class="bold">నాగార్జునకొండ బౌద్ధ కేంద్రంగా పరాకాష్ట:</span> బహుశ్రుతీయ, అపరమహావినసేలీయ, మహీశాసక, మహావిహారవాసిన్/విభజ్యవాద/థేరవాద (శ్రీలంక మూలం, ఈ మూడు లేబుళ్ళు ఒకే-మూల పాఠశాల) అనే <span class="imp">4 ప్రధాన బౌద్ధ శాఖలు</span> ఇతని కాలంలో విజయపురిలో సక్రియంగా ఉన్నాయి</li>
+</ul>
+
+<h3>8.2 శక వివాహ మైత్రి <span class="eng">(The Saka Marriage Alliance)</span></h3>
+
+<p>వీరపురుషదత్తుడు <span class="bold">రుద్రధర-భట్టారిక</span> <span class="eng">(Rudradhara-bhattarika)</span> అనే శక రాజకుమారిని వివాహమాడాడు. ఆమె ఉజ్జయిని మహాక్షత్రప కుమార్తె — డి.సి. సిర్కార్ ఆమె తండ్రిని పశ్చిమ క్షత్రప <span class="bold">రుద్రసేన II</span> అయి ఉంటాడని గుర్తించారు.</p>
+
+<p>ఈ శక వివాహ మైత్రి అనేక పరిణామాలకు దారితీసింది:</p>
+
+<ul>
+<li>పశ్చిమ దిక్కున శాంతి — ఉజ్జయిని మహాక్షత్రపుల నుండి సైనిక ముప్పు తగ్గింది</li>
+<li>విజయపురి రాజభవనంలో <span class="imp">శక (స్కైథియన్) ద్వారపాల శిల్పాలు</span> నిర్మించబడ్డాయి — తవ్వకాలలో దొరికిన ఈ శిల్పాలకు ఈ వివాహమే కారణం అని పురాతత్వ శాస్త్రజ్ఞులు భావిస్తున్నారు</li>
+<li>చివరి రాజు రుద్రపురుషదత్తుని తల్లి వమ్మభట్ట కూడా ఒక మహాక్షత్రప కుమార్తె — ఈ శక మైత్రి తదుపరి తరానికి కూడా కొనసాగింది</li>
+</ul>
+
+<h3>8.3 మహాచైత్య నిర్మాణం <span class="eng">(Mahachaitya Construction)</span></h3>
+
+<p>వీరపురుషదత్తుని పాలన కాలంలో విజయపురి మహాచైత్యం నిర్మితమైంది. ఈ నిర్మాణానికి ముఖ్య దాత <span class="imp">చామ్తిసిరి</span> — చామ్తముల I సోదరి, వీరపురుషదత్తుని అత్త. ఆమె <span class="bold">10 వరుస సంవత్సరాలు</span> ఈ నిర్మాణాన్ని పోషించింది; సన్యాసి ఆనంద ఈ నిర్మాణ పర్యవేక్షకుడు. మహాచైత్య ఆయక స్తంభాలపై 16 శాసనాలు ఉన్నాయి; ఇవి <span class="bold">7 మంది రాజ స్త్రీలను</span> దాతలుగా నమోదు చేస్తున్నాయి. (మహాచైత్య వాస్తు వివరాలు సెక్షన్ 17లో.)</p>
+
+<h3>8.4 బౌద్ధ శాఖలు వర్ధిల్లాయి <span class="eng">(Buddhist Sects Flourished)</span></h3>
+
+<p>వీరపురుషదత్తుని కాలంలో విజయపురిలో నాలుగు ప్రధాన బౌద్ధ శాఖలు క్రియాశీలంగా ఉన్నాయి:</p>
+
+<ul>
+<li><span class="bold">బహుశ్రుతీయ</span> <span class="eng">(Bahushrutiya)</span> — మహాసాంఘిక ఉపశాఖ</li>
+<li><span class="bold">అపరమహావినసేలీయ</span> <span class="eng">(Aparamahavinaseliya)</span> — మహాసాంఘిక ఉపశాఖ</li>
+<li><span class="bold">మహీశాసక</span> <span class="eng">(Mahishasaka)</span> — స్థవిర పరంపర</li>
+<li><span class="bold">మహావిహారవాసిన్ / థేరవాద</span> <span class="eng">(Mahaviharavasin / Theravada)</span> — శ్రీలంక మూలం</li>
+</ul>
+
+<p>ముఖ్యమైన <span class="bold">స్థల 38</span> <span class="eng">(Site 38)</span> విహారం — నహరల్లబోడు కొండపై "చుళధమ్మగిరి" <span class="eng">(Culadhammagiri — "Lesser Dhammagiri")</span> — శ్రీలంక (తంబపమ్నిదీప) సన్యాసుల కోసం నిర్మించబడింది. ఇక్కడ తంబపమ్నిదీప (శ్రీలంక), కశ్మీర, గంధార, యవన (గ్రీక్), చీన (China), చిలాత (Kirata-Himalaya), తోసలి (Dhauli-Odisha), అపరాంత (Konkan-W India), వంగ (Bengal), వనవాస, దమిల (Tamil), పలూర (Orissa-coast) — సుమారు 12 దేశాల నుండి సన్యాసులు వచ్చారు.</p>
+
+<h3>8.5 బోధిసిరి శాసనం — పాలన సం. 14 <span class="eng">(Bodhisiri Inscription — Year 14)</span></h3>
+
+<p>వీరపురుషదత్తుని 14వ పాలన సంవత్సరానికి చెందిన బోధిసిరి శాసనం అత్యంత విలువైన చారిత్రక పత్రికం. ఉపాసిక (లయ-స్త్రీ) బోధిసిరి — రాణి కాదు — కంటకసేల <span class="eng">(Kantakasela)</span>లో శ్రీలంక సన్యాసుల (తంబపమ్నిదీప మహావిహారవాసిన్) కోసం ఒక ఆప్సిడల్ చైత్యం, విహారం మరియు స్తంభ మంటపాన్ని దానం చేసింది.</p>
+
+<p>ఈ శాసనం విజయపురి యొక్క అంతర్జాతీయ బౌద్ధ సంబంధాలను స్పష్టంగా నమోదు చేస్తుంది: <span class="imp">చైనా, బెంగాల్, కళింగ, ఒరిస్సా, కశ్మీర, గంధార, యవన, వనవాస</span> దేశాల బౌద్ధ సంఘాలతో విజయపురి సంపర్కం ఉందని ఇది తెలుపుతుంది.</p>
+
+<div class="alert-box">
+<strong>సాధారణ తప్పిదం — వీరపురుషదత్తుడు బౌద్ధుడిగా మారలేదు <span class="eng">(He Did NOT Convert to Buddhism)</span></strong>
+<p>వీరపురుషదత్తుడు బౌద్ధ విహారాలు విరివిగా నిర్మించబడిన కాలంలో పాలించినప్పటికీ, <span class="imp">ఒక్క శాసనం కూడా అతన్ని బౌద్ధుడిగా లేదా బౌద్ధ దాతగా పేర్కొనడం లేదు</span>. బౌద్ధ నిర్మాణాల వెనక దాతలు అతని రాణులు, అత్తలు, అక్కచెల్లెళ్ళు — రాజు కాదు. రాజు బ్రాహ్మణ సంప్రదాయాన్నే కొనసాగించాడు. ఈ ద్వంద్వ నమూనాను పాఠ్యపుస్తకాలు తప్పుగా అర్థం చేసుకుని "రాజు బౌద్ధుడయ్యాడు" అని రాస్తుంటాయి — ఇది తప్పు.</p>
+</div>
+
+<div class="info-box">
+<strong>వీరపురుషదత్తుని పాలన ఎందుకు అత్యంత ముఖ్యమైనది?</strong>
+<ul>
+<li><span class="bold">మహాచైత్యం</span> ఇతని కాలంలో నిర్మితమైంది — 32 మీటర్ల వ్యాసపు స్తూపం, దక్షిణ భారత అతి పెద్ద బౌద్ధ కట్టడాలలో ఒకటి</li>
+<li><span class="bold">స్థల 38 శ్రీలంక విహారం</span> ఇతని కాలంలో స్థాపించబడింది — అంతర్జాతీయ బౌద్ధ కేంద్రంగా విజయపురి పాత్ర ఇక్కడ ఉచ్ఛస్థాయిలో ఉంది</li>
+<li><span class="bold">రాణుల బౌద్ధ పోషణ పరాకాష్ట</span> — 16 ఆయక స్తంభ శాసనాలలో 7 మంది రాజ స్త్రీలు నమోదయ్యారు</li>
+<li><span class="bold">శక-ఇక్ష్వాకు రాజకీయ సంబంధం</span> రుద్రధర-భట్టారిక వివాహం ద్వారా సాధించబడింది — ఇది పశ్చిమ దిక్కు స్థిరత్వాన్ని నిర్ధారించింది</li>
+</ul>
+</div>
+
+</div>
+
+<!-- ============== SECTION 9 ============== -->
+<div class="section" id="sec9">
+<h2>9. వాశిష్ఠీపుత్ర ఎహువుల చామ్తముల II — దేవాలయ నిర్మాత <span class="eng">(Temple Builder, c. 274-297 CE)</span></h2>
+
+<div class="king-card">
+<h4>వాశిష్ఠీపుత్ర ఎహువుల చామ్తముల II <span class="eng">(Vasishthiputra Ehuvula Chamtamula II)</span> — దేవాలయ నిర్మాత</h4>
+<p class="meta">
+  <span class="chip red">క్రీ.శ. c. 274–297 <span class="eng">(Krishna Murthy 1977)</span></span>
+  <span class="chip red">క్రీ.శ. c. 275–297/300 <span class="eng">(Upinder Singh 2016)</span></span>
+</p>
+<p class="meta">
+  <span class="bold">వంశం:</span> వాశిష్ఠి గోత్ర తల్లికి పుత్రుడు <span class="eng">(matronymic — son of a Vasishthi-gotra mother)</span>; వీరపురుషదత్తుని కుమారుడు.
+</p>
+<span class="chip gold">దేవాలయ నిర్మాత <span class="eng">(Temple Builder)</span></span>
+<span class="chip green">పాటగండిగుడెం రాగి శాసనాలు <span class="eng">(Patagandigudem Copper Plates)</span></span>
+<span class="chip red">దక్కన్‌లో తొలి దినాంకిత వైష్ణవ దేవాలయం <span class="eng">(Earliest Dated Vaishnava Temple in Deccan)</span></span>
+<span class="chip blue">సంస్కృతం మొదటిసారి <span class="eng">(Sanskrit First Appears)</span></span>
+<p>వాశిష్ఠీపుత్ర ఎహువుల చామ్తముల II ఇక్ష్వాకు వంశంలో బ్రాహ్మణ దేవాలయ నిర్మాణంలో అగ్రగామి. అతను బహుళ దేవాలయాలు నిర్మించినప్పటికీ, అతని రాణులు మరియు ఇతర రాజ స్త్రీలు బౌద్ధాన్ని పోషించడం కొనసాగించారు. అంతేగాక, భారత ఉపఖండంలో అత్యంత పురాతన రాగి పత్ర శాసనం కూడా ఇతని పాలన కాలానికే చెందినది.</p>
+</div>
+
+<h3>9.1 బ్రాహ్మణ పునరుద్ధరణ <span class="eng">(Brahmanical Revival)</span></h3>
+
+<p>చామ్తముల I యజ్ఞాల ద్వారా బ్రాహ్మణ సంప్రదాయాన్ని స్థాపించాడు; ఎహువుల చామ్తముల II దేవాలయ నిర్మాణం ద్వారా ఆ సంప్రదాయాన్ని మరింత ముందుకు తీసుకువెళ్ళాడు. వీరపురుషదత్తుని కాలంలో బౌద్ధ నిర్మాణాలు ఉచ్ఛస్థాయిలో ఉన్నప్పుడు రాజు-పక్షం బ్రాహ్మణ నిర్మాణాలు కొనసాగిస్తూనే ఉంది. ఎహువుల కాలంలో ఈ ద్వంద్వ నమూనా మరింత తీవ్రమైంది: రాజు బహుళ హిందూ దేవాలయాలు కట్టిస్తే, అదే సమయంలో రాణులు మరియు రాజ స్త్రీలు వేర్వేరు బౌద్ధ శాఖలకు విహారాలు కట్టించారు.</p>
+
+<h3>9.2 నిర్మించిన దేవాలయాలు <span class="eng">(Temples Built)</span></h3>
+
+<table>
+<thead><tr><th>దేవాలయం</th><th>దేవత</th><th>శాసన / కాలం</th><th>ప్రాముఖ్యత</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">సర్వదేవ దేవాలయం</span></td>
+  <td>సర్వదేవ <span class="eng">(Sarvadeva — all-gods composite deity)</span></td>
+  <td>11వ పాలన సంవత్సరం; స్తంభ శాసనాలు; సేనాపతి ఎలిశ్రీ అమలు</td>
+  <td>ఈ శాసనాలు <span class="imp">మెట్రిక్ సంస్కృతంలో</span> రాయబడ్డాయి — కృష్ణా లోయలో సంస్కృత లిఖిత రికార్డు మొదలైన తొలి సందర్భం</td>
+</tr>
+<tr>
+  <td><span class="bold">పుష్పభద్ర-స్వామి దేవాలయం</span></td>
+  <td><span class="bold">శివుడు</span> <span class="eng">(Pushpabhadra-svamin)</span></td>
+  <td>ఎహువుల పాలన కాలం</td>
+  <td>శైవ పోషణ నిరంతరం కొనసాగిందని చూపిస్తుంది</td>
+</tr>
+<tr>
+  <td><span class="bold">నోదగీశ్వర-స్వామి దేవాలయం</span></td>
+  <td><span class="bold">శివుడు</span> <span class="eng">(Nodagishvara-svamin)</span></td>
+  <td>ఎహువుల పాలన కాలం</td>
+  <td>రెండు శైవ దేవాలయాలు — రాజభవన ప్రాంతంలో పశ్చిమ వైపు</td>
+</tr>
+<tr>
+  <td><span class="bold">కార్తికేయ (మురుగన్) పుణ్యస్థలాలు</span></td>
+  <td><span class="bold">కార్తికేయుడు</span> <span class="eng">(Kartikeya / Murugan)</span></td>
+  <td>రెండు రాతి విగ్రహాలు తవ్వకాలలో దొరికాయి</td>
+  <td>ఉత్తర-దక్షిణ సంస్కృతుల మేళవింపు — కార్తికేయ-మురుగన్ రెండు పేర్లు ఈ ప్రాంత వ్యాప్తి చూపిస్తాయి</td>
+</tr>
+<tr>
+  <td><span class="bold">అష్టభుజ-స్వామి దేవాలయం</span></td>
+  <td><span class="bold">అష్టభుజ వైష్ణవ దేవత</span> <span class="eng">(Ashtabhujasvamin — 8-armed Vaishnava deity)</span></td>
+  <td><span class="imp">క్రీ.శ. 278</span></td>
+  <td><span class="imp">దక్కన్‌లో తొలి దినాంకిత వైష్ణవ దేవాలయం</span> — ఈ ఘనత అత్యంత ముఖ్యం (దిగువ చూడండి)</td>
+</tr>
+</tbody>
+</table>
+
+<div class="key-box">
+<strong>అష్టభుజ-స్వామి దేవాలయం — క్రీ.శ. 278 <span class="eng">(HIGHLIGHT: Earliest Dated Vaishnava Temple in the Deccan)</span></strong>
+<p>ఎహువుల చామ్తముల II క్రీ.శ. 278లో నిర్మించిన <span class="imp">అష్టభుజ-స్వామి దేవాలయం దక్కన్ ప్రాంతంలో తొలి దినాంకిత వైష్ణవ దేవాలయం</span>. "అష్టభుజ" అంటే 8 భుజాలు; ఇది విష్ణువు (లేదా విష్ణు-రూప దేవత)కు సంబంధించిన ఆకృతి. ఈ వాస్తవం APPSC పరీక్షలో పదే పదే అడిగే విషయం — "దక్కన్‌లో తొలి వైష్ణవ దేవాలయం" అంటే ఇదే. గమనించండి: తదుపరి శతాబ్దాలలో అభీర వాసుసేన ఈ దేవాలయాన్ని ధ్వంసం చేస్తాడు — ఆ శాసనం ఇక్ష్వాకు పతన చర్చలో వస్తుంది (సెక్షన్ 10).</p>
+</div>
+
+<h3>9.3 పాటగండిగుడెం రాగి శాసనాలు <span class="eng">(Patagandigudem Copper Plates)</span></h3>
+
+<p>ఎహువుల చామ్తముల II పాలన కాలంలో జారీ చేయబడిన పాటగండిగుడెం రాగి శాసనాలు భారత చరిత్రలో మైలురాయి. ఉపిందర్ సింగ్ (2017, పు. 173) ప్రకారం ఇవి <span class="imp">భారత ఉపఖండంలో అత్యంత పురాతన రాగి పత్ర శాసనాలు</span> <span class="eng">(oldest known copper-plate charter in the Indian subcontinent)</span>.</p>
+
+<div class="key-box">
+<strong>పాటగండిగుడెం రాగి శాసనాల ప్రాముఖ్యత:</strong>
+<ul>
+<li><span class="bold">ఏమి దానం చేశారు:</span> భూమి లేదా రాజ్య హక్కుల మంజూరు — రాగి రేకులపై శాశ్వతంగా నమోదు చేయడం ద్వారా</li>
+<li><span class="bold">భారత లిఖిత చరిత్రకు అర్థం:</span> ఇప్పటి నుండి మధ్యయుగ కాలం వరకు భారత అంతటా రాజులు వేల సంఖ్యలో రాగి పత్ర శాసనాలు జారీ చేశారు; ఆ సంప్రదాయానికి తొలి నిదర్శనం ఇక్ష్వాకు కాలంనాటిది</li>
+<li><span class="bold">భారత లేఖనశాస్త్రానికి <span class="eng">(epigraphy)</span> ముఖ్యత:</span> రాగి పత్ర శాసన సంప్రదాయం ఇక్కడ మొదలై చోళులు, రాష్ట్రకూటులు, చాళుక్యులు, విజయనగర రాజులు వరకు కొనసాగింది</li>
+</ul>
+</div>
+
+<h3>9.4 రాణుల బౌద్ధ పోషణ కొనసాగింది <span class="eng">(Queens Continued Buddhist Patronage)</span></h3>
+
+<p>ఎహువుల కాలంలో రాజు దేవాలయాలు నిర్మిస్తే, అదే కాలంలో రాజ స్త్రీలు బౌద్ధ విహారాలు నిర్మించారు:</p>
+
+<ul>
+<li><span class="bold">మహాదేవి భట్టిదేవ</span> <span class="eng">(Mahadevi Bhattideva)</span> — ఎహువుల రాణి; <span class="imp">బహుశ్రుతీయ</span> శాఖకు విహారం నిర్మించింది</li>
+<li><span class="bold">మహాదేవి కోదబలిశ్రీ</span> <span class="eng">(Mahadevi Kodabalishri)</span> — వీరపురుషదత్తుని కుమార్తె; వనవాస (చుటు) పాలకుని వివాహం; <span class="imp">మహీశాసక</span> శాఖకు మఠం నిర్మించింది</li>
+<li><span class="bold">చంద్రశ్రీ</span> <span class="eng">(Chandrasri)</span> — ఉపాసిక (లయ-స్త్రీ, రాణి కాదు); <span class="imp">అపరమహావినసేలీయ</span> శాఖకు దానం చేసింది</li>
+</ul>
+
+<p>ఒకే రాజవంశంలో రాజు బ్రాహ్మణ దేవాలయాలు, రాణులు బౌద్ధ విహారాలు — ఇవి ఒకే భూమిలో పక్కపక్కనే నిర్మించబడ్డాయి. తవ్వకాలలో తూర్పు వైపు బౌద్ధ నిర్మాణాలు, పశ్చిమ వైపు హిందూ దేవాలయాలు స్పష్టంగా వేరుపడి కనిపించాయి.</p>
+
+<h3>9.5 సంస్కృతం మొదటిసారి <span class="eng">(Sanskrit Appears for the First Time)</span></h3>
+
+<p>ఇక్ష్వాకు శాసనాలు అన్నీ దాదాపు ప్రాకృతం-బ్రాహ్మీ లిపిలో ఉన్నాయి. కానీ ఎహువుల కాలంలో సర్వదేవ దేవాలయ స్తంభ శాసనాలు <span class="imp">మెట్రిక్ సంస్కృతంలో</span> రాయబడ్డాయి — ఇవి కృష్ణా లోయలో సంస్కృత లిఖిత చరిత్రకు తొలి నిదర్శనాలు. ఈ పరివర్తన మహత్తరమైనది: తదుపరి శతాబ్దాలలో దక్షిణ భారతంలో సంస్కృతం రాచరిక భాషగా స్థిరపడుతుంది, కానీ కృష్ణా లోయలో దాని తొలి ఆవిర్భావం ఎహువుల కాలానికే చెందుతుంది.</p>
+
+<div class="info-box">
+<strong>సెక్షన్ 9 ఎందుకు ముఖ్యమైనది — రెండు చారిత్రక "ఫస్ట్"లు:</strong>
+<ul>
+<li><span class="bold">పాటగండిగుడెం రాగి శాసనాలు</span> — భారత ఉపఖండంలో తొలి రాగి పత్ర శాసనాలు; ఈ సంప్రదాయం తర్వాత వేల సంవత్సరాలు కొనసాగింది</li>
+<li><span class="bold">అష్టభుజ-స్వామి దేవాలయం (క్రీ.శ. 278)</span> — దక్కన్‌లో తొలి దినాంకిత వైష్ణవ దేవాలయం; విష్ణు ఆరాధన దక్కన్‌లో నమోదైన తొలి రుజువు</li>
+</ul>
+</div>
+
+</div>
+
+<!-- ============== SECTION 10 ============== -->
+<div class="section" id="sec10">
+<h2>10. వాశిష్ఠీపుత్ర రుద్రపురుషదత్త — చివరి రాజు <span class="eng">(Last King, c. 297-309 CE)</span></h2>
+
+<div class="king-card">
+<h4>వాశిష్ఠీపుత్ర రుద్రపురుషదత్త <span class="eng">(Vasishthiputra Rudrapurushadatta)</span> — చివరి రాజు</h4>
+<p class="meta">
+  <span class="chip red">క్రీ.శ. c. 297–309 <span class="eng">(Krishna Murthy 1977)</span></span>
+  <span class="chip red">క్రీ.శ. c. 300–325 <span class="eng">(Upinder Singh 2016)</span></span>
+</p>
+<p class="meta">
+  <span class="bold">వంశం:</span> వాశిష్ఠి గోత్ర తల్లికి పుత్రుడు <span class="eng">(matronymic — son of a Vasishthi-gotra mother)</span>; ఎహువుల చామ్తముల II కుమారుడు; తల్లి వమ్మభట్ట ఒక మహాక్షత్రప కుమార్తె.
+</p>
+<span class="chip red">చివరి రాజు <span class="eng">(Last King)</span></span>
+<span class="chip gold">~క్రీ.శ. 309 చివరి శాసనం <span class="eng">(Last Inscription c. 309 CE)</span></span>
+<span class="chip purple">పల్లవ విజయం <span class="eng">(Pallava Conquest)</span></span>
+<p>వాశిష్ఠీపుత్ర రుద్రపురుషదత్తుడు ఇక్ష్వాకు వంశపు చివరి రాజు. అతని 11వ పాలన సంవత్సరానికి చెందిన శాసనం వంశం యొక్క చివరి నిరూపిత ఆధారం. వంశం అంత్యానికి పల్లవ విజయం ముఖ్య కారణంగా చరిత్రకారులు గుర్తిస్తారు; అభీర దండయాత్ర అనిశ్చిత ఆధారాలపై ఆధారపడింది.</p>
+</div>
+
+<h3>10.1 చివరి నిరూపిత పాలన <span class="eng">(Last Attested Reign)</span></h3>
+
+<p>రుద్రపురుషదత్తుని 11వ పాలన సంవత్సరానికి చెందిన శాసనం (~క్రీ.శ. 309) ఇక్ష్వాకు వంశం యొక్క చివరి నిరూపిత రికార్డు. ఇక్కడ "నిరూపిత" అనే పదం ముఖ్యం: శాసనాలు లేనంత మాత్రాన వంశం అంతమైందని కాదు. ఉపిందర్ సింగ్ (2016) ప్రకారం రుద్రపురుషదత్తుడు క్రీ.శ. ~325 వరకు పల్లవ సామంతుడిగా మనుగడ సాగించి ఉండవచ్చు — అయితే ఇది అనుమానం మాత్రమే; శాసనాధారాలు లేవు.</p>
+
+<h3>10.2 తల్లి వమ్మభట్టకు స్మారక స్తంభం — పాలన సం. 11 <span class="eng">(Memorial Pillar for Mother Vammabhatta — Year 11)</span></h3>
+
+<p>రుద్రపురుషదత్తుని 11వ పాలన సంవత్సరం యొక్క నాగార్జునకొండ స్మారక స్తంభ శాసనం అతని తల్లి <span class="bold">వమ్మభట్ట</span> <span class="eng">(Vammabhatta)</span> కోసం నిర్మించబడింది. ఆమె ఒక మహాక్షత్రప కుమార్తె అని ఈ శాసనం స్పష్టం చేస్తుంది (సాలమన్ 1998, పు. 93-94). ఇది ఇక్ష్వాకు-శక వివాహ మైత్రి వీరపురుషదత్తు నుండి ఎహువుల వరకు, అక్కడ నుండి రుద్రపురుషదత్తు తల్లి వరకు కొనసాగిందని నిరూపిస్తుంది. రాజ మాతలను గౌరవించే స్మారక స్తంభ నిర్మాణ సంప్రదాయం ఇక్ష్వాకు వంశంలో అంత్యం వరకు కొనసాగింది.</p>
+
+<h3>10.3 గురాజాల శాసనం — పాలన సం. 4 <span class="eng">(Gurazala Inscription — Year 4)</span></h3>
+
+<p>రుద్రపురుషదత్తుని 4వ పాలన సంవత్సరానికి చెందిన గురాజాల శాసనం దేవత హలంపుర-స్వామి <span class="eng">(Halampura-svamin)</span> కి భూమి దానం నమోదు చేస్తుంది. ఇది వంశపు చివరి రాజు కూడా బ్రాహ్మణ దేవతల పోషణ కొనసాగించాడని చూపిస్తుంది. ఎహువుల కాలంలో మొదలైన రాగి పత్ర శాసన సంప్రదాయం ఇక్కడ కూడా కనిపిస్తుంది — భూమి దానాలు రాగిపై నమోదు చేయడం.</p>
+
+<h3>10.4 వంశ అంత్యం — రెండు సిద్ధాంతాలు <span class="eng">(End of Dynasty — Two Competing Theories)</span></h3>
+
+<p>ఇక్ష్వాకు వంశం ఎలా అంతమైందో అనే విషయంలో చరిత్రకారులలో వాదోపవాదాలు ఉన్నాయి:</p>
+
+<div class="key-box">
+<strong>సిద్ధాంతం 1: పల్లవ విజయం <span class="eng">(Pallava Conquest — Stronger Evidence)</span></strong>
+<p>పల్లవ రాజు <span class="bold">సింహవర్మన్</span> <span class="eng">(Simhavarman)</span> (తొలి 4వ శతాబ్దం) ఇక్ష్వాకులను జయించాడని బలమైన ఆధారాలు సూచిస్తున్నాయి. D.C. Sircar (1939) మరియు Upinder Singh (2016) దీనినే నిర్ధారిస్తారు: "పల్లవ సింహవర్మ Iన్ ఇక్ష్వాకులను జయించడం." క్రీ.శ. 4వ శతాబ్దం మధ్య నాటికి పల్లవులు ఈ ప్రాంతాన్ని పూర్తిగా నియంత్రించారు — ఇది నిస్సందేహంగా నమోదయ్యింది.</p>
+
+<div class="alert-box">
+<strong>📜 మాంచికల్లు శాసనం — పల్లవ ఆక్రమణకు ధృవ సాక్ష్యం <span class="eng">(Manchikallu Inscription — Direct Evidence)</span></strong>
+<p><span class="imp">మాంచికల్లు రాతి శాసనం</span> <span class="eng">(Manchikallu stone inscription)</span> — క్రీ.శ. ~320 CE — <span class="bold">పల్లవ సింహవర్మ I</span> యొక్క దక్షిణ బ్రాహ్మీ ప్రాకృతంలో ఉన్న శాసనం. ఇది <span class="imp">ఇక్ష్వాకులను పల్లవులు ఏ సంవత్సరం స్వాధీనం చేసుకున్నారు అనేదానికి ఏకైక ప్రత్యక్ష శాసన ఆధారం</span>. మాంచికల్లు గుంటూరు జిల్లాలో ఉంది — విజయపురికి ఉత్తరం. APPSC పరీక్షలో అత్యంత తరచుగా అడిగే ప్రశ్న: "ఇక్ష్వాకులపై పల్లవ ఆక్రమణను ధృవీకరించిన శాసనం ఏది?" సమాధానం = <span class="bold">మాంచికల్లు శాసనం</span>. <span class="cite">[Wikipedia/Simhavarman I; Sircar 1965; APPSC PSC Notes]</span></p>
+</div>
+
+</div>
+
+<div class="key-box">
+<strong>సిద్ధాంతం 2: అభీర దండయాత్ర <span class="eng">(Abhira Invasion — Uncertain)</span></strong>
+<p>అభీర వాసుసేన్ 30వ సంవత్సరానికి చెందిన శాసనం ఒకటి ధ్వంసమైన అష్టభుజ-స్వామి దేవాలయంలో దొరికింది — ఇది అభీరులు ఆ దేవాలయాన్ని నాశనం చేశారనే వాదనకు ఆధారం. అయితే కృష్ణ మూర్తి స్వయంగా ఇది "నిశ్చయంగా చెప్పలేం" అని అంగీకరించారు. ఒకే ఒక్క శాసనం ఆధారంగా అభీర దండయాత్రను నిర్ధారించడం కష్టం.</p>
+</div>
+
+<div class="alert-box">
+<strong>APPSC పరీక్ష నోట్:</strong> "ఇక్ష్వాకులు ఎవరి చేతిలో పడ్డారు?" అంటే — <span class="imp">పల్లవ సింహవర్మ Iన్</span> అని సమాధానం చెప్పడం సురక్షితం. అభీర దండయాత్ర అనిశ్చితంగా పేర్కొనడం మంచిది.
+</div>
+
+<h3>10.5 వారసులు — ఆ తర్వాత ఏమి జరిగింది? <span class="eng">(What Came Next — Geographic Successors)</span></h3>
+
+<p>ఇక్ష్వాకుల తర్వాత కృష్ణా లోయలో పలు రాజవంశాలు ఉద్భవించాయి:</p>
+
+<table>
+<thead><tr><th>వారసుడు</th><th>ప్రాంతం</th><th>ముఖ్య రాజు / శాసనం</th><th>గమనిక</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">బృహత్ఫలాయనులు <span class="eng">(Brihatphalayanas)</span></span></td>
+  <td>ఉత్తర కృష్ణా డెల్టా; పిఠుండ / కొడూరు నుండి పాలన</td>
+  <td>జయవర్మన్; కొండముది రాగి శాసనాలు (~క్రీ.శ. 280)</td>
+  <td><span class="imp">కాలక్రమంలో ఇక్ష్వాకులతో అతివ్యాప్తి ఉంది</span> — వీరు ఇక్ష్వాకుల అంత్యకాల సమకాలికులే, "తర్వాతి వారు" కాదు (దిగువ alert-box చూడండి)</td>
+</tr>
+<tr>
+  <td><span class="bold">ఆనందగోత్రులు <span class="eng">(Anandagotras)</span></span></td>
+  <td>కృష్ణకు దక్షిణం</td>
+  <td>తొలి 4వ శతాబ్దం</td>
+  <td>చిన్న స్థానిక రాజవంశం</td>
+</tr>
+<tr>
+  <td><span class="bold">సాలంకాయనులు <span class="eng">(Salankayanas)</span></span></td>
+  <td>కృష్ణకు ఉత్తరం; వేంగి రాజధాని</td>
+  <td>4వ శతాబ్దం నుండి</td>
+  <td>వేంగిని రాజధానిగా చేసుకుని ఆంధ్రప్రాంతంలో ముఖ్య శక్తి</td>
+</tr>
+<tr>
+  <td><span class="bold">పల్లవులు <span class="eng">(Pallavas)</span></span></td>
+  <td>మొత్తం ప్రాంతంపై ఆధిపత్యం</td>
+  <td>4వ శతాబ్దం మధ్య నాటికి</td>
+  <td>ఇక్ష్వాకు వంశాన్ని జయించిన పల్లవులు క్రీ.శ. 4వ శతాబ్దం మధ్య నాటికి ఈ ప్రాంత మొత్తంపై ఆధిపత్యం సాధించారు</td>
+</tr>
+</tbody>
+</table>
+
+<div class="alert-box">
+<strong>గందరగోళం నివారించండి — బృహత్ఫలాయనులు సమకాలికులు <span class="eng">(Brihatphalayanas Overlap Chronologically)</span></strong>
+<p>బృహత్ఫలాయన జయవర్మని కొండముది రాగి శాసనాలు ~క్రీ.శ. 280 నాటివి. రుద్రపురుషదత్తుడు క్రీ.శ. 297–309+ పాలించాడు. అంటే బృహత్ఫలాయనులు ఇక్ష్వాకుల అంత్యకాలంతో కాలక్రమంలో అతివ్యాప్తి చెందారు — వారు ఇక్ష్వాకుల "తర్వాతి" వంశం కాదు, సమకాలిక సమీప వంశం. సరళంగా "ఇక్ష్వాకులు పడిపోయాక బృహత్ఫలాయనులు వచ్చారు" అని రాయడం చారిత్రకంగా తప్పు.</p>
+</div>
+
+<div class="tip-box">
+<strong>పతన కారణాలు — జ్ఞాపక సూత్రం <span class="eng">(Mnemonic — "Pallava-Abhira Sandwich")</span></strong>
+<p>ఇక్ష్వాకు పతన కారణాలు గుర్తు పెట్టుకోవడానికి: <span class="imp">"పల్లవ-అభీర శాండ్‌విచ్"</span> — పల్లవ సింహవర్మ Iన్ విజయపురిని ఆక్రమించాడు (బలమైన ఆధారం); అభీర దండయాత్ర (అనిశ్చిత ఆధారం). రెండు శక్తులూ కొత్త రాజకీయ పరిస్థితి తీసుకువచ్చాయి, కానీ పల్లవ ఆధిపత్యమే చివరికి స్థిరపడింది.</p>
+</div>
+
+</div>
+
+<!-- ============== SECTION 11 ============== -->
+<div class="section" id="sec11">
+<h2>11. శాసనాలు <span class="eng">(Inscriptions)</span></h2>
+<p>ఇక్ష్వాకుల చరిత్రకు <span class="imp">అతిముఖ్యమైన ఆధారం శాసనాలు</span>. సుమారు 80+ ప్రాకృత-బ్రాహ్మీ శాసనాలు లభించాయి — ఎక్కువగా <strong>నాగార్జునకొండ</strong>లో, మిగతా జగ్గయ్యపేట, రెంటాల, కేశనపల్లి, గురజాల, పటగండిగూడెం వంటి స్థలాలలో. వీటిని <strong>J. Ph. Vogel</strong> <span class="eng">Epigraphia Indica Vol. XX (1929-30)</span>లో ప్రచురించడంతోనే ఇక్ష్వాకులు ఒక <em>ప్రత్యేక రాజవంశం</em>గా చరిత్రకారులకు తెలిసింది.</p>
+
+<div class="info-box">
+<strong>భాష ముఖ్య గమనిక:</strong> ఇక్ష్వాకు శాసనాలు దాదాపు అన్నీ <strong>ప్రాకృత భాష</strong>లో (MIA), <strong>దక్షిణ బ్రాహ్మీ లిపి</strong>లో ఉన్నాయి. <strong>పటగండిగూడెం రాగి-రేకుల</strong> ప్రారంభంలో సంక్షిప్త <em>సంస్కృత స్తుతి</em> (<span class="eng">"siddhaṁ namo bhagavato sarvajñāya"</span>) ఉన్నప్పటికీ, వాటి ముఖ్య భాగం ప్రాకృతంలోనే ఉంది. <span class="imp">పూర్తి సంస్కృత ఛందోబద్ధ శాసనాలు</span> మొదటిసారిగా ఎహువుల 11వ సం. <strong>సర్వదేవ స్తంభ శాసనాల</strong>లో కనిపిస్తాయి (DHARMA INSEIAD00055, Falk 1999-2000). "ఇక్ష్వాకు శాసనాలు సంస్కృతంలో ఉన్నాయి" అని ఏ పాఠ్యపుస్తకంలోనైనా చూస్తే అది <em>తప్పు</em>.
+</div>
+
+<h3>11.1 ముఖ్య శాసనాల పట్టిక <span class="eng">(Key Inscriptions Table)</span></h3>
+
+<table>
+<thead>
+<tr><th>శాసనం</th><th>రాజు / సంవత్సరం</th><th>లభించిన స్థలం</th><th>ముఖ్య విషయం</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>రెంటాల శాసనం</strong> <span class="eng">(Rentala)</span></td>
+  <td>చామ్తముల I, 5వ సం.</td>
+  <td>రెంటాల (గుంటూరు జిల్లా)</td>
+  <td>మొదటిసారిగా రాజును "సిరి చామ్తముల"గా పేర్కొంటుంది</td>
+</tr>
+<tr>
+  <td><strong>కేశనపల్లి స్తంభ శాసనం</strong> <span class="eng">(Kesanapalli Pillar)</span></td>
+  <td>చామ్తముల I, 13వ సం.</td>
+  <td>కేశనపల్లి (గుంటూరు)</td>
+  <td>4-పంక్తుల శాసనం; <span class="imp">ఇక్ష్వాకు వంశ స్థాపకుడిగా చామ్తములను స్పష్టంగా పేర్కొంటుంది</span></td>
+</tr>
+<tr>
+  <td><strong>చామ్తిసిరి ఆయక-స్తంభ శాసనాలు</strong> <span class="eng">(Chamtisiri Ayaka-Pillars — 16 inscriptions)</span></td>
+  <td>వీరపురుషదత్త, 6వ సం.</td>
+  <td>నాగార్జునకొండ — మహాచైత్యం</td>
+  <td>చామ్తముల సోదరి <strong>చామ్తిసిరి</strong> మహాచైత్య నిర్మాణం; భిక్షువు <em>ఆనంద</em> పర్యవేక్షణ; 7 గురు రాజ స్త్రీ దాతలు పేర్కొనబడ్డారు</td>
+</tr>
+<tr>
+  <td><strong>బోధిసిరి శాసనం</strong> <span class="eng">(Bodhisiri Inscription)</span></td>
+  <td>వీరపురుషదత్త, 14వ సం.</td>
+  <td>నాగార్జునకొండ</td>
+  <td>లౌకిక ఉపాసిక <strong>బోధిసిరి</strong> (రాణి కాదు!) కంటకసేలలో అపదాకార చైత్యం + మండపం — శ్రీలంక (తామ్రపర్ణిద్వీప / మహావిహారవాసి) భిక్షువుల కోసం; చైనా, బెంగాల్, కళింగ, ఒరిస్సా బౌద్ధ సంబంధాల సూచనలు</td>
+</tr>
+<tr>
+  <td><strong>సైట్ 38 విహార శాసనం</strong> <span class="eng">(Site 38 Monastery)</span></td>
+  <td>వీరపురుషదత్త కాలం</td>
+  <td>నాగార్జునకొండ — తూర్పు కొండ (నాహారల్లబోడు)</td>
+  <td><strong>విభజ్యవాద</strong> (థేరవాద-సంబంధ) పాఠశాల భిక్షువులు — కశ్మీర, గాంధార, యవన, వనవాస, తామ్రపర్ణిద్వీప (శ్రీలంక) నుండి. "చూళధమ్మగిరి" = సింహళ విహారం.</td>
+</tr>
+<tr>
+  <td><strong>పటగండిగూడెం రాగి-రేకులు</strong> <span class="eng">(Patagandigudem Copper Plates)</span></td>
+  <td>ఎహువుల కాలం</td>
+  <td>పటగండిగూడెం</td>
+  <td><span class="imp">భారత ఉపఖండంలో అత్యంత పురాతన <em>రాగి-రేకు</em> (copper-plate medium) దాన పత్రం — <span class="imp">అయితే: ఇవి <strong>ఎక్కువగా ప్రాకృతం</strong></span> (సంస్కృత siddham స్తుతితో మాత్రమే). <em>అత్యంత పురాతన పూర్తి-సంస్కృత దక్షిణ భారత రాజ-శాసనం</em> పల్లవ శివస్కందవర్మ యొక్క Hirahadagalli plates (4వ శతాబ్దం ప్రారంభం). కాబట్టి "earliest copper-plate" vs "earliest Sanskrit charter" — తేడాను గుర్తించండి</span> (Upinder Singh 2017, p.173). భారతీయ రాగి-రేకు దాన పత్ర సంప్రదాయానికి ఆరంభం.</td>
+</tr>
+<tr>
+  <td><strong>సర్వదేవ స్తంభ శాసనాలు</strong> <span class="eng">(Sarvadeva Pillars)</span></td>
+  <td>ఎహువుల, 11వ సం.</td>
+  <td>నాగార్జునకొండ — సర్వదేవ ఆలయం</td>
+  <td>6-7 ఛందోబద్ధ సంస్కృత శాసనాలు; సేనాపతి ఎలిష్రి ఆదేశంతో; <span class="imp">ఇక్ష్వాకు కాలంలో సంస్కృతం మొదటిసారిగా ఇక్కడే పూర్తి శాసన భాషగా కనిపిస్తుంది</span></td>
+</tr>
+<tr>
+  <td><strong>గురజాల శాసనం</strong> <span class="eng">(Gurazala)</span></td>
+  <td>రుద్రపురుషదత్త, 4వ సం.</td>
+  <td>గురజాల (పాల్నాడు)</td>
+  <td>హాలంపుర-స్వామిన్ దేవతకు భూదానం</td>
+</tr>
+<tr>
+  <td><strong>రుద్రపురుషదత్త స్మారక స్తంభ శాసనం</strong> <span class="eng">(Memorial Pillar)</span></td>
+  <td>రుద్రపురుషదత్త, 11వ సం.</td>
+  <td>నాగార్జునకొండ</td>
+  <td>రాజు తల్లి <strong>వమ్మభట్ట</strong> (మహాక్షత్రప కుమార్తె) స్మారకం; <span class="eng">పశ్చిమ క్షత్రపులతో</span> వైవాహిక సంబంధం నిర్ధారణ (Salomon 1998)</td>
+</tr>
+<tr>
+  <td><strong>అభీర వాసుసేన శాసనం</strong> <span class="eng">(Abhira Vasusena)</span></td>
+  <td>వాసుసేన, 30వ సం.</td>
+  <td>నాగార్జునకొండ — శిథిల అష్టభుజస్వామిన్ ఆలయం</td>
+  <td><strong>అభీర దాడి సిద్ధాంతానికి ఆధారం</strong> — కానీ Krishna Murthy ప్రకారం "ఖచ్చితంగా చెప్పలేము"</td>
+</tr>
+</tbody>
+</table>
+
+<h3>11.2 శాసనాల వర్గీకరణ <span class="eng">(Inscription Types)</span></h3>
+
+<table>
+<thead>
+<tr><th>రకం</th><th>సంఖ్య (సుమారు)</th><th>ఉపయోగం</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>ఆయక-స్తంభ శాసనాలు</strong> <span class="eng">(Ayaka-pillar)</span></td><td>~30+</td><td>మహాచైత్యం, ఇతర స్తూపాల ఆయక వేదికలపై నిలబెట్టిన స్తంభాలపై — దానదాతల పేర్లు</td></tr>
+<tr><td><strong>స్మారక స్తంభ శాసనాలు</strong> <span class="eng">(Chhaya-stambha / Memorial)</span></td><td>~20+</td><td>రాజులు, రాణులు, సైనికులు, సేనాపతులు, ఉపాధ్యాయులు, శిల్పులకు స్మారక స్తంభాలు</td></tr>
+<tr><td><strong>విహార-చైత్య దాన శాసనాలు</strong> <span class="eng">(Vihara/Chaitya donation)</span></td><td>~15+</td><td>బోధిసిరి శాసనం వంటివి — విహారాలు, అపదాకార చైత్యాలు, మండపాల దానం</td></tr>
+<tr><td><strong>రాజ స్తుతి శాసనాలు</strong> <span class="eng">(Royal Eulogy)</span></td><td>~5</td><td>సర్వదేవ స్తంభ శాసనాలు — రాజు ఘనతలు, సేనాపతుల పాత్రలు</td></tr>
+<tr><td><strong>రాగి-రేకు దాన పత్రాలు</strong> <span class="eng">(Copper Plates)</span></td><td>~2-3</td><td>పటగండిగూడెం = భారత ఉపఖండంలో అత్యంత పురాతనమైనది</td></tr>
+</tbody>
+</table>
+
+<div class="key-box">
+<strong>ఎందుకు ఇన్ని శాసనాలు?</strong> ఇక్ష్వాకు రాజులు, రాణులు, లౌకిక భక్తులు <em>బౌద్ధ దానాల ప్రశంసలు</em> శాసనీకరించే సంప్రదాయాన్ని పటిష్టంగా అనుసరించారు. ఈ సంప్రదాయం <em>శాతవాహన వారసత్వం</em> — శాతవాహన నాణేఘాట్ శాసనం (నాగానిక) నుండి కొనసాగింది. ఆయక-స్తంభాల వెంబడి శాసనీకరణ — ఇది ఇక్ష్వాకుల ప్రత్యేకత.
+</div>
+
+<h3>11.3 శాసనాల చారిత్రక ప్రాముఖ్యత <span class="eng">(Historical Significance)</span></h3>
+
+<p>ఇక్ష్వాకు శాసనాలు మనకు అనేక <em>చారిత్రక మొదటి-సార్లు</em> ఇస్తాయి:</p>
+
+<ul>
+<li><span class="imp">భారత ఉపఖండంలో అత్యంత పురాతన <em>రాగి-రేకు</em> (copper-plate medium) దాన పత్రం — <span class="imp">అయితే: ఇవి <strong>ఎక్కువగా ప్రాకృతం</strong></span> (సంస్కృత siddham స్తుతితో మాత్రమే). <em>అత్యంత పురాతన పూర్తి-సంస్కృత దక్షిణ భారత రాజ-శాసనం</em> పల్లవ శివస్కందవర్మ యొక్క Hirahadagalli plates (4వ శతాబ్దం ప్రారంభం). కాబట్టి "earliest copper-plate" vs "earliest Sanskrit charter" — తేడాను గుర్తించండి</span> — పటగండిగూడెం (ఎహువుల కాలం)</li>
+<li><span class="imp">ద్వీపకల్ప దక్షిణ భారతదేశంలో సంస్కృత ఎపిగ్రఫి యొక్క తొలి-రకాలు <span class="eng">(Junagadh of Rudradaman c. 150 CE predates but is in western India)</span></span> — సర్వదేవ స్తంభ శాసనాలు (ఎహువుల కాలం)</li>
+<li><span class="imp">శ్రీలంక-భారత బౌద్ధ సంబంధాల ప్రత్యక్ష శాసన ఆధారం</span> — బోధిసిరి, సైట్ 38</li>
+<li><span class="imp">పశ్చిమ క్షత్రప (శక) వంశంతో వైవాహిక సంబంధాల ధృవీకరణ</span> — రుద్రపురుషదత్త స్మారక శాసనం (వమ్మభట్ట)</li>
+<li><span class="imp">7 మంది రాజ స్త్రీ దాతల వ్యక్తిగత పేర్లు</span> — చామ్తిసిరి ఆయక-స్తంభ శాసనాలు</li>
+</ul>
+
+<div class="tip-box">
+<strong>పరీక్షా సూచన:</strong> ముఖ్యమైన శాసనాల పేర్లు, రాజులు, ఏ సంవత్సరం — ఈ మూడింటి కలయికలు APPSC ప్రశ్నలలో సాధారణం. ముఖ్యంగా <strong>చామ్తిసిరి ఆయక-స్తంభాలు (వీరపురుషదత్త 6)</strong>, <strong>బోధిసిరి (వీరపురుషదత్త 14)</strong>, <strong>పటగండిగూడెం రాగి-రేకులు (ఎహువుల)</strong> — ఈ మూడింటిని పక్కా గుర్తుంచుకోండి.
+</div>
+</div>
+
+<!-- ============== SECTION 12 ============== -->
+<div class="section" id="sec12">
+<h2>12. రాణుల పాత్ర — బౌద్ధ పోషకులు <span class="eng">(The Queens — Buddhist Patrons)</span></h2>
+
+<p>ఇక్ష్వాకు రాజవంశం యొక్క అత్యంత విలక్షణమైన లక్షణం ఒకే కుటుంబంలో రాజులు-రాణుల మతాల మధ్య స్పష్టమైన విభజన. <span class="imp">రాజులు వేద-బ్రాహ్మణ యజ్ఞ మార్గాన్ని అనుసరించగా, రాణులు మరియు రాజ కుటుంబ స్త్రీలు బౌద్ధాన్ని పోషించారు.</span> ఈ ద్వంద్వ-ధర్మ నమూనా భారతీయ చరిత్రలో ఈ స్థాయిలో మరెక్కడా నమోదు కాలేదు — ఇది ఒంటరిగా నిలిచిన చారిత్రిక ప్రత్యేకత. మహాచైత్యం యొక్క ఆయక స్తంభాలపై 16 శాసనాలు నమోదయ్యాయి; వాటిలో <span class="bold">ఏడుగురు రాజ స్త్రీలు</span> బౌద్ధ దాతలుగా పేర్కొనబడ్డారు.</p>
+
+<h3>12.1 రాజ దాతల పట్టిక <span class="eng">(Table of Royal and Lay Women Donors)</span></h3>
+
+<table>
+<thead><tr><th>పేరు <span class="eng">(Name)</span></th><th>సంబంధం <span class="eng">(Relationship)</span></th><th>దానం / విశేషణం <span class="eng">(Patronage / Donation)</span></th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">చామ్తిసిరి <span class="eng">(Chamtisiri)</span></span></td>
+  <td>చామ్తముల I సోదరి; వీరపురుషదత్తకు అత్త</td>
+  <td><span class="imp">అత్యంత ముఖ్య దాత</span> — మహాచైత్యం నిర్మాణాన్ని వరుసగా 10 సంవత్సరాలు పోషించింది; ఆయక స్తంభాలపై 16 శాసనాలలో పేర్కొనబడింది</td>
+</tr>
+<tr>
+  <td><span class="bold">హమ్మసిరి <span class="eng">(Hammasri)</span></span></td>
+  <td>చామ్తిసిరికి ఉదరీయ సోదరి <span class="eng">(uterine sister)</span></td>
+  <td>చామ్తిసిరితో కలిసి మహాచైత్యంలో సంయుక్త దాత</td>
+</tr>
+<tr>
+  <td><span class="bold">ఆదవి చామ్తిసిరి <span class="eng">(Adavi Chamtisri)</span></span></td>
+  <td>చామ్తముల I కుమార్తె; మహాసేనాపతి ఖమ్దవిషఖ భార్య</td>
+  <td>మహాచైత్య ఆయక స్తంభాలలో దాత; రాజ కుటుంబం-సైనిక అభిజాత వర్గం మధ్య వివాహ మైత్రికి ఉదాహరణ</td>
+</tr>
+<tr>
+  <td><span class="bold">బాపిసిరినిక <span class="eng">(Bapisirinika)</span></span></td>
+  <td>రాజ మహిళ, వీరపురుషదత్త కాలం</td>
+  <td>మహాచైత్య ఆయక స్తంభ దాత</td>
+</tr>
+<tr>
+  <td><span class="bold">మహాదేవి భట్టిదేవ <span class="eng">(Mahadevi Bhattideva)</span></span></td>
+  <td>ఎహువుల చామ్తముల II రాణి</td>
+  <td><span class="bold">బహుశ్రుతీయ</span> <span class="eng">(Bahushrutiya)</span> శాఖ సన్యాసులకు విహారం నిర్మించింది</td>
+</tr>
+<tr>
+  <td><span class="bold">మహాదేవి కోదబలిశ్రీ <span class="eng">(Mahadevi Kodabalishri)</span></span></td>
+  <td>వీరపురుషదత్త కుమార్తె; వనవాస (చుటు) పాలకుని వివాహం చేసుకుంది</td>
+  <td><span class="bold">మహిషాసక</span> <span class="eng">(Mahishasaka)</span> శాఖకు మఠం నిర్మించింది; బనవాసి (కర్ణాటక) కు వలస వెళ్ళిన తర్వాత కూడా దాతృత్వం కొనసాగించింది</td>
+</tr>
+<tr>
+  <td><span class="bold">చంద్రసిరి <span class="eng">(Chandrasri)</span></span></td>
+  <td>ఉపాసిక <span class="eng">(laywoman)</span> — రాజ కుటుంబ సభ్యురాలు</td>
+  <td><span class="bold">అపరమహావినసేలీయ</span> <span class="eng">(Aparamahavinaseliya)</span> శాఖకు దానాలు చేసింది; ఎహువుల కాలం</td>
+</tr>
+<tr>
+  <td><span class="bold">బోధిసిరి <span class="eng">(Bodhisiri)</span></span></td>
+  <td><span class="imp">గృహస్థ ఉపాసిక</span> — రాజ కుటుంబేతర మహిళ <span class="eng">(non-royal lay donor)</span></td>
+  <td>కంటకసేల వద్ద శ్రీలంక సన్యాసులకు <span class="bold">అప్సీడల్ చైత్యం + మండపం</span> నిర్మించింది; ఆమె శాసనం బౌద్ధ అంతర్జాతీయ సంబంధాలను నమోదు చేసింది</td>
+</tr>
+<tr>
+  <td><span class="bold">రుద్రధర-భట్టారిక <span class="eng">(Rudradhara-bhattarika)</span></span></td>
+  <td>వీరపురుషదత్త రాణి; ఉజ్జయిని మహాక్షత్రప కుమార్తె (సంభవంగా రుద్రసేన II కుమార్తె)</td>
+  <td>శక రాజకుమారి — రాజభవనంలో స్కైథియన్ ద్వారపాలుల శిల్పాలకు ఈమె వివాహమే వివరణ; బౌద్ధ పోషణలో పాల్గొంది</td>
+</tr>
+<tr>
+  <td><span class="bold">వమ్మభట్ట <span class="eng">(Vammabhatta)</span></span></td>
+  <td>ఎహువుల చామ్తముల II రాణి; రుద్రపురుషదత్త తల్లి; మహాక్షత్రప కుమార్తె</td>
+  <td>రుద్రపురుషదత్త 11వ పాలన సంవత్సరంలో ఆమె స్మరణకు స్మారక స్తంభం నిలిపారు; పశ్చిమ క్షత్రపులతో రెండవ వివాహ మైత్రికి నిదర్శనం</td>
+</tr>
+</tbody>
+</table>
+
+<h3>12.2 చామ్తిసిరి — అత్యంత ప్రముఖ దాత <span class="eng">(Chamtisiri — The Most Prominent Patron)</span></h3>
+
+<p>ఇక్ష్వాకు రాజ మహిళలలో <span class="imp">చామ్తిసిరి</span> అత్యంత ముఖ్యురాలు. ఆమె చామ్తముల I సోదరి; వీరపురుషదత్తకు అత్త (mother-in-law). విజయపురి మహాచైత్యం నిర్మాణాన్ని ఆమె వరుసగా <span class="bold">పది సంవత్సరాలు</span> స్వంత నిధులతో పోషించింది. ఈ నిధి సేకరణ మరియు నిర్వహణ అంతా ఆమె ప్రత్యక్ష పర్యవేక్షణలో జరిగింది; బౌద్ధ సన్యాసి <span class="bold">ఆనంద</span> నిర్మాణాన్ని పర్యవేక్షించాడు. మహాచైత్యం ఆయక స్తంభాలపై 16 శాసనాలలో ఆమె పేరు నమోదైంది — ఇవి వీరపురుషదత్త 6వ పాలన సంవత్సరానికి చెందినవి. ఈ 16 శాసనాలలో మరో ఆరుగురు రాజ స్త్రీలు కూడా పేర్కొనబడ్డారు, కానీ చామ్తిసిరి మాత్రం ప్రముఖ స్థానంలో నిలుస్తుంది.</p>
+
+<div class="info-box">
+<strong>చామ్తిసిరి భర్త — స్కందశ్రీ (పుకీయ కుటుంబం) <span class="eng">(Chamtisiri's Husband — Skandasri of Pukiya Family)</span></strong>
+<p>చామ్తిసిరి భర్త <span class="bold">మహాతలవర స్కందశ్రీ</span> <span class="eng">(Mahatalavara Skandasri)</span> — <span class="imp">పుకీయ కుటుంబం</span> <span class="eng">(Pukiya family)</span>కు చెందినవాడు. ఇక్ష్వాకు రాజ్యంలో మూడు ప్రధాన మహాతలవర-అరిస్టోక్రాట్ వంశాలు ఉన్నాయి: <span class="bold">పుకీయ, ధానక, హిరణ్యక</span>. ఈ మూడు కుటుంబాలు రాజవంశంతో వివాహ-సంబంధాలతో ముడిపడి సైనిక-పరిపాలనా అధికారాలు పొందాయి. చామ్తిసిరి-స్కందశ్రీ వివాహం = ఇక్ష్వాకు రాజవంశం + పుకీయ అరిస్టోక్రసీ సంబంధం. <span class="cite">[Wikipedia/Andhra Ikshvaku]</span></p>
+</div>
+
+
+<h3>12.3 బోధిసిరి — గృహస్థ దాత, అంతర్జాతీయ సంబంధాల నమోదు <span class="eng">(Bodhisiri — Lay Donor and International Buddhist Contacts)</span></h3>
+
+<p><span class="bold">బోధిసిరి</span> ఒక విలక్షణమైన వ్యక్తిత్వం — ఆమె రాజ కుటుంబేతర గృహస్థ ఉపాసిక <span class="eng">(lay upasika)</span>. వీరపురుషదత్త 14వ పాలన సంవత్సరానికి చెందిన బోధిసిరి శాసనం ఒక అసాధారణ చారిత్రిక పత్రం. ఆమె <span class="bold">కంటకసేల</span> వద్ద శ్రీలంక సన్యాసులకు (<span class="bold">మహావిహారవాసిన్ / తంపమ్నిదీప</span> థేరవాద సన్యాసులు) ఒక అప్సీడల్ చైత్యం మరియు స్తంభాల మండపం నిర్మించింది.</p>
+
+<p>ఈ శాసనంలో అత్యంత విలువైన భాగం: విజయపురితో బౌద్ధ సంబంధాలున్న ప్రాంతాల జాబితా:</p>
+<ul>
+<li><span class="bold">తంపమ్నిదీప</span> <span class="eng">(Tambapamnidipa)</span> — శ్రీలంక</li>
+<li><span class="bold">కశ్మీర, గంధార</span> — ఉత్తర భారత/ఆఫ్ఘనిస్తాన్</li>
+<li><span class="bold">యవన</span> <span class="eng">(Yavana)</span> — గ్రీకు/ఇండో-గ్రీకు ప్రాంతాలు</li>
+<li><span class="bold">చైనా, బంగాళ, కళింగ, ఒడిశా, వనవాస</span> <span class="eng">(Vanavasa/Banavasi)</span> — కర్ణాటక</li>
+</ul>
+<p>అంటే విజయపురి బౌద్ధ ఇంటర్నేషనల్ మ్యాప్‌లో కేంద్రంగా ఉందని ఈ శాసనం నిరూపిస్తుంది — ఒక గృహస్థ మహిళ నిర్మించిన ఒక చైత్యం ఏడు దేశాల బౌద్ధ సంఘాలను పేర్కొంటుంది.</p>
+
+<h3>12.4 శక రాజకుమారి రాణులు — రుద్రధర-భట్టారిక మరియు వమ్మభట్ట <span class="eng">(The Saka Princess Queens)</span></h3>
+
+<p>ఇక్ష్వాకు వంశంలో రెండు సందర్భాలలో పశ్చిమ క్షత్రపుల (శక) రాజకుమారిలతో వివాహ మైత్రి జరిగింది. ఇవి విజయపురి అంతర్జాతీయ స్వభావానికి మరొక నిదర్శనం.</p>
+
+<p><span class="bold">రుద్రధర-భట్టారిక:</span> వీరపురుషదత్త రాణి; ఉజ్జయిని మహాక్షత్రప కుమార్తె (పండితుల అభిప్రాయంలో సంభవంగా రుద్రసేన II కుమార్తె). ఈ వివాహం విజయపురి రాజభవనంలో <span class="bold">స్కైథియన్ ద్వారపాలుల శిల్పాలు</span> ఉండటానికి వివరణ ఇస్తుంది — బెర్డెడ్ సైనికుడు, రోమన్ శిరస్త్రాణం, నిలవెత్తు అంగీ, ఈట — ఇవి శక అంగరక్షకుల చిత్రణలు. రాణి తన దేశంలోని సైనిక సంస్కృతిని తెచ్చింది.</p>
+
+<p><span class="bold">వమ్మభట్ట:</span> ఎహువుల చామ్తముల II రాణి; రుద్రపురుషదత్త తల్లి; ఒక మహాక్షత్రప కుమార్తె. ఆమె మరణానంతరం ఆమె కుమారుడు రుద్రపురుషదత్త 11వ పాలన సంవత్సరంలో (సుమారు క్రీ.శ. 309) ఆమె స్మరణలో స్మారక స్తంభం నిలిపాడు — ఇది ఇక్ష్వాకుల పశ్చిమ క్షత్రపులతో వివాహ మైత్రికి రెండవ దశ నిరూపణ (రిచర్డ్ సాలొమన్, 1998, పు. 93-94).</p>
+
+<div class="info-box">
+<strong>మహిళలు బౌద్ధాన్ని ఎందుకు పోషించారు? <span class="eng">(Why Did Women Patronize Buddhism?)</span></strong>
+<p>భారత చరిత్రలో ఈ స్థాయి రాజ మహిళా బౌద్ధ పోషణ అరుదైనది. దీనికి పలు వివరణలు చర్చలో ఉన్నాయి:</p>
+<ul>
+<li><span class="bold">మాతృనామ సంస్కృతి:</span> ఇక్ష్వాకు సమాజం మాతృనామ సంప్రదాయాన్ని పాటించింది — అంటే స్త్రీల సామాజిక దృశ్యత <span class="eng">(public visibility)</span> ఇతర రాజవంశాలకంటే ఎక్కువగా ఉండేది. ఈ దృశ్యత రాజకీయ-ధార్మిక రంగంలో స్వతంత్ర పాత్ర వహించడానికి అవకాశమిచ్చింది.</li>
+<li><span class="bold">బౌద్ధ సమానతావాదం:</span> బౌద్ధం గృహస్థ దాతలను (లేదా ఉపాసికలను) పూర్తిగా స్వీకరించింది; దాన పుణ్యం వ్యక్తిగతం, కుల-వర్గ-లింగ నిర్బంధం తక్కువ. వైదిక యజ్ఞాలలో స్త్రీలు నేరుగా పాల్గొనే అవకాశం పరిమితం — అందువల్ల స్వతంత్ర ధార్మిక ఆచరణకు బౌద్ధం అనువైన మార్గం.</li>
+<li><span class="bold">వ్యక్తిగత మత స్వాతంత్య్రం:</span> రాజులు వైదిక రాజధర్మాన్ని పాటించాల్సిన రాజకీయ అవసరం ఉంది (యజ్ఞం = సార్వభౌమత్వ చట్రబద్ధత); రాజ మహిళలకు ఆ నిర్బంధం తక్కువ — వ్యక్తిగత మత ఆచరణలో స్వేచ్ఛ ఎక్కువ.</li>
+<li><span class="bold">ఆర్థిక స్వాతంత్య్రం:</span> చామ్తిసిరి 10 సంవత్సరాలు మహాచైత్యం నిర్మాణాన్ని పోషించింది అంటే ఆమె స్వంత సంపత్తి నిధులు నియంత్రించింది — ఇది రాజ మహిళలు స్వతంత్ర ఆర్థిక అధికారం కలిగి ఉన్నారని సూచిస్తుంది.</li>
+</ul>
+</div>
+
+</div>
+
+<!-- ============== SECTION 13 ============== -->
+<div class="section" id="sec13">
+<h2>13. పరిపాలన <span class="eng">(Administration)</span></h2>
+
+<h3>13.1 మాతృనామ సంప్రదాయం <span class="eng">(Matronymic Naming)</span></h3>
+
+<p>ఇక్ష్వాకు రాజులు తమ పేర్లలో తల్లి యొక్క గోత్రనామాన్ని ఉపయోగించే సంప్రదాయాన్ని శాతవాహనుల నుండి కొనసాగించారు. ఈ పద్ధతిలో రాజు పేరు "తల్లి గోత్రం + పుత్ర" అని ఏర్పడుతుంది:</p>
+
+<table>
+<thead><tr><th>పేరు <span class="eng">(Name)</span></th><th>అర్థం <span class="eng">(Meaning)</span></th><th>ఉదాహరణ <span class="eng">(Example)</span></th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">వాశిష్ఠీపుత్ర <span class="eng">(Vasishthiputra)</span></span></td>
+  <td>వాశిష్ఠి గోత్ర తల్లికి పుత్రుడు — "వాశిష్ఠి" అనేది వసిష్ఠ బ్రాహ్మణ గోత్రానికి స్త్రీలింగ రూపం</td>
+  <td>చామ్తముల I, ఎహువుల చామ్తముల II, రుద్రపురుషదత్త — ముగ్గురూ "వాశిష్ఠీపుత్రులు"</td>
+</tr>
+<tr>
+  <td><span class="bold">మాతరీపుత్ర <span class="eng">(Mathariputra)</span></span></td>
+  <td>మాతరి గోత్ర తల్లికి పుత్రుడు</td>
+  <td>వీరపురుషదత్త మాత్రమే "మాతరీపుత్రుడు"</td>
+</tr>
+</tbody>
+</table>
+
+<p>ఈ సంప్రదాయం ఉపయోగించడానికి కొన్ని ఆచరణాత్మక కారణాలు:</p>
+<ul>
+<li>ఒక రాజుకు పలు భార్యల పిల్లలు ఉన్నప్పుడు, తల్లి గోత్రం ద్వారా ఏ కుమారుడు ఏ తల్లి సంతానమో స్పష్టంగా గుర్తించవచ్చు — రాజ వంశ వారసత్వ వివాదాలు తగ్గుతాయి.</li>
+<li>తల్లి గోత్రం గొప్ప బ్రాహ్మణ ఋషి పేరు (వసిష్ఠ, మాతరి) కావడంతో, ఆ గోత్రాన్ని ఉపయోగించడం రాజుకు ధార్మిక-బ్రాహ్మణ సంస్కృతి హోదా కల్పిస్తుంది.</li>
+<li>ఇది ఆంధ్ర-దక్కన్ సమాజంలో స్త్రీ గోత్రానికి గల ఉన్నత స్థానాన్ని ప్రతిఫలిస్తుంది — ఉత్తర భారత పితృనామ సంప్రదాయానికి భిన్నమైన దక్కన్ సంప్రదాయం.</li>
+</ul>
+
+<h3>13.2 ముఖ్య పరిపాలనా పదాలు <span class="eng">(Key Administrative Officials)</span></h3>
+
+<table>
+<thead><tr><th>హోదా <span class="eng">(Post)</span></th><th>విధి <span class="eng">(Function)</span></th><th>ఉదాహరణ / గమనిక <span class="eng">(Example / Note)</span></th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">మహాసేనాపతి <span class="eng">(Mahasenapati)</span></span></td>
+  <td>ప్రధాన సైన్యాధ్యక్షుడు <span class="eng">(Chief military commander)</span>; కొన్నిసార్లు పెద్ద ప్రాంత పాలకుడు కూడా</td>
+  <td><span class="imp">ఖమ్దవిషఖ</span> <span class="eng">(Khamdavishakha)</span> — ధనక కుటుంబానికి చెందినవాడు; చామ్తముల I కుమార్తె <span class="bold">ఆదవి చామ్తిసిరిని</span> వివాహమాడాడు. ఈ పదవి <span class="bold">వంశపారంపర్యంగా</span> <span class="eng">(hereditary)</span> ఉండేది</td>
+</tr>
+<tr>
+  <td><span class="bold">మహాతలవర <span class="eng">(Mahatalavara)</span></span></td>
+  <td>ప్రాంతీయ పాలనా అధికారి <span class="eng">(territorial governor)</span></td>
+  <td>ఇక్ష్వాకు శాసనాలలో పేర్కొనబడ్డ పాలనా హోదా; ప్రాంతాల పర్యవేక్షణ</td>
+</tr>
+<tr>
+  <td><span class="bold">సేనాపతి <span class="eng">(Senapati)</span></span></td>
+  <td>జూనియర్ సైన్యాధికారి; మహాసేనాపతి కింద</td>
+  <td>పాలన యంత్రాంగంలో ద్వితీయ స్థాయి సైనిక అధికారి</td>
+</tr>
+</tbody>
+</table>
+
+<h3>13.3 వివాహ మైత్రి ద్వారా పరిపాలనా సమైక్యత <span class="eng">(Administrative Integration via Marriage Alliances)</span></h3>
+
+<p>ఖమ్దవిషఖ-ఆదవి చామ్తిసిరి వివాహం ఇక్ష్వాకు పరిపాలన సాంప్రదాయికతకు ఒక ముఖ్య ఉదాహరణ. <span class="bold">రాజ కుమార్తెను మహాసేనాపతికి ఇచ్చి వివాహం చేయడం</span> — ఇది సైనిక అభిజాత వర్గాన్ని రాజ కుటుంబంతో అనుసంధించే పద్ధతి. ఆ కుటుంబం రాజకీయంగా విధేయంగా ఉంచడానికి ఇది సహాయపడింది; ఆ మహాసేనాపతి పదవి కూడా వంశపారంపర్యంగా ఉండేది. ఇది కేంద్ర పాలనా అధికారాన్ని, స్థానిక సైనిక శక్తిని సమతుల్యంగా నిర్వహించే సాంప్రదాయిక వ్యూహం.</p>
+
+<h3>13.4 రాణుల రాజకీయ ప్రభావం <span class="eng">(Political Influence of Queens)</span></h3>
+
+<p>ఇక్ష్వాకు రాజ స్త్రీలు కేవలం ధార్మిక దాతలు మాత్రమే కాదు — వారి రాజకీయ ప్రభావం అసాధారణంగా ఉంది. చామ్తిసిరి మహాచైత్యం నిర్మాణానికి 10 సంవత్సరాలు స్వంత నిధులు వినియోగించింది అంటే ఆమె నిర్భరమైన ఆర్థిక అధికారం కలిగి ఉంది. ఈ ఆర్థిక-ధార్మిక స్వాతంత్య్రం అనేది ఆనాటి అనేక ఇతర రాజవంశాల రాణులకు ఉండేది కాదు. ఇక్ష్వాకుల మాత్రమే ఈ స్థాయిలో రాజ స్త్రీలు స్వతంత్రంగా పెద్ద మొత్తం వనరులు నిర్వహించారని శాసన ఆధారాలు తెలుపుతున్నాయి.</p>
+
+<div class="info-box">
+<strong>మాతృనామం + స్త్రీ-ప్రాధాన్యత <span class="eng">(Matronymic + Women's Prominence)</span></strong>
+<p>ఇక్ష్వాకు సమాజంలో రెండు లక్షణాలు ఒకే సమయంలో కనిపిస్తాయి: (1) రాజ పేర్లలో <span class="bold">మాతృనామ సంప్రదాయం</span> — తల్లి గోత్రాన్ని ఉన్నత స్థానంలో ఉంచడం; (2) <span class="bold">రాణుల స్వతంత్ర బౌద్ధ పోషణ</span> — స్వంత నిధులతో పెద్ద నిర్మాణాలు. ఈ రెండు కలిపితే అర్థమయ్యేది: ఇక్ష్వాకు సమాజంలో స్త్రీల హోదా అనేక ఇతర ప్రాచీన భారతీయ రాజవంశాలకంటే ఉన్నతంగా ఉంది. పితృస్వామ్య నిర్మాణం ఉన్నప్పటికీ, తల్లి గోత్రం మరియు స్వతంత్ర ధార్మిక-ఆర్థిక పాత్ర కలిసి ఈ రాజవంశాన్ని ప్రత్యేకంగా నిలిపాయి.</p>
+</div>
+
+</div>
+
+<!-- ============== SECTION 14 ============== -->
+<div class="section" id="sec14">
+<h2>14. సాంఘిక-ఆర్థిక జీవితం <span class="eng">(Society &amp; Economy)</span></h2>
+
+<h3>14.1 విజయపురి — ఒక కాస్మోపాలిటన్ నగరం <span class="eng">(Vijayapuri as a Cosmopolitan City)</span></h3>
+
+<p>విజయపురి కేవలం ఒక ప్రాంతీయ బౌద్ధ కేంద్రం కాదు — ఇది అనేక విదేశీ సమాజాలు నివసించిన, వ్యాపారం చేసిన, ధర్మాన్ని ఆచరించిన అంతర్జాతీయ నగరం. శాసన మరియు పురావస్తు ఆధారాలు అనేక విదేశీ సమూహాల ఉనికిని నిరూపిస్తాయి:</p>
+
+<table>
+<thead><tr><th>సమాజం <span class="eng">(Community)</span></th><th>ఆధారం <span class="eng">(Evidence)</span></th><th>విజయపురితో సంబంధం <span class="eng">(Connection)</span></th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">శ్రీలంక (తంపమ్నిదీప) <span class="eng">(Sri Lanka / Tambapamnidipa)</span></span></td>
+  <td>బోధిసిరి శాసనం; సైట్ 38 (చూళధమ్మగిరి) విహారం</td>
+  <td>మహావిహారవాసిన్ థేరవాద సన్యాసుల ప్రత్యేక మఠం నాహరల్లాబొడు కొండపై (~మహాచైత్యానికి తూర్పున 400 మీ.); వారికోసం ప్రత్యేక చైత్యం కూడా నిర్మించబడింది</td>
+</tr>
+<tr>
+  <td><span class="bold">యవన (గ్రీకు/ఇండో-గ్రీకు) <span class="eng">(Yavana)</span></span></td>
+  <td>రాజభవనంలో <span class="bold">డయోనిసస్ శిల్ప ఫలకం</span>; సైట్ 38 శాసనం</td>
+  <td>రాజభవన ప్రాంగణంలో మద్య దేవత డయోనిసస్ శిల్పం (నడుము వరకు నగ్నంగా, రైటన్ పట్టుకుని, మద్య కుండతో) గ్రీకు-రోమన్ శైలి; యవన సన్యాసులు సైట్ 38 లో నివసించారు</td>
+</tr>
+<tr>
+  <td><span class="bold">శక/స్కైథియన్ <span class="eng">(Saka/Scythian)</span></span></td>
+  <td>రాజభవనంలో <span class="bold">స్కైథియన్ ద్వారపాల శిల్పాలు</span></td>
+  <td>గడ్డపు సైనికుడు, రోమన్ శిరస్త్రాణం, నిలువెత్తు అంగీ, ఈట — ఇవి శక అంగరక్షకుల చిత్రణలు; రుద్రధర-భట్టారిక శక వివాహం ఈ శిల్పాలను వివరిస్తుంది</td>
+</tr>
+<tr>
+  <td><span class="bold">కశ్మీర, గంధార <span class="eng">(Kashmir, Gandhara)</span></span></td>
+  <td>సైట్ 38 విహారం శాసనం; బోధిసిరి శాసనం</td>
+  <td>ఉత్తర బౌద్ధ ప్రాంతాల సన్యాసులు విజయపురిలో విభజ్యవాద (థేరవాద-అనుసంధిత) శాఖలో నివసించారు</td>
+</tr>
+<tr>
+  <td><span class="bold">తమిళ (దమిళ) <span class="eng">(Damila / Tamil)</span></span></td>
+  <td>శాసన ప్రస్తావన</td>
+  <td>విజయపురిలో ప్రత్యేక తమిళ మఠం నమోదైంది — దక్షిణ భారతంతో బౌద్ధ సంబంధాలు</td>
+</tr>
+<tr>
+  <td><span class="bold">చైనా, బంగాళ, కళింగ, ఒడిశా, వనవాస/బనవాసి <span class="eng">(Vanavasa/Banavasi)</span></span></td>
+  <td>బోధిసిరి శాసనం; సైట్ 38 శాసనం</td>
+  <td>విస్తృత బౌద్ధ నెట్‌వర్క్‌లో విజయపురి కేంద్ర స్థానంలో ఉందని నిరూపించే ప్రస్తావనలు</td>
+</tr>
+</tbody>
+</table>
+
+<h3>14.2 అంతర్జాతీయ వాణిజ్యం — ఇండో-రోమన్ సంబంధాలు <span class="eng">(International Trade — Indo-Roman Links)</span></h3>
+
+<p>విజయపురి ఒక ముఖ్యమైన వాణిజ్య కూడలి. కృష్ణానది ద్వారా తూర్పు తీరంకు, అక్కడ నుండి రోమన్ సముద్ర వాణిజ్య మార్గాలకు సంధానమైంది. <em>ఇండో-రోమన్ వాణిజ్యం క్రిష్ణా లోయలో శాతవాహన కాలం నుండే మొదలై ఇక్ష్వాకుల కాలంలోనూ కొనసాగింది</em> — దీనికి నిదర్శనంగా స్థల తవ్వకాలలో మూడు రోమన్ చక్రవర్తుల బంగారు నాణేలు దొరికాయి (ఈ నాణేలలో రెండు ఇక్ష్వాకుల పూర్వ కాలానివే అయినప్పటికీ, దీర్ఘ-కాలిక వాణిజ్య నిరంతరత చూపిస్తాయి):</p>
+
+<table>
+<thead><tr><th>రోమన్ చక్రవర్తి / మహిళ <span class="eng">(Roman Emperor/Lady)</span></th><th>కాలం <span class="eng">(Period)</span></th><th>ప్రాముఖ్యత</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">టైబీరియస్ <span class="eng">(Tiberius)</span></span></td>
+  <td>క్రీ.శ. 16–37</td>
+  <td>ఇది ఇక్ష్వాకుల పూర్వం నుండే కృష్ణా లోయ రోమన్ వాణిజ్య మార్గంలో భాగమని నిరూపిస్తుంది</td>
+</tr>
+<tr>
+  <td><span class="bold">ఫస్టీనా (Faustina the Elder)</span></td>
+  <td>c. 140 CE (మరణం); పోస్థూమస్ నాణేలు 141-161</td>
+  <td>రెండవ శతాబ్దపు రోమన్-కృష్ణా లోయ సంబంధం</td>
+</tr>
+<tr>
+  <td><span class="bold">ఆంటోనినస్ పయస్ <span class="eng">(Antoninus Pius)</span></span></td>
+  <td>క్రీ.శ. 138–161</td>
+  <td>ఇక్ష్వాకు కాలానికి సమకాలీన వాణిజ్య రోమన్ నాణెం</td>
+</tr>
+</tbody>
+</table>
+
+<div class="alert-box">
+<strong>సాధారణ తప్పిదం — జాగ్రత్త! <span class="eng">(Common Error)</span></strong>
+<p>విజయపురిలో దొరికిన రోమన్ బంగారు నాణేలు (అవురేయి) <span class="imp">ఇక్ష్వాకులు జారీ చేసిన నాణేలు కాదు</span> — ఇవి రోమ్ నుండి దిగుమతి అయిన వాణిజ్య నాణేలు. ఇక్ష్వాకులు బంగారు నాణేలు ఎన్నడూ జారీ చేయలేదు. వారు జారీ చేసినవి: <span class="bold">సీసం మరియు పోటిన్ నాణేలు మాత్రమే</span>.</p>
+</div>
+
+<h3>14.3 నాణేలు <span class="eng">(Coinage)</span></h3>
+
+<p>ఇక్ష్వాకు నాణేలు రెండు లోహాలలో తయారయ్యాయి: <span class="bold">సీసం</span> <span class="eng">(lead)</span> మరియు <span class="bold">పోటిన్</span> <span class="eng">(potin — రాగి + తగరం + సీసం మిశ్రమ లోహం; "tin" = తగరం)</span>. నాణేలపై ముఖ్య చిత్రాలు:</p>
+<ul>
+<li><span class="bold">ఏనుగు</span> — అత్యధిక వ్యాప్తి; బౌద్ధ-బ్రాహ్మణ రెండింటికీ పవిత్ర జంతువు</li>
+<li><span class="bold">సింహం</span> — రాజ చిహ్నం; ముఖ్యంగా చామ్తముల I అశ్వమేధ రకం నాణేలలో</li>
+<li><span class="bold">ఉజ్జయిని చిహ్నం</span> (4-గోళాల నమూనా) — శాతవాహన వారసత్వం</li>
+<li><span class="bold">వృషభం, శంఖం, స్వస్తిక, చెట్టు-కంచె</span> — ఇతర సాధారణ చిత్రాలు</li>
+</ul>
+
+<p>2024లో అత్యంత ముఖ్యమైన కనుగొనుట: తెలంగాణలోని <span class="bold">ఫణిగిరి, సూర్యాపేట జిల్లా</span>లో AP/తెలంగాణ హెరిటేజ్ విభాగం నిర్వహించిన తవ్వకాలలో <span class="imp">3,730 సీసం నాణేలు</span> వెలుగులోకి వచ్చాయి — ఇది ఇప్పటి వరకు నమోదైన అతి పెద్ద ఇక్ష్వాకు నాణెం నిక్షేపం. ఇతర నమోదు స్థలాలు: నాగార్జునకొండ, జగ్గయ్యపేట, యల్లేశ్వరం, కొండాపూర్.</p>
+
+<div class="info-box">
+<strong>విజయపురి ఒక అంతర్జాతీయ బౌద్ధ కేంద్రంగా ఏర్పడటానికి కారణాలు <span class="eng">(Why Vijayapuri Became a Cosmopolitan Buddhist Hub)</span></strong>
+<p>అనేక శక్తులు ఒకే సమయంలో కలిసి విజయపురిని ప్రత్యేకంగా నిలిపాయి:</p>
+<ul>
+<li><span class="bold">అంతర్జాతీయ బౌద్ధ సంఘ మార్పిడి:</span> శ్రీలంక, కశ్మీర, గంధార, యవన — ఈ ప్రాంతాల సన్యాసులు ఒకే నగరంలో నివసించారు</li>
+<li><span class="bold">ఇండో-రోమన్ వాణిజ్యం:</span> కృష్ణా నది ద్వారా తూర్పు తీరంతో, అక్కడ నుండి రోమన్ సముద్ర మార్గాలతో సంధానం — ఆర్థిక శ్రేయస్సు</li>
+<li><span class="bold">శక వివాహ మైత్రి:</span> పశ్చిమ ఉజ్జయిని నుండి శక రాజకుమారిలు రావడం — ఉత్తర-పశ్చిమ సంస్కృతి ప్రభావం, శక అంగరక్షకులు</li>
+<li><span class="bold">రాణుల బౌద్ధ పోషణ:</span> మహాచైత్యం, బహుళ విహారాలు, ప్రత్యేక విదేశీ సన్యాసుల మఠాలు — ఇవి స్థిరమైన అంతర్జాతీయ బౌద్ధ నెట్‌వర్క్‌కు ఆకర్షణ</li>
+</ul>
+</div>
+
+</div>
+
+<!-- ============== SECTION 15 ============== -->
+<div class="section" id="sec15">
+<h2>15. మతం — ద్వంద్వ నిర్మాణం <span class="eng">(Religion — The Dual Structure)</span></h2>
+
+<p>ఇక్ష్వాకు రాజవంశం యొక్క <span class="imp">గుర్తింపు లక్షణం</span> — రాజులు బ్రాహ్మణ-వైదిక మార్గాన్ని; రాణులు బౌద్ధాన్ని పోషించడం. ఇది భారతీయ చరిత్రలో ఈ స్థాయిలో, ఒకే రాజవంశంలో, ఒకే తరంలో, ఏకకాలంలో జరిగిన సందర్భం మరెక్కడా నమోదు కాలేదు. ఈ ద్వంద్వ-ధర్మ నిర్మాణం <span class="bold">APPSC పరీక్షలలో అత్యంత తరచుగా అడిగే అంశం</span>.</p>
+
+<div class="alert-box">
+<strong>సాధారణ తప్పిదం — తప్పక గుర్తుంచుకోండి!</strong>
+<p>"వీరపురుషదత్తుడు బౌద్ధాన్ని స్వీకరించాడు" లేదా "ఇక్ష్వాకు రాజులు బౌద్ధులు" అని చెప్పడం <span class="imp">పూర్తిగా తప్పు</span>. వాస్తవంలో: రాణులు మరియు రాజ స్త్రీలు బౌద్ధాన్ని పోషించారు; రాజులు స్వయంగా బ్రాహ్మణ-వైదిక యజ్ఞ సంప్రదాయాన్ని అనుసరించారు. ఏ శాసనమూ ఏ ఇక్ష్వాకు రాజును బౌద్ధులుగా పేర్కొనలేదు.</p>
+</div>
+
+<h3>15.1 రాజుల బ్రాహ్మణ ధర్మం <span class="eng">(Kings' Brahmanical Practice)</span></h3>
+
+<p>ఇక్ష్వాకు రాజులు బ్రాహ్మణ-వైదిక సంప్రదాయాన్ని పాటించారు. దేవాలయ నిర్మాణం మరియు వేద యజ్ఞాలు వారి రాజ-ధర్మంలో భాగం:</p>
+
+<div class="king-card">
+<h4>చామ్తముల I — యజ్ఞ-రాజు <span class="eng">(Chamtamula I — The Yajna King)</span></h4>
+<p>ఇక్ష్వాకు వంశంలో యజ్ఞాలు నిర్వహించినట్టు ఆధారాలున్న <span class="bold">ఏకైక రాజు</span>. మూడు యజ్ఞాలు:</p>
+<ul>
+<li><span class="bold">అగ్నిష్టోమ</span> — సోమ రస అర్పణ</li>
+<li><span class="bold">వాజపేయ</span> — రథ పందెం, క్షత్రియ సార్వభౌమత్వ ప్రకటన</li>
+<li><span class="bold">అశ్వమేధ</span> — అత్యున్నత సార్వభౌమత్వ యజ్ఞం</li>
+</ul>
+<p>పురావస్తు నిదర్శనాలు: అశ్వమేధ-రూప నాణేలు, అవభ్రిత తొట్టె, కూర్మ-చితి (తాబేలు వేదిక), గుర్రపు అస్థిపంజరం.</p>
+</div>
+
+<div class="king-card">
+<h4>ఎహువుల చామ్తముల II — దేవాలయ నిర్మాత <span class="eng">(Ehuvula — Temple Builder)</span></h4>
+<p>ఎహువుల కాలంలో నిర్మించిన దేవాలయాలు ప్రధానంగా శైవ-వైష్ణవ:</p>
+<ul>
+<li><span class="bold">సర్వదేవ</span> <span class="eng">(Sarvadeva)</span> — "అన్ని దేవతలు"; మిళిత ధర్మానికి సంకేతం</li>
+<li><span class="bold">పుష్పభద్రస్వామి</span> <span class="eng">(Pushpabhadra-svamin)</span> — శివ</li>
+<li><span class="bold">నోడగీశ్వర-స్వామి</span> <span class="eng">(Nodagishvara-svamin)</span> — శివ</li>
+<li><span class="bold">కార్తికేయ (ముగురగన్)</span> <span class="eng">(Kartikeya / Murugan)</span> — శివ పుత్రుడు</li>
+<li><span class="bold">అష్టభుజస్వామి</span> <span class="eng">(Ashtabhujasvamin)</span> — క్రీ.శ. 278; <span class="imp">దక్కన్‌లో అత్యంత పురాతన తేదీ నమోదైన వైష్ణవ దేవాలయం</span> (ఎనిమిది చేతుల విష్ణువు)</li>
+</ul>
+</div>
+
+<h3>15.2 రాణుల బౌద్ధ పోషణ — శాఖల పట్టిక <span class="eng">(Queens' Buddhism — Table of Sects)</span></h3>
+
+<table>
+<thead><tr><th>శాఖ <span class="eng">(Sect)</span></th><th>సంప్రదాయం <span class="eng">(Tradition)</span></th><th>దాత <span class="eng">(Patron)</span></th><th>దానం <span class="eng">(Donation)</span></th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">బహుశ్రుతీయ <span class="eng">(Bahushrutiya)</span></span></td>
+  <td>మహాసాంఘిక ఉప-శాఖ</td>
+  <td>మహాదేవి భట్టిదేవ (ఎహువుల రాణి)</td>
+  <td>విహారం నిర్మాణం</td>
+</tr>
+<tr>
+  <td><span class="bold">అపరమహావినసేలీయ <span class="eng">(Aparamahavinaseliya)</span></span></td>
+  <td>మహాసాంఘిక ఉప-శాఖ</td>
+  <td>చంద్రసిరి (ఉపాసిక, ఎహువుల కాలం)</td>
+  <td>దానాలు</td>
+</tr>
+<tr>
+  <td><span class="bold">మహిషాసక <span class="eng">(Mahishasaka)</span></span></td>
+  <td>స్థవిర <span class="eng">(Sthavira)</span> సంప్రదాయం</td>
+  <td>మహాదేవి కోదబలిశ్రీ (వీరపురుషదత్త కుమార్తె)</td>
+  <td>మఠం నిర్మాణం</td>
+</tr>
+<tr>
+  <td><span class="bold">మహావిహారవాసిన్ (థేరవాద) <span class="eng">(Mahaviharavasin / Theravada)</span></span></td>
+  <td>థేరవాద — శ్రీలంక సంప్రదాయం</td>
+  <td>బోధిసిరి (గృహస్థ ఉపాసిక)</td>
+  <td>కంటకసేల (కంటకసోల) వద్ద అప్సీడల్ చైత్యం + మండపం — శ్రీలంక భిక్షువుల కోసం</td>
+</tr>
+<tr>
+  <td><span class="bold">విభజ్యవాద <span class="eng">(Vibhajyavada)</span></span></td>
+  <td>థేరవాద-అనుసంధిత</td>
+  <td>సైట్ 38 విహారం దాతలు</td>
+  <td>కశ్మీర, గంధార, యవన, శ్రీలంక సన్యాసులకు నివాసం</td>
+</tr>
+</tbody>
+</table>
+
+<h3>15.3 ద్వంద్వ నమూనా ఎందుకు ఉంది? — సంభావ్య వివరణలు <span class="eng">(Why Did This Dual Pattern Exist?)</span></h3>
+
+<p>ఈ అసాధారణ ద్వంద్వ-ధర్మ నమూనా ఎందుకు ఏర్పడింది అనే ప్రశ్నకు పండితులు అనేక సిద్ధాంతాలు ప్రతిపాదించారు:</p>
+
+<ul>
+<li><span class="bold">ఆచరణాత్మక రాజకీయ వ్యూహం:</span> రాజులు వైదిక యజ్ఞాల ద్వారా బ్రాహ్మణ వర్గం నుండి రాజ-చట్రబద్ధత పొందారు; రాణులు బౌద్ధ వ్యాపారి-వర్తక సమాజాలను — బౌద్ధ సన్యాసి నెట్‌వర్క్‌ ద్వారా — రాజ్యానికి అనుకూలంగా ఉంచారు. రెండు శక్తివంతమైన సమాజాలతో మంచి సంబంధాలు = రాజకీయ స్థిరత్వం.</li>
+<li><span class="bold">సామాజిక కారణాలు:</span> మాతృనామ సంస్కృతిలో రాజ స్త్రీలకు ప్రత్యేక సామాజిక దృశ్యత ఉంది. ఈ దృశ్యత స్వతంత్ర ధార్మిక ఆచరణను అనుమతించింది. బౌద్ధం గృహస్థ దాతలను స్వాగతిస్తుంది — వైదిక యజ్ఞాలలో స్త్రీలకు ప్రత్యక్ష పాత్ర సీమితం కావడంతో రాజ స్త్రీలు బౌద్ధంలో స్వతంత్ర ధార్మిక పాత్రను కనుగొన్నారు.</li>
+<li><span class="bold">వ్యక్తిగత మత స్వాతంత్య్రం:</span> రాజ్య-స్థాయిలో మత నిర్బంధం లేదు. రాజులు వైదిక రాజ ధర్మం పాటించగా, రాణులు వ్యక్తిగత మత ఆచరణలో స్వేచ్ఛగా బౌద్ధాన్ని అనుసరించారు. ఇది "సహిష్ణు" <span class="eng">(tolerant)</span> రాజ సంస్కృతిని ప్రతిఫలిస్తుంది.</li>
+</ul>
+
+<h3>15.4 బౌద్ధ కళా వారసత్వం — "Later Amaravati" శాఖ <span class="eng">(Buddhist Art Legacy)</span></h3>
+
+<p>ఇక్ష్వాకు బౌద్ధ పోషణ శిల్పకళలో ఒక ప్రత్యేక శాఖను సృష్టించింది — <span class="bold">"Later Amaravati" లేదా "నాగార్జునకొండ శాఖ"</span>. ఇది అమరావతి శైలి యొక్క చివరి పరిణామ దశ; పాల్నాడు సున్నపురాయి మాధ్యమం, అనుభవ-సంఘటన చిత్రణలు అమరావతి నుండి వారసత్వంగా వచ్చాయి. విభాగం 18లో వివరంగా చర్చించబడింది.</p>
+
+<div class="info-box">
+<strong>APPSC పరీక్షా కోణం <span class="eng">(APPSC Exam Angle)</span></strong>
+<p>"ఇక్ష్వాకు ద్వంద్వ ధర్మం" అనే అంశం APPSC పరీక్షలలో స్థిరంగా కనిపిస్తుంది. గుర్తుంచుకోవాల్సిన ముఖ్య విషయాలు:</p>
+<ul>
+<li><span class="bold">రాజులు</span> → వేద-బ్రాహ్మణ యజ్ఞాలు (అశ్వమేధ, వాజపేయ, అగ్నిష్టోమ) + శైవ-వైష్ణవ దేవాలయాలు</li>
+<li><span class="bold">రాణులు</span> → మహాసాంఘిక, స్థవిర, థేరవాద బౌద్ధ శాఖలకు విహారాలు, చైత్యాలు, దానాలు</li>
+<li><span class="bold">ఈ నమూనా భారత చరిత్రలో అత్యంత అరుదైనది</span> — ఒక రాజవంశంలో ఒకే తరంలో</li>
+</ul>
+</div>
+
+
+<h3>15.X బౌద్ధ ఉప-శాఖలు — విభజన చెట్టు <span class="eng">(Buddhist Sub-schools at Vijayapuri)</span></h3>
+<p>నాగార్జునకొండలో నాలుగు ముఖ్య బౌద్ధ ఉప-శాఖలు ఉన్నాయి. వీటి మూలాలు మరియు అర్థాలు:</p>
+<table>
+<thead><tr><th>శాఖ</th><th>పేరు అర్థం</th><th>మూల గుంపు</th><th>ముఖ్య లక్షణం</th></tr></thead>
+<tbody>
+<tr><td><strong>విభజ్యవాద</strong> <span class="eng">(Vibhajyavada)</span></td><td>"విభజించి విశ్లేషించేవారు"</td><td>స్థవీర → <strong>3వ బౌద్ధ సంగీతి (పాటలీపుత్ర, అశోక కాలం)</strong> యొక్క స్వ-గుర్తింపు</td><td>శ్రీలంక <strong>థేరవాద</strong> యొక్క ప్రత్యక్ష పూర్వీకులు; <strong>Site 38 / చూళధమ్మగిరి</strong>లో ఉన్నారు</td></tr>
+<tr><td colspan="3">
+<div class="info-box">
+<strong>చూళధమ్మగిరి = "Lesser Dharma-hill" — శాఖా-మఠ నమూనా</strong><br>
+"<em>చూళ</em>" = తక్కువది, "<em>ధమ్మగిరి</em>" = ధర్మ-పర్వతం. ఈ పేరు <strong>శ్రీలంక అనురాధపురంలోని <em>మహా-విహారం</em> యొక్క శాఖా-మఠం</strong> అని సూచిస్తుంది. విజయపురి Site 38 = <strong>భారతదేశంలో అత్యంత తొలి విదేశీ సంఘ శాఖా-మఠం</strong>; శ్రీలంక మహావిహారవాసి (orthodox Theravada) యొక్క స్థిర భారత outpost. ఇది ఇక్ష్వాకుల యుగంలో అంతర్జాతీయ బౌద్ధ నెట్‌వర్క్ యొక్క బలమైన ఆధారం.
+</div>
+</td>
+<tr><td><strong>మహీశాసక</strong> <span class="eng">(Mahishasaka)</span></td><td>"మహిష-మండలం" — <span class="imp">అవంతి ప్రాంతం (ఉజ్జయిని-సుట్టుపక్కల, పశ్చిమ భారతదేశం)</span> నుండి; "మైసూర్" అనే వ్యుత్పత్తి తిరస్కరించబడింది (Wikipedia/Mahisasaka)</td><td>స్థవీర</td><td>థేరవాద-తరహా కానన్; కోదబలిశ్రీ (వీరపురుషదత్త కుమార్తె) నిర్మాణం</td></tr>
+<tr><td><strong>బహుశ్రుతీయ</strong> <span class="eng">(Bahushrutiya)</span></td><td>"ఎక్కువ విన్నవారు" (= విస్తృతంగా చదువుకున్నవారు)</td><td>మహాసాంఘిక</td><td>ప్రజ్ఞాపారమితా-తరహా గ్రంథాలు అంగీకరించారు; మహాదేవి భట్టిదేవ (ఎహువుల రాణి) నిర్మాణం</td></tr>
+<tr><td><strong>అపరమహావినసేలీయ</strong> <span class="eng">(Aparamahavinaseliya)</span></td><td>"పశ్చిమ-మహా-అరణ్య-పర్వత శాఖ"</td><td>మహాసాంఘిక</td><td>ధాన్యకటకం (అమరావతి)లో కేంద్రీకృతం; లౌకిక చంద్రశ్రీ (ఎహువుల కాలం) దాతృత్వం</td></tr>
+</tbody>
+</table>
+<div class="info-box">
+<strong>సరళ చెట్టు:</strong><br>
+<code>బుద్ధుని-అనంతర సంఘం → స్థవీర + మహాసాంఘిక (1వ విభజన)</code><br>
+<code>స్థవీర → విభజ్యవాద → (శ్రీలంక) థేరవాద / మహీశాసక</code><br>
+<code>మహాసాంఘిక → బహుశ్రుతీయ / అపరమహావినసేలీయ</code><br>
+అన్ని నాలుగు సహ-అస్తిత్వంలో ఉన్నాయి ఇక్ష్వాకుల రాణుల ఆశ్రయంలో — ఇది <em>బౌద్ధ సహజీవన నగరం</em>గా విజయపురిని చేస్తుంది.
+</div>
+</div>
+
+<!-- ============== SECTION 16 ============== -->
+<div class="section" id="sec16">
+<h2>16. విజయపురి నగర నిర్మాణం <span class="eng">(Vijayapuri City Plan)</span></h2>
+<p>విజయపురి (నాగార్జునకొండ) — 3వ శతాబ్దం CEలో <strong>దక్షిణ భారతదేశంలో అతిపెద్ద బౌద్ధ కేంద్రం</strong>. ఇది యాదృచ్ఛికంగా ఎదిగిన నగరం కాదు — <em>నియోజిత నగరం</em> <span class="eng">(planned city)</span>. కృష్ణా నది దక్షిణ ఒడ్డున, 3 వైపులా శ్రీపర్వత (నల్లమల) కొండలతో, 1 వైపు కృష్ణతో చుట్టబడిన లోయలో నిర్మించబడింది. తవ్వకాలలో దొరికిన ప్రణాళికాబద్ధ నిర్మాణాలు చూస్తే — <strong>బౌద్ధ సెక్టార్</strong> (తూర్పు), <strong>రాజప్రాసాద-హిందూ సెక్టార్</strong> (పడమర), <strong>ఆర్థిక సెక్టార్</strong> (ఉత్తరం, నదీ ఘాట్ల వద్ద) — ఈ మూడింటి స్పష్టమైన విభజన.</p>
+
+<div class="info-box">
+<strong>ఎందుకు ముఖ్యం?</strong> ఇక్ష్వాకుల <em>ద్వంద్వ మత నిర్మాణం</em> (రాజుల బ్రాహ్మణత్వం + రాణుల బౌద్ధం) నగర నిర్మాణంలోనే <em>భౌగోళికంగా ప్రతిఫలించింది</em> — తూర్పున బౌద్ధ విహారాలు, పడమర హిందూ ఆలయాలు. ఇది భారతీయ నగర నిర్మాణంలో <em>మత-సహజీవన ప్రణాళిక</em>కు ఉత్తమ ఉదాహరణ.
+</div>
+
+<h3>16.1 ప్రధాన నిర్మాణాలు <span class="eng">(Major Structures)</span></h3>
+
+<table>
+<thead>
+<tr><th>నిర్మాణం</th><th>సెక్టార్ / దిశ</th><th>ప్రాముఖ్యత</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>మహాచైత్యం</strong> <span class="eng">(Great Stupa)</span></td>
+  <td>తూర్పు మధ్యలో — నాగార్జున కొండ తూర్పు పాదాన</td>
+  <td>నగర కేంద్ర బిందువు; <em>చామ్తిసిరి</em> 10 సంవత్సరాలు నిర్మాణం</td>
+</tr>
+<tr>
+  <td><strong>సైట్ 38 — చూళధమ్మగిరి</strong> <span class="eng">(Sinhalese Vihara)</span></td>
+  <td>మహాచైత్యానికి ~400 m తూర్పు, నాహారల్లబోడు కొండపై</td>
+  <td>శ్రీలంక (మహావిహారవాసి) భిక్షువుల విహారం; విభజ్యవాద పాఠశాల</td>
+</tr>
+<tr>
+  <td><strong>చామ్తిసిరి విహారం + అపదాకార చైత్యం</strong></td>
+  <td>మహాచైత్యం తూర్పు ద్వారం వద్ద</td>
+  <td>మహాచైత్యానికి అనుబంధం</td>
+</tr>
+<tr>
+  <td><strong>బహుశ్రుతీయ విహారం</strong></td>
+  <td>మధ్య లోయ</td>
+  <td>మహాదేవి భట్టిదేవ (ఎహువుల రాణి) నిర్మాణం; మహాసాంఘిక ఉపవర్గం</td>
+</tr>
+<tr>
+  <td><strong>అపరమహావినసేలీయ విహారం</strong></td>
+  <td>పశ్చిమ లోయ, అపదాకార చైత్యాల వద్ద</td>
+  <td>మహాసాంఘిక ఉపవర్గం; లౌకిక చంద్రశ్రీ దాతృత్వం</td>
+</tr>
+<tr>
+  <td><strong>మహీశాసక విహారం</strong></td>
+  <td>వ్యాప్త (ఖచ్చిత స్థానం నమోదు లేదు)</td>
+  <td>మహాదేవి కోదబలిశ్రీ (వీరపురుషదత్త కుమార్తె) నిర్మాణం</td>
+</tr>
+<tr>
+  <td><strong>రాజప్రాసాదం + కోట</strong> <span class="eng">(Palace + Citadel)</span></td>
+  <td>పడమర / వాయవ్యం, ఎత్తైన నేలపై</td>
+  <td>డియోనిసస్ స్తంభం, స్కిథియన్ ద్వారపాలకుడు; బ్రాహ్మణ ఆలయాలతో ఆనుకుని</td>
+</tr>
+<tr>
+  <td><strong>బ్రాహ్మణ ఆలయ సమూహం</strong></td>
+  <td>పడమర, రాజప్రాసాదానికి సమీపం</td>
+  <td>సర్వదేవ, పుష్పభద్రస్వామిన్ (శివ), నోదగీశ్వరస్వామిన్ (శివ), కార్తికేయ మందిరాలు, అష్టభుజస్వామిన్ (వైష్ణవ, 278 CE)</td>
+</tr>
+<tr>
+  <td><strong>రంగస్థలం</strong> <span class="eng">(Amphitheatre)</span> — అనుపు వద్ద</td>
+  <td>నాగార్జున సాగర్ జలాశయానికి తూర్పు మెయిన్‌ల్యాండ్ — అనుపు (పునర్నిర్మించబడింది)</td>
+  <td>16.46 × 13.72 m ఆయత మైదానం, 16 బ్రిక్ గ్యాలరీలు, ~1,000 మంది వీక్షకులు; మల్ల యుద్ధాలు / ఆటలు; రోమన్-ప్రభావం</td>
+</tr>
+<tr>
+  <td><strong>స్నాన ఘాట్ + వార్ఫ్</strong></td>
+  <td>ఉత్తరం — కృష్ణా ఒడ్డు</td>
+  <td>ఇటుక-సున్నపురాయి ఘాట్; ~250 ft × 50 ft × 6 ft రాతి వార్ఫ్; కొన్ని శిలలపై చదరంగం బోర్డులు చెక్కబడ్డాయి</td>
+</tr>
+<tr>
+  <td><strong>అవభృథ తీర్థాలు</strong> <span class="eng">(Avabhritha Tanks)</span></td>
+  <td>కోటకు బయట, పశ్చిమ</td>
+  <td>చామ్తముల I అశ్వమేధ యజ్ఞ <em>అవభృథ స్నాన</em> తీర్థాలు; ఇటుక తీర్థం + కూర్మాకృతి తీర్థం (~30 ft ఎడంగా)</td>
+</tr>
+</tbody>
+</table>
+
+<h3>16.2 నగర ప్రణాళిక చిత్రం <span class="eng">(Schematic Map)</span></h3>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="riverGr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7aa0c4"/>
+      <stop offset="100%" stop-color="#5a85ad"/>
+    </linearGradient>
+    <pattern id="hillPat" patternUnits="userSpaceOnUse" width="20" height="20">
+      <path d="M0,15 L10,5 L20,15 Z" fill="#8b7a5a" opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background valley -->
+  <rect width="800" height="500" fill="#fdf4e0"/>
+
+  <!-- Krishna river (north) -->
+  <path d="M 0 50 Q 200 70, 400 60 T 800 80 L 800 100 Q 600 110, 400 95 T 0 80 Z" fill="url(#riverGr)" stroke="#3a6890" stroke-width="1.5"/>
+  <text x="400" y="40" text-anchor="middle" font-size="14" font-weight="bold" fill="#3a6890">కృష్ణా నది (ఉత్తరం)</text>
+
+  <!-- Hill outlines (3 sides) -->
+  <path d="M 0 110 L 0 480 Q 50 470, 80 460 L 80 110 Z" fill="url(#hillPat)" stroke="#6b4423" stroke-width="1"/>
+  <path d="M 720 110 L 720 460 Q 760 470, 800 480 L 800 110 Z" fill="url(#hillPat)" stroke="#6b4423" stroke-width="1"/>
+  <path d="M 80 460 Q 200 478, 400 480 T 720 460 L 720 480 L 80 480 Z" fill="url(#hillPat)" stroke="#6b4423" stroke-width="1"/>
+  <text x="40" y="290" text-anchor="middle" font-size="12" fill="#6b4423" transform="rotate(-90 40 290)">శ్రీపర్వత కొండలు</text>
+  <text x="760" y="290" text-anchor="middle" font-size="12" fill="#6b4423" transform="rotate(90 760 290)">శ్రీపర్వత కొండలు</text>
+
+  <!-- WEST sector: Palace + Hindu temples -->
+  <rect x="120" y="170" width="200" height="220" fill="#fef0d8" stroke="#a14217" stroke-width="1.5" stroke-dasharray="4,2" rx="8"/>
+  <text x="220" y="160" text-anchor="middle" font-size="13" font-weight="bold" fill="#a14217">పశ్చిమ సెక్టార్ — రాజప్రాసాదం + హిందూ ఆలయాలు</text>
+
+  <!-- Palace -->
+  <rect x="140" y="190" width="80" height="60" fill="#e8c890" stroke="#8b4513" stroke-width="1.5"/>
+  <text x="180" y="225" text-anchor="middle" font-size="11" font-weight="bold" fill="#5c3a1c">రాజప్రాసాదం</text>
+  <text x="180" y="240" text-anchor="middle" font-size="9" fill="#6b4423">(డియోనిసస్, స్కిథియన్)</text>
+
+  <!-- Hindu temples -->
+  <rect x="230" y="200" width="70" height="40" fill="#f0d8b0" stroke="#8b4513" stroke-width="1.2"/>
+  <text x="265" y="222" text-anchor="middle" font-size="9" fill="#5c3a1c">సర్వదేవ</text>
+  <text x="265" y="234" text-anchor="middle" font-size="9" fill="#5c3a1c">పుష్పభద్ర</text>
+
+  <rect x="160" y="265" width="120" height="35" fill="#f0d8b0" stroke="#8b4513" stroke-width="1.2"/>
+  <text x="220" y="282" text-anchor="middle" font-size="9" fill="#5c3a1c">కార్తికేయ + అష్టభుజస్వామిన్</text>
+  <text x="220" y="294" text-anchor="middle" font-size="8" fill="#6b4423">(278 CE వైష్ణవ ఆలయం)</text>
+
+  <!-- Avabhritha tanks (west of palace, outside citadel) -->
+  <circle cx="95" cy="335" r="12" fill="#7aa0c4" stroke="#3a6890" stroke-width="1.5"/>
+  <text x="95" y="338" text-anchor="middle" font-size="8" fill="white" font-weight="bold">అవభృథ</text>
+  <ellipse cx="98" cy="370" rx="14" ry="10" fill="#7aa0c4" stroke="#3a6890" stroke-width="1.5"/>
+  <text x="98" y="373" text-anchor="middle" font-size="7" fill="white">కూర్మ</text>
+
+  <!-- EAST sector: Buddhist viharas + Mahachaitya -->
+  <rect x="380" y="170" width="320" height="240" fill="#e6f0d8" stroke="#7a9d3e" stroke-width="1.5" stroke-dasharray="4,2" rx="8"/>
+  <text x="540" y="160" text-anchor="middle" font-size="13" font-weight="bold" fill="#4a6b1f">తూర్పు సెక్టార్ — బౌద్ధ సముదాయం</text>
+
+  <!-- Mahachaitya (center) -->
+  <circle cx="470" cy="290" r="35" fill="#f4e4a8" stroke="#a14217" stroke-width="2.5"/>
+  <circle cx="470" cy="290" r="25" fill="#fff8e7" stroke="#a14217" stroke-width="1.5"/>
+  <text x="470" y="295" text-anchor="middle" font-size="10" font-weight="bold" fill="#a14217">మహాచైత్యం</text>
+  <text x="470" y="345" text-anchor="middle" font-size="9" fill="#6b4423" font-style="italic">(నగర కేంద్రం)</text>
+
+  <!-- Chamtisiri vihara — east of mahachaitya -->
+  <rect x="525" y="270" width="55" height="40" fill="#d8e8c4" stroke="#4a6b1f" stroke-width="1.2"/>
+  <text x="552" y="288" text-anchor="middle" font-size="8" fill="#4a6b1f">చామ్తిసిరి</text>
+  <text x="552" y="300" text-anchor="middle" font-size="8" fill="#4a6b1f">విహారం</text>
+
+  <!-- Site 38 / Sinhalese vihara — far east -->
+  <rect x="620" y="240" width="60" height="50" fill="#d8e8c4" stroke="#4a6b1f" stroke-width="2"/>
+  <text x="650" y="258" text-anchor="middle" font-size="9" font-weight="bold" fill="#4a6b1f">సైట్ 38</text>
+  <text x="650" y="270" text-anchor="middle" font-size="8" fill="#4a6b1f">చూళధమ్మగిరి</text>
+  <text x="650" y="282" text-anchor="middle" font-size="7" fill="#6b4423">(శ్రీలంక)</text>
+
+  <!-- Bahushrutiya vihara -->
+  <rect x="395" y="200" width="55" height="35" fill="#d8e8c4" stroke="#4a6b1f" stroke-width="1.2"/>
+  <text x="422" y="215" text-anchor="middle" font-size="8" fill="#4a6b1f">బహుశ్రుతీయ</text>
+  <text x="422" y="227" text-anchor="middle" font-size="8" fill="#4a6b1f">విహారం</text>
+
+  <!-- Aparamahavinaseliya vihara -->
+  <rect x="395" y="360" width="65" height="35" fill="#d8e8c4" stroke="#4a6b1f" stroke-width="1.2"/>
+  <text x="427" y="376" text-anchor="middle" font-size="8" fill="#4a6b1f">అపరమహా-</text>
+  <text x="427" y="388" text-anchor="middle" font-size="8" fill="#4a6b1f">వినసేలీయ</text>
+
+  <!-- Apsidal chaitya near mahachaitya -->
+  <ellipse cx="520" cy="350" rx="22" ry="14" fill="#f4e4a8" stroke="#a14217" stroke-width="1.2"/>
+  <text x="520" y="354" text-anchor="middle" font-size="8" fill="#a14217">అపదాకార చైత్యం</text>
+
+  <!-- Ghats & wharf (north) -->
+  <rect x="380" y="110" width="180" height="35" fill="#c4d8e8" stroke="#3a6890" stroke-width="1.5"/>
+  <text x="470" y="128" text-anchor="middle" font-size="10" font-weight="bold" fill="#2c4a6b">స్నాన ఘాట్ + వార్ఫ్</text>
+  <text x="470" y="140" text-anchor="middle" font-size="8" fill="#3a6890">(ఉత్తరం — కృష్ణా ఒడ్డు)</text>
+
+  <!-- Amphitheatre (east, across river - "Anupu") -->
+  <rect x="700" y="350" width="80" height="60" fill="#ede0c8" stroke="#8b4513" stroke-width="1.5" rx="6"/>
+  <text x="740" y="370" text-anchor="middle" font-size="10" font-weight="bold" fill="#5c3a1c">రంగస్థలం</text>
+  <text x="740" y="382" text-anchor="middle" font-size="8" fill="#6b4423">(అనుపు)</text>
+  <text x="740" y="394" text-anchor="middle" font-size="8" fill="#6b4423">~1,000 సీట్లు</text>
+  <text x="740" y="406" text-anchor="middle" font-size="8" fill="#6b4423">రోమన్-ప్రభావం</text>
+
+  <!-- Compass -->
+  <g transform="translate(50,440)">
+    <circle r="22" fill="#fff8e7" stroke="#8b4513" stroke-width="1.5"/>
+    <path d="M 0 -18 L 5 0 L 0 18 L -5 0 Z" fill="#a14217"/>
+    <text y="-25" text-anchor="middle" font-size="10" font-weight="bold" fill="#5c3a1c">ఉ</text>
+    <text y="32" text-anchor="middle" font-size="10" fill="#5c3a1c">ద</text>
+    <text x="-28" y="4" text-anchor="middle" font-size="10" fill="#5c3a1c">ప</text>
+    <text x="28" y="4" text-anchor="middle" font-size="10" fill="#5c3a1c">తూ</text>
+  </g>
+
+  <!-- Legend -->
+  <text x="400" y="498" text-anchor="middle" font-size="10" fill="#6b4423" font-style="italic">3 వైపులా శ్రీపర్వత కొండలు, 1 వైపు కృష్ణా నది — సహజ రక్షణ లోయ</text>
+</svg>
+<div class="svg-caption">విజయపురి నగర ప్రణాళిక — Longhurst 1932, Subrahmanyam 1975 తవ్వకాల ఆధారంగా (స్కీమాటిక్)</div>
+</div>
+
+<h3>16.3 ఆనకట్ట నుండి తరలింపు <span class="eng">(1955-67 Cross-River Relocation)</span></h3>
+
+<p>నాగార్జున సాగర్ ఆనకట్ట నిర్మాణం సందర్భంగా (1955-67), R. సుబ్రహ్మణ్యం నేతృత్వంలో జరిగిన <strong>రెస్క్యూ ఎక్స్‌కవేషన్</strong> ముఖ్య నిర్మాణాలను రెండు ఎత్తైన స్థలాలకు తరలించి పునర్నిర్మించింది:</p>
+
+<table>
+<thead>
+<tr><th>తరలింపు స్థలం</th><th>పునర్నిర్మించిన నిర్మాణాలు</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>నాగార్జునకొండ ద్వీపం</strong> <span class="eng">(island in reservoir)</span></td><td>మహాచైత్యం, చిన్న స్తూపాలు, విహార ప్రణాళికలు, మ్యూజియం (1966), ఆయక-స్తంభ సమూహాలు</td></tr>
+<tr><td><strong>అనుపు</strong> <span class="eng">(mainland east of reservoir)</span></td><td>రంగస్థలం, స్నాన ఘాట్, ఒక విహారం, ఒక హిందూ ఆలయ సమూహం</td></tr>
+<tr><td><strong>నీటిలో మునిగిన నిర్మాణాలు</strong></td><td>రాజప్రాసాద పునాదులు, చిన్న స్తూపాలు, వార్ఫ్, ఎక్కువ ఆలయ పునాదులు — శాశ్వతంగా మునిగాయి</td></tr>
+</tbody>
+</table>
+
+<div class="alert-box">
+<strong>చారిత్రక నష్టం:</strong> ప్రపంచంలోనే అత్యంత పెద్ద పురావస్తు రెస్క్యూ ఆపరేషన్‌లలో ఒకటి ఇది. అయినా <em>ఎక్కువ నిర్మాణాలు</em> శాశ్వతంగా నీటిలో ఉండిపోయాయి. ఇవాళ నాగార్జునకొండ ద్వీపం + అనుపు మ్యూజియం మాత్రమే సందర్శకులకు అందుబాటులో ఉన్నాయి.
+</div>
+</div>
+
+<!-- ============== SECTION 17 ============== -->
+<div class="section" id="sec17">
+<h2>17. మహాచైత్యం — నాగార్జునకొండ <span class="eng">(The Great Stupa)</span></h2>
+<p>నాగార్జునకొండ మహాచైత్యం — <strong>శాతవాహన అమరావతి తర్వాత ఆంధ్రప్రదేశ్ యొక్క అత్యంత ప్రాముఖ్యమైన బౌద్ధ స్తూపం</strong>. క్రీ.శ. ~256-274 మధ్య నిర్మాణం (వీరపురుషదత్త 6వ-24వ సం., సుమారు 18 ఏళ్ళు); చామ్తిసిరి యొక్క 10-ఏళ్ళ ప్రారంభ-దాన కాలం 6వ-16వ సం. మాత్రమే; మిగతా నిర్మాణం ఇతర దాతలచే కొనసాగింది; దీని ప్రధాన దాత <strong>చామ్తిసిరి</strong> (చామ్తముల I సోదరి, వీరపురుషదత్త మేనత్త), <strong>10 సంవత్సరాలు</strong> నిరంతరం నిర్మాణ పనులకు నిధులు సమకూర్చింది; భిక్షువు <em>ఆనంద</em> నిర్మాణ పర్యవేక్షకుడు.</p>
+
+<h3>17.1 కొలతలు <span class="eng">(Dimensions — Longhurst 1932)</span></h3>
+
+<table>
+<thead>
+<tr><th>భాగం</th><th>కొలత</th></tr>
+</thead>
+<tbody>
+<tr><td>వ్యాసం (వేదికతో సహా)</td><td>106 ft ≈ <strong>32.3 m</strong></td></tr>
+<tr><td>మేధి (వేదిక) ఎత్తు</td><td>5 ft (1.5 m)</td></tr>
+<tr><td>మొత్తం ఎత్తు (యష్టి తీసి)</td><td>70-80 ft ≈ <strong>21-24 m</strong></td></tr>
+<tr><td>వేదిక మీద ప్రదక్షిణ పథం</td><td>7 ft (2.1 m) వెడల్పు</td></tr>
+<tr><td>భూమి స్థాయి ప్రదక్షిణ పథం</td><td>13 ft (4 m) వెడల్పు</td></tr>
+<tr><td>ఆయక వేదికలు</td><td>22 × 5 ft (6.7 × 1.5 m)</td></tr>
+</tbody>
+</table>
+
+<h3>17.2 ప్రణాళిక — <span class="imp">చక్రాకార నిర్మాణం</span> <span class="eng">(Wheel-Spoke Plan)</span></h3>
+
+<p>మహాచైత్యం యొక్క నిర్మాణ శైలి <strong>చక్రాకారం</strong> — Longhurst మాటల్లో: <em>"ఆంధ్ర స్తూపాలు ఉత్తర భారత స్తూపాల కంటే భిన్నం. అవి హబ్, స్పోక్‌లు, టైర్‌తో పూర్తయిన ఇటుక చక్రం రూపంలో నిర్మించబడ్డాయి."</em> మహాచైత్యంలో <span class="imp">40 చీలికాకృతి నిర్మాణ గదులు (మట్టితో నింపిన <em>structural</em> గదులు — భిక్షువుల నివాస విహారాలు కాదు)</span> ఉన్నాయి — కేంద్ర హబ్ నుండి బయటి వలయం వరకు ఇటుక గోడలతో ఏర్పడ్డాయి; మధ్య స్థలాలు <em>మట్టితో నింపబడ్డాయి</em>. బయట ఇటుక కవచం. ఇటుకల పరిమాణం 20" × 10" × 3" (పాటలీపుత్ర/బులందిబాగ్ ఇటుకలతో సమానం).</p>
+
+<h3>17.3 క్రాస్-సెక్షన్ చిత్రం</h3>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ground line -->
+  <line x1="0" y1="420" x2="700" y2="420" stroke="#6b4423" stroke-width="2.5"/>
+  <text x="20" y="450" font-size="11" fill="#6b4423">భూమి స్థాయి</text>
+
+  <!-- Drum (medhi) - 5 ft (1.5m), scaled -->
+  <rect x="160" y="395" width="380" height="25" fill="#c9a878" stroke="#6b4423" stroke-width="2"/>
+  <text x="350" y="438" text-anchor="middle" font-size="10" fill="#5c3a1c">మేధి (వేదిక) — 1.5 m</text>
+
+  <!-- Lower pradakshina patha (13 ft / 4 m wide) annotation -->
+  <line x1="120" y1="422" x2="160" y2="422" stroke="#8b4513" stroke-width="1"/>
+  <line x1="540" y1="422" x2="580" y2="422" stroke="#8b4513" stroke-width="1"/>
+  <text x="140" y="440" text-anchor="middle" font-size="8" fill="#6b4423">పథం 4 m</text>
+  <text x="560" y="440" text-anchor="middle" font-size="8" fill="#6b4423">పథం 4 m</text>
+
+  <!-- Dome (anda) - hemispherical, ~18 m -->
+  <path d="M 160 395 Q 350 140, 540 395 Z" fill="#f0d8a8" stroke="#8b4513" stroke-width="2.5"/>
+
+  <!-- Internal wheel-spoke pattern (40 chambers shown as radial lines from a center) -->
+  <g stroke="#a14217" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.55">
+    <line x1="350" y1="395" x2="350" y2="100"/>
+    <line x1="350" y1="395" x2="180" y2="395"/>
+    <line x1="350" y1="395" x2="520" y2="395"/>
+    <line x1="350" y1="395" x2="230" y2="250"/>
+    <line x1="350" y1="395" x2="470" y2="250"/>
+    <line x1="350" y1="395" x2="260" y2="180"/>
+    <line x1="350" y1="395" x2="440" y2="180"/>
+    <line x1="350" y1="395" x2="200" y2="320"/>
+    <line x1="350" y1="395" x2="500" y2="320"/>
+    <line x1="350" y1="395" x2="300" y2="135"/>
+    <line x1="350" y1="395" x2="400" y2="135"/>
+  </g>
+  <!-- Central hub -->
+  <circle cx="350" cy="395" r="8" fill="#a14217" opacity="0.7"/>
+  <text x="350" y="400" text-anchor="middle" font-size="8" fill="white">హబ్</text>
+
+  <!-- Relic chamber off-centre, NW (left side of dome, mid-height) -->
+  <rect x="240" y="290" width="22" height="22" fill="#7a9d3e" stroke="#4a6b1f" stroke-width="1.8"/>
+  <text x="251" y="304" text-anchor="middle" font-size="8" fill="white" font-weight="bold">శరీర</text>
+  <text x="251" y="315" text-anchor="middle" font-size="8" fill="white" font-weight="bold">పేటిక</text>
+  <line x1="262" y1="301" x2="320" y2="270" stroke="#4a6b1f" stroke-width="0.8"/>
+  <text x="370" y="265" font-size="9" fill="#4a6b1f">ధాతు-గర్భం (NW outer chamber)</text>
+
+  <!-- Upper pradakshina patha (7 ft / 2.1 m on drum top) -->
+  <line x1="170" y1="392" x2="200" y2="392" stroke="#a14217" stroke-width="1.5"/>
+  <line x1="500" y1="392" x2="530" y2="392" stroke="#a14217" stroke-width="1.5"/>
+  <text x="185" y="388" text-anchor="middle" font-size="7" fill="#a14217">2.1 m</text>
+  <text x="515" y="388" text-anchor="middle" font-size="7" fill="#a14217">2.1 m</text>
+
+  <!-- Harmika (square railing on top) -->
+  <rect x="330" y="70" width="40" height="14" fill="#ede0c8" stroke="#5c3a1c" stroke-width="1.5"/>
+  <text x="395" y="78" font-size="9" fill="#5c3a1c">హర్మిక</text>
+  <line x1="380" y1="76" x2="370" y2="80" stroke="#5c3a1c" stroke-width="0.6"/>
+
+  <!-- Yashti (mast) -->
+  <rect x="346" y="30" width="8" height="40" fill="#8b4513"/>
+  <!-- 3 chhatra umbrellas -->
+  <ellipse cx="350" cy="32" rx="22" ry="4" fill="#a14217" stroke="#5c3a1c" stroke-width="1"/>
+  <ellipse cx="350" cy="22" rx="17" ry="3" fill="#a14217" stroke="#5c3a1c" stroke-width="1"/>
+  <ellipse cx="350" cy="14" rx="12" ry="2.5" fill="#a14217" stroke="#5c3a1c" stroke-width="1"/>
+  <text x="395" y="20" font-size="9" fill="#5c3a1c">యష్టి + ఛత్రాలు</text>
+  <line x1="385" y1="18" x2="370" y2="20" stroke="#5c3a1c" stroke-width="0.6"/>
+
+  <!-- Ayaka platforms with 5 pillars each (front/east shown) -->
+  <rect x="280" y="395" width="140" height="12" fill="#b89860" stroke="#6b4423" stroke-width="1.5"/>
+  <g fill="#fdf4e0" stroke="#6b4423" stroke-width="1.2">
+    <rect x="290" y="360" width="8" height="35"/>
+    <rect x="310" y="355" width="8" height="40"/>
+    <rect x="330" y="350" width="8" height="45"/>
+    <rect x="350" y="355" width="8" height="40"/>
+    <rect x="370" y="360" width="8" height="35"/>
+  </g>
+  <line x1="420" y1="380" x2="490" y2="370" stroke="#6b4423" stroke-width="0.8"/>
+  <text x="495" y="368" font-size="9" fill="#5c3a1c">ఆయక వేదిక + 5 స్తంభాలు</text>
+  <text x="495" y="380" font-size="8" fill="#6b4423">(4 వేదికలు × 5 = <strong>20 స్తంభాలు</strong>)</text>
+
+  <!-- Vedika (wooden railing) -->
+  <g stroke="#8b4513" stroke-width="1.5" fill="none">
+    <line x1="100" y1="425" x2="600" y2="425"/>
+    <line x1="110" y1="418" x2="110" y2="432"/>
+    <line x1="170" y1="418" x2="170" y2="432"/>
+    <line x1="230" y1="418" x2="230" y2="432"/>
+    <line x1="470" y1="418" x2="470" y2="432"/>
+    <line x1="530" y1="418" x2="530" y2="432"/>
+    <line x1="590" y1="418" x2="590" y2="432"/>
+  </g>
+  <text x="110" y="465" font-size="9" fill="#6b4423">వేదిక (కలప, ఇటుక పునాదిపై)</text>
+
+  <!-- Garland-festoon ornament on dome -->
+  <path d="M 200 250 Q 230 240, 260 250 T 320 250 T 380 250 T 440 250 T 500 250" fill="none" stroke="#a14217" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="350" y="245" text-anchor="middle" font-size="8" fill="#a14217" font-style="italic">అలంకరణ — చునమ్ ప్లాస్టర్ + గార్లండ్ + కమల పదకాలు</text>
+
+  <!-- Anda label -->
+  <text x="350" y="210" text-anchor="middle" font-size="14" font-weight="bold" fill="#5c3a1c">అండ (గుమ్మటం)</text>
+  <text x="350" y="225" text-anchor="middle" font-size="10" fill="#6b4423">~18 m ఎత్తు, ఇటుక + చునమ్</text>
+
+  <!-- Total dimensions annotation -->
+  <line x1="40" y1="420" x2="40" y2="80" stroke="#5c3a1c" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+  <text x="22" y="250" text-anchor="middle" font-size="11" font-weight="bold" fill="#5c3a1c" transform="rotate(-90 22 250)">~21-24 m</text>
+
+  <line x1="160" y1="465" x2="540" y2="465" stroke="#5c3a1c" stroke-width="1.5"/>
+  <text x="350" y="478" text-anchor="middle" font-size="11" font-weight="bold" fill="#5c3a1c">వ్యాసం 32.3 m</text>
+
+  <!-- Title -->
+  <text x="350" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#5c3a1c">మహాచైత్యం — క్రాస్-సెక్షన్</text>
+</svg>
+<div class="svg-caption">నాగార్జునకొండ మహాచైత్యం — Longhurst 1932 + MASI 54 (1938) కొలతల ఆధారంగా</div>
+</div>
+
+<h3>17.4 భాగాలు — క్రింది నుండి పైకి <span class="eng">(Components, Ground Up)</span></h3>
+
+<table>
+<thead>
+<tr><th>భాగం</th><th>వివరణ</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1. మేధి</strong> (వేదిక)</td><td>1.5 m గుండ్రని వేదిక, స్తూపానికి ఆధారం</td></tr>
+<tr><td><strong>2. ప్రదక్షిణ పథం (క్రింది)</strong></td><td>భూమి స్థాయిలో 4 m వెడల్పు ప్రదక్షిణ మార్గం</td></tr>
+<tr><td><strong>3. అండ</strong> (గుమ్మటం)</td><td>~18 m అర్ధగోళ ఇటుక గుమ్మటం, చునమ్ ప్లాస్టర్</td></tr>
+<tr><td><strong>4. ప్రదక్షిణ పథం (పైన)</strong></td><td>వేదిక పైన 2.1 m వెడల్పు మార్గం</td></tr>
+<tr><td><strong>5. హర్మిక</strong></td><td>పైన చతురస్రాకార కంచె; రాతి అవశేషాలు లేవు — ఇటుక/ప్లాస్టర్‌లో పునర్నిర్మించబడింది</td></tr>
+<tr><td><strong>6. యష్టి + ఛత్రాలు</strong></td><td>గొడుగు మస్తు — ఇటుక + ప్లాస్టర్ (రాతి టీ లేదు; Longhurst: "దక్షిణ భారత స్తూపాలలో రాతి టీ ఆనవాళ్ళు లేవు")</td></tr>
+<tr><td><strong>7. వేదిక</strong> (కంచె)</td><td><span class="imp">కలప కంచె, ఇటుక పునాదిపై</span> — రాతి కాదు! ఇది అమరావతితో పెద్ద తేడా. 4 ద్వారాలు కంచెను విస్తరించడం ద్వారా ఏర్పడ్డాయి. <em>రాతి తోరణాలు లేవు</em>.</td></tr>
+<tr><td><strong>8. బాహ్య పూత</strong></td><td>చునమ్ (శంఖ-సున్నం) ప్లాస్టర్ పూర్తి స్తూపానికి; పెద్ద గార్లండ్-ఫెస్టూన్ అలంకరణ + కమల పదకాలు ఆండ చుట్టూ — ఇది ఆంధ్ర స్తూపాల ముద్ర</td></tr>
+</tbody>
+</table>
+
+<h3>17.5 ఆయక వేదికలు + 20 స్తంభాలు <span class="eng">(Ayaka Platforms — Andhra Signature)</span></h3>
+
+<div class="key-box">
+<strong>నాలుగు ఆయక వేదికలు × ఒక్కో దానిపై 5 స్తంభాలు = <span class="imp">మొత్తం 20 ఆయక-స్తంభాలు</span></strong>. Longhurst తవ్వకాలలో: 2 నిలబడి, 18 పడిపోయి కనిపించాయి — ఇది 20 సంఖ్యను ధృవీకరిస్తుంది. స్తంభాలు తెల్ల/బూడిద పాల్నాడు సున్నపురాయితో, 10-30 ft ఎత్తు, చతురస్ర పునాది, అష్టభుజ స్తంభం, గుండ్రని పైభాగం (శిరోభాగం లేదు). 4 స్తంభాల పునాదులపై మొదటి ధర్మోపదేశ చిత్రాలు చెక్కబడ్డాయి.
+</div>
+
+<h4>5 స్తంభాల సంకేతార్థం — బుద్ధుని 5 మహాప్రాతిహార్యాలు</h4>
+
+<table>
+<thead>
+<tr><th>#</th><th>సంఘటన</th><th>స్థలం</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>జన్మం <span class="eng">(Nativity)</span></td><td>లుంబిని</td></tr>
+<tr><td>2</td><td>అభినిష్క్రమణం <span class="eng">(Renunciation)</span></td><td>కపిలవస్తు</td></tr>
+<tr><td>3</td><td>సంబోధి <span class="eng">(Enlightenment)</span></td><td>బోధ్ గయ</td></tr>
+<tr><td>4</td><td>ధర్మచక్ర-ప్రవర్తనం <span class="eng">(First Sermon)</span></td><td>సారనాథ్</td></tr>
+<tr><td>5</td><td>మహాపరినిర్వాణం <span class="eng">(Parinirvana)</span></td><td>కుశీనగర</td></tr>
+</tbody>
+</table>
+
+<h3>17.6 ధాతు-గర్భం <span class="eng">(Relic Chamber)</span></h3>
+
+<p>మహాచైత్యం <em>నిజమైన</em> ధాతు-గర్భం (శరీర పేటిక) కలది, కేవలం స్మారక స్తూపం కాదు. Longhurst కనుగొన్నది — శరీర పేటిక <span class="imp">కేంద్రంలో కాదు, వాయవ్యం (NW) వైపు బయటి వలయపు గదుల్లో ఒకదాంట్లో</span> ఉంది (అందుకే నిధి-దొంగల కంటబడలేదు). కంటెంట్: చిన్న పగిలిన మట్టి కుండ; దానిలో చిన్న బంగారు పేటిక; దానిలో ఎముక ముక్క (ధాతువు); 2.5" వెండి స్తూపాకార పేటిక; బంగారు పూలు, ముత్యాలు, గార్నెట్‌లు, స్ఫటిక పూసలు, చెవి ఆభరణం.</p>
+
+<div class="info-box">
+<strong>శాసన పేరు:</strong> "మహాచేతియ ఆఫ్ ద లార్డ్, ద సుప్రీం బుద్ధ" — ఈ స్తూపం బుద్ధుని <em>శరీర</em> ధాతువును ప్రతిష్ఠించినదని శాసనం స్పష్టంగా చెప్తుంది.
+</div>
+
+<h3>17.7 అమరావతి మహాచైత్యంతో పోలిక <span class="eng">(Comparison with Amaravati)</span></h3>
+
+<table>
+<thead>
+<tr><th>లక్షణం</th><th>అమరావతి</th><th>నాగార్జునకొండ</th></tr>
+</thead>
+<tbody>
+<tr><td>వ్యాసం</td><td>~50 m (పెద్దది)</td><td>32.3 m</td></tr>
+<tr><td>ఎత్తు</td><td>~27 m</td><td>21-24 m</td></tr>
+<tr><td>రాతి వేదిక (కంచె)</td><td>సవివరంగా చెక్కిన రాతి కంచె</td><td><span class="imp">కలప కంచె, ఇటుక పునాదిపై — రాతి కాదు</span></td></tr>
+<tr><td>రాతి తోరణాలు</td><td>ఉన్నాయి</td><td><span class="imp">లేవు</span></td></tr>
+<tr><td>ఆయక వేదికలు + 20 స్తంభాలు</td><td>ఉన్నాయి (2-3 శతాబ్దంలో జోడించబడ్డాయి)</td><td>ఉన్నాయి (3 శతాబ్దంలో చామ్తిసిరి ద్వారా)</td></tr>
+<tr><td>చక్రాకార ప్రణాళిక</td><td>ఉంది</td><td>ఉంది</td></tr>
+<tr><td>మెచ్యూర్ ఫేజ్ తేదీ</td><td>~క్రీ.శ. 150-200</td><td>~క్రీ.శ. 225-275 (తరువాత)</td></tr>
+<tr><td>శైలి</td><td>మెచ్యూర్ అమరావతి</td><td>"Later Amaravati" / నాగార్జునకొండ — ఎక్కువ స్తంభిత, తక్కువ సంక్లిష్ట</td></tr>
+</tbody>
+</table>
+
+<div class="alert-box">
+<strong>పరీక్షా ఉచ్చు:</strong> "నాగార్జునకొండ మహాచైత్యం రాతి కంచెతో ఉంది" — <span class="imp">తప్పు</span>. కలప కంచె, ఇటుక పునాదిపై. రాతి కంచె అమరావతిది.
+</div>
+</div>
+
+<!-- ============== SECTION 18 ============== -->
+<div class="section" id="sec18">
+<h2>18. ఇక్ష్వాకు కళ — "Later Amaravati" శైలి <span class="eng">(Ikshvaku Art)</span></h2>
+
+<p>ఇక్ష్వాకు కళ భారత శిల్పకళ చరిత్రలో <span class="imp">"Later Amaravati" లేదా "నాగార్జునకొండ శాఖ"</span> అని పేరు పొందింది. సుమారు క్రీ.శ. 225–275 మధ్య నిర్మించిన ఈ శిల్పాలు అమరావతి పరిణత దశ తర్వాతి దశను సూచిస్తాయి — అదే మాధ్యమం (పాల్నాడు సున్నపురాయి), అదే ఇకోనోగ్రఫీ (బుద్ధుని జీవిత సంఘటనలు, జాతక కథలు), కానీ శైలిలో కొన్ని వ్యత్యాసాలు.</p>
+
+<h3>18.1 మాధ్యమం — పాల్నాడు సున్నపురాయి <span class="eng">(Material — Palnad Limestone)</span></h3>
+
+<p>అమరావతి మరియు నాగార్జునకొండ రెండింటిలోనూ ఒకే మాధ్యమం ఉపయోగించబడింది: <span class="bold">పాల్నాడు సున్నపురాయి</span> <span class="eng">(Palnad limestone)</span> — తెల్లగా-పచ్చగా రంగుమారే నున్నటి, సూక్ష్మ-కణ రాయి. ఇది చెక్కడానికి చాలా అనుకూలంగా ఉంటుంది; నున్నటి తలం చికీన్ <span class="eng">(fine-grained)</span> కావడంతో సూక్ష్మ వివరాలు చెక్కవచ్చు. ఈ రాయి పాల్నాడు ప్రాంతం (ఇప్పటి గుంటూరు జిల్లా సమీపం)లో దొరికే కావున ఇక్ష్వాకుల భూభాగంలోనే లభ్యమైంది.</p>
+
+<h3>18.2 శైలి విశేషాలు — అమరావతి నుండి తేడాలు <span class="eng">(Stylistic Features — Differences from Amaravati)</span></h3>
+
+<p>నాగార్జునకొండ శాఖ అమరావతి శైలి నుండి అనేక విషయాలలో భిన్నంగా ఉంటుంది:</p>
+
+<table>
+<thead><tr><th>లక్షణం <span class="eng">(Feature)</span></th><th>అమరావతి (పరిణత దశ) <span class="eng">(Amaravati Mature Phase)</span></th><th>నాగార్జునకొండ (Later Amaravati)</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">అనుపాతాలు <span class="eng">(Proportions)</span></span></td>
+  <td>ఆకర్షణీయమైన, బాగా నిండిన శరీరాలు</td>
+  <td><span class="imp">మరింత సన్నగా, పొడవుగా</span> <span class="eng">(attenuated / elongated)</span> శరీరాలు</td>
+</tr>
+<tr>
+  <td><span class="bold">గుంపు చిత్రణలు <span class="eng">(Crowd Compositions)</span></span></td>
+  <td>అనేక వ్యక్తులు, సంక్లిష్ట స్తరాలు</td>
+  <td>తక్కువ సంఖ్య; <span class="imp">సరళమైన కూర్పులు</span></td>
+</tr>
+<tr>
+  <td><span class="bold">ఉపరితల నమూనా <span class="eng">(Modelling)</span></span></td>
+  <td>లోతైన చెక్కడాలు; గోళాకార శరీరాలు</td>
+  <td><span class="imp">తక్కువ లోతు; చదునైన మోడలింగ్</span> <span class="eng">(flatter modelling)</span></td>
+</tr>
+<tr>
+  <td><span class="bold">వస్త్రాల చిత్రణ <span class="eng">(Drapery)</span></span></td>
+  <td>ప్రవహించే "తడిసిన వస్త్ర" <span class="eng">(wet wrap)</span> శైలి</td>
+  <td>అదే "తడిసిన వస్త్ర" శైలి కానీ వ్యక్తులు మరింత ఒంటరిగా</td>
+</tr>
+<tr>
+  <td><span class="bold">వేదిక <span class="eng">(Railing / Vedika)</span></span></td>
+  <td>విపులమైన చెక్కిన రాతి వేదిక</td>
+  <td><span class="imp">కలప-ఇటుక వేదిక</span> — రాతి కాదు; తోరణాలు కూడా లేవు</td>
+</tr>
+<tr>
+  <td><span class="bold">కాలం</span></td>
+  <td>సు. క్రీ.శ. 150–200</td>
+  <td>సు. క్రీ.శ. 225–275</td>
+</tr>
+</tbody>
+</table>
+
+<h3>18.3 విషయం — బుద్ధుని జీవిత సంఘటనలు మరియు జాతక కథలు <span class="eng">(Subject Matter)</span></h3>
+
+<p>నాగార్జునకొండ శిల్పాల ప్రధాన విషయాలు:</p>
+<ul>
+<li><span class="bold">బుద్ధుని ఐదు ముఖ్య సంఘటనలు</span> (మహాప్రతీహార్యాలు): లుంబిని (జనన), మహాభినిష్క్రమణ (సన్యాసం), సంబోధి (జ్ఞానోదయం, బోధగయ), ధర్మచక్ర ప్రవర్తనం (తొలి ప్రవచనం, సారనాథ్), మహాపరినిర్వాణం (కుశినగరం)</li>
+<li><span class="bold">జాతక కథలు</span> — బుద్ధుని పూర్వ జన్మ కథలు; మహాచైత్యం యొక్క డ్రమ్ ప్యానెల్లపై, ఆయక వేదికలపై చెక్కబడ్డాయి</li>
+<li>ఆయక స్తంభాల పాదాల వద్ద <span class="bold">ధర్మచక్ర ప్రవర్తన</span> సంఘటన శిల్పాలు నాలుగు వైపుల చెక్కబడ్డాయి</li>
+</ul>
+
+<h3>18.4 రాజభవనంలో విదేశీ ప్రభావ శిల్పాలు <span class="eng">(Foreign-Influenced Sculpture at the Palace)</span></h3>
+
+<p>మహాచైత్యం ఒక లోకంలో ఉంటే, రాజభవన ప్రాంగణం మరో లోకం — అంతర్జాతీయ కాస్మోపాలిటన్ వాతావరణం.</p>
+
+<div class="key-box">
+<strong>డయోనిసస్ శిల్ప ఫలకం <span class="eng">(Dionysus Pillar Relief)</span></strong>
+<p>రాజభవన తవ్వకాలలో దొరికిన ఈ శిల్పం గ్రీకు-రోమన్ ఇకోనోగ్రఫీని చూపిస్తుంది: నడుము వరకు నగ్నంగా ఉన్న పురుషుడు, రైటన్ <span class="eng">(rhyton — కొమ్ము ఆకారపు తాగు పాత్ర)</span> పట్టుకుని, మద్య కుండతో — ఇది మద్య దేవత డయోనిసస్ చిత్రణ. ఇది రాజభవనంలో గ్రీకు-రోమన్ సంస్కృతి ప్రభావాన్ని, లేదా యవన వ్యాపారుల ఉనికిని సూచిస్తుంది. బౌద్ధ శిల్పాలకు పూర్తి భిన్నమైన శైలి ఒకే నగరంలో ఉండటం విజయపురి అంతర్జాతీయ స్వభావాన్ని నిరూపిస్తుంది.</p>
+</div>
+
+<div class="key-box">
+<strong>స్కైథియన్ ద్వారపాలుని శిల్పం <span class="eng">(Scythian Dvarapala Relief)</span></strong>
+<p>రాజభవన ద్వారం వద్ద దొరికిన ఈ శిల్పం ఒక శక <span class="eng">(Saka/Scythian)</span> అంగరక్షకుని చిత్రణ: గడ్డంతో ఉన్న సైనికుడు, రోమన్ శిరస్త్రాణం <span class="eng">(Roman helmet)</span>, నిలువెత్తు నిలువు అంగీ <span class="eng">(quilted tunic)</span>, ఈట. వీరపురుషదత్తుడు ఉజ్జయిని మహాక్షత్రప కుమార్తె రుద్రధర-భట్టారికను వివాహమాడినందు వల్ల శక అంగరక్షకులు రాజభవనంలో ఉన్నారు — ఈ శిల్పం ఆ వాస్తవాన్ని దృశ్యమానం చేస్తుంది.</p>
+</div>
+
+<h3>18.5 హిందూ శిల్పాలు <span class="eng">(Hindu Sculpture)</span></h3>
+
+<p>బౌద్ధ శిల్పాలతో పాటు విజయపురిలో హిందూ దేవతా శిల్పాలు కూడా పాల్నాడు సున్నపురాయిలోనే చెక్కబడ్డాయి:</p>
+<ul>
+<li><span class="bold">అష్టభుజస్వామి</span> — ఎనిమిది చేతుల విష్ణువు శిల్పం; క్రీ.శ. 278 తేదీ; <span class="imp">దక్కన్‌లో అత్యంత పురాతన తేదీ నమోదైన వైష్ణవ దేవాలయం శిల్పం</span></li>
+<li><span class="bold">కార్తికేయ / ముగురగన్</span> శిల్పాలు — శైవ సంప్రదాయం</li>
+<li><span class="bold">శివ లింగాలు</span> — అనేక శైవ ఆలయాలలో</li>
+</ul>
+<p>ఈ హిందూ శిల్పాలు పశ్చిమ దిక్కులో — రాజభవన మరియు కోట సమీపంలో — ఉన్నాయి; బౌద్ధ శిల్పాలు తూర్పు దిక్కు మహాచైత్యం ఆవరణలో ఉన్నాయి. విజయపురి నగర నిర్మాణంలో కూడా ఈ ద్వంద్వ-ధర్మ నమూనా ప్రతిఫలించింది.</p>
+
+<div class="info-box">
+<strong>"Later Amaravati" అని ఎందుకు అంటారు? <span class="eng">(Why "Later Amaravati"?)</span></strong>
+<p>నాగార్జునకొండ శిల్పాలు అమరావతి శైలి నుండి ఇకోనోగ్రఫీ (బుద్ధుని జీవిత దృశ్యాలు, జాతక కథలు) మరియు మాధ్యమం (పాల్నాడు సున్నపురాయి) వారసత్వంగా తీసుకున్నాయి — కానీ మరింత సన్నని శరీరాలు, సరళమైన కూర్పులు, చదునైన చెక్కడాలు ఏర్పడ్డాయి. కొంత మంది పండితులు ఇది "క్షీణత" <span class="eng">(decline)</span> అని అంటారు; ఆధునిక కళా చరిత్రకారులు (ప్రతాపాదిత్య పాల్, సూసన్ హంటింగ్టన్) ఇది ఒక స్వతంత్ర పరిణామ దశ అని అంటారు — క్షీణత కాదు, రూపాంతరం. వాస్తు నవీనత (చక్ర-స్పోక్ ప్లాన్, ఆయక వేదికలు) కొనసాగింది.</p>
+</div>
+
+<div class="tip-box">
+<strong>APPSC పరీక్ష గుర్తుంచుకోవాల్సిన విషయం</strong>
+<p>నాగార్జునకొండ శాఖ = అమరావతి శాఖ చివరి దశ = "Later Amaravati" = శైలిలో "క్షీణత" అని కొందరు; కానీ వాస్తు నవీనత కొనసాగింది (చక్ర-స్పోక్ స్తూప నిర్మాణం, ఆయక వేదికలు). ముఖ్య తేదీ: అష్టభుజస్వామి (8-చేతుల విష్ణువు) దేవాలయం క్రీ.శ. 278 = దక్కన్‌లో అత్యంత పురాతన తేదీ నమోదైన వైష్ణవ దేవాలయం.</p>
+</div>
+
+</div>
+
+<!-- ============== SECTION 19 ============== -->
+<div class="section" id="sec19">
+<h2>19. AP లో ఇక్ష్వాకు స్థలాలు <span class="eng">(Ikshvaku Sites in AP)</span></h2>
+<p>ఇక్ష్వాకుల ముఖ్య కేంద్రం నాగార్జునకొండ అయినప్పటికీ, వారి శాసనాలు, నాణేలు, బౌద్ధ స్తూపాలు <strong>కృష్ణా-గుంటూరు-ప్రకాశం-పాల్నాడు జిల్లాల వ్యాప్తంగా</strong> లభించాయి. క్రింది మ్యాప్‌లో ఆంధ్రప్రదేశ్ + తెలంగాణలో గుర్తించబడిన ముఖ్య ఇక్ష్వాకు-సంబంధ స్థలాలు చూపబడ్డాయి.</p>
+
+<h3>19.1 ముఖ్య స్థలాల పట్టిక</h3>
+
+<table>
+<thead>
+<tr><th>స్థలం</th><th>ఆధునిక జిల్లా</th><th>ముఖ్య కనుగొనుబడి</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>నాగార్జునకొండ (విజయపురి)</strong></td><td>పాల్నాడు</td><td>రాజధాని; మహాచైత్యం, 30+ విహారాలు, రంగస్థలం, రాజప్రాసాదం, హిందూ ఆలయాలు</td></tr>
+<tr><td><strong>రెంటాల</strong></td><td>గుంటూరు</td><td>చామ్తముల I 5వ సం. శాసనం (వంశంలో మొదటి తేదీగల శాసనం)</td></tr>
+<tr><td><strong>కేశనపల్లి</strong></td><td>గుంటూరు</td><td>చామ్తముల I 13వ సం. స్తంభ శాసనం (వంశ స్థాపన ధృవీకరణ)</td></tr>
+<tr><td><strong>పటగండిగూడెం</strong></td><td>పశ్చిమ గోదావరి <span class="eng">(Kamavarapukota mandal; not Eluru district)</span></td><td>ఎహువుల కాలం రాగి-రేకులు — భారతదేశంలో అత్యంత పురాతనమైనవి</td></tr>
+<tr><td><strong>జగ్గయ్యపేట</strong></td><td>NTR (కృష్ణా)</td><td>ఇక్ష్వాకు-కాలపు బౌద్ధ స్తూపం + శాసనాలు</td></tr>
+<tr><td><strong>గురజాల</strong></td><td>పాల్నాడు</td><td>రుద్రపురుషదత్త 4వ సం. భూ-దాన శాసనం</td></tr>
+<tr><td><strong>ఉప్పుగుండూరు</strong></td><td>ప్రకాశం</td><td>ఇక్ష్వాకు శాసనాలు లభించాయి</td></tr>
+<tr><td><strong>కొట్టంపలుగు</strong></td><td>పాల్నాడు</td><td>ఇక్ష్వాకు-కాలపు బౌద్ధ అవశేషాలు, శాసనాలు</td></tr>
+<tr><td><strong>అమరావతి</strong></td><td>పల్నాడు</td><td>శాతవాహన మహాచైత్యంపై ఇక్ష్వాకు దాన శాసనాలు ("Later Amaravati" శైలి)</td></tr>
+<tr><td><strong>యెల్లేశ్వరం</strong></td><td>నల్లగొండ (TS)</td><td>ఇక్ష్వాకు నాణేలు, స్తూపాలు</td></tr>
+<tr><td><strong>ఫనిగిరి</strong></td><td>సూర్యాపేట (TS)</td><td>2024లో <span class="imp">3,730 ఇక్ష్వాకు సీసపు నాణేల నిధి</span> — అతిపెద్ద ఇక్ష్వాకు నాణేల కనుగొనుబడి</td></tr>
+<tr><td><strong>కొండపూర్</strong></td><td>మెదక్ (TS)</td><td>ఇక్ష్వాకు నాణేలు, వాణిజ్య కేంద్రం</td></tr>
+</tbody>
+</table>
+
+<h3>19.2 ఆంధ్రప్రదేశ్ మ్యాప్</h3>
+
+<div class="map-wrap">
+<img src="ap_ch06_ikshvaku_sites.jpg" alt="AP + తెలంగాణలో ఇక్ష్వాకు ముఖ్య స్థలాలు — క్రీ.శ. 225-310" style="max-width: 100%; height: auto;">
+<div class="svg-caption">AP + తెలంగాణలో ఇక్ష్వాకు ముఖ్య స్థలాలు — క్రీ.శ. 225-310</div>
+</div>
+
+<div class="info-box">
+<strong>భౌగోళిక గమనిక:</strong> ఇక్ష్వాకు ప్రభావ ప్రాంతం దాదాపు <strong>ఇప్పటి కృష్ణా-గుంటూరు-పాల్నాడు-ప్రకాశం జిల్లాల కేంద్ర-తీరాంధ్ర భాగం</strong> + తెలంగాణలో <strong>సూర్యాపేట-నల్లగొండ-మెదక్</strong> ప్రాంతాల కొంత భాగం. ఇది <em>శాతవాహన ప్రాంతం యొక్క కేంద్రభాగం</em>; వారు రాయలసీమ లేదా ఉత్తరాంధ్ర వరకు విస్తరించలేదు.
+</div>
+</div>
+
+<!-- ============== SECTION 20 ============== -->
+<div class="section" id="sec20">
+<h2>20. పతనం &amp; వారసులు <span class="eng">(Decline &amp; Successors)</span></h2>
+
+<h3>20.1 తక్షణ పతన కారణాలు — సారాంశం <span class="eng">(Immediate Causes — Recap)</span></h3>
+
+<p>ఇక్ష్వాకు పతనం యొక్క వివరణాత్మక చర్చ విభాగం 10లో జరిగింది. సంక్షిప్తంగా: చివరి రాజు రుద్రపురుషదత్త 11వ పాలన సంవత్సరంలో (సుమారు క్రీ.శ. 309) చివరి శాసనం నమోదైంది. అతని తర్వాత పాలన ఆగిపోయింది. రెండు సంభావ్య కారణాలు:</p>
+<ul>
+<li><span class="bold">పల్లవ విజయం:</span> పల్లవ రాజు <span class="imp">సింహవర్మన్</span> విజయపురిని ఆక్రమించాడు — ఇది బలమైన చారిత్రిక ఆధారంపై ఆధారపడినది.</li>
+<li><span class="bold">అభీర దండయాత్ర:</span> అభీర రాజు వాసుసేన (వాసుసేన Yr. 30 శాసనం, అష్టభుజస్వామి దేవాలయ శిధిలాలలో దొరికింది) ఆక్రమణ — ఇది అనిశ్చిత ఆధారంపై; కె. కృష్ణ మూర్తి ఈ అనిశ్చయతను స్పష్టంగా పేర్కొన్నారు.</li>
+</ul>
+
+<h3>20.2 బృహత్ఫలాయనులు <span class="eng">(Brihatphalayanas)</span></h3>
+
+<p>ఇక్ష్వాకుల తక్షణ వారసులలో ఒకరు <span class="bold">బృహత్ఫలాయనులు</span>. వీరికి శాసన ఆధారాలు చాలా తక్కువగా ఉన్నాయి — కేవలం ఒక రాజు మాత్రమే తెలుసు:</p>
+
+<div class="king-card">
+<h4>జయవర్మన్ <span class="eng">(Jayavarman)</span> — బృహత్ఫలాయన పాలకుడు</h4>
+<p class="meta"><span class="chip">సు. క్రీ.శ. 280</span> <span class="chip blue">కొండముడి రాగి పత్రాలు <span class="eng">(Kondamudi copper plates)</span></span></p>
+<p><span class="bold">కొండముడి రాగి పత్రాలు</span> — ప్రాకృత భాషలో; తేనాలి సమీపంలో (ఇప్పటి గుంటూరు జిల్లా) దొరికాయి. జయవర్మన్ <span class="bold">పిథుండ / కొడూరు</span> (ఉత్తర కృష్ణా డెల్టా) నుండి పాలించాడు. ఇక్ష్వాకు చివరి దశతో కాలక్రమంగా అతికి ఉన్నారు; ఉత్తర కృష్ణా డెల్టాను వారసత్వంగా తీసుకున్నారు.</p>
+</div>
+
+<h3>20.3 ఆనందగోత్రలు <span class="eng">(Anandagotras / Ananda Gotrikas)</span></h3>
+
+<p><span class="bold">ఆనందగోత్రలు</span> కృష్ణానదికి <span class="imp">దక్షిణాన</span> ఇక్ష్వాకు ప్రాంతాన్ని తీసుకున్నారు. వీరి గురించి శాసన ఆధారాలు చాలా తక్కువ; వారి పాలన పూర్తిగా అర్థం కాదు. బృహత్ఫలాయనులు ఉత్తరంలో, ఆనందగోత్రలు దక్షిణంలో — ఇక్ష్వాకు ప్రాంతం రెండు భాగాలుగా విభజించబడింది.</p>
+
+<h3>20.4 సాలంకాయనులు <span class="eng">(Salankayanas — 4th-5th c. CE)</span></h3>
+
+<p>ఇక్ష్వాకుల తర్వాత ఆంధ్ర రాజకీయ చరిత్రలో అత్యంత ముఖ్యమైన రాజవంశం <span class="bold">సాలంకాయనులు</span> (4వ-5వ శతాబ్దాలు). వీరు కృష్ణానదికి <span class="imp">ఉత్తరాన</span> పాలించారు; వారి రాజధాని <span class="bold">వేంగి</span> <span class="eng">(Vengi)</span> — ఆధునిక పెడవేగి, పశ్చిమ గోదావరి జిల్లా. పూర్వపు తూర్పు చాళుక్యులకు ముందు ఆంధ్ర ప్రాంతంలో అత్యంత ముఖ్యమైన రాజవంశాలలో ఒకటి. బృహత్ఫలాయనులకంటే సాలంకాయనులే ఎక్కువ చారిత్రిక ప్రాముఖ్యత కలిగి ఉన్నారు.</p>
+
+<h3>20.5 పల్లవుల ఆధిపత్యం <span class="eng">(Pallava Dominance)</span></h3>
+
+<p>4వ శతాబ్దం మధ్యకాలానికి <span class="bold">పల్లవులు</span> సింహవర్మన్ మరియు ఆయన వారసుల ఆధ్వర్యంలో సమగ్ర ప్రాంతీయ ఆధిపత్యం పొందారు. విజయపురి తదుపరి వివిధ చేతులు మారుతూ చివరికి మరచిపోయిన నగరంగా మారింది — 1926 వరకు.</p>
+
+<h3>20.6 ఇక్ష్వాకుల సాంస్కృతిక వారసత్వం <span class="eng">(Cultural Legacy of Ikshvakus)</span></h3>
+
+<p>రాజ్యం అంతమైనప్పటికీ, ఇక్ష్వాకులు వదిలిపోయిన సాంస్కృతిక వారసత్వం శాశ్వతమైనది:</p>
+
+<table>
+<thead><tr><th>వారసత్వ అంశం <span class="eng">(Legacy Item)</span></th><th>విశేషణం <span class="eng">(Significance)</span></th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">విజయపురి — దక్షిణ భారత అతి పెద్ద బౌద్ధ కేంద్రం</span></td>
+  <td>30కి పైగా విహారాలు, మహాచైత్యం, అంతర్జాతీయ బౌద్ధ సంఘాలు</td>
+</tr>
+<tr>
+  <td><span class="bold">"Later Amaravati" కళా సంప్రదాయం</span></td>
+  <td>అమరావతి శిల్ప సంప్రదాయం యొక్క చివరి పరిణామ దశ; నాగార్జునకొండ శాఖ</td>
+</tr>
+<tr>
+  <td><span class="bold">శ్రీలంక/థేరవాద బౌద్ధ పోషణ సంప్రదాయం</span></td>
+  <td>శ్రీలంక-ఆంధ్ర బౌద్ధ సంబంధాలకు పునాది; అంతర్జాతీయ బౌద్ధ నెట్‌వర్క్‌లో ఆంధ్ర పాత్ర</td>
+</tr>
+<tr>
+  <td><span class="bold">పాటగండిగుడెం రాగి పత్రాలు</span></td>
+  <td><span class="imp">భారత ఉపఖండంలో అత్యంత పురాతన రాగి పత్ర చార్టర్</span> (ఉపిందర్ సింగ్ 2017, పు. 173)</td>
+</tr>
+<tr>
+  <td><span class="bold">మాతృనామ + రాణి-పోషణ సంస్కృతి</span></td>
+  <td>శాతవాహన కాలపు స్త్రీ-ప్రాధాన్యత సంప్రదాయం కొనసాగింపు; రాజ స్త్రీల ఆర్థిక-ధార్మిక స్వాతంత్య్రం</td>
+</tr>
+<tr>
+  <td><span class="bold">దక్కన్‌లో అత్యంత పురాతన తేదీ నమోదైన వైష్ణవ దేవాలయం</span></td>
+  <td>అష్టభుజస్వామి దేవాలయం, క్రీ.శ. 278 — ఆంధ్ర-దక్కన్‌లో వైష్ణవ సంప్రదాయ ప్రారంభ దశకు నిదర్శనం</td>
+</tr>
+</tbody>
+</table>
+
+<h3>20.7 విజయపురి ఎందుకు మరచిపోబడింది? <span class="eng">(Why Was Vijayapuri Forgotten?)</span></h3>
+
+<p>ఒక కాలంలో దక్షిణ భారతదేశపు అతి పెద్ద బౌద్ధ కేంద్రం అయిన విజయపురి ఎందుకు 1926 వరకు మరచిపోయింది?</p>
+<ul>
+<li><span class="bold">పల్లవ-సాలంకాయన-ఆనందగోత్ర విభజన:</span> ఇక్ష్వాకు రాజ్యం చిన్న ముక్కలైంది; ఒకే కేంద్రంగా నిలిచే శక్తి ఏ వారసుడికీ లేదు</li>
+<li><span class="bold">దక్షిణ భారతంలో బౌద్ధ క్షీణత:</span> తదుపరి శతాబ్దాలలో బ్రాహ్మణ-వైదిక సంప్రదాయం బలపడటంతో బౌద్ధ కేంద్రాలకు ప్రాముఖ్యత తగ్గింది</li>
+<li><span class="bold">నాగార్జుండి పేరు మారడం:</span> "విజయపురి" అనే అసలు పేరు మరచిపోయి, "నాగార్జునుని కొండ" అనే మధ్యకాల పేరు స్థిరపడింది — తద్వారా అసలు చరిత్ర దాగిపోయింది</li>
+<li><span class="bold">మారుమూల అడవి ప్రాంతం:</span> నల్లమల కొండల మధ్య ఉన్న ఈ స్థలం తదుపరి కాలంలో ముఖ్య వ్యాపార-రాజకీయ మార్గాల నుండి దూరంగా ఉండిపోయింది</li>
+</ul>
+
+<div class="info-box">
+<strong>ఇక్ష్వాకుల తర్వాత ఏమి జరిగింది? <span class="eng">(What Happened After the Ikshvakus?)</span></strong>
+<p>ఇక్ష్వాకుల తర్వాత ఆంధ్ర ప్రాంత చరిత్ర:</p>
+<ul>
+<li>క్రీ.శ. ~310 తర్వాత: పల్లవ ఆధిపత్యం; బృహత్ఫలాయన-ఆనందగోత్ర స్థానిక పాలనలు</li>
+<li>క్రీ.శ. 4వ-5వ శతాబ్దాలు: సాలంకాయనులు (వేంగి కేంద్రంగా) ముఖ్యమైన రాజవంశంగా</li>
+<li>తదుపరి: విష్ణుకుండినులు, తూర్పు చాళుక్యులు — ఇవి తదుపరి అధ్యాయాలలో</li>
+</ul>
+</div>
+
+
+<h3>20.X నిర్మాణాత్మక విశ్లేషణ — 82-85 ఏళ్ళలో పతనం ఎందుకు? <span class="eng">(Why did the dynasty fall so quickly?)</span></h3>
+<p>పల్లవ-అభీర దాడులు <em>బాహ్య కారణాలు</em>; కానీ <strong>లోపలి-నిర్మాణాత్మక బలహీనతలు</strong> ఇక్ష్వాకుల పతనానికి అసలు కారణాలు:</p>
+<ul>
+<li><strong>నాలుగు రాజులు మాత్రమే</strong> — స్థాపకుని మనవడి తర్వాత (రుద్రపురుషదత్త) బలమైన వారసత్వ లేదు; చివరి రాజు యౌవనంలోనే అధికారానికి వచ్చాడని regnal-year ఆధారాలు సూచిస్తున్నాయి.</li>
+<li><strong>కృష్ణా డెల్టా దాటి విస్తరణ లేదు</strong> — ఇరుగుపొరుగు పల్లవులు, చుటులు, శాతవాహన అవశేషాలు చిన్న-చిన్న రాజ్యాలను నిర్మించుకుంటే <span class="eng">(Vakatakas were in Vidarbha, not direct Ikshvaku neighbours)</span> ఇక్ష్వాకులు <em>ఒక్క నదీ-లోయకే</em> పరిమితం. ప్రాంతీయ శక్తి = వేగంగా అలసిపోతుంది.</li>
+<li><strong>ద్వంద్వ-మత నమూనా రెండు అభిజాత వర్గాలను సృష్టించింది</strong> — బ్రాహ్మణ గ్రాంట్ గ్రహీతలు vs బౌద్ధ విహారాలు; రెండూ ఖజానా నుండి నిరంతర వ్యయం; ప్రత్యక్ష పోటీ.</li>
+<li><strong>భారీ స్మారక నిర్మాణాలు 50 ఏళ్ళలో</strong> — మహాచైత్యం, 30+ విహారాలు, రాజప్రాసాద కోట, రంగస్థలం, బ్రాహ్మణ ఆలయాలు — ఒక డెల్టా-నదీ-లోయ వ్యవసాయ ఆర్థిక వ్యవస్థపై తీవ్ర ఒత్తిడి.</li>
+<li><strong>శక మరియు సాతవాహన <em>పరిచిత</em> శత్రువులు లేరు</strong> — కొత్త పెరుగుతున్న పల్లవ-అభీర శక్తులకు అలవాటు పడేందుకు సమయం లేదు.</li>
+</ul>
+<div class="info-box">
+<strong>పాఠ్యబోధ:</strong> ఏ చిన్న వంశమైనా — విస్తరణ లేకుండా, బలమైన వారసత్వం లేకుండా, స్మారక-నిర్మాణ-అతిభారంతో — <strong>85 ఏళ్ళలో పడిపోతుంది</strong>. ఇక్ష్వాకులు ఇతర ప్రాంతీయ వంశాలకు (బృహత్‌ఫలాయన, ఆనందగోత్ర) నమూనా-హెచ్చరిక.
+</div>
+</div>
+
+<!-- ============== SECTION 21 ============== -->
+<div class="section" id="sec21">
+<h2>21. సారాంశం &amp; పరీక్షా టిప్స్ <span class="eng">(Summary &amp; Exam Tips)</span></h2>
+
+<h3>21.1 ఏం గుర్తుంచుకోవాలి? — 10 అత్యంత ముఖ్యమైన వాస్తవాలు <span class="eng">(Must-Know: The 10 Most Important Facts)</span></h3>
+
+<div class="key-box">
+<strong>10 ముఖ్య వాస్తవాలు <span class="eng">(10 Key Facts)</span></strong>
+<ul>
+<li><span class="bold">1. మాతృనామ సంప్రదాయం:</span> వాశిష్ఠీపుత్ర (వాశిష్ఠి గోత్ర తల్లి కుమారుడు), మాతరీపుత్ర (మాతరి గోత్ర తల్లి కుమారుడు) — శాతవాహన కాలంలో మొదలైన సంప్రదాయం కొనసాగింపు</li>
+<li><span class="bold">2. నలుగురు రాజులు:</span> వాశిష్ఠీపుత్ర సిరి చామ్తముల I (స్థాపకుడు) → మాతరీపుత్ర వీరపురుషదత్త (గొప్పరాజు) → వాశిష్ఠీపుత్ర ఎహువుల చామ్తముల II → వాశిష్ఠీపుత్ర రుద్రపురుషదత్త (చివరి రాజు); సుమారు క్రీ.శ. 225–310</li>
+<li><span class="bold">3. విజయపురి = నాగార్జునకొండ:</span> ఇక్ష్వాకుల రాజధాని <span class="imp">అసలు పేరు విజయపురి</span>; "నాగార్జునకొండ" మధ్యకాల పేరు. పల్నాడు జిల్లా, మాచర్ల మండలం. ఇప్పుడు నాగార్జునసాగర్ జలాశయంలో మునిగిపోయింది.</li>
+<li><span class="bold">4. మహాచైత్యం:</span> దక్షిణ భారతదేశపు అతి పెద్ద బౌద్ధ స్తూపాలలో ఒకటి; చామ్తిసిరి 10 సంవత్సరాలు పోషించింది; చక్ర-స్పోక్ వాస్తు నిర్మాణం; 20 ఆయక స్తంభాలు.</li>
+<li><span class="bold">5. ద్వంద్వ ధర్మ నమూనా:</span> రాజులు → వేద-బ్రాహ్మణ యజ్ఞాలు; రాణులు → బౌద్ధ పోషణ. భారత చరిత్రలో ఈ స్థాయిలో మరెక్కడా నమోదు కాలేదు.</li>
+<li><span class="bold">6. రాణుల బౌద్ధ పోషణ:</span> చామ్తిసిరి, మహాదేవి భట్టిదేవ, మహాదేవి కోదబలిశ్రీ, చంద్రసిరి, బోధిసిరి — వివిధ బౌద్ధ శాఖలకు విహారాలు, చైత్యాలు నిర్మించారు.</li>
+<li><span class="bold">7. సైట్ 38 శ్రీలంక మఠం:</span> నాహరల్లాబొడు కొండపై చూళధమ్మగిరి — శ్రీలంక (తంపమ్నిదీప) మహావిహారవాసిన్ సన్యాసుల ప్రత్యేక నివాసం.</li>
+<li><span class="bold">8. పాటగండిగుడెం రాగి పత్రాలు:</span> ఎహువుల పాలన కాలం; <span class="imp">భారత ఉపఖండంలో అత్యంత పురాతన రాగి పత్ర చార్టర్</span>.</li>
+<li><span class="bold">9. రుద్రధర-భట్టారిక — శక వివాహ మైత్రి:</span> వీరపురుషదత్త రాణి; ఉజ్జయిని మహాక్షత్రప కుమార్తె; రాజభవనంలో శక ద్వారపాలుల శిల్పాలకు వివరణ.</li>
+<li><span class="bold">10. పల్లవులకు పతనం:</span> పల్లవ రాజు <span class="imp">సింహవర్మన్</span> విజయపురి ఆక్రమణ; తర్వాత బృహత్ఫలాయనులు, ఆనందగోత్రలు, సాలంకాయనులు వారసులు.</li>
+</ul>
+</div>
+
+<h3>21.2 ఏ రాజు దేనికి ప్రసిద్ధం? <span class="eng">(Which King for What? — Quick Recall)</span></h3>
+
+<div class="key-box">
+<strong>ఏ రాజు దేనికి ప్రసిద్ధం? <span class="eng">(Which King for What?)</span></strong>
+<table>
+<thead><tr><th>రాజు <span class="eng">(King)</span></th><th>అత్యంత ముఖ్యమైన విశేషం <span class="eng">(Most Important Feature)</span></th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="bold">వాశిష్ఠీపుత్ర సిరి చామ్తముల I</span></td>
+  <td>వంశ స్థాపకుడు; ఇక్ష్వాకు వంశంలో <span class="imp">యజ్ఞాలు నిర్వహించిన ఏకైక రాజు</span> (అగ్నిష్టోమ, వాజపేయ, అశ్వమేధ); కేసనపల్లి శాసనం</td>
+</tr>
+<tr>
+  <td><span class="bold">మాతరీపుత్ర వీరపురుషదత్త</span></td>
+  <td>అత్యంత గొప్పరాజు; అత్యంత సుదీర్ఘ పాలన (24వ సంవత్సరం వరకు); మహాచైత్యం నిర్మాణ కాలం; శక వివాహ మైత్రి (రుద్రధర-భట్టారిక)</td>
+</tr>
+<tr>
+  <td><span class="bold">వాశిష్ఠీపుత్ర ఎహువుల చామ్తముల II</span></td>
+  <td>దేవాలయ నిర్మాత; <span class="imp">పాటగండిగుడెం రాగి పత్రాలు</span>; అష్టభుజస్వామి దేవాలయం (క్రీ.శ. 278 — దక్కన్‌లో అత్యంత పురాతన తేదీ నమోదైన వైష్ణవ దేవాలయం)</td>
+</tr>
+<tr>
+  <td><span class="bold">వాశిష్ఠీపుత్ర రుద్రపురుషదత్త</span></td>
+  <td>చివరి రాజు; 11వ పాలన సంవత్సరం చివరి శాసనం; తల్లి వమ్మభట్టకు స్మారక స్తంభం; పల్లవులకు రాజ్యం పోయింది</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>21.3 పరీక్షా దృష్టి — APPSC ఏ రకం ప్రశ్నలు అడుగుతుంది? <span class="eng">(Exam Angle — APPSC Question Patterns)</span></h3>
+
+<div class="tip-box">
+<strong>APPSC పరీక్షలో సాధారణ ప్రశ్న నమూనాలు <span class="eng">(Typical APPSC Question Patterns)</span></strong>
+<ul>
+<li><span class="bold">నిర్ధారణ ప్రశ్నలు:</span> "ఇక్ష్వాకుల రాజధాని?" (విజయపురి); "ఇక్ష్వాకు వంశ స్థాపకుడు?" (వాశిష్ఠీపుత్ర సిరి చామ్తముల I); "ఇక్ష్వాకుల కాలంలో నిర్మించిన అత్యంత పురాతన వైష్ణవ దేవాలయం?" (అష్టభుజస్వామి, క్రీ.శ. 278)</li>
+<li><span class="bold">శాసన ప్రశ్నలు:</span> "పాటగండిగుడెం రాగి పత్రాలు ఎవరి కాలంలో?" (ఎహువుల చామ్తముల II); "ఇక్ష్వాకు శాసనాలు ఏ భాషలో?" (ప్రాకృతం, బ్రాహ్మీ లిపి)</li>
+<li><span class="bold">రాణులు-బౌద్ధ ప్రశ్నలు:</span> "మహాచైత్యాన్ని 10 సంవత్సరాలు పోషించింది?" (చామ్తిసిరి); "బోధిసిరి శాసనంలో ఏ దేశాలు పేర్కొనబడ్డాయి?" (శ్రీలంక, కశ్మీర, గంధార, యవన, చైనా, బంగాళ, కళింగ, ఒడిశా, వనవాస)</li>
+<li><span class="bold">ద్వంద్వ ధర్మ ప్రశ్నలు:</span> "ఇక్ష్వాకు రాజుల మతం?" (బ్రాహ్మణ-వైదిక); "ఇక్ష్వాకు రాణుల మతం?" (బౌద్ధ పోషకులు); "వీరపురుషదత్తుడు బౌద్ధుడు అయ్యాడా?" (కాదు — తప్పు)</li>
+<li><span class="bold">కళ-వాస్తు ప్రశ్నలు:</span> "నాగార్జునకొండ శిల్ప శాఖ పేరు?" ("Later Amaravati" లేదా నాగార్జునకొండ శాఖ); "మహాచైత్యం వేదిక ఏ పదార్థంలో?" (కలప-ఇటుక — రాతి కాదు)</li>
+</ul>
+</div>
+
+<h3>21.4 సాధారణ తప్పిదాలు — MCQ ఉచ్చులు <span class="eng">(Common MCQ Traps)</span></h3>
+
+<div class="alert-box">
+<strong>ఇవి చదివి తప్పు జరగకుండా ఉండండి <span class="eng">(MCQ Trap List)</span></strong>
+<table>
+<thead><tr><th>తప్పిదం <span class="eng">(Mistake)</span></th><th>సరైన వాస్తవం <span class="eng">(Correct Fact)</span></th></tr></thead>
+<tbody>
+<tr>
+  <td>ఇక్ష్వాకుల రాజధాని "నాగార్జునకొండ"</td>
+  <td><span class="imp">రాజధాని పేరు "విజయపురి"</span>; నాగార్జునకొండ = మధ్యకాల పేరు</td>
+</tr>
+<tr>
+  <td>స్థాపకుడి పేరు "శాంతముల" లేదా "చంతముల"</td>
+  <td>పూర్తి పేరు: <span class="imp">వాశిష్ఠీపుత్ర సిరి చామ్తముల</span> — మాతృనామం తప్పనిసరి</td>
+</tr>
+<tr>
+  <td>ఇక్ష్వాకు శాసనాలు సంస్కృతంలో</td>
+  <td>శాసనాలు <span class="imp">ప్రాకృతంలో</span>; సంస్కృతం కేవలం చివరి శాసనాలలో (సర్వదేవ స్తంభాలు)</td>
+</tr>
+<tr>
+  <td>ఇక్ష్వాకు రాజులు బౌద్ధులు; వీరపురుషదత్తుడు బౌద్ధ మతాన్ని స్వీకరించాడు</td>
+  <td><span class="imp">రాజులు బ్రాహ్మణ-వైదిక</span>; రాణులు మాత్రమే బౌద్ధ పోషకులు</td>
+</tr>
+<tr>
+  <td>ఇక్ష్వాకులు బంగారు నాణేలు జారీ చేశారు</td>
+  <td>ఇక్ష్వాకులు <span class="imp">సీసం మరియు పోటిన్ నాణేలు</span> మాత్రమే; రోమన్ అవురేయి = దిగుమతి</td>
+</tr>
+<tr>
+  <td>ఇక్ష్వాకు వంశాన్ని మొట్టమొదటి గుర్తించింది బర్గెస్</td>
+  <td>వంశ గుర్తింపు: <span class="imp">J.Ph. వోగెల్</span> (ఎపిగ్రాఫియా ఇండికా XX, 1929-30); లాంగ్‌హర్స్ట్ = తవ్వకాలు</td>
+</tr>
+<tr>
+  <td>ఇక్ష్వాకులు శాతవాహన సామంతులు</td>
+  <td><span class="imp">నిరూపితం కాలేదు</span>; వారు శాతవాహన అనంతర శూన్యాన్ని స్వతంత్రంగా పూరించారు</td>
+</tr>
+<tr><td>"పటగండిగూడెం ఏలూరు జిల్లాలో"</td><td>తప్పు; <strong>పశ్చిమ గోదావరి జిల్లా</strong> (Kamavarapukota mandal)</td></tr>
+<tr><td>"మహీశాసక శాఖ మైసూర్/కర్ణాటక మూలం"</td><td>తప్పు; <strong>అవంతి/ఉజ్జయిని</strong> మూలం (Wikipedia)</td></tr>
+<tr><td>"ఫస్టీనా 141 CE నాణెం"</td><td>imprecise; ఫస్టీనా <strong>మరణం c. 140 CE</strong>; పోస్థూమస్ నాణేలు 141-161</td></tr>
+<tr><td>"కులదమ్మగిరి = Site 38 విహారం"</td><td>తప్పు; సరియైనది <strong>చూళధమ్మగిరి</strong> (Cū́ḷa = "lesser", "Kula" = clan; meaning entirely different)</td></tr>
+<tr><td>"ఇక్ష్వాకు 'ముఖ్య-ఇరుగుపొరుగు' వాకాటకులు"</td><td>తప్పు; వాకాటకులు విదర్భలో (నాలుగు రోజుల నడక ఉత్తరం). నిజమైన ఇరుగుపొరుగు: <strong>పల్లవులు (దక్షిణం), చుటులు (వనవాసి, SW), శాతవాహన అవశేషాలు (W), పశ్చిమ క్షత్రపులు (NW)</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>21.5 చదివే క్రమం <span class="eng">(Suggested Study Sequence)</span></h3>
+
+<div class="tip-box">
+<strong>సూచించిన అధ్యయన క్రమం <span class="eng">(Recommended Study Order)</span></strong>
+<p>ఈ అధ్యాయాన్ని పూర్తిగా అర్థం చేసుకోవడానికి క్రింది క్రమం అనుసరించండి:</p>
+<ol>
+<li><span class="bold">విభాగం 6</span> — నలుగురు రాజుల పట్టిక (పేర్లు, కాలాలు, విశేషాలు)</li>
+<li><span class="bold">విభాగాలు 7-10</span> — ఒక్కొక్క రాజు వివరంగా</li>
+<li><span class="bold">విభాగం 17</span> — మహాచైత్యం నిర్మాణ వివరాలు</li>
+<li><span class="bold">విభాగం 15</span> — ద్వంద్వ ధర్మ నమూనా (రాజులు vs రాణులు)</li>
+<li><span class="bold">విభాగం 21</span> (ఇది) — మొత్తం అధ్యాయం సారాంశం, పరీక్షా టిప్స్</li>
+</ol>
+</div>
+
+</div>
+
+<footer>
+అధ్యాయం 6 — ఇక్ష్వాకులు (విజయపురి) · APPSC Group I &amp; II · AP History
+</footer>
+
+</div>
+</body>
+</html>
