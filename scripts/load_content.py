@@ -152,49 +152,37 @@ def main():
         db.session.flush()
         print(f"  inserted {ins['chapters']}, skipped {skipped['chapters']}")
 
-        # ── 3. Notes — upsert (insert or update) ─────────────────
-        print("Loading notes (upsert) …")
-        # Build (chapter_id, section_num) → Note object map for existing notes
-        existing_notes_map = {
-            (n.chapter_id, n.section_num): n
-            for n in Note.query.all()
-        }
-        updated_notes = 0
+        # ── 3. Notes — delete-and-replace ────────────────────────
+        print("Loading notes (delete-and-replace) …")
+        # Wipe ALL existing notes so garbage from previous bad migrations
+        # (e.g. double-encoded JSON producing 5 000+ single-char notes) is
+        # removed before we insert the clean set from content.db.
+        deleted_existing = Note.query.delete()
+        db.session.flush()
+        print(f"  deleted {deleted_existing} existing notes")
 
         for r in src.execute("SELECT * FROM notes ORDER BY chapter_id, section_num"):
             live_ch_id = src_ch_to_live_ch.get(r["chapter_id"])
             if not live_ch_id:
                 skipped["notes"] += 1
                 continue
-            key = (live_ch_id, r["section_num"])
-            existing = existing_notes_map.get(key)
-            if existing:
-                # Update body content (content quality may have improved)
-                existing.heading_en = r["heading_en"] or ""
-                existing.heading_te = r["heading_te"] or ""
-                existing.body_en    = r["body_en"] or ""
-                existing.body_te    = r["body_te"] or ""
-                updated_notes += 1
-            else:
-                n = Note(
-                    chapter_id  = live_ch_id,
-                    section_num = r["section_num"],
-                    heading_en  = r["heading_en"] or "",
-                    heading_te  = r["heading_te"] or "",
-                    body_en     = r["body_en"] or "",
-                    body_te     = r["body_te"] or "",
-                )
-                db.session.add(n)
-                existing_notes_map[key] = n
-                ins["notes"] += 1
+            n = Note(
+                chapter_id  = live_ch_id,
+                section_num = r["section_num"],
+                heading_en  = r["heading_en"] or "",
+                heading_te  = r["heading_te"] or "",
+                body_en     = r["body_en"] or "",
+                body_te     = r["body_te"] or "",
+            )
+            db.session.add(n)
+            ins["notes"] += 1
 
-            # Flush in batches to avoid huge transactions
-            if (ins["notes"] + updated_notes) % 500 == 0:
+            if ins["notes"] % 500 == 0:
                 db.session.flush()
-                print(f"    … {ins['notes']} inserted, {updated_notes} updated")
+                print(f"    … {ins['notes']} notes inserted")
 
         db.session.flush()
-        print(f"  inserted {ins['notes']}, updated {updated_notes}, skipped {skipped['notes']}")
+        print(f"  inserted {ins['notes']}, skipped {skipped['notes']}")
 
         # ── 4. Questions ─────────────────────────────────────────
         import hashlib
@@ -263,4 +251,16 @@ def main():
         for table, count in ins.items():
             print(f"  {table:10s}  inserted {count:5d}  skipped {skipped[table]:5d}")
 
-        # Fin
+        # Final live counts
+        print()
+        print("Live DB counts after load:")
+        print(f"  subjects  : {Subject.query.count()}")
+        print(f"  chapters  : {Chapter.query.count()}")
+        print(f"  notes     : {Note.query.count()}")
+        print(f"  questions : {Question.query.count()}")
+
+    src.close()
+
+
+if __name__ == "__main__":
+    main()
