@@ -1,0 +1,148 @@
+/*
+ * ap_history_notes.css
+ * Scoped styles for AP History note sections rendered in the notes reader.
+ * All rules are prefixed with .ap-history-note to avoid conflicts with app.css.
+ * Covers all class names used across ch01âch12 HTML files.
+ */
+
+/* ââ Typography âââââââââââââââââââââââââââââââââââââââââââââââ */
+.ap-history-note {
+  font-family: 'Noto Sans Telugu', 'Mandali', 'Gautami', system-ui, -apple-system, sans-serif;
+  line-height: 1.75;
+  color: #3a2410;
+}
+.ap-history-note h2 {
+  font-size: 1.35rem; color: #8b4513;
+  margin-top: 1.8rem; margin-bottom: 0.5rem;
+  border-left: 5px solid #c97b3a; padding-left: 12px; line-height: 1.35;
+}
+.ap-history-note h3 { font-size: 1.15rem; color: #a14217; margin-top: 1.4rem; margin-bottom: 0.35rem; }
+.ap-history-note h4 { font-size: 1.02rem; color: #8b4513; margin-top: 1rem; margin-bottom: 0.25rem; }
+.ap-history-note p  { margin: 0.55rem 0; }
+.ap-history-note ul,
+.ap-history-note ol { margin: 0.4rem 0 0.8rem 0; padding-left: 1.6rem; }
+.ap-history-note li { margin-bottom: 0.3rem; }
+
+/* ââ Inline text helpers âââââââââââââââââââââââââââââââââââââââ */
+.ap-history-note .eng    { font-style: italic; font-size: 0.92em; color: #6b4423; }
+.ap-history-note .imp    { color: #a14217; font-weight: 700; }
+.ap-history-note .bold   { font-weight: 700; color: #5c3a1c; }
+.ap-history-note .gloss  { font-style: italic; color: #6b4423; }
+.ap-history-note .cite   { font-size: 0.88em; color: #7a4f24; }
+.ap-history-note .mnemonic { background: #fef7d8; border: 1px dashed #d4a017; border-radius: 5px; padding: 8px 12px; margin: 0.7rem 0; font-style: italic; color: #5c3a1c; }
+.ap-history-note .verse-box { background: #fdf6e8; border-left: 4px solid #c97b3a; padding: 10px 14px; margin: 1rem 0; border-radius: 0 6px 6px 0; font-style: italic; color: #5c3a1c; }
+
+/* ââ Coloured callout boxes ââââââââââââââââââââââââââââââââââââ */
+.ap-history-note .key-box,
+.ap-history-note .tip-box,
+.ap-history-note .alert-box,
+.ap-history-note .info-box,
+.ap-history-note .purple-box,
+.ap-history-note .brown-box { padding: 12px 16px; border-radius: 6px; margin: 1rem 0; }
+.ap-history-note .key-box    { background: #fff4e0; border-left: 5px solid #c97b3a; }
+.ap-history-note .tip-box    { background: #fef7d8; border-left: 5px solid #d4a017; }
+.ap-history-note .alert-box  { background: #fde9d8; border-left: 5px solid #a14217; }
+.ap-history-note .info-box   { background: #e6f0d8; border-left: 5px solid #7a9d3e; }
+.ap-history-note .purple-box { background: #ede4f2; border-left: 5px solid #6b4880; }
+.ap-history-note .brown-box  { background: #ede0c8; border-left: 5px solid #8b4513; }
+.ap-history-note .key-box strong, .ap-history-note .tip-box strong,
+.ap-history-note .alert-box strong, .ap-history-note .info-box strong,
+.ap-history-note .purple-box strong, .ap-history-note .brown-box strong { color: #5c3a1c; }
+
+/* ââ Tables âââââââââââââââââââââââââââââââââââââââââââââââââââ */
+.ap-history-note .table-wrap { overflow-x: auto; }
+.ap-history-note table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+.ap-history-note th, .ap-history-note td { border: 1px solid #c9a878; padding: 8px 10px; text-align: left; vertical-align: top; }
+.ap-history-note th { background: #ede0c8; color: #5c3a1c; font-weight: 700; }
+.ap-history-note tr:nth-child(even) td { background: #faf3e3; }
+.ap-history-note .master-table th { background: #8b4513; color: #fefcf7; }
+.ap-history-note .era-pre       { background: #fce8d8 !important; }
+.ap-history-note .era-sata      { background: #fde8b8 !important; }
+.ap-history-note .era-post-sata { background: #f4e0c4 !important; }
+.ap-history-note .era-vishnu    { background: #e6e8d4 !important; }
+.ap-history-note .era-chalukya  { background: #ddebd4 !important; }
+.ap-history-note .era-renati    { background: #d8e4eb !important; }
+.ap-history-note .era-kakatiya  { background: #e4d8eb !important; }
+.ap-history-note .era-reddy     { background: #e8d8d4 !important; }
+.ap-history-note .era-vijay     { background: #d4e8d8 !important; }
+
+/* ââ King / dynasty / trinity / site cards âââââââââââââââââââââ */
+.ap-history-note .king-card,
+.ap-history-note .trinity-card { background: #fff8e7; border: 1px solid #d4a017; border-radius: 8px; padding: 14px 16px; margin: 1rem 0; }
+.ap-history-note .king-card h4 { margin-top: 0; color: #8b4513; border-bottom: 1px solid #d4a017; padding-bottom: 4px; }
+.ap-history-note .king-card .meta { font-size: 0.88rem; color: #6b4423; margin-bottom: 8px; }
+.ap-history-note .dynasty-card { background: #fafbff; border: 2px solid #3949ab; border-radius: 10px; padding: 16px 18px; margin: 14px 0; }
+.ap-history-note .dynasty-title { font-weight: 700; font-size: 1rem; color: #1a237e; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px dashed #9fa8da; }
+.ap-history-note .dynasty-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.ap-history-note .site-card { background: linear-gradient(180deg,#fefcf7,#fdf6e8); border: 1px solid #e8d4a8; border-radius: 14px; padding: 18px 22px; margin: 16px 0; }
+.ap-history-note .site-card h4 { margin-top: 0; color: #8b4513; }
+.ap-history-note .site-card .meta { font-size: 0.88rem; color: #6b4423; margin-bottom: 6px; }
+
+/* ââ Chips / badges ââââââââââââââââââââââââââââââââââââââââââââ */
+.ap-history-note .chip { display: inline-block; padding: 2px 9px; border-radius: 12px; font-size: 0.82rem; font-weight: 700; margin: 2px 4px 2px 0; background: #ede0c8; color: #5c3a1c; }
+.ap-history-note .chip.red    { background: #f4d4c4; color: #a14217; }
+.ap-history-note .chip.green  { background: #d8e8c4; color: #4a6b1f; }
+.ap-history-note .chip.gold   { background: #f4e4a8; color: #7c5a07; }
+.ap-history-note .chip.purple { background: #e0d4ea; color: #5c3a8b; }
+.ap-history-note .chip.blue   { background: #d4e0ed; color: #2c4a6b; }
+.ap-history-note .chip.orange { background: #fdddb4; color: #8b4513; }
+.ap-history-note .meta-chip { background: #e8eaf6; color: #283593; font-size: 0.78rem; padding: 3px 10px; border-radius: 12px; font-weight: 700; }
+.ap-history-note .meta-chip.red   { background: #ffebee; color: #c62828; }
+.ap-history-note .meta-chip.green { background: #e8f5e9; color: #1b5e20; }
+.ap-history-note .meta-chip.gold  { background: #fff8e1; color: #f57f17; }
+.ap-history-note .badge { display: inline-block; background: #c97b3a; color: #fefcf7; padding: 3px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; margin-top: 8px; }
+
+/* ââ Timeline ââââââââââââââââââââââââââââââââââââââââââââââââââ */
+.ap-history-note .timeline { border-left: 3px solid #c97b3a; margin: 14px 0 14px 14px; padding-left: 22px; }
+.ap-history-note .tl-item,
+.ap-history-note .timeline-item { position: relative; margin-bottom: 14px; }
+.ap-history-note .tl-item::before,
+.ap-history-note .timeline-item::before { content: ''; position: absolute; left: -29px; top: 6px; width: 13px; height: 13px; background: #c97b3a; border-radius: 50%; border: 3px solid #fefcf7; box-shadow: 0 0 0 2px #c97b3a; }
+.ap-history-note .tl-year { font-weight: 700; color: #8b4513; font-size: 0.9rem; }
+.ap-history-note .tl-desc { font-size: 0.9rem; color: #3a2e1f; line-height: 1.8; }
+
+/* ââ SVG / image / map wrappers ââââââââââââââââââââââââââââââââ */
+.ap-history-note .svg-wrap { text-align: center; margin: 1.4rem 0; padding: 10px; background: #fff8e7; border: 1px solid #d4a017; border-radius: 8px; overflow-x: auto; }
+.ap-history-note .svg-wrap svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ap-history-note .svg-caption { font-size: 0.88rem; color: #6b4423; margin-top: 6px; font-style: italic; text-align: center; }
+.ap-history-note .map-wrap { text-align: center; margin: 1.4rem 0; padding: 10px; background: #fff8e7; border: 1px solid #d4a017; border-radius: 8px; }
+.ap-history-note .map-wrap img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 4px; }
+.ap-history-note .ap-map-wrap { margin: 18px 0; padding: 18px; background: #fefcf7; border-radius: 14px; border: 1px solid #e8d4a8; }
+.ap-history-note .ap-map-header { font-size: 1.05rem; font-weight: 700; color: #5c3a1c; text-align: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px dashed #e8d4a8; }
+.ap-history-note .ap-map-img-container { position: relative; max-width: 680px; margin: 0 auto; line-height: 0; }
+.ap-history-note .ap-map-img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid #d4a574; }
+.ap-history-note .ap-marker { position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 2.5px solid #fefcf7; box-shadow: 0 0 0 1.5px #3a2e1f,0 2px 5px rgba(0,0,0,.35); transform: translate(-50%,-50%); cursor: help; z-index: 2; transition: transform .15s ease; }
+.ap-history-note .ap-marker:hover { transform: translate(-50%,-50%) scale(1.4); z-index: 5; }
+.ap-history-note .ap-marker-label { position: absolute; background: #fefcf7; border: 1px solid #c97b3a; border-radius: 5px; padding: 3px 7px; font-size: 0.66rem; color: #3a2e1f; transform: translate(10px,-50%); white-space: nowrap; pointer-events: none; z-index: 3; box-shadow: 0 1px 3px rgba(0,0,0,.18); line-height: 1.3; }
+.ap-history-note .ap-legend-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 14px 0 6px; padding: 10px; background: #fdf6e8; border-radius: 8px; font-size: 0.82rem; }
+.ap-history-note .ap-legend-item { display: inline-flex; align-items: center; gap: 6px; color: #3a2e1f; font-weight: 600; }
+.ap-history-note .ap-legend-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; border: 1px solid #5c3a1c; }
+.ap-history-note .ap-sites-key { margin-top: 12px; padding: 14px; background: linear-gradient(135deg,#fdf6e8,#fef0d2); border-radius: 10px; border-left: 4px solid #c97b3a; }
+.ap-history-note .ap-key-title { font-size: 0.95rem; font-weight: 700; color: #5c3a1c; margin-bottom: 10px; }
+.ap-history-note .ap-key-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 6px; }
+.ap-history-note .ap-key-row { display: flex; align-items: baseline; gap: 8px; font-size: 0.85rem; color: #3a2e1f; padding: 2px 0; }
+.ap-history-note .ap-key-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; border: 1px solid #5c3a1c; margin-top: 5px; }
+.ap-history-note .ap-key-name { flex: 1; }
+.ap-history-note .ap-key-info { color: #7a4f24; font-size: 0.92em; font-style: italic; }
+
+/* ââ MCQ blocks ââââââââââââââââââââââââââââââââââââââââââââââââ */
+.ap-history-note .mcq-block { background: #fff8e7; border: 1px solid #d4a017; border-radius: 8px; padding: 14px 18px; margin: 1rem 0; }
+.ap-history-note .mcq-q { font-weight: 700; color: #5c3a1c; margin-bottom: 8px; }
+.ap-history-note .mcq-opts { list-style: none; padding-left: 4px; margin: 6px 0; }
+.ap-history-note .mcq-opt { padding: 3px 0; }
+.ap-history-note .mcq-opt::before { content: "â "; color: #c97b3a; font-weight: 700; }
+.ap-history-note .mcq-ans { background: #e6f0d8; padding: 8px 12px; border-radius: 5px; margin-top: 10px; font-size: 0.93rem; border-left: 3px solid #7a9d3e; }
+.ap-history-note .mcq-ans strong { color: #4a6b1f; }
+
+/* ââ Misc ââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+.ap-history-note .compact td, .ap-history-note .compact th { padding: 4px 7px; font-size: 0.88rem; }
+.ap-history-note .short { font-size: 0.88rem; }
+.ap-history-note .comp-head { background: #8b4513 !important; color: #fefcf7 !important; }
+
+/* ââ Responsive ââââââââââââââââââââââââââââââââââââââââââââââââ */
+@media (max-width: 680px) {
+  .ap-history-note h2 { font-size: 1.15rem; }
+  .ap-history-note h3 { font-size: 1.05rem; }
+  .ap-history-note table { font-size: 0.84rem; }
+  .ap-history-note th, .ap-history-note td { padding: 5px 6px; }
+}
