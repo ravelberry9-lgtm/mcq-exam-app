@@ -1,4 +1,4 @@
-/* APPSC prep Â· v3 stylesheet Â· Phase 1
+/* APPSC prep · v3 stylesheet · Phase 1
    Design locked at v4/v6. Single file, CSS variables for theming,
    light + dark mode, mobile-first, Telugu-aware spacing. */
 
@@ -61,7 +61,7 @@ body {
 button, input, select, textarea { font: inherit; color: inherit; }
 a { color: inherit; text-decoration: none; }
 
-/* ââ App header âââââââââââââââââââââââââââââââââââââ */
+/* ── App header ───────────────────────────────────── */
 .app-header {
   position: sticky; top: 0; z-index: 20;
   display: flex; align-items: center; gap: 12px;
@@ -81,7 +81,7 @@ a { color: inherit; text-decoration: none; }
 .app-header button:hover { background: var(--bg-2); }
 .app-header button:active { transform: scale(0.96); }
 
-/* ââ Main column ââââââââââââââââââââââââââââââââââââ */
+/* ── Main column ──────────────────────────────────── */
 .app-main {
   max-width: 720px;
   margin: 0 auto;
@@ -89,7 +89,7 @@ a { color: inherit; text-decoration: none; }
   min-height: calc(100vh - 60px);
 }
 
-/* ââ Empty home âââââââââââââââââââââââââââââââââââââ */
+/* ── Empty home ───────────────────────────────────── */
 .empty-home {
   text-align: center;
   padding: 40px 20px;
@@ -121,12 +121,12 @@ a { color: inherit; text-decoration: none; }
 .chip:hover { background: var(--accent-bg); }
 .chip-en { color: var(--fg-3); font-size: 11px; margin-left: 6px; }
 
-/* ââ Page head (Subjects, Settings) âââââââââââââââââ */
+/* ── Page head (Subjects, Settings) ───────────────── */
 .page-head { margin: 8px 0 20px; }
 .page-head h1 { font-size: 22px; font-weight: 500; margin: 0 0 4px; }
 .page-head .subtitle { font-size: 13px; color: var(--fg-2); margin: 0; }
 
-/* ââ Subject list âââââââââââââââââââââââââââââââââââ */
+/* ── Subject list ─────────────────────────────────── */
 .subject-list { display: flex; flex-direction: column; gap: 8px; }
 .subject-row {
   display: flex; align-items: center; gap: 12px;
@@ -143,7 +143,7 @@ a { color: inherit; text-decoration: none; }
 .empty { padding: 20px; color: var(--fg-2); text-align: center; }
 .empty code { background: var(--bg-2); padding: 2px 6px; border-radius: 4px; font-size: 12px; }
 
-/* ââ Question card ââââââââââââââââââââââââââââââââââ */
+/* ── Question card ────────────────────────────────── */
 .qcard {
   background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-md);
   overflow: hidden;
@@ -180,7 +180,7 @@ body[data-lang="en"] .opt-te,
 body[data-lang="en"] .exp-te,
 body[data-lang="en"] .anchor-te { display: none; }
 
-/* ââ Options ââââââââââââââââââââââââââââââââââââââââ */
+/* ── Options ──────────────────────────────────────── */
 .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
 .option {
   display: flex; align-items: center; gap: 12px;
@@ -207,7 +207,7 @@ body[data-lang="en"] .anchor-te { display: none; }
 .option.is-wrong .option-key, .option.is-wrong .opt-en, .option.is-wrong .opt-te { color: var(--danger); }
 .option.is-dim { opacity: 0.5; }
 
-/* ââ Confidence selector ââââââââââââââââââââââââââââ */
+/* ── Confidence selector ──────────────────────────── */
 .confidence {
   margin: 18px 0;
   padding: 14px;
@@ -234,7 +234,7 @@ body[data-lang="en"] .anchor-te { display: none; }
 }
 .conf-anchors .anchor-te { display: block; opacity: 0.7; margin-top: 1px; }
 
-/* ââ Primary button + submit ââââââââââââââââââââââââ */
+/* ── Primary button + submit ──────────────────────── */
 .primary-btn, .submit-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   padding: 14px 20px; width: 100%;
@@ -247,7 +247,7 @@ body[data-lang="en"] .anchor-te { display: none; }
 .primary-btn:active, .submit-btn:active:not(:disabled) { transform: scale(0.99); }
 .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-/* ââ Feedback (post-submit) âââââââââââââââââââââââââ */
+/* ── Feedback (post-submit) ───────────────────────── */
 .feedback { margin-top: 16px; }
 .feedback-message {
   padding: 12px 14px; border-radius: var(--radius-md); margin-bottom: 12px;
@@ -273,7 +273,7 @@ body[data-lang="en"] .anchor-te { display: none; }
   border-radius: var(--radius-md); font-size: 14px; font-weight: 500;
 }
 
-/* ââ Settings form ââââââââââââââââââââââââââââââââââ */
+/* ── Settings form ────────────────────────────────── */
 .settings-form {
   background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-md);
   padding: 16px;
@@ -293,7 +293,7 @@ body[data-lang="en"] .anchor-te { display: none; }
 .radio input { accent-color: var(--accent); }
 .radio input:checked + span { font-weight: 500; }
 
-/* ââ Side drawer ââââââââââââââââââââââââââââââââââââ */
+/* ── Side drawer ──────────────────────────────────── */
 .drawer-backdrop {
   position: fixed; inset: 0; z-index: 30;
   background: rgba(0, 0, 0, 0.4);
@@ -364,7 +364,7 @@ body[data-lang="en"] .anchor-te { display: none; }
 .drawer-icon-settings { mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>"); -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>"); }
 .drawer-icon-lock { mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='11' width='18' height='11' rx='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>"); -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='11' width='18' height='11' rx='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>"); }
 
-/* ââ Exam syllabus tree âââââââââââââââââââââââââââââ */
+/* ── Exam syllabus tree ───────────────────────────── */
 .exam-tree { display: flex; flex-direction: column; gap: 16px; }
 .exam-paper {
   background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-md);
@@ -403,3 +403,193 @@ body[data-lang="en"] .anchor-te { display: none; }
 .exam-ch-en { color: var(--fg-2); font-size: 11px; margin-left: 4px; flex: 1; }
 .exam-ch-q { color: var(--fg-3); font-size: 11px; }
 .exam-chapters li.empty { padding: 6px 10px; color: var(--fg-3); font-size: 12px; }
+
+/* ── Back link ────────────────────────────────────── */
+.back-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 13px; color: var(--fg-2); margin-bottom: 10px;
+  transition: color 100ms ease;
+}
+.back-link:hover { color: var(--fg); }
+
+/* ── Bilingual helpers ────────────────────────────── */
+.bilingual-te { display: block; }
+.bilingual-en { display: block; font-size: 0.875em; color: var(--fg-2); margin-top: 2px; }
+
+/* ── Button variants ──────────────────────────────── */
+.btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px 18px;
+  font-size: 14px; font-weight: 500;
+  background: var(--bg-2); color: var(--fg);
+  border: 0.5px solid var(--border); border-radius: var(--radius-md);
+  cursor: pointer; transition: background 120ms ease;
+}
+.btn-secondary:hover { background: var(--bg-3); border-color: var(--border-strong); }
+
+/* ── Subject row-wrap ─────────────────────────────── */
+.subject-row-wrap { display: flex; flex-direction: column; gap: 4px; }
+.notes-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 10px; align-self: flex-start; margin-left: 4px;
+  font-size: 12px; color: var(--fg-2);
+  border: 0.5px solid var(--border); border-radius: var(--radius-sm);
+  background: var(--bg-2);
+}
+.notes-link:hover { background: var(--accent-bg); color: var(--accent); }
+
+/* ── Hub cards (subject detail page) ─────────────── */
+.subject-hub-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  margin-bottom: 24px;
+}
+@media (max-width: 420px) {
+  .subject-hub-cards { grid-template-columns: 1fr 1fr; }
+}
+.hub-card {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 12px;
+  background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-md);
+  color: var(--fg);
+  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
+}
+.hub-card:hover { background: var(--accent-bg); border-color: var(--accent); }
+.hub-card:active { transform: scale(0.98); }
+.hub-card-icon { font-size: 22px; flex-shrink: 0; }
+.hub-card-label { display: flex; flex-direction: column; gap: 2px; }
+.hub-card-label strong { font-size: 13px; font-weight: 500; }
+.hub-card-label span { font-size: 11px; color: var(--fg-2); }
+
+/* ── Section heading ──────────────────────────────── */
+.section-heading {
+  font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--fg-3); margin: 0 0 10px;
+}
+
+/* ── Chapter list (notes chapter browser + subject hub) */
+.chapter-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.chapter-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-md);
+  color: var(--fg);
+  transition: background 120ms ease;
+}
+a.chapter-row:hover { background: var(--bg-2); }
+.chapter-num {
+  width: 28px; height: 28px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-2); border-radius: 50%;
+  font-size: 12px; font-weight: 500; color: var(--fg-2);
+}
+.status-completed .chapter-num { background: var(--success-bg); color: var(--success); }
+.status-in_progress .chapter-num { background: var(--accent-bg); color: var(--accent); }
+.chapter-meta { flex: 1; min-width: 0; }
+.chapter-te { font-size: 14px; font-weight: 500; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chapter-en { font-size: 12px; color: var(--fg-2); margin: 2px 0 0; }
+.chapter-status-icon { flex-shrink: 0; }
+
+/* Hub variant — chapter row with action buttons */
+.chapter-hub-row { flex-wrap: wrap; align-items: flex-start; }
+.chapter-hub-row .chapter-meta { flex: 1 1 120px; min-width: 100px; }
+.chapter-hub-actions { display: flex; gap: 6px; flex-shrink: 0; flex-wrap: wrap; }
+.chapter-action-btn {
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 5px 10px; font-size: 12px;
+  background: var(--bg-2); border: 0.5px solid var(--border); border-radius: var(--radius-sm);
+  color: var(--fg); transition: background 100ms ease;
+}
+.chapter-action-btn:hover { background: var(--accent-bg); border-color: var(--accent); }
+.chapter-action-mcq:hover { background: var(--warning-bg); border-color: var(--warning); }
+
+/* ── Subject-level actions bar ────────────────────── */
+.subject-actions {
+  display: flex; gap: 10px; margin-top: 16px; padding-top: 16px;
+  border-top: 0.5px solid var(--border); flex-wrap: wrap;
+}
+
+/* ── Note reader ──────────────────────────────────── */
+.note-reader { padding-bottom: 100px; }
+.note-section {
+  margin-bottom: 12px;
+  background: var(--bg-2);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+.note-heading {
+  font-size: 16px; font-weight: 600; margin: 0 0 10px;
+  padding-bottom: 8px; border-bottom: 0.5px solid var(--border);
+  color: var(--fg);
+}
+/* When both bilingual variants are present */
+.note-heading .bilingual-te { display: block; font-size: 16px; font-weight: 600; }
+.note-heading .bilingual-en { display: block; font-size: 12px; color: var(--fg-2); margin-top: 2px; font-weight: 400; }
+/* When only one variant (heading_te empty, heading_en has the full bilingual title) */
+.note-heading .bilingual-te:empty { display: none; }
+.note-heading .bilingual-te:empty ~ .bilingual-en {
+  font-size: 15px; color: var(--fg); font-weight: 600; margin-top: 0;
+}
+/* Keyword list styling inside notes */
+.note-keywords {
+  display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px;
+}
+.note-keyword-tag {
+  background: var(--accent-bg); color: var(--accent);
+  border-radius: 4px; padding: 2px 8px; font-size: 12px; font-weight: 500;
+}
+.note-body { font-size: 14px; line-height: 1.7; margin-bottom: 6px; }
+.note-body.bilingual-te { color: var(--fg); }
+.note-body.bilingual-en { font-size: 12px; color: var(--fg-2); }
+.note-body p { margin: 0 0 8px; }
+.note-body ul, .note-body ol { padding-left: 18px; margin: 0 0 8px; }
+.note-body li { margin: 3px 0; font-size: 13px; }
+.note-body table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+.note-body th, .note-body td { border: 0.5px solid var(--border); padding: 5px 9px; text-align: left; }
+.note-body th { background: var(--bg-3, var(--bg-2)); font-weight: 500; }
+
+/* ── Reader footer (sticky bottom bar) ───────────── */
+.reader-footer {
+  position: sticky; bottom: 0;
+  background: var(--bg); border-top: 0.5px solid var(--border);
+  padding: 10px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  margin: 0 -16px; /* bleed to edge of .app-main padding */
+}
+.btn-complete {
+  flex: 1; padding: 11px 16px;
+  background: var(--accent); color: var(--accent-fg);
+  border: none; border-radius: var(--radius-md);
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: opacity 120ms ease;
+}
+.btn-complete:hover:not(:disabled) { opacity: 0.88; }
+.btn-complete:disabled { opacity: 0.6; cursor: not-allowed; }
+.complete-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--success); font-size: 14px; font-weight: 500;
+}
+.reader-nav { display: flex; gap: 8px; }
+.btn-nav {
+  display: inline-flex; align-items: center;
+  padding: 9px 13px; font-size: 13px;
+  background: var(--bg-2); border: 0.5px solid var(--border); border-radius: var(--radius-md);
+  color: var(--fg); transition: background 100ms ease;
+}
+.btn-nav:hover { background: var(--bg-3); }
+
+/* ── Empty state (notes not yet added) ───────────── */
+.empty-state {
+  text-align: center; padding: 36px 20px;
+  background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-md);
+  margin: 8px 0;
+}
+.empty-state-icon { font-size: 36px; margin-bottom: 12px; }
+.empty-state-title { font-size: 16px; font-weight: 500; margin: 0 0 6px; }
+.empty-state-sub { font-size: 13px; color: var(--fg-2); margin: 0 0 20px; }
+.empty-state-actions { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+
+/* ── Drawer extra icons ───────────────────────────── */
+.drawer-icon-plan {
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><
