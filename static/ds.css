@@ -183,3 +183,6 @@ html[data-lang="te"] .fb-te{display:block}
 .statline{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:.875rem;color:var(--muted)}
 .tile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .hubtile[aria-disabled="true"]{opacity:.65;background:#EEF1F6;border-style:dashed}
+
+.note-img-missing{display:block;margin:.6em 0;padding:10px 12px;border:1px dashed #b45309;border-radius:8px;background:#fffbeb;color:#92400e;font-size:.9rem}
+.note-img-missing code{font-size:.85em;overflow-wrap:anywhere}

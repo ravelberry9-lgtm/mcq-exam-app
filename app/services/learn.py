@@ -50,7 +50,8 @@ def strip_blocks(html):
 
 
 def render_note_html(html, keep_class=False):
-    return clean_note_html(strip_blocks(html), keep_class)
+    from .note_images import rewrite_images
+    return rewrite_images(clean_note_html(strip_blocks(html), keep_class))
 
 
 # ── display helpers (no data is modified) ───────────────────────────
