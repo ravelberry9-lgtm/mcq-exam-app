@@ -122,7 +122,10 @@ def test_reader_empty_chapter_shows_message(seeded_client, seeded_app):
     """Chapter with no notes shows empty state message."""
     r = seeded_client.get("/notes/polity/2")
     assert r.status_code == 200
-    assert b"No notes" in r.data or "లేవు".encode("utf-8") in r.data
+    # the reader's empty state: Telugu "notes coming soon" + English "haven't been added yet"
+    assert b"empty-state" in r.data
+    assert "నోట్సు త్వరలో వస్తాయి".encode("utf-8") in r.data
+    assert b"haven't been added yet" in r.data
 
 
 # ── Progress API ─────────────────────────────────────────────────

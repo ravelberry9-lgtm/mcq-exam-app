@@ -17,6 +17,7 @@
      pushing to GitHub (Railway will redeploy the file; then click Run here to sync the DB).</p>
 
   <form method="POST" id="parse-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <button class="primary-btn" type="submit" id="run-btn">▶ Run Parse</button>
   </form>
 
@@ -34,7 +35,7 @@ document.getElementById('parse-form').addEventListener('submit', async function(
   out.style.display = 'block';
   out.textContent = '';
 
-  const resp = await fetch(window.location.href, {method:'POST', credentials:'same-origin'});
+  const resp = await fetch(window.location.href, {method:'POST', credentials:'same-origin', headers:{'X-CSRF-Token':'{{ csrf_token() }}'}});
   const reader = resp.body.getReader();
   const decoder = new TextDecoder();
   while (true) {

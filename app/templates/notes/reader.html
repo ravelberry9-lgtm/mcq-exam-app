@@ -35,10 +35,10 @@
     </h2>
     {% endif %}
     {% if note.body_te %}
-    <div class="note-body{% if subject.slug == 'ap_history' %} ap-history-note{% endif %}">{{ note.body_te | safe }}</div>
+    <div class="note-body{% if subject.slug == 'ap_history' %} ap-history-note{% endif %}">{{ note.body_te | note_html(subject.slug == 'ap_history') }}</div>
     {% endif %}
     {% if note.body_en %}
-    <div class="note-body bilingual-en">{{ note.body_en | safe }}</div>
+    <div class="note-body bilingual-en">{{ note.body_en | note_html(subject.slug == 'ap_history') }}</div>
     {% endif %}
   </section>
   {% endfor %}

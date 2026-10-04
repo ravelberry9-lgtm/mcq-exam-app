@@ -11,7 +11,7 @@
         {% if note.heading_en %} · <em>{{ note.heading_en }}</em>{% endif %}
       </p>
     </div>
-    <a href="{{ url_for('admin.logout') }}" class="btn-logout">Logout</a>
+    <form method="POST" action="{{ url_for('admin.logout') }}" style="display:inline"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button type="submit" class="btn-logout">Logout</button></form>
   </div>
 
   {% with messages = get_flashed_messages(with_categories=true) %}
@@ -21,6 +21,7 @@
   {% endwith %}
 
   <form method="POST" class="notes-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <div class="heading-row">
       <div class="field-group">
         <label>Section Heading (English)</label>
@@ -67,11 +68,11 @@
     <div class="preview-grid">
       <div class="preview-pane">
         <div class="preview-label">Telugu</div>
-        <div class="preview-body">{{ note.body_te|safe }}</div>
+        <div class="preview-body">{{ note.body_te|note_html }}</div>
       </div>
       <div class="preview-pane">
         <div class="preview-label">English</div>
-        <div class="preview-body">{{ note.body_en|safe }}</div>
+        <div class="preview-body">{{ note.body_en|note_html }}</div>
       </div>
     </div>
   </div>

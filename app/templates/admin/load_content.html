@@ -13,6 +13,7 @@
      existing rows are skipped.</p>
 
   <form method="POST" id="load-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <button class="primary-btn" type="submit" id="run-btn">▶ Run Load</button>
   </form>
 
@@ -30,7 +31,7 @@ document.getElementById('load-form').addEventListener('submit', async function(e
   out.style.display = 'block';
   out.textContent = '';
 
-  const resp = await fetch(window.location.href, {method:'POST', credentials:'same-origin'});
+  const resp = await fetch(window.location.href, {method:'POST', credentials:'same-origin', headers:{'X-CSRF-Token':'{{ csrf_token() }}'}});
   const reader = resp.body.getReader();
   const decoder = new TextDecoder();
   while (true) {

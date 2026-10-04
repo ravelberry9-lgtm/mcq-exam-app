@@ -4,6 +4,13 @@ from app.models import Subject, Chapter, Note
 from app.db import db
 
 
+def _csrf(client):
+    """Install a known CSRF token in the session and return it."""
+    with client.session_transaction() as sess:
+        sess["_csrf"] = "test-csrf-token"
+    return "test-csrf-token"
+
+
 def test_admin_login_page_renders(client):
     r = client.get("/admin/login")
     assert r.status_code == 200
@@ -17,13 +24,13 @@ def test_admin_index_requires_auth(client):
 
 
 def test_admin_login_wrong_pin(client):
-    r = client.post("/admin/login", data={"pin": "9999"})
+    r = client.post("/admin/login", data={"pin": "9999", "csrf_token": _csrf(client)})
     assert r.status_code == 200
     assert b"Incorrect" in r.data
 
 
 def test_admin_login_correct_pin(client):
-    r = client.post("/admin/login", data={"pin": "1234"}, follow_redirects=True)
+    r = client.post("/admin/login", data={"pin": "1234", "csrf_token": _csrf(client)}, follow_redirects=True)
     assert r.status_code == 200
     assert b"Admin" in r.data
 
@@ -93,6 +100,7 @@ def test_admin_notes_edit_post_saves(client, app):
         sess["admin_token"] = hashlib.sha256(b"admin:1234").hexdigest()
 
     r = client.post(f"/admin/notes/{ch_id}/edit", data={
+        "csrf_token": _csrf(client),
         "body_en": "<p>Hello <script>bad()</script> World</p>",
         "body_te": "<p>నమస్కారం</p>",
         "heading_en": "Test Section",

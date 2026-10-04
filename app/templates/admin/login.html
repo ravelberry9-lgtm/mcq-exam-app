@@ -9,6 +9,7 @@
       <p class="admin-error">{{ error }}</p>
     {% endif %}
     <form method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
       <label for="pin">PIN</label>
       <input type="password" id="pin" name="pin" inputmode="numeric"
              autocomplete="current-password" autofocus maxlength="20"

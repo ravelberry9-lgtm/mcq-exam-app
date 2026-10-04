@@ -7,7 +7,7 @@
       <a href="{{ url_for('admin.index') }}" class="back-link">← Admin</a>
       <h2>Chapter Notes</h2>
     </div>
-    <a href="{{ url_for('admin.logout') }}" class="btn-logout">Logout</a>
+    <form method="POST" action="{{ url_for('admin.logout') }}" style="display:inline"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button type="submit" class="btn-logout">Logout</button></form>
   </div>
   {% for subject in subjects %}
     <details class="subject-group" open>

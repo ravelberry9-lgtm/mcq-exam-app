@@ -6,7 +6,7 @@ Phase 3 scope: paste-HTML + save only.
 PIN: 1234 (change via ADMIN_PIN env var).
 Not production-grade — cookie-based session token.
 """
-import hashlib, secrets, subprocess, sys, os
+import hashlib, hmac, secrets, subprocess, sys, os, time
 from flask import (
     Blueprint, render_template, request, redirect,
     url_for, session, flash, current_app, Response
@@ -32,7 +32,7 @@ ALLOWED_TAGS = [
     "sup", "sub",
 ]
 ALLOWED_ATTRS = {
-    "*":   ["class", "id", "style"],
+    "*":   ["class", "id"],   # no inline style: there is no CSS sanitiser
     "a":   ["href", "title", "target", "rel"],
     "img": ["src", "alt", "width", "height"],
     "td":  ["colspan", "rowspan"],
@@ -46,6 +46,7 @@ def _sanitize(html: str) -> str:
         html or "",
         tags=ALLOWED_TAGS,
         attributes=ALLOWED_ATTRS,
+        protocols=["http", "https", "mailto"],
         strip=True,
     )
 
@@ -62,6 +63,61 @@ def _is_authed() -> bool:
 
 def _make_token(pin: str) -> str:
     return hashlib.sha256(f"admin:{pin}".encode()).hexdigest()
+
+
+# ── CSRF (session token; checked on every admin POST) ─────────────
+
+def csrf_token() -> str:
+    tok = session.get("_csrf")
+    if not tok:
+        tok = secrets.token_urlsafe(32)
+        session["_csrf"] = tok
+    return tok
+
+
+@bp.app_template_global("csrf_token")
+def _csrf_template_global():
+    return csrf_token()
+
+
+@bp.before_request
+def _csrf_protect():
+    if request.method in ("POST", "PUT", "PATCH", "DELETE"):
+        sent = request.form.get("csrf_token") or request.headers.get("X-CSRF-Token") or ""
+        expected = session.get("_csrf") or ""
+        if not expected or not hmac.compare_digest(sent, expected):
+            from flask import abort
+            abort(400, "Missing or invalid CSRF token")
+
+
+# ── login throttle (in memory; resets on restart / per worker) ─────
+_FAILS: dict = {}
+
+
+def _client_key() -> str:
+    return request.remote_addr or "unknown"
+
+
+def _locked_for(key: str) -> int:
+    rec = _FAILS.get(key)
+    if rec and rec["until"] > time.time():
+        return int(rec["until"] - time.time()) + 1
+    return 0
+
+
+def _register_failure(key: str) -> None:
+    rec = _FAILS.setdefault(key, {"n": 0, "until": 0})
+    rec["n"] += 1
+    if rec["n"] >= current_app.config.get("ADMIN_MAX_FAILURES", 5):
+        rec["until"] = time.time() + current_app.config.get("ADMIN_LOCKOUT_SECONDS", 300)
+        rec["n"] = 0
+
+
+def _safe_next(target: str):
+    """Only same-site absolute paths; rejects //host, scheme:, backslashes."""
+    if target and target.startswith("/") and not target.startswith("//") and "\\" not in target and "\n" not in target and "\r" not in target:
+        return target
+    return None
 
 
 def _require_auth():
@@ -87,15 +143,25 @@ def login():
     error = None
     if request.method == "POST":
         pin = request.form.get("pin", "")
-        if pin == current_app.config["ADMIN_PIN"]:
+        key = _client_key()
+        wait = _locked_for(key)
+        if wait:
+            return render_template("admin/login.html", error=f"Too many attempts. Try again in {wait} seconds."), 429
+        if hmac.compare_digest(pin.encode(), str(current_app.config["ADMIN_PIN"]).encode()):
+            _FAILS.pop(key, None)
+            csrf = session.get("_csrf")
+            session.clear()                      # new session on login (no fixation)
+            if csrf:
+                session["_csrf"] = csrf
             session["admin_token"] = _make_token(pin)
             session.permanent = True
-            return redirect(request.args.get("next") or url_for("admin.index"))
+            return redirect(_safe_next(request.args.get("next", "")) or url_for("admin.index"))
+        _register_failure(key)
         error = "Incorrect PIN. Try again."
     return render_template("admin/login.html", error=error)
 
 
-@bp.route("/logout")
+@bp.route("/logout", methods=["POST"])
 def logout():
     session.pop("admin_token", None)
     return redirect(url_for("admin.login"))
