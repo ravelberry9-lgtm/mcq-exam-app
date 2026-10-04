@@ -39,18 +39,18 @@ def main(argv=None):
                 if not a.yes:
                     print("--restore needs --yes"); return 2
                 print(json.dumps(ci.restore_batch(a.restore), indent=2)); return 0
-            src, sha = ci.open_source(a.source)
-            plan = ci.build_plan(src, sha)
-            slugs = [p["slug"] for p in plan["subjects"]] if a.all_subjects else [s for s in (a.subjects or "").split(",") if s]
-            if not slugs:
-                print(json.dumps(plan, indent=2, ensure_ascii=False))
-                print("\nPreview only. Nothing was changed. Pass --subjects or --all-subjects to import.")
+            with ci.open_source(a.source) as src:
+                plan = ci.build_plan(src)
+                slugs = [p["slug"] for p in plan["subjects"]] if a.all_subjects else [s for s in (a.subjects or "").split(",") if s]
+                if not slugs:
+                    print(json.dumps(plan, indent=2, ensure_ascii=False))
+                    print("\nPreview only. Nothing was changed. Pass --subjects or --all-subjects to import.")
+                    return 0
+                if (a.replace_notes or a.remove_extra) and not a.yes:
+                    print("--replace-notes / --remove-extra need --yes. Nothing was changed."); return 2
+                res = ci.apply_import(src, slugs, plan["fingerprints"], a.replace_notes, a.remove_extra)
+                print(json.dumps(res, indent=2))
                 return 0
-            if (a.replace_notes or a.remove_extra) and not a.yes:
-                print("--replace-notes / --remove-extra need --yes. Nothing was changed."); return 2
-            res = ci.apply_import(src, sha, slugs, plan["fingerprint"], a.replace_notes, a.remove_extra)
-            print(json.dumps(res, indent=2))
-            return 0
         except ci.ContentImportError as e:
             print(f"REFUSED: {e}"); return 1
 

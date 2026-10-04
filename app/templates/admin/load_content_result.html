@@ -7,6 +7,6 @@
   <pre style="white-space:pre-wrap">{{ result_json }}</pre>
   {% if result.get('batch_id') and (result.get('notes_replaced') or result.get('notes_removed') or result.get('restored')) %}
   <p>Saved copy of changed notes: batch <code>{{ result.batch_id }}</code>. Restore it from the Load Content page.</p>{% endif %}
-  <p><a href="{{ url_for('admin.load_content') }}">Back to Load Content</a></p>
+  <p><a href="{{ back_url }}">Back to Load Content</a></p>
 </div>
 {% endblock %}

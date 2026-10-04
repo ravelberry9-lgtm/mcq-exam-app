@@ -282,10 +282,7 @@ def seed():
 
 
 # ── Content import: preview → scoped, transactional apply → restore ──
-def _content_source():
-    return current_app.config.get("CONTENT_SOURCE")
-
-
+# One flow for both sources (data/content.db and the AP History HTML chapters); see app/services/content_import.py.
 def _recent_note_backups(limit=10):
     from ..models import NoteBackup
     rows = db.session.execute(
@@ -298,48 +295,73 @@ def _load_page(error=None, status=200):
     return render_template("admin/load_content.html", error=error, batches=_recent_note_backups()), status
 
 
+def _ap_page(error=None, status=200):
+    return render_template("admin/parse_ap_history.html", error=error), status
+
+
+def _open_source(kind):
+    from ..services import ap_history_parse, content_import as ci
+    if kind == "ap":
+        return ap_history_parse.build_source(current_app.config.get("AP_HISTORY_DIR"))
+    return ci.open_source(current_app.config.get("CONTENT_SOURCE"))
+
+
+_KINDS = {
+    "content": dict(page=lambda e=None, st=200: _load_page(e, st), apply="admin.load_content_apply", back="admin.load_content",
+                    title="Import preview"),
+    "ap": dict(page=lambda e=None, st=200: _ap_page(e, st), apply="admin.parse_ap_history_apply", back="admin.parse_ap_history",
+               title="AP History import preview"),
+}
+
+
+def _preview(kind):
+    from ..services import content_import as ci
+    k = _KINDS[kind]
+    try:
+        with _open_source(kind) as src:
+            plan = ci.build_plan(src)
+    except ci.ContentImportError as e:
+        return k["page"](str(e), 400)
+    return render_template("admin/load_content_preview.html", plan=plan, error=None, title=k["title"],
+                           apply_url=url_for(k["apply"]), back_url=url_for(k["back"]))
+
+
+def _apply(kind):
+    from ..services import content_import as ci
+    import json as _json
+    k = _KINDS[kind]
+    slugs = request.form.getlist("subjects")
+    fps = {key[3:]: v for key, v in request.form.items() if key.startswith("fp.")}
+    replace = request.form.get("replace_notes") == "1"
+    remove = request.form.get("remove_extra") == "1"
+    try:
+        if (replace or remove) and request.form.get("confirm", "").strip() != "REPLACE":
+            raise ci.ContentImportError("Type REPLACE to confirm replacing or removing notes. Nothing was changed.")
+        with _open_source(kind) as src:
+            res = ci.apply_import(src, slugs, fps, replace, remove)
+    except ci.ContentImportError as e:
+        return k["page"](str(e), 400)
+    return render_template("admin/load_content_result.html", heading="Import applied", result=res,
+                           result_json=_json.dumps(res, indent=2), back_url=url_for("admin.load_content"))
+
+
 @bp.route("/load-content", methods=["GET"])
 def load_content():
     guard = _require_auth()
-    if guard:
-        return guard
-    return _load_page()
+    return guard or _load_page()
 
 
 @bp.route("/load-content/preview", methods=["POST"])
 def load_content_preview():
     """Read-only: describes what an import would do. Writes nothing."""
     guard = _require_auth()
-    if guard:
-        return guard
-    from ..services import content_import as ci
-    try:
-        src, sha = ci.open_source(_content_source())
-        plan = ci.build_plan(src, sha)
-    except ci.ContentImportError as e:
-        return _load_page(str(e), 400)
-    return render_template("admin/load_content_preview.html", plan=plan, error=None)
+    return guard or _preview("content")
 
 
 @bp.route("/load-content/apply", methods=["POST"])
 def load_content_apply():
     guard = _require_auth()
-    if guard:
-        return guard
-    from ..services import content_import as ci
-    slugs = request.form.getlist("subjects")
-    replace = request.form.get("replace_notes") == "1"
-    remove = request.form.get("remove_extra") == "1"
-    try:
-        if (replace or remove) and request.form.get("confirm", "").strip() != "REPLACE":
-            raise ci.ContentImportError("Type REPLACE to confirm replacing or removing notes. Nothing was changed.")
-        src, sha = ci.open_source(_content_source())
-        res = ci.apply_import(src, sha, slugs, request.form.get("fingerprint", ""), replace, remove)
-    except ci.ContentImportError as e:
-        return _load_page(str(e), 400)
-    import json as _json
-    return render_template("admin/load_content_result.html", heading="Import applied", result=res,
-                           result_json=_json.dumps(res, indent=2))
+    return guard or _apply("content")
 
 
 @bp.route("/load-content/restore", methods=["POST"])
@@ -348,58 +370,31 @@ def load_content_restore():
     if guard:
         return guard
     from ..services import content_import as ci
+    import json as _json
     try:
         if request.form.get("confirm", "").strip() != "RESTORE":
             raise ci.ContentImportError("Type RESTORE to confirm. Nothing was changed.")
         res = ci.restore_batch(request.form.get("batch_id", ""))
     except ci.ContentImportError as e:
         return _load_page(str(e), 400)
-    import json as _json
     return render_template("admin/load_content_result.html", heading="Notes restored", result=res,
-                           result_json=_json.dumps(res, indent=2))
+                           result_json=_json.dumps(res, indent=2), back_url=url_for("admin.load_content"))
 
 
-@bp.route("/parse-ap-history", methods=["GET", "POST"])
+@bp.route("/parse-ap-history", methods=["GET"])
 def parse_ap_history():
-    """
-    Re-parse AP History HTML chapter files from static/notes/AP_History/Chapters/
-    and reload into the live database.
-
-    Use this whenever the HTML chapter files have been updated and deployed —
-    it replaces all ap_history chapters + notes with freshly parsed content.
-    """
+    """AP History HTML chapters → notes, through the same safe import flow. Replaces the old delete-and-reload."""
     guard = _require_auth()
-    if guard:
-        return guard
+    return guard or _ap_page()
 
-    if request.method == "GET":
-        return render_template("admin/parse_ap_history.html")
 
-    scripts_dir = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
-        "scripts",
-    )
-    script = os.path.join(scripts_dir, "parse_ap_history_notes.py")
+@bp.route("/parse-ap-history/preview", methods=["POST"])
+def parse_ap_history_preview():
+    guard = _require_auth()
+    return guard or _preview("ap")
 
-    def generate():
-        yield "Running parse_ap_history_notes.py --postgres ...\n\n"
-        try:
-            proc = subprocess.Popen(
-                [sys.executable, script, "--postgres"],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-                env={**os.environ},
-            )
-            for line in proc.stdout:
-                yield line
-            proc.wait()
-            yield f"\n\nExit code: {proc.returncode}\n"
-            if proc.returncode == 0:
-                yield "DONE: AP History notes parsed and loaded successfully.\n"
-            else:
-                yield "ERROR: parse_ap_history_notes.py exited with errors — see above.\n"
-        except Exception as exc:
-            yield f"ERROR: {exc}\n"
 
-    return Response(generate(), mimetype="text/plain")
+@bp.route("/parse-ap-history/apply", methods=["POST"])
+def parse_ap_history_apply():
+    guard = _require_auth()
+    return guard or _apply("ap")

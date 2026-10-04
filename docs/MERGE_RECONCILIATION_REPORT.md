@@ -68,8 +68,33 @@ Real-content check (temporary SQLite from migrations): preview wrote nothing; `-
 6242 questions; after hand-editing a note, a second run changed nothing and kept the edit. Note: the old page text claimed 6 257 notes and
 6 742 questions; the shipped `content.db` contains 980 notes and 6 242 questions. Worth confirming which is intended.
 
+## Follow-up 2: review findings on the import (P1 x2) and the AP History parser
+
+* **Question de-duplication (P1).** Identity was an md5 of `source_type:` plus the first 120 characters of the text, so different
+  questions sharing a long stem were silently dropped. Identity is now the full content: subject, type, text (en/te), options (en/te),
+  correct answer, PYQ year and paper. Exact duplicates are still skipped (also inside the source). On the shipped `content.db` the old rule
+  discarded **215 distinct questions**: a full import now yields 6 457 questions, not 6 242. Known trade-off: a question corrected by
+  hand in the live database is no longer recognised as "the same" as the source version and would be added again; the preview shows
+  the count before anything is written.
+* **Stale-preview protection (P1).** The fingerprint is now per subject and covers the source hash, the live subject, its chapters,
+  *every* live note in those chapters (id, section, content, including notes the source does not mention) and all live question keys.
+  Changes to another, unselected subject do not block an import. Tests cover added/edited/deleted extra notes, a new chapter, a new
+  live question and a changed source file.
+* **Check-then-write race.** The import locks the tables first (PostgreSQL `LOCK TABLE ... SHARE ROW EXCLUSIVE`; SQLite write lock),
+  recomputes the fingerprints under that lock, and only then writes; the lock is held until commit or rollback and released on every refusal.
+  Restore takes the same lock. Tests: a concurrent writer is blocked on SQLite (and on PostgreSQL when `TEST_PG_URL` is set).
+* **AP History parser.** `/admin/parse-ap-history`, `scripts/parse_ap_history_notes.py` no longer delete anything. The HTML files are parsed
+  by `app/services/ap_history_parse.py` into a temporary source and go through the same preview, scoped add-only apply, opt-in
+  replace/remove with backup, and restore. The old POST is gone (405); chapters are never deleted; the old `--sqlite` mode that edited
+  `data/content.db` is removed. Missing chapter files are shown as warnings. With the shipped files: 12 chapters, 225 sections,
+  216 identical, 9 differ (kept by default), nothing added on top of a full content import.
+  Behaviour change: chapter titles/reading times of existing chapters are not updated by the parser any more.
+* **Cleanup.** `open_source` returns a `Source` context manager that closes the SQLite connection and removes the temporary directory of a
+  decompressed `content.db.gz`; all callers use `with`.
+
 Still open / not changed:
 
-* `/admin/parse-ap-history` and `scripts/parse_ap_history_notes.py` also delete AP History chapters/notes before re-parsing. Not yet made safe.
-* `scripts/scripts/scripts/scripts/load_content.py` (stray nested copy, an older additive-only loader) is left in place; it should be removed in a separate reviewed commit.
+* `scripts/fix_notes.py` rewrites notes inside `data/content.db` (the *source* file) from the legacy database; it never touches the live database.
+* `scripts/scripts/scripts/scripts/load_content.py` (stray nested copy of an older additive-only loader) is left in place; remove it in a separate reviewed commit.
+* The old page claimed 6 257 notes / 6 742 questions; the shipped file has 980 notes and 6 457 distinct questions. Please confirm which is intended.
 * Live Railway database not inspected or backed up.

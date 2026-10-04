@@ -1,20 +1,20 @@
 {% extends "base.html" %}
-{% block title %}Import preview · Admin · {{ app_title }}{% endblock %}
+{% block title %}{{ title }} · Admin · {{ app_title }}{% endblock %}
 {% block content %}
-<div class="page-head"><h1>Import preview</h1>
+<div class="page-head"><h1>{{ title }}</h1>
   <p class="subtitle">Nothing has been changed yet. Source fingerprint <code>{{ plan.source_sha256[:12] }}</code>.</p></div>
 <div style="max-width:900px;margin:1.5rem auto;">
+  {% for w in plan.warnings %}<p role="alert" style="color:#8a5a00;font-weight:700">{{ w }}</p>{% endfor %}
   {% if error %}<p role="alert" style="color:#b00020;font-weight:700">{{ error }}</p>{% endif %}
-  <form method="POST" action="{{ url_for('admin.load_content_apply') }}">
+  <form method="POST" action="{{ apply_url }}">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-    <input type="hidden" name="fingerprint" value="{{ plan.fingerprint }}">
-    <table style="width:100%;border-collapse:collapse">
+        <table style="width:100%;border-collapse:collapse">
       <thead><tr><th>Import</th><th align="left">Subject</th><th>New chapters</th><th>Notes to add</th><th>Notes identical</th>
         <th>Notes that differ (kept)</th><th>Live-only notes</th><th>Questions to add</th></tr></thead>
       <tbody>
       {% for s in plan.subjects %}
         <tr>
-          <td align="center"><input type="checkbox" name="subjects" value="{{ s.slug }}" id="s-{{ s.slug }}" aria-label="Import {{ s.name_en }}"></td>
+          <td align="center"><input type="hidden" name="fp.{{ s.slug }}" value="{{ s.fingerprint }}"><input type="checkbox" name="subjects" value="{{ s.slug }}" id="s-{{ s.slug }}" aria-label="Import {{ s.name_en }}"></td>
           <td><label for="s-{{ s.slug }}">{{ s.name_en }}{% if not s.exists %} <em>(new subject)</em>{% endif %}</label></td>
           <td align="center">{{ s.chapters.new }}</td><td align="center">{{ s.notes.add }}</td><td align="center">{{ s.notes.same }}</td>
           <td align="center"><strong>{{ s.notes.differ }}</strong></td><td align="center">{{ s.notes.extra_live }}</td>
@@ -34,7 +34,7 @@
       <p class="small muted">Every replaced or removed note is copied to a backup first (same transaction) and can be restored from the Load Content page.</p>
     </fieldset>
     <p><button class="primary-btn" type="submit">Apply to selected subjects</button>
-       <a href="{{ url_for('admin.load_content') }}">Cancel</a></p>
+       <a href="{{ back_url }}">Cancel</a></p>
   </form>
 </div>
 {% endblock %}
