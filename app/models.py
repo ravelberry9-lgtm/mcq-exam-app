@@ -129,6 +129,113 @@ class Question(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
+    # ── canonical syllabus identity + provenance (all NULL for rows that predate them; see ``effective_source``) ──
+    # Canonical identity: ONE primary chapter per question; further chapters are only tags.
+    syllabus_chapter_id = db.Column(db.Integer, db.ForeignKey("syllabus_chapters.id"), nullable=True, index=True)
+    subtopic_id = db.Column(db.Integer, db.ForeignKey("syllabus_subtopics.id"), nullable=True, index=True)
+    secondary_tags = db.Column(db.JSON)       # e.g. {"chapters": ["u2-c14-..."], "subtopics": [...]}
+    # Original source identity: never rewritten after import.
+    source = db.Column(db.String(24))         # one of QUESTION_SOURCES
+    source_file = db.Column(db.String(256))
+    source_qid = db.Column(db.String(128))    # the id/number used in the source collection
+    source_chapter = db.Column(db.String(64))  # original source chapter label, as written there
+    qtype = db.Column(db.String(24))
+    review_status = db.Column(db.String(24))  # one of REVIEW_STATUSES
+    batch_id = db.Column(db.String(64))       # import batch that created the row
+    # md5 of normalised question text + options; a cross-collection collision is a *warning*, never a silent discard
+    content_hash = db.Column(db.String(32), index=True)
+
+    __table_args__ = (db.Index("uq_questions_source_qid", "source", "source_qid", unique=True),)
+
+    @property
+    def effective_source(self):
+        """Rows that predate provenance columns are the migrated old database: report them as ``legacy_db``
+        without writing anything to them."""
+        return self.source or "legacy_db"
+
+
+# Allowed values, enforced by the importer and tests (the legacy ``questions`` table cannot take CHECK constraints in SQLite).
+QUESTION_SOURCES = ("codex_generated", "app_master", "hanumanthrao", "pyq_compiled", "verified_pyq", "legacy_db")
+REVIEW_STATUSES = ("raw", "structurally_valid", "content_review_required", "fact_verified", "bilingual_approved", "rejected")
+LEARNER_VISIBLE_STATUS = "bilingual_approved"   # the only status shown in the canonical practice flow
+CHAPTER_CLASSIFICATIONS = ("direct", "bridge", "thematic", "supplementary")
+SUPPLEMENTARY_TYPES = ("supplementary_cross_cutting", "supplementary_outside_direct_syllabus", "supplementary_post_syllabus")
+
+
+# ─── Canonical syllabus hierarchy (Subject → Unit → Chapter → Subtopic); separate from the source ``chapters`` ──
+
+class SyllabusUnit(db.Model):
+    """One of the five official APPSC units. Slugs are stable identifiers: never derived from, or changed with, a title."""
+    __tablename__ = "syllabus_units"
+    id = db.Column(db.Integer, primary_key=True)
+    subject_id = db.Column(db.Integer, db.ForeignKey("subjects.id", ondelete="CASCADE"), nullable=False, index=True)
+    unit_num = db.Column(db.Integer, nullable=False)
+    slug = db.Column(db.String(64), unique=True, nullable=False)
+    title_en = db.Column(db.String(256), nullable=False)
+    title_te = db.Column(db.String(256), nullable=False)
+    sort_order = db.Column(db.Integer, default=0)
+
+    __table_args__ = (db.UniqueConstraint("subject_id", "unit_num"),)
+
+
+class SyllabusChapter(db.Model):
+    """An internal preparation chapter (NOT an official syllabus line). Core chapters have a unit and a number 1..31;
+    the three supplementary reference chapters have neither and are never counted as core."""
+    __tablename__ = "syllabus_chapters"
+    id = db.Column(db.Integer, primary_key=True)
+    subject_id = db.Column(db.Integer, db.ForeignKey("subjects.id", ondelete="CASCADE"), nullable=False, index=True)
+    unit_id = db.Column(db.Integer, db.ForeignKey("syllabus_units.id", ondelete="CASCADE"), nullable=True, index=True)
+    chapter_num = db.Column(db.Integer)       # 1..31 for core chapters, NULL for supplementary
+    slug = db.Column(db.String(96), unique=True, nullable=False)
+    title_en = db.Column(db.String(256), nullable=False)
+    title_te = db.Column(db.String(256), nullable=False)
+    classification = db.Column(db.String(16), nullable=False)       # CHAPTER_CLASSIFICATIONS
+    supplementary_type = db.Column(db.String(48))                   # SUPPLEMENTARY_TYPES, only when classification == 'supplementary'
+    sort_order = db.Column(db.Integer, default=0)
+
+    __table_args__ = (
+        db.UniqueConstraint("subject_id", "chapter_num"),
+        db.CheckConstraint("classification IN ('direct','bridge','thematic','supplementary')", name="ck_syllabus_chapters_classification"),
+        db.CheckConstraint(
+            "(classification = 'supplementary' AND supplementary_type IS NOT NULL AND unit_id IS NULL AND chapter_num IS NULL) OR "
+            "(classification <> 'supplementary' AND supplementary_type IS NULL AND unit_id IS NOT NULL AND chapter_num IS NOT NULL)",
+            name="ck_syllabus_chapters_core_vs_supplementary"),
+    )
+
+    @property
+    def is_core(self):
+        return self.classification != "supplementary"
+
+
+class SyllabusSubtopic(db.Model):
+    __tablename__ = "syllabus_subtopics"
+    id = db.Column(db.Integer, primary_key=True)
+    chapter_id = db.Column(db.Integer, db.ForeignKey("syllabus_chapters.id", ondelete="CASCADE"), nullable=False, index=True)
+    slug = db.Column(db.String(128), unique=True, nullable=False)
+    subtopic_en = db.Column(db.String(256), nullable=False)
+    subtopic_te = db.Column(db.String(256), nullable=False)
+    sort_order = db.Column(db.Integer, default=0)
+
+
+class ChapterSourceMap(db.Model):
+    """Old-source-content → canonical mapping (note sections now; question collections later). Keyed by the *source chapter
+    number* and section number, not by database ids, which differ between environments. Rows start as ``draft``; nothing reads
+    this table for display until a mapping is approved."""
+    __tablename__ = "chapter_source_map"
+    id = db.Column(db.Integer, primary_key=True)
+    subject_id = db.Column(db.Integer, db.ForeignKey("subjects.id", ondelete="CASCADE"), nullable=False, index=True)
+    source_chapter_num = db.Column(db.Integer, nullable=False)
+    section_num = db.Column(db.Integer)       # NULL = the whole source chapter
+    syllabus_chapter_id = db.Column(db.Integer, db.ForeignKey("syllabus_chapters.id", ondelete="CASCADE"), nullable=False, index=True)
+    subtopic_id = db.Column(db.Integer, db.ForeignKey("syllabus_subtopics.id", ondelete="SET NULL"), nullable=True)
+    relation = db.Column(db.String(12), nullable=False, default="primary")   # 'primary' | 'secondary'
+    mapping_kind = db.Column(db.String(24))   # direct | bridge | cross_cutting | supplementary
+    confidence = db.Column(db.String(8))      # high | medium | low
+    reason = db.Column(db.String(512))
+    status = db.Column(db.String(12), nullable=False, default="draft")       # 'draft' | 'approved'
+
+    __table_args__ = (db.UniqueConstraint("subject_id", "source_chapter_num", "section_num", "syllabus_chapter_id", "relation"),)
+
 
 # ─── Exam definitions (curated views over the subject library) ──
 

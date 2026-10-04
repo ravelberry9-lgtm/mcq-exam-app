@@ -30,7 +30,7 @@ def _tables(url):
 def test_fresh_upgrade_matches_models(dburl, monkeypatch):
     cfg = _cfg(dburl, monkeypatch)
     command.upgrade(cfg, "head")
-    assert len(_tables(dburl)) == 16
+    assert len(_tables(dburl)) == 20
     command.check(cfg)                      # raises if models and migrations have drifted
 
 
@@ -87,7 +87,7 @@ def test_legacy_database_is_adopted_converges_to_the_model_and_keeps_every_row(d
     command.check(cfg)                                   # legacy schema now agrees with the models (not just fresh installs)
 
     assert _snapshot(dburl) == before                    # every row identical, q_hash preserved
-    assert len(_tables(dburl)) == 16
+    assert len(_tables(dburl)) == 20
     eng = sa.create_engine(dburl); insp = sa.inspect(eng)
     assert not any(ix["name"].startswith("idx_q_") for ix in insp.get_indexes("questions"))
     assert any(fk["options"].get("ondelete") == "CASCADE" for fk in insp.get_foreign_keys("notes"))
@@ -120,7 +120,9 @@ def _replace_table(dburl, name, ddl):
     rows = con.execute(f"SELECT {','.join(cols)} FROM {name}").fetchall()
     con.execute("PRAGMA legacy_alter_table=ON")          # keep other tables' FKs pointing at the *name*
     con.execute(f"ALTER TABLE {name} RENAME TO {name}_old"); con.executescript(ddl)
-    con.executemany(f"INSERT INTO {name} ({','.join(cols)}) VALUES ({','.join('?' * len(cols))})", rows)
+    keep = [i for i, c in enumerate(cols) if c in {r[1] for r in con.execute(f"PRAGMA table_info({name})")}]   # columns added by later revisions are absent from the old DDL
+    con.executemany(f"INSERT INTO {name} ({','.join(cols[i] for i in keep)}) VALUES ({','.join('?' * len(keep))})",
+                    [tuple(row[i] for i in keep) for row in rows])
     con.execute(f"DROP TABLE {name}_old"); con.commit(); con.close()
     return rows
 
@@ -131,7 +133,7 @@ def _stamp_back(cfg):
 
 def test_correct_tables_are_not_rebuilt(dburl, monkeypatch):
     import importlib.util
-    cfg = _cfg(dburl, monkeypatch); command.upgrade(cfg, "head")
+    cfg = _cfg(dburl, monkeypatch); command.upgrade(cfg, "c3d4e5f6a7b8")   # the converge migration's frozen shapes describe the schema at that revision
     spec = importlib.util.spec_from_file_location("conv", next((ROOT / "migrations" / "versions").glob("*converge_legacy*")))
     conv = importlib.util.module_from_spec(spec); spec.loader.exec_module(conv)
     insp = sa.inspect(sa.create_engine(dburl))
