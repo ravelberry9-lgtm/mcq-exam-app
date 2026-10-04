@@ -39,8 +39,9 @@
   // ── Question card: select option + confidence + submit ─────
   function bindQuestionCard() {
     const card = document.getElementById("qcard");
-    if (!card) return;
     const submitBtn = document.getElementById("submit-btn");
+    // the exam page also has #qcard but its own script and no submit button: nothing to bind there
+    if (!card || !submitBtn) return;
     const options = card.querySelectorAll(".option");
     const confPills = card.querySelectorAll(".conf-pill");
     const feedback = document.getElementById("feedback");

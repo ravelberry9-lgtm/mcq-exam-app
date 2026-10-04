@@ -39,7 +39,7 @@
             <div><h2>{{ c.bi(sec.name_en, sec.name_te) }}</h2><div class="muted small">{{ t('common.marks', n=sec.marks) }}</div></div>
             {% if s.available %}{{ c.tag('ok', t('common.available')) }}{% else %}{{ c.tag('off', t('common.soon')) }}{% endif %}
           </div>
-          {% if s.available %}<span class="small muted">{{ t('learn.content_counts', c=s.chapter_count, q=s.question_count) }}</span>{% endif %}
+          {% if s.available %}<span class="small muted">{{ t('learn.content_counts', c=s.chapter_count, q=s.question_count) if s.chapter_count else t('common.questions', n=s.question_count) }}</span>{% endif %}
         {% if s.available %}</a>{% else %}</div>{% endif %}
       {% endfor %}
     {% endfor %}
@@ -47,12 +47,15 @@
   {% endfor %}
 {% else %}
   <p class="muted small" style="margin:0">{{ t('learn.no_exam') }}</p>
-  <h2 class="label" style="margin:4px 0 0">{{ t('learn.all_subjects') }}</h2>
-  {% for s in data.flat %}
-    {% if s.available %}<a class="card" href="{{ url_for('learn.subject', slug=s.subject.slug) }}">{% else %}<div class="card disabled-card" aria-disabled="true">{% endif %}
+{% endif %}
+{% macro subject_cards(items) %}
+  {% for s in items %}
+    {% if s.available %}<a class="card" href="{{ url_for('learn.subject', slug=s.subject.slug) }}" data-subject="{{ s.subject.slug }}">{% else %}<div class="card disabled-card" aria-disabled="true">{% endif %}
       <div class="row between"><h2>{{ c.bi(s.subject.name_en, s.subject.name_te) }}</h2>{% if s.available %}{{ c.tag('ok', t('common.available')) }}{% else %}{{ c.tag('off', t('common.soon')) }}{% endif %}</div>
-      {% if s.available %}<span class="small muted">{{ t('learn.content_counts', c=s.chapter_count, q=s.question_count) }}</span>{% endif %}
+      {% if s.available %}<span class="small muted">{{ t('learn.content_counts', c=s.chapter_count, q=s.question_count) if s.chapter_count else t('common.questions', n=s.question_count) }}</span>{% endif %}
     {% if s.available %}</a>{% else %}</div>{% endif %}
   {% endfor %}
-{% endif %}
+{% endmacro %}
+<h2 class="label" style="margin:12px 0 0">{{ t('learn.all_subjects') }}</h2>
+{{ subject_cards(data.subjects) }}
 {% endblock %}

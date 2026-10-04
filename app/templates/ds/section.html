@@ -16,7 +16,7 @@
 {% endif %}
 {% for g in groups %}
   <section aria-labelledby="g{{ loop.index }}">
-    {% if groups|length > 1 %}<h2 id="g{{ loop.index }}" class="label" style="margin:0 0 8px">{{ c.bi(g.subject.name_en, g.subject.name_te) }}</h2>{% endif %}
+    {% if groups|length > 1 or not g.topics %}<h2 id="g{{ loop.index }}" class="label" style="margin:0 0 8px">{{ c.bi(g.subject.name_en, g.subject.name_te) }}</h2>{% endif %}
     <div style="display:flex;flex-direction:column;gap:10px">
     {% for tp in g.topics %}
       <a class="card" href="{{ url_for('learn.topic', chapter_id=tp.chapter.id, back=request.path) }}" data-topic="{{ tp.chapter.id }}">
@@ -28,6 +28,14 @@
       </a>
     {% endfor %}
     </div>
+    {% if g.banks.practice or g.banks.pyq %}
+    <h3 class="label" style="margin:14px 0 8px">{{ t('bank.title') }}</h3>
+    <div class="tile-grid">
+      {% if g.banks.practice %}{{ c.tile(url_for('learn.bank', slug=g.subject.slug, bank='practice', i=1, new=1), 'M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h9', 'bank.practice', t('common.questions', n=g.banks.practice)) }}{% endif %}
+      {% if g.banks.pyq %}{{ c.tile(url_for('learn.bank', slug=g.subject.slug, bank='pyq', i=1, new=1), 'M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5l-5.4 3 1.2-6L3.3 9.3l6.1-.7z', 'bank.pyq', t('common.questions', n=g.banks.pyq)) }}{% endif %}
+    </div>
+    {% if g.banks.pyq %}<p class="small muted" style="margin:6px 0 0">{{ t('bank.pyq_note') }}</p>{% endif %}
+    {% endif %}
   </section>
 {% endfor %}
 {% endblock %}

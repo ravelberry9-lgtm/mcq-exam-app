@@ -98,3 +98,29 @@ Still open / not changed:
 * `scripts/scripts/scripts/scripts/load_content.py` (stray nested copy of an older additive-only loader) is left in place; remove it in a separate reviewed commit.
 * The old page claimed 6 257 notes / 6 742 questions; the shipped file has 980 notes and 6 457 distinct questions. Please confirm which is intended.
 * Live Railway database not inspected or backed up.
+
+## Follow-up 3: release blockers from the mobile smoke test (F1, F2, F3)
+
+* **F1, options in the language that exists.** `exam_session/take.html`, `results.html` and the legacy `practice.html` read `options_en`
+  only, so the 3,402 chapter questions (Telugu options, no English) showed no options. A shared helper (`app/services/qdisplay.py`
+  and `templates/_partials/bi.html`) now renders both languages when both exist (the language preference hides one), and a single
+  always-visible span when only one exists, for question text, options, answer lines on the results page and explanations. The same
+  fallback works the other way round (the practice/PYQ rows have English options only). `static/app.js` no longer binds the practice
+  card on pages that have no submit button, which was the exam page's `addEventListener of null` error.
+* **F2, exam construction.** A session is never "every eligible question". `app/services/exam_rules.py` holds `VERIFIED_RULES`
+  (empty): an *official* test can start only for a paper with a verified entry (question count, duration, source of the numbers;
+  negative marking is rejected until scoring supports it). Everything else is an **unofficial practice test**: the user picks a
+  question count (5-100, default 20) and minutes (5-180, default = one per question), questions are answerable ones only (options
+  exist and the correct answer is among them), spread across the paper's sections, stored with a seed. `mode=official` without verified rules is refused (403). The exam page shows the
+  official button disabled with "not verified yet" and no longer prints the seeded "150 marks / 150 min". Take and results pages say
+  "Unofficial practice test"; the results page shows the raw count only: no pass mark and no negative marking are assumed (the former 60% pass/fail verdict is gone).
+  Sessions already created before this change keep working.
+* **F3, counts and banks.** Every question is reachable from exactly one place: chapter questions via their topic, PYQs via the
+  subject's *Previous papers* bank, everything else via the subject's *Practice* bank (`/learn/subject/<slug>/practice|pyq`). Hub, section
+  and subject counts are computed from those same groups, so each number is what the page can reach. Subjects with questions but no
+  chapters (Indian Economy, AP Economy, Mental Ability) appear in an "All subjects" list on the hub and open to their banks. PYQ items keep "Source not verified".
+* Tests: `tests/test_exam_and_banks.py` (40) run against slices of the real shipped content imported by the production importer.
+
+Not done in this commit (next priority): restoring the answered state after a practice reload, mobile admin preview overflow and which note
+field differs, the "Chapter (recovered, sn_id=14)" title on the legacy exam page, the 980-vs-6,257 notes investigation, and the service worker (Stage 7).
+The hub still carries the approved prototype line "Screening test, 150 marks (30 per subject)", which is also unverified.

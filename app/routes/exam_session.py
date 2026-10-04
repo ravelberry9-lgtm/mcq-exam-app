@@ -6,6 +6,7 @@ from flask import (
     redirect, url_for, abort
 )
 from ..db import db
+from ..services import exam_rules, qdisplay
 from ..models import (
     Exam, ExamPaper, ExamSection, ExamSyllabusItem,
     Question, ExamSession,
@@ -22,42 +23,43 @@ def _device_id():
 
 @bp.route("/exam/<slug>/paper/<int:paper_num>/start", methods=["POST"])
 def start(slug, paper_num):
-    """
-    Create an ExamSession and redirect to the take page.
-    Picks questions from the chapters mapped in the exam syllabus.
-    Config stores paper_num, total_marks, duration_min.
+    """Create an ExamSession and redirect to the take page.
+
+    ``mode=official`` is allowed only for papers whose rules are verified (``exam_rules.VERIFIED_RULES``, empty for now).
+    The default ``mode=practice`` builds an unofficial test of a user-chosen, capped size from the answerable questions
+    of the paper's syllabus chapters, spread over its sections. A session never holds every eligible question.
     """
     exam = Exam.query.filter_by(slug=slug).first_or_404()
-    paper = ExamPaper.query.filter_by(
-        exam_id=exam.id, paper_num=paper_num
-    ).first_or_404()
+    paper = ExamPaper.query.filter_by(exam_id=exam.id, paper_num=paper_num).first_or_404()
+    mode = request.form.get("mode", "practice")
+    rules = exam_rules.verified_rules(slug, paper_num)
+    if mode == "official":
+        if rules is None:
+            abort(403, "The official test is not available: its question count, duration and negative marking "
+                       "have not been verified yet. Start an unofficial practice test instead.")
+        count, minutes = rules["question_count"], rules["duration_min"]
+    elif mode == "practice":
+        try:
+            count, minutes = exam_rules.clamp_practice(request.form.get("count"), request.form.get("minutes"))
+        except ValueError:
+            abort(400, "Question count and minutes must be numbers.")
+    else:
+        abort(400, "Unknown mode.")
 
-    # Gather question IDs from syllabus chapters for this paper
-    question_ids = []
-    sections = ExamSection.query.filter_by(paper_id=paper.id).all()
-    for section in sections:
-        items = ExamSyllabusItem.query.filter_by(section_id=section.id).all()
-        for item in items:
-            qs = (
-                Question.query
-                .filter_by(chapter_id=item.chapter_id)
-                .order_by(Question.id)
-                .all()
-            )
-            question_ids.extend([q.id for q in qs])
+    # answerable questions per section (options exist and the correct answer is one of them)
+    per_section = []
+    for section in ExamSection.query.filter_by(paper_id=paper.id).all():
+        chapter_ids = [i.chapter_id for i in ExamSyllabusItem.query.filter_by(section_id=section.id).all()]
+        if not chapter_ids:
+            continue
+        rows = Question.query.filter(Question.chapter_id.in_(chapter_ids)).order_by(Question.id).all()
+        per_section.append([q.id for q in rows if qdisplay.is_answerable(q)])
+    seed = uuid.uuid4().int % (2 ** 31)
+    question_ids = exam_rules.pick_questions(per_section, count, seed)
+    if not question_ids:
+        abort(400, "No answerable questions are mapped to this paper's syllabus yet.")
 
-    # Deduplicate preserving order
-    seen = set()
-    unique_ids = []
-    for qid in question_ids:
-        if qid not in seen:
-            seen.add(qid)
-            unique_ids.append(qid)
-
-    if not unique_ids:
-        # Fall back to all questions for this exam's subjects
-        abort(400, "No questions mapped to this paper's syllabus yet.")
-
+    unofficial = mode != "official"
     session_id = str(uuid.uuid4())
     es = ExamSession(
         id=session_id,
@@ -69,10 +71,18 @@ def start(slug, paper_num):
             "paper_num": paper_num,
             "paper_name_en": paper.name_en,
             "paper_name_te": paper.name_te,
-            "total_marks": paper.total_marks,
-            "duration_min": paper.duration_min or 150,
+            "unofficial": unofficial,
+            "mode": mode,
+            "question_count": len(question_ids),
+            "requested_count": count,
+            "duration_min": minutes,
+            # the seeded paper marks are unverified, so they are not copied into a session
+            "total_marks": None,
+            "negative_marking": None,
+            "rules_source": rules["source"] if rules else None,
+            "seed": seed,
         },
-        question_ids=unique_ids,
+        question_ids=question_ids,
         answers={},
         confidences={},
     )

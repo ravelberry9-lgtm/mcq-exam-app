@@ -3,6 +3,7 @@ from flask import Blueprint, render_template, request, jsonify, redirect, url_fo
 from sqlalchemy import func
 from datetime import datetime
 from ..db import db
+from ..services import exam_rules
 from ..models import (
     Subject, Chapter, Question, UserQuestionState,
     Exam, ExamPaper, ExamSection, ExamSyllabusItem, Note,
@@ -144,9 +145,11 @@ def exam_detail(slug):
             "paper_num": paper.paper_num,
             "name_en": paper.name_en, "name_te": paper.name_te,
             "total_marks": paper.total_marks, "duration_min": paper.duration_min,
+            "rules": exam_rules.verified_rules(slug, paper.paper_num),
             "sections": sections_data,
         })
-    return render_template("exam.html", exam=exam, papers=papers_data)
+    return render_template("exam.html", exam=exam, papers=papers_data, practice_min=exam_rules.MIN_PRACTICE_QUESTIONS,
+                           practice_max=exam_rules.MAX_SESSION_QUESTIONS, practice_default=exam_rules.DEFAULT_PRACTICE_QUESTIONS)
 
 
 @bp.route("/api/answer", methods=["POST"])

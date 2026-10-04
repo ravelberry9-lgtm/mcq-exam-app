@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "_partials/bi.html" as bi %}
 {% block title %}{{ subject.name_te }} · Practice · {{ app_title }}{% endblock %}
 
 {% block content %}
@@ -16,21 +17,15 @@
   </div>
 
   <div class="qcard-body">
-    <p class="qtext-te">{{ question.question_te }}</p>
-    <p class="qtext-en">{{ question.question_en }}</p>
+    {{ bi.qtext(question.question_en, question.question_te) }}
 
     <div class="options" role="radiogroup" aria-label="Answer options">
-      {% for key in ['a','b','c','d','e'] %}
-        {% if question.options_en.get(key) %}
-        <button class="option" data-key="{{ key }}" type="button" role="radio" aria-checked="false">
-          <span class="option-key">{{ key | upper }}</span>
-          <span class="option-text">
-            <span class="opt-en">{{ question.options_en.get(key) }}</span>
-            <span class="opt-te">{{ question.options_te.get(key) }}</span>
-          </span>
+      {% for o in option_items(question) %}
+        <button class="option" data-key="{{ o.key }}" type="button" role="radio" aria-checked="false">
+          <span class="option-key">{{ o.key | upper }}</span>
+          <span class="option-text">{{ bi.opt(o) }}</span>
           <span class="option-mark" aria-hidden="true"></span>
         </button>
-        {% endif %}
       {% endfor %}
     </div>
 
@@ -58,8 +53,7 @@
       <div class="feedback-message" id="feedback-msg"></div>
       <div class="feedback-explanation">
         <p class="exp-label">వివరణ · Explanation</p>
-        <p class="exp-te">{{ question.explanation_te }}</p>
-        <p class="exp-en">{{ question.explanation_en }}</p>
+        {{ bi.expl(question.explanation_en, question.explanation_te) }}
       </div>
       <div class="feedback-actions">
         <a class="next-btn" href="{{ next_url }}">తదుపరి · Next →</a>

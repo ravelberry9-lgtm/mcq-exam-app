@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% import "_partials/bi.html" as bi %}
 {% block title %}Results · {{ es.config.exam_name_en }} · {{ app_title }}{% endblock %}
 
 {% block content %}
 <div class="results-page">
   <div class="results-header">
-    <div class="results-score-circle {% if pct >= 60 %}score-pass{% else %}score-fail{% endif %}">
+    <div class="results-score-circle score-neutral">
       <span class="score-pct">{{ pct }}%</span>
       <span class="score-fraction">{{ correct }}/{{ es.total }}</span>
     </div>
@@ -24,11 +25,11 @@
     <div class="stat-card"><span class="stat-num">{{ duration or '—' }}</span><span class="stat-label">Time taken</span></div>
   </div>
 
-  {% if pct >= 60 %}
-  <p class="results-verdict pass">మీరు ఉత్తీర్ణులయ్యారు! · Well done — you passed!</p>
-  {% else %}
-  <p class="results-verdict fail">మళ్ళీ ప్రయత్నించండి · Keep practicing — you'll get there.</p>
-  {% endif %}
+  {# no pass mark or negative marking is known, so no pass/fail verdict is shown #}
+  <p class="results-verdict">
+    {% if es.config.unofficial %}<strong>Unofficial practice test · అనధికారిక ప్రాక్టీస్ టెస్ట్.</strong> {% endif %}
+    Raw score: {{ correct }} correct out of {{ es.total }}. No negative marking is applied and no pass mark is assumed.
+  </p>
 
   <div class="results-review">
     <h2>Review · సమీక్ష</h2>
@@ -36,26 +37,24 @@
     <div class="review-item {% if r.skipped %}review-skip{% elif r.correct %}review-correct{% else %}review-wrong{% endif %}">
       <div class="review-num">{{ loop.index }}</div>
       <div class="review-body">
-        <p class="review-q-te">{{ r.question.question_te }}</p>
-        <p class="review-q-en">{{ r.question.question_en }}</p>
+        {{ bi.qtext(r.question.question_en, r.question.question_te) }}
         <div class="review-answers">
           {% if r.skipped %}
           <span class="review-badge badge-skip">Skipped · వదిలేశారు</span>
-          <span class="review-correct-ans">Correct: <strong>{{ r.question.correct_answer | upper }}</strong> — {{ r.question.options_en.get(r.question.correct_answer, '') }}</span>
+          <span class="review-correct-ans">Correct: <strong>{{ r.question.correct_answer | upper }}</strong> — {{ bi.opt_or_blank(r.question, r.question.correct_answer) }}</span>
           {% elif r.correct %}
           <span class="review-badge badge-correct">✓ Correct</span>
-          <span>{{ r.chosen | upper }} — {{ r.question.options_en.get(r.chosen, '') }}</span>
+          <span>{{ r.chosen | upper }} — {{ bi.opt_or_blank(r.question, r.chosen) }}</span>
           {% else %}
           <span class="review-badge badge-wrong">✗ Wrong</span>
-          <span class="review-chosen">You: <strong>{{ r.chosen | upper }}</strong> — {{ r.question.options_en.get(r.chosen, '') }}</span>
-          <span class="review-correct-ans">Correct: <strong>{{ r.question.correct_answer | upper }}</strong> — {{ r.question.options_en.get(r.question.correct_answer, '') }}</span>
+          <span class="review-chosen">You: <strong>{{ r.chosen | upper }}</strong> — {{ bi.opt_or_blank(r.question, r.chosen) }}</span>
+          <span class="review-correct-ans">Correct: <strong>{{ r.question.correct_answer | upper }}</strong> — {{ bi.opt_or_blank(r.question, r.question.correct_answer) }}</span>
           {% endif %}
         </div>
-        {% if not r.correct and r.question.explanation_en %}
+        {% if not r.correct and (r.question.explanation_en or r.question.explanation_te) %}
         <details class="review-explanation">
           <summary>Explanation</summary>
-          <p class="exp-en">{{ r.question.explanation_en }}</p>
-          <p class="exp-te">{{ r.question.explanation_te }}</p>
+          {{ bi.expl(r.question.explanation_en, r.question.explanation_te) }}
         </details>
         {% endif %}
       </div>

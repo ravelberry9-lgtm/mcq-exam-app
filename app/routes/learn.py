@@ -9,7 +9,7 @@ from flask import Blueprint, abort, jsonify, render_template, request, url_for
 from ..db import db
 from ..models import Chapter, ChapterProgress, ExamSection, Note, Subject
 from ..services import learn as svc
-from ..services.ui_text import t, tl
+from ..services.ui_text import UI, t, tl
 
 bp = Blueprint("learn", __name__, url_prefix="/learn")
 
@@ -31,7 +31,8 @@ def hub():
 @bp.route("/section/<int:section_id>")
 def section(section_id):
     sec = db.session.get(ExamSection, section_id) or abort(404)
-    groups = svc.attach_status(svc.topics_for_section(sec), _device_id())
+    groups = svc.with_banks(svc.topics_for_section(sec))
+    groups = svc.attach_status(groups, _device_id())
     return render_template("ds/section.html", title_en=sec.name_en, title_te=sec.name_te,
                            marks=sec.marks, groups=groups)
 
@@ -39,9 +40,32 @@ def section(section_id):
 @bp.route("/subject/<slug>")
 def subject(slug):
     sub = Subject.query.filter_by(slug=slug).first_or_404()
-    groups = svc.attach_status(svc.topics_for_subject(sub), _device_id())
+    groups = svc.with_banks(svc.topics_for_subject(sub), [sub])
+    groups = svc.attach_status(groups, _device_id())
     return render_template("ds/section.html", title_en=sub.name_en, title_te=sub.name_te,
                            marks=None, groups=groups)
+
+
+@bp.route("/subject/<slug>/<any(practice,pyq):bank>")
+def bank(slug, bank):
+    """Subject-level question banks: Practice (questions not tied to a chapter) and Previous papers."""
+    sub = Subject.query.filter_by(slug=slug).first_or_404()
+    qs = svc.bank_questions(sub.id, bank)
+    total = len(qs)
+    i = request.args.get("i", 1, type=int)
+    label_en, label_te = UI["bank." + bank]
+    ctx = dict(chapter=None, subject=sub, title_en=f"{sub.name_en} · {label_en}", title_te=f"{sub.name_te} · {label_te}",
+               note_count=0, mcq_count=total, scope=f"s-{slug}-{bank}",
+               back_url=url_for("learn.subject", slug=slug), back_label="prac.back_subject",
+               restart_url=url_for("learn.bank", slug=slug, bank=bank, i=1, new=1))
+    if total == 0:
+        return render_template("ds/practice.html", **ctx, total=0, q=None, summary=False, i=1)
+    if i > total:
+        return render_template("ds/practice.html", **ctx, total=total, q=None, summary=True, i=i)
+    i = max(1, i)
+    return render_template("ds/practice.html", **ctx, total=total, q=svc.question_view(qs[i - 1]), summary=False, i=i,
+                           next_url=url_for("learn.bank", slug=slug, bank=bank, i=i + 1), is_last=(i == total),
+                           fresh=bool(request.args.get("new")))
 
 
 @bp.route("/topic/<int:chapter_id>")
@@ -87,6 +111,8 @@ def notes(chapter_id):
 def practice(chapter_id):
     ch = db.session.get(Chapter, chapter_id) or abort(404)
     ctx = svc.topic_context(ch)
+    ctx.update(scope=str(ch.id), back_url=url_for("learn.topic", chapter_id=ch.id), back_label="prac.back_topic",
+               restart_url=url_for("learn.practice", chapter_id=ch.id, i=1, new=1))
     qs = svc.chapter_questions(ch.id)
     total = len(qs)
     i = request.args.get("i", 1, type=int)

@@ -13,13 +13,29 @@
     <header class="exam-paper-head">
       <div>
         <p class="exam-paper-title">{{ paper.name_te }} <span class="exam-paper-en">{{ paper.name_en }}</span></p>
-        <p class="exam-paper-meta">{{ paper.total_marks }} marks{% if paper.duration_min %} · {{ paper.duration_min }} min{% endif %}</p>
+        {% if paper.rules %}
+        <p class="exam-paper-meta">{{ paper.rules.question_count }} questions · {{ paper.rules.duration_min }} min · verified: {{ paper.rules.source }}</p>
+        {% else %}
+        <p class="exam-paper-meta exam-unverified">Official question count, duration and negative marking: not verified yet.</p>
+        {% endif %}
       </div>
-      <form action="{{ url_for('exam_session.start', slug=exam.slug, paper_num=paper.paper_num) }}" method="POST">
-        <button class="btn-start-exam" type="submit">
-          ▶ Start Exam · పరీక్ష ప్రారంభించండి
-        </button>
-      </form>
+      <div class="exam-start">
+        {% if paper.rules %}
+        <form action="{{ url_for('exam_session.start', slug=exam.slug, paper_num=paper.paper_num) }}" method="POST">
+          <input type="hidden" name="mode" value="official">
+          <button class="btn-start-exam" type="submit">▶ Start official test · అధికారిక పరీక్ష</button>
+        </form>
+        {% else %}
+        <button class="btn-start-exam" type="button" disabled aria-disabled="true">Official test unavailable · అధికారిక పరీక్ష అందుబాటులో లేదు</button>
+        {% endif %}
+        <form action="{{ url_for('exam_session.start', slug=exam.slug, paper_num=paper.paper_num) }}" method="POST">
+          <input type="hidden" name="mode" value="practice">
+          <label>Questions <input type="number" name="count" min="{{ practice_min }}" max="{{ practice_max }}" value="{{ practice_default }}" inputmode="numeric"></label>
+          <label>Minutes <input type="number" name="minutes" min="5" max="180" value="{{ practice_default }}" inputmode="numeric"></label>
+          <button class="btn-start-exam" type="submit">▶ Start unofficial practice test · అనధికారిక ప్రాక్టీస్ టెస్ట్</button>
+          <p class="hint">Your own size and time limit — not the real exam pattern.</p>
+        </form>
+      </div>
     </header>
     {% for section in paper.sections %}
     <div class="exam-section">

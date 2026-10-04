@@ -8,7 +8,7 @@ import re
 from datetime import datetime
 
 import bleach
-from sqlalchemy import func
+from sqlalchemy import case, func, or_
 
 from ..db import db
 from ..models import (
@@ -77,36 +77,93 @@ def get_exam():
             or Exam.query.filter_by(active=True).order_by(Exam.id).first())
 
 
-def _counts_by_subject():
+# ── question banks ──────────────────────────────────────────────────
+# Every question is reachable from exactly one place in Learn:
+#   * chapter bank  - source_type 'chapter' with a chapter: the topic's Practice;
+#   * PYQ bank      - source_type 'pyq' (any chapter or none): the subject's Previous papers;
+#   * practice bank - everything else (practice questions, and chapter-type rows with no chapter): the subject's Practice.
+# The counts shown on hub, section and subject pages are built from these same three groups, so a number on a page is the
+# number of questions that page can actually reach.
+BANKS = ("practice", "pyq")
+
+
+def bank_counts(subject_ids=None):
+    """{subject_id: {'practice': n, 'pyq': n, 'chapter': n}}"""
+    no_chapter = case((Question.chapter_id.is_(None), 1), else_=0)
+    q = db.session.query(Question.subject_id, Question.source_type, no_chapter, func.count(Question.id)).group_by(
+        Question.subject_id, Question.source_type, no_chapter)
+    if subject_ids is not None:
+        ids = list(subject_ids)
+        if not ids:
+            return {}
+        q = q.filter(Question.subject_id.in_(ids))
+    out = {}
+    for sid, st, nochap, n in q.all():
+        d = out.setdefault(sid, {"practice": 0, "pyq": 0, "chapter": 0})
+        if st == "pyq":
+            d["pyq"] += n
+        elif st == "chapter" and not nochap:
+            d["chapter"] += n
+        else:
+            d["practice"] += n
+    return out
+
+
+def bank_questions(subject_id, bank):
+    q = Question.query.filter(Question.subject_id == subject_id)
+    if bank == "pyq":
+        q = q.filter(Question.source_type == "pyq")
+    elif bank == "practice":
+        q = q.filter(Question.source_type != "pyq", or_(Question.source_type != "chapter", Question.chapter_id.is_(None)))
+    else:
+        raise ValueError(bank)
+    return q.order_by(Question.id).all()
+
+
+def _empty_banks():
+    return {"practice": 0, "pyq": 0, "chapter": 0}
+
+
+def subject_entries():
+    """All subjects that have chapters or questions, with the counts of what Learn can reach for each."""
     ch = dict(db.session.query(Chapter.subject_id, func.count(Chapter.id)).group_by(Chapter.subject_id).all())
-    q = dict(db.session.query(Question.subject_id, func.count(Question.id)).group_by(Question.subject_id).all())
-    return ch, q
+    banks = bank_counts()
+    out = []
+    for s in Subject.query.order_by(Subject.sort_order, Subject.id).all():
+        b = banks.get(s.id, _empty_banks())
+        total = b["practice"] + b["pyq"] + b["chapter"]
+        out.append({"subject": s, "chapter_count": ch.get(s.id, 0), "question_count": total, "banks": b,
+                    "available": ch.get(s.id, 0) > 0 or total > 0})
+    return out
 
 
 def hub(exam=None):
-    """Return {'exam': Exam|None, 'papers': [...]} or a flat subject list when no exam is seeded."""
-    ch_by_subj, q_by_subj = _counts_by_subject()
+    """Return {'exam': Exam|None, 'papers': [...], 'subjects': [...]}; ``flat`` is the subject list when no exam is seeded."""
+    entries = subject_entries()
     exam = exam or get_exam()
     if exam is None:
-        subjects = Subject.query.order_by(Subject.sort_order, Subject.id).all()
-        flat = [{
-            "subject": s, "chapter_count": ch_by_subj.get(s.id, 0), "question_count": q_by_subj.get(s.id, 0),
-            "href_kind": "subject", "available": ch_by_subj.get(s.id, 0) > 0,
-        } for s in subjects]
-        return {"exam": None, "papers": [], "flat": flat}
+        return {"exam": None, "papers": [], "flat": entries, "subjects": entries}
 
+    banks = bank_counts()
     papers = []
     for paper in ExamPaper.query.filter_by(exam_id=exam.id).order_by(ExamPaper.paper_num).all():
         sections = []
         for sec in ExamSection.query.filter_by(paper_id=paper.id).order_by(ExamSection.sort_order).all():
-            subject_ids = _section_subject_ids(sec.id)
-            cc = sum(ch_by_subj.get(i, 0) for i in subject_ids)
-            qc = sum(q_by_subj.get(i, 0) for i in subject_ids)
-            sections.append({"section": sec, "chapter_count": cc, "question_count": qc, "available": cc > 0})
+            chapters = (db.session.query(Chapter.id, Chapter.subject_id)
+                        .join(ExamSyllabusItem, ExamSyllabusItem.chapter_id == Chapter.id)
+                        .filter(ExamSyllabusItem.section_id == sec.id).distinct().all())
+            ids = [c[0] for c in chapters]
+            subject_ids = {c[1] for c in chapters}
+            chapter_q = (db.session.query(func.count(Question.id))
+                         .filter(Question.chapter_id.in_(ids), Question.source_type == "chapter", Question.subject_id.in_(subject_ids)).scalar()
+                         if ids else 0)
+            bank_q = sum(banks.get(i, _empty_banks())["practice"] + banks.get(i, _empty_banks())["pyq"] for i in subject_ids)
+            sections.append({"section": sec, "chapter_count": len(ids), "question_count": chapter_q + bank_q,
+                             "available": len(ids) > 0 or bank_q > 0})
         # Mains rules (duration, negative marking, question format) are NOT published here: the seeded
         # values are unverified. They stay hidden until a paper is explicitly marked verified.
         papers.append({"paper": paper, "sections": sections, "is_prelims": paper.paper_num == 0})
-    return {"exam": exam, "papers": papers, "flat": []}
+    return {"exam": exam, "papers": papers, "flat": [], "subjects": entries}
 
 
 def _section_subject_ids(section_id):
@@ -151,6 +208,22 @@ def group_chapters(chapters, device_id=None):
     return [groups[i] for i in order]
 
 
+def with_banks(groups, subjects=()):
+    """Attach each group's question-bank counts. A subject with questions but no chapters gets a group of its own so it
+    is still reachable (``subjects`` are the subjects the page is about)."""
+    present = {g["subject"].id for g in groups if g.get("subject")}
+    for sub in subjects:
+        if sub.id not in present:
+            groups.append({"subject": sub, "topics": []})
+    counts = bank_counts([g["subject"].id for g in groups if g.get("subject")])
+    keep = []
+    for g in groups:
+        g["banks"] = counts.get(g["subject"].id, _empty_banks())
+        if g["topics"] or g["banks"]["practice"] or g["banks"]["pyq"]:
+            keep.append(g)
+    return keep
+
+
 def attach_status(groups, device_id):
     ids = [t["chapter"].id for g in groups for t in g["topics"]]
     rows = ChapterProgress.query.filter(ChapterProgress.device_id == device_id, ChapterProgress.chapter_id.in_(ids)).all() if ids else []
@@ -185,7 +258,7 @@ def question_view(q):
         "te": strip_option_prefix((q.options_te or {}).get(k)),
     } for k in keys]
     return {
-        "id": q.id, "difficulty": q.difficulty, "options": options,
+        "id": q.id, "difficulty": q.difficulty, "options": options, "source_type": q.source_type,
         # provenance comes from the row itself; an exam name is not stored, so PYQs are never attributed to one
         "is_pyq": q.source_type == "pyq" or bool((q.pyq_year or "").strip() or (q.pyq_paper or "").strip()),
         "pyq_year": (q.pyq_year or "").strip(), "pyq_paper": (q.pyq_paper or "").strip(),

@@ -1,0 +1,32 @@
+{# Language-aware question parts for the older templates. See app/services/qdisplay.py. A missing language never leaves a blank:
+   when only one exists it is rendered once with a *-only class that no language preference hides. #}
+{% macro qtext(en, te) -%}
+{%- set k = bi_kind(en, te) -%}
+{%- if k == 'both' -%}<p class="qtext-te" lang="te">{{ te }}</p><p class="qtext-en" lang="en">{{ en }}</p>
+{%- elif k != 'none' -%}<p class="qtext-only"{% if k == 'te' %} lang="te"{% elif k == 'en' %} lang="en"{% endif %}>{{ en if k == 'en' else te }}</p>
+{%- endif -%}
+{%- endmacro %}
+
+{% macro opt(o) -%}
+{%- if o.kind == 'both' -%}<span class="opt-en" lang="en">{{ o.en }}</span><span class="opt-te" lang="te">{{ o.te }}</span>
+{%- else -%}<span class="opt-only"{% if o.kind == 'te' %} lang="te"{% elif o.kind == 'en' %} lang="en"{% endif %}>{{ o.en or o.te }}</span>
+{%- endif -%}
+{%- endmacro %}
+
+{% macro expl(en, te) -%}
+{%- set k = bi_kind(en, te) -%}
+{%- if k == 'both' -%}<p class="exp-te" lang="te">{{ te }}</p><p class="exp-en" lang="en">{{ en }}</p>
+{%- elif k != 'none' -%}<p class="exp-only"{% if k == 'te' %} lang="te"{% elif k == 'en' %} lang="en"{% endif %}>{{ en if k == 'en' else te }}</p>
+{%- endif -%}
+{%- endmacro %}
+
+{# "B — option text" for review pages; empty when the option does not exist #}
+{% macro answer_line(question, key) -%}
+{%- set o = option_item(question, key) -%}
+{{ (key or '') | upper }}{% if o %} — {{ opt(o) }}{% endif %}
+{%- endmacro %}
+
+{# the option's text only (no letter), blank when that option does not exist #}
+{% macro opt_or_blank(question, key) -%}
+{%- set o = option_item(question, key) -%}{%- if o -%}{{ opt(o) }}{%- endif -%}
+{%- endmacro %}

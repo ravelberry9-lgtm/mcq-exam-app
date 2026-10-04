@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "_partials/bi.html" as bi %}
 {% block title %}{{ es.config.exam_name_en }} · Paper {{ es.config.paper_num }} · {{ app_title }}{% endblock %}
 
 {% block content %}
@@ -7,6 +8,10 @@
      data-duration="{{ es.config.duration_min * 60 }}"
      data-remaining="{{ remaining_seconds }}">
 
+  {% if es.config.unofficial %}
+  <p class="exam-unofficial" role="note"><strong>Unofficial practice test · అనధికారిక ప్రాక్టీస్ టెస్ట్</strong>
+    — {{ es.config.question_count or q_total }} questions, {{ es.config.duration_min }} min, chosen by you. This is not the real exam pattern.</p>
+  {% endif %}
   <!-- Timer bar -->
   <div class="exam-timer-bar">
     <div class="exam-timer-info">
@@ -34,21 +39,17 @@
     </div>
 
     <div class="qcard-body">
-      <p class="qtext-te">{{ question.question_te }}</p>
-      <p class="qtext-en">{{ question.question_en }}</p>
+      {{ bi.qtext(question.question_en, question.question_te) }}
 
       <div class="options" role="radiogroup" aria-label="Answer options">
-        {% for key in ['a','b','c','d','e'] %}
-          {% if question.options_en and question.options_en.get(key) %}
-          <button class="option {% if current_answer == key %}option-selected{% endif %}"
-                  data-key="{{ key }}" type="button">
-            <span class="option-key">{{ key | upper }}</span>
-            <span class="option-text">
-              <span class="opt-en">{{ question.options_en.get(key) }}</span>
-              <span class="opt-te">{{ question.options_te.get(key) if question.options_te else '' }}</span>
-            </span>
+        {% for o in option_items(question) %}
+          <button class="option {% if current_answer == o.key %}option-selected{% endif %}"
+                  data-key="{{ o.key }}" type="button">
+            <span class="option-key">{{ o.key | upper }}</span>
+            <span class="option-text">{{ bi.opt(o) }}</span>
           </button>
-          {% endif %}
+        {% else %}
+          <p class="hint">This question has no answer options stored. Use Next to skip it.</p>
         {% endfor %}
       </div>
     </div>

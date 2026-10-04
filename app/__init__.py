@@ -60,6 +60,9 @@ def create_app(config_class: type = Config) -> Flask:
     from .routes.learn import bp as learn_bp  # design-system journey (/learn)
     app.register_blueprint(learn_bp)
 
+    from .services import qdisplay
+    app.jinja_env.globals.update(bi_kind=qdisplay.bi_kind, option_items=qdisplay.option_items, option_item=qdisplay.option_item)
+
     @app.context_processor
     def inject_globals():
         from .services.nav import build_tree
