@@ -35,7 +35,7 @@ CHAPTERS = [
     (2, 10, "u2-c10-musunuri-reddy-velama", "Musunuri Nayakas, Reddy Kingdoms and Velama Chiefs", "ముసునూరి నాయకులు, రెడ్డి రాజ్యాలు మరియు వెలమ నాయకులు", "direct"),
     (2, 11, "u2-c11-vijayanagara-andhra", "Vijayanagara and Andhra", "విజయనగరం మరియు ఆంధ్ర", "direct"),
     (2, 12, "u2-c12-gajapatis-bahmanis-regional-powers", "Gajapatis, Bahmanis and Other Regional Powers", "గజపతులు, బహమనీలు మరియు ఇతర ప్రాంతీయ శక్తులు", "direct"),
-    (2, 13, "u2-c13-qutb-shahis", "Qutb Shahis and Sixteenth-Century Andhra", "కుతుబ్‌షాహీలు మరియు పదహారో శతాబ్దపు ఆంధ్ర", "direct"),
+    (2, 13, "u2-c13-qutb-shahis", "Qutb Shahis and Sixteenth-Century Andhra", "కుతుబ్ షాహీలు మరియు పదహారో శతాబ్దపు ఆంధ్ర", "direct"),
     (2, 14, "u2-c14-thematic-history-11th-16th-c", "Thematic History of Andhradesa, 11th–16th Centuries", "ఆంధ్రదేశ చరిత్ర: అంశాల వారీ అవలోకనం (11–16 శతాబ్దాలు)", "thematic"),
     (3, 15, "u3-c15-europeans-company-rule", "Europeans, Trading Centres and Company Rule", "యూరోపియన్లు, వ్యాపార కేంద్రాలు మరియు కంపెనీ పాలన", "direct"),
     (3, 16, "u3-c16-british-rule-revolt-1857", "Establishment of British Rule and the Impact of 1857", "బ్రిటిష్ పాలన స్థాపన మరియు 1857 ప్రభావం", "direct"),
@@ -51,7 +51,7 @@ CHAPTERS = [
     (4, 26, "u4-c26-folk-tribal-culture", "Folk and Tribal Culture", "జానపద మరియు గిరిజన సంస్కృతి", "direct"),
     (4, 27, "u4-c27-formation-andhra-state-1953", "Formation of Andhra State, 1953", "ఆంధ్ర రాష్ట్ర ఏర్పాటు (1953)", "direct"),
     (5, 28, "u5-c28-visalandhra-movement-mahasabha", "Visalandhra Movement and Visalandhra Mahasabha", "విశాలాంధ్ర ఉద్యమం మరియు విశాలాంధ్ర మహాసభ", "direct"),
-    (5, 29, "u5-c29-states-reorganisation-commission", "States Reorganisation Commission", "రాష్ట్రాల పునర్వ్యవస్థీకరణ సంఘం", "direct"),
+    (5, 29, "u5-c29-states-reorganisation-commission", "States Reorganisation Commission", "రాష్ట్రాల పునర్వ్యవస్థీకరణ సంఘం (SRC)", "direct"),
     (5, 30, "u5-c30-gentlemens-agreement-formation-ap", "Gentlemen's Agreement and Formation of Andhra Pradesh", "పెద్దమనుషుల ఒప్పందం మరియు ఆంధ్రప్రదేశ్ ఏర్పాటు", "direct"),
     (5, 31, "u5-c31-social-cultural-events-1956-2014", "Important Social and Cultural Events, 1956–2014", "ముఖ్యమైన సామాజిక మరియు సాంస్కృతిక సంఘటనలు (1956–2014)", "direct"),
 ]
