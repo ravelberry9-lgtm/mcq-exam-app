@@ -6,6 +6,7 @@
 {% if subject.slug == 'ap_history' %}<link rel="stylesheet" href="{{ url_for('static', filename='ap_history_notes.css') }}">{% endif %}
 {% endblock %}
 {% block topbar %}
+  <div class="row">{{ c.learnlink() }}</div>
   <div class="row between">
     <a class="back" href="{{ url_for('learn.topic', chapter_id=chapter.id) }}"><span aria-hidden="true">‹</span> {{ c.bi(title_en, title_te) }}</a>
     {{ c.langswitch(lang_pref) }}

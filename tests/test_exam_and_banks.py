@@ -842,7 +842,7 @@ def post_json_h(c, url, payload, headers):
     return c.post(url, data=json.dumps(payload), content_type="application/json", headers=headers)
 
 
-@pytest.mark.parametrize("url", ["/", "/learn/", "/learn/subject/indian_history", "/settings", "/plan/new", "/exam/appsc_group_2"])
+@pytest.mark.parametrize("url", ["/legacy", "/learn/", "/learn/subject/indian_history", "/settings", "/plan/new", "/exam/appsc_group_2"])
 def test_pages_expose_the_token_for_scripts_and_forms(c, real, url):
     html = soup(c.get(url))
     assert html.select_one('meta[name="csrf-token"]') or html.select_one('input[name="csrf_token"]'), url

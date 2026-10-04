@@ -56,6 +56,6 @@
     {% if s.available %}</a>{% else %}</div>{% endif %}
   {% endfor %}
 {% endmacro %}
-<h2 class="label" style="margin:12px 0 0">{{ t('learn.all_subjects') }}</h2>
+<h2 class="label" id="all-subjects" style="margin:12px 0 0">{{ t('learn.all_subjects') }}</h2>
 {{ subject_cards(data.subjects) }}
 {% endblock %}

@@ -25,7 +25,14 @@ def _device_id():
 
 
 @bp.route("/")
+def index():
+    """The Learn hub is the landing page until a real dashboard exists."""
+    return redirect(url_for("learn.hub"))
+
+
+@bp.route("/legacy")
 def home():
+    """The pre-redesign home page, kept for testing under an explicit name."""
     quick = (
         db.session.query(Subject)
         .join(Question, Question.subject_id == Subject.id)
@@ -102,7 +109,7 @@ def practice(subject_slug):
     progress_pct = round((q_idx - 1) / max(q_total, 1) * 100)
     next_url = (
         url_for("public.practice", subject_slug=subject_slug, i=q_idx + 1)
-        if q_idx < q_total else url_for("public.subjects")
+        if q_idx < q_total else url_for("learn.subject", slug=subject_slug)
     )
     return render_template(
         "practice.html",

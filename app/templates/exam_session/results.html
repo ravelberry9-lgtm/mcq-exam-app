@@ -63,8 +63,8 @@
   </div>
 
   <div class="results-actions">
-    <a class="btn-secondary" href="{{ url_for('public.exam_detail', slug=es.config.exam_slug) }}">← Back to exam</a>
-    <a class="btn-primary" href="{{ url_for('public.exam_detail', slug=es.config.exam_slug) }}" onclick="return confirm('Start a new attempt?')">Retry →</a>
+    <a class="btn-secondary" href="/learn/">← Back to Learn</a>
+    <a class="btn-primary" href="{{ url_for('public.exam_detail', slug=es.config.exam_slug) }}">Choose another test →</a>
   </div>
 </div>
 {% endblock %}

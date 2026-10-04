@@ -38,7 +38,7 @@
   <h2>ఈరోజు చదవండి · Read today</h2>
   {% for ch in today_suggestions %}
   <a class="chapter-row status-{{ ch.status }}"
-     href="{{ url_for('notes.reader', subject_slug=ch.subject_slug, chapter_num=ch.chapter_num) }}">
+     href="{{ url_for('learn.topic', chapter_id=ch.id) }}">
     <div class="chapter-meta">
       <p class="chapter-te">{{ ch.title_te }}</p>
       <p class="chapter-en">{{ ch.subject_en }} · {{ ch.title_en }} · ~{{ ch.est_read_minutes }} min</p>
@@ -55,7 +55,7 @@
   <div class="chapter-list">
     {% for ch in chapters %}
     <a class="chapter-row status-{{ ch.status }}"
-       href="{{ url_for('notes.reader', subject_slug=ch.subject_slug, chapter_num=ch.chapter_num) }}">
+       href="{{ url_for('learn.topic', chapter_id=ch.id) }}">
       <div class="chapter-meta">
         <p class="chapter-te">{{ ch.title_te }}</p>
         <p class="chapter-en">{{ ch.subject_en }} · {{ ch.title_en }}</p>

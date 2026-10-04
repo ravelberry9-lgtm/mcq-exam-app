@@ -596,7 +596,8 @@ a.chapter-row:hover { background: var(--bg-2); }
 /* ── Drawer extra icons ───────────────────────────── */
 .drawer-icon-plan {
   mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>");
-  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>");
+}
 
 /* exam: unofficial practice test notices (no pass mark is assumed) */
 .exam-unofficial { margin: 0 0 12px; padding: 10px 12px; border-radius: var(--radius-md); background: var(--warning-bg); color: var(--warning); font-size: 13px; line-height: 1.5; }
@@ -610,3 +611,9 @@ a.chapter-row:hover { background: var(--bg-2); }
 
 .note-img-missing{display:block;margin:.6em 0;padding:10px 12px;border:1px dashed #b45309;border-radius:8px;background:#fffbeb;color:#92400e;font-size:.9rem}
 .note-img-missing code{font-size:.85em;overflow-wrap:anywhere}
+
+/* ── Back to Learn bar (every legacy page) ─────────── */
+.learn-back-bar { position: sticky; top: 60px; z-index: 15; background: var(--bg-2); border-bottom: 0.5px solid var(--border); }
+.learn-back { display: flex; align-items: center; gap: 6px; max-width: 720px; margin: 0 auto; padding: 10px 16px; min-height: 44px; font-size: 14px; font-weight: 600; color: var(--accent); }
+.drawer-disabled { opacity: .55; cursor: default; }
+.plan-form .form-input{width:100%;max-width:100%;box-sizing:border-box;text-overflow:ellipsis}

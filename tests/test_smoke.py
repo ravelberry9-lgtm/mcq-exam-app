@@ -8,7 +8,7 @@ from app.db import db
 
 
 def test_home_returns_200(client):
-    response = client.get("/")
+    response = client.get("/legacy")
     assert response.status_code == 200
     assert b"APPSC" in response.data
 

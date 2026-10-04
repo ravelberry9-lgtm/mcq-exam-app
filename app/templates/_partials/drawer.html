@@ -28,12 +28,26 @@
           </div>
         </details>
       {% else %}
-        <a class="drawer-item" href="{{ node.url or '#' }}">
+        {% if node.url %}
+        <a class="drawer-item" href="{{ node.url }}">
           {% if node.icon %}<span class="drawer-icon-{{ node.icon }}"></span>{% endif %}
           <span class="drawer-label">{{ node.label_te }} <span class="drawer-en">{{ node.label_en }}</span></span>
         </a>
+        {% else %}
+        <span class="drawer-item drawer-disabled" aria-disabled="true">
+          {% if node.icon %}<span class="drawer-icon-{{ node.icon }}"></span>{% endif %}
+          <span class="drawer-label">{{ node.label_te }} <span class="drawer-en">{{ node.label_en }}</span></span>
+        </span>
+        {% endif %}
       {% endif %}
     {% endmacro %}
-    {% for node in menu_tree %}{{ render_node(node) }}{% endfor %}
+    {% if menu_tree %}
+      {% for node in menu_tree %}{{ render_node(node) }}{% endfor %}
+    {% else %}
+      {# safe built-in navigation when the database has no menu records #}
+      {% for href, te, en in [('/learn/', 'నేర్చుకోండి', 'Learn'), ('/subjects', 'ప్రాక్టీస్', 'Practice · Subjects'), ('/plan/', 'స్టడీ ప్లాన్', 'Study Plan'), ('/settings', 'సెట్టింగ్స్', 'Settings')] %}
+      <a class="drawer-item" href="{{ href }}"><span class="drawer-label">{{ te }} <span class="drawer-en">{{ en }}</span></span></a>
+      {% endfor %}
+    {% endif %}
   </nav>
 </aside>

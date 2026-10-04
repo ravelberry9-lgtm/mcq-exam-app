@@ -186,3 +186,8 @@ html[data-lang="te"] .fb-te{display:block}
 
 .note-img-missing{display:block;margin:.6em 0;padding:10px 12px;border:1px dashed #b45309;border-radius:8px;background:#fffbeb;color:#92400e;font-size:.9rem}
 .note-img-missing code{font-size:.85em;overflow-wrap:anywhere}
+
+.bottomnav .navoff{flex:1;min-height:var(--nav-h);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:.8125rem;font-weight:600;color:var(--muted);cursor:default}
+.bottomnav .navoff svg{width:24px;height:24px}
+.bottomnav .soon{font-size:.6875rem;font-weight:600}
+.learnlink{display:inline-flex;align-items:center;gap:4px;min-height:32px;font-size:.8125rem;font-weight:700;color:var(--teal)}

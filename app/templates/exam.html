@@ -50,11 +50,11 @@
       <ul class="exam-chapters">
         {% for ch in section.chapters %}
         <li>
-          <a href="/practice/{{ ch.subject_slug }}">
+          <a href="{{ url_for('learn.topic', chapter_id=ch.id) }}">
             {{ ch.title_te }} <span class="exam-ch-en">{{ ch.title_en }}</span>
             <span class="exam-ch-q">{{ ch.q_count }} Q</span>
           </a>
-          <a class="notes-chip" href="{{ url_for('notes.chapter_list', subject_slug=ch.subject_slug) }}" title="Read notes">📖</a>
+          <a class="notes-chip" href="{{ url_for('learn.notes', chapter_id=ch.id) }}" title="Read notes">📖</a>
         </li>
         {% else %}
         <li class="empty"><em>No chapters mapped yet</em></li>

@@ -45,7 +45,7 @@ def test_subjects_page_lists_seeded_subject(client, seeded):
 
 
 def test_drawer_renders_nav_tree(client, seeded):
-    r = client.get("/")
+    r = client.get("/legacy")
     assert r.status_code == 200
     # Top-level items
     assert b"Home" in r.data
@@ -113,7 +113,7 @@ def test_settings_get_and_post_cookie(client):
 
 
 def test_home_shows_quick_chips_when_subjects_exist(client, seeded):
-    r = client.get("/")
+    r = client.get("/legacy")
     assert r.status_code == 200
     # Quick chip for Polity should appear
     assert b"Quick start" in r.data

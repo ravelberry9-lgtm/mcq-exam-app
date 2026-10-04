@@ -3,6 +3,7 @@
 {% set nav_active = 'practice' %}
 {% block title %}{{ title_en }} · {{ tl('prac.progress') }} · {{ app_title }}{% endblock %}
 {% block topbar %}
+  <div class="row">{{ c.learnlink() }}</div>
   <div class="row between">
     <a class="back" href="{{ back_url }}"><span aria-hidden="true">‹</span> {{ t('prac.end') }}</a>
     {{ c.langswitch(lang_pref) }}
