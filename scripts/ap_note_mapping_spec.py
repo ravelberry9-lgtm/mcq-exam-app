@@ -10,6 +10,7 @@ Sections not listed here are generic study aids (see GENERIC_HEADINGS) and map a
 SUPP = "supp-dynasties-overview"
 SUPP_ASAF = "supp-asaf-jahis-hyderabad-state"
 SUPP_POST = "supp-post-2014-andhra-pradesh"
+SUPP_MODERN = "supp-modern-ap-political-administrative-1956-2014"
 MAJORITY = "MAJORITY"   # study aids of a source chapter that spans several canonical chapters follow the chapter receiving most of its substantive sections
 DEFAULT_CHAPTER = {1: 2, 2: 1, 3: 3, 4: SUPP, 5: 4, 6: 5, 7: 6, 8: 7, 9: 8, 10: 9, 11: 10, 12: 11,
                    13: 13, 14: SUPP_ASAF, 15: MAJORITY, 16: MAJORITY, 17: MAJORITY, 18: 31, 19: SUPP_POST}
@@ -296,20 +297,20 @@ SPEC.update({
     (17, 14): (AID, None, M, "Key sites across the source chapter.", []),
     (17, 15): (AID, None, M, "Timeline graphic for 1948-56.", []),
     # source ch18 Modern AP 1956-2014 -> canonical 31 (political sections are outside the stated 'social and cultural' scope)
-    (18, 3): (31, None, M, "Chief ministers 1956-83 (Sanjiva Reddy to Brahmananda Reddy): political history; includes implementation of the Gentlemen's Agreement.", [(30, "implementation-issues")]),
+    (18, 3): (SUPP_MODERN, None, M, "Chief ministers 1956-67 (Sanjiva Reddy, Sanjivaiah, Brahmananda Reddy): dominant content is political and administrative chronology, so the primary home is the supplementary political-administrative chapter. Mixed: it also covers implementation of the Gentlemen's Agreement and continued Mulki protections (3.1) and Damodaram Sanjivaiah, the first Dalit chief minister, so Chapter 31 regional-safeguard material is kept as a secondary.", [(31, "mulki-rules"), (30, "implementation-issues")]),
     (18, 4): (31, "telangana-movement-1969", H, "1969 Jai Telangana agitation.", []),
     (18, 5): (31, "jai-andhra-1972", H, "1972-73 Jai Andhra agitation.", []),
     (18, 6): (31, "regional-identity-movements", M, "Six-Point Formula (1973), Article 371-D and G.O. 610: the settlement of the 1969-73 agitations.", [(31, "telangana-movement-1969"), (31, "jai-andhra-1972"), (30, "regional-safeguards")]),
-    (18, 7): (31, None, M, "Chief ministers 1973-82; political history.", []),
-    (18, 8): (31, None, L, "NTR and the TDP, 1982-83: political history, outside the syllabus's 'social and cultural' scope.", []),
-    (18, 9): (31, None, L, "NTR's three terms: political history, outside the syllabus's 'social and cultural' scope.", []),
-    (18, 10): (31, None, L, "Naidu's IT era, 1995-2004: governance history, outside the syllabus's 'social and cultural' scope.", []),
-    (18, 11): (31, None, L, "YSR welfare era, 2004-09: governance history, outside the syllabus's 'social and cultural' scope.", []),
+    (18, 7): (SUPP_MODERN, None, M, "Chief ministers 1973-82: dominant content is political chronology (supplementary). Mixed: implementation of the Six-Point Formula after the 1969-73 agitations (7.1) is kept as a Chapter 31 secondary.", [(31, "regional-identity-movements")]),
+    (18, 8): (SUPP_MODERN, None, H, "NTR and the founding of the TDP, 1982-83: party and electoral history; no demonstrated social-cultural significance in this section, so supplementary political-administrative context.", []),
+    (18, 9): (SUPP_MODERN, None, M, "NTR's three terms: dominant content is government and party history (supplementary). Mixed: welfare schemes and the Jayabharat Reddy committee / G.O. 610 on Article 371-D violations (9.1) bear on regional safeguards, kept as a Chapter 31 secondary.", [(31, "mulki-rules")]),
+    (18, 10): (SUPP_MODERN, None, H, "Naidu's IT era, 1995-2004: governance and economic-policy chronology; supplementary political-administrative context.", []),
+    (18, 11): (SUPP_MODERN, None, H, "YSR welfare era, 2004-09: governance chronology; supplementary political-administrative context.", []),
     (18, 12): (31, "regional-identity-movements", H, "Telangana movement, 2001-2014.", []),
-    (18, 13): (31, "regional-identity-movements", M, "2014 bifurcation overview: sits on the boundary of the syllabus.", [(SUPP_POST, None)]),
+    (18, 13): (31, "regional-identity-movements", M, "2014 bifurcation overview: the culmination of the regional-identity movements, so Chapter 31 is primary; the post-2014 consequences it summarises are kept as a secondary link to the supplementary post-2014 chapter. Mixed.", [(SUPP_POST, None)]),
     (18, 14): (31, "cultural-developments-to-2014", H, "Literature, cinema and press, social and Dalit movements, Naxalite movement, education, language and cultural identity.", [(31, "literature"), (31, "cinema"), (31, "dalit-social-movements"), (31, "education-universities"), (31, "official-language-telugu")]),
-    (18, 15): (31, None, M, "Irrigation and IT projects: development history rather than social-cultural.", []),
-    (18, 16): (31, None, M, "Reference table of chief ministers, 1956-2014.", []),
+    (18, 15): (SUPP_MODERN, None, H, "Irrigation and IT projects: development and administrative history; supplementary political-administrative context.", []),
+    (18, 16): (SUPP_MODERN, None, H, "Reference table of chief ministers, 1956-2014: routine chronology; supplementary political-administrative context.", []),
     (18, 17): (31, None, H, "Key sites.", []),
     # source ch19 Bifurcation and post-2014 -> supplementary post-syllabus reference
     (19, 3): (SUPP_POST, None, H, "AP Reorganisation Act 2014; the Act is the outcome of the 2001-14 Telangana movement mapped in Chapter 31.", [(31, "regional-identity-movements")]),
@@ -332,7 +333,7 @@ FLAGS = {k: "multi_topic" for k in [
     (1, 14), (3, 13), (5, 13), (5, 15), (6, 15), (7, 12), (9, 17), (10, 15), (10, 18), (11, 17), (11, 18), (12, 16), (12, 18),
     (13, 3), (13, 6), (13, 11), (15, 3), (15, 8), (15, 10), (15, 11), (15, 12), (15, 13), (16, 3), (16, 4), (16, 8), (16, 11), (16, 15),
     (17, 3), (17, 4), (17, 5), (17, 8), (17, 9), (17, 12), (18, 6), (18, 14)]}
-for k in [(13, 4), (13, 6), (13, 9), (13, 10), (13, 12), (13, 14), (13, 15), (18, 3), (18, 7), (18, 8), (18, 9), (18, 10), (18, 11), (18, 13), (18, 15), (18, 16)]:
+for k in [(13, 4), (13, 6), (13, 9), (13, 10), (13, 12), (13, 14), (13, 15), (18, 3), (18, 7), (18, 9), (18, 13)]:
     FLAGS[k] = (FLAGS.get(k, "") + ";scope_boundary").lstrip(";")
 for k in [(1, 5), (2, 13)]:
     FLAGS[k] = "content_review"
@@ -358,11 +359,13 @@ for k in [(13, 4), (13, 6), (13, 10), (13, 11), (13, 12), (13, 13)]:
     COVERAGE[k] = "mixed"
 for k in [(13, 9), (13, 14), (13, 15)]:
     COVERAGE[k] = "supplementary_context"
-# Source chapter 18: political chronology without demonstrated social-cultural significance is not direct Chapter 31 coverage.
-for k in [(18, 3), (18, 7), (18, 8), (18, 10), (18, 11), (18, 15), (18, 16)]:
-    COVERAGE[k] = "supplementary_context"
-COVERAGE[(18, 9)] = "mixed"        # NTR's terms: welfare schemes plus the Jayabharat Reddy committee / G.O. 610 regional-safeguard material
+# Source chapter 18: pure political/administrative chronology goes to the fourth supplementary chapter (coverage 'supplementary' is derived).
+# Mixed sections keep one primary home (dominant content), retain a secondary, and are never split.
+for k in [(18, 3), (18, 7), (18, 9), (18, 13)]:
+    COVERAGE[k] = "mixed"
 RULE_NOTES = {
     "qutb_shahi": "Seventeenth-century rulers, Akkanna-Madanna, later monuments, Mughal annexation and the 1687 decline are supporting context. Questions on post-1600 events carry the tag supplementary_context unless needed to explain a development that began in the sixteenth century.",
-    "chapter_18": "Routine lists of chief ministers, ordinary elections, cabinet changes, party succession and administrative events with no demonstrated social-cultural significance are supplementary_context. They stay mapped to Chapter 31 for navigation only. scope_boundary stays on every source Chapter 18 political section until each is reviewed under this rule.",
+    "chapter_18": "Pure political or administrative chronology of 1956-2014 (chief-minister lists, elections, party succession, cabinet chronology, ordinary administrative change) is mapped to the fourth supplementary chapter, which never counts toward direct syllabus completion. Chapter 31 keeps material that directly concerns or substantially shaped language, education, literature, theatre, cinema, arts, social reform, Dalit, women's, peasant or civil-society movements, regional identity, the 1969 Telangana agitation, the 1972 Jai Andhra movement, Mulki and regional safeguards, the Six-Point Formula and the developments leading to the 2014 reorganisation.",
+    "komaram_bheem": "Source 16.11 stays unsplit and multi-topic. Future MCQs do not inherit its primary mapping: each question is mapped individually (Komaram Bheem, Gond rights, forest restrictions, resistance to Nizam administration: supplementary Asaf Jahi primary, Chapter 26 secondary; Gond culture: Chapter 26; individual Hyderabad State freedom leaders: Chapter 19 where historically appropriate with Hyderabad supplementary context; purely Telangana/Hyderabad regional politics outside the direct Andhra syllabus: supplementary context). The question importer or content review must enforce this.",
+    "question_scope": "Questions inherit scope from the specific fact tested, not from the containing note section. A mixed section may yield direct questions and supplementary_context questions.",
 }

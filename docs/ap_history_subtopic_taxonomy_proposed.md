@@ -4,20 +4,19 @@ Nothing here is seeded, imported or deployed. This replaces the 314-item draft a
 
 Model: **canonical chapter → learner-facing subtopic → internal microtopic.** A question gets one primary subtopic and any number of microtopic tags; microtopics are filters, never navigation. Every one of the 314 earlier draft subtopics survives as a microtopic (its old slug is kept), so no historical coverage is removed.
 
-- Learner-facing subtopics: **191** (was 314), in 31 chapters; per chapter min 4, max 9, chapters at or above 10: 0
+- Learner-facing subtopics: **187** (was 314), in 31 chapters; per chapter min 4, max 9, chapters at or above 10: 0
 - Internal microtopics: **317** (314 from the draft + 3 new)
-- Chapters with fewer than 6 subtopics: 12, 18, 22, 23, 24, 25, 26, 27, 28, 29, 30. They are small chapters, or chapters with thin source coverage; merging further would combine unlike themes. They can be split later without losing data because their microtopics already exist.
+- Chapters with fewer than 6 subtopics: 2, 3, 12, 16, 18, 22, 23, 24, 25, 26, 27, 28, 29, 30. They are small chapters, or chapters with thin source coverage; merging further would combine unlike themes. They can be split later without losing data because their microtopics already exist.
 
 ## How the earlier findings were resolved
 
 - **Exact duplicates (7 items):** ch21 `drama-organisations` → `drama-nataka-samajalu`; ch21 `nataka-samasthalu` → `drama-nataka-samajalu`; ch27 `potti-sriramulu` → `potti-sriramulu-agitation`; ch27 `fast-and-death` → `potti-sriramulu-agitation`; ch23 `major-resolutions` → `organisations-conferences`; ch24 `resolutions` → `sessions-resolutions`; ch25 `libraries-public-awakening` → `library-movement`.
-- **Narrow or note-driven items:** 37 flagged earlier; 33 are now microtopics inside a broader subtopic. 4 remain as their own subtopic and are listed below for your decision.
+- **Narrow or note-driven items:** 37 flagged earlier; 34 are now microtopics inside a broader subtopic. 3 remain as their own subtopic and are listed below for your decision.
 - **Rulers:** no ruler has a learner-facing subtopic except Krishnadevaraya (Chapter 11, kept because the reign has its own large body of content and exam questions). Kakatiya rulers (Rudradeva, Mahadeva, Ganapatideva, Rudramadevi, Prataparudra) are microtopics under *Political history and rulers*.
 - **Splits that remain deliberate:** Chapter 14 (thematic) overlaps Chapters 8–13 by design; questions keep one primary chapter (the dynasty chapter) unless genuinely comparative.
 
 ### Subtopics kept standalone although earlier flagged narrow or note-driven
 
-- ch16 `irrigation-works` — Irrigation works
 - ch7 `language-literature` — Sanskrit and Telugu development
 - ch8 `chola-chalukya-relations` — Chola–Chalukya relations
 - ch11 `telugu-literature` — Telugu literature and the Ashtadiggajas
@@ -26,7 +25,7 @@ Model: **canonical chapter → learner-facing subtopic → internal microtopic.*
 
 - Seventeenth-century rulers, Akkanna-Madanna, later monuments, Mughal annexation and the 1687 decline are supporting context. Questions on post-1600 events carry the tag supplementary_context unless needed to explain a development that began in the sixteenth century.
 - Microtopic `post-1600-context` (Chapter 13) carries `supplementary_context` scope.
-- Routine lists of chief ministers, ordinary elections, cabinet changes, party succession and administrative events with no demonstrated social-cultural significance are supplementary_context. They stay mapped to Chapter 31 for navigation only. scope_boundary stays on every source Chapter 18 political section until each is reviewed under this rule.
+- Pure political or administrative chronology of 1956-2014 (chief-minister lists, elections, party succession, cabinet chronology, ordinary administrative change) is mapped to the fourth supplementary chapter, which never counts toward direct syllabus completion. Chapter 31 keeps material that directly concerns or substantially shaped language, education, literature, theatre, cinema, arts, social reform, Dalit, women's, peasant or civil-society movements, regional identity, the 1969 Telangana agitation, the 1972 Jai Andhra movement, Mulki and regional safeguards, the Six-Point Formula and the developments leading to the 2014 reorganisation.
 
 ## Normalized Telugu terminology applied
 
@@ -69,24 +68,22 @@ Learner-facing metadata uses the approved forms; source spellings stay untouched
 | Coins | నాణేలు | 1/0 | Coins |
 | Archaeological evidence and historical sites | పురావస్తు ఆధారాలు మరియు చారిత్రక స్థలాలు | 4/7 | Archaeological evidence; Important historical sites |
 
-#### Chapter 2 — Prehistoric Cultures of Andhra / ఆంధ్రలో చరిత్రపూర్వ సంస్కృతులు (6 subtopics)
+#### Chapter 2 — Prehistoric Cultures of Andhra / ఆంధ్రలో చరిత్రపూర్వ సంస్కృతులు (5 subtopics)
 
 | Subtopic (English) | Subtopic (Telugu) | Src P/S | Microtopics |
 |---|---|---|---|
-| Palaeolithic culture | పురాతన శిలాయుగం (పాలియోలిథిక్) | 3/1 | Palaeolithic |
-| Mesolithic culture | మధ్య శిలాయుగం (మెసోలిథిక్) | 1/0 | Mesolithic |
+| Palaeolithic and Mesolithic cultures | పురాతన శిలాయుగం (పాలియోలిథిక్) మరియు మధ్య శిలాయుగం (మెసోలిథిక్) సంస్కృతులు | 4/1 | Palaeolithic; Mesolithic |
 | Neolithic and Chalcolithic cultures | నవీన శిలాయుగం (నియోలిథిక్) మరియు రాగి–రాతి యుగం (చాల్కోలిథిక్) | 1/0 | Neolithic; Chalcolithic |
 | Megalithic and Iron Age cultures | బృహత్‌శిలా సంస్కృతి (మెగాలిథిక్) మరియు ఇనుప యుగం | 1/0 | Megalithic and Iron Age cultures; Burial practices |
 | Tools, technology and pottery | పనిముట్లు, సాంకేతికత మరియు మట్టి పాత్రలు | 1/1 | Tools and technologies; Pottery |
 | Important prehistoric sites | ముఖ్య చరిత్రపూర్వ స్థలాలు | 1/1 | Important prehistoric sites in Andhra |
 
-#### Chapter 3 — Pre-Satavahana Andhra / శాతవాహనులకు పూర్వపు ఆంధ్ర (6 subtopics)
+#### Chapter 3 — Pre-Satavahana Andhra / శాతవాహనులకు పూర్వపు ఆంధ్ర (5 subtopics)
 
 | Subtopic (English) | Subtopic (Telugu) | Src P/S | Microtopics |
 |---|---|---|---|
 | Assaka and early references to the Andhras | అస్సక మరియు ఆంధ్రుల తొలి ప్రస్తావనలు | 4/1 | Assaka / Asmaka; Early Andhra references |
-| Nandas and Mauryas | నందులు మరియు మౌర్యులు | 1/1 | Nandas and Mauryas |
-| Ashoka's inscriptions in Andhra | ఆంధ్రలో అశోకుని శాసనాలు | 0/1 | Ashoka's Andhra inscriptions; Erragudi and Rajulamandagiri |
+| Nandas, Mauryas and Ashoka's inscriptions | నందులు, మౌర్యులు మరియు అశోకుని శాసనాలు | 1/1 | Nandas and Mauryas; Ashoka's Andhra inscriptions; Erragudi and Rajulamandagiri |
 | Early Buddhism and its centres | తొలి బౌద్ధమతం మరియు కేంద్రాలు | 2/0 | Early Buddhism; Bhattiprolu; Amaravati / Dhanyakataka beginnings |
 | Kharavela and Kalinga | ఖారవేలుడు మరియు కళింగ | 0/0 | Kharavela and the Hathigumpha inscription |
 | Early local rulers and coinage | తొలి స్థానిక పాలకులు మరియు నాణేలు | 1/1 | Early local rulers; Punch-marked and local coinage |
@@ -244,16 +241,14 @@ Learner-facing metadata uses the approved forms; source spellings stay untouched
 | Company administration and revenue | కంపెనీ పాలన మరియు రెవెన్యూ | 0/2 | Andhra under the East India Company; Revenue systems |
 | Early economic and social impact | తొలి ఆర్థిక మరియు సామాజిక ప్రభావం | 0/1 | Early economic and social impact |
 
-#### Chapter 16 — Establishment of British Rule and the Impact of 1857 / బ్రిటిష్ పాలన స్థాపన మరియు 1857 ప్రభావం (6 subtopics)
+#### Chapter 16 — Establishment of British Rule and the Impact of 1857 / బ్రిటిష్ పాలన స్థాపన మరియు 1857 ప్రభావం (4 subtopics)
 
 | Subtopic (English) | Subtopic (Telugu) | Src P/S | Microtopics |
 |---|---|---|---|
 | Consolidation of British administration | బ్రిటిష్ పాలన బలోపేతం | 1/0 | Consolidation of British administration |
 | Land-revenue settlements (Zamindari and Ryotwari) | భూ శిస్తు విధానాలు (జమీందారీ మరియు రైత్వారీ) | 2/0 | Zamindari and Ryotwari systems; Thomas Munro |
-| Irrigation works | నీటిపారుదల పనులు | 1/0 | Arthur Cotton |
-| Administrative and economic effects | పరిపాలనా మరియు ఆర్థిక ప్రభావాలు | 1/0 | Administrative and economic effects |
-| Revolt of 1857 in Andhra | ఆంధ్రలో 1857 తిరుగుబాటు | 0/1 | Revolt of 1857; Events and personalities connected to Andhra |
-| Impact of 1857 | 1857 ప్రభావం | 1/0 | Impact of 1857 on Andhra |
+| Irrigation works and economic effects | నీటిపారుదల పనులు మరియు ఆర్థిక ప్రభావాలు | 2/0 | Arthur Cotton; Administrative and economic effects |
+| Revolt of 1857 and its impact | 1857 తిరుగుబాటు మరియు దాని ప్రభావం | 1/0 | Revolt of 1857; Events and personalities connected to Andhra; Impact of 1857 on Andhra |
 
 #### Chapter 17 — Socio-Cultural Awakening / సామాజిక-సాంస్కృతిక చైతన్యం (6 subtopics)
 
@@ -410,5 +405,5 @@ Learner-facing metadata uses the approved forms; source spellings stay untouched
 | Visual and performing arts, cultural institutions and developments to 2014 | దృశ్య మరియు ప్రదర్శన కళలు, సాంస్కృతిక సంస్థలు మరియు 2014 వరకు పరిణామాలు | 1/0 | Visual and performing arts; Cultural institutions; Major cultural developments up to 2014 |
 | Dalit and social movements | దళిత మరియు సామాజిక ఉద్యమాలు | 0/1 | Dalit and social movements |
 | Women's and civil-society movements | మహిళా మరియు పౌర సమాజ ఉద్యమాలు | 0/0 | Women's movements; Civil-society movements |
-| Regional identity movements: Telangana 1969, Jai Andhra 1972 and safeguards | ప్రాంతీయ గుర్తింపు ఉద్యమాలు: 1969 తెలంగాణ, 1972 జై ఆంధ్ర మరియు రక్షణలు | 5/1 | Telangana movement of 1969; Jai Andhra Movement of 1972; Regional identity movements; Mulki rules and regional safeguards |
+| Regional identity movements: Telangana 1969, Jai Andhra 1972 and safeguards | ప్రాంతీయ గుర్తింపు ఉద్యమాలు: 1969 తెలంగాణ, 1972 జై ఆంధ్ర మరియు రక్షణలు | 5/4 | Telangana movement of 1969; Jai Andhra Movement of 1972; Regional identity movements; Mulki rules and regional safeguards |
 

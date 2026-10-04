@@ -149,7 +149,7 @@ def build(rows=None):
             "canonical_chapter_title_en": en, "proposed_subtopic_slug": sub_slug,
             "proposed_subtopic_en": sb["en"] if sb else "(chapter level)", "proposed_microtopic_slug": micro_slug,
             "proposed_microtopic_en": mi["en"] if mi else "", "draft_subtopic_slug": micro_slug if mi and mi["from_draft"] else "",
-            "coverage_scope": ("study_aid" if generic else "supplementary" if slug.startswith("supp-") else spec.COVERAGE.get((cnum, snum), "direct")),
+            "coverage_scope": ("study_aid" if generic else spec.COVERAGE.get((cnum, snum)) or ("supplementary" if slug.startswith("supp-") else "direct")),
             "confidence": conf,
             "mapping_kind": kind_for(slug, cls), "multi_topic": "yes" if "multi_topic" in flags else "", "flags": ";".join(flags),
             "approval_status": approval, "needs_review": "yes" if (conf != "high" or flags or approval != "draft") else "",
@@ -194,7 +194,8 @@ def write(mapped, out_dir=ROOT / "docs"):
              f"- cross_unit_context: {flagc['cross_unit_context']}; supplementary_cross_context: {flagc['supplementary_cross_context']}", "",
              "Subtopics shown are the **rationalized** learner-facing subtopics (see `ap_history_subtopic_taxonomy_proposed.md`); the old 314-item draft slug is kept in "
              "`draft_subtopic_slug` and every draft item is now a microtopic (`proposed_microtopic_slug`). Nothing is seeded.", "",
-             "Scope rules: " + spec.RULE_NOTES["qutb_shahi"] + " " + spec.RULE_NOTES["chapter_18"], "",
+             "Scope rules: " + spec.RULE_NOTES["qutb_shahi"] + " " + spec.RULE_NOTES["chapter_18"] + " " + spec.RULE_NOTES["question_scope"], "",
+             "Rule for future questions from source 16.11: " + spec.RULE_NOTES["komaram_bheem"], "",
              "Rules used: one primary chapter and subtopic per section; multi-topic sections keep secondary links and a `multi_topic` flag and are not split; "
              "a shared place name is not a cross-topic link; the supplementary reference chapters are outside the 31 core chapters.", "",
              "## Where each source chapter went", ""]

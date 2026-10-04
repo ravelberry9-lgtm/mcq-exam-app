@@ -3,15 +3,17 @@
 A proposal only: nothing in any database was changed, and no note was rewritten or split. Source chapter and section numbers are kept in the CSV. For chapters 1-12 the ids come from the bundled content database (they differ per environment, so a future import keys on source chapter number + section number). Chapters 13-19 exist only as local HTML files; their section structure is snapshotted in `scripts/ap_source_sections_13_19.json` with file hashes.
 
 - Sections mapped: **338** (chapters 1-12: 225, from the app database; chapters 13-19: 113, from local HTML)
-- Confidence: high 237, medium 94, low 7
-- Flagged for review: 106; multi-topic sections: 48; scope-boundary: 16; ambiguous: 17; content-review: 2; unapproved: 1
+- Confidence: high 242, medium 93, low 3
+- Flagged for review: 101; multi-topic sections: 48; scope-boundary: 11; ambiguous: 17; content-review: 2; unapproved: 1
 - Mapped at chapter level (no subtopic): 144
-- Coverage scope: direct 223, mixed 7, study_aid 61, supplementary 37, supplementary_context 10
+- Coverage scope: direct 222, mixed 10, study_aid 61, supplementary 42, supplementary_context 3
 - cross_unit_context: 1; supplementary_cross_context: 1
 
 Subtopics shown are the **rationalized** learner-facing subtopics (see `ap_history_subtopic_taxonomy_proposed.md`); the old 314-item draft slug is kept in `draft_subtopic_slug` and every draft item is now a microtopic (`proposed_microtopic_slug`). Nothing is seeded.
 
-Scope rules: Seventeenth-century rulers, Akkanna-Madanna, later monuments, Mughal annexation and the 1687 decline are supporting context. Questions on post-1600 events carry the tag supplementary_context unless needed to explain a development that began in the sixteenth century. Routine lists of chief ministers, ordinary elections, cabinet changes, party succession and administrative events with no demonstrated social-cultural significance are supplementary_context. They stay mapped to Chapter 31 for navigation only. scope_boundary stays on every source Chapter 18 political section until each is reviewed under this rule.
+Scope rules: Seventeenth-century rulers, Akkanna-Madanna, later monuments, Mughal annexation and the 1687 decline are supporting context. Questions on post-1600 events carry the tag supplementary_context unless needed to explain a development that began in the sixteenth century. Pure political or administrative chronology of 1956-2014 (chief-minister lists, elections, party succession, cabinet chronology, ordinary administrative change) is mapped to the fourth supplementary chapter, which never counts toward direct syllabus completion. Chapter 31 keeps material that directly concerns or substantially shaped language, education, literature, theatre, cinema, arts, social reform, Dalit, women's, peasant or civil-society movements, regional identity, the 1969 Telangana agitation, the 1972 Jai Andhra movement, Mulki and regional safeguards, the Six-Point Formula and the developments leading to the 2014 reorganisation. Questions inherit scope from the specific fact tested, not from the containing note section. A mixed section may yield direct questions and supplementary_context questions.
+
+Rule for future questions from source 16.11: Source 16.11 stays unsplit and multi-topic. Future MCQs do not inherit its primary mapping: each question is mapped individually (Komaram Bheem, Gond rights, forest restrictions, resistance to Nizam administration: supplementary Asaf Jahi primary, Chapter 26 secondary; Gond culture: Chapter 26; individual Hyderabad State freedom leaders: Chapter 19 where historically appropriate with Hyderabad supplementary context; purely Telangana/Hyderabad regional politics outside the direct Andhra syllabus: supplementary context). The question importer or content review must enforce this.
 
 Rules used: one primary chapter and subtopic per section; multi-topic sections keep secondary links and a `multi_topic` flag and are not split; a shared place name is not a cross-topic link; the supplementary reference chapters are outside the 31 core chapters.
 
@@ -34,7 +36,7 @@ Rules used: one primary chapter and subtopic per section; multi-topic sections k
 - Source 15 — అధ్యాయం 15 — తీరాంధ్రలో బ్రిటిష్ పాలన: `u3-c15-europeans-company-rule` (4), `u3-c16-british-rule-revolt-1857` (10), `u3-c17-socio-cultural-awakening` (1)
 - Source 16 — అధ్యాయం 16 — ఆంధ్ర స్వాతంత్ర్యోద్యమం: `supp-asaf-jahis-hyderabad-state` (1), `u3-c17-socio-cultural-awakening` (1), `u3-c19-nationalist-movement-1885-1947` (9), `u4-c23-andhra-movement-origin-growth` (2), `u4-c24-andhra-mahasabhas-leaders` (1), `u4-c27-formation-andhra-state-1953` (2)
 - Source 17 — అధ్యాయం 17 — ఆంధ్ర రాష్ట్రం + ఆంధ్రప్రదేశ్ ఏర్పాటు: `u4-c25-press-library-movement` (1), `u4-c27-formation-andhra-state-1953` (2), `u5-c28-visalandhra-movement-mahasabha` (2), `u5-c29-states-reorganisation-commission` (2), `u5-c30-gentlemens-agreement-formation-ap` (9)
-- Source 18 — అధ్యాయం 18 — ఆధునిక ఆంధ్రప్రదేశ్: `u5-c31-social-cultural-events-1956-2014` (18)
+- Source 18 — అధ్యాయం 18 — ఆధునిక ఆంధ్రప్రదేశ్: `supp-modern-ap-political-administrative-1956-2014` (8), `u5-c31-social-cultural-events-1956-2014` (10)
 - Source 19 — అధ్యాయం 19 — బిఫర్కేషన్ + వర్తమాన ఆంధ్రప్రదేశ్: `supp-post-2014-andhra-pradesh` (16)
 
 ## Flagged sections
@@ -108,9 +110,9 @@ Rules used: one primary chapter and subtopic per section; multi-topic sections k
 | 15 | 7 | Madras Presidency Administration | u3-c16-consolidation-administration | medium |  | Madras Presidency: its formation, administrative order to 1858 and Andhra districts by 1857. |
 | 15 | 8 | Thomas Munro and the Ryotwari System | u3-c16-land-revenue-settlements | medium | multi_topic | Munro's career and the ryotwari system in one section. |
 | 15 | 10 | Vizianagaram and Local Zamindars | u3-c16-land-revenue-settlements | medium | multi_topic | Vizianagaram Pusapati line, Bobbili (1757), Padmanabham (1794), other zamindaris. |
-| 15 | 11 | 1857 Revolt + Tribal Uprisings | u3-c16-impact-1857 | medium | multi_topic | 1857 in Madras Presidency (limited impact), the 1879 Rampa rebellion and other minor uprisings. |
+| 15 | 11 | 1857 Revolt + Tribal Uprisings | u3-c16-revolt-1857 | medium | multi_topic | 1857 in Madras Presidency (limited impact), the 1879 Rampa rebellion and other minor uprisings. |
 | 15 | 12 | Education & Social Change | u3-c17-education-missionaries | medium | multi_topic | English education, social reform movements and print/Telugu renaissance in one section. |
-| 15 | 13 | Economic Changes | u3-c16-economic-effects | medium | multi_topic | Agriculture, trade, railways and the 1876-78 famine. |
+| 15 | 13 | Economic Changes | u3-c16-irrigation-economic-effects | medium | multi_topic | Agriculture, trade, railways and the 1876-78 famine. |
 | 15 | 14 | Key Sites | u3-c16-british-rule-revolt-1857 | medium | multi_topic | Key sites table spanning the source chapter. Assigned to the canonical chapter that receives most of this source chapter's sections. |
 | 15 | 15 | Revision | u3-c16-british-rule-revolt-1857 | medium | multi_topic | Study-aid section (introduction, glossary, revision, practice or summary) that covers the whole source chapter; mapped at chapter level. Assigned to the canonical chapter that receives most of this source chapter's sections. |
 | 16 | 1 | Introduction | u3-c19-nationalist-movement-1885-1947 | medium | multi_topic | Study-aid section (introduction, glossary, revision, practice or summary) that covers the whole source chapter; mapped at chapter level. Assigned to the canonical chapter that receives most of this source chapter's sections. |
@@ -136,21 +138,16 @@ Rules used: one primary chapter and subtopic per section; multi-topic sections k
 | 17 | 14 | Key Sites | u5-c30-gentlemens-agreement-formation-ap | medium | multi_topic | Key sites across the source chapter. Assigned to the canonical chapter that receives most of this source chapter's sections. |
 | 17 | 15 | SVG Timeline | u5-c30-gentlemens-agreement-formation-ap | medium | multi_topic | Timeline graphic for 1948-56. Assigned to the canonical chapter that receives most of this source chapter's sections. |
 | 17 | 16 | Revision | u5-c30-gentlemens-agreement-formation-ap | medium | multi_topic | Study-aid section (introduction, glossary, revision, practice or summary) that covers the whole source chapter; mapped at chapter level. Assigned to the canonical chapter that receives most of this source chapter's sections. |
-| 18 | 3 | Early INC Era | u5-c31-social-cultural-events-1956-2014 | medium | scope_boundary | Chief ministers 1956-83 (Sanjiva Reddy to Brahmananda Reddy): political history; includes implementation of the Gentlemen's Agreement. |
+| 18 | 3 | Early INC Era | supp-modern-ap-political-administrative-1956-2014 | medium | scope_boundary | Chief ministers 1956-67 (Sanjiva Reddy, Sanjivaiah, Brahmananda Reddy): dominant content is political and administrative chronology, so the primary home is the supplementary political-administrative chapter. Mixed: it also covers implementation of the Gentleme |
 | 18 | 6 | Six-Point Formula | u5-c31-regional-identity-movements | medium | multi_topic | Six-Point Formula (1973), Article 371-D and G.O. 610: the settlement of the 1969-73 agitations. |
-| 18 | 7 | Late INC Era | u5-c31-social-cultural-events-1956-2014 | medium | scope_boundary | Chief ministers 1973-82; political history. |
-| 18 | 8 | NTR & TDP Revolution | u5-c31-social-cultural-events-1956-2014 | low | scope_boundary | NTR and the TDP, 1982-83: political history, outside the syllabus's 'social and cultural' scope. |
-| 18 | 9 | NTR's Three Terms | u5-c31-social-cultural-events-1956-2014 | low | scope_boundary | NTR's three terms: political history, outside the syllabus's 'social and cultural' scope. |
-| 18 | 10 | Naidu's IT Era | u5-c31-social-cultural-events-1956-2014 | low | scope_boundary | Naidu's IT era, 1995-2004: governance history, outside the syllabus's 'social and cultural' scope. |
-| 18 | 11 | YSR Welfare Era | u5-c31-social-cultural-events-1956-2014 | low | scope_boundary | YSR welfare era, 2004-09: governance history, outside the syllabus's 'social and cultural' scope. |
-| 18 | 13 | 2014 Bifurcation Overview | u5-c31-regional-identity-movements | medium | scope_boundary | 2014 bifurcation overview: sits on the boundary of the syllabus. |
+| 18 | 7 | Late INC Era | supp-modern-ap-political-administrative-1956-2014 | medium | scope_boundary | Chief ministers 1973-82: dominant content is political chronology (supplementary). Mixed: implementation of the Six-Point Formula after the 1969-73 agitations (7.1) is kept as a Chapter 31 secondary. |
+| 18 | 9 | NTR's Three Terms | supp-modern-ap-political-administrative-1956-2014 | medium | scope_boundary | NTR's three terms: dominant content is government and party history (supplementary). Mixed: welfare schemes and the Jayabharat Reddy committee / G.O. 610 on Article 371-D violations (9.1) bear on regional safeguards, kept as a Chapter 31 secondary. |
+| 18 | 13 | 2014 Bifurcation Overview | u5-c31-regional-identity-movements | medium | scope_boundary | 2014 bifurcation overview: the culmination of the regional-identity movements, so Chapter 31 is primary; the post-2014 consequences it summarises are kept as a secondary link to the supplementary post-2014 chapter. Mixed. |
 | 18 | 14 | Social & Cultural Developments | u5-c31-arts-institutions | high | multi_topic | Literature, cinema and press, social and Dalit movements, Naxalite movement, education, language and cultural identity. |
-| 18 | 15 | Major Projects | u5-c31-social-cultural-events-1956-2014 | medium | scope_boundary | Irrigation and IT projects: development history rather than social-cultural. |
-| 18 | 16 | All AP CMs | u5-c31-social-cultural-events-1956-2014 | medium | scope_boundary | Reference table of chief ministers, 1956-2014. |
 
 ## Learner-facing subtopics with no note section (primary or secondary)
 
-- Chapter 3 — Pre-Satavahana Andhra: 1 of 6: Kharavela and Kalinga
+- Chapter 3 — Pre-Satavahana Andhra: 1 of 5: Kharavela and Kalinga
 - Chapter 4 — Satavahanas: 1 of 8: Administration
 - Chapter 5 — Ikshvakus: 1 of 9: Literature and education
 - Chapter 6 — Post-Ikshvaku Minor Dynasties: 2 of 7: Pallava influence and other transitional dynasties; Society and economy
