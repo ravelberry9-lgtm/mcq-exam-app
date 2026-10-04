@@ -84,6 +84,8 @@ class Question(db.Model):
     subject_id = db.Column(db.Integer, db.ForeignKey("subjects.id"), nullable=False, index=True)
     chapter_id = db.Column(db.Integer, db.ForeignKey("chapters.id"), nullable=True, index=True)
     source_type = db.Column(db.String(16), nullable=False, index=True)  # 'practice'|'chapter'|'pyq'
+    # md5 fingerprint of the question text, set by the content loader to avoid duplicates (kept from the legacy schema)
+    q_hash = db.Column(db.String(32), index=True)
     pyq_year = db.Column(db.String(8))
     pyq_paper = db.Column(db.String(64))
     difficulty = db.Column(db.String(2), default="M")  # E/M/H

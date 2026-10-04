@@ -7,6 +7,16 @@ from sqlalchemy import engine_from_config, pool
 from app import create_app
 from app.db import db
 
+def _compare_type(context, inspected_column, metadata_column, inspected_type, metadata_type):
+    """SQLite stores everything as TEXT/INTEGER/REAL/BLOB; do not report VARCHAR/JSON/DateTime/Boolean vs TEXT/INTEGER."""
+    if context.dialect.name != "sqlite":
+        return None                                    # default, strict comparison
+    def aff(t):
+        n = str(t).upper()
+        return "INT" if ("INT" in n or "BOOL" in n) else "TEXT"
+    return aff(inspected_type) != aff(metadata_type)
+
+
 config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
@@ -24,7 +34,7 @@ def run_migrations_offline() -> None:
         target_metadata=target_metadata,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
-        compare_type=True,
+        compare_type=_compare_type,
     )
     with context.begin_transaction():
         context.run_migrations()
@@ -40,7 +50,7 @@ def run_migrations_online() -> None:
         context.configure(
             connection=connection,
             target_metadata=target_metadata,
-            compare_type=True,
+            compare_type=_compare_type,
         )
         with context.begin_transaction():
             context.run_migrations()
