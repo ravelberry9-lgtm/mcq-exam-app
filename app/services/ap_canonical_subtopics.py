@@ -90,6 +90,7 @@ DRAFT = {
         ("society-economy", "Society and economy", "సమాజం మరియు ఆర్థిక వ్యవస్థ"),
         ("religion", "Religion", "మతం"),
         ("telugu-nannaya-literature", "Growth of Telugu; Nannaya and early Telugu literature", "తెలుగు వికాసం; నన్నయ మరియు తొలి తెలుగు సాహిత్యం"),
+        ("art-architecture", "Art and architecture", "కళ మరియు వాస్తుశిల్పం"),
         ("temples-pancharamas", "Temples and Pancharamas", "దేవాలయాలు మరియు పంచారామాలు"),
         ("velanati-chodas", "Velanati Chodas", "వెలనాటి చోడులు"),
         ("nellore-telugu-chodas", "Nellore Telugu Chodas", "నెల్లూరు తెలుగు చోడులు"),
