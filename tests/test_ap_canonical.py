@@ -160,14 +160,106 @@ def test_note_mapping_covers_every_note_section_exactly_once(mapping_mod):
     for m in mapped:
         assert m["canonical_chapter_slug"] in valid_ch
         assert m["confidence"] in ("high", "medium", "low")
-        assert m["mapping_kind"] in ("direct", "bridge", "cross_cutting")
-        assert (m["mapping_kind"] == "cross_cutting") == m["canonical_chapter_slug"].startswith("supp-")
+        assert m["mapping_kind"] in ("direct", "bridge", "cross_cutting", "supplementary")
+        assert (m["mapping_kind"] == "cross_cutting") == (m["canonical_chapter_slug"] == "supp-dynasties-overview")
         if m["proposed_subtopic_slug"]:
             assert m["proposed_subtopic_slug"].startswith("-".join(m["canonical_chapter_slug"].split("-")[:2]))
         assert m["reason"].strip()
     # supplementary Asaf Jahi / post-2014 chapters have no notes in the app database, so nothing maps to them
     assert not any("asaf" in m["canonical_chapter_slug"] or "post-2014" in m["canonical_chapter_slug"] for m in mapped)
     assert {m["old_chapter_num"] for m in mapped if m["canonical_chapter_slug"] == "supp-dynasties-overview"} == {4}
+
+
+@pytest.fixture(scope="module")
+def full_map(mapping_mod):
+    return mapping_mod.build()
+
+
+def _row(full_map, ch, sec):
+    return next(m for m in full_map if m["old_chapter_num"] == ch and m["section_num"] == sec)
+
+
+def test_full_mapping_includes_html_chapters_13_to_19_once_each(full_map):
+    assert len(full_map) == 338
+    assert len({(m["old_chapter_num"], m["section_num"]) for m in full_map}) == 338
+    assert sum(1 for m in full_map if m["old_chapter_num"] >= 13) == 113
+    assert all(m["note_id"] == "" and m["old_chapter_id"] == "" for m in full_map if m["old_chapter_num"] >= 13)
+
+
+def test_chapters_13_to_19_follow_the_approved_targets(full_map):
+    def chs(n):
+        return {m["canonical_chapter_slug"] for m in full_map if m["old_chapter_num"] == n}
+    assert chs(14) == {"supp-asaf-jahis-hyderabad-state"}
+    assert chs(19) == {"supp-post-2014-andhra-pradesh"}
+    assert chs(18) == {"u5-c31-social-cultural-events-1956-2014"}
+    assert all(s.startswith("u2-c13") for s in chs(13))
+    assert {s.split("-")[1] for s in chs(15)} <= {"c15", "c16", "c17", "c18"}
+    assert {s.split("-")[1] for s in chs(16)} <= {f"c{n}" for n in range(17, 28)}  # content-driven: source 16 also covers 1920s-1953 sections
+    assert {s.split("-")[1] for s in chs(17)} <= {f"c{n}" for n in range(23, 31)}
+    kinds = {m["mapping_kind"] for m in full_map if m["old_chapter_num"] in (14, 19)}
+    assert kinds == {"supplementary"}
+
+
+def test_multi_topic_sections_are_flagged_not_split(full_map):
+    assert sum(1 for m in full_map if m["multi_topic"] == "yes") > 0
+    for m in full_map:
+        assert (m["multi_topic"] == "yes") == ("multi_topic" in m["flags"].split(";"))
+    # one row per source section: nothing was split
+    assert len(full_map) == len({(m["old_chapter_num"], m["section_num"]) for m in full_map})
+
+
+def test_pedavegi_row_has_salankayana_primary_and_a_justified_secondary(full_map):
+    r = _row(full_map, 7, 10)
+    assert r["proposed_subtopic_slug"] == "u1-c06-salankayanas"
+    assert r["secondary_mappings"] == "u1-c08-vengi-foundation"
+    assert "10.2" in r["reason"]
+
+
+def test_kataya_vema_row_is_flagged_and_unapproved(full_map):
+    r = _row(full_map, 11, 12)
+    assert r["approval_status"] == "unapproved" and "attribution_check" in r["flags"].split(";") and r["needs_review"] == "yes"
+    assert "UNAPPROVED" in r["reason"]
+    assert sum(1 for m in full_map if m["approval_status"] == "unapproved") == 1
+
+
+def test_low_confidence_rows_stay_flagged_and_out_of_folk_tribal_culture(full_map):
+    for key in ((1, 5), (2, 13)):
+        r = _row(full_map, *key)
+        assert r["confidence"] == "low" and "content_review" in r["flags"].split(";")
+        assert not r["canonical_chapter_slug"].startswith("u4-c26")
+        assert not any("c26" in x for x in r["secondary_mappings"].split("; "))
+
+
+def test_architecture_section_goes_to_the_general_subtopic_not_pancharamas(full_map):
+    r = _row(full_map, 9, 16)
+    assert r["proposed_subtopic_slug"] == "u1-c08-art-architecture"
+    assert "pancharamas" not in r["proposed_subtopic_slug"]
+
+
+def test_shared_name_alone_never_creates_a_secondary_link(full_map):
+    # every secondary named in the mapping exists in the draft taxonomy and differs from the primary
+    titles = {s for lst in subs.expanded().values() for s, _e, _t in lst}
+    chapter_slugs = {c[2] for c in canon.CHAPTERS} | {x[0] for x in canon.SUPPLEMENTARY}
+    for m in full_map:
+        for sec in (x for x in m["secondary_mappings"].split("; ") if x):
+            assert sec in titles or sec in chapter_slugs
+            assert sec != m["proposed_subtopic_slug"]
+
+
+def test_taxonomy_review_file_covers_every_draft_subtopic_and_matches_generator(tmp_path):
+    spec = importlib.util.spec_from_file_location("build_tax", ROOT / "scripts" / "build_ap_taxonomy_review.py")
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    rows = mod.build()
+    assert [r["subtopic_slug"] for r in rows] == [s for lst in subs.expanded().values() for s, _e, _t in lst]
+    assert all(r["subtopic_en"].strip() and r["subtopic_te"].strip() for r in rows)
+    assert any(r["unit"] == 1 for r in rows) and {r["unit"] for r in rows} == {1, 2, 3, 4, 5}
+    mod.write(rows, out_dir=tmp_path)
+    for name in ("ap_history_subtopic_taxonomy_review.csv", "ap_history_subtopic_taxonomy_review.md"):
+        assert (tmp_path / name).read_bytes() == (ROOT / "docs" / name).read_bytes(), f"re-run scripts/build_ap_taxonomy_review.py ({name})"
+
+
+def test_taxonomy_stays_a_draft_and_is_not_seeded_by_the_seeder(seeded):
+    assert SyllabusSubtopic.query.count() == 0
 
 
 def test_checked_in_review_files_match_the_generator(mapping_mod, tmp_path):
