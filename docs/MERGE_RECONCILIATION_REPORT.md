@@ -124,3 +124,17 @@ Still open / not changed:
 Not done in this commit (next priority): restoring the answered state after a practice reload, mobile admin preview overflow and which note
 field differs, the "Chapter (recovered, sn_id=14)" title on the legacy exam page, the 980-vs-6,257 notes investigation, and the service worker (Stage 7).
 The hub still carries the approved prototype line "Screening test, 150 marks (30 per subject)", which is also unverified.
+
+## Follow-up 4: review round 2 (answer API, marks, topic counts, CSRF, duration, size limits)
+
+Fixed on top of `9dbfd0a`:
+
+* **Answer API.** `/exam-session/<id>/answer` accepts only a question that belongs to the session and an option that exists for that question; everything else is a 400 and nothing is stored, so the score can no longer exceed the session length. Payloads that are not objects, non-string choices, non-numeric / out-of-range / boolean confidence (valid: empty, 0-5) and bad JSON return 400, never 500. The Learn practice endpoint `/api/answer` uses the same validation.
+* **Marks.** The seeded "150 marks", "30 marks", "30 M" and "Screening test, 150 marks (30 per subject)" no longer appear on the Learn hub, the section page or the exam list. Nothing about marks is shown until a paper has verified rules.
+* **Topic counts.** A topic's count is the number of chapter-type questions its Practice page serves. Non-chapter rows that carry a chapter id are counted in the subject banks, not in the topic.
+* **CSRF** on exam start, answer and submit (token in the signed session, shared with the admin; forms carry a hidden field, the page script sends `X-CSRF-Token`). Learn practice `/api/answer` and the other legacy POST forms are not covered yet.
+* **Session URLs are deliberate bearer links** (no accounts; random UUID4 ids; resuming on another browser is a feature). Session pages send `Cache-Control: no-store` and `X-Robots-Tag: noindex`; a malformed id is a 404. If you want sessions bound to a device or a login instead, that is a product change.
+* **Duration.** A session without a usable `duration_min` gets a labelled practice default (one minute per question, 5-180) with a visible note; the silent 150 is gone.
+* **Limits.** `MAX_PRACTICE_QUESTIONS` (100) applies to practice only. A verified official pattern is bounded by separate typo guards (`MAX_OFFICIAL_QUESTIONS`, `MAX_OFFICIAL_MINUTES`) and is refused with 409 if fewer answerable questions exist than the pattern needs.
+
+Still open: answered state after a practice reload, mobile admin preview overflow and "which field differs", the recovered chapter title, the 980-vs-6,257 notes question, service worker (Stage 7), CSRF for the remaining legacy forms, answers are still accepted after the timer expires, the legacy `/exam/<slug>` list still counts all question types per chapter and links to the subject practice page.

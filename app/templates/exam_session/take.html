@@ -5,12 +5,12 @@
 {% block content %}
 <div class="exam-take" id="exam-take"
      data-session-id="{{ es.id }}"
-     data-duration="{{ es.config.duration_min * 60 }}"
+     data-duration="{{ duration_min * 60 }}"
      data-remaining="{{ remaining_seconds }}">
 
   {% if es.config.unofficial %}
   <p class="exam-unofficial" role="note"><strong>Unofficial practice test · అనధికారిక ప్రాక్టీస్ టెస్ట్</strong>
-    — {{ es.config.question_count or q_total }} questions, {{ es.config.duration_min }} min, chosen by you. This is not the real exam pattern.</p>
+    — {{ es.config.question_count or q_total }} questions, {{ duration_min }} min{% if duration_defaulted %} (no time limit was saved with this session, so a practice default of one minute per question is used){% else %}, chosen by you{% endif %}. This is not the real exam pattern.</p>
   {% endif %}
   <!-- Timer bar -->
   <div class="exam-timer-bar">
@@ -93,7 +93,7 @@
 
   <!-- Submit form -->
   <form id="submit-form" action="{{ url_for('exam_session.submit', session_id=es.id) }}"
-        method="POST" hidden></form>
+        method="POST" hidden><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"></form>
 </div>
 
 <script>
@@ -142,7 +142,7 @@
     const qid = document.getElementById("qcard").dataset.questionId;
     fetch("/exam-session/" + sessionId + "/answer", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "X-CSRF-Token": "{{ csrf_token() }}" },
       credentials: "same-origin",
       body: JSON.stringify({ question_id: qid, chosen: chosen }),
     }).then(function (r) { return r.json(); }).then(function (data) {
@@ -169,7 +169,7 @@
     const qid = document.getElementById("qcard").dataset.questionId;
     fetch("/exam-session/" + sessionId + "/answer", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "X-CSRF-Token": "{{ csrf_token() }}" },
       credentials: "same-origin",
       body: JSON.stringify({ question_id: qid, chosen: "" }),
     });

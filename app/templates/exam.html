@@ -22,6 +22,7 @@
       <div class="exam-start">
         {% if paper.rules %}
         <form action="{{ url_for('exam_session.start', slug=exam.slug, paper_num=paper.paper_num) }}" method="POST">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
           <input type="hidden" name="mode" value="official">
           <button class="btn-start-exam" type="submit">▶ Start official test · అధికారిక పరీక్ష</button>
         </form>
@@ -29,6 +30,7 @@
         <button class="btn-start-exam" type="button" disabled aria-disabled="true">Official test unavailable · అధికారిక పరీక్ష అందుబాటులో లేదు</button>
         {% endif %}
         <form action="{{ url_for('exam_session.start', slug=exam.slug, paper_num=paper.paper_num) }}" method="POST">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
           <input type="hidden" name="mode" value="practice">
           <label>Questions <input type="number" name="count" min="{{ practice_min }}" max="{{ practice_max }}" value="{{ practice_default }}" inputmode="numeric"></label>
           <label>Minutes <input type="number" name="minutes" min="5" max="180" value="{{ practice_default }}" inputmode="numeric"></label>
@@ -43,7 +45,6 @@
         {% if section.section_label %}<span class="exam-section-label">{{ section.section_label }}</span>{% endif %}
         <div class="exam-section-meta">
           <p class="exam-section-title">{{ section.name_te }} <span class="exam-section-en">{{ section.name_en }}</span></p>
-          <p class="exam-section-marks">{{ section.marks }} M</p>
         </div>
       </div>
       <ul class="exam-chapters">

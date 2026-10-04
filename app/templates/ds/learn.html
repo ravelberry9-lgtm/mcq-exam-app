@@ -27,7 +27,7 @@
   <div id="p-{{ kind }}" role="tabpanel" aria-labelledby="t-{{ kind }}" style="display:flex;flex-direction:column;gap:12px"{% if not panel %} hidden{% endif %}>
     <p class="muted small" style="margin:0">{{ t('learn.prelims_note' if panel else 'learn.mains_note') }}</p>
     {% for p in data.papers if p.is_prelims == panel %}
-      {% if not panel %}<h2 class="label" style="margin:4px 0 0">{{ c.bi(p.paper.name_en, p.paper.name_te) }} · {{ t('common.marks', n=p.paper.total_marks) }}</h2>{% endif %}
+      {% if not panel %}<h2 class="label" style="margin:4px 0 0">{{ c.bi(p.paper.name_en, p.paper.name_te) }}</h2>{% endif %}
       {% for s in p.sections %}
         {% set sec = s.section %}
         {% if s.available %}
@@ -36,7 +36,7 @@
         <div class="card disabled-card" aria-disabled="true">
         {% endif %}
           <div class="row between">
-            <div><h2>{{ c.bi(sec.name_en, sec.name_te) }}</h2><div class="muted small">{{ t('common.marks', n=sec.marks) }}</div></div>
+            <div><h2>{{ c.bi(sec.name_en, sec.name_te) }}</h2></div>
             {% if s.available %}{{ c.tag('ok', t('common.available')) }}{% else %}{{ c.tag('off', t('common.soon')) }}{% endif %}
           </div>
           {% if s.available %}<span class="small muted">{{ t('learn.content_counts', c=s.chapter_count, q=s.question_count) if s.chapter_count else t('common.questions', n=s.question_count) }}</span>{% endif %}

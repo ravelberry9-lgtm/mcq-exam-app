@@ -7,6 +7,8 @@ from flask import (
 )
 from ..db import db
 from ..services import exam_rules, qdisplay
+from ..services.answer_input import parse_choice, parse_confidence, parse_question_id, payload_dict
+from ..services.csrf import token_matches
 from ..models import (
     Exam, ExamPaper, ExamSection, ExamSyllabusItem,
     Question, ExamSession,
@@ -17,6 +19,31 @@ bp = Blueprint("exam_session", __name__)
 
 def _device_id():
     return request.cookies.get("device_id", "anon")
+
+
+# Session URLs are deliberate bearer links: there are no accounts, the id is a random UUID4 (122 bits, not listed anywhere,
+# not guessable), and holding the URL is what lets a learner resume on another browser. Anyone who has the URL can view,
+# answer and submit that session, so the pages are never cached or indexed, and a malformed id is a plain 404.
+@bp.before_request
+def _protect():
+    if request.method == "POST" and not token_matches():
+        if request.path.endswith("/answer"):
+            return jsonify({"error": "missing or invalid CSRF token"}), 400
+        abort(400, "Missing or invalid CSRF token. Reload the page and try again.")
+    sid = (request.view_args or {}).get("session_id")
+    if sid is not None:
+        try:
+            uuid.UUID(sid)
+        except ValueError:
+            abort(404)
+
+
+@bp.after_request
+def _no_store(resp):
+    if request.path.startswith("/exam-session/"):
+        resp.headers["Cache-Control"] = "no-store"
+        resp.headers["X-Robots-Tag"] = "noindex, nofollow"
+    return resp
 
 
 # ── Start an exam session ─────────────────────────────────────────
@@ -37,7 +64,7 @@ def start(slug, paper_num):
         if rules is None:
             abort(403, "The official test is not available: its question count, duration and negative marking "
                        "have not been verified yet. Start an unofficial practice test instead.")
-        count, minutes = rules["question_count"], rules["duration_min"]
+        count, minutes = rules["question_count"], rules["duration_min"]     # official size: its own limits, not the practice cap
     elif mode == "practice":
         try:
             count, minutes = exam_rules.clamp_practice(request.form.get("count"), request.form.get("minutes"))
@@ -58,6 +85,9 @@ def start(slug, paper_num):
     question_ids = exam_rules.pick_questions(per_section, count, seed)
     if not question_ids:
         abort(400, "No answerable questions are mapped to this paper's syllabus yet.")
+    if mode == "official" and len(question_ids) < count:
+        abort(409, f"The verified pattern needs {count} questions but only {len(question_ids)} answerable questions are "
+                   "mapped to this paper. Add content or start an unofficial practice test.")
 
     unofficial = mode != "official"
     session_id = str(uuid.uuid4())
@@ -107,7 +137,8 @@ def take(session_id):
     elapsed_seconds = int(
         (datetime.utcnow() - es.started_at).total_seconds()
     )
-    duration_seconds = es.config.get("duration_min", 150) * 60
+    duration_min, duration_defaulted = exam_rules.session_duration(es.config, len(es.question_ids))
+    duration_seconds = duration_min * 60
     remaining_seconds = max(0, duration_seconds - elapsed_seconds)
 
     return render_template(
@@ -117,6 +148,8 @@ def take(session_id):
         q_idx=q_idx,
         q_total=len(es.question_ids),
         remaining_seconds=remaining_seconds,
+        duration_min=duration_min,
+        duration_defaulted=duration_defaulted,
         answered_count=len(es.answers),
         current_answer=es.answers.get(str(current_qid)),
     )
@@ -130,13 +163,20 @@ def answer(session_id):
     if es.submitted_at:
         return jsonify({"error": "already submitted"}), 400
 
-    payload = request.get_json(force=True, silent=True) or {}
-    qid = str(payload.get("question_id", ""))
-    chosen = (payload.get("chosen") or "").lower()
-    confidence = int(payload.get("confidence") or 0)
-
-    if not qid or chosen not in ("a", "b", "c", "d", "e", ""):
-        return jsonify({"error": "invalid payload"}), 400
+    try:
+        payload = payload_dict(request.get_json(force=True, silent=True))
+        qid_int = parse_question_id(payload.get("question_id"))
+        chosen = parse_choice(payload.get("chosen"), allow_empty=True)
+        confidence = parse_confidence(payload.get("confidence"))
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+    qid = str(qid_int)
+    if qid_int not in {int(x) for x in (es.question_ids or [])}:
+        return jsonify({"error": "this question is not part of the session"}), 400
+    if chosen:
+        question = db.session.get(Question, qid_int)
+        if question is None or qdisplay.option_item(question, chosen) is None:
+            return jsonify({"error": "that option does not exist for this question"}), 400
 
     # Update answers dict (merge, not replace)
     answers = dict(es.answers or {})

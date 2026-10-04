@@ -4,6 +4,7 @@ from sqlalchemy import func
 from datetime import datetime
 from ..db import db
 from ..services import exam_rules
+from ..services.answer_input import parse_choice, parse_confidence, parse_question_id, payload_dict
 from ..models import (
     Subject, Chapter, Question, UserQuestionState,
     Exam, ExamPaper, ExamSection, ExamSyllabusItem, Note,
@@ -149,17 +150,18 @@ def exam_detail(slug):
             "sections": sections_data,
         })
     return render_template("exam.html", exam=exam, papers=papers_data, practice_min=exam_rules.MIN_PRACTICE_QUESTIONS,
-                           practice_max=exam_rules.MAX_SESSION_QUESTIONS, practice_default=exam_rules.DEFAULT_PRACTICE_QUESTIONS)
+                           practice_max=exam_rules.MAX_PRACTICE_QUESTIONS, practice_default=exam_rules.DEFAULT_PRACTICE_QUESTIONS)
 
 
 @bp.route("/api/answer", methods=["POST"])
 def api_answer():
-    payload = request.get_json(force=True, silent=True) or {}
-    qid = payload.get("question_id")
-    chosen = (payload.get("chosen") or "").lower()
-    confidence = int(payload.get("confidence") or 0)
-    if not qid or chosen not in ("a", "b", "c", "d", "e"):
-        return jsonify({"error": "invalid payload"}), 400
+    try:
+        payload = payload_dict(request.get_json(force=True, silent=True))
+        qid = parse_question_id(payload.get("question_id"))
+        chosen = parse_choice(payload.get("chosen"))
+        confidence = parse_confidence(payload.get("confidence"))
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
     q = Question.query.get_or_404(qid)
     correct = chosen == q.correct_answer
 

@@ -67,12 +67,7 @@ def _make_token(pin: str) -> str:
 
 # ── CSRF (session token; checked on every admin POST) ─────────────
 
-def csrf_token() -> str:
-    tok = session.get("_csrf")
-    if not tok:
-        tok = secrets.token_urlsafe(32)
-        session["_csrf"] = tok
-    return tok
+from ..services.csrf import csrf_token, token_matches  # noqa: E402  (shared with the exam blueprint)
 
 
 @bp.app_template_global("csrf_token")
@@ -82,12 +77,9 @@ def _csrf_template_global():
 
 @bp.before_request
 def _csrf_protect():
-    if request.method in ("POST", "PUT", "PATCH", "DELETE"):
-        sent = request.form.get("csrf_token") or request.headers.get("X-CSRF-Token") or ""
-        expected = session.get("_csrf") or ""
-        if not expected or not hmac.compare_digest(sent, expected):
-            from flask import abort
-            abort(400, "Missing or invalid CSRF token")
+    if request.method in ("POST", "PUT", "PATCH", "DELETE") and not token_matches():
+        from flask import abort
+        abort(400, "Missing or invalid CSRF token")
 
 
 # ── login throttle (in memory; resets on restart / per worker) ─────

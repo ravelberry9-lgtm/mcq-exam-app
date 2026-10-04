@@ -193,7 +193,9 @@ def group_chapters(chapters, device_id=None):
         return []
     ids = [c.id for c in chapters]
     note_n = dict(db.session.query(Note.chapter_id, func.count(Note.id)).filter(Note.chapter_id.in_(ids)).group_by(Note.chapter_id).all())
-    q_n = dict(db.session.query(Question.chapter_id, func.count(Question.id)).filter(Question.chapter_id.in_(ids)).group_by(Question.chapter_id).all())
+    # a topic's count is what its Practice page serves: chapter-type questions only (see ``chapter_questions``)
+    q_n = dict(db.session.query(Question.chapter_id, func.count(Question.id))
+               .filter(Question.chapter_id.in_(ids), Question.source_type == "chapter").group_by(Question.chapter_id).all())
     subj = {s.id: s for s in Subject.query.filter(Subject.id.in_({c.subject_id for c in chapters})).all()}
     groups, order = {}, []
     for c in chapters:

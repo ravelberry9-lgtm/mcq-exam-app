@@ -21,7 +21,7 @@ UI = {
     "common.empty": ("Nothing here yet", "ఇక్కడ ఇంకా ఏమీ లేదు"),
     # learn hub
     "learn.title": ("Learn", "నేర్చుకోండి"),
-    "learn.prelims_note": ("Screening test, 150 marks (30 per subject)", "స్క్రీనింగ్ టెస్ట్, 150 మార్కులు (ఒక్కో సబ్జెక్టుకు 30)"),
+    "learn.prelims_note": ("Screening test papers", "స్క్రీనింగ్ టెస్ట్ పేపర్లు"),
     "learn.mains_note": ("Main examination papers", "మెయిన్ పరీక్ష పేపర్లు"),
     "learn.no_content": ("Content not added yet", "కంటెంట్ ఇంకా జోడించలేదు"),
     "learn.continue": ("CONTINUE", "కొనసాగించండి"), "learn.resume": ("Resume", "కొనసాగించు"),

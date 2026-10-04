@@ -34,7 +34,7 @@ def section(section_id):
     groups = svc.with_banks(svc.topics_for_section(sec))
     groups = svc.attach_status(groups, _device_id())
     return render_template("ds/section.html", title_en=sec.name_en, title_te=sec.name_te,
-                           marks=sec.marks, groups=groups)
+                           groups=groups)
 
 
 @bp.route("/subject/<slug>")

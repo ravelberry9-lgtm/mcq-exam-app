@@ -8,7 +8,6 @@
     {{ c.langswitch(lang_pref) }}
   </div>
   <h1>{{ c.bi(title_en, title_te, 'stack') }}</h1>
-  {% if marks %}<div class="sub">{{ t('common.marks', n=marks) }}</div>{% endif %}
 {% endblock %}
 {% block content %}
 {% if not groups %}
