@@ -75,11 +75,14 @@ def reader(subject_slug, chapter_num):
     prev_num = nums[idx - 1] if idx > 0 else None
     next_num = nums[idx + 1] if idx >= 0 and idx < len(nums) - 1 else None
 
+    has_content = any((n.body_en or n.body_te) for n in notes)
+
     return render_template(
         "notes/reader.html",
         subject=subject,
         chapter=chapter,
         notes=notes,
+        has_content=has_content,
         progress_status=progress_status,
         prev_num=prev_num,
         next_num=next_num,

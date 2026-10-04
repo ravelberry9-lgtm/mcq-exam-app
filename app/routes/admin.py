@@ -6,10 +6,10 @@ Phase 3 scope: paste-HTML + save only.
 PIN: 1234 (change via ADMIN_PIN env var).
 Not production-grade — cookie-based session token.
 """
-import hashlib, secrets
+import hashlib, secrets, subprocess, sys, os
 from flask import (
     Blueprint, render_template, request, redirect,
-    url_for, session, flash, current_app
+    url_for, session, flash, current_app, Response
 )
 import bleach
 
@@ -170,3 +170,134 @@ def notes_edit(chapter_id: int):
         subject=subject,
         note=note,
     )
+
+
+# ── One-time seed runner ──────────────────────────────────────────
+
+@bp.route("/seed", methods=["GET", "POST"])
+def seed():
+    """Run seed_exam_group2.py against the live DB and stream output."""
+    guard = _require_auth()
+    if guard:
+        return guard
+
+    if request.method == "GET":
+        return render_template("admin/seed.html")
+
+    # POST — stream the script output back as plain text
+    scripts_dir = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+        "scripts",
+    )
+    script = os.path.join(scripts_dir, "seed_exam_group2.py")
+
+    def generate():
+        yield "Running seed_exam_group2.py ...\n\n"
+        try:
+            proc = subprocess.Popen(
+                [sys.executable, script],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                env={**os.environ},
+            )
+            for line in proc.stdout:
+                yield line
+            proc.wait()
+            yield f"\n\nExit code: {proc.returncode}\n"
+            if proc.returncode == 0:
+                yield "DONE: Seed completed successfully.\n"
+            else:
+                yield "ERROR: Seed exited with errors - see output above.\n"
+        except Exception as exc:
+            yield f"ERROR: {exc}\n"
+
+    return Response(generate(), mimetype="text/plain")
+
+
+@bp.route("/load-content", methods=["GET", "POST"])
+def load_content():
+    """Run scripts/load_content.py — bulk-loads data/content.db into production DB."""
+    guard = _require_auth()
+    if guard:
+        return guard
+
+    if request.method == "GET":
+        return render_template("admin/load_content.html")
+
+    scripts_dir = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+        "scripts",
+    )
+    script = os.path.join(scripts_dir, "load_content.py")
+
+    def generate():
+        yield "Running load_content.py ...\n\n"
+        try:
+            proc = subprocess.Popen(
+                [sys.executable, script],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                env={**os.environ},
+            )
+            for line in proc.stdout:
+                yield line
+            proc.wait()
+            yield f"\n\nExit code: {proc.returncode}\n"
+            if proc.returncode == 0:
+                yield "DONE: Content loaded successfully.\n"
+            else:
+                yield "ERROR: load_content.py exited with errors — see above.\n"
+        except Exception as exc:
+            yield f"ERROR: {exc}\n"
+
+    return Response(generate(), mimetype="text/plain")
+
+
+
+
+@bp.route("/parse-ap-history", methods=["GET", "POST"])
+def parse_ap_history():
+    """
+    Re-parse AP History HTML chapter files from static/notes/AP_History/Chapters/
+    and reload into the live database.
+
+    Use this whenever the HTML chapter files have been updated and deployed —
+    it replaces all ap_history chapters + notes with freshly parsed content.
+    """
+    guard = _require_auth()
+    if guard:
+        return guard
+
+    if request.method == "GET":
+        return render_template("admin/parse_ap_history.html")
+
+    scripts_dir = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+        "scripts",
+    )
+    script = os.path.join(scripts_dir, "parse_ap_history_notes.py")
+
+    def generate():
+        yield "Running parse_ap_history_notes.py --postgres ...\n\n"
+        try:
+            proc = subprocess.Popen(
+                [sys.executable, script, "--postgres"],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                env={**os.environ},
+            )
+            for line in proc.stdout:
+                yield line
+            proc.wait()
+            yield f"\n\nExit code: {proc.returncode}\n"
+            if proc.returncode == 0:
+                yield "DONE: AP History notes parsed and loaded successfully.\n"
+            else:
+                yield "ERROR: parse_ap_history_notes.py exited with errors — see above.\n"
+        except Exception as exc:
+            yield f"ERROR: {exc}\n"
+
+    return Response(generate(), mimetype="text/plain")

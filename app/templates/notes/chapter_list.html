@@ -1,17 +1,17 @@
 {% extends "base.html" %}
-{% block title %}{{ subject.name_te }} · Notes · {{ app_title }}{% endblock %}
+{% block title %}{{ subject.name_te }} &middot; Notes &middot; {{ app_title }}{% endblock %}
 
 {% block content %}
 <div class="page-head">
   <a class="back-link" href="/subjects">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-    విషయాలు · Subjects
+    విషయాలు &middot; Subjects
   </a>
   <h1>
     <span class="bilingual-te">{{ subject.name_te }}</span>
     <span class="bilingual-en">{{ subject.name_en }}</span>
   </h1>
-  <p class="subtitle">అధ్యాయాలు చదవండి · Read chapters</p>
+  <p class="subtitle">అధ్యాయాలు చదవండి &middot; Read chapters</p>
 </div>
 
 <div class="chapter-list">
@@ -24,7 +24,7 @@
     <div class="chapter-num">{{ ch.chapter_num }}</div>
     <div class="chapter-meta">
       <p class="chapter-te">{{ ch.title_te }}</p>
-      <p class="chapter-en">{{ ch.title_en }}{% if note_count %} · {{ note_count }} sections{% endif %}</p>
+      <p class="chapter-en">{{ ch.title_en }}{% if note_count %} &middot; {{ note_count }} sections{% endif %}</p>
     </div>
     <div class="chapter-status-icon" aria-label="{{ status }}">
       {% if status == 'completed' %}
@@ -37,7 +37,7 @@
     </div>
   </a>
   {% else %}
-  <p class="empty">ఈ విషయంలో అధ్యాయాలు లేవు · No chapters for this subject yet.</p>
+  <p class="empty">ఈ విషయంలో అధ్యాయాలు లేవు &middot; No chapters for this subject yet.</p>
   {% endfor %}
 </div>
 

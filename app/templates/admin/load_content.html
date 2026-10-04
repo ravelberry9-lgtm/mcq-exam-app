@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Load Content · Admin · {{ app_title }}{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <h1>📦 Load Content</h1>
+  <p class="subtitle">Bulk-loads <code>data/content.db</code> into the live database.</p>
+</div>
+
+<div style="max-width:640px;margin:2rem auto;">
+  <p>Inserts subjects, chapters, notes (6 257) and questions (6 742) from the
+     migrated content database. The script is idempotent — safe to run multiple times;
+     existing rows are skipped.</p>
+
+  <form method="POST" id="load-form">
+    <button class="primary-btn" type="submit" id="run-btn">▶ Run Load</button>
+  </form>
+
+  <pre id="output" style="margin-top:1.5rem;background:var(--bg-2,#1e1e2e);color:var(--text,#cdd6f4);
+       padding:1rem;border-radius:8px;white-space:pre-wrap;min-height:4rem;display:none;font-size:.85rem;"></pre>
+</div>
+
+<script>
+document.getElementById('load-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('run-btn');
+  const out = document.getElementById('output');
+  btn.disabled = true;
+  btn.textContent = '⏳ Running… (may take ~60 s)';
+  out.style.display = 'block';
+  out.textContent = '';
+
+  const resp = await fetch(window.location.href, {method:'POST', credentials:'same-origin'});
+  const reader = resp.body.getReader();
+  const decoder = new TextDecoder();
+  while (true) {
+    const {done, value} = await reader.read();
+    if (done) break;
+    out.textContent += decoder.decode(value);
+    out.scrollTop = out.scrollHeight;
+  }
+  btn.textContent = '✅ Done';
+});
+</script>
+{% endblock %}

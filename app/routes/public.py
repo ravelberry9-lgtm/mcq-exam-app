@@ -5,7 +5,7 @@ from datetime import datetime
 from ..db import db
 from ..models import (
     Subject, Chapter, Question, UserQuestionState,
-    Exam, ExamPaper, ExamSection, ExamSyllabusItem,
+    Exam, ExamPaper, ExamSection, ExamSyllabusItem, Note,
 )
 
 bp = Blueprint("public", __name__)
@@ -58,7 +58,29 @@ def subjects():
 
 @bp.route("/subject/<slug>")
 def subject_detail(slug):
-    return redirect(url_for("public.practice", subject_slug=slug))
+    subject = Subject.query.filter_by(slug=slug).first_or_404()
+    chapters = (
+        Chapter.query
+        .filter_by(subject_id=subject.id)
+        .order_by(Chapter.chapter_num)
+        .all()
+    )
+    chapter_data = []
+    for ch in chapters:
+        q_count = Question.query.filter_by(chapter_id=ch.id).count()
+        note_count = Note.query.filter_by(chapter_id=ch.id).count()
+        chapter_data.append({
+            "chapter": ch,
+            "q_count": q_count,
+            "note_count": note_count,
+        })
+    total_q = Question.query.filter_by(subject_id=subject.id).count()
+    return render_template(
+        "subject_detail.html",
+        subject=subject,
+        chapters=chapter_data,
+        total_q=total_q,
+    )
 
 
 @bp.route("/practice/<subject_slug>")
