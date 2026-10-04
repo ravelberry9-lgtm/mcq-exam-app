@@ -25,6 +25,8 @@ def app():
 
 @pytest.fixture()
 def client(app):
+    from tests.conftest import CsrfClient
+    app.test_client_class = CsrfClient
     return app.test_client()
 
 
@@ -56,6 +58,8 @@ def seeded_app(app):
 
 @pytest.fixture()
 def seeded_client(seeded_app):
+    from tests.conftest import CsrfClient
+    seeded_app.test_client_class = CsrfClient
     return seeded_app.test_client()
 
 

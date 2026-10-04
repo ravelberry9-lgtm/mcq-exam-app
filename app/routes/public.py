@@ -88,7 +88,7 @@ def subject_detail(slug):
 @bp.route("/practice/<subject_slug>")
 def practice(subject_slug):
     subject = Subject.query.filter_by(slug=subject_slug).first_or_404()
-    q_idx = int(request.args.get("i", 1))
+    q_idx = request.args.get("i", 1, type=int)
     questions = Question.query.filter_by(subject_id=subject.id).order_by(Question.id).all()
     q_total = len(questions)
     if q_total == 0:

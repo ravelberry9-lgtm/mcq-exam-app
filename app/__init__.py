@@ -17,6 +17,9 @@ def create_app(config_class: type = Config) -> Flask:
 
     db.init_app(app)
 
+    from .services.csrf import init_csrf
+    init_csrf(app)
+
     from .services.learn import render_note_html
 
     @app.template_filter("note_html")

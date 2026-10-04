@@ -6,8 +6,9 @@
   function cookie(name) { var m = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)")); return m ? decodeURIComponent(m[1]) : null; }
   function setCookie(name, value) { document.cookie = name + "=" + encodeURIComponent(value) + "; path=/; max-age=31536000; SameSite=Lax"; }
   function announce(msg) { var l = document.getElementById("live"); if (!l) return; l.textContent = ""; setTimeout(function () { l.textContent = msg; }, 20); }
+  function csrf() { var m = document.querySelector('meta[name="csrf-token"]'); return m ? m.content : ""; }
   function post(url, body) {
-    return fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body || {}) })
+    return fetch(url, { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf() }, body: JSON.stringify(body || {}) })
       .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); });
   }
 

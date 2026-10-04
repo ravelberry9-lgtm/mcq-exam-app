@@ -1,6 +1,6 @@
 """Exam session routes: start, take, answer, submit, results."""
 import uuid
-from datetime import datetime
+from datetime import datetime, timedelta
 from flask import (
     Blueprint, render_template, request, jsonify,
     redirect, url_for, abort
@@ -8,7 +8,6 @@ from flask import (
 from ..db import db
 from ..services import exam_rules, qdisplay
 from ..services.answer_input import parse_choice, parse_confidence, parse_question_id, payload_dict
-from ..services.csrf import token_matches
 from ..models import (
     Exam, ExamPaper, ExamSection, ExamSyllabusItem,
     Question, ExamSession,
@@ -26,16 +25,50 @@ def _device_id():
 # answer and submit that session, so the pages are never cached or indexed, and a malformed id is a plain 404.
 @bp.before_request
 def _protect():
-    if request.method == "POST" and not token_matches():
-        if request.path.endswith("/answer"):
-            return jsonify({"error": "missing or invalid CSRF token"}), 400
-        abort(400, "Missing or invalid CSRF token. Reload the page and try again.")
     sid = (request.view_args or {}).get("session_id")
     if sid is not None:
         try:
             uuid.UUID(sid)
         except ValueError:
             abort(404)
+
+
+# The server owns the clock. A session ends at started_at + its duration (plus a short grace for network latency and the
+# last click); after that no answer is accepted, and the session is scored and closed by whichever request notices first
+# (opening the page, answering, or the results page) - the browser timer is only a display.
+ANSWER_GRACE_SECONDS = 5
+
+
+def _deadline(es):
+    minutes, _ = exam_rules.session_duration(es.config or {}, len(es.question_ids or []))
+    return es.started_at + timedelta(minutes=minutes, seconds=ANSWER_GRACE_SECONDS)
+
+
+def _expired(es):
+    return es.submitted_at is None and datetime.utcnow() > _deadline(es)
+
+
+def _score(es):
+    in_session = {str(x) for x in (es.question_ids or [])}
+    score = 0
+    for qid_str, chosen in (es.answers or {}).items():
+        if qid_str not in in_session:
+            continue
+        q = db.session.get(Question, int(qid_str))
+        if q and chosen == q.correct_answer:
+            score += 1
+    return score
+
+
+def _finalize(es, at=None):
+    """Score and close a session. Idempotent. A timed-out session is closed at its deadline, not at the moment someone looks."""
+    if es.submitted_at:
+        return
+    nominal_end = _deadline(es) - timedelta(seconds=ANSWER_GRACE_SECONDS)       # started_at + duration
+    es.submitted_at = min(at or datetime.utcnow(), nominal_end)
+    es.score = _score(es)
+    es.total = len(es.question_ids)
+    db.session.commit()
 
 
 @bp.after_request
@@ -129,7 +162,11 @@ def take(session_id):
     if es.submitted_at:
         return redirect(url_for("exam_session.results", session_id=session_id))
 
-    q_idx = int(request.args.get("q", 1))
+    if _expired(es):
+        _finalize(es, at=_deadline(es) - timedelta(seconds=ANSWER_GRACE_SECONDS))
+        return redirect(url_for("exam_session.results", session_id=session_id))
+
+    q_idx = request.args.get("q", 1, type=int)          # a non-number falls back to question 1
     q_idx = max(1, min(q_idx, len(es.question_ids)))
     current_qid = es.question_ids[q_idx - 1]
     question = Question.query.get_or_404(current_qid)
@@ -162,6 +199,9 @@ def answer(session_id):
     es = ExamSession.query.get_or_404(session_id)
     if es.submitted_at:
         return jsonify({"error": "already submitted"}), 400
+    if _expired(es):
+        _finalize(es, at=_deadline(es) - timedelta(seconds=ANSWER_GRACE_SECONDS))
+        return jsonify({"error": "time is up; the session has been submitted", "expired": True}), 409
 
     try:
         payload = payload_dict(request.get_json(force=True, silent=True))
@@ -204,17 +244,7 @@ def submit(session_id):
     if es.submitted_at:
         return redirect(url_for("exam_session.results", session_id=session_id))
 
-    # Score it
-    score = 0
-    for qid_str, chosen in (es.answers or {}).items():
-        q = Question.query.get(int(qid_str))
-        if q and chosen == q.correct_answer:
-            score += 1
-
-    es.submitted_at = datetime.utcnow()
-    es.score = score
-    es.total = len(es.question_ids)
-    db.session.commit()
+    _finalize(es)
     return redirect(url_for("exam_session.results", session_id=session_id))
 
 
@@ -223,6 +253,8 @@ def submit(session_id):
 @bp.route("/exam-session/<session_id>/results")
 def results(session_id):
     es = ExamSession.query.get_or_404(session_id)
+    if _expired(es):
+        _finalize(es, at=_deadline(es) - timedelta(seconds=ANSWER_GRACE_SECONDS))
     if not es.submitted_at:
         return redirect(url_for("exam_session.take", session_id=session_id))
 

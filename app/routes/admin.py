@@ -65,21 +65,7 @@ def _make_token(pin: str) -> str:
     return hashlib.sha256(f"admin:{pin}".encode()).hexdigest()
 
 
-# ── CSRF (session token; checked on every admin POST) ─────────────
-
-from ..services.csrf import csrf_token, token_matches  # noqa: E402  (shared with the exam blueprint)
-
-
-@bp.app_template_global("csrf_token")
-def _csrf_template_global():
-    return csrf_token()
-
-
-@bp.before_request
-def _csrf_protect():
-    if request.method in ("POST", "PUT", "PATCH", "DELETE") and not token_matches():
-        from flask import abort
-        abort(400, "Missing or invalid CSRF token")
+# ── CSRF: enforced app-wide by app.services.csrf.init_csrf (token also used by every admin form) ──
 
 
 # ── login throttle (in memory; resets on restart / per worker) ─────

@@ -25,6 +25,8 @@ def app():
 
 @pytest.fixture()
 def client(app):
+    from tests.conftest import CsrfClient
+    app.test_client_class = CsrfClient
     return app.test_client()
 
 

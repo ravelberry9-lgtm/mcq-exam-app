@@ -2,6 +2,12 @@
 (function () {
   "use strict";
 
+  // CSRF token rendered into every page head; sent on every state-changing fetch
+  function csrfHeaders(extra) {
+    const m = document.querySelector('meta[name="csrf-token"]');
+    return Object.assign({ "X-CSRF-Token": m ? m.content : "" }, extra || {});
+  }
+
   // ── Device id (cookie, set once) ───────────────────────────
   function ensureDeviceId() {
     if (!document.cookie.match(/(?:^|; )device_id=/)) {
@@ -83,7 +89,7 @@
       try {
         res = await fetch("/api/answer", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: csrfHeaders({ "Content-Type": "application/json" }),
           body: JSON.stringify({
             question_id: parseInt(card.dataset.questionId, 10),
             chosen, confidence,

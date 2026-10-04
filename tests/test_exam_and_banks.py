@@ -627,3 +627,240 @@ def test_real_data_topic_counts_equal_served_questions(c, real):
         for grp in svc.topics_for_section(sec):
             for t in grp["topics"]:
                 assert t["question_count"] == len(svc.chapter_questions(t["chapter"].id))
+
+
+# ══ Review round 3: server-side timer, app-wide CSRF, typed query parsing ═════════════════════════════════
+from datetime import timedelta
+from app.models import UserQuestionState, Note
+
+
+def age(es, seconds):
+    """Pretend the session started ``seconds`` ago."""
+    es.started_at = datetime.utcnow() - timedelta(seconds=seconds)
+    db.session.commit()
+
+
+def answer_ok(c, sid, qid, key):
+    return post_json(c, f"/exam-session/{sid}/answer", {"question_id": qid, "chosen": key})
+
+
+def test_answer_after_the_deadline_is_refused_and_the_session_is_closed_and_scored(c, real):
+    sid, es = new_session(c, "5")
+    q0 = db.session.get(Question, es.question_ids[0]); q1 = db.session.get(Question, es.question_ids[1])
+    assert answer_ok(c, sid, q0.id, q0.correct_answer).status_code == 200            # before the deadline
+    age(es, es.config["duration_min"] * 60 + exam_session_grace() + 2)
+    r = answer_ok(c, sid, q1.id, q1.correct_answer)
+    assert r.status_code == 409 and r.get_json()["expired"] is True
+    db.session.expire_all()
+    done = db.session.get(ExamSession, sid)
+    assert done.submitted_at is not None and done.score == 1 and done.total == 5
+    assert set(done.answers) == {str(q0.id)}                                         # the late answer was not stored
+    assert done.submitted_at == done.started_at + timedelta(minutes=done.config["duration_min"])   # closed at the deadline
+
+
+def exam_session_grace():
+    from app.routes import exam_session
+    return exam_session.ANSWER_GRACE_SECONDS
+
+
+def test_answer_inside_the_grace_window_is_still_accepted(c, real):
+    sid, es = new_session(c, "5")
+    age(es, es.config["duration_min"] * 60 + 1)
+    q = db.session.get(Question, es.question_ids[0])
+    assert answer_ok(c, sid, q.id, q.correct_answer).status_code == 200
+
+
+def test_opening_an_expired_session_closes_it_and_shows_results(c, real):
+    sid, es = new_session(c, "5")
+    q = db.session.get(Question, es.question_ids[0])
+    answer_ok(c, sid, q.id, q.correct_answer)
+    age(es, es.config["duration_min"] * 60 + 60)
+    r = c.get(f"/exam-session/{sid}")
+    assert r.status_code == 302 and r.headers["Location"].endswith(f"/exam-session/{sid}/results")
+    db.session.expire_all()
+    assert db.session.get(ExamSession, sid).score == 1
+    assert "Unofficial practice test" in c.get(f"/exam-session/{sid}/results").get_data(as_text=True)
+
+
+def test_results_url_of_an_expired_unsubmitted_session_finalises_it(c, real):
+    sid, es = new_session(c, "5")
+    age(es, es.config["duration_min"] * 60 + 60)
+    assert c.get(f"/exam-session/{sid}/results").status_code == 200
+    db.session.expire_all()
+    assert db.session.get(ExamSession, sid).submitted_at is not None
+
+
+def test_a_late_submit_is_recorded_at_the_deadline_not_at_the_late_time(c, real):
+    sid, es = new_session(c, "5")
+    age(es, es.config["duration_min"] * 60 + 3000)
+    c.post(f"/exam-session/{sid}/submit")
+    db.session.expire_all()
+    done = db.session.get(ExamSession, sid)
+    assert done.submitted_at == done.started_at + timedelta(minutes=done.config["duration_min"])
+
+
+def test_a_session_still_in_time_is_untouched_by_reads(c, real):
+    sid, es = new_session(c, "5")
+    for url in (f"/exam-session/{sid}", f"/exam-session/{sid}?q=2"):
+        assert c.get(url).status_code == 200
+    assert c.get(f"/exam-session/{sid}/results").status_code == 302                 # not submitted yet -> back to the test
+    db.session.expire_all()
+    assert db.session.get(ExamSession, sid).submitted_at is None
+
+
+def test_expiry_uses_the_labelled_default_when_duration_is_missing(c, real):
+    sid, es = new_session(c, "12")
+    es.config = {k: v for k, v in es.config.items() if k != "duration_min"}
+    db.session.commit()
+    age(es, 12 * 60 + 2)                                              # inside the 12 minute default plus grace
+    assert c.get(f"/exam-session/{sid}").status_code == 200
+    age(es, 12 * 60 + exam_session_grace() + 5)
+    assert c.get(f"/exam-session/{sid}").status_code == 302
+
+
+def test_score_ignores_stored_answers_for_questions_outside_the_session(c, real):
+    sid, es = new_session(c, "5")
+    out = outsider(es)
+    es.answers = {str(out.id): out.correct_answer}                   # e.g. written by an older build
+    db.session.commit()
+    c.post(f"/exam-session/{sid}/submit")
+    db.session.expire_all()
+    assert db.session.get(ExamSession, sid).score == 0
+
+
+@pytest.mark.parametrize("q", ["abc", "", "1.5", "-4", "0", "99999", "%00", "٣"])
+def test_non_numeric_or_out_of_range_q_never_500s(c, real, q):
+    sid, es = new_session(c, "5")
+    r = c.get(f"/exam-session/{sid}?q={q}")
+    assert r.status_code == 200
+    m = re.search(r"Q (\d+) /", re.sub(r"\s+", " ", soup(r).get_text(" ")))
+    assert m and 1 <= int(m.group(1)) <= 5
+
+
+def test_q_abc_shows_question_one_and_legacy_practice_i_abc_does_not_500(c, real):
+    sid, es = new_session(c, "5")
+    assert "Q 1 /" in re.sub(r"\s+", " ", soup(c.get(f"/exam-session/{sid}?q=abc")).get_text(" "))
+    assert c.get("/practice/indian_history?i=abc").status_code == 200
+
+
+import re
+from flask import Flask
+
+
+def write_rules(app):
+    """Every route that accepts a state-changing method, except the static files route."""
+    from app.services.csrf import UNSAFE
+    out = []
+    for rule in app.url_map.iter_rules():
+        if rule.endpoint == "static" or not (rule.methods & set(UNSAFE)):
+            continue
+        out.append(rule)
+    return out
+
+
+def fill(rule):
+    vals = {}
+    for arg, conv in rule._converters.items():
+        vals[arg] = 1 if conv.__class__.__name__ == "IntegerConverter" else ("11111111-1111-4111-8111-111111111111" if arg == "session_id" else "x")
+    return rule.build(vals)[1]
+
+
+# The reviewed inventory of state-changing routes. A new route fails this test until someone reviews it and adds it here.
+WRITE_INVENTORY = {
+    "/api/answer", "/settings", "/exam/<slug>/paper/<int:paper_num>/start", "/exam-session/<session_id>/answer",
+    "/exam-session/<session_id>/submit", "/learn/api/topic/<int:chapter_id>/section",
+    "/notes/api/progress/<int:chapter_id>/complete", "/notes/api/progress/<int:chapter_id>/open",
+    "/plan/create", "/plan/api/<int:plan_id>/pause", "/plan/api/<int:plan_id>/resume",
+    "/admin/login", "/admin/logout", "/admin/notes/<int:chapter_id>/edit", "/admin/seed", "/admin/load-content/preview",
+    "/admin/load-content/apply", "/admin/load-content/restore", "/admin/parse-ap-history/preview", "/admin/parse-ap-history/apply",
+}
+
+
+def test_inventory_of_state_changing_routes_is_reviewed(app):
+    assert {r.rule for r in write_rules(app)} == WRITE_INVENTORY
+
+
+def test_every_state_changing_route_rejects_a_request_without_a_token(app, client):
+    client.auto_csrf = False
+    for rule in write_rules(app):
+        url = fill(rule)
+        r = client.post(url, data=json.dumps({"question_id": 1, "chosen": "a"}), content_type="application/json")
+        assert r.status_code == 400, (rule.rule, r.status_code)
+        r = client.post(url, data={"csrf_token": "wrong"})
+        assert r.status_code == 400, (rule.rule, "wrong token", r.status_code)
+    assert UserQuestionState.query.count() == 0
+
+
+def test_api_and_form_failures_use_the_right_error_shape(c, real):
+    c.auto_csrf = False
+    r = c.post("/api/answer", data=json.dumps({"question_id": 1, "chosen": "a"}), content_type="application/json")
+    assert r.status_code == 400 and "CSRF" in r.get_json()["error"]
+    r = c.post("/settings", data={"lang": "te"})
+    assert r.status_code == 400 and "CSRF" in r.get_data(as_text=True)
+
+
+def page_token(c, url="/learn/"):
+    return soup(c.get(url)).select_one('meta[name="csrf-token"]')["content"]
+
+
+def test_learn_answer_flow_with_the_page_token(c, real):
+    c.auto_csrf = False
+    q = Question.query.filter(Question.chapter_id.isnot(None)).first()
+    tok = page_token(c, "/learn/subject/indian_history")
+    body = json.dumps({"question_id": q.id, "chosen": q.correct_answer, "confidence": 3})
+    assert c.post("/api/answer", data=body, content_type="application/json").status_code == 400
+    assert UserQuestionState.query.count() == 0                                      # nothing written without a token
+    r = c.post("/api/answer", data=body, content_type="application/json", headers={"X-CSRF-Token": tok})
+    assert r.status_code == 200 and UserQuestionState.query.count() == 1
+
+
+def test_a_token_from_another_session_is_rejected(c, real, app):
+    c.auto_csrf = False
+    other = app.test_client(); other.get("/learn/")
+    foreign = page_token(other)
+    page_token(c)
+    r = c.post("/api/answer", data=json.dumps({"question_id": 1, "chosen": "a"}), content_type="application/json",
+               headers={"X-CSRF-Token": foreign})
+    assert r.status_code == 400
+
+
+def test_other_legacy_writes_work_with_the_page_token(c, real):
+    c.auto_csrf = False
+    tok = page_token(c, "/settings")
+    ch = Chapter.query.first()
+    H = {"X-CSRF-Token": tok}
+    assert c.post("/settings", data={"lang": "en", "csrf_token": tok}).status_code == 302
+    assert c.post(f"/notes/api/progress/{ch.id}/open", headers=H).status_code == 200
+    assert c.post(f"/notes/api/progress/{ch.id}/complete", headers=H).status_code == 200
+    n = Note.query.filter_by(chapter_id=ch.id).first()
+    if n:
+        assert post_json_h(c, f"/learn/api/topic/{ch.id}/section", {"section": n.section_num}, H).status_code == 200
+    assert c.post("/plan/create", data={"name": "p", "csrf_token": tok}).status_code == 302
+
+
+def post_json_h(c, url, payload, headers):
+    return c.post(url, data=json.dumps(payload), content_type="application/json", headers=headers)
+
+
+@pytest.mark.parametrize("url", ["/", "/learn/", "/learn/subject/indian_history", "/settings", "/plan/new", "/exam/appsc_group_2"])
+def test_pages_expose_the_token_for_scripts_and_forms(c, real, url):
+    html = soup(c.get(url))
+    assert html.select_one('meta[name="csrf-token"]') or html.select_one('input[name="csrf_token"]'), url
+
+
+def test_scripts_send_the_token_on_every_write():
+    for js in ("static/app.js", "static/ds.js"):
+        assert "X-CSRF-Token" in open(js, encoding="utf-8").read(), js
+    for tpl in ("app/templates/notes/reader.html", "app/templates/exam_session/take.html"):
+        text = open(tpl, encoding="utf-8").read()
+        assert text.count("X-CSRF-Token") >= text.count('method: "POST"'), tpl
+
+
+def test_every_form_in_the_templates_carries_a_token():
+    import glob
+    for path in glob.glob("app/templates/**/*.html", recursive=True):
+        text = open(path, encoding="utf-8").read()
+        forms = re.findall(r"<form\b[^>]*>(.*?)</form>", text, flags=re.S | re.I)
+        for f in re.finditer(r"<form\b([^>]*)>(.*?)</form>", text, flags=re.S | re.I):
+            if re.search(r'method\s*=\s*["\']?post', f.group(1), re.I):
+                assert "csrf_token" in f.group(2), (path, f.group(1)[:80])

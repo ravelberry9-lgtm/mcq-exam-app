@@ -9,6 +9,7 @@
 </div>
 
 <form class="plan-form" action="{{ url_for('study_plan.create') }}" method="POST">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
   <div class="form-group">
     <label for="name">Plan name</label>
     <input type="text" id="name" name="name"

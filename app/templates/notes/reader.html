@@ -97,7 +97,7 @@
     btn.textContent = "Saving…";
     fetch("/notes/api/progress/" + chapterId + "/complete", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "X-CSRF-Token": "{{ csrf_token() }}" },
       credentials: "same-origin",
     })
       .then(function (r) { return r.json(); })
@@ -121,6 +121,7 @@
   if (chapterId) {
     fetch("/notes/api/progress/" + chapterId + "/open", {
       method: "POST",
+      headers: { "X-CSRF-Token": "{{ csrf_token() }}" },
       credentials: "same-origin",
     }).catch(function () {});
   }

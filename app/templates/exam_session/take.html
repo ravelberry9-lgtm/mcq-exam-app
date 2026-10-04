@@ -146,6 +146,7 @@
       credentials: "same-origin",
       body: JSON.stringify({ question_id: qid, chosen: chosen }),
     }).then(function (r) { return r.json(); }).then(function (data) {
+      if (data.expired) { window.location.reload(); return; }      // the server closed the session: show the results
       if (data.answered_count !== undefined) {
         document.querySelector(".exam-progress-label").textContent =
           data.answered_count + " / " + {{ q_total }} + " answered";

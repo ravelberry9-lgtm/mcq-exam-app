@@ -8,6 +8,7 @@
 </div>
 
 <form action="/settings" method="post" class="settings-form">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
   <fieldset class="settings-group">
     <legend>భాష · Language</legend>
     <p class="hint">Choose what shows on each question, note, and option.</p>

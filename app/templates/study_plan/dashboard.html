@@ -76,6 +76,7 @@
 
 <div class="plan-actions">
   <form action="{{ url_for('study_plan.pause_plan', plan_id=plan.id) }}" method="POST" style="display:inline">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <button type="submit" class="btn-secondary">Pause plan</button>
   </form>
   <a class="btn-secondary" href="{{ url_for('study_plan.new') }}">New plan</a>
