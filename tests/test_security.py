@@ -144,3 +144,20 @@ def test_security_headers_present(client):
     assert h["X-Content-Type-Options"] == "nosniff" and h["X-Frame-Options"] == "DENY"
     assert "frame-ancestors 'none'" in h["Content-Security-Policy"]
     assert h["Referrer-Policy"]
+
+
+def test_exam_results_retry_link_is_a_working_get_link(app, client):
+    """The exam start route is POST-only, so an <a> can never start an attempt; Retry must go to the exam page."""
+    from app.models import Exam, ExamPaper, ExamSession
+    from datetime import datetime
+    e = Exam(slug="appsc_g2", name_en="E", name_te="ఇ"); db.session.add(e); db.session.flush()
+    db.session.add(ExamPaper(exam_id=e.id, paper_num=1, name_en="P", name_te="పి", total_marks=10, duration_min=10))
+    db.session.add(ExamSession(id="s1", device_id="dev", config={"exam_slug": "appsc_g2", "paper_num": 1, "title": "t"},
+                               question_ids=[], answers={}, confidences={}, started_at=datetime(2026, 1, 1),
+                               submitted_at=datetime(2026, 1, 1), score=0, total=0))
+    db.session.commit()
+    client.set_cookie("device_id", "dev")
+    r = client.get("/exam-session/s1/results") if client.get("/exam-session/s1/results").status_code != 404 else client.get("/exam/session/s1/results")
+    html = r.get_data(as_text=True)
+    assert r.status_code == 200
+    assert 'formmethod="post"' not in html

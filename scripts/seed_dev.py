@@ -1,5 +1,5 @@
 """
-Seed dev data — all 11 v3 subjects, sample chapters, sample bilingual
+Seed dev data â all 11 v3 subjects, sample chapters, sample bilingual
 questions, nav items. Idempotent: re-running upserts by slug.
 
 Run:
@@ -14,55 +14,55 @@ from app.db import db
 from app.models import Subject, Chapter, Question, NavItem
 
 
-# All 11 subjects per REBUILD_PLAN_v3.md §4
+# All 11 subjects per REBUILD_PLAN_v3.md Â§4
 SUBJECTS = [
-    ("indian_history",      "Indian History",       "భారత చరిత్ర",                  1),
-    ("indian_constitution", "Indian Constitution",  "భారత రాజ్యాంగం",                2),
-    ("ap_history",          "AP Social & Cultural History", "ఆంధ్రప్రదేశ్ చరిత్ర",   3),
-    ("indian_geography",    "Indian Geography",     "భారత భూగోళశాస్త్రం",            4),
-    ("ap_geography",        "AP Geography",         "ఆంధ్రప్రదేశ్ భూగోళశాస్త్రం",     5),
-    ("indian_economy",      "Indian Economy",       "భారత ఆర్థిక వ్యవస్థ",           6),
-    ("ap_economy",          "AP Economy",           "ఆంధ్రప్రదేశ్ ఆర్థిక వ్యవస్థ",    7),
-    ("science_technology",  "Science & Technology", "సైన్స్ & సాంకేతికత",            8),
-    ("indian_society",      "Indian Society",       "భారత సమాజం",                   9),
-    ("mental_ability",      "Mental Ability",       "మానసిక సామర్థ్యం",             10),
-    ("current_affairs",     "Current Affairs",      "ప్రస్తుత వ్యవహారాలు",          11),
+    ("indian_history",      "Indian History",       "à°­à°¾à°°à°¤ à°à°°à°¿à°¤à±à°°",                  1),
+    ("indian_constitution", "Indian Constitution",  "à°­à°¾à°°à°¤ à°°à°¾à°à±à°¯à°¾à°à°à°",                2),
+    ("ap_history",          "AP Social & Cultural History", "à°à°à°§à±à°°à°ªà±à°°à°¦à±à°¶à± à°à°°à°¿à°¤à±à°°",   3),
+    ("indian_geography",    "Indian Geography",     "à°­à°¾à°°à°¤ à°­à±à°à±à°³à°¶à°¾à°¸à±à°¤à±à°°à°",            4),
+    ("ap_geography",        "AP Geography",         "à°à°à°§à±à°°à°ªà±à°°à°¦à±à°¶à± à°­à±à°à±à°³à°¶à°¾à°¸à±à°¤à±à°°à°",     5),
+    ("indian_economy",      "Indian Economy",       "à°­à°¾à°°à°¤ à°à°°à±à°¥à°¿à° à°µà±à°¯à°µà°¸à±à°¥",           6),
+    ("ap_economy",          "AP Economy",           "à°à°à°§à±à°°à°ªà±à°°à°¦à±à°¶à± à°à°°à±à°¥à°¿à° à°µà±à°¯à°µà°¸à±à°¥",    7),
+    ("science_technology",  "Science & Technology", "à°¸à±à°¨à±à°¸à± & à°¸à°¾à°à°à±à°¤à°¿à°à°¤",            8),
+    ("indian_society",      "Indian Society",       "à°­à°¾à°°à°¤ à°¸à°®à°¾à°à°",                   9),
+    ("mental_ability",      "Mental Ability",       "à°®à°¾à°¨à°¸à°¿à° à°¸à°¾à°®à°°à±à°¥à±à°¯à°",             10),
+    ("current_affairs",     "Current Affairs",      "à°ªà±à°°à°¸à±à°¤à±à°¤ à°µà±à°¯à°µà°¹à°¾à°°à°¾à°²à±",          11),
 ]
 
 # subject_slug -> [(chapter_num, title_en, title_te)]
 CHAPTERS = {
     "indian_history": [
-        (1, "Indus Valley Civilization", "సింధు నాగరికత"),
-        (2, "Mauryan Empire", "మౌర్య సామ్రాజ్యం"),
+        (1, "Indus Valley Civilization", "à°¸à°¿à°à°§à± à°¨à°¾à°à°°à°¿à°à°¤"),
+        (2, "Mauryan Empire", "à°®à±à°°à±à°¯ à°¸à°¾à°®à±à°°à°¾à°à±à°¯à°"),
     ],
     "indian_constitution": [
-        (1, "Preamble", "ప్రవేశిక"),
-        (2, "Fundamental Rights", "ప్రాథమిక హక్కులు"),
-        (3, "Directive Principles", "ఆదేశక సూత్రాలు"),
+        (1, "Preamble", "à°ªà±à°°à°µà±à°¶à°¿à°"),
+        (2, "Fundamental Rights", "à°ªà±à°°à°¾à°¥à°®à°¿à° à°¹à°à±à°à±à°²à±"),
+        (3, "Directive Principles", "à°à°¦à±à°¶à° à°¸à±à°¤à±à°°à°¾à°²à±"),
     ],
     "ap_history": [
-        (1, "Satavahanas & Ikshvakus", "శాతవాహనులు & ఇక్ష్వాకులు"),
+        (1, "Satavahanas & Ikshvakus", "à°¶à°¾à°¤à°µà°¾à°¹à°¨à±à°²à± & à°à°à±à°·à±à°µà°¾à°à±à°²à±"),
     ],
     "indian_geography": [
-        (1, "Location & Physiography", "స్థానం & భౌతిక లక్షణాలు"),
+        (1, "Location & Physiography", "à°¸à±à°¥à°¾à°¨à° & à°­à±à°¤à°¿à° à°²à°à±à°·à°£à°¾à°²à±"),
     ],
     "ap_geography": [
-        (1, "Location & Physical Setting of AP", "ఆంధ్రప్రదేశ్ స్థానం"),
+        (1, "Location & Physical Setting of AP", "à°à°à°§à±à°°à°ªà±à°°à°¦à±à°¶à± à°¸à±à°¥à°¾à°¨à°"),
     ],
     "indian_economy": [
-        (1, "National Income", "జాతీయ ఆదాయం"),
+        (1, "National Income", "à°à°¾à°¤à±à°¯ à°à°¦à°¾à°¯à°"),
     ],
     "ap_economy": [
-        (1, "AP GSDP & Sectoral Contribution", "ఆంధ్రప్రదేశ్ GSDP"),
+        (1, "AP GSDP & Sectoral Contribution", "à°à°à°§à±à°°à°ªà±à°°à°¦à±à°¶à± GSDP"),
     ],
     "science_technology": [
-        (1, "Space Technology", "అంతరిక్ష సాంకేతికత"),
+        (1, "Space Technology", "à°à°à°¤à°°à°¿à°à±à°· à°¸à°¾à°à°à±à°¤à°¿à°à°¤"),
     ],
     "indian_society": [
-        (1, "Caste, Class & Family", "కులం, వర్గం, కుటుంబం"),
+        (1, "Caste, Class & Family", "à°à±à°²à°, à°µà°°à±à°à°, à°à±à°à±à°à°¬à°"),
     ],
     "mental_ability": [
-        (1, "Number Series", "సంఖ్యా శ్రేణి"),
+        (1, "Number Series", "à°¸à°à°à±à°¯à°¾ à°¶à±à°°à±à°£à°¿"),
     ],
     "current_affairs": [],  # rolling, no chapters
 }
@@ -72,56 +72,56 @@ QUESTIONS = [
     (
         "indian_constitution", 2,
         "In which part of the Indian Constitution are the Fundamental Rights enshrined?",
-        "భారత రాజ్యాంగంలో ప్రాథమిక హక్కులు ఏ భాగంలో ఉన్నాయి?",
+        "à°­à°¾à°°à°¤ à°°à°¾à°à±à°¯à°¾à°à°à°à°²à± à°ªà±à°°à°¾à°¥à°®à°¿à° à°¹à°à±à°à±à°²à± à° à°­à°¾à°à°à°²à± à°à°¨à±à°¨à°¾à°¯à°¿?",
         {"a": "Part II", "b": "Part III", "c": "Part IV", "d": "Part V"},
-        {"a": "భాగం II", "b": "భాగం III", "c": "భాగం IV", "d": "భాగం V"},
+        {"a": "à°­à°¾à°à° II", "b": "à°­à°¾à°à° III", "c": "à°­à°¾à°à° IV", "d": "à°­à°¾à°à° V"},
         "b",
         "Articles 12 to 35 in Part III of the Constitution guarantee six categories of fundamental rights.",
-        "రాజ్యాంగంలోని భాగం IIIలోని అధికరణలు 12 నుండి 35 వరకు ఆరు రకాల ప్రాథమిక హక్కులను హామీ ఇస్తాయి.",
+        "à°°à°¾à°à±à°¯à°¾à°à°à°à°²à±à°¨à°¿ à°­à°¾à°à° IIIà°²à±à°¨à°¿ à°à°§à°¿à°à°°à°£à°²à± 12 à°¨à±à°à°¡à°¿ 35 à°µà°°à°à± à°à°°à± à°°à°à°¾à°² à°ªà±à°°à°¾à°¥à°®à°¿à° à°¹à°à±à°à±à°²à°¨à± à°¹à°¾à°®à± à°à°¸à±à°¤à°¾à°¯à°¿.",
         "M",
     ),
     (
         "indian_constitution", 1,
         "The Preamble of the Indian Constitution begins with which words?",
-        "భారత రాజ్యాంగ ప్రవేశిక ఏ పదాలతో మొదలవుతుంది?",
+        "à°­à°¾à°°à°¤ à°°à°¾à°à±à°¯à°¾à°à° à°ªà±à°°à°µà±à°¶à°¿à° à° à°ªà°¦à°¾à°²à°¤à± à°®à±à°¦à°²à°µà±à°¤à±à°à°¦à°¿?",
         {"a": "We the People", "b": "India that is Bharat", "c": "Sovereign Socialist", "d": "Justice Liberty"},
-        {"a": "మేము భారత ప్రజలము", "b": "ఇండియా అనగా భారత్", "c": "సర్వసత్తాక సామ్యవాద", "d": "న్యాయము స్వేచ్ఛ"},
+        {"a": "à°®à±à°®à± à°­à°¾à°°à°¤ à°ªà±à°°à°à°²à°®à±", "b": "à°à°à°¡à°¿à°¯à°¾ à°à°¨à°à°¾ à°­à°¾à°°à°¤à±", "c": "à°¸à°°à±à°µà°¸à°¤à±à°¤à°¾à° à°¸à°¾à°®à±à°¯à°µà°¾à°¦", "d": "à°¨à±à°¯à°¾à°¯à°®à± à°¸à±à°µà±à°à±à°"},
         "a",
-        "The Preamble opens with the words 'We, the People of India' — emphasising the source of authority is the people.",
-        "ప్రవేశిక 'మేము భారత ప్రజలము' అనే పదాలతో మొదలవుతుంది — అధికారం ప్రజల నుండే వస్తుందని తెలియజేస్తుంది.",
+        "The Preamble opens with the words 'We, the People of India' â emphasising the source of authority is the people.",
+        "à°ªà±à°°à°µà±à°¶à°¿à° 'à°®à±à°®à± à°­à°¾à°°à°¤ à°ªà±à°°à°à°²à°®à±' à°à°¨à± à°ªà°¦à°¾à°²à°¤à± à°®à±à°¦à°²à°µà±à°¤à±à°à°¦à°¿ â à°à°§à°¿à°à°¾à°°à° à°ªà±à°°à°à°² à°¨à±à°à°¡à± à°µà°¸à±à°¤à±à°à°¦à°¨à°¿ à°¤à±à°²à°¿à°¯à°à±à°¸à±à°¤à±à°à°¦à°¿.",
         "E",
     ),
     (
         "indian_history", 1,
         "Which Harappan site was the largest in terms of area?",
-        "విస్తీర్ణం ప్రకారం అతిపెద్ద హరప్పా కేంద్రం ఏది?",
+        "à°µà°¿à°¸à±à°¤à±à°°à±à°£à° à°ªà±à°°à°à°¾à°°à° à°à°¤à°¿à°ªà±à°¦à±à°¦ à°¹à°°à°ªà±à°ªà°¾ à°à±à°à°¦à±à°°à° à°à°¦à°¿?",
         {"a": "Harappa", "b": "Mohenjo-daro", "c": "Rakhigarhi", "d": "Lothal"},
-        {"a": "హరప్పా", "b": "మొహెంజోదారో", "c": "రాఖీగఢీ", "d": "లోథాల్"},
+        {"a": "à°¹à°°à°ªà±à°ªà°¾", "b": "à°®à±à°¹à±à°à°à±à°¦à°¾à°°à±", "c": "à°°à°¾à°à±à°à°¢à±", "d": "à°²à±à°¥à°¾à°²à±"},
         "c",
         "Rakhigarhi in Haryana is now recognised as the largest Harappan site discovered, surpassing Mohenjo-daro in area.",
-        "హర్యానాలోని రాఖీగఢీ ఇప్పటివరకు కనుగొనబడిన అతిపెద్ద హరప్పా కేంద్రంగా గుర్తించబడింది, మొహెంజోదారో కంటే ఎక్కువ విస్తీర్ణం కలిగి ఉంది.",
+        "à°¹à°°à±à°¯à°¾à°¨à°¾à°²à±à°¨à°¿ à°°à°¾à°à±à°à°¢à± à°à°ªà±à°ªà°à°¿à°µà°°à°à± à°à°¨à±à°à±à°¨à°¬à°¡à°¿à°¨ à°à°¤à°¿à°ªà±à°¦à±à°¦ à°¹à°°à°ªà±à°ªà°¾ à°à±à°à°¦à±à°°à°à°à°¾ à°à±à°°à±à°¤à°¿à°à°à°¬à°¡à°¿à°à°¦à°¿, à°®à±à°¹à±à°à°à±à°¦à°¾à°°à± à°à°à°à± à°à°à±à°à±à°µ à°µà°¿à°¸à±à°¤à±à°°à±à°£à° à°à°²à°¿à°à°¿ à°à°à°¦à°¿.",
         "H",
     ),
     (
         "indian_geography", 1,
         "Which is the southernmost point of mainland India?",
-        "భారత ప్రధాన భూభాగంలో అత్యంత దక్షిణ బిందువు ఏది?",
+        "à°­à°¾à°°à°¤ à°ªà±à°°à°§à°¾à°¨ à°­à±à°­à°¾à°à°à°²à± à°à°¤à±à°¯à°à°¤ à°¦à°à±à°·à°¿à°£ à°¬à°¿à°à°¦à±à°µà± à°à°¦à°¿?",
         {"a": "Indira Point", "b": "Kanyakumari", "c": "Rameswaram", "d": "Trivandrum"},
-        {"a": "ఇందిరా పాయింట్", "b": "కన్యాకుమారి", "c": "రామేశ్వరం", "d": "తిరువనంతపురం"},
+        {"a": "à°à°à°¦à°¿à°°à°¾ à°ªà°¾à°¯à°¿à°à°à±", "b": "à°à°¨à±à°¯à°¾à°à±à°®à°¾à°°à°¿", "c": "à°°à°¾à°®à±à°¶à±à°µà°°à°", "d": "à°¤à°¿à°°à±à°µà°¨à°à°¤à°ªà±à°°à°"},
         "b",
         "Kanyakumari is the southernmost point of the Indian mainland. Indira Point in the Nicobars is southernmost overall but not mainland.",
-        "కన్యాకుమారి భారత ప్రధాన భూభాగంలోని అత్యంత దక్షిణ బిందువు. నికోబార్‌లోని ఇందిరా పాయింట్ మొత్తం భూభాగంలో అత్యంత దక్షిణం, కానీ ప్రధాన భూభాగం కాదు.",
+        "à°à°¨à±à°¯à°¾à°à±à°®à°¾à°°à°¿ à°­à°¾à°°à°¤ à°ªà±à°°à°§à°¾à°¨ à°­à±à°­à°¾à°à°à°²à±à°¨à°¿ à°à°¤à±à°¯à°à°¤ à°¦à°à±à°·à°¿à°£ à°¬à°¿à°à°¦à±à°µà±. à°¨à°¿à°à±à°¬à°¾à°°à±âà°²à±à°¨à°¿ à°à°à°¦à°¿à°°à°¾ à°ªà°¾à°¯à°¿à°à°à± à°®à±à°¤à±à°¤à° à°­à±à°­à°¾à°à°à°²à± à°à°¤à±à°¯à°à°¤ à°¦à°à±à°·à°¿à°£à°, à°à°¾à°¨à± à°ªà±à°°à°§à°¾à°¨ à°­à±à°­à°¾à°à° à°à°¾à°¦à±.",
         "M",
     ),
     (
         "ap_geography", 1,
         "Andhra Pradesh shares its longest land border with which state?",
-        "ఆంధ్రప్రదేశ్ ఏ రాష్ట్రంతో అత్యంత పొడవైన భూ సరిహద్దును పంచుకుంటుంది?",
+        "à°à°à°§à±à°°à°ªà±à°°à°¦à±à°¶à± à° à°°à°¾à°·à±à°à±à°°à°à°¤à± à°à°¤à±à°¯à°à°¤ à°ªà±à°¡à°µà±à°¨ à°­à± à°¸à°°à°¿à°¹à°¦à±à°¦à±à°¨à± à°ªà°à°à±à°à±à°à°à±à°à°¦à°¿?",
         {"a": "Karnataka", "b": "Tamil Nadu", "c": "Telangana", "d": "Odisha"},
-        {"a": "కర్ణాటక", "b": "తమిళనాడు", "c": "తెలంగాణ", "d": "ఒడిశా"},
+        {"a": "à°à°°à±à°£à°¾à°à°", "b": "à°¤à°®à°¿à°³à°¨à°¾à°¡à±", "c": "à°¤à±à°²à°à°à°¾à°£", "d": "à°à°¡à°¿à°¶à°¾"},
         "c",
         "After the 2014 bifurcation, Andhra Pradesh shares its longest land border with the newly formed state of Telangana.",
-        "2014 విభజన తర్వాత, ఆంధ్రప్రదేశ్ కొత్తగా ఏర్పడిన తెలంగాణ రాష్ట్రంతో అత్యంత పొడవైన భూ సరిహద్దును పంచుకుంటుంది.",
+        "2014 à°µà°¿à°­à°à°¨ à°¤à°°à±à°µà°¾à°¤, à°à°à°§à±à°°à°ªà±à°°à°¦à±à°¶à± à°à±à°¤à±à°¤à°à°¾ à°à°°à±à°ªà°¡à°¿à°¨ à°¤à±à°²à°à°à°¾à°£ à°°à°¾à°·à±à°à±à°°à°à°¤à± à°à°¤à±à°¯à°à°¤ à°ªà±à°¡à°µà±à°¨ à°­à± à°¸à°°à°¿à°¹à°¦à±à°¦à±à°¨à± à°ªà°à°à±à°à±à°à°à±à°à°¦à°¿.",
         "E",
     ),
 ]
@@ -129,23 +129,26 @@ QUESTIONS = [
 
 # (surface, label_en, label_te, icon, action_type, action_ref, parent_label, sort_order)
 NAV_ITEMS = [
-    ("menu", "Home",     "హోమ్",     "home",     "route", "/",         None,       0),
-    ("menu", "Subjects", "విషయాలు", "books",    None,    None,        None,      10),
-    # Subjects (children of "Subjects" parent) — all 11
-    ("menu", "Indian History",       "భారత చరిత్ర",            None, "subject", "indian_history",       "Subjects",  1),
-    ("menu", "Indian Constitution",  "భారత రాజ్యాంగం",          None, "subject", "indian_constitution",  "Subjects",  2),
-    ("menu", "AP History",           "ఆంధ్రప్రదేశ్ చరిత్ర",     None, "subject", "ap_history",           "Subjects",  3),
-    ("menu", "Indian Geography",     "భారత భూగోళశాస్త్రం",      None, "subject", "indian_geography",     "Subjects",  4),
-    ("menu", "AP Geography",         "ఆంధ్రప్రదేశ్ భూగోళశాస్త్రం", None, "subject", "ap_geography",         "Subjects",  5),
-    ("menu", "Indian Economy",       "భారత ఆర్థిక వ్యవస్థ",     None, "subject", "indian_economy",       "Subjects",  6),
-    ("menu", "AP Economy",           "ఆంధ్రప్రదేశ్ ఆర్థిక వ్యవస్థ", None, "subject", "ap_economy",          "Subjects",  7),
-    ("menu", "Science & Technology", "సైన్స్ & సాంకేతికత",     None, "subject", "science_technology",   "Subjects",  8),
-    ("menu", "Indian Society",       "భారత సమాజం",             None, "subject", "indian_society",       "Subjects",  9),
-    ("menu", "Mental Ability",       "మానసిక సామర్థ్యం",       None, "subject", "mental_ability",       "Subjects", 10),
-    ("menu", "Current Affairs",      "ప్రస్తుత వ్యవహారాలు",     None, "subject", "current_affairs",      "Subjects", 11),
+    ("menu", "Home",     "à°¹à±à°®à±",     "home",     "route", "/",         None,       0),
+    ("menu", "Subjects", "à°µà°¿à°·à°¯à°¾à°²à±", "books",    None,    None,        None,      10),
+    # Subjects (children of "Subjects" parent) â all 11
+    ("menu", "Indian History",       "à°­à°¾à°°à°¤ à°à°°à°¿à°¤à±à°°",            None, "subject", "indian_history",       "Subjects",  1),
+    ("menu", "Indian Constitution",  "à°­à°¾à°°à°¤ à°°à°¾à°à±à°¯à°¾à°à°à°",          None, "subject", "indian_constitution",  "Subjects",  2),
+    ("menu", "AP History",           "à°à°à°§à±à°°à°ªà±à°°à°¦à±à°¶à± à°à°°à°¿à°¤à±à°°",     None, "subject", "ap_history",           "Subjects",  3),
+    ("menu", "Indian Geography",     "à°­à°¾à°°à°¤ à°­à±à°à±à°³à°¶à°¾à°¸à±à°¤à±à°°à°",      None, "subject", "indian_geography",     "Subjects",  4),
+    ("menu", "AP Geography",         "à°à°à°§à±à°°à°ªà±à°°à°¦à±à°¶à± à°­à±à°à±à°³à°¶à°¾à°¸à±à°¤à±à°°à°", None, "subject", "ap_geography",         "Subjects",  5),
+    ("menu", "Indian Economy",       "à°­à°¾à°°à°¤ à°à°°à±à°¥à°¿à° à°µà±à°¯à°µà°¸à±à°¥",     None, "subject", "indian_economy",       "Subjects",  6),
+    ("menu", "AP Economy",           "à°à°à°§à±à°°à°ªà±à°°à°¦à±à°¶à± à°à°°à±à°¥à°¿à° à°µà±à°¯à°µà°¸à±à°¥", None, "subject", "ap_economy",          "Subjects",  7),
+    ("menu", "Science & Technology", "à°¸à±à°¨à±à°¸à± & à°¸à°¾à°à°à±à°¤à°¿à°à°¤",     None, "subject", "science_technology",   "Subjects",  8),
+    ("menu", "Indian Society",       "à°­à°¾à°°à°¤ à°¸à°®à°¾à°à°",             None, "subject", "indian_society",       "Subjects",  9),
+    ("menu", "Mental Ability",       "à°®à°¾à°¨à°¸à°¿à° à°¸à°¾à°®à°°à±à°¥à±à°¯à°",       None, "subject", "mental_ability",       "Subjects", 10),
+    ("menu", "Current Affairs",      "à°ªà±à°°à°¸à±à°¤à±à°¤ à°µà±à°¯à°µà°¹à°¾à°°à°¾à°²à±",     None, "subject", "current_affairs",      "Subjects", 11),
+    # Top-level shortcuts
+    ("menu", "Study Plan", "à°¸à±à°à°¡à± à°ªà±à°²à°¾à°¨à±", "plan", "route", "/plan/",                None, 20),
+    ("menu", "Exams",      "à°ªà°°à±à°à±à°·à°²à±",      "exam", "route", "/exam/appsc_group_2",   None, 30),
     # Bottom rail
-    ("menu", "Settings", "అమరికలు",   "settings", "route", "/settings", None, 90),
-    ("menu", "Admin",    "నిర్వాహకుడు", "lock",     "route", "/admin",    None, 99),
+    ("menu", "Settings", "à°à°®à°°à°¿à°à°²à±",   "settings", "route", "/settings", None, 90),
+    ("menu", "Admin",    "à°¨à°¿à°°à±à°µà°¾à°¹à°à±à°¡à±", "lock",     "route", "/admin",    None, 99),
 ]
 
 

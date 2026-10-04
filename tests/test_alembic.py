@@ -263,3 +263,16 @@ def test_app_startup_never_modifies_the_database(tmp_path):
     assert not db_file.exists() or _tables(f"sqlite:///{db_file}") == set()
     src = (ROOT / "app" / "__init__.py").read_text(encoding="utf-8")
     assert "create_all" not in src and "_patch_schema" not in src
+
+
+def test_no_destructive_or_implicit_schema_code_anywhere_in_the_app():
+    """Release blocker: origin/main once shipped _patch_schema() with DROP TABLE questions CASCADE plus create_all()
+    at startup. No file under app/ or wsgi.py may contain startup DDL again, whatever a merge resolves to."""
+    import re
+    bad = re.compile(r"DROP\s+TABLE|drop_all\s*\(|create_all\s*\(|_patch_schema", re.I)
+    offenders = []
+    for path in list((ROOT / "app").rglob("*.py")) + [ROOT / "wsgi.py"]:
+        for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+            if bad.search(line):
+                offenders.append(f"{path.relative_to(ROOT)}:{n}: {line.strip()[:80]}")
+    assert offenders == []

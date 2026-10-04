@@ -8,7 +8,7 @@
 </div>
 
 <div style="max-width:640px;margin:2rem auto;">
-  <p>This will insert the APPSC Group 2 exam structure (papers, sections, syllabus items).
+  <p>Inserts the APPSC Group 2 exam structure (papers, sections, syllabus items).
      The script is idempotent — safe to run multiple times.</p>
 
   <form method="POST" id="seed-form">
@@ -16,8 +16,9 @@
     <button class="primary-btn" type="submit" id="run-btn">▶ Run Seed</button>
   </form>
 
-  <pre id="output" style="margin-top:1.5rem;background:var(--bg-2,#1e1e2e);color:var(--text,#cdd6f4);
-       padding:1rem;border-radius:8px;white-space:pre-wrap;min-height:4rem;display:none;"></pre>
+  <pre id="output" style="margin-top:1.5rem;background:#1e1e2e;color:#cdd6f4;
+       padding:1rem;border-radius:8px;white-space:pre-wrap;min-height:4rem;
+       font-size:.85rem;display:none;"></pre>
 </div>
 
 <script>
@@ -30,16 +31,22 @@ document.getElementById('seed-form').addEventListener('submit', async function(e
   out.style.display = 'block';
   out.textContent = '';
 
-  const resp = await fetch(window.location.href, {method:'POST', credentials:'same-origin', headers:{'X-CSRF-Token':'{{ csrf_token() }}'}});
-  const reader = resp.body.getReader();
-  const decoder = new TextDecoder();
-  while (true) {
-    const {done, value} = await reader.read();
-    if (done) break;
-    out.textContent += decoder.decode(value);
-    out.scrollTop = out.scrollHeight;
+  try {
+    const resp = await fetch(window.location.href, {method:'POST', credentials:'same-origin', headers:{'X-CSRF-Token':'{{ csrf_token() }}'}});
+    const reader = resp.body.getReader();
+    const dec = new TextDecoder();
+    while (true) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      out.textContent += dec.decode(value);
+      out.scrollTop = out.scrollHeight;
+    }
+    btn.textContent = '✅ Done — reload page to run again';
+  } catch(err) {
+    out.textContent += '\nFetch error: ' + err;
+    btn.disabled = false;
+    btn.textContent = '▶ Run Seed';
   }
-  btn.textContent = '✅ Done';
 });
 </script>
 {% endblock %}
