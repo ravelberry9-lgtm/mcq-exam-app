@@ -15,6 +15,7 @@ from app.models import (
 )
 from app.services import ap_canonical as canon
 from app.services import ap_canonical_subtopics as subs
+from app.services import ap_canonical_taxonomy as tax
 
 ROOT = Path(__file__).resolve().parent.parent
 TELUGU = re.compile(r"[ఀ-౿]")
@@ -194,7 +195,8 @@ def test_chapters_13_to_19_follow_the_approved_targets(full_map):
     assert chs(18) == {"u5-c31-social-cultural-events-1956-2014"}
     assert all(s.startswith("u2-c13") for s in chs(13))
     assert {s.split("-")[1] for s in chs(15)} <= {"c15", "c16", "c17", "c18"}
-    assert {s.split("-")[1] for s in chs(16)} <= {f"c{n}" for n in range(17, 28)}  # content-driven: source 16 also covers 1920s-1953 sections
+    # content-driven (approved): source 16 covers 17, 19, 23, 24, 26 (as secondary only), 27 plus the Komaram Bheem section, which has the supplementary Asaf Jahi chapter as primary
+    assert {s.split("-")[1] for s in chs(16)} == {"c17", "c19", "c23", "c24", "c27", "asaf"}
     assert {s.split("-")[1] for s in chs(17)} <= {f"c{n}" for n in range(23, 31)}
     kinds = {m["mapping_kind"] for m in full_map if m["old_chapter_num"] in (14, 19)}
     assert kinds == {"supplementary"}
@@ -238,7 +240,7 @@ def test_architecture_section_goes_to_the_general_subtopic_not_pancharamas(full_
 
 def test_shared_name_alone_never_creates_a_secondary_link(full_map):
     # every secondary named in the mapping exists in the draft taxonomy and differs from the primary
-    titles = {s for lst in subs.expanded().values() for s, _e, _t in lst}
+    titles = {sb["slug"] for lst in tax.build().values() for sb in lst}
     chapter_slugs = {c[2] for c in canon.CHAPTERS} | {x[0] for x in canon.SUPPLEMENTARY}
     for m in full_map:
         for sec in (x for x in m["secondary_mappings"].split("; ") if x):
@@ -339,3 +341,153 @@ def test_migration_downgrade_refuses_to_discard_provenance_or_canonical_rows(tmp
         c.execute(sa.text("INSERT INTO syllabus_units (subject_id,unit_num,slug,title_en,title_te) VALUES (1,1,'u1','a','అ')"))
     with pytest.raises(RuntimeError, match="Refusing to drop syllabus_units"):
         command.downgrade(cfg, "c3d4e5f6a7b8")
+
+
+# ── rationalized taxonomy and reviewer decisions of 2026-10-04 ───────
+def _load(name):
+    spec = importlib.util.spec_from_file_location(name, ROOT / "scripts" / f"{name}.py")
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    return mod
+
+
+def test_every_draft_subtopic_survives_exactly_once_as_a_microtopic():
+    draft = [s for lst in subs.expanded().values() for s, _e, _t in lst]
+    mapped = tax.old_to_new()
+    assert sorted(mapped) == sorted(draft) and len(draft) == 314
+    all_micro = [m["slug"] for lst in tax.build().values() for sb in lst for m in sb["micros"]]
+    assert len(all_micro) == len(set(all_micro)) == 314 + len(tax.EXTRA_MICRO)
+
+
+def test_rationalized_subtopics_are_unique_bilingual_prefixed_and_far_fewer():
+    chap = {c[1]: c[2] for c in canon.CHAPTERS}
+    seen = set()
+    for num, lst in tax.build().items():
+        assert 4 <= len(lst) <= 15, num
+        prefix = "-".join(chap[num].split("-")[:2])
+        for sb in lst:
+            assert sb["slug"].startswith(prefix + "-") and sb["slug"] not in seen
+            seen.add(sb["slug"])
+            assert sb["en"].strip() and sb["te"].strip() and any("\u0c00" <= ch <= "\u0c7f" for ch in sb["te"])
+            assert sb["micros"]
+            for m in sb["micros"]:
+                assert m["en"].strip() and m["te"].strip()
+    assert 150 <= len(seen) <= 200
+    assert sum(len(v) for v in tax.build().values()) < 314 * 0.65
+
+
+def test_duplicates_are_merged_and_rulers_are_microtopics():
+    g = {(n, m["old_suffix"]): sb["key"] for n, lst in tax.build().items() for sb in lst for m in sb["micros"] if m["old_suffix"]}
+    assert g[(21, "drama-organisations")] == g[(21, "nataka-samasthalu")]
+    assert g[(27, "potti-sriramulu")] == g[(27, "fast-and-death")]
+    assert g[(25, "library-movement")] == g[(25, "libraries-public-awakening")]
+    for r in ("rudradeva", "mahadeva", "ganapatideva", "rudramadevi", "prataparudra"):
+        assert g[(9, r)] == "political-history"
+    ruler_subs = [sb["key"] for lst in tax.build().values() for sb in lst if len(sb["micros"]) == 1 and sb["micros"][0]["old_suffix"] in
+                  ("rudradeva", "mahadeva", "ganapatideva", "rudramadevi", "prataparudra", "veeresalingam", "thomas-munro", "tanguturi-prakasam")]
+    assert ruler_subs == []
+
+
+def test_normalized_telugu_terminology_and_zero_width_rules():
+    texts = [(sb["te"]) for lst in tax.build().values() for sb in lst] + [m["te"] for lst in tax.build().values() for sb in lst for m in sb["micros"]]
+    texts += [c[4] for c in canon.CHAPTERS]
+    blob = " ".join(texts)
+    for bad in ("హాథీగుంఫా", "ఉత్తర సర్కారులు", "శ్రీబాగ్ ఒడంబడిక", "రయొత్వారీ", "రయత్వారీ", "డఖ్ఖనీ", "కుతుబ్\u200cషాహీ", "తామ్ర శిలాయుగం"):
+        assert bad not in blob, bad
+    for good in ("పురాతన శిలాయుగం (పాలియోలిథిక్)", "మధ్య శిలాయుగం (మెసోలిథిక్)", "నవీన శిలాయుగం (నియోలిథిక్)", "రాగి–రాతి యుగం (చాల్కోలిథిక్)",
+                 "హాతిగుంఫా శాసనం", "ముద్రాంకిత (పంచ్-మార్క్డ్) నాణేలు", "తళ్ళికోట యుద్ధం (Battle of Talikota)", "కుతుబ్ షాహీ", "దక్కనీ",
+                 "ఉత్తర సర్కార్లు", "దత్త మండలాలు (సీడెడ్ జిల్లాలు)", "శ్రీబాగ్ ఒప్పందం", "పెద్దమనుషుల ఒప్పందం (జెంటిల్మెన్స్ అగ్రిమెంట్)",
+                 "జె.వి.పి. కమిటీ (JVP Committee)", "రాష్ట్రాల పునర్వ్యవస్థీకరణ సంఘం (SRC)", "హోమ్ రూల్ (స్వపరిపాలన) ఉద్యమం"):
+        assert good in blob, good
+    assert "బృహత్\u200cశిలా సంస్కృతి (మెగాలిథిక్)" in blob
+    # zero-width characters only in the whitelisted display forms; never in slugs or search keys
+    for t in texts:
+        if re.search("[\u200b\u200c\u200d\ufeff]", t):
+            assert any(a in t for a in tax.ZW_ALLOWED), t
+        assert not re.search("[\u200b\u200c\u200d\ufeff]", tax.search_key(t))
+    for lst in tax.build().values():
+        for sb in lst:
+            assert re.fullmatch(r"[a-z0-9-]+", sb["slug"])
+
+
+def test_mapping_uses_rationalized_subtopics_and_keeps_the_draft_slug(full_map):
+    subs_ = {sb["slug"]: sb for lst in tax.build().values() for sb in lst}
+    micro = {m["slug"]: sb["slug"] for lst in tax.build().values() for sb in lst for m in sb["micros"]}
+    for m in full_map:
+        if m["proposed_subtopic_slug"]:
+            assert m["proposed_subtopic_slug"] in subs_ and micro[m["proposed_microtopic_slug"]] == m["proposed_subtopic_slug"]
+            assert m["proposed_subtopic_en"] == subs_[m["proposed_subtopic_slug"]]["en"]
+        else:
+            assert m["proposed_microtopic_slug"] == ""
+        assert m["coverage_scope"] in ("direct", "mixed", "supplementary_context", "study_aid", "supplementary")
+        for x in (y for y in m["secondary_microtopics"].split("; ") if y):
+            assert x in micro
+
+
+def test_rampa_stays_in_the_nationalist_chapter_with_tribal_context(full_map):
+    r = _row(full_map, 16, 6)
+    assert r["canonical_chapter_slug"] == "u3-c19-nationalist-movement-1885-1947"
+    assert r["proposed_microtopic_slug"] == "u3-c19-rampa-rebellion"
+    assert r["secondary_mappings"].startswith("u4-c26") and "cross_unit_context" in r["flags"].split(";")
+    assert "ambiguous" not in r["flags"].split(";")
+
+
+def test_komaram_bheem_is_asaf_jahi_primary_not_an_andhra_movement_event(full_map):
+    r = _row(full_map, 16, 11)
+    assert r["canonical_chapter_slug"] == "supp-asaf-jahis-hyderabad-state" and r["coverage_scope"] == "supplementary"
+    assert "supplementary_cross_context" in r["flags"].split(";") and "multi_topic" in r["flags"].split(";")
+    assert any(x.startswith("u4-c26") for x in r["secondary_mappings"].split("; "))
+    assert "11.5" in r["reason"] and "Andhra Movement" in r["reason"]
+    assert not r["canonical_chapter_slug"].startswith(("u4-", "u3-"))
+
+
+def test_chapter_18_pure_political_chronology_is_supplementary_context(full_map):
+    for sec in (3, 7, 8, 10, 11, 15, 16):
+        r = _row(full_map, 18, sec)
+        assert r["coverage_scope"] == "supplementary_context" and "scope_boundary" in r["flags"].split(";"), sec
+    assert _row(full_map, 18, 9)["coverage_scope"] == "mixed"
+    for sec in (4, 5, 6, 12):  # regional-identity movements stay direct Chapter 31 coverage
+        assert _row(full_map, 18, sec)["coverage_scope"] == "direct"
+        assert _row(full_map, 18, sec)["canonical_chapter_slug"].startswith("u5-c31")
+    assert all("scope_boundary" in _row(full_map, 18, s)["flags"].split(";") for s in (3, 7, 8, 9, 10, 11, 13, 15, 16))
+
+
+def test_qutb_shahi_post_1600_material_is_not_direct_coverage(full_map):
+    for sec in (9, 14, 15):
+        assert _row(full_map, 13, sec)["coverage_scope"] == "supplementary_context"
+    for sec in (5, 7, 8):
+        assert _row(full_map, 13, sec)["coverage_scope"] == "direct"
+    assert _row(full_map, 13, 4)["coverage_scope"] == "mixed"
+    micros = {m["slug"]: m for lst in tax.build().values() for sb in lst for m in sb["micros"]}
+    assert micros["u2-c13-post-1600-context"]["scope"] == "supplementary_context"
+    assert not any(r["old_chapter_num"] < 13 and r["coverage_scope"] == "supplementary_context" for r in full_map)
+
+
+def test_kataya_vema_is_blocked_and_the_audit_record_quotes_the_source_verbatim(full_map, mapping_mod):
+    r = _row(full_map, 11, 12)
+    assert r["content_use"] == "blocked_until_verified" and r["approval_status"] == "unapproved"
+    assert sum(1 for m in full_map if m["content_use"]) == 1
+    import gzip, shutil, sqlite3, tempfile, html as _h
+    tmp = Path(tempfile.mkdtemp()) / "c.db"
+    with gzip.open(ROOT / "data" / "content.db.gz", "rb") as a, open(tmp, "wb") as b:
+        shutil.copyfileobj(a, b)
+    con = sqlite3.connect(tmp)
+    text = " ".join(re.sub(r"\s+", " ", re.sub("<[^>]+>", " ", (h1 or "") + " / " + (h2 or "") + " " + (b or ""))) for h1, h2, b in con.execute(
+        "SELECT n.heading_te, n.heading_en, n.body_te FROM notes n JOIN chapters c ON c.id=n.chapter_id JOIN subjects s ON s.id=c.subject_id "
+        "WHERE s.slug='ap_history' AND c.chapter_num=11"))
+    audit = (ROOT / "docs" / "ap_history_kataya_vema_audit.md").read_text(encoding="utf-8")
+    rows = [ln for ln in audit.splitlines() if ln.startswith("| ") and "Statement" not in ln and not ln.startswith("|---")]
+    assert len(rows) >= 6
+    for ln in rows:
+        fragment = ln.split(" | ")[1].strip()
+        assert fragment in text, fragment
+    assert "last kings" in audit and "founder" in audit and "unapproved" in audit.lower()
+
+
+def test_proposed_taxonomy_files_match_the_generator(tmp_path):
+    mod = _load("build_ap_taxonomy_proposed")
+    rows = mod.build()
+    assert len({r["subtopic_slug"] for r in rows}) == sum(len(v) for v in tax.build().values())
+    assert len(rows) == 317
+    mod.write(rows, out_dir=tmp_path)
+    for name in ("ap_history_subtopic_taxonomy_proposed.csv", "ap_history_subtopic_taxonomy_proposed.md"):
+        assert (tmp_path / name).read_bytes() == (ROOT / "docs" / name).read_bytes(), f"re-run scripts/build_ap_taxonomy_proposed.py ({name})"
