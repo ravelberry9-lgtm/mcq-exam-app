@@ -18,6 +18,24 @@ def is_production() -> bool:
             or bool(os.environ.get("RAILWAY_ENVIRONMENT") or os.environ.get("RAILWAY_PROJECT_ID")))
 
 
+def normalize_database_url(url: str) -> str:
+    """Return a SQLAlchemy URL with an explicit driver for PostgreSQL.
+
+    Railway (and Heroku-style platforms) supply ``postgres://`` or a bare
+    ``postgresql://``. Since SQLAlchemy 2.1 a bare ``postgresql://`` selects the
+    ``psycopg`` (v3) driver, but this app ships ``psycopg2-binary``. Pin the driver
+    explicitly so a SQLAlchemy upgrade can never change it silently.
+
+    URLs that already name a driver (``postgresql+psycopg2://``,
+    ``postgresql+psycopg://``, ``sqlite:///...``) are returned unchanged.
+    """
+    url = (url or "").strip()
+    for prefix in ("postgres://", "postgresql://"):
+        if url.startswith(prefix):
+            return "postgresql+psycopg2://" + url[len(prefix):]
+    return url
+
+
 class Config:
     # Flask
     SECRET_KEY = os.environ.get("SECRET_KEY", DEV_SECRET_KEY)
@@ -34,9 +52,7 @@ class Config:
     ADMIN_LOCKOUT_SECONDS = 300
 
     # Database — SQLite locally, Postgres in production via DATABASE_URL
-    _db_url = os.environ.get("DATABASE_URL", "")
-    if _db_url.startswith("postgres://"):
-        _db_url = _db_url.replace("postgres://", "postgresql://", 1)
+    _db_url = normalize_database_url(os.environ.get("DATABASE_URL", ""))
     SQLALCHEMY_DATABASE_URI = _db_url or f"sqlite:///{BASE_DIR / 'app_v3.db'}"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 

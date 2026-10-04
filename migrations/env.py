@@ -5,6 +5,7 @@ from alembic import context
 from sqlalchemy import engine_from_config, pool
 
 from app import create_app
+from app.config import normalize_database_url
 from app.db import db
 
 def _compare_type(context, inspected_column, metadata_column, inspected_type, metadata_type):
@@ -23,7 +24,7 @@ if config.config_file_name is not None:
 
 flask_app = create_app()
 # ALEMBIC_DATABASE_URL lets tests and one-off runs target another database without touching app config
-_url = os.environ.get("ALEMBIC_DATABASE_URL") or flask_app.config["SQLALCHEMY_DATABASE_URI"]
+_url = normalize_database_url(os.environ.get("ALEMBIC_DATABASE_URL", "")) or flask_app.config["SQLALCHEMY_DATABASE_URI"]
 config.set_main_option("sqlalchemy.url", _url.replace("%", "%%"))
 target_metadata = db.metadata
 
