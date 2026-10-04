@@ -54,6 +54,25 @@ class Note(db.Model):
     __table_args__ = (db.UniqueConstraint("chapter_id", "section_num"),)
 
 
+class NoteBackup(db.Model):
+    """A copy of a note taken *before* an import replaced or removed it, so the change can be undone.
+
+    Deliberately has no foreign keys: a backup must outlive the chapter or note it was taken from.
+    ``batch_id`` groups everything one import (or restore) touched; ``reason`` is 'replaced' or 'removed'.
+    """
+    __tablename__ = "note_backups"
+    id = db.Column(db.Integer, primary_key=True)
+    batch_id = db.Column(db.String(32), nullable=False, index=True)
+    reason = db.Column(db.String(16), nullable=False)
+    chapter_id = db.Column(db.Integer, nullable=False)
+    section_num = db.Column(db.Integer, nullable=False)
+    heading_en = db.Column(db.String(256))
+    heading_te = db.Column(db.String(256))
+    body_en = db.Column(db.Text)
+    body_te = db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+
 class Page(db.Model):
     """Admin-authored free-form content. Linkable from nav_items by slug."""
     __tablename__ = "pages"

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Import preview · Admin · {{ app_title }}{% endblock %}
+{% block content %}
+<div class="page-head"><h1>Import preview</h1>
+  <p class="subtitle">Nothing has been changed yet. Source fingerprint <code>{{ plan.source_sha256[:12] }}</code>.</p></div>
+<div style="max-width:900px;margin:1.5rem auto;">
+  {% if error %}<p role="alert" style="color:#b00020;font-weight:700">{{ error }}</p>{% endif %}
+  <form method="POST" action="{{ url_for('admin.load_content_apply') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="fingerprint" value="{{ plan.fingerprint }}">
+    <table style="width:100%;border-collapse:collapse">
+      <thead><tr><th>Import</th><th align="left">Subject</th><th>New chapters</th><th>Notes to add</th><th>Notes identical</th>
+        <th>Notes that differ (kept)</th><th>Live-only notes</th><th>Questions to add</th></tr></thead>
+      <tbody>
+      {% for s in plan.subjects %}
+        <tr>
+          <td align="center"><input type="checkbox" name="subjects" value="{{ s.slug }}" id="s-{{ s.slug }}" aria-label="Import {{ s.name_en }}"></td>
+          <td><label for="s-{{ s.slug }}">{{ s.name_en }}{% if not s.exists %} <em>(new subject)</em>{% endif %}</label></td>
+          <td align="center">{{ s.chapters.new }}</td><td align="center">{{ s.notes.add }}</td><td align="center">{{ s.notes.same }}</td>
+          <td align="center"><strong>{{ s.notes.differ }}</strong></td><td align="center">{{ s.notes.extra_live }}</td>
+          <td align="center">{{ s.questions.add }} <span class="muted">({{ s.questions.duplicate }} already present)</span></td>
+        </tr>
+        {% for x in s.samples %}<tr><td></td><td colspan="7" class="muted small">Differs: chapter {{ x.chapter_num }} section {{ x.section_num }} — live “{{ x.live_heading }}” vs source “{{ x.source_heading }}”</td></tr>{% endfor %}
+      {% endfor %}
+      </tbody>
+    </table>
+    <p class="muted">No subject is selected by default. “Differ” counts notes whose text in the live database is not the same as the source (for example edited by hand).</p>
+    <fieldset style="margin-top:1rem;border:1px solid #c00;padding:.8rem">
+      <legend>Destructive options (off by default; apply only to the subjects ticked above)</legend>
+      <label><input type="checkbox" name="replace_notes" value="1"> Replace notes that differ with the source version</label><br>
+      <label><input type="checkbox" name="remove_extra" value="1"> Remove live notes in these chapters that are not in the source</label><br>
+      <label>If either box is ticked, type <code>REPLACE</code> to confirm:
+        <input name="confirm" autocomplete="off" size="10"></label>
+      <p class="small muted">Every replaced or removed note is copied to a backup first (same transaction) and can be restored from the Load Content page.</p>
+    </fieldset>
+    <p><button class="primary-btn" type="submit">Apply to selected subjects</button>
+       <a href="{{ url_for('admin.load_content') }}">Cancel</a></p>
+  </form>
+</div>
+{% endblock %}

@@ -20,13 +20,13 @@ def test_healthz(client):
     assert "phase" in response.json
 
 
-def test_all_15_tables_exist(app):
+def test_all_16_tables_exist(app):
     """Every model maps to a real table after create_all."""
     expected = {
         "subjects", "chapters", "notes", "pages", "passages", "questions",
         "exams", "exam_papers", "exam_sections", "exam_syllabus_items",
         "nav_items", "user_question_state", "exam_sessions",
-        "study_plans", "chapter_progress",
+        "study_plans", "chapter_progress", "note_backups",
     }
     actual = set(db.metadata.tables.keys())
     assert expected == actual, f"missing: {expected - actual}, extra: {actual - expected}"

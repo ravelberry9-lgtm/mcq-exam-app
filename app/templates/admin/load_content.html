@@ -1,46 +1,33 @@
 {% extends "base.html" %}
 {% block title %}Load Content · Admin · {{ app_title }}{% endblock %}
-
 {% block content %}
 <div class="page-head">
-  <h1>📦 Load Content</h1>
-  <p class="subtitle">Bulk-loads <code>data/content.db</code> into the live database.</p>
+  <h1>Load Content</h1>
+  <p class="subtitle">Import subjects, chapters, notes and questions from <code>data/content.db</code> into the live database.</p>
 </div>
-
-<div style="max-width:640px;margin:2rem auto;">
-  <p>Inserts subjects, chapters, notes (6 257) and questions (6 742) from the
-     migrated content database. The script is idempotent — safe to run multiple times;
-     existing rows are skipped.</p>
-
-  <form method="POST" id="load-form">
+<div style="max-width:720px;margin:2rem auto;">
+  <p><strong>Nothing is deleted or overwritten by default.</strong> The import first shows a preview. You then choose
+     which subjects to import. By default only missing rows are added. Notes that already exist (including ones you
+     edited by hand) are kept. Replacing or removing notes is a separate, explicit choice, limited to the subjects you
+     select, and every note it touches is saved first so it can be restored.</p>
+  {% if error %}<p role="alert" style="color:#b00020;font-weight:700">{{ error }}</p>{% endif %}
+  <form method="POST" action="{{ url_for('admin.load_content_preview') }}">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-    <button class="primary-btn" type="submit" id="run-btn">▶ Run Load</button>
+    <button class="primary-btn" type="submit">Preview import (changes nothing)</button>
   </form>
 
-  <pre id="output" style="margin-top:1.5rem;background:var(--bg-2,#1e1e2e);color:var(--text,#cdd6f4);
-       padding:1rem;border-radius:8px;white-space:pre-wrap;min-height:4rem;display:none;font-size:.85rem;"></pre>
+  <h2 style="margin-top:2rem">Restore saved notes</h2>
+  {% if batches %}
+  <table style="width:100%"><thead><tr><th align="left">Batch</th><th align="left">Saved</th><th>Notes</th><th></th></tr></thead><tbody>
+    {% for b in batches %}
+    <tr><td><code>{{ b.batch_id }}</code></td><td>{{ b.when.strftime('%Y-%m-%d %H:%M') if b.when else '' }} UTC</td><td align="center">{{ b.n }}</td>
+      <td><form method="POST" action="{{ url_for('admin.load_content_restore') }}" style="display:flex;gap:.4rem">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="batch_id" value="{{ b.batch_id }}">
+        <input name="confirm" placeholder="type RESTORE" aria-label="Type RESTORE to confirm" autocomplete="off" size="12">
+        <button type="submit">Restore</button></form></td></tr>
+    {% endfor %}
+  </tbody></table>
+  {% else %}<p class="muted">No saved notes yet.</p>{% endif %}
 </div>
-
-<script>
-document.getElementById('load-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn = document.getElementById('run-btn');
-  const out = document.getElementById('output');
-  btn.disabled = true;
-  btn.textContent = '⏳ Running… (may take ~60 s)';
-  out.style.display = 'block';
-  out.textContent = '';
-
-  const resp = await fetch(window.location.href, {method:'POST', credentials:'same-origin', headers:{'X-CSRF-Token':'{{ csrf_token() }}'}});
-  const reader = resp.body.getReader();
-  const decoder = new TextDecoder();
-  while (true) {
-    const {done, value} = await reader.read();
-    if (done) break;
-    out.textContent += decoder.decode(value);
-    out.scrollTop = out.scrollHeight;
-  }
-  btn.textContent = '✅ Done';
-});
-</script>
 {% endblock %}

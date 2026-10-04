@@ -53,3 +53,8 @@ those type/constraint differences. And the live Railway database itself has not 
 `python -m alembic current` and `check` there after a backup.
 
 `ALEMBIC_DATABASE_URL` overrides the database for one command (used by tests); otherwise `DATABASE_URL` is used.
+
+## Revision c3d4e5f6a7b8 — note_backups
+
+Adds `note_backups` (batch_id, reason, chapter_id, section_num, headings, bodies, created_at). Used by the content import to keep a copy of any
+note it replaces or removes. Guarded `create_table`; downgrade refuses while the table has rows.

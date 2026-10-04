@@ -281,46 +281,82 @@ def seed():
     return Response(generate(), mimetype="text/plain")
 
 
-@bp.route("/load-content", methods=["GET", "POST"])
+# ── Content import: preview → scoped, transactional apply → restore ──
+def _content_source():
+    return current_app.config.get("CONTENT_SOURCE")
+
+
+def _recent_note_backups(limit=10):
+    from ..models import NoteBackup
+    rows = db.session.execute(
+        db.select(NoteBackup.batch_id, db.func.count(NoteBackup.id), db.func.max(NoteBackup.created_at))
+        .group_by(NoteBackup.batch_id).order_by(db.func.max(NoteBackup.created_at).desc()).limit(limit)).all()
+    return [{"batch_id": r[0], "n": r[1], "when": r[2]} for r in rows]
+
+
+def _load_page(error=None, status=200):
+    return render_template("admin/load_content.html", error=error, batches=_recent_note_backups()), status
+
+
+@bp.route("/load-content", methods=["GET"])
 def load_content():
-    """Run scripts/load_content.py — bulk-loads data/content.db into production DB."""
     guard = _require_auth()
     if guard:
         return guard
-
-    if request.method == "GET":
-        return render_template("admin/load_content.html")
-
-    scripts_dir = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
-        "scripts",
-    )
-    script = os.path.join(scripts_dir, "load_content.py")
-
-    def generate():
-        yield "Running load_content.py ...\n\n"
-        try:
-            proc = subprocess.Popen(
-                [sys.executable, script],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-                env={**os.environ},
-            )
-            for line in proc.stdout:
-                yield line
-            proc.wait()
-            yield f"\n\nExit code: {proc.returncode}\n"
-            if proc.returncode == 0:
-                yield "DONE: Content loaded successfully.\n"
-            else:
-                yield "ERROR: load_content.py exited with errors — see above.\n"
-        except Exception as exc:
-            yield f"ERROR: {exc}\n"
-
-    return Response(generate(), mimetype="text/plain")
+    return _load_page()
 
 
+@bp.route("/load-content/preview", methods=["POST"])
+def load_content_preview():
+    """Read-only: describes what an import would do. Writes nothing."""
+    guard = _require_auth()
+    if guard:
+        return guard
+    from ..services import content_import as ci
+    try:
+        src, sha = ci.open_source(_content_source())
+        plan = ci.build_plan(src, sha)
+    except ci.ContentImportError as e:
+        return _load_page(str(e), 400)
+    return render_template("admin/load_content_preview.html", plan=plan, error=None)
+
+
+@bp.route("/load-content/apply", methods=["POST"])
+def load_content_apply():
+    guard = _require_auth()
+    if guard:
+        return guard
+    from ..services import content_import as ci
+    slugs = request.form.getlist("subjects")
+    replace = request.form.get("replace_notes") == "1"
+    remove = request.form.get("remove_extra") == "1"
+    try:
+        if (replace or remove) and request.form.get("confirm", "").strip() != "REPLACE":
+            raise ci.ContentImportError("Type REPLACE to confirm replacing or removing notes. Nothing was changed.")
+        src, sha = ci.open_source(_content_source())
+        res = ci.apply_import(src, sha, slugs, request.form.get("fingerprint", ""), replace, remove)
+    except ci.ContentImportError as e:
+        return _load_page(str(e), 400)
+    import json as _json
+    return render_template("admin/load_content_result.html", heading="Import applied", result=res,
+                           result_json=_json.dumps(res, indent=2))
+
+
+@bp.route("/load-content/restore", methods=["POST"])
+def load_content_restore():
+    guard = _require_auth()
+    if guard:
+        return guard
+    from ..services import content_import as ci
+    try:
+        if request.form.get("confirm", "").strip() != "RESTORE":
+            raise ci.ContentImportError("Type RESTORE to confirm. Nothing was changed.")
+        res = ci.restore_batch(request.form.get("batch_id", ""))
+    except ci.ContentImportError as e:
+        return _load_page(str(e), 400)
+    import json as _json
+    return render_template("admin/load_content_result.html", heading="Notes restored", result=res,
+                           result_json=_json.dumps(res, indent=2))
 
 
 @bp.route("/parse-ap-history", methods=["GET", "POST"])

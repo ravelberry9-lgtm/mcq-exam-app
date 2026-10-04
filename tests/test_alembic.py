@@ -8,7 +8,7 @@ from alembic import command
 from alembic.config import Config as AlembicConfig
 
 ROOT = Path(__file__).resolve().parent.parent
-HEAD = "b2c3d4e5f6a7"
+HEAD = "c3d4e5f6a7b8"
 
 
 def _cfg(url, monkeypatch):
@@ -30,7 +30,7 @@ def _tables(url):
 def test_fresh_upgrade_matches_models(dburl, monkeypatch):
     cfg = _cfg(dburl, monkeypatch)
     command.upgrade(cfg, "head")
-    assert len(_tables(dburl)) == 15
+    assert len(_tables(dburl)) == 16
     command.check(cfg)                      # raises if models and migrations have drifted
 
 
@@ -87,7 +87,7 @@ def test_legacy_database_is_adopted_converges_to_the_model_and_keeps_every_row(d
     command.check(cfg)                                   # legacy schema now agrees with the models (not just fresh installs)
 
     assert _snapshot(dburl) == before                    # every row identical, q_hash preserved
-    assert len(_tables(dburl)) == 15
+    assert len(_tables(dburl)) == 16
     eng = sa.create_engine(dburl); insp = sa.inspect(eng)
     assert not any(ix["name"].startswith("idx_q_") for ix in insp.get_indexes("questions"))
     assert any(fk["options"].get("ondelete") == "CASCADE" for fk in insp.get_foreign_keys("notes"))
@@ -183,7 +183,8 @@ def test_downgrade_refuses_to_delete_existing_data(dburl, monkeypatch):
     before = _snapshot(dburl)
     with pytest.raises(RuntimeError, match="Refusing to downgrade"):
         command.downgrade(cfg, "base")
-    assert _snapshot(dburl) == before and len(_tables(dburl)) == 15
+    # an *empty* note_backups table may already be gone (SQLite DDL is not transactional); every baseline table and row remains
+    assert _snapshot(dburl) == before and len(_tables(dburl) - {"note_backups"}) == 15
 
 
 def test_downgrade_of_a_fresh_populated_database_is_also_refused(dburl, monkeypatch):

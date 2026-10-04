@@ -38,3 +38,38 @@ AP History feature: `scripts/load_content.py`, `scripts/fix_notes.py`, `scripts/
 ## Verification (merged tree)
 * Full suite: see commit message. Includes security, Alembic and the new guards.
 * Real content (copy of `data/content.db`): migrations upgrade to head with `alembic check` clean; 782 requests across all 194 chapters (legacy reader, Learn topic/notes/practice), hub, subjects, settings, healthz, admin login: 0 non-200; 0 reader pages containing script/handler/iframe/style.
+
+## Follow-up: safe content import (replaces the global notes deletion)
+
+Release blocker found in review: `/admin/load-content` ran `scripts/load_content.py`, which executed `Note.query.delete()` on **every
+note of every subject** and re-inserted from `data/content.db`, destroying hand-edited notes and notes outside the source.
+
+What changed:
+
+* `app/services/content_import.py` is the only import code path. `/admin/load-content` (GET page), `/load-content/preview`,
+  `/load-content/apply` and `/load-content/restore` are POST + admin login + CSRF. The old streaming-subprocess POST is gone (405).
+* **Preview** is read-only and shows, per subject: new chapters, notes to add, notes identical, notes that *differ* (kept), live-only
+  notes, questions to add. No subject is preselected.
+* **Default apply only adds missing rows.** Existing notes, including hand-edited ones, are kept.
+* Replacing differing notes and removing live-only notes are separate opt-in boxes, limited to the ticked subjects and to chapters the
+  source mentions, and require typing `REPLACE`. Each touched note is first copied into the new `note_backups` table in the same
+  transaction; `/load-content/restore` (type `RESTORE`) puts them back, and a restore is itself undoable.
+* One transaction: any error rolls everything back. A fingerprint of the plan, source file and differing live notes must match
+  the preview, otherwise the apply is refused.
+* Question JSON options are stored as JSON objects, not as a JSON string of a string.
+* `scripts/load_content.py` is now a CLI over the same service: default is preview only; `--subjects`/`--all-subjects` to add;
+  `--replace-notes`/`--remove-extra` need `--yes`; `--restore BATCH --yes`.
+* New migration `c3d4e5f6a7b8` (`note_backups`, no foreign keys so backups outlive their chapters).
+* Tests: `tests/test_content_import.py` (21) — preview writes nothing; default apply keeps edited/extra/unrelated notes; unselected and
+  non-source subjects untouched; replace/remove are backed up and restorable; injected failure rolls back; stale preview refused;
+  auth, CSRF and confirm phrases; idempotence; and a guard that no `Note.query.delete()` / `DELETE FROM notes` exists in `app/` or the loader.
+
+Real-content check (temporary SQLite from migrations): preview wrote nothing; `--all-subjects` added 11 subjects / 194 chapters / 980 notes /
+6242 questions; after hand-editing a note, a second run changed nothing and kept the edit. Note: the old page text claimed 6 257 notes and
+6 742 questions; the shipped `content.db` contains 980 notes and 6 242 questions. Worth confirming which is intended.
+
+Still open / not changed:
+
+* `/admin/parse-ap-history` and `scripts/parse_ap_history_notes.py` also delete AP History chapters/notes before re-parsing. Not yet made safe.
+* `scripts/scripts/scripts/scripts/load_content.py` (stray nested copy, an older additive-only loader) is left in place; it should be removed in a separate reviewed commit.
+* Live Railway database not inspected or backed up.
