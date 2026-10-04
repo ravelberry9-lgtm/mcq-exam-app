@@ -556,6 +556,6 @@ Evidence is how often each spelling appears in the current notes (chapters 1-12 
 | Civil-society movements | పౌర సమాజ ఉద్యమాలు | 0/0 | no_source |
 | Telangana movement of 1969 | 1969 తెలంగాణ ఉద్యమం | 1/1 | overlap |
 | Jai Andhra Movement of 1972 | 1972 జై ఆంధ్ర ఉద్యమం | 1/1 | overlap |
-| Regional identity movements | ప్రాంతీయ గుర్తింపు ఉద్యమాలు | 3/2 | overlap |
+| Regional identity movements | ప్రాంతీయ గుర్తింపు ఉద్యమాలు | 4/1 | overlap |
 | Major cultural developments up to 2014 | 2014 వరకు ముఖ్య సాంస్కృతిక పరిణామాలు | 1/0 | overlap;note_driven |
 

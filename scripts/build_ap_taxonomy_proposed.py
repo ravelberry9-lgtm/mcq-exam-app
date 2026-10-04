@@ -19,7 +19,7 @@ from app.services import ap_canonical_taxonomy as tax    # noqa: E402
 import ap_taxonomy_review_spec as old_review              # noqa: E402
 import build_ap_note_mapping_draft as mapping             # noqa: E402
 
-COLUMNS = ["unit", "chapter_num", "chapter_slug", "chapter_title_en", "chapter_title_te", "subtopic_slug", "subtopic_en", "subtopic_te",
+COLUMNS = ["taxonomy_version", "unit", "chapter_num", "chapter_slug", "chapter_title_en", "chapter_title_te", "subtopic_slug", "subtopic_en", "subtopic_te",
            "subtopic_te_search_key", "microtopic_slug", "microtopic_en", "microtopic_te", "microtopic_scope", "old_draft_slug",
            "subtopic_primary_sections", "subtopic_secondary_sections", "microtopic_primary_sections", "microtopic_secondary_sections",
            "earlier_review_flags"]
@@ -41,7 +41,7 @@ def build():
         for sb in chap[num]:
             for mi in sb["micros"]:
                 rows.append({
-                    "unit": unit, "chapter_num": num, "chapter_slug": slug, "chapter_title_en": en, "chapter_title_te": te,
+                    "taxonomy_version": tax.TAXONOMY_VERSION, "unit": unit, "chapter_num": num, "chapter_slug": slug, "chapter_title_en": en, "chapter_title_te": te,
                     "subtopic_slug": sb["slug"], "subtopic_en": sb["en"], "subtopic_te": sb["te"], "subtopic_te_search_key": tax.search_key(sb["te"]),
                     "microtopic_slug": mi["slug"], "microtopic_en": mi["en"], "microtopic_te": mi["te"], "microtopic_scope": mi["scope"],
                     "old_draft_slug": mi["slug"] if mi["from_draft"] else "",
@@ -60,8 +60,8 @@ def write(rows, out_dir=ROOT / "docs"):
     n_sub = sum(len(v) for v in chapters.values())
     n_micro = len(rows)
     counts = {k[1]: len(v) for k, v in chapters.items()}
-    L = ["# AP History — PROPOSED rationalized taxonomy (for review)", "",
-         "Nothing here is seeded, imported or deployed. This replaces the 314-item draft as the proposal; the earlier review files are kept for the record.", "",
+    L = ["# AP History — rationalized taxonomy `" + tax.TAXONOMY_VERSION + "` (approved structure)", "",
+         "Taxonomy version: **`" + tax.TAXONOMY_VERSION + "`**. Approved structure; seeded only into disposable validation copies so far, never into staging or production. It replaces the 314-item draft; the earlier review files are kept for the record.", "",
          "Model: **canonical chapter → learner-facing subtopic → internal microtopic.** A question gets one primary subtopic and any number of microtopic tags; "
          "microtopics are filters, never navigation. Every one of the 314 earlier draft subtopics survives as a microtopic (its old slug is kept), so no "
          "historical coverage is removed.", "",

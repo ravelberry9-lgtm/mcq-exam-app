@@ -159,6 +159,7 @@ QUESTION_SOURCES = ("codex_generated", "app_master", "hanumanthrao", "pyq_compil
 REVIEW_STATUSES = ("raw", "structurally_valid", "content_review_required", "fact_verified", "bilingual_approved", "rejected")
 LEARNER_VISIBLE_STATUS = "bilingual_approved"   # the only status shown in the canonical practice flow
 CHAPTER_CLASSIFICATIONS = ("direct", "bridge", "thematic", "supplementary")
+MICROTOPIC_SCOPES = ("direct", "supplementary_context")
 SUPPLEMENTARY_TYPES = ("supplementary_cross_cutting", "supplementary_outside_direct_syllabus", "supplementary_post_syllabus",
                        "supplementary_context")
 
@@ -220,7 +221,27 @@ class SyllabusSubtopic(db.Model):
     slug = db.Column(db.String(128), unique=True, nullable=False)
     subtopic_en = db.Column(db.String(256), nullable=False)
     subtopic_te = db.Column(db.String(256), nullable=False)
+    search_key_te = db.Column(db.String(256))              # Telugu label with zero-width characters removed (for search)
+    taxonomy_version = db.Column(db.String(32))            # e.g. 'ap-history-taxonomy-v1'
     sort_order = db.Column(db.Integer, default=0)
+
+
+class SyllabusMicrotopic(db.Model):
+    """Internal fine-grained tag under a learner-facing subtopic. Used for filtering and question tagging, never for navigation.
+    ``old_draft_slug`` keeps the identity of the earlier 314-item draft subtopic that became this microtopic."""
+    __tablename__ = "syllabus_microtopics"
+    id = db.Column(db.Integer, primary_key=True)
+    subtopic_id = db.Column(db.Integer, db.ForeignKey("syllabus_subtopics.id", ondelete="CASCADE"), nullable=False, index=True)
+    slug = db.Column(db.String(128), unique=True, nullable=False)
+    micro_en = db.Column(db.String(256), nullable=False)
+    micro_te = db.Column(db.String(256), nullable=False)
+    search_key_te = db.Column(db.String(256))
+    scope = db.Column(db.String(24), nullable=False, default="direct")     # MICROTOPIC_SCOPES
+    old_draft_slug = db.Column(db.String(128))
+    taxonomy_version = db.Column(db.String(32))
+    sort_order = db.Column(db.Integer, default=0)
+
+    __table_args__ = (db.CheckConstraint("scope IN ('direct','supplementary_context')", name="ck_syllabus_microtopics_scope"),)
 
 
 class ChapterSourceMap(db.Model):

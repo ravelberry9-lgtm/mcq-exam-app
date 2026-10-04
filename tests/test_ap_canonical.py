@@ -10,7 +10,7 @@ from sqlalchemy.exc import IntegrityError
 
 from app.db import db
 from app.models import (
-    CHAPTER_CLASSIFICATIONS, LEARNER_VISIBLE_STATUS, QUESTION_SOURCES, REVIEW_STATUSES, SUPPLEMENTARY_TYPES,
+    CHAPTER_CLASSIFICATIONS, SyllabusMicrotopic, LEARNER_VISIBLE_STATUS, QUESTION_SOURCES, REVIEW_STATUSES, SUPPLEMENTARY_TYPES,
     Chapter, Note, Question, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusUnit,
 )
 from app.services import ap_canonical as canon
@@ -450,17 +450,20 @@ def test_chapter_18_pure_political_chronology_goes_to_the_fourth_supplementary_c
         r = _row(full_map, 18, sec)
         assert r["canonical_chapter_slug"] == modern and r["coverage_scope"] == "supplementary" and r["mapping_kind"] == "supplementary", sec
         assert "scope_boundary" not in r["flags"].split(";")
-    for sec in (3, 7, 9):                                 # mixed: supplementary primary (dominant content) + Chapter 31 secondary, not split
+    for sec in (3, 7, 9):                                 # Mulki, Six-Point Formula, G.O. 610: Chapter 31 primary, supplementary secondary
         r = _row(full_map, 18, sec)
-        assert r["canonical_chapter_slug"] == modern and r["coverage_scope"] == "mixed", sec
-        assert any(x.startswith("u5-c31") for x in r["secondary_mappings"].split("; ")), sec
-        assert "scope_boundary" in r["flags"].split(";")
+        assert r["canonical_chapter_slug"] == "u5-c31-social-cultural-events-1956-2014" and r["coverage_scope"] == "mixed", sec
+        assert modern in r["secondary_mappings"].split("; "), sec
+        assert "scope_boundary" in r["flags"].split(";") and r["mapping_kind"] == "direct"
+    assert _row(full_map, 18, 3)["proposed_microtopic_slug"] == "u5-c31-mulki-rules"
+    assert _row(full_map, 18, 9)["proposed_microtopic_slug"] == "u5-c31-mulki-rules"
     r = _row(full_map, 18, 13)                            # leads to the 2014 reorganisation: Chapter 31 primary, post-2014 secondary
     assert r["canonical_chapter_slug"].startswith("u5-c31") and r["coverage_scope"] == "mixed" and "supp-post-2014-andhra-pradesh" in r["secondary_mappings"]
     for sec in (4, 5, 6, 12, 14):                         # social-cultural and regional-identity material stays core Chapter 31
         r = _row(full_map, 18, sec)
         assert r["canonical_chapter_slug"].startswith("u5-c31") and r["coverage_scope"] == "direct", sec
     assert {m["old_chapter_num"] for m in full_map if m["canonical_chapter_slug"] == modern} == {18}
+    assert sorted(m["section_num"] for m in full_map if m["canonical_chapter_slug"] == modern) == [8, 10, 11, 15, 16]
 
 
 def test_supplementary_chapters_are_distinguished_and_do_not_count_toward_completion():
@@ -527,3 +530,44 @@ def test_proposed_taxonomy_files_match_the_generator(tmp_path):
     mod.write(rows, out_dir=tmp_path)
     for name in ("ap_history_subtopic_taxonomy_proposed.csv", "ap_history_subtopic_taxonomy_proposed.md"):
         assert (tmp_path / name).read_bytes() == (ROOT / "docs" / name).read_bytes(), f"re-run scripts/build_ap_taxonomy_proposed.py ({name})"
+
+
+def test_seed_taxonomy_inserts_187_subtopics_and_317_microtopics_idempotently(seeded):
+    assert tax.TAXONOMY_VERSION == "ap-history-taxonomy-v1"
+    assert SyllabusSubtopic.query.count() == 0 and SyllabusMicrotopic.query.count() == 0
+    prev = canon.seed_taxonomy(apply=False)
+    assert prev["subtopics_added"] == 187 and prev["microtopics_added"] == 317 and SyllabusSubtopic.query.count() == 0   # preview writes nothing
+    rep = canon.seed_taxonomy()
+    assert (rep["subtopics_added"], rep["microtopics_added"]) == (187, 317)
+    assert (SyllabusSubtopic.query.count(), SyllabusMicrotopic.query.count()) == (187, 317)
+    again = canon.seed_taxonomy()
+    assert (again["subtopics_added"], again["microtopics_added"], again["subtopics_existing"], again["microtopics_existing"]) == (0, 0, 187, 317)
+    assert {r.taxonomy_version for r in SyllabusSubtopic.query} == {tax.TAXONOMY_VERSION}
+    assert {r.taxonomy_version for r in SyllabusMicrotopic.query} == {tax.TAXONOMY_VERSION}
+    assert SyllabusMicrotopic.query.filter(SyllabusMicrotopic.old_draft_slug.isnot(None)).count() == 314
+    assert SyllabusMicrotopic.query.filter_by(scope="supplementary_context").count() == 1
+    assert all(not re.search("[\u200b\u200c\u200d]", r.search_key_te) for r in list(SyllabusSubtopic.query) + list(SyllabusMicrotopic.query))
+    # supplementary chapters carry no subtopics
+    supp_ids = [c.id for c in SyllabusChapter.query.filter_by(classification="supplementary")]
+    assert SyllabusSubtopic.query.filter(SyllabusSubtopic.chapter_id.in_(supp_ids)).count() == 0
+
+
+def test_seed_taxonomy_never_updates_existing_rows_and_needs_chapters_first(hist):
+    with pytest.raises(LookupError):
+        canon.seed_taxonomy()
+    canon.seed()
+    canon.seed_taxonomy()
+    row = SyllabusSubtopic.query.first()
+    row.subtopic_en = "Edited by a reviewer"
+    db.session.commit()
+    canon.seed_taxonomy()
+    assert SyllabusSubtopic.query.filter_by(slug=row.slug).one().subtopic_en == "Edited by a reviewer"
+
+
+def test_seed_validation_on_a_disposable_copy_passes_and_report_is_in_sync(tmp_path):
+    import subprocess
+    out = tmp_path / "report.md"
+    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "validate_ap_seed_on_copy.py"), "--report", str(out)], capture_output=True, text=True, cwd=ROOT)
+    assert r.returncode == 0, r.stdout[-2000:] + r.stderr[-2000:]
+    assert "Result: **PASS**" in out.read_text(encoding="utf-8")
+    assert out.read_bytes() == (ROOT / "docs" / "ap_history_seed_validation_report.md").read_bytes()

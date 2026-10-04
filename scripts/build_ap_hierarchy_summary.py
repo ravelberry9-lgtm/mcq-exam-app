@@ -34,8 +34,8 @@ def write(path=ROOT / "docs" / "ap_history_hierarchy_summary.md"):
     scope = Counter(m["coverage_scope"] for m in mapped)
     core = [m for m in mapped if not m["canonical_chapter_slug"].startswith("supp-")]
     supp = [m for m in mapped if m["canonical_chapter_slug"].startswith("supp-")]
-    L = ["# AP History — final hierarchy summary (proposal; nothing seeded)", "",
-         "Subject → Official unit → Canonical chapter → Learner-facing subtopic → Internal microtopic. Nothing in this summary has been seeded, imported or deployed.", "",
+    L = ["# AP History — final hierarchy summary (approved)", "",
+         "Taxonomy version: **`" + tax.TAXONOMY_VERSION + "`**.", "", "Subject → Official unit → Canonical chapter → Learner-facing subtopic → Internal microtopic. Not seeded into staging or production; no questions imported; nothing deployed.", "",
          "## Totals", "",
          f"- Official units: **{len(canon.UNITS)}**",
          f"- Core chapters: **{len(canon.CHAPTERS)}**",

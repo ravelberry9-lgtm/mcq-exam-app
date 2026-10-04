@@ -8,7 +8,7 @@ reference chapters. Subject -> Unit -> Chapter -> Subtopic.
 * This module does not touch notes, questions or source files.
 """
 from ..db import db
-from ..models import Subject, SyllabusChapter, SyllabusSubtopic, SyllabusUnit
+from ..models import SyllabusMicrotopic, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusUnit
 
 SUBJECT_SLUG = "ap_history"
 
@@ -126,3 +126,41 @@ def seed_subtopics(subtopics, session=None, apply=True):
     if apply:
         session.commit()
     return added
+
+
+def seed_taxonomy(session=None, apply=True):
+    """Insert the missing learner-facing subtopics and internal microtopics of the proposed taxonomy
+    (``ap_canonical_taxonomy``, version ``TAXONOMY_VERSION``). Insert-only and idempotent: an existing slug is never updated or
+    deleted. Chapters must already be seeded. Returns counts."""
+    from . import ap_canonical_taxonomy as tx
+    session = session or db.session
+    chap = {num: slug for _u, num, slug, _e, _t, _c in CHAPTERS}
+    report = {"subtopics_added": 0, "subtopics_existing": 0, "microtopics_added": 0, "microtopics_existing": 0}
+    for num, subs in tx.build().items():
+        ch = SyllabusChapter.query.filter_by(slug=chap[num]).first()
+        if ch is None:
+            raise LookupError(f"chapter {chap[num]!r} is not seeded; seed the chapters first")
+        for i, sb in enumerate(subs, 1):
+            row = SyllabusSubtopic.query.filter_by(slug=sb["slug"]).first()
+            if row is None:
+                report["subtopics_added"] += 1
+                row = SyllabusSubtopic(chapter_id=ch.id, slug=sb["slug"], subtopic_en=sb["en"], subtopic_te=sb["te"],
+                                       search_key_te=tx.search_key(sb["te"]), taxonomy_version=tx.TAXONOMY_VERSION, sort_order=i)
+                if apply:
+                    session.add(row)
+                    session.flush()
+            else:
+                report["subtopics_existing"] += 1
+            for j, mi in enumerate(sb["micros"], 1):
+                if SyllabusMicrotopic.query.filter_by(slug=mi["slug"]).first():
+                    report["microtopics_existing"] += 1
+                    continue
+                report["microtopics_added"] += 1
+                if apply:
+                    session.add(SyllabusMicrotopic(
+                        subtopic_id=row.id, slug=mi["slug"], micro_en=mi["en"], micro_te=mi["te"], search_key_te=tx.search_key(mi["te"]),
+                        scope=mi["scope"], old_draft_slug=mi["slug"] if mi["from_draft"] else None,
+                        taxonomy_version=tx.TAXONOMY_VERSION, sort_order=j))
+    if apply:
+        session.commit()
+    return report

@@ -23,7 +23,7 @@ from app.services import ap_canonical as canon          # noqa: E402
 from app.services import ap_canonical_taxonomy as tax  # noqa: E402
 import ap_note_mapping_spec as spec                      # noqa: E402
 
-COLUMNS = ["source", "old_chapter_id", "old_chapter_num", "old_chapter_title", "note_id", "section_num", "heading_en", "heading_te",
+COLUMNS = ["taxonomy_version", "source", "old_chapter_id", "old_chapter_num", "old_chapter_title", "note_id", "section_num", "heading_en", "heading_te",
            "canonical_unit", "canonical_chapter_num", "canonical_chapter_slug", "canonical_chapter_title_en",
            "proposed_subtopic_slug", "proposed_subtopic_en", "proposed_microtopic_slug", "proposed_microtopic_en", "draft_subtopic_slug",
            "coverage_scope", "confidence", "mapping_kind", "multi_topic", "flags", "approval_status",
@@ -143,7 +143,7 @@ def build(rows=None):
             reason = reason + " UNAPPROVED: " + spec.UNAPPROVED[(cnum, snum)]
         src = "app database (content.db.gz)" if cid is not None else "local HTML file (not in the app database)"
         out.append({
-            "source": src, "old_chapter_id": cid if cid is not None else "", "old_chapter_num": cnum, "old_chapter_title": ctitle,
+            "taxonomy_version": tax.TAXONOMY_VERSION, "source": src, "old_chapter_id": cid if cid is not None else "", "old_chapter_num": cnum, "old_chapter_title": ctitle,
             "note_id": nid if nid is not None else "", "section_num": snum, "heading_en": hen or "", "heading_te": hte or "",
             "canonical_unit": unit or "—", "canonical_chapter_num": num or "—", "canonical_chapter_slug": slug,
             "canonical_chapter_title_en": en, "proposed_subtopic_slug": sub_slug,

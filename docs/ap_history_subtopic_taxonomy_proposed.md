@@ -1,6 +1,6 @@
-# AP History — PROPOSED rationalized taxonomy (for review)
+# AP History — rationalized taxonomy `ap-history-taxonomy-v1` (approved structure)
 
-Nothing here is seeded, imported or deployed. This replaces the 314-item draft as the proposal; the earlier review files are kept for the record.
+Taxonomy version: **`ap-history-taxonomy-v1`**. Approved structure; seeded only into disposable validation copies so far, never into staging or production. It replaces the 314-item draft; the earlier review files are kept for the record.
 
 Model: **canonical chapter → learner-facing subtopic → internal microtopic.** A question gets one primary subtopic and any number of microtopic tags; microtopics are filters, never navigation. Every one of the 314 earlier draft subtopics survives as a microtopic (its old slug is kept), so no historical coverage is removed.
 
@@ -25,7 +25,7 @@ Model: **canonical chapter → learner-facing subtopic → internal microtopic.*
 
 - Seventeenth-century rulers, Akkanna-Madanna, later monuments, Mughal annexation and the 1687 decline are supporting context. Questions on post-1600 events carry the tag supplementary_context unless needed to explain a development that began in the sixteenth century.
 - Microtopic `post-1600-context` (Chapter 13) carries `supplementary_context` scope.
-- Pure political or administrative chronology of 1956-2014 (chief-minister lists, elections, party succession, cabinet chronology, ordinary administrative change) is mapped to the fourth supplementary chapter, which never counts toward direct syllabus completion. Chapter 31 keeps material that directly concerns or substantially shaped language, education, literature, theatre, cinema, arts, social reform, Dalit, women's, peasant or civil-society movements, regional identity, the 1969 Telangana agitation, the 1972 Jai Andhra movement, Mulki and regional safeguards, the Six-Point Formula and the developments leading to the 2014 reorganisation.
+- Pure political or administrative chronology of 1956-2014 (ordinary chief-minister lists and chronology, elections and party chronology, cabinet changes, routine government succession, administrative developments without substantial social-cultural consequences) is mapped to the fourth supplementary chapter, which never counts toward direct syllabus completion. Chapter 31 keeps material that directly concerns or substantially shaped language, education, literature, theatre, cinema, arts, social reform, Dalit, women's, peasant or civil-society movements, regional identity, the 1969 Telangana agitation, the 1972 Jai Andhra movement, Mulki and regional safeguards, the Six-Point Formula, G.O. 610 and regional employment, and the developments leading to the 2014 reorganisation. Source 18 sections 3, 7 and 9 therefore have Chapter 31 as primary (mixed) with the supplementary chapter as secondary.
 
 ## Normalized Telugu terminology applied
 
@@ -405,5 +405,5 @@ Learner-facing metadata uses the approved forms; source spellings stay untouched
 | Visual and performing arts, cultural institutions and developments to 2014 | దృశ్య మరియు ప్రదర్శన కళలు, సాంస్కృతిక సంస్థలు మరియు 2014 వరకు పరిణామాలు | 1/0 | Visual and performing arts; Cultural institutions; Major cultural developments up to 2014 |
 | Dalit and social movements | దళిత మరియు సామాజిక ఉద్యమాలు | 0/1 | Dalit and social movements |
 | Women's and civil-society movements | మహిళా మరియు పౌర సమాజ ఉద్యమాలు | 0/0 | Women's movements; Civil-society movements |
-| Regional identity movements: Telangana 1969, Jai Andhra 1972 and safeguards | ప్రాంతీయ గుర్తింపు ఉద్యమాలు: 1969 తెలంగాణ, 1972 జై ఆంధ్ర మరియు రక్షణలు | 5/4 | Telangana movement of 1969; Jai Andhra Movement of 1972; Regional identity movements; Mulki rules and regional safeguards |
+| Regional identity movements: Telangana 1969, Jai Andhra 1972 and safeguards | ప్రాంతీయ గుర్తింపు ఉద్యమాలు: 1969 తెలంగాణ, 1972 జై ఆంధ్ర మరియు రక్షణలు | 8/1 | Telangana movement of 1969; Jai Andhra Movement of 1972; Regional identity movements; Mulki rules and regional safeguards |
 

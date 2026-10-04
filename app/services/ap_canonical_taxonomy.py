@@ -8,6 +8,8 @@ lost; the learner sees only the grouped subtopics. A question has one primary su
 """
 import re
 
+TAXONOMY_VERSION = "ap-history-taxonomy-v1"
+
 from .ap_canonical import CHAPTERS
 from .ap_canonical_subtopics import expanded as _draft
 

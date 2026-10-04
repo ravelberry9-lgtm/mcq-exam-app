@@ -1,6 +1,8 @@
-# AP History — final hierarchy summary (proposal; nothing seeded)
+# AP History — final hierarchy summary (approved)
 
-Subject → Official unit → Canonical chapter → Learner-facing subtopic → Internal microtopic. Nothing in this summary has been seeded, imported or deployed.
+Taxonomy version: **`ap-history-taxonomy-v1`**.
+
+Subject → Official unit → Canonical chapter → Learner-facing subtopic → Internal microtopic. Not seeded into staging or production; no questions imported; nothing deployed.
 
 ## Totals
 
@@ -15,8 +17,8 @@ Subject → Official unit → Canonical chapter → Learner-facing subtopic → 
 
 | Measure | Sections |
 |---|---:|
-| Primary home is a core chapter | 285 |
-| Primary home is a supplementary chapter | 53 |
+| Primary home is a core chapter | 288 |
+| Primary home is a supplementary chapter | 50 |
 | coverage_scope = direct | 222 |
 | coverage_scope = mixed | 10 |
 | coverage_scope = supplementary_context | 3 |
@@ -59,7 +61,7 @@ Subject → Official unit → Canonical chapter → Learner-facing subtopic → 
 | 5 | 28 | Visalandhra Movement and Visalandhra Mahasabha | direct | 4 | 6 | 2 / 0 / 0 / 0 |
 | 5 | 29 | States Reorganisation Commission | direct | 4 | 7 | 2 / 0 / 0 / 0 |
 | 5 | 30 | Gentlemen's Agreement and Formation of Andhra Pradesh | direct | 5 | 9 | 6 / 0 / 0 / 3 |
-| 5 | 31 | Important Social and Cultural Events, 1956–2014 | direct | 7 | 15 | 6 / 1 / 0 / 3 |
+| 5 | 31 | Important Social and Cultural Events, 1956–2014 | direct | 7 | 15 | 6 / 4 / 0 / 3 |
 
 Per-unit subtopics: Unit 1: 56; Unit 2: 42; Unit 3: 46; Unit 4: 23; Unit 5: 20
 
@@ -70,7 +72,7 @@ Per-unit subtopics: Unit 1: 56; Unit 2: 42; Unit 3: 46; Unit 4: 23; Unit 5: 20
 | `supp-dynasties-overview` | Overview of Andhra Dynasties (Reference) | supplementary_cross_cutting | 12 |
 | `supp-asaf-jahis-hyderabad-state` | Asaf Jahis and Hyderabad State (Reference) | supplementary_outside_direct_syllabus | 17 |
 | `supp-post-2014-andhra-pradesh` | Bifurcation and Post-2014 Andhra Pradesh (Current Context) | supplementary_post_syllabus | 16 |
-| `supp-modern-ap-political-administrative-1956-2014` | Political and Administrative Context of Andhra Pradesh, 1956–2014 | supplementary_context | 8 |
+| `supp-modern-ap-political-administrative-1956-2014` | Political and Administrative Context of Andhra Pradesh, 1956–2014 | supplementary_context | 5 |
 
 ## Unresolved and blocked mappings
 
