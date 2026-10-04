@@ -36,10 +36,10 @@ def seeded(hist):
 
 
 # ── seed data ────────────────────────────────────────────────────────
-def test_structure_is_five_units_31_core_chapters_and_three_supplementary():
+def test_structure_is_five_units_31_core_chapters_and_four_supplementary():
     assert [u[0] for u in canon.UNITS] == [1, 2, 3, 4, 5]
     assert [c[1] for c in canon.CHAPTERS] == list(range(1, 32))
-    assert len(canon.SUPPLEMENTARY) == 3
+    assert len(canon.SUPPLEMENTARY) == 4
     ranges = {1: range(1, 9), 2: range(9, 15), 3: range(15, 23), 4: range(23, 28), 5: range(28, 32)}
     for unit, num, *_ in canon.CHAPTERS:
         assert num in ranges[unit], (unit, num)
@@ -47,11 +47,11 @@ def test_structure_is_five_units_31_core_chapters_and_three_supplementary():
 
 def test_seed_creates_expected_rows_and_is_idempotent(hist):
     r = canon.seed()
-    assert (r["units_added"], r["chapters_added"], r["supplementary_added"]) == (5, 31, 3)
-    assert (SyllabusUnit.query.count(), SyllabusChapter.query.count()) == (5, 34)
+    assert (r["units_added"], r["chapters_added"], r["supplementary_added"]) == (5, 31, 4)
+    assert (SyllabusUnit.query.count(), SyllabusChapter.query.count()) == (5, 35)
     again = canon.seed()
     assert (again["units_added"], again["chapters_added"], again["supplementary_added"]) == (0, 0, 0)
-    assert SyllabusChapter.query.count() == 34
+    assert SyllabusChapter.query.count() == 35
 
 
 def test_preview_writes_nothing_and_missing_subject_is_refused(hist):
@@ -75,6 +75,10 @@ def test_supplementary_chapters_are_not_core(seeded):
     assert supp["supp-dynasties-overview"].supplementary_type == "supplementary_cross_cutting"
     assert supp["supp-asaf-jahis-hyderabad-state"].supplementary_type == "supplementary_outside_direct_syllabus"
     assert supp["supp-post-2014-andhra-pradesh"].supplementary_type == "supplementary_post_syllabus"
+    modern = supp["supp-modern-ap-political-administrative-1956-2014"]
+    assert modern.supplementary_type == "supplementary_context" and modern.title_en == "Political and Administrative Context of Andhra Pradesh, 1956–2014"
+    assert modern.title_te == "ఆంధ్రప్రదేశ్ రాజకీయ–పరిపాలనా నేపథ్యం, 1956–2014"
+    assert not any(c.counts_toward_completion for c in supp.values()) and len(supp) == 4
     assert SyllabusChapter.query.filter(SyllabusChapter.classification != "supplementary").count() == 31
 
 
@@ -108,7 +112,7 @@ def test_slugs_follow_the_scheme_and_are_unique():
         m = SLUG.match(slug)
         assert m and int(m.group(1)) == unit and int(m.group(2)) == num, slug
     assert "u1-c04-satavahanas" in slugs
-    assert len({u[1] for u in canon.UNITS} | set(slugs) | {s[0] for s in canon.SUPPLEMENTARY}) == 39
+    assert len({u[1] for u in canon.UNITS} | set(slugs) | {s[0] for s in canon.SUPPLEMENTARY}) == 40
 
 
 def test_editing_a_title_never_changes_a_slug_and_reseed_does_not_overwrite(seeded):
@@ -192,7 +196,7 @@ def test_chapters_13_to_19_follow_the_approved_targets(full_map):
         return {m["canonical_chapter_slug"] for m in full_map if m["old_chapter_num"] == n}
     assert chs(14) == {"supp-asaf-jahis-hyderabad-state"}
     assert chs(19) == {"supp-post-2014-andhra-pradesh"}
-    assert chs(18) == {"u5-c31-social-cultural-events-1956-2014"}
+    assert chs(18) == {"u5-c31-social-cultural-events-1956-2014", "supp-modern-ap-political-administrative-1956-2014"}
     assert all(s.startswith("u2-c13") for s in chs(13))
     assert {s.split("-")[1] for s in chs(15)} <= {"c15", "c16", "c17", "c18"}
     # content-driven (approved): source 16 covers 17, 19, 23, 24, 26 (as secondary only), 27 plus the Komaram Bheem section, which has the supplementary Asaf Jahi chapter as primary
@@ -371,7 +375,7 @@ def test_rationalized_subtopics_are_unique_bilingual_prefixed_and_far_fewer():
             assert sb["micros"]
             for m in sb["micros"]:
                 assert m["en"].strip() and m["te"].strip()
-    assert 150 <= len(seen) <= 200
+    assert len(seen) == 187  # approved count; do not add subdivisions merely to reach six
     assert sum(len(v) for v in tax.build().values()) < 314 * 0.65
 
 
@@ -440,15 +444,47 @@ def test_komaram_bheem_is_asaf_jahi_primary_not_an_andhra_movement_event(full_ma
     assert not r["canonical_chapter_slug"].startswith(("u4-", "u3-"))
 
 
-def test_chapter_18_pure_political_chronology_is_supplementary_context(full_map):
-    for sec in (3, 7, 8, 10, 11, 15, 16):
+def test_chapter_18_pure_political_chronology_goes_to_the_fourth_supplementary_chapter(full_map):
+    modern = "supp-modern-ap-political-administrative-1956-2014"
+    for sec in (8, 10, 11, 15, 16):                       # pure political / administrative chronology
         r = _row(full_map, 18, sec)
-        assert r["coverage_scope"] == "supplementary_context" and "scope_boundary" in r["flags"].split(";"), sec
-    assert _row(full_map, 18, 9)["coverage_scope"] == "mixed"
-    for sec in (4, 5, 6, 12):  # regional-identity movements stay direct Chapter 31 coverage
-        assert _row(full_map, 18, sec)["coverage_scope"] == "direct"
-        assert _row(full_map, 18, sec)["canonical_chapter_slug"].startswith("u5-c31")
-    assert all("scope_boundary" in _row(full_map, 18, s)["flags"].split(";") for s in (3, 7, 8, 9, 10, 11, 13, 15, 16))
+        assert r["canonical_chapter_slug"] == modern and r["coverage_scope"] == "supplementary" and r["mapping_kind"] == "supplementary", sec
+        assert "scope_boundary" not in r["flags"].split(";")
+    for sec in (3, 7, 9):                                 # mixed: supplementary primary (dominant content) + Chapter 31 secondary, not split
+        r = _row(full_map, 18, sec)
+        assert r["canonical_chapter_slug"] == modern and r["coverage_scope"] == "mixed", sec
+        assert any(x.startswith("u5-c31") for x in r["secondary_mappings"].split("; ")), sec
+        assert "scope_boundary" in r["flags"].split(";")
+    r = _row(full_map, 18, 13)                            # leads to the 2014 reorganisation: Chapter 31 primary, post-2014 secondary
+    assert r["canonical_chapter_slug"].startswith("u5-c31") and r["coverage_scope"] == "mixed" and "supp-post-2014-andhra-pradesh" in r["secondary_mappings"]
+    for sec in (4, 5, 6, 12, 14):                         # social-cultural and regional-identity material stays core Chapter 31
+        r = _row(full_map, 18, sec)
+        assert r["canonical_chapter_slug"].startswith("u5-c31") and r["coverage_scope"] == "direct", sec
+    assert {m["old_chapter_num"] for m in full_map if m["canonical_chapter_slug"] == modern} == {18}
+
+
+def test_supplementary_chapters_are_distinguished_and_do_not_count_toward_completion():
+    supp = {c[0]: c for c in canon.SUPPLEMENTARY}
+    assert len(supp) == 4 and all(slug.startswith("supp-") for slug in supp)
+    assert "supp-modern-ap-political-administrative-1956-2014" in supp
+    assert len([c for c in canon.CHAPTERS]) == 31 and not any(c[2].startswith("supp-") for c in canon.CHAPTERS)
+
+
+def test_question_mapping_rules_are_recorded_for_the_future_importer(mapping_mod):
+    md = (ROOT / "docs" / "ap_history_note_mapping_draft.md").read_text(encoding="utf-8")
+    assert "do not inherit its primary mapping" in md and "individually" in md
+    assert "inherit scope from the specific fact tested" in md
+    assert "never counts toward direct syllabus completion" in md
+
+
+def test_hierarchy_summary_matches_generator_and_states_the_final_counts(tmp_path):
+    mod = _load("build_ap_hierarchy_summary")
+    mod.write(tmp_path / "s.md")
+    assert (tmp_path / "s.md").read_bytes() == (ROOT / "docs" / "ap_history_hierarchy_summary.md").read_bytes(), "re-run scripts/build_ap_hierarchy_summary.py"
+    text = (tmp_path / "s.md").read_text(encoding="utf-8")
+    for needle in ("Official units: **5**", "Core chapters: **31**", "Supplementary chapters: **4**", "Learner-facing subtopics: **187**",
+                   "Internal microtopics: **317**", "blocked_until_verified"):
+        assert needle in text, needle
 
 
 def test_qutb_shahi_post_1600_material_is_not_direct_coverage(full_map):
