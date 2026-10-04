@@ -8,11 +8,16 @@ Headings alone were not trusted: the section text was spot-checked for every amb
 Sections not listed here are generic study aids (see GENERIC_HEADINGS) and map at chapter level with high confidence.
 """
 SUPP = "supp-dynasties-overview"
-DEFAULT_CHAPTER = {1: 2, 2: 1, 3: 3, 4: SUPP, 5: 4, 6: 5, 7: 6, 8: 7, 9: 8, 10: 9, 11: 10, 12: 11}
+SUPP_ASAF = "supp-asaf-jahis-hyderabad-state"
+SUPP_POST = "supp-post-2014-andhra-pradesh"
+MAJORITY = "MAJORITY"   # study aids of a source chapter that spans several canonical chapters follow the chapter receiving most of its substantive sections
+DEFAULT_CHAPTER = {1: 2, 2: 1, 3: 3, 4: SUPP, 5: 4, 6: 5, 7: 6, 8: 7, 9: 8, 10: 9, 11: 10, 12: 11,
+                   13: 13, 14: SUPP_ASAF, 15: MAJORITY, 16: MAJORITY, 17: MAJORITY, 18: 31, 19: SUPP_POST}
+AID = "AID"         # a study-aid section (key sites, key figures, timeline) in a multi-target source chapter
 
 GENERIC_HEADINGS = (
     "Introduction", "Introduction — Why a Three-Dynasty Chapter", "Terminology Primer", "Glossary", "Revision", "MCQs — Practice", "Practice MCQs",
-    "Previous Year Question Patterns — APPSC Group 1/2", "Summary & Exam Tips", "Legacy & Chapter Summary",
+    "Previous Year Question Patterns — APPSC Group 1/2", "Summary & Exam Tips", "Legacy & Chapter Summary", "MCQs",
 )
 GENERIC_REASON = "Study-aid section (introduction, glossary, revision, practice or summary) that covers the whole source chapter; mapped at chapter level."
 
@@ -114,7 +119,7 @@ SPEC = {
     (7, 7): (6, "salankayanas", H, "Salankayanas: introduction and founder.", []),
     (7, 8): (6, "salankayanas", H, "Hastivarman and Samudragupta's southern campaign (Allahabad pillar).", [(6, "political-conditions")]),
     (7, 9): (6, "salankayanas", H, "Later Salankayana kings.", []),
-    (7, 10): (6, "salankayanas", M, "Vengi (Pedavegi) as Salankayana capital; name overlaps the Eastern Chalukya Vengi of Chapter 8.", [(8, "vengi-foundation")]),
+    (7, 10): (6, "salankayanas", M, "Vengi (Pedavegi) as Salankayana capital: the primary topic. The secondary Chapter 8 link is kept only because section 10.2 itself discusses the later Eastern Chalukya period (a table of Vengi's c. 624-1130 CE role); the shared place name alone would not justify it.", [(8, "vengi-foundation")]),
     (7, 11): (6, "religion", H, "Salankayana religion, Shaiva to Vaishnava.", []),
     (7, 12): (6, "religion", M, "Bull seal and tutelary deity Chitrarathasvamin; religion and emblem together.", [(6, "salankayanas")]),
     (7, 13): (6, "inscriptions", M, "Prakrit-to-Sanskrit language shift traced through copper plates.", [(7, "sanskrit-telugu-development")]),
@@ -154,7 +159,7 @@ SPEC = {
     (9, 13): (8, "important-rulers", H, "Rajaraja Narendra.", [(8, "telugu-nannaya-literature")]),
     (9, 14): (8, "telugu-nannaya-literature", H, "Nannaya and the Andhra Mahabharatam.", [(1, "telugu-identity-language")]),
     (9, 15): (8, "temples-pancharamas", H, "Pancharama kshetras.", []),
-    (9, 16): (8, "temples-pancharamas", M, "General art and architecture; the chapter has no general art subtopic. Propose adding one.", []),
+    (9, 16): (8, "art-architecture", H, "General Eastern Chalukya art and architecture; mapped to the general subtopic, not forced into Pancharamas.", [(8, "temples-pancharamas")]),
     (9, 17): (8, "religion", M, "Religion and administration in one section. Ambiguous.", [(8, "administration")]),
     (9, 18): (8, None, H, "Eastern Chalukya sites.", [(1, "important-sites")]),
     (9, 19): (8, "chola-chalukya-relations", H, "Kulottunga I and the Chola merger.", []),
@@ -188,7 +193,7 @@ SPEC = {
     (11, 9): (10, "kondavidu-reddys", H, "Prolaya Vema Reddi.", []),
     (11, 10): (10, "kondavidu-reddys", H, "Anavema, Komati Vema and Pedakomati Vema.", []),
     (11, 11): (10, "rajahmundry-reddys", H, "Rajamahendravaram Reddi branch.", []),
-    (11, 12): (10, "rajahmundry-reddys", M, "Placed under Rajamahendravaram as the section title states; the Kondavidu-vs-Rajahmundry attribution of Kataya Vema should be checked in review.", []),
+    (11, 12): (10, "rajahmundry-reddys", M, "Provisionally placed under Rajahmundry Reddys (the section title's placement).", []),
     (11, 13): (10, "recharla-velamas", H, "Recharla Velamas of Rachakonda and Devarakonda.", []),
     (11, 14): (10, "telugu-literature", H, "Srinatha.", [(14, "authors-works")]),
     (11, 15): (10, "telugu-literature", H, "Other literary figures.", [(14, "authors-works")]),
@@ -216,4 +221,127 @@ SPEC = {
     (12, 18): (11, "telugu-literature-ashtadiggajas", M, "Literature and arts together. Ambiguous.", [(11, "art-architecture")]),
     (12, 19): (11, None, H, "Vijayanagara sites in AP.", []),
     (12, 20): (11, "decline", H, "Decline and successor states.", []),
+}
+
+# ── source chapters 13-19 (local HTML files, not in the app database) ───────────
+SPEC.update({
+    # source ch13 Qutb Shahis -> canonical 13
+    (13, 3): (13, "establishment", M, "Bahmani background, the five Deccan sultanates, Golconda fort and Sultan Quli's founding in one long section.", [(12, "bahmani-vijayanagara-rivalry")]),
+    (13, 4): (13, "sixteenth-century-rulers", M, "Lists all eight Qutb Shahi rulers, 1518-1687; only the first reigns fall in the 16th century.", []),
+    (13, 5): (13, "sixteenth-century-rulers", H, "Ibrahim Quli (1550-80): Vijayanagara exile, Golconda reforms and his role at Talikota (1565).", [(11, "battle-of-talikota")]),
+    (13, 6): (13, "sixteenth-century-rulers", M, "Muhammad Quli (1580-1612): founding of Hyderabad (1591), poetry, administration; the reign runs past 1600.", [(13, "telugu-dakhni-patronage"), (13, "art-architecture")]),
+    (13, 7): (13, "art-architecture", H, "Charminar, 1591.", []),
+    (13, 8): (13, "art-architecture", M, "Planning of Hyderabad city (1591).", []),
+    (13, 9): (13, "art-architecture", M, "Mecca Masjid (completed well after the 16th century) and other monuments; supporting context.", []),
+    (13, 10): (13, "art-architecture", M, "Qutb Shahi tombs, mostly 17th-century construction; supporting context.", []),
+    (13, 11): (13, "administration", M, "Central and provincial administration, economy, Golconda diamonds and merchant guilds in one section.", [(13, "society-economy"), (13, "trade-ports-golconda")]),
+    (13, 12): (13, "religion", H, "Religious tolerance; the Hindu ministers Akkanna and Madanna (17th century) and their murder; Hindu-Muslim harmony.", []),
+    (13, 13): (13, "telugu-dakhni-patronage", H, "Telugu literature and Dakhni under Qutb Shahi patronage.", []),
+    (13, 14): (13, None, M, "Decline and Mughal annexation, 1636-1687: after the official 11th-16th century boundary; supporting context.", []),
+    (13, 15): (13, None, M, "Legacy and AP sites table; mostly 17th-century context.", []),
+    # source ch14 Asaf Jahis -> supplementary reference (secondary links only where the content justifies them)
+    (14, 3): (SUPP_ASAF, None, H, "Mughal Hyderabad Suba, 1687-1724.", []),
+    (14, 4): (SUPP_ASAF, None, H, "Asaf Jah I and the founding of the dynasty.", []),
+    (14, 5): (SUPP_ASAF, None, H, "The seven Nizams.", []),
+    (14, 6): (SUPP_ASAF, None, H, "British-Nizam relations.", []),
+    (14, 7): (SUPP_ASAF, None, H, "Salar Jung I's reforms.", []),
+    (14, 8): (SUPP_ASAF, None, H, "Education, culture, architecture and the arts under the Nizams (1908-1948); the period precedes Chapter 31's 1956-2014 span, so no secondary link.", []),
+    (14, 9): (SUPP_ASAF, None, H, "Mir Osman Ali Khan, the last Nizam.", []),
+    (14, 10): (SUPP_ASAF, None, H, "Razakar movement, 1938-1948. Hyderabad's 1948 integration into India is not the 1956 formation of Andhra Pradesh, so no formation-chapter link is added.", []),
+    (14, 11): (SUPP_ASAF, None, H, "Operation Polo and the merger of Hyderabad into India (1948); no formation-chapter link added, for the same reason.", []),
+    (14, 12): (SUPP_ASAF, None, H, "Telangana armed struggle 1946-51: a Communist-led peasant revolt against jagirdars, doras and Razakar violence; its content matches Chapter 20.", [(20, "communist-movement"), (20, "regional-agrarian-struggles")]),
+    (14, 13): (SUPP_ASAF, None, H, "Economy and society of Hyderabad State.", []),
+    (14, 14): (SUPP_ASAF, None, H, "Key sites (AP and Telangana).", []),
+    (14, 15): (SUPP_ASAF, None, H, "Key historical figures.", []),
+    # source ch15 British coastal Andhra -> canonical 15-17 by section content
+    (15, 3): (15, "trading-centres-ports", M, "Late Mughal decline 1687-1740, European settlements on the Andhra coast, and why the British won.", [(15, "european-rivalries")]),
+    (15, 4): (15, "european-rivalries", H, "Carnatic Wars, 1746-1763.", []),
+    (15, 5): (15, "northern-circars", H, "Cession of the Northern Circars, 1766.", []),
+    (15, 6): (15, "ceded-districts", H, "Ceded Districts, 1800.", []),
+    (15, 7): (16, "consolidation-of-administration", M, "Madras Presidency: its formation, administrative order to 1858 and Andhra districts by 1857.", [(15, "company-administration")]),
+    (15, 8): (16, "thomas-munro", M, "Munro's career and the ryotwari system in one section.", [(16, "zamindari-ryotwari"), (15, "revenue-systems")]),
+    (15, 9): (16, "arthur-cotton", H, "Arthur Cotton and irrigation.", []),
+    (15, 10): (16, "zamindari-ryotwari", M, "Vizianagaram Pusapati line, Bobbili (1757), Padmanabham (1794), other zamindaris.", [(15, "northern-circars")]),
+    (15, 11): (16, "impact-of-1857", M, "1857 in Madras Presidency (limited impact), the 1879 Rampa rebellion and other minor uprisings.", [(16, "revolt-of-1857"), (26, "tribal-resistance")]),
+    (15, 12): (17, "western-education", M, "English education, social reform movements and print/Telugu renaissance in one section.", [(17, "social-reform"), (17, "print-culture"), (17, "modern-telugu-awakening")]),
+    (15, 13): (16, "administrative-economic-effects", M, "Agriculture, trade, railways and the 1876-78 famine.", [(15, "early-economic-social-impact")]),
+    (15, 14): (AID, None, M, "Key sites table spanning the source chapter.", []),
+    # source ch16 Freedom movement -> canonical 17-22 (and 23-27) by section content
+    (16, 3): (19, "congress-and-andhra", M, "Founding of the INC (1885), partition of Bengal (1905) and the Andhra response, Surat split (1907).", [(19, "swadeshi-vandemataram")]),
+    (16, 4): (23, "demand-for-andhra-province", M, "Andhra Movement from 1913: Tamil dominance in administration and jobs and the push for a separate province.", [(23, "linguistic-identity-roots"), (23, "important-conferences")]),
+    (16, 5): (19, "non-cooperation", H, "Non-Cooperation 1920-22, including Duggirala Gopalakrishnayya and Chauri Chaura.", []),
+    (16, 6): (19, "regional-centres-events", M, "Alluri Sitarama Raju and the Rampa rebellion 1922-24: an armed tribal revolt in the nationalist era that equally fits Chapter 26 'tribal resistance'. Ambiguous.", [(26, "tribal-resistance")]),
+    (16, 7): (24, "origin-sessions", H, "Andhra Mahasabha (Telangana) from 1928: Telugu language and culture under Nizam rule.", []),
+    (16, 8): (19, "civil-disobedience-salt-satyagraha", H, "Simon Commission protest, Prakasam, Salt Satyagraha (1930), Gandhi-Irwin Pact.", []),
+    (16, 9): (23, "sri-bagh-pact", H, "Sri Bagh Pact.", []),
+    (16, 10): (19, "quit-india", H, "Quit India Movement, 1942.", []),
+    (16, 11): (26, "tribal-resistance", M, "Komaram Bheem's Gond armed movement (1928-40, Jodeghat) and other Telangana freedom leaders; also regional nationalist history. Ambiguous.", [(19, "regional-centres-events")]),
+    (16, 12): (19, "prominent-leaders", M, "Comprehensive list of freedom-movement leaders.", [(24, "major-leaders")]),
+    (16, 13): (27, "fast-and-death", H, "Potti Sriramulu's fast and death, 1952.", [(27, "potti-sriramulu")]),
+    (16, 14): (27, "formation-of-andhra-state", H, "Formation of Andhra State, 1953.", []),
+    (16, 15): (17, None, M, "Umbrella section on socio-cultural and ideological currents with seven subsections: Justice Party/Self-Respect, left and Communist movements, anti-zamindari and Kisan movements, poetry and revolutionary literature, Nataka Samasthalu, women, reform and press.",
+               [(18, "justice-party"), (20, "communist-movement"), (20, "anti-zamindari-struggles"), (21, "nationalist-poetry"), (21, "nataka-samasthalu"), (22, None), (17, "social-reform"), (25, "press-political-mobilisation")]),
+    # source ch17 Andhra State + AP formation -> canonical 25-30 by section content
+    (17, 3): (28, "andhra-telangana-merger-debate", L, "Hyderabad State 1948-56 (military governor, Vellodi, Burgula, the 1952 election and Mulki agitation): background to the Telangana merger question. Ambiguous.", [(SUPP_ASAF, None), (30, "regional-safeguards")]),
+    (17, 4): (27, "formation-of-andhra-state", H, "Andhra State: context, formation, Bellary dispute, Sri Bagh Pact and the choice of Kurnool.", [(27, "kurnool-capital"), (23, "sri-bagh-pact")]),
+    (17, 5): (27, "tanguturi-prakasam", M, "Prakasam and B. Gopala Reddy as Andhra State chief ministers.", [(27, "consequences")]),
+    (17, 6): (29, "formation-members", H, "States Reorganisation Commission (Fazl Ali), 1953-55.", [(29, "terms-of-reference")]),
+    (17, 7): (29, "recommendations", H, "SRC recommendations, 1955.", []),
+    (17, 8): (28, "andhra-telangana-merger-debate", M, "Visalandhra Mahasabha and idea, Andhra-side arguments, Telangana-side opposition, leaders' views.", [(28, "visalandhra-mahasabha"), (28, "linguistic-political-arguments"), (28, "supporters-opponents")]),
+    (17, 9): (30, "provisions", H, "Gentlemen's Agreement: context, eight signatories, fourteen points and significance.", [(30, "signatories"), (30, "negotiations"), (30, "long-term-significance")]),
+    (17, 10): (30, "formation-1-november-1956", H, "Formation of Andhra Pradesh, 1 November 1956.", []),
+    (17, 11): (30, "regional-safeguards", M, "Mulki rules: origin, continuation under the Gentlemen's Agreement, Supreme Court rulings.", []),
+    (17, 12): (25, None, M, "Press, Library Movement, folk arts and tribal culture as the cultural base of the Andhra Movement (four subsections).", [(25, "library-movement"), (25, "press-political-mobilisation"), (26, "folk-traditions"), (26, "major-tribal-communities"), (23, "political-cultural-dimensions")]),
+    (17, 13): (AID, None, M, "Key figures of 1948-56 across the source chapter.", []),
+    (17, 14): (AID, None, M, "Key sites across the source chapter.", []),
+    (17, 15): (AID, None, M, "Timeline graphic for 1948-56.", []),
+    # source ch18 Modern AP 1956-2014 -> canonical 31 (political sections are outside the stated 'social and cultural' scope)
+    (18, 3): (31, None, M, "Chief ministers 1956-83 (Sanjiva Reddy to Brahmananda Reddy): political history; includes implementation of the Gentlemen's Agreement.", [(30, "implementation-issues")]),
+    (18, 4): (31, "telangana-movement-1969", H, "1969 Jai Telangana agitation.", []),
+    (18, 5): (31, "jai-andhra-1972", H, "1972-73 Jai Andhra agitation.", []),
+    (18, 6): (31, "regional-identity-movements", M, "Six-Point Formula (1973), Article 371-D and G.O. 610: the settlement of the 1969-73 agitations.", [(31, "telangana-movement-1969"), (31, "jai-andhra-1972"), (30, "regional-safeguards")]),
+    (18, 7): (31, None, M, "Chief ministers 1973-82; political history.", []),
+    (18, 8): (31, None, L, "NTR and the TDP, 1982-83: political history, outside the syllabus's 'social and cultural' scope.", []),
+    (18, 9): (31, None, L, "NTR's three terms: political history, outside the syllabus's 'social and cultural' scope.", []),
+    (18, 10): (31, None, L, "Naidu's IT era, 1995-2004: governance history, outside the syllabus's 'social and cultural' scope.", []),
+    (18, 11): (31, None, L, "YSR welfare era, 2004-09: governance history, outside the syllabus's 'social and cultural' scope.", []),
+    (18, 12): (31, "regional-identity-movements", H, "Telangana movement, 2001-2014.", []),
+    (18, 13): (31, "regional-identity-movements", M, "2014 bifurcation overview: sits on the boundary of the syllabus.", [(SUPP_POST, None)]),
+    (18, 14): (31, "cultural-developments-to-2014", H, "Literature, cinema and press, social and Dalit movements, Naxalite movement, education, language and cultural identity.", [(31, "literature"), (31, "cinema"), (31, "dalit-social-movements"), (31, "education-universities"), (31, "official-language-telugu")]),
+    (18, 15): (31, None, M, "Irrigation and IT projects: development history rather than social-cultural.", []),
+    (18, 16): (31, None, M, "Reference table of chief ministers, 1956-2014.", []),
+    (18, 17): (31, None, H, "Key sites.", []),
+    # source ch19 Bifurcation and post-2014 -> supplementary post-syllabus reference
+    (19, 3): (SUPP_POST, None, H, "AP Reorganisation Act 2014; the Act is the outcome of the 2001-14 Telangana movement mapped in Chapter 31.", [(31, "regional-identity-movements")]),
+    (19, 4): (SUPP_POST, None, H, "Post-bifurcation AP.", []),
+    (19, 5): (SUPP_POST, None, H, "Naidu's term 2014-19.", []),
+    (19, 6): (SUPP_POST, None, H, "Amaravati capital plan.", []),
+    (19, 7): (SUPP_POST, None, H, "Jagan's tenure 2019-24.", []),
+    (19, 8): (SUPP_POST, None, H, "Three-capitals controversy.", []),
+    (19, 9): (SUPP_POST, None, H, "2022 district reorganisation.", []),
+    (19, 10): (SUPP_POST, None, H, "2024 elections.", []),
+    (19, 11): (SUPP_POST, None, H, "Telangana and AP over ten years.", []),
+    (19, 12): (SUPP_POST, None, H, "Key development projects.", []),
+    (19, 13): (SUPP_POST, None, H, "Recent chief ministers.", []),
+    (19, 14): (SUPP_POST, None, H, "Key sites.", []),
+})
+
+# Flags (a section may carry several, separated by ';'): multi_topic, scope_boundary, content_review, attribution_check.
+# 'ambiguous' is added automatically from the reason text.
+FLAGS = {k: "multi_topic" for k in [
+    (1, 14), (3, 13), (5, 13), (5, 15), (6, 15), (7, 12), (9, 17), (10, 15), (10, 18), (11, 17), (11, 18), (12, 16), (12, 18),
+    (13, 3), (13, 6), (13, 11), (15, 3), (15, 8), (15, 10), (15, 11), (15, 12), (15, 13), (16, 3), (16, 4), (16, 8), (16, 11), (16, 15),
+    (17, 3), (17, 4), (17, 5), (17, 8), (17, 9), (17, 12), (18, 6), (18, 14)]}
+for k in [(13, 4), (13, 6), (13, 9), (13, 10), (13, 12), (13, 14), (13, 15), (18, 3), (18, 7), (18, 8), (18, 9), (18, 10), (18, 11), (18, 13), (18, 15), (18, 16)]:
+    FLAGS[k] = (FLAGS.get(k, "") + ";scope_boundary").lstrip(";")
+for k in [(1, 5), (2, 13)]:
+    FLAGS[k] = "content_review"
+FLAGS[(11, 12)] = "attribution_check"
+
+# Rows that must stay unapproved until a content reviewer confirms them. approval_status 'unapproved' + the reason.
+UNAPPROVED = {
+    (11, 12): "Kataya Vema attribution unresolved. The section heading calls Kataya Vema and Vira Bhadra the *last* kings of Rajamahendravaram, "
+              "but the body (12.1) calls Kataya Vema the *founder* of the Rajamahendravaram branch, 1395-1414; section 10 dates the branch to 1402 "
+              "and section 11 says he founded it after Komati Vema seized the Kondavidu throne; the three sections disagree on date and role. "
+              "Not checked against external references yet. Mapping below is provisional.",
 }

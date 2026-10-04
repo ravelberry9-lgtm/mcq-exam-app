@@ -1,15 +1,18 @@
-"""Build the DRAFT note-section -> canonical mapping review files from the bundled content source (read-only).
+"""Build the DRAFT note-section -> canonical mapping review files (read-only; touches no database).
 
     python scripts/build_ap_note_mapping_draft.py          # writes docs/ap_history_note_mapping_draft.{csv,md}
 
-Reads data/content.db.gz (AP History notes) and scripts/ap_note_mapping_spec.py. Writes only the two review files. Touches no database.
+Inputs: data/content.db.gz (AP History source chapters 1-12, as loaded into the app) and scripts/ap_source_sections_13_19.json
+(section structure of the local HTML chapter files 13-19, produced by snapshot_ap_sections_13_19.py), plus scripts/ap_note_mapping_spec.py.
 """
 import csv
 import gzip
+import json
 import shutil
 import sqlite3
 import sys
 import tempfile
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -20,12 +23,15 @@ from app.services import ap_canonical as canon          # noqa: E402
 from app.services import ap_canonical_subtopics as sub  # noqa: E402
 import ap_note_mapping_spec as spec                      # noqa: E402
 
-COLUMNS = ["old_chapter_id", "old_chapter_num", "old_chapter_title", "note_id", "section_num", "heading_en", "heading_te",
+COLUMNS = ["source", "old_chapter_id", "old_chapter_num", "old_chapter_title", "note_id", "section_num", "heading_en", "heading_te",
            "canonical_unit", "canonical_chapter_num", "canonical_chapter_slug", "canonical_chapter_title_en",
-           "proposed_subtopic_slug", "proposed_subtopic_en", "confidence", "mapping_kind", "needs_review", "reason", "secondary_mappings"]
+           "proposed_subtopic_slug", "proposed_subtopic_en", "confidence", "mapping_kind", "multi_topic", "flags", "approval_status",
+           "needs_review", "reason", "secondary_mappings"]
+SECTIONS_JSON = ROOT / "scripts" / "ap_source_sections_13_19.json"
 
 
 def load_notes(path=ROOT / "data" / "content.db.gz"):
+    """Source chapters 1-12 from the bundled content database: (chapter id, num, title, note id, section, heading_en, heading_te)."""
     tmp = Path(tempfile.mkdtemp()) / "c.db"
     with gzip.open(path, "rb") as src, open(tmp, "wb") as dst:
         shutil.copyfileobj(src, dst)
@@ -38,6 +44,21 @@ def load_notes(path=ROOT / "data" / "content.db.gz"):
     return rows
 
 
+def load_html_sections(path=SECTIONS_JSON):
+    """Source chapters 13-19 from the snapshot of the local HTML files: same tuple shape, with no database ids."""
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    rows = []
+    for num in sorted(data, key=int):
+        ch = data[num]
+        for s in ch["sections"]:
+            rows.append((None, int(num), ch["title"], None, s["section_num"], s["heading_en"], s["heading_te"]))
+    return rows
+
+
+def all_rows():
+    return load_notes() + load_html_sections()
+
+
 def chapter_index():
     by_num = {num: (unit, slug, en, cls) for unit, num, slug, en, _te, cls in canon.CHAPTERS}
     by_slug = {slug: (unit, num, slug, en, cls) for unit, num, slug, en, _te, cls in canon.CHAPTERS}
@@ -45,51 +66,84 @@ def chapter_index():
     return by_num, {**by_slug, **supp}
 
 
-def resolve(chapter_ref, by_num, by_slug):
-    """chapter number or supplementary slug -> (unit, num, slug, title_en, classification)"""
-    if isinstance(chapter_ref, int):
-        unit, slug, en, cls = by_num[chapter_ref]
-        return unit, chapter_ref, slug, en, cls
-    return by_slug[chapter_ref]
+def resolve(ref, by_num, by_slug):
+    """canonical chapter number or supplementary slug -> (unit, num, slug, title_en, classification)"""
+    if isinstance(ref, int):
+        unit, slug, en, cls = by_num[ref]
+        return unit, ref, slug, en, cls
+    return by_slug[ref]
 
 
-def kind_for(cls):
-    return {"direct": "direct", "bridge": "bridge", "thematic": "direct", "supplementary": "cross_cutting"}[cls]
+def kind_for(slug, cls):
+    if cls == "supplementary":
+        kinds = {s: k for s, _e, _t, k, _src in canon.SUPPLEMENTARY}
+        return "cross_cutting" if kinds[slug] == "supplementary_cross_cutting" else "supplementary"
+    return {"direct": "direct", "bridge": "bridge", "thematic": "direct"}[cls]
+
+
+def _majority(rows):
+    """For source chapters spanning several canonical chapters: the canonical chapter that gets most substantive sections
+    (ties go to the earliest chapter number)."""
+    counts = {}
+    for _c, cnum, _t, _n, snum, _hen, _hte in rows:
+        e = spec.SPEC.get((cnum, snum))
+        if e and e[0] != spec.AID and isinstance(e[0], int):
+            counts.setdefault(cnum, Counter())[e[0]] += 1
+    return {c: sorted(k.items(), key=lambda kv: (-kv[1], kv[0]))[0][0] for c, k in counts.items()}
 
 
 def build(rows=None):
-    rows = rows or load_notes()
+    rows = rows or all_rows()
     by_num, by_slug = chapter_index()
     sub_titles = {s: en for lst in sub.expanded().values() for s, en, _te in lst}
+    majority = _majority(rows)
+    span = {c: len({e[0] for (cc, ss), e in spec.SPEC.items() if cc == c and isinstance(e[0], int)}) for c in {r[1] for r in rows}}
     out = []
     for cid, cnum, ctitle, nid, snum, hen, hte in rows:
         entry = spec.SPEC.get((cnum, snum))
+        generic = False
         if entry is None:
             if (hen or "").strip() not in spec.GENERIC_HEADINGS:
                 raise SystemExit(f"unmapped non-generic section: chapter {cnum} section {snum} {hen!r}")
+            generic = True
             ref, st, conf, reason, secs = spec.DEFAULT_CHAPTER[cnum], None, "high", spec.GENERIC_REASON, []
         else:
             ref, st, conf, reason, secs = entry
+        flags = [f for f in spec.FLAGS.get((cnum, snum), "").split(";") if f]
+        if ref in (spec.MAJORITY, spec.AID):
+            ref = majority[cnum]
+            conf, reason = "medium", reason + " Assigned to the canonical chapter that receives most of this source chapter's sections."
+            flags.append("multi_topic")
+        elif generic and span.get(cnum, 1) > 1:
+            conf = "medium"; flags.append("multi_topic")
         unit, num, slug, en, cls = resolve(ref, by_num, by_slug)
-        prefix = "-".join(slug.split("-")[:2]) if not slug.startswith("supp-") else None
+        prefix = None if slug.startswith("supp-") else "-".join(slug.split("-")[:2])
         sub_slug = f"{prefix}-{st}" if st else ""
         if sub_slug and sub_slug not in sub_titles:
             raise SystemExit(f"unknown subtopic {sub_slug!r} for chapter {cnum} section {snum}")
         sec_txt = []
         for sc, ss in secs:
             _u, _n, sslug, _en, _c = resolve(sc, by_num, by_slug)
-            sp = "-".join(sslug.split("-")[:2])
-            full = f"{sp}-{ss}" if ss else sslug
+            full = f"{'-'.join(sslug.split('-')[:2])}-{ss}" if ss else sslug
             if ss and full not in sub_titles:
                 raise SystemExit(f"unknown secondary subtopic {full!r} for chapter {cnum} section {snum}")
             sec_txt.append(full)
-        ambiguous = "Ambiguous" in reason or "should be split" in reason or "Propose adding" in reason or "should be checked" in reason
+        if "Ambiguous" in reason:
+            flags.append("ambiguous")
+        flags = sorted(set(flags))
+        approval = "unapproved" if (cnum, snum) in spec.UNAPPROVED else "draft"
+        if approval == "unapproved":
+            reason = reason + " UNAPPROVED: " + spec.UNAPPROVED[(cnum, snum)]
+        src = "app database (content.db.gz)" if cid is not None else "local HTML file (not in the app database)"
         out.append({
-            "old_chapter_id": cid, "old_chapter_num": cnum, "old_chapter_title": ctitle, "note_id": nid, "section_num": snum,
-            "heading_en": hen or "", "heading_te": hte or "", "canonical_unit": unit or "—", "canonical_chapter_num": num or "—",
-            "canonical_chapter_slug": slug, "canonical_chapter_title_en": en, "proposed_subtopic_slug": sub_slug,
-            "proposed_subtopic_en": sub_titles.get(sub_slug, "(chapter level)"), "confidence": conf, "mapping_kind": kind_for(cls),
-            "needs_review": "yes" if (conf != "high" or ambiguous) else "", "reason": reason, "secondary_mappings": "; ".join(sec_txt),
+            "source": src, "old_chapter_id": cid if cid is not None else "", "old_chapter_num": cnum, "old_chapter_title": ctitle,
+            "note_id": nid if nid is not None else "", "section_num": snum, "heading_en": hen or "", "heading_te": hte or "",
+            "canonical_unit": unit or "—", "canonical_chapter_num": num or "—", "canonical_chapter_slug": slug,
+            "canonical_chapter_title_en": en, "proposed_subtopic_slug": sub_slug,
+            "proposed_subtopic_en": sub_titles.get(sub_slug, "(chapter level)"), "confidence": conf,
+            "mapping_kind": kind_for(slug, cls), "multi_topic": "yes" if "multi_topic" in flags else "", "flags": ";".join(flags),
+            "approval_status": approval, "needs_review": "yes" if (conf != "high" or flags or approval != "draft") else "",
+            "reason": reason, "secondary_mappings": "; ".join(sec_txt),
         })
     return out
 
@@ -99,11 +153,11 @@ def coverage_gaps(mapped):
     used |= {s for m in mapped for s in m["secondary_mappings"].split("; ") if s}
     by_num, _ = chapter_index()
     gaps = {}
-    for num in range(1, 14):
+    for num in range(1, 32):
         slug = by_num[num][1]
         missing = [en for s, en, _te in sub.expanded()[slug] if s not in used]
         if missing:
-            gaps[(num, by_num[num][2])] = missing
+            gaps[(num, by_num[num][2])] = (missing, len(sub.expanded()[slug]))
     return gaps
 
 
@@ -112,30 +166,38 @@ def write(mapped, out_dir=ROOT / "docs"):
     with open(out_dir / "ap_history_note_mapping_draft.csv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=COLUMNS); w.writeheader(); w.writerows(mapped)
     n = len(mapped)
-    conf = {c: sum(1 for m in mapped if m["confidence"] == c) for c in ("high", "medium", "low")}
+    conf = Counter(m["confidence"] for m in mapped)
+    flagc = Counter(f for m in mapped for f in m["flags"].split(";") if f)
     lines = ["# AP History note-section mapping — DRAFT for review", "",
-             "Generated from the bundled content source (`data/content.db.gz`). Nothing in any database was changed; "
-             "this is a proposal. Source chapter numbers are preserved in the CSV. Database ids (old_chapter_id, note_id) are those of "
-             "the bundled source and differ per environment, so the future import will key on (source chapter number, section number).", "",
-             f"- Sections mapped: **{n}** (source chapters 1-12; chapters 13-19 exist only as local HTML and are not in the app database)",
+             "A proposal only: nothing in any database was changed, and no note was rewritten or split. Source chapter and section numbers are "
+             "kept in the CSV. For chapters 1-12 the ids come from the bundled content database (they differ per environment, so a future import "
+             "keys on source chapter number + section number). Chapters 13-19 exist only as local HTML files; their section structure is snapshotted in "
+             "`scripts/ap_source_sections_13_19.json` with file hashes.", "",
+             f"- Sections mapped: **{n}** (chapters 1-12: 225, from the app database; chapters 13-19: {n - 225}, from local HTML)",
              f"- Confidence: high {conf['high']}, medium {conf['medium']}, low {conf['low']}",
-             f"- Flagged `needs_review`: {sum(1 for m in mapped if m['needs_review'])}",
+             f"- Flagged for review: {sum(1 for m in mapped if m['needs_review'])}; multi-topic sections: {flagc['multi_topic']}; "
+             f"scope-boundary: {flagc['scope_boundary']}; ambiguous: {flagc['ambiguous']}; content-review: {flagc['content_review']}; "
+             f"unapproved: {sum(1 for m in mapped if m['approval_status'] == 'unapproved')}",
              f"- Mapped at chapter level (no subtopic): {sum(1 for m in mapped if not m['proposed_subtopic_slug'])}", "",
+             "Rules used: one primary chapter and subtopic per section; multi-topic sections keep secondary links and a `multi_topic` flag and are not split; "
+             "a shared place name is not a cross-topic link; the supplementary reference chapters are outside the 31 core chapters.", "",
              "## Where each source chapter went", ""]
     by_src = {}
     for m in mapped:
-        by_src.setdefault((m["old_chapter_num"], m["old_chapter_title"]), {}).setdefault(m["canonical_chapter_slug"], 0)
-        by_src[(m["old_chapter_num"], m["old_chapter_title"])][m["canonical_chapter_slug"]] += 1
+        by_src.setdefault((m["old_chapter_num"], m["old_chapter_title"].split(" (")[0][:80]), Counter())[m["canonical_chapter_slug"]] += 1
     for (cn, ct), d in by_src.items():
-        lines.append(f"- Source {cn} — {ct}: " + ", ".join(f"`{s}` ({c})" for s, c in d.items()))
-    lines += ["", "## Flagged sections (needs_review)", "", "| Src ch | Sec | Heading | Proposed | Conf | Why |", "|---|---|---|---|---|---|"]
+        lines.append(f"- Source {cn} — {ct}: " + ", ".join(f"`{s}` ({c})" for s, c in sorted(d.items())))
+    lines += ["", "## Flagged sections", "", "| Src ch | Sec | Heading | Proposed | Conf | Flags | Why |", "|---|---|---|---|---|---|---|"]
     for m in mapped:
-        if m["needs_review"]:
-            lines.append(f"| {m['old_chapter_num']} | {m['section_num']} | {m['heading_en'][:50]} | {m['proposed_subtopic_slug'] or m['canonical_chapter_slug']} | {m['confidence']} | {m['reason']} |")
-    lines += ["", "## Canonical subtopics with no note section (content gaps for chapters 1-13)", ""]
-    for (num, title), miss in coverage_gaps(mapped).items():
-        lines.append(f"- Chapter {num} — {title}: " + "; ".join(miss))
-    lines += ["", "Canonical chapters 14-31 have no source notes at all (only local chapters 15-19 exist as HTML, not yet mapped)."]
+        if m["needs_review"] and m["confidence"] != "high" or m["flags"] or m["approval_status"] != "draft":
+            lines.append(f"| {m['old_chapter_num']} | {m['section_num']} | {m['heading_en'][:40]} | {m['proposed_subtopic_slug'] or m['canonical_chapter_slug']} | "
+                         f"{m['confidence']} | {m['flags']}{' ; UNAPPROVED' if m['approval_status'] == 'unapproved' else ''} | {m['reason'][:260]} |")
+    lines += ["", "## Canonical subtopics with no note section (primary or secondary)", ""]
+    for (num, title), (miss, total) in coverage_gaps(mapped).items():
+        lines.append(f"- Chapter {num} — {title}: {len(miss)} of {total}: " + "; ".join(miss))
+    lines += ["", "## Bundle note", "",
+              "The review bundle is **incremental**: it contains only the commits made after base commit `e91b270a` (`release/secured-review`) and "
+              "applies only on top of a repository that already has that commit. It is not a standalone or complete backup."]
     (out_dir / "ap_history_note_mapping_draft.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
