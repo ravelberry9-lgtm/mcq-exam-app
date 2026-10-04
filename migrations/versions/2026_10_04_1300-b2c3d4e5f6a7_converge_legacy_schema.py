@@ -4,7 +4,8 @@ A database created before Alembic (the old app / ``content.db``) is *adopted* by
 brought to exactly the schema the models declare, without losing a row:
 
 * ``questions.q_hash`` (md5 content fingerprint) is kept: added if missing, now declared on the model.
-* SQLite legacy tables (recognised by a nullable ``INTEGER PRIMARY KEY``) are rebuilt in place from the
+* SQLite legacy tables that deviate structurally (nullable key, NOT NULL or type-family mismatch, missing or
+  different foreign keys / ON DELETE) are rebuilt in place from the
   frozen definitions below: proper NOT NULL keys, ``ON DELETE CASCADE`` on chapters/notes, the missing
   ``questions.passage_id`` foreign key, declared column types. Rows are copied verbatim.
 * Index names are normalised (legacy ``idx_q_*`` become the model's ``ix_questions_*``).
@@ -84,13 +85,40 @@ _INDEXES = [
 _LEGACY_INDEXES = [("idx_q_ch", "questions"), ("idx_q_subj", "questions"), ("idx_q_hash", "questions")]
 
 
-def _is_legacy_sqlite_table(insp, name):
-    """Legacy ``id INTEGER PRIMARY KEY`` (no NOT NULL) reflects as nullable; Alembic-built tables do not."""
+def _affinity(type_):
+    """SQLite stores values by affinity, so VARCHAR/TEXT/JSON/DateTime are one family and INTEGER/BOOLEAN another."""
+    n = str(type_).upper()
+    return "INT" if ("INT" in n or "BOOL" in n) else "TEXT"
+
+
+def _fk_signature(fks):
+    return {(tuple(f["constrained_columns"]), f["referred_table"], tuple(f["referred_columns"]),
+             (f.get("options") or {}).get("ondelete")) for f in fks}
+
+
+def _needs_rebuild(insp, table):
+    """True when an existing SQLite table deviates structurally from its frozen definition:
+    a nullable key column, a column whose NOT NULL-ness or type family differs, a missing or
+    different foreign key (including ON DELETE), or a missing primary key. Not limited to one symptom."""
+    name = table.name
     if not insp.has_table(name):
         return False
+    have = {c["name"]: c for c in insp.get_columns(name)}
     pk = insp.get_pk_constraint(name).get("constrained_columns") or []
-    cols = {c["name"]: c for c in insp.get_columns(name)}
-    return any(cols[c]["nullable"] for c in pk if c in cols)
+    if pk != [c.name for c in table.primary_key.columns]:
+        return True
+    for col in table.columns:
+        got = have.get(col.name)
+        if got is None:
+            continue                      # optional columns that are missing are added first (_ensure_columns)
+        expect_nullable = col.nullable and not col.primary_key
+        if bool(got["nullable"]) != expect_nullable:
+            return True
+        if _affinity(got["type"]) != _affinity(col.type):
+            return True
+    want_fks = {(tuple(c.name for c in fk.columns), fk.elements[0].column.table.name,
+                 tuple(e.column.name for e in fk.elements), fk.ondelete) for fk in table.foreign_key_constraints}
+    return _fk_signature(insp.get_foreign_keys(name)) != want_fks
 
 
 def _ensure_columns(table):
@@ -117,7 +145,7 @@ def upgrade() -> None:
     # 2. SQLite: rebuild legacy-shaped tables in place, rows copied verbatim
     if bind.dialect.name == "sqlite":
         for table in _REBUILD_ORDER:
-            if _is_legacy_sqlite_table(sa.inspect(bind), table.name):
+            if _needs_rebuild(sa.inspect(bind), table):
                 _ensure_columns(table)
                 with op.batch_alter_table(table.name, copy_from=table, recreate="always"):
                     pass

@@ -99,6 +99,82 @@ def test_legacy_database_is_adopted_converges_to_the_model_and_keeps_every_row(d
     assert con.execute("PRAGMA integrity_check").fetchone() == ("ok",)
 
 
+# ── P2: detection is structural, not tied to one symptom ──────────────────────────
+def _fresh_head_with_rows(dburl, monkeypatch):
+    cfg = _cfg(dburl, monkeypatch)
+    command.upgrade(cfg, "head")
+    con = sqlite3.connect(dburl.replace("sqlite:///", ""))
+    con.executescript("""
+    INSERT INTO subjects (id,slug,name_en,name_te) VALUES (1,'polity','Polity','పాలిటీ');
+    INSERT INTO chapters (id,subject_id,chapter_num,title_en,title_te) VALUES (7,1,1,'Preamble','ప్రవేశిక');
+    INSERT INTO notes (id,chapter_id,section_num,heading_en,body_en) VALUES (1,7,1,'Intro','<p>x</p>');
+    INSERT INTO questions (id,subject_id,chapter_id,source_type,correct_answer,question_en) VALUES (1,1,7,'chapter','a','Q');
+    """); con.commit(); con.close()
+    return cfg
+
+
+def _replace_table(dburl, name, ddl):
+    """Recreate `name` with different DDL, keeping its rows (simulates a drifted pre-Alembic table)."""
+    con = sqlite3.connect(dburl.replace("sqlite:///", ""))
+    cols = sorted(r[1] for r in con.execute(f"PRAGMA table_info({name})"))
+    rows = con.execute(f"SELECT {','.join(cols)} FROM {name}").fetchall()
+    con.execute("PRAGMA legacy_alter_table=ON")          # keep other tables' FKs pointing at the *name*
+    con.execute(f"ALTER TABLE {name} RENAME TO {name}_old"); con.executescript(ddl)
+    con.executemany(f"INSERT INTO {name} ({','.join(cols)}) VALUES ({','.join('?' * len(cols))})", rows)
+    con.execute(f"DROP TABLE {name}_old"); con.commit(); con.close()
+    return rows
+
+
+def _stamp_back(cfg):
+    command.stamp(cfg, "a1b2c3d4e5f6")
+
+
+def test_correct_tables_are_not_rebuilt(dburl, monkeypatch):
+    import importlib.util
+    cfg = _cfg(dburl, monkeypatch); command.upgrade(cfg, "head")
+    spec = importlib.util.spec_from_file_location("conv", next((ROOT / "migrations" / "versions").glob("*converge_legacy*")))
+    conv = importlib.util.module_from_spec(spec); spec.loader.exec_module(conv)
+    insp = sa.inspect(sa.create_engine(dburl))
+    assert [t.name for t in conv._REBUILD_ORDER if conv._needs_rebuild(insp, t)] == []
+
+
+NOTES_NO_CASCADE = """CREATE TABLE notes (id INTEGER NOT NULL, chapter_id INTEGER NOT NULL, section_num INTEGER NOT NULL,
+  heading_en VARCHAR(256), heading_te VARCHAR(256), body_en TEXT, body_te TEXT, PRIMARY KEY (id),
+  FOREIGN KEY(chapter_id) REFERENCES chapters (id), UNIQUE (chapter_id, section_num));"""
+QUESTIONS_NO_PASSAGE_FK = """CREATE TABLE questions (id INTEGER NOT NULL, subject_id INTEGER NOT NULL, chapter_id INTEGER,
+  source_type VARCHAR(16) NOT NULL, q_hash VARCHAR(32), pyq_year VARCHAR(8), pyq_paper VARCHAR(64), difficulty VARCHAR(2),
+  question_en TEXT, question_te TEXT, options_en JSON, options_te JSON, correct_answer VARCHAR(1) NOT NULL,
+  explanation_en TEXT, explanation_te TEXT, passage_id INTEGER, created_at DATETIME, updated_at DATETIME, PRIMARY KEY (id),
+  FOREIGN KEY(chapter_id) REFERENCES chapters (id), FOREIGN KEY(subject_id) REFERENCES subjects (id));"""
+CHAPTERS_NULLABLE_TITLE = """CREATE TABLE chapters (id INTEGER NOT NULL, subject_id INTEGER NOT NULL, chapter_num INTEGER NOT NULL,
+  title_en VARCHAR(256), title_te VARCHAR(256) NOT NULL, est_read_minutes INTEGER, PRIMARY KEY (id),
+  FOREIGN KEY(subject_id) REFERENCES subjects (id) ON DELETE CASCADE, UNIQUE (subject_id, chapter_num));"""
+
+
+@pytest.mark.parametrize("table,ddl,probe", [
+    ("notes", NOTES_NO_CASCADE,
+     lambda insp: any(f["options"].get("ondelete") == "CASCADE" for f in insp.get_foreign_keys("notes"))),
+    ("questions", QUESTIONS_NO_PASSAGE_FK,
+     lambda insp: any(f["referred_table"] == "passages" for f in insp.get_foreign_keys("questions"))),
+    ("chapters", CHAPTERS_NULLABLE_TITLE,
+     lambda insp: not [c for c in insp.get_columns("chapters") if c["name"] == "title_en"][0]["nullable"]),
+], ids=["missing-cascade", "missing-passage-fk", "nullable-title"])
+def test_drifted_table_with_proper_primary_key_is_still_converged(dburl, monkeypatch, table, ddl, probe):
+    """Each of these has a correct NOT NULL primary key, so only a structural check can notice the drift."""
+    cfg = _fresh_head_with_rows(dburl, monkeypatch)
+    rows = _replace_table(dburl, table, ddl)
+    insp = sa.inspect(sa.create_engine(dburl))
+    assert not probe(insp)                          # the drift exists before the upgrade
+    _stamp_back(cfg)
+    command.upgrade(cfg, "head")
+    command.check(cfg)                              # now agrees with the model
+    assert probe(sa.inspect(sa.create_engine(dburl)))
+    con = sqlite3.connect(dburl.replace("sqlite:///", ""))
+    cols = sorted(r[1] for r in con.execute(f"PRAGMA table_info({table})"))
+    assert con.execute(f"SELECT {','.join(cols)} FROM {table}").fetchall() == rows     # rows untouched (compared by column name)
+    assert con.execute("PRAGMA foreign_key_check").fetchall() == []
+
+
 def test_downgrade_refuses_to_delete_existing_data(dburl, monkeypatch):
     """The baseline may have adopted tables it did not create, so it must never drop populated ones."""
     _make_legacy(dburl)
