@@ -1,0 +1,22 @@
+<!doctype html>
+{% set _lp = lang_pref if lang_pref in ('te','en','both') else 'both' %}
+<html lang="{{ 'te' if _lp == 'te' else 'en' }}" data-lang="{{ _lp }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0F766E">
+  <title>{% block title %}{{ app_title }}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='ds.css') }}">
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+<div class="app">
+  <header class="topbar">{% block topbar %}{% endblock %}</header>
+  <main id="main">{% block content %}{% endblock %}</main>
+  {% block bottom %}{% import 'ds/_c.html' as c %}{{ c.bottomnav(nav_active|default('learn')) }}{% endblock %}
+</div>
+<div class="sr" id="live" aria-live="polite"></div>
+<script src="{{ url_for('static', filename='ds.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

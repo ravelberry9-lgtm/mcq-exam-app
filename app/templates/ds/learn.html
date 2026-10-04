@@ -1,0 +1,58 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% block title %}{{ tl('learn.title') }} · {{ app_title }}{% endblock %}
+{% block topbar %}
+  <div class="row between"><h1>{{ t('learn.title') }}</h1>{{ c.langswitch(lang_pref) }}</div>
+  {% if data.papers %}
+  <div class="tabs" role="tablist" aria-label="{{ tl('common.exam') }}">
+    <button role="tab" id="t-prelims" aria-controls="p-prelims" aria-selected="true">{{ t('common.prelims') }}</button>
+    <button role="tab" id="t-mains" aria-controls="p-mains" aria-selected="false">{{ t('common.mains') }}</button>
+  </div>
+  {% endif %}
+{% endblock %}
+{% block content %}
+{% if resume %}
+  {% set rt = resume.title %}
+  <a class="card hero" href="{{ url_for('learn.notes', chapter_id=resume.chapter.id, section=resume.progress.current_section) }}" data-testid="resume">
+    <span class="label">{{ t('learn.continue') }}</span>
+    <strong style="font-size:1.125rem">{{ c.bi(rt[0], rt[1]) }}</strong>
+    <span class="small">{{ c.bi(resume.subject.name_en, resume.subject.name_te) }}{% if resume.total %} · {{ t('notes.section_of', a=(resume.progress.current_section or 1), b=resume.total) }}{% endif %}</span>
+    <span class="btn" style="align-self:flex-start;margin-top:4px;color:var(--teal)">{{ t('learn.resume') }}</span>
+  </a>
+{% endif %}
+
+{% if data.papers %}
+  {% for kind, panel in [('prelims', true), ('mains', false)] %}
+  <div id="p-{{ kind }}" role="tabpanel" aria-labelledby="t-{{ kind }}" style="display:flex;flex-direction:column;gap:12px"{% if not panel %} hidden{% endif %}>
+    <p class="muted small" style="margin:0">{{ t('learn.prelims_note' if panel else 'learn.mains_note') }}</p>
+    {% for p in data.papers if p.is_prelims == panel %}
+      {% if not panel %}<h2 class="label" style="margin:4px 0 0">{{ c.bi(p.paper.name_en, p.paper.name_te) }} · {{ t('common.marks', n=p.paper.total_marks) }}</h2>{% endif %}
+      {% for s in p.sections %}
+        {% set sec = s.section %}
+        {% if s.available %}
+        <a class="card" href="{{ url_for('learn.section', section_id=sec.id) }}" data-section="{{ sec.id }}">
+        {% else %}
+        <div class="card disabled-card" aria-disabled="true">
+        {% endif %}
+          <div class="row between">
+            <div><h2>{{ c.bi(sec.name_en, sec.name_te) }}</h2><div class="muted small">{{ t('common.marks', n=sec.marks) }}</div></div>
+            {% if s.available %}{{ c.tag('ok', t('common.available')) }}{% else %}{{ c.tag('off', t('common.soon')) }}{% endif %}
+          </div>
+          {% if s.available %}<span class="small muted">{{ t('learn.content_counts', c=s.chapter_count, q=s.question_count) }}</span>{% endif %}
+        {% if s.available %}</a>{% else %}</div>{% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+{% else %}
+  <p class="muted small" style="margin:0">{{ t('learn.no_exam') }}</p>
+  <h2 class="label" style="margin:4px 0 0">{{ t('learn.all_subjects') }}</h2>
+  {% for s in data.flat %}
+    {% if s.available %}<a class="card" href="{{ url_for('learn.subject', slug=s.subject.slug) }}">{% else %}<div class="card disabled-card" aria-disabled="true">{% endif %}
+      <div class="row between"><h2>{{ c.bi(s.subject.name_en, s.subject.name_te) }}</h2>{% if s.available %}{{ c.tag('ok', t('common.available')) }}{% else %}{{ c.tag('off', t('common.soon')) }}{% endif %}</div>
+      {% if s.available %}<span class="small muted">{{ t('learn.content_counts', c=s.chapter_count, q=s.question_count) }}</span>{% endif %}
+    {% if s.available %}</a>{% else %}</div>{% endif %}
+  {% endfor %}
+{% endif %}
+{% endblock %}

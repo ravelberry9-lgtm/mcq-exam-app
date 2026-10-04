@@ -30,6 +30,9 @@ def create_app(config_class: type = Config) -> Flask:
     from .routes.study_plan import bp as study_plan_bp
     app.register_blueprint(study_plan_bp)
 
+    from .routes.learn import bp as learn_bp  # design-system journey (/learn)
+    app.register_blueprint(learn_bp)
+
     @app.context_processor
     def inject_globals():
         from .services.nav import build_tree

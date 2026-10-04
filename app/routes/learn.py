@@ -1,0 +1,113 @@
+"""Design-system journey (Stage 1-2): Learn -> Section -> Topic -> Notes -> Practice -> Explanation.
+
+New blueprint under /learn. The old routes (/subjects, /subject/<slug>, /practice/<slug>,
+/notes/..., /exam/...) are untouched and keep working until the new journey replaces them.
+"""
+import re
+from flask import Blueprint, abort, jsonify, render_template, request, url_for
+
+from ..db import db
+from ..models import Chapter, ChapterProgress, ExamSection, Note, Subject
+from ..services import learn as svc
+from ..services.ui_text import t, tl
+
+bp = Blueprint("learn", __name__, url_prefix="/learn")
+
+
+def _device_id():
+    return request.cookies.get("device_id", "anon")
+
+
+bp.add_app_template_global(t, "t")
+bp.add_app_template_global(tl, "tl")
+
+
+@bp.route("/")
+def hub():
+    data = svc.hub()
+    return render_template("ds/learn.html", data=data, resume=svc.resume_for(_device_id()))
+
+
+@bp.route("/section/<int:section_id>")
+def section(section_id):
+    sec = db.session.get(ExamSection, section_id) or abort(404)
+    groups = svc.attach_status(svc.topics_for_section(sec), _device_id())
+    return render_template("ds/section.html", title_en=sec.name_en, title_te=sec.name_te,
+                           marks=sec.marks, groups=groups)
+
+
+@bp.route("/subject/<slug>")
+def subject(slug):
+    sub = Subject.query.filter_by(slug=slug).first_or_404()
+    groups = svc.attach_status(svc.topics_for_subject(sub), _device_id())
+    return render_template("ds/section.html", title_en=sub.name_en, title_te=sub.name_te,
+                           marks=None, groups=groups)
+
+
+@bp.route("/topic/<int:chapter_id>")
+def topic(chapter_id):
+    ch = db.session.get(Chapter, chapter_id) or abort(404)
+    ctx = svc.topic_context(ch)
+    prog = ChapterProgress.query.filter_by(device_id=_device_id(), chapter_id=ch.id).first()
+    # only same-app section/subject pages are accepted as a return target (no open redirect)
+    back = request.args.get("back", "")
+    back_url = back if re.fullmatch(r"/learn/(section/\d+|subject/[\w-]+)", back) else None
+    return render_template("ds/topic.html", **ctx, back_url=back_url,
+                           status=prog.status if prog else "not_started")
+
+
+@bp.route("/topic/<int:chapter_id>/notes")
+def notes(chapter_id):
+    ch = db.session.get(Chapter, chapter_id) or abort(404)
+    ctx = svc.topic_context(ch)
+    sections = Note.query.filter_by(chapter_id=ch.id).order_by(Note.section_num).all()
+    if not sections:
+        return render_template("ds/notes.html", **ctx, note=None, sections=[], pos=0, prev_n=None, next_n=None)
+    wanted = request.args.get("section", type=int)
+    nums = [n.section_num for n in sections]
+    if wanted is None:
+        prog = ChapterProgress.query.filter_by(device_id=_device_id(), chapter_id=ch.id).first()
+        wanted = prog.current_section if prog and prog.current_section in nums else nums[0]
+    if wanted not in nums:
+        abort(404)
+    pos = nums.index(wanted)
+    note = sections[pos]
+    keep_class = ctx["subject"].slug == "ap_history"
+    body_en = svc.render_note_html(note.body_en, keep_class) if (note.body_en or "").strip() else ""
+    body_te = svc.render_note_html(note.body_te, keep_class) if (note.body_te or "").strip() else ""
+    return render_template(
+        "ds/notes.html", **ctx, note=note, sections=sections, pos=pos,
+        prev_n=nums[pos - 1] if pos > 0 else None,
+        next_n=nums[pos + 1] if pos < len(nums) - 1 else None,
+        body_en=body_en, body_te=body_te,
+    )
+
+
+@bp.route("/topic/<int:chapter_id>/practice")
+def practice(chapter_id):
+    ch = db.session.get(Chapter, chapter_id) or abort(404)
+    ctx = svc.topic_context(ch)
+    qs = svc.chapter_questions(ch.id)
+    total = len(qs)
+    i = request.args.get("i", 1, type=int)
+    if total == 0:
+        return render_template("ds/practice.html", **ctx, total=0, q=None, summary=False, i=1)
+    if i > total:
+        return render_template("ds/practice.html", **ctx, total=total, q=None, summary=True, i=i)
+    i = max(1, i)
+    q = svc.question_view(qs[i - 1])
+    nxt = url_for("learn.practice", chapter_id=ch.id, i=i + 1)
+    return render_template("ds/practice.html", **ctx, total=total, q=q, summary=False, i=i,
+                           next_url=nxt, is_last=(i == total), fresh=bool(request.args.get("new")))
+
+
+@bp.route("/api/topic/<int:chapter_id>/section", methods=["POST"])
+def api_section(chapter_id):
+    """Remember which note section a device is reading (drives Resume)."""
+    ch = db.session.get(Chapter, chapter_id) or abort(404)
+    payload = request.get_json(silent=True) or {}
+    num = payload.get("section")
+    if not isinstance(num, int) or not Note.query.filter_by(chapter_id=ch.id, section_num=num).first():
+        return jsonify({"error": "invalid section"}), 400
+    prog = svc.record_section(_device_id(), ch.id, num)
+    return jsonify({"status": prog.status, "current_section": prog.current_section})

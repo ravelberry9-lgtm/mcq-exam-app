@@ -1,0 +1,67 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'practice' %}
+{% block title %}{{ title_en }} · {{ tl('prac.progress') }} · {{ app_title }}{% endblock %}
+{% block topbar %}
+  <div class="row between">
+    <a class="back" href="{{ url_for('learn.topic', chapter_id=chapter.id) }}"><span aria-hidden="true">‹</span> {{ t('prac.end') }}</a>
+    {{ c.langswitch(lang_pref) }}
+  </div>
+  <div class="row between"><span class="small muted" style="min-width:0">{{ c.bi(title_en, title_te) }}</span>
+    {% if q %}<strong style="flex:none;white-space:nowrap" id="counter">{{ t('prac.q', a=i, b=total) }}</strong>{% endif %}</div>
+  {% if q %}<div class="bar" role="progressbar" aria-label="{{ tl('prac.progress') }}" aria-valuemin="0" aria-valuemax="{{ total }}" aria-valuenow="{{ i - 1 }}"><i style="width:{{ ((i - 1) / total * 100)|round|int }}%"></i></div>{% endif %}
+{% endblock %}
+{% block content %}
+{% if total == 0 %}
+  <div class="card"><strong>{{ t('common.empty') }}</strong><span class="muted">{{ t('topic.no_mcqs') }}</span>
+    <a class="btn primary" href="{{ url_for('learn.topic', chapter_id=chapter.id) }}">{{ t('prac.back_topic') }}</a></div>
+{% elif summary %}
+  <div class="card" id="summary" data-topic="{{ chapter.id }}">
+    <h2>{{ t('prac.summary') }}</h2>
+    <div class="row" style="flex-wrap:wrap">
+      <span class="tag ok">{{ t('prac.right') }} <b data-stat="r">–</b></span>
+      <span class="tag warn">{{ t('prac.wrong') }} <b data-stat="w">–</b></span>
+      <span class="tag off">{{ t('prac.skipped') }} <b data-stat="s">–</b></span>
+    </div>
+  </div>
+  <a class="btn primary" href="{{ url_for('learn.practice', chapter_id=chapter.id, i=1, new=1) }}">{{ t('prac.again') }}</a>
+  <a class="btn" href="{{ url_for('learn.topic', chapter_id=chapter.id) }}">{{ t('prac.back_topic') }}</a>
+{% else %}
+  <div class="card" id="qcard" data-practice data-msg-ok="{{ tl('prac.correct') }}" data-msg-bad="{{ tl('prac.incorrect') }}" data-qid="{{ q.id }}" data-topic="{{ chapter.id }}" data-next="{{ next_url }}" data-last="{{ 1 if is_last else 0 }}" data-fresh="{{ 1 if fresh else 0 }}">
+    <div style="font-weight:700;font-size:1.0625rem">{{ c.bi(q.q_en, q.q_te, 'stack') }}</div>
+    {% if not q.q_en and q.q_te %}<p class="fallback fb-en" style="margin:0">{{ t('prac.lang_fallback_te') }}</p>{% endif %}
+    {% if not q.q_te and q.q_en %}<p class="fallback fb-te" style="margin:0">{{ t('prac.lang_fallback_en') }}</p>{% endif %}
+    <span class="small muted">{% if q.is_pyq %}{{ t('prac.src.pyq') }}{% if q.pyq_year %} · {{ q.pyq_year }}{% endif %}{% if q.pyq_paper %} · {{ q.pyq_paper }}{% endif %} · {{ t('prac.src.unverified') }}{% else %}{{ t('prac.src.chapter') }}{% endif %}{% if q.difficulty in ('E','M','H') %} · {{ t('prac.diff.' ~ q.difficulty) }}{% endif %}</span>
+  </div>
+  <fieldset class="opts" id="opts"><legend class="sr">{{ tl('prac.choose') }}</legend>
+    {% for o in q.options %}
+    <label class="opt" data-k="{{ o.key }}">
+      <input type="radio" name="a" value="{{ o.key }}">
+      <span class="k">{{ o.key|upper }}</span>
+      <span>{{ c.bi(o.en, o.te) }}</span>
+      <span class="state"></span>
+    </label>
+    {% endfor %}
+  </fieldset>
+  <div id="expl" hidden>
+    <div class="card">
+      <strong class="label">{{ t('prac.expl') }}</strong>
+      {% if q.x_en or q.x_te %}<div>{{ c.bi(q.x_en, q.x_te, 'stack') }}</div>
+      {% else %}<span class="muted small">{{ t('prac.no_expl') }}</span>{% endif %}
+      {% if note_count %}<a class="btn" href="{{ url_for('learn.notes', chapter_id=chapter.id) }}" style="margin-top:6px">{{ t('prac.open_notes') }}</a>{% endif %}
+    </div>
+  </div>
+  <p class="small" id="err" role="alert" style="color:var(--amber-ink);font-weight:700" hidden>{{ t('prac.save_failed') }}</p>
+{% endif %}
+{% endblock %}
+{% block bottom %}
+{% if q %}
+<div class="actionbar">
+  <button class="btn grow" id="go" type="button">
+    <span data-state="skip">{{ t('prac.skip') }}</span>
+    <span data-state="next" hidden>{{ t('prac.next') }}</span>
+    <span data-state="finish" hidden>{{ t('prac.finish') }}</span>
+  </button>
+</div>
+{% else %}{{ super() }}{% endif %}
+{% endblock %}

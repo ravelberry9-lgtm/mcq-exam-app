@@ -1,0 +1,26 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% block title %}{{ title_en }} · {{ app_title }}{% endblock %}
+{% block topbar %}
+  <div class="row between">
+    <a class="back" href="{{ back_url or url_for('learn.subject', slug=subject.slug) }}"><span aria-hidden="true">‹</span> {% if back_url %}{{ t('common.back') }}{% else %}{{ c.bi(subject.name_en, subject.name_te) }}{% endif %}</a>
+    {{ c.langswitch(lang_pref) }}
+  </div>
+  <div class="crumb">{{ t('common.chapter', n=chapter.chapter_num) }}</div>
+  <h1>{{ c.bi(title_en, title_te, 'stack') }}</h1>
+  <div class="row">{{ c.status_tag(status) }}</div>
+{% endblock %}
+{% block content %}
+<div class="tile-grid">
+  {{ c.tile(url_for('learn.notes', chapter_id=chapter.id), 'M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z', 'topic.notes', t('common.sections', n=note_count), note_count > 0) }}
+  {{ c.tile(url_for('learn.practice', chapter_id=chapter.id, i=1, new=1), 'M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h9', 'topic.mcqs', t('common.questions', n=mcq_count) if mcq_count else t('topic.no_mcqs'), mcq_count > 0) }}
+  {{ c.tile('', 'M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5l-5.4 3 1.2-6L3.3 9.3l6.1-.7z', 'topic.pyq', t('common.soon'), false) }}
+  {{ c.tile('', 'M3 6h18v12H3zM8 11a1.5 1.5 0 1 0 0-.01M21 16l-5-5-8 7', 'topic.infog', t('common.soon'), false) }}
+  {{ c.tile('', 'M4 4h13a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2zM8 9h7M8 13h7', 'topic.news', t('common.soon'), false) }}
+  {{ c.tile('', 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l3 2', 'topic.test', t('common.soon'), false) }}
+</div>
+{% if status != 'completed' %}
+<button class="btn" type="button" id="mark-done" data-chapter="{{ chapter.id }}" data-done-msg="{{ tl('topic.done') }}" data-err-msg="{{ tl('topic.done_err') }}">{{ t('topic.mark_done') }}</button>
+{% endif %}
+{% endblock %}

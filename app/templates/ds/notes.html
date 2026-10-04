@@ -1,0 +1,50 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% block title %}{{ title_en }} · {{ tl('topic.notes') }} · {{ app_title }}{% endblock %}
+{% block head_extra %}
+{% if subject.slug == 'ap_history' %}<link rel="stylesheet" href="{{ url_for('static', filename='ap_history_notes.css') }}">{% endif %}
+{% endblock %}
+{% block topbar %}
+  <div class="row between">
+    <a class="back" href="{{ url_for('learn.topic', chapter_id=chapter.id) }}"><span aria-hidden="true">‹</span> {{ c.bi(title_en, title_te) }}</a>
+    {{ c.langswitch(lang_pref) }}
+  </div>
+  {% if note %}
+  <div class="row between">
+    <span class="small muted" id="pos">{{ t('notes.section_of', a=pos + 1, b=sections|length) }}</span>
+    {% if sections|length > 1 %}
+    <label class="sr" for="jump">{{ tl('notes.jump') }}</label>
+    <select id="jump" data-jump data-base="{{ url_for('learn.notes', chapter_id=chapter.id) }}" style="width:auto;min-height:40px;max-width:60%">
+      {% for s in sections %}<option value="{{ s.section_num }}" data-en="{{ (s.heading_en or '')[:40] }}" data-te="{{ (s.heading_te or '')[:40] }}" data-n="{{ loop.index }}"{% if s.section_num == note.section_num %} selected{% endif %}>{{ loop.index }}. {{ ((s.heading_te if lang_pref == 'te' else s.heading_en) or s.heading_en or s.heading_te or '')[:40] }}</option>{% endfor %}
+    </select>
+    {% endif %}
+  </div>
+  {% endif %}
+{% endblock %}
+{% block content %}
+{% if not note %}
+  <div class="card"><strong>{{ t('common.empty') }}</strong><span class="muted">{{ t('notes.empty') }}</span>
+    <a class="btn" href="{{ url_for('learn.topic', chapter_id=chapter.id) }}">{{ t('common.back') }}</a></div>
+{% else %}
+  <article id="note" data-chapter="{{ chapter.id }}" data-section="{{ note.section_num }}" style="display:flex;flex-direction:column;gap:12px">
+    {% if note.heading_en or note.heading_te %}<h2 style="margin:0">{{ c.bi(note.heading_en, note.heading_te, 'stack') }}</h2>{% endif %}
+    {% if not body_te %}<p class="fallback fb-te" style="margin:0">{{ t('notes.no_te') }}</p>{% endif %}
+    {% if not body_en %}<p class="fallback fb-en" style="margin:0">{{ t('notes.no_en') }}</p>{% endif %}
+    {% if body_en %}<div class="note-body en{% if not body_te %} keep{% endif %}" lang="en">{{ body_en|safe }}</div>{% endif %}
+    {% if body_te %}<div class="note-body te{% if not body_en %} keep{% endif %}" lang="te">{{ body_te|safe }}</div>{% endif %}
+  </article>
+{% endif %}
+{% endblock %}
+{% block bottom %}
+{% if note %}
+<div class="actionbar">
+  {% if prev_n is not none %}<a class="iconbtn" href="{{ url_for('learn.notes', chapter_id=chapter.id, section=prev_n) }}" aria-label="{{ tl('notes.prev') }}" rel="prev">{{ c.icon('M15 6l-6 6 6 6') }}</a>
+  {% else %}<span class="iconbtn" role="img" aria-disabled="true" aria-label="{{ tl('notes.prev') }} ({{ tl('common.unavailable') }})" style="opacity:.4">{{ c.icon('M15 6l-6 6 6 6') }}</span>{% endif %}
+  {% if mcq_count %}<a class="btn primary grow" href="{{ url_for('learn.practice', chapter_id=chapter.id, i=1, new=1) }}">{{ t('notes.practise') }}</a>
+  {% else %}<a class="btn grow" href="{{ url_for('learn.topic', chapter_id=chapter.id) }}">{{ t('common.back') }}</a>{% endif %}
+  {% if next_n is not none %}<a class="iconbtn" href="{{ url_for('learn.notes', chapter_id=chapter.id, section=next_n) }}" aria-label="{{ tl('notes.next') }}" rel="next">{{ c.icon('M9 6l6 6-6 6') }}</a>
+  {% else %}<span class="iconbtn" role="img" aria-disabled="true" aria-label="{{ tl('notes.next') }} ({{ tl('common.unavailable') }})" style="opacity:.4">{{ c.icon('M9 6l6 6-6 6') }}</span>{% endif %}
+</div>
+{% endif %}
+{% endblock %}

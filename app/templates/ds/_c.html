@@ -1,0 +1,58 @@
+{# Reusable components. Import with: {% import "ds/_c.html" as c %} #}
+
+{# Bilingual database text. Shows whichever languages exist; a missing language falls back to the other (class keep). #}
+{% macro bi(en, te, cls='') -%}
+{%- set has_en = (en or '')|trim != '' -%}
+{%- set has_te = (te or '')|trim != '' -%}
+<span class="bi {{ cls }}">{% if has_en and has_te and (en|trim) == (te|trim) %}<span class="en keep">{{ en }}</span>{% elif has_en %}<span class="en{% if not has_te %} keep{% endif %}" lang="en">{{ en }}</span>{% endif %}{% if has_te and not (has_en and (en|trim) == (te|trim)) %}<span class="te{% if not has_en %} keep{% endif %}" lang="te">{{ te }}</span>{% endif %}</span>
+{%- endmacro %}
+
+{% macro langswitch(lang) -%}
+<div class="langsw" role="radiogroup" aria-label="{{ tl('lang.label') }}" data-langsw>
+  {% for code, label, key in [('te','తె','lang.te'),('en','EN','lang.en'),('both','తె+EN','lang.both')] %}
+  <button type="button" role="radio" data-v="{{ code }}" aria-label="{{ tl(key) }}" aria-checked="{{ 'true' if lang == code else 'false' }}">{{ label }}</button>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro bottomnav(active) -%}
+{% set items = [
+  ('home', '/', 'nav.home', 'M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z', true),
+  ('learn', '/learn/', 'nav.learn', 'M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z', true),
+  ('practice', '/subjects', 'nav.practice', 'M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h9', true),
+  ('tests', '', 'nav.tests', 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l3 2', false),
+  ('progress', '', 'nav.progress', 'M4 20V10M10 20V4M16 20v-7M22 20H2', false)] %}
+<nav class="bottomnav" aria-label="{{ tl('nav.main') }}">
+  {% for key, href, label, path, enabled in items %}
+  {% if enabled %}
+  <a href="{{ href }}"{% if key == active %} aria-current="page"{% endif %}>
+  {% else %}
+  <a role="link" aria-disabled="true" style="opacity:.5">
+  {% endif %}
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ path }}"/></svg>
+    <span>{{ t(label) }}</span>
+  </a>
+  {% endfor %}
+</nav>
+{%- endmacro %}
+
+{% macro tag(kind, markup) -%}<span class="tag {{ kind }}">{{ markup }}</span>{%- endmacro %}
+
+{% macro status_tag(status) -%}
+{{ tag({'completed': 'ok', 'in_progress': 'warn'}.get(status, 'off'), t('status.' ~ status)) }}
+{%- endmacro %}
+
+{% macro bar(pct, label) -%}
+<div class="bar" role="img" aria-label="{{ label }}"><i style="width:{{ pct }}%"></i></div>
+{%- endmacro %}
+
+{% macro icon(path) -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ path }}"/></svg>
+{%- endmacro %}
+
+{# A hub tile: link when enabled, inert (aria-disabled) otherwise. #}
+{% macro tile(href, path, label_key, sub_markup, enabled=true) -%}
+{% if enabled %}<a class="card hubtile" href="{{ href }}">{% else %}<div class="card hubtile" aria-disabled="true">{% endif %}
+  {{ icon(path) }}<strong>{{ t(label_key) }}</strong><span class="muted small">{{ sub_markup }}</span>
+{% if enabled %}</a>{% else %}</div>{% endif %}
+{%- endmacro %}

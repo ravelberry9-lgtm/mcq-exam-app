@@ -1,0 +1,33 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% block title %}{{ title_en }} · {{ app_title }}{% endblock %}
+{% block topbar %}
+  <div class="row between">
+    <a class="back" href="{{ url_for('learn.hub') }}"><span aria-hidden="true">‹</span> {{ t('nav.learn') }}</a>
+    {{ c.langswitch(lang_pref) }}
+  </div>
+  <h1>{{ c.bi(title_en, title_te, 'stack') }}</h1>
+  {% if marks %}<div class="sub">{{ t('common.marks', n=marks) }}</div>{% endif %}
+{% endblock %}
+{% block content %}
+{% if not groups %}
+  <div class="card"><strong>{{ t('common.empty') }}</strong><span class="muted">{{ t('section.no_topics') }}</span></div>
+{% endif %}
+{% for g in groups %}
+  <section aria-labelledby="g{{ loop.index }}">
+    {% if groups|length > 1 %}<h2 id="g{{ loop.index }}" class="label" style="margin:0 0 8px">{{ c.bi(g.subject.name_en, g.subject.name_te) }}</h2>{% endif %}
+    <div style="display:flex;flex-direction:column;gap:10px">
+    {% for tp in g.topics %}
+      <a class="card" href="{{ url_for('learn.topic', chapter_id=tp.chapter.id, back=request.path) }}" data-topic="{{ tp.chapter.id }}">
+        <div class="row between" style="align-items:flex-start;gap:10px">
+          <div><div class="crumb">{{ t('common.chapter', n=tp.chapter.chapter_num) }}</div><h2>{{ c.bi(tp.title_en, tp.title_te) }}</h2></div>
+          {{ c.status_tag(tp.status) }}
+        </div>
+        <span class="small muted">{{ t('section.topic_line', n=tp.note_count, q=tp.question_count) }}</span>
+      </a>
+    {% endfor %}
+    </div>
+  </section>
+{% endfor %}
+{% endblock %}
