@@ -1,4 +1,4 @@
-"""Canonical AP History structure: five official APPSC units, 31 internal preparation chapters, and three supplementary
+"""Canonical AP History structure: five official APPSC units, 31 internal preparation chapters, and four supplementary
 reference chapters. Subject -> Unit -> Chapter -> Subtopic.
 
 * The five units are the official top level. The 31 chapters are *our* preparation structure, not 31 official syllabus lines.
@@ -61,6 +61,8 @@ SUPPLEMENTARY = [
     ("supp-dynasties-overview", "Overview of Andhra Dynasties (Reference)", "ఆంధ్ర రాజవంశాల అవలోకనం (సూచిక)", "supplementary_cross_cutting", 4),
     ("supp-asaf-jahis-hyderabad-state", "Asaf Jahis and Hyderabad State (Reference)", "అసఫ్ జాహీలు మరియు హైదరాబాద్ సంస్థానం (సూచిక)", "supplementary_outside_direct_syllabus", 14),
     ("supp-post-2014-andhra-pradesh", "Bifurcation and Post-2014 Andhra Pradesh (Current Context)", "విభజన మరియు 2014 తర్వాత ఆంధ్రప్రదేశ్ (ప్రస్తుత సందర్భం)", "supplementary_post_syllabus", 19),
+    ("supp-modern-ap-political-administrative-1956-2014", "Political and Administrative Context of Andhra Pradesh, 1956–2014",
+     "ఆంధ్రప్రదేశ్ రాజకీయ–పరిపాలనా నేపథ్యం, 1956–2014", "supplementary_context", 18),
 ]
 SUPPLEMENTARY_SOURCE_CHAPTER = {slug: src for slug, _e, _t, _k, src in SUPPLEMENTARY}
 

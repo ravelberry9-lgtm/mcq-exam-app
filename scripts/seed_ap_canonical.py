@@ -1,4 +1,4 @@
-"""Seed the canonical AP History structure (5 units, 31 core chapters, 3 supplementary reference chapters).
+"""Seed the canonical AP History structure (5 units, 31 core chapters, 4 supplementary reference chapters).
 
     python scripts/seed_ap_canonical.py                 # PREVIEW only (default): prints what would be added
     python scripts/seed_ap_canonical.py --apply         # insert the missing units/chapters (never updates or deletes)

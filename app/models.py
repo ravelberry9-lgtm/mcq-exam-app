@@ -159,7 +159,8 @@ QUESTION_SOURCES = ("codex_generated", "app_master", "hanumanthrao", "pyq_compil
 REVIEW_STATUSES = ("raw", "structurally_valid", "content_review_required", "fact_verified", "bilingual_approved", "rejected")
 LEARNER_VISIBLE_STATUS = "bilingual_approved"   # the only status shown in the canonical practice flow
 CHAPTER_CLASSIFICATIONS = ("direct", "bridge", "thematic", "supplementary")
-SUPPLEMENTARY_TYPES = ("supplementary_cross_cutting", "supplementary_outside_direct_syllabus", "supplementary_post_syllabus")
+SUPPLEMENTARY_TYPES = ("supplementary_cross_cutting", "supplementary_outside_direct_syllabus", "supplementary_post_syllabus",
+                       "supplementary_context")
 
 
 # ─── Canonical syllabus hierarchy (Subject → Unit → Chapter → Subtopic); separate from the source ``chapters`` ──
@@ -180,7 +181,7 @@ class SyllabusUnit(db.Model):
 
 class SyllabusChapter(db.Model):
     """An internal preparation chapter (NOT an official syllabus line). Core chapters have a unit and a number 1..31;
-    the three supplementary reference chapters have neither and are never counted as core."""
+    the four supplementary reference chapters have neither and are never counted as core."""
     __tablename__ = "syllabus_chapters"
     id = db.Column(db.Integer, primary_key=True)
     subject_id = db.Column(db.Integer, db.ForeignKey("subjects.id", ondelete="CASCADE"), nullable=False, index=True)
@@ -205,6 +206,11 @@ class SyllabusChapter(db.Model):
     @property
     def is_core(self):
         return self.classification != "supplementary"
+
+    @property
+    def counts_toward_completion(self):
+        """Only the 31 core chapters count toward direct syllabus completion; supplementary chapters never do."""
+        return self.is_core
 
 
 class SyllabusSubtopic(db.Model):

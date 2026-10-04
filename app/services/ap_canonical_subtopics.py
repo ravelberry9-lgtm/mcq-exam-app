@@ -323,7 +323,7 @@ DRAFT = {
          ("cultural-developments-to-2014", "Major cultural developments up to 2014", "2014 వరకు ముఖ్య సాంస్కృతిక పరిణామాలు")],
 }
 
-# Subtopics for the three supplementary chapters are deliberately not drafted: they are reference material, not question targets.
+# Subtopics for the four supplementary chapters are deliberately not drafted: they are reference material, not question targets.
 
 
 def expanded():
