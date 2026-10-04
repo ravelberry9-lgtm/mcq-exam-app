@@ -1,4 +1,5 @@
 """Alembic env — wired to the Flask app's config + models."""
+import os
 from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
@@ -11,7 +12,9 @@ if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 flask_app = create_app()
-config.set_main_option("sqlalchemy.url", flask_app.config["SQLALCHEMY_DATABASE_URI"].replace("%", "%%"))
+# ALEMBIC_DATABASE_URL lets tests and one-off runs target another database without touching app config
+_url = os.environ.get("ALEMBIC_DATABASE_URL") or flask_app.config["SQLALCHEMY_DATABASE_URI"]
+config.set_main_option("sqlalchemy.url", _url.replace("%", "%%"))
 target_metadata = db.metadata
 
 
