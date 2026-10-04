@@ -19,6 +19,8 @@ def create_app(config_class: type = Config) -> Flask:
 
     from .services.csrf import init_csrf
     init_csrf(app)
+    from .services.device import init_device
+    init_device(app)
 
     from .services.learn import render_note_html
 

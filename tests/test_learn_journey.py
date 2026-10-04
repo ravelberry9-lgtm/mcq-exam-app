@@ -7,7 +7,7 @@ from app.models import (
 )
 from app.services.learn import display_title, render_note_html, strip_option_prefix
 
-DEVICE = {"device_id": "t-device"}
+DEVICE = {"device_id": "t-device-0123456789abcdef0123456789"}
 
 
 @pytest.fixture()
@@ -61,7 +61,7 @@ def world(app):
 
 @pytest.fixture()
 def c(client):
-    client.set_cookie("device_id", "t-device")
+    client.set_cookie("device_id", "t-device-0123456789abcdef0123456789")
     return client
 
 
@@ -185,7 +185,7 @@ def test_section_progress_api_and_resume_card(c, world):
     assert c.post(f"/learn/api/topic/{cid}/section", json={"section": "x"}).status_code == 400
     r = c.post(f"/learn/api/topic/{cid}/section", json={"section": 2})
     assert r.status_code == 200 and r.get_json()["current_section"] == 2
-    prog = ChapterProgress.query.filter_by(device_id="t-device", chapter_id=cid).one()
+    prog = ChapterProgress.query.filter_by(device_id="t-device-0123456789abcdef0123456789", chapter_id=cid).one()
     assert prog.status == "in_progress"
     hub = c.get("/learn/").get_data(as_text=True)
     assert 'data-testid="resume"' in hub and f"/learn/topic/{cid}/notes?section=2" in hub
@@ -221,7 +221,7 @@ def test_answer_api_works_for_new_ui_and_tracks_state(c, world):
     r = c.post("/api/answer", json={"question_id": qid, "chosen": "b", "confidence": 0})
     d = r.get_json()
     assert r.status_code == 200 and d["correct"] is False and d["correct_answer"] == "a"
-    st = UserQuestionState.query.filter_by(device_id="t-device", question_id=qid).one()
+    st = UserQuestionState.query.filter_by(device_id="t-device-0123456789abcdef0123456789", question_id=qid).one()
     assert st.seen_count == 1 and st.wrong_count == 1
 
 

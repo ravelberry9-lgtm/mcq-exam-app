@@ -20,7 +20,8 @@ DIFFICULTY_LABEL = {
 
 
 def _device_id():
-    return request.cookies.get("device_id", "anon")
+    from ..services.device import device_id
+    return device_id()
 
 
 @bp.route("/")

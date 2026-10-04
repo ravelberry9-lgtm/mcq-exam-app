@@ -12,8 +12,7 @@
       .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); });
   }
 
-  // same device cookie as the older pages, so progress is shared
-  if (!cookie("device_id")) setCookie("device_id", "d-" + Math.random().toString(36).slice(2) + Date.now().toString(36));
+  // the device id is an HttpOnly cookie issued by the server (same one for the older pages); scripts never touch it
 
   // ── language: Telugu / English / both. Persisted in the 'lang' cookie (server reads it too). ──
   // text that is not wrapped in .en/.te spans (e.g. <option>) is relabelled here

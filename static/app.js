@@ -8,13 +8,7 @@
     return Object.assign({ "X-CSRF-Token": m ? m.content : "" }, extra || {});
   }
 
-  // ── Device id (cookie, set once) ───────────────────────────
-  function ensureDeviceId() {
-    if (!document.cookie.match(/(?:^|; )device_id=/)) {
-      const id = "d-" + Math.random().toString(36).slice(2) + Date.now().toString(36);
-      document.cookie = "device_id=" + id + "; path=/; max-age=31536000; SameSite=Lax";
-    }
-  }
+  // The device id is an HttpOnly cookie issued by the server; scripts never read or write it.
 
   // ── Drawer open/close ──────────────────────────────────────
   function bindDrawer() {
@@ -126,7 +120,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    ensureDeviceId();
     bindDrawer();
     bindQuestionCard();
   });

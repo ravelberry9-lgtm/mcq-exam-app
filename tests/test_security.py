@@ -155,11 +155,11 @@ def test_exam_results_retry_link_is_a_working_get_link(app, client):
     from datetime import datetime
     e = Exam(slug="appsc_g2", name_en="E", name_te="ఇ"); db.session.add(e); db.session.flush()
     db.session.add(ExamPaper(exam_id=e.id, paper_num=1, name_en="P", name_te="పి", total_marks=10, duration_min=10))
-    db.session.add(ExamSession(id=SID, device_id="dev", config={"exam_slug": "appsc_g2", "paper_num": 1, "title": "t"},
+    db.session.add(ExamSession(id=SID, device_id="dev-0123456789abcdef0123456789abcd", config={"exam_slug": "appsc_g2", "paper_num": 1, "title": "t"},
                                question_ids=[], answers={}, confidences={}, started_at=datetime(2026, 1, 1),
                                submitted_at=datetime(2026, 1, 1), score=0, total=0))
     db.session.commit()
-    client.set_cookie("device_id", "dev")
+    client.set_cookie("device_id", "dev-0123456789abcdef0123456789abcd")
     r = client.get(f"/exam-session/{SID}/results")
     html = r.get_data(as_text=True)
     assert r.status_code == 200

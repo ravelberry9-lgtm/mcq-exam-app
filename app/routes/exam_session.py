@@ -17,7 +17,8 @@ bp = Blueprint("exam_session", __name__)
 
 
 def _device_id():
-    return request.cookies.get("device_id", "anon")
+    from ..services.device import device_id
+    return device_id()
 
 
 # Session URLs are deliberate bearer links: there are no accounts, the id is a random UUID4 (122 bits, not listed anywhere,

@@ -1,4 +1,6 @@
 """Study plan routes: create plan, dashboard, mark chapter done."""
+import re
+
 from flask import (
     Blueprint, render_template, request, jsonify,
     redirect, url_for
@@ -14,35 +16,47 @@ bp = Blueprint("study_plan", __name__, url_prefix="/plan")
 
 
 def _device_id():
-    return request.cookies.get("device_id", "anon")
+    from ..services.device import device_id
+    return device_id()
 
 
 # ── Plan wizard ──────────────────────────────────────────────────
 
-@bp.route("/new")
-def new():
-    """Show the plan creation wizard."""
+def _wizard(error=None, status=200, name=None):
     exams = Exam.query.filter_by(active=True).order_by(Exam.id).all()
     today = date.today()
     default_date = (today + timedelta(days=90)).isoformat()
-    return render_template("study_plan/new.html", exams=exams,
-                           today=today.isoformat(), default_date=default_date)
+    return render_template("study_plan/new.html", exams=exams, today=today.isoformat(), default_date=default_date,
+                           error=error, name=name), status
+
+
+@bp.route("/new")
+def new():
+    """Show the plan creation wizard."""
+    return _wizard()
 
 
 @bp.route("/create", methods=["POST"])
 def create():
     """Create a new study plan."""
     device_id = _device_id()
-    exam_id = request.form.get("exam_id") or None
-    name = request.form.get("name", "").strip() or "My Study Plan"
+    raw_exam = (request.form.get("exam_id") or "").strip()
+    name = request.form.get("name", "").strip()[:128] or "My Study Plan"
     target_date_str = request.form.get("target_date", "")
     try:
         target_date = date.fromisoformat(target_date_str)
     except ValueError:
         target_date = date.today() + timedelta(days=90)
 
-    if exam_id:
-        exam_id = int(exam_id)
+    exam_id = None
+    if raw_exam:
+        # digits only (no signs, spaces or non-ASCII digits), and the exam must exist and be active
+        if not re.fullmatch(r"[0-9]{1,9}", raw_exam):
+            return _wizard("Please choose an exam from the list.", 400, name)
+        exam = db.session.get(Exam, int(raw_exam))
+        if exam is None or not exam.active:
+            return _wizard("That exam is not available. Please choose one from the list.", 400, name)
+        exam_id = exam.id
 
     # Pause any existing active plan for this device
     existing = StudyPlan.query.filter_by(
@@ -172,19 +186,39 @@ def _get_plan_chapters(plan):
     return chapters_data
 
 
-# ── API: pause / resume / delete plan ────────────────────────────
+# ── pause / resume ───────────────────────────────────────────────
+# A plan can only be changed by the device that owns it. A plan that belongs to another device is reported as 404, the same
+# as a plan that does not exist, so ids reveal nothing. The HTML forms get a redirect back to the dashboard; a script that
+# asks for JSON (Accept: application/json or a JSON body) gets JSON.
+
+def _own_plan(plan_id):
+    return StudyPlan.query.filter_by(id=plan_id, device_id=_device_id()).first_or_404()
+
+
+def _wants_json():
+    return request.is_json or request.accept_mimetypes.best == "application/json"
+
+
+def _done(status):
+    if _wants_json():
+        return jsonify({"status": status})
+    return redirect(url_for("study_plan.dashboard"))
+
 
 @bp.route("/api/<int:plan_id>/pause", methods=["POST"])
 def pause_plan(plan_id):
-    plan = StudyPlan.query.get_or_404(plan_id)
+    plan = _own_plan(plan_id)
     plan.status = "paused"
     db.session.commit()
-    return jsonify({"status": "paused"})
+    return _done("paused")
 
 
 @bp.route("/api/<int:plan_id>/resume", methods=["POST"])
 def resume_plan(plan_id):
-    plan = StudyPlan.query.get_or_404(plan_id)
+    plan = _own_plan(plan_id)
+    for other in StudyPlan.query.filter(StudyPlan.device_id == plan.device_id, StudyPlan.status == "active",
+                                        StudyPlan.id != plan.id).all():
+        other.status = "paused"                       # one active plan per device, as /create does
     plan.status = "active"
     db.session.commit()
-    return redirect(url_for("study_plan.dashboard"))
+    return _done("active")

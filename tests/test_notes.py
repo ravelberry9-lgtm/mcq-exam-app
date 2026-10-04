@@ -203,7 +203,7 @@ def test_completed_chapter_shows_badge(seeded_client, seeded_app):
         cid = ch.id
 
     seeded_client.post(f"/notes/api/progress/{cid}/complete",
-                       headers={"Cookie": "device_id=testdevice"})
+                       headers={"Cookie": "device_id=testdevice-0123456789abcdef01234567"})
     r = seeded_client.get("/notes/polity/1",
-                          headers={"Cookie": "device_id=testdevice"})
+                          headers={"Cookie": "device_id=testdevice-0123456789abcdef01234567"})
     assert b"complete-badge" in r.data

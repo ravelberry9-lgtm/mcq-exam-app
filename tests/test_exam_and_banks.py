@@ -15,7 +15,7 @@ from app.services import exam_rules, qdisplay
 from app.services import learn as svc
 from tests.real_data import real_slice
 
-DEVICE = "t-device"
+DEVICE = "t-device-0123456789abcdef0123456789"
 
 
 def soup(resp):
@@ -521,7 +521,7 @@ def test_session_url_is_a_bearer_link_by_design(c, real, app):
     """Documented decision: whoever holds the URL can resume the session (cross-browser resume is a feature)."""
     sid, _ = new_session(c)
     other = app.test_client()
-    other.set_cookie("device_id", "someone-else")
+    other.set_cookie("device_id", "someone-else-0123456789abcdef012345")
     assert other.get(f"/exam-session/{sid}").status_code == 200
 
 

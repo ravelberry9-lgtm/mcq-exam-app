@@ -15,7 +15,8 @@ bp = Blueprint("learn", __name__, url_prefix="/learn")
 
 
 def _device_id():
-    return request.cookies.get("device_id", "anon")
+    from ..services.device import device_id
+    return device_id()
 
 
 bp.add_app_template_global(t, "t")

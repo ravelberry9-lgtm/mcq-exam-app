@@ -160,6 +160,6 @@ def test_pause_plan(client, app, seeded):
     with app.app_context():
         plan_id = StudyPlan.query.first().id
     r = client.post(f"/plan/api/{plan_id}/pause")
-    assert r.status_code == 200
+    assert r.status_code == 302 and r.headers["Location"].endswith("/plan/")          # the HTML form returns to the dashboard
     with app.app_context():
         assert StudyPlan.query.get(plan_id).status == "paused"
