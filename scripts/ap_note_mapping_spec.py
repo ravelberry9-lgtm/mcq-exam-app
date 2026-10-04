@@ -270,12 +270,12 @@ SPEC.update({
     (16, 3): (19, "congress-and-andhra", M, "Founding of the INC (1885), partition of Bengal (1905) and the Andhra response, Surat split (1907).", [(19, "swadeshi-vandemataram")]),
     (16, 4): (23, "demand-for-andhra-province", M, "Andhra Movement from 1913: Tamil dominance in administration and jobs and the push for a separate province.", [(23, "linguistic-identity-roots"), (23, "important-conferences")]),
     (16, 5): (19, "non-cooperation", H, "Non-Cooperation 1920-22, including Duggirala Gopalakrishnayya and Chauri Chaura.", []),
-    (16, 6): (19, "regional-centres-events", M, "Alluri Sitarama Raju and the Rampa rebellion 1922-24: an armed tribal revolt in the nationalist era that equally fits Chapter 26 'tribal resistance'. Ambiguous.", [(26, "tribal-resistance")]),
+    (16, 6): (19, "rampa-rebellion", M, "Rampa Rebellion 1922-24 (Alluri Sitarama Raju): an anti-colonial armed tribal uprising of the nationalist period, so primary is Chapter 19 (microtopic rampa-rebellion). Chapter 26 is secondary tribal context only; it is about folk and tribal culture, not a container for every tribal rebellion. Decision: reviewer, 2026-10-04.", [(26, "tribal-resistance")]),
     (16, 7): (24, "origin-sessions", H, "Andhra Mahasabha (Telangana) from 1928: Telugu language and culture under Nizam rule.", []),
     (16, 8): (19, "civil-disobedience-salt-satyagraha", H, "Simon Commission protest, Prakasam, Salt Satyagraha (1930), Gandhi-Irwin Pact.", []),
     (16, 9): (23, "sri-bagh-pact", H, "Sri Bagh Pact.", []),
     (16, 10): (19, "quit-india", H, "Quit India Movement, 1942.", []),
-    (16, 11): (26, "tribal-resistance", M, "Komaram Bheem's Gond armed movement (1928-40, Jodeghat) and other Telangana freedom leaders; also regional nationalist history. Ambiguous.", [(19, "regional-centres-events")]),
+    (16, 11): (SUPP_ASAF, None, M, "Komaram Bheem (1901-40): Gond armed movement in princely Hyderabad State against Asaf Jahi administration (Jodeghat, 1940), concerning Gond land, forest and 'jal, jangal, jameen' rights; primary is the supplementary Asaf Jahi / Hyderabad State chapter. Chapter 26 is secondary for Gond culture and social setting. Secondary Chapter 19 (regional-centres-events) is justified by subsection 11.5, which covers other Hyderabad State freedom leaders (Shoebullah Khan, Swami Ramananda Tirtha, Kaloji, Dasarathi). Not presented as an event of the Andhra Movement. Decision: reviewer, 2026-10-04.", [(26, "major-tribal-communities"), (19, "regional-centres-events")]),
     (16, 12): (19, "prominent-leaders", M, "Comprehensive list of freedom-movement leaders.", [(24, "major-leaders")]),
     (16, 13): (27, "fast-and-death", H, "Potti Sriramulu's fast and death, 1952.", [(27, "potti-sriramulu")]),
     (16, 14): (27, "formation-of-andhra-state", H, "Formation of Andhra State, 1953.", []),
@@ -343,5 +343,26 @@ UNAPPROVED = {
     (11, 12): "Kataya Vema attribution unresolved. The section heading calls Kataya Vema and Vira Bhadra the *last* kings of Rajamahendravaram, "
               "but the body (12.1) calls Kataya Vema the *founder* of the Rajamahendravaram branch, 1395-1414; section 10 dates the branch to 1402 "
               "and section 11 says he founded it after Komati Vema seized the Kondavidu throne; the three sections disagree on date and role. "
-              "Not checked against external references yet. Mapping below is provisional.",
+              "Not checked against external references yet. Mapping below is provisional. Both conflicting source statements are kept verbatim in docs/ap_history_kataya_vema_audit.md. No questions or factual summaries from this section.",
+}
+
+FLAGS[(16, 6)] = (FLAGS.get((16, 6), "") + ";cross_unit_context").lstrip(";")
+FLAGS[(16, 11)] = (FLAGS.get((16, 11), "") + ";supplementary_cross_context").lstrip(";")
+
+# Coverage scope (separate from the primary chapter): does the section count as direct syllabus coverage?
+#   direct | mixed (contains direct and supplementary material; decide per question) | supplementary_context | study_aid
+# Default is direct. Supplementary chapters are 'supplementary' in the builder.
+COVERAGE = {}
+# Unit 2 ends with the 16th century: post-1600 Qutb Shahi material is supporting context, not direct coverage.
+for k in [(13, 4), (13, 6), (13, 10), (13, 11), (13, 12), (13, 13)]:
+    COVERAGE[k] = "mixed"
+for k in [(13, 9), (13, 14), (13, 15)]:
+    COVERAGE[k] = "supplementary_context"
+# Source chapter 18: political chronology without demonstrated social-cultural significance is not direct Chapter 31 coverage.
+for k in [(18, 3), (18, 7), (18, 8), (18, 10), (18, 11), (18, 15), (18, 16)]:
+    COVERAGE[k] = "supplementary_context"
+COVERAGE[(18, 9)] = "mixed"        # NTR's terms: welfare schemes plus the Jayabharat Reddy committee / G.O. 610 regional-safeguard material
+RULE_NOTES = {
+    "qutb_shahi": "Seventeenth-century rulers, Akkanna-Madanna, later monuments, Mughal annexation and the 1687 decline are supporting context. Questions on post-1600 events carry the tag supplementary_context unless needed to explain a development that began in the sixteenth century.",
+    "chapter_18": "Routine lists of chief ministers, ordinary elections, cabinet changes, party succession and administrative events with no demonstrated social-cultural significance are supplementary_context. They stay mapped to Chapter 31 for navigation only. scope_boundary stays on every source Chapter 18 political section until each is reviewed under this rule.",
 }

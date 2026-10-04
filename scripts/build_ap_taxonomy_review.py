@@ -1,4 +1,4 @@
-"""Build the bilingual DRAFT subtopic-taxonomy review files (read-only; seeds nothing, touches no database).
+"""SUPERSEDED by build_ap_taxonomy_proposed.py (kept for the record). Build the bilingual DRAFT 314-item subtopic-taxonomy review files (read-only; seeds nothing, touches no database).
 
     python scripts/build_ap_taxonomy_review.py   # writes docs/ap_history_subtopic_taxonomy_review.{csv,md}
 
@@ -26,8 +26,8 @@ THRESHOLD_MANY, THRESHOLD_FEW = 14, 7
 
 def build():
     mapped = mapping.build()
-    prim = Counter(m["proposed_subtopic_slug"] for m in mapped if m["proposed_subtopic_slug"])
-    sec = Counter(s for m in mapped for s in m["secondary_mappings"].split("; ") if s)
+    prim = Counter(m["proposed_microtopic_slug"] for m in mapped if m["proposed_microtopic_slug"])  # microtopic slug == old draft slug
+    sec = Counter(s for m in mapped for s in m["secondary_microtopics"].split("; ") if s)
     units = {u: (en, te) for u, en, te in canon.UNITS} if hasattr(canon, "UNITS") and canon.UNITS and len(canon.UNITS[0]) == 3 else {}
     te_issue = {(c, s) for c, s, *_ in spec.TELUGU_ISSUES}
     rows = []

@@ -75,7 +75,7 @@ Evidence is how often each spelling appears in the current notes (chapters 1-12 
 | 30 | `(chapter)` | పెద్దమనుషుల ఒప్పందం మరియు ఆంధ్రప్రదేశ్ ఏర్పాటు | Notes use 'జెంటిల్మెన్స్ అగ్రిమెంట్' 42 and 'పెద్దమనుషుల ఒప్పందం' 0. | Pick the learner-facing form for the title and subtopics. |
 | 27 | `dhar-commission` | ధార్ కమిషన్ | 'ధార్ కమిషన్' 1 vs 'ధార్ కమీషన్' 0. | Keep, once the spelling is confirmed. |
 | 27 | `jvp-committee` | జె.వి.పి. కమిటీ | The notes write 'JVP' in Latin letters 7 times; the Telugu form 'జె.వి.పి' has 0. | Decide the transliteration for the committee name. |
-| 29 | `(chapter)` | రాష్ట్రాల పునర్వ్యవస్థీకరణ సంఘం | 'SRC' appears in Latin letters 81 times and 'రాష్ట్రాల పునర్వ్యవస్థీకరణ' 9 times. | Decide whether the learner-facing name uses the abbreviation. |
+| 29 | `(chapter)` | రాష్ట్రాల పునర్వ్యవస్థీకరణ సంఘం (SRC) | 'SRC' appears in Latin letters 81 times and 'రాష్ట్రాల పునర్వ్యవస్థీకరణ' 9 times. | Decide whether the learner-facing name uses the abbreviation. |
 | 19 | `home-rule` | స్వపరిపాలన (హోమ్ రూల్) ఉద్యమం | 'హోమ్ రూల్' 0 vs 'స్వపరిపాలన' 5 in the notes. | Reviewer to choose. |
 
 ## Full taxonomy: Unit → Chapter → subtopic (English / Telugu / classification)
@@ -385,7 +385,7 @@ Evidence is how often each spelling appears in the current notes (chapters 1-12 
 | Individual Satyagraha | వ్యక్తిగత సత్యాగ్రహం | 0/0 | no_source |
 | Quit India | క్విట్ ఇండియా ఉద్యమం | 1/0 |  |
 | Prominent leaders | ప్రముఖ నాయకులు | 1/0 | overlap |
-| Regional centres and events | ప్రాంతీయ కేంద్రాలు మరియు సంఘటనలు | 1/1 |  |
+| Regional centres and events | ప్రాంతీయ కేంద్రాలు మరియు సంఘటనలు | 0/1 |  |
 
 #### Chapter 20 — Socialists, Communists, Anti-Zamindari and Kisan Movements (direct)
 
@@ -479,9 +479,9 @@ Evidence is how often each spelling appears in the current notes (chapters 1-12 
 | Burrakatha | బుర్రకథ | 0/0 | narrow;no_source |
 | Tholu Bommalata | తోలుబొమ్మలాట | 0/0 | narrow;no_source |
 | Regional dance and performance traditions | ప్రాంతీయ నృత్య మరియు ప్రదర్శన సంప్రదాయాలు | 0/0 | no_source |
-| Major tribal communities | ప్రధాన గిరిజన తెగలు | 0/1 |  |
+| Major tribal communities | ప్రధాన గిరిజన తెగలు | 0/2 |  |
 | Tribal customs and festivals | గిరిజన ఆచారాలు మరియు పండుగలు | 0/0 | no_source |
-| Tribal resistance (where directly relevant) | గిరిజన ప్రతిఘటన (నేరుగా సంబంధించిన చోట) | 1/2 |  |
+| Tribal resistance (where directly relevant) | గిరిజన ప్రతిఘటన (నేరుగా సంబంధించిన చోట) | 0/2 |  |
 | Role in social identity and mobilisation | సామాజిక గుర్తింపు మరియు చైతన్యంలో పాత్ర | 0/0 | no_source |
 
 #### Chapter 27 — Formation of Andhra State, 1953 (direct)
