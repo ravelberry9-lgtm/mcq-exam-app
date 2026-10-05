@@ -244,3 +244,14 @@ def test_converter_writes_only_preview_packages_and_refuses_the_import_folder(tm
     r = subprocess.run([sys.executable, str(ROOT / "scripts" / "convert_prepared_to_v1.py"), str(src), "--out", str(src / "x")],
                        capture_output=True, text=True)
     assert r.returncode != 0 and "refusing" in (r.stderr + r.stdout)
+
+
+def test_identical_te_en_options_pass_for_proper_names_but_not_for_plain_english_phrases():
+    for name in ("La Madeleine", "MCG", "Jwalapuram Locality 9"):
+        r = rec(1); r["options"]["a"] = {"te": name, "en": name}
+        rpt = b.Report(Path("x"), "t"); b.validate_records([r], rpt)
+        assert "option_not_bilingual" not in codes(rpt)
+    for phrase in ("Asmaka-Mulaka complex", "Reinforced concrete", "Load-bearing brick"):
+        r = rec(1); r["options"]["a"] = {"te": phrase, "en": phrase}
+        rpt = b.Report(Path("x"), "t"); b.validate_records([r], rpt)
+        assert "option_not_bilingual" in codes(rpt)

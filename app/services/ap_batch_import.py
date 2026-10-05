@@ -28,6 +28,13 @@ DRAFT_QID_RE = re.compile(r"^C\d{2}-B\d{2}-\d{3,4}$")
 CONVERTED_QID_RE = re.compile(r"^aph-u[1-5]c(0[1-9]|[12][0-9]|3[01])-(AP9-\d{5}|B\d{3})$")
 TELUGU = re.compile("[ఀ-౿]")
 LATIN = re.compile("[A-Za-z]")
+
+def _proper_name_like(text):
+    """True for names/acronyms kept in Latin script in a Telugu paper: every space-separated word starts upper-case or with a digit."""
+    words = text.split()
+    return bool(words) and all(w[0].isupper() or w[0].isdigit() for w in words if w[0].isalnum())
+
+
 CODE_ONLY = re.compile(r"^[\sA-Da-d0-9,\-–.;()]+$")
 REQUIRED = ("source", "source_qid", "batch_id", "source_file", "chapter_slug", "coverage_scope", "difficulty", "qtype", "question_te",
             "question_en", "options", "correct_answer", "explanation_te", "explanation_en", "review_status")
@@ -143,7 +150,7 @@ def validate_record(rec, rpt, taxo, draft=False):
             if not isinstance(o, dict) or not (o.get("te") or "").strip() or not (o.get("en") or "").strip():
                 rpt.error(qid, "option_incomplete", f"option {k} needs non-empty te and en")
                 continue
-            if o["te"].strip() == o["en"].strip() and not CODE_ONLY.match(o["en"]):
+            if o["te"].strip() == o["en"].strip() and not CODE_ONLY.match(o["en"]) and not _proper_name_like(o["en"]):
                 rpt.error(qid, "option_not_bilingual", f"option {k} has identical te and en text that is not a language-neutral code")
             elif not TELUGU.search(o["te"]) and not CODE_ONLY.match(o["te"]):
                 rpt.error(qid, "option_telugu_missing", f"option {k} te has no Telugu text")
