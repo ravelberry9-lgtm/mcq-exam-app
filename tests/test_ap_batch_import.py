@@ -227,3 +227,20 @@ def test_cli_exit_codes_and_no_apply_mode(tmp_path):
     assert not [n for n in dir(b) if callable(getattr(b, n)) and ("apply" in n.lower() or n.lower().startswith("import_"))]
     src = (ROOT / "app" / "services" / "ap_batch_import.py").read_text(encoding="utf-8")
     assert "INSERT" not in src.upper().replace("INSERT-ONLY", "") and "commit(" not in src and "session" not in src.lower()
+
+
+def test_converted_ids_and_chapter_level_fallback_are_accepted_only_when_marked(tmp_path):
+    ok = rec(1, source_qid="aph-u1c01-AP9-00004", converted_from="AP_History_U1_C01_Import_Ready.jsonl", subtopic_slug="", subtopic_fallback=True)
+    bare = rec(2, source_qid="aph-u1c01-AP9-00005", subtopic_slug="")          # no converted_from, no fallback flag
+    rpt = b.validate_package(make_package(tmp_path, [ok, bare]))
+    assert {"converted_import_ref_id", "chapter_level_fallback"} <= codes(rpt, "warnings")
+    errs = [(e["id"], e["code"]) for e in rpt.to_dict()["errors"]]
+    assert ("aph-u1c01-AP9-00005", "bad_id_format") in errs and ("aph-u1c01-AP9-00005", "missing_subtopic") in errs
+    assert not [e for e in errs if e[0] == "aph-u1c01-AP9-00004"]
+
+
+def test_converter_writes_only_preview_packages_and_refuses_the_import_folder(tmp_path):
+    src = tmp_path / "05_claude_import"; src.mkdir()
+    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "convert_prepared_to_v1.py"), str(src), "--out", str(src / "x")],
+                       capture_output=True, text=True)
+    assert r.returncode != 0 and "refusing" in (r.stderr + r.stdout)

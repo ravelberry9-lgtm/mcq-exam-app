@@ -24,6 +24,8 @@ DIFFICULTIES = ("easy", "medium", "tough", "toughest")
 OPTION_KEYS = ("a", "b", "c", "d")
 QID_RE = re.compile(r"^APH-U[1-5]-C(0[1-9]|[12][0-9]|3[01])-B\d{2}-Q\d{3,4}$")
 DRAFT_QID_RE = re.compile(r"^C\d{2}-B\d{2}-\d{3,4}$")
+# ids kept from the prepared (F-shape) packages by the converter: the content team's own import_ref
+CONVERTED_QID_RE = re.compile(r"^aph-u[1-5]c(0[1-9]|[12][0-9]|3[01])-(AP9-\d{5}|B\d{3})$")
 TELUGU = re.compile("[ఀ-౿]")
 LATIN = re.compile("[A-Za-z]")
 CODE_ONLY = re.compile(r"^[\sA-Da-d0-9,\-–.;()]+$")
@@ -107,7 +109,9 @@ def validate_record(rec, rpt, taxo, draft=False):
     if rec.get("source") and rec["source"] not in SOURCES:
         rpt.error(qid, "bad_source", f"source {rec['source']!r} is not one of {SOURCES}")
     if rec.get("source_qid"):
-        if not (QID_RE.match(rec["source_qid"]) or (draft and DRAFT_QID_RE.match(rec["source_qid"]))):
+        if CONVERTED_QID_RE.match(rec["source_qid"]) and rec.get("converted_from"):
+            rpt.warn(qid, "converted_import_ref_id", "source_qid is the prepared package's import_ref (converted record), not APH-U#-C##-B##-Q###")
+        elif not (QID_RE.match(rec["source_qid"]) or (draft and DRAFT_QID_RE.match(rec["source_qid"]))):
             rpt.error(qid, "bad_id_format", "source_qid must match APH-U{unit}-C{chapter}-B{batch}-Q{number}")
         elif DRAFT_QID_RE.match(rec["source_qid"]):
             rpt.warn(qid, "draft_id_format", "short draft id; must be normalised to APH-U#-C##-B##-Q### after approval, before any import")
@@ -161,7 +165,9 @@ def validate_record(rec, rpt, taxo, draft=False):
         if rec.get("coverage_scope") == "direct":
             rpt.warn(qid, "supplementary_marked_direct", "primary chapter is supplementary; it never counts as direct syllabus coverage")
     elif ch in taxo.core:
-        if not st:
+        if not st and rec.get("subtopic_fallback"):
+            rpt.warn(qid, "chapter_level_fallback", "no subtopic: integrated question kept at chapter level (subtopic_fallback)")
+        elif not st:
             rpt.error(qid, "missing_subtopic", "a core-chapter question needs one primary subtopic_slug")
         elif st not in taxo.chapter_of_sub:
             rpt.error(qid, "unknown_subtopic", f"subtopic_slug {st!r} is not in ap-history-taxonomy-v1")
