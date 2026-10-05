@@ -4,15 +4,15 @@ Adds: syllabus_units, syllabus_chapters, syllabus_subtopics, chapter_source_map,
 canonical-identity columns on questions with a unique (source, source_qid) index.
 Nothing existing is changed, moved, backfilled or deleted: every new questions column is NULL for existing rows.
 
-Revision ID: d4e5f6a7b8c9
-Revises: c3d4e5f6a7b8
+Revision ID: f6a7b8c9d0e1
+Revises: d4e5f6a7b8c9
 Create Date: 2026-10-04 18:00:00+00:00
 """
 from alembic import op
 import sqlalchemy as sa
 
-revision = "d4e5f6a7b8c9"
-down_revision = "c3d4e5f6a7b8"
+revision = "f6a7b8c9d0e1"
+down_revision = "d4e5f6a7b8c9"
 branch_labels = None
 depends_on = None
 

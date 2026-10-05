@@ -3,15 +3,15 @@
 Adds the syllabus_microtopics table and two nullable columns on syllabus_subtopics (search_key_te, taxonomy_version).
 Nothing existing is changed, moved, backfilled or deleted.
 
-Revision ID: e5f6a7b8c9d0
-Revises: d4e5f6a7b8c9
+Revision ID: a7b8c9d0e1f2
+Revises: f6a7b8c9d0e1
 Create Date: 2026-10-04 20:00:00+00:00
 """
 from alembic import op
 import sqlalchemy as sa
 
-revision = "e5f6a7b8c9d0"
-down_revision = "d4e5f6a7b8c9"
+revision = "a7b8c9d0e1f2"
+down_revision = "f6a7b8c9d0e1"
 branch_labels = None
 depends_on = None
 

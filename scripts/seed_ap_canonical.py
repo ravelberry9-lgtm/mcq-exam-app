@@ -4,7 +4,7 @@
     python scripts/seed_ap_canonical.py --apply         # insert the missing units/chapters (never updates or deletes)
     python scripts/seed_ap_canonical.py --apply --with-subtopics   # also insert subtopics + microtopics of ap-history-taxonomy-v1
 
-Requires Alembic migrations d4e5f6a7b8c9 and e5f6a7b8c9d0 to be applied first. Idempotent. Touches no notes, questions or source chapters.
+Requires Alembic migrations f6a7b8c9d0e1 and a7b8c9d0e1f2 to be applied first. Idempotent. Touches no notes, questions or source chapters.
 """
 import argparse
 import sys

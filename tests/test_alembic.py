@@ -8,7 +8,7 @@ from alembic import command
 from alembic.config import Config as AlembicConfig
 
 ROOT = Path(__file__).resolve().parent.parent
-HEAD = "e5f6a7b8c9d0"
+HEAD = "a7b8c9d0e1f2"
 
 
 def _cfg(url, monkeypatch):
