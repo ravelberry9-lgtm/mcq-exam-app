@@ -9,6 +9,7 @@ from flask import Blueprint, abort, jsonify, render_template, request, url_for
 from ..db import db
 from ..models import Chapter, ChapterProgress, ExamSection, Note, Subject
 from ..services import learn as svc
+from ..services import syllabus_view as syl
 from ..services.ui_text import UI, t, tl
 
 bp = Blueprint("learn", __name__, url_prefix="/learn")
@@ -38,13 +39,26 @@ def section(section_id):
                            groups=groups)
 
 
+@bp.route("/ap-history")
+def ap_history():
+    data = syl.outline()
+    return render_template("ds/syllabus.html", data=data)
+
+
+@bp.route("/ap-history/<slug>")
+def ap_history_chapter(slug):
+    data = syl.chapter_detail(slug) or abort(404)
+    return render_template("ds/syllabus_chapter.html", d=data)
+
+
 @bp.route("/subject/<slug>")
 def subject(slug):
     sub = Subject.query.filter_by(slug=slug).first_or_404()
     groups = svc.with_banks(svc.topics_for_subject(sub), [sub])
     groups = svc.attach_status(groups, _device_id())
     return render_template("ds/section.html", title_en=sub.name_en, title_te=sub.name_te,
-                           marks=None, groups=groups)
+                           marks=None, groups=groups,
+                           canonical_url=url_for("learn.ap_history") if sub.slug == syl.SUBJECT_SLUG and syl.is_loaded() else None)
 
 
 @bp.route("/subject/<slug>/<any(practice,pyq):bank>")

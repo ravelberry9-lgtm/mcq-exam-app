@@ -1,0 +1,45 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% block title %}{{ tl('syl.title') }} · {{ app_title }}{% endblock %}
+{% block topbar %}
+  <div class="row between">
+    <a class="back" href="{{ url_for('learn.hub') }}" data-testid="back-to-learn"><span aria-hidden="true">‹</span> {{ t('nav.learn') }}</a>
+    {{ c.langswitch(lang_pref) }}
+  </div>
+  <h1>{{ t('syl.title') }}</h1>
+{% endblock %}
+{% block content %}
+{% if not data %}
+  <div class="card"><strong>{{ t('common.empty') }}</strong><span class="muted">{{ t('syl.not_loaded') }}</span></div>
+{% else %}
+{% for u in data.units %}
+  <section aria-labelledby="u{{ u.unit.unit_num }}">
+    <h2 id="u{{ u.unit.unit_num }}" class="label" style="margin:0 0 8px">{{ t('syl.unit', n=u.unit.unit_num) }} · {{ c.bi(u.unit.title_en, u.unit.title_te) }}</h2>
+    <div style="display:flex;flex-direction:column;gap:10px">
+    {% for e in u.chapters %}
+      <a class="card" href="{{ url_for('learn.ap_history_chapter', slug=e.chapter.slug) }}">
+        <div class="crumb">{{ t('common.chapter', n=e.chapter.chapter_num) }}</div>
+        <h2>{{ c.bi(e.chapter.title_en, e.chapter.title_te) }}</h2>
+        <span class="small muted">{% if e.question_count %}{{ t('common.questions', n=e.question_count) }}{% else %}{{ t('syl.no_content') }}{% endif %}</span>
+      </a>
+    {% endfor %}
+    </div>
+  </section>
+{% endfor %}
+{% if data.supplementary %}
+  <section aria-labelledby="supp">
+    <h2 id="supp" class="label" style="margin:14px 0 4px">{{ t('syl.supp') }}</h2>
+    <p class="small muted" style="margin:0 0 8px">{{ t('syl.supp_note') }}</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+    {% for e in data.supplementary %}
+      <a class="card" href="{{ url_for('learn.ap_history_chapter', slug=e.chapter.slug) }}" style="border-style:dashed">
+        <div class="crumb">{{ c.tag('off', t('syl.supp_tag')) }}</div>
+        <h2>{{ c.bi(e.chapter.title_en, e.chapter.title_te) }}</h2>
+      </a>
+    {% endfor %}
+    </div>
+  </section>
+{% endif %}
+{% endif %}
+{% endblock %}

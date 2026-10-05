@@ -1,0 +1,30 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% block title %}{{ d.chapter.title_en }} · {{ app_title }}{% endblock %}
+{% block topbar %}
+  <div class="row between">
+    <a class="back" href="{{ url_for('learn.ap_history') }}"><span aria-hidden="true">‹</span> {{ t('syl.title') }}</a>
+    {{ c.langswitch(lang_pref) }}
+  </div>
+  {% if d.chapter.is_core %}<div class="crumb">{{ t('syl.unit', n=d.unit.unit_num) }} · {{ t('common.chapter', n=d.chapter.chapter_num) }}</div>
+  {% else %}<div class="crumb">{{ c.tag('off', t('syl.supp_tag')) }}</div>{% endif %}
+  <h1>{{ c.bi(d.chapter.title_en, d.chapter.title_te, 'stack') }}</h1>
+{% endblock %}
+{% block content %}
+{% if d.legacy_chapter_id %}
+  <a class="card" href="{{ url_for('learn.topic', chapter_id=d.legacy_chapter_id) }}">
+    <strong>{{ t('syl.open') }}</strong><span class="small muted">{{ t('common.questions', n=d.question_count) }}</span>
+  </a>
+{% else %}
+  <div class="card"><span class="muted">{{ t('syl.no_content') }}</span></div>
+{% endif %}
+<section aria-labelledby="st">
+  <h2 id="st" class="label" style="margin:14px 0 8px">{{ t('syl.subtopics') }}</h2>
+  {% if d.subtopics %}
+  <ol style="display:flex;flex-direction:column;gap:8px;padding-left:0;list-style:none;margin:0">
+    {% for s in d.subtopics %}<li class="card">{{ c.bi(s.subtopic_en, s.subtopic_te) }}</li>{% endfor %}
+  </ol>
+  {% else %}<p class="small muted">{{ t('syl.no_subtopics') }}</p>{% endif %}
+</section>
+{% endblock %}

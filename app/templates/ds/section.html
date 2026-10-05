@@ -10,6 +10,9 @@
   <h1>{{ c.bi(title_en, title_te, 'stack') }}</h1>
 {% endblock %}
 {% block content %}
+{% if canonical_url %}
+<a class="card" href="{{ canonical_url }}" data-testid="canonical-outline"><strong>{{ t('syl.all') }}</strong><span class="small muted">{{ t('syl.title') }}</span></a>
+{% endif %}
 {% if not groups %}
   <div class="card"><strong>{{ t('common.empty') }}</strong><span class="muted">{{ t('section.no_topics') }}</span></div>
 {% endif %}

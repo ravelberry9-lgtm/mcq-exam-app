@@ -322,7 +322,12 @@ def test_seeding_changes_no_existing_content_and_learn_pages_are_identical(hist,
     before = snap()
     canon.seed(); canon.seed_subtopics(subs.expanded())
     assert [Chapter.query.count(), Note.query.count(), Question.query.count()] == before_db
-    assert snap() == before
+    after = snap()
+    # the only intended visible change: the subject page gains one link to the canonical outline
+    card = re.compile(rb'\s*<a class="card" href="/learn/ap-history" data-testid="canonical-outline">.*?</a>', re.S)
+    assert b"canonical-outline" in after["/learn/subject/ap_history"][1]
+    after["/learn/subject/ap_history"] = (after["/learn/subject/ap_history"][0], card.sub(b"", after["/learn/subject/ap_history"][1]))
+    assert after == before
     assert all(code == 200 for code, _ in before.values())
 
 
