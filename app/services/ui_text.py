@@ -52,6 +52,8 @@ UI = {
     "prac.correct": ("Correct", "సరైనది"), "prac.correct_ans": ("Correct answer", "సరైన సమాధానం"), "prac.yours": ("Your answer", "మీ సమాధానం"),
     "prac.expl": ("EXPLANATION", "వివరణ"), "prac.no_expl": ("No explanation has been added for this question yet.", "ఈ ప్రశ్నకు వివరణ ఇంకా జోడించలేదు."),
     "prac.open_notes": ("Read the topic notes", "టాపిక్ నోట్స్ చదవండి"),
+    "review.read_notes": ("Read this in notes", "నోట్స్‌లో చదవండి"),
+    "review.read_notes_chapter": ("Read the chapter notes (whole chapter, not the exact passage)", "అధ్యాయ నోట్స్ చదవండి (పూర్తి అధ్యాయం, ఖచ్చితమైన భాగం కాదు)"),
     "prac.end": ("End session", "సెషన్ ముగించు"), "prac.progress": ("Session progress", "సెషన్ పురోగతి"),
     "prac.summary": ("Session summary", "సెషన్ సారాంశం"), "prac.right": ("Correct", "సరైనవి"), "prac.wrong": ("Wrong", "తప్పులు"),
     "prac.skipped": ("Skipped", "దాటవేసినవి"), "prac.again": ("Practise again", "మళ్ళీ ప్రాక్టీస్ చేయండి"),

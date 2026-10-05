@@ -116,6 +116,16 @@ class Question(db.Model):
     explanation_en = db.Column(db.Text)
     explanation_te = db.Column(db.Text)
     passage_id = db.Column(db.Integer, db.ForeignKey("passages.id"), nullable=True)
+    # Where "Read this in notes" points. ``note_section_num`` is the section_num of a note in this question's chapter
+    # (stable across note re-imports, unlike a note row id); NULL means "no exact section", and the review screens then
+    # offer a clearly labelled chapter-level link instead. ``note_target_slug`` keeps the human-readable target the content
+    # team assigned. Neither is ever shown as such to learners.
+    note_section_num = db.Column(db.Integer, nullable=True)
+    note_target_slug = db.Column(db.String(96), nullable=True)
+    # Internal provenance (source ids, benchmark/origin, 'H' marker for Hanumanth Rao). Never rendered to learners.
+    source_trace = db.Column(db.JSON, nullable=True)
+    # Stable identifier from a prepared import package; makes re-running an import a no-op.
+    import_ref = db.Column(db.String(64), nullable=True, index=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 

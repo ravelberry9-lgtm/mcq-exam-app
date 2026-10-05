@@ -51,11 +51,18 @@
           <span class="review-correct-ans">Correct: <strong>{{ r.question.correct_answer | upper }}</strong> — {{ bi.opt_or_blank(r.question, r.question.correct_answer) }}</span>
           {% endif %}
         </div>
-        {% if not r.correct and (r.question.explanation_en or r.question.explanation_te) %}
-        <details class="review-explanation">
-          <summary>Explanation</summary>
+        <details class="review-explanation" data-testid="review-explanation" {% if not r.correct %}open{% endif %}>
+          <summary>Explanation · వివరణ</summary>
+          {% if r.question.explanation_en or r.question.explanation_te %}
           {{ bi.expl(r.question.explanation_en, r.question.explanation_te) }}
+          {% else %}
+          <p class="muted">No explanation available yet · వివరణ ఇంకా అందుబాటులో లేదు.</p>
+          {% endif %}
         </details>
+        {% if r.note_link %}
+        <a class="btn-secondary" data-testid="read-in-notes" data-exact="{{ 'true' if r.note_link.exact else 'false' }}" href="{{ r.note_link.url }}">
+          {% if r.note_link.exact %}Read this in notes · నోట్స్‌లో చదవండి{% else %}Read the chapter notes · అధ్యాయ నోట్స్ చదవండి{% endif %}
+        </a>
         {% endif %}
       </div>
     </div>

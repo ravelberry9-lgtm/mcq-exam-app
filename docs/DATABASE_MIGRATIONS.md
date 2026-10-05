@@ -58,3 +58,21 @@ those type/constraint differences. And the live Railway database itself has not 
 
 Adds `note_backups` (batch_id, reason, chapter_id, section_num, headings, bodies, created_at). Used by the content import to keep a copy of any
 note it replaces or removes. Guarded `create_table`; downgrade refuses while the table has rows.
+
+## `d4e5f6a7b8c9` — question note links and import provenance
+
+Adds four **nullable** columns to `questions` (idempotent; existing rows are untouched): `note_section_num` (the stable
+`section_num` of the note in the question's chapter that "Read this in notes" opens; a section number, not a note row id,
+because a notes re-import changes row ids), `note_target_slug` (the content team's label), `source_trace` (internal JSON
+provenance, never rendered to learners) and `import_ref` (indexed; makes re-running an MCQ import a no-op).
+Downgrade refuses (with a message) if any question uses these columns.
+
+### Importing prepared MCQ packages
+
+    python scripts/import_mcq_batch.py content/AP_History_MCQ_Project/05_claude_import/AP_History_U1_C01_Import_Ready.jsonl         # preview
+    python scripts/import_mcq_batch.py <file> --apply                                                                              # add-only
+
+The subject and chapter are resolved by slug/chapter number and the chapter title is asserted; package ids that disagree
+with the database are refused. Invalid records and duplicates (same stem, or near-identical stem with the same correct answer,
+against the subject's existing questions) are skipped and reported. Existing questions are never modified.
+Run `python -m alembic upgrade head` first.

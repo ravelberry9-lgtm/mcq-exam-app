@@ -49,7 +49,8 @@
       <strong class="label">{{ t('prac.expl') }}</strong>
       {% if q.x_en or q.x_te %}<div>{{ c.bi(q.x_en, q.x_te, 'stack') }}</div>
       {% else %}<span class="muted small">{{ t('prac.no_expl') }}</span>{% endif %}
-      {% if note_count and chapter %}<a class="btn" href="{{ url_for('learn.notes', chapter_id=chapter.id) }}" style="margin-top:6px">{{ t('prac.open_notes') }}</a>{% endif %}
+      {% if q.note_url %}<a class="btn" data-testid="read-in-notes" data-exact="{{ 'true' if q.note_exact else 'false' }}" href="{{ q.note_url }}" style="margin-top:6px">{{ t('review.read_notes' if q.note_exact else 'review.read_notes_chapter') }}</a>
+      {% elif note_count and chapter %}<a class="btn" href="{{ url_for('learn.notes', chapter_id=chapter.id) }}" style="margin-top:6px">{{ t('prac.open_notes') }}</a>{% endif %}
     </div>
   </div>
   <p class="small" id="err" role="alert" style="color:var(--amber-ink);font-weight:700" hidden>{{ t('prac.save_failed') }}</p>

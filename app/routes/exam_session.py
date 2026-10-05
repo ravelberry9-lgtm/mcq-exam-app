@@ -7,6 +7,7 @@ from flask import (
 )
 from ..db import db
 from ..services import exam_rules, qdisplay
+from ..services.learn import note_link_for
 from ..services.answer_input import parse_choice, parse_confidence, parse_question_id, payload_dict
 from ..models import (
     Exam, ExamPaper, ExamSection, ExamSyllabusItem,
@@ -261,6 +262,7 @@ def results(session_id):
 
     # Build per-question review data
     review = []
+    _sections = {}
     for qid in es.question_ids:
         q = Question.query.get(qid)
         if not q:
@@ -272,6 +274,7 @@ def results(session_id):
             "chosen": chosen,
             "correct": correct,
             "skipped": chosen is None,
+            "note_link": note_link_for(q, _sections),
         })
 
     attempted = sum(1 for r in review if not r["skipped"])

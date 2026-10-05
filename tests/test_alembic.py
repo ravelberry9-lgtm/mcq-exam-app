@@ -8,7 +8,7 @@ from alembic import command
 from alembic.config import Config as AlembicConfig
 
 ROOT = Path(__file__).resolve().parent.parent
-HEAD = "c3d4e5f6a7b8"
+HEAD = "d4e5f6a7b8c9"
 
 
 def _cfg(url, monkeypatch):
@@ -144,7 +144,8 @@ NOTES_NO_CASCADE = """CREATE TABLE notes (id INTEGER NOT NULL, chapter_id INTEGE
 QUESTIONS_NO_PASSAGE_FK = """CREATE TABLE questions (id INTEGER NOT NULL, subject_id INTEGER NOT NULL, chapter_id INTEGER,
   source_type VARCHAR(16) NOT NULL, q_hash VARCHAR(32), pyq_year VARCHAR(8), pyq_paper VARCHAR(64), difficulty VARCHAR(2),
   question_en TEXT, question_te TEXT, options_en JSON, options_te JSON, correct_answer VARCHAR(1) NOT NULL,
-  explanation_en TEXT, explanation_te TEXT, passage_id INTEGER, created_at DATETIME, updated_at DATETIME, PRIMARY KEY (id),
+  explanation_en TEXT, explanation_te TEXT, passage_id INTEGER, note_section_num INTEGER, note_target_slug VARCHAR(96),
+  source_trace JSON, import_ref VARCHAR(64), created_at DATETIME, updated_at DATETIME, PRIMARY KEY (id),
   FOREIGN KEY(chapter_id) REFERENCES chapters (id), FOREIGN KEY(subject_id) REFERENCES subjects (id));"""
 CHAPTERS_NULLABLE_TITLE = """CREATE TABLE chapters (id INTEGER NOT NULL, subject_id INTEGER NOT NULL, chapter_num INTEGER NOT NULL,
   title_en VARCHAR(256), title_te VARCHAR(256) NOT NULL, est_read_minutes INTEGER, PRIMARY KEY (id),

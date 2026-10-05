@@ -251,8 +251,33 @@ def chapter_questions(chapter_id):
     return Question.query.filter_by(chapter_id=chapter_id, source_type="chapter").order_by(Question.id).all()
 
 
+def note_link_for(q, cache=None):
+    """Where "Read this in notes" should point for a question, or None when there is nothing honest to link to.
+
+    * exact: the question names a note section (``note_section_num``) and that section exists in the question's chapter;
+    * chapter: no exact section (or it no longer exists), but the chapter has notes: a chapter-level link, which the
+      templates label as such (never presented as the exact passage);
+    * None: the question has no chapter, or its chapter has no notes. An unrelated note is never substituted.
+    ``cache`` is an optional dict that holds each chapter's section numbers across a page's questions."""
+    from flask import url_for
+    cid = q.chapter_id
+    if not cid:
+        return None
+    cache = cache if cache is not None else {}
+    if cid not in cache:
+        cache[cid] = {n for (n,) in db.session.query(Note.section_num).filter(Note.chapter_id == cid).all()}
+    sections = cache[cid]
+    if not sections:
+        return None
+    num = q.note_section_num
+    if num is not None and num in sections:
+        return {"url": url_for("learn.notes", chapter_id=cid, section=num), "exact": True}
+    return {"url": url_for("learn.notes", chapter_id=cid), "exact": False}
+
+
 def question_view(q):
     """Everything the template needs for one question, with display-only clean-up applied."""
+    link = note_link_for(q)
     keys = sorted({k for k in list((q.options_en or {}).keys()) + list((q.options_te or {}).keys())
                    if (q.options_en or {}).get(k) or (q.options_te or {}).get(k)})
     options = [{
@@ -267,6 +292,7 @@ def question_view(q):
         "pyq_year": (q.pyq_year or "").strip(), "pyq_paper": (q.pyq_paper or "").strip(),
         "q_en": (q.question_en or "").strip(), "q_te": (q.question_te or "").strip(),
         "x_en": (q.explanation_en or "").strip(), "x_te": (q.explanation_te or "").strip(),
+        "note_url": link["url"] if link else None, "note_exact": bool(link and link["exact"]),
     }
 
 
