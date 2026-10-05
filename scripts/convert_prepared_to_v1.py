@@ -14,7 +14,7 @@ DIFF = {"E": "easy", "M": "medium", "H": "tough"}            # H -> tough is a g
 SOURCE = {"AP_MASTER": "app_master", "CODEX_DRAFT": "codex_generated", "BENCHMARK_APPROVED": "codex_generated"}
 NOTES = ["difficulty: E->easy, M->medium, H->tough (lossy; 'toughest' not recoverable)",
          "coverage_scope defaulted to 'direct' for every record: needs review",
-         "review_status is content_review_required: prepared packages carry no bilingual approval or accuracy audit",
+         "review_status is content_review_required unless --approve is given (the approval note is recorded in the manifest)",
          "secondary_chapters and microtopic_slugs left empty (not in the prepared files)",
          "qtype is 'unspecified' (not in the prepared files)",
          "source_qid is the prepared import_ref; BENCHMARK_APPROVED maps to codex_generated (approximate)"]
@@ -24,7 +24,8 @@ def sha(b): return hashlib.sha256(b).hexdigest()
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("src"); ap.add_argument("--out")
+    ap = argparse.ArgumentParser(); ap.add_argument("src"); ap.add_argument("--out"); ap.add_argument("--approve", action="append", default=[], help="project chapter to mark bilingual_approved, e.g. U1-C01 (repeatable); only these chapters are converted")
+    ap.add_argument("--approval-note", default="")
     a = ap.parse_args()
     src = Path(a.src)
     out = Path(a.out) if a.out else src.parent / "_converted_v1_preview"
@@ -41,8 +42,12 @@ def main():
                 for v in o: walk(v)
         walk(ch)
     summary = []
+    if a.approve and not a.approval_note:
+        sys.exit("--approve needs --approval-note saying who approved and when")
     for f in sorted(src.glob("AP_History_U*_C*_Import_Ready.jsonl")):
         man = json.loads(f.with_name(f.name.replace("Import_Ready.jsonl", "Import_Manifest.json")).read_text(encoding="utf-8"))
+        if a.approve and not any(f.name.startswith("AP_History_%s_" % x.replace("-", "_")) for x in a.approve):
+            continue
         groups = {}
         for line in f.read_text(encoding="utf-8").splitlines():
             r = json.loads(line)
@@ -56,7 +61,7 @@ def main():
                    "qtype": "unspecified", "question_te": r["question_te"], "question_en": r["question_en"],
                    "options": {k: {"te": r["options_te"][k], "en": r["options_en"][k]} for k in "abcd"},
                    "correct_answer": r["correct_answer"], "explanation_te": r["explanation_te"], "explanation_en": r["explanation_en"],
-                   "review_status": "content_review_required", "secondary_chapters": [], "microtopic_slugs": [],
+                   "review_status": "bilingual_approved" if a.approve else "content_review_required", "secondary_chapters": [], "microtopic_slugs": [],
                    "converted_from": f.name, "source_trace": r["source_trace"], "note_target_slug": t,
                    "note_section_num": r.get("note_section_num"), "note_link_status": r.get("note_link_status"),
                    "legacy_difficulty": r["difficulty"], "coverage_scope_review": True}
@@ -69,7 +74,7 @@ def main():
             d = out / batch; d.mkdir(parents=True, exist_ok=True)
             (d / "questions.jsonl").write_bytes(body)
             manifest = {"format_version": "ap-history-import-v1", "taxonomy_version": tax.TAXONOMY_VERSION, "batch_id": batch, "source": source,
-                        "question_count": len(recs), "questions_sha256": sha(body), "content_approval": "content_review_required",
+                        "question_count": len(recs), "questions_sha256": sha(body), "content_approval": "bilingual_approved" if a.approve else "content_review_required", "approval_note": a.approval_note,
                         "converted_from": f.name, "prepared_sha256": sha(f.read_bytes()), "origin_source_sha256": man.get("source_sha256"),
                         "conversion_notes": NOTES}
             (d / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
