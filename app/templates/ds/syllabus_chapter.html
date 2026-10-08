@@ -12,13 +12,19 @@
   <h1>{{ c.bi(d.chapter.title_en, d.chapter.title_te, 'stack') }}</h1>
 {% endblock %}
 {% block content %}
-{% if d.legacy_chapter_id %}
-  <a class="card" href="{{ url_for('learn.topic', chapter_id=d.legacy_chapter_id) }}">
-    <strong>{{ t('syl.open') }}</strong><span class="small muted">{{ t('common.questions', n=d.question_count) }}</span>
+{% if d.question_count %}
+  <a class="card" href="{{ url_for('learn.ap_history_practice', slug=d.chapter.slug) }}">
+    <strong>{{ c.bi('Practise this chapter', 'ఈ అధ్యాయాన్ని ప్రాక్టీస్ చేయండి') }}</strong><span class="small muted">{{ t('common.questions', n=d.question_count) }}</span>
   </a>
 {% else %}
   <div class="card"><span class="muted">{{ t('syl.no_content') }}</span></div>
 {% endif %}
+{% for source in d.note_chapters %}
+  <a class="card" href="{{ url_for('learn.notes', chapter_id=source.id) }}">
+    <strong>{{ c.bi('Related chapter notes', 'సంబంధిత అధ్యాయం నోట్స్') }}</strong>
+    <span class="small muted">{{ c.bi(source.title_en, source.title_te) }}</span>
+  </a>
+{% endfor %}
 <section aria-labelledby="st">
   <h2 id="st" class="label" style="margin:14px 0 8px">{{ t('syl.subtopics') }}</h2>
   {% if d.subtopics %}

@@ -2,20 +2,21 @@
 
 Nothing here writes. Question counts come from the content team's own note_target_slug prefix ("u1-c02-..." = canonical
 chapter 2), so the 1,3xx imported questions are reachable by canonical chapter without any schema change or backfill.
-Practice and notes open the legacy chapter that actually holds those questions, so every number shown is reachable.
+Practice uses canonical membership; related notes retain their existing source chapter links.
 """
 from collections import defaultdict
+import re
 
 from sqlalchemy import func
 
 from ..db import db
-from ..models import Question, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusUnit
+from ..models import Chapter, Note, Question, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusUnit
 
 SUBJECT_SLUG = "ap_history"
 
 
 def _prefix(slug):
-    return slug[:7] if slug and len(slug) >= 7 else None   # "u1-c02-"
+    return slug[:7] if slug and re.match(r"^u[1-5]-c\d{2}-", slug) else None
 
 
 def _subject():
@@ -50,6 +51,23 @@ def _entry(ch, idx):
     return {"chapter": ch, "question_count": q["count"], "legacy_chapter_id": legacy}
 
 
+def chapter_questions(ch):
+    """Use the same canonical membership as the outline, across all legacy homes."""
+    if not ch.is_core:
+        return []
+    return (Question.query.filter(Question.subject_id == ch.subject_id,
+                                  Question.note_target_slug.startswith(ch.slug[:6] + "-"))
+            .order_by(Question.id).all())
+
+
+def summary():
+    data = outline()
+    if data is None:
+        return None
+    return {"chapter_count": data["core_count"],
+            "question_count": sum(c["question_count"] for u in data["units"] for c in u["chapters"])}
+
+
 def outline():
     """None when the canonical structure has not been seeded yet."""
     sub = _subject()
@@ -75,5 +93,10 @@ def chapter_detail(slug):
         return None
     subs = SyllabusSubtopic.query.filter_by(chapter_id=ch.id).order_by(SyllabusSubtopic.sort_order, SyllabusSubtopic.id).all()
     entry = _entry(ch, _question_index(sub.id) if ch.is_core else {})
+    ids = {q.chapter_id for q in chapter_questions(ch) if q.chapter_id}
+    note_chapters = (Chapter.query.filter(Chapter.id.in_(ids), Chapter.subject_id == sub.id)
+                     .filter(db.session.query(Note.id).filter(Note.chapter_id == Chapter.id).exists())
+                     .order_by(Chapter.chapter_num).all()) if ids else []
     unit = db.session.get(SyllabusUnit, ch.unit_id) if ch.unit_id else None
-    return {"subject": sub, "chapter": ch, "unit": unit, "subtopics": subs, **entry}
+    return {"subject": sub, "chapter": ch, "unit": unit, "subtopics": subs,
+            "note_chapters": note_chapters, **entry}
