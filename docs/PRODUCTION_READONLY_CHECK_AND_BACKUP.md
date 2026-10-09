@@ -10,11 +10,11 @@ Copy the Postgres service's **public** connection URL from Railway (service → 
 
 ## 2. Read-only snapshot of production (answers: Alembic revision and row counts)
 `python scripts\prod_ops\readonly_snapshot.py --label PRODUCTION --out prod_before.json --inventory-csv pre_change_inventory.csv`
-The session is opened read-only on the server, only SELECTs run, and the URL/host/user/password are never printed (tests prove this). Paste back the printed summary (revision, server version, row counts, column flags, fingerprints). Expected if `release/secured-review` at `1303cf0` deployed successfully: `alembic_version` = `d4e5f6a7b8c9`, no `syllabus_*` tables, `import_ref` column present, 6,457-ish questions. Anything else changes the plan: tell me before going on.
-Keep `prod_before.json` and `pre_change_inventory.csv`; the rollback SQL needs the inventory.
+The session is opened read-only on the server, only SELECTs run, and the URL/host/user/password are never printed (tests prove this). Paste back the printed summary (revision, server version, row counts, column flags, fingerprints). Expected from the Railway database UI checks of 2026-10-09: `alembic_version` = `a7b8c9d0e1f2`, PostgreSQL 18.6, 7,778 questions (AP History 1,701), 980 notes, 194 chapters, canonical rows 5/35/187/317, no `expanded_notes` table, 64 older Chapter 1 rows. The summary also prints `older C1 rows` (do they carry a canonical chapter id) and the questions per subject. Anything different changes the plan: tell me before going on.
+Keep `prod_before.json` (and `pre_change_inventory.csv`) as the pre-change record.
 
 ## 3. Backup tool check
-`pg_dump --version` must have a major version at least equal to the server version printed in step 2 (e.g. server 16 → pg_dump 16 or newer). If it is older or missing, install the matching PostgreSQL client tools (only the command-line tools are needed) before continuing.
+`pg_dump --version` must have a major version at least equal to the server version printed in step 2 (production is PostgreSQL 18.6, so pg_dump 18 or newer). If it is older or missing, install the matching PostgreSQL client tools (only the command-line tools are needed) before continuing.
 
 ## 4. Take the backup
 `pg_dump --format=custom --no-owner --no-acl --file=prod_before_c1.dump "%DATABASE_URL%"`
@@ -24,8 +24,8 @@ The file contains learner device ids and progress: keep it private, outside the 
 Also, if your Railway plan offers Postgres backups, take a manual one and note its timestamp (I cannot check this).
 
 ## 5. Restore into an isolated database that is NOT production
-Pick one, matching the server's major version:
-- Docker: `docker run --name verify-pg -e POSTGRES_PASSWORD=verify -p 54329:5432 -d postgres:16`, then `set RESTORE_URL=postgresql://postgres:verify@localhost:54329/postgres`
+Pick one, matching the server's major version (18):
+- Docker: `docker run --name verify-pg -e POSTGRES_PASSWORD=verify -p 54329:5432 -d postgres:18`, then `set RESTORE_URL=postgresql://postgres:verify@localhost:54329/postgres`
 - or a local PostgreSQL install: create an empty database `verify_restore` and set `RESTORE_URL` to it.
 Do not restore into the production database or into any service of the production project. Then:
 `pg_restore --no-owner --no-acl --dbname="%RESTORE_URL%" prod_before_c1.dump`

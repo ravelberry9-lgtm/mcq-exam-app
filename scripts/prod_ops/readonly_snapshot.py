@@ -84,13 +84,21 @@ def snapshot(con, label):
     if "questions" in tables:
         cols = {r[0] for r in (cur.execute("select column_name from information_schema.columns where table_schema='public' and table_name='questions'") or cur.fetchall())}
         out["questions_columns_present"] = {c: (c in cols) for c in ("note_section_num", "note_target_slug", "source_trace", "import_ref",
-                                                                       "syllabus_chapter_id", "subtopic_id", "source", "source_qid", "batch_id")}
+                                                                       "syllabus_chapter_id", "subtopic_id", "source", "source_qid", "batch_id", "collection_id")}
         cur.execute("select source_type, count(*) from questions group by 1 order by 1")
         out["questions_by_source_type"] = dict(cur.fetchall())
         if "import_ref" in cols:
             out["questions_with_import_ref"] = one(cur, "select count(*) from questions where import_ref is not null")
         if "source_qid" in cols:
             out["questions_with_source_qid"] = one(cur, "select count(*) from questions where source_qid is not null")
+        if "import_ref" in cols:      # the older Chapter 1 set: how many rows, and do they carry a canonical chapter / collection id
+            out["older_c1_rows"] = {"import_ref_like_aph-u1c01": one(cur, "select count(*) from questions where left(import_ref, 10) = 'aph-u1c01-'")}
+            for c in ("syllabus_chapter_id", "collection_id", "chapter_id"):
+                if c in cols:
+                    out["older_c1_rows"][c + "_not_null"] = one(cur, f"select count(*) from questions where left(import_ref, 10) = 'aph-u1c01-' and {c} is not null")
+        if "collection_id" in cols:
+            cur.execute("select collection_id, count(*) from questions where collection_id is not null group by 1 order by 1")
+            out["questions_by_collection"] = dict(cur.fetchall())
         if "batch_id" in cols:
             cur.execute("select batch_id, count(*) from questions where batch_id is not null group by 1 order by 1")
             out["questions_by_batch"] = dict(cur.fetchall())
@@ -112,7 +120,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--label", required=True, help="PRODUCTION, BACKUP-RESTORE or LOCAL: identifies what was inspected")
     ap.add_argument("--out", help="write the JSON snapshot here")
-    ap.add_argument("--inventory-csv", help="write the canonical-slug inventory used by docs/rollback_c1_additive.sql")
+    ap.add_argument("--inventory-csv", help="write the canonical-slug inventory (kept as part of the pre-change record)")
     a = ap.parse_args(argv)
     url = os.environ.get("DATABASE_URL", "")
     con = connect(url)
@@ -133,6 +141,9 @@ def main(argv=None):
     print("server_version  :", snap["server_version"], "| read-only session:", snap["transaction_read_only"])
     print("row counts      :", json.dumps({k: v for k, v in snap["row_counts"].items()}, sort_keys=True))
     print("questions       :", json.dumps(snap.get("questions_by_source_type")), "| columns:", json.dumps(snap.get("questions_columns_present")))
+    if snap.get("older_c1_rows") is not None:
+        print("older C1 rows   :", json.dumps(snap["older_c1_rows"]), "| by collection:", json.dumps(snap.get("questions_by_collection")))
+    print("by subject      :", json.dumps(snap.get("questions_by_subject")))
     print("canonical rows  :", json.dumps(snap["canonical_inventory"]["by_kind"]))
     print("fingerprints    :", json.dumps({k: v["md5"][:10] for k, v in snap["fingerprints"].items()}, sort_keys=True))
     return 0

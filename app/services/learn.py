@@ -92,7 +92,7 @@ def bank_counts(subject_ids=None):
     """{subject_id: {'practice': n, 'pyq': n, 'chapter': n}}"""
     no_chapter = case((Question.chapter_id.is_(None), 1), else_=0)
     q = db.session.query(Question.subject_id, Question.source_type, no_chapter, func.count(Question.id)).group_by(
-        Question.subject_id, Question.source_type, no_chapter).filter(Question.syllabus_chapter_id.is_(None))   # native v1 questions live on their canonical chapter pages only
+        Question.subject_id, Question.source_type, no_chapter).filter(Question.collection_id.is_(None))   # collection (fresh) questions live on their canonical chapter pages only
     if subject_ids is not None:
         ids = list(subject_ids)
         if not ids:
@@ -111,7 +111,7 @@ def bank_counts(subject_ids=None):
 
 
 def bank_questions(subject_id, bank):
-    q = Question.query.filter(Question.subject_id == subject_id, Question.syllabus_chapter_id.is_(None))   # native v1 questions are not part of the generic banks
+    q = Question.query.filter(Question.subject_id == subject_id, Question.collection_id.is_(None))   # collection questions are not part of the generic banks
     if bank == "pyq":
         q = q.filter(Question.source_type == "pyq")
     elif bank == "practice":
@@ -263,7 +263,7 @@ def note_link_for(q, cache=None):
     cache = cache if cache is not None else {}
     trace = q.source_trace if isinstance(q.source_trace, dict) else {}
     anchors = ((trace.get("expanded_note") or {}).get("anchor_ids")) or []
-    if q.syllabus_chapter_id and anchors:
+    if q.collection_id and q.syllabus_chapter_id and anchors:
         return _expanded_link(q, anchors, cache)
     cid = q.chapter_id
     if not cid:
@@ -308,7 +308,7 @@ def native_meta(q):
     the honest review label. Internal provenance (source ids, H, candidate ids, import refs) is never returned."""
     from urllib.parse import urlparse
     t = q.source_trace if isinstance(q.source_trace, dict) else {}
-    if not q.syllabus_chapter_id or not t.get("format_version"):
+    if not q.collection_id or not q.syllabus_chapter_id or not t.get("format_version"):
         return {"native": False, "sources": [], "author_reviewed": False, "diff4": None}
     sources = []
     for s in t.get("sources") or []:

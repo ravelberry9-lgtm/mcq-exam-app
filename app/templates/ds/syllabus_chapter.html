@@ -12,12 +12,13 @@
   <h1>{{ c.bi(d.chapter.title_en, d.chapter.title_te, 'stack') }}</h1>
 {% endblock %}
 {% block content %}
-{% if d.has_expanded %}
+{% if preview %}<div class="card" data-testid="preview-banner"><strong>Administrator preview · not yet live for learners</strong></div>{% endif %}
+{% if d.has_expanded and (d.fresh_live or preview) %}
   <a class="card" data-testid="open-expanded-notes" href="{{ url_for('learn.expanded_index', slug=d.chapter.slug) }}">
     <strong>{{ t('xn.open') }}</strong><span class="small muted">{{ t('xn.title') }}</span>
   </a>
 {% endif %}
-{% if d.native_count %}
+{% if d.native_count and (d.fresh_live or preview) %}
   <a class="card" data-testid="open-native-practice" href="{{ url_for('learn.canonical_practice', slug=d.chapter.slug, i=1, new=1) }}">
     <strong>{{ t('xn.practise') }}</strong><span class="small muted">{{ t('common.questions', n=d.native_count) }}</span>
   </a>
@@ -26,7 +27,7 @@
   <a class="card" href="{{ url_for('learn.topic', chapter_id=d.legacy_chapter_id) }}">
     <strong>{{ t('syl.open') }}</strong><span class="small muted">{{ t('common.questions', n=d.question_count) }}</span>
   </a>
-{% elif not d.has_expanded and not d.native_count %}
+{% elif not (d.fresh_live and (d.has_expanded or d.native_count)) %}
   <div class="card"><span class="muted">{{ t('syl.no_content') }}</span></div>
 {% endif %}
 <section aria-labelledby="st">

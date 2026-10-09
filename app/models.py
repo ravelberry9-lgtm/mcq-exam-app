@@ -145,6 +145,10 @@ class Question(db.Model):
     # md5 of normalised question text + options; a cross-collection collision is a *warning*, never a silent discard
     content_hash = db.Column(db.String(32), index=True)
 
+    # Explicit collection membership (e.g. FRESH_COLLECTION_ID). NULL = the original/legacy question bank. Collection scoping,
+    # duplicate checks and learner switching use this column and nothing else (never ``source`` or ``syllabus_chapter_id``).
+    collection_id = db.Column(db.String(64), nullable=True, index=True)
+
     __table_args__ = (db.Index("uq_questions_source_qid", "source", "source_qid", unique=True),)
 
     @property
@@ -157,6 +161,7 @@ class Question(db.Model):
 # Allowed values, enforced by the importer and tests (the legacy ``questions`` table cannot take CHECK constraints in SQLite).
 QUESTION_SOURCES = ("codex_generated", "app_master", "hanumanthrao", "pyq_compiled", "verified_pyq", "legacy_db")
 REVIEW_STATUSES = ("raw", "structurally_valid", "content_review_required", "fact_verified", "bilingual_approved", "rejected")
+FRESH_COLLECTION_ID = "ap-history-fresh-v1"       # the fresh AP History collection (default id for ap-history-import-v1 loads)
 LEARNER_VISIBLE_STATUS = "bilingual_approved"   # the only status shown in the canonical practice flow
 CHAPTER_CLASSIFICATIONS = ("direct", "bridge", "thematic", "supplementary")
 MICROTOPIC_SCOPES = ("direct", "supplementary_context")
@@ -283,6 +288,7 @@ class ExpandedNote(db.Model):
     sources = db.Column(db.JSON)                             # [{"label": "...", "url": "..."}]
     core_connections = db.Column(db.JSON)                    # anchor ids of core sections an addendum item extends
     package_batch_id = db.Column(db.String(64))
+    collection_id = db.Column(db.String(64), nullable=True, index=True)     # explicit collection membership (see Question.collection_id)
     content_hash = db.Column(db.String(32))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -308,6 +314,34 @@ class ExpandedNoteAppMap(db.Model):
 
 
 # ─── Exam definitions (curated views over the subject library) ──
+
+
+class ChapterCollectionSetting(db.Model):
+    """Which collection learners are sent to for one canonical chapter. NO row (or ``active_collection`` NULL) = legacy, the
+    default. Changing it never moves, hides-by-deletion or rewrites any question, note or learner-history row."""
+    __tablename__ = "chapter_collection_setting"
+    id = db.Column(db.Integer, primary_key=True)
+    syllabus_chapter_id = db.Column(db.Integer, db.ForeignKey("syllabus_chapters.id", ondelete="CASCADE"), nullable=False, unique=True)
+    active_collection = db.Column(db.String(64), nullable=True)
+    updated_by = db.Column(db.String(80))
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+
+class ChapterCollectionLog(db.Model):
+    """Append-only audit trail of every switch: who (as declared on the admin form; the admin gate is a shared PIN),
+    from where (remote address), when, what changed and the readiness result at that moment."""
+    __tablename__ = "chapter_collection_log"
+    id = db.Column(db.Integer, primary_key=True)
+    syllabus_chapter_id = db.Column(db.Integer, db.ForeignKey("syllabus_chapters.id", ondelete="CASCADE"), nullable=False, index=True)
+    chapter_slug = db.Column(db.String(96), nullable=False)
+    from_collection = db.Column(db.String(64))
+    to_collection = db.Column(db.String(64))
+    actor = db.Column(db.String(80), nullable=False)
+    remote_addr = db.Column(db.String(64))
+    changed_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    readiness = db.Column(db.JSON)
+    reason = db.Column(db.String(300))
+
 
 class Exam(db.Model):
     __tablename__ = "exams"

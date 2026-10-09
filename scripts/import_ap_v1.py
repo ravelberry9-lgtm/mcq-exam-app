@@ -27,6 +27,7 @@ def main(argv=None):
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--approval-ref")
     ap.add_argument("--allow-overlaps", action="store_true")
+    ap.add_argument("--collection-id", default="ap-history-fresh-v1", help="explicit collection identifier recorded on every imported row")
     ap.add_argument("--overlap-scope", choices=("all", "collection"), default="all",
                     help="collection: only the fresh native collection can block; legacy-bank overlaps are reported, never merged")
     a = ap.parse_args(argv)
@@ -36,10 +37,10 @@ def main(argv=None):
             if a.what == "notes":
                 if a.apply and not (a.approval_ref or "").strip():
                     print("REFUSED: --apply needs --approval-ref"); return 1
-                rep = expanded_notes.load_notes(a.package, apply=a.apply)
+                rep = expanded_notes.load_notes(a.package, apply=a.apply, collection_id=a.collection_id)
             else:
                 rep = ap_v1_import.run(a.package, apply=a.apply, approval_ref=a.approval_ref, allow_overlaps=a.allow_overlaps,
-                                    overlap_scope=a.overlap_scope)
+                                    overlap_scope=a.overlap_scope, collection_id=a.collection_id)
         except (ap_v1_import.V1ImportError, expanded_notes.NotesError) as e:
             print(f"REFUSED: {e}")
             return 1

@@ -1,59 +1,66 @@
-# Chapter 1 closure import: production change plan (NOTHING IN THIS FILE HAS BEEN RUN ON PRODUCTION)
+# AP History fresh collection (Chapter 1): production change plan
+**NOTHING IN THIS FILE HAS BEEN RUN ON PRODUCTION.** Railway has one environment, **production**, and it is live. Confirmed settings: repository `ravelberry9-lgtm/mcq-exam-app`, connected branch `release/secured-review`, **auto-deploy on**, **Pre-deploy command `python -m alembic upgrade head`**. Direction: `AP_HISTORY_FRESH_BUILD_DECISION_20261009.txt` (fresh collection; legacy banks are not merged; no wipe or progress reset implied) and `docs/AP_HISTORY_FRESH_COLLECTION_DESIGN.md`.
 
-Railway has one environment, **production**, and it is live. Confirmed settings: repository `ravelberry9-lgtm/mcq-exam-app`, connected branch `release/secured-review`, **auto-deploy on**, **Pre-deploy command `python -m alembic upgrade head`**. Every command below that uses `DATABASE_URL` for Railway touches production. Terms "staging" in earlier documents were wrong and have been corrected.
+## A. What is known about production (user-supplied, 2026-10-09)
+Source: `PRODUCTION_READONLY_FINDINGS_20261009.txt`, read through the Railway database UI (SELECTs only). **These are UI checks, not the runbook's full snapshot, and not a verified backup.** The fingerprints in that file use a different SQL method and are not comparable with `compare_snapshots.py` output.
 
-## A. Where the earlier "scratch copy" came from
-It was a local PostgreSQL database inside the cloud sandbox (`tdb`, created 2026-10-04, all 6,457 question rows written within one second, alembic revision `c3d4e5f6a7b8`). It was **not** copied from Railway: this session has never had Railway credentials or network access. I called it a "mirror of staging" without being able to show it matched anything on Railway; I cannot reconstruct the exact load command from the history I retain. Treat it only as a realistic local test database (same schema chain, about the same size, 380 AP History questions, 17 notes in app chapter 2). It says nothing about production's data or revision.
+| Fact | Value |
+|---|---|
+| Alembic revision | `a7b8c9d0e1f2` (canonical syllabus and microtopic migrations are already applied) |
+| Server | PostgreSQL 18.6 |
+| Rows | questions 7,778 (AP History 1,701); notes 980; chapters 194 |
+| Canonical taxonomy | already populated: 5 units, 35 chapters, 187 subtopics, 317 microtopics; Chapter 1 slug and its six subtopic slugs match the package |
+| `expanded_notes` table | absent |
+| Fresh batch | no `source_qid` rows at all; closure batch rows 0 |
+| Older Chapter 1 set | **present**: 64 rows (`import_ref`/`source_qid` like `aph-u1c01-…`); the Q026 and Q099 older refs each exist once |
+| Backups | Railway backups/PITR need Pro; none created, listed or restored. A separately verified logical dump is the available route |
 
-## B. What was validated (local databases only)
-- Full chain from empty: `c68decc8a6c3` → … → `b8c9d0e1f2a3` (8 migrations), `alembic check` reports no drift; downgrade/upgrade of the four newest revisions works on empty tables.
-- Step-by-step upgrade of a copy of `tdb` from `c3d4e5f6a7b8` through each revision to head: row counts and checksums of all 6,457 existing questions and 980 notes identical after every step.
-- Canonical seed (5 units, 31 core + 4 supplementary chapters, 187 subtopics, 317 microtopics), 74 notes, 129 questions; repeat runs change nothing; legacy checksums identical; 80 learner pages return 200.
-- Backup/restore rehearsal: `pg_dump -Fc` of the pre-change copy restored into a fresh database gave identical counts, checksums and alembic revision. Surgical rollback SQL (`docs/rollback_c1_additive.sql`) applied to a post-import copy restored the exact pre-change checksums, after which `alembic downgrade c3d4e5f6a7b8` ran cleanly.
-- A defect found and fixed during this preparation: the 129 questions would have appeared in the generic subject Practice bank and the old `/practice/<subject>` route. They are now excluded there and reachable only on the canonical chapter pages (with their labels and sources). Test added.
-- Test suites on this branch: see the handoff message for final numbers.
+What this changes from my earlier assumptions (corrected, no longer in the plan): production is **not** at `d4e5f6a7b8c9`, it does **not** hold 6,457 questions, the taxonomy is **not** to be seeded, and the older 64 are **not** hypothetical.
+
+## B. Pending schema (against `a7b8c9d0e1f2`)
+Two additive migrations on my branch, applied in order by the Pre-deploy command when the commit is merged: `b8c9d0e1f2a3` (expanded notes tables) then `c9d0e1f2a3b4` (nullable `collection_id` on `questions` and `expanded_notes`, plus `chapter_collection_setting` and `chapter_collection_log`). No existing row changes. The nullable column adds are metadata-only on PostgreSQL; the two new indexes are built on 7,778 rows and the notes table (a brief lock). Verified locally: full chain from empty; upgrade from `a7b8c9d0e1f2` on a populated copy; downgrade of both refuses while they hold data and runs cleanly once empty. **Not yet verified: that the deployed commit is what I think it is** (see I.1).
 
 ## C. What the confirmed Railway settings mean
-1. **A push or merge to `release/secured-review` is a production deploy AND a production migration**, in one automatic step: Railway runs `alembic upgrade head` of the *deployed commit* before the new code starts. `head` is not pinned: it is whatever the commit contains. For this branch it is exactly `b8c9d0e1f2a3` (single head; check with `python -m alembic heads` before any merge).
-2. Pushing `feature/ap-history-v1-native` (a branch Railway is not connected to) does not deploy. Nothing in this plan pushes or merges to `release/secured-review` until you approve step 4 below.
-3. **Code rollback is not "just redeploy the old commit".** Verified locally: after the database is at `b8c9d0e1f2a3`, the old code (`1303cf0`) fails its pre-deploy with `Can't locate revision identified by 'b8c9d0e1f2a3'`, so a Railway redeploy or rollback to the old commit would not start (reports exist that rollbacks also run the pre-deploy command). Two safe ways, both rehearsed or checkable locally: (a) remove the added rows with the rollback SQL, run `alembic downgrade d4e5f6a7b8c9` against production from the feature checkout, then redeploy the old commit (old code's `upgrade head` was a clean no-op afterwards); or (b) temporarily clear the Pre-deploy command in Railway, redeploy the old commit, restore the command. Option (a) is preferred; (b) is a settings change that needs its own approval.
-4. The additive schema is safe for the **old** code to keep running against: the old code served its main pages (home, subjects, practice banks) normally on a database already at `b8c9d0e1f2a3`. So a failed or interrupted deploy leaves the live site working.
-5. **Order matters for data**: the old code does not exclude the new questions from the generic subject Practice bank (the fix is in the new code). Therefore the 129 questions are imported only **after** the new code is live, never before.
-6. Seed and import commands run from your machine against the production database URL. Auto-deploy does not run them.
+1. A push or merge to `release/secured-review` is a production deploy **and** migration in one automatic step (`alembic upgrade head` of the deployed commit, not pinned). Single head of my branch: `c9d0e1f2a3b4` (check with `python -m alembic heads` before any merge). Pushing `feature/ap-history-v1-native` does not deploy.
+2. **Code rollback is not "redeploy the old commit"**: with the DB at `c9d0e1f2a3b4` the old code's pre-deploy fails with "Can't locate revision". Safe route: (a) if the collection was loaded, the surgical data rollback below; then `alembic downgrade a7b8c9d0e1f2` from the feature checkout; then redeploy the old commit; or (b) temporarily clear the Pre-deploy command (its own approval).
+3. The additive schema is safe for the **old** code to keep running against (it ignores the new columns and tables). Old code does not know about `collection_id`, so the collection's questions must be loaded **only after the new code is live**; otherwise the old generic Practice bank would list them.
+4. The learner switch defaults to **legacy**, so merging the code changes nothing a learner sees. Loading the collection also changes nothing a learner sees until a chapter is switched.
+5. Seed and import commands run from your machine against the production URL; auto-deploy does not run them.
 
-## D. Production Alembic revision and row counts (read-only; PRODUCTION)
-Run `docs/PRODUCTION_READONLY_CHECK_AND_BACKUP.md` steps 0–2. It prints the revision, server version, row counts, the `questions` column flags and content fingerprints, and writes the canonical-slug inventory the rollback SQL needs. SELECT-only, read-only session, no connection details printed (tested). Expected, if `1303cf0` deployed successfully: `d4e5f6a7b8c9`. Then the migrations that will run are `f6a7b8c9d0e1`, `a7b8c9d0e1f2`, `b8c9d0e1f2a3` (all additive; verified locally from `c3d4e5f6a7b8` step by step with no change to existing rows). If production shows a different revision, stop and tell me.
+## D. The older 64 and the 129 (decision applied)
+Legacy stays exactly as it is, **including the older 64**: they carry `collection_id` NULL, are never edited, hidden, merged or deleted by any step here, and keep their ids and learner history. The fresh collection is a separate set (`collection_id = ap-history-fresh-v1`) deduplicated only against itself (`--overlap-scope collection`; the guard is not disabled). Overlaps with legacy rows are listed, not acted on. Local rehearsal with the older 64 present (Chapter 1 chapter id and `source='codex_generated'` deliberately set on them, the worst case for the old marker): scope `all` reports 36 overlap entries and refuses; scope `collection` imports 129, reports the same 36 as informational, and the 64 older rows are byte-identical afterwards and still served by the legacy chapter practice. The 36 entries are **30 distinct fresh questions against 30 distinct older rows**: 2 same-stem (Q026, Q099) and 34 where the package lists an older ref as related. They are overlapping *facts*, not 36 duplicate rows. Why the explicit `collection_id` matters: the older rows may or may not carry a canonical chapter id in production (to be read, I.2); learner filtering, duplicate scoping and the switch use only `collection_id`.
 
-## E. Backup (before any approval request)
-Runbook steps 3–7 of the same file: `pg_dump --format=custom`, readable-dump check and SHA256, restore into an isolated non-production database, snapshot that copy and run `compare_snapshots.py`. Required result: `BACKUP VERIFIED (content identical)`. The approval request for production changes is made only after you report that line (plus the dump hash) back. If your Railway plan has Postgres backups, also take one manually (not verifiable from here).
-Rehearsed locally: dump of a pre-change copy restored elsewhere gave identical revision, counts and fingerprints; the compare tool flags a changed row, missing rows or a wrong revision (unit-tested).
-
-## F. Restore / rollback, from least to most destructive
-1. Stop at any unexpected preview or snapshot; previews and snapshots write nothing.
-2. **Surgical data rollback** (`docs/rollback_c1_additive.sql`, after backup verification and your explicit approval): deletes only this batch's questions and expanded notes and only canonical rows absent from the pre-change inventory. Rehearsed with canonical rows pre-existing (they survive) and with none (all removed).
-3. **Schema rollback** (only if wanted): `python -m alembic downgrade d4e5f6a7b8c9` (refuses while the new tables hold rows, so step 2 must come first). Then redeploy old code per C.3(a).
-4. **Full restore (last resort)**: restore the verified dump into a NEW Railway Postgres service, point the app's `DATABASE_URL` at it. Never restore over the live database. Accept the loss of writes since the backup (learner progress, sessions, admin note edits).
-
-## G. Exact production changes needing your approval (separately, in order)
+## E. Production changes needing your approval (separately, in order)
 | # | Change | How | Effect on production |
 |---|---|---|---|
-| 0 | Read-only snapshot (D) | runbook steps 0–2 | none (SELECT only) |
-| 1 | Backup taken and **verified by isolated restore** (E) | runbook steps 3–7 | none |
-| 2 | Push `feature/ap-history-v1-native` to GitHub (not the deploy branch) | `git push origin feature/ap-history-v1-native` | none (Railway ignores it); needs your OK only because it publishes code |
-| 3 | Pre-merge gate | `python -m alembic heads` must print only `b8c9d0e1f2a3 (head)`; full test suite green; the exact commit hash to merge recorded | none |
-| 4 | **Merge that exact commit into `release/secured-review` and push** (= deploy + migration to `b8c9d0e1f2a3`) | by you, in a low-traffic window, watching Railway's deploy log | adds columns/tables, no row changes; new learner pages go live; Railway runs `upgrade head`. Optional safer variant: first pin the Pre-deploy command to `python -m alembic upgrade b8c9d0e1f2a3` (a settings change, own approval), restore `head` afterwards |
-| 5 | Post-deploy checks | `/healthz`, `/learn/`, subject pages, `readonly_snapshot` again (revision must be `b8c9d0e1f2a3`, content fingerprints of questions/notes unchanged except the added columns) | none |
-| 6 | Canonical taxonomy: **verify, do not reseed** | the step-0 snapshot shows the canonical row counts. Your fresh-build decision says production already holds the taxonomy; that is checked, not assumed. Seed (add-only, idempotent) only for anything the snapshot shows missing, as its own approval | none if already complete |
-| 7 | Load package notes | `python scripts\import_ap_v1.py notes <pkg>` then `... --apply --approval-ref "<ref>"` | 74 `expanded_notes` rows |
-| 8 | Add the fresh Chapter 1 collection (129 questions) | `python scripts\import_ap_v1.py questions <pkg> --overlap-scope collection` then `... --apply --approval-ref "<ref>" --overlap-scope collection` (guard stays on: only duplicates inside the new collection block; legacy overlaps are listed, never merged) | 129 `questions` rows (only after step 4) |
-| 9 | Final checks | learner pages, counts, legacy fingerprints | none |
-Approval references are audit labels; each row above still needs your explicit approval at the time. No legacy question, note or the 17 sections is touched. `main` is untouched.
+| 0 | Runbook steps 0–2: **full read-only snapshot** (the UI findings do not replace it) | `docs/PRODUCTION_READONLY_CHECK_AND_BACKUP.md` | none |
+| 1 | **Verified backup** (runbook steps 3–7; required result `BACKUP VERIFIED (content identical)`) | `pg_dump` 18, isolated restore, compare | none |
+| 2 | Push `feature/ap-history-v1-native` (non-deploy branch) | `git push origin feature/ap-history-v1-native` | none |
+| 3 | Pre-merge gate | `alembic heads` prints only `c9d0e1f2a3b4 (head)`; suites green; exact commit hash recorded; I.1 confirmed | none |
+| 4 | **Merge that exact commit into `release/secured-review` and push** (= deploy + two additive migrations) | by you, quiet window, watching the deploy log. Optional: first pin Pre-deploy to `python -m alembic upgrade c9d0e1f2a3b4` (own approval) and restore `head` after | new tables/columns, no row changes; learners see no change (switch defaults to legacy) |
+| 5 | Post-deploy checks | `/healthz`, `/learn/`, AP History pages, snapshot again (revision `c9d0e1f2a3b4`; content fingerprints of questions and notes unchanged apart from the added columns) | none |
+| 6 | **Canonical taxonomy: verify only.** Step 0's snapshot confirms 5/35/187/317. No seed unless something is shown missing, and then only as its own add-only approval | | none |
+| 7 | Load Chapter 1 notes (74) | `python scripts\import_ap_v1.py notes <pkg>` then `... --apply --approval-ref "<ref>"` | 74 `expanded_notes` rows, `collection_id` set |
+| 8 | Load the 129 questions | `python scripts\import_ap_v1.py questions <pkg> --overlap-scope collection` then `... --apply --approval-ref "<ref>" --overlap-scope collection` | 129 rows, `collection_id` set; legacy untouched; hidden from learners |
+| 9 | Readiness review | admin page `/admin/collections` shows every check; admin preview of the chapter | none |
+| 10 | **Switch Chapter 1 learners to the fresh collection** (admin page; logged with name, address, time) | refused automatically unless every readiness check passes; reversible at any time without data change | learners of that chapter see the fresh notes, practice and links |
+Approval references are audit labels; each row needs your explicit approval at that time. `main` is untouched. Retiring or archiving any legacy row (including the older 64) is **not** part of this plan and would be a separate plan and approval.
 
-## H. Revised package metadata-r1 (the package to use; same batch, not additional)
-Folder `...\05_claude_import\aph-u1-c01-closure-metadata-r1-20261009`, `questions.jsonl` sha256 `a69d4a50aa1b85a0f682879c3ddac89df588d581f69265a8eee61f8febc2657d` (the original closure hash `1f1ad6fd…` is superseded; the folders are never combined). Same `batch_id` and all 129 `source_qid`s. Preview on isolated local databases: validator importable, 0 errors, 2 warnings (Telugu convention forms, kept as written); notes 74 items, 0 problems, 0 warnings; questions 129 to import, 0 overlaps, 0 unresolved links. The old64-versus-129 reconciliation is **cancelled** by `AP_HISTORY_FRESH_BUILD_DECISION_20261009.txt`; legacy banks are not merged into the new collection (see `docs/AP_HISTORY_FRESH_COLLECTION_DESIGN.md`). Exact preview commands (write nothing):
-`python scripts\import_ap_v1.py notes C:\Users\AashrithaNagababu\Documents\Codex\AP_History_Working\05_claude_import\aph-u1-c01-closure-metadata-r1-20261009`
-`python scripts\import_ap_v1.py questions <same path>`
+## F. Backup
+Runbook steps 3–7 (updated for server 18): `pg_dump --format=custom`, readable-dump check and SHA256, restore into an isolated non-production database, snapshot it, `compare_snapshots.py` must print `BACKUP VERIFIED (content identical)`. Railway's own backup feature needs Pro, so the logical dump is the primary route; I cannot verify anything on Railway. The approval request for any production change comes only after you report that line and the dump hash.
 
-## I. Still open before any approval request
-Production revision and counts (D), verified backup (E), Railway auto-deploy timing window, and the decision on pinning the Pre-deploy command for step 4.
-Also open: the production-side cutover (switching learners, archiving or retiring legacy AP History rows, progress handling) is a separate later approval; this plan only *adds* the fresh collection beside the legacy content.
+## G. Restore / rollback, least to most destructive
+1. Switch learners back to legacy (admin page): no data changes; the fresh pages stay reachable only for review links of that collection.
+2. **Surgical data rollback** `docs/rollback_fresh_collection.sql` (own approval, after backup verification): removes only rows with `collection_id = ap-history-fresh-v1`, the switch rows and learner-state rows attached to those fresh questions (it prints how many first). Legacy rows, the taxonomy and all other subjects are never matched. Rehearsed locally (guards 0/0/0, legacy count unchanged).
+3. `python -m alembic downgrade a7b8c9d0e1f2` (refuses while the new tables or tagged rows hold data), then redeploy the old commit per C.2.
+4. Full restore from the verified dump into a NEW Railway Postgres service (never over the live one); accept loss of writes since the dump.
+
+## H. Local results (isolated databases, not production)
+Learner switch: database setting per canonical chapter slug, legacy default; readiness gate (12 checks); admin-only (PIN session + CSRF); each change logged with the name typed, remote address, time and readiness result; switching back preserves both collections and all learner history (row-for-row comparison across four consecutive switches); links, practice and notes follow the setting. Package `aph-u1-c01-closure-metadata-r1-20261009`, `questions.jsonl` sha256 `a69d4a50aa1b85a0f682879c3ddac89df588d581f69265a8eee61f8febc2657d` (the folders are never combined).
+
+## I. Open before any approval request
+1. **Which commit is deployed.** Revision `a7b8c9d0e1f2` implies the canonical-schema code is live, but I have not seen the deployed commit. Read it in Railway (Deployments → latest commit hash) and confirm `release/secured-review` contains it, so my merge is a clean fast-forward-like addition and not a surprise.
+2. **The older 64 in production:** do they carry `syllabus_chapter_id` or `chapter_id`? The updated `readonly_snapshot.py` prints this (`older C1 rows`).
+3. Full snapshot and verified backup (E.0, E.1).
+4. Deploy window, and whether to pin Pre-deploy for step 4.
+5. Content: Telugu convention warnings (Q075, R2-Q004) kept as written; Telugu interface strings are drafts; content is author-reviewed only. The switch actor is a name typed on the form because the admin gate is a shared PIN.

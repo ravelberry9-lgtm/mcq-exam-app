@@ -213,11 +213,11 @@ def parse_package_notes(pkg_dir):
     return rows, ap, problems, warnings
 
 
-def load_notes(pkg_dir, apply=False):
+def load_notes(pkg_dir, apply=False, collection_id="ap-history-fresh-v1"):
     """Preview (default) or apply the package notes. Add-only; one transaction. Returns a report dict."""
     rows, ap, problems, warnings = parse_package_notes(pkg_dir)
     rep = {"chapter_slug": ap["chapter_slug"], "parsed": len(rows), "by_kind": {}, "problems": problems, "warnings": warnings, "to_add": 0, "added": 0,
-           "unchanged": 0, "conflicts": [], "applied": bool(apply)}
+           "unchanged": 0, "conflicts": [], "applied": bool(apply), "collection_id": collection_id}
     for r in rows:
         rep["by_kind"][r["kind"]] = rep["by_kind"].get(r["kind"], 0) + 1
     if problems:
@@ -230,9 +230,11 @@ def load_notes(pkg_dir, apply=False):
     for r in rows:
         have = ExpandedNote.query.filter_by(subject_id=ch.subject_id, anchor_id=r["anchor_id"]).first()
         if have is None:
-            new.append(ExpandedNote(subject_id=ch.subject_id, syllabus_chapter_id=ch.id, package_batch_id=batch, **r))
+            new.append(ExpandedNote(subject_id=ch.subject_id, syllabus_chapter_id=ch.id, package_batch_id=batch, collection_id=collection_id, **r))
         elif have.content_hash == r["content_hash"]:
             rep["unchanged"] += 1
+            if have.collection_id != collection_id:      # never re-tagged silently: report it so a human decides
+                rep["conflicts"].append({"anchor_id": r["anchor_id"], "reason": f"same content but collection_id is {have.collection_id!r}, not {collection_id!r}; left as is"})
         else:
             rep["conflicts"].append({"anchor_id": r["anchor_id"], "reason": "an anchor with this id exists with different content; left as is"})
     rep["to_add"] = len(new)

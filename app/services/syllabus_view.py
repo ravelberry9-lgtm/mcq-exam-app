@@ -9,7 +9,7 @@ from collections import defaultdict
 from sqlalchemy import func
 
 from ..db import db
-from ..models import LEARNER_VISIBLE_STATUS, Question, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusUnit
+from ..models import FRESH_COLLECTION_ID, LEARNER_VISIBLE_STATUS, ChapterCollectionSetting, Question, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusUnit
 
 SUBJECT_SLUG = "ap_history"
 
@@ -30,7 +30,7 @@ def is_loaded():
 def _question_index(subject_id):
     """{ 'u1-c02': {'count': n, 'legacy': {chapter_id: n}} } from imported questions."""
     rows = (db.session.query(Question.note_target_slug, Question.chapter_id, func.count(Question.id))
-            .filter(Question.subject_id == subject_id, Question.note_target_slug.isnot(None))
+            .filter(Question.subject_id == subject_id, Question.note_target_slug.isnot(None), Question.collection_id.is_(None))   # legacy bank only
             .group_by(Question.note_target_slug, Question.chapter_id).all())
     idx = defaultdict(lambda: {"count": 0, "legacy": defaultdict(int)})
     for slug, cid, n in rows:
@@ -43,11 +43,25 @@ def _question_index(subject_id):
     return idx
 
 
-def _entry(ch, idx):
+def _active_map():
+    """{syllabus_chapter_id: collection_id} for chapters switched away from legacy (everything else is legacy)."""
+    return {cid: coll for cid, coll in db.session.query(ChapterCollectionSetting.syllabus_chapter_id, ChapterCollectionSetting.active_collection)
+            if coll}
+
+
+def _fresh_count(ch, collection_id):
+    return Question.query.filter(Question.collection_id == collection_id, Question.syllabus_chapter_id == ch.id,
+                                 Question.review_status == LEARNER_VISIBLE_STATUS).count()
+
+
+def _entry(ch, idx, active=None):
     key = ch.slug[:6]
+    coll = (active or {}).get(ch.id)
+    if coll:      # learners are on the fresh collection for this chapter: its counts, no legacy entry
+        return {"chapter": ch, "question_count": _fresh_count(ch, coll), "legacy_chapter_id": None, "active_collection": coll}
     q = idx.get(key, {"count": 0, "legacy": {}})
     legacy = max(q["legacy"], key=q["legacy"].get) if q["legacy"] else None
-    return {"chapter": ch, "question_count": q["count"], "legacy_chapter_id": legacy}
+    return {"chapter": ch, "question_count": q["count"], "legacy_chapter_id": legacy, "active_collection": None}
 
 
 def outline():
@@ -56,10 +70,11 @@ def outline():
     if not sub or not SyllabusChapter.query.filter_by(subject_id=sub.id).first():
         return None
     idx = _question_index(sub.id)
+    active = _active_map()
     units = []
     for u in SyllabusUnit.query.filter_by(subject_id=sub.id).order_by(SyllabusUnit.unit_num).all():
         chs = (SyllabusChapter.query.filter_by(subject_id=sub.id, unit_id=u.id).order_by(SyllabusChapter.chapter_num).all())
-        units.append({"unit": u, "chapters": [_entry(c, idx) for c in chs]})
+        units.append({"unit": u, "chapters": [_entry(c, idx, active) for c in chs]})
     supp = (SyllabusChapter.query.filter_by(subject_id=sub.id, classification="supplementary")
             .order_by(SyllabusChapter.sort_order, SyllabusChapter.id).all())
     return {"subject": sub, "units": units, "supplementary": [_entry(c, {}) for c in supp],
@@ -74,9 +89,12 @@ def chapter_detail(slug):
     if not ch:
         return None
     subs = SyllabusSubtopic.query.filter_by(chapter_id=ch.id).order_by(SyllabusSubtopic.sort_order, SyllabusSubtopic.id).all()
-    entry = _entry(ch, _question_index(sub.id) if ch.is_core else {})
+    active = _active_map()
+    entry = _entry(ch, _question_index(sub.id) if ch.is_core else {}, active)
+    live = entry["active_collection"]
+    fresh_id = live or FRESH_COLLECTION_ID
     unit = db.session.get(SyllabusUnit, ch.unit_id) if ch.unit_id else None
     from . import expanded_view as xv
-    native = Question.query.filter(Question.syllabus_chapter_id == ch.id, Question.review_status == LEARNER_VISIBLE_STATUS).count()
-    return {"subject": sub, "chapter": ch, "unit": unit, "subtopics": subs, **entry,
-            "has_expanded": xv.has_notes(ch), "native_count": native}
+    native = _fresh_count(ch, fresh_id)
+    return {"subject": sub, "chapter": ch, "unit": unit, "subtopics": subs, **entry, "fresh_live": bool(live),
+            "has_expanded": xv.has_notes(ch, fresh_id), "native_count": native}

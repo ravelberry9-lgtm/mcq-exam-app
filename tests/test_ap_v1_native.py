@@ -337,6 +337,9 @@ def test_collection_scope_reports_legacy_overlap_without_blocking_but_still_dedu
 def loaded(world, tmp_path):
     xn.load_notes(make_pkg(tmp_path), apply=True)
     v1.run(tmp_path / "05_claude_import" / "aph-test", apply=True, approval_ref="r")
+    from app.services import collection_switch as csw
+    with __import__("flask").current_app.test_request_context():
+        csw.set_active(CH, "ap-history-fresh-v1", "Test Admin")          # learners see the fresh collection for these tests
     return world
 
 
@@ -490,6 +493,12 @@ def test_real_package_end_to_end_on_scratch_db(app, client, world, real_pkg):
         assert q.review_status == "bilingual_approved" and q.syllabus_chapter_id and q.subtopic_id
     assert d == {"easy": 88, "medium": 38, "tough": 2, "toughest": 1}
     assert sum(1 for q in Question.query.filter(Question.source_qid.isnot(None)) if q.source_trace["H"]) == 44
+    from app.services import collection_switch as csw
+    with app.test_request_context():
+        rd = csw.readiness(xn.chapter_by_slug(CH) if hasattr(xn, "chapter_by_slug") else SyllabusChapter.query.filter_by(slug=CH).one())
+        assert rd["ok"], [c for c in rd["checks"] if not c["ok"]]          # the real package passes every readiness check
+        assert rd["counts"]["questions"] == 129 and rd["counts"]["notes"] == 74
+        csw.set_active(CH, "ap-history-fresh-v1", "Test Admin")
     # every question's expanded-note link(s) open the anchor it names, and the anchor really is that content
     opened = 0
     for q in Question.query.filter(Question.source_qid.isnot(None)).order_by(Question.id):
@@ -533,3 +542,209 @@ def test_native_questions_do_not_leak_into_generic_banks_or_legacy_practice(clie
     assert "Question number" not in html
     assert "Question number" not in client.get("/practice/ap_history").get_data(as_text=True)
     assert f">{legacy_n}<" in client.get("/subject/ap_history").get_data(as_text=True) or client.get("/subject/ap_history").status_code in (200, 404)
+
+
+# ═════════════════ learner collection switch (database setting; legacy default) ═════════════════
+from app.models import (ChapterCollectionLog, ChapterCollectionSetting, UserQuestionState, FRESH_COLLECTION_ID as FRESH)  # noqa: E402
+from app.services import collection_switch as csw  # noqa: E402
+
+TOK = "test-csrf-token"
+
+
+def _chapter():
+    return SyllabusChapter.query.filter_by(slug=CH).one()
+
+
+def _login(client):
+    with client.session_transaction() as s:
+        s["_csrf"] = TOK
+    client.post("/admin/login", data={"pin": client.application.config["ADMIN_PIN"], "csrf_token": TOK})
+
+
+def _switch(client, target, actor="Asha Admin", reason="test", slug=CH):
+    return client.post("/admin/collections/switch", data={"slug": slug, "target": target, "actor": actor, "reason": reason, "csrf_token": TOK})
+
+
+@pytest.fixture()
+def staged(world, tmp_path):
+    """Fresh collection loaded, plus one legacy bank question on the same canonical chapter (note_target_slug prefix); NOT switched."""
+    xn.load_notes(make_pkg(tmp_path), apply=True)
+    v1.run(tmp_path / "05_claude_import" / "aph-test", apply=True, approval_ref="r")
+    db.session.add(Question(subject_id=world["subject"], chapter_id=world["old_chapter"], source_type="chapter", difficulty="E",
+                            question_en="Legacy question?", question_te="పాత ప్రశ్న?", options_en={"a": "1", "b": "2", "c": "3", "d": "4"},
+                            options_te={"a": "౧", "b": "౨", "c": "౩", "d": "౪"}, correct_answer="a", explanation_en="e", explanation_te="వి",
+                            note_target_slug="u1-c01-literary-sources"))
+    db.session.commit()
+    return world
+
+
+def test_default_is_legacy_and_fresh_content_is_not_public(client, staged):
+    ch = _chapter()
+    assert csw.active_collection(ch) is None and ChapterCollectionSetting.query.count() == 0
+    for u in (f"/learn/ap-history/{CH}/notes", f"/learn/ap-history/{CH}/notes/CH01-S02", f"/learn/ap-history/{CH}/practice"):
+        assert client.get(u).status_code == 404, u
+    html = client.get(f"/learn/ap-history/{CH}").get_data(as_text=True)
+    assert 'data-testid="open-native-practice"' not in html and 'data-testid="open-expanded-notes"' not in html
+    assert "/learn/topic/" in html                                           # the legacy entry is what learners get
+    assert client.get("/learn/ap-history").status_code == 200
+
+
+def test_admin_preview_sees_the_collection_without_switching_learners(client, staged):
+    _login(client)
+    html = client.get(f"/learn/ap-history/{CH}").get_data(as_text=True)
+    assert 'data-testid="preview-banner"' in html and 'data-testid="open-native-practice"' in html and "/learn/topic/" in html
+    assert client.get(f"/learn/ap-history/{CH}/practice").status_code == 200
+    assert csw.active_collection(_chapter()) is None
+
+
+def test_only_an_administrator_can_switch_and_the_change_is_recorded(client, staged):
+    with client.session_transaction() as sess:
+        sess["_csrf"] = TOK                                                  # valid CSRF token but no admin session
+    r = _switch(client, FRESH)
+    assert r.status_code == 302 and "/admin/login" in r.headers["Location"]
+    assert ChapterCollectionSetting.query.count() == 0 and ChapterCollectionLog.query.count() == 0
+    bad = client.post("/admin/collections/switch", data={"slug": CH, "target": FRESH, "actor": "x"})   # no CSRF token, no session
+    assert bad.status_code in (302, 400, 403)
+    assert ChapterCollectionLog.query.count() == 0
+    _login(client)
+    assert _switch(client, FRESH, actor="").status_code == 400               # a name is required
+    assert ChapterCollectionLog.query.count() == 0
+    before = datetime.utcnow()
+    assert _switch(client, FRESH, actor="Nagababu", reason="Chapter 1 reviewed").status_code == 200
+    ch = _chapter(); row = ChapterCollectionSetting.query.one(); log = ChapterCollectionLog.query.one()
+    assert csw.active_collection(ch) == FRESH and row.updated_by == "Nagababu" and row.updated_at >= before
+    assert (log.chapter_slug, log.from_collection, log.to_collection, log.actor, log.reason) == (CH, None, FRESH, "Nagababu", "Chapter 1 reviewed")
+    assert log.changed_at >= before and log.remote_addr and log.readiness["ok"] is True and "question_links_resolve" in log.readiness["checks"]
+    assert "Nagababu" in client.get("/admin/collections").get_data(as_text=True)
+
+
+def test_unknown_slug_and_bad_target_are_refused(client, staged):
+    _login(client)
+    assert _switch(client, FRESH, slug="u9-c99-nothing").status_code == 400
+    assert _switch(client, "Not A Collection!").status_code == 400
+    assert _switch(client, "some-other-collection").status_code == 400      # ready check fails: nothing in that collection
+    assert ChapterCollectionSetting.query.count() == 0 and ChapterCollectionLog.query.count() == 0
+
+
+@pytest.mark.parametrize("breakage,failed", [
+    ("unapproved", "questions_approved"), ("no_te_explanation", "questions_bilingual_complete"), ("dangling_anchor", "question_links_resolve"),
+    ("no_note_te", "notes_bilingual"), ("legacy_chapter_id", "questions_isolated_from_legacy"), ("duplicate", "questions_deduplicated_in_collection"),
+    ("no_notes", "notes_present"), ("no_questions", "questions_present")])
+def test_switch_is_refused_unless_notes_questions_and_links_are_ready(client, staged, breakage, failed):
+    qs = Question.query.filter_by(collection_id=FRESH).order_by(Question.id).all()
+    if breakage == "unapproved": qs[0].review_status = "content_review_required"
+    elif breakage == "no_te_explanation": qs[0].explanation_te = ""
+    elif breakage == "dangling_anchor":
+        t = copy.deepcopy(qs[0].source_trace); t["expanded_note"]["anchor_ids"] = ["CH01-S99"]; qs[0].source_trace = t
+    elif breakage == "no_note_te": ExpandedNote.query.filter_by(anchor_id="CH01-S02").one().body_te = ""
+    elif breakage == "legacy_chapter_id": qs[0].chapter_id = staged["old_chapter"]
+    elif breakage == "duplicate": qs[1].question_en = qs[0].question_en
+    elif breakage == "no_notes": ExpandedNote.query.delete()
+    elif breakage == "no_questions": Question.query.filter_by(collection_id=FRESH).delete()
+    db.session.commit()
+    rd = csw.readiness(_chapter())
+    assert not rd["ok"] and failed in [c["key"] for c in rd["checks"] if not c["ok"]], rd["checks"]
+    _login(client)
+    r = _switch(client, FRESH)
+    assert r.status_code == 400 and "not ready" in r.get_data(as_text=True)
+    assert csw.active_collection(_chapter()) is None and ChapterCollectionLog.query.count() == 0       # nothing changed, nothing logged
+    assert client.application.test_client().get(f"/learn/ap-history/{CH}/practice").status_code == 404
+
+
+def test_switching_makes_notes_practice_and_links_consistent_and_hides_the_legacy_entry(client, staged):
+    _login(client); assert _switch(client, FRESH).status_code == 200
+    anon = client.application.test_client()                                  # a learner, not logged in
+    html = anon.get(f"/learn/ap-history/{CH}").get_data(as_text=True)
+    assert 'data-testid="open-expanded-notes"' in html and 'data-testid="open-native-practice"' in html and "/learn/topic/" not in html
+    assert "preview-banner" not in html
+    prac = anon.get(f"/learn/ap-history/{CH}/practice").get_data(as_text=True)
+    assert "Question number 1" in prac or "ప్రశ్న" in prac
+    q = Question.query.filter_by(collection_id=FRESH).order_by(Question.id).first()
+    with client.application.test_request_context():
+        link = note_link_for(q, {})
+    assert link["expanded"] and f"/learn/ap-history/{CH}/notes/" in link["url"]
+    assert anon.get(link["url"].split("#")[0]).status_code == 200            # the review link opens for a learner
+    assert anon.get(f"/learn/ap-history/{CH}/notes").status_code == 200
+    outline = anon.get("/learn/ap-history").get_data(as_text=True)
+    assert "4 questions" in outline or "4" in outline
+    # the generic banks and the legacy practice list never contain collection questions, in either state
+    assert svc_bank_ids() & {x.id for x in Question.query.filter_by(collection_id=FRESH)} == set()
+
+
+def svc_bank_ids():
+    from app.services import learn as svc
+    sid = Subject.query.filter_by(slug="ap_history").one().id
+    return {x.id for x in svc.bank_questions(sid, "practice")} | {x.id for x in svc.bank_questions(sid, "pyq")}
+
+
+def test_switching_back_preserves_both_collections_and_all_learner_history(client, staged):
+    fresh_q = Question.query.filter_by(collection_id=FRESH).order_by(Question.id).first()
+    legacy_q = Question.query.filter(Question.collection_id.is_(None), Question.note_target_slug == "u1-c01-literary-sources").one()
+    db.session.add_all([UserQuestionState(device_id="dev-1", question_id=fresh_q.id, seen_count=3, wrong_count=1, saved=True),
+                        UserQuestionState(device_id="dev-1", question_id=legacy_q.id, seen_count=2, wrong_count=0, flagged=True)])
+    db.session.commit()
+
+    def snapshot():
+        return ([(q.id, q.collection_id, q.question_en, q.question_te, q.correct_answer, q.review_status, q.import_ref, q.source_qid)
+                 for q in Question.query.order_by(Question.id)],
+                [(n.id, n.collection_id, n.anchor_id, n.body_en, n.body_te) for n in ExpandedNote.query.order_by(ExpandedNote.id)],
+                [(n.id, n.body_en) for n in Note.query.order_by(Note.id)],
+                [(u.device_id, u.question_id, u.seen_count, u.wrong_count, u.saved, u.flagged) for u in UserQuestionState.query.order_by(UserQuestionState.question_id)])
+    base = snapshot()
+    _login(client)
+    for target in (FRESH, "legacy", FRESH, "legacy"):
+        assert _switch(client, target).status_code == 200
+        assert snapshot() == base                                            # not one row of either collection or any history changed
+    assert csw.active_collection(_chapter()) is None
+    assert ChapterCollectionLog.query.count() == 4 and ChapterCollectionSetting.query.count() == 1
+    anon = client.application.test_client()
+    html = anon.get(f"/learn/ap-history/{CH}").get_data(as_text=True)
+    assert "/learn/topic/" in html and 'data-testid="open-native-practice"' not in html                 # back to the legacy entry
+    # history links keep working after switching back: a fresh question's review link and its notes still open
+    with client.application.test_request_context():
+        link = note_link_for(fresh_q, {})
+    assert anon.get(link["url"].split("#")[0]).status_code == 200 and anon.get(f"/learn/ap-history/{CH}/practice").status_code == 200
+    assert anon.get(f"/learn/topic/{staged['old_chapter']}/practice").status_code == 200
+
+
+def test_switching_to_the_same_value_is_a_noop_without_a_log_entry(client, staged):
+    _login(client)
+    assert _switch(client, "legacy").status_code == 200 and ChapterCollectionLog.query.count() == 0
+    _switch(client, FRESH); _switch(client, FRESH)
+    assert ChapterCollectionLog.query.count() == 1
+
+
+def test_collection_duplicate_scope_uses_collection_id_not_source_or_syllabus_chapter(client, staged, tmp_path):
+    """A legacy-style row that shares source=codex_generated and a canonical chapter (like older imports might) is NOT a member
+    of the collection; a member with a different source IS."""
+    ch = _chapter()
+    old = Question(subject_id=staged["subject"], chapter_id=None, source_type="chapter", import_ref="aph-u1c01-OLD-9", source="codex_generated",
+                   syllabus_chapter_id=ch.id, question_en="Question number 9 about the Andhra sources?", question_te="పాత",
+                   options_en={"a": "Option a of 9", "b": "Option b of 9", "c": "x", "d": "y"}, correct_answer="b", collection_id=None)
+    db.session.add(old); db.session.commit()
+    dup9 = make_pkg(tmp_path, name="aph-9", records=[_q(9, SIX[1], ["CH01-S02"], [2], source_qid="APH-U1-C1-B20261010-Q009")])
+    rep = v1.run(dup9, overlap_scope="collection")
+    assert rep["overlaps"] == [] and len(rep["legacy_overlaps_informational"]) == 1          # legacy-style row: informational only
+    assert v1.run(dup9, apply=True, approval_ref="r", overlap_scope="collection")["imported"] == 1
+    assert Question.query.filter_by(import_ref="aph-u1c01-OLD-9").one().collection_id is None
+    # same stem again with a different source label but the same collection id: blocked as an in-collection duplicate
+    Question.query.filter_by(source_qid="APH-U1-C1-B20261010-Q009").one().source = "app_master"; db.session.commit()      # member, other source label
+    again = make_pkg(tmp_path, name="aph-9b", records=[_q(9, SIX[1], ["CH01-S02"], [2], source_qid="APH-U1-C1-B20261011-Q009")])
+    r2 = v1.run(again, overlap_scope="collection")
+    assert len(r2["overlaps"]) >= 1
+    # a different collection id is a different scope: nothing in it yet, so it does not collide
+    r3 = v1.run(again, overlap_scope="collection", collection_id="ap-history-fresh-v2")
+    assert r3["overlaps"] == [] and r3["collection_id"] == "ap-history-fresh-v2"
+    with pytest.raises(v1.V1ImportError):
+        v1.run(again, collection_id="Bad Id!")
+
+
+def test_collection_tagged_rows_stay_out_of_every_legacy_listing_and_legacy_rows_with_a_canonical_chapter_stay_in(client, staged):
+    ch = _chapter()
+    row = Question(subject_id=staged["subject"], chapter_id=None, source_type="practice", difficulty="M", question_en="Older canonical-tagged?",
+                   question_te="పాత?", options_en={"a": "1", "b": "2", "c": "3", "d": "4"}, correct_answer="a",
+                   syllabus_chapter_id=ch.id, collection_id=None)
+    db.session.add(row); db.session.commit()
+    assert row.id in svc_bank_ids()                                           # the production-style older row is NOT hidden by the new filters
+    html = client.get("/practice/ap_history").get_data(as_text=True)
+    assert "Question number 1 about" not in html

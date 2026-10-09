@@ -18,13 +18,14 @@ same correct answer) is reported and, unless ``allow_overlaps`` is set, blocks t
 """
 import hashlib
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
 from sqlalchemy.exc import IntegrityError
 
 from ..db import db
-from ..models import (ExpandedNote, Question, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusMicrotopic)
+from ..models import (FRESH_COLLECTION_ID, ExpandedNote, Question, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusMicrotopic)
 from . import ap_batch_import as b
 from . import ap_canonical_taxonomy as tax
 from . import mcq_import as legacy
@@ -62,20 +63,22 @@ def _trace(rec, manifest, pkg_sha):
     }
 
 
-def run(pkg_dir, apply=False, approval_ref=None, allow_overlaps=False, overlap_scope="all"):
+def run(pkg_dir, apply=False, approval_ref=None, allow_overlaps=False, overlap_scope="all", collection_id=FRESH_COLLECTION_ID):
     """Preview (default) or apply one v1 package. Returns a report dict; raises ``V1ImportError`` for a refusal.
 
     ``overlap_scope``: ``all`` (default) checks every existing question of the subject and blocks apply on any overlap.
     ``collection`` is for the fresh AP History collection: only questions already in the native collection
-    (``syllabus_chapter_id`` set) can block an apply; overlaps with legacy-bank questions are still listed, as
+    (rows whose explicit ``collection_id`` equals the target collection) can block an apply; overlaps with legacy-bank questions are still listed, as
     ``legacy_overlaps_informational``, and never imported-over, merged or modified. The guard itself stays on in both modes.
     """
     if overlap_scope not in ("all", "collection"):
         raise V1ImportError("overlap_scope must be 'all' or 'collection'")
+    if not re.fullmatch(r"[a-z0-9][a-z0-9._-]{2,62}", collection_id or ""):
+        raise V1ImportError("collection_id must be an explicit identifier such as 'ap-history-fresh-v1'")
     pkg = Path(pkg_dir)
     vrep = b.validate_package(pkg)
     rep = {"package": pkg.name, "records": vrep.records, "validator_errors": len(vrep.errors), "validator_warnings": len(vrep.warnings),
-           "applied": bool(apply), "to_import": 0, "imported": 0, "already_imported": 0, "overlaps": [], "legacy_overlaps_informational": [], "overlap_scope": overlap_scope, "unresolved_note_links": [],
+           "applied": bool(apply), "to_import": 0, "imported": 0, "already_imported": 0, "overlaps": [], "legacy_overlaps_informational": [], "overlap_scope": overlap_scope, "collection_id": collection_id, "unresolved_note_links": [],
            "warnings": [], "difficulty": {}, "content_approval": "author-reviewed (bilingual_approved); not independently verified"}
     if not vrep.importable:
         rep["validator_first_errors"] = vrep.errors[:10]
@@ -123,7 +126,8 @@ def run(pkg_dir, apply=False, approval_ref=None, allow_overlaps=False, overlap_s
     have_anchors = {a for (a,) in db.session.query(ExpandedNote.anchor_id).filter(ExpandedNote.subject_id == subject_id)}
     existing = {(s, q) for (s, q) in db.session.query(Question.source, Question.source_qid).filter(Question.source_qid.isnot(None))}
     index = legacy._existing_index(subject_id)
-    native_ids = {i for (i,) in db.session.query(Question.id).filter(Question.syllabus_chapter_id.isnot(None))}
+    # collection membership is the explicit collection_id; never inferred from source or syllabus_chapter_id
+    native_ids = {i for (i,) in db.session.query(Question.id).filter(Question.collection_id == collection_id)}
     refs = {e["ref"]: e for e in index if e["ref"]}
     rows, seen = [], []
     for r in recs:
@@ -165,7 +169,8 @@ def run(pkg_dir, apply=False, approval_ref=None, allow_overlaps=False, overlap_s
             secondary_tags={"chapters": r.get("secondary_chapters") or [], "microtopics": r.get("microtopic_slugs") or [],
                             "coverage_scope": r["coverage_scope"]},
             source=r["source"], source_file=r.get("source_file"), source_qid=r["source_qid"], qtype=r["qtype"],
-            review_status=r["review_status"], batch_id=r["batch_id"], content_hash=b.content_hash(r))
+            review_status=r["review_status"], batch_id=r["batch_id"], content_hash=b.content_hash(r),
+            collection_id=collection_id)
         rows.append(row)
         rep["difficulty"][r["difficulty"]] = rep["difficulty"].get(r["difficulty"], 0) + 1
         index.append({"id": None, "ref": r["source_qid"], "stem": legacy.norm(r["question_en"]), "tok": legacy._tokens(r["question_en"]),

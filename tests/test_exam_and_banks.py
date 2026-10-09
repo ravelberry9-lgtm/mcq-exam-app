@@ -773,6 +773,7 @@ WRITE_INVENTORY = {
     "/plan/create", "/plan/api/<int:plan_id>/pause", "/plan/api/<int:plan_id>/resume",
     "/admin/login", "/admin/logout", "/admin/notes/<int:chapter_id>/edit", "/admin/seed", "/admin/load-content/preview",
     "/admin/load-content/apply", "/admin/load-content/restore", "/admin/parse-ap-history/preview", "/admin/parse-ap-history/apply",
+    "/admin/collections/switch",
 }
 
 

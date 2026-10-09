@@ -53,7 +53,7 @@ def subjects():
             func.count(func.distinct(Question.id)).label("question_count"),
         )
         .outerjoin(Chapter, Chapter.subject_id == Subject.id)
-        .outerjoin(Question, (Question.subject_id == Subject.id) & Question.syllabus_chapter_id.is_(None))
+        .outerjoin(Question, (Question.subject_id == Subject.id) & Question.collection_id.is_(None))
         .group_by(Subject.id)
         .order_by(Subject.sort_order)
         .all()
@@ -84,7 +84,7 @@ def subject_detail(slug):
             "q_count": q_count,
             "note_count": note_count,
         })
-    total_q = Question.query.filter_by(subject_id=subject.id, syllabus_chapter_id=None).count()
+    total_q = Question.query.filter_by(subject_id=subject.id, collection_id=None).count()
     return render_template(
         "subject_detail.html",
         subject=subject,
@@ -97,7 +97,7 @@ def subject_detail(slug):
 def practice(subject_slug):
     subject = Subject.query.filter_by(slug=subject_slug).first_or_404()
     q_idx = request.args.get("i", 1, type=int)
-    questions = Question.query.filter_by(subject_id=subject.id, syllabus_chapter_id=None).order_by(Question.id).all()
+    questions = Question.query.filter_by(subject_id=subject.id, collection_id=None).order_by(Question.id).all()
     q_total = len(questions)
     if q_total == 0:
         return render_template("practice.html", subject=subject, question=None, chapter=None)

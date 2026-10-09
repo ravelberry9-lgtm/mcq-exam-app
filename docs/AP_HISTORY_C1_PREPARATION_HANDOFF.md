@@ -1,5 +1,7 @@
 # Chapter 1 closure package: preparation handoff (superseded in part by the production change plan; nothing run on production)
 
+> **Superseded in part (2026-10-09):** production is at `a7b8c9d0e1f2` with the taxonomy populated and the older 64 present, and the old64-versus129 reconciliation is cancelled. See `AP_HISTORY_C1_PRODUCTION_CHANGE_PLAN.md` and `AP_HISTORY_FRESH_COLLECTION_DESIGN.md`. Sections here about overlap decisions and a seeded-from-scratch staging are historical.
+
 Package: `aph-u1-c01-closure-20261009`, 129 questions, `questions.jsonl` sha256 `1f1ad6fd94259c93f707b58fbb010d7b1fa877d441811cab5c5b9274cdcc6d73`. The frozen package was not edited. Nothing was imported, seeded or deployed on production.
 
 ## 1. `note_anchors.json` versus the addendum text

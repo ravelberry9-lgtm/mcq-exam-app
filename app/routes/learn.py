@@ -11,9 +11,25 @@ from ..models import Chapter, ChapterProgress, ExamSection, Note, Subject
 from ..services import learn as svc
 from ..services import syllabus_view as syl
 from ..services import expanded_view as xv
+from ..services import collection_switch as csw
+from ..models import FRESH_COLLECTION_ID
 from ..services.ui_text import UI, t, tl
 
 bp = Blueprint("learn", __name__, url_prefix="/learn")
+
+
+def _is_admin():
+    from .admin import _is_authed
+    return _is_authed()
+
+
+def _fresh_chapter_or_404(slug):
+    """The fresh collection's pages are open to learners only for a chapter that is (or, for history links, has been) switched to
+    it; an administrator can always preview. Legacy is the default, so an unswitched chapter shows nothing of the collection."""
+    ch = xv.chapter_by_slug(slug) or abort(404)
+    if not csw.can_view_collection(ch, FRESH_COLLECTION_ID, _is_admin()):
+        abort(404)
+    return ch
 
 
 def _device_id():
@@ -49,18 +65,19 @@ def ap_history():
 @bp.route("/ap-history/<slug>")
 def ap_history_chapter(slug):
     data = syl.chapter_detail(slug) or abort(404)
-    return render_template("ds/syllabus_chapter.html", d=data)
+    preview = _is_admin() and not data["fresh_live"] and (data["has_expanded"] or data["native_count"])
+    return render_template("ds/syllabus_chapter.html", d=data, preview=bool(preview))
 
 
 @bp.route("/ap-history/<slug>/notes")
 def expanded_index(slug):
-    ch = xv.chapter_by_slug(slug) or abort(404)
+    ch = _fresh_chapter_or_404(slug)
     return render_template("ds/expanded_index.html", d=xv.index(ch), ch=ch)
 
 
 @bp.route("/ap-history/<slug>/notes/<anchor_id>")
 def expanded_note(slug, anchor_id):
-    ch = xv.chapter_by_slug(slug) or abort(404)
+    ch = _fresh_chapter_or_404(slug)
     d = xv.page(ch, anchor_id) or abort(404)
     return render_template("ds/expanded_note.html", d=d, ch=ch, anchor_id=anchor_id)
 
@@ -68,7 +85,7 @@ def expanded_note(slug, anchor_id):
 @bp.route("/ap-history/<slug>/practice")
 def canonical_practice(slug):
     """Practice for the questions imported through ap-history-import-v1 (only author-reviewed, learner-visible ones)."""
-    ch = xv.chapter_by_slug(slug) or abort(404)
+    ch = _fresh_chapter_or_404(slug)
     sub = request.args.get("subtopic") or None
     qs = xv.native_questions(ch, sub)
     if qs is None:

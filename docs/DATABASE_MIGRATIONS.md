@@ -76,3 +76,9 @@ The subject and chapter are resolved by slug/chapter number and the chapter titl
 with the database are refused. Invalid records and duplicates (same stem, or near-identical stem with the same correct answer,
 against the subject's existing questions) are skipped and reported. Existing questions are never modified.
 Run `python -m alembic upgrade head` first.
+
+## `b8c9d0e1f2a3` and `c9d0e1f2a3b4` — expanded notes, collections and the learner switch (both additive)
+`b8c9d0e1f2a3`: `expanded_notes` and `expanded_note_app_map`. `c9d0e1f2a3b4`: nullable `collection_id` (indexed) on `questions` and
+`expanded_notes` (NULL = legacy), `chapter_collection_setting` (per canonical chapter; no row = legacy) and `chapter_collection_log`
+(append-only audit). No existing row changes. Both downgrades refuse while the new tables or tagged rows hold data, so a rollback
+removes the collection first (`docs/rollback_fresh_collection.sql`).

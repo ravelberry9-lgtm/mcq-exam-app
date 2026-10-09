@@ -5,7 +5,7 @@ are reached only through approved explicit mappings, never by reusing a number.
 """
 from ..db import db
 from ..models import (Chapter, ExpandedNote, ExpandedNoteAppMap, Question, Subject, SyllabusChapter, SyllabusSubtopic,
-                      LEARNER_VISIBLE_STATUS)
+                      LEARNER_VISIBLE_STATUS, FRESH_COLLECTION_ID)
 
 KIND_ORDER = {"core": 0, "group1": 1, "revision": 2, "addendum": 3, "addendum_group1": 4}
 
@@ -23,22 +23,22 @@ def _view(n):
             "sources": [s for s in (n.sources or []) if s.get("url") or s.get("label")]}
 
 
-def _notes(ch):
-    return ExpandedNote.query.filter_by(syllabus_chapter_id=ch.id).order_by(ExpandedNote.sort_order, ExpandedNote.id).all()
+def _notes(ch, collection_id=FRESH_COLLECTION_ID):
+    return ExpandedNote.query.filter_by(syllabus_chapter_id=ch.id, collection_id=collection_id).order_by(ExpandedNote.sort_order, ExpandedNote.id).all()
 
 
-def index(ch):
-    rows = _notes(ch)
+def index(ch, collection_id=FRESH_COLLECTION_ID):
+    rows = _notes(ch, collection_id)
     groups = {k: [r for r in rows if r.kind == k] for k in KIND_ORDER}
     return {"chapter": ch, "groups": groups, "total": len(rows)}
 
 
-def has_notes(ch):
-    return db.session.query(ExpandedNote.id).filter_by(syllabus_chapter_id=ch.id).first() is not None
+def has_notes(ch, collection_id=FRESH_COLLECTION_ID):
+    return db.session.query(ExpandedNote.id).filter_by(syllabus_chapter_id=ch.id, collection_id=collection_id).first() is not None
 
 
-def page(ch, anchor_id):
-    rows = _notes(ch)
+def page(ch, anchor_id, collection_id=FRESH_COLLECTION_ID):
+    rows = _notes(ch, collection_id)
     by_id = {r.anchor_id: r for r in rows}
     note = by_id.get(anchor_id)
     if note is None:
@@ -61,8 +61,8 @@ def page(ch, anchor_id):
     return out
 
 
-def native_questions(ch, subtopic_slug=None):
-    q = Question.query.filter(Question.syllabus_chapter_id == ch.id, Question.review_status == LEARNER_VISIBLE_STATUS)
+def native_questions(ch, subtopic_slug=None, collection_id=FRESH_COLLECTION_ID):
+    q = Question.query.filter(Question.collection_id == collection_id, Question.syllabus_chapter_id == ch.id, Question.review_status == LEARNER_VISIBLE_STATUS)
     if subtopic_slug:
         sub = SyllabusSubtopic.query.filter_by(slug=subtopic_slug, chapter_id=ch.id).first()
         if sub is None:

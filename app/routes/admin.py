@@ -376,3 +376,32 @@ def parse_ap_history_preview():
 def parse_ap_history_apply():
     guard = _require_auth()
     return guard or _apply("ap")
+
+
+# ── Learner collection switch (per canonical chapter; legacy is the default) ─────────────────────
+
+def _collections_page(msg=None, ok=True, status=200):
+    from ..services import collection_switch as csw
+    return render_template("admin/collections.html", rows=csw.overview(), msg=msg, ok=ok), status
+
+
+@bp.route("/collections", methods=["GET"])
+def collections():
+    guard = _require_auth()
+    return guard or _collections_page()
+
+
+@bp.route("/collections/switch", methods=["POST"])
+def collections_switch():
+    """Admin-only (PIN session + CSRF). Records who (name typed on the form), from where and when; readiness is enforced."""
+    guard = _require_auth()
+    if guard:
+        return guard
+    from ..services import collection_switch as csw
+    try:
+        res = csw.set_active(request.form.get("slug", ""), request.form.get("target", ""), request.form.get("actor", ""),
+                             remote_addr=request.remote_addr, reason=request.form.get("reason"))
+    except csw.SwitchError as e:
+        return _collections_page(str(e), ok=False, status=400)
+    msg = (f"{res['chapter']}: now {res['active']}" if res["changed"] else f"{res['chapter']}: already {res['active']}, nothing changed")
+    return _collections_page(msg)

@@ -28,7 +28,7 @@ def test_all_23_tables_exist(app):
         "nav_items", "user_question_state", "exam_sessions",
         "study_plans", "chapter_progress", "note_backups",
         "syllabus_units", "syllabus_chapters", "syllabus_subtopics", "syllabus_microtopics", "chapter_source_map",
-        "expanded_notes", "expanded_note_app_map",
+        "expanded_notes", "expanded_note_app_map", "chapter_collection_setting", "chapter_collection_log",
     }
     actual = set(db.metadata.tables.keys())
     assert expected == actual, f"missing: {expected - actual}, extra: {actual - expected}"

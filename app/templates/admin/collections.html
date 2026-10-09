@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Learner collections · Admin · {{ app_title }}{% endblock %}
+{% block content %}
+<div class="admin-wrap" style="max-width:60rem;margin:0 auto;padding:1.5rem 1rem">
+  <h2>Learner collection per chapter</h2>
+  <p>Legacy is the default. A chapter can be switched to the fresh collection only when every readiness check passes. Switching
+     back is always allowed and never deletes or changes any question, note or learner history. Each change is logged with
+     the name you type, the address it came from and the time.</p>
+  {% if msg %}<div class="card" data-testid="switch-msg" role="status"><strong>{{ 'Done' if ok else 'Refused' }}</strong> · {{ msg }}</div>{% endif %}
+  {% for r in rows %}
+  <section class="card" data-testid="chapter-{{ r.chapter.slug }}" style="margin:1rem 0">
+    <h3><code>{{ r.chapter.slug }}</code> · {{ r.chapter.title_en }}</h3>
+    <p>Learners currently see: <strong data-testid="active">{{ r.active }}</strong> · collection <code>{{ r.collection_id }}</code> ·
+       {{ r.readiness.counts.questions }} questions, {{ r.readiness.counts.notes }} notes</p>
+    <ul>
+      {% for c in r.readiness.checks %}<li>{{ 'PASS' if c.ok else 'FAIL' }} · {{ c.key }} · {{ c.detail }}</li>{% endfor %}
+    </ul>
+    {% if r.last %}<p class="small">Last change: {{ r.last.from_collection or 'legacy' }} → {{ r.last.to_collection or 'legacy' }} by
+       {{ r.last.actor }} at {{ r.last.changed_at.strftime('%Y-%m-%d %H:%M') }} UTC</p>{% endif %}
+    <form method="POST" action="{{ url_for('admin.collections_switch') }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="slug" value="{{ r.chapter.slug }}">
+      <label>Your name <input name="actor" required minlength="2" maxlength="80"></label>
+      <label>Reason <input name="reason" maxlength="300"></label>
+      {% if r.active == 'legacy' %}
+        <input type="hidden" name="target" value="{{ r.collection_id }}">
+        <button type="submit" {{ '' if r.readiness.ok else 'disabled' }}>Switch learners to the fresh collection</button>
+      {% else %}
+        <input type="hidden" name="target" value="legacy">
+        <button type="submit">Switch learners back to legacy</button>
+      {% endif %}
+    </form>
+  </section>
+  {% else %}<p>No chapter has fresh-collection content loaded.</p>{% endfor %}
+</div>
+{% endblock %}
