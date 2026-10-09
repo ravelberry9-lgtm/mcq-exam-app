@@ -27,8 +27,12 @@ from app.services.learn import note_link_for
 CH = "u1-c01-region-people-sources"
 SIX = ["u1-c01-land-people-identity", "u1-c01-literary-sources", "u1-c01-foreign-accounts", "u1-c01-inscriptions", "u1-c01-coins",
        "u1-c01-archaeology-sites"]
-REAL = Path(os.environ.get("AP_V1_PACKAGE", "/mnt/user-data/uploads/aph-u1-c01-closure-20261009"))
-REAL_SHA = "1f1ad6fd94259c93f707b58fbb010d7b1fa877d441811cab5c5b9274cdcc6d73"
+_UP = "/mnt/user-data/uploads/"
+REAL = Path(os.environ.get("AP_V1_PACKAGE", _UP + "aph-u1-c01-closure-metadata-r1-20261009"))
+# known frozen revisions of the same 129-question batch (never combined): original closure and metadata-r1
+KNOWN_SHA = {"aph-u1-c01-closure-20261009": "1f1ad6fd94259c93f707b58fbb010d7b1fa877d441811cab5c5b9274cdcc6d73",
+             "aph-u1-c01-closure-metadata-r1-20261009": "a69d4a50aa1b85a0f682879c3ddac89df588d581f69265a8eee61f8febc2657d"}
+REAL_SHA = KNOWN_SHA.get(REAL.name)
 
 
 # ── synthetic package ────────────────────────────────────────────────
@@ -424,7 +428,7 @@ def real_pkg(tmp_path):
 
 @real
 def test_real_package_is_the_expected_129_question_file(real_pkg):
-    assert hashlib.sha256((real_pkg / "questions.jsonl").read_bytes()).hexdigest() == REAL_SHA
+    assert REAL_SHA and hashlib.sha256((real_pkg / "questions.jsonl").read_bytes()).hexdigest() == REAL_SHA
     rep = b.validate_package(real_pkg)
     assert rep.importable and rep.records == 129 and not rep.errors
 

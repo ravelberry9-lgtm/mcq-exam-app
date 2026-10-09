@@ -41,7 +41,7 @@ Not confirmed. This session has no authorized database access (no credentials on
 Migration chain (repo head `b8c9d0e1f2a3`): `c68decc8a6c3` baseline → `a1b2c3d4e5f6` → `b2c3d4e5f6a7` → `c3d4e5f6a7b8` → `d4e5f6a7b8c9` (question note link/provenance; my earlier migration) → `f6a7b8c9d0e1` (canonical syllabus + provenance columns) → `a7b8c9d0e1f2` (microtopics) → `b8c9d0e1f2a3` (expanded notes). The local test database was at `c3d4e5f6a7b8`; production's revision is unverified.
 
 Required steps, in this order, **not executed**, each needing your approval:
-1. `python -m alembic upgrade head`
+1. `python -m alembic upgrade b8c9d0e1f2a3` (pinned; not a moving head)
 2. `python scripts/seed_ap_canonical.py` (preview), then `--apply --with-subtopics` (5 units, 31 core + 4 supplementary chapters, 187 subtopics, 317 microtopics)
 3. `python scripts/import_ap_v1.py notes <pkg>` then `--apply --approval-ref "<ref>"`
 4. `python scripts/import_ap_v1.py questions <pkg>` then `--apply --approval-ref "<ref>"`
