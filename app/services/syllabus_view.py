@@ -2,20 +2,22 @@
 
 Nothing here writes. Question counts come from the content team's own note_target_slug prefix ("u1-c02-..." = canonical
 chapter 2), so the 1,3xx imported questions are reachable by canonical chapter without any schema change or backfill.
-Practice and notes open the legacy chapter that actually holds those questions, so every number shown is reachable.
+Practice uses canonical membership; related notes retain their existing source chapter links.
 """
 from collections import defaultdict
+import re
 
 from sqlalchemy import func
 
 from ..db import db
-from ..models import FRESH_COLLECTION_ID, LEARNER_VISIBLE_STATUS, ChapterCollectionSetting, Question, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusUnit
+from ..models import (FRESH_COLLECTION_ID, LEARNER_VISIBLE_STATUS, Chapter, ChapterCollectionSetting, Note, Question, Subject,
+                      SyllabusChapter, SyllabusSubtopic, SyllabusUnit)
 
 SUBJECT_SLUG = "ap_history"
 
 
 def _prefix(slug):
-    return slug[:7] if slug and len(slug) >= 7 else None   # "u1-c02-"
+    return slug[:7] if slug and re.match(r"^u[1-5]-c\d{2}-", slug) else None
 
 
 def _subject():
@@ -64,6 +66,24 @@ def _entry(ch, idx, active=None):
     return {"chapter": ch, "question_count": q["count"], "legacy_chapter_id": legacy, "active_collection": None}
 
 
+def chapter_questions(ch):
+    """The LEGACY bank's canonical membership (same as the outline), across all legacy homes. Fresh-collection rows are
+    never part of it (explicit ``collection_id``), whatever their ``note_target_slug``."""
+    if not ch.is_core:
+        return []
+    return (Question.query.filter(Question.subject_id == ch.subject_id, Question.collection_id.is_(None),
+                                  Question.note_target_slug.startswith(ch.slug[:6] + "-"))
+            .order_by(Question.id).all())
+
+
+def summary():
+    data = outline()
+    if data is None:
+        return None
+    return {"chapter_count": data["core_count"],
+            "question_count": sum(c["question_count"] for u in data["units"] for c in u["chapters"])}
+
+
 def outline():
     """None when the canonical structure has not been seeded yet."""
     sub = _subject()
@@ -93,8 +113,14 @@ def chapter_detail(slug):
     entry = _entry(ch, _question_index(sub.id) if ch.is_core else {}, active)
     live = entry["active_collection"]
     fresh_id = live or FRESH_COLLECTION_ID
+    note_chapters = []
+    if not live:     # legacy source-chapter notes are offered only while learners are on the legacy content
+        ids = {q.chapter_id for q in chapter_questions(ch) if q.chapter_id}
+        note_chapters = (Chapter.query.filter(Chapter.id.in_(ids), Chapter.subject_id == sub.id)
+                         .filter(db.session.query(Note.id).filter(Note.chapter_id == Chapter.id).exists())
+                         .order_by(Chapter.chapter_num).all()) if ids else []
     unit = db.session.get(SyllabusUnit, ch.unit_id) if ch.unit_id else None
     from . import expanded_view as xv
     native = _fresh_count(ch, fresh_id)
-    return {"subject": sub, "chapter": ch, "unit": unit, "subtopics": subs, **entry, "fresh_live": bool(live),
-            "has_expanded": xv.has_notes(ch, fresh_id), "native_count": native}
+    return {"subject": sub, "chapter": ch, "unit": unit, "subtopics": subs, "note_chapters": note_chapters, **entry,
+            "fresh_live": bool(live), "has_expanded": xv.has_notes(ch, fresh_id), "native_count": native}

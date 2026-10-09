@@ -130,11 +130,15 @@ def subject_entries():
     ch = dict(db.session.query(Chapter.subject_id, func.count(Chapter.id)).group_by(Chapter.subject_id).all())
     banks = bank_counts()
     out = []
+    from . import syllabus_view
+    ap_summary = syllabus_view.summary()
     for s in Subject.query.order_by(Subject.sort_order, Subject.id).all():
         b = banks.get(s.id, _empty_banks())
         total = b["practice"] + b["pyq"] + b["chapter"]
         out.append({"subject": s, "chapter_count": ch.get(s.id, 0), "question_count": total, "banks": b,
                     "available": ch.get(s.id, 0) > 0 or total > 0})
+        if s.slug == syllabus_view.SUBJECT_SLUG and ap_summary is not None:
+            out[-1].update(ap_summary, available=True)
     return out
 
 

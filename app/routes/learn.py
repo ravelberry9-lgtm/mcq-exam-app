@@ -4,7 +4,7 @@ New blueprint under /learn. The old routes (/subjects, /subject/<slug>, /practic
 /notes/..., /exam/...) are untouched and keep working until the new journey replaces them.
 """
 import re
-from flask import Blueprint, abort, jsonify, render_template, request, url_for
+from flask import Blueprint, abort, jsonify, redirect, render_template, request, url_for
 
 from ..db import db
 from ..models import Chapter, ChapterProgress, ExamSection, Note, Subject
@@ -83,33 +83,59 @@ def expanded_note(slug, anchor_id):
 
 
 @bp.route("/ap-history/<slug>/practice")
-def canonical_practice(slug):
-    """Practice for the questions imported through ap-history-import-v1 (only author-reviewed, learner-visible ones)."""
-    ch = _fresh_chapter_or_404(slug)
+def ap_history_practice(slug):
+    """ONE practice URL per canonical chapter. Which content it serves follows the chapter's learner setting: the fresh
+    collection when the chapter is switched to it, otherwise the legacy canonical bank (the default). An administrator, or a
+    learner following a history link of a collection that was once live, can ask for ``?collection=fresh`` explicitly."""
+    data = syl.chapter_detail(slug) or abort(404)
+    ch = data["chapter"]
+    if data["fresh_live"] or request.args.get("collection") == "fresh":
+        return _fresh_practice(slug, ch, data["fresh_live"])
+    qs = syl.chapter_questions(ch)
+    total = len(qs)
+    i = max(1, request.args.get("i", 1, type=int))
+    ctx = dict(chapter=None, subject=data["subject"], title_en=ch.title_en, title_te=ch.title_te,
+               note_count=0, mcq_count=total, scope=f"canonical-{slug}",
+               back_url=url_for("learn.ap_history_chapter", slug=slug), back_label="prac.back_topic",
+               restart_url=url_for("learn.ap_history_practice", slug=slug, i=1, new=1))
+    return render_template("ds/practice.html", **ctx, total=total, i=i,
+                           q=svc.question_view(qs[i - 1]) if total and i <= total else None,
+                           summary=bool(total and i > total),
+                           next_url=url_for("learn.ap_history_practice", slug=slug, i=i + 1),
+                           is_last=i == total, fresh=bool(request.args.get("new")))
+
+
+def _fresh_practice(slug, ch, live):
+    """Practice for the fresh collection (only author-reviewed, learner-visible questions). Shown to learners only for a chapter
+    that is or has been switched to it; administrators can always preview."""
+    if not (live or csw.can_view_collection(ch, FRESH_COLLECTION_ID, _is_admin())):
+        abort(404)
     sub = request.args.get("subtopic") or None
-    qs = xv.native_questions(ch, sub)
+    qs = xv.native_questions(ch, sub, csw.active_collection(ch) or FRESH_COLLECTION_ID)
     if qs is None:
         abort(404)
     total = len(qs)
     i = request.args.get("i", 1, type=int)
-    extra = {"subtopic": sub} if sub else {}
+    extra = ({"subtopic": sub} if sub else {}) | ({} if live else {"collection": "fresh"})
     ctx = dict(chapter=None, subject=db.session.get(Subject, ch.subject_id), title_en=ch.title_en, title_te=ch.title_te, note_count=0,
                mcq_count=total, scope=f"c-{ch.slug}" + (f"-{sub}" if sub else ""),
                back_url=url_for("learn.ap_history_chapter", slug=slug), back_label="prac.back_chapter",
-               restart_url=url_for("learn.canonical_practice", slug=slug, i=1, new=1, **extra))
+               restart_url=url_for("learn.ap_history_practice", slug=slug, i=1, new=1, **extra))
     if total == 0:
         return render_template("ds/practice.html", **ctx, total=0, q=None, summary=False, i=1)
     if i > total:
         return render_template("ds/practice.html", **ctx, total=total, q=None, summary=True, i=i)
     i = max(1, i)
     return render_template("ds/practice.html", **ctx, total=total, q=svc.question_view(qs[i - 1]), summary=False, i=i,
-                           next_url=url_for("learn.canonical_practice", slug=slug, i=i + 1, **extra), is_last=(i == total),
+                           next_url=url_for("learn.ap_history_practice", slug=slug, i=i + 1, **extra), is_last=(i == total),
                            fresh=bool(request.args.get("new")))
 
 
 @bp.route("/subject/<slug>")
 def subject(slug):
     sub = Subject.query.filter_by(slug=slug).first_or_404()
+    if sub.slug == syl.SUBJECT_SLUG and syl.is_loaded():
+        return redirect(url_for("learn.ap_history"))
     groups = svc.with_banks(svc.topics_for_subject(sub), [sub])
     groups = svc.attach_status(groups, _device_id())
     return render_template("ds/section.html", title_en=sub.name_en, title_te=sub.name_te,
@@ -121,6 +147,10 @@ def subject(slug):
 def bank(slug, bank):
     """Subject-level question banks: Practice (questions not tied to a chapter) and Previous papers."""
     sub = Subject.query.filter_by(slug=slug).first_or_404()
+    # The legacy AP banks contain unrelated questions. Keep their stored rows,
+    # but route AP learners to the mapped syllabus until those banks are audited.
+    if sub.slug == syl.SUBJECT_SLUG and syl.is_loaded():
+        return redirect(url_for("learn.ap_history"))
     qs = svc.bank_questions(sub.id, bank)
     total = len(qs)
     i = request.args.get("i", 1, type=int)

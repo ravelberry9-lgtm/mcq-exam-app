@@ -581,19 +581,22 @@ def staged(world, tmp_path):
 def test_default_is_legacy_and_fresh_content_is_not_public(client, staged):
     ch = _chapter()
     assert csw.active_collection(ch) is None and ChapterCollectionSetting.query.count() == 0
-    for u in (f"/learn/ap-history/{CH}/notes", f"/learn/ap-history/{CH}/notes/CH01-S02", f"/learn/ap-history/{CH}/practice"):
+    for u in (f"/learn/ap-history/{CH}/notes", f"/learn/ap-history/{CH}/notes/CH01-S02", f"/learn/ap-history/{CH}/practice?collection=fresh"):
         assert client.get(u).status_code == 404, u
     html = client.get(f"/learn/ap-history/{CH}").get_data(as_text=True)
     assert 'data-testid="open-native-practice"' not in html and 'data-testid="open-expanded-notes"' not in html
-    assert "/learn/topic/" in html                                           # the legacy entry is what learners get
+    assert 'data-testid="open-legacy-practice"' in html                      # the legacy entry is what learners get
+    prac = client.get(f"/learn/ap-history/{CH}/practice").get_data(as_text=True)    # the one practice URL serves LEGACY by default
+    assert client.get(f"/learn/ap-history/{CH}/practice").status_code == 200 and "Legacy question?" in prac and "Question number" not in prac
     assert client.get("/learn/ap-history").status_code == 200
 
 
 def test_admin_preview_sees_the_collection_without_switching_learners(client, staged):
     _login(client)
     html = client.get(f"/learn/ap-history/{CH}").get_data(as_text=True)
-    assert 'data-testid="preview-banner"' in html and 'data-testid="open-native-practice"' in html and "/learn/topic/" in html
-    assert client.get(f"/learn/ap-history/{CH}/practice").status_code == 200
+    assert 'data-testid="preview-banner"' in html and 'data-testid="open-native-practice"' in html and 'data-testid="open-legacy-practice"' in html
+    assert "Question number" in client.get(f"/learn/ap-history/{CH}/practice?collection=fresh").get_data(as_text=True)
+    assert "Legacy question?" in client.get(f"/learn/ap-history/{CH}/practice").get_data(as_text=True)      # learners' URL still legacy
     assert csw.active_collection(_chapter()) is None
 
 
@@ -648,14 +651,14 @@ def test_switch_is_refused_unless_notes_questions_and_links_are_ready(client, st
     r = _switch(client, FRESH)
     assert r.status_code == 400 and "not ready" in r.get_data(as_text=True)
     assert csw.active_collection(_chapter()) is None and ChapterCollectionLog.query.count() == 0       # nothing changed, nothing logged
-    assert client.application.test_client().get(f"/learn/ap-history/{CH}/practice").status_code == 404
+    assert client.application.test_client().get(f"/learn/ap-history/{CH}/practice?collection=fresh").status_code == 404
 
 
 def test_switching_makes_notes_practice_and_links_consistent_and_hides_the_legacy_entry(client, staged):
     _login(client); assert _switch(client, FRESH).status_code == 200
     anon = client.application.test_client()                                  # a learner, not logged in
     html = anon.get(f"/learn/ap-history/{CH}").get_data(as_text=True)
-    assert 'data-testid="open-expanded-notes"' in html and 'data-testid="open-native-practice"' in html and "/learn/topic/" not in html
+    assert 'data-testid="open-expanded-notes"' in html and 'data-testid="open-native-practice"' in html and 'data-testid="open-legacy-practice"' not in html and "/learn/topic/" not in html
     assert "preview-banner" not in html
     prac = anon.get(f"/learn/ap-history/{CH}/practice").get_data(as_text=True)
     assert "Question number 1" in prac or "ప్రశ్న" in prac
@@ -699,11 +702,12 @@ def test_switching_back_preserves_both_collections_and_all_learner_history(clien
     assert ChapterCollectionLog.query.count() == 4 and ChapterCollectionSetting.query.count() == 1
     anon = client.application.test_client()
     html = anon.get(f"/learn/ap-history/{CH}").get_data(as_text=True)
-    assert "/learn/topic/" in html and 'data-testid="open-native-practice"' not in html                 # back to the legacy entry
+    assert 'data-testid="open-legacy-practice"' in html and 'data-testid="open-native-practice"' not in html                 # back to the legacy entry
     # history links keep working after switching back: a fresh question's review link and its notes still open
     with client.application.test_request_context():
         link = note_link_for(fresh_q, {})
-    assert anon.get(link["url"].split("#")[0]).status_code == 200 and anon.get(f"/learn/ap-history/{CH}/practice").status_code == 200
+    assert anon.get(link["url"].split("#")[0]).status_code == 200 and anon.get(f"/learn/ap-history/{CH}/practice?collection=fresh").status_code == 200
+    assert "Legacy question?" in anon.get(f"/learn/ap-history/{CH}/practice").get_data(as_text=True)
     assert anon.get(f"/learn/topic/{staged['old_chapter']}/practice").status_code == 200
 
 
