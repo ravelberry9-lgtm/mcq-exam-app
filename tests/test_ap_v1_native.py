@@ -306,6 +306,32 @@ def test_overlap_with_existing_question_is_reported_and_blocks_apply_until_decid
     assert done["imported"] == 4 and Question.query.filter_by(import_ref="aph-u1c01-OLD-1").count() == 1
 
 
+def test_collection_scope_reports_legacy_overlap_without_blocking_but_still_dedupes_the_collection(world, tmp_path):
+    xn.load_notes(make_pkg(tmp_path), apply=True)
+    pkg = tmp_path / "05_claude_import" / "aph-test"
+    db.session.add(Question(subject_id=world["subject"], chapter_id=None, source_type="chapter", import_ref="aph-u1c01-OLD-1",
+                            question_en="Question number 1 about the Andhra sources?", question_te="వేరే",
+                            options_en={"a": "Option a of 1", "b": "Option b of 1", "c": "x", "d": "y"}, correct_answer="b"))
+    db.session.commit()
+    legacy_before = Question.query.filter_by(import_ref="aph-u1c01-OLD-1").one()
+    snap = (legacy_before.id, legacy_before.question_en, legacy_before.syllabus_chapter_id)
+    rep = v1.run(pkg, overlap_scope="collection")
+    assert rep["overlaps"] == [] and len(rep["legacy_overlaps_informational"]) == 1
+    done = v1.run(pkg, apply=True, approval_ref="r", overlap_scope="collection")      # no --allow-overlaps needed
+    assert done["imported"] == 4
+    legacy_after = Question.query.filter_by(import_ref="aph-u1c01-OLD-1").one()
+    assert snap == (legacy_after.id, legacy_after.question_en, legacy_after.syllabus_chapter_id)   # legacy untouched, not merged
+    assert Question.query.filter(Question.syllabus_chapter_id.isnot(None)).count() == 4
+    # a second package repeating a stem already IN the collection is still blocked in collection scope
+    dup = make_pkg(tmp_path, name="aph-dup", records=[_q(1, SIX[1], ["CH01-S02"], [2], source_qid="APH-U1-C1-B20261010-Q900")])
+    r2 = v1.run(dup, overlap_scope="collection")
+    assert len(r2["overlaps"]) >= 1
+    with pytest.raises(v1.V1ImportError, match="reconciliation"):
+        v1.run(dup, apply=True, approval_ref="r", overlap_scope="collection")
+    with pytest.raises(v1.V1ImportError):
+        v1.run(pkg, overlap_scope="bogus")
+
+
 # ── learner pages ────────────────────────────────────────────────────
 @pytest.fixture()
 def loaded(world, tmp_path):

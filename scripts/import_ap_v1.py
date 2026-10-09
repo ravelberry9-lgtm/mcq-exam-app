@@ -27,6 +27,8 @@ def main(argv=None):
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--approval-ref")
     ap.add_argument("--allow-overlaps", action="store_true")
+    ap.add_argument("--overlap-scope", choices=("all", "collection"), default="all",
+                    help="collection: only the fresh native collection can block; legacy-bank overlaps are reported, never merged")
     a = ap.parse_args(argv)
     app = create_app()
     with app.app_context():
@@ -36,7 +38,8 @@ def main(argv=None):
                     print("REFUSED: --apply needs --approval-ref"); return 1
                 rep = expanded_notes.load_notes(a.package, apply=a.apply)
             else:
-                rep = ap_v1_import.run(a.package, apply=a.apply, approval_ref=a.approval_ref, allow_overlaps=a.allow_overlaps)
+                rep = ap_v1_import.run(a.package, apply=a.apply, approval_ref=a.approval_ref, allow_overlaps=a.allow_overlaps,
+                                    overlap_scope=a.overlap_scope)
         except (ap_v1_import.V1ImportError, expanded_notes.NotesError) as e:
             print(f"REFUSED: {e}")
             return 1

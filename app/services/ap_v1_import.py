@@ -62,12 +62,20 @@ def _trace(rec, manifest, pkg_sha):
     }
 
 
-def run(pkg_dir, apply=False, approval_ref=None, allow_overlaps=False):
-    """Preview (default) or apply one v1 package. Returns a report dict; raises ``V1ImportError`` for a refusal."""
+def run(pkg_dir, apply=False, approval_ref=None, allow_overlaps=False, overlap_scope="all"):
+    """Preview (default) or apply one v1 package. Returns a report dict; raises ``V1ImportError`` for a refusal.
+
+    ``overlap_scope``: ``all`` (default) checks every existing question of the subject and blocks apply on any overlap.
+    ``collection`` is for the fresh AP History collection: only questions already in the native collection
+    (``syllabus_chapter_id`` set) can block an apply; overlaps with legacy-bank questions are still listed, as
+    ``legacy_overlaps_informational``, and never imported-over, merged or modified. The guard itself stays on in both modes.
+    """
+    if overlap_scope not in ("all", "collection"):
+        raise V1ImportError("overlap_scope must be 'all' or 'collection'")
     pkg = Path(pkg_dir)
     vrep = b.validate_package(pkg)
     rep = {"package": pkg.name, "records": vrep.records, "validator_errors": len(vrep.errors), "validator_warnings": len(vrep.warnings),
-           "applied": bool(apply), "to_import": 0, "imported": 0, "already_imported": 0, "overlaps": [], "unresolved_note_links": [],
+           "applied": bool(apply), "to_import": 0, "imported": 0, "already_imported": 0, "overlaps": [], "legacy_overlaps_informational": [], "overlap_scope": overlap_scope, "unresolved_note_links": [],
            "warnings": [], "difficulty": {}, "content_approval": "author-reviewed (bilingual_approved); not independently verified"}
     if not vrep.importable:
         rep["validator_first_errors"] = vrep.errors[:10]
@@ -115,6 +123,7 @@ def run(pkg_dir, apply=False, approval_ref=None, allow_overlaps=False):
     have_anchors = {a for (a,) in db.session.query(ExpandedNote.anchor_id).filter(ExpandedNote.subject_id == subject_id)}
     existing = {(s, q) for (s, q) in db.session.query(Question.source, Question.source_qid).filter(Question.source_qid.isnot(None))}
     index = legacy._existing_index(subject_id)
+    native_ids = {i for (i,) in db.session.query(Question.id).filter(Question.syllabus_chapter_id.isnot(None))}
     refs = {e["ref"]: e for e in index if e["ref"]}
     rows, seen = [], []
     for r in recs:
@@ -125,14 +134,24 @@ def run(pkg_dir, apply=False, approval_ref=None, allow_overlaps=False):
             if aid not in have_anchors:
                 rep["unresolved_note_links"].append({"source_qid": r["source_qid"], "anchor_id": aid})
         shaped = _as_legacy_shape(r)
-        dup, why = legacy._dup_of(shaped, index)
-        if dup:
-            rep["overlaps"].append({"source_qid": r["source_qid"], "overlaps_question_id": dup["id"], "overlaps_ref": dup["ref"],
-                                    "reason": why})
+        def _bucket(eid):
+            # in collection scope only members of the native collection (or this batch, id None) can block
+            return rep["overlaps"] if (overlap_scope == "all" or eid is None or eid in native_ids) else rep["legacy_overlaps_informational"]
+        if overlap_scope == "collection":
+            # checked separately, so a legacy match can never mask a duplicate inside the collection
+            sets = [[e for e in index if e["id"] is None or e["id"] in native_ids],
+                    [e for e in index if e["id"] is not None and e["id"] not in native_ids]]
+        else:
+            sets = [index]
+        for part in sets:
+            dup, why = legacy._dup_of(shaped, part)
+            if dup:
+                _bucket(dup["id"]).append({"source_qid": r["source_qid"], "overlaps_question_id": dup["id"],
+                                           "overlaps_ref": dup["ref"], "reason": why})
         for old in r.get("related_old_package_refs") or []:
             if old in refs:
-                rep["overlaps"].append({"source_qid": r["source_qid"], "overlaps_question_id": refs[old]["id"], "overlaps_ref": old,
-                                        "reason": "related_old_package_refs names a question already in this database"})
+                _bucket(refs[old]["id"]).append({"source_qid": r["source_qid"], "overlaps_question_id": refs[old]["id"], "overlaps_ref": old,
+                                                 "reason": "related_old_package_refs names a question already in this database"})
         ch = chapters[r["chapter_slug"]]
         sb = subs.get(r.get("subtopic_slug"))
         row = Question(
