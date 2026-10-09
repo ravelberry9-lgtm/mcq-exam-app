@@ -173,7 +173,7 @@ def test_chapter_without_notes_gets_no_link(client, app, world, exam):
 
 
 # ── the real prepared packages (skipped when the content folder is not available) ──
-PREP = Path(os.environ.get("MCQ_PREPARED_DIR", ""))
+PREP = Path(os.environ["MCQ_PREPARED_DIR"]) if os.environ.get("MCQ_PREPARED_DIR") else Path("/nonexistent-prepared-dir")
 
 
 @pytest.mark.skipif(not PREP.is_dir(), reason="set MCQ_PREPARED_DIR to the 05_claude_import folder")

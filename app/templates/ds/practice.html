@@ -32,7 +32,8 @@
     <div style="font-weight:700;font-size:1.0625rem">{{ c.bi(q.q_en, q.q_te, 'stack') }}</div>
     {% if not q.q_en and q.q_te %}<p class="fallback fb-en" style="margin:0">{{ t('prac.lang_fallback_te') }}</p>{% endif %}
     {% if not q.q_te and q.q_en %}<p class="fallback fb-te" style="margin:0">{{ t('prac.lang_fallback_en') }}</p>{% endif %}
-    <span class="small muted">{% if q.is_pyq %}{{ t('prac.src.pyq') }}{% if q.pyq_year %} · {{ q.pyq_year }}{% endif %}{% if q.pyq_paper %} · {{ q.pyq_paper }}{% endif %} · {{ t('prac.src.unverified') }}{% elif q.source_type == 'chapter' %}{{ t('prac.src.chapter') }}{% else %}{{ t('prac.src.practice') }}{% endif %}{% if q.difficulty in ('E','M','H') %} · {{ t('prac.diff.' ~ q.difficulty) }}{% endif %}</span>
+    <span class="small muted">{% if q.is_pyq %}{{ t('prac.src.pyq') }}{% if q.pyq_year %} · {{ q.pyq_year }}{% endif %}{% if q.pyq_paper %} · {{ q.pyq_paper }}{% endif %} · {{ t('prac.src.unverified') }}{% elif q.source_type == 'chapter' %}{{ t('prac.src.chapter') }}{% else %}{{ t('prac.src.practice') }}{% endif %}{% if q.meta.diff4 %} · {{ t('prac.diff4.' ~ q.meta.diff4) }}{% elif q.difficulty in ('E','M','H') %} · {{ t('prac.diff.' ~ q.difficulty) }}{% endif %}</span>
+    {% if q.meta.author_reviewed %}<span class="small muted" data-testid="author-reviewed">{{ t('prac.author_reviewed') }}</span>{% endif %}
   </div>
   <fieldset class="opts" id="opts"><legend class="sr">{{ tl('prac.choose') }}</legend>
     {% for o in q.options %}
@@ -49,7 +50,10 @@
       <strong class="label">{{ t('prac.expl') }}</strong>
       {% if q.x_en or q.x_te %}<div>{{ c.bi(q.x_en, q.x_te, 'stack') }}</div>
       {% else %}<span class="muted small">{{ t('prac.no_expl') }}</span>{% endif %}
-      {% if q.note_url %}<a class="btn" data-testid="read-in-notes" data-exact="{{ 'true' if q.note_exact else 'false' }}" href="{{ q.note_url }}" style="margin-top:6px">{{ t('review.read_notes' if q.note_exact else 'review.read_notes_chapter') }}</a>
+      {% if q.meta.sources %}<div class="small" data-testid="source-links"><strong class="label">{{ t('prac.sources') }}</strong>
+        <ul style="margin:4px 0 0;padding-left:18px">{% for s in q.meta.sources %}<li><a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.host }}</a>{% if s.locator %} · {{ s.locator }}{% endif %}</li>{% endfor %}</ul></div>{% endif %}
+      {% if q.note_url %}<a class="btn" data-testid="read-in-notes" data-exact="{{ 'true' if q.note_exact else 'false' }}" href="{{ q.note_url }}" style="margin-top:6px">{{ t('review.read_notes_in' if q.note_expanded else ('review.read_notes' if q.note_exact else 'review.read_notes_chapter')) }}{% if q.note_title_en %} · {{ c.bi(q.note_title_en, q.note_title_te) }}{% endif %}</a>
+      {% for m in q.note_more %}<a class="small" data-testid="read-in-notes-more" href="{{ m.url }}">{{ t('review.read_notes_more') }}: {{ c.bi(m.title_en, m.title_te) }}</a>{% endfor %}
       {% elif note_count and chapter %}<a class="btn" href="{{ url_for('learn.notes', chapter_id=chapter.id) }}" style="margin-top:6px">{{ t('prac.open_notes') }}</a>{% endif %}
     </div>
   </div>

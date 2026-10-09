@@ -13,7 +13,7 @@ from sqlalchemy import case, func, or_
 from ..db import db
 from ..models import (
     Chapter, ChapterProgress, Exam, ExamPaper, ExamSection, ExamSyllabusItem,
-    Note, Question, Subject,
+    ExpandedNote, ExpandedNoteAppMap, Note, Question, Subject, SyllabusChapter,
 )
 
 # ── safe HTML for notes ─────────────────────────────────────────────
@@ -260,10 +260,14 @@ def note_link_for(q, cache=None):
     * None: the question has no chapter, or its chapter has no notes. An unrelated note is never substituted.
     ``cache`` is an optional dict that holds each chapter's section numbers across a page's questions."""
     from flask import url_for
+    cache = cache if cache is not None else {}
+    trace = q.source_trace if isinstance(q.source_trace, dict) else {}
+    anchors = ((trace.get("expanded_note") or {}).get("anchor_ids")) or []
+    if q.syllabus_chapter_id and anchors:
+        return _expanded_link(q, anchors, cache)
     cid = q.chapter_id
     if not cid:
         return None
-    cache = cache if cache is not None else {}
     if cid not in cache:
         cache[cid] = {n for (n,) in db.session.query(Note.section_num).filter(Note.chapter_id == cid).all()}
     sections = cache[cid]
@@ -273,6 +277,48 @@ def note_link_for(q, cache=None):
     if num is not None and num in sections:
         return {"url": url_for("learn.notes", chapter_id=cid, section=num), "exact": True}
     return {"url": url_for("learn.notes", chapter_id=cid), "exact": False}
+
+
+def _expanded_link(q, anchors, cache):
+    """Link for a question whose package names expanded-note anchors. Exact = the named anchors exist and are linked;
+    otherwise a chapter-level link to the expanded-notes index (labelled as such), or None when there are no expanded notes."""
+    from flask import url_for
+    ck = ("x", q.subject_id, q.syllabus_chapter_id)
+    if ck not in cache:
+        ch = db.session.get(SyllabusChapter, q.syllabus_chapter_id)
+        rows = ExpandedNote.query.filter_by(subject_id=q.subject_id, syllabus_chapter_id=q.syllabus_chapter_id).all()
+        cache[ck] = (ch.slug if ch else None, {r.anchor_id: r for r in rows})
+    slug, by_anchor = cache[ck]
+    if not slug or not by_anchor:
+        return None
+    found = [by_anchor[a] for a in anchors if a in by_anchor]
+    if not found:
+        return {"url": url_for("learn.expanded_index", slug=slug), "exact": False}
+    first, more = found[0], found[1:]
+    def one(n):
+        return {"url": url_for("learn.expanded_note", slug=slug, anchor_id=n.anchor_id) + "#" + n.anchor_id,
+                "title_en": n.heading_en, "title_te": n.heading_te or n.heading_en, "kind": n.kind, "section": n.package_section}
+    link = one(first)
+    return {"url": link["url"], "exact": True, "expanded": True, "title_en": link["title_en"], "title_te": link["title_te"],
+            "section": link["section"], "more": [one(n) for n in more]}
+
+
+def native_meta(q):
+    """Learner-facing facts for a question imported through ap-history-import-v1: its source links, the four-level difficulty and
+    the honest review label. Internal provenance (source ids, H, candidate ids, import refs) is never returned."""
+    from urllib.parse import urlparse
+    t = q.source_trace if isinstance(q.source_trace, dict) else {}
+    if not q.syllabus_chapter_id or not t.get("format_version"):
+        return {"native": False, "sources": [], "author_reviewed": False, "diff4": None}
+    sources = []
+    for s in t.get("sources") or []:
+        u = (s.get("url") or "").strip()
+        if u.startswith(("http://", "https://")):
+            host = urlparse(u).netloc.lower()
+            sources.append({"url": u, "host": host[4:] if host.startswith("www.") else host, "locator": (s.get("locator") or "").strip()})
+    d4 = t.get("difficulty_original")
+    return {"native": True, "sources": sources, "diff4": d4 if d4 in ("easy", "medium", "tough", "toughest") else None,
+            "author_reviewed": bool(t.get("content_approval_note")) and q.review_status != "fact_verified"}
 
 
 def question_view(q):
@@ -293,6 +339,9 @@ def question_view(q):
         "q_en": (q.question_en or "").strip(), "q_te": (q.question_te or "").strip(),
         "x_en": (q.explanation_en or "").strip(), "x_te": (q.explanation_te or "").strip(),
         "note_url": link["url"] if link else None, "note_exact": bool(link and link["exact"]),
+        "note_title_en": link.get("title_en") if link else None, "note_title_te": link.get("title_te") if link else None,
+        "note_more": (link or {}).get("more") or [], "note_expanded": bool(link and link.get("expanded")),
+        **{"meta": native_meta(q)},
     }
 
 

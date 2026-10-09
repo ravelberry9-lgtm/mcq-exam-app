@@ -9,7 +9,7 @@ from collections import defaultdict
 from sqlalchemy import func
 
 from ..db import db
-from ..models import Question, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusUnit
+from ..models import LEARNER_VISIBLE_STATUS, Question, Subject, SyllabusChapter, SyllabusSubtopic, SyllabusUnit
 
 SUBJECT_SLUG = "ap_history"
 
@@ -76,4 +76,7 @@ def chapter_detail(slug):
     subs = SyllabusSubtopic.query.filter_by(chapter_id=ch.id).order_by(SyllabusSubtopic.sort_order, SyllabusSubtopic.id).all()
     entry = _entry(ch, _question_index(sub.id) if ch.is_core else {})
     unit = db.session.get(SyllabusUnit, ch.unit_id) if ch.unit_id else None
-    return {"subject": sub, "chapter": ch, "unit": unit, "subtopics": subs, **entry}
+    from . import expanded_view as xv
+    native = Question.query.filter(Question.syllabus_chapter_id == ch.id, Question.review_status == LEARNER_VISIBLE_STATUS).count()
+    return {"subject": sub, "chapter": ch, "unit": unit, "subtopics": subs, **entry,
+            "has_expanded": xv.has_notes(ch), "native_count": native}

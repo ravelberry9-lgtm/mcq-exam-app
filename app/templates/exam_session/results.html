@@ -59,10 +59,16 @@
           <p class="muted">No explanation available yet · వివరణ ఇంకా అందుబాటులో లేదు.</p>
           {% endif %}
         </details>
+        {% if r.meta.native %}
+        <p class="small muted" data-testid="author-reviewed">{% if r.meta.diff4 %}{{ r.meta.diff4|capitalize }} · {% endif %}{% if r.meta.author_reviewed %}Author-reviewed · not independently verified · రచయిత సమీక్షించారు · స్వతంత్రంగా ధృవీకరించబడలేదు{% endif %}</p>
+        {% if r.meta.sources %}<div class="small" data-testid="source-links"><strong>Sources · ఆధారాలు</strong>
+          <ul>{% for s in r.meta.sources %}<li><a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.host }}</a>{% if s.locator %} · {{ s.locator }}{% endif %}</li>{% endfor %}</ul></div>{% endif %}
+        {% endif %}
         {% if r.note_link %}
         <a class="btn-secondary" data-testid="read-in-notes" data-exact="{{ 'true' if r.note_link.exact else 'false' }}" href="{{ r.note_link.url }}">
-          {% if r.note_link.exact %}Read this in notes · నోట్స్‌లో చదవండి{% else %}Read the chapter notes · అధ్యాయ నోట్స్ చదవండి{% endif %}
+          {% if r.note_link.expanded %}Read this in the expanded notes · విస్తృత నోట్స్‌లో చదవండి — {{ r.note_link.title_en }} / {{ r.note_link.title_te }}{% elif r.note_link.exact %}Read this in notes · నోట్స్‌లో చదవండి{% else %}Read the chapter notes · అధ్యాయ నోట్స్ చదవండి{% endif %}
         </a>
+        {% for m in r.note_link.more or [] %}<a class="btn-secondary" data-testid="read-in-notes-more" href="{{ m.url }}">Also relevant · ఇవీ సంబంధితం — {{ m.title_en }} / {{ m.title_te }}</a>{% endfor %}
         {% endif %}
       </div>
     </div>

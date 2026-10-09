@@ -1,0 +1,50 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% macro body(v, aid, heading_level=2) -%}
+  <article id="{{ aid }}" data-anchor="{{ aid }}" style="display:flex;flex-direction:column;gap:10px">
+    <h2 style="margin:0">{% if v.row.package_section %}<span class="small muted">{{ t('xn.section', n=v.row.package_section) }}</span> {% endif %}{{ c.bi(v.row.heading_en, v.row.heading_te, 'stack') }}</h2>
+    <div class="note-body en" lang="en">{% for p in v.paras_en %}<p>{{ p }}</p>{% endfor %}</div>
+    <div class="note-body te" lang="te">{% for p in v.paras_te %}<p>{{ p }}</p>{% endfor %}</div>
+    {% if v.sources %}
+    <div class="small"><strong class="label">{{ t('xn.sources') }}</strong>
+      <ul style="margin:4px 0 0;padding-left:18px">
+      {% for s in v.sources %}<li>{% if s.label %}{{ s.label }}{% if s.url %} · {% endif %}{% endif %}{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" data-testid="source-link">{{ s.url }}</a>{% if s.locator %} ({{ s.locator }}){% endif %}{% endif %}</li>{% endfor %}
+      </ul></div>
+    {% endif %}
+  </article>
+{%- endmacro %}
+{% block title %}{{ d.view.row.heading_en }} · {{ tl('xn.title') }} · {{ app_title }}{% endblock %}
+{% block topbar %}
+  <div class="row">{{ c.learnlink() }}</div>
+  <div class="row between">
+    <a class="back" href="{{ url_for('learn.expanded_index', slug=ch.slug) }}"><span aria-hidden="true">‹</span> {{ t('xn.title') }}</a>
+    {{ c.langswitch(lang_pref) }}
+  </div>
+{% endblock %}
+{% block content %}
+  {{ body(d.view, anchor_id) }}
+  {% if d.connected_core %}
+  <section aria-labelledby="cc" style="margin-top:14px"><h3 id="cc" class="label">{{ t('xn.connected') }}</h3>
+    <ul style="padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      {% for n in d.connected_core %}<li><a class="card" data-testid="connected-core" href="{{ url_for('learn.expanded_note', slug=ch.slug, anchor_id=n.anchor_id) }}#{{ n.anchor_id }}"><span class="small muted">{{ t('xn.section', n=n.package_section) }}</span> {{ c.bi(n.heading_en, n.heading_te) }}</a></li>{% endfor %}
+    </ul></section>
+  {% endif %}
+  {% if d.expanded %}
+  <section aria-labelledby="mo" style="margin-top:18px;display:flex;flex-direction:column;gap:14px"><h3 id="mo" class="label">{{ t('xn.more') }}</h3>
+    {% for v in d.expanded %}<div class="card">{{ body(v, v.row.anchor_id) }}</div>{% endfor %}
+  </section>
+  {% endif %}
+  {% if d.related_old %}
+  <section style="margin-top:14px"><h3 class="label">{{ t('xn.related_old') }}</h3>
+    {% for r in d.related_old %}<a class="card" href="{{ url_for('learn.notes', chapter_id=r.chapter_id, section=r.section) }}">{{ t('xn.related_old') }} {{ r.section }}</a>{% endfor %}
+  </section>
+  {% endif %}
+{% endblock %}
+{% block bottom %}
+<div class="actionbar">
+  {% if d.prev %}<a class="iconbtn" href="{{ url_for('learn.expanded_note', slug=ch.slug, anchor_id=d.prev.anchor_id) }}#{{ d.prev.anchor_id }}" aria-label="{{ tl('xn.prev') }}" rel="prev">{{ c.icon('M15 6l-6 6 6 6') }}</a>{% endif %}
+  <a class="btn grow" href="{{ url_for('learn.expanded_index', slug=ch.slug) }}">{{ t('xn.title') }}</a>
+  {% if d.next %}<a class="iconbtn" href="{{ url_for('learn.expanded_note', slug=ch.slug, anchor_id=d.next.anchor_id) }}#{{ d.next.anchor_id }}" aria-label="{{ tl('xn.next') }}" rel="next">{{ c.icon('M9 6l6 6-6 6') }}</a>{% endif %}
+</div>
+{% endblock %}

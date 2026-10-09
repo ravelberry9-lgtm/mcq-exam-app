@@ -22,7 +22,9 @@ DRAFT_DIR_NAME = "02_drafts"
 SOURCES = ("codex_generated", "app_master", "hanumanthrao", "pyq_compiled", "verified_pyq")
 DIFFICULTIES = ("easy", "medium", "tough", "toughest")
 OPTION_KEYS = ("a", "b", "c", "d")
-QID_RE = re.compile(r"^APH-U[1-5]-C(0[1-9]|[12][0-9]|3[01])-B\d{2}-Q\d{3,4}$")
+# batch part: B20 (short) or B20261009 (dated), optionally with a revision suffix such as R2, R3 or C (ids are kept verbatim, never rewritten);
+# the chapter part may be written C1 or C01
+QID_RE = re.compile(r"^APH-U[1-5]-C(0?[1-9]|[12][0-9]|3[01])-B\d{2,8}(?:[A-Z]\d{0,2})?-Q\d{3,4}$")
 DRAFT_QID_RE = re.compile(r"^C\d{2}-B\d{2}-\d{3,4}$")
 # ids kept from the prepared (F-shape) packages by the converter: the content team's own import_ref
 CONVERTED_QID_RE = re.compile(r"^aph-u[1-5]c(0[1-9]|[12][0-9]|3[01])-(AP9-\d{5}|B\d{3})$")
@@ -35,7 +37,7 @@ def _proper_name_like(text):
     return bool(words) and all(w[0].isupper() or w[0].isdigit() for w in words if w[0].isalnum())
 
 
-CODE_ONLY = re.compile(r"^[\sA-Da-d0-9,\-–.;()]+$")
+CODE_ONLY = re.compile(r"^[\sA-Ea-e0-9,\-–.;()]+$")      # pairing codes such as "1–c, 2–e" (up to five items) are language-neutral
 REQUIRED = ("source", "source_qid", "batch_id", "source_file", "chapter_slug", "coverage_scope", "difficulty", "qtype", "question_te",
             "question_en", "options", "correct_answer", "explanation_te", "explanation_en", "review_status")
 COVERAGE = ("direct", "supplementary_context")

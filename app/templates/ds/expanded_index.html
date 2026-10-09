@@ -1,0 +1,34 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% block title %}{{ ch.title_en }} · {{ tl('xn.title') }} · {{ app_title }}{% endblock %}
+{% block topbar %}
+  <div class="row">{{ c.learnlink() }}</div>
+  <div class="row between">
+    <a class="back" href="{{ url_for('learn.ap_history_chapter', slug=ch.slug) }}"><span aria-hidden="true">‹</span> {{ c.bi(ch.title_en, ch.title_te) }}</a>
+    {{ c.langswitch(lang_pref) }}
+  </div>
+  <h1>{{ t('xn.title') }}</h1>
+{% endblock %}
+{% block content %}
+{% if not d.total %}
+  <div class="card"><span class="muted">{{ t('xn.empty') }}</span></div>
+{% else %}
+  <p class="small muted">{{ t('xn.draft_status') }}</p>
+  <p class="small muted">{{ t('xn.numbers_note') }}</p>
+  {% for kind, label in [('core','xn.core'),('group1','xn.group1'),('revision','xn.revision'),('addendum','xn.addendum')] %}
+  {% if d.groups[kind] %}
+  <section aria-labelledby="g-{{ kind }}">
+    <h2 id="g-{{ kind }}" class="label" style="margin:14px 0 8px">{{ t(label) }}</h2>
+    <ol style="display:flex;flex-direction:column;gap:8px;padding-left:0;list-style:none;margin:0">
+      {% for n in d.groups[kind] %}
+      <li><a class="card" data-anchor="{{ n.anchor_id }}" href="{{ url_for('learn.expanded_note', slug=ch.slug, anchor_id=n.anchor_id) }}#{{ n.anchor_id }}">
+        {% if n.package_section %}<span class="small muted">{{ t('xn.section', n=n.package_section) }}</span>{% endif %}
+        {{ c.bi(n.heading_en, n.heading_te) }}</a></li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+  {% endfor %}
+{% endif %}
+{% endblock %}

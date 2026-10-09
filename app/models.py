@@ -264,6 +264,49 @@ class ChapterSourceMap(db.Model):
     __table_args__ = (db.UniqueConstraint("subject_id", "source_chapter_num", "section_num", "syllabus_chapter_id", "relation"),)
 
 
+class ExpandedNote(db.Model):
+    """Package notes (core sections, addendum items, Group-1 discussions) kept SEPARATE from the 17 legacy ``notes`` rows.
+    Keyed by the canonical syllabus chapter (portable across databases) and a stable ``anchor_id`` such as CH01-S14.
+    ``package_section`` is the section number inside the package and is never an app note section number."""
+    __tablename__ = "expanded_notes"
+    id = db.Column(db.Integer, primary_key=True)
+    subject_id = db.Column(db.Integer, db.ForeignKey("subjects.id", ondelete="CASCADE"), nullable=False, index=True)
+    syllabus_chapter_id = db.Column(db.Integer, db.ForeignKey("syllabus_chapters.id", ondelete="CASCADE"), nullable=False, index=True)
+    anchor_id = db.Column(db.String(32), nullable=False)
+    kind = db.Column(db.String(20), nullable=False)          # core | addendum | addendum_group1 | group1 | revision
+    package_section = db.Column(db.Integer)                  # core sections only
+    sort_order = db.Column(db.Integer, default=0)
+    heading_en = db.Column(db.String(300), nullable=False)
+    heading_te = db.Column(db.String(300))
+    body_en = db.Column(db.Text)
+    body_te = db.Column(db.Text)
+    sources = db.Column(db.JSON)                             # [{"label": "...", "url": "..."}]
+    core_connections = db.Column(db.JSON)                    # anchor ids of core sections an addendum item extends
+    package_batch_id = db.Column(db.String(64))
+    content_hash = db.Column(db.String(32))
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    __table_args__ = (db.UniqueConstraint("subject_id", "anchor_id", name="uq_expanded_notes_anchor"),
+                      db.CheckConstraint("kind IN ('core','addendum','addendum_group1','group1','revision')", name="ck_expanded_notes_kind"))
+
+
+class ExpandedNoteAppMap(db.Model):
+    """Explicit, reviewable mapping from a package note anchor to an EXISTING app note section (``notes.section_num`` of a
+    legacy source chapter, identified by chapter number, never by database id). Rows start as ``draft``; learner pages only use
+    ``approved`` rows. Package section numbers are never reused as app section numbers."""
+    __tablename__ = "expanded_note_app_map"
+    id = db.Column(db.Integer, primary_key=True)
+    expanded_note_id = db.Column(db.Integer, db.ForeignKey("expanded_notes.id", ondelete="CASCADE"), nullable=False, index=True)
+    source_chapter_num = db.Column(db.Integer, nullable=False)
+    app_section_num = db.Column(db.Integer, nullable=False)
+    relation = db.Column(db.String(12), nullable=False, default="related")   # same_topic | related
+    status = db.Column(db.String(12), nullable=False, default="draft")       # draft | approved
+    reason = db.Column(db.String(512))
+
+    __table_args__ = (db.UniqueConstraint("expanded_note_id", "source_chapter_num", "app_section_num", name="uq_expanded_note_app_map"),
+                      db.CheckConstraint("status IN ('draft','approved')", name="ck_expanded_note_app_map_status"))
+
+
 # ─── Exam definitions (curated views over the subject library) ──
 
 class Exam(db.Model):

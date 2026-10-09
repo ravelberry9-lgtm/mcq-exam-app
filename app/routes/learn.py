@@ -10,6 +10,7 @@ from ..db import db
 from ..models import Chapter, ChapterProgress, ExamSection, Note, Subject
 from ..services import learn as svc
 from ..services import syllabus_view as syl
+from ..services import expanded_view as xv
 from ..services.ui_text import UI, t, tl
 
 bp = Blueprint("learn", __name__, url_prefix="/learn")
@@ -49,6 +50,44 @@ def ap_history():
 def ap_history_chapter(slug):
     data = syl.chapter_detail(slug) or abort(404)
     return render_template("ds/syllabus_chapter.html", d=data)
+
+
+@bp.route("/ap-history/<slug>/notes")
+def expanded_index(slug):
+    ch = xv.chapter_by_slug(slug) or abort(404)
+    return render_template("ds/expanded_index.html", d=xv.index(ch), ch=ch)
+
+
+@bp.route("/ap-history/<slug>/notes/<anchor_id>")
+def expanded_note(slug, anchor_id):
+    ch = xv.chapter_by_slug(slug) or abort(404)
+    d = xv.page(ch, anchor_id) or abort(404)
+    return render_template("ds/expanded_note.html", d=d, ch=ch, anchor_id=anchor_id)
+
+
+@bp.route("/ap-history/<slug>/practice")
+def canonical_practice(slug):
+    """Practice for the questions imported through ap-history-import-v1 (only author-reviewed, learner-visible ones)."""
+    ch = xv.chapter_by_slug(slug) or abort(404)
+    sub = request.args.get("subtopic") or None
+    qs = xv.native_questions(ch, sub)
+    if qs is None:
+        abort(404)
+    total = len(qs)
+    i = request.args.get("i", 1, type=int)
+    extra = {"subtopic": sub} if sub else {}
+    ctx = dict(chapter=None, subject=db.session.get(Subject, ch.subject_id), title_en=ch.title_en, title_te=ch.title_te, note_count=0,
+               mcq_count=total, scope=f"c-{ch.slug}" + (f"-{sub}" if sub else ""),
+               back_url=url_for("learn.ap_history_chapter", slug=slug), back_label="prac.back_chapter",
+               restart_url=url_for("learn.canonical_practice", slug=slug, i=1, new=1, **extra))
+    if total == 0:
+        return render_template("ds/practice.html", **ctx, total=0, q=None, summary=False, i=1)
+    if i > total:
+        return render_template("ds/practice.html", **ctx, total=total, q=None, summary=True, i=i)
+    i = max(1, i)
+    return render_template("ds/practice.html", **ctx, total=total, q=svc.question_view(qs[i - 1]), summary=False, i=i,
+                           next_url=url_for("learn.canonical_practice", slug=slug, i=i + 1, **extra), is_last=(i == total),
+                           fresh=bool(request.args.get("new")))
 
 
 @bp.route("/subject/<slug>")
