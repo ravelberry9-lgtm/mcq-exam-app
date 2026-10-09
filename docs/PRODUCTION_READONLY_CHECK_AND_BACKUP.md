@@ -10,7 +10,7 @@ Copy the Postgres service's **public** connection URL from Railway (service → 
 
 ## 2. Read-only snapshot of production (answers: Alembic revision and row counts)
 `python scripts\prod_ops\readonly_snapshot.py --label PRODUCTION --out prod_before.json --inventory-csv pre_change_inventory.csv`
-The session is opened read-only on the server, only SELECTs run, and the URL/host/user/password are never printed (tests prove this). Paste back the printed summary (revision, server version, row counts, column flags, fingerprints). Expected from the Railway database UI checks of 2026-10-09: `alembic_version` = `a7b8c9d0e1f2`, PostgreSQL 18.6, 7,778 questions (AP History 1,701), 980 notes, 194 chapters, canonical rows 5/35/187/317, no `expanded_notes` table, 64 older Chapter 1 rows. The summary also prints `older C1 rows` (do they carry a canonical chapter id) and the questions per subject. Anything different changes the plan: tell me before going on.
+The session is opened read-only on the server, only SELECTs run, and the URL/host/user/password are never printed (tests prove this). Paste back the printed summary (revision, server version, row counts, column flags, fingerprints). Superseded: the read-only snapshot and the verified backup were completed by another route on 2026-10-09 (see the plan, section A). This runbook remains valid for a refresh before deployment.
 Keep `prod_before.json` (and `pre_change_inventory.csv`) as the pre-change record.
 
 ## 3. Backup tool check

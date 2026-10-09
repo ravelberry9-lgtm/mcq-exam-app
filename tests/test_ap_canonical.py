@@ -323,10 +323,13 @@ def test_seeding_changes_no_existing_content_and_learn_pages_are_identical(hist,
     canon.seed(); canon.seed_subtopics(subs.expanded())
     assert [Chapter.query.count(), Note.query.count(), Question.query.count()] == before_db
     after = snap()
-    # the only intended visible change: the subject page gains one link to the canonical outline
-    card = re.compile(rb'\s*<a class="card" href="/learn/ap-history" data-testid="canonical-outline">.*?</a>', re.S)
-    assert b"canonical-outline" in after["/learn/subject/ap_history"][1]
-    after["/learn/subject/ap_history"] = (after["/learn/subject/ap_history"][0], card.sub(b"", after["/learn/subject/ap_history"][1]))
+    # the only intended visible change (live commit 709b0fc): once the canonical structure exists, the AP History subject page
+    # sends learners to the canonical outline instead of the legacy chapter list
+    # and the /learn/ hub's AP History tile now shows the canonical chapter/question summary
+    assert before.pop("/learn/")[0] == 200 and after.pop("/learn/")[0] == 200
+    assert before.pop("/learn/subject/ap_history")[0] == 200
+    code, body = after.pop("/learn/subject/ap_history")
+    assert code == 302 and b"/learn/ap-history" in body
     assert after == before
     assert all(code == 200 for code, _ in before.values())
 
