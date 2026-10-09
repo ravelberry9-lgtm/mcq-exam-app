@@ -1,6 +1,6 @@
-# Chapter 1 closure package: preparation handoff (no staging change)
+# Chapter 1 closure package: preparation handoff (superseded in part by the production change plan; nothing run on production)
 
-Package: `aph-u1-c01-closure-20261009`, 129 questions, `questions.jsonl` sha256 `1f1ad6fd94259c93f707b58fbb010d7b1fa877d441811cab5c5b9274cdcc6d73`. The frozen package was not edited. Nothing was imported, seeded or deployed on staging.
+Package: `aph-u1-c01-closure-20261009`, 129 questions, `questions.jsonl` sha256 `1f1ad6fd94259c93f707b58fbb010d7b1fa877d441811cab5c5b9274cdcc6d73`. The frozen package was not edited. Nothing was imported, seeded or deployed on production.
 
 ## 1. `note_anchors.json` versus the addendum text
 Title correction: my progress message said four mismatches; the correct number is **three** real title differences (A05, A07, A10). Nine other titles differ only in capitalisation (the text file is upper case) and are not discrepancies. The "four" was my miscount.
@@ -25,7 +25,7 @@ Core connections: `note_anchors.json` has them for A01–A03 (identical to the t
 Core anchors S01–S50: headings and section numbers all match the text. The importer treats the addendum text as authoritative and reports these as warnings; a corrected `note_anchors.json` is a package-owner decision (new frozen version, new hash).
 
 ## 2. Overlap decisions (cross-package only)
-Neither the earlier 64-question set (`aph-u1c01-…` import refs) nor the 129 set exists in any database I can inspect: the staging mirror used for testing has no `import_ref` or `source_qid` columns yet, and nothing was applied to staging. Both overlaps are therefore recorded as **cross-package overlaps only**; no retain/skip action is needed unless the 64-set is ever applied. The overlap guard stays on (apply is blocked until a human decides) and was not bypassed.
+Neither the earlier 64-question set (`aph-u1c01-…` import refs) nor the 129 set exists in any database I can inspect: the local test database used had no `import_ref` or `source_qid` columns yet, and nothing was applied to production (whose contents I cannot inspect). Both overlaps are therefore recorded as **cross-package overlaps only**; no retain/skip action is needed unless the 64-set is ever applied. The overlap guard stays on (apply is blocked until a human decides) and was not bypassed.
 
 | New question | Earlier question | Match | Difference | If both ever present, proposed decision (for approval) |
 |---|---|---|---|---|
@@ -33,11 +33,12 @@ Neither the earlier 64-question set (`aph-u1c01-…` import refs) nor the 129 se
 | APH-U1-C1-B20261009-Q099 "Which Ashokan edict names the Andhras?" | aph-u1c01-B006 | same stem, options, answer and Telugu text | none; **not** in `related_old_package_refs` | retain one only; propose retaining the 129-set version and asking the package owner to add the link |
 The package also names 29 older refs as related (superseded) items; the same rule would apply. Legacy 380 questions: no overlap, no action.
 
-## 3. Staging Alembic revision
-Not confirmed. This session has no authorized database access (no credentials on the linked computer, the cloud cannot reach the host, and `/healthz` does not expose a revision). Nothing was run against staging. Read-only check for you, which prints only the revision (do not paste the URL):
-`set DATABASE_URL=<Railway STAGING Postgres URL>` then `python -m alembic current`
+## 3. Production Alembic revision (the only Railway environment)
+Not confirmed. This session has no authorized database access (no credentials on the linked computer, the cloud cannot reach the host, and `/healthz` does not expose a revision). Nothing was run against production. Read-only check for you, which prints only the revision (do not paste the URL):
+`set DATABASE_URL=<Railway PRODUCTION Postgres URL>` then `python -m alembic current`
+(this is the PRODUCTION database)
 
-Migration chain (repo head `b8c9d0e1f2a3`): `c68decc8a6c3` baseline → `a1b2c3d4e5f6` → `b2c3d4e5f6a7` → `c3d4e5f6a7b8` → `d4e5f6a7b8c9` (question note link/provenance; my earlier migration) → `f6a7b8c9d0e1` (canonical syllabus + provenance columns) → `a7b8c9d0e1f2` (microtopics) → `b8c9d0e1f2a3` (expanded notes). The scratch mirror was at `c3d4e5f6a7b8`. Staging was last known to be at `1303cf0` code, which includes `d4e5f6a7b8c9`, but that is unverified.
+Migration chain (repo head `b8c9d0e1f2a3`): `c68decc8a6c3` baseline → `a1b2c3d4e5f6` → `b2c3d4e5f6a7` → `c3d4e5f6a7b8` → `d4e5f6a7b8c9` (question note link/provenance; my earlier migration) → `f6a7b8c9d0e1` (canonical syllabus + provenance columns) → `a7b8c9d0e1f2` (microtopics) → `b8c9d0e1f2a3` (expanded notes). The local test database was at `c3d4e5f6a7b8`; production's revision is unverified.
 
 Required steps, in this order, **not executed**, each needing your approval:
 1. `python -m alembic upgrade head`
@@ -52,10 +53,10 @@ A validator warning does not show a misspelling. Both are alternative forms the 
 No change made. Importing is not blocked by these. Decision needed: keep as is, or normalise in a new package version.
 
 ## 5. Handoff facts
-- Branch `feature/ap-history-v1-native`, implementation commit `3322666` (on canonical `842a696`, on staging `1303cf0`); this handoff doc is committed on top, see `git log`.
+- Branch `feature/ap-history-v1-native`, implementation commit `3322666` (on canonical `842a696`, on `1303cf0`); this handoff doc is committed on top, see `git log`.
 - Bundle `ap-history-v1-native.bundle` in `mcq_app\_review`.
 - Migration dependencies: `b8c9d0e1f2a3` ← `a7b8c9d0e1f2` ← `f6a7b8c9d0e1` ← `d4e5f6a7b8c9` ← `c3d4e5f6a7b8`. The importer needs the canonical structure and subtopics seeded and the package notes loaded first.
-- Exact preview commands (write nothing; run only against a scratch or, after approval, staging):
+- Exact preview commands (write nothing; run against a local test database, or against production only after approval):
   `python scripts/import_ap_v1.py notes C:\Users\AashrithaNagababu\Documents\Codex\AP_History_Working\05_claude_import\aph-u1-c01-closure-20261009`
   `python scripts/import_ap_v1.py questions C:\Users\AashrithaNagababu\Documents\Codex\AP_History_Working\05_claude_import\aph-u1-c01-closure-20261009`
   The package path must sit under a folder named `05_claude_import`. Without `--apply` both commands only print a report.

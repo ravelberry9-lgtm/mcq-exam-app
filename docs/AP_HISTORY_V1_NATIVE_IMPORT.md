@@ -1,6 +1,6 @@
 # Native `ap-history-import-v1` import (notes collection + questions)
 
-Branch `feature/ap-history-v1-native`. Scratch-tested only; **no staging import has been run**. A staging import needs separate approval.
+Branch `feature/ap-history-v1-native`. Tested only on isolated local databases. **Nothing has been run against production** (the only Railway environment). Any production change needs separate approval; see `AP_HISTORY_C1_PRODUCTION_CHANGE_PLAN.md`.
 
 ## Order of operations (any database)
 1. Alembic to head (`b8c9d0e1f2a3` adds `expanded_notes` and `expanded_note_app_map`; additive).
@@ -10,7 +10,7 @@ Branch `feature/ap-history-v1-native`. Scratch-tested only; **no staging import 
 Preview is the default. Apply is add-only, single transaction, idempotent. Questions refuse to apply while any question names an expanded-note anchor that is not loaded, or while an overlap with an existing question is unreconciled (`--allow-overlaps` after a human decision). Nothing is deleted or updated.
 
 ## Canonical mapping
-`chapter_slug` / `subtopic_slug` / `secondary_chapters` / `microtopic_slugs` are resolved **by slug in the target database** and checked against `ap-history-taxonomy-v1` in code. Package, app-chapter and database ids are never trusted (canonical Chapter 1 is app chapter 2 on staging; ids differ per database).
+`chapter_slug` / `subtopic_slug` / `secondary_chapters` / `microtopic_slugs` are resolved **by slug in the target database** and checked against `ap-history-taxonomy-v1` in code. Package, app-chapter and database ids are never trusted (canonical Chapter 1 is app chapter 2 in the local test data; ids differ per database).
 
 ## Where package fields land
 | Package field | Stored in |

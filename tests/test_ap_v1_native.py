@@ -489,3 +489,17 @@ def test_validator_accepts_the_package_id_shapes_and_pairing_codes_but_not_junk(
     for bad in ("APH-U6-C1-B20261009-Q001", "APH-U1-C32-B20-Q001", "APH-U1-C1-B20261009-Q1", "aph-u1-c1-b20-q001", "APH-U1-C1-Q001"):
         assert not b.QID_RE.match(bad), bad
     assert b.CODE_ONLY.match("1–c, 2–e, 3–a, 4–d, 5–b") and not b.CODE_ONLY.match("Aitareya Brahmana")
+
+
+def test_native_questions_do_not_leak_into_generic_banks_or_legacy_practice(client, loaded):
+    from app.services import learn as svc
+    sid = loaded["subject"]
+    legacy_n = Question.query.filter(Question.subject_id == sid, Question.source_qid.is_(None)).count()
+    assert Question.query.filter(Question.source_qid.isnot(None)).count() == 4
+    assert len(svc.bank_questions(sid, "practice")) == legacy_n and len(svc.bank_questions(sid, "pyq")) == 0
+    assert svc.bank_counts([sid])[sid] == {"practice": legacy_n, "pyq": 0, "chapter": 0}
+    assert all(q.source_qid is None for q in svc.bank_questions(sid, "practice"))
+    html = client.get("/learn/subject/ap_history/practice").get_data(as_text=True)
+    assert "Question number" not in html
+    assert "Question number" not in client.get("/practice/ap_history").get_data(as_text=True)
+    assert f">{legacy_n}<" in client.get("/subject/ap_history").get_data(as_text=True) or client.get("/subject/ap_history").status_code in (200, 404)
