@@ -9,6 +9,7 @@ from flask import Blueprint, abort, jsonify, redirect, render_template, request,
 from ..db import db
 from ..models import Chapter, ChapterProgress, ExamSection, Note, Subject
 from ..services import learn as svc
+from ..services import science_content
 from ..services import syllabus_view as syl
 from ..services import expanded_view as xv
 from ..services import collection_switch as csw
@@ -44,7 +45,10 @@ bp.add_app_template_global(tl, "tl")
 @bp.route("/")
 def hub():
     data = svc.hub()
-    return render_template("ds/learn.html", data=data, resume=svc.resume_for(_device_id()))
+    science_available = any(science_content.load_book(item["slug"])
+                            for item in science_content.CHAPTERS)
+    return render_template("ds/learn.html", data=data, resume=svc.resume_for(_device_id()),
+                           science_available=science_available)
 
 
 @bp.route("/section/<int:section_id>")

@@ -1,0 +1,16 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% block title %}Science & Technology · {{ app_title }}{% endblock %}
+{% block topbar %}<div class="row between"><h1>{{ c.bi('Science & Technology', 'సైన్స్ & టెక్నాలజీ') }}</h1>{{ c.langswitch(lang_pref) }}</div>{% endblock %}
+{% block content %}
+<p>{{ c.bi('Reviewed bilingual textbooks arranged by syllabus chapter.', 'సిలబస్ అధ్యాయాల వారీగా సమీక్షించిన bilingual textbooks.') }}</p>
+{% for item in chapters %}
+<a class="card" href="{{ url_for('science.chapter', slug=item.slug) }}">
+  <span class="label">{{ c.bi(item.part_en, item.part_te) }}</span>
+  <h2>{{ c.bi(item.title_en, item.title_te, 'stack') }}</h2>
+  <span class="small muted">{{ item.lessons }} lessons · {{ item.questions.total }} mapped MCQs</span>
+</a>
+{% else %}<p>{{ c.bi('No approved Science textbook is installed.', 'ఆమోదించిన Science textbook ఇంకా అందుబాటులో లేదు.') }}</p>{% endfor %}
+{% endblock %}
+

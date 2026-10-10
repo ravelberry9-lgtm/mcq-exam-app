@@ -67,6 +67,7 @@ class Config:
 
     # Content sources (for migration)
     LEGACY_DIR = BASE_DIR / "_legacy"
+    TEXTBOOK_ROOT = BASE_DIR / "content" / "textbooks"
 
 
 def validate_production_config(cfg) -> None:

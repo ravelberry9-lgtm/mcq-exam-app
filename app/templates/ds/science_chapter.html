@@ -1,0 +1,18 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% block title %}{{ meta.title_en }} · {{ app_title }}{% endblock %}
+{% block topbar %}<div class="row between"><a href="{{ url_for('science.index') }}">‹ {{ c.bi('Science & Technology', 'సైన్స్ & టెక్నాలజీ') }}</a>{{ c.langswitch(lang_pref) }}</div><h1>{{ c.bi(meta.title_en, meta.title_te, 'stack') }}</h1>{% endblock %}
+{% block content %}
+<a class="card hero" href="{{ url_for('science.textbook_index', slug=meta.slug) }}"><strong>{{ c.bi('Read the textbook', 'పాఠ్యగ్రంథాన్ని చదవండి') }}</strong><span class="small muted">{{ book.lessons|length }} lessons · Group 2 foundation + Group 1 depth</span></a>
+<div class="card">
+  <h2>{{ c.bi('Mapped question bank', 'అనుసంధానించిన ప్రశ్నల నిధి') }}</h2>
+  <p>{{ questions.approved }} MCQs · {{ c.bi('individually reviewed and bilingual approved', 'వ్యక్తిగతంగా సమీక్షించి bilingual approval ఇచ్చినవి') }}</p>
+  {% if questions.approved %}<a class="btn primary" href="{{ url_for('science.practice', slug=meta.slug) }}">{{ c.bi('Start practice', 'Practice ప్రారంభించండి') }}</a>{% endif %}
+  <a class="btn" href="{{ url_for('science.practice', slug=meta.slug, collection='integrative') }}">{{ c.bi('Integrated concept questions', 'సమగ్ర భావనాత్మక ప్రశ్నలు') }}</a>
+  <a class="btn" href="{{ url_for('science.practice', slug=meta.slug, collection='current-affairs') }}">{{ c.bi('Current affairs links', 'సమకాలీన అంశాల ప్రశ్నలు') }}</a>
+</div>
+<h2>{{ c.bi('Lessons', 'పాఠాలు') }}</h2>
+{% for lesson in book.lessons %}<div class="card"><a href="{{ url_for('science.textbook_lesson', slug=meta.slug, lesson_id=lesson.id) }}">{{ c.bi(lesson.title.en, lesson.title.te) }}</a><a class="small" href="{{ url_for('science.practice', slug=meta.slug, lesson=lesson.id) }}">{{ c.bi('Practice this lesson', 'ఈ పాఠం practice చేయండి') }}</a></div>{% endfor %}
+{% endblock %}
+

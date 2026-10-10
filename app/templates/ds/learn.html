@@ -12,6 +12,10 @@
   {% endif %}
 {% endblock %}
 {% block content %}
+{% if science_available %}<a class="card" href="{{ url_for('science.index') }}" data-science-subject="science-technology">
+  <div class="row between"><h2>{{ c.bi('Science & Technology', 'సైన్స్ & టెక్నాలజీ') }}</h2>{{ c.tag('ok', t('common.available')) }}</div>
+  <span class="small muted">{{ c.bi('Textbooks, lesson practice and integrated MCQs', 'పాఠ్యగ్రంథాలు, పాఠాల practice మరియు సమగ్ర MCQs') }}</span>
+</a>{% endif %}
 {% if resume %}
   {% set rt = resume.title %}
   <a class="card hero" href="{{ url_for('learn.notes', chapter_id=resume.chapter.id, section=resume.progress.current_section) }}" data-testid="resume">
