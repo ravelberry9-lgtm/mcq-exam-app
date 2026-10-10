@@ -31,6 +31,8 @@ def test_science_textbook_navigation(client):
     assert b'id="reading-mode"' in lesson.data
     assert b'id="study-level"' not in lesson.data
     assert b'class="textbook-copy en"' in lesson.data
+    assert b'class="langsw"' not in lesson.data
+    assert b'class="bottomnav"' not in lesson.data
     assert b"biotic factors" in lesson.data
     assert b"st3-l02-population-community-succession" in lesson.data
 
@@ -52,6 +54,8 @@ def test_science_practice_uses_approved_sidecar(client):
     assert b'data-science-question' in page.data
     assert b'<details class="card science-explanation"' in page.data
     assert b'Show explanation' in page.data
+    assert b'class="langsw"' not in page.data
+    assert b'class="bottomnav"' not in page.data
     assert b"1 / 1360" in page.data
     lesson = client.get(
         f"/learn/science-technology/{SLUG}/practice"

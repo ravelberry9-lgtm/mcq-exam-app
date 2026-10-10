@@ -2,7 +2,7 @@
 {% import "ds/_c.html" as c %}
 {% set nav_active = 'learn' %}
 {% block title %}{{ meta.title_en }} · {{ app_title }}{% endblock %}
-{% block topbar %}<div class="row between"><a href="{{ url_for('science.index') }}">‹ {{ c.bi('Science & Technology', 'సైన్స్ & టెక్నాలజీ') }}</a>{{ c.langswitch(lang_pref) }}</div><h1>{{ c.bi(meta.title_en, meta.title_te, 'stack') }}</h1>{% endblock %}
+{% block topbar %}<a class="back" href="{{ url_for('science.index') }}">‹ {{ c.bi('Science & Technology', 'సైన్స్ & టెక్నాలజీ') }}</a><h1>{{ c.bi(meta.title_en, meta.title_te, 'stack') }}</h1>{% endblock %}
 {% block content %}
 <a class="card hero" href="{{ url_for('science.textbook_index', slug=meta.slug) }}"><strong>{{ c.bi('Read the textbook', 'పాఠ్యగ్రంథాన్ని చదవండి') }}</strong><span class="small muted">{{ book.lessons|length }} lessons · Group 2 foundation + Group 1 depth</span></a>
 <div class="card">

@@ -3,7 +3,7 @@
 {% set nav_active = 'practice' %}
 {% block title %}{{ meta.title_en }} · Practice · {{ app_title }}{% endblock %}
 {% block topbar %}
-<div class="row between"><a href="{{ url_for('science.chapter', slug=meta.slug) }}">‹ {{ c.bi(meta.title_en, meta.title_te) }}</a>{{ c.langswitch(lang_pref) }}</div>
+<div class="row between"><a class="back" href="{{ url_for('science.chapter', slug=meta.slug) }}">‹ {{ c.bi(meta.title_en, meta.title_te) }}</a></div>
 {% if question %}<strong>{{ i }} / {{ total }}</strong>{% endif %}
 {% endblock %}
 {% block content %}
@@ -25,3 +25,4 @@
 </details>
 {% endif %}
 {% endblock %}
+{% block bottom %}{% endblock %}

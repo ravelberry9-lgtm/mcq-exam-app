@@ -2,7 +2,7 @@
 {% import "ds/_c.html" as c %}
 {% set nav_active = 'learn' %}
 {% block title %}Science & Technology · {{ app_title }}{% endblock %}
-{% block topbar %}<div class="row between"><h1>{{ c.bi('Science & Technology', 'సైన్స్ & టెక్నాలజీ') }}</h1>{{ c.langswitch(lang_pref) }}</div>{% endblock %}
+{% block topbar %}<h1>{{ c.bi('Science & Technology', 'సైన్స్ & టెక్నాలజీ') }}</h1>{% endblock %}
 {% block content %}
 <p>{{ c.bi('Reviewed bilingual textbooks arranged by syllabus chapter.', 'సిలబస్ అధ్యాయాల వారీగా సమీక్షించిన bilingual textbooks.') }}</p>
 {% for item in chapters %}
