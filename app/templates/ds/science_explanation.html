@@ -4,21 +4,22 @@
 {% block topbar %}<a class="back" href="{{ back_url }}">‹ {{ c.bi('Back to question', 'ప్రశ్నకు తిరిగి వెళ్లండి') }}</a>{% endblock %}
 {% block content %}
 <article class="science-learning-view">
-  <header class="card"><span class="small muted">{{ question.id }}</span><h1>{{ c.bi(question.question_en, question.question_te, 'stack') }}</h1><p>{{ c.bi(question.explanation_en, question.explanation_te, 'stack') }}</p></header>
   <div class="science-learning-tabs" role="tablist" aria-label="Explanation view">
     <button type="button" role="tab" id="content-tab" aria-controls="content-panel" aria-selected="true">{{ c.bi('Content', 'పాఠ్యాంశం') }}</button>
     <button type="button" role="tab" id="infography-tab" aria-controls="infography-panel" aria-selected="false">{{ c.bi('Infography', 'ఇన్ఫోగ్రఫీ') }}</button>
   </div>
   <section id="content-panel" role="tabpanel" aria-labelledby="content-tab">
-    <div class="card"><h2>{{ c.bi(section.title.en, section.title.te, 'stack') }}</h2>{% for p in section.paragraphs %}<p class="textbook-copy en" lang="en">{{ p.en }}</p><p class="textbook-copy te" lang="te">{{ p.te }}</p>{% endfor %}</div>
+    <div class="card science-content-reading"><h2>{{ c.bi(section.title.en, section.title.te, 'stack') }}</h2><aside class="science-answer-note"><strong>{{ c.bi('Why this answer?', 'ఈ సమాధానం ఎందుకు?') }}</strong><div>{{ c.bi(question.explanation_en, question.explanation_te, 'stack') }}</div></aside>{% for p in section.paragraphs %}<p class="textbook-copy en" lang="en">{{ p.en }}</p><p class="textbook-copy te" lang="te">{{ p.te }}</p>{% endfor %}</div>
   </section>
   <section id="infography-panel" role="tabpanel" aria-labelledby="infography-tab" hidden>
-    {% if visuals %}<div class="question-visual-pair">{% for visual in visuals %}<figure class="card"><figcaption><strong>{{ c.bi(visual.label_en, visual.label_te) }}</strong></figcaption><a href="{{ visual.url }}" target="_blank" rel="noopener"><img src="{{ visual.url }}" alt="{{ visual.label_en }}" loading="lazy" decoding="async"></a></figure>{% endfor %}</div>{% else %}<div class="card"><p>{{ c.bi('The concept and full-explanation images are being prepared for this section.', 'ఈ భాగానికి concept మరియు పూర్తి వివరణ చిత్రాలు సిద్ధమవుతున్నాయి.') }}</p></div>{% endif %}
+    {% if visuals %}<p class="small muted swipe-hint">{{ c.bi('Swipe left for the next image, or use the buttons below.', 'తదుపరి image కోసం ఎడమవైపు swipe చేయండి లేదా కింద buttons వాడండి.') }}</p><div class="question-visual-pair" id="visual-carousel">{% for visual in visuals %}<figure class="card" data-slide="{{ loop.index }}"><figcaption><strong>{{ c.bi(visual.label_en, visual.label_te) }}</strong><span class="small muted">{{ loop.index }} / {{ loop.length }}</span></figcaption><a href="{{ visual.url }}" target="_blank" rel="noopener"><img src="{{ visual.url }}" alt="{{ visual.label_en }}" loading="lazy" decoding="async"></a></figure>{% endfor %}</div><div class="visual-carousel-controls"><button class="btn" id="visual-prev" type="button" disabled>‹ {{ c.bi('Previous', 'మునుపటి') }}</button><span id="visual-position" aria-live="polite">1 / {{ visuals|length }}</span><button class="btn" id="visual-next" type="button">{{ c.bi('Next', 'తదుపరి') }} ›</button></div>{% else %}<div class="card"><p>{{ c.bi('The concept and full-explanation images are being prepared for this section.', 'ఈ భాగానికి concept మరియు పూర్తి వివరణ చిత్రాలు సిద్ధమవుతున్నాయి.') }}</p></div>{% endif %}
   </section>
 </article>
 <script>
 const tabs=[...document.querySelectorAll('.science-learning-tabs [role="tab"]')];
 tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(item=>{const selected=item===tab;item.setAttribute('aria-selected',selected?'true':'false');document.getElementById(item.getAttribute('aria-controls')).hidden=!selected})}));
+const carousel=document.getElementById('visual-carousel');
+if(carousel){const slides=[...carousel.querySelectorAll('[data-slide]')],prev=document.getElementById('visual-prev'),next=document.getElementById('visual-next'),position=document.getElementById('visual-position');let current=0;function show(index){current=Math.max(0,Math.min(slides.length-1,index));slides[current].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});position.textContent=(current+1)+' / '+slides.length;prev.disabled=current===0;next.disabled=current===slides.length-1}prev.addEventListener('click',()=>show(current-1));next.addEventListener('click',()=>show(current+1));carousel.addEventListener('scroll',()=>{const width=carousel.clientWidth;if(!width)return;const index=Math.round(carousel.scrollLeft/width);if(index!==current){current=Math.max(0,Math.min(slides.length-1,index));position.textContent=(current+1)+' / '+slides.length;prev.disabled=current===0;next.disabled=current===slides.length-1}},{passive:true})}
 </script>
 {% endblock %}
 {% block bottom %}{% endblock %}
