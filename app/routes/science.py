@@ -24,6 +24,17 @@ CHAPTER_VISUALS = {
     ]
 }
 
+SECTION_VISUAL_PAIRS = {
+    "st3-l01-ecology-foundations-section-1a": ("01-ecological-levels-bilingual.png", "10-chapter-1-rapid-revision-bilingual.png"),
+    "st3-l01-ecology-foundations-section-1b": ("07-ecological-amplitude-bilingual.png", "02-limiting-factors-bilingual.png"),
+    "st3-l01-ecology-foundations-section-1c": ("03-organism-responses-bilingual.png", "04-acclimatisation-vs-adaptation-bilingual.png"),
+    "st3-l01-ecology-foundations-section-1d": ("10-chapter-1-rapid-revision-bilingual.png", "05-habitat-vs-niche-bilingual.png"),
+    "st3-l01-ecology-foundations-section-1e": ("08-competition-coexistence-bilingual.png", "09-ecosystem-feedback-bilingual.png"),
+    "st3-l01-ecology-foundations-section-must-compare": ("07-ecological-amplitude-bilingual.png", "04-acclimatisation-vs-adaptation-bilingual.png"),
+    "st3-l01-ecology-foundations-section-quick-facts": ("06-major-abiotic-factors-bilingual.png", "10-chapter-1-rapid-revision-bilingual.png"),
+    "st3-l01-ecology-foundations-section-exam-traps": ("07-ecological-amplitude-bilingual.png", "10-chapter-1-rapid-revision-bilingual.png"),
+}
+
 
 def _visuals(slug, lesson_id):
     base = f"infographics/science/{lesson_id}"
@@ -33,6 +44,16 @@ def _visuals(slug, lesson_id):
         for filename, title_en, title_te, kind
         in CHAPTER_VISUALS.get((slug, lesson_id), [])
     ]
+
+
+def _question_visuals(slug, lesson_id, section_id):
+    filenames = SECTION_VISUAL_PAIRS.get(section_id, ())
+    base = f"infographics/science/{lesson_id}"
+    labels = (("Concept image", "భావన చిత్రం"),
+              ("Full explanation image", "పూర్తి వివరణ చిత్రం"))
+    return [{"url": url_for("static", filename=f"{base}/{filename}"),
+             "label_en": labels[i][0], "label_te": labels[i][1]}
+            for i, filename in enumerate(filenames)]
 
 
 def _context(slug):
@@ -106,4 +127,18 @@ def practice(slug):
     return render_template(
         "ds/science_practice.html", meta=meta, book=book, question=question,
         total=len(questions), i=i, lesson_id=lesson_id, collection=collection)
+
+
+@bp.get("/<slug>/practice/explanation/<question_id>")
+def practice_explanation(slug, question_id):
+    meta, _ch, _book = _context(slug)
+    question = science.approved_question(slug, question_id) or abort(404)
+    lesson, section = science.section_for_question(slug, question)
+    if not lesson or not section:
+        abort(404)
+    visuals = _question_visuals(slug, lesson["id"], section["id"])
+    return render_template(
+        "ds/science_explanation.html", meta=meta, question=question,
+        lesson=lesson, section=section, visuals=visuals,
+        back_url=request.args.get("back") or url_for("science.practice", slug=slug))
 

@@ -66,6 +66,7 @@ def test_science_practice_uses_approved_sidecar(client):
     assert page.status_code == 200
     assert b'data-science-question' in page.data
     assert b'<details class="card science-explanation"' in page.data
+    assert b'Open content and infography' in page.data
     assert b'Show explanation' in page.data
     assert b'class="langsw"' not in page.data
     assert b'class="bottomnav"' not in page.data
@@ -87,6 +88,39 @@ def test_science_practice_uses_approved_sidecar(client):
     assert client.get(
         f"/learn/science-technology/{SLUG}/practice?lesson=not-a-lesson"
     ).status_code == 404
+
+
+def test_science_question_explanation_links_section_and_visual_pair(client):
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/practice/explanation/"
+        "st3-l01-01c-q001")
+    assert page.status_code == 200
+    assert b'id="content-tab"' in page.data
+    assert b'id="infography-tab"' in page.data
+    assert b'How Organisms Respond to Environmental Variation' in page.data
+    assert b'03-organism-responses-bilingual.png' in page.data
+    assert b'04-acclimatisation-vs-adaptation-bilingual.png' in page.data
+    assert page.data.count(b'<figure class="card">') == 2
+
+
+def test_science_question_explanation_rejects_unknown_question(client):
+    assert client.get(
+        f"/learn/science-technology/{SLUG}/practice/explanation/not-a-question"
+    ).status_code == 404
+
+
+def test_every_lesson_one_mcq_resolves_to_section_and_two_visuals(app):
+    from app.routes.science import SECTION_VISUAL_PAIRS
+
+    with app.test_request_context():
+        questions = science_content.approved_questions(
+            SLUG, lesson_id="st3-l01-ecology-foundations")
+        assert len(questions) == 156
+        for question in questions:
+            lesson, section = science_content.section_for_question(SLUG, question)
+            assert lesson is not None, question["id"]
+            assert section is not None, question["id"]
+            assert len(SECTION_VISUAL_PAIRS.get(section["id"], ())) == 2, question["id"]
 
 
 def test_unknown_science_chapter_is_404(client):

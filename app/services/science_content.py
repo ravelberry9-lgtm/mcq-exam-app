@@ -64,6 +64,43 @@ def approved_questions(slug: str, lesson_id: str | None = None,
             and (not collection or row.get("collection") == collection)]
 
 
+def approved_question(slug: str, question_id: str):
+    """Return one approved question without exposing draft sidecar rows."""
+    return next((row for row in approved_questions(slug)
+                 if row["id"] == question_id), None)
+
+
+def section_for_question(slug: str, question: dict):
+    """Resolve an MCQ to its reviewed textbook section mapping."""
+    book = load_book(slug)
+    if not book:
+        return None, None
+    lesson = next((item for item in book["lessons"]
+                   if item["id"] == question["lesson_id"]), None)
+    if not lesson:
+        return None, None
+    section_ids = {item["id"] for item in lesson["sections"]}
+    section_id = question.get("section_id")
+    if section_id not in section_ids:
+        path = (_root() / slug / "section_map.json").resolve()
+        if not path.is_relative_to(_root() / slug) or not path.is_file():
+            return lesson, None
+        try:
+            mapping = json.loads(path.read_text(encoding="utf-8"))
+            section_id = next((sid for sid, value in mapping.items()
+                               if sid in section_ids and
+                               question["id"] in value.get("mcq_ids", [])), None)
+            if not section_id:
+                fact_ids = set(question.get("fact_ids", []))
+                section_id = next((sid for sid, value in mapping.items()
+                                   if sid in section_ids and fact_ids.intersection(
+                                       value.get("fact_ids", []))), None)
+        except (ValueError, TypeError, OSError, json.JSONDecodeError):
+            section_id = None
+    return lesson, next((item for item in lesson["sections"]
+                         if item["id"] == section_id), None)
+
+
 def _validated_questions(slug: str):
     """Validate the complete sidecar atomically; any defect hides the whole bank."""
     book = load_book(slug)

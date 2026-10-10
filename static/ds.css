@@ -119,6 +119,15 @@ html[data-lang="both"] .bi.stack .en+.te::before{content:none}
 .opt .state{margin-left:auto;font-size:.875rem;font-weight:700}
 .science-explanation summary{cursor:pointer;font-weight:700;color:var(--teal-ink);padding:4px 0}
 .science-explanation[open] summary{margin-bottom:12px}
+.science-learning-view{display:flex;flex-direction:column;gap:14px}
+.science-learning-view h1{font-size:1.15rem;margin:0}
+.science-learning-tabs{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;background:var(--chip);border-radius:12px}
+.science-learning-tabs button{min-height:48px;border:0;border-radius:9px;background:transparent;font-weight:700}
+.science-learning-tabs button[aria-selected="true"]{background:var(--card);color:var(--teal-ink);box-shadow:0 1px 3px rgba(20,33,61,.18)}
+.question-visual-pair{display:flex;flex-direction:column;gap:14px}
+.question-visual-pair figure{margin:0;padding:0;overflow:hidden}
+.question-visual-pair figcaption{padding:12px 14px;border-bottom:1px solid var(--line)}
+.question-visual-pair img{display:block;width:100%;height:auto}
 html[data-lang="both"] .integrated-bilingual .textbook-copy.en{display:none}
 .textbook-tools{gap:12px}
 .textbook-toc ul{margin:0;padding-left:22px;display:grid;gap:8px}

@@ -21,6 +21,7 @@
 <details class="card science-explanation" id="science-explanation" hidden>
   <summary>{{ c.bi('Show explanation', 'వివరణ చూడండి') }}</summary>
   <div>{{ c.bi(question.explanation_en, question.explanation_te, 'stack') }}</div>
+  <a class="btn primary" href="{{ url_for('science.practice_explanation', slug=meta.slug, question_id=question.id, back=request.full_path) }}">{{ c.bi('Open content and infography', 'పాఠ్యాంశం మరియు infography చూడండి') }}</a>
   <a class="btn" href="{{ url_for('science.practice', slug=meta.slug, lesson=lesson_id, collection=collection, i=i+1) }}">{{ c.bi('Next question', 'తదుపరి ప్రశ్న') }}</a>
 </details>
 {% endif %}

@@ -1,0 +1,24 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% block title %}{{ c.bi('Explanation', 'వివరణ') }} · {{ app_title }}{% endblock %}
+{% block topbar %}<a class="back" href="{{ back_url }}">‹ {{ c.bi('Back to question', 'ప్రశ్నకు తిరిగి వెళ్లండి') }}</a>{% endblock %}
+{% block content %}
+<article class="science-learning-view">
+  <header class="card"><span class="small muted">{{ question.id }}</span><h1>{{ c.bi(question.question_en, question.question_te, 'stack') }}</h1><p>{{ c.bi(question.explanation_en, question.explanation_te, 'stack') }}</p></header>
+  <div class="science-learning-tabs" role="tablist" aria-label="Explanation view">
+    <button type="button" role="tab" id="content-tab" aria-controls="content-panel" aria-selected="true">{{ c.bi('Content', 'పాఠ్యాంశం') }}</button>
+    <button type="button" role="tab" id="infography-tab" aria-controls="infography-panel" aria-selected="false">{{ c.bi('Infography', 'ఇన్ఫోగ్రఫీ') }}</button>
+  </div>
+  <section id="content-panel" role="tabpanel" aria-labelledby="content-tab">
+    <div class="card"><h2>{{ c.bi(section.title.en, section.title.te, 'stack') }}</h2>{% for p in section.paragraphs %}<p class="textbook-copy en" lang="en">{{ p.en }}</p><p class="textbook-copy te" lang="te">{{ p.te }}</p>{% endfor %}</div>
+  </section>
+  <section id="infography-panel" role="tabpanel" aria-labelledby="infography-tab" hidden>
+    {% if visuals %}<div class="question-visual-pair">{% for visual in visuals %}<figure class="card"><figcaption><strong>{{ c.bi(visual.label_en, visual.label_te) }}</strong></figcaption><a href="{{ visual.url }}" target="_blank" rel="noopener"><img src="{{ visual.url }}" alt="{{ visual.label_en }}" loading="lazy" decoding="async"></a></figure>{% endfor %}</div>{% else %}<div class="card"><p>{{ c.bi('The concept and full-explanation images are being prepared for this section.', 'ఈ భాగానికి concept మరియు పూర్తి వివరణ చిత్రాలు సిద్ధమవుతున్నాయి.') }}</p></div>{% endif %}
+  </section>
+</article>
+<script>
+const tabs=[...document.querySelectorAll('.science-learning-tabs [role="tab"]')];
+tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(item=>{const selected=item===tab;item.setAttribute('aria-selected',selected?'true':'false');document.getElementById(item.getAttribute('aria-controls')).hidden=!selected})}));
+</script>
+{% endblock %}
+{% block bottom %}{% endblock %}
