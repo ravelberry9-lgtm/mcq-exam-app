@@ -114,8 +114,11 @@ html[data-lang="both"] .bi.stack .en+.te::before{content:none}
 .opt:has(input:checked){border-color:var(--teal);background:var(--teal-soft);border-width:2px}
 .opt:has(input:focus-visible){outline:3px solid #1D4ED8;outline-offset:2px}
 .opt.is-correct{border-color:var(--teal);background:var(--teal-soft);color:var(--teal-ink);border-width:2px}
-.opt.is-wrong{border-color:var(--amber);background:var(--amber-soft);color:var(--amber-ink);border-width:2px}
+.opt.is-wrong{border-color:var(--danger);background:var(--danger-bg);color:var(--danger);border-width:2px}
 .opt .state{margin-left:auto;font-size:.875rem;font-weight:700}
+.science-explanation summary{cursor:pointer;font-weight:700;color:var(--teal-ink);padding:4px 0}
+.science-explanation[open] summary{margin-bottom:12px}
+html[data-lang="both"] .integrated-bilingual .en{display:none}
 
 /* Exam palette */
 .palette{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}

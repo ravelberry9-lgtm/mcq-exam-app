@@ -84,6 +84,27 @@
     });
     go.addEventListener("click", function () { if (!answered) { st.s++; saveStats(topic, st); } location.href = card.dataset.next; });
   }
+
+  // Science sidecar practice: reveal the answer state and a real expandable explanation.
+  var scienceCard = document.querySelector("[data-science-question]");
+  var scienceCheck = document.getElementById("science-check");
+  if (scienceCard && scienceCheck) {
+    scienceCheck.addEventListener("click", function () {
+      var picked = document.querySelector('input[name="science-answer"]:checked');
+      if (!picked) return;
+      document.querySelectorAll("#science-options .opt").forEach(function (option) {
+        var input = option.querySelector("input");
+        input.disabled = true;
+        if (option.dataset.k === scienceCard.dataset.correct) option.classList.add("is-correct");
+        if (option.dataset.k === picked.value && picked.value !== scienceCard.dataset.correct) option.classList.add("is-wrong");
+      });
+      var explanation = document.getElementById("science-explanation");
+      explanation.hidden = false;
+      explanation.open = true;
+      scienceCheck.hidden = true;
+      explanation.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  }
   var sum = document.getElementById("summary");
   if (sum) { var s = stats(sum.dataset.topic); ["r", "w", "s"].forEach(function (k) { var el = sum.querySelector('[data-stat="' + k + '"]'); if (el) el.textContent = s[k]; }); }
 })();

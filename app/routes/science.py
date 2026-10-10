@@ -39,6 +39,7 @@ def textbook_index(slug):
     _meta, ch, book = _context(slug)
     return render_template(
         "ds/textbook.html", ch=ch, book=book, lesson=None,
+        integrated_bilingual=True,
         chapter_url=url_for("science.chapter", slug=slug),
         textbook_index_endpoint="science.textbook_index",
         textbook_lesson_endpoint="science.textbook_lesson")
@@ -51,6 +52,7 @@ def textbook_lesson(slug, lesson_id):
         if lesson["id"] == lesson_id:
             return render_template(
                 "ds/textbook.html", ch=ch, book=book, lesson=lesson,
+                integrated_bilingual=True,
                 previous=book["lessons"][i - 1] if i else None,
                 following=book["lessons"][i + 1] if i + 1 < len(book["lessons"]) else None,
                 chapter_url=url_for("science.chapter", slug=slug),

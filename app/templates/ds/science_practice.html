@@ -18,7 +18,10 @@
 {% for key in ['a','b','c','d'] %}<label class="opt" data-k="{{ key }}"><input type="radio" name="science-answer" value="{{ key }}"><span class="k">{{ key|upper }}</span><span>{{ c.bi(question.options_en[key], question.options_te[key]) }}</span></label>{% endfor %}
 </fieldset>
 <button class="btn primary" id="science-check" type="button">{{ c.bi('Check answer', 'సమాధానం చూడండి') }}</button>
-<div class="card" id="science-explanation" hidden><strong class="label">{{ c.bi('Explanation', 'వివరణ') }}</strong><div>{{ c.bi(question.explanation_en, question.explanation_te, 'stack') }}</div><a class="btn" href="{{ url_for('science.practice', slug=meta.slug, lesson=lesson_id, collection=collection, i=i+1) }}">{{ c.bi('Next question', 'తదుపరి ప్రశ్న') }}</a></div>
-<script nonce="{{ csp_nonce }}">document.getElementById('science-check').addEventListener('click',function(){var card=document.querySelector('[data-science-question]'),picked=document.querySelector('input[name="science-answer"]:checked');if(!picked)return;document.querySelectorAll('#science-options .opt').forEach(function(o){if(o.dataset.k===card.dataset.correct)o.classList.add('correct');if(o.dataset.k===picked.value&&picked.value!==card.dataset.correct)o.classList.add('wrong');});document.getElementById('science-explanation').hidden=false;this.hidden=true;});</script>
+<details class="card science-explanation" id="science-explanation" hidden>
+  <summary>{{ c.bi('Show explanation', 'వివరణ చూడండి') }}</summary>
+  <div>{{ c.bi(question.explanation_en, question.explanation_te, 'stack') }}</div>
+  <a class="btn" href="{{ url_for('science.practice', slug=meta.slug, lesson=lesson_id, collection=collection, i=i+1) }}">{{ c.bi('Next question', 'తదుపరి ప్రశ్న') }}</a>
+</details>
 {% endif %}
 {% endblock %}

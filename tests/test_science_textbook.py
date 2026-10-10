@@ -11,6 +11,7 @@ def test_science_catalogue_and_chapter(client):
     hub = client.get("/learn/")
     assert hub.status_code == 200
     assert b'data-science-subject="science-technology"' in hub.data
+    assert b'data-subject="science_technology"' not in hub.data
     index = client.get("/learn/science-technology/")
     assert index.status_code == 200
     assert b"Ecosystems and Biodiversity" in index.data
@@ -25,6 +26,7 @@ def test_science_textbook_navigation(client):
     assert b"st3-l01-ecology-foundations" in index.data
     lesson = client.get(f"/learn/science-technology/{SLUG}/textbook/st3-l01-ecology-foundations")
     assert lesson.status_code == 200
+    assert b'class="integrated-bilingual"' in lesson.data
     assert b"biotic factors" in lesson.data
     assert b"st3-l02-population-community-succession" in lesson.data
 
@@ -44,6 +46,8 @@ def test_science_practice_uses_approved_sidecar(client):
     page = client.get(f"/learn/science-technology/{SLUG}/practice?i=1")
     assert page.status_code == 200
     assert b'data-science-question' in page.data
+    assert b'<details class="card science-explanation"' in page.data
+    assert b'Show explanation' in page.data
     assert b"1 / 1360" in page.data
     lesson = client.get(
         f"/learn/science-technology/{SLUG}/practice"

@@ -14,6 +14,7 @@
 <p>{{ c.bi('Group 2 foundation + Group 1 depth. Choose a lesson.', 'గ్రూప్ 2 ప్రధాన పాఠం + గ్రూప్ 1 లోతైన అధ్యయనం. ఒక పాఠాన్ని ఎంచుకోండి.') }}</p>
 {% for l in book.lessons %}<a class="card" href="{{ url_for(textbook_lesson_endpoint, slug=ch.slug, lesson_id=l.id) }}">{{ c.bi(l.title.en, l.title.te) }}</a>{% endfor %}
 {% else %}
+<div{% if integrated_bilingual %} class="integrated-bilingual"{% endif %}>
 <a href="{{ url_for(textbook_index_endpoint, slug=ch.slug) }}">{{ c.bi('All lessons', 'అన్ని పాఠాలు') }}</a>
 <h2>{{ c.bi(lesson.title.en, lesson.title.te, 'stack') }}</h2>
 <label>{{ c.bi('Study level', 'అధ్యయన స్థాయి') }} <select id="study-level"><option value="group2">Group 2</option><option value="group1">Group 1 + Group 2</option></select></label>
@@ -40,5 +41,6 @@ level.addEventListener('change',updateLevel);
 function followAnchor(){let id=location.hash.slice(1);try{id=decodeURIComponent(id)}catch(e){}const target=document.getElementById(id);if(target?.dataset.level==='group1')level.value='group1';updateLevel();if(target)target.scrollIntoView()}
 window.addEventListener('hashchange',followAnchor);followAnchor();
 </script>
+</div>
 {% endif %}
 {% endblock %}
