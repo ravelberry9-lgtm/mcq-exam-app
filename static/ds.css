@@ -126,14 +126,11 @@ html[data-lang="both"] .bi.stack .en+.te::before{content:none}
 .science-content-reading{font-size:1.025rem;line-height:1.85}
 .science-answer-note{padding:12px;border-left:4px solid var(--teal);border-radius:8px;background:var(--teal-soft)}
 .science-answer-note>div{margin-top:6px}
-.swipe-hint{margin:0}
 .question-visual-pair{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .question-visual-pair::-webkit-scrollbar{display:none}
 .question-visual-pair figure{margin:0;padding:0;overflow-y:auto;scroll-snap-align:start;background:#fff}
-.question-visual-pair figcaption{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}
 .question-visual-pair img{display:block;width:100%;height:auto}
 .infography-reader-bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.infography-reader-bar #visual-position{font-weight:700;font-variant-numeric:tabular-nums}
 .infography-reading body{background:#fff;overflow:hidden}
 .infography-reading .app{max-width:none;height:100dvh;border-radius:0;box-shadow:none;background:#fff}
 .infography-reading .topbar,.infography-reading .bottomnav,.infography-reading #pwa-install,.infography-reading .science-learning-tabs,.infography-reading #content-panel{display:none!important}
@@ -142,7 +139,6 @@ html[data-lang="both"] .bi.stack .en+.te::before{content:none}
 .infography-reading #infography-panel{display:flex!important;flex-direction:column;height:100%;min-height:0}
 .infography-reading .infography-reader-bar{flex:none;min-height:58px;padding:max(6px,env(safe-area-inset-top)) 12px 6px;border-bottom:1px solid var(--line);background:#fff}
 .infography-reading .infography-reader-bar .btn{min-height:44px;width:auto;padding:0 14px}
-.infography-reading .swipe-hint{flex:none;padding:8px 14px;text-align:center;background:var(--teal-soft)}
 .infography-reading .question-visual-pair{flex:1;min-height:0;gap:0}
 .infography-reading .question-visual-pair figure{height:100%}
 html[data-lang="both"] .integrated-bilingual .textbook-copy.en{display:none}

@@ -101,6 +101,9 @@ def test_science_question_explanation_links_section_and_visual_pair(client):
     assert b'data-slide="2"' in page.data
     assert b'id="exit-infography"' in page.data
     assert b'id="visual-next"' not in page.data
+    assert b'id="visual-position"' not in page.data
+    assert b'swipe-hint' not in page.data
+    assert b'<figcaption>' not in page.data
     assert b'infography-reading' in page.data
     assert b'<header class="card">' not in page.data
     assert b'How Organisms Respond to Environmental Variation' in page.data
