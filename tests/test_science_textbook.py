@@ -99,12 +99,14 @@ def test_science_question_explanation_links_section_and_visual_pair(client):
     assert b'id="infography-tab"' in page.data
     assert b'data-slide="1"' in page.data
     assert b'data-slide="2"' in page.data
-    assert b'id="visual-next"' in page.data
+    assert b'id="exit-infography"' in page.data
+    assert b'id="visual-next"' not in page.data
+    assert b'infography-reading' in page.data
     assert b'<header class="card">' not in page.data
     assert b'How Organisms Respond to Environmental Variation' in page.data
     assert b'03-organism-responses-bilingual.png' in page.data
     assert b'04-acclimatisation-vs-adaptation-bilingual.png' in page.data
-    assert page.data.count(b'<figure class="card" data-slide=') == 2
+    assert page.data.count(b'<figure data-slide=') == 2
 
 
 def test_science_question_explanation_rejects_unknown_question(client):
