@@ -9,6 +9,32 @@ from ..services import science_content as science
 bp = Blueprint("science", __name__, url_prefix="/learn/science-technology")
 
 
+CHAPTER_VISUALS = {
+    ("st3-ecosystem-biodiversity", "st3-l01-ecology-foundations"): [
+        ("01-ecological-levels-bilingual.png", "Ecological levels", "పర్యావరణ స్థాయులు", "Concept visual"),
+        ("02-limiting-factors-bilingual.png", "Limiting factors: Liebig and Shelford", "పరిమితి కారకాలు: లీబిగ్ మరియు షెల్ఫర్డ్", "Explanatory visual"),
+        ("03-organism-responses-bilingual.png", "Responses to environmental change", "పర్యావరణ మార్పులకు ప్రతిస్పందనలు", "Concept visual"),
+        ("04-acclimatisation-vs-adaptation-bilingual.png", "Acclimatisation and adaptation", "అలవాటు పడటం మరియు అనుకూలనం", "Explanatory visual"),
+        ("05-habitat-vs-niche-bilingual.png", "Habitat and ecological niche", "ఆవాసం మరియు పర్యావరణ పాత్ర", "Explanatory visual"),
+        ("06-major-abiotic-factors-bilingual.png", "Major abiotic factors", "ప్రధాన అజీవ కారకాలు", "Concept visual"),
+        ("07-ecological-amplitude-bilingual.png", "Ecological amplitude", "పర్యావరణ సహన పరిధి", "Concept visual"),
+        ("08-competition-coexistence-bilingual.png", "Competition and coexistence", "పోటీ మరియు సహజీవనం", "Explanatory visual"),
+        ("09-ecosystem-feedback-bilingual.png", "Ecosystem feedback", "పర్యావరణ వ్యవస్థలో ప్రతిపుష్టి", "Explanatory visual"),
+        ("10-chapter-1-rapid-revision-bilingual.png", "Chapter 1 rapid revision", "అధ్యాయం 1 త్వరిత పునశ్చరణ", "Revision visual"),
+    ]
+}
+
+
+def _visuals(slug, lesson_id):
+    base = f"infographics/science/{lesson_id}"
+    return [
+        {"url": url_for("static", filename=f"{base}/{filename}"),
+         "title_en": title_en, "title_te": title_te, "kind": kind}
+        for filename, title_en, title_te, kind
+        in CHAPTER_VISUALS.get((slug, lesson_id), [])
+    ]
+
+
 def _context(slug):
     meta = science.chapter(slug) or abort(404)
     book = science.load_book(slug) or abort(404)
@@ -53,6 +79,7 @@ def textbook_lesson(slug, lesson_id):
             return render_template(
                 "ds/textbook.html", ch=ch, book=book, lesson=lesson,
                 integrated_bilingual=True,
+                visual_infographics=_visuals(slug, lesson_id),
                 previous=book["lessons"][i - 1] if i else None,
                 following=book["lessons"][i + 1] if i + 1 < len(book["lessons"]) else None,
                 chapter_url=url_for("science.chapter", slug=slug),

@@ -131,6 +131,13 @@ html[data-lang="both"] .integrated-bilingual .textbook-copy.en{display:none}
 .section-chevron{font-size:1.4rem;line-height:1;transition:transform .2s ease}
 .textbook-section[open] .section-chevron{transform:rotate(180deg)}
 .textbook-section-body{padding:0 14px 14px}
+.textbook-visual-gallery{display:flex;flex-direction:column;gap:12px}
+.textbook-visual{padding:0;overflow:hidden}
+.textbook-visual>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:58px;padding:12px 14px;cursor:pointer;font-weight:700}
+.textbook-visual>summary::-webkit-details-marker{display:none}
+.textbook-visual[open]>summary{border-bottom:1px solid var(--line);background:var(--teal-soft)}
+.textbook-visual>a{display:block;background:#f8f7f1}
+.textbook-visual img{display:block;width:100%;height:auto}
 .textbook-reader.is-reading .textbook-toc,
 .textbook-reader.is-reading .textbook-extras,
 .textbook-reader.is-reading .textbook-sources,

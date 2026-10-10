@@ -34,7 +34,20 @@ def test_science_textbook_navigation(client):
     assert b'class="langsw"' not in lesson.data
     assert b'class="bottomnav"' not in lesson.data
     assert b"biotic factors" in lesson.data
+    assert b'textbook-visual-gallery' in lesson.data
+    assert b'01-ecological-levels-bilingual.png' in lesson.data
+    assert b'10-chapter-1-rapid-revision-bilingual.png' in lesson.data
+    assert b'loading="lazy"' in lesson.data
     assert b"st3-l02-population-community-succession" in lesson.data
+
+
+def test_science_visual_pilot_does_not_replace_other_lessons(client):
+    lesson = client.get(
+        f"/learn/science-technology/{SLUG}/textbook/"
+        "st3-l02-population-community-succession")
+    assert lesson.status_code == 200
+    assert b'textbook-visual-gallery' not in lesson.data
+    assert b'01-ecological-levels-bilingual.png' not in lesson.data
 
 
 def test_science_package_exposes_only_approved_questions(app):
