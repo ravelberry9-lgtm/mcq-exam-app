@@ -108,7 +108,7 @@ def test_science_question_explanation_links_section_and_visual_pair(client):
     assert b'<header class="card">' not in page.data
     assert b'How Organisms Respond to Environmental Variation' in page.data
     assert b'03-organism-responses-bilingual.png' in page.data
-    assert b'04-acclimatisation-vs-adaptation-bilingual.png' in page.data
+    assert b'13-section-1c-full-explanation-bilingual.png' in page.data
     assert page.data.count(b'<figure data-slide=') == 2
 
 
@@ -130,6 +130,16 @@ def test_every_lesson_one_mcq_resolves_to_section_and_two_visuals(app):
             assert lesson is not None, question["id"]
             assert section is not None, question["id"]
             assert len(SECTION_VISUAL_PAIRS.get(section["id"], ())) == 2, question["id"]
+
+
+def test_all_lesson_one_visual_pair_files_exist(app):
+    from app.routes.science import SECTION_VISUAL_PAIRS
+
+    root = Path(app.static_folder) / "infographics" / "science" / \
+        "st3-l01-ecology-foundations"
+    for pair in SECTION_VISUAL_PAIRS.values():
+        assert len(pair) == 2
+        assert all((root / filename).is_file() for filename in pair)
 
 
 def test_unknown_science_chapter_is_404(client):
