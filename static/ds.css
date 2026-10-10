@@ -120,7 +120,7 @@ html[data-lang="both"] .bi.stack .en+.te::before{content:none}
 .science-explanation summary{cursor:pointer;font-weight:700;color:var(--teal-ink);padding:4px 0}
 .science-explanation[open] summary{margin-bottom:12px}
 html[data-lang="both"] .integrated-bilingual .textbook-copy.en{display:none}
-.textbook-level{display:flex;flex-direction:column;gap:6px;font-weight:700}
+.textbook-tools{gap:12px}
 .textbook-toc ul{margin:0;padding-left:22px;display:grid;gap:8px}
 .textbook-toc a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 .textbook-section{padding:0;overflow:hidden}
@@ -131,6 +131,18 @@ html[data-lang="both"] .integrated-bilingual .textbook-copy.en{display:none}
 .section-chevron{font-size:1.4rem;line-height:1;transition:transform .2s ease}
 .textbook-section[open] .section-chevron{transform:rotate(180deg)}
 .textbook-section-body{padding:0 14px 14px}
+.textbook-reader.is-reading .textbook-toc,
+.textbook-reader.is-reading .textbook-extras,
+.textbook-reader.is-reading .textbook-sources,
+.textbook-reader.is-reading .textbook-topic-group{display:none}
+.textbook-reader.is-reading .textbook-section{border:0;border-radius:0;background:transparent;padding:0;overflow:visible}
+.textbook-reader.is-reading .textbook-section>summary{pointer-events:none;padding:18px 0 8px;border:0;background:transparent}
+.textbook-reader.is-reading .textbook-section>summary .section-chevron,
+.textbook-reader.is-reading .textbook-section>summary .small{display:none}
+.textbook-reader.is-reading .textbook-section-body{padding:0}
+.textbook-reader.is-reading .textbook-copy{font-size:1.0625rem;line-height:2;margin:0 0 1.2em}
+.textbook-reader.is-reading .textbook-tools{position:sticky;top:-16px;z-index:10;padding:8px;background:rgba(244,246,250,.96)}
+.textbook-reader.is-reading .textbook-tools>span{display:none}
 .pwa-install{position:fixed;z-index:50;right:max(12px,env(safe-area-inset-right));bottom:calc(var(--nav-h) + 14px + env(safe-area-inset-bottom));width:auto;max-width:calc(100vw - 24px);box-shadow:0 8px 24px rgba(20,33,61,.24)}
 
 /* Exam palette */

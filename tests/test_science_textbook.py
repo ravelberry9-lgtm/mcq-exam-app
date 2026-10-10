@@ -26,9 +26,10 @@ def test_science_textbook_navigation(client):
     assert b"st3-l01-ecology-foundations" in index.data
     lesson = client.get(f"/learn/science-technology/{SLUG}/textbook/st3-l01-ecology-foundations")
     assert lesson.status_code == 200
-    assert b'class="integrated-bilingual"' in lesson.data
+    assert b'integrated-bilingual' in lesson.data
     assert b'<details class="textbook-section card"' in lesson.data
-    assert b'value="group1">Complete lesson' in lesson.data
+    assert b'id="reading-mode"' in lesson.data
+    assert b'id="study-level"' not in lesson.data
     assert b'class="textbook-copy en"' in lesson.data
     assert b"biotic factors" in lesson.data
     assert b"st3-l02-population-community-succession" in lesson.data

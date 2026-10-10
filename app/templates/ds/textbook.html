@@ -14,31 +14,31 @@
 <p>{{ c.bi('Group 2 foundation + Group 1 depth. Choose a lesson.', 'గ్రూప్ 2 ప్రధాన పాఠం + గ్రూప్ 1 లోతైన అధ్యయనం. ఒక పాఠాన్ని ఎంచుకోండి.') }}</p>
 {% for l in book.lessons %}<a class="card" href="{{ url_for(textbook_lesson_endpoint, slug=ch.slug, lesson_id=l.id) }}">{{ c.bi(l.title.en, l.title.te) }}</a>{% endfor %}
 {% else %}
-<div{% if integrated_bilingual %} class="integrated-bilingual"{% endif %}>
+<div class="textbook-reader{% if integrated_bilingual %} integrated-bilingual{% endif %}">
 <a href="{{ url_for(textbook_index_endpoint, slug=ch.slug) }}">{{ c.bi('All lessons', 'అన్ని పాఠాలు') }}</a>
 <h2>{{ c.bi(lesson.title.en, lesson.title.te, 'stack') }}</h2>
-<label class="textbook-level">{{ c.bi('Content depth', 'విషయ విస్తృతి') }} <select id="study-level"><option value="group1">Complete lesson · Group 1 + Group 2</option><option value="group2">Foundation only · Group 2</option></select></label>
+<div class="textbook-tools card"><span class="small muted">{{ c.bi('Complete lesson · Foundation and advanced depth are included', 'పూర్తి పాఠం · ప్రాథమిక అంశాలు, లోతైన అంశాలు రెండూ ఉన్నాయి') }}</span><button class="btn" id="reading-mode" type="button" aria-pressed="false"><span class="reading-on">{{ c.bi('Reading mode', 'రీడింగ్ మోడ్') }}</span><span class="reading-off" hidden>{{ c.bi('Exit reading mode', 'రీడింగ్ మోడ్ నుంచి బయటకు') }}</span></button></div>
 <nav class="textbook-toc card" aria-label="Lesson contents"><strong>{{ c.bi('Lesson sections', 'పాఠంలోని భాగాలు') }}</strong><ul>{% for s in lesson.sections %}<li data-level="{{ s.level }}"><a href="#{{ s.id }}">{{ c.bi(s.title.en, s.title.te) }}</a></li>{% endfor %}</ul></nav>
 {% set grouping = namespace(last='') %}
-{% for s in lesson.sections %}{% if s.topic_group and s.topic_group.en != grouping.last %}<h2>{{ c.bi(s.topic_group.en, s.topic_group.te, 'stack') }}</h2>{% set grouping.last = s.topic_group.en %}{% endif %}<details class="textbook-section card" id="{{ s.id }}" data-level="{{ s.level }}"{% if loop.first %} open{% endif %}><summary><h3>{{ c.bi(s.title.en, s.title.te, 'stack') }}</h3><span aria-hidden="true" class="section-chevron">⌄</span></summary><div class="textbook-section-body">
+{% for s in lesson.sections %}{% if s.topic_group and s.topic_group.en != grouping.last %}<h2 class="textbook-topic-group">{{ c.bi(s.topic_group.en, s.topic_group.te, 'stack') }}</h2>{% set grouping.last = s.topic_group.en %}{% endif %}<details class="textbook-section card" id="{{ s.id }}" data-level="{{ s.level }}"{% if loop.first %} open{% endif %}><summary><div><h3>{{ c.bi(s.title.en, s.title.te, 'stack') }}</h3><span class="small muted">{% if s.level == 'group2' %}{{ c.bi('Foundation', 'ప్రాథమికం') }}{% else %}{{ c.bi('Advanced depth', 'లోతైన అధ్యయనం') }}{% endif %}</span></div><span aria-hidden="true" class="section-chevron">⌄</span></summary><div class="textbook-section-body">
 {% for p in s.paragraphs %}<p class="textbook-copy en" lang="en">{{ p.en }}</p><p class="textbook-copy te" lang="te">{{ p.te }}</p>{% endfor %}
 <details class="textbook-sources"><summary>{{ c.bi('Sources for this section', 'ఈ భాగానికి ఆధారాలు') }}</summary><ul>{% for ref in lesson.sources if ref.id in s.source_ids %}<li><a href="#source-{{ ref.id }}">{{ ref.label }}</a>{% if ref.locator %} — {{ ref.locator }}{% endif %}</li>{% endfor %}</ul></details>
 </div></details>{% endfor %}
-<h3>{{ c.bi('Visual learning', 'దృశ్య అధ్యయనం') }}</h3>
+<div class="textbook-extras"><h3>{{ c.bi('Visual learning', 'దృశ్య అధ్యయనం') }}</h3>
 {% if book.status == 'draft' %}<p>{{ c.bi('Draft visual aids — editorial review is not complete.', 'ముసాయిదా దృశ్య సహాయకాలు — సంపాదకీయ సమీక్ష ఇంకా పూర్తికాలేదు.') }}</p>{% endif %}
 {% if not lesson.infographics %}<p>{{ c.bi('Infographics are being prepared.', 'ఇన్ఫోగ్రాఫిక్స్ సిద్ధమవుతున్నాయి.') }}</p>{% endif %}
 {% for g in lesson.infographics %}<details><summary>{{ c.bi(g.title.en, g.title.te) }} · {% if g.kind == 'teaching' %}{{ c.bi('Detailed teaching', 'విస్తృత బోధన') }}{% else %}{{ c.bi('Quick revision', 'సంక్షిప్త పునశ్చరణ') }}{% endif %}</summary>
 {% if g.coverage_type == 'full-paragraph-atlas' %}<p>{{ c.bi('Every paragraph in the current lesson is preserved here. This does not certify exhaustive coverage of every source claim.', 'ప్రస్తుత పాఠంలోని ప్రతి పేరాను ఇక్కడ నిలిపాం. ప్రతి మూలగ్రంథంలోని అన్ని విషయాలూ పరిశీలించామనే ధ్రువీకరణ కాదు.') }}</p>{% endif %}
 <ol class="textbook-diagram {{ g.kind }}" aria-label="{{ g.title.en }}">{% for n in g.nodes %}<li{% if n.level %} data-level="{{ n.level }}"{% endif %}><h4>{{ c.bi(n.title.en, n.title.te) }}</h4><p class="en" lang="en">{{ n.body.en }}</p><p class="te" lang="te">{{ n.body.te }}</p>{% if n.section_id %}<a href="#{{ n.section_id }}">{{ c.bi('Read in context', 'పాఠంలో చదవండి') }}</a>{% endif %}{% if n.source_ids %}<ul>{% for ref in lesson.sources if ref.id in n.source_ids %}<li><a href="#source-{{ ref.id }}">{{ ref.label }}</a></li>{% endfor %}</ul>{% endif %}</li>{% endfor %}</ol></details>{% endfor %}
-<h3>{{ c.bi('References', 'ఆధారాలు') }}</h3><ul>{% for s in lesson.sources %}<li id="source-{{ s.id }}">{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.label }}</a>{% else %}{{ s.label }}{% endif %}{% if s.locator %} — {{ s.locator }}{% endif %}</li>{% endfor %}</ul>
+<h3>{{ c.bi('References', 'ఆధారాలు') }}</h3><ul>{% for s in lesson.sources %}<li id="source-{{ s.id }}">{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.label }}</a>{% else %}{{ s.label }}{% endif %}{% if s.locator %} — {{ s.locator }}{% endif %}</li>{% endfor %}</ul></div>
 <nav class="row between" aria-label="Lesson navigation">{% if previous %}<a rel="prev" href="{{ url_for(textbook_lesson_endpoint, slug=ch.slug, lesson_id=previous.id) }}">‹ {{ c.bi(previous.title.en, previous.title.te) }}</a>{% endif %}{% if following %}<a rel="next" href="{{ url_for(textbook_lesson_endpoint, slug=ch.slug, lesson_id=following.id) }}">{{ c.bi(following.title.en, following.title.te) }} ›</a>{% endif %}</nav>
 <style>.textbook-diagram{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px;padding:20px}.textbook-diagram li{padding:14px;border:1px solid currentColor;border-radius:8px}.textbook-diagram.revision{grid-template-columns:1fr}.textbook-section{scroll-margin-top:100px}.textbook-section p{line-height:1.9}</style>
 <script>
-const level=document.getElementById('study-level');
-try{const saved=sessionStorage.getItem('ap-textbook-level');if(saved==='group1'||saved==='group2')level.value=saved}catch(e){}
-function updateLevel(){document.querySelectorAll('[data-level="group1"]').forEach(e=>e.hidden=level.value!=='group1');try{sessionStorage.setItem('ap-textbook-level',level.value)}catch(e){}}
-level.addEventListener('change',updateLevel);
-function followAnchor(){let id=location.hash.slice(1);try{id=decodeURIComponent(id)}catch(e){}const target=document.getElementById(id);if(target?.dataset.level==='group1')level.value='group1';updateLevel();if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView()}}
+const reader=document.getElementById('reading-mode');
+function setReadingMode(on){document.querySelector('.textbook-reader')?.classList.toggle('is-reading',on);reader.setAttribute('aria-pressed',on?'true':'false');reader.querySelector('.reading-on').hidden=on;reader.querySelector('.reading-off').hidden=!on;document.querySelectorAll('.textbook-section').forEach(s=>{if(on)s.open=true});try{sessionStorage.setItem('textbook-reading-mode',on?'1':'0')}catch(e){}}
+reader.addEventListener('click',()=>setReadingMode(reader.getAttribute('aria-pressed')!=='true'));
+try{setReadingMode(sessionStorage.getItem('textbook-reading-mode')==='1')}catch(e){}
+function followAnchor(){let id=location.hash.slice(1);try{id=decodeURIComponent(id)}catch(e){}const target=document.getElementById(id);if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView()}}
 window.addEventListener('hashchange',followAnchor);followAnchor();
 </script>
 </div>
