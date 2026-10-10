@@ -17,7 +17,7 @@
 <fieldset class="opts" id="science-options"><legend class="sr">Choose an answer</legend>
 {% for key in ['a','b','c','d'] %}<label class="opt" data-k="{{ key }}"><input type="radio" name="science-answer" value="{{ key }}"><span class="k">{{ key|upper }}</span><span>{{ c.bi(question.options_en[key], question.options_te[key]) }}</span></label>{% endfor %}
 </fieldset>
-<button class="btn primary" id="science-check" type="button">{{ c.bi('Check answer', 'సమాధానం చూడండి') }}</button>
+<button class="btn primary" id="science-check" type="button" disabled>{{ c.bi('Select an answer', 'ఒక సమాధానం ఎంచుకోండి') }}</button>
 <details class="card science-explanation" id="science-explanation" hidden>
   <summary>{{ c.bi('Show explanation', 'వివరణ చూడండి') }}</summary>
   <div>{{ c.bi(question.explanation_en, question.explanation_te, 'stack') }}</div>

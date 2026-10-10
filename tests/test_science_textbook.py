@@ -27,6 +27,9 @@ def test_science_textbook_navigation(client):
     lesson = client.get(f"/learn/science-technology/{SLUG}/textbook/st3-l01-ecology-foundations")
     assert lesson.status_code == 200
     assert b'class="integrated-bilingual"' in lesson.data
+    assert b'<details class="textbook-section card"' in lesson.data
+    assert b'value="group1">Complete lesson' in lesson.data
+    assert b'class="textbook-copy en"' in lesson.data
     assert b"biotic factors" in lesson.data
     assert b"st3-l02-population-community-succession" in lesson.data
 
@@ -94,3 +97,15 @@ def test_science_hub_hides_missing_package(client, app, tmp_path):
     page = client.get("/learn/")
     assert page.status_code == 200
     assert b'data-science-subject="science-technology"' not in page.data
+
+
+def test_design_system_pages_are_installable(client):
+    page = client.get("/learn/")
+    assert b'rel="manifest"' in page.data
+    assert b'id="pwa-install"' in page.data
+    worker = client.get("/sw.js")
+    assert worker.status_code == 200
+    assert worker.headers["Service-Worker-Allowed"] == "/"
+    manifest = client.get("/static/manifest.json").get_json()
+    assert manifest["start_url"] == "/learn/"
+    assert manifest["scope"] == "/"

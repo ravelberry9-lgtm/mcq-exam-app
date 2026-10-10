@@ -1,5 +1,5 @@
 """Public routes: home, subjects, practice, exam, settings, answer API."""
-from flask import Blueprint, render_template, request, jsonify, redirect, url_for, make_response
+from flask import Blueprint, render_template, request, jsonify, redirect, url_for, make_response, current_app, send_from_directory
 from sqlalchemy import func
 from datetime import datetime
 from ..db import db
@@ -11,6 +11,15 @@ from ..models import (
 )
 
 bp = Blueprint("public", __name__)
+
+
+@bp.get("/sw.js")
+def service_worker():
+    """Serve the worker at the site root so it can control the full app."""
+    response = make_response(send_from_directory(current_app.static_folder, "sw.js"))
+    response.headers["Service-Worker-Allowed"] = "/"
+    response.headers["Cache-Control"] = "no-cache"
+    return response
 
 DIFFICULTY_LABEL = {
     "E": "Easy · సులభం",

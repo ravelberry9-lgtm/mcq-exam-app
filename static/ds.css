@@ -10,6 +10,7 @@
   --ink:#14213D; --muted:#4B556B; --ground:#F4F6FA; --card:#FFFFFF; --line:#D0D6E2;
   --teal:#0F766E; --teal-soft:#DDF1EE; --teal-ink:#0B4F4A;
   --amber:#B45309; --amber-soft:#FCEBD2; --amber-ink:#7A3A06;
+  --danger:#B42318; --danger-bg:#FEE4E2;
   --chip:#EAEEF5; --radius:14px;
   --nav-h:64px;
 }
@@ -118,7 +119,19 @@ html[data-lang="both"] .bi.stack .en+.te::before{content:none}
 .opt .state{margin-left:auto;font-size:.875rem;font-weight:700}
 .science-explanation summary{cursor:pointer;font-weight:700;color:var(--teal-ink);padding:4px 0}
 .science-explanation[open] summary{margin-bottom:12px}
-html[data-lang="both"] .integrated-bilingual .en{display:none}
+html[data-lang="both"] .integrated-bilingual .textbook-copy.en{display:none}
+.textbook-level{display:flex;flex-direction:column;gap:6px;font-weight:700}
+.textbook-toc ul{margin:0;padding-left:22px;display:grid;gap:8px}
+.textbook-toc a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.textbook-section{padding:0;overflow:hidden}
+.textbook-section>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:14px;cursor:pointer}
+.textbook-section>summary::-webkit-details-marker{display:none}
+.textbook-section>summary h3{font-size:1rem;margin:0}
+.textbook-section[open]>summary{border-bottom:1px solid var(--line);background:var(--teal-soft)}
+.section-chevron{font-size:1.4rem;line-height:1;transition:transform .2s ease}
+.textbook-section[open] .section-chevron{transform:rotate(180deg)}
+.textbook-section-body{padding:0 14px 14px}
+.pwa-install{position:fixed;z-index:50;right:max(12px,env(safe-area-inset-right));bottom:calc(var(--nav-h) + 14px + env(safe-area-inset-bottom));width:auto;max-width:calc(100vw - 24px);box-shadow:0 8px 24px rgba(20,33,61,.24)}
 
 /* Exam palette */
 .palette{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}

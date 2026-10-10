@@ -12,6 +12,28 @@
       .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); });
   }
 
+  // Installable app support. The button appears only when the browser confirms
+  // that installation is available, and stays out of the way in installed mode.
+  var installPrompt = null;
+  var installButton = document.getElementById("pwa-install");
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch(function () {});
+    });
+  }
+  window.addEventListener("beforeinstallprompt", function (event) {
+    event.preventDefault(); installPrompt = event;
+    if (installButton) installButton.hidden = false;
+  });
+  if (installButton) installButton.addEventListener("click", function () {
+    if (!installPrompt) return;
+    installPrompt.prompt();
+    installPrompt.userChoice.finally(function () { installPrompt = null; installButton.hidden = true; });
+  });
+  window.addEventListener("appinstalled", function () {
+    installPrompt = null; if (installButton) installButton.hidden = true;
+  });
+
   // the device id is an HttpOnly cookie issued by the server (same one for the older pages); scripts never touch it
 
   // ── language: Telugu / English / both. Persisted in the 'lang' cookie (server reads it too). ──
@@ -89,6 +111,12 @@
   var scienceCard = document.querySelector("[data-science-question]");
   var scienceCheck = document.getElementById("science-check");
   if (scienceCard && scienceCheck) {
+    document.querySelectorAll('input[name="science-answer"]').forEach(function (input) {
+      input.addEventListener("change", function () {
+        scienceCheck.disabled = false;
+        scienceCheck.textContent = root.dataset.lang === "te" ? "సమాధానం చూడండి" : root.dataset.lang === "en" ? "Check answer" : "Check answer · సమాధానం చూడండి";
+      });
+    });
     scienceCheck.addEventListener("click", function () {
       var picked = document.querySelector('input[name="science-answer"]:checked');
       if (!picked) return;
