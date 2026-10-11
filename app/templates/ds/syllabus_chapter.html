@@ -13,6 +13,12 @@
 {% endblock %}
 {% block content %}
 {% if preview %}<div class="card" data-testid="preview-banner"><strong>Administrator preview · not yet live for learners</strong></div>{% endif %}
+{% if textbook %}
+  <a class="card" data-testid="open-textbook" href="{{ url_for('learn.textbook_index', slug=d.chapter.slug) }}">
+    <strong>{{ c.bi('Read the full textbook chapter', 'పూర్తి పాఠ్యగ్రంథ అధ్యాయాన్ని చదవండి') }}</strong>
+    <span class="small muted">{{ c.bi('One continuous bilingual page · Group 2 and Group 1', 'ఒకే నిరంతర ద్విభాషా పేజీ · గ్రూప్ 2 మరియు గ్రూప్ 1') }}</span>
+  </a>
+{% endif %}
 {% if d.has_expanded and (d.fresh_live or preview) %}
   <a class="card" data-testid="open-expanded-notes" href="{{ url_for('learn.expanded_index', slug=d.chapter.slug) }}">
     <strong>{{ t('xn.open') }}</strong><span class="small muted">{{ t('xn.title') }}</span>

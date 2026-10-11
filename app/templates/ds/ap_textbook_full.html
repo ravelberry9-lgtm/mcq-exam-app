@@ -1,0 +1,46 @@
+{% extends 'ds/base.html' %}
+{% import 'ds/_c.html' as c %}
+{% block title %}{{ book.title.en }} · Textbook{% endblock %}
+{% block topbar %}
+<div class="row between"><a class="back" href="{{ url_for('learn.ap_history_chapter', slug=ch.slug) }}">‹ {{ c.bi(ch.title_en, ch.title_te) }}</a>{{ c.langswitch(lang_pref) }}</div>
+{% endblock %}
+{% block content %}
+<article class="ap-full-textbook textbook-reader">
+  <div class="textbook-progress" aria-hidden="true"><span id="textbook-progress-bar"></span></div>
+  <header class="textbook-cover card">
+    <span class="textbook-kicker">APPSC · AP HISTORY · FULL CHAPTER</span>
+    <h1>{{ c.bi(book.title.en, book.title.te, 'stack') }}</h1>
+    <p>{{ c.bi('A continuous, source-linked bilingual textbook for Group 2 foundation and Group 1 analytical depth.', 'గ్రూప్ 2 పునాది మరియు గ్రూప్ 1 విశ్లేషణాత్మక లోతుతో, ఆధారాలకు అనుసంధానించిన నిరంతర ద్విభాషా పాఠ్యగ్రంథం.') }}</p>
+    <div class="textbook-cover-stats"><span><strong>{{ book.lessons|length }}</strong>{{ c.bi('Lessons', 'పాఠాలు') }}</span><span><strong>2</strong>{{ c.bi('Levels', 'స్థాయులు') }}</span><span><strong>EN · తె</strong>{{ c.bi('Bilingual', 'ద్విభాషా') }}</span></div>
+  </header>
+  {% if book.status == 'draft' %}<p class="card" role="status" data-testid="textbook-draft">{{ c.bi('Administrator preview — infographics remain under preparation.', 'నిర్వాహక ప్రివ్యూ — ఇన్ఫోగ్రాఫిక్స్ ఇంకా సిద్ధమవుతున్నాయి.') }}</p>{% endif %}
+  <div class="textbook-tools card">
+    <div><strong>{{ c.bi('Choose depth', 'అధ్యయన స్థాయిని ఎంచుకోండి') }}</strong><div class="textbook-level-tabs" role="group"><button type="button" class="btn active" data-textbook-level="group2" aria-pressed="true">{{ c.bi('Group 2 foundation', 'గ్రూప్ 2 పునాది') }}</button><button type="button" class="btn" data-textbook-level="all" aria-pressed="false">{{ c.bi('Group 1 complete', 'గ్రూప్ 1 పూర్తి పాఠం') }}</button></div></div>
+  </div>
+  <nav class="textbook-toc card" aria-label="Chapter contents"><strong>{{ c.bi('Chapter contents', 'అధ్యాయ విషయ సూచిక') }}</strong><ol>{% for lesson in book.lessons %}<li><a href="#lesson-{{ lesson.id }}">{{ c.bi(lesson.title.en, lesson.title.te) }}</a></li>{% endfor %}</ol></nav>
+  {% for lesson in book.lessons %}
+  <section class="ap-full-lesson" id="lesson-{{ lesson.id }}">
+    <header class="ap-full-lesson-heading"><span>{{ '%02d'|format(loop.index) }}</span><h2>{{ c.bi(lesson.title.en, lesson.title.te, 'stack') }}</h2></header>
+    {% set grouping = namespace(last='') %}
+    {% for section in lesson.sections %}
+      {% if section.topic_group and section.topic_group.en != grouping.last %}<h3 class="textbook-topic-group" data-level="{{ section.level }}">{{ c.bi(section.topic_group.en, section.topic_group.te, 'stack') }}</h3>{% set grouping.last = section.topic_group.en %}{% endif %}
+      <section class="textbook-section textbook-full-section card" id="{{ section.id }}" data-level="{{ section.level }}">
+        <header><span class="textbook-section-label">{% if section.level == 'group2' %}G2{% else %}G1{% endif %}</span><h3>{{ c.bi(section.title.en, section.title.te, 'stack') }}</h3></header>
+        <div class="textbook-section-body">{% for paragraph in section.paragraphs %}<p class="textbook-copy en" lang="en">{{ paragraph.en }}</p><p class="textbook-copy te" lang="te">{{ paragraph.te }}</p>{% endfor %}
+          <details class="textbook-sources"><summary>{{ c.bi('Sources for this section', 'ఈ భాగానికి ఆధారాలు') }}</summary><ul>{% for ref in lesson.sources if ref.id in section.source_ids %}<li>{{ ref.label }}{% if ref.locator %} — {{ ref.locator }}{% endif %}</li>{% endfor %}</ul></details>
+        </div>
+      </section>
+    {% endfor %}
+  </section>
+  {% endfor %}
+  <a class="btn textbook-practice-link" href="{{ url_for('learn.ap_history_practice', slug=ch.slug, collection='fresh') }}">{{ c.bi('Practise questions from this chapter', 'ఈ అధ్యాయం నుంచి ప్రశ్నలను సాధన చేయండి') }} →</a>
+</article>
+<script>
+const buttons=[...document.querySelectorAll('[data-textbook-level]')];
+function setLevel(level){document.querySelectorAll('[data-level="group1"]').forEach(el=>el.hidden=level==='group2');buttons.forEach(btn=>{const active=btn.dataset.textbookLevel===level;btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',active?'true':'false')});}
+buttons.forEach(btn=>btn.addEventListener('click',()=>setLevel(btn.dataset.textbookLevel)));setLevel('group2');
+const bar=document.getElementById('textbook-progress-bar'),main=document.querySelector('main');
+function progress(){const max=main.scrollHeight-main.clientHeight;bar.style.width=(max?Math.min(100,Math.max(0,main.scrollTop/max*100)):0)+'%';}main?.addEventListener('scroll',progress,{passive:true});progress();
+</script>
+{% endblock %}
+{% block bottom %}{% endblock %}

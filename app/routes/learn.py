@@ -13,6 +13,7 @@ from ..services import science_content
 from ..services import syllabus_view as syl
 from ..services import expanded_view as xv
 from ..services import collection_switch as csw
+from ..services import textbook as tb
 from ..models import FRESH_COLLECTION_ID
 from ..services.ui_text import UI, t, tl
 
@@ -70,7 +71,45 @@ def ap_history():
 def ap_history_chapter(slug):
     data = syl.chapter_detail(slug) or abort(404)
     preview = _is_admin() and not data["fresh_live"] and (data["has_expanded"] or data["native_count"])
-    return render_template("ds/syllabus_chapter.html", d=data, preview=bool(preview))
+    textbook = _chapter_textbook(data["chapter"]) if csw.can_view_collection(
+        data["chapter"], FRESH_COLLECTION_ID, _is_admin()) else None
+    return render_template("ds/syllabus_chapter.html", d=data, preview=bool(preview), textbook=textbook)
+
+
+def _chapter_textbook(ch):
+    """Load only a textbook whose canonical subtopics belong to this chapter."""
+    book = tb.load(ch.slug, _is_admin())
+    if not book:
+        return None
+    from ..models import SyllabusSubtopic
+    allowed = {s.slug for s in SyllabusSubtopic.query.filter_by(chapter_id=ch.id)}
+    if any(not set(lesson["subtopic_slugs"]) <= allowed for lesson in book["lessons"]):
+        return None
+    return book
+
+
+def _textbook(slug):
+    ch = _fresh_chapter_or_404(slug)
+    return ch, (_chapter_textbook(ch) or abort(404))
+
+
+@bp.get("/ap-history/<slug>/textbook")
+def textbook_index(slug):
+    ch, book = _textbook(slug)
+    return render_template("ds/ap_textbook_full.html", ch=ch, book=book)
+
+
+@bp.get("/ap-history/<slug>/textbook/<lesson_id>")
+def textbook_lesson(slug, lesson_id):
+    ch, book = _textbook(slug)
+    for index, lesson in enumerate(book["lessons"]):
+        if lesson["id"] == lesson_id:
+            return render_template(
+                "ds/textbook.html", ch=ch, book=book, lesson=lesson,
+                previous=book["lessons"][index - 1] if index else None,
+                following=book["lessons"][index + 1] if index + 1 < len(book["lessons"]) else None,
+            )
+    abort(404)
 
 
 @bp.route("/ap-history/<slug>/notes")

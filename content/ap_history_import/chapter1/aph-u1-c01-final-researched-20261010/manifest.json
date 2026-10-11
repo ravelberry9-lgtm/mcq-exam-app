@@ -1,0 +1,34 @@
+{
+  "format_version": "ap-history-import-v1",
+  "taxonomy_version": "ap-history-taxonomy-v1",
+  "batch_id": "aph-u1-c01-final-researched-20261010",
+  "source": "codex_generated",
+  "question_count": 142,
+  "questions_sha256": "11bd7f136f265e159f766744caf2028627f7ce159f5168b53232b3b215e33823",
+  "content_approval": "bilingual_approved",
+  "approval_note": "Publication-ready Chapter 1 package after manual bilingual and source-linked editorial audits. Approval is for app content/import preparation, not a claim of independent academic certification.",
+  "chapter_slug": "u1-c01-region-people-sources",
+  "collection_id": "ap-history-fresh-v1",
+  "H": 0,
+  "blank": 142,
+  "difficulty": {
+    "medium": 59,
+    "easy": 76,
+    "tough": 7
+  },
+  "notes": {
+    "core": "notes/CH01_CORE_NOTES_EN_TE.txt",
+    "addendum": "notes/CH01_NOTES_ADDENDUM_EN_TE.txt",
+    "anchor_map": "notes/note_anchors.json",
+    "parsed_blocks_expected": 114,
+    "stable_anchors": 102
+  },
+  "provenance_rule": "This package preserves one source per native batch. HR rows carry H=H; researched rows carry H blank.",
+  "permissions": {
+    "database_write": false,
+    "seed": false,
+    "deploy": false,
+    "overwrite_legacy": false
+  },
+  "package_revision": "chapter1-final-native-20261010"
+}
