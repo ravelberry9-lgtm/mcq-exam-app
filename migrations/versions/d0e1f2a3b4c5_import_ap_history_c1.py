@@ -73,7 +73,11 @@ def _load_package(name):
     package = PACKAGE_ROOT / name
     manifest = json.loads((package / "manifest.json").read_text(encoding="utf-8"))
     raw = (package / "questions.jsonl").read_bytes()
-    if hashlib.sha256(raw).hexdigest() != manifest["questions_sha256"]:
+    # Git checks out text with platform-native line endings.  Hash the
+    # canonical LF representation so the same reviewed package validates on
+    # Windows audit machines and Linux production containers.
+    canonical_raw = raw.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    if hashlib.sha256(canonical_raw).hexdigest() != manifest["questions_sha256"]:
         raise RuntimeError(f"checksum mismatch in {name}")
     records = [json.loads(line) for line in raw.decode("utf-8").splitlines() if line.strip()]
     if len(records) != manifest["question_count"]:
