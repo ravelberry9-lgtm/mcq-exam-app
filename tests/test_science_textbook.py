@@ -19,7 +19,7 @@ def test_science_catalogue_and_chapter(client):
     assert b"Ecosystems and Biodiversity" in index.data
     chapter = client.get(f"/learn/science-technology/{SLUG}/")
     assert chapter.status_code == 200
-    assert b"1199 MCQs" in chapter.data
+    assert b"1226 MCQs" in chapter.data
 
 
 def test_science_textbook_navigation(client):
@@ -79,6 +79,23 @@ def test_lessons_one_to_four_use_colorful_editorial_html(client):
         assert b'class="textbook-copy en"' not in page.data
 
 
+def test_lesson_six_editorial_html_and_question_mappings(client, app):
+    lesson_id = "st3-l06-global-frameworks-conventions"
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/textbook/{lesson_id}")
+    assert page.status_code == 200
+    assert b'data-editorial-html="true"' in page.data
+    assert b"Global Biodiversity Governance" in page.data
+    assert page.data.count(b'class="editorial-section"') == 4
+    with app.app_context():
+        questions = science_content.approved_questions(SLUG, lesson_id)
+    assert len(questions) == 144
+    assert all(question.get("section_id") for question in questions)
+    assert all(question["section_id"].startswith(
+        "st3-l06-global-biodiversity-governance-l6-")
+        for question in questions)
+
+
 def test_science_visual_pilot_does_not_replace_other_lessons(client):
     lesson = client.get(
         f"/learn/science-technology/{SLUG}/textbook/"
@@ -93,8 +110,8 @@ def test_science_package_exposes_only_approved_questions(app):
         book = science_content.load_book(SLUG)
         assert book and len(book["lessons"]) == 9
         summary = science_content.question_summary(SLUG)
-        assert summary == {"total": 1199, "approved": 1199, "draft": 0}
-        assert len(science_content.approved_questions(SLUG)) == 1199
+        assert summary == {"total": 1226, "approved": 1226, "draft": 0}
+        assert len(science_content.approved_questions(SLUG)) == 1226
         assert len(science_content.approved_questions(SLUG, collection="integrative")) == 70
         assert len(science_content.approved_questions(SLUG, collection="current-affairs")) == 10
 
@@ -108,7 +125,7 @@ def test_science_practice_uses_approved_sidecar(client):
     assert b'Show explanation' in page.data
     assert b'class="langsw"' not in page.data
     assert b'class="bottomnav"' not in page.data
-    assert b"1 / 1199" in page.data
+    assert b"1 / 1226" in page.data
     lesson = client.get(
         f"/learn/science-technology/{SLUG}/practice"
         "?lesson=st3-l01-ecology-foundations&i=156")
@@ -572,6 +589,69 @@ def test_lesson_five_question_opens_exactly_two_concept_slides(client):
         b"concept-pairs/05a-c01-biodiversity-levels-richness-evenness-"
         b"indices-full.png" in page.data
     )
+    assert page.data.count(b'<figure data-slide=') == 2
+
+
+def test_lesson_six_concept_map_fact_owners_and_assets_are_complete(app):
+    lesson_id = "st3-l06-global-frameworks-conventions"
+    with app.app_context():
+        mapping = science_content.load_concept_map(SLUG, lesson_id)
+
+    assert mapping is not None
+    assert len(mapping["concepts"]) == 37
+    assert len({item["id"] for item in mapping["concepts"]}) == 37
+
+    owners = Counter(
+        fact_id
+        for concept in mapping["concepts"]
+        for fact_id in concept["fact_ids"]
+        if fact_id
+    )
+    fact_path = Path(app.config["TEXTBOOK_ROOT"]) / SLUG / "facts.jsonl"
+    lesson_fact_ids = {
+        row["fact_id"]
+        for line in fact_path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+        for row in [json.loads(line)]
+        if row.get("lesson_id") == lesson_id
+    }
+    assert len(lesson_fact_ids) == 65
+    assert set(owners) == lesson_fact_ids
+    assert all(count == 1 for count in owners.values())
+
+    declared = {
+        filename
+        for concept in mapping["concepts"]
+        for filename in (concept["concept_file"], concept["full_file"])
+    }
+    root = Path(app.static_folder) / "infographics" / "science" / \
+        lesson_id / mapping["asset_directory"]
+    existing = {path.name for path in root.glob("*.png")}
+    assert len(declared) == 74
+    assert existing == declared
+    assert all((root / filename).stat().st_size > 0 for filename in declared)
+
+
+def test_every_lesson_six_mcq_has_a_concept_pair(app):
+    lesson_id = "st3-l06-global-frameworks-conventions"
+    with app.app_context():
+        lesson_questions = science_content.approved_questions(
+            SLUG, lesson_id=lesson_id)
+        unresolved = [
+            question["id"] for question in lesson_questions
+            if science_content.concept_for_question(SLUG, question) is None
+        ]
+    assert len(lesson_questions) == 144
+    assert unresolved == []
+
+
+def test_lesson_six_question_opens_concept_and_explanation_images(client):
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/practice/explanation/"
+        "st3-l06-a-q049")
+    assert page.status_code == 200
+    assert b"concept-pairs/l6-a-01-concept.png" in page.data
+    assert b"concept-pairs/l6-a-01-full.png" in page.data
     assert page.data.count(b'<figure data-slide=') == 2
 
 
