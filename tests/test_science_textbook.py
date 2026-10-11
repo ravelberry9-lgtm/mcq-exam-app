@@ -19,7 +19,7 @@ def test_science_catalogue_and_chapter(client):
     assert b"Ecosystems and Biodiversity" in index.data
     chapter = client.get(f"/learn/science-technology/{SLUG}/")
     assert chapter.status_code == 200
-    assert b"1226 MCQs" in chapter.data
+    assert b"1233 MCQs" in chapter.data
 
 
 def test_science_textbook_navigation(client):
@@ -96,6 +96,43 @@ def test_lesson_six_editorial_html_and_question_mappings(client, app):
         for question in questions)
 
 
+def test_lesson_seven_editorial_html_and_question_mappings(client, app):
+    lesson_id = "st3-l07-indian-law-protected-areas-institutions"
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/textbook/{lesson_id}")
+    assert page.status_code == 200
+    assert b'data-editorial-html="true"' in page.data
+    assert b"Indian Conservation Law and Institutions" in page.data
+    assert page.data.count(b'class="editorial-section"') == 4
+    with app.app_context():
+        questions = science_content.approved_questions(SLUG, lesson_id)
+    assert len(questions) == 151
+    assert all(question.get("section_id") in {"l7-a", "l7-b", "l7-c", "l7-d"}
+               for question in questions)
+
+
+def test_lesson_seven_concept_map_covers_every_question_and_asset(app, client):
+    lesson_id = "st3-l07-indian-law-protected-areas-institutions"
+    with app.app_context():
+        mapping = science_content.load_concept_map(SLUG, lesson_id)
+        questions = science_content.approved_questions(SLUG, lesson_id)
+        assert mapping is not None
+        assert len(mapping["concepts"]) == 26
+        assert len(questions) == 151
+        assert all(science_content.concept_for_question(SLUG, question)
+                   for question in questions)
+    root = Path(app.static_folder) / "infographics" / "science" / lesson_id / "concept-pairs"
+    for concept in mapping["concepts"]:
+        assert (root / concept["concept_file"]).is_file()
+        assert (root / concept["full_file"]).is_file()
+    explanation = client.get(
+        f"/learn/science-technology/{SLUG}/practice/explanation/st3-l07-a-q001")
+    assert explanation.status_code == 200
+    assert explanation.data.count(b"<figure data-slide=") == 2
+    assert b"a01-wpa-framework-amendment-concept.png" in explanation.data
+    assert b"a01-wpa-framework-amendment-full.png" in explanation.data
+
+
 def test_science_visual_pilot_does_not_replace_other_lessons(client):
     lesson = client.get(
         f"/learn/science-technology/{SLUG}/textbook/"
@@ -110,8 +147,8 @@ def test_science_package_exposes_only_approved_questions(app):
         book = science_content.load_book(SLUG)
         assert book and len(book["lessons"]) == 9
         summary = science_content.question_summary(SLUG)
-        assert summary == {"total": 1226, "approved": 1226, "draft": 0}
-        assert len(science_content.approved_questions(SLUG)) == 1226
+        assert summary == {"total": 1233, "approved": 1233, "draft": 0}
+        assert len(science_content.approved_questions(SLUG)) == 1233
         assert len(science_content.approved_questions(SLUG, collection="integrative")) == 70
         assert len(science_content.approved_questions(SLUG, collection="current-affairs")) == 10
 
@@ -125,7 +162,7 @@ def test_science_practice_uses_approved_sidecar(client):
     assert b'Show explanation' in page.data
     assert b'class="langsw"' not in page.data
     assert b'class="bottomnav"' not in page.data
-    assert b"1 / 1226" in page.data
+    assert b"1 / 1233" in page.data
     lesson = client.get(
         f"/learn/science-technology/{SLUG}/practice"
         "?lesson=st3-l01-ecology-foundations&i=156")
