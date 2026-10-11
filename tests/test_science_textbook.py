@@ -19,7 +19,7 @@ def test_science_catalogue_and_chapter(client):
     assert b"Ecosystems and Biodiversity" in index.data
     chapter = client.get(f"/learn/science-technology/{SLUG}/")
     assert chapter.status_code == 200
-    assert b"1252 MCQs" in chapter.data
+    assert b"1199 MCQs" in chapter.data
 
 
 def test_science_textbook_navigation(client):
@@ -57,8 +57,8 @@ def test_science_package_exposes_only_approved_questions(app):
         book = science_content.load_book(SLUG)
         assert book and len(book["lessons"]) == 9
         summary = science_content.question_summary(SLUG)
-        assert summary == {"total": 1252, "approved": 1252, "draft": 0}
-        assert len(science_content.approved_questions(SLUG)) == 1252
+        assert summary == {"total": 1199, "approved": 1199, "draft": 0}
+        assert len(science_content.approved_questions(SLUG)) == 1199
         assert len(science_content.approved_questions(SLUG, collection="integrative")) == 70
         assert len(science_content.approved_questions(SLUG, collection="current-affairs")) == 10
 
@@ -72,7 +72,7 @@ def test_science_practice_uses_approved_sidecar(client):
     assert b'Show explanation' in page.data
     assert b'class="langsw"' not in page.data
     assert b'class="bottomnav"' not in page.data
-    assert b"1 / 1252" in page.data
+    assert b"1 / 1199" in page.data
     lesson = client.get(
         f"/learn/science-technology/{SLUG}/practice"
         "?lesson=st3-l01-ecology-foundations&i=156")
@@ -462,6 +462,79 @@ def test_lesson_four_question_opens_exactly_two_concept_slides(client):
     assert (
         b"concept-pairs/04d-c01-freshwater-systems-horizontal-lake-zones-"
         b"full.png" in page.data
+    )
+    assert page.data.count(b'<figure data-slide=') == 2
+
+
+def test_lesson_five_concept_map_fact_owners_and_assets_are_complete(app):
+    lesson_id = "st3-l05-biodiversity-loss-conservation"
+    with app.app_context():
+        mapping = science_content.load_concept_map(SLUG, lesson_id)
+
+    assert mapping is not None
+    assert len(mapping["concepts"]) == 18
+    assert len({item["id"] for item in mapping["concepts"]}) == 18
+
+    owners = Counter(
+        fact_id
+        for concept in mapping["concepts"]
+        for fact_id in concept["fact_ids"]
+        if fact_id
+    )
+    fact_path = Path(app.config["TEXTBOOK_ROOT"]) / SLUG / "facts.jsonl"
+    lesson_fact_ids = {
+        row["fact_id"]
+        for line in fact_path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+        for row in [json.loads(line)]
+        if row.get("lesson_id") == lesson_id
+    }
+    assert len(lesson_fact_ids) == 77
+    assert set(owners) == lesson_fact_ids
+    assert all(count == 1 for count in owners.values())
+
+    declared = {
+        filename
+        for concept in mapping["concepts"]
+        for filename in (concept["concept_file"], concept["full_file"])
+    }
+    root = Path(app.static_folder) / "infographics" / "science" / \
+        lesson_id / mapping["asset_directory"]
+    existing = {path.name for path in root.glob("*.png")}
+    assert len(declared) == 36
+    assert existing == declared
+    assert all((root / filename).stat().st_size > 0 for filename in declared)
+
+
+def test_every_lesson_five_core_mcq_has_a_concept_pair(app):
+    lesson_id = "st3-l05-biodiversity-loss-conservation"
+    with app.app_context():
+        lesson_questions = science_content.approved_questions(
+            SLUG, lesson_id=lesson_id)
+        core_questions = [
+            question for question in lesson_questions
+            if question.get("collection") is None
+        ]
+        unresolved = [
+            question["id"] for question in core_questions
+            if science_content.concept_for_question(SLUG, question) is None
+        ]
+    assert len(core_questions) == 96
+    assert unresolved == []
+
+
+def test_lesson_five_question_opens_exactly_two_concept_slides(client):
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/practice/explanation/"
+        "st3-l05-a-manual-q001")
+    assert page.status_code == 200
+    assert (
+        b"concept-pairs/05a-c01-biodiversity-levels-richness-evenness-"
+        b"indices-concept.png" in page.data
+    )
+    assert (
+        b"concept-pairs/05a-c01-biodiversity-levels-richness-evenness-"
+        b"indices-full.png" in page.data
     )
     assert page.data.count(b'<figure data-slide=') == 2
 
