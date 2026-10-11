@@ -163,7 +163,12 @@ def upgrade():
     for package_name in PACKAGES:
         _package, manifest, records = _load_package(package_name)
         for record in records:
-            key = (record["source"], record["source_qid"])
+            # The reviewed collection is intentionally independent from the
+            # legacy bank.  Some legacy rows use the same source identifiers
+            # for older wording, so give the fresh row a stable,
+            # collection-scoped database identity instead of overwriting it.
+            identity_qid = f"{COLLECTION}:{record['source_qid']}"
+            key = (record["source"], identity_qid)
             content_hash = _content_hash(record)
             if key in existing_questions:
                 if existing_questions[key] != content_hash:
@@ -205,7 +210,7 @@ def upgrade():
                 },
                 source=record["source"],
                 source_file=record.get("source_file"),
-                source_qid=record["source_qid"],
+                source_qid=identity_qid,
                 qtype=record["qtype"],
                 review_status=record["review_status"],
                 batch_id=record["batch_id"],
