@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 from flask import current_app
+from markupsafe import Markup
 
 from . import textbook
 
@@ -42,6 +43,22 @@ def load_book(slug: str):
         current_app.logger.warning("Science textbook package rejected for %s", slug)
         return None
     return data if data["status"] == "approved" else None
+
+
+def load_editorial_lesson(slug: str, lesson_id: str):
+    """Load a reviewed, repo-owned HTML lesson when one is available."""
+    if not re.fullmatch(r"[a-z0-9-]+", slug or "") or not re.fullmatch(
+            r"[a-z0-9-]+", lesson_id or ""):
+        return None
+    root = _root()
+    path = (root / slug / "lessons" / f"{lesson_id}.html").resolve()
+    if not path.is_relative_to(root) or not path.is_file():
+        return None
+    try:
+        return Markup(path.read_text(encoding="utf-8"))
+    except OSError:
+        current_app.logger.warning("Science editorial lesson could not be read: %s", path)
+        return None
 
 
 def question_summary(slug: str):

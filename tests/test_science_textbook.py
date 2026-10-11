@@ -43,6 +43,22 @@ def test_science_textbook_navigation(client):
     assert b"st3-l02-population-community-succession" in lesson.data
 
 
+def test_lesson_five_uses_editorial_html_pilot(client):
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/textbook/"
+        "st3-l05-biodiversity-loss-conservation")
+    assert page.status_code == 200
+    assert b'data-editorial-html="true"' in page.data
+    assert b'class="editorial-lesson"' in page.data
+    assert b"Species richness" in page.data
+    assert b"textbook-copy en" not in page.data
+    for section_id in (
+        "st3-l05-biodiversity-l5-a", "st3-l05-biodiversity-l5-b",
+        "st3-l05-biodiversity-l5-c", "st3-l05-biodiversity-l5-d",
+    ):
+        assert f'id="{section_id}"'.encode() in page.data
+
+
 def test_science_visual_pilot_does_not_replace_other_lessons(client):
     lesson = client.get(
         f"/learn/science-technology/{SLUG}/textbook/"

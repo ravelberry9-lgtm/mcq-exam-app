@@ -119,6 +119,7 @@ def textbook_lesson(slug, lesson_id):
             return render_template(
                 "ds/textbook.html", ch=ch, book=book, lesson=lesson,
                 integrated_bilingual=True,
+                editorial_lesson=science.load_editorial_lesson(slug, lesson_id),
                 visual_infographics=_visuals(slug, lesson_id),
                 previous=book["lessons"][i - 1] if i else None,
                 following=book["lessons"][i + 1] if i + 1 < len(book["lessons"]) else None,
