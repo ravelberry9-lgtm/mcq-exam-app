@@ -19,7 +19,7 @@ def test_science_catalogue_and_chapter(client):
     assert b"Ecosystems and Biodiversity" in index.data
     chapter = client.get(f"/learn/science-technology/{SLUG}/")
     assert chapter.status_code == 200
-    assert b"1360 MCQs" in chapter.data
+    assert b"1288 MCQs" in chapter.data
 
 
 def test_science_textbook_navigation(client):
@@ -57,8 +57,8 @@ def test_science_package_exposes_only_approved_questions(app):
         book = science_content.load_book(SLUG)
         assert book and len(book["lessons"]) == 9
         summary = science_content.question_summary(SLUG)
-        assert summary == {"total": 1360, "approved": 1360, "draft": 0}
-        assert len(science_content.approved_questions(SLUG)) == 1360
+        assert summary == {"total": 1288, "approved": 1288, "draft": 0}
+        assert len(science_content.approved_questions(SLUG)) == 1288
         assert len(science_content.approved_questions(SLUG, collection="integrative")) == 70
         assert len(science_content.approved_questions(SLUG, collection="current-affairs")) == 10
 
@@ -72,7 +72,7 @@ def test_science_practice_uses_approved_sidecar(client):
     assert b'Show explanation' in page.data
     assert b'class="langsw"' not in page.data
     assert b'class="bottomnav"' not in page.data
-    assert b"1 / 1360" in page.data
+    assert b"1 / 1288" in page.data
     lesson = client.get(
         f"/learn/science-technology/{SLUG}/practice"
         "?lesson=st3-l01-ecology-foundations&i=156")
@@ -324,6 +324,73 @@ def test_every_lesson_two_mcq_has_a_concept_pair(app):
         ]
     assert len(questions) == 171
     assert unresolved == []
+
+
+def test_lesson_three_concept_map_fact_owners_and_assets_are_complete(app):
+    lesson_id = "st3-l03-ecosystem-structure-energy-cycles"
+    with app.app_context():
+        mapping = science_content.load_concept_map(SLUG, lesson_id)
+
+    assert mapping is not None
+    assert len(mapping["concepts"]) == 15
+    assert len({item["id"] for item in mapping["concepts"]}) == 15
+
+    owners = Counter(
+        fact_id
+        for concept in mapping["concepts"]
+        for fact_id in concept["fact_ids"]
+        if fact_id
+    )
+    fact_path = Path(app.config["TEXTBOOK_ROOT"]) / SLUG / "facts.jsonl"
+    lesson_fact_ids = {
+        row["fact_id"]
+        for line in fact_path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+        for row in [json.loads(line)]
+        if row.get("lesson_id") == lesson_id
+    }
+    assert len(lesson_fact_ids) == 71
+    assert set(owners) == lesson_fact_ids
+    assert all(count == 1 for count in owners.values())
+
+    declared = {
+        filename
+        for concept in mapping["concepts"]
+        for filename in (concept["concept_file"], concept["full_file"])
+    }
+    root = Path(app.static_folder) / "infographics" / "science" / \
+        lesson_id / mapping["asset_directory"]
+    existing = {path.name for path in root.glob("*.png")}
+    assert len(declared) == 30
+    assert existing == declared
+    assert all((root / filename).stat().st_size > 0 for filename in declared)
+
+
+def test_every_lesson_three_core_mcq_has_a_concept_pair(app):
+    lesson_id = "st3-l03-ecosystem-structure-energy-cycles"
+    with app.app_context():
+        lesson_questions = science_content.approved_questions(
+            SLUG, lesson_id=lesson_id)
+        core_questions = [
+            question for question in lesson_questions
+            if question.get("collection") is None
+        ]
+        unresolved = [
+            question["id"] for question in core_questions
+            if science_content.concept_for_question(SLUG, question) is None
+        ]
+    assert len(core_questions) == 76
+    assert unresolved == []
+
+
+def test_lesson_three_question_opens_exactly_two_concept_slides(client):
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/practice/explanation/"
+        "st3-l03-3d-manual-q001")
+    assert page.status_code == 200
+    assert b"concept-pairs/3d-c01-productivity-gpp-npp-stocks-concept.png" in page.data
+    assert b"concept-pairs/3d-c01-productivity-gpp-npp-stocks-full.png" in page.data
+    assert page.data.count(b'<figure data-slide=') == 2
 
 
 def test_question_uses_exact_concept_pair_when_both_assets_exist(client):
