@@ -14,6 +14,7 @@
     <div class="textbook-cover-stats"><span><strong>{{ book.lessons|length }}</strong>{{ c.bi('Lessons', 'పాఠాలు') }}</span><span><strong>2</strong>{{ c.bi('Levels', 'స్థాయులు') }}</span><span><strong>EN · తె</strong>{{ c.bi('Bilingual', 'ద్విభాషా') }}</span></div>
   </header>
   {% if book.status == 'draft' %}<p class="card" role="status" data-testid="textbook-draft">{{ c.bi('Administrator preview — infographics remain under preparation.', 'నిర్వాహక ప్రివ్యూ — ఇన్ఫోగ్రాఫిక్స్ ఇంకా సిద్ధమవుతున్నాయి.') }}</p>{% endif %}
+  {% if book.status == 'approved_text' %}<p class="card" role="status" data-testid="textbook-approved-text">{{ c.bi('Textbook lesson approved · Visual infographics are being prepared separately.', 'పాఠ్యగ్రంథ పాఠం ఆమోదించబడింది · దృశ్య ఇన్ఫోగ్రాఫిక్స్ విడిగా సిద్ధమవుతున్నాయి.') }}</p>{% endif %}
   <div class="textbook-tools card">
     <div><strong>{{ c.bi('Choose depth', 'అధ్యయన స్థాయిని ఎంచుకోండి') }}</strong><div class="textbook-level-tabs" role="group"><button type="button" class="btn active" data-textbook-level="group2" aria-pressed="true">{{ c.bi('Group 2 foundation', 'గ్రూప్ 2 పునాది') }}</button><button type="button" class="btn" data-textbook-level="all" aria-pressed="false">{{ c.bi('Group 1 complete', 'గ్రూప్ 1 పూర్తి పాఠం') }}</button></div></div>
   </div>

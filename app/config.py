@@ -68,6 +68,8 @@ class Config:
     # Content sources (for migration)
     LEGACY_DIR = BASE_DIR / "_legacy"
     TEXTBOOK_ROOT = BASE_DIR / "content" / "textbooks"
+    # Approved textbook packages are learner-visible. Drafts remain admin-only.
+    TEXTBOOK_ENABLED = os.environ.get("TEXTBOOK_ENABLED", "1") == "1"
 
 
 def validate_production_config(cfg) -> None:

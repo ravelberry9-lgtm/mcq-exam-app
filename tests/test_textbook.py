@@ -58,6 +58,15 @@ def test_approved_and_disabled(client, app, setup_book):
     assert client.get(f'/learn/ap-history/{CH}/textbook').status_code == 404
 
 
+def test_text_approved_is_visible_while_infographics_remain_pending(client, setup_book):
+    data = package('approved_text')
+    data['lessons'][0]['review']['infographics'] = False
+    setup_book.write_text(json.dumps(data), encoding='utf-8')
+    response = client.get(f'/learn/ap-history/{CH}/textbook')
+    assert response.status_code == 200
+    assert b'textbook-approved-text' in response.data
+
+
 def test_escape_and_unknown_mapping(client, setup_book, monkeypatch):
     monkeypatch.setattr('app.routes.learn._is_admin', lambda: True)
     data = package()

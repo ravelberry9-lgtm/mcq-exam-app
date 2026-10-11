@@ -25,7 +25,7 @@ def validate(data, slug):
 
     require(isinstance(data, dict), "Package must be an object")
     require(data.get("format") == "ap-textbook-v1" and data.get("chapter_slug") == slug, "Wrong format/chapter")
-    require(data.get("status") in ("draft", "approved"), "Invalid status")
+    require(data.get("status") in ("draft", "approved_text", "approved"), "Invalid status")
     require(isinstance(data.get("version"), str) and data["version"].strip(), "Version required")
     bilingual(data.get("title"))
     lessons = data.get("lessons")
@@ -111,11 +111,13 @@ def validate(data, slug):
                         require(node["body"] == paragraph, "Atlas must preserve exact bilingual teaching")
                         require(node.get("section_id") == section["id"] and node.get("level") == section["level"], "Atlas context mismatch")
                         require(node.get("source_ids") == section["source_ids"], "Atlas source mismatch")
-        if data["status"] == "approved":
-            require(types == {"teaching", "revision"}, "Both infographic types required for publication")
+        if data["status"] in ("approved_text", "approved"):
             require(any(s["level"] == "group1" for s in sections), "Group 1 depth required for publication")
             review = lesson.get("review", {})
-            require(isinstance(review, dict) and all(review.get(x) is True for x in ("coverage", "factual", "language", "infographics")), "Editorial approval required")
+            required = ("coverage", "factual", "language") if data["status"] == "approved_text" else ("coverage", "factual", "language", "infographics")
+            require(isinstance(review, dict) and all(review.get(x) is True for x in required), "Editorial approval required")
+        if data["status"] == "approved":
+            require(types == {"teaching", "revision"}, "Both infographic types required for publication")
     return data
 
 
@@ -131,7 +133,7 @@ def load(slug, admin=False):
     except (ValueError, TypeError, KeyError, OSError):
         current_app.logger.warning("Textbook package rejected for %s", slug)
         return None
-    return data if data["status"] == "approved" or admin else None
+    return data if data["status"] in ("approved_text", "approved") or admin else None
 
 
 def note_target(data, anchor):

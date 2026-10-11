@@ -93,10 +93,18 @@ def upgrade():
     expanded = sa.Table("expanded_notes", meta, autoload_with=bind)
     questions = sa.Table("questions", meta, autoload_with=bind)
 
-    subject_id = bind.execute(sa.select(subjects.c.id).where(subjects.c.slug == "ap_history")).scalar_one()
+    subject_id = bind.execute(
+        sa.select(subjects.c.id).where(subjects.c.slug == "ap_history")
+    ).scalar_one_or_none()
     chapter_id = bind.execute(
         sa.select(chapters.c.id).where(chapters.c.slug == "u1-c01-region-people-sources")
-    ).scalar_one()
+    ).scalar_one_or_none()
+    # Alembic must remain valid for clean installations where application seed
+    # data is intentionally loaded after the schema chain. Production already
+    # has both prerequisites; an unseeded database safely receives the schema
+    # revision and can load this additive package through the normal importer.
+    if subject_id is None or chapter_id is None:
+        return
 
     note_package, note_manifest, _ = _load_package(PACKAGES[0])
     note_rows, _anchors, problems, warnings = parse_package_notes(note_package)
