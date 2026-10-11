@@ -1,7 +1,8 @@
 """Learner-facing Science & Technology textbook routes."""
+from pathlib import Path
 from types import SimpleNamespace
 
-from flask import Blueprint, abort, render_template, request, url_for
+from flask import Blueprint, abort, current_app, render_template, request, url_for
 
 from ..services import science_content as science
 
@@ -52,13 +53,25 @@ def _visuals(slug, lesson_id):
     ]
 
 
-def _question_visuals(slug, lesson_id, section_id):
-    filenames = SECTION_VISUAL_PAIRS.get(section_id, ())
+def _question_visuals(slug, lesson_id, section_id, question=None):
+    concept = science.concept_for_question(slug, question) if question else None
     base = f"infographics/science/{lesson_id}"
+    filenames = ()
+    concept_id = None
+    if concept:
+        candidate = (concept["concept_file"], concept["full_file"])
+        asset_dir = Path(current_app.static_folder) / base / "concept-pairs"
+        if all((asset_dir / filename).is_file() for filename in candidate):
+            filenames = candidate
+            base = f"{base}/concept-pairs"
+            concept_id = concept["id"]
+    if not filenames:
+        filenames = SECTION_VISUAL_PAIRS.get(section_id, ())
     labels = (("Concept image", "భావన చిత్రం"),
               ("Full explanation image", "పూర్తి వివరణ చిత్రం"))
     return [{"url": url_for("static", filename=f"{base}/{filename}"),
-             "label_en": labels[i][0], "label_te": labels[i][1]}
+             "label_en": labels[i][0], "label_te": labels[i][1],
+             "concept_id": concept_id}
             for i, filename in enumerate(filenames)]
 
 
@@ -142,7 +155,7 @@ def practice_explanation(slug, question_id):
     lesson, section = science.section_for_question(slug, question)
     if not lesson or not section:
         abort(404)
-    visuals = _question_visuals(slug, lesson["id"], section["id"])
+    visuals = _question_visuals(slug, lesson["id"], section["id"], question)
     return render_template(
         "ds/science_explanation.html", meta=meta, question=question,
         lesson=lesson, section=section, visuals=visuals,

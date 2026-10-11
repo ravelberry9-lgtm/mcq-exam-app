@@ -1,7 +1,9 @@
-from app.services import science_content
+from collections import Counter
 import json
 import shutil
 from pathlib import Path
+
+from app.services import science_content
 
 
 SLUG = "st3-ecosystem-biodiversity"
@@ -104,12 +106,31 @@ def test_science_question_explanation_links_section_and_visual_pair(client):
     assert b'id="visual-position"' not in page.data
     assert b'swipe-hint' not in page.data
     assert b'<figcaption>' not in page.data
+    assert b'draggable="false"' in page.data
     assert b'infography-reading' in page.data
     assert b'<header class="card">' not in page.data
     assert b'How Organisms Respond to Environmental Variation' in page.data
-    assert b'03-organism-responses-bilingual.png' in page.data
-    assert b'13-section-1c-full-explanation-bilingual.png' in page.data
+    assert b'concept-pairs/1c-c01-four-responses-concept.png' in page.data
+    assert b'concept-pairs/1c-c01-four-responses-full.png' in page.data
     assert page.data.count(b'<figure data-slide=') == 2
+
+
+def test_infography_reader_is_responsive_and_keeps_native_zoom(client):
+    css = client.get("/static/ds.css")
+    assert css.status_code == 200
+    assert b"scroll-snap-type:x mandatory" in css.data
+    assert b"scroll-snap-stop:always" in css.data
+    assert b"touch-action:pan-x pan-y pinch-zoom" in css.data
+    assert b".infography-reading body{padding:0" in css.data
+    assert b".infography-reading .question-visual-pair img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}" in css.data
+
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/practice/explanation/"
+        "st3-l01-01a-q001")
+    assert page.status_code == 200
+    assert b'width=device-width,initial-scale=1,viewport-fit=cover' in page.data
+    assert b'user-scalable=no' not in page.data
+    assert page.data.count(b'id="exit-infography"') == 1
 
 
 def test_science_question_explanation_rejects_unknown_question(client):
@@ -140,6 +161,81 @@ def test_all_lesson_one_visual_pair_files_exist(app):
     for pair in SECTION_VISUAL_PAIRS.values():
         assert len(pair) == 2
         assert all((root / filename).is_file() for filename in pair)
+
+
+def test_lesson_one_concept_map_covers_every_applicable_mcq(app):
+    with app.app_context():
+        mapping = science_content.load_concept_map(SLUG)
+        assert mapping is not None
+        assert len(mapping["concepts"]) == 38
+        assert len({item["id"] for item in mapping["concepts"]}) == 38
+
+        questions = science_content.approved_questions(
+            SLUG, lesson_id="st3-l01-ecology-foundations")
+        resolved = {
+            question["id"]: science_content.concept_for_question(SLUG, question)
+            for question in questions
+        }
+        assert [question_id for question_id, concept in resolved.items()
+                if concept is None] == ["st3-int-a-q003"]
+        assert resolved["st3-int-a-q001"]["id"] == "1e-c06"
+        assert resolved["st3-int-a-q002"]["id"] == "1e-c03"
+        assert resolved["st3-int-a-q004"]["id"] == "1e-c05"
+        assert resolved["st3-l01-01b-i-q008"]["id"] == "1b-c07"
+        assert resolved["st3-l01-01b-i-q009"]["id"] == "1b-c11"
+
+
+def test_lesson_one_mapped_facts_have_exactly_one_concept_owner(app):
+    with app.app_context():
+        mapping = science_content.load_concept_map(SLUG)
+    owners = Counter(
+        fact_id
+        for concept in mapping["concepts"]
+        for fact_id in concept["fact_ids"]
+        if fact_id
+    )
+    assert owners
+    assert all(count == 1 for count in owners.values())
+    owner = next(concept["id"] for concept in mapping["concepts"]
+                 if "st3-l01-01b-i-f005" in concept["fact_ids"])
+    assert owner == "1b-c11"
+
+
+def test_existing_concept_pair_assets_are_declared(app):
+    with app.app_context():
+        mapping = science_content.load_concept_map(SLUG)
+    declared = {
+        filename
+        for concept in mapping["concepts"]
+        for filename in (concept["concept_file"], concept["full_file"])
+    }
+    root = Path(app.static_folder) / "infographics" / "science" / \
+        "st3-l01-ecology-foundations" / mapping["asset_directory"]
+    existing = {path.name for path in root.glob("*.png")}
+    assert len(declared) == 76
+    assert existing == declared
+    assert all((root / filename).stat().st_size > 0 for filename in declared)
+
+
+def test_question_uses_exact_concept_pair_when_both_assets_exist(client):
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/practice/explanation/"
+        "st3-l01-01a-q001")
+    assert page.status_code == 200
+    assert b"concept-pairs/1a-c01-ecology-meaning-concept.png" in page.data
+    assert b"concept-pairs/1a-c01-ecology-meaning-full.png" in page.data
+    assert page.data.count(b'<figure data-slide=') == 2
+
+
+def test_cross_lesson_population_regulation_is_not_mapped_to_niche(client):
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/practice/explanation/"
+        "st3-int-a-q003")
+    assert page.status_code == 200
+    assert b"concept-pairs/1d-c02" not in page.data
+    assert b"concept-pairs/1d-c03" not in page.data
+    assert b"05-habitat-vs-niche-bilingual.png" in page.data
+    assert b"14-section-1d-full-explanation-bilingual.png" in page.data
 
 
 def test_unknown_science_chapter_is_404(client):
