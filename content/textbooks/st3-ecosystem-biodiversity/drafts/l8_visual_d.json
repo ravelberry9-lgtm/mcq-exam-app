@@ -1,0 +1,57 @@
+{
+  "lesson_id": "st3-l08-wildlife-conservation-monitoring",
+  "section_id": "l8-d",
+  "generator": "built-in imagegen",
+  "canvas": "1024x1536",
+  "review_method": "Each candidate inspected at original resolution for factual accuracy, exact text, visual explanation, cluster density and responsive readability.",
+  "accepted": [
+    {"id":"d01","concept":"d01-mishti-concept.png","full":"d01-mishti-full.png","prompt_summary":"Mangrove cross-section; MISHTI causal restoration chain and programme-category distinction.","review":"pass — accurate, visual-first concept and five-stage explanatory flow","dimensions":"1024x1536"},
+    {"id":"d02","concept":"d02-amrit-dharohar-concept.png","full":"d02-amrit-dharohar-full.png","prompt_summary":"Existing Ramsar designation followed by skills, participation, livelihoods and stewardship.","review":"pass after full-image regeneration — clear sequence, no promotional copy","dimensions":"1024x1536"},
+    {"id":"d03","concept":"d03-iucn-cites-wpa-concept.png","full":"d03-iucn-cites-wpa-full.png","prompt_summary":"One species viewed through extinction-risk, trade-control and Indian-law lenses.","review":"pass after concept regeneration — systems remain visually distinct without unsupported status values","dimensions":"1024x1536"},
+    {"id":"d04","concept":"d04-cites-trade-controls-concept.png","full":"d04-cites-trade-controls-full.png","prompt_summary":"Appendix I/II gate logic plus dated red sanders, pangolin and star-tortoise milestones.","review":"pass after full-image regeneration — concise timeline, permit-versus-trafficking mechanism and dated-evidence caution","dimensions":"1024x1536"},
+    {"id":"d05","concept":"d05-ibca-concept.png","full":"d05-ibca-full.png","prompt_summary":"Seven IBCA cats and treaty timeline, functions, range-country distinction and postponed summit.","review":"pass after full-image regeneration — exactly seven correct species including puma, no clouded leopard","dimensions":"1024x1536"},
+    {"id":"d06","concept":"d06-operation-olivia-concept.png","full":"d06-operation-olivia-full.png","prompt_summary":"Coast Guard patrols, seasonal restriction and TED mechanism in Odisha nesting waters.","review":"pass after full-image regeneration — five clean explanatory clusters and seasonal evidence note","dimensions":"1024x1536"},
+    {"id":"d07","concept":"d07-marine-turtle-action-plan-concept.png","full":"d07-marine-turtle-action-plan-full.png","prompt_summary":"Marine-turtle life corridor and five coordinated action-plan pillars with end-cycle caution.","review":"pass after full-image regeneration — readable five-cluster explanation with exact release and verification note","dimensions":"1024x1536"},
+    {"id":"d08","concept":"d08-place-based-recovery-programmes-concept.png","full":"d08-place-based-recovery-programmes-full.png","prompt_summary":"Five place-species recovery examples: Hangul, Sangai, rhino, dugong and Nilgiri tahr.","review":"pass after full-image regeneration — five accurate programme clusters and correct reintroduction/legal distinctions","dimensions":"1024x1536"}
+  ],
+  "rejections": [
+    {"id":"d02-full-r1","reason":"Introduced promotional headline/subtitle instead of the requested factual title and sequence."},
+    {"id":"d03-concept-r1","reason":"Added slogan-like framing and unnecessary tiger-specific category, appendix and schedule values."},
+    {"id":"d04-full-r1","reason":"Too text-heavy and added an inspirational footer; visual mechanism was secondary."},
+    {"id":"d05-full-r1","reason":"Factual failure: substituted clouded leopard for puma and added multiple slogans."},
+    {"id":"d06-full-r1","reason":"Added promotional conservation slogans that were not in the source facts."},
+    {"id":"d07-full-r1","reason":"Added promotional taglines and dense unsourced explanatory bullets."},
+    {"id":"d08-full-r1","reason":"Added slogans and unsupported recovery-outcome language beyond the supplied facts."}
+  ],
+  "independent_reaudit_corrections": [
+    {
+      "asset": "d04-cites-trade-controls-concept.png",
+      "rejected_replacements": 1,
+      "rejection_reason": "The earlier revision still used a closed gate/no-entry visual, falsely implying that Appendix I permits no trade under any circumstances; the next candidate added unrequested promotional copy.",
+      "final_review": "Pass — Appendix I now states that commercial trade is generally prohibited while exceptional non-commercial trade requires import and export permits; Appendix II shows regulated trade with an export permit; no absolute-ban icon remains.",
+      "dimensions": "1024x1536"
+    },
+    {
+      "asset": "d05-ibca-full.png",
+      "rejected_replacements": 1,
+      "rejection_reason": "The earlier revision used the unsupported label New Delhi Declaration; the next candidate corrected the name but added a promotional subtitle.",
+      "final_review": "Pass — seven-cat scope is exact; verified milestones, potential-range-country distinction and postponed summit are retained; the page correctly says no Delhi Declaration was adopted at cutoff.",
+      "dimensions": "1024x1536"
+    },
+    {
+      "asset": "d06-operation-olivia-concept.png",
+      "rejected_replacements": 1,
+      "rejection_reason": "Earlier turtles visually resembled green turtles rather than olive ridleys.",
+      "final_review": "Pass — compact olive-grey turtles with broad rounded-to-heart-shaped carapaces and relatively small heads are shown with Coast Guard patrols, Odisha waters and TED escape.",
+      "dimensions": "1024x1536"
+    },
+    {
+      "asset": "d06-operation-olivia-full.png",
+      "rejected_replacements": 1,
+      "rejection_reason": "Earlier turtles visually resembled green turtles rather than olive ridleys.",
+      "final_review": "Pass — olive-ridley morphology was rechecked at original resolution; November–May, Ministry of Defence, patrols, seasonal trawling restrictions and TED logic are all retained.",
+      "dimensions": "1024x1536"
+    }
+  ],
+  "summary": {"pairs":8,"images":16,"accepted_first_pass":9,"initial_regenerations":7,"independent_reaudit_replacements":4,"additional_rejected_candidates":2,"final_failures":0}
+}
