@@ -29,10 +29,12 @@ def test_science_textbook_navigation(client):
     lesson = client.get(f"/learn/science-technology/{SLUG}/textbook/st3-l01-ecology-foundations")
     assert lesson.status_code == 200
     assert b'integrated-bilingual' in lesson.data
-    assert b'<details class="textbook-section card"' in lesson.data
+    assert b'<section class="editorial-section"' in lesson.data
     assert b'id="reading-mode"' in lesson.data
     assert b'id="study-level"' not in lesson.data
-    assert b'class="textbook-copy en"' in lesson.data
+    assert b'data-editorial-html="true"' in lesson.data
+    assert b'class="editorial-lesson"' in lesson.data
+    assert b'class="textbook-copy en"' not in lesson.data
     assert b'class="langsw"' not in lesson.data
     assert b'class="bottomnav"' not in lesson.data
     assert b"biotic factors" in lesson.data
@@ -57,6 +59,24 @@ def test_lesson_five_uses_editorial_html_pilot(client):
         "st3-l05-biodiversity-l5-c", "st3-l05-biodiversity-l5-d",
     ):
         assert f'id="{section_id}"'.encode() in page.data
+
+
+def test_lessons_one_to_four_use_colorful_editorial_html(client):
+    expected = {
+        "st3-l01-ecology-foundations": 8,
+        "st3-l02-population-community-succession": 10,
+        "st3-l03-ecosystem-structure-energy-cycles": 9,
+        "st3-l04-ecosystem-types-indian-biogeography": 3,
+    }
+    for lesson_id, section_count in expected.items():
+        page = client.get(
+            f"/learn/science-technology/{SLUG}/textbook/{lesson_id}")
+        assert page.status_code == 200
+        assert b'data-editorial-html="true"' in page.data
+        assert b'class="chapter-map"' in page.data
+        assert page.data.count(b'class="editorial-section"') == section_count
+        assert page.data.count(b'class="concept-ribbon"') == section_count
+        assert b'class="textbook-copy en"' not in page.data
 
 
 def test_science_visual_pilot_does_not_replace_other_lessons(client):
