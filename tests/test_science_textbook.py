@@ -122,7 +122,7 @@ def test_infography_reader_is_responsive_and_keeps_native_zoom(client):
     assert b"scroll-snap-stop:always" in css.data
     assert b"touch-action:pan-x pan-y pinch-zoom" in css.data
     assert b".infography-reading body{padding:0" in css.data
-    assert b".infography-reading .question-visual-pair img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}" in css.data
+    assert b".infography-reading .question-visual-pair img{width:min(100%,900px);height:auto;max-width:none;max-height:none;object-fit:contain}" in css.data
 
     page = client.get(
         f"/learn/science-technology/{SLUG}/practice/explanation/"
@@ -185,6 +185,61 @@ def test_lesson_one_concept_map_covers_every_applicable_mcq(app):
         assert resolved["st3-l01-01b-i-q009"]["id"] == "1b-c11"
 
 
+def test_per_lesson_concept_map_is_selected_without_replacing_lesson_one(
+        app, tmp_path):
+    source = Path(app.config["TEXTBOOK_ROOT"]) / SLUG
+    target = tmp_path / SLUG
+    shutil.copytree(source, target)
+    lesson_two = "st3-l02-population-community-succession"
+    concept_dir = target / "concept_maps"
+    concept_dir.mkdir(exist_ok=True)
+    lesson_two_map = {
+        "chapter_slug": SLUG,
+        "lesson_id": lesson_two,
+        "asset_directory": "concept-pairs",
+        "concepts": [{
+            "id": "2a-c01",
+            "section_id": f"{lesson_two}-section-2a",
+            "title": "Population attributes",
+            "concept_file": "2a-c01-concept.png",
+            "full_file": "2a-c01-full.png",
+            "fact_ids": ["st3-l02-02a-f001"],
+        }],
+        "question_overrides": {},
+    }
+    (concept_dir / f"{lesson_two}.json").write_text(
+        json.dumps(lesson_two_map), encoding="utf-8")
+    app.config["TEXTBOOK_ROOT"] = tmp_path
+
+    with app.app_context():
+        legacy = science_content.load_concept_map(SLUG)
+        lesson_one = science_content.load_concept_map(
+            SLUG, "st3-l01-ecology-foundations")
+        selected = science_content.load_concept_map(SLUG, lesson_two)
+        wrong_lesson_question = {
+            "id": "synthetic-l01", "lesson_id": "st3-l01-ecology-foundations",
+            "fact_ids": ["st3-l02-02a-f001"],
+        }
+        lesson_two_question = {
+            "id": "synthetic-l02", "lesson_id": lesson_two,
+            "fact_ids": ["st3-l02-02a-f001"],
+        }
+
+        assert legacy["lesson_id"] == "st3-l01-ecology-foundations"
+        assert lesson_one == legacy
+        assert selected["lesson_id"] == lesson_two
+        assert science_content.concept_for_question(
+            SLUG, lesson_two_question)["id"] == "2a-c01"
+        assert science_content.concept_for_question(
+            SLUG, wrong_lesson_question) is None
+
+
+def test_per_lesson_concept_map_rejects_unsafe_lesson_path(app):
+    with app.app_context():
+        assert science_content.load_concept_map(SLUG, "../concept_map") is None
+        assert science_content.load_concept_map(SLUG, "lesson/two") is None
+
+
 def test_lesson_one_mapped_facts_have_exactly_one_concept_owner(app):
     with app.app_context():
         mapping = science_content.load_concept_map(SLUG)
@@ -215,6 +270,60 @@ def test_existing_concept_pair_assets_are_declared(app):
     assert len(declared) == 76
     assert existing == declared
     assert all((root / filename).stat().st_size > 0 for filename in declared)
+
+
+def test_lesson_two_concept_map_and_assets_are_complete(app):
+    lesson_id = "st3-l02-population-community-succession"
+    with app.app_context():
+        mapping = science_content.load_concept_map(SLUG, lesson_id)
+
+    assert mapping is not None
+    assert len(mapping["concepts"]) == 13
+    assert len({item["id"] for item in mapping["concepts"]}) == 13
+
+    owners = Counter(
+        fact_id
+        for concept in mapping["concepts"]
+        for fact_id in concept["fact_ids"]
+        if fact_id
+    )
+    assert len(owners) == 96
+    assert all(count == 1 for count in owners.values())
+
+    declared = {
+        filename
+        for concept in mapping["concepts"]
+        for filename in (concept["concept_file"], concept["full_file"])
+    }
+    root = Path(app.static_folder) / "infographics" / "science" / \
+        lesson_id / mapping["asset_directory"]
+    existing = {path.name for path in root.glob("*.png")}
+    assert len(declared) == 26
+    assert existing == declared
+    assert all((root / filename).stat().st_size > 0 for filename in declared)
+
+
+def test_lesson_two_question_opens_its_concept_pair(client):
+    page = client.get(
+        f"/learn/science-technology/{SLUG}/practice/explanation/"
+        "st3-l02-02a-q001")
+    assert page.status_code == 200
+    assert b"concept-pairs/2a-c01-population-density-age-pyramids-concept.png" in page.data
+    assert b"concept-pairs/2a-c01-population-density-age-pyramids-full.png" in page.data
+    assert page.data.count(b'<figure data-slide=') == 2
+
+
+def test_every_lesson_two_mcq_has_a_concept_pair(app):
+    lesson_id = "st3-l02-population-community-succession"
+    with app.app_context():
+        questions = science_content.approved_questions(
+            SLUG, lesson_id=lesson_id)
+        unresolved = [
+            question["id"] for question in questions
+            if science_content.concept_for_question(SLUG, question) is None
+        ]
+    assert len(questions) == 171
+    assert unresolved == []
 
 
 def test_question_uses_exact_concept_pair_when_both_assets_exist(client):

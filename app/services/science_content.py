@@ -1,5 +1,6 @@
 """Read-only Science & Technology textbook catalogue and sidecar metadata."""
 import json
+import re
 from pathlib import Path
 
 from flask import current_app
@@ -70,18 +71,36 @@ def approved_question(slug: str, question_id: str):
                  if row["id"] == question_id), None)
 
 
-def load_concept_map(slug: str):
-    """Load the optional, reviewed MCQ-to-infographic concept catalogue."""
+def load_concept_map(slug: str, lesson_id: str | None = None):
+    """Load an optional, reviewed MCQ-to-infographic concept catalogue.
+
+    New lessons use ``concept_maps/<lesson_id>.json``.  The original chapter-level
+    ``concept_map.json`` remains a fallback so the Lesson 1 visual catalogue does
+    not need to move (or change URLs) while later lessons are added.
+    """
     root = _root()
     package = (root / slug).resolve()
-    path = (package / "concept_map.json").resolve()
+    if lesson_id is not None:
+        if not isinstance(lesson_id, str) or not re.fullmatch(
+                r"[A-Za-z0-9][A-Za-z0-9_-]*", lesson_id):
+            return None
+        lesson_path = (package / "concept_maps" / f"{lesson_id}.json").resolve()
+        if lesson_path.is_relative_to(package) and lesson_path.is_file():
+            path = lesson_path
+        else:
+            path = (package / "concept_map.json").resolve()
+    else:
+        path = (package / "concept_map.json").resolve()
     if not path.is_relative_to(package) or not path.is_file():
         return None
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
         concepts = data.get("concepts")
         overrides = data.get("question_overrides")
-        if data.get("chapter_slug") != slug or not isinstance(concepts, list) or \
+        if data.get("chapter_slug") != slug or \
+                not isinstance(data.get("lesson_id"), str) or \
+                (lesson_id is not None and data["lesson_id"] != lesson_id) or \
+                not isinstance(concepts, list) or \
                 not isinstance(overrides, dict):
             raise ValueError("invalid concept map header")
         ids = set()
@@ -123,8 +142,9 @@ def concept_for_question(slug: str, question: dict):
     main teaching concept belongs to another lesson.  Ordinary questions are
     resolved by their audited fact IDs.
     """
-    mapping = load_concept_map(slug)
-    if not mapping or question.get("lesson_id") != mapping.get("lesson_id"):
+    lesson_id = question.get("lesson_id")
+    mapping = load_concept_map(slug, lesson_id)
+    if not mapping or lesson_id != mapping.get("lesson_id"):
         return None
     question_id = question.get("id")
     overrides = mapping["question_overrides"]
