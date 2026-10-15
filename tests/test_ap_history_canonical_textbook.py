@@ -18,6 +18,8 @@ def test_canonical_package_and_all_routes(client, app):
         content = client.get(f"/learn/ap-history/{row['slug']}/canonical-textbook/content")
         assert reader.status_code == content.status_code == 200
         assert hashlib.sha256(content.data).hexdigest().upper() == row["html_sha256"]
+        if row["chapter"] < 31:
+            assert f"/{rows[row['chapter']]['slug']}/canonical-textbook" in reader.get_data(as_text=True)
 
 
 def test_chapter9_disables_unapproved_languages(client, app):
