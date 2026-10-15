@@ -36,6 +36,12 @@
 {% elif not (d.fresh_live and (d.has_expanded or d.native_count)) and not preview %}
   <div class="card"><span class="muted">{{ t('syl.no_content') }}</span></div>
 {% endif %}
+{% if canonical_textbook %}
+  <a class="card" data-testid="open-canonical-textbook" href="{{ url_for('learn.canonical_textbook_index', slug=d.chapter.slug) }}">
+    <strong>{{ c.bi('Read the approved textbook chapter', 'ఆమోదించిన పాఠ్యగ్రంథ అధ్యాయాన్ని చదవండి') }}</strong>
+    <span class="small muted">{{ c.bi('Foundation and Group 1 reading', 'ఫౌండేషన్ మరియు గ్రూప్ 1 పఠిశీలన') }}</span>
+  </a>
+{% endif %}
 {% for source in d.note_chapters %}
   <a class="card" href="{{ url_for('learn.notes', chapter_id=source.id) }}">
     <strong>{{ c.bi('Related chapter notes', 'సంబంధిత అధ్యాయం నోట్స్') }}</strong>

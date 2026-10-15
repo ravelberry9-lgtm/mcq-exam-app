@@ -4,7 +4,7 @@ New blueprint under /learn. The old routes (/subjects, /subject/<slug>, /practic
 /notes/..., /exam/...) are untouched and keep working until the new journey replaces them.
 """
 import re
-from flask import Blueprint, abort, jsonify, redirect, render_template, request, url_for
+from flask import Blueprint, abort, jsonify, redirect, render_template, request, send_file, url_for
 
 from ..db import db
 from ..models import Chapter, ChapterProgress, ExamSection, Note, Subject
@@ -14,6 +14,7 @@ from ..services import syllabus_view as syl
 from ..services import expanded_view as xv
 from ..services import collection_switch as csw
 from ..services import textbook as tb
+from ..services import canonical_textbook as ctb
 from ..models import FRESH_COLLECTION_ID
 from ..services.ui_text import UI, t, tl
 
@@ -73,7 +74,10 @@ def ap_history_chapter(slug):
     preview = _is_admin() and not data["fresh_live"] and (data["has_expanded"] or data["native_count"])
     textbook = _chapter_textbook(data["chapter"]) if csw.can_view_collection(
         data["chapter"], FRESH_COLLECTION_ID, _is_admin()) else None
-    return render_template("ds/syllabus_chapter.html", d=data, preview=bool(preview), textbook=textbook)
+    return render_template(
+        "ds/syllabus_chapter.html", d=data, preview=bool(preview), textbook=textbook,
+        canonical_textbook=ctb.load(slug),
+    )
 
 
 def _chapter_textbook(ch):
@@ -97,6 +101,30 @@ def _textbook(slug):
 def textbook_index(slug):
     ch, book = _textbook(slug)
     return render_template("ds/ap_textbook_full.html", ch=ch, book=book)
+
+
+@bp.get("/ap-history/<slug>/canonical-textbook")
+def canonical_textbook_index(slug):
+    item = ctb.load(slug) or abort(404)
+    data = syl.chapter_detail(slug) or abort(404)
+    return render_template(
+        "ds/canonical_textbook.html", ch=data["chapter"], item=item,
+        manifest_hash=ctb.EXPECTED_MANIFEST_SHA256,
+    )
+
+
+@bp.get("/ap-history/<slug>/canonical-textbook/content")
+def canonical_textbook_content(slug):
+    item = ctb.load(slug) or abort(404)
+    path = ctb.html_path(item) or abort(404)
+    response = send_file(path, mimetype="text/html", conditional=True)
+    response.headers["Content-Security-Policy"] = (
+        "default-src 'none'; style-src 'unsafe-inline'; "
+        "img-src 'self' data:; font-src 'self' data:"
+    )
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    return response
 
 
 @bp.get("/ap-history/<slug>/textbook/<lesson_id>")

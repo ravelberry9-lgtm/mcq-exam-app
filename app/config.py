@@ -64,6 +64,8 @@ class Config:
     APP_TITLE_TE = os.environ.get("APP_TITLE_TE", "ఏపీపీఎస్‌సీ తయారీ")
     ACCENT_COLOR = os.environ.get("ACCENT_COLOR", "#1e40af")
     DEFAULT_LANG = os.environ.get("DEFAULT_LANG", "both")  # 'te' | 'en' | 'both'
+    AP_HISTORY_CANONICAL_ENABLED = os.environ.get("AP_HISTORY_CANONICAL_ENABLED", "1") == "1"
+    AP_HISTORY_CANONICAL_ROOT = BASE_DIR / "content" / "ap_history_canonical"
 
     # Content sources (for migration)
     LEGACY_DIR = BASE_DIR / "_legacy"
