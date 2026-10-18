@@ -85,6 +85,22 @@ def test_pages_are_read_only(client, seeded):
     assert client.post("/learn/ap-history").status_code == 405
 
 
+def test_modern_chapters_force_telugu_and_hide_group1_textbook(client, seeded):
+    modern = BeautifulSoup(
+        client.get("/learn/ap-history/u3-c15-europeans-company-rule").data,
+        "html.parser",
+    )
+    assert modern.html["data-lang"] == "te"
+    assert modern.select_one('[data-testid="open-canonical-textbook"]') is None
+    assert modern.select_one('[aria-label="Language / భాష"]') is None
+
+    ancient = BeautifulSoup(
+        client.get("/learn/ap-history/u2-c14-thematic-history-11th-16th-c").data,
+        "html.parser",
+    )
+    assert ancient.select_one('[data-testid="open-canonical-textbook"]') is not None
+
+
 def test_canonical_practice_filters_shared_legacy_chapters_and_combines_multiple_homes(client, seeded):
     chapters = [Chapter(subject_id=seeded.id, chapter_num=n, title_en=f"Legacy {n}", title_te="అధ్యాయం") for n in (1, 2)]
     db.session.add_all(chapters); db.session.flush()

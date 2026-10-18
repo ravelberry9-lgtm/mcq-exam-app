@@ -16,9 +16,12 @@ def test_canonical_package_and_all_routes(client, app):
     for row in rows:
         reader = client.get(f"/learn/ap-history/{row['slug']}/canonical-textbook")
         content = client.get(f"/learn/ap-history/{row['slug']}/canonical-textbook/content")
+        if row["chapter"] >= 15:
+            assert reader.status_code == content.status_code == 404
+            continue
         assert reader.status_code == content.status_code == 200
         assert hashlib.sha256(content.data).hexdigest().upper() == row["html_sha256"]
-        if row["chapter"] < 31:
+        if row["chapter"] < 14:
             assert f"/{rows[row['chapter']]['slug']}/canonical-textbook" in reader.get_data(as_text=True)
 
 

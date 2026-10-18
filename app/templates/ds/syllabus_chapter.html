@@ -5,7 +5,7 @@
 {% block topbar %}
   <div class="row between">
     <a class="back" href="{{ url_for('learn.ap_history') }}"><span aria-hidden="true">‹</span> {{ t('syl.title') }}</a>
-    {{ c.langswitch(lang_pref) }}
+    {% if not te_only %}{{ c.langswitch(lang_pref) }}{% endif %}
   </div>
   {% if d.chapter.is_core %}<div class="crumb">{{ t('syl.unit', n=d.unit.unit_num) }} · {{ t('common.chapter', n=d.chapter.chapter_num) }}</div>
   {% else %}<div class="crumb">{{ c.tag('off', t('syl.supp_tag')) }}</div>{% endif %}

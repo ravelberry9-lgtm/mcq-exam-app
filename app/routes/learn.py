@@ -71,17 +71,21 @@ def ap_history():
 @bp.route("/ap-history/<slug>")
 def ap_history_chapter(slug):
     data = syl.chapter_detail(slug) or abort(404)
+    te_only = bool(data["chapter"].is_core and data["chapter"].chapter_num >= 15)
     preview = _is_admin() and not data["fresh_live"] and (data["has_expanded"] or data["native_count"])
     textbook = _chapter_textbook(data["chapter"]) if csw.can_view_collection(
         data["chapter"], FRESH_COLLECTION_ID, _is_admin()) else None
     return render_template(
         "ds/syllabus_chapter.html", d=data, preview=bool(preview), textbook=textbook,
-        canonical_textbook=ctb.load(slug),
+        canonical_textbook=None if te_only else ctb.load(slug), te_only=te_only,
+        **({"lang_pref": "te"} if te_only else {}),
     )
 
 
 def _chapter_textbook(ch):
     """Load only a textbook whose canonical subtopics belong to this chapter."""
+    if ch.is_core and ch.chapter_num >= 15:
+        return None
     book = tb.load(ch.slug, _is_admin())
     if not book:
         return None
@@ -105,8 +109,10 @@ def textbook_index(slug):
 
 @bp.get("/ap-history/<slug>/canonical-textbook")
 def canonical_textbook_index(slug):
-    item = ctb.load(slug) or abort(404)
     data = syl.chapter_detail(slug) or abort(404)
+    if data["chapter"].is_core and data["chapter"].chapter_num >= 15:
+        abort(404)
+    item = ctb.load(slug) or abort(404)
     return render_template(
         "ds/canonical_textbook.html", ch=data["chapter"], item=item,
         manifest_hash=ctb.EXPECTED_MANIFEST_SHA256,
@@ -115,6 +121,9 @@ def canonical_textbook_index(slug):
 
 @bp.get("/ap-history/<slug>/canonical-textbook/content")
 def canonical_textbook_content(slug):
+    data = syl.chapter_detail(slug) or abort(404)
+    if data["chapter"].is_core and data["chapter"].chapter_num >= 15:
+        abort(404)
     item = ctb.load(slug) or abort(404)
     path = ctb.html_path(item) or abort(404)
     response = send_file(path, mimetype="text/html", conditional=True)
@@ -160,6 +169,7 @@ def ap_history_practice(slug):
     learner following a history link of a collection that was once live, can ask for ``?collection=fresh`` explicitly."""
     data = syl.chapter_detail(slug) or abort(404)
     ch = data["chapter"]
+    te_only = bool(ch.is_core and ch.chapter_num >= 15)
     if data["fresh_live"] or request.args.get("collection") == "fresh":
         return _fresh_practice(slug, ch, data["fresh_live"])
     qs = syl.chapter_questions(ch)
@@ -168,12 +178,13 @@ def ap_history_practice(slug):
     ctx = dict(chapter=None, subject=data["subject"], title_en=ch.title_en, title_te=ch.title_te,
                note_count=0, mcq_count=total, scope=f"canonical-{slug}",
                back_url=url_for("learn.ap_history_chapter", slug=slug), back_label="prac.back_topic",
-               restart_url=url_for("learn.ap_history_practice", slug=slug, i=1, new=1))
+               restart_url=url_for("learn.ap_history_practice", slug=slug, i=1, new=1), te_only=te_only)
     return render_template("ds/practice.html", **ctx, total=total, i=i,
                            q=svc.question_view(qs[i - 1]) if total and i <= total else None,
                            summary=bool(total and i > total),
                            next_url=url_for("learn.ap_history_practice", slug=slug, i=i + 1),
-                           is_last=i == total, fresh=bool(request.args.get("new")))
+                           is_last=i == total, fresh=bool(request.args.get("new")),
+                           **({"lang_pref": "te"} if te_only else {}))
 
 
 def _fresh_practice(slug, ch, live):
@@ -186,20 +197,24 @@ def _fresh_practice(slug, ch, live):
     if qs is None:
         abort(404)
     total = len(qs)
+    te_only = bool(ch.is_core and ch.chapter_num >= 15)
     i = request.args.get("i", 1, type=int)
     extra = ({"subtopic": sub} if sub else {}) | ({} if live else {"collection": "fresh"})
     ctx = dict(chapter=None, subject=db.session.get(Subject, ch.subject_id), title_en=ch.title_en, title_te=ch.title_te, note_count=0,
                mcq_count=total, scope=f"c-{ch.slug}" + (f"-{sub}" if sub else ""),
                back_url=url_for("learn.ap_history_chapter", slug=slug), back_label="prac.back_chapter",
-               restart_url=url_for("learn.ap_history_practice", slug=slug, i=1, new=1, **extra))
+               restart_url=url_for("learn.ap_history_practice", slug=slug, i=1, new=1, **extra), te_only=te_only)
     if total == 0:
-        return render_template("ds/practice.html", **ctx, total=0, q=None, summary=False, i=1)
+        return render_template("ds/practice.html", **ctx, total=0, q=None, summary=False, i=1,
+                               **({"lang_pref": "te"} if te_only else {}))
     if i > total:
-        return render_template("ds/practice.html", **ctx, total=total, q=None, summary=True, i=i)
+        return render_template("ds/practice.html", **ctx, total=total, q=None, summary=True, i=i,
+                               **({"lang_pref": "te"} if te_only else {}))
     i = max(1, i)
     return render_template("ds/practice.html", **ctx, total=total, q=svc.question_view(qs[i - 1]), summary=False, i=i,
                            next_url=url_for("learn.ap_history_practice", slug=slug, i=i + 1, **extra), is_last=(i == total),
-                           fresh=bool(request.args.get("new")))
+                           fresh=bool(request.args.get("new")),
+                           **({"lang_pref": "te"} if te_only else {}))
 
 
 @bp.route("/subject/<slug>")
@@ -256,9 +271,11 @@ def topic(chapter_id):
 def notes(chapter_id):
     ch = db.session.get(Chapter, chapter_id) or abort(404)
     ctx = svc.topic_context(ch)
+    te_only = bool(ctx["subject"].slug == "ap_history" and ch.chapter_num >= 15)
     sections = Note.query.filter_by(chapter_id=ch.id).order_by(Note.section_num).all()
     if not sections:
-        return render_template("ds/notes.html", **ctx, note=None, sections=[], pos=0, prev_n=None, next_n=None)
+        return render_template("ds/notes.html", **ctx, note=None, sections=[], pos=0, prev_n=None, next_n=None,
+                               te_only=te_only, **({"lang_pref": "te"} if te_only else {}))
     wanted = request.args.get("section", type=int)
     nums = [n.section_num for n in sections]
     if wanted is None:
@@ -275,7 +292,8 @@ def notes(chapter_id):
         "ds/notes.html", **ctx, note=note, sections=sections, pos=pos,
         prev_n=nums[pos - 1] if pos > 0 else None,
         next_n=nums[pos + 1] if pos < len(nums) - 1 else None,
-        body_en=body_en, body_te=body_te,
+        body_en=body_en, body_te=body_te, te_only=te_only,
+        **({"lang_pref": "te"} if te_only else {}),
     )
 
 
@@ -283,20 +301,24 @@ def notes(chapter_id):
 def practice(chapter_id):
     ch = db.session.get(Chapter, chapter_id) or abort(404)
     ctx = svc.topic_context(ch)
+    te_only = bool(ctx["subject"].slug == "ap_history" and ch.chapter_num >= 15)
     ctx.update(scope=str(ch.id), back_url=url_for("learn.topic", chapter_id=ch.id), back_label="prac.back_topic",
-               restart_url=url_for("learn.practice", chapter_id=ch.id, i=1, new=1))
+               restart_url=url_for("learn.practice", chapter_id=ch.id, i=1, new=1), te_only=te_only)
     qs = svc.chapter_questions(ch.id)
     total = len(qs)
     i = request.args.get("i", 1, type=int)
     if total == 0:
-        return render_template("ds/practice.html", **ctx, total=0, q=None, summary=False, i=1)
+        return render_template("ds/practice.html", **ctx, total=0, q=None, summary=False, i=1,
+                               **({"lang_pref": "te"} if te_only else {}))
     if i > total:
-        return render_template("ds/practice.html", **ctx, total=total, q=None, summary=True, i=i)
+        return render_template("ds/practice.html", **ctx, total=total, q=None, summary=True, i=i,
+                               **({"lang_pref": "te"} if te_only else {}))
     i = max(1, i)
     q = svc.question_view(qs[i - 1])
     nxt = url_for("learn.practice", chapter_id=ch.id, i=i + 1)
     return render_template("ds/practice.html", **ctx, total=total, q=q, summary=False, i=i,
-                           next_url=nxt, is_last=(i == total), fresh=bool(request.args.get("new")))
+                           next_url=nxt, is_last=(i == total), fresh=bool(request.args.get("new")),
+                           **({"lang_pref": "te"} if te_only else {}))
 
 
 @bp.route("/api/topic/<int:chapter_id>/section", methods=["POST"])

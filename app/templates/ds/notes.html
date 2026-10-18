@@ -9,7 +9,7 @@
   <div class="row">{{ c.learnlink() }}</div>
   <div class="row between">
     <a class="back" href="{{ url_for('learn.topic', chapter_id=chapter.id) }}"><span aria-hidden="true">‹</span> {{ c.bi(title_en, title_te) }}</a>
-    {{ c.langswitch(lang_pref) }}
+    {% if not te_only %}{{ c.langswitch(lang_pref) }}{% endif %}
   </div>
   {% if note %}
   <div class="row between">
@@ -31,8 +31,8 @@
   <article id="note" data-chapter="{{ chapter.id }}" data-section="{{ note.section_num }}" style="display:flex;flex-direction:column;gap:12px">
     {% if note.heading_en or note.heading_te %}<h2 style="margin:0">{{ c.bi(note.heading_en, note.heading_te, 'stack') }}</h2>{% endif %}
     {% if not body_te %}<p class="fallback fb-te" style="margin:0">{{ t('notes.no_te') }}</p>{% endif %}
-    {% if not body_en %}<p class="fallback fb-en" style="margin:0">{{ t('notes.no_en') }}</p>{% endif %}
-    {% if body_en %}<div class="note-body en{% if not body_te %} keep{% endif %}" lang="en">{{ body_en|safe }}</div>{% endif %}
+    {% if not body_en and not te_only %}<p class="fallback fb-en" style="margin:0">{{ t('notes.no_en') }}</p>{% endif %}
+    {% if body_en and not te_only %}<div class="note-body en{% if not body_te %} keep{% endif %}" lang="en">{{ body_en|safe }}</div>{% endif %}
     {% if body_te %}<div class="note-body te{% if not body_en %} keep{% endif %}" lang="te">{{ body_te|safe }}</div>{% endif %}
   </article>
 {% endif %}
