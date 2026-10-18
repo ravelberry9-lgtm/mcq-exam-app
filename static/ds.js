@@ -84,6 +84,50 @@
 
   var card = document.querySelector("[data-practice]");
   if (card) {
+    // Presentation-only formatter: preserve stored MCQ text while turning inline
+    // match-the-following stems into two readable lists on small screens.
+    var questionText = document.getElementById("question-text");
+    if (questionText) {
+      questionText.querySelectorAll(".te,.en").forEach(function (langBlock) {
+        var raw = (langBlock.textContent || "").replace(/\s+/g, " ").trim();
+        if (!/(జతపర|సరిపోల్చ|match)/i.test(raw)) return;
+        var firstAlpha = raw.search(/(?:^|\s)A\.\s*/);
+        if (firstAlpha < 0) return;
+        var numberStart = raw.slice(firstAlpha).search(/\s[—–-]\s*1\.\s*|\s1\.\s*/);
+        if (numberStart < 0) return;
+        numberStart += firstAlpha;
+        var instruction = raw.slice(0, firstAlpha).trim().replace(/[:：]\s*$/, "");
+        var alphaText = raw.slice(firstAlpha, numberStart).replace(/\s[—–-]\s*$/, "").trim();
+        var numberText = raw.slice(numberStart).replace(/^\s*[—–-]\s*/, "").trim();
+        function items(text, marker) {
+          var re = marker === "alpha" ? /(?:^|\s)([A-D])\.\s*/g : /(?:^|\s)(\d+)\.\s*/g;
+          var marks = [], match;
+          while ((match = re.exec(text)) !== null) marks.push({ key: match[1], start: match.index, body: re.lastIndex });
+          return marks.map(function (m, i) {
+            return { key: m.key, value: text.slice(m.body, i + 1 < marks.length ? marks[i + 1].start : text.length).trim() };
+          }).filter(function (item) { return item.value; });
+        }
+        var left = items(alphaText, "alpha"), right = items(numberText, "number");
+        if (left.length < 2 || right.length < 2) return;
+        function list(title, rows) {
+          var box = document.createElement("div"); box.className = "match-list";
+          var head = document.createElement("div"); head.className = "match-list-title"; head.textContent = title; box.appendChild(head);
+          rows.forEach(function (item) {
+            var row = document.createElement("div"); row.className = "match-row";
+            var key = document.createElement("span"); key.className = "match-marker"; key.textContent = item.key + ".";
+            var value = document.createElement("span"); value.textContent = item.value;
+            row.appendChild(key); row.appendChild(value); box.appendChild(row);
+          });
+          return box;
+        }
+        var formatted = document.createElement("div"); formatted.className = "match-question";
+        if (instruction) { var intro = document.createElement("div"); intro.className = "match-instruction"; intro.textContent = instruction; formatted.appendChild(intro); }
+        var lists = document.createElement("div"); lists.className = "match-lists";
+        lists.appendChild(list(langBlock.classList.contains("te") ? "జాబితా–I" : "List I", left));
+        lists.appendChild(list(langBlock.classList.contains("te") ? "జాబితా–II" : "List II", right));
+        formatted.appendChild(lists); langBlock.replaceChildren(formatted);
+      });
+    }
     var topic = card.dataset.topic, st = stats(topic), answered = false;
     if (card.dataset.fresh === "1") { st = { r: 0, w: 0, s: 0 }; saveStats(topic, st); history.replaceState(null, "", location.pathname + "?i=1"); }
     var go = document.getElementById("go"), expl = document.getElementById("expl"), err = document.getElementById("err");

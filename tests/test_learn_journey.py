@@ -201,6 +201,9 @@ def test_practice_question_markup_and_no_answer_leak(c, world):
     assert "data-correct" not in html                     # the key is only revealed by the API after answering
     assert "This question exists in Telugu only" in html  # English requested but missing
     assert "Q 1 / 2" in html
+    assert 'class="practice-question"' in html
+    assert 'data-question-format="auto"' in html
+    assert 'class="opt-text"' in html
 
 
 def test_practice_second_question_is_bilingual_and_last_flag(c, world):
