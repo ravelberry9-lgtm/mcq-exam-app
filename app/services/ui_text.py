@@ -20,7 +20,7 @@ UI = {
     "common.chapters": ("{n} chapters", "{n} అధ్యాయాలు"), "common.chapter": ("Chapter {n}", "అధ్యాయం {n}"),
     "common.empty": ("Nothing here yet", "ఇక్కడ ఇంకా ఏమీ లేదు"),
     # canonical AP History structure
-    "syl.title": ("AP History · 31 chapters", "ఆంధ్ర చరిత్ర · 31 అధ్యాయాలు"),
+    "syl.title": ("AP History · 41 chapters", "ఆంధ్ర చరిత్ర · 41 అధ్యాయాలు"),
     "syl.unit": ("Unit {n}", "యూనిట్ {n}"),
     "syl.supp": ("Supplementary reference chapters", "అనుబంధ సూచన అధ్యాయాలు"),
     "syl.supp_note": ("Background reading. Not counted in syllabus completion.", "నేపథ్య పఠనం. సిలబస్ పూర్తి లెక్కలో చేర్చబడలేదు."),
@@ -29,7 +29,7 @@ UI = {
     "syl.open": ("Open notes and practice", "నోట్స్ మరియు ప్రాక్టీస్ తెరవండి"),
     "syl.no_content": ("No notes or questions linked to this chapter yet.", "ఈ అధ్యాయానికి ఇంకా నోట్స్ లేదా ప్రశ్నలు లింక్ కాలేదు."),
     "syl.not_loaded": ("The chapter structure is not available yet.", "అధ్యాయ నిర్మాణం ఇంకా అందుబాటులో లేదు."),
-    "syl.all": ("All 31 chapters", "మొత్తం 31 అధ్యాయాలు"),
+    "syl.all": ("All 41 chapters", "మొత్తం 41 అధ్యాయాలు"),
     # expanded chapter notes (package notes kept separate from the older note sections) and native question labels
     "xn.title": ("Expanded chapter notes", "విస్తృత అధ్యాయ నోట్స్"),
     "xn.open": ("Open expanded notes", "విస్తృత నోట్స్ తెరవండి"),
