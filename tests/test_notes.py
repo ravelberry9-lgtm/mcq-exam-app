@@ -81,6 +81,12 @@ def test_chapter_list_404_unknown_subject(seeded_client):
     assert r.status_code == 404
 
 
+def test_ap_history_legacy_notes_home_redirects_to_canonical_outline(client):
+    r = client.get("/notes/ap_history")
+    assert r.status_code == 302
+    assert r.location == "/learn/ap-history"
+
+
 def test_chapter_list_shows_notes_link(seeded_client):
     """Chapter list page links to the note reader."""
     r = seeded_client.get("/notes/polity")

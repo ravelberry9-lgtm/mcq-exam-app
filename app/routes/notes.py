@@ -15,6 +15,11 @@ def _device_id():
 @bp.route("/<subject_slug>")
 def chapter_list(subject_slug):
     """List all chapters for a subject with progress status."""
+    # AP History now has one canonical 41-chapter learner outline.  Keep the
+    # legacy reader URLs for old deep links, but do not expose the duplicate
+    # legacy chapter-list page as a second AP History notes homepage.
+    if subject_slug == "ap_history":
+        return redirect(url_for("learn.ap_history"))
     subject = Subject.query.filter_by(slug=subject_slug).first_or_404()
     chapters = (
         Chapter.query
