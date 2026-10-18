@@ -3,7 +3,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from app.db import db
-from app.models import Chapter, Question, Subject
+from app.models import Chapter, Note, Question, Subject
 from app.services import ap_canonical as canon
 
 
@@ -99,6 +99,23 @@ def test_modern_chapters_force_telugu_and_hide_group1_textbook(client, seeded):
         "html.parser",
     )
     assert ancient.select_one('[data-testid="open-canonical-textbook"]') is not None
+
+
+def test_modern_empty_note_section_does_not_show_english_fallback(client, seeded):
+    chapter = Chapter(
+        subject_id=seeded.id,
+        chapter_num=15,
+        title_en="Arrival of Europeans",
+        title_te="యూరోపియనుల రాక",
+    )
+    db.session.add(chapter)
+    db.session.flush()
+    db.session.add(Note(chapter_id=chapter.id, section_num=1, heading_te="అధ్యాయం 15"))
+    db.session.commit()
+
+    soup = BeautifulSoup(client.get(f"/learn/topic/{chapter.id}/notes").data, "html.parser")
+    assert soup.html["data-lang"] == "te"
+    assert soup.select_one(".fallback") is None
 
 
 def test_canonical_practice_filters_shared_legacy_chapters_and_combines_multiple_homes(client, seeded):
