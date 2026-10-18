@@ -1,5 +1,6 @@
 """Stage 1-2 tests: design-system shell + Learn -> Section -> Topic -> Notes -> Practice -> Explanation."""
 import pytest
+from bs4 import BeautifulSoup
 from app.db import db
 from app.models import (
     Chapter, ChapterProgress, Exam, ExamPaper, ExamSection, ExamSyllabusItem,
@@ -232,6 +233,9 @@ def test_explanation_present_in_page_but_hidden_until_answered(c, world):
     html = c.get(f'/learn/topic/{world["c2"].id}/practice?i=1').get_data(as_text=True)
     assert 'id="expl" hidden' in html and "ఋగ్వేదంలో ఉంది." in html
     assert "/learn/topic/%d/notes" % world["c2"].id in html     # link from explanation to the topic notes
+    assert 'class="btn note-review-link"' in html
+    note_link_text = BeautifulSoup(html, "html.parser").select_one('[data-testid="read-in-notes"]').get_text(" ", strip=True)
+    assert world["c2"].title_te not in note_link_text
 
 
 # ── regression: existing routes untouched ──────────────────────────
@@ -261,6 +265,23 @@ def test_pyq_view_is_labelled_source_not_verified(app, world):
     assert v["is_pyq"] and v["pyq_year"] == "2019"
     assert question_view(Question(subject_id=1, source_type="chapter", question_en="Q", options_en={"a": "x"},
                                   options_te={}, correct_answer="a"))["is_pyq"] is False
+
+
+def test_chapter_note_fallback_skips_empty_title_section(app, world):
+    from app.services.learn import note_link_for
+    chapter = Chapter(subject_id=world["hist"].id, chapter_num=99, title_en="Fallback", title_te="ఫాల్‌బ్యాక్")
+    db.session.add(chapter); db.session.flush()
+    db.session.add_all([
+        Note(chapter_id=chapter.id, section_num=1, heading_te="శీర్షిక"),
+        Note(chapter_id=chapter.id, section_num=2, heading_te="పాఠం", body_te="విషయం"),
+    ])
+    question = Question(subject_id=world["hist"].id, chapter_id=chapter.id, source_type="chapter",
+                        question_te="ప్రశ్న", options_te={"a": "జవాబు"}, correct_answer="a")
+    db.session.add(question); db.session.commit()
+    with app.test_request_context():
+        link = note_link_for(question)
+    assert link["exact"] is False
+    assert link["url"].endswith(f"/learn/topic/{chapter.id}/notes?section=2")
 
 
 def test_topic_back_link_uses_only_safe_local_targets(c, world):

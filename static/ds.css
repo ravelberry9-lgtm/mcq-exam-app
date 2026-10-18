@@ -110,6 +110,7 @@ html[data-lang="both"] .bi.stack .en+.te::before{content:none}
 /* Options (radio groups) */
 .practice-question-card{gap:12px;padding:18px 16px}
 body:has([data-practice]) #pwa-install{display:none!important}
+body:has([data-practice]) main{scroll-padding-bottom:24px}
 .practice-question{font-weight:700;font-size:1.08rem;line-height:1.75;overflow-wrap:anywhere}
 .practice-question .bi.stack>*{display:block}
 .practice-question-meta{padding-top:2px;border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
@@ -130,6 +131,7 @@ body:has([data-practice]) #pwa-install{display:none!important}
 .opt.is-correct{border-color:var(--teal);background:var(--teal-soft);color:var(--teal-ink);border-width:2px}
 .opt.is-wrong{border-color:var(--danger);background:var(--danger-bg);color:var(--danger);border-width:2px}
 .opt .state{margin-left:auto;font-size:.875rem;font-weight:700}
+.note-review-link{margin-top:8px;min-height:50px;height:auto;padding:11px 16px;line-height:1.45;white-space:normal}
 @media(max-width:380px){
   .match-lists{grid-template-columns:1fr}
   .practice-question-card{padding:16px 14px}

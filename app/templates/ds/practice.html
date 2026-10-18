@@ -52,7 +52,7 @@
       {% else %}<span class="muted small">{{ t('prac.no_expl') }}</span>{% endif %}
       {% if q.meta.sources %}<div class="small" data-testid="source-links"><strong class="label">{{ t('prac.sources') }}</strong>
         <ul style="margin:4px 0 0;padding-left:18px">{% for s in q.meta.sources %}<li><a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.host }}</a>{% if s.locator %} · {{ s.locator }}{% endif %}</li>{% endfor %}</ul></div>{% endif %}
-      {% if q.note_url %}<a class="btn" data-testid="read-in-notes" data-exact="{{ 'true' if q.note_exact else 'false' }}" href="{{ q.note_url }}" style="margin-top:6px">{{ t('review.read_notes_in' if q.note_expanded else ('review.read_notes' if q.note_exact else 'review.read_notes_chapter')) }}{% if q.note_title_en %} · {{ c.bi(q.note_title_en, q.note_title_te) }}{% endif %}</a>
+      {% if q.note_url %}<a class="btn note-review-link" data-testid="read-in-notes" data-exact="{{ 'true' if q.note_exact else 'false' }}" href="{{ q.note_url }}">{{ t('review.read_notes_in' if q.note_expanded else ('review.read_notes' if q.note_exact else 'review.read_notes_chapter')) }}</a>
       {% for m in q.note_more %}<a class="small" data-testid="read-in-notes-more" href="{{ m.url }}">{{ t('review.read_notes_more') }}: {{ c.bi(m.title_en, m.title_te) }}</a>{% endfor %}
       {% elif note_count and chapter %}<a class="btn" href="{{ url_for('learn.notes', chapter_id=chapter.id) }}" style="margin-top:6px">{{ t('prac.open_notes') }}</a>{% endif %}
     </div>

@@ -144,7 +144,8 @@
           });
           if (res.correct) st.r++; else st.w++; saveStats(topic, st);
           expl.hidden = false; state(card.dataset.last === "1" ? "finish" : "next");
-          announce(res.correct ? card.dataset.msgOk : card.dataset.msgBad); expl.scrollIntoView({ block: "nearest" });
+          announce(res.correct ? card.dataset.msgOk : card.dataset.msgBad);
+          window.requestAnimationFrame(function () { expl.scrollIntoView({ block: "nearest" }); });
         }).catch(function () { inp.checked = false; err.hidden = false; });
       });
     });

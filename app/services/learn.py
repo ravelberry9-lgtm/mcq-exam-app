@@ -259,8 +259,8 @@ def note_link_for(q, cache=None):
     """Where "Read this in notes" should point for a question, or None when there is nothing honest to link to.
 
     * exact: the question names a note section (``note_section_num``) and that section exists in the question's chapter;
-    * chapter: no exact section (or it no longer exists), but the chapter has notes: a chapter-level link, which the
-      templates label as such (never presented as the exact passage);
+    * chapter: no exact section (or it no longer exists), but the chapter has notes: the first substantive section,
+      labelled as a whole-chapter fallback (never presented as the exact passage);
     * None: the question has no chapter, or its chapter has no notes. An unrelated note is never substituted.
     ``cache`` is an optional dict that holds each chapter's section numbers across a page's questions."""
     from flask import url_for
@@ -273,14 +273,23 @@ def note_link_for(q, cache=None):
     if not cid:
         return None
     if cid not in cache:
-        cache[cid] = {n for (n,) in db.session.query(Note.section_num).filter(Note.chapter_id == cid).all()}
+        rows = (db.session.query(Note.section_num, Note.body_te, Note.body_en)
+                .filter(Note.chapter_id == cid).order_by(Note.section_num).all())
+        cache[cid] = {n for n, _te, _en in rows}
+        cache[("first-substantive", cid)] = next(
+            (n for n, te, en in rows if (te or "").strip() or (en or "").strip()),
+            rows[0][0] if rows else None,
+        )
     sections = cache[cid]
     if not sections:
         return None
     num = q.note_section_num
     if num is not None and num in sections:
         return {"url": url_for("learn.notes", chapter_id=cid, section=num), "exact": True}
-    return {"url": url_for("learn.notes", chapter_id=cid), "exact": False}
+    first = cache.get(("first-substantive", cid))
+    if first is None:  # supports callers that supplied a pre-populated legacy section-set cache
+        first = min(sections)
+    return {"url": url_for("learn.notes", chapter_id=cid, section=first), "exact": False}
 
 
 def _expanded_link(q, anchors, cache):
