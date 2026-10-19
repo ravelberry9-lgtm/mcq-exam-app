@@ -334,15 +334,25 @@ def native_meta(q):
             "author_reviewed": bool(t.get("content_approval_note")) and q.review_status != "fact_verified"}
 
 
+def _option_map(raw):
+    """Normalise both imported list options and legacy keyed option mappings."""
+    if isinstance(raw, dict):
+        return {str(key).strip().lower(): value for key, value in raw.items()}
+    if isinstance(raw, list):
+        return {chr(97 + index): value for index, value in enumerate(raw)}
+    return {}
+
+
 def question_view(q):
     """Everything the template needs for one question, with display-only clean-up applied."""
     link = note_link_for(q)
-    keys = sorted({k for k in list((q.options_en or {}).keys()) + list((q.options_te or {}).keys())
-                   if (q.options_en or {}).get(k) or (q.options_te or {}).get(k)})
+    options_en, options_te = _option_map(q.options_en), _option_map(q.options_te)
+    keys = sorted({k for k in list(options_en) + list(options_te)
+                   if options_en.get(k) or options_te.get(k)})
     options = [{
         "key": k,
-        "en": strip_option_prefix((q.options_en or {}).get(k)),
-        "te": strip_option_prefix((q.options_te or {}).get(k)),
+        "en": strip_option_prefix(options_en.get(k)),
+        "te": strip_option_prefix(options_te.get(k)),
     } for k in keys]
     return {
         "id": q.id, "difficulty": q.difficulty, "options": options, "source_type": q.source_type,

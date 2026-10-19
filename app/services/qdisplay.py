@@ -10,7 +10,7 @@ is never blank because the *other* language is empty.
   ``en`` / ``te``  only that language exists: render it once, always visible (the fallback);
   ``none``  nothing stored.
 """
-from .learn import strip_option_prefix
+from .learn import _option_map, strip_option_prefix
 
 KEYS = "abcde"
 
@@ -28,8 +28,8 @@ def bi_kind(en, te):
 
 def option_items(question):
     """Options a..e that have text in at least one language, with the imported 'a) ' prefix removed."""
-    en = question.options_en or {}
-    te = question.options_te or {}
+    en = _option_map(question.options_en)
+    te = _option_map(question.options_te)
     out = []
     for k in KEYS:
         e, t = strip_option_prefix(_s(en.get(k))), strip_option_prefix(_s(te.get(k)))

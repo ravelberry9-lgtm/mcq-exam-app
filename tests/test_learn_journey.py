@@ -269,6 +269,16 @@ def test_pyq_view_is_labelled_source_not_verified(app, world):
                                   options_te={}, correct_answer="a"))["is_pyq"] is False
 
 
+def test_question_view_accepts_list_options_from_modern_history_import(app, world):
+    from app.services.learn import question_view
+    q = Question(subject_id=world["hist"].id, source_type="chapter", question_te="Q",
+                 options_en=["", "", "", ""], options_te=["ఒకటి", "రెండు", "మూడు", "నాలుగు"],
+                 correct_answer="A", qtype="single_correct")
+    view = question_view(q)
+    assert [option["key"] for option in view["options"]] == ["a", "b", "c", "d"]
+    assert [option["te"] for option in view["options"]] == ["ఒకటి", "రెండు", "మూడు", "నాలుగు"]
+
+
 def test_chapter_note_fallback_skips_empty_title_section(app, world):
     from app.services.learn import note_link_for
     chapter = Chapter(subject_id=world["hist"].id, chapter_num=99, title_en="Fallback", title_te="ఫాల్‌బ్యాక్")
