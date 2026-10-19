@@ -45,6 +45,13 @@ def test_structure_is_five_units_31_core_chapters_and_four_supplementary():
         assert num in ranges[unit], (unit, num)
 
 
+def test_deployed_modern_extension_defines_chapters_32_to_41_in_unit_five():
+    rows = canon.MODERN_EXTENSION_CHAPTERS
+    assert [row[1] for row in rows] == list(range(32, 42))
+    assert all(row[0] == 5 and row[2].startswith(f"u5-c{row[1]:02d}-") for row in rows)
+    assert canon.DEPLOYED_CHAPTERS == canon.CHAPTERS + rows
+
+
 def test_seed_creates_expected_rows_and_is_idempotent(hist):
     r = canon.seed()
     assert (r["units_added"], r["chapters_added"], r["supplementary_added"]) == (5, 31, 4)

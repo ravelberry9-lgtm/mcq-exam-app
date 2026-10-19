@@ -186,13 +186,13 @@ class SyllabusUnit(db.Model):
 
 
 class SyllabusChapter(db.Model):
-    """An internal preparation chapter (NOT an official syllabus line). Core chapters have a unit and a number 1..31;
+    """An internal preparation chapter (NOT an official syllabus line). Core chapters have a unit and a number 1..41;
     the four supplementary reference chapters have neither and are never counted as core."""
     __tablename__ = "syllabus_chapters"
     id = db.Column(db.Integer, primary_key=True)
     subject_id = db.Column(db.Integer, db.ForeignKey("subjects.id", ondelete="CASCADE"), nullable=False, index=True)
     unit_id = db.Column(db.Integer, db.ForeignKey("syllabus_units.id", ondelete="CASCADE"), nullable=True, index=True)
-    chapter_num = db.Column(db.Integer)       # 1..31 for core chapters, NULL for supplementary
+    chapter_num = db.Column(db.Integer)       # 1..41 for core chapters, NULL for supplementary
     slug = db.Column(db.String(96), unique=True, nullable=False)
     title_en = db.Column(db.String(256), nullable=False)
     title_te = db.Column(db.String(256), nullable=False)
@@ -215,7 +215,7 @@ class SyllabusChapter(db.Model):
 
     @property
     def counts_toward_completion(self):
-        """Only the 31 core chapters count toward direct syllabus completion; supplementary chapters never do."""
+        """Only the 41 core chapters count toward direct syllabus completion; supplementary chapters never do."""
         return self.is_core
 
 

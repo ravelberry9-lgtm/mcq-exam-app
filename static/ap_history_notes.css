@@ -11,6 +11,16 @@
   line-height: 1.75;
   color: #3a2410;
 }
+.ap-history-note h1 {
+  font-size: 1.55rem;
+  color: #5c3a1c;
+  margin: 2rem 0 0.75rem;
+  padding: 0.7rem 0.9rem;
+  border-left: 6px solid #8b4513;
+  border-bottom: 1px solid #e8d4a8;
+  background: linear-gradient(90deg, #fdf6e8, transparent);
+  line-height: 1.35;
+}
 .ap-history-note h2 {
   font-size: 1.35rem; color: #8b4513;
   margin-top: 1.8rem; margin-bottom: 0.5rem;
@@ -19,6 +29,15 @@
 .ap-history-note h3 { font-size: 1.15rem; color: #a14217; margin-top: 1.4rem; margin-bottom: 0.35rem; }
 .ap-history-note h4 { font-size: 1.02rem; color: #8b4513; margin-top: 1rem; margin-bottom: 0.25rem; }
 .ap-history-note p  { margin: 0.55rem 0; }
+.ap-history-note blockquote {
+  margin: 0.8rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #c97b3a;
+  border-radius: 0 8px 8px 0;
+  background: #fefaf2;
+  color: #3a2e1f;
+}
+.ap-history-note blockquote + blockquote { margin-top: 0.45rem; }
 .ap-history-note ul,
 .ap-history-note ol { margin: 0.4rem 0 0.8rem 0; padding-left: 1.6rem; }
 .ap-history-note li { margin-bottom: 0.3rem; }
@@ -141,6 +160,7 @@
 
 /* ââ Responsive ââââââââââââââââââââââââââââââââââââââââââââââââ */
 @media (max-width: 680px) {
+  .ap-history-note h1 { font-size: 1.28rem; padding: 0.6rem 0.75rem; }
   .ap-history-note h2 { font-size: 1.15rem; }
   .ap-history-note h3 { font-size: 1.05rem; }
   .ap-history-note table { font-size: 0.84rem; }

@@ -1,7 +1,9 @@
-"""Canonical AP History structure: five official APPSC units, 31 internal preparation chapters, and four supplementary
+"""Canonical AP History structure: five official APPSC units, 31 foundation chapters, ten deployed modern extensions,
+and four supplementary
 reference chapters. Subject -> Unit -> Chapter -> Subtopic.
 
-* The five units are the official top level. The 31 chapters are *our* preparation structure, not 31 official syllabus lines.
+* The five units are the official top level. The 31 foundation chapters plus Chapters 32-41 are *our* preparation
+  structure, not 41 official syllabus lines. The extension is installed by audited release migrations.
 * Slugs are stable identifiers: ``u<unit>-c<NN>-<english-slug>``. They are fixed here and never regenerated from a title, so a
   later title edit cannot change a published slug. ``seed`` only inserts missing rows; it never updates an existing one.
 * Local source chapters 4, 14 and 19 are *not* among the 31: they are the supplementary reference chapters at the bottom.
@@ -55,6 +57,23 @@ CHAPTERS = [
     (5, 30, "u5-c30-gentlemens-agreement-formation-ap", "Gentlemen's Agreement and Formation of Andhra Pradesh", "పెద్దమనుషుల ఒప్పందం మరియు ఆంధ్రప్రదేశ్ ఏర్పాటు", "direct"),
     (5, 31, "u5-c31-social-cultural-events-1956-2014", "Important Social and Cultural Events, 1956–2014", "ముఖ్యమైన సామాజిక మరియు సాంస్కృతిక సంఘటనలు (1956–2014)", "direct"),
 ]
+
+# Audited release extension. These rows are created and maintained by release migrations rather than the foundation
+# seed/taxonomy generator, whose reviewed source mapping deliberately remains Chapters 1-31.
+MODERN_EXTENSION_CHAPTERS = [
+    (5, 32, "u5-c32-ntr-second-phase", "N. T. Rama Rao: Second Phase of Government", "ఎన్.టి. రామారావు రెండవ దశ పాలన", "direct"),
+    (5, 33, "u5-c33-pv-narasimha-rao", "P. V. Narasimha Rao: Life and Political Career", "పి.వి. నరసింహారావు — జీవితం, రాజకీయ ప్రస్థానం", "direct"),
+    (5, 34, "u5-c34-tdp-split", "Split in the Telugu Desam Party", "తెలుగుదేశం పార్టీలో చీలిక", "direct"),
+    (5, 35, "u5-c35-ntr-death-aftermath", "Death of N. T. Rama Rao and Its Aftermath", "ఎన్.టి. రామారావు మరణం — అనంతర పరిణామాలు", "direct"),
+    (5, 36, "u5-c36-chandrababu-reforms", "Administrative Reforms under Chandrababu Naidu", "చంద్రబాబు పరిపాలన సంస్కరణలు", "direct"),
+    (5, 37, "u5-c37-congress-revival-ysr", "Congress Revival and the First Y. S. Rajasekhara Reddy Government", "కాంగ్రెస్ పునర్జీవనం — వై.ఎస్. రాజశేఖర రెడ్డి తొలి ప్రభుత్వం", "direct"),
+    (5, 38, "u5-c38-2009-election-ysr-rosayya", "2009 Election, YSR's Death and the Rosayya Government", "2009 ఎన్నికలు — YSR మరణం — రోశయ్య ప్రభుత్వ ఆరంభం", "direct"),
+    (5, 39, "u5-c39-ap-reorganisation", "Political Crisis after 2009 and Andhra Pradesh Reorganisation", "2009 తర్వాత రాజకీయ సంక్షోభం నుంచి ఆంధ్రప్రదేశ్ పునర్వ్యవస్థీకరణ వరకు", "direct"),
+    (5, 40, "u5-c40-telugu-literature", "Telugu Literature: A Historical Review", "తెలుగు సాహిత్యం — ఒక చారిత్రక సమీక్ష", "thematic"),
+    (5, 41, "u5-c41-andhra-personalities", "Selected Andhra Personalities", "కొంత మంది ఆంధ్ర ప్రముఖులు", "thematic"),
+]
+
+DEPLOYED_CHAPTERS = CHAPTERS + MODERN_EXTENSION_CHAPTERS
 
 # Supplementary reference chapters: outside the 31, no unit, no chapter number. (slug, English, Telugu, supplementary_type, local source chapter)
 SUPPLEMENTARY = [
