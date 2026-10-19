@@ -28,7 +28,7 @@
   <a class="btn primary" href="{{ restart_url }}">{{ t('prac.again') }}</a>
   <a class="btn" href="{{ back_url }}">{{ t(back_label) }}</a>
 {% else %}
-  <div class="card practice-question-card" id="qcard" data-practice data-msg-ok="{{ tl('prac.correct') }}" data-msg-bad="{{ tl('prac.incorrect') }}" data-qid="{{ q.id }}" data-topic="{{ scope }}" data-next="{{ next_url }}" data-last="{{ 1 if is_last else 0 }}" data-fresh="{{ 1 if fresh else 0 }}">
+  <div class="card practice-question-card" id="qcard" data-practice data-question-type="{{ q.qtype }}" data-msg-ok="{{ tl('prac.correct') }}" data-msg-bad="{{ tl('prac.incorrect') }}" data-qid="{{ q.id }}" data-topic="{{ scope }}" data-next="{{ next_url }}" data-last="{{ 1 if is_last else 0 }}" data-fresh="{{ 1 if fresh else 0 }}">
     <div class="practice-question" id="question-text" data-question-format="auto">{{ c.bi(q.q_en, q.q_te, 'stack') }}</div>
     {% if not q.q_en and q.q_te %}<p class="fallback fb-en" style="margin:0">{{ t('prac.lang_fallback_te') }}</p>{% endif %}
     {% if not q.q_te and q.q_en %}<p class="fallback fb-te" style="margin:0">{{ t('prac.lang_fallback_en') }}</p>{% endif %}

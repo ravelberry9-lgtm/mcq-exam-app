@@ -204,6 +204,7 @@ def test_practice_question_markup_and_no_answer_leak(c, world):
     assert "Q 1 / 2" in html
     assert 'class="practice-question"' in html
     assert 'data-question-format="auto"' in html
+    assert 'data-question-type="single_correct"' in html
     assert 'class="opt-text"' in html
 
 
@@ -263,6 +264,7 @@ def test_pyq_view_is_labelled_source_not_verified(app, world):
                  question_en="Q", options_en={"a": "x"}, options_te={}, correct_answer="a")
     v = question_view(q)
     assert v["is_pyq"] and v["pyq_year"] == "2019"
+    assert v["qtype"] == "single_correct"
     assert question_view(Question(subject_id=1, source_type="chapter", question_en="Q", options_en={"a": "x"},
                                   options_te={}, correct_answer="a"))["is_pyq"] is False
 

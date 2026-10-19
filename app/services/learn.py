@@ -346,6 +346,7 @@ def question_view(q):
     } for k in keys]
     return {
         "id": q.id, "difficulty": q.difficulty, "options": options, "source_type": q.source_type,
+        "qtype": (q.qtype or "single_correct").strip(),
         # provenance comes from the row itself; an exam name is not stored, so PYQs are never attributed to one
         "is_pyq": q.source_type == "pyq" or bool((q.pyq_year or "").strip() or (q.pyq_paper or "").strip()),
         "pyq_year": (q.pyq_year or "").strip(), "pyq_paper": (q.pyq_paper or "").strip(),

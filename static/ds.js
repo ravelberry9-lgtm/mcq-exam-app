@@ -88,9 +88,52 @@
     // match-the-following stems into two readable lists on small screens.
     var questionText = document.getElementById("question-text");
     if (questionText) {
+      var questionType = (card.dataset.questionType || "").toLowerCase().replace(/-/g, "_");
+      function makeStatementLayout(langBlock, raw, mode) {
+        if (mode === "assertion") raw = raw.replace(/\*\*/g, "");
+        var markerRe = mode === "assertion"
+          ? /(?:వాదన|ప్రతిపాదన)\s*\(A\)\s*:|Assertion(?:\s*\(A\))?\s*:|\bA\s*:|కారణం\s*\(R\)\s*:|Reason(?:\s*\(R\))?\s*:|\bR\s*:/gi
+          : /(?:^|\s)(\d+)\.\s*/g;
+        var marks = [], match;
+        while ((match = markerRe.exec(raw)) !== null) {
+          var label = mode === "assertion"
+            ? (/కారణం|Reason|^R\s*:/i.test(match[0].trim()) ? "R" : "A")
+            : match[1];
+          marks.push({ label: label, start: match.index, body: markerRe.lastIndex });
+        }
+        if (marks.length < 2) return false;
+        var intro = raw.slice(0, marks[0].start).trim().replace(/[:：]\s*$/, "");
+        var rows = marks.map(function (m, i) {
+          return { label: m.label, value: raw.slice(m.body, i + 1 < marks.length ? marks[i + 1].start : raw.length).trim() };
+        });
+        var followup = "";
+        if (mode !== "assertion") {
+          var last = rows[rows.length - 1];
+          var cut = last.value.search(/\.\s*(?=సరైన|పై వాటిలో|కింది వాటిలో|Which|Choose)/i);
+          if (cut >= 0) { followup = last.value.slice(cut + 1).trim(); last.value = last.value.slice(0, cut + 1).trim(); }
+        }
+        var formatted = document.createElement("div"); formatted.className = "structured-question";
+        if (intro) { var introEl = document.createElement("div"); introEl.className = "structured-intro"; introEl.textContent = intro; formatted.appendChild(introEl); }
+        var listEl = document.createElement("div"); listEl.className = "statement-list";
+        rows.forEach(function (item) {
+          var row = document.createElement("div"); row.className = "statement-row";
+          var key = document.createElement("span"); key.className = "statement-marker"; key.textContent = item.label;
+          var value = document.createElement("span"); value.textContent = item.value;
+          row.appendChild(key); row.appendChild(value); listEl.appendChild(row);
+        });
+        formatted.appendChild(listEl);
+        if (followup) { var follow = document.createElement("div"); follow.className = "structured-followup"; follow.textContent = followup; formatted.appendChild(follow); }
+        langBlock.replaceChildren(formatted); return true;
+      }
       questionText.querySelectorAll(".te,.en").forEach(function (langBlock) {
         var raw = (langBlock.textContent || "").replace(/\s+/g, " ").trim();
-        if (!/(జతపర|సరిపోల్చ|match)/i.test(raw)) return;
+        if (/^(assertion_reason|assertion_reasoning)$/.test(questionType)) {
+          makeStatementLayout(langBlock, raw, "assertion"); return;
+        }
+        if (/^(multiple_statements|multi_statement|chronology)$/.test(questionType)) {
+          makeStatementLayout(langBlock, raw, "numbered"); return;
+        }
+        if (!/^(match_following|match)$/.test(questionType) && !/(జతపర|సరిపోల్చ|match)/i.test(raw)) return;
         var firstAlpha = raw.search(/(?:^|\s)A\.\s*/);
         if (firstAlpha < 0) return;
         var numberStart = raw.slice(firstAlpha).search(/\s[—–-]\s*1\.\s*|\s1\.\s*/);
