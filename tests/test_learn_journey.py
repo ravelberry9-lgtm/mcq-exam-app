@@ -279,6 +279,25 @@ def test_question_view_accepts_list_options_from_modern_history_import(app, worl
     assert [option["te"] for option in view["options"]] == ["ఒకటి", "రెండు", "మూడు", "నాలుగు"]
 
 
+def test_question_view_hides_import_metadata_and_labels_rr_source(app, world):
+    from app.services.learn import question_view
+    q = Question(subject_id=world["hist"].id, source_type="chapter", source="RR", question_te="**A:** వాదన",
+                 options_te=["ఒకటి", "రెండు", "మూడు", "నాలుగు"], correct_answer="A",
+                 explanation_te='RR పుట 10 ఆధారం.\n{"source_label":"RR MCQ","primary_fact_id":"RR-F01"}')
+    view = question_view(q)
+    assert view["content_source"] == "rr"
+    assert view["q_te"] == "A: వాదన"
+    assert view["x_te"] == "RR పుట 10 ఆధారం."
+    assert "primary_fact_id" not in view["x_te"]
+
+
+def test_question_view_preserves_non_provenance_json(app, world):
+    from app.services.learn import question_view
+    q = Question(subject_id=world["hist"].id, source_type="chapter", question_te="Q",
+                 options_te={"a": "A"}, correct_answer="a", explanation_te='వివరణ\n{"ordinary":"example"}')
+    assert question_view(q)["x_te"].endswith('{"ordinary":"example"}')
+
+
 def test_chapter_note_fallback_skips_empty_title_section(app, world):
     from app.services.learn import note_link_for
     chapter = Chapter(subject_id=world["hist"].id, chapter_num=99, title_en="Fallback", title_te="ఫాల్‌బ్యాక్")

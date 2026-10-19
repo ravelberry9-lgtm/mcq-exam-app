@@ -4,6 +4,7 @@ Terminology: the prototype's "topic" is a ``Chapter`` row; a "section" is an ``E
 (a block of an exam paper such as "Indian History, 30 marks") that groups subjects.
 Nothing here writes to the database except the small progress helpers at the bottom.
 """
+import json
 import re
 from datetime import datetime
 
@@ -343,6 +344,32 @@ def _option_map(raw):
     return {}
 
 
+def clean_display_text(value, *, remove_provenance=False):
+    """Remove import markup from learner-facing text without mutating stored content."""
+    text = (value or "").strip()
+    if remove_provenance and "\n" in text:
+        body, candidate = text.rsplit("\n", 1)
+        try:
+            metadata = json.loads(candidate.strip())
+        except (TypeError, ValueError, json.JSONDecodeError):
+            metadata = None
+        if isinstance(metadata, dict) and set(metadata).intersection(
+                {"source_label", "source_scope", "primary_fact_id", "review_target", "review_status"}):
+            text = body.rstrip()
+    return text.replace("**", "").replace("  \n", "\n")
+
+
+def presentation_source(q):
+    value = (q.source or "").strip().upper()
+    if value == "RR":
+        return "rr"
+    if value == "EXPANDED":
+        return "expanded"
+    if value == "VERIFIED":
+        return "verified"
+    return "default"
+
+
 def question_view(q):
     """Everything the template needs for one question, with display-only clean-up applied."""
     link = note_link_for(q)
@@ -351,17 +378,19 @@ def question_view(q):
                    if options_en.get(k) or options_te.get(k)})
     options = [{
         "key": k,
-        "en": strip_option_prefix(options_en.get(k)),
-        "te": strip_option_prefix(options_te.get(k)),
+        "en": clean_display_text(strip_option_prefix(options_en.get(k))),
+        "te": clean_display_text(strip_option_prefix(options_te.get(k))),
     } for k in keys]
     return {
         "id": q.id, "difficulty": q.difficulty, "options": options, "source_type": q.source_type,
         "qtype": (q.qtype or "single_correct").strip(),
+        "content_source": presentation_source(q),
         # provenance comes from the row itself; an exam name is not stored, so PYQs are never attributed to one
         "is_pyq": q.source_type == "pyq" or bool((q.pyq_year or "").strip() or (q.pyq_paper or "").strip()),
         "pyq_year": (q.pyq_year or "").strip(), "pyq_paper": (q.pyq_paper or "").strip(),
-        "q_en": (q.question_en or "").strip(), "q_te": (q.question_te or "").strip(),
-        "x_en": (q.explanation_en or "").strip(), "x_te": (q.explanation_te or "").strip(),
+        "q_en": clean_display_text(q.question_en), "q_te": clean_display_text(q.question_te),
+        "x_en": clean_display_text(q.explanation_en, remove_provenance=True),
+        "x_te": clean_display_text(q.explanation_te, remove_provenance=True),
         "note_url": link["url"] if link else None, "note_exact": bool(link and link["exact"]),
         "note_title_en": link.get("title_en") if link else None, "note_title_te": link.get("title_te") if link else None,
         "note_more": (link or {}).get("more") or [], "note_expanded": bool(link and link.get("expanded")),
