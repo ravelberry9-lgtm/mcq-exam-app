@@ -215,7 +215,7 @@ def display(record):
             "scorable": bool(accepted_options(record)), "review": reviewed}
 
 
-def filtered(unit=None, lesson=None, exam=None, year=None, mode=None, search=None):
+def filtered(unit=None, lesson=None, exam=None, year=None, paper=None, mode=None, search=None):
     result = []
     needle = (search or "").strip().casefold()
     for record in records():
@@ -227,6 +227,8 @@ def filtered(unit=None, lesson=None, exam=None, year=None, mode=None, search=Non
         if exam and source.get("exam") != exam:
             continue
         if year and str(source.get("year")) != year:
+            continue
+        if paper and (source.get("paper") or "__unknown__") != paper:
             continue
         if mode == "held" and not record["must_disable_scoring"]:
             continue
@@ -242,3 +244,28 @@ def summary(items=None):
     items = records() if items is None else items
     return {"total": len(items), "held": sum(r["must_disable_scoring"] for r in items),
             "scorable": sum(bool(accepted_options(r)) for r in items)}
+
+
+@lru_cache(maxsize=4)
+def _read_context(path, modified):
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    return data["records"] if data.get("format") == "geography-chapter-context-v1" else {}
+
+
+def chapter_context(record):
+    path = Path(current_app.root_path).parent / "content/geography/chapter_context.json"
+    try:
+        contexts = _read_context(str(path), path.stat().st_mtime_ns).get(record["source"]["id"], [])
+    except (OSError, ValueError, KeyError):
+        contexts = []
+    result = []
+    for route in record["routes"]:
+        item = next((c for c in contexts if c["file"] == route["file"]), None)
+        if item:
+            source = Path(current_app.static_folder) / "textbooks/geography/lessons" / route["file"]
+            stat = source.stat()
+            if _asset_hash(str(source), stat.st_mtime_ns, stat.st_size) == item["source_html_sha256"]:
+                result.append(item)
+                continue
+        result.append({**route, "anchor": "", "heading": "Chapter overview", "excerpt": "", "context_kind": "overview"})
+    return result

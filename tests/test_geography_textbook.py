@@ -1,7 +1,8 @@
 from pathlib import Path
+from bs4 import BeautifulSoup
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
-import json,hashlib
+import json,hashlib,re
 
 ROOT=Path(__file__).resolve().parents[1]
 CAT=json.loads((ROOT/'static/textbooks/geography/catalogue.json').read_text(encoding='utf-8'))
@@ -30,7 +31,9 @@ def test_catalogue_routes_full_text_and_assets(client):
             ids.append(l['id']);response=client.get('/learn/geography/lesson/'+l['id'])
             assert response.status_code==200
             source=(ROOT/'static/textbooks/geography/lessons'/l['file']).read_bytes()
-            assert response.data==source and len(source)>3000
+            assert len(source)>3000
+            assert re.sub(r'\s+',' ',BeautifulSoup(response.data,'html.parser').find('article').get_text(' ',strip=True))==re.sub(r'\s+',' ',BeautifulSoup(source,'html.parser').find('article').get_text(' ',strip=True))
+            assert b'data-note-back' in response.data
             parser=Links();parser.feed(response.data.decode('utf-8'))
             for link in parser.links:
                 parsed=urlsplit(link)
