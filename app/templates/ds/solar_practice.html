@@ -1,0 +1,16 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'practice' %}
+{% block title %}Solar System · 72 PYQ-style MCQs{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
+{% block topbar %}<a href="{{ url_for('geography.lesson',lesson_id='03') }}">‹ సౌర కుటుంబం పాఠం · Chapter notes</a>{% endblock %}
+{% block content %}
+<section class="card geo-intro"><h1>సౌర కుటుంబం · Solar System</h1><p>72 PYQ-style MCQs · కొత్త అభ్యాస ప్రశ్నలు</p><p>ఇవి కొత్తగా రచించిన practice questions; అసలు APPSC PYQs లేదా official answer keys కావు. Each option is explained after review.</p><a href="{{ url_for('geography.pyq_index',lesson='03') }}">అసలు పాత ప్రశ్నలు · Original PYQs ↗</a></section>
+<form id="solar-filters" method="get" class="card geo-filters">
+<div class="geo-field wide"><label for="solar-topic">అంశం · Topic</label><select id="solar-topic" name="topic"><option value="">అన్ని అంశాలు · All topics</option>{% for t in topics %}<option value="{{ t.id }}"{% if filters.get('topic') == t.id|string %} selected{% endif %}>{{ t.title }} (6 MCQs)</option>{% endfor %}</select></div>
+<div class="geo-field wide"><label for="solar-kind">ప్రశ్న రకం · Question format</label><select id="solar-kind" name="kind"><option value="">అన్ని రకాలు · All formats</option>{% for k in kinds %}<option value="{{ k }}"{% if filters.get('kind')==k %} selected{% endif %}>{{ k|replace('-',' ')|title }}</option>{% endfor %}</select></div>
+<button class="btn" name="browse" value="1">ఎంపికలు చూడండి · Apply filters</button><a href="{{ url_for('geography.solar_index') }}">Reset</a>
+</form>
+{% if no_match %}<section class="card" role="status"><h2>No matching questions · ఈ ఎంపికలకు ప్రశ్నలు లేవు</h2><p>Choose another topic or format.</p></section>{% endif %}
+<details class="card"><summary>{{ questions|length }} ప్రశ్నలు · Browse matching questions</summary>{% for q in questions %}<p><a data-solar-list-id="{{ q.id }}" href="{{ url_for('geography.solar_question',question_id=q.id,**filters) }}">{{ q.id[-3:] }} · {{ q.question_en }}</a></p>{% endfor %}</details>
+{% endblock %}
+{% block bottom %}<div class="geo-bank-action"><button type="submit" form="solar-filters" name="start" value="1" class="btn primary">ప్రశ్నలు ప్రారంభించండి · Continue →</button></div>{% endblock %}

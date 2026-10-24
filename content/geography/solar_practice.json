@@ -1,0 +1,2300 @@
+{
+  "format": "solar-original-practice-v1",
+  "reviewed_on": "2026-10-24",
+  "authorship": "Original educational questions inspired by PYQ formats; not official APPSC questions or keys",
+  "topics": [
+    {
+      "id": 1,
+      "section": "solar-scale",
+      "title": "9. అంతరిక్ష దూరాలు — Scale, light and nearest"
+    },
+    {
+      "id": 2,
+      "section": "solar-formation",
+      "title": "10. పుట్టుక, గ్రహాల వర్గీకరణ — Formation and definitions"
+    },
+    {
+      "id": 3,
+      "section": "solar-sun",
+      "title": "11. సూర్యుడి లోపలి నుంచి భూమి వరకు — Sun and space weather"
+    },
+    {
+      "id": 4,
+      "section": "solar-inner",
+      "title": "12. నాలుగు రాతి గ్రహాలు — Colours, surfaces and atmospheres"
+    },
+    {
+      "id": 5,
+      "section": "solar-outer",
+      "title": "13. నాలుగు మహాగ్రహాలు — Giants, rings and major moons"
+    },
+    {
+      "id": 6,
+      "section": "solar-small",
+      "title": "14. చిన్న ఖగోళ వస్తువులు — Belts, comets and meteors"
+    },
+    {
+      "id": 7,
+      "section": "solar-orbits",
+      "title": "15. కక్ష్యలు, భ్రమణం, పరిభ్రమణం — Rotation and orbital laws"
+    },
+    {
+      "id": 8,
+      "section": "solar-earth",
+      "title": "16. పరిమాణం, ద్రవ్యరాశి, సాంద్రత — Reading planetary data"
+    },
+    {
+      "id": 9,
+      "section": "solar-seasons",
+      "title": "17. ఋతువులు ఎందుకు? — Tilt, sunlight and Andhra Pradesh"
+    },
+    {
+      "id": 10,
+      "section": "solar-moon",
+      "title": "18. చంద్రకళలు, నెల, ముఖం — Moon phases and synchronous rotation"
+    },
+    {
+      "id": 11,
+      "section": "solar-eclipses",
+      "title": "19. గ్రహణం ఎప్పుడు? — Alignment, nodes and shadows"
+    },
+    {
+      "id": 12,
+      "section": "solar-tides",
+      "title": "20. చంద్రుడు నుంచి తీరానికి — Tides and final revision"
+    }
+  ],
+  "questions": [
+    {
+      "id": "SOLAR-PRACTICE-001",
+      "topic": 1,
+      "kind": "concept",
+      "question_en": "Which pair contains two units of distance?",
+      "question_te": "రెండూ దూర ప్రమాణాలైన జత ఏది?",
+      "options": [
+        "Day and year",
+        "Light-year and hour",
+        "AU and light-year",
+        "AU and second"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "Both measure time.",
+        "Hour measures time.",
+        "Both measure length, despite year appearing in light-year.",
+        "Second measures time."
+      ],
+      "explanation_te": "AU, light-year రెండూ దూర ప్రమాణాలు; light-year కాలం కాదు.",
+      "section": "solar-scale-p1",
+      "source_urls": [
+        "https://science.nasa.gov/exoplanets/what-is-a-light-year/",
+        "https://science.nasa.gov/sun/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "9. అంతరిక్ష దూరాలు — Scale, light and nearest",
+      "excerpt": "గ్రామం నుంచి నగరానికి దూరం kilometresలో చెబుతాం. గ్రహాల మధ్య దూరాలకు అదే unitతో చాలా పెద్ద సంఖ్యలు వస్తాయి. Astronomical unit (AU) సుమారు 149.6 million km; Earth–Sun సగటు దూరానికి దగ్గరి ప్రమాణం. ఇది దూరం, కాలం కాదు. Light-year కూడా దూరమే: కాంతి ఒక సంవత్సరంలో ప్రయాణించే దూరం, సుమారు 9.46 trillion km. సూర్యకాంతి భూమికి చేరడానికి సుమారు 8 minutes 20 seconds పడుతుంది; అది 8 light-years అని కాదు.",
+      "source_paragraph": "గ్రామం నుంచి నగరానికి దూరం kilometresలో చెబుతాం. గ్రహాల మధ్య దూరాలకు అదే unitతో చాలా పెద్ద సంఖ్యలు వస్తాయి. Astronomical unit (AU) సుమారు 149.6 million km; Earth–Sun సగటు దూరానికి దగ్గరి ప్రమాణం. ఇది దూరం, కాలం కాదు. Light-year కూడా దూరమే: కాంతి ఒక సంవత్సరంలో ప్రయాణించే దూరం, సుమారు 9.46 trillion km. సూర్యకాంతి భూమికి చేరడానికి సుమారు 8 minutes 20 seconds పడుతుంది; అది 8 light-years అని కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-002",
+      "topic": 1,
+      "kind": "calculation",
+      "question_en": "Using 1 AU ≈ 149.6 million km, what is 2 AU?",
+      "question_te": "1 AU ≈149.6 million km అయితే 2 AU ఎంత?",
+      "options": [
+        "299.2 km",
+        "74.8 million km",
+        "149.6 million km",
+        "299.2 million km"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "This loses the million multiplier.",
+        "This divides by two.",
+        "This is only 1 AU.",
+        "2 ×149.6 =299.2 million km."
+      ],
+      "explanation_te": "149.6 ×2 =299.2 million km; unit చూడాలి.",
+      "section": "solar-scale-p2",
+      "source_urls": [
+        "https://science.nasa.gov/exoplanets/what-is-a-light-year/",
+        "https://science.nasa.gov/sun/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "9. అంతరిక్ష దూరాలు — Scale, light and nearest",
+      "excerpt": "కిలోమీటరు, AU, light-yearలను ఒకే సంఖ్యలా పోల్చకండి. ఉదాహరణకు 2 AU ≈ 299.2 million km. కాంతి వేగాన్ని సుమారు 300,000 km/sగా తీసుకుంటే 149,600,000 ÷ 300,000 ≈ 499 seconds. ఇది మనం స్వయంగా చేసిన unit conversion.",
+      "source_paragraph": "కిలోమీటరు, AU, light-yearలను ఒకే సంఖ్యలా పోల్చకండి. ఉదాహరణకు 2 AU ≈ 299.2 million km. కాంతి వేగాన్ని సుమారు 300,000 km/sగా తీసుకుంటే 149,600,000 ÷ 300,000 ≈ 499 seconds. ఇది మనం స్వయంగా చేసిన unit conversion."
+    },
+    {
+      "id": "SOLAR-PRACTICE-003",
+      "topic": 1,
+      "kind": "calculation",
+      "question_en": "At 300,000 km/s, sunlight covers 150 million km in approximately:",
+      "question_te": "300,000 km/s వేగంతో కాంతి150 million km ప్రయాణించే సమయం ఎంత?",
+      "options": [
+        "50,000 seconds",
+        "500 years",
+        "500 seconds",
+        "5 seconds"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "Too large by a factor of100.",
+        "The division gives seconds, not years.",
+        "Distance/speed =500 seconds, about 8 minutes20 seconds.",
+        "Too small by a factor of100."
+      ],
+      "explanation_te": "సమయం=దూరం/వేగం=500 seconds.",
+      "section": "solar-scale-p2",
+      "source_urls": [
+        "https://science.nasa.gov/exoplanets/what-is-a-light-year/",
+        "https://science.nasa.gov/sun/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "9. అంతరిక్ష దూరాలు — Scale, light and nearest",
+      "excerpt": "కిలోమీటరు, AU, light-yearలను ఒకే సంఖ్యలా పోల్చకండి. ఉదాహరణకు 2 AU ≈ 299.2 million km. కాంతి వేగాన్ని సుమారు 300,000 km/sగా తీసుకుంటే 149,600,000 ÷ 300,000 ≈ 499 seconds. ఇది మనం స్వయంగా చేసిన unit conversion.",
+      "source_paragraph": "కిలోమీటరు, AU, light-yearలను ఒకే సంఖ్యలా పోల్చకండి. ఉదాహరణకు 2 AU ≈ 299.2 million km. కాంతి వేగాన్ని సుమారు 300,000 km/sగా తీసుకుంటే 149,600,000 ÷ 300,000 ≈ 499 seconds. ఇది మనం స్వయంగా చేసిన unit conversion."
+    },
+    {
+      "id": "SOLAR-PRACTICE-004",
+      "topic": 1,
+      "kind": "sequence",
+      "question_en": "Choose the correct containment order, from smaller to larger.",
+      "question_te": "చిన్న వ్యవస్థ నుంచి దానిని కలిగిన పెద్ద వ్యవస్థకు సరైన క్రమం ఏది?",
+      "options": [
+        "Solar System → Earth → Universe → Milky Way",
+        "Earth → Milky Way → Solar System → Universe",
+        "Universe → Earth → Milky Way → Solar System",
+        "Earth → Solar System → Milky Way → Universe"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Earth is inside the Solar System; Universe contains the Milky Way.",
+        "Solar System is inside the Milky Way.",
+        "This mixes and reverses levels.",
+        "Earth belongs to the Solar System inside the Milky Way within the Universe."
+      ],
+      "explanation_te": "భూమి సౌర కుటుంబంలో, అది ఆకాశగంగలో, అవన్నీ విశ్వంలో ఉన్నాయి.",
+      "section": "solar-scale-p4",
+      "source_urls": [
+        "https://science.nasa.gov/exoplanets/what-is-a-light-year/",
+        "https://science.nasa.gov/sun/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "9. అంతరిక్ష దూరాలు — Scale, light and nearest",
+      "excerpt": "స్థాయి క్రమం: Earth → Solar System → Milky Way → Universe. Galaxy ఒక నక్షత్ర వ్యవస్థ; constellation ఆకాశంలో మన దృష్టికి కనిపించే pattern, దాని నక్షత్రాలు తప్పనిసరిగా భౌతికంగా ఒకే సమూహంలో ఉండవు.",
+      "source_paragraph": "స్థాయి క్రమం: Earth → Solar System → Milky Way → Universe. Galaxy ఒక నక్షత్ర వ్యవస్థ; constellation ఆకాశంలో మన దృష్టికి కనిపించే pattern, దాని నక్షత్రాలు తప్పనిసరిగా భౌతికంగా ఒకే సమూహంలో ఉండవు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-005",
+      "topic": 1,
+      "kind": "application",
+      "question_en": "A question asks for the planet nearest to Earth without a date or distance convention. What is the best assessment?",
+      "question_te": "తేదీ లేదా దూర ప్రమాణం లేకుండా Earthకు nearest planet అడిగితే సరైన అంచనా ఏది?",
+      "options": [
+        "Mercury is nearest at every instant",
+        "Venus is nearest at every instant",
+        "Neptune is always nearest",
+        "It needs a time or distance convention"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "A time-average claim is not an every-instant claim.",
+        "Close approaches do not mean nearest at every instant.",
+        "Neptune is not always nearest to Earth.",
+        "Instantaneous distance, closest approach and time-average are different measures."
+      ],
+      "explanation_te": "Nearest-to-Earthకు measurement convention అవసరం; Sunకు nearest Mercury.",
+      "section": "solar-scale-p3",
+      "source_urls": [
+        "https://science.nasa.gov/exoplanets/what-is-a-light-year/",
+        "https://science.nasa.gov/sun/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "9. అంతరిక్ష దూరాలు — Scale, light and nearest",
+      "excerpt": "Nearest/farthest అని అడిగితే reference చూడాలి. Sunకు nearest planet Mercury; ఎనిమిదింటిలో farthest Neptune. Earthకు ఒక నిర్దిష్ట క్షణంలో nearest planet కక్ష్య స్థానాలతో మారుతుంది. Venus తన closest approachలో Earthకు అత్యంత దగ్గరగా రావచ్చు; కాలవ్యవధి అంతటా సగటు దూరాన్ని అడగడం వేరే సమస్య. ప్రశ్న ఆ ప్రమాణాన్ని చెప్పకుండా ఒక శాశ్వత nearest-to-Earth జవాబు పెట్టకండి. భూమికి nearest star Sun; Solar Systemకి బయట nearest star Proxima Centauri. Planet కాంతి ప్రధానంగా reflected sunlight; నక్షత్రం స్వయంగా శక్తిని విడుదల చేస్తుంది.",
+      "source_paragraph": "Nearest/farthest అని అడిగితే reference చూడాలి. Sunకు nearest planet Mercury; ఎనిమిదింటిలో farthest Neptune. Earthకు ఒక నిర్దిష్ట క్షణంలో nearest planet కక్ష్య స్థానాలతో మారుతుంది. Venus తన closest approachలో Earthకు అత్యంత దగ్గరగా రావచ్చు; కాలవ్యవధి అంతటా సగటు దూరాన్ని అడగడం వేరే సమస్య. ప్రశ్న ఆ ప్రమాణాన్ని చెప్పకుండా ఒక శాశ్వత nearest-to-Earth జవాబు పెట్టకండి. భూమికి nearest star Sun; Solar Systemకి బయట nearest star Proxima Centauri. Planet కాంతి ప్రధానంగా reflected sunlight; నక్షత్రం స్వయంగా శక్తిని విడుదల చేస్తుంది."
+    },
+    {
+      "id": "SOLAR-PRACTICE-006",
+      "topic": 1,
+      "kind": "statement",
+      "question_en": "I. A constellation is an apparent sky pattern. II. Its stars must all be physically close. Which is correct?",
+      "question_te": "I. Constellation కనిపించే sky pattern. II. దాని stars అన్నీ భౌతికంగా దగ్గరగా ఉండాలి. సరైనది ఏది?",
+      "options": [
+        "Both / రెండూ",
+        "Neither / ఏదీ కాదు",
+        "I only / I మాత్రమే",
+        "II only / II మాత్రమే"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "II adds an unjustified closeness requirement.",
+        "I correctly describes the pattern.",
+        "Apparent patterns can contain stars at very different distances.",
+        "II is false; I is true."
+      ],
+      "explanation_te": "దృష్టికి దగ్గరగా కనిపించడం నిజమైన physical closenessకు హామీ కాదు.",
+      "section": "solar-scale-p4",
+      "source_urls": [
+        "https://science.nasa.gov/exoplanets/what-is-a-light-year/",
+        "https://science.nasa.gov/sun/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "9. అంతరిక్ష దూరాలు — Scale, light and nearest",
+      "excerpt": "స్థాయి క్రమం: Earth → Solar System → Milky Way → Universe. Galaxy ఒక నక్షత్ర వ్యవస్థ; constellation ఆకాశంలో మన దృష్టికి కనిపించే pattern, దాని నక్షత్రాలు తప్పనిసరిగా భౌతికంగా ఒకే సమూహంలో ఉండవు.",
+      "source_paragraph": "స్థాయి క్రమం: Earth → Solar System → Milky Way → Universe. Galaxy ఒక నక్షత్ర వ్యవస్థ; constellation ఆకాశంలో మన దృష్టికి కనిపించే pattern, దాని నక్షత్రాలు తప్పనిసరిగా భౌతికంగా ఒకే సమూహంలో ఉండవు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-007",
+      "topic": 2,
+      "kind": "sequence",
+      "question_en": "Which sequence best represents solar-system formation?",
+      "question_te": "సౌర కుటుంబ పుట్టుకకు సరైన క్రమం ఏది?",
+      "options": [
+        "Cloud collapse → rotating disk → accretion",
+        "Comet tails → galaxies → planetary cores",
+        "Earth forms → Universe forms → gas disappears",
+        "Finished planets → dust cloud → Sun disappears"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Gravity collapses the cloud; disk material accumulates into bodies.",
+        "Comet tails are not the start of galaxy formation.",
+        "Earth did not form before the Universe.",
+        "Planets do not precede their source cloud in this model."
+      ],
+      "explanation_te": "Cloud కుంచించుకుని disk ఏర్పడి, పదార్థం చేరి bodies పెరిగాయి.",
+      "section": "solar-formation-p1",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/solar-system-facts/",
+        "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "10. పుట్టుక, గ్రహాల వర్గీకరణ — Formation and definitions",
+      "excerpt": "సౌర కుటుంబం సుమారు 4.6 billion years క్రితం gas–dust cloud కుంచించుకోవడంతో ఏర్పడింది. మధ్యలో protosun, చుట్టూ rotating disk; చిన్న కణాలు చేరి planetesimals, తరువాత పెద్ద bodies అయ్యాయి. ఈ accretion అంటే చిన్న పదార్థం చేరి పెద్దదవడం. Earth వయస్సు సుమారు 4.54 billion years; 4.6 అనే Solar System rounded ageతో దీనిని విరుద్ధంగా చూడకండి.",
+      "source_paragraph": "సౌర కుటుంబం సుమారు 4.6 billion years క్రితం gas–dust cloud కుంచించుకోవడంతో ఏర్పడింది. మధ్యలో protosun, చుట్టూ rotating disk; చిన్న కణాలు చేరి planetesimals, తరువాత పెద్ద bodies అయ్యాయి. ఈ accretion అంటే చిన్న పదార్థం చేరి పెద్దదవడం. Earth వయస్సు సుమారు 4.54 billion years; 4.6 అనే Solar System rounded ageతో దీనిని విరుద్ధంగా చూడకండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-008",
+      "topic": 2,
+      "kind": "concept",
+      "question_en": "Accretion in planet formation means:",
+      "question_te": "గ్రహాల పుట్టుకలో accretion అంటే ఏమిటి?",
+      "options": [
+        "Disappearance of gravity",
+        "Growth by accumulation of smaller material",
+        "Every moon becoming a star",
+        "Chemical burning of oxygen"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Gravity helps accumulation.",
+        "Small particles/bodies gather into larger bodies.",
+        "Accretion does not require stars to form from moons.",
+        "Combustion is not accretion."
+      ],
+      "explanation_te": "చిన్న పదార్థాలు చేరి పెద్ద bodyగా పెరగడమే accretion.",
+      "section": "solar-formation-p1",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/solar-system-facts/",
+        "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "10. పుట్టుక, గ్రహాల వర్గీకరణ — Formation and definitions",
+      "excerpt": "సౌర కుటుంబం సుమారు 4.6 billion years క్రితం gas–dust cloud కుంచించుకోవడంతో ఏర్పడింది. మధ్యలో protosun, చుట్టూ rotating disk; చిన్న కణాలు చేరి planetesimals, తరువాత పెద్ద bodies అయ్యాయి. ఈ accretion అంటే చిన్న పదార్థం చేరి పెద్దదవడం. Earth వయస్సు సుమారు 4.54 billion years; 4.6 అనే Solar System rounded ageతో దీనిని విరుద్ధంగా చూడకండి.",
+      "source_paragraph": "సౌర కుటుంబం సుమారు 4.6 billion years క్రితం gas–dust cloud కుంచించుకోవడంతో ఏర్పడింది. మధ్యలో protosun, చుట్టూ rotating disk; చిన్న కణాలు చేరి planetesimals, తరువాత పెద్ద bodies అయ్యాయి. ఈ accretion అంటే చిన్న పదార్థం చేరి పెద్దదవడం. Earth వయస్సు సుమారు 4.54 billion years; 4.6 అనే Solar System rounded ageతో దీనిని విరుద్ధంగా చూడకండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-009",
+      "topic": 2,
+      "kind": "statement",
+      "question_en": "Which is NOT an IAU2006 condition for a Solar System planet?",
+      "question_te": "IAU2006 planet నిర్వచనంలో షరతు కానిది ఏది?",
+      "options": [
+        "It emits its own visible light by fusion",
+        "It orbits the Sun",
+        "It is nearly round under self-gravity",
+        "It has cleared its orbital neighbourhood"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Fusion-powered starlight is not a planet condition.",
+        "Orbiting the Sun is a condition.",
+        "Nearly round shape is a condition.",
+        "Orbital dominance is the distinguishing third condition."
+      ],
+      "explanation_te": "Fusion కాంతి గ్రహానికి షరతు కాదు; నక్షత్ర లక్షణం.",
+      "section": "solar-formation-p3",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/solar-system-facts/",
+        "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "10. పుట్టుక, గ్రహాల వర్గీకరణ — Formation and definitions",
+      "excerpt": "IAU 2006 Solar System నిర్వచనంలో planet: (1) Sun చుట్టూ orbit, (2) తన gravityతో nearly round, (3) తన orbital neighbourhoodలో ఆధిపత్యం. Dwarf planet మొదటి రెండింటిని నెరవేర్చినా మూడోది కాదు, మరొక bodyకి satellite కూడా కాదు. Ceres main asteroid beltలో dwarf planet; Pluto, Eris, Haumea, Makemake ఇతర గుర్తించిన dwarf planets. Pluto చిన్నది కాబట్టి మాత్రమే వర్గం మారలేదు. Moon గుండ్రంగా ఉన్నా Earth satellite; dwarf planet కాదు.",
+      "source_paragraph": "IAU 2006 Solar System నిర్వచనంలో planet: (1) Sun చుట్టూ orbit, (2) తన gravityతో nearly round, (3) తన orbital neighbourhoodలో ఆధిపత్యం. Dwarf planet మొదటి రెండింటిని నెరవేర్చినా మూడోది కాదు, మరొక bodyకి satellite కూడా కాదు. Ceres main asteroid beltలో dwarf planet; Pluto, Eris, Haumea, Makemake ఇతర గుర్తించిన dwarf planets. Pluto చిన్నది కాబట్టి మాత్రమే వర్గం మారలేదు. Moon గుండ్రంగా ఉన్నా Earth satellite; dwarf planet కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-010",
+      "topic": 2,
+      "kind": "matching",
+      "question_en": "Which is a dwarf planet in the main asteroid belt?",
+      "question_te": "Main asteroid beltలో dwarf planet ఏది?",
+      "options": [
+        "Ceres",
+        "Mercury",
+        "Europa",
+        "Titan"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Ceres lies in the belt between Mars and Jupiter.",
+        "Mercury is one of the eight planets.",
+        "Europa is Jupiter's moon.",
+        "Titan is Saturn's moon."
+      ],
+      "explanation_te": "Ceres belt dwarf planet; Europa, Titan moons.",
+      "section": "solar-formation-p3",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/solar-system-facts/",
+        "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "10. పుట్టుక, గ్రహాల వర్గీకరణ — Formation and definitions",
+      "excerpt": "IAU 2006 Solar System నిర్వచనంలో planet: (1) Sun చుట్టూ orbit, (2) తన gravityతో nearly round, (3) తన orbital neighbourhoodలో ఆధిపత్యం. Dwarf planet మొదటి రెండింటిని నెరవేర్చినా మూడోది కాదు, మరొక bodyకి satellite కూడా కాదు. Ceres main asteroid beltలో dwarf planet; Pluto, Eris, Haumea, Makemake ఇతర గుర్తించిన dwarf planets. Pluto చిన్నది కాబట్టి మాత్రమే వర్గం మారలేదు. Moon గుండ్రంగా ఉన్నా Earth satellite; dwarf planet కాదు.",
+      "source_paragraph": "IAU 2006 Solar System నిర్వచనంలో planet: (1) Sun చుట్టూ orbit, (2) తన gravityతో nearly round, (3) తన orbital neighbourhoodలో ఆధిపత్యం. Dwarf planet మొదటి రెండింటిని నెరవేర్చినా మూడోది కాదు, మరొక bodyకి satellite కూడా కాదు. Ceres main asteroid beltలో dwarf planet; Pluto, Eris, Haumea, Makemake ఇతర గుర్తించిన dwarf planets. Pluto చిన్నది కాబట్టి మాత్రమే వర్గం మారలేదు. Moon గుండ్రంగా ఉన్నా Earth satellite; dwarf planet కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-011",
+      "topic": 2,
+      "kind": "application",
+      "question_en": "A nearly round body orbits a planet. Is roundness alone enough to call it a dwarf planet?",
+      "question_te": "ఒక గుండ్రని body planetను orbit చేస్తోంది. Roundness ఒక్కటే dwarf planetగా పిలవడానికి సరిపోతుందా?",
+      "options": [
+        "Yes; all satellites are dwarf planets",
+        "No; a dwarf planet must not be a satellite",
+        "No; dwarf planets must be stars",
+        "Yes; every round body is a dwarf planet"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Moons and dwarf planets differ.",
+        "Satellite status excludes that IAU category.",
+        "Dwarf planets are not stars.",
+        "Roundness is only one criterion."
+      ],
+      "explanation_te": "Dwarf planet మరొక bodyకి satellite కాకూడదు.",
+      "section": "solar-formation-p4",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/solar-system-facts/",
+        "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "10. పుట్టుక, గ్రహాల వర్గీకరణ — Formation and definitions",
+      "excerpt": "చదివే పద్ధతి: ముందుగా body ఏదిని orbit చేస్తోందో అడగండి; తరువాత shape, orbital dominance. “Round అయితే planet” అనే ఒక్క షరతు సరిపోదు.",
+      "source_paragraph": "చదివే పద్ధతి: ముందుగా body ఏదిని orbit చేస్తోందో అడగండి; తరువాత shape, orbital dominance. “Round అయితే planet” అనే ఒక్క షరతు సరిపోదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-012",
+      "topic": 2,
+      "kind": "matching",
+      "question_en": "Which grouping is correct?",
+      "question_te": "సరైన వర్గీకరణ ఏది?",
+      "options": [
+        "All eight have identical rocky composition",
+        "Jupiter–Saturn: gas giants; Uranus–Neptune: ice giants",
+        "Earth–Mars: gas giants; Jupiter–Saturn: terrestrial",
+        "Uranus–Neptune: terrestrial; Venus: ice giant"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Planet compositions differ substantially.",
+        "This distinguishes the giant groups.",
+        "Earth/Mars are terrestrial; Jupiter/Saturn gas giants.",
+        "Uranus/Neptune are ice giants; Venus terrestrial."
+      ],
+      "explanation_te": "Outer planetsలో gas, ice giants వేరు; తొలి నాలుగు terrestrial.",
+      "section": "solar-formation-p2",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/solar-system-facts/",
+        "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "10. పుట్టుక, గ్రహాల వర్గీకరణ — Formation and definitions",
+      "excerpt": "వేడి inner diskలో refractory rock/metal నిలిచాయి. దూరపు చల్లని ప్రాంతాల్లో volatile పదార్థాల ice కూడా చేరగలిగింది. అందువల్ల తొలి నాలుగు terrestrial planets; Jupiter–Saturn gas giants; Uranus–Neptune ice giants. అన్ని outer planets ఒకే composition అని కాదు; ice giantకి గట్టి మంచు ఉపరితలం ఉందని కూడా కాదు.",
+      "source_paragraph": "వేడి inner diskలో refractory rock/metal నిలిచాయి. దూరపు చల్లని ప్రాంతాల్లో volatile పదార్థాల ice కూడా చేరగలిగింది. అందువల్ల తొలి నాలుగు terrestrial planets; Jupiter–Saturn gas giants; Uranus–Neptune ice giants. అన్ని outer planets ఒకే composition అని కాదు; ice giantకి గట్టి మంచు ఉపరితలం ఉందని కూడా కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-013",
+      "topic": 3,
+      "kind": "concept",
+      "question_en": "The principal source of the Sun's energy is:",
+      "question_te": "సూర్యుడి శక్తికి ప్రధాన మూలం ఏది?",
+      "options": [
+        "Sunlight reflected from Earth",
+        "Hydrogen fusion into helium in the core",
+        "Friction between its rings",
+        "Coal burning with oxygen"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Earth-reflected light cannot power the Sun.",
+        "Nuclear fusion releases energy in the core.",
+        "Sun has no planetary ring system powering it.",
+        "Sun is not a coal fire."
+      ],
+      "explanation_te": "Coreలో hydrogen nuclei heliumగా కలిసే fusion శక్తిని ఇస్తుంది.",
+      "section": "solar-sun-p1",
+      "source_urls": [
+        "https://science.nasa.gov/sun/facts/",
+        "https://science.nasa.gov/sun/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "11. సూర్యుడి లోపలి నుంచి భూమి వరకు — Sun and space weather",
+      "excerpt": "Sun ప్రధానంగా hydrogen, heliumతో ఉన్న plasma star. Coreలో hydrogen nuclei కలసి heliumగా మారే nuclear fusion శక్తికి మూలం; oxygenతో బొగ్గు మండే chemical combustion కాదు. ఆ శక్తి radiative zone, convective zone దాటి బయటికి చేరుతుంది. కనిపించే photosphere , దాని బయట chromosphere, corona అనే పేర్లను లోపలి coreతో కలపకండి.",
+      "source_paragraph": "Sun ప్రధానంగా hydrogen, heliumతో ఉన్న plasma star. Coreలో hydrogen nuclei కలసి heliumగా మారే nuclear fusion శక్తికి మూలం; oxygenతో బొగ్గు మండే chemical combustion కాదు. ఆ శక్తి radiative zone, convective zone దాటి బయటికి చేరుతుంది. కనిపించే photosphere , దాని బయట chromosphere, corona అనే పేర్లను లోపలి coreతో కలపకండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-014",
+      "topic": 3,
+      "kind": "sequence",
+      "question_en": "From the core outward, which sequence is correct?",
+      "question_te": "Core నుంచి బయటికి సరైన క్రమం ఏది?",
+      "options": [
+        "Corona → chromosphere → core → photosphere",
+        "Photosphere → core → corona → radiative zone",
+        "Core → radiative zone → convective zone → photosphere",
+        "Core → photosphere → radiative zone → convective zone"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "It does not proceed consistently outward.",
+        "It mixes interior and atmosphere.",
+        "This follows interior to visible surface.",
+        "Transport zones lie inside the photosphere."
+      ],
+      "explanation_te": "Core తరువాత radiative, convective zones; visible surface photosphere.",
+      "section": "solar-sun-p1",
+      "source_urls": [
+        "https://science.nasa.gov/sun/facts/",
+        "https://science.nasa.gov/sun/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "11. సూర్యుడి లోపలి నుంచి భూమి వరకు — Sun and space weather",
+      "excerpt": "Sun ప్రధానంగా hydrogen, heliumతో ఉన్న plasma star. Coreలో hydrogen nuclei కలసి heliumగా మారే nuclear fusion శక్తికి మూలం; oxygenతో బొగ్గు మండే chemical combustion కాదు. ఆ శక్తి radiative zone, convective zone దాటి బయటికి చేరుతుంది. కనిపించే photosphere , దాని బయట chromosphere, corona అనే పేర్లను లోపలి coreతో కలపకండి.",
+      "source_paragraph": "Sun ప్రధానంగా hydrogen, heliumతో ఉన్న plasma star. Coreలో hydrogen nuclei కలసి heliumగా మారే nuclear fusion శక్తికి మూలం; oxygenతో బొగ్గు మండే chemical combustion కాదు. ఆ శక్తి radiative zone, convective zone దాటి బయటికి చేరుతుంది. కనిపించే photosphere , దాని బయట chromosphere, corona అనే పేర్లను లోపలి coreతో కలపకండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-015",
+      "topic": 3,
+      "kind": "concept",
+      "question_en": "The Sun's visible surface in elementary descriptions is the:",
+      "question_te": "సూర్యుడి కనిపించే surface అని ఏ పొరను అంటారు?",
+      "options": [
+        "Asteroid belt",
+        "Earth's ionosphere",
+        "Core",
+        "Photosphere"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Asteroid belt is not a solar layer.",
+        "Ionosphere belongs to Earth's atmosphere.",
+        "Core lies deep inside and is much hotter.",
+        "Most visible sunlight originates near this layer."
+      ],
+      "explanation_te": "Photosphere కాంతిమండలం; Sunపై solid ground లేదు.",
+      "section": "solar-sun-p2",
+      "source_urls": [
+        "https://science.nasa.gov/sun/facts/",
+        "https://science.nasa.gov/sun/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "11. సూర్యుడి లోపలి నుంచి భూమి వరకు — Sun and space weather",
+      "excerpt": "Photosphere సుమారు 5,800 K; core సుమారు 15 million °C. బయట ఉన్న corona కూడా million-degree స్థాయికి వేడిగా ఉండవచ్చు—దూరం పెరిగే కొద్దీ ప్రతి layer తప్పనిసరిగా చల్లబడుతుందనే నియమం కాదు. పాత PYQలో 5778 K ఎంపికను అదే paper contextలో ఉంచాలి; IAU nominal effective reference 5772 Kను వేరుగా చదవాలి.",
+      "source_paragraph": "Photosphere సుమారు 5,800 K; core సుమారు 15 million °C. బయట ఉన్న corona కూడా million-degree స్థాయికి వేడిగా ఉండవచ్చు—దూరం పెరిగే కొద్దీ ప్రతి layer తప్పనిసరిగా చల్లబడుతుందనే నియమం కాదు. పాత PYQలో 5778 K ఎంపికను అదే paper contextలో ఉంచాలి; IAU nominal effective reference 5772 Kను వేరుగా చదవాలి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-016",
+      "topic": 3,
+      "kind": "statement",
+      "question_en": "I. Sunspots are cooler than nearby photosphere. II. They are completely cold holes. Which is correct?",
+      "question_te": "I. Sunspots చుట్టూ photosphereకన్నా చల్లగా ఉంటాయి. II. పూర్తిగా cold holes. సరైనది ఏది?",
+      "options": [
+        "Neither / ఏదీ కాదు",
+        "Both / రెండూ",
+        "I only / I మాత్రమే",
+        "II only / II మాత్రమే"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "I is a valid temperature comparison.",
+        "Relative coolness is not complete coldness.",
+        "Relatively cooler magnetic regions remain very hot.",
+        "II false; I true."
+      ],
+      "explanation_te": "Sunspots relativeగా చల్లని magnetic ప్రాంతాలు; పూర్తిగా cold కాదు.",
+      "section": "solar-sun-p3",
+      "source_urls": [
+        "https://science.nasa.gov/sun/facts/",
+        "https://science.nasa.gov/sun/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "11. సూర్యుడి లోపలి నుంచి భూమి వరకు — Sun and space weather",
+      "excerpt": "Sunspots చుట్టూ photosphereకన్నా చల్లని, magnetic ప్రాంతాలు; పూర్తిగా చల్లని రంధ్రాలు కాదు. సుమారు 11-year activity cycle ఒక సగటు. Solar wind charged particles ప్రవాహం; sunlight electromagnetic radiationతో ఇది సమానం కాదు. పెద్ద solar storms satellites, radio/GNSS, power systemsను ప్రభావితం చేయవచ్చు. Earth magnetic field అనేక charged particles మార్గాన్ని మార్చుతుంది; atmosphere కూడా రక్షణలో పాత్ర పోషిస్తుంది. కాబట్టి భూమిని రక్షించేది ఒక్క కవచమే కాదు.",
+      "source_paragraph": "Sunspots చుట్టూ photosphereకన్నా చల్లని, magnetic ప్రాంతాలు; పూర్తిగా చల్లని రంధ్రాలు కాదు. సుమారు 11-year activity cycle ఒక సగటు. Solar wind charged particles ప్రవాహం; sunlight electromagnetic radiationతో ఇది సమానం కాదు. పెద్ద solar storms satellites, radio/GNSS, power systemsను ప్రభావితం చేయవచ్చు. Earth magnetic field అనేక charged particles మార్గాన్ని మార్చుతుంది; atmosphere కూడా రక్షణలో పాత్ర పోషిస్తుంది. కాబట్టి భూమిని రక్షించేది ఒక్క కవచమే కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-017",
+      "topic": 3,
+      "kind": "comparison",
+      "question_en": "Which comparison of corona and photosphere is correct?",
+      "question_te": "Corona, photosphere పోలికలో సరైనది ఏది?",
+      "options": [
+        "Corona is the Sun's moon",
+        "Photosphere is Earth's solid crust",
+        "Every outer solar layer must be cooler",
+        "Corona can be much hotter than photosphere"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Corona is part of the solar atmosphere.",
+        "Photosphere is a solar layer.",
+        "Solar temperature does not fall monotonically through all layers.",
+        "Corona reaches million-degree temperatures."
+      ],
+      "explanation_te": "Corona బయట ఉన్నా photosphereకన్నా చాలా వేడిగా ఉండవచ్చు.",
+      "section": "solar-sun-p2",
+      "source_urls": [
+        "https://science.nasa.gov/sun/facts/",
+        "https://science.nasa.gov/sun/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "11. సూర్యుడి లోపలి నుంచి భూమి వరకు — Sun and space weather",
+      "excerpt": "Photosphere సుమారు 5,800 K; core సుమారు 15 million °C. బయట ఉన్న corona కూడా million-degree స్థాయికి వేడిగా ఉండవచ్చు—దూరం పెరిగే కొద్దీ ప్రతి layer తప్పనిసరిగా చల్లబడుతుందనే నియమం కాదు. పాత PYQలో 5778 K ఎంపికను అదే paper contextలో ఉంచాలి; IAU nominal effective reference 5772 Kను వేరుగా చదవాలి.",
+      "source_paragraph": "Photosphere సుమారు 5,800 K; core సుమారు 15 million °C. బయట ఉన్న corona కూడా million-degree స్థాయికి వేడిగా ఉండవచ్చు—దూరం పెరిగే కొద్దీ ప్రతి layer తప్పనిసరిగా చల్లబడుతుందనే నియమం కాదు. పాత PYQలో 5778 K ఎంపికను అదే paper contextలో ఉంచాలి; IAU nominal effective reference 5772 Kను వేరుగా చదవాలి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-018",
+      "topic": 3,
+      "kind": "application",
+      "question_en": "Which distinction matters when a solar storm disrupts satellites?",
+      "question_te": "Solar storm satellitesను ప్రభావితం చేసేటప్పుడు ఏ తేడా ముఖ్యం?",
+      "options": [
+        "Only chemical smoke reaches Earth",
+        "Both are the same material stream",
+        "Solar wind is ordinary ocean wind",
+        "Solar wind is charged particles; sunlight is electromagnetic radiation"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Solar storms are not chemical smoke.",
+        "Radiation is not the same as a particle flow.",
+        "Solar wind travels through space.",
+        "Particles and radiation interact differently with matter."
+      ],
+      "explanation_te": "Solar wind charged particles; sunlight radiation. రెండూ వేరు.",
+      "section": "solar-sun-p3",
+      "source_urls": [
+        "https://science.nasa.gov/sun/facts/",
+        "https://science.nasa.gov/sun/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "11. సూర్యుడి లోపలి నుంచి భూమి వరకు — Sun and space weather",
+      "excerpt": "Sunspots చుట్టూ photosphereకన్నా చల్లని, magnetic ప్రాంతాలు; పూర్తిగా చల్లని రంధ్రాలు కాదు. సుమారు 11-year activity cycle ఒక సగటు. Solar wind charged particles ప్రవాహం; sunlight electromagnetic radiationతో ఇది సమానం కాదు. పెద్ద solar storms satellites, radio/GNSS, power systemsను ప్రభావితం చేయవచ్చు. Earth magnetic field అనేక charged particles మార్గాన్ని మార్చుతుంది; atmosphere కూడా రక్షణలో పాత్ర పోషిస్తుంది. కాబట్టి భూమిని రక్షించేది ఒక్క కవచమే కాదు.",
+      "source_paragraph": "Sunspots చుట్టూ photosphereకన్నా చల్లని, magnetic ప్రాంతాలు; పూర్తిగా చల్లని రంధ్రాలు కాదు. సుమారు 11-year activity cycle ఒక సగటు. Solar wind charged particles ప్రవాహం; sunlight electromagnetic radiationతో ఇది సమానం కాదు. పెద్ద solar storms satellites, radio/GNSS, power systemsను ప్రభావితం చేయవచ్చు. Earth magnetic field అనేక charged particles మార్గాన్ని మార్చుతుంది; atmosphere కూడా రక్షణలో పాత్ర పోషిస్తుంది. కాబట్టి భూమిని రక్షించేది ఒక్క కవచమే కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-019",
+      "topic": 4,
+      "kind": "comparison",
+      "question_en": "Among the eight planets, which is nearest the Sun and smallest in diameter?",
+      "question_te": "ఎనిమిదింటిలో Sunకు nearest, diameterలో smallest ఏది?",
+      "options": [
+        "Venus",
+        "Mercury",
+        "Earth",
+        "Mars"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Venus is second and larger.",
+        "Mercury has both properties.",
+        "Earth is third and larger.",
+        "Mars is fourth and larger than Mercury."
+      ],
+      "explanation_te": "Mercury nearest, smallest; hottest మాత్రం Venus.",
+      "section": "solar-inner-p1",
+      "source_urls": [
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/",
+        "https://science.nasa.gov/earth/facts/",
+        "https://science.nasa.gov/mars/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "12. నాలుగు రాతి గ్రహాలు — Colours, surfaces and atmospheres",
+      "excerpt": "Mercury / బుధుడు: Sunకు nearest, ఎనిమిది planetsలో smallest. Grey cratered rocky surface, పెద్ద iron-rich interior, చాలా పలుచని exosphere. దట్టమైన atmosphere లేక heat redistribution తక్కువ; day–night temperature తేడా పెద్దది. Sunకు దగ్గరైనా hottest planet కాదు. Natural moons లేవు.",
+      "source_paragraph": "Mercury / బుధుడు: Sunకు nearest, ఎనిమిది planetsలో smallest. Grey cratered rocky surface, పెద్ద iron-rich interior, చాలా పలుచని exosphere. దట్టమైన atmosphere లేక heat redistribution తక్కువ; day–night temperature తేడా పెద్దది. Sunకు దగ్గరైనా hottest planet కాదు. Natural moons లేవు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-020",
+      "topic": 4,
+      "kind": "reasoning",
+      "question_en": "Why is Venus hotter at its surface than Mercury?",
+      "question_te": "Mercuryకన్నా Venus surface ఎందుకు వేడి?",
+      "options": [
+        "Venus is closer to the Sun",
+        "Venus has more moons than Jupiter",
+        "Venus generates stellar fusion",
+        "Dense CO₂ atmosphere creates a strong greenhouse effect"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Mercury is closer.",
+        "Venus has no natural moons.",
+        "Venus is not a star.",
+        "Atmospheric heat retention matters as well as distance."
+      ],
+      "explanation_te": "Venus CO₂ atmosphere వేడి బయటికి పోవడాన్ని తగ్గిస్తుంది.",
+      "section": "solar-inner-p2",
+      "source_urls": [
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/",
+        "https://science.nasa.gov/earth/facts/",
+        "https://science.nasa.gov/mars/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "12. నాలుగు రాతి గ్రహాలు — Colours, surfaces and atmospheres",
+      "excerpt": "Venus / శుక్రుడు: size, massలో Earthకు దగ్గర; జీవన పరిస్థితుల్లో twin కాదు. బయట కనిపించే pale cream/yellow-white రూపం దట్టమైన cloudsది; surface rusty rock. CO₂-rich atmosphere, sulphuric-acid clouds, బలమైన greenhouse effectతో hottest planetary surface. Slow retrograde rotation. Natural moons లేవు. Morning star/evening star అనేది కనిపించే సమయానికి పెట్టిన పేరు; Venus నిజమైన star కాదు.",
+      "source_paragraph": "Venus / శుక్రుడు: size, massలో Earthకు దగ్గర; జీవన పరిస్థితుల్లో twin కాదు. బయట కనిపించే pale cream/yellow-white రూపం దట్టమైన cloudsది; surface rusty rock. CO₂-rich atmosphere, sulphuric-acid clouds, బలమైన greenhouse effectతో hottest planetary surface. Slow retrograde rotation. Natural moons లేవు. Morning star/evening star అనేది కనిపించే సమయానికి పెట్టిన పేరు; Venus నిజమైన star కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-021",
+      "topic": 4,
+      "kind": "matching",
+      "question_en": "Mars is reddish mainly because of:",
+      "question_te": "Mars reddishగా కనిపించడానికి ప్రధాన కారణం ఏది?",
+      "options": [
+        "A global ocean of liquid iron",
+        "A permanent lunar eclipse",
+        "Iron oxides in dust and rocks",
+        "Its own red fusion light"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "No such global surface ocean exists.",
+        "An eclipse does not cause its ordinary colour.",
+        "Oxidized iron material gives the reddish appearance.",
+        "Mars reflects sunlight, not stellar fusion light."
+      ],
+      "explanation_te": "Iron oxides కలిగిన dust/rocks Marsకు ఎరుపు రూపం ఇస్తాయి.",
+      "section": "solar-inner-p4",
+      "source_urls": [
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/",
+        "https://science.nasa.gov/earth/facts/",
+        "https://science.nasa.gov/mars/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "12. నాలుగు రాతి గ్రహాలు — Colours, surfaces and atmospheres",
+      "excerpt": "Mars / అంగారకుడు: iron oxides కలిగిన ధూళి/రాళ్ల వల్ల reddish. Thin CO₂ atmosphere; Phobos, Deimos అనే రెండు చిన్న moons. Olympus Mons volcano, Valles Marineris canyon ప్రధాన గుర్తులు. Polar ice, గత liquid-water evidence ఉన్నాయి; నేటి Mars అంతటా Earthలాంటి నదులు ఉన్నాయని కాదు.",
+      "source_paragraph": "Mars / అంగారకుడు: iron oxides కలిగిన ధూళి/రాళ్ల వల్ల reddish. Thin CO₂ atmosphere; Phobos, Deimos అనే రెండు చిన్న moons. Olympus Mons volcano, Valles Marineris canyon ప్రధాన గుర్తులు. Polar ice, గత liquid-water evidence ఉన్నాయి; నేటి Mars అంతటా Earthలాంటి నదులు ఉన్నాయని కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-022",
+      "topic": 4,
+      "kind": "matching",
+      "question_en": "Which planet–moon pair is correct?",
+      "question_te": "సరైన planet–moon జత ఏది?",
+      "options": [
+        "Earth — Triton",
+        "Mars — Phobos and Deimos",
+        "Mercury — Europa",
+        "Venus — Titan"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Triton orbits Neptune.",
+        "Both orbit Mars.",
+        "Europa orbits Jupiter; Mercury has none.",
+        "Titan orbits Saturn; Venus has no natural moon."
+      ],
+      "explanation_te": "Phobos, Deimos Mars moons.",
+      "section": "solar-inner-p4",
+      "source_urls": [
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/",
+        "https://science.nasa.gov/earth/facts/",
+        "https://science.nasa.gov/mars/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "12. నాలుగు రాతి గ్రహాలు — Colours, surfaces and atmospheres",
+      "excerpt": "Mars / అంగారకుడు: iron oxides కలిగిన ధూళి/రాళ్ల వల్ల reddish. Thin CO₂ atmosphere; Phobos, Deimos అనే రెండు చిన్న moons. Olympus Mons volcano, Valles Marineris canyon ప్రధాన గుర్తులు. Polar ice, గత liquid-water evidence ఉన్నాయి; నేటి Mars అంతటా Earthలాంటి నదులు ఉన్నాయని కాదు.",
+      "source_paragraph": "Mars / అంగారకుడు: iron oxides కలిగిన ధూళి/రాళ్ల వల్ల reddish. Thin CO₂ atmosphere; Phobos, Deimos అనే రెండు చిన్న moons. Olympus Mons volcano, Valles Marineris canyon ప్రధాన గుర్తులు. Polar ice, గత liquid-water evidence ఉన్నాయి; నేటి Mars అంతటా Earthలాంటి నదులు ఉన్నాయని కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-023",
+      "topic": 4,
+      "kind": "statement",
+      "question_en": "I. Venus is similar to Earth in size. II. Therefore its surface is similarly habitable. Which is correct?",
+      "question_te": "I. Venus size Earthకు దగ్గర. II. అందువల్ల surface habitability కూడా అదే. సరైనది ఏది?",
+      "options": [
+        "I only / I మాత్రమే",
+        "Both / రెండూ",
+        "Neither / ఏదీ కాదు",
+        "II only / II మాత్రమే"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Size does not guarantee similar atmosphere or habitability.",
+        "Habitability inference is false.",
+        "I is a valid size comparison.",
+        "II does not follow; I true."
+      ],
+      "explanation_te": "Size twin అంటే living conditions twin కాదు.",
+      "section": "solar-inner-p2",
+      "source_urls": [
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/",
+        "https://science.nasa.gov/earth/facts/",
+        "https://science.nasa.gov/mars/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "12. నాలుగు రాతి గ్రహాలు — Colours, surfaces and atmospheres",
+      "excerpt": "Venus / శుక్రుడు: size, massలో Earthకు దగ్గర; జీవన పరిస్థితుల్లో twin కాదు. బయట కనిపించే pale cream/yellow-white రూపం దట్టమైన cloudsది; surface rusty rock. CO₂-rich atmosphere, sulphuric-acid clouds, బలమైన greenhouse effectతో hottest planetary surface. Slow retrograde rotation. Natural moons లేవు. Morning star/evening star అనేది కనిపించే సమయానికి పెట్టిన పేరు; Venus నిజమైన star కాదు.",
+      "source_paragraph": "Venus / శుక్రుడు: size, massలో Earthకు దగ్గర; జీవన పరిస్థితుల్లో twin కాదు. బయట కనిపించే pale cream/yellow-white రూపం దట్టమైన cloudsది; surface rusty rock. CO₂-rich atmosphere, sulphuric-acid clouds, బలమైన greenhouse effectతో hottest planetary surface. Slow retrograde rotation. Natural moons లేవు. Morning star/evening star అనేది కనిపించే సమయానికి పెట్టిన పేరు; Venus నిజమైన star కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-024",
+      "topic": 4,
+      "kind": "application",
+      "question_en": "An image is labelled false colour. What should a student infer?",
+      "question_te": "Imageపై false colour అని ఉంటే ఏమి అర్థం?",
+      "options": [
+        "Every displayed colour must be natural surface colour",
+        "The planet is fictional",
+        "The body must be a star",
+        "Colours may emphasize measurements rather than human-eye appearance"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "False-colour labels warn against this assumption.",
+        "Processing does not imply fiction.",
+        "Colour processing does not classify stars.",
+        "Filters and processing can map data into display colours."
+      ],
+      "explanation_te": "False colour dataను చూపవచ్చు; natural colourగా తీసుకోకండి.",
+      "section": "solar-inner-p5",
+      "source_urls": [
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/",
+        "https://science.nasa.gov/earth/facts/",
+        "https://science.nasa.gov/mars/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "12. నాలుగు రాతి గ్రహాలు — Colours, surfaces and atmospheres",
+      "excerpt": "Colour caveat: telescopeలోని bright point, spacecraft natural-colour image, enhanced/infrared image ఒకటే కాదు. పరీక్షలో సాధారణ visible appearance అడిగితే పై వివరణ ఉపయోగించాలి; false-colour image నుంచి ఖచ్చిత surface colour ఊహించకండి.",
+      "source_paragraph": "Colour caveat: telescopeలోని bright point, spacecraft natural-colour image, enhanced/infrared image ఒకటే కాదు. పరీక్షలో సాధారణ visible appearance అడిగితే పై వివరణ ఉపయోగించాలి; false-colour image నుంచి ఖచ్చిత surface colour ఊహించకండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-025",
+      "topic": 5,
+      "kind": "matching",
+      "question_en": "The largest moon in the Solar System is:",
+      "question_te": "Solar Systemలో largest moon ఏది?",
+      "options": [
+        "Titan",
+        "Earth's Moon",
+        "Ganymede",
+        "Triton"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "Titan is smaller than Ganymede.",
+        "Earth's Moon is smaller.",
+        "Jupiter's Ganymede has the largest moon diameter.",
+        "Triton is Neptune's largest, not largest overall."
+      ],
+      "explanation_te": "Ganymede largest moon; Mercuryకన్నా diameter ఎక్కువైనా mass తక్కువ.",
+      "section": "solar-outer-p1",
+      "source_urls": [
+        "https://science.nasa.gov/jupiter/jupiter-facts/",
+        "https://science.nasa.gov/saturn/facts/",
+        "https://science.nasa.gov/uranus/facts/",
+        "https://science.nasa.gov/neptune/neptune-facts/",
+        "https://www.ox.ac.uk/news/2024-01-05-new-images-reveal-what-neptune-and-uranus-really-look-0",
+        "https://science.nasa.gov/jupiter/jupiter-moons/",
+        "https://science.nasa.gov/saturn/moons/titan/facts/",
+        "https://science.nasa.gov/saturn/moons/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "13. నాలుగు మహాగ్రహాలు — Giants, rings and major moons",
+      "excerpt": "Jupiter / గురుడు: diameter, massలో largest planet; వేగమైన rotation; cream–brown cloud bands, Great Red Spot అనే దీర్ఘకాల storm. ప్రధానంగా hydrogen–helium. Io, Europa, Ganymede, Callisto నాలుగు Galilean moons. Ganymede Solar Systemలో largest moon; Mercuryకన్నా diameter ఎక్కువైనా mass తక్కువ. Io active volcanism, Europa icy shell కింద ocean evidenceతో గుర్తించండి.",
+      "source_paragraph": "Jupiter / గురుడు: diameter, massలో largest planet; వేగమైన rotation; cream–brown cloud bands, Great Red Spot అనే దీర్ఘకాల storm. ప్రధానంగా hydrogen–helium. Io, Europa, Ganymede, Callisto నాలుగు Galilean moons. Ganymede Solar Systemలో largest moon; Mercuryకన్నా diameter ఎక్కువైనా mass తక్కువ. Io active volcanism, Europa icy shell కింద ocean evidenceతో గుర్తించండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-026",
+      "topic": 5,
+      "kind": "matching",
+      "question_en": "Which distinctive property is correctly matched?",
+      "question_te": "సరిగ్గా జతచేసిన ప్రత్యేక లక్షణం ఏది?",
+      "options": [
+        "Europa — Earth's only moon",
+        "Io — no volcanic activity",
+        "Titan — thick atmosphere and methane/ethane lakes",
+        "Triton — Mars's moon"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "Europa orbits Jupiter.",
+        "Io has active volcanism.",
+        "Saturn's Titan has these features.",
+        "Triton orbits Neptune."
+      ],
+      "explanation_te": "Titan Saturn moon; thick atmosphere, hydrocarbon lakes ఉన్నాయి.",
+      "section": "solar-outer-p2",
+      "source_urls": [
+        "https://science.nasa.gov/jupiter/jupiter-facts/",
+        "https://science.nasa.gov/saturn/facts/",
+        "https://science.nasa.gov/uranus/facts/",
+        "https://science.nasa.gov/neptune/neptune-facts/",
+        "https://www.ox.ac.uk/news/2024-01-05-new-images-reveal-what-neptune-and-uranus-really-look-0",
+        "https://science.nasa.gov/jupiter/jupiter-moons/",
+        "https://science.nasa.gov/saturn/moons/titan/facts/",
+        "https://science.nasa.gov/saturn/moons/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "13. నాలుగు మహాగ్రహాలు — Giants, rings and major moons",
+      "excerpt": "Saturn / శని: pale yellow/gold bands, చాలా స్పష్టమైన ice-rich rings. Mean density నీటికన్నా తక్కువ; “నీటిలో తేలుతుంది” అనేది density పోలిక, నిజంగా దాన్ని పెట్టే సముద్రం ఉందని కాదు. Titan దట్టమైన nitrogen-rich atmosphere, surface methane/ethane lakes; Enceladus icy plumesతో ప్రత్యేకం.",
+      "source_paragraph": "Saturn / శని: pale yellow/gold bands, చాలా స్పష్టమైన ice-rich rings. Mean density నీటికన్నా తక్కువ; “నీటిలో తేలుతుంది” అనేది density పోలిక, నిజంగా దాన్ని పెట్టే సముద్రం ఉందని కాదు. Titan దట్టమైన nitrogen-rich atmosphere, surface methane/ethane lakes; Enceladus icy plumesతో ప్రత్యేకం."
+    },
+    {
+      "id": "SOLAR-PRACTICE-027",
+      "topic": 5,
+      "kind": "statement",
+      "question_en": "I. Saturn has rings. II. Jupiter, Uranus and Neptune also have rings. Which is correct?",
+      "question_te": "I. Saturnకు rings ఉన్నాయి. II. Jupiter,Uranus,Neptuneకూ ఉన్నాయి. సరైనది ఏది?",
+      "options": [
+        "Both / రెండూ",
+        "Neither / ఏదీ కాదు",
+        "II only / II మాత్రమే",
+        "I only / I మాత్రమే"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "All four giant planets have rings.",
+        "Both statements are true.",
+        "Saturn also has rings.",
+        "This overlooks other giant rings."
+      ],
+      "explanation_te": "నాలుగు giant planetsకూ rings ఉన్నాయి; Saturnవి స్పష్టంగా కనిపిస్తాయి.",
+      "section": "solar-outer-p5",
+      "source_urls": [
+        "https://science.nasa.gov/jupiter/jupiter-facts/",
+        "https://science.nasa.gov/saturn/facts/",
+        "https://science.nasa.gov/uranus/facts/",
+        "https://science.nasa.gov/neptune/neptune-facts/",
+        "https://www.ox.ac.uk/news/2024-01-05-new-images-reveal-what-neptune-and-uranus-really-look-0",
+        "https://science.nasa.gov/jupiter/jupiter-moons/",
+        "https://science.nasa.gov/saturn/moons/titan/facts/",
+        "https://science.nasa.gov/saturn/moons/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "13. నాలుగు మహాగ్రహాలు — Giants, rings and major moons",
+      "excerpt": "All four giants have rings. Saturn మాత్రమే rings ఉన్న planet అనడం తప్పు. Giant planetsకు Earthలాంటి solid surfaceపై నిలబడలేం; density అనేది మొత్తం mass/volume సగటు. Moon discoveries మారుతాయి కాబట్టి exact countsను dated sourceతోనే చదవండి.",
+      "source_paragraph": "All four giants have rings. Saturn మాత్రమే rings ఉన్న planet అనడం తప్పు. Giant planetsకు Earthలాంటి solid surfaceపై నిలబడలేం; density అనేది మొత్తం mass/volume సగటు. Moon discoveries మారుతాయి కాబట్టి exact countsను dated sourceతోనే చదవండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-028",
+      "topic": 5,
+      "kind": "comparison",
+      "question_en": "Which planet has roughly 98° axial tilt, often described as rotating on its side?",
+      "question_te": "దాదాపు98° tiltతో పక్కకు ఒరిగి తిరిగే planet ఏది?",
+      "options": [
+        "Earth",
+        "Uranus",
+        "Mercury",
+        "Jupiter"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Earth tilt is about23.4°.",
+        "Uranus has extreme obliquity.",
+        "Mercury tilt is tiny.",
+        "Jupiter tilt is only a few degrees."
+      ],
+      "explanation_te": "Uranus98° axial tiltతో ప్రత్యేకం.",
+      "section": "solar-outer-p3",
+      "source_urls": [
+        "https://science.nasa.gov/jupiter/jupiter-facts/",
+        "https://science.nasa.gov/saturn/facts/",
+        "https://science.nasa.gov/uranus/facts/",
+        "https://science.nasa.gov/neptune/neptune-facts/",
+        "https://www.ox.ac.uk/news/2024-01-05-new-images-reveal-what-neptune-and-uranus-really-look-0",
+        "https://science.nasa.gov/jupiter/jupiter-moons/",
+        "https://science.nasa.gov/saturn/moons/titan/facts/",
+        "https://science.nasa.gov/saturn/moons/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "13. నాలుగు మహాగ్రహాలు — Giants, rings and major moons",
+      "excerpt": "Uranus / అరుణుడు: pale blue-green; methane ఎరుపు కాంతిని కొంత absorb చేస్తుంది. సుమారు 98° axial tiltతో పక్కకు ఒరిగి తిరుగుతున్నట్టు ఉంటుంది. Ice giant; Miranda, Ariel, Umbriel, Titania, Oberon ప్రధాన moons.",
+      "source_paragraph": "Uranus / అరుణుడు: pale blue-green; methane ఎరుపు కాంతిని కొంత absorb చేస్తుంది. సుమారు 98° axial tiltతో పక్కకు ఒరిగి తిరుగుతున్నట్టు ఉంటుంది. Ice giant; Miranda, Ariel, Umbriel, Titania, Oberon ప్రధాన moons."
+    },
+    {
+      "id": "SOLAR-PRACTICE-029",
+      "topic": 5,
+      "kind": "source-reading",
+      "question_en": "An old table gives Saturn274 moons; NASA gives293 as of August2026. How should this be read?",
+      "question_te": "పాత table274, NASA August2026లో293 moons అంటే ఎలా చదవాలి?",
+      "options": [
+        "Use the dated reference requested; discoveries change totals",
+        "All293 must have proper names",
+        "Both are unchanging physical constants",
+        "Saturn lost all rings"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Discovery/confirmation dates change counts; named counts are a subset.",
+        "Confirmed moons need not all be named.",
+        "Moon totals are not constants.",
+        "Moon updates do not imply ring loss."
+      ],
+      "explanation_te": "Moon countsకు date,confirmation,naming status చూడాలి.",
+      "section": "solar-outer-p5",
+      "source_urls": [
+        "https://science.nasa.gov/jupiter/jupiter-facts/",
+        "https://science.nasa.gov/saturn/facts/",
+        "https://science.nasa.gov/uranus/facts/",
+        "https://science.nasa.gov/neptune/neptune-facts/",
+        "https://www.ox.ac.uk/news/2024-01-05-new-images-reveal-what-neptune-and-uranus-really-look-0",
+        "https://science.nasa.gov/jupiter/jupiter-moons/",
+        "https://science.nasa.gov/saturn/moons/titan/facts/",
+        "https://science.nasa.gov/saturn/moons/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "13. నాలుగు మహాగ్రహాలు — Giants, rings and major moons",
+      "excerpt": "All four giants have rings. Saturn మాత్రమే rings ఉన్న planet అనడం తప్పు. Giant planetsకు Earthలాంటి solid surfaceపై నిలబడలేం; density అనేది మొత్తం mass/volume సగటు. Moon discoveries మారుతాయి కాబట్టి exact countsను dated sourceతోనే చదవండి.",
+      "source_paragraph": "All four giants have rings. Saturn మాత్రమే rings ఉన్న planet అనడం తప్పు. Giant planetsకు Earthలాంటి solid surfaceపై నిలబడలేం; density అనేది మొత్తం mass/volume సగటు. Moon discoveries మారుతాయి కాబట్టి exact countsను dated sourceతోనే చదవండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-030",
+      "topic": 5,
+      "kind": "comparison",
+      "question_en": "Natural-colour reconstructions of Uranus and Neptune indicate:",
+      "question_te": "Uranus,Neptune natural-colour reconstructions ఏమి సూచిస్తాయి?",
+      "options": [
+        "Both broadly greenish-blue; older Neptune images were often enhanced",
+        "Uranus is naturally bright orange",
+        "Neptune is saturated royal blue in every natural image",
+        "Processing cannot alter apparent colour"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "The real colour contrast is subtler than many early images.",
+        "Orange can be an enhancement artifact.",
+        "Enhanced blue is not a universal natural appearance.",
+        "Filters and processing affect display colours."
+      ],
+      "explanation_te": "రెండూ greenish-blueకు దగ్గర; పాత Neptune enhancement గుర్తించాలి.",
+      "section": "solar-outer-p4",
+      "source_urls": [
+        "https://science.nasa.gov/jupiter/jupiter-facts/",
+        "https://science.nasa.gov/saturn/facts/",
+        "https://science.nasa.gov/uranus/facts/",
+        "https://science.nasa.gov/neptune/neptune-facts/",
+        "https://www.ox.ac.uk/news/2024-01-05-new-images-reveal-what-neptune-and-uranus-really-look-0",
+        "https://science.nasa.gov/jupiter/jupiter-moons/",
+        "https://science.nasa.gov/saturn/moons/titan/facts/",
+        "https://science.nasa.gov/saturn/moons/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "13. నాలుగు మహాగ్రహాలు — Giants, rings and major moons",
+      "excerpt": "Neptune / వరుణుడు: Sunకు farthest planet; ice giant, strong winds; Triton పెద్ద retrograde-orbit moon. Uranusకన్నా diameter కొద్దిగా చిన్నది, mass ఎక్కువ. Reconstructed natural coloursలో రెండూ greenish-blueకు దగ్గరగా ఉంటాయి; పాత deep-blue Neptune imagesలో contrast enhancement ప్రభావం ఉంది.",
+      "source_paragraph": "Neptune / వరుణుడు: Sunకు farthest planet; ice giant, strong winds; Triton పెద్ద retrograde-orbit moon. Uranusకన్నా diameter కొద్దిగా చిన్నది, mass ఎక్కువ. Reconstructed natural coloursలో రెండూ greenish-blueకు దగ్గరగా ఉంటాయి; పాత deep-blue Neptune imagesలో contrast enhancement ప్రభావం ఉంది."
+    },
+    {
+      "id": "SOLAR-PRACTICE-031",
+      "topic": 6,
+      "kind": "matching",
+      "question_en": "The main asteroid belt lies mainly between:",
+      "question_te": "Main asteroid belt ఎక్కడ ఉంది?",
+      "options": [
+        "Earth and Mars",
+        "Mars and Jupiter",
+        "Jupiter and Saturn",
+        "Uranus and Neptune"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "This is inside the main belt.",
+        "This is the main-belt orbital region.",
+        "This is beyond Jupiter.",
+        "This is the outer-planet region."
+      ],
+      "explanation_te": "Main belt Mars–Jupiter మధ్య; Kuiper Belt Neptune అవతల.",
+      "section": "solar-small-p1",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/asteroids/facts/",
+        "https://science.nasa.gov/solar-system/comets/facts/",
+        "https://science.nasa.gov/solar-system/meteors-meteorites/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "14. చిన్న ఖగోళ వస్తువులు — Belts, comets and meteors",
+      "excerpt": "Main asteroid belt Mars–Jupiter మధ్య ఉంది. Asteroids ఎక్కువగా rocky/metallic remnants; belt ఒక పేలిపోయిన planet శకలాలే అని నిర్ణయించకండి. Ceres అక్కడి dwarf planet. Neptune అవతల Kuiper Belt icy bodies ఉన్న region; Pluto దానితో సంబంధం. మరింత దూరపు Oort Cloud విస్తారమైన, సుమారు spherical comet reservoirగా ఊహించబడింది; అది నేరుగా చిత్రీకరించిన గట్టి shell కాదు.",
+      "source_paragraph": "Main asteroid belt Mars–Jupiter మధ్య ఉంది. Asteroids ఎక్కువగా rocky/metallic remnants; belt ఒక పేలిపోయిన planet శకలాలే అని నిర్ణయించకండి. Ceres అక్కడి dwarf planet. Neptune అవతల Kuiper Belt icy bodies ఉన్న region; Pluto దానితో సంబంధం. మరింత దూరపు Oort Cloud విస్తారమైన, సుమారు spherical comet reservoirగా ఊహించబడింది; అది నేరుగా చిత్రీకరించిన గట్టి shell కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-032",
+      "topic": 6,
+      "kind": "comparison",
+      "question_en": "Which description distinguishes Kuiper Belt and Oort Cloud?",
+      "question_te": "Kuiper Belt,Oort Cloud సరైన తేడా ఏది?",
+      "options": [
+        "Oort Cloud is Earth's cloud layer",
+        "Kuiper Belt beyond Neptune; Oort Cloud a distant hypothesized roughly spherical reservoir",
+        "Both solid rings around Saturn",
+        "Kuiper Belt between Mercury and Venus"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Oort Cloud is not weather.",
+        "Different outer Solar System regions and geometries.",
+        "Saturn rings are different structures.",
+        "Kuiper Belt is far outside inner planets."
+      ],
+      "explanation_te": "Kuiper Belt Neptune అవతల; Oort Cloud దూరపు hypothesized reservoir.",
+      "section": "solar-small-p1",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/asteroids/facts/",
+        "https://science.nasa.gov/solar-system/comets/facts/",
+        "https://science.nasa.gov/solar-system/meteors-meteorites/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "14. చిన్న ఖగోళ వస్తువులు — Belts, comets and meteors",
+      "excerpt": "Main asteroid belt Mars–Jupiter మధ్య ఉంది. Asteroids ఎక్కువగా rocky/metallic remnants; belt ఒక పేలిపోయిన planet శకలాలే అని నిర్ణయించకండి. Ceres అక్కడి dwarf planet. Neptune అవతల Kuiper Belt icy bodies ఉన్న region; Pluto దానితో సంబంధం. మరింత దూరపు Oort Cloud విస్తారమైన, సుమారు spherical comet reservoirగా ఊహించబడింది; అది నేరుగా చిత్రీకరించిన గట్టి shell కాదు.",
+      "source_paragraph": "Main asteroid belt Mars–Jupiter మధ్య ఉంది. Asteroids ఎక్కువగా rocky/metallic remnants; belt ఒక పేలిపోయిన planet శకలాలే అని నిర్ణయించకండి. Ceres అక్కడి dwarf planet. Neptune అవతల Kuiper Belt icy bodies ఉన్న region; Pluto దానితో సంబంధం. మరింత దూరపు Oort Cloud విస్తారమైన, సుమారు spherical comet reservoirగా ఊహించబడింది; అది నేరుగా చిత్రీకరించిన గట్టి shell కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-033",
+      "topic": 6,
+      "kind": "application",
+      "question_en": "A comet moves away from the Sun. Its ion tail generally points:",
+      "question_te": "Comet Sun నుంచి దూరంగా కదులుతుంటే ion tail సాధారణంగా ఎటు?",
+      "options": [
+        "Away from the Sun",
+        "Always behind its travel direction",
+        "Toward the Sun",
+        "Toward Earth regardless of geometry"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Solar wind drives ion tail anti-sunward.",
+        "Tail direction is not simply behind travel.",
+        "Ion tail is generally not sunward.",
+        "Earth does not set ion-tail direction."
+      ],
+      "explanation_te": "Ion tail Sunకు వ్యతిరేకం; motion వెనుకే ఉండాల్సిన అవసరం లేదు.",
+      "section": "solar-small-p2",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/asteroids/facts/",
+        "https://science.nasa.gov/solar-system/comets/facts/",
+        "https://science.nasa.gov/solar-system/meteors-meteorites/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "14. చిన్న ఖగోళ వస్తువులు — Belts, comets and meteors",
+      "excerpt": "Comet ice, dust, rock కలిగిన body. Sun దగ్గర వేడి పెరిగితే gas/dust విడుదలై coma, tails ఏర్పడవచ్చు. Ion tail solar wind వల్ల Sunకు వ్యతిరేకంగా ఉంటుంది; dust tail వంగి ఉండవచ్చు. Tail ఎప్పుడూ ప్రయాణదిశ వెనుకే ఉంటుందనడం తప్పు. చాలా దూరంలో ఉన్న cometకి స్పష్టమైన tail లేకపోవచ్చు.",
+      "source_paragraph": "Comet ice, dust, rock కలిగిన body. Sun దగ్గర వేడి పెరిగితే gas/dust విడుదలై coma, tails ఏర్పడవచ్చు. Ion tail solar wind వల్ల Sunకు వ్యతిరేకంగా ఉంటుంది; dust tail వంగి ఉండవచ్చు. Tail ఎప్పుడూ ప్రయాణదిశ వెనుకే ఉంటుందనడం తప్పు. చాలా దూరంలో ఉన్న cometకి స్పష్టమైన tail లేకపోవచ్చు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-034",
+      "topic": 6,
+      "kind": "sequence",
+      "question_en": "Choose the correct sequence from space body to ground fragment.",
+      "question_te": "Space body నుంచి ground fragmentకు సరైన క్రమం ఏది?",
+      "options": [
+        "Meteorite → star → asteroid",
+        "Meteor → comet → galaxy",
+        "Meteoroid → meteor → meteorite",
+        "Planet → meteorite → Sun"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "This mixes classes and reverses stages.",
+        "A meteor does not become a galaxy.",
+        "Space rock, atmospheric luminous event, surviving ground piece.",
+        "Planets do not follow this sequence."
+      ],
+      "explanation_te": "Spaceలో meteoroid; atmosphere వెలుగు meteor; నేలపై భాగం meteorite.",
+      "section": "solar-small-p3",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/asteroids/facts/",
+        "https://science.nasa.gov/solar-system/comets/facts/",
+        "https://science.nasa.gov/solar-system/meteors-meteorites/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "14. చిన్న ఖగోళ వస్తువులు — Belts, comets and meteors",
+      "excerpt": "Meteoroid → meteor → meteorite: spaceలో చిన్న rock/metal body; atmosphereలో ప్రవేశించినప్పుడు ప్రకాశించే phenomenon; నేలను చేరిన surviving fragment. “Shooting star” నిజంగా నక్షత్రం కాదు. Atmosphereలో వేగంగా ప్రవేశించినప్పుడు heating, ablationతో వెలుగు వస్తుంది; ఇది సాధారణ నెమ్మదైన అగ్ని కథ కాదు.",
+      "source_paragraph": "Meteoroid → meteor → meteorite: spaceలో చిన్న rock/metal body; atmosphereలో ప్రవేశించినప్పుడు ప్రకాశించే phenomenon; నేలను చేరిన surviving fragment. “Shooting star” నిజంగా నక్షత్రం కాదు. Atmosphereలో వేగంగా ప్రవేశించినప్పుడు heating, ablationతో వెలుగు వస్తుంది; ఇది సాధారణ నెమ్మదైన అగ్ని కథ కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-035",
+      "topic": 6,
+      "kind": "reasoning",
+      "question_en": "Recurring meteor showers mainly occur because Earth:",
+      "question_te": "తిరిగి వచ్చే meteor showers ప్రధానంగా ఎందుకు?",
+      "options": [
+        "Hits a new whole planet each year",
+        "Stops rotating for a night",
+        "Passes through a debris stream",
+        "Creates stars in its atmosphere"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "Planet collision is not the annual mechanism.",
+        "Earth keeps rotating.",
+        "Many small particles enter the atmosphere.",
+        "Meteors are not new stars."
+      ],
+      "explanation_te": "Earth debris streamను దాటినప్పుడు particles atmosphereలో వెలుగుతాయి.",
+      "section": "solar-small-p4",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/asteroids/facts/",
+        "https://science.nasa.gov/solar-system/comets/facts/",
+        "https://science.nasa.gov/solar-system/meteors-meteorites/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "14. చిన్న ఖగోళ వస్తువులు — Belts, comets and meteors",
+      "excerpt": "Meteor showersలో Earth ఒక debris streamను దాటుతుంది. ఒకే తేదీన వచ్చే showerకి ప్రతి సంవత్సరం కొత్త comet ఢీకొట్టాల్సిన అవసరం లేదు. Orbit చుట్టూ తిరిగే మార్గం; body పేరు దాని composition, location, behaviourపై ఆధారపడుతుంది.",
+      "source_paragraph": "Meteor showersలో Earth ఒక debris streamను దాటుతుంది. ఒకే తేదీన వచ్చే showerకి ప్రతి సంవత్సరం కొత్త comet ఢీకొట్టాల్సిన అవసరం లేదు. Orbit చుట్టూ తిరిగే మార్గం; body పేరు దాని composition, location, behaviourపై ఆధారపడుతుంది."
+    },
+    {
+      "id": "SOLAR-PRACTICE-036",
+      "topic": 6,
+      "kind": "statement",
+      "question_en": "I. A distant comet can lack a conspicuous tail. II. A meteor is a true star falling to Earth. Which is correct?",
+      "question_te": "I. దూరపు cometకు స్పష్టమైన tail లేకపోవచ్చు. II. Meteor నిజమైన star Earthపై పడటం. సరైనది ఏది?",
+      "options": [
+        "II only / II మాత్రమే",
+        "Neither / ఏదీ కాదు",
+        "Both / రెండూ",
+        "I only / I మాత్రమే"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "II false; I true.",
+        "I is valid.",
+        "Falling star is figurative.",
+        "Comet activity varies with heating; meteor is atmospheric light."
+      ],
+      "explanation_te": "Comet heatingపై tail ఆధారపడుతుంది; meteor నిజమైన star కాదు.",
+      "section": "solar-small-p2",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/asteroids/facts/",
+        "https://science.nasa.gov/solar-system/comets/facts/",
+        "https://science.nasa.gov/solar-system/meteors-meteorites/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "14. చిన్న ఖగోళ వస్తువులు — Belts, comets and meteors",
+      "excerpt": "Comet ice, dust, rock కలిగిన body. Sun దగ్గర వేడి పెరిగితే gas/dust విడుదలై coma, tails ఏర్పడవచ్చు. Ion tail solar wind వల్ల Sunకు వ్యతిరేకంగా ఉంటుంది; dust tail వంగి ఉండవచ్చు. Tail ఎప్పుడూ ప్రయాణదిశ వెనుకే ఉంటుందనడం తప్పు. చాలా దూరంలో ఉన్న cometకి స్పష్టమైన tail లేకపోవచ్చు.",
+      "source_paragraph": "Comet ice, dust, rock కలిగిన body. Sun దగ్గర వేడి పెరిగితే gas/dust విడుదలై coma, tails ఏర్పడవచ్చు. Ion tail solar wind వల్ల Sunకు వ్యతిరేకంగా ఉంటుంది; dust tail వంగి ఉండవచ్చు. Tail ఎప్పుడూ ప్రయాణదిశ వెనుకే ఉంటుందనడం తప్పు. చాలా దూరంలో ఉన్న cometకి స్పష్టమైన tail లేకపోవచ్చు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-037",
+      "topic": 7,
+      "kind": "concept",
+      "question_en": "Rotation and revolution respectively mean:",
+      "question_te": "Rotation,revolution వరుసగా ఏమిటి?",
+      "options": [
+        "Both mean an eclipse",
+        "Both mean changing lunar phases",
+        "Spin about an axis; orbit another body",
+        "Orbit another body; chemical burning"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "Eclipses involve alignment and shadows.",
+        "Phases describe visible illumination.",
+        "Axial spin differs from orbital motion.",
+        "First reversed, second unrelated."
+      ],
+      "explanation_te": "Axis spin rotation; మరో body చుట్టూ orbit revolution.",
+      "section": "solar-orbits-p1",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/",
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "15. కక్ష్యలు, భ్రమణం, పరిభ్రమణం — Rotation and orbital laws",
+      "excerpt": "Rotation తన axis చుట్టూ తిరగడం; revolution మరో body చుట్టూ orbit చేయడం. Sidereal rotation దూరపు నక్షత్రాల referenceలో ఒక turn; solar day Sun మళ్లీ అదే local meridianకు వచ్చే interval. Earthకు ఇవి సుమారు 23 h 56 min, 24 h. Mercury rotation సుమారు 58.6 Earth days, solar day 176 days. Venus rotation magnitude 243 days, solar day 116.8 days; అందువల్ల “longest day” అంటే ఏ definitionో తప్పనిసరిగా చెప్పాలి.",
+      "source_paragraph": "Rotation తన axis చుట్టూ తిరగడం; revolution మరో body చుట్టూ orbit చేయడం. Sidereal rotation దూరపు నక్షత్రాల referenceలో ఒక turn; solar day Sun మళ్లీ అదే local meridianకు వచ్చే interval. Earthకు ఇవి సుమారు 23 h 56 min, 24 h. Mercury rotation సుమారు 58.6 Earth days, solar day 176 days. Venus rotation magnitude 243 days, solar day 116.8 days; అందువల్ల “longest day” అంటే ఏ definitionో తప్పనిసరిగా చెప్పాలి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-038",
+      "topic": 7,
+      "kind": "comparison",
+      "question_en": "Which pair is approximately correct for Earth?",
+      "question_te": "Earthకు సుమారు సరైన జత ఏది?",
+      "options": [
+        "Sidereal rotation24years; solar day1hour",
+        "Sidereal rotation23h56m; mean solar day24h",
+        "Both exactly12hours",
+        "Sidereal rotation365d; solar day29.5d"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "These do not describe Earth's rotation.",
+        "Different reference directions explain the difference.",
+        "Neither daily measure is12hours.",
+        "Year and lunar-cycle scales are confused."
+      ],
+      "explanation_te": "Stars reference23h56m; Sun reference mean day24h.",
+      "section": "solar-orbits-p1",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/",
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "15. కక్ష్యలు, భ్రమణం, పరిభ్రమణం — Rotation and orbital laws",
+      "excerpt": "Rotation తన axis చుట్టూ తిరగడం; revolution మరో body చుట్టూ orbit చేయడం. Sidereal rotation దూరపు నక్షత్రాల referenceలో ఒక turn; solar day Sun మళ్లీ అదే local meridianకు వచ్చే interval. Earthకు ఇవి సుమారు 23 h 56 min, 24 h. Mercury rotation సుమారు 58.6 Earth days, solar day 176 days. Venus rotation magnitude 243 days, solar day 116.8 days; అందువల్ల “longest day” అంటే ఏ definitionో తప్పనిసరిగా చెప్పాలి.",
+      "source_paragraph": "Rotation తన axis చుట్టూ తిరగడం; revolution మరో body చుట్టూ orbit చేయడం. Sidereal rotation దూరపు నక్షత్రాల referenceలో ఒక turn; solar day Sun మళ్లీ అదే local meridianకు వచ్చే interval. Earthకు ఇవి సుమారు 23 h 56 min, 24 h. Mercury rotation సుమారు 58.6 Earth days, solar day 176 days. Venus rotation magnitude 243 days, solar day 116.8 days; అందువల్ల “longest day” అంటే ఏ definitionో తప్పనిసరిగా చెప్పాలి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-039",
+      "topic": 7,
+      "kind": "comparison",
+      "question_en": "Using sidereal rotation periods, which planet rotates slowest?",
+      "question_te": "Sidereal rotation ప్రకారం నెమ్మదిగా తిరిగే planet ఏది?",
+      "options": [
+        "Venus",
+        "Earth",
+        "Jupiter",
+        "Mercury"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Venus takes about243 Earth days per turn.",
+        "Earth takes about23.9hours.",
+        "Jupiter fastest, about9.9hours.",
+        "Mercury takes58.6days, shorter."
+      ],
+      "explanation_te": "Venus axial243d; longest solar day Mercury176d.",
+      "section": "solar-orbits-p1",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/",
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "15. కక్ష్యలు, భ్రమణం, పరిభ్రమణం — Rotation and orbital laws",
+      "excerpt": "Rotation తన axis చుట్టూ తిరగడం; revolution మరో body చుట్టూ orbit చేయడం. Sidereal rotation దూరపు నక్షత్రాల referenceలో ఒక turn; solar day Sun మళ్లీ అదే local meridianకు వచ్చే interval. Earthకు ఇవి సుమారు 23 h 56 min, 24 h. Mercury rotation సుమారు 58.6 Earth days, solar day 176 days. Venus rotation magnitude 243 days, solar day 116.8 days; అందువల్ల “longest day” అంటే ఏ definitionో తప్పనిసరిగా చెప్పాలి.",
+      "source_paragraph": "Rotation తన axis చుట్టూ తిరగడం; revolution మరో body చుట్టూ orbit చేయడం. Sidereal rotation దూరపు నక్షత్రాల referenceలో ఒక turn; solar day Sun మళ్లీ అదే local meridianకు వచ్చే interval. Earthకు ఇవి సుమారు 23 h 56 min, 24 h. Mercury rotation సుమారు 58.6 Earth days, solar day 176 days. Venus rotation magnitude 243 days, solar day 116.8 days; అందువల్ల “longest day” అంటే ఏ definitionో తప్పనిసరిగా చెప్పాలి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-040",
+      "topic": 7,
+      "kind": "statement",
+      "question_en": "I. Venus rotates retrograde. II. Therefore it revolves opposite to Earth's orbital direction. Which is correct?",
+      "question_te": "I. Venus retrograde rotation. II. కాబట్టి revolution Earth orbitకు opposite. సరైనది ఏది?",
+      "options": [
+        "I only / I మాత్రమే",
+        "Both / రెండూ",
+        "II only / II మాత్రమే",
+        "Neither / ఏదీ కాదు"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Spin and orbital direction differ; Venus revolution remains prograde.",
+        "The spin-to-orbit inference is invalid.",
+        "II false; I true.",
+        "I describes spin correctly."
+      ],
+      "explanation_te": "Venus spin reverse అయినా revolution reverse కాదు.",
+      "section": "solar-orbits-p2",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/",
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "15. కక్ష్యలు, భ్రమణం, పరిభ్రమణం — Rotation and orbital laws",
+      "excerpt": "NASA tableలో Venus, Uranus rotationకు minus sign direction/retrograde convention; negative elapsed time కాదు. Gas giantsలో cloud latitudes వేర్వేరు వేగాలతో తిరగవచ్చు; tabulated rotation approximate reference. All eight planets revolve in the same broad direction , viewed from above the Sun's north pole; Venus rotation reverse అయినా దాని revolution reverse కాదు.",
+      "source_paragraph": "NASA tableలో Venus, Uranus rotationకు minus sign direction/retrograde convention; negative elapsed time కాదు. Gas giantsలో cloud latitudes వేర్వేరు వేగాలతో తిరగవచ్చు; tabulated rotation approximate reference. All eight planets revolve in the same broad direction , viewed from above the Sun's north pole; Venus rotation reverse అయినా దాని revolution reverse కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-041",
+      "topic": 7,
+      "kind": "reasoning",
+      "question_en": "Kepler's equal-area law implies a planet is generally:",
+      "question_te": "Kepler equal-area law ప్రకారం planet సాధారణంగా ఎలా కదులుతుంది?",
+      "options": [
+        "Faster near perihelion; slower near aphelion",
+        "At identical speed everywhere in its ellipse",
+        "Fastest farthest from the Sun",
+        "Stationary at perihelion"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Equal areas with shorter radius require greater angular motion.",
+        "Equal areas do not mean equal arc lengths.",
+        "This reverses the relation.",
+        "Planet does not stop at perihelion."
+      ],
+      "explanation_te": "Equal timesలో equal areas; Sun దగ్గర orbital speed ఎక్కువ.",
+      "section": "solar-orbits-p3",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/",
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "15. కక్ష్యలు, భ్రమణం, పరిభ్రమణం — Rotation and orbital laws",
+      "excerpt": "Kepler 1: planets elliptical orbitsలో, Sun ఒక focus వద్ద. Kepler 2: Sun–planet line equal timesలో equal areas sweep చేస్తుంది; planet perihelion దగ్గర వేగంగా, aphelion దగ్గర నెమ్మదిగా. Kepler 3: అదే central mass చుట్టూ negligible-mass bodiesకు T² ∝ a³; a semi-major axis. Sun చుట్టూ years, AU unitsలో T² ≈ a³. a=4 AU అయితే T≈8 years. అన్ని ellipses గట్టిగా పొడవుగా ఉండవు; Earth orbit nearly circular.",
+      "source_paragraph": "Kepler 1: planets elliptical orbitsలో, Sun ఒక focus వద్ద. Kepler 2: Sun–planet line equal timesలో equal areas sweep చేస్తుంది; planet perihelion దగ్గర వేగంగా, aphelion దగ్గర నెమ్మదిగా. Kepler 3: అదే central mass చుట్టూ negligible-mass bodiesకు T² ∝ a³; a semi-major axis. Sun చుట్టూ years, AU unitsలో T² ≈ a³. a=4 AU అయితే T≈8 years. అన్ని ellipses గట్టిగా పొడవుగా ఉండవు; Earth orbit nearly circular."
+    },
+    {
+      "id": "SOLAR-PRACTICE-042",
+      "topic": 7,
+      "kind": "calculation",
+      "question_en": "Use T²=a³ for a small body orbiting the Sun, years and AU. If a=4AU, T is:",
+      "question_te": "Sun orbitలో years,AU unitsతో T²=a³; a=4AU అయితే T ఎంత?",
+      "options": [
+        "4years",
+        "8years",
+        "16years",
+        "64years"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Period is not distance directly.",
+        "4³=64; square root gives8.",
+        "This squares distance instead of taking square root of its cube.",
+        "64 is T², not T."
+      ],
+      "explanation_te": "4³=64; T=√64=8years. ఒకే central massకు relation.",
+      "section": "solar-orbits-p3",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/",
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/mercury/facts/",
+        "https://science.nasa.gov/venus/venus-facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "15. కక్ష్యలు, భ్రమణం, పరిభ్రమణం — Rotation and orbital laws",
+      "excerpt": "Kepler 1: planets elliptical orbitsలో, Sun ఒక focus వద్ద. Kepler 2: Sun–planet line equal timesలో equal areas sweep చేస్తుంది; planet perihelion దగ్గర వేగంగా, aphelion దగ్గర నెమ్మదిగా. Kepler 3: అదే central mass చుట్టూ negligible-mass bodiesకు T² ∝ a³; a semi-major axis. Sun చుట్టూ years, AU unitsలో T² ≈ a³. a=4 AU అయితే T≈8 years. అన్ని ellipses గట్టిగా పొడవుగా ఉండవు; Earth orbit nearly circular.",
+      "source_paragraph": "Kepler 1: planets elliptical orbitsలో, Sun ఒక focus వద్ద. Kepler 2: Sun–planet line equal timesలో equal areas sweep చేస్తుంది; planet perihelion దగ్గర వేగంగా, aphelion దగ్గర నెమ్మదిగా. Kepler 3: అదే central mass చుట్టూ negligible-mass bodiesకు T² ∝ a³; a semi-major axis. Sun చుట్టూ years, AU unitsలో T² ≈ a³. a=4 AU అయితే T≈8 years. అన్ని ellipses గట్టిగా పొడవుగా ఉండవు; Earth orbit nearly circular."
+    },
+    {
+      "id": "SOLAR-PRACTICE-043",
+      "topic": 8,
+      "kind": "comparison",
+      "question_en": "Which pair is correct among the eight planets?",
+      "question_te": "ఎనిమిది planetsలో సరైన జత ఏది?",
+      "options": [
+        "Largest Uranus; densest Saturn",
+        "Largest Earth; densest Jupiter",
+        "Largest Saturn; densest Neptune",
+        "Largest diameter Jupiter; highest mean density Earth"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Saturn least dense, Jupiter largest.",
+        "Both properties reversed.",
+        "Jupiter larger than Saturn; Earth denser than Neptune.",
+        "Size and density rankings differ."
+      ],
+      "explanation_te": "Largest Jupiter; densest Earth. Size,density వేరు.",
+      "section": "solar-earth-p1",
+      "source_urls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/moon/facts/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "16. పరిమాణం, ద్రవ్యరాశి, సాంద్రత — Reading planetary data",
+      "excerpt": "ఒక పెద్ద ఖాళీ పెట్టె చిన్న iron blockకన్నా తేలికగా ఉండవచ్చు. అలాగే diameter (వ్యాసం), mass (ద్రవ్యరాశి), mean density (సగటు సాంద్రత) మూడు వేరు లక్షణాలు. Density = mass/volume; 1 g/cm³ = 1000 kg/m³. Earth సుమారు 5.51 g/cm³; Jupiter 1.33; Saturn 0.69. కాబట్టి largest Jupiter, densest Earth, least-dense Saturn.",
+      "source_paragraph": "ఒక పెద్ద ఖాళీ పెట్టె చిన్న iron blockకన్నా తేలికగా ఉండవచ్చు. అలాగే diameter (వ్యాసం), mass (ద్రవ్యరాశి), mean density (సగటు సాంద్రత) మూడు వేరు లక్షణాలు. Density = mass/volume; 1 g/cm³ = 1000 kg/m³. Earth సుమారు 5.51 g/cm³; Jupiter 1.33; Saturn 0.69. కాబట్టి largest Jupiter, densest Earth, least-dense Saturn."
+    },
+    {
+      "id": "SOLAR-PRACTICE-044",
+      "topic": 8,
+      "kind": "sequence",
+      "question_en": "Choose descending equatorial diameter order.",
+      "question_te": "Equatorial diameter తగ్గే క్రమం ఏది?",
+      "options": [
+        "Neptune > Uranus > Jupiter > Saturn",
+        "Saturn > Jupiter > Neptune > Uranus",
+        "Jupiter > Saturn > Uranus > Neptune",
+        "Jupiter > Neptune > Saturn > Uranus"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "This does not order giant diameters.",
+        "Jupiter wider than Saturn; Uranus wider than Neptune.",
+        "Uranus slightly wider than Neptune.",
+        "Neptune smaller than Saturn and Uranus."
+      ],
+      "explanation_te": "Diameterలో Uranus>Neptune; massలో Neptune>Uranus.",
+      "section": "solar-earth-p2",
+      "source_urls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/moon/facts/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "16. పరిమాణం, ద్రవ్యరాశి, సాంద్రత — Reading planetary data",
+      "excerpt": "Earth equatorial diameter సుమారు 12,756 km; mean diameter సుమారు 12,742 km. Polar flattening వల్ల ఇవి ఒకటే కావు. Saturn, Jupiterకు కూడా rotational flattening ఉంది. పట్టికలో equatorial diameterను mean diameterతో కలిపి rank మార్చకండి. Diameter descending: Jupiter > Saturn > Uranus > Neptune > Earth > Venus > Mars > Mercury. Mass descending: Jupiter > Saturn > Neptune > Uranus > Earth > Venus > Mars > Mercury.",
+      "source_paragraph": "Earth equatorial diameter సుమారు 12,756 km; mean diameter సుమారు 12,742 km. Polar flattening వల్ల ఇవి ఒకటే కావు. Saturn, Jupiterకు కూడా rotational flattening ఉంది. పట్టికలో equatorial diameterను mean diameterతో కలిపి rank మార్చకండి. Diameter descending: Jupiter > Saturn > Uranus > Neptune > Earth > Venus > Mars > Mercury. Mass descending: Jupiter > Saturn > Neptune > Uranus > Earth > Venus > Mars > Mercury."
+    },
+    {
+      "id": "SOLAR-PRACTICE-045",
+      "topic": 8,
+      "kind": "comparison",
+      "question_en": "Compared with Uranus, Neptune has:",
+      "question_te": "Uranusతో పోలిస్తే Neptuneకు ఏమి ఉంది?",
+      "options": [
+        "Larger diameter but smaller mass",
+        "No mass because it is an ice giant",
+        "Identical diameter and mass",
+        "Smaller diameter but greater mass"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Both comparisons reversed.",
+        "Ice giants still have mass.",
+        "Their values differ.",
+        "This separates size from mass."
+      ],
+      "explanation_te": "Neptune diameter తక్కువ,mass ఎక్కువ; density ఎక్కువ.",
+      "section": "solar-earth-p2",
+      "source_urls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/moon/facts/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "16. పరిమాణం, ద్రవ్యరాశి, సాంద్రత — Reading planetary data",
+      "excerpt": "Earth equatorial diameter సుమారు 12,756 km; mean diameter సుమారు 12,742 km. Polar flattening వల్ల ఇవి ఒకటే కావు. Saturn, Jupiterకు కూడా rotational flattening ఉంది. పట్టికలో equatorial diameterను mean diameterతో కలిపి rank మార్చకండి. Diameter descending: Jupiter > Saturn > Uranus > Neptune > Earth > Venus > Mars > Mercury. Mass descending: Jupiter > Saturn > Neptune > Uranus > Earth > Venus > Mars > Mercury.",
+      "source_paragraph": "Earth equatorial diameter సుమారు 12,756 km; mean diameter సుమారు 12,742 km. Polar flattening వల్ల ఇవి ఒకటే కావు. Saturn, Jupiterకు కూడా rotational flattening ఉంది. పట్టికలో equatorial diameterను mean diameterతో కలిపి rank మార్చకండి. Diameter descending: Jupiter > Saturn > Uranus > Neptune > Earth > Venus > Mars > Mercury. Mass descending: Jupiter > Saturn > Neptune > Uranus > Earth > Venus > Mars > Mercury."
+    },
+    {
+      "id": "SOLAR-PRACTICE-046",
+      "topic": 8,
+      "kind": "calculation",
+      "question_en": "Using the chapter moon table, which has the greatest mean density: Io, Europa, Ganymede or Titan?",
+      "question_te": "పాఠంలోని moon table ప్రకారం Io,Europa,Ganymede,Titanలో mean density అత్యధికం ఏది?",
+      "options": [
+        "Ganymede",
+        "Europa",
+        "Io",
+        "Titan"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "About1.942g/cm³; biggest diameter does not mean highest density.",
+        "About3.013g/cm³, below Io.",
+        "About3.528g/cm³, highest among these four.",
+        "About1.881g/cm³, below the other three."
+      ],
+      "explanation_te": "ఈ నాలుగింటిలో Io సాంద్రత ఎక్కువ; Ganymede వ్యాసం పెద్దదైనా density తక్కువ.",
+      "section": "solar-moon-data",
+      "source_urls": [
+        "https://ssd.jpl.nasa.gov/sats/phys_par/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "16. పరిమాణం, ద్రవ్యరాశి, సాంద్రత — Reading planetary data",
+      "excerpt": "Ganymede biggest అయినా Ioకన్నా mean density తక్కువ. Moon densityను parent planet densityతో కలపకండి.",
+      "source_paragraph": "Ganymede biggest అయినా Ioకన్నా mean density తక్కువ. Moon densityను parent planet densityతో కలపకండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-047",
+      "topic": 8,
+      "kind": "application",
+      "question_en": "An astronaut moves from Earth to the Moon. Ignoring equipment and bodily changes, what happens?",
+      "question_te": "Equipment,bodily changes పక్కనపెడితే Moonపై astronaut mass,weight ఏమవుతాయి?",
+      "options": [
+        "Mass unchanged; weight about one-sixth",
+        "Mass one-sixth; weight unchanged",
+        "Mass six times larger",
+        "Mass and weight both zero"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Weight depends on local gravity; mass remains.",
+        "This reverses the distinction.",
+        "Location does not multiply mass.",
+        "Moon has gravity and astronaut retains mass."
+      ],
+      "explanation_te": "Mass మారదు; weight సుమారు1/6.",
+      "section": "solar-earth-p3",
+      "source_urls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/moon/facts/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "16. పరిమాణం, ద్రవ్యరాశి, సాంద్రత — Reading planetary data",
+      "excerpt": "Gravity/weight కూడా densityతో సమానం కాదు. Mass ఒక పదార్థ పరిమాణం; weight స్థానిక gravityపై ఆధారపడే force. Moon surface gravity Earthదానిలో సుమారు one-sixth; వ్యక్తి mass మారదు, weight తగ్గుతుంది. Moon mean diameter సుమారు 3,475 km, density 3.34 g/cm³; అది ఏ planetకీ సమాన వర్గం కాదు.",
+      "source_paragraph": "Gravity/weight కూడా densityతో సమానం కాదు. Mass ఒక పదార్థ పరిమాణం; weight స్థానిక gravityపై ఆధారపడే force. Moon surface gravity Earthదానిలో సుమారు one-sixth; వ్యక్తి mass మారదు, weight తగ్గుతుంది. Moon mean diameter సుమారు 3,475 km, density 3.34 g/cm³; అది ఏ planetకీ సమాన వర్గం కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-048",
+      "topic": 8,
+      "kind": "source-reading",
+      "question_en": "Why may Earth's diameter appear as12,756km in one table and12,742km in another?",
+      "question_te": "Earth diameter12,756km,12,742km ఎందుకు వేర్వేరుగా కనిపించవచ్చు?",
+      "options": [
+        "Equatorial and mean diameters differ",
+        "Earth doubles size nightly",
+        "One is lunar distance",
+        "Both represent its mass"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Flattening makes equatorial diameter larger than mean.",
+        "No such daily size change.",
+        "These are Earth-diameter scales.",
+        "Diameter is length, not mass."
+      ],
+      "explanation_te": "Equatorial,mean diameter definitions వేరు; పోల్చేముందు చూడాలి.",
+      "section": "solar-earth-p2",
+      "source_urls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+        "https://science.nasa.gov/moon/facts/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "16. పరిమాణం, ద్రవ్యరాశి, సాంద్రత — Reading planetary data",
+      "excerpt": "Earth equatorial diameter సుమారు 12,756 km; mean diameter సుమారు 12,742 km. Polar flattening వల్ల ఇవి ఒకటే కావు. Saturn, Jupiterకు కూడా rotational flattening ఉంది. పట్టికలో equatorial diameterను mean diameterతో కలిపి rank మార్చకండి. Diameter descending: Jupiter > Saturn > Uranus > Neptune > Earth > Venus > Mars > Mercury. Mass descending: Jupiter > Saturn > Neptune > Uranus > Earth > Venus > Mars > Mercury.",
+      "source_paragraph": "Earth equatorial diameter సుమారు 12,756 km; mean diameter సుమారు 12,742 km. Polar flattening వల్ల ఇవి ఒకటే కావు. Saturn, Jupiterకు కూడా rotational flattening ఉంది. పట్టికలో equatorial diameterను mean diameterతో కలిపి rank మార్చకండి. Diameter descending: Jupiter > Saturn > Uranus > Neptune > Earth > Venus > Mars > Mercury. Mass descending: Jupiter > Saturn > Neptune > Uranus > Earth > Venus > Mars > Mercury."
+    },
+    {
+      "id": "SOLAR-PRACTICE-049",
+      "topic": 9,
+      "kind": "reasoning",
+      "question_en": "The principal astronomical cause of opposite hemispheric seasons is:",
+      "question_te": "రెండు hemispheresలో opposite seasonsకు ప్రధాన astronomical కారణం ఏది?",
+      "options": [
+        "Earth rotates once monthly",
+        "Earth's diameter changes greatly each year",
+        "Axial tilt combined with revolution",
+        "Moon blocks sunlight for half a year"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "Earth rotates daily.",
+        "Size change is not the driver.",
+        "Tilt changes sunlight angle/daylight as Earth orbits.",
+        "Moon does not block months of sunlight."
+      ],
+      "explanation_te": "Tilt+revolution వల్ల sunlight angle,day length మారుతాయి.",
+      "section": "solar-seasons-p1",
+      "source_urls": [
+        "https://spaceplace.nasa.gov/seasons/en/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "17. ఋతువులు ఎందుకు? — Tilt, sunlight and Andhra Pradesh",
+      "excerpt": "Earth axis orbital-plane normalతో సుమారు 23.4° tilt; orbital planeతో సుమారు 66.6°. Yearలో axis ఒకే broad directionలో ఉండగా Earth Sun చుట్టూ కదులుతుంది. ఒక hemisphere Sunవైపు ఒరిగినప్పుడు అక్కడ direct rays, ఎక్కువ daylight కలసి summerను కలిగిస్తాయి. Opposite hemisphereకు winter. భూమంతా ఒకేసారి summer రావడం లేదు.",
+      "source_paragraph": "Earth axis orbital-plane normalతో సుమారు 23.4° tilt; orbital planeతో సుమారు 66.6°. Yearలో axis ఒకే broad directionలో ఉండగా Earth Sun చుట్టూ కదులుతుంది. ఒక hemisphere Sunవైపు ఒరిగినప్పుడు అక్కడ direct rays, ఎక్కువ daylight కలసి summerను కలిగిస్తాయి. Opposite hemisphereకు winter. భూమంతా ఒకేసారి summer రావడం లేదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-050",
+      "topic": 9,
+      "kind": "matching",
+      "question_en": "Near June solstice, noon Sun is overhead near the:",
+      "question_te": "June solstice దగ్గర noon Sun ఎక్కడ overhead?",
+      "options": [
+        "South Pole",
+        "Tropic of Cancer",
+        "Tropic of Capricorn",
+        "Arctic Circle"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "South Pole not June subsolar point.",
+        "Subsolar latitude near23.4°N.",
+        "Capricorn is December-solstice latitude.",
+        "Arctic Circle outside overhead-Sun zone."
+      ],
+      "explanation_te": "June Cancer;December Capricorn; equinox equator.",
+      "section": "solar-seasons-p2",
+      "source_urls": [
+        "https://spaceplace.nasa.gov/seasons/en/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "17. ఋతువులు ఎందుకు? — Tilt, sunlight and Andhra Pradesh",
+      "excerpt": "June solstice: Northern Hemisphere longest daylight, overhead Sun near Tropic of Cancer (23.4°N). December solstice: overhead Sun near Tropic of Capricorn (23.4°S). March/September equinoxes: overhead Sun equator వద్ద, day/night approximately equal. Refraction, Sun disk size వల్ల ప్రతి చోట exact 12 h అనే మాట సరిగాదు. Dates సుమారు March 20–21, June 20–21, September 22–23, December 21–22; ప్రతి సంవత్సరం ఒకే calendar date అనకండి.",
+      "source_paragraph": "June solstice: Northern Hemisphere longest daylight, overhead Sun near Tropic of Cancer (23.4°N). December solstice: overhead Sun near Tropic of Capricorn (23.4°S). March/September equinoxes: overhead Sun equator వద్ద, day/night approximately equal. Refraction, Sun disk size వల్ల ప్రతి చోట exact 12 h అనే మాట సరిగాదు. Dates సుమారు March 20–21, June 20–21, September 22–23, December 21–22; ప్రతి సంవత్సరం ఒకే calendar date అనకండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-051",
+      "topic": 9,
+      "kind": "statement",
+      "question_en": "Which equinox statement is most accurate?",
+      "question_te": "Equinox గురించి అత్యంత కచ్చితమైనది ఏది?",
+      "options": [
+        "Exactly12hours daylight everywhere without exception",
+        "Sun overhead at both poles",
+        "Earth stops revolving",
+        "Overhead Sun near equator; day/night approximately equal"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Exact equality ignores sunrise/sunset definitions.",
+        "Subsolar point near equator, not poles.",
+        "Earth keeps orbiting.",
+        "Allows refraction and solar-disk effects."
+      ],
+      "explanation_te": "Day/night సుమారు సమానం; exact12h everywhere కాదు.",
+      "section": "solar-seasons-p2",
+      "source_urls": [
+        "https://spaceplace.nasa.gov/seasons/en/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "17. ఋతువులు ఎందుకు? — Tilt, sunlight and Andhra Pradesh",
+      "excerpt": "June solstice: Northern Hemisphere longest daylight, overhead Sun near Tropic of Cancer (23.4°N). December solstice: overhead Sun near Tropic of Capricorn (23.4°S). March/September equinoxes: overhead Sun equator వద్ద, day/night approximately equal. Refraction, Sun disk size వల్ల ప్రతి చోట exact 12 h అనే మాట సరిగాదు. Dates సుమారు March 20–21, June 20–21, September 22–23, December 21–22; ప్రతి సంవత్సరం ఒకే calendar date అనకండి.",
+      "source_paragraph": "June solstice: Northern Hemisphere longest daylight, overhead Sun near Tropic of Cancer (23.4°N). December solstice: overhead Sun near Tropic of Capricorn (23.4°S). March/September equinoxes: overhead Sun equator వద్ద, day/night approximately equal. Refraction, Sun disk size వల్ల ప్రతి చోట exact 12 h అనే మాట సరిగాదు. Dates సుమారు March 20–21, June 20–21, September 22–23, December 21–22; ప్రతి సంవత్సరం ఒకే calendar date అనకండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-052",
+      "topic": 9,
+      "kind": "application",
+      "question_en": "Vijayawada lies near16.5°N. Which statement is reasonable?",
+      "question_te": "16.5°N దగ్గర Vijayawada గురించి సరైనది ఏది?",
+      "options": [
+        "Noon Sun can pass near zenith twice yearly",
+        "It is beyond Arctic Circle",
+        "No overhead Sun north of equator",
+        "Overhead Sun only on June solstice"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Within tropics, subsolar latitude crosses twice.",
+        "16.5°N is tropical.",
+        "Overhead Sun possible across tropical belt.",
+        "June subsolar point is farther north near Cancer."
+      ],
+      "explanation_te": "Tropics మధ్య కాబట్టి సంవత్సరంలో రెండుసార్లు near-zenith noon Sun సాధ్యం.",
+      "section": "solar-seasons-p3",
+      "source_urls": [
+        "https://spaceplace.nasa.gov/seasons/en/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "17. ఋతువులు ఎందుకు? — Tilt, sunlight and Andhra Pradesh",
+      "excerpt": "Overhead Sun అంటే noon altitude 90°; tropics మధ్య మాత్రమే సాధ్యం. APలో Vijayawada సుమారు 16.5°N—tropical latitude—కాబట్టి సంవత్సరంలో రెండు సార్లు noon Sun zenithకు దగ్గరగా రావచ్చు; June solstice రోజునే తప్పనిసరిగా కాదు. Local hottest monthను astronomical solsticeతో సమానంగా చూడకండి: land–sea response, clouds, monsoon, heat storage ప్రభావం చూపుతాయి.",
+      "source_paragraph": "Overhead Sun అంటే noon altitude 90°; tropics మధ్య మాత్రమే సాధ్యం. APలో Vijayawada సుమారు 16.5°N—tropical latitude—కాబట్టి సంవత్సరంలో రెండు సార్లు noon Sun zenithకు దగ్గరగా రావచ్చు; June solstice రోజునే తప్పనిసరిగా కాదు. Local hottest monthను astronomical solsticeతో సమానంగా చూడకండి: land–sea response, clouds, monsoon, heat storage ప్రభావం చూపుతాయి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-053",
+      "topic": 9,
+      "kind": "reasoning",
+      "question_en": "Earth is near perihelion in early January. Why does this not prove January summer in India?",
+      "question_te": "January perihelion ఉన్నా India summer అని ఎందుకు కాదు?",
+      "options": [
+        "Perihelion means farthest",
+        "Tilt and seasonal sunlight geometry dominate hemispheric seasons",
+        "India changes hemispheres in January",
+        "Earth gets no January sunlight"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Perihelion is closest to Sun.",
+        "Distance alone cannot explain opposite hemispheric seasons.",
+        "India remains Northern Hemisphere.",
+        "India receives sunlight."
+      ],
+      "explanation_te": "Perihelion closest distance; seasonsకు tilt ముఖ్యం.",
+      "section": "solar-seasons-p4",
+      "source_urls": [
+        "https://spaceplace.nasa.gov/seasons/en/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "17. ఋతువులు ఎందుకు? — Tilt, sunlight and Andhra Pradesh",
+      "excerpt": "Reasoning chain: tilt + revolution → solar-angle/day-length variation → unequal seasonal heating. Rainfall seasonsకు atmosphere, oceans కూడా అవసరం. “Januaryలో Sunకి దగ్గరగా ఉన్నాం, కాబట్టి India summer” అనే తీర్మానం తప్పు. Detailed time/longitude exercisesకు పాఠం 02 చదవండి.",
+      "source_paragraph": "Reasoning chain: tilt + revolution → solar-angle/day-length variation → unequal seasonal heating. Rainfall seasonsకు atmosphere, oceans కూడా అవసరం. “Januaryలో Sunకి దగ్గరగా ఉన్నాం, కాబట్టి India summer” అనే తీర్మానం తప్పు. Detailed time/longitude exercisesకు పాఠం 02 చదవండి."
+    },
+    {
+      "id": "SOLAR-PRACTICE-054",
+      "topic": 9,
+      "kind": "comparison",
+      "question_en": "Earth's axis makes approximately what angle with the normal to its orbital plane?",
+      "question_te": "Orbital plane normalతో Earth axis కోణం సుమారు ఎంత?",
+      "options": [
+        "0°",
+        "23.4°",
+        "90°",
+        "66.6°"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Would imply no tilt to normal.",
+        "Usual obliquity measure.",
+        "Would put axis in orbital plane.",
+        "Complementary angle to plane itself."
+      ],
+      "explanation_te": "Normalతో23.4°; planeతో66.6°.",
+      "section": "solar-seasons-p1",
+      "source_urls": [
+        "https://spaceplace.nasa.gov/seasons/en/",
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "17. ఋతువులు ఎందుకు? — Tilt, sunlight and Andhra Pradesh",
+      "excerpt": "Earth axis orbital-plane normalతో సుమారు 23.4° tilt; orbital planeతో సుమారు 66.6°. Yearలో axis ఒకే broad directionలో ఉండగా Earth Sun చుట్టూ కదులుతుంది. ఒక hemisphere Sunవైపు ఒరిగినప్పుడు అక్కడ direct rays, ఎక్కువ daylight కలసి summerను కలిగిస్తాయి. Opposite hemisphereకు winter. భూమంతా ఒకేసారి summer రావడం లేదు.",
+      "source_paragraph": "Earth axis orbital-plane normalతో సుమారు 23.4° tilt; orbital planeతో సుమారు 66.6°. Yearలో axis ఒకే broad directionలో ఉండగా Earth Sun చుట్టూ కదులుతుంది. ఒక hemisphere Sunవైపు ఒరిగినప్పుడు అక్కడ direct rays, ఎక్కువ daylight కలసి summerను కలిగిస్తాయి. Opposite hemisphereకు winter. భూమంతా ఒకేసారి summer రావడం లేదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-055",
+      "topic": 10,
+      "kind": "reasoning",
+      "question_en": "Ordinary monthly Moon phases mainly result from:",
+      "question_te": "సాధారణ Moon phases ప్రధానంగా దేనివల్ల?",
+      "options": [
+        "Permanent lunar clouds",
+        "Changing view of the Moon's sunlit half",
+        "Moon switching fusion on/off",
+        "Earth shadow covering Moon weekly"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Clouds do not produce phases.",
+        "Orbit changes visible fraction of illuminated half.",
+        "Moon is not a fusion star.",
+        "Earth shadow makes eclipses, not ordinary phases."
+      ],
+      "explanation_te": "Sunlit halfలో కనిపించే fraction మారడమే phases.",
+      "section": "solar-moon-p1",
+      "source_urls": [
+        "https://science.nasa.gov/moon/moon-phases/",
+        "https://science.nasa.gov/moon/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "18. చంద్రకళలు, నెల, ముఖం — Moon phases and synchronous rotation",
+      "excerpt": "Moon కాంతి ప్రధానంగా reflected sunlight. సాధారణంగా దాని సగం Sunవైపు వెలుగులో ఉంటుంది; మనం చూసే illuminated fraction orbitలో మారడం phases . Earth shadow వల్ల సాధారణ నెలవారీ phases రావు. క్రమం: new → waxing crescent → first quarter → waxing gibbous → full → waning gibbous → last quarter → waning crescent.",
+      "source_paragraph": "Moon కాంతి ప్రధానంగా reflected sunlight. సాధారణంగా దాని సగం Sunవైపు వెలుగులో ఉంటుంది; మనం చూసే illuminated fraction orbitలో మారడం phases . Earth shadow వల్ల సాధారణ నెలవారీ phases రావు. క్రమం: new → waxing crescent → first quarter → waxing gibbous → full → waning gibbous → last quarter → waning crescent."
+    },
+    {
+      "id": "SOLAR-PRACTICE-056",
+      "topic": 10,
+      "kind": "sequence",
+      "question_en": "Which follows the waxing half of the lunar cycle?",
+      "question_te": "Waxing cycleలో సరైన క్రమం ఏది?",
+      "options": [
+        "Full → new → last quarter → first quarter",
+        "First quarter → new → waxing gibbous → last quarter",
+        "New → full → waxing crescent → first quarter",
+        "New → waxing crescent → first quarter → waxing gibbous → full"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Skips and reverses order.",
+        "Mixes waxing and waning out of order.",
+        "Crescent/first quarter occur before full.",
+        "Visible illuminated fraction increases."
+      ],
+      "explanation_te": "New నుంచి crescent,quarter,gibbous దాటి fullకు వెలుగు పెరుగుతుంది.",
+      "section": "solar-moon-p1",
+      "source_urls": [
+        "https://science.nasa.gov/moon/moon-phases/",
+        "https://science.nasa.gov/moon/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "18. చంద్రకళలు, నెల, ముఖం — Moon phases and synchronous rotation",
+      "excerpt": "Moon కాంతి ప్రధానంగా reflected sunlight. సాధారణంగా దాని సగం Sunవైపు వెలుగులో ఉంటుంది; మనం చూసే illuminated fraction orbitలో మారడం phases . Earth shadow వల్ల సాధారణ నెలవారీ phases రావు. క్రమం: new → waxing crescent → first quarter → waxing gibbous → full → waning gibbous → last quarter → waning crescent.",
+      "source_paragraph": "Moon కాంతి ప్రధానంగా reflected sunlight. సాధారణంగా దాని సగం Sunవైపు వెలుగులో ఉంటుంది; మనం చూసే illuminated fraction orbitలో మారడం phases . Earth shadow వల్ల సాధారణ నెలవారీ phases రావు. క్రమం: new → waxing crescent → first quarter → waxing gibbous → full → waning gibbous → last quarter → waning crescent."
+    },
+    {
+      "id": "SOLAR-PRACTICE-057",
+      "topic": 10,
+      "kind": "comparison",
+      "question_en": "Which lunar-period pair is approximately correct?",
+      "question_te": "సుమారు సరైన lunar periods జత ఏది?",
+      "options": [
+        "Sidereal365days; phases88days",
+        "Both exactly24hours",
+        "Sidereal29.5years; new-to-new27.3hours",
+        "Sidereal month27.3days; new-to-new29.5days"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "These are not lunar periods.",
+        "Neither period is one Earth day.",
+        "Wrong magnitudes and units.",
+        "Earth's orbital advance lengthens phase repetition."
+      ],
+      "explanation_te": "Stars reference27.3d;phase repetition29.5d.",
+      "section": "solar-moon-p3",
+      "source_urls": [
+        "https://science.nasa.gov/moon/moon-phases/",
+        "https://science.nasa.gov/moon/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "18. చంద్రకళలు, నెల, ముఖం — Moon phases and synchronous rotation",
+      "excerpt": "Stars referenceలో Moon Earthను చుట్టడానికి సుమారు 27.3 days (sidereal month) . New moon నుంచి next new moon 29.5 days (synodic month) —ఇంతలో Earth కూడా Sun చుట్టూ కదులుతుంది కాబట్టి alignmentకు అదనపు సమయం పడుతుంది. ఇది రెండు వేరు కొలతలు; ఒకటి తప్పు కాదు.",
+      "source_paragraph": "Stars referenceలో Moon Earthను చుట్టడానికి సుమారు 27.3 days (sidereal month) . New moon నుంచి next new moon 29.5 days (synodic month) —ఇంతలో Earth కూడా Sun చుట్టూ కదులుతుంది కాబట్టి alignmentకు అదనపు సమయం పడుతుంది. ఇది రెండు వేరు కొలతలు; ఒకటి తప్పు కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-058",
+      "topic": 10,
+      "kind": "reasoning",
+      "question_en": "We see nearly the same lunar face because the Moon:",
+      "question_te": "Moon దాదాపు ఒకే ముఖం చూపడానికి కారణం ఏది?",
+      "options": [
+        "Always stays between Earth and Sun",
+        "Produces light only on one side",
+        "Rotates once in about its Earth-orbit period",
+        "Never rotates"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "Describes only new-moon vicinity.",
+        "Moonlight is reflected sunlight.",
+        "Synchronous rotation keeps near side generally Earth-facing.",
+        "No rotation would expose different faces over an orbit."
+      ],
+      "explanation_te": "Rotation,orbital periods దాదాపు సమానం; no-rotation కాదు.",
+      "section": "solar-moon-p4",
+      "source_urls": [
+        "https://science.nasa.gov/moon/moon-phases/",
+        "https://science.nasa.gov/moon/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "18. చంద్రకళలు, నెల, ముఖం — Moon phases and synchronous rotation",
+      "excerpt": "Synchronous rotation/tidal locking: Moon rotation period, orbital period దాదాపు సమానం కాబట్టి Earthకు nearly same face చూపుతుంది. Moon అసలు rotate చేయదని కాదు. Far side అంటే Earthకు అవతలి వైపు; ఎప్పుడూ చీకటి side కాదు. Libration వల్ల కాలక్రమంలో ఖచ్చిత సగంకన్నా కొంత ఎక్కువ surface చూడగలం. Lunar polesలో permanently shadowed craters ప్రత్యేక స్థానిక పరిస్థితి; మొత్తం far side చీకటి కాదు.",
+      "source_paragraph": "Synchronous rotation/tidal locking: Moon rotation period, orbital period దాదాపు సమానం కాబట్టి Earthకు nearly same face చూపుతుంది. Moon అసలు rotate చేయదని కాదు. Far side అంటే Earthకు అవతలి వైపు; ఎప్పుడూ చీకటి side కాదు. Libration వల్ల కాలక్రమంలో ఖచ్చిత సగంకన్నా కొంత ఎక్కువ surface చూడగలం. Lunar polesలో permanently shadowed craters ప్రత్యేక స్థానిక పరిస్థితి; మొత్తం far side చీకటి కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-059",
+      "topic": 10,
+      "kind": "statement",
+      "question_en": "I. Far side faces away from Earth. II. It is always dark. Which is correct?",
+      "question_te": "I. Far side Earthకు అవతలి వైపు. II. ఎప్పుడూ చీకటి. సరైనది ఏది?",
+      "options": [
+        "Both / రెండూ",
+        "I only / I మాత్రమే",
+        "Neither / ఏదీ కాదు",
+        "II only / II మాత్రమే"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Far side does not mean permanently unlit.",
+        "Near/far is Earth-facing geometry; both sides get sunlight.",
+        "I is correct definition.",
+        "II false,I true."
+      ],
+      "explanation_te": "Far side Earth reference; permanent dark side కాదు.",
+      "section": "solar-moon-p4",
+      "source_urls": [
+        "https://science.nasa.gov/moon/moon-phases/",
+        "https://science.nasa.gov/moon/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "18. చంద్రకళలు, నెల, ముఖం — Moon phases and synchronous rotation",
+      "excerpt": "Synchronous rotation/tidal locking: Moon rotation period, orbital period దాదాపు సమానం కాబట్టి Earthకు nearly same face చూపుతుంది. Moon అసలు rotate చేయదని కాదు. Far side అంటే Earthకు అవతలి వైపు; ఎప్పుడూ చీకటి side కాదు. Libration వల్ల కాలక్రమంలో ఖచ్చిత సగంకన్నా కొంత ఎక్కువ surface చూడగలం. Lunar polesలో permanently shadowed craters ప్రత్యేక స్థానిక పరిస్థితి; మొత్తం far side చీకటి కాదు.",
+      "source_paragraph": "Synchronous rotation/tidal locking: Moon rotation period, orbital period దాదాపు సమానం కాబట్టి Earthకు nearly same face చూపుతుంది. Moon అసలు rotate చేయదని కాదు. Far side అంటే Earthకు అవతలి వైపు; ఎప్పుడూ చీకటి side కాదు. Libration వల్ల కాలక్రమంలో ఖచ్చిత సగంకన్నా కొంత ఎక్కువ surface చూడగలం. Lunar polesలో permanently shadowed craters ప్రత్యేక స్థానిక పరిస్థితి; మొత్తం far side చీకటి కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-060",
+      "topic": 10,
+      "kind": "application",
+      "question_en": "A nearly fully lit Moon rises around sunset. Its phase is approximately:",
+      "question_te": "Sunset దగ్గర rise అయ్యే nearly fully-lit Moon phase ఏది?",
+      "options": [
+        "Full moon",
+        "First quarter",
+        "Waning crescent",
+        "New moon"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Full Moon opposite Sun rises near sunset.",
+        "First quarter rises roughly midday.",
+        "Waning crescent near pre-dawn cycle.",
+        "New Moon near Sun direction."
+      ],
+      "explanation_te": "Full moon Sunకు ఎదురుగా skyలో ఉండి sunset దగ్గర rise అవుతుంది.",
+      "section": "solar-moon-p2",
+      "source_urls": [
+        "https://science.nasa.gov/moon/moon-phases/",
+        "https://science.nasa.gov/moon/facts/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "18. చంద్రకళలు, నెల, ముఖం — Moon phases and synchronous rotation",
+      "excerpt": "Waxing కనిపించే వెలుగు భాగం పెరగడం; waning తగ్గడం. Quarter moonలో మనకు కనిపించే disk సగం వెలుగులో ఉంటుంది; “quarter” orbital cycleలో స్థానం. New moon Sun దిశకు దగ్గరగా; full moon Sunకు ఎదురుగా skyలో కనిపిస్తుంది. Full moon సాధారణంగా sunset దగ్గర rise అవుతుంది; Moon పగలు కూడా కనిపించవచ్చు.",
+      "source_paragraph": "Waxing కనిపించే వెలుగు భాగం పెరగడం; waning తగ్గడం. Quarter moonలో మనకు కనిపించే disk సగం వెలుగులో ఉంటుంది; “quarter” orbital cycleలో స్థానం. New moon Sun దిశకు దగ్గరగా; full moon Sunకు ఎదురుగా skyలో కనిపిస్తుంది. Full moon సాధారణంగా sunset దగ్గర rise అవుతుంది; Moon పగలు కూడా కనిపించవచ్చు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-061",
+      "topic": 11,
+      "kind": "sequence",
+      "question_en": "Which order applies to a solar eclipse?",
+      "question_te": "Solar eclipse alignment order ఏది?",
+      "options": [
+        "Moon → Sun → Earth",
+        "Earth → Sun → Moon",
+        "Sun → Moon → Earth",
+        "Sun → Earth → Moon"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "Sun is not between Moon/Earth.",
+        "Again puts Sun between other bodies.",
+        "Moon between Sun/Earth casts shadow on Earth.",
+        "This is lunar-eclipse order."
+      ],
+      "explanation_te": "Solarలో Moon మధ్య;lunarలో Earth మధ్య.",
+      "section": "solar-eclipses-p1",
+      "source_urls": [
+        "https://science.nasa.gov/moon/eclipses/",
+        "https://science.nasa.gov/eclipses/safety/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "19. గ్రహణం ఎప్పుడు? — Alignment, nodes and shadows",
+      "excerpt": "Solar eclipse: Sun–Moon–Earth alignment; new moon phaseలో Moon shadow Earthపై పడుతుంది. Lunar eclipse: Sun–Earth–Moon; full moon phaseలో Earth shadow Moonపై పడుతుంది. New/full అవసరమైన phase మాత్రమే; ప్రతి నెల eclipse కాదు. Moon orbital plane Earth orbital planeతో సుమారు 5° వంగి ఉంటుంది. రెండు planes కలిసే nodes దగ్గర సరైన alignment అవసరం.",
+      "source_paragraph": "Solar eclipse: Sun–Moon–Earth alignment; new moon phaseలో Moon shadow Earthపై పడుతుంది. Lunar eclipse: Sun–Earth–Moon; full moon phaseలో Earth shadow Moonపై పడుతుంది. New/full అవసరమైన phase మాత్రమే; ప్రతి నెల eclipse కాదు. Moon orbital plane Earth orbital planeతో సుమారు 5° వంగి ఉంటుంది. రెండు planes కలిసే nodes దగ్గర సరైన alignment అవసరం."
+    },
+    {
+      "id": "SOLAR-PRACTICE-062",
+      "topic": 11,
+      "kind": "reasoning",
+      "question_en": "Why is there not a solar eclipse at every new moon?",
+      "question_te": "ప్రతి new moonకు solar eclipse ఎందుకు రాదు?",
+      "options": [
+        "Moon orbit tilted; node alignment also needed",
+        "Moon gravity switches off",
+        "Sun sometimes stops shining",
+        "New moon only once yearly"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Roughly5° tilt usually lets shadow miss Earth.",
+        "Lunar gravity does not switch off.",
+        "Sun keeps radiating.",
+        "New moon repeats about29.5days."
+      ],
+      "explanation_te": "Tilt వల్ల new phase ఒక్కటే సరిపోదు; node alignment అవసరం.",
+      "section": "solar-eclipses-p1",
+      "source_urls": [
+        "https://science.nasa.gov/moon/eclipses/",
+        "https://science.nasa.gov/eclipses/safety/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "19. గ్రహణం ఎప్పుడు? — Alignment, nodes and shadows",
+      "excerpt": "Solar eclipse: Sun–Moon–Earth alignment; new moon phaseలో Moon shadow Earthపై పడుతుంది. Lunar eclipse: Sun–Earth–Moon; full moon phaseలో Earth shadow Moonపై పడుతుంది. New/full అవసరమైన phase మాత్రమే; ప్రతి నెల eclipse కాదు. Moon orbital plane Earth orbital planeతో సుమారు 5° వంగి ఉంటుంది. రెండు planes కలిసే nodes దగ్గర సరైన alignment అవసరం.",
+      "source_paragraph": "Solar eclipse: Sun–Moon–Earth alignment; new moon phaseలో Moon shadow Earthపై పడుతుంది. Lunar eclipse: Sun–Earth–Moon; full moon phaseలో Earth shadow Moonపై పడుతుంది. New/full అవసరమైన phase మాత్రమే; ప్రతి నెల eclipse కాదు. Moon orbital plane Earth orbital planeతో సుమారు 5° వంగి ఉంటుంది. రెండు planes కలిసే nodes దగ్గర సరైన alignment అవసరం."
+    },
+    {
+      "id": "SOLAR-PRACTICE-063",
+      "topic": 11,
+      "kind": "matching",
+      "question_en": "A lunar eclipse can occur only near:",
+      "question_te": "Lunar eclipse ఏ phase దగ్గర మాత్రమే సాధ్యం?",
+      "options": [
+        "New moon",
+        "Full moon",
+        "Last quarter",
+        "First quarter"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "New moon possible solar-eclipse phase.",
+        "Earth must lie between Sun and Moon.",
+        "Last quarter also lacks alignment.",
+        "Quarter lacks required alignment."
+      ],
+      "explanation_te": "Full phase అవసరం; ప్రతి fullకు eclipse కాదు.",
+      "section": "solar-eclipses-p1",
+      "source_urls": [
+        "https://science.nasa.gov/moon/eclipses/",
+        "https://science.nasa.gov/eclipses/safety/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "19. గ్రహణం ఎప్పుడు? — Alignment, nodes and shadows",
+      "excerpt": "Solar eclipse: Sun–Moon–Earth alignment; new moon phaseలో Moon shadow Earthపై పడుతుంది. Lunar eclipse: Sun–Earth–Moon; full moon phaseలో Earth shadow Moonపై పడుతుంది. New/full అవసరమైన phase మాత్రమే; ప్రతి నెల eclipse కాదు. Moon orbital plane Earth orbital planeతో సుమారు 5° వంగి ఉంటుంది. రెండు planes కలిసే nodes దగ్గర సరైన alignment అవసరం.",
+      "source_paragraph": "Solar eclipse: Sun–Moon–Earth alignment; new moon phaseలో Moon shadow Earthపై పడుతుంది. Lunar eclipse: Sun–Earth–Moon; full moon phaseలో Earth shadow Moonపై పడుతుంది. New/full అవసరమైన phase మాత్రమే; ప్రతి నెల eclipse కాదు. Moon orbital plane Earth orbital planeతో సుమారు 5° వంగి ఉంటుంది. రెండు planes కలిసే nodes దగ్గర సరైన alignment అవసరం."
+    },
+    {
+      "id": "SOLAR-PRACTICE-064",
+      "topic": 11,
+      "kind": "comparison",
+      "question_en": "An annular solar eclipse occurs when the Moon's apparent disk:",
+      "question_te": "Annular solar eclipseలో Moon apparent disk ఎలా ఉంటుంది?",
+      "options": [
+        "Too small to cover Sun completely",
+        "Emits a fusion-light ring",
+        "Physically larger than Earth",
+        "Covers Sun because Earth lies between them"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Visible ring of solar photosphere remains.",
+        "Ring is sunlight, not lunar fusion.",
+        "Moon does not become larger than Earth.",
+        "Earth-between is lunar geometry."
+      ],
+      "explanation_te": "Apparent Moon size చిన్నగా ఉండి Sun వెలుగు ring మిగులుతుంది.",
+      "section": "solar-eclipses-p2",
+      "source_urls": [
+        "https://science.nasa.gov/moon/eclipses/",
+        "https://science.nasa.gov/eclipses/safety/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "19. గ్రహణం ఎప్పుడు? — Alignment, nodes and shadows",
+      "excerpt": "Umbra పూర్తి shadow; penumbra partial shadow. Total solar eclipseలో observerకి Sun photosphere పూర్తిగా కప్పబడుతుంది. Moon apparent disk చిన్నదిగా ఉన్న annular eclipseలో వెలుగు ring మిగులుతుంది. Moon distance మారడం apparent sizeను మారుస్తుంది; నిజమైన diameter నెలనెలా పెరగదు. Solar totality narrow path; lunar eclipse Earth night sideలో పెద్ద region నుంచి చూడవచ్చు.",
+      "source_paragraph": "Umbra పూర్తి shadow; penumbra partial shadow. Total solar eclipseలో observerకి Sun photosphere పూర్తిగా కప్పబడుతుంది. Moon apparent disk చిన్నదిగా ఉన్న annular eclipseలో వెలుగు ring మిగులుతుంది. Moon distance మారడం apparent sizeను మారుస్తుంది; నిజమైన diameter నెలనెలా పెరగదు. Solar totality narrow path; lunar eclipse Earth night sideలో పెద్ద region నుంచి చూడవచ్చు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-065",
+      "topic": 11,
+      "kind": "matching",
+      "question_en": "Umbra and penumbra respectively mean:",
+      "question_te": "Umbra,penumbra వరుసగా ఏమిటి?",
+      "options": [
+        "Two planets beyond Neptune",
+        "Two cloud-generated phases",
+        "Lunar north and south poles",
+        "Full shadow; partial shadow"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "They are shadows, not planets.",
+        "Not cloud-driven phases.",
+        "Not pole names.",
+        "Completeness of shadowing distinguishes these regions."
+      ],
+      "explanation_te": "Umbra పూర్తి నీడ;penumbra పాక్షిక నీడ.",
+      "section": "solar-eclipses-p2",
+      "source_urls": [
+        "https://science.nasa.gov/moon/eclipses/",
+        "https://science.nasa.gov/eclipses/safety/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "19. గ్రహణం ఎప్పుడు? — Alignment, nodes and shadows",
+      "excerpt": "Umbra పూర్తి shadow; penumbra partial shadow. Total solar eclipseలో observerకి Sun photosphere పూర్తిగా కప్పబడుతుంది. Moon apparent disk చిన్నదిగా ఉన్న annular eclipseలో వెలుగు ring మిగులుతుంది. Moon distance మారడం apparent sizeను మారుస్తుంది; నిజమైన diameter నెలనెలా పెరగదు. Solar totality narrow path; lunar eclipse Earth night sideలో పెద్ద region నుంచి చూడవచ్చు.",
+      "source_paragraph": "Umbra పూర్తి shadow; penumbra partial shadow. Total solar eclipseలో observerకి Sun photosphere పూర్తిగా కప్పబడుతుంది. Moon apparent disk చిన్నదిగా ఉన్న annular eclipseలో వెలుగు ring మిగులుతుంది. Moon distance మారడం apparent sizeను మారుస్తుంది; నిజమైన diameter నెలనెలా పెరగదు. Solar totality narrow path; lunar eclipse Earth night sideలో పెద్ద region నుంచి చూడవచ్చు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-066",
+      "topic": 11,
+      "kind": "application",
+      "question_en": "Which observing practice is correct?",
+      "question_te": "సరైన observing practice ఏది?",
+      "options": [
+        "Use unfiltered binoculars for partial Sun",
+        "View annular Sun through ordinary sunglasses",
+        "Every lunar eclipse requires a solar filter",
+        "Use certified solar protection; ordinary sunglasses insufficient"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Unfiltered optics concentrate dangerous sunlight.",
+        "Annular Sun remains hazardous.",
+        "Lunar eclipses need no solar filter.",
+        "Suitable solar filters or safe projection protect viewing."
+      ],
+      "explanation_te": "Solar viewingకు certified protection; lunarకు solar filter అవసరం లేదు.",
+      "section": "solar-eclipses-p4",
+      "source_urls": [
+        "https://science.nasa.gov/moon/eclipses/",
+        "https://science.nasa.gov/eclipses/safety/"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "19. గ్రహణం ఎప్పుడు? — Alignment, nodes and shadows",
+      "excerpt": "సురక్షిత పరిశీలన: Sunను నేరుగా చూడకండి. Certified solar-viewing filters/సరైన projection పద్ధతులు అవసరం; సాధారణ sunglasses సరిపోవు. Lunar eclipseను చూడటానికి solar filters అవసరం లేదు. చిత్రాల్లో Sun, Earth, Moon పరిమాణాలు/దూరాలు బోధన కోసం scale మార్చి చూపుతారు.",
+      "source_paragraph": "సురక్షిత పరిశీలన: Sunను నేరుగా చూడకండి. Certified solar-viewing filters/సరైన projection పద్ధతులు అవసరం; సాధారణ sunglasses సరిపోవు. Lunar eclipseను చూడటానికి solar filters అవసరం లేదు. చిత్రాల్లో Sun, Earth, Moon పరిమాణాలు/దూరాలు బోధన కోసం scale మార్చి చూపుతారు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-067",
+      "topic": 12,
+      "kind": "reasoning",
+      "question_en": "The main astronomical cause of ocean tides is:",
+      "question_te": "Ocean tidesకు ప్రధాన astronomical కారణం ఏది?",
+      "options": [
+        "Earth diameter doubling twice daily",
+        "Only local wind waves",
+        "Moon heating oceans by fusion",
+        "Differential Moon/Sun gravitational effects across Earth"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Earth does not double diameter.",
+        "Wind waves are different.",
+        "Moon does not generate fusion heat.",
+        "Differential gravity generates tides; basins modify them."
+      ],
+      "explanation_te": "Moon–Sun differential gravity tidesకు కారణం;wind waves వేరు.",
+      "section": "solar-tides-p1",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/springtide.html",
+        "https://www.noaa.gov/education/resource-collections/ocean-coasts/tides"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "20. చంద్రుడు నుంచి తీరానికి — Tides and final revision",
+      "excerpt": "Tide సముద్ర మట్టం periodic rise/fall. Moon, Sun gravityలో Earth అంతటా ఉన్న తేడా tide-generating effectకు కారణం; సాధారణ గాలి wavesతో ఇది వేరు. Sun mass పెద్దదైనా Moon చాలా దగ్గరగా ఉండటం వల్ల lunar tide-generating contribution ఎక్కువ. Moon మాత్రమే కారణమని కూడా కాదు.",
+      "source_paragraph": "Tide సముద్ర మట్టం periodic rise/fall. Moon, Sun gravityలో Earth అంతటా ఉన్న తేడా tide-generating effectకు కారణం; సాధారణ గాలి wavesతో ఇది వేరు. Sun mass పెద్దదైనా Moon చాలా దగ్గరగా ఉండటం వల్ల lunar tide-generating contribution ఎక్కువ. Moon మాత్రమే కారణమని కూడా కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-068",
+      "topic": 12,
+      "kind": "matching",
+      "question_en": "Spring tides are generally associated with:",
+      "question_te": "Spring tides ఏ phasesతో సంబంధం?",
+      "options": [
+        "New and full moon",
+        "Only spring season",
+        "Only first and last quarter",
+        "Every noon regardless of geometry"
+      ],
+      "answer": 1,
+      "option_explanations": [
+        "Alignment reinforces tidal range.",
+        "Name is not a season restriction.",
+        "Quarter phases favour neap tides.",
+        "Moon/Sun geometry matters, not noon alone."
+      ],
+      "explanation_te": "New/full alignment దగ్గర larger range;spring seasonతో సంబంధం లేదు.",
+      "section": "solar-tides-p2",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/springtide.html",
+        "https://www.noaa.gov/education/resource-collections/ocean-coasts/tides"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "20. చంద్రుడు నుంచి తీరానికి — Tides and final revision",
+      "excerpt": "Spring tides new/full moon alignment దగ్గర larger tidal range; spring seasonకు పరిమితం కాదు. Neap tides first/last quarter geometry దగ్గర smaller range; zero tides కాదు. Range = high-water level − low-water level. High 2.4 m, low 0.7 m అయితే range 1.7 m; రెండింటి మొత్తం కాదు.",
+      "source_paragraph": "Spring tides new/full moon alignment దగ్గర larger tidal range; spring seasonకు పరిమితం కాదు. Neap tides first/last quarter geometry దగ్గర smaller range; zero tides కాదు. Range = high-water level − low-water level. High 2.4 m, low 0.7 m అయితే range 1.7 m; రెండింటి మొత్తం కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-069",
+      "topic": 12,
+      "kind": "comparison",
+      "question_en": "Neap tides have:",
+      "question_te": "Neap tidesలో ఏమి ఉంటుంది?",
+      "options": [
+        "No sea-level rise or fall anywhere",
+        "Identical timing at every AP port",
+        "Smaller range near quarter geometry",
+        "Largest range at every full moon"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "Reduced is not zero.",
+        "Local basins affect timing.",
+        "Solar/lunar patterns partly offset, reducing range.",
+        "Full alignment favours spring range."
+      ],
+      "explanation_te": "Quarter దగ్గర range తగ్గుతుంది; tides ఆగవు.",
+      "section": "solar-tides-p2",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/springtide.html",
+        "https://www.noaa.gov/education/resource-collections/ocean-coasts/tides"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "20. చంద్రుడు నుంచి తీరానికి — Tides and final revision",
+      "excerpt": "Spring tides new/full moon alignment దగ్గర larger tidal range; spring seasonకు పరిమితం కాదు. Neap tides first/last quarter geometry దగ్గర smaller range; zero tides కాదు. Range = high-water level − low-water level. High 2.4 m, low 0.7 m అయితే range 1.7 m; రెండింటి మొత్తం కాదు.",
+      "source_paragraph": "Spring tides new/full moon alignment దగ్గర larger tidal range; spring seasonకు పరిమితం కాదు. Neap tides first/last quarter geometry దగ్గర smaller range; zero tides కాదు. Range = high-water level − low-water level. High 2.4 m, low 0.7 m అయితే range 1.7 m; రెండింటి మొత్తం కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-070",
+      "topic": 12,
+      "kind": "calculation",
+      "question_en": "High water2.4m, low water0.7m, same datum. Tidal range is:",
+      "question_te": "ఒకే datumపై high2.4m,low0.7m అయితే range ఎంత?",
+      "options": [
+        "2.4m",
+        "3.1m",
+        "0.7m",
+        "1.7m"
+      ],
+      "answer": 4,
+      "option_explanations": [
+        "Only high-water level.",
+        "Adds levels instead of subtracting.",
+        "Only low-water level.",
+        "2.4−0.7=1.7m."
+      ],
+      "explanation_te": "Range=high−low=1.7m.",
+      "section": "solar-tides-p2",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/springtide.html",
+        "https://www.noaa.gov/education/resource-collections/ocean-coasts/tides"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "20. చంద్రుడు నుంచి తీరానికి — Tides and final revision",
+      "excerpt": "Spring tides new/full moon alignment దగ్గర larger tidal range; spring seasonకు పరిమితం కాదు. Neap tides first/last quarter geometry దగ్గర smaller range; zero tides కాదు. Range = high-water level − low-water level. High 2.4 m, low 0.7 m అయితే range 1.7 m; రెండింటి మొత్తం కాదు.",
+      "source_paragraph": "Spring tides new/full moon alignment దగ్గర larger tidal range; spring seasonకు పరిమితం కాదు. Neap tides first/last quarter geometry దగ్గర smaller range; zero tides కాదు. Range = high-water level − low-water level. High 2.4 m, low 0.7 m అయితే range 1.7 m; రెండింటి మొత్తం కాదు."
+    },
+    {
+      "id": "SOLAR-PRACTICE-071",
+      "topic": 12,
+      "kind": "comparison",
+      "question_en": "Cyclone storm surge differs from spring tide because surge is mainly driven by:",
+      "question_te": "Cyclone surgeను spring tide నుంచి వేరు చేసే ప్రధాన driver ఏది?",
+      "options": [
+        "Absence of atmospheric influence",
+        "Weather-related winds and pressure",
+        "A new full-moon definition",
+        "Moon turning into a star"
+      ],
+      "answer": 2,
+      "option_explanations": [
+        "Atmospheric forcing is central.",
+        "Surge is abnormal weather-driven water-level rise.",
+        "Phase definitions do not cause surge.",
+        "Moon remains a satellite."
+      ],
+      "explanation_te": "Surge weather-driven;spring tide astronomical.",
+      "section": "solar-tides-p3",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/springtide.html",
+        "https://www.noaa.gov/education/resource-collections/ocean-coasts/tides"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "20. చంద్రుడు నుంచి తీరానికి — Tides and final revision",
+      "excerpt": "నిజమైన coastలో basin shape, depth, friction, resonance, weather వల్ల timing/height మారుతుంది; ప్రతి AP portలో ఒకే tide సమయం అనుకోకండి. Storm surge తుఫాను winds/pressureతో వచ్చే abnormal rise; astronomical spring tideతో ఒకటే కాదు. Coastal planningలో tide predictionతో పాటు weather warning కూడా చూడాలి. వివరాలకు పాఠం 20 .",
+      "source_paragraph": "నిజమైన coastలో basin shape, depth, friction, resonance, weather వల్ల timing/height మారుతుంది; ప్రతి AP portలో ఒకే tide సమయం అనుకోకండి. Storm surge తుఫాను winds/pressureతో వచ్చే abnormal rise; astronomical spring tideతో ఒకటే కాదు. Coastal planningలో tide predictionతో పాటు weather warning కూడా చూడాలి. వివరాలకు పాఠం 20 ."
+    },
+    {
+      "id": "SOLAR-PRACTICE-072",
+      "topic": 12,
+      "kind": "integrated",
+      "question_en": "At new moon, which conclusion is justified?",
+      "question_te": "New moonలో ఏ తీర్మానం సమర్థించవచ్చు?",
+      "options": [
+        "Solar eclipse must occur everywhere",
+        "No tide because Moon is invisible",
+        "Spring-tide geometry favoured; eclipse still needs node alignment",
+        "Lunar eclipse must occur"
+      ],
+      "answer": 3,
+      "option_explanations": [
+        "New phase does not guarantee eclipse or worldwide visibility.",
+        "Illuminated visibility does not switch gravity off.",
+        "Phase,tide geometry,eclipse alignment are distinct.",
+        "Lunar eclipse needs full moon."
+      ],
+      "explanation_te": "New spring rangeకు అనుకూలం;solar eclipseకు node alignment అదనం.",
+      "section": "solar-tides-p4",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/springtide.html",
+        "https://www.noaa.gov/education/resource-collections/ocean-coasts/tides"
+      ],
+      "label": "Original PYQ-style practice; not an APPSC previous-year question",
+      "heading": "20. చంద్రుడు నుంచి తీరానికి — Tides and final revision",
+      "excerpt": "మూడు దృశ్యాల తేడా: phase = illuminated fraction కనిపించే తీరు; eclipse = shadow alignment; tide = gravitational response of ocean. New moonలో phase, larger tidal rangeకు పరిస్థితి ఉండవచ్చు; eclipse మాత్రం nodes దగ్గర alignment ఉన్నప్పుడే. ఇదే ఒకే విషయాన్ని మూడు విధాలుగా అడిగే statement questionకు పునాది.",
+      "source_paragraph": "మూడు దృశ్యాల తేడా: phase = illuminated fraction కనిపించే తీరు; eclipse = shadow alignment; tide = gravitational response of ocean. New moonలో phase, larger tidal rangeకు పరిస్థితి ఉండవచ్చు; eclipse మాత్రం nodes దగ్గర alignment ఉన్నప్పుడే. ఇదే ఒకే విషయాన్ని మూడు విధాలుగా అడిగే statement questionకు పునాది."
+    }
+  ],
+  "chapter_sha256": "13cc7e92a809e474a43c745a24ab42589eac0f118874183ac8213cd64047636a"
+}

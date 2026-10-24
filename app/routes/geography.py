@@ -6,6 +6,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, unquote
 from flask import Blueprint, abort, current_app, make_response, redirect, render_template, request, url_for
 from ..services import geography_pyqs as pyqs
+from ..services import solar_practice as solar
 
 bp = Blueprint("geography", __name__, url_prefix="/learn/geography")
 
@@ -53,7 +54,21 @@ def _reader(filename, lesson=None):
     question_id = request.args.get("question", "")[:120]
     question = pyqs.question(question_id) if question_id else None
     context = {}
-    if question:
+    practice_id = request.args.get("practice", "")[:80]
+    practice = solar.question(practice_id) if practice_id else None
+    if practice:
+        selection = _solar_filters()
+        context = {**selection, "practice": practice_id}
+        if request.args.get("review") == "1":
+            context["review"] = "1"
+        if request.args.get("choice") in {"1", "2", "3", "4"}:
+            context["choice"] = request.args["choice"]
+        back = url_for("geography.solar_question", question_id=practice_id,
+                       **{k: v for k, v in context.items() if k != "practice"})
+        if context.get("review"):
+            back += "#answer-result"
+        label = "‹ ప్రశ్నకు తిరిగి · Back to question"
+    elif question:
         context = {**filters, "question": question_id}
         if request.args.get("review") == "1":
             context["review"] = "1"
@@ -174,3 +189,60 @@ def pyq(question_id):
 @bp.post("/pyq/<question_id>/answer")
 def pyq_answer(question_id):
     return _pyq_page(question_id,answered=True)
+
+
+# Original practice has its own IDs, data and routes; historical PYQs remain separate.
+def _solar_filters():
+    filters = {k: request.args.get(k, "").strip()[:80] for k in ("topic", "kind")}
+    data = solar.payload()
+    if filters["topic"] and filters["topic"] not in {str(t["id"]) for t in data["topics"]}:
+        abort(400)
+    if filters["kind"] and filters["kind"] not in {q["kind"] for q in data["questions"]}:
+        abort(400)
+    return {k: v for k, v in filters.items() if v}
+
+
+@bp.get("/solar-practice")
+def solar_index():
+    filters = _solar_filters()
+    selected = solar.questions(**filters)
+    if request.args.get("start") == "1" and selected:
+        return redirect(url_for("geography.solar_question", question_id=selected[0]["id"], **filters))
+    return render_template("ds/solar_practice.html", topics=solar.payload()["topics"],
+                           kinds=sorted({q["kind"] for q in solar.questions()}), questions=selected,
+                           filters=filters, no_match=not selected)
+
+
+def _solar_page(question_id, answered=False):
+    filters = _solar_filters()
+    selected = solar.questions(**filters)
+    index = next((i for i,q in enumerate(selected) if q["id"] == question_id), None)
+    if index is None:
+        abort(404)
+    q = selected[index];choice = None;result = None
+    if answered or request.args.get("review") == "1":
+        raw = request.form.get("choice", "") if answered else request.args.get("choice", "")
+        try:
+            choice = int(raw)
+            result = solar.grade(q, choice)
+        except (ValueError, TypeError):
+            abort(400, "Choose an option from 1 to 4")
+    context = {**filters, "practice": question_id}
+    if result:
+        context.update(review="1", choice=str(choice))
+    chapter_url = url_for("geography.lesson", lesson_id="03", **context)
+    return render_template("ds/solar_question.html", q=q, result=result, choice=choice, filters=filters,
+                           position=index+1,total=len(selected),chapter_url=chapter_url,
+                           section_url=chapter_url+"#"+q["section"],
+                           previous=selected[index-1]["id"] if index else None,
+                           following=selected[index+1]["id"] if index+1<len(selected) else None)
+
+
+@bp.get("/solar-practice/<question_id>")
+def solar_question(question_id):
+    return _solar_page(question_id)
+
+
+@bp.post("/solar-practice/<question_id>/answer")
+def solar_answer(question_id):
+    return _solar_page(question_id, answered=True)
