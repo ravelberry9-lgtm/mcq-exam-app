@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="te">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>పాఠం 5 — Rivers, floods, deltas, water use మరియు map practice · APPSC Group 2 Geography</title>
+  <style>
+:root{color-scheme:light;--ink:#20302d;--muted:#526760;--green:#125b4c;--deep:#083d36;--mint:#e5f4ed;--paper:#fffefa;--sand:#f6efe1;--line:#dbe5dc;--accent:#d99a3d;font-family:system-ui,'Noto Sans Telugu','Nirmala UI','Gautami',sans-serif;font-size:16px;line-height:1.8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eaf0eb;color:var(--ink)}a{color:#086959;text-decoration-thickness:1px;text-underline-offset:3px}a:hover,a:focus-visible{color:#064b3f;text-decoration-thickness:2px}a:focus-visible{outline:3px solid #e8a449;outline-offset:3px}
+.page{max-width:1080px;min-height:100vh;margin:auto;background:var(--paper);box-shadow:0 16px 70px #143a2820}.hero{background:radial-gradient(circle at 85% 5%,#307c68 0,transparent 31%),linear-gradient(128deg,#083d36,#176b57);color:white;padding:clamp(27px,5vw,56px) clamp(20px,6vw,74px) clamp(30px,5vw,60px);position:relative;overflow:hidden}.hero:after{content:'';position:absolute;width:220px;height:220px;right:-80px;bottom:-125px;border:2px solid #d8f7df57;border-radius:50%;box-shadow:0 0 0 35px #d8f7df16,0 0 0 70px #d8f7df0c;pointer-events:none}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:#c8f4d9}.eyebrow:before{content:'';width:9px;height:9px;background:#e9b657;border-radius:50%}.hero h1{font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.36;letter-spacing:-.025em;max-width:820px;margin:17px 0}.hero p{max-width:730px;margin:0;color:#e1f2e9}.hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:21px}.hero .tags span{border:1px solid #d8f6e363;background:#ffffff15;padding:4px 12px;border-radius:100px;font-size:.77rem;font-weight:650}
+.body{padding:clamp(20px,5vw,58px) clamp(20px,6vw,74px) 68px}.body>*{max-width:79ch}.body>h2,.body>h3,.body>.table-wrap{max-width:none}.body>p{margin:0 0 1.15em}.body>p:first-child{font-size:1.07rem;color:#3d5850}.body h2{font-size:clamp(1.4rem,2.5vw,1.85rem);line-height:1.42;color:var(--deep);margin:2.1em 0 .68em;padding-top:.3em;border-top:1px solid var(--line)}.body h2:first-child{border:0;margin-top:0}.body h3{font-size:1.16rem;line-height:1.48;color:var(--green);margin:1.9em 0 .55em}.body h2+h3{margin-top:.8em}.body strong{color:#0d5549}.body ul,.body ol{padding-left:1.5em;margin:0 0 1.3em}.body li{padding-left:.25em;margin:.4em 0}.body li::marker{color:var(--green)}.body blockquote{margin:1.5em 0;padding:15px 22px;border-left:5px solid var(--accent);border-radius:0 16px 16px 0;background:#fff5e5;color:#51422d}.body blockquote p:last-child{margin-bottom:0}.body hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.table-wrap{overflow-x:auto;margin:1.4em 0 1.8em;border:1px solid var(--line);border-radius:16px;background:white;box-shadow:0 7px 24px #163e2a0b}.body table{border-collapse:collapse;width:100%;min-width:560px;font-size:.94rem;line-height:1.65}.body th{background:#e4f2e9;color:#103f35;text-align:left;font-weight:750}.body td,.body th{padding:12px 15px;border-bottom:1px solid var(--line);vertical-align:top}.body tr:last-child td{border-bottom:0}.body tbody tr:nth-child(even){background:#f8fbf8}.body code{background:#eef4ef;padding:.12em .3em;border-radius:5px;overflow-wrap:anywhere}.body img{display:block;max-width:100%;height:auto;margin:1.5em auto;border-radius:15px}.endnote{border-top:1px solid var(--line);padding:22px clamp(20px,6vw,74px) 35px;color:var(--muted);font-size:.82rem;background:#f6faf6}.endnote p{margin:0}.back{display:inline-flex;align-items:center;gap:5px;margin-bottom:18px;color:var(--green);font-size:.9rem;font-weight:700;text-decoration:none}
+.data-figure{max-width:none!important;margin:1.8em 0;padding:clamp(16px,3vw,28px);background:linear-gradient(145deg,#eef7f0,#f8f4e8);border:1px solid #cde0d3;border-radius:20px;box-shadow:0 10px 28px #22462a12}.data-figure figcaption{font-size:1.08rem;line-height:1.5;color:var(--deep);margin-bottom:17px}.data-figure .bars{display:grid;gap:11px}.bar-row{display:grid;grid-template-columns:minmax(125px,180px) minmax(80px,1fr) 32px;gap:12px;align-items:center;font-weight:700;font-size:.9rem;line-height:1.3}.bar-row small{display:block;font-weight:500;color:var(--muted);font-size:.76rem}.bar-track{height:21px;background:#dce7db;border-radius:99px;overflow:hidden}.bar-track i{display:block;height:100%;background:linear-gradient(90deg,#167963,#43ad86);border-radius:99px}.bar-row.control .bar-track i{background:linear-gradient(90deg,#a97533,#dfac5a)}.bar-row b{font-variant-numeric:tabular-nums;color:var(--deep)}.data-figure p{font-size:.81rem;line-height:1.55;color:var(--muted);margin:17px 0 0}
+@media(max-width:620px){:root{font-size:15.5px}.hero{padding-top:28px}.body{padding-bottom:42px}.body h2{margin-top:1.65em}.body table{min-width:500px}.table-wrap{margin-left:-4px;margin-right:-4px}.body td,.body th{padding:10px 12px}.bar-row{grid-template-columns:95px minmax(50px,1fr) 25px;gap:7px;font-size:.79rem}.bar-row small{font-size:.69rem}.data-figure{margin-left:-4px;margin-right:-4px}}
+@media print{@page{size:A4;margin:15mm}body{background:white}.page{box-shadow:none;max-width:none}.hero{padding:18px 23px 22px;print-color-adjust:exact;-webkit-print-color-adjust:exact}.hero h1{font-size:23pt}.body{padding:12px 23px 20px}.body h2{break-after:avoid}.body h3{break-after:avoid}.body p,.body li{orphans:3;widows:3}.table-wrap{overflow:visible;box-shadow:none;break-inside:avoid}.body table{min-width:0}.endnote{padding:13px 23px}.back{display:none}}
+</style>
+</head>
+<body><nav aria-label="Geography navigation" style="padding:14px 20px;background:#e5f4ed;line-height:2;display:flex;flex-wrap:wrap;gap:8px"><a href="/learn/">అధ్యయనం · Learn</a> · <a href="/learn/geography/">భూగోళశాస్త్రం · 16 యూనిట్లు</a> · <a href="/learn/geography/unit/6">యూనిట్ 6</a> · <a href="/learn/geography/lesson/26">మునుపటి పాఠం</a> · <a href="/learn/geography/lesson/28">తరువాతి పాఠం</a></nav>
+  <main class="page" id="top">
+    <header class="hero">
+      <span class="eyebrow">APPSC Group 2 · Geography · Lesson 27</span>
+      <h1>పాఠం 5 — Rivers, floods, deltas, water use మరియు map practice</h1>
+      <p>తెలుగులో భావనను అర్థం చేసుకోండి; పరీక్షలో కనిపించే English termsను దానితోపాటు నేర్చుకోండి.</p>
+      <div class="tags"><span>Telugu-led teaching</span><span>English exam terms</span><span>India + Andhra Pradesh</span></div>
+    </header>
+    <article class="body" aria-label="పాఠం">
+<h2 id="river-chapter">River chapter చివరలో అసలు ప్రశ్న</h2>
+<p>River వల్ల flood వస్తుందా? అవును, కొన్ని పరిస్థితుల్లో వస్తుంది. River వల్ల fertile soil, irrigation, fish, groundwater recharge, transport corridor, wetland కూడా వస్తాయా? అవును. కాబట్టి riverను “problem” లేదా “resource” అనే ఒక్క boxలో పెట్టకండి.</p>
+<p>ఈ చివరి lessonలో ఒక chainని కలుపుదాం:</p>
+<blockquote>
+<p><strong>catchment rain → river flow → sediment and floodplain → delta/coast → people’s water use and risk</strong></p>
+</blockquote>
+<h3 id="_1">నది ఇసుకను అతిగా తీస్తే నీటికి ఏమవుతుంది?</h3>
+<p>నదిలోని <strong>sand and gravel / ఇసుక–కంకర</strong> కేవలం నిర్మాణానికి ముడి సరుకు కాదు; నదీ అడుగు రూపం, నీటి ప్రవాహం, భూగర్భ జలాలతో నీటి మార్పిడి, తీరానికి చేరే sedimentలో భాగం. ఒక ప్రదేశంలో సహజంగా కొత్త ఇసుక చేరే వేగాన్ని మించి riverbed mining చేస్తే అడుగు లోతు మారవచ్చు, పక్కన ఉన్న బావుల <strong>water table / భూగర్భ జల మట్టం</strong> తగ్గవచ్చు. నదీ నీరు, భూగర్భ జల నాణ్యత కూడా దెబ్బతినవచ్చు. అందుకే భారత sand-mining మార్గదర్శకాలు తవ్వకం దగ్గర groundwater level, quality కొలవాలని చెబుతాయి. <a href="https://www.unep.org/en/news-and-stories/press-release/rising-demand-sand-calls-resource-governance">UNEP, sand extraction impacts</a>; <a href="https://www.greentribunal.gov.in/sites/default/files/news_updates/14420_0.pdf">MoEFCC enforcement and monitoring guidelines</a>.</p>
+<p>2018 UPSC ఎంపికల్లో <strong>groundwater pollution</strong> మరియు <strong>water-table lowering</strong> రెండూ సంభవించగల ఫలితాలు; అందుకే 2, 3 సరైనవి. “River salinity తగ్గుతుంది” అనేది సాధారణంగా చెప్పగల ఫలితం కాదు—ఉప్పుతనం స్థానిక నది ప్రవాహం, సముద్రపు నీటి ప్రవేశం, groundwater పరిస్థితులపై ఆధారపడుతుంది; కొన్ని తీర ప్రాంతాల్లో దానికి విరుద్ధమైన ప్రమాదం కూడా ఉండవచ్చు. ఈ MCQని “ప్రతి sand mineలో రెండు ప్రభావాలూ తప్పకుండా జరుగుతాయి”గా మార్చకండి: ప్రశ్నలోని పదం <strong>possible consequences / సంభవించగల ప్రభావాలు</strong>. APలో Godavari–Krishna–Penna ప్రవాహాలను పరిశీలించేటప్పుడు అనుమతి/స్థలం/కాలం/కొలత ఆధారంగా మాత్రమే స్థానిక ప్రభావం చెప్పాలి.</p>
+<p><img alt="The journey of a river system: catchment to delta/coast — schematic process diagram" src="/static/textbooks/geography/assets/19df40c27b2d_UNIT_06_RIVER_SYSTEM_JOURNEY_A4_CARD.png" /></p>
+<p>ఈ card ఒక <strong>process diagram</strong> మాత్రమే; AP లేదా India location map కాదు. ఒకే riverలో every stage ఇలాగే కనిపించాల్సిన అవసరం లేదు. కానీ rain, slope, tributaries, sediment, floodplain, distributaries, coast అనే chainను ఒక చూపులో గుర్తుంచుకోవడానికి ఇది ఉపయోగపడుతుంది.</p>
+<h3 id="lakes-river">మూడు lakes, మూడు వేర్వేరు river సంబంధాలు</h3>
+<p>Kashmirలో lake పేర్లు state/UT గుర్తుకు సహాయపడతాయి, కానీ ఒకే lakeగా కలపవద్దు. <strong>Dal Lake / దాల్ సరస్సు</strong> Srinagar నగరంలో ఉంది; దాని పక్కన నగరం, houseboats, తేలియాడే తోటల వంటి urban-wetland సంబంధం కనిపిస్తుంది. <strong>Wular</strong> Jhelum వ్యవస్థలోని వేరే పెద్ద lake; <strong>Anchar</strong> మరో wetland. ఇచ్చిన Himachal Pradesh, Uttarakhand, Jammu and Kashmir, Sikkim ఎంపికల్లో Dalకు <strong>Jammu and Kashmir</strong> సరైనది. పాత stem “state” అన్నా, 2019 తరువాత J&amp;K పరిపాలనా స్థితి <strong>Union Territory</strong>; lake మాత్రం అదే Kashmir Valleyలో ఉంది. <a href="https://divcomkashmir.jk.gov.in/tourist-place/dal-lake/">Kashmir divisional administration: Dal Lake, Srinagar</a>.</p>
+<p><strong>Kashmir Valley</strong>లో రెండు lake పేర్లు గందరగోళం కాకుండా చూసుకోవాలి: Wularతో పాటు <strong>Anchar Lake / అంచర్ సరస్సు</strong> ఉంది. J&amp;K ప్రభుత్వ wetlands జాబితా Ancharను <strong>Ganderbal/Srinagar</strong> జిల్లాల పరిసరంలో నమోదు చేస్తుంది. అందుకే “Anchar ఏ రాష్ట్రం/UTలో?” అన్న పాత ఎంపికల్లో <strong>Jammu and Kashmir</strong> సరైనది; Meghalaya లేదా Assam కాదు. ప్రస్తుత పరిపాలన స్థితిలో J&amp;K <strong>Union Territory</strong>, పాత ప్రశ్నలో వాడిన “state” పదం కాలానికి చెందినది. Lake పేరు, valley, ప్రస్తుత administrative status మూడు విడివిడిగా చదవాలి. <a href="https://jkdeers.jk.gov.in/eersnew/eersnew/orders/LIST%20OF%20WETLANDS%20IN%20UT%20OF%20JK%20AS%20PER%20WETLAND%20RULES-2017.pdf">J&amp;K Government wetland inventory: Anchar Lake</a>.</p>
+<p>నది పటంలో lake కనిపించగానే “పక్కన ఉన్న పెద్ద నది నేరుగా lakeలోకి వస్తుంది” అనకండి. Kashmirలో <strong>Jhelum / జీలం</strong> నిజంగా <strong>Wular Lake / వులర్ సరస్సు</strong> గుండా ప్రవహిస్తుంది—lake river systemలో భాగం. <a href="https://divcomkashmir.jk.gov.in/tourist-place/wular-lake/">Kashmir divisional administration: Wular–Jhelum</a>. Andhra Pradeshలో <strong>Kolleru / కొల్లేరు</strong> Krishna, Godavari deltaల <strong>మధ్య</strong> ఉంది; ఈ రెండు పెద్ద నదులు దానిలోకి నేరుగా పోతున్నాయని కాదు. <strong>Budameru, Tammileru</strong> వంటి చిన్న ప్రవాహాలు lakeకు నీరు అందిస్తాయి; <a href="https://rsis.ramsar.org/RISapp/files/RISrep/IN1209RIS.pdf">Ramsar సమాచార పత్రం</a> వాటిని direct seasonal feedersగా పేర్కొంటుంది; <a href="https://apsac.ap.gov.in/wp-content/uploads/2024/09/Kolleru%20Lake%20and%20Connecting%20Rivers.pdf">Andhra Pradesh Space Applications Centre పటం</a> connecting riversను చూపుతుంది. రెండు deltaల మధ్య స్థానం, direct feeder అనే రెండు సంబంధాలు వేరు.</p>
+<p>APలో పెద్ద <strong>freshwater lake / మంచినీటి సరస్సు</strong> ఏది అని అడిగితే <strong>Kolleru / కొల్లేరు</strong>. అక్కడి నీరు, చేపలు, పక్షులు, చుట్టుపక్కల మనుషుల జీవనోపాధి ఒకదానితో ఒకటి ముడిపడి ఉన్నాయి; చేపల వేట గురించి రాస్తే sanctuary నియమాలు, అనుమతులు కూడా ఉంటాయని గుర్తుంచుకోండి. <a href="https://westgodavari.ap.gov.in/fisheries/">AP జిల్లా మత్స్యశాఖ: Kolleru fishing permits</a>. ఎంపికల్లో <strong>Pulicat / పులికాట్</strong> కనిపిస్తే అది సముద్రంతో కలిసే <strong>brackish-water lagoon / ఉప్పు–మంచినీరు కలిసే సరస్సు</strong>; <strong>Chilika / చిలికా</strong> Odishaలోని brackish lagoon; <strong>Loktak / లోక్తక్</strong> Manipurలోని freshwater lake. కాబట్టి “freshwater” ఒక్క మాట ఆధారంగా Loktakను ఎంచుకోకండి—ప్రశ్నలో <strong>Andhra Pradesh</strong> కూడా ఉంది. <a href="https://tirupati.ap.gov.in/tourist-place/pulicat-lake/">AP government: Pulicat</a>; <a href="https://ganjam.odisha.gov.in/en/tourism/tourist-places/chilika-rambha-brackish-water-lagoon">Odisha government: Chilika</a>; <a href="https://manipur.gov.in/wp-content/uploads/2020/03/fire.pdf">Manipur government: Loktak</a>. సరస్సు నీటి విస్తీర్ణం ఋతువులతో మారుతుంది; ఏకైక శాశ్వత hectare సంఖ్యను రట్టుచేయడం కంటే రాష్ట్రం, నీటి స్వభావం, deltaల మధ్య స్థానం అర్థం చేసుకోండి. <a href="https://westgodavari.ap.gov.in/eco-tourism/">AP government: Kolleru</a>; <a href="https://rsis.ramsar.org/ris/1209">Ramsar site information: Kolleru</a>.</p>
+<p>ఇప్పుడు పటాన్ని ఈశాన్య భారతదేశానికి తిప్పండి. <strong>Loktak Lake / లోక్తక్ సరస్సు</strong> Manipurలోని పెద్ద మంచినీటి సరస్సు; రాష్ట్ర ప్రభుత్వ వివరణలో ఈశాన్య భారతంలో అతిపెద్ద freshwater lakeగా ఉంది. అక్కడ <strong>phumdis / ఫుమ్దీలు</strong> అనే మొక్కలు, నేల, సేంద్రియ పదార్థంతో కూడిన తేలే దిబ్బలు కనిపిస్తాయి. దిబ్బ తేలుతోందని సరస్సంతా ఘన నేలగా మారిందని కాదు; నీటి మట్టం, ప్రవాహం, దిబ్బల స్థితి ఒకదానిపై ఒకటి ప్రభావం చూపుతాయి. Manipur సరస్సును APలోని Kolleruతో పోల్చేటప్పుడు రెండూ freshwater అయినా ప్రాంతం, నీరు వచ్చే మార్గం, habitat ఒకటే కాదని గుర్తుంచుకోండి. “లోక్తక్ ఏ రాష్ట్రంలో?” అన్న పాత MCQకి Manipur; “అతిపెద్ద” అనే మాటకు ఈశాన్య భారతం, freshwater అనే పరిమితులు తప్పనిసరి. <a href="https://manipur.gov.in/wp-content/uploads/2020/03/fire.pdf">Manipur ప్రభుత్వం—Loktak స్థానం, phumdis</a>; <a href="https://rsis.ramsar.org/sites/default/files/rsiswp_search/exports/Ramsar-Sites-annotated-summary-India.pdf">Ramsar—Loktak wetland లక్షణాలు</a>.</p>
+<p>ఇప్పుడు AP తీరానికి తిరిగి వచ్చి <strong>Pulicat రెండు రాష్ట్రాల lagoon</strong> అని పటంలో చూడండి. Tirupati జిల్లా అధికారిక పేజీ ప్రకారం అది <strong>Andhra Pradesh–Tamil Nadu</strong> మధ్య విస్తరిస్తుంది. ఒక రాష్ట్ర సరిహద్దు నీటి మీద గీసిన పరిపాలనా రేఖ మాత్రమే; lagoonలో freshwater inflow, tidal exchange, పక్షుల habitat వాటితో ఆగవు. APHC “ఏ పొరుగు రాష్ట్రం?” ప్రశ్నకు Tamil Nadu అన్నాక, Pulicatను Kolleru (APలోని freshwater lake)తో, Chilika (Odisha lagoon)తో ఎందుకు కలపకూడదో చెప్పగలగాలి. <a href="https://tirupati.ap.gov.in/tourist-place/pulicat-lake/">Tirupati district: Pulicat Lake</a>.</p>
+<h3 id="_2">పులికాట్‌కు సముద్రానికి మధ్య శ్రీహరికోట ఎందుకు ఉంది?</h3>
+<p><strong>Sriharikota / శ్రీహరికోట</strong> తీరానికి సమాంతరంగా పొడవుగా ఉన్న <strong>barrier island / సముద్రం–లోపలి సరస్సు మధ్య అడ్డుగా ఉండే ద్వీపం</strong>. పశ్చిమ వైపు Pulicat backwaters, తూర్పున Bay of Bengal—ఈ అమరిక వల్ల సముద్రం, lagoon మధ్య తేడా పటంలో కనిపిస్తుంది. <a href="https://www.shar.gov.in/sdscshar/newAboutus.jsp">ISRO SHAR కేంద్ర వివరణ</a> 1969లో ఇక్కడ rocket-launch station స్థలం ఎంచుకున్నారని, <strong>9 October 1971</strong>న తొలి <strong>Rohini-125 sounding rocket</strong>తో కేంద్రం పనిచేయడం ప్రారంభించిందని చెబుతుంది. 1971లోనే satelliteను orbitలో పెట్టారని అర్థం కాదు: sounding rocket flight, satellite launch రెండు వేరు; <a href="https://www.isro.gov.in/SLV.html">ISRO SLV-3 చరిత్ర</a> తొలి విజయవంతమైన భారత satellite-orbit missionను <strong>18 July 1980</strong>గా చెబుతుంది. ఈ మధ్య తేడా chronologyను అర్థవంతంగా గుర్తుంచుకోవడానికి ఉపయోగపడుతుంది.</p>
+<p><strong>జిల్లా పేరు కాలంతో మారింది.</strong> 2020 APPSC FBO/ABO ప్రశ్న, ISRO పాత English page <strong>SPSR Nellore</strong> అని రాశాయి; ISRO <a href="https://www.shar.gov.in/sdscshar/newAboutus_h.jsp">నవీకరించిన హిందీ పరిచయం</a> <strong>Tirupati district</strong> అని పేర్కొంటుంది. కాబట్టి ఆ పాత PYQలో Nellore అన్నందుకు అప్పటి జవాబు తప్పు అనవద్దు; నేటి appలో current districtను Nelloreగా బోధించవద్దు. ప్రశ్నలోని <em>Sullurpeta–Tada mandals మధ్య island భాగాలు</em> అనే సూక్ష్మ administrative claimను APPSC official key సమర్థించినా, అందుబాటులో ఉన్న ISRO/జిల్లా పరిచయాలు island boundaryని మండలాల వారీగా చూపే cadastral map ఇవ్వలేదు. దాన్ని పట నిర్ధారణలేని అదనపు factగా గుర్తుంచుకోకుండా, ఉపగ్రహ కేంద్రం స్థానం–Pulicat barrier-island భూభాగం–1969/1971 chronologyని ప్రధాన భావనగా చదవాలి.</p>
+<p>Biharలో <strong>Kanwar/Kabar Tal / కన్వర్ లేదా కబర్ తాల్</strong> river meandering, పాత channels, flood-basin depositionకు సంబంధించిన wetland. దాన్ని “ఒక bend నరికిపోయి చేసిన ఒక్క శుద్ధ oxbow lake” అని సులభీకరించడంలో జాగ్రత్త: <a href="https://tourism.bihar.gov.in/content/dam/bihar-tourism/catalogue/ready-reckoner-2.pdf">Bihar Tourism ready reckoner</a> <strong>Burhi Gandak / బూర్హీ గండక్</strong> meandering నుంచి residual oxbow అంటుంది; <a href="https://rsis.ramsar.org/RISapp/files/3122446/documents/IN2436_mgt200516.pdf">Ramsar management plan</a> మరింత విస్తృత <strong>Gandak–Bagmati interchannel floodplain/backwater marsh</strong> ప్రక్రియను వివరిస్తుంది. Archived UPSC questionలో “Gandak meandering formed Kanwar” అని ఉన్నా, <strong>Gandak</strong>, <strong>Burhi Gandak</strong>, చుట్టుపక్కల floodplain అనే పేర్లను కలిపి ఒక ఖచ్చితమైన single-river originగా బోధించవద్దు. ఆ statementకు official original/key తో పాటు wetland authority wording reconcile అయ్యే వరకు appలో scoring hold అవసరం.</p>
+<h3 id="_3">సరస్సు పాతబడటం అంటే నీరు ఏమవుతుంది?</h3>
+<p>సరస్సును నీళ్ల గిన్నెలా కాక, నీరు–మట్టి–మొక్కలు–చేపలు కలిసిన <strong>ecosystem / జీవవ్యవస్థ</strong>లా చూడండి. చుట్టుపక్కల భూమి నుంచి కొద్దికొద్దిగా <strong>nutrients / పోషకాలు</strong> సరస్సులోకి వస్తాయి. పోషకాలు పెరిగితే algae, నీటిమొక్కలు ఎక్కువ పెరగవచ్చు; అవి చనిపోయి కుళ్లే సమయంలో నీటిలోని oxygen తగ్గవచ్చు. చాలాకాలంలో sediment పేరుకుని సరస్సు రూపమూ మారవచ్చు. పోషకాలు పెరుగుతూ సరస్సు మరింత ఉత్పాదక స్థితికి మారే ప్రక్రియ <strong>eutrophication / యూట్రోఫికేషన్</strong>. <a href="https://www.epa.gov/sites/default/files/2018-10/documents/nutrient-criteria-manual-lakes-reservoirs.pdf">US EPA సరస్సుల మార్పు వివరణ</a> సహజంగా నెమ్మదిగా జరిగే మార్పు, మానవ చర్యల వల్ల వేగంగా జరిగే <strong>cultural eutrophication</strong>ను వేరు చేస్తుంది. వ్యవసాయ ఎరువులు లేదా మురుగునీటి పోషకాలు వేగాన్ని పెంచవచ్చు; ప్రతి algal bloomకు ఒకే కారణం నిర్ణయించకండి. అన్ని సరస్సులూ ఒకే వేగంతో ఈ దశలన్నీ దాటి తప్పక నిండిపోతాయని కాదు; నీటి మార్పిడి, nutrient balance, catchment, లోతు ఫలితాన్ని మార్చుతాయి. APలో Kolleru వంటి సరస్సును చర్చించేటప్పుడు feeder streams, చుట్టుపక్కల భూవినియోగం, nutrient inputs, water exchange అన్నీ పరిశీలించాలి—ఈ పాఠం Kolleruలో ఇప్పటి nutrient స్థాయిని కొలిచిందని కాదు.</p>
+<p><strong>పదాల తేడా:</strong> <em>Sedimentation</em> అంటే మట్టి–కణాలు పేరుకుపోవడం; అది సరస్సు మార్పులో ఒక భాగం కావచ్చు కానీ nutrient enrichmentకు మరో పేరు కాదు. <em>Biomagnification</em> అంటే ఆహార గొలుసులో కొన్ని కలుషితాల సాంద్రత పై స్థాయికి పెరగడం; <em>biodegradation</em> అంటే జీవుల చర్యతో పదార్థాలు కుళ్లడం. “Natural aging through nutrient enrichment” అనే ప్రశ్నకు వీటిలో <strong>eutrophication</strong> సరిపోతుంది.</p>
+<hr />
+<h3 id="india-wetland-map">India wetland map: ఒకే పేరును నాలుగు రాష్ట్రాలకు మార్చకండి</h3>
+<p>ఒక wetlandను mapలో పెట్టేటప్పుడు ముందు state, తరువాత దానికి సంబంధించిన నీటి/భూరూప setting గుర్తించండి. <strong>Hokera / హోకేరా</strong> Kashmirలో Srinagar దగ్గరి Jhelum basin wetland—Punjab కాదు. <strong>Renuka / రేణుక</strong> Himachal Pradeshలో lower Himalayan spring-fed wetland. <strong>Rudrasagar / రుద్రసాగర్</strong> Tripuraలో northeast lowland lake. <strong>Sasthamkotta / శాస్తాంకోట్ట</strong> Keralaలోని freshwater lake—Tamil Nadu కాదు. ఈ నాలుగు జతల్లో Renuka–Himachal, Rudrasagar–Tripura మాత్రమే సరైనవి. Ramsar జాబితాలో పేరు ఉన్నంత మాత్రాన ఒక wetland ఎప్పుడూ ఒకే నీటి విస్తీర్ణంలో ఉంటుందని కాదు; ఇక్కడ పరీక్షించేది <strong>స్థానం</strong>, changing area/rank కాదు. APలో Kolleru, Pulicat, Coringa వంటి wetlandsను తరువాత coast/river lessonsలో వేరుగా పోల్చండి. <a href="https://rsis.ramsar.org/sites/default/files/rsiswp_search/exports/Ramsar-Sites-annotated-summary-India.pdf">Ramsar Sites Information Service: India wetlands, states and site descriptions</a>.</p>
+<h3 id="reservoir">ఒకే reservoir పేరు పలుచోట్ల ఉంటే?</h3>
+<p><strong>Aliyar, Isapur, Kangsabati</strong> అనే మూడు పేర్లు ఒకేసారి చూస్తే మొదట ఒకే రాష్ట్రానికి చెందినవని వెతకకండి. <strong>Reservoir / జలాశయం</strong> అంటే నది నీటిని ఆనకట్ట వెనుక నిల్వ చేసిన నీటి భాగం; అది ఒక project పేరు గానీ, నది పేరు గానీ ఉండవచ్చు. Aliyar తమిళనాడులో, Isapur మహారాష్ట్రలో, Kangsabati పశ్చిమ బెంగాల్‌లో ఉన్నాయి. రాష్ట్రాలు వేరైనా మూడింటికీ ఉమ్మడి లక్షణం <strong>నీటి నిల్వ</strong>. ఈ తేడాను అర్థం చేసుకుంటే “మూడు ప్రాంతాలు uranium depositsా, rainforestా, cavesా?” అని ఎంపికలను ఒక్కొక్కటి తొలగించవచ్చు. <a href="https://rsms.cwc.gov.in/admin/storage/bulletins/bulletin-26-02-2026-84.pdf">CWC: 26 February 2026 weekly reservoir report, entries for all three</a>. ఇది మూడు పేర్ల <strong>2026 నాటికి ఉన్న భౌగోళిక గుర్తింపు</strong>; ఆ reportలోని నీటి మట్టం ఆ వారానికే చెందుతుంది, శాశ్వత fact కాదు.</p>
+<p>అయితే <strong>lake / సరస్సు</strong> అనగానే సహజమైనదే అనుకోకండి. తమిళనాడులోని <strong>Kodaikanal Lake / కొడైకెనాల్ సరస్సు</strong> 1863లో మనుషులు ఏర్పరిచిన artificial lake. <strong>Kolleru / కొల్లేరు</strong>, <strong>Nainital / నైనిటాల్</strong>, <strong>Renuka / రేణుక</strong> వంటి పేర్లతో కలిపి ప్రశ్నిస్తే మొదట వాటి <em>formation / ఏర్పడిన విధానం</em> చూడాలి; అందమైన పర్యాటక స్థలమా కాదా అనేది classification కాదు. కొల్లేరు డెల్టాల మధ్య సహజ wetland అని పైన చూశాం; రేణుక Himachalలో spring-fed natural wetland అని కూడా చూశాం. Reservoir ఒక man-made water body అయినా, ప్రతి man-made lakeను ఒకే సాగునీటి dam reservoirగా పిలవకండి—<strong>purpose, formation, name</strong> వేర్వేరుగా పరీక్షించాలి. <a href="https://www.tnurbantree.tn.gov.in/kodaikanal/ta/%E0%AE%95%E0%AE%BE%E0%AE%A3%E0%AE%B5%E0%AF%87%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AE%BF%E0%AE%AF-%E0%AE%87%E0%AE%9F%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%B3%E0%AF%8D/">Kodaikanal Municipality: lake created in 1863</a>; <a href="https://rsis.ramsar.org/ris/1571">Ramsar: Renuka</a>.</p>
+<p>నది–reservoir mapలో పూర్తి పేరు, నది, రాష్ట్రం మూడు కలిపి చదవాలి. <strong>Ghataprabha (Hidkal)</strong> Karnatakaలో; <strong>Gandhi Sagar</strong> Madhya Pradeshలో. <strong>Indira Sagar</strong> అనే చిన్న పేరు సాధారణంగా Narmadaపై Madhya Pradesh పెద్ద reservoirకి వాడతారు. అయితే Central Water Commission పాత project listలో <strong>“Indira Sagar Polavaram”</strong>ను <strong>Andhra Pradesh</strong> projectగా కూడా చూపింది. కాబట్టి “Indira Sagar—Andhra Pradesh” అనే naked pairను సందర్భం లేకుండా నేరుగా false అని నేర్పకండి; ఏ project/riverను ప్రశ్న ఉద్దేశించిందో ఆధారం కావాలి. పాత UPSC నాలుగు-జత ప్రశ్నలో archived “మూడు తప్పు” count ఈ ambiguity వల్ల scoring holdలో ఉంది. <a href="https://cwc.gov.in/sites/default/files/vol-i-compendium-2024.pdf">CWC 2024 reservoir compendium</a>; <a href="https://cwc.gov.in/sites/default/files/annual%20report%202011-12.pdf">CWC 2011–12 annual report: Indira Sagar Polavaram</a>.</p>
+<p>ఆ ప్రశ్నలోని నాలుగో <strong>Maithon / మైథాన్</strong> <strong>Chhattisgarh</strong>లో కాదు; Jharkhandలో Dhanbad దగ్గర <strong>Barakar</strong> నదిపై ఉంది. అలా చూస్తే Ghataprabha–Telangana, Maithon–Chhattisgarh తప్పులు; Gandhi Sagar–Madhya Pradesh సరి; “Indira Sagar–AP”కు పూర్తి project పేరు లేకుండా తీర్పు పెట్టడం ప్రమాదకరం. <a href="https://dharma.cwc.gov.in/dharma/public/uploads/front_upload_file/174860534186541140.pdf">CWC National Register of Specified Dams: Maithon, Jharkhand–Barakar</a>.</p>
+<h2 id="river-valley-project">నీటి నిల్వ నుంచి river-valley project వరకు</h2>
+<p><strong>ఒక river-valley project ఎందుకు ఒక్క dam కంటే పెద్ద ఆలోచన?</strong> Damodar basinలో వరద నియంత్రణ అవసరం మాత్రమే కాదు—నీటిని సాగుకు మళ్లించడం, విద్యుత్తు ఉత్పత్తి, ఆ ప్రాంత అభివృద్ధి వంటి ప్రయోజనాలను కలిపి ఆలోచించారు. అందుకే <strong>Damodar Valley Corporation (DVC) / దామోదర్ లోయ సంస్థ</strong>ను స్వతంత్ర భారతదేశపు తొలి <strong>multipurpose integrated river-valley project</strong>గా కేంద్ర విద్యుత్ మంత్రిత్వ శాఖ పరిచయం చేస్తుంది. MCQలో river అడిగితే <strong>Damodar / దామోదర్</strong>. Project అనేది ఒకే ఆనకట్ట పేరు కాదు; basinలో పలు నిర్మాణాలు, నిర్వహణ లక్ష్యాలు ఉండవచ్చు. ఇదే భావనను APలో Godavari, Krishna ప్రాజెక్టుల వద్ద పోల్చండి; ఆ నదులను Damodarకు ప్రత్యామ్నాయ సమాధానాలుగా తీసుకోకండి. <a href="https://www.powermin.gov.in/ministry/our-organisation/details/damodar-valley-corporation-dvc-gDOyEjMtQWa">Ministry of Power: DVC</a>.</p>
+<h3 id="_4">మూడు ప్రాజెక్టులను పటంలో ఎలా జత చేస్తాం?</h3>
+<p>మనం ఒక dam పేరు విన్న వెంటనే దాని <strong>river / నది</strong>, <strong>site / నిర్మించిన చోటు</strong>, <strong>benefit area / నీరు లేదా విద్యుత్తు ఉపయోగపడే ప్రాంతం</strong> ఒకే చోటు అనుకుంటాం. అవి మూడు వేర్వేరు ప్రశ్నలు. India mapలో మొదట ఒడిశా వైపు మహానదిని, తరువాత ఆంధ్రప్రదేశ్–తెలంగాణ మధ్య కృష్ణాను, చివరగా తూర్పు భారతంలోని దామోదర్ లోయను గుర్తించండి. ఈ క్రమంలో మూడు జతలు సహజంగా గుర్తుంటాయి:</p>
+<div class="table-wrap" role="region" aria-label="పాఠంలోని పట్టిక" tabindex="0"><table>
+<thead>
+<tr>
+<th>Project / ప్రాజెక్టు</th>
+<th>River / నది</th>
+<th>స్థలం గురించి సరిగ్గా చెప్పాల్సింది</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hirakud / హీరాకుడ్</strong></td>
+<td><strong>Mahanadi / మహానది</strong></td>
+<td>Odishaలో Sambalpur దగ్గర dam ఉంది.</td>
+</tr>
+<tr>
+<td><strong>Nagarjuna Sagar / నాగార్జునసాగర్</strong></td>
+<td><strong>Krishna / కృష్ణా</strong></td>
+<td>కృష్ణా నదిపై AP–Telangana సరిహద్దు ప్రాంతంలో ఉంది; 2008లో రెండూ ఉమ్మడి Andhra Pradeshలో భాగాలు.</td>
+</tr>
+<tr>
+<td><strong>Damodar Valley Corporation / దామోదర్ లోయ సంస్థ</strong></td>
+<td><strong>Damodar basin / దామోదర్ పరీవాహక ప్రాంతం</strong></td>
+<td>ఒకే dam కాదు; ప్రస్తుత Jharkhand, West Bengal ప్రాంతాల్లో విస్తరించిన basin-level వ్యవస్థ.</td>
+</tr>
+</tbody>
+</table></div>
+<p>మూడో వరుసలోని తేడా పరీక్షలో ముఖ్యమైనది. <strong>Hirakud</strong> అనే పేరుతో ఒక damను చూపగలం. <strong>DVC</strong> అంటే ఒక సంస్థ, అనేక dams, barrage, canals మరియు ఇతర పనులు కలిసిన river-valley programme. పాత matching questionలో “Damodar Valley—West Bengal” జత సరిపోవచ్చు; కానీ <em>DVC కేవలం West Bengalలోనే ఉంది</em> అని దాని నుంచి తీర్మానించకండి. అలాగే నేటి పటంలో Nagarjuna Sagarను కేవలం ఒక రాష్ట్రం లోపల బిందువుగా వేయకుండా సరిహద్దు, నది, canalsను వేరు చూడండి. <a href="https://sambalpur.odisha.gov.in/en/tourism/tourist-places/hirakud-dam">Odisha Sambalpur administration: Hirakud on Mahanadi</a>; <a href="https://krmb.gov.in/html/project24.html">Krishna River Management Board: Nagarjuna Sagar location</a>; <a href="https://www.powermin.gov.in/ministry/our-organisation/details/damodar-valley-corporation-dvc-gDOyEjMtQWa">Ministry of Power: DVC in Jharkhand and West Bengal</a>.</p>
+<p><strong>2008 Group II Paper III Q15తో అనుసంధానం:</strong> పత్రంలోని ఎంపికలలో Nagarjuna Sagar—Andhra Pradesh, Hirakud—Orissa (ఇప్పటి Odisha), Damodar Valley—West Bengal అనే historical matching ఉంది. అది పై పట ఆలోచనను పరీక్షిస్తుంది; కానీ ఈ స్థానిక పత్రానికి Commission final key ఇంకా ధృవపడలేదు. అందువల్ల పాఠంగా వివరించవచ్చు, scored PYQగా విడుదల చేయరాదు. ఒకే lineలో జతలు కంఠస్థం చేయడం కంటే, river, project type, అప్పటి/ఇప్పటి state boundary మధ్య తేడా వివరించగలగాలి.</p>
+<h2 id="1-flood">1. Flood అంటే కేవలం నీరు ఎక్కువగా రావడం కాదు</h2>
+<p>Flood అనేది నీరు సాధారణంగా ఉండే channel/space నుంచి బయటకు వచ్చి land, settlement, road, field వంటి చోట్ల ప్రభావం చూపే పరిస్థితి. కానీ floodకు ఒక్క cause ఉండదు.</p>
+<div class="table-wrap" role="region" aria-label="పాఠంలోని పట్టిక" tabindex="0"><table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Flood riskలో పాత్ర</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Catchment rainfall</td>
+<td>ఎంత నీరు systemలోకి వచ్చిందో నిర్ణయిస్తుంది</td>
+</tr>
+<tr>
+<td>Rainfall intensity and duration</td>
+<td>short intense rain లేదా long wet spell flowను మార్చవచ్చు</td>
+</tr>
+<tr>
+<td>Tributary inflow</td>
+<td>main river waterను పెంచవచ్చు</td>
+</tr>
+<tr>
+<td>River channel / floodplain condition</td>
+<td>channel ఎంత నీటిని తీసుకుపోగలదో ప్రభావితం చేస్తుంది</td>
+</tr>
+<tr>
+<td>Sediment and encroachment</td>
+<td>water pathను మార్చవచ్చు లేదా capacity తగ్గించవచ్చు</td>
+</tr>
+<tr>
+<td>Reservoir operation</td>
+<td>timing and release context ముఖ్యం</td>
+</tr>
+<tr>
+<td>Tide / storm surge near coast</td>
+<td>lower river and coastal floodingను ప్రభావితం చేయవచ్చు</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>people/houses/roads flood-prone landలో ఉన్నాయా అనేది damageను మార్చుతుంది</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఇది ఎందుకు important? “Heavy rain = flood” అనేది partly true. కానీ good answerలో <strong>heavy rain + catchment + channel + exposure</strong> అనే system ఉంటుంది.</p>
+<hr />
+<h2 id="2-river-flood-urban-waterlogging">2. River flood మరియు urban waterlogging వేరు, కానీ కలిసే అవకాశం ఉంది</h2>
+<div class="table-wrap" role="region" aria-label="పాఠంలోని పట్టిక" tabindex="0"><table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>ప్రధాన story</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Riverine flood</strong></td>
+<td>river channel/floodplain overflow, tributary inflow, upstream rainfall</td>
+</tr>
+<tr>
+<td><strong>Urban waterlogging</strong></td>
+<td>intense local rain, blocked/insufficient drains, built-up surfaces, low-lying streets</td>
+</tr>
+<tr>
+<td><strong>Coastal flooding</strong></td>
+<td>tide, storm surge, waves, low-lying coast, sometimes river discharge</td>
+</tr>
+</tbody>
+</table></div>
+<p>ఒక coastal cityలో ఈ మూడు కలిసి రావచ్చు. అందుకే eventను చూసి “ఇది river flood” లేదా “ఇది rain water” అని తొందరగా label వేయకండి. Rainfall map, river-gauge data, tide/storm information, drainage layout చూడాలి.</p>
+<h3 id="100-year-flood">“100-year flood” అంటే వందేళ్లకు ఒక్కసారేనా?</h3>
+<p>కాదు. <strong>100-year flood</strong> అనే statistical పదం ఇచ్చిన ప్రదేశంలో ఇచ్చిన అంచనా నమూనా ప్రకారం ఒక సంవత్సరంలో ఆ స్థాయి floodను <strong>సమానం చేయడం లేదా మించడం సుమారు 1% probability</strong> అని అర్థం. అది ఒకసారి వచ్చాక 99 సంవత్సరాలు రాదనే calendar హామీ కాదు; వరుస సంవత్సరాల్లోనూ రావచ్చు. Rainfall, land use, river channel, climate మారితే పాత అంచనాలను మళ్లీ పరిశీలించాలి. ఈ భావాన్ని రేపటి forecastతో గానీ, ప్రతి ఇంటికి ఒకే damage probabilityతో గానీ కలపకండి. <a href="https://www.usgs.gov/water-science-school/science/water-qa-we-had-a-100-year-flood-two-years-a-row-how-can-be">USGS: recurrence interval and annual exceedance probability</a>.</p>
+<h3 id="_5">నది పాత వంకనే లోతుగా కోస్తే ఏమి కనిపిస్తుంది?</h3>
+<p>నది పక్కలకు వంకలు తిరుగుతూ వెళ్లే <strong>meander / నదీ వంపు</strong>ను ముందుగా ఊహించండి. తరువాత sea level/base level తగ్గడం, భూమి పైకి లేవడం, లేదా ఇతర కారణంతో నది అడుగువైపు మళ్లీ బలంగా కోయడం మొదలైతే దానిని geomorphologyలో <strong>rejuvenation / మళ్లీ లోతుగా కోయగల శక్తి పెరిగిన దశ</strong> అంటారు. ఇది నదికి వయసు నిజంగా తగ్గిందనే అర్థం కాదు. పాత వంపు ఆకారాన్ని ఉంచుకుంటూనే లోతైన లోయలోకి కోస్తే <strong>incised meander / లోతుగా కోసుకున్న వంపు</strong>. <strong>Entrenched meander</strong> అనేది అలా లోతుగా పాతుకుపోయిన వంపుకు వాడే మరింత నిర్దిష్ట పేరు; రెండు పూర్తిగా వేరు నదులు కాదు. <a href="https://pubs.usgs.gov/pp/0452a/report.pdf">USGS: incised meanders and inherited bends</a>.</p>
+<p>నది పొడవు–ఎత్తు పటంలో ఒక చోట slope ఒక్కసారిగా మారే మెట్టు/మలుపు <strong>knickpoint / నిక్‌పాయింట్</strong>. అది పైవైపు కదులుతూ దిగువ భాగంలో లోతైన కోత మిగల్చవచ్చు. Rejuvenationకు ఇది ఒక clue, కానీ <em>ప్రతి</em> knickpoint వెనుక ఒక్కటే regional uplift ఉండాలని కాదు—rock hardness మార్పు, channel cutoff, dam/other local disturbance కూడా కారణం కావచ్చు. <a href="https://www.usgs.gov/publications/bedrock-gorge-incision-anthropogenic-meander-cutoff">USGS: base-level change, knickpoint and incision</a>.</p>
+<p>దీనికి విరుద్ధంగా <strong>natural levee / సహజ నదీకట్ట</strong> సాధారణంగా వరదలో నది ఒడ్డు దాటిన నీరు వేగం కోల్పోయి మట్టిని ఒడ్డుకు దగ్గరగా పేరబెట్టడంతో పెరుగుతుంది. ఇది ప్రధానంగా <strong>floodplain deposition / వరద మైదానంలో నిక్షేపణ</strong> కథ; rejuvenated river లోతుగా కోసినదానికి ప్రత్యేక గుర్తు కాదు. కాబట్టి పాత నాలుగు-రూపాల ప్రశ్నలో <strong>incised meander, entrenched meander, knickpoint</strong>ను ఎంపిక చేయాలి; natural leveeను కాదు. APలో Krishna–Godavari డెల్టా/వరద మైదానం గురించి చదువుతున్నప్పుడు అక్కడి natural bank depositionను కొండప్రాంత నది లోతుగా కోయడంతో కలపకండి. <a href="https://pubs.usgs.gov/ha/ha730/ch_f/F-text2.html">USGS: natural levee formation by overbank deposition</a>.</p>
+<hr />
+<h2 id="3-floodplain">3. Floodplainను ఎందుకు పూర్తిగా తప్పుగా చూడకూడదు?</h2>
+<p>Floodplain అంటే river పక్కన ఉన్న low, flat land; high-flow periodలో నీరు చేరే అవకాశం ఉంటుంది. ఇది risk zone మాత్రమే కాదు. Long-term deposition వల్ల fertile alluvium ఉండవచ్చు; farming, settlements, wetlands కూడా ఉండవచ్చు.</p>
+<p>కానీ benefit ఉన్న చోట risk ఉండదని కాదు. సరైన planningలో floodplain functionను అర్థం చేసుకుంటారు:</p>
+<ul>
+<li>నీటికి spread అయ్యే room ఇవ్వడం;</li>
+<li>embankment/road/house ఎక్కడ ఉండాలో జాగ్రత్తగా నిర్ణయించడం;</li>
+<li>warning and evacuation routeను ముందే సిద్ధం చేయడం;</li>
+<li>wetland/old drainage channelను పూర్తిగా మూసేయకపోవడం.</li>
+</ul>
+<p><strong>Exam language:</strong> floodplain is a natural part of a river system; vulnerability increases when exposure and unsafe development increase.</p>
+<hr />
+<h2 id="4-delta-soil-water-food-wetland-coast">4. Delta: soil, water, food, wetland, coast — అన్నీ కలిసే చోటు</h2>
+<p>River lower courseలో slope తగ్గి, sediment deposit అయ్యే పరిస్థితుల్లో deltaic landform అభివృద్ధి చెందవచ్చు. Godavari, Krishna lower reachesతో AP delta geography చదివేటప్పుడు ఈ links గుర్తుపెట్టుకోండి:</p>
+<div class="table-wrap" role="region" aria-label="పాఠంలోని పట్టిక" tabindex="0"><table>
+<thead>
+<tr>
+<th>Delta resource</th>
+<th>అదే సమయంలో వచ్చే concern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fertile alluvial soil and irrigation</td>
+<td>river flood / waterlogging risk</td>
+</tr>
+<tr>
+<td>distributaries and canals</td>
+<td>maintenance, tail-end access, water quality</td>
+</tr>
+<tr>
+<td>wetlands and mangroves</td>
+<td>salinity, habitat, cyclone/storm-surge buffering context</td>
+</tr>
+<tr>
+<td>fisheries and aquaculture</td>
+<td>water quality, disease, coastal weather risk</td>
+</tr>
+<tr>
+<td>coastal settlement</td>
+<td>cyclone, surge, erosion and evacuation planning</td>
+</tr>
+</tbody>
+</table></div>
+<p>“Delta = only agriculture” అని రాయడం అసంపూర్ణం. “Delta = only disaster” అని రాయడం కూడా అసంపూర్ణం.</p>
+<hr />
+<h2 id="5-river-water-use-storage-timing">5. River water use: storage మాత్రమే కాదు, timing కూడా</h2>
+<p>Monsoon periodలో నీరు ఎక్కువగా వచ్చినా, సంవత్సరం అంతా demand ఉంటుంది. అందుకే reservoirs, tanks, canals, groundwater recharge, check dams, local water budgeting వంటి tools వాడతారు.</p>
+<p>కానీ water managementను “ఒక పెద్ద project”గా మాత్రమే చూడకండి.</p>
+<p>మనకు తాగడానికి నీరు కావాలి; రైతుకు పంటకు కావాలి; నదిలో చేపలు, ఇతర జీవులు బతకడానికి కూడా ప్రవాహం కావాలి. నీరు తక్కువగా ఉన్నప్పుడు వీటిని ఏ క్రమంలో చూడాలి? <strong>National Water Policy 2012 / జాతీయ జల విధానం 2012</strong> తాగునీరు, పారిశుద్ధ్యం వంటి అవసరాలను ముందుగా, ఆహార భద్రత, పేదల జీవనోపాధి, కనీస పర్యావరణ అవసరాలను అధిక ప్రాధాన్యంతో చూడాలని చెబుతుంది. ఆ తరువాత మిగిలిన నీటిని వృథా కాకుండా, సంరక్షణ–సమర్థ వినియోగం వైపు కేటాయించాలని చెబుతుంది. కాబట్టి పరీక్షలో కనిపించే <strong>“water as an economic good” / నీటికి ఆర్థిక విలువ ఉంది</strong> అనే సంక్షిప్త పదబంధాన్ని “తాగునీరు కూడా డబ్బున్నవారికే” అని అర్థం చేసుకోకండి. అధికారిక 2012 విధానం section 1.3లో నీటిని <em>state public trustలో ఉన్న common community resource</em>గా చూస్తుంది; section 7.4లో ప్రాథమిక అవసరాల తరువాత కేటాయింపు/ధర నిర్ణయంలో economic principlesను సూచిస్తుంది. <a href="https://www.jalshakti-dowr.gov.in/static/uploads/2024/02/2023020993.pdf">Ministry of Jal Shakti: National Water Policy 2012, §§1.3, 7.4</a>; <a href="https://www.pib.gov.in/newsite/PrintRelease.aspx?lang=2&amp;reg=48&amp;relid=107734">Government summary of economic-good shorthand</a>.</p>
+<p>ఇప్పుడు విధానాన్ని నాలుగు పనులుగా గుర్తించండి. <strong>A—సంరక్షణ:</strong> నదులు, వాటి తీరప్రాంతాలు, చెరువులు, సరస్సులను కాపాడాలి; ఆక్రమణ, కలుషిత నీరు అడ్డుకోవాలి (section 8). <strong>B—సామర్థ్యం:</strong> అదే నీటితో అవసరం తీర్చడానికి నీటి లెక్కలు, నీటి ముద్రలు, సాగులో drip/sprinkler వంటి పద్ధతులు పరిశీలించాలి (section 6). <strong>C—ఆర్థిక విలువ:</strong> పై ప్రాధాన్య అవసరాల తరువాత నీటి కేటాయింపులో economic principles వాడాలి (sections 1.3, 7.4). <strong>D—ధర ద్వారా సంరక్షణ:</strong> ధర నిర్ణయం నీటి పొదుపును ప్రోత్సహించాలి; సమాన అందుబాటు, వేర్వేరు అవసరాలకు వేర్వేరు ధరల జాగ్రత్త కూడా ఉండాలి (section 7). అందువల్ల నాలుగు statementsనూ విధానం మద్దతు ఇస్తుంది. APలో చెరువుల పునరుద్ధరణ, Godavari–Krishna basin నీటి లెక్కలు, రైతు చివరి పొలం వరకు నీరు చేరడాన్ని ఈ నాలుగు కోణాల్లో చూడాలి; విధాన వాక్యం ఉందని అన్ని చోట్ల అది పూర్తిగా అమలైంది అనుకోకండి. <a href="https://www.jalshakti-dowr.gov.in/static/uploads/2024/02/2023020993.pdf">Official National Water Policy 2012</a>.</p>
+<div class="table-wrap" role="region" aria-label="పాఠంలోని పట్టిక" tabindex="0"><table>
+<thead>
+<tr>
+<th>Scale</th>
+<th>Useful question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basin scale</td>
+<td>upstream–downstream flows, inter-state coordination, flood forecasting ఎలా ఉన్నాయి?</td>
+</tr>
+<tr>
+<td>Command/canal scale</td>
+<td>water tail-end వరకు చేరుతుందా? losses ఎలా ఉన్నాయి?</td>
+</tr>
+<tr>
+<td>Village scale</td>
+<td>tank, recharge, soil moisture, drinking water, crop demand ఎలా ఉన్నాయి?</td>
+</tr>
+<tr>
+<td>Household/farm scale</td>
+<td>water-efficient use, crop choice, pollution prevention ఎలా ఉన్నాయి?</td>
+</tr>
+</tbody>
+</table></div>
+<p>APWRIMS వంటి state portals rainfall, river gauge, reservoir, tank, groundwater, basin-inflow dataలను వేర్వేరుగా చూపుతాయి. ఈ విడివిడిగా కనిపించే dataని కలిపి చదవడమే water-management thinking.</p>
+<h3 id="_6">రెండు నదులను కలిపే ప్రాజెక్టును బాణంతో చదవండి</h3>
+<p><strong>River-link / నదుల అనుసంధానం</strong> అనే పేరు విన్నప్పుడు “ఏ రెండు నదులు?” అని మాత్రమే ఆగకండి. ఒక కాగితంపై <strong>నీరు ఎక్కడి నుంచి తీసుకుంటారు → dam/canal ద్వారా ఎక్కడికి పంపుతారు → ఏ ప్రాంతానికి ఉపయోగం అని ప్రణాళిక చెబుతోంది?</strong> అనే మూడు బాణాలు గీయండి. ఎగువ, దిగువ ప్రాంతాల నీటి అవసరాలు, పర్యావరణ ప్రవాహం, స్థానిక ప్రజల భూమి/జీవనోపాధి కూడా అంచనాలో ఉండాలి. <em>Project aims to supply water</em> అనేది <em>ప్రాజెక్టు పూర్తయి ప్రతి లక్ష్య ప్రాంతానికి నీరు ఇప్పటికే చేరింది</em> అని కాదు.</p>
+<p>ఉదాహరణ <strong>Ken–Betwa Link / కేన్–బేత్వా అనుసంధానం</strong>. కేంద్ర ప్రభుత్వ 2026 వివరణలో దీని లక్ష్యం <strong>Bundelkhand / బుందేల్‌ఖండ్</strong>—Madhya Pradesh, Uttar Pradesh రాష్ట్రాల్లోని నీటి కొరత ఉన్న ప్రాంతాలు; UP తూర్పు <strong>Purvanchal / పూర్వాంచల్</strong> కాదు. <strong>Daudhan Dam / దౌధన్ ఆనకట్ట</strong> <strong>Ken / కేన్ నదిపై</strong> ఉంటుంది; ప్రణాళికలో <strong>Ken basin → Betwa basin</strong> వైపు link canal ద్వారా నీరు మళ్లింపు. పేరులో రెండు నదులు ఉన్న క్రమాన్ని చదివి <em>Betwa → Ken</em> అని తారుమారు చేయకండి. ఈ రెండు పొరపాట్లు ఉన్న ప్రకటనల ప్రశ్నకు <strong>రెండూ తప్పు</strong>. <a href="https://www.pib.gov.in/PressNoteDetails.aspx?ModuleId=4&amp;NoteId=159679&amp;lang=2&amp;reg=48">Ministry of Jal Shakti/PIB, Ken–Betwa project FAQ, 21 August 2026</a>; <a href="https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1779306&amp;lang=2&amp;reg=48">Union Cabinet's 2021 project approval</a>.</p>
+<p>ప్రాజెక్టు బాణం గీయకముందు కేన్ నది సహజంగా ఎక్కడ ప్రవహిస్తుందో కూడా చూడండి. Madhya Pradeshలోని <strong>Panna Tiger Reserve / పన్నా పులుల సంరక్షణ ప్రాంతం</strong> గుండా <strong>Ken River / కేన్ నది</strong> వెళ్తుంది; జాతీయ పులుల సంరక్షణ సంస్థ అక్కడి లోయలు, అడవులు, జలజీవులకు దీన్ని ముఖ్యమైన నదిగా వర్ణిస్తుంది. అందువల్ల “Pannaలో ఏ నది?” అన్న ప్రశ్నకు Ken; ఎంపికల్లోని Tapti, Chambal, Betwaను ప్రాజెక్టు పేరులో Betwa ఉందన్న కారణంతో reserveలోకి మార్చకండి. ఇప్పుడు ఆనకట్ట లేదా నీటి మళ్లింపు గురించి చర్చ వస్తే పటంలో <strong>నది–సంరక్షణ ప్రాంతం–దిగువ ప్రవాహం–నీటి అవసరం</strong> అన్న నాలుగు చోట్లను చూడాలి; ఒక ప్రయోజనం చెప్పి జీవావరణ ప్రభావాన్ని మాయం చేయకూడదు. <a href="https://ntca.gov.in/assets/uploads/Reports/MEE/MEE_TR_Report_2023.pdf">National Tiger Conservation Authority, Panna evaluation</a>.</p>
+<p>APలో Godavari–Krishna లేదా Krishna–Pennar అనుసంధాన పేర్లు ఎదురైతే కూడా ఇదే బాణం పద్ధతి వాడండి. కానీ <strong>Ken–Betwa ఉత్తర/మధ్య భారత Bundelkhand ప్రాజెక్టు</strong>; దాని damను APలో పెట్టకండి. ప్రాజెక్టు ప్రణాళిక, అనుమతి, నిర్మాణం, నీటి పంపిణీ అనే దశలను తేదీతో విడిగా గుర్తించాలి.</p>
+<p>పెద్ద reservoirకు “ఎంత నీరు నిల్వ?” అనే engineering ప్రశ్నతో పాటు “ఎవరి భూమి మునిగింది, ఎవరు పునరావాసం పొందారు, దిగువ ప్రవాహానికి ఏమైంది?” అనే మానవ-భూగోళ ప్రశ్నలు కూడా ఉంటాయి. <strong>Narmada Bachao Andolan / నర్మదా బచావో ఆందోళన్</strong>ను ఈ నేపథ్యంలో చదవాలి. పెద్ద నర్మదా ప్రాజెక్టుల వల్ల displacement, rehabilitation, పర్యావరణ ప్రభావాలపై చర్చలో <strong>Medha Patkar / మేధా పాట్కర్</strong> ప్రముఖ నాయకురాలు; <strong>Baba Amte / బాబా ఆమ్టే</strong> కూడా ఉద్యమంలో పాల్గొన్నారు. “నాయకత్వం వహించింది ఎవరు?” అన్న ప్రశ్నకు ఒక పేరు అడగవచ్చు; “పాల్గొన్నవారు?” అన్న ప్రశ్నలో ఇద్దరూ వస్తారు. ప్రాజెక్టు లాభం–ఖర్చు చదవడం అంటే ఏ వర్గం దృష్టిని కూడా చెరపకుండా basin-level outcomesను చూడడం. <a href="https://samagra.kite.kerala.gov.in/files/samagra-resource/uploads/tbookscmq/Class_XII/Anthropology/Anthropology_new.pdf">Kerala government Class XII Anthropology textbook</a>; <a href="https://www.nhm.gov.in/pdf/newsletters/english-june_2008.pdf">National Health Mission newsletter on Baba Amte's participation</a>.</p>
+<h3 id="_7">భారతదేశంలో పెద్ద ఆనకట్టలు ఎక్కువగా ఏ రాష్ట్రంలో ఉన్నాయి?</h3>
+<p>ముందు <strong>dam / ఆనకట్ట</strong>, దాని వెనుక ఏర్పడే <strong>reservoir / జలాశయం</strong> వేర్వేరని గుర్తించండి. ప్రతి చిన్న చెరువు కట్టను ప్రభుత్వ <strong>National Register of Large Dams (NRLD)</strong>లోని <em>large/specified dam</em>గా లెక్కించరు. అందువల్ల “అత్యధిక ఆనకట్టలు” అనే ర్యాంకు చెప్పే ముందు <strong>ఏ నిర్వచనం, ఏ రిజిస్టర్, ఏ సంవత్సరం, నిర్మాణం పూర్తయినవేనా లేదా నిర్మాణంలో ఉన్నవీనా?</strong> అని చూడాలి.</p>
+<p><strong>NRLD–2023</strong> ఆధారంగా కేంద్ర జలశక్తి మంత్రిత్వశాఖ ఇచ్చిన రాష్ట్రాల పట్టికలో <strong>Maharashtra / మహారాష్ట్ర</strong>కు <strong>2,333 operational</strong> పెద్ద ఆనకట్టలు, <strong>41 under construction</strong>; కలిపి <strong>2,374</strong>. తరువాతి స్థానం Madhya Pradeshకు 1,354 operational. Andhra Pradeshకు 140 operational, 24 under construction అని అదే పట్టిక చూపిస్తుంది. కాబట్టి ప్రశ్నలోని Uttar Pradesh, Andhra Pradesh, Odisha, Maharashtra ఎంపికలలో <strong>Maharashtra</strong> సరైనది. కానీ ఈ 2023 పట్టికను 2020 ప్రశ్న యొక్క అప్పటి ఖచ్చితమైన సంఖ్యగా చూపించకండి; ఇది ఆ ర్యాంకును తిరిగి పరీక్షించడానికి ఉపయోగించే తరువాతి అధికారిక snapshot. మరో రిజిస్టర్ విడుదలైతే సంఖ్యను మళ్లీ చూడాలి. <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=1989133&amp;lang=2&amp;reg=3">Ministry of Jal Shakti parliamentary answer: NRLD–2023 state table</a>; <a href="https://cwc.gov.in/national-register-large-dams">CWC: National Register of Large Dams</a>.</p>
+<h3 id="-">ప్రాజెక్టు పేరులోని నదే నీటి మూలమా? మూడు పట-ఉదాహరణలు</h3>
+<p>Project questions చదివేటప్పుడు ఒకేసారి నాలుగు వేరు ప్రశ్నలు అడగండి: <strong>project ఏ రాష్ట్రంలో ఉంది? ఏ నది/జలాశయం నుంచి నీరు తీసుకుంటుంది? ఆ నీరు ఏ basinలో ఉంది? దిగువన ఎవరు ఆధారపడుతున్నారు?</strong> పేరు చూసి సమాధానం ఊహిస్తే తప్పు కావచ్చు.</p>
+<p><strong>Kukadi Project / కుకాడి ప్రాజెక్టు:</strong> భారత పటంలో దీన్ని <strong>Maharashtra / మహారాష్ట్ర</strong>లో పెట్టాలి. మహారాష్ట్ర జలవనరుల నియంత్రణ సంస్థ project registerలో Kukadiని Pune ప్రాంతంలో చూపిస్తుంది; Maharashtra అధికారిక gazetteలో Kukadi–Dimbhe భాగాన్ని కూడా చూపిస్తుంది. ఒకే projectకు dam, canals, command area అనేక చోట్ల ఉండవచ్చు; కాబట్టి “ఎక్కడ ఉంది?” అంటే ఒకే బిందువు కంటే state–basin–project systemగా చదవాలి. పాత Group 2 ప్రశ్న అడిగింది రాష్ట్రం; సమాధానం Maharashtra. <a href="https://mwrra.maharashtra.gov.in/en/project-clearance-register/">Maharashtra Water Resources Regulatory Authority: Kukadi project register</a>; <a href="https://maharashtra.gov.in/Upload/PDF/Kukadi_Project_Dimbhe_Dam_04_10_2023.pdf">Maharashtra gazette: Kukadi–Dimbhe project</a>.</p>
+<p><strong>Babhali/Babli Barrage / బాభ్లీ బ్యారేజీ:</strong> Godavari ఎగువలో Maharashtra నిర్మాణం, దిగువన <strong>Sriram Sagar / శ్రీరాంసాగర్ (Pochampad)</strong> జలాశయం—ఈ upstream–downstream సంబంధమే పరీక్ష ప్రశ్న వెనుక ఉంది. ఎగువన నీరు నిల్వ/మళ్లింపు జరిగితే దిగువకు వచ్చే ప్రవాహంపై ప్రభావం ఉండవచ్చని అప్పటి ఉమ్మడి Andhra Pradesh అభ్యంతరం వ్యక్తం చేసింది. 2012 కేంద్ర జలవనరుల శాఖ ప్రకటన దీన్ని inter-state disputeగా నమోదు చేసింది; Supreme Court పత్రాల్లోనూ SRSP/Pochampad సంబంధం ఉంది. కాబట్టి historical bank ఎంపిక Sriram Sagar. అయితే “ప్రతి ఏడాది ఖచ్చితంగా ఇంత నీరు తగ్గింది” అని ఆ ప్రశ్న ఒక్కదానితో నిరూపించలేం. పాత <strong>Andhra Pradesh</strong> అని ఉన్న sourceను నేటి విభజన తరువాతి రాష్ట్ర పటంతో కలపకండి. <a href="https://www.pib.gov.in/newsite/PrintRelease.aspx?lang=2&amp;reg=48&amp;relid=87087">Ministry of Water Resources/PIB, 2012: Babhali–Sriram Sagar concern</a>; <a href="https://cdnbbsr.s3waas.gov.in/s3ec0490f1f4972d133619a60c30f3559e/documents/supremecourtreport/2013_v2_pi.pdf">Supreme Court case record, 2013</a>.</p>
+<p><strong>Rajiv Bhima Lift Irrigation Scheme / రాజీవ్ భీమా ఎత్తిపోతల పథకం:</strong> పేరులో <em>Bhima</em> ఉందని నీటిని Bhima నది నుంచే ఎత్తుతారని అనుకోకండి. Krishna River Management Board (KRMB) ప్రాజెక్టు వివరణలో <strong>Krishna water / కృష్ణా నది నీరు</strong>ను Jurala ప్రాంతం సహా రెండు చోట్ల lift చేసే పథకంగా చెప్పింది. <strong>Lift irrigation / ఎత్తిపోతల సాగు</strong> అంటే నీటిని పంపులతో పైభాగంలోని పొలాలకు ఎత్తి అందించడం; దానికి energy, maintenance, నీరు అందే సమయం అవసరం. పాత Group 2 ప్రశ్నలో river సమాధానం Krishna. ఆ కాలపు ఉమ్మడి AP project recordలోని Mahabubnagar ప్రాంతం నేటి Telanganaలో ఉంది; project name, source river, present state మూడు వేరు విషయాలు. <a href="https://krmb.gov.in/html/project3.html">KRMB: Rajiv Bhima scheme and Krishna source</a>; <a href="https://krmb.gov.in/krmb/projects">KRMB: present project grouping</a>.</p>
+<p>ఈ మూడు ఉదాహరణల్లోనూ ఒకే పరీక్షా పద్ధతి పనిచేస్తుంది: <strong>పేరును కాక, పటంలో నీరు నిజంగా ఎక్కడి నుంచి ఎక్కడికి వెళ్తుందో అనుసరించండి.</strong></p>
+<hr />
+<h2 id="-_1">పటంలో నది చివరను ఎలా చదవాలి? — ఒక చిన్న ప్రపంచ-పటం సాధన</h2>
+<p>భారత నదులను చదివేటప్పుడు మనం పుట్టుక → ప్రవాహ దిశ → ఉపనదులు → <strong>mouth / నది సముద్రంలో లేదా సరస్సులో కలిసే చోటు</strong> అని వెళ్తాం. అదే క్రమం ప్రపంచ పటానికీ వర్తిస్తుంది. Mekong ఆగ్నేయాసియా నుంచి వియత్నాం డెల్టా మీదుగా <strong>South China Sea</strong>లో కలుస్తుంది—అండమాన్ సముద్రంలో కాదు. Thames లండన్ వైపు తూర్పుగా వెళ్లి <strong>North Sea</strong>లో కలుస్తుంది—Irish Seaలో కాదు. Volga లోపలికి ప్రవహించి <strong>Caspian Sea</strong>లో ముగుస్తుంది; Caspianను సముద్రం అని పిలిచినా అది భూభాగం చుట్టుముట్టిన జలాశయం. Zambezi ఆఫ్రికా తూర్పు తీరంలోని మొజాంబిక్ ద్వారా <strong>Indian Ocean</strong>లో కలుస్తుంది. ఈ నాలుగు పేర్లు Group 2 భారత/AP నదులకు బదులు కాదు; దిక్కు, తీరం, drainage basinలను పటంలో చదివే పద్ధతికి చిన్న extension. <a href="https://www.mrcmekong.org/hydrometeorological-monitoring/">Mekong River Commission: South China Sea</a>; <a href="https://publications.naturalengland.org.uk/publication/4531632073605120">UK Natural England: Thames estuary and North Sea</a>; <a href="https://unece.org/fileadmin/DAM/env/water/blanks/assessment/caspian.pdf">UNECE: Caspian drainage basin and Volga</a>; <a href="https://www.zambezira.org/node/16">Zambezi River Authority: Indian Ocean mouth</a>.</p>
+<h2 id="_8">నగరం–నది జత: పటంపై నదిని అనుసరించండి</h2>
+<p>Maharashtraలోని <strong>Pandharpur</strong> దగ్గర <strong>Bhima River / భీమా</strong> వంపు చంద్రునిలా కనిపించడంతో ఆ ప్రవాహాన్ని స్థానికంగా <strong>Chandrabhaga / చంద్రభాగా</strong> అంటారు. Tamil Naduలో <strong>Tiruchirappalli / తిరుచిరాపల్లి</strong> <strong>Kaveri/Cauvery / కావేరి</strong> ఒడ్డున ఉంది; అక్కడి దగ్గర Kaveri–Kollidam శాఖల వ్యవస్థను పటంలో చూడండి. Karnatakaలోని <strong>Hampi / హంపి</strong> UNESCO వివరించినట్టు <strong>Tungabhadra / తుంగభద్ర</strong> ఒడ్డున ఉంది, <strong>Malaprabha / మలప్రభ</strong> మీద కాదు. ఒకే నదికి స్థానిక పేరు ఉండటం, రెండు వేర్వేరు నదులను కలపడం ఒకటి కాదు. APలో కూడా రాజమండ్రి–గోదావరి, విజయవాడ–కృష్ణా జతలను అదే map logicతో చదవండి. <a href="https://sdma.maharashtra.gov.in/en/realtime-response-rescue-activity/">Maharashtra SDMA: Pandharpur Bhima/Chandrabhaga</a>; <a href="https://tiruchirappalli.nic.in/departments/agriculture/">Tamil Nadu Tiruchirappalli district: Cauvery</a>; <a href="https://whc.unesco.org/en/list/241">UNESCO Hampi: Tungabhadra</a>.</p>
+<h2 id="_9">ఒక సరస్సు చిన్నదైతే “వర్షం లేదు” ఒక్కటే కారణమా?</h2>
+<p>నదులు, సరస్సులు ఒకే <strong>water balance / నీటి రాక–పోక లెక్క</strong>లో ఉంటాయి. సరస్సుకు వర్షం నేరుగా పడవచ్చు, నదులు నీరు తెచ్చవచ్చు; మరోవైపు నీరు ఆవిరవుతుంది, భూమిలోకి ఇంకవచ్చు, బయటకు వెళ్లవచ్చు, మనం సాగు/ఇతర పనులకు తీసుకోవచ్చు. ఏళ్ల తరబడి <strong>రాక కంటే పోక ఎక్కువ</strong> అయితే నీటి మట్టం, ఉపరితల విస్తీర్ణం తగ్గవచ్చు. ఒక satellite imageలో చిన్నగా కనబడితేనే ఒక్క కారణాన్ని ప్రకటించకుండా upstream water use, rainfall, connecting channels, season అన్నీ చూడాలి.</p>
+<p><strong>Aral Sea / అరల్ సముద్రం</strong> పేరులో “sea” ఉన్నా మధ్య ఆసియాలో భూమి మధ్య చిక్కుకున్న పెద్ద inland water body. దానికి వచ్చే Amu Darya, Syr Darya నదుల నీటిని సాగుకు భారీగా మళ్లించడంతో 1960ల నుంచి అది తీవ్రంగా కుంచించుకుంది. పాత UPSC ప్రశ్నలో Aral, Black Sea, Lake Baikalలో <em>మానవ చర్యల వల్ల విపరీతంగా కుంచించుకున్నది</em> Aral మాత్రమే. ఇది Black Sea లేదా Baikalకు సమస్యలే లేవని తీర్పు కాదు; అడిగిన చారిత్రక విస్తీర్ణ మార్పుతో వాటిని సమానం చేయకూడదు. <a href="https://earthobservatory.nasa.gov/images/146487/a-dusty-day-over-the-aral-sea">NASA Earth Observatory: Aral Sea and river diversion</a>; <a href="https://earthobservatory.nasa.gov/images/152887/dunes-and-desert-replace-the-aral-sea">NASA: exposed Aral seabed</a>.</p>
+<p>ఇప్పుడు పశ్చిమ ఆఫ్రికాలో <strong>Mali / మాలీ</strong> దేశంలోని <strong>Lake Faguibine / ఫాగుబైన్ సరస్సు</strong>ను చూడండి. ఇది Niger River వరద నీరు channels ద్వారా చేరినప్పుడు నిండే lake system; స్థానిక వర్షమే దీని ఏకైక ఆధారం కాదు. తీవ్రమైన drought తర్వాత channelsలో ఇసుక/అడ్డంకులు, upstream నీటి వినియోగం కూడా నింపబడటాన్ని కష్టతరం చేశాయి. అందుకే “ఎండిపోయి ఎడారిలా మారిన పశ్చిమ ఆఫ్రికా సరస్సు” అనే పాత ప్రశ్న Faguibineను సూచిస్తుంది. UNEP ప్రకారం గతంలో పూర్తిగా ఎండిపోయిన సందర్భాలూ ఉన్నాయి; కాబట్టి <strong>శాశ్వతంగా ఒక చుక్క నీరు కూడా రాదు</strong> అనే అతిశయ వాక్యం వద్దు. <a href="https://www.unep.org/resources/emerging-issues/saving-lake-faguibine">UNEP: Lake Faguibine water system</a>; <a href="https://www.unep.org/news-and-stories/story/benefits-galore-if-malis-lake-faguibine-system-were-revived">UNEP: drought, silted channels and upstream uses</a>.</p>
+<p>భారతదేశం/APలోనూ సరస్సు లేదా tank నీటి మట్టం తగ్గితే ఇదే ప్రశ్నలు అడగాలి: వర్షం ఏ ఏడాది ఎంత, catchmentలో runoff ఎంత, feeder కాలువ తెరిచి ఉందా, upstream withdrawals ఎంత, ఆవిరీకరణ ఎంత? కానీ Aral, Faguibine సంఘటనలను ఏ AP సరస్సుకు నేరుగా అతికించకండి. స్థలం మారితే ఆధారాలు, కారణాల వాటా మారుతాయి.</p>
+<h2 id="6-appsc-map-practice-line">6. APPSC map practice: lineని కథగా మార్చండి</h2>
+<p>Blank India/AP mapలో practice చేయడానికి ఈ order వాడండి.</p>
+<h3 id="india-map">India map</h3>
+<ol>
+<li>Himalayas, Northern Plains, Peninsular Plateauని lightly mark చేయండి.</li>
+<li>Indus, Ganga, Brahmaputra broad systemsను mark చేయండి.</li>
+<li>Mahanadi, Godavari, Krishna, Kaveri, Pennarను east-flowing groupగా place చేయండి.</li>
+<li>Narmada, Tapiని west-flowing special systemsగా mark చేయండి.</li>
+<li>Bay of Bengal / Arabian Sea outletను arrowతో show చేయండి.</li>
+</ol>
+<h3 id="andhra-pradesh-map">Andhra Pradesh map</h3>
+<ol>
+<li>Bay of Bengal coastను place చేయండి.</li>
+<li>Godavari–Krishna lower reaches/delta regionsను broad dots/labelsతో mark చేయండి; exact district boundary గీయాల్సిన అవసరం లేదు.</li>
+<li>Penna/Pennar, Vamsadhara, Nagavaliను broad north/south/coast contextలో place చేయండి.</li>
+<li>Eastern Ghats/local upland ideaను lightly add చేయండి.</li>
+<li>ప్రతి riverకు ఒక story word జత చేయండి: <strong>basin / delta / floodplain / coastal outlet / local irrigation</strong>.</li>
+</ol>
+<p>Map practiceలో first attempt uglyగా ఉండటం normal. ముందు correct relative position; తరువాత neatness.</p>
+<hr />
+<h2 id="7-ap-flood-question-answer-structure">7. ఒక AP flood questionకు answer structure</h2>
+<p><strong>Question:</strong> “Andhra Pradeshలో flood riskను river-basin approachతో వివరించండి.”</p>
+<p><strong>Answer skeleton:</strong></p>
+<ol>
+<li>Flood risk is not rainfall alone; catchment, tributaries, reservoir operations, channel/floodplain condition and exposure matter.</li>
+<li>Godavari, Krishna, Penna, Vamsadhara, Nagavali వంటి systemsకు basin/reach-specific monitoring అవసరం.</li>
+<li>Delta/coastal areasలో river discharge, local rainfall, tide/storm-surge interactionను కూడా చూడాలి.</li>
+<li>River gauge, forecast, warning, floodplain planning, tank/drain maintenance, evacuation and community awareness కలిసి riskను తగ్గిస్తాయి.</li>
+</ol>
+<p>ఈ structureని ఏ river పేరు అడిగినా, map/contextను బట్టి adapt చేయవచ్చు.</p>
+<hr />
+<h2 id="teacher-check">Teacher check</h2>
+<p><strong>Statement:</strong> “Floodకు solution dam మాత్రమే.”</p>
+<p><strong>Correction:</strong> Dam/reservoir ఒక tool. Flood forecasting, catchment management, drainage, wetland/floodplain protection, warning, evacuation, safe settlement planning, local response కూడా అవసరం.</p>
+<p><strong>Statement:</strong> “Deltaలో fertile soil ఉంది కాబట్టి flood problem ఉండదు.”</p>
+<p><strong>Correction:</strong> Fertility మరియు flood exposure రెండూ ఒకే delta systemలో ఉండవచ్చు.</p>
+<hr />
+<h2 id="unit-6-revision">Unit 6: ఒక నిమిషం revision</h2>
+<ul>
+<li>River basin = common outletకి drain అయ్యే system; district boundary కాదు.</li>
+<li>Himalayan and Peninsular systemsను source, slope, tributaries, flow and lower-course behaviourతో పోల్చాలి.</li>
+<li>Godavari, Krishna, Penna, Vamsadhara, Nagavali AP drainage కథలో వేర్వేరు scalesలో ముఖ్యము.</li>
+<li>Delta, floodplain, estuary, irrigation, wetland అన్నీ linked processes.</li>
+<li>Flood riskకు hazard, exposure, vulnerability కలిసి కారణమవుతాయి; ఇది సంఖ్యలను కలిపే arithmetic formula కాదు. River flow ఒక్కటే నష్టాన్ని నిర్ణయించదు.</li>
+<li>Mapలో direction, basin, tributary, outlet, delta/floodplain connectionను కలిసి చదవాలి.</li>
+</ul>
+<h2 id="source-note">Source note</h2>
+<p>AP river-gauge, basin-inflow, reservoir, tank and groundwater information context was checked against <a href="https://apwrims.ap.gov.in/">APWRIMS</a>. River-specific possible-inundation planning layers were checked against <a href="https://apsac.ap.gov.in/?page_id=1075">APSAC water-resources services</a>. These are operational systems; displayed values and alerts are time-specific and not copied into the lesson as permanent figures.</p>
+    </article>
+    <footer class="endnote"><a class="back" href="#top">↑ పాఠం మొదటికి</a><p>పాఠంలోని తేదీతో కూడిన గణాంకాలు ఆ తేదీకి మాత్రమే వర్తిస్తాయి. PYQ scoring statusను appలో ప్రశ్న పక్కనే విడిగా చూపాలి.</p></footer>
+  </main>
+</body>
+</html>

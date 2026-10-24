@@ -68,6 +68,9 @@ def create_app(config_class: type = Config) -> Flask:
     from .routes.science import bp as science_bp
     app.register_blueprint(science_bp)
 
+    from .routes.geography import bp as geography_bp
+    app.register_blueprint(geography_bp)
+
     from .services import qdisplay
     app.jinja_env.globals.update(bi_kind=qdisplay.bi_kind, option_items=qdisplay.option_items, option_item=qdisplay.option_item)
 

@@ -1,0 +1,20 @@
+{% extends "ds/base.html" %}
+{% import "ds/_c.html" as c %}
+{% set nav_active = 'learn' %}
+{% block title %}భూగోళశాస్త్రం · Geography{% endblock %}
+{% block topbar %}<h1>భూగోళశాస్త్రం · Geography</h1>{% endblock %}
+{% block content %}
+<nav><a href="{{ url_for('learn.hub') }}">అధ్యయనం · Learn</a>{% if unit %} · <a href="{{ url_for('geography.index') }}">అన్ని యూనిట్లు · All units</a>{% endif %}</nav>
+<p>APPSC Group 2 · 16 యూనిట్లు · 83 పాఠాలు</p>
+{% if unit %}
+<h2>{{ unit.title }}</h2>
+<p>{{ unit.lessons|length }} పాఠాలు · Chapters</p>
+{% for lesson in unit.lessons %}
+<a class="card" href="{{ url_for('geography.lesson', lesson_id=lesson.id) }}" data-geography-lesson="{{ lesson.id }}"><h3>{{ lesson.title }}</h3><span class="small muted">పాఠం {{ lesson.id }}</span></a>
+{% endfor %}
+{% else %}
+{% for u in catalogue.units %}
+<a class="card" href="{{ url_for('geography.unit', unit_id=u.id) }}" data-geography-unit="{{ u.id }}"><h2>{{ u.title }}</h2><span class="small muted">{{ u.lessons|length }} పాఠాలు · Chapters</span></a>
+{% endfor %}
+{% endif %}
+{% endblock %}
