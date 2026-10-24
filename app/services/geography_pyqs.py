@@ -3,11 +3,12 @@ from functools import lru_cache
 from pathlib import Path
 from urllib.parse import urlsplit
 import html
+import hashlib
 import json
 import re
 import markdown
 import bleach
-from flask import current_app
+from flask import current_app, g, has_request_context, request
 
 
 @lru_cache(maxsize=4)
@@ -23,9 +24,92 @@ def _read(path, modified):
     return records
 
 
+@lru_cache(maxsize=4)
+def _read_reviews(path, modified, expected):
+    raw = Path(path).read_bytes()
+    if hashlib.sha256(raw).hexdigest() != expected:
+        return {}
+    data = json.loads(raw)
+    if data.get("format") != "geography-hold-review-v1" or len(data.get("reviews", [])) != 244:
+        return {}
+    return {item["id"]: item for item in data["reviews"]}
+
+
+@lru_cache(maxsize=4)
+def _review_pin(path, modified):
+    return json.loads(Path(path).read_text(encoding="utf-8")).get("review_payload_sha256")
+
+
+def _load_reviews():
+    root = Path(current_app.root_path).parent / "content/geography"
+    try:
+        manifest = root / "release_manifest.json"
+        expected = _review_pin(str(manifest), manifest.stat().st_mtime_ns)
+        path = root / "reviews.json"
+        return _read_reviews(str(path), path.stat().st_mtime_ns, expected)
+    except (OSError, ValueError, KeyError):
+        return {}
+
+
+def _reviews():
+    if not has_request_context():
+        return _load_reviews()
+    # Reuse the pinned release within one request, while rechecking it on the next request.
+    if getattr(g, "_geography_review_environ", None) is not request.environ:
+        g._geography_review_data = _load_reviews()
+        g._geography_review_environ = request.environ
+    return g._geography_review_data
+
+@lru_cache(maxsize=8)
+def _asset_hash(path, modified, size):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def approved_review(record):
+    source = record["source"]
+    review = _reviews().get(source["id"])
+    if not review or review.get("status") != "cleared":
+        return None
+    raw = json.dumps(source, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
+    if hashlib.sha256(raw).hexdigest() != review.get("source_sha256"):
+        return None
+    accepted = review.get("accepted_options")
+    if not isinstance(accepted, list) or not accepted or any(type(v) is not int or v not in (1, 2, 3, 4) for v in accepted):
+        return None
+    if len(options(record)) != 4 or source.get("answer_status") != "official_final_key":
+        return None
+    evidence = {e.get("kind"): e for e in review.get("evidence", [])}
+    for kind, field in (("original_paper", "source_url"), ("official_final_key", "official_key_url")):
+        item = evidence.get(kind, {})
+        if item.get("url") != source.get(field) or not re.fullmatch(r"[0-9a-f]{64}", item.get("sha256", "")) or not item.get("pages"):
+            return None
+    visual = review.get("required_visual", {})
+    try:
+        static = Path(current_app.static_folder).resolve()
+        path = (static / visual["path"]).resolve()
+        if not path.is_relative_to(static):
+            return None
+        stat = path.stat()
+        if _asset_hash(str(path), stat.st_mtime_ns, stat.st_size) != visual.get("sha256"):
+            return None
+    except (OSError, KeyError):
+        return None
+    return review
+
+
 def records():
     path = Path(current_app.root_path).parent / "content/geography/pyqs.json"
-    return _read(str(path), path.stat().st_mtime_ns)
+    baseline = _read(str(path), path.stat().st_mtime_ns)
+    result = []
+    reviews = _reviews()
+    for record in baseline:
+        item = dict(record)
+        item["baseline_must_disable_scoring"] = record["must_disable_scoring"]
+        item["review"] = reviews.get(record["source"]["id"])
+        if record["must_disable_scoring"] and approved_review(record):
+            item["must_disable_scoring"] = False
+        result.append(item)
+    return result
 
 
 def question(question_id):
@@ -55,6 +139,12 @@ def options(record):
 def accepted_options(record):
     """Use explicit option numbers only; conflicting or incomplete keys fail closed."""
     source = record["source"]
+    reviewed = approved_review(record)
+    if reviewed:
+        return tuple(reviewed["accepted_options"])
+    # A historical hold is lifted only while its pinned review and required visual validate.
+    if record.get("baseline_must_disable_scoring") is True:
+        return ()
     if (record.get("must_disable_scoring") is not False
             or source.get("practice_scorable") is not True
             or source.get("editorial_quarantine") is not False
@@ -107,6 +197,9 @@ def display(record):
     match = re.search(r"\*\*Explanation:\*\*\s*(.*?)(?=\n\*\*|\n---|\Z)", source.get("record_markdown") or "", re.S)
     if match:
         explanation = match[1].strip()
+    reviewed = approved_review(record)
+    if reviewed:
+        explanation = reviewed["explanation_en"] + "\n\n" + reviewed["explanation_te"]
     links = []
     for key, label in (("source_url", "Original paper / source"), ("official_key_url", "Answer key source")):
         url = source.get(key)
@@ -119,7 +212,7 @@ def display(record):
             "stem_te": rich(source.get("question_te")) if not solved_te else "",
             "study_te": rich(source.get("question_te")) if solved_te else "",
             "explanation": rich(explanation), "links": links,
-            "scorable": bool(accepted_options(record))}
+            "scorable": bool(accepted_options(record)), "review": reviewed}
 
 
 def filtered(unit=None, lesson=None, exam=None, year=None, mode=None, search=None):

@@ -7,6 +7,11 @@
 <div class="card" data-geography-pyq="{{ q.source.id }}" data-scorable="{{ 'true' if q.scorable else 'false' }}">
 <p class="small muted">{{ q.source.commission }} · {{ q.source.exam }} · {{ q.source.year }}<br>{{ q.source.paper }}{% if q.source.series %} · Series {{ q.source.series }}{% endif %} · Q{{ q.source.question_number }}<br>{{ q.source.id }}</p>
 {% if not q.scorable %}<p role="status" class="tag off" data-scoring-hold>సమీక్ష కోసం మాత్రమే — మార్కులు లేవు · Unscored study question</p>{% endif %}
+{% if q.review %}
+<figure data-reviewed-chart class="pyq-text" style="margin:12px 0"><figcaption>{{ q.review.required_visual.title }}</figcaption><a href="{{ url_for('static', filename=q.review.required_visual.path) }}" target="_blank" rel="noopener"><img style="width:100%;height:auto" src="{{ url_for('static', filename=q.review.required_visual.path) }}" alt="Original APPSC shared bean-growth chart, paper page 37"></a></figure>
+<table aria-label="Bean growth chart data" style="width:100%;border-collapse:collapse"><thead><tr><th>ఎరువు · Treatment</th><th>పెరుగుదల · cm</th></tr></thead><tbody>{% for row in q.review.required_visual.rows %}<tr><td>{{ row.treatment_te }} · {{ row.treatment_en }}</td><td>{{ row.cm }}</td></tr>{% endfor %}</tbody></table>
+<p class="small">మూల పటం, తుది కీ ధృవీకరించబడ్డాయి · Original chart and final key verified.</p>
+{% endif %}
 <div class="pyq-text" lang="en">{{ q.stem_en|safe }}</div>{% if q.stem_te %}<div class="pyq-text" lang="te">{{ q.stem_te|safe }}</div>{% endif %}
 </div>
 <form method="post" action="{{ url_for('geography.pyq_answer', question_id=q.source.id, **filters) }}">
@@ -20,6 +25,7 @@
 {% if q.record.must_disable_scoring %}<p>ఈ సమాధానం సమీక్షలో ఉంది; దీన్ని నిర్ధారిత కీగా భావించవద్దు · The stored answer is under review.</p>{% for reason in q.record.prohibitions %}<p class="small pyq-source">{{ reason }}</p>{% endfor %}{% endif %}
 {% if q.explanation %}<div class="pyq-text">{{ q.explanation|safe }}</div>{% endif %}{% if q.study_te %}<div class="pyq-text" lang="te">{{ q.study_te|safe }}</div>{% endif %}
 {% if q.source.historical_note %}<p class="pyq-source">{{ q.source.historical_note }}</p>{% endif %}{% if q.source.editorial_note %}<p class="pyq-source">{{ q.source.editorial_note }}</p>{% endif %}
+{% if q.review %}<p>{{ q.review.decision_te }} {{ q.review.decision_en }}</p>{% for item in q.review.evidence %}<p><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.kind }} · Series {{ item.series }} · pages {{ item.pages|join(', ') }}</a>{% if item.image %} · <a href="{{ url_for('static', filename=item.image) }}">కీ పుట · Key page</a>{% endif %}</p>{% endfor %}{% endif %}
 {% for link in q.links %}<p><a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a></p>{% endfor %}
 </section>{% endif %}
 <section class="card"><h2>సంబంధిత పూర్తి పాఠాలు · Full chapter links</h2>{% for route in q.record.routes %}<p><a data-chapter-link href="{{ url_for('geography.lesson', lesson_id=route.lesson_id) if route.lesson_id else url_for('static', filename='textbooks/geography/lessons/' + route.file) }}">{{ route.title }}</a>{% if not route.lesson_id %}<span class="small muted"> · అనుబంధం · Supporting reference</span>{% endif %}</p>{% endfor %}</section>

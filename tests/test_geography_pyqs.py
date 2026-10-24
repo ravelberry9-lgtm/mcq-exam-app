@@ -19,14 +19,15 @@ class Links(HTMLParser):
 def test_exact_source_preservation_exclusions_and_holds(app):
     release=service.records()
     assert len(release)==976
-    assert service.summary()=={'total':976,'held':244,'scorable':732}
+    assert service.summary()=={'total':976,'held':240,'scorable':736}
     assert {r['source']['id'] for r in release}==set(MANIFEST['included_source_hashes'])
     assert len(MANIFEST['excluded_archive_ids'])==114
     assert not set(MANIFEST['excluded_archive_ids']) & set(MANIFEST['included_source_hashes'])
     for r in release:
         data=json.dumps(r['source'],ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()
         assert hashlib.sha256(data).hexdigest()==MANIFEST['included_source_hashes'][r['source']['id']]
-        assert r['must_disable_scoring']==(r['source']['id'] in MANIFEST['mandatory_held_ids'])
+        assert r['baseline_must_disable_scoring']==(r['source']['id'] in MANIFEST['mandatory_held_ids'])
+        assert r['must_disable_scoring']==(r['source']['id'] in MANIFEST['mandatory_held_ids'] and r['source']['id'] not in MANIFEST['cleared_ids'])
         assert r['routes']
 
 
@@ -86,9 +87,9 @@ def test_missing_conflicting_or_untrusted_keys_fail_closed(app):
 
 def test_filters_pagination_and_archived_records_are_unreachable(client):
     page=client.get('/learn/geography/pyqs')
-    assert page.status_code==200 and b'data-pyq-count="976"' in page.data and b'data-pyq-held="244"' in page.data
+    assert page.status_code==200 and b'data-pyq-count="976"' in page.data and b'data-pyq-held="240"' in page.data
     assert page.data.count(b'data-geography-pyq=')==20
-    held=service.filtered(mode='held');assert len(held)==244
+    held=service.filtered(mode='held');assert len(held)==240
     for lesson in ('01','44B','68'):
         rows=service.filtered(lesson=lesson)
         assert all(any(x['lesson_id']==lesson for x in r['routes']) for r in rows)
@@ -131,3 +132,36 @@ def test_chapter_practice_keeps_its_filter_for_answers_and_navigation(client):
     assert page.status_code==200
     assert ('/learn/geography/pyq/'+second+'?lesson=04').encode() in page.data
     assert client.get('/learn/geography/pyq/'+first+'?lesson=99').status_code==404
+
+
+def test_reviewed_chart_questions_keep_original_records_and_grade_verified_keys(client):
+    for number,answer in [(117,2),(118,4),(119,4),(120,1)]:
+        qid=f'APPSC-G1-362016-GEO-{number}';record=service.question(qid)
+        assert record['baseline_must_disable_scoring'] is True
+        assert record['source']['practice_scorable'] is False
+        assert record['source']['editorial_quarantine'] is True
+        assert service.accepted_options(record)==(answer,)
+        page=client.get('/learn/geography/pyq/'+qid)
+        assert page.status_code==200 and b'data-reviewed-chart' in page.data
+        assert b'Bean growth chart data' in page.data and b'21' in page.data
+        assert b'data-scoring-hold' not in page.data
+        for choice in (1,2,3,4):
+            page=client.post('/learn/geography/pyq/'+qid+'/answer',data={'choice':str(choice)})
+            assert f'data-score="{int(choice==answer)}"'.encode() in page.data
+        changed=deepcopy(record);changed['source']['question_en']+=' altered'
+        assert service.grade(changed,answer)['score'] is None
+
+
+def test_review_clearance_fails_closed_if_chart_is_missing_or_corrupt(app,tmp_path,monkeypatch):
+    record=service.question('APPSC-G1-362016-GEO-118')
+    with app.app_context():
+        monkeypatch.setattr(app,'static_folder',str(tmp_path))
+        assert service.grade(record,4)['score'] is None
+        visual=record['review']['required_visual'];p=tmp_path/visual['path'];p.parent.mkdir(parents=True);p.write_bytes(b'wrong-image')
+        assert service.grade(record,4)['score'] is None
+        assert service.summary()=={'total':976,'held':244,'scorable':732}
+
+
+def test_review_file_hash_is_required(tmp_path):
+    path=tmp_path/'reviews.json';path.write_text('{"format":"geography-hold-review-v1","reviews":[]}',encoding='utf-8')
+    assert service._read_reviews(str(path),path.stat().st_mtime_ns,'0'*64)=={}
