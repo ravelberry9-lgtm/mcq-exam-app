@@ -1,0 +1,27 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'practice' %}
+{% block title %}{{ q.source.id }} · Geography PYQ{% endblock %}
+{% block topbar %}<a href="{{ url_for('geography.pyq_index', **filters) }}">‹ Geography PYQs · ప్రశ్నలు</a><strong>{{ position }} / {{ total }}</strong>{% endblock %}
+{% block head_extra %}<style>.pyq-text{overflow-wrap:anywhere;overflow-x:auto}.pyq-text table{border-collapse:collapse;min-width:280px}.pyq-text td,.pyq-text th{border:1px solid #cbd5e1;padding:8px}.pyq-text p{white-space:pre-line}.pyq-source{white-space:pre-wrap;overflow-wrap:anywhere}</style>{% endblock %}
+{% block content %}
+<div class="card" data-geography-pyq="{{ q.source.id }}" data-scorable="{{ 'true' if q.scorable else 'false' }}">
+<p class="small muted">{{ q.source.commission }} · {{ q.source.exam }} · {{ q.source.year }}<br>{{ q.source.paper }}{% if q.source.series %} · Series {{ q.source.series }}{% endif %} · Q{{ q.source.question_number }}<br>{{ q.source.id }}</p>
+{% if not q.scorable %}<p role="status" class="tag off" data-scoring-hold>సమీక్ష కోసం మాత్రమే — మార్కులు లేవు · Unscored study question</p>{% endif %}
+<div class="pyq-text" lang="en">{{ q.stem_en|safe }}</div>{% if q.stem_te %}<div class="pyq-text" lang="te">{{ q.stem_te|safe }}</div>{% endif %}
+</div>
+<form method="post" action="{{ url_for('geography.pyq_answer', question_id=q.source.id, **filters) }}">
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+{% if q.options %}<fieldset class="opts"><legend>సమాధానం ఎంచుకోండి · Choose an answer</legend>{% for opt in q.options %}<label class="opt"><input type="radio" name="choice" value="{{ opt.number }}"{% if q.scorable %} required{% endif %}{% if choice == opt.number %} checked{% endif %}><span class="k">{{ opt.number }}</span><span style="white-space:pre-wrap">{{ opt.text }}{% if opt.te %}<br><span lang="te">{{ opt.te }}</span>{% endif %}</span></label>{% endfor %}</fieldset>{% elif q.source.options_bilingual or q.source.options_en %}<div class="card pyq-source">{{ q.source.options_bilingual or q.source.options_en }}</div>{% else %}<p>మూల రికార్డులో పూర్తి ఎంపికలు లేవు · Complete source options are unavailable.</p>{% endif %}
+<button type="submit" class="btn primary">{{ 'సమాధానం తనిఖీ చేయండి · Check answer' if q.scorable else 'మూల సమాధానం చూడండి · Show source answer (unscored)' }}</button>
+</form>
+{% if result %}<section class="card" id="answer-result" data-result="{{ result.status }}"{% if result.score is not none %} data-score="{{ result.score }}"{% endif %}>
+{% if result.status == 'scored' %}<h2>{{ 'సరైనది · Correct' if result.correct else 'మళ్లీ పరిశీలించండి · Incorrect' }}</h2><p>మూల కీ ప్రకారం మార్కు · Score against stored key: {{ result.score }} / 1</p>{% else %}<h2>మార్కులు లేవు · Unscored</h2><p>ఈ ప్రశ్నకు మార్కు ఇవ్వలేదు · This question contributes no score.</p>{% endif %}
+<strong>మూల రికార్డులోని సమాధానం · Stored source answer</strong><p class="pyq-source">{{ q.source.answer_text or 'Unavailable / deleted' }}</p><p class="small muted">Key status: {{ q.source.answer_status }} · Source review: {{ q.source.verification_status }}</p>
+{% if q.record.must_disable_scoring %}<p>ఈ సమాధానం సమీక్షలో ఉంది; దీన్ని నిర్ధారిత కీగా భావించవద్దు · The stored answer is under review.</p>{% for reason in q.record.prohibitions %}<p class="small pyq-source">{{ reason }}</p>{% endfor %}{% endif %}
+{% if q.explanation %}<div class="pyq-text">{{ q.explanation|safe }}</div>{% endif %}{% if q.study_te %}<div class="pyq-text" lang="te">{{ q.study_te|safe }}</div>{% endif %}
+{% if q.source.historical_note %}<p class="pyq-source">{{ q.source.historical_note }}</p>{% endif %}{% if q.source.editorial_note %}<p class="pyq-source">{{ q.source.editorial_note }}</p>{% endif %}
+{% for link in q.links %}<p><a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a></p>{% endfor %}
+</section>{% endif %}
+<section class="card"><h2>సంబంధిత పూర్తి పాఠాలు · Full chapter links</h2>{% for route in q.record.routes %}<p><a data-chapter-link href="{{ url_for('geography.lesson', lesson_id=route.lesson_id) if route.lesson_id else url_for('static', filename='textbooks/geography/lessons/' + route.file) }}">{{ route.title }}</a>{% if not route.lesson_id %}<span class="small muted"> · అనుబంధం · Supporting reference</span>{% endif %}</p>{% endfor %}</section>
+<nav class="row between" aria-label="PYQ navigation">{% if previous %}<a class="btn" href="{{ url_for('geography.pyq', question_id=previous, **filters) }}">‹ మునుపటి ప్రశ్న · Previous</a>{% endif %}{% if following %}<a class="btn" href="{{ url_for('geography.pyq', question_id=following, **filters) }}">తదుపరి ప్రశ్న · Next ›</a>{% endif %}</nav>
+{% endblock %}

@@ -6,6 +6,7 @@
 {% block content %}
 <nav><a href="{{ url_for('learn.hub') }}">అధ్యయనం · Learn</a>{% if unit %} · <a href="{{ url_for('geography.index') }}">అన్ని యూనిట్లు · All units</a>{% endif %}</nav>
 <p>APPSC Group 2 · 16 యూనిట్లు · 83 పాఠాలు</p>
+<a class="card" href="{{ url_for('geography.pyq_index', unit=unit.id) if unit else url_for('geography.pyq_index') }}" data-geography-pyqs><h2>పాత పరీక్ష ప్రశ్నలు · PYQ practice</h2><span>{{ pyq_summary.total }} PYQs · {{ pyq_summary.held }} held, unscored</span></a>
 {% if unit %}
 <h2>{{ unit.title }}</h2>
 <p>{{ unit.lessons|length }} పాఠాలు · Chapters</p>

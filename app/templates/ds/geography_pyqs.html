@@ -1,0 +1,20 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'practice' %}
+{% block title %}Geography PYQs · భూగోళశాస్త్ర ప్రశ్నలు{% endblock %}
+{% block topbar %}<h1>Geography PYQs · పాత పరీక్ష ప్రశ్నలు</h1>{% endblock %}
+{% block content %}
+<a href="{{ url_for('geography.index') }}">‹ భూగోళశాస్త్రం · Geography</a>
+<p data-pyq-count="{{ total_summary.total }}" data-pyq-held="{{ total_summary.held }}">{{ total_summary.total }} PYQs · {{ total_summary.held }} సమీక్షలో — మార్కులు లేవు · Held, unscored</p>
+<form method="get" class="card" action="{{ url_for('geography.pyq_index') }}">
+<label for="pyq-search">వెతకండి · Search</label><input id="pyq-search" name="search" value="{{ filters.search }}" maxlength="200" style="width:100%">
+<label for="pyq-unit">యూనిట్ · Unit</label><select id="pyq-unit" name="unit" style="width:100%"><option value="">అన్ని యూనిట్లు · All units</option>{% for u in catalogue.units %}<option value="{{ u.id }}"{% if filters.unit == u.id|string %} selected{% endif %}>{{ u.title }}</option>{% endfor %}</select>
+<label for="pyq-lesson">పాఠం · Chapter</label><select id="pyq-lesson" name="lesson" style="width:100%"><option value="">అన్ని పాఠాలు · All chapters</option>{% for u in catalogue.units %}{% for l in u.lessons %}<option value="{{ l.id }}"{% if filters.lesson == l.id %} selected{% endif %}>{{ l.id }} — {{ l.title }}</option>{% endfor %}{% endfor %}</select>
+<label for="pyq-exam">పరీక్ష · Exam</label><select id="pyq-exam" name="exam" style="width:100%"><option value="">అన్ని పరీక్షలు · All exams</option>{% for exam in exams %}<option{% if filters.exam == exam %} selected{% endif %}>{{ exam }}</option>{% endfor %}</select>
+<label for="pyq-year">సంవత్సరం · Year</label><select id="pyq-year" name="year"><option value="">అన్ని · All</option>{% for year in years %}<option{% if filters.year == year %} selected{% endif %}>{{ year }}</option>{% endfor %}</select>
+<label for="pyq-mode">రకం · Mode</label><select id="pyq-mode" name="mode"><option value="">అన్నీ · All</option><option value="scored"{% if filters.mode == 'scored' %} selected{% endif %}>మార్కులతో ప్రాక్టీస్ · Scored practice</option><option value="held"{% if filters.mode == 'held' %} selected{% endif %}>సమీక్షలో · Held, unscored</option></select>
+<button class="btn primary" type="submit">చూపించండి · Apply</button><a href="{{ url_for('geography.pyq_index') }}">Reset</a>
+</form>
+<p>{{ summary.total }} ప్రశ్నలు · Questions{% if summary.held %} · {{ summary.held }} held{% endif %}</p>
+{% for r in records %}{% set source = r.source %}<a class="card" href="{{ url_for('geography.pyq', question_id=source.id, **filters) }}" data-geography-pyq="{{ source.id }}"><span class="small muted">{{ source.exam }} · {{ source.year }} · {{ source.paper }} · Q{{ source.question_number }}</span><h2 style="font-size:1rem;white-space:pre-wrap">{{ source.question_en|truncate(220) }}</h2><span class="small">{{ source.id }}{% if r.must_disable_scoring %} · సమీక్షలో — మార్కులు లేవు · Held, unscored{% endif %}</span></a>{% else %}<p>ఈ ఎంపికలకు ప్రశ్నలు లేవు · No questions match.</p>{% endfor %}
+<nav aria-label="PYQ pages" class="row between">{% if page > 1 %}<a class="btn" href="{{ url_for('geography.pyq_index', page=page-1, **filters) }}">‹ Previous</a>{% endif %}<span>{{ page }} / {{ pages }}</span>{% if page < pages %}<a class="btn" href="{{ url_for('geography.pyq_index', page=page+1, **filters) }}">Next ›</a>{% endif %}</nav>
+{% endblock %}
