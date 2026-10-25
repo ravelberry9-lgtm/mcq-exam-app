@@ -1,0 +1,962 @@
+<!doctype html><html><head>
+<base href="/static/notes/revision/Science_and_Technology/DRDO/"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>DRDO — Defence Technology, Complete Book (Bilingual)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&amp;family=Noto+Sans+Devanagari:wght@400;600;700&amp;family=Noto+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+/* ==================== D1_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.an{background:#fffaf0;border:1px solid #f0d9a8;border-left:5px solid #e0a33a;
+  padding:11px 15px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.an .t{font-weight:700;color:#a8701a;font-size:14px;display:block;margin-bottom:4px}
+.an .te{font-size:15.5px;line-height:1.95;margin:0}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.chain{background:#eef2f8;border:1px solid #b9c7da;padding:11px 12px;margin:14px 0;border-radius:4px;text-align:center}
+.chain .bx{display:inline-block;background:#2c4a80;color:#fff;font-weight:700;font-size:13.6px;padding:6px 14px;border-radius:3px;margin:3px 2px}
+.chain .bx.top{background:#8a2a20}
+.chain .ar{font-weight:700;color:#41556f;font-size:16px;padding:0 4px}
+.chain .ccap{display:block;margin-top:8px;font-size:12.8px;color:#41556f;font-weight:600}
+.layer{margin:14px 0}
+.layer .lv{display:flex;align-items:stretch;margin:4px 0;border:1px solid #b9c7da;border-radius:4px;overflow:hidden}
+.layer .lb{background:#2c4a80;color:#fff;font-weight:700;font-size:13.4px;padding:8px 12px;min-width:150px;display:flex;align-items:center}
+.layer .lt{padding:8px 12px;font-size:14.2px;background:#eef2f8;flex:1}
+.layer .lv:nth-child(2) .lb{background:#3a5c96} .layer .lv:nth-child(3) .lb{background:#4a6ea8}
+.layer .lv:nth-child(4) .lb{background:#5b80ba}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .an .te,.gl .te,.why .te,.key .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .an,.gl,.key,.trap,.chain,.layer .lv,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D1_Addendum_Vision_and_Mission_FULL.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans',sans-serif;background:#dde1e8;color:#1a1a1a;font-size:14.8px;line-height:1.72;}
+.page{width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);}
+h1{font-size:22px;font-weight:700;color:#132a52}
+.sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+.pritag{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:#c0392b;padding:2px 8px;border-radius:10px;vertical-align:middle;margin-left:8px}
+.para{margin:16px 0}
+.ptitle{font-size:15.5px;font-weight:700;color:#fff;background:#5c3a1e;display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;}
+.ptitle.rd{background:#8a2a20} .ptitle.gn{background:#1a6b3c}
+p.eng{margin:8px 0 4px}
+.imp{background:#fff4c2;padding:0 3px} .hlg{background:#c9f2c9;padding:0 3px}
+.hlp{background:#ffd3e6;padding:0 3px} .hlb{background:#c9e4ff;padding:0 3px}
+.term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+.te{font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:8px 11px;margin:5px 0 10px;line-height:1.68;}
+.q{border-left:3px solid #b3891a;background:#fffbe6;padding:7px 11px;margin:8px 0;font-size:13.3px;color:#3a3016}
+.q .who{font-weight:700;color:#7a6212;display:block;margin-bottom:3px}
+.q .te{background:#fdf6dc;border-left-color:#d9bc63;color:#4a3d16;margin:6px 0 0}
+.q .memline{display:block;margin-top:6px;padding-top:5px;border-top:1px dashed #d9bc63;font-weight:700;color:#7a6212}
+.why{border-left:4px solid #5b3a8e;background:#f5f0fb;padding:9px 12px;margin:10px 0;border-radius:0 4px 4px 0}
+.why .whytitle{font-weight:700;color:#4a2d78;font-size:13.8px;margin-bottom:4px}
+.why ul{margin:4px 0 0 18px;font-size:13.4px}
+.why li{margin:3px 0}
+.why .te{background:#efe7f9;border-left-color:#a184c9;color:#432a6b;margin-top:7px}
+.rem{background:#4a2f1a;color:#fff;padding:11px 14px;margin:11px 0;border-radius:4px}
+.rem .remtitle{font-weight:700;font-size:13.5px;color:#ffd75e;margin-bottom:5px;letter-spacing:.3px}
+.rem .remstr{font-family:'Noto Sans',monospace;font-size:13.1px;line-height:1.95;font-weight:600}
+.rem .remstr span{color:#f3cf8a}
+.rem .remstr b{color:#ffd75e}
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:9px 12px;margin:10px 0;border-radius:0 4px 4px 0}
+.trap .traptitle{font-weight:700;color:#8a2a20;font-size:13.8px;margin-bottom:4px}
+.trap table{margin:5px 0 0;font-size:13.1px}
+.trap th{background:#8a2a20}
+.trap .te{background:#fbe3e0;border-left-color:#c98079;color:#7a241a;margin-top:7px;font-size:13.2px}
+.xref{font-size:12.5px;color:#555;background:#f4f5f8;border:1px dashed #c3c8d2;padding:7px 11px;margin:11px 0;border-radius:3px}
+.xref b{color:#132a52}
+.gloss{font-size:12.6px;color:#33455e;background:#eef2f8;border-left:3px solid #8fa8c8;padding:6px 11px;margin:9px 0;border-radius:0 3px 3px 0}
+.gloss b{color:#132a52}
+.drdobox{background:rgb(217,242,242);border-radius:10px;padding:32px;margin:10px 0;font-family:'Noto Sans',sans-serif;}
+.drdobox img{width:100%;max-width:446px;display:block;margin:0 auto 20px;border-radius:0;}
+.drdobox h2{color:#000;font-size:20px;font-weight:600;margin:0 0 10px;}
+.drdobox h2.second{margin-top:20px;}
+.drdobox p{color:#000;font-size:14px;line-height:21px;margin:0 0 10px;}
+.drdobox ul.circleList{list-style:disc;padding-left:20px;margin:0;}
+.drdobox ul.circleList li{color:#000;font-size:14px;line-height:21px;margin-bottom:6px;}
+.drdosrc{font-size:11.5px;color:#555;margin:8px 2px 2px;font-style:italic}
+.aboutbox{background:#fff;border:1px solid #dfe3ea;border-radius:6px;padding:16px 20px 4px;margin:10px 0;font-family:'Noto Sans',sans-serif;max-width:100%;}
+.aboutbox p{color:#000;font-size:14px;line-height:21px;margin:0 0 10px;}
+.aboutbox .vlabel2{font-weight:700;color:#8a2a20;font-size:11px;letter-spacing:.4px;text-transform:uppercase;display:block;margin-bottom:2px;}
+
+table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.1px}
+caption{text-align:left;font-weight:700;font-size:13.6px;margin-bottom:4px;color:#132a52}
+caption.qs{color:#1a6b3c} table.qs th{background:#1a6b3c}
+th{background:#5c3a1e;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.1px}
+td{padding:5px 9px;border-bottom:1px solid #e2e4ea} tbody tr:nth-child(even) td{background:#f4f5f8}
+tr.ind td{background:#dcf3dc!important}
+.foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+@page{size:A4;margin:16mm 16mm 12mm}
+@media print{ body{background:#fff} .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0} tr,td,th,.te,.why,.rem,.trap,.xref,.gloss,.q,.drdobox,.aboutbox{page-break-inside:avoid} thead{display:table-header-group} }
+
+
+/* ==================== D2_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.an{background:#fffaf0;border:1px solid #f0d9a8;border-left:5px solid #e0a33a;
+  padding:11px 15px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.an .t{font-weight:700;color:#a8701a;font-size:14px;display:block;margin-bottom:4px}
+.an .te{font-size:15.5px;line-height:1.95;margin:0}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.trio{background:#eef7f0;border:1px solid #a9cdb4;padding:11px 12px;margin:14px 0;border-radius:4px;text-align:center}
+.trio .bx{display:inline-block;background:#1a6b3c;color:#fff;font-weight:700;font-size:13.6px;padding:6px 14px;border-radius:3px;margin:3px 2px}
+.trio .ccap{display:block;margin-top:8px;font-size:12.8px;color:#1a5c34;font-weight:600}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .an .te,.gl .te,.why .te,.key .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .an,.gl,.key,.trap,.trio,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D2_Addendum_Laboratory_Directory_ALL_INDIA.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans',sans-serif;background:#dde1e8;color:#1a1a1a;font-size:14.8px;line-height:1.72;}
+.page{width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);}
+h1{font-size:22px;font-weight:700;color:#132a52}
+.sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+.pritag{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:#c0392b;padding:2px 8px;border-radius:10px;vertical-align:middle;margin-left:8px}
+.para{margin:16px 0}
+.ptitle{font-size:15.5px;font-weight:700;color:#fff;background:#5c3a1e;display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;}
+.ptitle.rd{background:#8a2a20} .ptitle.gn{background:#1a6b3c}
+p.eng{margin:8px 0 4px}
+.imp{background:#fff4c2;padding:0 3px} .hlg{background:#c9f2c9;padding:0 3px}
+.hlp{background:#ffd3e6;padding:0 3px} .hlb{background:#c9e4ff;padding:0 3px}
+.term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+.te{font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:8px 11px;margin:5px 0 10px;line-height:1.68;}
+.why{border-left:4px solid #5b3a8e;background:#f5f0fb;padding:9px 12px;margin:10px 0;border-radius:0 4px 4px 0}
+.why .whytitle{font-weight:700;color:#4a2d78;font-size:13.8px;margin-bottom:4px}
+.why ul{margin:4px 0 0 18px;font-size:13.4px}
+.why li{margin:3px 0}
+.why .te{background:#efe7f9;border-left-color:#a184c9;color:#432a6b;margin-top:7px}
+.rem{background:#4a2f1a;color:#fff;padding:11px 14px;margin:11px 0;border-radius:4px}
+.rem .remtitle{font-weight:700;font-size:13.5px;color:#ffd75e;margin-bottom:5px;letter-spacing:.3px}
+.rem .remstr{font-family:'Noto Sans',monospace;font-size:13.1px;line-height:1.95;font-weight:600}
+.rem .remstr span{color:#f3cf8a}
+.rem .remstr b{color:#ffd75e}
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:9px 12px;margin:10px 0;border-radius:0 4px 4px 0}
+.trap .traptitle{font-weight:700;color:#8a2a20;font-size:13.8px;margin-bottom:4px}
+.trap table{margin:5px 0 0;font-size:13.1px}
+.trap th{background:#8a2a20}
+.trap .te{background:#fbe3e0;border-left-color:#c98079;color:#7a241a;margin-top:7px;font-size:13.2px}
+.xref{font-size:12.5px;color:#555;background:#f4f5f8;border:1px dashed #c3c8d2;padding:7px 11px;margin:11px 0;border-radius:3px}
+.xref b{color:#132a52}
+.gloss{font-size:12.6px;color:#33455e;background:#eef2f8;border-left:3px solid #8fa8c8;padding:6px 11px;margin:9px 0;border-radius:0 3px 3px 0}
+.gloss b{color:#132a52}
+.note{font-size:12.3px;color:#5c3a1e;background:#faf3ea;border:1px dashed #c9a876;padding:6px 11px;margin:8px 0;border-radius:3px}
+table{width:100%;border-collapse:collapse;margin:9px 0;font-size:12.8px}
+caption{text-align:left;font-weight:700;font-size:13.6px;margin-bottom:4px;color:#132a52}
+caption.qs{color:#1a6b3c} table.qs th{background:#1a6b3c}
+th{background:#5c3a1e;color:#fff;padding:6px 8px;text-align:left;font-weight:700;font-size:12.6px}
+td{padding:5px 8px;border-bottom:1px solid #e2e4ea} tbody tr:nth-child(even) td{background:#f4f5f8}
+tr.ind td{background:#dcf3dc!important}
+.acr{font-weight:700;color:#5c3a1e}
+.foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+@page{size:A4;margin:16mm 16mm 12mm}
+@media print{ body{background:#fff} .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0} tr,td,th,.te,.why,.rem,.trap,.xref,.gloss,.q,.note{page-break-inside:avoid} thead{display:table-header-group} }
+
+
+/* ==================== D3_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.an{background:#fffaf0;border:1px solid #f0d9a8;border-left:5px solid #e0a33a;
+  padding:11px 15px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.an .t{font-weight:700;color:#a8701a;font-size:14px;display:block;margin-bottom:4px}
+.an .te{font-size:15.5px;line-height:1.95;margin:0}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.sanc{background:#fff9e6;border:2px solid #b3891a;padding:12px 16px;margin:14px 0;border-radius:5px;page-break-inside:avoid}
+.sanc .st{font-weight:700;color:#7a6212;font-size:14px;margin-bottom:5px}
+.sanc .quote{font-size:15.5px;font-weight:700;color:#3a3016;line-height:1.7}
+.sanc .src{font-size:12.4px;color:#7a6212;margin-top:7px;font-style:italic}
+
+.five{margin:14px 0}
+.five .fc{display:flex;align-items:stretch;margin:5px 0;border:1px solid #b9c7da;border-radius:4px;overflow:hidden}
+.five .fn{background:#2c4a80;color:#fff;font-weight:700;font-size:13.8px;padding:8px 12px;min-width:96px;display:flex;align-items:center}
+.five .ft{padding:8px 12px;font-size:14.6px;background:#eef2f8;flex:1;line-height:1.7}
+.five .fc.out .fn{background:#8a2a20} .five .fc.out .ft{background:#fdeeec}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .an .te,.gl .te,.why .te,.key .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .an,.gl,.key,.trap,.sanc,.five .fc,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D4_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.vs{display:flex;gap:12px;margin:14px 0}
+.vs .side{flex:1;border:1px solid #b9c7da;border-radius:4px;padding:11px 13px}
+.vs .side.a{background:#eef2f8} .vs .side.b{background:#f3f0fa;border-color:#c3b3dd}
+.vs .vt{font-weight:700;font-size:15px;margin-bottom:5px}
+.vs .side.a .vt{color:#1d4d8f} .vs .side.b .vt{color:#4a2d78}
+.vs .te{font-size:15px;line-height:1.85;margin:0;max-width:none}
+
+.tag{display:inline-block;font-size:11.6px;font-weight:700;padding:1px 6px;border-radius:8px;background:#c9e4ff;color:#14456f;white-space:nowrap}
+.tag.dev{background:#ffe6c2;color:#8a5a12} .tag.tst{background:#e6dcf5;color:#4a2d78}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px} .vs{flex-direction:column}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .gl .te,.why .te,.key .te,.vs .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .gl,.key,.trap,.vs,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D5_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.flow{background:#eef2f8;border:1px solid #b9c7da;padding:13px 14px;margin:14px 0;border-radius:4px;text-align:center}
+.flow .bx{display:inline-block;background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:7px 13px;border-radius:3px;margin:4px 3px}
+.flow .ar{font-weight:700;color:#41556f;font-size:16px;padding:0 3px}
+.flow .ccap{display:block;margin-top:9px;font-size:14px;color:#41556f;font-weight:600}
+
+.vs{display:flex;gap:12px;margin:14px 0}
+.vs .side{flex:1;border:1px solid #b9c7da;border-radius:4px;padding:11px 13px}
+.vs .side.a{background:#eef2f8} .vs .side.b{background:#f3f0fa;border-color:#c3b3dd}
+.vs .vt{font-weight:700;font-size:15px;margin-bottom:5px}
+.vs .side.a .vt{color:#1d4d8f} .vs .side.b .vt{color:#4a2d78}
+.vs .te{font-size:15px;line-height:1.85;margin:0;max-width:none}
+
+.tag{display:inline-block;font-size:11.6px;font-weight:700;padding:1px 6px;border-radius:8px;background:#c9e4ff;color:#14456f;white-space:nowrap}
+.tag.dev{background:#ffe6c2;color:#8a5a12} .tag.tst{background:#e6dcf5;color:#4a2d78}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px} .vs{flex-direction:column}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .gl .te,.why .te,.key .te,.vs .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .gl,.key,.trap,.vs,.flow,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D6_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.chainr{background:#eef2f8;border:1px solid #b9c7da;padding:13px 14px;margin:14px 0;border-radius:4px;text-align:center}
+.chainr .bx{display:inline-block;background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:7px 13px;border-radius:3px;margin:4px 3px}
+.chainr .ar{font-weight:700;color:#41556f;font-size:16px;padding:0 3px}
+.chainr .ccap{display:block;margin-top:9px;font-size:14px;color:#41556f;font-weight:600}
+.lay{margin:13px 0}
+.lay .lv{display:flex;align-items:stretch;margin:5px 0;border:1px solid #b9c7da;border-radius:4px;overflow:hidden}
+.lay .lb{background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:9px 13px;min-width:150px;display:flex;align-items:center}
+.lay .lt{padding:9px 13px;font-size:15px;line-height:1.85;background:#eef2f8;flex:1}
+.lay .lv.exo .lb{background:#4a2d78} .lay .lv.exo .lt{background:#f3f0fa}
+
+.tag{display:inline-block;font-size:11.6px;font-weight:700;padding:1px 6px;border-radius:8px;background:#c9e4ff;color:#14456f;white-space:nowrap}
+.tag.dev{background:#ffe6c2;color:#8a5a12} .tag.tst{background:#e6dcf5;color:#4a2d78}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px} .lay .lv{flex-direction:column}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .gl .te,.why .te,.key .te,.lay .lt{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .gl,.key,.trap,.chainr,.lay .lv,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D7_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.flow{background:#eef2f8;border:1px solid #b9c7da;padding:13px 14px;margin:14px 0;border-radius:4px;text-align:center}
+.flow .bx{display:inline-block;background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:7px 13px;border-radius:3px;margin:4px 3px}
+.flow .ar{font-weight:700;color:#41556f;font-size:16px;padding:0 3px}
+.flow .ccap{display:block;margin-top:9px;font-size:14px;color:#41556f;font-weight:600}
+.layer{margin:13px 0}
+.layer .lv{display:flex;align-items:stretch;margin:5px 0;border:1px solid #b9c7da;border-radius:4px;overflow:hidden}
+.layer .lb{background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:9px 13px;min-width:140px;display:flex;align-items:center}
+.layer .lt{padding:9px 13px;font-size:14.6px;line-height:1.85;background:#eef2f8;flex:1}
+.layer .lv:nth-child(2) .lb{background:#3a5c96} .layer .lv:nth-child(3) .lb{background:#4a6ea8}
+.layer .lv:nth-child(4) .lb{background:#5b80ba}
+
+.tag{display:inline-block;font-size:11.6px;font-weight:700;padding:1px 6px;border-radius:8px;background:#c9e4ff;color:#14456f;white-space:nowrap}
+.tag.dev{background:#ffe6c2;color:#8a5a12} .tag.tst{background:#e6dcf5;color:#4a2d78}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px} .layer .lv{flex-direction:column}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .gl .te,.why .te,.key .te,.layer .lt{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .gl,.key,.trap,.flow,.layer .lv,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D8_D10_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.tag{display:inline-block;font-size:11.6px;font-weight:700;padding:1px 6px;border-radius:8px;background:#c9e4ff;color:#14456f;white-space:nowrap}
+.tag.dev{background:#ffe6c2;color:#8a5a12} .tag.tst{background:#e6dcf5;color:#4a2d78}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+tr.ind td{background:#dcf3dc!important}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+
+.qbox{border:1px solid #b9c7da;border-radius:5px;margin:14px 0;overflow:hidden;page-break-inside:avoid}
+.qbox .qh{background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:8px 13px}
+.qbox .qb{padding:12px 13px;font-size:15px;line-height:1.75;background:#fff}
+.qbox .opts{margin:7px 0 0 4px;font-size:14.6px}
+.qbox .opts div{margin:3px 0}
+.qbox .ans{background:#eef7f0;border-top:1px solid #a9cdb4;padding:9px 13px;font-size:14.6px;line-height:1.7}
+.qbox .ans b{color:#1a5c34}
+.qbox .ans .te{font-size:15px;line-height:1.85;margin:6px 0 0;color:#1a1a1a;max-width:none}
+.stmt{margin:6px 0 0 14px;font-size:14.6px}
+.stmt div{margin:3px 0}
+
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .gl .te,.qbox .ans .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .gl,.qbox,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+
+/* ==================== book-wide additions: cover + index + pagination ==================== */
+.coverwrap{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;height:100%;min-height:250mm;padding:20mm 6mm}
+.coverkicker{font-size:13px;letter-spacing:.4px;color:#5f6c80;font-style:italic;margin-bottom:18px}
+.covertitle{font-size:46px;font-weight:700;color:#132a52;line-height:1.25;margin-bottom:10px}
+.coversub2{font-size:20px;font-weight:600;color:#2c4a80}
+.coversub{font-size:16px;color:#33455e;margin:10px 0 22px}
+.coverline{width:90px;height:4px;background:#2c4a80;margin:10px 0 22px;border-radius:2px}
+.covermeta{font-size:13px;color:#5f6c80}
+.toclist{margin-top:6px}
+.tocrow{border-bottom:1px solid #e2e4ea;padding:10px 0}
+.tocrow a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:#132a52}
+.tocnum{font-weight:700;font-size:15px;color:#2c4a80;min-width:96px;flex:0 0 auto}
+.toctitle{font-size:15px;color:#132a52;font-weight:600;flex:0 1 auto}
+.tocleader{flex:1 1 auto;border-bottom:1px dotted #b9c7da;margin:0 4px;transform:translateY(-3px);min-width:14px}
+.tocpage{font-weight:700;font-size:14px;color:#2c4a80;min-width:24px;text-align:right;flex:0 0 auto}
+.tocdesc{font-size:12.5px;color:#5f6c80;margin:3px 0 0 106px;line-height:1.55}
+.syllabusbox{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;padding:12px 16px;margin:18px 0 0;border-radius:0 5px 5px 0}
+.sylt{font-weight:700;font-size:13px;color:#1d3f78;margin-bottom:5px}
+.sylte{font-size:13.5px;line-height:1.75;color:#1a1a1a}
+@media print{
+  #book-cover,#book-toc{page-break-after:always}
+  .tocrow{padding:5px 0}
+  .tocnum,.toctitle,.tocpage{font-size:11pt}
+  .tocdesc{font-size:8.8pt;line-height:1.4;margin-top:2px}
+  .sylt{font-size:9.5pt}
+  .sylte{font-size:10pt;line-height:1.4}
+  .syllabusbox{padding:7px 11px;margin-top:8px}
+  .toclist{margin-top:2px}
+  h1{font-size:18pt}
+  .sub{font-size:9.5pt;margin-bottom:8px}
+  .covertitle{font-size:30pt}
+  .coversub2{font-size:14pt}
+  .coversub{font-size:11pt;margin:8px 0 16px}
+  .coverkicker{font-size:9.5pt}
+  .covermeta{font-size:9.5pt}
+  .coverwrap{min-height:0}
+}
+/* force every CHAPTER to start on its own fresh physical page; let content flow naturally within a chapter */
+.page[id^="ch-"]{break-before:page}
+
+</style>
+<style>.book-split-nav{position:sticky;top:0;z-index:50;max-width:1120px;margin:0 auto 16px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(245,250,248,.97);border:1px solid #c9ddd6;border-radius:0 0 16px 16px;box-shadow:0 6px 20px #173c3020;font:700 14px/1.3 system-ui}.book-split-nav a{padding:9px 11px;border-radius:10px;background:#fff;color:#155b4a;text-decoration:none}.book-split-nav span{text-align:center;color:#4b625b}.split-index-grid{max-width:1050px;margin:24px auto;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;font-family:system-ui}.split-index-grid a{display:block;padding:13px;border-radius:12px;background:#fff;color:#164d40;text-decoration:none;box-shadow:0 4px 16px #0001;font-weight:700}@media(max-width:640px){.book-split-nav{position:relative}.book-split-nav span{font-size:12px}}</style></head><body><nav class="book-split-nav"><a href="/learn/science-technology/st1-technology-missions/textbook/st1-drdo-d1a">← D1 Addendum</a><span>DRDO · Part 3 of 10</span><a href="/learn/science-technology/st1-technology-missions/textbook/st1-drdo-d2a">D2 Addendum →</a></nav><div class="page" id="ch-d2">
+<h1>D2 — The Laboratories, and the AP / Telangana Cluster<br/><span style="font-size:16px;color:#2c4a80">DRDO Laboratories — Hyderabad, Visakhapatnam, ఇంకా దేశమంతటా</span></h1>
+<p class="sub">APPSC Group-2 Mains · Paper-II Section-B · Defence Technology · Telugu-medium (code-mixed) · D1 cluster సూత్రానికి పేర్లు, ప్రదేశాలు ఇచ్చే chapter</p>
+<div class="pt">2A — ఈ Chapter ఎందుకు శ్రమించదగినది</div>
+<div class="te"><b class="cl">ఈ chapter వెనుక ఒక సాధారణ, ధృవీకరించదగిన వాస్తవం ఉంది:</b> <span class="imp">DRDO పేరున్న laboratories చాలా వరకు Hyderabad లో ఉన్నాయి; దాని underwater-weapons laboratory Visakhapatnam లో ఉంది.</span> ఇది చిరునామాలకు సంబంధించిన విషయం, ప్రాముఖ్యత ర్యాంకులకు కాదు. Andhra Pradesh పరీక్ష రాసే అభ్యర్థికి institution–location matching నేర్చుకోవడం దీనివల్ల చాలా సులభమవుతుంది, ఎందుకంటే ఆ ప్రదేశాలు అప్పటికే పరిచయమైనవి, cluster చిన్నది. <b class="imp">Hyderabad/Visakhapatnam = DRDO యొక్క ఒక ప్రధాన ప్రాంతీయ కేంద్రీకరణ, DRDO మొత్తం కాదు</b> — దేశవ్యాప్త cluster map కోసం <b>D1</b>, పూర్తి all-India roster కోసం <b>D2 Addendum</b> చూడండి.</div>
+<div class="gl"><div class="te"><b>దీన్ని ఎంత గట్టిగా చెప్పాలో ఒక మాట.</b> "Hyderabad భారతదేశ missile అభివృద్ధి కేంద్రం" అని చెప్పాలనిపిస్తుంది. ఈ పుస్తకం అలా చెప్పదు — అది జాతీయ స్థాయి ర్యాంకు గురించిన వాదన; దానికి మన దగ్గర ఆధారం లేదు. మనం చెప్పగలిగేది, exam పరీక్షించగలిగేది — <b>ఏ laboratory ఎక్కడ ఉంది, ఏం చేస్తుంది</b>. చిరునామాలు నేర్చుకోండి; superlative నేర్చుకోకండి.</div></div>
+<div class="te">ఒక grouping అధికారికంగా పేరు పొందింది; దాన్ని గట్టిగా పట్టుకోవాలి. ఒక Ministry of Defence ప్రకటన <span class="imp">Dr A.P.J. Abdul Kalam Missile Complex Laboratories</span> అంటే <b>ASL, DRDL, RCI</b> అని పేర్కొంటుంది — Hyderabad లోని మూడు వేర్వేరు laboratories, ఒకే complex గా. ఇది ఈ chapter లోని అత్యంత ఉపయోగకరమైన grouping, ఎందుకంటే ఇది ప్రభుత్వం సొంత పదజాలం, పైగా తికమకపడే మూడు పేర్లను ఒకచోట కట్టిపెడుతుంది.</div>
+<div class="trio">
+<span class="bx">ASL</span><span class="bx">DRDL</span><span class="bx">RCI</span>
+<span class="ccap">Dr A.P.J. Abdul Kalam Missile Complex Laboratories — మూడు laboratories, ఒకే complex, అన్నీ Hyderabad లో.</span>
+</div>
+<div class="gl"><div class="te"><b>Design నుంచి Production వరకు — అదే నగరంలో.</b> ఈ మూడు laboratories క్షిపణులను design చేస్తాయి; వాటిని భారీ స్థాయిలో తయారు చేసేది <span class="term">Bharat Dynamics Limited (BDL)</span> — దీని ప్రధాన కార్యాలయం కూడా <b class="imp">Hyderabad లోనే</b>. Akash, Nag వంటి IGMDP క్షిపణులు (D3) ఇక్కడి నుంచే production లోకి వెళ్తాయి. Design, production ఒకే నగరంలో ఉండటం యాదృచ్ఛికం కాదు — DRDO తన Hyderabad laboratories నుంచి production సంస్థకు handover చేసే mechanism కు (Transfer of Technology, D7) ఇది భౌతిక రుజువు.</div></div>
+<div class="pt gn">2B — Hyderabad Laboratories</div>
+<div class="te"><b class="cl">తెలుసుకోవలసిన ఆరు laboratories</b> — వాటిని గుర్తుంచుకోవడానికి ఉపయోగకరమైన మార్గం, <span class="imp">సమస్యలో ఏ భాగం ఎవరిది</span> అని చూడటం. ఒక క్షిపణిని ఒక్క laboratory నిర్మించదు: ఒకటి క్షిపణిని design చేస్తుంది, రెండోది దాని మెదడును తయారు చేస్తుంది, మూడోది దాన్ని ముందుకు నెట్టేదాన్ని నిర్మిస్తుంది, నాలుగోది అది తయారయ్యే లోహాన్ని కనిపెడుతుంది.</div>
+<div class="tblwrap"><table>
+<caption>Hyderabad లోని DRDO Laboratories</caption>
+<thead><tr><th>Laboratory</th><th>పూర్తి పేరు</th><th>ఏమి చూసుకుంటుంది</th></tr></thead>
+<tbody>
+<tr><td><b>DRDL</b></td><td>Defence Research and Development Laboratory, Kanchanbagh</td><td><b class="imp">క్షిపణి రూపకల్పన, అభివృద్ధి</b> — మొత్తం క్షిపణి, దాని aerodynamics, flight evaluation. Akash, Astra, Nag, QRSAM తో సంబంధం</td></tr>
+<tr><td><b>RCI</b></td><td>Research Centre Imarat, Vignyan Kancha</td><td><b class="imp">క్షిపణి మెదడు</b> — avionics, navigation, guidance, control వ్యవస్థలు</td></tr>
+<tr><td><b>ASL</b></td><td>Advanced Systems Laboratory</td><td><b class="imp">Solid propulsion</b>, composites, aerospace mechanisms, mission/guidance design — సుదూర వ్యూహాత్మక క్షిపణుల వెనుక టెక్నాలజీలు</td></tr>
+<tr><td><b>DMRL</b></td><td>Defence Metallurgical Research Laboratory, Kanchanbagh</td><td><b class="imp">Materials</b> — armour, alloys, powder metallurgy. <b>Kanchan armour</b>, క్షిపణి casings కు వాడే high-strength steels ను అభివృద్ధి చేసింది</td></tr>
+<tr><td><b>DLRL</b></td><td>Defence Electronics Research Laboratory</td><td><b class="imp">Electronic warfare</b> — EW వ్యవస్థలు, communication intelligence</td></tr>
+<tr><td><b>CHESS</b></td><td>Centre for High Energy Systems and Sciences</td><td><b class="imp">Directed-energy systems</b> — high-energy lasers [అభివృద్ధి దశలో — 2026 నాటికి]; పరీక్షలు <b class="hlp">Orvakal, Kurnool జిల్లా</b> లోని National Open Air Range (NOAR) లో</td></tr>
+</tbody>
+</table></div>
+<div class="gl"><div class="te"><b>ఎక్కువగా తప్పిపోయే తేడా: DRDL, RCI ఒకే పని చేయవు.</b> క్షిపణిని మొత్తంగా — దాని design, aerodynamics, అది ఎగురుతుందా లేదా — చూసుకునేది DRDL. దాని లోపల ఆలోచించే భాగాన్ని — avionics, navigation, guidance, control — చూసుకునేది RCI. రెండు పేర్లూ options లో ఇచ్చే ప్రశ్న సాధారణంగా ఈ విభజననే పరీక్షిస్తోంది.</div></div>
+<div class="gl"><div class="te"><b>RCI వెనుక ఒక వ్యక్తిగత చరిత్ర.</b> D1 లో <b>Dr A.P.J. Abdul Kalam DRDO ను స్థాపించలేదు</b> అని స్పష్టం చేశాం — DRDO 1958 లోనే ఏర్పడింది, కలాం అప్పటికి చాలా చిన్నవాడు. కానీ విస్తృతంగా చెప్పబడేది: <b class="imp">RCI ను 1988 లో స్థాపించింది కలామే</b>, అప్పుడు ఆయన DRDL Director. ఇదే ఈ complex కు ఆయన పేరు రావడానికి కారణం. (ఈ ఒక్క వివరానికి స్వతంత్ర ప్రభుత్వ మూలం దొరకలేదు — విస్తృతంగా, పదేపదే చెప్పబడిన వాస్తవంగా పరిగణించండి, అధికారికంగా ధృవీకరించిన తేదీగా కాదు.)</div></div>
+<div class="key"><div class="t">Hyderabad laboratory లోపల ఉన్న ఒక Chennai ట్యాంక్</div><div class="te">Arjun main battle tank మీద వాడే composite armour — <b>Kanchan armour</b> — ను <b>DMRL, Hyderabad</b> అనే metallurgy laboratory అభివృద్ధి చేసింది. ట్యాంకును మాత్రం <b>CVRDE, Chennai</b> అభివృద్ధి చేసింది. ఏ laboratory కూడా వేరొకరి భాగాన్ని నిర్మించలేదు; రెండూ DRDO వే. D1 లో చెప్పిన cluster సూత్రానికి ఇదే స్పష్టమైన ఉదాహరణ: laboratories ను విభజించేది అవి <b>పరిష్కరించే సమస్య</b> ఆధారంగా, అవి చివరికి ఏ ఉత్పత్తిలో భాగమవుతాయో దాన్ని బట్టి కాదు. ఒక materials laboratory ట్యాంకులకు, క్షిపణులకు, విమానాలకు — అన్నిటికీ పనిచేస్తుంది. <b class="imp">Kanchan armour అంటే Hyderabad metallurgy. Arjun ట్యాంక్ అంటే Chennai engineering.</b></div></div>
+<div class="foot">D2 — The Laboratories, and the AP / Telangana Cluster (Bilingual · st4 style) · page 1 of 3</div>
+</div><div class="page">
+<div class="pt rd">2C — Visakhapatnam: నీటి అడుగున పని ఎక్కడ జరుగుతుంది</div>
+<div class="te"><b class="cl">Andhra Pradesh కు చెందిన DRDO laboratory <span class="term">NSTL</span></b> — Naval Science and Technological Laboratory, Visakhapatnam, <b class="imp">1969 ఆగస్టు 20</b> న ఏర్పాటైంది. దీని విషయం <span class="imp">నీటి అడుగున వాడే ఆయుధాలు, వాటి చుట్టూ ఉండే వ్యవస్థలు</span>: torpedoes, torpedo నుంచి రక్షణ, naval mines, స్వయంచాలక underwater vehicles, hydrodynamics, యుద్ధనౌక సాంకేతికతలు, నౌకల stealth.</div>
+<div class="tblwrap"><table class="rd">
+<caption>NSTL, Visakhapatnam — పని, పేర్లు</caption>
+<thead><tr><th>విభాగం</th><th>ఏమి కలిగి ఉంది</th></tr></thead>
+<tbody>
+<tr><td><b>Torpedo defence</b></td><td><b>Maareech</b> — వచ్చే torpedo నుంచి నౌకను కాపాడే anti-torpedo decoy system [inducted]</td></tr>
+<tr><td><b>Underwater vehicles</b></td><td>Autonomous underwater vehicles — mine నిర్మూలన కోసం high-endurance, man-portable రకాలు [అభివృద్ధి దశలో — 2026]</td></tr>
+<tr><td><b>Naval mines</b></td><td>Multi-influence ground mines — గుర్తించడం కష్టమైన నౌకలను పసిగట్టేలా రూపొందించినవి [అభివృద్ధి దశలో — 2026]</td></tr>
+<tr><td><b>Ship technologies</b></td><td>Hydrodynamics, యుద్ధనౌక design మద్దతు, stealth, ప్రత్యేక marine materials</td></tr>
+</tbody>
+</table></div>
+<div class="gl"><div class="te"><b>Visakhapatnam ఎందుకు, ఈ trap ఎందుకు పనిచేస్తుంది.</b> Visakhapatnam నౌకాదళ Eastern Naval Command ప్రధాన కేంద్రం, పెద్ద నౌకా నిర్మాణ కేంద్రం కూడా — కాబట్టి నౌకలు, లోతైన నీరు ఉన్నచోటే underwater-weapons పరిశోధన ఉంది. Kochi, Mumbai కూడా ప్రసిద్ధ నౌకా నగరాలు కావడం వల్లే ఈ trap పనిచేస్తుంది; చిరునామా నేర్చుకోని అభ్యర్థి వాటిలో ఒకటి ఊహిస్తాడు. <b class="imp">NSTL ఉన్నది Visakhapatnam లో.</b></div></div>
+<div class="gl"><div class="te"><b>ఆగస్టు 1969 — cross-syllabus trap.</b> <b class="imp">ISRO 1969 ఆగస్టు 15</b> న ఏర్పడింది; <b class="imp">NSTL 1969 ఆగస్టు 20</b> న — అదే వారంలో, కేవలం ఐదు రోజుల తేడాతో. ఈ రెండు సంస్థలూ వేర్వేరు — ఒకటి అంతరిక్షం కోసం, ఒకటి రక్షణ కోసం — కానీ దాదాపు ఏకకాలంలో ఏర్పడ్డాయి. Space, Defence రెండు tracks కలిపే assertion-reason ప్రశ్నకు ఇది సిద్ధమైన ఆధారం.</div></div>
+<div class="gl"><div class="te"><b>Andhra Pradesh లో మరో కొత్త test infrastructure.</b> Krishna జిల్లా, Nagayalanka mandal లో <span class="term">Machilipatnam Test Range Project</span> ను 2024 అక్టోబర్ లో కేంద్ర ప్రభుత్వం ఆమోదించింది; ఇది ఇంకా నిర్మాణ దశలోనే ఉంది, 2026 నాటికి పూర్తిస్థాయిలో పనిచేయడం లేదు. దీన్ని <b class="imp">Dr APJ Abdul Kalam Island (Odisha) తో కలగలపవద్దు</b> — అది వేరే, ఇప్పటికే పనిచేస్తున్న test facility (D4 లో Mission Divyastra ప్రయోగించిన చోటు).</div></div>
+<div class="pt">2D — మిగతా Network, ఆశ్చర్యకరమైన ఒక Laboratory</div>
+<div class="te"><b class="cl">ఈ నెట్‌వర్క్ దేశమంతటా విస్తరించి ఉంది.</b> మరో నాలుగు laboratories పేర్లు తెలుసుకోవడం విలువైనది — మూడు, ఈ పుస్తకంలో తర్వాత కనిపించే systems ను అవి తయారు చేస్తాయి కాబట్టి; ఒకటి, ఈ track మొత్తంలో అత్యంత పదునైన attribution trap దాని నుంచే వస్తుంది కాబట్టి.</div>
+<div class="tblwrap"><table>
+<caption>దేశంలో మిగతా చోట్ల</caption>
+<thead><tr><th>Laboratory</th><th>ఎక్కడ</th><th>దేనికి ప్రసిద్ధి</th></tr></thead>
+<tbody>
+<tr><td><b>ADA</b> — Aeronautical Development Agency</td><td>Bengaluru</td><td><span class="imp">DRDO కింద autonomous society</span>. <b>Tejas</b> విమానాన్ని design చేసింది, తయారు చేసేది <b>HAL</b> (D5)</td></tr>
+<tr><td><b>CVRDE</b> — Combat Vehicles Research and Development Establishment</td><td>Chennai</td><td>సాయుధ యుద్ధ వాహనాలు. <b>Arjun</b> ట్యాంక్ (D5)</td></tr>
+<tr><td><b>ARDE</b> — Armament Research and Development Establishment</td><td>Pune</td><td>సంప్రదాయ ఆయుధాలు — తుపాకులు, మందుగుండు, rocket వ్యవస్థలు (D5)</td></tr>
+<tr><td><b>LRDE</b> — Electronics and Radar Development Establishment</td><td>Bengaluru</td><td>Radar అభివృద్ధి (D6)</td></tr>
+<tr><td><b>INMAS</b> — Institute of Nuclear Medicine and Allied Sciences</td><td>Delhi</td><td>Radiation sciences, nuclear medicine. Anti-COVID ఔషధం <b>2-DG</b> ను అభివృద్ధి చేసింది — <span class="imp">ఇది DRDO laboratory, ఆరోగ్య మంత్రిత్వ శాఖ సంస్థ కాదు</span> (D7)</td></tr>
+</tbody>
+</table></div>
+<div class="key"><div class="t">ADA ఒక Autonomous Society ఎందుకు?</div><div class="te">DRDO లోని సాధారణ laboratories ఒక నిర్దిష్ట technology cluster (D1) కింద పనిచేస్తాయి. కానీ Tejas LCA లాంటి దశాబ్దాల పాటు సాగే భారీ జాతీయ ప్రాజెక్టులకు వేగవంతమైన నిర్ణయాలు, ప్రత్యేక నిధులు, నియామకాల స్వేచ్ఛ అవసరం. సాధారణ bureaucratic అడ్డంకులను దాటడానికి ADA ను DRDO గొడుగు కిందే ఒక <b class="imp">Autonomous Society</b> గా ఏర్పాటు చేశారు. ఇది క్షిపణులను తయారు చేసే సాధారణ laboratory లాంటిది కాదు — ఇది ఒక ప్రత్యేక project management సంస్థ.</div></div>
+<div class="gl"><div class="te"><b>2-DG attribution, గమనించదగ్గ ఒక Hyderabad సంబంధం.</b> ఒక మహమ్మారి సమయంలో ఔషధం వస్తే, అభ్యర్థులు దాన్ని ICMR కో ఒక pharmaceutical కంపెనీకో ఆపాదిస్తారు. <b>2-DG ను అభివృద్ధి చేసింది INMAS అనే DRDO laboratory</b>, దాని radiation-sciences పని నుంచి; తయారు చేసి పంపిణీ చేసింది <b>Dr. Reddy's Laboratories, Hyderabad</b>. ఒకే అంశంలో DRDO ఆవిష్కరణ, Hyderabad తయారీదారు. పూర్తి spin-off కథ <b>D7</b> లో.</div></div>
+<div class="foot">D2 — The Laboratories, and the AP / Telangana Cluster (Bilingual · st4 style) · page 2 of 3</div>
+</div><div class="page">
+<div class="why">
+<div class="q">అనేక missile laboratories ఒకే నగరంలో ఎందుకు, విడివిడిగా కాకుండా?</div>
+<div class="te">క్షిపణికి airframe, guidance, propulsion అన్నీ కలిసి అభివృద్ధి కావాలి; నిరంతరం ఒకరికొకరు పని అప్పగించుకోవలసిన బృందాలను వీలైనంత దగ్గరగా ఉంచుతారు. వాటిని ఒకే పేరుగల complex గా చూపడం ఒక పని సంబంధాన్ని ప్రతిబింబిస్తుంది, కేవలం చిరునామాను కాదు.</div>
+<div class="q">DRDL తానే guidance system ఎందుకు నిర్మించదు?</div>
+<div class="te">ఎగిరే airframe design చేయడం, దాన్ని నడిపే electronics design చేయడం వేర్వేరు విభాగాలు; వేర్వేరు మనుషులు, సదుపాయాలు కావాలి. విడదీయడం వల్ల ప్రతి laboratory లోతుగా వెళ్లగలదు; ఆ విభజనను కలిపి ఉంచేదే D1 లోని cluster నిర్మాణం.</div>
+<div class="q">Underwater-weapons laboratory Visakhapatnam లో ఎందుకు ఉంది?</div>
+<div class="te">అది పెద్ద నౌకా, నౌకా నిర్మాణ కేంద్రం; లోతైన నీరు దగ్గరే ఉంది. కాబట్టి పరిశోధన తాను సేవ చేసే నౌకలకూ, పరీక్షించవలసిన పరిస్థితులకూ దగ్గరగా ఉంటుంది.</div>
+<div class="q">Hyderabad metallurgy laboratory, Chennai లో నిర్మించిన ట్యాంకుకు ఎందుకు ముఖ్యం?</div>
+<div class="te">Laboratories విభజన ఉత్పత్తిని బట్టి కాదు, పరిష్కరించే సమస్యను బట్టి. Armour అనేది ఎక్కడ చేరినా materials సమస్యే; కాబట్టి ఒకే materials laboratory ట్యాంకులకు, క్షిపణులకు, విమానాలకు పనిచేస్తుంది.</div>
+<div class="q">ఒక defence laboratory ఔషధాన్ని ఎందుకు తయారు చేసింది?</div>
+<div class="te">INMAS రక్షణ అవసరాల కోసం radiation sciences, nuclear medicine మీద పనిచేస్తుంది; ఆ నైపుణ్యం ఒక పౌర సమస్యకు బదిలీ అయింది. మూల శాస్త్రం ఉమ్మడిగా ఉన్నప్పుడు defence research పౌర spin-offs ను ఇస్తుంది.</div>
+</div>
+<div class="pt">★ Quick Facts (వేగవంత పునశ్చరణ)</div>
+<ol class="qf">
+<li><b>Kalam Missile Complex</b> = ASL + DRDL + RCI, అన్నీ <b>Hyderabad</b> లో; production partner <b>BDL</b> కూడా Hyderabad లోనే.</li>
+<li><b>DRDL</b> = మొత్తం క్షిపణి design/aerodynamics/flight; <b>RCI</b> (Vignyan Kancha) = avionics/navigation/guidance/control — వేర్వేరు పనులు. RCI ను <b>1988</b> లో కలామే స్థాపించారని విస్తృతంగా చెప్తారు.</li>
+<li><b>DMRL</b> (Hyderabad) = <b>Kanchan armour</b> తయారు చేసింది; <b>CVRDE</b> (Chennai) = <b>Arjun</b> ట్యాంక్ తయారు చేసింది.</li>
+<li><b>DLRL</b> = electronic warfare; <b>CHESS</b> = directed-energy systems, lasers (అభివృద్ధి దశలో).</li>
+<li><b>NSTL</b> = Naval Science and Technological Laboratory, <b>Visakhapatnam</b>, <b>1969 ఆగస్టు 20</b> — <b>ISRO</b> (1969 ఆగస్టు 15) కు ఐదు రోజుల తర్వాత. Underwater weapons.</li>
+<li><b>Maareech</b> = NSTL అభివృద్ధి చేసిన anti-torpedo decoy system. <b>NOAR</b> (Orvakal, Kurnool) = CHESS laser trials జరిగే ప్రదేశం; <b>Machilipatnam Test Range</b> (Nagayalanka, Krishna) = నిర్మాణ దశలో ఉన్న కొత్త facility.</li>
+<li><b>ADA</b> (Bengaluru) = DRDO కింద autonomous society; <b>Tejas</b> design చేసింది, <b>HAL</b> తయారు చేస్తుంది.</li>
+<li><b>CVRDE</b> (Chennai) = Arjun ట్యాంక్ · <b>ARDE</b> (Pune) = ఆయుధాలు · <b>LRDE</b> (Bengaluru) = radar.</li>
+<li><b>INMAS</b> (Delhi) = DRDO laboratory; <b>2-DG</b> అభివృద్ధి చేసింది; <b>Dr. Reddy's, Hyderabad</b> తయారు చేసింది.</li>
+<li><b>Laboratories విభజన సూత్రం</b> = సమస్య ఆధారంగా, ఉత్పత్తి/ప్రాంతం ఆధారంగా కాదు.</li>
+</ol>
+<div class="pt rd">★ PYQ · TRAP · CURRENT</div>
+<div class="tblwrap"><table class="rd">
+<caption>TRAP — examiner ఎక్కడ మెలిక పెడతాడు</caption>
+<thead><tr><th>ఇలా అనిపిస్తుంది</th><th>నిజం</th></tr></thead>
+<tbody>
+<tr><td>NSTL Kochi లో లేదా Mumbai లో ఉంది</td><td>కాదు. <b>Visakhapatnam</b>. ఆ రెండూ ప్రధాన నౌకా కేంద్రాలు కావడం వల్లే ఊహ తప్పుతుంది.</td></tr>
+<tr><td>DRDL, RCI ఒకే పని చేస్తాయి</td><td>కాదు. <b>DRDL</b> క్షిపణిని మొత్తంగా (design, aerodynamics, flight); <b>RCI</b> avionics, navigation, guidance, control.</td></tr>
+<tr><td>Kalam Missile Complex ఒక్క laboratory</td><td>కాదు. <b>మూడు</b> laboratories ఒకే complex గా — <b>ASL, DRDL, RCI</b>.</td></tr>
+<tr><td>ADA అనేది HAL విభాగం</td><td>కాదు. <b>DRDO కింద autonomous society</b>; design చేసేది ADA, తయారు చేసేది <b>HAL</b>.</td></tr>
+<tr><td>Kanchan armour ట్యాంక్ factory నుంచి లేదా CVRDE నుంచి వచ్చింది</td><td>కాదు. <b>DMRL, Hyderabad</b> అనే metallurgy laboratory నుంచి; <b>CVRDE Chennai</b> ట్యాంకును అభివృద్ధి చేసింది.</td></tr>
+<tr><td>2-DG ను ICMR లేదా ఒక pharmaceutical కంపెనీ అభివృద్ధి చేసింది</td><td>కాదు. <b>INMAS అనే DRDO laboratory</b>. Dr. Reddy's Laboratories, Hyderabad తయారు చేసి పంపిణీ చేసింది.</td></tr>
+<tr><td>DRDO laboratories అన్నీ Delhi లో కేంద్రీకృతమయ్యాయి</td><td>కాదు. దేశవ్యాప్త network — Delhi తో పాటు Hyderabad, Visakhapatnam, Bengaluru, Pune, Chennai, Dehradun లోనూ ఉన్నాయి.</td></tr>
+<tr><td>ASL పేరులో "systems" ఉంది కాబట్టి electronics మీద పనిచేస్తుంది</td><td>కాదు. <b>Solid propulsion</b>, composites, aerospace mechanisms. Electronics laboratories <b>DLRL</b>, <b>LRDE</b>.</td></tr>
+<tr><td>CHESS రసాయన ఆయుధాల సంస్థ</td><td>కాదు. <b>Centre for High Energy Systems and Sciences</b> — directed energy, lasers, high-energy systems.</td></tr>
+<tr><td>ISRO, NSTL ఒకే సంవత్సరం అంటే యాదృచ్ఛికం, తేదీలు దూరంగా ఉంటాయి</td><td>కాదు. రెండూ <b>ఆగస్టు 1969</b> లో, అదే వారంలో ఏర్పడ్డాయి — ISRO 15, NSTL 20.</td></tr>
+<tr><td>Nagayalanka లోని కొత్త test range పేరు "Abdul Kalam Missile Test Range"</td><td>కాదు. దీని అధికారిక పేరు <b>Machilipatnam Test Range Project</b>; ఇంకా నిర్మాణ దశలో. <b>Abdul Kalam Island</b> అనేది Odisha లోని వేరే, ఇప్పటికే పనిచేస్తున్న facility.</td></tr>
+</tbody>
+</table></div>
+<div class="foot">D2 — The Laboratories, and the AP / Telangana Cluster (Bilingual · st4 style) · page 3 of 3</div>
+</div><nav class="book-split-nav"><a href="/learn/science-technology/st1-technology-missions/textbook/st1-drdo-d1a">← D1 Addendum</a><span>DRDO · Part 3 of 10</span><a href="/learn/science-technology/st1-technology-missions/textbook/st1-drdo-d2a">D2 Addendum →</a></nav></body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<base href="/static/notes/revision/Science_and_Technology/STPolicy_ICT/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter P5 — Artificial Intelligence and the Data Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans',sans-serif;background:#dde1e8;color:#1a1a1a;font-size:14.8px;line-height:1.72;}
+.page{width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);}
+h1{font-size:22px;font-weight:700;color:#132a52}
+.sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+.pritag{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:#c0392b;padding:2px 8px;border-radius:10px;vertical-align:middle;margin-left:8px}
+.para{margin:16px 0}
+.ptitle{font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;}
+.ptitle.rd{background:#8a2a20} .ptitle.gn{background:#1a6b3c}
+p.eng{margin:8px 0 4px}
+.imp{background:#fff4c2;padding:0 3px} .hlg{background:#c9f2c9;padding:0 3px}
+.hlp{background:#ffd3e6;padding:0 3px} .hlb{background:#c9e4ff;padding:0 3px}
+.term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+.te{font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:8px 11px;margin:5px 0 10px;line-height:1.68;}
+.q{border-left:3px solid #b3891a;background:#fffbe6;padding:7px 11px;margin:8px 0;font-size:13.3px;color:#3a3016}
+.q .who{font-weight:700;color:#7a6212;display:block;margin-bottom:3px}
+.q .te{background:#fdf6dc;border-left-color:#d9bc63;color:#4a3d16;margin:6px 0 0}
+.q .memline{display:block;margin-top:6px;padding-top:5px;border-top:1px dashed #d9bc63;font-weight:700;color:#7a6212}
+.why{border-left:4px solid #5b3a8e;background:#f5f0fb;padding:9px 12px;margin:10px 0;border-radius:0 4px 4px 0}
+.why .whytitle{font-weight:700;color:#4a2d78;font-size:13.8px;margin-bottom:4px}
+.why ul{margin:4px 0 0 18px;font-size:13.4px}
+.why li{margin:3px 0}
+.why .te{background:#efe7f9;border-left-color:#a184c9;color:#432a6b;margin-top:7px}
+.rem{background:#132a52;color:#fff;padding:11px 14px;margin:11px 0;border-radius:4px}
+.rem .remtitle{font-weight:700;font-size:13.5px;color:#ffd75e;margin-bottom:5px;letter-spacing:.3px}
+.rem .remstr{font-family:'Noto Sans',monospace;font-size:13.1px;line-height:1.95;font-weight:600}
+.rem .remstr span{color:#9ec9ff}
+.rem .remstr b{color:#ffd75e}
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:9px 12px;margin:10px 0;border-radius:0 4px 4px 0}
+.trap .traptitle{font-weight:700;color:#8a2a20;font-size:13.8px;margin-bottom:4px}
+.trap table{margin:5px 0 0;font-size:13.1px}
+.trap th{background:#8a2a20}
+.trap .te{background:#fbe3e0;border-left-color:#c98079;color:#7a241a;margin-top:7px;font-size:13.2px}
+.xref{font-size:12.5px;color:#555;background:#f4f5f8;border:1px dashed #c3c8d2;padding:7px 11px;margin:11px 0;border-radius:3px}
+.xref b{color:#132a52}
+.gloss{font-size:12.6px;color:#33455e;background:#eef2f8;border-left:3px solid #8fa8c8;padding:6px 11px;margin:9px 0;border-radius:0 3px 3px 0}
+.gloss b{color:#132a52}
+.chain{background:#eef2f8;border:1px solid #b9c7da;padding:11px 12px;margin:11px 0;border-radius:4px;text-align:center}
+.chain .bx{display:inline-block;background:#2c4a80;color:#fff;font-weight:700;font-size:13.2px;padding:6px 14px;border-radius:3px;margin:3px 2px}
+.chain .bx.top{background:#8a2a20}
+.chain .ar{font-weight:700;color:#41556f;font-size:16px;padding:0 4px}
+.chain .ccap{display:block;margin-top:8px;font-size:12.4px;color:#41556f;font-weight:600}
+table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.1px}
+caption{text-align:left;font-weight:700;font-size:13.6px;margin-bottom:4px;color:#132a52}
+caption.qs{color:#1a6b3c} table.qs th{background:#1a6b3c}
+th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.1px}
+td{padding:5px 9px;border-bottom:1px solid #e2e4ea} tbody tr:nth-child(even) td{background:#f4f5f8}
+tr.ind td{background:#dcf3dc!important}
+.foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+@page{size:A4;margin:16mm 16mm 12mm}
+@media print{ body{background:#fff} .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0} tr,td,th,.te,.why,.rem,.trap,.xref,.gloss,.q,.chain{page-break-inside:avoid} thead{display:table-header-group} }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+<div class="page">
+<h1>Chapter P5 — Artificial Intelligence and the Data Technologies<span class="pritag">ESSENTIAL</span></h1>
+<div class="sub">APPSC Group II · Paper-II Section-B · Sub-topic 1, "Technology Missions, Policies and Applications" — the AI strategy-to-mission sequence, the Digital Personal Data Protection Act and its Rules, and India's non-personal data governance track</div>
+
+<div class="para">
+<div class="ptitle">P5A — Two Documents, Seven Years Apart: #AIforAll and the IndiaAI Mission</div>
+<p class="eng">India's engagement with artificial intelligence as a policy object begins with a <b class="term">strategy</b>, not a funded programme. <b class="hlp">NITI Aayog</b> published its <b class="imp">National Strategy for Artificial Intelligence</b> in <b class="hlg">June 2018</b>, carrying the tagline <b class="imp">#AIforAll</b>. It is a discussion-paper-style roadmap, not a budgeted mission: it names five focus sectors — <b class="hlb">healthcare, agriculture, education, smart cities and smart mobility</b> — and proposes an institutional architecture built around <b class="term">CORE</b> (Centres of Research Excellence, for fundamental research) and <b class="term">ICTAI</b> (International Centres for Transformational AI, for applied research and commercialisation), together with a proposed <b>National AI Marketplace</b>. NITI Aayog followed this with a separate set of <b class="term">Responsible AI</b> approach documents, addressing the principles and governance architecture an AI ecosystem should carry — again guidance, not a funding instrument.</p>
+<div class="te">India AI ను ఒక policy అంశంగా చేపట్టడం ఒక <b class="term">strategy</b> తో మొదలైంది — నిధులు కేటాయించిన programme తో కాదు. <b class="hlp">NITI Aayog</b> <b class="hlg">జూన్ 2018</b> లో <b class="imp">National Strategy for Artificial Intelligence</b> విడుదల చేసింది, దానికి tagline <b class="imp">#AIforAll</b>. ఇది చర్చా-పత్రం రీతిలో ఒక roadmap, నిధులున్న mission కాదు: ఐదు focus sectors — <b class="hlb">healthcare, agriculture, education, smart cities, smart mobility</b> — పేర్కొంటూ, <b class="term">CORE</b> (Centres of Research Excellence — మౌలిక పరిశోధన కోసం), <b class="term">ICTAI</b> (International Centres for Transformational AI — అనువర్తిత పరిశోధన, వాణిజ్యీకరణ కోసం) చుట్టూ ఒక సంస్థాగత నిర్మాణాన్ని ప్రతిపాదిస్తుంది; దీనితో పాటు ప్రతిపాదిత <b>National AI Marketplace</b>. తర్వాత NITI Aayog వేరుగా <b class="term">Responsible AI</b> approach పత్రాలను ప్రచురించింది — AI వ్యవస్థ అనుసరించవలసిన principles, governance నిర్మాణం గురించి — ఇది కూడా మార్గదర్శకత్వమే, నిధుల సాధనం కాదు.</div>
+
+<p class="eng">Six years later, the instrument changed character entirely. The Union Cabinet approved the <b class="imp">IndiaAI Mission</b> on <b class="hlg">7 March 2024</b>, under the <b class="hlp">Ministry of Electronics and Information Technology (MeitY)</b>, with a total outlay of roughly <b class="hlg">₹10,372 crore</b> over the mission's multi-year period. This is a <b class="term">funded mission</b> with a named budget line, implemented through <b class="hlb">IndiaAI</b>, an independent business division functioning under the Digital India Corporation — a structurally different kind of instrument from the 2018 strategy paper, even though both documents are about the same technology.</p>
+<div class="te">ఆరేళ్ల తర్వాత ఈ సాధనం స్వభావమే పూర్తిగా మారింది. <b class="hlg">7 మార్చి 2024</b> న Union Cabinet <b class="hlp">Ministry of Electronics and Information Technology (MeitY)</b> కింద <b class="imp">IndiaAI Mission</b> ను ఆమోదించింది — మొత్తం బడ్జెట్ సుమారు <b class="hlg">₹10,372 కోట్లు</b>, mission బహుళ-సంవత్సరాల కాలానికి. ఇది పేరున్న బడ్జెట్ లైన్ ఉన్న <b class="term">funded mission</b>; Digital India Corporation కింద పనిచేసే స్వతంత్ర వ్యాపార విభాగం <b class="hlb">IndiaAI</b> ద్వారా దీన్ని అమలు చేస్తారు — 2018 strategy పత్రం కంటే నిర్మాణాత్మకంగా వేరైన సాధనం, రెండూ ఒకే టెక్నాలజీ గురించి అయినా.</div>
+
+<div class="q">
+<span class="who">Trap the examiner likes to set</span>
+A question naming "#AIforAll" and asking for its year, or naming "IndiaAI Mission" and asking for its Cabinet-approval date, is really testing whether you keep <b>two different kinds of document</b> apart.
+<table>
+<thead><tr><th style="width:30%">Feature</th><th style="width:35%">National Strategy for AI</th><th>IndiaAI Mission</th></tr></thead>
+<tbody>
+<tr><td>Year / body</td><td>2018 · NITI Aayog</td><td>2024 · MeitY</td></tr>
+<tr><td>Nature</td><td>Strategy / discussion paper</td><td>Funded Cabinet-approved mission</td></tr>
+<tr><td>Budget line</td><td>None named</td><td>₹10,372 crore</td></tr>
+</tbody>
+</table>
+<span class="memline">Memory line: "AIforAll thinks it through; IndiaAI pays for it."</span>
+</div>
+<div class="te"><b>Examiner వాడే ట్రాప్:</b> "#AIforAll" సంవత్సరం అడిగినా, "IndiaAI Mission" Cabinet ఆమోద తేదీ అడిగినా — ఇది రెండు వేర్వేరు రకాల పత్రాలను వేరు చేయగలరా అని పరీక్షించడమే. గుర్తుంచుకోండి: "AIforAll ఆలోచిస్తుంది; IndiaAI దానికి నిధులిస్తుంది."</div>
+</div>
+
+<div class="para">
+<div class="ptitle rd">P5B — The IndiaAI Mission: Seven Pillars</div>
+<p class="eng">The Mission is structured, by the Cabinet's own approval and MeitY's own published account, into <b class="imp">seven pillars</b>. It is worth learning them as a set, because a question may name one pillar and ask what it is <i>not</i> responsible for.</p>
+<div class="te">Cabinet ఆమోదం, MeitY ప్రచురించిన వివరాల ప్రకారం, ఈ Mission <b class="imp">ఏడు pillars</b> గా నిర్మించబడింది. వీటిని ఒక సమూహంగా నేర్చుకోవడం మంచిది — ఒక pillar పేరు చెప్పి అది <i>ఏమి బాధ్యత కాదు</i> అని అడగవచ్చు.</div>
+
+<div class="chain">
+<span class="bx top">IndiaAI Compute</span><span class="ar">·</span>
+<span class="bx top">App. Dev. Initiative</span><span class="ar">·</span>
+<span class="bx top">AIKosh (datasets)</span><span class="ar">·</span>
+<span class="bx top">Foundation Models</span>
+<br>
+<span class="bx top">FutureSkills</span><span class="ar">·</span>
+<span class="bx top">Startup Financing</span><span class="ar">·</span>
+<span class="bx top">Safe &amp; Trusted AI</span>
+<span class="ccap">The seven pillars of the IndiaAI Mission (Cabinet-approved 7 March 2024, MeitY)</span>
+</div>
+
+<p class="eng"><b class="term">IndiaAI Compute</b> builds a shared, subsidised GPU infrastructure so that startups, researchers and government bodies are not priced out of large-scale training. The <b class="term">Application Development Initiative</b> funds AI applications addressing problems of national importance. <b class="term">AIKosh</b> is the mission's unified <b>datasets platform</b> — a repository of datasets, models and use-cases, with an AI sandbox facility, administered by MeitY. <b class="term">IndiaAI Foundation Models</b> funds the building of indigenous large-scale models, including in Indian languages. <b class="term">IndiaAI FutureSkills</b> is the talent and skilling pillar. <b class="term">IndiaAI Startup Financing</b> provides deep-tech AI startups financial support. <b class="term">Safe &amp; Trusted AI</b> funds India-specific tools for bias mitigation, explainability and compliance.</p>
+<div class="te"><b class="term">IndiaAI Compute</b> — ఒక ఉమ్మడి, సబ్సిడీ GPU మౌలిక సదుపాయాన్ని నిర్మిస్తుంది, తద్వారా startups, పరిశోధకులు, ప్రభుత్వ సంస్థలు పెద్ద ఎత్తున శిక్షణ నుండి ధర కారణంగా మిగిలిపోకుండా. <b class="term">Application Development Initiative</b> జాతీయ ప్రాముఖ్యత సమస్యలను పరిష్కరించే AI applications కు నిధులిస్తుంది. <b class="term">AIKosh</b> — mission యొక్క ఏకీకృత <b>datasets platform</b>; datasets, models, use-cases భాండాగారం, AI sandbox సదుపాయంతో, MeitY నిర్వహణలో. <b class="term">IndiaAI Foundation Models</b> — స్వదేశీ పెద్ద-స్థాయి models నిర్మాణానికి, భారతీయ భాషల్లో కూడా, నిధులిస్తుంది. <b class="term">IndiaAI FutureSkills</b> — నైపుణ్యాభివృద్ధి pillar. <b class="term">IndiaAI Startup Financing</b> — deep-tech AI startups కు ఆర్థిక సహాయం. <b class="term">Safe &amp; Trusted AI</b> — bias తగ్గింపు, explainability, compliance కోసం India-నిర్దిష్ట సాధనాలకు నిధులిస్తుంది.</div>
+
+<div class="why">
+<div class="whytitle">💡 Why this matters for an answer</div>
+<ul>
+<li>A question that says "which pillar funds datasets" is testing <b>AIKosh</b>, not "Foundation Models."</li>
+<li>A question that says "which pillar builds the GPU layer" is testing <b>IndiaAI Compute</b>, the only pillar whose GPU figures (see P5C) are regularly updated in current affairs.</li>
+<li>Treat the pillar count (seven) and names as Tier-1 facts from the Cabinet approval and MeitY's own published account; treat the rupee figure (₹10,372 crore) as the figure in continuous circulation since March 2024, with no later revision found in this research pass.</li>
+</ul>
+<div class="te">
+<li>"ఏ pillar datasets కు నిధులిస్తుంది" అని అడిగితే అది <b>AIKosh</b> ను పరీక్షించడమే, "Foundation Models" ను కాదు.</li>
+<li>"ఏ pillar GPU layer నిర్మిస్తుంది" అని అడిగితే అది <b>IndiaAI Compute</b> ను పరీక్షించడమే — దీని GPU సంఖ్యలే (P5C చూడండి) ఎప్పటికప్పుడు current affairs లో మారుతూ ఉంటాయి.</li>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">The IndiaAI Mission at two years — compute, models, governance guidelines, and the India-AI Impact Summit</div>
+
+<div class="para">
+<div class="ptitle">P5C — Two Years In: Compute Scale-Up and the Sovereign Model Question</div>
+<p class="eng">The Mission's original compute target was <b class="hlg">10,000 GPUs</b>. By October 2025, MeitY's own account put <b class="imp">38,000 GPUs</b> onboarded onto the IndiaAI Compute portal, offered to approved users at a subsidised rate of roughly <b class="hlg">₹65 per GPU-hour</b> — a figure quoted across multiple 2025–26 sources and the single most likely number to be updated again before an exam, so treat it as a snapshot rather than a ceiling. At the <b>India-AI Impact Summit</b> in February 2026 (below), the government announced plans to add a further <b class="hlg">20,000-plus GPUs</b> on top of the 38,000 already onboarded.</p>
+<div class="te">Mission అసలు compute లక్ష్యం <b class="hlg">10,000 GPUs</b>. అక్టోబర్ 2025 నాటికి, MeitY సొంత వివరాల ప్రకారం IndiaAI Compute portal పై <b class="imp">38,000 GPUs</b> చేరాయి; approved users కు సుమారు <b class="hlg">GPU-hour కు ₹65</b> సబ్సిడీ రేటుకు అందించారు — ఈ అంకె 2025–26 అనేక మూలాల్లో పునరావృతమైంది, పరీక్షకు ముందు మళ్లీ మారే అత్యంత అవకాశమున్న సంఖ్య కూడా ఇదే; కాబట్టి దీన్ని ఒక snapshot గానే చూడండి, పరిమితిగా కాదు. ఫిబ్రవరి 2026 <b>India-AI Impact Summit</b> లో (కింద చూడండి), ఇప్పటికే చేరిన 38,000 కు అదనంగా <b class="hlg">20,000+ GPUs</b> చేర్చే ప్రణాళికను ప్రభుత్వం ప్రకటించింది.</div>
+
+<p class="eng">On the <b>sovereign foundation model</b> question — status-tagged carefully, since this is where overclaiming is easiest. MeitY selected the Bengaluru startup <b class="hlp">Sarvam AI</b> to build an indigenous large language model suite under the Foundation Models pillar: <b class="hlb">Sarvam-Large</b> (advanced reasoning), <b class="hlb">Sarvam-Small</b> (real-time use) and <b class="hlb">Sarvam-Edge</b> (on-device), aimed at roughly <b class="hlg">70 billion parameters</b> for population-scale Indian-language deployment. As of the February 2026 Impact Summit, Sarvam had already released smaller products — a 3-billion-parameter vision-language model and a text-to-speech system — and announced further model releases at the Summit itself; it went on to become an AI <b>unicorn</b> in June 2026. A second consortium, <b class="hlp">BharatGen</b>, launched a <b class="hlg">17-billion-parameter</b> model named <b class="hlb">Param2</b> at the same Summit. <b class="imp">No full frontier-class sovereign model matching the scale of the largest global models had been confirmed released, as of the Impact Summit, in the sources checked for this chapter</b> — the honest answer is "under active development, with intermediate models already shipped," not "released."</p>
+<div class="te"><b>Sovereign foundation model</b> విషయంలో — జాగ్రత్తగా status-tag చేయాలి, ఇక్కడే అతిగా చెప్పడం సులువు. Foundation Models pillar కింద స్వదేశీ large language model suite నిర్మించడానికి MeitY బెంగళూరు startup <b class="hlp">Sarvam AI</b> ను ఎంపిక చేసింది: <b class="hlb">Sarvam-Large</b> (advanced reasoning), <b class="hlb">Sarvam-Small</b> (real-time వాడుక), <b class="hlb">Sarvam-Edge</b> (on-device) — సుమారు <b class="hlg">70 బిలియన్ parameters</b> లక్ష్యంగా, భారతీయ భాషల్లో జనావళి-స్థాయి వాడుక కోసం. ఫిబ్రవరి 2026 Impact Summit నాటికి, Sarvam ఇప్పటికే చిన్న products విడుదల చేసింది — 3 బిలియన్ parameters vision-language model, text-to-speech వ్యవస్థ — మరియు Summit లోనే మరిన్ని model విడుదలలు ప్రకటించింది; జూన్ 2026 లో ఒక AI <b>unicorn</b> గా మారింది. రెండవ కన్సార్టియం <b class="hlp">BharatGen</b> అదే Summit లో <b class="hlg">17 బిలియన్ parameters</b> గల <b class="hlb">Param2</b> model ను launch చేసింది. <b class="imp">అతిపెద్ద global models స్థాయికి సరిపోలే పూర్తి frontier-class sovereign model ఏదీ, ఈ chapter కోసం పరిశీలించిన మూలాల్లో, Impact Summit నాటికి విడుదలైనట్టు నిర్ధారణ కాలేదు</b> — నిజాయితీగా సమాధానం "చురుకుగా అభివృద్ధిలో ఉంది, మధ్యంతర models ఇప్పటికే విడుదలయ్యాయి," "విడుదలైంది" కాదు.</div>
+
+<p class="eng">On governance: MeitY released the <b class="imp">India AI Governance Guidelines</b> on <b class="hlg">5 November 2025</b> — a deliberately <b>non-prescriptive</b> approach that relies on strengthening existing law rather than a new standalone AI statute, built around <b class="hlb">seven foundational principles ("Sutras")</b>: Trust, People First, Innovation over Restraint, Fairness &amp; Equity, Accountability, Understandable by Design, and Safety, Resilience &amp; Sustainability, with implementation carried by a Technology &amp; Policy Expert Committee, an AI Governance Group and an AI Expert Committee.</p>
+<div class="te">Governance విషయంలో: MeitY <b class="hlg">5 నవంబర్ 2025</b> న <b class="imp">India AI Governance Guidelines</b> విడుదల చేసింది — ఉద్దేశపూర్వకంగా <b>non-prescriptive</b> విధానం; ప్రత్యేక కొత్త AI చట్టం కంటే ఉన్న చట్టాలను బలపరచడంపై ఆధారపడుతుంది; <b class="hlb">ఏడు మౌలిక principles ("Sutras")</b> చుట్టూ నిర్మించబడింది: Trust, People First, Innovation over Restraint, Fairness &amp; Equity, Accountability, Understandable by Design, Safety Resilience &amp; Sustainability; అమలు Technology &amp; Policy Expert Committee, AI Governance Group, AI Expert Committee ద్వారా జరుగుతుంది.</div>
+
+<div class="trap">
+<div class="traptitle">🎯 A "Sutras" trap inside this very pillar</div>
+<table>
+<thead><tr><th style="width:38%">"Sutras" set</th><th>What it is</th></tr></thead>
+<tbody>
+<tr><td>Seven Sutras — Governance Guidelines, 5 Nov 2025</td><td>Trust · People First · Innovation over Restraint · Fairness &amp; Equity · Accountability · Understandable by Design · Safety, Resilience &amp; Sustainability</td></tr>
+<tr><td>Three Sutras — India-AI Impact Summit, Feb 2026</td><td>People · Planet · Progress (the Summit's three thematic pillars, with seven working groups under them)</td></tr>
+</tbody>
+</table>
+<div class="te">రెండు వేర్వేరు "Sutras" సమూహాలు ఉన్నాయి — గందరగోళపడకండి: Governance Guidelines ఏడు Sutras (Trust మొదలైనవి); Impact Summit మూడు Sutras (People, Planet, Progress). ఒకదానికి బదులు మరొకటి ఇస్తే పొరబాటు.</div>
+</div>
+
+<p class="eng">India hosted the <b class="imp">India-AI Impact Summit</b> at <b class="hlp">Bharat Mandapam, New Delhi</b>, originally scheduled <b class="hlg">16–20 February 2026</b> and extended by a day to <b class="hlg">21 February 2026</b>. Delegations from over 100 countries attended, including more than 20 heads of state; the associated India AI Impact Expo drew 300-plus exhibitors. The series' next edition moves to Geneva in 2027.</p>
+<div class="te">India <b class="hlp">న్యూఢిల్లీ Bharat Mandapam</b> లో <b class="imp">India-AI Impact Summit</b> ను నిర్వహించింది; అసలు షెడ్యూల్ <b class="hlg">16–20 ఫిబ్రవరి 2026</b>, ఒక రోజు పొడిగించి <b class="hlg">21 ఫిబ్రవరి 2026</b> వరకు జరిగింది. 100కు పైగా దేశాల ప్రతినిధులు, 20కి పైగా దేశాధినేతలు హాజరయ్యారు; అనుబంధ India AI Impact Expo లో 300కు పైగా exhibitors పాల్గొన్నారు. తర్వాతి edition 2027 లో Geneva కు మారుతుంది.</div>
+</div>
+
+<div class="para">
+<div class="ptitle gn">P5D — The IndiaAI Safety Institute</div>
+<p class="eng">Following the global pattern of national AI Safety Institutes set up after the UK's 2023 Bletchley Park AI Safety Summit, India's Principal Scientific Adviser's office and MeitY have moved to establish an <b class="term">IndiaAI Safety Institute (AISI)</b>. The verified position, stated carefully: official material (including a paper from the Office of the PSA and a "call for partnerships" published on the IndiaAI portal) confirms the <b>institute is being established</b>, oriented towards a <b class="imp">hub-and-spoke model</b> that coordinates safety research across existing institutions rather than standing up one large new physical body. <b class="imp">A precise constitution date, head of institution, or confirmation that it is fully operational could not be pinned to a single Tier-1 primary source in this research pass</b> — present its existence and design philosophy as confirmed, and status-check the operational date again closer to the exam.</p>
+<div class="te">UK యొక్క 2023 Bletchley Park AI Safety Summit తర్వాత ప్రపంచవ్యాప్తంగా జాతీయ AI Safety Institutes ఏర్పాటు చేసిన పద్ధతిని అనుసరిస్తూ, India Principal Scientific Adviser కార్యాలయం, MeitY <b class="term">IndiaAI Safety Institute (AISI)</b> ను స్థాపించే పనిలో ఉన్నాయి. ధృవీకరించిన స్థానం, జాగ్రత్తగా చెప్పాలంటే: అధికారిక సామగ్రి (PSA కార్యాలయం పత్రం, IndiaAI portal లో "call for partnerships" తో సహా) <b>institute స్థాపించబడుతోంది</b> అని నిర్ధారిస్తుంది — ఒక పెద్ద కొత్త భౌతిక సంస్థను నిలబెట్టడం కంటే, ఉన్న సంస్థల మధ్య safety పరిశోధనను సమన్వయం చేసే <b class="imp">hub-and-spoke model</b> వైపు మళ్లింది. <b class="imp">కచ్చితమైన స్థాపన తేదీ, సంస్థ అధిపతి, లేదా అది పూర్తిగా operational అని నిర్ధారణ ఈ research pass లో ఏ ఒక్క Tier-1 ప్రాథమిక మూలానికీ ఖరారు కాలేదు</b> — దీని ఉనికిని, design philosophy ను నిర్ధారితంగా చెప్పండి; operational తేదీని పరీక్షకు దగ్గరగా మళ్లీ సరిచూసుకోండి.</div>
+</div>
+</div>
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">The Digital Personal Data Protection Act, 2023 — and the single most time-sensitive fact in this chapter</div>
+
+<div class="para">
+<div class="ptitle">P5E — The DPDP Act, 2023: What the Law Covers</div>
+<p class="eng">The <b class="term">Digital Personal Data Protection Act, 2023</b> (DPDP Act) received Presidential assent on <b class="hlg">11 August 2023</b>, after passage by both Houses of Parliament. It is India's first standalone personal-data-protection statute, applying to the processing of <b class="imp">digital personal data</b> within India, and to processing outside India where it relates to offering goods or services to persons in India. Its core vocabulary: a <b class="term">Data Principal</b> is the individual to whom the data relates; a <b class="term">Data Fiduciary</b> is the entity that determines the purpose and means of processing (the party with obligations); a <b class="term">Consent Manager</b> is a registered, India-based intermediary through which a Data Principal can give, manage and withdraw consent across fiduciaries; a <b class="term">Significant Data Fiduciary (SDF)</b> is a fiduciary the government notifies for extra obligations — independent audits, Data Protection Impact Assessments and, in some cases, restrictions on data flows — based on the volume and sensitivity of the data it holds. Children's data requires <b>verifiable parental consent</b>, with exceptions for essential services such as healthcare and education. Cross-border transfer (Section 16) runs on a <b class="imp">negative list</b>: transfer abroad is permitted by default, except to countries the Central Government specifically restricts by notification. Penalties for failing reasonable security safeguards run up to <b class="hlg">₹250 crore</b> per instance.</p>
+<div class="te"><b class="term">Digital Personal Data Protection Act, 2023</b> (DPDP Act) పార్లమెంట్ ఉభయ సభలు ఆమోదించాక <b class="hlg">11 ఆగస్టు 2023</b> న రాష్ట్రపతి ఆమోదం పొందింది. ఇది India మొదటి స్వతంత్ర personal-data-protection చట్టం; India లో <b class="imp">digital personal data</b> ప్రాసెసింగ్ కు, మరియు India లోని వ్యక్తులకు వస్తువులు/సేవలు అందించడానికి సంబంధించి India బయట జరిగే ప్రాసెసింగ్ కు కూడా వర్తిస్తుంది. మౌలిక పదజాలం: <b class="term">Data Principal</b> — డేటా ఎవరికి సంబంధించినదో ఆ వ్యక్తి; <b class="term">Data Fiduciary</b> — ప్రాసెసింగ్ ఉద్దేశాన్ని, పద్ధతిని నిర్ణయించే సంస్థ (బాధ్యతలున్న పక్షం); <b class="term">Consent Manager</b> — నమోదైన, India-ఆధారిత మధ్యవర్తి, దీని ద్వారా Data Principal అన్ని fiduciaries ల మధ్య consent ఇవ్వగలరు, నిర్వహించగలరు, ఉపసంహరించుకోగలరు; <b class="term">Significant Data Fiduciary (SDF)</b> — అదనపు బాధ్యతల కోసం ప్రభుత్వం notify చేసే fiduciary — స్వతంత్ర audits, Data Protection Impact Assessments, కొన్నిసార్లు డేటా ప్రవాహాలపై పరిమితులు — అది కలిగి ఉన్న డేటా పరిమాణం, సున్నితత్వం బట్టి. పిల్లల డేటాకు <b>ధృవీకరించదగ్గ తల్లిదండ్రుల consent</b> అవసరం; healthcare, education వంటి అవసరమైన సేవలకు మినహాయింపులు. Cross-border transfer (Section 16) ఒక <b class="imp">negative list</b> పై నడుస్తుంది: విదేశాలకు transfer డిఫాల్ట్‌గా అనుమతించబడుతుంది, Central Government notification ద్వారా ప్రత్యేకంగా పరిమితం చేసిన దేశాలు మాత్రమే మినహాయింపు. సహేతుక security safeguards పాటించకపోతే పెనాల్టీలు ఒక్కో సంఘటనకు <b class="hlg">₹250 కోట్ల</b> వరకు.</div>
+</div>
+
+<div class="para">
+<div class="ptitle rd">P5F — DPDP Rules, 2025: The Act Is Switched On, in Three Dated Phases</div>
+<p class="eng"><b class="imp">A law being assented to is not the same as a law being enforceable.</b> Most of the DPDP Act's substantive machinery needed subordinate Rules before it could operate. MeitY released <b>draft</b> DPDP Rules for public consultation on <b class="hlg">3 January 2025</b>. The <b class="imp">Digital Personal Data Protection Rules, 2025 were notified on 13 November 2025</b> — Gazette notification <b class="hlb">G.S.R. 844(E)</b> establishing the <b class="term">Data Protection Board of India (DPBI)</b> with its head office in the National Capital Region, and <b class="hlb">G.S.R. 845(E)</b> the same day fixing the Board's strength at <b>four Members</b>. The Rules commence in <b>three dated phases</b>: Rules 1, 2 and 17 (definitions, extent, the Board's constitution and powers, and appeals to the Appellate Tribunal) took effect <b class="hlg">immediately on 13 November 2025</b>; Rule 4 (notice and consent mechanics, security safeguards, breach intimation, Significant Data Fiduciary obligations and cross-border transfer conditions) commences <b class="hlg">13 November 2026</b>; the remaining rules (Data Protection Officer appointment, grievance redressal mechanics, the detailed machinery for data-principal rights and breach notification) commence <b class="hlg">13 May 2027</b> — the end of an overall 18-month phase-in.</p>
+<div class="te"><b class="imp">చట్టానికి ఆమోదం రావడం, ఆ చట్టం అమలు చేయగలగడం ఒకటి కాదు.</b> DPDP Act లోని చాలా ముఖ్యమైన యంత్రాంగం పనిచేయడానికి subordinate Rules అవసరం. MeitY <b class="hlg">3 జనవరి 2025</b> న draft DPDP Rules ను ప్రజా సంప్రదింపుల కోసం విడుదల చేసింది. <b class="imp">Digital Personal Data Protection Rules, 2025 ను 13 నవంబర్ 2025</b> న notify చేశారు — Gazette notification <b class="hlb">G.S.R. 844(E)</b> <b class="term">Data Protection Board of India (DPBI)</b> ను స్థాపించింది, దీని ప్రధాన కార్యాలయం National Capital Region లో; అదే రోజు <b class="hlb">G.S.R. 845(E)</b> Board బలాన్ని <b>నలుగురు Members</b> గా నిర్ణయించింది. Rules <b>మూడు తేదీల దశల్లో</b> అమలులోకి వస్తాయి: Rules 1, 2, 17 (నిర్వచనాలు, పరిధి, Board నిర్మాణం-అధికారాలు, Appellate Tribunal కు appeals) <b class="hlg">13 నవంబర్ 2025</b> నుండే వెంటనే అమలులోకి వచ్చాయి; Rule 4 (notice-consent యంత్రాంగం, security safeguards, breach intimation, Significant Data Fiduciary బాధ్యతలు, cross-border transfer పరిస్థితులు) <b class="hlg">13 నవంబర్ 2026</b> నుండి అమలులోకి వస్తుంది; మిగిలిన rules (Data Protection Officer నియామకం, grievance redressal యంత్రాంగం, data-principal rights, breach notification వివరణాత్మక యంత్రాంగం) <b class="hlg">13 మే 2027</b> నుండి అమలులోకి వస్తాయి — మొత్తం 18-నెలల దశల ముగింపు.</div>
+
+<div class="chain">
+<span class="bx top">13 Nov 2025</span><span class="ar">→</span>
+<span class="bx">13 Nov 2026</span><span class="ar">→</span>
+<span class="bx">13 May 2027</span>
+<span class="ccap">Rules/Board live &amp; appeals · Notice-consent, breach, SDF, cross-border · Full data-principal-rights machinery — the DPDP Rules' three commencement dates</span>
+</div>
+
+<p class="eng">The Board's legal birth is not the same as it being open for business. The DPBI is designed as a <b>fully digital</b> body with an online complaints portal, and appeals against its orders go to the <b class="hlp">Telecom Disputes Settlement and Appellate Tribunal (TDSAT)</b>. But <b class="imp">as of the most recent dated reporting checked for this chapter (1 August 2026), the Board had no appointed Chairperson or Members</b>: a <b class="term">Search-cum-Selection Committee</b>, chaired by the <b class="hlp">Cabinet Secretary</b> under Rule 17, was the mechanism created to recommend appointees, with MeitY inviting applications on <b class="hlg">6 May 2026</b> — but no Gazette notification of an actual Chairperson or Member had been found. The honest exam-ready formulation is two-layered: <b class="imp">the Data Protection Board of India is constituted in law (13 November 2025) but, on the last confirmed check, was not yet staffed or adjudicating</b> — this is exactly the kind of fast-moving fact that should be re-verified close to the exam date.</p>
+<div class="te">Board చట్టబద్ధంగా పుట్టడం, అది వ్యాపారానికి తెరవడం ఒకటి కాదు. DPBI ను <b>పూర్తిగా digital</b> సంస్థగా రూపొందించారు, online complaints portal తో; దాని ఆదేశాలపై appeals <b class="hlp">Telecom Disputes Settlement and Appellate Tribunal (TDSAT)</b> కు వెళ్తాయి. కానీ <b class="imp">ఈ chapter కోసం పరిశీలించిన అత్యంత తాజా, తేదీతో కూడిన నివేదిక (1 ఆగస్టు 2026) నాటికి, Board కు నియమించిన Chairperson లేదా Members లేరు</b>: Rule 17 కింద <b class="hlp">Cabinet Secretary</b> అధ్యక్షతన ఒక <b class="term">Search-cum-Selection Committee</b> ను నియామకాలను సిఫారసు చేయడానికి ఏర్పాటు చేశారు; MeitY <b class="hlg">6 మే 2026</b> న applications ఆహ్వానించింది — కానీ అసలు Chairperson లేదా Member నియామకానికి సంబంధించిన Gazette notification ఏదీ కనుగొనబడలేదు. పరీక్ష-సిద్ధమైన నిజాయితీ రూపం రెండు పొరలుగా: <b class="imp">Data Protection Board of India చట్టపరంగా ఏర్పాటైంది (13 నవంబర్ 2025), కానీ చివరిగా ధృవీకరించిన సమయానికి, దానికి సిబ్బంది లేరు, అది adjudicate చేయడం లేదు</b> — ఇది సరిగ్గా పరీక్ష తేదీకి దగ్గరగా మళ్లీ సరిచూసుకోవలసిన వేగంగా మారే వాస్తవం.</div>
+
+<div class="rem">
+<div class="remtitle">🧠 MUST REMEMBER — status-tagged, dated</div>
+<div class="remstr">
+<b>DPDP Act, 2023</b> — assented <span>11 Aug 2023</span>. LAW, personal data only.<br>
+<b>Draft DPDP Rules</b> — released for consultation <span>3 Jan 2025</span>.<br>
+<b>DPDP Rules, 2025</b> — notified <span>13 Nov 2025</span> (G.S.R. 844(E)/845(E)).<br>
+<b>Data Protection Board of India</b> — constituted in law <span>13 Nov 2025</span>; Chairperson/Members <span>NOT appointed</span> as of last check, <span>1 Aug 2026</span> — RE-VERIFY before exam.<br>
+<b>Phase 2</b> (notice-consent, breach, SDF, cross-border) — <span>13 Nov 2026</span>.<br>
+<b>Phase 3</b> (full rights machinery) — <span>13 May 2027</span> — overall enforcement complete.<br>
+<b>Appeals</b> from the Board go to <span>TDSAT</span>.
+</div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Non-personal data governance, the four-instrument trap table, and self-test</div>
+
+<div class="para">
+<div class="ptitle">P5G — National Data Governance: From a 2022 Draft to a 2026 Framework</div>
+<p class="eng">Keep this entirely apart from the DPDP Act: that Act protects <b class="imp">personal</b> data of individuals; this track concerns <b class="imp">non-personal, anonymised</b> data held by government (and potentially private) bodies, which the State wants to make usable for research and innovation without touching anyone's privacy. MeitY released the draft <b class="term">National Data Governance Framework Policy (NDGFP)</b> for public consultation on <b class="hlg">26 May 2022</b>, proposing an <b class="term">India Data Management Office (IDMO)</b> to standardise data-management practice across ministries and states, and an <b class="term">India Datasets Programme</b> to pool non-personal datasets from ministries and private companies. <b class="imp">No primary source in this research pass confirms that the 2022 NDGFP, or IDMO by that name, was ever formally notified</b> — treat it as a long-pending draft rather than an operating institution.</p>
+<div class="te">దీన్ని DPDP Act నుండి పూర్తిగా వేరుగా ఉంచండి: ఆ చట్టం వ్యక్తుల <b class="imp">personal</b> డేటాను కాపాడుతుంది; ఈ ట్రాక్ ప్రభుత్వం (సాధ్యమైతే ప్రైవేటు సంస్థలు కూడా) వద్ద ఉన్న <b class="imp">non-personal, anonymised</b> డేటా గురించి — దాన్ని ఎవరి privacy కి ఆటంకం కలిగించకుండా పరిశోధన, innovation కోసం ఉపయోగపడేలా చేయాలని State కోరుకుంటుంది. MeitY <b class="hlg">26 మే 2022</b> న draft <b class="term">National Data Governance Framework Policy (NDGFP)</b> ను ప్రజా సంప్రదింపుల కోసం విడుదల చేసింది — మంత్రిత్వ శాఖలు, రాష్ట్రాల్లో data-management పద్ధతులను ప్రామాణీకరించడానికి <b class="term">India Data Management Office (IDMO)</b>, మంత్రిత్వ శాఖలు-ప్రైవేటు సంస్థల non-personal datasets ను సమీకరించడానికి <b class="term">India Datasets Programme</b> ప్రతిపాదిస్తూ. <b class="imp">2022 NDGFP గానీ, ఆ పేరుతో IDMO గానీ అధికారికంగా notify అయ్యాయని ఈ research pass లో ఏ ప్రాథమిక మూలమూ నిర్ధారించదు</b> — దీన్ని చాలాకాలంగా పెండింగ్‌లో ఉన్న draft గానే చూడండి, పనిచేస్తున్న సంస్థగా కాదు.</div>
+
+<p class="eng">A related, more recent development sits on MeitY's own current portal under a related name: a <b class="imp">National Framework for Data Sharing within and outside the Government</b>, prepared by MeitY, was <b class="hlg">approved by the Committee of Secretaries</b> (chaired by the Cabinet Secretary) on <b class="hlg">15 May 2026</b>. A week later, on <b class="hlg">22 May 2026</b>, the Cabinet Secretariat constituted a <b class="term">National Data Governance Committee (NDGC)</b> by office memorandum, co-chaired by the Secretaries of Cabinet Secretariat Coordination, MeitY and MoSPI, with the <b class="hlp">National e-Governance Division (NeGD)</b> providing its secretariat. The NDGC's terms of reference include overseeing data-sharing procedures across ministries, resolving inter-ministerial data disputes, coordinating with State Data Governance Committees, and ensuring compliance with both the IT Act, 2000 and the DPDP Act, 2023. <b class="imp">Whether this 2026 Framework/NDGC is formally the renamed successor to the 2022 NDGFP draft, or a separate later initiative, is not confirmed by a primary source found in this research pass</b> — present the two, dated, without asserting continuity that isn't established.</p>
+<div class="te">MeitY సొంత తాజా portal పై సంబంధిత, మరింత తాజా పరిణామం ఒక దగ్గరి పేరుతో కనిపిస్తుంది: MeitY తయారుచేసిన <b class="imp">National Framework for Data Sharing within and outside the Government</b> ను <b class="hlg">15 మే 2026</b> న <b class="hlg">Committee of Secretaries</b> (Cabinet Secretary అధ్యక్షతన) ఆమోదించింది. ఒక వారం తర్వాత, <b class="hlg">22 మే 2026</b> న, Cabinet Secretariat office memorandum ద్వారా <b class="term">National Data Governance Committee (NDGC)</b> ను ఏర్పాటు చేసింది — Cabinet Secretariat Coordination, MeitY, MoSPI Secretaries సహ-అధ్యక్షతన; <b class="hlp">National e-Governance Division (NeGD)</b> దీని secretariat. NDGC యొక్క terms of reference లో మంత్రిత్వ శాఖల వ్యాప్తంగా data-sharing విధానాలను పర్యవేక్షించడం, మంత్రిత్వ శాఖల మధ్య వివాదాలను పరిష్కరించడం, State Data Governance Committees తో సమన్వయం చేయడం, IT Act 2000 మరియు DPDP Act 2023 రెండింటికీ compliance నిర్ధారించడం ఉన్నాయి. <b class="imp">ఈ 2026 Framework/NDGC 2022 NDGFP draft కు పేరు మారిన వారసత్వమా, లేక వేరైన తర్వాతి initiativeనా అనేది ఈ research pass లో దొరికిన ఏ ప్రాథమిక మూలమూ నిర్ధారించదు</b> — స్థిరత్వాన్ని నిర్ధారించకుండా, రెండింటినీ వాటి తేదీలతో ప్రस్తుతం చేయండి.</div>
+
+<div class="gloss">
+<b>Do not confuse with:</b> NITI Aayog's <b>National Data and Analytics Platform</b> (an earlier, separate data-sharing initiative) and the IndiaAI Mission's <b>AIKosh</b> (a dataset repository for AI model training specifically, run under MeitY's IndiaAI vertical, not the NDGC/NDGFP track).
+</div>
+</div>
+
+<div class="para">
+<div class="ptitle rd">P5H — The Four-Instrument Trap Table</div>
+<p class="eng">Four different instruments, four different purposes, and four different nodal routes — the single table worth memorising before any other reading in this chapter.</p>
+<div class="te">నాలుగు వేర్వేరు సాధనాలు, నాలుగు వేర్వేరు ఉద్దేశాలు, నాలుగు వేర్వేరు nodal మార్గాలు — ఈ chapter లో మరేదైనా చదవడానికి ముందు గుర్తుపెట్టుకోవలసిన ఒక్క table ఇదే.</div>
+
+<table>
+<caption>Instrument · Year · Nodal Body · Purpose</caption>
+<thead><tr><th style="width:27%">Instrument</th><th style="width:18%">Year</th><th style="width:22%">Nodal Body</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td><b>National Strategy for AI (#AIforAll)</b></td><td>2018</td><td>NITI Aayog</td><td>Strategy / discussion paper — sectoral roadmap, no dedicated budget</td></tr>
+<tr><td><b>IndiaAI Mission</b></td><td>2024 (Cabinet, 7 Mar)</td><td>MeitY (via IndiaAI)</td><td>Funded mission, ₹10,372 crore — compute, models, data, skills, startups, safety</td></tr>
+<tr><td><b>DPDP Act, 2023</b></td><td>2023 assented; Rules 2025</td><td>MeitY / Data Protection Board of India</td><td>LAW — protects individuals' <b>personal</b> data (Data Principals)</td></tr>
+<tr><td><b>National Data Governance Framework Policy</b> (2022 draft) / National Framework for Data Sharing (2026)</td><td>2022 draft → approved 2026</td><td>MeitY / Cabinet Secretariat (NDGC)</td><td>POLICY — shares <b>non-personal, anonymised</b> government data for research/innovation</td></tr>
+</tbody>
+</table>
+
+<div class="trap">
+<div class="traptitle">🎯 Traps &amp; Confusables</div>
+<table>
+<thead><tr><th style="width:52%">Trap statement</th><th>Correct position</th></tr></thead>
+<tbody>
+<tr><td>"The National Strategy for AI and the IndiaAI Mission are the same initiative under different names."</td><td>No — 2018 NITI Aayog strategy (no budget) versus 2024 MeitY funded mission (₹10,372 crore). Different bodies, different instruments, six years apart.</td></tr>
+<tr><td>"The DPDP Act has been fully in force and enforced since August 2023."</td><td>No — assented 11 Aug 2023, but Rules notified only 13 Nov 2025, with substantive obligations phased in through 13 Nov 2026 and 13 May 2027.</td></tr>
+<tr><td>"The Data Protection Board of India is already hearing complaints."</td><td>Constituted in law on 13 Nov 2025, but — on the last confirmed check (1 Aug 2026) — without an appointed Chairperson or Members, so it was not yet adjudicating. Re-verify nearer the exam.</td></tr>
+<tr><td>"The DPDP Act also governs anonymised/non-personal government datasets."</td><td>No — the DPDP Act covers personal data only. Non-personal/anonymised government data sits on the separate National Data Governance Framework / National Framework for Data Sharing track.</td></tr>
+<tr><td>"AIKosh is India's data-protection regulator."</td><td>No — AIKosh is MeitY's dataset/model repository under the IndiaAI Mission's Foundation Models ecosystem, not a regulator. The regulator for personal data is the Data Protection Board of India.</td></tr>
+<tr><td>"India has already released a full sovereign frontier-class foundation model."</td><td>Not confirmed as of the Feb 2026 Impact Summit — Sarvam's 70B-class suite and BharatGen's 17B Param2 are shipping intermediate models; no frontier-class release confirmed in the sources checked.</td></tr>
+</tbody>
+</table>
+<div class="te">ఆరు ఉమ్మడి పొరబాట్లు గుర్తుపెట్టుకోండి: (1) 2018 strategy, 2024 mission ఒకటి కాదు; (2) DPDP Act 2023 లో ఆమోదం పొందినా, Rules 2025 లో notify అయ్యాకే అది దశలవారీగా అమలులోకి వస్తుంది — 2026, 2027 గడువులతో; (3) Data Protection Board చట్టపరంగా ఉన్నా, దానికి Chairperson/Members లేకపోవడం వల్ల చివరి ధృవీకరణ నాటికి అది viచారణ చేయడం లేదు; (4) DPDP Act personal data కే పరిమితం, non-personal government data వేరే policy ట్రాక్‌లో ఉంటుంది; (5) AIKosh ఒక dataset భాండాగారం మాత్రమే, regulator కాదు; (6) India ఇంకా ఒక పూర్తి frontier-class sovereign model విడుదల చేయలేదు — మధ్యంతర models మాత్రమే ఇప్పటివరకు వచ్చాయి.</div>
+</div>
+
+<table class="qs">
+<caption class="qs">✔ Quick Self-Test — answer before looking</caption>
+<thead><tr><th style="width:55%">Question</th><th>Answer</th></tr></thead>
+<tbody>
+<tr><td>Who published the National Strategy for AI, and when?</td><td>NITI Aayog, June 2018 — #AIforAll</td></tr>
+<tr><td>Cabinet approval date and outlay of the IndiaAI Mission?</td><td>7 March 2024 · ₹10,372 crore</td></tr>
+<tr><td>Name all seven IndiaAI Mission pillars.</td><td>Compute · App. Dev. Initiative · AIKosh · Foundation Models · FutureSkills · Startup Financing · Safe &amp; Trusted AI</td></tr>
+<tr><td>GPU count onboarded by Oct 2025, and the further addition announced Feb 2026?</td><td>38,000 onboarded; 20,000-plus more announced</td></tr>
+<tr><td>Who is building India's sovereign LLM suite, and its target size?</td><td>Sarvam AI — roughly 70B parameters (Large/Small/Edge)</td></tr>
+<tr><td>Date and theme of the India AI Governance Guidelines?</td><td>5 Nov 2025 — Seven Sutras, non-prescriptive approach</td></tr>
+<tr><td>Dates and venue of the India-AI Impact Summit?</td><td>16–21 Feb 2026, Bharat Mandapam, New Delhi</td></tr>
+<tr><td>DPDP Act assent date?</td><td>11 August 2023</td></tr>
+<tr><td>DPDP Rules, 2025 notified on?</td><td>13 November 2025 (G.S.R. 844(E)/845(E))</td></tr>
+<tr><td>Data Protection Board of India — constituted vs. staffed?</td><td>Constituted 13 Nov 2025; Chairperson/Members not yet appointed as of last check, 1 Aug 2026</td></tr>
+<tr><td>DPDP phase-in end date for full enforcement?</td><td>13 May 2027</td></tr>
+<tr><td>Who hears appeals against the Data Protection Board?</td><td>TDSAT</td></tr>
+<tr><td>NDGFP draft release date, and its two proposed bodies?</td><td>26 May 2022 — IDMO and the India Datasets Programme</td></tr>
+<tr><td>2026 National Framework for Data Sharing — approved by whom, when?</td><td>Committee of Secretaries, 15 May 2026; NDGC constituted 22 May 2026</td></tr>
+</tbody>
+</table>
+
+<div class="xref">
+<b>Cross-references:</b> For the pre-2018 policy timeline and institutional lineage (NITI Aayog's own founding, the Science Policy Resolutions), see <b>Chapter P1</b>. For STIP 2020 and the Anusandhan National Research Foundation (ANRF) — which funds basic research rather than AI compute or deployment — see <b>Chapter P2</b>. For the National Digital Communications/Telecom-adjacent data policy (NDTSP) and its relationship to the DPDP Act's telecom-sector carve-outs, see <b>Chapter P3</b>. For quantum computing, semiconductor missions and biotechnology — explicitly out of scope here — see <b>Chapter P4</b>.
+</div>
+
+<div class="foot">APPSC Group II · Paper-II Section-B · S&amp;T Policy / ICT · Chapter P5 — Artificial Intelligence and the Data Technologies</div>
+</div>
+</div>
+
+</body>
+</html>
