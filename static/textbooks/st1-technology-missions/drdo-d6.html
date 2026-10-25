@@ -1,0 +1,992 @@
+<!doctype html><html><head>
+<base href="/static/notes/revision/Science_and_Technology/DRDO/"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>DRDO — Defence Technology, Complete Book (Bilingual)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&amp;family=Noto+Sans+Devanagari:wght@400;600;700&amp;family=Noto+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+/* ==================== D1_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.an{background:#fffaf0;border:1px solid #f0d9a8;border-left:5px solid #e0a33a;
+  padding:11px 15px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.an .t{font-weight:700;color:#a8701a;font-size:14px;display:block;margin-bottom:4px}
+.an .te{font-size:15.5px;line-height:1.95;margin:0}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.chain{background:#eef2f8;border:1px solid #b9c7da;padding:11px 12px;margin:14px 0;border-radius:4px;text-align:center}
+.chain .bx{display:inline-block;background:#2c4a80;color:#fff;font-weight:700;font-size:13.6px;padding:6px 14px;border-radius:3px;margin:3px 2px}
+.chain .bx.top{background:#8a2a20}
+.chain .ar{font-weight:700;color:#41556f;font-size:16px;padding:0 4px}
+.chain .ccap{display:block;margin-top:8px;font-size:12.8px;color:#41556f;font-weight:600}
+.layer{margin:14px 0}
+.layer .lv{display:flex;align-items:stretch;margin:4px 0;border:1px solid #b9c7da;border-radius:4px;overflow:hidden}
+.layer .lb{background:#2c4a80;color:#fff;font-weight:700;font-size:13.4px;padding:8px 12px;min-width:150px;display:flex;align-items:center}
+.layer .lt{padding:8px 12px;font-size:14.2px;background:#eef2f8;flex:1}
+.layer .lv:nth-child(2) .lb{background:#3a5c96} .layer .lv:nth-child(3) .lb{background:#4a6ea8}
+.layer .lv:nth-child(4) .lb{background:#5b80ba}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .an .te,.gl .te,.why .te,.key .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .an,.gl,.key,.trap,.chain,.layer .lv,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D1_Addendum_Vision_and_Mission_FULL.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans',sans-serif;background:#dde1e8;color:#1a1a1a;font-size:14.8px;line-height:1.72;}
+.page{width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);}
+h1{font-size:22px;font-weight:700;color:#132a52}
+.sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+.pritag{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:#c0392b;padding:2px 8px;border-radius:10px;vertical-align:middle;margin-left:8px}
+.para{margin:16px 0}
+.ptitle{font-size:15.5px;font-weight:700;color:#fff;background:#5c3a1e;display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;}
+.ptitle.rd{background:#8a2a20} .ptitle.gn{background:#1a6b3c}
+p.eng{margin:8px 0 4px}
+.imp{background:#fff4c2;padding:0 3px} .hlg{background:#c9f2c9;padding:0 3px}
+.hlp{background:#ffd3e6;padding:0 3px} .hlb{background:#c9e4ff;padding:0 3px}
+.term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+.te{font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:8px 11px;margin:5px 0 10px;line-height:1.68;}
+.q{border-left:3px solid #b3891a;background:#fffbe6;padding:7px 11px;margin:8px 0;font-size:13.3px;color:#3a3016}
+.q .who{font-weight:700;color:#7a6212;display:block;margin-bottom:3px}
+.q .te{background:#fdf6dc;border-left-color:#d9bc63;color:#4a3d16;margin:6px 0 0}
+.q .memline{display:block;margin-top:6px;padding-top:5px;border-top:1px dashed #d9bc63;font-weight:700;color:#7a6212}
+.why{border-left:4px solid #5b3a8e;background:#f5f0fb;padding:9px 12px;margin:10px 0;border-radius:0 4px 4px 0}
+.why .whytitle{font-weight:700;color:#4a2d78;font-size:13.8px;margin-bottom:4px}
+.why ul{margin:4px 0 0 18px;font-size:13.4px}
+.why li{margin:3px 0}
+.why .te{background:#efe7f9;border-left-color:#a184c9;color:#432a6b;margin-top:7px}
+.rem{background:#4a2f1a;color:#fff;padding:11px 14px;margin:11px 0;border-radius:4px}
+.rem .remtitle{font-weight:700;font-size:13.5px;color:#ffd75e;margin-bottom:5px;letter-spacing:.3px}
+.rem .remstr{font-family:'Noto Sans',monospace;font-size:13.1px;line-height:1.95;font-weight:600}
+.rem .remstr span{color:#f3cf8a}
+.rem .remstr b{color:#ffd75e}
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:9px 12px;margin:10px 0;border-radius:0 4px 4px 0}
+.trap .traptitle{font-weight:700;color:#8a2a20;font-size:13.8px;margin-bottom:4px}
+.trap table{margin:5px 0 0;font-size:13.1px}
+.trap th{background:#8a2a20}
+.trap .te{background:#fbe3e0;border-left-color:#c98079;color:#7a241a;margin-top:7px;font-size:13.2px}
+.xref{font-size:12.5px;color:#555;background:#f4f5f8;border:1px dashed #c3c8d2;padding:7px 11px;margin:11px 0;border-radius:3px}
+.xref b{color:#132a52}
+.gloss{font-size:12.6px;color:#33455e;background:#eef2f8;border-left:3px solid #8fa8c8;padding:6px 11px;margin:9px 0;border-radius:0 3px 3px 0}
+.gloss b{color:#132a52}
+.drdobox{background:rgb(217,242,242);border-radius:10px;padding:32px;margin:10px 0;font-family:'Noto Sans',sans-serif;}
+.drdobox img{width:100%;max-width:446px;display:block;margin:0 auto 20px;border-radius:0;}
+.drdobox h2{color:#000;font-size:20px;font-weight:600;margin:0 0 10px;}
+.drdobox h2.second{margin-top:20px;}
+.drdobox p{color:#000;font-size:14px;line-height:21px;margin:0 0 10px;}
+.drdobox ul.circleList{list-style:disc;padding-left:20px;margin:0;}
+.drdobox ul.circleList li{color:#000;font-size:14px;line-height:21px;margin-bottom:6px;}
+.drdosrc{font-size:11.5px;color:#555;margin:8px 2px 2px;font-style:italic}
+.aboutbox{background:#fff;border:1px solid #dfe3ea;border-radius:6px;padding:16px 20px 4px;margin:10px 0;font-family:'Noto Sans',sans-serif;max-width:100%;}
+.aboutbox p{color:#000;font-size:14px;line-height:21px;margin:0 0 10px;}
+.aboutbox .vlabel2{font-weight:700;color:#8a2a20;font-size:11px;letter-spacing:.4px;text-transform:uppercase;display:block;margin-bottom:2px;}
+
+table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.1px}
+caption{text-align:left;font-weight:700;font-size:13.6px;margin-bottom:4px;color:#132a52}
+caption.qs{color:#1a6b3c} table.qs th{background:#1a6b3c}
+th{background:#5c3a1e;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.1px}
+td{padding:5px 9px;border-bottom:1px solid #e2e4ea} tbody tr:nth-child(even) td{background:#f4f5f8}
+tr.ind td{background:#dcf3dc!important}
+.foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+@page{size:A4;margin:16mm 16mm 12mm}
+@media print{ body{background:#fff} .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0} tr,td,th,.te,.why,.rem,.trap,.xref,.gloss,.q,.drdobox,.aboutbox{page-break-inside:avoid} thead{display:table-header-group} }
+
+
+/* ==================== D2_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.an{background:#fffaf0;border:1px solid #f0d9a8;border-left:5px solid #e0a33a;
+  padding:11px 15px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.an .t{font-weight:700;color:#a8701a;font-size:14px;display:block;margin-bottom:4px}
+.an .te{font-size:15.5px;line-height:1.95;margin:0}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.trio{background:#eef7f0;border:1px solid #a9cdb4;padding:11px 12px;margin:14px 0;border-radius:4px;text-align:center}
+.trio .bx{display:inline-block;background:#1a6b3c;color:#fff;font-weight:700;font-size:13.6px;padding:6px 14px;border-radius:3px;margin:3px 2px}
+.trio .ccap{display:block;margin-top:8px;font-size:12.8px;color:#1a5c34;font-weight:600}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .an .te,.gl .te,.why .te,.key .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .an,.gl,.key,.trap,.trio,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D2_Addendum_Laboratory_Directory_ALL_INDIA.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans',sans-serif;background:#dde1e8;color:#1a1a1a;font-size:14.8px;line-height:1.72;}
+.page{width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);}
+h1{font-size:22px;font-weight:700;color:#132a52}
+.sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+.pritag{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:#c0392b;padding:2px 8px;border-radius:10px;vertical-align:middle;margin-left:8px}
+.para{margin:16px 0}
+.ptitle{font-size:15.5px;font-weight:700;color:#fff;background:#5c3a1e;display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;}
+.ptitle.rd{background:#8a2a20} .ptitle.gn{background:#1a6b3c}
+p.eng{margin:8px 0 4px}
+.imp{background:#fff4c2;padding:0 3px} .hlg{background:#c9f2c9;padding:0 3px}
+.hlp{background:#ffd3e6;padding:0 3px} .hlb{background:#c9e4ff;padding:0 3px}
+.term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+.te{font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:8px 11px;margin:5px 0 10px;line-height:1.68;}
+.why{border-left:4px solid #5b3a8e;background:#f5f0fb;padding:9px 12px;margin:10px 0;border-radius:0 4px 4px 0}
+.why .whytitle{font-weight:700;color:#4a2d78;font-size:13.8px;margin-bottom:4px}
+.why ul{margin:4px 0 0 18px;font-size:13.4px}
+.why li{margin:3px 0}
+.why .te{background:#efe7f9;border-left-color:#a184c9;color:#432a6b;margin-top:7px}
+.rem{background:#4a2f1a;color:#fff;padding:11px 14px;margin:11px 0;border-radius:4px}
+.rem .remtitle{font-weight:700;font-size:13.5px;color:#ffd75e;margin-bottom:5px;letter-spacing:.3px}
+.rem .remstr{font-family:'Noto Sans',monospace;font-size:13.1px;line-height:1.95;font-weight:600}
+.rem .remstr span{color:#f3cf8a}
+.rem .remstr b{color:#ffd75e}
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:9px 12px;margin:10px 0;border-radius:0 4px 4px 0}
+.trap .traptitle{font-weight:700;color:#8a2a20;font-size:13.8px;margin-bottom:4px}
+.trap table{margin:5px 0 0;font-size:13.1px}
+.trap th{background:#8a2a20}
+.trap .te{background:#fbe3e0;border-left-color:#c98079;color:#7a241a;margin-top:7px;font-size:13.2px}
+.xref{font-size:12.5px;color:#555;background:#f4f5f8;border:1px dashed #c3c8d2;padding:7px 11px;margin:11px 0;border-radius:3px}
+.xref b{color:#132a52}
+.gloss{font-size:12.6px;color:#33455e;background:#eef2f8;border-left:3px solid #8fa8c8;padding:6px 11px;margin:9px 0;border-radius:0 3px 3px 0}
+.gloss b{color:#132a52}
+.note{font-size:12.3px;color:#5c3a1e;background:#faf3ea;border:1px dashed #c9a876;padding:6px 11px;margin:8px 0;border-radius:3px}
+table{width:100%;border-collapse:collapse;margin:9px 0;font-size:12.8px}
+caption{text-align:left;font-weight:700;font-size:13.6px;margin-bottom:4px;color:#132a52}
+caption.qs{color:#1a6b3c} table.qs th{background:#1a6b3c}
+th{background:#5c3a1e;color:#fff;padding:6px 8px;text-align:left;font-weight:700;font-size:12.6px}
+td{padding:5px 8px;border-bottom:1px solid #e2e4ea} tbody tr:nth-child(even) td{background:#f4f5f8}
+tr.ind td{background:#dcf3dc!important}
+.acr{font-weight:700;color:#5c3a1e}
+.foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+@page{size:A4;margin:16mm 16mm 12mm}
+@media print{ body{background:#fff} .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0} tr,td,th,.te,.why,.rem,.trap,.xref,.gloss,.q,.note{page-break-inside:avoid} thead{display:table-header-group} }
+
+
+/* ==================== D3_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.an{background:#fffaf0;border:1px solid #f0d9a8;border-left:5px solid #e0a33a;
+  padding:11px 15px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.an .t{font-weight:700;color:#a8701a;font-size:14px;display:block;margin-bottom:4px}
+.an .te{font-size:15.5px;line-height:1.95;margin:0}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.sanc{background:#fff9e6;border:2px solid #b3891a;padding:12px 16px;margin:14px 0;border-radius:5px;page-break-inside:avoid}
+.sanc .st{font-weight:700;color:#7a6212;font-size:14px;margin-bottom:5px}
+.sanc .quote{font-size:15.5px;font-weight:700;color:#3a3016;line-height:1.7}
+.sanc .src{font-size:12.4px;color:#7a6212;margin-top:7px;font-style:italic}
+
+.five{margin:14px 0}
+.five .fc{display:flex;align-items:stretch;margin:5px 0;border:1px solid #b9c7da;border-radius:4px;overflow:hidden}
+.five .fn{background:#2c4a80;color:#fff;font-weight:700;font-size:13.8px;padding:8px 12px;min-width:96px;display:flex;align-items:center}
+.five .ft{padding:8px 12px;font-size:14.6px;background:#eef2f8;flex:1;line-height:1.7}
+.five .fc.out .fn{background:#8a2a20} .five .fc.out .ft{background:#fdeeec}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .an .te,.gl .te,.why .te,.key .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .an,.gl,.key,.trap,.sanc,.five .fc,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D4_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.vs{display:flex;gap:12px;margin:14px 0}
+.vs .side{flex:1;border:1px solid #b9c7da;border-radius:4px;padding:11px 13px}
+.vs .side.a{background:#eef2f8} .vs .side.b{background:#f3f0fa;border-color:#c3b3dd}
+.vs .vt{font-weight:700;font-size:15px;margin-bottom:5px}
+.vs .side.a .vt{color:#1d4d8f} .vs .side.b .vt{color:#4a2d78}
+.vs .te{font-size:15px;line-height:1.85;margin:0;max-width:none}
+
+.tag{display:inline-block;font-size:11.6px;font-weight:700;padding:1px 6px;border-radius:8px;background:#c9e4ff;color:#14456f;white-space:nowrap}
+.tag.dev{background:#ffe6c2;color:#8a5a12} .tag.tst{background:#e6dcf5;color:#4a2d78}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px} .vs{flex-direction:column}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .gl .te,.why .te,.key .te,.vs .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .gl,.key,.trap,.vs,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D5_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.flow{background:#eef2f8;border:1px solid #b9c7da;padding:13px 14px;margin:14px 0;border-radius:4px;text-align:center}
+.flow .bx{display:inline-block;background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:7px 13px;border-radius:3px;margin:4px 3px}
+.flow .ar{font-weight:700;color:#41556f;font-size:16px;padding:0 3px}
+.flow .ccap{display:block;margin-top:9px;font-size:14px;color:#41556f;font-weight:600}
+
+.vs{display:flex;gap:12px;margin:14px 0}
+.vs .side{flex:1;border:1px solid #b9c7da;border-radius:4px;padding:11px 13px}
+.vs .side.a{background:#eef2f8} .vs .side.b{background:#f3f0fa;border-color:#c3b3dd}
+.vs .vt{font-weight:700;font-size:15px;margin-bottom:5px}
+.vs .side.a .vt{color:#1d4d8f} .vs .side.b .vt{color:#4a2d78}
+.vs .te{font-size:15px;line-height:1.85;margin:0;max-width:none}
+
+.tag{display:inline-block;font-size:11.6px;font-weight:700;padding:1px 6px;border-radius:8px;background:#c9e4ff;color:#14456f;white-space:nowrap}
+.tag.dev{background:#ffe6c2;color:#8a5a12} .tag.tst{background:#e6dcf5;color:#4a2d78}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px} .vs{flex-direction:column}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .gl .te,.why .te,.key .te,.vs .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .gl,.key,.trap,.vs,.flow,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D6_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.chainr{background:#eef2f8;border:1px solid #b9c7da;padding:13px 14px;margin:14px 0;border-radius:4px;text-align:center}
+.chainr .bx{display:inline-block;background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:7px 13px;border-radius:3px;margin:4px 3px}
+.chainr .ar{font-weight:700;color:#41556f;font-size:16px;padding:0 3px}
+.chainr .ccap{display:block;margin-top:9px;font-size:14px;color:#41556f;font-weight:600}
+.lay{margin:13px 0}
+.lay .lv{display:flex;align-items:stretch;margin:5px 0;border:1px solid #b9c7da;border-radius:4px;overflow:hidden}
+.lay .lb{background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:9px 13px;min-width:150px;display:flex;align-items:center}
+.lay .lt{padding:9px 13px;font-size:15px;line-height:1.85;background:#eef2f8;flex:1}
+.lay .lv.exo .lb{background:#4a2d78} .lay .lv.exo .lt{background:#f3f0fa}
+
+.tag{display:inline-block;font-size:11.6px;font-weight:700;padding:1px 6px;border-radius:8px;background:#c9e4ff;color:#14456f;white-space:nowrap}
+.tag.dev{background:#ffe6c2;color:#8a5a12} .tag.tst{background:#e6dcf5;color:#4a2d78}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px} .lay .lv{flex-direction:column}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .gl .te,.why .te,.key .te,.lay .lt{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .gl,.key,.trap,.chainr,.lay .lv,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D7_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.why{border-left:4px solid #5b3a8e;background:#f7f3fc;padding:12px 15px;margin:14px 0;
+  border-radius:0 5px 5px 0}
+.why .q{font-weight:700;color:#4a2d78;font-size:15px;margin:14px 0 3px}
+.why .q:first-child{margin-top:0}
+.why .te{font-size:15px;line-height:1.9;margin:4px 0 0}
+
+.trap{border-left:4px solid #a8261a;background:#fdeeec;padding:11px 15px;margin:13px 0;
+  border-radius:0 5px 5px 0;page-break-inside:avoid}
+.trap .t{font-weight:700;color:#8a2a20;font-size:14.5px;margin-bottom:5px}
+.key{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;
+  padding:12px 16px;margin:14px 0;border-radius:0 5px 5px 0;page-break-inside:avoid}
+.key .t{font-weight:700;font-size:14px;color:#1d3f78;margin-bottom:5px}
+.key .te{font-size:15.5px;line-height:1.95;margin:0;color:#1a1a1a;max-width:none}
+.key b{color:#1d3f78}
+
+.flow{background:#eef2f8;border:1px solid #b9c7da;padding:13px 14px;margin:14px 0;border-radius:4px;text-align:center}
+.flow .bx{display:inline-block;background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:7px 13px;border-radius:3px;margin:4px 3px}
+.flow .ar{font-weight:700;color:#41556f;font-size:16px;padding:0 3px}
+.flow .ccap{display:block;margin-top:9px;font-size:14px;color:#41556f;font-weight:600}
+.layer{margin:13px 0}
+.layer .lv{display:flex;align-items:stretch;margin:5px 0;border:1px solid #b9c7da;border-radius:4px;overflow:hidden}
+.layer .lb{background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:9px 13px;min-width:140px;display:flex;align-items:center}
+.layer .lt{padding:9px 13px;font-size:14.6px;line-height:1.85;background:#eef2f8;flex:1}
+.layer .lv:nth-child(2) .lb{background:#3a5c96} .layer .lv:nth-child(3) .lb{background:#4a6ea8}
+.layer .lv:nth-child(4) .lb{background:#5b80ba}
+
+.tag{display:inline-block;font-size:11.6px;font-weight:700;padding:1px 6px;border-radius:8px;background:#c9e4ff;color:#14456f;white-space:nowrap}
+.tag.dev{background:#ffe6c2;color:#8a5a12} .tag.tst{background:#e6dcf5;color:#4a2d78}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px} .layer .lv{flex-direction:column}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .gl .te,.why .te,.key .te,.layer .lt{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .gl,.key,.trap,.flow,.layer .lv,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+/* ==================== D8_D10_Bilingual_ST4Style.html ==================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Telugu','Noto Sans Devanagari','Noto Sans','Segoe UI',sans-serif;background:#dde1e8;
+  color:#1a1a1a;font-size:15px;line-height:1.75}
+.page{max-width:190mm;margin:0 auto 18px;background:#fff;padding:15mm 15mm 11mm;
+  box-shadow:0 3px 16px rgba(0,0,0,.14)}
+h1{font-size:23px;font-weight:700;color:#132a52;line-height:1.3}
+.sub{font-size:13px;color:#5f6c80;font-style:italic;margin:5px 0 4px}
+
+.pt{font-size:16px;font-weight:700;color:#fff;background:#2c4a80;display:inline-block;
+  padding:5px 12px;border-radius:3px;margin:26px 0 10px}
+.pt.gn{background:#1a6b3c}.pt.rd{background:#8a2a20}.pt.pu{background:#5b3a8e}
+.pt:first-of-type{margin-top:8px}
+
+.te{font-size:16px;line-height:2.0;margin:12px 0;max-width:60em}
+.te b.cl{color:#132a52;font-weight:700}
+.imp{background:#fff4c2;padding:0 3px}
+.term{font-weight:700;color:#132a52;text-decoration:underline;
+  text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:3px}
+
+.gl{background:#eef2f8;border-left:4px solid #8fa8c8;padding:9px 14px;margin:13px 0;
+  border-radius:0 4px 4px 0;page-break-inside:avoid}
+.gl .te{font-size:15px;line-height:1.9;margin:0}
+.gl b{color:#132a52}
+
+.tag{display:inline-block;font-size:11.6px;font-weight:700;padding:1px 6px;border-radius:8px;background:#c9e4ff;color:#14456f;white-space:nowrap}
+.tag.dev{background:#ffe6c2;color:#8a5a12} .tag.tst{background:#e6dcf5;color:#4a2d78}
+
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tblwrap table{margin:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.6px}
+caption{text-align:left;font-weight:700;font-size:14.5px;color:#132a52;margin-bottom:5px}
+th{background:#2c4a80;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:13.6px}
+td{padding:6px 10px;border-bottom:1px solid #e2e4ea;vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even) td{background:#f5f6fa}
+table.gn th{background:#1a6b3c} table.gn caption{color:#1a6b3c}
+table.rd th{background:#8a2a20} table.rd caption{color:#8a2a20}
+tr.ind td{background:#dcf3dc!important}
+
+ol.qf{margin:8px 0 0 20px} ol.qf li{font-size:15px;line-height:1.9;margin-bottom:9px}
+
+.qbox{border:1px solid #b9c7da;border-radius:5px;margin:14px 0;overflow:hidden;page-break-inside:avoid}
+.qbox .qh{background:#2c4a80;color:#fff;font-weight:700;font-size:14px;padding:8px 13px}
+.qbox .qb{padding:12px 13px;font-size:15px;line-height:1.75;background:#fff}
+.qbox .opts{margin:7px 0 0 4px;font-size:14.6px}
+.qbox .opts div{margin:3px 0}
+.qbox .ans{background:#eef7f0;border-top:1px solid #a9cdb4;padding:9px 13px;font-size:14.6px;line-height:1.7}
+.qbox .ans b{color:#1a5c34}
+.qbox .ans .te{font-size:15px;line-height:1.85;margin:6px 0 0;color:#1a1a1a;max-width:none}
+.stmt{margin:6px 0 0 14px;font-size:14.6px}
+.stmt div{margin:3px 0}
+
+.foot{margin-top:20px;font-size:11px;color:#9aa3b0;text-align:center;
+  border-top:1px solid #e2e4ea;padding-top:6px}
+
+@media screen and (max-width:600px){
+  .page{padding:15px 12px;margin:0;box-shadow:none;max-width:100%}
+  .tblwrap table{min-width:480px}
+}
+@page{size:A4;margin:15mm 15mm 12mm}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .page{max-width:100%;margin:0;padding:0;box-shadow:none}
+  .te{font-size:11.4pt;line-height:1.85}
+  .gl .te,.qbox .ans .te{font-size:11pt;line-height:1.8}
+  ol.qf li{font-size:11pt;line-height:1.8}
+  table{font-size:9.6pt} th,td{padding:4px 7px}
+  .pt{margin:16px 0 7px;page-break-after:avoid}
+  h1,.pt{page-break-after:avoid}
+  .te{orphans:2;widows:2}
+  .gl,.qbox,tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+}
+
+
+
+/* ==================== book-wide additions: cover + index + pagination ==================== */
+.coverwrap{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;height:100%;min-height:250mm;padding:20mm 6mm}
+.coverkicker{font-size:13px;letter-spacing:.4px;color:#5f6c80;font-style:italic;margin-bottom:18px}
+.covertitle{font-size:46px;font-weight:700;color:#132a52;line-height:1.25;margin-bottom:10px}
+.coversub2{font-size:20px;font-weight:600;color:#2c4a80}
+.coversub{font-size:16px;color:#33455e;margin:10px 0 22px}
+.coverline{width:90px;height:4px;background:#2c4a80;margin:10px 0 22px;border-radius:2px}
+.covermeta{font-size:13px;color:#5f6c80}
+.toclist{margin-top:6px}
+.tocrow{border-bottom:1px solid #e2e4ea;padding:10px 0}
+.tocrow a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:#132a52}
+.tocnum{font-weight:700;font-size:15px;color:#2c4a80;min-width:96px;flex:0 0 auto}
+.toctitle{font-size:15px;color:#132a52;font-weight:600;flex:0 1 auto}
+.tocleader{flex:1 1 auto;border-bottom:1px dotted #b9c7da;margin:0 4px;transform:translateY(-3px);min-width:14px}
+.tocpage{font-weight:700;font-size:14px;color:#2c4a80;min-width:24px;text-align:right;flex:0 0 auto}
+.tocdesc{font-size:12.5px;color:#5f6c80;margin:3px 0 0 106px;line-height:1.55}
+.syllabusbox{background:#eef4fd;border:1px solid #c3d6f0;border-left:5px solid #2c4a80;padding:12px 16px;margin:18px 0 0;border-radius:0 5px 5px 0}
+.sylt{font-weight:700;font-size:13px;color:#1d3f78;margin-bottom:5px}
+.sylte{font-size:13.5px;line-height:1.75;color:#1a1a1a}
+@media print{
+  #book-cover,#book-toc{page-break-after:always}
+  .tocrow{padding:5px 0}
+  .tocnum,.toctitle,.tocpage{font-size:11pt}
+  .tocdesc{font-size:8.8pt;line-height:1.4;margin-top:2px}
+  .sylt{font-size:9.5pt}
+  .sylte{font-size:10pt;line-height:1.4}
+  .syllabusbox{padding:7px 11px;margin-top:8px}
+  .toclist{margin-top:2px}
+  h1{font-size:18pt}
+  .sub{font-size:9.5pt;margin-bottom:8px}
+  .covertitle{font-size:30pt}
+  .coversub2{font-size:14pt}
+  .coversub{font-size:11pt;margin:8px 0 16px}
+  .coverkicker{font-size:9.5pt}
+  .covermeta{font-size:9.5pt}
+  .coverwrap{min-height:0}
+}
+/* force every CHAPTER to start on its own fresh physical page; let content flow naturally within a chapter */
+.page[id^="ch-"]{break-before:page}
+
+</style>
+<style>.book-split-nav{position:sticky;top:0;z-index:50;max-width:1120px;margin:0 auto 16px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(245,250,248,.97);border:1px solid #c9ddd6;border-radius:0 0 16px 16px;box-shadow:0 6px 20px #173c3020;font:700 14px/1.3 system-ui}.book-split-nav a{padding:9px 11px;border-radius:10px;background:#fff;color:#155b4a;text-decoration:none}.book-split-nav span{text-align:center;color:#4b625b}.split-index-grid{max-width:1050px;margin:24px auto;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;font-family:system-ui}.split-index-grid a{display:block;padding:13px;border-radius:12px;background:#fff;color:#164d40;text-decoration:none;box-shadow:0 4px 16px #0001;font-weight:700}@media(max-width:640px){.book-split-nav{position:relative}.book-split-nav span{font-size:12px}}</style></head><body><nav class="book-split-nav"><a href="/learn/science-technology/st1-technology-missions/textbook/st1-drdo-d5">← D5</a><span>DRDO · Part 8 of 10</span><a href="/learn/science-technology/st1-technology-missions/textbook/st1-drdo-d7">D7 →</a></nav><div class="page" id="ch-d6">
+<h1>D6 — Air Defence, Radar and Electronic Warfare<br/><span style="font-size:16px;color:#2c4a80">వాయు రక్షణ, Radar, Electronic Warfare — చూసేది, చూసినదాన్ని ఆపేది</span></h1>
+<p class="sub">APPSC Group-2 Mains · Paper-II Section-B · Defence Technology · Telugu-medium (code-mixed) · "Technologies Developed by the DRDO" — భావనాత్మకమైన chapter, పేర్ల కంటే దశల గొలుసు ముఖ్యం</p>
+<div class="pt">6A — చూడనిదే దేన్నీ ఆపలేరు</div>
+<div class="te"><b class="cl">ఇప్పటివరకు ప్రతి chapter లక్ష్యం వైపు వెళ్లే వాటి గురించే.</b> ఇది సమస్య రెండో సగం గురించి: <span class="imp">ఏదో వస్తోందని తెలుసుకోవడం, దాని గురించి ఏదో చేయడం</span>. ఈ track లో అత్యంత భావనాత్మకమైన chapter ఇదే, పేర్లు అతి తక్కువ ఉన్నదీ ఇదే — ఎందుకంటే ఇక్కడ పరీక్షించదగినది వ్యవస్థల జాబితా కాదు, దశల గొలుసు.</div>
+<div class="chainr">
+<span class="bx">Detect</span><span class="ar">→</span><span class="bx">Track</span><span class="ar">→</span><span class="bx">Identify</span><span class="ar">→</span><span class="bx">Decide</span><span class="ar">→</span><span class="bx">Engage</span>
+<span class="ccap">మొదటి దశలు radar చేస్తుంది; చివరి దశ interceptor చేస్తుంది. ఒకటి లేకుండా మరొకటి పనిచేయదు.</span>
+</div>
+<div class="te"><span class="term">Radar</span> పనిచేసే విధానం — రేడియో తరంగాలను పంపి, తిరిగి వచ్చేదాన్ని వినడం. ఆ ప్రతిధ్వని నుంచి radar నాలుగు విషయాలు తెలుసుకుంటుంది:</div>
+<div class="lay">
+<div class="lv"><div class="lb">Range (దూరం)</div><div class="lt">వస్తువు ఎంత దూరంలో ఉంది — echo తిరిగి రావడానికి పట్టిన సమయం నుంచి</div></div>
+<div class="lv"><div class="lb">Direction (దిశ)</div><div class="lt">వస్తువు ఏ దిశలో ఉంది — echo ఏ కోణం నుంచి వచ్చిందో దాన్ని బట్టి</div></div>
+<div class="lv"><div class="lb">Altitude (ఎత్తు)</div><div class="lt">వస్తువు ఎంత ఎత్తులో ఉంది — 3D radar లు మాత్రమే దీన్ని కొలుస్తాయి, పాత 2D radar లు కొలవలేవు</div></div>
+<div class="lv"><div class="lb">Speed (వేగం)</div><div class="lt">వస్తువు ఎంత వేగంగా, ఏ దిశలో కదులుతోంది — echo ఎలా మారుతోందో గమనించి</div></div>
+</div>
+<div class="te">మొత్తం ఆలోచన అదే; ఈ పరీక్షకు అంతే సరిపోతుంది.</div>
+<div class="pt gn">6B — వ్యవస్థ ఏం చేస్తుంది, అది ఏమిటో కాదు</div>
+<div class="te">Radar లతో నిండిన chapter ను అమర్చుకోవడానికి ఉపయోగకరమైన మార్గం ఇదే. "Rohini అనేది ఏ radar" అని ప్రశ్న అరుదుగా అడుగుతుంది. అడిగేది <span class="imp">ఒక నిర్దిష్ట పనిని ఏ వ్యవస్థ చేస్తుంది</span> అని — ఆ పనులు సులభంగా వేరు చేయగలిగేంత భిన్నమైనవి.</div>
+<div class="tblwrap"><table>
+<caption>ISR — పని ఆధారంగా surveillance, reconnaissance, early warning</caption>
+<thead><tr><th>పని</th><th>అర్థం ఏమిటి</th><th>భారతీయ ఉదాహరణ</th></tr></thead>
+<tbody>
+<tr><td><b>Surveillance</b></td><td>ఒక ప్రాంతాన్ని <b class="imp">నిరంతరం</b> గమనించడం, కొత్తగా ఏది కనిపించినా పసిగట్టడం</td><td><b>Rohini</b> — గగనతల లక్ష్యాలను గుర్తించి అనుసరించే నేల మీది <b class="imp">S-Band 3D</b> Central Acquisition Radar (3D అంటే దూరం + దిశ/azimuth + ఎత్తు/elevation మూడూ కొలుస్తుంది) <span class="tag">inducted</span></td></tr>
+<tr><td><b>Airborne early warning</b></td><td>radar ను <b class="imp">గాలిలోకి ఎత్తడం</b> — అప్పుడు నేల radar కంటే చాలా దూరం చూడగలదు, హోరిజాన్ దాచే తక్కువ ఎత్తు వస్తువులనూ చూడగలదు</td><td><b>Netra AEW&amp;C</b> — కింద చూడండి</td></tr>
+<tr class="ind"><td><b>Battlefield sensing</b></td><td><b class="imp">వచ్చే ఫిరంగి గుళ్లను, rockets ను</b> గుర్తించి, వెనక్కి లెక్కించి వాటిని పేల్చిన తుపాకిని కనిపెట్టడం</td><td><b>Swathi</b> — weapon locating radar (ATAGS వంటి ఫిరంగులతో అనుసంధానం, <b>D5</b>) <span class="tag">inducted</span></td></tr>
+<tr><td><b>Fire control, target acquisition</b></td><td>ఒక నిర్దిష్ట లక్ష్యాన్ని <b class="imp">ఆయుధాన్ని దాని మీదకు నడిపేంత</b> కచ్చితంగా అనుసరించడం</td><td><b>Swordfish</b> — BMD long-range tracking radar; <b>Rajendra</b> — <b class="imp">Akash</b> SAM వ్యవస్థను నడిపే PESA (Passive Electronically Scanned Array) radar (<b>D3</b>)</td></tr>
+<tr><td><b>Airborne fighter radar</b></td><td>యుద్ధ విమానం తనే మోసుకెళ్లే radar — శత్రు విమానాలను గుర్తించి గురిపెట్టడానికి</td><td><b>Uttam AESA</b> — LRDE స్వదేశీగా అభివృద్ధి చేసిన radar, <b>Tejas Mk-1A</b> లో అమర్చే ప్రక్రియలో; <b>AMCA</b> కు దీన్ని పునాదిగా వాడతారని చెబుతారు <span class="tag dev">integration — 2026 నాటికి</span></td></tr>
+<tr><td><b>పర్వత ప్రాంత radar</b></td><td>బరువైన radar లను మోసుకెళ్లలేని ఎత్తయిన, కొండ ప్రాంతాల్లో వాడేవి — మనుషులు, గుర్రాలు, హెలికాప్టర్లు మోసుకెళ్లగలిగేంత తేలికైనవి</td><td><b>Bharani</b>, <b>Aslesha</b> — LRDE Low-Level Lightweight Radars (LLLR); ఎత్తయిన కొండ ప్రాంతాల్లో తక్కువ ఎత్తులో ఎగిరే UAVs, హెలికాప్టర్లను గుర్తిస్తాయి <span class="tag">inducted</span></td></tr>
+</tbody>
+</table></div>
+<div class="key"><div class="t">రెండు వ్యవస్థలు, ఒకే పేరు — పుస్తకమే హెచ్చరించాల్సిన trap</div><div class="te">DRDO వద్ద <b>Netra అనే పేరుతో రెండు వేర్వేరు వస్తువులు</b> ఉన్నాయి; వాటికి సంబంధం లేదు. <b>Netra AEW&amp;C</b> — ఒక <b class="imp">airborne early warning and control వ్యవస్థ</b>; <b>Embraer ERJ-145</b> అనే రెండు ఇంజిన్ల రవాణా విమానంపై మోసుకెళ్లే పెద్ద radar. దీనికి నేతృత్వం <b>Centre for Airborne Systems (CABS)</b>; radar LRDE నుంచి, ఇతర laboratories సహకారంతో. ఇది గగనతలాన్ని గమనిస్తుంది; పోరాడదు. <b class="imp">2026 లో Final Operational Clearance</b> పొందింది. దీని radar విమానం వెనుక భాగంలో స్థిరంగా అమర్చిన "plank" ఆకృతిలో ఉంటుంది — దీనివల్ల <b class="imp">240-డిగ్రీల</b> కవరేజీ మాత్రమే వస్తుంది. Phalcon వంటి పెద్ద AWACS లు తిరిగే rotodome వాడతాయి కాబట్టి వాటికి పూర్తి <b class="imp">360-డిగ్రీల</b> కవరేజీ ఉంటుంది. <b>Netra</b> అనేది ఒక చిన్న <b class="imp">నిఘా UAV</b> పేరు కూడా — స్థానిక నిఘా కోసం తేలికైన మానవరహిత విమానం. పూర్తిగా వేరే వ్యవస్థ, పూర్తిగా వేరే పరిమాణం. <b class="imp">Netra AEW&amp;C అంటే రవాణా విమానం మీది radar. అది యుద్ధ విమానం కాదు, drone కాదు.</b></div></div>
+<div class="foot">D6 — Air Defence, Radar and Electronic Warfare (Bilingual · st4 style) · page 1 of 4</div>
+</div><div class="page">
+<div class="pt rd">6C — Ballistic Missile Defence: ఇది ఒక Architecture, క్షిపణి కాదు</div>
+<div class="te"><b class="cl">Ballistic క్షిపణిని ఆపడం ఈ chapter లోని అత్యంత కఠిన సమస్య; ఎందుకో అర్థమైతే జవాబు ఆకృతీ అర్థమవుతుంది.</b> వచ్చే ballistic క్షిపణి <span class="imp">వేగంగా, చాలా ఎత్తు నుంచి, తక్కువ హెచ్చరికతో</span> చేరుతుంది. దాని మీదకు ఏదో ఒకటి కాల్చేస్తే సరిపోదు; ముందు అది దూరంలో ఉండగానే చూడాలి, ఎటు వెళ్తోందో లెక్కించాలి, ఎదుర్కోవాలని నిర్ణయించాలి, సరిగ్గా సరైన క్షణంలో సరైన చోట ఒక interceptor ను ఉంచాలి. అందుకే <span class="term">BMD</span> <b>ఒక క్షిపణి కాదు, ఒక programme</b> — radars, command వ్యవస్థలు, interceptors అన్నీ కలిసి ఒకటిగా పనిచేయడం. భారత programme <b class="imp">రెండు పొరలుగా</b> నిర్మితమైంది; ఈ chapter లో అత్యధికంగా అడగదగినది ఆ రెండింటి మధ్య తేడానే.</div>
+<div class="lay">
+<div class="lv exo"><div class="lb">వాతావరణం బయట<br/>EXO-atmospheric</div><div class="lt"><b>PAD</b> (Prithvi Air Defence), దాని తర్వాత <b>PDV</b> (Prithvi Defence Vehicle) — వచ్చే క్షిపణిని <span class="imp">వాతావరణం పైన</span> అడ్డుకుంటుంది — మొదటి, ఎత్తయిన అవకాశం</div></div>
+<div class="lv"><div class="lb">వాతావరణం లోపల<br/>ENDO-atmospheric</div><div class="lt"><b>AAD</b> (Advanced Air Defence) — <span class="imp">వాతావరణం లోపల</span>, తక్కువ ఎత్తులో అడ్డుకుంటుంది — మొదటి పొర తప్పితే రెండో అవకాశం</div></div>
+</div>
+<div class="gl"><div class="te"><b>Exo, endo ను శాశ్వతంగా గుర్తుంచుకోవడం ఎలా.</b> <span class="imp">Exo</span> అంటే బయట — వాతావరణం బయట, ఎత్తులో. <span class="imp">Endo</span> అంటే లోపల — వాతావరణం లోపల, కిందుగా. <b>PAD, PDV బయటి, ఎత్తయిన పొర; AAD లోపలి, కింది పొర.</b> AAD లో ముఖ్యమైన అక్షరం <b>A</b> — <i>Air</i>; Advanced <i>Air</i> Defence పనిచేసేది గాలి ఉన్నచోట. Mnemonic మొత్తం అదే, అది తప్పదు.</div></div>
+<div class="tblwrap"><table class="rd">
+<caption>BMD programme</caption>
+<thead><tr><th>భాగం</th><th>పాత్ర</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><b>Swordfish</b> long-range tracking radar</td><td>వచ్చే క్షిపణిని దూరంలోనే చూసి, interceptor ను నడిపేంత కచ్చితంగా అనుసరిస్తుంది (ఇజ్రాయెల్ Green Pine radar నుంచి తీసుకున్న రూపమని విస్తృతంగా చెబుతారు — DRDO దీన్ని స్వదేశీ LRTR అని పిలుస్తుంది; అధికారికంగా DRDO ఈ మూలాన్ని ధృవీకరించలేదు)</td><td><span class="tag">programme లో భాగం</span></td></tr>
+<tr><td><b>PAD / PDV</b></td><td>Exo-atmospheric interceptor — బయటి పొర</td><td><span class="tag">tested</span></td></tr>
+<tr><td><b>AAD</b></td><td>Endo-atmospheric interceptor — లోపలి పొర</td><td><span class="tag">tested</span></td></tr>
+<tr><td><b>Phase 1</b></td><td>తక్కువ దూరపు (<b class="imp">2,000 km లోపు</b> అని విస్తృతంగా నివేదితం) ballistic క్షిపణులకు వ్యతిరేకంగా</td><td><span class="tag">2019 లో పూర్తయినట్టు ప్రకటన</span></td></tr>
+<tr><td><b>Phase 2</b></td><td>ఎక్కువ దూరం (<b class="imp">2,000 km పైబడిన, 5,000 km తరగతి వరకు</b> — ఇది PIB ద్వారా ధృవీకరించబడింది), intercontinental తరగతి ముప్పులకు వ్యతిరేకంగా</td><td><span class="tag dev">development, testing — 2026 నాటికి</span></td></tr>
+<tr><td><b>Naval BMD</b></td><td>యుద్ధనౌకల నుంచి ప్రయోగించే <b class="imp">సముద్ర ఆధారిత endo-atmospheric interceptor</b> — విమానవాహక నౌకలు, తీర ప్రాంత నగరాలను రక్షించడం లక్ష్యం; 2023 ఏప్రిల్ లో మొదటి flight trial విజయవంతమైంది</td><td><span class="tag dev">అభివృద్ధి దశలో — 2026 నాటికి</span></td></tr>
+</tbody>
+</table></div>
+<div class="gl"><div class="te"><b>PDV నుంచి Mission Shakti వరకు — ఒక సూత్రధారి.</b> BMD కోసం అభివృద్ధి చేసిన interceptor సాంకేతికత (ప్రత్యేకంగా <b class="imp">PDV Mk-II</b>) — విస్తృతంగా నివేదించిన ప్రకారం — 2019 లో India ఉపగ్రహ-విధ్వంసక పరీక్ష <b>Mission Shakti</b> కు నేరుగా సాంకేతిక పునాదిగా మారింది (→ <b>D7</b>). ఇది DRDO అధికారిక ప్రకటన కాదు, technical journalism నుంచి వచ్చిన విస్తృత నివేదిక — తగినంత హెచ్చరికతో బోధించండి.</div></div>
+<div class="pt">6D — Electronic Warfare: Spectrum మీది పోరాటం</div>
+<div class="te">Radar, radio అపారమైన ఆధిక్యాన్ని ఇస్తాయి; అందుకే అవే లక్ష్యాలుగా మారతాయి. <span class="term">Electronic warfare</span> అంటే ఆ ఆధిక్యం మీద జరిగే పోటీ. దీనికి మూడు భాగాలు; ఆ మూడు తెలిస్తే చాలు.</div>
+<div class="tblwrap"><table>
+<caption>Electronic warfare మూడు భాగాలు</caption>
+<thead><tr><th>భాగం</th><th>ఏం చేస్తుంది</th></tr></thead>
+<tbody>
+<tr><td><b>Electronic support</b></td><td><b class="imp">వినడం.</b> శత్రువు radar, radio ఉద్గారాలను గుర్తించి, ఏమిటో తేల్చడం — వారి దగ్గర ఏముంది, ఎక్కడ ఉందో తెలుసుకోవడం</td></tr>
+<tr><td><b>Electronic attack</b></td><td><b class="imp">Jamming, మోసగించడం.</b> శత్రువు radar ను శబ్దంతో నింపడం, లేదా లేనిది కనిపించేలా తప్పుడు ప్రతిధ్వనులు పంపడం</td></tr>
+<tr><td><b>Electronic protection</b></td><td><b class="imp">అదే చికిత్సను తట్టుకోవడం.</b> ఎదుటివారు jam చేయడానికి, మోసగించడానికి ప్రయత్నిస్తున్నప్పుడూ మన radars, radios పనిచేసేలా రూపొందించడం</td></tr>
+</tbody>
+</table></div>
+<div class="gl"><div class="te"><b>ఇది ఎక్కడ జరుగుతుంది, దేనితో కలుస్తుంది.</b> DRDO electronic warfare laboratory <b class="imp">DLRL, Hyderabad</b> (<b>D2</b>). <b>D4</b> తో ఉన్న సంబంధాన్ని గమనించండి: <b>RUDRAM</b> వంటి anti-radiation క్షిపణి అదే పోటీకి భౌతికమైన ముగింపు. Electronic warfare ఒక radar ను jam చేస్తుంది; anti-radiation క్షిపణి దాన్ని ధ్వంసం చేస్తుంది. ఒకే సమస్య, రెండు జవాబులు. అంతరిక్షం నుంచి కూడా ఇది జరుగుతుంది — <b class="imp">EMISAT</b> ఉపగ్రహంపై DLRL అభివృద్ధి చేసిన <b>Project Kautilya</b> ELINT payload, శత్రు radar స్థానాలను కక్ష్య నుంచి పసిగడుతుంది (ISRO ప్రయోగించింది, Space chapter).</div></div>
+<div class="key"><div class="t">పేరున్న DRDO EW వ్యవస్థలు — Samyukta, Shakti</div><div class="te">భావనలు మాత్రమే కాదు, పేర్లూ పరీక్షలో అడుగుతారు. <b class="imp">Samyukta</b> — సైన్యం కోసం అభివృద్ధి చేసిన అతిపెద్ద మొబైల్ EW వ్యవస్థగా విస్తృతంగా చెబుతారు (145 వాహనాలతో కూడిన complex, jamming + ELINT/COMINT). <b class="imp">Shakti</b> — DLRL నౌకాదళ యుద్ధనౌకల కోసం అభివృద్ధి చేసిన EW suite, శత్రు radar, anti-ship క్షిపణుల నుంచి రక్షణ ఇస్తుంది. <b class="imp">జాగ్రత్త — Shakti (నౌకాదళ EW వ్యవస్థ) వేరు, Mission Shakti (2019 ASAT పరీక్ష, D7) వేరు; రెండూ ఒకటే అనుకోవడం సాధారణ trap.</b></div></div>
+<div class="foot">D6 — Air Defence, Radar and Electronic Warfare (Bilingual · st4 style) · page 2 of 4</div>
+</div><div class="page">
+<div class="pt">6E — Frontier: Directed Energy, Autonomy, Computing</div>
+<div class="te">వార్తల్లో నిరంతరం కనిపించి, answer key లో అరుదుగా కనిపించే మూడు రంగాలు. ప్రతిదీ ఏమిటో తెలుసుకోండి; లోతుగా నేర్చుకోవద్దు.</div>
+<div class="tblwrap"><table>
+<caption>వర్ధమాన రంగాలు — వర్గీకరణ స్థాయిలో మాత్రమే</caption>
+<thead><tr><th>రంగం</th><th>ఏమిటి</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><b>Directed energy</b></td><td>భౌతిక తూటా బదులు శక్తిని పంపే ఆయుధాలు — <b class="imp">high-energy lasers</b>, microwaves; drones, optical sensors మీద ఉపయోగకరం. DRDO పని <b>CHESS, Hyderabad</b> కేంద్రంగా</td><td><span class="tag dev">development — 2026 నాటికి</span></td></tr>
+<tr><td><b>Autonomy, swarms</b></td><td>ఒక్కొక్కటిగా నడపబడకుండా, ఒకదానితో ఒకటి సమన్వయం చేసుకుని తమ నిర్ణయాల్లో కొంత భాగాన్ని తామే తీసుకునే మానవరహిత వ్యవస్థలు</td><td><span class="tag dev">development — 2026 నాటికి</span></td></tr>
+<tr><td><b>Communications, cyber</b></td><td>సురక్షిత సైనిక సమాచార వ్యవస్థలు, network రక్షణ, పైవన్నీ ఆధారపడే సమాచార వ్యవస్థల రక్షణ</td><td><span class="tag">ongoing</span></td></tr>
+<tr><td><b>Advanced computing, quantum</b></td><td>computing, quantum సాంకేతికతలపై పరిశోధన; అత్యంత సమీప అనువర్తనం సురక్షిత సమాచార ప్రసారం</td><td><span class="tag dev">research — 2026 నాటికి</span></td></tr>
+<tr><td><b>Project Kusha</b> (LR-SAM)</td><td>రష్యా <b class="imp">S-400</b> తరహా స్వదేశీ Long-Range Air Defence వ్యవస్థ — stealth విమానాలు, drones, cruise క్షిపణులను సుమారు <b class="imp">350 km</b> వరకు ఛేదించగలదని నివేదితం (అధికారిక DRDO గణాంకాలు ఇంకా ప్రచురితం కాలేదు)</td><td><span class="tag dev">అభివృద్ధి, పరీక్షల దశలో — 2026 నాటికి; సేవలో లేదు</span></td></tr>
+<tr><td><b>D4 System</b> (Drone Detect, Deter, Destroy)</td><td>Drone ను radar తో గుర్తించి, EW jamming తో దాని సిగ్నల్‌ను అడ్డుకుని (deter), అవసరమైతే laser (directed energy) తో నాశనం చేసే (destroy) DRDO స్వదేశీ వ్యవస్థ — Republic Day, Independence Day వేడుకల్లో VVIP భద్రత కోసం మోహరించారు</td><td><span class="tag">deployed for VVIP security</span></td></tr>
+</tbody>
+</table></div>
+<div class="why">
+<div class="q">Ballistic missile defence ఒక్క ఆయుధం కాక programme ఎందుకు?</div>
+<div class="te">అడ్డుకోవడానికి అనేకం కలిసి పనిచేయాలి: ముప్పును దూరంలోనే చూసే radar, అది ఎక్కడ ఉంటుందో లెక్కించే వ్యవస్థ, సరైన క్షణంలో అక్కడ ఉంచిన interceptor. ఏ ఒక్క భాగమూ దీన్ని చేయలేదు; కాబట్టి ఈ సామర్థ్యం ఒక architecture.</div>
+<div class="q">ఒక పొర బదులు రెండు interception పొరలు ఎందుకు ఉన్నాయి?</div>
+<div class="te">ఒకే ప్రయత్నం విఫలమైతే ఇక ఏమీ మిగలదు. Exo-atmospheric interceptor ముందుగా, ఎత్తులో ప్రయత్నిస్తుంది; తప్పితే endo-atmospheric పొరకు కిందుగా రెండో అవకాశం. ఒకటి కంటే రెండు అవకాశాలు ఎంతో మేలు.</div>
+<div class="q">నేల radars ఉండగా విమానం మీద radar ఎందుకు పెడతారు?</div>
+<div class="te">భూమి వంపు తిరిగి ఉంటుంది. నేల radar చూపును హోరిజాన్ కత్తిరిస్తుంది; కాబట్టి దూరంలో తక్కువ ఎత్తులో ఎగిరేవి దానికి కనిపించవు. Radar ను గాలిలోకి ఎత్తితే హోరిజాన్ చాలా దూరం జరుగుతుంది.</div>
+<div class="q">Weapon-locating radar పేల్చిన తుపాకిని ఎలా కనిపెడుతుంది?</div>
+<div class="te">ఎగురుతున్న గుండు భౌతిక శాస్త్రం నిర్దేశించిన మార్గంలో వెళ్తుంది. ఆ మార్గంలో కొంత భాగాన్ని అనుసరిస్తే, వెనక్కి లెక్కించి అది ఎక్కడ మొదలైందో తేల్చవచ్చు.</div>
+<div class="q">Electronic warfare అసలు ఎందుకు ఉంది?</div>
+<div class="te">Radar చూడాలంటే ప్రసారం చేయాలి; ప్రసారాన్ని వినవచ్చు, అనుకరించవచ్చు, ముంచెత్తవచ్చు. Radar ను ఉపయోగకరం చేసే ఉద్గారమే దాన్ని బలహీనం చేస్తుంది — anti-radiation క్షిపణి పనిచేయడానికీ కారణం ఇదే (<b>D4</b>).</div>
+</div>
+<div class="foot">D6 — Air Defence, Radar and Electronic Warfare (Bilingual · st4 style) · page 3 of 5</div>
+</div><div class="page">
+<div class="pt">6F — EW దాటి: Space, Cyber క్లుప్తంగా</div>
+<div class="te">సిలబస్ నేరుగా పేర్కొనే రెండు రంగాలు, కానీ ఇప్పటివరకు ఈ chapter వాటిని పైపైన మాత్రమే తాకింది. రెండూ పైన కవర్ చేసిన విషయాల మీదే నిర్మించబడతాయి — కొత్త laboratories కంఠస్థం చేయాల్సిన అవసరం లేదు, ఒక్కో దాన్ని ఒక్క వాక్యంలో చెప్పగలిగితే చాలు.</div>
+<div class="key"><div class="t">Space, strategic technologies</div><div class="te">DRDO ఉపగ్రహాలను ప్రయోగించదు — అది <b>ISRO</b> పని (<b>D1</b> రెండు సంస్థలను పోలుస్తుంది). DRDO స్పేస్-సంబంధిత పని <b class="imp">ISRO ప్రయోగించే ఉపగ్రహాలపై ఎక్కే payloads, technologies</b> లోనూ, వ్యూహాత్మక reach కు తోడ్పడే నేల-ఆధారిత వ్యవస్థల్లోనూ ఉంటుంది. ఈ chapter లోనే ఉన్న స్పష్టమైన ఉదాహరణ <b class="imp">DLRL యొక్క Project Kautilya</b> ELINT payload, <b>EMISAT</b> ఉపగ్రహం మీద ఎగురుతుంది — DRDO అభివృద్ధి చేసిన sensor, ISRO ప్రయోగించిన platform. <b>BMD నుంచి Mission Shakti</b> వరకు (పైన, మరియు <b>D7</b>) సాగే వారసత్వం "strategic" లో మరో సగం — missile defence కోసం అభివృద్ధి చేసిన సాంకేతికతకు నిరూపితమైన anti-satellite అనువర్తనం ఉంది. <b class="imp">పని విభజన స్పష్టంగా గుర్తుంచుకోండి: payload/technology DRDO అభివృద్ధి చేస్తుంది; ఉపగ్రహ platform ను ISRO నిర్మించి ప్రయోగిస్తుంది.</b></div></div>
+<div class="key"><div class="t">Cyber security</div><div class="te">ఈ chapter లోని ప్రతి వ్యవస్థ — radar links, EW jamming/protection circuits, వాటన్నింటినీ కలిపే communications backbone — తనకు తానే రక్షణ కావాల్సిన ఒక network మీద ఆధారపడుతుంది. DRDO cyber-security పని <b class="imp">MCC cluster</b> (Micro Electronic Devices, Computational Systems &amp; Cyber Security, New Delhi — <b>D1</b>) లో ఉంటుంది, AI, advanced computing పరిశోధనతో పాటు. Jam చేసిన radar, compromise అయిన network — రెండూ వేర్వేరు failure modes అయినా ఫలితం ఒకటే: అవసరమైన క్షణంలో వ్యవస్థ విశ్వసనీయత కోల్పోవడం — సిలబస్ cyber ను ప్రత్యేక రంగంగా జాబితా చేయడానికి కారణం సరిగ్గా ఇదే.</div></div>
+<div class="foot">D6 — Air Defence, Radar and Electronic Warfare (Bilingual · st4 style) · page 4 of 5</div>
+</div><div class="page">
+<div class="pt">★ Quick Facts (వేగవంత పునశ్చరణ)</div>
+<ol class="qf">
+<li><b>గొలుసు</b> — Detect → Track → Identify → Decide → Engage; radar చూస్తుంది, interceptor ఆపుతుంది. <b>Radar = radio తరంగాలు</b> · <b>Sonar = ధ్వని</b> (<b>D5</b>).</li>
+<li><b>పని ఆధారంగా</b> — <b>Rohini</b> (నేల radar) · <b>Swathi</b> (weapon locating, ఫిరంగి) · <b>Swordfish</b> (BMD long-range tracking) · <b>Netra AEW&amp;C</b> (Embraer ERJ-145 మీది radar, CABS నేతృత్వం, 2026 FOC — fighter కాదు, UAV కాదు).</li>
+<li><b>BMD = architecture, క్షిపణి కాదు.</b> <b>EXO</b>-atmospheric = బయట, ఎత్తు — <b>PAD</b>, తర్వాత <b>PDV</b>; <b>ENDO</b>-atmospheric = లోపల, కిందుగా — <b>AAD</b> (A = Air).</li>
+<li><b>Phase 1</b> 2019 లో పూర్తయినట్టు ప్రకటన; <b>Phase 2</b> ఎక్కువ దూరం ముప్పులకు అభివృద్ధి దశలో.</li>
+<li><b>Electronic warfare మూడు భాగాలు</b> — <b>Support</b> (వినడం), <b>Attack</b> (jam, మోసగించడం), <b>Protection</b> (తట్టుకోవడం). Laboratory <b>DLRL, Hyderabad</b>; physical counterpart <b>RUDRAM</b> (<b>D4</b>).</li>
+<li><b>Frontier</b> — <b>Directed energy</b> (lasers, microwaves, CHESS Hyderabad, అభివృద్ధిలో); autonomy/swarms; communications/cyber; advanced computing/quantum; <b>Project Kusha</b> (LR-SAM, S-400 తరహా, ~350km, అభివృద్ధిలో); <b>D4 System</b> (radar+EW+laser, VVIP భద్రత).</li>
+<li><b>Rajendra</b> = Akash కు PESA fire-control radar (D3). <b>Uttam AESA</b> = Tejas Mk-1A radar (LRDE), AMCA కు పునాదిగా భావిస్తారు. <b>Rohini</b> = S-Band 3D-CAR. <b>Bharani, Aslesha</b> = పర్వత ప్రాంత LLLR.</li>
+<li><b>Samyukta</b> = సైన్యం అతిపెద్ద mobile EW వ్యవస్థ. <b>Shakti</b> = నౌకాదళ EW suite (<b>Mission Shakti ASAT తో పొరపాటు పడకండి</b>). <b>EMISAT/Kautilya</b> = DLRL ELINT ఉపగ్రహం.</li>
+<li><b>Naval BMD</b> — 2023 ఏప్రిల్ మొదటి ship-launched endo-atmospheric interceptor trial. <b>Phase 1</b> ~2,000 km లోపు; <b>Phase 2</b> 2,000+ నుంచి 5,000 km తరగతి (PIB ధృవీకరణ). <b>PDV Mk-II</b> సాంకేతికత Mission Shakti (2019 ASAT) కు పునాదిగా చెబుతారు (D7). <b>Netra</b> 240° కవరేజీ (plank radar); <b>Phalcon</b> 360° (rotodome).</li>
+</ol>
+<div class="pt rd">★ PYQ · TRAP · CURRENT</div>
+<div class="tblwrap"><table class="rd">
+<caption>TRAP — examiner ఎక్కడ మెలిక పెడతాడు</caption>
+<thead><tr><th>ఇలా అనిపిస్తుంది</th><th>నిజం</th></tr></thead>
+<tbody>
+<tr><td>BMD ఒక్క ఆధునిక క్షిపణి</td><td>కాదు. <b>బహుళ-పొరల programme</b> — tracking radars, command వ్యవస్థలు, రెండు రకాల interceptors.</td></tr>
+<tr><td>AAD వాతావరణం బయట అడ్డుకుంటుంది</td><td>కాదు. <b>AAD endo-atmospheric</b> — గాలి లోపల, కిందుగా. <b>PAD, PDV</b> exo-atmospheric పొర.</td></tr>
+<tr><td>Exo అంటే లోపల, endo అంటే బయట</td><td>తిరగబడింది. <b>Exo = వాతావరణం బయట</b>; <b>endo = లోపల</b>.</td></tr>
+<tr><td>Netra స్వదేశీ stealth యుద్ధ విమానం</td><td>కాదు. <b>Netra AEW&amp;C</b> అనేది <b>రవాణా విమానం</b> మీది radar వ్యవస్థ; యుద్ధ విమాన programme <b>AMCA</b> (<b>D5</b>).</td></tr>
+<tr><td>"Netra" అన్న ప్రతిచోటా ఒకే వ్యవస్థ</td><td>కాదు. <b>రెండు</b> ఉన్నాయి: ERJ-145 మీది <b>AEW&amp;C</b> వ్యవస్థ, ఒక చిన్న నిఘా <b>UAV</b>; సందర్భం చూడండి.</td></tr>
+<tr><td>Swathi శత్రు విమానాలను గుర్తిస్తుంది</td><td>కాదు. ఇది <b>weapon locating radar</b>; వచ్చే <b>ఫిరంగి గుళ్లను, rockets ను</b> గుర్తించి కాల్చిన స్థానాన్ని లెక్కిస్తుంది.</td></tr>
+<tr><td>Radar, sonar ఒకే technology</td><td>కాదు. <b>radar రేడియో తరంగాలు, sonar ధ్వని</b>; నీటిలో రేడియో తరంగాలు త్వరగా శోషించబడతాయి (<b>D5</b>).</td></tr>
+<tr><td>Electronic warfare అంటే కేవలం jamming</td><td>కాదు. మూడు భాగాలు: <b>support</b> (వినడం), <b>attack</b> (jamming, మోసగించడం), <b>protection</b> (శత్రువు ప్రయత్నాలను తట్టుకోవడం).</td></tr>
+<tr><td>Directed-energy ఆయుధాలు సేవలో ఉన్నాయి</td><td>కాదు. <b>అభివృద్ధి దశలో</b>; DRDO పని CHESS, Hyderabad కేంద్రంగా.</td></tr>
+<tr><td>BMD Phase 2 పూర్తయింది</td><td>కాదు. <b>Phase 1</b> 2019 లో పూర్తయినట్టు ప్రకటించారు; <b>Phase 2</b> ఇంకా అభివృద్ధి, పరీక్షల్లో.</td></tr>
+<tr><td>RUDRAM BMD programme లో భాగం</td><td>కాదు. RUDRAM <b>anti-radiation క్షిపణి</b>, radar లను ధ్వంసం చేస్తుంది (<b>D4</b>); BMD <b>వచ్చే క్షిపణులను అడ్డుకుంటుంది</b>. వ్యతిరేక పనులు.</td></tr>
+<tr><td>Netra AEW&amp;C చుట్టూ 360-డిగ్రీలు చూడగలదు</td><td>కాదు. దీని plank radar వల్ల <b>240-డిగ్రీల</b> కవరేజీ మాత్రమే; 360-డిగ్రీలకు rotodome ఉన్న <b>Phalcon</b> వంటి AWACS కావాలి.</td></tr>
+<tr><td>Shakti (నౌకాదళ EW వ్యవస్థ), Mission Shakti (ASAT పరీక్ష) ఒకటే</td><td>కాదు. <b>Shakti</b> DLRL అభివృద్ధి చేసిన నౌకాదళ EW suite; <b>Mission Shakti</b> 2019 ఉపగ్రహ-విధ్వంసక పరీక్ష (D7) — పేర్లు దగ్గరగా ఉన్నా వేర్వేరు వస్తువులు.</td></tr>
+<tr><td>Project Kusha ఇప్పటికే సేవలో ఉంది</td><td>కాదు. ఇది S-400 తరహా indigenous LR-SAM, కానీ ఇంకా <b>అభివృద్ధి, పరీక్షల దశలోనే</b>.</td></tr>
+</tbody>
+</table></div>
+<div class="foot">D6 — Air Defence, Radar and Electronic Warfare (Bilingual · st4 style) · page 5 of 5</div>
+</div><nav class="book-split-nav"><a href="/learn/science-technology/st1-technology-missions/textbook/st1-drdo-d5">← D5</a><span>DRDO · Part 8 of 10</span><a href="/learn/science-technology/st1-technology-missions/textbook/st1-drdo-d7">D7 →</a></nav></body></html>
