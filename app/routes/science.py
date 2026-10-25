@@ -12,34 +12,34 @@ bp = Blueprint("science", __name__, url_prefix="/learn/science-technology")
 
 CHAPTER_VISUALS = {
     ("st3-ecosystem-biodiversity", "st3-l01-ecology-foundations"): [
-        ("01-ecological-levels-bilingual.png", "Ecological levels", "పర్యావరణ స్థాయులు", "Concept visual"),
-        ("02-limiting-factors-bilingual.png", "Limiting factors: Liebig and Shelford", "పరిమితి కారకాలు: లీబిగ్ మరియు షెల్ఫర్డ్", "Explanatory visual"),
-        ("03-organism-responses-bilingual.png", "Responses to environmental change", "పర్యావరణ మార్పులకు ప్రతిస్పందనలు", "Concept visual"),
-        ("04-acclimatisation-vs-adaptation-bilingual.png", "Acclimatisation and adaptation", "అలవాటు పడటం మరియు అనుకూలనం", "Explanatory visual"),
-        ("05-habitat-vs-niche-bilingual.png", "Habitat and ecological niche", "ఆవాసం మరియు పర్యావరణ పాత్ర", "Explanatory visual"),
-        ("06-major-abiotic-factors-bilingual.png", "Major abiotic factors", "ప్రధాన అజీవ కారకాలు", "Concept visual"),
-        ("07-ecological-amplitude-bilingual.png", "Ecological amplitude", "పర్యావరణ సహన పరిధి", "Concept visual"),
-        ("08-competition-coexistence-bilingual.png", "Competition and coexistence", "పోటీ మరియు సహజీవనం", "Explanatory visual"),
-        ("09-ecosystem-feedback-bilingual.png", "Ecosystem feedback", "పర్యావరణ వ్యవస్థలో ప్రతిపుష్టి", "Explanatory visual"),
-        ("10-chapter-1-rapid-revision-bilingual.png", "Chapter 1 rapid revision", "అధ్యాయం 1 త్వరిత పునశ్చరణ", "Revision visual"),
-        ("11-section-1a-full-explanation-bilingual.png", "Ecology scope and organisation", "Ecology పరిధి మరియు వ్యవస్థీకరణ", "Full explanation"),
-        ("12-section-1b-full-explanation-bilingual.png", "Abiotic factors, tolerance and limiting laws", "Abiotic factors, tolerance మరియు limiting laws", "Full explanation"),
-        ("13-section-1c-full-explanation-bilingual.png", "Responses to environmental variation", "పర్యావరణ మార్పులకు జీవుల ప్రతిస్పందనలు", "Full explanation"),
-        ("14-section-1d-full-explanation-bilingual.png", "Habitat and ecological niche", "Habitat మరియు ecological niche", "Full explanation"),
-        ("15-section-1e-full-explanation-bilingual.png", "Competition, exclusion and coexistence", "Competition, exclusion మరియు coexistence", "Full explanation"),
-        ("16-chapter-1-exam-distinctions-full-bilingual.png", "Ecology exam distinctions", "Ecology పరీక్షలో ముఖ్యమైన తేడాలు", "Full explanation"),
+        ("01-ecological-levels-bilingual.webp", "Ecological levels", "పర్యావరణ స్థాయులు", "Concept visual"),
+        ("02-limiting-factors-bilingual.webp", "Limiting factors: Liebig and Shelford", "పరిమితి కారకాలు: లీబిగ్ మరియు షెల్ఫర్డ్", "Explanatory visual"),
+        ("03-organism-responses-bilingual.webp", "Responses to environmental change", "పర్యావరణ మార్పులకు ప్రతిస్పందనలు", "Concept visual"),
+        ("04-acclimatisation-vs-adaptation-bilingual.webp", "Acclimatisation and adaptation", "అలవాటు పడటం మరియు అనుకూలనం", "Explanatory visual"),
+        ("05-habitat-vs-niche-bilingual.webp", "Habitat and ecological niche", "ఆవాసం మరియు పర్యావరణ పాత్ర", "Explanatory visual"),
+        ("06-major-abiotic-factors-bilingual.webp", "Major abiotic factors", "ప్రధాన అజీవ కారకాలు", "Concept visual"),
+        ("07-ecological-amplitude-bilingual.webp", "Ecological amplitude", "పర్యావరణ సహన పరిధి", "Concept visual"),
+        ("08-competition-coexistence-bilingual.webp", "Competition and coexistence", "పోటీ మరియు సహజీవనం", "Explanatory visual"),
+        ("09-ecosystem-feedback-bilingual.webp", "Ecosystem feedback", "పర్యావరణ వ్యవస్థలో ప్రతిపుష్టి", "Explanatory visual"),
+        ("10-chapter-1-rapid-revision-bilingual.webp", "Chapter 1 rapid revision", "అధ్యాయం 1 త్వరిత పునశ్చరణ", "Revision visual"),
+        ("11-section-1a-full-explanation-bilingual.webp", "Ecology scope and organisation", "Ecology పరిధి మరియు వ్యవస్థీకరణ", "Full explanation"),
+        ("12-section-1b-full-explanation-bilingual.webp", "Abiotic factors, tolerance and limiting laws", "Abiotic factors, tolerance మరియు limiting laws", "Full explanation"),
+        ("13-section-1c-full-explanation-bilingual.webp", "Responses to environmental variation", "పర్యావరణ మార్పులకు జీవుల ప్రతిస్పందనలు", "Full explanation"),
+        ("14-section-1d-full-explanation-bilingual.webp", "Habitat and ecological niche", "Habitat మరియు ecological niche", "Full explanation"),
+        ("15-section-1e-full-explanation-bilingual.webp", "Competition, exclusion and coexistence", "Competition, exclusion మరియు coexistence", "Full explanation"),
+        ("16-chapter-1-exam-distinctions-full-bilingual.webp", "Ecology exam distinctions", "Ecology పరీక్షలో ముఖ్యమైన తేడాలు", "Full explanation"),
     ]
 }
 
 SECTION_VISUAL_PAIRS = {
-    "st3-l01-ecology-foundations-section-1a": ("01-ecological-levels-bilingual.png", "11-section-1a-full-explanation-bilingual.png"),
-    "st3-l01-ecology-foundations-section-1b": ("07-ecological-amplitude-bilingual.png", "12-section-1b-full-explanation-bilingual.png"),
-    "st3-l01-ecology-foundations-section-1c": ("03-organism-responses-bilingual.png", "13-section-1c-full-explanation-bilingual.png"),
-    "st3-l01-ecology-foundations-section-1d": ("05-habitat-vs-niche-bilingual.png", "14-section-1d-full-explanation-bilingual.png"),
-    "st3-l01-ecology-foundations-section-1e": ("08-competition-coexistence-bilingual.png", "15-section-1e-full-explanation-bilingual.png"),
-    "st3-l01-ecology-foundations-section-must-compare": ("10-chapter-1-rapid-revision-bilingual.png", "16-chapter-1-exam-distinctions-full-bilingual.png"),
-    "st3-l01-ecology-foundations-section-quick-facts": ("10-chapter-1-rapid-revision-bilingual.png", "16-chapter-1-exam-distinctions-full-bilingual.png"),
-    "st3-l01-ecology-foundations-section-exam-traps": ("10-chapter-1-rapid-revision-bilingual.png", "16-chapter-1-exam-distinctions-full-bilingual.png"),
+    "st3-l01-ecology-foundations-section-1a": ("01-ecological-levels-bilingual.webp", "11-section-1a-full-explanation-bilingual.webp"),
+    "st3-l01-ecology-foundations-section-1b": ("07-ecological-amplitude-bilingual.webp", "12-section-1b-full-explanation-bilingual.webp"),
+    "st3-l01-ecology-foundations-section-1c": ("03-organism-responses-bilingual.webp", "13-section-1c-full-explanation-bilingual.webp"),
+    "st3-l01-ecology-foundations-section-1d": ("05-habitat-vs-niche-bilingual.webp", "14-section-1d-full-explanation-bilingual.webp"),
+    "st3-l01-ecology-foundations-section-1e": ("08-competition-coexistence-bilingual.webp", "15-section-1e-full-explanation-bilingual.webp"),
+    "st3-l01-ecology-foundations-section-must-compare": ("10-chapter-1-rapid-revision-bilingual.webp", "16-chapter-1-exam-distinctions-full-bilingual.webp"),
+    "st3-l01-ecology-foundations-section-quick-facts": ("10-chapter-1-rapid-revision-bilingual.webp", "16-chapter-1-exam-distinctions-full-bilingual.webp"),
+    "st3-l01-ecology-foundations-section-exam-traps": ("10-chapter-1-rapid-revision-bilingual.webp", "16-chapter-1-exam-distinctions-full-bilingual.webp"),
 }
 
 

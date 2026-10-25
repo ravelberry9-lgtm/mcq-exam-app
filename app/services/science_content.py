@@ -130,7 +130,7 @@ def load_concept_map(slug: str, lesson_id: str | None = None):
                 raise ValueError("duplicate concept id")
             ids.add(concept["id"])
             files = (concept["concept_file"], concept["full_file"])
-            if any(Path(filename).name != filename or not filename.endswith(".png")
+            if any(Path(filename).name != filename or not filename.endswith((".png", ".webp"))
                    for filename in files) or any(filename in filenames for filename in files):
                 raise ValueError("unsafe or duplicate concept filename")
             filenames.update(files)

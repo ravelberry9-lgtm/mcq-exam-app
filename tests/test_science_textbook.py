@@ -40,8 +40,8 @@ def test_science_textbook_navigation(client):
     assert b'class="bottomnav"' not in lesson.data
     assert b"biotic factors" in lesson.data
     assert b'textbook-visual-gallery' in lesson.data
-    assert b'01-ecological-levels-bilingual.png' in lesson.data
-    assert b'10-chapter-1-rapid-revision-bilingual.png' in lesson.data
+    assert b'01-ecological-levels-bilingual.webp' in lesson.data
+    assert b'10-chapter-1-rapid-revision-bilingual.webp' in lesson.data
     assert b'loading="lazy"' in lesson.data
     assert b"st3-l02-population-community-succession" in lesson.data
 
@@ -130,8 +130,8 @@ def test_lesson_seven_concept_map_covers_every_question_and_asset(app, client):
         f"/learn/science-technology/{SLUG}/practice/explanation/st3-l07-a-q001")
     assert explanation.status_code == 200
     assert explanation.data.count(b"<figure data-slide=") == 2
-    assert b"a01-wpa-framework-amendment-concept.png" in explanation.data
-    assert b"a01-wpa-framework-amendment-full.png" in explanation.data
+    assert b"a01-wpa-framework-amendment-concept.webp" in explanation.data
+    assert b"a01-wpa-framework-amendment-full.webp" in explanation.data
 
 
 def test_lesson_eight_editorial_html_and_question_mappings(client, app):
@@ -181,20 +181,18 @@ def test_lesson_eight_concept_map_covers_every_question_and_asset(app, client):
         path = root / filename
         assert path.is_file()
         with path.open("rb") as image_file:
-            assert image_file.read(8) == b"\x89PNG\r\n\x1a\n"
-            chunk_length = struct.unpack(">I", image_file.read(4))[0]
-            assert image_file.read(4) == b"IHDR"
-            assert chunk_length == 13
-            width, height = struct.unpack(">II", image_file.read(8))
-        assert (width, height) == (1024, 1536)
+            image_header = image_file.read(12)
+            assert image_header[:4] == b"RIFF"
+            assert image_header[8:12] == b"WEBP"
+        assert path.stat().st_size > 100_000
 
     explanation = client.get(
         f"/learn/science-technology/{SLUG}/practice/explanation/"
         "st3-l08-a-q001")
     assert explanation.status_code == 200
     assert explanation.data.count(b"<figure data-slide=") == 2
-    assert b"a01-iucn-status-ladder-concept.png" in explanation.data
-    assert b"a01-iucn-status-ladder-full.png" in explanation.data
+    assert b"a01-iucn-status-ladder-concept.webp" in explanation.data
+    assert b"a01-iucn-status-ladder-full.webp" in explanation.data
 
 
 def test_lesson_nine_editorial_html_and_question_mappings(client, app):
@@ -241,20 +239,18 @@ def test_lesson_nine_concept_map_covers_every_question_and_asset(app, client):
         path = root / filename
         assert path.is_file()
         with path.open("rb") as image_file:
-            assert image_file.read(8) == b"\x89PNG\r\n\x1a\n"
-            chunk_length = struct.unpack(">I", image_file.read(4))[0]
-            assert image_file.read(4) == b"IHDR"
-            assert chunk_length == 13
-            width, height = struct.unpack(">II", image_file.read(8))
-        assert (width, height) == (1024, 1536)
+            image_header = image_file.read(12)
+            assert image_header[:4] == b"RIFF"
+            assert image_header[8:12] == b"WEBP"
+        assert path.stat().st_size > 100_000
 
     explanation = client.get(
         f"/learn/science-technology/{SLUG}/practice/explanation/"
         "st3-l09-a-q001")
     assert explanation.status_code == 200
     assert explanation.data.count(b"<figure data-slide=") == 2
-    assert b"a01-ap-biogeographic-units-concept.png" in explanation.data
-    assert b"a01-ap-biogeographic-units-full.png" in explanation.data
+    assert b"a01-ap-biogeographic-units-concept.webp" in explanation.data
+    assert b"a01-ap-biogeographic-units-full.webp" in explanation.data
 
 
 def test_science_visual_pilot_does_not_replace_other_lessons(client):
@@ -263,7 +259,7 @@ def test_science_visual_pilot_does_not_replace_other_lessons(client):
         "st3-l02-population-community-succession")
     assert lesson.status_code == 200
     assert b'textbook-visual-gallery' not in lesson.data
-    assert b'01-ecological-levels-bilingual.png' not in lesson.data
+    assert b'01-ecological-levels-bilingual.webp' not in lesson.data
 
 
 def test_science_package_exposes_only_approved_questions(app):
@@ -324,8 +320,8 @@ def test_science_question_explanation_links_section_and_visual_pair(client):
     assert b'infography-reading' in page.data
     assert b'<header class="card">' not in page.data
     assert b'How Organisms Respond to Environmental Variation' in page.data
-    assert b'concept-pairs/1c-c01-four-responses-concept.png' in page.data
-    assert b'concept-pairs/1c-c01-four-responses-full.png' in page.data
+    assert b'concept-pairs/1c-c01-four-responses-concept.webp' in page.data
+    assert b'concept-pairs/1c-c01-four-responses-full.webp' in page.data
     assert page.data.count(b'<figure data-slide=') == 2
 
 
@@ -415,8 +411,8 @@ def test_per_lesson_concept_map_is_selected_without_replacing_lesson_one(
             "id": "2a-c01",
             "section_id": f"{lesson_two}-section-2a",
             "title": "Population attributes",
-            "concept_file": "2a-c01-concept.png",
-            "full_file": "2a-c01-full.png",
+            "concept_file": "2a-c01-concept.webp",
+            "full_file": "2a-c01-full.webp",
             "fact_ids": ["st3-l02-02a-f001"],
         }],
         "question_overrides": {},
@@ -480,7 +476,7 @@ def test_existing_concept_pair_assets_are_declared(app):
     }
     root = Path(app.static_folder) / "infographics" / "science" / \
         "st3-l01-ecology-foundations" / mapping["asset_directory"]
-    existing = {path.name for path in root.glob("*.png")}
+    existing = {path.name for path in root.glob("*.webp")}
     assert len(declared) == 76
     assert existing == declared
     assert all((root / filename).stat().st_size > 0 for filename in declared)
@@ -511,7 +507,7 @@ def test_lesson_two_concept_map_and_assets_are_complete(app):
     }
     root = Path(app.static_folder) / "infographics" / "science" / \
         lesson_id / mapping["asset_directory"]
-    existing = {path.name for path in root.glob("*.png")}
+    existing = {path.name for path in root.glob("*.webp")}
     assert len(declared) == 26
     assert existing == declared
     assert all((root / filename).stat().st_size > 0 for filename in declared)
@@ -522,8 +518,8 @@ def test_lesson_two_question_opens_its_concept_pair(client):
         f"/learn/science-technology/{SLUG}/practice/explanation/"
         "st3-l02-02a-q001")
     assert page.status_code == 200
-    assert b"concept-pairs/2a-c01-population-density-age-pyramids-concept.png" in page.data
-    assert b"concept-pairs/2a-c01-population-density-age-pyramids-full.png" in page.data
+    assert b"concept-pairs/2a-c01-population-density-age-pyramids-concept.webp" in page.data
+    assert b"concept-pairs/2a-c01-population-density-age-pyramids-full.webp" in page.data
     assert page.data.count(b'<figure data-slide=') == 2
 
 
@@ -574,7 +570,7 @@ def test_lesson_three_concept_map_fact_owners_and_assets_are_complete(app):
     }
     root = Path(app.static_folder) / "infographics" / "science" / \
         lesson_id / mapping["asset_directory"]
-    existing = {path.name for path in root.glob("*.png")}
+    existing = {path.name for path in root.glob("*.webp")}
     assert len(declared) == 30
     assert existing == declared
     assert all((root / filename).stat().st_size > 0 for filename in declared)
@@ -602,8 +598,8 @@ def test_lesson_three_question_opens_exactly_two_concept_slides(client):
         f"/learn/science-technology/{SLUG}/practice/explanation/"
         "st3-l03-3d-manual-q001")
     assert page.status_code == 200
-    assert b"concept-pairs/3d-c01-productivity-gpp-npp-stocks-concept.png" in page.data
-    assert b"concept-pairs/3d-c01-productivity-gpp-npp-stocks-full.png" in page.data
+    assert b"concept-pairs/3d-c01-productivity-gpp-npp-stocks-concept.webp" in page.data
+    assert b"concept-pairs/3d-c01-productivity-gpp-npp-stocks-full.webp" in page.data
     assert page.data.count(b'<figure data-slide=') == 2
 
 
@@ -641,7 +637,7 @@ def test_lesson_four_concept_map_fact_owners_and_assets_are_complete(app):
     }
     root = Path(app.static_folder) / "infographics" / "science" / \
         lesson_id / mapping["asset_directory"]
-    existing = {path.name for path in root.glob("*.png")}
+    existing = {path.name for path in root.glob("*.webp")}
     assert len(declared) == 40
     assert existing == declared
     assert all((root / filename).stat().st_size > 0 for filename in declared)
@@ -671,11 +667,11 @@ def test_lesson_four_question_opens_exactly_two_concept_slides(client):
     assert page.status_code == 200
     assert (
         b"concept-pairs/04d-c01-freshwater-systems-horizontal-lake-zones-"
-        b"concept.png" in page.data
+        b"concept.webp" in page.data
     )
     assert (
         b"concept-pairs/04d-c01-freshwater-systems-horizontal-lake-zones-"
-        b"full.png" in page.data
+        b"full.webp" in page.data
     )
     assert page.data.count(b'<figure data-slide=') == 2
 
@@ -714,7 +710,7 @@ def test_lesson_five_concept_map_fact_owners_and_assets_are_complete(app):
     }
     root = Path(app.static_folder) / "infographics" / "science" / \
         lesson_id / mapping["asset_directory"]
-    existing = {path.name for path in root.glob("*.png")}
+    existing = {path.name for path in root.glob("*.webp")}
     assert len(declared) == 36
     assert existing == declared
     assert all((root / filename).stat().st_size > 0 for filename in declared)
@@ -744,11 +740,11 @@ def test_lesson_five_question_opens_exactly_two_concept_slides(client):
     assert page.status_code == 200
     assert (
         b"concept-pairs/05a-c01-biodiversity-levels-richness-evenness-"
-        b"indices-concept.png" in page.data
+        b"indices-concept.webp" in page.data
     )
     assert (
         b"concept-pairs/05a-c01-biodiversity-levels-richness-evenness-"
-        b"indices-full.png" in page.data
+        b"indices-full.webp" in page.data
     )
     assert page.data.count(b'<figure data-slide=') == 2
 
@@ -787,7 +783,7 @@ def test_lesson_six_concept_map_fact_owners_and_assets_are_complete(app):
     }
     root = Path(app.static_folder) / "infographics" / "science" / \
         lesson_id / mapping["asset_directory"]
-    existing = {path.name for path in root.glob("*.png")}
+    existing = {path.name for path in root.glob("*.webp")}
     assert len(declared) == 74
     assert existing == declared
     assert all((root / filename).stat().st_size > 0 for filename in declared)
@@ -811,8 +807,8 @@ def test_lesson_six_question_opens_concept_and_explanation_images(client):
         f"/learn/science-technology/{SLUG}/practice/explanation/"
         "st3-l06-a-q049")
     assert page.status_code == 200
-    assert b"concept-pairs/l6-a-01-concept.png" in page.data
-    assert b"concept-pairs/l6-a-01-full.png" in page.data
+    assert b"concept-pairs/l6-a-01-concept.webp" in page.data
+    assert b"concept-pairs/l6-a-01-full.webp" in page.data
     assert page.data.count(b'<figure data-slide=') == 2
 
 
@@ -821,8 +817,8 @@ def test_question_uses_exact_concept_pair_when_both_assets_exist(client):
         f"/learn/science-technology/{SLUG}/practice/explanation/"
         "st3-l01-01a-q001")
     assert page.status_code == 200
-    assert b"concept-pairs/1a-c01-ecology-meaning-concept.png" in page.data
-    assert b"concept-pairs/1a-c01-ecology-meaning-full.png" in page.data
+    assert b"concept-pairs/1a-c01-ecology-meaning-concept.webp" in page.data
+    assert b"concept-pairs/1a-c01-ecology-meaning-full.webp" in page.data
     assert page.data.count(b'<figure data-slide=') == 2
 
 
@@ -833,8 +829,8 @@ def test_cross_lesson_population_regulation_is_not_mapped_to_niche(client):
     assert page.status_code == 200
     assert b"concept-pairs/1d-c02" not in page.data
     assert b"concept-pairs/1d-c03" not in page.data
-    assert b"05-habitat-vs-niche-bilingual.png" in page.data
-    assert b"14-section-1d-full-explanation-bilingual.png" in page.data
+    assert b"05-habitat-vs-niche-bilingual.webp" in page.data
+    assert b"14-section-1d-full-explanation-bilingual.webp" in page.data
 
 
 def test_unknown_science_chapter_is_404(client):
