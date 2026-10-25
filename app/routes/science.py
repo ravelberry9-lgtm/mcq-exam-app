@@ -2,7 +2,7 @@
 from pathlib import Path
 from types import SimpleNamespace
 
-from flask import Blueprint, abort, current_app, render_template, request, url_for
+from flask import Blueprint, abort, current_app, render_template, request, send_file, url_for
 
 from ..services import science_content as science
 
@@ -89,6 +89,7 @@ def index():
         book = science.load_book(meta["slug"])
         if book:
             chapters.append({**meta, "lessons": len(book["lessons"]),
+                             "status": book["status"],
                              "questions": science.question_summary(meta["slug"])})
     return render_template("ds/science_index.html", chapters=chapters)
 
@@ -116,6 +117,13 @@ def textbook_lesson(slug, lesson_id):
     _meta, ch, book = _context(slug)
     for i, lesson in enumerate(book["lessons"]):
         if lesson["id"] == lesson_id:
+            reader = lesson.get("editorial_reader")
+            if book.get("status") == "source_ready" and reader:
+                static_root = Path(current_app.static_folder).resolve()
+                reader_path = (static_root / reader).resolve()
+                if not reader_path.is_relative_to(static_root) or not reader_path.is_file():
+                    abort(404)
+                return send_file(reader_path, mimetype="text/html")
             return render_template(
                 "ds/textbook.html", ch=ch, book=book, lesson=lesson,
                 integrated_bilingual=True,

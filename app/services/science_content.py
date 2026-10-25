@@ -10,13 +10,11 @@ from . import textbook
 
 
 CHAPTERS = (
-    {
-        "slug": "st3-ecosystem-biodiversity",
-        "title_en": "Ecosystems and Biodiversity",
-        "title_te": "పర్యావరణ వ్యవస్థలు మరియు జీవ వైవిధ్యం",
-        "part_en": "Science & Technology · Environment",
-        "part_te": "సైన్స్ & టెక్నాలజీ · పర్యావరణం",
-    },
+    {"slug": "st1-technology-missions", "title_en": "Technology Missions: Space, Defence, Nuclear and Emerging Technology", "title_te": "సాంకేతిక మిషన్లు: అంతరిక్షం, రక్షణ, అణుశక్తి మరియు ఆధునిక సాంకేతికత", "part_en": "Unit 1 · Technology Missions", "part_te": "యూనిట్ 1 · సాంకేతిక మిషన్లు"},
+    {"slug": "st2-energy-management", "title_en": "Energy Resources and Management", "title_te": "ఇంధన వనరులు మరియు నిర్వహణ", "part_en": "Unit 2 · Energy", "part_te": "యూనిట్ 2 · ఇంధనం"},
+    {"slug": "st3-ecosystem-biodiversity", "title_en": "Ecosystems and Biodiversity", "title_te": "పర్యావరణ వ్యవస్థలు మరియు జీవ వైవిధ్యం", "part_en": "Unit 3 · Ecosystems and Biodiversity", "part_te": "యూనిట్ 3 · పర్యావరణ వ్యవస్థలు మరియు జీవ వైవిధ్యం"},
+    {"slug": "st4-waste-pollution", "title_en": "Waste Management, Pollution and Sustainable Technologies", "title_te": "వ్యర్థాల నిర్వహణ, కాలుష్యం మరియు సుస్థిర సాంకేతికతలు", "part_en": "Unit 4 · Waste and Pollution", "part_te": "యూనిట్ 4 · వ్యర్థాలు మరియు కాలుష్యం"},
+    {"slug": "st5-environment-health", "title_en": "Climate Change, Sustainable Development and Public Health", "title_te": "వాతావరణ మార్పు, సుస్థిర అభివృద్ధి మరియు ప్రజారోగ్యం", "part_en": "Unit 5 · Environment and Health", "part_te": "యూనిట్ 5 · పర్యావరణం మరియు ఆరోగ్యం"},
 )
 
 
@@ -42,7 +40,7 @@ def load_book(slug: str):
     except (ValueError, TypeError, KeyError, OSError):
         current_app.logger.warning("Science textbook package rejected for %s", slug)
         return None
-    return data if data["status"] == "approved" else None
+    return data if data["status"] in {"approved", "approved_text", "source_ready"} else None
 
 
 def load_editorial_lesson(slug: str, lesson_id: str):

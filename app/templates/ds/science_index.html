@@ -4,11 +4,12 @@
 {% block title %}Science & Technology · {{ app_title }}{% endblock %}
 {% block topbar %}<h1>{{ c.bi('Science & Technology', 'సైన్స్ & టెక్నాలజీ') }}</h1>{% endblock %}
 {% block content %}
-<p>{{ c.bi('Reviewed bilingual textbooks arranged by syllabus chapter.', 'సిలబస్ అధ్యాయాల వారీగా సమీక్షించిన bilingual textbooks.') }}</p>
+<p>{{ c.bi('Science & Technology books arranged by syllabus unit. Editorial status is shown clearly.', 'సిలబస్ యూనిట్ల వారీగా Science & Technology పుస్తకాలు. Editorial status స్పష్టంగా చూపబడుతుంది.') }}</p>
 {% for item in chapters %}
 <a class="card" href="{{ url_for('science.chapter', slug=item.slug) }}">
   <span class="label">{{ c.bi(item.part_en, item.part_te) }}</span>
   <h2>{{ c.bi(item.title_en, item.title_te, 'stack') }}</h2>
+  {% if item.status == 'source_ready' %}<span class="label">{{ c.bi('Source book · editorial rewrite pending', 'Source book · editorial rewrite ఇంకా పూర్తి కాలేదు') }}</span>{% else %}<span class="label">{{ c.bi('Editorially reviewed', 'Editorial review పూర్తయింది') }}</span>{% endif %}
   <span class="small muted">{{ item.lessons }} lessons · {{ item.questions.total }} mapped MCQs</span>
 </a>
 {% else %}<p>{{ c.bi('No approved Science textbook is installed.', 'ఆమోదించిన Science textbook ఇంకా అందుబాటులో లేదు.') }}</p>{% endfor %}

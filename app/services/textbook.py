@@ -25,7 +25,7 @@ def validate(data, slug):
 
     require(isinstance(data, dict), "Package must be an object")
     require(data.get("format") == "ap-textbook-v1" and data.get("chapter_slug") == slug, "Wrong format/chapter")
-    require(data.get("status") in ("draft", "approved_text", "approved"), "Invalid status")
+    require(data.get("status") in ("draft", "source_ready", "approved_text", "approved"), "Invalid status")
     require(isinstance(data.get("version"), str) and data["version"].strip(), "Version required")
     bilingual(data.get("title"))
     lessons = data.get("lessons")

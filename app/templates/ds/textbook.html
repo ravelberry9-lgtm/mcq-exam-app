@@ -10,6 +10,7 @@
 {% endblock %}
 {% block content %}
 {% if book.status == 'draft' %}<p role="status" data-testid="textbook-draft">{{ c.bi('Research draft — not final textbook content', 'పరిశోధన ముసాయిదా — తుది పాఠ్యగ్రంథం కాదు') }}</p>{% endif %}
+{% if book.status == 'source_ready' %}<p role="status" class="card">{{ c.bi('Latest source book — editorial rewrite and final audit are pending.', 'Latest source book — editorial rewrite మరియు final audit ఇంకా పూర్తి కాలేదు.') }}</p>{% endif %}
 {% if not lesson %}
 <p>{{ c.bi('Group 2 foundation + Group 1 depth. Choose a lesson.', 'గ్రూప్ 2 ప్రధాన పాఠం + గ్రూప్ 1 లోతైన అధ్యయనం. ఒక పాఠాన్ని ఎంచుకోండి.') }}</p>
 {% for l in book.lessons %}<a class="card" href="{{ url_for(textbook_lesson_endpoint, slug=ch.slug, lesson_id=l.id) }}">{{ c.bi(l.title.en, l.title.te) }}</a>{% endfor %}
