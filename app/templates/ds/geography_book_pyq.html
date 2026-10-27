@@ -1,0 +1,19 @@
+{% extends "ds/base.html" %}
+{% set nav_active='practice' %}
+{% block title %}{{ r.display_label }}{% endblock %}
+{% block content %}
+<a href="{{ url_for('geography.book_pyq_index',**filters) }}">‹ జాబితా · Collection</a>
+<p>{{ r.display_label }} · Printed page {{ r.source.printed_page }}</p>
+<p><a href="{{ switches.te }}">తెలుగు</a> · <a href="{{ switches.en }}">English</a></p>
+<div class="card" data-status="held"><strong>అధ్యయనం మాత్రమే · Unscored</strong><p>{{ r.transcription_status }}. {{ r.attribution_status }}.</p><p>{{ 'ఇంగ్లీష్ అనువాదం సంపాదకీయం; అసలు పరీక్షలోని ఇంగ్లీష్ ప్రశ్న కాదు.' if lang=='te' else 'Editorial English translation; not verified original exam wording.' }}</p></div>
+<div class="card" lang="{{ lang }}"><h1 style="font-size:1.3rem">{{ question }}</h1>
+{% for label,text in statements.items() %}<p>{{ label }}. {{ text }}</p>{% endfor %}
+<form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+{% if not options %}<p>పుస్తకంలో ఎంపికలు ఇవ్వలేదు · Choices are not printed in the book excerpt.</p>{% endif %}
+{% for option in options %}<p><label><input type="radio" name="choice" value="{{ loop.index }}"{% if choice==loop.index %} checked{% endif %}> {{ loop.index }}. {{ option }}</label></p>{% endfor %}
+<button type="submit">{{ 'వివరణ చూడండి' if lang=='te' else 'Review explanation' }}</button></form></div>
+{% if result %}<section class="card" id="answer-result"><h2>{{ 'వివరణ' if lang=='te' else 'Explanation' }}</h2><p>{{ r.concept_verification.explanation_te if lang=='te' else r.concept_verification.explanation_en }}</p><p>Book key: {{ r.book_key if r.book_key is not none else r.book_answer_text|default("not printed") }} · Concept-supported answer: {{ r.concept_supported_answer if r.concept_supported_answer is not none else r.concept_answer_text|default("unresolved") }} · Official final key: unverified.</p><p>No score awarded.</p>
+{% for link in links %}<p><a data-chapter-link href="{{ link }}">{{ 'సంబంధిత పాఠం' if lang=='te' else 'Relevant notes' }} · {{ r.sections[loop.index0] }}</a></p>{% endfor %}
+{% for source in r.concept_verification.sources %}<p><a href="{{ source }}" rel="noopener">{{ source }}</a></p>{% endfor %}</section>{% endif %}
+<details class="card"><summary>పుట ఆధారం · Printed source evidence</summary><a href="{{ url_for('geography.book_pyq_evidence',question_id=r.id) }}">Open source page</a><ul>{% for reason in r.hold_reasons %}<li>{{ reason }}</li>{% endfor %}</ul><p>Paper/stage: {{ r.paper_stage or 'not recorded' }} · Original question number: {{ r.original_question_number or 'not recorded' }}</p></details>
+{% endblock %}

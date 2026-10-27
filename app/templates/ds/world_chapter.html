@@ -1,0 +1,10 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'learn' %}
+{% block title %}Chapter {{ ch.display_chapter }} · World Geography{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
+{% block topbar %}<h1>{{ ch.display_chapter }}. {{ ch.title_te or ch.title_en }}</h1>{% endblock %}
+{% block content %}
+<nav><a href="{{ url_for('geography.world_index') }}">‹ World Geography</a></nav>
+<section class="card"><h2>{{ ch.title_en }}</h2><p>{{ ch.question_count }} MCQs · Telugu and English explanations · exact chapter links</p>{% if native %}<p><a class="btn primary" href="{{ url_for('geography.world_notes',number=ch.display_chapter) }}">పాఠం చదవండి · Read notes</a> <a class="btn" href="{{ url_for('geography.world_practice',number=ch.display_chapter) }}">MCQs అభ్యాసం · Practice</a></p>{% endif %}</section>
+{% if not native %}<h2>పాఠ్య భాగాలు · Chapter resources</h2>{% for resource in resources %}<section class="card"><h3>{{ resource.id }} · {{ resource.title }}</h3><p><a class="btn primary" href="{{ url_for('geography.lesson',lesson_id=resource.id) }}">పాఠం · Notes</a> <a class="btn" href="{{ url_for('geography.original_index',chapter=resource.id) }}">MCQs</a></p></section>{% endfor %}{% endif %}
+{% endblock %}

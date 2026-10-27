@@ -215,7 +215,7 @@ def display(record):
             "scorable": bool(accepted_options(record)), "review": reviewed}
 
 
-def filtered(unit=None, lesson=None, exam=None, year=None, paper=None, mode=None, search=None):
+def filtered(unit=None, lesson=None, exam=None, year=None, paper=None, mode=None, search=None, qlang=None):
     result = []
     needle = (search or "").strip().casefold()
     for record in records():

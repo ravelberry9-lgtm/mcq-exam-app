@@ -1,0 +1,225 @@
+{
+  "format": "geography-book-pyq-intake-v1",
+  "status": "pending verification; not in the scored official release",
+  "records": [
+    {
+      "id": "GEO-BOOK-PYQ-P009-001",
+      "question_type": "book_attributed_pyq",
+      "state": "TG",
+      "board_as_printed": "TGPSC",
+      "exam_as_printed": "Group-2",
+      "year_as_printed": 2024,
+      "paper_stage": null,
+      "original_question_number": null,
+      "display_label": "TG • TGPSC • Group II • 2024 — book attribution",
+      "attribution_status": "book label only; original paper verification pending",
+      "source": {
+        "source_leaf_id": "book-seq-009",
+        "printed_page": 9,
+        "panel": "yellow printed PYQ box",
+        "evidence_file": "content/geography/book_pyq_sources/book-page009-photo.jpg",
+        "sha256": "08725eb22cfbf5cea86d4eaa870b30fdcef07e53384a2503c0c6bd416559391f",
+        "handwriting_excluded": true,
+        "printed_answer_marker": "(4)"
+      },
+      "transcription_status": "manual draft; second wording check pending",
+      "question_te_draft": "సౌర వ్యవస్థకు సంబంధించి క్రింద ఇచ్చిన వాక్యాలలో ఏది ఒప్పు?",
+      "statements_te_draft": {
+        "a": "సూర్యుడు భూమికి సుమారు 180 మిలియన్ కిలోమీటర్ల దూరంలో ఉన్నాడు.",
+        "b": "సెరెస్ అనేది సౌర కుటుంబంలోని ఒక గ్రహం.",
+        "c": "సౌర వ్యవస్థలో శుక్రుడు అత్యంత ఉష్ణోగ్రత కలిగిన గ్రహం."
+      },
+      "options_as_printed_draft": [
+        "a మాత్రమే",
+        "b మాత్రమే",
+        "a మరియు b మాత్రమే",
+        "c మాత్రమే"
+      ],
+      "editorial_english_translation": {
+        "question": "Which statement about the Solar System is correct?",
+        "statements": {
+          "a": "The Sun is about 180 million kilometres from Earth.",
+          "b": "Ceres is a planet in the Solar System.",
+          "c": "Venus is the hottest planet in the Solar System."
+        },
+        "options": [
+          "a only",
+          "b only",
+          "a and b only",
+          "c only"
+        ]
+      },
+      "book_key": 4,
+      "concept_supported_answer": 4,
+      "concept_verification": {
+        "statement_truth": {
+          "a": false,
+          "b": false,
+          "c": true
+        },
+        "explanation_te": "భూమి–సూర్యుడి సగటు దూరం సుమారు 150 మిలియన్ km; 180 మిలియన్ కాదు. సెరెస్ మరుగుజ్జు గ్రహం. శుక్రుడు సౌర కుటుంబంలో అత్యంత వేడి గ్రహం. అందువల్ల c మాత్రమే సరైనది.",
+        "explanation_en": "Earth is on average about 150 million km from the Sun, not 180 million. Ceres is a dwarf planet. Venus is the hottest planet. Only c is correct.",
+        "sources": [
+          "https://science.nasa.gov/earth/facts/",
+          "https://science.nasa.gov/dwarf-planets/ceres/facts/",
+          "https://science.nasa.gov/venus/venus-facts/"
+        ],
+        "status": "concept facts checked; not an official exam-key verification"
+      },
+      "official_paper_evidence": null,
+      "official_final_key_evidence": null,
+      "scorable": false,
+      "hold_reasons": [
+        "Original exam paper identity and wording unverified",
+        "Official final key not obtained",
+        "Second transcription wording check pending"
+      ],
+      "chapter": "03",
+      "sections": [
+        "solar-scale",
+        "solar-small",
+        "solar-inner"
+      ],
+      "difficulty_editorial": "moderate",
+      "difficulty_reason": "Evaluate three factual statements; this is an editorial label",
+      "duplicate_review": "No exact release match found in initial content scan; manual duplicate review pending"
+    },
+    {
+      "id": "GEO-BOOK-PYQ-P017-001",
+      "question_type": "book_attributed_pyq_worked_example",
+      "state": "AP",
+      "board_as_printed": null,
+      "exam_as_printed": "కానిస్టేబుల్",
+      "year_as_printed": 2018,
+      "paper_stage": null,
+      "original_question_number": null,
+      "display_label": "AP • Constable • 2018 — book attribution",
+      "attribution_status": "book label only; recruiting board and original paper unverified",
+      "source": {
+        "source_leaf_id": "book-seq-017",
+        "printed_page": 17,
+        "panel": "Worked problem 2 with printed (2018 ఏపి కానిస్టేబుల్) attribution",
+        "evidence_file": "content/geography/book_pyq_sources/book-page017.jpg",
+        "sha256": "4e6c39f8381f752038c03ba1dcd1c25ed28993101b37fbfe79d33051e0deff07",
+        "handwriting_excluded": true,
+        "printed_answer_marker": null
+      },
+      "transcription_status": "manual draft checked against full source page; exact exam wording unverified",
+      "question_te_draft": "0° రేఖాంశము మీద లండన్‌లో 12గంటలు పగలు అయినప్పుడు 80° తూర్పు రేఖాంశము మీద ఉన్న అమరావతిలో సమయం ఎంత?",
+      "statements_te_draft": {},
+      "options_as_printed_draft": [],
+      "editorial_english_translation": {
+        "question": "When it is 12 noon in London at 0° longitude, what is the time at Amaravati, stated to be at 80°E?",
+        "statements": {},
+        "options": []
+      },
+      "book_key": null,
+      "book_answer_text": "17:20 (5:20 pm)",
+      "concept_supported_answer": null,
+      "concept_answer_text": "17:20 local mean time under the stated longitude model; 17:30 IST if 12:00 UTC is intended",
+      "concept_verification": {
+        "explanation_te": "ప్రశ్నలో ఇచ్చిన 80° తూర్పు విలువను వాడితే 80 × 4 = 320 నిమిషాలు = 5 గంటల 20 నిమిషాలు. 12:00కు కలిపితే స్థానిక సగటు కాలం 17:20. ఇది అమరావతి అధికారిక గడియార కాలం కాదు. యూటీసీ 12:00 అయితే భారత ప్రామాణిక కాలం 17:30. పుస్తకంలో ఎంపికలు ఇవ్వలేదు; వాటిని కల్పించలేదు. అమరావతి ఖచ్చిత రేఖాంశాన్ని ఈ ప్రశ్న నిర్ధారించదు.",
+        "explanation_en": "Using the question’s stipulated 80°E, add 80 × 4 = 320 minutes, or 5 h 20 min: 17:20 local mean time. This is not Amaravati’s civil clock time. At 12:00 UTC, IST is 17:30. The book gives no options, so none are reconstructed. This problem does not verify Amaravati’s precise longitude.",
+        "sources": [
+          "https://www.nplindia.res.in/clockcode/html/",
+          "https://ncert.nic.in/textbook/pdf/fess102.pdf"
+        ],
+        "status": "Arithmetic checked; civil-time distinction corrected; official exam verification pending"
+      },
+      "official_paper_evidence": null,
+      "official_final_key_evidence": null,
+      "scorable": false,
+      "hold_reasons": [
+        "Original exam paper and recruiting board unverified",
+        "Official final key unavailable",
+        "Book omits answer choices; original MCQ cannot be reconstructed faithfully",
+        "Local mean time must be distinguished from civil time"
+      ],
+      "chapter": "02",
+      "sections": [
+        "time-local",
+        "time-civil"
+      ],
+      "difficulty_editorial": "moderate",
+      "difficulty_reason": "Longitude arithmetic plus interpretation of local mean versus civil time; editorial label",
+      "duplicate_review": "Manual release duplicate comparison pending"
+    },
+    {
+      "id": "GEO-BOOK-PYQ-P156-001",
+      "question_type": "book_attributed_pyq",
+      "state": "TG",
+      "board_as_printed": "TGPSC",
+      "exam_as_printed": "Group-II",
+      "year_as_printed": 2025,
+      "paper_stage": null,
+      "original_question_number": null,
+      "display_label": "TG • TGPSC • Group II • 2025 — book attribution",
+      "attribution_status": "book label only; original paper verification pending",
+      "source": {
+        "source_leaf_id": "geo2.5-pdf-page-8",
+        "printed_page": 156,
+        "panel": "yellow printed PYQ box",
+        "evidence_file": "content/geography/book_pyq_sources/book-page156.jpg",
+        "sha256": "67925cf3c0a943cf4919e207a12bfe3c279c5dcb5b6ead146a9fa940df609aa0",
+        "handwriting_excluded": true,
+        "printed_answer_marker": "(2)"
+      },
+      "transcription_status": "manual transcription checked against full source page; original-paper wording pending",
+      "question_te_draft": "జపాన్ ద్వీప సముదాయాలను ఉత్తరం నుంచి దక్షిణానికి సరైన వరుసలో అమర్చండి.",
+      "statements_te_draft": {
+        "1": "షికోకు",
+        "2": "హొక్కైడో",
+        "3": "క్యుషూ",
+        "4": "హోన్షూ"
+      },
+      "options_as_printed_draft": [
+        "1, 2, 3, 4",
+        "2, 4, 1, 3",
+        "4, 1, 3, 2",
+        "3, 2, 4, 1"
+      ],
+      "editorial_english_translation": {
+        "question": "Arrange the listed Japanese islands correctly from north to south.",
+        "statements": {
+          "1": "Shikoku",
+          "2": "Hokkaido",
+          "3": "Kyushu",
+          "4": "Honshu"
+        },
+        "options": [
+          "1, 2, 3, 4",
+          "2, 4, 1, 3",
+          "4, 1, 3, 2",
+          "3, 2, 4, 1"
+        ]
+      },
+      "book_key": 2,
+      "concept_supported_answer": 2,
+      "concept_verification": {
+        "correct_order": "Hokkaido, Honshu, Shikoku, Kyushu",
+        "explanation_te": "ఉత్తరం నుంచి దక్షిణానికి Hokkaido, Honshu, Shikoku, Kyushu. ఇచ్చిన సంఖ్యలలో ఇది 2, 4, 1, 3; కాబట్టి printed option 2.",
+        "explanation_en": "From north to south the order is Hokkaido, Honshu, Shikoku, Kyushu. In the printed numbering this is 2, 4, 1, 3, so printed option 2.",
+        "sources": [
+          "https://www.gsi.go.jp/kihonjohochousa/pressrelease20230228.html"
+        ],
+        "status": "Geographic sequence checked; official exam paper and final key not yet verified"
+      },
+      "official_paper_evidence": null,
+      "official_final_key_evidence": null,
+      "scorable": false,
+      "hold_reasons": [
+        "Original TGPSC Group-II 2025 paper identity and wording unverified",
+        "Official final key not obtained",
+        "Printed key preserved as book evidence only"
+      ],
+      "chapter": "27",
+      "sections": [
+        "p156-japan-count"
+      ],
+      "difficulty_editorial": "easy",
+      "difficulty_reason": "Ordering four major islands from north to south",
+      "duplicate_review": "No exact release match established; manual duplicate review pending"
+    }
+  ],
+  "record_count": 3
+}

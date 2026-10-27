@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-25",
+  "authority": "Explicit user correction: explain concepts in paragraphs with subheadings; do not put every definition into a table",
+  "default": "Connected, natural Telugu paragraphs; English technical terms; explain prerequisites and mechanisms before figures and exceptions",
+  "sequence": [
+    "Introduce the idea",
+    "Explain how or why it works",
+    "Give a useful example",
+    "Add figures with units and scope",
+    "Place corrections after the explanation"
+  ],
+  "tables": "Use for genuine comparisons, classifications or numeric reference data; not as a container for every concept",
+  "preserve": "Facts, corrections, stable MCQ IDs, answer keys and exact section links",
+  "current_application": "Earlier prose/layout passes are not a substitute for the mandatory sentence-by-sentence manual read/write/review. Chapters1–3 require that review.",
+  "future_application": "Apply to remaining chapters and subsequent revisions",
+  "mandatory_manual_editorial_rule": {
+    "date": "2026-10-25",
+    "priority": "mandatory / non-negotiable",
+    "authority": "User: read manually, write manually each sentence, each review",
+    "scope": "Every geography chapter, uploaded source page, note, MCQ, translation and explanation, including revisions of existing work",
+    "requirements": [
+      "Manually read every source sentence and printed fact/concept in context; ignore handwriting as previously instructed.",
+      "Manually compose every teaching sentence and each language version; use natural Telugu explanations and English technical terms in notes, separate complete Telugu and English MCQs.",
+      "Manually reread and review every final sentence in context for meaning, clarity, prerequisites, accuracy and natural language.",
+      "Use subheadings and connected explanations. Keep tables for meaningful comparisons or reference data; do not mechanically convert cells into paragraphs.",
+      "Preserve source facts, documented corrections, stable IDs, scoring holds and exact section links.",
+      "Do not declare a chapter manually reviewed or complete until its entire final text has received this sentence-by-sentence review. Report partial work honestly."
+    ],
+    "prohibited": [
+      "Template-generated explanations or question prose",
+      "Batch word substitution or glossary replacement as a substitute for authoring or review",
+      "Mechanical table-to-heading/paragraph conversion presented as a rewrite",
+      "Automated structural tests presented as evidence of manual editorial review"
+    ],
+    "allowed_automation": [
+      "Save or format text already manually authored and reviewed",
+      "Read/extract/render source files to support manual reading; extraction is not a substitute for reading",
+      "Check hashes, preservation, duplicate IDs, language leakage, answer keys, links and navigation",
+      "Package approved local artifacts; deployment hold remains unchanged"
+    ],
+    "review_record": [
+      "Source pages/sections actually read",
+      "Sections manually written",
+      "Final sections reread sentence by sentence",
+      "Unresolved wording/facts and remaining sections"
+    ],
+    "existing_work": "See docs/geography_chapters123_manual_review.json for the current editorial revision; the manual authoring and review rule remains mandatory."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "format": "chapters01-03-superseded-test-assertions-v1",
+  "reviewed_on": "2026-10-27",
+  "reason": "These assertions freeze pre-authorized hashes, verbatim pre-rewrite prose, or obsolete layout counts. They are superseded by the canonical hash, bilingual schema, source-page join, exact-anchor and stable-answer tests.",
+  "failures": [
+    {
+      "test": "test_chapter01_content_repair.py::test_original_141_questions_keys_and_other_chapters_preserved",
+      "reason": "direct pre-later-edit hash snapshot"
+    },
+    {
+      "test": "test_chapter01_visuals.py::test_catalogue_coverage_and_preservation",
+      "reason": "single-hop hash expectation predates Chapter 4 completion"
+    },
+    {
+      "test": "test_chapter01_printed_atoms.py::test_all_previous_144_wordings_keys_and_variants_preserved",
+      "reason": "direct pre-later-edit hash snapshot"
+    },
+    {
+      "test": "test_chapter01_textbook_merge.py::test_all_198_questions_keys_variants_holds_and_other_chapters_preserved",
+      "reason": "hash chain predates completed Chapter 4 manual batch"
+    },
+    {
+      "test": "test_chapter02_visuals.py::test_all_source_rows_keys_matching_and_preservation",
+      "reason": "single-hop hash expectation predates Chapter 4 completion"
+    },
+    {
+      "test": "test_solar_practice.py::test_expanded_notes_have_unique_ids_and_expected_corrections",
+      "reason": "expects an earlier Telugu label where the approved note now uses the English technical term White dwarf"
+    },
+    {
+      "test": "test_solar_natural_notes.py::test_entire_rewrite_and_preserved_question_content",
+      "reason": "expects source_paragraph to equal only the anchor text after approved contextual prose expansion"
+    },
+    {
+      "test": "test_solar_english_terms.py::test_full_technical_phrases_and_distance_flow",
+      "reason": "case-sensitive Atomic nuclei wording predates natural Telugu plus English-term revision"
+    },
+    {
+      "test": "test_solar_english_terms.py::test_all_sections_have_readable_paragraph_groups",
+      "reason": "fixed 36-section layout count predates consolidation to 24 clearer sections"
+    },
+    {
+      "test": "test_solar_editorial.py::test_planet_tables_plain_terms_and_retained_anchors",
+      "reason": "expects source_paragraph to equal only anchor text after approved contextual prose expansion"
+    },
+    {
+      "test": "test_solar_bilingual.py::test_translation_does_not_modify_corpus_holds_or_other_chapters",
+      "reason": "cross-corpus hash snapshot predates later authorized book PYQ intake"
+    },
+    {
+      "test": "test_manual_chapters123_editorial.py::test_unrelated_chapters_are_unchanged",
+      "reason": "Chapter 4-8 hashes intentionally changed during completed World Geography workflow"
+    },
+    {
+      "test": "test_chapters123_prose.py::test_entire_bank_language_facts_and_targets_preserved[01]",
+      "reason": "requires every pre-rewrite paragraph verbatim despite authorized manual rewrite"
+    },
+    {
+      "test": "test_chapters123_prose.py::test_entire_bank_language_facts_and_targets_preserved[02]",
+      "reason": "requires every pre-rewrite paragraph verbatim despite authorized manual rewrite"
+    },
+    {
+      "test": "test_chapters123_prose.py::test_entire_bank_language_facts_and_targets_preserved[03]",
+      "reason": "requires every pre-rewrite paragraph verbatim despite authorized manual rewrite"
+    },
+    {
+      "test": "test_chapters123_prose.py::test_unrelated_corpus_and_controls_unchanged",
+      "reason": "book PYQ intake hash predates later authorized source records"
+    }
+  ]
+}

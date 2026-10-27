@@ -5,6 +5,7 @@
 {% block topbar %}<a href="{{ url_for('geography.index') }}">‹ భూగోళశాస్త్రం · Geography</a>{% endblock %}
 {% block content %}
 <div class="geo-intro"><h1>PYQ ప్రాక్టీస్ · Previous questions</h1><p>ఎంపికలు చేసి ప్రశ్నలు ప్రారంభించండి · Choose your filters and continue.</p></div>
+<p><a href="{{ url_for('geography.book_pyq_index') }}">పుస్తకంలోని PYQs · Book PYQs — review collection</a></p>
 <div class="geo-stats" data-pyq-count="{{ total_summary.total }}" data-pyq-held="{{ total_summary.held }}"><span>{{ total_summary.total }} PYQs</span><span>{{ total_summary.scorable }} scored</span><span>{{ total_summary.held }} study only</span></div>
 <form method="get" class="card geo-filters" action="{{ url_for('geography.pyq_index') }}" id="geography-filters">
 <div class="geo-field wide"><label for="pyq-unit">యూనిట్ · Unit</label><select id="pyq-unit" name="unit"><option value="">అన్ని యూనిట్లు · All units</option>{% for u in catalogue.units %}<option value="{{ u.id }}"{% if filters.unit == u.id|string %} selected{% endif %}>{{ u.title }}</option>{% endfor %}</select></div>

@@ -1,0 +1,418 @@
+{
+  "version": "1.1",
+  "date": "2026-10-25",
+  "rulebook": "docs/geography_chapter_rulebook.html",
+  "workflow_order": [
+    "independent_chapter_expansion",
+    "baseline_original_pyq_style_mcqs",
+    "read_uploaded_pages_in_printed_order",
+    "audit_facts_and_concepts",
+    "correct_and_expand_prerequisite_first_notes",
+    "page_derived_bilingual_mcqs",
+    "whole_chapter_coverage_audit",
+    "content_and_link_tests",
+    "content_freeze",
+    "later_verified_infographics_and_visual_questions",
+    "locally_ready"
+  ],
+  "deployment": {
+    "held": true,
+    "condition": "Do not deploy to Railway yet; wait for explicit subsequent user authorization even after PassA completion",
+    "auto_deploy_branch_push_prohibited": true,
+    "pending_duplicate_cancelled": "f04bb687-6a54-42e7-a93a-91c4e29df262",
+    "earlier_already_active_release": "c9e6d626ce6eb384a5b4bc20993e48d275c65705"
+  },
+  "current_chapter": {
+    "id": "01",
+    "title": "Earth, Maps and Directions",
+    "status": "Main textbook-flow merge completed locally; every current MCQ anchor is in open main notes",
+    "source_printed_pages": [
+      13,
+      14,
+      15
+    ],
+    "printed_claim_checks": 137,
+    "per_page_claim_checks": {
+      "13": 55,
+      "14": 57,
+      "15": 25
+    },
+    "unmapped_claims": 0,
+    "question_count": 198,
+    "previous_questions_preserved": 144,
+    "new_printed_atom_questions": 54,
+    "scored_questions": 190,
+    "unscored_questions": 8,
+    "book_page_filter_counts": {
+      "13": 47,
+      "14": 53,
+      "15": 35
+    },
+    "content_freeze_version": 4,
+    "visual_count": 8,
+    "new_graphics": 0,
+    "automated_tests_passed": 430,
+    "offline_behaviour_checks": "passed",
+    "browser_qa": "Pending; no new viewport QA claimed",
+    "fully_verified": false,
+    "coverage": "outputs/Geography_Chapter01_Visual_Review/printed_fact_coverage.html",
+    "review": "outputs/Geography_Chapter01_Visual_Review/index.html",
+    "deployment_held": true,
+    "report_correction": "Dark blue was already covered by GEO-BOOK-P015-F022. GEO-ORIG-01-040 is a retained duplicate presentation, not a new unique fact; the prior report incorrectly called that row missing.",
+    "main_note_integration_complete": true,
+    "page_audit_panels_remaining": 0,
+    "all_mcq_anchors_in_main_flow": 198,
+    "old_bookmarks_preserved": 254,
+    "main_tables": 43
+  },
+  "canonical_chapters": 83,
+  "all_chapter_mcq_preparation_complete": false,
+  "execution_plan": {
+    "active_pass": "B_supplied_batch1_language_revision",
+    "pass_A": "Rules 1 and 2, paired per chapter, all canonical chapters in sequence",
+    "pass_B": "Uploaded-page audit, additions, page-derived MCQs, integrated chapter audit and final tests",
+    "baseline_is_not_full_verification": true,
+    "baseline_checks_required": true,
+    "pass_A_status": "complete:83chapters,2123originalquestions,149full-regressiontests passed",
+    "pass_B_status": "Supplied batch locally ready:53 pages,1175 mapped rows,1439 Telugu MCQs;5 unsupported claim groups unscored;full regression failures repaired;Railway held."
+  },
+  "baseline_chapters_complete": 83,
+  "baseline_original_questions": 2123,
+  "rules_1_and_2_complete": true,
+  "baseline_review_index": "outputs/Geography_Baseline_83/index.html",
+  "baseline_test_report": "outputs/Geography_Baseline_83/test-summary.json",
+  "current_book_batch": {
+    "inventory": "outputs/Geography_Book_Audit_Batch1/source_inventory.json",
+    "source_pdf_pages": 44,
+    "earlier_photo_pages": 11,
+    "unique_content_pages": 53,
+    "scope_limited_to_supplied_material": true,
+    "next_printed_page": null,
+    "audit_complete": true,
+    "deployment_held": true,
+    "supplied_images": 55,
+    "locally_ready": true,
+    "new_original_questions": 1439,
+    "handwritten_notes": "excluded throughout",
+    "language_review": "Telugu-led with English exam terms",
+    "review_index": "outputs/Geography_Book_Audit_Batch1/index.html",
+    "fact_level_coverage_complete": true,
+    "language_review_complete": true,
+    "atomic_fact_concept_rows": 1175,
+    "coverage_limit": "All authored rows linked; five unsupported quotation/local-example claim groups remain explicitly unscored.",
+    "held_claim_groups": 5,
+    "coverage_index": "outputs/Geography_Book_Audit_Batch1/coverage.html",
+    "test_status": "153 passed in full156; all3 failures repaired and13 affected checks passed",
+    "test_summary": "outputs/Geography_Book_Audit_Batch1/test-summary.json",
+    "notes_editorial_revision": {
+      "scope": "Entire solar-system chapter: original foundation, all18 expanded teaching sections,14 supplied-page reference sections",
+      "status": "Full chapter line review and comparison tables ready;146 broad regression checks passed and16 final targeted checks passed;all failures cleared",
+      "reader": "outputs/Geography_Book_Audit_Batch1/Solar_System_Notes_Line_Reviewed.html",
+      "rewritten_teaching_paragraphs": 89,
+      "old_navigation_anchors_preserved": 606,
+      "question_content_unchanged": true,
+      "note_excerpt_migration_only": true,
+      "mcq_language_next": "Separate complete Telugu and complete English questions/options/explanations, after notes fixes; no Tinglish.",
+      "deployment_held": true,
+      "latest_change": "Full line review and planet-property comparison tables; Rocky planet definition, Mass/Weight and Luminosity clarified",
+      "whole_chapter_flow_review": {
+        "sections_reviewed": 36,
+        "dense_paragraphs_restructured": 81,
+        "technical_text_blocks_updated": 205,
+        "status": "complete;regression checks passed",
+        "mcq_question_text_changed": false
+      },
+      "test_report": "outputs/Geography_Book_Audit_Batch1/line-review-release-tests.xml"
+    }
+  },
+  "mcq_bilingual_revision": {
+    "status": "Chapter 03 complete and automated validation passed; visual browser check unavailable due to local-preview timeout",
+    "required_languages": [
+      "Telugu",
+      "English"
+    ],
+    "separate_complete_versions": true,
+    "mixed_language_prose_prohibited": true,
+    "completed_chapters": [
+      "01",
+      "02",
+      "03"
+    ],
+    "original_question_count": 874,
+    "historical_question_count": 7,
+    "unique_question_count": 881,
+    "other_chapters": "pending separate complete-language revision",
+    "catalogue": "content/geography/solar_bilingual.json",
+    "telugu_review": "outputs/Geography_Book_Audit_Batch1/Solar_System_MCQ_Telugu.html",
+    "english_review": "outputs/Geography_Book_Audit_Batch1/Solar_System_MCQ_English.html",
+    "latest_unique_checks_passed": 1829,
+    "test_report": "outputs/Geography_Book_Audit_Batch1/solar-bilingual-test-summary.json",
+    "deployment_held": true,
+    "chapter01_review": "outputs/Geography_Chapter01_Visual_Review/index.html",
+    "chapter01_test_report": "outputs/Geography_Chapter01_Visual_Review/test_summary.json",
+    "chapter02_review": "outputs/Geography_Chapter02_Visual_Review/index.html",
+    "chapter02_test_report": "outputs/Geography_Chapter02_Visual_Review/test_summary.json"
+  },
+  "notes_language_policy": {
+    "teaching": "Simple natural Telugu explaining the concept",
+    "technical_terms": "Use familiar English exam terms beside Telugu, including mass,size,diameter,volume,density,temperature,dwarf planet,Hawking radiation. Do not rely on obscure Telugu translations alone.",
+    "quantities_and_units": "Standard scientific symbols such as kg,km,g/cm³,°C,K,AU; e.g.1.99 ×10³⁰ kg. Clearly state whether an Earth comparison is mass or volume.",
+    "mcqs": "Later: separate complete Telugu and complete English versions; question wording/options/keys remain unchanged during notes editing.",
+    "preferred_terms": {
+      "Milky Way": "పాలపుంత (Milky Way)"
+    },
+    "cause_and_effect": "Name the cause and result explicitly. Avoid ambiguous phrases such as వేడి నీటిని. Separate Photosynthesis,Evaporation,Winds,Water cycle. Atmosphere means the gas envelope;Weather means conditions at a place/time.",
+    "table_definitions": "Technical English must appear in the definition cell itself where needed, even if the row heading already has English. Use full phrases such as gravitational effects,reflected starlight,atmospheric entry,parallax and differential rotation. Audit inflected Telugu phrases, not just exact root-word matches.",
+    "planet_presentation": "Define Rocky/Terrestrial,Gas giant,Ice giant before use. Present comparable planet colours,surface,atmosphere,rings,moons and special properties in tables; give short causal explanations beside them. Avoid repeated bracket labels on ordinary words."
+  },
+  "current_original_practice_total": 3626,
+  "question_count_explanation": {
+    "all_chapter_original_questions_before_page_audit": 2123,
+    "additional_book_page_questions": 1439,
+    "total_original_questions": 3626,
+    "solar_original_subset": 531,
+    "solar_subset_breakdown": {
+      "baseline": 72,
+      "first_page_comparison": 24,
+      "page_derived": 435
+    },
+    "historical_solar_pyqs_separate": 7,
+    "translations_are_not_extra_unique_questions": true,
+    "chapter01_visual_questions_added": 24,
+    "chapter02_visual_questions_added": 40
+  },
+  "three_umbrella_plan": {
+    "status": "Reviewable 83-chapter classification and renumbering plan; app catalogue unchanged",
+    "date": "2026-10-25",
+    "plan": "docs/geography_three_umbrella_plan.json",
+    "review": "outputs/Geography_Three_Umbrella_83_Plan/index.html",
+    "proposed_existing_chapter_count": 83,
+    "proposed_units": 21,
+    "primary_chapters": {
+      "world": 29,
+      "india": 41,
+      "ap": 13
+    },
+    "proposed_display_ranges": {
+      "world": [
+        1,
+        29
+      ],
+      "india": [
+        30,
+        70
+      ],
+      "ap": [
+        71,
+        83
+      ]
+    },
+    "future_world_candidate_topics_not_counted": 16,
+    "old_provisional_99_plan_archived": true,
+    "shared_application_cards_not_extra_chapters": 43,
+    "renumbering_applied": false,
+    "stable_legacy_ids_and_mcq_links_preserved": true,
+    "next_legacy_chapter": "02",
+    "next_proposed_display_number": 3,
+    "railway_held": true
+  },
+  "visual_policy": {
+    "freeze": "Freeze each chapter before visual production; do not wait for the full book. Reopen the freeze if a material correction is needed.",
+    "visual_types": [
+      "labelled diagrams",
+      "process diagrams",
+      "comparison charts",
+      "maps",
+      "revision infographics"
+    ],
+    "accuracy": "Prefer editable SVG for measured geometry and labels. Use raster illustrations only where helpful. Diagrams must declare scale, legend, reference and schematic exaggeration where relevant.",
+    "assessment": "Map each visual to concepts, questions and exact note anchors; do not duplicate questions merely by changing decoration.",
+    "deployment_held": true,
+    "presentation": "Recreate useful boxes and comparison tables using original layouts; group comparable properties rather than fragmented individual paragraphs. Keep concept explanations next to the comparison.",
+    "revision_infographics": "Create polished, original overview infographics after each chapter freeze; use clear contrast and visual hierarchy, preserve references/units, link every panel to notes and existing MCQs, and never count decorative repetitions as new questions."
+  },
+  "active_chapter_work": {
+    "id": "02",
+    "title": "Latitude, Longitude, Rotation, Revolution and Time",
+    "source_printed_pages": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "status": "Prepared locally; automated tests and rendered visual review pass; browser layout QA pending",
+    "question_count": 202,
+    "baseline_questions": 32,
+    "page_based_questions": 130,
+    "new_visual_questions": 40,
+    "scored_questions": 202,
+    "unscored_questions": 0,
+    "source_rows": 106,
+    "main_comparison_tables": 22,
+    "concept_boxes": 8,
+    "teaching_diagrams": 10,
+    "revision_infographics": 1,
+    "visual_count": 11,
+    "notes_frozen": true,
+    "content_freeze_version": 2,
+    "fully_verified": false,
+    "browser_qa": "Pending: in-app browser could not connect to the isolated local preview",
+    "review": "outputs/Geography_Chapter02_Visual_Review/index.html",
+    "infographic": "outputs/Geography_Chapter02_Visual_Review/Infographic.html",
+    "next_work": "Reuse the completed Chapter 03 notes and bilingual bank for its visual pass, then continue the sequence.",
+    "deployment_held": true,
+    "automated_tests_passed": 1829,
+    "final_targeted_tests_passed": 422,
+    "test_report": "outputs/Geography_Chapter02_Visual_Review/test_report.html"
+  },
+  "chapter_summaries": {
+    "03": {
+      "id": "03",
+      "title": "Earth in the Solar System",
+      "supplied_printed_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "clear_replacements_received": [
+        10,
+        11
+      ],
+      "local_original_questions": 531,
+      "baseline_questions": 72,
+      "new_page_comparison_questions": 24,
+      "status": "Complete separate Telugu and English MCQ study presentations with explanations and exact note links; historical source keys and holds preserved; Railway held",
+      "all_page_fact_concept_mapping_complete": true,
+      "ready": true,
+      "core_original_questions": 96,
+      "page_based_original_questions": 435,
+      "historical_solar_pyqs": 7,
+      "bilingual_unique_questions": 538
+    },
+    "01": {
+      "id": "01",
+      "status": "locally prepared; automated tests pass; browser QA pending; one unresolved source label unscored",
+      "source_printed_pages": [
+        13,
+        14,
+        15
+      ],
+      "workflow": "notes -> audit/correct -> content freeze -> visuals -> separate complete Telugu/English MCQs -> tests",
+      "question_count": 141,
+      "existing_questions": 117,
+      "new_visual_questions": 24,
+      "scored_questions": 139,
+      "unscored_questions": 2,
+      "visual_count": 8,
+      "coverage_rows": 63,
+      "reviewed_rows": 62,
+      "unresolved_fact": "P015-F019",
+      "review": "outputs/Geography_Chapter01_Visual_Review/index.html",
+      "browser_qa": "pending: local preview connection failed",
+      "next_chapter": "02",
+      "automated_tests_passed": 1421,
+      "final_targeted_tests_passed": 294,
+      "notes_frozen": true,
+      "fully_verified": false,
+      "report": "outputs/Geography_Chapter01_Visual_Review/test_report.html"
+    },
+    "02": {
+      "id": "02",
+      "title": "Latitude, Longitude, Rotation, Revolution and Time",
+      "source_printed_pages": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "status": "Prepared locally; automated tests and rendered visual review pass; browser layout QA pending",
+      "question_count": 202,
+      "baseline_questions": 32,
+      "page_based_questions": 130,
+      "new_visual_questions": 40,
+      "scored_questions": 202,
+      "unscored_questions": 0,
+      "source_rows": 106,
+      "main_comparison_tables": 22,
+      "concept_boxes": 8,
+      "teaching_diagrams": 10,
+      "revision_infographics": 1,
+      "visual_count": 11,
+      "notes_frozen": true,
+      "content_freeze_version": 2,
+      "fully_verified": false,
+      "browser_qa": "Pending: in-app browser could not connect to the isolated local preview",
+      "review": "outputs/Geography_Chapter02_Visual_Review/index.html",
+      "infographic": "outputs/Geography_Chapter02_Visual_Review/Infographic.html",
+      "next_work": "Reuse the completed Chapter 03 notes and bilingual bank for its visual pass, then continue the sequence.",
+      "deployment_held": true,
+      "automated_tests_passed": 1829,
+      "final_targeted_tests_passed": 422,
+      "test_report": "outputs/Geography_Chapter02_Visual_Review/test_report.html"
+    }
+  },
+  "user_priority": "Fix Chapter 01 to Solar System content-first standard before proceeding with Chapter 02 or later chapters.",
+  "world_execution": {
+    "state": "docs/world_geography_execution_state.json",
+    "review": "outputs/World_Geography_Workflow/index.html",
+    "active_legacy_chapter": "02",
+    "source_leaves_indexed": 175,
+    "all_pages_audited": false,
+    "difficulty_tagging_required": true,
+    "book_pyq_intake": "content/geography/book_pyq_intake.json",
+    "intake_record_count": 1,
+    "railway_held": true,
+    "latest_checkpoint": "Chapter02:242 bilingual questions,202 claim traces,11 source exceptions, all main-note destinations open; tests passed; no deploy"
+  },
+  "current_standard_rules_1_and_2_all_83_complete": false,
+  "mandatory_manual_editorial_rule": {
+    "date": "2026-10-25",
+    "priority": "mandatory / non-negotiable",
+    "authority": "User: read manually, write manually each sentence, each review",
+    "scope": "Every geography chapter, uploaded source page, note, MCQ, translation and explanation, including revisions of existing work",
+    "requirements": [
+      "Manually read every source sentence and printed fact/concept in context; ignore handwriting as previously instructed.",
+      "Manually compose every teaching sentence and each language version; use natural Telugu explanations and English technical terms in notes, separate complete Telugu and English MCQs.",
+      "Manually reread and review every final sentence in context for meaning, clarity, prerequisites, accuracy and natural language.",
+      "Use subheadings and connected explanations. Keep tables for meaningful comparisons or reference data; do not mechanically convert cells into paragraphs.",
+      "Preserve source facts, documented corrections, stable IDs, scoring holds and exact section links.",
+      "Do not declare a chapter manually reviewed or complete until its entire final text has received this sentence-by-sentence review. Report partial work honestly."
+    ],
+    "prohibited": [
+      "Template-generated explanations or question prose",
+      "Batch word substitution or glossary replacement as a substitute for authoring or review",
+      "Mechanical table-to-heading/paragraph conversion presented as a rewrite",
+      "Automated structural tests presented as evidence of manual editorial review"
+    ],
+    "allowed_automation": [
+      "Save or format text already manually authored and reviewed",
+      "Read/extract/render source files to support manual reading; extraction is not a substitute for reading",
+      "Check hashes, preservation, duplicate IDs, language leakage, answer keys, links and navigation",
+      "Package approved local artifacts; deployment hold remains unchanged"
+    ],
+    "review_record": [
+      "Source pages/sections actually read",
+      "Sections manually written",
+      "Final sections reread sentence by sentence",
+      "Unresolved wording/facts and remaining sections"
+    ],
+    "existing_work": "Earlier structural work alone was insufficient. Current Chapters 01–03 editorial pass is recorded in docs/geography_chapters123_manual_review.json; the mandatory rule remains applicable to every future change."
+  },
+  "manual_editorial_acceptance": {
+    "chapters_01_02_03": "Current-notes editorial revision completed; see detailed record. No new clearance of unresolved source facts.",
+    "record": "docs/geography_chapters123_manual_review.json",
+    "automated_tests": "1131 passed; technical verification only, not editorial judgment"
+  }
+}

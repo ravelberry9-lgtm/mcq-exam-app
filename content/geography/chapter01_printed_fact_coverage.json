@@ -1,0 +1,2932 @@
+{
+  "format": "geography-printed-atom-coverage-v1",
+  "chapter": "01",
+  "date": "2026-10-25",
+  "scope": "Every printed bullet, table entry, named feature and legend concept on the supplied images of printed pages 13–15; handwritten notes, page furniture and colour guesses excluded. Repeated printed claims remain separate checks.",
+  "printed_claim_checks": 137,
+  "per_page_claim_checks": {
+    "13": 55,
+    "14": 57,
+    "15": 25
+  },
+  "unmapped_claim_checks": 0,
+  "questions_total": 198,
+  "new_questions": 54,
+  "scored_questions": 190,
+  "unscored_questions": 8,
+  "book_scope_page_question_counts": {
+    "13": 47,
+    "14": 53,
+    "15": 35
+  },
+  "held_question_ids": [
+    "GEO-BOOK-P015-F019",
+    "GEO-BOOK-P015-M005",
+    "GEO-ORIG-01-047",
+    "GEO-ORIG-01-068",
+    "GEO-ORIG-01-070",
+    "GEO-ORIG-01-072",
+    "GEO-ORIG-01-076",
+    "GEO-ORIG-01-094"
+  ],
+  "prior_report_correction": "Dark blue was already covered by GEO-BOOK-P015-F022. GEO-ORIG-01-040 is a retained duplicate presentation, not a new unique fact; the prior report incorrectly called that row missing.",
+  "claims_with_uncertainty": "Unverified historical details are mapped to explicitly unscored source-study questions. Old or unsupported numeric claims can be covered by scored questions testing their measurement reference or why the claim cannot be used as an exact current value; this is not certification of the raw number.",
+  "no_explanation_only_coverage": true,
+  "new_images": 0,
+  "railway_deployed": false,
+  "source_images": {
+    "13": {
+      "file": "work/book_audit_batch1/geo1.2-01.jpg",
+      "sha256": "4b4b88e5d81840bb1f4f7ec5c8ae7d5a16e54bc4d5673b1b42379a29c790fc7b"
+    },
+    "14": {
+      "file": "work/book_audit_batch1/geo1.2-02.jpg",
+      "sha256": "5726493a0a0feb6cc309bfb95f7b2115f1e5b26228a66c6c77620a402c66dd70"
+    },
+    "15": {
+      "file": "work/book_audit_batch1/geo1.2-03.jpg",
+      "sha256": "9f85c45007aeae597e0a63306a660a6e76927cf0c138406c867c4005fe7f0bf2"
+    }
+  },
+  "rows": [
+    {
+      "id": "P13-B1.a",
+      "printed_page": 13,
+      "location_on_page": "B1.a",
+      "printed_claim_or_concept": "Pythagoras is associated with an early Greek spherical-Earth tradition.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F001",
+      "scored": true,
+      "section": "book-p13-fact-1",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘పిథాగరస్ సంప్రదాయం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ప్రాచీన గ్రీకు గోళాకార భూమి ఆలోచనలతో సంబంధం"
+        },
+        "en": {
+          "question": "Which option correctly describes Pythagorean tradition?",
+          "keyed_choice": "Associated with early Greek ideas of a spherical Earth"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B1.b",
+      "printed_page": 13,
+      "location_on_page": "B1.b",
+      "printed_claim_or_concept": "The printed attribution is dated exactly to 550 BCE.",
+      "review_disposition": "unverified-chronology-caution",
+      "question_id": "GEO-ORIG-01-044",
+      "scored": true,
+      "section": "maps-atom-pythagoras-analogy",
+      "assessment_evidence": {
+        "en": {
+          "question": "Why is “the Sun and Moon look round, therefore Earth must be round” insufficient as a proof dated to 550 BCE?",
+          "keyed_choice": "An analogy and a traditional attribution are not a dated observational proof"
+        },
+        "te": {
+          "question": "“సూర్యుడు, చంద్రుడు గుండ్రంగా కనిపిస్తారు; అందువల్ల భూమీ గుండ్రంగా ఉండాలి” అనే వాదనను క్రీ.పూ. 550లో చేసిన నిరూపణగా ఎందుకు తీసుకోకూడదు?",
+          "keyed_choice": "ఒక పోలిక, సంప్రదాయ పేరు జోడింపు తేదీతో కూడిన పరిశీలన నిరూపణ కావు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B1.c",
+      "printed_page": 13,
+      "location_on_page": "B1.c",
+      "printed_claim_or_concept": "The Sun and Moon are invoked as round-body analogies for Earth.",
+      "review_disposition": "corrected-argument",
+      "question_id": "GEO-ORIG-01-044",
+      "scored": true,
+      "section": "maps-atom-pythagoras-analogy",
+      "assessment_evidence": {
+        "en": {
+          "question": "Why is “the Sun and Moon look round, therefore Earth must be round” insufficient as a proof dated to 550 BCE?",
+          "keyed_choice": "An analogy and a traditional attribution are not a dated observational proof"
+        },
+        "te": {
+          "question": "“సూర్యుడు, చంద్రుడు గుండ్రంగా కనిపిస్తారు; అందువల్ల భూమీ గుండ్రంగా ఉండాలి” అనే వాదనను క్రీ.పూ. 550లో చేసిన నిరూపణగా ఎందుకు తీసుకోకూడదు?",
+          "keyed_choice": "ఒక పోలిక, సంప్రదాయ పేరు జోడింపు తేదీతో కూడిన పరిశీలన నిరూపణ కావు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B2.a",
+      "printed_page": 13,
+      "location_on_page": "B2.a",
+      "printed_claim_or_concept": "Aristotle is associated with arguments for a spherical Earth.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F002",
+      "scored": true,
+      "section": "book-p13-fact-2",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘అరిస్టాటిల్ ఆధారాలు’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "చంద్రగ్రహణంలో భూమి నీడ, ప్రదేశంతో మారే నక్షత్ర స్థానాలు"
+        },
+        "en": {
+          "question": "Which option correctly describes Aristotle's evidence?",
+          "keyed_choice": "Earth's curved lunar-eclipse shadow and changing star positions"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B2.b",
+      "printed_page": 13,
+      "location_on_page": "B2.b",
+      "printed_claim_or_concept": "Aristotle belongs to the fourth century BCE.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-ORIG-01-043",
+      "scored": true,
+      "section": "maps-atom-history-periods",
+      "assessment_evidence": {
+        "en": {
+          "question": "Match Aristotle, Eratosthenes’ circumference estimate, Newton’s Principia, and Gauss’s work on Earth’s gravity with their periods, in that order. Which sequence is correct?",
+          "keyed_choice": "4th century BCE; 3rd century BCE; 17th century CE; 19th century CE"
+        },
+        "te": {
+          "question": "అరిస్టాటిల్, ఎరటోస్థెనీస్ చుట్టుకొలత అంచనా, న్యూటన్ ప్రిన్సిపియా ప్రచురణ, గాస్ భూకొలతల కృషి — వీటిని అదే క్రమంలో కాలాలతో జతపరిస్తే సరైన వరుస ఏది?",
+          "keyed_choice": "క్రీ.పూ. నాలుగో; క్రీ.పూ. మూడో; క్రీ.శ. పదిహేడో; క్రీ.శ. పంతొమ్మిదో శతాబ్దం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B2.c",
+      "printed_page": 13,
+      "location_on_page": "B2.c",
+      "printed_claim_or_concept": "Aristotle is described as the first to provide evidence.",
+      "review_disposition": "priority-not-certified-caution",
+      "question_id": "GEO-ORIG-01-087",
+      "scored": true,
+      "section": "maps-atom-historical-first-claims",
+      "assessment_evidence": {
+        "en": {
+          "question": "How should absolute “first ever” claims about Pythagoras, Aristotle or Eratosthenes be evaluated?",
+          "keyed_choice": "A contribution can be recognised while worldwide priority requires separate evidence"
+        },
+        "te": {
+          "question": "పిథాగరస్, అరిస్టాటిల్ లేదా ఎరటోస్థెనీస్ గురించి “ఎప్పుడైనా మొట్టమొదట” అనే సంపూర్ణ వాదనలను ఎలా పరిశీలించాలి?",
+          "keyed_choice": "ఒకరి కృషిని గుర్తించవచ్చు; ప్రపంచ తొలి ఘనతకు మాత్రం వేరు ఆధారం అవసరం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B2.d",
+      "printed_page": 13,
+      "location_on_page": "B2.d",
+      "printed_claim_or_concept": "A lunar eclipse supplies evidence through Earth’s shadow.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F002",
+      "scored": true,
+      "section": "book-p13-fact-2",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘అరిస్టాటిల్ ఆధారాలు’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "చంద్రగ్రహణంలో భూమి నీడ, ప్రదేశంతో మారే నక్షత్ర స్థానాలు"
+        },
+        "en": {
+          "question": "Which option correctly describes Aristotle's evidence?",
+          "keyed_choice": "Earth's curved lunar-eclipse shadow and changing star positions"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B2.e",
+      "printed_page": 13,
+      "location_on_page": "B2.e",
+      "printed_claim_or_concept": "A receding ship disappears progressively over the horizon.",
+      "review_disposition": "reviewed-with-viewing-conditions",
+      "question_id": "GEO-ORIG-01-045",
+      "scored": true,
+      "section": "maps-atom-ship-horizon",
+      "assessment_evidence": {
+        "en": {
+          "question": "Under ordinary viewing conditions, which change in a ship sailing beyond the horizon supports a curved Earth?",
+          "keyed_choice": "The lower hull disappears before the upper parts"
+        },
+        "te": {
+          "question": "సాధారణ వీక్షణ పరిస్థితుల్లో, దూరంగా ప్రయాణించే ఓడలో ఏ మార్పు భూమి వంపుకు ఆధారంగా ఉపయోగపడుతుంది?",
+          "keyed_choice": "కింది భాగం ముందుగా, పై భాగాలు తరువాత కనుమరుగవుతాయి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B3.a",
+      "printed_page": 13,
+      "location_on_page": "B3.a",
+      "printed_claim_or_concept": "Eratosthenes estimated Earth’s circumference mathematically.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F003",
+      "scored": true,
+      "section": "book-p13-fact-3",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఎరటోస్థెనీస్ కొలత’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "నీడల కోణభేదంతో భూమి చుట్టుకొలత అంచనా"
+        },
+        "en": {
+          "question": "Which option correctly describes Eratosthenes' measurement?",
+          "keyed_choice": "Earth's circumference estimated from shadow-angle differences"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B3.b",
+      "printed_page": 13,
+      "location_on_page": "B3.b",
+      "printed_claim_or_concept": "The paragraph assigns the estimate to the second century BCE.",
+      "review_disposition": "corrected-to-third-century-BCE",
+      "question_id": "GEO-ORIG-01-041",
+      "scored": true,
+      "section": "maps-eratosthenes-period",
+      "assessment_evidence": {
+        "en": {
+          "question": "Eratosthenes’ estimate of Earth’s circumference around 240 BCE belongs to which century?",
+          "keyed_choice": "Third century BCE"
+        },
+        "te": {
+          "question": "సుమారు క్రీ.పూ. 240లో ఎరటోస్థెనీస్ చేసిన భూమి చుట్టుకొలత అంచనా ఏ శతాబ్దానికి చెందుతుంది?",
+          "keyed_choice": "క్రీ.పూ. మూడో శతాబ్దం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B3.c",
+      "printed_page": 13,
+      "location_on_page": "B3.c",
+      "printed_claim_or_concept": "The supplied lifespan is approximately 276–194 BCE.",
+      "review_disposition": "source-scoped-chronology",
+      "question_id": "GEO-ORIG-01-046",
+      "scored": true,
+      "section": "maps-atom-eratosthenes-lifespan",
+      "assessment_evidence": {
+        "en": {
+          "question": "If a source gives Eratosthenes’ lifespan as approximately 276–194 BCE, what is the correct chronological interpretation?",
+          "keyed_choice": "The lifespan crosses the third and second centuries BCE; the measurement needs its own date"
+        },
+        "te": {
+          "question": "ఒక మూలం ఎరటోస్థెనీస్ జీవితకాలాన్ని సుమారు క్రీ.పూ. 276–194గా ఇస్తే, కాలక్రమానికి సరైన అర్థం ఏది?",
+          "keyed_choice": "జీవితకాలం క్రీ.పూ. మూడో, రెండో శతాబ్దాల్లో ఉంది; కొలత తేదీని విడిగా చూడాలి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B3.d",
+      "printed_page": 13,
+      "location_on_page": "B3.d",
+      "printed_claim_or_concept": "The estimate is described as the first mathematical one.",
+      "review_disposition": "priority-not-certified-caution",
+      "question_id": "GEO-ORIG-01-087",
+      "scored": true,
+      "section": "maps-atom-historical-first-claims",
+      "assessment_evidence": {
+        "en": {
+          "question": "How should absolute “first ever” claims about Pythagoras, Aristotle or Eratosthenes be evaluated?",
+          "keyed_choice": "A contribution can be recognised while worldwide priority requires separate evidence"
+        },
+        "te": {
+          "question": "పిథాగరస్, అరిస్టాటిల్ లేదా ఎరటోస్థెనీస్ గురించి “ఎప్పుడైనా మొట్టమొదట” అనే సంపూర్ణ వాదనలను ఎలా పరిశీలించాలి?",
+          "keyed_choice": "ఒకరి కృషిని గుర్తించవచ్చు; ప్రపంచ తొలి ఘనతకు మాత్రం వేరు ఆధారం అవసరం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B3.e",
+      "printed_page": 13,
+      "location_on_page": "B3.e",
+      "printed_claim_or_concept": "The paragraph credits Eratosthenes with determining axial tilt.",
+      "review_disposition": "unresolved-unscored-source-attribution",
+      "question_id": "GEO-ORIG-01-047",
+      "scored": false,
+      "section": "maps-atom-tilt-attribution-study",
+      "assessment_evidence": {
+        "en": {
+          "question": "Source-study only: whom does the printed paragraph credit with determining Earth’s axial tilt? The priority claim is not independently cleared.",
+          "keyed_choice": "Eratosthenes"
+        },
+        "te": {
+          "question": "మూల అధ్యయనం మాత్రమే: భూమి అక్ష వాలును నిర్ణయించినట్లు ముద్రిత పేరా ఎవరికి ఘనత ఇస్తుంది? “మొదటివాడు” అనే వాదన ఇంకా స్వతంత్రంగా నిర్ధారణ కాలేదు.",
+          "keyed_choice": "ఎరటోస్థెనీస్"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B4.a",
+      "printed_page": 13,
+      "location_on_page": "B4.a",
+      "printed_claim_or_concept": "Newton and Huygens contributed physical explanations of Earth’s figure.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F005",
+      "scored": true,
+      "section": "book-p13-fact-5",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘న్యూటన్, హైగెన్స్’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "తిరిగే భూమి ధ్రువాల వద్ద చదునుగా ఉండటానికి భౌతిక వివరణలు"
+        },
+        "en": {
+          "question": "Which option correctly describes Newton and Huygens?",
+          "keyed_choice": "Physical explanations of flattening in a rotating Earth"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B4.b",
+      "printed_page": 13,
+      "location_on_page": "B4.b",
+      "printed_claim_or_concept": "The paragraph groups their work in the seventeenth/eighteenth-century period.",
+      "review_disposition": "qualified-historical-period",
+      "question_id": "GEO-ORIG-01-088",
+      "scored": true,
+      "section": "maps-atom-newton-huygens-period",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which statement correctly places Newton and Huygens in historical time?",
+          "keyed_choice": "Huygens lived in the seventeenth century; Newton’s life extended from the seventeenth into the eighteenth"
+        },
+        "te": {
+          "question": "న్యూటన్, హైగెన్స్‌ను చారిత్రక కాలంలో సరైన విధంగా ఉంచే వాక్యం ఏది?",
+          "keyed_choice": "హైగెన్స్ పదిహేడో శతాబ్దంలో జీవించాడు; న్యూటన్ జీవితం పదిహేడో నుంచి పద్దెనిమిదో శతాబ్దం వరకు ఉంది"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B4.c",
+      "printed_page": 13,
+      "location_on_page": "B4.c",
+      "printed_claim_or_concept": "An oblate spheroid approximates Earth’s overall shape.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F004",
+      "scored": true,
+      "section": "book-p13-fact-4",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూమి దీర్ఘగోళ నమూనా’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ధ్రువాల వద్ద కొద్దిగా చదునై, భూమధ్యరేఖ వద్ద ఉబ్బిన ఆకారం"
+        },
+        "en": {
+          "question": "Which option correctly describes Oblate spheroid?",
+          "keyed_choice": "Slightly flattened at the poles and bulging at the equator"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B4.d",
+      "printed_page": 13,
+      "location_on_page": "B4.d",
+      "printed_claim_or_concept": "An ellipsoid is used as a mathematical approximation.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-VIS-01-001",
+      "scored": true,
+      "section": "MAP-V01",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which model represents a smooth mathematical approximation of Earth?",
+          "keyed_choice": "Ellipsoid"
+        },
+        "te": {
+          "question": "భూమికి సున్నితమైన గణిత నమూనా ఏది?",
+          "keyed_choice": "ఎలిప్సాయిడ్"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B4.e",
+      "printed_page": 13,
+      "location_on_page": "B4.e",
+      "printed_claim_or_concept": "Earth is slightly flattened at the poles.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F004",
+      "scored": true,
+      "section": "book-p13-fact-4",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూమి దీర్ఘగోళ నమూనా’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ధ్రువాల వద్ద కొద్దిగా చదునై, భూమధ్యరేఖ వద్ద ఉబ్బిన ఆకారం"
+        },
+        "en": {
+          "question": "Which option correctly describes Oblate spheroid?",
+          "keyed_choice": "Slightly flattened at the poles and bulging at the equator"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B4.f",
+      "printed_page": 13,
+      "location_on_page": "B4.f",
+      "printed_claim_or_concept": "Earth bulges near the Equator.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F004",
+      "scored": true,
+      "section": "book-p13-fact-4",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూమి దీర్ఘగోళ నమూనా’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ధ్రువాల వద్ద కొద్దిగా చదునై, భూమధ్యరేఖ వద్ద ఉబ్బిన ఆకారం"
+        },
+        "en": {
+          "question": "Which option correctly describes Oblate spheroid?",
+          "keyed_choice": "Slightly flattened at the poles and bulging at the equator"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B4.g",
+      "printed_page": 13,
+      "location_on_page": "B4.g",
+      "printed_claim_or_concept": "Gravity is invoked to explain Earth’s shape; rotation must be distinguished.",
+      "review_disposition": "corrected-physical-explanation",
+      "question_id": "GEO-ORIG-01-048",
+      "scored": true,
+      "section": "maps-atom-gravity-rotation",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which explanation best distinguishes Earth’s broadly rounded shape from its equatorial bulge?",
+          "keyed_choice": "Self-gravity draws material inward, while rotation contributes to the equatorial bulge"
+        },
+        "te": {
+          "question": "భూమి దాదాపు గుండ్రంగా ఉండటాన్ని, భూమధ్యరేఖ దగ్గర ఉబ్బి ఉండటాన్ని సరైన విధంగా వేరుచేసే వివరణ ఏది?",
+          "keyed_choice": "స్వీయ గురుత్వం పదార్థాన్ని లోపలికి లాగుతుంది; భ్రమణం భూమధ్య ఉబ్బుదనానికి కారణాల్లో ఒకటి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B5.a",
+      "printed_page": 13,
+      "location_on_page": "B5.a",
+      "printed_claim_or_concept": "Gauss is connected with nineteenth-century geodetic or gravity work.",
+      "review_disposition": "reviewed-historical-period",
+      "question_id": "GEO-ORIG-01-043",
+      "scored": true,
+      "section": "maps-atom-history-periods",
+      "assessment_evidence": {
+        "en": {
+          "question": "Match Aristotle, Eratosthenes’ circumference estimate, Newton’s Principia, and Gauss’s work on Earth’s gravity with their periods, in that order. Which sequence is correct?",
+          "keyed_choice": "4th century BCE; 3rd century BCE; 17th century CE; 19th century CE"
+        },
+        "te": {
+          "question": "అరిస్టాటిల్, ఎరటోస్థెనీస్ చుట్టుకొలత అంచనా, న్యూటన్ ప్రిన్సిపియా ప్రచురణ, గాస్ భూకొలతల కృషి — వీటిని అదే క్రమంలో కాలాలతో జతపరిస్తే సరైన వరుస ఏది?",
+          "keyed_choice": "క్రీ.పూ. నాలుగో; క్రీ.పూ. మూడో; క్రీ.శ. పదిహేడో; క్రీ.శ. పంతొమ్మిదో శతాబ్దం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B5.b",
+      "printed_page": 13,
+      "location_on_page": "B5.b",
+      "printed_claim_or_concept": "The book’s Geoid attribution must be separated from the origin of the term.",
+      "review_disposition": "corrected-Listing-1873",
+      "question_id": "GEO-ORIG-01-042",
+      "scored": true,
+      "section": "maps-geoid-history",
+      "assessment_evidence": {
+        "en": {
+          "question": "Who introduced the term “Geoid” in 1873, according to the NOAA National Geodetic Survey account?",
+          "keyed_choice": "Johann Benedict Listing"
+        },
+        "te": {
+          "question": "నోవా జాతీయ భూకొలతల సంస్థ వివరణ ప్రకారం, 1873లో “జియాయిడ్” అనే పదాన్ని ప్రవేశపెట్టింది ఎవరు?",
+          "keyed_choice": "యోహాన్ బెనెడిక్ట్ లిస్టింగ్"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B5.c",
+      "printed_page": 13,
+      "location_on_page": "B5.c",
+      "printed_claim_or_concept": "The book describes Geoid using observed surface heights and depths.",
+      "review_disposition": "corrected-gravity-reference-not-terrain",
+      "question_id": "GEO-VIS-01-003",
+      "scored": true,
+      "section": "MAP-V01",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which pair correctly distinguishes geoid and terrain?",
+          "keyed_choice": "Geoid: gravity reference; terrain: actual surface"
+        },
+        "te": {
+          "question": "జియాయిడ్, అసలు భూ ఉపరితలాన్ని సరిగ్గా వేరు చేసిన జత ఏది?",
+          "keyed_choice": "జియాయిడ్: గురుత్వ సూచన ఉపరితలం; భూ ఉపరితలం: అసలు నేల ఆకారం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B5.d",
+      "printed_page": 13,
+      "location_on_page": "B5.d",
+      "printed_claim_or_concept": "The book calls Geoid the natural Earth figure in a broad sense.",
+      "review_disposition": "corrected-technical-definition",
+      "question_id": "GEO-BOOK-P013-F006",
+      "scored": true,
+      "section": "book-p13-fact-6",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘జియాయిడ్’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "గురుత్వ క్షేత్రం ఆధారంగా ఎత్తులకు తీసుకునే సూచన ఉపరితలం"
+        },
+        "en": {
+          "question": "Which option correctly describes Geoid?",
+          "keyed_choice": "A gravity-defined equipotential reference surface"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B5.e",
+      "printed_page": 13,
+      "location_on_page": "B5.e",
+      "printed_claim_or_concept": "The text repeats equatorial bulge and polar flattening.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F004",
+      "scored": true,
+      "section": "book-p13-fact-4",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూమి దీర్ఘగోళ నమూనా’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ధ్రువాల వద్ద కొద్దిగా చదునై, భూమధ్యరేఖ వద్ద ఉబ్బిన ఆకారం"
+        },
+        "en": {
+          "question": "Which option correctly describes Oblate spheroid?",
+          "keyed_choice": "Slightly flattened at the poles and bulging at the equator"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B5.f",
+      "printed_page": 13,
+      "location_on_page": "B5.f",
+      "printed_claim_or_concept": "The text includes actual irregular hills and valleys in its Geoid account.",
+      "review_disposition": "corrected-terrain-versus-geoid",
+      "question_id": "GEO-VIS-01-003",
+      "scored": true,
+      "section": "MAP-V01",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which pair correctly distinguishes geoid and terrain?",
+          "keyed_choice": "Geoid: gravity reference; terrain: actual surface"
+        },
+        "te": {
+          "question": "జియాయిడ్, అసలు భూ ఉపరితలాన్ని సరిగ్గా వేరు చేసిన జత ఏది?",
+          "keyed_choice": "జియాయిడ్: గురుత్వ సూచన ఉపరితలం; భూ ఉపరితలం: అసలు నేల ఆకారం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B5.g",
+      "printed_page": 13,
+      "location_on_page": "B5.g",
+      "printed_claim_or_concept": "Any object with an Earth-like shape is said to be a Geoid.",
+      "review_disposition": "corrected-not-generic-shape-name",
+      "question_id": "GEO-BOOK-P013-F007",
+      "scored": true,
+      "section": "book-p13-fact-7",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘జియాయిడ్, ఎలిప్సాయిడ్ మధ్య తేడా’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "గురుత్వ ఆధారిత సూచన ఉపరితలం; సున్నితమైన గణిత నమూనా"
+        },
+        "en": {
+          "question": "Which option correctly describes Geoid versus ellipsoid?",
+          "keyed_choice": "Gravity-defined reference versus a smooth mathematical model"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-B5.h",
+      "printed_page": 13,
+      "location_on_page": "B5.h",
+      "printed_claim_or_concept": "At broad scale Earth is nearly spherical.",
+      "review_disposition": "reviewed-approximation",
+      "question_id": "GEO-BOOK-P013-F004",
+      "scored": true,
+      "section": "book-p13-fact-4",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూమి దీర్ఘగోళ నమూనా’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ధ్రువాల వద్ద కొద్దిగా చదునై, భూమధ్యరేఖ వద్ద ఉబ్బిన ఆకారం"
+        },
+        "en": {
+          "question": "Which option correctly describes Oblate spheroid?",
+          "keyed_choice": "Slightly flattened at the poles and bulging at the equator"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T01.a",
+      "printed_page": 13,
+      "location_on_page": "T01.a",
+      "printed_claim_or_concept": "Equatorial diameter is printed as 12,756.2 km.",
+      "review_disposition": "reviewed-rounded-to-12756-km",
+      "question_id": "GEO-BOOK-P013-F013",
+      "scored": true,
+      "section": "book-p13-fact-13",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూమధ్య వ్యాసం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "సుమారు 12,756 km"
+        },
+        "en": {
+          "question": "Which option correctly describes Earth's equatorial diameter?",
+          "keyed_choice": "Approximately 12,756 km"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T01.b",
+      "printed_page": 13,
+      "location_on_page": "T01.b",
+      "printed_claim_or_concept": "Polar diameter is printed as about 12,714 km.",
+      "review_disposition": "reviewed-rounded",
+      "question_id": "GEO-BOOK-P013-F014",
+      "scored": true,
+      "section": "book-p13-fact-14",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ధ్రువ వ్యాసం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "సుమారు 12,714 km"
+        },
+        "en": {
+          "question": "Which option correctly describes Earth's polar diameter?",
+          "keyed_choice": "Approximately 12,714 km"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T02.a",
+      "printed_page": 13,
+      "location_on_page": "T02.a",
+      "printed_claim_or_concept": "An unqualified radius of 6,378.6 km is printed.",
+      "review_disposition": "corrected-equatorial-versus-mean-radius",
+      "question_id": "GEO-ORIG-01-049",
+      "scored": true,
+      "section": "maps-atom-equatorial-radius",
+      "assessment_evidence": {
+        "en": {
+          "question": "A radius near 6,378 km is closest to which Earth measurement?",
+          "keyed_choice": "Equatorial radius"
+        },
+        "te": {
+          "question": "సుమారు 6,378 km అనే వ్యాసార్థం భూమికి సంబంధించిన ఏ కొలతకు దగ్గరగా ఉంటుంది?",
+          "keyed_choice": "భూమధ్య వ్యాసార్థం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T02.b",
+      "printed_page": 13,
+      "location_on_page": "T02.b",
+      "printed_claim_or_concept": "Radius and diameter describe different distances through the Earth model.",
+      "review_disposition": "reviewed-derived-concept",
+      "question_id": "GEO-ORIG-01-089",
+      "scored": true,
+      "section": "maps-atom-radius-diameter-circumference",
+      "assessment_evidence": {
+        "en": {
+          "question": "If the equatorial diameter is approximately 12,756 km, what is the corresponding equatorial radius?",
+          "keyed_choice": "6,378 km"
+        },
+        "te": {
+          "question": "భూమధ్య వ్యాసం సుమారు 12,756 km అయితే, దానికి సరిపోయే భూమధ్య వ్యాసార్థం ఎంత?",
+          "keyed_choice": "6,378 km"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T03",
+      "printed_page": 13,
+      "location_on_page": "T03",
+      "printed_claim_or_concept": "A meridional circuit is about 40,008 km.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F017",
+      "scored": true,
+      "section": "book-p13-fact-17",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ధ్రువాల మీదుగా చుట్టుకొలత’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "సుమారు 40,008 km"
+        },
+        "en": {
+          "question": "Which option correctly describes Meridional circumference?",
+          "keyed_choice": "Approximately 40,008 km"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T04",
+      "printed_page": 13,
+      "location_on_page": "T04",
+      "printed_claim_or_concept": "The equatorial circuit is about 40,075 km.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F016",
+      "scored": true,
+      "section": "book-p13-fact-16",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూమధ్య చుట్టుకొలత’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "సుమారు 40,075 km"
+        },
+        "en": {
+          "question": "Which option correctly describes Equatorial circumference?",
+          "keyed_choice": "Approximately 40,075 km"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T05",
+      "printed_page": 13,
+      "location_on_page": "T05",
+      "printed_claim_or_concept": "A simplified full circumference is about 40,000 km.",
+      "review_disposition": "reviewed-approximation-not-radius",
+      "question_id": "GEO-BOOK-P013-F016",
+      "scored": true,
+      "section": "book-p13-fact-16",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూమధ్య చుట్టుకొలత’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "సుమారు 40,075 km"
+        },
+        "en": {
+          "question": "Which option correctly describes Equatorial circumference?",
+          "keyed_choice": "Approximately 40,075 km"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T06",
+      "printed_page": 13,
+      "location_on_page": "T06",
+      "printed_claim_or_concept": "Total surface area is about 510 million km².",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F018",
+      "scored": true,
+      "section": "book-p13-fact-18",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూమి మొత్తం ఉపరితల వైశాల్యం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "సుమారు 510 మిలియన్ km²"
+        },
+        "en": {
+          "question": "Which option correctly describes Earth's surface area?",
+          "keyed_choice": "Approximately 510 million km²"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T07.a",
+      "printed_page": 13,
+      "location_on_page": "T07.a",
+      "printed_claim_or_concept": "Land area is about 149 million km².",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F019",
+      "scored": true,
+      "section": "book-p13-fact-19",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూభాగ వైశాల్యం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "సుమారు 149 మిలియన్ km²"
+        },
+        "en": {
+          "question": "Which option correctly describes Earth's land area?",
+          "keyed_choice": "Approximately 149 million km²"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T07.b",
+      "printed_page": 13,
+      "location_on_page": "T07.b",
+      "printed_claim_or_concept": "Land covers approximately 29.22% of the surface.",
+      "review_disposition": "reviewed-rounded-share",
+      "question_id": "GEO-ORIG-01-050",
+      "scored": true,
+      "section": "maps-atom-land-water-shares",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which pair approximately describes land and water-covered shares of Earth’s surface, respectively?",
+          "keyed_choice": "29% and 71%"
+        },
+        "te": {
+          "question": "భూమి ఉపరితలంలో భూభాగం, నీటితో కప్పబడిన భాగం వాటాలను అదే క్రమంలో సుమారుగా తెలిపే జత ఏది?",
+          "keyed_choice": "29%, 71%"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T08.a",
+      "printed_page": 13,
+      "location_on_page": "T08.a",
+      "printed_claim_or_concept": "Water-covered area is about 361 million km².",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F020",
+      "scored": true,
+      "section": "book-p13-fact-20",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘నీటితో కప్పబడిన ఉపరితలం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "సుమారు 361 మిలియన్ km²"
+        },
+        "en": {
+          "question": "Which option correctly describes Earth's water-covered area?",
+          "keyed_choice": "Approximately 361 million km²"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T08.b",
+      "printed_page": 13,
+      "location_on_page": "T08.b",
+      "printed_claim_or_concept": "Water covers approximately 70.78% of the surface.",
+      "review_disposition": "reviewed-rounded-share",
+      "question_id": "GEO-ORIG-01-050",
+      "scored": true,
+      "section": "maps-atom-land-water-shares",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which pair approximately describes land and water-covered shares of Earth’s surface, respectively?",
+          "keyed_choice": "29% and 71%"
+        },
+        "te": {
+          "question": "భూమి ఉపరితలంలో భూభాగం, నీటితో కప్పబడిన భాగం వాటాలను అదే క్రమంలో సుమారుగా తెలిపే జత ఏది?",
+          "keyed_choice": "29%, 71%"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T08.c",
+      "printed_page": 13,
+      "location_on_page": "T08.c",
+      "printed_claim_or_concept": "These percentages are surface-area shares, not mass or volume shares.",
+      "review_disposition": "reviewed-concept",
+      "question_id": "GEO-ORIG-01-084",
+      "scored": true,
+      "section": "maps-atom-area-not-volume",
+      "assessment_evidence": {
+        "en": {
+          "question": "What exactly does “water covers about 71% of Earth” describe?",
+          "keyed_choice": "About 71% of Earth’s surface area is water-covered"
+        },
+        "te": {
+          "question": "“భూమిలో సుమారు 71% నీటితో కప్పబడి ఉంది” అంటే ఖచ్చితంగా ఏ వాటా గురించి చెబుతున్నాం?",
+          "keyed_choice": "భూమి ఉపరితల వైశాల్యంలో సుమారు 71% నీటితో కప్పబడి ఉంది"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T09.a",
+      "printed_page": 13,
+      "location_on_page": "T09.a",
+      "printed_claim_or_concept": "The printed Earth mass is about 5.976 × 10²⁴ kg.",
+      "review_disposition": "updated-rounded-mass",
+      "question_id": "GEO-BOOK-P013-F021",
+      "scored": true,
+      "section": "book-p13-fact-21",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూమి ద్రవ్యరాశి’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "సుమారు 5.97 × 10²⁴ kg"
+        },
+        "en": {
+          "question": "Which option correctly describes Earth's mass?",
+          "keyed_choice": "Approximately 5.97 × 10²⁴ kg"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T09.b",
+      "printed_page": 13,
+      "location_on_page": "T09.b",
+      "printed_claim_or_concept": "The printed equivalent is 5.976 × 10²¹ metric tonnes.",
+      "review_disposition": "reviewed-unit-conversion",
+      "question_id": "GEO-ORIG-01-051",
+      "scored": true,
+      "section": "maps-atom-mass-tonnes",
+      "assessment_evidence": {
+        "en": {
+          "question": "Using 1 metric tonne = 1,000 kg, how many metric tonnes equal the book’s approximate mass 5.976 × 10²⁴ kg?",
+          "keyed_choice": "5.976 × 10²¹"
+        },
+        "te": {
+          "question": "1 మెట్రిక్ టన్ను = 1,000 kg అయితే, పుస్తకంలోని సుమారు 5.976 × 10²⁴ kg ద్రవ్యరాశికి ఎన్ని మెట్రిక్ టన్నులు సమానం?",
+          "keyed_choice": "5.976 × 10²¹"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T10.a",
+      "printed_page": 13,
+      "location_on_page": "T10.a",
+      "printed_claim_or_concept": "Everest is the highest summit above sea level.",
+      "review_disposition": "reviewed-reference-specific",
+      "question_id": "GEO-BOOK-P013-F008",
+      "scored": true,
+      "section": "book-p13-fact-8",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘సముద్రమట్టం నుంచి అత్యంత ఎత్తైన శిఖరం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ఎవరెస్ట్"
+        },
+        "en": {
+          "question": "Which option correctly describes Highest summit above sea level?",
+          "keyed_choice": "Mount Everest"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T10.b",
+      "printed_page": 13,
+      "location_on_page": "T10.b",
+      "printed_claim_or_concept": "Everest’s published elevation is 8,848.86 m.",
+      "review_disposition": "reviewed-published-value",
+      "question_id": "GEO-ORIG-01-052",
+      "scored": true,
+      "section": "maps-atom-everest-height",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which published elevation above sea level is associated with Mount Everest in Nepal’s mountaineering statistics?",
+          "keyed_choice": "8,848.86 m"
+        },
+        "te": {
+          "question": "నేపాల్ పర్వతారోహణ గణాంకాల్లో ఎవరెస్ట్‌కు ఇచ్చిన సముద్రమట్టం నుంచి ఎత్తు ఏది?",
+          "keyed_choice": "8,848.86 m"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T11",
+      "printed_page": 13,
+      "location_on_page": "T11",
+      "printed_claim_or_concept": "A mean continental elevation of 840 m is printed.",
+      "review_disposition": "unverified-value-tests-dataset-caution",
+      "question_id": "GEO-BOOK-P013-F022",
+      "scored": true,
+      "section": "book-p13-fact-22",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఖండాల సగటు ఎత్తు 840 m అనే వాదన’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "నిర్వచనం, మంచును లెక్కించే విధానం, వాడిన సమాచార సమూహం చెప్పాలి"
+        },
+        "en": {
+          "question": "Which option correctly describes A stated mean continental elevation of 840 m?",
+          "keyed_choice": "The definition, ice treatment and elevation dataset must be specified"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T12.a",
+      "printed_page": 13,
+      "location_on_page": "T12.a",
+      "printed_claim_or_concept": "Mauna Kea illustrates the large base-to-summit height comparison.",
+      "review_disposition": "reviewed-reference-specific",
+      "question_id": "GEO-VIS-01-023",
+      "scored": true,
+      "section": "MAP-V08",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which pairing correctly gives the base-to-summit example?",
+          "keyed_choice": "Mauna Kea, including its submarine base"
+        },
+        "te": {
+          "question": "అడుగు నుంచి శిఖరం వరకు ఎత్తుకు సరైన ఉదాహరణ ఏది?",
+          "keyed_choice": "మౌనా కియా, సముద్రపు అడుగు భాగాన్ని కూడా చేర్చి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T12.b",
+      "printed_page": 13,
+      "location_on_page": "T12.b",
+      "printed_claim_or_concept": "Mauna Kea is in Hawaii.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-ORIG-01-053",
+      "scored": true,
+      "section": "maps-atom-maunakea-location",
+      "assessment_evidence": {
+        "en": {
+          "question": "Where is Mauna Kea, the example used for a mountain measured from its submarine base?",
+          "keyed_choice": "Hawaii"
+        },
+        "te": {
+          "question": "సముద్రంలో ఉన్న అడుగు భాగం నుంచి పర్వత ఎత్తును కొలిచే ఉదాహరణ మౌనా కియా ఎక్కడ ఉంది?",
+          "keyed_choice": "హవాయి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T12.c",
+      "printed_page": 13,
+      "location_on_page": "T12.c",
+      "printed_claim_or_concept": "Its printed base-to-summit figure is 10,203 m.",
+      "review_disposition": "qualified-approximately-10-km-not-exact-record",
+      "question_id": "GEO-ORIG-01-054",
+      "scored": true,
+      "section": "maps-atom-maunakea-total-height",
+      "assessment_evidence": {
+        "en": {
+          "question": "Including its submarine base, Mauna Kea’s base-to-summit height is approximately on which scale?",
+          "keyed_choice": "About 10 km"
+        },
+        "te": {
+          "question": "సముద్రంలో ఉన్న అడుగు భాగాన్ని కలిపితే, మౌనా కియా అడుగు నుంచి శిఖరం వరకు ఎత్తు సుమారుగా ఎంత పరిమాణంలో ఉంటుంది?",
+          "keyed_choice": "సుమారు 10 km"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T13.a",
+      "printed_page": 13,
+      "location_on_page": "T13.a",
+      "printed_claim_or_concept": "Chimborazo’s summit is farthest from Earth’s centre.",
+      "review_disposition": "reviewed-reference-specific",
+      "question_id": "GEO-BOOK-P013-F010",
+      "scored": true,
+      "section": "book-p13-fact-10",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూకేంద్రానికి అత్యంత దూరంలో ఉన్న శిఖరం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "చింబొరాజో"
+        },
+        "en": {
+          "question": "Which option correctly describes Summit farthest from Earth's centre?",
+          "keyed_choice": "Chimborazo"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T13.b",
+      "printed_page": 13,
+      "location_on_page": "T13.b",
+      "printed_claim_or_concept": "Chimborazo is in Ecuador.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-ORIG-01-059",
+      "scored": true,
+      "section": "maps-atom-record-place-locations",
+      "assessment_evidence": {
+        "en": {
+          "question": "Match Dallol, Al Azizia, Vostok and Chimborazo with their locations, in that order.",
+          "keyed_choice": "Ethiopia; Libya; Antarctica; Ecuador"
+        },
+        "te": {
+          "question": "దల్లోల్, అల్ అజీజియా, వోస్టోక్, చింబొరాజోలను వాటి ప్రాంతాలతో అదే క్రమంలో జతపరచండి.",
+          "keyed_choice": "ఇథియోపియా; లిబియా; అంటార్కిటికా; ఈక్వెడార్"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T13.c",
+      "printed_page": 13,
+      "location_on_page": "T13.c",
+      "printed_claim_or_concept": "The printed summit elevation is 6,310 m.",
+      "review_disposition": "old-exact-value-not-certified-tests-reference",
+      "question_id": "GEO-ORIG-01-055",
+      "scored": true,
+      "section": "maps-atom-chimborazo-height-reference",
+      "assessment_evidence": {
+        "en": {
+          "question": "Why must the book’s roughly 6.3 km summit elevation for Chimborazo not be used as its distance from Earth’s centre?",
+          "keyed_choice": "Summit elevation and centre-to-summit distance use different starting references"
+        },
+        "te": {
+          "question": "చింబొరాజోకు పుస్తకంలో ఇచ్చిన సుమారు 6.3 km శిఖర ఎత్తును భూకేంద్రం నుంచి దూరంగా ఎందుకు తీసుకోకూడదు?",
+          "keyed_choice": "శిఖర ఎత్తు, భూకేంద్రం నుంచి శిఖర దూరం వేర్వేరు ఆధారాల నుంచి కొలుస్తారు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T14",
+      "printed_page": 13,
+      "location_on_page": "T14",
+      "printed_claim_or_concept": "Chimborazo is a high summit near, but not exactly on, the Equator.",
+      "review_disposition": "reviewed-not-unique-closest-claim",
+      "question_id": "GEO-BOOK-P013-F011",
+      "scored": true,
+      "section": "book-p13-fact-11",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘చింబొరాజో స్థానం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "భూమధ్యరేఖకు దగ్గరగా, దానికి కొద్దిగా దక్షిణంగా"
+        },
+        "en": {
+          "question": "Which option correctly describes Chimborazo's latitude?",
+          "keyed_choice": "Near the Equator, not exactly on it"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T15.a",
+      "printed_page": 13,
+      "location_on_page": "T15.a",
+      "printed_claim_or_concept": "The Dead Sea shore is a very low exposed land area.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P013-F012",
+      "scored": true,
+      "section": "book-p13-fact-12",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘సముద్రమట్టం కంటే చాలా దిగువన ఉన్న భూభాగం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "మృతసముద్ర తీర ప్రాంతం"
+        },
+        "en": {
+          "question": "Which option correctly describes Very low exposed land?",
+          "keyed_choice": "The Dead Sea shore region"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P13-T15.b",
+      "printed_page": 13,
+      "location_on_page": "T15.b",
+      "printed_claim_or_concept": "The printed 399 m below-sea-level figure is not timeless.",
+      "review_disposition": "qualified-water-level-dependent",
+      "question_id": "GEO-ORIG-01-056",
+      "scored": true,
+      "section": "maps-atom-deadsea-changing-level",
+      "assessment_evidence": {
+        "en": {
+          "question": "Why should the old printed 399 m below-sea-level figure for the Dead Sea shore not be treated as timeless?",
+          "keyed_choice": "Shore elevation changes as the lake’s water level changes"
+        },
+        "te": {
+          "question": "మృతసముద్ర తీరానికి పాత పుస్తకంలో ఇచ్చిన సముద్రమట్టానికి 399 m దిగువన అనే విలువను ఎందుకు శాశ్వతంగా తీసుకోకూడదు?",
+          "keyed_choice": "సరస్సు నీటిమట్టం మారితే తీర ఎత్తు కూడా మారుతుంది"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T01.a",
+      "printed_page": 14,
+      "location_on_page": "T01.a",
+      "printed_claim_or_concept": "Challenger Deep is the deepest ocean location in the Mariana Trench.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P014-F001",
+      "scored": true,
+      "section": "book-p14-fact-1",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘అత్యంత లోతైన సముద్ర స్థానం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "మరియానా ట్రెంచ్‌లోని ఛాలెంజర్ డీప్"
+        },
+        "en": {
+          "question": "Which option correctly describes Deepest ocean location?",
+          "keyed_choice": "Challenger Deep in the Mariana Trench"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T01.b",
+      "printed_page": 14,
+      "location_on_page": "T01.b",
+      "printed_claim_or_concept": "The printed depth is 11,035 m.",
+      "review_disposition": "qualified-about-11-km-survey-dependent",
+      "question_id": "GEO-ORIG-01-057",
+      "scored": true,
+      "section": "maps-atom-depth-versus-mean",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which pair correctly distinguishes the deepest ocean location from the mean ocean depth, approximately?",
+          "keyed_choice": "Deepest about 11 km; mean about 3.7 km"
+        },
+        "te": {
+          "question": "అత్యంత లోతైన సముద్ర స్థానం లోతును, మహాసముద్రాల సగటు లోతును సుమారుగా వేరుచేసే సరైన జత ఏది?",
+          "keyed_choice": "అత్యంత లోతు సుమారు 11 km; సగటు సుమారు 3.7 km"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T01.c",
+      "printed_page": 14,
+      "location_on_page": "T01.c",
+      "printed_claim_or_concept": "The book places it near Mindanao.",
+      "review_disposition": "corrected-southwest-of-Guam",
+      "question_id": "GEO-ORIG-01-058",
+      "scored": true,
+      "section": "maps-atom-challenger-near-guam",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which location best corrects the book’s island reference for Challenger Deep?",
+          "keyed_choice": "Southwest of Guam, at the southern end of the Mariana Trench"
+        },
+        "te": {
+          "question": "ఛాలెంజర్ డీప్‌కు దగ్గర దీవిని సూచించే పుస్తక వాక్యానికి సరైన సవరణ ఏది?",
+          "keyed_choice": "గువామ్‌కు నైరుతిగా, మరియానా ట్రెంచ్ దక్షిణ చివర"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T01.d",
+      "printed_page": 14,
+      "location_on_page": "T01.d",
+      "printed_claim_or_concept": "Its ocean is the western Pacific.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P014-F002",
+      "scored": true,
+      "section": "book-p14-fact-2",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఛాలెంజర్ డీప్ ఉన్న ప్రాంతం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "పశ్చిమ పసిఫిక్ మహాసముద్రం"
+        },
+        "en": {
+          "question": "Which option correctly describes Location of Challenger Deep?",
+          "keyed_choice": "The western Pacific Ocean"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T02",
+      "printed_page": 14,
+      "location_on_page": "T02",
+      "printed_claim_or_concept": "Mean ocean depth is printed as 3,808 m.",
+      "review_disposition": "updated-about-3.7-km",
+      "question_id": "GEO-ORIG-01-057",
+      "scored": true,
+      "section": "maps-atom-depth-versus-mean",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which pair correctly distinguishes the deepest ocean location from the mean ocean depth, approximately?",
+          "keyed_choice": "Deepest about 11 km; mean about 3.7 km"
+        },
+        "te": {
+          "question": "అత్యంత లోతైన సముద్ర స్థానం లోతును, మహాసముద్రాల సగటు లోతును సుమారుగా వేరుచేసే సరైన జత ఏది?",
+          "keyed_choice": "అత్యంత లోతు సుమారు 11 km; సగటు సుమారు 3.7 km"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T03.a",
+      "printed_page": 14,
+      "location_on_page": "T03.a",
+      "printed_claim_or_concept": "Dallol is in Ethiopia.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-ORIG-01-059",
+      "scored": true,
+      "section": "maps-atom-record-place-locations",
+      "assessment_evidence": {
+        "en": {
+          "question": "Match Dallol, Al Azizia, Vostok and Chimborazo with their locations, in that order.",
+          "keyed_choice": "Ethiopia; Libya; Antarctica; Ecuador"
+        },
+        "te": {
+          "question": "దల్లోల్, అల్ అజీజియా, వోస్టోక్, చింబొరాజోలను వాటి ప్రాంతాలతో అదే క్రమంలో జతపరచండి.",
+          "keyed_choice": "ఇథియోపియా; లిబియా; అంటార్కిటికా; ఈక్వెడార్"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T03.b",
+      "printed_page": 14,
+      "location_on_page": "T03.b",
+      "printed_claim_or_concept": "A mean-temperature claim of 34.4°C is printed.",
+      "review_disposition": "unverified-period-tests-average-versus-extreme",
+      "question_id": "GEO-ORIG-01-060",
+      "scored": true,
+      "section": "maps-atom-dallol-mean-versus-record",
+      "assessment_evidence": {
+        "en": {
+          "question": "Why can a quoted annual mean of 34.4°C at Dallol not replace the highest individual air-temperature record?",
+          "keyed_choice": "An average over a stated period and a maximum individual reading are different statistics"
+        },
+        "te": {
+          "question": "దల్లోల్ వద్ద 34.4 °C వార్షిక సగటు అనే వాదనను ఒక్కసారి నమోదైన అత్యధిక గాలి ఉష్ణోగ్రత రికార్డుకు బదులుగా ఎందుకు వాడకూడదు?",
+          "keyed_choice": "నిర్దిష్ట కాలానికి సగటు, ఒక్కసారి నమోదైన గరిష్ఠ కొలత వేర్వేరు గణాంకాలు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T04.a",
+      "printed_page": 14,
+      "location_on_page": "T04.a",
+      "printed_claim_or_concept": "Al Azizia is in Libya.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-ORIG-01-059",
+      "scored": true,
+      "section": "maps-atom-record-place-locations",
+      "assessment_evidence": {
+        "en": {
+          "question": "Match Dallol, Al Azizia, Vostok and Chimborazo with their locations, in that order.",
+          "keyed_choice": "Ethiopia; Libya; Antarctica; Ecuador"
+        },
+        "te": {
+          "question": "దల్లోల్, అల్ అజీజియా, వోస్టోక్, చింబొరాజోలను వాటి ప్రాంతాలతో అదే క్రమంలో జతపరచండి.",
+          "keyed_choice": "ఇథియోపియా; లిబియా; అంటార్కిటికా; ఈక్వెడార్"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T04.b",
+      "printed_page": 14,
+      "location_on_page": "T04.b",
+      "printed_claim_or_concept": "The old 58°C claim is presented as the world highest temperature.",
+      "review_disposition": "corrected-rejected-record",
+      "question_id": "GEO-BOOK-P014-F005",
+      "scored": true,
+      "section": "book-p14-fact-5",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘అల్ అజీజియా వద్ద 58°C అనే పాత వాదన’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "అధికారిక ప్రపంచ రికార్డుగా రద్దయింది"
+        },
+        "en": {
+          "question": "Which option correctly describes The reported 58°C at Al Azizia?",
+          "keyed_choice": "Rejected as the official world record"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T04.c",
+      "printed_page": 14,
+      "location_on_page": "T04.c",
+      "printed_claim_or_concept": "The replacement WMO air-temperature record is 56.7°C at Furnace Creek.",
+      "review_disposition": "reviewed-correction",
+      "question_id": "GEO-BOOK-P014-F004",
+      "scored": true,
+      "section": "book-p14-fact-4",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘అధికారిక అత్యధిక గాలి ఉష్ణోగ్రత రికార్డు’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ఫర్నేస్ క్రీక్ వద్ద 56.7°C"
+        },
+        "en": {
+          "question": "Which option correctly describes WMO-recognised highest air temperature?",
+          "keyed_choice": "56.7°C at Furnace Creek"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T05.a",
+      "printed_page": 14,
+      "location_on_page": "T05.a",
+      "printed_claim_or_concept": "Vostok is in Antarctica.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-ORIG-01-059",
+      "scored": true,
+      "section": "maps-atom-record-place-locations",
+      "assessment_evidence": {
+        "en": {
+          "question": "Match Dallol, Al Azizia, Vostok and Chimborazo with their locations, in that order.",
+          "keyed_choice": "Ethiopia; Libya; Antarctica; Ecuador"
+        },
+        "te": {
+          "question": "దల్లోల్, అల్ అజీజియా, వోస్టోక్, చింబొరాజోలను వాటి ప్రాంతాలతో అదే క్రమంలో జతపరచండి.",
+          "keyed_choice": "ఇథియోపియా; లిబియా; అంటార్కిటికా; ఈక్వెడార్"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-T05.b",
+      "printed_page": 14,
+      "location_on_page": "T05.b",
+      "printed_claim_or_concept": "The low air-temperature value is printed as approximately −89°C.",
+      "review_disposition": "reviewed-refined-to-minus89.2",
+      "question_id": "GEO-BOOK-P014-F006",
+      "scored": true,
+      "section": "book-p14-fact-6",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘నేరుగా కొలిచిన అత్యల్ప గాలి ఉష్ణోగ్రత’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "వోస్టోక్ వద్ద −89.2°C"
+        },
+        "en": {
+          "question": "Which option correctly describes Lowest directly measured air temperature?",
+          "keyed_choice": "−89.2°C at Vostok"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-H.a",
+      "printed_page": 14,
+      "location_on_page": "H.a",
+      "printed_claim_or_concept": "Cartography concerns making and studying maps.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P014-F008",
+      "scored": true,
+      "section": "book-p14-fact-8",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘పట రచన’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "పటాల తయారీ, అధ్యయనానికి సంబంధించిన శాస్త్రం, కళ"
+        },
+        "en": {
+          "question": "Which option correctly describes Cartography?",
+          "keyed_choice": "The science and art of making and studying maps"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B1.a",
+      "printed_page": 14,
+      "location_on_page": "B1.a",
+      "printed_claim_or_concept": "Maps have an ancient history, described as about 4,000 years.",
+      "review_disposition": "unverified-universal-age-tests-scope",
+      "question_id": "GEO-ORIG-01-061",
+      "scored": true,
+      "section": "maps-atom-oldest-map-claims",
+      "assessment_evidence": {
+        "en": {
+          "question": "Why should “maps are 4,000 years old and the first were made by one people” be qualified?",
+          "keyed_choice": "Map definitions, surviving evidence and the reference date affect such a claim"
+        },
+        "te": {
+          "question": "“పటాలు 4,000 సంవత్సరాల నాటివి; మొదట ఒకే ప్రజలు తయారుచేశారు” అనే వాక్యానికి పరిమితి ఎందుకు చెప్పాలి?",
+          "keyed_choice": "పటం నిర్వచనం, మిగిలిన ఆధారాలు, వయస్సు చెప్పిన తేదీ ఆ వాదనపై ప్రభావం చూపుతాయి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B1.b",
+      "printed_page": 14,
+      "location_on_page": "B1.b",
+      "printed_claim_or_concept": "Sumerians are called the first mapmakers.",
+      "review_disposition": "priority-not-certified-tests-scope",
+      "question_id": "GEO-ORIG-01-061",
+      "scored": true,
+      "section": "maps-atom-oldest-map-claims",
+      "assessment_evidence": {
+        "en": {
+          "question": "Why should “maps are 4,000 years old and the first were made by one people” be qualified?",
+          "keyed_choice": "Map definitions, surviving evidence and the reference date affect such a claim"
+        },
+        "te": {
+          "question": "“పటాలు 4,000 సంవత్సరాల నాటివి; మొదట ఒకే ప్రజలు తయారుచేశారు” అనే వాక్యానికి పరిమితి ఎందుకు చెప్పాలి?",
+          "keyed_choice": "పటం నిర్వచనం, మిగిలిన ఆధారాలు, వయస్సు చెప్పిన తేదీ ఆ వాదనపై ప్రభావం చూపుతాయి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B1.c",
+      "printed_page": 14,
+      "location_on_page": "B1.c",
+      "printed_claim_or_concept": "Sumer is associated with present-day Iraq.",
+      "review_disposition": "reviewed-historical-region",
+      "question_id": "GEO-ORIG-01-062",
+      "scored": true,
+      "section": "maps-atom-sumer-mesopotamia",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which modern country contains the historical region of Sumer in southern Mesopotamia?",
+          "keyed_choice": "Iraq"
+        },
+        "te": {
+          "question": "దక్షిణ మెసొపొటేమియాలోని చారిత్రక సుమేరు ప్రాంతం ప్రధానంగా నేటి ఏ దేశంలో ఉంది?",
+          "keyed_choice": "ఇరాక్"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B1.d",
+      "printed_page": 14,
+      "location_on_page": "B1.d",
+      "printed_claim_or_concept": "Sumer belongs to the Mesopotamian cultural region.",
+      "review_disposition": "reviewed-historical-region",
+      "question_id": "GEO-ORIG-01-062",
+      "scored": true,
+      "section": "maps-atom-sumer-mesopotamia",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which modern country contains the historical region of Sumer in southern Mesopotamia?",
+          "keyed_choice": "Iraq"
+        },
+        "te": {
+          "question": "దక్షిణ మెసొపొటేమియాలోని చారిత్రక సుమేరు ప్రాంతం ప్రధానంగా నేటి ఏ దేశంలో ఉంది?",
+          "keyed_choice": "ఇరాక్"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B1.e",
+      "printed_page": 14,
+      "location_on_page": "B1.e",
+      "printed_claim_or_concept": "The book’s early example is a plan of temple land.",
+      "review_disposition": "source-scoped-purpose-not-priority",
+      "question_id": "GEO-ORIG-01-063",
+      "scored": true,
+      "section": "maps-atom-clay-property-plans",
+      "assessment_evidence": {
+        "en": {
+          "question": "What does a clay-tablet plan of a temple’s land principally illustrate?",
+          "keyed_choice": "Recording a local property or land arrangement"
+        },
+        "te": {
+          "question": "దేవాలయ భూమిని మట్టి పలకపై చూపే పటం ప్రధానంగా ఏ ఉపయోగాన్ని వివరిస్తుంది?",
+          "keyed_choice": "స్థానిక ఆస్తి లేదా భూమి అమరికను నమోదు చేయడం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B1.f",
+      "printed_page": 14,
+      "location_on_page": "B1.f",
+      "printed_claim_or_concept": "The medium of these early plans is clay tablets.",
+      "review_disposition": "reviewed-medium",
+      "question_id": "GEO-BOOK-P014-F009",
+      "scored": true,
+      "section": "book-p14-fact-9",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ప్రాచీన మెసొపొటేమియా పటాలు’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "మట్టి పలకలపై భూభాగాల ప్రతిరూపాలు"
+        },
+        "en": {
+          "question": "Which option correctly describes Ancient Mesopotamian maps?",
+          "keyed_choice": "Representations of land on clay tablets"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B2.a",
+      "printed_page": 14,
+      "location_on_page": "B2.a",
+      "printed_claim_or_concept": "A Babylonian world image is described as roughly 2,600 years old.",
+      "review_disposition": "reviewed-approximate-artefact-age",
+      "question_id": "GEO-ORIG-01-064",
+      "scored": true,
+      "section": "maps-atom-babylonian-age",
+      "assessment_evidence": {
+        "en": {
+          "question": "A Babylonian world-map tablet dated approximately to the sixth century BCE is roughly how old in the early twenty-first century?",
+          "keyed_choice": "2,600 years"
+        },
+        "te": {
+          "question": "సుమారు క్రీ.పూ. ఆరో శతాబ్దానికి చెందిన బాబిలోనియన్ ప్రపంచ పటపు పలకకు ఇరవై ఒకటో శతాబ్దం ప్రారంభంలో సుమారుగా ఎంత వయస్సు ఉంటుంది?",
+          "keyed_choice": "2,600 సంవత్సరాలు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B2.b",
+      "printed_page": 14,
+      "location_on_page": "B2.b",
+      "printed_claim_or_concept": "Babylon is associated with present-day Iraq.",
+      "review_disposition": "reviewed-historical-region",
+      "question_id": "GEO-ORIG-01-093",
+      "scored": true,
+      "section": "maps-atom-mesopotamian-tradition-order",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which statement correctly places the Sumerian and Babylonian examples in historical and geographical context?",
+          "keyed_choice": "The Sumerian tradition is earlier; the Babylonian world-tablet example is later; both belong to Mesopotamia in present-day Iraq"
+        },
+        "te": {
+          "question": "సుమేరియన్, బాబిలోనియన్ ఉదాహరణలను చారిత్రకంగా, భౌగోళికంగా సరైన సందర్భంలో ఉంచే వాక్యం ఏది?",
+          "keyed_choice": "సుమేరియన్ సంప్రదాయం ముందుది; బాబిలోనియన్ ప్రపంచ పలక ఉదాహరణ తరువాతిది; రెండూ నేటి ఇరాక్‌లోని మెసొపొటేమియాకు చెందినవి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B2.c",
+      "printed_page": 14,
+      "location_on_page": "B2.c",
+      "printed_claim_or_concept": "The book places Babylonian mapping after Sumerian mapping.",
+      "review_disposition": "qualified-tradition-not-first-map-proof",
+      "question_id": "GEO-ORIG-01-093",
+      "scored": true,
+      "section": "maps-atom-mesopotamian-tradition-order",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which statement correctly places the Sumerian and Babylonian examples in historical and geographical context?",
+          "keyed_choice": "The Sumerian tradition is earlier; the Babylonian world-tablet example is later; both belong to Mesopotamia in present-day Iraq"
+        },
+        "te": {
+          "question": "సుమేరియన్, బాబిలోనియన్ ఉదాహరణలను చారిత్రకంగా, భౌగోళికంగా సరైన సందర్భంలో ఉంచే వాక్యం ఏది?",
+          "keyed_choice": "సుమేరియన్ సంప్రదాయం ముందుది; బాబిలోనియన్ ప్రపంచ పలక ఉదాహరణ తరువాతిది; రెండూ నేటి ఇరాక్‌లోని మెసొపొటేమియాకు చెందినవి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B2.d",
+      "printed_page": 14,
+      "location_on_page": "B2.d",
+      "printed_claim_or_concept": "The world image is drawn as a circular disc.",
+      "review_disposition": "reviewed-artefact-not-earth-model-proof",
+      "question_id": "GEO-ORIG-01-096",
+      "scored": true,
+      "section": "maps-atom-babylonian-image-form",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which description matches the Babylonian world-map artefact, rather than a modern physical model of Earth?",
+          "keyed_choice": "A clay tablet depicting a disc of land encircled by water, expressing an ancient worldview"
+        },
+        "te": {
+          "question": "ఆధునిక భూమి భౌతిక నమూనాకు బదులుగా, బాబిలోనియన్ ప్రపంచ పటపు పురావస్తువును సరైన విధంగా వర్ణించేది ఏది?",
+          "keyed_choice": "నీటి వలయం చుట్టూ ఉన్న భూభాగ వృత్తాన్ని చూపే మట్టి పలక; అది ప్రాచీన ప్రపంచ దృక్కోణం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B3.a",
+      "printed_page": 14,
+      "location_on_page": "B3.a",
+      "printed_claim_or_concept": "Babylonian maps were also made on clay.",
+      "review_disposition": "reviewed-medium",
+      "question_id": "GEO-ORIG-01-096",
+      "scored": true,
+      "section": "maps-atom-babylonian-image-form",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which description matches the Babylonian world-map artefact, rather than a modern physical model of Earth?",
+          "keyed_choice": "A clay tablet depicting a disc of land encircled by water, expressing an ancient worldview"
+        },
+        "te": {
+          "question": "ఆధునిక భూమి భౌతిక నమూనాకు బదులుగా, బాబిలోనియన్ ప్రపంచ పటపు పురావస్తువును సరైన విధంగా వర్ణించేది ఏది?",
+          "keyed_choice": "నీటి వలయం చుట్టూ ఉన్న భూభాగ వృత్తాన్ని చూపే మట్టి పలక; అది ప్రాచీన ప్రపంచ దృక్కోణం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B3.b",
+      "printed_page": 14,
+      "location_on_page": "B3.b",
+      "printed_claim_or_concept": "The circular image has a surrounding ring of water.",
+      "review_disposition": "reviewed-artefact",
+      "question_id": "GEO-ORIG-01-065",
+      "scored": true,
+      "section": "maps-atom-babylonian-disc-water",
+      "assessment_evidence": {
+        "en": {
+          "question": "In the British Museum’s Babylonian world-map interpretation, what surrounds the central disc of land?",
+          "keyed_choice": "A ring of water called the Bitter River"
+        },
+        "te": {
+          "question": "బ్రిటిష్ మ్యూజియం వివరించిన బాబిలోనియన్ ప్రపంచ పటంలో మధ్య భూభాగ వృత్తం చుట్టూ ఏమి చూపారు?",
+          "keyed_choice": "చేదు నది అని పిలిచిన నీటి వలయం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B3.c",
+      "printed_page": 14,
+      "location_on_page": "B3.c",
+      "printed_claim_or_concept": "Small circles denote cities or districts.",
+      "review_disposition": "reviewed-artefact-symbols",
+      "question_id": "GEO-ORIG-01-066",
+      "scored": true,
+      "section": "maps-atom-babylonian-symbols",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which interpretation of the Babylonian tablet’s marks is appropriate?",
+          "keyed_choice": "Small circles can mark cities or districts; outer triangles mark regions or islands in that worldview"
+        },
+        "te": {
+          "question": "బాబిలోనియన్ పలకలోని గుర్తులకు సరైన అర్థం ఏది?",
+          "keyed_choice": "చిన్న వృత్తాలు నగరాలు లేదా జిల్లాలను; బయటి త్రిభుజాలు ఆ దృక్కోణంలోని ప్రాంతాలు లేదా దీవులను సూచిస్తాయి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B3.d",
+      "printed_page": 14,
+      "location_on_page": "B3.d",
+      "printed_claim_or_concept": "The book lists villages, rivers and hills as mapped details.",
+      "review_disposition": "unresolved-complete-list-unscored",
+      "question_id": "GEO-ORIG-01-068",
+      "scored": false,
+      "section": "maps-atom-babylonian-unverified-details",
+      "assessment_evidence": {
+        "en": {
+          "question": "Source-study only: which extra features does the printed paragraph say the Babylonian map showed? These details have not all been verified for a specified artefact.",
+          "keyed_choice": "Villages, rivers and hills"
+        },
+        "te": {
+          "question": "మూల అధ్యయనం మాత్రమే: బాబిలోనియన్ పటంలో ఏ అదనపు లక్షణాలు చూపినట్లు ముద్రిత పేరా చెబుతుంది? నిర్దిష్ట పురావస్తువుకు ఈ వివరాలన్నీ ఇంకా నిర్ధారించలేదు.",
+          "keyed_choice": "గ్రామాలు, నదులు, కొండలు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B3.e",
+      "printed_page": 14,
+      "location_on_page": "B3.e",
+      "printed_claim_or_concept": "The surrounding water is called the Bitter Sea or Bitter River.",
+      "review_disposition": "reviewed-artefact-term",
+      "question_id": "GEO-ORIG-01-065",
+      "scored": true,
+      "section": "maps-atom-babylonian-disc-water",
+      "assessment_evidence": {
+        "en": {
+          "question": "In the British Museum’s Babylonian world-map interpretation, what surrounds the central disc of land?",
+          "keyed_choice": "A ring of water called the Bitter River"
+        },
+        "te": {
+          "question": "బ్రిటిష్ మ్యూజియం వివరించిన బాబిలోనియన్ ప్రపంచ పటంలో మధ్య భూభాగ వృత్తం చుట్టూ ఏమి చూపారు?",
+          "keyed_choice": "చేదు నది అని పిలిచిన నీటి వలయం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B3.f",
+      "printed_page": 14,
+      "location_on_page": "B3.f",
+      "printed_claim_or_concept": "The book says exactly seven outer triangles.",
+      "review_disposition": "corrected-probably-eight-originally-not-certainty",
+      "question_id": "GEO-ORIG-01-067",
+      "scored": true,
+      "section": "maps-atom-babylonian-triangle-count",
+      "assessment_evidence": {
+        "en": {
+          "question": "How should the book’s exact claim of seven outer triangles be treated against the curator’s reconstruction?",
+          "keyed_choice": "The curator says probably eight originally; the damaged object does not justify an unconditional exact-seven rule"
+        },
+        "te": {
+          "question": "మ్యూజియం పునర్నిర్మాణ వివరణతో పోల్చినప్పుడు, పుస్తకంలోని ఖచ్చితంగా ఏడు బయటి త్రిభుజాలు అనే వాదనను ఎలా చూడాలి?",
+          "keyed_choice": "మొదట బహుశా ఎనిమిది ఉండేవని మ్యూజియం చెబుతుంది; దెబ్బతిన్న వస్తువు నుంచి ఎప్పుడూ ఖచ్చితంగా ఏడు అనే నియమం రాదు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B3.g",
+      "printed_page": 14,
+      "location_on_page": "B3.g",
+      "printed_claim_or_concept": "Outer triangles represent regions or islands.",
+      "review_disposition": "reviewed-artefact-symbols",
+      "question_id": "GEO-ORIG-01-066",
+      "scored": true,
+      "section": "maps-atom-babylonian-symbols",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which interpretation of the Babylonian tablet’s marks is appropriate?",
+          "keyed_choice": "Small circles can mark cities or districts; outer triangles mark regions or islands in that worldview"
+        },
+        "te": {
+          "question": "బాబిలోనియన్ పలకలోని గుర్తులకు సరైన అర్థం ఏది?",
+          "keyed_choice": "చిన్న వృత్తాలు నగరాలు లేదా జిల్లాలను; బయటి త్రిభుజాలు ఆ దృక్కోణంలోని ప్రాంతాలు లేదా దీవులను సూచిస్తాయి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B4.a",
+      "printed_page": 14,
+      "location_on_page": "B4.a",
+      "printed_claim_or_concept": "Anaximander and Hecataeus are Greek mapping contributors.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P014-F011",
+      "scored": true,
+      "section": "book-p14-fact-11",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘గ్రీకు పటాల చరిత్ర’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "అనాక్సిమాండర్, హెకటేయస్ వంటి పండితుల కృషి"
+        },
+        "en": {
+          "question": "Which option correctly describes Greek mapping history?",
+          "keyed_choice": "Contributions associated with Anaximander and Hecataeus"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B4.b",
+      "printed_page": 14,
+      "location_on_page": "B4.b",
+      "printed_claim_or_concept": "Hecataeus is later than Anaximander in the described tradition.",
+      "review_disposition": "reviewed-relative-sequence",
+      "question_id": "GEO-ORIG-01-086",
+      "scored": true,
+      "section": "maps-atom-mapping-sequence",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which sequence places the textbook’s mapping traditions in a sensible historical order?",
+          "keyed_choice": "Anaximander → Hecataeus → Ptolemy → Al-Idrisi"
+        },
+        "te": {
+          "question": "పుస్తకం చర్చించిన పట సంప్రదాయాలను సరైన చారిత్రక క్రమంలో ఉంచే వరుస ఏది?",
+          "keyed_choice": "అనాక్సిమాండర్ → హెకటేయస్ → టాలెమీ → అల్ ఇద్రిసి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B4.c",
+      "printed_page": 14,
+      "location_on_page": "B4.c",
+      "printed_claim_or_concept": "The phrase round Earth must not confuse a disc with a sphere.",
+      "review_disposition": "corrected-concept",
+      "question_id": "GEO-ORIG-01-090",
+      "scored": true,
+      "section": "maps-atom-disc-versus-sphere",
+      "assessment_evidence": {
+        "en": {
+          "question": "A reconstruction of an ancient Greek world map is circular. What can be inferred from that drawing alone?",
+          "keyed_choice": "It is a circular representation; the maker’s physical model of Earth needs separate evidence"
+        },
+        "te": {
+          "question": "ప్రాచీన గ్రీకు ప్రపంచ పట పునర్నిర్మాణం వృత్తాకారంగా ఉంది. ఆ చిత్రం ఒక్కదాని నుంచి ఏది చెప్పవచ్చు?",
+          "keyed_choice": "అది వృత్తాకార ప్రతిరూపం; రచయిత భూమి నిజ ఆకారం గురించి ఏమనుకున్నాడో వేరు ఆధారం కావాలి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B4.d",
+      "printed_page": 14,
+      "location_on_page": "B4.d",
+      "printed_claim_or_concept": "The reconstruction names Europe, Asia and Libya/Africa.",
+      "review_disposition": "source-scoped-historical-labels",
+      "question_id": "GEO-ORIG-01-069",
+      "scored": true,
+      "section": "maps-atom-hecataeus-old-regions",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which set names the three broad old-world regions used in the textbook’s discussion of Hecataeus, with Libya understood in its ancient regional sense?",
+          "keyed_choice": "Europe, Asia and Libya or Africa"
+        },
+        "te": {
+          "question": "హెకటేయస్ గురించి పుస్తక చర్చలో ఉపయోగించిన మూడు విస్తృత ప్రాచీన ప్రపంచ ప్రాంతాల జాబితా ఏది? ఇక్కడ లిబియా అనే పేరు ప్రాచీన ప్రాంతీయ అర్థంలో వాడారు.",
+          "keyed_choice": "ఐరోపా, ఆసియా, లిబియా లేదా ఆఫ్రికా"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B4.e",
+      "printed_page": 14,
+      "location_on_page": "B4.e",
+      "printed_claim_or_concept": "The printed reconstruction puts Europe and Asia above Africa.",
+      "review_disposition": "unresolved-layout-unscored",
+      "question_id": "GEO-ORIG-01-094",
+      "scored": false,
+      "section": "maps-atom-hecataeus-layout-order-study",
+      "assessment_evidence": {
+        "en": {
+          "question": "Source-study only: what above/below arrangement does the printed paragraph assign to its Hecataeus reconstruction?",
+          "keyed_choice": "Europe and Asia above, Africa below"
+        },
+        "te": {
+          "question": "మూల అధ్యయనం మాత్రమే: హెకటేయస్ పట పునర్నిర్మాణంలో పై/కింది ప్రాంతాల అమరికను ముద్రిత పేరా ఎలా చెబుతుంది?",
+          "keyed_choice": "పైన ఐరోపా, ఆసియా; కింద ఆఫ్రికా"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B4.f",
+      "printed_page": 14,
+      "location_on_page": "B4.f",
+      "printed_claim_or_concept": "Greece is said to be central.",
+      "review_disposition": "unresolved-layout-unscored",
+      "question_id": "GEO-ORIG-01-070",
+      "scored": false,
+      "section": "maps-atom-hecataeus-layout-study",
+      "assessment_evidence": {
+        "en": {
+          "question": "Source-study only: what central emphasis and sea does the textbook associate with its reconstruction of Hecataeus’s map?",
+          "keyed_choice": "Greece and the Mediterranean Sea"
+        },
+        "te": {
+          "question": "మూల అధ్యయనం మాత్రమే: హెకటేయస్ పట పునర్నిర్మాణానికి పుస్తకం ఏ కేంద్ర ప్రాధాన్యాన్ని, ఏ సముద్రాన్ని జోడిస్తుంది?",
+          "keyed_choice": "గ్రీస్, మధ్యధరా సముద్రం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B4.g",
+      "printed_page": 14,
+      "location_on_page": "B4.g",
+      "printed_claim_or_concept": "The Mediterranean is said to lie between the regions.",
+      "review_disposition": "unresolved-layout-unscored",
+      "question_id": "GEO-ORIG-01-070",
+      "scored": false,
+      "section": "maps-atom-hecataeus-layout-study",
+      "assessment_evidence": {
+        "en": {
+          "question": "Source-study only: what central emphasis and sea does the textbook associate with its reconstruction of Hecataeus’s map?",
+          "keyed_choice": "Greece and the Mediterranean Sea"
+        },
+        "te": {
+          "question": "మూల అధ్యయనం మాత్రమే: హెకటేయస్ పట పునర్నిర్మాణానికి పుస్తకం ఏ కేంద్ర ప్రాధాన్యాన్ని, ఏ సముద్రాన్ని జోడిస్తుంది?",
+          "keyed_choice": "గ్రీస్, మధ్యధరా సముద్రం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B5.a",
+      "printed_page": 14,
+      "location_on_page": "B5.a",
+      "printed_claim_or_concept": "Ptolemy used latitude and longitude references for maps.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P014-F012",
+      "scored": true,
+      "section": "book-p14-fact-12",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘టాలెమీ పట సంప్రదాయం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "అక్షాంశాలు, రేఖాంశాలతో స్థానాలను సూచించడం"
+        },
+        "en": {
+          "question": "Which option correctly describes Ptolemy's mapping tradition?",
+          "keyed_choice": "Use of latitude and longitude references"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B5.b",
+      "printed_page": 14,
+      "location_on_page": "B5.b",
+      "printed_claim_or_concept": "The text says his maps are not available.",
+      "review_disposition": "corrected-surviving-text-and-later-versions",
+      "question_id": "GEO-ORIG-01-071",
+      "scored": true,
+      "section": "maps-atom-ptolemy-survival-and-sources",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which approach is sound when assessing a Ptolemaic map and the reports used to make it?",
+          "keyed_choice": "Identify the text, later copy or reconstruction and its coordinate sources; surviving versions can contain errors"
+        },
+        "te": {
+          "question": "టాలెమీ సంప్రదాయ పటాన్ని, దాని తయారీకి ఉపయోగించిన సమాచారాన్ని పరిశీలించేటప్పుడు సరైన పద్ధతి ఏది?",
+          "keyed_choice": "రచన, తరువాతి నకలు లేదా పునర్నిర్మాణం ఏదో, స్థాన సూచనలకు ఏ మూలాలు వాడారో గుర్తించాలి; మిగిలిన సంచికల్లో తప్పులు ఉండవచ్చు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B5.c",
+      "printed_page": 14,
+      "location_on_page": "B5.c",
+      "printed_claim_or_concept": "Travel or merchant reports are described as inputs.",
+      "review_disposition": "qualified-reported-data-not-exact-survey",
+      "question_id": "GEO-ORIG-01-095",
+      "scored": true,
+      "section": "maps-atom-ptolemy-travel-reports",
+      "assessment_evidence": {
+        "en": {
+          "question": "What kind of information could supplement geographical coordinates in Ptolemy’s compilation?",
+          "keyed_choice": "Reports from journeys, routes and earlier geographical accounts"
+        },
+        "te": {
+          "question": "టాలెమీ భౌగోళిక సంకలనంలో స్థాన సూచనలకు తోడుగా ఏ రకం సమాచారం ఉపయోగపడేది?",
+          "keyed_choice": "ప్రయాణాలు, మార్గాలు, ముందటి భౌగోళిక వివరాల నివేదికలు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B5.d",
+      "printed_page": 14,
+      "location_on_page": "B5.d",
+      "printed_claim_or_concept": "Sri Lanka was shown disproportionately large.",
+      "review_disposition": "reviewed-specific-map-tradition",
+      "question_id": "GEO-ORIG-01-085",
+      "scored": true,
+      "section": "maps-atom-ptolemy-taprobana",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which island is notably oversized in the Ptolemaic map tradition discussed by the University of Minnesota’s Bell Library?",
+          "keyed_choice": "Taprobana, or Sri Lanka"
+        },
+        "te": {
+          "question": "మిన్నెసోటా విశ్వవిద్యాలయం బెల్ లైబ్రరీ వివరించిన టాలెమీ పట సంప్రదాయంలో ఏ దీవిని చాలా పెద్దగా చూపారు?",
+          "keyed_choice": "తాప్రోబానా లేదా శ్రీలంక"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B5.e",
+      "printed_page": 14,
+      "location_on_page": "B5.e",
+      "printed_claim_or_concept": "India is said to be shown smaller.",
+      "review_disposition": "unresolved-version-needed-unscored",
+      "question_id": "GEO-ORIG-01-072",
+      "scored": false,
+      "section": "maps-atom-ptolemy-india-size-study",
+      "assessment_evidence": {
+        "en": {
+          "question": "Source-study only: besides an enlarged Sri Lanka, what relative-size claim does the printed paragraph make about India?",
+          "keyed_choice": "India is shown smaller"
+        },
+        "te": {
+          "question": "మూల అధ్యయనం మాత్రమే: శ్రీలంకను పెద్దగా చూపడంతో పాటు భారతదేశ పరిమాణం గురించి ముద్రిత పేరా ఏ వాదన చేస్తుంది?",
+          "keyed_choice": "భారతదేశాన్ని చిన్నగా చూపారు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B6.a",
+      "printed_page": 14,
+      "location_on_page": "B6.a",
+      "printed_claim_or_concept": "Arabic geographers drew on earlier Ptolemaic work.",
+      "review_disposition": "reviewed-Idrisi-synthesis",
+      "question_id": "GEO-ORIG-01-074",
+      "scored": true,
+      "section": "maps-atom-idrisi-sources",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which description correctly characterises the sources and tradition of al-Idrisi’s work?",
+          "keyed_choice": "It was an Arabic geographical work drawing on Ptolemy, Arabic sources and travel information"
+        },
+        "te": {
+          "question": "అల్ ఇద్రిసి రచన ఉపయోగించిన మూలాలు, పట సంప్రదాయాన్ని సరైన విధంగా తెలిపే వివరణ ఏది?",
+          "keyed_choice": "అది టాలెమీ, అరబిక్ మూలాలు, ప్రయాణ సమాచారాన్ని ఉపయోగించిన అరబిక్ భౌగోళిక రచన"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B6.b",
+      "printed_page": 14,
+      "location_on_page": "B6.b",
+      "printed_claim_or_concept": "Al-Idrisi’s major work dates to 1154.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-ORIG-01-073",
+      "scored": true,
+      "section": "maps-atom-idrisi-date",
+      "assessment_evidence": {
+        "en": {
+          "question": "In which year was al-Idrisi’s major geographical work completed for Roger II of Sicily?",
+          "keyed_choice": "1154"
+        },
+        "te": {
+          "question": "సిసిలీ రాజు రోజర్ రెండోవాడి కోసం అల్ ఇద్రిసి రూపొందించిన ప్రధాన భౌగోళిక రచన ఏ సంవత్సరంలో పూర్తయింది?",
+          "keyed_choice": "1154"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B6.c",
+      "printed_page": 14,
+      "location_on_page": "B6.c",
+      "printed_claim_or_concept": "The work was written in Arabic.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-ORIG-01-074",
+      "scored": true,
+      "section": "maps-atom-idrisi-sources",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which description correctly characterises the sources and tradition of al-Idrisi’s work?",
+          "keyed_choice": "It was an Arabic geographical work drawing on Ptolemy, Arabic sources and travel information"
+        },
+        "te": {
+          "question": "అల్ ఇద్రిసి రచన ఉపయోగించిన మూలాలు, పట సంప్రదాయాన్ని సరైన విధంగా తెలిపే వివరణ ఏది?",
+          "keyed_choice": "అది టాలెమీ, అరబిక్ మూలాలు, ప్రయాణ సమాచారాన్ని ఉపయోగించిన అరబిక్ భౌగోళిక రచన"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B6.d",
+      "printed_page": 14,
+      "location_on_page": "B6.d",
+      "printed_claim_or_concept": "Arabia is said to be central in the map.",
+      "review_disposition": "unresolved-map-version-unscored",
+      "question_id": "GEO-ORIG-01-076",
+      "scored": false,
+      "section": "maps-atom-idrisi-centre-study",
+      "assessment_evidence": {
+        "en": {
+          "question": "Source-study only: which region does the textbook call central in al-Idrisi’s map? A particular map version has not been established.",
+          "keyed_choice": "Arabia"
+        },
+        "te": {
+          "question": "మూల అధ్యయనం మాత్రమే: అల్ ఇద్రిసి పటంలో ఏ ప్రాంతాన్ని మధ్యలో చూపినట్లు పుస్తకం చెబుతుంది? నిర్దిష్ట పట సంచిక ఇంకా గుర్తించలేదు.",
+          "keyed_choice": "అరేబియా"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B6.e",
+      "printed_page": 14,
+      "location_on_page": "B6.e",
+      "printed_claim_or_concept": "The map is described as inverted relative to common north-up maps.",
+      "review_disposition": "reviewed-south-up-reconstruction",
+      "question_id": "GEO-ORIG-01-075",
+      "scored": true,
+      "section": "maps-atom-idrisi-south-up",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which orientation describes the al-Idrisi reconstruction presented by the Library of Congress?",
+          "keyed_choice": "South at the top and north at the bottom"
+        },
+        "te": {
+          "question": "లైబ్రరీ ఆఫ్ కాంగ్రెస్ చూపిన అల్ ఇద్రిసి పట పునర్నిర్మాణానికి సరిపోయే దిశల అమరిక ఏది?",
+          "keyed_choice": "దక్షిణం పైవైపు, ఉత్తరం కిందివైపు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B7.a",
+      "printed_page": 14,
+      "location_on_page": "B7.a",
+      "printed_claim_or_concept": "A colonial-period survey institution organised extensive mapping.",
+      "review_disposition": "reviewed-institutional-scope",
+      "question_id": "GEO-ORIG-01-091",
+      "scored": true,
+      "section": "maps-atom-survey-purpose",
+      "assessment_evidence": {
+        "en": {
+          "question": "What was a principal practical purpose of systematic geographical surveys across remote regions?",
+          "keyed_choice": "To measure positions, distances, elevations and land features for consistent maps"
+        },
+        "te": {
+          "question": "మారుమూల ప్రాంతాల్లో క్రమబద్ధంగా చేసే భౌగోళిక సర్వేల ముఖ్య ఆచరణాత్మక ఉద్దేశం ఏది?",
+          "keyed_choice": "ఒకే విధమైన పటాల కోసం స్థానాలు, దూరాలు, ఎత్తులు, భూ లక్షణాలను కొలవడం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B7.b",
+      "printed_page": 14,
+      "location_on_page": "B7.b",
+      "printed_claim_or_concept": "The survey institution’s founding is printed imprecisely.",
+      "review_disposition": "corrected-established-1767",
+      "question_id": "GEO-ORIG-01-077",
+      "scored": true,
+      "section": "maps-atom-survey-india-foundation",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which year does the Survey of India give for its establishment?",
+          "keyed_choice": "1767"
+        },
+        "te": {
+          "question": "సర్వే ఆఫ్ ఇండియా తన స్థాపనకు ఏ సంవత్సరాన్ని ఇస్తుంది?",
+          "keyed_choice": "1767"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B7.c",
+      "printed_page": 14,
+      "location_on_page": "B7.c",
+      "printed_claim_or_concept": "James Rennell is named as the early Surveyor General.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P014-F017",
+      "scored": true,
+      "section": "book-p14-fact-17",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘జేమ్స్ రెన్నెల్ నియామక సంవత్సరం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "1767"
+        },
+        "en": {
+          "question": "Which option correctly describes James Rennell's appointment year?",
+          "keyed_choice": "1767"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B7.d",
+      "printed_page": 14,
+      "location_on_page": "B7.d",
+      "printed_claim_or_concept": "The book gives his appointment as 1776.",
+      "review_disposition": "corrected-to-1767",
+      "question_id": "GEO-BOOK-P014-F017",
+      "scored": true,
+      "section": "book-p14-fact-17",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘జేమ్స్ రెన్నెల్ నియామక సంవత్సరం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "1767"
+        },
+        "en": {
+          "question": "Which option correctly describes James Rennell's appointment year?",
+          "keyed_choice": "1767"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B7.e",
+      "printed_page": 14,
+      "location_on_page": "B7.e",
+      "printed_claim_or_concept": "His work is called the first map of India.",
+      "review_disposition": "corrected-not-first-ever",
+      "question_id": "GEO-ORIG-01-078",
+      "scored": true,
+      "section": "maps-atom-rennell-not-first-ever",
+      "assessment_evidence": {
+        "en": {
+          "question": "What is wrong with describing Rennell’s work as the first map ever made of India?",
+          "keyed_choice": "Earlier mapping traditions existed; his colonial surveying role is a more precise description"
+        },
+        "te": {
+          "question": "రెన్నెల్ కృషిని భారతదేశానికి ఎప్పుడైనా తయారైన తొలి పటం అని చెప్పడంలో సమస్య ఏమిటి?",
+          "keyed_choice": "ముందటి పట సంప్రదాయాలు ఉన్నాయి; వలసకాల సర్వేలో అతని పాత్రను నిర్దిష్టంగా చెప్పాలి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B7.f",
+      "printed_page": 14,
+      "location_on_page": "B7.f",
+      "printed_claim_or_concept": "William Lambton began the major trigonometrical survey in 1802.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P014-F014",
+      "scored": true,
+      "section": "book-p14-fact-14",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘గ్రేట్ ట్రిగనోమెట్రికల్ సర్వే’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "1802లో విలియం లాంబ్టన్ ప్రారంభించిన విస్తృత సర్వే"
+        },
+        "en": {
+          "question": "Which option correctly describes Great Trigonometrical Survey?",
+          "keyed_choice": "A major survey begun by William Lambton in 1802"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B7.g",
+      "printed_page": 14,
+      "location_on_page": "B7.g",
+      "printed_claim_or_concept": "George Everest is said to have completed it.",
+      "review_disposition": "qualified-continuing-multiteam-work",
+      "question_id": "GEO-ORIG-01-079",
+      "scored": true,
+      "section": "maps-atom-survey-team-credit",
+      "assessment_evidence": {
+        "en": {
+          "question": "Why is “George Everest alone completed the entire survey and personally discovered the highest peak” misleading?",
+          "keyed_choice": "The survey extended through multiple teams and tenures; a peak’s commemorative name is not proof of sole measurement credit"
+        },
+        "te": {
+          "question": "“జార్జ్ ఎవరెస్ట్ ఒక్కడే మొత్తం సర్వే పూర్తి చేసి, స్వయంగా అత్యంత ఎత్తైన శిఖరాన్ని గుర్తించాడు” అనడం ఎందుకు తప్పుదారి పట్టిస్తుంది?",
+          "keyed_choice": "సర్వే అనేక బృందాలు, పదవీకాలాల్లో సాగింది; శిఖరానికి పెట్టిన గౌరవనామం ఒక్కరికే కొలత ఘనతను ఇవ్వదు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B7.h",
+      "printed_page": 14,
+      "location_on_page": "B7.h",
+      "printed_claim_or_concept": "George Everest is credited with determining the highest summit.",
+      "review_disposition": "qualified-name-not-sole-measurement-credit",
+      "question_id": "GEO-ORIG-01-079",
+      "scored": true,
+      "section": "maps-atom-survey-team-credit",
+      "assessment_evidence": {
+        "en": {
+          "question": "Why is “George Everest alone completed the entire survey and personally discovered the highest peak” misleading?",
+          "keyed_choice": "The survey extended through multiple teams and tenures; a peak’s commemorative name is not proof of sole measurement credit"
+        },
+        "te": {
+          "question": "“జార్జ్ ఎవరెస్ట్ ఒక్కడే మొత్తం సర్వే పూర్తి చేసి, స్వయంగా అత్యంత ఎత్తైన శిఖరాన్ని గుర్తించాడు” అనడం ఎందుకు తప్పుదారి పట్టిస్తుంది?",
+          "keyed_choice": "సర్వే అనేక బృందాలు, పదవీకాలాల్లో సాగింది; శిఖరానికి పెట్టిన గౌరవనామం ఒక్కరికే కొలత ఘనతను ఇవ్వదు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B7.i",
+      "printed_page": 14,
+      "location_on_page": "B7.i",
+      "printed_claim_or_concept": "Surveyed heights are related to sea-level reference.",
+      "review_disposition": "reviewed-datum",
+      "question_id": "GEO-BOOK-P014-F016",
+      "scored": true,
+      "section": "book-p14-fact-16",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘సర్వేలో ఎత్తుకు ఆధారం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "నిర్దిష్ట సముద్రమట్టం లేదా నిలువు ఎత్తుల సూచన ఉపరితలం"
+        },
+        "en": {
+          "question": "Which option correctly describes Reference for surveyed heights?",
+          "keyed_choice": "A defined sea-level or vertical datum"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P14-B7.j",
+      "printed_page": 14,
+      "location_on_page": "B7.j",
+      "printed_claim_or_concept": "The first baseline was near the Madras/Chennai coast.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-ORIG-01-080",
+      "scored": true,
+      "section": "maps-atom-gts-madras-start",
+      "assessment_evidence": {
+        "en": {
+          "question": "The initial measured baseline of the Great Trigonometrical Survey in 1802 was near which place?",
+          "keyed_choice": "Madras, now Chennai, near the coast"
+        },
+        "te": {
+          "question": "1802లో మహా త్రిభుజ సర్వే ప్రారంభంలో కొలిచిన ఆధార రేఖ ఏ ప్రాంతం దగ్గర ఉంది?",
+          "keyed_choice": "తీరానికి దగ్గరగా మద్రాస్, నేటి చెన్నై"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-B1.a",
+      "printed_page": 15,
+      "location_on_page": "B1.a",
+      "printed_claim_or_concept": "A thematic map focuses on a selected theme.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P015-F001",
+      "scored": true,
+      "section": "book-p15-fact-1",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘విషయ పటం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ఎంపిక చేసిన ఒక అంశం ప్రదేశాలవారీగా ఎలా ఉందో చూపే పటం"
+        },
+        "en": {
+          "question": "Which option correctly describes Thematic map?",
+          "keyed_choice": "The spatial distribution of a selected theme"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-B1.b",
+      "printed_page": 15,
+      "location_on_page": "B1.b",
+      "printed_claim_or_concept": "Village, taluk, district, state and country boundaries are administrative examples.",
+      "review_disposition": "reviewed-classification",
+      "question_id": "GEO-ORIG-01-081",
+      "scored": true,
+      "section": "maps-atom-political-map-examples",
+      "assessment_evidence": {
+        "en": {
+          "question": "A map emphasises village, taluk, district, state and national administrative boundaries. Which type best describes it?",
+          "keyed_choice": "A political or administrative map"
+        },
+        "te": {
+          "question": "ఒక పటం గ్రామం, తాలూకా, జిల్లా, రాష్ట్రం, దేశపు పరిపాలనా సరిహద్దులను ప్రధానంగా చూపుతుంది. అది ఏ రకం పటం?",
+          "keyed_choice": "రాజకీయ లేదా పరిపాలనా పటం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-B1.c",
+      "printed_page": 15,
+      "location_on_page": "B1.c",
+      "printed_claim_or_concept": "Such administrative maps are political maps.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P015-F002",
+      "scored": true,
+      "section": "book-p15-fact-2",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘రాజకీయ పటం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "దేశాలు, రాష్ట్రాలు వంటి పరిపాలనా విభాగాలు, సరిహద్దులు"
+        },
+        "en": {
+          "question": "Which option correctly describes Political map?",
+          "keyed_choice": "Administrative boundaries and political units"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-B1.d",
+      "printed_page": 15,
+      "location_on_page": "B1.d",
+      "printed_claim_or_concept": "Rivers and plateaus are examples of physical-map features.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P015-F003",
+      "scored": true,
+      "section": "book-p15-fact-3",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భౌతిక పటం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "పర్వతాలు, పీఠభూములు, నదులు వంటి సహజ లక్షణాలు"
+        },
+        "en": {
+          "question": "Which option correctly describes Physical map?",
+          "keyed_choice": "Natural features such as mountains, plateaus and rivers"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-B1.e",
+      "printed_page": 15,
+      "location_on_page": "B1.e",
+      "printed_claim_or_concept": "Land-use maps describe purposes or activities of land use.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P015-F004",
+      "scored": true,
+      "section": "book-p15-fact-4",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూవినియోగ పటం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "భూమిని ఏ పనికి ఉపయోగిస్తున్నారో చూపే పటం"
+        },
+        "en": {
+          "question": "Which option correctly describes Land-use map?",
+          "keyed_choice": "The purpose or activity for which land is used"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-B2.a",
+      "printed_page": 15,
+      "location_on_page": "B2.a",
+      "printed_claim_or_concept": "Contour lines join equal elevations.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P015-F006",
+      "scored": true,
+      "section": "book-p15-fact-6",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘సమోన్నత రేఖ’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ఒకే ఎత్తులో ఉన్న బిందువులను కలిపే రేఖ"
+        },
+        "en": {
+          "question": "Which option correctly describes Contour line?",
+          "keyed_choice": "A line connecting points of equal elevation"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-B2.b",
+      "printed_page": 15,
+      "location_on_page": "B2.b",
+      "printed_claim_or_concept": "The elevations use a common sea-level-related height reference.",
+      "review_disposition": "reviewed-concept",
+      "question_id": "GEO-ORIG-01-092",
+      "scored": true,
+      "section": "maps-atom-contour-datum",
+      "assessment_evidence": {
+        "en": {
+          "question": "For contour labels such as 100 m and 120 m to be compared meaningfully, what must their elevations share?",
+          "keyed_choice": "A defined common height reference, often related to mean sea level"
+        },
+        "te": {
+          "question": "100 m, 120 m వంటి సమోన్నత రేఖల ఎత్తులను అర్థవంతంగా పోల్చడానికి వాటికి ఉమ్మడిగా ఏమి ఉండాలి?",
+          "keyed_choice": "సాధారణంగా సగటు సముద్రమట్టంతో సంబంధం ఉన్న నిర్దిష్ట ఉమ్మడి ఎత్తుల ఆధారం"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-B2.c",
+      "printed_page": 15,
+      "location_on_page": "B2.c",
+      "printed_claim_or_concept": "Isohypse is another term for a contour line.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-ORIG-01-082",
+      "scored": true,
+      "section": "maps-atom-isohypse",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which term is another name for a contour line joining equal elevations?",
+          "keyed_choice": "Isohypse"
+        },
+        "te": {
+          "question": "సమాన ఎత్తు గల బిందువులను కలిపే సమోన్నత రేఖకు మరో పేరు ఏది?",
+          "keyed_choice": "ఐసోహైప్స్"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-B2.d",
+      "printed_page": 15,
+      "location_on_page": "B2.d",
+      "printed_claim_or_concept": "An atlas is a collection of maps.",
+      "review_disposition": "reviewed",
+      "question_id": "GEO-BOOK-P015-F010",
+      "scored": true,
+      "section": "book-p15-fact-10",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘అట్లాస్’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "పటాల సంకలనం"
+        },
+        "en": {
+          "question": "Which option correctly describes Atlas?",
+          "keyed_choice": "A collection of maps"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L.H",
+      "printed_page": 15,
+      "location_on_page": "L.H",
+      "printed_claim_or_concept": "The legend heading mixes land cover and land use information.",
+      "review_disposition": "qualified-cover-versus-purpose",
+      "question_id": "GEO-VIS-01-018",
+      "scored": true,
+      "section": "MAP-V06",
+      "assessment_evidence": {
+        "en": {
+          "question": "A satellite image shows tree cover. Why does that alone not fully establish land use?",
+          "keyed_choice": "Surface cover and the activity or purpose can differ"
+        },
+        "te": {
+          "question": "ఉపగ్రహ చిత్రంలో చెట్లు కనిపిస్తున్నాయి. దానితోనే భూవినియోగం పూర్తిగా ఎందుకు నిర్ణయించలేం?",
+          "keyed_choice": "పైకి కనిపించే ఆవరణ, భూమిని వాడే ఉద్దేశం వేరుగా ఉండవచ్చు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L01",
+      "printed_page": 15,
+      "location_on_page": "L01",
+      "printed_claim_or_concept": "Dark green denotes forest in the supplied legend.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-BOOK-P015-F013",
+      "scored": true,
+      "section": "book-p15-fact-13",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో ముదురు ఆకుపచ్చ’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "అడవి"
+        },
+        "en": {
+          "question": "Which option correctly describes Dark green in the supplied book legend?",
+          "keyed_choice": "Forest"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L02",
+      "printed_page": 15,
+      "location_on_page": "L02",
+      "printed_claim_or_concept": "Light green denotes grassland in the supplied legend.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-BOOK-P015-F014",
+      "scored": true,
+      "section": "book-p15-fact-14",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో లేత ఆకుపచ్చ’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "గడ్డి భూములు"
+        },
+        "en": {
+          "question": "Which option correctly describes Light green in the supplied book legend?",
+          "keyed_choice": "Grassland"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L03",
+      "printed_page": 15,
+      "location_on_page": "L03",
+      "printed_claim_or_concept": "Brown denotes land described as suitable for agriculture.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-BOOK-P015-F015",
+      "scored": true,
+      "section": "book-p15-fact-15",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో గోధుమ రంగు’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "వ్యవసాయానికి అనువైన భూములు"
+        },
+        "en": {
+          "question": "Which option correctly describes Brown in the supplied book legend?",
+          "keyed_choice": "Land described as suitable for farming"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L04.a",
+      "printed_page": 15,
+      "location_on_page": "L04.a",
+      "printed_claim_or_concept": "Yellow-green denotes cultivated land in the supplied legend.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-BOOK-P015-F016",
+      "scored": true,
+      "section": "book-p15-fact-16",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో పసుపు పచ్చ’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "పంటలు సాగవుతున్న ప్రాంతం"
+        },
+        "en": {
+          "question": "Which option correctly describes Yellow-green in the supplied book legend?",
+          "keyed_choice": "Cultivated land"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L04.b",
+      "printed_page": 15,
+      "location_on_page": "L04.b",
+      "printed_claim_or_concept": "The parenthetical physical-map label does not make crop colours universal.",
+      "review_disposition": "source-scoped-legend-principle",
+      "question_id": "GEO-VIS-01-017",
+      "scored": true,
+      "section": "MAP-V06",
+      "assessment_evidence": {
+        "en": {
+          "question": "Which conclusion follows from the two legends?",
+          "keyed_choice": "Read each map's own legend"
+        },
+        "te": {
+          "question": "రెండు పటసూచికలను బట్టి సరైన నిర్ధారణ ఏది?",
+          "keyed_choice": "ప్రతి పటం సొంత సూచికను చదవాలి"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L05",
+      "printed_page": 15,
+      "location_on_page": "L05",
+      "printed_claim_or_concept": "Dark purple denotes mountains.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-BOOK-P015-F017",
+      "scored": true,
+      "section": "book-p15-fact-17",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో ముదురు ఊదా’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "పర్వతాలు"
+        },
+        "en": {
+          "question": "Which option correctly describes Dark violet in the supplied book legend?",
+          "keyed_choice": "Mountains"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L06",
+      "printed_page": 15,
+      "location_on_page": "L06",
+      "printed_claim_or_concept": "Light purple denotes hills.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-BOOK-P015-F018",
+      "scored": true,
+      "section": "book-p15-fact-18",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో లేత ఊదా’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "గుట్టలు"
+        },
+        "en": {
+          "question": "Which option correctly describes Light violet in the supplied book legend?",
+          "keyed_choice": "Hills"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L07",
+      "printed_page": 15,
+      "location_on_page": "L07",
+      "printed_claim_or_concept": "The yellow row’s printed land-category wording is unclear.",
+      "review_disposition": "unresolved-unscored-label",
+      "question_id": "GEO-BOOK-P015-F019",
+      "scored": false,
+      "section": "book-p15-fact-19",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో పసుపు’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "పుస్తకంలో అస్పష్టంగా ముద్రించిన భూ వర్గం"
+        },
+        "en": {
+          "question": "Which option correctly describes Yellow in the supplied book legend?",
+          "keyed_choice": "An unclear land category in the printed legend"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L08",
+      "printed_page": 15,
+      "location_on_page": "L08",
+      "printed_claim_or_concept": "Light red denotes barren land.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-BOOK-P015-F020",
+      "scored": true,
+      "section": "book-p15-fact-20",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో లేత ఎరుపు’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "బంజరు భూములు"
+        },
+        "en": {
+          "question": "Which option correctly describes Light red in the supplied book legend?",
+          "keyed_choice": "Barren land"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L09.a",
+      "printed_page": 15,
+      "location_on_page": "L09.a",
+      "printed_claim_or_concept": "Light blue includes ponds, rivers and canals.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-BOOK-P015-F021",
+      "scored": true,
+      "section": "book-p15-fact-21",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో లేత నీలం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "చెరువులు, నదులు, కాలువలు"
+        },
+        "en": {
+          "question": "Which option correctly describes Light blue in the supplied book legend?",
+          "keyed_choice": "Ponds, rivers and canals"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L09.b",
+      "printed_page": 15,
+      "location_on_page": "L09.b",
+      "printed_claim_or_concept": "The light-blue row also includes wells.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-ORIG-01-083",
+      "scored": true,
+      "section": "maps-atom-legend-wells",
+      "assessment_evidence": {
+        "en": {
+          "question": "The printed light-blue legend row includes ponds, rivers, canals and which additional water feature?",
+          "keyed_choice": "Wells"
+        },
+        "te": {
+          "question": "ముద్రిత లేత నీలం పటసూచిక వరుసలో చెరువులు, నదులు, కాలువలతో పాటు ఏ నీటి వనరు ఉంది?",
+          "keyed_choice": "బావులు"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L10",
+      "printed_page": 15,
+      "location_on_page": "L10",
+      "printed_claim_or_concept": "Dark blue denotes seas and oceans.",
+      "review_disposition": "source-scoped-already-tested-before-repair",
+      "question_id": "GEO-BOOK-P015-F022",
+      "scored": true,
+      "section": "book-p15-fact-22",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో ముదురు నీలం’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "సముద్రాలు, మహాసముద్రాలు"
+        },
+        "en": {
+          "question": "Which option correctly describes Dark blue in the supplied book legend?",
+          "keyed_choice": "Seas and oceans"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L11",
+      "printed_page": 15,
+      "location_on_page": "L11",
+      "printed_claim_or_concept": "White denotes places with minerals.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-BOOK-P015-F023",
+      "scored": true,
+      "section": "book-p15-fact-23",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో తెలుపు’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "ఖనిజాలు లభించే ప్రదేశాలు"
+        },
+        "en": {
+          "question": "Which option correctly describes White in the supplied book legend?",
+          "keyed_choice": "Mineral-bearing locations"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-L12",
+      "printed_page": 15,
+      "location_on_page": "L12",
+      "printed_claim_or_concept": "Black denotes cities.",
+      "review_disposition": "source-scoped",
+      "question_id": "GEO-BOOK-P015-F024",
+      "scored": true,
+      "section": "book-p15-fact-24",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘ఇచ్చిన పుస్తక పటసూచికలో నలుపు’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "నగరాలు"
+        },
+        "en": {
+          "question": "Which option correctly describes Black in the supplied book legend?",
+          "keyed_choice": "Urban settlements"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    },
+    {
+      "id": "P15-FIG1",
+      "printed_page": 15,
+      "location_on_page": "FIG1",
+      "printed_claim_or_concept": "The printed globe is an illustrative three-dimensional Earth representation.",
+      "review_disposition": "reviewed-illustration",
+      "question_id": "GEO-BOOK-P015-F012",
+      "scored": true,
+      "section": "book-p15-fact-12",
+      "assessment_evidence": {
+        "te": {
+          "question": "‘భూగోళ నమూనా’కు సరైన వివరణ లేదా విలువ ఏది?",
+          "keyed_choice": "గోళ ఉపరితలంపై భూమి ప్రతిరూపం"
+        },
+        "en": {
+          "question": "Which option correctly describes Globe?",
+          "keyed_choice": "A representation of Earth on a spherical surface"
+        }
+      },
+      "evidence_rule": "Manual semantic comparison of the question and keyed choice; explanation text alone is not accepted as coverage."
+    }
+  ],
+  "notes_presentation": "Expanded prose teaching followed by open reference/revision; all existing assessment anchors retained",
+  "notes_sha256": "d95f5955f63e3b814fcfa2a02843b9754a18016f5938adab8d1d7c46b4d21bdb"
+}

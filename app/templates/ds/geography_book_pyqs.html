@@ -1,0 +1,15 @@
+{% extends "ds/base.html" %}
+{% set nav_active='practice' %}
+{% block title %}Book PYQs · Review{% endblock %}
+{% block content %}
+<a href="{{ url_for('geography.pyq_index') }}">‹ PYQs</a>
+<h1>పుస్తకంలోని PYQs · Book PYQs</h1>
+<p>పరీక్ష వివరాలు పుస్తకంలో ఇచ్చినవే. అసలు ప్రశ్నపత్రం, final key పరిశీలన పూర్తయ్యే వరకు మార్కులు ఇవ్వము.</p>
+<p>Book attribution; original-paper and final-key verification pending. Study only, unscored.</p>
+<form method="get" class="card">
+{% for field,values in facets.items() %}<label>{{ field|title }} <select name="{{ field }}"><option value="">All</option>{% for value in values %}<option{% if filters.get(field)==value %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label> {% endfor %}
+<label>Language <select name="qlang"><option value="te"{% if filters.qlang=='te' %} selected{% endif %}>తెలుగు</option><option value="en"{% if filters.qlang=='en' %} selected{% endif %}>English</option></select></label><button type="submit">చూడండి · Apply</button>
+</form>
+<p>{{ rows|length }} matches</p>
+{% for r in rows %}<div class="card"><p>{{ r.display_label }} · Printed page {{ r.source.printed_page }} · {{ r.difficulty_editorial|title }} (editorial)</p><a href="{{ url_for('geography.book_pyq',question_id=r.id,**filters) }}">{{ r.question_te_draft if filters.qlang=='te' else r.editorial_english_translation.question }}</a><p>Unscored · {{ r.transcription_status }}</p></div>{% else %}<p>No matching questions. Change a filter.</p>{% endfor %}
+{% endblock %}

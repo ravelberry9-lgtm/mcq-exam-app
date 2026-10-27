@@ -12,7 +12,7 @@ def _load(path,mtime,chapter_path,chapter_mtime,pin):
         raise ValueError('Solar practice release fingerprint differs')
     payload=json.loads(raw)
     chapter=Path(chapter_path).read_bytes()
-    if payload.get('format')!='solar-original-practice-v1' or len(payload.get('questions',[]))!=72:
+    if payload.get('format')!='solar-original-practice-v1' or len(payload.get('questions',[]))!=96:
         raise ValueError('Invalid solar practice release')
     if hashlib.sha256(chapter).hexdigest()!=payload.get('chapter_sha256'):
         raise ValueError('Solar practice chapter fingerprint differs')
@@ -36,7 +36,7 @@ def payload():
     pin=json.loads((root/'content/geography/solar_manifest.json').read_text(encoding='utf-8'))['payload_sha256']
     return _load(str(path),path.stat().st_mtime_ns,str(chapter),chapter.stat().st_mtime_ns,pin)
 
-def questions(topic=None,kind=None):
+def questions(topic=None,kind=None,qlang=None):
     return [q for q in payload()['questions'] if (not topic or str(q['topic'])==str(topic)) and (not kind or q['kind']==kind)]
 
 def question(qid):

@@ -1,0 +1,12 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'practice' %}
+{% block title %}{{ q.id }} · World Geography{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('geography.world_practice',number=number) }}">‹ Chapter MCQs</a><strong>{{ position }} / {{ total }}</strong></div>{% endblock %}
+{% block content %}
+<section class="card geo-question"><p class="geo-paper">Original PYQ-style practice · {{ q.id }} · అధికారిక PYQ కాదు</p><p>{{ q.question_te if lang=='te' else q.question_en }}</p><p><a href="{{ url_for('geography.world_question',number=number,qid=q.id,qlang='te') }}">తెలుగు</a> · <a href="{{ url_for('geography.world_question',number=number,qid=q.id,qlang='en') }}">English</a></p></section>
+<form method="post" action="{{ url_for('geography.world_answer',number=number,qid=q.id,qlang=lang) }}#answer-result"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><fieldset class="opts">{% for text in options %}<label class="opt geo-option{% if result and loop.index==q.answer %} is-correct{% elif result and loop.index==choice %} is-wrong{% endif %}"><input type="radio" name="choice" value="{{ loop.index }}" required{% if loop.index==choice %} checked{% endif %}><span class="k">{{ loop.index }}</span><span class="geo-option-text">{{ text }}</span></label>{% endfor %}</fieldset><button class="btn primary geo-submit">Check answer</button></form>
+{% if result %}<section id="answer-result" class="card geo-answer" data-score="{{ result.score }}"><h2>{{ 'Correct' if result.correct else 'Incorrect' }}</h2><p>{{ explanation }}</p>{% for why in option_explanations %}<div class="solar-option-explanation"><strong>{{ loop.index }}. {{ options[loop.index0] }}</strong><p>{{ why }}</p></div>{% endfor %}</section>{% endif %}
+<section class="card geo-context"><a class="btn primary" data-chapter-link href="{{ section_url }}">Read exact section ↗</a> <a class="btn" href="{{ notes_url }}">Full chapter</a></section>
+{% endblock %}
+{% block bottom %}<nav class="geo-question-nav">{% if previous %}<a class="btn" href="{{ url_for('geography.world_question',number=number,qid=previous,qlang=lang) }}">‹ Previous</a>{% else %}<span></span>{% endif %}{% if following %}<a class="btn primary" href="{{ url_for('geography.world_question',number=number,qid=following,qlang=lang) }}">Next ›</a>{% endif %}</nav>{% endblock %}
