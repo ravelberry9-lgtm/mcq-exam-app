@@ -63,14 +63,47 @@ def _catalogue():
     return json.loads((_root() / "catalogue.json").read_text(encoding="utf-8"))
 
 
+def _world_lesson_ids():
+    ids = set()
+    for chapter in world.index()["chapters"]:
+        legacy = chapter.get("legacy_lesson_ids", [])
+        if isinstance(legacy, list):
+            ids.update(str(value) for value in legacy)
+    return ids
+
+
+def _india_ap_catalogue():
+    """Return the legacy catalogue after moving World chapters to their umbrella."""
+    data = _catalogue()
+    world_ids = _world_lesson_ids()
+    units = []
+    for unit in data["units"]:
+        lessons = [lesson for lesson in unit["lessons"] if lesson["id"] not in world_ids]
+        if lessons:
+            units.append({**unit, "lessons": lessons})
+    return {**data, "units": units}
+
+
+def _scope_pyqs(records, umbrella):
+    if not umbrella:
+        return records
+    world_ids = _world_lesson_ids()
+    allowed = world_ids if umbrella == "world" else {
+        lesson["id"] for unit in _india_ap_catalogue()["units"] for lesson in unit["lessons"]
+    }
+    return [record for record in records if any(route.get("lesson_id") in allowed for route in record["routes"])]
+
+
 def _pyq_filters(catalogue):
     filters = {key: request.args.get(key, "").strip()[:200] for key in
-               ("unit", "lesson", "exam", "year", "paper", "mode", "search")}
+               ("unit", "lesson", "exam", "year", "paper", "mode", "search", "umbrella")}
     if filters["unit"] and filters["unit"] not in {str(u["id"]) for u in catalogue["units"]}:
         abort(404)
     if filters["lesson"] and filters["lesson"] not in {l["id"] for u in catalogue["units"] for l in u["lessons"]}:
         abort(404)
     if filters["mode"] not in {"", "held", "scored"}:
+        abort(400)
+    if filters["umbrella"] not in {"", "world", "india-ap"}:
         abort(400)
     if _question_language():filters["qlang"]=_question_language()
     return {key: value for key, value in filters.items() if value}
@@ -78,12 +111,23 @@ def _pyq_filters(catalogue):
 
 @bp.get("/")
 def index():
-    return render_template("ds/geography.html", catalogue=_catalogue(), unit=None, pyq_summary=pyqs.summary())
+    world_rows = _scope_pyqs(pyqs.records(), "world")
+    india_rows = _scope_pyqs(pyqs.records(), "india-ap")
+    return render_template("ds/geography_hub.html", world=world.index(),
+                           world_pyqs=pyqs.summary(world_rows), india_pyqs=pyqs.summary(india_rows),
+                           india_chapters=sum(len(unit["lessons"]) for unit in _india_ap_catalogue()["units"]))
+
+
+@bp.get("/india-ap")
+def india_ap_index():
+    catalogue = _india_ap_catalogue()
+    return render_template("ds/geography.html", catalogue=catalogue, unit=None,
+                           pyq_summary=pyqs.summary(_scope_pyqs(pyqs.records(), "india-ap")))
 
 
 @bp.get("/unit/<int:unit_id>")
 def unit(unit_id):
-    catalogue = _catalogue()
+    catalogue = _india_ap_catalogue()
     selected = next((u for u in catalogue["units"] if u["id"] == unit_id), None)
     if selected is None:
         abort(404)
@@ -194,8 +238,10 @@ def reference(name):
 
 @bp.get("/pyqs")
 def pyq_index():
-    catalogue = _catalogue();filters = _pyq_filters(catalogue)
-    all_records = pyqs.records();selected = pyqs.filtered(**filters)
+    scope = request.args.get("umbrella", "").strip()
+    catalogue = _india_ap_catalogue() if scope == "india-ap" else _catalogue();filters = _pyq_filters(catalogue)
+    service_filters = {key: value for key, value in filters.items() if key != "umbrella"}
+    all_records = _scope_pyqs(pyqs.records(), scope);selected = _scope_pyqs(pyqs.filtered(**service_filters), scope)
     if request.args.get("start") == "1" and selected:
         return redirect(url_for("geography.pyq", question_id=selected[0]["source"]["id"], **filters))
     try:
@@ -226,7 +272,9 @@ def _pyq_page(question_id, answered=False):
                 result = pyqs.grade(record, choice)
         except ValueError:
             abort(400,"Choose an option from 1 to 4")
-    all_records = pyqs.filtered(**filters)
+    scope = filters.get("umbrella", "")
+    service_filters = {key: value for key, value in filters.items() if key != "umbrella"}
+    all_records = _scope_pyqs(pyqs.filtered(**service_filters), scope)
     index = next((i for i,r in enumerate(all_records) if r["source"]["id"] == question_id),None)
     if index is None:
         abort(404)

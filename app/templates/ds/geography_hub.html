@@ -1,0 +1,10 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'learn' %}
+{% block title %}భూగోళశాస్త్రం · Geography{% endblock %}
+{% block topbar %}<h1>భూగోళశాస్త్రం · Geography</h1>{% endblock %}
+{% block content %}
+<nav><a href="{{ url_for('learn.hub') }}">‹ అధ్యయనం · Learn</a></nav>
+<section class="card"><h2>అధ్యయన విభాగాన్ని ఎంచుకోండి · Choose an umbrella</h2><p>World Geography content and questions are separated from India–Andhra Pradesh Geography.</p></section>
+<a class="card" data-geography-umbrella="world" href="{{ url_for('geography.world_index') }}"><h2>ప్రపంచ భూగోళశాస్త్రం · World Geography</h2><span>29 chapters · 5,418 original MCQs · {{ world_pyqs.total }} mapped PYQs</span></a>
+<a class="card" data-geography-umbrella="india-ap" href="{{ url_for('geography.india_ap_index') }}"><h2>భారతదేశం–ఆంధ్రప్రదేశ్ భూగోళశాస్త్రం · India–AP Geography</h2><span>{{ india_chapters }} remaining chapters · {{ india_pyqs.total }} mapped PYQs</span></a>
+{% endblock %}

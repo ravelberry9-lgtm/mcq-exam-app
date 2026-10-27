@@ -6,5 +6,6 @@
 {% block content %}
 <nav><a href="{{ url_for('geography.index') }}">‹ Geography</a></nav>
 <section class="card"><h2>29 పూర్తి పాఠాలు · 29 completed chapters</h2><p>Textbook-level notes, Telugu and English MCQs, explanations and exact section links.</p><p><strong>5,418</strong> original practice MCQs · <strong>313</strong> mapped PYQs</p></section>
+<a class="card" data-world-pyqs href="{{ url_for('geography.pyq_index',umbrella='world') }}"><h2>World Geography PYQs · ప్రపంచ భూగోళశాస్త్ర PYQs</h2><span>Exam, year, paper and chapter filters</span></a>
 {% for ch in chapters %}<a class="card" href="{{ url_for('geography.world_chapter',number=ch.display_chapter) }}" data-world-chapter="{{ ch.display_chapter }}"><h2>{{ ch.display_chapter }}. {{ ch.title_te or ch.title_en }}</h2><span>{{ ch.title_en }} · {{ ch.question_count }} MCQs</span></a>{% endfor %}
 {% endblock %}
