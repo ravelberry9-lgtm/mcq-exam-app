@@ -24,6 +24,16 @@ def validate_variant(t,lang):
         if set(lists)!= {'left','right'} or any(len(lists[k])!=4 or len(set(lists[k]))!=4 for k in lists):
             raise ValueError('Invalid translated matching lists')
         texts+=lists['left']+lists['right']
+    if 'learning_table' in t:
+        table=t['learning_table']
+        if not isinstance(table,dict) or not isinstance(table.get('title'),str) or not table['title'].strip():
+            raise ValueError('Missing learning-table title')
+        headers=table.get('headers'); rows=table.get('rows')
+        if not isinstance(headers,list) or not 2<=len(headers)<=4 or not all(isinstance(x,str) and x.strip() for x in headers):
+            raise ValueError('Invalid learning-table headers')
+        if not isinstance(rows,list) or not 1<=len(rows)<=12 or any(not isinstance(row,list) or len(row)!=len(headers) or not all(isinstance(x,str) and x.strip() for x in row) for row in rows):
+            raise ValueError('Invalid learning-table rows')
+        texts += [table['title']] + headers + [cell for row in rows for cell in row]
     joined=' '.join(texts)
     if lang=='en' and re.search('[\u0c00-\u0c7f]',joined):raise ValueError('Telugu leaked into English version')
     if lang=='te' and (set(re.findall('[A-Za-z]+',joined))-_ALLOWED_TE):raise ValueError('English prose leaked into Telugu version')

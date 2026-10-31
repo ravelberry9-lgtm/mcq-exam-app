@@ -3,116 +3,860 @@
   "display_chapter": 27,
   "questions": [
     {
-      "id":"WG27-SYN-001","question_te":"ఒక ఖండాన్ని mapలో systematicగా చదవడానికి సరైన మొదటి క్రమం ఏది?","question_en":"Which is the correct opening sequence for reading a continent systematically on a map?",
-      "options_te":["Hemisphere–latitude–surrounding oceans–neighbouring landmasses","Population–currency–flag–capital","Highest peak–lowest point మాత్రమే","Climate name–crop మాత్రమే"],
-      "options_en":["Hemisphere–latitude–surrounding oceans–neighbouring landmasses","Population–currency–flag–capital","Only highest peak–lowest point","Only climate name–crop"],
-      "option_explanations_te":["ఇది locationను స్థిరపరిచే spatial frame.","ఇవి political facts; physical locationకు మొదటి frame కావు.","రెండు superlatives ఖండపు పూర్తి spatial settingను చెప్పవు.","Climate–crop pair మాత్రమే locationను నిర్ధారించదు."],
-      "option_explanations_en":["This spatial frame fixes the continent's location.","These political facts are not the first frame for physical location.","Two superlatives do not establish the full spatial setting.","A climate–crop pair alone does not fix location."],
-      "answer":1,"difficulty":"easy","kind":"manual-synthesis","section":"c27-map-frame-p1","source_paragraph":"ఏ ఖండాన్నైనా ముందుగా hemisphere, latitude, surrounding oceans, neighbouring landmasses అనే నాలుగు అంశాలతో గుర్తించాలి. తరువాత relief, drainage, climate, vegetation, settlementsను కలపాలి. ఒక isolated superlative గుర్తుపెట్టుకోవడం కంటే ఈ spatial sequence ఎక్కువ ఉపయోగకరం.","explanation_te":"మొదట location frameను స్థిరపరిచి, తరువాత physical మరియు human layersను కలపాలి.","explanation_en":"First establish the location frame, then add physical and human layers.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":["c27-exam-method"]
+      "id": "WG27-SYN-001",
+      "question_te": "ఖండపు భౌగోళిక స్థానాన్ని పటంలో (Map) మొదట గుర్తించడానికి సరైన అంశాల సమూహం ఏది?",
+      "question_en": "Which is the correct opening sequence for reading a continent systematically on a map?",
+      "options_te": [
+        "అర్ధగోళం–అక్షాంశం (Latitude)–మహాసముద్రాలు–పొరుగు భూభాగాలు",
+        "జనాభా–కరెన్సీ–జెండా–రాజధాని",
+        "అత్యున్నత శిఖరం–అత్యల్ప స్థానం మాత్రమే",
+        "వాతావరణం పేరు–ప్రధాన పంట మాత్రమే"
+      ],
+      "options_en": [
+        "Hemisphere–latitude–surrounding oceans–neighbouring landmasses",
+        "Population–currency–flag–capital",
+        "Only highest peak–lowest point",
+        "Only climate name–crop"
+      ],
+      "option_explanations_te": [
+        "ఇవి ఖండపు స్థానాన్ని స్థిరపరుస్తాయి.",
+        "ఇవి స్థానానికి సంబంధించిన పూర్తి భౌతిక వివరణ కాదు.",
+        "రెండు అంచు విలువలు మొత్తం స్థానం చెప్పవు.",
+        "ఈ జతతో ఖండపు పట స్థానం పూర్తిగా తెలియదు."
+      ],
+      "option_explanations_en": [
+        "These establish the continent’s spatial setting.",
+        "These do not provide its physical setting.",
+        "Two extremes do not establish the whole location.",
+        "This pair does not fully locate a continent."
+      ],
+      "answer": 1,
+      "difficulty": "easy",
+      "kind": "manual-synthesis",
+      "section": "c27-map-frame-p1",
+      "source_paragraph": "ఏ ఖండాన్ని చదివినా ముందుగా పటంలో దాని స్థానాన్ని గుర్తించండి: భూమధ్యరేఖకు (Equator) ఉత్తరమా, దక్షిణమా? ఏ అక్షాంశాల (Latitudes) మధ్య ఉంది? చుట్టూ ఏ మహాసముద్రాలు (Oceans) ఉన్నాయి? దగ్గరలో ఏ ఖండాలు ఉన్నాయి? ఈ నాలుగు అంశాల తరువాత పర్వతాలు, నదులు, వాతావరణం (Climate), మొక్కలు, జనావాసాలను కలిపి చదివితే విడివిడి విషయాలు ఒక చిత్రంగా ఏర్పడతాయి.",
+      "explanation_te": "ఇవి ఖండపు స్థానాన్ని స్థిరపరుస్తాయి.",
+      "explanation_en": "Establish location, then relief and rivers, followed by climate, vegetation and settlements. Relationships are more useful than disconnected records.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [
+        "c27-exam-method"
+      ],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "అర్ధగోళం–అక్షాంశం (Latitude)–మహాసముద్రాలు–పొరుగు భూభాగాలు",
+        "జనాభా–కరెన్సీ–జెండా–రాజధాని",
+        "అత్యున్నత శిఖరం–అత్యల్ప స్థానం మాత్రమే",
+        "వాతావరణం పేరు–ప్రధాన పంట మాత్రమే"
+      ],
+      "option_explanations": [
+        "ఇవి ఖండపు స్థానాన్ని స్థిరపరుస్తాయి.",
+        "ఇవి స్థానానికి సంబంధించిన పూర్తి భౌతిక వివరణ కాదు.",
+        "రెండు అంచు విలువలు మొత్తం స్థానం చెప్పవు.",
+        "ఈ జతతో ఖండపు పట స్థానం పూర్తిగా తెలియదు."
+      ],
+      "excerpt": "ఏ ఖండాన్ని చదివినా ముందుగా పటంలో దాని స్థానాన్ని గుర్తించండి: భూమధ్యరేఖకు (Equator) ఉత్తరమా, దక్షిణమా? ఏ అక్షాంశాల (Latitudes) మధ్య ఉంది? చుట్టూ ఏ మహాసముద్రాలు (Oceans) ఉన్నాయి? దగ్గరలో ఏ ఖండాలు ఉన్నాయి? ఈ నాలుగు అంశాల తరువాత పర్వతాలు, నదులు, వాతావరణం (Climate), మొక్కలు, జనావాసాలను కలిపి చదివితే విడివిడి విషయాలు ఒక చిత్రంగా ఏర్పడతాయి.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-002","question_te":"Equator మరియు Prime Meridian గురించి సరైన statement ఏది?","question_en":"Which statement about the Equator and Prime Meridian is correct?",
-      "options_te":["Equator mainland Europeను దాటుతుంది","Prime Meridian Europe మరియు Africaను దాటుతుంది","Equator Antarcticaను దాటుతుంది","Prime Meridian Australiaను దాటుతుంది"],
-      "options_en":["The Equator crosses mainland Europe","The Prime Meridian crosses Europe and Africa","The Equator crosses Antarctica","The Prime Meridian crosses Australia"],
-      "option_explanations_te":["Mainland Europe Equatorకు ఉత్తరంగా ఉంది.","Greenwich నుంచి దక్షిణంగా Africa ద్వారా 0° longitude సాగుతుంది.","Antarctica Equatorకు చాలా దక్షిణంగా ఉంది.","0° longitude Australiaను దాటదు."],
-      "option_explanations_en":["Mainland Europe lies north of the Equator.","Zero-degree longitude runs south from Greenwich through Africa.","Antarctica lies far south of the Equator.","Zero-degree longitude does not cross Australia."],
-      "answer":2,"difficulty":"moderate","kind":"manual-synthesis","section":"c27-map-frame-p2","source_paragraph":"Equator Africa, South America, Asiaలోని island region ద్వారా వెళుతుంది; mainland Europe, North America, Australia, Antarcticaను దాటదు. Prime Meridian Europe మరియు Africaను దాటుతుంది. కాబట్టి hemisphere ప్రశ్నలో continent పేరు మాత్రమే కాకుండా mainlandనా, islandsతో కూడిన regionనా అనేది చూడాలి.","explanation_te":"Prime Meridian Europe, Africaలను దాటుతుంది; Equator విషయంలో mainland–island distinction ముఖ్యం.","explanation_en":"The Prime Meridian crosses Europe and Africa; the mainland–island distinction matters for the Equator.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-002",
+      "question_te": "భూమధ్యరేఖ (Equator), ప్రధాన రేఖాంశం (Prime Meridian) గురించి సరైన వాక్యం ఏది?",
+      "question_en": "Which statement about the Equator and Prime Meridian is correct?",
+      "options_te": [
+        "భూమధ్యరేఖ ఐరోపా ప్రధాన భూభాగాన్ని దాటుతుంది",
+        "ప్రధాన రేఖాంశం ఐరోపా, ఆఫ్రికాలను దాటుతుంది",
+        "భూమధ్యరేఖ అంటార్కిటికాను దాటుతుంది",
+        "ప్రధాన రేఖాంశం ఆస్ట్రేలియాను దాటుతుంది"
+      ],
+      "options_en": [
+        "The Equator crosses mainland Europe",
+        "The Prime Meridian crosses Europe and Africa",
+        "The Equator crosses Antarctica",
+        "The Prime Meridian crosses Australia"
+      ],
+      "option_explanations_te": [
+        "ఐరోపా భూమధ్యరేఖకు ఉత్తరాన ఉంది.",
+        "ఇవి రెండింటినీ దాటుతుంది; అంటార్కిటికాను కూడా దాటుతుంది.",
+        "అంటార్కిటికా చాలా దక్షిణాన ఉంది.",
+        "ఆస్ట్రేలియా 0° రేఖాంశానికి తూర్పున ఉంది."
+      ],
+      "option_explanations_en": [
+        "Europe lies north of the Equator.",
+        "It crosses both; it also crosses Antarctica.",
+        "Antarctica lies far to the south.",
+        "Australia lies east of the 0° meridian."
+      ],
+      "answer": 2,
+      "difficulty": "moderate",
+      "kind": "manual-synthesis",
+      "section": "c27-map-frame-p2",
+      "source_paragraph": "భూమధ్యరేఖ (Equator), ఆఫ్రికా–South Americaలను, Asiaకు చెందిన కొన్ని దీవులను దాటుతుంది. Europe, North America, Australia, Antarctica ప్రధాన భూభాగాలను దాటదు. ప్రధాన రేఖాంశం (ప్రధాన రేఖాంశం (Prime Meridian)) మాత్రం Europe, Africaతో పాటు Antarcticaను కూడా దాటుతుంది. ప్రశ్నలో “దాటుతుంది” అంటే కనీసం ఆ ప్రదేశాల్లో వెళ్తుందని; “వాటినే దాటుతుంది” అంటే పూర్తి జాబితా అని తేడా గుర్తించాలి.",
+      "explanation_te": "ఇవి రెండింటినీ దాటుతుంది; అంటార్కిటికాను కూడా దాటుతుంది.",
+      "explanation_en": "The Prime Meridian passes through Europe, Africa and Antarctica. The correct option says it crosses Europe and Africa, not that these are the only continents it crosses.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "భూమధ్యరేఖ ఐరోపా ప్రధాన భూభాగాన్ని దాటుతుంది",
+        "ప్రధాన రేఖాంశం ఐరోపా, ఆఫ్రికాలను దాటుతుంది",
+        "భూమధ్యరేఖ అంటార్కిటికాను దాటుతుంది",
+        "ప్రధాన రేఖాంశం ఆస్ట్రేలియాను దాటుతుంది"
+      ],
+      "option_explanations": [
+        "ఐరోపా భూమధ్యరేఖకు ఉత్తరాన ఉంది.",
+        "ఇవి రెండింటినీ దాటుతుంది; అంటార్కిటికాను కూడా దాటుతుంది.",
+        "అంటార్కిటికా చాలా దక్షిణాన ఉంది.",
+        "ఆస్ట్రేలియా 0° రేఖాంశానికి తూర్పున ఉంది."
+      ],
+      "excerpt": "భూమధ్యరేఖ (Equator), ఆఫ్రికా–South Americaలను, Asiaకు చెందిన కొన్ని దీవులను దాటుతుంది. Europe, North America, Australia, Antarctica ప్రధాన భూభాగాలను దాటదు. ప్రధాన రేఖాంశం (ప్రధాన రేఖాంశం (Prime Meridian)) మాత్రం Europe, Africaతో పాటు Antarcticaను కూడా దాటుతుంది. ప్రశ్నలో “దాటుతుంది” అంటే కనీసం ఆ ప్రదేశాల్లో వెళ్తుందని; “వాటినే దాటుతుంది” అంటే పూర్తి జాబితా అని తేడా గుర్తించాలి.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-003","question_te":"క్రింది mountain–continent pairsలో అన్నీ సరైనవి ఏ optionలో ఉన్నాయి?","question_en":"Which option contains only correct mountain–continent pairs?",
-      "options_te":["Himalayas–Asia; Andes–South America; Alps–Europe","Himalayas–Europe; Andes–Africa; Alps–Asia","Cordilleras–Australia; Alps–Antarctica; Andes–Europe","Andes–Asia; Himalayas–South America; Alps–Africa"],
-      "options_en":["Himalayas–Asia; Andes–South America; Alps–Europe","Himalayas–Europe; Andes–Africa; Alps–Asia","Cordilleras–Australia; Alps–Antarctica; Andes–Europe","Andes–Asia; Himalayas–South America; Alps–Africa"],
-      "option_explanations_te":["మూడు pairs సరైనవి.","మూడు ఖండ జతలు తప్పు.","మూడు ఖండ జతలు తప్పు.","మూడు ఖండ జతలు తప్పు."],
-      "option_explanations_en":["All three pairs are correct.","All three continent pairings are wrong.","All three continent pairings are wrong.","All three continent pairings are wrong."],
-      "answer":1,"difficulty":"easy","kind":"manual-synthesis","section":"c27-relief-p1","source_paragraph":"Asiaలో Himalayas, South Americaలో Andes, North Americaలో western Cordilleras, Europeలో Alps యువ Fold Mountain systemsకు ముఖ్య ఉదాహరణలు. ఇవన్నీ ఒకే age లేదా ఒకే plate process వల్ల ఏర్పడిన identical ranges కావు; కానీ plate convergenceతో సంబంధం ఉన్న mountain beltsగా పోల్చవచ్చు.","explanation_te":"Himalayas–Asia, Andes–South America, Alps–Europe సరైన map pairs.","explanation_en":"Himalayas–Asia, Andes–South America and Alps–Europe are correct map pairs.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-003",
+      "question_te": "పర్వతం–ఖండం జతలన్నీ సరైన ఎంపిక ఏది?",
+      "question_en": "Which option contains only correct mountain–continent pairs?",
+      "options_te": [
+        "హిమాలయాలు–ఆసియా; ఆండీస్–దక్షిణ అమెరికా; ఆల్ప్స్–ఐరోపా",
+        "హిమాలయాలు–ఐరోపా; ఆండీస్–ఆఫ్రికా; ఆల్ప్స్–ఆసియా",
+        "కార్డిల్లెరాలు–ఆస్ట్రేలియా; ఆల్ప్స్–అంటార్కిటికా; ఆండీస్–ఐరోపా",
+        "ఆండీస్–ఆసియా; హిమాలయాలు–దక్షిణ అమెరికా; ఆల్ప్స్–ఆఫ్రికా"
+      ],
+      "options_en": [
+        "Himalayas–Asia; Andes–South America; Alps–Europe",
+        "Himalayas–Europe; Andes–Africa; Alps–Asia",
+        "Cordilleras–Australia; Alps–Antarctica; Andes–Europe",
+        "Andes–Asia; Himalayas–South America; Alps–Africa"
+      ],
+      "option_explanations_te": [
+        "మూడు జతలూ సరైనవి.",
+        "మూడు ఖండాల జతలూ తారుమారయ్యాయి.",
+        "ఈ మూడు స్థానాలూ తప్పు.",
+        "మూడు జతలూ తప్పు."
+      ],
+      "option_explanations_en": [
+        "All three pairs are correct.",
+        "All three continent assignments are wrong.",
+        "All three locations are wrong.",
+        "All three pairs are wrong."
+      ],
+      "answer": 1,
+      "difficulty": "easy",
+      "kind": "manual-synthesis",
+      "section": "c27-relief-p1",
+      "source_paragraph": "Himalayas—Asia; Andes—South America; Alps—Europe; Western Cordilleras—North America అనే జతలను పటంలో గుర్తించండి. ఈ పర్వత వ్యవస్థలకు పలకల అభిసరణ (పలకల అభిసరణ (Plate convergence))తో సంబంధం ఉంది. కానీ Himalayasలో ఖండాల ఢీకొనడం, Andesలో సముద్ర పలక (సముద్ర పలక (Oceanic plate)) దిగిపోవడం వంటి ప్రక్రియలు వేరు. అన్ని శ్రేణుల వయసు, నిర్మాణ చరిత్ర ఒకటే కాదు.",
+      "explanation_te": "మూడు జతలూ సరైనవి.",
+      "explanation_en": "The Himalayas in Asia relate to continental collision; the Andes on western South America relate to oceanic subduction. Correct locations do not imply identical formation mechanisms.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "హిమాలయాలు–ఆసియా; ఆండీస్–దక్షిణ అమెరికా; ఆల్ప్స్–ఐరోపా",
+        "హిమాలయాలు–ఐరోపా; ఆండీస్–ఆఫ్రికా; ఆల్ప్స్–ఆసియా",
+        "కార్డిల్లెరాలు–ఆస్ట్రేలియా; ఆల్ప్స్–అంటార్కిటికా; ఆండీస్–ఐరోపా",
+        "ఆండీస్–ఆసియా; హిమాలయాలు–దక్షిణ అమెరికా; ఆల్ప్స్–ఆఫ్రికా"
+      ],
+      "option_explanations": [
+        "మూడు జతలూ సరైనవి.",
+        "మూడు ఖండాల జతలూ తారుమారయ్యాయి.",
+        "ఈ మూడు స్థానాలూ తప్పు.",
+        "మూడు జతలూ తప్పు."
+      ],
+      "excerpt": "Himalayas—Asia; Andes—South America; Alps—Europe; Western Cordilleras—North America అనే జతలను పటంలో గుర్తించండి. ఈ పర్వత వ్యవస్థలకు పలకల అభిసరణ (పలకల అభిసరణ (Plate convergence))తో సంబంధం ఉంది. కానీ Himalayasలో ఖండాల ఢీకొనడం, Andesలో సముద్ర పలక (సముద్ర పలక (Oceanic plate)) దిగిపోవడం వంటి ప్రక్రియలు వేరు. అన్ని శ్రేణుల వయసు, నిర్మాణ చరిత్ర ఒకటే కాదు.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-004","question_te":"Antarctica reliefను పోల్చేటప్పుడు ఏ caution సరైనది?","question_en":"Which caution is correct when comparing Antarctic relief?",
-      "options_te":["Ice-surface elevation ఎల్లప్పుడూ bedrock elevationతో సమానం","Highest point, mean elevation, ice-surface elevation వేర్వేరు measures","Antarcticaలో bedrock లేదు","Average elevation అంటే lowest point"],
-      "options_en":["Ice-surface elevation always equals bedrock elevation","Highest point, mean elevation and ice-surface elevation are different measures","Antarctica has no bedrock","Average elevation means the lowest point"],
-      "option_explanations_te":["Ice thickness వల్ల surface మరియు bedrock elevations వేరు.","Measuresకు వేర్వేరు definitions ఉన్నాయి.","Ice కింద continental bedrock ఉంది.","Mean elevation lowest point కాదు."],
-      "option_explanations_en":["Ice thickness makes surface and bedrock elevations different.","The measures have different definitions.","Continental bedrock lies beneath the ice.","Mean elevation is not the lowest point."],
-      "answer":2,"difficulty":"moderate","kind":"manual-synthesis","section":"c27-relief-p2","source_paragraph":"Africa మరియు Australiaలో విస్తారమైన old plateau surfaces కనిపిస్తాయి. Antarcticaపై ice sheet నిజమైన bedrock reliefను కప్పేస్తుంది. Highest point, average elevation, ice-surface elevation మూడు వేర్వేరు measures; వాటిని ఒకటిగా చూడకూడదు.","explanation_te":"Antarcticaలో ice surface మరియు కిందనున్న bedrock reliefను వేరు చేయాలి.","explanation_en":"In Antarctica the ice surface must be distinguished from the underlying bedrock relief.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-004",
+      "question_te": "అంటార్కిటికా భూప్రకృతి (Relief) ఎత్తులను పోల్చేటప్పుడు సరైన జాగ్రత్త ఏది?",
+      "question_en": "Which caution is correct when comparing Antarctic relief?",
+      "options_te": [
+        "మంచు ఉపరితల ఎత్తు ఎప్పుడూ శిలా పునాది ఎత్తుతో సమానం",
+        "అత్యున్నత స్థానం, సగటు ఎత్తు, మంచు ఉపరితల ఎత్తు వేర్వేరు కొలతలు",
+        "అంటార్కిటికాలో శిలా పునాది లేదు",
+        "సగటు ఎత్తు అంటే అత్యల్ప స్థానం"
+      ],
+      "options_en": [
+        "Ice-surface elevation always equals bedrock elevation",
+        "Highest point, mean elevation and ice-surface elevation are different measures",
+        "Antarctica has no bedrock",
+        "Average elevation means the lowest point"
+      ],
+      "option_explanations_te": [
+        "మంచు మందం వల్ల రెండూ వేరు.",
+        "ప్రతి కొలతకు వేర్వేరు అర్థం ఉంది.",
+        "మంచు కింద భూఖండపు శిలా నేల ఉంది.",
+        "సగటు, కనిష్ఠం వేరు."
+      ],
+      "option_explanations_en": [
+        "Ice thickness separates the two elevations.",
+        "Each measure has a different definition.",
+        "Continental bedrock lies under the ice.",
+        "Mean and minimum are different."
+      ],
+      "answer": 2,
+      "difficulty": "moderate",
+      "kind": "manual-synthesis",
+      "section": "c27-relief-p2",
+      "source_paragraph": "Africa, Australiaలో పురాతన పీఠభూమి (పీఠభూమి (Plateau)) ప్రాంతాలు విస్తారంగా కనిపిస్తాయి. Antarcticaలో మంచు కవచం (మంచు కవచం (Ice sheet)) కింద ఉన్న శిలా పునాది (శిలా పునాది (Bedrock))ను కప్పేస్తుంది. అత్యున్నత స్థానం (అత్యున్నత స్థానం (Highest point)) అంటే ఒక్క అతి ఎత్తైన స్థానం; సగటు ఎత్తు (సగటు ఎత్తు (Mean elevation)) అంటే విస్తీర్ణంపై సగటు; మంచు ఉపరితల ఎత్తు (మంచు ఉపరితల ఎత్తు (Ice-surface elevation)) అంటే మంచు పైభాగపు ఎత్తు. మంచు మందం ఉన్నందువల్ల అది కింద శిలా నేల ఎత్తుతో సమానం కాదు.",
+      "explanation_te": "ప్రతి కొలతకు వేర్వేరు అర్థం ఉంది.",
+      "explanation_en": "A highest peak is one location; the mean is an area-wide calculation. Ice thickness separates the elevations of the ice surface and underlying rock.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "మంచు ఉపరితల ఎత్తు ఎప్పుడూ శిలా పునాది ఎత్తుతో సమానం",
+        "అత్యున్నత స్థానం, సగటు ఎత్తు, మంచు ఉపరితల ఎత్తు వేర్వేరు కొలతలు",
+        "అంటార్కిటికాలో శిలా పునాది లేదు",
+        "సగటు ఎత్తు అంటే అత్యల్ప స్థానం"
+      ],
+      "option_explanations": [
+        "మంచు మందం వల్ల రెండూ వేరు.",
+        "ప్రతి కొలతకు వేర్వేరు అర్థం ఉంది.",
+        "మంచు కింద భూఖండపు శిలా నేల ఉంది.",
+        "సగటు, కనిష్ఠం వేరు."
+      ],
+      "excerpt": "Africa, Australiaలో పురాతన పీఠభూమి (పీఠభూమి (Plateau)) ప్రాంతాలు విస్తారంగా కనిపిస్తాయి. Antarcticaలో మంచు కవచం (మంచు కవచం (Ice sheet)) కింద ఉన్న శిలా పునాది (శిలా పునాది (Bedrock))ను కప్పేస్తుంది. అత్యున్నత స్థానం (అత్యున్నత స్థానం (Highest point)) అంటే ఒక్క అతి ఎత్తైన స్థానం; సగటు ఎత్తు (సగటు ఎత్తు (Mean elevation)) అంటే విస్తీర్ణంపై సగటు; మంచు ఉపరితల ఎత్తు (మంచు ఉపరితల ఎత్తు (Ice-surface elevation)) అంటే మంచు పైభాగపు ఎత్తు. మంచు మందం ఉన్నందువల్ల అది కింద శిలా నేల ఎత్తుతో సమానం కాదు.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-005","question_te":"River superlativesను సరైన విధంగా చూపినది ఏది?","question_en":"Which option treats river superlatives correctly?",
-      "options_te":["Amazon—highest discharge; Nile—commonly listed among the longest","Nile—highest discharge; Amazon—shortest","Volga—Asia; Yangtze—Europe","Murray–Darling—North America"],
-      "options_en":["Amazon—highest discharge; Nile—commonly listed among the longest","Nile—highest discharge; Amazon—shortest","Volga—Asia; Yangtze—Europe","Murray–Darling—North America"],
-      "option_explanations_te":["Discharge మరియు length అనే వేర్వేరు measuresను సరిగ్గా వేరు చేసింది.","Amazon highest discharge; shortest కాదు.","Volga Europeలో, Yangtze Asiaలో ఉన్నాయి.","Murray–Darling Australiaలో ఉంది."],
-      "option_explanations_en":["It correctly separates the different measures of discharge and length.","The Amazon has the highest discharge and is not the shortest.","The Volga is in Europe and the Yangtze in Asia.","The Murray–Darling is in Australia."],
-      "answer":1,"difficulty":"moderate","kind":"manual-synthesis","section":"c27-rivers-p1","source_paragraph":"Amazon dischargeలో ప్రపంచంలో అగ్రస్థానంలో ఉంటుంది; Nileను సాధారణంగా longest-river listsలో ముందుగా పేర్కొంటారు. Yangtze Asiaలో, Mississippi–Missouri North Americaలో, Volga Europeలో, Murray–Darling Australiaలో ముఖ్య river systems. River lengthను discharge లేదా basin areaతో కలపకూడదు.","explanation_te":"Amazonకు discharge distinction; Nileకు length-list distinction. Measuresను కలపరాదు.","explanation_en":"The Amazon has the discharge distinction; the Nile the length-list distinction. Do not mix the measures.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-005",
+      "question_te": "నదుల రికార్డులను సరిగ్గా పోల్చిన ఎంపిక ఏది?",
+      "question_en": "Which option treats river superlatives correctly?",
+      "options_te": [
+        "అమెజాన్–అత్యధిక ప్రవాహ పరిమాణం (Discharge); నైలు–సాధారణ పొడవు జాబితాల్లో అగ్రస్థానం",
+        "నైలు–అత్యధిక ప్రవాహ పరిమాణం; అమెజాన్–అతి చిన్న నది",
+        "వోల్గా–ఆసియా; యాంగ్జీ–ఐరోపా",
+        "మర్రే–డార్లింగ్–ఉత్తర అమెరికా"
+      ],
+      "options_en": [
+        "Amazon—highest discharge; Nile—commonly listed among the longest",
+        "Nile—highest discharge; Amazon—shortest",
+        "Volga—Asia; Yangtze—Europe",
+        "Murray–Darling—North America"
+      ],
+      "option_explanations_te": [
+        "ప్రవాహ పరిమాణాన్ని పొడవుతో వేరు చేశారు.",
+        "అమెజాన్ అత్యధిక ప్రవాహం గలది; అతి చిన్నది కాదు.",
+        "వోల్గా ఐరోపాలో; యాంగ్జీ ఆసియాలో ఉన్నాయి.",
+        "మర్రే–డార్లింగ్ ఆస్ట్రేలియాలో ఉంది."
+      ],
+      "option_explanations_en": [
+        "This distinguishes discharge from length.",
+        "The Amazon leads in discharge and is not shortest.",
+        "Volga is in Europe; Yangtze is in Asia.",
+        "Murray–Darling is in Australia."
+      ],
+      "answer": 1,
+      "difficulty": "moderate",
+      "kind": "manual-synthesis",
+      "section": "c27-rivers-p1",
+      "source_paragraph": "నదిని పోల్చేటప్పుడు మూడు కొలతలను వేరు చేయాలి: పొడవు (Length)—పొడవు; ప్రవాహ పరిమాణం (Discharge)—ఒక సమయంలో ప్రవహించే నీటి పరిమాణం; పరివాహక విస్తీర్ణం (Basin area)—నీరు చేరే భూభాగ విస్తీర్ణం. Amazon, Dischargeలో అగ్రస్థానంలో ఉంది. Nileను సాధారణ పొడవు జాబితాల్లో ముందుగా పేర్కొంటారు; మూలప్రవాహం, కొలత పద్ధతి వల్ల Nile–Amazon పొడవు పోలికలో తేడాలు రావచ్చు. Yangtze—Asia; Mississippi–Missouri—North America; Volga—Europe; Murray–Darling—Australia అనే జతలూ గుర్తుంచుకోండి.",
+      "explanation_te": "ప్రవాహ పరిమాణాన్ని పొడవుతో వేరు చేశారు.",
+      "explanation_en": "Length uses km; discharge uses m³/s; basin area uses km². Nile–Amazon length comparisons depend on headwater and measurement conventions.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "అమెజాన్–అత్యధిక ప్రవాహ పరిమాణం (Discharge); నైలు–సాధారణ పొడవు జాబితాల్లో అగ్రస్థానం",
+        "నైలు–అత్యధిక ప్రవాహ పరిమాణం; అమెజాన్–అతి చిన్న నది",
+        "వోల్గా–ఆసియా; యాంగ్జీ–ఐరోపా",
+        "మర్రే–డార్లింగ్–ఉత్తర అమెరికా"
+      ],
+      "option_explanations": [
+        "ప్రవాహ పరిమాణాన్ని పొడవుతో వేరు చేశారు.",
+        "అమెజాన్ అత్యధిక ప్రవాహం గలది; అతి చిన్నది కాదు.",
+        "వోల్గా ఐరోపాలో; యాంగ్జీ ఆసియాలో ఉన్నాయి.",
+        "మర్రే–డార్లింగ్ ఆస్ట్రేలియాలో ఉంది."
+      ],
+      "excerpt": "నదిని పోల్చేటప్పుడు మూడు కొలతలను వేరు చేయాలి: పొడవు (Length)—పొడవు; ప్రవాహ పరిమాణం (Discharge)—ఒక సమయంలో ప్రవహించే నీటి పరిమాణం; పరివాహక విస్తీర్ణం (Basin area)—నీరు చేరే భూభాగ విస్తీర్ణం. Amazon, Dischargeలో అగ్రస్థానంలో ఉంది. Nileను సాధారణ పొడవు జాబితాల్లో ముందుగా పేర్కొంటారు; మూలప్రవాహం, కొలత పద్ధతి వల్ల Nile–Amazon పొడవు పోలికలో తేడాలు రావచ్చు. Yangtze—Asia; Mississippi–Missouri—North America; Volga—Europe; Murray–Darling—Australia అనే జతలూ గుర్తుంచుకోండి.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-006","question_te":"Endorheic drainageకు సరైన నిర్వచనం ఏది?","question_en":"What is the correct definition of endorheic drainage?",
-      "options_te":["River oceanకు చేరకుండా inland basinలో ముగియడం","అన్ని rivers glacier నుంచి పుట్టడం","River deltaలో మాత్రమే ముగియడం","Ocean current riverగా మారడం"],
-      "options_en":["A river terminates in an inland basin without reaching the ocean","All rivers originate in glaciers","A river ends only in a delta","An ocean current becomes a river"],
-      "option_explanations_te":["ఇదే closed inland drainage లక్షణం.","Glacial origin endorheic అనే అర్థం కాదు.","Delta ocean marginలో కూడా ఉండవచ్చు.","Ocean current river కాదు."],
-      "option_explanations_en":["This is the defining feature of closed inland drainage.","Glacial origin does not define endorheic drainage.","A delta may occur at an ocean margin.","An ocean current is not a river."],
-      "answer":1,"difficulty":"easy","kind":"manual-synthesis","section":"c27-rivers-p2","source_paragraph":"Mountain belt river sourceను, continental slope flow directionను, climate discharge seasonalityను ప్రభావితం చేస్తాయి. Endorheic drainageలో river oceanకు చేరకుండా inland basinలో ముగుస్తుంది; Caspian basin, Central Asian basins దీనికి ఉదాహరణలు.","explanation_te":"Endorheic systemలో నీరు ocean outletకు చేరకుండా అంతర్గత basinలో ముగుస్తుంది.","explanation_en":"In an endorheic system water ends in an internal basin without an ocean outlet.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-006",
+      "question_te": "అంతర్గత పరివాహక వ్యవస్థ (Endorheic drainage)కు సరైన నిర్వచనం ఏది?",
+      "question_en": "What is the correct definition of endorheic drainage?",
+      "options_te": [
+        "సముద్రానికి ఉపరితల మార్గం లేక నది అంతర్గత పరివాహక ప్రాంతంలో ముగియడం",
+        "నదులన్నీ హిమానీనదాల్లో పుట్టడం",
+        "నది డెల్టాలో మాత్రమే ముగియడం",
+        "సముద్ర ప్రవాహం నదిగా మారడం"
+      ],
+      "options_en": [
+        "A river terminates in an inland basin without reaching the ocean",
+        "All rivers originate in glaciers",
+        "A river ends only in a delta",
+        "An ocean current becomes a river"
+      ],
+      "option_explanations_te": [
+        "సముద్రానికి ఉపరితల నిష్క్రమణ లేకపోవడం ప్రధాన లక్షణం.",
+        "పుట్టిన ప్రదేశం దీనిని నిర్వచించదు.",
+        "డెల్టా సముద్ర తీరం వద్ద కూడా ఏర్పడవచ్చు.",
+        "సముద్ర ప్రవాహం వేరే ప్రక్రియ."
+      ],
+      "option_explanations_en": [
+        "The key feature is no surface ocean outlet.",
+        "The source type does not define it.",
+        "A delta may form at an ocean margin.",
+        "An ocean current is a different process."
+      ],
+      "answer": 1,
+      "difficulty": "easy",
+      "kind": "manual-synthesis",
+      "section": "c27-rivers-p2",
+      "source_paragraph": "పర్వతాల్లో నది పుట్టవచ్చు; నేల వాలు ప్రవాహ దిశను ప్రభావితం చేస్తుంది. వర్షాలు, మంచు కరుగుదల నీటి పరిమాణాన్ని మార్చుతాయి. సముద్రానికి బయటకు వెళ్లే ఉపరితల నిష్క్రమణ మార్గం (ఉపరితల నిష్క్రమణ మార్గం (Surface outlet)) లేని అంతర్గత Basinను అంతర్గత పరివాహక ప్రాంతం (అంతర్గత పరివాహక ప్రాంతం (Endorheic basin)) అంటారు. Caspian, Central Asiaలోని కొన్ని సరస్సు పరివాహక ప్రాంతాలు ఉదాహరణలు. లోపలికి వచ్చిన నీరు ఆవిరీభవనం (ఆవిరీభవనం (Evaporation)) లేదా నేలలోకి దిగడం వల్ల తగ్గవచ్చు.",
+      "explanation_te": "సముద్రానికి ఉపరితల నిష్క్రమణ లేకపోవడం ప్రధాన లక్షణం.",
+      "explanation_en": "In systems such as the Caspian and Lake Eyre, water accumulates inland and may be lost by evaporation or infiltration rather than reaching the ocean through a natural surface outlet.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "సముద్రానికి ఉపరితల మార్గం లేక నది అంతర్గత పరివాహక ప్రాంతంలో ముగియడం",
+        "నదులన్నీ హిమానీనదాల్లో పుట్టడం",
+        "నది డెల్టాలో మాత్రమే ముగియడం",
+        "సముద్ర ప్రవాహం నదిగా మారడం"
+      ],
+      "option_explanations": [
+        "సముద్రానికి ఉపరితల నిష్క్రమణ లేకపోవడం ప్రధాన లక్షణం.",
+        "పుట్టిన ప్రదేశం దీనిని నిర్వచించదు.",
+        "డెల్టా సముద్ర తీరం వద్ద కూడా ఏర్పడవచ్చు.",
+        "సముద్ర ప్రవాహం వేరే ప్రక్రియ."
+      ],
+      "excerpt": "పర్వతాల్లో నది పుట్టవచ్చు; నేల వాలు ప్రవాహ దిశను ప్రభావితం చేస్తుంది. వర్షాలు, మంచు కరుగుదల నీటి పరిమాణాన్ని మార్చుతాయి. సముద్రానికి బయటకు వెళ్లే ఉపరితల నిష్క్రమణ మార్గం (ఉపరితల నిష్క్రమణ మార్గం (Surface outlet)) లేని అంతర్గత Basinను అంతర్గత పరివాహక ప్రాంతం (అంతర్గత పరివాహక ప్రాంతం (Endorheic basin)) అంటారు. Caspian, Central Asiaలోని కొన్ని సరస్సు పరివాహక ప్రాంతాలు ఉదాహరణలు. లోపలికి వచ్చిన నీరు ఆవిరీభవనం (ఆవిరీభవనం (Evaporation)) లేదా నేలలోకి దిగడం వల్ల తగ్గవచ్చు.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-007","question_te":"Desert–controlling factor matchingలో సరైనది ఏది?","question_en":"Which desert–controlling factor match is correct?",
-      "options_te":["Atacama—Humboldt Current మరియు rain shadow","Gobi—equatorial convection మాత్రమే","Sahara—polar easterlies మాత్రమే","Australian interior—permanent equatorial low మాత్రమే"],
-      "options_en":["Atacama—Humboldt Current and rain shadow","Gobi—equatorial convection only","Sahara—polar easterlies only","Australian interior—permanent equatorial low only"],
-      "option_explanations_te":["Cold currentతో పాటు Andes rain shadow aridityను పెంచుతాయి.","Gobi continentality మరియు rain shadowతో సంబంధం ఉంది.","Sahara subtropical high-pressure beltతో ప్రధానంగా సంబంధం ఉంది.","Australian aridity subtropical subsidence మరియు interior locationతో సంబంధం ఉంది."],
-      "option_explanations_en":["The cold current and Andean rain shadow reinforce aridity.","The Gobi is related to continentality and rain shadow.","The Sahara is chiefly related to the subtropical high-pressure belt.","Australian aridity is related to subtropical subsidence and interior location."],
-      "answer":1,"difficulty":"hard","kind":"manual-synthesis","section":"c27-deserts-p1","source_paragraph":"Sahara subtropical high-pressure beltతో, Atacama cold Humboldt Current మరియు rain-shadowతో, Gobi continentality మరియు rain-shadowతో, Australian deserts subtropical subsidence మరియు interior drynessతో సంబంధం కలిగి ఉన్నాయి. అన్ని deserts వేడిగా ఉండవు; Gobi cold-desert conditions చూపుతుంది.","explanation_te":"Atacama aridityకు cold Humboldt Current, stable air, Andes rain shadow కలిసి పనిచేస్తాయి.","explanation_en":"Atacama aridity reflects the cold Humboldt Current, stable air and the Andean rain shadow.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-007",
+      "question_te": "ఎడారి–ప్రభావకారకం జతల్లో సరైనది ఏది?",
+      "question_en": "Which desert–controlling factor match is correct?",
+      "options_te": [
+        "అటకామా–హంబోల్ట్ ప్రవాహం (Humboldt Current), వర్షచ్ఛాయ (Rain shadow)",
+        "గోబీ–భూమధ్యరేఖ సంవహనం మాత్రమే",
+        "సహారా–ధ్రువ తూర్పు గాలులు మాత్రమే",
+        "ఆస్ట్రేలియా అంతర్భాగం–శాశ్వత భూమధ్యరేఖ అల్పపీడనం మాత్రమే"
+      ],
+      "options_en": [
+        "Atacama—Humboldt Current and rain shadow",
+        "Gobi—equatorial convection only",
+        "Sahara—polar easterlies only",
+        "Australian interior—permanent equatorial low only"
+      ],
+      "option_explanations_te": [
+        "చల్లని ప్రవాహం, ఆండీస్ వర్షచ్ఛాయ పొడితనాన్ని పెంచుతాయి.",
+        "గోబీకి సముద్ర దూరం, పర్వతాల అడ్డంకి ముఖ్యం.",
+        "సహారా ఉపఉష్ణ అధికపీడన ప్రాంతంతో సంబంధించింది.",
+        "ఆస్ట్రేలియాలో దిగివచ్చే గాలి, అంతర్భాగపు స్థానం ముఖ్యం."
+      ],
+      "option_explanations_en": [
+        "The cold current and Andean rain shadow reinforce dryness.",
+        "Continentality and mountain barriers matter for the Gobi.",
+        "The Sahara relates to subtropical high pressure.",
+        "Subsiding air and inland location matter in Australia."
+      ],
+      "answer": 1,
+      "difficulty": "hard",
+      "kind": "manual-synthesis",
+      "section": "c27-deserts-p1",
+      "source_paragraph": "ఎడారులకు ఒకే కారణం ఉండదు. Saharaలో ఉపఉష్ణ అధికపీడనం (ఉపఉష్ణ అధికపీడనం (Subtropical high pressure)) వల్ల గాలి దిగివచ్చి పొడిబారుతుంది. Atacamaలో చల్లని హంబోల్ట్ ప్రవాహం (హంబోల్ట్ ప్రవాహం (Humboldt Current)), స్థిరమైన గాలి, Andes వర్షచ్ఛాయ (వర్షచ్ఛాయ (Rain shadow)) కలిసి పనిచేస్తాయి. Gobiలో సముద్రానికి దూరం, పర్వతాల అడ్డంకి ముఖ్యం. Australia అంతర్భాగంలో కూడా దిగివచ్చే గాలి, సముద్ర తేమ తక్కువగా చేరడం పొడితనాన్ని పెంచుతాయి. ఎడారి అంటే ఎప్పుడూ వేడి ప్రాంతమే కాదు.",
+      "explanation_te": "చల్లని ప్రవాహం, ఆండీస్ వర్షచ్ఛాయ పొడితనాన్ని పెంచుతాయి.",
+      "explanation_en": "Atacama is a coastal desert influenced by a cold current. Gobi has cold-desert conditions. Desert denotes low precipitation, not necessarily intense heat.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "అటకామా–హంబోల్ట్ ప్రవాహం (Humboldt Current), వర్షచ్ఛాయ (Rain shadow)",
+        "గోబీ–భూమధ్యరేఖ సంవహనం మాత్రమే",
+        "సహారా–ధ్రువ తూర్పు గాలులు మాత్రమే",
+        "ఆస్ట్రేలియా అంతర్భాగం–శాశ్వత భూమధ్యరేఖ అల్పపీడనం మాత్రమే"
+      ],
+      "option_explanations": [
+        "చల్లని ప్రవాహం, ఆండీస్ వర్షచ్ఛాయ పొడితనాన్ని పెంచుతాయి.",
+        "గోబీకి సముద్ర దూరం, పర్వతాల అడ్డంకి ముఖ్యం.",
+        "సహారా ఉపఉష్ణ అధికపీడన ప్రాంతంతో సంబంధించింది.",
+        "ఆస్ట్రేలియాలో దిగివచ్చే గాలి, అంతర్భాగపు స్థానం ముఖ్యం."
+      ],
+      "excerpt": "ఎడారులకు ఒకే కారణం ఉండదు. Saharaలో ఉపఉష్ణ అధికపీడనం (ఉపఉష్ణ అధికపీడనం (Subtropical high pressure)) వల్ల గాలి దిగివచ్చి పొడిబారుతుంది. Atacamaలో చల్లని హంబోల్ట్ ప్రవాహం (హంబోల్ట్ ప్రవాహం (Humboldt Current)), స్థిరమైన గాలి, Andes వర్షచ్ఛాయ (వర్షచ్ఛాయ (Rain shadow)) కలిసి పనిచేస్తాయి. Gobiలో సముద్రానికి దూరం, పర్వతాల అడ్డంకి ముఖ్యం. Australia అంతర్భాగంలో కూడా దిగివచ్చే గాలి, సముద్ర తేమ తక్కువగా చేరడం పొడితనాన్ని పెంచుతాయి. ఎడారి అంటే ఎప్పుడూ వేడి ప్రాంతమే కాదు.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-008","question_te":"Coastal desert ఏర్పాటును పూర్తి చేసే factor set ఏది?","question_en":"Which factor set best explains the formation of a coastal desert?",
-      "options_te":["Cold current–stable air–low rainfall","Warm current–daily convection–heavy rainfall","River flooding–delta building–humid forest","Glacier melting–monsoon burst మాత్రమే"],
-      "options_en":["Cold current–stable air–low rainfall","Warm current–daily convection–heavy rainfall","River flooding–delta building–humid forest","Only glacier melting–monsoon burst"],
-      "option_explanations_te":["Cold current lower atmosphereను stableగా చేసి rainfallను పరిమితం చేయవచ్చు.","ఇది aridityకు విరుద్ధమైన set.","ఇది humid delta setting.","ఇవి coastal desertకు సాధారణ causal chain కాదు."],
-      "option_explanations_en":["A cold current can stabilise the lower atmosphere and restrict rainfall.","This set opposes aridity.","This describes a humid delta setting.","These are not the normal causal chain for a coastal desert."],
-      "answer":1,"difficulty":"moderate","kind":"manual-synthesis","section":"c27-deserts-p2","source_paragraph":"Coastal desert అనే పదం coast దగ్గర ఉన్నదని మాత్రమే చెప్పదు; cold current, stable air, low rainfall కలిసి aridityను పెంచవచ్చు. Latitude, pressure belts, ocean currents, mountains, distance from seaలను కలిపి desert distributionను వివరించాలి.","explanation_te":"Coast పక్కనే ఉండటం మాత్రమే కాదు; cold current–stable air–low rainfall chain ముఖ్యం.","explanation_en":"Proximity to a coast is not enough; the cold-current–stable-air–low-rainfall chain matters.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-008",
+      "question_te": "చల్లని సముద్ర ప్రవాహం ప్రభావిత తీర ఎడారికి సరైన కారణ క్రమం ఏది?",
+      "question_en": "Which causal chain fits a coastal desert influenced by a cold ocean current?",
+      "options_te": [
+        "చల్లని ప్రవాహం–సంవహనం (Convection) తగ్గడం–తక్కువ వర్షపాతం",
+        "వెచ్చని ప్రవాహం–రోజువారీ సంవహనం–భారీ వర్షపాతం",
+        "నది వరద–డెల్టా–తేమ అరణ్యం",
+        "హిమానీనద కరుగుదల–రుతుపవన భారీ వర్షం మాత్రమే"
+      ],
+      "options_en": [
+        "Cold current–stable air–low rainfall",
+        "Warm current–daily convection–heavy rainfall",
+        "River flooding–delta building–humid forest",
+        "Only glacier melting–monsoon burst"
+      ],
+      "option_explanations_te": [
+        "దిగువ గాలి చల్లబడి పైకి ఎగసే కదలిక తగ్గవచ్చు.",
+        "ఈ క్రమం పొడి పరిస్థితికి సరిపోదు.",
+        "ఇది తేమ డెల్టా ప్రాంతాన్ని సూచిస్తుంది.",
+        "ఇది తీర ఎడారి సాధారణ కారణ క్రమం కాదు."
+      ],
+      "option_explanations_en": [
+        "Cooling near-surface air can suppress upward convection.",
+        "This chain does not explain aridity.",
+        "This describes a humid delta.",
+        "This is not the typical causal chain."
+      ],
+      "answer": 1,
+      "difficulty": "moderate",
+      "kind": "manual-synthesis",
+      "section": "c27-deserts-p2",
+      "source_paragraph": "చల్లని సముద్ర ప్రవాహం (సముద్ర ప్రవాహం (Ocean current)) తీరంపై దిగువ గాలిని చల్లబరచి పైకి ఎగసే సంవహనం (సంవహనం (Convection))ను పరిమితం చేయవచ్చు. Fog ఉన్నా ఎక్కువ Rainfall రాకపోవచ్చు. పర్వతానికి గాలి వచ్చే వైపు వర్షం కురిసి, అవతలి వైపు పొడి గాలి చేరే స్థితిని వర్షచ్ఛాయ (వర్షచ్ఛాయ (Rain shadow)) అంటారు. తీర ఎడారిని వివరించేటప్పుడు Current, Air pressure, Mountains, సముద్రం నుంచి దూరం అన్నింటినీ చూడాలి.",
+      "explanation_te": "దిగువ గాలి చల్లబడి పైకి ఎగసే కదలిక తగ్గవచ్చు.",
+      "explanation_en": "Being beside the sea does not guarantee rain. A cold current can stabilise the air; fog may occur even where rainfall is scarce.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "చల్లని ప్రవాహం–సంవహనం (Convection) తగ్గడం–తక్కువ వర్షపాతం",
+        "వెచ్చని ప్రవాహం–రోజువారీ సంవహనం–భారీ వర్షపాతం",
+        "నది వరద–డెల్టా–తేమ అరణ్యం",
+        "హిమానీనద కరుగుదల–రుతుపవన భారీ వర్షం మాత్రమే"
+      ],
+      "option_explanations": [
+        "దిగువ గాలి చల్లబడి పైకి ఎగసే కదలిక తగ్గవచ్చు.",
+        "ఈ క్రమం పొడి పరిస్థితికి సరిపోదు.",
+        "ఇది తేమ డెల్టా ప్రాంతాన్ని సూచిస్తుంది.",
+        "ఇది తీర ఎడారి సాధారణ కారణ క్రమం కాదు."
+      ],
+      "excerpt": "చల్లని సముద్ర ప్రవాహం (సముద్ర ప్రవాహం (Ocean current)) తీరంపై దిగువ గాలిని చల్లబరచి పైకి ఎగసే సంవహనం (సంవహనం (Convection))ను పరిమితం చేయవచ్చు. Fog ఉన్నా ఎక్కువ Rainfall రాకపోవచ్చు. పర్వతానికి గాలి వచ్చే వైపు వర్షం కురిసి, అవతలి వైపు పొడి గాలి చేరే స్థితిని వర్షచ్ఛాయ (వర్షచ్ఛాయ (Rain shadow)) అంటారు. తీర ఎడారిని వివరించేటప్పుడు Current, Air pressure, Mountains, సముద్రం నుంచి దూరం అన్నింటినీ చూడాలి.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-009","question_te":"క్రింది strait–connection pairsలో తప్పు pair ఏది?","question_en":"Which strait–connection pair is incorrect?",
-      "options_te":["Gibraltar—Atlantic మరియు Mediterranean","Bering—Arctic మరియు Pacific","Drake Passage—South America మరియు Antarctica మధ్య waters","Hormuz—Mediterranean మరియు Red Sea"],
-      "options_en":["Gibraltar—Atlantic and Mediterranean","Bering—Arctic and Pacific","Drake Passage—waters between South America and Antarctica","Hormuz—Mediterranean and Red Sea"],
-      "option_explanations_te":["ఈ connection సరైనది.","ఈ connection సరైనది.","ఈ location సరైనది.","Hormuz Persian Gulf outlet వద్ద; Mediterranean–Red Seaను Suez Canal కలుపుతుంది."],
-      "option_explanations_en":["This connection is correct.","This connection is correct.","This location is correct.","Hormuz is at the Persian Gulf outlet; the Suez Canal links the Mediterranean and Red Sea."],
-      "answer":4,"difficulty":"moderate","kind":"manual-synthesis","section":"c27-straits-p1","source_paragraph":"Strait రెండు పెద్ద water bodiesను కలిపే narrow natural water passage. Strait of Malacca Indian Ocean–Pacific trade routeలో, Hormuz Persian Gulf outlet వద్ద, Gibraltar Atlantic–Mediterranean మధ్య, Bering Arctic–Pacific మధ్య, Drake Passage South America–Antarctica మధ్య ఉన్నాయి.","explanation_te":"Hormuz Persian Gulf outlet; Mediterranean–Red Sea pair Suez Canalకు చెందుతుంది.","explanation_en":"Hormuz is the Persian Gulf outlet; Mediterranean–Red Sea belongs to the Suez Canal.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-009",
+      "question_te": "కింది సముద్ర మార్గం–సంబంధం జతల్లో తప్పైనది ఏది?",
+      "question_en": "Which sea-passage–connection pair is incorrect?",
+      "options_te": [
+        "జిబ్రాల్టర్–అట్లాంటిక్, మధ్యధరా సముద్రం",
+        "బేరింగ్–ఆర్కిటిక్, పసిఫిక్ మహాసముద్రాలు",
+        "డ్రేక్ మార్గం–దక్షిణ అమెరికా, అంటార్కిటికా మధ్య",
+        "హార్ముజ్–మధ్యధరా సముద్రం, ఎర్ర సముద్రం"
+      ],
+      "options_en": [
+        "Gibraltar—Atlantic and Mediterranean",
+        "Bering—Arctic and Pacific",
+        "Drake Passage—waters between South America and Antarctica",
+        "Hormuz—Mediterranean and Red Sea"
+      ],
+      "option_explanations_te": [
+        "ఇది సరైన సంబంధం.",
+        "బేరింగ్ ఈ రెండు మహాసముద్ర వ్యవస్థలను కలుపుతుంది.",
+        "డ్రేక్ ఆ రెండు ఖండాల మధ్య ఉంది.",
+        "హార్ముజ్ పర్షియన్ గల్ఫ్ ప్రవేశం; ఇచ్చిన జత సూయజ్ కాలువది."
+      ],
+      "option_explanations_en": [
+        "This is correct.",
+        "Bering connects these ocean systems.",
+        "Drake lies between these continents.",
+        "Hormuz is the Persian Gulf outlet; the stated pair belongs to Suez."
+      ],
+      "answer": 4,
+      "difficulty": "moderate",
+      "kind": "manual-synthesis",
+      "section": "c27-straits-p1",
+      "source_paragraph": "జలసంధి (Strait) అంటే రెండు జలభాగాలను కలిపే సహజ ఇరుకైన సముద్ర మార్గం. Malacca, Indian–Pacific వాణిజ్య మార్గంలో ముఖ్యమైనది. Hormuz, Persian Gulf నుంచి Gulf of Oman వైపు ప్రవేశం; Gibraltar, Atlantic–Mediterranean మధ్య; Bering, Pacific–Arctic వ్యవస్థల మధ్య ఉంది. Drake Passage, South America–Antarctica మధ్య విస్తార సముద్ర మార్గం. నౌకాయానానికి ముఖ్యమైన ఇరుకైన ప్రవేశాన్ని సముద్ర కీలక మార్గం (సముద్ర కీలక మార్గం (Maritime chokepoint)) అంటారు.",
+      "explanation_te": "హార్ముజ్ పర్షియన్ గల్ఫ్ ప్రవేశం; ఇచ్చిన జత సూయజ్ కాలువది.",
+      "explanation_en": "Hormuz—Persian Gulf and Gulf of Oman. Suez—Mediterranean and Red Sea. The former is a natural strait; the latter a constructed canal.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "జిబ్రాల్టర్–అట్లాంటిక్, మధ్యధరా సముద్రం",
+        "బేరింగ్–ఆర్కిటిక్, పసిఫిక్ మహాసముద్రాలు",
+        "డ్రేక్ మార్గం–దక్షిణ అమెరికా, అంటార్కిటికా మధ్య",
+        "హార్ముజ్–మధ్యధరా సముద్రం, ఎర్ర సముద్రం"
+      ],
+      "option_explanations": [
+        "ఇది సరైన సంబంధం.",
+        "బేరింగ్ ఈ రెండు మహాసముద్ర వ్యవస్థలను కలుపుతుంది.",
+        "డ్రేక్ ఆ రెండు ఖండాల మధ్య ఉంది.",
+        "హార్ముజ్ పర్షియన్ గల్ఫ్ ప్రవేశం; ఇచ్చిన జత సూయజ్ కాలువది."
+      ],
+      "excerpt": "జలసంధి (Strait) అంటే రెండు జలభాగాలను కలిపే సహజ ఇరుకైన సముద్ర మార్గం. Malacca, Indian–Pacific వాణిజ్య మార్గంలో ముఖ్యమైనది. Hormuz, Persian Gulf నుంచి Gulf of Oman వైపు ప్రవేశం; Gibraltar, Atlantic–Mediterranean మధ్య; Bering, Pacific–Arctic వ్యవస్థల మధ్య ఉంది. Drake Passage, South America–Antarctica మధ్య విస్తార సముద్ర మార్గం. నౌకాయానానికి ముఖ్యమైన ఇరుకైన ప్రవేశాన్ని సముద్ర కీలక మార్గం (సముద్ర కీలక మార్గం (Maritime chokepoint)) అంటారు.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-010","question_te":"Strait మరియు Canal మధ్య ప్రధాన తేడా ఏది?","question_en":"What is the principal distinction between a strait and a canal?",
-      "options_te":["Strait natural passage; canal artificial waterway","రెండూ artificial","రెండూ rivers","Strait land route; canal mountain"],
-      "options_en":["A strait is a natural passage; a canal is an artificial waterway","Both are artificial","Both are rivers","A strait is a land route; a canal is a mountain"],
-      "option_explanations_te":["ఇదే basic geographic distinction.","Strait సహజ passage.","రెండూ rivers కావు.","ఈ definitions రెండూ తప్పు."],
-      "option_explanations_en":["This is the basic geographic distinction.","A strait is a natural passage.","Neither category means river.","Both definitions are wrong."],
-      "answer":1,"difficulty":"easy","kind":"manual-synthesis","section":"c27-straits-p2","source_paragraph":"Canal artificial waterway; strait natural passage. Suez Canal Mediterranean–Red Seaను, Panama Canal Atlantic–Pacific systemsను కలుపుతాయి. Strait మరియు canalను ఒకే categoryగా చూపే option తప్పు.","explanation_te":"Strait సహజంగా ఏర్పడుతుంది; canal మనుషులు నిర్మించిన waterway.","explanation_en":"A strait is naturally formed; a canal is a human-built waterway.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-010",
+      "question_te": "జలసంధి (Strait), కాలువ (Canal) మధ్య ప్రధాన తేడా ఏది?",
+      "question_en": "What is the principal distinction between a strait and a canal?",
+      "options_te": [
+        "జలసంధి సహజ మార్గం; కాలువ మానవ నిర్మిత జలమార్గం",
+        "రెండూ మానవ నిర్మిత మార్గాలు",
+        "రెండూ నదులే",
+        "జలసంధి భూమార్గం; కాలువ పర్వతం"
+      ],
+      "options_en": [
+        "A strait is a natural passage; a canal is an artificial waterway",
+        "Both are artificial",
+        "Both are rivers",
+        "A strait is a land route; a canal is a mountain"
+      ],
+      "option_explanations_te": [
+        "ఏర్పడిన విధానమే ప్రధాన తేడా.",
+        "జలసంధి సహజం.",
+        "ఈ వర్గాలు నదికి పర్యాయపదాలు కావు.",
+        "రెండూ జలమార్గాలు; ఇచ్చిన నిర్వచనాలు తప్పు."
+      ],
+      "option_explanations_en": [
+        "Their origin is the principal distinction.",
+        "A strait is natural.",
+        "Neither category is synonymous with a river.",
+        "Both are waterways; these definitions are wrong."
+      ],
+      "answer": 1,
+      "difficulty": "easy",
+      "kind": "manual-synthesis",
+      "section": "c27-straits-p2",
+      "source_paragraph": "కాలువను (Canal) మనుషులు నిర్మిస్తారు; జలసంధి (Strait) సహజంగా ఏర్పడుతుంది. Suez Canal—Mediterranean, Red Sea; Panama Canal—Atlantic, Pacific వ్యవస్థలు. Canalకు రెండు పెద్ద సముద్రాలు సంబంధించవచ్చు కాబట్టి అది సహజ Straitగా మారదు. నిర్మాణ విధానం, కలిపే జలభాగాలు రెండు వేర్వేరు ప్రశ్నలు.",
+      "explanation_te": "ఏర్పడిన విధానమే ప్రధాన తేడా.",
+      "explanation_en": "Gibraltar and Hormuz are natural straits; Suez and Panama are constructed canals. Learn origin as well as connected waters.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "జలసంధి సహజ మార్గం; కాలువ మానవ నిర్మిత జలమార్గం",
+        "రెండూ మానవ నిర్మిత మార్గాలు",
+        "రెండూ నదులే",
+        "జలసంధి భూమార్గం; కాలువ పర్వతం"
+      ],
+      "option_explanations": [
+        "ఏర్పడిన విధానమే ప్రధాన తేడా.",
+        "జలసంధి సహజం.",
+        "ఈ వర్గాలు నదికి పర్యాయపదాలు కావు.",
+        "రెండూ జలమార్గాలు; ఇచ్చిన నిర్వచనాలు తప్పు."
+      ],
+      "excerpt": "కాలువను (Canal) మనుషులు నిర్మిస్తారు; జలసంధి (Strait) సహజంగా ఏర్పడుతుంది. Suez Canal—Mediterranean, Red Sea; Panama Canal—Atlantic, Pacific వ్యవస్థలు. Canalకు రెండు పెద్ద సముద్రాలు సంబంధించవచ్చు కాబట్టి అది సహజ Straitగా మారదు. నిర్మాణ విధానం, కలిపే జలభాగాలు రెండు వేర్వేరు ప్రశ్నలు.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-011","question_te":"Mediterranean climate distributionపై సరైన statement ఏది?","question_en":"Which statement about Mediterranean-climate distribution is correct?",
-      "options_te":["Mediterranean basinలో మాత్రమే ఉంటుంది","California, central Chile, Cape region, south-western Australiaలో కూడా small belts ఉన్నాయి","Equator వెంట మాత్రమే ఉంటుంది","Antarctica interiorలో dominant"],
-      "options_en":["It occurs only in the Mediterranean basin","Small belts also occur in California, central Chile, the Cape region and south-western Australia","It occurs only along the Equator","It dominates the Antarctic interior"],
-      "option_explanations_te":["పేరు origin regionను సూచించినా distribution global analogues కలిగి ఉంది.","ఇవి classic western-margin counterparts.","Equatorial climate వేరు.","Antarctica polar ice environment."],
-      "option_explanations_en":["The name indicates the type region, but analogous climates occur elsewhere.","These are classic western-margin counterparts.","Equatorial climate is different.","Antarctica has a polar ice environment."],
-      "answer":2,"difficulty":"moderate","kind":"manual-synthesis","section":"c27-climate-p1","source_paragraph":"Equatorial rainforest Amazon, Congo, South-East Asiaలో కనిపిస్తుంది; Mediterranean climate Mediterranean basinతో పాటు California, central Chile, Cape region, south-western Australiaలో చిన్న western-margin beltsగా ఉంటుంది. ఒక climate పేరు ఒకే continentకు పరిమితం కాదు.","explanation_te":"Mediterranean climateకు Mediterranean basin బయట కూడా western-margin analogues ఉన్నాయి.","explanation_en":"Mediterranean climate has western-margin analogues outside the Mediterranean basin.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-011",
+      "question_te": "మధ్యధరా వాతావరణం (Mediterranean climate) విస్తరణ గురించి సరైనది ఏది?",
+      "question_en": "Which statement about Mediterranean-climate distribution is correct?",
+      "options_te": [
+        "మధ్యధరా పరివాహక ప్రాంతంలో మాత్రమే ఉంటుంది",
+        "కాలిఫోర్నియా, మధ్య చిలీ, కేప్ ప్రాంతం, నైరుతి ఆస్ట్రేలియాలోనూ ఉంటుంది",
+        "భూమధ్యరేఖ వెంట మాత్రమే ఉంటుంది",
+        "అంటార్కిటికా అంతర్భాగంలో ప్రధానంగా ఉంటుంది"
+      ],
+      "options_en": [
+        "It occurs only in the Mediterranean basin",
+        "Small belts also occur in California, central Chile, the Cape region and south-western Australia",
+        "It occurs only along the Equator",
+        "It dominates the Antarctic interior"
+      ],
+      "option_explanations_te": [
+        "ఈ రకం ఇతర ఖండాల్లోనూ ఉంది.",
+        "ఇవి పశ్చిమ అంచుల్లోని ప్రసిద్ధ ఉదాహరణలు.",
+        "భూమధ్యరేఖ వాతావరణం వేరు.",
+        "అంటార్కిటికా అంతర్భాగం ధ్రువ మంచు వాతావరణం."
+      ],
+      "option_explanations_en": [
+        "This type also occurs on other continents.",
+        "These are classic western-margin examples.",
+        "Equatorial climate is different.",
+        "The Antarctic interior has a polar ice climate."
+      ],
+      "answer": 2,
+      "difficulty": "moderate",
+      "kind": "manual-synthesis",
+      "section": "c27-climate-p1",
+      "source_paragraph": "Equatorial rainforest, Amazon–Congo–South-East Asiaలో కనిపిస్తుంది. మధ్యధరా వాతావరణం (మధ్యధరా వాతావరణం (Mediterranean climate))లో సాధారణంగా వేసవి పొడిగా, శీతకాలం వర్షాలతో ఉంటుంది. Mediterranean basinతో పాటు California, Central Chile, South Africa Cape ప్రాంతం, South-western Australiaలో ఈ రకం కనిపిస్తుంది. వాతావరణానికి (Climate) పెట్టిన పేరు అది ఆ ఒక్క ప్రాంతంలోనే ఉంటుందని అర్థం కాదు.",
+      "explanation_te": "ఇవి పశ్చిమ అంచుల్లోని ప్రసిద్ధ ఉదాహరణలు.",
+      "explanation_en": "Mediterranean climates have dry summers and wetter winters. Regions outside the namesake basin share this seasonal pattern.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "మధ్యధరా పరివాహక ప్రాంతంలో మాత్రమే ఉంటుంది",
+        "కాలిఫోర్నియా, మధ్య చిలీ, కేప్ ప్రాంతం, నైరుతి ఆస్ట్రేలియాలోనూ ఉంటుంది",
+        "భూమధ్యరేఖ వెంట మాత్రమే ఉంటుంది",
+        "అంటార్కిటికా అంతర్భాగంలో ప్రధానంగా ఉంటుంది"
+      ],
+      "option_explanations": [
+        "ఈ రకం ఇతర ఖండాల్లోనూ ఉంది.",
+        "ఇవి పశ్చిమ అంచుల్లోని ప్రసిద్ధ ఉదాహరణలు.",
+        "భూమధ్యరేఖ వాతావరణం వేరు.",
+        "అంటార్కిటికా అంతర్భాగం ధ్రువ మంచు వాతావరణం."
+      ],
+      "excerpt": "Equatorial rainforest, Amazon–Congo–South-East Asiaలో కనిపిస్తుంది. మధ్యధరా వాతావరణం (మధ్యధరా వాతావరణం (Mediterranean climate))లో సాధారణంగా వేసవి పొడిగా, శీతకాలం వర్షాలతో ఉంటుంది. Mediterranean basinతో పాటు California, Central Chile, South Africa Cape ప్రాంతం, South-western Australiaలో ఈ రకం కనిపిస్తుంది. వాతావరణానికి (Climate) పెట్టిన పేరు అది ఆ ఒక్క ప్రాంతంలోనే ఉంటుందని అర్థం కాదు.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-012","question_te":"Tundra మరియు Antarctic ice-sheet environmentను ఒకటిగా చూడకూడదనే కారణం ఏది?","question_en":"Why should tundra and the Antarctic ice-sheet environment not be treated as identical?",
-      "options_te":["Temperature ఒక్కటే biomeను నిర్ణయించదు; moisture, soil, vegetation, season length కూడా ముఖ్యం","రెండింటిలో climate ఉండదు","Tundra tropical forest","Antarctica Equatorపై ఉంది"],
-      "options_en":["Temperature alone does not define a biome; moisture, soil, vegetation and season length also matter","Neither has climate","Tundra is tropical forest","Antarctica lies on the Equator"],
-      "option_explanations_te":["Biome అనేది multi-factor ecological classification.","రెండింటికీ climate conditions ఉన్నాయి.","Tundra tropical forest కాదు.","Antarctica high southern latitudesలో ఉంది."],
-      "option_explanations_en":["A biome is a multi-factor ecological classification.","Both have climatic conditions.","Tundra is not tropical forest.","Antarctica lies in high southern latitudes."],
-      "answer":1,"difficulty":"hard","kind":"manual-synthesis","section":"c27-climate-p2","source_paragraph":"Tundra Arctic high latitudesలో విస్తరించి ఉంటుంది; Antarctica అత్యంత చల్లగా ఉన్నప్పటికీ అక్కడి ice-sheet environmentను Arctic tundraతో పూర్తిగా సమానంగా చూడలేం. Biome classificationలో temperatureతో పాటు moisture, soil, vegetation, season length అవసరం.","explanation_te":"Biome classificationకు temperatureతో పాటు జీవావరణానికి సంబంధించిన ఇతర factors అవసరం.","explanation_en":"Biome classification requires ecological factors in addition to temperature.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-012",
+      "question_te": "టండ్రా, అంటార్కిటిక్ మంచు కవచం ఒకే జీవమండలం (Biome) ఎందుకు కావు?",
+      "question_en": "Why should tundra and the Antarctic ice-sheet environment not be treated as identical?",
+      "options_te": [
+        "ఉష్ణోగ్రతతో పాటు నీరు, నేల, వృక్షజాలం, వృద్ధికాలం కూడా ముఖ్యం",
+        "రెండింటికీ వాతావరణ పరిస్థితులు ఉండవు",
+        "టండ్రా ఉష్ణమండల అరణ్యం",
+        "అంటార్కిటికా భూమధ్యరేఖపై ఉంది"
+      ],
+      "options_en": [
+        "Temperature alone does not define a biome; moisture, soil, vegetation and season length also matter",
+        "Neither has climate",
+        "Tundra is tropical forest",
+        "Antarctica lies on the Equator"
+      ],
+      "option_explanations_te": [
+        "జీవావరణ వర్గీకరణ అనేక అంశాలపై ఆధారపడుతుంది.",
+        "రెండింటికీ వాతావరణ పరిస్థితులు ఉన్నాయి.",
+        "టండ్రా చల్లని, చెట్లు తక్కువ ప్రాంతం.",
+        "అంటార్కిటికా దక్షిణ ఉన్నత అక్షాంశాల్లో ఉంది."
+      ],
+      "option_explanations_en": [
+        "Biome classification depends on several factors.",
+        "Both have climatic conditions.",
+        "Tundra is cold and largely treeless.",
+        "Antarctica lies in high southern latitudes."
+      ],
+      "answer": 1,
+      "difficulty": "hard",
+      "kind": "manual-synthesis",
+      "section": "c27-climate-p2",
+      "source_paragraph": "Tundraలో చలి ఎక్కువగా ఉన్నా చిన్న పెరుగుదల కాలంలో Mosses, Lichens, గడ్డి, చిన్న పొదలు పెరగవచ్చు. Antarctica విస్తార Ice-sheet ప్రాంతం దీనితో సమానం కాదు. జీవమండలం (Biome) అంటే పెద్ద జీవావరణ ప్రాంతం; దాన్ని ఉష్ణోగ్రతతో (Temperature) పాటు నీటి లభ్యత, నేల, వృక్షజాలం (వృక్షజాలం (Vegetation)), పెరుగుదల కాలం కలిసి నిర్ణయిస్తాయి.",
+      "explanation_te": "జీవావరణ వర్గీకరణ అనేక అంశాలపై ఆధారపడుతుంది.",
+      "explanation_en": "Tundra can support mosses, lichens, grasses and low shrubs during a short growing season. An extensive permanent ice sheet lacks the same soil–vegetation setting.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "ఉష్ణోగ్రతతో పాటు నీరు, నేల, వృక్షజాలం, వృద్ధికాలం కూడా ముఖ్యం",
+        "రెండింటికీ వాతావరణ పరిస్థితులు ఉండవు",
+        "టండ్రా ఉష్ణమండల అరణ్యం",
+        "అంటార్కిటికా భూమధ్యరేఖపై ఉంది"
+      ],
+      "option_explanations": [
+        "జీవావరణ వర్గీకరణ అనేక అంశాలపై ఆధారపడుతుంది.",
+        "రెండింటికీ వాతావరణ పరిస్థితులు ఉన్నాయి.",
+        "టండ్రా చల్లని, చెట్లు తక్కువ ప్రాంతం.",
+        "అంటార్కిటికా దక్షిణ ఉన్నత అక్షాంశాల్లో ఉంది."
+      ],
+      "excerpt": "Tundraలో చలి ఎక్కువగా ఉన్నా చిన్న పెరుగుదల కాలంలో Mosses, Lichens, గడ్డి, చిన్న పొదలు పెరగవచ్చు. Antarctica విస్తార Ice-sheet ప్రాంతం దీనితో సమానం కాదు. జీవమండలం (Biome) అంటే పెద్ద జీవావరణ ప్రాంతం; దాన్ని ఉష్ణోగ్రతతో (Temperature) పాటు నీటి లభ్యత, నేల, వృక్షజాలం (వృక్షజాలం (Vegetation)), పెరుగుదల కాలం కలిసి నిర్ణయిస్తాయి.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-013","question_te":"Dynamic factను ప్రశ్నలో ఎలా handle చేయాలి?","question_en":"How should a dynamic fact be handled in an exam question?",
-      "options_te":["Population rankingను year లేకుండా permanent factగా తీసుకోవాలి","Population ranking లేదా political nameను year/contextతో చూడాలి","Location facts అన్నీ daily మారతాయి","Absolute word కనిపిస్తే వెంటనే correct అనాలి"],
-      "options_en":["Treat a population ranking as permanent without a year","Read a population ranking or political name with its year and context","All location facts change daily","Mark every absolute word correct immediately"],
-      "option_explanations_te":["Population ranks కాలంతో మారవచ్చు.","Dynamic factsకు date/context అవసరం.","Core physical locations daily మారవు.","Only/always వంటి wordsను మరింత జాగ్రత్తగా పరీక్షించాలి."],
-      "option_explanations_en":["Population ranks can change through time.","Dynamic facts require a date and context.","Core physical locations do not change daily.","Words such as only and always require extra scrutiny."],
-      "answer":2,"difficulty":"moderate","kind":"manual-synthesis","section":"c27-exam-method-p1","source_paragraph":"Statement questionలో ముందుగా fixed factsను గుర్తించాలి: location, connection, source–mouth, mountain–continent pairing. తరువాత కాలంతో మారే population ranking లేదా political name వంటి dynamic factsను yearతో చూడాలి. Absolute words—only, always, entirely—ఉంటే ప్రత్యేకంగా పరీక్షించాలి.","explanation_te":"Population rank, political name వంటి dynamic factsను date/context లేకుండా permanent truthగా చూడకూడదు.","explanation_en":"Dynamic facts such as population rank and political name should not be treated as timeless truths without date and context.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-013",
+      "question_te": "కాలంతో మారే సమాచారాన్ని పరీక్షా ప్రశ్నలో ఎలా ఉపయోగించాలి?",
+      "question_en": "How should a dynamic fact be handled in an exam question?",
+      "options_te": [
+        "జనాభా ర్యాంకును సంవత్సరం లేకుండా శాశ్వత నిజంగా భావించాలి",
+        "జనాభా ర్యాంకు, రాజకీయ పేరును సంవత్సరం, సందర్భంతో చూడాలి",
+        "భౌతిక స్థానాలన్నీ రోజూ మారతాయి",
+        "“ఎల్లప్పుడూ” అనే పదం ఉంటే వెంటనే సరైనదని గుర్తించాలి"
+      ],
+      "options_en": [
+        "Treat a population ranking as permanent without a year",
+        "Read a population ranking or political name with its year and context",
+        "All location facts change daily",
+        "Mark every absolute word correct immediately"
+      ],
+      "option_explanations_te": [
+        "ర్యాంకులు కాలంతో మారవచ్చు.",
+        "మూలం, తేదీ సరైన అర్థానికి అవసరం.",
+        "ప్రధాన భౌతిక స్థానాలు రోజూ మారవు.",
+        "పదాన్ని కాక వాక్యపు నిజానిజాలను పరీక్షించాలి."
+      ],
+      "option_explanations_en": [
+        "Rankings can change over time.",
+        "Source and date establish the intended meaning.",
+        "Core physical locations do not change daily.",
+        "Test the claim rather than accepting a word automatically."
+      ],
+      "answer": 2,
+      "difficulty": "moderate",
+      "kind": "manual-synthesis",
+      "section": "c27-exam-method-p1",
+      "source_paragraph": "ప్రశ్నలో స్థానం, నది మూలం–ముఖద్వారం (మూలం–ముఖద్వారం (Source–Mouth)), పర్వతం–ఖండం వంటి సంబంధాలను ముందుగా పరిశీలించండి. జనాభా ర్యాంకు (జనాభా ర్యాంకు (Population rank)), అధికారిక రాజకీయ పేరు వంటి విషయాలకు సంవత్సరం, సందర్భం చూడాలి. Only, Always, Entirely వంటి పదాలు ఉంటే మినహాయింపు ఉందా అని పరీక్షించాలి; అలాంటి పదం ఉందనే కారణంతోనే వాక్యాన్ని తప్పు అనకూడదు.",
+      "explanation_te": "మూలం, తేదీ సరైన అర్థానికి అవసరం.",
+      "explanation_en": "Check the year and geographical scope of a ranking. Scrutinise always or only for exceptions, but not every absolute statement is false.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "జనాభా ర్యాంకును సంవత్సరం లేకుండా శాశ్వత నిజంగా భావించాలి",
+        "జనాభా ర్యాంకు, రాజకీయ పేరును సంవత్సరం, సందర్భంతో చూడాలి",
+        "భౌతిక స్థానాలన్నీ రోజూ మారతాయి",
+        "“ఎల్లప్పుడూ” అనే పదం ఉంటే వెంటనే సరైనదని గుర్తించాలి"
+      ],
+      "option_explanations": [
+        "ర్యాంకులు కాలంతో మారవచ్చు.",
+        "మూలం, తేదీ సరైన అర్థానికి అవసరం.",
+        "ప్రధాన భౌతిక స్థానాలు రోజూ మారవు.",
+        "పదాన్ని కాక వాక్యపు నిజానిజాలను పరీక్షించాలి."
+      ],
+      "excerpt": "ప్రశ్నలో స్థానం, నది మూలం–ముఖద్వారం (మూలం–ముఖద్వారం (Source–Mouth)), పర్వతం–ఖండం వంటి సంబంధాలను ముందుగా పరిశీలించండి. జనాభా ర్యాంకు (జనాభా ర్యాంకు (Population rank)), అధికారిక రాజకీయ పేరు వంటి విషయాలకు సంవత్సరం, సందర్భం చూడాలి. Only, Always, Entirely వంటి పదాలు ఉంటే మినహాయింపు ఉందా అని పరీక్షించాలి; అలాంటి పదం ఉందనే కారణంతోనే వాక్యాన్ని తప్పు అనకూడదు.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     },
     {
-      "id":"WG27-SYN-014","question_te":"Matching-set MCQలో ఉత్తమ పద్ధతి ఏది?","question_en":"What is the best method for solving a matching-set MCQ?",
-      "options_te":["మొదటి తెలిసిన pair సరైతే మొత్తం option ఎంచుకోవడం","ప్రతి pairను విడిగా verify చేసి, direction sequenceను mapపై ఉంచడం","Longest optionను ఎంచుకోవడం","అన్ని pairsను ఒకే continentగా భావించడం"],
-      "options_en":["Choose the whole option if the first familiar pair is correct","Verify each pair independently and place directional sequences on a mental map","Choose the longest option","Assume all pairs belong to one continent"],
-      "option_explanations_te":["ఒక pair సరైనదైనా మిగిలినవి తప్పు కావచ్చు.","ఇది partial familiarity trapను నివారిస్తుంది.","Option length correctnessను నిర్ణయించదు.","Pairs వేర్వేరు continentsకు చెందవచ్చు."],
-      "option_explanations_en":["Other pairs may be wrong even if one pair is right.","This avoids the partial-familiarity trap.","Option length does not determine correctness.","Pairs may belong to different continents."],
-      "answer":2,"difficulty":"moderate","kind":"manual-synthesis","section":"c27-exam-method-p2","source_paragraph":"Matching questionలో ప్రతి pairను స్వతంత్రంగా verify చేయాలి. ఒక తెలిసిన సరైన pair చూసి మొత్తం optionను ఎంచుకోకూడదు. Map sequence questionలో west–east లేదా north–south directionను ముందుగా నిర్ణయించి, ప్రతి featureను mental mapపై ఉంచాలి.","explanation_te":"ప్రతి pairకు independent check చేసి, directional orderను mental mapతో పరీక్షించాలి.","explanation_en":"Check every pair independently and test directional order on a mental map.","language":"bilingual","manual_review_status":"manually-authored-2026-10-27","related_sections":[]
+      "id": "WG27-SYN-014",
+      "question_te": "జతపరచే ప్రశ్న (Matching-set MCQ)ను పరిష్కరించడానికి ఉత్తమ పద్ధతి ఏది?",
+      "question_en": "What is the best method for solving a matching-set MCQ?",
+      "options_te": [
+        "మొదటి తెలిసిన జత సరైతే మొత్తం జవాబు ఎంచుకోవడం",
+        "ప్రతి జతను విడిగా పరీక్షించి, దిశా క్రమాన్ని పటంతో సరిపోల్చడం",
+        "అతి పొడవైన జవాబును ఎంచుకోవడం",
+        "అన్ని జతలూ ఒకే ఖండానికి చెందినవని భావించడం"
+      ],
+      "options_en": [
+        "Choose the whole option if the first familiar pair is correct",
+        "Verify each pair independently and place directional sequences on a mental map",
+        "Choose the longest option",
+        "Assume all pairs belong to one continent"
+      ],
+      "option_explanations_te": [
+        "మిగిలిన జతల్లో తప్పు ఉండవచ్చు.",
+        "ఇది ఒక్క పరిచయమైన జత ఆధారంగా చేసే పొరపాటును నివారిస్తుంది.",
+        "జవాబు పొడవు నిజాన్ని నిర్ణయించదు.",
+        "జతలు వేర్వేరు ఖండాలకు చెందవచ్చు."
+      ],
+      "option_explanations_en": [
+        "Other pairs may still be wrong.",
+        "This avoids relying on one familiar pair.",
+        "Option length does not establish truth.",
+        "Pairs can concern different continents."
+      ],
+      "answer": 2,
+      "difficulty": "moderate",
+      "kind": "manual-synthesis",
+      "section": "c27-exam-method-p2",
+      "source_paragraph": "జతపరచే ప్రశ్నలో (Matching) ప్రతి జతను విడిగా పరీక్షించండి. మొదటి తెలిసిన జత సరైనదని మొత్తం ఎంపికను (Option) ఎంచుకోకండి. దిశా క్రమంలో (Direction sequence) మొదట West–East లేదా North–South దిశను నిర్ణయించి, ప్రతి ప్రదేశాన్ని పటంలో ఉంచండి. ఉదాహరణకు Baltic States ఉత్తరం నుంచి దక్షిణానికి Estonia → Latvia → Lithuania.",
+      "explanation_te": "ఇది ఒక్క పరిచయమైన జత ఆధారంగా చేసే పొరపాటును నివారిస్తుంది.",
+      "explanation_en": "Check country, continent and direction independently. For example, the Baltic north–south sequence is Estonia → Latvia → Lithuania.",
+      "language": "bilingual",
+      "manual_review_status": "manually-authored-2026-10-27",
+      "related_sections": [],
+      "editorial_review_20261030": "manually-rewritten",
+      "options": [
+        "మొదటి తెలిసిన జత సరైతే మొత్తం జవాబు ఎంచుకోవడం",
+        "ప్రతి జతను విడిగా పరీక్షించి, దిశా క్రమాన్ని పటంతో సరిపోల్చడం",
+        "అతి పొడవైన జవాబును ఎంచుకోవడం",
+        "అన్ని జతలూ ఒకే ఖండానికి చెందినవని భావించడం"
+      ],
+      "option_explanations": [
+        "మిగిలిన జతల్లో తప్పు ఉండవచ్చు.",
+        "ఇది ఒక్క పరిచయమైన జత ఆధారంగా చేసే పొరపాటును నివారిస్తుంది.",
+        "జవాబు పొడవు నిజాన్ని నిర్ణయించదు.",
+        "జతలు వేర్వేరు ఖండాలకు చెందవచ్చు."
+      ],
+      "excerpt": "జతపరచే ప్రశ్నలో (Matching) ప్రతి జతను విడిగా పరీక్షించండి. మొదటి తెలిసిన జత సరైనదని మొత్తం ఎంపికను (Option) ఎంచుకోకండి. దిశా క్రమంలో (Direction sequence) మొదట West–East లేదా North–South దిశను నిర్ణయించి, ప్రతి ప్రదేశాన్ని పటంలో ఉంచండి. ఉదాహరణకు Baltic States ఉత్తరం నుంచి దక్షిణానికి Estonia → Latvia → Lithuania.",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/longitude.html",
+        "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html",
+        "https://www.usgs.gov/water-science-school/science/rivers-world-worlds-longest-rivers",
+        "https://www.cia.gov/the-world-factbook/static/85b92bd2a64df85e9b701a6e169c97ca/world_oceans_03032025.pdf"
+      ],
+      "reviewed_on": "2026-10-31"
     }
   ]
 }

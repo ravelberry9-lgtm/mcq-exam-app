@@ -22,6 +22,14 @@ def _question_language():
     return value
 
 
+def _context_heading(value, language):
+    """Avoid repeating a chapter/unit title in every question's context card."""
+    heading=(value or '').strip()
+    if re.match(r'^(?:యూనిట్|పాఠం|unit|lesson|chapter)\s*\d+\b',heading,re.IGNORECASE):
+        return 'సంబంధిత భావ వివరణ' if language=='te' else 'Related concept explanation'
+    return heading or ('పాఠంలోని సంబంధిత అంశం' if language=='te' else 'Related chapter section')
+
+
 def _bilingual_page(q,filters,result,choice,position,total,previous,following,mode,chapter_url,related_urls=(),record=None):
     lang=filters.get('qlang','te');historical=record is not None
     cid=q.get('chapter','03')
@@ -32,10 +40,12 @@ def _bilingual_page(q,filters,result,choice,position,total,previous,following,mo
         entry={'section':q['section'],'held':False,'variants':{
             'te':{'question':q['question_te'],'options':q['options_te'],'explanation':q['explanation_te'],
                   'option_explanations':q.get('option_explanations_te',q['option_explanations']),
-                  'heading':q.get('heading','పాఠంలోని సంబంధిత అంశం'),'chapter_excerpt':q['source_paragraph']},
+                  'matching_lists':q.get('matching_lists_te') or q.get('matching_lists'),
+                  'heading':_context_heading(q.get('heading'), 'te'),'chapter_excerpt':q['source_paragraph']},
             'en':{'question':q['question_en'],'options':q['options_en'],'explanation':q['explanation_en'],
                   'option_explanations':q.get('option_explanations_en',[q['explanation_en']]*4),
-                  'heading':f"Printed page {q.get('source_page','')} · Landform concept",
+                  'matching_lists':q.get('matching_lists_en') or q.get('matching_lists'),
+                  'heading':_context_heading(q.get('heading_en'), 'en'),
                   'chapter_excerpt':q['explanation_en']}}}
     else:
         entry=bilingual.payload()['historical' if historical else 'original'][q['id']]

@@ -27,6 +27,9 @@ def _load(path,stamp,pin,bookpath,bookstamp,bankpath,bankstamp,asset_stamps):
  for vid,v in d['visuals'].items():
   p=Path(bookpath).parents[3]/v['file'];fig=soup.find(id=vid)
   if hashlib.sha256(p.read_bytes()).hexdigest()!=v['sha256'] or not fig or not soup.find(id=v['section']):raise ValueError('Visual fingerprint or anchor mismatch')
+  if v.get('question_file'):
+   question_path=Path(bookpath).parents[3]/v['question_file']
+   if hashlib.sha256(question_path.read_bytes()).hexdigest()!=v.get('question_sha256'):raise ValueError('Question visual fingerprint mismatch')
  return d
 
 def payload(chapter_id="01"):
