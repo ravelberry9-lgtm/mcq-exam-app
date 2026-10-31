@@ -108,6 +108,10 @@ def records():
         item["review"] = reviews.get(record["source"]["id"])
         if record["must_disable_scoring"] and approved_review(record):
             item["must_disable_scoring"] = False
+        # A teaching-only restriction remains effective independently of the
+        # archived eligibility flag and the original set of 244 holds.
+        if str(record.get("source_policy", "")).startswith("teaching_only_until_"):
+            item["must_disable_scoring"] = True
         result.append(item)
     return result
 
@@ -138,6 +142,8 @@ def options(record):
 
 def accepted_options(record):
     """Use explicit option numbers only; conflicting or incomplete keys fail closed."""
+    if str(record.get("source_policy", "")).startswith("teaching_only_until_"):
+        return ()
     source = record["source"]
     reviewed = approved_review(record)
     if reviewed:
