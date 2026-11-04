@@ -3,6 +3,7 @@ Run: uvicorn voice_service.server:app --host 0.0.0.0 --port $PORT"""
 import asyncio
 import base64
 import json
+import logging
 import os
 import re
 import random
@@ -97,6 +98,9 @@ async def api_ask(body: AskIn, dev: str = Depends(device)):
         try:
             async for kind, val in ask(STATE["index"], body.text, clean_history(body.history), body.subject):
                 yield {"event": kind, "data": json.dumps(val, ensure_ascii=False)}
+        except Exception as e:
+            logging.getLogger("voice").error("ask failed: %s: %s", type(e).__name__, str(e)[:400])
+            yield {"event": "error", "data": json.dumps({"code": "internal", "detail": type(e).__name__})}
         finally:
             ledger.add(STATE["engine"], dev, LLM_USD_PER_CALL)
         yield {"event": "done", "data": json.dumps({"ms": int((time.time() - t0) * 1000)})}
@@ -263,6 +267,7 @@ async def voice_turn(audio: UploadFile = File(...), lang: str = Form("te"), dev:
                         yield _ev("sentence", {"text": t, "audio": await tk})
                 yield _ev("done", {})
             except Exception as e:
+                logging.getLogger("voice").error("turn failed: %s: %s", type(e).__name__, str(e)[:400])
                 yield _ev("error", {"code": "internal", "detail": type(e).__name__})
                 yield _ev("sentence", {"text": MSG[lang]["fail"], "audio": None})
                 yield _ev("done", {})
