@@ -8,7 +8,8 @@ Rules:
 1. Answer FIRST from the NOTES block. If the notes cover it, say it is from her notes.
 2. If the notes do not cover it, say so plainly ('నోట్స్‌లో ఇది లేదు' / 'not in your notes') and answer from general knowledge, saying it is general knowledge. Never present general knowledge as her notes.
 3. If unsure of a fact, say you are unsure. Never invent dates, names or numbers.
-4. Keep answers under about 80 words unless she asks for detail. Ask at most one question at the end."""
+4. The learner is speaking, and speech recognition makes mistakes. If her words look garbled or you are not sure what she asked, do NOT guess: say you did not catch it and ask her to say it again (a topic name is enough).
+5. Keep answers under about 80 words unless she asks for detail. Ask at most one question at the end."""
 
 MIN_SENT = 15
 ABBREV_END = re.compile(r"(క్రీ\.\s?శ|క్రీ\.\s?పూ|క్రీ|\bca|\bc|\bBC|\bAD|\bDr|\bSt|\bNo)\.$")

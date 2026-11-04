@@ -12,6 +12,19 @@ import httpx
 
 PROVIDER_TIMEOUT = 20
 GRACE_S = float(os.environ.get("STT_GRACE_S", "0.7"))
+def build_vocab(chunks, limit=80):
+    """Distinctive study words (names, places, topics from chapter titles) so recognizers spell them right.
+    Words that appear in many chapters are generic and are skipped."""
+    import re
+    from collections import defaultdict
+    chapters = defaultdict(set)
+    for c in chunks:
+        for w in re.findall(r"[\u0c00-\u0c7f]{5,}", c.chapter_title_te or ""):
+            chapters[w].add(c.chapter_id)
+    rare = [(len(ids), -len(w), w) for w, ids in chapters.items() if len(ids) <= 2]
+    return [w for _, _, w in sorted(rare)][:limit]
+
+
 VOCAB = [l.strip() for l in os.environ.get("STT_VOCAB", "").split("|") if l.strip()]
 
 

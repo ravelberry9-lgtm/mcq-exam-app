@@ -46,6 +46,8 @@ SESSIONS: dict = {}  # device_id -> {"q": current question, "lang": "te"}
 async def lifespan(_):
     STATE["engine"] = create_engine(DB_URL, pool_pre_ping=True)
     STATE["index"] = NotesIndex(make_chunks(load_note_rows(STATE["engine"])))
+    if not stt.VOCAB:
+        stt.VOCAB = stt.build_vocab(STATE["index"].chunks)
     ledger.init(STATE["engine"])
     yield
 
@@ -217,6 +219,8 @@ async def voice_turn(audio: UploadFile = File(...), lang: str = Form("te"), dev:
                     yield _ev("done", {}); return
                 keep = set(turnlib.usable([h["text"] for h in heard]))
                 heard = [h for h in heard if h["text"] in keep]
+                best = turnlib.best_for_search([h["text"] for h in heard])
+                heard.sort(key=lambda h: h["text"] != best)  # best transcript first: it is the one shown and searched
                 texts = [h["text"] for h in heard]
                 if any(TELUGU.search(t) for t in texts): lang_ = "te"
                 else: lang_ = "en" if lang == "te" and not TELUGU.search(" ".join(texts)) and len(" ".join(texts).split()) > 2 else lang
