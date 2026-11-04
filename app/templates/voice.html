@@ -29,7 +29,7 @@ const ORIGIN={{ voice_origin|tojson }};
 const $=id=>document.getElementById(id), log=$('log'), st=$('st'), talk=$('talk');
 let token=null, tokenAt=0, ctx=null, stream=null, node=null, chunks=[], recording=false, busy=false, player=null, queue=[];
 function add(t,cls,src){const d=document.createElement('div');d.className='m '+(cls||'');d.textContent=t;if(src){const s=document.createElement('div');s.className='src';s.textContent=src;d.appendChild(s)}log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
-async function getToken(){if(token&&Date.now()-tokenAt<45*60e3)return token;const r=await fetch('/voice/token',{method:'POST',credentials:'same-origin'});if(!r.ok)throw new Error('token');token=(await r.json()).token;tokenAt=Date.now();return token}
+async function getToken(){if(token&&Date.now()-tokenAt<45*60e3)return token;const r=await fetch('/voice/token',{credentials:'same-origin',cache:'no-store'});if(!r.ok)throw new Error('token');token=(await r.json()).token;tokenAt=Date.now();return token}
 function wavFrom(f32){const n=f32.length,b=new ArrayBuffer(44+n*2),v=new DataView(b);const w=(o,s)=>{for(let i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i))};
 w(0,'RIFF');v.setUint32(4,36+n*2,true);w(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,16000,true);v.setUint32(28,32000,true);v.setUint16(32,2,true);v.setUint16(34,16,true);w(36,'data');v.setUint32(40,n*2,true);
 for(let i=0;i<n;i++){const s=Math.max(-1,Math.min(1,f32[i]));v.setInt16(44+i*2,s<0?s*0x8000:s*0x7fff,true)}return new Blob([b],{type:'audio/wav'})}
