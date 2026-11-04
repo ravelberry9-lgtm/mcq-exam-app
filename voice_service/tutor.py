@@ -16,9 +16,13 @@ ABBREV_END = re.compile(r"(క్రీ\.\s?శ|క్రీ\.\s?పూ|క్�
 SENT_END = re.compile(r"(?<=[.!?।])\s+")
 
 
-def build_prompt(question: str, hits):
+def build_prompt(question: str, hits, weak=False):
     if hits:
         notes = "\n\n".join(f"[{c.chapter_title_te or c.chapter_title_en} · {c.heading}]\n{c.text}" for c, _ in hits)
+        if weak:
+            notes = ("(These notes are only a weak match. Her words may be a misheard spelling of a term in them. "
+                     "If one of the terms below sounds like what she said, ask 'Did you mean <term>?' and wait. "
+                     "Otherwise treat the notes as not covering her question.)\n\n" + notes)
     else:
         notes = "(no matching notes found)"
     return f"NOTES:\n{notes}\n\nLEARNER: {question}"
@@ -37,8 +41,9 @@ async def ask(index, question, history=None, subject="ap_history", llm=stream_ch
     hits = index.search(search_text or question, k=3, subject=subject)
     label = source_label(hits)
     yield "meta", label
-    use = hits if label["source"] == "notes" else []
-    msgs = (history or [])[-6:] + [{"role": "user", "content": build_prompt(question, use)}]
+    strong = label["source"] == "notes"
+    use = hits if strong else hits[:2]
+    msgs = (history or [])[-6:] + [{"role": "user", "content": build_prompt(question, use, weak=not strong)}]
     buf = ""
     async for d in llm(SYSTEM, msgs):
         buf += d

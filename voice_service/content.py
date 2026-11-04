@@ -22,6 +22,22 @@ def norm(s: str) -> str:
     return s.replace("‌", "").replace("‍", "")
 
 
+_FOLD = str.maketrans({
+    "శ": "స", "ష": "స",
+    "ఖ": "గ", "ఘ": "గ", "క": "గ", "ఛ": "జ", "ఝ": "జ", "చ": "జ", "ఠ": "డ", "ఢ": "డ", "ట": "డ",
+    "థ": "ద", "ధ": "ద", "త": "ద", "ఫ": "బ", "భ": "బ", "ప": "బ",
+    "ఆ": "అ", "ఈ": "ఇ", "ఊ": "ఉ", "ఏ": "ఎ", "ఓ": "ఒ", "ఐ": "ఎ", "ఔ": "ఒ",
+    "ా": "", "ీ": "ి", "ూ": "ు", "ే": "ె", "ో": "ొ", "ై": "ె", "ౌ": "ొ",
+    "ఁ": "ం", "ః": "",
+})
+
+
+def fold(w: str) -> str:
+    """Sound-alike form of a Telugu word. Speech recognizers confuse శ/స, త/ద, క/గ and long/short vowels, so the
+    search compares words after this folding. Only used for search features, never shown."""
+    return w.translate(_FOLD)
+
+
 def words(s: str) -> list[str]:
     return WORD.findall(norm(s))
 
@@ -102,7 +118,7 @@ class NotesIndex:
         self.inv: dict[str, list[tuple[int, int]]] = defaultdict(list)
         self.len = []
         for i, c in enumerate(chunks):
-            cnt = Counter(f for w in words(c.heading + " " + c.text) for f in features(w, ngram))
+            cnt = Counter(f for w in words(c.heading + " " + c.text) for f in features(fold(w), ngram))
             self.len.append(sum(cnt.values()))
             for f, t in cnt.items():
                 self.inv[f].append((i, t))
@@ -110,7 +126,7 @@ class NotesIndex:
         self.N = len(chunks)
 
     def search(self, query: str, k: int = 4, subject: str | None = None, chapter_id: int | None = None):
-        qf = Counter(f for w in words(query) for f in features(w, self.n))
+        qf = Counter(f for w in words(query) for f in features(fold(w), self.n))
         scores: dict[int, float] = defaultdict(float)
         for f, qt in qf.items():
             post = self.inv.get(f)

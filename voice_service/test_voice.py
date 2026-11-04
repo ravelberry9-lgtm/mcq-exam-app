@@ -144,3 +144,25 @@ def test_telugu_only_question_is_gradable_even_if_english_requested(env):
     te_only = {"question_te": "ప్రశ్న", "options_te": {"a": "x"}, "question_en": "", "options_en": {}}
     en_only = {"question_te": "", "options_te": {}, "question_en": "Q", "options_en": {"a": "x"}}
     assert pick_lang(te_only, "en") == "te" and pick_lang(en_only, "te") == "en"
+
+
+def test_wrong_script_transcript_is_dropped_and_search_uses_clean_text():
+    import turn
+    t = ["मुलांनीही इतिहास वाचला पाहिजे.", "శాతవాహనులు ఎవరు", "Satavahanas evaru"]
+    assert turn.usable(t) == ["శాతవాహనులు ఎవరు", "Satavahanas evaru"]
+    assert turn.best_for_search(turn.usable(t)) == "శాతవాహనులు ఎవరు"
+    assert turn.usable(["मुलांनीही"]) == ["मुलांनीही"]  # never end up with nothing
+
+
+def test_search_survives_sound_alike_misspellings():
+    from content import NotesIndex, Chunk
+    def mk(i, title, text):
+        return Chunk(id=i, subject="ap_history", chapter_id=i, chapter_num=i, chapter_title_te=title, chapter_title_en="",
+                     section_num=1, heading=title, text=text)
+    idx = NotesIndex([
+        mk(1, "శాతవాహన రాజవంశం", "శాతవాహనులు క్రీ.పూ. రెండవ శతాబ్దంలో పైఠాన్ రాజధానిగా పాలించారు. గౌతమీపుత్ర శాతకర్ణి ప్రసిద్ధుడు."),
+        mk(2, "ఇక్ష్వాకులు (విజయపురి)", "ఇక్ష్వాకులు నాగార్జునకొండ ప్రాంతంలో విజయపురి రాజధానిగా పాలించారు."),
+        mk(3, "రామారావు ప్రభుత్వం రద్దు", "ఆగస్టు 1984లో గవర్నర్ రామ్‌లాల్ ప్రభుత్వాన్ని రద్దు చేశారు."),
+    ])
+    for q in ["సేదవాహనులు", "సేదవాహని", "శాతవాహనులు ఎవరు", "సతవాహనులు"]:
+        assert idx.search(q, k=1)[0][0].chapter_id == 1, q
