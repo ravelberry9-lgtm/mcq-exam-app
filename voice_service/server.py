@@ -215,6 +215,8 @@ async def voice_turn(audio: UploadFile = File(...), lang: str = Form("te"), dev:
                     yield _ev("error", {"code": "stt", "providers": sorted(errs)})
                     yield _ev("sentence", {"text": MSG[lang]["stt"], "audio": await _speak(MSG[lang]["stt"], spend)})
                     yield _ev("done", {}); return
+                keep = set(turnlib.usable([h["text"] for h in heard]))
+                heard = [h for h in heard if h["text"] in keep]
                 texts = [h["text"] for h in heard]
                 if any(TELUGU.search(t) for t in texts): lang_ = "te"
                 else: lang_ = "en" if lang == "te" and not TELUGU.search(" ".join(texts)) and len(" ".join(texts).split()) > 2 else lang
@@ -255,7 +257,7 @@ async def voice_turn(audio: UploadFile = File(...), lang: str = Form("te"), dev:
                         msg = "సరిగ్గా అర్థం కాలేదు. A, B, C, D లో ఏది?" if sess["lang"] == "te" else "Sorry, which option: A, B, C or D?"
                         yield _ev("sentence", {"text": msg, "audio": await _speak(msg, spend)}); yield _ev("done", {}); return
                     tasks = []
-                    async for kind_, val in ask(STATE["index"], turnlib.merged_for_llm(texts)):
+                    async for kind_, val in ask(STATE["index"], turnlib.merged_for_llm(texts), search_text=turnlib.best_for_search(texts)):
                         if kind_ == "meta":
                             yield _ev("meta", val)
                         else:

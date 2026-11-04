@@ -30,3 +30,24 @@ def merged_for_llm(transcripts):
     lines = "\n".join(f"- {t}" for t in transcripts)
     return ("(Several speech recognizers heard the learner differently. Use the version that makes sense, "
             "or ask her to repeat if they conflict on something that matters.)\n" + lines)
+
+
+def _script_ok(t):
+    """True if the text is (almost) all Telugu or Latin letters. A recognizer that heard Hindi/Marathi/etc. is wrong for this learner."""
+    letters = [ch for ch in t if ch.isalpha()]
+    if not letters:
+        return False
+    good = sum(1 for ch in letters if "\u0c00" <= ch <= "\u0c7f" or ch.isascii())
+    return good / len(letters) >= 0.8
+
+
+def usable(transcripts):
+    ok = [t for t in transcripts if _script_ok(t)]
+    return ok or transcripts
+
+
+def best_for_search(transcripts):
+    """One clean transcript for notes search: prefer the one with most Telugu letters, then the longest."""
+    def score(t):
+        return (sum("\u0c00" <= ch <= "\u0c7f" for ch in t), len(t))
+    return max(transcripts, key=score)

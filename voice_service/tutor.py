@@ -23,7 +23,7 @@ def build_prompt(question: str, hits):
     return f"NOTES:\n{notes}\n\nLEARNER: {question}"
 
 
-def source_label(hits, min_score=8.0):
+def source_label(hits, min_score=15.0):
     """Honest label for the UI/voice: notes only if the best hit is strong enough."""
     if hits and hits[0][1] >= min_score:
         c = hits[0][0]
@@ -31,9 +31,9 @@ def source_label(hits, min_score=8.0):
     return {"source": "general", "chapter": None, "section": None}
 
 
-async def ask(index, question, history=None, subject="ap_history", llm=stream_chat):
+async def ask(index, question, history=None, subject="ap_history", llm=stream_chat, search_text=None):
     """Yield ('meta', label) then ('sentence', text) items, sentence-by-sentence so TTS can start early."""
-    hits = index.search(question, k=3, subject=subject)
+    hits = index.search(search_text or question, k=3, subject=subject)
     label = source_label(hits)
     yield "meta", label
     use = hits if label["source"] == "notes" else []
