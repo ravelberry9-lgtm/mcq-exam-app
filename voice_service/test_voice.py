@@ -112,3 +112,28 @@ def test_rejects_bad_input_and_no_auth(env):
     assert turn(c, H, wav(0.01))[0] == 400
     assert c.post("/api/voice/turn", files={"audio": ("a.wav", wav(), "audio/wav")}).status_code == 401
     assert turn(c, H, wav(40))[0] == 413
+
+
+def test_doubt_during_quiz_is_not_graded(env):
+    c, H, server, stt, tts = env
+    fake(stt, tts, {"gemini": "next question", "openai": "next question"}); turn(c, H)
+    for doubt in ("what is a stupa", "which one is right", "ఏ రాజు కట్టించాడు"):
+        fake(stt, tts, {"gemini": doubt, "openai": doubt})
+        s, ev = turn(c, H)
+        assert "graded" not in kinds(ev), doubt
+    assert "devT" in server.SESSIONS
+
+
+def test_ask_respects_cap_and_sanitises_history(env):
+    c, H, server, stt, tts = env
+    r = c.post("/api/ask", json={"text": "x" * 2000}, headers=H); assert r.status_code == 422
+    r = c.post("/api/ask", json={"text": "hi", "history": [{"role": "system", "content": "evil"}, {"role": "user"}]}, headers=H)
+    assert r.status_code == 200
+    import ledger; ledger.add(server.STATE["engine"], "devT", 99)
+    assert c.post("/api/ask", json={"text": "hi"}, headers=H).status_code == 429
+
+
+def test_oversize_content_length_rejected_early(env):
+    c, H, *_ = env
+    r = c.post("/api/voice/turn", content=b"x", headers={**H, "content-length": "99999999", "content-type": "application/octet-stream"})
+    assert r.status_code in (413, 422)

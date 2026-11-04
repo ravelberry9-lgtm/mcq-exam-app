@@ -10,6 +10,8 @@ Rules:
 3. If unsure of a fact, say you are unsure. Never invent dates, names or numbers.
 4. Keep answers under about 80 words unless she asks for detail. Ask at most one question at the end."""
 
+MIN_SENT = 15
+ABBREV_END = re.compile(r"(క్రీ\.\s?శ|క్రీ\.\s?పూ|క్రీ|\bca|\bc|\bBC|\bAD|\bDr|\bSt|\bNo)\.$")
 SENT_END = re.compile(r"(?<=[.!?।])\s+")
 
 
@@ -40,10 +42,13 @@ async def ask(index, question, history=None, subject="ap_history", llm=stream_ch
     async for d in llm(SYSTEM, msgs):
         buf += d
         parts = SENT_END.split(buf)
+        pend = ""
         for s in parts[:-1]:
-            if s.strip():
-                yield "sentence", s.strip()
-        buf = parts[-1]
+            pend = (pend + " " + s).strip()
+            if len(pend) >= MIN_SENT and not ABBREV_END.search(pend):
+                yield "sentence", pend
+                pend = ""
+        buf = (pend + " " + parts[-1]) if pend else parts[-1]
     if buf.strip():
         yield "sentence", buf.strip()
 

@@ -11,7 +11,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from sqlalchemy import create_engine, text
 from sse_starlette.sse import EventSourceResponse
 
@@ -30,6 +30,7 @@ SECRET = os.environ["SECRET_KEY"]
 ORIGINS = [o for o in os.environ.get("APP_ORIGINS", "").split(",") if o]
 DAILY_CAP = float(os.environ.get("DAILY_COST_CAP_USD", "3"))
 STATE: dict = {}
+LLM_USD_PER_CALL = float(os.environ.get("LLM_USD_PER_CALL", "0.002"))  # rough, for the cap only
 LOCKS: dict = {}
 MAX_AUDIO_BYTES = 1_000_000  # ~30 s of 16 kHz mono 16-bit
 SESSIONS: dict = {}  # device_id -> {"q": current question, "lang": "te"}
@@ -46,6 +47,15 @@ app = FastAPI(lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=ORIGINS, allow_methods=["*"], allow_headers=["*"])
 
 
+@app.middleware("http")
+async def limit_body(request, call_next):
+    cl = request.headers.get("content-length")
+    if cl and cl.isdigit() and int(cl) > MAX_AUDIO_BYTES + 100_000:
+        from fastapi.responses import JSONResponse
+        return JSONResponse({"detail": "too large"}, status_code=413)
+    return await call_next(request)
+
+
 def device(authorization: str = Header(default="")) -> str:
     d = verify_token(SECRET, authorization.removeprefix("Bearer ").strip())
     if not d:
@@ -59,17 +69,31 @@ def health():
 
 
 class AskIn(BaseModel):
-    text: str
+    text: str = Field(max_length=1000)
     subject: str = "ap_history"
-    history: list[dict] = []
+    history: list[dict] = Field(default_factory=list, max_length=12)
+
+
+def clean_history(h):
+    out = []
+    for m in h[-6:]:
+        if isinstance(m, dict) and m.get("role") in ("user", "assistant") and isinstance(m.get("content"), str):
+            out.append({"role": m["role"], "content": m["content"][:1000]})
+    return out
 
 
 @app.post("/api/ask")
 async def api_ask(body: AskIn, dev: str = Depends(device)):
+    if ledger.spent(STATE["engine"], dev) >= DAILY_CAP:
+        raise HTTPException(429, "daily limit")
+
     async def gen():
         t0 = time.time()
-        async for kind, val in ask(STATE["index"], body.text, body.history, body.subject):
-            yield {"event": kind, "data": json.dumps(val, ensure_ascii=False)}
+        try:
+            async for kind, val in ask(STATE["index"], body.text, clean_history(body.history), body.subject):
+                yield {"event": kind, "data": json.dumps(val, ensure_ascii=False)}
+        finally:
+            ledger.add(STATE["engine"], dev, LLM_USD_PER_CALL)
         yield {"event": "done", "data": json.dumps({"ms": int((time.time() - t0) * 1000)})}
     return EventSourceResponse(gen())
 
@@ -156,11 +180,19 @@ async def voice_turn(audio: UploadFile = File(...), lang: str = Form("te"), dev:
     lock = LOCKS.setdefault(dev, asyncio.Lock())
     if lock.locked():
         raise HTTPException(409, "previous turn still running")
+    await lock.acquire()  # no await between the check and this line, so two requests cannot both pass
     lang = lang if lang in MSG else "te"
 
     async def gen():
-        async with lock:
-            spend = [len(pcm) / 32000 / 60 * 0.009 * 2]  # rough STT cost, 2 providers
+        _tasks = []
+
+        def mk(coro):
+            tk = asyncio.create_task(coro)
+            _tasks.append(tk)
+            return tk
+        spend = [0.0]
+        try:
+            spend[0] = (len(pcm) / 32000 / 60 * sum(stt.PER_MIN.get(p, 0.01) for p in stt.enabled()) + LLM_USD_PER_CALL)
             try:
                 if ledger.spent(STATE["engine"], dev) >= DAILY_CAP:
                     yield _ev("sentence", {"text": MSG[lang]["cap"], "audio": None}); yield _ev("done", {"capped": True}); return
@@ -169,7 +201,8 @@ async def voice_turn(audio: UploadFile = File(...), lang: str = Form("te"), dev:
                 except Exception:
                     heard, errs = [], {}
                 if not heard:
-                    yield _ev("error", {"code": "stt", "errors": errs})
+                    print("stt errors:", dev, errs, flush=True)
+                    yield _ev("error", {"code": "stt", "providers": sorted(errs)})
                     yield _ev("sentence", {"text": MSG[lang]["stt"], "audio": await _speak(MSG[lang]["stt"], spend)})
                     yield _ev("done", {}); return
                 texts = [h["text"] for h in heard]
@@ -203,7 +236,7 @@ async def voice_turn(audio: UploadFile = File(...), lang: str = Form("te"), dev:
                         yield _ev("question", {"question_id": q["id"]})
                         out = [question_text(q, lang_)]
                 if out:
-                    tasks = [asyncio.create_task(_speak(t, spend)) for t in out]
+                    tasks = [mk(_speak(t, spend)) for t in out]
                     for t, task in zip(out, tasks):
                         yield _ev("sentence", {"text": t, "audio": await task})
                 else:
@@ -215,7 +248,7 @@ async def voice_turn(audio: UploadFile = File(...), lang: str = Form("te"), dev:
                         if kind_ == "meta":
                             yield _ev("meta", val)
                         else:
-                            task = asyncio.create_task(_speak(val, spend)); tasks.append((val, task))
+                            task = mk(_speak(val, spend)); tasks.append((val, task))
                             # emit earlier sentences as soon as their audio is ready
                             while tasks and tasks[0][1].done():
                                 t, tk = tasks.pop(0); yield _ev("sentence", {"text": t, "audio": tk.result()})
@@ -226,11 +259,15 @@ async def voice_turn(audio: UploadFile = File(...), lang: str = Form("te"), dev:
                 yield _ev("error", {"code": "internal", "detail": type(e).__name__})
                 yield _ev("sentence", {"text": MSG[lang]["fail"], "audio": None})
                 yield _ev("done", {})
-            finally:
-                try:
-                    ledger.add(STATE["engine"], dev, spend[0], 1)
-                except Exception:
-                    pass
+        finally:
+            for tk in _tasks:
+                if not tk.done():
+                    tk.cancel()
+            try:
+                ledger.add(STATE["engine"], dev, spend[0], 1)
+            except Exception:
+                pass
+            lock.release()
 
     return EventSourceResponse(gen())
 
