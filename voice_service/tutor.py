@@ -72,3 +72,12 @@ def question_text(q, lang="te"):
     t = q["question_te"] if lang == "te" and q["question_te"] else q["question_en"]
     o = q["options_te"] if lang == "te" and q["options_te"] else q["options_en"]
     return t + " " + " ".join(f"{k.upper()}) {v}." for k, v in o.items())
+
+
+def pick_lang(q, want="te"):
+    """Language the question can actually be asked in. Many questions are Telugu-only (or English-only)."""
+    has_te = bool(q.get("question_te")) and bool(q.get("options_te"))
+    has_en = bool(q.get("question_en")) and bool(q.get("options_en"))
+    if want == "en" and has_en: return "en"
+    if want == "te" and has_te: return "te"
+    return "te" if has_te else "en"

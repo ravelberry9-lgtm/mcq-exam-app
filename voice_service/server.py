@@ -23,9 +23,14 @@ import ledger
 import stt
 import tts
 import turn as turnlib
-from tutor import ask, feedback_text, question_text
+from tutor import ask, feedback_text, pick_lang, question_text
 
-DB_URL = os.environ.get("DATABASE_URL", "sqlite:///app_v3.db").replace("postgres://", "postgresql://", 1)
+def _db_url(u: str) -> str:
+    """Railway gives postgresql://...; make sure SQLAlchemy uses the installed psycopg2 driver."""
+    return re.sub(r"^postgres(ql)?(\+\w+)?://", "postgresql+psycopg2://", u)
+
+
+DB_URL = _db_url(os.environ.get("DATABASE_URL", "sqlite:///app_v3.db"))
 SECRET = os.environ["SECRET_KEY"]
 ORIGINS = [o for o in os.environ.get("APP_ORIGINS", "").split(",") if o]
 DAILY_CAP = float(os.environ.get("DAILY_COST_CAP_USD", "3"))
@@ -111,8 +116,9 @@ def api_question(body: QIn, dev: str = Depends(device)):
         q = next_question(c, dev, sid, body.chapter_id, rng=random)
     if not q:
         raise HTTPException(404, "no questions")
-    SESSIONS[dev] = {"q": q, "lang": body.lang}
-    return {"question_id": q["id"], "speak": question_text(q, body.lang), "difficulty": q["difficulty"]}
+    ql = pick_lang(q, body.lang)
+    SESSIONS[dev] = {"q": q, "lang": ql}
+    return {"question_id": q["id"], "speak": question_text(q, ql), "difficulty": q["difficulty"]}
 
 
 class AIn(BaseModel):
@@ -232,9 +238,10 @@ async def voice_turn(audio: UploadFile = File(...), lang: str = Form("te"), dev:
                         sid = c.execute(text("SELECT id FROM subjects WHERE slug='ap_history'")).scalar()
                         q = next_question(c, dev, sid, rng=random)
                     if q:
-                        SESSIONS[dev] = {"q": q, "lang": lang_}
+                        ql = pick_lang(q, lang_)
+                        SESSIONS[dev] = {"q": q, "lang": ql}
                         yield _ev("question", {"question_id": q["id"]})
-                        out = [question_text(q, lang_)]
+                        out = [question_text(q, ql)]
                 if out:
                     tasks = [mk(_speak(t, spend)) for t in out]
                     for t, task in zip(out, tasks):

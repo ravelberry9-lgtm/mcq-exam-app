@@ -137,3 +137,10 @@ def test_oversize_content_length_rejected_early(env):
     c, H, *_ = env
     r = c.post("/api/voice/turn", content=b"x", headers={**H, "content-length": "99999999", "content-type": "application/octet-stream"})
     assert r.status_code in (413, 422)
+
+
+def test_telugu_only_question_is_gradable_even_if_english_requested(env):
+    from tutor import pick_lang
+    te_only = {"question_te": "ప్రశ్న", "options_te": {"a": "x"}, "question_en": "", "options_en": {}}
+    en_only = {"question_te": "", "options_te": {}, "question_en": "Q", "options_en": {"a": "x"}}
+    assert pick_lang(te_only, "en") == "te" and pick_lang(en_only, "te") == "en"
