@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="te"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>వాయిస్ ట్యూటర్</title>
+<style>
+:root{--bg:#f7f5ef;--fg:#1d1b16;--mut:#6b675c;--card:#fff;--acc:#1f6f5c;--bad:#b3261e}
+@media(prefers-color-scheme:dark){:root{--bg:#14130f;--fg:#f1eee4;--mut:#a29d8e;--card:#1e1c16;--acc:#4fb79c;--bad:#f2766d}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.5 system-ui,sans-serif;display:flex;flex-direction:column;height:100dvh}
+header{padding:12px 16px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+#log{flex:1;overflow:auto;padding:8px 16px;display:flex;flex-direction:column;gap:10px}
+.m{padding:10px 14px;border-radius:14px;max-width:92%;background:var(--card);white-space:pre-wrap}
+.me{align-self:flex-end;background:var(--acc);color:#fff}.src{font-size:12px;color:var(--mut);margin-top:4px}
+.err{color:var(--bad)}
+footer{padding:12px 16px calc(16px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:8px}
+#talk{width:100%;max-width:420px;height:76px;border:0;border-radius:38px;background:var(--acc);color:#fff;font-size:19px;font-weight:600;touch-action:none;user-select:none}
+#talk.rec{background:var(--bad)}#talk:disabled{opacity:.5}
+#row{display:flex;gap:8px;width:100%;max-width:420px}
+#row button{flex:1;padding:10px;border-radius:12px;border:1px solid var(--mut);background:transparent;color:var(--fg);font-size:15px}
+#st{font-size:13px;color:var(--mut);min-height:18px}
+</style></head><body>
+<header><span>🎙️ వాయిస్ ట్యూటర్</span><span id="st"></span></header>
+<div id="log"></div>
+<footer>
+<button id="talk">పట్టుకొని మాట్లాడండి · Hold to talk</button>
+<div id="row"><button id="quiz">ప్రశ్న ఇవ్వు</button><button id="stop">⏹ ఆపు</button></div>
+</footer>
+<script>
+const ORIGIN={{ voice_origin|tojson }};
+const $=id=>document.getElementById(id), log=$('log'), st=$('st'), talk=$('talk');
+let token=null, tokenAt=0, ctx=null, stream=null, node=null, chunks=[], recording=false, busy=false, player=null, queue=[];
+function add(t,cls,src){const d=document.createElement('div');d.className='m '+(cls||'');d.textContent=t;if(src){const s=document.createElement('div');s.className='src';s.textContent=src;d.appendChild(s)}log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+async function getToken(){if(token&&Date.now()-tokenAt<45*60e3)return token;const r=await fetch('/voice/token',{method:'POST',credentials:'same-origin'});if(!r.ok)throw new Error('token');token=(await r.json()).token;tokenAt=Date.now();return token}
+function wavFrom(f32){const n=f32.length,b=new ArrayBuffer(44+n*2),v=new DataView(b);const w=(o,s)=>{for(let i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i))};
+w(0,'RIFF');v.setUint32(4,36+n*2,true);w(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,16000,true);v.setUint32(28,32000,true);v.setUint16(32,2,true);v.setUint16(34,16,true);w(36,'data');v.setUint32(40,n*2,true);
+for(let i=0;i<n;i++){const s=Math.max(-1,Math.min(1,f32[i]));v.setInt16(44+i*2,s<0?s*0x8000:s*0x7fff,true)}return new Blob([b],{type:'audio/wav'})}
+function resample(f,from){if(from===16000)return f;const r=from/16000,n=Math.floor(f.length/r),o=new Float32Array(n);for(let i=0;i<n;i++){const a=i*r,i0=Math.floor(a),i1=Math.min(i0+1,f.length-1);o[i]=f[i0]+(f[i1]-f[i0])*(a-i0)}return o}
+async function start(){
+  if(recording||busy)return; stopAudio();
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({audio:{channelCount:1,echoCancellation:true,noiseSuppression:true}});
+  }catch(e){add('మైక్ అనుమతి ఇవ్వండి (Allow microphone).','err');return}
+  ctx=new (window.AudioContext||window.webkitAudioContext)();await ctx.resume();
+  const src=ctx.createMediaStreamSource(stream);node=ctx.createScriptProcessor(4096,1,1);chunks=[];
+  node.onaudioprocess=e=>{if(recording)chunks.push(new Float32Array(e.inputBuffer.getChannelData(0)))};
+  src.connect(node);node.connect(ctx.destination);recording=true;talk.classList.add('rec');talk.textContent='వింటున్నాను… వదిలితే పంపుతుంది';
+}
+async function end(){
+  if(!recording)return; recording=false; talk.classList.remove('rec'); talk.textContent='పట్టుకొని మాట్లాడండి · Hold to talk';
+  await new Promise(r=>setTimeout(r,250)); // keep the tail of the last word
+  const rate=ctx.sampleRate;stream.getTracks().forEach(t=>t.stop());node.disconnect();ctx.close();
+  const len=chunks.reduce((a,c)=>a+c.length,0);const all=new Float32Array(len);let o=0;for(const c of chunks){all.set(c,o);o+=c.length}
+  if(len/rate<0.4){st.textContent='చాలా చిన్నది — ఇంకొంచెం పట్టుకోండి';return}
+  if(len/rate>28){add('28 సెకన్ల లోపు మాట్లాడండి (max 28 s).','err');return}
+  send(wavFrom(resample(all,rate)));
+}
+async function send(blob){
+  busy=true;talk.disabled=true;st.textContent='ఆలోచిస్తున్నాను…';
+  try{
+    const tk=await getToken();const fd=new FormData();fd.append('audio',blob,'a.wav');fd.append('lang','te');
+    const r=await fetch(ORIGIN+'/api/voice/turn',{method:'POST',headers:{Authorization:'Bearer '+tk},body:fd});
+    if(r.status===401){token=null;throw new Error('session expired — try again')}
+    if(!r.ok)throw new Error('server '+r.status);
+    await readSSE(r);
+  }catch(e){add('సమస్య: '+(e.message||e)+' — మళ్ళీ ప్రయత్నించండి.','err')}
+  finally{busy=false;talk.disabled=false;st.textContent=''}
+}
+let lastMeta=null, lastBubble=null;
+async function readSSE(r){
+  const rd=r.body.getReader(),dec=new TextDecoder();let buf='';
+  for(;;){const {value,done}=await rd.read();if(done)break;buf+=dec.decode(value,{stream:true}).replace(/\r\n/g,'\n');
+    let i;while((i=buf.indexOf('\n\n'))>=0){const blk=buf.slice(0,i);buf=buf.slice(i+2);let ev='',data='';
+      for(const l of blk.split('\n')){if(l.startsWith('event:'))ev=l.slice(6).trim();else if(l.startsWith('data:'))data+=l.slice(5).trim()}
+      if(!data)continue;let d;try{d=JSON.parse(data)}catch{continue}handle(ev,d)}}
+}
+function handle(ev,d){
+  if(ev==='transcript'){add(d.heard[0].text,'me');lastBubble=null}
+  else if(ev==='meta'){lastMeta=d.source==='notes'?'📘 నోట్స్ నుండి'+(d.chapter?' · '+d.chapter:''):'🌐 సాధారణ జ్ఞానం (నోట్స్‌లో లేదు)'}
+  else if(ev==='sentence'){
+    if(lastBubble&&lastMeta!==null){lastBubble.firstChild.textContent+=' '+d.text}
+    else{lastBubble=add(d.text,'',lastMeta)}
+    if(d.audio){queue.push(d.audio);playNext()}}
+  else if(ev==='graded'){lastMeta=d.correct?'✅ సరైనది':'❌ తప్పు'}
+  else if(ev==='error'&&d.code==='stt'){st.textContent='వినిపించలేదు'}
+  else if(ev==='done'){lastMeta=null;lastBubble=null}
+}
+function playNext(){if(player||!queue.length)return;const a=new Audio('data:audio/mpeg;base64,'+queue.shift());player=a;
+  a.onended=a.onerror=()=>{player=null;playNext()};a.play().catch(()=>{player=null;playNext()})}
+function stopAudio(){queue=[];if(player){player.pause();player=null}}
+talk.addEventListener('pointerdown',e=>{e.preventDefault();talk.setPointerCapture(e.pointerId);start()});
+talk.addEventListener('pointerup',end);talk.addEventListener('pointercancel',end);
+talk.addEventListener('contextmenu',e=>e.preventDefault());
+$('stop').onclick=stopAudio;
+$('quiz').onclick=async()=>{stopAudio();if(busy)return;busy=true;talk.disabled=true;
+  try{const tk=await getToken();const r=await fetch(ORIGIN+'/api/question',{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/json'},body:'{}'});
+    if(!r.ok)throw new Error('server '+r.status);const d=await r.json();add(d.speak);
+    const t=await fetch(ORIGIN+'/api/tts',{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/json'},body:JSON.stringify({text:d.speak})});
+    if(t.ok){queue.push((await t.json()).audio);playNext()}
+  }catch(e){add('సమస్య: '+e.message,'err')}finally{busy=false;talk.disabled=false}};
+</script></body></html>
