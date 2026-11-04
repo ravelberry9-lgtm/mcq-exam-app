@@ -1,4 +1,5 @@
 """Flask application factory."""
+import os
 from flask import Flask, request
 from .config import Config
 from .db import db
@@ -76,6 +77,9 @@ def create_app(config_class: type = Config) -> Flask:
 
     from .routes.study_plan import bp as study_plan_bp
     app.register_blueprint(study_plan_bp)
+
+    from .routes.voice import bp as voice_bp  # voice page + signed device token
+    app.register_blueprint(voice_bp)
 
     @app.context_processor
     def inject_globals():
