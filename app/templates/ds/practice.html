@@ -59,6 +59,13 @@
     <div class="card" id="aichk">
       <button class="btn" id="aichk-btn" type="button">🤖 AI తో సరిచూడు · Check with AI</button>
       <div id="aichk-out" class="small" hidden aria-live="polite" style="margin-top:8px"></div>
+      <div id="aichat" style="margin-top:10px">
+        <div id="aichat-log" class="small" aria-live="polite"></div>
+        <form id="aichat-form" style="display:flex;gap:6px;margin-top:8px">
+          <input id="aichat-in" type="text" maxlength="500" autocomplete="off" placeholder="ఇంకా అడగండి · Ask more" aria-label="Ask a follow-up" style="flex:1;min-width:0;padding:10px;border-radius:10px;border:1px solid #888;font-size:16px">
+          <button class="btn primary" id="aichat-send" type="submit">పంపు · Send</button>
+        </form>
+      </div>
     </div>
   </div>
   <p class="small" id="err" role="alert" style="color:var(--amber-ink);font-weight:700" hidden>{{ t('prac.save_failed') }}</p>
