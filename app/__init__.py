@@ -1,4 +1,5 @@
 """Flask application factory."""
+import os
 from flask import Flask, request
 from .config import Config
 from .db import db
@@ -35,13 +36,15 @@ def create_app(config_class: type = Config) -> Flask:
         resp.headers.setdefault("X-Content-Type-Options", "nosniff")
         resp.headers.setdefault("X-Frame-Options", "DENY")
         resp.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
-        resp.headers.setdefault("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+        resp.headers.setdefault("Permissions-Policy", "camera=(), microphone=(self), geolocation=()")
         # Legacy pages still use inline script/style, so those stay allowed for now; framing,
         # plugins and <base> hijacking are blocked. Tighten once the old pages are replaced.
+        _voice = (app.config.get("VOICE_SERVICE_ORIGIN") or os.environ.get("VOICE_SERVICE_ORIGIN") or "").rstrip("/")
+        _connect = "'self'" + (f" {_voice} {_voice.replace('https://', 'wss://', 1)}" if _voice.startswith("https://") else "")
         resp.headers.setdefault(
             "Content-Security-Policy",
             "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; "
-            "script-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self'; "
+            f"script-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src {_connect}; "
             "object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'")
         return resp
 
@@ -67,6 +70,9 @@ def create_app(config_class: type = Config) -> Flask:
 
     from .routes.science import bp as science_bp
     app.register_blueprint(science_bp)
+
+    from .routes.voice import bp as voice_bp  # voice page + signed device token
+    app.register_blueprint(voice_bp)
 
     from .routes.geography import bp as geography_bp
     app.register_blueprint(geography_bp)

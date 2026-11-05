@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="te"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>లైవ్ ట్యూటర్</title>
+<style>
+:root{--bg:#f7f5ef;--fg:#1d1b16;--mut:#6b675c;--card:#fff;--acc:#1f6f5c;--bad:#b3261e}
+@media(prefers-color-scheme:dark){:root{--bg:#14130f;--fg:#f1eee4;--mut:#a29d8e;--card:#1e1c16;--acc:#4fb79c;--bad:#f2766d}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.5 system-ui,sans-serif;display:flex;flex-direction:column;height:100dvh}
+header{padding:12px 16px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:8px}
+header a{color:var(--mut);font-weight:400;font-size:14px}
+#log{flex:1;overflow:auto;padding:8px 16px;display:flex;flex-direction:column;gap:10px}
+.m{padding:10px 14px;border-radius:14px;max-width:92%;background:var(--card);white-space:pre-wrap}
+.me{align-self:flex-end;background:var(--acc);color:#fff}.src{font-size:12px;color:var(--mut);margin-top:4px}
+.card{align-self:stretch;max-width:100%;border:1px dashed var(--mut);font-size:15px}.err{color:var(--bad)}.hint{color:var(--mut);text-align:center;padding:24px 8px}
+footer{padding:10px 16px calc(14px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:8px}
+#go{width:100%;max-width:420px;height:76px;border:0;border-radius:38px;background:var(--acc);color:#fff;font-size:19px;font-weight:600}
+#go.on{background:var(--bad)}#go:disabled{opacity:.5}
+#st{font-size:14px;color:var(--mut);min-height:20px}
+#typed{display:none;gap:8px;width:100%;max-width:420px}
+#typed input{flex:1;padding:10px 12px;border-radius:12px;border:1px solid var(--mut);background:var(--card);color:var(--fg);font-size:16px}
+#typed button{padding:10px 14px;border-radius:12px;border:1px solid var(--mut);background:transparent;color:var(--fg);font-size:15px}
+#ctl{display:none;gap:8px;width:100%;max-width:420px}#ctl button{flex:1;padding:12px;border-radius:12px;border:1px solid var(--mut);background:transparent;color:var(--fg);font-size:15px}
+#modes{display:flex;gap:6px;width:100%;max-width:420px}#modes button{flex:1;padding:10px;border-radius:12px;border:1px solid var(--mut);background:transparent;color:var(--fg);font-size:15px}#modes button.sel{background:var(--acc);color:#fff;border-color:var(--acc)}.opts{display:flex;gap:8px;margin-top:8px}.opts button{flex:1;padding:12px 0;border-radius:12px;border:1px solid var(--acc);background:transparent;color:var(--fg);font-size:17px;font-weight:600}.opts button:disabled{opacity:.4}
+#hold{display:none;width:100%;max-width:420px;height:64px;border-radius:32px;border:0;background:var(--acc);color:#fff;font-size:17px;font-weight:600;touch-action:none;user-select:none}#hold.rec{background:var(--bad)}
+</style></head><body>
+<header><span>🎙️ లైవ్ ట్యూటర్</span><span><a href="/voice">పాత వెర్షన్</a> · <span id="st"></span></span></header>
+<div id="log"><div class="hint">“ప్రారంభించు” నొక్కి, ChatGPT తో లాగా మామూలుగా మాట్లాడండి.<br>మధ్యలో ఆపి ప్రశ్న అడగవచ్చు. "క్విజ్" అంటే ప్రశ్నలు అడుగుతుంది.</div></div>
+<footer>
+<div id="modes"><button id="mv" class="sel">🎙️ Voice</button><button id="mc">💬 Chat</button></div>
+<button id="go">▶ ప్రారంభించు · Start</button>
+<button id="hold">🎙️ పట్టుకొని మాట్లాడండి · Hold to talk</button>
+<div id="ctl"><button id="mode">✋ Hold-to-talk మోడ్</button></div>
+<form id="typed"><input id="t" placeholder="పేరు టైప్ చేయండి / type a word" autocomplete="off"><button>పంపు</button></form>
+</footer>
+<script>
+const ORIGIN={{ voice_origin|tojson }};
+const MAX_MIN=20;
+const $=id=>document.getElementById(id), log=$('log'), st=$('st'), go=$('go');
+let chat=false, pc=null, dc=null, mic=null, audioEl=null, beatT=null, stopT=null, token=null, tokenAt=0, cur=null, meta=null, live=false, seen=new Set();
+
+function add(t,cls,src){const h=log.querySelector('.hint');if(h)h.remove();const d=document.createElement('div');d.className='m '+(cls||'');
+  const s=document.createElement('span');s.textContent=t;d.appendChild(s);
+  if(src){const x=document.createElement('div');x.className='src';x.textContent=src;d.appendChild(x)}
+  log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+async function getToken(){if(token&&Date.now()-tokenAt<45*60e3)return token;
+  const r=await fetch('/voice/token',{credentials:'same-origin',cache:'no-store'});if(!r.ok)throw new Error('token');
+  token=(await r.json()).token;tokenAt=Date.now();return token}
+function setSt(t){st.textContent=t||''}
+
+async function start(){
+  go.disabled=true;setSt('కనెక్ట్ అవుతోంది…');
+  try{
+    const tk=await getToken();
+    if(!chat)mic=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
+    pc=new RTCPeerConnection();
+    audioEl=new Audio();audioEl.autoplay=true;
+    pc.ontrack=e=>{audioEl.srcObject=e.streams[0]};
+    pc.onconnectionstatechange=()=>{if(live&&['failed','disconnected','closed'].includes(pc.connectionState)){add('కనెక్షన్ పోయింది. మళ్ళీ ప్రారంభించండి.','err');stop()}};
+    if(mic)mic.getTracks().forEach(t=>pc.addTrack(t,mic));else pc.addTransceiver('audio',{direction:'recvonly'});
+    dc=pc.createDataChannel('oai-events');
+    dc.onmessage=onEvent;
+    dc.onopen=()=>{$('typed').style.display='flex';if(chat){send({type:'session.update',session:{type:'realtime',output_modalities:['text']}});setSt('టైప్ చేయండి');$('t').focus()}else{setSt('వింటున్నాను… మాట్లాడండి');$('ctl').style.display='flex'}};
+    const offer=await pc.createOffer();await pc.setLocalDescription(offer);
+    const r=await fetch(ORIGIN+'/api/rt/offer',{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/sdp'},body:offer.sdp});
+    if(r.status===429)throw new Error('ఈ రోజు పరిమితి అయిపోయింది');
+    if(!r.ok)throw new Error('server '+r.status);
+    await pc.setRemoteDescription({type:'answer',sdp:await r.text()});
+    live=true;go.disabled=false;go.classList.add('on');go.textContent='⏹ ముగించు · End';
+    beatT=setInterval(beat,30000);stopT=setTimeout(()=>{add(MAX_MIN+' నిమిషాలు అయింది. విరామం తీసుకోండి.');stop()},MAX_MIN*60e3);
+  }catch(e){
+    const m=e&&e.name==='NotAllowedError'?'మైక్ అనుమతి ఇవ్వండి (Allow microphone).':(e.message||e);
+    add('సమస్య: '+m,'err');cleanup();
+  }
+}
+async function beat(){
+  try{const tk=await getToken();const r=await fetch(ORIGIN+'/api/rt/beat',{method:'POST',headers:{Authorization:'Bearer '+tk}});
+    if(r.status===429){add('ఈ రోజు పరిమితి అయిపోయింది.');stop()}
+    else if(r.status===401){token=null}}catch{}
+}
+function cleanup(){
+  live=false;clearInterval(beatT);clearTimeout(stopT);beatT=stopT=null;
+  try{dc&&dc.close()}catch{}try{pc&&pc.close()}catch{}
+  if(mic)mic.getTracks().forEach(t=>t.stop());
+  if(audioEl){audioEl.srcObject=null}
+  pc=dc=mic=audioEl=cur=meta=null;seen=new Set();
+  go.disabled=false;go.classList.remove('on');go.textContent=chat?'▶ చాట్ ప్రారంభించు · Start chat':'▶ ప్రారంభించు · Start';$('typed').style.display='none';hold=false;$('hold').style.display='none';$('ctl').style.display='none';$('mode').textContent='✋ Hold-to-talk మోడ్';setSt('')
+}
+function stop(){cleanup()}
+go.onclick=()=>live?stop():start();
+
+function send(o){if(dc&&dc.readyState==='open')dc.send(JSON.stringify(o))}
+$('typed').onsubmit=e=>{e.preventDefault();const v=$('t').value.trim();if(!v||!live)return;$('t').value='';add(v,'me');
+  send({type:'conversation.item.create',item:{type:'message',role:'user',content:[{type:'input_text',text:v}]}});send({type:'response.create'})};
+
+function onEvent(e){
+  let d;try{d=JSON.parse(e.data)}catch{return}
+  const t=d.type||'';
+  if(t==='input_audio_buffer.speech_started'){setSt('వింటున్నాను…')}
+  else if(t==='input_audio_buffer.speech_stopped'){setSt('ఆలోచిస్తున్నాను…')}
+  else if(t==='conversation.item.input_audio_transcription.completed'){if(d.transcript&&d.transcript.trim())add(d.transcript.trim(),'me')}
+  else if(t==='response.output_audio_transcript.delta'||t==='response.audio_transcript.delta'){
+    if(!cur){cur=add('','',meta);meta=null}cur.firstChild.textContent+=d.delta||'';log.scrollTop=log.scrollHeight;setSt('చెబుతున్నాను…')}
+  else if(t==='response.output_audio_transcript.done'||t==='response.audio_transcript.done'){cur=null}
+  else if(t==='response.output_text.delta'){if(!cur){cur=add('','',meta);meta=null}cur.firstChild.textContent+=d.delta||'';log.scrollTop=log.scrollHeight;setSt('రాస్తున్నాను…')}
+  else if(t==='response.output_text.done'){cur=null}
+  else if(t==='response.done'){cur=null;setSt(chat?'టైప్ చేయండి':'వింటున్నాను… మాట్లాడండి');
+    for(const it of (d.response&&d.response.output)||[]){if(it.type==='function_call'&&!seen.has(it.call_id)){seen.add(it.call_id);runTool(it)}}}
+  else if(t==='error'){const m=d.error&&d.error.message||'error';if(!/no active response|cancel/i.test(m))add('సమస్య: '+m,'err')}
+}
+async function runTool(it){
+  let out;
+  try{let args={};try{args=JSON.parse(it.arguments||'{}')}catch{}
+    const tk=await getToken();
+    const r=await fetch(ORIGIN+'/api/rt/tool',{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/json'},body:JSON.stringify({name:it.name,args})});
+    out=r.ok?await r.json():{error:'tool unavailable, answer without it'};
+    if(it.name==='search_notes'){meta=out.strong?'📘 నోట్స్ నుండి'+(out.results&&out.results[0]?' · '+out.results[0].chapter:''):'🌐 సాధారణ జ్ఞానం (నోట్స్‌లో లేదు)'}
+    else if(it.name==='next_question'&&out.question){
+      const cd=add('📋 బ్యాంక్ ప్రశ్న (exact text)\n'+out.question+'\n\n'+Object.entries(out.options||{}).map(([k,v])=>k+') '+v).join('\n'),'card');const ob=document.createElement('div');ob.className='opts';
+      Object.keys(out.options||{}).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.onclick=()=>pick(k,ob);ob.appendChild(b)});cd.appendChild(ob)}
+    else if(it.name==='check_answer'&&typeof out.correct==='boolean'){meta=out.correct?'✅ సరైనది':'❌ తప్పు'}
+  }catch(e){out={error:'tool unavailable, answer without it'}}
+  send({type:'conversation.item.create',item:{type:'function_call_output',call_id:it.call_id,output:JSON.stringify(out)}});
+  send({type:'response.create'});
+}
+async function pick(k,ob){ob.querySelectorAll('button').forEach(b=>b.disabled=true);
+  let out;try{const tk=await getToken();const r=await fetch(ORIGIN+'/api/rt/tool',{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/json'},body:JSON.stringify({name:'check_answer',args:{letter:k}})});out=r.ok?await r.json():null}catch{out=null}
+  if(!out||out.error){add('సమస్య: '+((out&&out.error)||'grading failed'),'err');return}
+  add((out.correct?'✅ సరైనది':'❌ తప్పు')+' — నీ జవాబు '+out.picked+', సరైనది '+out.correct_letter+') '+out.correct_text,'card');
+  if(!live)return;
+  send({type:'conversation.item.create',item:{type:'message',role:'user',content:[{type:'input_text',text:'[App graded my tapped answer '+k+'. Result: '+JSON.stringify(out)+'. Tell me if I was right, the correct answer and the short explanation in your own words, then offer the next question. Do not call check_answer again.]'}]}});send({type:'response.create'})}
+function setChat(c){if(live)return;chat=c;$('mv').classList.toggle('sel',!c);$('mc').classList.toggle('sel',c);go.textContent=c?'▶ చాట్ ప్రారంభించు · Start chat':'▶ ప్రారంభించు · Start'}
+$('mv').onclick=()=>setChat(false);$('mc').onclick=()=>setChat(true);
+// Hold-to-talk mode: the mic is live only while the button is held (for noisy rooms).
+let hold=false;
+function setMode(h){hold=h;if(mic)mic.getAudioTracks().forEach(t=>t.enabled=!h);$('hold').style.display=h?'block':'none';
+  $('mode').textContent=h?'🎧 ఆటో మోడ్‌కి మారు':'✋ Hold-to-talk మోడ్';setSt(h?'బటన్ పట్టుకొని మాట్లాడండి':'వింటున్నాను… మాట్లాడండి')}
+$('mode').onclick=()=>setMode(!hold);
+const hb=$('hold');
+hb.addEventListener('pointerdown',e=>{e.preventDefault();hb.setPointerCapture(e.pointerId);if(mic)mic.getAudioTracks().forEach(t=>t.enabled=true);hb.classList.add('rec')});
+const rel=()=>{hb.classList.remove('rec');setTimeout(()=>{if(hold&&mic)mic.getAudioTracks().forEach(t=>t.enabled=false)},350)};
+hb.addEventListener('pointerup',rel);hb.addEventListener('pointercancel',rel);hb.addEventListener('contextmenu',e=>e.preventDefault());
+addEventListener('pagehide',cleanup);
+</script></body></html>
