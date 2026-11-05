@@ -20,6 +20,7 @@ FALLBACK_MODEL = "gpt-realtime-2.1"
 VOICE = os.environ.get("REALTIME_VOICE", "marin")
 # Deliberately generous per-minute estimates. They only drive the daily cap, not billing.
 USD_PER_MIN = {"gpt-realtime-2.1-mini": 0.04, "gpt-realtime-2.1": 0.12}
+TRANSCRIBE_LANG = os.environ.get("RT_TRANSCRIBE_LANG", "te")
 STRONG = 15.0  # same threshold as the text tutor: below this a notes match is only a weak hint
 
 INSTRUCTIONS = """You are a warm, patient voice tutor for a Telugu-speaking APPSC Group 1 and Group 2 aspirant. Talk like a good teacher having a conversation: short, natural, friendly. No lists, no markdown, no symbols, nothing that sounds like reading a document.
@@ -70,9 +71,10 @@ def session_config(model: str, vocab, full: bool = True) -> dict:
         cfg["audio"]["input"] = {
             "noise_reduction": {"type": "near_field"},
             # No prompt here: a vocabulary prompt gets echoed back as the "transcript" when the audio is short or quiet.
-            "transcription": {"model": "gpt-4o-transcribe"},
+            # Language hint: without it short Telugu phrases get "heard" as Japanese/Polish/etc. ("" = auto-detect)
+            "transcription": {"model": "gpt-4o-transcribe", **({"language": TRANSCRIBE_LANG} if TRANSCRIBE_LANG else {})},
             # Plain server VAD with a high threshold: room noise on a phone must not start a turn.
-            "turn_detection": {"type": "server_vad", "threshold": float(os.environ.get("RT_VAD_THRESHOLD", "0.75")),
+            "turn_detection": {"type": "server_vad", "threshold": float(os.environ.get("RT_VAD_THRESHOLD", "0.6")),
                                "prefix_padding_ms": 300, "silence_duration_ms": int(os.environ.get("RT_VAD_SILENCE_MS", "800"))},
         }
     return cfg
