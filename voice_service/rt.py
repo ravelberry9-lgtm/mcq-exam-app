@@ -31,6 +31,7 @@ LANGUAGE
 HOW TO ANSWER STUDY QUESTIONS
 - For any history or exam question, FIRST call search_notes with the key Telugu term(s). Answer from what the notes say, and say it is from her notes (for example 'నీ నోట్స్ ప్రకారం...' or 'as per your notes').
 - If the notes do not cover it (search returns nothing or a weak match), say so plainly, then answer from general knowledge and call it general knowledge ('ఇది నోట్స్‌లో లేదు, సాధారణంగా...'). Never present general knowledge as her notes. Never invent dates, names or numbers; if unsure, say you are unsure.
+- If what you heard is noise, a fragment, or not Telugu or English, do NOT answer it as if she asked something. Say briefly 'సరిగ్గా వినపడలేదు, మళ్ళీ చెప్పండి' (or the English equivalent) and wait. Never invent a question for her.
 - You are hearing speech, and names can be misheard. If a word sounds like a term from the notes, use your judgment, and when it matters ask 'Did you mean ...?'. If you really did not catch something, ask her to say it again.
 
 QUIZ MODE
@@ -70,7 +71,9 @@ def session_config(model: str, vocab, full: bool = True) -> dict:
             "noise_reduction": {"type": "near_field"},
             # No prompt here: a vocabulary prompt gets echoed back as the "transcript" when the audio is short or quiet.
             "transcription": {"model": "gpt-4o-transcribe"},
-            "turn_detection": {"type": "semantic_vad", "eagerness": "medium"},
+            # Plain server VAD with a high threshold: room noise on a phone must not start a turn.
+            "turn_detection": {"type": "server_vad", "threshold": float(os.environ.get("RT_VAD_THRESHOLD", "0.75")),
+                               "prefix_padding_ms": 300, "silence_duration_ms": int(os.environ.get("RT_VAD_SILENCE_MS", "800"))},
         }
     return cfg
 
