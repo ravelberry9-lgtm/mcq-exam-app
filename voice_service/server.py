@@ -10,7 +10,7 @@ import random
 import time
 from contextlib import asynccontextmanager
 
-from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, UploadFile
+from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, Request, Response, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from sqlalchemy import create_engine, text
@@ -21,6 +21,7 @@ from auth import verify_token
 from content import NotesIndex, load_note_rows, make_chunks
 from questions import next_question, record_answer
 import ledger
+import rt
 import stt
 import tts
 import turn as turnlib
@@ -69,6 +70,61 @@ def device(authorization: str = Header(default="")) -> str:
     if not d:
         raise HTTPException(401, "bad or expired token")
     return d
+
+
+RT: dict = {}  # device_id -> {"model", "beat"}: live-session bookkeeping for the spend cap
+
+
+@app.post("/api/rt/offer")
+async def rt_offer(request: Request, dev: str = Depends(device)):
+    """Browser sends its WebRTC offer; we create the OpenAI Realtime call with the server-side key and return the answer."""
+    if not os.environ.get("OPENAI_API_KEY"):
+        raise HTTPException(503, "live mode not configured")
+    if ledger.spent(STATE["engine"], dev) >= DAILY_CAP:
+        raise HTTPException(429, "daily limit")
+    sdp = (await request.body()).decode("utf-8", "ignore")
+    if not sdp.startswith("v=0") or len(sdp) > 30000:
+        raise HTTPException(400, "bad offer")
+    try:
+        answer, model = await rt.create_call(sdp, stt.VOCAB)
+    except Exception as e:
+        logging.getLogger("voice").error("live call failed: %s", str(e)[:500])
+        raise HTTPException(502, "live session failed")
+    SESSIONS.pop(dev, None)
+    RT[dev] = {"model": model, "beat": time.time()}
+    ledger.add(STATE["engine"], dev, rt.USD_PER_MIN.get(model, 0.12) / 4)  # first 15 s
+    return Response(answer, media_type="application/sdp")
+
+
+@app.post("/api/rt/beat")
+def rt_beat(dev: str = Depends(device)):
+    """Called every ~30 s while a live session is open. Charges the estimate and tells the page when to stop."""
+    now = time.time()
+    st = RT.setdefault(dev, {"model": rt.MODEL, "beat": now - 30})
+    dt_ = min(max(now - st["beat"], 0), 60)
+    if dt_ >= 20:  # a page that spams the endpoint is not charged more than real time
+        st["beat"] = now
+        ledger.add(STATE["engine"], dev, rt.USD_PER_MIN.get(st["model"], 0.12) * dt_ / 60)
+    left = DAILY_CAP - ledger.spent(STATE["engine"], dev)
+    if left <= 0:
+        raise HTTPException(429, "daily limit")
+    return {"ok": True, "left_usd": round(left, 2)}
+
+
+class ToolIn(BaseModel):
+    name: str
+    args: dict = Field(default_factory=dict)
+
+
+@app.post("/api/rt/tool")
+async def rt_tool(body: ToolIn, dev: str = Depends(device)):
+    if body.name not in rt.TOOL_NAMES:
+        raise HTTPException(400, "unknown tool")
+    try:
+        return await asyncio.to_thread(rt.run_tool, STATE["engine"], STATE["index"], SESSIONS, dev, body.name, body.args)
+    except Exception as e:
+        logging.getLogger("voice").error("tool %s failed: %s: %s", body.name, type(e).__name__, str(e)[:300])
+        return {"error": "tool failed, answer without it"}
 
 
 @app.get("/health")
