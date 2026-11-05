@@ -56,6 +56,10 @@
       {% for m in q.note_more %}<a class="small" data-testid="read-in-notes-more" href="{{ m.url }}">{{ t('review.read_notes_more') }}: {{ c.bi(m.title_en, m.title_te) }}</a>{% endfor %}
       {% elif note_count and chapter %}<a class="btn" href="{{ url_for('learn.notes', chapter_id=chapter.id) }}" style="margin-top:6px">{{ t('prac.open_notes') }}</a>{% endif %}
     </div>
+    <div class="card" id="aichk">
+      <button class="btn" id="aichk-btn" type="button">🤖 AI తో సరిచూడు · Check with AI</button>
+      <div id="aichk-out" class="small" hidden aria-live="polite" style="margin-top:8px"></div>
+    </div>
   </div>
   <p class="small" id="err" role="alert" style="color:var(--amber-ink);font-weight:700" hidden>{{ t('prac.save_failed') }}</p>
 {% endif %}
