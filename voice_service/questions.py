@@ -21,7 +21,7 @@ def target_difficulty(acc):
     return "E"
 
 
-def next_question(conn, device_id, subject_id, chapter_id=None, difficulty=None, rng=random):
+def next_question(conn, device_id, subject_id, chapter_id=None, difficulty=None, rng=random, exclude=()):
     """Priority: previously wrong > never seen > least recently seen; difficulty-matched where possible."""
     want = difficulty or target_difficulty(recent_accuracy(conn, device_id))
     sql = """SELECT q.id, q.difficulty, q.question_en, q.question_te, q.options_en, q.options_te,
@@ -36,6 +36,8 @@ def next_question(conn, device_id, subject_id, chapter_id=None, difficulty=None,
     rows = [dict(r._mapping) for r in conn.execute(text(sql), p)]
     if not rows:
         return None
+    ex = set(exclude)
+    rows = [r for r in rows if r["id"] not in ex] or rows  # never repeat a recent question (a wrong one would win every time)
     def bucket(r): return 0 if r["wrong"] > 0 else (1 if r["seen"] == 0 else 2)
     def dist(r): return abs(ORDER.index(r["difficulty"] if r["difficulty"] in ORDER else "M") - ORDER.index(want))
     rng.shuffle(rows)
