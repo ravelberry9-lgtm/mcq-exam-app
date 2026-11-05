@@ -11,7 +11,7 @@ header a{color:var(--mut);font-weight:400;font-size:14px}
 #log{flex:1;overflow:auto;padding:8px 16px;display:flex;flex-direction:column;gap:10px}
 .m{padding:10px 14px;border-radius:14px;max-width:92%;background:var(--card);white-space:pre-wrap}
 .me{align-self:flex-end;background:var(--acc);color:#fff}.src{font-size:12px;color:var(--mut);margin-top:4px}
-.err{color:var(--bad)}.hint{color:var(--mut);text-align:center;padding:24px 8px}
+.card{align-self:stretch;max-width:100%;border:1px dashed var(--mut);font-size:15px}.err{color:var(--bad)}.hint{color:var(--mut);text-align:center;padding:24px 8px}
 footer{padding:10px 16px calc(14px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:8px}
 #go{width:100%;max-width:420px;height:76px;border:0;border-radius:38px;background:var(--acc);color:#fff;font-size:19px;font-weight:600}
 #go.on{background:var(--bad)}#go:disabled{opacity:.5}
@@ -110,6 +110,8 @@ async function runTool(it){
     const r=await fetch(ORIGIN+'/api/rt/tool',{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/json'},body:JSON.stringify({name:it.name,args})});
     out=r.ok?await r.json():{error:'tool unavailable, answer without it'};
     if(it.name==='search_notes'){meta=out.strong?'📘 నోట్స్ నుండి'+(out.results&&out.results[0]?' · '+out.results[0].chapter:''):'🌐 సాధారణ జ్ఞానం (నోట్స్‌లో లేదు)'}
+    else if(it.name==='next_question'&&out.question){
+      add('📋 బ్యాంక్ ప్రశ్న (exact text)\n'+out.question+'\n\n'+Object.entries(out.options||{}).map(([k,v])=>k+') '+v).join('\n'),'card')}
     else if(it.name==='check_answer'&&typeof out.correct==='boolean'){meta=out.correct?'✅ సరైనది':'❌ తప్పు'}
   }catch(e){out={error:'tool unavailable, answer without it'}}
   send({type:'conversation.item.create',item:{type:'function_call_output',call_id:it.call_id,output:JSON.stringify(out)}});
