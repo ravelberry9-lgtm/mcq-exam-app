@@ -71,6 +71,9 @@ def create_app(config_class: type = Config) -> Flask:
     from .routes.science import bp as science_bp
     app.register_blueprint(science_bp)
 
+    from .routes.ai_check import bp as ai_check_bp  # AI second opinion on one MCQ (OpenAI, on demand)
+    app.register_blueprint(ai_check_bp)
+
     from .routes.voice import bp as voice_bp  # voice page + signed device token
     app.register_blueprint(voice_bp)
 
