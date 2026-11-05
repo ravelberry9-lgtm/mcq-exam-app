@@ -19,11 +19,15 @@ footer{padding:10px 16px calc(14px + env(safe-area-inset-bottom));display:flex;f
 #typed{display:none;gap:8px;width:100%;max-width:420px}
 #typed input{flex:1;padding:10px 12px;border-radius:12px;border:1px solid var(--mut);background:var(--card);color:var(--fg);font-size:16px}
 #typed button{padding:10px 14px;border-radius:12px;border:1px solid var(--mut);background:transparent;color:var(--fg);font-size:15px}
+#ctl{display:none;gap:8px;width:100%;max-width:420px}#ctl button{flex:1;padding:12px;border-radius:12px;border:1px solid var(--mut);background:transparent;color:var(--fg);font-size:15px}
+#hold{display:none;width:100%;max-width:420px;height:64px;border-radius:32px;border:0;background:var(--acc);color:#fff;font-size:17px;font-weight:600;touch-action:none;user-select:none}#hold.rec{background:var(--bad)}
 </style></head><body>
 <header><span>🎙️ లైవ్ ట్యూటర్</span><span><a href="/voice">పాత వెర్షన్</a> · <span id="st"></span></span></header>
 <div id="log"><div class="hint">“ప్రారంభించు” నొక్కి, ChatGPT తో లాగా మామూలుగా మాట్లాడండి.<br>మధ్యలో ఆపి ప్రశ్న అడగవచ్చు. "క్విజ్" అంటే ప్రశ్నలు అడుగుతుంది.</div></div>
 <footer>
 <button id="go">▶ ప్రారంభించు · Start</button>
+<button id="hold">🎙️ పట్టుకొని మాట్లాడండి · Hold to talk</button>
+<div id="ctl"><button id="mode">✋ Hold-to-talk మోడ్</button></div>
 <form id="typed"><input id="t" placeholder="పేరు టైప్ చేయండి / type a word" autocomplete="off"><button>పంపు</button></form>
 </footer>
 <script>
@@ -53,7 +57,7 @@ async function start(){
     mic.getTracks().forEach(t=>pc.addTrack(t,mic));
     dc=pc.createDataChannel('oai-events');
     dc.onmessage=onEvent;
-    dc.onopen=()=>{setSt('వింటున్నాను… మాట్లాడండి');$('typed').style.display='flex'};
+    dc.onopen=()=>{setSt('వింటున్నాను… మాట్లాడండి');$('typed').style.display='flex';$('ctl').style.display='flex'};
     const offer=await pc.createOffer();await pc.setLocalDescription(offer);
     const r=await fetch(ORIGIN+'/api/rt/offer',{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/sdp'},body:offer.sdp});
     if(r.status===429)throw new Error('ఈ రోజు పరిమితి అయిపోయింది');
@@ -77,7 +81,7 @@ function cleanup(){
   if(mic)mic.getTracks().forEach(t=>t.stop());
   if(audioEl){audioEl.srcObject=null}
   pc=dc=mic=audioEl=cur=meta=null;seen=new Set();
-  go.disabled=false;go.classList.remove('on');go.textContent='▶ ప్రారంభించు · Start';$('typed').style.display='none';setSt('')
+  go.disabled=false;go.classList.remove('on');go.textContent='▶ ప్రారంభించు · Start';$('typed').style.display='none';hold=false;$('hold').style.display='none';$('ctl').style.display='none';$('mode').textContent='✋ Hold-to-talk మోడ్';setSt('')
 }
 function stop(){cleanup()}
 go.onclick=()=>live?stop():start();
@@ -111,5 +115,14 @@ async function runTool(it){
   send({type:'conversation.item.create',item:{type:'function_call_output',call_id:it.call_id,output:JSON.stringify(out)}});
   send({type:'response.create'});
 }
+// Hold-to-talk mode: the mic is live only while the button is held (for noisy rooms).
+let hold=false;
+function setMode(h){hold=h;if(mic)mic.getAudioTracks().forEach(t=>t.enabled=!h);$('hold').style.display=h?'block':'none';
+  $('mode').textContent=h?'🎧 ఆటో మోడ్‌కి మారు':'✋ Hold-to-talk మోడ్';setSt(h?'బటన్ పట్టుకొని మాట్లాడండి':'వింటున్నాను… మాట్లాడండి')}
+$('mode').onclick=()=>setMode(!hold);
+const hb=$('hold');
+hb.addEventListener('pointerdown',e=>{e.preventDefault();hb.setPointerCapture(e.pointerId);if(mic)mic.getAudioTracks().forEach(t=>t.enabled=true);hb.classList.add('rec')});
+const rel=()=>{hb.classList.remove('rec');setTimeout(()=>{if(hold&&mic)mic.getAudioTracks().forEach(t=>t.enabled=false)},350)};
+hb.addEventListener('pointerup',rel);hb.addEventListener('pointercancel',rel);hb.addEventListener('contextmenu',e=>e.preventDefault());
 addEventListener('pagehide',cleanup);
 </script></body></html>
