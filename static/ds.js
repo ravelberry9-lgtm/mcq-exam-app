@@ -193,6 +193,25 @@
       });
     });
     go.addEventListener("click", function () { if (!answered) { st.s++; saveStats(topic, st); } location.href = card.dataset.next; });
+    // AI chat: follow-up questions about this question. History stays in the page; the server rebuilds the question context from the database.
+    var chatForm = document.getElementById("aichat-form"), chatIn = document.getElementById("aichat-in"), chatLog = document.getElementById("aichat-log"), chatSend = document.getElementById("aichat-send"), chatHist = [];
+    function chatLine(who, txt) {
+      var d = document.createElement("div"); d.className = "aichat-" + who; d.textContent = txt;
+      d.style.cssText = "margin-top:6px;padding:8px 10px;border-radius:10px;white-space:pre-wrap;" + (who === "me" ? "background:rgba(127,127,127,.18);margin-left:24px" : "background:rgba(127,127,127,.08);margin-right:24px");
+      chatLog.appendChild(d); if (d.scrollIntoView) d.scrollIntoView({ block: "nearest" }); return d;
+    }
+    if (chatForm && chatIn && chatLog && chatSend) chatForm.addEventListener("submit", function (e) {
+      e.preventDefault(); var m = chatIn.value.trim(); if (!m || chatSend.disabled) return;
+      chatLine("me", m); chatIn.value = ""; chatSend.disabled = true; var wait = chatLine("ai", "…");
+      post("/api/ai/chat", { question_id: parseInt(card.dataset.qid, 10), message: m, history: chatHist.slice(-8) }).then(function (r) {
+        wait.textContent = r.reply || ""; chatHist.push({ role: "user", content: m }, { role: "assistant", content: r.reply || "" });
+      }).catch(function (err) {
+        var s = String(err && err.message || "");
+        wait.textContent = s.indexOf("429") > -1 ? "ఈ రోజు చాట్ పరిమితి అయిపోయింది. · Today's chat limit is used up."
+          : s.indexOf("400") > -1 ? "సందేశం చాలా పొడవుగా ఉంది. · That message is too long (max 500 characters)."
+          : "ఇప్పుడు AI చాట్ అందుబాటులో లేదు. · AI chat is not available right now.";
+      }).then(function () { chatSend.disabled = false; });
+    });
     // AI check: a second opinion from the server (OpenAI) on this question's key and explanation. Advice only; it changes nothing.
     var aiBtn = document.getElementById("aichk-btn"), aiOut = document.getElementById("aichk-out");
     if (aiBtn && aiOut) aiBtn.addEventListener("click", function () {
