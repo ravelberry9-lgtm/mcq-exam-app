@@ -12,7 +12,6 @@
 {% for title, sub, lo, hi in parts %}
 <h2>{{ title }}</h2><p>{{ sub }}</p>
 {% for c in data.chapters if lo <= c.display_chapter <= hi %}<a class="card" href="{{ url_for('geography.g2_chapter',number=c.display_chapter) }}"><h3>{{ c.display_chapter }}. {{ c.title }}</h3><span>{{ c.question_count }} MCQs</span></a>{% endfor %}
+{% if lo == 1 %}<h3>Group 1 అదనపు · Group 1 extras (lessons 35–38)</h3><section class="card"><p>Four extra world human and regional geography lessons for Group 1 are being written and will appear here, last under World Geography.</p></section>{% endif %}
 {% endfor %}
-<h2>Group 1 అదనపు · Group 1 extras (world human and regional geography)</h2>
-<section class="card"><p>Lessons 35–38 are being written and will appear here.</p></section>
 {% endblock %}
