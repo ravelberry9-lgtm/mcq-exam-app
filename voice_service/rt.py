@@ -68,9 +68,8 @@ def session_config(model: str, vocab, full: bool = True) -> dict:
     if full:
         cfg["audio"]["input"] = {
             "noise_reduction": {"type": "near_field"},
-            "transcription": {"model": "gpt-4o-transcribe",
-                              "prompt": "Telugu and English study conversation about Andhra Pradesh history. "
-                                        + ("Terms: " + ", ".join(vocab[:40]) if vocab else "")},
+            # No prompt here: a vocabulary prompt gets echoed back as the "transcript" when the audio is short or quiet.
+            "transcription": {"model": "gpt-4o-transcribe"},
             "turn_detection": {"type": "semantic_vad", "eagerness": "medium"},
         }
     return cfg
