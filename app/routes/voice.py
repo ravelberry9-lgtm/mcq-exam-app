@@ -20,3 +20,9 @@ def voice_token():
 def voice_page():
     origin = (current_app.config.get("VOICE_SERVICE_ORIGIN") or __import__("os").environ.get("VOICE_SERVICE_ORIGIN") or "").rstrip("/")
     return render_template("voice.html", voice_origin=origin)
+
+
+@bp.route("/voice/live")
+def voice_live():
+    origin = (current_app.config.get("VOICE_SERVICE_ORIGIN") or __import__("os").environ.get("VOICE_SERVICE_ORIGIN") or "").rstrip("/")
+    return render_template("voice_live.html", voice_origin=origin)
