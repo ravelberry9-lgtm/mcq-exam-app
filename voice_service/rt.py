@@ -21,6 +21,7 @@ VOICE = os.environ.get("REALTIME_VOICE", "marin")
 # Deliberately generous per-minute estimates. They only drive the daily cap, not billing.
 USD_PER_MIN = {"gpt-realtime-2.1-mini": 0.04, "gpt-realtime-2.1": 0.12}
 TRANSCRIBE_LANG = os.environ.get("RT_TRANSCRIBE_LANG", "te")
+RECENT: dict = {}  # device -> last 15 question ids asked, so the same question is not repeated right away
 STRONG = 15.0  # same threshold as the text tutor: below this a notes match is only a weak hint
 
 INSTRUCTIONS = """You are a warm, patient voice tutor for a Telugu-speaking APPSC Group 1 and Group 2 aspirant. Talk like a good teacher having a conversation: short, natural, friendly. No lists, no markdown, no symbols, nothing that sounds like reading a document.
@@ -122,9 +123,10 @@ def run_tool(engine, index, sessions, dev, name, args):
     if name == "next_question":
         with engine.connect() as c:
             sid = c.execute(text("SELECT id FROM subjects WHERE slug='ap_history'")).scalar()
-            q = next_question(c, dev, sid, rng=random)
+            q = next_question(c, dev, sid, rng=random, exclude=RECENT.get(dev, []))
         if not q:
             return {"error": "no questions available"}
+        RECENT[dev] = (RECENT.get(dev, []) + [q["id"]])[-15:]
         lang = pick_lang(q, "te")
         sessions[dev] = {"q": q, "lang": lang}
         qt = q["question_te"] if lang == "te" and q["question_te"] else q["question_en"]
