@@ -1,0 +1,6 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'practice' %}
+{% block title %}Lesson {{ number }} MCQs · Group 2 Geography{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
+{% block topbar %}<h1>Lesson {{ number }} · MCQ Practice</h1>{% endblock %}
+{% block content %}<nav><a href="{{ url_for('geography.g2_chapter',number=number) }}">‹ Lesson</a></nav><section class="card"><h2>{{ ch.title }}</h2><p>{{ questions|length }} questions · Telugu and English</p>{% if questions %}<a class="btn primary" href="{{ url_for('geography.g2_question',number=number,qid=questions[0].id,qlang='te') }}">ప్రారంభించండి · Start</a>{% endif %}</section>{% endblock %}

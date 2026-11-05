@@ -1,0 +1,592 @@
+{
+  "format": "india-ap-page-fact-ledger-v1",
+  "chapter": 2,
+  "title": "Geological Structure, Rocks and Physiographic Divisions of India and Andhra Pradesh",
+  "book_pages": "202-239",
+  "intake_rule": "Each printed page is read once from its rendered image. Facts, concepts, maps, tables, printed PYQs and suspected errors are recorded before moving forward.",
+  "table_policy": "Printed tables are preserved cell-by-cell, then corrected, dated and enriched. Narrative concepts remain in paragraphs.",
+  "pages": [
+    {
+      "page": 202,
+      "source_pdf": "geo198.222.pdf#page=4",
+      "status": "intake_complete",
+      "heading": "Major physiographic divisions and Himalayan origin",
+      "facts": [
+        {"id": "IA02-P202-F01", "claim": "The printed page gives an elevation-based percentage distribution of India's plains, plateaus, hills and mountains from an older Census classification.", "type": "table-data", "target_anchor": "relief-distribution", "verification_note": "Retain as a dated printed classification only; categories and percentages require the original Census definition."},
+        {"id": "IA02-P202-F02", "claim": "The page prints an NCERT comparison as plains 43%, mountains/hills 30% and plateaus 23%.", "type": "book-error", "target_anchor": "relief-distribution", "verification_note": "The plateau share should be checked against NCERT; 23% appears to be a typographical error because the standard NCERT distribution is plains 43%, mountains 30%, plateaus 27%."},
+        {"id": "IA02-P202-F03", "claim": "The book groups India into Himalayas, Northern/Ganga–Indus plains, Thar Desert, Peninsular plateau, and coasts/islands.", "type": "classification", "target_anchor": "physiographic-divisions"},
+        {"id": "IA02-P202-F04", "claim": "Modern textbook treatment separates the coastal plains and islands, giving six major physiographic divisions.", "type": "correction", "target_anchor": "physiographic-divisions"},
+        {"id": "IA02-P202-F05", "claim": "The Himalayas are geologically young fold mountains formed through convergence/collision of the Indian and Eurasian plates.", "type": "concept", "target_anchor": "himalayan-origin"},
+        {"id": "IA02-P202-F06", "claim": "Folding produces anticlines and synclines; the older geosyncline explanation in the book should be distinguished from modern plate-tectonic interpretation.", "type": "concept", "target_anchor": "folding-anticline-syncline"},
+        {"id": "IA02-P202-F07", "claim": "The page gives the Himalayan arc an approximate length of 2,400 km and notes that it extends through India, Nepal, Bhutan, China/Tibet and Pakistan-administered sectors.", "type": "number", "target_anchor": "himalayan-extent"}
+      ],
+      "tables": ["IA02-T01 relief-percentage comparison"],
+      "visuals": ["Physiographic divisions map"]
+    },
+    {
+      "page": 203,
+      "source_pdf": "geo198.222.pdf#page=5",
+      "status": "intake_complete",
+      "heading": "Himalayan ranges and Himadri",
+      "facts": [
+        {"id": "IA02-P203-F01", "claim": "The Himalayas are commonly divided into three longitudinal ranges: Himadri/Greater Himalaya, Himachal/Lesser Himalaya and Shiwalik/Outer Himalaya.", "type": "classification", "target_anchor": "himalayan-ranges"},
+        {"id": "IA02-P203-F02", "claim": "The Himalayan system extends from the Indus gorge in the west to the Brahmaputra bend/gorge in the east in a broad arc of about 2,400 km.", "type": "map", "target_anchor": "himalayan-extent"},
+        {"id": "IA02-P203-F03", "claim": "Its west–east width decreases broadly from about 400–500 km in the west to roughly 150–200 km in the east.", "type": "comparison", "target_anchor": "himalayan-width", "verification_note": "Use ranges rather than one universal width."},
+        {"id": "IA02-P203-F04", "claim": "Himadri is the northernmost, highest and most continuous Himalayan range and contains many of the loftiest peaks and major glaciers.", "type": "concept", "target_anchor": "himadri"},
+        {"id": "IA02-P203-F05", "claim": "The book gives Himadri an average elevation near 6,100 m and width roughly 120–190 km.", "type": "number", "target_anchor": "himadri", "verification_note": "Compare with NCERT's commonly used average height of about 6,000 m; width varies along the range."},
+        {"id": "IA02-P203-F06", "claim": "The core of the Great Himalaya is composed mainly of granite and other crystalline rocks and remains snow-covered in many high sectors.", "type": "geology", "target_anchor": "himadri-geology"}
+      ],
+      "visuals": ["Himalayan ranges map"]
+    },
+    {
+      "page": 204,
+      "source_pdf": "geo198.222.pdf#page=6",
+      "status": "intake_complete",
+      "heading": "Everest measurements and alternative height concepts",
+      "facts": [
+        {"id": "IA02-P204-F01", "claim": "Mount Everest is called Sagarmatha in Nepal and Qomolangma/Chomolungma in Tibetan usage.", "type": "name", "target_anchor": "everest-names"},
+        {"id": "IA02-P204-F02", "claim": "Nepal and China jointly announced the current official Everest elevation of 8,848.86 m in December 2020.", "type": "current-number", "target_anchor": "everest-height"},
+        {"id": "IA02-P204-F03", "claim": "The page traces changing Everest estimates associated with the Survey of India, the 1955 value, the 1999 GPS-based value and the 2020 Nepal–China value.", "type": "history", "target_anchor": "everest-measurement-history", "verification_note": "Preserve the chronology but verify each historical figure before scoring."},
+        {"id": "IA02-P204-F04", "claim": "Everest lies near 27°59′ N, 86°55′ E on the Nepal–China boundary.", "type": "coordinates", "target_anchor": "everest-location"},
+        {"id": "IA02-P204-F05", "claim": "Chimborazo's summit is farthest from Earth's centre because of Earth's equatorial bulge, although Everest is highest above mean sea level.", "type": "concept", "target_anchor": "height-measurement-concepts"},
+        {"id": "IA02-P204-F06", "claim": "Mauna Kea is taller than Everest when measured from its submarine base, while only about 4,207 m rises above sea level.", "type": "concept", "target_anchor": "height-measurement-concepts", "verification_note": "The book prints about 10,203 m base-to-peak and 4,203 m above sea level; use current USGS values and explain the measurement basis."}
+      ],
+      "visuals": ["Everest relief map"]
+    },
+    {
+      "page": 205,
+      "source_pdf": "geo198.222.pdf#page=7",
+      "status": "intake_complete",
+      "heading": "Highest peaks and long Himalayan glaciers",
+      "facts": [
+        {"id": "IA02-P205-F01", "claim": "The printed top-ten Himalayan peak table lists Everest, K2, Kangchenjunga, Lhotse, Makalu, Dhaulagiri, Manaslu, Cho Oyu, Nanga Parbat and Annapurna.", "type": "table-data", "target_anchor": "highest-peaks-table"},
+        {"id": "IA02-P205-F02", "claim": "Several printed elevations in the peak table are outdated or incorrect and must be replaced by one authoritative modern elevation series.", "type": "book-error", "target_anchor": "highest-peaks-table", "verification_note": "Examples include Kangchenjunga 8,586 m, Lhotse 8,516 m, Makalu 8,485 m, Dhaulagiri I 8,167 m, Manaslu 8,163 m, Cho Oyu 8,188 m and Annapurna I 8,091 m."},
+        {"id": "IA02-P205-F03", "claim": "Kangchenjunga is the highest peak located in India-administered territory and lies on the Sikkim–Nepal boundary.", "type": "comparison", "target_anchor": "india-highest-peak", "verification_note": "Distinguish India-administered geography from India's territorial claim when discussing K2."},
+        {"id": "IA02-P205-F04", "claim": "K2 is the world's second-highest mountain and lies in the Karakoram in Pakistan-administered territory claimed by India.", "type": "political-geography", "target_anchor": "k2-context"},
+        {"id": "IA02-P205-F05", "claim": "The printed glacier table compares Siachen, Hispar, Biafo, Baltoro and Batura by location and length.", "type": "table-data", "target_anchor": "himalayan-glaciers-table", "verification_note": "Glacier-length figures vary by source and measurement date; use one dated authoritative series."}
+      ],
+      "tables": ["IA02-T02 highest Himalayan peaks", "IA02-T03 highest peaks in India", "IA02-T04 long Himalayan glaciers"]
+    },
+    {
+      "page": 206,
+      "source_pdf": "geo198.222.pdf#page=8",
+      "status": "intake_complete",
+      "heading": "Himachal/Lesser Himalaya and regional ranges",
+      "facts": [
+        {"id": "IA02-P206-F01", "claim": "The Himachal or Lesser Himalaya lies south of Himadri, is roughly 60–80 km wide and commonly reaches about 3,500–4,500 m.", "type": "comparison", "target_anchor": "himachal-lesser-himalaya"},
+        {"id": "IA02-P206-F02", "claim": "The Lesser Himalaya is highly dissected and contains important ranges including Pir Panjal, Dhauladhar and Mahabharat.", "type": "classification", "target_anchor": "lesser-himalayan-ranges"},
+        {"id": "IA02-P206-F03", "claim": "The Kashmir Valley lies between the Greater Himalaya and Pir Panjal; several well-known passes and tourist valleys occur in the Lesser Himalaya.", "type": "map", "target_anchor": "kashmir-valley"},
+        {"id": "IA02-P206-F04", "claim": "Pir Panjal is one of the longest and most important ranges of the Lesser Himalaya and extends from the Kashmir region toward Himachal Pradesh.", "type": "concept", "target_anchor": "pir-panjal"},
+        {"id": "IA02-P206-F05", "claim": "Dhauladhar extends through the Himachal region; Mahabharat is the Nepali continuation/name used for a Lesser Himalayan range.", "type": "regional-name", "target_anchor": "lesser-himalayan-ranges"},
+        {"id": "IA02-P206-F06", "claim": "Kashmir Valley is a structural intermontane basin with lacustrine Karewa deposits, not a simple river-cut valley.", "type": "concept", "target_anchor": "kashmir-karewas"}
+      ]
+    },
+    {
+      "page": 207,
+      "source_pdf": "geo198.222.pdf#page=9",
+      "status": "intake_complete",
+      "heading": "Kashmir Valley and valleys by Himalayan region; Shiwalik",
+      "facts": [
+        {"id": "IA02-P207-F01", "claim": "The Kashmir Valley covers roughly 15,900 km², lies near 1,585 m above mean sea level and is drained by the Jhelum and its tributaries.", "type": "number", "target_anchor": "kashmir-valley", "verification_note": "Area values vary by valley definition; use approximate wording and a defined source."},
+        {"id": "IA02-P207-F02", "claim": "Dal Lake lies near the valley's northeastern side and the Jhelum traverses the Kashmir Valley.", "type": "map", "target_anchor": "kashmir-valley"},
+        {"id": "IA02-P207-F03", "claim": "The printed box associates Gulmarg and Pahalgam with Jammu and Kashmir; Kullu, Chamba, Dalhousie, Shimla and related valleys with Himachal Pradesh; Dehradun and Nainital with Uttarakhand; and Darjeeling/Kalimpong with West Bengal.", "type": "table-data", "target_anchor": "himalayan-valleys-table", "verification_note": "Separate valleys, hill stations and administrative districts; the printed box mixes feature types."},
+        {"id": "IA02-P207-F04", "claim": "The Shiwalik or Outer Himalaya is the southernmost Himalayan range, composed largely of unconsolidated sediments brought down by rivers from the ranges to the north.", "type": "concept", "target_anchor": "shiwalik"},
+        {"id": "IA02-P207-F05", "claim": "Shiwalik elevation is commonly about 600–1,500 m, width roughly 10–50 km, and longitudinal valleys between Lesser Himalaya and Shiwalik are called duns.", "type": "definition", "target_anchor": "duns"},
+        {"id": "IA02-P207-F06", "claim": "Examples of duns include Dehra Dun, Kotli Dun and Patli Dun; the printed regional names require spelling and location verification.", "type": "examples", "target_anchor": "duns"}
+      ],
+      "tables": ["IA02-T05 valleys and hill stations by Himalayan region"]
+    },
+    {
+      "page": 208,
+      "source_pdf": "geo198.222.pdf#page=10",
+      "status": "intake_complete",
+      "heading": "Purvanchal and Trans-Himalayan divisions",
+      "facts": [
+        {"id": "IA02-P208-F01", "claim": "After the Dihang gorge the Himalayas bend sharply south and extend along India's eastern boundary as the Purvanchal hills.", "type": "map", "target_anchor": "purvanchal"},
+        {"id": "IA02-P208-F02", "claim": "Purvanchal includes the Patkai Bum, Naga Hills, Manipur Hills and Mizo/Lushai Hills, with related Garo–Khasi–Jaintia uplands treated separately by geological origin.", "type": "classification", "target_anchor": "purvanchal-ranges"},
+        {"id": "IA02-P208-F03", "claim": "The printed state-wise box maps important hill ranges to Arunachal Pradesh, Assam, Nagaland, Manipur, Mizoram, Tripura and Meghalaya.", "type": "table-data", "target_anchor": "purvanchal-state-table", "verification_note": "Verify each range and avoid mixing plateau blocks with Himalayan ranges."},
+        {"id": "IA02-P208-F04", "claim": "Mawsmai Cave near Cherrapunji/Sohra is a limestone cave in Meghalaya; the printed narrative includes changing length and exploration claims that need current official verification.", "type": "karst", "target_anchor": "mawsmai-cave"},
+        {"id": "IA02-P208-F05", "claim": "The Trans-Himalayan region north of the Great Himalaya includes the Karakoram, Ladakh and Zanskar ranges and is geologically distinct from the three main longitudinal Himalayan ranges.", "type": "classification", "target_anchor": "trans-himalaya"},
+        {"id": "IA02-P208-F06", "claim": "The Karakoram contains K2 and extensive glaciers and forms a high, arid mountain system in the northwestern Trans-Himalaya.", "type": "concept", "target_anchor": "karakoram"}
+      ],
+      "tables": ["IA02-T06 Purvanchal ranges by state"]
+    },
+    {
+      "page": 209,
+      "source_pdf": "geo198.222.pdf#page=11",
+      "status": "intake_complete",
+      "heading": "Karakoram, Siachen, Ladakh and Zanskar",
+      "facts": [
+        {"id": "IA02-P209-F01", "claim": "K2, Gasherbrum I, Broad Peak and Gasherbrum II are major Karakoram peaks; the book correctly distinguishes K2's regional names but some transliterations require correction.", "type": "table-data", "target_anchor": "karakoram-peaks"},
+        {"id": "IA02-P209-F02", "claim": "Siachen Glacier lies in the eastern Karakoram near the India–Pakistan Actual Ground Position Line and is one of the world's longest non-polar mountain glaciers.", "type": "map", "target_anchor": "siachen-glacier"},
+        {"id": "IA02-P209-F03", "claim": "The book prints Siachen length near 75 km and describes exceptionally high, cold military deployment; exact superlatives and temperature figures should be source-qualified.", "type": "number", "target_anchor": "siachen-glacier", "verification_note": "Use an official dated source and avoid an unqualified 'world's highest battlefield' as a landform fact."},
+        {"id": "IA02-P209-F04", "claim": "The Ladakh Range lies broadly parallel to the Karakoram and is separated from the Zanskar Range by the Indus valley system.", "type": "map", "target_anchor": "ladakh-zanskar"},
+        {"id": "IA02-P209-F05", "claim": "The Zanskar Range forms a high mountain belt south of the Ladakh Range and merges eastward into the broader Tibetan/Himalayan system.", "type": "map", "target_anchor": "ladakh-zanskar"},
+        {"id": "IA02-P209-F06", "claim": "The page mentions the 1999 Kargil conflict and Parkachik Glacier while describing the Zanskar/Kargil sector.", "type": "historical-geography", "target_anchor": "kargil-zanskar"}
+      ],
+      "visuals": ["Purvanchal hills map", "Karakoram–Ladakh–Zanskar map"]
+    },
+    {
+      "page": 210,
+      "source_pdf": "geo198.222.pdf#page=12",
+      "status": "intake_complete",
+      "heading": "Regional division of the Himalayas",
+      "facts": [
+        {"id": "IA02-P210-F01", "claim": "A west–east regional division uses major river valleys to distinguish Punjab/Kashmir, Kumaon, Nepal and Assam Himalaya sectors.", "type": "classification", "target_anchor": "regional-himalaya"},
+        {"id": "IA02-P210-F02", "claim": "Punjab/Kashmir Himalaya lies broadly between the Indus and Sutlej and includes the Kashmir, Himachal and Kumaon transition sectors depending on the classification used.", "type": "map", "target_anchor": "regional-himalaya", "verification_note": "Textbook classifications differ in naming Punjab, Kashmir and Himachal sectors; show the river boundaries explicitly."},
+        {"id": "IA02-P210-F03", "claim": "Kumaon Himalaya is commonly placed between the Sutlej and Kali rivers, Nepal Himalaya between Kali and Teesta, and Assam Himalaya between Teesta and Dihang/Brahmaputra bend.", "type": "map", "target_anchor": "regional-himalaya"},
+        {"id": "IA02-P210-F04", "claim": "The regional divisions cut across the longitudinal Himadri, Himachal and Shiwalik ranges; the two classification systems answer different questions.", "type": "concept", "target_anchor": "himalayan-classification-matrix"},
+        {"id": "IA02-P210-F05", "claim": "The page records approximate length/area figures for the regional sectors, but these depend on the chosen river boundaries and should not be treated as universal constants.", "type": "number", "target_anchor": "regional-himalaya", "verification_note": "Hold exact printed area values pending a defined cartographic source."}
+      ],
+      "tables": ["IA02-T07 regional Himalayan sectors"]
+    },
+    {
+      "page": 211,
+      "source_pdf": "geo198.222.pdf#page=13",
+      "status": "intake_complete",
+      "heading": "Western, Central and Eastern sectors; phases of Himalayan uplift",
+      "facts": [
+        {"id": "IA02-P211-F01", "claim": "The page restates western, central and eastern Himalayan sectors using Indus–Sutlej, Kali–Teesta and Teesta–Brahmaputra river limits.", "type": "classification", "target_anchor": "regional-himalaya"},
+        {"id": "IA02-P211-F02", "claim": "Important peaks and valleys are distributed across the sectors: K2 and Nanga Parbat in the northwest, Everest/Kangchenjunga in the central–eastern system, and Namcha Barwa near the eastern syntaxis.", "type": "map", "target_anchor": "peaks-by-sector"},
+        {"id": "IA02-P211-F03", "claim": "Duns are longitudinal valleys between the Lesser Himalaya and Shiwalik; Kashmir's Karewa deposits are lacustrine–fluvial sediments important for saffron cultivation.", "type": "concept", "target_anchor": "duns-karewas"},
+        {"id": "IA02-P211-F04", "claim": "The book presents Himalayan uplift in four broad phases from Cretaceous to Pleistocene, linking Trans-Himalaya, Himadri, Himachal and Shiwalik development.", "type": "geological-history", "target_anchor": "himalayan-uplift-phases", "verification_note": "Modern tectonic uplift was diachronous and continues; do not present four neat phases as universally fixed boundaries."},
+        {"id": "IA02-P211-F05", "claim": "Himalayan significance includes climatic barrier effects, river sources, biodiversity, forests, tourism, agriculture and strategic importance.", "type": "application", "target_anchor": "importance-of-himalayas"}
+      ],
+      "tables": ["IA02-T08 four phases of Himalayan uplift"]
+    },
+    {
+      "page": 212,
+      "source_pdf": "geo198.222.pdf#page=14",
+      "status": "intake_complete",
+      "heading": "Peaks by region, Himalayan thrusts and major passes map",
+      "facts": [
+        {"id": "IA02-P212-F01", "claim": "The page groups notable peaks by Jammu and Kashmir/Ladakh, Himachal Pradesh, Uttarakhand, Sikkim and Arunachal Pradesh.", "type": "table-data", "target_anchor": "peaks-by-state", "verification_note": "Verify current state/UT location, spelling and elevation for every peak before scoring."},
+        {"id": "IA02-P212-F02", "claim": "Major tectonic boundaries include the Indus–Tsangpo Suture Zone, Main Central Thrust, Main Boundary Thrust and Himalayan Frontal Thrust/Fault.", "type": "geology", "target_anchor": "himalayan-thrusts"},
+        {"id": "IA02-P212-F03", "claim": "The Indus–Tsangpo Suture marks the collision zone between the Indian and Eurasian/Tibetan terranes north of the Higher Himalaya.", "type": "concept", "target_anchor": "himalayan-thrusts"},
+        {"id": "IA02-P212-F04", "claim": "The Main Central Thrust broadly separates Higher/Greater Himalayan rocks from the Lesser Himalayan domain.", "type": "concept", "target_anchor": "himalayan-thrusts"},
+        {"id": "IA02-P212-F05", "claim": "The Main Boundary Thrust broadly separates Lesser Himalaya from the Shiwalik belt, while the Himalayan Frontal Thrust marks the active southern mountain front against the foreland.", "type": "concept", "target_anchor": "himalayan-thrusts"},
+        {"id": "IA02-P212-F06", "claim": "The printed map locates major passes across the western, central and eastern Himalaya.", "type": "map", "target_anchor": "himalayan-passes"}
+      ],
+      "tables": ["IA02-T09 Himalayan thrust zones"],
+      "visuals": ["Major mountain passes of India map"]
+    },
+    {
+      "page": 213,
+      "source_pdf": "geo198.222.pdf#page=15",
+      "status": "intake_complete",
+      "heading": "Mountain passes and strategic tunnels",
+      "facts": [
+        {"id": "IA02-P213-F01", "claim": "The printed pass list includes Khyber, Bolan, Mintaka, Parpik, Khunjerab, Aghil, Banihal, Pir Panjal, Chang La, Khardung La, Lanak La, Karakoram Pass, Pensi La and Zoji La in the northwestern sectors.", "type": "table-data", "target_anchor": "western-passes", "verification_note": "Some passes lie outside present Indian administration; classify by current geography and official claim context."},
+        {"id": "IA02-P213-F02", "claim": "The Himachal list includes Bara-lacha La, Debsa and Rohtang; the printed list must be checked for spelling and current road/tunnel status.", "type": "table-data", "target_anchor": "himachal-passes"},
+        {"id": "IA02-P213-F03", "claim": "Rohtang Pass connects the Kullu side with Lahaul–Spiti; the Atal Tunnel provides an all-weather route below Rohtang and was opened in October 2020.", "type": "infrastructure", "target_anchor": "rohtang-atal-tunnel"},
+        {"id": "IA02-P213-F04", "claim": "The page identifies Shipki La, Mana, Lipulekh, Nathu La, Jelep La and eastern passes such as Bomdi La and Sela in their respective state sectors.", "type": "map", "target_anchor": "central-eastern-passes"},
+        {"id": "IA02-P213-F05", "claim": "The Sela Tunnel in Arunachal Pradesh provides all-weather strategic connectivity toward Tawang; current length, elevation and inauguration details must be taken from official project sources.", "type": "current-affairs", "target_anchor": "sela-tunnel", "verification_note": "The book's February 2024 start wording is outdated; verify commissioning/inauguration details."}
+      ],
+      "tables": ["IA02-T10 mountain passes by region"]
+    },
+    {
+      "page": 214,
+      "source_pdf": "geo198.222.pdf#page=16",
+      "status": "intake_complete",
+      "heading": "Passes of Uttarakhand, Sikkim and Arunachal Pradesh",
+      "facts": [
+        {"id": "IA02-P214-F01", "claim": "The page continues the pass inventory for Uttarakhand, Sikkim and Arunachal Pradesh, linking individual passes with cross-border routes.", "type": "table-data", "target_anchor": "central-eastern-passes"},
+        {"id": "IA02-P214-F02", "claim": "Lipulekh, Mana and Niti are important Uttarakhand passes; Lipulekh is associated with the Kailash–Manasarovar route and tri-junction context.", "type": "map", "target_anchor": "uttarakhand-passes"},
+        {"id": "IA02-P214-F03", "claim": "Nathu La and Jelep La are important Sikkim passes linking the Chumbi Valley/Tibet side with the Indian side; historical trade-route descriptions must be distinguished from current border controls.", "type": "map", "target_anchor": "sikkim-passes"},
+        {"id": "IA02-P214-F04", "claim": "Bomdi La, Diphu, Kumjawng/Yangyap and related eastern passes are listed for Arunachal Pradesh; spellings and exact border locations require Survey of India/official verification.", "type": "map", "target_anchor": "arunachal-passes", "verification_note": "The printed list contains variable transliterations."},
+        {"id": "IA02-P214-F05", "claim": "A pass is a naturally lower route through a mountain range; its strategic importance depends on the valleys, roads and borders it connects, not merely its elevation.", "type": "concept", "target_anchor": "mountain-pass-definition"}
+      ]
+    },
+    {
+      "page": 215,
+      "source_pdf": "geo198.222.pdf#page=17",
+      "status": "intake_complete",
+      "heading": "Northern Plains, Bhabar and Terai",
+      "facts": [
+        {"id": "IA02-P215-F01", "claim": "The Northern Plains were formed mainly by alluvium deposited by the Indus, Ganga and Brahmaputra river systems in a foreland basin south of the Himalaya.", "type": "concept", "target_anchor": "northern-plains-origin"},
+        {"id": "IA02-P215-F02", "claim": "The plains extend about 2,400 km west to east and broadly 150–300 km in width; local width varies considerably.", "type": "number", "target_anchor": "northern-plains-extent"},
+        {"id": "IA02-P215-F03", "claim": "The Bhabar is a narrow porous pebble-and-boulder belt along the Shiwalik foothills where many streams disappear into coarse sediment.", "type": "definition", "target_anchor": "bhabar"},
+        {"id": "IA02-P215-F04", "claim": "The Terai lies south of the Bhabar; streams re-emerge, producing marshy, waterlogged conditions and historically dense forests.", "type": "definition", "target_anchor": "terai"},
+        {"id": "IA02-P215-F05", "claim": "The Bhangar is older alluvium above the active floodplain and commonly contains calcareous kankar nodules.", "type": "definition", "target_anchor": "bhangar-khadar"}
+      ],
+      "visuals": ["Great Plain of North India map"]
+    },
+    {
+      "page": 216,
+      "source_pdf": "geo198.222.pdf#page=18",
+      "status": "intake_complete",
+      "heading": "Khadar, piedmont plains and Punjab–Haryana plains",
+      "facts": [
+        {"id": "IA02-P216-F01", "claim": "Khadar is newer alluvium renewed by floods in the active floodplain and is generally more fertile than older Bhangar surfaces.", "type": "definition", "target_anchor": "bhangar-khadar"},
+        {"id": "IA02-P216-F02", "claim": "Local piedmont features include pebbly fans/cones and seasonal streams; regional names such as chos in the Shiwalik foothills require local context.", "type": "landform", "target_anchor": "piedmont-features"},
+        {"id": "IA02-P216-F03", "claim": "The Punjab–Haryana plain was built mainly by the Indus tributary system and is characterised by interfluves called doabs.", "type": "concept", "target_anchor": "punjab-haryana-plain"},
+        {"id": "IA02-P216-F04", "claim": "A doab is the land between two rivers; named doabs include Sind Sagar, Chaj, Rechna, Bari and Bist/Jalandhar.", "type": "definition", "target_anchor": "doabs"},
+        {"id": "IA02-P216-F05", "claim": "The printed doab box maps each name to its bounding rivers and should be preserved as a matching table after river-name verification.", "type": "table-data", "target_anchor": "doab-table"}
+      ],
+      "tables": ["IA02-T11 Punjab doabs and bounding rivers"]
+    },
+    {
+      "page": 217,
+      "source_pdf": "geo198.222.pdf#page=19",
+      "status": "intake_complete",
+      "heading": "Rajasthan and Ganga plains",
+      "facts": [
+        {"id": "IA02-P217-F01", "claim": "The Rajasthan plain lies west of the Aravalli and includes the Thar Desert, internally drained basins and saline lakes such as Sambhar.", "type": "regional-geography", "target_anchor": "rajasthan-plain"},
+        {"id": "IA02-P217-F02", "claim": "The Ganga Plain extends from the Yamuna region eastward toward the lower Ganga delta and is divided into Upper, Middle and Lower Ganga plains.", "type": "classification", "target_anchor": "ganga-plain"},
+        {"id": "IA02-P217-F03", "claim": "The Upper Ganga Plain includes the Ganga–Yamuna doab and associated tributaries and is linked with Rohilkhand and Awadh regional plains.", "type": "map", "target_anchor": "upper-ganga-plain"},
+        {"id": "IA02-P217-F04", "claim": "The Middle Ganga Plain extends across eastern Uttar Pradesh and Bihar and includes floodplain features such as oxbow lakes and abandoned channels.", "type": "landform", "target_anchor": "middle-ganga-plain"},
+        {"id": "IA02-P217-F05", "claim": "The Lower Ganga Plain includes the West Bengal deltaic sector, distributaries and tidal Sundarbans; older channel surfaces locally form chars and related floodplain features.", "type": "landform", "target_anchor": "lower-ganga-plain"},
+        {"id": "IA02-P217-F06", "claim": "The Brahmaputra Plain is a narrow alluvial valley shaped by a braided, sediment-rich river and frequent floods.", "type": "concept", "target_anchor": "brahmaputra-plain"}
+      ]
+    },
+    {
+      "page": 218,
+      "source_pdf": "geo198.222.pdf#page=20",
+      "status": "intake_complete",
+      "heading": "Brahmaputra plain, Thar Desert and Peninsular Plateau introduction",
+      "facts": [
+        {"id": "IA02-P218-F01", "claim": "The Brahmaputra Plain extends through Assam between the eastern Himalaya and Meghalaya/peninsular uplands and is shaped by braided channels, river islands and frequent floods.", "type": "concept", "target_anchor": "brahmaputra-plain"},
+        {"id": "IA02-P218-F02", "claim": "Majuli is a river island within the Brahmaputra system; claims that it is the world's largest river island depend on definition and date and should be source-qualified.", "type": "correction", "target_anchor": "majuli", "verification_note": "Erosion and channel changes alter area and superlative ranking."},
+        {"id": "IA02-P218-F03", "claim": "The Thar/Great Indian Desert lies mainly west of the Aravalli in Rajasthan and extends into adjoining India and Pakistan.", "type": "map", "target_anchor": "thar-desert"},
+        {"id": "IA02-P218-F04", "claim": "Desert landforms include longitudinal and crescentic dunes, interdunal depressions, playas and ephemeral streams; Luni is the major river system of the Indian desert.", "type": "landform", "target_anchor": "thar-landforms"},
+        {"id": "IA02-P218-F05", "claim": "The Peninsular Plateau is an ancient stable block built largely of crystalline igneous and metamorphic rocks and shaped by long denudation.", "type": "concept", "target_anchor": "peninsular-plateau"}
+      ],
+      "visuals": ["Thar Desert location map"]
+    },
+    {
+      "page": 219,
+      "source_pdf": "geo198.222.pdf#page=21",
+      "status": "intake_complete",
+      "heading": "Central Highlands and Peninsular plateau subdivisions",
+      "facts": [
+        {"id": "IA02-P219-F01", "claim": "The Peninsular Plateau is commonly divided into the Central Highlands north of the Narmada and the Deccan Plateau south of it, with northeastern extensions.", "type": "classification", "target_anchor": "peninsular-subdivisions"},
+        {"id": "IA02-P219-F02", "claim": "The Malwa Plateau lies north of the Vindhya and is drained mainly by the Chambal and its tributaries toward the Yamuna.", "type": "map", "target_anchor": "malwa-plateau"},
+        {"id": "IA02-P219-F03", "claim": "Bundelkhand and Baghelkhand form eastward central upland blocks, while the Chota Nagpur Plateau lies farther east and is mineral-rich.", "type": "classification", "target_anchor": "central-highlands"},
+        {"id": "IA02-P219-F04", "claim": "The Chota Nagpur Plateau contains the Ranchi, Hazaribagh and related plateaus and is drained by rivers including the Damodar and Subarnarekha.", "type": "regional-geography", "target_anchor": "chota-nagpur"},
+        {"id": "IA02-P219-F05", "claim": "The Meghalaya Plateau is separated from the main Peninsular block by the Garo–Rajmahal gap and contains the Garo, Khasi and Jaintia hills.", "type": "concept", "target_anchor": "meghalaya-plateau"}
+      ]
+    },
+    {
+      "page": 220,
+      "source_pdf": "geo198.222.pdf#page=22",
+      "status": "intake_complete",
+      "heading": "Chota Nagpur, Meghalaya and Deccan plateau details",
+      "facts": [
+        {"id": "IA02-P220-F01", "claim": "The Chota Nagpur Plateau includes multiple stepped plateau surfaces, mineral belts and radial drainage through rivers such as Damodar and Subarnarekha.", "type": "regional-geography", "target_anchor": "chota-nagpur"},
+        {"id": "IA02-P220-F02", "claim": "Ranchi Plateau is a prominent high surface within Chota Nagpur and contains isolated flat-topped uplands locally called pats.", "type": "landform", "target_anchor": "ranchi-patlands"},
+        {"id": "IA02-P220-F03", "claim": "The Meghalaya Plateau is an eastern extension of the Peninsular block and is divided into Garo, Khasi and Jaintia hills; the Malda/Garo–Rajmahal gap separates it from the main block.", "type": "concept", "target_anchor": "meghalaya-plateau"},
+        {"id": "IA02-P220-F04", "claim": "The Deccan Plateau is the triangular plateau south of the Narmada, bounded by the Western and Eastern Ghats and generally sloping eastward.", "type": "concept", "target_anchor": "deccan-plateau"},
+        {"id": "IA02-P220-F05", "claim": "Major Deccan subdivisions include Maharashtra, Karnataka and Telangana plateaus, with local uplands and basaltic lava surfaces.", "type": "classification", "target_anchor": "deccan-subdivisions"}
+      ]
+    },
+    {
+      "page": 221,
+      "source_pdf": "geo198.222.pdf#page=23",
+      "status": "intake_complete",
+      "heading": "Plateau map and major Deccan regions",
+      "facts": [
+        {"id": "IA02-P221-F01", "claim": "The map distinguishes Malwa, Bundelkhand, Baghelkhand, Chota Nagpur, Meghalaya, Maharashtra, Karnataka, Telangana and Dandakaranya plateau regions.", "type": "map", "target_anchor": "plateau-regions-map"},
+        {"id": "IA02-P221-F02", "claim": "The Telangana Plateau is part of the Deccan/Peninsular system, composed mainly of old crystalline rocks with broad undulating surfaces.", "type": "regional-geography", "target_anchor": "telangana-plateau"},
+        {"id": "IA02-P221-F03", "claim": "The Maharashtra Plateau is dominated by Deccan Trap basalt formed by extensive lava flows near the end of the Cretaceous.", "type": "geology", "target_anchor": "deccan-traps"},
+        {"id": "IA02-P221-F04", "claim": "The Karnataka/Mysore Plateau contains higher western uplands and lower eastern surfaces; Baba Budan Giri/Mullayanagiri forms an important highland sector.", "type": "regional-geography", "target_anchor": "karnataka-plateau"},
+        {"id": "IA02-P221-F05", "claim": "The Chhattisgarh Plain is a saucer-shaped basin-like lowland within the upper Mahanadi system between surrounding uplands.", "type": "landform", "target_anchor": "chhattisgarh-plain"}
+      ],
+      "visuals": ["Peninsular plateau regions map"]
+    },
+    {
+      "page": 222,
+      "source_pdf": "geo198.222.pdf#page=24",
+      "status": "intake_complete",
+      "heading": "Aravalli, Vindhya, Satpura and associated ranges",
+      "facts": [
+        {"id": "IA02-P222-F01", "claim": "The Aravalli is one of India's oldest fold-mountain systems, now deeply denuded, extending southwest–northeast through Rajasthan toward Delhi.", "type": "geology", "target_anchor": "aravalli"},
+        {"id": "IA02-P222-F02", "claim": "Guru Shikhar on Mount Abu is the highest peak of the Aravalli; printed elevations for Guru Shikhar and Ser/Dilwara peaks require one official topographic source.", "type": "number", "target_anchor": "aravalli-peaks", "verification_note": "Use Survey of India or state official topographic data."},
+        {"id": "IA02-P222-F03", "claim": "The Vindhya forms a discontinuous escarpment/upland system north of the Narmada and includes sandstone, limestone and shale formations.", "type": "geology", "target_anchor": "vindhya"},
+        {"id": "IA02-P222-F04", "claim": "The Satpura lies between the Narmada and Tapti systems and includes Mahadeo, Maikal and related ranges; Dhupgarh is its highest peak.", "type": "map", "target_anchor": "satpura"},
+        {"id": "IA02-P222-F05", "claim": "The Gir, Rajmahal and Garhjat hills belong to different geological and regional settings and must not be treated as one continuous range.", "type": "correction", "target_anchor": "peninsular-ranges"}
+      ]
+    },
+    {
+      "page": 223,
+      "source_pdf": "geo222.246.pdf#page=1",
+      "status": "intake_complete",
+      "heading": "Western Ghats and important gaps",
+      "facts": [
+        {"id": "IA02-P223-F01", "claim": "The Western Ghats form a near-continuous escarpment along the western edge of the Peninsular Plateau from the Tapi region toward Kanyakumari.", "type": "concept", "target_anchor": "western-ghats"},
+        {"id": "IA02-P223-F02", "claim": "The range is generally higher and more continuous than the Eastern Ghats, with the highest elevations in the southern sections.", "type": "comparison", "target_anchor": "western-eastern-ghats-comparison"},
+        {"id": "IA02-P223-F03", "claim": "Anamudi in the Anaimalai Hills is the highest peak of the Western Ghats and Peninsular India; the printed 2,695 m value should be verified against official topographic data.", "type": "number", "target_anchor": "anamudi"},
+        {"id": "IA02-P223-F04", "claim": "Important gaps include Thal/Bhor, Palghat/Palakkad and Shencottah, which provide transport corridors across the Ghats.", "type": "table-data", "target_anchor": "western-ghats-gaps"},
+        {"id": "IA02-P223-F05", "claim": "The Nilgiri, Anaimalai, Cardamom and associated southern hill systems occur where the Western and Eastern highlands meet or continue through the southern peninsula.", "type": "map", "target_anchor": "southern-hills"}
+      ],
+      "tables": ["IA02-T12 important gaps of the Western Ghats"],
+      "visuals": ["Physical map of India"]
+    },
+    {
+      "page": 224,
+      "source_pdf": "geo222.246.pdf#page=2",
+      "status": "intake_complete",
+      "heading": "Important peaks, Nilgiris and Eastern Ghats",
+      "facts": [
+        {"id": "IA02-P224-F01", "claim": "The printed peak table compares Anamudi, Doddabetta, Vembadi Shola, Kalsubai, Salher, Sonsogor, Kudremukh, Pushpagiri and Paithalmala.", "type": "table-data", "target_anchor": "peninsular-peaks-table", "verification_note": "Verify all elevations and hill affiliations from one authoritative topographic series."},
+        {"id": "IA02-P224-F02", "claim": "Doddabetta is the highest peak of the Nilgiri Hills; the Nilgiris are a junction zone of the Western and Eastern Ghats/uplands.", "type": "comparison", "target_anchor": "nilgiri-hills"},
+        {"id": "IA02-P224-F03", "claim": "The Toda, Badaga and Kota communities are associated with the Nilgiri highlands; cultural facts should be presented respectfully and separately from physical geography.", "type": "human-geography", "target_anchor": "nilgiri-communities"},
+        {"id": "IA02-P224-F04", "claim": "The Eastern Ghats are discontinuous, lower and more eroded than the Western Ghats because major east-flowing rivers cut across them.", "type": "concept", "target_anchor": "eastern-ghats"},
+        {"id": "IA02-P224-F05", "claim": "The printed box lists local names of Eastern Ghats ranges in Odisha, Andhra Pradesh and Tamil Nadu and must be preserved after spelling/location verification.", "type": "table-data", "target_anchor": "eastern-ghats-local-names"},
+        {"id": "IA02-P224-F06", "claim": "Jindhagada/Arma Konda is widely cited as the highest peak of the Eastern Ghats, but elevation and naming vary across sources and require current Survey of India/AP official verification.", "type": "number", "target_anchor": "eastern-ghats-highest", "verification_note": "Do not score the printed 1,690 m value without authoritative confirmation."}
+      ],
+      "tables": ["IA02-T13 important Peninsular peaks", "IA02-T14 local names of Eastern Ghats ranges"]
+    },
+    {
+      "page": 225,
+      "source_pdf": "geo222.246.pdf#page=3",
+      "status": "intake_complete",
+      "heading": "Western–Eastern Ghats comparison",
+      "facts": [
+        {"id": "IA02-P225-F01", "claim": "The printed comparison contrasts the Western and Eastern Ghats by location, average width, continuity, elevation, slope, drainage and uplift/erosion character.", "type": "table-data", "target_anchor": "western-eastern-ghats-comparison"},
+        {"id": "IA02-P225-F02", "claim": "Western Ghats are generally narrower, higher, steeper toward the west and more continuous; Eastern Ghats are broader, lower, discontinuous and cut by major rivers.", "type": "comparison", "target_anchor": "western-eastern-ghats-comparison"},
+        {"id": "IA02-P225-F03", "claim": "The Western Ghats create strong orographic rainfall contrasts, whereas the Eastern Ghats exert a weaker continuous barrier effect because of gaps and lower relief.", "type": "climate-link", "target_anchor": "ghats-orographic-effect"},
+        {"id": "IA02-P225-F04", "claim": "The printed exact widths and claims of uniform asymmetry are generalisations; local relief varies and should be explained with examples rather than treated as absolute.", "type": "correction", "target_anchor": "western-eastern-ghats-comparison"}
+      ],
+      "tables": ["IA02-T15 Western Ghats versus Eastern Ghats"]
+    },
+    {
+      "page": 226,
+      "source_pdf": "geo222.246.pdf#page=4",
+      "status": "intake_complete",
+      "heading": "Western and Eastern Coastal Plains",
+      "facts": [
+        {"id": "IA02-P226-F01", "claim": "Western Coastal Plain extends from the Kutch/Gujarat sector to Kanyakumari and is commonly divided into Konkan, Kannad/Kanara and Malabar coasts.", "type": "classification", "target_anchor": "western-coastal-plain"},
+        {"id": "IA02-P226-F02", "claim": "The western coast is generally narrow and contains estuaries, lagoons and backwaters; Kerala's kayals are important examples.", "type": "landform", "target_anchor": "western-coast-landforms"},
+        {"id": "IA02-P226-F03", "claim": "Eastern Coastal Plain extends from the Subarnarekha region toward Kanyakumari and is broader, more level and strongly deltaic.", "type": "classification", "target_anchor": "eastern-coastal-plain"},
+        {"id": "IA02-P226-F04", "claim": "The east coast is divided regionally into Utkal, Andhra/Northern Circars and Coromandel sectors, although boundary conventions vary by textbook.", "type": "classification", "target_anchor": "east-coast-regions"},
+        {"id": "IA02-P226-F05", "claim": "Mahanadi, Godavari, Krishna and Kaveri form major deltas on the east coast; estuaries are more common on the steeper western coast.", "type": "comparison", "target_anchor": "delta-estuary-contrast"},
+        {"id": "IA02-P226-F06", "claim": "The printed box maps state coasts to regional names such as Konkan, Kanara, Malabar, Utkal, Andhra and Coromandel.", "type": "table-data", "target_anchor": "coastal-region-names"}
+      ],
+      "tables": ["IA02-T16 coastal region names by state"]
+    },
+    {
+      "page": 227,
+      "source_pdf": "geo222.246.pdf#page=5",
+      "status": "intake_complete",
+      "heading": "Coastal comparison, beaches and island counts",
+      "facts": [
+        {"id": "IA02-P227-F01", "claim": "The printed table compares the western and eastern coastal plains by adjacent sea, average width, slope, continuity, coastal forms and river-mouth type.", "type": "table-data", "target_anchor": "coastal-plains-comparison"},
+        {"id": "IA02-P227-F02", "claim": "Western coastal rivers often form estuaries, while major east-flowing rivers commonly form large deltas; this is a dominant pattern, not an exceptionless rule.", "type": "concept", "target_anchor": "delta-estuary-contrast"},
+        {"id": "IA02-P227-F03", "claim": "The page lists well-known beaches by state, including Daman and Diu, Gujarat, Maharashtra, Goa, Karnataka, Kerala, Tamil Nadu, Andhra Pradesh, Odisha and West Bengal.", "type": "table-data", "target_anchor": "important-beaches", "verification_note": "Verify names, districts and current spellings; do not treat a tourism list as exhaustive."},
+        {"id": "IA02-P227-F04", "claim": "India's island count varies widely by definition, scale and whether rocks, reefs, islets and offshore features are included; printed totals from different sources must not be combined.", "type": "correction", "target_anchor": "india-island-counts"},
+        {"id": "IA02-P227-F05", "claim": "The book prints one NCERT-style count for Bay of Bengal and Arabian Sea islands and a larger hydrographic total; both require source/date labels.", "type": "number", "target_anchor": "india-island-counts", "verification_note": "Use the current Survey of India/NHO reconciled island inventory for scored questions."},
+        {"id": "IA02-P227-F06", "claim": "Coral islands are low islands formed largely from accumulated coral material in warm shallow marine environments.", "type": "definition", "target_anchor": "coral-islands"}
+      ],
+      "tables": ["IA02-T17 western versus eastern coastal plains", "IA02-T18 important beaches by state"]
+    },
+    {
+      "page": 228,
+      "source_pdf": "geo222.246.pdf#page=6",
+      "status": "intake_complete",
+      "heading": "Coral reefs and Andaman–Nicobar introduction",
+      "facts": [
+        {"id": "IA02-P228-F01", "claim": "Coral reefs are large biogenic limestone structures built mainly by reef-forming coral organisms in warm, shallow marine water; barrier reef is a reef type separated from land by a lagoon.", "type": "concept", "target_anchor": "coral-reef-types"},
+        {"id": "IA02-P228-F02", "claim": "Reef-forming corals generally require warm, sunlit, clear, saline and comparatively shallow water with limited sediment; the printed 20° latitude and 70 m depth rules are useful approximations, not universal limits.", "type": "correction", "target_anchor": "coral-growth-conditions"},
+        {"id": "IA02-P228-F03", "claim": "Fringing, barrier, patch and atoll reefs are principal reef forms; the page identifies Indian examples in Lakshadweep, Gulf of Mannar, Gulf of Kachchh and the Andaman–Nicobar region.", "type": "classification", "target_anchor": "coral-reef-types"},
+        {"id": "IA02-P228-F04", "claim": "Coral bleaching is the paling of coral after stress causes loss of symbiotic algae (zooxanthellae) or their pigments; prolonged severe stress can kill coral.", "type": "concept", "target_anchor": "coral-bleaching"},
+        {"id": "IA02-P228-F05", "claim": "The Andaman–Nicobar archipelago lies in the Bay of Bengal between about 6°45′N and 13°45′N and 92°10′E and 94°15′E; the printed dimensions and coordinates require an official survey source before scoring exact values.", "type": "number", "target_anchor": "andaman-nicobar-location"},
+        {"id": "IA02-P228-F06", "claim": "The archipelago forms an arcuate north–south island chain associated with the submerged continuation of the Arakan Yoma–Andaman–Nicobar tectonic arc.", "type": "geology", "target_anchor": "andaman-nicobar-origin"},
+        {"id": "IA02-P228-F07", "claim": "The page prints island, inhabited-island, total-area, capital, vegetation and coral-reef statistics; each numerical series must retain source and date because official counts differ by definition.", "type": "correction", "target_anchor": "andaman-nicobar-statistics"}
+      ],
+      "tables": ["IA02-T19 coral-growth conditions and major Indian reef regions"]
+    },
+    {
+      "page": 229,
+      "source_pdf": "geo222.246.pdf#page=7",
+      "status": "intake_complete",
+      "heading": "Andaman–Nicobar people and island groups",
+      "facts": [
+        {"id": "IA02-P229-F01", "claim": "The page describes forest cover, bird diversity, Indira Point, Saddle Peak, Great Nicobar and demographic/language features; ecological and demographic numbers require census or administration year labels.", "type": "regional-geography", "target_anchor": "andaman-nicobar-profile"},
+        {"id": "IA02-P229-F02", "claim": "The Andaman–Nicobar chain can be studied as North, Middle, South and Little Andaman groups, followed southward by the Nicobar group; the Ten Degree Channel separates the Andaman and Nicobar groups.", "type": "classification", "target_anchor": "island-groups-channels"},
+        {"id": "IA02-P229-F03", "claim": "North Andaman contains Saddle Peak, the highest point of the archipelago; Middle Andaman is the largest island by area within the Andaman group.", "type": "comparison", "target_anchor": "andaman-islands"},
+        {"id": "IA02-P229-F04", "claim": "Barren Island is India's only confirmed active volcano and lies east of the main Andaman chain; Narcondam is a volcanic island generally classified as dormant.", "type": "volcanology", "target_anchor": "andaman-volcanoes"},
+        {"id": "IA02-P229-F05", "claim": "South Andaman contains Port Blair and Mount Manipur National Park (formerly Mount Harriet National Park); Little Andaman lies south of Duncan Passage.", "type": "map", "target_anchor": "andaman-islands"},
+        {"id": "IA02-P229-F06", "claim": "Great Nicobar is the largest Nicobar island and contains Indira Point; the 2004 Indian Ocean tsunami caused subsidence and major coastal change there.", "type": "concept", "target_anchor": "great-nicobar"},
+        {"id": "IA02-P229-F07", "claim": "The printed 2019 Panchayat Secretary examination item asking the number of administrative subdivisions of Andaman–Nicobar is a real PYQ and must retain its exam label and official-key status.", "type": "pyq", "target_anchor": "andaman-administration", "verification_note": "Transcribe, but do not score until the official paper and key are checked."}
+      ]
+    },
+    {
+      "page": 230,
+      "source_pdf": "geo222.246.pdf#page=8",
+      "status": "intake_complete",
+      "heading": "Great Nicobar, island peaks and renamed islands",
+      "facts": [
+        {"id": "IA02-P230-F01", "claim": "Little Nicobar lies between Car Nicobar and Great Nicobar and belongs to the Nicobar group; Great Nicobar is the southernmost large island and contains Indira Point.", "type": "map", "target_anchor": "nicobar-islands"},
+        {"id": "IA02-P230-F02", "claim": "The page links the 2004 tsunami with submergence/subsidence near Indira Point and notes the Great Nicobar biosphere reserve, including the UNESCO World Network of Biosphere Reserves.", "type": "environment", "target_anchor": "great-nicobar"},
+        {"id": "IA02-P230-F03", "claim": "The printed height box pairs Saddle Peak with North Andaman, Mount Diavolo with Middle Andaman, Mount Koyob with South Andaman and Mount Thullier with Great Nicobar; spellings and elevations require official topographic verification.", "type": "table-data", "target_anchor": "island-peaks", "verification_note": "Do not score exact printed elevations until one authoritative topographic series is fixed."},
+        {"id": "IA02-P230-F04", "claim": "In December 2018, Ross Island, Neil Island and Havelock Island were officially renamed Netaji Subhas Chandra Bose Island, Shaheed Dweep and Swaraj Dweep respectively.", "type": "current-name", "target_anchor": "renamed-islands"},
+        {"id": "IA02-P230-F05", "claim": "The printed table presents selected islands with administrative location, community, special feature and population; population values must be labelled by census year and community descriptions must be handled respectfully.", "type": "table-data", "target_anchor": "andaman-nicobar-island-table"}
+      ],
+      "tables": ["IA02-T20 important Andaman–Nicobar peaks", "IA02-T21 selected islands, locations, communities and population"]
+    },
+    {
+      "page": 231,
+      "source_pdf": "geo222.246.pdf#page=9",
+      "status": "intake_complete",
+      "heading": "Volcanic islands and important channels",
+      "facts": [
+        {"id": "IA02-P231-F01", "claim": "Barren Island is an active stratovolcano in the Andaman Sea; eruption history and crater dimensions must be stated with the monitoring date rather than as timeless facts.", "type": "volcanology", "target_anchor": "barren-island"},
+        {"id": "IA02-P231-F02", "claim": "The printed claim of an eruption during 13–20 September 2025 is temporally specific and needs confirmation from the Geological Survey of India or another official monitoring bulletin before inclusion.", "type": "verification-required", "target_anchor": "barren-island", "verification_note": "Do not score until official confirmation is opened and logged."},
+        {"id": "IA02-P231-F03", "claim": "Volcanic sulfur can deposit by sublimation around fumarolic vents, but the page's crater-depth and sulfur statements need an authoritative geological source.", "type": "concept", "target_anchor": "volcanic-processes"},
+        {"id": "IA02-P231-F04", "claim": "Narcondam is a volcanic island generally described as dormant; Baratang contains mud-volcano features, which are not the same process as a magmatic volcano.", "type": "comparison", "target_anchor": "andaman-volcanoes"},
+        {"id": "IA02-P231-F05", "claim": "The page lists Dhinodhar, Dhosi and Tosham as extinct volcanic/igneous centres; each classification requires Geological Survey of India verification before scoring.", "type": "verification-required", "target_anchor": "indian-volcanic-centres"},
+        {"id": "IA02-P231-F06", "claim": "The submerged Andaman–Nicobar arc is related to plate subduction and contains volcanic and seismic features; it is not simply a visible continuation of one surface mountain range.", "type": "geology", "target_anchor": "andaman-nicobar-origin"},
+        {"id": "IA02-P231-F07", "claim": "The important-channel table locates Coco Channel north of North Andaman, Ten Degree Channel between the Andaman and Nicobar groups, Sombrero Channel near Little Nicobar, St George's Channel between Little and Great Nicobar, Great Channel between Great Nicobar and Sumatra, McPherson Strait between South Andaman and Rutland, and Manners Strait between Rutland and Cinque islands.", "type": "table-data", "target_anchor": "island-groups-channels"},
+        {"id": "IA02-P231-F08", "claim": "The printed 2017 APPSC Group-II question on India's active volcano is a real PYQ whose answer is Barren Island; preserve its exam identity and verify the official key.", "type": "pyq", "target_anchor": "barren-island"}
+      ],
+      "tables": ["IA02-T22 important channels and straits of Andaman–Nicobar"]
+    },
+    {
+      "page": 232,
+      "source_pdf": "geo222.246.pdf#page=10",
+      "status": "intake_complete",
+      "heading": "Lakshadweep: islands, atolls and channels",
+      "facts": [
+        {"id": "IA02-P232-F01", "claim": "Lakshadweep is a group of small coral islands and atolls in the Arabian Sea off Kerala; exact island count, coordinates and area must follow the current Union Territory administration series.", "type": "regional-geography", "target_anchor": "lakshadweep-profile"},
+        {"id": "IA02-P232-F02", "claim": "Kavaratti is the capital; Minicoy is the largest island in the group, Bitra is among the smallest inhabited islands, and Andrott is the largest island by east–west extent/area depending on the official comparison used.", "type": "comparison", "target_anchor": "lakshadweep-islands", "verification_note": "State the comparison criterion explicitly; verify all area superlatives from Lakshadweep Administration."},
+        {"id": "IA02-P232-F03", "claim": "The printed box lists northern Amindivi islands, central Laccadive/Cannanore islands and Minicoy; the old administrative grouping and current island names should both be explained.", "type": "table-data", "target_anchor": "lakshadweep-island-groups"},
+        {"id": "IA02-P232-F04", "claim": "Most inhabited islands use Malayalam, while Mahl is spoken in Minicoy; population and literacy claims require Census year labels.", "type": "human-geography", "target_anchor": "lakshadweep-people"},
+        {"id": "IA02-P232-F05", "claim": "The islands are low-lying coral formations vulnerable to coastal erosion, sea-level rise and storm impacts; Pitti has a protected bird sanctuary.", "type": "environment", "target_anchor": "lakshadweep-environment"},
+        {"id": "IA02-P232-F06", "claim": "The Eight Degree Channel lies south of Minicoy, the Nine Degree Channel separates Minicoy from the main Lakshadweep group, and the Eleven Degree Channel lies north of the Amindivi/Lakshadweep group toward the mainland sector.", "type": "map", "target_anchor": "lakshadweep-channels"},
+        {"id": "IA02-P232-F07", "claim": "The 1973 renaming combined the Laccadive, Minicoy and Amindivi island groups under the name Lakshadweep.", "type": "history", "target_anchor": "lakshadweep-profile"}
+      ],
+      "tables": ["IA02-T23 Lakshadweep island groups and constituent islands"]
+    },
+    {
+      "page": 233,
+      "source_pdf": "geo222.246.pdf#page=11",
+      "status": "intake_complete",
+      "heading": "Important Indian islands by coast and state",
+      "facts": [
+        {"id": "IA02-P233-F01", "claim": "The printed table organises named islands by the Gujarat–Kachchh coast, Narmada–Tapti mouths, Mumbai harbour, New Mangalore/Karnataka, Goa and Kochi on the western side, and by the Gulf of Mannar, Odisha, Andhra Pradesh, Tamil Nadu and Palk Strait sectors on the eastern side.", "type": "table-data", "target_anchor": "important-indian-islands"},
+        {"id": "IA02-P233-F02", "claim": "The table includes Piram, Diu, Vaidya/Nora/Pirotan/Karumbhar, Khadiabet and Aliabet, Elephanta, Butcher, Cross, Bhadrakali/Anjadip and St Mary's among western-coast examples; spellings and present administrative location require verification.", "type": "map", "target_anchor": "western-coast-islands"},
+        {"id": "IA02-P233-F03", "claim": "Elephanta contains rock-cut cave monuments recognised as a UNESCO World Heritage Site; the page's wording must distinguish the island from Elephanta Caves property.", "type": "heritage", "target_anchor": "elephanta-island"},
+        {"id": "IA02-P233-F04", "claim": "Willingdon Island is an artificial island in Kochi harbour created through dredged material during harbour development.", "type": "human-geography", "target_anchor": "willington-island"},
+        {"id": "IA02-P233-F05", "claim": "The eastern-side list includes islands in the Gulf of Mannar, the Odisha coast, Andhra Pradesh lagoons/coast, Tamil Nadu coast and the Palk Strait; names and jurisdiction must be preserved row by row after verification.", "type": "table-data", "target_anchor": "eastern-coast-islands"},
+        {"id": "IA02-P233-F06", "claim": "Wheeler Island was renamed Dr A.P.J. Abdul Kalam Island and hosts an Integrated Test Range associated with missile testing.", "type": "current-name", "target_anchor": "odisha-islands"},
+        {"id": "IA02-P233-F07", "claim": "Sriharikota is a barrier island between Pulicat Lake and the Bay of Bengal and contains the Satish Dhawan Space Centre.", "type": "regional-geography", "target_anchor": "andhra-islands"},
+        {"id": "IA02-P233-F08", "claim": "The table's New Moore/South Talpatti claim is historically sensitive because the low-lying feature disappeared beneath the sea; it should not be presented as a currently inhabited or stable island.", "type": "correction", "target_anchor": "ganga-delta-islands"}
+      ],
+      "tables": ["IA02-T24 important islands along India's western and eastern coasts"]
+    },
+    {
+      "page": 234,
+      "source_pdf": "geo222.246.pdf#page=12",
+      "status": "intake_complete",
+      "heading": "Coastal and relief terminology",
+      "facts": [
+        {"id": "IA02-P234-F01", "claim": "A bay is a broad coastal indentation, while a cove is a smaller sheltered inlet; a gulf is a large arm of the sea penetrating land, but everyday naming does not follow a strict size rule.", "type": "definition", "target_anchor": "coastal-terms"},
+        {"id": "IA02-P234-F02", "claim": "A peninsula is land surrounded by water on most sides and connected to a larger landmass; a beach is an accumulation of loose sediment along a shore.", "type": "definition", "target_anchor": "coastal-terms"},
+        {"id": "IA02-P234-F03", "claim": "A spit is an elongated depositional ridge attached to land at one end; a river mouth is where a river enters another water body.", "type": "definition", "target_anchor": "coastal-terms"},
+        {"id": "IA02-P234-F04", "claim": "A sea cliff is a steep coastal rock face, a shoal is a shallow submerged feature hazardous to navigation, a reef is a ridge or mass near the sea surface, and a lagoon is a shallow water body partly separated from the sea by a barrier or reef.", "type": "definition", "target_anchor": "coastal-terms"},
+        {"id": "IA02-P234-F05", "claim": "An endorheic or landlocked drainage system does not reach the ocean and terminates inland by evaporation or infiltration; a doab is land between two rivers.", "type": "definition", "target_anchor": "drainage-terms"},
+        {"id": "IA02-P234-F06", "claim": "A spur is a lateral ridge descending from a higher ridge or mountain, a ridge is an elongated elevated crest, and a tor is an isolated residual rock outcrop formed mainly by weathering and erosion.", "type": "definition", "target_anchor": "relief-terms"}
+      ],
+      "tables": ["IA02-T25 coastal, drainage and relief terms with corrected definitions"]
+    },
+    {
+      "page": 235,
+      "source_pdf": "geo222.246.pdf#page=13",
+      "status": "intake_complete",
+      "heading": "Andhra Pradesh physical setting and eastern coastal plain",
+      "facts": [
+        {"id": "IA02-P235-F01", "claim": "Andhra Pradesh lies mainly in the Deccan Peninsular physiographic setting and is commonly divided into the Eastern Coastal Plain, Eastern Ghats and interior plateau/upland regions.", "type": "classification", "target_anchor": "ap-physiographic-divisions"},
+        {"id": "IA02-P235-F02", "claim": "The Andhra coastal plain stretches along the Bay of Bengal; coastline-length values changed after updated measurement methodology and must be labelled by source and date rather than mixed.", "type": "correction", "target_anchor": "ap-coastal-plain"},
+        {"id": "IA02-P235-F03", "claim": "The coastal plain is generally broad across the Godavari–Krishna delta sector and locally narrow where the Eastern Ghats approach the coast in northern Andhra Pradesh.", "type": "comparison", "target_anchor": "ap-coastal-plain"},
+        {"id": "IA02-P235-F04", "claim": "Major Andhra delta plains were formed by alluvial deposition from rivers such as the Godavari and Krishna and contain distributaries, canals, wetlands and fertile agricultural soils.", "type": "concept", "target_anchor": "ap-delta-plains"},
+        {"id": "IA02-P235-F05", "claim": "Pulicat Lake is a brackish lagoon shared by Andhra Pradesh and Tamil Nadu; Sriharikota barrier island separates it from the Bay of Bengal.", "type": "regional-geography", "target_anchor": "pulicat-lake"},
+        {"id": "IA02-P235-F06", "claim": "Kolleru is a freshwater lake between the Krishna and Godavari delta systems; the printed superlative and Ramsar-area figures require current official wetland data.", "type": "environment", "target_anchor": "kolleru-lake"},
+        {"id": "IA02-P235-F07", "claim": "The page's district-wise percentages, widths and post-reorganisation district references are tied to an older administrative map and must be re-labelled or updated before scoring.", "type": "correction", "target_anchor": "ap-coastal-plain"}
+      ]
+    },
+    {
+      "page": 236,
+      "source_pdf": "geo222.246.pdf#page=14",
+      "status": "intake_complete",
+      "heading": "Andhra coastal districts and Eastern Ghats",
+      "facts": [
+        {"id": "IA02-P236-F01", "claim": "The page describes lagoons, spits, swamps, caves and coastal geomorphic features across the Andhra coast; examples and district names must be aligned with the current district map.", "type": "regional-geography", "target_anchor": "ap-coastal-landforms"},
+        {"id": "IA02-P236-F02", "claim": "The printed maximum/minimum coastal-district shoreline lengths use an older district configuration and cannot be scored without a dated coastline dataset.", "type": "correction", "target_anchor": "ap-coastline-by-district"},
+        {"id": "IA02-P236-F03", "claim": "The Andhra section of the Eastern Ghats is a discontinuous, ancient and highly denuded hill system, interrupted by river valleys and varying markedly in width and elevation.", "type": "concept", "target_anchor": "ap-eastern-ghats"},
+        {"id": "IA02-P236-F04", "claim": "Local hill names vary by district and include Nallamala, Seshachalam, Velikonda, Palakonda, Papi, Simhachalam and related ranges; each row must retain its district/location context.", "type": "table-data", "target_anchor": "ap-hills-by-district"},
+        {"id": "IA02-P236-F05", "claim": "Jindhagada/Arma Konda, Galikonda, Sinkaram and Araku-area peaks are printed with elevations, but naming and height rankings require Survey of India or Andhra Pradesh official topographic confirmation.", "type": "verification-required", "target_anchor": "ap-highest-peaks", "verification_note": "Do not score exact heights until authoritative verification."}
+      ],
+      "tables": ["IA02-T26 Andhra Pradesh hills and ranges by district"]
+    },
+    {
+      "page": 237,
+      "source_pdf": "geo222.246.pdf#page=15",
+      "status": "intake_complete",
+      "heading": "Nallamala, Erramala, Balam hills, Seshachalam and plateau region",
+      "facts": [
+        {"id": "IA02-P237-F01", "claim": "The district-wise hill list continues through the present Andhra districts and must be preserved as a corrected reference table rather than fragmented into isolated statements.", "type": "table-data", "target_anchor": "ap-hills-by-district"},
+        {"id": "IA02-P237-F02", "claim": "The Nallamala Hills extend mainly across the Kurnool–Nandyal–Prakasam belt and contain deeply dissected terrain, forest and river gorges; printed length, width and peak values need official topographic verification.", "type": "regional-geography", "target_anchor": "nallamala-hills"},
+        {"id": "IA02-P237-F03", "claim": "Erramala Hills are a distinct upland/range west of the Nallamala sector; describing them simply as lava flows is geologically misleading and requires lithological correction.", "type": "correction", "target_anchor": "erramala-hills"},
+        {"id": "IA02-P237-F04", "claim": "Balam hills are described in the Nandyal sector and linked in the book to Neoproterozoic/late Precambrian formations; the stratigraphic statement requires Geological Survey of India verification.", "type": "verification-required", "target_anchor": "balam-hills"},
+        {"id": "IA02-P237-F05", "claim": "The Seshachalam Hills form part of the southern Eastern Ghats around Tirupati–Kadapa and contain the Tirumala plateau; their highest-point claims and elevations must follow official topographic data.", "type": "regional-geography", "target_anchor": "seshachalam-hills"},
+        {"id": "IA02-P237-F06", "claim": "The interior Andhra plateau/upland region lies within the Deccan/Peninsular block and includes old crystalline rocks, granitic and gneissic terrain, weathered surfaces and river-cut valleys.", "type": "geology", "target_anchor": "ap-plateau-region"}
+      ]
+    },
+    {
+      "page": 238,
+      "source_pdf": "geo222.246.pdf#page=16",
+      "status": "intake_complete",
+      "heading": "Important beaches of Andhra Pradesh",
+      "facts": [
+        {"id": "IA02-P238-F01", "claim": "The page presents a district-wise list of Andhra Pradesh beaches from the northern coast to the Nellore sector; all names should be retained in a single geographic reference table with current district names.", "type": "table-data", "target_anchor": "ap-beaches-by-district"},
+        {"id": "IA02-P238-F02", "claim": "Baruva, Kalingapatnam, Bhavanapadu, Chintapalli, Ramakrishna, Bheemunipatnam, Yarada, Lawson's Bay, Appikonda and Pudimadaka are among the northern Andhra examples listed.", "type": "map", "target_anchor": "north-andhra-beaches"},
+        {"id": "IA02-P238-F03", "claim": "Uppada, Vakalapudi, Antarvedi, Kesinapalli, Dindi, Perupalem, Manginapudi, Suryalanka, Vodarevu and Motupalli are among central-coast examples listed; spellings and district allocation require current official tourism/coastal data.", "type": "map", "target_anchor": "central-andhra-beaches"},
+        {"id": "IA02-P238-F04", "claim": "Kothapatnam, Pakala, Mypadu, Koduru and Tupilipalem are among southern-coast examples listed; tourism descriptors such as cleanliness, popularity or suitability are variable and should not become timeless scored facts.", "type": "correction", "target_anchor": "south-andhra-beaches"},
+        {"id": "IA02-P238-F05", "claim": "Beach characteristics depend on waves, currents, sediment supply, coastal structures and seasonal erosion/accretion; this process explanation should accompany the name table.", "type": "concept", "target_anchor": "beach-processes"}
+      ],
+      "tables": ["IA02-T27 Andhra Pradesh beaches by present district and coastal sector"]
+    },
+    {
+      "page": 239,
+      "source_pdf": "geo222.246.pdf#page=17",
+      "status": "intake_complete",
+      "heading": "Southern Andhra beaches and Blue Flag certification",
+      "facts": [
+        {"id": "IA02-P239-F01", "claim": "The beach list continues with Kothapatnam, Pakala, Mypadu, Koduru and Tupilipalem and notes local tourism and fishing uses; current facilities and district names must be date-qualified.", "type": "regional-geography", "target_anchor": "south-andhra-beaches"},
+        {"id": "IA02-P239-F02", "claim": "Blue Flag is a voluntary international environmental certification programme run by the Foundation for Environmental Education (FEE), based on water quality, environmental management, safety/services and environmental education criteria.", "type": "concept", "target_anchor": "blue-flag-beaches"},
+        {"id": "IA02-P239-F03", "claim": "A Blue Flag award is site- and season-specific and can be renewed or withdrawn; it should never be treated as a permanent property of a beach.", "type": "correction", "target_anchor": "blue-flag-beaches"},
+        {"id": "IA02-P239-F04", "claim": "The book states that selected Indian beaches were certified from 2020 and mentions a later Andhra beach proposal/candidacy; the current certified list must be checked directly against FEE before scoring.", "type": "verification-required", "target_anchor": "blue-flag-india", "verification_note": "Open and log the current FEE list before writing a scored MCQ."},
+        {"id": "IA02-P239-F05", "claim": "Claims about a fixed buffer zone, number of criteria or candidacy status must retain programme version and year because Blue Flag standards and national nominees can change.", "type": "correction", "target_anchor": "blue-flag-criteria"}
+      ]
+    }
+  ],
+  "tables_identified": [
+    {"id": "IA02-T01", "page": 202, "title": "Relief-percentage comparison", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T02", "page": 205, "title": "Highest Himalayan peaks", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T03", "page": 205, "title": "Highest peaks in India", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T04", "page": 205, "title": "Long Himalayan glaciers", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T05", "page": 207, "title": "Valleys and hill stations by Himalayan region", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T06", "page": 208, "title": "Purvanchal ranges by state", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T07", "page": 210, "title": "Regional Himalayan sectors", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T08", "page": 211, "title": "Four phases of Himalayan uplift", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T09", "page": 212, "title": "Himalayan thrust zones", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T10", "page": 213, "title": "Mountain passes by region", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T11", "page": 216, "title": "Punjab doabs and bounding rivers", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T12", "page": 223, "title": "Important gaps of the Western Ghats", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T13", "page": 224, "title": "Important Peninsular peaks", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T14", "page": 224, "title": "Local names of Eastern Ghats ranges", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T15", "page": 225, "title": "Western Ghats versus Eastern Ghats", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T16", "page": 226, "title": "Coastal region names by state", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T17", "page": 227, "title": "Western versus eastern coastal plains", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T18", "page": 227, "title": "Important beaches by state", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T19", "page": 228, "title": "Coral-growth conditions and major Indian reef regions", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T20", "page": 230, "title": "Important Andaman–Nicobar peaks", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T21", "page": 230, "title": "Selected islands, locations, communities and population", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T22", "page": 231, "title": "Important channels and straits of Andaman–Nicobar", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T23", "page": 232, "title": "Lakshadweep island groups and constituent islands", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T24", "page": 233, "title": "Important islands along India's western and eastern coasts", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T25", "page": 234, "title": "Coastal, drainage and relief terms with corrected definitions", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T26", "page": 236, "title": "Andhra Pradesh hills and ranges by present district", "status": "intake_complete_notes_pending"},
+    {"id": "IA02-T27", "page": 238, "title": "Andhra Pradesh beaches by present district and coastal sector", "status": "intake_complete_notes_pending"}
+  ]
+}

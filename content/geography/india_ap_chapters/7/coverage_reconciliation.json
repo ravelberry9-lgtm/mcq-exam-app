@@ -1,0 +1,102 @@
+{
+  "format": "india-ap-chapter-coverage-reconciliation-v1",
+  "chapter": 7,
+  "book_pages": "337-368",
+  "pages_visually_read": 32,
+  "printed_table_units_indexed": 26,
+  "notes": {
+    "status": "notes-first manual audit complete through page 368",
+    "sections": 14,
+    "semantic_tables": 31,
+    "covered_clusters": [
+      "irrigation statistics and CCA classification",
+      "dam and barrage concepts",
+      "major Indian project-river-state-purpose register",
+      "inter-state water disputes",
+      "Indus Waters Treaty river grouping",
+      "water storage and discharge units",
+      "major Andhra Pradesh projects and Polavaram printed table",
+      "AP page-365 pair tables",
+      "all 14 Himalayan and all 16 Peninsular NPP links",
+      "page 338-339 irrigation source and canal registers",
+      "page 340 global-water printed values",
+      "Bhakra-Beas-DVC and Narmada narrative",
+      "page 343 Krishna and Godavari printed allocations",
+      "pages 346-349 Telangana project register and joint-barrage shares",
+      "pages 360-361 TBLLC, Vamsadhara and AP project-river-location register",
+      "pages 361-362 Galeru-Nagari, Gundlakamma, HNSS, Pulichintala and Veligonda",
+      "pages 362-363 Polavaram printed table with official corrections",
+      "page 364 Telugu Ganga and Godavari lift-irrigation schemes",
+      "page 365 Godavari lift schemes, Jhanjavati, Muchumarri and tank siltation",
+      "pages 366-368 river-linking history, objectives, all 30 NPP links and evidence cautions"
+    ]
+  },
+  "questions": {
+    "manually_authored_and_reviewed": 176,
+    "legacy_misrouted_excluded": 84,
+    "coverage_status": "570 atomic printed facts across all 32 pages are mapped to scored questions or explicit evidence holds; structural gate passed",
+    "covered_clusters": [
+      "CCA classification and micro-irrigation correction",
+      "dam type concept",
+      "selected national project pairs and purposes",
+      "selected tribunal grouping and printed allocations",
+      "Indus eastern rivers",
+      "TMC and MAF unit corrections",
+      "Prakasam Barrage concept",
+      "Polavaram capacity unit",
+      "NPP counts, Himalayan/Peninsular sets and Ken-Betwa component",
+      "page 337 land-use statistics",
+      "pages 338-339 irrigation shares and canal registers",
+      "page 340 printed global-water distribution",
+      "Bhakra-Beas-DVC components",
+      "Arunachal 2025 hydro approval capacities",
+      "SRSP canal lengths, identity and Stage-II official command-area context",
+      "pages 346-349 Telangana project-river systems, selected printed quantities and all five joint-barrage shares",
+      "page 365 AP tank/district and structure/river pairs",
+      "page 355 AP resource counts, irrigation potential and Godavari Delta components",
+      "pages 356-357 Nagarjuna Sagar, Prakasam Barrage and Srisailam specifications with corrections",
+      "page 358 SRBC, SLBC, Pothireddypadu and Pennar Delta structures",
+      "page 359 Somasila correction, KC Canal and Sangam/Nellore barrage details",
+      "pages 360-361 TBLLC, Vamsadhara and north/south AP project-register mappings",
+      "pages 361-362 GNSS, Gundlakamma, Guru Raghavendra, HNSS, Pulichintala, Tarakarama and Veligonda",
+      "pages 362-363 Polavaram official corrections, specifications and benefits",
+      "page 364 Telugu Ganga water components, route, district command and Godavari lift schemes",
+      "page 365 Godavari lifts, Jhanjavati, Muchumarri and minor-tank concepts",
+      "pages 366-368 river-linking chronology, purposes, NPP lists, Ken-Betwa correction and Pattiseema evidence distinction"
+      ,"pages 340-342 Bhakra-Nangal, Beas-DVC and Narmada-Sardar Sarovar atomic details"
+      ,"pages 344-345 complete printed national project-register row groups"
+      ,"pages 350-351 tribunal framework, chronology, dependable-flow context and Cauvery allocations"
+      ,"pages 352-354 Indus, Bangladesh, Nepal, Bhutan and China cooperation details"
+    ],
+    "uncovered_clusters_requiring_manual_mcqs": [],
+    "held_context_only_clusters": [
+      "proposal-stage or construction-stage capacities, costs and completion dates that change with each official project update",
+      "unverified low-value dimensions printed without a stable official reference point",
+      "current treaty-operation status and pending litigation that require a question-date qualifier"
+    ]
+  },
+  "release_ready": false,
+  "manual_review_evidence": [
+    {"page":355,"reviewed":"Every printed overview row, irrigation-potential row, project-count row and Godavari Delta component was manually read and reconciled into p355-ap-overview and p355-godavari-delta."},
+    {"page":356,"reviewed":"Nagarjuna Sagar chronology, dimensions, storage, power calculation, canals and Prakasam history were manually read and integrated; gross/live/present storage distinction was checked."},
+    {"page":357,"reviewed":"Prakasam Barrage flood/storage/canal rows and Srisailam storage/power/dimension rows were manually read; the 1,223 m barrage typo was corrected to the official 1,233 m."},
+    {"page":358,"reviewed":"SRBC, SLBC, Pothireddypadu, Pennar Delta and Nellore Barrage statements were manually read, narrated and anchored."},
+    {"page":359,"reviewed":"Sangam, Somasila, KC Canal and Rajolibanda printed statements were manually read; outdated Somasila figures were separated from current official figures."},
+    {"page":360,"reviewed":"TBLLC, Vamsadhara Phase-I/II and every printed AP project-location row were manually read once and integrated before MCQ writing."},
+    {"page":361,"reviewed":"The remaining AP project register and the complete Galeru-Nagari introduction were manually read; ambiguous names were not promoted to scored facts."},
+    {"page":362,"reviewed":"Gundlakamma, Guru Raghavendra, HNSS, Pulichintala, Tarakarama and Veligonda paragraphs were manually read and integrated with all printed numeric details."},
+    {"page":363,"reviewed":"Every Polavaram prose line, table cell and yellow-box fact was manually reviewed; official PPA specifications were used to label the left-canal and diversion corrections."},
+    {"page":364,"reviewed":"The image caption, Telugu Ganga narrative/map data and Chagalnadu, Tadipudi and Chintalapudi lift paragraphs were manually read and integrated; notes audit completed before MCQ authoring."},
+    {"page":340,"reviewed":"Bhakra and Nangal prose, measurements, reservoir, canal and power-house claims were manually reread; BBMB evidence was opened and conflicts were labelled before MCQ writing."},
+    {"page":341,"reviewed":"Beas Project, Indira Gandhi Canal and all four DVC dam rows were manually reread; Ministry of Power and BBMB evidence was opened before questions were authored."},
+    {"page":342,"reviewed":"Every Narmada and Sardar Sarovar prose claim was manually reread; FRL and structural-height reference points were separated using Gujarat official evidence."},
+    {"page":344,"reviewed":"Every visible project-register row was manually reconciled with the main and supplementary tables; misclassified power stations and barrages were labelled."},
+    {"page":345,"reviewed":"All 26 continuation rows were manually read and preserved row-by-row before four matching/classification MCQs were written."},
+    {"page":350,"reviewed":"Every dispute-list row, 1956 Act fact and KWDT-I/KWDT-II chronology statement was manually read; official KWDT volumes were opened before notes and MCQs."},
+    {"page":351,"reviewed":"Narmada, Cauvery, Ravi-Beas, Mahadayi, Vansadhara and Mahanadi chronology and printed allocations were manually read; 2007 Cauvery values were separated from the 2018 Supreme Court modification."},
+    {"page":352,"reviewed":"The Indus Treaty signing, river groups, permitted-use concept and project examples were manually read; the printed 20:80 shorthand was rejected as a treaty allocation formula."},
+    {"page":353,"reviewed":"Bangladesh, Nepal, Bhutan and China cooperation prose was manually read; common-river counts, treaty components and stable hydropower facts were verified against MEA sources."},
+    {"page":354,"reviewed":"The continuation map and unit box were manually checked; volatile dam proposals and construction capacities were classified as dated context rather than timeless scored facts."}
+  ],
+  "reason": "All 570 atomic printed facts and concepts are now actively tested or explicitly classified as evidence-held material; the 84 misrouted legacy questions remain excluded with their destination documented."
+}

@@ -1,0 +1,975 @@
+{
+  "format": "india-ap-page-fact-ledger-v1",
+  "chapter": 5,
+  "title": "Soils and Soil Conservation - India and Andhra Pradesh",
+  "book_pages": "289-303",
+  "intake_rule": "Every printed page was read once from its rendered image. Printed prose, figures, maps, lists and PYQs were recorded before textbook integration. Handwritten annotations were ignored.",
+  "table_policy": "Every printed grid or structured list is preserved cell-by-cell. Verified corrections are labelled separately; concepts are explained in prose and comparisons remain responsive semantic tables.",
+  "status": "atomic_fact_to_mcq_mapping_complete",
+  "pages": [
+    {
+      "page": 289,
+      "source_pdf": "geo271.294.pdf#page=19",
+      "heading": "Soil definition, formation factors and physical constituents",
+      "facts": [
+        {
+          "id": "IA05-P289-F01",
+          "claim": "Soil is the natural material at the land surface that supports rooted plants and develops through interactions among parent material, climate, organisms, relief and time.",
+          "anchor": "soil-definition"
+        },
+        {
+          "id": "IA05-P289-F02",
+          "claim": "Pedogenesis is soil formation; the book's claim of roughly 200-400 years for 1 cm of soil is only a broad teaching estimate, not a universal formation rate.",
+          "anchor": "pedogenesis-factors"
+        },
+        {
+          "id": "IA05-P289-F03",
+          "claim": "The book prints an idealised composition of 45% mineral matter, 25% water, 25% air and 5% organic matter; actual proportions vary with texture, structure and moisture.",
+          "anchor": "soil-components"
+        },
+        {
+          "id": "IA05-P289-F04",
+          "claim": "Passive factors printed are parent material and time; active factors printed are climate, organisms, topography/relief and human activity, but modern summaries treat all five CLORPT factors as interacting controls.",
+          "anchor": "pedogenesis-factors"
+        },
+        {
+          "id": "IA05-P289-F05",
+          "claim": "Humus is the relatively stable dark organic fraction formed through decomposition; it affects aggregation, nutrient retention and water relations.",
+          "anchor": "humus-organic-matter"
+        },
+        {
+          "id": "IA05-P289-F06",
+          "claim": "Soil texture is the relative proportion of sand, silt and clay; particle-size limits depend on the classification system and the printed limits must not be universalised.",
+          "anchor": "texture-structure"
+        },
+        {
+          "id": "IA05-P289-F07",
+          "claim": "The book lists clay below 0.002 mm, sand about 0.05-2 mm and silt between clay and sand; the exact silt lower limit is system-specific.",
+          "anchor": "particle-size-table"
+        },
+        {
+          "id": "IA05-P289-F08",
+          "claim": "Soil structure describes the arrangement of primary particles into aggregates or peds.",
+          "anchor": "texture-structure"
+        },
+        {
+          "id": "IA05-P289-F09",
+          "claim": "Soil water occupies pore spaces, dissolves and transports solutes and is partly available to plants; availability depends on retention and matric forces.",
+          "anchor": "soil-water-air"
+        },
+        {
+          "id": "IA05-P289-F10",
+          "claim": "Soil air occupies pores not filled by water and is essential for root and microbial respiration.",
+          "anchor": "soil-water-air"
+        }
+      ],
+      "tables": [
+        "Idealised soil composition",
+        "Sand-silt-clay particle-size comparison"
+      ],
+      "visuals": [],
+      "atomic_item_count": 10,
+      "mapped_atomic_item_count": 10,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-30-005",
+        "GEO-ORIG-30-006",
+        "GEO-ORIG-30-008",
+        "GEO-ORIG-30-012",
+        "GEO-ORIG-30-014",
+        "GEO-ORIG-30-015",
+        "GEO-ORIG-30-018",
+        "GEO-ORIG-30-019",
+        "GEO-ORIG-30-021",
+        "GEO-ORIG-31-011",
+        "GEO-ORIG-31-021",
+        "IA05-ACTIVE-001",
+        "IA05-BOOK-P289-001"
+      ],
+      "mcq_count": 13,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 290,
+      "source_pdf": "geo271.294.pdf#page=20",
+      "heading": "Soil aeration, reaction, colour, horizons and transport",
+      "facts": [
+        {
+          "id": "IA05-P290-F01",
+          "claim": "Well-aerated soil supports aerobic organisms; prolonged saturation limits oxygen and favours anaerobic conditions.",
+          "anchor": "soil-water-air"
+        },
+        {
+          "id": "IA05-P290-F02",
+          "claim": "Oxidation-reduction conditions influence colour, especially iron-related red, brown and grey mottles.",
+          "anchor": "soil-colour"
+        },
+        {
+          "id": "IA05-P290-F03",
+          "claim": "Soil reaction is expressed as pH; pH 7 is neutral, values below 7 acidic and above 7 alkaline, not the book's incorrect 7.2 threshold.",
+          "anchor": "soil-ph"
+        },
+        {
+          "id": "IA05-P290-F04",
+          "claim": "Many crops perform well over a moderately acidic to neutral range, but optimum pH is crop- and soil-specific; 6.5-7.5 is not universal.",
+          "anchor": "soil-ph"
+        },
+        {
+          "id": "IA05-P290-F05",
+          "claim": "The book's printed soil-temperature range of 5-10 degrees is not a general property; soil temperature varies by climate, season, depth, cover and moisture.",
+          "anchor": "soil-temperature-depth"
+        },
+        {
+          "id": "IA05-P290-F06",
+          "claim": "Soil depth affects rooting volume and water storage; the printed 50 cm crop-suitability threshold is not universal.",
+          "anchor": "soil-temperature-depth"
+        },
+        {
+          "id": "IA05-P290-F07",
+          "claim": "Soil colour reflects organic matter, minerals, drainage and oxidation state; black colour does not by itself prove fertility.",
+          "anchor": "soil-colour"
+        },
+        {
+          "id": "IA05-P290-F08",
+          "claim": "A soil horizon is a layer approximately parallel to the surface with properties different from adjacent layers; a soil profile is the vertical sequence of horizons.",
+          "anchor": "soil-profile-horizons"
+        },
+        {
+          "id": "IA05-P290-F09",
+          "claim": "The printed profile shows O, A, E, B, C and R: organic surface; mineral topsoil; eluviation; illuvial accumulation; partly altered parent material; and bedrock.",
+          "anchor": "horizon-table"
+        },
+        {
+          "id": "IA05-P290-F10",
+          "claim": "Residual (in-situ) soils form mainly over their parent material; transported soils are moved by water, wind, ice or gravity before deposition.",
+          "anchor": "residual-transported"
+        }
+      ],
+      "tables": [
+        "O-A-E-B-C-R soil-horizon functions",
+        "Residual versus transported soils"
+      ],
+      "visuals": [
+        "O-A-E-B-C-R soil-profile diagram"
+      ],
+      "atomic_item_count": 10,
+      "mapped_atomic_item_count": 10,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-30-010",
+        "GEO-ORIG-30-015",
+        "GEO-ORIG-30-020",
+        "GEO-ORIG-31-009",
+        "GEO-ORIG-31-015",
+        "GEO-ORIG-31-020",
+        "IA05-ACTIVE-001",
+        "IA05-BOOK-P290-001"
+      ],
+      "mcq_count": 8,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 291,
+      "source_pdf": "geo271.294.pdf#page=21",
+      "heading": "Genetic classifications and alluvial soils",
+      "facts": [
+        {
+          "id": "IA05-P291-F01",
+          "claim": "The older zonal-interzonal-azonal system grouped soils by dominant climate/vegetation, local parent-material or drainage controls, and weak profile development/transport respectively; it is historical, not current Soil Taxonomy.",
+          "anchor": "historical-classification"
+        },
+        {
+          "id": "IA05-P291-F02",
+          "claim": "The book attributes an 1893 fourfold Indian-soil grouping to Voelcker: alluvial, black, red and laterite.",
+          "anchor": "india-soil-classification-history"
+        },
+        {
+          "id": "IA05-P291-F03",
+          "claim": "The printed ICAR grouping lists eight broad soil groups: alluvial; black; red and yellow; laterite; forest/mountain; arid/desert; saline/alkaline; and peaty/marshy.",
+          "anchor": "eight-major-soils"
+        },
+        {
+          "id": "IA05-P291-F04",
+          "claim": "Alluvial soils are widespread in the northern plains and river valleys and occur in deltas and coastal plains; percentages and area figures are date- and classification-specific.",
+          "anchor": "alluvial-distribution"
+        },
+        {
+          "id": "IA05-P291-F05",
+          "claim": "Alluvium is deposited by flowing water and may range from sand to clay; it is not uniformly fertile or uniformly textured.",
+          "anchor": "alluvial-properties"
+        },
+        {
+          "id": "IA05-P291-F06",
+          "claim": "Alluvial soils commonly vary in nitrogen, phosphorus and organic matter, while potash or lime status varies; a blanket nutrient statement is unsafe without soil testing.",
+          "anchor": "alluvial-properties"
+        },
+        {
+          "id": "IA05-P291-F07",
+          "claim": "Khadar is newer floodplain alluvium, whereas Bhangar is older alluvium on higher terraces; bhabar is a coarse porous piedmont belt and tarai is the wetter belt downslope.",
+          "anchor": "alluvial-subtypes"
+        },
+        {
+          "id": "IA05-P291-F08",
+          "claim": "The printed names bhabar, tarai, bhangar and khadar describe geomorphic/alluvial settings rather than four universally uniform soil taxonomic classes.",
+          "anchor": "alluvial-subtypes"
+        },
+        {
+          "id": "IA05-P291-F09",
+          "claim": "Loam is a balanced mixture of sand, silt and clay; sandy loam, clay loam and silty loam reflect the dominant fraction while retaining mixed texture.",
+          "anchor": "loam-texture"
+        }
+      ],
+      "tables": [
+        "Historical zonal-interzonal-azonal comparison",
+        "Eight broad Indian soil groups",
+        "Bhabar-Tarai-Bhangar-Khadar comparison"
+      ],
+      "visuals": [],
+      "atomic_item_count": 9,
+      "mapped_atomic_item_count": 9,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-30-007",
+        "GEO-ORIG-30-014",
+        "GEO-ORIG-30-019",
+        "IA05-ACTIVE-002",
+        "IA05-BOOK-P291-001"
+      ],
+      "mcq_count": 5,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 292,
+      "source_pdf": "geo271.294.pdf#page=22",
+      "heading": "Red-yellow and black soils",
+      "facts": [
+        {
+          "id": "IA05-P292-F01",
+          "claim": "Red and yellow soils develop widely over crystalline igneous and metamorphic rocks under warm conditions; red colour is mainly associated with oxidised iron and yellow colour with hydrated iron forms.",
+          "anchor": "red-yellow-formation"
+        },
+        {
+          "id": "IA05-P292-F02",
+          "claim": "Red-yellow soils are generally porous and may be low in organic matter and available nitrogen/phosphorus, but fertility varies by depth, texture and management.",
+          "anchor": "red-yellow-properties"
+        },
+        {
+          "id": "IA05-P292-F03",
+          "claim": "Red-yellow soils occur across parts of the eastern and southern Deccan and adjoining regions; the printed 18.49% figure is historical and must be dated.",
+          "anchor": "red-yellow-distribution"
+        },
+        {
+          "id": "IA05-P292-F04",
+          "claim": "The book separates red/black and grey/brown subgroups using parent material, colour and iron oxidation; these are descriptive groupings, not modern national taxonomic orders.",
+          "anchor": "red-yellow-subgroups"
+        },
+        {
+          "id": "IA05-P292-F05",
+          "claim": "Black soils are also called regur or black-cotton soils and are strongly associated with Deccan basalt, though black soils can occur on other materials.",
+          "anchor": "black-formation"
+        },
+        {
+          "id": "IA05-P292-F06",
+          "claim": "Smectitic clay gives many Vertisols shrink-swell behaviour, deep cracks in dry periods and self-mulching surface aggregates.",
+          "anchor": "black-properties"
+        },
+        {
+          "id": "IA05-P292-F07",
+          "claim": "Black soils retain water strongly but may have slow infiltration and drainage when wet; high clay does not mean all water is readily plant-available.",
+          "anchor": "black-properties"
+        },
+        {
+          "id": "IA05-P292-F08",
+          "claim": "Black soils occur in Maharashtra, Madhya Pradesh, Gujarat, Telangana, Andhra Pradesh, Karnataka and Tamil Nadu; the printed 15% national share is an older approximation.",
+          "anchor": "black-distribution"
+        },
+        {
+          "id": "IA05-P292-F09",
+          "claim": "Black soils may contain lime, magnesia, potash and iron but can be low in nitrogen, phosphorus and organic matter; local testing remains necessary.",
+          "anchor": "black-properties"
+        }
+      ],
+      "tables": [
+        "Red-yellow versus black soils",
+        "Red/black and grey/brown descriptive subgroups"
+      ],
+      "visuals": [],
+      "atomic_item_count": 9,
+      "mapped_atomic_item_count": 9,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-30-017",
+        "GEO-ORIG-30-024",
+        "IA05-ACTIVE-003",
+        "IA05-BOOK-P292-001"
+      ],
+      "mcq_count": 4,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 293,
+      "source_pdf": "geo271.294.pdf#page=23",
+      "heading": "Black-soil PYQ, laterite and forest soils",
+      "facts": [
+        {
+          "id": "IA05-P293-F01",
+          "claim": "The printed TGPSC 2024 Group-II question tests black-soil statements: large national extent, basaltic parent material, strong water retention and iron content; it must be preserved with exam label and official-key verification.",
+          "anchor": "printed-pyq-black-soil"
+        },
+        {
+          "id": "IA05-P293-F02",
+          "claim": "Laterisation under intense weathering and leaching removes silica and bases and leaves relative enrichment of iron and aluminium oxides.",
+          "anchor": "laterite-formation"
+        },
+        {
+          "id": "IA05-P293-F03",
+          "claim": "Laterite is not simply defined by high temperature and rainfall; drainage, parent material, duration and landscape position also matter.",
+          "anchor": "laterite-formation"
+        },
+        {
+          "id": "IA05-P293-F04",
+          "claim": "Lateritic soils occur in high-rainfall parts of the Western and Eastern Ghats and plateaus; the printed 3.7% figure is historical.",
+          "anchor": "laterite-distribution"
+        },
+        {
+          "id": "IA05-P293-F05",
+          "claim": "Lateritic soils are often acidic and nutrient-poor because of leaching, yet can support plantation crops with appropriate management.",
+          "anchor": "laterite-properties"
+        },
+        {
+          "id": "IA05-P293-F06",
+          "claim": "Forest and mountain soils vary with altitude, slope, vegetation, parent material and climate; they are not a single uniform soil.",
+          "anchor": "forest-mountain-soils"
+        },
+        {
+          "id": "IA05-P293-F07",
+          "claim": "The book prints a historical 18.04% extent for forest soils; modern mapping uses different categories and boundaries.",
+          "anchor": "forest-mountain-soils"
+        },
+        {
+          "id": "IA05-P293-F08",
+          "claim": "Podzolisation can occur under cool humid coniferous conditions, but podzols are not the universal soil of all Indian forests.",
+          "anchor": "forest-mountain-soils"
+        }
+      ],
+      "tables": [
+        "Printed TGPSC 2024 black-soil statements",
+        "Laterite versus forest/mountain soils"
+      ],
+      "visuals": [],
+      "printed_pyqs": [
+        "TGPSC 2024 Group-II black-soil statements"
+      ],
+      "atomic_item_count": 8,
+      "mapped_atomic_item_count": 8,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-30-017",
+        "IA05-ACTIVE-004",
+        "IA05-ACTIVE-009",
+        "IA05-BOOK-P293-001",
+        "IA05-HELD-TGPSC-2024-G2-BLACK-SOIL"
+      ],
+      "mcq_count": 5,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 294,
+      "source_pdf": "geo271.294.pdf#page=24",
+      "heading": "Arid, saline-alkaline, peaty and marshy soils",
+      "facts": [
+        {
+          "id": "IA05-P294-F01",
+          "claim": "Arid soils occur in dry regions, are commonly sandy to loamy, low in organic matter and may accumulate calcium carbonate or salts; properties vary with irrigation and drainage.",
+          "anchor": "arid-soils"
+        },
+        {
+          "id": "IA05-P294-F02",
+          "claim": "Arid-soil colour ranges from red-brown to pale; colour alone is not a taxonomic diagnostic.",
+          "anchor": "arid-soils"
+        },
+        {
+          "id": "IA05-P294-F03",
+          "claim": "Desert irrigation can raise productivity but poor drainage can cause waterlogging and salinity; canal irrigation is not an unconditional benefit.",
+          "anchor": "arid-soils"
+        },
+        {
+          "id": "IA05-P294-F04",
+          "claim": "Saline soil has excess soluble salts; sodic/alkali soil has excessive exchangeable sodium. The two conditions and their reclamation are distinct.",
+          "anchor": "saline-sodic"
+        },
+        {
+          "id": "IA05-P294-F05",
+          "claim": "Salinity and sodicity arise through aridity, saline parent material or groundwater, seawater influence, irrigation and inadequate drainage.",
+          "anchor": "saline-sodic"
+        },
+        {
+          "id": "IA05-P294-F06",
+          "claim": "Leaching plus drainage is central for saline soils, while gypsum is commonly used for sodic soils; reclamation must follow soil and water analysis.",
+          "anchor": "saline-sodic-reclamation"
+        },
+        {
+          "id": "IA05-P294-F07",
+          "claim": "Peaty and marshy soils contain high organic matter under prolonged wetness and oxygen limitation; they may be acidic and nutrient imbalanced.",
+          "anchor": "peaty-marshy"
+        },
+        {
+          "id": "IA05-P294-F08",
+          "claim": "The book lists occurrences in Kerala, coastal Odisha, Tamil Nadu, north Bihar, Uttarakhand and West Bengal; exact distribution needs current soil mapping.",
+          "anchor": "peaty-marshy"
+        }
+      ],
+      "tables": [
+        "Arid, saline/sodic and peaty/marshy comparison"
+      ],
+      "visuals": [],
+      "atomic_item_count": 8,
+      "mapped_atomic_item_count": 8,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-30-009",
+        "GEO-ORIG-30-015",
+        "GEO-ORIG-30-020",
+        "GEO-ORIG-30-022",
+        "GEO-ORIG-31-010",
+        "GEO-ORIG-31-015",
+        "GEO-ORIG-31-020",
+        "GEO-ORIG-31-023",
+        "IA05-ACTIVE-004",
+        "IA05-ACTIVE-009",
+        "IA05-BOOK-P294-001"
+      ],
+      "mcq_count": 11,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 295,
+      "source_pdf": "geo295.317.pdf#page=1",
+      "heading": "Indian major-soil map",
+      "facts": [
+        {
+          "id": "IA05-P295-F01",
+          "claim": "The printed map distinguishes forest/mountain, alluvial, red-yellow, black, laterite and arid soils at a small scale.",
+          "anchor": "india-major-soil-map"
+        },
+        {
+          "id": "IA05-P295-F02",
+          "claim": "Small-scale national maps show broad patterns and cannot identify the soil of a farm or village; detailed surveys are required.",
+          "anchor": "map-scale-caution"
+        },
+        {
+          "id": "IA05-P295-F03",
+          "claim": "The map shows alluvial belts in the northern plains and east-coast deltas, red-yellow soils across much of the peninsular interior, and black soils in major Deccan tracts.",
+          "anchor": "india-major-soil-map"
+        },
+        {
+          "id": "IA05-P295-F04",
+          "claim": "Lateritic belts are shown along humid uplands and parts of the Ghats, while arid soils dominate western Rajasthan and adjoining dry areas.",
+          "anchor": "india-major-soil-map"
+        },
+        {
+          "id": "IA05-P295-F05",
+          "claim": "The map omits many local inclusions and transitional soils and must not be used to assign one soil to an entire state.",
+          "anchor": "map-scale-caution"
+        }
+      ],
+      "tables": [
+        "Printed national map legend reproduced cell-by-cell"
+      ],
+      "visuals": [
+        "India major-soil-types map"
+      ],
+      "atomic_item_count": 5,
+      "mapped_atomic_item_count": 5,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "IA05-BOOK-P295-001"
+      ],
+      "mcq_count": 1,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 296,
+      "source_pdf": "geo295.317.pdf#page=2",
+      "heading": "Soil erosion processes",
+      "facts": [
+        {
+          "id": "IA05-P296-F01",
+          "claim": "Soil erosion is detachment and transport of soil by water, wind or gravity; natural erosion becomes accelerated when human pressure exceeds soil-cover resilience.",
+          "anchor": "erosion-process"
+        },
+        {
+          "id": "IA05-P296-F02",
+          "claim": "Sheet erosion removes a thin, relatively uniform layer; rill erosion forms small channels that ordinary tillage may erase; gully erosion forms larger channels not removable by normal tillage.",
+          "anchor": "water-erosion-types"
+        },
+        {
+          "id": "IA05-P296-F03",
+          "claim": "Ravines are deeply dissected networks produced by advanced gully erosion; the Chambal region is a classic example.",
+          "anchor": "ravines"
+        },
+        {
+          "id": "IA05-P296-F04",
+          "claim": "Riverbank or riparian erosion removes bank material by channel flow and mass failure; Gangetic and Brahmaputra banks are important examples.",
+          "anchor": "bank-coastal-erosion"
+        },
+        {
+          "id": "IA05-P296-F05",
+          "claim": "Wind erosion includes detachment and transport by suspension, saltation and surface creep; it is important in dry, bare, loose soils.",
+          "anchor": "wind-erosion"
+        },
+        {
+          "id": "IA05-P296-F06",
+          "claim": "Splash erosion begins with raindrop impact; landslides are mass movements and should not be treated as identical to splash erosion.",
+          "anchor": "splash-mass-movement"
+        },
+        {
+          "id": "IA05-P296-F07",
+          "claim": "Glacial erosion and coastal wave erosion are geomorphic processes, but the chapter should distinguish them from agricultural topsoil erosion.",
+          "anchor": "erosion-scope"
+        },
+        {
+          "id": "IA05-P296-F08",
+          "claim": "Printed national area and annual soil-loss estimates are dated and method-dependent; they must be labelled as historical estimates rather than timeless facts.",
+          "anchor": "erosion-estimates"
+        }
+      ],
+      "tables": [
+        "Sheet-rill-gully-ravine comparison",
+        "Water-wind-gravity erosion agents"
+      ],
+      "visuals": [],
+      "atomic_item_count": 8,
+      "mapped_atomic_item_count": 8,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-30-011",
+        "GEO-ORIG-30-015",
+        "GEO-ORIG-30-021",
+        "GEO-ORIG-31-001",
+        "GEO-ORIG-31-002",
+        "GEO-ORIG-31-003",
+        "GEO-ORIG-31-004",
+        "GEO-ORIG-31-013",
+        "GEO-ORIG-31-016",
+        "GEO-ORIG-31-017",
+        "IA05-ACTIVE-005",
+        "IA05-BOOK-P296-001"
+      ],
+      "mcq_count": 12,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 297,
+      "source_pdf": "geo295.317.pdf#page=3",
+      "heading": "Erosion causes and conservation methods",
+      "facts": [
+        {
+          "id": "IA05-P297-F01",
+          "claim": "Printed human causes include deforestation, overgrazing, unsuitable cultivation, shifting cultivation, excessive irrigation, poor drainage, mining, unprotected construction and unsuitable crop choice.",
+          "anchor": "erosion-causes"
+        },
+        {
+          "id": "IA05-P297-F02",
+          "claim": "Strip cropping alternates protective and erosion-prone crops in strips to interrupt runoff or wind flow.",
+          "anchor": "conservation-practices"
+        },
+        {
+          "id": "IA05-P297-F03",
+          "claim": "Stubble mulching retains crop residues to protect the surface, reduce evaporation and raindrop impact and support infiltration.",
+          "anchor": "conservation-practices"
+        },
+        {
+          "id": "IA05-P297-F04",
+          "claim": "Contour tillage and contour bunding align operations or barriers across the slope to reduce runoff velocity and soil loss.",
+          "anchor": "conservation-practices"
+        },
+        {
+          "id": "IA05-P297-F05",
+          "claim": "Terracing shortens effective slope length but requires design, outlets and maintenance; poorly designed terraces can fail.",
+          "anchor": "conservation-practices"
+        },
+        {
+          "id": "IA05-P297-F06",
+          "claim": "Basin listing creates small basins or furrows to capture rainwater in suitable dryland settings.",
+          "anchor": "conservation-practices"
+        },
+        {
+          "id": "IA05-P297-F07",
+          "claim": "Water harvesting stores runoff for beneficial use and can support recharge where geology and design permit; it does not guarantee recharge everywhere.",
+          "anchor": "water-harvesting"
+        },
+        {
+          "id": "IA05-P297-F08",
+          "claim": "Slope management should match land use to slope, soil and erosion hazard; the printed 1:4 to 1:7 range is not a universal threshold.",
+          "anchor": "slope-land-capability"
+        },
+        {
+          "id": "IA05-P297-F09",
+          "claim": "Afforestation, agroforestry and controlled grazing maintain protective cover, but species and stocking must suit local ecology.",
+          "anchor": "vegetative-conservation"
+        }
+      ],
+      "tables": [
+        "Printed erosion causes",
+        "Ten printed conservation measures"
+      ],
+      "visuals": [],
+      "atomic_item_count": 9,
+      "mapped_atomic_item_count": 9,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-31-005",
+        "GEO-ORIG-31-006",
+        "GEO-ORIG-31-007",
+        "GEO-ORIG-31-008",
+        "GEO-ORIG-31-012",
+        "GEO-ORIG-31-014",
+        "GEO-ORIG-31-015",
+        "GEO-ORIG-31-018",
+        "GEO-ORIG-31-019",
+        "GEO-ORIG-31-021",
+        "GEO-ORIG-31-022",
+        "GEO-ORIG-31-024",
+        "IA05-ACTIVE-006",
+        "IA05-BOOK-P297-001"
+      ],
+      "mcq_count": 14,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 298,
+      "source_pdf": "geo295.317.pdf#page=4",
+      "heading": "Conservation-method diagram",
+      "facts": [
+        {
+          "id": "IA05-P298-F01",
+          "claim": "The printed diagram illustrates strip cropping, stubble mulching, contour tillage, contour bunding, terracing, basin listing, water harvesting and slope-based land use.",
+          "anchor": "conservation-diagram"
+        },
+        {
+          "id": "IA05-P298-F02",
+          "claim": "Vegetative strips check wind and runoff, while residues reduce evaporation and surface sealing.",
+          "anchor": "conservation-diagram"
+        },
+        {
+          "id": "IA05-P298-F03",
+          "claim": "Contour tillage follows contour lines, whereas contour bunds are physical embankments; they are related but not identical.",
+          "anchor": "conservation-diagram"
+        },
+        {
+          "id": "IA05-P298-F04",
+          "claim": "Terraces reshape a slope into steps; basin listing creates intermittent storage basins without fully terracing the slope.",
+          "anchor": "conservation-diagram"
+        },
+        {
+          "id": "IA05-P298-F05",
+          "claim": "Mechanical and vegetative barriers can slow water and promote infiltration, but safe overflow is essential.",
+          "anchor": "conservation-diagram"
+        },
+        {
+          "id": "IA05-P298-F06",
+          "claim": "Slope-based land-use planning places cultivation on gentler land, pasture on steeper land and forestry/protection on very steep land, subject to local capability assessment.",
+          "anchor": "slope-land-capability"
+        }
+      ],
+      "tables": [
+        "Eight conservation methods and their mechanisms"
+      ],
+      "visuals": [
+        "Eight-panel soil-conservation diagram"
+      ],
+      "atomic_item_count": 6,
+      "mapped_atomic_item_count": 6,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-31-024",
+        "IA05-ACTIVE-006",
+        "IA05-BOOK-P298-001"
+      ],
+      "mcq_count": 3,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 299,
+      "source_pdf": "geo295.317.pdf#page=5",
+      "heading": "Research centres, state soil extent and USDA Soil Taxonomy",
+      "facts": [
+        {
+          "id": "IA05-P299-F01",
+          "claim": "The printed list assigns research centres to Dehradun, Chandigarh, Kota, Vasad, Agra, Ballari, Ooty and Jodhpur; institutional names and current mandates require verification before scoring.",
+          "anchor": "soil-conservation-centres"
+        },
+        {
+          "id": "IA05-P299-F02",
+          "claim": "The printed state-area table gives Uttar Pradesh 12.95, Punjab 12.25, Gujarat 12.14, West Bengal 8.50, Rajasthan 7.28, Maharashtra 5.34 and Tamil Nadu 0.04 lakh ha; the measure and source year are unclear and must remain historical/unscored unless verified.",
+          "anchor": "state-soil-extent-table"
+        },
+        {
+          "id": "IA05-P299-F03",
+          "claim": "The printed land-degradation box cites 2011-13 to 2018-19 monitoring and 97.85 million ha or 29.77% degraded land; exact wording must follow the cited atlas and year.",
+          "anchor": "land-degradation-box"
+        },
+        {
+          "id": "IA05-P299-F04",
+          "claim": "Soil Taxonomy is a hierarchical diagnostic system; the current highest level has 12 orders, not the book's incomplete nine-order list.",
+          "anchor": "soil-taxonomy"
+        },
+        {
+          "id": "IA05-P299-F05",
+          "claim": "The book lists Inceptisols, Vertisols and Oxisols on this page; each order is defined by diagnostic properties, not simply by a one-line climate or colour description.",
+          "anchor": "soil-orders-table"
+        },
+        {
+          "id": "IA05-P299-F06",
+          "claim": "Inceptisols have weak to moderate horizon development; Vertisols have high shrink-swell clay; Oxisols are highly weathered tropical soils rich in stable iron/aluminium oxides.",
+          "anchor": "soil-orders-table"
+        }
+      ],
+      "tables": [
+        "Eight printed soil-conservation research centres",
+        "Printed state soil-area figures",
+        "Land-degradation statistics box",
+        "Soil Taxonomy orders part 1"
+      ],
+      "visuals": [],
+      "atomic_item_count": 6,
+      "mapped_atomic_item_count": 6,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "IA05-ACTIVE-007",
+        "IA05-ACTIVE-010",
+        "IA05-ACTIVE-011",
+        "IA05-BOOK-P299-001"
+      ],
+      "mcq_count": 4,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 300,
+      "source_pdf": "geo295.317.pdf#page=6",
+      "heading": "Soil Taxonomy continuation and erosion map",
+      "facts": [
+        {
+          "id": "IA05-P300-F01",
+          "claim": "The printed continuation lists Alfisols, Ultisols, Aridisols, Spodosols, Histosols and Mollisols; modern Soil Taxonomy also includes Andisols, Entisols and Gelisols.",
+          "anchor": "soil-orders-table"
+        },
+        {
+          "id": "IA05-P300-F02",
+          "claim": "Alfisols have clay-enriched subsurface horizons and relatively high base status; Ultisols are more strongly leached and base-depleted.",
+          "anchor": "soil-orders-table"
+        },
+        {
+          "id": "IA05-P300-F03",
+          "claim": "Aridisols are soils of arid environments with diagnostic subsurface features; Spodosols have spodic accumulation; Histosols are organic soils; Mollisols have a thick dark base-rich mollic surface horizon.",
+          "anchor": "soil-orders-table"
+        },
+        {
+          "id": "IA05-P300-F04",
+          "claim": "The printed India erosion map distinguishes gully/sheet, sheet, desert, shifting-cultivation, glacial, coastal and wind erosion belts.",
+          "anchor": "india-erosion-map"
+        },
+        {
+          "id": "IA05-P300-F05",
+          "claim": "The erosion map is schematic and uses older boundaries and categories; it supports regional pattern learning but not precise local hazard assessment.",
+          "anchor": "map-scale-caution"
+        }
+      ],
+      "tables": [
+        "Complete 12-order Soil Taxonomy correction table",
+        "Printed erosion-map legend"
+      ],
+      "visuals": [
+        "India soil-erosion map"
+      ],
+      "atomic_item_count": 5,
+      "mapped_atomic_item_count": 5,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "IA05-BOOK-P300-001"
+      ],
+      "mcq_count": 1,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 301,
+      "source_pdf": "geo295.317.pdf#page=7",
+      "heading": "Andhra Pradesh soils and red soils",
+      "facts": [
+        {
+          "id": "IA05-P301-F01",
+          "claim": "Soil is a natural body formed by interacting parent material, climate, organisms, relief and time; fertile AP soils are not produced by parent rock alone.",
+          "anchor": "ap-soil-overview"
+        },
+        {
+          "id": "IA05-P301-F02",
+          "claim": "The printed AP grouping gives red 65%, black 25%, alluvial 5%, coastal sand 3%, laterite 1% and problem soils 1%; these figures derive from an older undivided-state/legacy profile and must be dated and denominator-labelled.",
+          "anchor": "ap-soil-share-table"
+        },
+        {
+          "id": "IA05-P301-F03",
+          "claim": "Red soils are widespread in present Andhra Pradesh, especially Rayalaseema and uplands, but no district has only one soil type.",
+          "anchor": "ap-red-soils"
+        },
+        {
+          "id": "IA05-P301-F04",
+          "claim": "AP red soils develop mainly from crystalline rocks, are often sandy loam to loam, porous and variable in depth and nutrient status.",
+          "anchor": "ap-red-soils"
+        },
+        {
+          "id": "IA05-P301-F05",
+          "claim": "Printed AP red-soil subtypes include Chalka/red sandy soils and Dubba/red loams; local names and percentages vary among legacy sources.",
+          "anchor": "ap-red-subtypes"
+        },
+        {
+          "id": "IA05-P301-F06",
+          "claim": "Red-soil crops printed include groundnut, millets, pulses and oilseeds, but suitability depends on rainfall, irrigation, depth, pH and nutrients.",
+          "anchor": "ap-red-soils"
+        }
+      ],
+      "tables": [
+        "Printed six AP soil groups and shares",
+        "AP red-soil traits, districts and crops"
+      ],
+      "visuals": [],
+      "atomic_item_count": 6,
+      "mapped_atomic_item_count": 6,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-30-002",
+        "GEO-ORIG-30-013",
+        "GEO-ORIG-30-016",
+        "IA05-ACTIVE-008",
+        "IA05-BOOK-P301-001"
+      ],
+      "mcq_count": 5,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 302,
+      "source_pdf": "geo295.317.pdf#page=8",
+      "heading": "AP red, black, alluvial and coastal soils",
+      "facts": [
+        {
+          "id": "IA05-P302-F01",
+          "claim": "The printed Chalka and Dubba descriptions distinguish coarser and finer red soils; exact local names should be retained but explained using texture and depth.",
+          "anchor": "ap-red-subtypes"
+        },
+        {
+          "id": "IA05-P302-F02",
+          "claim": "The book prints a 25% black-soil share and 65-80% clay; both are legacy generalisations and not universal for every Vertisol.",
+          "anchor": "ap-black-soils"
+        },
+        {
+          "id": "IA05-P302-F03",
+          "claim": "AP black soils have shrink-swell behaviour, strong moisture retention and drainage/workability constraints; they occur in parts of Kurnool, Nandyal, Palnadu, Guntur, Prakasam and other districts.",
+          "anchor": "ap-black-soils"
+        },
+        {
+          "id": "IA05-P302-F04",
+          "claim": "AP alluvial soils occur in Godavari, Krishna and Pennar floodplains/deltas, vary from sand to clay and support intensive agriculture where water and drainage are managed.",
+          "anchor": "ap-alluvial-soils"
+        },
+        {
+          "id": "IA05-P302-F05",
+          "claim": "The printed 5% AP alluvial share is a legacy estimate; district reorganisation and classification changes require dated data.",
+          "anchor": "ap-soil-share-table"
+        },
+        {
+          "id": "IA05-P302-F06",
+          "claim": "Coastal sandy soils occur along the seaboard and are coarse, permeable and often low in nutrient and water retention; salinity and groundwater quality may constrain use.",
+          "anchor": "ap-coastal-soils"
+        },
+        {
+          "id": "IA05-P302-F07",
+          "claim": "The printed 2% forest-slope soil note and associated altitude/depth statements are broad descriptions, not statewide thresholds.",
+          "anchor": "ap-forest-soils"
+        }
+      ],
+      "tables": [
+        "AP red-black-alluvial-coastal comparison"
+      ],
+      "visuals": [],
+      "atomic_item_count": 7,
+      "mapped_atomic_item_count": 7,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-30-001",
+        "GEO-ORIG-30-003",
+        "GEO-ORIG-30-013",
+        "GEO-ORIG-30-016",
+        "GEO-ORIG-30-023",
+        "IA05-ACTIVE-008",
+        "IA05-BOOK-P302-001"
+      ],
+      "mcq_count": 7,
+      "coverage_state": "all-atomic-facts-mapped"
+    },
+    {
+      "page": 303,
+      "source_pdf": "geo295.317.pdf#page=9",
+      "heading": "AP forest, lateritic and coastal soils and map",
+      "facts": [
+        {
+          "id": "IA05-P303-F01",
+          "claim": "AP upland/forest soils are generally shallow to moderately deep and vary with slope, rock, vegetation and erosion; steep land is especially erosion-prone.",
+          "anchor": "ap-forest-soils"
+        },
+        {
+          "id": "IA05-P303-F02",
+          "claim": "AP lateritic soils occur in humid uplands and hill tracts, are often acidic and iron-rich and may support cashew or plantation crops with management.",
+          "anchor": "ap-lateritic-soils"
+        },
+        {
+          "id": "IA05-P303-F03",
+          "claim": "The printed 2% laterite and 1% coastal-soil shares conflict with page 301's 1% laterite and 3% coastal sand, demonstrating why the percentages must not be presented as simultaneous current facts.",
+          "anchor": "ap-percentage-conflicts"
+        },
+        {
+          "id": "IA05-P303-F04",
+          "claim": "Coastal soils may be sandy or saline and occur in discontinuous belts; lagoon, delta and beach settings differ.",
+          "anchor": "ap-coastal-soils"
+        },
+        {
+          "id": "IA05-P303-F05",
+          "claim": "The printed AP map uses pre-2022 district boundaries and a coarse four-category legend, so it must be labelled historical and supplemented by current APSAC district soil-resource maps.",
+          "anchor": "ap-soil-map"
+        },
+        {
+          "id": "IA05-P303-F06",
+          "claim": "The printed map's categories are red, black, alluvial and coastal-sand/other soils; local inclusions are not shown.",
+          "anchor": "ap-soil-map"
+        }
+      ],
+      "tables": [
+        "Printed AP soil-map legend",
+        "Conflicting printed AP percentage claims"
+      ],
+      "visuals": [
+        "Historical Andhra Pradesh soil-distribution map"
+      ],
+      "atomic_item_count": 6,
+      "mapped_atomic_item_count": 6,
+      "missing_atomic_fact_ids": null,
+      "mcq_ids": [
+        "GEO-ORIG-30-004",
+        "GEO-ORIG-30-013",
+        "IA05-ACTIVE-008",
+        "IA05-ACTIVE-012",
+        "IA05-BOOK-P303-001"
+      ],
+      "mcq_count": 5,
+      "coverage_state": "all-atomic-facts-mapped"
+    }
+  ],
+  "page_count": 15,
+  "atomic_item_count": 112,
+  "fact_level_coverage": {
+    "atomic_items_accounted": 112,
+    "atomic_items_mapped": 112,
+    "atomic_items_missing": 0,
+    "printed_table_records_preserved": 29
+  },
+  "completion_state": "Every recorded printed fact is linked to one or more chapter MCQs; printed tables remain preserved in the page ledger."
+}

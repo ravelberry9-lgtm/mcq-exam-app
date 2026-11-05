@@ -1,0 +1,142 @@
+{
+  "format": "india-ap-chapter-verification-log-v1",
+  "chapter": 7,
+  "status": "verification_complete_with_explicit_unscored_current_sensitive_items",
+  "verified_on": "2026-11-01",
+  "opened_sources": [
+    {
+      "url": "https://cwc.gov.in/sites/default/files/compilation-status-ongoing-major-and-medium-projects-2021.pdf",
+      "authority": "Central Water Commission",
+      "supports": ["Major project CCA above 10000 ha", "Medium project CCA 2000-10000 ha"]
+    },
+    {
+      "url": "https://cwc.gov.in/sites/default/files/financial-aspects-irrigation-projects-india.pdf",
+      "authority": "Central Water Commission",
+      "supports": ["Minor project up to 2000 ha", "Drip and sprinkler definitions", "CCA definition"]
+    },
+    {
+      "url": "https://www.jalshakti-dowr.gov.in/static/uploads/2026/02/71facba772426d78db2d39f8c0c2a34b.pdf",
+      "authority": "Ministry of Jal Shakti",
+      "supports": ["Indus Waters Treaty date and current abeyance note", "river-linking official context"]
+    },
+    {
+      "url": "https://www.jalshakti-dowr.gov.in/static/uploads/2025/02/aa96bbf9b83dec5a1e03159887725a5e.pdf",
+      "authority": "Ministry of Jal Shakti",
+      "supports": ["Kishenganga and Ratle dispute context"]
+    }
+  ],
+  "corrections": [
+    {"page":337,"printed":"Micro project as fourth CCA class","corrected":"Drip and sprinkler are micro-irrigation methods, not a fourth CCA project class","anchor":"project-classification"},
+    {"page":354,"printed":"1 gallon = 3.97 litres","corrected":"Ambiguous and inaccurate without system: US gallon 3.785 L; Imperial gallon 4.546 L","anchor":"water-units"},
+    {"page":354,"printed":"1 MAF = 1233 cubic metres","corrected":"1 acre-foot is about 1233.48 cubic metres; 1 MAF is about 1.23348 billion cubic metres","anchor":"water-units"},
+    {"page":354,"printed":"11000 cusecs for one day equals 1 TMC","corrected":"Approximation; exact equivalent is about 11574 cusecs","anchor":"water-units"},
+    {"page":366,"printed":"Ken-Betwa visually grouped beside Himalayan links","corrected":"Ken-Betwa belongs to the Peninsular component","anchor":"river-linking"},
+    {"page":367,"printed":"2017 AP transfer called first river-linking project","corrected":"Describe as Pattiseema operational transfer claim; do not equate automatically with first completed NPP national link","anchor":"river-linking"}
+  ],
+  "unresolved_current_sensitive": [
+    "Exact current Polavaram dimensions, costs, submergence and completion status require Polavaram Project Authority/CWC dated documents.",
+    "Current tribunal implementation and allocations require the latest gazette/court orders.",
+    "Recent China hydropower project claims on the Yarlung Tsangpo require current official evidence and were not asserted as settled facts."
+  ],
+  "manual_batches": [
+  {
+    "batch": "pages-346-349-gap-closure",
+    "opened_sources": [
+      "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/jun/doc2025610568001.pdf",
+      "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2155472",
+      "https://irrigation.telangana.gov.in/img/projectspdf/srsp2.pdf"
+    ],
+    "findings": [
+      "PIB confirms Tato-I 186 MW, Tato-II 700 MW and Heo 240 MW.",
+      "The official Tato-II approval is dated 12 August 2025 and locates it in Shi Yomi district.",
+      "Telangana Irrigation describes SRSP Stage-II from Kakatiya Main Canal km 284 to km 346 and gives 1,78,068 ha irrigation facility.",
+      "Printed river labels for the three Arunachal projects were retained only as a caution and were not made scored answer facts without equally clear official confirmation."
+    ]
+  }
+  ,
+  {
+    "batch": "pages-355-359-gap-closure",
+    "opened_sources": [
+      "https://desweather.ap.gov.in/weather/Pdfs/Weather/Project%20report_Floods.pdf",
+      "https://apsdmagis.ap.gov.in/gisportal/sharing/rest/content/items/51f08376ed0e4842a60a8d38d1c4fa09/data",
+      "https://desweather.ap.gov.in/Realtime/ReservoirData.jsp",
+      "https://spsnellore.ap.gov.in/water-resources-dept-se-somasila-project-circle/"
+    ],
+    "findings": [
+      "AP official project material gives Prakasam Barrage length as 1,233 m, not the book's 1,223 m; it also confirms 70 gates, design flood 11.90 lakh cusecs and storage 3.071 TMC.",
+      "AP reservoir data supports Nagarjuna Sagar FRL 590 ft and capacity about 312.05 TMC, and Srisailam gross capacity about 215.79 TMC.",
+      "Current SPSR Nellore district material gives Somasila gross storage 78 TMC and operating power 12 MW, superseding the book's old 48.5 TMC and 10 MW figures."
+    ]
+  }
+  ,
+  {
+    "batch": "pages-360-364-notes-first-audit",
+    "opened_sources": [
+      "https://ppa.gov.in/WPSCore/Common/WebPages/Home/AboutProject.aspx",
+      "https://spsnellore.ap.gov.in/water-resources/",
+      "https://spsnellore.ap.gov.in/dy-conservator-of-forests-cap-tgp-division/",
+      "https://apsac.ap.gov.in/wp-content/uploads/2025/09/DSR-Reports/kadapa.pdf"
+    ],
+    "findings": [
+      "Polavaram Project Authority confirms the left main canal as 181.999 km, right main canal as 178.810 km, 80 TMC diversion, 75.20 TMC live capacity, 960 MW power and 48 radial gates.",
+      "The book's 212.3 km left-canal figure and its use of 75.2 TMC as a diversion figure were explicitly corrected in the notes.",
+      "SPSR Nellore official material confirms Telugu Ganga's 5.75 lakh-acre irrigation objective, 29 TMC Krishna flood-flow component, 30 TMC Pennar component and 15 TMC Chennai drinking-water component.",
+      "APSAC Kadapa project register confirms GNSS, Telugu Ganga, Gandikota and Veligonda as major projects in the district; current status and command figures remain date-sensitive."
+    ]
+  },
+  {
+    "batch": "pages-340-345-national-project-register-closure",
+    "opened_sources": [
+      "https://bbmb.gov.in/bhakra.htm",
+      "https://bbmb.gov.in/writereaddata/Portal/GeneralDocument/358_1_1.pdf",
+      "https://bbmb.gov.in/indus-basin.htm",
+      "https://www.powermin.gov.in/ministry/our-organisation/details/damodar-valley-corporation-dvc-gDOyEjMtQWa",
+      "https://powermin.gov.in/sites/default/files/uploads/MOP_Annual_Report_Eng_2023-24.pdf",
+      "https://guj-nwrws.gujarat.gov.in/downloads/RevisedDamSafetyUnitGR20-05-24.pdf"
+    ],
+    "findings": [
+      "BBMB confirms Bhakra as a 225.55-m concrete straight-gravity dam, Gobind Sagar reservoir, Nangal Dam's diversion function, a 61-km Nangal Hydel Channel and national dedication on 22 October 1963.",
+      "BBMB confirms Beas Unit-I as the Beas-Sutlej Link through Pandoh and Dehar toward Gobind Sagar, and Unit-II as Pong Dam.",
+      "Ministry of Power confirms the DVC sequence: Tilaiya 1953, Konar 1955, Maithon 1957 and Panchet 1959; official material identifies their rivers.",
+      "Gujarat's dam-safety register gives Sardar Sarovar structural height as 163 m above the lowest foundation; the commonly cited 138.68 m is FRL, so the two figures require different labels.",
+      "Every printed project-register row on pages 344-345 was manually reread and preserved; non-dam entries and printed classification errors were labelled before MCQ authoring."
+    ]
+  },
+  {
+    "batch": "pages-350-351-tribunal-chronology-awards",
+    "opened_sources": [
+      "https://cwc.gov.in/sites/default/files/KWDT%201volume1.pdf",
+      "https://cwc.gov.in/sites/default/files/KWDT1%20volume3.pdf",
+      "https://cwc.gov.in/sites/default/files/KWDT1%20Further%20Report.pdf",
+      "https://www.jalshakti-dowr.gov.in/static/uploads/2024/05/2023022074.pdf",
+      "https://cwc.gov.in/sites/default/files/Ravi-%20Beas%20Waters%20Tribunal%20Report%201987.pdf",
+      "https://www.jalshakti-dowr.gov.in/godavari-water-disputes-tribunal-april-1969",
+      "https://www.jalshakti-dowr.gov.in/static/uploads/2024/05/997297f54ac7a907ad664389b81e5b5e.pdf"
+    ],
+    "findings": [
+      "KWDT-I was constituted on 10 April 1969 and accepted 2,060 TMC as the 75-percent dependable flow at Vijayawada.",
+      "KWDT-II was constituted on 2 April 2004, with 1 February 2006 treated as its effective date; its later proceedings require legal and bifurcation context.",
+      "The Cauvery tribunal was constituted on 2 June 1990 and decided on 5 February 2007; the Supreme Court's 2018 modification yields Karnataka 284.75, Tamil Nadu 404.25, Kerala 30 and Puducherry 7 TMC.",
+      "The Ravi-Beas formation year 1986 is distinct from the official Tribunal Report year 1987.",
+      "Printed allocation figures were retained with award-stage qualifiers instead of being presented as timeless current entitlements."
+    ]
+  },
+  {
+    "batch": "pages-352-354-international-cooperation-closure",
+    "opened_sources": [
+      "https://www.mea.gov.in/Portal/LegalTreatiesDoc/PA60B1395.pdf",
+      "https://www.mea.gov.in/Images/pdf/india-bangladesh-relations-04-05-2012-press-release.pdf",
+      "https://www.mea.gov.in/Portal/LegalTreatiesDoc/NP96B1067.pdf",
+      "https://www.mea.gov.in/Portal/ForeignRelation/India-Nepal_2022.pdf",
+      "https://www.mea.gov.in/Portal/ForeignRelation/India-Bhutan-nov-2025.pdf"
+    ],
+    "findings": [
+      "The Indus Treaty was signed at Karachi on 19 September 1960 and uses Eastern/Western river groups and permitted uses, not a legal 20:80 allocation formula.",
+      "India and Bangladesh share 54 common rivers; the 1996 Ganga Treaty governs Farakka sharing during the January-May lean season, while the JRC is a cooperation mechanism rather than nine tribunals.",
+      "The 1996 Mahakali Treaty integrates Sarada, Tanakpur and Pancheshwar; volatile Pancheshwar capacity figures were retained only as dated context.",
+      "MEA's 2025 Bhutan brief confirms five jointly developed HEPs totalling 3,156 MW and their individual capacities.",
+      "Proposal-stage dam capacities, costs, completion dates and current treaty-operation status were classified as context-only unless tied to a dated official source; no unresolved stable fact remains uncovered."
+    ]
+  }
+]
+}

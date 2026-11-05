@@ -1,0 +1,22 @@
+{
+  "chapter": 11,
+  "status": "content-and-manual-mcq-review-complete-ui-validation-pending",
+  "coverage": {"printed_pages": 17, "facts_actively_tested": 266, "structured_records_actively_tested": 71, "explanation_only": 0},
+  "bank": {"total_questions": 109, "manually_reviewed_questions": 109, "held_printed_pyqs": 2, "duplicate_ids": 0, "answer_range_errors": 0, "broken_question_anchors": 0},
+  "held_pyqs": ["IA11-HELD-APPSC-G1-2022-DIGBOI", "IA11-HELD-APPSC-G2-2024-MINERALS"],
+  "printed_pyqs_in_scored_bank": 0,
+  "authoritative_verification": {
+    "status": "complete-with-explicit-holds",
+    "log": "verification_log.json",
+    "source_groups": 10,
+    "answer_keys_changed": 0,
+    "unresolved_unscored_or_uncertified": [
+      "IA11-HELD-APPSC-G1-2022-DIGBOI",
+      "IA11-HELD-APPSC-G2-2024-MINERALS",
+      "PRINT-P459-AP-LITHIUM-2024"
+    ]
+  },
+  "release_blockers": ["No local application route/render harness for India–AP Chapter 11 was found. Static HTML parsing verifies anchors, but Telugu/English language switching and question-to-section-to-return navigation were not browser-tested."],
+  "manifest": {"release_ready": false, "hashes_updated": true},
+  "verdict": "All 109 bank questions now have manually reviewed bilingual records, authoritative source links and valid static notes anchors. The two genuine printed PYQs remain separately preserved and unscored pending official-final-key verification; browser UI navigation remains unverified."
+}

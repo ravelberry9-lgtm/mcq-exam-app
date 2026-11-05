@@ -1,0 +1,392 @@
+{
+  "format": "india-ap-page-fact-ledger-v1",
+  "chapter": 1,
+  "title": "Location, Extent and Political Divisions",
+  "book_pages": "177-201",
+  "intake_rule": "Manual single-pass intake; handwritten annotations ignored",
+  "table_policy": "Recreate useful printed tables in semantic HTML after verification; preserve cell-level book data and label corrections or dated updates",
+  "tables_identified": [
+    {"table_id": "IA01-T01", "page": 180, "topic": "Tropic of Cancer: capitals, rivers and protected areas", "status": "notes_integrated_verification_tracked"},
+    {"table_id": "IA01-T02", "page": 182, "topic": "Largest countries by area", "status": "notes_integrated_verification_tracked"},
+    {"table_id": "IA01-T03", "page": 182, "topic": "Territorial area arithmetic and administrative extremes", "status": "notes_integrated_with_arithmetic_correction"},
+    {"table_id": "IA01-T04", "page": 183, "topic": "Jammu and Kashmir regional area divisions and administrative extremes", "status": "notes_integrated_sensitive_values_unscored"},
+    {"table_id": "IA01-T05", "page": 184, "topic": "Ancient geographical divisions and traditional names", "status": "notes_integrated_with_concept_qualification"},
+    {"table_id": "IA01-T06", "page": 185, "topic": "States and Union Territories formed after 2000", "status": "notes_integrated_verification_tracked"},
+    {"table_id": "IA01-T07", "pages": "185-187", "topic": "States grouped by number of neighbouring states", "status": "notes_integrated_with_ut_count_correction"},
+    {"table_id": "IA01-T08", "page": 188, "topic": "India's international borders: country, length, adjoining states/UTs, longest and shortest segments", "status": "notes_integrated_mha_verified"},
+    {"table_id": "IA01-T09", "pages": "189-191", "topic": "International Border, Line of Control, AGPL and Sir Creek comparison", "status": "notes_integrated_verification_tracked"},
+    {"table_id": "IA01-T10", "page": 192, "topic": "India–China boundary sectors and friction points", "status": "notes_integrated_verification_tracked"},
+    {"table_id": "IA01-T11", "page": 194, "topic": "India's maritime neighbours and separating water bodies", "status": "notes_integrated_verification_tracked"},
+    {"table_id": "IA01-T12", "page": 196, "topic": "Coastal states/UTs and coastline lengths", "status": "notes_integrated_mha_revised_total"},
+    {"table_id": "IA01-T13", "pages": "197-198", "topic": "Territorial sea, contiguous zone, Exclusive Economic Zone and continental shelf", "status": "notes_integrated_indiacode_unclos_verified"},
+    {"table_id": "IA01-T14", "page": 199, "topic": "Andhra Pradesh post-bifurcation area calculation", "status": "notes_integrated_apsac_verified"},
+    {"table_id": "IA01-T15", "page": 200, "topic": "Andhra Pradesh districts bordering neighbouring states", "status": "notes_integrated_current_map_reference_required"},
+    {"table_id": "IA01-T16", "page": 201, "topic": "Andhra Pradesh regional grouping, coastal districts and administrative divisions", "status": "notes_integrated_time_sensitive_values_labelled"}
+  ],
+  "pages": [
+    {
+      "page": 177,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete",
+      "heading": "India & Andhra Pradesh Geography — section title page",
+      "facts": []
+    },
+    {
+      "page": 178,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "India: location and extent; Indian Subcontinent",
+      "facts": [
+        {"id": "IA01-P178-F01", "claim": "India lies in South Asia and occupies a central position in the Indian Ocean region.", "type": "concept", "target_anchor": "india-setting"},
+        {"id": "IA01-P178-F02", "claim": "The book defines a subcontinent as a large, geographically distinctive part of a continent, often associated with tectonic separation or identity.", "type": "definition", "target_anchor": "subcontinent"},
+        {"id": "IA01-P178-F03", "claim": "The book groups India, Pakistan, Nepal, Bhutan, Bangladesh, Sri Lanka and Maldives as the Indian subcontinent.", "type": "classification", "target_anchor": "subcontinent", "verification_note": "Terminology and membership vary by source; do not present as a universally fixed list."},
+        {"id": "IA01-P178-F04", "claim": "South Asia is commonly treated as a broader regional grouping than the book's seven-country subcontinent list.", "type": "concept", "target_anchor": "south-asia"},
+        {"id": "IA01-P178-F05", "claim": "SAARC was established in 1985.", "type": "fact", "target_anchor": "saarc"},
+        {"id": "IA01-P178-F06", "claim": "Afghanistan joined SAARC in 2007, bringing its membership to eight.", "type": "fact", "target_anchor": "saarc"},
+        {"id": "IA01-P178-F07", "claim": "The northern extreme identified in the book is Indira Col in the Ladakh region; the issue requires qualification because territorial and map conventions matter.", "type": "location", "target_anchor": "extreme-points", "verification_note": "Verify official convention and distinguish claimed territory from administered territory."},
+        {"id": "IA01-P178-F08", "claim": "The southern extreme of India is Indira Point on Great Nicobar; the southern extreme of the mainland is Kanyakumari.", "type": "location", "target_anchor": "extreme-points"},
+        {"id": "IA01-P178-F09", "claim": "The eastern extreme is associated with Kibithu/Kibithoo in Arunachal Pradesh.", "type": "location", "target_anchor": "extreme-points", "verification_note": "Verify spelling and the official extreme-point convention."},
+        {"id": "IA01-P178-F10", "claim": "The western extreme is Guhar Moti in the Rann of Kutch, Gujarat.", "type": "location", "target_anchor": "extreme-points"},
+        {"id": "IA01-P178-F11", "claim": "The book gives India's north–south extent as about 3,214 km and east–west extent as about 2,933 km.", "type": "number", "target_anchor": "india-extent"}
+      ]
+    },
+    {
+      "page": 179,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Latitudinal extent and Tropic of Cancer",
+      "facts": [
+        {"id": "IA01-P179-F01", "claim": "The mainland extends approximately from 8°4′ N to 37°6′ N.", "type": "number", "target_anchor": "latitude-extent"},
+        {"id": "IA01-P179-F02", "claim": "Indira Point extends the country's latitude southward to about 6°45′ N.", "type": "number", "target_anchor": "latitude-extent"},
+        {"id": "IA01-P179-F03", "claim": "India lies entirely north of the Equator and broadly in the Northern and Eastern hemispheres.", "type": "concept", "target_anchor": "hemispheric-location"},
+        {"id": "IA01-P179-F04", "claim": "The book describes India as lying in thirty one-degree latitude belts and notes substantial climatic variation across its latitudinal span.", "type": "concept", "target_anchor": "latitude-effects", "verification_note": "Clarify inclusive counting versus angular span."},
+        {"id": "IA01-P179-F05", "claim": "The Tropic of Cancer is approximately 23°30′ N (23½° N).", "type": "definition", "target_anchor": "tropic-of-cancer"},
+        {"id": "IA01-P179-F06", "claim": "The Tropic of Cancer crosses Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram.", "type": "sequence", "target_anchor": "tropic-of-cancer"},
+        {"id": "IA01-P179-F07", "claim": "Mahi is commonly cited as a river that crosses the Tropic of Cancer twice.", "type": "fact", "target_anchor": "tropic-of-cancer", "verification_note": "Verify using a reliable map/source before scoring."}
+      ]
+    },
+    {
+      "page": 180,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Tropic of Cancer, neighbours, longitude and time",
+      "facts": [
+        {"id": "IA01-P180-F01", "claim": "Ranchi lies near the Tropic of Cancer; Banswara, Ujjain and Jaipur are examples used in the book to distinguish places on, south of or north of the tropic.", "type": "map", "target_anchor": "tropic-location-practice", "verification_note": "Verify each city against coordinates; the printed table may oversimplify 'on the line'."},
+        {"id": "IA01-P180-F02", "claim": "India shares land boundaries with Pakistan, Afghanistan, China, Nepal, Bhutan, Bangladesh and Myanmar under the official Indian territorial convention.", "type": "classification", "target_anchor": "neighbours", "verification_note": "Explain the Afghanistan boundary in the context of India's territorial claim and present administration."},
+        {"id": "IA01-P180-F03", "claim": "Sri Lanka and Maldives are India's maritime neighbours.", "type": "fact", "target_anchor": "maritime-neighbours"},
+        {"id": "IA01-P180-F04", "claim": "The book lists state–country boundary relationships and protected areas near the Tropic of Cancer as map-practice material.", "type": "map", "target_anchor": "boundary-map-practice"},
+        {"id": "IA01-P180-F05", "claim": "India's mainland longitudinal extent is approximately 68°7′ E to 97°25′ E.", "type": "number", "target_anchor": "longitude-extent"},
+        {"id": "IA01-P180-F06", "claim": "India's standard meridian is 82°30′ E (82½° E).", "type": "number", "target_anchor": "standard-meridian"},
+        {"id": "IA01-P180-F07", "claim": "Indian Standard Time is UTC+5:30.", "type": "number", "target_anchor": "ist"},
+        {"id": "IA01-P180-F08", "claim": "The longitudinal difference across India produces roughly a two-hour local-solar-time difference between the far east and west.", "type": "concept", "target_anchor": "longitude-time"},
+        {"id": "IA01-P180-F09", "claim": "A single standard time is used nationally to avoid operational confusion from differing local times.", "type": "concept", "target_anchor": "ist"},
+        {"id": "IA01-P180-F10", "claim": "The standard meridian passes near Mirzapur in Uttar Pradesh.", "type": "location", "target_anchor": "standard-meridian"}
+      ]
+    },
+    {
+      "page": 181,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Indian Standard Time and proposals for multiple time zones",
+      "facts": [
+        {"id": "IA01-P181-F01", "claim": "The book states that IST was introduced on 1 September 1947 and that Kolkata and Bombay retained local time systems for limited periods afterwards.", "type": "history", "target_anchor": "ist-history", "verification_note": "Verify dates through NPL or authoritative historical sources."},
+        {"id": "IA01-P181-F02", "claim": "India's standard time is 5 hours 30 minutes ahead of UTC/GMT.", "type": "number", "target_anchor": "ist"},
+        {"id": "IA01-P181-F03", "claim": "Nepal, Bangladesh and Pakistan use UTC+5:45, UTC+6 and UTC+5 respectively.", "type": "comparison", "target_anchor": "regional-time-zones", "verification_note": "Verify current official time zones."},
+        {"id": "IA01-P181-F04", "claim": "India currently uses one official time zone despite spanning nearly thirty degrees of longitude.", "type": "concept", "target_anchor": "ist"},
+        {"id": "IA01-P181-F05", "claim": "CSIR–National Physical Laboratory maintains Indian Standard Time.", "type": "institution", "target_anchor": "npl"},
+        {"id": "IA01-P181-F06", "claim": "The book discusses proposals for two Indian time zones, including an eastern zone one hour ahead of the western zone.", "type": "policy", "target_anchor": "two-time-zone-debate", "verification_note": "Present as a proposal, not current policy; verify exact boundary and NPL proposal."},
+        {"id": "IA01-P181-F07", "claim": "The book states that the proposed dividing meridian is 89°52′ E near the Assam–West Bengal region.", "type": "policy", "target_anchor": "two-time-zone-debate", "verification_note": "Requires direct verification against the cited NPL study."},
+        {"id": "IA01-P181-F08", "claim": "The book mentions a historical Plantation Labour Act time convention called Tea Garden Time/Bagan Time, one hour ahead of IST.", "type": "history", "target_anchor": "tea-garden-time", "verification_note": "Verify legal and historical wording before inclusion."}
+      ]
+    },
+    {
+      "page": 182,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Area of India and international comparisons",
+      "facts": [
+        {"id": "IA01-P182-F01", "claim": "India's geographical area is 3,287,263 km², conventionally rounded to 3.28 million km².", "type": "number", "target_anchor": "india-area"},
+        {"id": "IA01-P182-F02", "claim": "The book divides the area into about 2,973,193 km² land and 314,070 km² water, approximately 90% and 10%.", "type": "number", "target_anchor": "india-area", "verification_note": "Verify category definitions and official source."},
+        {"id": "IA01-P182-F03", "claim": "India accounts for about 2.42% of the world's land area.", "type": "number", "target_anchor": "india-area-world"},
+        {"id": "IA01-P182-F04", "claim": "The book states that India ranks seventh in geographical area after Russia, Canada, United States, China, Brazil and Australia.", "type": "sequence", "target_anchor": "largest-countries", "verification_note": "Country-area rankings vary with total-area versus land-area definitions; present the convention explicitly."},
+        {"id": "IA01-P182-F05", "claim": "The page compares India with Russia and Canada and lists the eight largest countries by area.", "type": "comparison", "target_anchor": "largest-countries"},
+        {"id": "IA01-P182-F06", "claim": "The page gives disputed-area arithmetic involving Pakistan-administered and China-administered territories and the area transferred by Pakistan to China.", "type": "territorial-claim", "target_anchor": "territorial-claims", "verification_note": "Highly sensitive and definition-dependent; verify only from official Indian sources and distinguish claims from administration."},
+        {"id": "IA01-P182-F07", "claim": "The page lists Uttar Pradesh, Madhya Pradesh and Bihar as states with large numbers of districts and Goa and Sikkim as states with few districts.", "type": "administrative", "target_anchor": "administrative-divisions", "verification_note": "District counts are time-sensitive; use a dated official snapshot rather than treating the printed counts as permanent."}
+      ]
+    },
+    {
+      "page": 183,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Jammu and Kashmir regions and area/population claims",
+      "facts": [
+        {"id": "IA01-P183-F01", "claim": "The book divides the former princely-state area into Indian-administered, Pakistan-administered and China-administered sectors and supplies area shares.", "type": "territorial-claim", "target_anchor": "jammu-kashmir-ladakh", "verification_note": "Verify against official Indian maps and wording; do not reproduce political labels uncritically."},
+        {"id": "IA01-P183-F02", "claim": "The page separately discusses Ladakh, Jammu and Kashmir, Gilgit–Baltistan, Azad Jammu and Kashmir and Aksai Chin/Shaksgam-related areas.", "type": "classification", "target_anchor": "jammu-kashmir-ladakh"},
+        {"id": "IA01-P183-F03", "claim": "The printed population and religious-composition numbers are estimates tied to different dates and jurisdictions.", "type": "demography", "target_anchor": "jammu-kashmir-ladakh", "verification_note": "Do not use for scored questions until date, jurisdiction and authoritative source are established."},
+        {"id": "IA01-P183-F04", "claim": "The page begins a comparison of largest/smallest states, Union Territories and districts.", "type": "comparison", "target_anchor": "administrative-extremes", "verification_note": "Administrative rankings are time-sensitive."}
+      ]
+    },
+    {
+      "page": 184,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Historical names of India and ancient geographical concepts",
+      "facts": [
+        {"id": "IA01-P184-F01", "claim": "The page explains Bharat/Bharatavarsha through literary and traditional associations rather than a single settled etymology.", "type": "history", "target_anchor": "names-of-india"},
+        {"id": "IA01-P184-F02", "claim": "The name India is connected to the Indus/Sindhu through Greek and Latin usage.", "type": "etymology", "target_anchor": "names-of-india"},
+        {"id": "IA01-P184-F03", "claim": "Hindustan is connected to Persian usage of Hindu for the Sindhu and historically acquired changing geographical meanings.", "type": "etymology", "target_anchor": "names-of-india"},
+        {"id": "IA01-P184-F04", "claim": "Jambudvipa and Nabhi-varsha are traditional names or cosmographical concepts appearing in older literature.", "type": "history", "target_anchor": "names-of-india"},
+        {"id": "IA01-P184-F05", "claim": "Ancient texts used cosmographical divisions such as varshas and dvipas; these should not be treated as modern political boundaries.", "type": "concept", "target_anchor": "ancient-cosmography"},
+        {"id": "IA01-P184-F06", "claim": "The page contains an APPSC Group-I 2018 printed PYQ about the country described as Brahmadesam, with Myanmar as the indicated answer.", "type": "pyq", "target_anchor": "historical-names-pyqs", "exam": "APPSC Group-I", "year": "2018"}
+      ]
+    },
+    {
+      "page": 185,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Constitutional name, states and Union Territories",
+      "facts": [
+        {"id": "IA01-P185-F01", "claim": "Article 1 of the Constitution begins: India, that is Bharat, shall be a Union of States.", "type": "constitutional", "target_anchor": "constitutional-name"},
+        {"id": "IA01-P185-F02", "claim": "The page refers to the Gazette of India and constitutional/legal usage of India and Bharat.", "type": "constitutional", "target_anchor": "constitutional-name"},
+        {"id": "IA01-P185-F03", "claim": "India currently has 28 states and 8 Union Territories.", "type": "administrative", "target_anchor": "states-uts", "verification_note": "Time-sensitive; verify immediately before release."},
+        {"id": "IA01-P185-F04", "claim": "The former State of Jammu and Kashmir was reorganised into the Union Territories of Jammu and Kashmir and Ladakh with effect from 31 October 2019.", "type": "administrative-history", "target_anchor": "state-reorganisation"},
+        {"id": "IA01-P185-F05", "claim": "Dadra and Nagar Haveli and Daman and Diu were merged into one Union Territory with effect from 26 January 2020.", "type": "administrative-history", "target_anchor": "state-reorganisation"},
+        {"id": "IA01-P185-F06", "claim": "The page prints an APPSC Group-I 2023 question testing India's latitude, number of states/UTs and area.", "type": "pyq", "target_anchor": "india-location-pyqs", "exam": "APPSC Group-I", "year": "2023"},
+        {"id": "IA01-P185-F07", "claim": "The page lists states and Union Territories formed after 2000 and their parent states, including Chhattisgarh, Uttarakhand, Jharkhand and Telangana.", "type": "sequence", "target_anchor": "state-reorganisation"},
+        {"id": "IA01-P185-F08", "claim": "Uttar Pradesh is the only state shown on the page as bordering eight states plus the National Capital Territory of Delhi.", "type": "map", "target_anchor": "state-neighbour-count", "verification_note": "Verify current adjacency definition and whether Delhi is counted separately."}
+      ]
+    },
+    {
+      "page": 186,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "States classified by number of neighbouring states",
+      "facts": [
+        {"id": "IA01-P186-F01", "claim": "The page classifies Indian states by how many other states they border, from seven-neighbour to three-neighbour groups.", "type": "classification", "target_anchor": "state-neighbour-count"},
+        {"id": "IA01-P186-F02", "claim": "Assam is presented as bordering seven states, with the book noting its boundary with Sikkim as absent despite the narrow intervening corridor.", "type": "map", "target_anchor": "state-neighbour-count"},
+        {"id": "IA01-P186-F03", "claim": "Chhattisgarh is presented as bordering seven states after the 2014 reorganisation of Andhra Pradesh.", "type": "map", "target_anchor": "state-neighbour-count"},
+        {"id": "IA01-P186-F04", "claim": "The page supplies neighbour lists for Maharashtra, Karnataka, Andhra Pradesh, Madhya Pradesh, West Bengal, Rajasthan, Jharkhand, Himachal Pradesh, Haryana, Punjab and Odisha.", "type": "map", "target_anchor": "state-neighbour-count", "verification_note": "Verify every list against an up-to-date official political map before converting to MCQs."}
+      ]
+    },
+    {
+      "page": 187,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Neighbour-count continuation and landlocked states/UTs",
+      "facts": [
+        {"id": "IA01-P187-F01", "claim": "The page completes the grouping of states by the number of neighbouring states, including three-, two- and one-neighbour cases.", "type": "classification", "target_anchor": "state-neighbour-count"},
+        {"id": "IA01-P187-F02", "claim": "Sikkim is shown as bordering West Bengal, and Meghalaya as bordering Assam, among one-state-border examples.", "type": "map", "target_anchor": "state-neighbour-count"},
+        {"id": "IA01-P187-F03", "claim": "The page prints a 2017 APPSC-style question on the states bordering Chhattisgarh.", "type": "pyq", "target_anchor": "state-neighbour-pyqs", "exam": "APPSC", "year": "2017", "verification_note": "Verify exact exam and paper label from the printed source."},
+        {"id": "IA01-P187-F04", "claim": "A landlocked state or Union Territory lacks an international sea coast; Madhya Pradesh, Chhattisgarh, Telangana, Jharkhand and Haryana are listed as examples.", "type": "definition", "target_anchor": "landlocked-india"},
+        {"id": "IA01-P187-F05", "claim": "Delhi and Chandigarh are identified as landlocked Union Territories.", "type": "classification", "target_anchor": "landlocked-india"},
+        {"id": "IA01-P187-F06", "claim": "Nepal, Bhutan and Afghanistan are identified as South Asian landlocked countries, while Laos is cited for Southeast Asia.", "type": "comparison", "target_anchor": "landlocked-comparison"},
+        {"id": "IA01-P187-F07", "claim": "The page distinguishes countries with no land boundary from island or microstate examples and lists Bolivia and Paraguay as landlocked South American countries.", "type": "comparison", "target_anchor": "landlocked-comparison", "verification_note": "Clarify landlocked versus island-state concepts; printed wording is potentially confusing."},
+        {"id": "IA01-P187-F08", "claim": "The page identifies Kazakhstan and Mongolia as major landlocked countries and notes Vatican City, San Marino and Lesotho as states enclosed by one other country.", "type": "comparison", "target_anchor": "landlocked-comparison"}
+      ]
+    },
+    {
+      "page": 188,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "India's international land boundaries",
+      "facts": [
+        {"id": "IA01-P188-F01", "claim": "The book gives India's total international land boundary with Pakistan, Afghanistan, China, Nepal, Bhutan, Myanmar and Bangladesh as 15,106.7 km.", "type": "number", "target_anchor": "international-land-boundary", "verification_note": "Verify against Ministry of Home Affairs current figure and territorial convention."},
+        {"id": "IA01-P188-F02", "claim": "The page states that 16 states and 2 Union Territories border foreign countries and that 92 districts in those states touch an international boundary.", "type": "administrative", "target_anchor": "border-states", "verification_note": "District count and administrative count are time-sensitive."},
+        {"id": "IA01-P188-F03", "claim": "India is presented as having the world's third-longest international land boundary after China and Russia.", "type": "ranking", "target_anchor": "international-land-boundary", "verification_note": "Verify ranking methodology and country totals before scoring."},
+        {"id": "IA01-P188-F04", "claim": "The printed country-wise border lengths are Pakistan 3,323 km (including an LoC component), Afghanistan 106 km, China 3,488 km, Nepal 1,751 km, Bhutan 699 km, Myanmar 1,643 km and Bangladesh 4,097 km.", "type": "table", "target_anchor": "border-length-table", "verification_note": "Verify each value with MHA; preserve the book values separately."},
+        {"id": "IA01-P188-F05", "claim": "Bangladesh is shown as sharing India's longest international land boundary, Pakistan the next longest, and Afghanistan the shortest under India's official territorial convention.", "type": "ranking", "target_anchor": "border-length-table"},
+        {"id": "IA01-P188-F06", "claim": "The table maps each neighbouring country to the Indian states or Union Territories that border it and identifies longest/shortest state segments.", "type": "table", "target_anchor": "border-state-table", "verification_note": "Every cell requires current official map verification."},
+        {"id": "IA01-P188-F07", "claim": "Tripura is described as being bordered by Bangladesh on three sides.", "type": "map", "target_anchor": "bangladesh-border"},
+        {"id": "IA01-P188-F08", "claim": "Gujarat and West Bengal are identified as having both international land boundaries and coastlines.", "type": "map", "target_anchor": "border-and-coast"}
+      ]
+    },
+    {
+      "page": 189,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "International-border combinations and Radcliffe Line/LoC",
+      "facts": [
+        {"id": "IA01-P189-F01", "claim": "The page groups Indian states/UTs by whether they border two or three foreign countries and identifies Gujarat and West Bengal as having both a foreign land boundary and a sea coast.", "type": "classification", "target_anchor": "border-combinations"},
+        {"id": "IA01-P189-F02", "claim": "The Radcliffe Line resulted from the 1947 boundary demarcation associated with the partition of British India.", "type": "history", "target_anchor": "radcliffe-line"},
+        {"id": "IA01-P189-F03", "claim": "Sir Cyril Radcliffe chaired the boundary commissions that demarcated the India–Pakistan boundaries in Punjab and Bengal.", "type": "history", "target_anchor": "radcliffe-line"},
+        {"id": "IA01-P189-F04", "claim": "The page states that the Radcliffe boundary was announced on 17 August 1947.", "type": "date", "target_anchor": "radcliffe-line"},
+        {"id": "IA01-P189-F05", "claim": "After the creation of Bangladesh in 1971, the eastern portion of the 1947 boundary became the India–Bangladesh international boundary.", "type": "history", "target_anchor": "radcliffe-line"},
+        {"id": "IA01-P189-F06", "claim": "The Line of Control is the military control line dividing Indian- and Pakistan-administered parts of the former princely state of Jammu and Kashmir; it is not an internationally recognised boundary.", "type": "definition", "target_anchor": "loc"},
+        {"id": "IA01-P189-F07", "claim": "The page associates Pakistan's 1947 tribal invasion with the start of the first India–Pakistan war over Jammu and Kashmir.", "type": "history", "target_anchor": "loc-history", "verification_note": "Use neutral, sourced historical wording."}
+      ]
+    },
+    {
+      "page": 190,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "LoC, Siachen, AGPL and Kargil",
+      "facts": [
+        {"id": "IA01-P190-F01", "claim": "The 1949 Karachi Agreement established a ceasefire line following the first India–Pakistan war; the 1972 Simla Agreement redesignated the line as the Line of Control.", "type": "history", "target_anchor": "loc-history"},
+        {"id": "IA01-P190-F02", "claim": "Pakistan-administered areas are commonly divided in Indian official usage into Azad Jammu and Kashmir and Gilgit–Baltistan.", "type": "classification", "target_anchor": "jammu-kashmir-ladakh", "verification_note": "Use official Indian wording and clearly distinguish administration from territorial claims."},
+        {"id": "IA01-P190-F03", "claim": "The page lists districts adjoining the LoC in Jammu and Kashmir and Ladakh; these require verification against current district boundaries.", "type": "administrative", "target_anchor": "loc-map", "verification_note": "Administrative boundaries are time-sensitive."},
+        {"id": "IA01-P190-F04", "claim": "The Siachen Glacier lies in the eastern Karakoram and is described as about 76 km long; the page treats it as the world's highest battlefield and one of the longest non-polar glaciers.", "type": "geography", "target_anchor": "siachen", "verification_note": "Qualify superlatives and length using authoritative sources."},
+        {"id": "IA01-P190-F05", "claim": "Operation Meghdoot began on 13 April 1984 and established Indian control over key positions on the Saltoro Ridge/Siachen sector.", "type": "history", "target_anchor": "siachen"},
+        {"id": "IA01-P190-F06", "claim": "The Actual Ground Position Line (AGPL) identifies the actual deployment line in the Siachen sector beyond the northern end of the LoC.", "type": "definition", "target_anchor": "agpl"},
+        {"id": "IA01-P190-F07", "claim": "The Kargil conflict followed infiltration across the LoC in 1999; Operation Vijay was the Indian military operation to recapture positions.", "type": "history", "target_anchor": "kargil"},
+        {"id": "IA01-P190-F08", "claim": "The page lists the India–Pakistan wars of 1947–48, 1965, 1971 and 1999 and distinguishes major conventional wars from surgical strikes.", "type": "sequence", "target_anchor": "india-pakistan-conflicts", "verification_note": "Use precise conflict names and dates."}
+      ]
+    },
+    {
+      "page": 191,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Surgical strikes, Operation Sindoor, Sir Creek and Durand Line",
+      "facts": [
+        {"id": "IA01-P191-F01", "claim": "The page describes India's 2016 cross-LoC surgical strike following the Uri attack and a 2019 air strike following the Pulwama attack.", "type": "current-history", "target_anchor": "recent-border-operations", "verification_note": "Verify dates and terminology with official statements."},
+        {"id": "IA01-P191-F02", "claim": "The page includes a 2025 current-affairs paragraph labelled Operation Sindoor.", "type": "current-affairs", "target_anchor": "recent-border-operations", "verification_note": "Must be verified independently; do not rely on the book paragraph alone."},
+        {"id": "IA01-P191-F03", "claim": "Sir Creek is a tidal estuary in the marshes of the Rann of Kutch along the India–Pakistan boundary and is subject to a maritime-boundary dispute.", "type": "definition", "target_anchor": "sir-creek"},
+        {"id": "IA01-P191-F04", "claim": "The printed text gives Sir Creek a length of about 96 km and notes differing interpretations of the boundary alignment under the 1914-era map/resolution framework.", "type": "number", "target_anchor": "sir-creek", "verification_note": "Verify legal history and length using official sources."},
+        {"id": "IA01-P191-F05", "claim": "The page distinguishes the India–Pakistan boundary into International Border, Line of Control and Actual Ground Position Line sectors.", "type": "classification", "target_anchor": "india-pakistan-boundary-sectors"},
+        {"id": "IA01-P191-F06", "claim": "The Durand Line was demarcated in 1893 between British India and Afghanistan through an agreement involving Mortimer Durand and Amir Abdur Rahman Khan.", "type": "history", "target_anchor": "durand-line"},
+        {"id": "IA01-P191-F07", "claim": "After 1947, the Durand Line became the Afghanistan–Pakistan boundary, though Afghanistan has historically disputed its status.", "type": "history", "target_anchor": "durand-line"}
+      ]
+    },
+    {
+      "page": 192,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "India–China boundary sectors, McMahon Line and LAC",
+      "facts": [
+        {"id": "IA01-P192-F01", "claim": "The book divides the India–China boundary into western, middle and eastern sectors and supplies sector lengths and adjoining states/UTs.", "type": "table", "target_anchor": "india-china-sectors", "verification_note": "Verify sector definitions and lengths from official sources."},
+        {"id": "IA01-P192-F02", "claim": "The western sector concerns Ladakh and the Aksai Chin dispute; the middle sector concerns Himachal Pradesh and Uttarakhand; the eastern sector concerns Sikkim and Arunachal Pradesh.", "type": "classification", "target_anchor": "india-china-sectors"},
+        {"id": "IA01-P192-F03", "claim": "The McMahon Line emerged from the 1914 Simla Convention process involving British India and Tibet; China does not accept it as the legal boundary.", "type": "history", "target_anchor": "mcmahon-line"},
+        {"id": "IA01-P192-F04", "claim": "The page lists Sumdorong Chu, Yangtse, Namka Chu, Longju and Asaphila among disputed or friction areas in Arunachal Pradesh.", "type": "map", "target_anchor": "eastern-sector-friction-points", "verification_note": "Verify current official names, spellings and status."},
+        {"id": "IA01-P192-F05", "claim": "The Line of Actual Control (LAC) is a de facto military control line, not a mutually demarcated international boundary.", "type": "definition", "target_anchor": "lac"},
+        {"id": "IA01-P192-F06", "claim": "The page lists Depsang, Galwan, Hot Springs, Pangong Tso, Demchok and other Ladakh friction points discussed during the 2020 standoff.", "type": "map", "target_anchor": "western-sector-friction-points", "verification_note": "Verify official spelling and current disengagement status before release."}
+      ]
+    },
+    {
+      "page": 193,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Doklam, Chicken's Neck and India–Nepal boundary",
+      "facts": [
+        {"id": "IA01-P193-F01", "claim": "Doklam is a plateau at the Bhutan–China–India tri-junction region and is strategically close to the Siliguri Corridor.", "type": "map", "target_anchor": "doklam"},
+        {"id": "IA01-P193-F02", "claim": "The page describes the 2017 Doklam standoff and notes India's security interest arising from Bhutan ties and proximity to the Siliguri Corridor.", "type": "current-history", "target_anchor": "doklam"},
+        {"id": "IA01-P193-F03", "claim": "The page contains a 2017 Group-II question identifying Doklam as the disputed area at issue.", "type": "pyq", "target_anchor": "doklam-pyq", "year": "2017", "verification_note": "Verify exact commission/exam label."},
+        {"id": "IA01-P193-F04", "claim": "The Siliguri Corridor, commonly called Chicken's Neck, is the narrow land connection between mainland India and the northeastern states, lying between Nepal and Bangladesh near Bhutan.", "type": "definition", "target_anchor": "siliguri-corridor"},
+        {"id": "IA01-P193-F05", "claim": "The page gives the corridor a narrow width of roughly 20–24 km at commonly cited points.", "type": "number", "target_anchor": "siliguri-corridor", "verification_note": "Width varies by measurement point; present as approximate."},
+        {"id": "IA01-P193-F06", "claim": "The page contains a 2017 Group-II question on the meaning of Chicken's Neck.", "type": "pyq", "target_anchor": "siliguri-corridor-pyq", "year": "2017", "verification_note": "Verify exact commission/exam label."},
+        {"id": "IA01-P193-F07", "claim": "The India–Nepal Treaty of Peace and Friendship was signed in 1950, and the boundary follows rivers and Himalayan/foothill terrain in several sectors.", "type": "history", "target_anchor": "india-nepal-boundary"},
+        {"id": "IA01-P193-F08", "claim": "The page identifies Kalapani/Lipulekh and the Susta area as important India–Nepal boundary disputes and mentions the Mahakali/Kali and Gandak river contexts.", "type": "map", "target_anchor": "india-nepal-disputes", "verification_note": "Use neutral wording and authoritative maps."}
+      ]
+    },
+    {
+      "page": 194,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "India's eastern neighbours and maritime boundaries",
+      "facts": [
+        {"id": "IA01-P194-F01", "claim": "India and Bangladesh retained a Radcliffe-derived land boundary after Bangladesh's independence in 1971; the page notes Teesta and Feni as transboundary rivers and the 1974 Indira–Mujib agreement/Land Boundary Agreement process.", "type": "history", "target_anchor": "india-bangladesh-boundary"},
+        {"id": "IA01-P194-F02", "claim": "The 2015 implementation of the Land Boundary Agreement exchanged enclaves between India and Bangladesh.", "type": "history", "target_anchor": "india-bangladesh-boundary"},
+        {"id": "IA01-P194-F03", "claim": "India and Bhutan concluded friendship treaties in 1949 and 2007; India cooperates with Bhutan in security and development.", "type": "history", "target_anchor": "india-bhutan-boundary"},
+        {"id": "IA01-P194-F04", "claim": "The India–Myanmar boundary lacks a fully settled demarcation in some sectors; the page mentions the Kabaw Valley/Andaman–Nicobar context.", "type": "map", "target_anchor": "india-myanmar-boundary", "verification_note": "Verify exact unresolved sectors and wording."},
+        {"id": "IA01-P194-F05", "claim": "The page tabulates India's maritime neighbours and the sea, channel, river mouth or creek associated with each boundary context.", "type": "table", "target_anchor": "maritime-neighbours-table", "verification_note": "Verify every named water body."},
+        {"id": "IA01-P194-F06", "claim": "Sri Lanka lies close to India across the Palk Strait and Gulf of Mannar; the page calls it the Teardrop of the Indian Ocean and notes the Pamban/Rameswaram–Dhanushkodi setting.", "type": "map", "target_anchor": "india-sri-lanka"}
+      ]
+    },
+    {
+      "page": 195,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "India–Sri Lanka waters and Sethusamudram project",
+      "facts": [
+        {"id": "IA01-P195-F01", "claim": "The Gulf of Mannar is south of the Palk Strait and contains biologically rich marine ecosystems and islands; the Palk Strait connects the Bay of Bengal side with the Gulf of Mannar region.", "type": "map", "target_anchor": "palk-gulf-mannar"},
+        {"id": "IA01-P195-F02", "claim": "Kachchatheevu is an island in the Palk Strait area governed by India–Sri Lanka agreements of 1974 and 1976; fishing access remains politically sensitive.", "type": "history", "target_anchor": "kachchatheevu", "verification_note": "Verify legal terms precisely; avoid oversimplifying sovereignty and fishing rights."},
+        {"id": "IA01-P195-F03", "claim": "The Palk Bay/Gulf of Mannar area forms the maritime space separating Tamil Nadu and northern Sri Lanka.", "type": "definition", "target_anchor": "palk-gulf-mannar"},
+        {"id": "IA01-P195-F04", "claim": "Adam's Bridge/Rama Setu is a chain of shoals between Dhanushkodi/Rameswaram and Talaimannar.", "type": "definition", "target_anchor": "adams-bridge"},
+        {"id": "IA01-P195-F05", "claim": "The Sethusamudram Ship Channel Project proposes a navigable route through the shallow waters between India's east and west coasts to reduce the need to sail around Sri Lanka.", "type": "project", "target_anchor": "sethusamudram"},
+        {"id": "IA01-P195-F06", "claim": "The page gives proposed distance/time savings and discusses environmental, cultural and livelihood objections to the project.", "type": "project", "target_anchor": "sethusamudram", "verification_note": "Verify project alignment, current status and claimed savings from official project sources."}
+      ]
+    },
+    {
+      "page": 196,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "India–Maldives, India–Indonesia and coastline",
+      "facts": [
+        {"id": "IA01-P196-F01", "claim": "The Maldives is an archipelagic Indian Ocean country southwest of India and close to Lakshadweep; the Eight Degree Channel separates Minicoy/Lakshadweep from the Maldives region.", "type": "map", "target_anchor": "india-maldives"},
+        {"id": "IA01-P196-F02", "claim": "The page characterises the Maldives as consisting of about 1,190 coral islands and cites global-warming/sea-level vulnerability.", "type": "number", "target_anchor": "india-maldives", "verification_note": "Island counts differ by source and definition; verify with an official Maldives source."},
+        {"id": "IA01-P196-F03", "claim": "The page prints a 2014 RRB Group-D question asking where the Maldives is located, with the Indian Ocean as the correct answer.", "type": "pyq", "target_anchor": "maldives-pyq", "year": "2014", "verification_note": "Manually re-opened the printed question box on 2026-11-01; the label reads 2014 RRB Group-D, correcting the earlier ledger description."},
+        {"id": "IA01-P196-F04", "claim": "Indonesia is an extensive archipelagic country southeast of India; Great Nicobar lies near Sumatra, separated by the Great Channel.", "type": "map", "target_anchor": "india-indonesia"},
+        {"id": "IA01-P196-F05", "claim": "Nine Indian states have a sea coast: Gujarat, Maharashtra, Goa, Karnataka, Kerala, Tamil Nadu, Andhra Pradesh, Odisha and West Bengal.", "type": "classification", "target_anchor": "coastal-states"},
+        {"id": "IA01-P196-F06", "claim": "Four Union Territories have a sea coast: Andaman and Nicobar Islands, Lakshadweep, Puducherry, and Dadra and Nagar Haveli and Daman and Diu.", "type": "classification", "target_anchor": "coastal-uts"},
+        {"id": "IA01-P196-F07", "claim": "The page gives India's older official coastline total as 7,516.60 km and notes a revised 2024/modern-method estimate of about 11,098.81 km.", "type": "number", "target_anchor": "india-coastline", "verification_note": "Verify the revised official coastline figure, method and effective reference date."},
+        {"id": "IA01-P196-F08", "claim": "The page ranks Gujarat, Tamil Nadu and Andhra Pradesh among states with long coastlines, but printed values reflect differing measurement vintages.", "type": "ranking", "target_anchor": "state-coastline-table", "verification_note": "Use one consistent official measurement series and reference date."}
+      ]
+    },
+    {
+      "page": 197,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Coastline, territorial sea and Exclusive Economic Zone",
+      "facts": [
+        {"id":"IA01-P197-F01","claim":"The page compares older coastline lengths for Goa, Karnataka and Kerala and identifies Andaman and Nicobar as having the longest coastline among Union Territories under the older measurement series.","type":"ranking","target_anchor":"state-coastline-table","verification_note":"Replace or dual-label using the latest official recalculated series."},
+        {"id":"IA01-P197-F02","claim":"The page states that India has coastal districts on both the mainland and island territories and cites three-sea meeting at Kanyakumari.","type":"administrative","target_anchor":"coastal-districts","verification_note":"District counts are time-sensitive."},
+        {"id":"IA01-P197-F03","claim":"India's territorial sea extends 12 nautical miles from the appropriate baseline.","type":"law","target_anchor":"maritime-zones"},
+        {"id":"IA01-P197-F04","claim":"One nautical mile equals 1.852 km.","type":"conversion","target_anchor":"maritime-zones"},
+        {"id":"IA01-P197-F05","claim":"The contiguous zone extends to 24 nautical miles from the baseline.","type":"law","target_anchor":"maritime-zones"},
+        {"id":"IA01-P197-F06","claim":"The Exclusive Economic Zone extends up to 200 nautical miles from the baseline, subject to delimitation with neighbouring states.","type":"law","target_anchor":"maritime-zones"},
+        {"id":"IA01-P197-F07","claim":"The coastal state has sovereign rights over natural resources in its EEZ, while the zone is not equivalent to full territorial sovereignty.","type":"concept","target_anchor":"maritime-zones"},
+        {"id":"IA01-P197-F08","claim":"The page gives an older Indian EEZ area near 2.02 million km² and refers to international seabed institutions.","type":"number","target_anchor":"india-eez","verification_note":"Verify exact official EEZ area and distinguish International Maritime Organization from International Seabed Authority."}
+      ]
+    },
+    {
+      "page": 198,
+      "source_pdf": "geo177.198.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "EEZ and continental shelf diagram",
+      "facts": [
+        {"id":"IA01-P198-F01","claim":"The diagram distinguishes territorial sea (12 nautical miles), contiguous zone (24 nautical miles), Exclusive Economic Zone (200 nautical miles) and high seas.","type":"diagram","target_anchor":"maritime-zones-diagram"},
+        {"id":"IA01-P198-F02","claim":"The continental shelf is a seabed/subsoil legal concept whose outer limit may extend beyond 200 nautical miles where UNCLOS geological and distance criteria are met, subject to maximum constraints.","type":"concept","target_anchor":"continental-shelf"},
+        {"id":"IA01-P198-F03","claim":"The page map attempts to show India's EEZ around the mainland and island groups; it is schematic and must not be treated as a precise legal boundary map.","type":"map","target_anchor":"india-eez"}
+      ]
+    },
+    {
+      "page": 199,
+      "source_pdf": "geo198.222.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Andhra Pradesh: formation, location and area",
+      "facts": [
+        {"id":"IA01-P199-F01","claim":"Andhra State was formed on 1 October 1953 from Telugu-speaking areas of the former Madras State, with Kurnool as capital.","type":"history","target_anchor":"ap-formation"},
+        {"id":"IA01-P199-F02","claim":"Andhra Pradesh was formed on 1 November 1956 by combining Andhra State with the Telugu-speaking Telangana region of Hyderabad State.","type":"history","target_anchor":"ap-formation"},
+        {"id":"IA01-P199-F03","claim":"Hyderabad State had been integrated into India following Operation Polo in September 1948; subsequent district reorganisations occurred before 1956.","type":"history","target_anchor":"hyderabad-integration"},
+        {"id":"IA01-P199-F04","claim":"Telangana became a separate state on 2 June 2014, leaving the residuary State of Andhra Pradesh.","type":"history","target_anchor":"ap-bifurcation"},
+        {"id":"IA01-P199-F05","claim":"Andhra Pradesh lies roughly between 12°37′ N and 19°09′ N, and 76°45′ E and 84°45′ E; the standard meridian 82°30′ E passes through the state.","type":"number","target_anchor":"ap-location"},
+        {"id":"IA01-P199-F06","claim":"The page gives the post-bifurcation Andhra Pradesh area as 160,207 km², then adds seven transferred mandals from the former Khammam district to obtain 162,970 km².","type":"number","target_anchor":"ap-area","verification_note":"Verify current official area and treatment of transferred territory; different official documents use different figures."},
+        {"id":"IA01-P199-F07","claim":"The page states that Andhra Pradesh ranked eighth by area before the 2019 Jammu and Kashmir reorganisation and seventh afterwards.","type":"ranking","target_anchor":"ap-area","verification_note":"Verify current state-only ranking using one area dataset."}
+      ]
+    },
+    {
+      "page": 200,
+      "source_pdf": "geo198.222.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Transferred mandals, AP population and interstate district borders",
+      "facts": [
+        {"id":"IA01-P200-F01","claim":"The page lists villages/mandals transferred from the former Khammam district to Andhra Pradesh following bifurcation and associates them mainly with present-day Alluri Sitharama Raju and Eluru districts.","type":"administrative","target_anchor":"transferred-mandals","verification_note":"Verify current mandal and district assignments after 2022/2025 reorganisations."},
+        {"id":"IA01-P200-F02","claim":"The page gives 2011 population arithmetic for residuary Andhra Pradesh plus transferred villages and cites total population around 4.96 crore.","type":"number","target_anchor":"ap-population","verification_note":"Keep census-year label; do not mix with projections."},
+        {"id":"IA01-P200-F03","claim":"A 2025 population projection near 5.36 crore is printed separately from the 2011 Census population.","type":"projection","target_anchor":"ap-population","verification_note":"Verify projection source and label it explicitly as a projection."},
+        {"id":"IA01-P200-F04","claim":"The page tabulates which Andhra Pradesh districts border Odisha, Chhattisgarh, Telangana, Karnataka and Tamil Nadu.","type":"table","target_anchor":"ap-interstate-boundaries","verification_note":"Verify against the latest district map."},
+        {"id":"IA01-P200-F05","claim":"The page also identifies AP districts sharing boundaries with two neighbouring states.","type":"table","target_anchor":"ap-interstate-boundaries"}
+      ]
+    },
+    {
+      "page": 201,
+      "source_pdf": "geo198.222.pdf",
+      "status": "intake_complete_verification_pending",
+      "heading": "Andhra Pradesh district reorganisation and administrative divisions",
+      "facts": [
+        {"id":"IA01-P201-F01","claim":"Andhra Pradesh was reorganised from 13 districts into 26 districts on 4 April 2022.","type":"administrative-history","target_anchor":"ap-district-reorganisation"},
+        {"id":"IA01-P201-F02","claim":"The page notes further creation of Markapuram and Polavaram districts, bringing the total to 28 from 31 December 2025 according to the book's current-affairs update.","type":"current-affairs","target_anchor":"ap-district-reorganisation","verification_note":"Verify with the latest AP government notification before inclusion or scoring."},
+        {"id":"IA01-P201-F03","claim":"The page groups the 28 districts into Uttarandhra, Coastal Andhra and Rayalaseema regions and separately lists coastal districts.","type":"classification","target_anchor":"ap-regions","verification_note":"Verify the grouping after the latest district changes."},
+        {"id":"IA01-P201-F04","claim":"The page prints a district count by region and a separate list of districts described as coastal or bordering the sea.","type":"table","target_anchor":"ap-regions"},
+        {"id":"IA01-P201-F05","claim":"The page cites 1985 mandal reform replacing the earlier taluk system and lists totals for districts, revenue divisions, mandals, revenue villages, gram panchayats, urban local bodies and related administrative units.","type":"administrative","target_anchor":"ap-administrative-structure","verification_note":"Every count is time-sensitive and must be verified from AP government sources."}
+      ]
+    }
+  ]
+}

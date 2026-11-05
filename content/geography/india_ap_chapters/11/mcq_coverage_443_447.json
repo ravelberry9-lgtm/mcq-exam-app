@@ -1,0 +1,27 @@
+{
+  "chapter": 11,
+  "pages": "443-447",
+  "manual_rule": "Each question, option and explanation was individually read, judged and written. No question prose was mechanically generated or template-built.",
+  "existing_question_review": [
+    {"id": "GEO-ORIG-42-001", "decision": "preserved", "note": "Legacy hematite identification retained; new IA11-B443-002 provides corrected textbook-level coverage."},
+    {"id": "GEO-ORIG-42-002", "decision": "preserved", "note": "Legacy bauxite identification retained; new IA11-B445-001 teaches the full processing chain and MMDR correction."}
+  ],
+  "coverage": [
+    {"page": 443, "fact_count": 15, "structured_records": 3, "questions": ["IA11-B443-001", "IA11-B443-002", "IA11-B443-003"], "covered_facts": ["443-1", "443-2", "443-3", "443-4", "443-5", "443-6", "443-7", "443-8", "443-9", "443-10", "443-11", "443-12", "443-13", "443-14", "443-15"]},
+    {"page": 444, "fact_count": 18, "structured_records": 4, "questions": ["IA11-B444-001", "IA11-B444-002", "IA11-B444-003"], "covered_facts": ["444-1", "444-2", "444-3", "444-4", "444-5", "444-6", "444-7", "444-8", "444-9", "444-10", "444-11", "444-12", "444-13", "444-14", "444-15", "444-16", "444-17", "444-18"]},
+    {"page": 445, "fact_count": 17, "structured_records": 4, "questions": ["IA11-B445-001", "IA11-B445-002", "IA11-B445-003"], "covered_facts": ["445-1", "445-2", "445-3", "445-4", "445-5", "445-6", "445-7", "445-8", "445-9", "445-10", "445-11", "445-12", "445-13", "445-14", "445-15", "445-16", "445-17"]},
+    {"page": 446, "fact_count": 12, "structured_records": 5, "questions": ["IA11-B446-001", "IA11-B446-002", "IA11-B446-003"], "covered_facts": ["446-1", "446-2", "446-3", "446-4", "446-5", "446-6", "446-7", "446-8", "446-9", "446-10", "446-11", "446-12"]},
+    {"page": 447, "fact_count": 12, "structured_records": 5, "questions": ["IA11-B446-001", "IA11-B446-002", "IA11-B446-003"], "covered_facts": ["447-1", "447-2", "447-3", "447-4", "447-5", "447-6", "447-7", "447-8", "447-9", "447-10", "447-11", "447-12"]}
+  ],
+  "active_test_audit": [
+    {"page": 443, "question_ids": ["IA11-B443-001", "IA11-B443-002", "IA11-B443-003", "IA11-B443-004", "IA11-B443-005"], "active_fact_ids": ["443-1", "443-2", "443-3", "443-4", "443-5", "443-6", "443-7", "443-8", "443-9", "443-10", "443-11", "443-12", "443-13", "443-14", "443-15"]},
+    {"page": 444, "question_ids": ["IA11-B444-001", "IA11-B444-002", "IA11-B444-003", "IA11-B444-004", "IA11-B444-005", "IA11-B444-006", "IA11-B444-007"], "active_fact_ids": ["444-1", "444-2", "444-3", "444-4", "444-5", "444-6", "444-7", "444-8", "444-9", "444-10", "444-11", "444-12", "444-13", "444-14", "444-15", "444-16", "444-17", "444-18"]},
+    {"page": 445, "question_ids": ["IA11-B445-001", "IA11-B445-002", "IA11-B445-003", "IA11-B445-004", "IA11-B445-005", "IA11-B445-006", "IA11-B445-007"], "active_fact_ids": ["445-1", "445-2", "445-3", "445-4", "445-5", "445-6", "445-7", "445-8", "445-9", "445-10", "445-11", "445-12", "445-13", "445-14", "445-15", "445-16", "445-17"]},
+    {"page": 446, "question_ids": ["IA11-B446-001", "IA11-B446-002", "IA11-B446-003", "IA11-B446-004", "IA11-B446-005", "IA11-B446-006"], "active_fact_ids": ["446-1", "446-2", "446-3", "446-4", "446-5", "446-6", "446-7", "446-8", "446-9", "446-10", "446-11", "446-12"]},
+    {"page": 447, "question_ids": ["IA11-B446-001", "IA11-B446-002", "IA11-B446-003", "IA11-B446-004", "IA11-B446-005", "IA11-B446-006"], "active_fact_ids": ["447-1", "447-2", "447-3", "447-4", "447-5", "447-6", "447-7", "447-8", "447-9", "447-10", "447-11", "447-12"]}
+  ],
+  "explanation_only_fact_ids": [],
+  "structured_record_audit": {"actively_tested": 21, "explanation_only": 0, "method": "classification, statement, matching-set, location-set, data-pair, correction and integrated-use questions require the learner to use each structured record in answer selection"},
+  "totals": {"pages": 5, "facts": 74, "structured_records": 21, "new_questions": 25, "printed_pyqs": 0, "actively_tested_facts": 74, "explanation_only_facts": 0},
+  "reconciliation": "All 74 page facts and all 21 structured records are actively tested in a stem, option set or answer-selection rule. Explanations consolidate learning but are not used as a substitute for coverage. Every new question links to an exact notes anchor."
+}

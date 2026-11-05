@@ -1,0 +1,9 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'learn' %}
+{% block title %}Chapter {{ number }} · India–AP Geography{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
+{% block topbar %}<h1>Chapter {{ number }} · {{ ch.title }}</h1>{% endblock %}
+{% block content %}
+<nav><a href="{{ url_for('geography.india_ap_index') }}">‹ India–AP Geography</a></nav>
+<section class="card"><h2>{{ ch.title }}</h2><p>{{ ch.question_count }} MCQs · Telugu and English explanations · exact section links</p><p><a class="btn primary" href="{{ url_for('geography.india_ap_notes',number=number) }}">పాఠం చదవండి · Read notes</a> <a class="btn" href="{{ url_for('geography.india_ap_practice',number=number) }}">MCQs అభ్యాసం · Practice</a></p></section>
+{% endblock %}

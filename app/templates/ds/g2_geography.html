@@ -1,0 +1,11 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'learn' %}
+{% block title %}Group 2 Geography{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
+{% block topbar %}<h1>గ్రూప్ 2 భూగోళశాస్త్రం · Group 2 Geography</h1>{% endblock %}
+{% block content %}
+<nav><a href="{{ url_for('geography.index') }}">‹ Geography</a></nav>
+<section class="card"><p>{{ data.chapters|length }} lessons · {{ data.question_count }} MCQs (Telugu and English; options shuffled)</p></section>
+{% for c in data.chapters %}<a class="card" href="{{ url_for('geography.g2_chapter',number=c.display_chapter) }}"><h2>{{ c.display_chapter }}. {{ c.title }}</h2><span>{{ c.question_count }} MCQs</span></a>{% endfor %}
+<section class="card"><p>పాఠాలు 35–38 (Group 1 అదనపు) త్వరలో · Lessons 35–38 (Group 1 extras) coming soon.</p></section>
+{% endblock %}

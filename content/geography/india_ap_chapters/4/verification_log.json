@@ -1,0 +1,112 @@
+{
+  "format": "india-ap-verification-log-v1",
+  "chapter": 4,
+  "status": "verification_complete_with_source_year_cautions",
+  "rule": "Only URLs actually opened are logged. Printed values without adequate authoritative support remain labelled historical, approximate, time-sensitive or unscored.",
+  "groups": [
+    {
+      "id": "IA04-V01",
+      "topic": "Southwest-monsoon onset and progress",
+      "fact_ids": ["IA04-P272-F10","IA04-P273-F03","IA04-P274-F03"],
+      "source_urls_opened": ["https://mausam.imd.gov.in/backend/assets/press_release_pdf/Onsetwithrawal_CRS_RESEARCH_REPORT_003_20201.pdf"],
+      "disposition": "verified_with_correction",
+      "note": "IMD 1961-2019 normals place Andaman advance around 22 May, Kerala onset around 1 June, most of northeast India around 5 June and all-India coverage by 8 July. The printed 15 July all-India date is the older normal and will be shown as such, not as the current normal."
+    },
+    {
+      "id": "IA04-V02",
+      "topic": "Southwest-monsoon withdrawal",
+      "fact_ids": ["IA04-P275-F01","IA04-P275-F02","IA04-P275-F08"],
+      "source_urls_opened": ["https://mausam.imd.gov.in/backend/assets/press_release_pdf/Onsetwithrawal_CRS_RESEARCH_REPORT_003_20201.pdf","https://mausam.imd.gov.in/responsive/monsooninformation_withdrawal.php"],
+      "disposition": "printed_table_preserved_but_corrected",
+      "note": "New IMD normal withdrawal begins around 17 September in extreme northwest India and reaches most of the country by 15 October. Operational withdrawal uses five dry days, a lower-tropospheric anticyclone and reduced moisture. The book's 15 September-to-1 January table is retained only as a printed historical schematic."
+    },
+    {
+      "id": "IA04-V03",
+      "topic": "National seasonal rainfall contribution",
+      "fact_ids": ["IA04-P273-F08","IA04-P276-F05"],
+      "source_urls_opened": ["https://mausam.imd.gov.in/IWM7/upload/fullbookIWM7.pdf","https://mausam.imd.gov.in/backend/assets/press_release_pdf/Onsetwithrawal_CRS_RESEARCH_REPORT_003_20201.pdf"],
+      "disposition": "verified_as_broad_textbook_share",
+      "note": "IMD literature supports more than 75% of annual rainfall from the June-September southwest monsoon for most of India and 70-90% over much of the monsoon region. The exact 75/13/10/2 split is retained as the book's broad table, not an invariant national climatological constant."
+    },
+    {
+      "id": "IA04-V04",
+      "topic": "ENSO, El Nino, La Nina and Southern Oscillation",
+      "fact_ids": ["IA04-P278-F05","IA04-P278-F06","IA04-P278-F07","IA04-P278-F08","IA04-P279-F02","IA04-P279-F03","IA04-P279-F04"],
+      "source_urls_opened": ["https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ensofaq.shtml"],
+      "disposition": "verified_and_enriched",
+      "note": "NOAA confirms El Nino as the warm phase and La Nina as the cool phase of ENSO, with coupled changes in Pacific sea-surface temperature, rainfall, pressure and circulation. SOI uses Tahiti-Darwin pressure departures. Impacts are probabilistic, so deterministic Indian-rainfall statements are corrected."
+    },
+    {
+      "id": "IA04-V05",
+      "topic": "Indian Ocean Dipole",
+      "fact_ids": ["IA04-P279-F05","IA04-P279-F06","IA04-P279-F07"],
+      "source_urls_opened": ["https://www.bom.gov.au/resources/learn-and-explore/climate-knowledge-centre/climate-factors/indian-ocean-dipole"],
+      "disposition": "verified_and_enriched",
+      "note": "BOM confirms the west-east tropical Indian Ocean SST difference and positive, neutral and negative phases. Positive IOD means relatively warmer western and cooler eastern waters; negative IOD reverses the pattern. It is one driver in a complex system."
+    },
+    {
+      "id": "IA04-V06",
+      "topic": "Andhra Pradesh normal annual rainfall under the 13-district series",
+      "fact_ids": ["IA04-P287-F01","IA04-P287-F04","IA04-P287-F06","IA04-P287-F08"],
+      "source_urls_opened": ["https://desweather.ap.gov.in/Pdfs/Monthly/AnnualData2014-23.pdf"],
+      "disposition": "verified_with_period_and_boundary_labels",
+      "note": "AP Directorate of Economics and Statistics reports a normal annual rainfall of 966.2 mm in the 13-district series used through 2021-22, with 975.3 mm appearing after the 26-district reorganisation in 2022-23. Every district extreme must carry its period and district map."
+    },
+    {
+      "id": "IA04-V07",
+      "topic": "Andhra Pradesh seasonal rainfall contribution",
+      "fact_ids": ["IA04-P286-F02","IA04-P286-F04","IA04-P288-F01","IA04-P288-F02"],
+      "source_urls_opened": ["https://desweather.ap.gov.in/Pdfs/Weather/Project%20report_Rainfall.pdf"],
+      "disposition": "book_values_corrected",
+      "note": "The opened AP government project report gives a 940 mm normal, with 624 mm (66%) from southwest monsoon, 224 mm (24%) from northeast monsoon and 10% from winter plus summer. This contradicts the book's blanket 75% AP southwest-monsoon share, so the official dated dataset will lead and both series will be explained."
+    },
+    {
+      "id": "IA04-V08",
+      "topic": "Andhra Pradesh seasonal and spatial climate",
+      "fact_ids": ["IA04-P285-F01","IA04-P285-F02","IA04-P285-F04","IA04-P285-F05","IA04-P286-F01","IA04-P286-F03","IA04-P286-F04","IA04-P286-F05","IA04-P286-F07"],
+      "source_urls_opened": ["https://desweather.ap.gov.in/Pdfs/Weather/Project%20report_Rainfall.pdf"],
+      "disposition": "verified_with_caution",
+      "note": "The AP government report confirms hot-humid conditions, mild coastal winters, and rainfall from both southwest and northeast monsoons. Its narrative contains loose month wording and a disputed Lambasingi snowfall claim; those statements will not be copied as scientific fact without stronger evidence."
+    },
+    {
+      "id": "IA04-V09",
+      "topic": "Lambasingi snowfall and temperature claim",
+      "fact_ids": ["IA04-P286-F08"],
+      "source_urls_opened": ["https://desweather.ap.gov.in/Pdfs/Weather/Project%20report_Rainfall.pdf"],
+      "disposition": "unresolved_unscored",
+      "note": "The opened state report repeats the popular claim that Lambasingi is South India's only place with snowfall, but it supplies no station evidence and the claim is meteorologically disputed. Notes will distinguish frost from snowfall; no scored exact MCQ will be created from this claim."
+    },
+    {
+      "id": "IA04-V10",
+      "topic": "Rainfall deviation categories",
+      "fact_ids": ["IA04-P277-F02","IA04-P281-F04","IA04-P281-F05","IA04-P281-F06"],
+      "source_urls_opened": ["https://desweather.ap.gov.in/Pdfs/Monthly/AnnualData2014-23.pdf"],
+      "disposition": "verified_with_modern_categories",
+      "note": "The AP DES series uses no rain -100%, large deficient -99 to -60%, deficient -59 to -20%, normal -19 to +19%, excess +20 to +59% and large excess >=60% in recent reports. Older scanty/deficient/normal/excess labels are preserved only with their report period."
+    },
+    {
+      "id": "IA04-V11",
+      "topic": "ITCZ, Tibetan High, Mascarene High, jets and monsoon depressions",
+      "fact_ids": ["IA04-P274-F01","IA04-P274-F02","IA04-P278-F02","IA04-P278-F03","IA04-P278-F04","IA04-P280-F01","IA04-P280-F02"],
+      "source_urls_opened": ["https://mausamaudit.imd.gov.in/imd_latest/monsoonfaq.pdf","https://www.noaa.gov/jetstream/tropical/convergence-zone"],
+      "disposition": "verified_and_enriched",
+      "note": "NOAA verifies seasonal ITCZ migration. IMD verifies the Tibetan High, Tropical Easterly Jet, Mascarene High and cross-equatorial flow link. Exact jet values are retained only with the IMD FAQ context, not treated as fixed universal constants."
+    },
+    {
+      "id": "IA04-V12",
+      "topic": "Meteorological, hydrological, agricultural and socio-economic drought",
+      "fact_ids": ["IA04-P277-F01","IA04-P277-F02","IA04-P277-F03","IA04-P277-F04"],
+      "source_urls_opened": ["https://mausam.imd.gov.in/met-oly/Met-Olympiad-Study-Material-Senior.pdf"],
+      "disposition": "verified_with_framework_correction",
+      "note": "IMD educational material defines meteorological drought as seasonal rainfall below 75% of long-term average, moderate deficit 26-50% and severe deficit above 50%, and distinguishes hydrological, agricultural and socio-economic drought. Notes therefore do not reduce drought to one rainfall-deviation table."
+    },
+    {
+      "id": "IA04-V13",
+      "topic": "Koppen major groups",
+      "fact_ids": ["IA04-P281-F07","IA04-P281-F08","IA04-P282-F01","IA04-P282-F02","IA04-P282-F03","IA04-P282-F04"],
+      "source_urls_opened": ["https://gcos.wmo.int/sites/default/files/2019-06/gcos_227_en_small.pdf"],
+      "disposition": "major_groups_verified_variant_codes_cautioned",
+      "note": "WMO metadata guidance confirms the five Koppen-Geiger groups A-E with types and subtypes. The book's older Indian suffix system is preserved as printed but explicitly labelled scheme-dependent."
+    }
+  ]
+}

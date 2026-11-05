@@ -1,0 +1,534 @@
+{
+  "format": "india-ap-chapter-verification-log-v1",
+  "chapter": 3,
+  "status": "verification_complete",
+  "policy": "Only sources actually opened are recorded. Printed figures that conflict across authoritative editions retain their source year or remain unscored.",
+  "groups": [
+    {
+      "id": "IA03-V01",
+      "topic": "Ganga and national basin measurements",
+      "fact_ids": ["IA03-P243-F02", "IA03-P243-F03", "IA03-P244-F01", "IA03-P244-F06", "IA03-P262-F01", "IA03-P262-F02"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "CWC 2024 gives the Ganga's total basin area as 1,086,000 sq km and its Indian drainage area as 838,803 sq km, not the book's older 861,404 sq km figure.",
+        "CWC 2024 retains a Ganga length of 2,525 km when measured along the Bhagirathi and Hooghly.",
+        "CWC identifies Yamuna and Son as principal right-bank tributaries and Ramganga, Ghaghara, Gandak, Kosi and Mahananda as principal left-bank tributaries.",
+        "Notes and scored MCQs must state the dataset year whenever a basin-area value is tested."
+      ],
+      "status": "verified_with_dated_correction"
+    },
+    {
+      "id": "IA03-V02",
+      "topic": "Pennar basin and tributary banks",
+      "fact_ids": ["IA03-P256-F01", "IA03-P256-F02", "IA03-P256-F03", "IA03-P266-F03", "IA03-P266-F04", "IA03-P266-F06"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/status-trace-and-toxic-metals-rivers-india-7th-edition.pdf",
+        "https://spsnellore.ap.gov.in/water-resources/"
+      ],
+      "findings": [
+        "CWC gives a Pennar basin area of 55,213 sq km and a river length of 597 km, including 61 km in Karnataka.",
+        "CWC confirms Jayamangali, Kunderu and Sagileru as left-bank tributaries and Chitravati, Papagni and Cheyyeru as right-bank tributaries.",
+        "Nellore district records confirm the modern Nellore and Sangam barrages and distinguish them from the older anicuts.",
+        "The book's rounded 55,000 sq km and 600 km remain usable only as approximate textbook values; precise scored questions use the CWC figures and name the source edition."
+      ],
+      "status": "verified_with_corrections"
+    },
+    {
+      "id": "IA03-V03",
+      "topic": "Krishna basin tributary sides",
+      "fact_ids": ["IA03-P253-F01", "IA03-P253-F03", "IA03-P254-F01"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/status-trace-and-toxic-metals-rivers-india-7th-edition.pdf"
+      ],
+      "findings": [
+        "CWC confirms Krishna rises north of Mahabaleshwar and flows through Maharashtra, Karnataka, Telangana and Andhra Pradesh before reaching the Bay of Bengal.",
+        "CWC identifies Ghataprabha, Malaprabha and Tungabhadra as principal right-bank tributaries, and Bhima, Musi and Munneru as principal left-bank tributaries.",
+        "Any conflicting bank classification in the printed book must be corrected in notes and MCQs."
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "IA03-V04",
+      "topic": "Vamsadhara and Srikakulam coastal drainage",
+      "fact_ids": ["IA03-P267-F05", "IA03-P267-F06", "IA03-P267-F07", "IA03-P267-F08", "IA03-P268-F01", "IA03-P268-F02", "IA03-P268-F05"],
+      "opened_sources": [
+        "https://apsac.ap.gov.in/wp-content/uploads/2025/09/DSR-Reports/srikakulam.pdf",
+        "https://srikakulam.ap.gov.in/about-district/"
+      ],
+      "findings": [
+        "APSAC's 2023 district survey gives the Vamsadhara a length of about 254 km and basin area of about 10,830 sq km, correcting the book's 226 km total.",
+        "The official district material places the Vamsadhara outlet at Kalingapatnam and records Nagavali, Bahuda, Mahendratanaya and Peddagedda among the district's drainage systems.",
+        "The page's 130 km Andhra Pradesh plus 96 km Odisha split is inconsistent with the opened APSAC total and is held unscored pending a matching official segmentation source."
+      ],
+      "status": "verified_with_book_error"
+    },
+    {
+      "id": "IA03-V05",
+      "topic": "Nagavali, Suvarnamukhi, Vegavathi and Gosthani",
+      "fact_ids": ["IA03-P268-F01", "IA03-P268-F02", "IA03-P268-F04", "IA03-P268-F06"],
+      "opened_sources": [
+        "https://parvathipurammanyam.ap.gov.in/about-district/"
+      ],
+      "findings": [
+        "The district source gives Nagavali a total length of about 200 km and a catchment area of 8,964 sq km, differing from the book's 208 km and 9,510 sq km.",
+        "It confirms Suvarnamukhi, Vegavathi, Gomukhi and Jhanjavati among Nagavali-related tributary systems and states Gosthani originates in the Anantagiri forest area.",
+        "Printed measurements remain unscored unless reconciled with a CWC basin dataset."
+      ],
+      "status": "verified_with_measurement_conflict"
+    },
+    {
+      "id": "IA03-V06",
+      "topic": "Godavari profile, tributaries and distributaries",
+      "fact_ids": ["IA03-P250-F03", "IA03-P250-F04", "IA03-P251-F01", "IA03-P251-F02", "IA03-P252-F01", "IA03-P252-F02"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "CWC 2024 places the Godavari source near Trimbakeshwar near Nashik at about 1,067 m and gives a river length of about 1,465 km.",
+        "CWC identifies Pranahita, Manjeera, Sabari, Indravati, Maner and Manar as main tributaries.",
+        "CWC states that the river divides at Dhawaleswaram into Gautami and Vasishta branches, enclosing the Central Delta.",
+        "The notes must distinguish CWC's principal-tributary list from the book's longer local list rather than presenting them as competing answers."
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "IA03-V07",
+      "topic": "Krishna basin extent and current state shares",
+      "fact_ids": ["IA03-P253-F01", "IA03-P253-F02", "IA03-P262-F01", "IA03-P262-F02"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "CWC 2024 gives a Krishna basin area of 259,439 sq km and state shares of Maharashtra 26.60%, Karnataka 43.80%, Telangana 19.80% and Andhra Pradesh 9.80%.",
+        "The basin is the second-largest eastward-draining interstate river basin in Peninsular India in the CWC description.",
+        "Older pre-bifurcation state-share tables must not be reused without a date."
+      ],
+      "status": "verified_with_updated_state_shares"
+    },
+    {
+      "id": "IA03-V08",
+      "topic": "Mahanadi basin area and state shares",
+      "fact_ids": ["IA03-P255-F03", "IA03-P255-F04", "IA03-P255-F05", "IA03-P262-F01", "IA03-P262-F02"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "CWC 2024 gives a Mahanadi basin area of 144,905 sq km, not the book's rounded 142,000 sq km.",
+        "Current basin shares are Chhattisgarh 52.94%, Odisha 46.33%, Jharkhand 0.46%, Maharashtra 0.18% and Madhya Pradesh 0.09%.",
+        "The book's 53% Chhattisgarh and 46% Odisha values are acceptable only as rounded approximations and omit the small shares in three other states."
+      ],
+      "status": "verified_with_enrichment"
+    },
+    {
+      "id": "IA03-V09",
+      "topic": "Narmada basin and tributaries",
+      "fact_ids": ["IA03-P257-F01", "IA03-P257-F02", "IA03-P257-F03", "IA03-P262-F01", "IA03-P262-F02"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "CWC 2024 gives a Narmada basin area of 96,659.79 sq km, correcting the book's rounded 99,000 sq km.",
+        "Current basin shares are Madhya Pradesh 86.9%, Gujarat 11.60% and Maharashtra 1.50%.",
+        "CWC confirms origin at Amarkantak and lists Burhner, Banjar, Hiran, Tawa, Chhota Tawa, Orsang and Kundi as significant tributaries."
+      ],
+      "status": "verified_with_correction"
+    },
+    {
+      "id": "IA03-V10",
+      "topic": "Cauvery basin, length, state shares and tributaries",
+      "fact_ids": ["IA03-P255-F06", "IA03-P255-F07", "IA03-P255-F08", "IA03-P255-F09", "IA03-P262-F01", "IA03-P262-F02"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "CWC 2024 gives a Cauvery length of about 800 km and locates its source at Talakaveri in the Brahmagiri range.",
+        "Current basin shares are Tamil Nadu 55.28%, Karnataka 41.24%, Kerala 3.26% and Puducherry 0.22%, reversing the book's incorrect Karnataka/Tamil Nadu percentages.",
+        "CWC lists Shimsa, Arkavathi, Hemavathi, Kabini, Amaravathi, Noyil and Bhavani among the main tributaries.",
+        "The Cauvery's Srirangam and delta description is expressed through channel bifurcation and distributaries rather than an unsupported island superlative."
+      ],
+      "status": "verified_with_book_error"
+    },
+    {
+      "id": "IA03-V11",
+      "topic": "Brahmaputra basin area, Indian length and tributary banks",
+      "fact_ids": ["IA03-P248-F03", "IA03-P249-F01", "IA03-P249-F02", "IA03-P261-F02", "IA03-P262-F01", "IA03-P262-F02"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "CWC 2024 gives the international Brahmaputra basin area as 580,000 sq km and the Indian basin area as 193,252 sq km, not the book's older 258,000 sq km figure.",
+        "CWC gives a total river length of about 2,900 km and an Indian length of about 916 km.",
+        "CWC's right-bank list includes Lohit, Dibang, Subansiri, Jiabharali, Dhansiri, Manas, Torsa, Sankosh and Teesta; the left-bank list includes Burhidihing, Disang, Dikhow, Dhansiri and Kopili. Because Dhansiri names occur in more than one tributary context, the notes must disambiguate them geographically."
+      ],
+      "status": "verified_with_correction"
+    },
+    {
+      "id": "IA03-V12",
+      "topic": "Indus basin within India",
+      "fact_ids": ["IA03-P246-F07", "IA03-P247-F01", "IA03-P247-F02", "IA03-P261-F02", "IA03-P262-F01", "IA03-P262-F02"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "CWC 2024 gives the Indus basin area within India as 317,708 sq km, correcting the printed 321,000 sq km approximation.",
+        "The current CWC assessment treats Ravi, Beas, Sutlej and Ghaggar together for eastern-river water availability while separately mapping Indus, Jhelum and Chenab sub-basins.",
+        "International total-length and basin-area claims remain dated and source-labelled rather than mixed with India-only measures."
+      ],
+      "status": "verified_with_correction"
+    },
+    {
+      "id": "IA03-V13",
+      "topic": "Major lakes, lagoons and Ramsar wetlands",
+      "fact_ids": ["IA03-P260-F02", "IA03-P260-F04", "IA03-P260-F08", "IA03-P260-F09", "IA03-P260-F10", "IA03-P260-F12", "IA03-P261-F01"],
+      "opened_sources": [
+        "https://www.moef.gov.in/uploads/2024/03/80-Ramsar-sites-of-India-31-01-2024.pdf",
+        "https://rsis.ramsar.org/sites/default/files/rsiswp_search/exports/Ramsar-Sites-annotated-summary-India.pdf",
+        "https://moef.gov.in/uploads/2021/01/Ramsaar-Factsheets_2020_Low-3_compressed-2.pdf"
+      ],
+      "findings": [
+        "MoEFCC's 24 January 2024 list confirms Kolleru's Ramsar designation date as 19 August 2002 and its designated site area as 90,100 ha; this is a designated wetland boundary, not the lake's constant open-water area.",
+        "The same list confirms Wular, Surinsar-Mansar, Renuka, Chandertal, Nalsarovar, Ashtamudi, Vembanad-Kol, Lonar, Loktak and Chilika as Ramsar sites with site-specific designated areas.",
+        "Ramsar describes Chilika as a brackish lagoon separated from the Bay of Bengal by a sandy ridge, with seasonal salinity variation; designated area is 116,500 ha.",
+        "Ramsar describes Loktak as a freshwater lake and associated swamplands characterised by floating phumdis; the book's lake rankings remain unscored unless the comparison definition is explicit."
+      ],
+      "status": "verified_with_area_definition_corrections"
+    },
+    {
+      "id": "IA03-V14",
+      "topic": "Watershed and drainage-pattern concepts",
+      "fact_ids": ["IA03-P240-F01", "IA03-P241-F01", "IA03-P241-F02", "IA03-P241-F03", "IA03-P264-F08", "IA03-P265-F01", "IA03-P265-F02", "IA03-P265-F03", "IA03-P265-F04", "IA03-P265-F05", "IA03-P265-F06"],
+      "opened_sources": [
+        "https://www.usgs.gov/publications/watersheds-and-drainage-networks",
+        "https://pubs.usgs.gov/circ/1963/0477/report.pdf",
+        "https://pubs.usgs.gov/wri/1986/4075/report.pdf"
+      ],
+      "findings": [
+        "USGS defines a watershed as land collecting surface runoff and other flowing water to a common outlet.",
+        "USGS distinguishes drainage-pattern classification, which reflects geological structure and lithology, from channel-pattern classification, which concerns alluvial channel form and sediment-discharge relations.",
+        "USGS examples support dendritic drainage as regular branching with weak structural control and rectangular or trellis drainage as strongly influenced by joints, faults or layered geology.",
+        "The notes must not mix drainage-network patterns such as dendritic with channel forms such as braided and meandering."
+      ],
+      "status": "verified_with_conceptual_correction"
+    },
+    {
+      "id": "IA03-V15",
+      "topic": "Andhra Pradesh coastal rivers and waterfall locations",
+      "fact_ids": ["IA03-P268-F04", "IA03-P268-F06", "IA03-P269-F04", "IA03-P269-F05", "IA03-P269-F06", "IA03-P270-F01"],
+      "opened_sources": [
+        "https://prakasam.ap.gov.in/about-district/",
+        "https://vizianagaram.ap.gov.in/about-district/",
+        "https://visakhapatnam.ap.gov.in/land-scapes/",
+        "https://tirupati.ap.gov.in/eco-tourism/",
+        "https://tirupati.ap.gov.in/religious-tourism/"
+      ],
+      "findings": [
+        "Prakasam district confirms Gundlakamma rises near Gundla Brahmeswaram, passes through Cumbum gorge and reaches the Bay near Devarampadu; it gives about 265 km total length and about 220 km within the district, not the book's vague superlative.",
+        "Vizianagaram district confirms Gosthani origin in the Ananthagiri forest area, Suvarnamukhi origin in the Salur hills, Vegavathi origin in Pachipenta hills and Champavathi outlet near Konada.",
+        "Visakhapatnam district treats the Borra-cave Gosthani origin story as local tradition and separately confirms Tadimada as a notable waterfall; the notes must preserve that distinction.",
+        "Tirupati district confirms Kailasakona near Narayanavanam, Kalyani Dam across Swarnamukhi, and lists Talakona and Kailasakona among district waterfalls; unsupported printed height and rank claims remain unscored."
+      ],
+      "status": "verified_with_tradition_and_rank_qualifications"
+    },
+    {
+      "id": "IA03-V16",
+      "topic": "Panch Prayag, National River declaration and Namami Gange",
+      "fact_ids": ["IA03-P244-F03", "IA03-P244-F04", "IA03-P244-F07", "IA03-P244-F08", "IA03-P244-F09"],
+      "opened_sources": [
+        "https://ujala.uk.gov.in/files/TRADITIONS_OF_UTTARAKHAND.pdf",
+        "https://nmcg.nic.in/ganga_utsav_2017.aspx",
+        "https://www.jalshakti-dowr.gov.in/static/uploads/2024/05/fc00cd887135cf39b2005ccf1539e0e5.pdf"
+      ],
+      "findings": [
+        "The Uttarakhand government source confirms Vishnuprayag as Dhauliganga-Alaknanda, Nandaprayag as Nandakini-Alaknanda, Karnaprayag as Pindar-Alaknanda, Rudraprayag as Mandakini-Alaknanda and Devprayag as Bhagirathi-Alaknanda.",
+        "The printed association of Mandakini with Nandaprayag is incorrect; Mandakini meets Alaknanda at Rudraprayag.",
+        "NMCG confirms that the Ganga was declared India's National River in 2008; the exact day is not used in a scored item unless an opened official source explicitly states it.",
+        "The Ministry of Jal Shakti annual report records approval of the Namami Gange programme on 13 May 2015, the initial Rs 20,000 crore outlay through 31 March 2021, and extension through 31 March 2026 with a Rs 22,500 crore outlay for the extension period. Notes and MCQs must attach the relevant time period to each amount."
+      ],
+      "status": "verified_with_book_error_and_current_update"
+    },
+    {
+      "id": "IA03-V17",
+      "topic": "River-system vocabulary and map-reading rules",
+      "fact_ids": ["IA03-P240-F02", "IA03-P240-F03", "IA03-P240-F04", "IA03-P240-F05"],
+      "opened_sources": [
+        "https://www.usgs.gov/publications/watersheds-and-drainage-networks"
+      ],
+      "findings": [
+        "A channel carries flowing water, tributaries add flow to a receiving stream, and distributaries branch away from a main channel; these relationships must be taught with flow-direction arrows.",
+        "A river system is hierarchical: main stem, tributaries, sub-tributaries and, where present, lower-course distributaries. A flat list obscures this hierarchy.",
+        "The printed India map is preserved as a learning aid, but political boundaries, spellings and schematic river positions are not used as precise cartographic evidence."
+      ],
+      "status": "verified_with_map_qualification"
+    },
+    {
+      "id": "IA03-V18",
+      "topic": "Genetic classification of drainage",
+      "fact_ids": ["IA03-P241-F04", "IA03-P241-F05", "IA03-P241-F06", "IA03-P241-F07", "IA03-P263-F04", "IA03-P264-F01", "IA03-P264-F02", "IA03-P264-F03", "IA03-P264-F04", "IA03-P264-F05", "IA03-P264-F06", "IA03-P264-F07"],
+      "opened_sources": [
+        "https://pubs.usgs.gov/circ/1963/0477/report.pdf",
+        "https://pubs.usgs.gov/wri/1986/4075/report.pdf"
+      ],
+      "findings": [
+        "Antecedent drainage predates uplift and maintains its course by incision, whereas superimposed drainage inherits a course from a former cover surface and cuts into a different underlying structure. They can look similar but are not synonyms.",
+        "Consequent, subsequent, resequent and obsequent streams are defined by their relation to initial slope and later structural control; rejuvenation is a separate process, not a river class.",
+        "Insequent drainage lacks strong structural adjustment. Headward erosion may extend a network but is not the definition of an insequent stream.",
+        "The printed block diagram will be redrawn with arrows showing initial slope, later weak-rock alignment and reverse-direction flow, instead of retaining ambiguous labels."
+      ],
+      "status": "verified_with_conceptual_corrections"
+    },
+    {
+      "id": "IA03-V19",
+      "topic": "Himalayan and Peninsular rivers comparison table",
+      "fact_ids": ["IA03-P242-F01", "IA03-P242-F02", "IA03-P242-F03", "IA03-P242-F04", "IA03-P242-F05", "IA03-P242-F06", "IA03-P242-F07", "IA03-P242-F08", "IA03-P243-F01"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf",
+        "https://www.usgs.gov/publications/watersheds-and-drainage-networks"
+      ],
+      "findings": [
+        "The printed 12-row comparison is retained as a table, but statements such as perennial versus seasonal are presented as dominant tendencies with exceptions, not absolute rules.",
+        "Himalayan rivers commonly combine snow or glacier melt with monsoon rainfall and traverse young mountain belts and broad alluvial plains; Peninsular rivers generally drain older terrain and depend more strongly on rainfall.",
+        "Drainage pattern is controlled by relief, lithology and structure, so no single pattern can be assigned to every Himalayan or every Peninsular river.",
+        "The major, medium and minor basin thresholds printed as above 20,000, 2,000-20,000 and below 2,000 sq km are preserved as the book's classification. Printed basin counts, 77:23 area shares and water-share percentages remain unscored until tied to a dated official series."
+      ],
+      "status": "verified_with_non_absolute_wording_and_numeric_holds"
+    },
+    {
+      "id": "IA03-V20",
+      "topic": "Ganga-Yamuna tributary hierarchy and northern tributaries",
+      "fact_ids": ["IA03-P243-F04", "IA03-P243-F05", "IA03-P244-F02", "IA03-P245-F01", "IA03-P245-F02", "IA03-P245-F03", "IA03-P245-F04", "IA03-P245-F05", "IA03-P245-F06", "IA03-P246-F01", "IA03-P246-F02", "IA03-P246-F03", "IA03-P246-F04", "IA03-P246-F05", "IA03-P246-F06"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "The Ganga basin is India's largest river basin by drainage area. The unsupported global fourth-rank claim is not scored.",
+        "Yamuna and Son are principal right-bank tributaries, while Ramganga, Ghaghara, Gandak, Kosi and Mahananda are principal left-bank tributaries in the CWC basin profile.",
+        "Chambal, Sind, Betwa and Ken reach the Ganga through the Yamuna; this hierarchy is shown explicitly so they are not mislabelled as direct Ganga tributaries.",
+        "Regional names such as Karnali or Ghaghara and Sharda or Sarayu are explained by river reach and local usage rather than treated as universally interchangeable.",
+        "Exact tributary lengths, small-stream headwater lists and local confluence descriptions are held from scoring unless the same official dataset supports them."
+      ],
+      "status": "verified_with_hierarchy_reconstruction"
+    },
+    {
+      "id": "IA03-V21",
+      "topic": "Indus tributaries, Punjab rivers and doabs",
+      "fact_ids": ["IA03-P247-F03", "IA03-P247-F04", "IA03-P247-F05", "IA03-P247-F06", "IA03-P247-F07", "IA03-P248-F01", "IA03-P248-F02"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "The Jhelum, Chenab, Ravi, Beas and Sutlej network is preserved as a structured table with source region, receiving river and international continuation separated into different columns.",
+        "Chenab is formed by the Chandra and Bhaga headstreams; Beas joins Sutlej in Punjab, and Sutlej continues into the Indus system in Pakistan.",
+        "A doab is land between two rivers. Traditional Punjab doab names are retained only with their defining river pair, preventing name-only memorisation.",
+        "The printed river map is schematic; international boundaries, project labels, exact elevations and lengths require a dated source and are not inferred from the drawing."
+      ],
+      "status": "verified_with_structured_table_rebuild"
+    },
+    {
+      "id": "IA03-V22",
+      "topic": "Brahmaputra course, tributaries and transboundary qualifications",
+      "fact_ids": ["IA03-P248-F01", "IA03-P248-F02", "IA03-P248-F04", "IA03-P248-F05", "IA03-P248-F06", "IA03-P249-F03", "IA03-P249-F04", "IA03-P249-F05", "IA03-P249-F06"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "After the Dibang and Lohit systems join the main channel in Assam, it is known as the Brahmaputra; it later enters Bangladesh as the Jamuna.",
+        "Teesta is a transboundary tributary of the Brahmaputra-Jamuna system. It does not form the entire India-Bangladesh boundary, so the printed boundary statement is corrected.",
+        "Majuli's area and any 'largest river island' rank are time- and definition-sensitive because Brahmaputra channels migrate, erode and deposit sediment; rank claims remain unscored.",
+        "Tributary-side tables follow downstream orientation and disambiguate rivers with repeated names such as Dhansiri. Project status and protected-area associations are held for separate current-source review."
+      ],
+      "status": "verified_with_boundary_and_rank_corrections"
+    },
+    {
+      "id": "IA03-V23",
+      "topic": "Godavari basin shares, tributary hierarchy, distributaries and projects",
+      "fact_ids": ["IA03-P250-F05", "IA03-P250-F06", "IA03-P251-F03", "IA03-P251-F04", "IA03-P251-F05", "IA03-P252-F03", "IA03-P252-F04", "IA03-P252-F05", "IA03-P252-F06"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf",
+        "https://www.jalshakti-dowr.gov.in/static/uploads/2024/05/fc00cd887135cf39b2005ccf1539e0e5.pdf"
+      ],
+      "findings": [
+        "Godavari tributaries and sub-tributaries are rebuilt as a hierarchy rather than copied as one list. Pranahita is formed by the Wardha-Wainganga system, while Indravati and Sabari independently join the Godavari.",
+        "The lower-river table separates the Gautami and Vasishta branches confirmed by CWC from smaller delta channels whose names and routes require a current delta map.",
+        "Pilgrimage towns are placed in a separate cultural-geography table so that a town near a tributary or confluence is not automatically labelled as lying on the Godavari main stem.",
+        "Project capacity, interstate allocation and operating-status rows are time-sensitive and are held unscored unless the opened Ministry annual report provides the same project and reporting year."
+      ],
+      "status": "verified_with_hierarchy_and_time_sensitive_holds"
+    },
+    {
+      "id": "IA03-V24",
+      "topic": "Krishna tributary hierarchy and lower-basin rivers",
+      "fact_ids": ["IA03-P253-F04", "IA03-P253-F05", "IA03-P254-F02", "IA03-P254-F03", "IA03-P254-F04", "IA03-P254-F05", "IA03-P255-F01", "IA03-P255-F02"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "Tungabhadra is formed by the Tunga and Bhadra headstreams and is a right-bank tributary of the Krishna. Varada and Vedavati or Hagari belong within the Tungabhadra sub-basin hierarchy.",
+        "Bhima is a left-bank tributary flowing through Maharashtra and Karnataka before meeting the Krishna; the printed suggestion that its main course runs through Telangana is corrected.",
+        "Musi and Munneru are left-bank tributaries of the Krishna. Paleru and smaller Telangana streams are shown at their correct tributary level rather than flattened into the main-basin list.",
+        "Reservoir and district labels on the printed map are treated as schematic and updated only where the authoritative basin source supports them."
+      ],
+      "status": "verified_with_tributary_hierarchy_correction"
+    },
+    {
+      "id": "IA03-V25",
+      "topic": "Other east-flowing Peninsular rivers",
+      "fact_ids": ["IA03-P256-F04", "IA03-P256-F05", "IA03-P256-F06", "IA03-P256-F07", "IA03-P256-F08"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "Brahmani is formed by the Sankh and South Koel, while Baitarani is a separate Odisha coastal river; they are compared in separate rows rather than merged as one coastal system.",
+        "Subarnarekha flows through Jharkhand, West Bengal and Odisha before reaching the Bay of Bengal. Precise length is tied to the CWC reporting edition.",
+        "Thamirabarani or Tamraparni, Palar, Ponnaiyar and Vaigai are retained with distinct source, states and outlet columns.",
+        "The printed absolute claim that Thamirabarani is Tamil Nadu's only perennial river is softened to a textbook description and is not used as an unqualified scored statement."
+      ],
+      "status": "verified_with_absolute_claim_qualified"
+    },
+    {
+      "id": "IA03-V26",
+      "topic": "West-flowing, inland-drainage and short coastal rivers",
+      "fact_ids": ["IA03-P257-F04", "IA03-P257-F05", "IA03-P257-F06", "IA03-P257-F07", "IA03-P257-F08", "IA03-P258-F01", "IA03-P258-F02", "IA03-P258-F03", "IA03-P258-F04", "IA03-P258-F05", "IA03-P258-F06", "IA03-P259-F01", "IA03-P259-F02", "IA03-P259-F03", "IA03-P259-F04"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "Tapi, Mahi and Sabarmati are compared by source, states, basin area and Gulf of Khambhat outlet; all measurements retain the CWC edition year.",
+        "Luni is an inland-drainage river dissipating toward the Rann of Kachchh region, so it is not described as a normal river reaching the open Arabian Sea.",
+        "The desert Banas is distinguished from the Banas tributary of the Chambal. Ghaggar palaeochannel identifications are presented as research interpretations rather than settled proof of a specific ancient river.",
+        "Short west-coast rivers are organised state-wise: Maharashtra, Goa, Karnataka and Kerala. Sharavathi-Jog Falls, Goa estuaries, Periyar, Bharathapuzha and Pamba are kept in separate rows with traditional names clearly labelled.",
+        "Dispute, project-status, exact rank and nickname claims remain unscored unless supported by a dedicated current official source."
+      ],
+      "status": "verified_with_name_disambiguation_and_current_holds"
+    },
+    {
+      "id": "IA03-V27",
+      "topic": "Lake classifications and river-length comparison rules",
+      "fact_ids": ["IA03-P260-F01", "IA03-P260-F03", "IA03-P260-F05", "IA03-P260-F06", "IA03-P260-F07", "IA03-P260-F11", "IA03-P261-F03", "IA03-P261-F04"],
+      "opened_sources": [
+        "https://www.moef.gov.in/uploads/2024/03/80-Ramsar-sites-of-India-31-01-2024.pdf",
+        "https://rsis.ramsar.org/sites/default/files/rsiswp_search/exports/Ramsar-Sites-annotated-summary-India.pdf",
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"
+      ],
+      "findings": [
+        "The notes distinguish lake, lagoon, reservoir, saline lake, freshwater lake and artificial lake before presenting the state-wise table.",
+        "Pangong Tso's transboundary setting is stated without scoring the printed territorial ratio. Pulicat is treated as a brackish lagoon shared by Andhra Pradesh and Tamil Nadu, while exact area and state shares remain source-sensitive.",
+        "Surajkund is not confused with Suraj Tal, and Jaisamand is identified as Dhebar Lake and an artificial lake; unsupported size ranks are held.",
+        "For rivers, international total length and length within India are separate columns. A source or confluence locality is not automatically treated as a normal riverbank city."
+      ],
+      "status": "verified_with_classification_and_measurement_corrections"
+    },
+    {
+      "id": "IA03-V28",
+      "topic": "Andhra Pradesh drainage framework and Penna tributary table",
+      "fact_ids": ["IA03-P266-F01", "IA03-P266-F02", "IA03-P266-F05", "IA03-P266-F07", "IA03-P267-F01", "IA03-P267-F02", "IA03-P267-F03", "IA03-P267-F04"],
+      "opened_sources": [
+        "https://spsnellore.ap.gov.in/water-resources/",
+        "https://apsac.ap.gov.in/wp-content/uploads/2025/09/DSR-Reports/srikakulam.pdf"
+      ],
+      "findings": [
+        "Andhra Pradesh's broad eastward drainage and the distinction between major interstate rivers and shorter coastal rivers are retained as the organising framework.",
+        "Pinakini is recorded as an alternative traditional name for Pennar; the bow-of-Shiva derivation is labelled as etymological tradition, not hydrological evidence.",
+        "Chitravati, Papagni and Cheyyeru are right-bank tributaries, while Jayamangali, Kunderu and Sagileru are left-bank tributaries in the CWC-linked Pennar profile already verified in V02.",
+        "Cultural landmarks, gorges, barrages and proposed-project claims are separated from the stable river-course table; time-sensitive project rows remain unscored pending project-specific records."
+      ],
+      "status": "verified_with_tradition_and_project_separation"
+    },
+    {
+      "id": "IA03-V29",
+      "topic": "Barak-Kushiyara and Feni transboundary current affairs",
+      "fact_ids": ["IA03-P250-F01", "IA03-P250-F02"],
+      "opened_sources": ["https://www.mea.gov.in/Portal/LegalTreatiesDoc/BG22B3856.pdf"],
+      "findings": [
+        "The 6 September 2022 memorandum concerns withdrawal of up to 153 cusecs by each country from the common Kushiyara stretch during the dry season from 1 November to 31 May, with joint monitoring and a 15-year term.",
+        "The notes distinguish the Barak from its downstream Surma-Kushiyara branches and do not describe the memorandum as a permanent full-river water-sharing treaty.",
+        "The Feni is retained as a transboundary river fact, but printed water-sharing or border-use claims are held unscored because the opened document concerns Kushiyara, not Feni."
+      ],
+      "status": "partly_verified_with_feni_hold"
+    },
+    {
+      "id": "IA03-V30",
+      "topic": "Waterfall table and superlative claims",
+      "fact_ids": ["IA03-P259-F05", "IA03-P259-F06"],
+      "opened_sources": ["https://visakhapatnam.ap.gov.in/land-scapes/", "https://tirupati.ap.gov.in/eco-tourism/", "https://tirupati.ap.gov.in/religious-tourism/"],
+      "findings": [
+        "The printed waterfall names and river associations are preserved in an audit table, but height and type require a named measurement convention because total drop, uninterrupted drop and seasonal flow are often confused.",
+        "The opened Andhra Pradesh district sources support the existence and location of Tadimada, Talakona and Kailasakona, but do not establish the printed national or state height ranks.",
+        "Claims such as world's widest, world's largest, India's widest and state-highest remain explicitly unscored until a metric-specific authoritative source is opened."
+      ],
+      "status": "preserved_with_superlatives_unscored"
+    },
+    {
+      "id": "IA03-V31",
+      "topic": "River-water estimates and polluted-river assessments",
+      "fact_ids": ["IA03-P244-F05", "IA03-P262-F03", "IA03-P262-F04"],
+      "opened_sources": [
+        "https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf",
+        "https://cpcb.nic.in/NGTMC/New-Item-06.03.2019.pdf",
+        "https://cpcb.nic.in/openpdffile.php?id=UmVwb3J0RmlsZXMvMTQ5NF8xNjcxNzc3ODg2X21lZGlhcGhvdG8xODc0Ni5wZGY%3D"
+      ],
+      "findings": [
+        "Annual water-resource and basin-share values are dataset estimates, so every scored value must name the CWC assessment year rather than appear as a timeless river property.",
+        "CPCB identified 351 polluted stretches on 323 rivers in the 2018 assessment and 311 stretches on 279 rivers in the 2022 assessment using different monitoring periods.",
+        "Pollution priority is assigned to a monitored river stretch by BOD range, not permanently to an entire river. The book's four-river list and 2019 campaign wording are not used as a permanent ranking."
+      ],
+      "status": "verified_with_dataset_and_stretch_level_corrections"
+    },
+    {
+      "id": "IA03-V32",
+      "topic": "Pushkar Lake and Saraswati evidence categories",
+      "fact_ids": ["IA03-P262-F05", "IA03-P262-F06"],
+      "opened_sources": ["https://www.tourism.rajasthan.gov.in/pushkar-lake.html"],
+      "findings": [
+        "Rajasthan Tourism identifies Pushkar as an ancient sacred lake surrounded by 52 bathing ghats and presents its Brahma association explicitly as legend and belief.",
+        "The printed claim that excavation began in 1676 conflicts with the much older sacred and historical tradition and is excluded from scoring unless a reliable archaeological source establishes what event occurred in 1676.",
+        "Saraswati material is separated into textual tradition, palaeochannel hypothesis and observed modern hydrology. The printed continuous underground-route claim remains unscored because no opened authoritative hydrological source verifies it."
+      ],
+      "status": "verified_tradition_with_hydrology_hold"
+    },
+    {
+      "id": "IA03-V33",
+      "topic": "River origins, confluences and outlets master table",
+      "fact_ids": ["IA03-P263-F01", "IA03-P263-F02", "IA03-P263-F03"],
+      "opened_sources": ["https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"],
+      "findings": [
+        "The master table preserves every printed river row but separates source region, headstream, confluence, receiving river and final sea or gulf outlet into distinct columns.",
+        "Bhagirathi is associated with the Gangotri-Gaumukh headwater system and Alaknanda with the Satopanth-region headwaters; the Ganga name begins at their Devprayag confluence.",
+        "Administrative place names are updated independently of physical source and outlet facts, preventing district reorganisation from being mistaken for a change in river geography."
+      ],
+      "status": "verified_with_table_normalisation"
+    },
+    {
+      "id": "IA03-V34",
+      "topic": "Andhra Pradesh smaller rivers, interstate systems and projects",
+      "fact_ids": ["IA03-P268-F03", "IA03-P269-F01", "IA03-P269-F02", "IA03-P269-F03", "IA03-P270-F02", "IA03-P270-F03", "IA03-P270-F04", "IA03-P270-F05"],
+      "opened_sources": [
+        "https://apsdmagis.ap.gov.in/reservoirs/srikakulam-flood.html",
+        "https://srikakulam.ap.gov.in/history/",
+        "https://krishna.ap.gov.in/irrigation-circle/",
+        "https://parvathipurammanyam.ap.gov.in/about-district/"
+      ],
+      "findings": [
+        "Official district sources confirm the north-coastal network of Vamsadhara, Nagavali, Bahuda, Mahendratanaya, Suvarnamukhi, Vegavathi, Gomukhi and Champavathi and the Odisha catchment influence on Vamsadhara and Nagavali floods.",
+        "Jhanjavati is retained within the Nagavali tributary system, but printed rubber-dam rank, dimensions and inauguration claims remain unscored pending a project-specific official record.",
+        "Budameru, Tammileru, Upputeru, Erra Kaluva and Munneru remain hydrologically distinct. Upputeru is not flattened into the same category as a Krishna tributary or independent interstate river.",
+        "The printed count of about 40 Andhra Pradesh rivers and 15 interstate rivers is inclusion-rule dependent and remains unscored. Every listed project receives separate stable-course and current-status fields.",
+        "The Krishna district source verifies Prakasam Barrage but its administrative wording is not generalized to all projects in the printed table."
+      ],
+      "status": "partly_verified_with_project_specific_holds"
+    },
+    {
+      "id": "IA03-V35",
+      "topic": "Global river-rank comparison and unrelated current-affairs box",
+      "fact_ids": ["IA03-P261-F05", "IA03-P245-F07"],
+      "opened_sources": ["https://cwc.gov.in/sites/default/files/reportwaterresourcesassessmentofindia2024_1.pdf"],
+      "findings": [
+        "The Nile-Amazon length ranking and global basin-area ranking are preserved as printed material but remain unscored because the opened CWC source is India-focused and does not establish a common global measurement method.",
+        "River length depends on source selection and measurement method, while basin-area rank depends on the defined drainage boundary; the table carries a measurement-warning note.",
+        "The 2024 Ujjain Vedic-clock item is unrelated to Indian drainage and is excluded from this chapter's river MCQ coverage. It may be reviewed later under current affairs or cultural geography."
+      ],
+      "status": "preserved_unscored_or_reclassified"
+    }
+  ]
+}

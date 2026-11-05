@@ -12,6 +12,7 @@ from ..services import geography_original as original
 from ..services import solar_bilingual as bilingual
 from ..services import chapter01_bilingual as maps_bilingual
 from ..services import world_geography as world
+from ..services import india_ap_geography as india_ap
 
 bp = Blueprint("geography", __name__, url_prefix="/learn/geography")
 
@@ -125,14 +126,78 @@ def index():
     india_rows = _scope_pyqs(pyqs.records(), "india-ap")
     return render_template("ds/geography_hub.html", world=world.index(),
                            world_pyqs=pyqs.summary(world_rows), india_pyqs=pyqs.summary(india_rows),
-                           india_chapters=sum(len(unit["lessons"]) for unit in _india_ap_catalogue()["units"]))
+                           india_chapters=len(india_ap.index()["chapters"]))
 
 
 @bp.get("/india-ap")
 def india_ap_index():
+    return redirect(url_for('geography.g2_index'))
+    return render_template("ds/india_ap_geography.html", chapters=india_ap.index()["chapters"],
+                           pyq_summary=pyqs.summary(_scope_pyqs(pyqs.records(), "india-ap")))
+
+
+@bp.get("/india-ap/legacy")
+def india_ap_legacy():
+    """Keep the former unit catalogue reachable while the consolidation is reviewed."""
     catalogue = _india_ap_catalogue()
     return render_template("ds/geography.html", catalogue=catalogue, unit=None,
                            pyq_summary=pyqs.summary(_scope_pyqs(pyqs.records(), "india-ap")))
+
+
+@bp.get('/india-ap/<int:number>')
+def india_ap_chapter(number):
+    ch=india_ap.chapter(number) or abort(404)
+    return render_template('ds/india_ap_chapter.html',number=number,ch=ch)
+
+
+@bp.get('/india-ap/<int:number>/notes')
+def india_ap_notes(number):
+    ch=india_ap.chapter(number) or abort(404);path=india_ap.notes_path(number)
+    if not path or not path.is_file():abort(404)
+    page=path.read_text(encoding='utf-8-sig')
+    back=url_for('geography.india_ap_chapter',number=number)
+    query={key:request.args[key] for key in ('question','qlang','review','choice') if request.args.get(key)}
+    return_url=url_for('geography.india_ap_question',number=number,qid=query['question'],**{k:v for k,v in query.items() if k!='question'}) if query.get('question') else ''
+    toolbar='<nav class="geo-note-return"><a href="'+html.escape(back,quote=True)+'">‹ India–AP chapter</a>'
+    if return_url:toolbar+='<a data-return-question href="'+html.escape(return_url,quote=True)+'#answer-result">‹ ప్రశ్నకు తిరిగి · Back to question</a>'
+    toolbar+='</nav>'
+    css='<style>.geo-note-return{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid #dbe5dc;display:flex;justify-content:space-between;gap:16px;padding:12px 18px;font:600 15px/1.5 system-ui}.geo-note-return+* [id],article [id],[id]{scroll-margin-top:90px}</style>'
+    page=page.replace('</head>',css+'</head>',1).replace('<body>','<body>'+toolbar,1)
+    response=make_response(page);response.headers['Content-Type']='text/html; charset=utf-8';return response
+
+
+@bp.get('/india-ap/<int:number>/practice')
+def india_ap_practice(number):
+    ch=india_ap.chapter(number) or abort(404);rows=india_ap.questions(number)
+    if not rows:abort(404)
+    return render_template('ds/india_ap_practice.html',number=number,ch=ch,questions=rows)
+
+
+def _india_ap_question_page(number,qid,answered=False):
+    ch=india_ap.chapter(number) or abort(404);rows=india_ap.questions(number)
+    q=india_ap.question(number,qid) or abort(404);position=next(i for i,x in enumerate(rows) if x['id']==qid)
+    lang=request.args.get('qlang','te')
+    if lang not in ('te','en'):abort(400)
+    choice=None;result=None
+    if answered or request.args.get('review')=='1':
+        raw=request.form.get('choice','') if answered else request.args.get('choice','')
+        if raw not in ('1','2','3','4'):abort(400)
+        choice=int(raw);result={'correct':choice==q['answer'],'score':int(choice==q['answer'])}
+    options=q['options_te' if lang=='te' else 'options_en'];explanation=q['explanation_te' if lang=='te' else 'explanation_en'];whys=q['option_explanations_te' if lang=='te' else 'option_explanations_en']
+    note_args={'question':qid,'qlang':lang}
+    if result:note_args.update({'review':'1','choice':choice})
+    notes_url=url_for('geography.india_ap_notes',number=number,**note_args)
+    switch_args={'review':'1','choice':choice} if result else {}
+    switch_urls={code:url_for('geography.india_ap_question',number=number,qid=qid,qlang=code,**switch_args)+('#answer-result' if result else '') for code in ('te','en')}
+    return render_template('ds/india_ap_question.html',number=number,ch=ch,q=q,lang=lang,options=options,explanation=explanation,option_explanations=whys,result=result,choice=choice,position=position+1,total=len(rows),previous=rows[position-1]['id'] if position else None,following=rows[position+1]['id'] if position+1<len(rows) else None,notes_url=notes_url,section_url=notes_url+'#'+q['section'],switch_urls=switch_urls)
+
+
+@bp.get('/india-ap/<int:number>/practice/<qid>')
+def india_ap_question(number,qid):return _india_ap_question_page(number,qid)
+
+
+@bp.post('/india-ap/<int:number>/practice/<qid>/answer')
+def india_ap_answer(number,qid):return _india_ap_question_page(number,qid,True)
 
 
 @bp.get("/unit/<int:unit_id>")
@@ -484,6 +549,7 @@ def book_pyq_evidence(question_id):
 
 @bp.get('/world')
 def world_index():
+    return redirect(url_for('geography.g2_index'))
     return render_template('ds/world_geography.html', chapters=world.index()['chapters'])
 
 
@@ -541,3 +607,5 @@ def world_question(number,qid):return _world_question_page(number,qid)
 @bp.post('/world/<int:number>/practice/<qid>/answer')
 def world_answer(number,qid):return _world_question_page(number,qid,True)
 
+
+from . import geography_g2  # noqa: E402,F401  Group 2 Geography routes

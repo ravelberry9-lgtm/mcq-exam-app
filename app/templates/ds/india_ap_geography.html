@@ -1,0 +1,12 @@
+{% extends "ds/base.html" %}
+{% set nav_active = 'learn' %}
+{% block title %}భారతదేశం–ఆంధ్రప్రదేశ్ భూగోళశాస్త్రం · India–AP Geography{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
+{% block topbar %}<h1>భారతదేశం–ఆంధ్రప్రదేశ్ భూగోళశాస్త్రం · India–AP Geography</h1>{% endblock %}
+{% block content %}
+<nav><a href="{{ url_for('geography.index') }}">‹ Geography umbrellas</a></nav>
+<section class="card"><h2>Consolidated textbook chapters</h2><p>Simple Telugu notes with English technical terms, bilingual MCQs, explanations and exact section links.</p></section>
+<a class="card" data-india-ap-pyqs href="{{ url_for('geography.pyq_index',umbrella='india-ap') }}"><h2>India–AP PYQs · పాత పరీక్ష ప్రశ్నలు</h2><span>{{ pyq_summary.total }} mapped PYQs · {{ pyq_summary.held }} held, unscored</span></a>
+{% for ch in chapters %}<a class="card" data-india-ap-chapter="{{ ch.display_chapter }}" href="{{ url_for('geography.india_ap_chapter',number=ch.display_chapter) }}"><h2>{{ ch.display_chapter }}. {{ ch.title }}</h2><span>Book pages {{ ch.book_pages }} · {{ ch.question_count }} MCQs</span></a>{% endfor %}
+<p><a href="{{ url_for('geography.india_ap_legacy') }}">Legacy unit catalogue · పాత యూనిట్ కాటలాగ్</a></p>
+{% endblock %}

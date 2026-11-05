@@ -1,0 +1,43 @@
+{
+  "format": "india-ap-legacy-mcq-routing-v1",
+  "display_chapter": 3,
+  "status": "routing_complete_manual_question_review_pending",
+  "source_lesson_ids": [23, 24, 25, 26, 27],
+  "total_preserved_questions": 522,
+  "routing": [
+    {
+      "destination": "india_ap_chapter_3_candidate_review",
+      "selection": {
+        "origin": "baseline-original"
+      },
+      "count": 120,
+      "breakdown": {
+        "23": 24,
+        "24": 24,
+        "25": 24,
+        "26": 24,
+        "27": 24
+      },
+      "reason": "These questions cover drainage foundations, Himalayan rivers, Peninsular rivers, Andhra Pradesh rivers, floods, water use and river-management concepts. Each question still requires individual bilingual, answer, explanation and anchor review before migration."
+    },
+    {
+      "destination": "world_geography_preserve_and_reroute",
+      "selection": {
+        "origin": "book-audit-original"
+      },
+      "count": 402,
+      "breakdown": {
+        "23": 47,
+        "27": 355
+      },
+      "source_pages": "145-176",
+      "reason": "These questions concern Asia, Africa, North America, South America, Europe, Australia, Antarctica, seas, straits, islands, world lakes and world relief. They were stored under legacy lessons 23 and 27 but do not belong in the consolidated India-AP river chapter. No question is deleted or relabelled as a PYQ."
+    }
+  ],
+  "invariants": [
+    "All 522 legacy questions remain unchanged in their original banks until destination review is complete.",
+    "Only individually reviewed river questions may enter India-AP Chapter 3.",
+    "World-geography book-audit questions remain available for their proper World Geography chapters.",
+    "Existing ids, origin and labels are preserved."
+  ]
+}

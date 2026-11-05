@@ -1,0 +1,77 @@
+{
+  "format": "india-ap-chapter-verification-log-v1",
+  "chapter": 5,
+  "status": "verification_complete_with_explicit_unscored_volatile_items",
+  "verified_on": "2026-11-01",
+  "rule": "Only URLs actually opened are logged. Printed values that cannot be tied to a dated authoritative dataset are preserved as historical claims and are not used as unqualified current scoring facts.",
+  "groups": [
+    {
+      "group": "soil-definition-formation-profile-and-map-scale",
+      "fact_prefixes": ["IA05-P289", "IA05-P290", "IA05-P295"],
+      "disposition": "verified_with_corrections",
+      "corrections": [
+        "Treat the 45-25-25-5 composition as an idealised teaching model, not a fixed composition.",
+        "Use pH 7, not 7.2, as neutral under the standard definition.",
+        "Treat formation-rate, depth and temperature values as context-dependent rather than universal.",
+        "Warn that small-scale maps cannot identify farm-level soil."
+      ],
+      "opened_urls": [
+        "https://www.nrcs.usda.gov/resources/education-and-teaching-materials/soil-facts"
+      ]
+    },
+    {
+      "group": "soil-taxonomy",
+      "fact_prefixes": ["IA05-P299", "IA05-P300"],
+      "disposition": "verified_and_book_list_corrected",
+      "corrections": [
+        "The printed nine-order list is incomplete. Current USDA Soil Taxonomy has 12 orders: Alfisols, Andisols, Aridisols, Entisols, Gelisols, Histosols, Inceptisols, Mollisols, Oxisols, Spodosols, Ultisols and Vertisols.",
+        "Order definitions must use diagnostic properties; one-line colour or climate shortcuts are memory aids only."
+      ],
+      "opened_urls": [
+        "https://www.nrcs.usda.gov/resources/education-and-teaching-materials/the-twelve-orders-of-soil-taxonomy",
+        "https://www.nrcs.usda.gov/sites/default/files/2022-09/Keys-to-Soil-Taxonomy.pdf"
+      ]
+    },
+    {
+      "group": "indian-soil-classification-history",
+      "fact_prefixes": ["IA05-P291"],
+      "disposition": "verified_with_attribution_correction",
+      "corrections": [
+        "ICAR history identifies J. W. Leather's classical alluvial-black-red-lateritic grouping; avoid attributing the fourfold classification to Voelcker without qualification.",
+        "The zonal-interzonal-azonal system is historical and is not equivalent to current Soil Taxonomy."
+      ],
+      "opened_urls": [
+        "https://icar.gov.in/sites/default/files/2022-12/Indian-Agriculture-after-Independence.pdf"
+      ]
+    },
+    {
+      "group": "erosion-and-conservation",
+      "fact_prefixes": ["IA05-P296", "IA05-P297", "IA05-P298"],
+      "disposition": "verified_with_dated_statistics",
+      "corrections": [
+        "Keep sheet, rill and gully erosion distinct by channel scale and tillage removability.",
+        "Separate agricultural erosion from glacial and coastal geomorphic erosion.",
+        "Use current ICAR 2025 national estimates only with source year; retain book estimates as historical.",
+        "Explain conservation measures by mechanism and limitations rather than as guaranteed cures."
+      ],
+      "opened_urls": [
+        "https://icar.gov.in/sites/default/files/2025-11/December_2025%20Indian%20Farming.pdf"
+      ]
+    },
+    {
+      "group": "andhra-pradesh-soils-and-percentages",
+      "fact_prefixes": ["IA05-P301", "IA05-P302", "IA05-P303"],
+      "disposition": "verified_as_legacy_profile_and_enriched_with_current_mapping",
+      "corrections": [
+        "The 65-25-5-3-1-1 shares are reproduced from the AP Horticulture Vision 2030 profile, but the same document retains Telangana-era regional wording; label the denominator and legacy context.",
+        "The book conflicts with itself on laterite and coastal shares across pages 301 and 303; show both printed claims and use the dated source table for scoring.",
+        "Current APSAC district soil-resource maps demonstrate mixed soil classes within districts and supersede the book's coarse pre-2022 map for local interpretation."
+      ],
+      "opened_urls": [
+        "https://drysrhu.ap.gov.in/Publications/APHU%20Vision%202030.pdf",
+        "https://apsac.ap.gov.in/?page_id=179",
+        "https://apsac.ap.gov.in/wp-content/uploads/2025/09/DSR-Reports/guntur.pdf"
+      ]
+    }
+  ]
+}

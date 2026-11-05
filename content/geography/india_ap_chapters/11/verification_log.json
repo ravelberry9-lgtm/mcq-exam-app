@@ -1,0 +1,123 @@
+{
+  "format": "india-ap-authoritative-verification-v1",
+  "chapter": 11,
+  "title": "Minerals and Mining",
+  "verified_on": "2026-11-01",
+  "scope": {
+    "printed_pages": "443-459",
+    "ledger_facts_reconciled": 266,
+    "structured_records_reconciled": 71,
+    "scored_questions_reconciled": 79,
+    "held_printed_pyqs_reconciled": 2
+  },
+  "method": "The three page ledgers, the complete notes, all 79 scored records, both held printed PYQs and the existing correction flags were read together. Primary-source pages were opened for correction-sensitive or current claims. Dated rankings and totals were not converted into timeless facts. A source was not claimed as opened unless it was actually opened during this pass.",
+  "groups": [
+    {
+      "id": "iron-ores-and-dated-mineral-statistics",
+      "pages": [443, 444],
+      "ledger_issues": ["ferrous classification", "hematite hardness", "siderite versus bog ore", "iron-content ranges", "resource and production rankings"],
+      "opened_urls": ["https://ibm.gov.in/writereaddata/files/17690756386971f3b675b8aFINAL_IMYB2024_as_on_21.01.2026.pdf"],
+      "disposition": "The notes correctly reject the printed hardness claim and separate chemical iron-bearing status from broad industrial ferrous-group usage. Rankings, shares and totals remain explicitly year-dependent. The scored questions test the correction or the need for a year label rather than asserting the printed bundle as current.",
+      "status": "verified-with-dated-qualification"
+    },
+    {
+      "id": "diamond-and-host-rocks",
+      "pages": [446, 447],
+      "ledger_issues": ["diamond from anthracite", "diamond from pentlandite", "primary and alluvial occurrence"],
+      "opened_urls": ["https://ibm.gov.in/writereaddata/files/08092017095400Diamond2015(Final).pdf"],
+      "disposition": "IBM describes diamond in primary igneous basic/ultrabasic rocks and in alluvial deposits derived from primary sources. The notes and bank correctly reject anthracite and pentlandite as diamond sources; pentlandite remains a nickel ore association.",
+      "status": "verified-correction"
+    },
+    {
+      "id": "barytes-composition-use-and-ap-location",
+      "pages": [449, 456, 459],
+      "ledger_issues": ["barytes confused with beryllium", "drilling-fluid use", "Mangampeta and Andhra Pradesh resource context"],
+      "opened_urls": ["https://ibm.gov.in/writereaddata/files/1712755616661693a0d3e7dbaryte.pdf"],
+      "disposition": "IBM identifies baryte/barite as barium sulphate (BaSO4), records its drilling-mud weighting use and describes Mangampeta in Andhra Pradesh as the single largest deposit. Notes and questions preserve this corrected relationship. Production and percentage figures retain their source years.",
+      "status": "verified-correction"
+    },
+    {
+      "id": "coal-and-lignite-current-resource-totals",
+      "pages": [449, 450, 451, 455],
+      "ledger_issues": ["321.34 unit", "Gondwana and Tertiary field counts", "coal/lignite totals", "map category confusion"],
+      "opened_urls": ["https://coal.gov.in/major-statistics/coal-lignite-resource"],
+      "disposition": "The Ministry of Coal reports 400.715 billion tonnes of coal and 47.37 billion tonnes of lignite as of 1 April 2025, with 45 Gondwana and 19 Tertiary coalfields in the cited inventory. The old printed 321.34 figure is not taught as a current total, and the map is not presented as a universal rank or age classification.",
+      "status": "verified-current-dated-correction"
+    },
+    {
+      "id": "indian-oil-history",
+      "pages": [451],
+      "ledger_issues": ["printed 1981 formation account"],
+      "opened_urls": ["https://www.iocl.com/rti-manual"],
+      "disposition": "IndianOil's RTI manual records Indian Oil Company Limited in 1959 and the merger with Indian Refineries Limited on 1 September 1964. The notes and bank correctly reject the printed claim that Indian Oil was formed in 1981 with Burma Oil Company.",
+      "status": "verified-correction"
+    },
+    {
+      "id": "mumbai-high-dates",
+      "pages": [452],
+      "ledger_issues": ["discovery and production-start dates", "distance and area claims"],
+      "opened_urls": ["https://ongcindia.com/zh/web/eng/detail?assetClassPK=69670154&assetEntry=69670160"],
+      "disposition": "ONGC confirms discovery in 1974 and production from 1976. The exact printed distance, area and changing production share are not promoted as undated current facts because this pass did not locate a single primary record supporting the entire printed bundle.",
+      "status": "partly-verified-volatile-details-qualified"
+    },
+    {
+      "id": "reasi-lithium-resource-classification",
+      "pages": [454],
+      "ledger_issues": ["discovery versus reserve", "year", "resource confidence"],
+      "opened_urls": ["https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1897799&lang=2&reg=48"],
+      "disposition": "The Ministry of Mines/GSI announcement identifies 5.9 million tonnes as an inferred G3 resource in Salal-Haimana, Reasi, announced in February 2023. Notes and questions correctly avoid calling it a proved reserve or a producing mine.",
+      "status": "verified-correction"
+    },
+    {
+      "id": "legal-classification-and-mmdr-name",
+      "pages": [445, 453, 455],
+      "ledger_issues": ["incorrect statute title", "major/minor mineral classification", "institutional jurisdiction"],
+      "opened_urls": ["https://mines.gov.in/admin/download/666a9ae9e4af51718262505.pdf"],
+      "disposition": "The official statute is the Mines and Minerals (Development and Regulation) Act, 1957. Its definition permits notification-based minor-mineral classification, so the chapter correctly warns that legal categories can change and must be tied to the governing notification/date.",
+      "status": "verified-correction"
+    },
+    {
+      "id": "titanium-beach-sand-minerals",
+      "pages": [453, 458, 459],
+      "ledger_issues": ["ilmenite and rutile relationship", "coastal placer locations", "resource versus production"],
+      "opened_urls": ["https://ibm.gov.in/writereaddata/files/05042022161528Ilmenite_Rutile_2019.pdf", "https://amd.gov.in/WriteReadData/userfiles/file/SuoMotu/AMD_Info_Sheet_2024_e.pdf"],
+      "disposition": "IBM identifies ilmenite and rutile as the two chief titanium minerals and documents Andhra Pradesh coastal occurrences; AMD confirms its exploration mandate for uranium, thorium, zirconium, lithium and rare-earth resources. The chapter keeps occurrence/resource separate from mine output.",
+      "status": "verified-concept-and-location-framework"
+    },
+    {
+      "id": "tummalapalle-uranium",
+      "pages": [458],
+      "ledger_issues": ["location", "host rock", "mine/process status", "printed tonnage and monthly-output figures"],
+      "opened_urls": ["https://ucil.gov.in/public/about_tummalapalle.php", "https://ucil.gov.in/public/uploads/feature_article/A%20new%20approach%20to%20mining%20and%20processing%20at%20Tummalapalle.pdf"],
+      "disposition": "UCIL confirms Tummalapalle in the Cuddapah/YSR district context and carbonate-hosted uranium mineralisation. The chapter does not certify the printed 70,000 t, 12 t/month or land-area bundle as current output because resource, ore throughput and recovered uranium are different measures.",
+      "status": "verified-core-facts-printed-quantities-qualified"
+    }
+  ],
+  "held_or_unscored": [
+    {
+      "id": "IA11-HELD-APPSC-G1-2022-DIGBOI",
+      "reason": "The official APPSC final key was not located and opened. Geographic evidence supports Digboi, Moran and Naharkatiya in Assam and excludes Kalol, but the printed PYQ remains unscored until its official final key is verified.",
+      "status": "held-unscored"
+    },
+    {
+      "id": "IA11-HELD-APPSC-G2-2024-MINERALS",
+      "reason": "The official APPSC Group-II 2024 final key for the printed matching item was not located and opened. The printed key is preserved as provenance only and the item remains unscored.",
+      "status": "held-unscored"
+    },
+    {
+      "id": "PRINT-P459-AP-LITHIUM-2024",
+      "reason": "No authoritative GSI/AMD primary source was located for the printed 2024 Murchintala and Venkatampalle/Rajupalem lithium discovery/no-production bundle. It is retained only as a labelled printed claim requiring verification and is not used as the sole basis of a scored correct answer.",
+      "status": "volatile-claim-not-certified"
+    }
+  ],
+  "corrections_applied_in_this_pass": [],
+  "answer_keys_changed": 0,
+  "bank_verdict": "The 79 scored questions do not require an answer-key change from this evidence pass. Correction-sensitive questions either teach the verified correction or explicitly ask the learner to recognise that a printed total/rank needs a year and authoritative source.",
+  "status": "authoritative-verification-complete-with-three-explicit-holds",
+  "limitations": [
+    "The two printed APPSC PYQ final keys were not found on an opened official APPSC page and remain unscored.",
+    "Many printed production shares, ranks, mine counts and district lists are historical snapshots. They are preserved with date/source cautions, not certified as current 2026 values.",
+    "The AP 2024 lithium locality bundle remains unverified and is not certified as a current fact.",
+    "Rendered bilingual UI navigation remains outside this evidence-only pass."
+  ]
+}

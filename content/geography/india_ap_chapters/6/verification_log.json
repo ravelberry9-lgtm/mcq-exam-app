@@ -1,0 +1,76 @@
+{
+  "format": "india-ap-chapter-verification-log-v1",
+  "chapter": 6,
+  "status": "verification_complete_with_dynamic_edition_labels",
+  "policy": "Only authoritative URLs actually opened are recorded. Dynamic counts carry an explicit edition or access date; unresolved printed claims remain unscored.",
+  "groups": [
+    {
+      "id": "IA06-V01",
+      "topic": "ISFR 2023 national forest and tree cover",
+      "pages": [304,305,306,312,313,333],
+      "opened_sources": ["https://fsi.nic.in/uploads/isfr2023/isfr_book_eng-vol-1_2023.pdf"],
+      "findings": [
+        "ISFR 2023 reports forest and tree cover of 827,356.95 km² (25.17%), forest cover of 715,342.61 km² (21.76%), and tree cover of 112,014.34 km² (3.41%).",
+        "The report confirms that FSI has published nationwide biennial forest-resource assessments since 1987 and that ISFR 2023 is the eighteenth assessment.",
+        "All scored questions must distinguish Forest Cover from Tree Cover and retain the ISFR 2023 edition label."
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "IA06-V02",
+      "topic": "Mangrove cover and Andhra Pradesh district table",
+      "pages": [312,313,331],
+      "opened_sources": ["https://fsi.nic.in/uploads/isfr2023/isfr_book_eng-vol-1_2023.pdf"],
+      "findings": [
+        "ISFR 2023 gives national mangrove cover as 4,991.68 km², a decline of 7.43 km² from the revised 2021 raster assessment.",
+        "The official Odisha row is 259.06 km² in 2023 with a +1.55 km² change; the book's visually printed row is internally inconsistent and must be shown as a labelled print error.",
+        "Andhra Pradesh rises from 408.42 km² to 421.43 km² (+13.01 km²).",
+        "The official AP district table includes Eluru at 0.02 km² and lists SPSR Nellore only once; the book duplicates Nellore and should be corrected transparently.",
+        "Official 2023 AP district totals include Krishna 148.45, Kakinada 113.79, Konaseema 74.42, Bapatla 72.92, SPSR Nellore 8.66, Tirupati 1.29, Srikakulam 0.82, Prakasam 0.75, Visakhapatnam 0.31 and Eluru 0.02 km²."
+      ],
+      "status": "verified_with_print_corrections"
+    },
+    {
+      "id": "IA06-V03",
+      "topic": "Current tiger-reserve network",
+      "pages": [319,320,321,322,333],
+      "opened_sources": ["https://ntca.gov.in/tiger-reserves/"],
+      "findings": [
+        "NTCA lists 58 tiger reserves across 18 states; any scored total is dated to the current NTCA list.",
+        "Madhya Pradesh has nine listed reserves, including Veerangana Durgavati, Ratapani and Madhav; the printed table omits or misclassifies some current entries.",
+        "Karnataka's five are Bandipur, Bhadra, Biligiri Ranganatha, Kali and Nagarhole; Kudremukh is not a tiger reserve.",
+        "Andhra Pradesh has one tiger reserve, Nagarjunsagar-Srisailam; Telangana has Amrabad and Kawal.",
+        "The printed state table will be preserved as a book-edition table, followed by a corrected current NTCA table."
+      ],
+      "status": "verified_with_current_list_correction"
+    },
+    {
+      "id": "IA06-V04",
+      "topic": "Global forest resources, FRA 2025",
+      "pages": [305,307],
+      "opened_sources": ["https://www.fao.org/forest-resources-assessment/global-forest-resources-assessments/fao-s-global-forest-resources-assessment-2025---comprehensive-new-information-on-the-world-s-forests/"],
+      "findings": [
+        "FAO identifies FRA 2025 as its authoritative worldwide assessment based on official national data.",
+        "The global chapter must date all country rankings and regional shares to FRA 2025 rather than presenting them as timeless facts.",
+        "FAO's technical page confirms a transparent, traceable process using officially nominated national correspondents."
+      ],
+      "status": "verified_framework_rank_cells_pending"
+    },
+    {
+      "id": "IA06-V05",
+      "topic": "Protected areas and UNESCO biosphere network",
+      "pages": [322,323,324,325,326],
+      "opened_sources": [
+        "https://www.wii.gov.in/mee-reports",
+        "https://www.unesco.org/en/articles/5th-wcbr-designates-cold-desert-indias-13th-unesco-biosphere-reserve"
+      ],
+      "findings": [
+        "WII's current MEE page reports 106 national parks and 574 wildlife sanctuaries; protected-area counts are dynamic and need an access date.",
+        "UNESCO designated Cold Desert in September 2025, bringing India to 13 sites in the World Network of Biosphere Reserves.",
+        "Cold Desert covers 7,770 km² in Himachal Pradesh and includes Pin Valley National Park and surrounding high-altitude conservation areas.",
+        "The national list of 18 Indian biosphere reserves and the UNESCO network list are different datasets and must never be conflated."
+      ],
+      "status": "verified_with_2025_update"
+    }
+  ]
+}

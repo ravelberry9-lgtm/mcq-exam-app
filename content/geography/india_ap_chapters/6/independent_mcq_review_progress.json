@@ -1,0 +1,64 @@
+{
+  "format": "india-ap-independent-mcq-review-v1",
+  "chapter": 6,
+  "status": "independent_review_complete",
+  "review_scope": {
+    "bank_total": 540,
+    "manual_gap_and_printed_pyq_reviewed": 68,
+    "book_audit_original_reviewed": 369,
+    "baseline_original_reviewed": 103,
+    "individually_reviewed_total": 540,
+    "pending": 0
+  },
+  "preauthored_diagnostic": {
+    "origin_counts": {
+      "book-audit-original": 369,
+      "baseline-original": 24
+    },
+    "answer_distribution": {
+      "1": 173,
+      "2": 117,
+      "3": 64,
+      "4": 39
+    },
+    "correct_option_is_longest": 322,
+    "correct_option_is_longest_denominator": 393,
+    "finding": "Historical pre-review diagnostic retained for provenance. The flagged 393 pre-authored records have now been individually reviewed and reconciled."
+  },
+  "india_ap_ledger_coverage": {
+    "atomic_facts": 91,
+    "facts_with_verified_india_ap_question_mapping": 0,
+    "open_facts": 91,
+    "finding": "This file certifies MCQ field review, not India/AP printed-page fact coverage. The separate 68-record India/AP page ledger remains the evidence for pages 304–336."
+  },
+  "completed_groups": [
+    {
+      "legacy_chapter": "32",
+      "count": 24,
+      "status": "manually-reviewed-2026-11-01"
+    },
+    {
+      "legacy_chapter": "33",
+      "count": 24,
+      "status": "manually-reviewed-preserved-legacy"
+    },
+    {
+      "legacy_chapter": "34",
+      "count": 24,
+      "status": "manually-reviewed-preserved-legacy"
+    },
+    {
+      "legacy_chapter": "35",
+      "count": 31,
+      "status": "manually-reviewed-preserved-legacy"
+    }
+  ],
+  "certification": "complete",
+  "reconciliation": {
+    "unified_bank_total": 540,
+    "reviewed": 540,
+    "remaining_uncertified": 0,
+    "reconciled_on": "2026-11-01",
+    "evidence": "completion_audit_progress batches B01-B31 plus per-record manual_review_status"
+  }
+}

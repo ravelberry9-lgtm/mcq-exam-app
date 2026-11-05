@@ -1,0 +1,90 @@
+{
+  "format": "india-ap-active-coverage-reconciliation-v1",
+  "chapter": 3,
+  "book_pages": "240-270",
+  "reviewed_on": "2026-11-01",
+  "manual_page_review": {
+    "pages_reviewed": 31,
+    "page_range": "240-270",
+    "handwriting_ignored": true,
+    "evidence": "Every rendered page image was opened and read once. Printed prose, boxes, diagrams and table rows were compared with the page_fact_ledger before the active-question audit."
+  },
+  "atomic_ledger": {
+    "fact_count": 204,
+    "table_count": 31,
+    "verified_fact_count": 204,
+    "verification_log_status": "all ledger fact ids occur in an opened-source verification group"
+  },
+  "notes_gate": {
+    "status": "passed",
+    "notes_file": "Notes.html",
+    "narration": "textbook prose in simple Telugu with English technical terms in brackets",
+    "tables": "printed comparison and register tables retained as responsive semantic tables with dated corrections"
+  },
+  "active_mcq_gate": {
+    "status": "passed",
+    "question_count": 199,
+    "legacy_questions_individually_reviewed": 120,
+    "manual_book_questions": 79,
+    "new_active_gap_questions": [
+      "GEO-IA-03-052",
+      "GEO-IA-03-053",
+      "GEO-IA-03-054",
+      "GEO-IA-03-055",
+      "GEO-IA-03-056",
+      "GEO-IA-03-057",
+      "GEO-IA-03-058",
+      "GEO-IA-03-059",
+      "GEO-IA-03-060",
+      "GEO-IA-03-061",
+      "GEO-IA-03-062",
+      "GEO-IA-03-063",
+      "GEO-IA-03-064",
+      "GEO-IA-03-065",
+      "GEO-IA-03-066",
+      "GEO-IA-03-067",
+      "GEO-IA-03-068",
+      "GEO-IA-03-069",
+      "GEO-IA-03-070",
+      "GEO-IA-03-071",
+      "GEO-IA-03-072",
+      "GEO-IA-03-073",
+      "GEO-IA-03-074",
+      "GEO-IA-03-075",
+      "GEO-IA-03-076",
+      "GEO-IA-03-077",
+      "GEO-IA-03-078",
+      "GEO-IA-03-079"
+    ],
+    "active_review_rule": "A fact was accepted as covered only when the stem, options and answer logic require it. Explanation-only mention and fact_ids-only mapping were rejected. Stable table rows were converted into direct matching, ordering, classification or statement questions; dated or disputed values are tested with the named dataset or kept unscored in notes.",
+    "topic_clusters_closed": [
+      "drainage foundations and genetic river types",
+      "Himalayan and Peninsular comparison",
+      "Ganga, Indus and Brahmaputra systems",
+      "Godavari, Krishna, Cauvery, Mahanadi, Penna and west-flowing rivers",
+      "river origins, outlets, cities and basin-area comparisons",
+      "lakes, lagoons, wetlands and waterfalls",
+      "Andhra Pradesh coastal rivers, interstate rivers and project associations"
+    ],
+    "new_question_answer_distribution": {
+      "1": 6,
+      "2": 7,
+      "3": 5,
+      "4": 6
+    }
+  },
+  "link_gate": {
+    "status": "passed",
+    "missing_section_anchors": 0,
+    "source_paragraph_policy": "Every question source_paragraph is visible in the notes text."
+  },
+  "test_gate": {
+    "command": "python -m pytest -q tests/test_india_ap_chapter03_workflow.py",
+    "result": "8 passed"
+  },
+  "release": {
+    "ready_for_parent_integration": true,
+    "deployed": false,
+    "pushed": false
+  }
+}
