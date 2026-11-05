@@ -193,6 +193,23 @@
       });
     });
     go.addEventListener("click", function () { if (!answered) { st.s++; saveStats(topic, st); } location.href = card.dataset.next; });
+    // AI check: a second opinion from the server (OpenAI) on this question's key and explanation. Advice only; it changes nothing.
+    var aiBtn = document.getElementById("aichk-btn"), aiOut = document.getElementById("aichk-out");
+    if (aiBtn && aiOut) aiBtn.addEventListener("click", function () {
+      aiBtn.disabled = true; aiOut.hidden = false; aiOut.textContent = "తనిఖీ చేస్తున్నాను… Checking…";
+      post("/api/ai/check", { question_id: parseInt(card.dataset.qid, 10) }).then(function (r) {
+        var badge = { agrees: "✅ AI ఏకీభవిస్తోంది · AI agrees with the answer key", disagrees: "⚠️ AI ఏకీభవించలేదు · AI disagrees with the answer key", unsure: "❓ AI ఖచ్చితంగా చెప్పలేదు · AI is not sure" }[r.verdict] || "";
+        aiOut.textContent = "";
+        function line(txt, bold) { var d = document.createElement(bold ? "strong" : "div"); d.textContent = txt; d.style.display = "block"; d.style.marginTop = "4px"; aiOut.appendChild(d); }
+        line(badge, true);
+        if (r.verdict !== "agrees" && r.your_answer) line("AI: " + r.your_answer + " · Key: " + r.stored_answer);
+        if (r.te) line(r.te); if (r.en) line(r.en);
+        (r.issues || []).forEach(function (i) { line("• " + i); });
+        line("AI సలహా మాత్రమే — సందేహం ఉంటే నోట్స్ చూడండి. · AI advice only; verify in your notes.");
+      }).catch(function () {
+        aiOut.textContent = "ఇప్పుడు AI తనిఖీ అందుబాటులో లేదు. · AI check is not available right now."; aiBtn.disabled = false;
+      });
+    });
   }
 
   // Science sidecar practice: reveal the answer state and a real expandable explanation.
