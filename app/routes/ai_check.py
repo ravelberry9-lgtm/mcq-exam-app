@@ -20,10 +20,12 @@ from ..services.device import device_id
 bp = Blueprint("ai_check", __name__)
 
 API_URL = "https://api.openai.com/v1/chat/completions"
+RESPONSES_URL = "https://api.openai.com/v1/responses"   # web search runs through the Responses API
 _LOCK = threading.Lock()
 _CACHE: dict = {}      # question id -> result dict (the verdict about a stored question does not change)
 _USAGE: dict = {}      # (device id, ISO date) -> checks today
 _CHAT_USAGE: dict = {}  # (device id, ISO date) -> chat messages today
+_WEB_USAGE: dict = {}   # (device id, ISO date) -> chat messages that used web search today
 
 
 def _model() -> str:
@@ -95,6 +97,50 @@ def _call_openai(messages, json_mode: bool = True, max_tokens: int = 700):
         return json.loads(content) if json_mode else str(content)
     except Exception:
         raise RuntimeError("bad_reply")
+
+
+def _call_openai_web(system: str, messages) -> tuple:
+    """Chat reply with OpenAI's web search tool. Returns (text, sources). Raises RuntimeError like _call_openai."""
+    key = os.environ.get("OPENAI_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("not_configured")
+    last_err = "upstream_error"
+    for tool in ("web_search", "web_search_preview"):   # the second is the older name, tried only if the first is rejected
+        payload = {"model": _model(), "instructions": system, "input": messages, "tools": [{"type": tool}], "max_output_tokens": 900}
+        req = urllib.request.Request(os.environ.get("OPENAI_RESPONSES_URL", RESPONSES_URL), data=json.dumps(payload).encode(),
+                                     headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=45) as r:
+                data = json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            current_app.logger.error("ai_check web http %s %s", e.code, e.read()[:300])
+            last_err = "upstream_%s" % e.code
+            if e.code == 400:
+                continue
+            raise RuntimeError(last_err)
+        except Exception as e:
+            current_app.logger.error("ai_check web error %r", e)
+            raise RuntimeError("upstream_error")
+        text, sources, seen = [], [], set()
+        try:
+            for item in data.get("output") or []:
+                if item.get("type") != "message":
+                    continue
+                for part in item.get("content") or []:
+                    if part.get("type") != "output_text":
+                        continue
+                    text.append(str(part.get("text", "")))
+                    for a in part.get("annotations") or []:
+                        url = str(a.get("url", ""))
+                        if a.get("type") == "url_citation" and url.startswith(("http://", "https://")) and url not in seen and len(sources) < 5:
+                            seen.add(url)
+                            sources.append({"title": str(a.get("title") or url)[:120], "url": url[:500]})
+        except Exception:
+            raise RuntimeError("bad_reply")
+        if not "".join(text).strip():
+            raise RuntimeError("bad_reply")
+        return "".join(text), sources
+    raise RuntimeError(last_err)
 
 
 def _clean(raw: dict, stored_key: str) -> dict:
@@ -170,6 +216,18 @@ def _daily_chat_max() -> int:
         return 30
 
 
+def _daily_web_max() -> int:
+    try:
+        return max(1, int(os.environ.get("AI_WEB_DAILY_MAX", "50")))
+    except ValueError:
+        return 50
+
+
+WEB_NOTE = """
+
+WEB SEARCH IS ON for this reply. Use it when the stored explanation does not settle her question, or she asks you to look something up. Prefer the stored explanation and well-known reference sources, tell her plainly when web sources disagree with each other or with the stored answer key, and never present a guess as a fact. Keep Telugu names in Telugu script."""
+
+
 def _clean_history(raw) -> list:
     """Keep only well-formed user/assistant turns, the last 8, each trimmed. The client is not trusted."""
     out = []
@@ -197,25 +255,39 @@ def ai_chat():
     if q is None:
         return jsonify({"error": "not_found"}), 404
 
+    web = payload.get("web") is True
     dev, today = device_id(), date.today().isoformat()
-    cap = _daily_chat_max()
+    cap, web_cap = _daily_chat_max(), _daily_web_max()
     with _LOCK:
         used = _CHAT_USAGE.get((dev, today), 0)
         if used >= cap:
             return jsonify({"error": "limit"}), 429
+        if web and _WEB_USAGE.get((dev, today), 0) >= web_cap:
+            return jsonify({"error": "web_limit"}), 429
         _CHAT_USAGE[(dev, today)] = used + 1
-        for k in [k for k in _CHAT_USAGE if k[1] != today]:
-            _CHAT_USAGE.pop(k, None)
+        if web:
+            _WEB_USAGE[(dev, today)] = _WEB_USAGE.get((dev, today), 0) + 1
+        for usage in (_CHAT_USAGE, _WEB_USAGE):
+            for k in [k for k in usage if k[1] != today]:
+                usage.pop(k, None)
 
-    messages = ([{"role": "system", "content": CHAT_SYSTEM + _user_prompt(q)}] + _clean_history(payload.get("history"))
-                + [{"role": "user", "content": msg}])
+    history = _clean_history(payload.get("history"))
+    system = CHAT_SYSTEM + _user_prompt(q) + (WEB_NOTE if web else "")
+    sources = []
     try:
-        reply = _call_openai(messages, json_mode=False, max_tokens=500)
+        if web:
+            reply, sources = _call_openai_web(system, history + [{"role": "user", "content": msg}])
+        else:
+            reply = _call_openai([{"role": "system", "content": system}] + history + [{"role": "user", "content": msg}],
+                                 json_mode=False, max_tokens=500)
     except RuntimeError as e:
-        with _LOCK:   # a failed call does not count against her limit
+        with _LOCK:   # a failed call does not count against her limits
             _CHAT_USAGE[(dev, today)] = max(0, _CHAT_USAGE.get((dev, today), 1) - 1)
+            if web:
+                _WEB_USAGE[(dev, today)] = max(0, _WEB_USAGE.get((dev, today), 1) - 1)
         return jsonify({"error": "not_configured" if str(e) == "not_configured" else "unavailable"}), 503
-    reply = reply.strip()[:2000]
+    reply = reply.strip()[:3000]
     with _LOCK:
         left = max(0, cap - _CHAT_USAGE.get((dev, today), 0))
-    return jsonify({"reply": reply, "remaining": left})
+        web_left = max(0, web_cap - _WEB_USAGE.get((dev, today), 0))
+    return jsonify({"reply": reply, "remaining": left, "web": web, "web_remaining": web_left, "sources": sources})

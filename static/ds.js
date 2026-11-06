@@ -194,7 +194,7 @@
     });
     go.addEventListener("click", function () { if (!answered) { st.s++; saveStats(topic, st); } location.href = card.dataset.next; });
     // AI chat: follow-up questions about this question. History stays in the page; the server rebuilds the question context from the database.
-    var chatForm = document.getElementById("aichat-form"), chatIn = document.getElementById("aichat-in"), chatLog = document.getElementById("aichat-log"), chatSend = document.getElementById("aichat-send"), chatHist = [];
+    var chatForm = document.getElementById("aichat-form"), chatIn = document.getElementById("aichat-in"), chatLog = document.getElementById("aichat-log"), chatSend = document.getElementById("aichat-send"), chatWeb = document.getElementById("aichat-web"), chatHist = [];
     function chatLine(who, txt) {
       var d = document.createElement("div"); d.className = "aichat-" + who; d.textContent = txt;
       d.style.cssText = "margin-top:6px;padding:8px 10px;border-radius:10px;white-space:pre-wrap;" + (who === "me" ? "background:rgba(127,127,127,.18);margin-left:24px" : "background:rgba(127,127,127,.08);margin-right:24px");
@@ -202,12 +202,19 @@
     }
     if (chatForm && chatIn && chatLog && chatSend) chatForm.addEventListener("submit", function (e) {
       e.preventDefault(); var m = chatIn.value.trim(); if (!m || chatSend.disabled) return;
-      chatLine("me", m); chatIn.value = ""; chatSend.disabled = true; var wait = chatLine("ai", "…");
-      post("/api/ai/chat", { question_id: parseInt(card.dataset.qid, 10), message: m, history: chatHist.slice(-8) }).then(function (r) {
-        wait.textContent = r.reply || ""; chatHist.push({ role: "user", content: m }, { role: "assistant", content: r.reply || "" });
+      var useWeb = !!(chatWeb && chatWeb.checked);
+      chatLine("me", m); chatIn.value = ""; chatSend.disabled = true; var wait = chatLine("ai", useWeb ? "🌐 …" : "…");
+      post("/api/ai/chat", { question_id: parseInt(card.dataset.qid, 10), message: m, history: chatHist.slice(-8), web: useWeb }).then(function (r) {
+        wait.textContent = r.reply || "";
+        if (r.sources && r.sources.length) {
+          var box = document.createElement("div"); box.style.cssText = "margin-top:8px;font-size:13px"; box.appendChild(document.createTextNode("🌐 వెబ్ మూలాలు · Web sources:"));
+          r.sources.forEach(function (s) { if (!/^https?:\/\//.test(s.url)) return; var a = document.createElement("a"); a.href = s.url; a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = s.title || s.url; a.style.cssText = "display:block;overflow-wrap:anywhere;text-decoration:underline;color:inherit"; box.appendChild(a); });
+          wait.appendChild(box);
+        } chatHist.push({ role: "user", content: m }, { role: "assistant", content: r.reply || "" });
       }).catch(function (err) {
         var s = String(err && err.message || "");
-        wait.textContent = s.indexOf("429") > -1 ? "ఈ రోజు చాట్ పరిమితి అయిపోయింది. · Today's chat limit is used up."
+        wait.textContent = s.indexOf("429") > -1 && useWeb ? "ఈ రోజు వెబ్ శోధన పరిమితి అయిపోయింది — టిక్ తీసేసి అడగండి. · Today's web search limit is used up. Untick the box and ask again."
+          : s.indexOf("429") > -1 ? "ఈ రోజు చాట్ పరిమితి అయిపోయింది. · Today's chat limit is used up."
           : s.indexOf("400") > -1 ? "సందేశం చాలా పొడవుగా ఉంది. · That message is too long (max 500 characters)."
           : "ఇప్పుడు AI చాట్ అందుబాటులో లేదు. · AI chat is not available right now.";
       }).then(function () { chatSend.disabled = false; });
