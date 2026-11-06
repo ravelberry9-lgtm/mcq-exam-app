@@ -19,7 +19,7 @@ def qid(app):
 
 @pytest.fixture(autouse=True)
 def clean(monkeypatch):
-    ai_check._CACHE.clear(); ai_check._USAGE.clear(); ai_check._CHAT_USAGE.clear()
+    ai_check._CACHE.clear(); ai_check._USAGE.clear(); ai_check._CHAT_USAGE.clear(); ai_check._WEB_USAGE.clear()
     monkeypatch.setenv("OPENAI_API_KEY", "test-key")
 
 
@@ -155,4 +155,114 @@ def test_practice_page_has_the_check_button_and_chat_box(client, app):
                             options_en={"a": "x", "b": "y"}, options_te={}, correct_answer="a", explanation_en="e", explanation_te=""))
     db.session.commit()
     html = client.get(f"/learn/topic/{ch.id}/practice").get_data(as_text=True)
-    assert "aichk-btn" in html and "aichat-form" in html and "aichat-in" in html
+    assert "aichk-btn" in html and "aichat-form" in html and "aichat-in" in html and "aichat-web" in html
+
+
+
+# ── web search in chat ────────────────────────────────────────────────────────
+
+WEB_REPLY = ("Simuka founded it around 230 BCE.", [{"title": "Satavahana dynasty", "url": "https://example.org/satavahana"}])
+
+
+def fake_web(monkeypatch, result=WEB_REPLY):
+    calls = []
+    def _web(system, messages):
+        calls.append((system, messages)); return result
+    monkeypatch.setattr(ai_check, "_call_openai_web", _web)
+    return calls
+
+
+def test_chat_with_web_returns_reply_and_sources(client, qid, monkeypatch):
+    calls = fake_web(monkeypatch)
+    j = chat(client, qid, web=True).get_json()
+    assert j["web"] is True and j["reply"].startswith("Simuka") and j["sources"] == [WEB_REPLY[1][0]]
+    assert j["web_remaining"] == 49 and j["remaining"] == 29
+    system, msgs = calls[0]
+    assert "WEB SEARCH IS ON" in system and "Simuka" in system and msgs[-1] == {"role": "user", "content": "why is B wrong?"}
+
+
+def test_chat_without_web_never_uses_the_search_tool(client, qid, monkeypatch):
+    calls = fake_web(monkeypatch); fake(monkeypatch, "plain")
+    j = chat(client, qid).get_json()
+    assert j["web"] is False and j["sources"] == [] and not calls
+    assert chat(client, qid, web="true").get_json()["web"] is False      # only a real boolean true turns it on
+
+
+def test_web_daily_limit_is_separate_and_plain_chat_still_works(client, qid, monkeypatch):
+    monkeypatch.setenv("AI_WEB_DAILY_MAX", "2")
+    fake_web(monkeypatch); fake(monkeypatch, "plain")
+    assert chat(client, qid, web=True).status_code == 200
+    assert chat(client, qid, web=True).get_json()["web_remaining"] == 0
+    r = chat(client, qid, web=True)
+    assert r.status_code == 429 and r.get_json()["error"] == "web_limit"
+    assert chat(client, qid).status_code == 200                           # plain chat unaffected
+    assert ai_check._CHAT_USAGE and sum(ai_check._CHAT_USAGE.values()) == 3
+
+
+def test_web_default_limit_is_50(client, qid, monkeypatch):
+    monkeypatch.delenv("AI_WEB_DAILY_MAX", raising=False)
+    assert ai_check._daily_web_max() == 50
+    monkeypatch.setenv("AI_WEB_DAILY_MAX", "junk")
+    assert ai_check._daily_web_max() == 50
+
+
+def test_web_failure_refunds_both_counters(client, qid, monkeypatch):
+    def boom(system, messages): raise RuntimeError("upstream_500")
+    monkeypatch.setattr(ai_check, "_call_openai_web", boom)
+    assert chat(client, qid, web=True).status_code == 503
+    assert sum(ai_check._CHAT_USAGE.values()) == 0 and sum(ai_check._WEB_USAGE.values()) == 0
+
+
+class _Resp:
+    def __init__(self, body): self.body = body
+    def read(self): return self.body
+    def __enter__(self): return self
+    def __exit__(self, *a): return False
+
+
+def test_call_openai_web_parses_text_and_dedupes_safe_sources(monkeypatch):
+    import json as _json
+    data = {"output": [{"type": "web_search_call"},
+                       {"type": "message", "content": [{"type": "output_text", "text": "Answer. ", "annotations": [
+                           {"type": "url_citation", "url": "https://a.example/x", "title": "A"},
+                           {"type": "url_citation", "url": "https://a.example/x", "title": "dup"},
+                           {"type": "url_citation", "url": "javascript:alert(1)", "title": "bad"},
+                           {"type": "file_citation", "url": "https://b.example"}]},
+                           {"type": "output_text", "text": "More.", "annotations": [{"type": "url_citation", "url": "http://c.example", "title": ""}]}]}]}
+    seen = {}
+    def fake_open(req, timeout=0):
+        seen["body"] = _json.loads(req.data); seen["url"] = req.full_url
+        return _Resp(_json.dumps(data).encode())
+    monkeypatch.setattr(ai_check.urllib.request, "urlopen", fake_open)
+    monkeypatch.setenv("OPENAI_API_KEY", "k")
+    from flask import Flask
+    with Flask(__name__).app_context():
+        text, src = ai_check._call_openai_web("SYS", [{"role": "user", "content": "hi"}])
+    assert text == "Answer. More." and [s["url"] for s in src] == ["https://a.example/x", "http://c.example"]
+    assert src[1]["title"] == "http://c.example"
+    assert seen["body"]["tools"] == [{"type": "web_search"}] and seen["body"]["instructions"] == "SYS" and seen["url"].endswith("/v1/responses")
+
+
+def test_call_openai_web_falls_back_to_preview_tool_name_on_400(monkeypatch):
+    import io, json as _json, urllib.error
+    tools = []
+    def fake_open(req, timeout=0):
+        body = _json.loads(req.data); tools.append(body["tools"][0]["type"])
+        if body["tools"][0]["type"] == "web_search":
+            raise urllib.error.HTTPError(req.full_url, 400, "bad", {}, io.BytesIO(b"unknown tool"))
+        return _Resp(_json.dumps({"output": [{"type": "message", "content": [{"type": "output_text", "text": "ok", "annotations": []}]}]}).encode())
+    monkeypatch.setattr(ai_check.urllib.request, "urlopen", fake_open)
+    monkeypatch.setenv("OPENAI_API_KEY", "k")
+    from flask import Flask
+    with Flask(__name__).app_context():
+        assert ai_check._call_openai_web("S", [{"role": "user", "content": "x"}])[0] == "ok"
+    assert tools == ["web_search", "web_search_preview"]
+
+
+def test_call_openai_web_empty_answer_is_an_error(monkeypatch):
+    import json as _json
+    monkeypatch.setattr(ai_check.urllib.request, "urlopen", lambda req, timeout=0: _Resp(_json.dumps({"output": []}).encode()))
+    monkeypatch.setenv("OPENAI_API_KEY", "k")
+    from flask import Flask
+    with Flask(__name__).app_context(), pytest.raises(RuntimeError):
+        ai_check._call_openai_web("S", [{"role": "user", "content": "x"}])
