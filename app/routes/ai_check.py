@@ -14,7 +14,10 @@ from datetime import date
 from flask import Blueprint, current_app, jsonify, request
 
 from ..db import db
+from types import SimpleNamespace
+
 from ..models import Question
+from ..services import geo_g2
 from ..services.device import device_id
 
 bp = Blueprint("ai_check", __name__)
@@ -156,15 +159,50 @@ def _clean(raw: dict, stored_key: str) -> dict:
             "te": str(raw.get("te", ""))[:900], "en": str(raw.get("en", ""))[:900], "issues": issues}
 
 
+def _resolve(payload):
+    """Find the question the client means. Two sources, both read on the server (the client never sends question text):
+    a database id (`question_id`), or a Group 2 Geography lesson number + question id (`geo_lesson`, `geo_qid`).
+    Returns (cache_key, question-like object) or (None, http-error-code)."""
+    gl, gq = payload.get("geo_lesson"), payload.get("geo_qid")
+    if gl is not None or gq is not None:
+        if not isinstance(gl, int) or isinstance(gl, bool) or not isinstance(gq, str) or not (1 <= gl <= 99) or len(gq) > 60:
+            return None, 400
+        try:
+            g = geo_g2.question(gl, gq)
+        except (OSError, ValueError, KeyError):
+            g = None
+        if not g:
+            return None, 404
+        letters = "abcd"
+        ex_te = " ".join([g.get("explanation_te") or ""] + [f"{letters[i].upper()}) {t}" for i, t in enumerate(g.get("option_explanations_te") or [])])
+        ex_en = " ".join([g.get("explanation_en") or ""] + [f"{letters[i].upper()}) {t}" for i, t in enumerate(g.get("option_explanations_en") or [])])
+        try:
+            key = letters[int(g["answer"]) - 1]
+        except (KeyError, ValueError, IndexError, TypeError):
+            return None, 404
+        q = SimpleNamespace(
+            question_te=g.get("question_te"), question_en=g.get("question_en"),
+            options_te={letters[i]: t for i, t in enumerate(g.get("options_te") or [])},
+            options_en={letters[i]: t for i, t in enumerate(g.get("options_en") or [])},
+            correct_answer=key, explanation_te=ex_te.strip(), explanation_en=ex_en.strip())
+        return ("g2", gl, gq), q
+    qid = payload.get("question_id")
+    if not isinstance(qid, int) or isinstance(qid, bool) or qid < 1:
+        return None, 400
+    q = db.session.get(Question, qid)
+    if q is None:
+        return None, 404
+    return qid, q
+
+
 @bp.route("/api/ai/check", methods=["POST"])
 def ai_check():
     payload = request.get_json(force=True, silent=True)
-    qid = payload.get("question_id") if isinstance(payload, dict) else None
-    if not isinstance(qid, int) or isinstance(qid, bool) or qid < 1:
+    if not isinstance(payload, dict):
         return jsonify({"error": "bad_request"}), 400
-    q = db.session.get(Question, qid)
-    if q is None:
-        return jsonify({"error": "not_found"}), 404
+    qid, q = _resolve(payload)
+    if qid is None:
+        return jsonify({"error": "bad_request" if q == 400 else "not_found"}), q
 
     with _LOCK:
         cached = _CACHE.get(qid)
@@ -243,17 +281,17 @@ def ai_chat():
     payload = request.get_json(force=True, silent=True)
     if not isinstance(payload, dict):
         return jsonify({"error": "bad_request"}), 400
-    qid, msg = payload.get("question_id"), payload.get("message")
-    if not isinstance(qid, int) or isinstance(qid, bool) or qid < 1 or not isinstance(msg, str):
+    msg = payload.get("message")
+    if not isinstance(msg, str):
         return jsonify({"error": "bad_request"}), 400
     msg = msg.strip()
     if not msg:
         return jsonify({"error": "bad_request"}), 400
     if len(msg) > 500:
         return jsonify({"error": "too_long"}), 400
-    q = db.session.get(Question, qid)
-    if q is None:
-        return jsonify({"error": "not_found"}), 404
+    qid, q = _resolve(payload)
+    if qid is None:
+        return jsonify({"error": "bad_request" if q == 400 else "not_found"}), q
 
     web = payload.get("web") is True
     dev, today = device_id(), date.today().isoformat()
