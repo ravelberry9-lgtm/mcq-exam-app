@@ -1,11 +1,11 @@
 {% extends 'ds/base.html' %}
 {% block title %}Edit {{ item_id }}{% endblock %}
 {% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}">{% endblock %}
-{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_admin.home') }}">‹ Admin</a><strong>{{ item_id }}</strong></div>{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ request.args.get('back') if request.args.get('back','').startswith('/learn/polity/unit6/') else url_for('polity_admin.home') }}">‹ Back</a><strong>{{ item_id }}</strong></div>{% endblock %}
 {% block content %}<div class="u6 u6-admin">
 {% with m=get_flashed_messages() %}{% for x in m %}<p class="u6-flash">{{ x }}</p>{% endfor %}{% endwith %}
 {% if o and o.deleted %}<section class="card"><p><b>This question is deleted</b> (hidden from learners).</p><form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn primary" name="action" value="restore">Restore</button></form></section>{% endif %}
-<form method="post" class="card u6-edit"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<form method="post" class="card u6-edit"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="back" value="{{ request.args.get('back','') }}">
 <p class="small">{{ q._chapter }} · {{ q._kind }}{% if q._edited %} · <b>edited</b>{% endif %}. Changes are stored in the database over the original; the original files are untouched.</p>
 <label>Question (English)<textarea name="question_en" rows="4">{{ q.question_en }}</textarea></label>
 <label>Question (తెలుగు)<textarea name="question_te" rows="4">{{ q.question_te }}</textarea></label>

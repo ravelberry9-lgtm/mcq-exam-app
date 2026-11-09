@@ -136,3 +136,18 @@ def test_admin_requires_login_then_edits_deletes_and_stores_text(client,app):
     assert client.post('/learn/polity/unit6/admin/submit',data={'text':'Who wrote X?\nA) a\nB) b\nAnswer: B','chapter':'6.4.1'}).status_code==302
     sub=client.get('/learn/polity/unit6/admin/submissions.json');assert sub.status_code==200 and 'Who wrote X?' in sub.get_data(as_text=True)
     assert 'Who wrote X?' in client.get('/learn/polity/unit6/admin/').get_data(as_text=True)
+
+
+def test_admin_controls_inline_for_admin_only(client,app):
+    enable(app)
+    with app.app_context():q=next(q for q in records().values() if q['_kind']=='bank' and q['_answer'] in (1,2,3,4))
+    url='/learn/polity/unit6/practice/'+q['id']
+    assert 'u6-adminbar' not in client.get(url).get_data(as_text=True) and 'u6-adminbar' not in client.get('/learn/polity/unit6/chapters/6.4.1').get_data(as_text=True)
+    _admin(client,app)
+    page=client.get(url).get_data(as_text=True)
+    assert 'u6-adminbar' in page and 'Edit this question' in page and 'Delete' in page
+    assert 'u6-adminbar' in client.get('/learn/polity/unit6/chapters/6.4.1').get_data(as_text=True)
+    r=client.post('/learn/polity/unit6/admin/submit',data={'text':'Q?\nA) 1\nAnswer: A','chapter':q['_chapter'],'back':url});assert r.status_code==302 and r.location.endswith(url)
+    r=client.post('/learn/polity/unit6/admin/submit',data={'text':'Q2?','chapter':q['_chapter'],'back':'https://evil.example/x'});assert 'evil' not in r.location
+    r=client.post('/learn/polity/unit6/admin/q/'+q['id'],data={'action':'delete','back':url.replace(q['id'],'x')});assert r.status_code==302
+    assert client.get(url).status_code==404

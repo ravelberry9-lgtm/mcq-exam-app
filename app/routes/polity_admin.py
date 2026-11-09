@@ -16,6 +16,10 @@ def guard():
     if not _is_authed():return redirect(url_for('admin.login',next=request.path))
     ensure_admin_tables()
 
+def _back(default):
+    b=request.values.get('back','')
+    return b if b.startswith('/learn/polity/unit6/') and '//' not in b[1:] and '\\' not in b and '\n' not in b else default
+
 def _clean(v,limit=2000):
     return (v or '').replace('\r\n','\n').strip()[:limit]
 
@@ -50,7 +54,7 @@ def edit(item_id):
         if action=='delete':
             if not o:o=PolityUnit6Override(item_id=item_id,data={});db.session.add(o)
             o.deleted=True;o.updated_at=datetime.utcnow();db.session.commit()
-            flash('Deleted (hidden from learners; can be restored) / తొలగించబడింది');return redirect(url_for('.home'))
+            flash('Deleted (hidden from learners; can be restored) / తొలగించబడింది');return redirect(_back(url_for('.home')))
         if action=='restore':
             if o:o.deleted=False;db.session.commit()
             flash('Restored / తిరిగి చేర్చబడింది');return redirect(url_for('.edit',item_id=item_id))
@@ -65,7 +69,7 @@ def edit(item_id):
         if a in (1,2,3,4):d['answer']=a
         if not o:o=PolityUnit6Override(item_id=item_id,data={});db.session.add(o)
         o.data=d;o.deleted=False;o.updated_at=datetime.utcnow();db.session.commit()
-        flash('Saved / సేవ్ అయింది');return redirect(url_for('.edit',item_id=item_id))
+        flash('Saved / సేవ్ అయింది');return redirect(_back(url_for('.edit',item_id=item_id)))
     cur=records().get(item_id) or base
     return render_template('ds/polity_admin_edit.html',q=cur,base=base,o=o,item_id=item_id)
 
@@ -76,7 +80,7 @@ def submit():
     if cid:chapter_or_404(cid)
     if not text:flash('Nothing to save / ఏమీ రాయలేదు');return redirect(url_for('.home'))
     db.session.add(PolityUnit6Submission(chapter_id=cid,text=text));db.session.commit()
-    flash('Saved to the database. It will be placed properly later / డేటాబేస్‌లో సేవ్ అయింది');return redirect(url_for('.home')+'#submissions')
+    flash('Saved to the database. It will be placed properly later / డేటాబేస్‌లో సేవ్ అయింది');return redirect(_back(url_for('.home')+'#submissions'))
 
 @bp.post('/submission/<int:sid>')
 def submission(sid):
