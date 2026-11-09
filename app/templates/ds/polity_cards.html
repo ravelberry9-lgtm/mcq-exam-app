@@ -1,7 +1,35 @@
-{% extends 'ds/base.html' %}
-{% from 'ds/polity_cards_macros.html' import card %}
-{% set nav_active='practice' %}
-{% block title %}Concept cards {{ key }} · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}">{% endblock %}
-{% block topbar %}{{ toolbar|safe }}{% endblock %}
-{% block content %}<div class="u6"><section class="card"><h1 class="cc-h">📚 Concept cards / కాన్సెప్ట్ కార్డులు · {{ key }}{% if chapter %} · {{ chapter.get('title_en') or chapter.get('title') or '' }}{% endif %}</h1><nav class="u6-langsw" aria-label="Language / భాష">{% for code,label in [('te','తెలుగు'),('en','English'),('both','తె + En')] %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=chapter_id,qlang=code,hl=hl|join(','),**qkeep) }}"{% if lang==code %} aria-current="true"{% endif %}>{{ label }}</a>{% endfor %}</nav><p class="small cc-note">In Laxmikanth order. Audited against Laxmikanth &amp; GBK (Nov 2026). ⚠ = disputed, verify before relying.</p></section>{% for c in cards %}{{ card(c,lang,c.id in hl) }}{% endfor %}</div>{% endblock %}
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Concept cards {{ key }} · Unit 6</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Noto Sans Telugu','Noto Sans',system-ui,sans-serif;background:#e0f4f1;color:#1a2e2c;font-size:15px;line-height:1.55}
+.page{max-width:1040px;margin:0 auto 16px;background:#fff;padding:14px 16px 18px;box-shadow:0 4px 24px rgba(0,0,0,.12)}
+.header{background:linear-gradient(135deg,#004d40 0%,#00695c 100%);color:#fff;border-radius:9px;padding:11px 16px;margin-bottom:11px;display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.hbadge{background:rgba(255,255,255,.2);border-radius:7px;padding:5px 13px;font-size:14px;font-weight:700;white-space:nowrap}
+.htitle h1{font-size:18px;font-weight:700;margin:0}.htitle h2{font-size:13.5px;font-weight:400;opacity:.85;margin:2px 0 0}
+.hmeta{margin-left:auto;text-align:right;font-size:13px;opacity:.85;line-height:1.7}
+.langsw{display:flex;gap:6px;margin:0 0 8px;flex-wrap:wrap}.langsw a{padding:4px 12px;border:1.5px solid #00897b;border-radius:999px;text-decoration:none;color:#004d40;font-size:13px;font-weight:600}.langsw a[aria-current=true]{background:#00897b;color:#fff}
+.note{font-size:12.5px;color:#455a64;margin:0 0 6px}
+.sh{font-size:14px;font-weight:700;color:#004d40;background:#e0f2f1;border-left:5px solid #00897b;padding:5px 10px;border-radius:0 6px 6px 0;margin:12px 0 6px;letter-spacing:.3px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.card{background:#e8f5f3;border:1.5px solid #80cbc4;border-radius:7px;padding:8px 10px;min-width:0}
+.card.hl{background:#fff8e1;border-color:#ffb300;box-shadow:0 0 0 2px #ffe082}
+.ch{font-size:13.5px;font-weight:700;color:#004d40;border-bottom:1px solid #80cbc4;padding-bottom:4px;margin-bottom:5px}
+.secl{font-size:11.5px;font-weight:400;color:#546e7a;margin-top:2px}.mark{font-size:11px;font-weight:700;color:#8d6e00;background:#ffecb3;border-radius:8px;padding:1px 7px;margin-left:6px;white-space:nowrap}
+.fact{margin:4px 0;font-size:14.5px;overflow-wrap:anywhere}.fact::before{content:"• ";color:#00897b;font-weight:700}
+.fact em.en{font-style:italic;color:#37474f;font-size:13.5px}
+.fact.flag{background:#fff3e0;border-radius:5px;padding:1px 4px}
+.asof{font-size:11px;font-style:normal;color:#00695c;background:#d7ece6;border-radius:8px;padding:1px 6px;white-space:nowrap}.warn{font-size:11px;font-style:normal;font-weight:700;color:#b45309}
+@media(max-width:700px){.g2{grid-template-columns:1fr}.page{padding:10px 8px 14px}.hmeta{margin-left:0;text-align:left}}
+</style></head><body>
+{{ toolbar|safe }}
+{% set ns=namespace(sec=None) %}
+<div class="page">
+<div class="header"><div class="hbadge">Chapter {{ key }}</div><div class="htitle"><h1>Concept cards — కాన్సెప్ట్ కార్డులు</h1><h2>{% if chapter %}{{ chapter.get('title_en') or chapter.get('title') or '' }} · {% endif %}Laxmikanth · GBK · APPSC Group 2</h2></div><div class="hmeta">{{ cards|length }} cards<br>Audited Nov 2026</div></div>
+<nav class="langsw" aria-label="Language / భాష">{% for code,label in [('te','తెలుగు'),('en','English'),('both','తె + En')] %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=chapter_id,qlang=code,hl=hl|join(','),**qkeep) }}"{% if lang==code %} aria-current="true"{% endif %}>{{ label }}</a>{% endfor %}</nav>
+<p class="note">In Laxmikanth order. Checked against Laxmikanth &amp; GBK. ⚠ = disputed, verify before relying.{% if hl %} The cards for your question are highlighted ◀.{% endif %}</p>
+{% for c in cards %}
+{% set sec=('Laxmikanth Chapter ' ~ c.laxmikanth.chapter) if c.laxmikanth else '' %}
+{% if sec!=ns.sec %}{% if ns.sec is not none %}</div>{% endif %}{% set ns.sec=sec %}<div class="sh">{{ sec }}</div><div class="g2">{% endif %}
+<div class="card{% if c.id in hl %} hl{% endif %}" id="{{ c.id }}"><div class="ch">{% if lang!='en' %}{{ c.title_te }}{% endif %}{% if lang=='both' %} · {% endif %}{% if lang!='te' %}{{ c.title_en }}{% endif %}{% if c.id in hl %}<span class="mark">◀ related</span>{% endif %}{% if c.laxmikanth and c.laxmikanth.section %}<div class="secl">{{ c.laxmikanth.section }}</div>{% endif %}</div>{% for it in c['items'] %}<div class="fact{% if it.flag %} flag{% endif %}">{% if lang!='en' %}<span lang="te">{{ it.te }}</span>{% endif %}{% if lang=='both' %}<br>{% endif %}{% if lang!='te' %}<em class="en" lang="en">{{ it.en }}</em>{% endif %}{% if it.as_of %} <em class="asof">as of {{ it.as_of }}</em>{% endif %}{% if it.flag %} <em class="warn">⚠ disputed – verify</em>{% endif %}</div>{% endfor %}</div>
+{% endfor %}{% if cards %}</div>{% endif %}
+</div></body></html>
