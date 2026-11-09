@@ -7,6 +7,7 @@ from ..polity_models import PolityUnit6State,PolityUnit6Progress,PolityUnit6Exam
 from ..services.device import device_id
 from .polity_maps import CONTENT,read,records,catalog
 from ..services.polity_sections import section_links,directory
+from ..services import polity_cards as _cards
 import re,re as _re
 from functools import lru_cache
 _JARGON=_re.compile(r'(fact register|bank key|authenticated pairing|tests separately|untested|source[- ]bank|content team|GBK paragraph|Laxmikanth paragraph)',_re.I)
@@ -24,6 +25,19 @@ def unit6_stats():
     mcq=sum(1 for q in corpus.values() if q['_kind']=='bank' and visible(q))
     pyq=sum(1 for q in corpus.values() if q['_kind'] in ('pyq','primary_pyq') and visible(q))
     return dict(chapters=len(chapters()),mcq=mcq,pyq=pyq,total=mcq+pyq,desc=len(descriptive_items()))
+@bp.app_context_processor
+def _cards_ctx():
+    return {'unit6_cards_for':lambda q,n=3:_cards.cards_for_question(q,n),'unit6_chapter_cards':lambda c:_cards.chapter_cards(_cards.chapter_key(c)),'unit6_chapter_key':_cards.chapter_key}
+@bp.get('/cards/<chapter_id>')
+def concept_cards(chapter_id):
+    key=_cards.chapter_key(chapter_id);cards=_cards.chapter_cards(key)
+    if not cards:abort(404)
+    hl=[x for x in request.args.get('hl','').split(',') if x]
+    qid=request.args.get('q');back=None
+    if qid and qid in records():
+        back=url_for('.practice',item_id=qid,qlang=language())+'#answer-result'
+    lang=language()
+    return render_template('ds/polity_cards.html',cards=cards,key=key,hl=hl,back=back,lang=lang,chapter_title=next((c for c in chapters() if c['id'].startswith(key+'.')),None),chapter_id=chapter_id)
 @bp.app_context_processor
 def _stats_ctx():
     return {'unit6_enabled':enabled(),'unit6_stats':unit6_stats}
@@ -325,8 +339,8 @@ def notes(chapter_id):
         content=_re.sub(r'</head>',lambda m:LAX_CSS+m.group(0),content,count=1,flags=_re.I)
     else:content=numbered_notes(chapter_id)
     keep={k:v for k,v in request.args.items() if k not in ('src','lx')}
-    tabs=dict(show=bool(lax),src=src,lx=lx,lax=[dict(n=l['chapter'],title=l.get('title',''),url=url_for('.notes',chapter_id=chapter_id,src='lax',lx=l['chapter'],**keep)) for l in lax],
-        gbk=url_for('.notes',chapter_id=chapter_id,**keep),laxurl=url_for('.notes',chapter_id=chapter_id,src='lax',lx=lax[0]['chapter'],**keep) if lax else '')
+    tabs=dict(show=bool(lax) or bool(_cards.chapter_cards(_cards.chapter_key(chapter_id))),src=src,lx=lx,lax=[dict(n=l['chapter'],title=l.get('title',''),url=url_for('.notes',chapter_id=chapter_id,src='lax',lx=l['chapter'],**keep)) for l in lax],
+        gbk=url_for('.notes',chapter_id=chapter_id,**keep),cards=(url_for('.concept_cards',chapter_id=chapter_id,**({'q':q['id']} if q else {})) if _cards.chapter_cards(_cards.chapter_key(chapter_id)) else ''),laxurl=url_for('.notes',chapter_id=chapter_id,src='lax',lx=lax[0]['chapter'],**keep) if lax else '')
     back=url_for('.chapter',chapter_id=chapter_id)
     target=None
     if q:

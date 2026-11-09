@@ -54,3 +54,13 @@ a.st{text-decoration:none}.u6-stats a.st:active{opacity:.85}
 /* Tablet / desktop: use the full width on Unit 6 pages only (other subjects keep the phone-width shell) */
 @media(min-width:700px){body:has(.u6) .app{max-width:min(100%,1040px)}body:has(.u6) .geo-question-nav,body:has(.u6) .bottomnav,body:has(.u6) nav.bottom{max-width:none}}
 @media(min-width:900px){body:has(.u6) .u6{padding-left:8px;padding-right:8px}}
+.cc-box{border-left:5px solid #0f766e}.cc-h{font-size:1.15rem;margin:0 0 6px}.cc-sub{margin:4px 0 8px;color:#475569}
+.cc{margin:10px 0;padding:10px 12px;border:1px solid #d6e4df;border-left:5px solid #14b8a6;border-radius:10px;background:#f4fbf9}
+.cc-hl{border-left-color:#0f766e;background:#e6f6f1;box-shadow:0 0 0 2px #99d5c7}
+.cc-t{font-size:1.02rem;margin:0 0 2px}.cc-src{margin:0 0 6px;font-size:.78rem;color:#4b6b64}
+.cc-items{margin:0;padding-left:1.15rem}.cc-items li{margin:5px 0;line-height:1.6;overflow-wrap:anywhere}
+.cc-te{display:inline}.cc-en{color:#334155}.cc-asof{font-size:.74rem;color:#0f766e;font-style:normal;background:#dff3ee;padding:1px 6px;border-radius:8px;white-space:nowrap}
+.cc-flag{background:#fff7e6;border-radius:6px;padding:2px 4px}.cc-warn{font-size:.74rem;color:#b45309;font-style:normal;font-weight:700}
+.cc-all>summary{cursor:pointer;font-weight:700;padding:9px 12px;border:1.5px solid #0f766e;border-radius:10px;color:#0f766e;margin:8px 0;list-style:none}.cc-all[open]>summary{background:#e6f6f1}
+.cc-note{color:#64748b;margin:8px 0 0}
+.u6-tabs a{min-width:0}

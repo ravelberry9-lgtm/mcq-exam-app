@@ -151,3 +151,26 @@ def test_admin_controls_inline_for_admin_only(client,app):
     r=client.post('/learn/polity/unit6/admin/submit',data={'text':'Q2?','chapter':q['_chapter'],'back':'https://evil.example/x'});assert 'evil' not in r.location
     r=client.post('/learn/polity/unit6/admin/q/'+q['id'],data={'action':'delete','back':url.replace(q['id'],'x')});assert r.status_code==302
     assert client.get(url).status_code==404
+
+
+def test_concept_notes_after_explanation_and_expand(client,app):
+    from app.routes.polity_maps import records
+    enable(app)
+    with app.app_context():
+        q=next(x for x in records().values() if x['_chapter'].startswith('6.6') and x.get('_kind')=='bank' and x.get('_answer') in (1,2,3,4))
+    r=client.post('/learn/polity/unit6/practice/'+q['id']+'?qlang=both',data={'answer':str(q['_answer'])})
+    html=r.get_data(as_text=True)
+    assert 'id="concept-notes"' in html and 'cc-all' in html and 'Show all chapter cards' in html
+    assert html.index('class="u6-expl"')<html.index('id="concept-notes"')<html.index('id="aichk"')
+    assert 'Memory map' not in html
+    # not shown before answering
+    assert 'concept-notes' not in client.get('/learn/polity/unit6/practice/'+q['id']).get_data(as_text=True)
+
+
+def test_concept_cards_page_and_notes_tab(client,app):
+    enable(app)
+    r=client.get('/learn/polity/unit6/cards/6.8.1?hl=CC-6.8-01')
+    assert r.status_code==200 and 'cc-hl' in r.get_data(as_text=True)
+    assert client.get('/learn/polity/unit6/cards/9.9').status_code==404
+    n=client.get('/learn/polity/unit6/chapters/6.6.1/notes').get_data(as_text=True)
+    assert 'Concept cards / కార్డులు' in n and '/cards/6.6.1' in n
