@@ -104,6 +104,17 @@ def cards_for_question(q,limit=3):
         ok=bool(a_hit) or bool(qd&c['_amd']) or len(hit)>=2
         scored.append((s_ if ok else 0.0,c))
     scored.sort(key=lambda x:-x[0])
-    if not scored or scored[0][0]<FLOOR: return []
-    top=scored[0][0]
-    return [c for s_,c in scored[:limit] if s_>=max(FLOOR,0.65*top)]
+    out=[]
+    if scored and scored[0][0]>=FLOOR:
+        top=scored[0][0]
+        out=[c for s_,c in scored[:limit] if s_>=max(FLOOR,0.65*top)]
+    qd2=_amds(stem+' '+right)
+    if qd2 and len(out)<limit:
+        qtok=_tokens(stem+' '+right+' '+expl)
+        for ch2,l2 in cards.items():
+            if ch2==ch: continue
+            for c in l2:
+                if qd2&c['_amd'] and len(qtok&c['_tok'])>=8 and c not in out:
+                    out.append(c)
+                    if len(out)>=limit: return out
+    return out
