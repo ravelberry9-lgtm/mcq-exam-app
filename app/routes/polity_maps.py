@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib
 import json
 import re
-from flask import Blueprint, abort, current_app, g, has_request_context, redirect, render_template, send_from_directory, url_for
+from flask import Blueprint, abort, current_app, g, has_request_context, make_response, redirect, render_template, request, send_from_directory, url_for
 
 bp = Blueprint('polity_maps', __name__, url_prefix='/learn/polity/unit6')
 ROOT = Path(__file__).resolve().parents[2]
@@ -87,29 +87,57 @@ def catalog():
 def maps_for(item_id):
     return [m for m in catalog().values() if any(x['item_id']==item_id for x in m['links'])]
 
+def maps_for_chapter(chapter_id):
+    """A map belongs to the chapter that holds most of its linked questions."""
+    import collections
+    corpus=records();out=[]
+    for m in catalog().values():
+        c=collections.Counter((corpus.get(l['item_id']) or {}).get('_chapter') for l in m['links'] if (corpus.get(l['item_id']) or {}).get('_kind') in ('bank','pyq','primary_pyq'))
+        if c and c.most_common(1)[0][0]==chapter_id:out.append(m)
+    return out
+
 @bp.app_context_processor
 def map_context():
-    return {'unit6_maps_for':maps_for}
+    return {'unit6_maps_for':maps_for,'unit6_maps_for_chapter':maps_for_chapter}
+
+KIND_GROUPS=(('pyq','Previous year questions / గత ప్రశ్నలు',('pyq','primary_pyq')),('bank','Practice MCQs / సాధన ప్రశ్నలు',('bank',)))
+
+def map_lang():
+    lang=request.args.get('qlang','te')
+    return lang if lang in ('te','en','both') else 'te'
 
 @bp.get('/maps')
 def index():
-    return render_template('ds/polity_maps.html',maps=list(catalog().values()))
+    return render_template('ds/polity_maps.html',maps=list(catalog().values()),lang=map_lang())
 
 @bp.get('/maps/<map_id>')
 def page(map_id):
     m=catalog().get(map_id)
     if not m:abort(404)
-    return send_from_directory(MAPS,m['file'])
+    html=(MAPS/m['file']).read_text(encoding='utf-8')
+    lang=map_lang()
+    count=len([1 for l in m['links'] if (records().get(l['item_id']) or {}).get('_kind') in ('bank','pyq','primary_pyq')])
+    bar=render_template('ds/polity_map_bar.html',map=m,lang=lang,count=count)
+    html=re.sub(r'<nav style="padding:1rem;overflow-wrap:anywhere"><a href="[^"]*/questions">Linked questions[^<]*</a></nav>','',html,count=1)
+    html=re.sub(r'(Linked questions: )\d+',lambda x:x.group(1)+str(count),html)
+    html=re.sub(r'(సంబంధిత ప్రశ్నలు: )\d+',lambda x:x.group(1)+str(count),html)
+    html=re.sub(r'(<body\b[^>]*>)',lambda x:x.group(1)+bar,html,count=1,flags=re.I)
+    resp=make_response(html);resp.headers['Content-Type']='text/html; charset=utf-8'
+    return resp
 
 @bp.get('/maps/<map_id>/questions')
 def linked_questions(map_id):
     m=catalog().get(map_id)
     if not m:abort(404)
-    corpus=records();items=[]
+    corpus=records();groups=[]
     for link in m['links']:
         if link['item_id'] not in corpus:abort(500,description='Unresolved map link')
-        items.append((corpus[link['item_id']],link))
-    return render_template('ds/polity_maps.html',map=m,items=items)
+    for kind,label,kinds in KIND_GROUPS:
+        rows=[(corpus[l['item_id']],l) for l in m['links'] if corpus[l['item_id']]['_kind'] in kinds]
+        rows.sort(key=lambda r:0 if r[1].get('strength')=='DIRECT' else 1)
+        if rows:groups.append((kind,label,rows))
+    total=sum(len(g[2]) for g in groups)
+    return render_template('ds/polity_maps.html',map=m,groups=groups,total=total,lang=map_lang())
 
 @bp.get('/questions/<item_id>')
 def question(item_id):

@@ -30,7 +30,7 @@ def test_hierarchy_and_filtered_previous_next(client,app):
     assert back.path==initial.path and parse_qs(back.query)==parse_qs(initial.query)
     global_library=soup(client.get('/learn/polity/unit6/library'))
     start=next(a['href'] for a in global_library.select('a') if 'Start practice' in a.text)
-    assert '1 / 2324' in soup(client.get(start)).get_text()
+    assert '1 / 1726' in soup(client.get(start)).get_text()
 
 def test_every_locator_resolves_and_fallback_returns_without_rescoring(client,app):
     app.config['POLITY_UNIT6_ENABLED']=True
@@ -75,3 +75,46 @@ def test_polity_ai_reads_stored_content_and_never_scores(client,app,monkeypatch)
     assert client.post('/api/ai/check',json={'polity_id':'absent'}).status_code==404
     app.config['POLITY_UNIT6_ENABLED']=False
     assert client.post('/api/ai/check',json={'polity_id':q['id']}).status_code==404
+
+
+def test_map_questions_are_clean_mcq_pyq_only(client,app):
+    app.config['POLITY_UNIT6_ENABLED']=True
+    from bs4 import BeautifulSoup
+    from app.routes.polity_maps import catalog
+    for mid in catalog():
+        html=client.get(f'/learn/polity/unit6/maps/{mid}/questions?qlang=te').get_data(as_text=True)
+        s=BeautifulSoup(html,'html.parser')
+        cards=s.select('a.mm-card')
+        assert cards, mid
+        text=' '.join(c.get_text(' ',strip=True) for c in cards)
+        assert 'POL-' not in text and 'DIRECT' not in text and 'PARTIAL' not in text
+        assert not s.select('a.mm-card [lang=en]')
+        href=cards[0]['href']
+        assert f'map={mid}' in href
+        page=client.get(href).get_data(as_text=True)
+        assert 'Map questions' in page
+        mp=client.get(f'/learn/polity/unit6/maps/{mid}?qlang=en').get_data(as_text=True)
+        assert 'u6-mapbar' in mp and 'Practice' in mp
+
+
+def test_next_stays_inside_map(client,app):
+    app.config['POLITY_UNIT6_ENABLED']=True
+    from bs4 import BeautifulSoup
+    from app.routes.polity_maps import catalog
+    mid=next(iter(catalog()))
+    s=BeautifulSoup(client.get(f'/learn/polity/unit6/maps/{mid}/questions').get_data(as_text=True),'html.parser')
+    first=s.select('a.mm-card')[0]['href']
+    p=BeautifulSoup(client.get(first).get_data(as_text=True),'html.parser')
+    nxt=p.select_one('a[rel=next]')
+    assert nxt and f'map={mid}' in nxt['href']
+
+
+def test_map_page_has_one_bar_and_matching_count(client,app):
+    import re
+    from app.routes.polity_maps import catalog
+    app.config['POLITY_UNIT6_ENABLED']=True
+    for mid in catalog():
+        h=client.get(f'/learn/polity/unit6/maps/{mid}').get_data(as_text=True)
+        assert h.count('u6-mapbar" aria-label')==1 and 'Linked questions (' not in h
+        n=int(re.search(r'Practice (\d+) questions',h).group(1))
+        assert f'Linked questions: {n}' in h

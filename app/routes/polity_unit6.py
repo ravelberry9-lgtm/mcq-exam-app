@@ -5,9 +5,21 @@ from flask import Blueprint,abort,current_app,redirect,render_template,request,u
 from ..db import db
 from ..polity_models import PolityUnit6State,PolityUnit6Progress,PolityUnit6Exam
 from ..services.device import device_id
-from .polity_maps import CONTENT,read,records
+from .polity_maps import CONTENT,read,records,catalog
 from ..services.polity_sections import section_links,directory
+import re as _re
+_JARGON=_re.compile(r'(fact register|bank key|authenticated pairing|tests separately|untested|source[- ]bank|content team|GBK paragraph|Laxmikanth paragraph)',_re.I)
+_IDS=_re.compile(r'\s*[\(\[]?\b(?:POL|APPSC|BK|GBK\d*|PYQ)-[A-Za-z0-9._-]+\b[\)\]]?')
+def clean_text(t):
+    if not t:return t
+    t=_IDS.sub('',t)
+    parts=_re.split(r'(?<=[.!?।])\s+',t)
+    kept=[x for x in parts if not _JARGON.search(x)]
+    return ' '.join(kept) if kept else t
+
 bp=Blueprint('polity_unit6',__name__,url_prefix='/learn/polity/unit6')
+@bp.app_template_filter('clean_expl')
+def _clean_expl(t):return clean_text(t)
 
 def enabled():return current_app.config.get('POLITY_UNIT6_ENABLED',os.environ.get('POLITY_UNIT6_ENABLED','0')=='1')
 @bp.before_request
@@ -18,6 +30,8 @@ def chapters():
     return [c for u in read(CONTENT/'MASTER-INDEX.json')['units'] if u['unit']==6 for s in u['sections'] for c in s['chapters']]
 def chapter_or_404(cid):
     return next((c for c in chapters() if c['id']==cid),None) or abort(404)
+VISIBLE_KINDS=('bank','pyq','primary_pyq')
+def visible(q):return q['_kind'] in VISIBLE_KINDS
 def scoreable(q):
     return q['_scored'] and q['_answer'] in (1,2,3,4) and q.get('key_status') not in ('disputed','no_official_key','needs_user_decision')
 def state_for(item_id):
@@ -41,29 +55,34 @@ def unit():
     corpus=records();rows=[]
     progress={p.chapter_id:p for p in PolityUnit6Progress.query.filter_by(device_id=device_id())}
     for c in chapters():
-        own=[q for q in corpus.values() if q['_chapter']==c['id']]
+        own=[q for q in corpus.values() if q['_chapter']==c['id'] and visible(q)]
         rows.append(dict(chapter=c,total=len(own),unscored=sum(not q['_scored'] for q in own),completed=bool(progress.get(c['id']) and progress[c['id']].completed)))
     return render_template('ds/polity_browse.html',mode='unit',rows=rows)
 
 @bp.get('/chapters/<chapter_id>')
 def chapter(chapter_id):
     c=chapter_or_404(chapter_id)
-    own=[q for q in records().values() if q['_chapter']==chapter_id]
+    own=[q for q in records().values() if q['_chapter']==chapter_id and visible(q)]
     progress=db.session.get(PolityUnit6Progress,(device_id(),chapter_id))
     return render_template('ds/polity_browse.html',mode='chapter',chapter=c,total=len(own),unscored=sum(not q['_scored'] for q in own),progress=progress)
 
 def filters(default_chapter=''):
-    values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view')}
+    values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view','map')}
+    if values['map'] and values['map'] not in catalog():abort(404)
     if not any(k in request.args for k in values):values['chapter']=default_chapter
     if values['chapter']:chapter_or_404(values['chapter'])
     return values
 
 def selection(values):
     chapter,kind,query,view=(values[k] for k in ('chapter','kind','q','view'))
+    if values.get('map'):
+        corpus=records();qs=[corpus[l['item_id']] for l in catalog()[values['map']]['links'] if l['item_id'] in corpus and visible(corpus[l['item_id']])]
+        return list({q['id']:q for q in qs}.values())
     qs=test_records(chapter) if kind=='chaptertest' and chapter else list(records().values())
     if chapter:qs=[q for q in qs if q['_chapter']==chapter]
     if kind and kind!='chaptertest':qs=[q for q in qs if q['_kind']==kind or kind=='pyq' and q['_kind']=='primary_pyq']
     if kind=='chaptertest' and not chapter:qs=[q for c in chapters() for q in test_records(c['id'])]
+    if kind!='chaptertest':qs=[q for q in qs if visible(q)]
     if query:qs=[q for q in qs if query.casefold() in (q.get('question_en','')+' '+q.get('question_te','')+' '+q['id']).casefold()]
     if view in ('saved','mistakes'):
         states=PolityUnit6State.query.filter_by(device_id=device_id()).all()
@@ -165,7 +184,7 @@ def progress(chapter_id):
 def start_test():
     cid=request.form.get('chapter','');chapter_mode=request.form.get('kind')=='chaptertest'
     if cid:chapter_or_404(cid)
-    qs=test_records(cid) if chapter_mode and cid else [q for q in records().values() if not cid or q['_chapter']==cid]
+    qs=test_records(cid) if chapter_mode and cid else [q for q in records().values() if visible(q) and (not cid or q['_chapter']==cid)]
     qs=[q for q in qs if scoreable(q)]
     count=min(100,max(1,request.form.get('count',25,type=int)));minutes=min(180,max(1,request.form.get('minutes',30,type=int)))
     if not chapter_mode:random.SystemRandom().shuffle(qs)
