@@ -85,3 +85,24 @@ def test_expiry_preserves_saved_answers_and_rejects_late_changes(client,app):
     assert client.post(r.location+'/save',data={'item_id':q['id'],'answer':q['_answer']%4+1}).status_code==409
     assert client.get(r.location).status_code==200
     with app.app_context():assert db.session.get(PolityUnit6Exam,eid).score==1
+
+
+def test_descriptive_ai_teacher_chat(client,app,monkeypatch):
+    enable(app)
+    from app.routes import ai_check
+    from app.routes.polity_unit6 import descriptive_items
+    ai_check._CHAT_USAGE.clear()
+    with app.app_context():d=descriptive_items()[0]
+    seen=[]
+    def fake(messages,**kw):
+        seen.append((messages,kw));return 'ఉపాధ్యాయ వివరణ'
+    monkeypatch.setattr(ai_check,'_call_openai',fake)
+    r=client.post('/api/ai/chat',json={'polity_desc_id':d['id'],'message':'Explain in simple Telugu','history':[]})
+    assert r.status_code==200 and r.json['reply']=='ఉపాధ్యాయ వివరణ'
+    system=seen[0][0][0]['content']
+    assert 'MODEL ANSWER' in system and d['q_en'][:30] in system and seen[0][1]['max_tokens']>=1000
+    assert client.post('/api/ai/chat',json={'polity_desc_id':'absent','message':'x'}).status_code==404
+    assert client.post('/api/ai/chat',json={'polity_desc_id':d['id'],'polity_id':'x','message':'x'}).status_code==400
+    assert client.post('/api/ai/check',json={'polity_desc_id':d['id']}).status_code==400
+    page=client.get('/learn/polity/unit6/descriptive').get_data(as_text=True)
+    assert 'details class="aid"' in page and 'ai_desc.js' in page
