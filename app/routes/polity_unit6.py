@@ -183,7 +183,7 @@ def question_page(q,choice=None,review=False,qs=None):
     review_args={'review':'1','choice':choice} if review and choice in (1,2,3,4) else {}
     notes=url_for('.notes',chapter_id=q['_chapter'],item_id=q['id'],**context,**review_args)
     locators=section_links(q)
-    links=[dict(url=notes+'#'+l['anchor'],basis=l['basis']) for l in locators]
+    links=[dict(url=notes+'#'+l['anchor'],basis=l['basis'],title=l.get('title','')) for l in locators]
     if not links:links=[dict(url=notes+'#question-explanation',basis='explanation')]
     return render_template('ds/polity_question.html',question=q,choice=choice,feedback=feedback,lang=lang,context=context,
         state=db.session.get(PolityUnit6State,(device_id(),q['id'])),position=pos+1,total=len(qs),

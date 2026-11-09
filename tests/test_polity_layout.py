@@ -178,3 +178,12 @@ def test_match_following_is_two_independent_columns(client,app):
     assert 'Select:' in s.select_one('.u6-tail').text
     plain=str(format_stem('Which is true about the Preamble?'))
     assert 'u6-match' not in plain and 'u6-stmts' not in plain
+
+
+def test_heading_button_shows_concept_title(client,app):
+    import json
+    from app.routes.polity_maps import CONTENT
+    app.config['POLITY_UNIT6_ENABLED']=True
+    iid,v=next((k,x) for k,x in json.load(open(CONTENT/'_shared/Note-Section-Map.json'))['items'].items() if x['title_en'])
+    h=client.get(f'/learn/polity/unit6/practice/{iid}').get_data(as_text=True)
+    assert v['title_en'] in h
