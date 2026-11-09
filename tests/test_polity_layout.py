@@ -239,3 +239,14 @@ def test_subject_page_lists_all_units_with_topics(client,app):
     assert len(units)==5 and page.select_one('a.u6-unit-h')['href'].endswith('/unit')
     assert units[0].select('.u6-topics li') and 'Preamble' in units[0].get_text() and 'Coming soon' in units[1].get_text()
     assert len(page.select('section.card'))==6
+
+
+def test_descriptive_questions_page(client,app):
+    app.config['POLITY_UNIT6_ENABLED']=True
+    page=soup(client.get('/learn/polity/unit6/descriptive?qlang=both'))
+    assert len(page.select('article.u6-desc'))==82
+    assert page.select('details .da') and page.select('.u6-chpills a')
+    one=soup(client.get('/learn/polity/unit6/descriptive?chapter=6.4.1'))
+    assert len(one.select('article.u6-desc'))==19
+    assert any('Descriptive' in a.get_text() for a in soup(client.get('/learn/polity/unit6/unit')).select('a.st'))
+    assert client.get('/learn/polity/unit6/descriptive?chapter=9.9').status_code==404

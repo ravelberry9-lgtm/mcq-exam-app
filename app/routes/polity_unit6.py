@@ -8,6 +8,7 @@ from ..services.device import device_id
 from .polity_maps import CONTENT,read,records,catalog
 from ..services.polity_sections import section_links,directory
 import re,re as _re
+from functools import lru_cache
 _JARGON=_re.compile(r'(fact register|bank key|authenticated pairing|tests separately|untested|source[- ]bank|content team|GBK paragraph|Laxmikanth paragraph)',_re.I)
 _IDS=_re.compile(r'\s*[\(\[]?\b(?:POL|APPSC|BK|GBK\d*|PYQ)-[A-Za-z0-9._-]+\b[\)\]]?')
 def clean_text(t):
@@ -22,7 +23,7 @@ def unit6_stats():
     corpus=records()
     mcq=sum(1 for q in corpus.values() if q['_kind']=='bank' and visible(q))
     pyq=sum(1 for q in corpus.values() if q['_kind'] in ('pyq','primary_pyq') and visible(q))
-    return dict(chapters=len(chapters()),mcq=mcq,pyq=pyq,total=mcq+pyq)
+    return dict(chapters=len(chapters()),mcq=mcq,pyq=pyq,total=mcq+pyq,desc=len(descriptive_items()))
 @bp.app_context_processor
 def _stats_ctx():
     return {'unit6_enabled':enabled(),'unit6_stats':unit6_stats}
@@ -150,7 +151,7 @@ def unit():
     progress={p.chapter_id:p for p in PolityUnit6Progress.query.filter_by(device_id=device_id())}
     for c in chapters():
         own=[q for q in corpus.values() if q['_chapter']==c['id'] and visible(q)]
-        rows.append(dict(chapter=c,total=len(own),mcq=sum(q['_kind']=='bank' for q in own),pyq=sum(q['_kind'] in ('pyq','primary_pyq') for q in own),unscored=sum(not q['_scored'] for q in own),completed=bool(progress.get(c['id']) and progress[c['id']].completed)))
+        rows.append(dict(chapter=c,desc=sum(1 for x in descriptive_items() if x['chapter']==c['id']),total=len(own),mcq=sum(q['_kind']=='bank' for q in own),pyq=sum(q['_kind'] in ('pyq','primary_pyq') for q in own),unscored=sum(not q['_scored'] for q in own),completed=bool(progress.get(c['id']) and progress[c['id']].completed)))
     return render_template('ds/polity_browse.html',mode='unit',rows=rows,stats=unit6_stats())
 
 @bp.get('/chapters/<chapter_id>')
@@ -158,7 +159,7 @@ def chapter(chapter_id):
     c=chapter_or_404(chapter_id)
     own=[q for q in records().values() if q['_chapter']==chapter_id and visible(q)]
     progress=db.session.get(PolityUnit6Progress,(device_id(),chapter_id))
-    return render_template('ds/polity_browse.html',mode='chapter',chapter=c,mcq=sum(q['_kind']=='bank' for q in own),pyq=sum(q['_kind'] in ('pyq','primary_pyq') for q in own),total=len(own),unscored=sum(not q['_scored'] for q in own),progress=progress)
+    return render_template('ds/polity_browse.html',mode='chapter',chapter=c,desc=sum(1 for x in descriptive_items() if x['chapter']==c['id']),mcq=sum(q['_kind']=='bank' for q in own),pyq=sum(q['_kind'] in ('pyq','primary_pyq') for q in own),total=len(own),unscored=sum(not q['_scored'] for q in own),progress=progress)
 
 def filters(default_chapter=''):
     values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view','map')}
@@ -188,6 +189,36 @@ def language():
     lang=request.args.get('qlang','te')
     if lang not in ('te','en','both'):abort(400)
     return lang
+
+@lru_cache(maxsize=1)
+def descriptive_items():
+    out=[]
+    for c in chapters():
+        f=CONTENT/c['id'].rsplit('.',1)[0]/c['id']/'Group-I.json'
+        if not f.is_file():continue
+        d=read(f)
+        for key in ('items','answers'):
+            for it in (d.get(key) if isinstance(d.get(key),list) else []):
+                def paras(v):
+                    if isinstance(v,list):return [str(x).strip() for x in v if str(x).strip()]
+                    return [x.strip() for x in str(v or '').split('\n') if x.strip()]
+                kind=str(it.get('kind') or '')
+                exam=str(it.get('exam') or it.get('source') or '').split(' \u2014 ')[0].strip() if 'PYQ' in kind or it.get('exam') else ''
+                exam=exam if re.match(r'APPSC',exam) and 'style' not in exam.lower() else ''
+                out.append(dict(id=it.get('id'),chapter=c['id'],exam=exam,marks=it.get('marks'),
+                    q_en=it.get('question_en') or '',q_te=it.get('question_te') or '',
+                    a_en=paras(it.get('answer_en') or it.get('model_answer_en')),a_te=paras(it.get('answer_te') or it.get('model_answer_te'))))
+    return [x for x in out if x['id'] and (x['a_en'] or x['a_te'])]
+@bp.app_context_processor
+def _desc_ctx():return {'unit6_desc_count':lambda:len(descriptive_items()) if enabled() else 0}
+
+@bp.get('/descriptive')
+def descriptive():
+    cid=request.args.get('chapter','')
+    if cid:chapter_or_404(cid)
+    items=[x for x in descriptive_items() if not cid or x['chapter']==cid]
+    return render_template('ds/polity_descriptive.html',items=items,chapter=cid,lang=language(),total=len(descriptive_items()),
+        chs=[(c,sum(1 for x in descriptive_items() if x['chapter']==c['id'])) for c in chapters()])
 
 @bp.get('/library')
 def library():
