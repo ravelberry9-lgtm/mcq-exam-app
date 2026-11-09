@@ -160,7 +160,7 @@ def test_concept_notes_after_explanation_and_expand(client,app):
         q=next(x for x in records().values() if x['_chapter'].startswith('6.6') and x.get('_kind')=='bank' and x.get('_answer') in (1,2,3,4))
     r=client.post('/learn/polity/unit6/practice/'+q['id']+'?qlang=both',data={'answer':str(q['_answer'])})
     html=r.get_data(as_text=True)
-    assert 'id="concept-notes"' in html and 'cc-all' in html and 'Show all chapter cards' in html
+    assert 'id="concept-notes"' in html and 'cc-allbtn' in html and 'Show all chapter cards' in html and '/cards/' in html
     assert html.index('class="u6-expl"')<html.index('id="concept-notes"')<html.index('id="aichk"')
     assert 'Memory map' not in html
     # not shown before answering
@@ -174,3 +174,13 @@ def test_concept_cards_page_and_notes_tab(client,app):
     assert client.get('/learn/polity/unit6/cards/9.9').status_code==404
     n=client.get('/learn/polity/unit6/chapters/6.6.1/notes').get_data(as_text=True)
     assert 'Concept cards / కార్డులు' in n and '/cards/6.6.1' in n
+
+
+def test_concept_cards_full_page_looks_like_notes(client,app):
+    from app.routes.polity_maps import records
+    enable(app)
+    with app.app_context():
+        q=next(x for x in records().values() if x['_chapter']=='6.6.1' and x.get('_kind')=='bank' and x.get('_answer') in (1,2,3,4))
+    h=client.get('/learn/polity/unit6/cards/6.6.1?item_id='+q['id']+'&hl=CC-6.6-01').get_data(as_text=True)
+    assert 'u6-reader-nav' in h and 'data-return-question' in h and 'GBK notes' in h and 'Laxmikanth' in h
+    assert 'aria-current="page">Concept cards' in h and 'cc-hl' in h

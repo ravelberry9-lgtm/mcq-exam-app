@@ -32,12 +32,23 @@ def _cards_ctx():
 def concept_cards(chapter_id):
     key=_cards.chapter_key(chapter_id);cards=_cards.chapter_cards(key)
     if not cards:abort(404)
+    c=chapter_or_404(chapter_id)
     hl=[x for x in request.args.get('hl','').split(',') if x]
-    qid=request.args.get('q');back=None
-    if qid and qid in records():
-        back=url_for('.practice',item_id=qid,qlang=language())+'#answer-result'
-    lang=language()
-    return render_template('ds/polity_cards.html',cards=cards,key=key,hl=hl,back=back,lang=lang,chapter_title=next((c for c in chapters() if c['id'].startswith(key+'.')),None),chapter_id=chapter_id)
+    qid=request.args.get('item_id') or request.args.get('q');q=records().get(qid) if qid else None
+    if q and q['_chapter']!=chapter_id:q=None
+    lang=language();qkeep={'item_id':q['id']} if q else {}
+    choice=request.args.get('choice',type=int);review=bool(q) and request.args.get('review')=='1' and choice in (1,2,3,4)
+    if review:qkeep.update(review='1',choice=choice)
+    target=None
+    if q:
+        args={**filters(chapter_id),'qlang':lang}
+        if review:args.update(review='1',choice=choice)
+        target=url_for('.practice',item_id=q['id'],**args)+'#answer-result'
+    lax=[l for l in (c.get('laxmikanth') or []) if (LAX_DIR/f"chapter-{int(l['chapter']):03d}.html").is_file()]
+    tabs=dict(show=True,src='cards',lx=None,lax=[],gbk=url_for('.notes',chapter_id=chapter_id,**qkeep),cards=url_for('.concept_cards',chapter_id=chapter_id,qlang=lang,hl=','.join(hl),**qkeep),
+        laxurl=url_for('.notes',chapter_id=chapter_id,src='lax',lx=lax[0]['chapter'],**qkeep) if lax else '')
+    toolbar=render_template('ds/polity_note_toolbar.html',chapter_url=url_for('.chapter',chapter_id=chapter_id),question_url=target,tabs=tabs)
+    return render_template('ds/polity_cards.html',cards=cards,key=key,hl=hl,lang=lang,chapter=c,chapter_id=chapter_id,toolbar=toolbar,qkeep=qkeep)
 @bp.app_context_processor
 def _stats_ctx():
     return {'unit6_enabled':enabled(),'unit6_stats':unit6_stats}
@@ -340,7 +351,7 @@ def notes(chapter_id):
     else:content=numbered_notes(chapter_id)
     keep={k:v for k,v in request.args.items() if k not in ('src','lx')}
     tabs=dict(show=bool(lax) or bool(_cards.chapter_cards(_cards.chapter_key(chapter_id))),src=src,lx=lx,lax=[dict(n=l['chapter'],title=l.get('title',''),url=url_for('.notes',chapter_id=chapter_id,src='lax',lx=l['chapter'],**keep)) for l in lax],
-        gbk=url_for('.notes',chapter_id=chapter_id,**keep),cards=(url_for('.concept_cards',chapter_id=chapter_id,**({'q':q['id']} if q else {})) if _cards.chapter_cards(_cards.chapter_key(chapter_id)) else ''),laxurl=url_for('.notes',chapter_id=chapter_id,src='lax',lx=lax[0]['chapter'],**keep) if lax else '')
+        gbk=url_for('.notes',chapter_id=chapter_id,**keep),cards=(url_for('.concept_cards',chapter_id=chapter_id,**({'item_id':q['id']} if q else {})) if _cards.chapter_cards(_cards.chapter_key(chapter_id)) else ''),laxurl=url_for('.notes',chapter_id=chapter_id,src='lax',lx=lax[0]['chapter'],**keep) if lax else '')
     back=url_for('.chapter',chapter_id=chapter_id)
     target=None
     if q:
