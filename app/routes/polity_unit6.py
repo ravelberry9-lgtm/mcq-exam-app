@@ -134,11 +134,22 @@ def question_page(q,choice=None,review=False,qs=None):
         previous=qs[pos-1]['id'] if pos else None,following=qs[pos+1]['id'] if pos+1<len(qs) else None,
         notes_url=notes,section_links=links,review_args=review_args)
 
+from functools import lru_cache
+@lru_cache(maxsize=16)
+def numbered_notes(chapter_id):
+    """Stored notes HTML is untouched on disk; headings get stable ids at response time."""
+    html=(directory(chapter_id)/'Notes.html').read_text(encoding='utf-8-sig')
+    counter=[0]
+    def add(m):
+        i=counter[0];counter[0]+=1
+        return m.group(0) if ' id=' in m.group(0) else m.group(0)[:-1]+f' id="u6s-{i}">'
+    return _re.sub(r'<h[1-4]\b[^>]*>',add,html)
+
 @bp.get('/chapters/<chapter_id>/notes')
 def notes(chapter_id):
     chapter_or_404(chapter_id);item_id=request.args.get('item_id');q=records().get(item_id) if item_id else None
     if item_id and (not q or q['_chapter']!=chapter_id):abort(404)
-    content=(directory(chapter_id)/'Notes.html').read_text(encoding='utf-8-sig')
+    content=numbered_notes(chapter_id)
     back=url_for('.chapter',chapter_id=chapter_id)
     target=None
     if q:

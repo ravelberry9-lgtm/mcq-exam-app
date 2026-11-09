@@ -26,9 +26,16 @@ def pages(record):
             elif isinstance(v,str) and v.isdigit():out.append(int(v))
     return out
 
+@lru_cache(maxsize=1)
+def heading_map():
+    p=CONTENT/'_shared/Note-Section-Map.json'
+    return read(p).get('items',{}) if p.is_file() else {}
+
 def section_links(question):
     ids,facts=chapter_locators(question['_chapter'])
     result=[]
+    hm=heading_map().get(question['id'])
+    if hm and hm.get('chapter')==question['_chapter']:result.append(dict(anchor=f"u6s-{hm['heading_idx']}",basis='heading',title=hm.get('title_en','')))
     section=question.get('section')
     if section in ids:result.append(dict(anchor=section,basis='section'))
     for page in pages(question):
@@ -39,4 +46,4 @@ def section_links(question):
             for page in pages(facts.get(fid,{})):
                 anchor=f'gbk-page-{page}'
                 if anchor in ids:result.append(dict(anchor=anchor,basis='related_fact'))
-    return list({r['anchor']:r for r in result}.values())
+    return list({r['anchor']:r for r in result}.values())[:2]
