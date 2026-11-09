@@ -142,7 +142,7 @@ def numbered_notes(chapter_id):
     counter=[0]
     def add(m):
         i=counter[0];counter[0]+=1
-        return m.group(0) if ' id=' in m.group(0) else m.group(0)[:-1]+f' id="u6s-{i}">'
+        return f'<a id="u6s-{i}"></a>'+m.group(0) if ' id=' in m.group(0) else m.group(0)[:-1]+f' id="u6s-{i}">'
     return _re.sub(r'<h[1-4]\b[^>]*>',add,html)
 
 @bp.get('/chapters/<chapter_id>/notes')

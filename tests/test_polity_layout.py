@@ -38,7 +38,11 @@ def test_every_locator_resolves_and_fallback_returns_without_rescoring(client,ap
         qs=records()
         assert len(qs)==2324 and sum(q['_scored'] for q in qs.values())==1933
         for q in qs.values():
-            for link in section_links(q):assert link['anchor'] in chapter_locators(q['_chapter'])[0]
+            for link in section_links(q):
+                if link['anchor'].startswith('u6s-'):
+                    from app.routes.polity_unit6 import numbered_notes
+                    assert f'id="{link["anchor"]}"' in numbered_notes(q['_chapter'])
+                else:assert link['anchor'] in chapter_locators(q['_chapter'])[0]
         q=next(q for q in qs.values() if not section_links(q) and not q['_scored'])
     url='/learn/polity/unit6/practice/'+q['id']+'?chapter='+q['_chapter']+'&kind='+q['_kind']+'&qlang=both'
     answered=soup(client.post(url,data={'answer':'1'}))
@@ -140,3 +144,17 @@ def test_counts_on_learn_unit_and_subject_pages(client,app):
     unit=client.get('/learn/polity/unit6/unit').get_data(as_text=True)
     assert '1210' in unit and '516' in unit and unit.count('u6-chcard')>=14
     assert 'MCQs' in client.get('/learn/polity/unit6/').get_data(as_text=True)
+
+
+def test_heading_level_note_links(client,app):
+    import json,re
+    from app.routes.polity_maps import CONTENT
+    app.config['POLITY_UNIT6_ENABLED']=True
+    m=json.load(open(CONTENT/'_shared/Note-Section-Map.json'))['items']
+    assert len(m)>1300
+    iid,v=next((k,x) for k,x in m.items() if x['chapter']=='6.4.1')
+    h=client.get(f'/learn/polity/unit6/practice/{iid}').get_data(as_text=True)
+    anchor=f"u6s-{v['heading_idx']}"
+    assert f'#{anchor}' in h and 'నోట్స్ చూడండి' in h
+    notes=client.get(f'/learn/polity/unit6/chapters/6.4.1/notes?item_id={iid}').get_data(as_text=True)
+    assert f'id="{anchor}"' in notes
