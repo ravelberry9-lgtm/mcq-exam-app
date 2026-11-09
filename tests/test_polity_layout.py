@@ -14,7 +14,7 @@ def test_hierarchy_and_filtered_previous_next(client,app):
     subject=soup(client.get('/learn/polity/unit6/'))
     assert subject.select_one('a[href="/learn/polity/unit6/unit"]')
     unit=soup(client.get('/learn/polity/unit6/unit'))
-    links=unit.select('h2 a')
+    links=unit.select('a.u6-chcard')
     assert len(links)==14
     chapter=soup(client.get(links[0]['href']))
     pyq=next(a['href'] for a in chapter.select('a') if 'kind=pyq' in a.get('href',''))
@@ -126,3 +126,17 @@ def test_notes_footer_and_telugu_titles(client,app):
     assert 'u6-notefoot' in h and 'kind=pyq' in h and '6.8.1' in h
     u=client.get('/learn/polity/unit6/unit').get_data(as_text=True)
     assert 'పౌరసత్వం' in u and 'ప్రాథమిక హక్కులు' in u
+
+
+def test_counts_on_learn_unit_and_subject_pages(client,app):
+    import re
+    from app.routes.polity_unit6 import unit6_stats
+    app.config['POLITY_UNIT6_ENABLED']=True
+    with app.test_request_context():
+        st=unit6_stats()
+    assert (st['chapters'],st['mcq'],st['pyq'])==(14,1210,516)
+    learn=client.get('/learn/').get_data(as_text=True)
+    assert '14 chapters · 1210 MCQs · 516 PYQs' in learn and '91 chapters' not in learn
+    unit=client.get('/learn/polity/unit6/unit').get_data(as_text=True)
+    assert '1210' in unit and '516' in unit and unit.count('u6-chcard')>=14
+    assert 'MCQs' in client.get('/learn/polity/unit6/').get_data(as_text=True)

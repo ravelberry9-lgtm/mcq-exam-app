@@ -18,6 +18,17 @@ def clean_text(t):
     return ' '.join(kept) if kept else t
 
 bp=Blueprint('polity_unit6',__name__,url_prefix='/learn/polity/unit6')
+def unit6_stats():
+    corpus=records()
+    mcq=sum(1 for q in corpus.values() if q['_kind']=='bank')
+    pyq=sum(1 for q in corpus.values() if q['_kind'] in ('pyq','primary_pyq'))
+    return dict(chapters=len(chapters()),mcq=mcq,pyq=pyq,total=mcq+pyq)
+@bp.app_context_processor
+def _stats_ctx():
+    return {'unit6_enabled':enabled(),'unit6_stats':unit6_stats}
+ACCENTS={'6.1':'#0f766e','6.2':'#4f46e5','6.3':'#9333ea','6.4':'#ea580c','6.5':'#16a34a','6.6':'#db2777','6.7':'#2563eb','6.8':'#dc2626','6.9':'#ca8a04'}
+@bp.app_template_filter('accent')
+def _accent(cid):return ACCENTS.get('.'.join(cid.split('.')[:2]),'#0f766e')
 TE_TITLES={'6.1.1':'ప్రాథమిక భావనలు, పదజాలం','6.1.2':'రాజ్యాంగ భావన, వర్గీకరణ','6.1.3':'రాజ్యాంగ పరిణామం','6.1.4':'రాజ్యాంగ రచన','6.2.1':'భారత రాజ్యాంగ ముఖ్య లక్షణాలు','6.3.1':'ప్రవేశిక, రాజ్యాంగ తత్వం','6.4.1':'ప్రాథమిక హక్కులు','6.5.1':'ఆదేశిక సూత్రాలు','6.5.2':'ప్రాథమిక హక్కులు–ఆదేశిక సూత్రాల సంబంధం','6.6.1':'ప్రాథమిక విధులు','6.7.1':'రాజ్యాంగ సవరణ','6.8.1':'ప్రాథమిక స్వరూప సిద్ధాంతం','6.9.1':'భారత భూభాగం, యూనియన్','6.9.2':'పౌరసత్వం'}
 @bp.app_template_filter('chapter_te')
 def _chapter_te(cid):return TE_TITLES.get(cid,'')
@@ -59,15 +70,15 @@ def unit():
     progress={p.chapter_id:p for p in PolityUnit6Progress.query.filter_by(device_id=device_id())}
     for c in chapters():
         own=[q for q in corpus.values() if q['_chapter']==c['id'] and visible(q)]
-        rows.append(dict(chapter=c,total=len(own),unscored=sum(not q['_scored'] for q in own),completed=bool(progress.get(c['id']) and progress[c['id']].completed)))
-    return render_template('ds/polity_browse.html',mode='unit',rows=rows)
+        rows.append(dict(chapter=c,total=len(own),mcq=sum(q['_kind']=='bank' for q in own),pyq=sum(q['_kind'] in ('pyq','primary_pyq') for q in own),unscored=sum(not q['_scored'] for q in own),completed=bool(progress.get(c['id']) and progress[c['id']].completed)))
+    return render_template('ds/polity_browse.html',mode='unit',rows=rows,stats=unit6_stats())
 
 @bp.get('/chapters/<chapter_id>')
 def chapter(chapter_id):
     c=chapter_or_404(chapter_id)
     own=[q for q in records().values() if q['_chapter']==chapter_id and visible(q)]
     progress=db.session.get(PolityUnit6Progress,(device_id(),chapter_id))
-    return render_template('ds/polity_browse.html',mode='chapter',chapter=c,total=len(own),unscored=sum(not q['_scored'] for q in own),progress=progress)
+    return render_template('ds/polity_browse.html',mode='chapter',chapter=c,mcq=sum(q['_kind']=='bank' for q in own),pyq=sum(q['_kind'] in ('pyq','primary_pyq') for q in own),total=len(own),unscored=sum(not q['_scored'] for q in own),progress=progress)
 
 def filters(default_chapter=''):
     values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view','map')}
