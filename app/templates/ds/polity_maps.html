@@ -8,7 +8,7 @@
 .mm-lang{display:flex;gap:.4rem;margin:.5rem 0 1rem}.mm-lang a{padding:.45rem .9rem;border-radius:999px;border:1px solid #cbd5e1;text-decoration:none;color:inherit;min-height:40px;display:inline-flex;align-items:center}.mm-lang a[aria-current]{background:#2563eb;color:#fff;border-color:#2563eb}
 .mm-card{display:block;padding:.85rem 1rem;margin:.55rem 0;border:1px solid #e2e8f0;border-radius:.9rem;text-decoration:none;color:inherit;background:var(--card,#fff)}.mm-card:active{background:#f1f5f9}
 .mm-q{white-space:pre-line;line-height:1.6;margin:0 0 .4rem}.mm-q+.mm-q{margin-top:.3rem;color:#475569}
-.mm-tags{display:flex;gap:.4rem;flex-wrap:wrap;font-size:.8rem}.mm-tags span{padding:.15rem .55rem;border-radius:999px;background:#eef2ff;color:#3730a3}.mm-tags .un{background:#fef3c7;color:#92400e}
+.mm-src{margin:0 0 .35rem;font-size:.8rem;font-weight:700;color:#c2410c}.mm-tags{display:flex;gap:.4rem;flex-wrap:wrap;font-size:.8rem}.mm-tags span{padding:.15rem .55rem;border-radius:999px;background:#eef2ff;color:#3730a3}.mm-tags .un{background:#fef3c7;color:#92400e}
 .mm-open{display:block;margin:.4rem 0 1rem;padding:.8rem 1rem;border-radius:.9rem;background:#2563eb;color:#fff;text-align:center;text-decoration:none;font-weight:600}
 .mm-map{display:block;padding:1rem;margin:.6rem 0;border:1px solid #e2e8f0;border-radius:.9rem;text-decoration:none;color:inherit}.mm-map small{display:block;color:#64748b;margin-top:.2rem}
 </style>
@@ -21,7 +21,7 @@
 {% for kind,label,rows in groups %}<h2>{{ label }} · {{ rows|length }}</h2>
 {% for q,link in rows %}<a class="mm-card" href="{{ url_for('polity_unit6.practice',item_id=q.id,map=map.map_id,qlang=lang) }}">
 {% if lang in ('te','both') %}<p class="mm-q" lang="te">{{ q.question_te }}</p>{% endif %}{% if lang in ('en','both') %}<p class="mm-q" lang="en">{{ q.question_en }}</p>{% endif %}
-<div class="mm-tags">{% if link.strength=='PARTIAL' %}<span>Covers part / కొంత భాగం</span>{% endif %}{% if not q._scored %}<span class="un">Unscored / స్కోరు లేదు</span>{% endif %}</div></a>{% endfor %}{% endfor %}
+{% set src=q|pyq_label %}{% if src %}<p class="mm-src">{{ src.title }}{% if src.detail %} · {{ src.detail }}{% endif %}</p>{% endif %}<div class="mm-tags">{% if link.strength=='PARTIAL' %}<span>Covers part / కొంత భాగం</span>{% endif %}{% if not q._scored %}<span class="un">Unscored / స్కోరు లేదు</span>{% endif %}</div></a>{% endfor %}{% endfor %}
 {% else %}
 <h1>Unit 6 memory maps / యూనిట్ 6 జ్ఞాపక పటాలు</h1>
 {% for m in maps %}<a class="mm-map" href="{{ url_for('polity_maps.page',map_id=m.map_id,qlang=lang) }}"><strong>{{ m.title }}</strong><small>Open map · then practise its questions / పటం చూసి, ప్రశ్నలు సాధన చేయండి</small></a>{% else %}<p>No map available yet / పటం ఇంకా అందుబాటులో లేదు</p>{% endfor %}

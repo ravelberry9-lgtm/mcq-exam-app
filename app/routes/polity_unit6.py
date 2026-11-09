@@ -32,6 +32,62 @@ def _accent(cid):return ACCENTS.get('.'.join(cid.split('.')[:2]),'#0f766e')
 TE_TITLES={'6.1.1':'ప్రాథమిక భావనలు, పదజాలం','6.1.2':'రాజ్యాంగ భావన, వర్గీకరణ','6.1.3':'రాజ్యాంగ పరిణామం','6.1.4':'రాజ్యాంగ రచన','6.2.1':'భారత రాజ్యాంగ ముఖ్య లక్షణాలు','6.3.1':'ప్రవేశిక, రాజ్యాంగ తత్వం','6.4.1':'ప్రాథమిక హక్కులు','6.5.1':'ఆదేశిక సూత్రాలు','6.5.2':'ప్రాథమిక హక్కులు–ఆదేశిక సూత్రాల సంబంధం','6.6.1':'ప్రాథమిక విధులు','6.7.1':'రాజ్యాంగ సవరణ','6.8.1':'ప్రాథమిక స్వరూప సిద్ధాంతం','6.9.1':'భారత భూభాగం, యూనియన్','6.9.2':'పౌరసత్వం'}
 @bp.app_template_filter('chapter_te')
 def _chapter_te(cid):return TE_TITLES.get(cid,'')
+from markupsafe import Markup,escape
+_ITEM=_re.compile(r'^\s*(\(?)([1-9]|[A-Ea-e]|i{1,3}|iv|v)([.)])\s+(.*\S)\s*$')
+def _kind(m):
+    t=m.group(2)
+    return 'num' if t.isdigit() else 'roman' if t in('i','ii','iii','iv','v') else 'upper' if t.isupper() else 'lower'
+def format_stem(text):
+    """Match-the-following and numbered statements get a tidy layout; wording is untouched."""
+    if not text:return Markup('')
+    lines=[l for l in str(text).replace('\r','').split('\n')]
+    items=[];intro=[];tail=[];state='intro'
+    for l in lines:
+        m=_ITEM.match(l)
+        if m and state in('intro','items'):
+            items.append((_kind(m),m.group(2),m.group(4)));state='items'
+        elif state=='items' and l.strip():
+            if items:tail.append(l.strip());state='tail'
+        elif state=='intro' and l.strip():intro.append(l.strip())
+        elif state=='tail' and l.strip():tail.append(l.strip())
+    if not items:return Markup('<span class="u6-plain">'+str(escape(text))+'</span>')
+    groups=[];
+    for k,label,body in items:
+        if groups and groups[-1][0]==k:groups[-1][1].append((label,body))
+        else:groups.append([k,[(label,body)]])
+    out=['<div class="u6-stem">']
+    if intro:out.append('<p class="u6-intro">'+str(escape(' '.join(intro)))+'</p>')
+    if len(groups)==2 and all(len(g[1])>=2 for g in groups):
+        a,b=groups[0][1],groups[1][1]
+        out.append('<div class="u6-match">')
+        for col,head in ((a,'List I / జాబితా I'),(b,'List II / జాబితా II')):
+            out.append('<div class="mcol"><div class="mh">'+head+'</div>')
+            for label,body in col:out.append('<div class="mc"><b>'+str(escape(label.upper() if col is a else label))+'</b><span>'+str(escape(body))+'</span></div>')
+            out.append('</div>')
+        out.append('</div>')
+    else:
+        out.append('<ol class="u6-stmts">')
+        for k,label,body in items:out.append('<li><b>'+str(escape(label))+'</b><span>'+str(escape(body))+'</span></li>')
+        out.append('</ol>')
+    if tail:out.append('<p class="u6-tail">'+str(escape(' '.join(tail)))+'</p>')
+    out.append('</div>')
+    return Markup(''.join(out))
+@bp.app_template_filter('fmt_stem')
+def _fmt_stem(t):return format_stem(t)
+@bp.app_template_filter('pyq_label')
+def _pyq_label(q):
+    """Attribution exactly as recorded in the question bank; nothing is inferred."""
+    if q.get('_kind') not in ('pyq','primary_pyq'):return None
+    exam=(q.get('exam') or '').replace('Other credible examinations - ','').strip()
+    year=str(q.get('year') or '').strip()
+    stage=(q.get('stage') or '').strip();stage=stage[:1].upper()+stage[1:] if stage else ''
+    paper=(q.get('paper') or '').strip()
+    if paper.lower().startswith('subject-indexed'):paper=''
+    elif paper and not paper.lower().startswith('paper') and len(paper)<=4:paper='Paper '+paper
+    series=(q.get('series_set') or '').strip()
+    if series and series.lower() not in ('a','b','c','d') :pass
+    detail=' · '.join(x for x in (stage,paper,series,('Q'+str(q['question_number'])) if q.get('question_number') else '') if x)
+    return dict(title=' · '.join(x for x in (exam,year) if x),detail=detail)
 @bp.app_template_filter('clean_expl')
 def _clean_expl(t):return clean_text(t)
 

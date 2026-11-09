@@ -158,3 +158,23 @@ def test_heading_level_note_links(client,app):
     assert f'#{anchor}' in h and 'నోట్స్ చూడండి' in h
     notes=client.get(f'/learn/polity/unit6/chapters/6.4.1/notes?item_id={iid}').get_data(as_text=True)
     assert f'id="{anchor}"' in notes
+
+
+def test_pyq_source_label_shown(client,app):
+    app.config['POLITY_UNIT6_ENABLED']=True
+    h=client.get('/learn/polity/unit6/practice/APPSC-G2-2025-C-113').get_data(as_text=True)
+    assert 'u6-src' in h and 'APPSC Group II · 2025' in h
+    m=client.get('/learn/polity/unit6/practice/PYQ-POL-3570D718DFD1').get_data(as_text=True)
+    assert 'SSC CGL · 2022' in m and 'Other credible' not in m
+
+
+def test_match_following_is_two_independent_columns(client,app):
+    from bs4 import BeautifulSoup
+    from app.routes.polity_unit6 import format_stem
+    h=str(format_stem('Match.\n1. A one\n2. B two\n3. C three\na. x\nb. y\nc. z\nSelect:'))
+    s=BeautifulSoup(h,'html.parser')
+    cols=s.select('.u6-match .mcol')
+    assert len(cols)==2 and len(cols[0].select('.mc'))==3 and 'List II' in cols[1].text
+    assert 'Select:' in s.select_one('.u6-tail').text
+    plain=str(format_stem('Which is true about the Preamble?'))
+    assert 'u6-match' not in plain and 'u6-stmts' not in plain
