@@ -1,0 +1,442 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+    background: #eef2f7;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px;
+    background: #fff;
+    padding: 13mm 12mm 11mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+    color: #fff;
+    border-radius: 9px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .hbadge {
+    background: rgba(255,255,255,0.2);
+    border-radius: 7px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .htitle h1 { font-size: 18px; font-weight: 700; }
+  .htitle h2 { font-size: 13.5px; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+  .hmeta { margin-left: auto; text-align: right; font-size: 13px; opacity: 0.8; line-height: 1.7; }
+
+  /* SECTION HEADING */
+  .sh {
+    font-size: 14px;
+    font-weight: 700;
+    color: #283593;
+    background: #e8eaf6;
+    border-left: 5px solid #5c6bc0;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 11px 0 7px;
+    letter-spacing: 0.3px;
+  }
+
+  /* GRIDS */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+
+  /* CARD */
+  .card {
+    background: #f5f7ff;
+    border: 1.5px solid #c5cae9;
+    border-radius: 7px;
+    padding: 8px 10px;
+  }
+  .ch {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1a237e;
+    border-bottom: 1px solid #c5cae9;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
+  }
+
+  /* FACT ROWS */
+  .fact { margin: 3px 0; font-size: 14.5px; }
+  .fact::before { content: "• "; color: #5c6bc0; font-weight: 700; }
+  .k { font-weight: 700; color: #1a237e; }
+  .kg { font-weight: 700; color: #1b5e20; }
+  .kt { font-weight: 700; color: #004d40; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    background: #3949ab;
+    color: #fff;
+    padding: 5px 7px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td { padding: 4px 7px; border-bottom: 1px solid #e8eaf6; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) td { background: #f0f2ff; }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .tg { background: #e8f5e9; color: #1b5e20; }
+  .tb { background: #e3f2fd; color: #0d47a1; }
+  .tp { background: #ede7f6; color: #4527a0; }
+  .tt { background: #e0f7fa; color: #00695c; }
+
+  /* PILLS */
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .pill {
+    background: #3949ab;
+    color: #fff;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .pg { background: #2e7d32; }
+  .pt { background: #00695c; }
+  .pp { background: #4527a0; }
+
+  /* SOURCE GRID */
+  .sgrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
+  .sitem {
+    background: #e8eaf6;
+    border: 1.5px solid #9fa8da;
+    border-radius: 6px;
+    padding: 5px 6px;
+    text-align: center;
+  }
+  .sc { font-size: 13px; font-weight: 700; color: #283593; }
+  .sv { font-size: 12.5px; color: #37474f; margin-top: 2px; line-height: 1.35; }
+
+  /* TIMELINE */
+  .tl { padding-left: 18px; }
+  .tli { position: relative; padding: 3px 0 3px 12px; }
+  .tli::before {
+    content: '';
+    position: absolute;
+    left: -1px; top: 8px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: #5c6bc0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1.5px #5c6bc0;
+  }
+  .tli::after {
+    content: '';
+    position: absolute;
+    left: 3px; top: 17px;
+    width: 2px;
+    height: calc(100% - 8px);
+    background: #c5cae9;
+  }
+  .tli:last-child::after { display: none; }
+  .ty { font-weight: 700; color: #283593; font-size: 14.5px; }
+  .tx { font-size: 14px; color: #333; }
+
+  .footer {
+    border-top: 1.5px solid #c5cae9;
+    margin-top: 10px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
+</style><div class="oldpart">
+<!-- ═══════════════════════════════ PAGE 1 ═══════════════════════════════ -->
+<div class="page">
+<div class="hdr">
+<div class="hdr-left">
+<h1>రాజ్య నిర్దేశక సూత్రాలు<br/><span style="font-size:15px;font-weight:600">Directive Principles of State Policy</span></h1>
+<div class="sub">అధ్యాయం 9 | Chapter 9 · భాగం IV / Part IV · అనుచ్ఛేదాలు / Articles 36–51</div>
+</div>
+<div class="hdr-right">
+<div class="tag">లక్ష్మీకాంత్ ఇండియన్ పాలిటీ</div><br/>
+<div class="count">47 MCQs · 9 PYQs / Articles 36–51 · Part IV</div>
+</div>
+</div>
+<div class="body">
+<!-- Intro -->
+<div class="sh">DPSP పరిచయం · Introduction</div>
+<div class="two-col" style="margin-bottom:8px">
+<div class="infobox">
+<p><strong>భాగం IV, అనుచ్ఛేదాలు 36–51 / Part IV, Articles 36–51</strong></p>
+<p>• అనుచ్ఛేద 36 → 'రాజ్యం' నిర్వచనం = అనుచ్ఛేద 12 వలెనే<br/>
+<em>Art 36 → Definition of 'State' = Same as Art 12</em></p>
+<p>• అనుచ్ఛేద 37 → న్యాయస్థానాల ద్వారా అమలు చేయలేని కానీ పాలనలో మూలభూతమైన సూత్రాలు<br/>
+<em>Art 37 → Non-justiciable but fundamental in governance</em></p>
+<p>• స్వీకరించబడింది: ఐర్లాండ్ రాజ్యాంగం 1937 నుండి<br/>
+<em>Borrowed from: Irish (Eire) Constitution 1937</em></p>
+</div>
+<div class="infobox" style="background:#e8f5e9;border-color:#a5d6a7">
+<p><strong>FR vs DPSP – త్వరిత తులన / Quick Contrast</strong></p>
+<p>• FR లు → న్యాయదాన యోగ్యమైనవి (Justiciable)<br/>
+           DPSP లు → న్యాయదాన యోగ్యం కానివి (Non-justiciable)</p>
+<p>• FR లు → ప్రతికూల బాధ్యతలు (Negative obligations)<br/>
+           DPSP లు → సానుకూల బాధ్యతలు (Positive obligations)</p>
+<p>• FR లు → రాజకీయ ప్రజాస్వామ్యం (Political Democracy)<br/>
+           DPSP లు → సాంఘిక-ఆర్థిక ప్రజాస్వామ్యం (Socio-economic Democracy)</p>
+</div>
+</div>
+<!-- Scholars -->
+<div class="sh">విద్వాంసుల అభిప్రాయాలు · Scholars' Views</div>
+<div class="quotes">
+<div class="qcard">
+<div class="who">K.T. షా / K.T. Shah</div>
+        "బ్యాంకు సౌకర్యానికి చెల్లించే చెక్కు"<br/>
+<em>"A cheque payable at the bank's convenience"</em>
+</div>
+<div class="qcard teal">
+<div class="who">T.T. కృష్ణమాచారి / T.T. Krishnamachari</div>
+        "పవిత్ర కోరికలు"<br/>
+<em>"Pious wishes"</em>
+</div>
+<div class="qcard blue">
+<div class="who">గ్రాన్‌విల్ ఆస్టిన్ / Granville Austin</div>
+        "రాజ్యాంగ మనస్సాక్షి"<br/>
+<em>"Conscience of the Constitution"</em><br/>
+<span style="font-size:12px">(FR + DPSP కలిపి / FR + DPSP together)</span>
+</div>
+</div>
+<!-- Ambedkar & Art 38(2) fact strip -->
+<div class="fact">
+<strong>అంబేడ్కర్:</strong> DPSP లను 1935 GoI Act లోని '<strong>Instruments of Instructions</strong>' తో పోల్చారు — గవర్నర్ జనరల్‌కు జారీ చేసిన ఆదేశాలు.<br/>
+<em>Ambedkar compared DPSPs to the 'Instruments of Instructions' under the Government of India Act 1935.</em>
+       | 
+      <strong>Art 38(2)</strong> → <strong>44వ సవరణ 1978</strong> జోడించింది — ఆదాయం, హోదా, అవకాశాలలో అసమానతలు తగ్గించడం.<br/>
+<em>Art 38(2) added by 44th Amendment 1978 — minimise inequalities in income, status &amp; opportunities.</em>
+</div>
+<!-- Classification Table -->
+<div class="sh">వర్గీకరణ పట్టిక · Classification Table</div>
+<div class="card ncard" id="CC-6.5-02"><div class="ch">ఆదేశిక సూత్రాల వర్గీకరణ (మూడు వర్గాలు) · Classification of DPSP (three groups)</div><div class="secl">Classification of the Directive Principles</div><div class="fact"><span lang="te">రాజ్యాంగం స్వయంగా ఆదేశిక సూత్రాలను వర్గీకరించలేదు; ఈ మూడు వర్గాలు విశ్లేషకులు చదువు కోసం చేసిన విభజన మాత్రమే.</span><br/><em class="en" lang="en">The Constitution itself does not classify DPSP; the three groups are an analytical classification by commentators.</em></div><div class="fact"><span lang="te">సామ్యవాద సూత్రాలు: ప్రకరణలు 38, 39, 39A, 41, 42, 43, 43A, 47.</span><br/><em class="en" lang="en">Socialistic: Art 38, 39, 39A, 41, 42, 43, 43A, 47.</em></div><div class="fact"><span lang="te">గాంధేయ సూత్రాలు: ప్రకరణలు 40, 43, 43B, 46, 47, 48.</span><br/><em class="en" lang="en">Gandhian: Art 40, 43, 43B, 46, 47, 48.</em></div><div class="fact"><span lang="te">ఉదారవాద-మేధావి సూత్రాలు: ప్రకరణలు 44, 45, 48, 48A, 49, 50, 51.</span><br/><em class="en" lang="en">Liberal-Intellectual: Art 44, 45, 48, 48A, 49, 50, 51.</em></div><div class="fact"><span lang="te">రెండు వర్గాల్లో వచ్చేవి: ప్రకరణ 43 (జీవన వేతనం సామ్యవాదం, కుటీర పరిశ్రమలు గాంధేయం), ప్రకరణ 47 (పోషణ సామ్యవాదం, మద్యనిషేధం గాంధేయం), ప్రకరణ 48 (శాస్త్రీయ వ్యవసాయం ఉదారవాదం, పశు సంరక్షణ గాంధేయం).</span><br/><em class="en" lang="en">Overlaps: Art 43 (living wage = Socialistic; cottage industries = Gandhian), Art 47 (nutrition = Socialistic; prohibition = Gandhian), Art 48 (scientific agriculture = Liberal; cattle protection = Gandhian).</em></div></div><div class="card ncard" id="CC-6.5-03"><div class="ch">సామ్యవాద ఆదేశిక సూత్రాలు · Socialistic Directive Principles</div><div class="secl">Socialistic Principles</div><div class="fact"><span lang="te">ప్రకరణ 38: సామాజిక, ఆర్థిక, రాజకీయ న్యాయంతో కూడిన సమాజం; 38(2) ఆదాయం, హోదా, సౌకర్యాలు, అవకాశాల్లో అసమానతలు తగ్గించాలి (44వ సవరణ, 1978).</span><br/><em class="en" lang="en">Art 38: social order based on social, economic and political justice; 38(2) minimise inequalities in income, status, facilities, opportunities (44th Amdt, 1978).</em></div><div class="fact"><span lang="te">ప్రకరణ 39: (a) తగిన జీవనోపాధి, (b) సమాజ వనరులు అందరి మేలు కోసం పంపిణీ, (c) సంపద కేంద్రీకరణ నివారణ, (d) సమాన పనికి సమాన వేతనం, (e) కార్మికులు, పిల్లల ఆరోగ్య రక్షణ, (f) పిల్లల ఆరోగ్యకర వికాసం.</span><br/><em class="en" lang="en">Art 39: (a) adequate livelihood, (b) distribution of material resources for common good, (c) no concentration of wealth, (d) equal pay for equal work, (e) protect workers and children from abuse, (f) healthy development of children.</em></div><div class="fact"><span lang="te">ప్రకరణ 39A: సమాన న్యాయం, పేదలకు ఉచిత న్యాయ సహాయం (42వ సవరణ, 1976).</span><br/><em class="en" lang="en">Art 39A: equal justice and free legal aid to the poor (42nd Amdt, 1976).</em></div><div class="fact"><span lang="te">ప్రకరణ 41: పని హక్కు, విద్య హక్కు; నిరుద్యోగం, వృద్ధాప్యం, అనారోగ్యం, అంగవైకల్యంలో ప్రభుత్వ సహాయం — రాజ్య ఆర్థిక స్తోమత మేరకు.</span><br/><em class="en" lang="en">Art 41: right to work, education and public assistance in unemployment, old age, sickness, disablement — within economic capacity.</em></div><div class="fact"><span lang="te">ప్రకరణ 42: న్యాయమైన, మానవీయ పని పరిస్థితులు; ప్రసూతి సహాయం.</span><br/><em class="en" lang="en">Art 42: just and humane conditions of work and maternity relief.</em></div><div class="fact"><span lang="te">ప్రకరణ 43: కార్మికులందరికీ జీవన వేతనం, గౌరవప్రద జీవనం; ప్రకరణ 43A: పరిశ్రమల యాజమాన్యంలో కార్మికుల భాగస్వామ్యం (42వ సవరణ).</span><br/><em class="en" lang="en">Art 43: living wage and decent standard of life for all workers; Art 43A: workers' participation in management of industries (42nd Amdt).</em></div><div class="fact"><span lang="te">ప్రకరణ 47: పోషణ స్థాయి, జీవన ప్రమాణం, ప్రజారోగ్యం మెరుగుపరచాలి.</span><br/><em class="en" lang="en">Art 47: raise level of nutrition, standard of living and public health.</em></div></div><div class="card ncard" id="CC-6.5-05"><div class="ch">ఉదారవాద-మేధావి ఆదేశిక సూత్రాలు · Liberal-Intellectual Directive Principles</div><div class="secl">Gandhian &amp; Liberal-Intellectual Principles</div><div class="fact"><span lang="te">ప్రకరణ 44: దేశమంతటా పౌరులకు ఉమ్మడి పౌర స్మృతి (UCC) తేవాలి.</span><br/><em class="en" lang="en">Art 44: secure a Uniform Civil Code for citizens throughout India.</em></div><div class="fact"><span lang="te">ప్రకరణ 45: ఆరేళ్ల లోపు పిల్లలందరికీ బాల్య సంరక్షణ, విద్య (86వ సవరణ, 2002 ద్వారా మార్చారు; మొదట 14 ఏళ్ల వరకు ఉచిత నిర్బంధ విద్య).</span><br/><em class="en" lang="en">Art 45: early childhood care and education for all children until age six (substituted by 86th Amdt, 2002; originally free and compulsory education up to 14).</em></div><div class="fact"><span lang="te">ప్రకరణ 48: వ్యవసాయం, పశుపోషణను ఆధునిక శాస్త్రీయ పద్ధతుల్లో నిర్వహించాలి.</span><br/><em class="en" lang="en">Art 48: organise agriculture and animal husbandry on modern scientific lines.</em></div><div class="fact"><span lang="te">ప్రకరణ 48A: పర్యావరణ పరిరక్షణ, అడవులు, వన్యప్రాణుల రక్షణ (42వ సవరణ, 1976).</span><br/><em class="en" lang="en">Art 48A: protect and improve the environment, safeguard forests and wildlife (42nd Amdt, 1976).</em></div><div class="fact"><span lang="te">ప్రకరణ 49: పార్లమెంటు చట్టం ద్వారా జాతీయ ప్రాముఖ్యత కలవిగా ప్రకటించిన కట్టడాలు, ప్రదేశాలు, వస్తువులను కాపాడాలి.</span><br/><em class="en" lang="en">Art 49: protect monuments, places and objects of artistic or historic interest declared to be of national importance by or under a law of Parliament.</em></div><div class="fact"><span lang="te">ప్రకరణ 50: రాజ్య ప్రభుత్వ సేవల్లో న్యాయవ్యవస్థను కార్యనిర్వాహక వ్యవస్థ నుంచి వేరుచేయాలి.</span><br/><em class="en" lang="en">Art 50: separate the judiciary from the executive in the public services of the State.</em></div><div class="fact"><span lang="te">ప్రకరణ 51: (a) అంతర్జాతీయ శాంతి, భద్రత, (b) దేశాల మధ్య న్యాయమైన, గౌరవప్రద సంబంధాలు, (c) అంతర్జాతీయ చట్టం, ఒప్పందాల పట్ల గౌరవం, (d) వివాదాలను మధ్యవర్తిత్వంతో పరిష్కరించడం.</span><br/><em class="en" lang="en">Art 51: (a) international peace and security, (b) just and honourable relations between nations, (c) respect for international law and treaty obligations, (d) settlement of disputes by arbitration.</em></div></div>
+<!-- Socialistic DPSPs Grid -->
+<div class="sh">సమాజవాద నిర్దేశక సూత్రాలు · Socialistic DPSPs</div>
+<div class="art-grid">
+<div class="ag-cell s">
+<span class="an">Art 38</span><br/>
+        సామాజిక-ఆర్థిక-రాజకీయ న్యాయంతో సమాజ వ్యవస్థ; అసమానతల తగ్గింపు<br/>
+<em>Social order with social, economic &amp; political justice; reduce inequalities</em>
+</div>
+<div class="ag-cell s">
+<span class="an">Art 39</span><br/>
+<b>(a)</b> సమాన జీవనోపాధి హక్కు / Equal livelihood<br/>
+<b>(b)</b> వనరుల పంపిణీ / Resource distribution<br/>
+<b>(c)</b> సంపద కేంద్రీకరణ నివారణ / Anti-concentration
+      </div>
+<div class="ag-cell s">
+<span class="an">Art 39A</span><br/>
+        సమాన న్యాయం + ఉచిత న్యాయ సహాయం<br/>
+<em>Equal justice + Free legal aid</em><br/>
+<span style="font-size:12px;color:#2e7d32">↳ 42వ సవరణ 1976 / 42nd Amdt 1976</span>
+</div>
+<div class="ag-cell s">
+<span class="an">Art 41</span><br/>
+        పని, విద్య, నిరుద్యోగ/వృద్ధాప్య/ అనారోగ్య సహాయానికి హక్కు<br/>
+<em>Right to work, education &amp; public assistance</em>
+</div>
+<div class="ag-cell s">
+<span class="an">Art 42</span><br/>
+        న్యాయమైన పని పరిస్థితులు + మాతృత్వ సహాయం<br/>
+<em>Just work conditions + Maternity relief</em>
+</div>
+<div class="ag-cell s">
+<span class="an">Art 43</span><br/>
+        కార్మికులకు జీవన వేతనం; కుటీర పరిశ్రమలు<br/>
+<em>Living wage for workers; cottage industries</em><br/>
+<span style="font-size:12px;color:#f57f17">(గాంధేయ కూడా / Gandhian too)</span>
+</div>
+<div class="ag-cell s">
+<span class="an">Art 43A</span><br/>
+        పరిశ్రమల నిర్వహణలో కార్మికుల భాగస్వామ్యం<br/>
+<em>Workers' participation in management</em><br/>
+<span style="font-size:12px;color:#2e7d32">↳ 42వ సవరణ 1976 / 42nd Amdt 1976</span>
+</div>
+<div class="ag-cell s">
+<span class="an">Art 43B</span><br/>
+        సహకార సంఘాల అభివృద్ధి<br/>
+<em>Promotion of cooperative societies</em><br/>
+<span style="font-size:12px;color:#2e7d32">↳ 97వ సవరణ 2011 / 97th Amdt 2011</span>
+</div>
+</div>
+<!-- Gandhian DPSPs -->
+<div class="sh">గాంధేయ నిర్దేశక సూత్రాలు · Gandhian DPSPs</div>
+<div class="two-col">
+<div>
+<div class="card ncard" id="CC-6.5-04"><div class="ch">గాంధేయ ఆదేశిక సూత్రాలు · Gandhian Directive Principles</div><div class="secl">Gandhian &amp; Liberal-Intellectual Principles</div><div class="fact"><span lang="te">జాతీయోద్యమ కాలంలో గాంధీజీ చెప్పిన పునర్నిర్మాణ కార్యక్రమం ఆధారంగా ఇవి వచ్చాయి.</span><br/><em class="en" lang="en">Based on Gandhi's programme of reconstruction during the national movement.</em></div><div class="fact"><span lang="te">ప్రకరణ 40: గ్రామ పంచాయతీలను ఏర్పాటు చేసి, స్వయంపాలన యూనిట్లుగా పనిచేసే అధికారాలు ఇవ్వాలి.</span><br/><em class="en" lang="en">Art 40: organise village panchayats and give them powers to function as units of self-government.</em></div><div class="fact"><span lang="te">ప్రకరణ 43: గ్రామాల్లో వ్యక్తిగతంగా లేదా సహకార పద్ధతిలో కుటీర పరిశ్రమలను ప్రోత్సహించాలి.</span><br/><em class="en" lang="en">Art 43: promote cottage industries on individual or co-operative basis in rural areas.</em></div><div class="fact"><span lang="te">ప్రకరణ 43B: సహకార సంఘాల స్వచ్ఛంద ఏర్పాటు, స్వయంప్రతిపత్తి, ప్రజాస్వామ్య నియంత్రణ, వృత్తిపరమైన నిర్వహణ (97వ సవరణ, 2011).</span><br/><em class="en" lang="en">Art 43B: voluntary formation, autonomous functioning, democratic control and professional management of co-operative societies (97th Amdt, 2011).</em></div><div class="fact"><span lang="te">ప్రకరణ 46: ఎస్సీ, ఎస్టీ, ఇతర బలహీన వర్గాల విద్యా, ఆర్థిక ప్రయోజనాలు పెంచాలి; సామాజిక అన్యాయం, దోపిడీ నుంచి కాపాడాలి.</span><br/><em class="en" lang="en">Art 46: promote educational and economic interests of SCs, STs and other weaker sections; protect them from social injustice and exploitation.</em></div><div class="fact"><span lang="te">ప్రకరణ 47: ఆరోగ్యానికి హాని చేసే మద్యం, మాదక ద్రవ్యాల వాడకాన్ని నిషేధించాలి — వైద్య అవసరాలకు తప్ప.</span><br/><em class="en" lang="en">Art 47: prohibit intoxicating drinks and drugs injurious to health, except for medicinal purposes.</em></div><div class="fact"><span lang="te">ప్రకరణ 48: ఆవులు, దూడలు, ఇతర పాడి, బండి లాగే పశువుల వధను నిషేధించి, వాటి జాతులను మెరుగుపరచాలి.</span><br/><em class="en" lang="en">Art 48: prohibit slaughter of cows, calves and other milch and draught cattle and improve their breeds.</em></div></div>
+
+</div>
+<div>
+
+
+</div>
+</div>
+</div><!-- /body -->
+</div><!-- /page1 -->
+<!-- ═══════════════════════════════ PAGE 2 ═══════════════════════════════ -->
+<div class="page">
+<div class="hdr">
+<div class="hdr-left">
+<h1>రాజ్య నిర్దేశక సూత్రాలు – భాగం 2<br/><span style="font-size:15px;font-weight:600">DPSP – Part 2 · FR Conflict · Cases · Saving Clauses</span></h1>
+<div class="sub">అధ్యాయం 9 | Chapter 9 · Articles 36–51 · Part IV</div>
+</div>
+<div class="hdr-right">
+<div class="tag">లక్ష్మీకాంత్ ఇండియన్ పాలిటీ</div><br/>
+<div class="count">47 MCQs · 9 PYQs / Articles 36–51 · Part IV</div>
+</div>
+</div>
+<div class="body">
+<!-- Liberal-Intellectual DPSPs -->
+<div class="sh">ఉదారవాద-మేధో నిర్దేశక సూత్రాలు · Liberal-Intellectual DPSPs</div>
+<div class="art-grid">
+<div class="ag-cell l">
+<span class="an">Art 44</span><br/>
+        ఏకరీతి పౌర స్మృతి<br/>
+<em>Uniform Civil Code</em><br/>
+<span style="font-size:12px;color:#c62828">⭐ APPSC PYQ</span>
+</div>
+<div class="ag-cell l">
+<span class="an">Art 45</span><br/>
+<b>మూలంలో (Before 86th):</b> 14 సంవత్సరాల లోపు ఉచిత విద్య<br/>
+<b>ఇప్పుడు:</b> 6 సంవత్సరాల లోపు బాల్య సంరక్షణ<br/>
+<em>Now: Early childhood care for children below 6</em>
+</div>
+<div class="ag-cell l">
+<span class="an">Art 48A</span><br/>
+        పర్యావరణ పరిరక్షణ + అటవీ సంరక్షణ<br/>
+<em>Protect environment + Safeguard forests &amp; wildlife</em><br/>
+<span style="font-size:12px;color:#1565c0">↳ 42వ సవరణ 1976</span>
+</div>
+<div class="ag-cell l">
+<span class="an">Art 49</span><br/>
+        జాతీయ ప్రాముఖ్యం గల స్మారక చిహ్నాల రక్షణ<br/>
+<em>Protection of monuments of national importance</em>
+</div>
+<div class="ag-cell l">
+<span class="an">Art 50</span><br/>
+        న్యాయవ్యవస్థ–కార్యనిర్వాహక వేర్పాటు<br/>
+<em>Separation of Judiciary from Executive</em><br/>
+<span style="font-size:12px">Public services లో / In public services</span>
+</div>
+<div class="ag-cell l">
+<span class="an">Art 51</span><br/>
+        అంతర్జాతీయ శాంతి + భద్రత; అంతర్జాతీయ చట్టాల పట్ల గౌరవం<br/>
+<em>International peace &amp; security; respect for international law</em>
+</div>
+</div>
+<!-- FR vs DPSP Conflict Timeline -->
+<div class="sh">FR మరియు DPSP వైరుధ్య చరిత్ర · FR–DPSP Conflict Timeline</div>
+<div class="timeline">
+<div class="tl-row">
+<div class="tl-year">1951<br/>Champakam</div>
+<div class="tl-txt"><strong>రాష్ట్రం of మద్రాస్ v. చంపకం దొరైరాజన్:</strong> FR vs DPSP వైరుధ్యంలో <strong>FR గెలుస్తుంది</strong>. మత ఆధారిత సీట్ల కేటాయింపు Art 29(2) ఉల్లంఘన.<br/><em>FR prevails over DPSP. Religion-based seat allocation violates Art 29(2).</em></div>
+</div>
+<div class="tl-row">
+<div class="tl-year">1951<br/>1st Amdt</div>
+<div class="tl-txt"><strong>1వ రాజ్యాంగ సవరణ:</strong> <strong>Art 15(4)</strong> జోడించింది — SC/ST/OBC కోసం ప్రత్యేక నిబంధనలు అనుమతించింది.<br/><em>1st Amendment added Art 15(4) permitting special provisions for SC/ST and backward classes.</em></div>
+</div>
+<div class="tl-row">
+<div class="tl-year">1967<br/>Golak Nath</div>
+<div class="tl-txt"><strong>గోలక్‌నాథ్ కేసు:</strong> పార్లమెంటుకు <strong>మూల హక్కులు సవరించే అధికారం లేదు</strong>.<br/><em>Parliament has no power to amend Fundamental Rights.</em></div>
+</div>
+<div class="tl-row">
+<div class="tl-year">1971<br/>24th Amdt</div>
+<div class="tl-txt"><strong>24వ సవరణ:</strong> గోలక్‌నాథ్ తీర్పు రద్దు — <strong>Art 13(4) + 368(3)</strong> జోడించి FR లతో సహా రాజ్యాంగంలో ఏ భాగాన్నైనా సవరించే అధికారం నిర్ధారించింది.<br/><em>24th Amdt overruled Golak Nath; Parliament can amend any part including FRs.</em></div>
+</div>
+<div class="tl-row">
+<div class="tl-year">1971<br/>25th Amdt</div>
+<div class="tl-txt"><strong>25వ సవరణ – Art 31C జోడించింది:</strong> Art 39(b) &amp; 39(c) అమలు చేసే చట్టాలు <strong>Art 14 &amp; 19</strong> ఆధారంగా సవాలు చేయలేవు.<br/><em>25th Amdt inserted Art 31C: laws implementing Arts 39(b)&amp;(c) safe from challenge under Arts 14&amp;19.</em></div>
+</div>
+<div class="tl-row">
+<div class="tl-year">1973<br/>Kesavananda</div>
+<div class="tl-txt"><strong>కేశవానంద భారతి:</strong> <strong>మూల నిర్మాణ సిద్ధాంతం</strong> — పార్లమెంటు FR లను సవరించవచ్చు కానీ మూల నిర్మాణాన్ని నాశనం చేయలేదు. FR + DPSP రెండూ మూల నిర్మాణంలో భాగం.<br/><em>Basic Structure Doctrine — Parliament can amend FRs but not destroy Basic Structure.</em></div>
+</div>
+<div class="tl-row">
+<div class="tl-year">1976<br/>42nd Amdt</div>
+<div class="tl-txt"><strong>42వ సవరణ – Art 31C విస్తరణ:</strong> <strong>అన్ని DPSPs</strong> అమలు చేసే చట్టాలు Art 14 &amp; 19 నుండి రక్షింపబడతాయి (కానీ తర్వాత రద్దు).<br/><em>42nd Amdt extended Art 31C to all DPSPs — later struck down.</em></div>
+</div>
+<div class="tl-row">
+<div class="tl-year">1980<br/>Minerva Mills</div>
+<div class="tl-txt"><strong>మినర్వా మిల్స్:</strong> 42వ సవరణ ద్వారా అన్ని DPSPs కు ఇచ్చిన Art 31C విస్తరణ <strong>రాజ్యాంగ విరుద్ధం</strong>. Art 31C మళ్ళీ Art 39(b)&amp;(c) కు మాత్రమే పరిమితం.<br/><em>Extension of Art 31C to all DPSPs struck down. Art 31C restored to original scope.</em></div>
+</div>
+<div class="tl-row">
+<div class="tl-year">2007<br/>IR Coelho</div>
+<div class="tl-txt"><strong>I.R. కోయెల్హో (9 న్యాయమూర్తులు):</strong> <strong>24 ఏప్రిల్ 1973</strong> తర్వాత 9వ షెడ్యూల్‌కు జోడించిన చట్టాలు మూల నిర్మాణ సిద్ధాంతం ఆధారంగా న్యాయ సమీక్షకు లోబడతాయి.<br/><em>Laws added to 9th Schedule after April 24, 1973 subject to judicial review on Basic Structure grounds.</em></div>
+</div>
+</div>
+<!-- Saving Clauses -->
+<div class="sh">రక్షక ఖండాలు · Saving Clauses</div>
+<div class="saving-grid">
+<div class="sv-card" style="background:#e8f5e9;border:1.5px solid #a5d6a7">
+<h4 style="color:#2e7d32">అనుచ్ఛేద 31A / Article 31A</h4>
+<p>భూ సంస్కరణ, ఎస్టేట్ రద్దు, జమీందారీ రద్దు చట్టాలకు Art 14 &amp; 19 ఆధారంగా న్యాయ సవాల్ నుండి రక్షణ</p>
+<p><em>Saves land reform laws from challenge under Arts 14 &amp; 19</em></p>
+<span class="note" style="background:#c8e6c9">↳ 1వ సవరణ 1951 / 1st Amdt 1951</span>
+</div>
+<div class="sv-card" style="background:#e3f2fd;border:1.5px solid #90caf9">
+<h4 style="color:#1565c0">అనుచ్ఛేద 31B / Article 31B</h4>
+<p>9వ షెడ్యూల్‌లో జాబితా చేసిన చట్టాలు న్యాయ సమీక్ష నుండి రక్షింపబడతాయి</p>
+<p><em>Saves laws in 9th Schedule from judicial review</em></p>
+<p style="font-size:12.5px;margin-top:4px">⚠ 1973 తర్వాత జోడించిన చట్టాలు: IR Coelho (2007) ప్రకారం న్యాయ సమీక్ష<br/><em>Post-1973 additions: subject to judicial review</em></p>
+<span class="note" style="background:#bbdefb">↳ 1వ సవరణ 1951 / 1st Amdt 1951</span>
+</div>
+<div class="sv-card" style="background:#fff8e1;border:1.5px solid #ffe082">
+<h4 style="color:#f57f17">అనుచ్ఛేద 31C / Article 31C</h4>
+<p>Art 39(b) &amp; 39(c) అమలు చేసే చట్టాలకు Art 14 &amp; 19 ఆధారంగా సవాల్ నుండి రక్షణ</p>
+<p><em>Saves laws implementing Arts 39(b)&amp;(c) from challenge under Arts 14&amp;19</em></p>
+<p style="font-size:12.5px;margin-top:4px">42వ సవరణ (1976): అన్ని DPSPs కు విస్తరించింది → మినర్వా మిల్స్ (1980): రద్దు<br/><em>42nd Amdt extended to all DPSPs → Minerva Mills: struck down</em></p>
+<span class="note" style="background:#fff9c4">↳ 25వ సవరణ 1971 / 25th Amdt 1971</span>
+</div>
+</div>
+<!-- Quick Revision Pills -->
+<div class="sh">త్వరిత పునరావలోకన · Quick Revision</div>
+<div class="pills">
+<div class="pill">భాగం IV = Art 36–51 / <strong>Part IV = Art 36–51</strong></div>
+<div class="pill">స్వీకరించింది = <strong>ఐర్లాండ్ రాజ్యాంగం 1937 / Irish Constitution 1937</strong></div>
+<div class="pill">Art 39A → <strong>42వ సవరణ 1976</strong> / 42nd Amdt 1976</div>
+<div class="pill">Art 43A → <strong>42వ సవరణ 1976</strong> / 42nd Amdt 1976</div>
+<div class="pill">Art 43B → <strong>97వ సవరణ 2011</strong> / 97th Amdt 2011</div>
+<div class="pill">Art 48A → <strong>42వ సవరణ 1976</strong> / 42nd Amdt 1976</div>
+<div class="pill">Art 45 మార్పు → <strong>86వ సవరణ 2002</strong> / 86th Amdt 2002</div>
+<div class="pill">Art 31A &amp; 31B → <strong>1వ సవరణ 1951</strong> / 1st Amdt 1951</div>
+<div class="pill">Art 31C → <strong>25వ సవరణ 1971</strong> / 25th Amdt 1971</div>
+<div class="pill">UCC = <strong>Art 44</strong> · Village Panchayats = <strong>Art 40</strong> · Separation = <strong>Art 50</strong></div>
+<div class="pill">Int'l Peace = <strong>Art 51</strong> · Free Legal Aid = <strong>Art 39A</strong></div>
+<div class="pill">Champakam 1951 → <strong>FR &gt; DPSP</strong> in conflict</div>
+<div class="pill">Minerva Mills 1980 → <strong>FR + DPSP balance</strong> = Basic Structure</div>
+<div class="pill">గ్రాన్‌విల్ ఆస్టిన్ → FR + DPSP = <strong>"Conscience of Constitution"</strong></div>
+<div class="pill">B.R. అంబేడ్కర్ → DPSP = <strong>రాజకీయ → సాంఘిక-ఆర్థిక ప్రజాస్వామ్యం</strong></div>
+</div>
+<!-- Comparison Table -->
+<div class="sh">FR vs DPSP తులనాత్మక పట్టిక · Comparison Table</div>
+<div class="card ncard" id="CC-6.5-08"><div class="ch">ప్రాథమిక హక్కులు vs ఆదేశిక సూత్రాలు · Fundamental Rights vs Directive Principles</div><div class="secl">Sanction Behind DPSP — Table 9.1 Distinction</div><div class="fact"><span lang="te">ప్రాథమిక హక్కులు ప్రతికూలమైనవి — రాజ్యం ఏం చేయకూడదో చెబుతాయి; ఆదేశిక సూత్రాలు సానుకూలమైనవి — రాజ్యం ఏం చేయాలో చెబుతాయి.</span><br/><em class="en" lang="en">FR are negative (prohibit the State); DPSP are positive (require the State to act).</em></div><div class="fact"><span lang="te">ప్రాథమిక హక్కులను కోర్టుల ద్వారా అమలు చేయించవచ్చు; ఆదేశిక సూత్రాలను చేయించలేం.</span><br/><em class="en" lang="en">FR are justiciable; DPSP are non-justiciable.</em></div><div class="fact"><span lang="te">ప్రాథమిక హక్కుల లక్ష్యం రాజకీయ ప్రజాస్వామ్యం; ఆదేశిక సూత్రాలది సామాజిక-ఆర్థిక ప్రజాస్వామ్యం.</span><br/><em class="en" lang="en">FR aim at political democracy; DPSP at social and economic democracy.</em></div><div class="fact"><span lang="te">ప్రాథమిక హక్కులకు చట్టపరమైన రక్షణ ఉంది; ఆదేశిక సూత్రాలకు నైతిక, రాజకీయ బలం మాత్రమే.</span><br/><em class="en" lang="en">FR have legal sanctions; DPSP have moral and political sanctions.</em></div><div class="fact"><span lang="te">ప్రాథమిక హక్కులు వ్యక్తి సంక్షేమం కోసం; ఆదేశిక సూత్రాలు సమాజ సంక్షేమం కోసం.</span><br/><em class="en" lang="en">FR promote individual welfare (individualistic); DPSP promote community welfare (socialistic).</em></div><div class="fact"><span lang="te">ప్రాథమిక హక్కులు అమల్లోకి రావడానికి చట్టం అక్కర్లేదు; ఆదేశిక సూత్రాల అమలుకు చట్టం కావాలి.</span><br/><em class="en" lang="en">FR need no legislation to operate; DPSP need legislation to be implemented.</em></div><div class="fact"><span lang="te">ప్రాథమిక హక్కులను ఉల్లంఘించే చట్టాన్ని కోర్టులు రద్దు చేస్తాయి (ప్రకరణ 13); ఆదేశిక సూత్రాన్ని ఉల్లంఘించిందని చట్టాన్ని రద్దు చేయలేవు, కానీ ఆదేశిక సూత్రాన్ని అమలు చేస్తోందని చట్టాన్ని సమర్థించవచ్చు.</span><br/><em class="en" lang="en">Courts must strike down a law violating FR (Art 13); they cannot strike down a law for violating DPSP, but may uphold a law as giving effect to a DPSP.</em></div><div class="fact"><span lang="te">రెండింటినీ ప్రకరణ 368 కింద సవరించవచ్చు; ఏ సవరణ అయినా మౌలిక నిర్మాణ పరిమితికి లోబడే (కేశవానంద, 1973).</span><br/><em class="en" lang="en">Both can be amended under Art 368; any amendment is subject to the basic-structure limit (Kesavananda, 1973).</em></div></div>
+</div><!-- /body -->
+</div><!-- /page2 -->
+</div><div class="page"><div class="sh">➕ Added from Laxmikanth, GBK &amp; current affairs / అదనపు అంశాలు</div><div class="g2"><div class="card ncard" id="CC-6.5-01"><div class="ch">ఆదేశిక సూత్రాలు: అర్థం, మూలం, స్వభావం · DPSP: meaning, origin and nature</div><div class="secl">Meaning, Origin &amp; Nature of DPSP</div><div class="fact"><span lang="te">ఆదేశిక సూత్రాలు భాగం IV లో, ప్రకరణ 36 నుంచి ప్రకరణ 51 వరకు ఉంటాయి.</span><br><em class="en" lang="en">DPSP are in Part IV, Articles 36 to 51.</em></div><div class="fact"><span lang="te">ఈ ఆలోచనను 1937 ఐరిష్ రాజ్యాంగం నుంచి తీసుకున్నాం; ఐర్లాండ్ దాన్ని స్పెయిన్ రాజ్యాంగం నుంచి తీసుకుంది.</span><br><em class="en" lang="en">Idea borrowed from the Irish Constitution of 1937, which itself copied it from the Spanish Constitution.</em></div><div class="fact"><span lang="te">అంబేడ్కర్ వీటిని రాజ్యాంగంలోని &#x27;నవీన లక్షణాలు&#x27; (novel features) అన్నారు — 4 నవంబర్ 1948 రాజ్యాంగ సభ ప్రసంగంలో.</span><br><em class="en" lang="en">Ambedkar called them &#x27;novel features&#x27; of the Constitution (Constituent Assembly speech, 4 Nov 1948).</em></div><div class="fact"><span lang="te">ఇవి 1935 భారత ప్రభుత్వ చట్టంలోని &#x27;Instrument of Instructions&#x27; లాంటివే; తేడా ఏమిటంటే ఇప్పుడు ఆదేశాలు స్వతంత్ర భారత శాసన, కార్యనిర్వాహక వ్యవస్థలకు.</span><br><em class="en" lang="en">They resemble the &#x27;Instrument of Instructions&#x27; of the Government of India Act, 1935 — now addressed to the legislature and executive of free India.</em></div><div class="fact"><span lang="te">ప్రకరణ 36: భాగం IV లో &#x27;రాజ్యం&#x27; అంటే భాగం III (ప్రకరణ 12) లో ఉన్న అర్థమే.</span><br><em class="en" lang="en">Art 36: &#x27;State&#x27; in Part IV has the same meaning as in Part III (Art 12).</em></div><div class="fact"><span lang="te">వీటి లక్ష్యం &#x27;సంక్షేమ రాజ్యం&#x27;, సామాజిక-ఆర్థిక ప్రజాస్వామ్యం; వలస పాలనలోని &#x27;పోలీసు రాజ్యం&#x27; కాదు.</span><br><em class="en" lang="en">They aim at a &#x27;welfare state&#x27; and economic and social democracy, not the colonial &#x27;police state&#x27;.</em></div><div class="fact"><span lang="te">ప్రకరణ 37: వీటిని కోర్టుల ద్వారా అమలు చేయించలేం, కానీ దేశ పాలనకు ఇవి &#x27;మౌలికమైనవి&#x27;; చట్టాలు చేసేటప్పుడు రాజ్యం వీటిని పాటించాలి.</span><br><em class="en" lang="en">Art 37: not enforceable by any court, yet &#x27;fundamental in the governance of the country&#x27;; the State must apply them in making laws.</em></div><div class="fact"><span lang="te">గ్రాన్‌విల్ ఆస్టిన్ ప్రాథమిక హక్కులు, ఆదేశిక సూత్రాలు రెండింటినీ కలిపి &#x27;రాజ్యాంగపు అంతరాత్మ&#x27; అన్నారు.</span><br><em class="en" lang="en">Granville Austin called FR and DPSP together the &#x27;Conscience of the Constitution&#x27;.</em></div></div><div class="card ncard" id="CC-6.5-06"><div class="ch">సవరణల ద్వారా చేర్చిన కొత్త ఆదేశిక సూత్రాలు · New DPSPs added by amendments</div><div class="secl">New Directive Principles Added by Amendments</div><div class="fact"><span lang="te">42వ సవరణ, 1976 (అత్యధికంగా నాలుగు): కొత్త ప్రకరణ 39(f), 39A, 43A, 48A.</span><br><em class="en" lang="en">42nd Amdt, 1976 (most — four): new Art 39(f), Art 39A, Art 43A, Art 48A.</em></div><div class="fact"><span lang="te">ప్రకరణ 39(f) ను 42వ సవరణ కొత్తగా చేర్చలేదు, పాత క్లాజు స్థానంలో కొత్తది పెట్టింది (substitution).</span><br><em class="en" lang="en">Art 39(f) was substituted (replaced) by the 42nd Amdt, not inserted as a new clause.</em></div><div class="fact"><span lang="te">44వ సవరణ, 1978: ప్రకరణ 38(2) చేర్చింది — ఆదాయం, హోదా, సౌకర్యాలు, అవకాశాల్లో అసమానతలు తగ్గించాలి.</span><br><em class="en" lang="en">44th Amdt, 1978: added Art 38(2) — minimise inequalities in income, status, facilities and opportunities.</em></div><div class="fact"><span lang="te">86వ సవరణ, 2002: ప్రకరణ 45 ను మార్చింది (6 ఏళ్ల లోపు సంరక్షణ); ప్రాథమిక విద్యను ప్రకరణ 21A కింద ప్రాథమిక హక్కుగా చేసింది; ప్రాథమిక విధి 51A(k) చేర్చింది. భాగం IV నుంచి ఏ ప్రకరణనూ తొలగించలేదు.</span><br><em class="en" lang="en">86th Amdt, 2002: substituted Art 45 (early childhood care under 6); made elementary education an FR under Art 21A; added FD Art 51A(k). No Part IV article has been omitted.</em></div><div class="fact"><span lang="te">97వ సవరణ, 2011: సహకార సంఘాలపై ప్రకరణ 43B చేర్చింది (భాగం IXB కూడా చేర్చింది).</span><br><em class="en" lang="en">97th Amdt, 2011: added Art 43B on co-operative societies (also inserted Part IXB).</em></div><div class="fact"><span lang="te">అమల్లోకి వచ్చిన క్రమం: ప్రకరణ 39A (1977), 38(2) (1979), కొత్త 45 (2010), 43B (2012).</span><br><em class="en" lang="en">Commencement order: Art 39A (1977), Art 38(2) (1979), new Art 45 (2010), Art 43B (2012).</em></div></div><div class="card ncard" id="CC-6.5-07"><div class="ch">ఆదేశిక సూత్రాల వెనుక శక్తి, అమలు చేయించలేని కారణాలు · Sanction behind DPSP and why non-justiciable</div><div class="secl">Sanction Behind the Directive Principles</div><div class="fact"><span lang="te">రాజ్యాంగ సలహాదారు సర్ బి.ఎన్. రావు హక్కులను అమలు చేయించగలవి (భాగం III), చేయించలేనివి (భాగం IV) గా విభజించాలని సూచించారు; ముసాయిదా కమిటీ ఒప్పుకుంది.</span><br><em class="en" lang="en">Sir B.N. Rau (Constitutional Advisor) suggested dividing rights into justiciable (Part III) and non-justiciable (Part IV); the Drafting Committee accepted it.</em></div><div class="fact"><span lang="te">వీటి వెనుక ఉన్నది నైతిక, రాజకీయ శక్తి — ప్రజాభిప్రాయం, ఎన్నికలు; కోర్టులు కాదు.</span><br><em class="en" lang="en">Sanction is moral and political — public opinion and elections, not courts.</em></div><div class="fact"><span lang="te">అంబేడ్కర్: ప్రజల ఓట్లతో వచ్చిన ప్రభుత్వం వీటిని పట్టించుకోకపోతే ఎన్నికల్లో జవాబు చెప్పాల్సిందే.</span><br><em class="en" lang="en">Ambedkar: a government resting on popular vote must answer for neglecting them at election time.</em></div><div class="fact"><span lang="te">అల్లాడి కృష్ణస్వామి అయ్యర్: ప్రజలకు బాధ్యత వహించే ఏ మంత్రివర్గమూ భాగం IV ను తేలికగా వదిలేయలేదు.</span><br><em class="en" lang="en">Alladi Krishnaswamy Ayyar: no ministry responsible to the people can light-heartedly ignore Part IV.</em></div><div class="fact"><span lang="te">అమలు చేయించలేనివిగా ఉంచడానికి మూడు కారణాలు: ఆర్థిక వనరుల కొరత; విస్తారమైన వైవిధ్యం, వెనుకబాటుతనం; ఏది ఎప్పుడు ఎలా అమలు చేయాలో నిర్ణయించుకునే స్వేచ్ఛ కొత్త రాజ్యానికి అవసరం.</span><br><em class="en" lang="en">Three reasons for non-justiciability: lack of financial resources; vast diversity and backwardness; new State needed freedom to decide order, time and manner of implementation.</em></div><div class="fact"><span lang="te">చారిత్రక నేపథ్యం (GBK): నెహ్రూ నివేదిక 1928, కరాచీ తీర్మానం 1931, సప్రూ కమిటీ 1945.</span><br><em class="en" lang="en">Historical roots (GBK): Nehru Report 1928, Karachi Resolution 1931, Sapru Committee 1945.</em></div></div><div class="card ncard" id="CC-6.5-09"><div class="ch">ఆదేశిక సూత్రాలపై విమర్శలు · Criticism of Directive Principles</div><div class="secl">Criticism and Utility of Directive Principles</div><div class="fact"><span lang="te">నాలుగు విమర్శలు: చట్టబలం లేకపోవడం, తార్కిక క్రమం లేకపోవడం, సంప్రదాయవాదం, రాజ్యాంగ సంఘర్షణ.</span><br><em class="en" lang="en">Four grounds: no legal force, illogical arrangement, conservative, constitutional conflict.</em></div><div class="fact"><span lang="te">కె.టి. షా: &#x27;పవిత్రమైన అనవసరాలు&#x27; — బ్యాంకు వీలున్నప్పుడు చెల్లించే చెక్కు లాంటివి.</span><br><em class="en" lang="en">K.T. Shah: &#x27;pious superfluities&#x27; — a cheque on a bank payable at the bank&#x27;s convenience.</em></div><div class="fact"><span lang="te">నసీరుద్దీన్: జనవరి 2నే విరిగిపోయే కొత్త సంవత్సర తీర్మానాల్లాంటివి; టి.టి. కృష్ణమాచారి: &#x27;భావోద్వేగాల చెత్తబుట్ట&#x27;.</span><br><em class="en" lang="en">Nasiruddin: like New Year resolutions broken on 2 January; T.T. Krishnamachari: &#x27;a veritable dustbin of sentiments&#x27;.</em></div><div class="fact"><span lang="te">కె.సి. వేర్: &#x27;లక్ష్యాలు, ఆకాంక్షల ప్రణాళిక&#x27;; ఐవర్ జెన్నింగ్స్: &#x27;పవిత్రమైన ఆకాంక్షలు&#x27;.</span><br><em class="en" lang="en">K.C. Wheare: &#x27;manifesto of aims and aspirations&#x27;; Ivor Jennings: &#x27;pious aspirations&#x27;.</em></div><div class="fact"><span lang="te">ఎన్. శ్రీనివాసన్: సరిగ్గా వర్గీకరించలేదు, తార్కికంగా అమర్చలేదు.</span><br><em class="en" lang="en">N. Srinivasan: neither properly classified nor logically arranged.</em></div><div class="fact"><span lang="te">జెన్నింగ్స్: 19వ శతాబ్దపు ఇంగ్లండ్ తత్వం ఆధారంగా ఉన్నాయి — &#x27;సోషలిజం లేని ఫేబియన్ సోషలిజం&#x27;.</span><br><em class="en" lang="en">Jennings: based on 19th-century English philosophy — &#x27;Fabian Socialism without the socialism&#x27;.</em></div><div class="fact"><span lang="te">కె. సంతానం: కేంద్రం-రాష్ట్రాలు, రాష్ట్రపతి-ప్రధాని, గవర్నర్-ముఖ్యమంత్రి మధ్య సంఘర్షణలకు దారితీయవచ్చు.</span><br><em class="en" lang="en">K. Santhanam: conflicts between Centre-States, President-PM, Governor-CM.</em></div></div><div class="card ncard" id="CC-6.5-10"><div class="ch">ఆదేశిక సూత్రాల ఉపయోగం · Utility of Directive Principles</div><div class="secl">Criticism and Utility of Directive Principles</div><div class="fact"><span lang="te">ఎల్.ఎం. సింఘ్వీ: &#x27;జీవం పోసే నిబంధనలు&#x27;; ఎం.సి. చాగ్లా: పూర్తిగా అమలైతే భారత్ &#x27;భూతల స్వర్గం&#x27; అవుతుంది.</span><br><em class="en" lang="en">L.M. Singhvi: &#x27;life giving provisions&#x27;; M.C. Chagla: full implementation would make India &#x27;a heaven on earth&#x27;.</em></div><div class="fact"><span lang="te">అంబేడ్కర్: ఇవి రాజకీయ ప్రజాస్వామ్యంతో పాటు ఆర్థిక ప్రజాస్వామ్యాన్ని నెలకొల్పుతాయి.</span><br><em class="en" lang="en">Ambedkar: they establish economic democracy, distinct from political democracy.</em></div><div class="fact"><span lang="te">బి.ఎన్. రావు: అధికారులకు నైతిక సూత్రాలు; కనీసం &#x27;విద్యా విలువ&#x27; అయినా ఉంది.</span><br><em class="en" lang="en">B.N. Rau: moral precepts for the authorities with at least an &#x27;educative value&#x27;.</em></div><div class="fact"><span lang="te">ఎం.సి. సెతల్వాడ్ చెప్పిన నాలుగు ఉపయోగాలు: ఆదేశాల సాధనం; కోర్టులకు దారిదీపం; రాజ్య చర్యలన్నింటికీ నేపథ్యం; ప్రవేశికను విస్తరించడం.</span><br><em class="en" lang="en">M.C. Setalvad&#x27;s four uses: instrument of instructions; beacon-light to courts; background to all State action; amplify the Preamble.</em></div><div class="fact"><span lang="te">విధాన కొనసాగింపు ఇస్తాయి, ప్రాథమిక హక్కులకు తోడవుతాయి, వాటిని అనుభవించే పరిస్థితులు కల్పిస్తాయి, ప్రభుత్వ పనితీరును ప్రతిపక్షం, ప్రజలు అంచనా వేయడానికి కొలమానం.</span><br><em class="en" lang="en">They give policy continuity, supplement FR, help enjoy FR, enable the Opposition and citizens to judge government performance.</em></div><div class="fact"><span lang="te">కోర్టుల్లో పరోక్ష ఉపయోగం: ఆదేశిక సూత్రాన్ని అమలు చేసే చట్టాన్ని ప్రకరణ 14, 19 కింద &#x27;సహేతుకమైనది&#x27;గా పరిగణించవచ్చు.</span><br><em class="en" lang="en">Indirect judicial use: a law giving effect to a DPSP may be treated as &#x27;reasonable&#x27; under Art 14 or Art 19.</em></div></div><div class="card ncard" id="CC-6.5-11"><div class="ch">ప్రాథమిక హక్కులు-ఆదేశిక సూత్రాల సంఘర్షణ: చంపకం నుంచి 25వ సవరణ · FR-DPSP conflict: Champakam to 25th Amendment</div><div class="secl">Conflict Between FR &amp; DPSP — Round 1 &amp; 2</div><div class="fact"><span lang="te">మద్రాసు రాష్ట్రం vs చంపకం దొరైరాజన్ (1951): సంఘర్షణ వస్తే ప్రాథమిక హక్కులదే పైచేయి; కానీ పార్లమెంటు ప్రాథమిక హక్కులను సవరించవచ్చు.</span><br><em class="en" lang="en">State of Madras v Champakam Dorairajan (1951): FR prevail over DPSP; but FR can be amended by Parliament.</em></div><div class="fact"><span lang="te">అందుకే ఆదేశిక సూత్రాల అమలు కోసం పార్లమెంటు 1వ (1951), 4వ (1955), 17వ (1964) సవరణలు చేసింది.</span><br><em class="en" lang="en">So Parliament passed the 1st (1951), 4th (1955) and 17th (1964) Amendments to implement Directives.</em></div><div class="fact"><span lang="te">గోలక్‌నాథ్ vs పంజాబ్ (1967): ప్రాథమిక హక్కులు &#x27;పవిత్రమైనవి&#x27;; ఆదేశిక సూత్రాల కోసం కూడా పార్లమెంటు వాటిని తగ్గించలేదు.</span><br><em class="en" lang="en">Golaknath v State of Punjab (1967): FR are &#x27;sacrosanct&#x27;; Parliament cannot take away or abridge them even to implement DPSP.</em></div><div class="fact"><span lang="te">24వ సవరణ (1971): రాజ్యాంగ సవరణ ద్వారా ఏ ప్రాథమిక హక్కునైనా తగ్గించే అధికారం పార్లమెంటుకు ఉందని ప్రకటించింది.</span><br><em class="en" lang="en">24th Amdt (1971): Parliament can abridge or take away any FR by a constitutional amendment.</em></div><div class="fact"><span lang="te">25వ సవరణ (1971) ప్రకరణ 31C చేర్చింది: (1) ప్రకరణ 39(b), (c) అమలు చట్టాలు ప్రకరణ 14, 19, 31 ఉల్లంఘన కారణంగా చెల్లకుండా పోవు; (2) అలా ప్రకటించిన చట్టాన్ని కోర్టులో ప్రశ్నించరాదు.</span><br><em class="en" lang="en">25th Amdt (1971) inserted Art 31C: (1) laws implementing Art 39(b)/(c) not void for violating Art 14, 19 or 31; (2) such a declared law cannot be questioned in court.</em></div><div class="fact"><span lang="te">ప్రకరణ 31A లాగే, రాష్ట్ర చట్టానికి ప్రకరణ 31C రక్షణ రావాలంటే రాష్ట్రపతి ఆమోదం తప్పనిసరి.</span><br><em class="en" lang="en">Like Art 31A, Art 31C protects a State law only if it receives the President&#x27;s assent.</em></div></div><div class="card ncard" id="CC-6.5-12"><div class="ch">కేశవానంద, మినర్వా మిల్స్, ప్రస్తుత స్థితి · Kesavananda, Minerva Mills and present position</div><div class="secl">Conflict Between FR &amp; DPSP — Round 3 &amp; 4, Present Position</div><div class="fact"><span lang="te">కేశవానంద భారతి (1973): న్యాయ సమీక్షను అడ్డుకునే ప్రకరణ 31C రెండో భాగాన్ని కొట్టివేసింది — న్యాయ సమీక్ష మౌలిక లక్షణం; మొదటి భాగాన్ని సమర్థించింది.</span><br><em class="en" lang="en">Kesavananda Bharati (1973): struck down the second part of Art 31C (bar on judicial review), since judicial review is a basic feature; upheld the first part.</em></div><div class="fact"><span lang="te">42వ సవరణ (1976) ప్రకరణ 31C మొదటి భాగాన్ని ఏ ఆదేశిక సూత్రాన్ని అమలు చేసే చట్టానికైనా వర్తింపజేసింది — ప్రకరణ 14, 19, 31 పై ఆదేశిక సూత్రాలకు ఆధిక్యం ఇచ్చింది.</span><br><em class="en" lang="en">42nd Amdt (1976) extended Art 31C&#x27;s first part to laws implementing any Directive Principle — giving DPSP primacy over Art 14, 19, 31.</em></div><div class="fact"><span lang="te">మినర్వా మిల్స్ (1980): ఆ విస్తరణను కొట్టివేసింది; ప్రాథమిక హక్కులు, ఆదేశిక సూత్రాలు &#x27;రథానికి రెండు చక్రాలు&#x27;; వాటి మధ్య సమతుల్యం మౌలిక నిర్మాణంలో భాగం.</span><br><em class="en" lang="en">Minerva Mills (1980): struck down this extension; FR and DPSP are &#x27;two wheels of a chariot&#x27;; their harmony is part of the basic structure.</em></div><div class="fact"><span lang="te">44వ సవరణ (1978) ప్రకరణ 31C రక్షణ నుంచి ప్రకరణ 31 ని తొలగించింది; ఇప్పుడు 31C కేవలం ప్రకరణ 14, 19 ఉల్లంఘనల నుంచే రక్షిస్తుంది (20 జూన్ 1979 నుంచి).</span><br><em class="en" lang="en">44th Amdt (1978) removed Art 31 (property) from Art 31C&#x27;s shield; Art 31C now protects only against Art 14 and 19 (w.e.f. 20 June 1979).</em></div><div class="fact"><span lang="te">ప్రస్తుత స్థితి: సాధారణంగా ప్రాథమిక హక్కులదే పైచేయి; కానీ ప్రకరణ 39(b), (c) అమలు చట్టాల ముందు ప్రకరణ 14, 19 తగ్గుతాయి.</span><br><em class="en" lang="en">Present position: FR are generally supreme, but Art 14 and 19 yield to laws implementing Art 39(b)/(c).</em></div><div class="fact"><span lang="te">మౌలిక నిర్మాణానికి భంగం కలగనంత వరకు ఆదేశిక సూత్రాల అమలు కోసం పార్లమెంటు ప్రాథమిక హక్కులను సవరించవచ్చు.</span><br><em class="en" lang="en">Parliament may amend FR to implement DPSP, provided the basic structure is not damaged.</em></div></div><div class="card ncard" id="CC-6.5-13"><div class="ch">ప్రకరణ 39(b), 31C: ప్రాపర్టీ ఓనర్స్ అసోసియేషన్ కేసు (2024) · Art 39(b) and Art 31C: Property Owners Association (2024)</div><div class="secl">Conflict Between FR &amp; DPSP — Present Position (post-edition update)</div><div class="fact"><span lang="te">ప్రాపర్టీ ఓనర్స్ అసోసియేషన్ vs మహారాష్ట్ర — 9 మంది న్యాయమూర్తుల ధర్మాసనం, 5 నవంబర్ 2024 తీర్పు (సీజేఐ డి.వై. చంద్రచూడ్).</span><br><em class="en" lang="en">Property Owners Association v State of Maharashtra — 9-judge bench, decided 5 Nov 2024 (CJI D.Y. Chandrachud).</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">ప్రకరణ 31C (కేశవానందలో సమర్థించిన రూపం) ఇంకా రాజ్యాంగంలో ఉందని ఏకగ్రీవంగా చెప్పింది: మినర్వా మిల్స్‌లో 42వ సవరణ మార్పు కొట్టివేయడంతో పాత పాఠం తిరిగి అమల్లోకి వచ్చింది.</span><br><em class="en" lang="en">Unanimously held that Art 31C (as upheld in Kesavananda) survives: striking down the 42nd Amdt substitution in Minerva Mills revived the original text.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">సీజేఐ చంద్రచూడ్ 7 మంది న్యాయమూర్తుల తరఫున మెజారిటీ తీర్పు రాశారు: ప్రతి ప్రైవేటు ఆస్తీ ప్రకరణ 39(b) కింద &#x27;సమాజ భౌతిక వనరు&#x27; కాదు. జస్టిస్ నాగరత్న కూడా &#x27;సమాజ వనరుగా మారిన ప్రైవేటు ఆస్తే దీని కిందకు వస్తుంది&#x27; అన్నారు కాబట్టి వార్తల్లో దీన్ని 8:1 తీర్పు అంటారు.</span><br><em class="en" lang="en">Majority opinion by CJI Chandrachud for 7 judges (with Roy, Pardiwala, Misra, Bindal, S.C. Sharma, Masih JJ): not every privately owned resource is a &#x27;material resource of the community&#x27; under Art 39(b). Media call it 8:1, since Justice Nagarathna also agreed that private property qualifies only when it becomes a community resource.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">రంగనాథ రెడ్డి కేసు (1977) లో జస్టిస్ కృష్ణ అయ్యర్ మైనారిటీ అభిప్రాయాన్ని, దాన్ని అనుసరించిన సంజీవ్ కోక్ (1982) ను తిరస్కరించింది.</span><br><em class="en" lang="en">Rejected Justice Krishna Iyer&#x27;s minority view in Ranganatha Reddy (1977), later followed in Sanjeev Coke (1982).</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">జస్టిస్ నాగరత్న కొంత ఏకీభవించారు, కొంత విభేదించారు; ఆమె విభేదం ముఖ్యంగా జస్టిస్ కృష్ణ అయ్యర్‌పై మెజారిటీ చేసిన విమర్శ మీదే. జస్టిస్ సుధాంశు ధులియా ప్రకరణ 39(b) పై పూర్తిగా విభేదించారు: ఆయన దృష్టిలో ప్రతి ప్రైవేటు ఆస్తీ సమాజ వనరే. ప్రకరణ 31C విషయంలో మాత్రం ఇద్దరూ ఏకీభవించారు, కాబట్టి 31C మీద తీర్పు 9:0.</span><br><em class="en" lang="en">Justice Nagarathna partly concurred and partly dissented (her dissent was mainly on the majority&#x27;s criticism of Krishna Iyer J). Justice Sudhanshu Dhulia dissented on Art 39(b): all private property is a material resource. Both concurred on Art 31C, so the 31C holding was 9:0.</em> <em class="asof">as of 2026-11-09</em></div></div><div class="card ncard" id="CC-6.5-14"><div class="ch">ఆదేశిక సూత్రాల అమలు · Implementation of DPSP</div><div class="secl">Implementation of Directive Principles</div><div class="fact"><span lang="te">ప్రణాళికా సంఘం (1950) స్థానంలో నీతి ఆయోగ్ (2015) వచ్చింది.</span><br><em class="en" lang="en">Planning Commission (1950) replaced by NITI Aayog (2015).</em></div><div class="fact"><span lang="te">ప్రకరణ 39A: న్యాయ సేవల అధికార సంస్థల చట్టం, 1987 (9 నవంబర్ 1995 నుంచి అమల్లో) — ఉచిత న్యాయ సహాయం, లోక్ అదాలత్‌లు; వాటి తీర్పులపై అప్పీలు ఉండదు.</span><br><em class="en" lang="en">Art 39A: Legal Services Authorities Act, 1987 (in force 9 Nov 1995) — free legal aid and Lok Adalats, whose awards are binding with no appeal.</em></div><div class="fact"><span lang="te">వనరుల సమాన పంపిణీ: జీవిత బీమా జాతీయీకరణ (1956), 14 బ్యాంకులు (1969), సాధారణ బీమా (1971); రాజభరణాల రద్దు (1971).</span><br><em class="en" lang="en">Financial resources: nationalisation of life insurance (1956), 14 banks (1969), general insurance (1971); privy purses abolished (1971).</em></div><div class="fact"><span lang="te">ప్రకరణ 40: 73వ సవరణ (1992) పంచాయతీరాజ్‌కు రాజ్యాంగ హోదా ఇచ్చింది.</span><br><em class="en" lang="en">Art 40: 73rd Amdt (1992) gave Panchayati Raj constitutional status.</em></div><div class="fact"><span lang="te">ప్రకరణ 41/43: జాతీయ గ్రామీణ ఉపాధి హామీ చట్టం 2005 లో వచ్చింది; 2 ఫిబ్రవరి 2006 నుంచి 200 జిల్లాల్లో అమలు మొదలైంది.</span><br><em class="en" lang="en">Art 41/43: NREGA enacted 2005, implemented from 2 Feb 2006 in 200 districts.</em></div><div class="fact"><span lang="te">కార్మిక రంగం: 29 కేంద్ర చట్టాలను కలిపిన నాలుగు లేబర్ కోడ్‌లు 21 నవంబర్ 2025 నుంచి అమల్లోకి వచ్చాయి.</span><br><em class="en" lang="en">Labour: four Labour Codes (consolidating 29 central laws) brought into effect from 21 Nov 2025.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">ప్రకరణ 50: CrPC 1973 ద్వారా న్యాయ-కార్యనిర్వాహక విభజన; ప్రకరణ 48A: వన్యప్రాణి రక్షణ చట్టం 1972, అటవీ సంరక్షణ చట్టం 1980; బలహీన వర్గాలు: 103వ సవరణ (2019) ద్వారా EWS కు 10% రిజర్వేషన్.</span><br><em class="en" lang="en">Art 50: separation of judiciary via CrPC 1973; Art 48A: Wildlife (Protection) Act 1972, Forest (Conservation) Act 1980; weaker sections: 103rd Amdt (2019) 10% EWS reservation.</em></div></div><div class="card ncard" id="CC-6.5-15"><div class="ch">భాగం IV బయట ఉన్న ఆదేశాలు · Directives outside Part IV</div><div class="secl">Directives Outside Part IV</div><div class="fact"><span lang="te">ప్రకరణ 335 (భాగం XVI): పరిపాలనా సామర్థ్యానికి భంగం లేకుండా ఉద్యోగ నియామకాల్లో ఎస్సీ, ఎస్టీల హక్కులను పరిగణించాలి.</span><br><em class="en" lang="en">Art 335 (Part XVI): claims of SCs and STs in services, consistent with efficiency of administration.</em></div><div class="fact"><span lang="te">ప్రకరణ 350A (భాగం XVII): భాషా మైనారిటీ పిల్లలకు ప్రాథమిక దశలో మాతృభాషలో బోధన; దీనిపై రాష్ట్రపతి రాష్ట్రాలకు ఆదేశాలు ఇవ్వవచ్చు.</span><br><em class="en" lang="en">Art 350A (Part XVII): instruction in mother tongue at the primary stage for linguistic-minority children; President may issue directions to States.</em></div><div class="fact"><span lang="te">ప్రకరణ 351 (భాగం XVII): భారత మిశ్రమ సంస్కృతికి వ్యక్తీకరణ మాధ్యమంగా హిందీ వ్యాప్తి, అభివృద్ధి కేంద్రం బాధ్యత.</span><br><em class="en" lang="en">Art 351 (Part XVII): Union&#x27;s duty to promote the spread and development of Hindi as a medium of India&#x27;s composite culture.</em></div><div class="fact"><span lang="te">ఇవీ కోర్టుల ద్వారా అమలు చేయించలేనివే; కానీ రాజ్యాంగాన్ని మొత్తంగా చదవాలి కాబట్టి కోర్టులు వీటికీ సమాన ప్రాధాన్యం ఇస్తాయి.</span><br><em class="en" lang="en">These are also non-justiciable, but courts give them equal weight since the Constitution is read as a whole.</em></div></div><div class="card ncard" id="CC-6.5-16"><div class="ch">ఉమ్మడి పౌర స్మృతి (ప్రకరణ 44): కేసులు, రాష్ట్ర చట్టాలు · Uniform Civil Code (Art 44): cases and State laws</div><div class="secl">Current Affairs Update — UCC at State level</div><div class="fact"><span lang="te">దేశవ్యాప్త ఉమ్మడి పౌర స్మృతిని పార్లమెంటు ఇంకా చేయలేదు; వ్యక్తిగత చట్టాలు ఉమ్మడి జాబితాలో ఉన్నాయి (జాబితా III, ఎంట్రీ 5).</span><br><em class="en" lang="en">Parliament has not enacted a nationwide UCC; personal law is in the Concurrent List (Entry 5, List III).</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">పోర్చుగీసు పాలన నుంచి వచ్చిన ఉమ్మడి పౌర స్మృతి గోవాలో ఇప్పటికే అమల్లో ఉంది.</span><br><em class="en" lang="en">Goa already follows a common civil code inherited from Portuguese rule.</em></div><div class="fact"><span lang="te">ఉత్తరాఖండ్: UCC ని అమలు చేసిన మొదటి రాష్ట్రం — 27 జనవరి 2025 నుంచి అమల్లో.</span><br><em class="en" lang="en">Uttarakhand: first State to implement a UCC — in force from 27 Jan 2025.</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">గుజరాత్ శాసనసభ 24 మార్చి 2026న UCC బిల్లు ఆమోదించింది (రెండో రాష్ట్రం); అస్సాం 27 మే 2026న (మూడో రాష్ట్రం).</span><br><em class="en" lang="en">Gujarat Assembly passed UCC Bill, 2026 on 24 Mar 2026 (second State); Assam on 27 May 2026 (third).</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">మధ్యప్రదేశ్ శాసనసభ 21 జూలై 2026న UCC బిల్లు ఆమోదించింది (నాలుగో రాష్ట్రం).</span><br><em class="en" lang="en">Madhya Pradesh Assembly passed its UCC Bill on 21 Jul 2026 (fourth State).</em> <em class="asof">as of 2026-11-09</em></div><div class="fact"><span lang="te">కేసులు: షా బానో (1985) — CrPC సెక్షన్ 125 భరణం; సరళా ముద్గల్ (1995) — మతం మారి చేసుకున్న రెండో పెళ్లి చెల్లదు; షాయరా బానో (2017) — ట్రిపుల్ తలాక్ 3:2 తో రద్దు.</span><br><em class="en" lang="en">Cases: Shah Bano (1985) — Sec 125 CrPC maintenance; Sarla Mudgal (1995) — second marriage after conversion invalid; Shayara Bano (2017) — triple talaq set aside 3:2.</em></div></div></div></div>

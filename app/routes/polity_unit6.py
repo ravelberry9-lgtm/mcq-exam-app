@@ -1,5 +1,6 @@
 """Complete Unit 6 learner entry point backed by immutable authored records."""
 import os,random,uuid
+from pathlib import Path
 from datetime import datetime,timedelta
 from flask import Blueprint,abort,current_app,redirect,render_template,request,url_for,make_response
 from ..db import db
@@ -47,7 +48,20 @@ def concept_cards(chapter_id):
     lax=[l for l in (c.get('laxmikanth') or []) if (LAX_DIR/f"chapter-{int(l['chapter']):03d}.html").is_file()]
     tabs=dict(show=False)
     toolbar=render_template('ds/polity_note_toolbar.html',chapter_url=url_for('.chapter',chapter_id=chapter_id),question_url=target,tabs=tabs)
-    return render_template('ds/polity_cards.html',cards=cards,key=key,hl=hl,lang=lang,chapter=c,chapter_id=chapter_id,toolbar=toolbar,qkeep=qkeep)
+    f=Path(__file__).resolve().parents[2]/'content'/'polity'/'g2'/'concept_pages'/f'{key}.html'
+    if not f.is_file():
+        return render_template('ds/polity_cards.html',cards=cards,key=key,hl=hl,lang=lang,chapter=c,chapter_id=chapter_id,toolbar=toolbar,qkeep=qkeep)
+    hl_css=''.join(f'#{h}{{background:#fff8e1!important;border-color:#ffb300!important;box-shadow:0 0 0 3px #ffe082}}#{h} .ch::after{{content:" ◀ related";font-size:11px;color:#8d6e00;background:#ffecb3;border-radius:8px;padding:1px 7px;margin-left:6px}}' for h in hl if _re.fullmatch(r'CC-[0-9.]+-\d+',h))
+    page=f.read_text(encoding='utf-8')
+    doc=('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Concept cards '+key+' · Unit 6</title>'
+        +'<style>'+CARDS_CSS+hl_css+'</style></head><body>'+toolbar+page+'</body></html>')
+    response=make_response(doc);response.headers['Content-Type']='text/html; charset=utf-8'
+    return response
+CARDS_CSS="""body{background:#e0f4f1}.page{width:auto!important;max-width:1040px!important;min-height:0!important;margin:0 auto 12px!important;padding:12px 14px!important;overflow-wrap:anywhere}
+.secl{font-size:11.5px;color:#546e7a;margin-top:2px}.fact em.en{font-style:italic;color:#37474f;font-size:13.5px}.fact.flag{background:#fff3e0;border-radius:5px;padding:1px 4px}
+.asof{font-size:11px;font-style:normal;color:#00695c;background:#d7ece6;border-radius:8px;padding:1px 6px;white-space:nowrap}.warn{font-size:11px;font-style:normal;font-weight:700;color:#b45309}
+table{display:block;overflow-x:auto;max-width:100%}
+@media(max-width:700px){.g2,.g3,.g4,.wgrid{grid-template-columns:1fr!important}.page{padding:10px 8px!important}.header{flex-wrap:wrap}.hmeta{margin-left:0!important;text-align:left!important}}"""
 @bp.app_context_processor
 def _stats_ctx():
     return {'unit6_enabled':enabled(),'unit6_stats':unit6_stats}
