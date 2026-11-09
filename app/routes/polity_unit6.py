@@ -190,6 +190,54 @@ def language():
     if lang not in ('te','en','both'):abort(400)
     return lang
 
+def _lang_pick(d,key,lang):
+    return d.get(key+'_'+lang) if (key+'_'+lang) in d else d.get(lang)
+def struct_flat(s,lang):
+    """Plain text of a structured answer (used by the AI teacher and as a fallback)."""
+    out=[]
+    if s.get('intro',{}).get(lang):out.append(s['intro'][lang])
+    for v in s.get('visuals',[]):
+        t=_lang_pick(v,'title',lang)
+        if v.get('type')=='table':
+            cols=_lang_pick(v,'columns',lang) or []
+            out.append((t or '')+': '+' | '.join(cols))
+            for r in v.get('rows',[]):out.append(' | '.join(r.get(lang,[])))
+        elif v.get('type')=='flow':
+            out.append((t or '')+': '+' -> '.join(x.get(lang,'') for x in v.get('steps',[])))
+        elif v.get('type')=='box':
+            out.append((t or '')+': '+'; '.join(x.get(lang,'') for x in v.get('items',[])))
+    for sec in s.get('sections',[]):
+        out.append(_lang_pick(sec,'heading',lang) or '')
+        out+= ['- '+p.get(lang,'') for p in sec.get('points',[])]
+    c=s.get('conclusion') or {}
+    if c.get(lang):out.append((c.get('label_'+lang) or '')+': '+c[lang])
+    return [x for x in out if x]
+def render_struct(s,lang):
+    e=lambda x:str(escape(x or ''))
+    h=['<div class="d-struct" lang="%s">'%lang]
+    if s.get('intro',{}).get(lang):h.append('<p class="d-intro">'+e(s['intro'][lang])+'</p>')
+    for v in s.get('visuals',[]):
+        t=_lang_pick(v,'title',lang)
+        if v.get('type')=='table':
+            cols=_lang_pick(v,'columns',lang) or []
+            h.append('<div class="d-tablewrap"><table class="d-table">'+('<caption>'+e(t)+'</caption>' if t else '')+'<thead><tr>'+''.join('<th>'+e(c)+'</th>' for c in cols)+'</tr></thead><tbody>')
+            for r in v.get('rows',[]):
+                cells=r.get(lang,[]);h.append('<tr>'+''.join('<td data-label="%s">%s</td>'%(e(cols[i] if i<len(cols) else ''),e(c)) for i,c in enumerate(cells))+'</tr>')
+            h.append('</tbody></table></div>')
+        elif v.get('type')=='flow':
+            h.append('<div class="d-flow">'+('<b>'+e(t)+'</b>' if t else '')+'<ol>'+''.join('<li>'+e(x.get(lang,''))+'</li>' for x in v.get('steps',[]))+'</ol></div>')
+        elif v.get('type')=='box':
+            h.append('<aside class="d-box">'+('<b>'+e(t)+'</b>' if t else '')+'<ul>'+''.join('<li>'+e(x.get(lang,''))+'</li>' for x in v.get('items',[]))+'</ul></aside>')
+    for sec in s.get('sections',[]):
+        hd=_lang_pick(sec,'heading',lang)
+        if hd:h.append('<h3>'+e(hd)+'</h3>')
+        h.append('<ul class="d-pts">'+''.join('<li>'+e(p.get(lang,''))+'</li>' for p in sec.get('points',[]))+'</ul>')
+    c=s.get('conclusion') or {}
+    if c.get(lang):h.append('<div class="d-concl"><b>'+e(c.get('label_'+lang) or '')+'</b> '+e(c[lang])+'</div>')
+    h.append('</div>');return Markup(''.join(h))
+@bp.app_template_filter('fmt_struct')
+def _fmt_struct(s,lang):return render_struct(s,lang)
+
 @lru_cache(maxsize=1)
 def descriptive_items():
     out=[]
@@ -197,6 +245,7 @@ def descriptive_items():
         f=CONTENT/c['id'].rsplit('.',1)[0]/c['id']/'Group-I.json'
         if not f.is_file():continue
         d=read(f)
+        sf=f.with_name('Descriptive-structured.json');structured=(read(sf).get('items') or {}) if sf.is_file() else {}
         for key in ('items','answers'):
             for it in (d.get(key) if isinstance(d.get(key),list) else []):
                 def paras(v):
@@ -205,9 +254,12 @@ def descriptive_items():
                 kind=str(it.get('kind') or '')
                 exam=str(it.get('exam') or it.get('source') or '').split(' \u2014 ')[0].strip() if 'PYQ' in kind or it.get('exam') else ''
                 exam=exam if re.match(r'APPSC',exam) and 'style' not in exam.lower() else ''
-                out.append(dict(id=it.get('id'),chapter=c['id'],exam=exam,marks=it.get('marks'),
+                st=structured.get(it.get('id'))
+                out.append(dict(id=it.get('id'),chapter=c['id'],s=st,exam=exam,marks=it.get('marks'),
                     q_en=it.get('question_en') or '',q_te=it.get('question_te') or '',
                     a_en=paras(it.get('answer_en') or it.get('model_answer_en')),a_te=paras(it.get('answer_te') or it.get('model_answer_te'))))
+    for x in out:
+        if x.get('s'):x['a_en']=struct_flat(x['s'],'en');x['a_te']=struct_flat(x['s'],'te')
     return [x for x in out if x['id'] and (x['a_en'] or x['a_te'])]
 @bp.app_context_processor
 def _desc_ctx():return {'unit6_desc_count':lambda:len(descriptive_items()) if enabled() else 0}

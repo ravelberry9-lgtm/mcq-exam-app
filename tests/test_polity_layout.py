@@ -250,3 +250,13 @@ def test_descriptive_questions_page(client,app):
     assert len(one.select('article.u6-desc'))==19
     assert any('Descriptive' in a.get_text() for a in soup(client.get('/learn/polity/unit6/unit')).select('a.st'))
     assert client.get('/learn/polity/unit6/descriptive?chapter=9.9').status_code==404
+
+
+def test_structured_descriptive_answers_render(client,app):
+    app.config['POLITY_UNIT6_ENABLED']=True
+    page=soup(client.get('/learn/polity/unit6/descriptive?chapter=6.1.1&qlang=both'))
+    assert len(page.select('.d-struct'))==8 and page.select('.d-table') and page.select('.d-box') and page.select('.d-concl')
+    assert page.select('.d-struct h3') and page.select('.d-pts li')
+    assert len(page.select('article.u6-desc'))==4
+    one=soup(client.get('/learn/polity/unit6/descriptive?chapter=6.4.1'))
+    assert not one.select('.d-struct') and one.select('.da')
