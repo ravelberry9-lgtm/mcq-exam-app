@@ -230,3 +230,12 @@ def test_stat_tiles_open_whole_unit_lists(client,app):
     assert any('kind=bank' in h for h in hrefs) and any('kind=pyq' in h for h in hrefs)
     assert all('chapter=' not in h for h in hrefs)
     r=client.get([h for h in hrefs if 'kind=pyq' in h][0]);assert r.status_code==200 and '490' in r.get_data(as_text=True)
+
+
+def test_subject_page_lists_all_units_with_topics(client,app):
+    app.config['POLITY_UNIT6_ENABLED']=True
+    page=soup(client.get('/learn/polity/unit6/'))
+    units=page.select('.u6-unit')
+    assert len(units)==5 and page.select_one('a.u6-unit-h')['href'].endswith('/unit')
+    assert units[0].select('.u6-topics li') and 'Preamble' in units[0].get_text() and 'Coming soon' in units[1].get_text()
+    assert len(page.select('section.card'))==6
