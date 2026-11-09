@@ -106,3 +106,33 @@ def test_descriptive_ai_teacher_chat(client,app,monkeypatch):
     assert client.post('/api/ai/check',json={'polity_desc_id':d['id']}).status_code==400
     page=client.get('/learn/polity/unit6/descriptive').get_data(as_text=True)
     assert 'details class="aid"' in page and 'ai_desc.js' in page
+
+
+def _admin(client,app):
+    from app.routes.admin import _make_token
+    with client.session_transaction() as s:s['admin_token']=_make_token(app.config['ADMIN_PIN'])
+
+def test_admin_requires_login_then_edits_deletes_and_stores_text(client,app):
+    enable(app)
+    r=client.get('/learn/polity/unit6/admin/');assert r.status_code==302 and '/admin/login' in r.location
+    assert client.get('/learn/polity/unit6/admin/q/POL-641-C008').status_code==302
+    _admin(client,app)
+    assert client.get('/learn/polity/unit6/admin/').status_code==200
+    with app.app_context():q=next(q for q in records().values() if q['_kind']=='bank' and q['_answer'] in (1,2,3,4))
+    base=client.get('/learn/polity/unit6/practice/'+q['id']+'?qlang=en').get_data(as_text=True)
+    new=q['_answer']%4+1
+    form={'action':'save','question_en':'EDITED STEM TEXT','answer':str(new),'explanation_en':'Edited explanation sentence one. Second sentence here.',
+          **{f'option{i}_en':f'Edited option {i}' for i in range(1,5)},**{f'option{i}_te':f'సవరించిన ఎంపిక {i}' for i in range(1,5)}}
+    assert client.post('/learn/polity/unit6/admin/q/'+q['id'],data=form).status_code==302
+    page=client.get('/learn/polity/unit6/practice/'+q['id']+'?qlang=en').get_data(as_text=True)
+    assert 'EDITED STEM TEXT' in page and 'Edited option 2' in page and 'EDITED STEM TEXT' not in base
+    r=client.post('/learn/polity/unit6/practice/'+q['id']+'?qlang=en',data={'answer':str(new)});assert b'Correct' in r.data
+    assert client.post('/learn/polity/unit6/admin/q/'+q['id'],data={'action':'reset'}).status_code==302
+    assert 'EDITED STEM TEXT' not in client.get('/learn/polity/unit6/practice/'+q['id']+'?qlang=en').get_data(as_text=True)
+    assert client.post('/learn/polity/unit6/admin/q/'+q['id'],data={'action':'delete'}).status_code==302
+    assert client.get('/learn/polity/unit6/practice/'+q['id']).status_code==404
+    assert client.post('/learn/polity/unit6/admin/q/'+q['id'],data={'action':'restore'}).status_code==302
+    assert client.get('/learn/polity/unit6/practice/'+q['id']).status_code==200
+    assert client.post('/learn/polity/unit6/admin/submit',data={'text':'Who wrote X?\nA) a\nB) b\nAnswer: B','chapter':'6.4.1'}).status_code==302
+    sub=client.get('/learn/polity/unit6/admin/submissions.json');assert sub.status_code==200 and 'Who wrote X?' in sub.get_data(as_text=True)
+    assert 'Who wrote X?' in client.get('/learn/polity/unit6/admin/').get_data(as_text=True)

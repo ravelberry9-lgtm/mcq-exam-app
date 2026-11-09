@@ -15,13 +15,53 @@ def read(path):
 
 _record_cache = (None, None)
 
-def records():
+def base_records():
     global _record_cache
     paths=sorted(CONTENT.glob('6.*/*/*.json'))+sorted((CONTENT/'_shared').glob('*.json'))
     signature=tuple((str(p),p.stat().st_mtime_ns,p.stat().st_size) for p in paths)
     if signature!=_record_cache[0]:
         _record_cache=(signature,_load_records())
     return _record_cache[1]
+
+_admin_tables_ready=set()
+def ensure_admin_tables():
+    """Create the two additive admin tables if the migration has not been run (idempotent, once per database)."""
+    from ..db import db
+    from ..polity_models import PolityUnit6Override,PolityUnit6Submission
+    key=str(db.engine.url)
+    if key in _admin_tables_ready:return
+    for t in (PolityUnit6Override.__table__,PolityUnit6Submission.__table__):t.create(db.engine,checkfirst=True)
+    _admin_tables_ready.add(key)
+EDIT_FIELDS=('question_en','question_te','options_en','options_te','answer','explanation_en','explanation_te')
+def overrides():
+    if has_request_context() and 'unit6.overrides' in request.environ:return request.environ['unit6.overrides']
+    try:
+        from ..polity_models import PolityUnit6Override
+        from ..db import db
+        ensure_admin_tables()
+        rows={o.item_id:o for o in PolityUnit6Override.query.all()}
+    except Exception:
+        try:db.session.rollback()
+        except Exception:pass
+        rows={}
+    if has_request_context():request.environ['unit6.overrides']=rows
+    return rows
+def records():
+    """Authored records with admin overrides applied (copy-on-write; the files are never touched)."""
+    base=base_records();ov=overrides()
+    if not ov:return base
+    out=dict(base)
+    for item_id,o in ov.items():
+        if item_id not in out:continue
+        if o.deleted:out.pop(item_id);continue
+        q=dict(out[item_id]);d=o.data or {}
+        for k in ('question_en','question_te','options_en','options_te'):
+            if d.get(k):q[k]=d[k]
+        if d.get('answer') in (1,2,3,4):q['_answer']=d['answer'];q['_scored']=True
+        if d.get('explanation_en'):q['_en']=d['explanation_en']
+        if d.get('explanation_te'):q['_te']=d['explanation_te']
+        q['_edited']=True;out[item_id]=q
+    return out
 
 def _load_records():
     result = {}

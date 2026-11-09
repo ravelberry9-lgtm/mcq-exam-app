@@ -28,3 +28,21 @@ class PolityUnit6Exam(db.Model):
     deadline=db.Column(db.DateTime,nullable=False)
     submitted_at=db.Column(db.DateTime)
     score=db.Column(db.Integer)
+
+
+class PolityUnit6Override(db.Model):
+    """Admin edits/deletes layered over the audited content files at read time; the files are never modified."""
+    __tablename__='polity_unit6_override'
+    item_id=db.Column(db.String(128),primary_key=True)
+    deleted=db.Column(db.Boolean,nullable=False,default=False)
+    data=db.Column(db.JSON,nullable=False,default=dict)
+    updated_at=db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
+
+class PolityUnit6Submission(db.Model):
+    """Plain-text questions typed by the admin, to be placed properly later."""
+    __tablename__='polity_unit6_submission'
+    id=db.Column(db.Integer,primary_key=True,autoincrement=True)
+    chapter_id=db.Column(db.String(32),nullable=False,default='')
+    text=db.Column(db.Text,nullable=False)
+    status=db.Column(db.String(16),nullable=False,default='new')
+    created_at=db.Column(db.DateTime,nullable=False,default=datetime.utcnow)

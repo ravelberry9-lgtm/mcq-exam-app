@@ -1,0 +1,18 @@
+{% extends 'ds/base.html' %}
+{% block title %}Edit {{ item_id }}{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_admin.home') }}">‹ Admin</a><strong>{{ item_id }}</strong></div>{% endblock %}
+{% block content %}<div class="u6 u6-admin">
+{% with m=get_flashed_messages() %}{% for x in m %}<p class="u6-flash">{{ x }}</p>{% endfor %}{% endwith %}
+{% if o and o.deleted %}<section class="card"><p><b>This question is deleted</b> (hidden from learners).</p><form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn primary" name="action" value="restore">Restore</button></form></section>{% endif %}
+<form method="post" class="card u6-edit"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<p class="small">{{ q._chapter }} · {{ q._kind }}{% if q._edited %} · <b>edited</b>{% endif %}. Changes are stored in the database over the original; the original files are untouched.</p>
+<label>Question (English)<textarea name="question_en" rows="4">{{ q.question_en }}</textarea></label>
+<label>Question (తెలుగు)<textarea name="question_te" rows="4">{{ q.question_te }}</textarea></label>
+{% for i in range(4) %}<fieldset><legend>Option {{ i+1 }}</legend><input name="option{{ i+1 }}_en" value="{{ q.options_en[i] if q.options_en|length>i else '' }}" placeholder="English"><input name="option{{ i+1 }}_te" value="{{ q.options_te[i] if q.options_te|length>i else '' }}" placeholder="తెలుగు"></fieldset>{% endfor %}
+<fieldset><legend>Correct answer</legend>{% for i in range(1,5) %}<label class="inl"><input type="radio" name="answer" value="{{ i }}"{% if q._answer==i %} checked{% endif %}> {{ i }}</label>{% endfor %}</fieldset>
+<label>Explanation (English)<textarea name="explanation_en" rows="6">{{ q._en }}</textarea></label>
+<label>Explanation (తెలుగు)<textarea name="explanation_te" rows="6">{{ q._te }}</textarea></label>
+<div class="u6-actions"><button class="btn primary" name="action" value="save">Save / సేవ్</button>{% if o %}<button class="btn" name="action" value="reset">Reset to original</button>{% endif %}<button class="btn danger" name="action" value="delete" onclick="return confirm('Delete this question? It can be restored later.')">Delete</button></div></form>
+<p class="small"><a href="{{ url_for('polity_unit6.practice',item_id=item_id) }}">Open as learner ↗</a></p>
+</div>{% endblock %}

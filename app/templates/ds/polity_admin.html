@@ -1,0 +1,20 @@
+{% extends 'ds/base.html' %}
+{% block title %}Unit 6 admin{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><strong>Admin</strong></div>{% endblock %}
+{% block content %}<div class="u6 u6-admin">
+{% with m=get_flashed_messages() %}{% for x in m %}<p class="u6-flash">{{ x }}</p>{% endfor %}{% endwith %}
+<section class="card"><h2>Add questions as plain text / ప్రశ్నలు జోడించండి</h2><p class="small">Type or paste the question, options and answer in any format. It is saved to the database and will be placed properly later.</p>
+<form method="post" action="{{ url_for('polity_admin.submit') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<label class="small">Chapter (optional)<select name="chapter"><option value="">—</option>{% for c in chapters %}<option value="{{ c.id }}">{{ c.id }} · {{ c.title }}</option>{% endfor %}</select></label>
+<textarea name="text" rows="8" maxlength="8000" placeholder="Question&#10;A) …&#10;B) …&#10;C) …&#10;D) …&#10;Answer: B&#10;Explanation (optional)" required></textarea><button class="btn primary">Save to database / సేవ్</button></form></section>
+<section class="card" id="submissions"><h2>Saved plain-text items ({{ subs|length }})</h2>{% if subs %}<p><a class="btn" href="{{ url_for('polity_admin.submissions_json') }}">Download all (JSON)</a></p>{% endif %}
+{% for s in subs %}<article class="u6-sub{{ ' placed' if s.status=='placed' else '' }}"><p class="small">#{{ s.id }} · {{ s.chapter_id or 'no chapter' }} · {{ s.created_at.strftime('%d %b %Y %H:%M') }} · <b>{{ s.status }}</b></p><pre>{{ s.text }}</pre>
+<form method="post" action="{{ url_for('polity_admin.submission',sid=s.id) }}" class="u6-actions"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn" name="action" value="toggle">{{ 'Mark new' if s.status=='placed' else 'Mark placed' }}</button><button class="btn danger" name="action" value="delete">Delete</button></form></article>{% else %}<p class="small">None yet.</p>{% endfor %}</section>
+<section class="card"><h2>Edit or delete questions / ప్రశ్నలను సవరించండి</h2>
+<form class="geo-filters" method="get"><select name="chapter"><option value="">All chapters</option>{% for c in chapters %}<option value="{{ c.id }}"{% if chapter==c.id %} selected{% endif %}>{{ c.id }}</option>{% endfor %}</select><select name="show"><option value="">Active</option><option value="edited"{% if show=='edited' %} selected{% endif %}>Edited</option><option value="deleted"{% if show=='deleted' %} selected{% endif %}>Deleted</option></select><input name="q" value="{{ q }}" placeholder="Search id or text"><button class="btn primary">Filter</button></form>
+<p class="small">{{ total }} found · <a href="{{ url_for('polity_admin.changes_json') }}">download my changes (JSON)</a></p>
+{% for r in rows %}<a class="u6-adrow" href="{{ url_for('polity_admin.edit',item_id=r.id) }}"><b>{{ r.id }}</b><span>{{ r.chapter }} · {{ r.kind }}{% if r.edited %} · edited{% endif %}{% if r.deleted %} · deleted{% endif %}</span><em>{{ r.text }}</em></a>{% endfor %}
+<nav class="u6-actions">{% if page>1 %}<a class="btn" href="{{ url_for('polity_admin.home',chapter=chapter,q=q,show=show,page=page-1) }}">‹ Prev</a>{% endif %}{% if page*30<total %}<a class="btn" href="{{ url_for('polity_admin.home',chapter=chapter,q=q,show=show,page=page+1) }}">Next ›</a>{% endif %}</nav></section>
+<form method="post" action="/admin/logout"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn">Log out of admin</button></form>
+</div>{% endblock %}
