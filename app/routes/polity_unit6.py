@@ -18,6 +18,9 @@ def clean_text(t):
     return ' '.join(kept) if kept else t
 
 bp=Blueprint('polity_unit6',__name__,url_prefix='/learn/polity/unit6')
+TE_TITLES={'6.1.1':'ప్రాథమిక భావనలు, పదజాలం','6.1.2':'రాజ్యాంగ భావన, వర్గీకరణ','6.1.3':'రాజ్యాంగ పరిణామం','6.1.4':'రాజ్యాంగ రచన','6.2.1':'భారత రాజ్యాంగ ముఖ్య లక్షణాలు','6.3.1':'ప్రవేశిక, రాజ్యాంగ తత్వం','6.4.1':'ప్రాథమిక హక్కులు','6.5.1':'ఆదేశిక సూత్రాలు','6.5.2':'ప్రాథమిక హక్కులు–ఆదేశిక సూత్రాల సంబంధం','6.6.1':'ప్రాథమిక విధులు','6.7.1':'రాజ్యాంగ సవరణ','6.8.1':'ప్రాథమిక స్వరూప సిద్ధాంతం','6.9.1':'భారత భూభాగం, యూనియన్','6.9.2':'పౌరసత్వం'}
+@bp.app_template_filter('chapter_te')
+def _chapter_te(cid):return TE_TITLES.get(cid,'')
 @bp.app_template_filter('clean_expl')
 def _clean_expl(t):return clean_text(t)
 
@@ -132,9 +135,12 @@ def notes(chapter_id):
         choice=request.args.get('choice',type=int)
         if request.args.get('review')=='1' and choice in (1,2,3,4):args.update(review='1',choice=choice)
         target=url_for('.practice',item_id=q['id'],**args)+'#answer-result'
+    ids=[c['id'] for c in chapters()];nxt=ids[ids.index(chapter_id)+1] if ids.index(chapter_id)+1<len(ids) else None
     toolbar=render_template('ds/polity_note_toolbar.html',chapter_url=back,question_url=target)
+    footer=render_template('ds/polity_note_footer.html',chapter_id=chapter_id,next_id=nxt)
     import re
     content=re.sub(r'(<body\b[^>]*>)',lambda m:m.group(1)+toolbar,content,count=1,flags=re.I)
+    content=re.sub(r'</body>',lambda m:footer+m.group(0),content,count=1,flags=re.I)
     if q and not section_links(q):
         appendix=render_template('ds/polity_note_explanation.html',question=q,lang=language())
         content=re.sub(r'</body>',lambda m:appendix+m.group(0),content,count=1,flags=re.I)

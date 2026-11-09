@@ -118,3 +118,11 @@ def test_map_page_has_one_bar_and_matching_count(client,app):
         assert h.count('u6-mapbar" aria-label')==1 and 'Linked questions (' not in h
         n=int(re.search(r'Practice (\d+) questions',h).group(1))
         assert f'Linked questions: {n}' in h
+
+
+def test_notes_footer_and_telugu_titles(client,app):
+    app.config['POLITY_UNIT6_ENABLED']=True
+    h=client.get('/learn/polity/unit6/chapters/6.7.1/notes').get_data(as_text=True)
+    assert 'u6-notefoot' in h and 'kind=pyq' in h and '6.8.1' in h
+    u=client.get('/learn/polity/unit6/unit').get_data(as_text=True)
+    assert 'పౌరసత్వం' in u and 'ప్రాథమిక హక్కులు' in u
