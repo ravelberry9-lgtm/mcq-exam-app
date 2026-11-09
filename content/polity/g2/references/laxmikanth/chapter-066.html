@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part VIII &mdash; Book 2</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 66 — Lokpal and Lokayuktas</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Global Scenario — Why an "Ombudsman" at All</div>
+  <p class="eng">Modern democratic states carry a <b class="term">welfare orientation</b> — the government plays a large role in a nation's socio-economic development. This expands the <b>bureaucracy</b> and multiplies administrative processes, which in turn increases the <b>administrative power and discretion</b> enjoyed by civil servants at every level. Abuse of this power/discretion opens the door to <b>harassment, malpractice, maladministration and corruption</b> — giving rise to citizens' grievances against administration. Since the success of democracy depends on how well such grievances get redressed, different parts of the world have created <b class="hlg">three</b> broad institutional devices for grievance redressal: <b class="term">(1) The Ombudsman System</b>, <b class="term">(2) The Administrative Courts System</b>, and <b class="term">(3) The Procurator System</b>.</p>
+  <div class="te">ఆధునిక democratic రాజ్యాలకు <b class="term">welfare orientation</b> ఉంటుంది — దేశం socio-economic development లో ప్రభుత్వం పెద్ద పాత్ర పోషిస్తుంది. దీనివల్ల <b>bureaucracy</b> విస్తరిస్తుంది, administrative processes పెరుగుతాయి — ఫలితంగా అన్ని స్థాయిల civil servants కు ఉండే <b>administrative power, discretion</b> కూడా పెరుగుతుంది. ఈ power/discretion ను misuse చేస్తే <b>harassment, malpractice, maladministration, corruption</b> కు దారి తీస్తుంది — పౌరుల administration పై grievances కు కారణమవుతుంది. Democracy విజయం ఈ grievances ఎంత బాగా పరిష్కరించారన్న దానిపైనే ఆధారపడుతుంది కాబట్టి, ప్రపంచవ్యాప్తంగా grievance redressal కోసం <b class="hlg">మూడు</b> broad institutional devices ఏర్పడ్డాయి — <b class="term">(1) Ombudsman System</b>, <b class="term">(2) Administrative Courts System</b>, <b class="term">(3) Procurator System</b>.</div>
+
+  <p class="eng">Scandinavia gave the world its <b class="term">Ombudsman</b> — the oldest democratic device for redressing citizens' grievances. Donald C. Rowat, a well-known authority on the office, praised it as "uniquely appropriate" for handling an ordinary citizen's complaints about unjust official conduct. <b class="hlg">Sweden set it up first, in 1809</b>. The word <b class="hlb">'Ombud'</b> is Swedish for someone who represents or speaks on another person's behalf. Rowat's classic definition calls the Ombudsman "an officer appointed by the legislature" to look into grievances against administrative and judicial action.</p>
+  <div class="te">Scandinavia నుండి ప్రపంచానికి వచ్చిన <b class="term">Ombudsman</b> — పౌరుల grievances పరిష్కారానికి ఉన్న అత్యంత పురాతన democratic device. ఈ institution పై ప్రసిద్ధ authority <b class="hlp">Donald C. Rowat</b>, సగటు citizen అన్యాయమైన official ప్రవర్తనపై చేసే complaints ను handle చేయడానికి దీన్ని "uniquely appropriate" అని కొనియాడారు. <b class="hlg">Sweden దీన్ని మొదట 1809లో</b> ఏర్పాటు చేసింది. <b class="hlb">'Ombud'</b> అనే Swedish పదానికి అర్థం — మరొకరి తరపున మాట్లాడే/represent చేసే వ్యక్తి. Rowat తన సంప్రదాయ నిర్వచనంలో Ombudsman ను "legislature నియమించిన officer" అని పిలుస్తారు — administrative, judicial చర్యలపై grievances చూసేందుకు.</div>
+
+  <p class="eng">The Swedish Ombudsman deals with grievances relating to: <b>(1)</b> abuse of administrative discretion (misuse of official power/authority); <b>(2)</b> maladministration (inefficiency in achieving targets); <b>(3)</b> administrative corruption (demanding bribery); <b>(4)</b> nepotism (favouring one's own kith and kin, e.g. in employment); <b>(5)</b> discourtesy (misbehaviour such as abusive language). The Ombudsman is a <b class="imp">constitutional authority</b> that supervises compliance of laws/regulations by public officials — civil, judicial and military — ensuring they function impartially, objectively and legally. Yet its powers stop well short of enforcement — it <b class="imp">cannot overturn or set aside</b> any decision, and holds <b class="imp">no direct command</b> over either the administration or the courts.</p>
+  <div class="te">Swedish Ombudsman ఈ grievances చూస్తుంది — <b>(1)</b> administrative discretion abuse (official power/authority misuse); <b>(2)</b> maladministration (targets సాధించడంలో inefficiency); <b>(3)</b> administrative corruption (bribery డిమాండ్); <b>(4)</b> nepotism (own kith/kin కు favour చేయడం, ఉదా. employment లో); <b>(5)</b> discourtesy (abusive language వంటి misbehaviour). Ombudsman ఒక <b class="imp">constitutional authority</b> — civil, judicial, military — అన్ని రకాల public officials laws/regulations compliance పర్యవేక్షిస్తుంది, వారు impartial గా, objective గా, legal గా పనిచేసేలా చూస్తుంది. కానీ, ఈ authority కు <b class="imp">నిర్ణయాన్ని reverse/quash చేసే power లేదు</b>, administration లేదా courts పై <b class="imp">direct control కూడా లేదు</b>.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Global Scenario &amp; Origin of Ombudsman</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>3 global institutional devices for grievance redressal?</td><td>Ombudsman System, Administrative Courts System, Procurator System</td></tr>
+      <tr><td>Where/when was Ombudsman first created?</td><td>Sweden, 1809</td></tr>
+      <tr><td>Meaning of 'Ombud'?</td><td>Swedish term — a representative/spokesman of another person</td></tr>
+      <tr><td>5 matters the Swedish Ombudsman handles?</td><td>Discretion-abuse, maladministration, corruption, nepotism, discourtesy</td></tr>
+      <tr><td>Can the Ombudsman reverse a decision or punish an official?</td><td>No — only reports to higher authorities for corrective action</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Spread of the Ombudsman &amp; the Other Two Systems</div>
+  <p class="eng">The Ombudsman can step in on a citizen's complaint or act <b class="term">suo motu</b> (on its own initiative); it can even prosecute an erring official, judges included — but it cannot impose punishment itself, only report the matter onward for corrective action. Sweden's model soon travelled to its Scandinavian neighbours: <b class="hlg">Finland took it up in 1919</b>, <b class="hlg">Denmark in 1955</b>, and <b class="hlg">Norway in 1962</b>. <b class="hlp">New Zealand</b> was the <b class="imp">first Commonwealth nation</b> to follow suit, launching its "Parliamentary Commissioner for Investigation" in <b class="hlg">1962</b>, and the <b class="hlp">United Kingdom</b> came next in <b class="hlg">1967</b> with a "Parliamentary Commissioner for Administration." India's own adaptation of the idea is the <b class="term">Lokpal/Lokayukta</b>. Rowat memorably called the Ombudsman a bulwark protecting democratic government from "the tyranny of officialdom," while public-administration scholar <b class="hlp">Gerald E. Caiden</b> termed it an "institutionalised public conscience."</p>
+  <div class="te">Ombudsman citizen complaint మీద గానీ, <b class="term">suo motu</b> (తనంతట తానే) గానీ act చేయగలదు — judges తో సహా తప్పు చేసిన officials ను prosecute కూడా చేయగలదు, కానీ punishment మాత్రం స్వయంగా ఇవ్వజాలదు — corrective action కోసం matter ను రిపోర్ట్ చేయడమే దీని పని. Sweden model త్వరలోనే పక్క Scandinavian దేశాలకు వ్యాపించింది — <b class="hlg">Finland 1919లో</b>, <b class="hlg">Denmark 1955లో</b>, <b class="hlg">Norway 1962లో</b> దీన్ని అనుసరించాయి. ఇలా అనుసరించిన <b class="imp">మొదటి Commonwealth దేశం</b> <b class="hlp">New Zealand</b> — <b class="hlg">1962</b> లో "Parliamentary Commissioner for Investigation" పేరుతో దీన్ని ప్రారంభించింది. <b class="hlp">United Kingdom</b> తర్వాత <b class="hlg">1967</b> లో "Parliamentary Commissioner for Administration" పేరుతో ఇలాంటి institution పెట్టింది. ఈ ఆలోచనకు India సొంత అనువాదమే <b class="term">Lokpal/Lokayukta</b>. Rowat, Ombudsman ను "officialdom యొక్క నిరంకుశత్వం" నుండి democratic government ను కాపాడే bulwark గా అభివర్ణించారు; public-administration scholar <b class="hlp">Gerald E. Caiden</b> దీన్ని "institutionalised public conscience" అని పిలిచారు.</div>
+
+  <p class="eng">The other two devices are less directly relevant to India's Lokpal model but complete the global picture. The <b class="term">Administrative Courts System</b> is a French institutional device for redressal of citizens' grievances against administrative authorities; due to its success in France, it gradually spread to other countries. The <b class="term">Procurator System</b> is the device created by socialist countries — the former USSR (now Russia) and China — for redressal of citizens' grievances.</p>
+  <div class="te">మిగతా రెండు devices India Lokpal model కు direct గా సంబంధించినవి కాకపోయినా, global picture ను పూర్తి చేస్తాయి. <b class="term">Administrative Courts System</b> అనేది administrative authorities పై పౌరుల grievances పరిష్కారానికి France ఏర్పరచిన institutional device; France లో దీని success వల్ల, క్రమంగా ఇతర దేశాలకు కూడా వ్యాపించింది. <b class="term">Procurator System</b> అనేది socialist దేశాలు — former USSR (ఇప్పుడు Russia), China — పౌరుల grievances కోసం ఏర్పరచిన device.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Ombudsman Spread &amp; Other Two Systems</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>First Commonwealth country to adopt Ombudsman, and its local name?</td><td>New Zealand, 1962 — "Parliamentary Commissioner for Investigation"</td></tr>
+      <tr><td>UK's version, and year?</td><td>1967 — "Parliamentary Commissioner for Administration"</td></tr>
+      <tr><td>India's version of the Ombudsman is called?</td><td>Lokpal (Centre) / Lokayukta (states)</td></tr>
+      <tr><td>Administrative Courts System — origin country?</td><td>France</td></tr>
+      <tr><td>Procurator System — origin countries?</td><td>USSR (now Russia) and China</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Position in India — Existing Anti-Corruption Framework · First ARC's Recommendations</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Position in India — the Pre-existing Framework Before Lokpal</div>
+  <p class="eng">Even before the Lokpal, India already had a wide (if fragmented) legal/institutional framework to check corruption and redress citizens' grievances — statutes such as the <b class="hlb">Prevention of Corruption Act, 1988</b>, the <b class="hlb">Delhi Special Police Establishment Act, 1946</b> (basis for the CBI) and the <b class="hlb">Commissions of Inquiry Act, 1952</b>; investigative/vigilance bodies such as the <b class="term">CBI (1963)</b>, the <b class="term">Central Vigilance Commission (1964)</b>, State Vigilance Commissions and state anti-corruption bureaus; quasi-judicial/watchdog bodies such as <b class="term">Administrative Tribunals</b>, the <b class="term">National Commissions</b> for SCs/STs/BCs/Minorities, and Consumer Disputes Redressal Commissions; and grievance-specific mechanisms such as the <b class="term">Directorate of Public Grievances (1988)</b>, the <b class="hlb">Whistle Blowers Protection Act, 2014</b>, and the <b class="term">Centralised Public Grievance Redress and Monitoring System (CPGRAMS), 2007</b>. It is against this already-crowded backdrop that the Lokpal (Centre) and Lokayukta (states) were conceived — as a single, ombudsman-style apex mechanism sitting above/alongside this pre-existing machinery.</p>
+  <div class="te">Lokpal రాకముందే, corruption ను check చేయడానికి, పౌరుల grievances పరిష్కారానికి India దగ్గర ఇప్పటికే విస్తృతమైన (కానీ చెల్లాచెదురుగా ఉన్న) legal/institutional framework ఉంది — <b class="hlb">Prevention of Corruption Act, 1988</b>, <b class="hlb">Delhi Special Police Establishment Act, 1946</b> (CBI కు ఆధారం), <b class="hlb">Commissions of Inquiry Act, 1952</b> వంటి statutes; <b class="term">CBI (1963)</b>, <b class="term">Central Vigilance Commission (1964)</b>, State Vigilance Commissions, state anti-corruption bureaus వంటి investigative/vigilance bodies; <b class="term">Administrative Tribunals</b>, SC/ST/BC/Minorities <b class="term">National Commissions</b>, Consumer Disputes Redressal Commissions వంటి quasi-judicial/watchdog bodies; <b class="term">Directorate of Public Grievances (1988)</b>, <b class="hlb">Whistle Blowers Protection Act, 2014</b>, <b class="term">CPGRAMS, 2007</b> వంటి grievance-specific mechanisms. ఇప్పటికే ఇంత రద్దీగా ఉన్న ఈ నేపథ్యంలోనే, Lokpal (Centre), Lokayukta (states) — ఈ ఇప్పటికే ఉన్న machinery పైన/పక్కన కూర్చునే ఒకే ombudsman-style apex mechanism గా — రూపుదిద్దుకున్నాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Pre-Lokpal Framework</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Basis statute for CBI?</td><td>Delhi Special Police Establishment Act, 1946</td></tr>
+      <tr><td>CVC established in?</td><td>1964</td></tr>
+      <tr><td>Whistle Blowers Protection Act, year?</td><td>2014</td></tr>
+      <tr><td>Grievance-monitoring IT system, year?</td><td>CPGRAMS, 2007</td></tr>
+      <tr><td>What role does Lokpal/Lokayukta play relative to all this?</td><td>A single apex ombudsman-style mechanism sitting above/alongside the pre-existing machinery</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">First ARC (1966-70) and the Original Lokpal/Lokayukta Blueprint</div>
+  <p class="eng">India's <b class="hlp">First Administrative Reforms Commission (ARC)</b>, sitting from <b class="hlg">1966 to 1970</b>, proposed two dedicated grievance-redressal authorities — a <b class="term">'Lokpal'</b> and a <b class="term">'Lokayukta'</b> — modelled on the Scandinavian Ombudsman and New Zealand's Parliamentary Commissioner for Investigation. Under this original design, complaints against <b>ministers and secretaries</b>, at both Centre and state level, were to go to the <b class="imp">Lokpal</b>, while a separate <b class="imp">Lokayukta</b> in every state (plus one for the Centre) would handle grievances against <b>other named senior officials</b>. Following the New Zealand approach rather than Sweden's, the ARC left the <b class="imp">judiciary out</b> of this scheme entirely — Swedish Ombudsmen, by contrast, do cover judges. On who should appoint the Lokpal, the ARC's suggestion was the <b class="hlp">President</b>, acting only after consulting three constitutional figures — the <b class="hlp">Chief Justice of India</b>, the <b class="hlp">Lok Sabha Speaker</b>, and the <b class="hlp">Rajya Sabha Chairman</b>.</p>
+  <div class="te">భారతదేశ <b class="hlp">First Administrative Reforms Commission (ARC)</b>, <b class="hlg">1966 నుండి 1970</b> వరకు పనిచేస్తూ, పౌరుల grievance-redressal కోసం రెండు ప్రత్యేక authorities — ఒక <b class="term">'Lokpal'</b>, ఒక <b class="term">'Lokayukta'</b> — ప్రతిపాదించింది, Scandinavian Ombudsman, New Zealand Parliamentary Commissioner for Investigation పద్ధతిలో. ఈ original design ప్రకారం, Centre, state స్థాయుల్లో <b>ministers, secretaries</b> పై complaints <b class="imp">Lokpal</b> కు వెళ్లేవి; ప్రతి state కు ఒక ప్రత్యేక <b class="imp">Lokayukta</b> (Centre కు కూడా ఒకటి) <b>ఇతర నిర్దేశిత senior officials</b> పై grievances చూసేది. Sweden బదులు New Zealand పద్ధతిని అనుసరించి, ARC <b class="imp">judiciary ను ఈ scheme నుండి పూర్తిగా</b> బయట పెట్టింది — Swedish Ombudsman మాత్రం judges ను కూడా కవర్ చేస్తుంది. Lokpal ను ఎవరు నియమించాలన్న విషయంలో ARC సూచన — <b class="hlp">President</b>, ముగ్గురు constitutional figures ను సంప్రదించిన తర్వాతే: <b class="hlp">Chief Justice of India</b>, <b class="hlp">Lok Sabha Speaker</b>, <b class="hlp">Rajya Sabha Chairman</b>.</div>
+
+  <p class="eng">The ARC additionally set out <b class="hlg">eight</b> qualities it expected of these offices. Their independence and impartiality had to be <b>visibly real, not just formal</b>; proceedings needed to stay <b>private and informally conducted</b>; appointment ought to be kept <b>as non-political as practicable</b>; and their standing was to rank alongside the country's <b>top judicial officers</b>. Substantively, they were meant to handle matters lying in that grey <b>discretionary zone</b> — injustice, corruption, favouritism — <b>free from judicial interference</b> in their proceedings, armed with <b>wide latitude</b> to gather whatever information their work required, and expected to <b>seek no personal gain or financial benefit</b> from the very government they were overseeing. New Delhi accepted this blueprint in full — but as the next section shows, turning it into an actual Central statute took more than four decades.</p>
+  <div class="te">ఈ institutions నుండి ARC ఆశించిన <b class="hlg">ఎనిమిది</b> లక్షణాలు కూడా పెట్టింది — వీటి independence, impartiality కేవలం కాగితం మీద కాకుండా <b>నిజంగా కనిపించాలి</b>; proceedings <b>ప్రైవేట్ గా, informal గా</b> జరగాలి; appointment వీలైనంత వరకు <b>non-political గా</b> ఉండాలి; వీటి స్థాయి దేశంలోని <b>అత్యున్నత judicial అధికారుల</b> స్థాయికి సమానంగా ఉండాలి. లోతుగా చూస్తే, injustice, corruption, favouritism వంటి <b>discretionary జోన్</b> లో ఉన్న విషయాలను చూడాలి — proceedings <b>judicial interference నుండి విముక్తం</b> గా ఉండాలి, అవసరమైన సమాచారం సేకరించడానికి <b>విస్తృత latitude</b> ఉండాలి, తాము పర్యవేక్షిస్తున్న ప్రభుత్వం నుండే <b>ఎలాంటి వ్యక్తిగత లబ్ధి లేదా ఆర్థిక ప్రయోజనం ఆశించకూడదు</b>. ఈ blueprint ను Government of India పూర్తిగా accept చేసింది — కానీ తర్వాతి section చూపించినట్టు, దీన్ని working Central చట్టం గా మార్చడానికి నాలుగు దశాబ్దాలకు పైగా పట్టింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — First ARC's Blueprint</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>First ARC's years, and who submitted the interim report?</td><td>1966-1970, headed by Morarji Desai (special interim report on grievance redressal, 1966)</td></tr>
+      <tr><td>Original Lokpal vs Lokayukta division of work?</td><td>Lokpal → ministers/secretaries; Lokayukta → other specified higher officials</td></tr>
+      <tr><td>Was the judiciary originally proposed to be covered?</td><td>No — kept outside, following New Zealand (unlike Sweden)</td></tr>
+      <tr><td>Who was to appoint the Lokpal, per ARC?</td><td>President, after consulting CJI, LS Speaker, RS Chairman</td></tr>
+      <tr><td>How many features did the ARC recommend for these institutions?</td><td>Eight — independence, privacy of proceedings, non-political appointment, high status, discretionary-field jurisdiction, no judicial interference, information access, no pecuniary interest</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Legislative History — Ten Bills, 1968-2013 · Passage After the Anna Hazare Movement</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">The Long Road to a Law — Ten Official Attempts (1968-2011)</div>
+  <p class="eng">Few sequences in this chapter get tested as often as this one. Acting on the ARC's suggestion, lawmakers made <b class="hlg">ten</b> separate legislative attempts at a Lokpal law — yet decade after decade, none of the early bills actually reached the statute book. <b class="imp">Bills one through four</b> simply lapsed each time the Lok Sabha was dissolved; the <b class="imp">fifth was pulled back</b> by its own government; <b class="imp">numbers six and seven</b> fell the same way, going down with the 11th and 12th Lok Sabhas; the <b class="imp">eighth fell</b> when the 13th Lok Sabha was dissolved in 2004; the <b class="imp">ninth, too, was withdrawn</b> — and only the <b class="imp">tenth attempt</b>, introduced as the <b class="hlp">Lokpal and Lokayuktas Bill, 2011</b>, finally crossed the finish line, becoming law as the <b class="term">Lokpal and Lokayuktas Act, 2013</b>.</p>
+  <div class="te">ఈ chapter లో ఇంతకన్నా తరచుగా అడిగే sequence మరొకటి లేదు. ARC సూచన మేరకు, Lokpal చట్టం కోసం <b class="hlg">పది</b> వేర్వేరు legislative attempts జరిగాయి — అయినా, దశాబ్దాల తరబడి తొలి బిల్లులేవీ చట్టంగా మారలేదు. <b class="imp">ఒకటి నుండి నాలుగు బిల్లులు</b> Lok Sabha dissolve అయిన ప్రతిసారీ lapse అయ్యాయి; <b class="imp">ఐదోది</b> దాని సొంత ప్రభుత్వమే వెనక్కి తీసుకుంది; <b class="imp">ఆరు, ఏడో బిల్లులు</b> కూడా అదే దారిలో — 11వ, 12వ Lok Sabha లతో పాటు కూలిపోయాయి; <b class="imp">ఎనిమిదోది</b> 2004లో 13వ Lok Sabha dissolve అయినప్పుడు పడిపోయింది; <b class="imp">తొమ్మిదోది కూడా</b> withdraw అయ్యింది — చివరికి <b class="imp">పదో attempt</b> మాత్రమే, <b class="hlp">Lokpal and Lokayuktas Bill, 2011</b> గా ప్రవేశపెట్టబడి, <b class="term">Lokpal and Lokayuktas Act, 2013</b> గా చట్టంగా మారింది.</div>
+
+  <table>
+    <caption>Ten official Lokpal Bills at a glance</caption>
+    <thead><tr><th class="n" style="width:22px">#</th><th style="width:16%">When</th><th style="width:34%">Government / PM</th><th>Fate</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td class="hlg">May 1968</td><td>Congress — Indira Gandhi</td><td>Lapsed (LS dissolution)</td></tr>
+      <tr><td class="n">2</td><td class="hlg">Apr 1971</td><td>Congress — Indira Gandhi</td><td>Lapsed (LS dissolution)</td></tr>
+      <tr><td class="n">3</td><td class="hlg">Jul 1977</td><td>Janata — Morarji Desai</td><td>Lapsed (LS dissolution)</td></tr>
+      <tr><td class="n">4</td><td class="hlg">Aug 1985</td><td>Congress — Rajiv Gandhi</td><td>Lapsed (LS dissolution)</td></tr>
+      <tr><td class="n">5</td><td class="hlg">Dec 1989</td><td>National Front — V.P. Singh</td><td>Withdrawn</td></tr>
+      <tr><td class="n">6</td><td class="hlg">Sep 1996</td><td>United Front — Deve Gowda</td><td>Lapsed (11th LS dissolved)</td></tr>
+      <tr><td class="n">7</td><td class="hlg">Aug 1998</td><td>BJP-led coalition — A.B. Vajpayee</td><td>Lapsed (12th LS dissolved)</td></tr>
+      <tr><td class="n">8</td><td class="hlg">Aug 2001</td><td>NDA — A.B. Vajpayee</td><td>Lapsed (13th LS dissolved, 2004)</td></tr>
+      <tr><td class="n">9</td><td class="hlg">Aug 2011</td><td>UPA — Manmohan Singh</td><td>Withdrawn</td></tr>
+      <tr><td class="n">10</td><td class="hlg">Dec 2011</td><td>UPA — Manmohan Singh</td><td><b class="imp">Enacted → Lokpal and Lokayuktas Act, 2013</b></td></tr>
+    </tbody>
+  </table>
+
+  <p class="eng">Bill #10 must be read against its political backdrop, which is well outside the book's text but essential exam-context: 2011 saw the <b class="hlp">India Against Corruption</b> movement, led prominently by social activist <b class="hlp">Anna Hazare</b>, whose public hunger-strikes and mass mobilisation put sustained pressure on Parliament to finally pass a strong anti-corruption ombudsman law — after over forty years and nine failed attempts, this movement is widely credited with being the immediate trigger that pushed the tenth bill through to enactment as the 2013 Act.</p>
+  <div class="te">బిల్లు #10 ను దాని political నేపథ్యంతో అర్థం చేసుకోవాలి — ఇది పుస్తకం టెక్స్ట్ కు వెలుపల ఉన్నా, exam context కు అవసరం. 2011లో <b class="hlp">Anna Hazare</b> నేతృత్వంలోని <b class="hlp">India Against Corruption</b> ఉద్యమం, ఆయన public hunger-strikes, mass mobilisation ద్వారా — నలభై ఏళ్లకు పైగా, తొమ్మిది విఫలమైన attempts తర్వాత — బలమైన anti-corruption ombudsman చట్టం పాస్ చేయాలని Parliament పై నిరంతర ఒత్తిడి తెచ్చింది. ఈ ఉద్యమమే, పదో బిల్లు 2013 Act గా enact అవ్వడానికి తక్షణ ట్రిగ్గర్ గా విస్తృతంగా గుర్తించబడింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Legislative History</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Total number of official Lokpal Bill attempts?</td><td>Ten (1968-2011)</td></tr>
+      <tr><td>Which bill was first ever introduced, and by whom?</td><td>May 1968, by Indira Gandhi's Congress govt</td></tr>
+      <tr><td>Which bill finally became law, and as what?</td><td>10th bill (Dec 2011) → Lokpal and Lokayuktas Act, 2013</td></tr>
+      <tr><td>Two most common reasons bills failed?</td><td>Lapsed on Lok Sabha dissolution, or withdrawn by government</td></tr>
+      <tr><td>Movement/leader credited with the final push?</td><td>Anna Hazare's India Against Corruption movement, 2011</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Lokpal and Lokayuktas Act, 2013 — Composition &amp; Appointment</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">The 2013 Act — Establishing a Uniform Anti-Corruption Roadmap</div>
+  <p class="eng">The <b class="term">Lokpal and Lokayuktas Act, 2013</b> establishes the institution of <b class="imp">Lokpal at the Centre</b> and mandates a <b class="imp">Lokayukta at the level of every state</b>, thus providing a uniform vigilance and anti-corruption roadmap for the nation. The Lokpal's jurisdiction, in principle, extends to the <b class="hlp">Prime Minister</b>, <b>Ministers</b>, <b>Members of Parliament</b>, and Group A, B, C and D officers/officials of the Central Government (jurisdictional nuances, especially for the PM, are covered in detail on the next page).</p>
+  <div class="te"><b class="term">Lokpal and Lokayuktas Act, 2013</b>, <b class="imp">Centre లో Lokpal</b> institution ను ఏర్పరుస్తుంది, ప్రతి <b class="imp">state లో Lokayukta</b> ఉండాలని mandate చేస్తుంది — దీనివల్ల దేశానికి ఒకే uniform vigilance, anti-corruption roadmap లభిస్తుంది. Lokpal jurisdiction, principle పరంగా, <b class="hlp">Prime Minister</b>, <b>Ministers</b>, <b>Members of Parliament</b>, Central Government Group A, B, C, D officers/officials వరకు విస్తరిస్తుంది (jurisdictional nuances, ముఖ్యంగా PM విషయంలో, తర్వాతి పేజీలో వివరంగా ఉన్నాయి).</div>
+
+  <p class="eng">The Lokpal shall consist of a <b class="term">Chairperson</b> and a <b class="imp">maximum of 8 members</b>. Of these members, <b class="imp">50% shall be judicial members</b>, and <b class="imp">50% shall come from amongst the SCs, STs, OBCs, minorities and women</b> — this second quota is drawn from the total membership (it can overlap with the judicial-member category, since a judicial member may themselves belong to one of these groups). By convention/practice, the Chairperson must be either a former Chief Justice of India, a former Supreme Court judge, or an eminent person of impeccable integrity with at least 25 years' special expertise in anti-corruption policy, public administration, vigilance, finance (including banking/insurance), law or management; judicial members must be a former Supreme Court judge or former High Court Chief Justice; and non-judicial members must be persons of similarly outstanding integrity/expertise. Members hold office for a term of <b class="hlg">5 years</b> from the date they assume office, or until they attain the age of <b class="hlg">70 years</b>, whichever is earlier.</p>
+  <div class="te">Lokpal లో <b class="term">Chairperson</b> + <b class="imp">గరిష్టంగా 8 మంది members</b> ఉంటారు. వీరిలో, <b class="imp">50% judicial members</b> గా ఉండాలి, <b class="imp">50% SCs, STs, OBCs, minorities, women</b> నుండి ఉండాలి — ఈ రెండో quota మొత్తం membership నుండి తీసుకుంటారు (judicial member category తో overlap కావచ్చు, ఎందుకంటే judicial member కూడా ఈ groups లో ఒకరి కావచ్చు). ఆచరణలో, Chairperson former Chief Justice of India, former Supreme Court judge, లేదా anti-corruption policy, public administration, vigilance, finance (banking/insurance సహా), law, management లో కనీసం 25 ఏళ్ల special expertise ఉన్న impeccable integrity గల eminent వ్యక్తి అయి ఉండాలి; judicial members former Supreme Court judge లేదా former High Court Chief Justice అయి ఉండాలి; non-judicial members కూడా అలాంటి outstanding integrity/expertise ఉన్నవారే కావాలి. Members తాము బాధ్యతలు స్వీకరించిన తేదీ నుండి <b class="hlg">5 సంవత్సరాలు</b> లేదా <b class="hlg">70 ఏళ్ల వయసు</b> — ఏది ముందు వస్తే అది — పదవిలో ఉంటారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Establishment &amp; Composition</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Composition of the Lokpal?</td><td>Chairperson + maximum 8 members</td></tr>
+      <tr><td>Judicial-member quota?</td><td>50% of members</td></tr>
+      <tr><td>SC/ST/OBC/minority/women quota?</td><td>50% of members (can overlap with judicial category)</td></tr>
+      <tr><td>Tenure of Chairperson/members?</td><td>5 years from assuming office, or age 70, whichever earlier</td></tr>
+      <tr><td>What does the 2013 Act mandate for states?</td><td>Establishing their own Lokayukta — uniform Centre + state anti-corruption roadmap</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Selection Committee &amp; Search Committee — Who Appoints the Lokpal</div>
+  <p class="eng">A five-member panel — the <b class="imp">Selection Committee</b> — picks the Chairperson and members of the Lokpal. It is headed by the <b class="hlp">Prime Minister</b>, who chairs it. The remaining seats belong to the <b class="hlp">Lok Sabha Speaker</b> and the <b class="hlp">Leader of Opposition</b> in the Lok Sabha; then either the sitting <b class="hlp">Chief Justice of India</b> or a Supreme Court judge the CJI names for this purpose; and finally one <b class="term">eminent jurist</b>. That jurist-member isn't picked directly by any of the four above — instead, the <b class="hlp">President</b> names them, going by whatever the other four members jointly recommend. A separate <b class="term">Search Committee</b> does the groundwork of shortlisting candidates for this panel, and here too — just as within the Lokpal itself — <b class="imp">half of the Search Committee's own members must come from the SC/ST/OBC/minority/women categories</b>, extending the same diversity requirement one step further up the appointment chain.</p>
+  <div class="te">ఐదుగురు సభ్యులున్న <b class="imp">Selection Committee</b> Lokpal Chairperson, members ను ఎంపిక చేస్తుంది. దీనికి <b class="hlp">Prime Minister</b> నేతృత్వం వహిస్తారు (committee chairperson గా). మిగతా సీట్లు <b class="hlp">Lok Sabha Speaker</b>, Lok Sabha లో <b class="hlp">Leader of Opposition</b> కు చెందుతాయి; తర్వాత sitting <b class="hlp">Chief Justice of India</b> లేదా CJI ఈ ప్రయోజనం కోసం నామినేట్ చేసిన Supreme Court judge; చివరిగా ఒక <b class="term">eminent jurist</b>. ఈ jurist-member ను పైన చెప్పిన నలుగురిలో ఎవరూ నేరుగా ఎంపిక చేయరు — బదులుగా, మిగతా నలుగురు సభ్యులు కలిసి చేసే సిఫారసు ఆధారంగా <b class="hlp">President</b> నామినేట్ చేస్తారు. ఈ panel కోసం candidates shortlist చేసే పని ఒక ప్రత్యేక <b class="term">Search Committee</b> చేస్తుంది — Lokpal లో లాగే ఇక్కడ కూడా, <b class="imp">Search Committee సభ్యుల్లో సగం మంది SC/ST/OBC/minority/women కేటగిరీల నుండే</b> ఉండాలి — appointment chain లో ఒక స్థాయి పైకి కూడా ఇదే diversity requirement విస్తరించింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Selection &amp; Search Committee</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>5 members of the Selection Committee?</td><td>PM (chair), LS Speaker, LoP (LS), CJI/nominated SC judge, eminent jurist (President-nominated)</td></tr>
+      <tr><td>Who nominates the "eminent jurist" member, and based on what?</td><td>President, on recommendation of the other 4 Selection Committee members</td></tr>
+      <tr><td>Role of the Search Committee?</td><td>Assists the Selection Committee in shortlisting candidates</td></tr>
+      <tr><td>Diversity quota applied to the Search Committee too?</td><td>Yes — 50% from SC/ST/OBC/minorities/women, same as the Lokpal itself</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Jurisdiction — the Prime Minister Safeguards (Exam Trap) · CBI-Strengthening · Timelines &amp; Punishment</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">Jurisdiction Over the Prime Minister — the Exact Safeguards (Frequently Mis-tested)</div>
+  <p class="eng">The Act brings the <b class="hlp">Prime Minister</b> under the Lokpal's purview — but with <b class="imp">significant subject-matter exclusions</b> and a <b class="imp">specific, heavily-guarded process</b>, unlike the largely ordinary process for Ministers/MPs/officials. Get these precisely right, as this is one of the most commonly mis-remembered points in the whole Act:</p>
+  <ul>
+    <li><b>Subject-matter exclusions</b> — the Lokpal <b class="imp">cannot inquire</b> into any allegation of corruption against the PM that relates to <b class="hlg">(a) international relations, (b) external and internal security, (c) public order, or (d) atomic energy and space</b>. These four categories are carved out completely, regardless of process.</li>
+    <li><b>Process for permitted matters</b> — even for allegations outside the excluded categories, a complaint against the PM can only be taken up for inquiry if the <b class="imp">Full Bench of the Lokpal</b> (i.e. the Chairperson and <b>all</b> Members sitting together) considers the initiation of an inquiry, and <b class="imp">at least two-thirds of the Full Bench's members approve</b> — a supermajority threshold far higher than what is needed for any other public servant covered by the Act.</li>
+    <li><b>Confidentiality</b> — any such inquiry against the PM must be held <b class="imp">in camera</b> (in private); and if the Lokpal ultimately concludes the complaint deserves to be dismissed, the <b class="imp">records of the inquiry are not published or made available</b> to anyone.</li>
+  </ul>
+  <div class="te">ఈ Act <b class="hlp">Prime Minister</b> ను Lokpal పరిధిలోకి తీసుకువస్తుంది — కానీ <b class="imp">ముఖ్యమైన subject-matter exclusions</b>, <b class="imp">ప్రత్యేకమైన, గట్టిగా రక్షించిన process</b> తో — Ministers/MPs/officials కు ఉండే సాధారణ ప్రక్రియ లాంటిది కాదు. మొత్తం Act లో అత్యంత తరచుగా తప్పుగా గుర్తుంచుకునే పాయింట్లలో ఇది ఒకటి కాబట్టి, వీటిని ఖచ్చితంగా తెలుసుకోవాలి —</div>
+  <div class="te">
+    <b>Subject-matter exclusions</b> — PM పై <b class="hlg">(a) international relations, (b) external, internal security, (c) public order, (d) atomic energy, space</b> కు సంబంధించిన corruption allegation ను Lokpal <b class="imp">inquire చేయజాలదు</b>. Process ఎలా ఉన్నా, ఈ నాలుగు categories పూర్తిగా carve-out చేయబడ్డాయి.<br><br>
+    <b>Permitted matters process</b> — excluded categories బయటి allegations కు కూడా, PM పై complaint ను <b class="imp">Lokpal Full Bench</b> (అంటే Chairperson + <b>అందరు</b> Members కలిసి) inquiry ప్రారంభించాలా అని పరిశీలించి, <b class="imp">కనీసం మూడింట రెండు వంతుల (2/3) Full Bench members approve</b> చేస్తేనే inquiry చేపట్టగలదు — Act పరిధిలోని ఇతర ఏ public servant కైనా అవసరమైన దానికన్నా చాలా ఎక్కువ supermajority threshold ఇది.<br><br>
+    <b>Confidentiality</b> — PM పై ఇలాంటి ఏ inquiry అయినా <b class="imp">in camera</b> (ప్రైవేట్ గా) జరగాలి; చివరికి complaint dismiss చేయాలని Lokpal నిర్ణయిస్తే, ఆ <b class="imp">inquiry records ఎవరికీ publish/అందుబాటులో ఉంచరు</b>.
+  </div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — PM Jurisdiction Safeguards</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>4 excluded subject-matters for PM allegations?</td><td>International relations, external/internal security, public order, atomic energy &amp; space</td></tr>
+      <tr><td>Who decides to initiate an inquiry against the PM?</td><td>Full Bench of Lokpal — Chairperson + all Members</td></tr>
+      <tr><td>Majority needed to approve initiating the inquiry?</td><td>At least two-thirds (2/3) of the Full Bench</td></tr>
+      <tr><td>How must such an inquiry be conducted?</td><td>In camera (in private)</td></tr>
+      <tr><td>What happens to records if the complaint is dismissed?</td><td>Not published/made available to anyone</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Jurisdiction Over Officials, Institutions &amp; the CBI</div>
+  <p class="eng">Apart from the PM, Lokpal jurisdiction reaches <b>every rung</b> of the public service — Groups A, B, C and D of the Central Government alike. When the Lokpal forwards a complaint to the <b class="term">CVC</b>, the handling differs by rank: for <b>Group A/B officers</b>, the CVC's preliminary findings must go back to the Lokpal, which takes the final call; for <b>Group C/D staff</b>, the CVC simply proceeds under its own statutory powers, with the Lokpal only reviewing and being kept informed. The Lokpal can also <b class="imp">supervise and direct</b> any agency investigating a case it has referred — the <b class="hlb">CBI</b> included — while a separate <b class="imp">Prime-Minister-led High-Powered Committee</b> handles the CBI Director's selection. As for institutions: bodies that are <b class="imp">funded wholly or partly by Government</b> fall under the Lokpal, whereas bodies that are merely <b class="imp">"aided"</b> stay outside it. One more trigger brings an entity in regardless of its government link: foreign funding under the <b class="hlb">FCRA</b> above <b class="hlg">₹10 lakh a year</b>.</p>
+  <div class="te">PM తప్ప, Lokpal jurisdiction public service లో <b>ప్రతి స్థాయినీ</b> — Central Government Group A, B, C, D — తాకుతుంది. Lokpal ఒక complaint ను <b class="term">CVC</b> కు forward చేసినప్పుడు, ranking ను బట్టి handling మారుతుంది — <b>Group A/B officers</b> కోసం, CVC ప్రాథమిక findings ను తిరిగి Lokpal కు పంపాలి, తుది నిర్ణయం Lokpal దే; <b>Group C/D సిబ్బంది</b> కోసం, CVC తన సొంత statutory powers ప్రకారం ముందుకు వెళ్తుంది — Lokpal కేవలం review చేసి సమాచారం పొందుతుంది. Lokpal రిఫర్ చేసిన ఏ case ను investigate చేసే agency పైనైనా — <b class="hlb">CBI</b> తో సహా — <b class="imp">supervise, direct</b> చేసే power కూడా Lokpal కు ఉంటుంది — CBI Director selection ను ప్రత్యేక <b class="imp">Prime-Minister-నేతృత్వంలోని High-Powered Committee</b> చూసుకుంటుంది. Institutions విషయానికి వస్తే — ప్రభుత్వం <b class="imp">పూర్తిగా లేదా పాక్షికంగా fund</b> చేసే బాడీలు Lokpal కిందకు వస్తాయి, కేవలం <b class="imp">"aided"</b> బాడీలు మాత్రం బయటే ఉంటాయి. ప్రభుత్వ సంబంధంతో సంబంధం లేకుండా ఇంకో trigger కూడా ఉంది — <b class="hlb">FCRA</b> కింద సంవత్సరానికి <b class="hlg">₹10 లక్షలకు మించి</b> foreign funding.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Officials, Institutions &amp; CBI</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>CVC's role for Group A/B vs Group C/D officers?</td><td>A/B → report goes back to Lokpal for decision; C/D → CVC proceeds itself, subject to Lokpal review</td></tr>
+      <tr><td>Lokpal's power over CBI (for referred cases)?</td><td>Superintendence and direction</td></tr>
+      <tr><td>Who recommends the CBI Director?</td><td>High-Powered Committee chaired by the PM</td></tr>
+      <tr><td>"Financed" vs "aided" institutions — jurisdiction?</td><td>Financed (fully/partly) → covered; merely aided → excluded</td></tr>
+      <tr><td>FCRA threshold bringing an entity under Lokpal?</td><td>Foreign contributions exceeding ₹10 lakh/year</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Strengthening the CBI · Timelines · Enhanced Punishment</div>
+  <p class="eng">Several provisions in the Act exist purely to make the <b class="imp">CBI more effective</b>. A new <b class="term">Directorate of Prosecution</b> is created — headed by its own Director, but ultimately answerable to the CBI Director — and this Director of Prosecution is appointed on the <b>CVC's say-so</b>. The CBI must keep a roster of non-government advocates for Lokpal-referred matters, but only with the <b>Lokpal's consent</b>, and cannot move an officer working on such a case without the <b>Lokpal's approval</b> — with funding for these investigations kept adequate throughout. Strict clocks apply too — call it the <b class="imp">timeline rule</b>: a preliminary enquiry gets <b class="hlg">3 months</b>, stretchable by another 3; investigation gets <b class="hlg">6 months</b>, extendable 6 at a stretch; and trial gets <b class="hlg">a year</b>, extendable by one more — with dedicated <b>special courts</b> set up to hear these cases. Punishment under the Prevention of Corruption Act climbs across the board — the ceiling rises from <b class="hlg">7 to 10 years</b>, the floor for sections 7, 8, 9 and 12 goes up to <b class="hlg">3 years</b>, and for attempt under section 15 to <b class="hlg">2 years</b>. On top of this, the Lokpal itself — not the government or any other authority — now grants sanction to prosecute a public servant, can freeze or confiscate corruptly-gained property even mid-trial, and the Act balances this out with safeguards for honest officials.</p>
+  <div class="te"><b class="imp">CBI ను మరింత effective చేయడానికే</b> ఈ Act లో అనేక provisions ఉన్నాయి. కొత్తగా ఒక <b class="term">Directorate of Prosecution</b> ఏర్పడుతుంది — దీనికి సొంత Director ఉంటారు, కానీ చివరికి CBI Director కు జవాబుదారీగా ఉంటారు — ఈ Director of Prosecution ను <b>CVC సిఫారసుతో</b> appoint చేస్తారు. Lokpal-referred cases కోసం non-government advocates ఉన్న panel ను CBI నిర్వహించాలి, కానీ <b>Lokpal సమ్మతితోనే</b>; అలాంటి case పై పనిచేస్తున్న officer ను <b>Lokpal ఆమోదం లేకుండా</b> transfer చేయకూడదు — ఈ investigations కు తగినంత funds ఎప్పుడూ అందుబాటులో ఉండాలి. కఠినమైన <b class="imp">timelines</b> కూడా వర్తిస్తాయి — preliminary enquiry కు <b class="hlg">3 నెలలు</b> (మరో 3 వరకు పొడిగించవచ్చు); investigation కు <b class="hlg">6 నెలలు</b> (ఒక్కోసారి మరో 6); trial కు <b class="hlg">ఒక సంవత్సరం</b> (మరో 1) — వీటి కోసం <b>special courts</b> ఏర్పాటు చేయాలి. Prevention of Corruption Act కింద punishment మొత్తంగా పెరిగింది — గరిష్టం <b class="hlg">7 నుండి 10 ఏళ్లకు</b>; sections 7,8,9,12 కింద కనిష్టం <b class="hlg">3 ఏళ్లకు</b>; attempt (section 15) కింద కనిష్టం <b class="hlg">2 ఏళ్లకు</b> పెరిగింది. దీనికి తోడు, Lokpal స్వయంగా — ప్రభుత్వం లేదా వేరే authority బదులు — public servant ప్రాసిక్యూషన్ కు sanction ఇస్తుంది, trial మధ్యలో ఉన్నా corruptly-సంపాదించిన ఆస్తిని attach/confiscate చేయగలదు — honest officials కు రక్షణ తో పాటు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — CBI-Strengthening, Timelines, Punishment</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Timeline — preliminary enquiry / investigation / trial?</td><td>3 months (+3) / 6 months (+6 each) / 1 year (+1)</td></tr>
+      <tr><td>Max punishment under PC Act — before and after?</td><td>7 years → 10 years</td></tr>
+      <tr><td>Min punishment — sections 7/8/9/12, and section 15?</td><td>3 years (ss.7,8,9,12); 2 years (s.15, attempt)</td></tr>
+      <tr><td>Who now grants sanction to prosecute a public servant?</td><td>The Lokpal itself, in place of the government/competent authority</td></tr>
+      <tr><td>Who appoints the Director of Prosecution?</td><td>On the CVC's recommendation, under the CBI Director's overall control</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Drawbacks of the 2013 Act · State-Level Mandate</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">Drawbacks (Shortcomings) of the Lokpal and Lokayuktas Act, 2013</div>
+  <p class="eng">Despite its ambitious scope, the Act has drawn <b class="hlg">seven</b> commonly-cited criticisms: <b>(1)</b> the Lokpal <b class="imp">cannot proceed suo motu</b> against any public servant — it can only act on a complaint received; <b>(2)</b> there is undue emphasis on the <b>form</b> of a complaint rather than its substance; <b>(3)</b> <b class="imp">heavy punishment for false/frivolous complaints</b> against public servants may deter genuine complainants from approaching the Lokpal; <b>(4)</b> <b class="imp">anonymous complaints are not allowed</b> — one cannot simply file a complaint on plain paper with supporting documents and drop it in a box; <b>(5)</b> the public servant complained against is entitled to <b>legal assistance</b>, which can tilt proceedings; <b>(6)</b> a <b class="imp">limitation period of 7 years</b> applies to filing complaints, which can bar genuinely old but valid grievances; and <b>(7)</b> the procedure for dealing with complaints against the <b>Prime Minister</b> is criticised as <b class="imp">very non-transparent</b> — a direct echo of the heavy safeguards/exclusions covered on the previous page.</p>
+  <div class="te">విస్తృత scope ఉన్నప్పటికీ, ఈ Act పై <b class="hlg">ఏడు</b> సాధారణంగా ఎత్తిచూపే criticisms ఉన్నాయి — <b>(1)</b> Lokpal ఏ public servant పైనైనా <b class="imp">suo motu ముందుకు వెళ్లజాలదు</b> — వచ్చిన complaint మీదే act చేయగలదు; <b>(2)</b> complaint <b>substance</b> కన్నా దాని <b>form</b> పైనే ఎక్కువ emphasis; <b>(3)</b> public servants పై false/frivolous complaints కు <b class="imp">భారీ punishment</b> — genuine complainants కూడా Lokpal ను approach కాకుండా నిరుత్సాహపరచొచ్చు; <b>(4)</b> <b class="imp">anonymous complaints అనుమతించరు</b> — plain paper మీద supporting documents తో complaint రాసి box లో వేయడం కుదరదు; <b>(5)</b> complaint చేయబడిన public servant కు <b>legal assistance</b> హక్కు ఉంటుంది — ఇది proceedings ను tilt చేయవచ్చు; <b>(6)</b> complaints ఫైల్ చేయడానికి <b class="imp">7 ఏళ్ల limitation period</b> వర్తిస్తుంది — genuine గా పాత కానీ valid grievances ను ఇది ఆపవచ్చు; <b>(7)</b> <b>Prime Minister</b> పై complaints handle చేసే procedure <b class="imp">చాలా non-transparent</b> అని విమర్శించబడుతుంది — ముందు పేజీలో చూసిన భారీ safeguards/exclusions కు ఇది direct echo.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — 7 Drawbacks</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Can the Lokpal act suo motu?</td><td>No — only on a received complaint</td></tr>
+      <tr><td>Are anonymous complaints allowed?</td><td>No</td></tr>
+      <tr><td>Limitation period for filing complaints?</td><td>7 years</td></tr>
+      <tr><td>Most-criticised process among the drawbacks?</td><td>Complaints against the PM — called "very non-transparent"</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">The State-Level Mandate — Setting Up Lokayuktas</div>
+  <p class="eng">Beyond the Central Lokpal, the 2013 Act mandates that every <b class="hlp">State Legislature</b> enact a law establishing the institution of <b class="term">Lokayukta</b> within a period of <b class="hlg">365 days</b> from the date the Act commenced. Crucially, the Act gives <b class="imp">freedom to the states</b> to decide the exact contours of their Lokayukta mechanism — meaning states are not bound to replicate the Central Lokpal's composition, appointment process or jurisdiction. This state-level flexibility is explored in detail on the next page, and turns out to be a double-edged sword — it is precisely this flexibility that has produced today's very uneven picture of functioning versus vacant/defunct state Lokayuktas (see the Current Affairs Update at the end of this chapter).</p>
+  <div class="te">Central Lokpal కాకుండా, 2013 Act ప్రతి <b class="hlp">State Legislature</b>, Act అమల్లోకి వచ్చిన తేదీ నుండి <b class="hlg">365 రోజుల్లోగా</b>, <b class="term">Lokayukta</b> institution ఏర్పరిచే చట్టం చేయాలని mandate చేస్తుంది. ముఖ్యంగా, ఈ Act <b class="imp">states కు freedom</b> ఇస్తుంది — వారి Lokayukta mechanism యొక్క exact contours నిర్ణయించుకోవడానికి — అంటే Central Lokpal composition, appointment process, jurisdiction ను states తప్పనిసరిగా replicate చేయాల్సిన అవసరం లేదు. తర్వాతి పేజీలో ఈ state-level flexibility వివరంగా చూద్దాం — ఇది ఒక double-edged sword గా తేలింది — ఈ flexibility వల్లే ఈరోజు functioning, vacant/defunct state Lokayuktas మధ్య చాలా అసమాన చిత్రం కనిపిస్తోంది (ఈ chapter చివర Current Affairs Update చూడండి).</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — State-Level Mandate</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Deadline for states to enact a Lokayukta law?</td><td>Within 365 days of the 2013 Act's commencement</td></tr>
+      <tr><td>Are states bound to copy the Central Lokpal's design?</td><td>No — full freedom to decide their own Lokayukta's contours</td></tr>
+      <tr><td>What has this flexibility produced in practice?</td><td>Highly uneven state Lokayukta strength/functionality (see Current Affairs)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Lokayuktas — State-Level Institution in Detail · Facts at a Glance</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Lokayuktas — Nine Recurring Features Across States</div>
+  <p class="eng">Even much before the 2013 Act, many states had already set up their own Lokayukta. The institution was first <b class="imp">established in Maharashtra in 1971</b>; however, <b class="hlp">Odisha</b> had actually <b class="imp">passed its Act earlier, in 1970</b> (i.e. Odisha legislated first, but Maharashtra was first to actually set up a functioning institution). Nine points describe how the institution varies across states:</p>
+  <div class="te">2013 Act కు చాలా ముందే, చాలా states తమ సొంత Lokayukta ను ఏర్పాటు చేసుకున్నాయి. ఈ institution మొదట <b class="imp">1971 లో Maharashtra లో establish</b> అయ్యింది; అయితే, <b class="hlp">Odisha</b> నిజానికి <b class="imp">1970 లోనే తన Act ను పాస్ చేసింది</b> (అంటే చట్టం చేయడంలో Odisha ముందుంది, కానీ నిజంగా పనిచేసే institution ఏర్పాటులో Maharashtra ముందుంది). Nine points states వారీగా ఈ institution ఎలా మారుతుందో వివరిస్తాయి —</div>
+
+  <ul>
+    <li><b>(1)</b> Structure varies from state to state — several have set up both a <b class="term">Lokayukta and an Upalokayukta</b>, others rely on the Lokayukta alone.
+      <div class="te">Structure ప్రతి రాష్ట్రంలో ఒకేలా ఉండదు — కొన్ని రాష్ట్రాలు <b class="term">Lokayukta, Upalokayukta</b> రెండింటినీ పెట్టుకున్నాయి, మరికొన్ని కేవలం Lokayukta మీదే ఆధారపడతాయి.</div></li>
+    <li><b>(2)</b> Whichever of these offices exist, it is the state's <b class="hlp">Governor</b> who makes the appointment to them.
+      <div class="te">ఏ ఆఫీసులు ఉన్నా, వాటికి నియామకం చేసేది ఆ రాష్ట్ర <b class="hlp">Governor</b> యే.</div></li>
+    <li><b>(3)</b> A number of states insist on judicial qualifications for the post, while others lay down <b class="imp">no fixed eligibility criteria</b> at all.
+      <div class="te">చాలా రాష్ట్రాలు ఈ పదవికి judicial qualifications పట్టుబడతాయి; మరికొన్ని <b class="imp">ఎలాంటి నిర్దిష్ట eligibility criteria</b> పెట్టవు.</div></li>
+    <li><b>(4)</b> Most states cap the term at <b class="hlg">5 years</b> or age <b class="hlg">65</b>, whichever arrives first — worth contrasting with the Central Lokpal's age-70 limit.
+      <div class="te">చాలా రాష్ట్రాల్లో term <b class="hlg">5 సంవత్సరాలు</b> లేదా <b class="hlg">65 ఏళ్ల వయసు</b> కు పరిమితం — ఏది ముందు వస్తే అది (గమనిక — దీన్ని Central Lokpal 70-ఏళ్ల వయో పరిమితితో పోల్చి చూడాలి).</div></li>
+    <li><b>(5)</b> Jurisdiction is <b class="imp">anything but standardised</b>: <b>(a)</b> the Chief Minister falls under some Lokayuktas but is kept out of others; <b>(b)</b> Ministers and senior bureaucrats are covered almost universally; <b>(c)</b> state legislators are covered only here and there; <b>(d)</b> office-bearers of local bodies, corporations, companies and societies come under most Lokayuktas' reach.
+      <div class="te">Jurisdiction <b class="imp">ఏమాత్రం ఏకరూపంగా లేదు</b> — <b>(a)</b> కొన్ని Lokayuktas పరిధిలో Chief Minister ఉంటే, మరికొన్నింటిలో ఉండరు; <b>(b)</b> Ministers, senior bureaucrats దాదాపు అన్నిచోట్లా కవర్ అవుతారు; <b>(c)</b> state legislators కొన్నిచోట్ల మాత్రమే కవర్ అవుతారు; <b>(d)</b> local bodies, corporations, companies, societies అధికారులు చాలా Lokayuktas పరిధిలోకి వస్తారు.</div></li>
+    <li><b>(6)</b> A Lokayukta can usually begin an investigation on its own initiative, or wait for a citizen's complaint — most states allow both routes (<b class="term">suo motu</b> plus complaint-based).
+      <div class="te">Lokayukta సాధారణంగా తనంతట తానే investigation మొదలుపెట్టగలదు, లేదా citizen complaint కోసం ఎదురుచూడొచ్చు — చాలా రాష్ట్రాలు రెండు మార్గాలనూ (<b class="term">suo motu</b>, complaint) అనుమతిస్తాయి.</div></li>
+    <li><b>(7)</b> Some Lokayuktas are empowered to look at both <b>'grievances'</b> (poor administration) and <b>'allegations'</b> (corruption); elsewhere the mandate is narrowed to <b>allegations</b> alone.
+      <div class="te">కొన్ని Lokayuktas <b>'grievances'</b> (పేలవమైన administration), <b>'allegations'</b> (corruption) రెండూ చూడగలవు; మరికొన్నింటిలో mandate <b>allegations</b> కు మాత్రమే కుదించబడింది.</div></li>
+    <li><b>(8)</b> Each year the Lokayukta sends the Governor a single consolidated report on its work, which the Governor then tables before the state legislature together with an explanatory note.
+      <div class="te">ప్రతి సంవత్సరం, Lokayukta తన పని గురించి ఒకే consolidated report ను Governor కు పంపుతుంది — దాన్ని Governor explanatory note తో పాటు state legislature ముందు పెడతారు.</div></li>
+    <li><b>(9)</b> Whatever the Lokayukta recommends remains <b class="imp">advice</b> — the state government is free to accept it or set it aside, since it is <b class="imp">not binding</b>.
+      <div class="te">Lokayukta సిఫారసు చేసేది <b class="imp">advice</b> మాత్రమే — దాన్ని accept చేయాలా, వదిలేయాలా అనేది state government ఇష్టం, ఎందుకంటే ఇది <b class="imp">binding కాదు</b>.</div></li>
+  </ul>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — State Lokayuktas (9 Points)</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>First state to establish a functioning Lokayukta, and year?</td><td>Maharashtra, 1971 (Odisha passed its Act earlier, 1970)</td></tr>
+      <tr><td>Who appoints Lokayukta/Upalokayukta?</td><td>The Governor of the state</td></tr>
+      <tr><td>Typical state term of office?</td><td>5 years or age 65, whichever earlier</td></tr>
+      <tr><td>Is CM coverage uniform across states?</td><td>No — included in some states' jurisdiction, excluded in others</td></tr>
+      <tr><td>Are Lokayukta recommendations binding on the state govt?</td><td>No — advisory only</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Chapter 66 — Facts at a Glance</div>
+  <table>
+    <caption>Lokpal and Lokayuktas — key facts, one table</caption>
+    <thead><tr><th style="width:34%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Ombudsman first created</td><td>Sweden, 1809</td></tr>
+      <tr><td>First ARC recommended Lokpal/Lokayukta</td><td>1966-1970 (interim report, 1966)</td></tr>
+      <tr><td>Number of Lokpal bills before success</td><td>10 (1968-2011) — enacted as Lokpal and Lokayuktas Act, 2013</td></tr>
+      <tr><td>Movement credited with final push</td><td>Anna Hazare's India Against Corruption movement, 2011</td></tr>
+      <tr><td>Lokpal composition</td><td>Chairperson + max. 8 members (50% judicial; 50% SC/ST/OBC/minorities/women)</td></tr>
+      <tr><td>Selection Committee (5 members)</td><td>PM, LS Speaker, LoP (LS), CJI/nominated SC judge, eminent jurist</td></tr>
+      <tr><td>Tenure</td><td>5 years or age 70, whichever earlier</td></tr>
+      <tr><td>PM jurisdiction exclusions</td><td>International relations, security, public order, atomic energy &amp; space</td></tr>
+      <tr><td>PM inquiry approval threshold</td><td>Full Bench, at least 2/3rd majority, in camera</td></tr>
+      <tr><td>FCRA threshold for Lokpal coverage</td><td>Foreign contributions &gt; ₹10 lakh/year</td></tr>
+      <tr><td>State Lokayukta law deadline</td><td>365 days from 2013 Act's commencement (states free to design contours)</td></tr>
+      <tr><td>First functioning state Lokayukta</td><td>Maharashtra, 1971</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలాలు — Lokpal and Lokayuktas Act, 2013; First Administrative Reforms Commission Report; PIB, Government of India, 23 Dec 2013.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Current Lokpal Chairperson &amp; State Lokayukta Status <span class="caasof">(as of 25.08.2026, verified via live web search on this date — Lokayukta vacancy/functionality is an actively shifting governance issue; re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>1. Current Lokpal Chairperson — Justice A.M. Khanwilkar:</b> India's first-ever Lokpal Chairperson was <b class="hlp">Justice Pinaki Chandra Ghose</b>, appointed in 2019. After his term, <b class="hlp">Justice Pradip Kumar Mohanty</b> held additional/acting charge of the office (2022-2024). The <b class="imp">current Lokpal Chairperson</b> is <b class="hlp">Justice A.M. (Ajay Manikrao) Khanwilkar</b>, a former Supreme Court judge — appointed by President Droupadi Murmu on <b class="hlg">27 February 2024</b> and administered the oath of office on <b class="hlg">10 March 2024</b>, along with several other members that day. A further batch of <b class="hlg">three members</b> — judicial members L. Narayana Swamy and Sanjay Yadav, plus non-judicial member Sushil Chandra (a former Chief Election Commissioner) — took oath two days later, on <b class="hlg">12 March 2024</b>. With that, the Lokpal reached its <b class="imp">full sanctioned strength of nine — the Chairperson plus all 8 members</b> (also including judicial member Ritu Raj Awasthi, and non-judicial members Pankaj Kumar and Ajay Tirkey), consistent with the Act's 50% judicial / 50% SC-ST-OBC-minority-women design.</p>
+    <div class="te"><b>1. ప్రస్తుత Lokpal Chairperson — Justice A.M. Khanwilkar:</b> India మొదటి Lokpal Chairperson <b class="hlp">Justice Pinaki Chandra Ghose</b>, 2019లో appoint అయ్యారు. ఆయన term తర్వాత, <b class="hlp">Justice Pradip Kumar Mohanty</b> additional/acting charge లో office నిర్వహించారు (2022-2024). <b class="imp">ప్రస్తుత Lokpal Chairperson</b> former Supreme Court judge <b class="hlp">Justice A.M. (Ajay Manikrao) Khanwilkar</b> — President Droupadi Murmu <b class="hlg">2024 ఫిబ్రవరి 27</b>న appoint చేశారు, <b class="hlg">2024 మార్చి 10</b>న మిగతా కొందరు members తో పాటు oath తీసుకున్నారు. ఇంకో ముగ్గురు members — judicial members L. Narayana Swamy, Sanjay Yadav, non-judicial member (former Chief Election Commissioner) Sushil Chandra — రెండు రోజుల తర్వాత, <b class="hlg">2024 మార్చి 12</b>న ప్రమాణ స్వీకారం చేశారు. దీనితో Lokpal <b class="imp">తన పూర్తి sanctioned strength — Chairperson + మొత్తం 8 members</b> కు చేరుకుంది (judicial member Ritu Raj Awasthi, non-judicial members Pankaj Kumar, Ajay Tirkey సహా) — Act 50% judicial / 50% SC-ST-OBC-minority-women design కు అనుగుణంగా.</div>
+
+    <p class="eng"><b>2. Andhra Pradesh Lokayukta — vacancy just filled, brand-new appointment (highly relevant for APPSC candidates):</b> The previous AP Lokayukta, <b class="hlp">Justice P. Lakshmana Reddy</b> (in office since September 2019), <b class="imp">retired on 14 September 2024</b>, after which Upa-Lokayukta <b class="hlp">P. Rajani</b> handled interim duties for nearly two years. Because YSRCP was <b class="imp">not granted recognised Leader-of-Opposition status</b> after the 2024 state election, the state passed the <b class="hlb">Andhra Pradesh Lokayukta (Amendment) Bill, 2024</b> (passed by the Legislative Council on <b class="hlg">23 November 2024</b>) to let the remaining four members of the selection committee — the Chief Minister, the Assembly Speaker, a CM-nominated minister, and the Legislative Council Chairperson — choose the Lokayukta chairperson even without an LoP. A Chief-Secretary-led search committee subsequently screened candidates and shortlisted a panel; that selection committee, chaired by Chief Minister <b class="hlp">N. Chandrababu Naidu</b>, settled on <b class="hlp">Justice T. Mallikarjuna Rao</b> — a former Andhra Pradesh High Court judge (permanent judge from March 2024, retired 18 January 2026) — as the state's <b class="imp">second Lokayukta</b>. Governor <b class="hlp">S. Abdul Nazeer</b> administered the oath at Lok Bhavan, Vijayawada, on <b class="hlg">25 August 2026</b>, ending the nearly two-year vacancy; his term runs for <b class="hlg">five years</b> from that date.</p>
+    <div class="te"><b>2. Andhra Pradesh Lokayukta — vacancy ఇప్పుడే భర్తీ అయింది, కొత్త appointment (APPSC candidates కు చాలా relevant):</b> గత AP Lokayukta <b class="hlp">Justice P. Lakshmana Reddy</b> (2019 సెప్టెంబర్ నుండి పదవిలో ఉన్నారు), <b class="imp">2024 సెప్టెంబర్ 14</b>న retire అయ్యారు; ఆ తర్వాత Upa-Lokayukta <b class="hlp">P. Rajani</b> దాదాపు రెండేళ్లు interim duties నిర్వహించారు. 2024 state election తర్వాత YSRCP కు గుర్తింపు పొందిన Leader-of-Opposition status <b class="imp">రాలేదు</b> కాబట్టి, LoP లేకుండానే మిగతా నలుగురు selection committee members — Chief Minister, Assembly Speaker, CM-నామినేట్ చేసిన మంత్రి, Legislative Council Chairperson — Lokayukta chairperson ను ఎంపిక చేసేలా <b class="hlb">Andhra Pradesh Lokayukta (Amendment) Bill, 2024</b> (Legislative Council <b class="hlg">2024 నవంబర్ 23</b>న పాస్ చేసింది) ను రాష్ట్రం పాస్ చేసింది. తర్వాత Chief Secretary నేతృత్వంలోని search committee candidates ను screen చేసి panel తయారు చేసింది; Chief Minister <b class="hlp">N. Chandrababu Naidu</b> నేతృత్వంలోని ఆ selection committee, former Andhra Pradesh High Court judge (2024 మార్చి నుండి permanent judge, 2026 జనవరి 18న retire) <b class="hlp">Justice T. Mallikarjuna Rao</b> ను రాష్ట్రం <b class="imp">రెండో Lokayukta</b> గా ఎంపిక చేసింది. Governor <b class="hlp">S. Abdul Nazeer</b>, <b class="hlg">2026 ఆగస్టు 25</b>న Vijayawada లోని Lok Bhavan వద్ద ఆయనతో oath చేయించారు — దీంతో దాదాపు రెండేళ్ల vacancy ముగిసింది; ఆయన term ఆ తేదీ నుండి <b class="hlg">ఐదేళ్లు</b> ఉంటుంది.</div>
+
+    <p class="eng"><b>3. Telangana and Karnataka — functional, for contrast:</b> <b class="hlp">Justice A. Rajasheker Reddy</b> was appointed <b class="imp">Telangana's Lokayukta</b> on <b class="hlg">11 April 2025</b> for a <b class="hlg">5-year tenure</b>, holding the status of a High Court Chief Justice during his term. In <b class="hlp">Karnataka</b>, <b class="hlp">Justice B.S. Patil</b> was sworn in as Lokayukta in <b class="hlg">2022</b>, ending a roughly five-month vacancy that followed the retirement of Justice P. Vishwanath Shetty — Karnataka's Lokayukta remains functional, though it has periodically clashed with the state government over jurisdiction and investigative powers (a 2016 amendment there shifted some investigative powers to a separately-created Anti-Corruption Bureau). These contrasting cases illustrate the Act's core design trade-off: because states were given <b class="imp">full freedom to design their own Lokayukta's contours</b> (as covered in the main notes), outcomes range from smoothly functioning institutions to prolonged vacancies and diluted powers, entirely depending on individual state political will.</p>
+    <div class="te"><b>3. Telangana, Karnataka — పోలిక కోసం, ప్రస్తుతం functional గా ఉన్నవి:</b> <b class="hlp">Justice A. Rajasheker Reddy</b> ను <b class="imp">Telangana Lokayukta</b> గా <b class="hlg">2025 ఏప్రిల్ 11</b>న <b class="hlg">5-సంవత్సరాల పదవీకాలం</b> కోసం appoint చేశారు — పదవీకాలంలో High Court Chief Justice హోదా ఉంటుంది. <b class="hlp">Karnataka</b> లో, Justice P. Vishwanath Shetty retirement తర్వాత దాదాపు ఐదు నెలల vacancy ముగుస్తూ, <b class="hlp">Justice B.S. Patil</b> <b class="hlg">2022</b>లో Lokayukta గా ప్రమాణ స్వీకారం చేశారు — Karnataka Lokayukta functional గానే ఉంది, అయితే jurisdiction, investigative powers విషయంలో state government తో అప్పుడప్పుడు ఘర్షణలు జరిగాయి (అక్కడ 2016 amendment కొన్ని investigative powers ను వేరుగా ఏర్పరిచిన Anti-Corruption Bureau కు మార్చింది). ఈ విభిన్న ఉదాహరణలు Act core design trade-off ను చూపిస్తాయి — states కు తమ <b class="imp">Lokayukta contours design చేసుకునే పూర్తి freedom</b> ఇచ్చారు కాబట్టి (main notes లో చూసినట్టు), ఫలితాలు — smoothly functioning institutions నుండి prolonged vacancies, diluted powers వరకు — పూర్తిగా individual state political will మీదే ఆధారపడి ఉంటాయి.</div>
+
+    <p class="eng"><b>4. Broader national pattern — vacancies and power-dilution as a recurring theme:</b> Beyond AP (whose vacancy is now resolved, per point 2 above), several other states have periodically struggled with Lokayukta vacancies — <b class="hlp">Jharkhand</b>'s post (vacant after the incumbent's death in mid-2021) was recently filled with <b class="hlp">Justice Amitabh Kumar Gupta</b> taking oath; <b class="hlp">Delhi</b> and <b class="hlp">Uttarakhand</b> have both faced extended vacancies/PILs over non-appointment in past years and should be treated as illustrative "watch" states — reconfirm their exact live status nearer your exam, since the situation changes with each state government's political will. Separately, several states have <b class="imp">diluted</b> Lokayukta powers over time — e.g. Tamil Nadu's 2018 Act explicitly excludes the Chief Minister from oversight on tenders/contracts/appointments, and Maharashtra's CM remains outside its Lokayukta's purview altogether — underscoring the exam-relevant point that "jurisdiction over the CM" is one of the most state-variable, frequently-tested facts in this topic (see point 5(a) in the main Lokayukta notes).</p>
+    <div class="te"><b>4. విస్తృత national pattern — vacancies, power-dilution ఒక పునరావృత theme:</b> AP వంటిది కాకుండా (దాని vacancy పైన point 2 లో చెప్పినట్టు ఇప్పుడు తీరింది), ఇంకా చాలా రాష్ట్రాలు అప్పుడప్పుడు Lokayukta vacancies తో ఇబ్బంది పడ్డాయి — <b class="hlp">Jharkhand</b> post (2021 మధ్యలో incumbent మరణం వల్ల vacant అయింది) ఇటీవలే <b class="hlp">Justice Amitabh Kumar Gupta</b> ప్రమాణ స్వీకారంతో నిండింది; <b class="hlp">Delhi</b>, <b class="hlp">Uttarakhand</b> రెండూ గత సంవత్సరాల్లో appointment కాకపోవడంపై extended vacancies/PILs ఎదుర్కొన్నాయి — వీటిని illustrative "watch" states గా భావించండి — exam కు దగ్గరగా వాటి exact live status ను తిరిగి verify చేసుకోండి, ప్రతి state government political will తో పరిస్థితి మారుతుంది కాబట్టి. వేరుగా, చాలా రాష్ట్రాలు కాలక్రమేణా Lokayukta powers ను <b class="imp">తగ్గించాయి</b> — ఉదాహరణకు Tamil Nadu 2018 Act tenders/contracts/appointments విషయంలో Chief Minister ను oversight నుండి స్పష్టంగా మినహాయిస్తుంది, Maharashtra CM పూర్తిగా తన Lokayukta పరిధి బయటే ఉంటారు — "CM పై jurisdiction" ఈ topic లో అత్యంత state-variable, తరచుగా అడిగే fact అని దీన్ని గుర్తుంచుకోండి (main Lokayukta notes లో point 5(a) చూడండి).</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — Lokpal &amp; Lokayukta current affairs, 2019-2026</caption>
+      <thead><tr><th style="width:20%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">2019</td><td>Justice Pinaki Chandra Ghose becomes India's first Lokpal Chairperson</td></tr>
+        <tr><td class="hlg">Sep 2019</td><td>Justice P. Lakshmana Reddy appointed AP Lokayukta</td></tr>
+        <tr><td class="hlg">Jan 2022</td><td>Karnataka Lokayukta post falls vacant (Justice P. Vishwanath Shetty retires)</td></tr>
+        <tr><td class="hlg">2022</td><td>Justice B.S. Patil sworn in as Karnataka Lokayukta</td></tr>
+        <tr><td class="hlg">27 Feb - 12 Mar 2024</td><td>Justice A.M. Khanwilkar appointed Lokpal Chairperson (oath 10 Mar); remaining members sworn by 12 Mar — Lokpal reaches full strength of 9</td></tr>
+        <tr><td class="hlg">14 Sep 2024</td><td>Justice P. Lakshmana Reddy retires as AP Lokayukta — post falls vacant</td></tr>
+        <tr><td class="hlg">23 Nov 2024</td><td>AP Lokayukta (Amendment) Bill, 2024 passed — selection committee redesigned (no LoP)</td></tr>
+        <tr><td class="hlg">11 Apr 2025</td><td>Justice A. Rajasheker Reddy appointed Telangana Lokayukta (5-year term)</td></tr>
+        <tr><td class="hlg">25 May 2026</td><td>AP forms search committee (Chief Secretary-led) to screen new Lokayukta candidates</td></tr>
+        <tr><td class="hlg">25 Aug 2026</td><td>Justice T. Mallikarjuna Rao sworn in as AP's 2nd Lokayukta — nearly 2-year vacancy ends</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: cite the 2013 Act's text (composition, PM safeguards, timelines) as the stable statutory core. For current affairs, be ready for MCQs on (a) the current Lokpal Chairperson by name (Justice A.M. Khanwilkar), (b) the newly-appointed AP Lokayukta (Justice T. Mallikarjuna Rao) and the amended, LoP-free selection-committee process that picked him (highly likely for an APPSC paper), and (c) the general point that state Lokayukta functionality varies widely and changes often — exactly the kind of evolving fact the Rulebook flags as needing re-verification before each exam cycle.</p>
+    <div class="te">Exam కోసం — composition, PM safeguards, timelines వంటి 2013 Act టెక్స్ట్ ను స్థిరమైన statutory core గా ఉదహరించండి. Current affairs కోసం — (a) ప్రస్తుత Lokpal Chairperson పేరు (Justice A.M. Khanwilkar), (b) కొత్తగా appoint అయిన AP Lokayukta (Justice T. Mallikarjuna Rao), ఆయనను ఎంపిక చేసిన సవరించిన, LoP-లేని selection-committee ప్రక్రియ (APPSC paper కు చాలా అవకాశం ఉంది), (c) state Lokayukta functionality చాలా వైవిధ్యంగా, తరచుగా మారుతూ ఉంటుందనే సాధారణ అంశం — ఇలాంటి MCQs కు సిద్ధంగా ఉండండి — ఇది సరిగ్గా ప్రతి exam cycle ముందూ re-verify చేయాల్సిన రకమైన, evolving fact గా Rulebook సూచించింది.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 66 — Lokpal and Lokayuktas · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+</body></html>

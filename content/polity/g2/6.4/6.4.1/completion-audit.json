@@ -1,0 +1,1995 @@
+{
+  "chapter": "6.1.9",
+  "status": "in_progress",
+  "source_draft_boundary": {
+    "first_page": 87,
+    "last_page": 133,
+    "next_chapter_first_page": 134
+  },
+  "inventory": {
+    "draft_notes_pages": 47,
+    "original_questions": 467,
+    "publisher_items": 27,
+    "fact_status_counts": {
+      "tested": 724,
+      "verification_hold": 46
+    },
+    "mapped_primary_group2_pyq_ids": [
+      "APPSC-G2-2025-C-126",
+      "APPSC-G2-2024-A-083",
+      "APPSC-G2-2024-A-105",
+      "APPSC-G2-2024-A-090",
+      "APPSC-G2-2017-P2-Q079",
+      "APPSC-G2-2017-P2-Q081",
+      "APPSC-G2-2017-P2-Q132"
+    ],
+    "expected_question_ids": [
+      "POL-EXP-6.1-004",
+      "POL-EXP-6.1-005",
+      "POL-EXP-6.1-006",
+      "POL-EXP-6.1-007",
+      "POL-EXP-6.1-009",
+      "POL-EXP-6.1-010",
+      "POL-EXP-6.1-011",
+      "POL-EXP-6.1-012"
+    ],
+    "group_i_draft_answers": 2,
+    "verified_group_i_descriptive_pyqs": 0,
+    "supplementary_original_question_ids": [
+      "POL-6.1.9-P88-02"
+    ],
+    "unverified_2017_FR_candidates": 8,
+    "inventory_refreshed_from_current_files": "Questions.json, Fact-register.json, pyq-2017-image-candidates.json; counts are inventory, not completion proof.",
+    "current_original_stems_options_reviewed": 467,
+    "systematic_bilingual_rationales_reviewed": 467,
+    "current_shared_guides_author_reviewed": 63,
+    "current_shared_guides_total": 64,
+    "grouped_page_maps": 47,
+    "grouped_concept_entries": 947,
+    "unscored_group2_review_items": 8
+  },
+  "requirements": [
+    {
+      "requirement": "chapter_boundary",
+      "status": "verified",
+      "evidence": "GBKChapter9printed87–133;Chapter10starts134.Notesanchorscover47pages;134readloggedonce."
+    },
+    {
+      "requirement": "exact_gbk_transcription",
+      "status": "incomplete",
+      "evidence": "47pages87–133 each have three recorded passes. Final reports include87–103/105–131;104/132/133 earlier passes exhausted. Source uncertainties remain in90/94/107/109/110/118 and prior margin holds; no further scans permitted. Exactness not proved by pass counts."
+    },
+    {
+      "requirement": "scan_pass_ceiling",
+      "status": "verified_for_recorded_pages",
+      "evidence": "All47chapter9 state/source-map counts agree at3. No further87–133scan reads permitted. Chapter10boundary134 first read remains separate."
+    },
+    {
+      "requirement": "matched_bilingual_companion",
+      "status": "partial",
+      "evidence": "47sections/148English–Telugu pairs.146existing pairs exactly matched supplied catalog;2opening pairs added from exact suppliedHTML. Wrong124citizenship pair repaired.17tables checked:15whole exact,2selected-row excerpts;3lists/17items exact. Semantic completeness,standaloneTelugu and browser checks remain open. Four standalone Telugu divs also exactly match suppliedHTML. Provenance checks now cover identified paragraph pairs/tables/lists/standaloneTelugu; full semantic mapping and browser checks remain incomplete."
+    },
+    {
+      "requirement": "page_fact_coverage",
+      "status": "incomplete",
+      "evidence": "All47savedpageshavegroupedmaps;947groupedentrieswithmixedtested/partial/hold/deferredstatuses, notexhaustivedenominator. Currentregister751entries:{'tested': 705, 'verification_hold': 46}. Seechapter-current-coverage-consolidation.json; nofullpagecoverageclaim."
+    },
+    {
+      "requirement": "question_wording_and_bilingual_answers",
+      "status": "current_original_bank_author_reviewed",
+      "evidence": "Current456originalIDs trackedbybaselineandincrementalmanual-reviewreports; data/routeschecked. This doesnotproveindependentfinalsolve,fullsourcecoverageorverifiedpublisher/PYQstatus."
+    },
+    {
+      "requirement": "verified_group2_pyqs_first",
+      "status": "incomplete",
+      "evidence": "7chapterprimaryGroupIIPYQs:4prior2024/2025and3new2017master-IDitems79/81/132. NewCommissionmirrorPDF/erratavisualchecksandbilingualcomparisonsrecorded;originalhostcopyunavailable. Widerarchive/8studyholdsremain."
+    },
+    {
+      "requirement": "supplementary_group1_upsc_other_pyqs",
+      "status": "incomplete",
+      "evidence": "Chapter-specificverificationandmappingnotcompleted."
+    },
+    {
+      "requirement": "publisher_exercises",
+      "status": "reviewed_with_holds",
+      "evidence": "All27labelledbilingualpublisheritemsconceptreviewed:17qualifiedchoices,10substantiveholds.27conceptreviewsand14shared-tableinstancesinapp.Printedkeysseparate;allunscoredwithoutindividualofficialprovenance.Finalscan132/133passesexhausted.Independentfinalchapterreviewpending."
+    },
+    {
+      "requirement": "separate_broad_explanations",
+      "status": "partial",
+      "evidence": "Explanations.jsonandPublisher-review.jsonseparatefromNotes.html;currentguidecoverage/notessourceconflictsrequirechapteraudit."
+    },
+    {
+      "requirement": "expected_question_bank",
+      "status": "partial",
+      "evidence": "5chapterexpecteditems;009tests25(2)(b)publictemple/socialreformratherthanrepeatingnames.Parentlinks/sharedguideschecked;fullcoverageandindependentreviewpending."
+    },
+    {
+      "requirement": "fresh_whole_chapter_test",
+      "status": "missing",
+      "evidence": "Nochaptertestartifactunder6.1.9.CompletecoveragebeforefreshmanualPYQ-styletest,includingmatching/assertion–reason/difficultyreview."
+    },
+    {
+      "requirement": "group1_250word_answers",
+      "status": "partial_draft_prompt_verification_pending",
+      "evidence": "Chapter Group-I.html/Group-I.json now contain one Article19 bilingual authored model answer: English255/Telugu240 whitespace words. Mirrored2023SAE106p2Q1(a)text located; official fetch and visual exam scan pending. Not counted as verified PYQ. Full chapter descriptive coverage/review incomplete."
+    },
+    {
+      "requirement": "app_end_to_end_review",
+      "status": "partial",
+      "evidence": "Reader/notes/companion/practiceroutesandnewpublisherreviewroutepass.27bilingualcards/keys,twoguides,twoexistingreadingtabsandscoringexclusionchecked.Browservisualreviewnotproven."
+    },
+    {
+      "requirement": "final_independent_manual_review",
+      "status": "pending",
+      "evidence": "Everyquestionandoptionmustbere-solvedinbothlanguagesagainstsourceevidence;closeholdsandrecheckcoveragebeforecomplete."
+    }
+  ],
+  "completion_proven": false,
+  "next_actions": [
+    "Never rescanGBK87–133; retain unresolved exactwording holds.",
+    "Prioritise2017GroupIIFRcandidate finalcorrectedkey provenance and otherwiderGroupIIarchive; do notinferofficialkeyfrompublisher.",
+    "Usechapter-current-coverage-consolidation.json to close source/concept gaps and validatecanonicalquestionlinks; maps are notcompletionproof.",
+    "Complete matchedcompanion semantic gaps withinusercurrentdeferral; intensiveindependentderivationlater.",
+    "Complete supplementaryverifiedPYQs,expectedvariants,about250wordGroupIanswers and freshwholechaptertest aftercoverage; finishbilingualsolveandbrowservisualQA."
+  ],
+  "deferred_by_user": "IntensiveindependentLaxmikanthMCQderivationlater;sourcecomparisonstillrequirednow.",
+  "recorded_review_reconciliation": {
+    "reports": [
+      {
+        "file": "coverage-review-p88.json",
+        "question_ids": [
+          "POL-6.1.9-P88-01",
+          "POL-6.1.9-P88-02"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-opening-batch.json",
+        "question_ids": [
+          "POL-6.1.9-P87-01",
+          "POL-6.1.9-P89-01",
+          "POL-6.1.9-P90-01",
+          "POL-6.1.9-P90-02",
+          "POL-6.1.9-P90-03",
+          "POL-6.1.9-P91-01",
+          "POL-6.1.9-P91-02",
+          "POL-6.1.9-P91-03"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p100-remainder.json",
+        "question_ids": [
+          "POL-6.1.9-P100-02",
+          "POL-6.1.9-P100-03",
+          "POL-6.1.9-P100-04",
+          "POL-6.1.9-P100-05",
+          "POL-6.1.9-P100-06"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p101.json",
+        "question_ids": [
+          "POL-6.1.9-P101-01",
+          "POL-6.1.9-P101-02",
+          "POL-6.1.9-P101-03",
+          "POL-6.1.9-P101-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p102.json",
+        "question_ids": [
+          "POL-6.1.9-P102-01",
+          "POL-6.1.9-P102-02",
+          "POL-6.1.9-P102-03",
+          "POL-6.1.9-P102-04",
+          "POL-6.1.9-P102-05",
+          "POL-6.1.9-P102-06"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p103.json",
+        "question_ids": [
+          "POL-6.1.9-P103-01",
+          "POL-6.1.9-P103-02",
+          "POL-6.1.9-P103-03",
+          "POL-6.1.9-P103-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p104.json",
+        "question_ids": [
+          "POL-6.1.9-P104-01",
+          "POL-6.1.9-P104-02",
+          "POL-6.1.9-P104-03",
+          "POL-6.1.9-P104-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p105.json",
+        "question_ids": [
+          "POL-6.1.9-P105-01",
+          "POL-6.1.9-P105-02",
+          "POL-6.1.9-P105-03",
+          "POL-6.1.9-P105-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p106.json",
+        "question_ids": [
+          "POL-6.1.9-P106-01",
+          "POL-6.1.9-P106-02",
+          "POL-6.1.9-P106-03",
+          "POL-6.1.9-P106-04",
+          "POL-6.1.9-P106-05",
+          "POL-6.1.9-P106-06"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p107.json",
+        "question_ids": [
+          "POL-6.1.9-P107-01",
+          "POL-6.1.9-P107-02",
+          "POL-6.1.9-P107-03",
+          "POL-6.1.9-P107-04",
+          "POL-6.1.9-P107-05",
+          "POL-6.1.9-P107-06"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p108.json",
+        "question_ids": [
+          "POL-6.1.9-P108-01",
+          "POL-6.1.9-P108-02",
+          "POL-6.1.9-P108-03",
+          "POL-6.1.9-P108-04",
+          "POL-6.1.9-P108-05",
+          "POL-6.1.9-P108-06"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p109.json",
+        "question_ids": [
+          "POL-6.1.9-P109-01",
+          "POL-6.1.9-P109-02",
+          "POL-6.1.9-P109-03"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p110.json",
+        "question_ids": [
+          "POL-6.1.9-P110-01",
+          "POL-6.1.9-P110-02",
+          "POL-6.1.9-P110-03",
+          "POL-6.1.9-P110-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p111.json",
+        "question_ids": [
+          "POL-6.1.9-P111-01",
+          "POL-6.1.9-P111-02",
+          "POL-6.1.9-P111-03",
+          "POL-6.1.9-P111-04",
+          "POL-6.1.9-P111-05"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p112.json",
+        "question_ids": [
+          "POL-6.1.9-P112-01",
+          "POL-6.1.9-P112-02",
+          "POL-6.1.9-P112-03",
+          "POL-6.1.9-P112-04",
+          "POL-6.1.9-P112-05"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p113.json",
+        "question_ids": [
+          "POL-6.1.9-P113-01",
+          "POL-6.1.9-P113-02",
+          "POL-6.1.9-P113-03",
+          "POL-6.1.9-P113-04",
+          "POL-6.1.9-P113-05"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p114.json",
+        "question_ids": [
+          "POL-6.1.9-P114-01",
+          "POL-6.1.9-P114-02",
+          "POL-6.1.9-P114-03",
+          "POL-6.1.9-P114-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p115.json",
+        "question_ids": [
+          "POL-6.1.9-P115-01",
+          "POL-6.1.9-P115-02",
+          "POL-6.1.9-P115-03",
+          "POL-6.1.9-P115-04",
+          "POL-6.1.9-P115-05",
+          "POL-6.1.9-P115-06"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p116.json",
+        "question_ids": [
+          "POL-6.1.9-P116-01",
+          "POL-6.1.9-P116-02",
+          "POL-6.1.9-P116-03",
+          "POL-6.1.9-P116-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p117.json",
+        "question_ids": [
+          "POL-6.1.9-P117-01",
+          "POL-6.1.9-P117-02",
+          "POL-6.1.9-P117-03",
+          "POL-6.1.9-P117-04",
+          "POL-6.1.9-P117-05"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p118.json",
+        "question_ids": [
+          "POL-6.1.9-P118-01",
+          "POL-6.1.9-P118-02",
+          "POL-6.1.9-P118-03",
+          "POL-6.1.9-P118-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p119.json",
+        "question_ids": [
+          "POL-6.1.9-P119-01",
+          "POL-6.1.9-P119-02",
+          "POL-6.1.9-P119-03",
+          "POL-6.1.9-P119-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p120.json",
+        "question_ids": [
+          "POL-6.1.9-P120-01",
+          "POL-6.1.9-P120-02",
+          "POL-6.1.9-P120-03",
+          "POL-6.1.9-P120-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p121.json",
+        "question_ids": [
+          "POL-6.1.9-P121-01",
+          "POL-6.1.9-P121-02",
+          "POL-6.1.9-P121-03",
+          "POL-6.1.9-P121-04",
+          "POL-6.1.9-P121-05",
+          "POL-6.1.9-P121-06"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p122.json",
+        "question_ids": [
+          "POL-6.1.9-P122-01",
+          "POL-6.1.9-P122-02",
+          "POL-6.1.9-P122-03",
+          "POL-6.1.9-P122-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p123.json",
+        "question_ids": [
+          "POL-6.1.9-P123-01",
+          "POL-6.1.9-P123-02",
+          "POL-6.1.9-P123-03",
+          "POL-6.1.9-P123-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p124.json",
+        "question_ids": [
+          "POL-6.1.9-P124-01",
+          "POL-6.1.9-P124-02",
+          "POL-6.1.9-P124-03",
+          "POL-6.1.9-P124-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p125.json",
+        "question_ids": [
+          "POL-6.1.9-P125-01",
+          "POL-6.1.9-P125-02",
+          "POL-6.1.9-P125-03",
+          "POL-6.1.9-P125-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p126-127.json",
+        "question_ids": [
+          "POL-6.1.9-P126-01",
+          "POL-6.1.9-P126-02",
+          "POL-6.1.9-P126-03",
+          "POL-6.1.9-P126-04",
+          "POL-6.1.9-P127-01",
+          "POL-6.1.9-P127-02"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p128-131.json",
+        "question_ids": [
+          "POL-6.1.9-P128-01",
+          "POL-6.1.9-P128-02",
+          "POL-6.1.9-P129-01",
+          "POL-6.1.9-P129-02",
+          "POL-6.1.9-P129-03",
+          "POL-6.1.9-P130-01",
+          "POL-6.1.9-P130-02",
+          "POL-6.1.9-P130-03",
+          "POL-6.1.9-P131-01"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p92-96.json",
+        "question_ids": [
+          "POL-6.1.9-P92-01",
+          "POL-6.1.9-P92-02",
+          "POL-6.1.9-P93-01",
+          "POL-6.1.9-P93-02",
+          "POL-6.1.9-P94-01",
+          "POL-6.1.9-P94-02",
+          "POL-6.1.9-P94-03",
+          "POL-6.1.9-P95-01",
+          "POL-6.1.9-P95-02",
+          "POL-6.1.9-P95-03",
+          "POL-6.1.9-P96-01",
+          "POL-6.1.9-P96-02",
+          "POL-6.1.9-P96-03"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p96-remainder.json",
+        "question_ids": [
+          "POL-6.1.9-P96-04",
+          "POL-6.1.9-P96-05",
+          "POL-6.1.9-P96-06",
+          "POL-6.1.9-P96-07"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p97-98.json",
+        "question_ids": [
+          "POL-6.1.9-P97-01",
+          "POL-6.1.9-P97-02",
+          "POL-6.1.9-P97-03",
+          "POL-6.1.9-P97-04",
+          "POL-6.1.9-P98-01",
+          "POL-6.1.9-P98-02",
+          "POL-6.1.9-P98-03",
+          "POL-6.1.9-P98-04"
+        ]
+      },
+      {
+        "file": "manual-review-2026-11-07-p99.json",
+        "question_ids": [
+          "POL-6.1.9-P99-01",
+          "POL-6.1.9-P99-02",
+          "POL-6.1.9-P99-03",
+          "POL-6.1.9-P99-04",
+          "POL-6.1.9-P99-05"
+        ]
+      },
+      {
+        "file": "review-358-territorial-proviso.json",
+        "question_ids": [
+          "POL-6.1.9-P126-05"
+        ]
+      },
+      {
+        "file": "review-gopalan-section14.json",
+        "question_ids": [
+          "POL-6.1.9-P129-04"
+        ]
+      },
+      {
+        "file": "review-p100-01-clause-scope.json",
+        "question_ids": [
+          "POL-6.1.9-P100-01"
+        ]
+      },
+      {
+        "file": "review-pil-anthem-2005.json",
+        "question_ids": [
+          "POL-6.1.9-P126-06"
+        ]
+      },
+      {
+        "file": "review-civil-power-entry2a.json",
+        "question_ids": [
+          "POL-6.1.9-P125-05"
+        ]
+      },
+      {
+        "file": "review-p87-second-pass.json",
+        "question_ids": [
+          "POL-6.1.9-P87-02"
+        ]
+      },
+      {
+        "file": "review-germany-basic-rights.json",
+        "question_ids": [
+          "POL-6.1.9-P88-03"
+        ]
+      }
+    ],
+    "current_question_count": 182,
+    "current_ids_with_recorded_review": 182,
+    "current_ids_without_recorded_review": [],
+    "limitation": "Recorded batch review does not prove independent final chapter review, visual verification or full source/fact coverage."
+  },
+  "final_transcription_page_reports": [
+    "transcription-final-p125.json",
+    "transcription-final-p126.json",
+    "transcription-final-p127.json",
+    "transcription-final-p128.json",
+    "transcription-final-p129.json",
+    "transcription-final-p130.json",
+    "transcription-final-p131.json",
+    "transcription-final-p88.json",
+    "transcription-final-p89.json",
+    "transcription-final-p90.json",
+    "transcription-final-p91.json",
+    "transcription-final-p92.json",
+    "transcription-final-p93.json",
+    "transcription-final-p94.json",
+    "transcription-final-p95.json",
+    "transcription-final-p96.json",
+    "transcription-final-p97.json",
+    "transcription-final-p98.json",
+    "transcription-final-p99.json",
+    "transcription-final-p100.json",
+    "transcription-final-p101.json",
+    "transcription-final-p102.json",
+    "transcription-final-p103.json"
+  ],
+  "transcription_pass_checklist": "transcription-pass-checklist.json",
+  "transcription_correction_reports": [
+    "transcription-second-p88.json",
+    "transcription-second-p89.json",
+    "transcription-second-p91.json",
+    "transcription-second-p93.json",
+    "transcription-second-p97.json",
+    "transcription-second-p98.json",
+    "transcription-second-p99.json",
+    "transcription-second-p100.json",
+    "transcription-second-p101.json",
+    "transcription-second-p103.json",
+    "transcription-second-p105.json",
+    "transcription-final-p105.json",
+    "transcription-final-p106.json",
+    "transcription-final-p107.json",
+    "transcription-final-p108.json",
+    "transcription-final-p109.json",
+    "transcription-final-p110.json",
+    "transcription-final-p111.json",
+    "transcription-final-p112.json",
+    "transcription-final-p113.json",
+    "transcription-final-p114.json",
+    "transcription-final-p115.json",
+    "transcription-final-p116.json",
+    "transcription-final-p117.json",
+    "transcription-final-p118.json",
+    "transcription-final-p119.json",
+    "transcription-final-p120.json",
+    "transcription-final-p121.json",
+    "transcription-final-p122.json",
+    "transcription-final-p123.json",
+    "transcription-final-p124.json",
+    "transcription-final-p87.json"
+  ],
+  "unresolved_transcription_after_scan_ceiling": [
+    {
+      "page": 90,
+      "item": "Russian slogan wording",
+      "restriction": "No further scans; saved textual evidence only."
+    },
+    {
+      "page": 94,
+      "item": "Exact Eclipse continuation wording",
+      "restriction": "Saved textual evidence only; no further scan."
+    }
+  ],
+  "scan_budget_reconciliation": {
+    "chapter_pages": 47,
+    "exhausted_count": 26,
+    "remaining_budget_count": 21,
+    "counts_match_unit_progress": true,
+    "completion_inference": "None: pass counts are not correctness or full coverage proof."
+  },
+  "unresolved_transcription_phrases": [
+    {
+      "page": 107,
+      "phrase": "Profession prohibition sentence ending",
+      "status": "uncertain_after_three_passes_no_rescan",
+      "report": "transcription-final-p107.json"
+    },
+    {
+      "page": 109,
+      "phrase": "Expanded-rights case-name paragraph",
+      "status": "uncertain_after_three_passes_no_rescan",
+      "report": "transcription-final-p109.json"
+    },
+    {
+      "page": 110,
+      "phrase": "Police-case sentence in suicide paragraph",
+      "status": "uncertain_after_three_passes_no_rescan",
+      "report": "transcription-final-p110.json"
+    },
+    {
+      "page": 118,
+      "phrase": "Kerala Education Bill paragraph",
+      "status": "uncertain_after_three_passes_no_rescan",
+      "report": "transcription-final-p118.json"
+    }
+  ],
+  "companion_mapping_repairs": [
+    {
+      "page": 124,
+      "report": "transcription-final-p124.json",
+      "repair": "Wrong citizenship pair replaced by exact supplied33 English/Telugu pair",
+      "remaining": "Chapter-wide mapping consistency audit still required."
+    },
+    {
+      "pages": [
+        88,
+        89
+      ],
+      "report": "companion-provenance-audit.json",
+      "repair": "Missing sections supplied with unchanged source pairs; partial match explicit."
+    }
+  ],
+  "companion_nonparagraph_report": "companion-nonparagraph-audit.json",
+  "companion_standalone_telugu_report": "companion-standalone-telugu-audit.json",
+  "fact_hold_scan_reconciliation": "fact-hold-scan-reconciliation.json",
+  "primary_case_reviews": [
+    "review-khushboo-primary.json",
+    "review-prashant-sentence-primary-mirror.json",
+    "review-seema-registration-primary.json",
+    "review-abbas-film-primary-mirror.json",
+    "review-brij-press-primary.json",
+    "review-bennett-information-attribution.json",
+    "review-information-right-cic.json",
+    "review-page107-occupation-qualification.json"
+  ],
+  "pyq_archive_reports": [
+    "pyq-2017-image-candidates.json",
+    "pyq-2017-key-provenance.json",
+    "review-2017-q104-erratum-match.json",
+    "pyq-2017-mirror-label-audit.json",
+    "review-2017-p42-44-inventory.json",
+    "review-2017-p45-46-inventory.json",
+    "review-2017-p47-50-inventory.json",
+    "review-2017-p51-52-inventory.json",
+    "review-2017-p55-58-inventory.json",
+    "review-2017-fr107-109-transcription.json",
+    "review-2017-p59-64-inventory.json",
+    "review-2017-p65-68-inventory.json",
+    "review-2017-p69-78-inventory.json",
+    "review-2017-boundary-and-current-inventory.json",
+    "review-2017-commission-decision-mirror-lead.json"
+  ],
+  "source_correction_reports": [
+    "review-forces-act-years-and-judicial-review.json"
+  ],
+  "manual_question_review_reports": [
+    "manual-review-opening-18.json",
+    "manual-review-19-26.json",
+    "manual-review-27-46.json",
+    "manual-review-47-86.json",
+    "manual-review-87-110.json",
+    "manual-review-111-132.json",
+    "manual-review-133-187.json"
+  ],
+  "manual_question_review_summary": "manual-review-current-bank-summary.json",
+  "explanation_review_reports": [
+    "explanation-review-opening18.json",
+    "explanation-review-19-38.json",
+    "explanation-review-39-58.json",
+    "explanation-review-59-82.json",
+    "explanation-review-83-104.json",
+    "explanation-review-105-126.json",
+    "explanation-review-127-148.json",
+    "explanation-review-149-187.json"
+  ],
+  "explanation_review_summary": "explanation-review-current-bank-summary.json",
+  "shared_guide_review_reports": [
+    "shared-guide-review-batch1.json",
+    "shared-guide-review-batch2.json",
+    "shared-guide-review-batch3.json",
+    "shared-guide-review-final20.json"
+  ],
+  "shared_guide_review_summary": "shared-guide-current-summary.json",
+  "source_resolution_reports": [
+    "review-article12-cumulative-control-primary.json",
+    "review-article12-six-indicia-primary.json",
+    "review-bcci-public-function-primary.json",
+    "review-cooperative-status-primary.json",
+    "review-judicial-order-school-primary.json",
+    "review-court-administration-provisions.json",
+    "review-article13-definition-gaps.json",
+    "review-remaining-agency-indicators.json",
+    "review-p94-nonseverability-review-basis.json",
+    "review-p94-chronology-waiver-metadata.json",
+    "review-ultravires-ambica-qualification.json",
+    "review-bhikaji-eclipse-primary.json",
+    "review-ruleoflaw-discretion-deepchand.json",
+    "review-international-immunity-primary.json",
+    "review-wjp-2022-historical-rank.json",
+    "review-foreign-state-cpc86-primary.json",
+    "review-article15-grounds-public-well.json",
+    "review-cei-reservation-primary.json",
+    "review-vishaka-primary-rights-guidelines.json",
+    "review-bennett-newsprint-majority.json",
+    "review-single-entity-cei-exemption.json",
+    "review-ews-exclusion-champakam-primary.json",
+    "review-balaji-primary-criteria.json",
+    "review-inamdar-thakur-primary-scope.json",
+    "review-residence-371d-and-p99-coverage.json",
+    "review-85th-commencement-primary.json",
+    "review-catchup-concept-primary.json",
+    "review-mukesh-primary-and-p100-coverage.json",
+    "review-81st85th-conflation-and-sinho-evidence.json",
+    "review-avs-residence-primary.json",
+    "review-economic-quota-1991-and-p101-coverage.json",
+    "review-jarnail2018-primary-data.json",
+    "review-jaishri-rates-and-creamy-layer-framework.json",
+    "coverage-reassessment-p102-103-saved-text.json",
+    "review-article17-abolition-primary.json",
+    "review-awards-primary-timeline.json",
+    "review-kaushal-kishor-horizontal-primary.json",
+    "coverage-reassessment-p104-and-faheema-primary.json",
+    "review-art19-grounds-expanded-existing-item.json",
+    "review-strike-bandh-primary-and-p105-coverage.json",
+    "coverage-reassessment-p106-and-rti-primary.json",
+    "review-selvi-primary-and-p107108-coverage.json",
+    "review-sleep-primary-and-p109110-coverage.json",
+    "review-nalsa-primary-and-p111-coverage.json",
+    "review-joginder-primary-and-p112114-coverage.json",
+    "review-denomination-primary-and-p115116-coverage.json",
+    "review-minority-aid-and-p117118-coverage.json",
+    "review-property-authority-and-p119120-coverage.json",
+    "review-alternative-remedy-and-p121123-coverage.json",
+    "review-article34-scope-and-p124126-coverage.json",
+    "review-p127129-coverage-and-franchise-dedup.json",
+    "review-p130133-saved-coverage.json",
+    "review-seventeenth-compensation-condition.json",
+    "review-fourth-amendment-original-text.json",
+    "review-31a-state-assent-condition.json",
+    "review-31a-five-categories.json",
+    "review-coelho-crosschapter-reuse.json",
+    "review-31a31c-shared-assent-comparison.json",
+    "review-ncrwc-original-report-initial.json",
+    "review-ncrwc-recommendation-matching.json",
+    "review-ncrwc-work-proposal-classification.json",
+    "review-article18-fourth-clause-full-scope.json",
+    "review-19-5-and-state-trade-conditions.json",
+    "review-97th-assent-commencement-conflict.json",
+    "review-rajendra-shah-2021-scope.json",
+    "review-double-jeopardy-ingredients-test.json",
+    "review-bnss337-acquittal-distinction.json",
+    "review-identification-act-authority-safeguards.json",
+    "review-beneficial-penalty-savings-qualification.json",
+    "review-noise-expression-article21.json",
+    "review-shelter-dignity-and-publicland-limits.json",
+    "review-handcuff-bnss43-text.json",
+    "review-prem-shankar-handcuff-safeguards.json",
+    "review-reputation-speech-primary-and-sop-retrieval.json",
+    "review-reputation-concept-question.json",
+    "review-dignity-after-death-question.json",
+    "review-custodial-publiclaw-compensation.json",
+    "coverage-matrix-gbk110-rights-list.json",
+    "review-food-right-and-nfsa-eligibility.json",
+    "review-dna-civil-privacy-necessity.json",
+    "review-delayed-execution-no-fixed-period.json",
+    "review-cohabitation-adult-choice-nandakumar.json",
+    "review-sustainable-development-principles.json",
+    "review-information-constitutional-basis.json",
+    "review-bns226-specific-intent.json",
+    "review-mental-healthcare115-enacted-text.json",
+    "review-santhara-provenance-hold.json",
+    "review-harish-rana2026-procedural-qualifications.json",
+    "review-aruna-outcome-and-koushal-chronology.json",
+    "review-navtej-primary-and-case-sequence.json",
+    "review-good-samaritan-disclosure-witness.json",
+    "review-kunal-saha-award-qualification.json",
+    "review-rte-staffing-qualification.json",
+    "review-rte-funding-period-and-distance-scope.json",
+    "review-shyam-sunder-quality-education-context.json",
+    "review-article22-text-and-board-question.json",
+    "review-article22-companion-precision-and-statute-leads.json",
+    "review-safema-cofeposa-distinction-primary.json",
+    "review-safema-cofeposa-matching-question.json",
+    "review-tada-expiry-pota-repeal-savings.json",
+    "review-pota-repeal-savings-question.json",
+    "review-tada-legislative-chain-and-comparative-claim.json",
+    "review-article23-private-violation-state-duty.json",
+    "review-begar-enforceability-and-itpa-title.json",
+    "review-begar-concept-question.json",
+    "review-child-labour-case-dates-compensation.json",
+    "review-mehta1996-compensation-question.json",
+    "review-cpcr-act-versus-commission-establishment.json",
+    "review-childlabour2016-and-jj2015-transition.json",
+    "review-childlabour2016-exceptions-question.json",
+    "review-jallikattu2023-qualified-statutory-holding.json",
+    "review-haji-ali-court-and-disposal-scope.json",
+    {
+      "report": "review-sabarimala2018-and2019-distinction.json",
+      "status": "dated_primary_scopes_verified_current_status_hold"
+    },
+    {
+      "report": "review-stainislaus-public-order-competence.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-archaka-appointment-ritual-distinction.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-stxaviers-equal-treatment-and-case-corrections.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-dav-academic-study-and-education-case-scope.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-dav-bathinda-and-pai-surplus.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-property-historical-compensation-and-procedure.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-article32-debate-and-fertilizer-scope.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-kanubhai-first-hc-and-administrative-review-scope.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-civil-judicial-orders-and-administrative-hc.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-forces-aid-versus-civil-replacement.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-article35-offence-text-and-pil-screening.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-31a-schedule-distinction-and-kapoor-source.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-fourth-amendment-historical-compensation-scope.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-24th-amendment-assent-and-scope.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-current-coverage-reconciliation-282.json",
+      "status": "inventory_reconciled_not_semantic_completion"
+    },
+    {
+      "report": "review-commonwealth1925-rights-and-history-tasks.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-rights-report-enforcement-policy-distinction.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-2017-q80-information-human-rights-ambiguity.json",
+      "status": "candidate_study_ambiguity_reviewed_unscored"
+    },
+    {
+      "report": "review-court-rule-rights-and-antulay-scope.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-article14-beyond-classification.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-page95-atomic-equality-coverage.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-page95-chronology-parens-dicey.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-article15-facilities-and-retired-reference.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-article15-enabling-vs-cei-scope.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-page97-decision-years-and-atomic-map.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-champakam-link-and-cei-identity.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-371d-versus16-residence-framework.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-residence1957-cesser-versus-repeal.json",
+      "status": "statutory_identity_and_metadata_conflict_reviewed_hold_retained"
+    },
+    {
+      "report": "review-page98-substantive-equality-and-dates.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-ews-private-scope-and-page98-map.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-inamdar-93rd-amendment-response.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-promotion-consideration-versus-reservation.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-reservation-wording-and-religious-governing-body.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-assam2019-small-family-rule-provisos.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-page99-atomic-coverage-and-assam-followup.json",
+      "status": "atomiccoverage_reconciled_stateclaimsheld"
+    },
+    {
+      "report": "review-jharkhand2021-enacted-quota-scope.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-sinho-chair-and-report-date.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-1991-economic-quota-disposition-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-group1-original-reservation-equality-answer.json",
+      "status": "original_bilingual_descriptive_answer_reviewed"
+    },
+    {
+      "report": "review-ews-exact-boundaries-and-page100-map.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-16-6-text-and-371d-insertion.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-jaishri-ceiling-reasoning.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-creamy-layer-2017-framework-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-nagaraj-amendment-validity-and-thakur-scope.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-article18-recipient-scope.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-property-deletion-and-six-freedoms.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-legislative-speech-conditions.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-legislative-immunity-fact-dedup.json",
+      "status": "duplicate_fact_merged_no_question_removed"
+    },
+    {
+      "report": "review-nota-eci-result-application.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-broadcast-public-airwaves.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-faheema-court-and-qualified-context.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-vinod-dua-limited-relief.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-peaceful-demonstration-application.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-pucl2013-voting-expression-secrecy.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-voter-background-information.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-government-right-to-know-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-pucl1996-telephone-safeguards.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-kedar-nath-limiting-construction-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-historical-ipc-matching-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-historical-crpc144-identity.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-kerala2017-policy-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-prashant-sentence-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-expression-case-decision-years.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-maneka-speech-travel-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-assembly-association-common-grounds.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-rti-phased-commencement-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-association-continuance-and-assembly-reuse.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-brij-historical-press-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-flag-registration-chronology-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-profession-general-public-ground.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-heckler-hostile-audience-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-article20-procedure-distinction.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-page107-jk-constitutional-update.json",
+      "status": "constitutionalupdateverified_specificregimesheld"
+    },
+    {
+      "report": "review-nandini-mental-compulsion-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-selvi-compulsory-test-character-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-handwriting-signature-comparison-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-selfincrimination-case-years-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-maneka-passport-action-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-kamalnath-publictrust-case-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-due-process-text-comparison-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-article21-case-theme-matching.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-vellore-case-burden-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-page109-ambiguous-case-candidates.json",
+      "status": "candidateprimaryverified_booknameequivalenceheld"
+    },
+    {
+      "report": "review-gopalan-maneka-year-pair.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-aruna-petition-nextfriend-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-naz2009-scope-finality-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-advance-directive-core-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-nalsa-reservation-direction-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-privacy-history-scope-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-kunal-award-components-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-privacy-aadhaar-stage-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-original45-education-comparison.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-86th-commencement-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-rte-year-elementary-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-magistrate-authorisation-question.json",
+      "status": "new_competence_question_reviewed"
+    },
+    {
+      "report": "review-education-funding-shyam-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P112-07",
+        "POL-6.1.9-P112-08"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-86th-parent-duty-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P112-09"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-article22-parliament-powers-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P113-08"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-tada-chain-savings-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P113-09",
+        "POL-6.1.9-P113-10"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 4,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-statute-years-pitndps-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P113-11",
+        "POL-6.1.9-P113-12"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 5,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-pda-uapa-pota-years-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P113-13",
+        "POL-6.1.9-P113-14"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 4,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-uapa-arrest-misa-repeal-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P113-15",
+        "POL-6.1.9-P113-16"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-article24-scope-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P114-07"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-exploitation-enforcement-smoking-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P114-08",
+        "POL-6.1.9-P114-09",
+        "POL-6.1.9-P114-10"
+      ],
+      "new_questions": 3,
+      "new_tested_facts": 4,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-joginder-check-case-years-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P114-11",
+        "POL-6.1.9-P114-12"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-murli-complete-location-coverage.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P114-10"
+      ],
+      "new_questions": 0,
+      "new_tested_facts": 5,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-traffic-history-samad-scope-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P114-13",
+        "POL-6.1.9-P114-14"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 4,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-jallikattu2023-scope-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P115-09"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-article26-clauses-limits-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P115-10",
+        "POL-6.1.9-P115-11"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-article25-distinctions-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P115-12",
+        "POL-6.1.9-P115-13"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 5,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-child-law-timeline-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P115-14",
+        "POL-6.1.9-P115-15",
+        "POL-6.1.9-P115-16"
+      ],
+      "new_questions": 3,
+      "new_tested_facts": 6,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-child-labour-case-comparison-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P115-17",
+        "POL-6.1.9-P115-18"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 6,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-religion-case-years-adult-consent.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P116-07",
+        "POL-6.1.9-P116-08"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 5,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-haji-ali-court-scope-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P116-09",
+        "POL-6.1.9-P116-10"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-sabarimala-historical-sequence-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P116-11"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-mittal-classification-scope-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P116-12"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-barkati-atheist-court-scope-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P117-08",
+        "POL-6.1.9-P117-09"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 5,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-article29-holders-institutions-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P117-10",
+        "POL-6.1.9-P117-11"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-manohar-joshi-context-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P117-12"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-page117-case-year-matching.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P117-13"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-minority-definition-scope-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P117-14"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-kerala-education-reference-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P118-10"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-all-saints-regulation-scope-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P118-11"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-property-amendment-chronology-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P118-12",
+        "POL-6.1.9-P118-13"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 4,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-42nd-31c-history-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P118-14"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-pai-staff-qualification-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P118-15"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-bela-and-article32-scope-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P119-08",
+        "POL-6.1.9-P119-09"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-saving-provisions-family-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P119-10"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-writ-origin-history-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P119-11"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-359-highcourt-scope-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P120-06"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-article32-basic-structure-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P120-07"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-original-jurisdiction-habeas-production.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P121-08",
+        "POL-6.1.9-P121-09"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-writ-meanings-privilege-scope.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P121-10",
+        "POL-6.1.9-P121-11"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-kanubhai-adm-years-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P121-12"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-mandamus-discretion-certiorari-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P122-06",
+        "POL-6.1.9-P122-07"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-writ-terms-environment-scope.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P122-08",
+        "POL-6.1.9-P122-09"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-article32-orders-breadth-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P123-06"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-quo-meaning-ouster-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P123-07"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-352-34-comparison-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P124-09"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-emergency-federal-indemnity-scope.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P124-10"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-pil-cases-year-principle-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P125-08"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-article35-duty-afspa-scope.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P125-09",
+        "POL-6.1.9-P125-10"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-punjab-afspa-title-distinction.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P125-11"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-359-recital-executive-limit.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P126-08"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-emergency-cessation-savings-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P126-09"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-44th-economic-rights-comparison.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P126-10",
+        "POL-6.1.9-P126-11"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-page127-criticism-significance-questions.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P127-03",
+        "POL-6.1.9-P127-04"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-page128-chronology-and-access.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P128-04",
+        "POL-6.1.9-P128-05"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 4,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-page128-suffrage-and-parts.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P128-06",
+        "POL-6.1.9-P128-07"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 5,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-ncrwc-remaining-proposal-concepts.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P128-08",
+        "POL-6.1.9-P128-09"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 4,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-golak-prospective-article13.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P129-05",
+        "POL-6.1.9-P129-06"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-case-chair-report-dates.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P129-07",
+        "POL-6.1.9-P129-08"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-education-case-chronology-scope.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P130-07",
+        "POL-6.1.9-P130-08"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 3,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-minerva-limited-power-question.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P130-09"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-97th-title-commencement-years.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P131-02"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-25th26th-operative-clauses.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P131-03",
+        "POL-6.1.9-P131-04"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 4,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-khushboo-original-holding-scope.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P132-01"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-khushboo-canonical-fact-dedup.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P132-01"
+      ],
+      "new_questions": 0,
+      "new_tested_facts": -1,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-rights-development-equality.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P127-05",
+        "POL-6.1.9-P127-06"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-rte-primary-staffing-application.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P112-10"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-rte-upperprimary-ratio-subjects.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P112-11"
+      ],
+      "new_questions": 1,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-rte-staffing-comparison-set.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P112-12",
+        "POL-6.1.9-P112-13"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 6,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-fundamentality-positive-negative.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P88-05",
+        "POL-6.1.9-P90-04"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-held-group2-pyq-publication.json",
+      "status": "unscored_review_published_holds_retained"
+    },
+    {
+      "report": "review-categories-article12-territorial-phrase.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P92-03",
+        "POL-6.1.9-P92-04"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    },
+    {
+      "report": "review-article13-clause-pair-waiver-case.json",
+      "status": "reviewed_bilingual_original_questions",
+      "question_ids": [
+        "POL-6.1.9-P94-08",
+        "POL-6.1.9-P94-09"
+      ],
+      "new_questions": 2,
+      "new_tested_facts": 2,
+      "browser_visual_verified": false
+    }
+  ],
+  "incremental_original_review_reports": [
+    "review-article12-cumulative-control-primary.json",
+    "review-article12-six-indicia-primary.json",
+    "review-cooperative-status-primary.json",
+    "review-judicial-order-school-primary.json",
+    "review-court-administration-provisions.json",
+    "review-article13-definition-gaps.json",
+    "review-remaining-agency-indicators.json",
+    "review-p94-nonseverability-review-basis.json",
+    "review-p94-chronology-waiver-metadata.json",
+    "review-ultravires-ambica-qualification.json",
+    "review-bhikaji-eclipse-primary.json",
+    "review-ruleoflaw-discretion-deepchand.json",
+    "review-international-immunity-primary.json",
+    "review-wjp-2022-historical-rank.json",
+    "review-foreign-state-cpc86-primary.json",
+    "review-article15-grounds-public-well.json",
+    "review-cei-reservation-primary.json",
+    "review-vishaka-primary-rights-guidelines.json",
+    "review-bennett-newsprint-majority.json",
+    "review-single-entity-cei-exemption.json",
+    "review-ews-exclusion-champakam-primary.json",
+    "review-balaji-primary-criteria.json",
+    "review-inamdar-thakur-primary-scope.json"
+  ],
+  "deduplication_reports": [
+    "review-crosspage-grounds-deduplication.json"
+  ],
+  "current_coverage_ledger": "coverage-ledger-current.json",
+  "current_coverage_report": "chapter-current-coverage-consolidation.json",
+  "pyq_integration_reviews": [
+    "review-2017-clean-pyq-integration.json"
+  ],
+  "retirements": [
+    {
+      "retired": "POL-6.1.9-P106-07",
+      "canonical": "APPSC-G2-2017-P2-Q081",
+      "report": "review-seema-original-retirement.json"
+    }
+  ]
+}

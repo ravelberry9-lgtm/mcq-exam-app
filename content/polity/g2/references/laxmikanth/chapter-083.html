@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part X &mdash; Book 1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 83 — Electoral Reforms</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Committees, Enacted Reforms &amp; the 2024 Electoral Bonds Verdict — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Why This Chapter Exists — A Running Repair Job on the Election Machine</div>
+  <p class="eng">India's election law has never been treated as a one-time settlement. From the 1950s onward, one committee after another has been asked to look at how elections are actually run on the ground — how candidates are nominated, how money moves into party coffers, how booths are guarded, how votes are verified — and to flag whatever is breaking down. Parliament and the Election Commission then pick up pieces of these reports and turn them into amendments, rules or executive orders, usually years after the report itself. This chapter is essentially a long ledger of that back-and-forth: which body studied the problem, and what specific fix eventually reached the statute book, organised loosely by decade so the sequence of change is visible.</p>
+  <div class="te">భారత ఎన్నికల చట్టాన్ని ఎప్పుడూ ఒకేసారి పరిష్కరించే విషయంగా చూడలేదు. 1950ల నుండి, అభ్యర్థుల నామినేషన్ నుండి, పార్టీలకు డబ్బు ఎలా చేరుతుందో, పోలింగ్ బూత్‌లను ఎలా కాపాడాలో, ఓట్లను ఎలా verify చేయాలో వరకు — ఎన్నికల వ్యవస్థ క్షేత్రస్థాయిలో ఎలా పనిచేస్తుందో పరిశీలించమని ఒక కమిటీ తర్వాత మరొక కమిటీని నియమిస్తూనే వచ్చారు. ఆ తర్వాత Parliament, Election Commission ఈ నివేదికల్లోని భాగాలను తీసుకుని — తరచుగా నివేదిక వచ్చిన ఏళ్ల తర్వాత — వాటిని amendments, rules లేదా executive orders గా మారుస్తాయి. ఈ chapter ప్రాథమికంగా ఆ ఇచ్చిపుచ్చుకోళ్ల పొడవైన లెక్క — ఏ బాడీ ఏ సమస్యను అధ్యయనం చేసింది, చివరికి ఏ నిర్దిష్ట fix చట్టంలోకి వచ్చింది — అనేది దశాబ్దాల వారీగా అమర్చి, మార్పు క్రమం కనిపించేలా చూపిస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">The Fourteen Committees &amp; Commissions — Full Roll-Call</div>
+  <p class="eng">Before going into what actually changed, it helps to have the full cast of bodies in one place. Some of these were formal government committees, one was a purely non-official citizens' initiative (Tarkunde), and two are Law Commission reports rather than committees at all — but all fourteen get cited whenever an aspirant is asked to trace the history of electoral reform in India.</p>
+  <table>
+    <caption>Table 83.1 — Committees &amp; Commissions on Electoral Reforms</caption>
+    <thead><tr><th class="n">#</th><th style="width:46%">Committee / Commission</th><th style="width:14%">Year</th><th>Chair / Note</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Joint Parliamentary Committee on Amendments to Election Laws</td><td class="hlg">1971–72</td><td>Parliament's own joint panel</td></tr>
+      <tr><td class="n">2</td><td class="hlp">Tarkunde Committee</td><td class="hlg">1974 (report 1975)</td><td>Non-official; set up by Jaya Prakash Narayan (JP) during the "Total Revolution" movement</td></tr>
+      <tr><td class="n">3</td><td class="hlp">Dinesh Goswami Committee on Electoral Reforms</td><td class="hlg">1990</td><td>V.P. Singh's National Front govt; chair — Law Minister Dinesh Goswami</td></tr>
+      <tr><td class="n">4</td><td class="hlp">Vohra Committee</td><td class="hlg">1993</td><td>On the nexus between crime and politics</td></tr>
+      <tr><td class="n">5</td><td>ECI Recommendations on Electoral Reforms</td><td class="hlg">1998</td><td>Election Commission's own recommendations</td></tr>
+      <tr><td class="n">6</td><td class="hlp">Indrajit Gupta Committee</td><td class="hlg">1998 (report 1999)</td><td>8-member; on state funding of elections; chair — former Home Minister Indrajit Gupta</td></tr>
+      <tr><td class="n">7</td><td>Law Commission 170th Report</td><td class="hlg">1999</td><td>On reform of the electoral laws</td></tr>
+      <tr><td class="n">8</td><td class="hlp">National Commission to Review the Working of the Constitution</td><td class="hlg">2000–02</td><td>Chair — M.N. Venkatachaliah</td></tr>
+      <tr><td class="n">9</td><td>ECI Report on Proposed Electoral Reforms</td><td class="hlg">2004</td><td>Election Commission's own report</td></tr>
+      <tr><td class="n">10</td><td class="hlp">Second Administrative Reforms Commission</td><td class="hlg">2007</td><td>Report on Ethics in Governance; chair — Veerappa Moily</td></tr>
+      <tr><td class="n">11</td><td class="hlp">Tankha Committee (Core Committee)</td><td class="hlg">2010</td><td>Reviewed the whole gamut of election laws/reforms</td></tr>
+      <tr><td class="n">12</td><td class="hlp">J.S. Verma Committee</td><td class="hlg">2013</td><td>Report on Amendments to Criminal Law</td></tr>
+      <tr><td class="n">13</td><td>Law Commission 244th Report</td><td class="hlg">2014</td><td>On electoral disqualifications</td></tr>
+      <tr><td class="n">14</td><td>Law Commission 255th Report</td><td class="hlg">2015</td><td>On electoral reforms</td></tr>
+    </tbody>
+  </table>
+  <p class="eng" style="margin-top:6px">The book groups the reforms that eventually resulted from all this study into four convenient time-bands, which this chapter's notes follow in order: reforms made <b>before 1996</b>, the cluster made <b>in 1996</b> (largely traceable to Dinesh Goswami), reforms made <b>after 1996</b>, and reforms made <b>since 2010</b> — the last band running all the way up to the Election Laws (Amendment) Act of 2021 and, in current-affairs terms, to the 2024 electoral bonds verdict.</p>
+  <div class="te">ఈ మొత్తం అధ్యయనం నుండి చివరికి వచ్చిన reforms ను, పుస్తకం నాలుగు వీలైన time-bands గా విభజిస్తుంది, ఈ chapter నోట్స్ కూడా అదే క్రమాన్ని అనుసరిస్తాయి — <b>1996 కంటే ముందు</b> చేసిన reforms, ఎక్కువగా Dinesh Goswami కమిటీకి సంబంధించిన <b>1996లో</b> చేసిన reforms, <b>1996 తర్వాత</b> చేసిన reforms, మరియు <b>2010 నుండి</b> చేసిన reforms — ఈ చివరి band 2021 Election Laws (Amendment) Act వరకు, current-affairs పరంగా 2024 electoral bonds తీర్పు వరకు విస్తరించి ఉంది.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Two Landmark Committees in Focus — Tarkunde &amp; Dinesh Goswami · Vohra &amp; Indrajit Gupta</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Tarkunde Committee (1974–75) &amp; Dinesh Goswami Committee (1990) — Setting the Reform Agenda</div>
+  <p class="eng">The <b class="hlp">Tarkunde Committee</b> stands out because it was never a government body at all — <b class="hlp">Jaya Prakash Narayan</b> set it up in <b class="hlg">1974</b> as part of his "Total Revolution" mobilisation, and it delivered its report the following year, in <b class="hlg">1975</b>, entirely outside official channels. Its citizen-driven origin didn't stop later governments from borrowing its thinking — ideas associated with this committee, such as pressing for <b class="term">state funding of elections</b> and building a genuinely insulated, better-staffed Election Commission, kept resurfacing in the official committees that followed. Sixteen years on, in <b class="hlg">1990</b>, the <b>National Front</b> government led by <b class="hlp">V.P. Singh</b> took the more conventional route and appointed a proper government committee under its own Law Minister, <b class="hlp">Dinesh Goswami</b>, tasking it with a close, practical audit of the electoral system's weak points. That committee reported in the same year, and — unusually for this chapter's committees — a large slice of its actual recommendations made it into law within a few years, forming the block of changes this chapter labels the "reforms of 1996" (covered on the next page).</p>
+  <div class="te"><b class="hlp">Tarkunde Committee</b> ప్రత్యేకమైనది ఎందుకంటే ఇది ఎప్పుడూ ప్రభుత్వ బాడీ కాదు — <b class="hlp">జయప్రకాశ్ నారాయణ్</b> తన "Total Revolution" ఉద్యమంలో భాగంగా దీన్ని <b class="hlg">1974</b>లో ఏర్పాటు చేశారు, మరుసటి సంవత్సరమే — <b class="hlg">1975</b>లో — పూర్తిగా అధికారిక వ్యవస్థకు వెలుపల నివేదిక సమర్పించారు. ఇది citizen-driven కమిటీ అయినా, తర్వాతి ప్రభుత్వాలు దీని ఆలోచనలను స్వీకరించకుండా ఆగలేదు — <b class="term">state funding of elections</b> కోసం వాదన, నిజంగా స్వతంత్రమైన, మెరుగైన సిబ్బంది ఉన్న Election Commission ఏర్పాటు వంటి ఆలోచనలు, ఆ తర్వాత వచ్చిన అధికారిక కమిటీల్లో పదే పదే కనిపించాయి. పదహారేళ్ల తర్వాత, <b class="hlg">1990</b>లో, <b class="hlp">V.P. సింగ్</b> నేతృత్వంలోని <b>National Front</b> ప్రభుత్వం మరింత సంప్రదాయ మార్గంలో వెళ్లి, తన Law Minister <b class="hlp">Dinesh Goswami</b> నేతృత్వంలో ఒక అధికారిక కమిటీని ఏర్పాటు చేసింది, ఎన్నికల వ్యవస్థలోని బలహీనతలపై దగ్గరగా, practical గా అధ్యయనం చేయమని అప్పగించింది. ఆ కమిటీ అదే సంవత్సరం నివేదిక ఇచ్చింది — ఈ chapter లోని కమిటీలలో అరుదైన విషయం ఏమిటంటే, దాని recommendations లో పెద్ద భాగం కొన్నేళ్లలోనే చట్టంగా మారింది, దీన్నే ఈ chapter "1996 reforms" గా పిలుస్తుంది (తర్వాతి పేజీలో వివరంగా చూద్దాం).</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Vohra Committee (1993) &amp; Indrajit Gupta Committee (1998–99)</div>
+  <p class="eng">The <b class="hlp">Vohra Committee</b>, set up in <b class="hlg">1993</b>, took on a different and darker brief: it was asked to map how deeply organised crime, the bureaucracy and politics had become entangled with one another, and to think through what institutional response the state could mount against that nexus. Five years later, the <b class="hlp">Indrajit Gupta Committee</b> returned to the state-funding question the Tarkunde Committee had first raised — the <b>BJP</b>-led government of <b class="hlg">1998</b> constituted this eight-member panel specifically to examine <b class="term">state funding of elections</b>, under the chairmanship of <b class="hlp">Indrajit Gupta</b>, a former Home Minister. Its report, submitted in <b class="hlg">1999</b>, reached a clear conclusion: state funding of elections was, in the committee's own assessment, constitutionally sound, legally justifiable and squarely in the public interest — though, notably, this endorsement in principle has still not translated into an actual state-funding law even decades later.</p>
+  <div class="te"><b class="hlp">Vohra Committee</b> ను <b class="hlg">1993</b>లో ఏర్పాటు చేశారు, ఇది వేరైన, కొంచెం చీకటి బాధ్యతను చేపట్టింది — organised crime, bureaucracy, politics ఎంతగా ఒకదానితో ఒకటి పెనవేసుకుపోయాయో మ్యాప్ చేయమని, ఈ nexus కు వ్యతిరేకంగా రాష్ట్రం ఎలాంటి institutional response తీసుకోవాలో ఆలోచించమని దీన్ని కోరారు. ఐదేళ్ల తర్వాత, <b class="hlp">Indrajit Gupta Committee</b>, Tarkunde Committee మొదట లేవనెత్తిన state-funding ప్రశ్నకే తిరిగి వచ్చింది — <b class="hlg">1998</b> నాటి <b>BJP</b> నేతృత్వంలోని ప్రభుత్వం, <b class="term">state funding of elections</b> ను ప్రత్యేకంగా పరిశీలించడానికి ఈ ఎనిమిది-మంది సభ్యుల ప్యానెల్ ను, మాజీ Home Minister <b class="hlp">Indrajit Gupta</b> అధ్యక్షతన ఏర్పాటు చేసింది. <b class="hlg">1999</b>లో సమర్పించిన దీని నివేదిక ఒక స్పష్టమైన ముగింపుకు వచ్చింది — ఎన్నికలకు state funding, కమిటీ సొంత అంచనా ప్రకారం, constitutionally సరైనది, legally justifiable, ప్రజా ప్రయోజనానికి అనుకూలమైనది — అయితే, గమనించదగ్గ విషయం ఏమిటంటే, ఈ సూత్రప్రాయ ఆమోదం దశాబ్దాలు గడిచినా ఇప్పటికీ ఒక వాస్తవ state-funding చట్టంగా మారలేదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Tarkunde, Dinesh Goswami, Vohra &amp; Indrajit Gupta</caption>
+    <thead><tr><th class="gn2" style="width:44%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who set up the Tarkunde Committee, and when?</td><td>Jaya Prakash Narayan, 1974 (non-official); report 1975</td></tr>
+      <tr><td>Which government appointed the Dinesh Goswami Committee?</td><td>V.P. Singh's National Front govt, 1990 — chair was the Law Minister himself</td></tr>
+      <tr><td>What did the Vohra Committee (1993) examine?</td><td>The nexus between crime, bureaucracy and politics</td></tr>
+      <tr><td>What did the Indrajit Gupta Committee conclude (1999 report)?</td><td>State funding of elections is constitutionally/legally justified &amp; in public interest</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Electoral Reforms Before 1996 — Voting Age, EVMs, Booth Capturing &amp; EPIC</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Lowering the Voting Age &amp; Two 1989 Housekeeping Changes</div>
+  <p class="eng">The single most far-reaching pre-1996 change was demographic rather than procedural: the <b class="term">61st Constitutional Amendment Act, 1988</b> brought the <b class="imp">voting age down from 21 to 18</b> for both Lok Sabha and state assembly elections, opening the franchise to a much younger slice of the population as a deliberate way of drawing India's youth into mainstream political participation. Two smaller but useful fixes followed in <b class="hlg">1989</b>. First, staff engaged in preparing, revising or correcting electoral rolls were deemed to be on <b class="term">deputation to the Election Commission</b> for as long as they did that work — meaning the Commission, not their parent department, controlled their discipline and conduct during that period. Second, the number of electors required to sign as <b>proposers</b> on nomination papers for Rajya Sabha and state legislative council elections was raised to whichever is less of 10% of the constituency's electors or ten electors — a deliberate hurdle meant to weed out frivolous, non-serious candidates before they even reach the ballot.</p>
+  <div class="te">1996 కంటే ముందు వచ్చిన మార్పుల్లో అత్యంత ప్రభావవంతమైనది procedural కాదు, demographic మార్పు — <b class="term">61వ Constitutional Amendment Act, 1988</b>, Lok Sabha, రాష్ట్ర అసెంబ్లీ ఎన్నికలు రెండింటికీ <b class="imp">ఓటు వేసే వయసును 21 నుండి 18కి</b> తగ్గించింది — దేశంలోని యువతను mainstream రాజకీయ ప్రక్రియలోకి తీసుకురావాలనే ఉద్దేశపూర్వక చర్యగా, చాలా చిన్న వయసు వారికి కూడా ఓటు హక్కు కల్పించింది. <b class="hlg">1989</b>లో రెండు చిన్న కానీ ఉపయోగకరమైన మార్పులు వచ్చాయి. మొదటిది — electoral rolls తయారీ, revision, correction లో పనిచేసే సిబ్బంది, ఆ పని చేస్తున్నంత కాలం <b class="term">Election Commission కు deputation పై ఉన్నట్లు</b> పరిగణించబడతారు — అంటే, వారి discipline, conduct ను ఆ కాలంలో వారి parent department కాదు, Election Commission నే నియంత్రిస్తుంది. రెండోది — Rajya Sabha, రాష్ట్ర legislative council ఎన్నికల్లో నామినేషన్ పత్రాలపై సంతకం చేయాల్సిన <b>proposers</b> సంఖ్యను, నియోజకవర్గ ఓటర్లలో 10% లేదా పది మంది ఓటర్లు — ఏది తక్కువైతే అది — గా పెంచారు — ఇది సీరియస్ కాని అభ్యర్థులు బ్యాలెట్ వరకు కూడా చేరకుండా ఆపే ఉద్దేశపూర్వక అడ్డంకి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">EVMs, Booth Capturing &amp; the Elector's Photo Identity Card (EPIC)</div>
+  <p class="eng">A <b class="hlg">1989</b> provision cleared the legal ground for using <b class="term">Electronic Voting Machines (EVMs)</b>, though actual use took almost a decade to arrive — EVMs were first tried experimentally in <b class="hlg">1998</b> in select constituencies of Rajasthan, Madhya Pradesh and Delhi, and the first time an entire state's general election ran on EVMs was <b class="hlg">Goa in 1999</b>. The same year's amendments also armed the Commission against <b class="term">booth capturing</b>, empowering it to adjourn a poll or countermand an election outright wherever booth capturing occurred — defined broadly to cover seizing a polling station and forcing officials to hand over ballot papers or machines, letting only one side's supporters vote, threatening electors away from the booth, or seizing the place where counting happens. Separately, from <b class="hlg">1993</b> onward the Commission began issuing <b class="term">Elector's Photo Identity Cards (EPIC)</b>, built on the electoral roll itself, specifically to choke off bogus voting and impersonation at the booth.</p>
+  <div class="te"><b class="hlg">1989</b> నాటి ఒక provision, <b class="term">Electronic Voting Machines (EVMs)</b> వాడకానికి legal మార్గం సుగమం చేసింది, అయితే వాస్తవ వినియోగం రావడానికి దాదాపు పదేళ్లు పట్టింది — EVMs ను మొదట <b class="hlg">1998</b>లో రాజస్థాన్, మధ్యప్రదేశ్, ఢిల్లీ లోని కొన్ని నియోజకవర్గాల్లో ప్రయోగాత్మకంగా వాడారు, పూర్తి రాష్ట్ర general election EVMs పైనే జరిగింది మొదటిసారి <b class="hlg">1999లో గోవా</b>లో. అదే సంవత్సరపు amendments, <b class="term">booth capturing</b> కు వ్యతిరేకంగా Commission కు అధికారం ఇచ్చాయి — booth capturing జరిగిన చోట పోలింగ్ ను వాయిదా వేయడానికి లేదా ఎన్నికను పూర్తిగా countermand చేయడానికి — ఇందులో పోలింగ్ స్టేషన్ ను స్వాధీనం చేసుకుని అధికారులను బ్యాలెట్ పేపర్లు/మెషీన్లు అప్పగించమని బలవంతం చేయడం, ఒకే వర్గం మద్దతుదారులను మాత్రమే ఓటు వేయనివ్వడం, ఓటర్లను బూత్ కు వెళ్లకుండా బెదిరించడం, లేదా కౌంటింగ్ జరిగే స్థలాన్ని స్వాధీనం చేసుకోవడం వంటివి విస్తృతంగా వస్తాయి. వేరుగా, <b class="hlg">1993</b> నుండి Commission, electoral roll ఆధారంగా <b class="term">Elector's Photo Identity Cards (EPIC)</b> జారీ చేయడం మొదలుపెట్టింది — బూత్ వద్ద bogus voting, impersonation ను అరికట్టడమే దీని ప్రత్యేక లక్ష్యం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Reforms Before 1996</caption>
+    <thead><tr><th class="gn2" style="width:44%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which amendment lowered the voting age, and to what?</td><td>61st CAA, 1988 — 21 → 18 years</td></tr>
+      <tr><td>Where were EVMs first tried experimentally?</td><td>1998 — select seats in Rajasthan, MP, Delhi</td></tr>
+      <tr><td>First full-state general election on EVMs?</td><td>Goa, 1999</td></tr>
+      <tr><td>Since when has the EC issued EPICs, and why?</td><td>Since 1993 — to check bogus voting/impersonation</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Electoral Reforms of 1996 — the Dinesh Goswami Package</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Ten Changes Traced Back to the Dinesh Goswami Committee</div>
+  <p class="eng">Although the <b class="hlp">Dinesh Goswami Committee</b> reported back in 1990, Parliament only converted a sizeable chunk of its recommendations into the <b>Representation of the People (Amendment) Act, 1996</b> — a six-year gap that is itself worth remembering. Taken together, this package tries to clean up several everyday friction points in how a poll is actually conducted: it sorts contesting candidates into three fixed categories for ballot listing — recognised-party candidates, registered-but-unrecognised-party candidates, and independents — each group arranged alphabetically within itself; it bars, for six years, anyone convicted of insulting the National Flag, the Constitution, or the National Anthem under the 1971 Insults to National Honour law; it bans selling or distributing liquor anywhere in a polling area during the 48 hours before polling closes; and it recalibrates the proposer requirement so that a party-sponsored candidate needs just one proposer while an independent still needs ten.</p>
+  <div class="te"><b class="hlp">Dinesh Goswami Committee</b> 1990లోనే నివేదిక ఇచ్చినప్పటికీ, Parliament దాని recommendations లో ఒక పెద్ద భాగాన్ని <b>Representation of the People (Amendment) Act, 1996</b> గా మార్చడానికి ఆరేళ్లు పట్టింది — ఈ గ్యాప్ కూడా గుర్తుంచుకోవాల్సిన విషయమే. మొత్తంగా చూస్తే, ఈ package, ఎన్నికల నిర్వహణలో రోజువారీ ఘర్షణ పాయింట్లను సరిచేయడానికి ప్రయత్నిస్తుంది — పోటీ చేసే అభ్యర్థులను బ్యాలెట్ లిస్టింగ్ కోసం మూడు నిర్ధిష్ట కేటగిరీలుగా — recognised-party, registered-unrecognised-party, independents — గా వర్గీకరిస్తుంది, ప్రతి గ్రూప్ లోపల అల్ఫాబెటికల్ ఆర్డర్ లో అమర్చుతుంది; 1971 నాటి National Honour చట్టం కింద National Flag, Constitution, National Anthem అవమానించినందుకు దోషిగా తేలిన వారిని ఆరేళ్ల పాటు ఎన్నికల్లో పోటీ చేయకుండా నిరోధిస్తుంది; పోలింగ్ ముగిసే 48 గంటల ముందు పోలింగ్ ప్రాంతంలో ఎక్కడా మద్యం అమ్మకం, పంపిణీ నిషేధిస్తుంది; పార్టీ-స్పాన్సర్డ్ అభ్యర్థికి కేవలం ఒక్క proposer సరిపోయేలా, స్వతంత్ర అభ్యర్థికి ఇప్పటికీ పది మంది proposers అవసరమయ్యేలా ఈ నియమాన్ని సర్దుబాటు చేస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">The Remaining Six — Death of a Candidate, Timelines, Restrictions</div>
+  <p class="eng">The other six changes in the same package deal with timing and restrictions. A candidate's death before polling no longer forces the whole election to be countermanded and restarted — instead, only if the deceased belonged to a recognised party does that party get seven days to name a replacement. By-elections must now generally be completed within six months of a seat falling vacant, unless less than a year of the term remains or the Commission and Central Government jointly certify that the timeline is impractical. Registered voters get a paid holiday on polling day, daily wagers included, unless their absence would risk real danger or loss to their employer. No candidate may contest from more than two constituencies at once, whether for the Lok Sabha, an assembly, or the Rajya Sabha/legislative council. Carrying arms anywhere near a polling station became a cognizable offence, with an exemption carved out for the officials actually policing the poll. And the campaign itself was tightened by cutting the gap between the last withdrawal date and polling day from twenty days down to fourteen.</p>
+  <div class="te">అదే package లోని మిగతా ఆరు మార్పులు, సమయ పరిమితులు, ఆంక్షలకు సంబంధించినవి. పోలింగ్ కు ముందు అభ్యర్థి మరణిస్తే, ఇప్పుడు మొత్తం ఎన్నికను countermand చేసి మళ్లీ మొదలుపెట్టాల్సిన అవసరం లేదు — మరణించిన అభ్యర్థి recognised party కు చెందినవారైతే మాత్రమే, ఆ పార్టీకి కొత్త అభ్యర్థిని ప్రతిపాదించడానికి ఏడు రోజుల గడువు ఇస్తారు. ఒక సీటు ఖాళీ అయిన ఆరు నెలల్లోపు సాధారణంగా by-elections పూర్తి కావాలి — term లో ఒక సంవత్సరం కంటే తక్కువ మిగిలి ఉంటే, లేదా Commission, కేంద్ర ప్రభుత్వం కలిసి ఈ గడువు ఆచరణ సాధ్యం కాదని ధృవీకరిస్తే తప్ప. నమోదైన ఓటర్లకు పోలింగ్ రోజున జీతంతో కూడిన సెలవు లభిస్తుంది, daily wagers కు కూడా — వారి గైర్హాజరు వల్ల యజమానికి నిజమైన ప్రమాదం లేదా నష్టం జరిగే అవకాశం ఉంటే తప్ప. ఏ అభ్యర్థి అయినా ఒకేసారి రెండు కంటే ఎక్కువ నియోజకవర్గాల నుండి పోటీ చేయకూడదు — Lok Sabha, అసెంబ్లీ లేదా Rajya Sabha/legislative council ఏదైనా సరే. పోలింగ్ స్టేషన్ సమీపంలో ఆయుధాలు తీసుకెళ్లడం cognizable offence గా మారింది — పోలింగ్ ను పహారా కాసే అధికారులకు మాత్రం మినహాయింపు ఉంటుంది. చివరిగా, withdrawal చివరి తేదీకి, పోలింగ్ తేదీకి మధ్య గ్యాప్ ను ఇరవై రోజుల నుండి పద్నాలుగు రోజులకు కుదించి campaigning వ్యవధిని బిగించారు.</div>
+
+  <table>
+    <caption>Table 83.2 — The 1996 Reform Package at a Glance</caption>
+    <thead><tr><th class="n">#</th><th>Reform</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Three-category listing of candidates (recognised / registered-unrecognised / independent)</td></tr>
+      <tr><td class="n">2</td><td>6-year disqualification for insulting Flag/Constitution/National Anthem</td></tr>
+      <tr><td class="n">3</td><td>Liquor sale banned in polling area for 48 hrs before poll closes</td></tr>
+      <tr><td class="n">4</td><td>1 proposer if party-sponsored; 10 proposers if independent</td></tr>
+      <tr><td class="n">5</td><td>Death of candidate no longer countermands election (party gets 7 days for replacement)</td></tr>
+      <tr><td class="n">6</td><td>By-elections within 6 months of vacancy (with 2 exceptions)</td></tr>
+      <tr><td class="n">7</td><td>Paid holiday for voters on polling day (daily wagers included)</td></tr>
+      <tr><td class="n">8</td><td>Contest capped at 2 constituencies at once</td></tr>
+      <tr><td class="n">9</td><td>Carrying arms near a polling station made a cognizable offence</td></tr>
+      <tr><td class="n">10</td><td>Withdrawal-to-polling gap cut from 20 to 14 days</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Reforms of 1996</caption>
+    <thead><tr><th class="gn2" style="width:44%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which committee's recommendations largely became the 1996 Act?</td><td>Dinesh Goswami Committee (1990)</td></tr>
+      <tr><td>How many candidate categories for ballot listing?</td><td>3 — recognised party / registered-unrecognised party / independent</td></tr>
+      <tr><td>Old vs new gap between withdrawal &amp; polling day?</td><td>20 days → 14 days</td></tr>
+      <tr><td>Max constituencies one candidate may contest from?</td><td>2</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Electoral Reforms After 1996 — Part A: Elections, Postal Ballot, Proxy Voting &amp; Candidate Disclosure</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Presidential/VP Elections (1997) · Requisitioning Staff (1998) · Postal Ballot (1999) · Proxy Voting (2003)</div>
+  <p class="eng">A run of smaller, targeted fixes followed through the late 1990s and early 2000s. In <b class="hlg">1997</b>, to discourage frivolous candidatures at the very top of the political ladder, the number of proposers/seconders required was raised from 10 to 50 for a Presidential contest and from 5 to 20 for the Vice-Presidential one, while the security deposit for either office jumped from ₹2,500 to <b class="imp">₹15,000</b>. A <b class="hlg">1998</b> change let the Commission requisition employees of local bodies, nationalised banks, universities, LIC and other government-aided bodies for election duty, easing the perennial staffing crunch during polls. From <b class="hlg">1999</b>, any class of persons the Commission notifies (in consultation with the government) can be required to vote only through <b class="term">postal ballot</b>, rather than in person. And from <b class="hlg">2003</b>, service voters from the Armed Forces and Army-Act-covered forces got the option of <b class="term">proxy voting</b> — appointing a proxy in the prescribed form and informing the Returning Officer, instead of having to vote in person or by post.</p>
+  <div class="te">1990ల చివరి నుండి 2000ల ప్రారంభం వరకు, చిన్న చిన్న లక్ష్యిత మార్పుల వరుస వచ్చింది. <b class="hlg">1997</b>లో, రాజకీయ నిచ్చెన అత్యున్నత స్థాయిలో సీరియస్ కాని అభ్యర్థిత్వాలను నిరుత్సాహపరచడానికి, Presidential ఎన్నికకు proposers/seconders సంఖ్యను 10 నుండి 50కి, Vice-Presidential ఎన్నికకు 5 నుండి 20కి పెంచారు, రెండు పదవులకూ security deposit ₹2,500 నుండి <b class="imp">₹15,000</b> కు పెరిగింది. <b class="hlg">1998</b> నాటి మార్పు, local bodies, nationalised banks, universities, LIC, ఇతర government-aided బాడీల ఉద్యోగులను ఎన్నికల డ్యూటీ కోసం requisition చేయడానికి Commission కు అనుమతి ఇచ్చింది — పోలింగ్ సమయంలో ఎప్పటికప్పుడు వచ్చే staffing crunch ను తగ్గించింది. <b class="hlg">1999</b> నుండి, Commission ప్రభుత్వంతో సంప్రదించి notify చేసే ఏ వర్గం వ్యక్తులైనా, వ్యక్తిగతంగా కాకుండా <b class="term">postal ballot</b> ద్వారానే ఓటు వేయాల్సి ఉంటుంది. <b class="hlg">2003</b> నుండి, Armed Forces, Army Act పరిధిలోని force లకు చెందిన service voters కు <b class="term">proxy voting</b> ఎంపిక లభించింది — వ్యక్తిగతంగా లేదా పోస్ట్ ద్వారా ఓటు వేయాల్సిన బదులు, నిర్దేశిత ఫారంలో ఒక proxy ను నియమించి, Returning Officer కు తెలియజేయవచ్చు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Declaration of Criminal Antecedents, Assets &amp; Liabilities (2003 ECI Order)</div>
+  <p class="eng">A far more consequential change came in <b class="hlg">2003</b>, when the Election Commission — following through on the Supreme Court's push for greater voter information in the <b class="term">Union of India vs Association for Democratic Reforms</b> litigation of 2002 — ordered every Lok Sabha and state legislature candidate to file an affidavit with the nomination paper disclosing five things: any past criminal conviction, acquittal or discharge (including whether imprisoned or fined); any pending case, filed within six months of the nomination, involving an offence punishable with two years or more where charges were framed or the court took cognizance; the candidate's own assets and those of the spouse and dependants; any liabilities, including dues owed to public financial institutions or government; and the candidate's educational qualifications. Filing false information in this affidavit is itself now treated as an <b class="imp">electoral offence</b> — a rare instance where the disclosure requirement carries its own separate legal teeth.</p>
+  <div class="te">2003లో మరింత ముఖ్యమైన మార్పు వచ్చింది — 2002 నాటి <b class="term">Union of India vs Association for Democratic Reforms</b> కేసులో ఓటర్లకు మరింత సమాచారం అందించాలన్న Supreme Court ఒత్తిడిని అనుసరించి, Election Commission, ప్రతి Lok Sabha, రాష్ట్ర శాసనసభ అభ్యర్థి తన నామినేషన్ పత్రంతో పాటు ఐదు అంశాలు వెల్లడించే affidavit దాఖలు చేయాలని ఆదేశించింది — గత criminal conviction, acquittal లేదా discharge (జైలు శిక్ష లేదా జరిమానా విధించారా అనేది కూడా); నామినేషన్ కు ఆరు నెలల ముందు దాఖలైన, రెండు సంవత్సరాలు లేదా అంతకంటే ఎక్కువ శిక్ష పడే నేరానికి సంబంధించి charges framed అయిన లేదా court cognizance తీసుకున్న ఏదైనా pending కేసు; అభ్యర్థి, జీవిత భాగస్వామి, dependents ఆస్తులు; public financial institutions లేదా ప్రభుత్వానికి బకాయిలతో సహా ఏవైనా liabilities; అభ్యర్థి విద్యార్హతలు. ఈ affidavit లో తప్పుడు సమాచారం ఇవ్వడం ఇప్పుడు <b class="imp">ఎన్నికల నేరం</b> గా పరిగణించబడుతుంది — disclosure requirement కు తనదైన legal పంజా ఉన్న అరుదైన సందర్భం ఇది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — After 1996, Part A</caption>
+    <thead><tr><th class="gn2" style="width:44%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>New security deposit for President/VP elections (1997)?</td><td>₹15,000 (up from ₹2,500), for both offices</td></tr>
+      <tr><td>Who got proxy-voting rights, and from when?</td><td>Armed Forces/Army-Act service voters, from 2003</td></tr>
+      <tr><td>How many items must a candidate's 2003 affidavit disclose?</td><td>5 — criminal record, pending cases, assets, liabilities, education</td></tr>
+      <tr><td>Is false information in that affidavit an offence?</td><td>Yes — an electoral offence in itself</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Electoral Reforms After 1996 — Part B: Rajya Sabha Elections, Party Funding &amp; Braille EVMs</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Rajya Sabha Election Changes (2003) — Domicile Removed, Open Ballot Introduced</div>
+  <p class="eng">Two <b class="hlg">2003</b> changes reshaped Rajya Sabha elections specifically. First, the old <b class="term">domicile requirement</b> — that a candidate had to be a registered elector in the very state he or she wished to represent — was dropped; being an elector anywhere in the country now suffices. Second, the <b class="term">secret ballot</b> traditionally used was replaced, for Rajya Sabha elections, with an <b class="term">open ballot</b>: an MLA belonging to a party must show the marked ballot paper to that party's designated agent before it is cast. This second change was explicitly aimed at curbing <b>cross-voting</b> and diluting the role money power had begun to play in these indirect elections, by making each party's own MLAs accountable to their party whip in a way a genuinely secret ballot cannot enforce.</p>
+  <div class="te"><b class="hlg">2003</b> నాటి రెండు మార్పులు ప్రత్యేకంగా Rajya Sabha ఎన్నికలను రూపొందించాయి. మొదటిది — ఒక అభ్యర్థి తాను ప్రాతినిధ్యం వహించాలనుకున్న రాష్ట్రంలోనే నమోదైన ఓటరుగా ఉండాలనే పాత <b class="term">domicile requirement</b> ను తొలగించారు — ఇప్పుడు దేశంలో ఎక్కడైనా ఓటరుగా ఉంటే సరిపోతుంది. రెండోది — సాంప్రదాయకంగా వాడే <b class="term">secret ballot</b> ను, Rajya Sabha ఎన్నికలకు మాత్రం, <b class="term">open ballot</b> తో భర్తీ చేశారు — ఒక పార్టీకి చెందిన MLA, తన మార్క్ చేసిన ballot paper ను వేయడానికి ముందు, ఆ పార్టీ నియమించిన agent కు చూపించాలి. ఈ రెండో మార్పు, <b>cross-voting</b> ను అరికట్టడానికి, ఈ indirect ఎన్నికల్లో డబ్బు ప్రభావాన్ని తగ్గించడానికి ఉద్దేశపూర్వకంగా చేసినది — నిజంగా secret ballot అమలు చేయలేని విధంగా, ప్రతి పార్టీ తన MLA లను తమ పార్టీ whip కు జవాబుదారీగా చేస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Funding, Free Electoral Material &amp; Braille EVMs (2003–2009)</div>
+  <p class="eng">A cluster of <b class="hlg">2003</b> changes touched money and campaign logistics together. Travel expenses of a party's own campaigning leaders stopped counting toward a candidate's personal election-expense ceiling. The government began supplying, free of cost, electoral roll copies and other prescribed material to recognised-party candidates, while the Commission itself began supplying specified items to voters and to recognised-party candidates in each constituency. On the funding side, parties were allowed to accept <b>any amount</b> of contribution from any person or company (barring government companies), subject to reporting any single contribution above ₹20,000 to the Commission in order to claim income-tax relief — with the donor company itself also earning a tax exemption on what it gave. The Commission was additionally directed to allocate <b>equitable time</b> on cable television and other electronic media to recognised parties during elections, based on their past electoral performance. Separately, accessibility improved step by step: Braille signage on EVMs was trialled at a 2004 Andhra Pradesh bye-election, extended to every Delhi assembly seat by 2008, and rolled out for the Fifteenth Lok Sabha general election of 2009 alongside simultaneous state elections.</p>
+  <div class="te"><b class="hlg">2003</b> నాటి మార్పుల సమూహం, డబ్బు, campaign logistics రెండింటినీ తాకింది. పార్టీ campaigning నాయకుల travel expenses ఇక అభ్యర్థి వ్యక్తిగత election-expense పరిమితిలో లెక్కించబడవు. ప్రభుత్వం, recognised-party అభ్యర్థులకు electoral roll కాపీలు, ఇతర నిర్దేశిత సామగ్రిని ఉచితంగా సరఫరా చేయడం మొదలుపెట్టింది, Commission కూడా ఓటర్లకు, ఆయా నియోజకవర్గాల్లో recognised-party అభ్యర్థులకు నిర్దిష్ట వస్తువులు సరఫరా చేయడం మొదలుపెట్టింది. Funding విషయంలో — ప్రభుత్వ కంపెనీలు తప్ప, ఏ వ్యక్తి, కంపెనీ నుండైనా పార్టీలు <b>ఎంత మొత్తమైనా</b> విరాళం స్వీకరించవచ్చు — ₹20,000 కంటే ఎక్కువ ఒకే విరాళాన్ని income-tax relief కోసం Commission కు నివేదించాలి — విరాళం ఇచ్చిన కంపెనీకి కూడా ఆ మొత్తంపై tax exemption లభిస్తుంది. ఎన్నికల సమయంలో recognised పార్టీలకు వాటి గత ఎన్నికల పనితీరు ఆధారంగా cable TV, ఇతర electronic మీడియాలో <b>సమాన సమయం</b> కేటాయించాలని కూడా Commission కు ఆదేశించారు. వేరుగా, accessibility దశలవారీగా మెరుగుపడింది — Braille signage EVMs ను 2004 ఆంధ్రప్రదేశ్ bye-election లో ప్రయత్నించారు, 2008 నాటికి ప్రతి ఢిల్లీ అసెంబ్లీ సీటుకు విస్తరించారు, 2009 నాటి Fifteenth Lok Sabha general election లో, ఏకకాలంలో జరిగిన రాష్ట్ర ఎన్నికలతో పాటు అమలు చేశారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — After 1996, Part B</caption>
+    <thead><tr><th class="gn2" style="width:44%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What replaced the secret ballot for Rajya Sabha elections?</td><td>Open ballot — MLA shows marked ballot to party's agent</td></tr>
+      <tr><td>Above what contribution must a party report a donor to the EC?</td><td>Above ₹20,000</td></tr>
+      <tr><td>Basis on which EC allocates electronic-media time to parties?</td><td>Past electoral performance</td></tr>
+      <tr><td>When were Braille EVMs used in a full Lok Sabha general election?</td><td>2009 — 15th Lok Sabha elections</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Electoral Reforms Since 2010 — Part A: Exit Polls, Deposits, Appeals &amp; NRI Voting</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Exit-Poll Ban (2009) · Corrupt-Practice Tightening (2009) · Security Deposits Doubled (2009)</div>
+  <p class="eng">A <b class="hlg">2009</b> provision banned conducting or publishing <b class="term">exit polls</b> — surveys gauging how electors voted or are likely to have voted — through print, electronic or any other medium, for the entire period the Commission notifies around a Lok Sabha or state assembly election. The same year tightened accountability in two other ways: a strict <b>three-month deadline</b> was imposed on the authority responsible for forwarding a corrupt-practice disqualification case to the President for a decision, and the definition of <b>corrupt practice</b> was widened to cover assistance obtained from any official connected with conducting the election — government servant or not — deputed by the Commission. Security deposits were also roughly doubled that year: for the Lok Sabha, ₹10,000 became ₹25,000 for general candidates and ₹5,000 became ₹12,500 for SC/ST candidates; for state assemblies, ₹5,000 became ₹10,000 and ₹2,500 became ₹5,000 respectively — again aimed at discouraging a flood of non-serious nominations.</p>
+  <div class="te"><b class="hlg">2009</b> నాటి ఒక provision, ఓటర్లు ఎలా ఓటు వేశారో లేదా వేసే అవకాశం ఉందో అంచనా వేసే <b class="term">exit polls</b> ను — Lok Sabha లేదా రాష్ట్ర అసెంబ్లీ ఎన్నిక చుట్టూ Commission notify చేసిన మొత్తం వ్యవధిలో — print, electronic లేదా ఇతర ఏ మాధ్యమంలోనైనా నిర్వహించడం, ప్రచురించడం నిషేధించింది. అదే సంవత్సరం మరో రెండు రకాలుగా accountability ను బిగించారు — corrupt-practice disqualification కేసును President నిర్ణయం కోసం పంపే బాధ్యత ఉన్న అధికారికి కఠినమైన <b>మూడు-నెలల గడువు</b> విధించారు, ఎన్నికల నిర్వహణలో Commission deputed చేసిన ఏ అధికారి నుండైనా — ప్రభుత్వ ఉద్యోగి అయినా కాకపోయినా — పొందిన సహాయం కూడా <b>corrupt practice</b> నిర్వచనంలోకి వచ్చేలా విస్తరించారు. అదే సంవత్సరం security deposits కూడా దాదాపు రెట్టింపు అయ్యాయి — Lok Sabha కు general అభ్యర్థులకు ₹10,000 నుండి ₹25,000కి, SC/ST అభ్యర్థులకు ₹5,000 నుండి ₹12,500కి; రాష్ట్ర అసెంబ్లీలకు వరుసగా ₹5,000 నుండి ₹10,000కి, ₹2,500 నుండి ₹5,000కి పెరిగాయి — సీరియస్ కాని నామినేషన్ల వరద ను నిరుత్సాహపరచడమే దీని లక్ష్యం.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Appellate Authority Within the District (2009) · NRI Voting Rights (2010) · Online Enrolment (2013)</div>
+  <p class="eng">Also from <b class="hlg">2009</b>, an appeal against an Electoral Registration Officer's order — arising during the continuous updating of electoral rolls — no longer has to go straight to the state's Chief Electoral Officer; it now first lies before a District Magistrate or an officer of equivalent rank within the district itself, with a further appeal reaching the Chief Electoral Officer only after that. In <b class="hlg">2010</b>, Indian citizens living abroad for employment, education or other reasons — provided they hadn't taken up another country's citizenship and weren't already on any electoral roll — were given the right to register at the constituency shown as their residence in their passport, extending the franchise to the diaspora for the first time. And in <b class="hlg">2013</b>, the Registration of Electors (Amendment) Rules made <b>online enrolment</b> in the electoral roll possible, cutting out a layer of paperwork from what had been a purely offline process since 1960.</p>
+  <div class="te"><b class="hlg">2009</b> నుండి, electoral rolls నిరంతర నవీకరణలో వచ్చే Electoral Registration Officer ఉత్తర్వుకు వ్యతిరేకంగా అప్పీల్, ఇక నేరుగా రాష్ట్ర Chief Electoral Officer వద్దకు వెళ్లాల్సిన అవసరం లేదు — ఇది ఇప్పుడు మొదట జిల్లాలోని District Magistrate లేదా సమాన హోదా అధికారి ముందు ఉంటుంది, తర్వాత మాత్రమే మరో అప్పీల్ Chief Electoral Officer వద్దకు చేరుతుంది. <b class="hlg">2010</b>లో, ఉద్యోగం, విద్య లేదా ఇతర కారణాల వల్ల విదేశాల్లో నివసిస్తున్న భారత పౌరులకు — వేరే దేశ పౌరసత్వం తీసుకోకుండా, ఇప్పటికే ఏ electoral roll లోనూ లేకుండా ఉంటే — తమ పాస్‌పోర్ట్ లో చూపిన నివాస నియోజకవర్గంలో నమోదు చేసుకునే హక్కు ఇచ్చారు — మొదటిసారి diaspora కు ఓటు హక్కు విస్తరించారు. <b class="hlg">2013</b>లో, Registration of Electors (Amendment) Rules, electoral roll లో <b>online enrolment</b> ను సాధ్యం చేసింది — 1960 నుండి పూర్తిగా offline గా ఉన్న ప్రక్రియ నుండి కాగితం పనిని తగ్గించింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Since 2010, Part A</caption>
+    <thead><tr><th class="gn2" style="width:44%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Time-limit to forward a corrupt-practice case to the President?</td><td>3 months (from 2009)</td></tr>
+      <tr><td>New LS security deposit for a general candidate (2009)?</td><td>₹25,000 (up from ₹10,000)</td></tr>
+      <tr><td>Since when can NRIs register to vote, and how?</td><td>2010 — at the constituency shown in their passport</td></tr>
+      <tr><td>What did the 2013 Rules enable?</td><td>Online filing of electoral-roll enrolment applications</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Electoral Reforms Since 2010 — Part B: NOTA, VVPAT &amp; the 2013 Disqualification Cases</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">NOTA (2013) — the PUCL Judgment</div>
+  <p class="eng">Acting on the Supreme Court's directions in <b class="term">People's Union for Civil Liberties (PUCL) vs Union of India (2013)</b>, the Commission built a <b class="imp">None of the Above (NOTA)</b> option into both ballot papers and EVMs, giving a voter who approves of no contestant a way to record that rejection while the secrecy of the ballot stays fully intact. NOTA first appeared in the <b class="hlg">2013</b> state assembly elections and continued through the <b class="hlg">2014</b> state assembly polls and the Sixteenth Lok Sabha general election the same year. Its legal effect is deliberately limited, though — however many electors choose NOTA, even if that count exceeds every individual candidate's vote tally, the candidate with the single largest number of actual votes is still declared elected; NOTA registers dissent, it does not trigger a re-poll or void the result.</p>
+  <div class="te"><b class="term">People's Union for Civil Liberties (PUCL) vs Union of India (2013)</b> కేసులో Supreme Court ఆదేశాల ప్రకారం, Commission, ballot papers, EVMs రెండింటిలోనూ <b class="imp">None of the Above (NOTA)</b> ఎంపికను చేర్చింది — ఏ అభ్యర్థినీ ఆమోదించని ఓటరుకు, ballot secrecy పూర్తిగా కాపాడుతూనే, తన తిరస్కారాన్ని నమోదు చేసుకునే మార్గం ఇచ్చింది. NOTA మొదట <b class="hlg">2013</b> రాష్ట్ర అసెంబ్లీ ఎన్నికల్లో కనిపించింది, <b class="hlg">2014</b> రాష్ట్ర అసెంబ్లీ ఎన్నికలు, అదే సంవత్సరం Sixteenth Lok Sabha general election లో కూడా కొనసాగింది. అయితే, దీని legal ప్రభావం ఉద్దేశపూర్వకంగా పరిమితం — ఎంతమంది ఓటర్లు NOTA ఎంచుకున్నా, ఆ సంఖ్య ఏ ఒక్క అభ్యర్థి ఓట్ల కంటే ఎక్కువైనా సరే, అత్యధిక ఓట్లు పొందిన అభ్యర్థినే ఎన్నికైనట్లు ప్రకటిస్తారు — NOTA అసమ్మతిని నమోదు చేస్తుంది తప్ప, re-poll ను ప్రేరేపించదు, ఫలితాన్ని రద్దు చేయదు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">VVPAT — the Subramanian Swamy Case (2013)</div>
+  <p class="eng">The <b class="term">Voter Verifiable Paper Audit Trail (VVPAT)</b> is a printer attached to each EVM: the moment a vote is cast, a slip bearing the candidate's serial number, name and symbol appears behind a transparent window for seven seconds before dropping automatically into a sealed box, letting a voter visually confirm the vote registered correctly. Its legal basis came from <b class="term">Dr. Subramanian Swamy vs Election Commission of India (2013)</b>, in which the Supreme Court permitted the Commission to roll VVPATs out in phases, describing the system as <b>"an indispensable requirement of free and fair elections"</b> — reasoning that it would both improve the voting system's accuracy and make manual recounts possible wherever a result is disputed. The law enabling VVPATs was amended the same year, and the system's first real-world use came at a bye-election in <b>Noksen, Nagaland</b>, in 2013.</p>
+  <div class="te"><b class="term">Voter Verifiable Paper Audit Trail (VVPAT)</b> అనేది ప్రతి EVM కు జోడించిన ఒక printer — ఓటు వేసిన వెంటనే, అభ్యర్థి serial number, పేరు, గుర్తు ఉన్న ఒక slip, ఏడు సెకన్ల పాటు transparent విండో వెనుక కనిపించి, తర్వాత ఆటోమేటిక్ గా సీల్ చేసిన బాక్స్ లోకి పడిపోతుంది — ఓటర్ తన ఓటు సరిగ్గా నమోదైందని దృశ్యపరంగా నిర్ధారించుకోవడానికి వీలు కల్పిస్తుంది. దీని legal ఆధారం <b class="term">Dr. Subramanian Swamy vs Election Commission of India (2013)</b> కేసు నుండి వచ్చింది — ఇందులో Supreme Court, VVPATs ను దశలవారీగా అమలు చేయడానికి Commission కు అనుమతి ఇచ్చింది, ఈ వ్యవస్థను <b>"స్వేచ్ఛాయుత, న్యాయమైన ఎన్నికలకు అనివార్యమైన అవసరం"</b> గా అభివర్ణించింది — ఇది ఓటింగ్ వ్యవస్థ accuracy ను మెరుగుపరచడంతో పాటు, ఫలితంపై వివాదం ఉన్నప్పుడు manual recount సాధ్యం చేస్తుందని పేర్కొంది. VVPATs కు అనుమతించే చట్టం అదే సంవత్సరం సవరించబడింది, ఈ వ్యవస్థ మొదటి వాస్తవ వినియోగం 2013లో <b>నాగాలాండ్ లోని నోక్సెన్</b> bye-election లో జరిగింది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Two More 2013 Cases — Jail/Custody Contestants (Jan Chaukidar) &amp; Immediate Disqualification (Lily Thomas)</div>
+  <p class="eng">Two further 2013 Supreme Court rulings led to fast legislative counter-moves. In <b class="term">Chief Election Commissioner vs Jan Chaukidar</b>, the Court upheld a Patna High Court view that a person in jail or police custody — having no right to vote in that state — is not an "elector" and so cannot contest either. Parliament reversed this within the year through the <b>Representation of the People (Amendment and Validation) Act, 2013</b>, adding two clarifications: losing the right to vote while in jail or custody does not itself strip a person of "elector" status, and an MP or MLA can be disqualified only on the specific grounds the Act itself lists, no other ground — so persons in jail or custody remain free to contest. Separately, in <b class="term">Lily Thomas vs Union of India</b>, the Court struck down <b class="imp">Section 8(4)</b> of the Representation of the People Act, 1951 as unconstitutional — the provision that had given a convicted MP or MLA a three-month cushion to appeal and obtain a stay before disqualification kicked in. The ruling meant conviction now disqualifies immediately, with no grace period; a government bill meant to nullify this (the Representation of the People (Second Amendment and Validation) Bill, 2013) was introduced but eventually withdrawn.</p>
+  <div class="te">2013 నాటి మరో రెండు Supreme Court తీర్పులు వేగవంతమైన శాసనపరమైన counter-moves కు దారితీశాయి. <b class="term">Chief Election Commissioner vs Jan Chaukidar</b> కేసులో, జైలులో లేదా పోలీసు కస్టడీలో ఉన్న వ్యక్తికి — ఆ స్థితిలో ఓటు హక్కు లేకపోవడం వల్ల — "elector" హోదా ఉండదని, కాబట్టి పోటీ చేయడానికి కూడా అర్హత ఉండదని Patna High Court అభిప్రాయాన్ని Supreme Court సమర్థించింది. అదే సంవత్సరంలో Parliament, <b>Representation of the People (Amendment and Validation) Act, 2013</b> ద్వారా దీన్ని తిప్పికొట్టింది — రెండు స్పష్టీకరణలు జోడించింది — జైలు లేదా కస్టడీలో ఉన్నప్పుడు ఓటు హక్కు కోల్పోవడం అనేది, ఆ వ్యక్తి "elector" హోదాను కోల్పోయేలా చేయదు, MP లేదా MLA ను చట్టం స్వయంగా పేర్కొన్న నిర్దిష్ట కారణాలపైనే disqualify చేయాలి, వేరే కారణంపై కాదు — దీనివల్ల జైలు, కస్టడీలో ఉన్న వ్యక్తులు పోటీ చేయడానికి స్వేచ్ఛగా ఉంటారు. వేరుగా, <b class="term">Lily Thomas vs Union of India</b> కేసులో, Court, Representation of the People Act, 1951 లోని <b class="imp">Section 8(4)</b> ను unconstitutional గా కొట్టివేసింది — దోషిగా తేలిన MP లేదా MLA కు disqualification అమల్లోకి రాకముందు అప్పీల్ చేసి stay పొందడానికి మూడు నెలల వెసులుబాటు ఇచ్చే provision ఇది. ఈ తీర్పు వల్ల, ఇక conviction జరిగిన వెంటనే disqualification వర్తిస్తుంది, ఎలాంటి grace period ఉండదు — దీన్ని నిర్వీర్యం చేయడానికి ఉద్దేశించిన ప్రభుత్వ బిల్లు (Representation of the People (Second Amendment and Validation) Bill, 2013) ప్రవేశపెట్టినా, చివరికి ఉపసంహరించుకున్నారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — NOTA, VVPAT &amp; 2013 Disqualification Cases</caption>
+    <thead><tr><th class="gn2" style="width:44%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which case led to NOTA?</td><td>PUCL vs Union of India (2013)</td></tr>
+      <tr><td>If NOTA gets the most "votes," who wins the seat?</td><td>The candidate with the largest actual vote count still wins</td></tr>
+      <tr><td>Which case allowed phased VVPAT rollout, calling it indispensable?</td><td>Dr. Subramanian Swamy vs ECI (2013)</td></tr>
+      <tr><td>Which case said jail/custody undertrials aren't "electors" (later reversed by Parliament)?</td><td>Chief Election Commissioner vs Jan Chaukidar (2013)</td></tr>
+      <tr><td>Which case struck down Section 8(4) RPA, 1951?</td><td>Lily Thomas vs Union of India (2013)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Photos on EVMs · The 2017 Funding Changes · Electoral Bonds (2018) · Foreign Funding · 2021 Amendment</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Candidate Photos on EVMs (2015) · Cash Donations Capped, Corporate Ceiling Removed (2017)</div>
+  <p class="eng">For any election held after <b class="hlg">1 May 2015</b>, an Election Commission order required ballot papers and EVMs to carry each candidate's photograph alongside their name and party symbol — a fix aimed squarely at constituencies where two or more candidates share an identical or very similar name, though the Commission clarified that a candidate who simply cannot supply a photo is not thereby disqualified from contesting. The <b>2017 Union Budget</b> then reshaped party funding in two opposite directions at once: the ceiling on <b>anonymous cash donations</b> an individual could give a party fell sharply from ₹20,000 to just <b class="imp">₹2,000</b>, forcing parties to keep records (though not report to the Commission) for every donation above that new, much lower threshold; while, in the same breath, the pre-existing cap that had limited a company's political donations to <b class="hlg">7.5%</b> of its average net profit over the preceding three years was removed altogether, along with the company's obligation to disclose such donations in its profit-and-loss account — letting a company give any political party any amount, with no public paper trail at all.</p>
+  <div class="te"><b class="hlg">2015 మే 1</b> తర్వాత జరిగే ఏ ఎన్నికకైనా, ballot papers, EVMs లో ప్రతి అభ్యర్థి పేరు, పార్టీ గుర్తుతో పాటు ఫోటో కూడా ఉండాలని Election Commission ఆదేశం ఇచ్చింది — ఒకే లేదా చాలా పోలిన పేర్లు గల ఇద్దరు లేదా అంతకంటే ఎక్కువ అభ్యర్థులు పోటీ చేసే నియోజకవర్గాలను లక్ష్యంగా చేసుకున్న ఈ fix — అయితే, ఫోటో ఇవ్వలేని అభ్యర్థి కేవలం అందుకు మాత్రమే అనర్హుడు కాడని Commission స్పష్టం చేసింది. తర్వాత <b>2017 Union Budget</b>, పార్టీ funding ను ఒకేసారి రెండు వ్యతిరేక దిశల్లో మార్చింది — ఒక వ్యక్తి పార్టీకి ఇచ్చే <b>అనామక నగదు విరాళాల</b> పరిమితి ₹20,000 నుండి కేవలం <b class="imp">₹2,000</b> కి తీవ్రంగా పడిపోయింది — ఈ కొత్త, చాలా తక్కువ పరిమితి కంటే ఎక్కువ ప్రతి విరాళానికి పార్టీలు రికార్డులు ఉంచుకోవాలి (Commission కు నివేదించనవసరం లేదు); అదే సమయంలో, గత మూడేళ్ల సగటు నికర లాభంలో <b class="hlg">7.5%</b> కు కంపెనీ రాజకీయ విరాళాలను పరిమితం చేసిన పాత cap ను పూర్తిగా తొలగించారు, ఈ విరాళాలను profit-and-loss account లో వెల్లడించాల్సిన కంపెనీ బాధ్యతను కూడా తొలగించారు — దీనివల్ల ఒక కంపెనీ, ఎలాంటి public paper trail లేకుండా, ఏ రాజకీయ పార్టీకైనా ఎంత మొత్తమైనా ఇవ్వవచ్చు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Electoral Bonds (2018) — Design of the Scheme</div>
+  <p class="eng">Announced in the same 2017 budget and formally notified in <b class="hlg">2018</b>, the <b class="term">Electoral Bond Scheme</b> was pitched as a cleaner substitute for cash donations, meant to bring transparency and "clean money" into political funding. Under the scheme: an electoral bond is a bearer instrument in the nature of a promissory note, carrying no name of buyer or payee; it can be bought by any Indian citizen or India-incorporated entity; it can be donated only to a registered party that won at least <b class="imp">1%</b> of the votes polled in the last Lok Sabha or assembly general election; it can be encashed only through an authorised bank account belonging to the eligible party; it came in five denominations — ₹1,000, ₹10,000, ₹1,00,000, ₹10,00,000 and ₹1,00,00,000; and the buyer's identity, held confidentially by the authorised bank, was disclosable only to a competent court or a law-enforcement agency that had already registered a criminal case. The same year, the <b>Foreign Contribution (Regulation) Act, 2010</b> was amended to redefine "foreign company," effectively opening the door for political parties to receive foreign corporate funding as well.</p>
+  <div class="te">అదే 2017 బడ్జెట్ లో ప్రకటించి, <b class="hlg">2018</b>లో అధికారికంగా notify చేసిన <b class="term">Electoral Bond Scheme</b>, నగదు విరాళాలకు ఒక క్లీనర్ ప్రత్యామ్నాయంగా ప్రచారం చేయబడింది — రాజకీయ funding లో పారదర్శకత, "clean money" తీసుకురావాలనే ఉద్దేశంతో. ఈ scheme ప్రకారం — electoral bond అనేది promissory note స్వభావం గల bearer instrument, దీనిపై కొనుగోలుదారు లేదా receiver పేరు ఉండదు; దీన్ని ఏ భారత పౌరుడైనా లేదా భారత్ లో స్థాపించిన సంస్థ అయినా కొనవచ్చు; గత Lok Sabha లేదా అసెంబ్లీ general election లో పోలైన ఓట్లలో కనీసం <b class="imp">1%</b> సాధించిన నమోదిత పార్టీకి మాత్రమే దీన్ని విరాళంగా ఇవ్వవచ్చు; అర్హత గల పార్టీ authorized బ్యాంక్ ఖాతా ద్వారానే దీన్ని encash చేసుకోవచ్చు; ఇది ₹1,000, ₹10,000, ₹1,00,000, ₹10,00,000, ₹1,00,00,000 అనే ఐదు denominations లో వచ్చింది; కొనుగోలుదారు గుర్తింపు, authorized బ్యాంక్ వద్ద గోప్యంగా ఉంచబడి, ఇప్పటికే క్రిమినల్ కేసు నమోదు చేసిన court లేదా law-enforcement ఏజెన్సీకి మాత్రమే వెల్లడించబడేది. అదే సంవత్సరం, <b>Foreign Contribution (Regulation) Act, 2010</b> ను సవరించి "foreign company" నిర్వచనాన్ని మార్చారు — దీనివల్ల రాజకీయ పార్టీలు విదేశీ కార్పొరేట్ funding కూడా స్వీకరించే మార్గం తెరుచుకుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Photos, 2017 Funding Changes &amp; Electoral Bonds Design</caption>
+    <thead><tr><th class="gn2" style="width:44%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>New anonymous cash donation ceiling per individual (2017)?</td><td>₹2,000 (down from ₹20,000)</td></tr>
+      <tr><td>What corporate-donation cap was removed in 2017?</td><td>7.5% of a company's average net profit (last 3 years)</td></tr>
+      <tr><td>Minimum vote-share a party needed to receive bonds?</td><td>1% of votes in the last LS/Assembly general election</td></tr>
+      <tr><td>Could the public see who bought which bond, under the scheme?</td><td>No — buyer identity was confidential, barring court/law-enforcement demand</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Election Laws (Amendment) Act, 2021</div>
+  <p class="eng">This Act made four changes. It permitted tying electoral-roll records into the <b class="hlb">Aadhaar</b> system, aimed at weeding out the same person enrolled at more than one address. It expanded the roll-revision <b>qualifying dates</b> from a single 1st January each year to four — 1st January, 1st April, 1st July and 1st October — so a young voter no longer has to wait up to a year after turning 18 to get enrolled. It made the law gender-neutral for service voters by swapping the word "wife" for "spouse," letting spouses of service voters vote in person or by post just as before only wives could. And it widened the grounds on which premises can be requisitioned — beyond just polling stations and ballot-box storage — to also cover post-poll vote counting, storage of voting machines including VVPATs, and housing security or polling personnel.</p>
+  <div class="te">ఈ చట్టం నాలుగు మార్పులు చేసింది. ఒకే వ్యక్తి వేర్వేరు చిరునామాల్లో రెండుసార్లు నమోదు కాకుండా ఆపడానికి, electoral-roll రికార్డులను <b class="hlb">Aadhaar</b> వ్యవస్థతో జోడించడానికి ఈ చట్టం అనుమతించింది. roll-revision <b>qualifying dates</b> ను ప్రతి సంవత్సరం ఒకే జనవరి 1 నుండి నాలుగుకు — జనవరి 1, ఏప్రిల్ 1, జూలై 1, అక్టోబర్ 1 — విస్తరించింది — దీనివల్ల 18 ఏళ్లు నిండిన యువ ఓటరు నమోదు కావడానికి ఏడాది వరకు వేచి ఉండాల్సిన అవసరం లేదు. "wife" అనే పదాన్ని "spouse" గా మార్చడం ద్వారా service voters కు చట్టాన్ని gender-neutral గా మార్చింది — ఇంతకుముందు భార్యలకు మాత్రమే ఉన్నట్లుగా, service voters భాగస్వాములు కూడా వ్యక్తిగతంగా లేదా పోస్ట్ ద్వారా ఓటు వేయవచ్చు. పోలింగ్ స్టేషన్లు, ballot-box నిల్వకు మాత్రమే పరిమితమైన premises requisition పరిధిని కూడా విస్తరించింది — పోలింగ్ తర్వాత ఓట్ల లెక్కింపు, VVPATs తో సహా ఓటింగ్ మెషీన్ల నిల్వ, భద్రతా/పోలింగ్ సిబ్బంది వసతికి కూడా ఇది వర్తిస్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Election Laws (Amendment) Act, 2021</caption>
+    <thead><tr><th class="gn2" style="width:44%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How many qualifying dates for roll revision, post-2021?</td><td>4 — Jan 1, Apr 1, Jul 1, Oct 1</td></tr>
+      <tr><td>Which word was replaced with "spouse"?</td><td>"Wife" — to make the law gender-neutral</td></tr>
+      <tr><td>What system does the Act link electoral rolls to?</td><td>Aadhaar</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 10 ═══════════ -->
+<div class="page">
+<div class="sub">The 2024 Turning Point — Electoral Bonds Declared Unconstitutional</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">Association for Democratic Reforms vs Union of India (15 February 2024)</div>
+  <p class="eng">Barely six years after the Electoral Bond Scheme was notified, a <b class="imp">5-judge Constitution Bench</b> of the Supreme Court — <b class="hlp">Chief Justice D.Y. Chandrachud</b> along with Justices <b class="hlp">Sanjiv Khanna</b>, <b class="hlp">B.R. Gavai</b>, <b class="hlp">J.B. Pardiwala</b> and <b class="hlp">Manoj Misra</b> — unanimously struck the entire scheme down in <b class="term">Association for Democratic Reforms vs Union of India</b>, decided on <b class="hlg">15 February 2024</b>. The Court's core reasoning ran through <b class="imp">Article 19(1)(a)</b>: the right to freedom of speech and expression has long been read to include a citizen's <b class="term">right to information</b>, and a voter cannot meaningfully exercise that right — or cast an informed vote — while remaining completely blind to who is bankrolling which party. Absolute donor anonymity, the Court held, was a disproportionate way to pursue whatever legitimate interest the scheme claimed to serve, since less restrictive, more transparent funding mechanisms were always available.</p>
+  <div class="te">Electoral Bond Scheme notify చేసిన ఆరేళ్లలోపే, Supreme Court <b class="imp">5-judge Constitution Bench</b> — <b class="hlp">Chief Justice D.Y. Chandrachud</b>తో పాటు Justices <b class="hlp">Sanjiv Khanna</b>, <b class="hlp">B.R. Gavai</b>, <b class="hlp">J.B. Pardiwala</b>, <b class="hlp">Manoj Misra</b> — <b class="term">Association for Democratic Reforms vs Union of India</b> కేసులో, <b class="hlg">2024 ఫిబ్రవరి 15</b>న ఏకగ్రీవంగా ఈ మొత్తం scheme ను కొట్టివేసింది. Court యొక్క ప్రధాన వాదన <b class="imp">Article 19(1)(a)</b> ద్వారా సాగింది — ఫ్రీడమ్ ఆఫ్ స్పీచ్ అండ్ ఎక్స్‌ప్రెషన్ హక్కులో పౌరుడి <b class="term">right to information</b> కూడా చేరుతుందని చాలాకాలంగా భావిస్తున్నారు, ఏ పార్టీకి ఎవరు డబ్బు ఇస్తున్నారో పూర్తిగా తెలియకుండా ఓటరు అర్థవంతంగా ఆ హక్కును వినియోగించలేడు, informed గా ఓటు వేయలేడు. దాత గుర్తింపు పూర్తిగా గోప్యంగా ఉంచడం, scheme ఏ చట్టబద్ధమైన ప్రయోజనం కోసం ఉద్దేశించినా, దాన్ని సాధించడానికి అసమానంగా కఠినమైన మార్గమని Court పేర్కొంది — ఎందుకంటే తక్కువ నిర్బంధమైన, మరింత పారదర్శకమైన funding మార్గాలు ఎప్పుడూ అందుబాటులో ఉన్నాయి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">What Exactly Was Struck Down — Back to the Pre-2017 Framework</div>
+  <p class="eng">The judgment did not stop at the bond instrument alone; it reached back into the very Finance Act, 2017 amendments that had made the scheme legally possible, and undid three of them together. The change to <b class="hlg">Section 31(3)</b> of the RBI Act, which had let bearer-type electoral bonds function as banking instruments, was invalidated. The proviso inserted into <b class="hlg">Section 29C</b> of the Representation of the People Act, 1951 — which had exempted parties from disclosing donations received via bonds — was struck down, restoring the older rule that any single donation above ₹20,000 must be disclosed. And the <b class="hlg">Section 182</b> amendment to the Companies Act, 2013, which had erased both the 7.5%-of-profit ceiling on corporate donations and the requirement to record them in a company's profit-and-loss account, was likewise invalidated — bringing that cap and disclosure duty back into force. Taken together, the ruling didn't just kill the bond scheme; it rolled Indian corporate political funding back to roughly where it stood before 2017, while separately directing <b>State Bank of India (SBI)</b> to stop issuing bonds immediately and hand over every bond's purchaser, amount, date and recipient-party details to the <b class="hlp">Election Commission</b>, which was in turn directed to publish that data.</p>
+  <div class="te">ఈ తీర్పు కేవలం bond instrument వద్దే ఆగిపోలేదు — ఈ scheme ను చట్టబద్ధం చేసిన Finance Act, 2017 సవరణల్లోకి వెళ్లి, వాటిలో మూడింటిని కలిపి రద్దు చేసింది. bearer-type electoral bonds ను banking instruments గా పనిచేయడానికి వీలు కల్పించిన RBI Act <b class="hlg">Section 31(3)</b> సవరణ చెల్లదని ప్రకటించారు. bonds ద్వారా వచ్చిన విరాళాలను వెల్లడించకుండా మినహాయింపు ఇచ్చిన Representation of the People Act, 1951 లోని <b class="hlg">Section 29C</b> proviso ను కొట్టివేశారు — ₹20,000 కంటే ఎక్కువ ఏదైనా ఒక్క విరాళాన్ని వెల్లడించాల్సిన పాత నియమాన్ని పునరుద్ధరించారు. కంపెనీ రాజకీయ విరాళాలపై 7.5%-లాభం cap ను, profit-and-loss account లో నమోదు చేయాల్సిన అవసరాన్ని తొలగించిన Companies Act, 2013 లోని <b class="hlg">Section 182</b> సవరణను కూడా అదేవిధంగా చెల్లదని ప్రకటించారు — ఆ cap, disclosure బాధ్యత రెండింటినీ తిరిగి అమల్లోకి తెచ్చారు. మొత్తంగా చూస్తే, ఈ తీర్పు కేవలం bond scheme ను మాత్రమే అంతం చేయలేదు — భారత కార్పొరేట్ రాజకీయ funding ను దాదాపు 2017కి ముందు ఉన్న స్థితికి తీసుకెళ్లింది — వేరుగా, <b>State Bank of India (SBI)</b> వెంటనే bonds జారీ చేయడం ఆపి, ప్రతి bond కొనుగోలుదారు, మొత్తం, తేదీ, receiver-party వివరాలను <b class="hlp">Election Commission</b> కు అప్పగించాలని ఆదేశించింది, Commission ఆ డేటాను ప్రచురించాలని కూడా ఆదేశించారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Electoral Bonds Verdict, 2024</caption>
+    <thead><tr><th class="gn2" style="width:44%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Case name and date?</td><td>Association for Democratic Reforms vs Union of India, 15 Feb 2024</td></tr>
+      <tr><td>Bench size and CJI?</td><td>5-judge Constitution Bench; CJI D.Y. Chandrachud</td></tr>
+      <tr><td>Which fundamental right did the scheme violate?</td><td>Article 19(1)(a) — voters' right to information</td></tr>
+      <tr><td>Was the corporate 7.5% profit cap restored?</td><td>Yes — the Section 182 Companies Act amendment removing it was struck down</td></tr>
+      <tr><td>What was SBI directed to do?</td><td>Stop issuing bonds; disclose all bond details to the ECI for publication</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 11 ═══════════ -->
+<div class="page">
+<div class="sub">Committee-to-Recommendation Map · Chapter Facts at a Glance</div>
+
+<div class="para">
+  <div class="ptitle gn" style="margin-top:0">Table 83.3 — Which Committee Pushed What (Key Themes)</div>
+  <p class="eng">This is the table examiners like to test in a matching or "who-said-what" format — pairing each body with the one theme it's best remembered for, rather than every fine detail it actually wrote.</p>
+  <table>
+    <caption>Committee/Commission → Year → Key Theme</caption>
+    <thead><tr><th style="width:32%">Committee</th><th style="width:14%">Year</th><th>Key Theme It Is Remembered For</th></tr></thead>
+    <tbody>
+      <tr><td class="hlp">Tarkunde Committee</td><td class="hlg">1974–75</td><td>State funding of elections; a stronger, more insulated Election Commission; use of EVMs</td></tr>
+      <tr><td class="hlp">Dinesh Goswami Committee</td><td class="hlg">1990</td><td>The whole ten-point package enacted as the Reforms of 1996 (see Table 83.2)</td></tr>
+      <tr><td class="hlp">Vohra Committee</td><td class="hlg">1993</td><td>Mapping the crime–politics–bureaucracy nexus; an institutional response to it</td></tr>
+      <tr><td class="hlp">Indrajit Gupta Committee</td><td class="hlg">1998–99</td><td>Endorsed state funding as constitutionally &amp; legally justified</td></tr>
+      <tr><td>Law Commission, 170th Report</td><td class="hlg">1999</td><td>Broad electoral-law reform, including tighter regulation of political parties</td></tr>
+      <tr><td class="hlp">NCRWC (Venkatachaliah Commission)</td><td class="hlg">2000–02</td><td>Wide-angle constitutional review touching the electoral process</td></tr>
+      <tr><td class="hlp">Second ARC</td><td class="hlg">2007</td><td>Curbing criminalisation of politics as part of ethics-in-governance reform</td></tr>
+      <tr><td class="hlp">Tankha Committee</td><td class="hlg">2010</td><td>A comprehensive re-look at the entire body of election law</td></tr>
+      <tr><td class="hlp">J.S. Verma Committee</td><td class="hlg">2013</td><td>Firmer criminal-law consequences for candidates facing serious criminal charges</td></tr>
+      <tr><td>Law Commission, 244th Report</td><td class="hlg">2014</td><td>Norms on electoral disqualification</td></tr>
+      <tr><td>Law Commission, 255th Report</td><td class="hlg">2015</td><td>Wide reform push, including statutory teeth for the Model Code of Conduct</td></tr>
+    </tbody>
+  </table>
+  <div class="te">ఈ table ను examiners matching లేదా "ఎవరు ఏమి చెప్పారు" ఫార్మాట్ లో టెస్ట్ చేయడానికి ఇష్టపడతారు — ప్రతి బాడీని అది వ్రాసిన ప్రతి సూక్ష్మ వివరం కాకుండా, అది బాగా గుర్తుండిపోయే ఒక్క theme తో జతచేస్తారు. పైన ఉన్న table లో — Tarkunde Committee state funding, EC బలోపేతం, EVMs తో; Dinesh Goswami Committee మొత్తం పది-పాయింట్ల 1996 reforms package తో; Vohra Committee crime-politics nexus తో; Indrajit Gupta Committee state funding ఆమోదంతో; తర్వాత Law Commission నివేదికలు, NCRWC, 2nd ARC, Tankha Committee, J.S. Verma Committee — వాటి వాటి కీలక themes తో గుర్తుంచుకోవాలి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Chapter 83 — Facts at a Glance</div>
+  <table>
+    <caption>Electoral Reforms — key facts, one table</caption>
+    <thead><tr><th style="width:40%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Voting age lowered (21→18)</td><td>61st CAA, 1988</td></tr>
+      <tr><td>First full-state EVM election</td><td>Goa, 1999</td></tr>
+      <tr><td>Source of the 1996 reform package</td><td>Dinesh Goswami Committee, 1990</td></tr>
+      <tr><td>Contest limit per candidate</td><td>Maximum 2 constituencies</td></tr>
+      <tr><td>Candidate disclosure order (criminal/assets/education)</td><td>2003, Election Commission</td></tr>
+      <tr><td>Rajya Sabha open ballot &amp; domicile removal</td><td>2003</td></tr>
+      <tr><td>Exit-poll ban</td><td>2009</td></tr>
+      <tr><td>NOTA introduced</td><td>2013 — PUCL vs Union of India</td></tr>
+      <tr><td>VVPAT enabled/upheld</td><td>2013 — Dr. Subramanian Swamy vs ECI</td></tr>
+      <tr><td>Section 8(4) RPA, 1951 struck down</td><td>2013 — Lily Thomas vs Union of India</td></tr>
+      <tr><td>Anonymous cash-donation ceiling</td><td>₹2,000 (from 2017; was ₹20,000)</td></tr>
+      <tr><td>7.5% corporate-donation cap removed</td><td>2017 budget</td></tr>
+      <tr><td>Electoral Bond Scheme notified</td><td>2018</td></tr>
+      <tr><td>Election Laws (Amendment) Act</td><td>2021 — Aadhaar linking, 4 qualifying dates, gender-neutral service-voter rule</td></tr>
+      <tr><td class="imp">Electoral bonds struck down</td><td class="imp">15 Feb 2024 — Association for Democratic Reforms vs Union of India (Art. 19(1)(a))</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 12 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Post-Bonds Funding &amp; One Nation, One Election JPC <span class="caasof">(as of 25.08.2026, verified via live web search on this date — re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>1. Political funding after the 2024 verdict:</b> With electoral bonds gone and the pre-2017 framework restored, parties have largely fallen back on <b class="term">electoral trusts</b> (companies routing donations through a registered trust that then distributes them to parties, with some disclosure) and direct, disclosed corporate/individual donations under the restored Companies Act cap. Civil-society groups such as the <b class="hlp">Association for Democratic Reforms</b> continue to flag that electoral trusts still leave real gaps in transparency about which donor ultimately favours which party, so this remains an unsettled, evolving area rather than a fully closed chapter — worth a fresh check nearer your exam.</p>
+    <div class="te"><b>1. 2024 తీర్పు తర్వాత రాజకీయ funding:</b> Electoral bonds పోయి, 2017కి ముందు ఉన్న framework పునరుద్ధరించబడిన తర్వాత, పార్టీలు ఎక్కువగా <b class="term">electoral trusts</b> (కంపెనీలు ఒక నమోదిత ట్రస్ట్ ద్వారా విరాళాలు పంపడం, అది కొంత disclosure తో పార్టీలకు పంపిణీ చేయడం) పైన, పునరుద్ధరించిన Companies Act cap కింద direct, disclosed కార్పొరేట్/వ్యక్తిగత విరాళాలపైనే ఆధారపడుతున్నాయి. <b class="hlp">Association for Democratic Reforms</b> వంటి civil-society గ్రూపులు, ఏ దాత చివరికి ఏ పార్టీకి మొగ్గు చూపుతున్నారో అనే విషయంలో electoral trusts ఇప్పటికీ నిజమైన పారదర్శకత లోపాలను వదిలిపెడుతున్నాయని ఎత్తిచూపుతూనే ఉన్నాయి — కాబట్టి ఇది పూర్తిగా ముగిసిన అధ్యాయం కాదు, ఇప్పటికీ మారుతున్న అంశం — మీ exam కు దగ్గరగా దీన్ని మళ్లీ చెక్ చేసుకోవడం మంచిది.</div>
+
+    <p class="eng"><b>2. One Nation, One Election — JPC status:</b> The Joint Parliamentary Committee examining the 129th Constitutional Amendment Bill (simultaneous elections) has had its tenure repeatedly extended, most recently through the <b class="hlg">2026 Monsoon Session</b>, and had still not tabled its final report as that session concluded. As of <b class="hlg">24 August 2026</b>, JPC chairman <b class="hlp">P.P. Chaudhary</b> publicly indicated that most stakeholders consulted so far back the proposal in principle, and suggested a realistic rollout target is now the <b class="imp">2029 Lok Sabha general election</b> rather than anything sooner. Note the consistency point: Part I's Basic Structure chapter (Chapter 12) covers this same Bill/JPC as a live basic-structure test case — keep both chapters' current-affairs entries aligned when you revise.</p>
+    <div class="te"><b>2. One Nation, One Election — JPC స్థితి:</b> 129th Constitutional Amendment Bill (simultaneous elections) ను పరిశీలిస్తున్న Joint Parliamentary Committee తన tenure ను పదే పదే పొడిగించుకుంటూ వచ్చింది, ఇటీవల <b class="hlg">2026 Monsoon Session</b> వరకు పొడిగించారు, ఆ సెషన్ ముగిసేనాటికి కూడా తుది నివేదిక సమర్పించలేదు. <b class="hlg">2026 ఆగస్టు 24</b> నాటికి, JPC chairman <b class="hlp">P.P. Chaudhary</b>, ఇప్పటివరకు సంప్రదించిన చాలామంది stakeholders ఈ ప్రతిపాదనను సూత్రప్రాయంగా సమర్థిస్తున్నారని బహిరంగంగా తెలిపారు, తక్షణమే కాకుండా <b class="imp">2029 Lok Sabha general election</b> ను వాస్తవిక rollout లక్ష్యంగా సూచించారు. గమనిక — Part I లోని Basic Structure chapter (Chapter 12) కూడా ఇదే Bill/JPC ను ఒక live basic-structure test case గా చర్చిస్తుంది — revise చేసేటప్పుడు రెండు chapters లోని current-affairs entries ను సమన్వయంగా ఉంచుకోండి.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — recent electoral-reform current affairs</caption>
+      <thead><tr><th style="width:22%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">15 Feb 2024</td><td>Electoral Bond Scheme struck down — ADR vs Union of India</td></tr>
+        <tr><td class="hlg">2024–26</td><td>Parties shift toward electoral trusts &amp; disclosed corporate/individual donations; transparency gaps flagged by civil-society groups</td></tr>
+        <tr><td class="hlg">Monsoon Session 2026</td><td>ONOE JPC tenure extended again; final report still pending at session's close</td></tr>
+        <tr><td class="hlg">24 Aug 2026</td><td>JPC chief P.P. Chaudhary signals 2029 Lok Sabha polls as the likely ONOE rollout target</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: keep the stable core — the 2024 verdict's reasoning under Article 19(1)(a) and exactly which three 2017 amendments it undid — solid and unchanging. Treat the post-bonds funding landscape and the ONOE JPC timeline as live, moving facts that need a fresh check every exam cycle.</p>
+    <div class="te">Exam కోసం — 2024 తీర్పు వెనుక Article 19(1)(a) వాదన, అది సరిగ్గా ఏ మూడు 2017 సవరణలను రద్దు చేసిందో అనేది — స్థిరమైన core గా, మారని విషయంగా ఉంచుకోండి. Bonds తర్వాతి funding landscape ను, ONOE JPC timeline ను, ప్రతి exam cycle కూడా కొత్తగా చెక్ చేయాల్సిన live, మారుతున్న facts గా చూడండి.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 83 — Electoral Reforms · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+</body></html>

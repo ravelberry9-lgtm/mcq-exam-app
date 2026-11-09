@@ -1,0 +1,74 @@
+{
+  "chapter": "6.4.1",
+  "review_date": "2026-11-08",
+  "trigger": "Historical Notes.html and Laxmikanth.html hashes recorded in review-article13-clause-pair-waiver-case.json differ from the current files.",
+  "method": "Saved-HTML and recorded-evidence comparison only. No GBK image/PDF page view and no guessed source correction.",
+  "historical_baseline": {
+    "evidence_file": "review-article13-clause-pair-waiver-case.json",
+    "Notes.html_sha256": "c87bfe15f1f25341448bd060826b473eb18be983af92de6075d98be416880ff8",
+    "Laxmikanth.html_sha256": "c775ee1d92be3164a0f6846ef37291b4f80a8afefe308616071536ad3b07bfd4",
+    "meaning": "Snapshot at the time of that question integration; not an immutable reader baseline."
+  },
+  "current_files": {
+    "Notes.html": {
+      "sha256": "d4f7f5c5ee595543a1980e1535b48f9fca9f528e304dff5bbabf301d6de9e15d",
+      "length_bytes": 317628,
+      "last_write_local": "2026-11-08 10:57:57"
+    },
+    "Laxmikanth.html": {
+      "sha256": "b00663e4a7459beecdea1b9c138eb4cd4c0fd8d9ce2a07d98d1ba5feffb56c10",
+      "length_bytes": 281265,
+      "last_write_local": "2026-11-08 16:43:36"
+    }
+  },
+  "chronology_evidence": [
+    "The old hashes are repeatedly recorded by reviews written before the later full prepared-Chapter8 integration.",
+    "review-full-Laxmikanth-chapter-agent.json records the later current Notes hash d4f7... as unchanged during the full-Chapter8 operation.",
+    "The same review records the supplied source file hash f7ec77... and source body hash6a231c..., with source_body_byte_exact_in_output=true and source body length276520.",
+    "Current Laxmikanth.html was modified after Notes.html and after the reference extraction, consistent with the documented full-chapter local-reader rebuild rather than unexplained simultaneous damage."
+  ],
+  "laxmikanth_content_comparison": {
+    "current_counts": {
+      "english_blocks": 102,
+      "telugu_blocks": 124,
+      "tables": 50,
+      "pages": 35,
+      "chapter_h1": 1
+    },
+    "reference_counts": {
+      "english_blocks": 102,
+      "telugu_blocks": 124,
+      "tables": 50,
+      "pages": 35,
+      "chapter_h1": 1
+    },
+    "textual_diff_scope": "Seven inserted and four removed wrapper lines only.",
+    "legitimate_current_wrapper_changes": [
+      "Current local reader adds a Chapter8 divider and page marker before the Chapter8 body.",
+      "Current local reader omits the reference navigation banner.",
+      "Current local reader removes the trailing Chapter9 Directive Principles divider that belongs to the next chapter.",
+      "Current local reader closes body/html on separate lines."
+    ],
+    "chapter_body_loss_or_corruption_found": false,
+    "prepared_bilingual_content_alignment": "pass"
+  },
+  "notes_integrity_evidence": {
+    "later_continuity_hash": "d4f7f5c5ee595543a1980e1535b48f9fca9f528e304dff5bbabf301d6de9e15d",
+    "later_evidence": "review-full-Laxmikanth-chapter-agent.json records this exact Notes hash as unchanged.",
+    "source_boundary_context": "Existing chapter evidence retains the47-page87-133 boundary, three-pass ceiling and documented exactness holds. No evidence shows current Notes lost a page or was replaced by unrelated content.",
+    "restoration_to_old_hash_warranted": false
+  },
+  "reference_file_observation": {
+    "file": "content/polity/g2/references/laxmikanth/chapter-008.html",
+    "sha256": "59c859cf558810be52c98aad63e83af63781b93c967f100bd7a70dc39a0219da",
+    "important_distinction": "The reference and chapter reader need not be byte-identical because their wrappers serve different routes. The reference currently includes a trailing Chapter9 divider, while the chapter-local reader correctly stops after Chapter8."
+  },
+  "decision": {
+    "reader_files_changed_by_this_review": false,
+    "proven_inadvertent_content_loss_or_corruption": false,
+    "historical_hash_status": "stale_after_documented_authorised_reader integration",
+    "corrective_action": "Do not restore either old hash and do not replace the local reader with the reference file. Use the current hashes as the post-full-chapter integrity baseline, while retaining older hashes as historical snapshots.",
+    "completion_scope": "Closes the inconclusive hash flag only; it does not certify every source statement factually or close documented GBK exactness holds."
+  },
+  "source_image_or_pdf_page_views": 0
+}

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part IV — Book 1: State Executive & Legislature</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 32 — State Council of Ministers</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Full-Depth Bilingual Study Notes (Part IV — State Government)</div>
+
+<div class="para">
+  <div class="ptitle">Parliamentary System at the State Level — Mirroring the Union</div>
+  <p class="eng">Because the Constitution establishes a <b class="term">parliamentary system of government</b> in the states on the exact same pattern as the Union, the <b>council of ministers</b> headed by the <b>chief minister</b> is the real executive authority in a state's politico-administrative system — just as the Union Council of Ministers is at the Centre (Ch.21). The state council of ministers is constituted and functions essentially the same way as its Union counterpart: the same broad parliamentary logic — real power resting with a council answerable to the elected House, not with the nominal head of state — is simply scaled down to the state level, with the <b class="hlp">Governor</b> standing in for the President and the <b>state Legislative Assembly</b> standing in for the Lok Sabha.</p>
+  <div class="te">రాజ్యాంగం రాష్ట్రాల్లో కూడా Union పద్ధతిలోనే <b class="term">parliamentary system of government</b> ఏర్పాటు చేసింది కాబట్టి, <b>chief minister</b> నేతృత్వంలోని <b>council of ministers</b> ఒక రాష్ట్ర politico-administrative వ్యవస్థలో నిజమైన executive అధికారంగా ఉంటుంది — సరిగ్గా Centre లో Union Council of Ministers లాగే (Ch.21). రాష్ట్ర council of ministers ఏర్పాటు, పనితీరు దాదాపు Union council మాదిరిగానే ఉంటుంది — నిజమైన అధికారం elected House కు జవాబుదారీగా ఉండే council దగ్గరే ఉంటుంది, nominal head of state దగ్గర కాదు అనే broad parliamentary logic ను రాష్ట్ర స్థాయికి తగ్గించి వర్తింపజేస్తారు — President స్థానంలో <b class="hlp">Governor</b>, Lok Sabha స్థానంలో <b>state Legislative Assembly</b> ఉంటాయి.</div>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Articles 163 &amp; 164 — the Broad Framework</div>
+  <p class="eng">The Constitution nowhere lays down the detailed principles of the parliamentary system — only two Articles, <b class="hlg">163</b> and <b class="hlg">164</b>, deal with it, and even these do so in a broad, sketchy and general manner (much as Articles 74 and 75 do for the Union). <b class="hlg">Article 163</b> deals with the <b>status</b> of the council of ministers, while <b class="hlg">Article 164</b> deals with their <b>appointment, tenure, responsibility, qualifications, oath, and salaries/allowances</b>. Three further Articles — <b class="hlg">166</b>, <b class="hlg">167</b> and <b class="hlg">177</b> — round out the picture, covering the conduct of government business, the Chief Minister's specific duties toward the Governor, and ministers' rights inside the legislature.</p>
+  <div class="te">Parliamentary system యొక్క వివరణాత్మక సూత్రాలను రాజ్యాంగం ఎక్కడా పెట్టలేదు — కేవలం రెండు Articles, <b class="hlg">163</b>, <b class="hlg">164</b> మాత్రమే దీన్ని broad, sketchy, general పద్ధతిలో వివరిస్తాయి (Union కోసం Articles 74, 75 లాగే). <b class="hlg">Article 163</b> council of ministers <b>status</b> గురించి, <b class="hlg">Article 164</b> వారి <b>appointment, tenure, responsibility, qualifications, oath, salaries/allowances</b> గురించి చెబుతుంది. మరో మూడు Articles — <b class="hlg">166</b>, <b class="hlg">167</b>, <b class="hlg">177</b> — government business నిర్వహణ, Governor పట్ల CM నిర్దిష్ట duties, legislature లో ministers హక్కులను వివరిస్తాయి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Article 163 — Council of Ministers to Aid and Advise Governor</div>
+  <p class="eng">Article 163(1) sets up a council of ministers, with the Chief Minister at its head, whose job is to <b>aid and advise the Governor</b> in exercising his/her functions — except in matters the Constitution requires the Governor to handle <b class="imp">in his/her own discretion</b>, a carve-out that has no exact parallel at the Union level since the President has no comparable general discretionary zone. Clause (2) makes the Governor's own decision <b>final</b> on the threshold question of whether a given matter actually falls within that discretionary zone, and shields anything done under it from being challenged in court merely on the ground that the Governor ought, or ought not, to have exercised discretion. Clause (3) adds one more protection: the <b>advice</b> ministers actually tender to the Governor can never be inquired into by <b class="imp">any court</b> — meant, as at the Centre, to preserve a candid and confidential working relationship between the Governor and the council of ministers.</p>
+  <div class="te">Article 163(1) ప్రకారం, Governor తన విధులు నిర్వర్తించేటప్పుడు <b>aid and advise</b> చేయడానికి, CM నేతృత్వంలో ఒక council of ministers ఏర్పాటవుతుంది — రాజ్యాంగం Governor <b class="imp">తన సొంత discretion</b> లో వ్యవహరించాలని కోరిన విషయాలు మినహా — ఇలాంటి discretion జోన్ Union స్థాయిలో President కు లేదు, ఇది state-specific carve-out. Clause (2) ప్రకారం, ఒక విషయం ఈ discretion జోన్ లోకి వస్తుందా లేదా అనే ప్రశ్న వచ్చినప్పుడు Governor నిర్ణయమే <b>final</b> — Governor discretion వాడాలో వాడకూడదో అనే కారణంతో ఆయన చేసిన దాన్ని కోర్టులో ప్రశ్నించలేరు. Clause (3) మరో రక్షణ ఇస్తుంది — ministers Governor కు ఇచ్చే <b>advice</b> ను <b class="imp">ఏ కోర్టూ</b> విచారించలేవు — ఇది Centre లో లాగే, Governor-council of ministers మధ్య నిజాయితీ, confidential సంబంధాన్ని కాపాడటానికి ఉద్దేశించినది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Article 164(1) — Appointment &amp; the Tribal Welfare Minister Rider</div>
+  <p class="eng">Article 164(1) lays down the appointment mechanics: the <b>Chief Minister</b> is appointed by the Governor, and every <b>other minister</b> is appointed by the Governor <b>only on the advice of the Chief Minister</b> — so the Governor cannot appoint anyone the CM has not recommended. The same clause carries a special, state-specific rider: in <b class="hlg">Chhattisgarh</b>, <b class="hlg">Jharkhand</b>, <b class="hlg">Madhya Pradesh</b> and <b class="hlg">Odisha</b>, there must be a <b class="term">minister in charge of tribal welfare</b>, who may additionally be given charge of welfare of Scheduled Castes and backward classes, or any other work. <b class="hlg">Bihar</b> originally carried this same obligation too, but was expressly freed from it by the <b class="hlg">94th Amendment Act, 2006</b> — because Bihar, once Jharkhand had been carved out of it, was left with essentially no Scheduled Areas and only a very small Scheduled Tribe population share, so a dedicated tribal-welfare minister was no longer felt necessary.</p>
+  <div class="te">Article 164(1) appointment విధానాన్ని చెబుతుంది — <b>Chief Minister</b> ను Governor నియమిస్తారు, ప్రతి <b>ఇతర minister</b> ను Governor <b>CM సలహా మేరకే</b> నియమిస్తారు — అంటే CM సిఫారసు చేయని వ్యక్తిని Governor నియమించలేరు. అదే clause లో ఒక state-specific rider ఉంది — <b class="hlg">Chhattisgarh</b>, <b class="hlg">Jharkhand</b>, <b class="hlg">Madhya Pradesh</b>, <b class="hlg">Odisha</b> లలో తప్పనిసరిగా <b class="term">tribal welfare minister</b> ఉండాలి, ఆయనకు అదనంగా SCs, backward classes సంక్షేమం లేదా ఇతర పని కూడా అప్పగించవచ్చు. <b class="hlg">Bihar</b> కు మొదట్లో ఇదే బాధ్యత ఉండేది, కానీ <b class="hlg">94వ సవరణ చట్టం, 2006</b> దీన్నుండి Bihar ను మినహాయించింది — ఎందుకంటే Jharkhand వేరుపడ్డాక Bihar లో Scheduled Areas దాదాపు మిగలలేదు, ST జనాభా వాటా కూడా చాలా తక్కువగా ఉండటం వల్ల ప్రత్యేక tribal-welfare minister అవసరం లేదని భావించారు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Article 164(2)-(3) — the 91st Amendment: Ministry-Size Cap &amp; Anti-Defection Bar</div>
+  <p class="eng">Clause (2), inserted by the <b class="hlg">91st Amendment Act, 2003</b>, caps the size of a state ministry: the total number of ministers — including the Chief Minister — cannot exceed <b class="imp">15 per cent of the total strength of the state's Legislative Assembly</b>, and cannot fall below <b class="imp">12</b> even in a small assembly. This is a near-exact mirror of the identical 15%-of-Lok-Sabha cap the very same 91st Amendment placed on the <b class="term">Union Council of Ministers</b> (see Ch.21) — both caps were driven by the same underlying concern: an unchecked ballooning of ministry size purely for political accommodation, the "mega-ministries" several states and even the Centre had seen through the 1990s. Clause (3), also added by the 91st Amendment, disqualifies any member of a state legislature who has been disqualified for <b class="hlb">defection</b> from being appointed a minister — closing a loophole under which a defector could otherwise still be rewarded with a ministerial post despite having already lost his/her seat on defection grounds.</p>
+  <div class="te">Clause (2), <b class="hlg">91వ సవరణ చట్టం, 2003</b> ద్వారా చేర్చబడింది — రాష్ట్ర ministry సైజు పరిమితి పెడుతుంది — CM తో సహా మొత్తం ministers సంఖ్య, రాష్ట్ర Legislative Assembly మొత్తం సభ్యత్వంలో <b class="imp">15 శాతానికి మించకూడదు</b>, చిన్న assembly అయినా కనీసం <b class="imp">12</b> కంటే తక్కువ ఉండకూడదు. ఇది అదే 91వ సవరణ <b class="term">Union Council of Ministers</b> కు పెట్టిన Lok Sabha 15% cap కు (Ch.21 చూడండి) దాదాపు అచ్చుగుద్దినట్టు సమానం — రెండు caps వెనుక ఒకే కారణం — political accommodation కోసం ministry సైజు అపరిమితంగా పెరిగిపోకుండా ఆపడం — 1990ల్లో చాలా రాష్ట్రాల్లో, Centre లో కూడా కనిపించిన "mega-ministries" సమస్య. Clause (3) కూడా 91వ సవరణ ద్వారానే చేర్చబడింది — <b class="hlb">defection</b> కారణంగా disqualify అయిన రాష్ట్ర శాసనసభ్యుడు ఎవరైనా minister గా నియమించబడటానికి కూడా అనర్హుడు — defect అయిన వ్యక్తి seat కోల్పోయినా, minister పదవి పొందే loophole ను ఇది మూసివేస్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Art 163 &amp; Art 164(1)-(3)</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Article 163 subject-matter?</td><td>Status of council of ministers — aid/advise Governor, discretion zone, advice not questionable in court</td></tr>
+      <tr><td>Who appoints CM / other ministers?</td><td>Governor appoints CM; appoints other ministers only on CM's advice</td></tr>
+      <tr><td>States needing a tribal welfare minister?</td><td>Chhattisgarh, Jharkhand, Madhya Pradesh, Odisha (Bihar freed by 94th A.A. 2006)</td></tr>
+      <tr><td>Ministry-size cap (Art.164(2))?</td><td>Max 15% of Assembly strength; minimum 12 ministers — added by 91st A.A. 2003</td></tr>
+      <tr><td>Art.164(3)?</td><td>A member disqualified for defection also disqualified from becoming a minister — 91st A.A. 2003</td></tr>
+      <tr><td>Union parallel?</td><td>Same 91st Amendment capped Union Council of Ministers at 15% of Lok Sabha strength (Ch.21)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Article 164(4)-(8) · Article 166 · Article 167 · Article 177</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Article 164(4)-(8) — Tenure, Responsibility, Oath, the Six-Month Rule &amp; Salary</div>
+  <p class="eng">The remaining clauses of Article 164 fix the ministers' basic terms of service. Clause (4) places ministers on the <b class="term">pleasure of the Governor</b> — they hold office "during the pleasure of the Governor," so there is no fixed tenure written into the Constitution. Clause (5) makes the council of ministers <b class="term">collectively responsible</b> to the state Legislative Assembly — the central operating principle of the whole system, examined in depth later in this chapter. Clause (6) requires the Governor personally to administer the oaths of office and secrecy to each minister. Clause (7) sets a hard deadline for a non-legislator minister: anyone who is a minister but not a member of the state legislature for any continuous stretch of <b class="hlg">six months</b> automatically ceases to be a minister. Clause (8) simply leaves the actual salaries and allowances of ministers to be fixed by the <b>state legislature</b>.</p>
+  <div class="te">Article 164 మిగిలిన clauses ministers ప్రాథమిక సర్వీసు నిబంధనలను నిర్ణయిస్తాయి. Clause (4) ప్రకారం ministers <b class="term">Governor pleasure</b> మీద పదవిలో ఉంటారు — రాజ్యాంగంలో నిర్దిష్ట పదవీకాలం లేదు. Clause (5) council of ministers <b class="term">collectively responsible</b> అని రాష్ట్ర Legislative Assembly కు చెబుతుంది — ఇదే మొత్తం వ్యవస్థ యొక్క కేంద్ర సూత్రం, ఈ అధ్యాయంలో తర్వాత లోతుగా చూద్దాం. Clause (6) ప్రకారం Governor స్వయంగా ప్రతి minister కు oath of office, oath of secrecy ఇప్పించాలి. Clause (7) non-legislator minister కు గడువు పెడుతుంది — ఎవరైనా minister గా ఉండి రాష్ట్ర శాసనసభలో సభ్యుడు కాకుండా వరుసగా <b class="hlg">ఆరు నెలలు</b> గడిస్తే, ఆటోమేటిగ్గా minister పదవి కోల్పోతారు. Clause (8) ministers జీతం, allowances లను <b>state legislature</b> నిర్ణయిస్తుందని చెబుతుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Article 166 — Conduct of Business of the Government of a State</div>
+  <p class="eng">Article 166 deals with the formal <b>conduct of government business</b>, not with ministers' powers directly. Clause (1) requires that every executive action of the state government be <b>expressed as taken in the name of the Governor</b> — even though, in reality, the actual decision is made by the council of ministers. Clause (2) lets the Governor make rules for how such orders and instruments made in his/her name are to be <b>authenticated</b>; once authenticated in the prescribed manner, their validity cannot be questioned merely on the ground that they were not, in fact, made or executed by the Governor personally. Clause (3) authorises the Governor to make rules for the more convenient transaction of government business — including the <b>allocation of business among ministers</b> — except for the matters the Governor is required to handle in his/her own discretion.</p>
+  <div class="te">Article 166 government <b>business నిర్వహణ</b> గురించి చెబుతుంది, ministers అధికారాల గురించి నేరుగా కాదు. Clause (1) ప్రకారం రాష్ట్ర ప్రభుత్వ ప్రతి executive action <b>Governor పేరు మీద</b> తీసుకున్నట్టు వ్యక్తం చేయాలి — నిజంగా నిర్ణయం council of ministers తీసుకున్నా సరే. Clause (2) ప్రకారం, Governor పేరు మీద జారీ అయిన orders/instruments ఎలా <b>authenticate</b> చేయాలో Governor rules పెట్టవచ్చు — నిర్దేశించిన పద్ధతిలో authenticate అయితే, అది వాస్తవంగా Governor స్వయంగా చేయలేదు అనే కారణంతో దాని validity ను ప్రశ్నించలేరు. Clause (3) ప్రకారం, Governor discretion లో వ్యవహరించాల్సిన అంశాలు మినహా, government business సౌకర్యవంతంగా జరపడానికి — <b>ministers మధ్య business allocation</b> తో సహా — Governor rules పెట్టవచ్చు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Article 167 — Duties of Chief Minister</div>
+  <p class="eng">Article 167 spells out three specific duties the Chief Minister owes the Governor: (a) to <b>communicate</b> to the Governor every decision of the council of ministers relating to the administration of state affairs and to proposals for legislation; (b) to <b>furnish</b> any information relating to state administration or legislative proposals that the Governor calls for; and (c) — if the Governor so requires — to place before the <b>full council of ministers</b> any matter that an individual minister has already decided on his/her own but which the council itself has not yet considered. Together, these three duties make the Chief Minister the constitutionally designated <b class="imp">communication channel</b> between the council of ministers and the Governor.</p>
+  <div class="te">Article 167 Governor పట్ల CM కు మూడు నిర్దిష్ట duties చెబుతుంది — (a) రాష్ట్ర administration, legislation ప్రతిపాదనలకు సంబంధించిన council of ministers నిర్ణయాలన్నీ Governor కు <b>తెలియజేయడం</b>; (b) Governor అడిగిన రాష్ట్ర administration/legislation సమాచారాన్ని <b>అందించడం</b>; (c) Governor కోరితే, ఒక minister ఒక్కరే తీసుకున్న నిర్ణయాన్ని, అది council ఇంకా పరిశీలించకపోతే, <b>మొత్తం council of ministers</b> ముందుకు తేవడం. ఈ మూడు duties కలిపి, council of ministers-Governor మధ్య రాజ్యాంగబద్ధమైన <b class="imp">కమ్యూనికేషన్ ఛానల్</b> గా CM ను నిలబెడతాయి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Article 177 — Rights of Ministers as Respects the Houses</div>
+  <p class="eng">Article 177 gives every minister the right to <b>speak</b> and to <b>take part in the proceedings</b> of the state Legislative Assembly and — where a Legislative Council also exists — of that House too, along with any legislative committee he/she has been named a member of. This applies even to a minister who belongs to only one House but wishes to participate in the other. The one important limit: a minister does <b class="imp">not</b> get to vote in a House of which he/she is not actually a member.</p>
+  <div class="te">Article 177 ప్రతి minister కూ రాష్ట్ర Legislative Assembly లోనూ, Legislative Council ఉంటే ఆ House లోనూ — తనను సభ్యుడిగా పెట్టిన ఏ committee లోనైనా — <b>మాట్లాడే</b>, <b>proceedings లో పాల్గొనే</b> హక్కు ఇస్తుంది. ఇది ఒక House కు మాత్రమే చెందిన minister మరో House లో పాల్గొనాలనుకున్నా వర్తిస్తుంది. ఒక ముఖ్యమైన పరిమితి — తాను సభ్యుడు కాని House లో minister <b class="imp">ఓటు వేయలేరు</b>.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Art 164(4)-(8), Art 166, 167, 177</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Art.164(4)?</td><td>Ministers hold office during the pleasure of the Governor</td></tr>
+      <tr><td>Art.164(7) — six-month rule?</td><td>Non-legislator minister must join either House within 6 continuous months, else ceases to be minister</td></tr>
+      <tr><td>Who fixes ministers' salary?</td><td>State legislature (Art.164(8))</td></tr>
+      <tr><td>Art.166(1)?</td><td>All executive action of state govt expressed in the Governor's name</td></tr>
+      <tr><td>Art.167's three CM duties?</td><td>Communicate decisions, furnish info, submit an individual minister's undecided matter to full council</td></tr>
+      <tr><td>Art.177 limit?</td><td>Minister may speak in either House, but votes only in the House he/she is a member of</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Nature of Advice by Ministers · Appointment of Ministers</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Nature of Advice by Ministers — the Shamsher Singh Case</div>
+  <p class="eng">Article 163 already establishes that the Governor's discretion applies only to specific matters, and that the exercise of any genuine discretion cannot be judicially questioned. The Supreme Court clarified exactly how far this discretion actually extends in <b class="hlp">Shamsher Singh vs State of Punjab</b> (<b class="hlg">1974</b>): except in the genuinely discretionary spheres, the Governor must act on the <b>aid and advice</b> of the council of ministers — he/she is not required to act personally, whether by ignoring that advice or by acting without it. The Court added a subtler point that matters a great deal for exam purposes: wherever the Constitution requires the Governor's <span class="hlb">"satisfaction"</span> before some action, that satisfaction is not really the Governor's own personal, subjective satisfaction — in substance, it is the satisfaction of the council of ministers, acting through him/her. This ruling is the state-level counterpart of how the Supreme Court reads the President's parallel "satisfaction" clauses under Article 74 at the Union level.</p>
+  <div class="te">Article 163 ఇప్పటికే Governor discretion కేవలం నిర్దిష్ట విషయాలకే వర్తిస్తుందని, నిజమైన discretion వినియోగాన్ని కోర్టులో ప్రశ్నించలేమని చెబుతుంది. ఈ discretion ఎంతవరకు వర్తిస్తుందో <b class="hlp">Shamsher Singh vs State of Punjab</b> (<b class="hlg">1974</b>) కేసులో Supreme Court స్పష్టం చేసింది — నిజమైన discretionary విషయాలు మినహా, Governor <b>council of ministers aid and advice</b> మేరకే వ్యవహరించాలి — ఆ సలహాను పట్టించుకోకుండా గానీ, సలహా లేకుండా గానీ స్వయంగా వ్యవహరించాల్సిన అవసరం లేదు. Court exam కోసం ముఖ్యమైన మరో సూక్ష్మమైన పాయింట్ చెప్పింది — రాజ్యాంగం ఎక్కడైనా Governor <span class="hlb">"satisfaction"</span> అవసరమని కోరితే, అది Governor వ్యక్తిగత, subjective satisfaction కాదు — వాస్తవానికి, అది Governor ద్వారా వ్యక్తమయ్యే council of ministers satisfaction. Union స్థాయిలో Article 74 కింద President కు సంబంధించిన అదే "satisfaction" నిబంధనలను Supreme Court ఎలా చదువుతుందో, దానికి ఇది రాష్ట్ర స్థాయి సమానం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Nature of Advice</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Case &amp; year?</td><td>Shamsher Singh vs State of Punjab, 1974</td></tr>
+      <tr><td>Main holding?</td><td>Outside true discretionary areas, Governor must act on aid/advice of council of ministers</td></tr>
+      <tr><td>Governor's "satisfaction" — whose is it?</td><td>Not personal — it is, in substance, the council of ministers' satisfaction</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Appointment of Ministers — In Practice</div>
+  <p class="eng">In practice, the Governor's appointing power is tightly constrained — since the Governor can appoint only whoever the Chief Minister recommends, the real selection is effectively made by the CM. Usually, ministers are drawn from the sitting members of the state legislature — either House, the Legislative Assembly or, where one exists, the Legislative Council. But a person need not already be a legislator to be made a minister — he/she can be brought in from outside and appointed straightaway, on the understanding that, per Article 164(7), he/she must become a member of one House or the other (by election or by nomination) within <b class="hlg">six months</b>, failing which the appointment automatically lapses.</p>
+  <div class="te">ఆచరణలో, Governor appointing power చాలా పరిమితం — CM సిఫారసు చేసిన వ్యక్తినే Governor నియమించగలరు కాబట్టి, నిజమైన ఎంపిక CM చేతిలోనే ఉంటుంది. సాధారణంగా, రాష్ట్ర శాసనసభలో ఇప్పటికే సభ్యులుగా ఉన్నవారినే — Legislative Assembly లేదా Legislative Council (ఉంటే) — ministers గా చేస్తారు. కానీ ఇప్పటికే శాసనసభ్యుడై ఉండాల్సిన అవసరం లేదు — బయటి వ్యక్తిని కూడా నేరుగా minister గా నియమించవచ్చు, కానీ Article 164(7) ప్రకారం, <b class="hlg">ఆరు నెలల్లోపు</b> (ఎన్నిక ద్వారా లేదా నామినేషన్ ద్వారా) ఏదో ఒక House లో సభ్యుడు కావాలి, లేకపోతే ఆ నియామకం ఆటోమేటిగ్గా రద్దవుతుంది.</div>
+
+  <p class="eng">The tribal-welfare-minister rider under Article 164(1) has its own small legislative history. Originally, this obligation applied only to <b class="hlg">Bihar</b>, <b class="hlg">Madhya Pradesh</b> and <b class="hlg">Odisha</b>. The <b class="hlg">94th Amendment Act, 2006</b> did two things at once: it freed Bihar from the obligation (since, after Jharkhand's creation, Bihar was left with negligible Scheduled Areas and a very small ST population share), while simultaneously extending the same obligation to the two newly-formed states carved out around the turn of the millennium — <b class="hlg">Chhattisgarh</b> and <b class="hlg">Jharkhand</b> — alongside MP and Odisha, which already had it.</p>
+  <div class="te">Article 164(1) కింద tribal-welfare-minister rider కు దాని సొంత చిన్న legislative చరిత్ర ఉంది. మొదట్లో ఈ బాధ్యత <b class="hlg">Bihar</b>, <b class="hlg">Madhya Pradesh</b>, <b class="hlg">Odisha</b> లకు మాత్రమే వర్తించేది. <b class="hlg">94వ సవరణ చట్టం, 2006</b> ఒకేసారి రెండు పనులు చేసింది — Bihar ను ఈ బాధ్యత నుండి విముక్తి చేసింది (Jharkhand ఏర్పడ్డాక Bihar లో Scheduled Areas దాదాపు లేకపోవడం, ST జనాభా వాటా చాలా తక్కువగా ఉండటం వల్ల), అదే సమయంలో సహస్రాబ్ది మలుపులో కొత్తగా ఏర్పడిన <b class="hlg">Chhattisgarh</b>, <b class="hlg">Jharkhand</b> లకు కూడా ఇదే బాధ్యతను — ఇప్పటికే ఉన్న MP, Odisha తో పాటు — విస్తరించింది.</div>
+
+  <p class="eng">A minister who belongs to one House of the state legislature still has the right to speak and participate in proceedings of the other House too (Art.177) — but the right to actually <b>vote</b> stays confined strictly to whichever House he/she is a member of.</p>
+  <div class="te">రాష్ట్ర శాసనసభలో ఒక House కు చెందిన minister మరో House proceedings లో కూడా మాట్లాడే, పాల్గొనే హక్కు కలిగి ఉంటారు (Art.177) — కానీ <b>ఓటు వేసే</b> హక్కు మాత్రం తాను సభ్యుడిగా ఉన్న House కే పరిమితం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Appointment of Ministers</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who effectively selects ministers?</td><td>Chief Minister — Governor can only appoint CM's nominees</td></tr>
+      <tr><td>Must a minister already be a legislator?</td><td>No — but must become one within 6 months (Art.164(7))</td></tr>
+      <tr><td>Original 3 tribal-welfare-minister states?</td><td>Bihar, Madhya Pradesh, Odisha</td></tr>
+      <tr><td>94th Amendment, 2006 effect?</td><td>Freed Bihar; added Chhattisgarh and Jharkhand</td></tr>
+      <tr><td>Cross-House voting rule?</td><td>May speak in either House; votes only in own House</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Oath and Salary · Collective Responsibility</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Oath and Salary of Ministers</div>
+  <p class="eng">Before entering office, every minister must take two separate oaths, both administered by the <b>Governor</b> — the <b class="term">oath of office</b> and the <b class="term">oath of secrecy</b>. In the oath of office, the minister swears (a) true faith and allegiance to the Constitution of India, (b) to uphold the sovereignty and integrity of India, (c) to faithfully and conscientiously discharge the duties of the office, and (d) to do right to all manner of people in accordance with the Constitution and the law, without fear or favour, affection or ill-will — wording essentially identical to a Union minister's oath (Ch.21), simply applied to a state-level office.</p>
+  <div class="te">పదవి చేపట్టేముందు, ప్రతి minister <b>Governor</b> ఎదుట రెండు వేర్వేరు ప్రమాణాలు చేయాలి — <b class="term">oath of office</b>, <b class="term">oath of secrecy</b>. Oath of office లో minister — (a) India రాజ్యాంగం పట్ల నిజమైన విశ్వాసం, విధేయత, (b) India సార్వభౌమత్వం, సమగ్రతను కాపాడటం, (c) నిజాయితీగా, శ్రద్ధగా పదవి బాధ్యతలు నిర్వర్తించడం, (d) రాజ్యాంగం, చట్టం ప్రకారం, భయం లేదా పక్షపాతం లేకుండా అందరికీ న్యాయం చేయడం — అని ప్రమాణం చేస్తారు — ఇది Union minister ప్రమాణానికి (Ch.21) దాదాపు అదే పదాలు, రాష్ట్ర స్థాయి పదవికి వర్తింపజేయబడింది.</div>
+
+  <p class="eng">In the oath of secrecy, the minister separately swears not to directly or indirectly communicate or reveal, to any unauthorised person, any matter brought under his/her consideration or that becomes known to him/her as a state minister — except to the extent required for properly discharging the duties of that office.</p>
+  <div class="te">Oath of secrecy లో minister వేరుగా ప్రమాణం చేస్తారు — తన consideration కు వచ్చిన లేదా state minister గా తనకు తెలిసిన ఏ విషయాన్నైనా, పదవి విధులు సరిగ్గా నిర్వర్తించడానికి అవసరమైనంత మేరకు తప్ప, అనధికార వ్యక్తికి ప్రత్యక్షంగా గానీ పరోక్షంగా గానీ చెప్పనని, బయటపెట్టనని.</div>
+
+  <p class="eng">The state legislature determines ministers' <b>salaries and allowances</b> from time to time, and may revise them. A minister draws the same salary and allowances payable to an ordinary member of the state legislature, plus additional perks tied specifically to the ministerial office — a <b class="hlb">sumptuary allowance</b> (varying by rank), free official accommodation, travelling allowance, and medical facilities.</p>
+  <div class="te">Ministers <b>salaries, allowances</b> ను state legislature ఎప్పటికప్పుడు నిర్ణయిస్తుంది, మార్చవచ్చు కూడా. ఒక minister కు సాధారణ శాసనసభ్యుడికి చెల్లించే జీతం, allowances వస్తాయి, అదనంగా minister పదవికే ప్రత్యేకమైన perks కూడా వస్తాయి — <b class="hlb">sumptuary allowance</b> (rank బట్టి మారుతుంది), ఉచిత అధికారిక నివాసం, travelling allowance, medical సౌకర్యాలు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Oath &amp; Salary</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who administers the oath?</td><td>The Governor</td></tr>
+      <tr><td>Two oaths taken?</td><td>Oath of office + oath of secrecy</td></tr>
+      <tr><td>Who fixes salary/allowances?</td><td>The state legislature, from time to time</td></tr>
+      <tr><td>Extra perks besides MLA-level salary?</td><td>Sumptuary allowance, free accommodation, travel allowance, medical facilities</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Collective Responsibility — the Fundamental Principle</div>
+  <p class="eng"><b class="term">Collective responsibility</b> is the fundamental operating principle of the whole parliamentary system, at the state level exactly as at the Centre. Article 164(5) states it directly: the council of ministers is collectively responsible to the state <b>Legislative Assembly</b>. In practical terms, this means every minister — cabinet minister, minister of state, deputy minister, even one drawn from the Legislative Council — owns joint responsibility for every act of the government, whether an act of omission or of commission. Ministers therefore work as a single team: they <b class="imp">swim or sink together</b>. If the Legislative Assembly passes a no-confidence motion against the council of ministers, every minister must resign — including any minister who happens to be a member of the Legislative Council rather than the Assembly, since responsibility runs to the Assembly as a whole body, not to whichever House the individual minister personally sits in. In practice, no minister need resign separately — the Chief Minister's own resignation amounts to the resignation of the <b>entire</b> council of ministers.</p>
+  <div class="te"><b class="term">Collective responsibility</b> అనేది మొత్తం parliamentary వ్యవస్థ యొక్క కేంద్ర సూత్రం — రాష్ట్ర స్థాయిలో కూడా Centre లో లాగే. Article 164(5) దీన్ని నేరుగా చెబుతుంది — council of ministers రాష్ట్ర <b>Legislative Assembly</b> కు collectively responsible. ఆచరణలో, దీని అర్థం — cabinet minister, minister of state, deputy minister, Legislative Council నుండి వచ్చిన minister కూడా — ప్రభుత్వం చేసిన ప్రతి పనికీ (చేసినదానికైనా, చేయనిదానికైనా) అందరూ కలిసి బాధ్యత వహిస్తారు. అందుకే ministers ఒకే team గా పనిచేస్తారు — <b class="imp">కలిసి బతకాలి, కలిసి మునగాలి</b>. Legislative Assembly council of ministers పై no-confidence motion పాస్ చేస్తే, Legislative Council సభ్యుడైన minister సహా అందరూ రాజీనామా చేయాలి — ఎందుకంటే బాధ్యత మొత్తం Assembly కు ఉంటుంది, individual minister ఏ House లో ఉన్నాడనేదానితో సంబంధం లేదు. ఆచరణలో, ప్రతి minister వేర్వేరుగా రాజీనామా చేయాల్సిన అవసరం లేదు — CM రాజీనామానే <b>మొత్తం</b> council of ministers రాజీనామాగా పరిగణించబడుతుంది.</div>
+
+  <p class="eng">As an alternative to resigning outright, the council of ministers can instead advise the Governor to <b>dissolve the Legislative Assembly</b> — arguing that the House no longer faithfully represents the electorate's views — and call for fresh elections. But the Governor is not bound to act on this advice once the council of ministers has already lost the Assembly's confidence; he/she may decline, since a government that has lost the House's confidence is no longer in a position whose aid and advice automatically binds the Governor on this particular question.</p>
+  <div class="te">నేరుగా రాజీనామా చేయడానికి బదులుగా, council of ministers Governor కు Legislative Assembly ను <b>రద్దు చేయమని</b> సలహా ఇవ్వొచ్చు — House ఇక ఓటర్ల అభిప్రాయాన్ని నిజంగా ప్రతిబింబించడం లేదని వాదిస్తూ — తాజా ఎన్నికలు కోరవచ్చు. కానీ council of ministers ఇప్పటికే Assembly విశ్వాసం కోల్పోయాక, Governor ఈ సలహాను తప్పనిసరిగా అనుసరించాల్సిన అవసరం లేదు — తిరస్కరించవచ్చు కూడా, ఎందుకంటే House విశ్వాసం కోల్పోయిన ప్రభుత్వం సలహా ఈ నిర్దిష్ట విషయంలో Governor కు ఆటోమేటిగ్గా binding కాదు.</div>
+
+  <p class="eng">Collective responsibility also has an internal, cabinet-facing dimension: once the cabinet takes a decision, that decision binds every cabinet minister (and other ministers too), even a minister who personally disagreed with it at the meeting. Every minister is duty-bound to publicly stand by cabinet decisions and defend them, both inside and outside the legislature. A minister who disagrees with a cabinet decision and is unwilling to defend it in public has only one honest option — to resign; several ministers, over the years, have in fact resigned over exactly this kind of disagreement.</p>
+  <div class="te">Collective responsibility కు ఒక internal, cabinet-సంబంధిత కోణం కూడా ఉంది — cabinet ఒక నిర్ణయం తీసుకున్నాక, ఆ meeting లో వ్యతిరేకించిన minister కు కూడా ఆ నిర్ణయం binding అవుతుంది — cabinet ministers అందరికీ (ఇతర ministers కు కూడా). ప్రతి minister cabinet నిర్ణయాలకు బహిరంగంగా మద్దతు ఇచ్చి, legislature లోపలా బయటా వాటిని సమర్థించాల్సిన బాధ్యత ఉంటుంది. ఒక cabinet నిర్ణయంతో ఏకీభవించక, దాన్ని బహిరంగంగా సమర్థించడానికి ఇష్టపడని minister కు ఒకే నిజాయితీ మార్గం ఉంటుంది — రాజీనామా చేయడం; ఇలాంటి భేదాభిప్రాయాల వల్ల గతంలో చాలామంది ministers నిజంగా రాజీనామా చేశారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Collective Responsibility</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Constitutional basis?</td><td>Article 164(5) — collectively responsible to the state Legislative Assembly</td></tr>
+      <tr><td>Effect of a no-confidence motion?</td><td>Entire council of ministers must resign, including Legislative Council members</td></tr>
+      <tr><td>Alternative to resignation?</td><td>Advise Governor to dissolve Assembly and call fresh elections (Governor may decline if confidence already lost)</td></tr>
+      <tr><td>Does CM resignation = council resignation?</td><td>Yes — no need for each minister to resign separately</td></tr>
+      <tr><td>What if a minister won't defend a cabinet decision?</td><td>Must resign — cabinet decisions bind all ministers regardless of personal disagreement</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Individual &amp; No Legal Responsibility · Composition of the Council of Ministers</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Individual Responsibility</div>
+  <p class="eng">Article 164(4)'s "pleasure of the Governor" clause is also the constitutional basis for <b class="term">individual responsibility</b>. Because ministers hold office at the Governor's pleasure, the Governor can, in principle, remove a minister even while the council of ministers as a whole still enjoys the Assembly's confidence — but only on the <b>advice of the Chief Minister</b>, never on the Governor's own initiative. This gives the CM a real disciplinary tool: if the CM is dissatisfied with a particular minister's performance, or disagrees with that minister, the CM can simply ask the minister to resign, or advise the Governor to dismiss him/her outright. Holding this power lets the Chief Minister actually enforce collective responsibility in practice — a minister unwilling to fall in line with cabinet decisions can be removed individually, which is precisely what keeps the "team" together in the first place.</p>
+  <div class="te">Article 164(4) "Governor pleasure" clause <b class="term">individual responsibility</b> కు కూడా రాజ్యాంగ ఆధారం. Ministers Governor pleasure మీద పదవిలో ఉంటారు కాబట్టి, council of ministers మొత్తం ఇంకా Assembly విశ్వాసం కలిగి ఉన్నప్పటికీ, Governor సూత్రప్రాయంగా ఒక minister ను తొలగించగలరు — కానీ ఇది <b>CM సలహా మేరకే</b> జరగాలి, Governor స్వయంగా చొరవ తీసుకోకూడదు. దీనివల్ల CM కు నిజమైన క్రమశిక్షణ సాధనం లభిస్తుంది — ఒక minister పనితీరుపై CM అసంతృప్తిగా ఉంటే, లేదా ఏకీభవించకపోతే, CM ఆ minister ను రాజీనామా చేయమని అడగవచ్చు, లేదా Governor కు తొలగించమని సలహా ఇవ్వొచ్చు. ఈ అధికారం ఉండటం వల్లే CM collective responsibility ను ఆచరణలో అమలు చేయగలుగుతారు — cabinet నిర్ణయాలకు అనుగుణంగా నడవని minister ను వ్యక్తిగతంగా తొలగించవచ్చు — ఇదే "team" ను కలిపి ఉంచుతుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">No Legal Responsibility</div>
+  <p class="eng">Unlike some other parliamentary systems, the Indian Constitution builds in <b class="imp">no system of legal responsibility</b> for ministers at the state level, exactly as at the Centre. There is no requirement that a public act performed in the Governor's name be countersigned by a minister before it becomes legally valid. And, reinforcing Article 163(3), the courts are barred from inquiring into the actual nature of the advice ministers give the Governor — so a minister cannot be held legally accountable in a court of law for that advice either.</p>
+  <div class="te">కొన్ని ఇతర parliamentary వ్యవస్థల్లా కాకుండా, భారత రాజ్యాంగం రాష్ట్ర స్థాయిలో ministers కు <b class="imp">legal responsibility వ్యవస్థను ఏర్పాటు చేయలేదు</b> — Centre లో లాగే. Governor పేరు మీద చేసిన public act చెల్లుబాటు కావాలంటే minister countersign చేయాలనే నిబంధన లేదు. Article 163(3) కు మద్దతుగా, ministers Governor కు ఇచ్చే advice స్వభావాన్ని కోర్టులు విచారించలేవు — కాబట్టి ఆ advice కోసం minister ను కోర్టులో legal గా బాధ్యుడిని చేయలేరు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Individual &amp; No Legal Responsibility</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Basis of individual responsibility?</td><td>Art.164(4) — ministers hold office during the Governor's pleasure</td></tr>
+      <tr><td>Who can trigger a minister's removal?</td><td>Governor, but only on the Chief Minister's advice</td></tr>
+      <tr><td>Is there legal responsibility for ministers?</td><td>No — no countersignature requirement, and courts can't inquire into advice given</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Composition of the Council of Ministers</div>
+  <p class="eng">The Constitution is silent on the actual size of a state's council of ministers (beyond the 91st Amendment's 15%/minimum-12 boundaries) and on any internal ranking among ministers — both are left to the <b>Chief Minister's</b> judgment, to be fixed according to the political exigencies and requirements of the time.</p>
+  <div class="te">రాజ్యాంగం రాష్ట్ర council of ministers అసలు సైజు గురించి (91వ సవరణ 15%/కనీసం-12 పరిమితి మినహా), ministers మధ్య internal ranking గురించి ఏమీ చెప్పదు — రెండూ <b>Chief Minister</b> విచక్షణకే వదిలేయబడ్డాయి, కాలానికి తగిన political అవసరాల ప్రకారం నిర్ణయించబడతాయి.</div>
+
+  <p class="eng">As at the Centre, a state's council of ministers is made up of three ranks — <b class="term">cabinet ministers</b>, <b class="term">ministers of state</b>, and <b class="term">deputy ministers</b> — differing from each other in rank, emoluments, and political importance, all working under the Chief Minister, the state's supreme governing authority. Some states also appoint a <b class="term">deputy chief minister</b> — a post the Constitution does not mention at all, created almost entirely for local political reasons (typically to accommodate a coalition partner or a rival within the ruling party).</p>
+  <div class="te">Centre లో లాగే, రాష్ట్ర council of ministers మూడు స్థాయిలుగా ఉంటుంది — <b class="term">cabinet ministers</b>, <b class="term">ministers of state</b>, <b class="term">deputy ministers</b> — వీటి మధ్య తేడా rank, జీతభత్యాలు, political ప్రాముఖ్యతలో ఉంటుంది, అందరూ రాష్ట్ర supreme governing authority అయిన Chief Minister కింద పనిచేస్తారు. కొన్ని రాష్ట్రాలు <b class="term">deputy chief minister</b> ను కూడా నియమిస్తాయి — ఈ పదవి గురించి రాజ్యాంగంలో ఎక్కడా ప్రస్తావన లేదు, ఇది దాదాపు పూర్తిగా local political కారణాల వల్లే (సాధారణంగా coalition partner ను లేదా ruling party లో ప్రత్యర్థిని సర్దుబాటు చేయడానికి) సృష్టించబడుతుంది.</div>
+
+  <p class="eng"><b>Cabinet ministers</b> head the state's major departments — home, education, finance, agriculture, and so on — sit in the cabinet, attend its meetings, and play a direct role in policy decisions across the whole span of state government. <b>Ministers of state</b> may be given independent charge of a department, or attached to work under a cabinet minister; either way, they are not cabinet members and don't attend cabinet meetings, except when specially invited for an item concerning their own department. <b>Deputy ministers</b> rank below both — they are never given independent charge of a department, are instead attached to a cabinet minister to help with administrative, political and parliamentary duties, and — like ministers of state — are neither cabinet members nor cabinet-meeting attendees. As a terminology note worth remembering for MCQs: the term <span class="hlb">"ministry"</span> is used only at the Centre — a state government is instead organised into <span class="hlb">"departments"</span>, not "ministries".</p>
+  <div class="te"><b>Cabinet ministers</b> — home, education, finance, agriculture వంటి రాష్ట్ర ప్రధాన departments కు అధిపతులు — cabinet లో సభ్యులు, cabinet meetings కు హాజరవుతారు, రాష్ట్ర ప్రభుత్వం మొత్తం విస్తృతిలో policy నిర్ణయాల్లో నేరుగా పాత్ర పోషిస్తారు. <b>Ministers of state</b> కు department కు independent charge ఇవ్వొచ్చు, లేదా cabinet minister కింద attach చేయొచ్చు; ఏ విధంగానైనా, వారు cabinet సభ్యులు కాదు, cabinet meetings కు హాజరు కారు — తమ department కు సంబంధించిన అంశం వచ్చినప్పుడు ప్రత్యేకంగా ఆహ్వానిస్తే తప్ప. <b>Deputy ministers</b> వీరిద్దరి కంటే కింది స్థాయి — వారికి department independent charge ఎప్పుడూ ఇవ్వరు, బదులుగా cabinet minister కు attach చేసి administrative, political, parliamentary duties లో సహాయం చేయిస్తారు — ministers of state లాగే, వారు కూడా cabinet సభ్యులు కారు, meetings కు హాజరు కారు. MCQs కోసం గుర్తుంచుకోవాల్సిన terminology పాయింట్ — <span class="hlb">"ministry"</span> అనే పదం Centre లో మాత్రమే వాడతారు — రాష్ట్ర ప్రభుత్వం "ministries" గా కాకుండా <span class="hlb">"departments"</span> గా విభజించబడి ఉంటుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Composition</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who decides the ministry's exact size/ranking?</td><td>Chief Minister, within the 91st Amendment's 15%/min-12 limits</td></tr>
+      <tr><td>Three ranks of ministers?</td><td>Cabinet ministers, ministers of state, deputy ministers</td></tr>
+      <tr><td>Is Deputy CM a constitutional post?</td><td>No — created for local political reasons</td></tr>
+      <tr><td>Who attends cabinet meetings?</td><td>Only cabinet ministers (others only if specially invited)</td></tr>
+      <tr><td>"Ministry" vs "department" terminology?</td><td>"Ministry" used only at Centre; states use "department"</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">The Cabinet · Cabinet Committees · Articles at a Glance · Cross-reference to Ch.21</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">The Cabinet</div>
+  <p class="eng">A smaller inner body — the <b class="term">cabinet</b>, made up only of cabinet ministers — forms the real nucleus of the council of ministers, and is the actual centre of authority in a state's government. The book lists <b class="hlg">eight</b> distinct roles the cabinet performs: it is the highest decision-making authority in the state's politico-administrative system; the chief policy-formulating body of the state government; the supreme executive authority of the state; the chief coordinator of state administration; an advisory body to the Governor; the chief crisis manager, dealing with all emergency situations; the body that handles all major legislative and financial matters; and the body that exercises control over higher appointments, such as constitutional authorities and senior secretariat administrators.</p>
+  <div class="te">కేవలం cabinet ministers తో కూడిన చిన్న inner body — <b class="term">cabinet</b> — council of ministers కు నిజమైన nucleus గా ఉంటుంది, రాష్ట్ర ప్రభుత్వంలో నిజమైన అధికార కేంద్రం. పుస్తకం cabinet చేసే <b class="hlg">ఎనిమిది</b> విభిన్న పాత్రలు చెబుతుంది — రాష్ట్ర politico-administrative వ్యవస్థలో అత్యున్నత నిర్ణయాధికార సంస్థ; రాష్ట్ర ప్రభుత్వ ప్రధాన policy-formulating body; రాష్ట్ర supreme executive authority; రాష్ట్ర administration చీఫ్ coordinator; Governor కు advisory body; అన్ని emergency పరిస్థితులను handle చేసే చీఫ్ crisis manager; ప్రధాన legislative, financial విషయాలను చూసే body; constitutional authorities, senior secretariat అధికారుల వంటి higher appointments పై నియంత్రణ కలిగిన body.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — The Cabinet</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who makes up the cabinet?</td><td>Only cabinet ministers (the smaller inner body)</td></tr>
+      <tr><td>How many roles does the book list?</td><td>8 — highest decision-maker, chief policy body, supreme executive authority, chief coordinator, Governor's advisor, chief crisis manager, legislative/financial matters, control over higher appointments</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Cabinet Committees</div>
+  <p class="eng">The cabinet carries out much of its work through smaller bodies called <b class="term">cabinet committees</b>, of two kinds — <b class="hlg">standing</b> committees, which are permanent in nature, and <b class="hlg">ad hoc</b> committees, set up temporarily. The Chief Minister sets these up as political exigencies demand, so their number, nomenclature and composition all vary over time and from state to state. These committees don't merely sort out issues and prepare proposals for the full cabinet's consideration — several of them actually <b class="imp">take binding decisions on their own</b>; however, the cabinet retains the power to review any committee's decision if it chooses to.</p>
+  <div class="te">Cabinet తన పనిలో ఎక్కువ భాగాన్ని <b class="term">cabinet committees</b> అనే చిన్న bodies ద్వారా చేస్తుంది — రెండు రకాలు — శాశ్వత స్వభావం గల <b class="hlg">standing</b> committees, తాత్కాలికంగా ఏర్పాటు చేసే <b class="hlg">ad hoc</b> committees. Political అవసరాల మేరకు CM వీటిని ఏర్పాటు చేస్తారు కాబట్టి, వీటి సంఖ్య, పేర్లు, సభ్యత్వం కాలానుగుణంగా, రాష్ట్రం-రాష్ట్రానికి మారుతూ ఉంటాయి. ఈ committees కేవలం సమస్యలు పరిష్కరించి, cabinet పరిశీలనకు ప్రతిపాదనలు తయారు చేయడమే కాదు — చాలా వరకు అవే <b class="imp">బైండింగ్ నిర్ణయాలు తీసుకుంటాయి</b>; అయితే, cabinet కోరుకుంటే ఏ committee నిర్ణయాన్నైనా review చేసే అధికారం దానికే ఉంటుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Cabinet Committees</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Two types of cabinet committees?</td><td>Standing (permanent) and ad hoc (temporary)</td></tr>
+      <tr><td>Who sets them up?</td><td>Chief Minister, per political exigencies — number/composition varies</td></tr>
+      <tr><td>Can they take binding decisions?</td><td>Yes — though the cabinet can still review their decisions</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Articles Related to the State Council of Ministers — at a Glance</div>
+  <table>
+    <caption>Table 32.1 — Articles Related to the State Council of Ministers at a Glance</caption>
+    <thead><tr><th style="width:16%">Article</th><th>Subject-matter</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">163</td><td>Council of Ministers to aid and advise Governor</td></tr>
+      <tr><td class="hlg">164</td><td>Other provisions as to Ministers</td></tr>
+      <tr><td class="hlg">166</td><td>Conduct of business of the Government of a State</td></tr>
+      <tr><td class="hlg">167</td><td>Duties of Chief Minister as respects the furnishing of information to Governor, etc.</td></tr>
+      <tr><td class="hlg">177</td><td>Rights of Ministers as respects the Houses</td></tr>
+    </tbody>
+  </table>
+  <div class="te">Table 32.1 — రాష్ట్ర Council of Ministers కు సంబంధించిన Articles ఒక్క చూపులో — 163 (aid/advise Governor), 164 (ministers గురించిన ఇతర నిబంధనలు), 166 (business నిర్వహణ), 167 (CM duties), 177 (Houses లో ministers హక్కులు) — exam కోసం ఈ ఐదు Article numbers ను వాటి subject తో గుర్తుంచుకోండి.</div>
+</div>
+
+<div class="para">
+  <div class="box">
+    <div class="boxtitle">Cross-reference — Parallel with Ch.21 (Union Council of Ministers)</div>
+    <p class="eng">This chapter's structure mirrors Ch.21 almost exactly, Article-for-Article: Art.163/164 (state) parallel Art.74/75 (Union); Art.166 parallels Art.77; Art.167 parallels Art.78. The most exam-relevant parallel is the <b class="hlg">91st Amendment Act, 2003</b>, which imposed the <b class="imp">identical</b> 15%-of-House-strength ceiling and the identical disqualification-of-defectors bar at both levels in the very same amendment — at the Centre (15% of Lok Sabha strength) and in every state (15% of that state's Assembly strength) simultaneously. One figure is <b class="imp">not</b> shared, though: the <b>12-minister floor</b> is a state-only safeguard, added as a proviso to Art.164(2) — the Union's Art.75 caps Council of Ministers size at 15% of Lok Sabha strength but sets no minimum at all.</p>
+    <div class="te">ఈ అధ్యాయం నిర్మాణం Ch.21 తో దాదాపు అచ్చం Article-Article గా సరిపోతుంది — Art.163/164 (రాష్ట్రం) = Art.74/75 (Union); Art.166 = Art.77; Art.167 = Art.78. Exam కోసం అత్యంత ముఖ్యమైన సారూప్యత <b class="hlg">91వ సవరణ చట్టం, 2003</b> — ఇది Centre, ప్రతి రాష్ట్రం రెండింటికీ <b class="imp">ఒకేసారి, ఒకేలా</b> House strength లో 15% పరిమితి, defectors కు minister పదవి నిషేధం తెచ్చింది — Centre లో (Lok Sabha strength లో 15%), ప్రతి రాష్ట్రంలో (ఆ రాష్ట్ర Assembly strength లో 15%) ఒకేసారి. కానీ <b class="imp">కనీసం 12 ministers floor మాత్రం రాష్ట్రాలకే పరిమితం</b> — ఇది Art.164(2) proviso లో ఉంది; Union Art.75 లో Lok Sabha strength లో 15% పరిమితి ఉన్నా, ఇలాంటి కనీస సంఖ్య నిబంధన లేదు.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 32 — State Council of Ministers · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.33 — State Legislature</span><span class="dpart">Part IV &middot; Book 1 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

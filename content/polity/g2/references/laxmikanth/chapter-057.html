@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part VIII &mdash; Book 1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 57 — National Human Rights Commission</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Protection of Human Rights Act, 1993 — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Establishment — A Statutory, Not a Constitutional, Body</div>
+  <p class="eng">The <b class="term">National Human Rights Commission (NHRC)</b> owes its existence to an ordinary Act of Parliament, not to the Constitution — so it counts as a <b class="imp">statutory</b> body, and specifically <b class="imp">not</b> a constitutional one. Parliament created it in <b class="hlg">1993</b> through the <b class="hlb">Protection of Human Rights Act, 1993</b>. This is an important structural distinction to hold onto right from the start: unlike the Election Commission (Article 324) or the UPSC (Article 315), which owe their existence directly to the Constitution's text, the NHRC exists only because Parliament passed an ordinary law — which also means Parliament could, in principle, amend or repeal that law by ordinary legislative process, without needing a constitutional amendment.</p>
+  <div class="te"><b class="term">National Human Rights Commission (NHRC)</b> అనేది ఒక <b class="imp">statutory body</b> — ఇది <b class="imp">constitutional body కాదు</b>. ఇది <b class="hlg">1993</b> లో, Parliament చేసిన <b class="hlb">Protection of Human Rights Act, 1993</b> చట్టం ద్వారా ఏర్పడింది. ఇది ఈ chapter మొదట్లోనే గుర్తుపెట్టుకోవాల్సిన ముఖ్యమైన structural తేడా — Election Commission (Article 324) లేదా UPSC (Article 315) లాగా ఇది నేరుగా Constitution టెక్స్ట్ నుండి రాలేదు; NHRC ఉనికి కేవలం Parliament చేసిన ఒక ordinary చట్టం మీదే ఆధారపడి ఉంది — అంటే, constitutional amendment అవసరం లేకుండానే, ordinary legislative ప్రక్రియ ద్వారానే Parliament ఈ చట్టాన్ని amend/repeal చేయగలదు.</div>
+
+  <p class="eng">People often call the commission the <b class="term">watchdog of human rights</b> in India. In practice this means it exists to protect a defined bundle of rights — <b>life, liberty, equality and dignity</b> of the individual — regardless of whether those rights trace back to the Constitution's own guarantees or to an international covenant, provided a court in India can actually enforce them. This framing matters: the NHRC's mandate isn't confined only to Fundamental Rights under Part III — it extends to rights recognised under international human-rights instruments too, so long as those rights are also enforceable domestically.</p>
+  <div class="te">Commission దేశంలో human rights కు <b class="term">watchdog</b> గా పనిచేస్తుంది — అంటే, వ్యక్తి <b>life, liberty, equality, dignity</b> కు సంబంధించిన హక్కులు — అవి Constitution ఇచ్చినవైనా, international covenants లో embody అయినవైనా, India courts లో enforceable అయినవైనా సరే. ఇది ముఖ్యం — NHRC mandate కేవలం Part III లోని Fundamental Rights కు మాత్రమే పరిమితం కాదు — international human-rights instruments లో గుర్తించిన హక్కులకు కూడా విస్తరిస్తుంది, అవి domestic గా కూడా enforceable అయినంత వరకు.</div>
+
+  <p class="eng">Behind the commission's creation lay three practical goals. <b>(1)</b> Human rights work was scattered across different institutions, so lawmakers wanted a body that could pull the relevant machinery together for focused, joined-up attention to human-rights issues. <b>(2)</b> There was also a felt need for an inquiry mechanism working <b class="imp">at arm's length from the government</b> of the day — so that when excesses were alleged, the resulting probe would itself demonstrate the state's commitment to protecting rights. <b>(3)</b> Finally, the commission was meant to add to, not replace, whatever civil-society and institutional efforts were already under way in this space.</p>
+  <div class="te">Commission ఏర్పాటు వెనుక ముఖ్యంగా మూడు objectives ఉన్నాయి — <b>(1)</b> human rights విషయాలను మరింత focussed గా, సమగ్రంగా చూసేలా institutional arrangements బలపరచడం; <b>(2)</b> excesses allegations ను <b class="imp">ప్రభుత్వం నుండి స్వతంత్రంగా</b> పరిశీలించడం ద్వారా, human rights రక్షణ పట్ల ప్రభుత్వ commitment ను ఇంకా బలంగా చూపించడం; <b>(3)</b> ఇప్పటికే ఇతర సంస్థలు, civil society ఈ దిశలో చేస్తున్న ప్రయత్నాలకు మద్దతునివ్వడం, బలపరచడం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Establishment</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Is NHRC a constitutional or statutory body?</td><td>Statutory — Protection of Human Rights Act, 1993</td></tr>
+      <tr><td>Year of establishment?</td><td>1993</td></tr>
+      <tr><td>What is NHRC the "watchdog" of?</td><td>Rights to life, liberty, equality, dignity — constitutional or international-covenant based, court-enforceable in India</td></tr>
+      <tr><td>3 objectives behind its establishment?</td><td>Strengthen institutions; independent inquiry into excesses; complement existing efforts</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Composition — Chairperson, Members and Ex-Officio Members</div>
+  <p class="eng">Structurally, the NHRC has a <b class="term">chairperson</b> plus <b class="hlg">five</b> full-time members — six people in the core body. For the top post, the law allows either a person who has retired as <b>Chief Justice of India</b> <b class="imp">or</b> someone who has served as a <b>judge of the Supreme Court</b>; either background qualifies. The five seats under the chairperson break down as: one seat for a Supreme Court judge (sitting or retired); one seat for a High Court chief justice (sitting or retired); and three seats reserved for people with recognised knowledge of, or hands-on experience in, human rights work — of whom at least one must be a woman.</p>
+  <div class="te">NHRC ఒక multi-member body — <b class="term">chairperson</b> + <b class="hlg">ఐదు</b> members ఉంటారు. Chairperson <b>రిటైర్డ్ Chief Justice of India</b> <b class="imp">లేదా</b> <b>Supreme Court judge</b> అయి ఉండాలి. ఐదుగురు full-time members — సిటింగ్/రిటైర్డ్ SC judge ఒకరు; సిటింగ్/రిటైర్డ్ High Court చీఫ్ జస్టిస్ ఒకరు; human rights లో knowledge/practical experience ఉన్న ముగ్గురు వ్యక్తులు (వీరిలో కనీసం ఒకరు మహిళ ఉండాలి).</div>
+
+  <p class="eng">Beyond these six full-time posts, <b class="hlg">seven</b> more people sit on the commission as <b class="term">ex-officio members</b> — meaning they join by virtue of another office they already hold, not through a separate NHRC appointment process. These seven are the sitting chairpersons of six other national commissions — the National Commission for Minorities (NCM), the National Commission for Scheduled Castes (NCSC), the National Commission for Scheduled Tribes (NCST), the National Commission for Women (NCW), the National Commission for Backward Classes (NCBC), and the National Commission for Protection of Child Rights (NCPCR) — together with the Chief Commissioner for Persons with Disabilities. Add the chairperson, the five full-time members and these seven ex-officio members together, and the NHRC's total membership comes to <b class="hlg">13</b>.</p>
+  <div class="te">వీటికి అదనంగా, commission లో <b class="hlg">ఏడుగురు</b> <b class="term">ex-officio members</b> కూడా ఉంటారు — National Commission for Minorities (NCM), National Commission for SCs (NCSC), National Commission for STs (NCST), National Commission for Women (NCW), National Commission for Backward Classes (NCBC), National Commission for Protection of Child Rights (NCPCR) — వీరి చైర్‌పర్సన్లు, ప్లస్ Chief Commissioner for Persons with Disabilities. Chairperson, ఐదుగురు full-time members, ఏడుగురు ex-officio members కలిపి చూస్తే, NHRC మొత్తం సభ్యత్వం <b class="hlg">13</b>.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Composition</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Chairperson qualification?</td><td>Retired CJI OR retired judge of the Supreme Court</td></tr>
+      <tr><td>5 full-time members made up of?</td><td>1 SC judge (serving/retd.) + 1 HC Chief Justice (serving/retd.) + 3 human-rights-knowledge persons (≥1 woman)</td></tr>
+      <tr><td>How many ex-officio members, and who?</td><td>7 — chairpersons of NCM, NCSC, NCST, NCW, NCBC, NCPCR + CC for Persons with Disabilities</td></tr>
+      <tr><td>Total membership?</td><td>13 (1 chairperson + 5 members + 7 ex-officio)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">The 2019 Amendment — Chairperson Qualification, Members, Ex-Officio, Tenure</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">The 2019 Amendment — What Actually Changed</div>
+  <p class="eng">The Protection of Human Rights Act, 1993 was amended in <b class="hlg">2006</b> and, more significantly for this chapter, in <b class="hlg">2019</b> by the <b class="hlb">Protection of Human Rights (Amendment) Act, 2019</b>. The composition described above — chairperson who "was" CJI <b class="imp">or</b> a SC judge, 3 human-rights-knowledge members, 7 ex-officio members, and a 3-year tenure — reflects the <b class="imp">current, post-2019 position</b>. Before 2019, the rules were meaningfully narrower on several of these points, and the exam frequently tests the exact before/after contrast, so it is worth holding both versions clearly apart rather than only memorising the current rule.</p>
+  <div class="te">Protection of Human Rights Act, 1993 ను <b class="hlg">2006</b> లో, ఇంకా ముఖ్యంగా ఈ chapter కు <b class="hlg">2019</b> లో <b class="hlb">Protection of Human Rights (Amendment) Act, 2019</b> ద్వారా amend చేశారు. పైన చెప్పిన composition — chairperson CJI "అయి ఉండాలి" <b class="imp">లేదా</b> SC judge అయి ఉండాలి, 3 మంది human-rights-knowledge members, 7 ex-officio members, 3-సంవత్సరాల tenure — ఇది <b class="imp">2019 తర్వాత ప్రస్తుత position</b>. 2019 కు ముందు, ఈ points చాలా వాటిలో rules ఇరుకుగా ఉండేవి, exam తరచుగా exact before/after తేడాను అడుగుతుంది — కాబట్టి కేవలం ప్రస్తుత rule గుర్తుంచుకోవడం కంటే, రెండు వెర్షన్లనూ స్పష్టంగా వేరుగా ఉంచుకోవడం మంచిది.</div>
+
+  <p class="eng">The single most tested change is the <b class="imp">chairperson's qualification</b>. Before 2019, only a person who "<b>had been</b> Chief Justice of India" could be appointed chairperson — a former CJI, and specifically only a former CJI. The 2019 Amendment broadened this to a person who "<b>is or has been</b> Chief Justice of India, <b>or</b> is or has been a Judge of the Supreme Court" — so the pool of eligible chairpersons expanded from "former CJIs only" to "any former (or even sitting, on the plain text) Supreme Court judge." In real-world application, Justice Arun Kumar Mishra, appointed NHRC chairperson in <b class="hlg">2021</b>, is commonly cited as the <b class="imp">first non-CJI</b> to head the commission — a direct consequence of this 2019 change (see the Current Affairs Update at the end of this chapter for the present chairperson).</p>
+  <div class="te">అత్యంత తరచుగా అడిగే మార్పు — <b class="imp">chairperson qualification</b>. 2019 కు ముందు, "<b>Chief Justice of India గా ఉండేవారు</b>" మాత్రమే chairperson గా నియామకానికి అర్హులు — అంటే మాజీ CJI మాత్రమే, అంతకుమించి కాదు. 2019 Amendment దీన్ని "<b>CJI గా ఉన్న/ఉండేవారు, లేదా</b> Supreme Court judge గా ఉన్న/ఉండేవారు" గా విస్తరించింది — అంటే eligible chairpersons pool "మాజీ CJIలు మాత్రమే" నుండి "ఏ మాజీ (టెక్స్ట్ ప్రకారం సిటింగ్ కూడా) SC judge అయినా" కు పెరిగింది. వాస్తవ ప్రపంచంలో, <b class="hlg">2021</b> లో NHRC chairperson గా నియమితులైన Justice Arun Kumar Mishra ను సాధారణంగా commission కు <b class="imp">మొదటి non-CJI</b> chairperson గా చెప్తారు — ఇది ఈ 2019 మార్పు వల్లే జరిగింది (ప్రస్తుత chairperson గురించి ఈ chapter చివర Current Affairs Update చూడండి).</div>
+
+  <p class="eng">Beyond the chairperson, the 2019 Amendment also: <b>(a)</b> increased the number of human-rights-knowledge members from <b class="imp">two to three</b>, with the requirement that at least one be a woman; <b>(b)</b> added three more bodies' chairpersons/heads as ex-officio members — the NCBC, the NCPCR, and the Chief Commissioner for Persons with Disabilities — taking the ex-officio count from 4 to 7; <b>(c)</b> similarly broadened the qualification for a State Human Rights Commission's chairperson, from "former Chief Justice of a High Court only" to "is or has been Chief Justice, or is or has been a Judge, of a High Court"; and <b>(d)</b> reduced the tenure of the chairperson and members of both the NHRC and the State Commissions from <b class="imp">five years to three years</b> (or age 70, whichever is earlier), while removing an earlier cap that had limited eligibility for re-appointment.</p>
+  <div class="te">Chairperson తర్వాత, 2019 Amendment ఇంకా — <b>(a)</b> human-rights-knowledge members సంఖ్యను <b class="imp">రెండు నుండి మూడు</b> కు పెంచింది, కనీసం ఒకరు మహిళ ఉండాలనే నిబంధనతో సహా; <b>(b)</b> మరో మూడు సంస్థల చైర్‌పర్సన్లను/అధిపతులను ex-officio members గా చేర్చింది — NCBC, NCPCR, Chief Commissioner for Persons with Disabilities — దీంతో ex-officio సంఖ్య 4 నుండి 7 కు పెరిగింది; <b>(c)</b> అలాగే State Human Rights Commission chairperson qualification ను కూడా విస్తరించింది — "మాజీ High Court చీఫ్ జస్టిస్ మాత్రమే" నుండి "HC చీఫ్ జస్టిస్ లేదా HC judge గా ఉన్న/ఉండేవారు" గా; <b>(d)</b> NHRC, State Commissions రెండింటి chairperson/members tenure ను <b class="imp">ఐదు సంవత్సరాల నుండి మూడు సంవత్సరాలకు</b> (లేదా 70 ఏళ్ల వయసు, ఏది ముందు వస్తే అది) తగ్గించింది, re-appointment మీద ఉన్న ఒక పాత పరిమితిని కూడా తీసేసింది.</div>
+
+  <table>
+    <caption>2019 Amendment — Before vs After, at a glance</caption>
+    <thead><tr><th style="width:26%">Point</th><th>Pre-2019</th><th>Post-2019 (current)</th></tr></thead>
+    <tbody>
+      <tr><td>Chairperson qualification</td><td>Only a person who "had been" CJI</td><td class="imp">Person who is/has been CJI <b>or</b> SC judge</td></tr>
+      <tr><td>Human-rights-knowledge members</td><td>2</td><td>3 (at least 1 woman)</td></tr>
+      <tr><td>Ex-officio members</td><td>4 (NCM, NCSC, NCST, NCW chairpersons)</td><td>7 (+NCBC, NCPCR chairpersons, CC-Disabilities)</td></tr>
+      <tr><td>SHRC chairperson qualification</td><td>Only "had been" HC Chief Justice</td><td>Is/has been HC Chief Justice <b>or</b> HC judge</td></tr>
+      <tr><td>Tenure (NHRC &amp; SHRC)</td><td>5 years</td><td>3 years or age 70, whichever earlier</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — 2019 Amendment</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Biggest single change tested in exams?</td><td>Chairperson qualification: "was CJI" → "is/was CJI OR SC judge"</td></tr>
+      <tr><td>Real-world example of this change?</td><td>Justice Arun Kumar Mishra (2021) — first non-CJI NHRC chairperson</td></tr>
+      <tr><td>Human-rights-knowledge members before/after?</td><td>2 → 3 (at least 1 woman, post-2019)</td></tr>
+      <tr><td>Ex-officio members before/after?</td><td>4 → 7 (added NCBC, NCPCR, CC-Disabilities)</td></tr>
+      <tr><td>Tenure before/after?</td><td>5 years → 3 years or age 70, whichever earlier</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Appointment — 6-Member Committee · Tenure Rules</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Appointment — the Six-Member Committee</div>
+  <p class="eng">Appointments here follow a two-step process. First, a <b class="imp">six-member committee</b> draws up a recommendation; then the <b class="hlp">President</b> acts on that recommendation to make the actual appointment. The committee is composed of: <b>(1)</b> the <b class="hlp">Prime Minister</b>, who chairs it; <b>(2)</b> the <b class="hlp">Speaker of the Lok Sabha</b>; <b>(3)</b> the <b class="hlp">Deputy Chairman of the Rajya Sabha</b>; <b>(4)</b> and <b>(5)</b> the <b>Leaders of the Opposition</b> from each House of Parliament; and <b>(6)</b> the <b class="hlp">Union Home Minister</b>. One extra safeguard kicks in whenever the person under consideration is a <b>currently-serving</b> Supreme Court judge or High Court chief justice: in that specific case, the government must first <b class="imp">consult the Chief Justice of India</b> before going ahead — a check that does not apply once the person has already retired.</p>
+  <div class="te">Chairperson, members — <b class="hlp">President</b> నియమిస్తారు, <b class="imp">6-member committee</b> సిఫారసు మీద. ఈ committee లో — <b>(1)</b> <b class="hlp">Prime Minister</b>, ఈయనే committee కి head; <b>(2)</b> <b class="hlp">Lok Sabha Speaker</b>; <b>(3)</b> <b class="hlp">Rajya Sabha Deputy Chairman</b>; <b>(4)</b>, <b>(5)</b> Lok Sabha, Rajya Sabha రెండింటిలో <b>Leaders of Opposition</b>; <b>(6)</b> <b class="hlp">Union Home Minister</b>. అంతేకాక, <b>సిటింగ్</b> SC judge లేదా <b>సిటింగ్</b> HC చీఫ్ జస్టిస్ ను నియమించాలంటే, <b class="imp">Chief Justice of India తో సంప్రదింపు తర్వాతే</b> చేయాలి — ఇది ప్రత్యేకంగా సిటింగ్ judicial appointees కు వర్తించే అదనపు రక్షణ, ఇప్పటికే రిటైర్ అయినవారికి ఇది వర్తించదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Appointment</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who appoints, and on whose recommendation?</td><td>President, on recommendation of a 6-member committee</td></tr>
+      <tr><td>Who heads the committee?</td><td>The Prime Minister</td></tr>
+      <tr><td>Full committee membership?</td><td>PM, LS Speaker, RS Deputy Chairman, LoP (LS), LoP (RS), Union Home Minister</td></tr>
+      <tr><td>Extra safeguard for sitting judges?</td><td>CJI must be consulted before appointing a sitting SC judge/HC Chief Justice</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Tenure — Term, Re-appointment, Post-Retirement Bar</div>
+  <p class="eng">Time in office is capped two ways at once: the chairperson and members serve for <b class="hlg">three years</b>, or until they turn <b class="hlg">70</b>, whichever limit arrives first — this is the post-2019 rule (it was five years before the 2019 Amendment, as covered on the previous page). Once that term ends, they <b class="imp">can be re-appointed</b> — the law doesn't rule that out. What it does rule out is any subsequent government job: after leaving the commission, neither the chairperson nor any member may take up <b class="imp">further employment</b> with the Centre or with any state government — a rule aimed squarely at removing any incentive to shape decisions in office in the hope of a future government posting.</p>
+  <div class="te">Chairperson, members <b class="hlg">మూడు సంవత్సరాలు</b> లేదా <b class="hlg">70 ఏళ్ల వయసు</b> — ఏది ముందు వస్తే అది — పదవిలో ఉంటారు — ఇది 2019 తర్వాతి rule (2019 Amendment కు ముందు ఇది ఐదు సంవత్సరాలు ఉండేది, ఇది మునుపటి పేజీలో చూశాం). వీరు <b class="imp">తిరిగి నియామకానికి అర్హులే</b>. అయితే, వారి tenure తర్వాత, chairperson, members Central government లేదా ఏ state government కిందైనా <b class="imp">further employment కి అర్హులు కారు</b> — పదవిలో ఉన్నప్పుడు, భవిష్యత్ ప్రభుత్వ ఉద్యోగం ఆశతో నిర్ణయాలను influence చేసే అవకాశాన్ని పూర్తిగా తొలగించడమే ఈ rule ఉద్దేశం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Tenure</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Tenure (post-2019)?</td><td>3 years or age 70, whichever earlier</td></tr>
+      <tr><td>Eligible for re-appointment?</td><td>Yes</td></tr>
+      <tr><td>Eligible for post-tenure govt. employment?</td><td>No — barred from further Central/state govt. employment</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Removal — Direct Grounds vs SC Reference · Salaries</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Removal — Five Direct Grounds by the President</div>
+  <p class="eng">There are <b class="hlg">five</b> situations in which the <b class="hlp">President</b> may remove the chairperson or a member on his/her own, without routing the matter through any inquiry: <b>(1)</b> the person is declared insolvent; <b>(2)</b> while holding office, the person takes up any paid work unconnected with the commission's duties; <b>(3)</b> mental or physical infirmity leaves the person unable to continue in the role; <b>(4)</b> a competent court has formally declared the person of unsound mind; or <b>(5)</b> the person has been convicted of an offence and sentenced to prison. Notice what these five grounds have in common — each is a fairly objective, disqualifying fact about the individual, not a subjective judgment about how well they are doing the job.</p>
+  <div class="te"><b class="hlp">President</b> ఈ <b class="hlg">ఐదు</b> circumstances లో chairperson లేదా ఏ member నైనా — వేరే ఎవరికీ refer చేయాల్సిన అవసరం లేకుండా — నేరుగా తొలగించగలరు: <b>(1)</b> insolvent గా adjudge అయితే; <b>(2)</b> పదవిలో ఉన్నప్పుడు, ఆఫీస్ డ్యూటీలకు వెలుపల ఏదైనా paid employment చేస్తే; <b>(3)</b> mind లేదా body infirmity వల్ల పదవిలో కొనసాగడానికి unfit అయితే; <b>(4)</b> unsound mind గా ఒక competent court declare చేస్తే; <b>(5)</b> ఏదైనా offence కు convict అయి imprisonment సెంటెన్స్ పడితే. ఈ ఐదు grounds అంటే — వ్యక్తి పని నాణ్యత గురించి judgment కాదు, వ్యక్తి గురించిన disqualifying facts.</div>
+
+  <p class="eng">There's a sixth removal route too, and it runs on a completely different logic: <b class="imp">proved misbehaviour or incapacity</b>. Here the President cannot act alone — the matter must first go to the <b class="hlp">Supreme Court</b>, which conducts its own inquiry into the allegation. Removal follows only if that inquiry concludes the charge is made out and the Court formally advises removal; absent that green light from the Court, the President has no power to act on this ground. In substance, this echoes how a sitting Supreme Court judge is removed — the key difference being that here the trigger is a Presidential reference followed by a Supreme Court inquiry, rather than a parliamentary impeachment motion.</p>
+  <div class="te">ఈ ఐదింటికి అదనంగా, <b class="imp">proved misbehaviour లేదా incapacity</b> గ్రౌండ్ మీద కూడా President chairperson/member ను తొలగించగలరు. కానీ ఈ గ్రౌండ్ చాలా విభిన్నంగా పనిచేస్తుంది — ఈ సందర్భంలో President తప్పనిసరిగా <b class="imp">Supreme Court కు matter refer చేయాలి</b>, inquiry కోసం. Supreme Court inquiry చేసిన తర్వాత, తొలగింపు కారణాన్ని upheld చేసి, ఆ మేరకు advise చేస్తేనే, President చైర్‌పర్సన్/సభ్యుడిని తొలగించగలరు. ఇది substance పరంగా SC judge తొలగింపు ప్రక్రియనే పోలి ఉంటుంది — తేడా ఏమిటంటే, ఇక్కడ ఇది Presidential reference, SC inquiry ద్వారా జరుగుతుంది, parliamentary impeachment-style resolution ద్వారా కాదు.</div>
+
+  <table>
+    <caption>Removal grounds — direct-by-President vs SC-reference</caption>
+    <thead><tr><th style="width:34%">Category</th><th>Process</th></tr></thead>
+    <tbody>
+      <tr><td>5 direct grounds (insolvency / outside paid job / infirmity / unsound mind / criminal conviction)</td><td>President removes directly — no reference needed</td></tr>
+      <tr><td>Proved misbehaviour or incapacity</td><td class="imp">President must refer to SC → SC inquires → only if SC advises removal, President removes</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Removal</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>5 direct removal grounds?</td><td>Insolvency, outside paid employment, mental/physical infirmity, court-declared unsound mind, criminal conviction+sentence</td></tr>
+      <tr><td>How is misbehaviour/incapacity handled?</td><td>President refers to SC; removal only if SC inquiry upholds and advises so</td></tr>
+      <tr><td>What does this process mirror?</td><td>The substance of an SC judge's removal — but via Presidential reference, not parliamentary impeachment</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Salaries and Conditions of Service</div>
+  <p class="eng">Pay and service conditions for the chairperson and members are fixed by the <b class="hlp">Central government</b> — but only once, in effect: after a person takes up the post, none of these terms can be changed in a way that leaves them <b class="imp">worse off</b> than when they joined. Put the pieces together — secure tenure, narrowly defined removal grounds, the SC-reference safeguard for misbehaviour/incapacity, and this lock on service conditions — and the design intent becomes obvious: all of it exists to protect the commission's <b class="term">autonomy, independence and impartiality</b>.</p>
+  <div class="te">Chairperson లేదా member salary, allowances, ఇతర service conditions — <b class="hlp">Central government</b> నిర్ణయిస్తుంది. అయితే, ఒకసారి fix చేసి, వ్యక్తి appoint అయిన తర్వాత, ఈ conditions ను <b class="imp">వారి నష్టానికి మార్చలేరు</b>. మొత్తంగా చూస్తే — tenure security, ఇరుకైన removal grounds, misbehaviour/incapacity కు SC-reference safeguard, service conditions non-variation rule — ఇవన్నీ commission పనితీరులో <b class="term">autonomy, independence, impartiality</b> కాపాడటానికే ఉద్దేశించినవి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Salaries &amp; Autonomy Safeguards</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who fixes salary/conditions?</td><td>The Central government</td></tr>
+      <tr><td>Can they be changed after appointment?</td><td>Not to the appointee's disadvantage</td></tr>
+      <tr><td>What is the overall aim of these provisions?</td><td>Autonomy, independence, impartiality of the commission's functioning</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Functions — The Full List (10 Points)</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Functions — Points 1 to 5</div>
+  <p class="eng">The commission's functions run to ten numbered items in the Act; the first five are these: <b>(1)</b> it can <b>inquire</b> into a human-rights violation, or into a public servant's negligence in preventing one — starting that inquiry either on its own initiative (<b class="term">suo motu</b>), through a petition filed with it, or because a court has directed it to; <b>(2)</b> it can step in — <b>intervene</b> — in a court case that already involves an allegation of a human-rights violation; <b>(3)</b> it can go and <b>inspect jails and other places of detention</b>, look at how inmates are actually living, and issue recommendations based on what it finds; <b>(4)</b> it can take stock of the existing legal protections for human rights — constitutional or otherwise — and suggest how to make them work better in practice; <b>(5)</b> it can examine what gets in the way of people actually enjoying their human rights, <b>terrorism</b> included, and propose ways to fix that.</p>
+  <div class="te">Commission functions లో — <b>(1)</b> public servant వల్ల human rights violation జరిగినా, లేదా అలాంటి violation నివారించడంలో negligence జరిగినా — <b class="term">suo motu</b> గా, లేదా తనకు అందిన petition మీద, లేదా court order మీద <b>inquire</b> చేయడం; <b>(2)</b> court ముందు pending ఉన్న human rights violation allegation కేసుల్లో <b>intervene</b> చేయడం; <b>(3)</b> <b>jails, detention places</b> visit చేసి inmates living conditions study చేసి, ఆ ఆధారంగా recommendations ఇవ్వడం; <b>(4)</b> human rights రక్షణ కోసం ఉన్న constitutional, ఇతర <b>legal safeguards review</b> చేసి, effective అమలు కోసం చర్యలు సిఫారసు చేయడం; <b>(5)</b> <b>terrorism acts</b> తో సహా, human rights enjoyment ను inhibit చేసే factors review చేసి remedial చర్యలు సిఫారసు చేయడం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Functions 1-5</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>3 routes to start an inquiry?</td><td>Suo motu, petition, or court order</td></tr>
+      <tr><td>What does function 3 involve?</td><td>Visiting jails/detention places to study living conditions</td></tr>
+      <tr><td>Example under function 5?</td><td>Reviewing how terrorism inhibits enjoyment of human rights</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Functions — Points 6 to 10, and How They Play Out in Practice</div>
+  <p class="eng">The remaining five: <b>(6)</b> it studies human-rights <b>treaties and other international instruments</b> and suggests how India can implement them more effectively; <b>(7)</b> it takes up and encourages <b>research</b> in the human-rights field; <b>(8)</b> it works to spread human-rights <b>literacy</b> and build public awareness of the safeguards people already have; <b>(9)</b> it backs the work of <b class="hlb">non-governmental organisations (NGOs)</b> active in the human-rights space; and <b>(10)</b> a catch-all clause lets it take on <b>whatever other functions</b> it judges necessary for advancing human rights.</p>
+  <div class="te">జాబితా కొనసాగింపు — <b>(6)</b> human rights <b>treaties, ఇతర international instruments</b> study చేసి, వాటి effective అమలు కోసం recommendations ఇవ్వడం; <b>(7)</b> human rights రంగంలో <b>research</b> చేపట్టడం, ప్రోత్సహించడం; <b>(8)</b> ప్రజల్లో human rights <b>literacy</b> పెంచడం, రక్షణ కోసం అందుబాటులో ఉన్న safeguards గురించి awareness ప్రోత్సహించడం; <b>(9)</b> human rights రంగంలో పనిచేసే <b class="hlb">NGOs</b> ప్రయత్నాలను ప్రోత్సహించడం; <b>(10)</b> human rights ప్రమోషన్ కోసం అవసరమని భావించే <b>ఇతర functions</b> ఏవైనా చేపట్టడం — ఇది residuary, catch-all function.</div>
+
+  <p class="eng">On the ground, the commission tries to bring justice closer to victims by holding <b>camp sittings and open hearings</b> in different parts of the country — an effort that draws active backing from civil society groups, NGOs, human-rights activists and the press. The complaint categories it deals with are wide-ranging: deaths in custody, torture, staged ("fake") encounters, high-handed policing, abuses by security forces, poor prison conditions, cruelty toward women, children and other vulnerable groups, communal clashes, bonded and child labour, withheld retirement benefits, and mistreatment of Scheduled Castes and Scheduled Tribes, among other issues. Beyond complaints it actually receives, the commission has also acted <b class="term">suo motu</b> — on its own initiative — after seeing media coverage of such incidents, and in response to deaths occurring in police custody, judicial custody, and the custody of the defence or paramilitary forces.</p>
+  <div class="te">ఆచరణలో, commission దేశంలోని వివిధ ప్రాంతాల్లో <b>camp sittings, open hearings</b> నిర్వహిస్తూ, human rights violations బాధితుల దగ్గరకే justice తీసుకెళ్తూ, civil society, NGOs, human rights activists, media మద్దతుతో awareness ను actively ప్రోత్సహిస్తోంది. దీనికి అందే complaints చాలా విస్తృతమైనవి — custodial deaths, torture, fake encounters, police highhandedness, security forces వల్ల violations, jail conditions, మహిళలు/పిల్లలు/ఇతర vulnerable sections పై atrocities, communal violence, bonded/child labour, retiral benefits చెల్లించకపోవడం, SC/ST లపై atrocities వంటివి. Police, judicial, defence/paramilitary custody లో జరిగిన deaths పైన, media reports ఆధారంగా అనేక సంఘటనలపైనా commission <b class="term">suo motu cognizance</b> తీసుకుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Functions 6-10 &amp; Practice</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Function 10, in short?</td><td>Residuary — any other function it considers necessary</td></tr>
+      <tr><td>Practical outreach tools used?</td><td>Camp sittings and open hearings across the country</td></tr>
+      <tr><td>Example complaint categories received?</td><td>Custodial deaths, torture, fake encounters, communal violence, SC/ST atrocities, etc.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Working &amp; Powers — Civil Court Powers, Limitation, Steps After Inquiry</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Working — Headquarters, Procedure and Civil Court Powers</div>
+  <p class="eng">Based out of <b class="hlp">Delhi</b>, the commission is free to open additional offices elsewhere in the country if it needs to, and it sets its own procedural rules rather than following someone else's. What really gives it teeth is this: for purposes of inquiry, it functions with <b class="imp">the same powers as a civil court</b>, and its hearings carry a genuinely <b class="term">judicial character</b>. That power extends to demanding information or reports — from the Union government, from any state government, or from bodies answerable to either — on whatever matter is currently under its scanner.</p>
+  <div class="te">Commission headquarters <b class="hlp">Delhi</b> లో ఉంది; India లో ఇతర ప్రాంతాల్లో కూడా offices ఏర్పాటు చేసుకోవచ్చు. దీనికి తన <b>సొంత procedure</b> ను regulate చేసుకునే అధికారం ఉంది. ముఖ్యంగా, దీనికి <b class="imp">ఒక civil court కు ఉండే అన్ని అధికారాలు</b> ఉంటాయి, దీని proceedings <b class="term">judicial character</b> కలిగినవి. తను పరిశీలిస్తున్న ఏ విషయం గురించైనా, Central, state governments నుండి లేదా వాటి subordinate authorities నుండి information/reports కోరవచ్చు.</div>
+
+  <p class="eng">For actually investigating complaints, the commission keeps a small core team of its own — but when that isn't enough, it can also draw on officers or investigative agencies belonging to the Union or any state government to help with a particular case. On top of its own machinery and borrowed government resources, it has built working relationships with NGOs, who often bring ground-level, first-hand knowledge of what's really happening in a given human-rights case.</p>
+  <div class="te">Commission human rights violations complaints ను చూసేందుకు తనదైన <b>investigating staff</b> ను కలిగి ఉంటుంది. దీనికి అదనంగా, అదే ప్రయోజనం కోసం Central government లేదా ఏదైనా state government officer/investigation agency సేవలు కూడా <b>వినియోగించుకునే</b> అధికారం దీనికి ఉంది. క్షేత్రస్థాయిలో human rights violations గురించి first-hand సమాచారం ఉన్న NGOs తో కూడా ఇది సమర్థవంతమైన సహకారం పెంచుకుంది.</div>
+
+  <p class="eng">There's also a built-in time limit on how far back the commission can look: once <b class="hlg">one year</b> has passed since the date of the incident said to have violated someone's human rights, the commission simply loses the power to inquire into it at all. Practically speaking, this means a complaint only gets taken up if the underlying event happened within the last twelve months.</p>
+  <div class="te">Commission inquiry అధికారం మీద ఒక ముఖ్యమైన <b class="imp">limitation period</b> ఉంది — human rights violation జరిగిందని ఆరోపించే act జరిగిన తేదీ నుండి <b class="hlg">ఒక సంవత్సరం</b> గడిచిన తర్వాత, ఆ మేటర్ ను inquire చేసే అధికారం commission కు <b>ఉండదు</b>. అంటే, complaint దాని జరిగిన తేదీ నుండి ఒక సంవత్సరం లోపు ఉంటేనే commission దాన్ని తీసుకోగలదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Working &amp; Investigation</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Where is NHRC headquartered?</td><td>Delhi (can open offices elsewhere too)</td></tr>
+      <tr><td>Character of NHRC's inquiry powers?</td><td>All powers of a civil court; proceedings have judicial character</td></tr>
+      <tr><td>What is the limitation period?</td><td>1 year from the date of the alleged violation</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Four Steps the Commission May Take During/After an Inquiry</div>
+  <p class="eng">Once an inquiry is underway or wrapped up, the commission has <b class="hlg">four</b> possible moves available to it. <b>(1)</b> It can urge the relevant government or authority to pay the victim <b>compensation or damages</b>. <b>(2)</b> It can push for <b>prosecution</b> — or some other action — to be launched against whichever public servant is found at fault. <b>(3)</b> It can press for <b>immediate interim relief</b> to reach the victim without waiting for the full process to conclude. <b>(4)</b> And it can go straight to the <b>Supreme Court or the relevant High Court</b>, seeking whatever directions, orders or writs the situation calls for. Worth noticing: the first three routes are all framed as the commission asking someone else to act — only in option (4) does the commission itself walk into court.</p>
+  <div class="te">Inquiry సమయంలో లేదా పూర్తయిన తర్వాత, commission ఈ <b class="hlg">నాలుగు</b> చర్యల్లో ఏదైనా తీసుకోగలదు — <b>(1)</b> బాధితుడికి <b>compensation లేదా damages</b> చెల్లించమని సంబంధిత ప్రభుత్వం/అథారిటీ కి సిఫారసు చేయడం; <b>(2)</b> దోషి public servant పై <b>prosecution proceedings</b> లేదా ఇతర చర్య మొదలుపెట్టమని సంబంధిత ప్రభుత్వం/అథారిటీ కి సిఫారసు చేయడం; <b>(3)</b> బాధితుడికి <b>immediate interim relief</b> ఇవ్వమని సంబంధిత ప్రభుత్వం/అథారిటీ కి సిఫారసు చేయడం; <b>(4)</b> అవసరమైన directions/orders/writs కోసం <b>Supreme Court లేదా సంబంధిత High Court</b> ను approach కావడం. గమనించండి — వీటిలో మొదటి మూడూ <b class="imp">సిఫారసు</b> రూపంలోనే ఉన్నాయి — compensation ను commission తానే చెల్లించదు, ఎవరినీ తానే prosecute చేయదు; step (4) లో మాత్రమే commission నేరుగా court ను approach అవుతుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — 4 Steps After Inquiry</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>4 steps, in order?</td><td>Recommend compensation → recommend prosecution → recommend interim relief → approach SC/HC</td></tr>
+      <tr><td>Which of these is NOT phrased as a "recommendation"?</td><td>Only step 4 — directly approaching SC/HC</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Role — Recommendatory, NOT Binding (the Key Exam Trap) · Armed Forces</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">Role — Recommendatory in Nature, NOT Binding</div>
+  <p class="eng">Step back and look at everything covered on the previous page, and one pattern stands out: at bottom, this is a body built to <b class="imp">advise, not to enforce</b>. There is no mechanism here by which it can <b class="imp">punish</b> a rights-violator itself, and no mechanism by which it can <b class="imp">hand a victim any relief</b> — monetary or otherwise — on its own authority. The single fact worth burning into memory for the exam: whatever this commission recommends, the <b class="imp">government or authority is not bound to accept it</b>. This is arguably the single most commonly mis-answered fact about the NHRC — many students, on first encountering the civil-court-powers language, wrongly assume the NHRC's orders are enforceable like a court's judgment. They are not; only its power to <b>summon and inquire</b> is court-like, its power to give <b>relief</b> is not.</p>
+  <div class="te">మునుపటి పేజీలో చెప్పినవన్నీ కలిపి చూస్తే, commission functions <b class="imp">ప్రధానంగా recommendatory స్వభావం</b> కలిగినవని స్పష్టమవుతుంది. Human rights violators ను <b class="imp">శిక్షించే అధికారం</b> commission కు లేదు, బాధితుడికి <b class="imp">నేరుగా (monetary తో సహా) ఏ relief</b> award చేసే అధికారం కూడా లేదు. Exam పరంగా అతి ముఖ్యమైనది — దీని <b class="imp">recommendations ప్రభుత్వం/అథారిటీ మీద binding కావు</b>. ఇదే బహుశా NHRC గురించి అత్యంత తరచుగా తప్పుగా answer చేసే fact — civil-court-powers భాష చూసిన వెంటనే, చాలామంది విద్యార్థులు NHRC orders కూడా ఒక court judgment లాగే enforceable అని తప్పుగా అనుకుంటారు. కాదు — దీని <b>summon, inquire</b> power మాత్రమే court లాంటిది, <b>relief</b> ఇచ్చే power court లాంటిది కాదు.</div>
+
+  <p class="eng">That said, the commission is not entirely toothless in practice: whatever recommendations it makes, the concerned government or authority <b class="imp">must inform it about the action taken</b> on those recommendations within <b class="hlg">one month</b>. A former member of the commission summarised the practical reality this way: government "<b>cannot wash away</b>" the commission's recommendations — even though the role is recommendatory, no government can simply ignore what the NHRC forwards to it, so the commission does carry real, if informal, weight despite lacking formal enforcement power.</p>
+  <div class="te">అయినా, ఆచరణలో commission పూర్తిగా నిస్సహాయం కాదు — commission చేసిన సిఫారసుల మీద, సంబంధిత ప్రభుత్వం/అథారిటీ <b class="imp">ఒక నెల లోపు తీసుకున్న చర్య</b> గురించి commission కు తెలియజేయాలి. Commission మాజీ member ఒకరు practical reality ను ఇలా క్లుప్తంగా చెప్పారు — ప్రభుత్వం commission సిఫారసులను "<b>wash away చేయజాలదు</b>" — role recommendatory అయినా, NHRC forward చేసిన దాన్ని ఏ ప్రభుత్వమూ పూర్తిగా పట్టించుకోకుండా ఉండదని — అంటే formal enforcement power లేకపోయినా, commission కు నిజమైన, informal weight ఉంటుందని అర్థం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Recommendatory, Not Binding</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Can NHRC punish human rights violators?</td><td>No — no power to punish</td></tr>
+      <tr><td>Can NHRC award monetary/other relief directly?</td><td>No — can only recommend it</td></tr>
+      <tr><td>Are NHRC's recommendations binding on govt./authority?</td><td class="imp">No — recommendatory only, not binding</td></tr>
+      <tr><td>What must govt./authority do about a recommendation?</td><td>Inform NHRC of action taken within 1 month</td></tr>
+      <tr><td>Which of NHRC's powers actually IS court-like?</td><td>Its inquiry/summoning power — not its relief-granting power</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Limited Role With Respect to the Armed Forces</div>
+  <p class="eng">One area where the commission's hands are visibly tied is the <b class="hlb">armed forces</b> — defined under the Act to cover the naval, military and air forces, plus any other Union armed force. Here, its reach shrinks considerably: rather than investigating directly, it can only ask the Central government for a report and then base its recommendations on whatever that report contains. Once it does recommend something, the Central government has to report back on the action taken — but the window given here is <b class="hlg">three months</b>, noticeably longer than the <b class="hlg">one month</b> allowed in ordinary cases, which itself signals how much more indirect and constrained the commission's role becomes in this particular domain.</p>
+  <div class="te"><b class="hlb">Armed forces</b> (Act ప్రకారం — naval, military, air forces, ప్లస్ Union కు చెందిన ఇతర ఏ armed forces అయినా) సభ్యుల వల్ల జరిగే human rights violations విషయంలో commission కు <b class="imp">పరిమిత role, powers, jurisdiction</b> మాత్రమే ఉన్నాయి. ఈ రంగంలో, commission Central government నుండి <b>report కోరి</b> ఆ ఆధారంగా మాత్రమే recommendations చేయగలదు — ఇతర రంగాల్లో ఉన్నంత direct investigative reach దీనికి ఇక్కడ లేదు. తన సిఫారసుల మీద తీసుకున్న చర్య గురించి, Central government <b class="hlg">మూడు నెలల్లో</b> commission కు తెలియజేయాలి — సాధారణ కేసుల్లో వర్తించే ఒక-నెల విండో కంటే ఇది <b>ఎక్కువ</b> — ఇది ఈ ప్రత్యేక రంగంలో commission role మరింత పరిమితం, indirect గా ఉందని చూపిస్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Armed Forces</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>NHRC's role re: armed forces human rights violations?</td><td>Limited — can only seek report from Central govt. and recommend</td></tr>
+      <tr><td>Reporting window here vs the general rule?</td><td>3 months here, vs 1 month for ordinary cases</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Reports · Problems (Administrative/Financial/Manpower) · Chapter Facts at a Glance</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Annual and Special Reports</div>
+  <p class="eng">Once a year — or whenever a special report is warranted — the commission sends its findings both to the Union government and to whichever state government the matter concerns. Those reports don't stop at the executive: they get tabled before the relevant legislature, accompanied by a <b>memorandum of action taken</b> on each recommendation, and, tellingly, an explanation wherever a recommendation was turned down. In other words, even a rejected recommendation has to be justified on the legislative record — a real accountability check, even though nothing here is legally binding.</p>
+  <div class="te">Commission తన <b>annual</b> లేదా <b>special reports</b> ను Central government కు, సంబంధిత state government కు submit చేస్తుంది. ఈ reports సంబంధిత legislatures ముందు, commission సిఫారసుల మీద తీసుకున్న <b>action-taken memorandum</b> తో పాటు, ఏవైనా సిఫారసులను accept చేయకపోతే వాటి కారణాలతో సహా, ఉంచబడతాయి — అంటే, తిరస్కరించిన సిఫారసు అయినా legislature ముందు కారణంతో సహా వివరించాలి — సిఫారసులు చట్టపరంగా binding కాకపోయినా, public accountability కు ఇది ఒక అదనపు పొర.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Reports</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Reports submitted to whom?</td><td>Central government and the concerned state government</td></tr>
+      <tr><td>What accompanies the report before the legislature?</td><td>Action-taken memorandum + reasons for any non-acceptance</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Problems — Administrative, Financial and Manpower Constraints</div>
+  <p class="eng">The commission itself has identified three broad categories of problems affecting its effective functioning. <b>(1)</b> <b class="term">Administrative constraints</b>: the commission is expected to comply with the <b class="hlb">Paris Principles</b>, which call for adequate funding and staff so that a national human rights institution can function independently of government financial control. With the commission handling roughly <b class="hlg">one lakh complaints</b> every year, it has called for greater devolution of administrative and financial powers to its Chairperson. <b>(2)</b> <b class="term">Financial constraints</b>: the commission's money comes as annual grants-in-aid released by the Ministry of Home Affairs, and while it can spend that grant as it sees fit on its functions, it lacks financial autonomy for some specific items — for instance, it does not have delegated authority to purchase vehicles on its own. <b>(3)</b> <b class="term">Manpower constraints</b>: the commission has never had its full sanctioned staff strength since inception, forcing it to rely on retired government officers engaged as consultants on a contract basis; its <b>Law Division</b>, described as the backbone of the commission for handling complaints, has also struggled with staff shortages.</p>
+  <div class="te">Commission తన effective పనితీరుకు అడ్డుపడే మూడు విస్తృత problem categories ను తానే గుర్తించింది. <b>(1)</b> <b class="term">Administrative constraints</b>: ఒక national human rights institution ప్రభుత్వ financial control నుండి స్వతంత్రంగా పనిచేయాలంటే adequate funding, staff అవసరమని చెప్పే <b class="hlb">Paris Principles</b> ను commission compliant గా ఉండాలని భావిస్తారు. ఏటా దాదాపు <b class="hlg">1 లక్ష complaints</b> handle చేస్తున్న commission, తన Chairperson కు ఎక్కువ administrative, financial powers devolve చేయాలని కోరింది. <b>(2)</b> <b class="term">Financial constraints</b>: commission కు ఏటా Ministry of Home Affairs నుండి grants-in-aid వస్తాయి; ఆ grant పరిధిలో తన functions కోసం అవసరమైనట్టుగా ఖర్చు చేయగలిగినా, కొన్ని ప్రత్యేక అంశాల్లో financial autonomy లేదు — ఉదాహరణకు, vehicles కొనుగోలు చేసే అధికారం దీనికి ఇప్పటివరకూ delegate చేయబడలేదు. <b>(3)</b> <b class="term">Manpower constraints</b>: commission తన స్థాపన నుండి ఎప్పుడూ పూర్తి sanctioned staff strength కలిగి లేదు — దీనివల్ల retired government officers ను contract మీద consultants గా తీసుకోవాల్సి వస్తోంది; complaints handle చేయడంలో commission కు వెన్నెముక వంటి <b>Law Division</b> కూడా staff shortage తో ఇబ్బంది పడుతోంది.</div>
+
+  <p class="eng">Matters reached the judiciary too: in <b class="hlg">2017</b>, the <b class="hlp">Supreme Court</b> flagged how badly understaffed the commission had become and told the Government of India to sit up, take the problem seriously, and fix it soon, in good faith — a rare instance of the judiciary stepping in to prod the executive on the NHRC's own institutional capacity.</p>
+  <div class="te"><b class="hlg">2017</b> లో, <b class="hlp">Supreme Court</b> commission లో manpower shortage పై తన ఆందోళన వ్యక్తం చేసి, ఈ ఆందోళనలను గమనించి, వీలైనంత త్వరగా, positive outlook తో పరిష్కరించాలని Government of India ను directed చేసింది — NHRC సొంత institutional capacity గురించి judiciary executive ను prod చేసిన అరుదైన సందర్భం ఇది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Problems</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>3 broad problem categories?</td><td>Administrative, Financial, Manpower constraints</td></tr>
+      <tr><td>Principles NHRC is expected to comply with?</td><td>Paris Principles (adequate funding/staff for independence)</td></tr>
+      <tr><td>Rough annual complaint volume?</td><td>~1 lakh complaints/year</td></tr>
+      <tr><td>Financial autonomy gap, example?</td><td>No delegated power to purchase vehicles</td></tr>
+      <tr><td>2017 development?</td><td>SC flagged manpower shortage, directed Govt. of India to remedy it</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Chapter 57 — Facts at a Glance</div>
+  <table>
+    <caption>National Human Rights Commission — key facts, one table</caption>
+    <thead><tr><th style="width:34%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Governing Act</td><td>Protection of Human Rights Act, 1993 (amended 2006, 2019)</td></tr>
+      <tr><td>Nature of body</td><td>Statutory — NOT constitutional</td></tr>
+      <tr><td>Composition</td><td>Chairperson + 5 members + 7 ex-officio members = 13</td></tr>
+      <tr><td>Chairperson qualification</td><td>Retired CJI OR retired SC judge (post-2019)</td></tr>
+      <tr><td>Appointment</td><td>President, on recommendation of 6-member committee (PM heads it)</td></tr>
+      <tr><td>Tenure</td><td>3 years or age 70, whichever earlier (post-2019; was 5 years)</td></tr>
+      <tr><td>Removal — 5 direct grounds</td><td>Insolvency, outside job, infirmity, unsound mind, conviction</td></tr>
+      <tr><td>Removal — misbehaviour/incapacity</td><td>Via SC reference and inquiry only</td></tr>
+      <tr><td>Powers</td><td>All powers of a civil court; judicial-character proceedings</td></tr>
+      <tr><td>Limitation period</td><td>1 year from date of alleged violation</td></tr>
+      <tr><td>Nature of recommendations</td><td class="imp">Recommendatory — NOT binding</td></tr>
+      <tr><td>Action-taken report window</td><td>1 month (general); 3 months (armed forces)</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలాలు — Protection of Human Rights Act, 1993; Protection of Human Rights (Amendment) Act, 2006 &amp; 2019; NHRC Annual Report 2019–20.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Present NHRC Chairperson &amp; Recent Composition <span class="caasof">(as of 25.08.2026, verified via live web search on this date — re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>1. Current Chairperson — Justice V. Ramasubramanian:</b> The current Chairperson of the NHRC is <b class="hlp">Justice V. Ramasubramanian</b>, a former judge of the Supreme Court of India (he retired from the SC on 29 June 2023, having authored over 100 judgments during his tenure). He was appointed by the <b class="hlp">President</b> on <b class="hlg">21 December 2024</b>, on the recommendation of the 6-member committee described in this chapter, and formally <b>assumed charge</b> as NHRC Chairperson on <b class="hlg">30 December 2024</b>. His appointment is itself a continuing illustration of the 2019 Amendment's chairperson-qualification change covered earlier in this chapter — he was appointed as a <b>former Supreme Court judge</b>, not as a former CJI.</p>
+    <div class="te"><b>1. ప్రస్తుత Chairperson — Justice V. Ramasubramanian:</b> NHRC ప్రస్తుత Chairperson <b class="hlp">Justice V. Ramasubramanian</b> — వీరు Supreme Court మాజీ judge (2023 జూన్ 29న SC నుండి రిటైర్ అయ్యారు, తన tenure లో 100కు పైగా judgments రాశారు). వీరిని <b class="hlp">President</b> <b class="hlg">2024 డిసెంబర్ 21</b>న, ఈ chapter లో వివరించిన 6-member committee సిఫారసు మీద appoint చేశారు, <b class="hlg">2024 డిసెంబర్ 30</b>న అధికారికంగా NHRC Chairperson గా <b>బాధ్యతలు స్వీకరించారు</b>. వీరి నియామకం, ఈ chapter లో ముందు చెప్పిన 2019 Amendment చైర్‌పర్సన్-qualification మార్పుకు కొనసాగుతున్న ఉదాహరణ — వీరిని మాజీ CJI గా కాక, <b>మాజీ Supreme Court judge</b> గానే appoint చేశారు.</div>
+
+    <p class="eng"><b>2. Predecessor and the vacancy period:</b> Justice Ramasubramanian succeeded <b class="hlp">Justice (Retd.) Arun Kumar Mishra</b>, the eighth NHRC chairperson (notable, as covered earlier, as the first non-CJI to hold the post following the 2019 Amendment), whose three-year term ended on <b class="hlg">1 June 2024</b> — itself a real-world confirmation of the post-2019 three-year tenure rule. The chairperson's post then remained vacant for several months, during which <b class="hlp">Smt. Vijaya Bharathi Sayani</b>, a Member of the Commission, served as Acting Chairperson, until Justice Ramasubramanian's appointment at the end of December 2024.</p>
+    <div class="te"><b>2. మాజీ Chairperson, ఖాళీ period:</b> Justice Ramasubramanian కు ముందు <b class="hlp">Justice (Retd.) Arun Kumar Mishra</b> NHRC 8వ chairperson గా ఉన్నారు (ముందు చెప్పినట్టుగా, 2019 Amendment తర్వాత ఈ పదవిలో ఉన్న మొదటి non-CJI గా వీరు గుర్తింపు పొందారు) — వీరి మూడు-సంవత్సరాల term <b class="hlg">2024 జూన్ 1</b>న ముగిసింది — ఇది 2019-తర్వాతి మూడు-సంవత్సరాల tenure rule కు వాస్తవ ప్రపంచ నిర్ధారణ. ఆ తర్వాత chairperson పదవి కొన్ని నెలలు ఖాళీగా ఉంది — ఆ సమయంలో Commission Member <b class="hlp">Smt. Vijaya Bharathi Sayani</b>, Justice Ramasubramanian 2024 డిసెంబర్ చివర్లో నియామకమయ్యే వరకు, Acting Chairperson గా వ్యవహరించారు.</div>
+
+    <p class="eng"><b>3. Confirming NHRC's own real-world pattern on the chairperson rule:</b> Taken together, both of the two most recent chairpersons — Justice Arun Kumar Mishra (2021-2024) and Justice V. Ramasubramanian (2024-present) — were appointed as <b>former Supreme Court judges who had never served as CJI</b>, not as former Chief Justices of India. This is strong current-affairs confirmation of the exact point this chapter flags as the key 2019-Amendment change and the most-tested fact in this topic: post-2019, being a former CJI is <b class="imp">no longer a requirement</b> for the NHRC chairperson's post, only one of two qualifying routes.</p>
+    <div class="te"><b>3. Chairperson rule పై NHRC సొంత వాస్తవ-ప్రపంచ pattern నిర్ధారణ:</b> ఇటీవలి ఇద్దరు chairpersons — Justice Arun Kumar Mishra (2021-2024), Justice V. Ramasubramanian (2024-present) — ఇద్దరూ CJI గా ఎప్పుడూ పనిచేయని <b>మాజీ Supreme Court judges</b> గానే నియమితులయ్యారు, మాజీ Chief Justices of India గా కాదు. ఈ chapter 2019-Amendment కీలక మార్పుగా, ఈ topic లో అత్యంత తరచుగా అడిగే fact గా గుర్తించిన అంశానికి ఇది బలమైన current-affairs నిర్ధారణ — 2019 తర్వాత, మాజీ CJI అవడం NHRC chairperson పదవికి <b class="imp">ఇక తప్పనిసరి అవసరం కాదు</b>, ఇది కేవలం రెండు qualifying routes లో ఒకటి మాత్రమే.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — Recent NHRC Chairperson Succession, 2021-26</caption>
+      <thead><tr><th style="width:22%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">2021</td><td>Justice (Retd.) Arun Kumar Mishra appointed NHRC chairperson — first non-CJI to hold the post (post-2019 Amendment)</td></tr>
+        <tr><td class="hlg">1 Jun 2024</td><td>Justice Mishra's 3-year term ends; post falls vacant</td></tr>
+        <tr><td class="hlg">Jun–Dec 2024</td><td>Smt. Vijaya Bharathi Sayani (Member) serves as Acting Chairperson</td></tr>
+        <tr><td class="hlg">21 Dec 2024</td><td>President appoints Justice V. Ramasubramanian (former SC judge) as Chairperson</td></tr>
+        <tr><td class="hlg">30 Dec 2024</td><td>Justice V. Ramasubramanian formally assumes charge as NHRC Chairperson</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: cite the Protection of Human Rights Act, 1993 (as amended in 2019) as the stable statutory core — composition, tenure, removal, recommendatory-not-binding nature. For current affairs, be ready for the specific name "Justice V. Ramasubramanian" as the sitting chairperson, and for MCQs testing whether students know that the chairperson need not be a former CJI post-2019 — exactly the kind of evolving-but-now-repeatedly-confirmed fact the Rulebook flags as needing re-verification before each exam cycle. (Re-checked live on 25.08.2026 against NHRC's own site and independent news sources — no change since the 17.08.2026 check.)</p>
+    <div class="te">Exam కోసం — composition, tenure, removal, recommendatory-not-binding స్వభావం కోసం Protection of Human Rights Act, 1993 (2019 amendment తో సహా) ను స్థిరమైన statutory core గా ఉదహరించండి. Current affairs కోసం — ప్రస్తుత sitting chairperson పేరు "Justice V. Ramasubramanian" గా గుర్తుంచుకోండి, 2019 తర్వాత chairperson మాజీ CJI అయి ఉండాల్సిన అవసరం లేదని విద్యార్థులకు తెలుసా అని పరీక్షించే MCQs కు సిద్ధంగా ఉండండి — ఇది సరిగ్గా ప్రతి exam cycle ముందూ re-verify చేయాల్సిన, ఇప్పటికే పదేపదే నిర్ధారించబడిన evolving fact గా Rulebook సూచించింది.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 57 — National Human Rights Commission · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.58 — State Human Rights Commission</span><span class="dpart">Part VIII &middot; Book 1 of 3</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

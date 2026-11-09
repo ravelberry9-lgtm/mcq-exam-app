@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part II — Complete Study Notes — Full-Depth Bilingual Notes, Print Edition (No WHY-Boxes)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  .why{background:#fff8ec;border:1px solid #e8c98a;border-left:4px solid #c98a2c;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .why .whytitle{font-weight:700;color:#8a5a12;margin-bottom:6px;font-size:14.3px}
+  .why p.eng{margin:6px 0 3px}
+  .why .te{margin:3px 0 10px}
+  .why .whyq{font-weight:700;color:#132a52}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 13 — Parliamentary System</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Full-Depth Bilingual Study Notes</div>
+<div class="para">
+<div class="ptitle">Introduction — Basis of Classification</div>
+<p class="eng">Modern democratic governments are usually sorted into two broad families — <b>parliamentary</b> and <b>presidential</b> — and the sorting test is not about who holds elections or how many houses of legislature exist, but about one specific relationship: <b>how the executive relates to the legislature</b>. In a <span class="term">parliamentary system</span>, the executive (the council of ministers) <b>is responsible</b> to the legislature for every policy and act it takes — it can be questioned, criticised, and ultimately removed by the legislature. In a <span class="term">presidential system</span>, the executive is <b>not responsible</b> to the legislature in this way, and is <b>constitutionally independent</b> of it as far as its term of office is concerned — the legislature cannot vote it out mid-term simply because it disagrees with its policies.</p>
+<div class="te">ఆధునిక ప్రజాస్వామ్య ప్రభుత్వాలను సాధారణంగా రెండు రకాలుగా — <b>పార్లమెంటరీ</b>, <b>ప్రెసిడెన్షియల్</b> — వర్గీకరిస్తారు. ఈ వర్గీకరణకు కొలమానం ఎన్నికలు ఎలా జరుగుతాయి అనేది కాదు, <b>executive-legislature సంబంధం</b> ఎలా ఉంది అనేదే. <span class="term">పార్లమెంటరీ వ్యవస్థ</span>లో executive (council of ministers) తను తీసుకునే ప్రతి నిర్ణయానికీ legislature కి <b>జవాబుదారీగా</b> ఉంటుంది — legislature దాన్ని ప్రశ్నించగలదు, విమర్శించగలదు, చివరికి తొలగించగలదు కూడా. <span class="term">ప్రెసిడెన్షియల్ వ్యవస్థ</span>లో executive legislature కి ఈ విధంగా జవాబుదారీ కాదు, తన term విషయంలో రాజ్యాంగపరంగా legislature నుండి <b>స్వతంత్రంగా</b> ఉంటుంది — కేవలం విధానాలు నచ్చలేదని legislature మధ్యలో దాన్ని తొలగించలేరు.</div>
+<p class="eng">India provides for a parliamentary form of government at <b>both levels</b> — at the Centre and in the states — and the Constitution says so explicitly rather than leaving it to convention: <span class="hlg">Articles 74 and 75</span> lay down the parliamentary executive at the Union level (President, PM, Council of Ministers), while <span class="hlg">Articles 163 and 164</span> lay down the parallel structure for each state (Governor, Chief Minister, state Council of Ministers). This dual-level design — the same model repeated for the Centre and for every state — is one reason the parliamentary system runs so deep in how Indian government actually functions, from Delhi down to every state capital.</p>
+<div class="te">భారతదేశం <b>కేంద్రంలో, రాష్ట్రాల్లో రెండు స్థాయిల్లోనూ</b> పార్లమెంటరీ తరహా ప్రభుత్వాన్ని ఏర్పాటు చేసింది — దీన్ని రాజ్యాంగం స్పష్టంగా పేర్కొంటుంది, ఒక సంప్రదాయంగా వదిలేయలేదు: <span class="hlg">Art. 74, 75</span> కేంద్ర స్థాయిలో (President, PM, Council of Ministers) పార్లమెంటరీ executive ను నిర్దేశిస్తాయి, <span class="hlg">Art. 163, 164</span> ప్రతి రాష్ట్రంలో దీనికి సమాంతరమైన నిర్మాణాన్ని (Governor, Chief Minister, రాష్ట్ర Council of Ministers) నిర్దేశిస్తాయి. కేంద్రం నుండి ప్రతి రాష్ట్ర రాజధాని వరకూ ఇదే మోడల్ పునరావృతం కావడం వల్లే పార్లమెంటరీ వ్యవస్థ భారత ప్రభుత్వ నిర్మాణంలో ఇంత లోతుగా వేళ్లూనుకుంది.</div>
+</div>
+<div class="para">
+<div class="stitle">Other Names for the Parliamentary System</div>
+<p class="eng">The parliamentary system carries several alternative names, and each name captures a different real feature of the same system rather than being an arbitrary label. It is called <b>Cabinet Government</b> because — as <span class="hlp">Ivor Jennings</span> put it — the cabinet is the <b class="imp">nucleus of power</b>: real decisions are made and coordinated in cabinet, not scattered across individual ministers acting alone. It is called <b>Responsible Government</b> because the cabinet (the real executive) is accountable to Parliament and survives in office only for as long as it retains Parliament's confidence — the moment that confidence is lost, the cabinet must go. And it is called the <b>Westminster Model</b> simply after the location of the British Parliament, Westminster, where this system of government first originated and from which it spread to Britain's former colonies, India included.</p>
+<div class="te">పార్లమెంటరీ వ్యవస్థకు అనేక ప్రత్యామ్నాయ పేర్లు ఉన్నాయి — ఒక్కో పేరు ఈ వ్యవస్థలోని ఒక్కో వాస్తవ లక్షణాన్ని సూచిస్తుంది, ఇవి అర్థంలేని లేబుళ్లు కావు. దీన్ని <b>Cabinet Government</b> అంటారు — ఎందుకంటే <span class="hlp">Ivor Jennings</span> చెప్పినట్టు, cabinet ఇందులో <b class="imp">అధికార కేంద్రం</b>: నిజమైన నిర్ణయాలు cabinet లో తీసుకోబడతాయి, coordinate చేయబడతాయి — వాటిని విడివిడి మంత్రులు ఒంటరిగా తీసుకోరు. దీన్ని <b>Responsible Government</b> అంటారు — ఎందుకంటే cabinet (వాస్తవ executive) పార్లమెంట్‌కు జవాబుదారీగా ఉంటుంది, పార్లమెంట్ నమ్మకం ఉన్నంతకాలమే అధికారంలో కొనసాగుతుంది — ఆ నమ్మకం పోయిన క్షణమే cabinet దిగిపోవాలి. దీన్ని <b>Westminster Model</b> అని కూడా అంటారు — బ్రిటిష్ పార్లమెంట్ ఉన్న ప్రదేశం (Westminster) పేరు మీద — ఈ వ్యవస్థ మొదట అక్కడే పుట్టింది, తర్వాత బ్రిటిష్ వలస దేశాలకు (భారత్‌తో సహా) వ్యాపించింది.</div>
+<p class="eng">This model is currently found in countries like <b>Britain, Japan, Canada, and India</b>. Its opposite, the presidential system, goes by different names precisely because it lacks the feature that gives the parliamentary system its names — it is called <b>Non-Responsible Government</b> (the executive is not answerable to the legislature the way a parliamentary cabinet is), <b>Non-Parliamentary Government</b>, or a <b>Fixed Executive System</b> (the executive's term is fixed and does not depend on legislative confidence). It is found in countries like <b>USA, Brazil, Russia, and Sri Lanka</b>.</p>
+<div class="te">ఈ మోడల్ ప్రస్తుతం <b>బ్రిటన్, జపాన్, కెనడా, భారత్</b> వంటి దేశాల్లో కనిపిస్తుంది. దీనికి వ్యతిరేకమైన ప్రెసిడెన్షియల్ వ్యవస్థకు వేరే పేర్లు ఉండటానికి కారణం — పార్లమెంటరీ వ్యవస్థకు పేర్లు తెచ్చిపెట్టిన లక్షణమే దీనికి లేకపోవడం: దీన్ని <b>Non-Responsible Government</b> (executive legislature కి పార్లమెంటరీ cabinet లా జవాబుదారీ కాదు), <b>Non-Parliamentary Government</b>, లేదా <b>Fixed Executive System</b> (executive term నిర్ణీతం, legislature నమ్మకంపై ఆధారపడదు) అని పిలుస్తారు. ఇది <b>అమెరికా, బ్రెజిల్, రష్యా, శ్రీలంక</b> వంటి దేశాల్లో కనిపిస్తుంది.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — Basis of Classification &amp; Other Names</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>What is the classification test?</td><td>Whether the executive is responsible to the legislature (parliamentary) or constitutionally independent of it for its term (presidential)</td></tr>
+<tr><td>Which Articles govern this in India?</td><td>Art. 74, 75 — Centre; Art. 163, 164 — states</td></tr>
+<tr><td>Why "Cabinet Government"?</td><td>The cabinet is the nucleus of power (Jennings)</td></tr>
+<tr><td>Why "Westminster Model"?</td><td>Named after the location of the British Parliament, where the system originated</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Ivor Jennings &amp; the "Prime Ministerial Government" Thesis</div>
+<div class="para">
+<div class="stitle">From "Primus Inter Pares" to "Prime Ministerial Government"</div>
+<p class="eng">How power is actually distributed inside a parliamentary cabinet has itself changed over time, and this shift has its own name in the literature. In earlier decades, British constitutional experts described the Prime Minister as <span class="hlb">'primus inter pares'</span> — <b>"first among equals"</b> — in relation to the rest of the cabinet. The idea was that the PM was one member of a genuinely collective decision-making body, formally senior but not fundamentally different in kind from any other cabinet minister; decisions were supposed to emerge from cabinet discussion, not from the PM alone.</p>
+<div class="te">పార్లమెంటరీ cabinet లోపల అధికారం ఎలా పంపిణీ అవుతుందో అనేది కూడా కాలంతో పాటు మారింది, దీనికి సాహిత్యంలో దాని సొంత పేరు ఉంది. మునుపటి దశాబ్దాల్లో బ్రిటిష్ రాజ్యాంగ నిపుణులు Prime Minister ను cabinet లోని మిగతా సభ్యులతో పోలిస్తే <span class="hlb">'primus inter pares'</span> — <b>"సమానుల్లో మొదటివారు"</b> — అని వర్ణించేవారు. PM నిజమైన సమష్టి నిర్ణయాత్మక సంస్థలో ఒక సభ్యుడు మాత్రమే, హోదాలో పెద్దవాడే కానీ మిగతా cabinet మంత్రుల కంటే మౌలికంగా వేరు కాదు అనేదే ఈ భావన — నిర్ణయాలు cabinet చర్చ నుండి రావాలి, PM ఒక్కరి నుండి కాదు అన్నదే ఆలోచన.</div>
+<p class="eng">In recent decades, the Prime Minister's power, influence, and position have grown significantly relative to the rest of the cabinet — the PM has come to play a genuinely <b>dominant</b> role in the politico-administrative system rather than a merely "first among equals" one. This shift led later political analysts, notably <b>Crossman and Mackintosh</b>, to describe the British system of government not as "cabinet government" any more but as <b class="imp">"Prime Ministerial Government"</b>. Laxmikanth notes that the same description holds good in the Indian context too — the Indian PM has similarly grown from being a cabinet coordinator into the dominant figure of the executive.</p>
+<div class="te">ఇటీవలి దశాబ్దాల్లో Prime Minister శక్తి, ప్రభావం, స్థానం cabinet లోని మిగతావారితో పోలిస్తే గణనీయంగా పెరిగింది — PM ఇప్పుడు కేవలం "సమానుల్లో మొదటివారు" కాదు, రాజకీయ-పరిపాలనా వ్యవస్థలో నిజంగా <b>ఆధిపత్య</b> పాత్ర పోషిస్తున్నారు. ఈ మార్పు వల్లే తర్వాతి రాజకీయ విశ్లేషకులు, ముఖ్యంగా <b>Crossman, Mackintosh</b>, బ్రిటిష్ ప్రభుత్వ వ్యవస్థను ఇక "cabinet government" అని కాకుండా <b class="imp">"Prime Ministerial Government"</b> అని వర్ణించారు. లక్ష్మీకాంత్ ప్రకారం, ఈ వర్ణన భారత సందర్భంలో కూడా వర్తిస్తుంది — భారత PM కూడా ఇదే విధంగా కేవలం cabinet సమన్వయకర్త స్థాయి నుండి executive లో ఆధిపత్య వ్యక్తిగా ఎదిగారు.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Jennings &amp; the Prime Ministerial Thesis</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>What did Jennings call the parliamentary system?</td><td>"Cabinet system" — cabinet is the nucleus of power</td></tr>
+<tr><td>What was the PM historically called?</td><td>'Primus inter pares' — first among equals</td></tr>
+<tr><td>What do Crossman &amp; Mackintosh call it now?</td><td>"Prime Ministerial Government" — applies to Britain and India both</td></tr>
+<tr><td>Indian PM vs British PM?</td><td>Same source of power (majority + cabinet + House leadership), but Indian PM also has an explicit constitutional anchor (Art. 74) that Britain's PM lacks</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Features of Parliamentary Government — Part 1 (Features 1-4)</div>
+<div class="para">
+<div class="stitle">Features of Parliamentary Government — 8 Points</div>
+<p class="eng">Laxmikanth lists eight defining features of the parliamentary system as it actually operates in India. These are not eight independent, unrelated facts — most of them follow logically from the single core idea in the classification test above: the executive must be answerable to, and drawn from, the legislature. Reading them together as a connected picture, rather than as eight things to memorise in isolation, makes them far easier to retain.</p>
+<div class="te">భారతదేశంలో పార్లమెంటరీ వ్యవస్థ వాస్తవంగా ఎలా పనిచేస్తుందో నిర్వచించే ఎనిమిది ముఖ్య లక్షణాలను లక్ష్మీకాంత్ ఇస్తారు. ఇవి ఎనిమిది వేర్వేరు, సంబంధం లేని విషయాలు కాదు — వీటిలో చాలావరకు పైన చెప్పిన ఒకే మౌలిక సూత్రం నుండి వస్తాయి: executive legislature కి జవాబుదారీగా ఉండాలి, దాని నుండే రావాలి. వీటిని విడివిడిగా బట్టీ పట్టడం కంటే, ఒక అనుసంధానిత చిత్రంగా చదవడం వల్ల గుర్తుంచుకోవడం చాలా సులభం అవుతుంది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">1. Nominal and Real Executives</div>
+<p class="eng">India runs a <b>"dual executive"</b> — two distinct executive roles held by two different people. The <b>President</b> is the <span class="hlb">nominal executive</span> (also called the <i>de jure</i> or titular executive) and is the <b>Head of State</b>; the <b>Prime Minister</b> is the <span class="hlb">real executive</span> (the <i>de facto</i> executive) and is the <b>Head of Government</b>. <span class="hlg">Article 74</span> provides for a Council of Ministers, headed by the PM, whose job is <b>"to aid and advise"</b> the President in exercising his or her functions — and today that advice is binding on the President.</p>
+<div class="te">భారతదేశంలో <b>"dual executive"</b> ఉంది — ఒకే executive పాత్రను ఇద్దరు వేర్వేరు వ్యక్తులు పంచుకుంటారు. <b>President</b> <span class="hlb">నామమాత్ర executive</span> (de jure/titular executive), <b>Head of State</b>; <b>Prime Minister</b> <span class="hlb">వాస్తవ executive</span> (de facto executive), <b>Head of Government</b>. <span class="hlg">Art. 74</span> ప్రకారం PM నేతృత్వంలో ఒక Council of Ministers ఉంటుంది — దీని పని President తన విధులు నిర్వర్తించడంలో <b>"సలహా ఇచ్చి తోడ్పడటం"</b> — ఈ రోజు ఆ సలహా President పై binding.</div>
+<p class="eng">This binding nature was not always express. The <b>original 1950 text</b> of Article 74 did not clearly say the advice was binding — that clarity came only with the <b class="imp">42nd Amendment Act, 1976</b>, which made it explicit that the President <b>"shall act in accordance with such advice."</b> The <b class="imp">44th Amendment Act, 1978</b> then added a small check on this: the President <b>may send the advice back once for reconsideration</b>, but must act in accordance with whatever advice is tendered after that reconsideration.</p>
+<div class="te">ఈ binding స్వభావం మొదటి నుండి స్పష్టంగా లేదు. <b>1950 నాటి మూల పాఠ్యం</b>లో ఈ సలహా binding అని స్పష్టంగా చెప్పలేదు — ఆ స్పష్టత <b class="imp">42వ సవరణ, 1976</b> ద్వారానే వచ్చింది, President <b>"ఆ సలహా ప్రకారమే వ్యవహరించాలి"</b> అని స్పష్టం చేస్తూ. <b class="imp">44వ సవరణ, 1978</b> దీనికి చిన్న check జోడించింది — President ఆ సలహాను <b>ఒక్కసారి పునఃపరిశీలనకు తిప్పి పంపవచ్చు</b>, కానీ పునఃపరిశీలన తర్వాత వచ్చే సలహా ప్రకారం మాత్రం తప్పనిసరిగా వ్యవహరించాలి.</div>
+
+<div class="stitle" style="border-bottom:none;margin-top:14px">2. Majority Party Rule</div>
+<p class="eng">The political party that secures a <b>majority of seats in the Lok Sabha forms the government</b>; the President appoints that party's leader as Prime Minister, and appoints the other ministers on the PM's advice. When no single party wins a majority, the President may invite a <b>coalition</b> of parties to form the government instead.</p>
+<div class="te">లోక్‌సభలో <b>మెజారిటీ సీట్లు</b> గెలుచుకున్న పార్టీ ప్రభుత్వాన్ని ఏర్పాటు చేస్తుంది; ఆ పార్టీ నాయకుడిని President PM గా నియమిస్తారు, మిగతా మంత్రులను PM సలహా మేరకు నియమిస్తారు. ఏ ఒక్క పార్టీకీ మెజారిటీ రాకపోతే, President <b>కూటమి (coalition)</b> ప్రభుత్వాన్ని ఏర్పాటు చేయమని ఆహ్వానించవచ్చు.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">3. Collective Responsibility — Art. 75(3)</div>
+<p class="eng">This is described as the <b class="imp">bedrock principle</b> of parliamentary government. Ministers are <b>collectively responsible</b> to Parliament in general and to the <b>Lok Sabha</b> in particular (<span class="hlg">Article 75</span>) — they act as a team and, as the saying goes, <b>"swim and sink together."</b> The direct legal consequence is that if the Lok Sabha passes a <b>No-Confidence Motion</b>, the <b>entire Council of Ministers</b> must resign — not just the one minister whose department may have caused the controversy.</p>
+<div class="te">దీన్ని పార్లమెంటరీ ప్రభుత్వానికి <b class="imp">మూలసూత్రం</b> అని అంటారు. మంత్రులు పార్లమెంట్‌కు మొత్తంగా, ముఖ్యంగా <b>లోక్‌సభ</b>కు <b>సామూహికంగా బాధ్యత</b> వహిస్తారు (<span class="hlg">Art. 75</span>) — వీరు ఒక బృందంగా వ్యవహరిస్తారు, సామెత చెప్పినట్టు <b>"కలిసి ఈదుతారు, కలిసి మునుగుతారు."</b> దీని ప్రత్యక్ష చట్టపరమైన పర్యవసానం ఏమిటంటే — లోక్‌సభ No-Confidence Motion పాస్ చేస్తే, ఏ ఒక్క మంత్రి శాఖ వివాదానికి కారణమైనా సరే, <b>మొత్తం Council of Ministers</b> తప్పనిసరిగా రాజీనామా చేయాలి.</div>
+
+<div class="stitle" style="border-bottom:none;margin-top:14px">4. Political Homogeneity</div>
+<p class="eng">Members of the Council of Ministers usually <b>belong to the same political party</b>, and therefore tend to share the same broad political ideology, which makes coordinated cabinet decision-making practical. In a coalition government, where ministers come from different parties, this homogeneity of ideology is replaced by ministers being <b>bound by consensus</b> among the coalition partners instead.</p>
+<div class="te">Council of Ministers సభ్యులు సాధారణంగా <b>ఒకే రాజకీయ పార్టీకి</b> చెందినవారు కావడం వల్ల, వారికి సాధారణంగా ఒకే విస్తృత రాజకీయ సిద్ధాంతం ఉంటుంది — ఇది cabinet లో సమన్వయంతో నిర్ణయాలు తీసుకోవడాన్ని ఆచరణాత్మకంగా చేస్తుంది. వేర్వేరు పార్టీల మంత్రులున్న coalition ప్రభుత్వంలో ఈ సైద్ధాంతిక సారూప్యత బదులు, మంత్రులు కూటమి భాగస్వాముల మధ్య <b>ఏకాభిప్రాయానికి</b> కట్టుబడి ఉంటారు.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — Features 1-4</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Nominal vs real executive?</td><td>President = nominal (Head of State); PM = real (Head of Government), Art. 74</td></tr>
+<tr><td>When did the President's advice become binding?</td><td>42nd A.A., 1976 (express) + 44th A.A., 1978 (one-time reconsideration proviso)</td></tr>
+<tr><td>Bedrock principle of parliamentary government?</td><td>Collective responsibility — Art. 75(3), whole Council falls on a no-confidence motion</td></tr>
+<tr><td>How is one minister held accountable alone?</td><td>Individual responsibility via Art. 75(2) "pleasure of the President" — PM can drop one minister without a confidence vote</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Features of Parliamentary Government — Part 2 (Features 5-8)</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">5. Double Membership</div>
+<p class="eng">Ministers are members of <b>both the legislature and the executive</b> at the same time — this is what makes the system "parliamentary" in the most literal sense. In practice, this means a person <b>cannot remain a minister without being a member of Parliament</b>. But the Constitution does allow a short grace period: under <span class="hlg">Article 75(5)</span>, a person who is appointed minister <b>while not yet an MP</b> may hold office for up to <b class="imp">six consecutive months</b>; if they have not become a member of either House of Parliament by the end of that period, they automatically cease to be a minister.</p>
+<div class="te">మంత్రులు <b>legislature, executive రెండింటిలో</b> ఒకేసారి సభ్యులుగా ఉంటారు — ఇదే వ్యవస్థను అక్షరార్థంలో "పార్లమెంటరీ" గా చేస్తుంది. ఆచరణలో, ఒక వ్యక్తి పార్లమెంట్ సభ్యుడు కాకుండా మంత్రిగా <b>కొనసాగలేరు</b>. కానీ రాజ్యాంగం ఒక చిన్న గ్రేస్ పీరియడ్ ఇస్తుంది: <span class="hlg">Art. 75(5)</span> ప్రకారం, పార్లమెంట్ సభ్యుడు కాకుండానే మంత్రిగా నియమితులైన వ్యక్తి గరిష్టంగా <b class="imp">వరుసగా ఆరు నెలలు</b> పదవిలో కొనసాగవచ్చు; ఆ కాలం ముగిసేలోపు పార్లమెంట్ ఏ సభకైనా సభ్యుడు కాకపోతే, ఆటోమేటిక్‌గా మంత్రి పదవి కోల్పోతారు.</div>
+
+<div class="stitle" style="border-bottom:none;margin-top:14px">6. Leadership of the Prime Minister</div>
+<p class="eng">The Prime Minister plays the central leadership role of the whole system, wearing three distinct hats at once: leader of the <b>① Council of Ministers</b>, leader of the <b>② Parliament</b>, and leader of the <b>③ party in power</b>. It is precisely because these three leadership roles combine in one office that the PM's practical influence extends so far beyond what a strict reading of "first among equals" would suggest.</p>
+<div class="te">Prime Minister మొత్తం వ్యవస్థకు కేంద్ర నాయకత్వ పాత్ర పోషిస్తారు, ఒకేసారి మూడు వేర్వేరు పాత్రలు వహిస్తారు: <b>① Council of Ministers</b> నాయకుడు, <b>② Parliament</b> నాయకుడు, <b>③ అధికార పార్టీ</b> నాయకుడు. ఈ మూడు నాయకత్వ పాత్రలు ఒకే పదవిలో కలవడం వల్లే PM ఆచరణాత్మక ప్రభావం "సమానుల్లో మొదటివారు" అనే మాట సూచించే దానికంటే చాలా ఎక్కువగా విస్తరిస్తుంది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">7. Dissolution of the Lower House</div>
+<p class="eng">The Lok Sabha can be <b>dissolved by the President on the recommendation of the Prime Minister</b>, even before its normal term expires — that is, the PM can advise the President to dissolve the House and call fresh elections early. This means the <b>executive itself enjoys the right to get the legislature dissolved</b>, which is a distinctive feature of parliamentary systems and has no counterpart in the American presidential model, where the President cannot dissolve Congress at all.</p>
+<div class="te">లోక్‌సభను దాని సాధారణ కాలం ముగియకముందే <b>PM సిఫారసుపై President రద్దు చేయవచ్చు</b> — అంటే PM అకాల ఎన్నికలు జరిపేందుకు లోక్‌సభను రద్దు చేయమని President కి సలహా ఇవ్వొచ్చు. అంటే <b>legislature ను రద్దు చేయించే హక్కు executive కు</b> ఉంటుంది — ఇది పార్లమెంటరీ వ్యవస్థల ప్రత్యేక లక్షణం, అమెరికా ప్రెసిడెన్షియల్ మోడల్‌లో దీనికి సమానమైనది ఏదీ లేదు — అక్కడ President Congress ను అస్సలు రద్దు చేయలేరు.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">8. Secrecy</div>
+<p class="eng">Ministers operate on the <b>principle of secrecy</b> — they cannot divulge information about cabinet proceedings, policies under discussion, and decisions before they are formally announced. Under <span class="hlg">Article 75(4)</span>, every minister takes an <b>Oath of Secrecy</b> before entering office, and this oath is administered by <b class="imp">the President</b>.</p>
+<div class="te">మంత్రులు <b>రహస్యత సూత్రం</b> పై పనిచేస్తారు — cabinet చర్చలు, చర్చలో ఉన్న విధానాలు, అధికారికంగా ప్రకటించని నిర్ణయాల గురించి బహిర్గతం చేయరాదు. <span class="hlg">Art. 75(4)</span> ప్రకారం, పదవి చేపట్టేముందు ప్రతి మంత్రి <b>Oath of Secrecy</b> తీసుకుంటారు, ఈ ప్రమాణాన్ని <b class="imp">President</b> చేయిస్తారు.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — All 8 Features of Parliamentary Government</caption>
+<thead><tr><th class="n">#</th><th>Feature</th><th>Key Point</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Nominal &amp; Real Executives</td><td>President (nominal, Art. 74) vs PM (real)</td></tr>
+<tr><td class="n">2</td><td>Majority Party Rule</td><td>Lok Sabha majority forms govt; else coalition</td></tr>
+<tr><td class="n">3</td><td>Collective Responsibility</td><td>Art. 75(3) — whole Council falls together</td></tr>
+<tr><td class="n">4</td><td>Political Homogeneity</td><td>Same party / coalition consensus</td></tr>
+<tr><td class="n">5</td><td>Double Membership</td><td>Art. 75(5) — 6-month grace window for non-MP minister</td></tr>
+<tr><td class="n">6</td><td>Leadership of PM</td><td>Leads Council + Parliament + ruling party</td></tr>
+<tr><td class="n">7</td><td>Dissolution of Lower House</td><td>President dissolves Lok Sabha on PM's advice</td></tr>
+<tr><td class="n">8</td><td>Secrecy</td><td>Art. 75(4) — Oath of Secrecy, administered by President</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Features of Presidential Government (USA) — 6 Points</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Features of Presidential Government (USA) — 6 Points</div>
+<p class="eng">Unlike the Indian Constitution, the American Constitution provides for a presidential form of government. Laxmikanth sets out six features of this US model — reading them side by side with the eight parliamentary features above shows just how many of the parliamentary system's defining traits are essentially <b>mirror-image opposites</b> of the presidential ones.</p>
+<div class="te">భారత రాజ్యాంగానికి భిన్నంగా, అమెరికా రాజ్యాంగం ప్రెసిడెన్షియల్ తరహా ప్రభుత్వాన్ని ఏర్పాటు చేస్తుంది. లక్ష్మీకాంత్ ఈ అమెరికా మోడల్‌కు ఆరు లక్షణాలు ఇస్తారు — పైన చెప్పిన ఎనిమిది పార్లమెంటరీ లక్షణాలతో పోల్చి చూస్తే, పార్లమెంటరీ వ్యవస్థ లక్షణాల్లో చాలా వరకు ప్రెసిడెన్షియల్ లక్షణాలకు <b>అద్దం-పట్టిన వ్యతిరేకతలు</b> అని కనిపిస్తుంది.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">1. Single (Combined) Executive</div>
+<p class="eng">The American President is <b>both the Head of State and the Head of Government</b> in one and the same person — as Head of State the President holds a ceremonial position, and as Head of Government the President leads the executive branch. This is the direct opposite of India's dual (nominal + real) executive.</p>
+<div class="te">అమెరికా President <b>Head of State, Head of Government రెండూ</b> ఒకే వ్యక్తిగా ఉంటారు — Head of State గా ఆచార పదవి, Head of Government గా executive branch నాయకత్వం వహిస్తారు. ఇది భారత dual (నామమాత్ర + వాస్తవ) executive కు నేరుగా వ్యతిరేకం.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">2. Fixed Tenure via Electoral College</div>
+<p class="eng">The President is elected by an <b>Electoral College</b> for a <b class="imp">fixed tenure of four years</b> and cannot be removed by Congress mid-term except through <b>Impeachment</b> for a grave unconstitutional act. There is no equivalent of a parliamentary no-confidence motion that can remove the President simply for losing political support.</p>
+<div class="te">President ను <b>Electoral College</b> <b class="imp">నాలుగేళ్ల నిర్ణీత కాలానికి</b> ఎన్నుకుంటుంది, తీవ్రమైన రాజ్యాంగ విరుద్ధ చర్యకు <b>Impeachment</b> ద్వారా తప్ప మధ్యలో Congress తొలగించలేరు. కేవలం రాజకీయ మద్దతు కోల్పోయినందుకు President ను తొలగించే పార్లమెంటరీ no-confidence మోషన్ లాంటిది దీనికి లేదు.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">3. Kitchen Cabinet — Advisory Only</div>
+<p class="eng">The President governs with the help of a Cabinet, or a smaller inner circle informally called the <b>'Kitchen Cabinet'</b>. Crucially, this body is <b>only advisory</b> — it consists of non-elected departmental secretaries who are selected, and can be removed at any time, entirely at the President's discretion.</p>
+<div class="te">President Cabinet సహాయంతో, లేదా అనధికారికంగా <b>'Kitchen Cabinet'</b> అనే చిన్న అంతర్గత బృందం సహాయంతో పరిపాలిస్తారు. ఇది <b>సలహా సంస్థ మాత్రమే</b> అనేది కీలకం — ఎన్నుకోబడని departmental secretaries తో కూడినది, వీరిని President ఇష్టానుసారం ఎంపిక చేసి, ఎప్పుడైనా తొలగించగలరు.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">4. Not Responsible to Congress</div>
+<p class="eng">The President and the departmental secretaries are <b>not responsible to Congress</b> for their acts — they neither hold membership in Congress nor attend its sessions. This is the direct opposite of India's "double membership" feature, where a minister must be a member of Parliament.</p>
+<div class="te">President, secretaries తమ చర్యలకు <b>Congress కి బాధ్యులు కారు</b> — వీరికి Congress లో సభ్యత్వం ఉండదు, దాని sessions కు హాజరు కారు. ఇది భారత "double membership" లక్షణానికి నేరుగా వ్యతిరేకం — అక్కడ మంత్రి తప్పనిసరిగా పార్లమెంట్ సభ్యుడై ఉండాలి.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">5. Cannot Dissolve the House of Representatives</div>
+<p class="eng">The President <b>cannot dissolve the House of Representatives</b>, the lower house of Congress — again the direct opposite of the Indian PM's power to get the Lok Sabha dissolved.</p>
+<div class="te">President <b>House of Representatives</b> (Congress లోని Lower House) ను రద్దు చేయలేరు — ఇది కూడా లోక్‌సభను రద్దు చేయించగల భారత PM అధికారానికి నేరుగా వ్యతిరేకం.</div>
+<div class="stitle" style="border-bottom:none;margin-top:14px">6. Doctrine of Separation of Powers</div>
+<p class="eng">The <b class="imp">doctrine of Separation of Powers</b> is the very basis of the American presidential system — legislative, executive, and judicial powers are kept separate and vested in <b>three independent organs</b> of government. This theory was propounded by <span class="hlp">Montesquieu</span>, the French political thinker, in his book <i>The Spirit of Laws</i> (1748), to <b>promote individual liberty</b> — he argued that concentrating power in one person or body would result in despotism.</p>
+<div class="te">అమెరికా ప్రెసిడెన్షియల్ వ్యవస్థకు మూలం <b class="imp">Separation of Powers సిద్ధాంతం</b> — శాసన, కార్యనిర్వాహక, న్యాయ అధికారాలు వేరు చేయబడి, మూడు <b>స్వతంత్ర అంగాల</b>కు అప్పగించబడతాయి. ఈ సిద్ధాంతాన్ని ఫ్రెంచ్ రాజకీయ ఆలోచనాపరుడు <span class="hlp">Montesquieu</span> తన <i>The Spirit of Laws</i> (1748) పుస్తకంలో <b>వ్యక్తిగత స్వేచ్ఛను</b> పెంపొందించడానికి ప్రతిపాదించారు — అధికారం ఒకే వ్యక్తి లేదా సంస్థలో కేంద్రీకృతమైతే నిరంకుశత్వానికి దారితీస్తుందని వాదించారు.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — Presidential System Features (contrasted with Parliamentary)</caption>
+<thead><tr><th style="width:34%">Presidential (USA)</th><th>Parliamentary (India) — the mirror opposite</th></tr></thead>
+<tbody>
+<tr><td>Single (combined) executive</td><td>Dual executive — nominal + real</td></tr>
+<tr><td>Fixed 4-year term, removable only by Impeachment</td><td>No fixed term guarantee — removable by no-confidence motion</td></tr>
+<tr><td>Kitchen Cabinet — advisory only, non-elected</td><td>Council of Ministers — real decision-making, elected/MPs</td></tr>
+<tr><td>Not responsible to Congress; no membership</td><td>Double membership — minister must be an MP</td></tr>
+<tr><td>Cannot dissolve House of Representatives</td><td>PM can get Lok Sabha dissolved</td></tr>
+<tr><td>Separation of Powers (Montesquieu)</td><td>Fusion of Powers (see Demerits, next page)</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Merits of the Parliamentary System — 5 Points</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Merits of the Parliamentary System — 5 Points</div>
+<div class="stitle" style="border-bottom:none">1. Harmony Between Legislature and Executive</div>
+<p class="eng">The single greatest advantage claimed for the parliamentary system is that it produces a <b>harmonious, cooperative relationship</b> between the legislative and executive organs, rather than an adversarial one. Because the executive is itself a part of the legislature and the two are interdependent at work, there is inherently <b>less scope for disputes and deadlock</b> between them than in a system where the two organs are separately elected and can openly work against each other.</p>
+<div class="te">పార్లమెంటరీ వ్యవస్థకు అతిపెద్ద మేలుగా చెప్పబడేది — legislature, executive మధ్య <b>సామరస్యపూర్వక, సహకార సంబంధం</b> ఏర్పడటం, ప్రత్యర్థి సంబంధం కాదు. executive అనేది legislature లోనే ఒక భాగం అవడం, రెండూ పనిలో ఒకదానిపై ఒకటి ఆధారపడటం వల్ల — వేర్వేరుగా ఎన్నికై బాహాటంగా ఒకదానికొకటి వ్యతిరేకంగా పనిచేయగల వ్యవస్థతో పోలిస్తే, ఇక్కడ వివాదాలు, ప్రతిష్టంభనలకు తక్కువ అవకాశం ఉంటుంది.</div>
+<div class="stitle" style="border-bottom:none">2. Responsible Government</div>
+<p class="eng">By its very nature, the parliamentary system builds in a <b>responsible government</b> — ministers are answerable to Parliament for every act of omission and commission. Parliament actively exercises this control through several concrete devices: <b>Question Hour, Discussions, Adjournment Motions, and the No-Confidence Motion</b>, among others — these are not abstract checks but everyday parliamentary tools that keep ministers under continuous scrutiny.</p>
+<div class="te">స్వభావరీత్యానే పార్లమెంటరీ వ్యవస్థ <b>జవాబుదారీ ప్రభుత్వాన్ని</b> నిర్మిస్తుంది — మంత్రులు తమ చర్యలు, నిర్లక్ష్యాలు రెండింటికీ పార్లమెంట్‌కు జవాబుదారీగా ఉంటారు. పార్లమెంట్ ఈ నియంత్రణను నిర్దిష్ట సాధనాల ద్వారా చురుకుగా అమలు చేస్తుంది: <b>Question Hour, చర్చలు, Adjournment Motion, No-Confidence Motion</b> వంటివి — ఇవి నైరూప్య checks కావు, మంత్రులను నిరంతరం పరిశీలనలో ఉంచే రోజువారీ పార్లమెంటరీ సాధనాలు.</div>
+<div class="stitle" style="border-bottom:none">3. Prevents Despotism</div>
+<p class="eng">Executive authority is vested in a <b>group of individuals</b> (the Council of Ministers) rather than in a single person, and this dispersal of authority itself checks dictatorial tendencies. Moreover, since the executive is responsible to Parliament and can be removed through a no-confidence motion, there is a continuous, real threat of removal hanging over any minister or cabinet tempted to overreach.</p>
+<div class="te">కార్యనిర్వాహక అధికారం ఒక్క వ్యక్తికి కాకుండా <b>వ్యక్తుల బృందా</b>నికి (Council of Ministers) ఉండటం వల్లే నిరంకుశ ధోరణులకు అడ్డుకట్ట పడుతుంది. అంతేకాక, executive పార్లమెంట్‌కు జవాబుదారీ కావడం, no-confidence motion ద్వారా తొలగించబడే అవకాశం ఉండటం వల్ల, హద్దు మీరాలనుకునే ఏ మంత్రిపైనైనా, cabinet పైనైనా నిరంతర, నిజమైన తొలగింపు ముప్పు ఉంటుంది.</div>
+<div class="stitle" style="border-bottom:none">4. Ready Alternative Government</div>
+<p class="eng">If the ruling party loses its majority, the Head of State can simply invite the opposition to form the government instead — meaning an <b>alternative government can be formed without holding fresh elections</b> at all, saving the time, cost, and disruption a mid-term election would cause. This is the logic behind <span class="hlp">Dr. Jennings'</span> well-known remark that the leader of the opposition is essentially the <b>"alternative Prime Minister."</b></p>
+<div class="te">అధికార పార్టీ మెజారిటీ కోల్పోతే, ప్రతిపక్షాన్ని ప్రభుత్వం ఏర్పాటు చేయమని Head of State నేరుగా ఆహ్వానించవచ్చు — అంటే కొత్తగా ఎన్నికలు జరపకుండానే <b>ప్రత్యామ్నాయ ప్రభుత్వం</b> ఏర్పడగలదు, మధ్యంతర ఎన్నికలతో వచ్చే సమయం, ఖర్చు, అంతరాయం మిగులుతుంది. ప్రతిపక్ష నాయకుడు అంటే దాదాపు <b>"ప్రత్యామ్నాయ Prime Minister"</b> అని <span class="hlp">Dr. Jennings</span> చేసిన ప్రసిద్ధ వ్యాఖ్య వెనుక ఇదే లాజిక్.</div>
+<div class="stitle" style="border-bottom:none">5. Wide Representation</div>
+<p class="eng">Since the executive consists of a <b>group of ministers</b> rather than one person, it becomes possible to give representation to a much wider range of sections and regions within the government itself. The Prime Minister, while selecting ministers, can deliberately take this representational balance into account — something a single-person executive cannot offer by design.</p>
+<div class="te">executive ఒక్క వ్యక్తి కాకుండా <b>మంత్రుల బృందం</b> కావడం వల్ల, ప్రభుత్వంలోనే విస్తృత శ్రేణి వర్గాలకు, ప్రాంతాలకు ప్రాతినిధ్యం ఇవ్వడం సాధ్యమవుతుంది. మంత్రులను ఎంపిక చేసేటప్పుడు PM ఈ ప్రాతినిధ్య సమతుల్యతను ఉద్దేశపూర్వకంగా పరిగణనలోకి తీసుకోగలరు — ఒకే వ్యక్తి executive దీన్ని రూపకల్పన ప్రకారమే ఇవ్వలేదు.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — 5 Merits</caption>
+<thead><tr><th class="n">#</th><th>Merit</th><th>Core Reason</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Harmony between legislature &amp; executive</td><td>Executive is part of legislature — interdependent, less conflict</td></tr>
+<tr><td class="n">2</td><td>Responsible government</td><td>Question Hour, Discussions, Adjournment/No-Confidence Motions</td></tr>
+<tr><td class="n">3</td><td>Prevents despotism</td><td>Authority in a group, not one person; removable by no-confidence</td></tr>
+<tr><td class="n">4</td><td>Ready alternative government</td><td>Opposition can be invited to form govt — no fresh elections needed</td></tr>
+<tr><td class="n">5</td><td>Wide representation</td><td>Group of ministers → representation of many sections/regions</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Demerits of the Parliamentary System — 5 Points</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Demerits of the Parliamentary System — 5 Points</div>
+<div class="stitle" style="border-bottom:none">1. Unstable Government</div>
+<p class="eng">The flip side of removability by no-confidence motion is that the parliamentary system provides <b>no guarantee</b> that a government will survive its full tenure. Ministers depend on the continued goodwill of majority legislators for their survival in office — a no-confidence motion, political defection, or the ordinary evils of multi-party coalition politics can all make a government unstable. India has lived through this repeatedly, with governments headed by <span class="hlp">Morarji Desai, Charan Singh, V.P. Singh, Chandra Sekhar, Deve Gowda, and I.K. Gujral</span> among the more commonly cited examples of short-lived, unstable coalition-era governments.</p>
+<div class="te">No-confidence motion ద్వారా తొలగించగలగడం అనే మేలుకు రెండో వైపు — ప్రభుత్వం తన పూర్తి కాలం కొనసాగుతుందన్న <b>గ్యారంటీ లేకపోవడం</b>. మంత్రులు తమ మనుగడ కోసం మెజారిటీ శాసనసభ్యుల నిరంతర మద్దతుపై ఆధారపడతారు — no-confidence motion, రాజకీయ ఫిరాయింపులు, బహుళ-పార్టీ కూటమి రాజకీయాల సాధారణ లోపాలు — ఇవన్నీ ప్రభుత్వాన్ని అస్థిరం చేయగలవు. <span class="hlp">మొరార్జీ దేశాయ్, చరణ్ సింగ్, వి.పి. సింగ్, చంద్రశేఖర్, దేవెగౌడ, ఐ.కె. గుజ్రాల్</span> నేతృత్వంలోని ప్రభుత్వాలు — తక్కువ కాలం మనుగడ సాగించిన, అస్థిర కూటమి-కాలం ప్రభుత్వాలకు తరచుగా ఉదహరించే ఉదాహరణలు.</div>
+<div class="stitle" style="border-bottom:none">2. No Continuity of Policies</div>
+<p class="eng">Because the government's tenure is uncertain, the parliamentary system is <b>not well suited to long-term policy formulation and implementation</b>. A change in the ruling party usually brings a reversal of policies rather than continuation of the previous government's programme. Laxmikanth cites the <b>1977 Janata government</b> led by Morarji Desai reversing a large number of the preceding Congress government's policies — and then the Congress government, on returning to power in 1980, repeating the same pattern in reverse.</p>
+<div class="te">ప్రభుత్వ కాలవ్యవధి అనిశ్చితంగా ఉండటం వల్ల, పార్లమెంటరీ వ్యవస్థ <b>దీర్ఘకాలిక విధాన రూపకల్పన, అమలుకు అంతగా అనుకూలం కాదు</b>. అధికార పార్టీ మారితే సాధారణంగా మునుపటి ప్రభుత్వ కార్యక్రమాన్ని కొనసాగించడం కంటే విధానాలు తిరగబడతాయి. <b>1977లో మొరార్జీ దేశాయ్</b> నేతృత్వంలోని Janata ప్రభుత్వం అంతకుముందు Congress ప్రభుత్వ విధానాల్లో చాలావాటిని తిప్పికొట్టింది — 1980లో తిరిగి అధికారంలోకి వచ్చిన Congress ప్రభుత్వం కూడా ఇదే తీరును తిరగబడి పునరావృతం చేసింది అని లక్ష్మీకాంత్ ఉదహరిస్తారు.</div>
+<div class="stitle" style="border-bottom:none">3. Dictatorship of the Cabinet</div>
+<p class="eng">When the ruling party enjoys an <b>absolute majority</b> in Parliament, the very mechanism meant to check the executive — legislative confidence — stops functioning as a real check, because the ruling party's own MPs will rarely vote against their own cabinet. In that situation, the cabinet can become autocratic and exercise nearly unlimited power. <span class="hlp">H.J. Laski</span> observed that the system gives the executive an <b>"opportunity for tyranny,"</b> and the British historian <span class="hlp">Ramsay Muir</span> similarly complained of a <b>"dictatorship of the cabinet."</b> Laxmikanth notes this phenomenon was witnessed in India during the era of Indira Gandhi and Rajiv Gandhi.</p>
+<div class="te">అధికార పార్టీకి పార్లమెంట్‌లో <b>సంపూర్ణ మెజారిటీ</b> ఉన్నప్పుడు, executive ను check చేయాల్సిన మెకానిజం — legislative confidence — నిజమైన checkగా పనిచేయడం ఆగిపోతుంది, ఎందుకంటే అధికార పార్టీ MPలు తమ సొంత cabinet కి వ్యతిరేకంగా అరుదుగానే ఓటు వేస్తారు. ఆ పరిస్థితిలో cabinet నియంతృత్వంగా మారి, దాదాపు అపరిమిత అధికారాలు చెలాయించగలదు. ఈ వ్యవస్థ executive కు <b>"నిరంకుశత్వానికి అవకాశం"</b> ఇస్తుందని <span class="hlp">H.J. Laski</span> అభిప్రాయపడ్డారు, బ్రిటిష్ చరిత్రకారుడు <span class="hlp">Ramsay Muir</span> కూడా <b>"cabinet నియంతృత్వం"</b> గురించి ఫిర్యాదు చేశారు. ఇందిరా గాంధీ, రాజీవ్ గాంధీ కాలంలో భారత్‌లో ఇది కనిపించిందని లక్ష్మీకాంత్ పేర్కొంటారు.</div>
+<div class="stitle" style="border-bottom:none">4. Against Separation of Powers</div>
+<p class="eng">In the parliamentary system, the legislature and the executive are <b>together and inseparable</b> — the same cabinet acts as leader of both the legislature and the executive. As <span class="hlp">Bagehot</span> put it, the cabinet is like <b>"the buckle that binds"</b> the executive and legislative departments together. The whole system therefore goes against the letter and spirit of the theory of separation of powers — in fact, there is a genuine <b class="imp">fusion of powers</b> rather than a separation.</p>
+<div class="te">పార్లమెంటరీ వ్యవస్థలో legislature, executive <b>కలిసి, విడదీయరానివిగా</b> ఉంటాయి — ఒకే cabinet legislature కి, executive కి రెండింటికీ నాయకత్వం వహిస్తుంది. <span class="hlp">Bagehot</span> చెప్పినట్టు, cabinet executive, legislative విభాగాలను కలిపి కట్టివేసే <b>"buckle"</b> లాంటిది. అందుకే మొత్తం వ్యవస్థ separation of powers సిద్ధాంత స్ఫూర్తికి వ్యతిరేకంగా ఉంటుంది — వాస్తవానికి ఇది separation కాదు, నిజమైన <b class="imp">fusion of powers</b>.</div>
+
+<div class="stitle" style="border-bottom:none">5. Government by Amateurs</div>
+<p class="eng">The parliamentary system is <b>not conducive to administrative efficiency</b> because ministers are typically not subject-matter experts in the fields they head. The Prime Minister's choice of ministers is <b>restricted to sitting members of Parliament</b> and does not extend to outside talent the way the American President's Kitchen Cabinet appointments can. Ministers also have to split their time across parliamentary work, cabinet meetings, and party activities, leaving less bandwidth for deep departmental expertise.</p>
+<div class="te">పార్లమెంటరీ వ్యవస్థ <b>పరిపాలనా సామర్థ్యానికి అంతగా అనుకూలం కాదు</b>, ఎందుకంటే మంత్రులు సాధారణంగా తాము నిర్వహించే రంగాల్లో నిపుణులు కాదు. PM మంత్రుల ఎంపిక <b>ప్రస్తుత పార్లమెంట్ సభ్యులకే పరిమితం</b> — అమెరికా President Kitchen Cabinet నియామకాల్లో లాగా బయటి నిపుణులను తీసుకోలేరు. మంత్రులు తమ సమయాన్ని పార్లమెంటరీ పని, cabinet సమావేశాలు, పార్టీ కార్యకలాపాల మధ్య పంచుకోవాల్సి రావడం వల్ల, లోతైన శాఖాపరమైన నైపుణ్యానికి తక్కువ సమయం మిగులుతుంది.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — 5 Demerits</caption>
+<thead><tr><th class="n">#</th><th>Demerit</th><th>Core Reason</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Unstable government</td><td>No fixed term — depends on continued majority confidence</td></tr>
+<tr><td class="n">2</td><td>No continuity of policies</td><td>Change of ruling party usually reverses prior policies</td></tr>
+<tr><td class="n">3</td><td>Dictatorship of the cabinet</td><td>Absolute majority → confidence check stops being a real check</td></tr>
+<tr><td class="n">4</td><td>Against separation of powers</td><td>Cabinet leads both legislature and executive — fusion, not separation</td></tr>
+<tr><td class="n">5</td><td>Government by amateurs</td><td>PM's choice restricted to MPs — no external expert talent</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Reasons for Adopting the Parliamentary System</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Reasons for Adopting the Parliamentary System — 4 Points</div>
+<p class="eng">A plea was in fact made in the Constituent Assembly in favour of the American presidential system — <span class="hlp">K.T. Shah</span> argued for it — but it was not accepted. The founding fathers preferred the British parliamentary model for four main reasons.</p>
+<div class="te">నిజానికి Constituent Assembly లో అమెరికా ప్రెసిడెన్షియల్ వ్యవస్థకు అనుకూలంగా వాదన వచ్చింది — <span class="hlp">K.T. Shah</span> దీన్ని సమర్థించారు — కానీ అది ఆమోదించబడలేదు. రాజ్యాంగ నిర్మాతలు నాలుగు ప్రధాన కారణాల వల్ల బ్రిటిష్ పార్లమెంటరీ మోడల్‌నే ఇష్టపడ్డారు.</div>
+<div class="stitle" style="border-bottom:none">1. Familiarity with the System</div>
+<p class="eng">The Constitution-makers were already somewhat familiar with the parliamentary system, since a version of it had already been in operation in India during British rule. <span class="hlp">K.M. Munshi</span> argued in the Constituent Assembly that India's constitutional traditions had <b>"become Parliamentary,"</b> so there was little reason to abandon that experience for an untested alternative.</p>
+<div class="te">రాజ్యాంగ నిర్మాతలకు పార్లమెంటరీ వ్యవస్థతో ఇప్పటికే కొంత పరిచయం ఉంది — బ్రిటిష్ పాలన కాలంలోనే దీని ఒక రూపం భారత్‌లో అమల్లో ఉంది. భారత రాజ్యాంగ సంప్రదాయాలు <b>"పార్లమెంటరీగా మారాయని"</b> <span class="hlp">K.M. Munshi</span> Constituent Assembly లో వాదించారు — పరీక్షించని ప్రత్యామ్నాయం కోసం ఆ అనుభవాన్ని వదులుకోవడానికి పెద్దగా కారణం లేదని ఆయన అభిప్రాయం.</div>
+<div class="stitle" style="border-bottom:none">2. Preference to More Responsibility</div>
+<p class="eng"><span class="hlp">Dr. B.R. Ambedkar</span> pointed out that a democratic executive must satisfy two conditions — <b>stability</b> and <b>responsibility</b> — and that no system had yet been devised that ensures both in equal measure. The American system gives more stability but less responsibility; the British system gives more responsibility but less stability. Ambedkar noted that the Draft Constitution, in recommending the parliamentary Executive, had <b>"preferred more responsibility to more stability."</b></p>
+<div class="te">ప్రజాస్వామ్య executive రెండు షరతులు తీర్చాలని — <b>స్థిరత్వం</b>, <b>బాధ్యత</b> — <span class="hlp">Dr. B.R. Ambedkar</span> ఎత్తిచూపారు, రెండింటినీ సమాన స్థాయిలో ఇచ్చే వ్యవస్థ ఇప్పటివరకూ రూపొందలేదని కూడా అన్నారు. అమెరికా వ్యవస్థ ఎక్కువ స్థిరత్వం, తక్కువ బాధ్యత ఇస్తుంది; బ్రిటిష్ వ్యవస్థ ఎక్కువ బాధ్యత, తక్కువ స్థిరత్వం ఇస్తుంది. పార్లమెంటరీ Executive ను సిఫారసు చేస్తూ Draft Constitution <b>"స్థిరత్వం కంటే బాధ్యతకే ఎక్కువ ప్రాధాన్యత"</b> ఇచ్చిందని అంబేద్కర్ పేర్కొన్నారు.</div>
+
+<div class="stitle" style="border-bottom:none">3. Need to Avoid Legislative-Executive Conflicts</div>
+<p class="eng">The framers wanted to avoid the kind of conflicts between the legislature and the executive that are bound to occur under the US presidential system, where the two organs are separately elected and can pull in different directions for years at a stretch. They judged that an <b>"infant democracy"</b> could not afford the risk of a perpetual cleavage or feud between these two organs, and instead wanted a form of government conducive to the country's manifold development.</p>
+<div class="te">అమెరికా ప్రెసిడెన్షియల్ వ్యవస్థలో వచ్చే విధమైన legislature-executive వివాదాలను రాజ్యాంగ నిర్మాతలు నివారించాలనుకున్నారు — అక్కడ రెండు అంగాలు వేర్వేరుగా ఎన్నికై, ఏళ్ల తరబడి వేర్వేరు దిశల్లో లాగుతూ ఉండవచ్చు. <b>"శిశు ప్రజాస్వామ్యం"</b> ఈ రెండు అంగాల మధ్య శాశ్వత విభేదం, కలహాల ముప్పును భరించలేదని వారు భావించారు — దేశ బహుముఖ అభివృద్ధికి అనుకూలమైన ప్రభుత్వ రూపాన్ని కోరుకున్నారు.</div>
+<div class="stitle" style="border-bottom:none">4. Nature of Indian Society</div>
+<p class="eng">India is one of the most <b>heterogeneous and complex plural societies</b> in the world. The Constitution-makers adopted the parliamentary system because it offers a greater scope for giving representation to India's many different sections, interests, and regions within the government itself — which, in turn, was expected to promote a shared national spirit and help build a united India.</p>
+<div class="te">ప్రపంచంలోని అత్యంత <b>వైవిధ్యభరిత, సంక్లిష్ట బహుళ సమాజాల్లో</b> భారతదేశం ఒకటి. ప్రభుత్వంలోనే భారత్‌లోని అనేక వర్గాలు, ప్రయోజనాలు, ప్రాంతాలకు ప్రాతినిధ్యం ఇవ్వడానికి ఇది ఎక్కువ అవకాశం కల్పిస్తుంది కాబట్టి రాజ్యాంగ నిర్మాతలు పార్లమెంటరీ వ్యవస్థను స్వీకరించారు — దీని వల్ల ఉమ్మడి జాతీయ స్ఫూర్తి పెరిగి, ఐక్య భారత నిర్మాణానికి తోడ్పడుతుందని భావించారు.</div>
+<p class="eng">Whether the parliamentary system should continue, or be replaced by a presidential system, remained a matter of debate in India from the 1970s onward. This was examined in detail by the <span class="hlp">Swaran Singh Committee</span>, appointed by the Congress government in <b>1975</b>. The committee's conclusion was that the parliamentary system had been performing well, and that there was <b>no need</b> to replace it with a presidential system.</p>
+<div class="te">పార్లమెంటరీ వ్యవస్థను కొనసాగించాలా, ప్రెసిడెన్షియల్ వ్యవస్థతో భర్తీ చేయాలా అనే చర్చ 1970ల నుండి భారత్‌లో కొనసాగింది. దీన్ని <b>1975లో</b> Congress ప్రభుత్వం నియమించిన <span class="hlp">Swaran Singh Committee</span> వివరంగా పరిశీలించింది. పార్లమెంటరీ వ్యవస్థ బాగానే పనిచేస్తోందని, ప్రెసిడెన్షియల్ వ్యవస్థతో భర్తీ చేయాల్సిన <b>అవసరం లేదని</b> కమిటీ నిర్ధారించింది.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — Reasons for Adopting Parliamentary System</caption>
+<thead><tr><th class="n">#</th><th>Reason</th><th>Core Point</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Familiarity</td><td>Already in operation under British rule (K.M. Munshi)</td></tr>
+<tr><td class="n">2</td><td>More responsibility over more stability</td><td>Ambedkar — democratic executive needs both, chose responsibility</td></tr>
+<tr><td class="n">3</td><td>Avoid legislative-executive conflict</td><td>"Infant democracy" couldn't risk a perpetual US-style standoff</td></tr>
+<tr><td class="n">4</td><td>Nature of Indian society</td><td>Heterogeneous, plural — needs wide representation in govt</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Distinction Between Indian &amp; British Models · Table 13.1 Comparison</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Distinction Between Indian and British Models — 6 Points</div>
+<p class="eng">India's parliamentary system is largely modelled on the British one, but the Constitution-makers never intended it to be an exact replica — the framers adapted the Westminster model to fit India's own republican, federal, and rights-based character. Six specific differences stand out.</p>
+<div class="te">భారత పార్లమెంటరీ వ్యవస్థ చాలావరకు బ్రిటిష్ మోడల్‌పై ఆధారపడినా, రాజ్యాంగ నిర్మాతలు దీన్ని అచ్చుగుద్దినట్టు కాపీ చేయాలని అనుకోలేదు — Westminster మోడల్‌ను భారత్‌కు ఉన్న రిపబ్లికన్, ఫెడరల్, హక్కుల-ఆధారిత స్వభావానికి తగినట్టు మార్చుకున్నారు. ఆరు నిర్దిష్ట తేడాలు ప్రత్యేకంగా కనిపిస్తాయి.</div>
+<table>
+<caption>Distinction — India vs Britain</caption>
+<thead><tr><th class="n">#</th><th style="width:22%">Aspect</th><th>India</th><th class="nt">Britain</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Head of State</td><td><span class="hlg">Republican</span> — the President is elected</td><td><span class="hlp">Monarchical</span> — the King/Queen holds a hereditary position</td></tr>
+<tr><td class="n">2</td><td>Sovereignty of Parliament</td><td><b class="imp">Not supreme</b> — limited by the written Constitution, federal system, judicial review, and Fundamental Rights</td><td>Based on the doctrine of the <b>sovereignty of Parliament</b></td></tr>
+<tr><td class="n">3</td><td>PM's House membership</td><td>PM may belong to <b>either House</b> — e.g. Indira Gandhi (1966), Deve Gowda (1996), Manmohan Singh (2004), all from the Rajya Sabha</td><td>PM <b>must</b> be a member of the House of Commons (Lower House)</td></tr>
+<tr><td class="n">4</td><td>Non-MP as minister</td><td>Possible — for a <b class="imp">maximum of 6 months</b> (Art. 75(5))</td><td>Usually, only members of Parliament are appointed ministers</td></tr>
+<tr><td class="n">5</td><td>Legal responsibility of ministers</td><td>No such system — ministers do not countersign the Head of State's official acts</td><td>Ministers have <b>legal responsibility</b> — they countersign official acts</td></tr>
+<tr><td class="n">6</td><td>Shadow Cabinet</td><td>No such institution</td><td><span class="hlp">Exists</span> — formed by the opposition party, to balance the ruling cabinet and prepare its members for future office</td></tr>
+</tbody>
+</table>
+<div class="te">సారాంశంగా — భారత్ రిపబ్లికన్, బ్రిటన్ రాచరిక వ్యవస్థ; భారత్‌లో Parliament సర్వోన్నతం కాదు (రాజ్యాంగం, ఫెడరలిజం, judicial review, Fundamental Rights వల్ల పరిమితం), బ్రిటన్‌లో Parliament sovereignty సూత్రం ఉంది; భారత PM ఏ సభ నుంచైనా కావొచ్చు, బ్రిటన్‌లో తప్పనిసరిగా Commons నుంచే; భారత్‌లో non-MP మంత్రిగా 6 నెలలు కొనసాగవచ్చు, బ్రిటన్‌లో సాధారణంగా MPలే మంత్రులు; బ్రిటన్‌లో మంత్రుల legal responsibility ఉంది (countersign చేస్తారు), భారత్‌లో లేదు; బ్రిటన్‌లో Shadow Cabinet ఉంది, భారత్‌లో లేదు.</div>
+</div>
+<div class="para">
+<div class="stitle">Table 13.1 — Parliamentary vs Presidential Systems (as given in the book)</div>
+<p class="eng">Laxmikanth closes the chapter with a consolidated comparison table of the parliamentary and presidential systems across features, merits, and demerits. Notice how the "Merits" column of one system lines up almost exactly with the "Demerits" column of the other — this is a direct consequence of the two systems being near mirror-opposites of each other, as this document has shown feature by feature above.</p>
+<div class="te">అధ్యాయం చివర్లో లక్ష్మీకాంత్ పార్లమెంటరీ, ప్రెసిడెన్షియల్ వ్యవస్థల లక్షణాలు, మేళ్లు, లోపాలను ఒకే పట్టికలో సమీకరించి ఇస్తారు. ఒక వ్యవస్థ "Merits" కాలమ్, రెండో వ్యవస్థ "Demerits" కాలమ్‌తో దాదాపు సరిగ్గా సరిపోలడం గమనించండి — పైన ఒక్కో లక్షణం వారీగా చూపినట్టు, ఈ రెండు వ్యవస్థలూ దాదాపు అద్దం-పట్టిన వ్యతిరేకతలు కావడం వల్లే ఇది జరుగుతుంది.</div>
+<table>
+<caption>Features</caption>
+<thead><tr><th class="n">#</th><th>Parliamentary</th><th class="rd">Presidential</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Dual executive</td><td>Single executive</td></tr>
+<tr><td class="n">2</td><td>Majority party rule</td><td>President &amp; legislators elected separately, for a fixed term</td></tr>
+<tr><td class="n">3</td><td>Collective responsibility</td><td>Non-responsibility</td></tr>
+<tr><td class="n">4</td><td>Political homogeneity</td><td>Political homogeneity may not exist</td></tr>
+<tr><td class="n">5</td><td>Double membership</td><td>Single membership</td></tr>
+<tr><td class="n">6</td><td>Leadership of Prime Minister</td><td>Domination of President</td></tr>
+<tr><td class="n">7</td><td>Dissolution of Lower House</td><td>No dissolution of Lower House</td></tr>
+<tr class="star"><td class="n">8</td><td>Fusion of Powers</td><td>Separation of Powers</td></tr>
+</tbody>
+</table>
+<table>
+<caption>Merits (Parliamentary) = Demerits (Presidential)</caption>
+<thead><tr><th class="n">#</th><th>Parliamentary — Merits</th><th class="rd">Presidential — Demerits</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Harmony between legislature &amp; executive</td><td>Conflict between legislature &amp; executive</td></tr>
+<tr><td class="n">2</td><td>Responsible government</td><td>Non-responsible government</td></tr>
+<tr><td class="n">3</td><td>Prevents despotism</td><td>May lead to autocracy</td></tr>
+<tr><td class="n">4</td><td>Wide representation</td><td>Narrow representation</td></tr>
+</tbody>
+</table>
+<table>
+<caption>Demerits (Parliamentary) = Merits (Presidential)</caption>
+<thead><tr><th class="n">#</th><th>Parliamentary — Demerits</th><th class="rd">Presidential — Merits</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Unstable government</td><td>Stable government</td></tr>
+<tr><td class="n">2</td><td>No continuity of policies</td><td>Definiteness in policies</td></tr>
+<tr><td class="n">3</td><td>Against separation of powers</td><td>Based on separation of powers</td></tr>
+<tr><td class="n">4</td><td>Government by amateurs</td><td>Government by experts</td></tr>
+</tbody>
+</table>
+<div class="te">ఈ మూడు పట్టికలు ఒకేచోట — features, merits, demerits పరంగా — పార్లమెంటరీ, ప్రెసిడెన్షియల్ వ్యవస్థలను పోల్చి చూపిస్తాయి. పరీక్షకు ముందు చివరి పునశ్చరణ కోసం ఈ పేజీ ప్రత్యేకంగా ఉపయోగపడుతుంది.</div>
+</div>
+</div>
+<div class="divider"><span class="dtitle">Ch.14 — Federal System</span><span class="dpart">Part II &middot; Complete Edition</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

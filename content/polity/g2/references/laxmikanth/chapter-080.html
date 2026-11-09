@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part X &mdash; Book 1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 80 — Role of Regional Parties</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Meaning, Features, Classification &amp; Political Role — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Regional Parties — Why They Matter in the Indian Party System</div>
+  <p class="eng">A striking feature of India's party landscape is how many parties operate not across the whole country but within a single state or a defined region. Such <b class="term">regional parties</b> are no longer a marginal curiosity — they now shape outcomes at every tier of the political system, from panchayats and municipalities up to Parliament itself, and their weight has grown sharply since national politics entered an era where no single party can usually govern at the centre on its own, making <b class="hlb">coalition</b> arithmetic the norm rather than the exception.</p>
+  <div class="te">భారత party వ్యవస్థలో ఒక ప్రత్యేకమైన లక్షణం ఏమిటంటే, చాలా parties దేశం మొత్తం మీద కాకుండా ఒకే రాష్ట్రం లేదా నిర్దిష్ట ప్రాంతానికే పరిమితమై పనిచేస్తాయి. ఇలాంటి <b class="term">regional parties</b> ఇప్పుడు చిన్న విషయం కాదు — పంచాయతీలు, municipalities నుండి Parliament వరకు రాజకీయ వ్యవస్థలోని ప్రతి స్థాయిలో ఫలితాలను ప్రభావితం చేస్తున్నాయి, జాతీయ రాజకీయాల్లో ఒంటరిగా కేంద్రంలో ప్రభుత్వం ఏర్పాటు చేయగలిగే స్థాయిలో ఏ ఒక్క party కూడా లేని కొత్త యుగం మొదలయ్యాక వీటి ప్రాముఖ్యత బాగా పెరిగింది, దీనితో <b class="hlb">coalition</b> లెక్కలే మామూలుగా మారాయి.</div>
+
+  <div class="stitle">Four Defining Features of a Regional Party</div>
+  <p class="eng">Laxmikanth's account of what marks out a party as "regional" boils down to five closely linked traits, laid out below as a quick-reference table rather than a running list, since each trait is a discrete, testable point.</p>
+  <div class="te">ఏ లక్షణాలు ఒక party ని "regional" గా గుర్తించేలా చేస్తాయో గ్రంథకర్త ఐదు దగ్గరి సంబంధం ఉన్న లక్షణాలుగా చెప్తారు — ఒక్కొక్కటి విడిగా గుర్తుపెట్టుకోదగిన పాయింట్ కాబట్టి, వీటిని కథలా కాకుండా ఒక table రూపంలో ఇక్కడ ఇస్తున్నాం.</div>
+
+  <table>
+    <caption>Features of a regional party</caption>
+    <thead><tr><th style="width:8%">#</th><th style="width:30%">Feature</th><th>What it means</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Confined electoral base</td><td>Works within one state or a defined region only; does not contest seriously across India</td></tr>
+      <tr><td class="n">2</td><td>Identity-linked</td><td>Speaks for a particular cultural, religious, linguistic or ethnic group within that region</td></tr>
+      <tr><td class="n">3</td><td>Feeds on local grievance/identity</td><td>Builds around local discontent or long-standing demands tied to language, caste, community or region</td></tr>
+      <tr><td class="n">4</td><td>State-level focus</td><td>Prioritises local/regional issues; its real target is power at the state level</td></tr>
+      <tr><td class="n">5</td><td>Autonomy-seeking</td><td>Pushes for greater <b class="term">regional autonomy</b> for states within the Union</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Features of a Regional Party</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What is the geographic scope of a regional party?</td><td>One state or a specific region, not the whole country</td></tr>
+      <tr><td>What kind of identity does it usually attach to?</td><td>A cultural, religious, linguistic or ethnic group</td></tr>
+      <tr><td>What is its ultimate political goal?</td><td>Political power at the state level, plus greater regional autonomy</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">How Regional Parties Are Classified</div>
+  <p class="eng">Not every regional party comes from the same mould. The book groups them into four broad categories, based on how each one actually came into being and what it stands for.</p>
+  <div class="te">అన్ని regional parties ఒకే మూసలో పుట్టవు. ప్రతి party ఎలా ఏర్పడిందో, అది దేనికి ప్రాతినిధ్యం వహిస్తుందో అనే ఆధారంగా గ్రంథం వీటిని నాలుగు విస్తృత వర్గాలుగా విభజిస్తుంది.</div>
+
+  <table>
+    <caption>Classification of regional parties</caption>
+    <thead><tr><th style="width:8%">#</th><th style="width:34%">Category</th><th>Representative examples</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Rooted in regional culture/ethnicity</td><td>Shiromani Akali Dal, National Conference, DMK, Telugu Desam, Shiv Sena, Asom Gana Parishad</td></tr>
+      <tr><td class="n">2</td><td>All-India ambition, but no real pan-India base</td><td>Samajwadi Party, Nationalist Congress Party</td></tr>
+      <tr><td class="n">3</td><td>Born out of a split from a national party</td><td>Biju Janata Dal, Rashtriya Janata Dal, Trinamool Congress, YSR Congress</td></tr>
+      <tr><td class="n">4</td><td>Built around one leader's <b class="term">personal charisma</b> ("personalised" parties)</td><td>Tend to be short-lived once that leader's appeal fades</td></tr>
+    </tbody>
+  </table>
+  <div class="te">వర్గం 1 — regional సంస్కృతి/జాతి ఆధారంగా ఏర్పడినవి (ఉదా. Akali Dal, National Conference, DMK, TDP, Shiv Sena, AGP); వర్గం 2 — all-India ఆలోచన ఉన్నా, నిజమైన దేశవ్యాప్త base లేనివి (SP, NCP); వర్గం 3 — జాతీయ party నుండి చీలిక ద్వారా పుట్టినవి (BJD, RJD, TMC, YSRCP); వర్గం 4 — ఒకే నాయకుడి <b class="term">వ్యక్తిగత ఆకర్షణ</b> చుట్టూ ఏర్పడినవి ("personalised" parties) — ఆ నాయకుడి ప్రజాదరణ తగ్గగానే ఇవి సాధారణంగా ఎక్కువకాలం మనుగడ సాగించవు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Classification</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Name the four categories of regional parties.</td><td>Culture/ethnicity-based; all-India-outlook-but-no-base; split-from-national-party; personalised/charismatic-leader parties</td></tr>
+      <tr><td>Give one example each of a split-based and a culture-based party.</td><td>Split-based: Trinamool Congress; culture-based: DMK</td></tr>
+      <tr><td>What is the typical weakness of personalised parties?</td><td>They tend to be short-lived, tied to one leader's popularity</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Why Regional Parties Emerged — the Twelve Causes Behind Their Rise</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Rise of Regional Parties — Causes Rooted in Diversity, Development &amp; History</div>
+  <p class="eng">The book traces the growth of regional parties to a set of twelve overlapping causes, which read more naturally in three connected clusters than as an unrelated checklist. The <b>first cluster</b> is about India's own diversity and uneven growth: the country's deep <b>cultural and ethnic pluralism</b> gave every distinct community a potential political voice of its own; <b>economic disparities and regional imbalances</b> in how development was spread meant some states or areas felt left behind and looked to state-focused politics to press their case; and, tied to this, certain regions carried a <b>historical desire to preserve a separate identity</b>, often from a legacy that pre-dated independent India altogether. The <b class="term">linguistic reorganisation of states</b> in the 1950s reinforced this same logic in institutional form — once states themselves were redrawn along language lines, it became natural for parties too to organise around that same linguistic/regional identity rather than purely around all-India ideology.</p>
+  <div class="te">ఈ చాప్టర్, regional parties ఎదుగుదలకు పన్నెండు ఒకదానితో ఒకటి ముడిపడిన కారణాలను చూపిస్తుంది — వీటిని విడివిడి జాబితాగా కాకుండా మూడు సంబంధిత సమూహాలుగా చూస్తే అర్థం చేసుకోవడం సులభం. <b>మొదటి సమూహం</b> — భారతదేశ diversity, అసమాన అభివృద్ధికి సంబంధించినది — దేశంలోని లోతైన <b>సాంస్కృతిక, జాతి pluralism</b> ప్రతి ప్రత్యేక సమూహానికి తనదైన రాజకీయ గొంతుక ఇచ్చే అవకాశం కల్పించింది; అభివృద్ధి పంపిణీలో <b>ఆర్థిక అసమానతలు, ప్రాంతీయ అసమతుల్యత</b> వల్ల కొన్ని రాష్ట్రాలు లేదా ప్రాంతాలు వెనుకబడినట్లు భావించి, తమ డిమాండ్లను ముందుకు తేవడానికి రాష్ట్ర-కేంద్రిత రాజకీయాల వైపు చూశాయి; దీనితోపాటే, కొన్ని ప్రాంతాలు స్వాతంత్ర్యానికి ముందు నుండే ఉన్న వారసత్వం కారణంగా <b>ప్రత్యేక గుర్తింపును కాపాడుకోవాలనే చారిత్రక కోరిక</b> కలిగి ఉన్నాయి. 1950ల్లో జరిగిన <b class="term">భాషా ప్రాతిపదికన రాష్ట్రాల పునర్విభజన</b> ఇదే తర్కాన్ని సంస్థాగత రూపంలో మరింత బలపరిచింది — రాష్ట్రాలే భాష ఆధారంగా తిరిగి గీయబడ్డాక, parties కూడా జాతీయ సిద్ధాంతం చుట్టూ కాకుండా అదే భాషా/ప్రాంతీయ గుర్తింపు చుట్టూ ఏర్పడటం సహజంగా మారింది.</div>
+
+  <p class="eng">The <b>second cluster</b> is about the political failures and opportunities that opened space for these parties: <b>national parties simply failed to satisfy regional aspirations</b> on many occasions, leaving a gap that a state-focused outfit could fill; the <b>self-interest of dethroned Maharajas and dispossessed Zamindars</b>, who had lost their formal status and estates after independence, gave a ready pool of influential local figures with a motive to build political vehicles of their own; <b>factional infighting inside the larger, national parties</b> repeatedly pushed disgruntled leaders and their followers to break away and float regional outfits instead; and, for a long stretch after independence, the <b>Congress party's own centralising style of functioning</b>, combined with the near <b>absence of a strong opposition at the centre</b>, meant that dissent against a dominant central leadership had to find an outlet at the state level, which regional parties were well placed to provide.</p>
+  <div class="te"><b>రెండో సమూహం</b> — ఈ parties కి అవకాశం కల్పించిన రాజకీయ వైఫల్యాలు, అవకాశాల గురించి — చాలా సందర్భాల్లో <b>జాతీయ parties ప్రాంతీయ ఆకాంక్షలను తీర్చడంలో విఫలమయ్యాయి</b>, దీనివల్ల ఏర్పడిన ఖాళీని రాష్ట్ర-కేంద్రిత party నింపగలిగింది; స్వాతంత్ర్యం తర్వాత తమ అధికారిక హోదా, భూములు కోల్పోయిన <b>పదవీచ్యుత మహారాజులు, ఆస్తులు కోల్పోయిన జమీందార్ల స్వీయ-ప్రయోజనం</b>, తమదైన రాజకీయ వేదికలు నిర్మించుకోవాలనే ఉద్దేశ్యంతో ప్రభావవంతమైన స్థానిక వ్యక్తుల సమూహాన్ని అందించింది; పెద్ద, జాతీయ parties లోపల <b>వర్గపోరాటాలు</b> అసంతృప్తి చెందిన నాయకులను, వారి అనుచరులను పదే పదే విడిపోయి regional outfits ఏర్పాటు చేసేలా చేశాయి; స్వాతంత్ర్యం తర్వాత చాలాకాలం పాటు, <b>Congress party centralising ధోరణి</b>, కేంద్రంలో <b>బలమైన ప్రతిపక్షం లేకపోవడం</b> కలిసి, ఆధిపత్య కేంద్ర నాయకత్వానికి వ్యతిరేకంగా అసమ్మతికి రాష్ట్ర స్థాయిలో ఒక దారి కావాల్సి వచ్చింది, దీన్ని regional parties బాగా అందించగలిగాయి.</div>
+
+  <p class="eng">The <b>third cluster</b> brings in leadership and social-identity factors: a <b>charismatic regional leader</b> could often single-handedly turn a local following into a full-fledged party; the continuing salience of <b>caste and religion in electoral politics</b> gave social groups an additional reason to organise politically along those very lines at the state level; and, finally, <b>alienation and discontent among tribal communities</b>, who often felt bypassed by mainstream development and mainstream parties alike, fed the rise of parties speaking specifically for tribal regions and interests.</p>
+  <div class="te"><b>మూడో సమూహం</b> లో నాయకత్వం, సామాజిక-గుర్తింపు అంశాలు వస్తాయి — ఒక <b>ఆకర్షణీయమైన regional నాయకుడు</b> తరచుగా ఒంటరిగానే స్థానిక అనుచరవర్గాన్ని పూర్తి స్థాయి party గా మార్చగలిగాడు; ఎన్నికల రాజకీయాల్లో <b>కులం, మతం</b> కొనసాగుతున్న ప్రాముఖ్యత, సామాజిక సమూహాలకు రాష్ట్ర స్థాయిలో అదే ప్రాతిపదికన రాజకీయంగా సంఘటితం కావడానికి మరో కారణాన్ని ఇచ్చింది; చివరగా, ప్రధాన స్రవంతి అభివృద్ధి, ప్రధాన స్రవంతి parties రెండింటి నుండి తాము విస్మరించబడ్డామని భావించిన <b>గిరిజన వర్గాల్లో పరాయీకరణ, అసంతృప్తి</b>, గిరిజన ప్రాంతాలు, ప్రయోజనాల కోసం మాట్లాడే parties పుట్టడానికి ఆజ్యం పోసింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Causes for the Rise of Regional Parties</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which 1950s institutional change reinforced regional political identity?</td><td>Linguistic reorganisation of states</td></tr>
+      <tr><td>Which two dispossessed groups had self-interest in floating parties?</td><td>Deposed Maharajas and dispossessed Zamindars</td></tr>
+      <tr><td>Which long-dominant party's style is cited as a cause?</td><td>Congress party's centralising tendencies</td></tr>
+      <tr><td>Name one social-identity factor and one leadership factor among the causes.</td><td>Caste/religion in politics (social); charismatic regional leader (leadership)</td></tr>
+      <tr><td>Which community's alienation is separately named as a cause?</td><td>Tribal groups</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Positive Role of Regional Parties in Indian Politics</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Regional Parties as Positive Contributors to Indian Democracy</div>
+  <p class="eng">Once regional parties became a fixture of state and national politics, the book credits them with a wide range of constructive contributions, best read as three connected strands. <b>On governance and the party system:</b> they have delivered more stable, effective governments at the state level in many cases; they broke the long <b>one-party dominance</b> that Congress enjoyed for decades after independence, forcing genuine competition into the system; and they widened voter choice in both <b>Parliamentary and Assembly</b> elections by giving citizens a state-focused alternative that speaks directly to their own state's interests.</p>
+  <div class="te">Regional parties రాష్ట్ర, జాతీయ రాజకీయాల్లో స్థిరమైన భాగంగా మారాక, గ్రంథం వాటికి అనేక సానుకూల contributions ఆపాదిస్తుంది — వీటిని మూడు సంబంధిత అంశాలుగా చూడొచ్చు. <b>Governance, party వ్యవస్థ విషయంలో</b> — చాలా సందర్భాల్లో రాష్ట్ర స్థాయిలో మరింత స్థిరమైన, సమర్థవంతమైన ప్రభుత్వాలను ఇచ్చాయి; స్వాతంత్ర్యం తర్వాత దశాబ్దాల పాటు Congress అనుభవించిన సుదీర్ఘ <b>ఏకపార్టీ ఆధిపత్యాన్ని</b> బద్దలుకొట్టి, వ్యవస్థలో నిజమైన పోటీని తీసుకువచ్చాయి; <b>Parliamentary, Assembly</b> ఎన్నికల్లో ఓటర్లకు వారి రాష్ట్ర ప్రయోజనాలకు నేరుగా మాట్లాడే రాష్ట్ర-కేంద్రిత ప్రత్యామ్నాయాన్ని ఇచ్చి, ఎంపిక పరిధిని విస్తరించాయి.</div>
+
+  <p class="eng"><b>On centre-state relations and central power:</b> by pressing for greater autonomy and raising the tension points inherent in <b class="term">centre-state relations</b>, they made the central leadership noticeably more responsive to state-level concerns; they also acted as a check on any <b>authoritarian drift at the centre</b>, since a ruling party that faced organised regional opposition on specific issues had to negotiate rather than simply dictate terms; and, once the <b>coalition era</b> arrived, they became indispensable partners in central governments, sharing real power with national parties rather than staying confined to state assemblies.</p>
+  <div class="te"><b>Centre-state సంబంధాలు, కేంద్ర అధికారం విషయంలో</b> — ఎక్కువ autonomy కోసం ఒత్తిడి తెచ్చి, <b class="term">centre-state సంబంధాల్లో</b> ఉండే tension points ను ముందుకు తెచ్చి, కేంద్ర నాయకత్వాన్ని రాష్ట్ర-స్థాయి ఆందోళనలకు మరింత స్పందించేలా చేశాయి; ఏదైనా నిర్దిష్ట అంశంపై సంఘటిత regional వ్యతిరేకతను ఎదుర్కొన్న అధికార party చర్చలకు దిగాల్సి రావడంతో, కేంద్రంలో <b>నిరంకుశ ధోరణులకు</b> అడ్డుకట్టగా కూడా పనిచేశాయి; <b class="term">coalition యుగం</b> ప్రారంభమయ్యాక, రాష్ట్ర శాసనసభలకే పరిమితం కాకుండా, జాతీయ parties తో నిజమైన అధికారాన్ని పంచుకుంటూ కేంద్ర ప్రభుత్వాల్లో అనివార్యమైన భాగస్వాములుగా మారాయి.</div>
+
+  <p class="eng"><b>On accountability, participation and institutional checks:</b> they deepened political consciousness and popular participation by pulling local and regional issues into the spotlight where ordinary voters could engage with them directly; they made a real contribution to <b>parliamentary democracy</b>'s working principle that the minority must be heard even as the majority governs, since regional parties have simultaneously held office in some states while sitting in opposition at the centre; and they were instrumental in exposing partisan misuse of the <b>Governor's office</b> — in matters such as appointing or dismissing a Chief Minister, issuing ordinances, or reserving bills for the President's consideration — bringing these issues into public and constitutional debate.</p>
+  <div class="te"><b>Accountability, participation, institutional checks విషయంలో</b> — స్థానిక, ప్రాంతీయ అంశాలను ప్రజల దృష్టిలోకి తెచ్చి, సాధారణ ఓటర్లు వాటితో నేరుగా అనుసంధానం అయ్యేలా చేసి, రాజకీయ చైతన్యాన్ని, ప్రజా భాగస్వామ్యాన్ని పెంచాయి; మైనారిటీ గొంతుక వినిపించాలి, మెజారిటీ పాలన చేయాలి అనే <b>parliamentary democracy</b> మూల సూత్రానికి నిజమైన contribution ఇచ్చాయి — ఎందుకంటే కొన్ని రాష్ట్రాల్లో అధికారంలో ఉంటూనే, కేంద్రంలో ప్రతిపక్షంగా కూడా regional parties వ్యవహరించాయి; Chief Minister నియామకం/తొలగింపు, ordinances జారీ, President పరిశీలన కోసం bills reserve చేయడం వంటి విషయాల్లో <b>Governor పదవి</b> దుర్వినియోగాన్ని బహిర్గతం చేసి, వీటిని ప్రజా, రాజ్యాంగ చర్చలోకి తీసుకువచ్చాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Positive Role of Regional Parties</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which long dominance did regional parties break?</td><td>Congress's one-party dominance</td></tr>
+      <tr><td>What effect did they have on the centre's approach to states?</td><td>Made the central leadership more responsive to regional concerns</td></tr>
+      <tr><td>How did they contribute to parliamentary democracy's core principle?</td><td>By ruling in some states while sitting in opposition at the centre</td></tr>
+      <tr><td>Which constitutional office's partisan misuse did they help expose?</td><td>The Governor's office (CM appointment/dismissal, ordinances, reserving bills)</td></tr>
+      <tr><td>What role do they play in the coalition era at the centre?</td><td>Indispensable partners/kingmakers, sharing power with national parties</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Dysfunctions of Regional Parties · Chapter 80 — Facts at a Glance</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">The Other Side — Dysfunctions of Regional Parties</div>
+  <p class="eng">The book balances its account with a set of six negative consequences that regional parties are also blamed for. <b>First</b>, by design they place regional interest ahead of national interest, sometimes without weighing the wider fallout of that narrow approach on the country as a whole. <b>Second</b>, they have been accused of stoking <b>regionalism, casteism, linguism, communalism and tribalism</b> — forces that work directly against national integration. <b>Third</b>, they are seen as partly responsible for the persistence of unresolved <b>inter-state disputes</b>, whether over sharing river waters, contested borders, or other cross-border frictions between states. <b>Fourth</b>, like parties everywhere, some have been drawn into <b>corruption, nepotism and favouritism</b>, misusing power for narrow self-interest rather than public good. <b>Fifth</b>, an over-reliance on <b>populist schemes</b> aimed purely at expanding their electoral base has, in some states, come at the cost of sound state finances and long-term development. <b>Sixth</b>, when they become part of a central coalition, they can inject narrow regional considerations into national decision-making and policy-making, pressuring the central leadership to accommodate demands that may not serve the country's broader interest.</p>
+  <div class="te">గ్రంథం, regional parties పై ఆరోపించే ఆరు ప్రతికూల పరిణామాలతో ఈ చిత్రాన్ని balance చేస్తుంది. <b>మొదటిది</b> — స్వభావరీత్యా ఇవి జాతీయ ప్రయోజనం కంటే ప్రాంతీయ ప్రయోజనానికే ఎక్కువ ప్రాధాన్యత ఇస్తాయి, కొన్నిసార్లు దేశం మీద ఈ సంకుచిత దృక్పథం వల్ల కలిగే విస్తృత పరిణామాలను పరిగణలోకి తీసుకోకుండానే. <b>రెండోది</b> — జాతీయ సమైక్యతకు నేరుగా వ్యతిరేకంగా పనిచేసే <b>regionalism, casteism, linguism, communalism, tribalism</b> లను ప్రోత్సహించాయని ఆరోపిస్తారు. <b>మూడోది</b> — నదీ జలాల పంపిణీ, సరిహద్దు వివాదాలు వంటి <b>అంతర్-రాష్ట్ర సమస్యలు</b> పరిష్కారం కాకుండా కొనసాగడానికి ఇవి కూడా కొంతమేర కారణమని భావిస్తారు. <b>నాలుగోది</b> — ఎక్కడైనా parties లాగానే, కొన్ని <b>అవినీతి, బంధుప్రీతి, పక్షపాతం</b> లో చిక్కుకుని, ప్రజా ప్రయోజనం కంటే సంకుచిత స్వీయ-ప్రయోజనం కోసం అధికారాన్ని దుర్వినియోగం చేశాయి. <b>ఐదోది</b> — ఎలక్టోరల్ base పెంచుకోవడానికే ఉద్దేశించిన <b>populist పథకాలపై</b> అతిగా ఆధారపడటం వల్ల కొన్ని రాష్ట్రాల ఆర్థిక పరిస్థితి, దీర్ఘకాలిక అభివృద్ధి దెబ్బతిన్నాయి. <b>ఆరోది</b> — కేంద్ర coalition లో భాగమైనప్పుడు, జాతీయ నిర్ణయాలు, విధానాల్లో సంకుచిత ప్రాంతీయ అంశాలను చొప్పించి, దేశ విస్తృత ప్రయోజనాలకు సరిపడని డిమాండ్లను అంగీకరించమని కేంద్ర నాయకత్వంపై ఒత్తిడి తెస్తాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Dysfunctions of Regional Parties</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Name three "-isms" regional parties are accused of fuelling.</td><td>Regionalism, casteism, linguism (also communalism, tribalism)</td></tr>
+      <tr><td>What kind of inter-state issues are they blamed for leaving unresolved?</td><td>Water-sharing disputes and border disputes</td></tr>
+      <tr><td>What financial risk does over-reliance on populism create?</td><td>Damage to the state's economy and long-term development</td></tr>
+      <tr><td>How can they distort central decision-making in a coalition?</td><td>By forcing regional considerations into national policy-making</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Chapter 80 — Facts at a Glance</div>
+  <table>
+    <caption>Role of Regional Parties — key facts, one table</caption>
+    <thead><tr><th style="width:38%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Number of features listed</td><td>5 — confined base, identity-linked, grievance-based, state-focused, autonomy-seeking</td></tr>
+      <tr><td>Number of classification categories</td><td>4 — culture/ethnicity-based; all-India-outlook-no-base; split-from-national-party; personalised/charismatic</td></tr>
+      <tr><td>Examples of culture/ethnicity-based parties</td><td>Akali Dal, National Conference, DMK, TDP, Shiv Sena, Asom Gana Parishad</td></tr>
+      <tr><td>Examples of split-from-national-party parties</td><td>BJD, RJD, Trinamool Congress, YSR Congress</td></tr>
+      <tr><td>Number of causes for rise</td><td>12 — pluralism, uneven development, historical identity, deposed royalty/zamindars, national-party failure, linguistic reorganisation, charismatic leaders, factionalism, Congress centralisation, weak opposition, caste/religion, tribal alienation</td></tr>
+      <tr><td>Number of positive-role points</td><td>10 — governance, ended one-party dominance, centre-state balance, competitive politics, wider choice, political awareness, checked authoritarianism, parliamentary-democracy role, exposed Governor misuse, coalition-era kingmakers</td></tr>
+      <tr><td>Number of dysfunctions</td><td>6 — narrow regionalism, divisive "-isms", unresolved inter-state disputes, corruption, populism hurting finances, distorting coalition policy-making</td></tr>
+      <tr><td>Era that magnified their national importance</td><td class="imp">The coalition-politics era at the centre</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలం — M. Laxmikanth, Indian Polity, 8th Edition, Chapter 80 — Role of Regional Parties.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Regional Parties in the 2026 Assembly Elections <span class="caasof">(as of 25.08.2026, verified via live web search on this date — re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>APPSC-relevant: the two Telugu states, category by category.</b> In <b>Andhra Pradesh</b>, the <b class="term">Telugu Desam Party</b> — the book's own example of a culture/ethnicity-based regional party (category 1) — leads the state government: <b class="hlp">N. Chandrababu Naidu</b> was sworn in as Chief Minister for a fourth term in <b class="hlg">June 2024</b> at the head of a TDP-led <b class="hlb">NDA</b> alliance (TDP with the Jana Sena Party and the BJP), after that alliance swept the 2024 Andhra Pradesh assembly election and defeated the outgoing <b class="term">YSR Congress Party</b> government of <b class="hlp">Y.S. Jagan Mohan Reddy</b> — YSRCP itself being the book's example of category 3, a party formed by a split from a national party (Congress). In neighbouring <b>Telangana</b>, it is a national party, not a regional one, that currently governs: the <b class="term">Indian National Congress</b> under Chief Minister <b class="hlp">Revanth Reddy</b> has held office since <b class="hlg">December 2023</b>, having replaced the regional <b class="term">Bharat Rashtra Samithi (BRS)</b> — formerly the Telangana Rashtra Samithi — which the book would also classify under category 1. Together these two states show both halves of this chapter's story: a regional party firmly in power in one state, and a regional party voted out in favour of a national party in the other.</p>
+    <div class="te"><b>APPSC కి సంబంధించినది — రెండు తెలుగు రాష్ట్రాలు, వర్గాల వారీగా.</b> <b>ఆంధ్రప్రదేశ్</b> లో, గ్రంథం చెప్పే culture/ethnicity ఆధారిత regional party (వర్గం 1) కు స్వంత ఉదాహరణ అయిన <b class="term">తెలుగుదేశం పార్టీ (TDP)</b>, ప్రస్తుతం రాష్ట్ర ప్రభుత్వాన్ని నడిపిస్తోంది — <b class="hlp">ఎన్. చంద్రబాబు నాయుడు</b>, TDP నేతృత్వంలోని <b class="hlb">NDA</b> కూటమి (TDP, జనసేన పార్టీ, BJP) తరపున <b class="hlg">2024 జూన్</b>లో నాలుగోసారి Chief Minister గా ప్రమాణం చేశారు — 2024 ఆంధ్రప్రదేశ్ assembly ఎన్నికల్లో ఈ కూటమి భారీ విజయం సాధించి, అప్పటి <b class="term">YSR కాంగ్రెస్ పార్టీ</b> ప్రభుత్వాధినేత <b class="hlp">వై.ఎస్. జగన్మోహన్ రెడ్డి</b> ని ఓడించింది — YSRCP నే గ్రంథం, జాతీయ party (Congress) నుండి చీలిక ద్వారా ఏర్పడిన వర్గం 3 కు ఉదాహరణగా చెప్తుంది. పక్కనే ఉన్న <b>తెలంగాణ</b> లో మాత్రం ప్రస్తుతం పాలిస్తున్నది ఒక regional party కాదు, జాతీయ party — <b class="term">భారత జాతీయ కాంగ్రెస్ (INC)</b>, Chief Minister <b class="hlp">రేవంత్ రెడ్డి</b> నేతృత్వంలో <b class="hlg">2023 డిసెంబర్</b> నుండి అధికారంలో ఉంది — గతంలో అధికారంలో ఉన్న regional party <b class="term">భారత రాష్ట్ర సమితి (BRS)</b> (పూర్వపు తెలంగాణ రాష్ట్ర సమితి, ఇది కూడా గ్రంథం ప్రకారం వర్గం 1 కిందకే వస్తుంది) స్థానంలో వచ్చింది. ఈ రెండు రాష్ట్రాలు కలిపి చూస్తే, ఈ చాప్టర్ కథలోని రెండు కోణాలూ కనిపిస్తాయి — ఒక రాష్ట్రంలో regional party గట్టిగా అధికారంలో ఉండటం, మరో రాష్ట్రంలో regional party ఓడిపోయి జాతీయ party అధికారంలోకి రావడం.</div>
+
+    <p class="eng"><b>A brand-new "personalised" regional party wins power in Tamil Nadu:</b> The <b class="hlg">2026</b> Tamil Nadu Assembly election (voting <b class="hlg">23 April 2026</b>, counting <b class="hlg">4 May 2026</b>) produced a result textbook writers will be citing for years: <b class="term">Tamilaga Vettri Kazhagam (TVK)</b>, a party actor <b class="hlp">Vijay</b> had launched only a few years earlier, emerged as the single largest party with <b class="hlg">108</b> seats — ahead of the DMK-led alliance (73) and the AIADMK-led alliance (53) — making it the <b class="imp">first non-Dravidian party to top the Tamil Nadu assembly since the 1960s</b>. Since 108 seats fell short of the 118 needed for a majority, Vijay's TVK had to line up outside support from smaller allies before he was sworn in as Chief Minister on <b class="hlg">10 May 2026</b> and won the floor test on <b class="hlg">13 May 2026</b>. This is a live illustration of two points from this very chapter: TVK fits the book's fourth classification category — a party built around one leader's <b class="hlb">personal charisma</b> — and its need for outside support to govern shows regional/personalised parties acting as <b class="term">kingmakers</b> even without an outright majority of their own.</p>
+    <div class="te"><b>ఒక కొత్త "personalised" regional party తమిళనాడులో అధికారంలోకి రావడం:</b> <b class="hlg">2026</b> తమిళనాడు Assembly ఎన్నికల్లో (ఓటింగ్ <b class="hlg">2026 ఏప్రిల్ 23</b>, కౌంటింగ్ <b class="hlg">2026 మే 4</b>) వచ్చిన ఫలితం రాబోయే ఏళ్లలో textbook లలో ఉదాహరణగా నిలిచేలా ఉంది — నటుడు <b class="hlp">విజయ్</b> కొన్నేళ్ల క్రితమే స్థాపించిన <b class="term">తమిళగ వెట్రి కళగం (TVK)</b>, <b class="hlg">108</b> సీట్లతో అతిపెద్ద party గా అవతరించింది — DMK కూటమి (73), AIADMK కూటమి (53) కంటే ముందుంది — ఇది 1960ల తర్వాత తమిళనాడు assembly లో <b class="imp">అగ్రస్థానంలో నిలిచిన మొదటి non-Dravidian party</b>. మెజారిటీకి అవసరమైన 118 సీట్లకు 108 తక్కువ కావడంతో, విజయ్ TVK బయటి మిత్రపక్షాల మద్దతు కూడగట్టుకుని, <b class="hlg">2026 మే 10</b>న Chief Minister గా ప్రమాణం చేసి, <b class="hlg">2026 మే 13</b>న floor test గెలిచాడు. ఇది ఈ చాప్టర్ లోని రెండు అంశాలకు ప్రత్యక్ష ఉదాహరణ — TVK, గ్రంథం చెప్పే నాలుగో వర్గం కిందకు వస్తుంది — ఒకే నాయకుడి <b class="hlb">వ్యక్తిగత ఆకర్షణ</b> చుట్టూ ఏర్పడిన party; పైగా, పాలించడానికి బయటి మద్దతు అవసరం కావడం, స్వంతంగా మెజారిటీ లేకపోయినా regional/personalised parties ఎలా <b class="term">kingmakers</b> గా వ్యవహరిస్తాయో చూపిస్తుంది.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — 2026 assembly elections and regional-party strength</caption>
+      <thead><tr><th style="width:22%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">Dec 2023</td><td>Telangana: Congress (national party) forms government under CM Revanth Reddy, replacing the regional BRS</td></tr>
+        <tr><td class="hlg">Jun 2024</td><td>Andhra Pradesh: TDP-led NDA (TDP + Jana Sena + BJP) sweeps assembly polls; N. Chandrababu Naidu sworn in CM for a 4th term, ending YSRCP rule</td></tr>
+        <tr><td class="hlg">23 Apr – 4 May 2026</td><td>Tamil Nadu Assembly election: TVK wins 108/234 seats, largest single party, but short of a majority</td></tr>
+        <tr><td class="hlg">10–13 May 2026</td><td>Vijay (TVK) sworn in as CM with outside support; wins the floor test</td></tr>
+        <tr><td class="hlg">4 May 2026</td><td>West Bengal Assembly election: BJP (national party) wins ~206 seats, ending TMC's 15-year rule — a reminder that regional-party dominance is not permanent</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: keep the book's four classification categories, twelve causes and ten-point positive role as the stable core. For APPSC specifically, remember TDP (category 1) is the ruling party in Andhra Pradesh under CM Chandrababu Naidu, while Telangana is currently run by the national Congress party, not a regional one. Treat TVK's 2026 win as a fresh, concrete example of a "personalised" party (category 4) and of the "charismatic regional leader" cause of rise — and note that the same 2026 election cycle also shows a long-ruling regional party (TMC) losing power to a national party, underlining that this chapter's dynamics run in both directions. Re-check this page nearer your exam date since electoral facts date quickly.</p>
+    <div class="te">Exam కోసం — గ్రంథంలోని నాలుగు classification వర్గాలు, పన్నెండు కారణాలు, పది-పాయింట్ల positive role నే స్థిరమైన core గా ఉంచుకోండి. APPSC కి ప్రత్యేకంగా — ఆంధ్రప్రదేశ్ లో అధికారంలో ఉన్నది TDP (వర్గం 1), CM చంద్రబాబు నాయుడు; తెలంగాణ లో మాత్రం ప్రస్తుతం regional party కాదు, జాతీయ Congress party పాలిస్తోంది అని గుర్తుంచుకోండి. TVK 2026 విజయాన్ని, "personalised" party (వర్గం 4) కు, "charismatic regional leader" అనే rise కారణానికి తాజా, నిర్దిష్ట ఉదాహరణగా చూడండి — అదే 2026 ఎన్నికల చక్రంలో, చాలాకాలంగా అధికారంలో ఉన్న regional party (TMC) ఒక జాతీయ party చేతిలో అధికారం కోల్పోవడం కూడా కనిపిస్తుంది, ఇది ఈ చాప్టర్ డైనమిక్స్ రెండు దిశల్లోనూ పనిచేస్తాయని చూపిస్తుంది. ఎన్నికల facts త్వరగా మారిపోతాయి కాబట్టి, మీ exam తేదీకి దగ్గరగా ఈ పేజీని మళ్లీ చెక్ చేసుకోండి.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 80 — Role of Regional Parties · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.81 — Elections</span><span class="dpart">Part X &middot; Book 1 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

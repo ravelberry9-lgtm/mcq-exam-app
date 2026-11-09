@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part X &mdash; Book 1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 79 — Political Parties</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Meaning, Types &amp; Party Systems — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">What Is a Political Party? Ideological Types &amp; the Left-Centre-Right Spectrum</div>
+  <p class="eng">A <b class="term">political party</b> is best understood as a group of people who come together on their own free will because they share a broadly common political outlook, and who then organise themselves to pursue power through the ballot box — always working, at least in theory, through the constitutionally available channels rather than by force — with the stated goal of advancing the country's larger interest. Political scientists sort parties across the democratic world into four broad ideological buckets based on how each one treats existing institutions: a <b class="term">reactionary</b> party wants to pull society back toward an older socio-economic and political order; a <b class="term">conservative</b> party is content to preserve things largely as they stand; a <b class="term">liberal</b> party pushes to reform current institutions from within; and a <b class="term">radical</b> party seeks to tear down the existing order altogether and replace it with something new. Mapped onto the familiar <b class="hlb">left-centre-right</b> spectrum, radical parties sit on the left, liberal parties occupy the centre, and both the conservative and reactionary camps fall on the right. In the Indian context, the two communist parties — <b>CPI</b> and <b>CPM</b> — are usually cited as leftist, the <b>Congress</b> is treated as the classic centrist party, and the <b>BJP</b> is generally placed on the right.</p>
+  <div class="te"><b class="term">Political party</b> అంటే, ఒకే రకమైన political అభిప్రాయాలు పంచుకునే వ్యక్తులు స్వచ్ఛందంగా ఏర్పరుచుకున్న ఒక సంఘం అని చెప్పుకోవచ్చు — వీరు ఎన్నికల ద్వారా అధికారం కోసం ప్రయత్నిస్తారు, ఇది ఎప్పుడూ constitutional మార్గాల్లోనే (బలప్రయోగం కాదు) జరగాలని expect చేస్తారు, దీని ఉద్దేశం దేశ larger interest ను ముందుకు తీసుకెళ్లడం. Political scientists, ప్రపంచవ్యాప్తంగా ఉన్న parties ను, అవి existing institutions ను ఎలా చూస్తాయో బట్టి నాలుగు broad categories గా విభజిస్తారు — <b class="term">reactionary</b> party పాత socio-economic, political order వైపు వెనక్కి వెళ్లాలని కోరుకుంటుంది; <b class="term">conservative</b> party ప్రస్తుత పరిస్థితిని అలాగే ఉంచాలని కోరుకుంటుంది; <b class="term">liberal</b> party ప్రస్తుత institutions లోపలి నుండే reform చేయాలని ప్రయత్నిస్తుంది; <b class="term">radical</b> party ప్రస్తుత order ను పూర్తిగా కూల్చేసి కొత్తది తేవాలని కోరుకుంటుంది. తెలిసిన <b class="hlb">left-centre-right</b> spectrum మీద చూస్తే, radical parties ఎడమవైపు, liberal parties మధ్యలో, conservative మరియు reactionary రెండూ కుడివైపు వస్తాయి. భారతదేశంలో, రెండు కమ్యూనిస్టు పార్టీలు — <b>CPI</b>, <b>CPM</b> — సాధారణంగా leftist గా చెప్పబడతాయి, <b>Congress</b> ను classic centrist party గా చూస్తారు, <b>BJP</b> ను సాధారణంగా కుడివైపు ఉంచుతారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Meaning &amp; Ideological Types</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Name the four ideological types of parties.</td><td>Reactionary, conservative, liberal, radical</td></tr>
+      <tr><td>Where does each sit on the left-centre-right spectrum?</td><td>Radical = left; liberal = centre; conservative &amp; reactionary = right</td></tr>
+      <tr><td>Give the standard Indian examples for left/centre/right.</td><td>CPI &amp; CPM = left; Congress = centre; BJP = right</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Party Systems Found Around the World</div>
+  <p class="eng">Countries are also classified by how many parties genuinely compete for power — a distinct question from ideology. Under a <b class="term">one-party system</b>, a single ruling party holds the field and no organised opposition is tolerated at all; the erstwhile Soviet Union and its East European allies under communist rule are the textbook illustration. A <b class="term">two-party system</b> narrows real contention to two large parties that alternate in office, as seen in the <b class="hlb">United States</b> (Democratic and Republican) and in <b class="hlb">Britain</b> (Conservative and Labour). A <b class="term">multi-party system</b>, by contrast, has several parties of consequence competing simultaneously, none dominant enough to govern alone on a routine basis — France, Switzerland and Italy are commonly cited examples of this pattern.</p>
+  <div class="te">ఒక దేశంలో నిజంగా అధికారం కోసం ఎన్ని parties పోటీపడతాయో అనే దాని ఆధారంగా కూడా దేశాలను వర్గీకరిస్తారు — ఇది ideology కు వేరైన ప్రశ్న. <b class="term">One-party system</b> లో, ఒకే ఒక్క ruling party మాత్రమే ఉంటుంది, organised opposition కు అనుమతి ఉండదు — పూర్వపు Soviet Union, దాని కమ్యూనిస్టు East European మిత్రదేశాలు దీనికి textbook ఉదాహరణ. <b class="term">Two-party system</b> లో, నిజమైన పోటీ రెండు పెద్ద పార్టీలకే పరిమితం అవుతుంది, అవి అధికారంలోకి మారి మారి వస్తుంటాయి — <b class="hlb">United States</b> (Democratic, Republican), <b class="hlb">Britain</b> (Conservative, Labour) ఇందుకు ఉదాహరణలు. <b class="term">Multi-party system</b> లో మాత్రం, ఏకకాలంలో అనేక ప్రధాన పార్టీలు పోటీపడతాయి, ఏ ఒక్కటీ సాధారణంగా ఒంటరిగా పాలించేంత ఆధిపత్యం చూపదు — France, Switzerland, Italy దీనికి తరచుగా చెప్పే ఉదాహరణలు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Party Systems</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Give an example of a one-party system.</td><td>The former USSR / East European communist states</td></tr>
+      <tr><td>Give examples of a two-party system.</td><td>USA (Democratic-Republican), Britain (Conservative-Labour)</td></tr>
+      <tr><td>Give examples of a multi-party system.</td><td>France, Switzerland, Italy</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">India's Party System — Multi-Party Character &amp; the Congress/One-Dominant-Party Phase</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">A Genuine Multi-Party System</div>
+  <p class="eng">India's sheer geographic scale, the enormous social diversity of its population, the choice to hand every adult citizen the vote from the very first election, and the distinctive way its politics actually functions on the ground have together produced an extraordinarily crowded party landscape — by most counts, <b class="imp">India hosts more registered political parties than any other country in the world</b>. Every ideological flavour is represented somewhere in this landscape — left, centrist and right parties, communal outfits and avowedly secular ones — and one direct consequence of this crowding is that <b class="hlb">hung Parliaments</b>, <b class="hlb">hung state assemblies</b> and <b class="hlb">coalition governments</b> have turned into a routine feature of Indian politics rather than an exception.</p>
+  <div class="te">భారతదేశ భౌగోళిక విస్తీర్ణం, జనాభాలో అపారమైన సామాజిక వైవిధ్యం, మొదటి ఎన్నికల నుండే ప్రతి పౌరుడికి ఓటు హక్కు ఇవ్వడం, మరియు క్షేత్రస్థాయిలో రాజకీయాలు పనిచేసే ప్రత్యేక తీరు — ఇవన్నీ కలిసి అత్యంత రద్దీగా ఉండే party landscape ను తయారు చేశాయి — చాలామంది లెక్క ప్రకారం, <b class="imp">ప్రపంచంలో ఏ దేశం కంటే ఎక్కువ registered political parties భారతదేశంలో ఉన్నాయి</b>. ఈ landscape లో ప్రతి ideology కూడా ఎక్కడో ఒకచోట కనిపిస్తుంది — left, centrist, right parties, communal outfits, స్పష్టంగా secular అయినవి కూడా — దీని ప్రత్యక్ష ఫలితంగా, <b class="hlb">hung Parliaments</b>, <b class="hlb">hung రాష్ట్ర assemblies</b>, <b class="hlb">coalition governments</b> మినహాయింపు కాకుండా ఒక routine లక్షణంగా మారిపోయాయి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">The One-Dominant-Party Phase — the "Congress System"</div>
+  <p class="eng">Even though India is formally a multi-party democracy, for a long stretch after Independence one party towered over the rest — the <b>Congress</b>. The well-known political scientist <b class="hlp">Rajni Kothari</b> gave this peculiar arrangement a name of its own, describing it as a <b class="term">"one-party-dominance system"</b>, more popularly remembered as the <b class="term">"Congress system"</b>. That dominance was not permanent, though — it started visibly eroding from <b class="hlg">1967</b> onward, as regional outfits gained ground and a series of new national-level rivals emerged one after another: the <b class="hlg">Janata Party (1977)</b>, the <b class="hlg">Janata Dal (1989)</b>, and the <b class="hlg">BJP (1991)</b> as a serious national contender. Taken together, this steady erosion is what carried India from a single dominant party toward today's genuinely competitive multi-party arena.</p>
+  <div class="te">భారతదేశం అధికారికంగా multi-party democracy అయినప్పటికీ, స్వాతంత్ర్యం వచ్చిన తర్వాత చాలాకాలం పాటు ఒకే పార్టీ మిగతా వాటన్నింటిపై పైచేయిగా ఉండేది — అదే <b>Congress</b>. ప్రసిద్ధ political scientist <b class="hlp">Rajni Kothari</b>, ఈ విచిత్రమైన ఏర్పాటుకు ప్రత్యేకంగా ఒక పేరు పెట్టారు — దీన్ని <b class="term">"one-party-dominance system"</b> అని, మరింత ప్రాచుర్యంలో <b class="term">"Congress system"</b> అని పిలిచారు. అయితే, ఈ ఆధిపత్యం శాశ్వతంగా నిలవలేదు — <b class="hlg">1967</b> నుండి ఇది కనిపించేలా క్షీణించడం మొదలైంది, regional పార్టీలు బలపడటంతోపాటు, ఒకదాని తర్వాత ఒకటి కొత్త national-level ప్రత్యర్థులు ఎదుర్కొన్నారు — <b class="hlg">Janata Party (1977)</b>, <b class="hlg">Janata Dal (1989)</b>, మరియు serious national contender గా <b class="hlg">BJP (1991)</b>. ఈ నిరంతర క్షీణతే, భారతదేశాన్ని ఒకే dominant party నుండి ఈనాటి నిజమైన competitive multi-party వ్యవస్థ వైపు నడిపించింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Multi-Party Character &amp; the Congress System</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Why does India have so many political parties?</td><td>Vast size, social diversity, universal franchise from the start, and its particular political dynamics</td></tr>
+      <tr><td>Who coined "one-party-dominance system" / "Congress system"?</td><td>Rajni Kothari</td></tr>
+      <tr><td>From which year did Congress's dominance start declining?</td><td>1967</td></tr>
+      <tr><td>Name the successive national rivals that emerged after 1967.</td><td>Janata Party (1977), Janata Dal (1989), BJP (1991)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Recurring Weaknesses in India's Party System — Ideology, Leadership, Traditional Loyalties, Regional Parties</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">Weakness 1 &amp; 2 — Blurred Ideology and the Cult of the Leader</div>
+  <p class="eng">Barring the <b>BJP</b> and the two communist parties (<b>CPI</b>, <b>CPM</b>), most Indian parties do not carry a sharply distinct ideological identity — their manifestos and programmes tend to converge rather than diverge, with almost everybody paying lip service to democracy, secularism, socialism and Gandhian ideals. Beneath this shared rhetoric, capturing office is usually the real driving motive for every party, including the ones that present themselves as ideological — so day-to-day politics ends up organised around immediate issues and expedient calculation rather than around any settled set of principles. A second, related weakness is the <b class="term">cult of personality</b>: many parties end up built entirely around one commanding leader who overshadows the party's own programme, so that voters end up identifying a party by its leader's face far more readily than by its manifesto — prompting the sharp observation that India often has political personalities rather than political parties in any real sense.</p>
+  <div class="te"><b>BJP</b>, రెండు కమ్యూనిస్టు పార్టీలు (<b>CPI</b>, <b>CPM</b>) తప్ప, చాలా భారతీయ పార్టీలకు స్పష్టమైన, ప్రత్యేకమైన ideological identity ఉండదు — వాటి manifestos, programmes ఒకదానికొకటి దగ్గరగానే ఉంటాయి, దాదాపు అందరూ democracy, secularism, socialism, గాంధేయ విలువలను మాటల్లోనే గౌరవిస్తారు. ఈ ఉమ్మడి రెటరిక్ వెనుక, ప్రతి పార్టీకి — ideological అని చెప్పుకునే వాటికి కూడా — నిజమైన లక్ష్యం సాధారణంగా అధికారం చేజిక్కించుకోవడమే — అందుకే రోజువారీ రాజకీయాలు స్థిరమైన సూత్రాల చుట్టూ కాకుండా, తక్షణ అంశాలు, అనుకూలమైన లెక్కల చుట్టూ నడుస్తుంటాయి. దీనికి సంబంధించిన రెండో బలహీనత — <b class="term">personality cult</b> — చాలా పార్టీలు పూర్తిగా ఒకే శక్తివంతమైన నాయకుడి చుట్టూ నిర్మించబడతాయి, ఆ నాయకుడు పార్టీ ప్రోగ్రామ్ కంటే ఎక్కువగా కనిపిస్తారు — దీనివల్ల ఓటర్లు పార్టీని దాని manifesto కంటే నాయకుడి ముఖంతోనే గుర్తిస్తారు — దీనివల్లే, భారతదేశంలో నిజమైన అర్థంలో political parties కంటే political personalities ఎక్కువగా ఉన్నాయని ఒక పదునైన వ్యాఖ్య వినిపిస్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Ideology &amp; Personality Cult</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which parties are seen as having a genuinely distinct ideology?</td><td>BJP and the two communist parties (CPI, CPM)</td></tr>
+      <tr><td>What single motive is said to actually drive most parties?</td><td>Capturing power, ahead of ideology</td></tr>
+      <tr><td>What does "personality cult" mean here?</td><td>A party built around, and identified by, one dominant leader rather than its programme</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Weakness 3, 4 &amp; 5 — Traditional Loyalties, Rise of Regional Parties, Factions &amp; Defections</div>
+  <p class="eng">Unlike Western democracies, where parties typically form around socio-economic and policy programmes, a considerable number of Indian parties instead take shape along the lines of <b class="term">religion, caste, language, culture or region</b> — and such parties tend to champion narrow communal or sectional interests, often at the cost of the wider public good. Alongside this sits the steady <b class="term">rise of regional parties</b>: once confined to state-level politics, many of them have gone on to become ruling parties within their states and, through coalition arrangements at the Centre, now shape national politics as well. A further recurring problem is chronic internal instability — <b class="term">factionalism, splits, mergers and defections</b> have dogged Indian parties throughout, driven largely by the pursuit of power and material gain; this tendency picked up noticeably after the <b class="hlg">fourth general elections (1967)</b>, and it has repeatedly destabilised governments both at the Centre and in the states.</p>
+  <div class="te">పాశ్చాత్య ప్రజాస్వామ్యాల్లో పార్టీలు సాధారణంగా socio-economic, policy programmes చుట్టూ ఏర్పడతాయి — భారతదేశంలో మాత్రం చాలా పార్టీలు <b class="term">మతం, కులం, భాష, సంస్కృతి లేదా ప్రాంతం</b> ఆధారంగా ఏర్పడతాయి — ఇలాంటి పార్టీలు తరచుగా విస్తృత ప్రజా ప్రయోజనాన్ని పణంగా పెట్టి, ఇరుకైన communal లేదా sectional ప్రయోజనాలనే ముందుకు తీసుకెళ్తాయి. దీనితోపాటు <b class="term">regional parties పెరుగుదల</b> కూడా కొనసాగుతోంది — ఒకప్పుడు రాష్ట్ర రాజకీయాలకే పరిమితమైన ఇవి, ఇప్పుడు తమ రాష్ట్రాల్లో ruling parties గా మారాయి, కేంద్రంలో coalition ఏర్పాట్ల ద్వారా జాతీయ రాజకీయాలను కూడా ప్రభావితం చేస్తున్నాయి. ఇంకో పదేపదే కనిపించే సమస్య — <b class="term">factionalism, splits, mergers, defections</b> లాంటి దీర్ఘకాలిక అంతర్గత అస్థిరత — ఇది ప్రధానంగా అధికారం, భౌతిక లాభాల కోసమే జరుగుతుంది; <b class="hlg">నాలుగో సార్వత్రిక ఎన్నికలు (1967)</b> తర్వాత ఇది గమనించదగినంతగా పెరిగింది, కేంద్రంలో, రాష్ట్రాల్లో ప్రభుత్వాలను పదేపదే అస్థిరపరిచింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Traditional Basis, Regional Parties, Factions</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>On what lines are many Indian parties formed (unlike the West)?</td><td>Religion, caste, language, culture, region</td></tr>
+      <tr><td>What shift has happened with regional parties?</td><td>From state-level politics to shaping national politics via coalitions</td></tr>
+      <tr><td>After which general elections did defections rise sharply?</td><td>The fourth general elections (1967)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Weakness 6 &amp; the ECI's Role · Recognition — National Party Route</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">Weakness 6 — Absence of a Strong, United Opposition</div>
+  <p class="eng">A parliamentary democracy like India's depends on a robust <b class="term">Opposition</b> to keep the ruling party's excesses in check and to hold itself out as a credible alternative government. Yet, going all the way back to the very first general elections, India has rarely managed to sustain a united, disciplined, nationwide Opposition for any length of time — flashes of effective opposition have appeared, but they have not held. Opposition parties frequently pull in different directions on how to deal with the ruling party, and this disunity has repeatedly kept them from playing the constructive, nation-building role that a healthy Opposition is expected to play.</p>
+  <div class="te">భారతదేశం లాంటి parliamentary democracy, ruling party మితిమీరిన చర్యలను అదుపు చేయడానికి, తానే ఒక నమ్మదగిన alternative government గా నిలబడటానికి బలమైన <b class="term">Opposition</b> పైనే ఆధారపడుతుంది. అయితే, మొదటి సార్వత్రిక ఎన్నికల నుండి ఇప్పటివరకు, ఐక్యమైన, క్రమశిక్షణతో కూడిన, దేశవ్యాప్త Opposition ను భారతదేశం చాలా అరుదుగా మాత్రమే కొనసాగించగలిగింది — అప్పుడప్పుడు ప్రభావవంతమైన opposition కనిపించినా, అది నిలబడలేదు. Opposition పార్టీలు, ruling party ను ఎలా ఎదుర్కోవాలనే విషయంలో తరచుగా వేర్వేరు దిశల్లో వెళ్తాయి — ఈ ఐక్యత లేమి వల్ల, ఆరోగ్యకరమైన Opposition నుండి expect చేసే నిర్మాణాత్మక, nation-building పాత్రను అవి పదేపదే పోషించలేకపోయాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Weaknesses of India's Party System (all six)</caption>
+    <thead><tr><th class="gn2" style="width:38%">Weakness</th><th>In one line</th></tr></thead>
+    <tbody>
+      <tr><td>1. Lack of clear ideology</td><td>Most parties (except BJP, CPI, CPM) converge on programme; power is the real goal</td></tr>
+      <tr><td>2. Personality cult</td><td>Parties known by their leader, not their manifesto</td></tr>
+      <tr><td>3. Based on traditional factors</td><td>Formed on religion/caste/language/region rather than policy</td></tr>
+      <tr><td>4. Regional parties' rising national role</td><td>State-level parties now shape Centre politics via coalitions</td></tr>
+      <tr><td>5. Factions &amp; defections</td><td>Splits/mergers driven by power &amp; material gain, sharper after 1967</td></tr>
+      <tr><td>6. Lack of effective Opposition</td><td>No sustained, united, nationwide Opposition since the first elections</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">The Election Commission's Role — Registering &amp; Recognising Parties</div>
+  <p class="eng">The <b class="hlp">Election Commission of India (ECI)</b> registers every political party that wants to contest elections, and, based purely on how each party has actually performed at the polls, it further grants some of them the status of <b class="term">national party</b> or <b class="term">state party</b>; parties that clear neither bar simply remain <b class="term">registered-unrecognised parties</b>. This recognition is not a mere label — it unlocks concrete privileges, most importantly a reserved <b class="term">election symbol</b>, guaranteed free time for political broadcasts on state-run television and radio, and access to electoral rolls. A recognised national party's symbol is reserved for its exclusive use anywhere in the country, while a recognised state party's symbol is reserved for its exclusive use only within the state(s) where it holds that recognition; a registered-unrecognised party, by contrast, must simply pick from a common pool of <b class="term">free symbols</b> that the Commission keeps aside for such candidates, as distinct from the <b class="term">reserved symbols</b> set apart for recognised parties.</p>
+  <div class="te"><b class="hlp">Election Commission of India (ECI)</b>, ఎన్నికల్లో పోటీ చేయాలనుకునే ప్రతి political party ను register చేస్తుంది, ఆ పార్టీ ఎన్నికల్లో నిజంగా ఎలా పనితీరు చూపిందో దాని ఆధారంగానే కొన్నింటికి <b class="term">national party</b> లేదా <b class="term">state party</b> హోదా ఇస్తుంది — ఏ గీతనూ దాటని పార్టీలు కేవలం <b class="term">registered-unrecognised parties</b> గానే మిగిలిపోతాయి. ఈ recognition కేవలం ఒక లేబుల్ కాదు — ఇది కొన్ని కాంక్రీట్ ప్రయోజనాలు తెరుస్తుంది — అన్నింటికంటే ముఖ్యంగా reserve చేసిన <b class="term">election symbol</b>, రాష్ట్ర-నిర్వహణ television, radio లలో political broadcasts కు హామీ ఇచ్చిన సమయం, electoral rolls కు access. Recognised national party symbol దేశవ్యాప్తంగా ఆ పార్టీకి మాత్రమే reserve అవుతుంది, recognised state party symbol మాత్రం అది recognition పొందిన రాష్ట్రం(ల)లో మాత్రమే ఆ పార్టీకి reserve అవుతుంది; registered-unrecognised party మాత్రం, Commission అలాంటి candidates కోసం పక్కన పెట్టిన <b class="term">free symbols</b> పూల్ నుండి — recognised parties కోసం ప్రత్యేకించిన <b class="term">reserved symbols</b> కు వేరుగా — ఎంచుకోవాలి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — ECI's Registration &amp; Recognition Role</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who registers political parties in India?</td><td>The Election Commission of India</td></tr>
+      <tr><td>Basis on which national/state recognition is granted?</td><td>The party's actual poll performance</td></tr>
+      <tr><td>What is a party called if it gets neither recognition?</td><td>Registered-unrecognised party</td></tr>
+      <tr><td>Name the three privileges recognition unlocks.</td><td>Reserved symbol, free time on state TV/radio, access to electoral rolls</td></tr>
+      <tr><td>Reserved symbols vs free symbols?</td><td>Reserved = for recognised parties; free = for registered-unrecognised parties' candidates</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">The Election Symbols (Reservation and Allotment) Order, 1968 — National &amp; State Party Recognition Criteria (MOST TESTED)</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">National Party Recognition — the Three Alternative Routes</div>
+  <p class="eng">All recognition criteria trace back to the <b class="hlb">Election Symbols (Reservation and Allotment) Order, 1968</b>, as amended over time. A party earns <b class="imp">national party</b> status the moment it satisfies <b>any one</b> of three independent routes. <b>Route 1:</b> in a Lok Sabha general election, or one held for a state's legislative assembly, the party must poll at least <b class="hlg">6% of the valid votes</b> in no fewer than <b class="hlg">four states</b>, and its candidates must additionally have won at least <b class="hlg">4 Lok Sabha seats</b> from any state or combination of states. <b>Route 2:</b> at a Lok Sabha general election, the party must win at least <b class="hlg">2% of the total Lok Sabha seats</b>, with its winning candidates drawn from at least <b class="hlg">3 different states</b>. <b>Route 3</b> is purely derivative — a party qualifies automatically for national status if it is already recognised as a <b class="term">state party</b> in as many as <b class="hlg">4 states</b>.</p>
+  <div class="te">అన్ని recognition criteria <b class="hlb">Election Symbols (Reservation and Allotment) Order, 1968</b> నుండి వస్తాయి, ఇది కాలానుగుణంగా amend చేయబడింది. మూడు స్వతంత్ర routes లో <b>ఏదో ఒకటి</b> satisfy చేస్తే చాలు, ఒక పార్టీ <b class="imp">national party</b> హోదా పొందుతుంది. <b>Route 1:</b> Lok Sabha లేదా ఏదైనా రాష్ట్ర legislative assembly కి జరిగే general election లో, కనీసం <b class="hlg">నాలుగు రాష్ట్రాల్లో</b> కనీసం <b class="hlg">6% valid votes</b> పోల్ చేయాలి, దానితోపాటు ఏదైనా రాష్ట్రం(ల) నుండి కనీసం <b class="hlg">4 Lok Sabha సీట్లు</b> గెలవాలి. <b>Route 2:</b> Lok Sabha general election లో, కనీసం <b class="hlg">2% మొత్తం Lok Sabha సీట్లు</b> గెలవాలి, గెలిచిన అభ్యర్థులు కనీసం <b class="hlg">3 వేర్వేరు రాష్ట్రాల</b> నుండి ఉండాలి. <b>Route 3</b> పూర్తిగా derivative — ఒక పార్టీ ఇప్పటికే <b class="hlg">4 రాష్ట్రాల్లో</b> <b class="term">state party</b> గా recognised అయితే, అది automatic గా national status కు అర్హత పొందుతుంది.</div>
+
+  <table>
+    <caption>National Party — 3 Conditions (any one qualifies)</caption>
+    <thead><tr><th class="n" style="width:8%">#</th><th style="width:34%">Condition</th><th>Threshold</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Vote share + Lok Sabha seats</td><td class="imp">6% valid votes in ≥4 states + wins ≥4 Lok Sabha seats (Lok Sabha or assembly election)</td></tr>
+      <tr><td class="n">2</td><td>Lok Sabha seat share</td><td class="imp">Wins ≥2% of Lok Sabha seats, from ≥3 states</td></tr>
+      <tr><td class="n">3</td><td>Derived from state-party status</td><td class="imp">Already recognised as a state party in ≥4 states</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — National Party Criteria</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which Order lays down these criteria?</td><td>Election Symbols (Reservation and Allotment) Order, 1968</td></tr>
+      <tr><td>Route 1 — vote-share threshold and in how many states?</td><td>6% valid votes in 4 or more states</td></tr>
+      <tr><td>Route 1 — additional Lok Sabha seats needed?</td><td>4 seats, from any state(s)</td></tr>
+      <tr><td>Route 2 — seat-share and state-spread threshold?</td><td>2% of Lok Sabha seats, won from 3 or more states</td></tr>
+      <tr><td>Route 3 — the shortcut route?</td><td>Recognised as a state party in 4 states</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Recognition — State Party Route · National-Party Counts, 1952 vs 2019 vs 2026</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">State Party Recognition — the Five Alternative Routes</div>
+  <p class="eng">A party is recognised as a <b class="imp">state party</b> within a given state if it clears <b>any one</b> of five thresholds, all measured against that state alone. <b>(1)</b> At a state assembly general election, poll at least <b class="hlg">6% of the valid votes</b> in that state and additionally win at least <b class="hlg">2 assembly seats</b>. <b>(2)</b> At a Lok Sabha general election, poll at least <b class="hlg">6% of the valid votes</b> in that state and additionally win at least <b class="hlg">1 Lok Sabha seat</b> from it. <b>(3)</b> At an assembly general election, win at least <b class="hlg">3% of the assembly seats</b>, or <b class="hlg">3 seats outright</b> — whichever figure is larger. <b>(4)</b> At a Lok Sabha general election, win <b class="hlg">1 Lok Sabha seat for every 25 seats</b> (or any fraction of that) allotted to the state. <b>(5)</b> Poll at least <b class="hlg">8%</b> of all the valid votes cast anywhere in that state, counting either a Lok Sabha election or an assembly election. The list of recognised parties is not frozen — it is revisited as fresh poll results come in, so parties move in and out of national/state status over time; national parties are also loosely called <b>all-India parties</b>, and state parties, <b>regional parties</b>.</p>
+  <div class="te">ఒక రాష్ట్రంలో, ఐదు thresholds లో <b>ఏదో ఒకటి</b> clear చేస్తే, ఆ పార్టీ ఆ రాష్ట్రానికి <b class="imp">state party</b> గా recognised అవుతుంది — ఇవన్నీ ఆ ఒక్క రాష్ట్రానికే వర్తిస్తాయి. <b>(1)</b> అసెంబ్లీ general election లో, ఆ రాష్ట్రంలో కనీసం <b class="hlg">6% valid votes</b>, దానితోపాటు కనీసం <b class="hlg">2 assembly సీట్లు</b> గెలవాలి. <b>(2)</b> Lok Sabha general election లో, ఆ రాష్ట్రంలో కనీసం <b class="hlg">6% valid votes</b>, దానితోపాటు ఆ రాష్ట్రం నుండి కనీసం <b class="hlg">1 Lok Sabha సీటు</b> గెలవాలి. <b>(3)</b> అసెంబ్లీ general election లో, కనీసం <b class="hlg">3% assembly సీట్లు</b> లేదా <b class="hlg">3 సీట్లు</b> — ఏది ఎక్కువైతే అది గెలవాలి. <b>(4)</b> Lok Sabha general election లో, ఆ రాష్ట్రానికి కేటాయించిన ప్రతి <b class="hlg">25 సీట్లకు (లేదా దాని fraction కు) 1 Lok Sabha సీటు</b> గెలవాలి. <b>(5)</b> Lok Sabha లేదా అసెంబ్లీ ఎన్నికల్లో, ఆ రాష్ట్రంలో మొత్తం పోల్ అయిన valid votes లో కనీసం <b class="hlg">8%</b> పొందాలి. Recognised parties జాబితా శాశ్వతం కాదు — తాజా ఎన్నికల ఫలితాల ఆధారంగా ఇది మారుతూనే ఉంటుంది, పార్టీలు కాలానుగుణంగా national/state status లోకి వస్తూ, పోతూ ఉంటాయి; national parties ను <b>all-India parties</b> అని, state parties ను <b>regional parties</b> అని కూడా పిలుస్తారు.</div>
+
+  <table>
+    <caption>State Party — 5 Conditions (any one qualifies, within that state)</caption>
+    <thead><tr><th class="n" style="width:8%">#</th><th style="width:34%">Condition</th><th>Threshold</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Assembly vote-share + seats</td><td class="imp">6% valid votes + wins ≥2 assembly seats</td></tr>
+      <tr><td class="n">2</td><td>Lok Sabha vote-share + seat</td><td class="imp">6% valid votes + wins ≥1 Lok Sabha seat (from that state)</td></tr>
+      <tr><td class="n">3</td><td>Assembly seat share</td><td class="imp">≥3% of assembly seats, or 3 seats — whichever is more</td></tr>
+      <tr><td class="n">4</td><td>Lok Sabha seat ratio</td><td class="imp">1 Lok Sabha seat per 25 seats (or fraction) allotted to the state</td></tr>
+      <tr><td class="n">5</td><td>Overall vote-share</td><td class="imp">≥8% of total valid votes (Lok Sabha or assembly)</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — State Party Criteria &amp; Party Counts</caption>
+    <thead><tr><th class="gn2" style="width:42%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>State party condition needing only a vote-share, no seat?</td><td>Condition 5 — 8% of total valid votes in the state</td></tr>
+      <tr><td>Which condition ties seats to the state's Lok Sabha allotment?</td><td>Condition 4 — 1 seat per 25 seats (or fraction) allotted</td></tr>
+      <tr><td>How many national &amp; state parties existed in 1952?</td><td>14 national, 39 state parties</td></tr>
+      <tr><td>How many national &amp; state parties existed in 2019?</td><td>7 national, 52 state parties</td></tr>
+      <tr><td>Are national/state parties also called by other names?</td><td>Yes — all-India parties / regional parties respectively</td></tr>
+    </tbody>
+  </table>
+  <p class="eng" style="margin-top:6px;font-size:13px;color:#555">Note: the 7-national-party count of 2019 has since changed — see the Current Affairs Update at the end of this chapter for the up-to-date count and list.</p>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Table 79.1 — Formation of Major Political Parties (Chronological)</div>
+
+<div class="para">
+  <div class="ptitle gn" style="margin-top:0">Table 79.1 — Formation of Political Parties, in Chronological Order</div>
+  <table>
+    <caption>Major parties by year of formation (as listed by Laxmikanth)</caption>
+    <thead><tr><th class="n">#</th><th style="width:34%">Party (Abbreviation)</th><th style="width:26%">Founder</th><th>Year</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Indian National Congress (INC)</td><td>A.O. Hume</td><td class="hlg">1885</td></tr>
+      <tr><td class="n">2</td><td>Shiromani Akali Dal (SAD)</td><td>—</td><td class="hlg">1920</td></tr>
+      <tr><td class="n">3</td><td>Communist Party of India (CPI)</td><td>M.N. Roy</td><td class="hlg">1925</td></tr>
+      <tr><td class="n">4</td><td>Jammu &amp; Kashmir National Conference (JKNC)</td><td>Sheikh Abdullah</td><td class="hlg">1939</td></tr>
+      <tr><td class="n">5</td><td>Dravida Munnetra Kazhagam (DMK)</td><td>C.N. Annadurai</td><td class="hlg">1949</td></tr>
+      <tr><td class="n">6</td><td>Communist Party of India (Marxist) (CPM)</td><td>—</td><td class="hlg">1964</td></tr>
+      <tr><td class="n">7</td><td>Shiv Sena (SHS)</td><td>Bal Thackeray</td><td class="hlg">1966</td></tr>
+      <tr><td class="n">8</td><td>All India Anna DMK (AIADMK)</td><td>M.G. Ramachandran</td><td class="hlg">1972</td></tr>
+      <tr><td class="n">9</td><td>Bharatiya Janata Party (BJP)</td><td>A.B. Vajpayee &amp; L.K. Advani</td><td class="hlg">1980</td></tr>
+      <tr><td class="n">10</td><td>Telugu Desam Party (TDP)</td><td>N.T. Rama Rao</td><td class="hlg">1982</td></tr>
+      <tr><td class="n">11</td><td>Bahujan Samaj Party (BSP)</td><td>Kanshi Ram</td><td class="hlg">1984</td></tr>
+      <tr><td class="n">12</td><td>Asom Gana Parishad (AGP)</td><td>P.K. Mahanta</td><td class="hlg">1985</td></tr>
+      <tr><td class="n">13</td><td>Samajwadi Party (SP)</td><td>Mulayam Singh Yadav</td><td class="hlg">1992</td></tr>
+      <tr><td class="n">14</td><td>Rashtriya Janata Dal (RJD)</td><td>Lalu Prasad Yadav</td><td class="hlg">1997</td></tr>
+      <tr><td class="n">15</td><td>Biju Janata Dal (BJD)</td><td>Naveen Patnaik</td><td class="hlg">1997</td></tr>
+      <tr><td class="n">16</td><td>All India Trinamool Congress (AITC)</td><td>Mamata Banerjee</td><td class="hlg">1998</td></tr>
+      <tr><td class="n">17</td><td>J&amp;K People's Democratic Party (PDP)</td><td>Mufti Mohd. Sayeed</td><td class="hlg">1999</td></tr>
+      <tr><td class="n">18</td><td>Janata Dal (United) (JD(U))</td><td>Sharad Yadav</td><td class="hlg">1999</td></tr>
+      <tr><td class="n">19</td><td>Janata Dal (Secular) (JD(S))</td><td>H.D. Deve Gowda</td><td class="hlg">1999</td></tr>
+      <tr><td class="n">20</td><td>Nationalist Congress Party (NCP)</td><td>Sharad Pawar, P.A. Sangma, Tariq Anwar</td><td class="hlg">1999</td></tr>
+      <tr><td class="n">21</td><td>Lok Janshakti Party (LJP)</td><td>Ram Vilas Paswan</td><td class="hlg">2000</td></tr>
+      <tr><td class="n">22</td><td>Telangana Rashtra Samithi (now Bharat Rashtra Samithi, BRS)</td><td>K. Chandrashekar Rao</td><td class="hlg">2001</td></tr>
+      <tr><td class="n">23</td><td>YSR Congress Party (YSRCP)</td><td>Y.S. Jagan Mohan Reddy</td><td class="hlg">2011</td></tr>
+      <tr><td class="n">24</td><td>Aam Aadmi Party (AAP)</td><td>Arvind Kejriwal</td><td class="hlg">2012</td></tr>
+      <tr><td class="n">25</td><td>National People's Party (NPP)</td><td>P.A. Sangma</td><td class="hlg">2013</td></tr>
+    </tbody>
+  </table>
+  <p class="eng" style="margin-top:6px;font-size:13px;color:#555">Memory tip: this is a bare list of names/founders/years for rote recall — group by decade (1880s-1920s founding parties, 1960s-80s regional-party wave, 1990s splinter/regional wave) rather than trying to memorise it in one pass.</p>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Chapter 79 — Facts at a Glance</div>
+
+<div class="para">
+  <div class="ptitle gn">Chapter 79 — Facts at a Glance</div>
+  <table>
+    <caption>Political Parties — key facts, one table</caption>
+    <thead><tr><th style="width:40%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Four ideological types</td><td>Reactionary, conservative, liberal, radical</td></tr>
+      <tr><td>Left / centre / right examples (India)</td><td>CPI &amp; CPM (left); Congress (centre); BJP (right)</td></tr>
+      <tr><td>Three party systems (world)</td><td>One-party (USSR); two-party (USA, Britain); multi-party (France, Switzerland, Italy)</td></tr>
+      <tr><td>Term for Congress's early dominance</td><td>"One-party-dominance system" / "Congress system" — Rajni Kothari</td></tr>
+      <tr><td>Year Congress dominance began declining</td><td>1967</td></tr>
+      <tr><td>Key rivals after 1967</td><td>Janata Party (1977), Janata Dal (1989), BJP (1991)</td></tr>
+      <tr><td>Six recurring weaknesses</td><td>Weak ideology, personality cult, traditional-factor basis, regional-party rise, factions/defections, weak Opposition</td></tr>
+      <tr><td>Recognition governed by</td><td>Election Symbols (Reservation and Allotment) Order, 1968</td></tr>
+      <tr><td>National party — Route 1</td><td class="imp">6% votes in ≥4 states + ≥4 Lok Sabha seats</td></tr>
+      <tr><td>National party — Route 2</td><td class="imp">≥2% Lok Sabha seats, from ≥3 states</td></tr>
+      <tr><td>National party — Route 3</td><td class="imp">State party status in ≥4 states</td></tr>
+      <tr><td>State party — 5 conditions (any one)</td><td class="imp">6%+2 seats (assembly) / 6%+1 seat (LS) / 3% or 3 seats (assembly) / 1 per 25 LS seats / 8% overall votes</td></tr>
+      <tr><td>National/state parties, 1952</td><td>14 national, 39 state</td></tr>
+      <tr><td>National/state parties, 2019</td><td>7 national, 52 state</td></tr>
+      <tr><td>Other names for national/state parties</td><td>All-India parties / regional parties</td></tr>
+      <tr><td>Reserved vs free symbols</td><td>Reserved = recognised parties only; free = registered-unrecognised parties' candidates</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలాలు — M. Laxmikanth, Indian Polity, 8th Edition, Chapter 79; Election Symbols (Reservation and Allotment) Order, 1968.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — National Party Reshuffle &amp; ECI's Party Clean-Up Drive <span class="caasof">(as of 25.08.2026, verified via live web search on this date — re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>The 2019 count of 7 national parties is now outdated — there are 6 as of 2026.</b> In <b class="hlg">April 2023</b>, the <b class="hlp">Election Commission of India</b> reviewed poll performance and stripped national-party status from three parties that the book's 2019 figure had counted — the <b class="term">All India Trinamool Congress (AITC)</b>, the <b class="term">Nationalist Congress Party (NCP)</b> and the <b class="term">Communist Party of India (CPI)</b> — while simultaneously granting national-party status to the <b class="term">Aam Aadmi Party (AAP)</b> for the first time. As things stand in 2026, India's recognised national parties are: <b>BJP</b>, <b>INC</b>, <b>BSP</b>, <b>CPM</b>, <b>AAP</b> and <b>NPP</b> — six in total, not seven. This is exactly the kind of number the exam likes to test, so update the book's 1952-vs-2019 comparison in your head to a 1952-vs-2026 one: <b>14 → 7 → 6</b>.</p>
+    <div class="te"><b>పుస్తకంలోని 2019 నాటి 7 national parties సంఖ్య ఇప్పుడు పాతబడింది — 2026 నాటికి ఇది 6.</b> <b class="hlg">2023 ఏప్రిల్</b>లో, <b class="hlp">Election Commission of India</b>, పోల్ పనితీరును సమీక్షించి, పుస్తకం 2019 లెక్కలో చేర్చిన మూడు పార్టీల నుండి national-party హోదాను తొలగించింది — <b class="term">All India Trinamool Congress (AITC)</b>, <b class="term">Nationalist Congress Party (NCP)</b>, <b class="term">Communist Party of India (CPI)</b> — దీనితోపాటు <b class="term">Aam Aadmi Party (AAP)</b> కు మొదటిసారి national-party హోదా ఇచ్చింది. 2026 నాటికి, భారతదేశంలో recognised national parties — <b>BJP</b>, <b>INC</b>, <b>BSP</b>, <b>CPM</b>, <b>AAP</b>, <b>NPP</b> — మొత్తం ఆరు, ఏడు కాదు. ఇది exam తరచుగా అడిగే రకమైన సంఖ్య — కాబట్టి పుస్తకంలోని 1952-vs-2019 పోలికను మీ మనసులో 1952-vs-2026 గా అప్డేట్ చేసుకోండి — <b>14 → 7 → 6</b>.</div>
+
+    <p class="eng" style="margin-top:8px"><b>Separately, the ECI has been running a large clean-up of dormant registered-unrecognised parties (RUPPs).</b> The process began with show-cause notices to <b class="hlg">345</b> such parties on <b class="hlg">26 June 2025</b> for not having contested a single election in the six years since 2019, or not being traceable at their registered address; after hearings, <b class="hlg">334</b> of them were actually delisted around <b class="hlg">9 August 2025</b> (phase 1), followed by <b class="hlg">474</b> more delisted around <b class="hlg">18-19 September 2025</b> (phase 2) — a cumulative total of <b class="hlg">808</b> parties delisted within about two months. In that second phase, the Commission also initiated action against roughly <b class="hlg">359</b> further parties for failing to file required financial/election-expenditure returns. This drive does not touch national or state party recognition directly, but it is directly relevant to the "registered-unrecognised parties" category this chapter describes, and it is a good live illustration of how the ECI keeps the party register itself in order.</p>
+    <div class="te"><b>వేరుగా, ECI నిష్క్రియ registered-unrecognised parties (RUPPs) పై ఒక పెద్ద క్లీన్-అప్ డ్రైవ్ నడుపుతోంది.</b> ఈ ప్రక్రియ <b class="hlg">2025 జూన్ 26</b>న <b class="hlg">345</b> పార్టీలకు show-cause notices తో మొదలైంది — 2019 నుండి ఆరేళ్లుగా ఒక్క ఎన్నికలో కూడా పోటీ చేయకపోవడం లేదా వాటి registered చిరునామాలో కనిపించకపోవడం కారణంగా; విచారణల తర్వాత, వాటిలో <b class="hlg">334</b> పార్టీలు నిజంగా <b class="hlg">2025 ఆగస్టు 9</b> ప్రాంతంలో delist అయ్యాయి (phase 1), తర్వాత <b class="hlg">2025 సెప్టెంబర్ 18-19</b> ప్రాంతంలో మరో <b class="hlg">474</b> పార్టీలు delist అయ్యాయి (phase 2) — మొత్తం రెండు నెలల్లో <b class="hlg">808</b> పార్టీలు delist అయ్యాయి. ఆ రెండో phase లో, required financial/election-expenditure returns దాఖలు చేయనందుకు సుమారు <b class="hlg">359</b> మరిన్ని పార్టీలపై చర్య కూడా మొదలైంది. ఈ డ్రైవ్ national లేదా state party recognition ను నేరుగా తాకదు, కానీ ఈ chapter వివరించే "registered-unrecognised parties" category కు ఇది నేరుగా సంబంధించినది — party register ను ECI ఎలా క్రమబద్ధంగా ఉంచుతుందో చూపే మంచి live ఉదాహరణ ఇది.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — recent party-recognition current affairs</caption>
+      <thead><tr><th style="width:22%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">Apr 2023</td><td>ECI de-recognises AITC, NCP, CPI as national parties; grants AAP national-party status</td></tr>
+        <tr><td class="hlg">26 Jun 2025</td><td>ECI issues show-cause notices to 345 dormant RUPPs inactive since 2019 (process begins)</td></tr>
+        <tr><td class="hlg">9 Aug 2025</td><td>Phase 1 — 334 RUPPs actually delisted</td></tr>
+        <tr><td class="hlg">18-19 Sep 2025</td><td>Phase 2 — 474 more RUPPs delisted; cumulative 808 in two phases; action initiated against ~359 others</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: the stable core is the Election Symbols Order, 1968 criteria (Routes 1-3 for national, Conditions 1-5 for state parties) — these thresholds have not changed. Treat the exact national-party count/list as a fact to re-verify close to your exam date, since the Commission reviews it after every general election cycle.</p>
+    <div class="te">Exam కోసం — స్థిరమైన core, Election Symbols Order, 1968 criteria (national కోసం Routes 1-3, state parties కోసం Conditions 1-5) — ఈ thresholds మారలేదు. ఖచ్చితమైన national-party సంఖ్య/జాబితాను, మీ exam తేదీకి దగ్గరగా మళ్లీ verify చేసుకోవాల్సిన fact గా చూడండి, ఎందుకంటే ప్రతి general election cycle తర్వాత Commission దీన్ని సమీక్షిస్తుంది.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 79 — Political Parties · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.80 — Role of Regional Parties</span><span class="dpart">Part X &middot; Book 1 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

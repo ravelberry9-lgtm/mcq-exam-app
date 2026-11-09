@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part IV — Book 1: State Executive & Legislature</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 30 — Governor</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Part IV (State Government) — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle">State Executive &amp; the Governor's Dual Role</div>
+  <p class="eng">The Constitution envisages the <b>same parliamentary pattern</b> of government for the states as for the Centre — <b class="hlg">Part VI</b> deals with state government, and <b class="hlg">Articles 153 to 167</b> within it deal specifically with the state executive, which consists of the <b>governor, the chief minister, the council of ministers, and the advocate general</b> of the state. Notably, there is no office of Vice-Governor in the states corresponding to the Vice-President at the Centre. The governor is the state's chief executive head but, exactly like the President at the Union level, is only a <b class="term">nominal (titular/constitutional) executive head</b> — real governing power lies with the council of ministers. The governor also functions as an <b>agent of the Central government</b>, which gives the office a <b class="imp">dual role</b> unlike any single-hatted office at the state level. One person can also hold the governorship of two or more states at once, since the <b class="hlg">7th Constitutional Amendment Act, 1956</b> permits this — usually, though, each state has its own governor. As a one-line orientation: this chapter is the state-level mirror of Ch.18 (President) — a Governor is broadly to a state what the President is to the Union — though the parallel should not be over-read, since (as this chapter will show) the governor's discretionary powers and constitutional position differ from the President's in specific, examinable ways.</p>
+  <div class="te">రాజ్యాంగం రాష్ట్రాలకు కేంద్రం మాదిరిగానే <b>పార్లమెంటరీ</b> పాలనా విధానాన్నే ఏర్పాటు చేసింది — <b class="hlg">Part VI</b> రాష్ట్ర ప్రభుత్వం గురించి, అందులోని <b class="hlg">Articles 153 నుండి 167</b> ప్రత్యేకంగా రాష్ట్ర executive గురించి — ఇందులో <b>governor, chief minister, council of ministers, రాష్ట్ర advocate general</b> ఉంటారు. కేంద్రంలో Vice-President ఉన్నట్టు రాష్ట్రాల్లో Vice-Governor అనే పదవి లేదని గమనించాలి. Governor రాష్ట్ర chief executive head అయినా, Union స్థాయిలో President లాగే, ఆయన కేవలం <b class="term">nominal (titular/constitutional) executive head</b> మాత్రమే — నిజమైన పాలనా అధికారం council of ministers వద్దే ఉంటుంది. Governor Central government కు agent గా కూడా వ్యవహరిస్తారు — దీనివల్ల ఈ పదవికి రాష్ట్ర స్థాయిలో మరే ఇతర పదవికీ లేని <b class="imp">dual role</b> వస్తుంది. ఒకే వ్యక్తి ఒకేసారి రెండు లేదా అంతకంటే ఎక్కువ రాష్ట్రాలకు governor గా ఉండవచ్చు — దీన్ని <b class="hlg">7వ రాజ్యాంగ సవరణ చట్టం, 1956</b> అనుమతిస్తుంది — అయితే సాధారణంగా ప్రతి రాష్ట్రానికి దాని సొంత governor ఉంటారు. ఒక్క లైన్ లో చెప్పాలంటే — ఈ chapter Ch.18 (President) కు రాష్ట్ర స్థాయి ప్రతిబింబం — Union కు President ఎలానో రాష్ట్రానికి Governor అలానే — అయితే ఈ పోలికను మరీ ఎక్కువగా అన్వయించకూడదు, ఎందుకంటే (ఈ chapter లో ముందుముందు చూసినట్టు) governor discretionary powers, constitutional position President కంటే specific గా, exam కు ముఖ్యమైన రీతిలో భిన్నంగా ఉంటాయి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Appointment of Governor</div>
+  <p class="eng">Unlike the President, the governor is <b class="imp">neither directly elected</b> by the people nor indirectly elected through a specially constituted electoral college — he/she is simply <b>appointed by the President</b> by warrant under the President's hand and seal, making the governor, in a practical sense, a nominee of the Central government. However, the Supreme Court clarified in <b class="hlp">Hargovind Pant vs Raghukul Tilak</b> (<b class="hlg">1979</b>) that the office of governor is <b>not an employment under the Central government</b> — it is an independent constitutional office, not subordinate to or under the control of the Centre, despite the appointment mechanism. The Draft Constitution had actually proposed direct election of the governor on the basis of universal adult suffrage, but the Constituent Assembly rejected this in favour of the present appointment system, for a cluster of reasons: direct election is incompatible with the parliamentary system established in the states; it is more likely to create conflicts between the governor and the chief minister; since the governor is only a nominal head, elaborate and costly election arrangements serve no purpose; an election for a largely ceremonial post would turn entirely on personal issues rather than policy, which isn't in the national interest; an elected governor would naturally belong to a party and thus fail to be a neutral, impartial head; such elections could encourage separatist tendencies and thereby threaten political stability and national unity; Presidential nomination, by contrast, lets the Centre retain a degree of control over the states; direct election would also create a leadership problem at the time of a state's general election; and finally, a sitting chief minister would want his/her own nominee to contest for governorship, so a "second rate" party loyalist might well end up winning. For these reasons, the American model (direct election of a state's Governor) was dropped, and India instead adopted the Canadian model, where the governor of a province is appointed by the Governor-General (i.e., by the Centre).</p>
+  <div class="te">President కు భిన్నంగా, Governor ను ప్రజలు నేరుగా గానీ, ప్రత్యేకంగా ఏర్పాటు చేసిన electoral college ద్వారా పరోక్షంగా గానీ ఎన్నుకోరు — President తన hand and seal కింద <span class="hlb">warrant</span> ద్వారా governor ను నియమిస్తారు — ఆచరణలో governor Central government నామినీ అని చెప్పవచ్చు. అయితే, Supreme Court <b class="hlp">Hargovind Pant vs Raghukul Tilak</b> (<b class="hlg">1979</b>) కేసులో స్పష్టం చేసింది — Governor పదవి Central government కింద ఉద్యోగం కాదు — నియామక పద్ధతి ఎలా ఉన్నా, ఇది Centre కు subordinate కాని, స్వతంత్రమైన constitutional పదవి. వాస్తవానికి Draft Constitution universal adult suffrage ఆధారంగా governor direct election ను ప్రతిపాదించింది, కానీ Constituent Assembly దాన్ని తిరస్కరించి ప్రస్తుత appointment పద్ధతిని అనేక కారణాలతో స్వీకరించింది — direct election రాష్ట్రాల parliamentary వ్యవస్థతో సరిపడదు; governor-CM మధ్య conflicts పెరిగే అవకాశం ఎక్కువ; governor నామమాత్రపు head మాత్రమే కాబట్టి ఖరీదైన, విస్తృతమైన ఎన్నికల ఏర్పాట్లు అనవసరం; ఎక్కువగా ceremonial పదవికి జరిగే ఎన్నిక పూర్తిగా వ్యక్తిగత అంశాలపైనే ఆధారపడేది, policy పైన కాదు — ఇది జాతీయ ప్రయోజనానికి తగదు; ఎన్నికైన governor సహజంగా ఒక పార్టీకి చెందినవాడై, నిష్పక్షపాతమైన, తటస్థ head గా ఉండలేడు; ఇలాంటి ఎన్నికలు separatist ధోరణులను ప్రోత్సహించి, రాజకీయ స్థిరత్వాన్ని, జాతీయ ఐక్యతను దెబ్బతీసే ప్రమాదం ఉంది; దీనికి భిన్నంగా, Presidential నామినేషన్ వల్ల Centre కు రాష్ట్రాలపై కొంత నియంత్రణ ఉంటుంది; direct election రాష్ట్ర general election సమయంలో leadership సమస్యను కూడా సృష్టిస్తుంది; చివరగా, ఆ సమయంలో ఉన్న CM తన సొంత నామినీని పోటీ చేయించాలని కోరుకుంటారు కాబట్టి, పార్టీలో ఒక "సెకండ్ రేట్" విధేయుడు governor గా గెలిచే అవకాశం ఉంటుంది. ఈ కారణాల వల్ల అమెరికా model (రాష్ట్ర Governor direct election) ను వదిలేసి, భారత్ కెనడా model ను స్వీకరించింది — అక్కడ province governor ను Governor-General (అంటే Centre) నియమిస్తారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Overview &amp; Appointment</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Articles dealing with state executive?</td><td>153-167, Part VI</td></tr>
+      <tr><td>Governor's dual role?</td><td>Nominal state head + agent of Central government</td></tr>
+      <tr><td>Who allows one person as governor of 2+ states?</td><td>7th Constitutional Amendment Act, 1956</td></tr>
+      <tr><td>How is governor appointed?</td><td>By the President, by warrant under hand and seal — not elected</td></tr>
+      <tr><td>Is governor's office an employment under the Centre?</td><td>No — independent constitutional office (Hargovind Pant case, 1979)</td></tr>
+      <tr><td>Model adopted for appointment — American or Canadian?</td><td>Canadian (Governor-General appoints province's governor)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Qualifications, Oath and Conditions of Office</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Qualifications &amp; the Sarkaria Commission's Recommendations</div>
+  <p class="eng">The Constitution lays down only <b class="hlg">two</b> formal qualifications for appointment as governor: the person must be a <b>citizen of India</b>, and must have completed the age of <b class="hlg">35 years</b>. Beyond this bare minimum, the <b class="hlp">Sarkaria Commission</b> on Centre-State Relations (<b class="hlg">1983–88</b>) made a set of recommendations about the kind of person who should actually be selected — that he/she should be eminent in some walk of life; should be a person from outside the state (to avoid entanglement with local factions); should be a detached figure, not too intimately connected with local politics; and should not have taken too great a part in politics generally, especially in the recent past. The Commission also felt it desirable that a politician from the party ruling at the Centre should not be appointed governor of a state being run by a different party or combination of parties — since this risks turning the governor into a partisan actor rather than a neutral constitutional figure. To make consultation with the state's chief minister a genuine safeguard rather than an informal courtesy, the Commission recommended that the consultation procedure be written directly into the Constitution by suitably amending <b class="hlg">Article 155</b>. It further suggested that the Prime Minister may consult the Vice-President of India and the Speaker of the Lok Sabha while selecting a governor — but explicitly as a confidential, informal practice, not a matter of constitutional obligation.</p>
+  <div class="te">రాజ్యాంగం governor గా నియామకానికి కేవలం రెండు qualifications మాత్రమే నిర్దేశిస్తుంది — భారత పౌరుడై ఉండాలి, <b class="hlg">35 సంవత్సరాలు</b> నిండి ఉండాలి. ఈ కనీస ప్రమాణాలకు మించి, <b class="hlp">Sarkaria Commission</b> (<b class="hlg">1983-88</b>) ఎలాంటి వ్యక్తిని ఎంపిక చేయాలో సిఫారసు చేసింది — ఆయన ఏదో ఒక రంగంలో ప్రముఖుడై ఉండాలి; ఆ రాష్ట్రానికి బయటివాడై ఉండాలి (స్థానిక వర్గాలతో చిక్కుకోకుండా); స్థానిక రాజకీయాలతో ఎక్కువ సంబంధం లేని, detached వ్యక్తి అయ్యుండాలి; సాధారణంగా, ప్రత్యేకించి ఇటీవలి కాలంలో, రాజకీయాల్లో ఎక్కువ చురుకుగా పాల్గొననివాడు అయ్యుండాలి. Centre లో అధికారంలో ఉన్న పార్టీ నేతను, వేరే పార్టీ (లేదా పార్టీల కూటమి) పాలిస్తున్న రాష్ట్రానికి governor గా నియమించకపోవడం మంచిదని Commission భావించింది — ఎందుకంటే ఇలా చేస్తే governor తటస్థ constitutional వ్యక్తిగా కాకుండా, partisan వ్యక్తిగా మారే ప్రమాదం ఉంటుంది. CM తో consultation ను కేవలం అనధికారిక మర్యాదగా కాకుండా నిజమైన రక్షణగా మార్చడానికి, Article 155 ను తగినట్టుగా సవరించి consultation ప్రక్రియను రాజ్యాంగంలోనే పొందుపరచాలని Commission సిఫారసు చేసింది. governor ఎంపికలో Vice-President of India, Lok Sabha Speaker లను PM సంప్రదించవచ్చని కూడా సూచించింది — కానీ దీన్ని స్పష్టంగా confidential, informal ఆచరణగానే పేర్కొంది, constitutional obligation గా కాదు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Oath or Affirmation</div>
+  <p class="eng">Before entering upon office, the governor must make and subscribe to an oath or affirmation. In it, the governor swears (a) to faithfully execute the office; (b) to preserve, protect and defend the Constitution and the law; and (c) to devote himself/herself to the service and well-being of the people of the state. This oath is administered by the <b>Chief Justice of the concerned state High Court</b>, and in his/her absence, by the senior-most judge of that court who is available. Anyone else who is called upon to discharge the functions of the governor (for instance, in a contingency covered later in this chapter) also undertakes a similar oath before doing so.</p>
+  <div class="te">పదవి చేపట్టేముందు, governor తప్పనిసరిగా ఒక ప్రమాణం చేసి, దానిపై సంతకం చేయాలి. అందులో governor — (a) పదవిని నిజాయితీగా నిర్వర్తిస్తానని; (b) రాజ్యాంగాన్ని, చట్టాన్ని కాపాడతానని, రక్షిస్తానని; (c) రాష్ట్ర ప్రజల సేవ, శ్రేయస్సుకు తనను తాను అంకితం చేస్తానని ప్రమాణం చేస్తారు. ఈ ప్రమాణాన్ని ఆ రాష్ట్రం <b>High Court Chief Justice</b> చేయిస్తారు, ఆయన అందుబాటులో లేనప్పుడు, ఆ కోర్టులో అందుబాటులో ఉన్న senior-most judge చేయిస్తారు. governor విధులు నిర్వర్తించమని పిలిచిన మరెవరైనా వ్యక్తి (ఉదాహరణకు, ఈ chapter లో తర్వాత చూసే ఒక contingency లో) కూడా అలా చేసే ముందు ఇదే విధమైన ప్రమాణం చేయాలి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Conditions of Office &amp; Privileges</div>
+  <p class="eng">The Constitution lays down several conditions for the governor's office. The governor should not be a member of either House of Parliament or of a House of the state legislature — if any such person is appointed governor, he/she is deemed to have vacated that seat on the very date of entering upon the office. The governor should also not hold any other office of profit. He/she is entitled, without payment of rent, to use the official residence (the <b class="term">Raj Bhavan</b>), and to such emoluments, allowances and privileges as Parliament determines. If the same person is appointed governor of two or more states, the emoluments and allowances are shared by the states in whatever proportion the President determines. Crucially, a governor's emoluments and allowances <b class="imp">cannot be diminished</b> during his/her term of office. In <b class="hlg">2018</b>, Parliament increased the governor's salary from <b class="hlg">₹1.10 lakh</b> to <b class="hlg">₹3.50 lakh</b> per month. Like the President, the governor also enjoys a set of privileges and immunities — personal immunity from legal liability for official acts; immunity from any criminal proceedings during the term of office, even in respect of personal acts; and freedom from arrest or imprisonment. Civil proceedings, however, can be instituted against the governor during the term, in respect of personal acts, but only after two months' notice has been given.</p>
+  <div class="te">Governor పదవికి రాజ్యాంగం అనేక conditions విధించింది. Parliament లో గానీ, రాష్ట్ర శాసనసభలో గానీ ఏ సభకూ governor సభ్యుడై ఉండకూడదు — అలాంటి వ్యక్తిని governor గా నియమిస్తే, పదవి చేపట్టిన రోజునే ఆ సీటు ఖాళీ అయినట్టు పరిగణిస్తారు. వేరే ఏ office of profit నూ governor కలిగి ఉండకూడదు. అద్దె చెల్లించకుండా అధికారిక నివాసం (<b class="term">Raj Bhavan</b>) వాడుకునే హక్కు, Parliament నిర్ణయించిన emoluments, allowances, privileges పొందే హక్కు governor కు ఉంటాయి. ఒకే వ్యక్తి రెండు లేదా అంతకంటే ఎక్కువ రాష్ట్రాలకు governor అయితే, President నిర్ణయించిన నిష్పత్తిలో ఆ రాష్ట్రాలు emoluments, allowances పంచుకుంటాయి. ముఖ్యంగా, పదవీకాలంలో governor emoluments, allowances ను <b class="imp">తగ్గించలేరు</b>. <b class="hlg">2018</b>లో Parliament governor జీతాన్ని <b class="hlg">₹1.10 లక్ష</b> నుండి <b class="hlg">₹3.50 లక్షలకు</b> పెంచింది. President మాదిరిగానే, governor కు కొన్ని privileges, immunities ఉంటాయి — అధికారిక చర్యలకు వ్యక్తిగత legal liability నుండి రక్షణ; పదవీకాలంలో వ్యక్తిగత చర్యలకు సంబంధించి కూడా criminal proceedings నుండి రక్షణ; అరెస్ట్ చేయకుండా, జైలులో పెట్టకుండా స్వేచ్ఛ. అయితే, వ్యక్తిగత చర్యలకు సంబంధించి civil proceedings పదవీకాలంలో మొదలుపెట్టవచ్చు, కానీ 2 నెలల నోటీసు ఇచ్చాకే.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Qualifications, Oath &amp; Conditions</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Two constitutional qualifications?</td><td>Citizen of India + age 35+</td></tr>
+      <tr><td>Sarkaria Commission's key desirable criteria?</td><td>Eminent, from outside the state, detached from local politics, not recently very active politically</td></tr>
+      <tr><td>Who administers the oath?</td><td>Chief Justice of the concerned state High Court (or senior-most available judge)</td></tr>
+      <tr><td>Can emoluments be reduced during term?</td><td>No — cannot be diminished during term of office</td></tr>
+      <tr><td>2018 salary hike?</td><td>₹1.10 lakh → ₹3.50 lakh per month</td></tr>
+      <tr><td>Civil proceedings for personal acts — condition?</td><td>Allowed only after 2 months' notice</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Term of Governor's Office</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Term &amp; the "Pleasure of the President" Doctrine</div>
+  <p class="eng">A governor holds office for a term of <b class="hlg">five years</b> from the date of entering upon office. However, this five-year term is entirely subject to the <b class="term">pleasure of the President</b> — meaning it is not a guaranteed term at all. The governor may also resign at any time simply by addressing a resignation letter to the President. In <b class="hlp">Surya Narain vs Union of India</b> (<b class="hlg">1981</b>), the Supreme Court held that the pleasure of the President in this context is <b class="imp">not justiciable</b> — courts will not examine or second-guess the President's decision to withdraw pleasure. As a direct consequence, the governor has no security of tenure and no genuinely fixed term of office; he/she may be removed by the President at any time, and the Constitution does not lay down any grounds upon which such removal must be based. This has real political consequences: in <b class="hlg">1989</b>, the National Front government headed by <b class="hlp">V.P. Singh</b> asked all sitting governors — most of them appointed by the previous Congress government — to resign; eventually some were replaced while others were allowed to continue. The pattern repeated in <b class="hlg">1991</b>, when the Congress government headed by <b class="hlp">P.V. Narasimha Rao</b> changed <b class="hlg">fourteen</b> governors who had been appointed by the V.P. Singh and Chandra Sekhar governments — illustrating how governorships have often changed hands along with changes of government at the Centre, precisely because of this lack of security of tenure.</p>
+  <div class="te">Governor పదవి చేపట్టిన తేదీ నుండి <b class="hlg">ఐదు సంవత్సరాల</b> పదవీకాలం కలిగి ఉంటారు. అయితే ఈ ఐదు సంవత్సరాల కాలం పూర్తిగా <b class="term">President pleasure</b> కు లోబడి ఉంటుంది — అంటే ఇది హామీ ఇవ్వబడిన term ఏమీ కాదు. President కు రాజీనామా లేఖ రాయడం ద్వారా governor ఎప్పుడైనా పదవి వదులుకోవచ్చు. <b class="hlp">Surya Narain vs Union of India</b> (<b class="hlg">1981</b>) కేసులో — ఈ సందర్భంలో President pleasure ను <b class="imp">కోర్టులో ప్రశ్నించలేమని</b> (not justiciable) Supreme Court తీర్పు ఇచ్చింది — President pleasure ఉపసంహరణ నిర్ణయాన్ని కోర్టులు పరిశీలించవు, ప్రశ్నించవు. దీని ప్రత్యక్ష ఫలితంగా, governor కు tenure security గానీ, నిజంగా fixed term గానీ ఉండదు; President ఎప్పుడైనా తొలగించవచ్చు, తొలగింపుకు ఏ కారణాలుండాలో రాజ్యాంగం చెప్పదు. దీనికి నిజమైన రాజకీయ పర్యవసానాలు ఉన్నాయి — <b class="hlg">1989</b>లో <b class="hlp">V.P. Singh</b> నేతృత్వంలోని National Front ప్రభుత్వం — ఎక్కువమంది మునుపటి Congress ప్రభుత్వం నియమించిన governors అందరినీ రాజీనామా చేయమని కోరింది; చివరకు కొందరిని మార్చారు, కొందరిని కొనసాగించారు. <b class="hlg">1991</b>లో ఇదే పునరావృతమైంది — <b class="hlp">P.V. Narasimha Rao</b> నేతృత్వంలోని Congress ప్రభుత్వం, V.P. Singh, Chandra Sekhar ప్రభుత్వాలు నియమించిన <b class="hlg">14</b> మంది governors ను మార్చింది — Centre లో ప్రభుత్వం మారినప్పుడల్లా, tenure security లేకపోవడం వల్ల governorships కూడా తరచుగా చేతులు మారడాన్ని ఇది చూపిస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Transfer, Reappointment, Continuation &amp; Contingency Provision</div>
+  <p class="eng">The President may transfer a governor appointed to one state to another state for the remainder of the term, and a governor whose term has expired may be reappointed — either in the same state or in a different one. A governor can also continue in office beyond the nominal five-year term until a successor actually assumes charge; the underlying idea is that there must always be a governor in a state, and there cannot be an <span class="hlb">interregnum</span> (a gap with no governor at all). Finally, the President is empowered to make whatever provision he/she thinks fit for the discharge of the governor's functions in any contingency not otherwise provided for in the Constitution — for example, the sudden death of a sitting governor. In such a case, the Chief Justice of the concerned state High Court may be temporarily appointed to discharge the governor's functions until a new governor is appointed.</p>
+  <div class="te">President ఒక రాష్ట్రానికి నియమించిన governor ను మిగిలిన పదవీకాలానికి వేరే రాష్ట్రానికి transfer చేయవచ్చు, పదవీకాలం ముగిసిన governor ను — అదే రాష్ట్రంలో గానీ వేరే రాష్ట్రంలో గానీ — తిరిగి నియమించవచ్చు. వారసుడు నిజంగా బాధ్యతలు స్వీకరించే వరకూ, నామమాత్రపు ఐదు సంవత్సరాల term దాటినా governor పదవిలో కొనసాగవచ్చు; ఒక రాష్ట్రంలో ఎప్పుడూ ఒక governor ఉండాలని, ఎలాంటి <span class="hlb">interregnum</span> (governor లేని ఖాళీ) ఉండకూడదని దీని వెనుక ఉద్దేశం. చివరగా, రాజ్యాంగం అందించని ఏదైనా contingency లో (ఉదాహరణకు, పదవిలో ఉండగా governor అకస్మాత్తుగా మరణించడం) governor విధుల నిర్వహణ కోసం తగినట్టుగా భావించే ఏర్పాటు చేసే అధికారం President కు ఉంటుంది. అలాంటి సందర్భంలో, కొత్త governor నియామకం జరిగే వరకూ ఆ రాష్ట్ర High Court Chief Justice ను తాత్కాలికంగా governor విధులు నిర్వర్తించమని నియమించవచ్చు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Term of Office</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Normal term?</td><td>5 years, but subject to President's pleasure</td></tr>
+      <tr><td>Is President's pleasure justiciable?</td><td>No — Surya Narain vs Union of India (1981)</td></tr>
+      <tr><td>Grounds for removal specified in Constitution?</td><td>None specified</td></tr>
+      <tr><td>1991 example?</td><td>P.V. Narasimha Rao govt changed 14 governors of previous govts</td></tr>
+      <tr><td>Why can a governor continue beyond 5 years?</td><td>No interregnum allowed — must serve till successor takes charge</td></tr>
+      <tr><td>Who may temporarily discharge functions on sudden vacancy (e.g. death)?</td><td>Chief Justice of the concerned state High Court, per President's arrangement</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Powers of Governor — Executive Powers</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Powers of Governor — Overview</div>
+  <p class="eng">The governor possesses <b>executive, legislative, financial and judicial</b> powers that are more or less analogous to those of the President of India. However, unlike the President, the governor has <b class="imp">no diplomatic, military or emergency powers</b> at all — these remain exclusively Union-level powers, reflecting the fact that defence, foreign affairs and national emergencies are Centre subjects, not state ones. The rest of this chapter studies each of the four categories of gubernatorial power in turn, before comparing three of them — veto, ordinance-making, and pardoning — directly against the President's equivalent powers using Tables 30.1 to 30.3.</p>
+  <div class="te">Governor కు President మాదిరిగానే <b>executive, legislative, financial, judicial</b> powers ఉంటాయి. అయితే President కు భిన్నంగా, governor కు <b class="imp">diplomatic, military, emergency powers అస్సలు ఉండవు</b> — ఇవి పూర్తిగా Union స్థాయి powers గానే మిగిలిపోతాయి — defence, foreign affairs, national emergencies Centre విషయాలు తప్ప రాష్ట్ర విషయాలు కావు అనే వాస్తవాన్ని ఇది ప్రతిబింబిస్తుంది. ఈ chapter మిగతా భాగంలో governor యొక్క నాలుగు రకాల powers ను వరుసగా చదువుతాము, ఆ తర్వాత మూడింటిని — veto, ordinance-making, pardoning — Table 30.1 నుండి 30.3 ద్వారా President తో నేరుగా పోల్చుతాము.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Executive Powers</div>
+  <p class="eng">All executive actions of the state government are formally taken in the governor's name, and the governor makes rules specifying how orders and other instruments issued in his/her name must be authenticated, as well as rules for the more convenient transaction of state government business and its allocation among ministers. The governor appoints the <b>chief minister and other ministers</b>, who hold office during his/her pleasure; in Chhattisgarh, Jharkhand, Madhya Pradesh and Odisha there must additionally be a <b>Tribal Welfare minister</b> appointed by the governor — Bihar was excluded from this specific requirement by the <b class="hlg">94th Amendment Act, 2006</b>. The governor also appoints the <b>Advocate General</b> of the state and fixes his/her remuneration (the AG, too, holds office during the governor's pleasure), and appoints the <b>State Election Commissioner</b>, fixing conditions of service and tenure — though the SEC, once appointed, can be removed only in the same manner and on the same grounds as a High Court judge, not by the governor's own discretion. The governor further appoints the chairman and members of the <b>State Public Service Commission</b>, but here too the power to remove them lies with the <b>President</b> alone, not the governor. On the information-and-oversight side, the governor can seek any information relating to state administration or legislative proposals from the chief minister, and can require the CM to place before the full council of ministers any matter that a single minister has decided but that the council itself has not yet considered. Finally, the governor can recommend the imposition of constitutional emergency (<b class="hlg">Article 356</b>) in the state to the President, and during any period of President's Rule the governor enjoys extensive executive powers precisely because he/she is then acting as an agent of the President; and separately, the governor acts as the <b>chancellor</b> of universities in the state and appoints their vice-chancellors.</p>
+  <div class="te">రాష్ట్ర ప్రభుత్వం యొక్క అన్ని executive చర్యలు అధికారికంగా governor పేరు మీదే తీసుకోబడతాయి, తన పేరు మీద జారీ అయ్యే orders, ఇతర instruments ను ఎలా authenticate చేయాలో, ప్రభుత్వ వ్యవహారాల సౌకర్యవంతమైన నిర్వహణకు, మంత్రుల మధ్య పని విభజనకు నియమాలను governor రూపొందిస్తారు. <b>Chief Minister</b>, ఇతర మంత్రులను governor నియమిస్తారు, వారు governor pleasure మేరకు పదవిలో ఉంటారు; Chhattisgarh, Jharkhand, Madhya Pradesh, Odisha రాష్ట్రాల్లో ఒక <b>Tribal Welfare మంత్రిని</b> కూడా governor తప్పనిసరిగా నియమించాలి — 94వ సవరణ చట్టం, 2006 ద్వారా Bihar ఈ నిర్దిష్ట అవసరం నుండి మినహాయించబడింది. రాష్ట్ర <b>Advocate General</b> ను governor నియమించి, ఆయన remuneration నిర్ణయిస్తారు (AG కూడా governor pleasure మేరకే పదవిలో ఉంటారు), <b>State Election Commissioner</b> ను నియమించి, ఆయన service conditions, tenure నిర్ణయిస్తారు — అయితే SEC ను నియమించాకా, ఆయనను High Court judge ను తొలగించే పద్ధతిలో, అదే కారణాలపైనే తొలగించాలి, governor తనంతట తానుగా తొలగించలేరు. <b>State Public Service Commission</b> chairman, members ను కూడా governor నియమిస్తారు, కానీ వారిని తొలగించే అధికారం <b>President</b> వద్దే ఉంటుంది, governor వద్ద కాదు. సమాచార, పర్యవేక్షణ వైపు చూస్తే — రాష్ట్ర administration, legislative proposals గురించి governor CM నుండి ఏ సమాచారమైనా కోరవచ్చు, ఒక మంత్రి ఒక్కరే తీసుకున్న నిర్ణయాన్ని — అది council పరిశీలనకు రాకపోతే — council ముందుకు తీసుకురమ్మని CM ను కోరవచ్చు. చివరగా, రాష్ట్రంలో constitutional emergency (<b class="hlg">Article 356</b>) విధించమని President కు governor సిఫారసు చేయవచ్చు, President's Rule సమయంలో governor President ఏజెంట్ గా వ్యవహరిస్తారు కాబట్టి విస్తృత executive అధికారాలు కలిగి ఉంటారు; ఇవి కాక, రాష్ట్రంలోని universities కు governor <b>chancellor</b> గా వ్యవహరిస్తూ, vice-chancellors ను నియమిస్తారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Executive Powers</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Powers governor lacks (unlike President)?</td><td>Diplomatic, military, emergency powers</td></tr>
+      <tr><td>Tribal Welfare minister required in which 4 states?</td><td>Chhattisgarh, Jharkhand, MP, Odisha (not Bihar — excluded by 94th A.A. 2006)</td></tr>
+      <tr><td>Who removes the State Election Commissioner?</td><td>Only like a High Court judge — not by governor alone</td></tr>
+      <tr><td>Who removes State PSC chairman/members?</td><td>Only the President, not the governor</td></tr>
+      <tr><td>Governor's role during President's Rule?</td><td>Extensive executive powers as an agent of the President</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Powers of Governor — Legislative Powers</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Legislative Powers — Sessions, Nominations &amp; Disqualification</div>
+  <p class="eng">The governor is an <b>integral part</b> of the state legislature, and in that capacity can summon or prorogue the state legislature and dissolve the legislative assembly; addresses the legislature at the commencement of the first session after each general election and the first session of each year; and can send messages to the house or houses regarding a bill pending in the legislature, or otherwise. When the offices of both the Speaker and Deputy Speaker of the assembly fall vacant simultaneously, the governor can appoint any assembly member to preside over its proceedings — the same applies to the legislative council's Chairman and Deputy Chairman posts. The governor nominates one-sixth of the members of the state legislative council from among persons with special knowledge or practical experience in literature, science, art, the cooperative movement and social service. Before <b class="hlg">2020</b>, the governor also used to nominate one member of the <span class="hlb">Anglo-Indian</span> community to the state legislative assembly, but the <b class="hlg">104th Constitutional Amendment Act, 2019</b> discontinued this provision entirely. Finally, the governor decides questions of disqualification of state legislature members, but only in consultation with the Election Commission — this is not a wholly unilateral power.</p>
+  <div class="te">Governor రాష్ట్ర శాసనసభలో <b>అంతర్భాగం</b>, ఆ హోదాలో శాసనసభను summon లేదా prorogue చేయవచ్చు, assembly ను dissolve చేయవచ్చు; ప్రతి general election తర్వాత మొదటి session లోనూ, ప్రతి సంవత్సరం మొదటి session లోనూ శాసనసభను ఉద్దేశించి ప్రసంగిస్తారు; శాసనసభలో pending బిల్లు గురించో లేదా ఇతరత్రానో సభ లేదా సభలకు సందేశాలు పంపవచ్చు. Assembly లో Speaker, Deputy Speaker రెండు పదవులూ ఒకేసారి ఖాళీగా ఉన్నప్పుడు, ఏ assembly సభ్యుడినైనా అధ్యక్షత వహించమని governor నియమించవచ్చు — legislative council లో Chairman, Deputy Chairman పదవులకూ ఇదే వర్తిస్తుంది. Literature, science, art, cooperative movement, social service రంగాల్లో ప్రత్యేక పరిజ్ఞానం లేదా ఆచరణాత్మక అనుభవం ఉన్నవారి నుండి, legislative council సభ్యుల్లో ఆరో వంతును (1/6) governor నామినేట్ చేస్తారు. <b class="hlg">2020</b>కి ముందు, governor <span class="hlb">Anglo-Indian</span> కమ్యూనిటీ నుండి ఒక సభ్యుడిని assembly కు కూడా నామినేట్ చేసేవారు, కానీ <b class="hlg">104వ రాజ్యాంగ సవరణ చట్టం, 2019</b> ఈ నిబంధనను పూర్తిగా తొలగించింది. చివరగా, రాష్ట్ర శాసనసభ సభ్యుల disqualification ప్రశ్నలపై governor నిర్ణయం తీసుకుంటారు, కానీ Election Commission తో సంప్రదించే — ఇది పూర్తిగా ఏకపక్ష అధికారం కాదు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Assent to Bills — the Four Options</div>
+  <p class="eng">When a bill passed by the state legislature is presented to the governor, he/she has <b class="hlg">four</b> alternatives: (a) give assent, so that the bill becomes an act; (b) withhold assent, so that the bill ends there and does not become an act; (c) return the bill — if it is not a money bill — for reconsideration by the legislature, with the important rider that if the legislature passes it again, with or without amendments, the governor is then obliged to give assent; or (d) reserve the bill for the President's consideration. Reservation is <b class="imp">obligatory</b> in exactly one situation specified in the Constitution — where the bill would endanger the position of the state High Court. Beyond this express case, <b class="hlp">Soli Sorabji</b>, a former Attorney-General of India, identified several other situations in which a governor may — though is not constitutionally compelled to — reserve a bill: where it is <span class="hlb">ultra vires</span> (against the Constitution's provisions); where it is opposed to the Directive Principles of State Policy; where it is against the larger interest of the country; where it is of grave national importance; and where it deals with compulsory acquisition of property under <b class="hlg">Article 31A</b>.</p>
+  <div class="te">రాష్ట్ర శాసనసభ పాస్ చేసిన బిల్లు governor కు వచ్చినప్పుడు, ఆయనకు <b class="hlg">నాలుగు</b> options ఉంటాయి — (a) assent ఇవ్వడం, అప్పుడు బిల్లు act అవుతుంది; (b) assent నిలిపివేయడం, అప్పుడు బిల్లు అక్కడితో ముగిసిపోతుంది, act అవదు; (c) బిల్లును — money bill కాకపోతే — పునఃపరిశీలన కోసం శాసనసభకు తిప్పి పంపడం — ముఖ్యమైన నిబంధన ఏమిటంటే, శాసనసభ దాన్ని మార్పులతో గానీ లేకుండా గానీ మళ్ళీ పాస్ చేస్తే, governor అప్పుడు assent ఇవ్వాల్సిందే; లేదా (d) బిల్లును President పరిశీలనకు reserve చేయడం. రాజ్యాంగం నిర్దేశించిన సరిగ్గా ఒక్క సందర్భంలో reservation <b class="imp">తప్పనిసరి</b> — బిల్లు రాష్ట్ర High Court స్థానానికి ప్రమాదం కలిగించేదైతే. ఈ స్పష్టమైన కేసుకు మించి, మాజీ Attorney-General <b class="hlp">Soli Sorabji</b> governor — రాజ్యాంగపరంగా తప్పనిసరి కాకున్నా — బిల్లును reserve చేయగల మరికొన్ని పరిస్థితులను గుర్తించారు — బిల్లు <span class="hlb">ultra vires</span> (రాజ్యాంగ నిబంధనలకు విరుద్ధం) అయితే; Directive Principles కు వ్యతిరేకమైతే; దేశ larger interest కు వ్యతిరేకమైతే; grave national importance కలిగి ఉంటే; Article 31A కింద compulsory property acquisition గురించినదైతే.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Ordinance-Making Power &amp; the D.C. Wadhwa Case</div>
+  <p class="eng">The governor can promulgate ordinances when the state legislature is not in session — these ordinances must be approved by the state legislature within six weeks from its reassembly, and the governor can also withdraw an ordinance at any time. This is described in the book as the <b class="imp">most important legislative power</b> of the governor, precisely because it lets the governor (acting, as always, on ministerial advice) legislate temporarily without the full legislative process. The Supreme Court's judgment in <b class="hlp">D.C. Wadhwa vs State of Bihar</b> (<b class="hlg">1986</b>) is the landmark case testing the limits of this power: the Court noted that between <b class="hlg">1967</b> and <b class="hlg">1981</b>, the Governor of Bihar had promulgated <b class="hlg">256</b> ordinances, all of which were kept in force — for periods ranging from one to fourteen years — through repeated repromulgation rather than being converted into proper Acts. The Court ruled that successive repromulgation of an ordinance with the same text, without any genuine attempt to get the corresponding bill passed by the Assembly, amounts to a violation of the Constitution, and that an ordinance repromulgated in this manner is liable to be struck down. In doing so, the Court made clear that the exceptional, emergency-style power of law-making through ordinance cannot be used as a permanent substitute for the state legislature's own law-making power. Finally, the governor must also lay the reports of the <b>State Finance Commission</b>, the <b>State Public Service Commission</b>, and the <b>Comptroller and Auditor-General</b> (relating to the state's accounts) before the state legislature.</p>
+  <div class="te">శాసనసభ session లో లేనప్పుడు governor ordinances promulgate చేయవచ్చు — ఈ ordinances ను శాసనసభ reassemble అయ్యాక 6 వారాల్లో ఆమోదించాలి, ఎప్పుడైనా governor ఆ ordinance ను withdraw కూడా చేయవచ్చు. పుస్తకం దీన్ని governor యొక్క <b class="imp">అత్యంత ముఖ్యమైన legislative power</b> గా వర్ణిస్తుంది — ఎందుకంటే ఇది governor కు (ఎప్పటిలానే ministerial advice పైనే వ్యవహరిస్తూ) పూర్తి legislative ప్రక్రియ లేకుండా తాత్కాలికంగా చట్టం చేసే వీలు ఇస్తుంది. ఈ అధికారం పరిమితులను పరీక్షించిన landmark కేసు <b class="hlp">D.C. Wadhwa vs State of Bihar</b> (<b class="hlg">1986</b>) — <b class="hlg">1967</b> నుండి <b class="hlg">1981</b> మధ్య, Bihar Governor <b class="hlg">256</b> ordinances జారీ చేశారని, వీటన్నింటినీ సరైన Acts గా మార్చకుండా, పదేపదే repromulgate చేయడం ద్వారా 1 నుండి 14 సంవత్సరాల వరకూ అమల్లో ఉంచారని Court గుర్తించింది. అదే text తో ఒక ordinance ను వరుసగా repromulgate చేయడం — దానికి సంబంధించిన బిల్లును Assembly ద్వారా పాస్ చేయించడానికి నిజమైన ప్రయత్నం చేయకుండా — రాజ్యాంగ ఉల్లంఘనగా పరిగణించాలని, ఇలా repromulgate చేసిన ordinance ను కొట్టివేయవచ్చని Court తీర్పు ఇచ్చింది. దీని ద్వారా, ordinance ద్వారా చట్టం చేసే exceptional, emergency-లాంటి అధికారం రాష్ట్ర శాసనసభ సొంత చట్ట నిర్మాణ అధికారానికి శాశ్వత ప్రత్యామ్నాయంగా వాడలేమని Court స్పష్టం చేసింది. చివరగా, <b>State Finance Commission</b>, <b>State Public Service Commission</b>, రాష్ట్ర accounts గురించిన <b>Comptroller and Auditor-General</b> నివేదికలను governor శాసనసభ ముందు ఉంచాలి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Legislative Powers</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Four options on a passed bill?</td><td>Assent / withhold / return (non-money bills) / reserve for President</td></tr>
+      <tr><td>When is reservation obligatory?</td><td>When the bill endangers the position of the state High Court</td></tr>
+      <tr><td>Who identified additional discretionary reservation grounds?</td><td>Soli Sorabji, former Attorney-General</td></tr>
+      <tr><td>Ordinance approval window after reassembly?</td><td>6 weeks</td></tr>
+      <tr><td>D.C. Wadhwa case (1986) — what did it strike down?</td><td>Repeated repromulgation of ordinances without passing bills — held unconstitutional</td></tr>
+      <tr><td>104th CAA, 2019 — what did it remove?</td><td>Governor's power to nominate an Anglo-Indian member to the assembly</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Powers of Governor — Financial and Judicial Powers</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Financial Powers</div>
+  <p class="eng">The governor ensures that the Annual Financial Statement — the state budget — is laid before the state legislature. Money bills can be introduced in the state legislature only with the governor's prior recommendation, and no demand for a grant can be made except on his/her recommendation either — these two provisions together give the governor's office formal gatekeeping control over the start of the budgetary process, even though the actual figures are decided by the council of ministers. The governor can also make advances out of the state's <b class="term">Contingency Fund</b> to meet any unforeseen expenditure, and constitutes a finance commission every five years to review the financial position of the panchayats and the municipalities in the state.</p>
+  <div class="te">Annual Financial Statement — రాష్ట్ర బడ్జెట్ — శాసనసభ ముందు ఉంచేలా governor చూస్తారు. Money bills ను రాష్ట్ర శాసనసభలో governor ముందస్తు సిఫారసుతోనే ప్రవేశపెట్టగలరు, ఏ grant డిమాండ్ కూడా governor సిఫారసు లేకుండా చేయలేరు — ఈ రెండు నిబంధనలూ కలిసి, వాస్తవ అంకెలను council of ministers నిర్ణయించినా, బడ్జెట్ ప్రక్రియ ప్రారంభంపై governor కు అధికారికంగా gatekeeping నియంత్రణ ఇస్తాయి. Unforeseen expenditure తీర్చడానికి రాష్ట్ర <b class="term">Contingency Fund</b> నుండి advances ఇవ్వడం కూడా governor చేయవచ్చు, రాష్ట్రంలోని panchayats, municipalities ఆర్థిక పరిస్థితిని review చేసేందుకు ప్రతి ఐదు సంవత్సరాలకు ఒక finance commission ను governor ఏర్పాటు చేస్తారు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Judicial Powers</div>
+  <p class="eng">The governor can grant pardons, reprieves, respites and remissions of punishment, or suspend, remit and commute the sentence of any person convicted of an offence against a law relating to a matter to which the state's executive power extends. The governor is consulted by the President while the latter appoints judges of the concerned state High Court, and makes appointments, postings and promotions of <b>district judges</b> in consultation with the state High Court. The governor also appoints persons to the state's judicial service other than district judges, but here in consultation with both the state High Court and the State Public Service Commission. It is worth noting, across all four categories of power studied so far, that wherever the governor acts "in consultation with" someone or on the advice of the council of ministers, this is a routine, constrained exercise of power — quite distinct from the genuine constitutional and situational discretion examined later in this chapter, where the governor's decision alone is final.</p>
+  <div class="te">రాష్ట్ర executive power విస్తరించే విషయానికి సంబంధించిన చట్టం కింద నేరానికి పాల్పడిన ఏ వ్యక్తికైనా — pardons, reprieves, respites, remissions ఇవ్వడం, లేదా శిక్షను suspend, remit, commute చేయడం governor చేయవచ్చు. ఆ రాష్ట్ర High Court judges నియామకంలో President governor ను సంప్రదిస్తారు, <b>district judges</b> నియామకం, postings, promotions state High Court తో సంప్రదించి governor చేస్తారు. District judges కాకుండా ఇతర రాష్ట్ర judicial service నియామకాలను కూడా governor చేస్తారు, కానీ ఇక్కడ state High Court, State Public Service Commission రెండింటితో సంప్రదించి చేస్తారు. ఇప్పటివరకూ చదివిన నాలుగు రకాల powers అన్నింటిలోనూ గమనించవలసినది — governor ఎక్కడైతే ఎవరినైనా "in consultation with" గా సంప్రదిస్తారో, లేదా council of ministers సలహాపై వ్యవహరిస్తారో, అది routine, పరిమిత అధికార వినియోగం — ఈ chapter చివర్లో చూసే నిజమైన constitutional, situational discretion కు ఇది పూర్తి భిన్నం, అక్కడ governor నిర్ణయమే తుది నిర్ణయం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Financial &amp; Judicial Powers</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Prior recommendation needed for?</td><td>Introducing money bills; making any demand for a grant</td></tr>
+      <tr><td>Finance commission frequency?</td><td>Every 5 years, to review panchayat/municipality finances</td></tr>
+      <tr><td>Governor's role in HC judge appointment?</td><td>Consulted by the President</td></tr>
+      <tr><td>District judge appointments — consultation with whom?</td><td>State High Court</td></tr>
+      <tr><td>Other judicial service appointments — consultation with whom?</td><td>State High Court and State Public Service Commission</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Table 30.1 — Veto Powers of President and Governor</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Comparing Veto Powers — President vs Governor</div>
+  <p class="eng">On an <b>ordinary bill</b>, the President — after it is passed by both Houses of Parliament, singly or at a joint sitting — has three alternatives: give assent (the bill becomes an act); withhold assent (the bill dies); or return the bill for reconsideration, after which, if it is passed again by both Houses, the President must give assent — so the President enjoys only a <span class="term">suspensive veto</span> over ordinary bills. The governor, by contrast, has a <b class="hlg">fourth</b> alternative in addition to these three — reserving the bill for the President's consideration — but is otherwise in the same suspensive-veto position: once a repassed bill comes back, assent is compulsory, unless it was instead reserved for the President. If the governor does reserve a bill, the governor thereafter has <b class="imp">no further role</b> in its enactment — if the President returns it for reconsideration and the state legislature passes it again, the bill must be presented again for the President's assent only, meaning the governor's assent is no longer required at all.</p>
+  <div class="te"><b>Ordinary bill</b> విషయంలో — Parliament రెండు సభలూ (singly లేదా joint sitting లో) పాస్ చేశాక — President కు మూడు options ఉంటాయి — assent ఇవ్వడం (బిల్లు act అవుతుంది); assent నిలిపివేయడం (బిల్లు అక్కడితో ముగుస్తుంది); లేదా బిల్లును పునఃపరిశీలనకు తిప్పి పంపడం — తర్వాత రెండు సభలూ మళ్ళీ పాస్ చేస్తే, President assent ఇవ్వాల్సిందే — కాబట్టి ordinary bills పై President కు కేవలం <span class="term">suspensive veto</span> మాత్రమే ఉంటుంది. దీనికి భిన్నంగా, governor కు ఈ మూడింటికి తోడు <b class="hlg">నాలుగో</b> option ఉంటుంది — బిల్లును President పరిశీలనకు reserve చేయడం — కానీ మిగతా విషయాల్లో governor కూడా అదే suspensive-veto స్థానంలోనే ఉంటారు — తిరిగి పాస్ అయిన బిల్లు వచ్చినప్పుడు, President పరిశీలనకు reserve చేయకుండా ఉంటే, assent తప్పనిసరి. Governor బిల్లును reserve చేస్తే, ఆ తర్వాత దాని enactment లో governor కు <b class="imp">ఏ పాత్రా ఉండదు</b> — President దాన్ని పునఃపరిశీలనకు తిప్పి పంపి, రాష్ట్ర శాసనసభ మళ్ళీ పాస్ చేస్తే, ఆ బిల్లు President assent కోసమే మళ్ళీ ప్రవేశపెట్టాలి — అంటే governor assent ఇక అవసరం ఉండదు.</div>
+
+  <p class="eng">On <b>money bills</b>, the picture simplifies considerably: the President has only two alternatives — assent, or withhold assent — and cannot return a money bill for reconsideration at all; normally, the President assents to a money bill because it was introduced with his/her prior permission in the first place. The governor, in parallel, has three alternatives on a money bill — assent, withhold assent, or reserve for the President — but likewise cannot return a money bill for reconsideration of the state legislature. If the governor reserves a money bill, again the governor has no further role — if the President assents, it becomes an Act, and the governor's assent is not needed.</p>
+  <div class="te"><b>Money bills</b> విషయంలో పరిస్థితి చాలా సరళంగా ఉంటుంది — President కు రెండు options మాత్రమే — assent, లేదా assent నిలిపివేయడం — money bill ను పునఃపరిశీలనకు అస్సలు తిప్పి పంపలేరు; సాధారణంగా President money bill కు assent ఇస్తారు, ఎందుకంటే అది ముందుగా ఆయన అనుమతితోనే ప్రవేశపెట్టబడింది. దీనికి సమాంతరంగా, governor కు money bill పై మూడు options ఉంటాయి — assent, assent నిలిపివేయడం, లేదా President కు reserve చేయడం — కానీ ఆయన కూడా money bill ను రాష్ట్ర శాసనసభ పునఃపరిశీలనకు తిప్పి పంపలేరు. Governor money bill ను reserve చేస్తే, మళ్ళీ governor కు ఏ పాత్రా ఉండదు — President assent ఇస్తే అది Act అవుతుంది, governor assent అవసరం ఉండదు.</div>
+
+  <table>
+    <caption>Table 30.1 — Comparing Veto Powers of President and Governor</caption>
+    <thead><tr><th style="width:26%">Aspect</th><th style="width:37%">President</th><th>Governor</th></tr></thead>
+    <tbody>
+      <tr><td>Ordinary bill — alternatives</td><td><b class="hlg">3</b>: assent / withhold / return for reconsideration</td><td><b class="hlg">4</b>: assent / withhold / return for reconsideration / <b class="imp">reserve for President</b></td></tr>
+      <tr><td>Money bill — alternatives</td><td><b class="hlg">2</b>: assent / withhold — cannot return</td><td><b class="hlg">3</b>: assent / withhold / reserve — cannot return</td></tr>
+      <tr><td>Nature of veto (both bill types)</td><td colspan="2" style="text-align:center"><span class="term">Suspensive veto</span> only — no absolute/pocket veto for either office</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Veto Powers (Table 30.1)</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Governor's "extra" option over the President (ordinary bills)?</td><td>Reserve the bill for the President's consideration</td></tr>
+      <tr><td>Can either office return a money bill?</td><td>No — neither President nor Governor can return a money bill</td></tr>
+      <tr><td>What kind of veto do both offices hold?</td><td>Suspensive veto only</td></tr>
+      <tr><td>After a governor reserves a bill, does the governor act again?</td><td>No — subsequent role, if any, belongs only to the President</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Table 30.2 — Ordinance-Making Powers &amp; Table 30.3 — Pardoning Powers</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Comparing Ordinance-Making Powers — President vs Governor</div>
+  <p class="eng">The ordinance-making powers of the President and the governor run almost entirely parallel to each other. Both can promulgate an ordinance only when the relevant house(s) are not in session, and only when satisfied that circumstances require immediate action; both powers are co-extensive with the respective legislature's own law-making power, meaning an ordinance can only cover subjects that a proper Act could also cover; an ordinance from either office has the same force as an Act and is subject to the same limitations as an Act; both can withdraw an ordinance at any time; neither power is discretionary — both act only on the advice of their respective council of ministers; both ordinances must be laid before the legislature on reassembly, and both cease to operate after six weeks of reassembly (or earlier, if a disapproving resolution is passed). The <b class="imp">one genuine difference</b> concerns the need for instructions: the President needs no instruction from anyone to make an ordinance, but the governor <b class="imp">cannot</b> make an ordinance without instructions from the President in three specific cases — (a) if a bill containing the same provisions would have required the President's previous sanction for introduction into the state legislature; (b) if the governor would have deemed it necessary to reserve a bill with the same provisions for the President's consideration; or (c) if an act of the state legislature with the same provisions would have been invalid without receiving the President's assent. In effect, the governor's ordinance power is quietly leashed to the President wherever the corresponding legislative bill would itself have needed Presidential involvement.</p>
+  <div class="te">President, Governor ఇద్దరి ordinance-making powers దాదాపు పూర్తిగా ఒకదానికొకటి సమాంతరంగా ఉంటాయి. సంబంధిత సభ(లు) session లో లేనప్పుడు మాత్రమే, మరియు వెంటనే చర్య అవసరమని satisfied అయినప్పుడు మాత్రమే ఇద్దరూ ordinance promulgate చేయగలరు; ఇద్దరి powers సంబంధిత శాసనసభ సొంత చట్ట నిర్మాణ అధికారంతో co-extensive గా ఉంటాయి — అంటే ఒక సరైన Act ఏ విషయాలను కవర్ చేయగలదో ordinance కూడా అవే విషయాలను కవర్ చేయగలదు; ఏ office నుండి వచ్చిన ordinance అయినా Act అంతటి force కలిగి ఉంటుంది, Act కు ఉన్నట్టే limitations కూడా వర్తిస్తాయి; ఇద్దరూ ఎప్పుడైనా ordinance ను withdraw చేయవచ్చు; ఏ power కూడా discretionary కాదు — ఇద్దరూ తమ తమ council of ministers సలహాపైనే వ్యవహరిస్తారు; రెండు ordinances లనూ reassembly అయ్యాక శాసనసభ ముందు ఉంచాలి, reassembly అయ్యాక 6 వారాల్లో (లేదా disapproving resolution పాస్ అయితే అంతకంటే ముందే) రెండూ నిలిచిపోతాయి. <b class="imp">నిజమైన ఒక్క తేడా</b> instructions అవసరానికి సంబంధించినది — President కు ordinance చేయడానికి ఎవరి instructions అవసరం లేదు, కానీ governor మూడు నిర్దిష్ట సందర్భాల్లో President instructions లేకుండా ordinance చేయలేరు — (a) అదే నిబంధనలున్న బిల్లు రాష్ట్ర శాసనసభలో ప్రవేశపెట్టడానికి President ముందస్తు అనుమతి అవసరమయ్యేదైతే; (b) అదే నిబంధనలున్న బిల్లును President పరిశీలనకు reserve చేయాల్సి వచ్చేదని governor భావించి ఉంటే; (c) అదే నిబంధనలున్న శాసనసభ act President assent లేకుండా చెల్లదు అయ్యేదైతే. ఆచరణలో, సంబంధిత legislative బిల్లుకు President ప్రమేయం అవసరమయ్యే ప్రతిచోటా, governor ordinance power ను నిశ్శబ్దంగా President తో ముడిపెట్టారు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Comparing Pardoning Powers — President vs Governor</div>
+  <p class="eng">The pardoning powers of the two offices diverge more sharply than their ordinance powers do. Both the President and the governor can pardon, reprieve, respite, remit, suspend or commute the punishment or sentence of a convicted person — the President for offences against a <b>Central law</b>, and the governor for offences against a <b>state law</b>. The most striking difference concerns the <b>death sentence</b>: the President is the only authority in the country who can pardon a death sentence, even where the offence arose under a state law prescribing capital punishment — the governor cannot pardon a death sentence under any circumstance, though the governor can still suspend, remit or commute one. Finally, the President alone has the power to deal with punishments imposed by a <span class="hlb">court-martial</span> (military court) — the governor possesses no power whatsoever in this area, since defence and the armed forces are entirely Union subjects.</p>
+  <div class="te">ఈ రెండు పదవుల pardoning powers, వాటి ordinance powers కంటే మరింత స్పష్టంగా విడిపోతాయి. President, Governor ఇద్దరూ దోషిగా తేలిన వ్యక్తి శిక్షను pardon, reprieve, respite, remit, suspend లేదా commute చేయవచ్చు — President <b>Central law</b> కింద నేరాలకు, governor <b>state law</b> కింద నేరాలకు. అత్యంత గుర్తించదగిన తేడా <b>death sentence</b> కు సంబంధించినది — దేశంలో death sentence ను pardon చేయగల ఏకైక అధికారి President, రాష్ట్ర చట్టం capital punishment నిర్దేశించిన నేరమైనా సరే — governor ఏ పరిస్థితిలోనూ death sentence ను pardon చేయలేరు, అయితే దాన్ని suspend, remit లేదా commute చేయగలరు. చివరగా, <span class="hlb">court-martial</span> (military court) విధించిన శిక్షలను వ్యవహరించే అధికారం President కు మాత్రమే ఉంటుంది — governor కు ఈ విషయంలో ఎలాంటి అధికారం ఉండదు, ఎందుకంటే defence, armed forces పూర్తిగా Union విషయాలు.</div>
+
+  <table>
+    <caption>Table 30.3 — Comparing Pardoning Powers of President and Governor</caption>
+    <thead><tr><th style="width:26%">Aspect</th><th style="width:37%">President</th><th>Governor</th></tr></thead>
+    <tbody>
+      <tr><td>Offence against which law?</td><td>Central law</td><td>State law</td></tr>
+      <tr><td>Death sentence</td><td><b class="imp">Only authority</b> to pardon</td><td><b class="imp">Cannot pardon</b>; can suspend/remit/commute</td></tr>
+      <tr><td>Court-martial sentences</td><td>Has this power</td><td><b class="imp">No power</b> at all</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Ordinance &amp; Pardoning Powers (Tables 30.2, 30.3)</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Main difference in ordinance powers?</td><td>Governor needs President's instructions in 3 specified cases; President needs none</td></tr>
+      <tr><td>Who alone can pardon a death sentence?</td><td>The President — governor cannot, even under state law</td></tr>
+      <tr><td>Can a governor suspend/remit/commute a death sentence?</td><td>Yes — just cannot pardon it outright</td></tr>
+      <tr><td>Court-martial pardoning power — who has it?</td><td>President only; governor has none</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Constitutional Position of Governor — Discretion</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Nominal Head, Real Executive = Council of Ministers</div>
+  <p class="eng">The Constitution provides a parliamentary form of government in the states just as at the Centre, and consequently the governor has been made only a <b class="term">nominal executive</b> — the real executive constitutes the council of ministers headed by the chief minister. In other words, the governor exercises his/her powers and functions with the <b>aid and advice</b> of the council of ministers, except in matters where he/she is required to act in his/her own discretion. Three articles are especially important in estimating the governor's constitutional position: <b class="hlg">Article 154</b>, under which the executive power of the state is vested in the governor and exercised either directly or through subordinate officers; <b class="hlg">Article 163</b>, which establishes a council of ministers with the chief minister as head to aid and advise the governor, except where the governor must act in discretion; and <b class="hlg">Article 164</b>, under which the council of ministers is collectively responsible to the state's legislative assembly — this last provision being the very foundation of the parliamentary system of government at the state level. From these three articles it becomes clear that the governor's constitutional position differs from the President's in <b class="hlg">two</b> specific respects: first, the Constitution envisages the possibility of the governor acting at times in his/her own discretion, whereas no such possibility is envisaged for the President at all; and second, after the <b class="hlg">42nd Constitutional Amendment (1976)</b> made ministerial advice binding on the President, no equivalent express provision was made binding such advice on the governor. The Constitution also settles who has the final word on a disputed discretion question: if any question arises whether a matter falls within the governor's discretion or not, the governor's own decision on the point is final, and the validity of anything done cannot be questioned on the ground that discretion ought or ought not to have been exercised.</p>
+  <div class="te">రాజ్యాంగం రాష్ట్రాల్లో కేంద్రం మాదిరిగానే parliamentary ప్రభుత్వ రూపాన్ని ఏర్పాటు చేసింది, తత్ఫలితంగా governor ను కేవలం <b class="term">nominal executive</b> గా మాత్రమే చేసింది — నిజమైన executive CM నేతృత్వంలోని council of ministers. మరో మాటలో చెప్పాలంటే, తన స్వంత discretion తో వ్యవహరించాల్సిన అంశాలు తప్ప, మిగతా అన్నింటిలోనూ governor council of ministers <b>aid, advice</b> తోనే తన అధికారాలు, విధులు నిర్వర్తిస్తారు. Governor constitutional position ను అంచనా వేయడంలో మూడు articles ప్రత్యేకంగా ముఖ్యమైనవి — <b class="hlg">Article 154</b>, దీని ప్రకారం రాష్ట్ర executive power governor లో ఉంటుంది, నేరుగా లేదా subordinate officers ద్వారా వినియోగిస్తారు; <b class="hlg">Article 163</b>, ఇది CM నేతృత్వంలోని council of ministers governor కు discretion అవసరమైన సందర్భాలు తప్ప aid, advise చేస్తుందని ఏర్పాటు చేస్తుంది; <b class="hlg">Article 164</b>, దీని ప్రకారం council of ministers రాష్ట్ర శాసనసభకు collectively responsible — ఈ చివరి నిబంధనే రాష్ట్ర స్థాయిలో parliamentary ప్రభుత్వ వ్యవస్థకు పునాది. ఈ మూడు articles నుండి governor constitutional position President తో పోలిస్తే రెండు నిర్దిష్ట విధాలుగా భిన్నమని స్పష్టమవుతుంది — మొదటిది, governor కొన్నిసార్లు తన స్వంత discretion తో వ్యవహరించే అవకాశాన్ని రాజ్యాంగం ఊహిస్తుంది, President కు అలాంటి అవకాశమే లేదు; రెండోది, <b class="hlg">42వ రాజ్యాంగ సవరణ (1976)</b> ministerial advice ను President కు binding చేసిన తర్వాత కూడా, governor కు అలాంటి సలహాను binding చేసే సమానమైన స్పష్టమైన నిబంధన లేదు. వివాదాస్పద discretion ప్రశ్నపై తుది మాట ఎవరిదో కూడా రాజ్యాంగం స్థిరపరుస్తుంది — ఏదైనా విషయం governor discretion పరిధిలోకి వస్తుందా లేదా అనే ప్రశ్న వస్తే, ఆ విషయంపై governor సొంత నిర్ణయమే తుది నిర్ణయం, discretion వాడాలో వద్దో అనే కారణంతో చేసిన దాని validity ను ప్రశ్నించలేరు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Constitutional Discretion (Express) &amp; Situational Discretion (Hidden)</div>
+  <p class="eng">The governor's <b>constitutional discretion</b> — cases expressly mentioned in the Constitution — covers four situations: reserving a bill for the President's consideration; recommending the imposition of President's Rule in the state; exercising functions as the administrator of an adjoining Union Territory when holding additional charge; and determining the amount payable by the governments of Assam, Meghalaya, Tripura and Mizoram to an Autonomous Tribal District Council as royalty accruing from mineral-exploration licences. In addition to this express discretion, the governor — like the President — also has <b>situational discretion</b>, i.e., a hidden discretion that arises purely from the exigencies of a prevailing political situation rather than from any explicit constitutional text. This covers three recurring situations: the appointment of a chief minister when no party has a clear-cut majority in the assembly, or when a sitting CM dies suddenly with no obvious successor; the dismissal of the council of ministers when it cannot prove the confidence of the assembly; and the dissolution of the assembly itself if the council of ministers has lost its majority. It is precisely this second category — situational discretion — that generates most of the real-world controversies discussed later in this chapter, because unlike constitutional discretion, there is no explicit textual anchor telling a governor exactly how or when to use it.</p>
+  <div class="te">Governor <b>constitutional discretion</b> — రాజ్యాంగంలో స్పష్టంగా పేర్కొన్న సందర్భాలు — నాలుగు పరిస్థితులను కవర్ చేస్తుంది — బిల్లును President పరిశీలనకు reserve చేయడం; రాష్ట్రంలో President's Rule విధించమని సిఫారసు చేయడం; additional charge కింద పక్క Union Territory administrator గా విధులు నిర్వర్తించడం; Assam, Meghalaya, Tripura, Mizoram ప్రభుత్వాలు mineral-exploration licenses రాయల్టీ నుండి Autonomous Tribal District Council కు చెల్లించాల్సిన మొత్తాన్ని నిర్ణయించడం. ఈ express discretion తో పాటు, governor కు — President మాదిరిగానే — <b>situational discretion</b> కూడా ఉంటుంది, అంటే ఇది ఏ స్పష్టమైన రాజ్యాంగ టెక్స్ట్ నుండి కాకుండా, ఆ సమయంలో ఉన్న రాజకీయ పరిస్థితి ఒత్తిడి నుండి పుట్టే hidden discretion. ఇది మూడు పునరావృత పరిస్థితులను కవర్ చేస్తుంది — ఏ పార్టీకీ assembly లో స్పష్టమైన మెజారిటీ లేనప్పుడు, లేదా పదవిలో ఉన్న CM అకస్మాత్తుగా మరణించి స్పష్టమైన వారసుడు లేనప్పుడు CM నియామకం; council of ministers assembly విశ్వాసం నిరూపించుకోలేనప్పుడు దాన్ని dismiss చేయడం; council of ministers మెజారిటీ కోల్పోయినప్పుడు assembly నే dissolve చేయడం. ఖచ్చితంగా ఈ రెండో వర్గం — situational discretion — ఈ chapter తర్వాత చర్చించే చాలా వాస్తవ-ప్రపంచ వివాదాలకు కారణమవుతుంది, ఎందుకంటే constitutional discretion లా కాకుండా, దీన్ని ఎలా, ఎప్పుడు వాడాలో చెప్పే స్పష్టమైన టెక్స్ట్ ఆధారం ఏదీ లేదు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Special Responsibilities &amp; the Governor's Dual Role</div>
+  <p class="eng">Beyond ordinary and situational discretion, the governor also carries certain <b>special responsibilities</b> under directions issued by the President — here the governor must consult the council of ministers led by the chief minister, but still acts finally in his/her own discretion. These responsibilities apply state by state: Maharashtra (establishing separate development boards for Vidarbha and Marathwada); Gujarat (for Saurashtra and Kutch); Nagaland (law and order, for as long as the internal disturbance in the Naga Hills–Tuensang Area continues); Assam (administration of tribal areas); Manipur (administration of the hill areas); Sikkim (peace, and social and economic advancement of the different sections of the population); Arunachal Pradesh (law and order); and Karnataka (a development board for the Hyderabad-Karnataka region, added by the <b class="hlg">98th Constitutional Amendment Act, 2012</b>). Taken together, all of this confirms that the Constitution has deliberately assigned a <b class="imp">dual role</b> to the office of governor within India's federal system — he/she is simultaneously the constitutional head of the state and the representative of the Centre (the President) within that state.</p>
+  <div class="te">సాధారణ, situational discretion తో పాటు, President జారీ చేసిన directions కింద governor కు కొన్ని <b>special responsibilities</b> కూడా ఉంటాయి — ఇక్కడ governor CM నేతృత్వంలోని council of ministers ను సంప్రదించాల్సి ఉన్నా, తుది నిర్ణయం మాత్రం తన స్వంత discretion లోనే తీసుకుంటారు. ఈ బాధ్యతలు రాష్ట్రాన్ని బట్టి వర్తిస్తాయి — Maharashtra (Vidarbha, Marathwada కోసం ప్రత్యేక అభివృద్ధి బోర్డులు ఏర్పాటు చేయడం); Gujarat (Saurashtra, Kutch కోసం); Nagaland (Naga Hills-Tuensang Area లో అంతర్గత అల్లర్లు కొనసాగినంత కాలం శాంతిభద్రతలు); Assam (గిరిజన ప్రాంతాల నిర్వహణ); Manipur (కొండ ప్రాంతాల నిర్వహణ); Sikkim (వివిధ వర్గాల శాంతి, సామాజిక-ఆర్థిక అభివృద్ధి); Arunachal Pradesh (శాంతిభద్రతలు); Karnataka (Hyderabad-Karnataka ప్రాంతానికి అభివృద్ధి బోర్డు, <b class="hlg">98వ రాజ్యాంగ సవరణ చట్టం, 2012</b> ద్వారా చేర్చినది). వీటన్నింటినీ కలిపి చూస్తే, India federal వ్యవస్థలో governor పదవికి రాజ్యాంగం ఉద్దేశపూర్వకంగా <b class="imp">dual role</b> ను కేటాయించిందని నిర్ధారణ అవుతుంది — ఆయన ఏకకాలంలో రాష్ట్రానికి constitutional head, ఆ రాష్ట్రంలో Centre (President) కు ప్రతినిధి కూడా.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Constitutional Position &amp; Discretion</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Key articles for governor's constitutional position?</td><td>Art. 154, 163, 164</td></tr>
+      <tr><td>Two differences from President's position?</td><td>(1) Governor has discretion, President doesn't (2) 42nd A.A. binds President's ministerial advice, not governor's</td></tr>
+      <tr><td>Who decides if a matter is within governor's discretion?</td><td>The governor's own decision — final and unquestionable</td></tr>
+      <tr><td>Constitutional discretion — how many express cases?</td><td>4 (bill reservation, President's Rule reco., UT administrator charge, tribal royalty determination)</td></tr>
+      <tr><td>Situational discretion — how many cases?</td><td>3 (CM appointment, CoM dismissal, assembly dissolution)</td></tr>
+      <tr><td>Governor's dual role, in one line?</td><td>Constitutional head of the state + representative of the Centre</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 10 ═══════════ -->
+<div class="page">
+<div class="sub">Issues in Governor's Functioning &amp; Articles at a Glance</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Issues in the Governor's Functioning — Sarkaria Commission's Assessment</div>
+  <p class="eng">The Sarkaria Commission on Centre-State Relations identified a set of recurring issues in how governors have actually exercised their discretionary powers — issues the book explicitly notes are "continuing and relevant even today." <b>In choosing a chief minister</b>, the Commission observed that difficulty arises only when no single party or group commands an absolute majority; in that situation, the governor should call upon the leader of the party or group with, as far as the governor can ascertain, the largest support in the assembly, and leave the actual question of confidence to be settled on the floor of the House — a procedure that leaves little scope for allegations of unfairness. <b>In testing majority</b>, governors have used inconsistent methods over the years — some relying only on lists of supporters submitted by rival claimants, others insisting on physical verification by counting heads. <b>In the dismissal of a chief minister</b>, there has been no uniformity of criteria — though the general norm is that a CM who has lost majority support should resign immediately or face the assembly. <b>In dissolving the legislative assembly</b>, governors have adopted genuinely different approaches to similar situations — while the advice of a CM enjoying majority support is normally binding, when a CM had actually lost that support, some governors refused to dissolve the assembly on such advice while others, facing comparable facts, went ahead and dissolved it anyway.</p>
+  <div class="te">Sarkaria Commission governors వాస్తవంగా తమ discretionary powers ను ఎలా వినియోగించారో పరిశీలించి, పదేపదే వచ్చే సమస్యల సమూహాన్ని గుర్తించింది — పుస్తకం ఈ సమస్యలు "ఇప్పటికీ కొనసాగుతున్నాయి, relevant గా ఉన్నాయి" అని స్పష్టంగా పేర్కొంటుంది. <b>CM ఎంపికలో</b>, ఏ ఒక్క పార్టీ/గ్రూప్ కు absolute మెజారిటీ లేనప్పుడు మాత్రమే ఇబ్బంది వస్తుందని Commission గమనించింది; అలాంటి పరిస్థితిలో, governor తనకు తెలిసినంతలో assembly లో అత్యధిక మద్దతు ఉన్న పార్టీ లేదా గ్రూప్ నాయకుడిని పిలవాలి, నిజమైన విశ్వాస ప్రశ్నను House ఫ్లోర్ పైనే తేల్చుకోనివ్వాలి — ఇలా చేస్తే అన్యాయం జరిగిందనే ఆరోపణలకు తక్కువ అవకాశం ఉంటుంది. <b>మెజారిటీ పరీక్షలో</b>, governors ఏళ్ల తరబడి ఏకరీతి కాని పద్ధతులు వాడారు — కొందరు ప్రత్యర్థి claimants సమర్పించిన మద్దతుదారుల జాబితాలపైనే ఆధారపడితే, మరికొందరు physical గా లెక్కించి verify చేయాలని పట్టుబట్టారు. <b>CM తొలగింపులో</b>, ఏకరీతి ప్రమాణాలు లేవు — అయితే సాధారణ నియమం ఏమిటంటే, మెజారిటీ మద్దతు కోల్పోయిన CM వెంటనే రాజీనామా చేయాలి లేదా assembly ఎదుర్కోవాలి. <b>Legislative assembly dissolution లో</b>, governors ఒకే విధమైన పరిస్థితులకు నిజంగా భిన్నమైన approaches అనుసరించారు — మెజారిటీ మద్దతు ఉన్న CM సలహా సాధారణంగా binding అయినా, నిజంగా ఆ మద్దతు కోల్పోయిన CM విషయంలో, కొందరు governors అలాంటి సలహాపై assembly ను dissolve చేయడానికి నిరాకరిస్తే, ఇలాంటి పరిస్థితుల్లోనే మరికొందరు దాన్ని dissolve చేశారు.</div>
+
+  <p class="eng">The remaining four issues concern the more contentious end of gubernatorial discretion. <b>In recommending President's Rule</b>, the Commission found that governors, in a number of situations of political instability, recommended President's Rule under <b class="hlg">Article 356</b> without first exhausting all possible constitutional steps to induct or maintain a stable government — neither giving contending parties a fair chance to form a ministry, nor allowing a fresh appeal to the electorate through dissolution; almost all such cases have been criticised as partisan behaviour, with no uniformity of approach across governors. <b>In reserving bills for the President's consideration</b>, the practice has itself created controversy in several cases. <b>Regarding nominations to the Legislative Council</b>, the use of discretion by governors has been criticised on the specific ground that governors have <b class="imp">no real discretion</b> in such matters at all — the nomination power, in other words, was meant to be exercised on ministerial advice, not independently. <b>Regarding the exercise of discretion as Chancellor of a university</b>, governors have used discretionary powers — for instance in nominating members of a university council — while acting under their statutory role as Chancellor rather than as Governor; this too has been questioned, on the premise that even in this statutory capacity the governor should still abide by the advice of the council of ministers.</p>
+  <div class="te">మిగిలిన నాలుగు సమస్యలు gubernatorial discretion యొక్క మరింత వివాదాస్పద కోణానికి సంబంధించినవి. <b>President's Rule సిఫారసులో</b>, రాజకీయ అస్థిరత ఉన్న అనేక పరిస్థితుల్లో, స్థిరమైన ప్రభుత్వాన్ని ఏర్పాటు చేయడానికి లేదా కొనసాగించడానికి సాధ్యమైన అన్ని constitutional చర్యలు పూర్తిగా వినియోగించకుండానే governors <b class="hlg">Article 356</b> కింద President's Rule సిఫారసు చేశారని Commission గుర్తించింది — పోటీపడే పార్టీలకు ప్రభుత్వం ఏర్పాటు చేసే న్యాయమైన అవకాశం ఇవ్వకుండా, dissolution ద్వారా ఓటర్లకు తాజా అవకాశం కూడా ఇవ్వకుండా; దాదాపు ఇలాంటి కేసులన్నీ partisan ప్రవర్తనగా విమర్శించబడ్డాయి, governors మధ్య ఏకరీతి approach లేదు. <b>బిల్లులను President పరిశీలనకు reserve చేయడంలో</b>, ఈ ఆచరణ కూడా కొన్ని కేసుల్లో వివాదాస్పదమైంది. <b>Legislative Council నామినేషన్ల విషయంలో</b>, governors ఈ విషయాల్లో <b class="imp">నిజమైన discretion అస్సలు లేదు</b> అనే నిర్దిష్ట కారణంతో discretion వినియోగం విమర్శించబడింది — అంటే, నామినేషన్ అధికారం ministerial advice పైనే వినియోగించాల్సినది, స్వతంత్రంగా కాదు. <b>University Chancellor గా discretion వినియోగంలో</b>, governors — Governor హోదాలో కాకుండా, తమ statutory Chancellor హోదాలో వ్యవహరిస్తూ — university council సభ్యుల నామినేషన్ వంటి విషయాల్లో discretionary powers వాడారు; ఈ statutory హోదాలో కూడా governor council of ministers సలహా పాటించాలనే ప్రాతిపదికపై దీన్ని కూడా ప్రశ్నించారు.</div>
+
+  <table>
+    <caption>Table 30.4 — Articles Related to Governor at a Glance</caption>
+    <thead><tr><th class="n" style="width:9%">Art.</th><th>Subject-matter</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">153</td><td>Governors of states</td></tr>
+      <tr><td class="hlg">154</td><td>Executive power of state</td></tr>
+      <tr><td class="hlg">155</td><td>Appointment of Governor</td></tr>
+      <tr><td class="hlg">156</td><td>Term of office of Governor</td></tr>
+      <tr><td class="hlg">157</td><td>Qualifications for appointment as Governor</td></tr>
+      <tr><td class="hlg">158</td><td>Conditions of Governor's office</td></tr>
+      <tr><td class="hlg">159</td><td>Oath or affirmation by the Governor</td></tr>
+      <tr><td class="hlg">160</td><td>Discharge of the functions of the Governor in certain contingencies</td></tr>
+      <tr><td class="hlg">161</td><td>Power of the Governor to grant pardons and others</td></tr>
+      <tr><td class="hlg">162</td><td>Extent of executive power of state</td></tr>
+      <tr><td class="hlg">163</td><td>Council of ministers to aid and advise the Governor</td></tr>
+      <tr><td class="hlg">164</td><td>Other provisions as to ministers — appointments, term, salaries, etc.</td></tr>
+      <tr><td class="hlg">165</td><td>Advocate-General for the state</td></tr>
+      <tr><td class="hlg">166</td><td>Conduct of business of the government of a state</td></tr>
+      <tr><td class="hlg">167</td><td>Duties of CM regarding furnishing information to the Governor</td></tr>
+      <tr><td class="hlg">174</td><td>Sessions of the state legislature, prorogation and dissolution</td></tr>
+      <tr><td class="hlg">175</td><td>Right of Governor to address and send messages to house(s)</td></tr>
+      <tr><td class="hlg">176</td><td>Special address by the Governor</td></tr>
+      <tr><td class="hlg">200</td><td>Assent to bills</td></tr>
+      <tr><td class="hlg">201</td><td>Bills reserved by Governor for President's consideration</td></tr>
+      <tr><td class="hlg">213</td><td>Power of Governor to promulgate ordinances</td></tr>
+      <tr><td class="hlg">217</td><td>Governor consulted by President re. High Court judge appointments</td></tr>
+      <tr><td class="hlg">233</td><td>Appointment of district judges by Governor</td></tr>
+      <tr><td class="hlg">234</td><td>Appointment of persons (other than district judges) to judicial service</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Issues in Governor's Functioning</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who identified these recurring issues?</td><td>Sarkaria Commission on Centre-State Relations</td></tr>
+      <tr><td>Main criticism of President's Rule recommendations?</td><td>Made without exhausting alternatives; seen as partisan, non-uniform</td></tr>
+      <tr><td>Main criticism of Legislative Council nominations by governors?</td><td>Governors have no real discretion in this matter at all</td></tr>
+      <tr><td>In what capacity do governors act as Chancellor?</td><td>Statutory role as Chancellor, not as Governor — but should still follow CoM advice, per critics</td></tr>
+      <tr><td>Which two Articles are most central to today's live bill-assent controversy?</td><td>Articles 200 and 201 — see Current Affairs Update, next page</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలాలు — Hargovind Pant vs Raghukul Tilak (1979); Constituent Assembly Debates Vol.IV; Surya Narain vs UoI (1981); Soli Sorabji, "The Governor: Sage or Saboteur" (1985); D.C. Wadhwa vs State of Bihar (1986); M.P. Jain, Indian Constitutional Law; Sixth Schedule Para 9(2); 98th CAA 2012.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 11 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Governor's Power to Withhold/Reserve Bills (Articles 200-201) <span class="caasof">(as of 17.08.2026, verified via live web search on this date — re-verify closer to your exam date, since this is an evolving area of case law)</span></div>
+
+    <p class="eng">The book's own text notes that "the governor's reservation of bills for the President's consideration have created a controversy in some cases" — this has become one of the most actively litigated areas of Governor-related law in the years since the book's 8th edition. Several opposition-ruled states (Tamil Nadu, Kerala, Punjab, Telangana, West Bengal among them) approached the Supreme Court alleging that their governors were sitting on — neither assenting to, returning, nor reserving — bills passed by the state legislature for months or years at a time, effectively exercising an unwritten "pocket veto" that Article 200 does not actually grant.</p>
+    <div class="te">పుస్తకం సొంత టెక్స్ట్ లోనే "governor బిల్లులను President పరిశీలనకు reserve చేయడం కొన్ని కేసుల్లో వివాదాస్పదమైంది" అని పేర్కొన్న అంశం — పుస్తకం 8th edition తర్వాతి సంవత్సరాల్లో Governor-సంబంధిత చట్టంలో అత్యంత చురుకుగా వ్యాజ్యానికి గురైన అంశాల్లో ఒకటిగా మారింది. అనేక ప్రతిపక్ష-పాలిత రాష్ట్రాలు (Tamil Nadu, Kerala, Punjab, Telangana, West Bengal వంటివి) Supreme Court ను ఆశ్రయించి, తమ governors నెలలు లేదా సంవత్సరాల తరబడి రాష్ట్ర శాసనసభ పాస్ చేసిన బిల్లులపై — assent ఇవ్వకుండా, తిప్పి పంపకుండా, reserve కూడా చేయకుండా — కూర్చున్నారని, Article 200 నిజంగా ఇవ్వని ఒక unwritten "pocket veto" ను వినియోగిస్తున్నారని ఆరోపించాయి.</div>
+
+    <p class="eng"><b>State of Tamil Nadu vs Governor of Tamil Nadu (8 April 2025):</b> A two-judge bench of the Supreme Court (Justices <b class="hlp">J.B. Pardiwala</b> and <b class="hlp">R. Mahadevan</b>) decided a case arising from the Tamil Nadu Governor withholding assent to a batch of bills — several passed as far back as <b class="hlg">2020</b> — for roughly three years without returning them, before the state government moved court in <b class="hlg">2023</b>. The Court held that a governor's three options under Article 200 (assent / return / reserve) are mutually exclusive, and that "withhold assent" cannot mean an indefinite, unreviewable denial — a bill re-passed by the legislature after being returned must receive assent. To address the specific facts before it, the Court also prescribed outer <b>timelines</b> (broadly, one month to act on ministerial advice, up to three months to act against it) and, controversially, used its special power under Article 142 to hold that assent should be treated as having been granted (<span class="term">"deemed assent"</span>) to the specific bills pending before that Governor.</p>
+    <div class="te"><b>State of Tamil Nadu vs Governor of Tamil Nadu (8 ఏప్రిల్ 2025):</b> Tamil Nadu Governor <b class="hlg">2020</b> నాటికే పాస్ అయిన కొన్ని బిల్లులతో సహా ఒక బ్యాచ్ బిల్లులకు — తిరిగి పంపకుండానే — దాదాపు మూడు సంవత్సరాల పాటు assent నిలిపివేయడంతో పుట్టిన కేసును Supreme Court రెండుగురు judges బెంచ్ (Justices <b class="hlp">J.B. Pardiwala</b>, <b class="hlp">R. Mahadevan</b>) <b class="hlg">2023</b>లో రాష్ట్ర ప్రభుత్వం కోర్టుకు వెళ్ళాక తీర్పు ఇచ్చింది. Article 200 కింద governor మూడు options (assent/return/reserve) పరస్పర ప్రత్యేకమైనవని (mutually exclusive), "assent నిలిపివేయడం" అంటే అనంతకాలం, పరిశీలించలేని తిరస్కరణ కాదని — తిప్పి పంపిన బిల్లును శాసనసభ మళ్ళీ పాస్ చేస్తే assent తప్పనిసరి అని తీర్పు ఇచ్చింది. తన ముందున్న నిర్దిష్ట వాస్తవాలను పరిష్కరించడానికి, Court outer <b>timelines</b> కూడా నిర్దేశించింది (సాధారణంగా, ministerial advice పై చర్యకు ఒక నెల, దానికి వ్యతిరేకంగా చర్యకు మూడు నెలల వరకూ), వివాదాస్పదంగా Article 142 కింద తన ప్రత్యేక అధికారాన్ని వాడి, ఆ Governor ముందు pending ఉన్న నిర్దిష్ట బిల్లులకు assent ఇచ్చినట్టుగా (<span class="term">"deemed assent"</span>) పరిగణించాలని తీర్పు ఇచ్చింది.</div>
+
+    <p class="eng"><b>The Presidential Reference and the Court's November 2025 advisory opinion:</b> President <b class="hlp">Droupadi Murmu</b> subsequently invoked <b class="hlg">Article 143</b> to refer <b class="hlg">14</b> questions to the Supreme Court, effectively asking it to clarify whether courts can impose binding timelines on a governor's (or the President's own) assent decisions, and whether "deemed assent" is constitutionally sound. A <b class="hlg">five</b>-judge Constitution Bench led by Chief Justice <b class="hlp">B.R. Gavai</b> delivered its advisory opinion — <i>In re: Assent, Withholding or Reservation of Bills by the Governor and the President of India</i> — on <b class="hlg">20 November 2025</b>. The Bench held that courts <b class="imp">cannot impose fixed timelines</b> on the governor or the President for acting on a bill, since doing so is "contrary to the constitutional scheme," and rejected the <span class="term">"deemed assent"</span> doctrine as inconsistent with the design of Article 200. At the same time, it reaffirmed that a governor cannot indefinitely withhold assent as an unlimited, unreviewable veto, and that decisions under Articles 200/201 remain, as a general rule, outside judicial timelines even though gross, unexplained inaction may still attract some form of scrutiny. Being an <b>advisory opinion</b>, this <b class="imp">does not automatically overrule</b> a decision given in an actual case (such as the April 2025 Tamil Nadu judgment) — commentators note the two pronouncements sit in some tension, and how future benches reconcile them is still being watched closely as of this writing.</p>
+    <div class="te"><b>Presidential Reference మరియు Court నవంబర్ 2025 advisory అభిప్రాయం:</b> ఆ తర్వాత President <b class="hlp">Droupadi Murmu</b> <b class="hlg">Article 143</b> ను వినియోగించి Supreme Court కు <b class="hlg">14</b> ప్రశ్నలను రిఫర్ చేశారు — courts governor (లేదా President సొంత) assent నిర్ణయాలపై binding timelines విధించగలవా, "deemed assent" రాజ్యాంగబద్ధమేనా అని స్పష్టత కోరుతూ. Chief Justice <b class="hlp">B.R. Gavai</b> నేతృత్వంలోని <b class="hlg">ఐదుగురు</b> judges Constitution Bench తన advisory అభిప్రాయాన్ని — <i>In re: Assent, Withholding or Reservation of Bills by the Governor and the President of India</i> — <b class="hlg">20 నవంబర్ 2025</b> న వెలువరించింది. Governor లేదా President బిల్లుపై చర్య తీసుకోవడానికి courts <b class="imp">fixed timelines విధించలేవని</b> Bench తీర్పు ఇచ్చింది, ఇలా చేయడం "రాజ్యాంగ scheme కు విరుద్ధం" అని, <span class="term">"deemed assent"</span> doctrine ను Article 200 design తో సరిపడదని తిరస్కరించింది. అదే సమయంలో, governor అనంతకాలం, పరిమితి లేని, పరిశీలించలేని veto లాగా assent నిలిపివేయలేరని, Articles 200/201 కింద నిర్ణయాలు సాధారణంగా judicial timelines కు వెలుపలే ఉంటాయని — తీవ్రమైన, వివరణ లేని నిష్క్రియత్వం ఇప్పటికీ కొంత scrutiny ని ఆకర్షించవచ్చని పునరుద్ఘాటించింది. ఇది <b>advisory అభిప్రాయం</b> కావడంతో, ఒక వాస్తవ కేసులో ఇచ్చిన తీర్పును (ఉదా. ఏప్రిల్ 2025 Tamil Nadu తీర్పు) ఇది <b class="imp">స్వయంచాలకంగా overrule చేయదు</b> — ఈ రెండు తీర్పుల మధ్య కొంత tension ఉందని వ్యాఖ్యాతలు గుర్తిస్తున్నారు, భవిష్యత్తు benches వీటిని ఎలా సరిపుచ్చుతాయో ఇప్పటికీ నిశితంగా గమనిస్తున్నారు.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Two-stage timeline — governor's bill-assent controversy</caption>
+      <thead><tr><th style="width:26%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">8 April 2025</td><td>State of TN vs Governor of TN — SC (2-judge bench) sets timelines, applies "deemed assent" to specific pending bills via Art.142</td></tr>
+        <tr><td class="hlg">~May 2025</td><td>President Murmu refers 14 questions to SC under Art.143 (Presidential Reference)</td></tr>
+        <tr><td class="hlg">20 Nov 2025</td><td>SC's 5-judge advisory opinion — no fixed timelines, no "deemed assent," but no unlimited veto either</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: continue to cite the book's constitutional-text position — governor has four options under Article 200, with a suspensive veto and no deadline written into the text — as the core, stable answer. But be ready for current-affairs MCQs on this specific 2025 sequence of cases, since it is exactly the kind of live, evolving controversy the Rulebook flags as needing re-verification before each exam cycle.</p>
+    <div class="te">Exam కోసం — పుస్తకం రాజ్యాంగ టెక్స్ట్ స్థానాన్ని — Article 200 కింద governor కు నాలుగు options, suspensive veto, టెక్స్ట్ లో ఎలాంటి deadline లేకపోవడం — ప్రధాన, స్థిరమైన సమాధానంగా కొనసాగించి చదవండి. కానీ ఈ నిర్దిష్ట 2025 కేసుల క్రమంపై current-affairs MCQs కు సిద్ధంగా ఉండండి — ఇది సరిగ్గా Rulebook సూచించిన రకమైన అంశం, ప్రతి exam cycle ముందూ re-verify చేయాల్సిన సజీవమైన, అభివృద్ధి చెందుతున్న వివాదం.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 30 — Governor · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.31 — Chief Minister</span><span class="dpart">Part IV &middot; Book 1 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

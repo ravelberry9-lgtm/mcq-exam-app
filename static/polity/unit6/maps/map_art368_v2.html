@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Article 368 Memory Map</title>
+<style>
+:root{
+ --bg:#eef1f6;--surface:#ffffff;--ink:#16213a;--muted:#4b5970;--line:#d3dae5;--chip:#e7ecf3;--focus:#1d4ed8;--on-ink:#fff;--on-c:#fff;
+ --r1:#0f766e;--r1-bg:#e3f6f2;--r1-line:#9fdcd0;--r1-2:#14a394;
+ --r2:#4338ca;--r2-bg:#eceafe;--r2-line:#c3bdf7;--r2-2:#6366f1;
+ --r3:#c2410c;--r3-bg:#fff1e9;--r3-line:#f6c3a6;--r3-2:#ea580c;
+ --p1:#0369a1;--p1-bg:#e5f3fb;--p1-line:#a9d6ef;--p1-2:#0ea5e9;
+ --p2:#a21caf;--p2-bg:#fbeafc;--p2-line:#ecb3f0;--p2-2:#c026d3;
+ --tr:#be123c;--tr-bg:#fdecf1;--tr-line:#f5b3c4;
+ --ok:#15803d;--ok-bg:#e6f6ea;--ok-line:#a7dcb5;
+ --shadow:0 1px 2px rgba(20,33,58,.06),0 6px 18px rgba(20,33,58,.07);
+ --font-d:'Sora','Noto Sans Telugu',system-ui,-apple-system,'Segoe UI',sans-serif;
+ --font-b:'Noto Sans','Noto Sans Telugu','Nirmala UI',system-ui,-apple-system,'Segoe UI',sans-serif;
+ color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#0d1420;--surface:#152036;--ink:#e7edf6;--muted:#a6b6cc;--line:#2b3c58;--chip:#1f2f4a;--focus:#7cb3fb;--on-ink:#0e1623;--on-c:#0d1420;
+ --r1:#3ddbc6;--r1-bg:#0f2b2c;--r1-line:#1f6660;--r1-2:#22b8a6;
+ --r2:#a5b4fc;--r2-bg:#1c1f45;--r2-line:#3b3f8f;--r2-2:#818cf8;
+ --r3:#ff9466;--r3-bg:#2e1c17;--r3-line:#7a3d25;--r3-2:#ff7a45;
+ --p1:#67c3f3;--p1-bg:#10283a;--p1-line:#1f5577;--p1-2:#38bdf8;
+ --p2:#f0a3f7;--p2-bg:#2c1630;--p2-line:#6b2a73;--p2-2:#e879f9;
+ --tr:#fb7185;--tr-bg:#33202a;--tr-line:#7a2c40;
+ --ok:#4ade80;--ok-bg:#12301e;--ok-line:#22633a;
+ --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28);color-scheme:dark}}
+:root[data-theme="dark"]{
+ --bg:#0d1420;--surface:#152036;--ink:#e7edf6;--muted:#a6b6cc;--line:#2b3c58;--chip:#1f2f4a;--focus:#7cb3fb;--on-ink:#0e1623;--on-c:#0d1420;
+ --r1:#3ddbc6;--r1-bg:#0f2b2c;--r1-line:#1f6660;--r1-2:#22b8a6;
+ --r2:#a5b4fc;--r2-bg:#1c1f45;--r2-line:#3b3f8f;--r2-2:#818cf8;
+ --r3:#ff9466;--r3-bg:#2e1c17;--r3-line:#7a3d25;--r3-2:#ff7a45;
+ --p1:#67c3f3;--p1-bg:#10283a;--p1-line:#1f5577;--p1-2:#38bdf8;
+ --p2:#f0a3f7;--p2-bg:#2c1630;--p2-line:#6b2a73;--p2-2:#e879f9;
+ --tr:#fb7185;--tr-bg:#33202a;--tr-line:#7a2c40;
+ --ok:#4ade80;--ok-bg:#12301e;--ok-line:#22633a;
+ --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:15px;line-height:1.55;
+ padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px));overflow-wrap:break-word}
+body.is-te{font-size:15.5px}
+body:not(.is-te) .te{display:none!important}
+body.is-te .en{display:none!important}
+main{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+.c1{--c:var(--r1);--cb:var(--r1-bg);--cl:var(--r1-line);--c2:var(--r1-2)}
+.c2{--c:var(--r2);--cb:var(--r2-bg);--cl:var(--r2-line);--c2:var(--r2-2)}
+.c3{--c:var(--r3);--cb:var(--r3-bg);--cl:var(--r3-line);--c2:var(--r3-2)}
+.cp1{--c:var(--p1);--cb:var(--p1-bg);--cl:var(--p1-line);--c2:var(--p1-2)}
+.cp2{--c:var(--p2);--cb:var(--p2-bg);--cl:var(--p2-line);--c2:var(--p2-2)}
+.ctr{--c:var(--tr);--cb:var(--tr-bg);--cl:var(--tr-line);--c2:var(--tr)}
+.cok{--c:var(--ok);--cb:var(--ok-bg);--cl:var(--ok-line);--c2:var(--ok)}
+/* header */
+.hero{position:relative;padding:26px 0 0}
+.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:0 0 6px 6px;
+ background:linear-gradient(90deg,var(--r1) 0 33.3%,var(--r2) 33.3% 66.6%,var(--r3) 66.6%)}
+header{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between}
+h1{font-family:var(--font-d);font-size:clamp(26px,5vw,40px);line-height:1.15;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1 .big{color:var(--r3)}
+.subt{margin:8px 0 0;color:var(--muted);max-width:66ch;font-size:14px}
+.ctl{display:flex;gap:8px;flex-wrap:wrap}
+.tog{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+button{font:inherit;font-size:14px;font-weight:600;padding:8px 16px;border:0;background:transparent;color:var(--muted);cursor:pointer;min-height:40px}
+.tog button[aria-pressed="true"]{background:var(--ink);color:var(--on-ink)}
+#bTh{border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink)}
+button:focus-visible,summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.legend{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;background:#16213a;color:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 16px;font-size:13.5px;font-weight:600}
+.legend span.k{display:inline-flex;align-items:center;gap:8px}
+.legend i{flex:none;width:12px;height:12px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 35%,transparent)}
+:root[data-theme="dark"] .legend i{background:var(--c)}
+.legend .c1 i{background:var(--r1-2)}.legend .c2 i{background:var(--r2-2)}.legend .c3 i{background:var(--r3-2)}
+h2{font-family:var(--font-d);font-size:21px;margin:0 0 4px;letter-spacing:-.005em}
+.lead{margin:0 0 16px;color:var(--muted);font-size:13.5px}
+/* number tiles */
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.num{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--cb),var(--surface) 78%);border:1px solid var(--cl);border-radius:14px;padding:12px 14px 12px 17px;min-width:0;box-shadow:var(--shadow)}
+.num::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--c)}
+.num .k{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;color:var(--c);border:1px solid var(--cl);background:var(--surface);border-radius:999px;padding:0 8px}
+.num b{font-family:var(--font-d);font-size:30px;display:block;line-height:1.15;margin:6px 0 2px;color:var(--c);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.num b small{display:block;font-size:.5em;font-weight:700;margin-top:1px}
+body.is-te .num b{font-size:25px}
+.num .d{font-size:12.5px;color:var(--muted);display:block;line-height:1.4}
+.num.mix{--c:var(--ink);--cl:var(--line);background:linear-gradient(135deg,var(--r1-bg),var(--r2-bg) 50%,var(--r3-bg))}
+.num.mix::after{background:linear-gradient(var(--r1),var(--r2),var(--r3))}
+.num.mix b{display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}
+.num.mix b em{font-style:normal}.num.mix b em:nth-child(1){color:var(--r1)}.num.mix b em:nth-child(3){color:var(--r2)}.num.mix b em:nth-child(5){color:var(--r3)}
+.num.mix b s{text-decoration:none;color:var(--muted);font-size:.6em}
+/* generic */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px}
+.node{min-width:0}
+.dn{display:block;position:relative;width:2px;height:26px;margin:0 auto;background:var(--c,var(--muted));flex:none}
+.dn::after{content:"";position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);border:7px solid transparent;border-top:9px solid var(--c,var(--muted));border-bottom:0}
+.dn.dash{background:repeating-linear-gradient(var(--c) 0 5px,transparent 5px 9px)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:2px 10px;background:var(--c);color:var(--on-c)}
+body.is-te .pill{text-transform:none;letter-spacing:0;font-size:12.5px}
+/* decision tree */
+.tree{display:flex;flex-direction:column;align-items:center}
+.startn{font-family:var(--font-d);font-weight:700;font-size:16px;background:var(--ink);color:var(--on-ink);border-radius:999px;padding:10px 22px;text-align:center;max-width:620px;box-shadow:var(--shadow)}
+.qn{position:relative;max-width:640px;width:100%;background:var(--surface);border:2px solid var(--ink);border-radius:16px;padding:12px 16px 12px 58px;font-weight:600;font-size:14.5px;box-shadow:var(--shadow)}
+.qn::before{content:"?";position:absolute;left:14px;top:14px;width:28px;height:28px;display:grid;place-items:center;transform:rotate(45deg);border-radius:6px;background:linear-gradient(135deg,var(--r2),var(--r3));color:#fff;font-family:var(--font-d);font-size:0}
+.qn::after{content:"?";position:absolute;left:14px;top:14px;width:28px;height:28px;display:grid;place-items:center;color:#fff;font-family:var(--font-d);font-weight:800;font-size:16px}
+:root[data-theme="dark"] .qn::after{color:#0d1420}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .qn::after{color:#0d1420}}
+.fork{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;width:100%;margin-top:0}
+.fork::before{content:"";position:absolute;top:0;height:2px;background:var(--muted);left:calc((100% - 18px)/4);right:calc((100% - 18px)/4)}
+.fork.f1{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.fork.f1::before{left:calc((100% - 18px)*.9/4);right:calc((100% - 18px)*1.1/4)}
+.br{display:flex;flex-direction:column;align-items:center;min-width:0}
+.br>.stem{width:2px;height:14px;background:var(--muted)}
+.stemtop{width:2px;height:16px;background:var(--muted)}
+.br>.pill{margin-bottom:2px}
+.road{position:relative;width:100%;background:linear-gradient(165deg,var(--cb),var(--surface) 70%);border:2px solid var(--c);border-radius:16px;padding:12px 14px 12px;font-size:14px;box-shadow:var(--shadow)}
+.road .rn{display:flex;align-items:center;gap:10px;margin:-2px 0 8px}
+.road .rn b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--c),var(--c2));color:var(--on-c);font-family:var(--font-d);font-size:18px;flex:none}
+.road .rn span{font-family:var(--font-d);font-weight:700;color:var(--c);font-size:14px}
+.road.exit{border-style:dashed}
+.road .tag{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--c);border:1px dashed var(--c);border-radius:999px;padding:1px 10px}
+/* lanes (stages) */
+.lanes{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1fr) minmax(0,1.22fr);column-gap:14px;
+ grid-template-areas:"h1 h2 h3" "x s1 s1" "x a2a a3a" "x s2 s2" "x a2b a3b" "x k s3" "x a2c a3c" "x s4 s4"}
+.lh{border-radius:14px 14px 0 0;padding:10px 14px;background:linear-gradient(135deg,var(--c),var(--c2));color:var(--on-c);margin-bottom:12px;border-radius:14px}
+.lh b{display:block;font-family:var(--font-d);font-size:18px;line-height:1.15}
+.lh small{display:block;font-size:12.5px;font-weight:600;opacity:.92}
+.lh.c1{grid-area:h1}.lh.c2{grid-area:h2}.lh.c3{grid-area:h3}
+.xcol{grid-area:x;border:2px dashed var(--r1);border-radius:16px;padding:14px;color:var(--r1);
+ background:repeating-linear-gradient(135deg,var(--r1-bg) 0 10px,transparent 10px 20px);display:flex;flex-direction:column;gap:10px;align-self:start}
+.xcol .out{display:flex;align-items:center;gap:10px;font-family:var(--font-d);font-weight:700;font-size:15px}
+.xcol .out svg{flex:none}
+.xcol p{margin:0;color:var(--ink);font-size:13.5px;background:var(--surface);border-radius:10px;padding:8px 10px;border:1px solid var(--r1-line)}
+.sc{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px 14px 62px;box-shadow:var(--shadow);min-width:0;display:flex;flex-direction:column;gap:8px}
+.sc::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;border-radius:16px 16px 0 0;background:linear-gradient(90deg,var(--r2) 0 45%,var(--r3) 55%)}
+.sc.only3{border-color:var(--r3);border-style:dashed;border-width:2px;background:linear-gradient(165deg,var(--r3-bg),var(--surface) 75%)}
+.sc.only3::before{background:var(--r3)}
+.sc .no{position:absolute;left:14px;top:16px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-d);font-weight:800;font-size:18px;color:#fff;background:linear-gradient(135deg,var(--r2),var(--r3))}
+.sc.only3 .no{background:var(--r3)}
+:root[data-theme="dark"] .sc .no{color:#0d1420}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sc .no{color:#0d1420}}
+.sc .main{margin:0;font-size:14.5px}
+.sc .main strong{font-family:var(--font-d)}
+.note{margin:0;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:7px}
+.sc1{grid-area:s1}.sc2{grid-area:s2}.sc3{grid-area:s3}.sc4{grid-area:s4}
+.ar{display:flex;justify-content:center;padding:4px 0 8px}
+.a2a{grid-area:a2a}.a3a{grid-area:a3a}.a2b{grid-area:a2b}.a3b{grid-area:a3b}.a2c{grid-area:a2c}.a3c{grid-area:a3c}
+.skip{grid-area:k;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--r2);min-width:0}
+.skip .dl{flex:1;width:0;border-left:3px dashed var(--r2);min-height:14px}
+.skip span{font-size:12.5px;font-weight:700;text-align:center;border:1.5px dashed var(--r2);border-radius:10px;padding:3px 8px;background:var(--r2-bg)}
+.trap{display:flex;gap:10px;align-items:flex-start;background:var(--tr-bg);border:1px solid var(--tr-line);border-left:4px solid var(--tr);border-radius:10px;padding:8px 12px;font-size:13.5px;margin:0}
+.trap .ic{flex:none;display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--tr);color:#fff;font-weight:800;font-size:13px;margin-top:1px}
+:root[data-theme="dark"] .trap .ic{color:#0d1420}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .trap .ic{color:#0d1420}}
+/* proviso */
+.prov{border:2px solid var(--r3);border-radius:18px;background:linear-gradient(170deg,var(--r3-bg),var(--surface) 60%);padding:16px;box-shadow:var(--shadow)}
+.prov summary{cursor:pointer;font-weight:700;font-family:var(--font-d);font-size:15.5px;color:var(--r3);list-style-position:outside;margin-bottom:12px}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pc{position:relative;background:var(--surface);border:1px solid var(--r3-line);border-radius:14px;padding:12px 14px;font-size:14px;min-width:0}
+.pc .lt{display:flex;gap:6px;margin-bottom:8px}
+.pc .lt i{font-style:normal;display:inline-grid;place-items:center;min-width:30px;height:30px;padding:0 6px;border-radius:9px;background:var(--r3);color:var(--on-c);font-family:var(--font-d);font-weight:800;font-size:15px}
+.arts{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.arts em{font-style:normal;font-family:var(--font-d);font-weight:700;font-size:12.5px;border:1px solid var(--r3-line);color:var(--r3);border-radius:7px;padding:0 7px;background:var(--r3-bg)}
+.arts em.new{background:var(--r3);color:var(--on-c);border-color:var(--r3)}
+.newtag{margin-top:8px;font-size:12.5px;display:flex;gap:8px;align-items:center;background:var(--chip);border-radius:8px;padding:4px 8px}
+.newtag b{flex:none;font-family:var(--font-d);color:var(--r3)}
+.prov .trap{margin-top:12px}
+/* tests */
+.tests{display:grid;grid-template-columns:minmax(0,1fr) 46px minmax(0,1fr);align-items:stretch}
+.gate{position:relative;background:var(--surface);border:2px solid var(--c);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.gh{display:flex;gap:12px;align-items:center;padding:12px 16px;background:linear-gradient(135deg,var(--c),var(--c2));color:var(--on-c)}
+.gh svg{flex:none}
+.gh b{display:block;font-family:var(--font-d);font-size:20px;line-height:1.1}
+.gh small{display:block;font-size:13px;font-weight:600;opacity:.95}
+.gb{flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.gb .main{margin:0}
+.case{display:block;margin-top:10px;background:var(--cb);border:1px solid var(--cl);border-radius:12px;padding:10px 12px;font-size:13.5px}
+.sev{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px;font-size:12.5px;font-weight:700}
+.sev span{border-radius:8px;padding:5px 9px;min-width:0}
+.sev .fell{white-space:nowrap;background:var(--tr-bg);color:var(--tr);border:1.5px dashed var(--tr);text-decoration:line-through;text-decoration-thickness:1.5px}
+.sev .stood{background:var(--ok-bg);color:var(--ok);border:1.5px solid var(--ok)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips em{font-style:normal;font-family:var(--font-d);font-weight:700;font-size:13px;color:var(--c);background:var(--cb);border:1px solid var(--cl);border-radius:8px;padding:2px 9px}
+.sub{margin:0;font-size:13px;color:var(--ink);border-left:3px solid var(--cl);padding:4px 0 4px 10px;background:color-mix(in srgb,var(--cb) 45%,transparent);border-radius:0 8px 8px 0}
+.harrow{display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.tests-after{display:flex;flex-direction:column;align-items:center;margin-top:14px}
+.tests-after .trap{max-width:720px;width:100%}
+.valid{display:flex;gap:12px;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--ok-bg),var(--surface));border:2px solid var(--ok);color:var(--ok);font-family:var(--font-d);font-weight:800;font-size:18px;border-radius:16px;padding:12px 20px;text-align:center;box-shadow:var(--shadow);max-width:720px;width:100%}
+.valid .ck{flex:none;width:30px;height:30px;border-radius:50%;background:var(--ok);display:grid;place-items:center}
+.from4{display:flex;justify-content:center;margin-bottom:10px}
+.from4 span{font-size:12.5px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 12px;background:var(--surface)}
+/* mnemonic */
+.mn{background:linear-gradient(160deg,#16213a,#1d1840);color:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow)}
+.mn h2{color:#fff}
+.mrow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;align-items:center}
+.mrow>b{font-family:var(--font-d);font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+body.is-te .mrow>b{text-transform:none;letter-spacing:0;font-size:14px}
+.mchips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mchips em{font-style:normal;font-family:var(--font-d);font-weight:800;font-size:17px;border-radius:10px;padding:3px 12px;background:var(--c);color:var(--on-c)}
+.mchips em.g{background:transparent;color:#fff;border:2px dashed currentColor}
+.mchips .to{opacity:.6;font-weight:700}
+.mbig{font-family:var(--font-d);font-weight:800;font-size:clamp(22px,4.4vw,32px);letter-spacing:.02em;background:linear-gradient(90deg,#fb923c,#f472b6,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mfull{margin:0;font-size:13.5px;opacity:.85;border-top:1px solid rgba(255,255,255,.22);padding-top:12px}
+/* traps */
+.traps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:820px){.traps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.traps{grid-template-columns:1fr}}
+.tc{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);min-width:0}
+.tc b{display:flex;gap:8px;align-items:center;color:var(--c);font-family:var(--font-d);font-size:14.5px}
+.tc b i{flex:none;font-style:normal;display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;background:var(--c);color:var(--on-c);font-size:12px}
+.tc p{margin:6px 0 0;font-size:13.5px;color:var(--muted)}
+/* quiz */
+.quiz{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;counter-reset:qq}
+.quiz details{counter-increment:qq;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:14px;padding:12px 14px;min-width:0;box-shadow:var(--shadow)}
+.quiz summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;display:flex;gap:10px}
+.quiz summary::-webkit-details-marker{display:none}
+.quiz summary::before{content:counter(qq);flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--cb);color:var(--c);border:1px solid var(--cl);font-family:var(--font-d);font-weight:800;font-size:12.5px}
+.quiz .a{margin:10px 0 0;padding:8px 10px;border-radius:10px;background:var(--cb);font-size:14px}
+.quiz .hint{display:block;margin-top:6px;font-size:12px;font-weight:700;color:var(--c)}
+.quiz details[open] .hint{display:none}
+.foot{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.foot p{margin:2px 0}
+/* responsive */
+@media (max-width:820px){
+ .pgrid{grid-template-columns:1fr}
+ .tests{grid-template-columns:1fr}
+ .harrow{padding:4px 0}
+ .harrow svg{transform:rotate(90deg)}
+}
+@media (max-width:680px){
+ .stemtop{align-self:flex-start;margin-left:10px}
+ .fork.f1{grid-template-columns:1fr;gap:0;margin-left:10px;width:calc(100% - 10px)}
+ .fork.f1::before{display:none}
+ .fork.f1>.br{position:relative;padding-left:18px;align-items:stretch}
+ .fork.f1>.br:first-child{border-left:2px solid var(--muted);padding-bottom:16px}
+ .fork.f1>.br:last-child::before{content:"";position:absolute;left:0;top:0;height:12px;width:2px;background:var(--muted)}
+ .fork.f1>.br>.stem{position:absolute;left:0;top:11px;width:18px;height:2px}
+ .fork.f1>.br>.pill{align-self:flex-start}
+ .fork.f1>.br>.dn{margin:0 0 0 22px}
+ .fork:not(.f1){gap:10px}
+ .fork:not(.f1)::before{left:calc((100% - 10px)/4);right:calc((100% - 10px)/4)}
+ .fork:not(.f1) .road{padding:10px 10px;font-size:13.5px}
+ .lanes{grid-template-columns:72px minmax(0,1fr);column-gap:10px;
+  grid-template-areas:"h1 h1" "x x" "h2 h3" "s1 s1" "a2a a3a" "s2 s2" "k k" "a2b a3b" "s3 s3" "a2c a3c" "s4 s4"}
+ .xcol{margin-bottom:18px}
+ .lh.c2{padding:8px 6px;text-align:center}
+ .lh.c2 small{font-size:11px;line-height:1.25;margin-top:2px}
+ .lh.c2 b{font-size:15px}
+ .sc{padding:12px 14px 12px 54px}
+ .sc .no{left:10px;width:32px;height:32px;font-size:16px}
+ .skip{flex-direction:row;margin:2px 0 8px}
+ .skip .dl{flex:1;width:auto;height:0;min-height:0;min-width:12px;border-left:0;border-top:3px dashed var(--r2)}
+ .skip span{font-size:12.5px;line-height:1.3;padding:4px 12px}
+ .mrow{grid-template-columns:1fr;gap:6px}
+}
+</style><style>html,body{max-width:100%;overflow-wrap:anywhere}#review-clarifications p{line-height:1.7}</style></head><body><nav style="padding:1rem;overflow-wrap:anywhere"><a href="/learn/polity/unit6/maps/mm-6.7.1-art368-routes-stages-tests/questions">Linked questions (106) / అనుసంధానించిన ప్రశ్నలు</a></nav>
+<main data-map-id="mm-6.7.1-art368-routes-stages-tests">
+<div class="hero">
+<header>
+<div>
+<h1><span class="en">Article 368: three roads, four steps, two tests</span><span class="te" lang="te">ప్రకరణ 368: మూడు దారులు, నాలుగు దశలు, రెండు పరీక్షలు</span></h1>
+<p class="subt"><span class="en">APPSC Group II, Polity Unit 6. Pick the road, walk the steps, then pass both tests.</span><span class="te" lang="te">APPSC గ్రూప్ 2, పాలిటీ యూనిట్ 6. ముందు దారి ఎంచుకోండి, తర్వాత దశలు దాటండి, చివరగా రెండు పరీక్షల్లోనూ నెగ్గండి.</span></p>
+</div>
+<div class="ctl"><div aria-label="Language" class="tog" role="group"><button aria-pressed="true" id="bEn" type="button">English</button><button aria-pressed="false" id="bTe" lang="te" type="button">తెలుగు</button></div><button aria-label="Toggle light or dark theme" id="bTh" type="button">Light / Dark</button></div>
+</header>
+<div aria-label="Colour key" class="legend">
+<span class="k c1"><i></i><span class="en">Road 1 · ordinary law</span><span class="te" lang="te">దారి 1 · సాధారణ చట్టం</span></span>
+<span class="k c2"><i></i><span class="en">Road 2 · special majority</span><span class="te" lang="te">దారి 2 · ప్రత్యేక మెజారిటీ</span></span>
+<span class="k c3"><i></i><span class="en">Road 3 · special majority + half the States</span><span class="te" lang="te">దారి 3 · ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాలు</span></span>
+</div>
+</div>
+<!-- numbers -->
+<section aria-labelledby="h-num">
+<h2 id="h-num"><span class="en">Numbers to remember</span><span class="te" lang="te">గుర్తుంచుకోవాల్సిన సంఖ్యలు</span></h2>
+<p class="lead"><span class="en">Each tile's colour matches the road it belongs to.</span><span class="te" lang="te">ప్రతి పెట్టె రంగును బట్టి అది ఏ దారికి చెందిందో తెలుస్తుంది.</span></p>
+<div class="nums">
+<div class="num mix"><span class="k"><span class="en">The whole map</span><span class="te" lang="te">ఒక్క చూపులో మొత్తం</span></span><b><em>3</em><s>·</s><em>4</em><s>·</s><em>2</em></b><span class="d"><span class="en">roads · steps · tests</span><span class="te" lang="te">దారులు · దశలు · పరీక్షలు</span></span></div>
+<div class="num c2"><span class="k"><span class="en">Each House</span><span class="te" lang="te">ప్రతి సభ</span></span><b><span class="en">Majority</span><span class="te" lang="te">మెజారిటీ</span></b><span class="d"><span class="en">of TOTAL membership</span><span class="te" lang="te">మొత్తం సభ్యత్వంలో</span></span></div>
+<div class="num c2"><span class="k"><span class="en">Each House</span><span class="te" lang="te">ప్రతి సభ</span></span><b>2/3</b><span class="d"><span class="en">of members PRESENT AND VOTING</span><span class="te" lang="te">హాజరై ఓటు వేసినవారిలో</span></span></div>
+<div class="num c3"><span class="k"><span class="en">Road 3 only</span><span class="te" lang="te">దారి 3కి మాత్రమే</span></span><b>½</b><span class="d"><span class="en">at least half the States, simple majority resolutions</span><span class="te" lang="te">కనీసం సగం రాష్ట్రాలు, సాధారణ మెజారిటీ తీర్మానాలు</span></span></div>
+<div class="num cp1"><span class="k"><span class="en">24th Amendment</span><span class="te" lang="te">24వ సవరణ</span></span><b>24th<small>1971</small></b><span class="d"><span class="en">Made assent mandatory (Step 4) and added Arts 13(4), 368(3): Article 13 does not apply to amendments</span><span class="te" lang="te">24వ సవరణ: రాష్ట్రపతి ఆమోదాన్ని తప్పనిసరి చేసింది (దశ 4); ప్రకరణలు 13(4), 368(3) చేర్చింది - సవరణలకు ప్రకరణ 13 వర్తించదు</span></span></div>
+<div class="num c3"><span class="k"><span class="en">Proviso (a)</span><span class="te" lang="te">పరంతుకం (a)</span></span><b>101st<small>2016</small></b><span class="d"><span class="en">279A (GST Council) added to the list</span><span class="te" lang="te">ప్రకరణ 279A (GST మండలి) ఈ జాబితాలో చేరింది</span></span></div>
+</div>
+</section>
+<!-- Lane A -->
+<section aria-labelledby="h-A">
+<h2 id="h-A"><span class="en">Lane A: which road?</span><span class="te" lang="te">విభాగం A: ఏ దారి?</span></h2>
+<p class="lead"><span class="en">Ask two questions in order. The answer picks the colour you follow below.</span><span class="te" lang="te">రెండు ప్రశ్నలు వరుసగా అడగండి. వచ్చిన సమాధానమే కింద ఏ రంగు దారిలో వెళ్ళాలో చెబుతుంది.</span></p>
+<div class="panel tree">
+<div class="node startn" data-fact-ref="F02" id="start"><span class="en">A change to the Constitution is proposed. Ask: which road?</span><span class="te" lang="te">రాజ్యాంగంలో ఒక మార్పు రాబోతోంది. ముందు అడగాల్సింది: ఏ దారిలో వెళ్ళాలి?</span></div>
+<i aria-hidden="true" class="dn"></i>
+<div class="node qn" data-fact-ref="F03" id="q1"><span class="en">Q1: Does the Constitution itself let Parliament do this by an ordinary law (e.g. 'by law', or 'not deemed an amendment under Article 368')?</span><span class="te" lang="te">ప్రశ్న 1: ఇది సాధారణ చట్టం ద్వారా చేయడానికి రాజ్యాంగమే పార్లమెంటుకు అనుమతి ఇస్తోందా ('చట్టం ద్వారా' అని, లేదా 'ప్రకరణ 368 కింద సవరణగా పరిగణించరాదు' అని)?</span></div>
+<div aria-hidden="true" class="stemtop"></div>
+<div class="fork f1">
+<div class="br c1"><div class="stem"></div><span class="pill"><span class="en">Yes</span><span class="te" lang="te">అవును</span></span><i aria-hidden="true" class="dn"></i>
+<div class="node road exit" data-fact-ref="F03" id="r1"><div aria-hidden="true" class="rn"><b>1</b><span class="en">Exit</span><span class="te" lang="te">బయటకు</span></div><span class="en">Road 1 - Ordinary law (simple majority). E.g. Art 2-4 new States/boundaries [4(2)], Art 11 citizenship, Art 169 Councils [169(3)], Art 239A(2), 5th Sch para 7(2), 6th Sch para 21(2)</span><span class="te" lang="te">దారి 1 - సాధారణ చట్టం (సాధారణ మెజారిటీ). ఉదా: ప్రకరణ 2-4 కొత్త రాష్ట్రాలు/సరిహద్దులు [4(2)], ప్రకరణ 11 పౌరసత్వం, ప్రకరణ 169 శాసన మండలులు [169(3)], ప్రకరణ 239A(2), 5వ షెడ్యూలు పేరా 7(2), 6వ షెడ్యూలు పేరా 21(2)</span></div>
+</div>
+<div class="br c2"><div class="stem"></div><span class="pill" style="background:var(--muted)"><span class="en">No</span><span class="te" lang="te">లేదు</span></span><i aria-hidden="true" class="dn" style="--c:var(--muted)"></i>
+<div class="node qn" data-fact-ref="F09" id="q2"><span class="en">Q2: If not - does the change touch any item in the proviso to Article 368(2)? (see Lane C)</span><span class="te" lang="te">ప్రశ్న 2: కాకపోతే - ఈ మార్పు ప్రకరణ 368(2) పరంతుకంలోని ఏదైనా అంశాన్ని తాకుతోందా? (విభాగం C చూడండి)</span></div>
+<div aria-hidden="true" class="stemtop" style="align-self:center;margin-left:0"></div>
+<div class="fork">
+<div class="br c2"><div class="stem"></div><span class="pill"><span class="en">No</span><span class="te" lang="te">లేదు</span></span><i aria-hidden="true" class="dn"></i>
+<div class="node road" data-fact-ref="F07" id="r2"><div aria-hidden="true" class="rn"><b>2</b></div><span class="en">Road 2 - No: Article 368 special majority in each House only</span><span class="te" lang="te">దారి 2 - తాకకపోతే: ప్రతి సభలో ప్రకరణ 368 ప్రత్యేక మెజారిటీ చాలు</span></div></div>
+<div class="br c3"><div class="stem"></div><span class="pill"><span class="en">Yes</span><span class="te" lang="te">అవును</span></span><i aria-hidden="true" class="dn"></i>
+<div class="node road" data-fact-ref="F09" id="r3"><div aria-hidden="true" class="rn"><b>3</b></div><span class="en">Road 3 - Yes: special majority in each House + ratification by at least half the States</span><span class="te" lang="te">దారి 3 - తాకితే: ప్రతి సభలో ప్రత్యేక మెజారిటీ + కనీసం సగం రాష్ట్రాల ఆమోదం (ధ్రువీకరణ)</span></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lane B -->
+<section aria-labelledby="h-B">
+<h2 id="h-B"><span class="en">Lane B: the four steps</span><span class="te" lang="te">విభాగం B: నాలుగు దశలు</span></h2>
+<p class="lead"><span class="en">Road 2 and Road 3 share the steps; only Road 3 stops at the States.</span><span class="te" lang="te">దారి 2, దారి 3 ఒకే దశల గుండా వెళ్తాయి; రాష్ట్రాల దగ్గర ఆగేది దారి 3 మాత్రమే.</span></p>
+<div class="lanes">
+<div class="lh c1"><b><span class="en">Road 1</span><span class="te" lang="te">దారి 1</span></b><small><span class="en">Ordinary law</span><span class="te" lang="te">సాధారణ చట్టం</span></small></div>
+<div class="lh c2"><b><span class="en">Road 2</span><span class="te" lang="te">దారి 2</span></b><small><span class="en">Special majority</span><span class="te" lang="te">ప్రత్యేక మెజారిటీ</span></small></div>
+<div class="lh c3"><b><span class="en">Road 3</span><span class="te" lang="te">దారి 3</span></b><small><span class="en">Special majority + half the States</span><span class="te" lang="te">ప్రత్యేక మెజారిటీ + సగం రాష్ట్రాలు</span></small></div>
+<div class="xcol"><div class="out"><svg aria-hidden="true" height="26" viewbox="0 0 26 26" width="26"><path d="M6 20 20 6M10 6h10v10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg><span class="en">Leaves here</span><span class="te" lang="te">ఇక్కడే బయటకు</span></div><p><span class="en">Done by ordinary law outside Article 368, so these steps are not its path.</span><span class="te" lang="te">ఇది ప్రకరణ 368 బయట సాధారణ చట్టంతో జరుగుతుంది; అందుకే ఈ దశలు దీనికి వర్తించవు.</span></p></div>
+<div class="sc sc1"><span aria-hidden="true" class="no">1</span>
+<p class="main node" data-fact-ref="F05" id="s1"><span class="en">Step 1 - Bill in EITHER House of Parliament only; Minister or private member; no prior President's permission. A State Legislature cannot start it.</span><span class="te" lang="te">దశ 1 - బిల్లు పార్లమెంటులోని ఏ సభలోనైనా మాత్రమే; మంత్రి గానీ ప్రైవేటు సభ్యుడు గానీ పెట్టవచ్చు; రాష్ట్రపతి ముందస్తు అనుమతి అక్కర్లేదు. రాష్ట్ర శాసనసభ సవరణను ప్రారంభించలేదు.</span></p>
+<p class="note node" data-fact-ref="F06" id="s1b"><span class="en">Step 1 note - private member also allowed, no prior President's permission</span><span class="te" lang="te">దశ 1 గమనిక - ప్రైవేటు సభ్యుడూ పెట్టవచ్చు; రాష్ట్రపతి ముందస్తు అనుమతి అవసరం లేదు</span></p>
+</div>
+<div class="ar a2a c2"><i aria-hidden="true" class="dn"></i></div><div class="ar a3a c3"><i aria-hidden="true" class="dn"></i></div>
+<div class="sc sc2"><span aria-hidden="true" class="no">2</span>
+<p class="main node" data-fact-ref="F07" id="s2"><span class="en">Step 2 - Each House separately: majority of TOTAL membership AND 2/3 of members PRESENT AND VOTING. Both tests must pass.</span><span class="te" lang="te">దశ 2 - ప్రతి సభ విడిగా: మొత్తం సభ్యత్వంలో మెజారిటీ, హాజరై ఓటు వేసినవారిలో కనీసం మూడింట రెండు వంతులు. రెండూ తప్పక నెరవేరాలి.</span></p>
+<p class="trap node" data-fact-ref="F08" id="s2x"><span aria-hidden="true" class="ic">!</span><span><span class="en">Trap - No joint sitting. If the Houses disagree, the Bill fails; votes cannot be pooled.</span><span class="te" lang="te">జాగ్రత్త (ఉచ్చు) - సంయుక్త సమావేశం లేదు. రెండు సభలు ఏకీభవించకపోతే బిల్లు ఆగిపోతుంది; ఓట్లను కలిపి లెక్కించరు.</span></span></p>
+</div>
+<div class="ar a2b c2"><i aria-hidden="true" class="dn"></i></div><div class="ar a3b c3"><i aria-hidden="true" class="dn"></i></div>
+<div class="skip"><div class="dl"></div><span><span class="en">Road 2: no Step 3</span><span class="te" lang="te">దారి 2: దశ 3 ఉండదు</span></span><div class="dl"></div></div>
+<div class="sc sc3 only3"><span aria-hidden="true" class="no">3</span>
+<p class="main node" data-fact-ref="F09" id="s3"><span class="en">Step 3 (Road 3 only) - Legislatures of not less than half the States pass resolutions, by simple majority, BEFORE the Bill goes to the President. No time limit in the text.</span><span class="te" lang="te">దశ 3 (దారి 3కి మాత్రమే) - కనీసం సగం రాష్ట్రాల శాసనసభలు సాధారణ మెజారిటీతో తీర్మానాలు చేయాలి; ఇది బిల్లు రాష్ట్రపతి వద్దకు వెళ్ళకముందే జరగాలి. రాజ్యాంగ పాఠంలో (ప్రకరణ 368లో) గడువు ఏదీ లేదు.</span></p>
+<p class="note node" data-fact-ref="F15" id="s3b"><span class="en">State ratification: simple majority; no fixed deadline</span><span class="te" lang="te">రాష్ట్రాల ఆమోదం (ధ్రువీకరణ): సాధారణ మెజారిటీ; స్థిర గడువు లేదు</span></p>
+</div>
+<div class="ar a2c c2"><i aria-hidden="true" class="dn dash"></i></div><div class="ar a3c c3"><i aria-hidden="true" class="dn"></i></div>
+<div class="sc sc4"><span aria-hidden="true" class="no">4</span>
+<p class="main node" data-fact-ref="F17" id="s4"><span class="en">Step 4 - President SHALL give assent: cannot withhold or return (mandatory since the 24th Amendment, 1971). Assent does not cure a missing stage.</span><span class="te" lang="te">దశ 4 - రాష్ట్రపతి తప్పనిసరిగా ఆమోదం ఇవ్వాలి: ఆపలేరు, తిరిగి పంపలేరు (24వ సవరణ, 1971 నుంచి తప్పనిసరి). రాష్ట్రపతి ఆమోదం ఇచ్చినంత మాత్రాన తప్పిపోయిన దశ సరికాదు.</span></p>
+</div>
+</div>
+</section>
+<!-- Lane C -->
+<section aria-labelledby="h-C">
+<h2 id="h-C"><span class="en">Lane C: proviso list</span><span class="te" lang="te">విభాగం C: పరంతుక జాబితా</span></h2>
+<p class="lead"><span class="en">Touch any item here and the Bill must take Road 3.</span><span class="te" lang="te">ఇందులో ఏ అంశాన్ని తాకినా, బిల్లు దారి 3లోనే వెళ్ళాలి.</span></p>
+<details class="prov" open=""><summary><span class="en">Proviso to Article 368(2): the list that triggers Road 3</span><span class="te" lang="te">ప్రకరణ 368(2) పరంతుకం: దారి 3ని తప్పనిసరి చేసే జాబితా</span></summary>
+<div class="pgrid">
+<div class="pc"><div aria-hidden="true" class="lt"><i>a</i></div>
+<div class="node" data-fact-ref="F10" id="pa"><span class="en">(a) Articles 54, 55 (President's election) - 73, 162 (Union and State executive power) - 241 (High Courts for UTs) - 279A (GST Council)</span><span class="te" lang="te">(a) ప్రకరణలు 54, 55 (రాష్ట్రపతి ఎన్నిక) - 73, 162 (కేంద్ర, రాష్ట్ర కార్యనిర్వాహక అధికార విస్తృతి) - 241 (కేంద్రపాలిత ప్రాంతాల హైకోర్టులు) - 279A (GST మండలి)</span></div>
+<div aria-hidden="true" class="arts"><em>54</em><em>55</em><em>73</em><em>162</em><em>241</em><em class="new">279A</em></div>
+<div class="newtag node" data-fact-ref="F11" id="pa1"><b aria-hidden="true">+2016</b><span><span class="en">279A was added to the list by the 101st Amendment, 2016</span><span class="te" lang="te">279Aను 101వ సవరణ (2016) ఈ జాబితాలో చేర్చింది</span></span></div>
+</div>
+<div class="pc"><div aria-hidden="true" class="lt"><i>b</i></div>
+<div class="node" data-fact-ref="F12" id="pb"><span class="en">(b) Part V Ch IV (Supreme Court) - Part VI Ch V (State High Courts) - Part XI Ch I (Union-State legislative relations)</span><span class="te" lang="te">(b) 5వ భాగం 4వ అధ్యాయం (సుప్రీంకోర్టు) - 6వ భాగం 5వ అధ్యాయం (రాష్ట్ర హైకోర్టులు) - 11వ భాగం 1వ అధ్యాయం (కేంద్ర-రాష్ట్ర శాసన సంబంధాలు)</span></div>
+</div>
+<div class="pc"><div aria-hidden="true" class="lt"><i>c</i><i>d</i><i>e</i></div>
+<div class="node" data-fact-ref="F13" id="pc"><span class="en">(c) Any List of the Seventh Schedule<br/>(d) Representation of States in Parliament<br/>(e) Article 368 itself</span><span class="te" lang="te">(c) ఏడవ షెడ్యూలులోని ఏ జాబితా అయినా<br/>(d) పార్లమెంటులో రాష్ట్రాల ప్రాతినిధ్యం<br/>(e) ప్రకరణ 368 స్వయంగా</span></div>
+</div>
+</div>
+<p class="trap node" data-fact-ref="F14" id="px"><span aria-hidden="true" class="ic">!</span><span><span class="en">Trap - Part III (Fundamental Rights) as a whole is NOT in the list: an FR amendment alone does not need the States</span><span class="te" lang="te">జాగ్రత్త (ఉచ్చు) - మూడో భాగం (ప్రాథమిక హక్కులు) మొత్తంగా ఈ జాబితాలో లేదు: ప్రాథమిక హక్కును మాత్రమే సవరిస్తే రాష్ట్రాల ఆమోదం (ధ్రువీకరణ) అక్కర్లేదు</span></span></p>
+</details>
+</section>
+<!-- Lane D -->
+<section aria-labelledby="h-D">
+<h2 id="h-D"><span class="en">Lane D: two tests after Step 4</span><span class="te" lang="te">విభాగం D: 4వ దశ తర్వాత రెండు పరీక్షలు</span></h2>
+<p class="lead"><span class="en">Test 1 asks how it was made. Test 2 asks what it does.</span><span class="te" lang="te">పరీక్ష 1: సవరణను ఎలా చేశారు? పరీక్ష 2: ఆ సవరణ ఏం చేస్తోంది?</span></p>
+<div class="tests">
+<div class="gate cp1">
+<div class="gh"><svg aria-hidden="true" height="34" viewbox="0 0 34 34" width="34"><rect fill="none" height="26" rx="4" stroke="currentColor" stroke-width="2.5" width="22" x="6" y="4"></rect><path d="M11 12l2.5 2.5L18 10M11 21l2.5 2.5L18 19M21 12h3M21 21h3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg><div><b><span class="en">Test 1 · Procedure</span><span class="te" lang="te">పరీక్ష 1 · ప్రక్రియ</span></b><small><span class="en">How was it made?</span><span class="te" lang="te">సవరణను ఎలా చేశారు?</span></small></div></div>
+<div class="gb">
+<div class="node main" data-fact-ref="F21" id="t1"><span class="en"><strong>Test 1 - PROCEDURE:</strong> right road, every stage done? <span class="case">Example: Kihoto Hollohan (1992) - Para 7 of the Tenth Schedule touched Arts 136, 226, 227 but had no State ratification, so Para 7 fell; it was severable and the rest of the Schedule stood.</span></span><span class="te" lang="te"><strong>పరీక్ష 1 - ప్రక్రియ:</strong> సరైన దారి ఎంచుకున్నారా, ప్రతి దశ పూర్తయిందా? <span class="case">ఉదా: కిహోటో హోలోహాన్ (1992) - పదో షెడ్యూలులోని 7వ పేరా ప్రకరణలు 136, 226, 227ను తాకింది, కానీ రాష్ట్రాల ఆమోదం (ధ్రువీకరణ) జరగలేదు; అందుకే 7వ పేరా చెల్లలేదు. 7వ పేరా మిగతా షెడ్యూలు నుంచి వేరు చేయదగినది (severable) కాబట్టి మిగిలిన షెడ్యూలు చెల్లుబాటులో నిలిచింది.</span></span></div>
+<div aria-label="Severability" class="sev"><span class="fell"><span class="en">Para 7: fell</span><span class="te" lang="te">7వ పేరా: చెల్లలేదు</span></span><span class="stood"><span class="en">Rest of the Tenth Schedule: stood</span><span class="te" lang="te">మిగిలిన పదో షెడ్యూలు: నిలిచింది</span></span></div>
+</div>
+</div>
+<div aria-hidden="true" class="harrow"><svg height="24" viewbox="0 0 34 24" width="34"><path d="M2 12h26M20 4l8 8-8 8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg></div>
+<div class="gate cp2">
+<div class="gh"><svg aria-hidden="true" height="34" viewbox="0 0 34 34" width="34"><path d="M5 29h24M8 29V15M14 29V15M20 29V15M26 29V15M4 13 17 5l13 8z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg><div><b><span class="en">Test 2 · Substance</span><span class="te" lang="te">పరీక్ష 2 · విషయ పరిశీలన</span></b><small><span class="en">What does it do?</span><span class="te" lang="te">సవరణ ఏం చేస్తోంది?</span></small></div></div>
+<div class="gb">
+<div class="node main" data-fact-ref="F19" id="t2"><span class="en"><strong>Test 2 - SUBSTANCE:</strong> does it destroy the basic structure? Kesavananda Bharati (24 April 1973, 13 judges, 7:6) - 24th Amendment upheld, but basic structure cannot be destroyed.</span><span class="te" lang="te"><strong>పరీక్ష 2 - విషయ పరిశీలన (సవరణలోని అంశం):</strong> మౌలిక నిర్మాణాన్ని ధ్వంసం చేస్తోందా? కేశవానంద భారతి (24 ఏప్రిల్ 1973, 13 మంది న్యాయమూర్తులు, 7:6) - 24వ సవరణ చెల్లుతుంది, కానీ మౌలిక నిర్మాణాన్ని ధ్వంసం చేయలేరు.</span></div>
+<div aria-hidden="true" class="chips"><em>1973</em><em><span class="en">13 judges</span><span class="te" lang="te">13 మంది న్యాయమూర్తులు</span></em><em>7:6</em></div>
+<p class="sub node" data-fact-ref="F18" id="t13"><span class="en">Article 13 does not block an Art 368 amendment: Arts 13(4) and 368(3), added by the 24th Amendment, 1971</span><span class="te" lang="te">ప్రకరణ 368 కింద చేసిన సవరణకు ప్రకరణ 13 అడ్డు కాదు: 24వ సవరణ (1971) చేర్చిన ప్రకరణ 13(4), ప్రకరణ 368(3) ఇదే చెబుతాయి</span></p>
+<p class="sub node" data-fact-ref="F20" id="t2b"><span class="en">Minerva Mills (1980) struck down Art 368(4) and (5), added by the 42nd Amendment (1976): 'no limit' on amending power is itself invalid</span><span class="te" lang="te">మినర్వా మిల్స్ (1980): 42వ సవరణ (1976) చేర్చిన ప్రకరణ 368(4), (5)ను కొట్టివేసింది - 'సవరణ అధికారానికి హద్దే లేదు' అనడమే చెల్లదు</span></p>
+</div>
+</div>
+</div>
+<div class="tests-after">
+<p class="trap node" data-fact-ref="F22" id="t2x"><span aria-hidden="true" class="ic">!</span><span><span class="en">Trap - Passing Test 1 gives no immunity: even a fully ratified amendment still faces Test 2</span><span class="te" lang="te">జాగ్రత్త (ఉచ్చు) - పరీక్ష 1లో నెగ్గినంత మాత్రాన రక్షణ రాదు: రాష్ట్రాల ఆమోదం (ధ్రువీకరణ) పూర్తయిన సవరణ కూడా పరీక్ష 2 ఎదుర్కోవాలి</span></span></p>
+<i aria-hidden="true" class="dn cok" style="margin-top:6px"></i>
+<div class="valid node" data-fact-ref="F22" id="valid"><span aria-hidden="true" class="ck"><svg height="18" viewbox="0 0 18 18" width="18"><path d="M3.5 9.5l3.5 3.5 7.5-8" fill="none" stroke="var(--surface)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8"></path></svg></span><span><span class="en">Both tests passed = valid amendment</span><span class="te" lang="te">రెండు పరీక్షల్లో నెగ్గితేనే సవరణ చెల్లుతుంది</span></span></div>
+</div>
+</section>
+<!-- mnemonic -->
+<section aria-labelledby="h-mn" class="mn">
+<h2 id="h-mn"><span class="en">Mnemonics</span><span class="te" lang="te">జ్ఞాపక సూత్రాలు</span></h2>
+<div class="mrow"><b><span class="en">Roads</span><span class="te" lang="te">దారులు</span></b><div class="mchips"><em class="c1"><span class="en">Law</span><span class="te" lang="te">చట్టం</span></em><em class="c2"><span class="en">Two-House</span><span class="te" lang="te">రెండు సభలు</span></em><em class="c3"><span class="en">Two-House + States</span><span class="te" lang="te">రెండు సభలు + రాష్ట్రాలు</span></em></div></div>
+<div class="mrow"><b><span class="en">Steps</span><span class="te" lang="te">దశలు</span></b><div class="mchips"><em class="g"><span class="en">Bill</span><span class="te" lang="te">బిల్లు</span></em><span aria-hidden="true" class="to">→</span><em class="g"><span class="en">Both Houses</span><span class="te" lang="te">రెండు సభలు</span></em><span aria-hidden="true" class="to">→</span><em class="c3"><span class="en">(States)</span><span class="te" lang="te">(రాష్ట్రాలు)</span></em><span aria-hidden="true" class="to">→</span><em class="g"><span class="en">President</span><span class="te" lang="te">రాష్ట్రపతి</span></em></div></div>
+<div class="mrow"><b><span class="en">Proviso families</span><span class="te" lang="te">పరంతుక అంశాలు</span></b><div class="mbig"><span class="en">PEC-GLRR-Self</span><span class="te" lang="te">రా-కా-కో-జీ-జా-సం-ప్రా-స్వ</span></div></div>
+<div class="mrow"><b><span class="en">Tests</span><span class="te" lang="te">పరీక్షలు</span></b><div class="mchips"><em class="cp1"><span class="en">Right road</span><span class="te" lang="te">సరైన దారి</span></em><em class="cp2"><span class="en">right result</span><span class="te" lang="te">సరైన ఫలితం</span></em></div></div>
+<p class="mfull"><span class="en">Roads: 'Law, Two-House, Two-House + States'. Steps: 'Bill - Both Houses - (States) - President'. Proviso families: 'PEC-GLRR-Self' = President's election, Executive power, Courts, GST Council, Lists, Legislative Relations, Representation, Article 368 itself. Tests: 'Right road, right result' (procedure, then basic structure).</span><span class="te" lang="te">దారులు: 'చట్టం - రెండు సభలు - రెండు సభలు + రాష్ట్రాలు'. దశలు: 'బిల్లు - రెండు సభలు - (రాష్ట్రాలు) - రాష్ట్రపతి'. పరంతుక అంశాలు 'రా-కా-కో-జీ-జా-సం-ప్రా-స్వ': రాష్ట్రపతి ఎన్నిక, కార్యనిర్వాహక అధికారం, కోర్టులు, GST మండలి, జాబితాలు, శాసన సంబంధాలు, ప్రాతినిధ్యం, స్వయంగా ప్రకరణ 368. పరీక్షలు: 'సరైన దారి, సరైన ఫలితం' - ముందు ప్రక్రియ, తర్వాత మౌలిక నిర్మాణం.</span></p>
+</section>
+<!-- traps -->
+<section aria-labelledby="h-tr">
+<h2 id="h-tr"><span class="en">Exam traps</span><span class="te" lang="te">జాగ్రత్త పడాల్సిన ఉచ్చులు</span></h2>
+<p class="lead"><span class="en">The six slips examiners count on.</span><span class="te" lang="te">విద్యార్థులు ఎక్కువగా పొరపాటు పడే ఆరు చోట్లు.</span></p>
+<div class="traps">
+<div class="tc c1"><b><i aria-hidden="true">!</i><span class="en">Road 1 is not an amendment</span><span class="te" lang="te">దారి 1 సవరణ కాదు</span></b><p><span class="en">A law under Article 4(2) is not an amendment under Article 368.</span><span class="te" lang="te">ప్రకరణ 4(2) కింద చేసే చట్టం ప్రకరణ 368 కింద సవరణ కాదు.</span></p></div>
+<div class="tc c2"><b><i aria-hidden="true">!</i><span class="en">A State cannot start it</span><span class="te" lang="te">రాష్ట్ర శాసనసభ సవరణను ప్రారంభించలేదు</span></b><p><span class="en">Only a Bill in either House of Parliament.</span><span class="te" lang="te">పార్లమెంటులోని ఏ సభలోనైనా బిల్లు ద్వారానే మొదలవుతుంది.</span></p></div>
+<div class="tc c2"><b><i aria-hidden="true">!</i><span class="en">No joint sitting</span><span class="te" lang="te">సంయుక్త సమావేశం లేదు</span></b><p><span class="en">If the Houses disagree, the Bill fails.</span><span class="te" lang="te">సభలు ఏకీభవించకపోతే బిల్లు ఆగిపోతుంది.</span></p></div>
+<div class="tc c3"><b><i aria-hidden="true">!</i><span class="en">Part III is not on the list</span><span class="te" lang="te">మూడో భాగం జాబితాలో లేదు</span></b><p><span class="en">A Fundamental Rights amendment alone does not need the States.</span><span class="te" lang="te">ప్రాథమిక హక్కును మాత్రమే సవరిస్తే రాష్ట్రాల ఆమోదం (ధ్రువీకరణ) అక్కర్లేదు.</span></p></div>
+<div class="tc cp1"><b><i aria-hidden="true">!</i><span class="en">Assent cannot fix a skipped step</span><span class="te" lang="te">రాష్ట్రపతి ఆమోదం తప్పిన దశను సరిచేయదు</span></b><p><span class="en">The President must assent, but a missing stage stays missing.</span><span class="te" lang="te">రాష్ట్రపతి ఆమోదం తప్పనిసరి; అయినా తప్పిపోయిన దశ సరికాదు.</span></p></div>
+<div class="tc cp2"><b><i aria-hidden="true">!</i><span class="en">Ratified is not immune</span><span class="te" lang="te">రాష్ట్రాల ఆమోదం పొందినా రక్షణ లేదు</span></b><p><span class="en">A fully ratified amendment still faces Test 2.</span><span class="te" lang="te">రాష్ట్రాల ఆమోదం (ధ్రువీకరణ) పూర్తయిన సవరణ కూడా పరీక్ష 2 ఎదుర్కోవాలి.</span></p></div>
+</div>
+</section>
+<!-- self test -->
+<section aria-labelledby="h-st">
+<h2 id="h-st"><span class="en">Self-test (tap to reveal)</span><span class="te" lang="te">స్వీయ పరీక్ష (జవాబు చూడటానికి తాకండి)</span></h2>
+<p class="lead"><span class="en">Say the answer aloud first, then tap to check.</span><span class="te" lang="te">ముందు జవాబు మీరే గట్టిగా చెప్పండి, తర్వాత తాకి సరిచూసుకోండి.</span></p>
+<div class="quiz">
+<details class="c1" data-node="r1"><summary><span class="en">A Bill admits a new State under Article 2. Which road?</span><span class="te" lang="te">ప్రకరణ 2 కింద కొత్త రాష్ట్రాన్ని చేర్చే బిల్లు. ఏ దారి?</span></summary><p class="a"><span class="en">Road 1 - ordinary law; Article 4(2) says it is not an amendment under Article 368.</span><span class="te" lang="te">దారి 1 - సాధారణ చట్టం; అది ప్రకరణ 368 కింద సవరణ కాదని ప్రకరణ 4(2) చెబుతుంది.</span></p></details>
+<details class="c2" data-node="s1"><summary><span class="en">Can a State Legislature introduce a Constitution Amendment Bill?</span><span class="te" lang="te">రాష్ట్ర శాసనసభ రాజ్యాంగ సవరణ బిల్లును ప్రవేశపెట్టగలదా?</span></summary><p class="a"><span class="en">No. Only by a Bill in either House of Parliament.</span><span class="te" lang="te">లేదు. పార్లమెంటులోని ఏదో ఒక సభలో బిల్లు ద్వారానే ప్రారంభించాలి.</span></p></details>
+<details class="c2" data-node="s2x"><summary><span class="en">The two Houses disagree on an amendment Bill. Can the President call a joint sitting?</span><span class="te" lang="te">సవరణ బిల్లుపై రెండు సభలు ఏకీభవించలేదు. రాష్ట్రపతి సంయుక్త సమావేశం పిలవగలరా?</span></summary><p class="a"><span class="en">No. There is no joint sitting for a Constitution Amendment Bill.</span><span class="te" lang="te">లేదు. రాజ్యాంగ సవరణ బిల్లుకు సంయుక్త సమావేశం లేదు.</span></p></details>
+<details class="c3" data-node="pa1"><summary><span class="en">Which article was added to proviso (a) in 2016, and by which amendment?</span><span class="te" lang="te">2016లో పరంతుకం (a)లో ఏ ప్రకరణను, ఏ సవరణతో చేర్చారు?</span></summary><p class="a"><span class="en">Article 279A (GST Council), by the 101st Amendment.</span><span class="te" lang="te">ప్రకరణ 279A (GST మండలి), 101వ సవరణ ద్వారా.</span></p></details>
+<details class="c3" data-node="px"><summary><span class="en">An amendment changes only a Fundamental Right in Part III. Is State ratification needed?</span><span class="te" lang="te">ఒక సవరణ మూడో భాగంలోని ప్రాథమిక హక్కును మాత్రమే మారుస్తుంది. రాష్ట్రాల ఆమోదం (ధ్రువీకరణ) అవసరమా?</span></summary><p class="a"><span class="en">No, Part III as a whole is not in the proviso list.</span><span class="te" lang="te">అవసరం లేదు; మూడో భాగం మొత్తంగా పరంతుక జాబితాలో లేదు.</span></p></details>
+<details class="c2" data-node="s4"><summary><span class="en">Can the President return a Constitution Amendment Bill for reconsideration?</span><span class="te" lang="te">రాజ్యాంగ సవరణ బిల్లును రాష్ట్రపతి పునఃపరిశీలనకు తిప్పి పంపగలరా?</span></summary><p class="a"><span class="en">No. Since the 24th Amendment (1971) the President must give assent.</span><span class="te" lang="te">లేదు. 24వ సవరణ (1971) నుంచి రాష్ట్రపతి తప్పనిసరిగా ఆమోదం ఇవ్వాలి.</span></p></details>
+<details class="cp1" data-node="t1"><summary><span class="en">In Kihoto Hollohan, why did Para 7 of the Tenth Schedule fail, and did the whole Schedule fall?</span><span class="te" lang="te">కిహోటో హోలోహాన్ కేసులో పదో షెడ్యూలు 7వ పేరా ఎందుకు చెల్లలేదు? మొత్తం షెడ్యూలు రద్దయిందా?</span></summary><p class="a"><span class="en">It affected Arts 136, 226, 227 but was not ratified by the States (Test 1 failed). It was severable; the rest stood.</span><span class="te" lang="te">అది ప్రకరణలు 136, 226, 227ను తాకినా రాష్ట్రాల ఆమోదం (ధ్రువీకరణ) జరగలేదు (పరీక్ష 1లో విఫలం). 7వ పేరా మిగతా షెడ్యూలు నుంచి వేరు చేయదగినది (severable); అందుకే మిగిలిన షెడ్యూలు చెల్లుబాటులో నిలిచింది.</span></p></details>
+<details class="cp2" data-node="t2x"><summary><span class="en">An amendment followed every stage perfectly. Can a court still strike it down?</span><span class="te" lang="te">ఒక సవరణ అన్ని దశలనూ సరిగ్గా పాటించింది. అయినా కోర్టు దాన్ని కొట్టివేయగలదా?</span></summary><p class="a"><span class="en">Yes, if it destroys the basic structure (Test 2, Kesavananda Bharati 1973).</span><span class="te" lang="te">అవును, అది మౌలిక నిర్మాణాన్ని ధ్వంసం చేస్తే (పరీక్ష 2, కేశవానంద భారతి 1973).</span></p></details>
+</div>
+</section>
+<footer class="foot"><p><span class="en">Linked questions: 106 · as of 2026-11-09</span><span class="te" lang="te">సంబంధిత ప్రశ్నలు: 106 · 2026-11-09 నాటికి</span></p></footer>
+<section id="review-clarifications" style="max-width:70rem;margin:1rem auto;padding:1rem;overflow-wrap:anywhere"><h2>Important distinctions / ముఖ్యమైన తేడాలు</h2><p data-fact-ref="F01 F04 F16"><span class="en" lang="en">Article 368 permits constitutional amendment by addition, variation or repeal. An Article 11 citizenship law uses ordinary legislation, not an amendment of the constitutional text. Article 368 sets no fixed time limit for State ratification, but required ratification must precede presentation for presidential assent.</span><span class="te" lang="te">ప్రకరణ 368 కింద చేర్పు, మార్పు లేదా రద్దు ద్వారా రాజ్యాంగ సవరణ చేయవచ్చు. ప్రకరణ 11 కింద పౌరసత్వ చట్టం సాధారణ శాసనం; రాజ్యాంగ పాఠాన్ని సవరించడం కాదు. రాష్ట్రాల ఆమోదానికి ప్రకరణ 368 నిర్ణీత గడువు విధించలేదు; అవసరమైన ఆమోదం రాష్ట్రపతి సమ్మతికి సమర్పించే ముందు రావాలి.</span></p></section></main>
+<script>(function(){var b=document.body,en=document.getElementById('bEn'),te=document.getElementById('bTe'),th=document.getElementById('bTh'),r=document.documentElement;
+function set(t){b.classList.toggle('is-te',t);r.setAttribute('lang',t?'te':'en');en.setAttribute('aria-pressed',String(!t));te.setAttribute('aria-pressed',String(t));try{localStorage.setItem('m368-lang',t?'te':'en')}catch(e){}}
+en.addEventListener('click',function(){set(false)});te.addEventListener('click',function(){set(true)});
+try{if(localStorage.getItem('m368-lang')==='te')set(true)}catch(e){}
+function dark(){var t=r.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+th.addEventListener('click',function(){var d=!dark();r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('m368-theme',d?'dark':'light')}catch(e){}});
+try{var s=localStorage.getItem('m368-theme');if(s)r.setAttribute('data-theme',s)}catch(e){}
+})();</script></body></html>

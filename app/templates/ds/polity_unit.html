@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+.polity-unit { max-width: 75rem; margin: 1rem auto; padding: 1rem; }
+.polity-unit iframe { width: 100%; height: 75vh; border: 1px solid #adb5bd; }
+.polity-unit article { padding: 1rem 0; border-bottom: 1px solid #adb5bd; }
+.polity-unit p { white-space: pre-line; }
+.polity-unit table { width:100%; border-collapse:collapse; }
+.polity-unit th,.polity-unit td { border:1px solid #adb5bd; padding:.45rem; text-align:start; vertical-align:top; }
+.polity-unit caption { font-weight:700; text-align:start; }
+.polity-unit nav { display: flex; flex-wrap: wrap; gap: .6rem; }
+.polity-unit button { padding: .45rem .8rem; }
+</style>
+{% from "ds/polity_question_card.html" import question_card with context %}
+<main class="polity-unit">
+<h1>6.1.1 · Basic Concepts and Terminology</h1>
+<p>Nature and evolution of the Constitution · రాజ్యాంగ స్వభావం, పరిణామం</p>
+<p><a href="{{ url_for('polity.master_index') }}">Master index · Units 6–10 · పూర్తి అధ్యయన సూచిక</a></p>
+<p><a href="{{ url_for('polity.section_61') }}">6.1 · Nature and constitutional development — four chapters</a></p>
+<h2>6.1.1 · Basic Concepts and Terminology</h2>
+<p>ప్రాథమిక భావనలు, పదజాలం, అర్థ వివరణ · GBK Chapter 1 · printed pages 1–8 transcribed</p>
+<nav aria-label="Unit sections">
+  <button type="button" data-panel="pyqs" aria-pressed="true">Group II PYQs</button>
+  <button type="button" data-panel="gbk" aria-pressed="false">GBK తెలుగు · Chapter 1</button>
+  <button type="button" data-panel="lax" aria-pressed="false">Laxmikanth English / తెలుగు · Chapter 1 companion</button>
+  <button type="button" data-panel="mains" aria-pressed="false">Group I Q&amp;A</button>
+  <button type="button" data-panel="expected" aria-pressed="false">Expected Questions</button>
+  <button type="button" data-panel="practice" aria-pressed="false">Page-wise MCQs</button>
+</nav>
+<section id="pyqs">
+  <h2>APPSC Group II · English and Telugu</h2>
+  <p>Only PYQs mapped to this chapter appear here. Verified Group II PYQ mapping for this chapter remains under review.</p>
+  <p>Telugu wording is a study rendering. Option order and keys follow the Series C final-key booklet.</p>
+  {% for q in pyqs %}{{ question_card(q) }}{% endfor %}
+</section>
+<section id="gbk" hidden><p><a href="{{ url_for('polity.notes') }}">Open · GBK Telugu transcription</a></p></section>
+<section id="lax" hidden><p><a href="{{ url_for('polity.laxmikanth') }}">Open · Laxmikanth bilingual notes</a></p></section>
+<section id="mains" hidden><p><a href="{{ url_for('polity.group_one') }}">Open · Group I questions and model answers</a></p></section>
+<section id="expected" hidden>
+  <h2>Expected Questions · PYQ-derived original practice</h2>
+  <p>Only expected questions mapped to this chapter appear here.</p>
+  {% for q in expected %}
+    <p>Derived from <a href="#{{ q.parent_pyq_id }}" data-pyq-jump>{{ q.parent_pyq_id }}</a></p>
+    {{ question_card(q) }}
+  {% endfor %}
+</section>
+<section id="practice" hidden>
+  <h2>Original practice · page-wise MCQs</h2>
+  {% for q in questions %}{{ question_card(q) }}{% endfor %}
+</section>
+</main>
+<script>
+const polityButtons = document.querySelectorAll(".polity-unit [data-panel]");
+for (const button of polityButtons) {
+  button.addEventListener("click", () => {
+    for (const item of polityButtons) {
+      const active = item === button;
+      item.setAttribute("aria-pressed", String(active));
+      document.getElementById(item.dataset.panel).hidden = !active;
+    }
+  });
+}
+for (const link of document.querySelectorAll("[data-pyq-jump]")) {
+  link.addEventListener("click", () => document.querySelector('[data-panel="pyqs"]').click());
+}
+</script>
+{% endblock %}

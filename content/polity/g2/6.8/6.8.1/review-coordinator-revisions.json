@@ -1,0 +1,133 @@
+{
+  "superseded": {
+    "POL-681-S006": {
+      "id": "POL-681-S006",
+      "kind": "original",
+      "primary_subchapter": "6.8.1",
+      "format": "application",
+      "difficulty": "hard",
+      "question_en": "A hypothetical1955 statute was first placed in the Ninth Schedule by a constitutional amendment in1985. For the Waman Rao cutoff, which date is relevant to the availability of basic-structure challenge to that inclusion amendment?",
+      "question_te": "ఊహాత్మకంగా1955లో చేసిన శాసనాన్ని1985రాజ్యాంగ సవరణతో మొదటిసారి తొమ్మిదవ షెడ్యూలులో చేర్చారు.ఆ చేర్పు సవరణపై మౌలిక నిర్మాణ సవాలు అందుబాటులో ఉండటాన్ని నిర్ణయించే వామన్‌రావు గడువుకు సంబంధిత తేదీ ఏది?",
+      "options_en": [
+        "1955 alone; all older statutes are immune",
+        "The Constitution’s commencement alone",
+        "1985,the date of the inclusion amendment",
+        "The date on which a litigant first read the statute"
+      ],
+      "options_te": [
+        "1955మాత్రమే;పాత శాసనాలన్నీ సమీక్షకు అతీతం",
+        "రాజ్యాంగ ప్రారంభం మాత్రమే",
+        "చేర్పు సవరణ చేసిన1985",
+        "వాది మొదటిసారి శాసనాన్ని చదివిన తేదీ"
+      ],
+      "answer": 3,
+      "fact_ids": [
+        "POL-681-ninth-inclusion-not-enactment-date",
+        "POL-681-waman-ninthschedule-cutoff"
+      ],
+      "explanation_id": "POL-681-S006",
+      "scored": true,
+      "review_status": "Author hand-curated and solved all options in English/Telugu; not independent review",
+      "sources": {
+        "laxmikanth": {
+          "chapter": 12,
+          "english_paragraphs_one_based": [
+            8
+          ],
+          "match": "Prepared core manually read; simplifications qualified using primary source"
+        },
+        "gbk": {
+          "saved_overlap_pages": [
+            129,
+            130
+          ],
+          "match": "NoexactWamanRaopassageclaimedinsavedoverlap;primarysupplement",
+          "main_chapter29_pages": [
+            508,
+            519
+          ],
+          "main_chapter29_status": "Not extracted; no mainpagecoverage claim"
+        },
+        "primary": {
+          "url": "https://indiankanoon.org/doc/1124708/",
+          "locator": "Actualparagraph55andoperativeparagraph68"
+        }
+      }
+    },
+    "POL-681-S007": {
+      "id": "POL-681-S007",
+      "kind": "original",
+      "primary_subchapter": "6.8.1",
+      "format": "single-best-answer",
+      "difficulty": "easy",
+      "question_en": "On which date was Kesavananda Bharati decided?",
+      "question_te": "కేశవానంద భారతి తీర్పు ఏ తేదీన వెలువడింది?",
+      "options_en": [
+        "26January1950",
+        "24April1973",
+        "25June1975",
+        "15August1947"
+      ],
+      "options_te": [
+        "26జనవరి1950",
+        "24ఏప్రిల్1973",
+        "25జూన్1975",
+        "15ఆగస్టు1947"
+      ],
+      "answer": 2,
+      "fact_ids": [
+        "POL-681-kesavananda-date"
+      ],
+      "explanation_id": "POL-681-S007",
+      "scored": true,
+      "review_status": "Author hand-curated and solved all options in English/Telugu; not independent review",
+      "sources": {
+        "laxmikanth": {
+          "chapter": 12,
+          "english_paragraphs_one_based": [
+            4
+          ],
+          "match": "Prepared core manually read; simplifications qualified using primary source"
+        },
+        "gbk": {
+          "saved_overlap_pages": [
+            129,
+            130
+          ],
+          "match": "Saved129hearinganddecisiondateparagraphdirect",
+          "main_chapter29_pages": [
+            508,
+            519
+          ],
+          "main_chapter29_status": "Not extracted; no mainpagecoverage claim"
+        },
+        "primary": {
+          "url": "https://judgments.ecourts.gov.in/KBJ/?p=home",
+          "locator": "DecisionDatefield"
+        }
+      }
+    }
+  },
+  "revisions": {
+    "S006": "Duplicateinclusion-datequestionreplacedbydistinctreviewability-versus-invalidityconcept;allfourdistractorsreworked",
+    "S007": "Obviousnationaldatesreplacedbyplausiblejudicialchronologydates"
+  },
+  "S005_cutoff_verification": {
+    "source": "https://indiankanoon.org/doc/1124708/",
+    "locator": "Actualjudgment55andoperative68",
+    "wording": "on or afterApril24,1973",
+    "scope": "NinthScheduleinclusionamendments,notallpre1973legalquestions"
+  },
+  "updated_keys": [
+    2,
+    3,
+    1,
+    4,
+    1,
+    2,
+    2,
+    4
+  ],
+  "review_type": "Authorrevisionafterseparatecoordinatorblindreview;notindependenthumanreview",
+  "completion": false
+}

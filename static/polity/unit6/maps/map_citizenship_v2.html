@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Citizenship Memory Map</title>
+<style>
+:root{
+ --bg:#eef1f6;--surface:#ffffff;--ink:#16213a;--muted:#4b5970;--line:#d3dae5;--focus:#1d4ed8;--on-ink:#fff;--on-c:#fff;
+ --b:#0369a1;--b-bg:#e6f3fb;--b-l:#a9d4ee;--b-2:#0ea5e9;
+ --d:#0f766e;--d-bg:#e3f6f2;--d-l:#9fdcd0;--d-2:#14a394;
+ --r:#c2410c;--r-bg:#fff1e9;--r-l:#f6c3a6;--r-2:#ea580c;
+ --n:#4d7c0f;--n-bg:#eef7e0;--n-l:#c2df95;--n-2:#65a30d;
+ --i:#4338ca;--i-bg:#eceeff;--i-l:#c0c4f6;--i-2:#6366f1;
+ --x:#a16207;--x-bg:#fdf6dc;--x-l:#ecd48a;--x-2:#ca8a04;
+ --o:#7e22ce;--o-bg:#f6ecff;--o-l:#d6b4f5;--o-2:#a855f7;
+ --l:#be123c;--l-bg:#fff0f3;--l-l:#f5b5c4;--l-2:#e11d48;
+ --k:#334155;--k-bg:#eef1f5;--k-l:#c6cfdb;--k-2:#64748b;
+ --gate:#eab308;--gate-ink:#3d2f00;
+ --shadow:0 1px 2px rgba(20,33,58,.06),0 6px 18px rgba(20,33,58,.06);
+ --font-d:'Sora','Noto Sans Telugu',system-ui,-apple-system,'Segoe UI',sans-serif;
+ --font-b:'Noto Sans','Noto Sans Telugu',system-ui,-apple-system,'Segoe UI',sans-serif;
+ color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#0e1623;--surface:#16233a;--ink:#e7edf6;--muted:#a6b6cc;--line:#2d3f5c;--focus:#7cb3fb;--on-ink:#0e1623;--on-c:#0e1623;
+ --b:#5cc0f5;--b-bg:#10283a;--b-l:#1f5577;--b-2:#38bdf8;
+ --d:#3ddbc6;--d-bg:#0f2b2c;--d-l:#1f6660;--d-2:#22b8a6;
+ --r:#ff9466;--r-bg:#2e1c17;--r-l:#7a3d25;--r-2:#ff7a45;
+ --n:#a8d85c;--n-bg:#1c2812;--n-l:#4a6624;--n-2:#8bc34a;
+ --i:#a5abff;--i-bg:#1c1f45;--i-l:#434aa3;--i-2:#818cf8;
+ --x:#f5c84c;--x-bg:#2c2410;--x-l:#6e5718;--x-2:#eab308;
+ --o:#d0a2ff;--o-bg:#261a3b;--o-l:#5b3a8f;--o-2:#b77cff;
+ --l:#ff7a93;--l-bg:#331520;--l-l:#7d2a40;--l-2:#fb5277;
+ --k:#b3c1d6;--k-bg:#1b273a;--k-l:#3a4d69;--k-2:#8fa3c0;
+ --gate:#facc15;--gate-ink:#2b2100;
+ --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.25);color-scheme:dark}}
+:root[data-theme="dark"]{
+ --bg:#0e1623;--surface:#16233a;--ink:#e7edf6;--muted:#a6b6cc;--line:#2d3f5c;--focus:#7cb3fb;--on-ink:#0e1623;--on-c:#0e1623;
+ --b:#5cc0f5;--b-bg:#10283a;--b-l:#1f5577;--b-2:#38bdf8;
+ --d:#3ddbc6;--d-bg:#0f2b2c;--d-l:#1f6660;--d-2:#22b8a6;
+ --r:#ff9466;--r-bg:#2e1c17;--r-l:#7a3d25;--r-2:#ff7a45;
+ --n:#a8d85c;--n-bg:#1c2812;--n-l:#4a6624;--n-2:#8bc34a;
+ --i:#a5abff;--i-bg:#1c1f45;--i-l:#434aa3;--i-2:#818cf8;
+ --x:#f5c84c;--x-bg:#2c2410;--x-l:#6e5718;--x-2:#eab308;
+ --o:#d0a2ff;--o-bg:#261a3b;--o-l:#5b3a8f;--o-2:#b77cff;
+ --l:#ff7a93;--l-bg:#331520;--l-l:#7d2a40;--l-2:#fb5277;
+ --k:#b3c1d6;--k-bg:#1b273a;--k-l:#3a4d69;--k-2:#8fa3c0;
+ --gate:#facc15;--gate-ink:#2b2100;
+ --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.25);color-scheme:dark}
+.cb_{}
+.cB{--c:var(--b);--cb:var(--b-bg);--cl:var(--b-l);--c2:var(--b-2)}
+.cD{--c:var(--d);--cb:var(--d-bg);--cl:var(--d-l);--c2:var(--d-2)}
+.cR{--c:var(--r);--cb:var(--r-bg);--cl:var(--r-l);--c2:var(--r-2)}
+.cN{--c:var(--n);--cb:var(--n-bg);--cl:var(--n-l);--c2:var(--n-2)}
+.cI{--c:var(--i);--cb:var(--i-bg);--cl:var(--i-l);--c2:var(--i-2)}
+.cX{--c:var(--x);--cb:var(--x-bg);--cl:var(--x-l);--c2:var(--x-2)}
+.cO{--c:var(--o);--cb:var(--o-bg);--cl:var(--o-l);--c2:var(--o-2)}
+.cL{--c:var(--l);--cb:var(--l-bg);--cl:var(--l-l);--c2:var(--l-2)}
+.cK{--c:var(--k);--cb:var(--k-bg);--cl:var(--k-l);--c2:var(--k-2)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:15px;line-height:1.55;
+ padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px));overflow-wrap:break-word}
+body.is-te{font-size:15.5px}
+body:not(.is-te) .te{display:none!important}
+body.is-te .en{display:none!important}
+main{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:34px}
+/* hero */
+.hero{position:relative;padding:28px 0 0}
+.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:0 0 6px 6px;
+ background:linear-gradient(90deg,var(--b) 0 14%,var(--d) 14% 28%,var(--r) 28% 42%,var(--n) 42% 56%,var(--i) 56% 70%,var(--o) 70% 84%,var(--l) 84%)}
+header{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between}
+h1{font-family:var(--font-d);font-size:clamp(26px,5vw,40px);line-height:1.15;margin:0;letter-spacing:-.01em;text-wrap:balance}
+.sub{margin:8px 0 0;color:var(--muted);max-width:66ch;font-size:14px}
+.ctl{display:flex;gap:8px;flex-wrap:wrap}
+.tog{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+button{font:inherit;font-size:14px;font-weight:600;padding:8px 16px;border:0;background:transparent;color:var(--muted);cursor:pointer;min-height:40px}
+.tog button[aria-pressed="true"]{background:var(--ink);color:var(--on-ink)}
+#bTh{border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink)}
+button:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+h2{font-family:var(--font-d);font-size:20px;margin:0 0 4px;letter-spacing:-.005em;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.lead{margin:0 0 14px;color:var(--muted);font-size:13.5px}
+.badge{display:inline-flex;align-items:center;font-family:var(--font-b);font-size:11.5px;font-weight:700;border:1px solid var(--cl,var(--line));color:var(--c,var(--muted));background:var(--cb,var(--surface));border-radius:999px;padding:1px 9px;letter-spacing:.02em}
+.asof{font-size:12px;color:var(--muted)}
+/* mnemonic strip */
+.mn{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.mstrip{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+.mt{flex:1 1 74px;min-width:0;border-radius:12px;padding:8px 6px 7px;text-align:center;background:linear-gradient(160deg,var(--c),var(--c2));color:var(--on-c)}
+.mt b{display:block;font-family:var(--font-d);font-size:30px;line-height:1.05}
+.mt small{display:block;font-size:12px;font-weight:600;line-height:1.25;margin-top:2px}
+.mt.door{background:var(--cb);color:var(--c);border:1.5px dashed var(--c)}
+.mt.door b{font-size:18px;margin-top:6px}
+.mgrp{display:flex;flex-direction:column;gap:6px;min-width:0}
+.mgrp>span{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+body.is-te .mgrp>span{letter-spacing:0;text-transform:none;font-size:12.5px}
+.mrow{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:6px}
+.mt{min-width:0;text-decoration:none}.mt small{overflow-wrap:anywhere}
+.min{flex:5 1 380px}.mout{flex:3 1 220px}
+.mn p{margin:12px 0 0;font-size:14px;color:var(--muted)}
+.mn p b{color:var(--ink)}
+/* constitution */
+.sect{background:var(--surface);border:1px solid var(--cl);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.shead{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:14px 18px;background:linear-gradient(120deg,var(--c),var(--c2));color:var(--on-c)}
+.shead h2{margin:0;color:inherit}
+.shead .badge{background:rgba(255,255,255,.18);color:inherit;border-color:rgba(255,255,255,.45)}
+:root[data-theme="dark"] .shead .badge{background:rgba(0,0,0,.12);border-color:rgba(0,0,0,.3)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .shead .badge{background:rgba(0,0,0,.12);border-color:rgba(0,0,0,.3)}}
+.sbody{padding:16px 18px 18px;display:flex;flex-direction:column;gap:16px}
+.tl{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-top:26px}
+.tl::before{content:"";position:absolute;left:8px;right:8px;top:9px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--l),var(--x) 50%,var(--k))}
+.tm{position:relative;min-width:0;background:var(--cb);border:1px solid var(--cl);border-radius:12px;padding:10px 12px}
+.tm::before{content:"";position:absolute;top:-24px;left:14px;width:14px;height:14px;border-radius:50%;background:var(--surface);border:4px solid var(--c)}
+.tm b{display:block;font-family:var(--font-d);font-size:19px;color:var(--c);line-height:1.2}
+.tm>span{display:block;font-size:13px;margin-top:2px}
+.nd{margin:0;font-size:14px;min-width:0}
+.box{position:relative;background:var(--surface);border:1px solid var(--cl);border-left:4px solid var(--c);border-radius:10px;padding:9px 12px;min-width:0}
+.artgrid{display:grid;grid-template-columns:3fr 2fr 2fr;gap:12px}
+.ag{min-width:0;border-radius:14px;padding:10px;background:var(--cb);border:1px solid var(--cl);display:flex;flex-direction:column;gap:8px}
+.ag h3{margin:0;font-family:var(--font-d);font-size:13px;color:var(--c);display:flex;gap:8px;align-items:center}
+.ag h3 i{font-style:normal;display:inline-grid;place-items:center;flex:none;width:22px;height:22px;border-radius:7px;background:var(--c);color:var(--on-c);font-size:13px}
+.part2{background:var(--k-bg);border:1px solid var(--k-l);border-radius:12px;padding:10px 14px;font-weight:600}
+.handoff{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:center}
+.hand{display:flex;align-items:center;gap:10px;justify-content:center;background:var(--ink);color:var(--on-ink);border-radius:12px;padding:10px 14px;font-family:var(--font-d);font-weight:700;font-size:15px;text-align:center}
+.arm{border-radius:12px;padding:8px 12px;font-weight:700;font-size:14px;text-align:center;background:var(--cb);color:var(--c);border:1px solid var(--cl)}
+.down{display:block;text-align:center;color:var(--muted);font-size:22px;line-height:1;margin:-6px 0}
+/* route lanes */
+.lanes{display:flex;flex-direction:column;gap:14px}
+.route{display:grid;grid-template-columns:150px minmax(0,1fr);background:var(--surface);border:1px solid var(--cl);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);scroll-margin-top:12px}
+.rhead{background:linear-gradient(165deg,var(--c),var(--c2));color:var(--on-c);padding:14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.rhead .s{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
+body.is-te .rhead .s{text-transform:none;letter-spacing:0}
+.rhead .big{font-family:var(--font-d);font-size:44px;font-weight:700;line-height:1}
+.rhead .big.sm{font-size:30px}
+.rhead .nm{font-family:var(--font-d);font-size:17px;font-weight:700;line-height:1.2}
+.rhead .how{margin-top:6px;font-size:12px;font-weight:600;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:1px 8px;align-self:flex-start}
+:root[data-theme="dark"] .rhead .how{border-color:rgba(0,0,0,.35)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rhead .how{border-color:rgba(0,0,0,.35)}}
+.rbody{padding:14px;display:flex;flex-direction:column;gap:12px;min-width:0;background:linear-gradient(100deg,var(--cb),var(--surface) 55%)}
+.flow{display:flex;gap:30px;align-items:stretch}
+.flow>*{flex:1 1 0;min-width:0;position:relative}
+.flow>*:not(:last-child)::after{content:"";position:absolute;right:-25px;top:50%;width:20px;height:20px;transform:translateY(-50%);background:var(--c);clip-path:polygon(0 30%,55% 30%,55% 0,100% 50%,55% 100%,55% 70%,0 70%)}
+.tiles{display:flex;flex-wrap:wrap;gap:8px}
+.nt{background:var(--surface);border:1px solid var(--cl);border-radius:12px;padding:6px 12px 7px;min-width:0;position:relative;overflow:hidden}
+.nt::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c)}
+.nt b{display:block;font-family:var(--font-d);font-size:21px;color:var(--c);line-height:1.15;font-variant-numeric:tabular-nums}
+.nt>span{display:block;font-size:12px;color:var(--muted);line-height:1.35}
+.side{font-size:13.5px;border:1.5px dashed var(--cl);border-radius:10px;padding:8px 12px;background:var(--surface)}
+.side .tag,.tagx{display:inline-block;font-size:11px;font-weight:700;color:var(--c);border:1px solid var(--cl);background:var(--cb);border-radius:6px;padding:0 6px;margin-right:6px;vertical-align:1px}
+/* birth periods */
+.per{position:relative;background:var(--surface);border:1px solid var(--cl);border-radius:12px;display:flex;flex-direction:column}
+.per .ph{border-radius:11px 11px 0 0;padding:8px 12px;background:var(--cb);border-bottom:1px solid var(--cl)}
+.per .ph b{display:block;font-family:var(--font-d);font-size:17px;color:var(--c);line-height:1.2}
+.pp{display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap}
+.pp i{flex:none;display:inline-block;width:16px;height:16px;border-radius:50%;border:2px solid var(--c)}
+.pp i.on{background:var(--c)}
+.pp i.off{border-style:dashed;opacity:.45}
+.pp i.half{background:linear-gradient(90deg,var(--c) 50%,transparent 50%)}
+.pp i.pin{border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--ink);border-color:var(--ink);width:14px;height:14px}
+.pp em{font-style:normal;font-size:12.5px;font-weight:600;color:var(--ink)}
+.per .nd{padding:9px 12px}
+/* gate */
+.gated{position:relative;border:2px dashed var(--gate);border-radius:20px;padding:12px;display:flex;flex-direction:column;gap:12px;background:color-mix(in srgb,var(--gate) 5%,transparent)}
+.gate{display:flex;gap:12px;align-items:center;background:var(--surface);border:2px solid var(--gate);border-radius:12px;padding:8px 12px 8px 0;overflow:hidden}
+.gate .bar{flex:none;align-self:stretch;width:34px;background:repeating-linear-gradient(135deg,var(--gate) 0 8px,var(--gate-ink) 8px 16px)}
+.gate .nd{font-weight:600}
+/* doors */
+.doors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.dc{background:var(--surface);border:1px solid var(--cl);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.dc h3{margin:0;font-family:var(--font-d);font-size:16px;color:var(--c);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bcap{margin:0;font-size:12.5px;font-weight:700;color:var(--c)}
+.pair{display:flex;flex-wrap:wrap;gap:12px}.pair>*{flex:1 1 240px;min-width:0}.pair>.tiles{flex:0 1 200px}
+.band{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);border-radius:10px;overflow:hidden;border:1px solid var(--cl)}
+.band>div{padding:8px 10px;min-width:0}
+.band .b1{background:color-mix(in srgb,var(--d) 16%,var(--surface))}
+.band .b2{background:color-mix(in srgb,var(--x) 20%,var(--surface));border-left:3px solid var(--c)}
+.band b{display:block;font-family:var(--font-d);font-size:15px;line-height:1.25}
+.band>div>span{display:block;font-size:12.5px;color:var(--muted);line-height:1.35}
+.verdict{display:flex;gap:10px;align-items:center;flex-wrap:wrap;border:1px solid var(--cl);background:var(--cb);border-radius:10px;padding:8px 10px}
+.gavel{flex:none;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--c);color:var(--on-c);font-size:16px}
+.verdict .nd{flex:1 1 200px}
+/* OCI */
+.oci{border:2px dashed var(--o);border-radius:18px;background:linear-gradient(140deg,var(--o-bg),var(--surface) 60%);padding:16px 18px;display:flex;flex-direction:column;gap:14px;position:relative}
+.oci h2{color:var(--o)}
+.ogrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ogrid .wide{grid-column:1 / -1}
+.deny{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.deny s{text-decoration:none;font-size:12.5px;font-weight:700;border-radius:999px;padding:1px 10px;border:1px solid var(--l-l);color:var(--l);background:var(--l-bg)}
+.deny s::before{content:"\2715  ";font-size:10px}
+.link{display:flex;flex-wrap:wrap;align-items:center;gap:10px;border:2px dotted var(--o);border-radius:12px;padding:8px 12px;font-size:14px;font-weight:600;background:var(--surface)}
+.link a{color:var(--r);font-weight:700;text-decoration:none;border-bottom:2px solid var(--r-l)}
+.link .ar{font-family:var(--font-d);color:var(--o);font-size:18px}
+/* lose */
+.exits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ex{background:var(--surface);border:1px solid var(--l-l);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.ex .eh{display:flex;gap:10px;align-items:center;padding:10px 12px;background:var(--ec);color:var(--on-c)}
+.ex .eh i{font-style:normal;flex:none;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.2);font-size:18px}
+:root[data-theme="dark"] .ex .eh i{background:rgba(0,0,0,.15)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ex .eh i{background:rgba(0,0,0,.15)}}
+.ex .eh b{display:block;font-family:var(--font-d);font-size:17px;line-height:1.15}
+.ex .eh small{display:block;font-size:12.5px;font-weight:600;opacity:.92}
+.ex .eb{padding:12px;display:flex;flex-direction:column;gap:10px;flex:1}
+.ex .box{border-left-color:var(--ec)}
+.ex .nt::before{background:var(--ec)}.ex .nt b{color:var(--ec)}
+.e1{--ec:color-mix(in srgb,var(--l) 70%,var(--o))}
+.e2{--ec:var(--l)}
+.e3{--ec:color-mix(in srgb,var(--l) 75%,#000)}
+:root[data-theme="dark"] .e3{--ec:color-mix(in srgb,var(--l) 80%,#fff)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .e3{--ec:color-mix(in srgb,var(--l) 80%,#fff)}}
+.vchain{display:flex;flex-direction:column;gap:18px}
+.vchain>.box:not(:last-child)::after{content:"";position:absolute;left:18px;bottom:-17px;width:14px;height:14px;background:var(--ec,var(--c));clip-path:polygon(30% 0,70% 0,70% 55%,100% 55%,50% 100%,0 55%,30% 55%)}
+.who{border:1px solid var(--l-l);border-radius:12px;padding:10px 12px;background:var(--l-bg)}
+.who h3{margin:0 0 8px;font-family:var(--font-d);font-size:14px;color:var(--l)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12.5px;font-weight:700;border-radius:999px;padding:2px 10px;border:1px solid var(--cl);background:var(--surface);color:var(--c)}
+.chip.no{border-style:dashed;color:var(--ink);background:var(--surface)}
+/* clocks */
+.clocks{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:14px}
+.cpair{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow)}
+.ck{border-radius:12px;padding:10px;text-align:center;background:var(--cb);border:1px solid var(--cl);min-width:0}
+.ck b{display:block;font-family:var(--font-d);font-size:30px;line-height:1.05;color:var(--c)}
+.ck .sx{display:block;font-size:12px;font-weight:700;color:var(--c);margin-bottom:4px}
+.ck>span{display:block;font-size:12.5px;line-height:1.35}
+.neq{font-family:var(--font-d);font-size:28px;font-weight:700;color:var(--muted)}
+.cpair .cap{grid-column:1 / -1;margin:0;font-size:13.5px;font-weight:600;text-align:center}
+.res{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;min-width:0}
+.res h3{margin:0;font-family:var(--font-d);font-size:15px}
+.rrow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px;align-items:center}
+.rrow .rl{font-size:13px;font-weight:700;color:var(--c);line-height:1.3}
+.cells{display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+.cells i{display:inline-block;width:14px;height:18px;border-radius:3px;border:1.5px solid var(--cl);background:var(--surface)}
+.cells i.f{background:var(--c);border-color:var(--c)}
+.cells i.last{width:26px;background:var(--c2);border-color:var(--c2);margin-left:6px}
+.cells em{font-style:normal;font-size:12.5px;color:var(--muted);margin-left:8px}
+.res .note{font-size:12px;color:var(--muted);margin:0}
+/* traps + quiz */
+.traps{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px;padding:0;margin:0;list-style:none}
+.traps li{background:var(--surface);border:1px solid var(--cl);border-top:4px solid var(--c);border-radius:12px;padding:12px 14px;font-size:14px;min-width:0;box-shadow:var(--shadow)}
+.traps b{display:flex;gap:8px;align-items:center;font-family:var(--font-d);font-size:14.5px;margin-bottom:4px;color:var(--c)}
+.traps b::before{content:"!";display:inline-grid;place-items:center;flex:none;width:20px;height:20px;border-radius:6px;background:var(--c);color:var(--on-c);font-size:12px}
+.traps li>span{display:block}
+.quiz{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px}
+.quiz details{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:12px;padding:12px 14px;min-width:0;box-shadow:var(--shadow)}
+.quiz summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;display:flex;gap:10px;align-items:flex-start}
+.quiz summary::-webkit-details-marker{display:none}
+.quiz summary::before{content:"?";display:inline-grid;place-items:center;flex:none;width:22px;height:22px;border-radius:50%;background:var(--cb);color:var(--c);font-family:var(--font-d);font-weight:700;font-size:13px}
+.quiz details[open] summary::before{content:"\2713"}
+.quiz .q{display:block;min-width:0}
+.quiz .cover{display:block;margin:8px 0 0;font-weight:500;font-size:12px;color:var(--muted);border:1px dashed var(--cl);border-radius:8px;padding:6px 10px;background:repeating-linear-gradient(135deg,var(--cb) 0 6px,transparent 6px 12px)}
+.quiz details[open] .cover{display:none}
+.quiz .a{margin:8px 0 0 32px;font-size:14px;padding:8px 10px;border-radius:8px;background:var(--cb)}
+.mha{display:flex;gap:10px;align-items:center;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px 6px 6px;font-size:13.5px;color:var(--muted);align-self:flex-start;max-width:100%}
+.mha i{font-style:normal;flex:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--on-ink);font-size:14px}
+.foot{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.foot p{margin:0 0 4px}
+/* responsive */
+@media (max-width:900px){
+ .artgrid{grid-template-columns:1fr 1fr}.artgrid .ag:first-child{grid-column:1 / -1}
+ .clocks{grid-template-columns:1fr}
+ .exits{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+ .route{grid-template-columns:1fr}
+ .rhead{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:10px 14px}
+ .rhead .big{font-size:30px}.rhead .how{margin-top:0}
+ .flow{flex-direction:column;gap:26px}
+ .flow>*:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-23px;transform:translateX(-50%) rotate(90deg)}
+ .doors,.ogrid{grid-template-columns:1fr}
+ .tl{grid-template-columns:1fr;padding-top:0;padding-left:26px}
+ .tl::before{left:9px;right:auto;top:6px;bottom:6px;width:4px;height:auto;background:linear-gradient(180deg,var(--l),var(--x) 50%,var(--k))}
+ .tm::before{top:12px;left:-25px}
+ .handoff{grid-template-columns:1fr}
+ .handoff .down2{display:none}
+}
+@media (max-width:520px){
+ .artgrid{grid-template-columns:1fr}
+ .band{grid-template-columns:1fr}.band .b2{border-left:0;border-top:3px solid var(--c)}
+ .rrow{grid-template-columns:1fr;gap:4px}
+ .cpair{grid-template-columns:1fr}.neq{text-align:center;font-size:22px}
+ .mt b{font-size:24px}.mrow{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .mn{padding:12px}.sbody{padding:14px}.shead{padding:12px 14px}
+ .rbody>.tiles,.eb>.tiles,.dc>.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .rbody>.tiles>.nt:last-child:nth-child(odd),.eb>.tiles>.nt:last-child:nth-child(odd),.dc>.tiles>.nt:last-child:nth-child(odd){grid-column:1 / -1}
+ body.is-te .nt b{font-size:19px}
+}
+</style><style>html,body{max-width:100%;overflow-wrap:anywhere}#review-clarifications p{line-height:1.7}</style></head>
+<body><nav style="padding:1rem;overflow-wrap:anywhere"><a href="/learn/polity/unit6/maps/map_citizenship/questions">Linked questions (102) / అనుసంధానించిన ప్రశ్నలు</a></nav>
+<main data-as-of="2026-11-09" data-map-id="map_citizenship" data-template="FLOW">
+<div class="hero"><header><div>
+<h1><span class="en">Indian citizenship: how you get it, what OCI is, how you lose it</span><span class="te" lang="te">భారత పౌరసత్వం: ఎలా వస్తుంది, OCI అంటే ఏమిటి, ఎలా పోతుంది</span></h1>
+<p class="sub"><span class="en">APPSC Group II, Polity Unit 6.</span><span class="te" lang="te">APPSC గ్రూప్ II, పాలిటీ యూనిట్ 6.</span> <span class="en">Constitution (Articles 5–11) → Citizenship Act, 1955: five ways in, OCI on the side (not citizenship), three ways out.</span><span class="te" lang="te">రాజ్యాంగం (ప్రకరణలు 5–11) → పౌరసత్వ చట్టం, 1955: లోపలికి ఐదు దారులు, పక్కన OCI (పౌరసత్వం కాదు), బయటికి మూడు దారులు.</span></p>
+</div>
+<div class="ctl"><div aria-label="Language / భాష" class="tog" role="group"><button aria-pressed="true" id="bEn" type="button">English</button><button aria-pressed="false" id="bTe" lang="te" type="button">తెలుగు</button></div><button aria-label="Light or dark theme" id="bTh" type="button"><span class="en">Light / Dark</span><span class="te" lang="te">వెలుగు / చీకటి (లైట్ / డార్క్)</span></button></div>
+</header></div>
+<!-- MNEMONIC -->
+<section aria-labelledby="h-mn" class="mn">
+<h2 id="h-mn"><span class="en">Mnemonic</span><span class="te" lang="te">జ్ఞాపకసూత్రం</span></h2>
+<p class="lead" style="margin-bottom:10px"><span class="en">Section numbers just keep running: 3 to 7 in, 8 to 10 out. Each colour below is the colour of that route on the whole page.</span><span class="te" lang="te">సెక్షన్ అంకెలు వరుసగా సాగుతాయి: 3 నుంచి 7 లోపలికి, 8 నుంచి 10 బయటికి. ఇక్కడి ప్రతి రంగు, ఈ పేజీ అంతటా ఆ దారి రంగే.</span></p>
+<div class="mstrip">
+<div class="mgrp min"><span><span class="en">In</span><span class="te" lang="te">లోపలికి</span></span><div class="mrow">
+<a class="mt cB" href="#r3"><b>3</b><small><span class="en">Birth</span><span class="te" lang="te">జన్మ</span></small></a>
+<a class="mt cD" href="#r4"><b>4</b><small><span class="en">Descent</span><span class="te" lang="te">సంతతి</span></small></a>
+<a class="mt cR" href="#r5"><b>5</b><small><span class="en">Registration</span><span class="te" lang="te">నమోదు</span></small></a>
+<a class="mt cN" href="#r6"><b>6</b><small><span class="en">Naturalisation</span><span class="te" lang="te">సహజీకరణ</span></small></a>
+<a class="mt door cX" href="#doors"><b>6A<br/>6B</b></a>
+<a class="mt cI" href="#r7"><b>7</b><small><span class="en">Incorporation</span><span class="te" lang="te">భూభాగం చేరిక</span></small></a>
+</div></div>
+<div class="mgrp mout"><span><span class="en">Out</span><span class="te" lang="te">బయటికి</span></span><div class="mrow">
+<a class="mt e1 cL" href="#lose" style="background:var(--ec)"><b>8</b><small><span class="en">Renounce</span><span class="te" lang="te">పరిత్యాగం</span></small></a>
+<a class="mt e2 cL" href="#lose" style="background:var(--ec)"><b>9</b><small><span class="en">Terminate</span><span class="te" lang="te">ముగింపు</span></small></a>
+<a class="mt e3 cL" href="#lose" style="background:var(--ec)"><b>10</b><small><span class="en">Deprive</span><span class="te" lang="te">తొలగింపు</span></small></a>
+</div></div>
+</div>
+<p><span class="en"><b>In = B-D-R-N-I</b>, Sections 3-4-5-6-7 (Birth, Descent, Registration, Naturalisation, Incorporation). <b>Out = R-T-D</b>, Sections 8-9-10 (Renounce, Terminate, Deprive). The numbers just keep running: 3 to 7 in, 8 to 10 out. 6A (1985) and 6B (2019) are two side doors added later between 6 and 7.</span><span class="te" lang="te"><b>లోపలికి = జ-సం-న-స-భూ</b>, సెక్షన్లు 3-4-5-6-7 (జన్మ, సంతతి, నమోదు, సహజీకరణ, భూభాగం చేరిక). <b>బయటికి = ప-ము-తొ</b>, సెక్షన్లు 8-9-10 (పరిత్యాగం, ముగింపు, తొలగింపు). అంకెలు వరుసగా సాగుతాయి: 3 నుంచి 7 లోపలికి, 8 నుంచి 10 బయటికి. 6, 7 మధ్యలో తరువాత చేర్చిన రెండు పక్క ద్వారాలు: 6A (1985), 6B (2019).</span></p>
+</section>
+<!-- CONSTITUTION -->
+<section aria-labelledby="h-con" class="sect cK">
+<div class="shead"><h2 id="h-con"><span class="en">On 26 Jan 1950: Constitution, Part II</span><span class="te" lang="te">1950 జనవరి 26 నాటికి: రాజ్యాంగం, II భాగం</span></h2><span class="badge"><span class="en">Articles 5–11</span><span class="te" lang="te">ప్రకరణలు 5–11</span></span></div>
+<div class="sbody">
+<div class="part2" data-fact-ref="POL-692-citizenship-constitutional-map#0 F01" id="n_part2"><span class="en">Part II, Articles 5–11: who was a citizen on 26 Jan 1950</span><span class="te" lang="te">II భాగం, ప్రకరణలు 5–11: 1950 జనవరి 26 నాటికి ఎవరు పౌరులో చెబుతుంది</span></div>
+<div aria-label="Cut-off dates" class="tl">
+<div class="tm cL"><b><span class="en">1 March 1947</span><span class="te" lang="te">1947 మార్చి 1</span></b><span><span class="en">Art 7: went to Pakistan after this date = not a citizen</span><span class="te" lang="te">ప్రకరణ 7: ఈ తేదీ తరువాత పాకిస్తాన్‌కు వెళ్లినవారు పౌరులు కారు</span></span></div>
+<div class="tm cX"><b><span class="en">19 July 1948</span><span class="te" lang="te">1948 జూలై 19</span></b><span><span class="en">Art 6: cut-off for those who came from Pakistan</span><span class="te" lang="te">ప్రకరణ 6: పాకిస్తాన్ నుంచి వచ్చినవారికి నిర్ణాయక తేదీ (కట్-ఆఫ్)</span></span></div>
+<div class="tm cK"><b><span class="en">26 Jan 1950</span><span class="te" lang="te">1950 జనవరి 26</span></b><span><span class="en">Constitution starts: Arts 5–11 say who is a citizen</span><span class="te" lang="te">రాజ్యాంగం అమలు: ఎవరు పౌరులో ప్రకరణలు 5–11 చెబుతాయి</span></span></div>
+</div>
+<div class="artgrid">
+<div class="ag cN"><h3><i>+</i><span class="en">Makes citizens: Arts 5, 6, 8</span><span class="te" lang="te">పౌరులను చేసేవి: ప్రకరణలు 5, 6, 8</span></h3>
+<div class="box nd" data-fact-ref="POL-692-citizenship-constitutional-map#1 F02" id="n_art5"><span class="en">Art 5: domiciled in India + born in India, or a parent born in India, or 5 years' ordinary residence</span><span class="te" lang="te">ప్రకరణ 5: భారత్‌లో స్థిర నివాసం (డొమిసైల్) ఉండి — భారత్‌లో పుట్టినా, తల్లి/తండ్రి భారత్‌లో పుట్టినా, లేదా 5 ఏళ్లు సాధారణ నివాసం ఉన్నా పౌరుడే</span></div>
+<div class="box nd" data-fact-ref="POL-692-commencement-migration-registration#1 F03" id="n_art6"><span class="en">Article 6: migration from Pakistan also requires birth of the person, either parent or any grandparent in India as defined in the original Government of India Act, 1935. Before 19 July 1948: ordinary residence since migration. On/after that date: registration on an application before commencement, with at least six months’ residence before application.</span><span class="te" lang="te">ప్రకరణ 6: పాకిస్తాన్ నుంచి వలస వచ్చిన వ్యక్తి, తల్లిదండ్రుల్లో ఒకరు లేదా తాతయ్య–అమ్మమ్మ–నానమ్మల్లో ఎవరైనా అసలు భారత ప్రభుత్వ చట్టం, 1935లో నిర్వచించిన భారతదేశంలో జన్మించి ఉండాలి. 19 జూలై 1948కు ముందు వలసైతే అప్పటి నుంచి సాధారణ నివాసం అవసరం. ఆ తేదీన లేదా తరువాత వలసైతే రాజ్యాంగ ప్రారంభానికి ముందు దరఖాస్తుతో నమోదు అవసరం; దరఖాస్తుకు ముందు కనీసం ఆరు నెలల నివాసం ఉండాలి.</span></div>
+<div class="box nd" data-fact-ref="POL-692-commencement-migration-registration#6 F05" id="n_art8"><span class="en">Art 8: Indian origin living abroad: registered by an Indian diplomatic/consular representative</span><span class="te" lang="te">ప్రకరణ 8: విదేశాల్లో ఉన్న భారత మూలాలవారు: భారత దౌత్య/కాన్సులర్ ప్రతినిధి వద్ద నమోదైతే పౌరులు</span></div>
+</div>
+<div class="ag cL"><h3><i>−</i><span class="en">Shuts out: Arts 7, 9</span><span class="te" lang="te">పౌరసత్వం దక్కనివ్వనివి: ప్రకరణలు 7, 9</span></h3>
+<div class="box nd" data-fact-ref="POL-692-commencement-migration-registration#4 F04" id="n_art7"><span class="en">Art 7: went to Pakistan after 1 March 1947 = not a citizen (unless back on a resettlement/return permit)</span><span class="te" lang="te">ప్రకరణ 7: 1947 మార్చి 1 తరువాత పాకిస్తాన్‌కు వెళ్లిపోయినవారు పౌరులు కారు (పునరావాస/శాశ్వత తిరుగు అనుమతితో తిరిగి వస్తే తప్ప)</span></div>
+<div class="box nd" data-fact-ref="POL-692-citizenship-constitutional-map#2 F06" id="n_art9"><span class="en">Art 9: took a foreign citizenship voluntarily = no claim under Arts 5, 6, 8</span><span class="te" lang="te">ప్రకరణ 9: స్వచ్ఛందంగా విదేశీ పౌరసత్వం తీసుకుంటే ప్రకరణలు 5, 6, 8 కింద పౌరసత్వం దక్కదు</span></div>
+</div>
+<div class="ag cI"><h3><i>→</i><span class="en">Hands over to Parliament: Arts 10, 11</span><span class="te" lang="te">పార్లమెంటుకు అప్పగించేవి: ప్రకరణలు 10, 11</span></h3>
+<div class="box nd" data-fact-ref="POL-692-citizenship-constitutional-map#4 F07" id="n_art10_11"><span class="en">Art 10: citizenship continues, subject to Parliament's law. Art 11: Parliament makes the rules → Citizenship Act, 1955</span><span class="te" lang="te">ప్రకరణ 10: పౌరసత్వం కొనసాగుతుంది, కానీ పార్లమెంటు చట్టానికి లోబడి. ప్రకరణ 11: నియమాలు పార్లమెంటువే → పౌరసత్వ చట్టం, 1955</span></div>
+</div>
+</div>
+</div></section>
+<span aria-hidden="true" class="down">↓</span>
+<div class="handoff">
+<div class="arm cB"><span class="en">In: S.3 → S.7</span><span class="te" lang="te">లోపలికి: సె.3 → సె.7</span></div>
+<div class="hand"><span class="en">Art 11 → Citizenship Act, 1955</span><span class="te" lang="te">ప్రకరణ 11 → పౌరసత్వ చట్టం, 1955</span></div>
+<div class="arm cL"><span class="en">Out: S.8 → S.10</span><span class="te" lang="te">బయటికి: సె.8 → సె.10</span></div>
+</div>
+<!-- GET IT -->
+<section aria-labelledby="h-get">
+<h2 id="h-get"><span class="en">Get it: Citizenship Act, 1955</span><span class="te" lang="te">పొందడం: పౌరసత్వ చట్టం, 1955</span></h2>
+<p class="lead"><span class="en">Five coloured routes, read top to bottom. Big tiles = the numbers examiners ask.</span><span class="te" lang="te">ఐదు రంగుల దారులు, పై నుంచి కిందికి చదవండి. పెద్ద అక్షరాల్లో ఉన్న అంకెలే పరీక్షలో అడిగేవి.</span></p>
+<div class="lanes">
+<article class="route cB" id="r3">
+<div class="rhead"><span class="s"><span class="en">Section</span><span class="te" lang="te">సెక్షన్</span></span><span class="big">3</span><span class="nm"><span class="en">Birth</span><span class="te" lang="te">జన్మ</span></span><span class="how"><span class="en">born in India</span><span class="te" lang="te">భారత్‌లో జననం</span></span></div>
+<div class="rbody">
+<div class="flow">
+<div class="per"><div class="ph"><b><span class="en">26 Jan 1950 – 30 June 1987</span><span class="te" lang="te">1950 జనవరి 26 – 1987 జూన్ 30</span></b><div class="pp"><i class="pin"></i><i class="off"></i><i class="off"></i><em><span class="en">place alone</span><span class="te" lang="te">పుట్టిన చోటు చాలు</span></em></div></div>
+<div class="nd" data-fact-ref="citizenship-by-birth-periods#0 F09" id="n_s3_a"><span class="en">S.3 Birth in India, 26 Jan 1950 – 30 June 1987: birthplace alone is enough</span><span class="te" lang="te">సె.3 జన్మ: 1950 జనవరి 26 – 1987 జూన్ 30 మధ్య భారత్‌లో పుడితే చాలు</span></div></div>
+<div class="per"><div class="ph"><b><span class="en">1 July 1987 – 2 Dec 2004</span><span class="te" lang="te">1987 జూలై 1 – 2004 డిసెంబర్ 2</span></b><div class="pp"><i class="pin"></i><i class="on"></i><i class="off"></i><em><span class="en">place + one citizen parent</span><span class="te" lang="te">చోటు + తల్లి లేదా తండ్రి పౌరులై ఉండాలి</span></em></div></div>
+<div class="nd" data-fact-ref="citizenship-by-birth-periods#1 F10" id="n_s3_b"><span class="en">S.3 Birth, 1 July 1987 – 2 Dec 2004: plus either parent an Indian citizen</span><span class="te" lang="te">సె.3 జన్మ: 1987 జూలై 1 – 2004 డిసెంబర్ 2: దానితో పాటు తల్లి లేదా తండ్రి ఒకరు భారత పౌరులై ఉండాలి</span></div></div>
+<div class="per"><div class="ph"><b><span class="en">From 3 Dec 2004</span><span class="te" lang="te">2004 డిసెంబర్ 3 నుంచి</span></b><div class="pp"><i class="pin"></i><i class="on"></i><i class="half"></i><em><span class="en">place + one citizen parent, other not an illegal migrant</span><span class="te" lang="te">చోటు + ఒకరు పౌరులు, మరొకరు అక్రమ వలసదారు కాకూడదు</span></em></div></div>
+<div class="nd" data-fact-ref="citizenship-by-birth-periods#2 F11" id="n_s3_c"><span class="en">S.3 Birth, from 3 Dec 2004: both parents citizens, or one citizen and the other not an illegal migrant</span><span class="te" lang="te">సె.3 జన్మ: 2004 డిసెంబర్ 3 నుంచి: తల్లిదండ్రులిద్దరూ భారత పౌరులై ఉండాలి; లేదా ఒకరు పౌరులై, మరొకరు అక్రమ వలసదారు కాకుండా ఉండాలి</span></div></div>
+</div>
+<div class="side nd" data-fact-ref="citizenship-by-birth-periods#3 F12" id="n_s3_exc"><span class="tag">S.3(2)</span><span class="en">S.3(2) not by birth: a parent is a foreign envoy with immunity, or an enemy alien in an enemy-occupied place</span><span class="te" lang="te">సె.3(2) జన్మ వల్ల రాదు: తల్లి/తండ్రి న్యాయ ప్రక్రియ నుంచి మినహాయింపు (దౌత్య రక్షణ) ఉన్న విదేశీ రాయబారి అయితే; లేదా తల్లి/తండ్రి శత్రుదేశీయులై, జననం శత్రు ఆక్రమిత ప్రాంతంలో జరిగితే</span></div>
+</div>
+</article>
+<article class="route cD" id="r4">
+<div class="rhead"><span class="s"><span class="en">Section</span><span class="te" lang="te">సెక్షన్</span></span><span class="big">4</span><span class="nm"><span class="en">Descent</span><span class="te" lang="te">సంతతి</span></span><span class="how"><span class="en">born abroad</span><span class="te" lang="te">విదేశంలో జననం</span></span></div>
+<div class="rbody">
+<div class="tiles">
+<div class="nt"><b><span class="en">10 Dec 1992</span><span class="te" lang="te">1992 డిసెంబర్ 10</span></b><span><span class="en">father → either parent</span><span class="te" lang="te">తండ్రి → తల్లి లేదా తండ్రి</span></span></div>
+<div class="nt"><b><span class="en">1 year</span><span class="te" lang="te">1 సంవత్సరం</span></b><span><span class="en">consulate registration (born from 3 Dec 2004)</span><span class="te" lang="te">కాన్సులేట్‌లో జనన నమోదు (2004 డిసెంబర్ 3 నుంచి పుట్టినవారికి)</span></span></div>
+<div class="nt"><b><span class="en">6 months</span><span class="te" lang="te">6 నెలలు</span></b><span><span class="en">give up the foreign one, S.4(1A)</span><span class="te" lang="te">విదేశీ పౌరసత్వం వదలాలి, సె.4(1A)</span></span></div>
+</div>
+<div class="flow">
+<div class="box nd" data-fact-ref="POL-692-descent-registration-and-majority#3 F13 F14" id="n_s4"><span class="en">S.4 Descent: for birth abroad from 26 January 1950 to before 10 December 1992, the father must be an Indian citizen; from 10 December 1992, either parent. From 3 December 2004, consular registration is required within one year (or later with Central Government permission). Earlier descent-only-parent cases have additional conditions.</span><span class="te" lang="te">సెక్షన్ 4 వంశపారంపర్య పౌరసత్వం: విదేశంలో 26 జనవరి 1950 నుంచి 10 డిసెంబర్ 1992కు ముందు జన్మిస్తే తండ్రి భారత పౌరుడై ఉండాలి; 10 డిసెంబర్ 1992 నుంచి తల్లిదండ్రుల్లో ఒకరు పౌరులైతే సరిపోతుంది. 3 డిసెంబర్ 2004 నుంచి ఒక సంవత్సరంలో కాన్సులేట్‌లో నమోదు అవసరం; కేంద్ర ప్రభుత్వ అనుమతితో తరువాత కూడా నమోదు చేయవచ్చు. అంతకుముందు తల్లిదండ్రుల పౌరసత్వం వంశపారంపర్యంగా మాత్రమే వచ్చిన సందర్భాల్లో అదనపు షరతులుంటాయి.</span></div>
+<div class="box nd" data-fact-ref="POL-692-majority-six-months-one-year#0 F15" id="n_s4_1a"><span class="en">S.4(1A): descent citizen holding another citizenship must give up the FOREIGN one within 6 months of full age</span><span class="te" lang="te">సె.4(1A): సంతతి పౌరునికి మరో దేశ పౌరసత్వం ఉంటే, పెద్దయిన 6 నెలల్లో ఆ విదేశీ పౌరసత్వాన్ని వదులుకోవాలి</span></div>
+</div>
+</div>
+</article>
+<div class="gated">
+<div class="gate"><span aria-hidden="true" class="bar"></span><div class="nd" data-fact-ref="POL-692-registration-marriage-residence#7 F18" id="n_bar"><span class="en">Bar before S.5 and S.6: an illegal migrant cannot apply; long residence alone does not cure it</span><span class="te" lang="te">సె.5, సె.6కి ముందస్తు అడ్డు: అక్రమ వలసదారు దరఖాస్తే చేయలేరు; ఎన్నేళ్లు ఉన్నా ఆ అడ్డు తొలగదు</span></div></div>
+<article class="route cR" id="r5">
+<div class="rhead"><span class="s"><span class="en">Section</span><span class="te" lang="te">సెక్షన్</span></span><span class="big">5</span><span class="nm"><span class="en">Registration</span><span class="te" lang="te">నమోదు</span></span><span class="how"><span class="en">listed categories</span><span class="te" lang="te">చట్టం చెప్పిన వర్గాలు</span></span></div>
+<div class="rbody">
+<div class="tiles">
+<div class="nt"><b><span class="en">7 years</span><span class="te" lang="te">7 ఏళ్లు</span></b><span><span class="en">= last 12 months + 6 of the 8 years before</span><span class="te" lang="te">= చివరి 12 నెలలు + అంతకుముందు 8 ఏళ్లలో 6</span></span></div>
+<div class="nt"><b><span class="en">5 yrs + 12 months</span><span class="te" lang="te">5 ఏళ్లు + 12 నెలలు</span></b><span><span class="en">as an OCI, S.5(1)(g)</span><span class="te" lang="te">OCIగా, సె.5(1)(g)</span></span></div>
+</div>
+<div class="box nd" data-fact-ref="POL-692-registration-marriage-residence#1 F16 F17" id="n_s5"><span class="en">S.5 Registration: listed categories. Spouse / Indian-origin resident: 7 years = last 12 months + 6 of the 8 years before. OCI 5 yrs + 12 months</span><span class="te" lang="te">సె.5 నమోదు: చట్టం చెప్పిన వర్గాలకే. జీవిత భాగస్వామి / భారత మూలాల నివాసి: 7 ఏళ్లు = చివరి 12 నెలలు + అంతకుముందు 8 ఏళ్లలో 6 ఏళ్లు. OCIగా 5 ఏళ్లు + 12 నెలలు</span></div>
+</div>
+</article>
+<article class="route cN" id="r6">
+<div class="rhead"><span class="s"><span class="en">Section</span><span class="te" lang="te">సెక్షన్</span></span><span class="big">6</span><span class="nm"><span class="en">Naturalisation</span><span class="te" lang="te">సహజీకరణ</span></span><span class="how"><span class="en">Third Schedule</span><span class="te" lang="te">మూడవ షెడ్యూలు</span></span></div>
+<div class="rbody">
+<div class="tiles">
+<div class="nt"><b><span class="en">11 of 14</span><span class="te" lang="te">14లో 11</span></b><span><span class="en">years before, + last 12 months</span><span class="te" lang="te">అంతకుముందు ఏళ్లు, + చివరి 12 నెలలు</span></span></div>
+<div class="nt"><b><span class="en">1 language</span><span class="te" lang="te">1 భాష</span></b><span><span class="en">from the Eighth Schedule</span><span class="te" lang="te">ఎనిమిదవ షెడ్యూలు నుంచి</span></span></div>
+<div class="nt"><b><span class="en">Waiver</span><span class="te" lang="te">మినహాయింపు</span></b><span><span class="en">distinguished service</span><span class="te" lang="te">విశిష్ట సేవ</span></span></div>
+</div>
+<div class="pair">
+<div class="box nd" data-fact-ref="POL-692-naturalisation-ordinary-and-waiver#0 F19" id="n_s6"><span class="en">S.6 Naturalisation (Third Schedule): last 12 months + 11 of the 14 years before; one Eighth Schedule language; good character</span><span class="te" lang="te">సె.6 సహజీకరణ (మూడవ షెడ్యూలు): చివరి 12 నెలలు + అంతకుముందు 14 ఏళ్లలో 11 ఏళ్లు; ఎనిమిదవ షెడ్యూలులో ఒక భాష; మంచి ప్రవర్తన</span></div>
+<div class="box nd" data-fact-ref="POL-692-naturalisation-ordinary-and-waiver#7 F20" id="n_s6_waiver"><span class="en">S.6 proviso: conditions can be waived for distinguished service (science, philosophy, art, literature, world peace, human progress)</span><span class="te" lang="te">సె.6 పరంతుకం (మినహాయింపు నిబంధన): విజ్ఞానం, తత్వం, కళ, సాహిత్యం, ప్రపంచ శాంతి, మానవ పురోగతికి విశిష్ట సేవ చేసినవారికి షరతులు మినహాయించవచ్చు</span></div>
+</div>
+</div>
+</article>
+</div>
+<!-- SIDE DOORS -->
+<article class="route cX" id="doors">
+<div class="rhead"><span class="s"><span class="en">Side doors</span><span class="te" lang="te">పక్క ద్వారాలు</span></span><span class="big sm">6A · 6B</span><span class="nm"><span class="en">Special doors (between S.6 and S.7)</span><span class="te" lang="te">ప్రత్యేక ద్వారాలు (సె.6, సె.7 మధ్య)</span></span></div>
+<div class="rbody">
+<div class="doors">
+<div class="dc cX">
+<h3><span class="en">S.6A · Assam Accord</span><span class="te" lang="te">సె.6A · అస్సాం ఒప్పందం</span> <span class="badge"><span class="en">15 Aug 1985</span><span class="te" lang="te">1985 ఆగస్టు 15</span></span></h3>
+<p class="bcap"><span class="en">Indian-origin persons from Bangladesh, in Assam</span><span class="te" lang="te">బంగ్లాదేశ్ నుంచి అస్సాంకు వచ్చిన భారత మూలాలవారు</span></p>
+<div class="band">
+<div class="b1"><b><span class="en">before 1 Jan 1966</span><span class="te" lang="te">1966 జనవరి 1కి ముందు</span></b><span><span class="en">= citizens</span><span class="te" lang="te">= పౌరులు</span></span></div>
+<div class="b2"><b><span class="en">1 Jan 1966 → before 25 Mar 1971</span><span class="te" lang="te">1966 జనవరి 1 → 1971 మార్చి 25కి ముందు</span></b><span><span class="en">register; no vote for 10 years</span><span class="te" lang="te">నమోదు కావాలి; 10 ఏళ్లు ఓటు లేదు</span></span></div>
+</div>
+<div class="box nd" data-fact-ref="POL-692-assam-accord-section6a-map#3 F23 F24" id="n_s6a"><span class="en">S.6A Assam (Assam Accord, 15 Aug 1985): Indian-origin persons who came from Bangladesh: before 1 Jan 1966 = citizens; 1 Jan 1966 to before 25 Mar 1971 = register as foreigner, no vote for 10 years from detection</span><span class="te" lang="te">సె.6A అస్సాం (1985 ఆగస్టు 15 అస్సాం ఒప్పందం): బంగ్లాదేశ్ నుంచి అస్సాంకు వచ్చిన భారత మూలాలవారు: 1966 జనవరి 1కి ముందు వచ్చినవారు పౌరులు; 1966 జనవరి 1 నుంచి 1971 మార్చి 25కి ముందు వరకు వచ్చినవారు నమోదు కావాలి; గుర్తించిన నాటి నుంచి 10 ఏళ్లు ఓటు లేదు</span></div>
+<div class="verdict"><span aria-hidden="true" class="gavel">⚖</span><div class="nd" data-fact-ref="bank:POL-692-N006 F25" id="n_s6a_sc"><span class="en">S.6A upheld by a 5-judge bench, 4:1, on 17 Oct 2024</span><span class="te" lang="te">సె.6A చెల్లుతుందని 2024 అక్టోబర్ 17న ఐదుగురు న్యాయమూర్తుల ధర్మాసనం 4:1తో తీర్పు</span></div><span class="badge"><span class="en">as of 9 Nov 2026</span><span class="te" lang="te">2026 నవంబర్ 9 నాటికి</span></span></div>
+</div>
+<div class="dc cX">
+<h3><span class="en">S.6B · CAA 2019</span><span class="te" lang="te">సె.6B · CAA 2019</span> <span class="badge"><span class="en">in force 10 Jan 2020</span><span class="te" lang="te">2020 జనవరి 10 నుంచి అమలు</span></span></h3>
+<div class="tiles">
+<div class="nt"><b><span class="en">31 Dec 2014</span><span class="te" lang="te">2014 డిసెంబర్ 31</span></b><span><span class="en">entered on or before</span><span class="te" lang="te">ఆ తేదీన లేదా ముందు వచ్చినవారు</span></span></div>
+<div class="nt"><b><span class="en">5, not 11</span><span class="te" lang="te">11 కాదు, 5</span></b><span><span class="en">years of residence</span><span class="te" lang="te">నివాస ఏళ్లు</span></span></div>
+<div class="nt"><b>6</b><span><span class="en">religious communities</span><span class="te" lang="te">మత వర్గాలు</span></span></div>
+</div>
+<div class="box nd" data-fact-ref="POL-692-naturalisation-ordinary-and-waiver#9 F26 F27" id="n_s6b"><span class="en">S.6B: the special route concerns Hindu, Sikh, Buddhist, Jain, Parsi and Christian persons from Afghanistan, Bangladesh or Pakistan who entered on/before 31 December 2014 and meet the statutory exemption and other conditions. The 2019 amendment reduces the relevant aggregate naturalisation period from 11 to 5 years; the separate preceding 12-month requirement remains.</span><span class="te" lang="te">సెక్షన్ 6B: ఆఫ్ఘనిస్తాన్, బంగ్లాదేశ్ లేదా పాకిస్తాన్ నుంచి 31 డిసెంబర్ 2014న లేదా అంతకుముందు వచ్చిన హిందూ, సిక్కు, బౌద్ధ, జైన, పార్సీ, క్రైస్తవులకు చట్టంలోని మినహాయింపు, ఇతర షరతులు నెరవేరితే ప్రత్యేక మార్గం వర్తిస్తుంది. 2019 సవరణ సంబంధిత మొత్తం సహజీకరణ నివాస కాలాన్ని 11 నుంచి 5 సంవత్సరాలకు తగ్గించింది; దరఖాస్తుకు ముందు ప్రత్యేకంగా అవసరమైన 12 నెలల షరతు కొనసాగుతుంది.</span></div>
+<div class="side nd" data-fact-ref="POL-692-nrc-ilp-citizenship-distinction#4 F29" id="n_s6b_limits"><span class="tag"><span class="en">limits</span><span class="te" lang="te">పరిమితులు</span></span><span class="en">S.6B is still an application and grant. Not in Sixth Schedule tribal areas of Assam, Meghalaya, Mizoram, Tripura, or Inner Line areas</span><span class="te" lang="te">సె.6B కూడా దరఖాస్తు చేసి మంజూరు పొందాల్సిందే. అస్సాం, మేఘాలయ, మిజోరం, త్రిపుర ఆరవ షెడ్యూలు గిరిజన ప్రాంతాలకు, ఇన్నర్ లైన్ ప్రాంతాలకు వర్తించదు</span></div>
+</div>
+</div>
+</div>
+</article>
+<article class="route cI" id="r7">
+<div class="rhead"><span class="s"><span class="en">Section</span><span class="te" lang="te">సెక్షన్</span></span><span class="big">7</span><span class="nm"><span class="en">Incorporation</span><span class="te" lang="te">భూభాగం చేరిక</span></span><span class="how"><span class="en">Gazette order</span><span class="te" lang="te">గెజిట్ ఉత్తర్వు</span></span></div>
+<div class="rbody">
+<div class="pair">
+<div class="tiles"><div class="nt"><b><span class="en">Gazette</span><span class="te" lang="te">గెజిట్</span></b><span><span class="en">Central Government order</span><span class="te" lang="te">కేంద్ర ప్రభుత్వ ఉత్తర్వు</span></span></div></div>
+<div class="box nd" data-fact-ref="POL-692-incorporation-mechanism#2 F21" id="n_s7"><span class="en">S.7 Incorporation of territory: Central Government order in the Official Gazette names the persons and the date</span><span class="te" lang="te">సె.7 భూభాగం చేరిక: ఏ వ్యక్తులు, ఏ తేదీ నుంచి పౌరులో కేంద్ర ప్రభుత్వం అధికారిక గెజిట్ ఉత్తర్వులో చెబుతుంది</span></div>
+</div>
+</div>
+</article>
+<div class="mha"><i aria-hidden="true">✓</i><div class="nd" data-fact-ref="bank:POL-692-N002 F22" id="n_mha"><span class="en">Who decides: the Central Government (Ministry of Home Affairs, Foreigners Division)</span><span class="te" lang="te">ఎవరు నిర్ణయిస్తారు: కేంద్ర ప్రభుత్వం — హోం మంత్రిత్వ శాఖలోని విదేశీయుల విభాగం (Foreigners Division)</span></div></div>
+</div>
+</section>
+<!-- OCI -->
+<section aria-labelledby="h-oci" class="oci cO">
+<div><h2 id="h-oci"><span class="en">Not citizenship: OCI (7A–7D)</span><span class="te" lang="te">పౌరసత్వం కాదు: OCI (7A–7D)</span> <span class="badge"><span class="en">foreign national</span><span class="te" lang="te">విదేశీ పౌరుడు</span></span></h2>
+<p class="lead" style="margin:0"><span class="en">A side section: OCI sits beside the five routes, not on them.</span><span class="te" lang="te">ఇది పక్క విభాగం: OCI ఐదు దారుల పక్కన ఉంటుంది, వాటిలో భాగం కాదు.</span></p></div>
+<div class="ogrid">
+<div class="box nd" data-fact-ref="POL-692-oci-eligibility-limits#1 F30" id="n_7a"><span class="tagx">7A</span><span class="en">S.7A OCI = registration of a FOREIGN national, not citizenship. Spouse: marriage registered, 2 years, security clearance</span><span class="te" lang="te">సె.7A OCI అంటే విదేశీ పౌరుని నమోదు; భారత పౌరసత్వం కాదు. జీవిత భాగస్వామి: నమోదైన వివాహం, 2 ఏళ్లు, భద్రతా అనుమతి</span></div>
+<div class="box nd" data-fact-ref="POL-692-oci-eligibility-limits#3 F30" id="n_7a_bar" style="border-left-color:var(--l)"><span class="tagx"><span class="en">bar</span><span class="te" lang="te">నిషేధం</span></span><span class="en">OCI bar: self, parent, grandparent or great-grandparent ever a citizen of Pakistan or Bangladesh</span><span class="te" lang="te">OCI నిషేధం: తాను గానీ తల్లిదండ్రులు, తాతలు, ముత్తాతల్లో ఎవరైనా గానీ పాకిస్తాన్ లేదా బంగ్లాదేశ్ పౌరులైతే అర్హత లేదు</span></div>
+<div class="box wide"><div class="nd" data-fact-ref="POL-692-oci-status-rights-cancellation-map#8 F31" id="n_7b"><span class="tagx">7B</span><span class="en">S.7B OCI does NOT get: Art 16 jobs, President (Art 58), Vice-President (Art 66), SC/HC judge (Arts 124, 217), vote, legislature seat</span><span class="te" lang="te">సె.7B OCIకి రావు: ప్రకరణ 16 ఉద్యోగ సమానత్వం, రాష్ట్రపతి (ప్రకరణ 58), ఉపరాష్ట్రపతి (ప్రకరణ 66), సుప్రీం/హైకోర్టు న్యాయమూర్తి (ప్రకరణలు 124, 217), ఓటు హక్కు, పార్లమెంటు/శాసనసభ సభ్యత్వం</span></div>
+<div aria-hidden="true" class="deny"><s><span class="en">Art 16</span><span class="te" lang="te">ప్రకరణ 16</span></s><s><span class="en">Art 58</span><span class="te" lang="te">ప్రకరణ 58</span></s><s><span class="en">Art 66</span><span class="te" lang="te">ప్రకరణ 66</span></s><s><span class="en">Arts 124, 217</span><span class="te" lang="te">ప్రకరణలు 124, 217</span></s><s><span class="en">Vote</span><span class="te" lang="te">ఓటు</span></s><s><span class="en">Legislature seat</span><span class="te" lang="te">చట్టసభ సభ్యత్వం</span></s></div></div>
+<div class="box nd" data-fact-ref="POL-692-oci-renunciation-family#1 F32" id="n_7c"><span class="tagx">7C</span><span class="en">S.7C give up OCI: declaration registered; spouse (who got OCI as spouse) and minor children also lose it</span><span class="te" lang="te">సె.7C OCI వదులుకోవడం: ప్రకటన నమోదు; భాగస్వామి హోదాతో OCI పొందిన జీవిత భాగస్వామి, మైనర్ పిల్లలకూ హోదా పోతుంది</span></div>
+<div class="box nd" data-fact-ref="POL-692-oci-status-rights-cancellation-map#13 F33" id="n_7d"><span class="tagx">7D</span><span class="en">S.7D: the Government may cancel OCI registration on statutory grounds, including fraud or a sentence of at least two years imposed within five years of registration. A reasonable opportunity of being heard is required.</span><span class="te" lang="te">సెక్షన్ 7D: మోసం లేదా నమోదు తరువాత ఐదు సంవత్సరాల్లో విధించిన కనీసం రెండు సంవత్సరాల జైలుశిక్ష వంటి చట్టపరమైన కారణాలపై ప్రభుత్వం OCI నమోదును రద్దు చేయవచ్చు. తన వాదన వినిపించేందుకు సముచిత అవకాశం ఇవ్వాలి.</span></div>
+</div>
+<div class="link" data-fact-ref="POL-692-registration-marriage-residence#1 F16 F17"><span aria-hidden="true" class="ar">⇢</span><span class="en">OCI 5 yrs + 12 months → apply under S.5(1)(g)</span><span class="te" lang="te">OCIగా 5 ఏళ్లు + 12 నెలలు → సె.5(1)(g) కింద దరఖాస్తు</span> <a href="#r5"><span class="en">↑ S.5 Registration</span><span class="te" lang="te">↑ సె.5 నమోదు</span></a></div>
+</section>
+<!-- LOSE -->
+<section aria-labelledby="h-lose" class="sect cL" id="lose">
+<div class="shead"><h2 id="h-lose"><span class="en">Lose it</span><span class="te" lang="te">పోగొట్టుకోవడం</span></h2><span class="badge">S.8 · S.9 · S.10</span></div>
+<div class="sbody">
+<p class="lead" style="margin:0"><span class="en">Three exits. Ask one question: what makes it end? A registered declaration, the act itself, or a Government order.</span><span class="te" lang="te">మూడు దారులు. ఒకటే ప్రశ్న అడగండి: పౌరసత్వం దేనితో పోతుంది? నమోదైన ప్రకటనతోనా, ఆ చర్యతోనే దానంతట అదేనా, లేక ప్రభుత్వ ఉత్తర్వుతోనా.</span></p>
+<div class="exits">
+<div class="ex e1"><div class="eh"><i aria-hidden="true">✎</i><div><b><span class="en">S.8 Renunciation</span><span class="te" lang="te">సె.8 పరిత్యాగం</span></b><small><span class="en">Declaration</span><span class="te" lang="te">ప్రకటన</span></small></div></div>
+<div class="eb"><div class="tiles"><div class="nt"><b><span class="en">1 year</span><span class="te" lang="te">1 సంవత్సరం</span></b><span><span class="en">minor takes it back, S.8(2)</span><span class="te" lang="te">మైనర్ తిరిగి పొందే గడువు, సె.8(2)</span></span></div></div>
+<div class="vchain">
+<div class="box nd" data-fact-ref="POL-692-wartime-loss-comparison#0 F34" id="n_s8"><span class="en">S.8 Renunciation: adult files a declaration; citizenship ends when it is registered. In war, registration is withheld</span><span class="te" lang="te">సె.8 పరిత్యాగం: పెద్దవారు ప్రకటన ఇస్తారు; అది నమోదైనప్పుడు పౌరసత్వం పోతుంది. యుద్ధ సమయంలో నమోదు ఆపి ఉంచుతారు</span></div>
+<div class="box nd" data-fact-ref="POL-692-majority-six-months-one-year#1 F34" id="n_s8_2"><span class="en">S.8(2): the minor child also loses it, but can take it back by declaration within 1 year of full age</span><span class="te" lang="te">సె.8(2): మైనర్ బిడ్డకూ పౌరసత్వం పోతుంది; కానీ పెద్దయిన ఒక ఏడాదిలోపు ప్రకటనతో తిరిగి పొందవచ్చు</span></div>
+</div></div></div>
+<div class="ex e2"><div class="eh"><i aria-hidden="true">⚙</i><div><b><span class="en">S.9 Termination</span><span class="te" lang="te">సె.9 ముగింపు</span></b><small><span class="en">Automatic</span><span class="te" lang="te">దానంతట అదే (ఆటోమేటిక్‌గా)</span></small></div></div>
+<div class="eb"><div class="tiles"><div class="nt"><b><span class="en">No order</span><span class="te" lang="te">ఉత్తర్వు అక్కర్లేదు</span></b><span><span class="en">voluntary foreign citizenship</span><span class="te" lang="te">స్వచ్ఛందంగా విదేశీ పౌరసత్వం</span></span></div></div>
+<div class="vchain">
+<div class="box nd" data-fact-ref="POL-692-wartime-loss-comparison#1 F35" id="n_s9"><span class="en">S.9 Termination: voluntarily takes another country's citizenship = Indian citizenship ends, no order needed (war: on hold till Centre directs)</span><span class="te" lang="te">సె.9 ముగింపు: స్వచ్ఛందంగా మరో దేశ పౌరసత్వం తీసుకుంటే భారత పౌరసత్వం దానంతట అదే ముగుస్తుంది (యుద్ధ కాలంలో కేంద్రం ఆదేశించే వరకు ఆగుతుంది)</span></div>
+</div></div></div>
+<div class="ex e3"><div class="eh"><i aria-hidden="true">⚖</i><div><b><span class="en">S.10 Deprivation</span><span class="te" lang="te">సె.10 తొలగింపు</span></b><small><span class="en">Government order</span><span class="te" lang="te">ప్రభుత్వ ఉత్తర్వు</span></small></div></div>
+<div class="eb"><div class="tiles">
+<div class="nt"><b><span class="en">2 yr / 5 yr</span><span class="te" lang="te">2 ఏళ్ల శిక్ష / 5 ఏళ్లలో</span></b><span><span class="en">sentence of 2+ years within 5 years of becoming a citizen</span><span class="te" lang="te">పౌరుడైన 5 ఏళ్లలోపు 2 ఏళ్లు లేదా అంతకుమించి శిక్ష</span></span></div>
+<div class="nt"><b><span class="en">7 yrs</span><span class="te" lang="te">7 ఏళ్లు</span></b><span><span class="en">abroad (with exceptions)</span><span class="te" lang="te">విదేశంలో (మినహాయింపులతో)</span></span></div>
+<div class="nt"><b>10+</b><span><span class="en">years in judicial office: inquiry chair</span><span class="te" lang="te">ఏళ్ల న్యాయపదవి: విచారణ సంఘం అధ్యక్షుడు</span></span></div></div>
+<div class="vchain">
+<div class="box nd" data-fact-ref="POL-692-deprivation-conditions#0 F36" id="n_s10"><span class="en">S.10 Deprivation: Central Government order. Only for citizens by naturalisation, by most registrations, or only under Art 5(c) — not citizens by birth or descent</span><span class="te" lang="te">సె.10 తొలగింపు: కేంద్ర ప్రభుత్వ ఉత్తర్వు. సహజీకరణ ద్వారా, చాలా నమోదు వర్గాల ద్వారా, లేదా ప్రకరణ 5(c) వల్ల మాత్రమే పౌరులైనవారికే — జన్మ, సంతతి పౌరులకు కాదు</span></div>
+<div class="box nd" data-fact-ref="POL-692-deprivation-conditions#5 F37" id="n_s10_grounds"><span class="en">S.10 grounds: fraud; disloyalty to the Constitution; dealing with the enemy in war; 2-year sentence within 5 years; 7 years abroad (with exceptions)</span><span class="te" lang="te">సె.10 కారణాలు: మోసం; రాజ్యాంగం పట్ల అవిధేయత; యుద్ధంలో శత్రువుతో సంబంధాలు; 5 ఏళ్లలో 2 ఏళ్ల శిక్ష; 7 ఏళ్లు విదేశంలో నివాసం (మినహాయింపులతో)</span></div>
+<div class="box nd" data-fact-ref="POL-692-deprivation-conditions#4 F38" id="n_s10_safe"><span class="en">S.10 safeguards: the Centre must find continued citizenship not conducive to the public good and give written notice. For grounds (a)–(d), a prescribed application makes an inquiry-committee referral compulsory; in other cases referral is discretionary. Its chair must have held judicial office for at least ten years; two other members join.</span><span class="te" lang="te">సెక్షన్ 10 రక్షణలు: పౌరసత్వం కొనసాగడం ప్రజాహితానికి అనుకూలం కాదని కేంద్రం నిర్ధారించాలి; లిఖితపూర్వక నోటీసు ఇవ్వాలి. (a)–(d) కారణాలకు నిర్దేశిత దరఖాస్తు చేస్తే విచారణ కమిటీకి పంపడం తప్పనిసరి; ఇతర సందర్భాల్లో అది ప్రభుత్వ విచక్షణకు లోబడి ఉంటుంది. కమిటీ అధ్యక్షుడు కనీసం పది సంవత్సరాలు న్యాయపదవి నిర్వహించి ఉండాలి; మరో ఇద్దరు సభ్యులుంటారు.</span></div>
+</div></div></div>
+</div>
+<div class="who"><h3><span class="en">S.10 reaches only the ✓ routes (route colours from above)</span><span class="te" lang="te">సె.10 ✓ ఉన్న దారుల్లో వచ్చినవారికి మాత్రమే (పై దారుల రంగులు)</span></h3>
+<div class="chips"><span class="chip cN">✓ <span class="en">Naturalisation</span><span class="te" lang="te">సహజీకరణ</span></span><span class="chip cR">✓ <span class="en">Most registrations</span><span class="te" lang="te">చాలా నమోదు వర్గాలు</span></span><span class="chip cK">✓ <span class="en">Only under Art 5(c)</span><span class="te" lang="te">ప్రకరణ 5(c) వల్ల మాత్రమే</span></span><span class="chip no cB">✗ <span class="en">Birth</span><span class="te" lang="te">జన్మ</span></span><span class="chip no cD">✗ <span class="en">Descent</span><span class="te" lang="te">సంతతి</span></span></div></div>
+</div></section>
+<!-- CLOCKS -->
+<section aria-labelledby="h-clk">
+<h2 id="h-clk"><span class="en">Do not mix the clocks</span><span class="te" lang="te">కాలపరిమితులు కలపకండి</span></h2>
+<p class="lead"><span class="en">Both clocks start at full age. They run for different people and ask for different things.</span><span class="te" lang="te">రెండు గడువులూ పెద్దయిన నాటి నుంచే మొదలవుతాయి. కానీ వేర్వేరు వ్యక్తులకు, వేర్వేరు పనులకు.</span></p>
+<div class="clocks">
+<div class="cpair" data-fact-ref="POL-692-majority-six-months-one-year#0 POL-692-majority-six-months-one-year#1 F15 F34">
+<div class="ck cD"><span class="sx"><span class="en">S.4(1A)</span><span class="te" lang="te">సె.4(1A)</span></span><b><span class="en">6 months</span><span class="te" lang="te">6 నెలలు</span></b><span><span class="en">descent citizen gives up the foreign citizenship</span><span class="te" lang="te">సంతతి పౌరుడు విదేశీ పౌరసత్వం వదులుకోవాలి</span></span></div>
+<div aria-hidden="true" class="neq">≠</div>
+<div class="ck cL"><span class="sx"><span class="en">S.8(2)</span><span class="te" lang="te">సె.8(2)</span></span><b><span class="en">1 year</span><span class="te" lang="te">1 సంవత్సరం</span></b><span><span class="en">minor takes back the citizenship lost through the parent</span><span class="te" lang="te">తల్లి/తండ్రి వల్ల పోయిన పౌరసత్వాన్ని మైనర్ తిరిగి పొందవచ్చు</span></span></div>
+<p class="cap"><span class="en">Do not mix the clocks: S.4(1A) = 6 months; S.8(2) = 1 year.</span><span class="te" lang="te">కాలపరిమితులు కలపకండి: సె.4(1A) = 6 నెలలు; సె.8(2) = 1 సంవత్సరం.</span></p>
+</div>
+<div class="res">
+<h3><span class="en">Residence clocks before applying</span><span class="te" lang="te">దరఖాస్తుకు ముందు నివాస గడువులు</span></h3>
+<div class="rrow cR"><span class="rl"><span class="en">S.5 spouse / Indian-origin resident</span><span class="te" lang="te">సె.5 జీవిత భాగస్వామి / భారత మూలాల నివాసి</span></span><div class="cells"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i><i class="last"></i><em><span class="en">6 of 8 + last 12 months</span><span class="te" lang="te">8లో 6 + చివరి 12 నెలలు</span></em></div></div>
+<div class="rrow cN"><span class="rl"><span class="en">S.6 naturalisation</span><span class="te" lang="te">సె.6 సహజీకరణ</span></span><div class="cells"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i><i></i><i class="last"></i><em><span class="en">11 of 14 + last 12 months</span><span class="te" lang="te">14లో 11 + చివరి 12 నెలలు</span></em></div></div>
+<div class="rrow cX"><span class="rl"><span class="en">S.6B (CAA 2019)</span><span class="te" lang="te">సె.6B (CAA 2019)</span></span><div class="cells"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="last"></i><em><span class="en">5 instead of 11, + last 12 months</span><span class="te" lang="te">11కు బదులు 5 ఏళ్లు, + చివరి 12 నెలలు</span></em></div></div>
+<div class="rrow cO"><span class="rl"><span class="en">OCI → S.5(1)(g)</span><span class="te" lang="te">OCI → సె.5(1)(g)</span></span><div class="cells"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="last"></i><em><span class="en">5 years as OCI + 12 months</span><span class="te" lang="te">OCIగా 5 ఏళ్లు + 12 నెలలు</span></em></div></div>
+<p class="note"><span class="en">Schematic only: one block = one year; the wide block = the last 12 months. Where the filled blocks sit is only for illustration.</span><span class="te" lang="te">చిత్ర సూచన మాత్రమే: ఒక గడి = ఒక ఏడాది; వెడల్పు గడి = చివరి 12 నెలలు. నిండిన గడులు ఎక్కడ ఉన్నాయన్నది ఉదాహరణ కోసమే.</span></p>
+</div>
+</div>
+</section>
+<!-- TRAPS -->
+<section aria-labelledby="h-trap">
+<h2 id="h-trap"><span class="en">Exam traps</span><span class="te" lang="te">పరీక్షలో తడబడే చోట్లు</span></h2>
+<p class="lead"><span class="en">Each trap uses only lines already on this page.</span><span class="te" lang="te">ప్రతి జాగ్రత్త ఈ పేజీలోని వాక్యాల నుంచే.</span></p>
+<ul class="traps">
+<li class="cK"><b><span class="en">Article 9 ≠ Section 9</span><span class="te" lang="te">ప్రకరణ 9 ≠ సెక్షన్ 9</span></b><span><span class="en">Article 9 (Constitution): voluntary foreign citizenship = no claim under Arts 5, 6, 8. Section 9 (Act): voluntary foreign citizenship ends Indian citizenship automatically.</span><span class="te" lang="te">ప్రకరణ 9 (రాజ్యాంగం): స్వచ్ఛందంగా విదేశీ పౌరసత్వం తీసుకుంటే ప్రకరణలు 5, 6, 8 కింద పౌరసత్వం దక్కదు. సెక్షన్ 9 (చట్టం): స్వచ్ఛందంగా విదేశీ పౌరసత్వం తీసుకుంటే భారత పౌరసత్వం దానంతట అదే ముగుస్తుంది.</span></span></li>
+<li class="cO"><b><span class="en">OCI is not citizenship</span><span class="te" lang="te">OCI పౌరసత్వం కాదు</span></b><span><span class="en">S.7A registers a foreign national. No vote, no SC/HC judge (Arts 124, 217), no President (Art 58).</span><span class="te" lang="te">సె.7A విదేశీ పౌరుని నమోదు మాత్రమే. ఓటు లేదు; సుప్రీం/హైకోర్టు న్యాయమూర్తి (ప్రకరణలు 124, 217) కాలేరు; రాష్ట్రపతి (ప్రకరణ 58) కాలేరు.</span></span></li>
+<li class="cL"><b><span class="en">Only S.10 needs an order</span><span class="te" lang="te">ఉత్తర్వు కావాల్సింది సె.10కి మాత్రమే</span></b><span><span class="en">Renunciation ends when the declaration is registered (S.8). Termination is automatic (S.9). Deprivation needs a Central Government order (S.10) and never touches birth or descent citizens.</span><span class="te" lang="te">పరిత్యాగం: ప్రకటన నమోదైనప్పుడు పోతుంది (సె.8). ముగింపు: దానంతట అదే జరుగుతుంది (సె.9). తొలగింపు: కేంద్ర ప్రభుత్వ ఉత్తర్వు కావాలి (సె.10); జన్మ, సంతతి పౌరులకు ఇది వర్తించదు.</span></span></li>
+<li class="cD"><b><span class="en">Descent: father first, then either parent</span><span class="te" lang="te">సంతతి: మొదట తండ్రి మాత్రమే, తరువాత తల్లి లేదా తండ్రి</span></b><span><span class="en">Born abroad before 10 Dec 1992: the father must be a citizen. From that date: either parent.</span><span class="te" lang="te">1992 డిసెంబర్ 10కి ముందు విదేశంలో పుడితే తండ్రి పౌరుడై ఉండాలి. ఆ తేదీ నుంచి తల్లి లేదా తండ్రి ఎవరైనా చాలు.</span></span></li>
+<li class="cX"><b><span class="en">Years alone do not open the gate</span><span class="te" lang="te">ఏళ్ల లెక్క ఒక్కటే ద్వారం తెరవదు</span></b><span><span class="en">An illegal migrant cannot apply under S.5 or S.6, however long the stay. S.6B too is an application and grant, not automatic.</span><span class="te" lang="te">అక్రమ వలసదారు సె.5, సె.6 కింద దరఖాస్తు చేయలేరు; ఎన్నేళ్లు ఉన్నా అంతే. సె.6B కూడా దరఖాస్తు చేసి మంజూరు పొందాల్సిందే; అది దానంతట అదే రాదు.</span></span></li>
+<li class="cR"><b><span class="en">"2-year sentence within 5 years" appears twice</span><span class="te" lang="te">"5 ఏళ్లలో 2 ఏళ్ల శిక్ష" రెండు చోట్ల వస్తుంది</span></b><span><span class="en">It is a ground for S.10 deprivation of citizenship and for S.7D cancellation of OCI. Same numbers, different status.</span><span class="te" lang="te">ఇది సె.10 కింద పౌరసత్వ తొలగింపుకూ, సె.7D కింద OCI రద్దుకూ కారణం. అంకెలు ఒకటే, హోదాలు వేరు.</span></span></li>
+</ul>
+</section>
+<!-- SELF TEST -->
+<section aria-labelledby="h-st">
+<h2 id="h-st"><span class="en">Self-test: cover the answer</span><span class="te" lang="te">స్వీయ పరీక్ష: జవాబు దాచి చూడండి</span></h2>
+<p class="lead"><span class="en">Say the answer aloud, then tap to check.</span><span class="te" lang="te">జవాబు ముందు మీరే చెప్పండి, తర్వాత నొక్కి సరిచూసుకోండి.</span></p>
+<div class="quiz">
+<details class="cB" data-fact-ref="citizenship-by-birth-periods#0 F09" data-node="n_s3_a"><summary><span class="q"><span class="en">Match: Birth, Descent, Registration, Naturalisation, Incorporation → which Sections?</span><span class="te" lang="te">జన్మ, సంతతి, నమోదు, సహజీకరణ, భూభాగం చేరిక — ఏ సెక్షన్లు?</span><span class="cover"><span class="en">Tap to reveal</span><span class="te" lang="te">నొక్కితే జవాబు కనిపిస్తుంది</span></span></span></summary><p class="a"><span class="en">3, 4, 5, 6, 7</span><span class="te" lang="te">3, 4, 5, 6, 7</span></p></details>
+<details class="cB" data-fact-ref="citizenship-by-birth-periods#1 F10" data-node="n_s3_b"><summary><span class="q"><span class="en">A child was born in India in 1990; only the mother is an Indian citizen. Citizen by birth?</span><span class="te" lang="te">1990లో భారత్‌లో పుట్టిన బిడ్డ; తల్లి మాత్రమే భారత పౌరురాలు. జన్మ ద్వారా పౌరుడా?</span><span class="cover"><span class="en">Tap to reveal</span><span class="te" lang="te">నొక్కితే జవాబు కనిపిస్తుంది</span></span></span></summary><p class="a"><span class="en">Yes. 1 July 1987 – 2 Dec 2004 needs either parent a citizen.</span><span class="te" lang="te">అవును. 1987 జూలై 1 – 2004 డిసెంబర్ 2 కాలంలో తల్లి లేదా తండ్రి ఒకరు పౌరులైతే చాలు.</span></p></details>
+<details class="cD" data-fact-ref="POL-692-majority-six-months-one-year#0 F15" data-node="n_s4_1a"><summary><span class="q"><span class="en">Descent citizen who also holds a foreign citizenship: what must they do on full age, and by when?</span><span class="te" lang="te">మరో దేశ పౌరసత్వం కూడా ఉన్న సంతతి పౌరుడు పెద్దయ్యాక ఏం చేయాలి, ఎంత గడువులో?</span><span class="cover"><span class="en">Tap to reveal</span><span class="te" lang="te">నొక్కితే జవాబు కనిపిస్తుంది</span></span></span></summary><p class="a"><span class="en">Give up the foreign citizenship within 6 months (S.4(1A)).</span><span class="te" lang="te">6 నెలల్లో విదేశీ పౌరసత్వాన్ని వదులుకోవాలి (సె.4(1A)).</span></p></details>
+<details class="cN" data-fact-ref="POL-692-naturalisation-ordinary-and-waiver#0 F19" data-node="n_s6"><summary><span class="q"><span class="en">Ordinary naturalisation residence?</span><span class="te" lang="te">సాధారణ సహజీకరణకు నివాస గడువు ఎంత?</span><span class="cover"><span class="en">Tap to reveal</span><span class="te" lang="te">నొక్కితే జవాబు కనిపిస్తుంది</span></span></span></summary><p class="a"><span class="en">Last 12 months + 11 of the 14 years before (5 instead of 11 for the CAA 2019 category).</span><span class="te" lang="te">చివరి 12 నెలలు + అంతకుముందు 14 ఏళ్లలో 11 ఏళ్లు (CAA 2019 వర్గానికి 11కు బదులు 5).</span></p></details>
+<details class="cK" data-fact-ref="POL-692-citizenship-constitutional-map#2 F06" data-node="n_art9"><summary><span class="q"><span class="en">Which Article stops a person who voluntarily took foreign citizenship from claiming under Arts 5, 6, 8?</span><span class="te" lang="te">స్వచ్ఛందంగా విదేశీ పౌరసత్వం తీసుకున్నవారు ప్రకరణలు 5, 6, 8 కింద పౌరసత్వం కోరలేరని చెప్పే ప్రకరణ ఏది?</span><span class="cover"><span class="en">Tap to reveal</span><span class="te" lang="te">నొక్కితే జవాబు కనిపిస్తుంది</span></span></span></summary><p class="a"><span class="en">Article 9</span><span class="te" lang="te">ప్రకరణ 9</span></p></details>
+<details class="cL" data-fact-ref="POL-692-deprivation-conditions#0 F36" data-node="n_s10"><summary><span class="q"><span class="en">Renunciation, termination, deprivation: which one needs a Central Government order?</span><span class="te" lang="te">పరిత్యాగం, ముగింపు, తొలగింపు — వీటిలో కేంద్ర ప్రభుత్వ ఉత్తర్వు కావాల్సింది ఏది?</span><span class="cover"><span class="en">Tap to reveal</span><span class="te" lang="te">నొక్కితే జవాబు కనిపిస్తుంది</span></span></span></summary><p class="a"><span class="en">Deprivation (S.10). Renunciation ends on registration (S.8); termination is automatic (S.9).</span><span class="te" lang="te">తొలగింపు (సె.10). పరిత్యాగం నమోదుతో పోతుంది (సె.8); ముగింపు దానంతట అదే జరుగుతుంది (సె.9).</span></p></details>
+<details class="cO" data-fact-ref="POL-692-oci-status-rights-cancellation-map#8 F31" data-node="n_7b"><summary><span class="q"><span class="en">Can an OCI cardholder become a Supreme Court judge or vote?</span><span class="te" lang="te">OCI కార్డుదారు సుప్రీంకోర్టు న్యాయమూర్తి కాగలరా, ఓటు వేయగలరా?</span><span class="cover"><span class="en">Tap to reveal</span><span class="te" lang="te">నొక్కితే జవాబు కనిపిస్తుంది</span></span></span></summary><p class="a"><span class="en">No. S.7B denies Arts 124/217, voter registration and more. OCI is not citizenship.</span><span class="te" lang="te">లేదు. న్యాయమూర్తి కాలేరు, ఓటు వేయలేరు. సె.7B ప్రకరణలు 124/217, ఓటరు నమోదు మొదలైనవి ఇవ్వదు. OCI పౌరసత్వం కాదు.</span></p></details>
+<details class="cL" data-fact-ref="POL-692-majority-six-months-one-year#1 F34" data-node="n_s8_2"><summary><span class="q"><span class="en">Parent renounced citizenship; the minor child lost it too. What window to take it back?</span><span class="te" lang="te">తల్లి/తండ్రి పౌరసత్వం త్యజించారు; మైనర్ బిడ్డకూ పోయింది. తిరిగి పొందే గడువు?</span><span class="cover"><span class="en">Tap to reveal</span><span class="te" lang="te">నొక్కితే జవాబు కనిపిస్తుంది</span></span></span></summary><p class="a"><span class="en">Within 1 year of full age (S.8(2)).</span><span class="te" lang="te">పెద్దయిన ఒక ఏడాదిలోపు (సె.8(2)).</span></p></details>
+<details class="cX" data-fact-ref="POL-692-assam-accord-section6a-map#3 F23 F24" data-node="n_s6a"><summary><span class="q"><span class="en">Section 6A Assam: what are the two cut-off dates?</span><span class="te" lang="te">సె.6A అస్సాం: రెండు కీలక తేదీలు ఏవి?</span><span class="cover"><span class="en">Tap to reveal</span><span class="te" lang="te">నొక్కితే జవాబు కనిపిస్తుంది</span></span></span></summary><p class="a"><span class="en">1 January 1966 and 25 March 1971 (the second band ends just before 25 March 1971).</span><span class="te" lang="te">1966 జనవరి 1, 1971 మార్చి 25 (రెండో కాలం 1971 మార్చి 25కి ముందు రోజుతో ముగుస్తుంది).</span></p></details>
+</div>
+</section>
+<footer class="foot"><p><span class="en">Time-sensitive lines are as of 9 November 2026. Not an official source.</span><span class="te" lang="te">కాలానుగుణ వాక్యాలు 2026 నవంబర్ 9 నాటివి. ఇది అధికారిక మూలం కాదు.</span></p><p><span class="en">Linked questions: 102</span><span class="te" lang="te">అనుబంధ ప్రశ్నలు: 53</span></p></footer>
+<section id="review-clarifications" style="max-width:70rem;margin:1rem auto;padding:1rem;overflow-wrap:anywhere"><h2>Important distinctions / ముఖ్యమైన తేడాలు</h2><p data-fact-ref="F08"><span class="en" lang="en">Acquisition routes: Section 3 birth; 4 descent; 5 registration; 6 naturalisation; 7 incorporation of territory. Each route has its own conditions.</span><span class="te" lang="te">పౌరసత్వ సముపార్జన మార్గాలు: సెక్షన్ 3 జననం; 4 వంశపారంపర్యం; 5 నమోదు; 6 సహజీకరణ; 7 భూభాగ విలీనం. ప్రతి మార్గానికీ ప్రత్యేక షరతులుంటాయి.</span></p><p data-fact-ref="F28"><span class="en" lang="en">NRC exclusion alone neither declares someone a foreigner nor grants Section 6B eligibility. Section 6B requires an application and satisfaction of the prescribed conditions.</span><span class="te" lang="te">NRCలో పేరు లేకపోవడం మాత్రమే విదేశీయుడని ప్రకటించదు; సెక్షన్ 6B అర్హతనూ ఇవ్వదు. సెక్షన్ 6B కింద దరఖాస్తు, నిర్దేశిత షరతుల నెరవేర్పు అవసరం.</span></p><p data-fact-ref="F39 F40"><span class="en" lang="en">Section 10(5): committee referral is compulsory on the prescribed application for grounds other than the seven-year-residence ground (e); otherwise discretionary. Section 4: the parents’ registration declaration concerns the minor not holding another country’s passport, not the absence of foreign citizenship.</span><span class="te" lang="te">సెక్షన్ 10(5): ఏడేళ్ల విదేశీ నివాసానికి సంబంధించిన (e) కారణం తప్ప ఇతర కారణాలకు నిర్దేశిత దరఖాస్తుపై కమిటీకి పంపడం తప్పనిసరి; ఇతర సందర్భాల్లో విచక్షణాధికారం ఉంటుంది. సెక్షన్ 4లో తల్లిదండ్రుల ప్రకటన బాలుడికి మరో దేశపు పాస్‌పోర్టు లేదనే విషయానికి సంబంధించినది; విదేశీ పౌరసత్వమే లేదని కాదు.</span></p><p data-fact-ref="F05 F30 F35"><span class="en" lang="en">Article 8 ancestry includes the person, either parent or any grandparent born in the historically defined India. OCI ancestry restrictions include grandparents and great-grandparents of either sex. Under Section 9(2), disputed acquisition of foreign citizenship is determined by the prescribed authority.</span><span class="te" lang="te">ప్రకరణ 8లో చారిత్రక నిర్వచనంలోని భారతదేశంలో వ్యక్తి, తల్లిదండ్రుల్లో ఒకరు లేదా ఏ తాతయ్య/అమ్మమ్మ/నానమ్మ జన్మించినా జన్మ సంబంధం ఉండవచ్చు. OCI వంశ సంబంధ నిషేధంలో స్త్రీ, పురుష పూర్వీకులు ఇద్దరూ చేరుతారు. విదేశీ పౌరసత్వ సముపార్జనపై వివాదాన్ని సెక్షన్ 9(2) ప్రకారం నిర్దేశిత అధికారి నిర్ణయిస్తారు.</span></p></section></main>
+<script>(function(){var b=document.body,en=document.getElementById('bEn'),te=document.getElementById('bTe'),th=document.getElementById('bTh'),r=document.documentElement;
+function set(t){b.classList.toggle('is-te',t);r.setAttribute('lang',t?'te':'en');en.setAttribute('aria-pressed',String(!t));te.setAttribute('aria-pressed',String(t));try{localStorage.setItem('cit-lang',t?'te':'en')}catch(e){}}
+en.addEventListener('click',function(){set(false)});te.addEventListener('click',function(){set(true)});
+try{if(localStorage.getItem('cit-lang')==='te')set(true)}catch(e){}
+function dark(){var t=r.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+th.addEventListener('click',function(){var d=!dark();r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('cit-theme',d?'dark':'light')}catch(e){}});
+try{var s=localStorage.getItem('cit-theme');if(s)r.setAttribute('data-theme',s)}catch(e){}
+})();</script></body></html>

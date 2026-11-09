@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>6.1.1 · Basic concepts and terminology · Laxmikanth.html</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  .why{background:#fff8ec;border:1px solid #e8c98a;border-left:4px solid #c98a2c;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .why .whytitle{font-weight:700;color:#8a5a12;margin-bottom:6px;font-size:14.3px}
+  .why p.eng{margin:6px 0 3px}
+  .why .te{margin:3px 0 10px}
+  .why .whyq{font-weight:700;color:#132a52}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+</style>
+</head>
+<body><nav aria-label="Laxmikanth chapters"><a href="#chapter-3">GBK pp. 1–11 · Concept of the Constitution</a> · <a href="#chapter-1">GBK pp. 12–29 · Historical Background</a> · <a href="#chapter-2">GBK pp. 30–48 · Making of the Constitution</a></nav><p>Prepared bilingual study notes. Each English passage is followed by its Telugu explanation.</p><div class="divider"><span class="dtitle">Ch.1 — Historical Background</span><span class="dpart">Book 1 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+<div class="page">
+<h1 id="chapter-1">Chapter 1 — Historical Background</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Full-Depth Bilingual Study Notes</div>
+<div class="para">
+<div class="ptitle">From a Trading Company to a Territorial Ruler</div>
+<p class="eng">The British first arrived in India in <b class="hlg">1608</b>, not as rulers but as <b>traders</b>, operating through the <b class="hlb">East India Company</b> — a private commercial body that held an exclusive right to trade with India under a charter granted by <b class="hlp">Queen Elizabeth I</b> in <b class="hlg">1600</b>. For over a century and a half the Company remained essentially a business venture. That changed in <b class="hlg">1765</b>, when the Company obtained the <span class="hlb">'diwani'</span> of Bengal, Bihar and Orissa — the right to collect revenue and administer civil justice in those territories, won in the aftermath of the Company's military victory at Buxar. This grant is the pivotal turning point the book flags: it marked the Company's transformation from a purely trading firm into a <b class="imp">territorial power</b> — an entity that now governed land and people, not just goods. This dual identity — merchant and ruler at once — is what eventually forced the British Parliament in London to start regulating the Company's affairs, since a private company answerable only to its shareholders was now, in effect, running a colonial government.</p>
+<div class="te">British వారు మొదట India కు <b class="hlg">1608</b>లో వచ్చారు — పాలకులుగా కాదు, <b>వ్యాపారులుగా</b> — <b class="hlb">East India Company</b> ద్వారా — ఇది 1600లో <b class="hlp">Queen Elizabeth I</b> ఇచ్చిన charter కింద India తో వ్యాపారం చేసే exclusive హక్కు కలిగిన ఒక ప్రైవేట్ వ్యాపార సంస్థ. ఒకటిన్నర శతాబ్దం పైగా Company ప్రధానంగా ఒక business venture గానే ఉంది. ఈ పరిస్థితి <b class="hlg">1765</b>లో మారింది — Battle of Buxar విజయం తర్వాత Company Bengal, Bihar, Orissa <span class="hlb">'diwani'</span> (revenue వసూలు, civil justice నిర్వహణ హక్కు) పొందింది. పుస్తకం ప్రత్యేకంగా గుర్తించే మలుపు ఇదే — ఇది Company ను కేవలం వ్యాపార సంస్థ నుండి <b class="imp">territorial power</b> గా మార్చింది — ఇక అది వస్తువులు మాత్రమే కాదు, భూమి, ప్రజలను కూడా పాలించే సంస్థ అయ్యింది. వ్యాపారి, పాలకుడు — ఈ రెండు గుర్తింపులూ ఒకేసారి ఉండటమే చివరకు London లోని British Parliament ను Company వ్యవహారాలను నియంత్రించమని ఒత్తిడి చేసింది — ఎందుకంటే కేవలం తన shareholders కు మాత్రమే జవాబుదారీ అయిన ఒక ప్రైవేట్ కంపెనీ ఇప్పుడు వాస్తవానికి ఒక వలస ప్రభుత్వాన్ని నడుపుతోంది.</div>
+<p class="eng">In <b class="hlg">1858</b>, in the wake of the <b class="imp">'sepoy mutiny'</b>, the British Crown finally took over direct responsibility for governing India from the Company — and this Crown rule continued until India was granted independence on <b class="hlg">August 15, 1947</b>. With independence came the urgent need for a home-grown Constitution — a <b class="hlb">Constituent Assembly</b> was formed for this purpose in <b class="hlg">1946</b>, and on <b class="hlg">January 26, 1950</b> the Constitution of India finally came into being. Yet, as this chapter sets out to show, many features of Indian polity and the Constitution itself have deep roots in the legal and administrative framework the British built during their rule. The book organises this constitutional history chronologically under two broad headings: <b>(1) The Company Rule (1773–1858)</b> and <b>(2) The Crown Rule (1858–1947)</b>.</p>
+<div class="te"><b class="hlg">1858</b>లో <b class="imp">'sepoy mutiny'</b> తర్వాత, British Crown చివరకు Company నుండి India పాలన బాధ్యతను నేరుగా తీసుకుంది — ఈ Crown rule <b class="hlg">ఆగస్టు 15, 1947</b> న India కు స్వాతంత్ర్యం వచ్చేవరకూ కొనసాగింది. స్వాతంత్ర్యంతో పాటు సొంత రాజ్యాంగం అవసరం తీవ్రంగా వచ్చింది — ఇందుకోసం <b class="hlg">1946</b>లో <b class="hlb">Constituent Assembly</b> ఏర్పడింది, <b class="hlg">జనవరి 26, 1950</b>న చివరకు India రాజ్యాంగం అమలులోకి వచ్చింది. అయితే, ఈ అధ్యాయం చూపించదలచినట్టు, Indian polity, రాజ్యాంగం లక్షణాలు అనేకం British పాలనలో నిర్మించిన legal, administrative framework లోనే లోతైన మూలాలు కలిగి ఉన్నాయి. పుస్తకం ఈ constitutional history ను రెండు broad headings కింద కాలక్రమంలో వివరిస్తుంది — (1) The Company Rule (1773-1858), (2) The Crown Rule (1858-1947).</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Background &amp; Timeline</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>British arrival in India?</td><td>1608, as traders, via East India Company</td></tr>
+<tr><td>Turning point to territorial power?</td><td>1765 — grant of 'diwani' of Bengal, Bihar, Orissa</td></tr>
+<tr><td>Why does "Company Rule" start at 1773, not 1765?</td><td>1773 = first Parliamentary control over the Company, not first territorial rule</td></tr>
+<tr><td>Shift to Crown rule?</td><td>1858, after the Revolt of 1857 ('sepoy mutiny')</td></tr>
+<tr><td>Independence &amp; Constitution?</td><td>15 Aug 1947 independence; Constituent Assembly formed 1946; Constitution effective 26 Jan 1950</td></tr>
+</tbody>
+</table>
+</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Regulating Act of 1773</div>
+<p class="eng">The Regulating Act of 1773 was of great constitutional importance for three reasons the book highlights: it was the <b class="imp">first</b> step taken by the British Government to control and regulate the Company's affairs in India; it <b>recognised, for the first time</b>, the Company's political and administrative functions (not just its commercial ones); and it laid the foundations of <b>central administration</b> in India. Concretely, it designated the Governor of Bengal as the <b class="term">'Governor-General of Bengal'</b>, aided by an Executive Council of <b class="hlg">4</b> members — the first person to hold this post was <b class="hlp">Lord Warren Hastings</b>. It also subordinated the Governors of Bombay and Madras to this Bengal Governor-General, a sharp change from the earlier arrangement where the three presidencies operated entirely independently of one another. The Act further provided for a <b>Supreme Court at Calcutta</b> (established <b class="hlg">1774</b>), comprising one chief justice and three other judges; prohibited Company servants from private trade or accepting bribes/presents from Indians; and required the Company's <b class="hlb">Court of Directors</b> to report regularly to the British Government on revenue, civil and military affairs in India.</p>
+<div class="te">పుస్తకం ఎత్తిచూపిన మూడు కారణాల వల్ల Regulating Act of 1773 constitutional గా చాలా ముఖ్యమైనది — ఇది Company India వ్యవహారాలను నియంత్రించడానికి British Government తీసుకున్న <b class="imp">మొదటి</b> అడుగు; Company political, administrative functions ను (కేవలం commercial కాకుండా) <b>మొదటిసారి గుర్తించింది</b>; India లో <b>central administration</b> పునాదులు వేసింది. ప్రత్యేకంగా చెప్పాలంటే — ఇది Bengal Governor ను <b class="term">'Governor-General of Bengal'</b> గా పేర్కొంది, సహాయానికి 4 మంది సభ్యుల Executive Council ఏర్పాటు చేసింది — ఈ పదవి చేపట్టిన మొదటి వ్యక్తి <b class="hlp">Lord Warren Hastings</b>. Bombay, Madras governors ను ఈ Bengal Governor-General కు subordinate చేసింది — ఇది అంతకుముందు మూడు presidencies పూర్తిగా ఒకదానికొకటి స్వతంత్రంగా పనిచేసే ఏర్పాటు నుండి పెద్ద మార్పు. ఈ చట్టం Calcutta లో Supreme Court (1774 స్థాపన) ఏర్పాటుకు కూడా నిబంధన పెట్టింది — 1 chief justice + 3 ఇతర judges; Company ఉద్యోగులు private trade చేయడం, Indians నుండి లంచాలు/బహుమతులు తీసుకోవడం నిషేధించింది; Company <b class="hlb">Court of Directors</b> India లో revenue, civil, military వ్యవహారాలపై British Government కు క్రమం తప్పకుండా report చేయాలని నిర్దేశించింది.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — Regulating Act, 1773</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Three reasons for importance?</td><td>First control step; recognised political/admin functions; laid central admin foundation</td></tr>
+<tr><td>New title created?</td><td>Governor-General of Bengal (first — Warren Hastings)</td></tr>
+<tr><td>Bombay/Madras status?</td><td>Made subordinate to Bengal Governor-General</td></tr>
+<tr><td>Supreme Court?</td><td>At Calcutta, 1774; 1 CJ + 3 judges</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Fixing 1773's Defects — Amending Act 1781 &amp; Pitt's India Act 1784</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Amending Act of 1781 (Act of Settlement)</div>
+<p class="eng">Within just eight years, the British Parliament had to pass the Amending Act of 1781 — also called the <b class="term">Act of Settlement</b> — to fix defects that had emerged in the Regulating Act of 1773. It exempted the Governor-General and Council, as well as ordinary Company servants, from the Supreme Court's jurisdiction for acts carried out in their <b>official capacity</b>, and excluded revenue matters from the Court's jurisdiction altogether. It also clarified that while the Supreme Court had jurisdiction over all inhabitants of Calcutta, it had to apply each defendant's own <b>personal law</b> — Hindus tried under Hindu law, Muslims under Mohammedan law. Finally, it redirected appeals from the Provincial Courts to the Governor-General-in-Council instead of the Supreme Court, and empowered the Governor-General-in-Council to frame regulations for the Provincial Courts and Councils.</p>
+<div class="te">కేవలం ఎనిమిదేళ్లలోనే, British Parliament Regulating Act 1773 లో వచ్చిన లోపాలను సరిదిద్దడానికి Amending Act of 1781 — దీన్నే <b class="term">Act of Settlement</b> అని కూడా అంటారు — పాస్ చేయాల్సి వచ్చింది. ఇది Governor-General, Council తో పాటు సాధారణ Company ఉద్యోగులను కూడా, వారి <b>official capacity</b> లో చేసిన చర్యలకు Supreme Court jurisdiction నుండి మినహాయించింది, revenue సంబంధిత విషయాలను కూడా Court jurisdiction నుండి పూర్తిగా తీసివేసింది. Supreme Court Calcutta నివాసులందరిపై jurisdiction కలిగి ఉన్నా, ప్రతి defendant సొంత <b>personal law</b> ప్రకారమే విచారించాలని కూడా స్పష్టం చేసింది — Hindus కు Hindu law, Muslims కు Mohammedan law. చివరగా, Provincial Courts నుండి appeals ను Supreme Court కు కాకుండా Governor-General-in-Council కు మళ్ళించింది, Provincial Courts/Councils కోసం నిబంధనలు రూపొందించే అధికారం Governor-General-in-Council కు ఇచ్చింది.</div>
+
+</div>
+<div class="para">
+<div class="stitle">Pitt's India Act of 1784 &amp; the Act of 1786</div>
+<p class="eng">The next important act was <b class="hlp">Pitt's</b> India Act of 1784, introduced by then British Prime Minister <b class="hlp">William Pitt</b>. It drew a sharp distinction between the Company's <b>commercial</b> functions and its <b>political</b> functions — letting the Court of Directors continue managing commercial affairs, while creating an entirely new body, the <b class="term">Board of Control</b>, to manage political affairs. This established what the book calls a system of <span class="hlb">double government</span>: two separate authorities running the same territory, one commercial, one political. The Board of Control was empowered to supervise and direct all operations of the civil and military government, and of revenues, in the British possessions in India. The Act was significant for two further reasons: for the first time, the Company's Indian territories were officially called the <b class="imp">'British possessions in India'</b>, and the British Government was given <b>supreme control</b> over the Company's affairs and administration. Two years later, in <b class="hlg">1786</b>, when <b class="hlp">Lord Cornwallis</b> was appointed Governor-General of Bengal, he made two conditions for accepting the post — the power to override his council's decisions in special cases, and to simultaneously hold the post of <b class="term">Commander-in-Chief</b>. The Act of 1786 was passed specifically to grant him both.</p>
+<div class="te">తర్వాతి ముఖ్యమైన చట్టం — అప్పటి British Prime Minister <b class="hlp">William Pitt</b> ప్రవేశపెట్టిన Pitt's India Act of 1784. ఇది Company <b>commercial</b> functions, <b>political</b> functions మధ్య స్పష్టమైన తేడాను చూపింది — Court of Directors commercial వ్యవహారాలు కొనసాగించేలా, political వ్యవహారాల కోసం పూర్తిగా కొత్త body — <b class="term">Board of Control</b> — సృష్టించింది. దీనితో పుస్తకం చెప్పే <span class="hlb">double government</span> వ్యవస్థ మొదలైంది — ఒకే territory ని నడిపే రెండు వేర్వేరు అధికారులు, ఒకటి commercial, మరొకటి political. India లోని British possessions civil, military government, revenues కార్యకలాపాలన్నింటినీ పర్యవేక్షించి నిర్దేశించే అధికారం Board of Control కు ఇచ్చింది. ఈ చట్టం మరో రెండు కారణాలవల్ల ముఖ్యమైనది — Company India territories మొదటిసారి అధికారికంగా <b class="imp">'British possessions in India'</b> అని పిలవబడ్డాయి, Company వ్యవహారాలు, administration పై British Government కు <b>supreme control</b> లభించింది. రెండేళ్ల తర్వాత, <b class="hlg">1786</b>లో, <b class="hlp">Lord Cornwallis</b> ను Bengal Governor-General గా నియమించినప్పుడు, ఆయన పదవి స్వీకరించడానికి రెండు షరతులు పెట్టారు — ప్రత్యేక సందర్భాల్లో తన council నిర్ణయాలను override చేసే అధికారం, అదే సమయంలో <b class="term">Commander-in-Chief</b> పదవి కూడా. Act of 1786 ప్రత్యేకంగా ఈ రెండింటినీ ఆయనకు ఇవ్వడానికే పాస్ చేశారు.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — 1781, 1784, 1786</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>1781 Act's other name?</td><td>Act of Settlement</td></tr>
+<tr><td>Why was 1781 Act needed?</td><td>To fix jurisdictional conflict between SC and Governor-General-in-Council</td></tr>
+<tr><td>1784 Act's key innovation?</td><td>Split commercial (Court of Directors) vs political (Board of Control) — "double government"</td></tr>
+<tr><td>Cornwallis's 1786 conditions?</td><td>Override power over council + also Commander-in-Chief</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Charter Act 1793 &amp; Charter Act 1813</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Charter Act of 1793</div>
+<p class="eng">The Charter Act of 1793 mainly consolidated and extended the arrangements of the previous decade. It extended Cornwallis's override power over his council to <b>all</b> future Governor-Generals and Governors of Presidencies, and gave the Governor-General more control over the subordinate Bombay and Madras Presidencies. It extended the Company's trade monopoly in India for another <b class="hlg">20</b> years, provided that the Commander-in-Chief was not to sit on the Governor-General's council unless specifically appointed, and — notably — laid down that the Board of Control's members and staff were henceforth to be paid <b>out of Indian revenues</b>, rather than by the British Government itself.</p>
+<div class="te">Charter Act of 1793 ప్రధానంగా ముందటి దశాబ్దం ఏర్పాట్లను consolidate చేసి విస్తరించింది. Cornwallis కు తన council పై ఉన్న override అధికారాన్ని భవిష్యత్తులోని <b>అన్ని</b> Governor-Generals, Presidency Governors కు విస్తరించింది, Bombay, Madras subordinate presidencies పై Governor-General కు మరింత నియంత్రణ ఇచ్చింది. India లో Company trade monopoly ను మరో <b class="hlg">20</b> సంవత్సరాలు పొడిగించింది, ప్రత్యేకంగా నియమిస్తే తప్ప Commander-in-Chief Governor-General council లో సభ్యుడు కాకూడదని నిర్దేశించింది — ప్రత్యేకంగా గమనించదగినది — Board of Control సభ్యులు, staff జీతాలు ఇక నుండి British Government కు బదులుగా <b>Indian revenues నుండే</b> చెల్లించాలని పేర్కొంది.</div>
+</div>
+<div class="para">
+<div class="stitle">Charter Act of 1813</div>
+<p class="eng">The Charter Act of 1813 marked the first major dent in the Company's commercial privileges: it <b class="imp">abolished the Company's trade monopoly</b> in India, throwing Indian trade open to all British merchants — though it notably continued the Company's monopoly over trade in <b>tea</b> and trade with <b class="hlb">China</b>. It also formally <b>asserted the sovereignty of the British Crown</b> over the Company's Indian territories — a sovereignty claim distinct from actual administration, which the Company still ran. The Act allowed Christian missionaries to come to India "for the purpose of enlightening the people," provided for the spread of western education among British India's inhabitants, and authorised Local Governments to impose taxes on persons, with power to punish non-payment.</p>
+<div class="te">Charter Act of 1813 Company commercial ప్రత్యేక హక్కులకు మొదటి పెద్ద దెబ్బ కొట్టింది — ఇది India లో Company <b class="imp">trade monopoly ను రద్దు చేసింది</b>, Indian trade ను అందరు British merchants కు తెరిచింది — అయితే గమనించదగినది, tea, <b class="hlb">China</b> తో వ్యాపారంపై Company monopoly కొనసాగింది. ఇది Company India territories పై British Crown సార్వభౌమత్వాన్ని అధికారికంగా <b>నొక్కి చెప్పింది</b> — వాస్తవ administration ఇంకా Company చేతిలోనే ఉన్నప్పటికీ ఇది వేరైన sovereignty వాదన. ఈ చట్టం Christian missionaries ప్రజలను "enlighten" చేసే ఉద్దేశంతో India రావడానికి అనుమతించింది, British India నివాసుల్లో western education వ్యాప్తికి నిబంధన పెట్టింది, వ్యక్తులపై పన్నులు విధించే అధికారం Local Governments కు ఇచ్చింది, పన్ను చెల్లించనివారిని శిక్షించే అధికారం కూడా ఇచ్చింది.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Charter Acts 1793 &amp; 1813</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>1793 Act's revenue rule?</td><td>Board of Control staff paid from Indian revenues</td></tr>
+<tr><td>1813 Act's biggest change?</td><td>Ended Company's general India trade monopoly</td></tr>
+<tr><td>What monopoly survived 1813?</td><td>Tea trade &amp; trade with China</td></tr>
+<tr><td>Why was tea/China monopoly kept in 1813?</td><td>Company's specialised China-trade expertise/infrastructure was hard to replace quickly</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Charter Act 1833 — Peak Centralisation</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Charter Act of 1833 — "the final step towards centralisation"</div>
+<p class="eng">The book calls the Charter Act of 1833 <b class="imp">"the final step towards centralisation"</b> in British India, and its provisions justify the label. It elevated the Governor-General of Bengal to <b class="term">Governor-General of India</b>, vesting him with all civil and military powers — for the first time, one office held authority over the <b>entire</b> territory the British possessed in India; <b class="hlp">Lord William Bentinck</b> became the first Governor-General of India under this title. Bombay and Madras were stripped of their legislative powers entirely, with exclusive legislative authority for the whole of British India now resting with the Governor-General of India — and from this point on, laws made under the new dispensation were called <b>'Acts'</b>, while those made under previous arrangements were retroactively termed <b>'Regulations'</b>. The Act also ended the Company's role as a commercial body altogether, turning it into a purely <b class="imp">administrative</b> body holding Indian territories "in trust" for the Crown — completing the process the 1813 Act had begun. It also attempted, for the first time, to introduce open competition for selecting civil servants and to state that Indians should not be barred from any office under the Company — though this specific provision was defeated by opposition from the Company's own Court of Directors and did not take effect.</p>
+<div class="te">పుస్తకం Charter Act of 1833 ను British India లో <b class="imp">"the final step towards centralisation"</b> అని పిలుస్తుంది, దీని నిబంధనలు ఈ పేరును సమర్థిస్తాయి. ఇది Bengal Governor-General ను <b class="term">Governor-General of India</b> గా ఎదిగించింది, అన్ని civil, military అధికారాలు ఆయనకు ఇచ్చింది — మొదటిసారి, British India భూభాగం మొత్తంపై ఒకే పదవికి అధికారం వచ్చింది; ఈ బిరుదులో మొదటి Governor-General of India — <b class="hlp">Lord William Bentinck</b>. Bombay, Madras తమ legislative powers పూర్తిగా కోల్పోయాయి, British India మొత్తానికి exclusive legislative అధికారం ఇప్పుడు Governor-General of India వద్దే ఉంది — ఇక్కడి నుండి కొత్త ఏర్పాటు కింద చేసిన చట్టాలను <b>'Acts'</b> అని, ముందటి ఏర్పాట్ల కింద చేసినవాటిని retroactively <b>'Regulations'</b> అని పిలిచేవారు. ఈ చట్టం Company commercial body పాత్రను పూర్తిగా ముగించింది, దాన్ని Crown కోసం 'trust లో' Indian territories ఉంచుకునే పూర్తి <b class="imp">administrative</b> body గా మార్చింది — 1813 చట్టం మొదలుపెట్టిన ప్రక్రియను ఇది పూర్తి చేసింది. civil servants ఎంపికకు open competition ప్రవేశపెట్టడానికి, Company కింద ఏ పదవి నుండైనా Indians ను దూరంగా ఉంచకూడదని పేర్కొనడానికి మొదటిసారి ప్రయత్నించింది — అయితే ఈ నిర్దిష్ట నిబంధన Company సొంత Court of Directors వ్యతిరేకత వల్ల ఓడిపోయింది, అమలుకాలేదు.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Charter Act, 1833</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Why "final step towards centralisation"?</td><td>All legislative power concentrated exclusively in Governor-General of India</td></tr>
+<tr><td>First Governor-General of India?</td><td>Lord William Bentinck</td></tr>
+<tr><td>Regulations vs Acts?</td><td>Pre-1833 laws = Regulations; post-1833 laws = Acts</td></tr>
+<tr><td>Company's new status?</td><td>Purely administrative body, holding territory "in trust" for the Crown</td></tr>
+<tr><td>Civil service open-competition attempt?</td><td>Proposed but negated by Court of Directors' opposition</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Charter Act 1853 &amp; the End of Company Rule</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Charter Act of 1853 — the Last of the Charter Acts</div>
+<p class="eng">The Charter Act of 1853 was the last in the series of Charter Acts passed between 1793 and 1853, and the book calls it a significant constitutional landmark. For the first time, it <b class="imp">separated the legislative and executive functions</b> of the Governor-General's council, adding <b class="hlg">6</b> new members called legislative councillors and thereby establishing a separate <b class="term">Indian (Central) Legislative Council</b> — a body that functioned like a mini-Parliament, following the same procedures as the British Parliament. In the book's words, legislation was for the first time treated as a <i>special function of government</i>, requiring dedicated machinery and process, rather than something an all-purpose executive council handled alongside everything else. The Act also introduced an open competition system for selecting and recruiting civil servants, throwing the covenanted civil service open to Indians too — the <b class="hlp">Macaulay Committee</b> (the Committee on the Indian Civil Service) was duly appointed in <b class="hlg">1854</b> to work out the details. It extended Company rule but — unlike every previous Charter — <b class="imp">did not specify a fixed period</b> for it, a clear signal that Parliament could terminate Company rule whenever it chose. And it introduced, for the first time, an element of local representation in the legislative council — of the six new legislative members, four were appointed by the local (provincial) governments of Madras, Bombay, Bengal and Agra.</p>
+<div class="te">Charter Act of 1853, 1793-1853 మధ్య వచ్చిన Charter Acts క్రమంలో చివరిది — పుస్తకం దీన్ని ఒక ముఖ్యమైన constitutional landmark అని పిలుస్తుంది. ఇది Governor-General council legislative, executive functions ను మొదటిసారి <b class="imp">వేరు చేసింది</b>, 6 మంది కొత్త legislative councillors చేర్చి, ప్రత్యేక <b class="term">Indian (Central) Legislative Council</b> ఏర్పాటు చేసింది — ఇది British Parliament విధానాలనే అనుసరిస్తూ mini-Parliament లా పనిచేసేది. పుస్తకం మాటల్లో చెప్పాలంటే, legislation మొదటిసారి <i>ప్రభుత్వం యొక్క ప్రత్యేక function</i> గా పరిగణించబడింది, దీనికి ప్రత్యేక machinery, ప్రక్రియ అవసరం — అన్నీ చూసుకునే executive council ఒక భాగంగా కాదు. ఈ చట్టం civil servants ఎంపిక, నియామకానికి open competition పద్ధతి ప్రవేశపెట్టింది, covenanted civil service ను Indians కు కూడా తెరిచింది — వివరాలు రూపొందించడానికి 1854లో <b class="hlp">Macaulay Committee</b> (Committee on the Indian Civil Service) నియమించారు. Company rule ను పొడిగించింది, కానీ — ముందటి ప్రతి Charter లా కాకుండా — దానికి <b class="imp">ఖచ్చితమైన కాలం నిర్దేశించలేదు</b> — Parliament ఎప్పుడైనా Company rule ముగించగలదనే స్పష్టమైన సంకేతం. ఇది legislative council లో మొదటిసారి local representation కూడా ప్రవేశపెట్టింది — 6 కొత్త legislative members లో నలుగురిని Madras, Bombay, Bengal, Agra local (provincial) governments నియమించేవి.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Charter Act, 1853</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Biggest first — legislative body?</td><td>Separated legislative from executive functions — Indian (Central) Legislative Council</td></tr>
+<tr><td>Civil service reform?</td><td>Open competition introduced; Macaulay Committee, 1854</td></tr>
+<tr><td>Company rule's term this time?</td><td>No fixed period — Parliament could end it any time</td></tr>
+<tr><td>Local representation?</td><td>4 of 6 new legislative members from Madras/Bombay/Bengal/Agra local govts</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">The Crown Rule Begins — Government of India Act, 1858</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Government of India Act of 1858</div>
+<p class="eng">This landmark Act was enacted in the wake of the <b class="imp">Revolt of 1857</b> — also known as the First War of Independence, or the 'sepoy mutiny'. Officially titled the Act for the Good Government of India, it <b>abolished the East India Company</b> altogether, transferring its powers of government, its territories and its revenues to the <b class="term">British Crown</b>. India was henceforth to be governed by, and in the name of, Her Majesty; the title Governor-General of India was changed to <b class="term">Viceroy of India</b>, the direct representative of the British Crown — <b class="hlp">Lord Canning</b> thereby became the first Viceroy of India. The Act ended the system of double government by abolishing both the Board of Control and the Court of Directors, and created an entirely new office — <b>Secretary of State for India</b> — vested with complete authority over Indian administration; this Secretary of State was a member of the British Cabinet, responsible ultimately to the British Parliament. A <b class="hlg">15</b>-member Council of India was established to assist him in an advisory capacity, with the Secretary of State as its Chairman; the Secretary of State-in-Council was also constituted as a <b class="hlb">body corporate</b>, capable of suing and being sued in both India and England.</p>
+<div class="te">ఈ landmark చట్టం <b class="imp">Revolt of 1857</b> తర్వాత వచ్చింది — దీన్నే First War of Independence లేదా 'sepoy mutiny' అని కూడా అంటారు. అధికారికంగా Act for the Good Government of India గా పిలిచే ఈ చట్టం, <b>East India Company ను పూర్తిగా రద్దు చేసింది</b>, దాని Government, territories, revenues అధికారాలను <b class="term">British Crown</b> కు బదిలీ చేసింది. ఇక India ను Her Majesty పేరుతో, ఆమె తరపునే పరిపాలించాలి; Governor-General of India బిరుదు <b class="term">Viceroy of India</b> గా మారింది — British Crown ప్రత్యక్ష ప్రతినిధి — దీనితో <b class="hlp">Lord Canning</b> మొదటి Viceroy of India అయ్యారు. ఈ చట్టం Board of Control, Court of Directors రెండింటినీ రద్దు చేసి double government వ్యవస్థను ముగించింది, Indian administration పై పూర్తి అధికారం కలిగిన కొత్త పదవి — <b>Secretary of State for India</b> — సృష్టించింది; ఈ Secretary of State British Cabinet సభ్యుడు, చివరకు British Parliament కు జవాబుదారీగా ఉంటారు. ఆయనకు సహాయంగా advisory capacity లో 15 మంది సభ్యుల Council of India ఏర్పాటు చేసింది, Secretary of State దానికి Chairman గా ఉన్నారు; Secretary of State-in-Council ను కూడా body corporate గా చేసింది — India, England రెండింటిలోనూ దావా వేయగలదు, దావాకు గురికాగలదు.</div>
+<p class="eng">The book pointedly notes — drawing on constitutional historian M.V. Pylee's assessment — that this Act, for all its dramatic transfer of sovereignty, actually changed very little about how India was administered day-to-day: it left the machinery of governance <b>within</b> India largely untouched, confining itself mainly to improving how that machinery was <b>superintended and controlled from England</b>.</p>
+<div class="te">పుస్తకం ప్రత్యేకంగా గమనిస్తుంది — constitutional historian M.V. Pylee అభిప్రాయాన్ని ఆధారంగా చేసుకుని — ఈ చట్టం sovereignty ను నాటకీయంగా బదిలీ చేసినప్పటికీ, India రోజువారీ పరిపాలన తీరును వాస్తవానికి చాలా తక్కువగా మార్చింది — India లోపలి governance machinery ను ఎక్కువగా అలాగే వదిలేసింది, ఆ machinery ను <b>England నుండి పర్యవేక్షించి నియంత్రించే</b> విధానాన్ని మెరుగుపరచడానికే ప్రధానంగా పరిమితమైంది.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — GoI Act, 1858</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Triggered by?</td><td>Revolt of 1857 ('sepoy mutiny')</td></tr>
+<tr><td>What was abolished?</td><td>East India Company; also Board of Control &amp; Court of Directors (double govt)</td></tr>
+<tr><td>New title for Governor-General?</td><td>Viceroy of India (first — Lord Canning)</td></tr>
+<tr><td>New office created?</td><td>Secretary of State for India (British Cabinet member)</td></tr>
+<tr><td>Did internal Indian administration change much?</td><td>No — Act mainly restructured control from England, not governance within India</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Indian Councils Act 1861 &amp; 1892 — First Steps toward Representation</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Indian Councils Act of 1861</div>
+<p class="eng">After the great revolt of 1857, the British Government felt it necessary to seek the cooperation of Indians in administering their own country. This policy of association produced three Acts — in <b class="hlg">1861</b>, <b class="hlg">1892</b> and <b class="hlg">1909</b> — and the Indian Councils Act of 1861 is an important landmark among them. It made a beginning of <b class="imp">representative institutions</b> by associating Indians with the law-making process: the Viceroy was to nominate some Indians as non-official members of his expanded council, and in <b class="hlg">1862</b>, Lord Canning nominated three Indians to his legislative council — the <b class="hlp">Raja of Benaras</b>, the <b class="hlp">Maharaja of Patiala</b> and <b class="hlp">Sir Dinkar Rao</b>. The Act also initiated a process of <b class="term">decentralisation</b> by restoring legislative powers to the Bombay and Madras Presidencies — directly reversing the centralising tendency that had begun with the Regulating Act of 1773 and reached its climax under the Charter Act of 1833. This shift toward legislative devolution eventually resulted in the grant of almost complete internal autonomy to the provinces by <b class="hlg">1937</b>. It provided for new legislative councils in Bengal, the North-western Provinces and Punjab (established in <b class="hlg">1862</b>, <b class="hlg">1886</b> and <b class="hlg">1897</b> respectively), empowered the Viceroy to make procedural rules for council business, gave formal recognition to the <span class="term">'portfolio' system</span> Lord Canning had introduced in <b class="hlg">1859</b> (each council member in charge of specific departments, authorised to issue final orders on their behalf), and empowered the Viceroy to issue emergency <b>ordinances</b> without the legislative council's concurrence, valid for up to <b class="hlg">6 months</b>.</p>
+<div class="te">1857 తిరుగుబాటు తర్వాత, తమ దేశ administration లో Indians సహకారం తీసుకోవాల్సిన అవసరాన్ని British Government భావించింది. ఈ association policy మూడు చట్టాలకు దారితీసింది — 1861, 1892, 1909 లలో — వీటిలో Indian Councils Act of 1861 ముఖ్యమైన landmark. Indians ను law-making ప్రక్రియలో భాగస్వాములను చేస్తూ <b class="imp">representative institutions</b> ప్రారంభమయ్యాయి — Viceroy తన expanded council లో కొంతమంది Indians ను non-official members గా నామినేట్ చేయాలి, 1862లో Lord Canning ముగ్గురు Indians ను తన legislative council కు నామినేట్ చేశారు — <b class="hlp">Raja of Benaras</b>, <b class="hlp">Maharaja of Patiala</b>, <b class="hlp">Sir Dinkar Rao</b>. Bombay, Madras Presidencies కు legislative powers తిరిగి ఇచ్చి <b class="term">decentralisation</b> ప్రక్రియను కూడా ఈ చట్టం ప్రారంభించింది — Regulating Act of 1773 నుండి మొదలై Charter Act of 1833 దాకా చేరుకున్న centralising ధోరణిని ఇది నేరుగా reverse చేసింది. legislative devolution వైపు ఈ మార్పు చివరకు 1937 నాటికి provinces కు almost complete internal autonomy తీసుకొచ్చింది. ఇది Bengal, North-western Provinces, Punjab లో కొత్త legislative councils (వరుసగా 1862, 1886, 1897లలో స్థాపించారు) కోసం నిబంధన పెట్టింది, council వ్యవహారాల కోసం procedural rules చేసే అధికారం Viceroy కు ఇచ్చింది, Lord Canning 1859లో ప్రవేశపెట్టిన 'portfolio' వ్యవస్థకు (నిర్దిష్ట departments చూసే council member, వాటి తరపున తుది ఆర్డర్లు ఇచ్చే అధికారం) అధికారిక గుర్తింపు ఇచ్చింది, legislative council concurrence లేకుండా, 6 నెలల వరకూ చెల్లుబాటయ్యే emergency ordinances జారీ చేసే అధికారం Viceroy కు ఇచ్చింది.</div>
+
+</div>
+<div class="para">
+<div class="stitle">Indian Councils Act of 1892</div>
+<p class="eng">The Indian Councils Act of 1892 was a cautious next step. It increased the number of additional (non-official) members in the Central and provincial legislative councils, but carefully maintained the <b class="imp">official majority</b> in them — Indians and other non-officials still could not outvote the government's own appointees. It expanded the councils' functions to include discussing the <b class="hlb">budget</b> and addressing questions to the executive, and provided for nomination of non-official members: to the Central Legislative Council by the Viceroy, on the recommendation of provincial councils and the Bengal Chamber of Commerce; and to provincial councils by the Governors, on the recommendation of district boards, municipalities, universities, trade associations, zamindars and chambers. The book notes, quoting scholar V.N. Shukla, that this arrangement amounted to a limited and indirect step toward election in substance, even though the Act's text deliberately avoided the term <b>"election"</b> itself, describing the process only as nomination made on the recommendation of certain bodies.</p>
+<div class="te">Indian Councils Act of 1892 ఒక జాగ్రత్తగా తీసుకున్న తర్వాతి అడుగు. Central, provincial legislative councils లో additional (non-official) members సంఖ్యను పెంచింది, కానీ వాటిలో <b class="imp">official majority</b> ను జాగ్రత్తగా కొనసాగించింది — Indians, ఇతర non-officials ఇప్పటికీ government సొంత appointees ను ఓటుతో ఓడించలేకపోయేవారు. budget చర్చించడం, executive కు ప్రశ్నలు అడగడం వంటివి చేర్చి councils functions ను విస్తరించింది, non-official members నామినేషన్ కోసం నిబంధన పెట్టింది — Central Legislative Council కోసం Viceroy, provincial councils, Bengal Chamber of Commerce సిఫారసుపై; provincial councils కోసం Governors, district boards, municipalities, universities, trade associations, zamindars, chambers సిఫారసుపై. పుస్తకం, scholar V.N. Shukla ను ఉటంకిస్తూ, ఈ ఏర్పాటు వాస్తవానికి election వైపు పరిమిత, పరోక్ష అడుగు అని పేర్కొంటుంది, అయితే చట్టం టెక్స్ట్ ఉద్దేశపూర్వకంగా <b>"election"</b> పదాన్నే వాడకుండా, ఈ ప్రక్రియను కేవలం కొన్ని bodies సిఫారసుపై నామినేషన్ గానే వర్ణించింది.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — Indian Councils Acts 1861 &amp; 1892</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>1861 Act's biggest first?</td><td>Began representative institutions — Indians nominated to legislative council</td></tr>
+<tr><td>1861 Act's decentralisation move?</td><td>Restored legislative powers to Bombay &amp; Madras Presidencies</td></tr>
+<tr><td>Why the sudden decentralisation after 1833's centralisation?</td><td>Administrative unwieldiness + political lesson from 1857 Revolt</td></tr>
+<tr><td>1892 Act's key limit?</td><td>More non-official members, but official majority retained</td></tr>
+<tr><td>Did the 1892 Act use the word "election"?</td><td>No — described only as nomination on recommendation of bodies</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Indian Councils Act 1909 — Morley-Minto Reforms &amp; Separate Electorates</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Indian Councils Act of 1909 — Morley-Minto Reforms</div>
+<p class="eng">The Indian Councils Act of 1909, popularly called the <b class="term">Morley-Minto Reforms</b> after <b class="hlp">Lord Morley</b> (Secretary of State for India) and <b class="hlp">Lord Minto</b> (Viceroy of India), considerably increased the size of the legislative councils at both levels — the Central legislative council's membership rose from <b class="hlg">16</b> to <b class="hlg">60</b>, while provincial council sizes varied. It retained the official majority in the Central council, but allowed the provincial legislative councils to have a <b class="imp">non-official majority</b> for the first time. It enlarged the councils' deliberative functions — members could now ask supplementary questions and move resolutions on the budget — and provided, for the first time, for the association of Indians with the <b>executive</b> councils of the Viceroy and Governors: <b class="hlp">Satyendra Prasad Sinha</b> became the first Indian to join the Viceroy's executive council, appointed as Law Member. Most consequentially, it introduced a system of <b class="imp">communal representation</b> for Muslims by accepting the concept of a <span class="hlb">'separate electorate'</span> — Muslim members were now to be elected only by Muslim voters. As the book bluntly puts it, this act 'legalised communalism', and Lord Minto came to be known as the <b class="hlp">Father of Communal Electorate</b>. It also provided separate representation for presidency corporations, chambers of commerce, universities and zamindars.</p>
+<div class="te">Indian Councils Act of 1909, <b class="hlp">Lord Morley</b> (Secretary of State for India), <b class="hlp">Lord Minto</b> (Viceroy of India) పేర్లతో <b class="term">Morley-Minto Reforms</b> గా ప్రసిద్ధి చెందింది — రెండు స్థాయిల్లోనూ legislative councils పరిమాణాన్ని గణనీయంగా పెంచింది — Central legislative council సభ్యత్వం 16 నుండి 60 కి పెరిగింది, provincial council సైజులు వేర్వేరుగా ఉండేవి. Central council లో official majority కొనసాగించింది, కానీ మొదటిసారి provincial legislative councils లో <b class="imp">non-official majority</b> ను అనుమతించింది. councils deliberative functions ను విస్తరించింది — members ఇప్పుడు supplementary questions అడగగలరు, budget పై resolutions పెట్టగలరు — Viceroy, Governors <b>executive</b> councils తో Indians ను చేర్చడం మొదటిసారి ప్రవేశపెట్టింది — <b class="hlp">Satyendra Prasad Sinha</b> Viceroy executive council లో చేరిన మొదటి Indian, Law Member గా నియమితులయ్యారు. అన్నింటికంటే ముఖ్యమైనది — <span class="hlb">'separate electorate'</span> భావనను అంగీకరించి Muslims కోసం <b class="imp">communal representation</b> వ్యవస్థ ప్రవేశపెట్టింది — ఇప్పుడు Muslim members ను Muslim voters మాత్రమే ఎన్నుకునేవారు. పుస్తకం స్పష్టంగా చెప్పినట్టు, ఈ చట్టం communalism ను 'legalise' చేసింది, Lord Minto ను Father of Communal Electorate అని పిలిచేవారు. presidency corporations, chambers of commerce, universities, zamindars కు కూడా separate representation ఇచ్చింది.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Indian Councils Act, 1909</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Other name?</td><td>Morley-Minto Reforms</td></tr>
+<tr><td>Central council size change?</td><td>16 → 60 members</td></tr>
+<tr><td>Provincial majority?</td><td>Non-official majority allowed for the first time</td></tr>
+<tr><td>First Indian in Viceroy's executive council?</td><td>Satyendra Prasad Sinha (Law Member)</td></tr>
+<tr><td>Biggest, most consequential change?</td><td>Separate electorate for Muslims — "legalised communalism"</td></tr>
+<tr><td>Why introduce separate electorates now?</td><td>To fracture a maturing united nationalist movement along religious lines</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Government of India Act 1919 — Montagu-Chelmsford Reforms &amp; Dyarchy</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Government of India Act of 1919 — Montagu-Chelmsford Reforms</div>
+<p class="eng">On <b class="hlg">August 20, 1917</b>, the British Government declared, for the first time, that its objective was the gradual introduction of <b class="imp">responsible Government</b> in India. The Government of India Act of 1919, which followed, came into force in <b class="hlg">1921</b> and is popularly known as the <b class="term">Montagu-Chelmsford Reforms</b> (Montagu was Secretary of State, <b class="hlp">Lord Chelmsford</b> the Viceroy). It classified all subjects of administration into <b>central</b> and <b>provincial</b> subjects through the <span class="term">'Devolution Rules'</span> framed under the Act, facilitating delegation of authority from the Centre to the provinces — though the overall structure of government remained centralised and unitary. Provincial subjects were further split into <b class="term">transferred</b> subjects (public health, education, local self-government, agriculture etc. — administered by the Governor <b>with</b> ministers responsible to the legislative council) and <b class="term">reserved</b> subjects (police, administration of justice, prisons, land revenue, finance etc. — administered by the Governor and his executive council <b>without</b> any responsibility to the legislative council). This dual scheme was called <b class="imp">'dyarchy'</b> — from the Greek <i>di-arche</i>, meaning double rule — and the book records that the experiment was largely <b class="imp">unsuccessful</b>. The Act introduced, for the first time, <b class="term">bicameralism</b> and direct elections — replacing the Indian legislative council with a bicameral legislature comprising an Upper House (<b>Council of State</b>) and a Lower House (<b>Legislative Assembly</b>), the majority of whose members were now chosen by direct election.</p>
+<div class="te"><b class="hlg">ఆగస్టు 20, 1917</b>న, British Government మొదటిసారిగా India లో <b class="imp">responsible Government</b> ను క్రమంగా ప్రవేశపెట్టడమే తన లక్ష్యమని ప్రకటించింది. తర్వాత వచ్చిన Government of India Act of 1919, <b class="hlg">1921</b>లో అమలులోకి వచ్చింది, దీన్ని <b class="term">Montagu-Chelmsford Reforms</b> అని పిలుస్తారు (Montagu Secretary of State, <b class="hlp">Lord Chelmsford</b> Viceroy). ఈ చట్టం కింద రూపొందించిన <span class="term">'Devolution Rules'</span> ద్వారా అన్ని administration subjects ను central, provincial గా వర్గీకరించింది, Centre నుండి provinces కు అధికార బదిలీని సులభతరం చేసింది — అయినా government structure మొత్తం centralised, unitary గానే ఉంది. Provincial subjects ను మరింత <b class="term">transferred</b> subjects (public health, education, local self-govt, agriculture వంటివి — Governor, legislative council కు జవాబుదారీ ministers సాయంతో నిర్వహించేవారు), <b class="term">reserved</b> subjects (police, justice నిర్వహణ, prisons, land revenue, finance వంటివి — Governor, executive council legislative council కు ఎలాంటి జవాబుదారీ లేకుండా నిర్వహించేవారు) గా విభజించింది. ఈ dual పద్ధతిని <b class="imp">'dyarchy'</b> అని పిలిచేవారు — Greek di-arche నుండి వచ్చింది, అంటే double rule — పుస్తకం ఈ ప్రయోగం చాలావరకు <b class="imp">విఫలమైందని</b> నమోదు చేస్తుంది. ఈ చట్టం మొదటిసారి <b class="term">bicameralism</b>, direct elections ప్రవేశపెట్టింది — Indian legislative council స్థానంలో bicameral legislature వచ్చింది — Upper House (Council of State), Lower House (Legislative Assembly), రెండింటిలోనూ మెజారిటీ సభ్యులు ఇప్పుడు direct election ద్వారా ఎంపికయ్యేవారు.</div>
+<p class="eng">Further provisions required that <b class="hlg">3</b> of the <b class="hlg">6</b> members of the Viceroy's executive council (excluding the Commander-in-Chief) be Indian; extended communal representation to Sikhs, Indian Christians, Anglo-Indians and Europeans; granted franchise to a limited number of people on property/tax qualifications; created a new office of <b>High Commissioner for India</b> in London; provided for a public service commission (a Central Public Service Commission was duly set up in <b class="hlg">1926</b>); separated provincial budgets from the Central budget for the first time; provided for a statutory commission to review the Act's working after ten years; and proposed the <b class="term">Chamber of Princes</b> (Narendra Mandal), inaugurated in <b class="hlg">1921</b> with <b class="hlg">120</b> members, headed by the Viceroy.</p>
+<div class="te">మరిన్ని నిబంధనలు — Viceroy executive council లోని 6 మంది సభ్యుల్లో (Commander-in-Chief కాకుండా) 3 గురు Indians గా ఉండాలని నిర్దేశించింది; communal representation ను Sikhs, Indian Christians, Anglo-Indians, Europeans కు విస్తరించింది; property/tax అర్హతల ఆధారంగా పరిమిత మందికి ఓటు హక్కు ఇచ్చింది; London లో High Commissioner for India అనే కొత్త పదవి సృష్టించింది; public service commission కోసం నిబంధన పెట్టింది (1926లో Central Public Service Commission ఏర్పాటైంది); మొదటిసారి provincial budgets ను Central budget నుండి వేరు చేసింది; పది సంవత్సరాల తర్వాత చట్టం పనితీరును సమీక్షించడానికి statutory commission కోసం నిబంధన పెట్టింది; Chamber of Princes (Narendra Mandal) ప్రతిపాదించింది — 1921లో 120 మంది సభ్యులతో ప్రారంభమైంది, Viceroy దీనికి అధిపతి.</div>
+
+<table>
+<caption>Dyarchy under the 1919 Act — Provincial subjects split</caption>
+<thead><tr><th style="width:22%">Category</th><th style="width:32%">Subjects (examples)</th><th>Administered by</th></tr></thead>
+<tbody>
+<tr><td class="term">Transferred</td><td>Public health, education, local self-govt, agriculture</td><td>Governor <b>with</b> ministers responsible to legislative council</td></tr>
+<tr><td class="term">Reserved</td><td>Police, justice, prisons, land revenue, finance</td><td>Governor + executive council, <b class="imp">not</b> responsible to legislative council</td></tr>
+</tbody>
+</table>
+<table class="qs">
+<caption class="qs">Quick Summary — GoI Act, 1919</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Other name?</td><td>Montagu-Chelmsford Reforms</td></tr>
+<tr><td>Dyarchy = ?</td><td>Double rule — transferred (elected ministers) vs reserved (Governor's officials) subjects</td></tr>
+<tr><td>Why did dyarchy fail?</td><td>Finance stayed reserved — transferred departments starved of funds, no real ministerial control</td></tr>
+<tr><td>Big legislative first?</td><td>Bicameralism + direct elections (Council of State + Legislative Assembly)</td></tr>
+<tr><td>What did the 1935 Act learn from this failure?</td><td>Abolished provincial dyarchy → full provincial autonomy</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 10 ═══════════ -->
+<div class="page">
+<div class="sub">Simon Commission · Communal Award · Poona Pact</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Simon Commission (1927–1930)</div>
+<p class="eng">In <b class="hlg">November 1927</b> — two years ahead of the schedule the 1919 Act had itself prescribed — the British Government announced the appointment of a <b class="hlg">7</b>-member statutory commission under the chairmanship of <b class="hlp">Sir John Simon</b>, tasked with reporting on India's condition under the 1919 Act. Because <b class="imp">every single member of the commission was British</b>, all Indian political parties boycotted it outright. The commission nevertheless submitted its report in <b class="hlg">1930</b>, recommending abolition of dyarchy, extension of responsible government in the provinces, establishment of a federation of British India and the princely states, and continuation of the communal electorate. To consider these proposals, the British Government convened <b class="hlg">3</b> Round Table Conferences bringing together representatives of the British Government, British India and the Indian princely states; the resulting discussions produced a 'White Paper on Constitutional Reforms', submitted to a Joint Select Committee of the British Parliament — whose recommendations (with certain changes) were eventually incorporated into the <b class="imp">Government of India Act, 1935</b>.</p>
+<div class="te"><b class="hlg">నవంబర్ 1927</b>లో — 1919 చట్టం స్వయంగా నిర్దేశించిన షెడ్యూల్ కంటే రెండేళ్ళు ముందుగానే — British Government <b class="hlp">Sir John Simon</b> నేతృత్వంలో 7 మంది సభ్యుల statutory commission ను ప్రకటించింది, 1919 చట్టం కింద India పరిస్థితిపై నివేదిక ఇవ్వాల్సిన బాధ్యత దీనికి ఇచ్చారు. commission లోని <b class="imp">సభ్యులందరూ British</b> కావడం వల్ల, అన్ని Indian రాజకీయ పార్టీలు దీన్ని పూర్తిగా బహిష్కరించాయి. అయినప్పటికీ commission 1930లో నివేదిక సమర్పించింది — dyarchy రద్దు, provinces లో responsible government విస్తరణ, British India, princely states federation ఏర్పాటు, communal electorate కొనసాగింపు వంటివి సిఫారసు చేసింది. ఈ ప్రతిపాదనలను పరిశీలించడానికి, British Government British Government, British India, Indian princely states ప్రతినిధులను కలిపి 3 Round Table Conferences ఏర్పాటు చేసింది; ఈ చర్చల ఫలితంగా 'White Paper on Constitutional Reforms' తయారైంది, British Parliament Joint Select Committee కు సమర్పించారు — దీని సిఫారసులు (కొన్ని మార్పులతో) చివరకు Government of India Act, 1935 లో చేర్చారు.</div>
+</div>
+<div class="para">
+<div class="stitle">Communal Award (1932) &amp; the Poona Pact</div>
+<p class="eng">In <b class="hlg">August 1932</b>, British Prime Minister <b class="hlp">Ramsay MacDonald</b> announced a scheme of minority representation known as the <b class="term">Communal Award</b>. It continued separate electorates for Muslims, Sikhs, Indian Christians, Anglo-Indians and Europeans, but — controversially — <b class="imp">extended the same principle to the depressed classes</b> (Scheduled Castes). <b class="hlp">Gandhiji</b> was deeply distressed by this extension and undertook a <b class="imp">fast unto death</b> in Yerawada Jail, Poona, to get the Award modified. This pressure produced an agreement between the Congress and <b class="hlp">Dr. B.R. Ambedkar</b>, the leader of the depressed classes — the <span class="term">Poona Pact</span> — which retained the Hindu joint electorate while giving <b>reserved seats</b> to the depressed classes within it. The British Government accepted the Poona Pact and modified the Communal Award accordingly, dropping the separate-electorate provision for depressed classes; the Poona Pact's terms were subsequently incorporated into the Government of India Act, 1935, so that the 1935 Act's central and provincial legislatures were composed on the basis of this modified Communal Award.</p>
+<div class="te"><b class="hlg">ఆగస్టు 1932</b>లో, British Prime Minister <b class="hlp">Ramsay MacDonald</b> <b class="term">Communal Award</b> గా పిలిచే మైనారిటీ representation పథకాన్ని ప్రకటించారు. ఇది Muslims, Sikhs, Indian Christians, Anglo-Indians, Europeans కు separate electorates కొనసాగించింది, కానీ — వివాదాస్పదంగా — <b class="imp">అదే principle ను depressed classes</b> (Scheduled Castes) కు కూడా విస్తరించింది. ఈ విస్తరణ పట్ల <b class="hlp">Gandhiji</b> తీవ్రంగా కలత చెందారు, Award ను మార్చించడానికి Yerawada Jail, Poona లో <b class="imp">fast unto death</b> చేపట్టారు. ఈ ఒత్తిడి Congress, depressed classes నాయకుడు <b class="hlp">Dr. B.R. Ambedkar</b> మధ్య ఒప్పందానికి దారితీసింది — <span class="term">Poona Pact</span> — ఇది Hindu joint electorate ను కొనసాగిస్తూ, దానిలోపలే depressed classes కు <b>reserved seats</b> ఇచ్చింది. British Government Poona Pact ను అంగీకరించి తదనుగుణంగా Communal Award ను మార్చింది, depressed classes కోసం separate-electorate నిబంధనను తీసివేసింది; Poona Pact నిబంధనలు తర్వాత Government of India Act, 1935 లో చేర్చారు — దీనితో 1935 చట్టం central, provincial legislatures ఈ మార్చిన Communal Award ఆధారంగా ఏర్పడ్డాయి.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Simon Commission, Communal Award &amp; Poona Pact</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Why was Simon Commission boycotted?</td><td>All 7 members were British — no Indian representation</td></tr>
+<tr><td>Simon Commission report → ?</td><td>3 Round Table Conferences → White Paper → fed into GoI Act 1935</td></tr>
+<tr><td>Communal Award's controversial extension?</td><td>Separate electorate extended to depressed classes (SCs)</td></tr>
+<tr><td>Gandhiji's response?</td><td>Fast unto death at Yerawada Jail, Poona</td></tr>
+<tr><td>Poona Pact's compromise?</td><td>Joint (Hindu) electorate retained + reserved seats for depressed classes</td></tr>
+<tr><td>Why did Gandhiji oppose SC separate electorate but accept it for Muslims/Sikhs?</td><td>Feared a permanent split within Hindu society itself, unlike a pre-existing religious divide</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 11 ═══════════ -->
+<div class="page">
+<div class="sub">Government of India Act 1935 — "Blueprint" of the Constitution</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Government of India Act of 1935</div>
+<p class="eng">The Government of India Act of 1935 marked a <b class="imp">second milestone</b> towards a completely responsible government in India — a lengthy, detailed document running to <b class="hlg">321</b> Sections and <b class="hlg">10</b> Schedules. It provided for an <b class="term">All-India Federation</b> of provinces and princely states as constituent units, dividing powers between the Centre and the units through <b class="hlg">3</b> lists — the <b>Federal List</b> (for the Centre, <b class="hlg">59</b> items), the <b>Provincial List</b> (for the provinces, <b class="hlg">54</b> items) and the <b>Concurrent List</b> (for both, <b class="hlg">36</b> items), with residuary powers given to the Viceroy — though the federation itself <b class="imp">never actually came into being</b>, since the princely states declined to join it. It abolished dyarchy in the provinces and introduced <span class="term">'provincial autonomy'</span> in its place: provinces now acted as autonomous units within defined spheres, with the Governor required to act on the advice of ministers responsible to the provincial legislature (in effect from <b class="hlg">1937</b>, discontinued <b class="hlg">1939</b>). It also provided for the adoption of dyarchy <b>at the Centre</b> — splitting federal subjects into reserved and transferred categories — though, since the federation itself never formed, this particular provision <b class="imp">never came into operation at all</b>.</p>
+<div class="te">Government of India Act of 1935, India లో పూర్తి responsible government వైపు <b class="imp">రెండో మైలురాయి</b> — 321 Sections, 10 Schedules తో కూడిన పొడవైన, వివరమైన document. ఇది provinces, princely states ను constituent units గా చేసుకుని <b class="term">All-India Federation</b> కోసం నిబంధన పెట్టింది, Centre, units మధ్య అధికారాలను 3 lists ద్వారా విభజించింది — Federal List (Centre కోసం, 59 items), Provincial List (provinces కోసం, 54 items), Concurrent List (రెండింటికీ, 36 items), residuary powers Viceroy కు ఇచ్చింది — అయితే princely states చేరకపోవడం వల్ల federation వాస్తవానికి <b class="imp">ఎప్పుడూ ఏర్పడలేదు</b>. ఇది provinces లో dyarchy రద్దు చేసి బదులుగా <span class="term">'provincial autonomy'</span> ప్రవేశపెట్టింది — provinces ఇప్పుడు నిర్దిష్ట రంగాల్లో స్వతంత్ర units గా వ్యవహరించేవి, Governor provincial legislature కు జవాబుదారీ ministers సలహాపైనే వ్యవహరించాలి (1937 నుండి అమలులోకి వచ్చి, 1939లో ఆగిపోయింది). ఇది <b>Centre వద్ద</b> కూడా dyarchy స్వీకరణకు నిబంధన పెట్టింది — federal subjects ను reserved, transferred గా విభజించింది — అయితే federation ఏర్పడకపోవడం వల్ల ఈ నిర్దిష్ట నిబంధన <b class="imp">ఎప్పుడూ అమలులోకి రానేలేదు</b>.</div>
+<p class="eng">Further features included: bicameralism in <b class="hlg">6</b> of <b class="hlg">11</b> provinces (Bengal, Bombay, Madras, Bihar, Assam, United Provinces); reserved general seats for the depressed classes, and extended representation for women and labour; abolition of the Council of India (established by the 1858 Act); extended franchise to about <b class="hlg">14%</b> of the population; establishment of the <b class="hlb">Reserve Bank of India</b>; a Federal Public Service Commission, Provincial Public Service Commission, and Joint Public Service Commissions for two or more provinces; a <b class="hlb">Federal Court</b> (set up <b class="hlg">1937</b>); separation of Burma (now Myanmar) from India; creation of two new provinces (Orissa, Sind); safeguards for minorities; a Federal Railway Authority; and an <b class="hlb">Auditor-General of India</b>.</p>
+<div class="te">మరిన్ని features — 11 provinces లో 6 (Bengal, Bombay, Madras, Bihar, Assam, United Provinces) లో bicameralism; depressed classes కోసం general seats reserve చేయడం, women, labour కు విస్తరించిన representation; 1858 చట్టం ఏర్పాటు చేసిన Council of India రద్దు; జనాభాలో సుమారు 14% కి విస్తరించిన franchise; Reserve Bank of India ఏర్పాటు; Federal Public Service Commission, Provincial Public Service Commission, రెండు+ provinces కోసం Joint Public Service Commissions; Federal Court (1937లో స్థాపన); Burma (ప్రస్తుత Myanmar) ను India నుండి వేరు చేయడం; రెండు కొత్త provinces (Orissa, Sind) సృష్టి; మైనారిటీలకు safeguards; Federal Railway Authority; Auditor-General of India.</div>
+
+<table>
+<caption>3 Lists under GoI Act 1935 — direct ancestor of Constitution's Lists</caption>
+<thead><tr><th style="width:26%">1935 Act List</th><th style="width:16%">Items</th><th>Constitution's equivalent</th></tr></thead>
+<tbody>
+<tr><td>Federal List</td><td class="hlg">59</td><td>Union List</td></tr>
+<tr><td>Provincial List</td><td class="hlg">54</td><td>State List</td></tr>
+<tr><td>Concurrent List</td><td class="hlg">36</td><td>Concurrent List</td></tr>
+</tbody>
+</table>
+<table class="qs">
+<caption class="qs">Quick Summary — GoI Act, 1935</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Why "second milestone"?</td><td>Provincial autonomy — real step beyond dyarchy toward responsible government</td></tr>
+<tr><td>Why is it called the Constitution's "blueprint"?</td><td>Its lists, Federal Court, PSCs, RBI, Governor's office survived almost unchanged into 1950</td></tr>
+<tr><td>Why did the All-India Federation never form?</td><td>Princely states refused to join — no compulsion mechanism existed</td></tr>
+<tr><td>Why was Centre-level dyarchy never operative?</td><td>It only applied within the federation, which never came into being</td></tr>
+<tr><td>What replaced provincial dyarchy?</td><td>Provincial autonomy (1937–39), learning from 1919's failure</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 12 ═══════════ -->
+<div class="page">
+<div class="sub">Indian Independence Act, 1947</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Indian Independence Act of 1947</div>
+<p class="eng">On <b class="hlg">February 20, 1947</b>, British Prime Minister <b class="hlp">Clement Atlee</b> declared that British rule in India would end by <b class="hlg">June 30, 1948</b>, after which power would be transferred to responsible Indian hands. This announcement was followed by intensified agitation by the Muslim League demanding partition of the country. On <b class="hlg">June 3, 1947</b>, the British Government made clear that any Constitution framed by the Constituent Assembly of India (formed in 1946) could not apply to parts of the country unwilling to accept it — and on that same day, <b class="hlp">Lord Mountbatten</b>, the Viceroy of India, put forth the partition plan known as the <b class="term">Mountbatten Plan</b>, accepted by both the Congress and the Muslim League. Immediate legal effect was given to this plan through the <b class="imp">Indian Independence Act, 1947</b>.</p>
+<div class="te"><b class="hlg">ఫిబ్రవరి 20, 1947</b>న, British Prime Minister <b class="hlp">Clement Atlee</b> — British rule India లో <b class="hlg">జూన్ 30, 1948</b> నాటికి ముగుస్తుందని, ఆ తర్వాత అధికారం responsible Indian చేతులకు బదిలీ అవుతుందని ప్రకటించారు. ఈ ప్రకటన తర్వాత Muslim League partition డిమాండ్ చేస్తూ agitation తీవ్రతరమైంది. <b class="hlg">జూన్ 3, 1947</b>న, British Government — Constituent Assembly of India (1946లో ఏర్పడింది) రూపొందించే ఏ Constitution అయినా, దాన్ని అంగీకరించని దేశ భాగాలకు వర్తించదని స్పష్టం చేసింది — అదే రోజు, Viceroy of India <b class="hlp">Lord Mountbatten</b>, <b class="term">Mountbatten Plan</b> అని పిలిచే partition ప్రణాళికను ప్రతిపాదించారు, దీన్ని Congress, Muslim League రెండూ అంగీకరించాయి. ఈ ప్రణాళికకు <b class="imp">Indian Independence Act, 1947</b> ద్వారా తక్షణ చట్టపరమైన ప్రభావం ఇచ్చారు.</div>
+<p class="eng">The Act's key features: it ended British rule and declared India an independent state from <b class="hlg">August 15, 1947</b>; provided for partition and the creation of two independent dominions, India and Pakistan, each with the right to secede from the British Commonwealth; abolished the office of Viceroy, providing each dominion a Governor-General appointed by the British King on the advice of the dominion's cabinet, with His Majesty's Government in Britain bearing <b class="imp">no responsibility</b> for either government; empowered both dominions' Constituent Assemblies to frame and adopt any constitution and to repeal any British Act (including the Independence Act itself); authorised both dominions to legislate for their own territories until new constitutions were enforced; abolished the office of Secretary of State for India, transferring its functions to the Secretary of State for Commonwealth Affairs; proclaimed the lapse of British paramountcy over princely states and treaty relations with tribal areas from <b class="hlg">15 August 1947</b>; granted princely states freedom to join either dominion or remain independent; provided that each dominion and its provinces would continue to be governed under the <b class="imp">Government of India Act, 1935</b> until new constitutions were framed (subject to modification by the dominions); removed the British Monarch's power to veto or reserve bills, vesting that power instead in the Governor-General; designated the Governor-General and provincial governors as constitutional (nominal) heads bound to act on ministerial advice; dropped 'Emperor of India' from the King's royal titles; and discontinued the Secretary of State's role in civil service appointments, while protecting the entitlements of those already appointed.</p>
+<div class="te">చట్టం ముఖ్య features — British rule ముగించి, <b class="hlg">ఆగస్టు 15, 1947</b> నుండి India ను స్వతంత్ర రాజ్యంగా ప్రకటించింది; partition, రెండు స్వతంత్ర dominions — India, Pakistan — ఏర్పాటుకు నిబంధన పెట్టింది, ప్రతి దానికీ British Commonwealth నుండి secede అయ్యే హక్కుతో; Viceroy పదవి రద్దు చేసింది, ప్రతి dominion కు దాని cabinet సలహాపై British King నియమించే Governor-General ఇచ్చింది, Britain లోని His Majesty's Government కు ఏ ప్రభుత్వం విషయంలోనూ <b class="imp">ఏ బాధ్యత లేదు</b>; రెండు dominions Constituent Assemblies కు ఏ constitution అయినా రూపొందించి ఆమోదించే, ఏ British చట్టాన్నయినా (Independence Act తనతో సహా) రద్దు చేసే అధికారం ఇచ్చింది; కొత్త constitutions అమలులోకి వచ్చే వరకూ తమ territories కోసం చట్టాలు చేసే అధికారం రెండు dominions కు ఇచ్చింది; Secretary of State for India పదవి రద్దు చేసి, functions ను Secretary of State for Commonwealth Affairs కు బదిలీ చేసింది; <b class="hlg">ఆగస్టు 15, 1947</b> నుండి princely states పై British paramountcy, tribal areas తో treaty సంబంధాలు రద్దైనట్టు ప్రకటించింది; princely states కు రెండు dominions లో ఏదైనా చేరే లేదా స్వతంత్రంగా ఉండే స్వేచ్ఛ ఇచ్చింది; కొత్త constitutions తయారయ్యే వరకు ప్రతి dominion, provinces ను <b class="imp">Government of India Act, 1935</b> ప్రకారమే పరిపాలించాలని నిర్దేశించింది (dominions దీన్ని మార్చుకోవచ్చు); Bills veto చేసే లేదా రిజర్వ్ చేసే British Monarch అధికారాన్ని తీసివేసి, బదులుగా Governor-General కు ఇచ్చింది; Governor-General, provincial governors ను ministerial సలహాపై వ్యవహరించాల్సిన constitutional (nominal) heads గా పేర్కొంది; King రాజ బిరుదుల నుండి 'Emperor of India' తొలగించింది; civil service నియామకాల్లో Secretary of State పాత్రను ఆపేసింది, ఇప్పటికే నియమితులైన వారి అర్హతలను రక్షిస్తూ.</div>
+
+<p class="eng">At the stroke of midnight of 14–15 August 1947, British rule came to an end and power was transferred to the two new independent Dominions. Lord Mountbatten became the first Governor-General of the new Dominion of India, and swore in <b class="hlp">Jawaharlal Nehru</b> as independent India's first Prime Minister. The Constituent Assembly of India, formed in 1946, itself became the Parliament of the Indian Dominion. The boundaries between the two Dominions were determined by a <b class="hlb">Boundary Commission</b> headed by <b class="hlp">Radcliffe</b>.</p>
+<div class="te">14-15 ఆగస్టు 1947 అర్ధరాత్రి, British rule ముగిసింది, రెండు కొత్త స్వతంత్ర Dominions కు అధికారం బదిలీ అయ్యింది. Lord Mountbatten కొత్త Dominion of India మొదటి Governor-General అయ్యారు, <b class="hlp">Jawaharlal Nehru</b> ను స్వతంత్ర India మొదటి Prime Minister గా ప్రమాణం చేయించారు. 1946లో ఏర్పడిన Constituent Assembly of India, Indian Dominion Parliament గా మారింది. రెండు Dominions మధ్య సరిహద్దులను <b class="hlp">Radcliffe</b> నేతృత్వంలోని <b class="hlb">Boundary Commission</b> నిర్ణయించింది.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — Indian Independence Act, 1947</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Atlee's 20 Feb 1947 declaration?</td><td>British rule to end by 30 Jun 1948</td></tr>
+<tr><td>Mountbatten Plan (3 June 1947)?</td><td>Partition plan, accepted by Congress &amp; Muslim League</td></tr>
+<tr><td>Independence date?</td><td>15 August 1947</td></tr>
+<tr><td>Why did Britain finally accept partition?</td><td>Institutionalised communal division (1909→1919→1932) + compressed withdrawal timeline made unity unworkable</td></tr>
+<tr><td>Governed by which Act until new constitutions?</td><td>Government of India Act, 1935 (modifiable by dominions)</td></tr>
+<tr><td>Who determined the boundaries?</td><td>Radcliffe-headed Boundary Commission</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 13 ═══════════ -->
+<div class="page">
+<div class="sub">Table 1.1 &amp; 1.2 — Interim Government &amp; First Cabinet of Independent India</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Interim Government (1946) &amp; the First Cabinet (1947)</div>
+<p class="eng">The book documents the members of two transitional bodies in Tables 1.1 and 1.2. The <b>Interim Government (1946)</b> consisted of members of the Viceroy's Executive Council — the Viceroy continued to be its head, but <b class="hlp">Jawaharlal Nehru</b> was designated <b>Vice-President of the Council</b>, a signal of the shift of real political initiative toward Indian leadership even while formal British authority technically remained. After independence, this gave way to the <b>First Cabinet of Independent India (1947)</b>, headed by Nehru as Prime Minister in his own right. Comparing the two tables is instructive: several members — Nehru, <b class="hlp">Sardar Vallabhbhai Patel</b>, <b class="hlp">Dr. Rajendra Prasad</b>, <b class="hlp">Jagjivan Ram</b>, <b class="hlp">Sardar Baldev Singh</b> and <b class="hlp">C.H. Bhabha</b> — held office in both governments, providing continuity, while others — notably <b class="hlp">Dr. B.R. Ambedkar</b> (Law), <b class="hlp">Maulana Abul Kalam Azad</b> (Education), <b class="hlp">R.K. Shanmugham Chetty</b> (Finance), <b class="hlp">Raj Kumari Amrit Kaur</b> (Health), <b class="hlp">Rafi Ahmed Kidwai</b> and <b class="hlp">Dr. Shyama Prasad Mukherjee</b> — joined fresh in the 1947 Cabinet, reflecting Congress's broader post-independence political coalition.</p>
+<div class="te">పుస్తకం Table 1.1, 1.2 లలో రెండు transitional bodies సభ్యులను నమోదు చేస్తుంది. <b>Interim Government (1946)</b> Viceroy's Executive Council సభ్యులతో కూడినది — Viceroy దీనికి అధిపతిగా కొనసాగారు, కానీ <b class="hlp">Jawaharlal Nehru</b> ను <b>Vice-President of the Council</b> గా పేర్కొన్నారు — formal British అధికారం సాంకేతికంగా ఇంకా ఉన్నప్పటికీ, నిజమైన రాజకీయ చొరవ Indian నాయకత్వం వైపు మారుతున్న సంకేతం ఇది. స్వాతంత్ర్యం తర్వాత, దీని స్థానంలో Nehru స్వయంగా Prime Minister గా నేతృత్వం వహించిన <b>First Cabinet of Independent India (1947)</b> వచ్చింది. రెండు tables పోల్చడం బోధప్రదం — కొంతమంది సభ్యులు — Nehru, <b class="hlp">Sardar Vallabhbhai Patel</b>, <b class="hlp">Dr. Rajendra Prasad</b>, <b class="hlp">Jagjivan Ram</b>, <b class="hlp">Sardar Baldev Singh</b>, <b class="hlp">C.H. Bhabha</b> — రెండు ప్రభుత్వాల్లోనూ పదవిలో ఉన్నారు, కొనసాగింపు ఇచ్చారు, మరికొందరు — ముఖ్యంగా <b class="hlp">Dr. B.R. Ambedkar</b> (Law), <b class="hlp">Maulana Abul Kalam Azad</b> (Education), <b class="hlp">R.K. Shanmugham Chetty</b> (Finance), <b class="hlp">Raj Kumari Amrit Kaur</b> (Health), <b class="hlp">Rafi Ahmed Kidwai</b>, <b class="hlp">Dr. Shyama Prasad Mukherjee</b> — 1947 Cabinet లో కొత్తగా చేరారు, ఇది Congress విస్తృత స్వాతంత్ర్యానంతర రాజకీయ కూటమిని ప్రతిబింబిస్తుంది.</div>
+<table>
+<caption>Table 1.1 — Interim Government (1946)</caption>
+<thead><tr><th style="width:32%">Member</th><th>Portfolio(s)</th></tr></thead>
+<tbody>
+<tr><td class="hlp">Jawaharlal Nehru</td><td>Vice-President of the Council; External Affairs &amp; Commonwealth Relations</td></tr>
+<tr><td class="hlp">Sardar Vallabhbhai Patel</td><td>Home, Information and Broadcasting</td></tr>
+<tr><td class="hlp">Dr. Rajendra Prasad</td><td>Food and Agriculture</td></tr>
+<tr><td class="hlp">Dr. John Mathai</td><td>Industries and Supplies</td></tr>
+<tr><td class="hlp">Jagjivan Ram</td><td>Labour</td></tr>
+<tr><td class="hlp">Sardar Baldev Singh</td><td>Defence</td></tr>
+<tr><td class="hlp">C.H. Bhabha</td><td>Works, Mines and Power</td></tr>
+<tr><td class="hlp">Liaquat Ali Khan</td><td>Finance</td></tr>
+<tr><td class="hlp">Abdur Rab Nishtar</td><td>Posts and Air</td></tr>
+<tr><td class="hlp">Asaf Ali</td><td>Railways and Transport</td></tr>
+<tr><td class="hlp">C. Rajagopalachari</td><td>Education and Arts</td></tr>
+<tr><td class="hlp">I.I. Chundrigar</td><td>Commerce</td></tr>
+<tr><td class="hlp">Ghaznafar Ali Khan</td><td>Health</td></tr>
+<tr><td class="hlp">Jogendra Nath Mandal</td><td>Law</td></tr>
+</tbody>
+</table>
+<table>
+<caption>Table 1.2 — First Cabinet of Independent India (1947)</caption>
+<thead><tr><th style="width:32%">Member</th><th>Portfolio(s)</th></tr></thead>
+<tbody>
+<tr><td class="hlp">Jawaharlal Nehru</td><td>Prime Minister; External Affairs &amp; Commonwealth Relations; Scientific Research</td></tr>
+<tr><td class="hlp">Sardar Vallabhbhai Patel</td><td>Home, Information and Broadcasting; States</td></tr>
+<tr><td class="hlp">Dr. Rajendra Prasad</td><td>Food and Agriculture</td></tr>
+<tr><td class="hlp">Maulana Abul Kalam Azad</td><td>Education</td></tr>
+<tr><td class="hlp">Dr. John Mathai</td><td>Railways and Transport</td></tr>
+<tr><td class="hlp">R.K. Shanmugham Chetty</td><td>Finance</td></tr>
+<tr><td class="hlp">Dr. B.R. Ambedkar</td><td>Law</td></tr>
+<tr><td class="hlp">Jagjivan Ram</td><td>Labour</td></tr>
+<tr><td class="hlp">Sardar Baldev Singh</td><td>Defence</td></tr>
+<tr><td class="hlp">Raj Kumari Amrit Kaur</td><td>Health</td></tr>
+<tr><td class="hlp">C.H. Bhabha</td><td>Commerce</td></tr>
+<tr><td class="hlp">Rafi Ahmed Kidwai</td><td>Communication</td></tr>
+<tr><td class="hlp">Dr. Shyama Prasad Mukherjee</td><td>Industries and Supplies</td></tr>
+<tr><td class="hlp">V.N. Gadgil</td><td>Works, Mines and Power</td></tr>
+</tbody>
+</table>
+<table class="qs">
+<caption class="qs">Quick Summary — Whole Chapter Chronology</caption>
+<thead><tr><th class="n" style="width:6%">#</th><th style="width:16%">Year</th><th>Act / Event</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td class="hlg">1773</td><td>Regulating Act</td></tr>
+<tr><td class="n">2</td><td class="hlg">1781</td><td>Amending Act (Act of Settlement)</td></tr>
+<tr><td class="n">3</td><td class="hlg">1784</td><td>Pitt's India Act</td></tr>
+<tr><td class="n">4</td><td class="hlg">1786</td><td>Act of 1786</td></tr>
+<tr><td class="n">5</td><td class="hlg">1793</td><td>Charter Act</td></tr>
+<tr><td class="n">6</td><td class="hlg">1813</td><td>Charter Act</td></tr>
+<tr><td class="n">7</td><td class="hlg">1833</td><td>Charter Act ("final step towards centralisation")</td></tr>
+<tr><td class="n">8</td><td class="hlg">1853</td><td>Charter Act (last of the series)</td></tr>
+<tr><td class="n">9</td><td class="hlg">1858</td><td>Government of India Act — Crown Rule begins</td></tr>
+<tr><td class="n">10</td><td class="hlg">1861</td><td>Indian Councils Act — representation begins</td></tr>
+<tr><td class="n">11</td><td class="hlg">1892</td><td>Indian Councils Act</td></tr>
+<tr><td class="n">12</td><td class="hlg">1909</td><td>Indian Councils Act (Morley-Minto) — separate electorate</td></tr>
+<tr><td class="n">13</td><td class="hlg">1919</td><td>Government of India Act (Montagu-Chelmsford) — dyarchy</td></tr>
+<tr><td class="n">14</td><td class="hlg">1927–32</td><td>Simon Commission → Communal Award → Poona Pact</td></tr>
+<tr><td class="n">15</td><td class="hlg">1935</td><td>Government of India Act — "blueprint" of the Constitution</td></tr>
+<tr><td class="n">16</td><td class="hlg">1947</td><td>Indian Independence Act — partition &amp; independence</td></tr>
+</tbody>
+</table>
+</div>
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 1 — Historical Background · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+<div class="divider"><span class="dtitle">Ch.2 — Making of the Constitution</span><span class="dpart">Book 1 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+<div class="page">
+<h1 id="chapter-2">Chapter 2 — Making of the Constitution</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Full-Depth Bilingual Study Notes</div>
+<div class="para">
+<div class="ptitle">The Demand for a Constituent Assembly</div>
+<p class="eng">The idea that India should write its own Constitution through a dedicated <b class="term">Constituent Assembly</b>, rather than have one imposed by the British Parliament, took shape gradually over more than a decade. <b class="hlp">M.N. Roy</b>, a pioneer of the communist movement in India, was the first to float the idea, in <b class="hlg">1934</b>. The <b class="hlp">Indian National Congress (INC)</b> made it an official demand in <b class="hlg">1935</b>, and in <b class="hlg">1938</b> <b class="hlp">Jawaharlal Nehru</b>, speaking for the INC, sharpened the demand into a specific procedural condition: the Constitution of free India had to be framed, <b class="imp">without outside interference</b>, by an assembly elected on <b class="hlb">adult franchise</b> — a position the INC reaffirmed by resolution in <b class="hlg">1939</b>. The British Government accepted the demand only <b>in principle</b>, in the <b class="imp">'August Offer'</b> of <b class="hlg">1940</b>. In <b class="hlg">1942</b>, <b class="hlp">Sir Stafford Cripps</b> brought a concrete draft proposal (the <b class="hlb">Cripps Proposals</b>) for a post-war constitution-making process, but the <b class="hlp">Muslim League</b> rejected it because it did not offer what the League wanted — <b class="imp">two separate Constituent Assemblies</b> for two separate autonomous states. Finally, a three-member <b class="hlp">Cabinet Mission</b> was sent to India in <b class="hlg">1946</b>; it rejected the two-Assembly idea outright, but designed a scheme for a single Assembly that was crafted to more or less satisfy the League's underlying concerns about safeguards for Muslim representation.</p>
+<div class="te">India British Parliament విధించే రాజ్యాంగం కాకుండా, తనదైన <b class="term">Constituent Assembly</b> ద్వారా సొంత రాజ్యాంగం రాసుకోవాలనే ఆలోచన దశాబ్దానికి పైగా క్రమంగా రూపుదిద్దుకుంది. <b class="hlp">M.N. Roy</b> (India communist movement pioneer) <b class="hlg">1934</b>లో మొదటిసారి ఈ ఆలోచనను ప్రతిపాదించారు. <b class="hlp">INC</b> దీన్ని <b class="hlg">1935</b>లో అధికారిక డిమాండ్‌గా మార్చింది, <b class="hlg">1938</b>లో <b class="hlp">Nehru</b> INC తరపున ఈ డిమాండ్ ను మరింత స్పష్టం చేశారు — స్వేచ్ఛా India రాజ్యాంగం బయటి జోక్యం లేకుండా, <b class="hlb">adult franchise</b> పై ఎన్నికైన assembly ద్వారానే రూపొందాలని — <b class="hlg">1939</b>లో INC resolution ద్వారా దీన్ని మళ్ళీ ధృవీకరించింది. British Government <b class="hlg">1940</b> 'August Offer' లో దీన్ని సూత్రప్రాయంగా మాత్రమే అంగీకరించింది. <b class="hlg">1942</b>లో <b class="hlp">Stafford Cripps</b> ఒక concrete draft proposal (Cripps Proposals) తెచ్చారు, కానీ <b class="hlp">Muslim League</b> దాన్ని తిరస్కరించింది, ఎందుకంటే వారు కోరుకున్న <b class="imp">రెండు వేర్వేరు Constituent Assemblies</b> ను అది ఇవ్వలేదు. చివరకు <b class="hlg">1946</b>లో ముగ్గురు సభ్యుల <b class="hlp">Cabinet Mission</b> India వచ్చింది — రెండు Assemblies ఆలోచనను పూర్తిగా తిరస్కరించి, League ఆందోళనలను చాలావరకు తీర్చే విధంగా ఒకే Assembly కోసం ఒక scheme రూపొందించింది.</div>
+
+</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Composition of the Constituent Assembly</div>
+<p class="eng">The Assembly was constituted in <b class="hlg">November 1946</b> under the Cabinet Mission Plan's scheme. Its total strength was fixed at <b class="hlg">389</b>: <b class="hlg">296</b> seats for British India (<b class="hlg">292</b> from the 11 governors' provinces and <b class="hlg">4</b> from the four Chief Commissioners' provinces, one each) and <b class="hlg">93</b> for the princely states. Seats were allotted roughly in proportion to population (about one seat per million), and each province's seats were further sub-divided among <b>three</b> communities — Muslims, Sikhs, and General (everyone else) — again in proportion to population, with each community's own representatives in the provincial legislative assembly electing its bloc's members by <span class="hlb">proportional representation via the single transferable vote</span> (STV — voters rank candidates by preference instead of casting a single vote). Princely-state representatives, by contrast, were simply <b class="imp">nominated</b> by the rulers of those states. The Assembly was, therefore, a <b>partly elected, partly nominated</b> body, and even its "elected" members were <b>indirectly</b> elected — chosen by the members of provincial legislative assemblies, who themselves had been elected under the <b class="hlb">limited franchise</b> (tax and property qualifications) of the <b class="hlp">Government of India Act, 1935</b>. In the actual elections (July–August <b class="hlg">1946</b>, for the 296 British Indian seats), Congress won <b class="hlg">208</b> seats, the Muslim League <b class="hlg">73</b>, and small groups/independents the remaining <b class="hlg">15</b>; the 93 princely-state seats stayed <b class="imp">vacant</b>, as those states chose to stay away altogether. Even so, the Assembly ended up including representatives of every section of Indian society — Hindus, Muslims, Sikhs, Parsis, Anglo-Indians, Indian Christians, Scheduled Castes, Scheduled Tribes, and women from all these groups — and virtually every leading Indian political figure of the time, with the notable exception of <b class="imp">Mahatma Gandhi</b>.</p>
+<div class="te">Assembly <b class="hlg">నవంబర్ 1946</b>లో Cabinet Mission Plan scheme కింద ఏర్పాటైంది. మొత్తం strength <b class="hlg">389</b> గా నిర్ణయించారు — <b class="hlg">296</b> సీట్లు British India కు (<b class="hlg">292</b> 11 governors' provinces నుండి, <b class="hlg">4</b> నాలుగు Chief Commissioners' provinces నుండి, ఒక్కొక్కటి) మరియు <b class="hlg">93</b> princely states కు. సీట్లు దాదాపు జనాభా ప్రాతిపదికన కేటాయించబడ్డాయి (సుమారు ప్రతి 10 లక్షలకు ఒక సీటు), ప్రతి province సీట్లు మళ్ళీ <b>మూడు</b> communities మధ్య (Muslims, Sikhs, General) జనాభా ప్రాతిపదికన విభజించబడ్డాయి — ఆయా community సభ్యులే provincial legislative assembly లో <span class="hlb">proportional representation (single transferable vote — ఓటర్లు ఒకే candidate కు కాకుండా, candidates కు ప్రాధాన్యత క్రమంలో ఓటు వేసే పద్ధతి)</span> ద్వారా తమ bloc సభ్యులను ఎన్నుకున్నారు. Princely-state representatives ను మాత్రం ఆయా రాజులు కేవలం <b class="imp">నామినేట్</b> చేశారు. కాబట్టి Assembly పాక్షికంగా ఎన్నికైనది, పాక్షికంగా నామినేట్ అయినది — "ఎన్నికైన" సభ్యులు కూడా <b>పరోక్షంగా</b> ఎన్నికయ్యారు — provincial legislative assembly సభ్యులే వారిని ఎన్నుకున్నారు, ఆ సభ్యులే <b class="hlp">Government of India Act, 1935</b> <b class="hlb">limited franchise</b> (tax, property qualifications) పై ఎన్నికయ్యారు. వాస్తవ ఎన్నికల్లో (జూలై-ఆగస్టు <b class="hlg">1946</b>, 296 British Indian సీట్లకు), Congress <b class="hlg">208</b>, Muslim League <b class="hlg">73</b>, చిన్న గ్రూపులు/independents <b class="hlg">15</b> సీట్లు గెలిచారు; princely states 93 సీట్లు <b class="imp">ఖాళీగా</b> ఉండిపోయాయి, ఆ రాష్ట్రాలు పూర్తిగా దూరంగా ఉండాలని నిర్ణయించుకున్నాయి. అయినా, Assembly చివరకు India సమాజంలోని ప్రతి వర్గం ప్రతినిధులను కలిగి ఉంది — Hindus, Muslims, Sikhs, Parsis, Anglo-Indians, Indian Christians, SCs, STs, ఈ వర్గాలన్నింటి మహిళలు — ఆనాటి దాదాపు ప్రతి ప్రధాన రాజకీయ నాయకుడూ ఇందులో ఉన్నారు, <b class="imp">Mahatma Gandhi</b> మాత్రం మినహాయింపు.</div>
+<table>
+<caption>Table 2.1 — Allocation of Seats in the Constituent Assembly (1946)</caption>
+<thead><tr><th>Area</th><th style="width:22%">Seats</th></tr></thead>
+<tbody>
+<tr><td>British Indian Provinces (11)</td><td class="hlg">292</td></tr>
+<tr><td>Princely States (Indian States)</td><td class="hlg">93</td></tr>
+<tr><td>Chief Commissioners' Provinces (4)</td><td class="hlg">4</td></tr>
+<tr><td><b>Total</b></td><td class="hlg"><b>389</b></td></tr>
+</tbody>
+</table>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Demand &amp; Composition</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>First proposed CA idea?</td><td>M.N. Roy, 1934</td></tr>
+<tr><td>First official demand?</td><td>INC, 1935; sharpened by Nehru's adult-franchise condition, 1938</td></tr>
+<tr><td>Constituted under which scheme, when?</td><td>Cabinet Mission Plan, November 1946</td></tr>
+<tr><td>Total strength &amp; breakup?</td><td>389 = 292 (provinces) + 4 (CC's provinces) + 93 (princely states)</td></tr>
+<tr><td>Elected or nominated?</td><td>Partly elected (British India, indirectly, limited franchise), partly nominated (princely states)</td></tr>
+<tr><td>Why not adult-franchise direct election?</td><td>Time/practicality — 1946 conditions made a fresh nationwide election infeasible</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Working of the Assembly &amp; the Objectives Resolution</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Working of the Constituent Assembly</div>
+<p class="eng">The Assembly held its first meeting on <b class="hlg">December 9, 1946</b>. The <b class="hlp">Muslim League</b> boycotted it, still insisting on a separate Pakistan, so only <b class="hlg">207</b> members were actually present. <b class="hlp">Dr. Sachchidananda Sinha</b>, the oldest member present, was elected temporary Chairman, following the <b class="hlb">French practice</b> of letting the most senior member preside until a permanent Chairman is chosen. That happened two days later — on <b class="hlg">December 11, 1946</b>, <b class="hlp">Dr. Rajendra Prasad</b> was elected the Assembly's permanent Chairman (President), and on <b class="hlg">January 25, 1947</b>, <b class="hlp">H.C. Mukherjee</b> was elected Vice-President. The Assembly later decided it needed two Vice-Presidents, and on <b class="hlg">July 16, 1947</b>, <b class="hlp">V.T. Krishnamachari</b> was elected as the second one.</p>
+<div class="te">Assembly మొదటి సమావేశం <b class="hlg">డిసెంబర్ 9, 1946</b> న జరిగింది. <b class="hlp">Muslim League</b> ఇంకా ప్రత్యేక Pakistan కోసం పట్టుబడుతూ దీన్ని బహిష్కరించింది — కాబట్టి <b class="hlg">207</b> మంది సభ్యులు మాత్రమే హాజరయ్యారు. హాజరైన సభ్యుల్లో అత్యంత వృద్ధుడైన <b class="hlp">Dr. Sachchidananda Sinha</b> — <b class="hlb">French practice</b> ప్రకారం (శాశ్వత Chairman ఎన్నికయ్యే వరకూ senior-most సభ్యుడు అధ్యక్షత వహించడం) — తాత్కాలిక Chairman గా ఎన్నికయ్యారు. రెండు రోజుల తర్వాత — <b class="hlg">డిసెంబర్ 11, 1946</b> న <b class="hlp">Dr. Rajendra Prasad</b> Assembly శాశ్వత Chairman (President) గా ఎన్నికయ్యారు, <b class="hlg">జనవరి 25, 1947</b> న <b class="hlp">H.C. Mukherjee</b> Vice-President గా ఎన్నికయ్యారు. తర్వాత Assembly ఇద్దరు Vice-Presidents ఉండాలని నిర్ణయించింది — <b class="hlg">జూలై 16, 1947</b> న <b class="hlp">V.T. Krishnamachari</b> రెండో Vice-President గా ఎన్నికయ్యారు.</div>
+</div>
+<div class="para">
+<div class="stitle">Objectives Resolution</div>
+<p class="eng">On <b class="hlg">December 13, 1946</b> — just four days after the Assembly's very first meeting, and long before any drafting committee existed — <b class="hlp">Jawaharlal Nehru</b> moved the historic <b class="term">Objectives Resolution</b>. It did not attempt to write actual constitutional text; instead it laid down the fundamentals and philosophy that the eventual Constitution should embody: India to be declared an <b class="imp">Independent Sovereign Republic</b>; a <b>Union</b> formed of British India's territories, the Indian princely states, and any other willing territories; the constituent units to retain autonomy and <b class="hlb">residuary powers</b> (powers not explicitly assigned anywhere, left by default with the units); all power and authority of government to be derived from the <b>people</b>; justice, equality of status and opportunity, and freedoms of thought, expression, belief, faith, worship, vocation, association and action to be guaranteed to everyone, subject to law and public morality; <b>adequate safeguards</b> to be provided for minorities, backward and tribal areas, and depressed and other backward classes; the territorial integrity of the Republic to be maintained; and India to take its rightful place in the world and contribute to world peace. The Resolution was adopted <b>unanimously</b> on <b class="hlg">January 22, 1947</b>. It went on to influence the shaping of the Constitution through every subsequent stage of drafting, and its modified version eventually became the <b class="imp">Preamble</b> of the Constitution as we know it today.</p>
+<div class="te"><b class="hlg">డిసెంబర్ 13, 1946</b> న — Assembly మొదటి సమావేశం జరిగిన నాలుగే రోజుల్లో, ఏ drafting committee ఏర్పాటుకాకముందే — <b class="hlp">Nehru</b> చారిత్రక <b class="term">Objectives Resolution</b> ప్రవేశపెట్టారు. ఇది వాస్తవ constitutional text రాయలేదు — బదులుగా, రాబోయే Constitution కలిగి ఉండాల్సిన fundamentals, philosophy ను నిర్దేశించింది — India ను <b class="imp">Independent Sovereign Republic</b> గా ప్రకటించడం; British India ప్రాంతాలు, Indian princely states, ఇష్టపడే ఇతర ప్రాంతాలతో కూడిన <b>Union</b>; units కు autonomy, <b class="hlb">residuary powers</b> (ప్రత్యేకంగా ఎక్కడా కేటాయించని అధికారాలు, డిఫాల్ట్ గా units దగ్గరే ఉండేవి); ప్రభుత్వ అధికారం అంతా <b>ప్రజల</b> నుండే రావడం; అందరికీ justice, status-opportunity సమానత్వం, ఆలోచన-భావ వ్యక్తీకరణ-విశ్వాసం-ఆరాధన-వృత్తి-సంఘం-కార్యాచరణ స్వేచ్ఛలు (చట్టం, public morality కు లోబడి); minorities, backward/tribal areas, depressed/backward classes కు <b>తగిన రక్షణలు</b>; Republic territorial integrity కాపాడటం; India ప్రపంచంలో తన రైతైన స్థానం పొంది world peace కు తోడ్పడటం. Resolution <b class="hlg">జనవరి 22, 1947</b> న <b>ఏకగ్రీవంగా</b> ఆమోదించబడింది. తర్వాతి ప్రతి drafting దశనూ ఇది ప్రభావితం చేసింది, దీని సవరించిన రూపమే నేటి <b class="imp">Preamble</b> గా మారింది.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Working of the Assembly &amp; Objectives Resolution</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>First meeting?</td><td>9 December 1946 — 207 members (Muslim League absent)</td></tr>
+<tr><td>Temporary / permanent Chairman?</td><td>Sachchidananda Sinha (French practice) / Dr. Rajendra Prasad</td></tr>
+<tr><td>Objectives Resolution — moved / adopted?</td><td>13 Dec 1946 (Nehru) / 22 Jan 1947 (unanimous)</td></tr>
+<tr><td>What does it become?</td><td>Modified version → the Preamble</td></tr>
+<tr><td>Why move it before drafting began?</td><td>To fix shared philosophy/values first, as a reference point for all later committees</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Indian Independence Act, 1947 &amp; Other Functions of the Assembly</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Changes by the Indian Independence Act, 1947</div>
+<p class="eng">Princely-state representatives, who had initially stayed away, gradually began joining the Assembly — six states had joined by <b class="hlg">April 28, 1947</b>, and after the <b class="hlp">Mountbatten Plan</b> (<b class="hlg">June 3, 1947</b>) for partition was accepted, most of the remaining princely states, along with the Muslim League members from the territory that would remain in the Indian Dominion, also took their seats. The <b class="hlp">Indian Independence Act, 1947</b> then made three structural changes to the Assembly's status. <b>First</b>, it made the Assembly a <b class="imp">fully sovereign</b> body — free to frame any Constitution it wished, and empowered to abrogate or alter any law the British Parliament had made in relation to India. <b>Second</b>, it turned the Assembly into a <b class="hlb">legislative body</b> as well — it now had two distinct jobs (constitution-making, and enacting ordinary laws for the country), performed on separate days, making it effectively the first Parliament of free India (the <b>Dominion Legislature</b>). Whenever it met to make the Constitution, it was chaired by <b class="hlp">Dr. Rajendra Prasad</b>; whenever it met as the ordinary legislature, it was chaired by <b class="hlp">G.V. Mavalankar</b>. Both functions continued side by side until <b class="hlg">November 26, 1949</b>, when the constitution-making task was finished. <b>Third</b>, Muslim League members from the areas that went to Pakistan withdrew from the Assembly altogether — as a result, its total strength fell from <b class="hlg">389</b> to <b class="hlg">299</b> (British Indian provinces from 296 to <b class="hlg">229</b>, princely states from 93 to <b class="hlg">70</b>), as recorded as on <b class="hlg">December 31, 1947</b>.</p>
+<div class="te">మొదట్లో దూరంగా ఉన్న princely-state ప్రతినిధులు క్రమంగా Assembly లో చేరసాగారు — <b class="hlg">ఏప్రిల్ 28, 1947</b> నాటికి ఆరు రాష్ట్రాలు చేరాయి, <b class="hlp">Mountbatten Plan</b> (<b class="hlg">జూన్ 3, 1947</b>) partition ఆమోదం పొందాక, మిగతా ఎక్కువ princely states, Indian Dominion లో ఉండే ప్రాంతాల Muslim League సభ్యులు కూడా చేరారు. తర్వాత <b class="hlp">Indian Independence Act, 1947</b> Assembly స్థితిలో మూడు structural మార్పులు చేసింది. <b>మొదటిది</b> — Assembly <b class="imp">పూర్తిగా sovereign</b> అయ్యింది — తనకు నచ్చిన ఏ Constitution నైనా రూపొందించే స్వేచ్ఛ, India కు సంబంధించి British Parliament చేసిన ఏ చట్టాన్నైనా మార్చే/రద్దు చేసే అధికారం. <b>రెండోది</b> — Assembly ఒక <b class="hlb">legislative body</b> గా కూడా మారింది — ఇప్పుడు రెండు వేర్వేరు పనులు (constitution-making, సాధారణ చట్టాల enact చేయడం) వేర్వేరు రోజుల్లో చేసేది, ఇది సమర్థవంతంగా స్వేచ్ఛా India మొదటి Parliament (<b>Dominion Legislature</b>) అయ్యింది. Constitution చేసేటప్పుడు <b class="hlp">Rajendra Prasad</b> అధ్యక్షత వహించారు; సాధారణ legislature గా కలిసినప్పుడు <b class="hlp">G.V. Mavalankar</b> అధ్యక్షత వహించారు. Constitution-making పని పూర్తయ్యే <b class="hlg">నవంబర్ 26, 1949</b> వరకూ రెండు విధులు కలిసి కొనసాగాయి. <b>మూడోది</b> — Pakistan లో కలిసే ప్రాంతాల Muslim League సభ్యులు పూర్తిగా Assembly నుండి వైదొలిగారు — దీనివల్ల మొత్తం strength <b class="hlg">389</b> నుండి <b class="hlg">299</b> కు తగ్గింది (British provinces 296→<b class="hlg">229</b>, princely states 93→<b class="hlg">70</b>), <b class="hlg">డిసెంబర్ 31, 1947</b> నాటి లెక్క ప్రకారం.</div>
+
+</div>
+<div class="para">
+<div class="stitle">Other Functions Performed &amp; Session Statistics</div>
+<p class="eng">Beyond making the Constitution and enacting ordinary laws, the Assembly performed several other functions: it ratified India's membership of the <b class="hlb">Commonwealth</b> in <b class="hlg">May 1949</b>; adopted the national flag on <b class="hlg">July 22, 1947</b>; adopted the national anthem and the national song, both on <b class="hlg">January 24, 1950</b>; and elected <b class="hlp">Dr. Rajendra Prasad</b> as the first <b>President of India</b>, also on <b class="hlg">January 24, 1950</b>. In all, the Assembly held <b class="hlg">11</b> sessions spread over <b class="hlg">2 years, 11 months and 18 days</b>. Its members went through the constitutions of around <b class="hlg">60</b> countries while working, and the Draft Constitution alone was under consideration for <b class="hlg">114</b> days; the entire exercise cost about <b class="hlg">₹64 lakh</b>. The Assembly's final formal session was on January 24, 1950 — but it did not simply dissolve. It continued to function as the <b class="term">provisional parliament</b> of India from <b class="hlg">January 26, 1950</b> until a newly elected Parliament took over after the country's first general elections of <b class="hlg">1951–52</b>.</p>
+<div class="te">Constitution చేయడం, సాధారణ చట్టాలు enact చేయడంతో పాటు, Assembly ఇతర పలు విధులు నిర్వర్తించింది — India <b class="hlb">Commonwealth</b> సభ్యత్వాన్ని <b class="hlg">మే 1949</b> లో ratify చేసింది; national flag ను <b class="hlg">జూలై 22, 1947</b> న ఆమోదించింది; national anthem, national song రెండింటినీ <b class="hlg">జనవరి 24, 1950</b> న ఆమోదించింది; <b class="hlp">Dr. Rajendra Prasad</b> ను మొదటి <b>India President</b> గా, అదే <b class="hlg">జనవరి 24, 1950</b> న ఎన్నుకుంది. మొత్తం మీద, Assembly <b class="hlg">11</b> సెషన్లు, <b class="hlg">2 సంవత్సరాల 11 నెలల 18 రోజుల</b> పాటు జరిగింది. సభ్యులు పనిచేస్తున్నప్పుడు సుమారు <b class="hlg">60</b> దేశాల constitutions ను పరిశీలించారు, Draft Constitution ఒక్కటే <b class="hlg">114</b> రోజులు చర్చకు వచ్చింది; మొత్తం ఖర్చు సుమారు <b class="hlg">₹64 లక్షలు</b>. Assembly తుది అధికారిక session జనవరి 24, 1950 న జరిగింది — కానీ అది కేవలం రద్దు కాలేదు. <b class="hlg">జనవరి 26, 1950</b> నుండి, <b class="hlg">1951-52</b> మొదటి సాధారణ ఎన్నికల తర్వాత కొత్తగా ఎన్నికైన Parliament బాధ్యతలు తీసుకునేవరకూ, ఇది India <b class="term">provisional parliament</b> గా కొనసాగింది.</div>
+
+<table>
+<caption>Table 2.6 — Sessions of the Constituent Assembly (selected)</caption>
+<thead><tr><th style="width:22%">Session</th><th>Period</th></tr></thead>
+<tbody>
+<tr><td>First</td><td>December 9–23, 1946</td></tr>
+<tr><td>Second</td><td>January 20–25, 1947</td></tr>
+<tr><td>Seventh</td><td>November 4, 1948 – January 8, 1949</td></tr>
+<tr><td>Eleventh (last regular)</td><td>November 14–26, 1949</td></tr>
+</tbody>
+</table>
+<table class="qs">
+<caption class="qs">Quick Summary — Indian Independence Act 1947 &amp; Other Functions</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Three changes by IIA 1947?</td><td>Fully sovereign; dual constituent + legislative role; League members withdrew (389→299)</td></tr>
+<tr><td>Who chaired the two roles?</td><td>Rajendra Prasad (constituent) / G.V. Mavalankar (legislative)</td></tr>
+<tr><td>Total sessions / duration?</td><td>11 sessions / 2 yrs 11 mo 18 days</td></tr>
+<tr><td>Constitutions examined / days on Draft?</td><td>~60 countries / 114 days</td></tr>
+<tr><td>Cost of making the Constitution?</td><td>₹64 lakh</td></tr>
+<tr><td>Why continue as "provisional parliament" till 1951-52?</td><td>Time needed to build election machinery (electoral rolls, EC) for the first general elections</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Committees of the Constituent Assembly</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Committees — Major and Minor</div>
+<p class="eng">To handle the different tasks of constitution-making, the Assembly appointed a large number of committees — <b class="hlg">8</b> of these were classified as <b>major</b> committees, and the rest as minor ones. The major committees, together with their chairmen, were: the Union Powers Committee and the Union Constitution Committee (both chaired by <b class="hlp">Jawaharlal Nehru</b>); the Provincial Constitution Committee (<b class="hlp">Sardar Patel</b>); the <b class="imp">Drafting Committee</b> (<b class="hlp">Dr. B.R. Ambedkar</b>); the Advisory Committee on Fundamental Rights, Minorities and Tribal and Excluded Areas (<b class="hlp">Sardar Patel</b>), which itself had five further sub-committees (Fundamental Rights — J.B. Kripalani; Minorities — H.C. Mukherjee; North-East Frontier Tribal Areas and Assam Excluded Areas — Gopinath Bardoloi; Excluded Areas other than Assam — A.V. Thakkar; North-West Frontier Tribal Areas); the Rules of Procedure Committee and the Steering Committee (both <b class="hlp">Dr. Rajendra Prasad</b>); and the States Committee for negotiating with the princely states (<b class="hlp">Jawaharlal Nehru</b>). The minor committees — thirteen in number — handled more specific administrative or procedural tasks, and interestingly, a few of their chairmen (<b class="hlp">S. Varadachari</b>, <b class="hlp">Nalini Ranjan Sarkar</b>, <b class="hlp">S.K. Dar</b>) were <b class="imp">not even members</b> of the Assembly — they were outside experts brought in for their specialised knowledge.</p>
+<div class="te">Constitution-making వివిధ పనుల కోసం, Assembly అనేక committees ఏర్పాటు చేసింది — వాటిలో <b class="hlg">8</b> <b>major</b> committees గా వర్గీకరించారు, మిగతావి minor. Major committees, వాటి chairmen తో సహా — Union Powers Committee, Union Constitution Committee (రెండూ <b class="hlp">Nehru</b>); Provincial Constitution Committee (<b class="hlp">Sardar Patel</b>); <b class="imp">Drafting Committee</b> (<b class="hlp">Dr. B.R. Ambedkar</b>); Advisory Committee on Fundamental Rights, Minorities and Tribal/Excluded Areas (<b class="hlp">Sardar Patel</b>) — దీనికి 5 sub-committees కూడా ఉన్నాయి (Fundamental Rights — J.B. Kripalani; Minorities — H.C. Mukherjee; NE Frontier Tribal Areas &amp; Assam Excluded Areas — Gopinath Bardoloi; Excluded Areas ఇతర Assam కాకుండా — A.V. Thakkar; NW Frontier Tribal Areas); Rules of Procedure Committee, Steering Committee (రెండూ <b class="hlp">Dr. Rajendra Prasad</b>); princely states తో చర్చించే States Committee (<b class="hlp">Nehru</b>). పదమూడు minor committees మరింత నిర్దిష్ట administrative/procedural పనులు నిర్వర్తించాయి — ఆసక్తికరంగా, వాటిలో కొంతమంది chairmen (<b class="hlp">S. Varadachari</b>, <b class="hlp">Nalini Ranjan Sarkar</b>, <b class="hlp">S.K. Dar</b>) Assembly సభ్యులు <b class="imp">కూడా కాదు</b> — వారు తమ ప్రత్యేక పరిజ్ఞానం కోసం తెచ్చిన బయటి నిపుణులు.</div>
+<table>
+<caption>Major Committees and Chairmen</caption>
+<thead><tr><th class="n">#</th><th style="width:46%">Committee</th><th>Chairman</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Union Powers Committee</td><td class="hlp">Jawaharlal Nehru</td></tr>
+<tr><td class="n">2</td><td>Union Constitution Committee</td><td class="hlp">Jawaharlal Nehru</td></tr>
+<tr><td class="n">3</td><td>Provincial Constitution Committee</td><td class="hlp">Sardar Patel</td></tr>
+<tr><td class="n">4</td><td>Drafting Committee</td><td class="hlp">Dr. B.R. Ambedkar</td></tr>
+<tr><td class="n">5</td><td>Advisory Committee on FR, Minorities &amp; Tribal/Excluded Areas (5 sub-committees)</td><td class="hlp">Sardar Patel</td></tr>
+<tr><td class="n">6</td><td>Rules of Procedure Committee</td><td class="hlp">Dr. Rajendra Prasad</td></tr>
+<tr><td class="n">7</td><td>States Committee (Negotiating with States)</td><td class="hlp">Jawaharlal Nehru</td></tr>
+<tr><td class="n">8</td><td>Steering Committee</td><td class="hlp">Dr. Rajendra Prasad</td></tr>
+</tbody>
+</table>
+<table>
+<caption>Minor Committees (13, selected)</caption>
+<thead><tr><th class="n">#</th><th style="width:52%">Committee</th><th>Chairman</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Finance and Staff Committee</td><td class="hlp">Dr. Rajendra Prasad</td></tr>
+<tr><td class="n">2</td><td>Credentials Committee</td><td class="hlp">Alladi Krishnaswamy Ayyar</td></tr>
+<tr><td class="n">3</td><td>House Committee</td><td class="hlp">B. Pattabhi Sitaramayya</td></tr>
+<tr><td class="n">4</td><td>Order of Business Committee</td><td class="hlp">Dr. K.M. Munshi</td></tr>
+<tr><td class="n">5</td><td>Ad-hoc Committee on the National Flag</td><td class="hlp">Dr. Rajendra Prasad</td></tr>
+<tr><td class="n">6</td><td>Committee on the Functions of the CA</td><td class="hlp">G.V. Mavalankar</td></tr>
+<tr><td class="n">7</td><td>Ad-hoc Committee on the Supreme Court</td><td class="hlp">S. Varadachari (not a member)</td></tr>
+<tr><td class="n">8</td><td>Committee on Chief Commissioners' Provinces</td><td class="hlp">B. Pattabhi Sitaramayya</td></tr>
+<tr><td class="n">9</td><td>Expert Committee on Financial Provisions</td><td class="hlp">Nalini Ranjan Sarkar (not a member)</td></tr>
+<tr><td class="n">10</td><td>Linguistic Provinces Commission</td><td class="hlp">S.K. Dar (not a member)</td></tr>
+<tr><td class="n">11</td><td>Special Committee to Examine the Draft Constitution</td><td class="hlp">Jawaharlal Nehru</td></tr>
+<tr><td class="n">12</td><td>Press Gallery Committee</td><td class="hlp">Usha Nath Sen</td></tr>
+<tr><td class="n">13</td><td>Ad-hoc Committee on Citizenship</td><td class="hlp">S. Varadachari (not a member)</td></tr>
+</tbody>
+</table>
+<table class="qs">
+<caption class="qs">Quick Summary — Committees</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Major / minor committee count?</td><td>8 major, 13 (listed) minor</td></tr>
+<tr><td>Most important committee?</td><td>Drafting Committee (Ambedkar)</td></tr>
+<tr><td>Who chaired the Advisory Committee on FR/Minorities/Tribal Areas?</td><td>Sardar Patel — with 5 sub-committees</td></tr>
+<tr><td>Notable non-member committee chairmen?</td><td>S. Varadachari, Nalini Ranjan Sarkar, S.K. Dar</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">The Drafting Committee &amp; Dr. B.R. Ambedkar</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">The Drafting Committee</div>
+<p class="eng">Among all the committees of the Assembly, the single most important one was the <b class="term">Drafting Committee</b>, set up on <b class="hlg">August 29, 1947</b> — barely two weeks after independence — and entrusted with the actual task of preparing a draft of the new Constitution. It consisted of <b class="hlg">7</b> members: <b class="hlp">Dr. B.R. Ambedkar</b> as Chairman, along with N. Gopalaswamy Ayyangar, Alladi Krishnaswamy Ayyar, Dr. K.M. Munshi, Syed Mohammad Saadullah, N. Madhava Rau (who replaced B.L. Mitter after Mitter resigned owing to ill-health), and T.T. Krishnamachari (who replaced D.P. Khaitan after Khaitan died in <b class="hlg">1948</b>). Taking into account the proposals already worked out by the various other committees, the Drafting Committee prepared a <b>first draft</b> of the Constitution, published in <b class="hlg">February 1948</b>; the public was then given <b class="hlg">eight months</b> to discuss it and propose amendments. In light of the public comments, criticisms and suggestions received, the Committee then prepared a <b>second draft</b>, published in <b class="hlg">October 1948</b>. Remarkably, despite producing the document that would define India's entire legal-political order, the Committee took <b class="imp">less than six months</b> of actual working time to prepare its draft — it sat for only <b class="hlg">141</b> days in total.</p>
+<div class="te">Assembly లోని అన్ని committees లో అత్యంత ముఖ్యమైనది <b class="term">Drafting Committee</b> — <b class="hlg">ఆగస్టు 29, 1947</b> న, స్వాతంత్ర్యం వచ్చిన కేవలం రెండు వారాల్లోనే ఏర్పాటైంది — కొత్త Constitution draft సిద్ధం చేసే వాస్తవ బాధ్యత దీనికే అప్పగించారు. దీనిలో <b class="hlg">7</b> మంది సభ్యులు — Chairman గా <b class="hlp">Dr. B.R. Ambedkar</b>, వీరితో పాటు N. Gopalaswamy Ayyangar, Alladi Krishnaswamy Ayyar, Dr. K.M. Munshi, Syed Mohammad Saadullah, N. Madhava Rau (health కారణంగా రాజీనామా చేసిన B.L. Mitter స్థానంలో), T.T. Krishnamachari (<b class="hlg">1948</b>లో మరణించిన D.P. Khaitan స్థానంలో). ఇతర committees ఇప్పటికే రూపొందించిన ప్రతిపాదనలను పరిగణించి, Drafting Committee మొదటి draft ను <b class="hlg">ఫిబ్రవరి 1948</b>లో publish చేసింది; ప్రజలకు దానిపై చర్చించి amendments సూచించడానికి <b class="hlg">8 నెలల</b> సమయం ఇచ్చారు. ప్రజల అభిప్రాయాలు, విమర్శల ఆధారంగా రెండో draft <b class="hlg">అక్టోబర్ 1948</b>లో publish అయ్యింది. India మొత్తం legal-political వ్యవస్థను నిర్వచించే document ను తయారుచేసినా, Committee దీని కోసం <b class="imp">6 నెలల కంటే తక్కువ</b> వాస్తవ పని సమయం తీసుకుంది — మొత్తం <b class="hlg">141</b> రోజులు మాత్రమే సిట్టింగ్స్.</div>
+<table>
+<caption>Drafting Committee — 7 Members</caption>
+<thead><tr><th class="n">#</th><th>Member</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td class="hlp">Dr. B.R. Ambedkar</td><td><b class="imp">Chairman</b></td></tr>
+<tr><td class="n">2</td><td class="hlp">N. Gopalaswamy Ayyangar</td><td>—</td></tr>
+<tr><td class="n">3</td><td class="hlp">Alladi Krishnaswamy Ayyar</td><td>—</td></tr>
+<tr><td class="n">4</td><td class="hlp">Dr. K.M. Munshi</td><td>—</td></tr>
+<tr><td class="n">5</td><td class="hlp">Syed Mohammad Saadullah</td><td>—</td></tr>
+<tr><td class="n">6</td><td class="hlp">N. Madhava Rau</td><td>Replaced B.L. Mitter (resigned, ill-health)</td></tr>
+<tr><td class="n">7</td><td class="hlp">T.T. Krishnamachari</td><td>Replaced D.P. Khaitan (died 1948)</td></tr>
+</tbody>
+</table>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Drafting Committee</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Set up on / chairman?</td><td>29 August 1947 / Dr. B.R. Ambedkar</td></tr>
+<tr><td>Members / replacements?</td><td>7 members; Mitter→N. Madhava Rau, Khaitan (d.1948)→T.T. Krishnamachari</td></tr>
+<tr><td>First draft / second draft?</td><td>Feb 1948 (+8 months public comment) / Oct 1948</td></tr>
+<tr><td>Days sat / time taken?</td><td>141 days / less than 6 months</td></tr>
+<tr><td>Why Ambedkar despite being a Congress critic?</td><td>Unmatched legal expertise + standing as Scheduled Castes' leader gave the draft both technical strength and political legitimacy</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Enactment of the Constitution</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Enactment — the Three Readings</div>
+<p class="eng">The Constitution was formally enacted through a three-stage process, much like an ordinary bill. In the <b>first reading</b>, <b class="hlp">Dr. B.R. Ambedkar</b> introduced the final draft in the Assembly on <b class="hlg">November 4, 1948</b>, and the House held a general discussion on it for <b class="hlg">five</b> days, until <b class="hlg">November 9, 1948</b>. The <b>second reading</b> — clause-by-clause consideration — was by far the longest stage, running from <b class="hlg">November 15, 1948</b> to <b class="hlg">October 17, 1949</b>; during this stage as many as <b class="hlg">7,653</b> amendments were proposed, of which <b class="hlg">2,473</b> were actually taken up and discussed in the Assembly. The <b>third reading</b> began on <b class="hlg">November 14, 1949</b>, when Ambedkar moved the concluding motion — that "the Constitution as settled by the Assembly be passed." That motion was declared passed on <b class="hlg">November 26, 1949</b>, and the Constitution then received the signatures of the members and the President. Of the Assembly's total <b class="hlg">299</b> members, only <b class="hlg">284</b> were actually present that day to sign. November 26, 1949 is also the very date the Preamble itself names as the day the people of India, through the Constituent Assembly, adopted, enacted and gave the Constitution to themselves. As adopted, the Constitution contained a Preamble, <b class="hlg">395</b> Articles and <b class="hlg">8</b> Schedules — and, notably, the <b>Preamble was enacted only after</b> the entire rest of the Constitution had already been enacted.</p>
+<div class="te">Constitution ఒక సాధారణ bill లాగే మూడు-దశల ప్రక్రియ ద్వారా అధికారికంగా enact చేయబడింది. <b>First reading</b> లో <b class="hlp">Ambedkar</b> నవంబర్ 4, 1948 న final draft ను Assembly లో ప్రవేశపెట్టారు, House దానిపై <b class="hlg">5</b> రోజుల పాటు (నవంబర్ 9, 1948 వరకూ) general discussion జరిపింది. <b>Second reading</b> — clause-by-clause పరిశీలన — అత్యంత సుదీర్ఘమైన దశ, <b class="hlg">నవంబర్ 15, 1948</b> నుండి <b class="hlg">అక్టోబర్ 17, 1949</b> వరకూ కొనసాగింది; ఈ దశలో <b class="hlg">7,653</b> amendments ప్రతిపాదించగా, వాటిలో <b class="hlg">2,473</b> మాత్రమే Assembly లో చర్చించారు. <b>Third reading</b> <b class="hlg">నవంబర్ 14, 1949</b> న ప్రారంభమైంది, అప్పుడు Ambedkar చివరి motion ప్రవేశపెట్టారు — "Assembly settle చేసిన Constitution పాస్ చేయాలి" అని. ఈ motion <b class="hlg">నవంబర్ 26, 1949</b> న పాస్ అయినట్టు ప్రకటించారు, తర్వాత Constitution సభ్యులు, President సంతకాలు పొందింది. మొత్తం <b class="hlg">299</b> సభ్యుల్లో <b class="hlg">284</b> మంది మాత్రమే ఆ రోజు హాజరై సంతకం చేశారు. నవంబర్ 26, 1949 అనే తేదీనే Preamble కూడా India ప్రజలు, Constituent Assembly ద్వారా, Constitution ను తమకు తామే adopted, enacted, ఇచ్చుకున్న రోజుగా పేర్కొంటుంది. Adopted అయిన Constitution లో Preamble, <b class="hlg">395</b> Articles, <b class="hlg">8</b> Schedules ఉన్నాయి — గమనించదగినది, మిగిలిన Constitution మొత్తం enact అయ్యాకే <b>Preamble enact అయ్యింది</b>.</div>
+</div>
+<div class="para">
+<div class="stitle">Dr. B.R. Ambedkar's Role &amp; Constitution Day</div>
+<p class="eng"><b class="hlp">Dr. B.R. Ambedkar</b>, who was then serving as the country's <b>Law Minister</b>, personally piloted the Draft Constitution through the Assembly, and was well known for his logical, forceful and persuasive floor arguments. He is recognised today as the <b class="imp">'Father of the Constitution of India'</b> and, as the book puts it, the "chief architect of the Constitution of India." Decades later, on <b class="hlg">November 19, 2015</b>, the Government of India decided to celebrate <b class="hlg">November 26</b> every year as <b class="term">"Constitution Day" (Samvidhan Divas)</b>, specifically to promote constitutional values among citizens.</p>
+<div class="te">అప్పుడు దేశ <b>Law Minister</b> గా ఉన్న <b class="hlp">Dr. B.R. Ambedkar</b>, Draft Constitution ను స్వయంగా Assembly ద్వారా pilot చేశారు, logical, forceful, persuasive floor వాదనలకు ప్రసిద్ధి చెందారు. ఈరోజు ఆయనను <b class="imp">'Father of the Constitution of India'</b> గా, పుస్తకం చెప్పినట్టు "Constitution of India chief architect" గా గుర్తిస్తారు. దశాబ్దాల తర్వాత, <b class="hlg">నవంబర్ 19, 2015</b> న, Government of India ప్రతి సంవత్సరం <b class="hlg">నవంబర్ 26</b> ను <b class="term">"Constitution Day" (Samvidhan Divas)</b> గా జరుపుకోవాలని నిర్ణయించింది, constitutional values ను పౌరుల్లో ప్రచారం చేయడానికి ప్రత్యేకంగా.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Enactment</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>First / Second / Third reading?</td><td>4 Nov 1948 / 15 Nov 1948–17 Oct 1949 / 14–26 Nov 1949</td></tr>
+<tr><td>Amendments proposed / discussed?</td><td>7,653 / 2,473</td></tr>
+<tr><td>Adopted / signed?</td><td>26 Nov 1949 / 284 of 299 members</td></tr>
+<tr><td>Final structure?</td><td>Preamble + 395 Articles + 8 Schedules; Preamble enacted last</td></tr>
+<tr><td>Ambedkar's formal title while piloting?</td><td>Law Minister — "Father of the Constitution" / "chief architect"</td></tr>
+<tr><td>Constitution Day declared when, why 2015?</td><td>19 Nov 2015 — timed near Ambedkar's 125th birth anniversary</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Enforcement of the Constitution</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Enforcement of the Constitution</div>
+<p class="eng">The Constitution did not come into force all at once. A specific set of provisions — those dealing with citizenship, elections, the provisional parliament, various temporary and transitional matters, and the short title (<b class="hlg">Articles 5, 6, 7, 8, 9, 60, 324, 366, 367, 379, 380, 388, 391, 392 and 393</b>) — came into force immediately, on <b class="hlg">November 26, 1949</b> itself, the very day the Constitution was adopted. The <b>remaining, and much larger, part</b> of the Constitution came into force only on <b class="hlg">January 26, 1950</b> — the day the Constitution itself names as its <b class="term">'date of commencement'</b>, and which is celebrated every year as <b class="imp">Republic Day</b>. January 26 was not an arbitrary or merely convenient date — it was specifically chosen for its historical resonance: it was on this same day in <b class="hlg">1930</b> that <b class="imp">Purna Swaraj Day</b> (complete independence day) had been celebrated, following the resolution passed at the <b class="hlp">Lahore Session</b> of the INC in <b class="hlg">December 1929</b>. With the Constitution's commencement, both the <b class="hlp">Indian Independence Act, 1947</b> and the <b class="hlp">Government of India Act, 1935</b> (along with every enactment that had amended or supplemented the 1935 Act) were <b class="imp">repealed</b>. One specific piece of legislation was, however, deliberately kept alive — the <b class="hlb">Abolition of Privy Council Jurisdiction Act, 1949</b> continued in force.</p>
+<div class="te">Constitution అంతా ఒకేసారి అమల్లోకి రాలేదు. citizenship, elections, provisional parliament, వివిధ temporary/transitional విషయాలు, short title (<b class="hlg">Articles 5, 6, 7, 8, 9, 60, 324, 366, 367, 379, 380, 388, 391, 392, 393</b>) కు సంబంధించిన నిర్దిష్ట నిబంధనలు వెంటనే, <b class="hlg">నవంబర్ 26, 1949</b> నే — Constitution adopted అయిన అదే రోజు — అమల్లోకి వచ్చాయి. Constitution లోని <b>మిగిలిన, చాలా పెద్ద భాగం</b> <b class="hlg">జనవరి 26, 1950</b> నే అమల్లోకి వచ్చింది — Constitution స్వయంగా దీన్ని తన <b class="term">'commencement తేదీ'</b> అని పేర్కొంటుంది, దీన్నే ప్రతి సంవత్సరం <b class="imp">Republic Day</b> గా జరుపుకుంటారు. జనవరి 26 అనేది ఏదో ఏకపక్ష లేదా కేవలం అనుకూలమైన తేదీ కాదు — దీన్ని దాని చారిత్రక ప్రాముఖ్యత కోసం ప్రత్యేకంగా ఎంచుకున్నారు — <b class="hlg">1930</b>లో ఇదే రోజున <b class="imp">Purna Swaraj Day</b> (సంపూర్ణ స్వాతంత్ర్య దినం) జరుపుకున్నారు, INC <b class="hlp">Lahore Session</b> (<b class="hlg">డిసెంబర్ 1929</b>) తీర్మానం ప్రకారం. Constitution commencement తో <b class="hlp">Indian Independence Act, 1947</b>, <b class="hlp">Government of India Act, 1935</b> (1935 చట్టాన్ని సవరించిన/అనుబంధించిన అన్ని చట్టాలతో సహా) <b class="imp">రద్దయ్యాయి</b>. అయితే ఒక నిర్దిష్ట చట్టాన్ని ఉద్దేశపూర్వకంగా కొనసాగించారు — <b class="hlb">Abolition of Privy Council Jurisdiction Act, 1949</b> కొనసాగింది.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Enforcement</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Provisions in force from 26 Nov 1949?</td><td>Citizenship, elections, provisional parliament, transitional, short title (Arts. 5,6,7,8,9,60,324,366,367,379,380,388,391,392,393)</td></tr>
+<tr><td>Main body in force from?</td><td>26 January 1950 — "date of commencement", Republic Day</td></tr>
+<tr><td>Why 26 January specifically?</td><td>1930 Purna Swaraj Day, per Dec 1929 Lahore Session (INC) resolution</td></tr>
+<tr><td>Repealed on commencement?</td><td>Indian Independence Act 1947; Government of India Act 1935</td></tr>
+<tr><td>What was NOT repealed?</td><td>Abolition of Privy Council Jurisdiction Act, 1949 — continued</td></tr>
+<tr><td>Why the two-month gap between the two dates?</td><td>Early Articles needed as "infrastructure" (citizenship, EC) ahead of main commencement, kept for the symbolic 26 Jan date</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Congress Experts Committee &amp; Criticism of the Constituent Assembly</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Experts Committee of the Congress</div>
+<p class="eng">While elections to the Constituent Assembly were still under way, on <b class="hlg">July 8, 1946</b>, the <b class="hlp">Indian National Congress</b> separately appointed an <b class="term">Experts Committee</b> to prepare background material for the Assembly's use. It was chaired by <b class="hlp">Jawaharlal Nehru</b>, and its members included M. Asaf Ali, K.M. Munshi, N. Gopalaswami Ayyangar, K.T. Shah, D.R. Gadgil, Humayun Kabir and K. Santhanam; <b class="hlp">Krishna Kripalani</b> was later co-opted as a member and convener. The committee met twice — first in New Delhi (<b class="hlg">July 20–22, 1946</b>), then in Bombay (<b class="hlg">August 15–17, 1946</b>) — and, beyond a number of notes prepared by individual members, it discussed the procedure the Assembly should adopt, the question of which committees should be appointed, and drafted a resolution on the Constitution's objectives that closely resembled what would become the Objectives Resolution. <b class="hlp">Granville Austin</b>, the American constitutional expert, credited this committee with having "set India on the road to" her present Constitution.</p>
+<div class="te">Constituent Assembly ఎన్నికలు ఇంకా జరుగుతుండగానే, <b class="hlg">జూలై 8, 1946</b> న, <b class="hlp">Indian National Congress</b> విడిగా Assembly కోసం background material సిద్ధం చేయడానికి <b class="term">Experts Committee</b> ఏర్పాటు చేసింది. దీనికి <b class="hlp">Nehru</b> Chairman, సభ్యులు M. Asaf Ali, K.M. Munshi, N. Gopalaswami Ayyangar, K.T. Shah, D.R. Gadgil, Humayun Kabir, K. Santhanam; తర్వాత <b class="hlp">Krishna Kripalani</b> ను member/convener గా co-opt చేశారు. Committee రెండుసార్లు కలిసింది — మొదట New Delhi లో (<b class="hlg">జూలై 20-22, 1946</b>), తర్వాత Bombay లో (<b class="hlg">ఆగస్టు 15-17, 1946</b>) — వ్యక్తిగత సభ్యులు రాసిన notes తో పాటు, Assembly అనుసరించాల్సిన procedure, ఏ committees నియమించాలో చర్చించి, Objectives Resolution తో దగ్గరగా పోలిన ఒక resolution draft చేసింది. American constitutional expert <b class="hlp">Granville Austin</b>, ఈ committee India ను ప్రస్తుత Constitution వైపు "దారి తీసింది" అని ఘనత ఇచ్చారు.</div>
+</div>
+<div class="para">
+<div class="stitle">Criticism of the Constituent Assembly</div>
+<p class="eng">The Assembly has faced several strands of criticism over the years. <b>First</b>, that it was <b>not a representative body</b>, since its members were not directly elected by the people on universal adult franchise. <b>Second</b>, that it was <b>not a sovereign body</b>, since it was created by British Government proposals and initially held its sessions with British Government permission. <b>Third</b>, that it was <b class="imp">time-consuming</b> — critics pointed out that the framers of the American Constitution finished in just four months, and <b class="hlp">Naziruddin Ahmed</b>, a member of the Assembly itself, coined a mocking nickname for the Drafting Committee to express his contempt: a <b class="imp">"Drifting Committee."</b> <b>Fourth</b>, that it was <b>dominated by Congress</b> — Granville Austin's often-quoted remark was that "the Assembly was a one-party body in an essentially one-party country." <b>Fifth</b>, <b>lawyer-politician domination</b> — critics argued other sections of society were not sufficiently represented, and blame this for the Constitution's bulk and complicated language. <b>Sixth</b>, that it was <b>dominated by Hindus</b> — <b class="hlp">Lord Viscount Simon</b> called it "a body of Hindus," and <b class="hlp">Winston Churchill</b> remarked that it represented "only one major community" in India.</p>
+<div class="te">Assembly పై సంవత్సరాలుగా అనేక విమర్శలు వచ్చాయి. <b>మొదటిది</b> — <b>representative body కాదు</b> అనేది, ఎందుకంటే సభ్యులు ప్రజల ద్వారా universal adult franchise పై నేరుగా ఎన్నికకాలేదు. <b>రెండోది</b> — <b>sovereign body కాదు</b> అనేది, ఎందుకంటే ఇది British Government ప్రతిపాదనల ద్వారానే ఏర్పడింది, మొదట్లో British Government అనుమతితోనే sessions జరిపేది. <b>మూడోది</b> — <b class="imp">సమయం ఎక్కువ తీసుకుంది</b> అనేది — విమర్శకులు American Constitution framers కేవలం 4 నెలల్లోనే పూర్తి చేశారని చెప్పారు, Assembly సభ్యుడైన <b class="hlp">Naziruddin Ahmed</b> తన contempt చూపడానికి Drafting Committee కు వెటకారంగా <b class="imp">"Drifting Committee"</b> అనే పేరు పెట్టారు. <b>నాలుగోది</b> — <b>Congress ఆధిపత్యం</b> — దీన్ని Granville Austin తరచుగా ఇలా వ్యాఖ్యానిస్తారు: "Assembly ఒక ముఖ్యంగా ఒకే-పార్టీ దేశంలో ఒకే-పార్టీ body" అని. <b>ఐదోది</b> — <b>lawyer-politician ఆధిపత్యం</b> — సమాజంలోని ఇతర వర్గాలకు తగినంత ప్రాతినిధ్యం లేదని విమర్శకుల వాదన, దీనివల్లే Constitution bulky గా, భాష complicated గా ఉందని నిందిస్తారు. <b>ఆరోది</b> — <b>Hindus ఆధిపత్యం</b> — <b class="hlp">Lord Viscount Simon</b> దీన్ని "a body of Hindus" అని పిలిచారు, <b class="hlp">Winston Churchill</b> ఇది India లో "ఒకే ప్రధాన community" ను మాత్రమే representa చేస్తుందని అన్నారు.</div>
+<table>
+<caption>Table 2.7 — Time Taken by Framers of Other Constitutions</caption>
+<thead><tr><th class="n">#</th><th>Country</th><th>Articles</th><th>Working Period</th><th>Time Taken</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>U.S.A.</td><td class="hlg">7</td><td>May 25 – Sep 17, 1787</td><td class="imp">&lt; 4 months</td></tr>
+<tr><td class="n">2</td><td>Canada</td><td class="hlg">147</td><td>Oct 1864 – Mar 1867</td><td>~2 yrs 6 months</td></tr>
+<tr><td class="n">3</td><td>Australia</td><td class="hlg">128</td><td>Mar 1891 – Jul 9, 1900</td><td>~9 years</td></tr>
+<tr><td class="n">4</td><td>South Africa</td><td class="hlg">153</td><td>Oct 1908 – Sep 20, 1909</td><td>1 year</td></tr>
+</tbody>
+</table>
+
+
+<table class="qs">
+<caption class="qs">Quick Summary — Congress Experts Committee &amp; Criticism</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Congress Experts Committee — set up / chairman?</td><td>8 July 1946 / Jawaharlal Nehru</td></tr>
+<tr><td>Six criticisms of the Assembly?</td><td>Not representative; not sovereign; time-consuming; Congress-dominated; lawyer-politician dominated; Hindu-dominated</td></tr>
+<tr><td>"Drifting Committee" — who, why?</td><td>Naziruddin Ahmed — mocking the Drafting Committee's pace</td></tr>
+<tr><td>Is "time-consuming" a fair comparison to the USA?</td><td>Only partly — scope (395 vs 7 Articles) and conditions (Partition, ~60-country study) differ hugely</td></tr>
+<tr><td>Is "not sovereign" still valid post-1947?</td><td>Refers to pre-Aug-1947 origins; IIA 1947 changed only its later legal status</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Important Facts &amp; the Hindi Text of the Constitution</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">Important Facts</div>
+<p class="eng">A handful of facts about the Constitution's physical creation are frequently tested and worth remembering distinctly. The <b class="imp">elephant</b> was adopted as the symbol (seal) of the Constituent Assembly. <b class="hlp">Sir B.N. Rau</b> served as the constitutional advisor (Legal Advisor) to the Assembly; <b class="hlp">H.V.R. Iyengar</b> was its Secretary; and <b class="hlp">S.N. Mukherjee</b> was the chief draftsman of the Constitution. <b class="hlp">Prem Behari Narain Raizada</b> was the calligrapher of the Indian Constitution — the original document was entirely handwritten by him, in a flowing italic style. The original was then beautified and decorated by artists from <b class="hlb">Shantiniketan</b>, including <b class="hlp">Nand Lal Bose</b> and <b class="hlp">Beohar Rammanohar Sinha</b>; Sinha in particular illuminated and ornamented the original Preamble that Raizada had calligraphed. A separate Hindi version was also produced: its calligraphy was done by <b class="hlp">Vasant Krishan Vaidya</b>, and it too was elegantly decorated and illuminated by Nand Lal Bose.</p>
+<div class="te">Constitution physical తయారీ గురించి కొన్ని వాస్తవాలు తరచుగా అడుగుతారు, ప్రత్యేకంగా గుర్తుంచుకోదగినవి. <b class="imp">Elephant</b> ను Constituent Assembly symbol (seal) గా ఆమోదించారు. <b class="hlp">Sir B.N. Rau</b> Assembly కు constitutional advisor (Legal Advisor) గా పనిచేశారు; <b class="hlp">H.V.R. Iyengar</b> దాని Secretary; <b class="hlp">S.N. Mukherjee</b> Constitution chief draftsman. <b class="hlp">Prem Behari Narain Raizada</b> Indian Constitution calligrapher — original document ను ఆయన పూర్తిగా చేతితో, flowing italic style లో రాశారు. తర్వాత దాన్ని <b class="hlb">Shantiniketan</b> artists — <b class="hlp">Nand Lal Bose</b>, <b class="hlp">Beohar Rammanohar Sinha</b> — అలంకరించారు; Raizada calligraph చేసిన original Preamble ను ప్రత్యేకంగా Sinha illuminate చేసి అలంకరించారు. వేరైన Hindi ప్రతి కూడా తయారు చేశారు — దీని calligraphy <b class="hlp">Vasant Krishan Vaidya</b> చేశారు, దీన్ని కూడా Nand Lal Bose అందంగా అలంకరించి illuminate చేశారు.</div>
+</div>
+<div class="para">
+<div class="stitle">Hindi Text of the Constitution</div>
+<p class="eng">Originally, the Constitution of India made <b class="imp">no provision</b> at all for an authoritative text in the Hindi language. This gap was filled much later, by the <b class="hlg">58th Constitutional Amendment Act, 1987</b>, which inserted a new <b class="hlg">Article 394-A</b> into the very last part of the Constitution, Part XXII. Under this Article, the President must cause to be published: (i) a Hindi <b>translation</b> of the Constitution — modified as necessary to match the language, style and terminology already used in the authoritative Hindi texts of Central Acts, and incorporating every amendment made before that publication; and (ii) a Hindi translation of every future amendment of the Constitution made in English. The translation, and every future amendment's translation, is to be construed as carrying the <b>same meaning</b> as the original English text — and if any difficulty arises in that regard, the President is empowered to have the Hindi text suitably revised. Finally, once published, the Hindi translation is deemed, <b>for all purposes</b>, to be the Constitution's authoritative text in Hindi.</p>
+<div class="te">మొదట్లో, Indian Constitution లో authoritative Hindi text కోసం ఏ నిబంధనా <b class="imp">లేదు</b>. ఈ లోటును చాలా తర్వాత, <b class="hlg">58వ Constitutional Amendment Act, 1987</b>, Constitution చివరి భాగం, Part XXII లో కొత్త <b class="hlg">Article 394-A</b> చేర్చడం ద్వారా పూరించింది. ఈ Article ప్రకారం, President ఇవి publish చేయించాలి — (i) Constitution Hindi <b>translation</b> — Central Acts authoritative Hindi texts లో వాడే language, style, terminology కు అనుగుణంగా అవసరమైనంత మార్చి, ఆ publication కు ముందు జరిగిన ప్రతి amendment తో సహా; (ii) ఆంగ్లంలో చేసిన ప్రతి భవిష్యత్తు Constitution amendment కు Hindi translation. ఈ translation, భవిష్యత్తు ప్రతి amendment translation, ఆంగ్ల original తో <b>సమాన అర్థం</b> కలిగినదిగా భావించాలి — ఏదైనా ఇబ్బంది వస్తే, President Hindi text ను తగినట్టుగా సవరించే అధికారం కలిగి ఉంటారు. చివరగా, ఒకసారి publish అయ్యాక, Hindi translation <b>అన్ని ప్రయోజనాల కోసం</b> Constitution Hindi లో authoritative text గా పరిగణించబడుతుంది.</div>
+<table>
+<caption>Table 2.8 — Articles at a Glance (Short Title, Commencement, Hindi Text, Repeals)</caption>
+<thead><tr><th style="width:20%">Article</th><th>Subject-matter</th></tr></thead>
+<tbody>
+<tr><td class="hlg">393</td><td>Short title</td></tr>
+<tr><td class="hlg">394</td><td>Commencement</td></tr>
+<tr><td class="hlg">394A</td><td>Authoritative text in Hindi language</td></tr>
+<tr><td class="hlg">395</td><td>Repeals</td></tr>
+</tbody>
+</table>
+<table class="qs">
+<caption class="qs">Quick Summary — Important Facts &amp; Hindi Text</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Symbol/seal of the CA?</td><td>Elephant</td></tr>
+<tr><td>Constitutional/Legal advisor?</td><td>Sir B.N. Rau</td></tr>
+<tr><td>Secretary / chief draftsman?</td><td>H.V.R. Iyengar / S.N. Mukherjee</td></tr>
+<tr><td>Calligrapher of the Constitution?</td><td>Prem Behari Narain Raizada (English); Vasant Krishan Vaidya (Hindi)</td></tr>
+<tr><td>Who decorated it / illuminated the Preamble?</td><td>Nand Lal Bose &amp; Beohar Rammanohar Sinha (Shantiniketan) / Sinha specifically</td></tr>
+<tr><td>Hindi authoritative text — added by?</td><td>58th CAA, 1987 — Article 394-A, Part XXII</td></tr>
+</tbody>
+</table>
+</div>
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 2 — Making of the Constitution · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+<!-- ═══════════ PAGE 10 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+<div class="para">
+<div class="ca">
+<div class="catitle">Current Affairs Update <span class="caasof">— as of 16 August 2026</span></div>
+<p class="eng">Unlike chapters covering ongoing constitutional mechanisms (e.g. Finance Commission devolution percentages, current office-holders), this chapter is a historical account of the Constituent Assembly's work between 1946 and 1950. Every date, name, committee, article number and figure covered here (Objectives Resolution, 389→299 strength change, Drafting Committee timeline, enactment/enforcement dates, Article 394-A) is settled constitutional history and does not change over time. The one item worth periodically re-checking is the current office-holder who leads official "Constitution Day" (26 November) observances each year — that is a time-sensitive detail external to this chapter's core content and should be verified separately closer to the exam if it is likely to be tested.</p>
+<div class="te">Finance Commission devolution శాతాలు, ప్రస్తుత పదవీ నిర్వాహకుల వంటి కొనసాగుతున్న రాజ్యాంగ యంత్రాంగాన్ని కవర్ చేసే అధ్యాయాల లాగా కాకుండా, ఈ అధ్యాయం 1946–1950 మధ్య Constituent Assembly చేసిన పని గురించిన చారిత్రక వివరణ. ఇక్కడ కవర్ చేసిన ప్రతి తేదీ, పేరు, committee, article number, గణాంకం (Objectives Resolution, 389→299 strength మార్పు, Drafting Committee timeline, enactment/enforcement తేదీలు, Article 394-A) స్థిరపడిన రాజ్యాంగ చరిత్రే — కాలంతో పాటు మారదు. ప్రతి సంవత్సరం "Constitution Day" (నవంబర్ 26) అధికారిక వేడుకలను ఎవరు నడిపిస్తారు అనేది మాత్రమే కాలానుగుణంగా మారే అంశం — ఇది ఈ అధ్యాయం ప్రధాన content కు బయటిది, పరీక్షకు దగ్గరగా అవసరమైతే విడిగా సరిచూసుకోవాలి.</div>
+</div>
+</div>
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 2 — Making of the Constitution · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+<div class="divider"><span class="dtitle">Ch.3 — Concept of the Constitution</span><span class="dpart">Book 1 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+<div class="page">
+<h1 id="chapter-3">Chapter 3 — Concept of the Constitution</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Full-Depth Bilingual Study Notes</div>
+<div class="para">
+<div class="ptitle" style="margin-top:0">Meaning of the Constitution</div>
+<p class="eng">The word <b>'constitution'</b> traces back to the Latin verb <i>constituere</i>, meaning <b class="term">'to establish'</b> or 'to set up'. In its modern political sense, a constitution refers to the body of principles that lay down how a government is organised and how it functions, and that also fix the relationship between the government and the people — specifically, the people's <b>rights and duties</b> toward each other. Because it plays this dual role — organising the state <b>and</b> defining the government-citizen relationship — the Constitution is described using several overlapping labels: the <b class="imp">'fundamental law of the land'</b>, the 'supreme law of the state', the 'basic law of the country', the 'instrument of the government', the 'basic structure of the polity', and even the '<span class="hlb">grundnorm</span>' of the country (a German-origin term for the foundational norm from which every other law in the legal system draws its validity).</p>
+<div class="te">'constitution' పదం Latin క్రియ <i>constituere</i> నుండి వచ్చింది — దీని అర్థం <b class="term">'to establish'</b> లేదా 'to set up' అంటే స్థాపించడం. ఆధునిక రాజకీయ అర్థంలో, constitution అంటే ప్రభుత్వం ఎలా organised అవుతుందో, ఎలా పనిచేస్తుందో నిర్దేశించే సూత్రాల సమూహం, అలాగే ప్రభుత్వానికి ప్రజలకు మధ్య సంబంధాన్ని — వారి <b>rights, duties</b>ను — నిర్ణయించేది. ఇది రెండు పాత్రలు పోషిస్తుంది కాబట్టి — state ను organise చేయడం <b>మరియు</b> govt-citizen సంబంధాన్ని నిర్వచించడం — దీన్ని అనేక అతివ్యాప్తి పదాలతో వర్ణిస్తారు — <b class="imp">'fundamental law of the land'</b>, 'supreme law of the state', 'basic law of the country', 'instrument of the government', 'basic structure of the polity', చివరికి దేశపు '<span class="hlb">grundnorm</span>' (జర్మన్ మూలం గల పదం — legal system లోని ప్రతి ఇతర చట్టం తన చెల్లుబాటును దీని నుండే పొందుతుంది).</div>
+<p class="eng">Several political scientists and constitutional experts have tried to state this idea more precisely, each with a slightly different emphasis:</p>
+<div class="te">అనేకమంది political scientists, constitutional experts ఈ భావనను మరింత ఖచ్చితంగా చెప్పడానికి ప్రయత్నించారు, ప్రతి ఒక్కరూ కొద్దిగా భిన్నమైన emphasis తో:</div>
+<table>
+<caption>Definitions of the Constitution (paraphrased)</caption>
+<thead><tr><th style="width:22%">Scholar</th><th>Core idea</th></tr></thead>
+<tbody>
+<tr><td><b class="hlp">Gilchrist</b></td><td>The body of rules/laws that fix how government is organised, how power is distributed among its organs, and the general principles guiding the use of that power</td></tr>
+<tr><td><b class="hlp">Gettell</b></td><td>The fundamental principles that fix a state's form — its method of organisation, the distribution of sovereign power among organs, the scope of governmental functions, and the government's relationship to the people it governs</td></tr>
+<tr><td><b class="hlp">Wheare</b></td><td>The whole system of a country's government — the collected rules that establish, regulate and govern that government</td></tr>
+<tr><td><b class="hlp">Wade and Phillips</b></td><td>A specially authoritative document that lays out the framework and principal functions of a government's organs, and declares the principles governing how those organs operate</td></tr>
+</tbody>
+</table>
+<div class="te">నాలుగు నిర్వచనాలూ ఒకే core idea చుట్టూ తిరుగుతాయి — government organisation, power distribution, government-people సంబంధం — కానీ ప్రతి scholar వేరే కోణం నొక్కి చెప్తారు: Gilchrist "rules/laws" పైన, Gettell "fundamental principles"పైన, Wheare "whole system"పైన, Wade-Phillips "authoritative document" పైన దృష్టి పెడతారు.</div>
+</div>
+<div class="para">
+<div class="ptitle gn">Functions of a Constitution</div>
+<p class="eng">Constitutional scholar <b class="hlp">Elliot Bulmer</b> lists a fairly comprehensive set of purposes (or functions) a constitution can serve. Not every constitution performs every one of these — the word "can" in each point matters — but together they show that a constitution's job is much wider than simply organising a government machine. A constitution can: (1) declare and define the <b>boundaries</b> of the political community; (2) declare and define the <b>nature and authority</b> of the political community; (3) express the <b>identity and values</b> of a national community; (4) declare and define the <b>rights and duties</b> of citizens; (5) establish and regulate the <b>political institutions</b> of the community; (6) divide or share <b>power</b> between different layers of government, or between the centre and sub-state communities; (7) declare an <b>official religious identity</b> of the state and mark out the relationship between religious and secular authority; and (8) commit the state to particular <b>social, economic or developmental</b> goals.</p>
+<div class="te"><b class="hlp">Elliot Bulmer</b> constitution చేయగల purposes (functions) ను ఒక సమగ్రమైన జాబితాగా ఇస్తారు. ప్రతి constitution ఈ 8 functions అన్నీ చేయదు — ప్రతి పాయింట్లోని "can" అనే పదం ముఖ్యం — కానీ కలిపి చూస్తే, constitution పని కేవలం government machine ను organise చేయడం కంటే చాలా విస్తృతమని ఇవి చూపిస్తాయి. Constitution ఇలా చేయగలదు: (1) political community <b>boundaries</b> ను నిర్వచించడం; (2) దాని <b>nature, authority</b> ను నిర్వచించడం; (3) national community <b>identity, values</b> ను వ్యక్తపరచడం; (4) citizens <b>rights, duties</b> ను నిర్వచించడం; (5) <b>political institutions</b> ను స్థాపించి regulate చేయడం; (6) government layers మధ్య, లేదా centre-substate communities మధ్య <b>power</b> ను పంచడం/విభజించడం; (7) రాజ్యానికి <b>official religious identity</b> ప్రకటించడం, religious-secular authority మధ్య సంబంధాన్ని గుర్తించడం; (8) రాజ్యాన్ని నిర్దిష్ట <b>social, economic, developmental</b> లక్ష్యాలకు కట్టుబడేలా చేయడం.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Meaning &amp; Functions</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Latin root &amp; meaning?</td><td><i>constituere</i> — "to establish"/"to set up"</td></tr>
+<tr><td>Common descriptive labels?</td><td>Fundamental law of the land, supreme law of the state, grundnorm, basic structure of the polity, etc.</td></tr>
+<tr><td>Who compiled the 8-function list?</td><td>Elliot Bulmer (constitutional scholar)</td></tr>
+<tr><td>Why is the function list so broad?</td><td>Organising institutions alone is meaningless without first fixing community, identity, rights, and limits</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Qualities of a Good Constitution</div>
+<div class="para">
+<div class="ptitle" style="margin-top:0">Qualities of a Good Constitution</div>
+<p class="eng">The book lists seven qualities (or characteristics) that a good constitution should possess:</p>
+<div class="te">మంచి constitution కు ఉండాల్సిన ఏడు qualities (లక్షణాలు) పుస్తకం జాబితా చేస్తుంది:</div>
+<table>
+<caption>Seven Qualities of a Good Constitution</caption>
+<thead><tr><th style="width:18%">Quality</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><td><b class="term">Brevity</b></td><td>Should be precise, free of unwanted provisions — too much detail creates confusion in interpretation</td></tr>
+<tr><td><b class="term">Clarity</b></td><td>Provisions should be stated in clear terms — complicated language reduces how well it is understood</td></tr>
+<tr><td><b class="term">Definiteness</b></td><td>Each provision should carry a definite meaning — ambiguity hands judges excessive interpretive discretion</td></tr>
+<tr><td><b class="term">Comprehensiveness</b></td><td>Should comprehensively lay down govt powers as well as citizens' rights &amp; duties — reduces future controversy/litigation</td></tr>
+<tr><td><b class="term">Suitability</b></td><td>Should reflect the people's needs and aspirations, suited to the nation's historical, socio-cultural, economic and political conditions</td></tr>
+<tr><td><b class="term">Stability</b></td><td>Should promote political stability, resist easy tampering — this builds citizens' obedience/respect toward it</td></tr>
+<tr><td><b class="term">Adaptability</b></td><td>Should be dynamic, not static — a "living document" able to adapt to changing situations and needs</td></tr>
+</tbody>
+</table>
+<div class="te">Brevity, Clarity, Definiteness మూడూ language, drafting quality కు సంబంధించినవి — వీటిని పాటించకపోతే, courts interpretation లో ఎక్కువ discretion తీసుకోవాల్సి వస్తుంది. Comprehensiveness, Suitability ఇంకొక కోణం — content ఎంత విస్తృతంగా, ఆ దేశ పరిస్థితులకు తగినట్టుగా ఉందో చూస్తాయి. Stability, Adaptability రెండూ constitution "మారే సామర్థ్యం" గురించి — కానీ వ్యతిరేక దిశల్లో నొక్కి చెప్తాయి, దీన్నే తర్వాతి WHY box లో చూద్దాం.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Qualities of a Good Constitution</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>How many qualities listed?</td><td>7 — Brevity, Clarity, Definiteness, Comprehensiveness, Suitability, Stability, Adaptability</td></tr>
+<tr><td>Why do Brevity &amp; Comprehensiveness coexist?</td><td>They measure different axes — detail-level vs subject coverage</td></tr>
+<tr><td>Why do Stability &amp; Adaptability coexist?</td><td>They measure ease of change, not whether change happens — bridged by a calibrated amendment procedure</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Classification of Constitutions — Evolved/Enacted, Written/Unwritten, Rigid/Flexible</div>
+<div class="para">
+<div class="ptitle rd" style="margin-top:0">Classification of Constitutions — Overview</div>
+<p class="eng">Constitutions across the world can be classified in several different ways, depending on which criterion is used — how the constitution came about, how its provisions are recorded, how easily it can be amended, how power is shared between national and regional governments, and what the document itself is fundamentally meant to achieve. The book covers five such classifications.</p>
+<div class="te">ప్రపంచవ్యాప్తంగా constitutions ను అనేక విధాలుగా వర్గీకరించవచ్చు, ఏ criterion వాడతారో దాన్ని బట్టి — constitution ఎలా ఉద్భవించింది, దాని provisions ఎలా రికార్డ్ అవుతాయి, ఎంత సులభంగా amend చేయవచ్చు, national-regional governments మధ్య power ఎలా పంచబడుతుంది, document తానే ప్రాథమికంగా దేన్ని సాధించాలని అనుకుంటుంది. పుస్తకం ఐదు రకాల వర్గీకరణలను చర్చిస్తుంది.</div>
+</div>
+<div class="para">
+<div class="stitle" style="margin-top:0">1. Evolved and Enacted</div>
+<p class="eng">Based on how a constitution came about, constitutions are classified as <b class="term">evolved</b> or <b class="term">enacted</b>. An <b>evolved constitution</b> is the outcome of a slow, gradual evolutionary process — its provisions live in the form of conventions, practices, principles and judicial decisions rather than a single drafted text. It is also called a <b class="hlb">cumulative constitution</b>, and the <b>British Constitution</b> is the standard example. An <b>enacted constitution</b>, by contrast, is deliberately drafted by a constituent assembly or constitutional council, or promulgated by a king or parliament, with its provisions incorporated into a book, document, or series of documents. It is also called a <b class="hlb">conventional constitution</b>, and the <b>American</b> and <b>Indian</b> constitutions are the standard examples.</p>
+<div class="te">Constitution ఎలా ఉద్భవించిందో దాన్ని బట్టి, <b class="term">evolved</b> లేదా <b class="term">enacted</b> గా వర్గీకరించబడతాయి. <b>Evolved constitution</b> నెమ్మదిగా, క్రమంగా జరిగిన evolutionary process ఫలితం — దీని provisions ఒకే draft చేసిన టెక్స్ట్ లో కాకుండా, conventions, practices, principles, judicial decisions రూపంలో ఉంటాయి. దీన్ని <b class="hlb">cumulative constitution</b> అని కూడా అంటారు, <b>British Constitution</b> దీనికి ప్రామాణిక ఉదాహరణ. <b>Enacted constitution</b> దీనికి భిన్నంగా — constituent assembly లేదా constitutional council ఉద్దేశపూర్వకంగా draft చేస్తుంది, లేదా రాజు/parliament ప్రకటిస్తుంది, దీని provisions ఒక పుస్తకం, document, లేదా series of documents లో పొందుపరచబడతాయి. దీన్ని <b class="hlb">conventional constitution</b> అని కూడా అంటారు, <b>American</b>, <b>Indian</b> constitutions దీనికి ప్రామాణిక ఉదాహరణలు.</div>
+</div>
+<div class="para">
+<div class="stitle">2. Written and Unwritten</div>
+<p class="eng">Based on how provisions are incorporated, constitutions are classified as <b class="term">written</b> or <b class="term">unwritten</b>. A <b>written constitution</b> has its provisions incorporated into a book, document or series of documents — consciously formulated and adopted by a body known as a constituent assembly or constitutional convention (or any other name). It is also called a <b class="hlb">documentary</b> or <b class="hlb">codified</b> constitution, and the constitutions of the <b>USA, Canada, Japan, France and India</b> are good examples. An <b>unwritten constitution</b>, on the other hand, has most of its provisions <b>not</b> incorporated into a single document — it is found instead in conventions, practices, principles, charters, statutes and judicial decisions, and is a product of historical evolution rather than deliberate formulation. It is also called a <b class="hlb">non-documentary</b> or <b class="hlb">uncodified</b> constitution, and the constitutions of the <b>UK, New Zealand and Israel</b> are good examples. The book itself notes that this written/unwritten distinction is more or less the same as the evolved/enacted distinction above.</p>
+<div class="te">Provisions ఎలా పొందుపరచబడతాయో దాన్ని బట్టి, <b class="term">written</b> లేదా <b class="term">unwritten</b> గా వర్గీకరించబడతాయి. <b>Written constitution</b> provisions ఒక పుస్తకం, document, లేదా series of documents లో పొందుపరచబడతాయి — constituent assembly లేదా constitutional convention (లేదా వేరే పేరు గల body) ఉద్దేశపూర్వకంగా రూపొందించి ఆమోదిస్తుంది. దీన్ని <b class="hlb">documentary</b> లేదా <b class="hlb">codified</b> constitution అని కూడా అంటారు, <b>USA, Canada, Japan, France, India</b> constitutions దీనికి మంచి ఉదాహరణలు. <b>Unwritten constitution</b> దీనికి భిన్నంగా — దీని చాలా provisions ఒకే document లో పొందుపరచబడవు — బదులుగా conventions, practices, principles, charters, statutes, judicial decisions రూపంలో కనిపిస్తాయి, ఇది ఉద్దేశపూర్వక formulation కంటే historical evolution ఫలితం. దీన్ని <b class="hlb">non-documentary</b> లేదా <b class="hlb">uncodified</b> constitution అని కూడా అంటారు, <b>UK, New Zealand, Israel</b> constitutions దీనికి మంచి ఉదాహరణలు. Written/unwritten వ్యత్యాసం పైన చెప్పిన evolved/enacted వ్యత్యాసంతో దాదాపు ఒకటే అని పుస్తకమే గమనిస్తుంది.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Evolved/Enacted &amp; Written/Unwritten</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Evolved constitution — example?</td><td>Britain (cumulative constitution)</td></tr>
+<tr><td>Enacted constitution — examples?</td><td>USA, India (conventional constitution)</td></tr>
+<tr><td>Written constitution — examples?</td><td>USA, Canada, Japan, France, India (documentary/codified)</td></tr>
+<tr><td>Unwritten constitution — examples?</td><td>UK, New Zealand, Israel (non-documentary/uncodified)</td></tr>
+<tr><td>Why do these two classifications nearly always coincide?</td><td>They describe origin-process and resulting form of the same historical fact — a deliberate drafting act naturally yields one document, gradual custom naturally doesn't</td></tr>
+</tbody>
+</table>
+</div>
+<div class="para">
+<div class="stitle">3. Rigid and Flexible</div>
+<p class="eng">Based on the method of amendment, constitutions are classified as <b class="term">rigid</b> or <b class="term">flexible</b> — a classification given by <b class="hlp">Lord James Bryce</b>. A <b>rigid constitution</b> cannot be amended in the same manner as ordinary laws; it requires a <b>special procedure</b> for amendment, which means it draws a distinction between constitutional law and ordinary law. A <b>flexible constitution</b>, on the other hand, can be amended in the same manner as ordinary laws, requiring no special procedure — so it makes no such distinction. A flexible constitution is also called an <b class="hlb">elastic</b> constitution (examples: <b>UK, New Zealand</b>), while a rigid constitution is also called an <b class="hlb">inelastic</b> constitution (examples: <b>USA, Australia, Switzerland</b>). The <b class="imp">Constitution of India is neither purely rigid nor purely flexible, but a synthesis of both.</b></p>
+<div class="te">Amendment పద్ధతిని బట్టి, <b class="term">rigid</b> లేదా <b class="term">flexible</b> గా వర్గీకరించబడతాయి — ఈ classification <b class="hlp">Lord James Bryce</b> ఇచ్చారు. <b>Rigid constitution</b> ఆర్డినరీ చట్టాల మాదిరిగా amend చేయబడదు; దీనికి amendment కోసం <b>special procedure</b> అవసరం — అంటే constitutional law, ordinary law మధ్య తేడాను ఇది గుర్తిస్తుంది. <b>Flexible constitution</b> దీనికి భిన్నంగా — ఆర్డినరీ చట్టాల మాదిరిగానే amend చేయవచ్చు, special procedure అవసరం లేదు — కాబట్టి ఈ తేడాను ఇది గుర్తించదు. Flexible constitution ను <b class="hlb">elastic</b> constitution అని కూడా అంటారు (ఉదాహరణలు: <b>UK, New Zealand</b>), rigid constitution ను <b class="hlb">inelastic</b> constitution అని కూడా అంటారు (ఉదాహరణలు: <b>USA, Australia, Switzerland</b>). <b class="imp">India Constitution పూర్తిగా rigid కాదు, పూర్తిగా flexible కాదు — రెండింటి synthesis.</b></div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Rigid &amp; Flexible</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Who gave this classification?</td><td>Lord James Bryce</td></tr>
+<tr><td>Basis of classification?</td><td>Method of amendment (special procedure or not)</td></tr>
+<tr><td>Rigid = inelastic — examples?</td><td>USA, Australia, Switzerland</td></tr>
+<tr><td>Flexible = elastic — examples?</td><td>UK, New Zealand</td></tr>
+<tr><td>India's Constitution?</td><td>Neither purely rigid nor flexible — a synthesis of both</td></tr>
+<tr><td>Why can India be "both"?</td><td>Rigidity/flexibility applies per amendment mechanism, and India's Constitution provides three different mechanisms (simple majority / special majority / special majority + state ratification) for different provisions</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Classification — Federal/Unitary, Procedural/Prescriptive</div>
+<div class="para">
+<div class="ptitle rd" style="margin-top:0">4. Federal and Unitary</div>
+<p class="eng">Based on the nature of the relationship between the national government and regional governments, constitutions are classified as <b class="term">federal</b> or <b class="term">unitary</b>. A <b>federal constitution</b> provides for a division of power between the national government and regional governments, enabling each to operate independently within its own jurisdiction — prevalent in the <b>USA, Switzerland, Australia, Canada, Russia, Brazil</b> and some other states. A <b>unitary constitution</b>, by contrast, provides for the concentration of power in the hands of the national government, making regional governments operate as subordinate agencies that exercise only such powers as may be delegated to them by the national government — prevalent in the <b>UK, France, Japan, China, Italy, Norway</b> and other states. The <b class="imp">Constitution of India contains both federal and unitary provisions</b>, and for this reason was described as <b class="hlb">quasi-federal</b> by <b class="hlp">K.C. Wheare</b>.</p>
+<div class="te">National government కు regional governments కు మధ్య సంబంధ స్వభావాన్ని బట్టి, <b class="term">federal</b> లేదా <b class="term">unitary</b> గా వర్గీకరించబడతాయి. <b>Federal constitution</b> national government, regional governments మధ్య power ను విభజిస్తుంది, ప్రతి ఒక్కటి తన సొంత జురిస్డిక్షన్ లో స్వతంత్రంగా పనిచేయడానికి వీలు కల్పిస్తుంది — <b>USA, Switzerland, Australia, Canada, Russia, Brazil</b> వంటి రాష్ట్రాల్లో ఇది ఎక్కువ. <b>Unitary constitution</b> దీనికి భిన్నంగా — power ను national government చేతుల్లో కేంద్రీకరిస్తుంది, regional governments national government ఇచ్చిన అధికారాలు మాత్రమే వినియోగించే subordinate agencies గా పనిచేస్తాయి — <b>UK, France, Japan, China, Italy, Norway</b> వంటి రాష్ట్రాల్లో ఇది ఎక్కువ. <b class="imp">India Constitution లో federal, unitary provisions రెండూ ఉన్నాయి</b>, అందుకే దీన్ని <b class="hlp">K.C. Wheare</b> <b class="hlb">quasi-federal</b> అని వర్ణించారు.</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Federal &amp; Unitary</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Basis of classification?</td><td>Nature of relationship between national and regional govts</td></tr>
+<tr><td>Federal examples?</td><td>USA, Switzerland, Australia, Canada, Russia, Brazil</td></tr>
+<tr><td>Unitary examples?</td><td>UK, France, Japan, China, Italy, Norway</td></tr>
+<tr><td>India's Constitution — term used?</td><td>Quasi-federal (K.C. Wheare)</td></tr>
+<tr><td>Why "quasi" and not fully federal?</td><td>Genuine Centre-state power division coexists with permanent unitary features (unified judiciary, single citizenship, etc.)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="para">
+<div class="ptitle rd">5. Procedural and Prescriptive</div>
+<p class="eng">According to constitutional scholar <b class="hlp">Elliot Bulmer</b>, two broad constitutional archetypes can be identified — <b class="term">procedural</b> and <b class="term">prescriptive</b> — and the difference between them relates to the underlying nature and purpose of the document itself. A <b>procedural constitution</b> defines the legal and political structures of public institutions and sets out the legal limits of government power, in order to protect democratic processes and fundamental human rights. A <b>prescriptive constitution</b> does this too, but goes further — it assumes (or attempts to impose) a broad consensus on common societal goals that public authorities must strive to achieve.</p>
+<div class="te"><b class="hlp">Elliot Bulmer</b> ప్రకారం, రెండు విస్తృత constitutional archetypes గుర్తించవచ్చు — <b class="term">procedural</b>, <b class="term">prescriptive</b> — వీటి మధ్య తేడా document స్వభావం, ఉద్దేశానికి సంబంధించినది. <b>Procedural constitution</b> public institutions యొక్క legal, political structures ను నిర్వచించి, government power యొక్క legal పరిమితులను నిర్దేశిస్తుంది, democratic processes, fundamental human rights ను రక్షించడం కోసం. <b>Prescriptive constitution</b> ఇది కూడా చేస్తుంది, కానీ ఇంకా ముందుకెళ్తుంది — public authorities సాధించడానికి ప్రయత్నించాల్సిన common societal goals పై విస్తృత ఏకాభిప్రాయాన్ని ఊహిస్తుంది (లేదా విధించడానికి ప్రయత్నిస్తుంది).</div>
+
+<table class="qs">
+<caption class="qs">Quick Summary — Procedural &amp; Prescriptive; All Five Classifications</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Who identified procedural/prescriptive archetypes?</td><td>Elliot Bulmer</td></tr>
+<tr><td>Procedural constitution's job?</td><td>Define institutions, limit govt power, protect rights/process — stays goal-neutral</td></tr>
+<tr><td>Prescriptive constitution's added feature?</td><td>Commits the state to substantive societal goals, not just fair process</td></tr>
+<tr><td>The five classifications of this chapter?</td><td>Evolved/Enacted, Written/Unwritten, Rigid/Flexible, Federal/Unitary, Procedural/Prescriptive</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Constitutionalism and Constitutional Government</div>
+<div class="para">
+<div class="ptitle" style="margin-top:0">Constitutionalism and Constitutional Government — Meaning</div>
+<p class="eng">The concepts of <b class="term">constitution</b> and <b class="term">constitutionalism</b> are closely related, but they are not the same thing, and the book draws out this difference across four connected points. <b>First</b>, a country may well have a constitution but not constitutionalism — a <b class="imp">dictatorship</b> is the standard illustration — because unlimited power endangers people's freedom, and absolute power tends to corrupt absolutely; a constitution, therefore, should be permeated with constitutionalism, not merely exist alongside unchecked rule. <b>Second</b>, constitutionalism essentially means <b>limited government</b>, or a limitation on government — it is the direct opposite of arbitrary power. Only when a country's constitution seeks to decentralise power (rather than concentrating it at one point) and also imposes other restraints on that power, does the country have not just a constitution, but genuine constitutionalism. <b>Third</b>, constitutionalism describes a polity governed under a constitution that ordains essentially limited government and the <b class="hlb">rule of law</b>, as opposed to arbitrary, despotic, authoritarian or totalitarian rule — constitutional government must necessarily be democratic government, and arbitrary power in the hands of any individual or institution, even if that power is formally conferred by a constitutional document, is itself a negation of constitutionalism. <b>Fourth</b>, constitutionalism is another name for the idea of "civilized," limited government — the real justification for having a constitution at all lies in achieving limited government, and in requiring those who govern to conform to laws and rules rather than to their own will.</p>
+<div class="te"><b class="term">Constitution</b>, <b class="term">constitutionalism</b> భావనలు దగ్గరి సంబంధం కలిగినవి, కానీ ఒకటి కాదు — పుస్తకం ఈ తేడాను నాలుగు అనుసంధాన పాయింట్ల ద్వారా వివరిస్తుంది. <b>మొదటిది</b> — ఒక దేశానికి constitution ఉండి, constitutionalism ఉండకపోవచ్చు — <b class="imp">dictatorship</b> దీనికి ప్రామాణిక ఉదాహరణ — ఎందుకంటే అపరిమిత power ప్రజల స్వేచ్ఛను ప్రమాదంలో పడేస్తుంది, absolute power పూర్తిగా corrupt చేస్తుంది; అందుకే constitution constitutionalism తో నిండి ఉండాలి, కేవలం అదుపులేని పరిపాలనతో పాటు ఉండడం సరిపోదు. <b>రెండోది</b> — constitutionalism అంటే ప్రాథమికంగా <b>limited government</b>, government పై పరిమితి — ఇది arbitrary power కు నేరుగా వ్యతిరేకం. ఒక దేశ constitution power ను (ఒకచోట కేంద్రీకరించకుండా) decentralise చేయాలని ప్రయత్నించి, ఆ power పై ఇతర restraints కూడా విధించినప్పుడే, ఆ దేశానికి కేవలం constitution మాత్రమే కాదు, నిజమైన constitutionalism ఉంటుంది. <b>మూడోది</b> — constitutionalism అనేది essentially limited government, <b class="hlb">rule of law</b> ను ఆదేశించే constitution కింద పాలించబడే polity ను వర్ణిస్తుంది, arbitrary, despotic, authoritarian, లేదా totalitarian పాలనకు వ్యతిరేకంగా — constitutional government తప్పనిసరిగా democratic government అయి ఉండాలి, ఏ వ్యక్తి లేదా institution చేతిలోనైనా arbitrary power — అది constitutional document ద్వారా అధికారికంగా ఇవ్వబడినా సరే — constitutionalism ను negate చేస్తుంది. <b>నాలుగోది</b> — constitutionalism "civilized," limited government భావనకు మరో పేరు — constitution ఉండటానికి నిజమైన సమర్థన limited government సాధించడంలో, పాలించేవారు తమ ఇష్టం కంటే చట్టాలు, నియమాలకు కట్టుబడాలని కోరడంలో ఉంది.</div>
+
+</div>
+<div class="para">
+<div class="stitle">Definitions of Constitutionalism</div>
+<p class="eng">Several scholars have defined constitutionalism and constitutional government, converging on the same core idea of <b class="imp">limited government</b>, even while phrasing it differently:</p>
+<div class="te">అనేకమంది scholars constitutionalism, constitutional government ను నిర్వచించారు, వేర్వేరుగా చెప్పినా అందరూ <b class="imp">limited government</b> అనే core idea వైపే మొగ్గుతారు:</div>
+<table>
+<caption>Definitions of Constitutionalism (paraphrased)</caption>
+<thead><tr><th style="width:18%">Scholar</th><th>Core idea</th></tr></thead>
+<tbody>
+<tr><td><b class="hlp">Friedrich</b></td><td>Constitutionalism is a system of effective restraints on governmental action — a body of rules ensuring fair play, which makes government responsible</td></tr>
+<tr><td><b class="hlp">Roucek</b></td><td>Constitutionalism essentially means limited government — the opposite of unrestrained rule by rulers; regardless of how effective the restraints actually are, it assumes limits on government as opposed to arbitrary government</td></tr>
+<tr><td><b class="hlp">Wheare</b></td><td>Constitutional government means more than mere government under the terms of a constitution — it means rule-based government as opposed to arbitrary government, limited by the constitution's terms rather than only by the desires and capacities of those who hold power</td></tr>
+<tr><td><b class="hlp">Ybema</b></td><td>A government counts as constitutional only when its rulers are subject to a body of rules and principles that limit how they exercise power — constitutional government is the opposite of arbitrary rule</td></tr>
+</tbody>
+</table>
+<div class="te">నలుగురు scholars నొక్కి చెప్పే మాట ఒకటే — "restraints/limits నిజమైనవిగా, structural గా ఉండాలి, కేవలం టెక్స్ట్ లో మాత్రమే కాదు." Friedrich "restraints," Roucek "unrestrained will కు వ్యతిరేకం," Wheare "rules ప్రకారం పాలన, పాలకుల ఇష్టం కాదు," Ybema "rules కు లోబడిన rulers" — అన్నీ ఒకే core దగ్గరకు వస్తాయి.</div>
+
+</div>
+<div class="para">
+<div class="stitle">Elements of Constitutionalism</div>
+<p class="eng">Constitutional scholar <b class="hlp">Louis Henkin</b> identified eight elements (features or principles) of constitutionalism:</p>
+<div class="te"><b class="hlp">Louis Henkin</b> constitutionalism యొక్క ఎనిమిది elements (features/principles) ను గుర్తించారు:</div>
+<table>
+<caption>Louis Henkin's Eight Elements of Constitutionalism</caption>
+<thead><tr><th class="n" style="width:6%">#</th><th>Element</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Popular sovereignty</td></tr>
+<tr><td class="n">2</td><td>Rule of law</td></tr>
+<tr><td class="n">3</td><td>Democratic government (responsible and accountable government)</td></tr>
+<tr><td class="n">4</td><td>Separation of powers (checks and balances)</td></tr>
+<tr><td class="n">5</td><td>An independent judiciary</td></tr>
+<tr><td class="n">6</td><td>Civilian control of the military</td></tr>
+<tr><td class="n">7</td><td>Police governed by law and judicial control</td></tr>
+<tr><td class="n">8</td><td>Respect for individual rights</td></tr>
+</tbody>
+</table>
+<div class="te">ఈ 8 elements గుర్తుంచుకోండి — ఇవన్నీ కలిపి "limited government" ను కేవలం ఒక వాగ్దానం నుండి ఆచరణలో పనిచేసే వ్యవస్థగా మారుస్తాయి. Popular sovereignty, rule of law అండగా ఉంటే; democratic, accountable government పైన; separation of powers, independent judiciary check గా ఉంటే; civilian-controlled military, law-governed police పాలకుడు coercive శక్తిని దుర్వినియోగం చేయకుండా చూస్తాయి; చివరగా individual rights పట్ల గౌరవం.</div>
+<table class="qs">
+<caption class="qs">Quick Summary — Constitutionalism &amp; Constitutional Government</caption>
+<thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+<tbody>
+<tr><td>Can a country have a constitution without constitutionalism?</td><td>Yes — e.g. a dictatorship; unlimited power, even under a written document, negates constitutionalism</td></tr>
+<tr><td>Core meaning of constitutionalism?</td><td>Limited government — decentralised power plus real restraints, opposite of arbitrary rule</td></tr>
+<tr><td>What do Friedrich/Roucek/Wheare/Ybema's definitions share?</td><td>All insist restraints on government must be real/structural, not merely textual</td></tr>
+<tr><td>Who listed the 8 elements of constitutionalism?</td><td>Louis Henkin</td></tr>
+<tr><td>Name the 8 Henkin elements</td><td>Popular sovereignty, rule of law, democratic govt, separation of powers, independent judiciary, civilian control of military, law-governed police, respect for individual rights</td></tr>
+</tbody>
+</table>
+</div>
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 3 — Concept of the Constitution · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+</body></html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part X &mdash; Book 1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 82 — Election Laws</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — RPA 1950 &amp; RPA 1951 — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Why Parliament Had to Legislate — the Constitution Only Sketches the Outline</div>
+  <p class="eng">The Constitution itself never spells out India's election machinery in full — it only draws the outer boundary and leaves Parliament to fill in the rest by ordinary law. <b class="hlg">Articles 81 and 170</b> cap how many seats the Lok Sabha and a state's Legislative Assembly may have and set out broad principles for splitting those seats among states and within a state, but neither Article actually performs that allocation. <b class="hlg">Article 171</b> does the same job for a state's <b class="hlb">Legislative Council</b> — it fixes the maximum and minimum size and names the different channels through which Council seats get filled, again without pinning down exactly how many seats each channel gets. Because all three Articles stop at "who may decide this, and roughly how," Parliament stepped in twice with ordinary legislation — first in <b class="imp">1950</b>, then more thoroughly in <b class="imp">1951</b> — and between them, these two statutes still govern almost every practical aspect of how Indians vote and how candidates contest elections today.</p>
+  <div class="te">Constitution, India ఎన్నికల యంత్రాంగాన్ని పూర్తిగా వివరించదు — ఇది కేవలం ఒక outer boundary గీచి, మిగతా భాగాన్ని ordinary law ద్వారా నింపమని Parliament కు వదిలేస్తుంది. <b class="hlg">Articles 81, 170</b>, Lok Sabha, ఒక రాష్ట్ర Legislative Assembly లో గరిష్టంగా ఎన్ని seats ఉండాలో, ఆ seats ను రాష్ట్రాల మధ్య, ఒక రాష్ట్రం లోపల ఎలా పంచాలో broad principles నిర్దేశిస్తాయి — కానీ ఈ రెండు Articles ఆ allocation ను స్వయంగా చేయవు. <b class="hlg">Article 171</b> కూడా ఇదే పని ఒక రాష్ట్ర <b class="hlb">Legislative Council</b> కోసం చేస్తుంది — గరిష్ట, కనీస సైజు నిర్ణయిస్తుంది, Council seats ఏ ఏ channels ద్వారా నింపాలో పేర్కొంటుంది — కానీ ప్రతి channel కి ఎన్ని seats అనేది ఖచ్చితంగా చెప్పదు. ఈ మూడు Articles కూడా "ఎవరు నిర్ణయించాలి, ఏ మేర" అనే స్థాయిలో ఆగిపోతాయి కాబట్టి, Parliament రెండుసార్లు ordinary legislation తో రంగంలోకి దిగింది — మొదట <b class="imp">1950</b>లో, తర్వాత మరింత సమగ్రంగా <b class="imp">1951</b>లో — ఈ రెండు చట్టాలే ఈరోజు కూడా భారతీయులు ఎలా ఓటు వేస్తారు, అభ్యర్థులు ఎలా పోటీ చేస్తారు అనే ప్రతి practical అంశాన్ని శాసిస్తున్నాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Constitutional Basis</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which Articles cap Lok Sabha/Assembly seats &amp; allocation principles?</td><td>Articles 81 and 170</td></tr>
+      <tr><td>Which Article fixes the size/composition of a Legislative Council?</td><td>Article 171</td></tr>
+      <tr><td>Do these Articles fix exact seat numbers themselves?</td><td>No — they leave that to be provided by ordinary law</td></tr>
+      <tr><td>Which two statutes filled this gap, and in which years?</td><td>RPA 1950 and RPA 1951</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Representation of the People Act, 1950 — Building the Electoral Map and the Voter List</div>
+  <p class="eng">The <b class="term">RPA 1950</b> came first, and its job is best understood as building the <b>electoral map and the voter list</b> — it does not itself run an election. It fixes how seats are to be allocated across the <b>House of the People</b> and across the <b>Legislative Assemblies and Legislative Councils</b> of the states. It also hands the <b class="hlp">President</b> the power to <b class="term">delimit</b> constituencies — that is, to draw and redraw constituency boundaries for both parliamentary and state-legislature elections — though this power can only be exercised <b>after consulting the Election Commission</b>. Beyond the map, the Act governs the <b>voter side</b> of the process: it lays down how <b>electoral rolls</b> are to be prepared for parliamentary, Assembly and Council constituencies, and it fixes the <b>qualifications and disqualifications</b> a person must meet simply to be <b>registered as an elector</b> — a completely different question from whether someone qualifies to stand as a candidate, which is left entirely to the 1951 Act.</p>
+  <div class="te"><b class="term">RPA 1950</b> మొదట వచ్చింది, దీని పనిని <b>electoral map, voter list</b> నిర్మించడంగా అర్థం చేసుకోవడం సరైనది — ఇది స్వయంగా ఎన్నిక నిర్వహించదు. <b>House of the People</b>, రాష్ట్రాల <b>Legislative Assemblies, Legislative Councils</b> లో seats ను ఎలా allocate చేయాలో ఇది నిర్దేశిస్తుంది. దీనితోపాటు, <b class="hlp">President</b> కు <b class="term">delimit</b> చేసే అధికారం ఇస్తుంది — అంటే, parliamentary, state-legislature ఎన్నికల కోసం constituency boundaries గీయడం, తిరిగి గీయడం — అయితే ఈ అధికారాన్ని <b>Election Commission తో సంప్రదించిన తర్వాతే</b> వాడాలి. map తో పాటు, ఈ చట్టం <b>voter</b> వైపు ప్రక్రియను కూడా శాసిస్తుంది — parliamentary, Assembly, Council constituencies కోసం <b>electoral rolls</b> ఎలా తయారు చేయాలో నిర్దేశిస్తుంది, ఒక వ్యక్తి కేవలం <b>voter గా register</b> కావాలంటే ఏ qualifications, disqualifications ఉండాలో కూడా నిర్ణయిస్తుంది — ఇది, ఎవరైనా అభ్యర్థిగా నిలబడగలరా అనే ప్రశ్నకు పూర్తిగా భిన్నమైనది, అది పూర్తిగా 1951 చట్టానికే వదిలేయబడింది.</div>
+
+  <table>
+    <caption>RPA 1950 — Other Provisions</caption>
+    <thead><tr><th style="width:34%">Provision</th><th>What it covers</th></tr></thead>
+    <tbody>
+      <tr><td>Election officers</td><td>Chief electoral officer, district election officer, electoral registration officer, etc.</td></tr>
+      <tr><td>Rajya Sabha — Union Territory seats</td><td>Manner of filling Council of States seats reserved for UT representatives</td></tr>
+      <tr><td>Local authorities</td><td>Identifies local bodies relevant for Legislative Council elections</td></tr>
+      <tr><td>Civil courts</td><td>Bars civil courts from entertaining matters covered by the Act</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — RPA 1950</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who delimits constituencies, and after consulting whom?</td><td>The President, after consulting the Election Commission</td></tr>
+      <tr><td>Does RPA 1950 decide who can register as a voter, or who can stand as a candidate?</td><td>Only who can register as a voter (electoral rolls)</td></tr>
+      <tr><td>Give one "other provision" RPA 1950 also makes.</td><td>Appointment of election officers (CEO/DEO/ERO) — or: bars civil courts</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Representation of the People Act, 1951 — Scope · The RPA 1950 vs RPA 1951 Distinction</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">Representation of the People Act, 1951 — Picking Up Where the 1950 Act Stopped</div>
+  <p class="eng">The <b class="term">RPA 1951</b> exists precisely because the 1950 Act deliberately stopped short of running an actual election — it had only handled seat allocation, delimitation, voter qualification and the electoral roll. Everything else was left to this later, more detailed measure: how Parliament and each state Legislature's House(s) <b>actually run their elections</b>, the <b>qualifications and disqualifications for membership</b> of those Houses (i.e., for a candidate, not a voter), what counts as a <b>corrupt practice or other election offence</b>, and how <b>election disputes get resolved</b>. Read together, the two Acts divide the whole electoral process cleanly in two: RPA 1950 sets up the <b>map and the electorate</b>; RPA 1951 runs the <b>contest itself</b> and polices it afterward.</p>
+  <div class="te"><b class="term">RPA 1951</b> ఎందుకు అవసరమైందంటే, 1950 చట్టం ఉద్దేశపూర్వకంగా అసలైన ఎన్నిక నిర్వహణ వరకు వెళ్లలేదు — అది కేవలం seat allocation, delimitation, voter qualification, electoral roll వరకే ఆగిపోయింది. మిగతావన్నీ — Parliament కు, రాష్ట్ర Legislature House లేదా Houses కు <b>actual conduct of elections</b>, ఈ Houses <b>membership</b> కోసం (అంటే ఓటరు కాదు, అభ్యర్థి కోసం) <b>qualifications, disqualifications</b>, <b>corrupt practices, ఇతర election offences</b>, <b>election disputes పరిష్కారం</b> — ఇవన్నీ తర్వాత వచ్చిన ఈ మరింత వివరమైన చట్టానికి వదిలేశారు. రెండు చట్టాలను కలిపి చూస్తే, మొత్తం ఎన్నికల ప్రక్రియను ఇవి రెండు స్పష్టమైన భాగాలుగా విభజిస్తాయి — RPA 1950, <b>map, electorate</b> ను ఏర్పాటు చేస్తుంది; RPA 1951, <b>పోటీనే</b> నిర్వహించి, తర్వాత దానిని పోలీసింగ్ చేస్తుంది.</div>
+
+  <table>
+    <caption>RPA 1950 vs RPA 1951 — the exam-critical distinction</caption>
+    <thead><tr><th style="width:30%">Point of comparison</th><th style="width:35%">RPA 1950</th><th>RPA 1951</th></tr></thead>
+    <tbody>
+      <tr><td>Core focus</td><td>Seats, map, voter roll</td><td>Candidate, contest, dispute</td></tr>
+      <tr><td>Seat allocation among states/Houses</td><td class="hlg">Yes</td><td>—</td></tr>
+      <tr><td>Delimitation of constituencies</td><td class="hlg">Yes (President, after EC consultation)</td><td>—</td></tr>
+      <tr><td>Electoral rolls / who may register as voter</td><td class="hlg">Yes</td><td>—</td></tr>
+      <tr><td>Qualifications/disqualifications — for whom</td><td>For registration as an elector</td><td class="hlg">For membership (candidature)</td></tr>
+      <tr><td>Conduct of elections (nomination, polling, counting…)</td><td>—</td><td class="hlg">Yes</td></tr>
+      <tr><td>Registration of political parties</td><td>—</td><td class="hlg">Yes</td></tr>
+      <tr><td>Corrupt practices &amp; election offences</td><td>—</td><td class="hlg">Yes</td></tr>
+      <tr><td>Election disputes / petitions</td><td>—</td><td class="hlg">Yes</td></tr>
+      <tr><td>Bars jurisdiction of civil courts</td><td class="hlg">Yes</td><td class="hlg">Yes</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — RPA 1950 vs RPA 1951</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which Act deals with delimitation and the electoral roll?</td><td>RPA 1950</td></tr>
+      <tr><td>Which Act deals with the actual conduct of elections and corrupt practices?</td><td>RPA 1951</td></tr>
+      <tr><td>Qualification for "elector" vs qualification for "member" — which Act, which?</td><td>Elector qualification — RPA 1950; Member qualification — RPA 1951</td></tr>
+      <tr><td>Which single feature is common to both Acts?</td><td>Both bar the jurisdiction of civil courts</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">RPA 1951 — The Twelve Broad Heads of Subject-Matter</div>
+  <p class="eng">RPA 1951 does not read as one continuous narrative — it is organised around twelve broad electoral subjects, and knowing this list is often enough to answer a "which Act covers X" question outright.</p>
+  <div class="te">RPA 1951 ఒకే కథలా సాగదు — పన్నెండు broad electoral subjects చుట్టూ ఇది నిర్మించబడింది, "ఏ చట్టం X ను కవర్ చేస్తుంది" అనే ప్రశ్నకు తరచుగా ఈ జాబితా తెలిస్తే సమాధానం ఇవ్వొచ్చు.</div>
+
+  <table>
+    <caption>RPA 1951 — subject-matter, at a glance</caption>
+    <thead><tr><th class="n">#</th><th style="width:38%">Subject-matter</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Qualifications &amp; disqualifications for membership of Parliament/State Legislatures</td><td>Candidate side, not voter side</td></tr>
+      <tr><td class="n">2</td><td>Notification of general elections</td><td>Formal start of the election cycle</td></tr>
+      <tr><td class="n">3</td><td>Administrative machinery for conduct of elections</td><td>Officers/bodies who run polling</td></tr>
+      <tr><td class="n">4</td><td>Registration of political parties</td><td>With the Election Commission</td></tr>
+      <tr><td class="n">5</td><td>Conduct of elections</td><td>Nine sub-matters — see next page</td></tr>
+      <tr><td class="n">6</td><td>Free supply of material to candidates of recognised parties</td><td>e.g., electoral roll copies etc.</td></tr>
+      <tr><td class="n">7</td><td>Disputes regarding elections</td><td>Five sub-matters — see later page</td></tr>
+      <tr><td class="n">8</td><td>Corrupt practices &amp; electoral offences</td><td>Grounds that can void an election/disqualify</td></tr>
+      <tr><td class="n">9</td><td>EC's powers on inquiries into disqualification of members</td><td>Post-election disqualification process</td></tr>
+      <tr><td class="n">10</td><td>Bye-elections &amp; time limit for filling vacancies</td><td>Casual vacancy rules</td></tr>
+      <tr><td class="n">11</td><td>Miscellaneous provisions relating to elections</td><td>Residuary matters</td></tr>
+      <tr><td class="n">12</td><td>Barring the jurisdiction of civil courts</td><td>Same principle as in RPA 1950</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — RPA 1951's Twelve Heads</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which head deals with registering political parties?</td><td>Head 4 — Registration of political parties</td></tr>
+      <tr><td>Which head covers casual-vacancy rules?</td><td>Head 10 — Bye-elections &amp; time limit for filling vacancies</td></tr>
+      <tr><td>Which head is broken into further sub-matters on this page and the next?</td><td>Heads 5 (conduct of elections) and 7 (disputes)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">RPA 1951 — Conduct of Elections in Detail</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Conduct of Elections — the Nine Stages RPA 1951 Regulates</div>
+  <p class="eng">Head 5 of RPA 1951 — <b>"conduct of elections"</b> — is really a bundle of nine distinct stages that together carry a candidate from nomination all the way to the declared result, and this is the part of the Act with the most day-to-day operational detail.</p>
+  <div class="te">RPA 1951 లోని Head 5 — <b>"conduct of elections"</b> — వాస్తవానికి ఒక అభ్యర్థిని nomination నుండి declared result వరకు తీసుకెళ్లే తొమ్మిది వేర్వేరు దశల సమాహారం, చట్టంలో అత్యంత day-to-day operational detail ఉన్న భాగం ఇదే.</div>
+
+  <table>
+    <caption>Conduct of elections — the nine stages</caption>
+    <thead><tr><th class="n">#</th><th style="width:32%">Stage</th><th>What it broadly involves</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Nomination of candidates</td><td>Filing/scrutiny/withdrawal of nomination papers</td></tr>
+      <tr><td class="n">2</td><td>Candidates and their agents</td><td>Election agents and polling agents who assist a candidate</td></tr>
+      <tr><td class="n">3</td><td>General procedure at elections</td><td>Overall rules of process governing the election</td></tr>
+      <tr><td class="n">4</td><td>The poll</td><td>Voting day arrangements at the polling booth</td></tr>
+      <tr><td class="n">5</td><td>Counting of votes</td><td>Tabulation of votes cast, after the poll closes</td></tr>
+      <tr><td class="n">6</td><td>Multiple elections</td><td>Rules for a person contesting more than one seat at once</td></tr>
+      <tr><td class="n">7</td><td>Publication of results &amp; nominations</td><td>Official declaration/gazette notification of outcomes</td></tr>
+      <tr><td class="n">8</td><td>Declaration of assets &amp; liabilities</td><td>Candidate's financial disclosure requirement</td></tr>
+      <tr><td class="n">9</td><td>Election expenses</td><td>Ceiling on and accounting of a candidate's poll spending</td></tr>
+    </tbody>
+  </table>
+
+  <p class="eng" style="margin-top:10px">Two connected points are worth flagging. <b>First</b>, if a candidate wins from more than one constituency under stage 6 ("multiple elections"), the law requires the winner to vacate all but one seat — this is why bye-elections often follow soon after a general election result. <b>Second</b>, election-expense ceilings under stage 9 are notified separately by the Election Commission for each type of election and are revised periodically, so the exact rupee figure changes over time even though the underlying legal requirement to stay within a ceiling does not.</p>
+  <div class="te">రెండు అనుసంధాన అంశాలు గుర్తుంచుకోవాలి. <b>మొదటిది</b> — stage 6 ("multiple elections") కింద ఒక అభ్యర్థి ఒకటి కంటే ఎక్కువ constituencies నుండి గెలిస్తే, గెలిచిన వ్యక్తి ఒకటి తప్ప మిగతా అన్ని సీట్లను ఖాళీ చేయాలని చట్టం నిర్దేశిస్తుంది — general election ఫలితం తర్వాత తరచుగా bye-elections రావడానికి ఇదే కారణం. <b>రెండోది</b> — stage 9 కింద election-expense ceiling ను ప్రతి రకమైన ఎన్నికకు Election Commission విడిగా notify చేస్తుంది, కాలానుగుణంగా దీన్ని సవరిస్తారు కూడా — కాబట్టి ఖచ్చితమైన రూపాయల మొత్తం కాలంతో మారుతుంది, అయితే ఒక ceiling లోపే ఉండాలనే underlying legal అవసరం మాత్రం మారదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Conduct of Elections</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which stage covers filing and scrutiny of nomination papers?</td><td>Stage 1 — Nomination of candidates</td></tr>
+      <tr><td>What must a candidate who wins two seats simultaneously do?</td><td>Vacate all but one of the seats won</td></tr>
+      <tr><td>Which stage covers a candidate's financial disclosure?</td><td>Stage 8 — Declaration of assets and liabilities</td></tr>
+      <tr><td>Who notifies the election-expense ceiling, and does it stay fixed?</td><td>The Election Commission — revised periodically, not fixed forever</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Qualifications &amp; Disqualifications for Membership · Corrupt Practices (Section 123)</div>
+
+<div class="para">
+  <div class="ptitle rd" style="margin-top:0">Qualifications for Membership — Who May Even Stand as a Candidate</div>
+  <p class="eng">Before RPA 1951 can disqualify anyone, it first defines who is minimally qualified to enter the contest at all. A candidate must be an <b>Indian citizen</b>, must be <b>registered as an elector</b> for a parliamentary or Assembly/Council constituency as the case may be, and must make and subscribe an <b>oath or affirmation</b> in the form the Constitution prescribes, before a person authorised by the Election Commission. On top of this, the Constitution itself fixes a minimum age, and RPA 1951 works within that floor: <b class="imp">25 years</b> for the Lok Sabha and a state Legislative Assembly, and <b class="imp">30 years</b> for the Rajya Sabha and a state Legislative Council. None of this touches whether the person is fit to hold office in some deeper moral sense — that question belongs to the disqualification provisions that follow.</p>
+  <div class="te">RPA 1951 ఎవరినైనా disqualify చేయడానికి ముందు, పోటీలో దిగడానికి కనీసం అర్హత ఎవరికి ఉందో ముందుగా నిర్వచిస్తుంది. ఒక అభ్యర్థి <b>భారత పౌరుడు</b> అయి ఉండాలి, ఆయా parliamentary లేదా Assembly/Council constituency కు <b>ఎలెక్టర్ గా register</b> అయి ఉండాలి, Constitution నిర్దేశించిన రూపంలో, Election Commission authorize చేసిన వ్యక్తి ముందు <b>oath లేదా affirmation</b> చేయాలి. దీనితోపాటు, Constitution స్వయంగా ఒక కనీస వయసు నిర్దేశిస్తుంది, RPA 1951 ఆ కనీస పరిమితి లోపలే పనిచేస్తుంది — Lok Sabha, రాష్ట్ర Legislative Assembly కు <b class="imp">25 సంవత్సరాలు</b>, Rajya Sabha, రాష్ట్ర Legislative Council కు <b class="imp">30 సంవత్సరాలు</b>. ఇది ఆ వ్యక్తి ఏదైనా లోతైన నైతిక అర్థంలో పదవికి తగినవాడా అనే దానిని తాకదు — ఆ ప్రశ్న తర్వాత వచ్చే disqualification provisions పరిధిలోకి వస్తుంది.</div>
+
+  <table>
+    <caption>Minimum age for membership</caption>
+    <thead><tr><th style="width:50%">House</th><th>Minimum age</th></tr></thead>
+    <tbody>
+      <tr><td>Lok Sabha / State Legislative Assembly</td><td class="imp">25 years</td></tr>
+      <tr><td>Rajya Sabha / State Legislative Council</td><td class="imp">30 years</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Disqualifications for Membership — RPA 1951, Sections 8 to 11</div>
+  <p class="eng">Article 102 (Parliament) and Article 191 (state legislatures) already disqualify a person for things like holding an office of profit, being of unsound mind, being an undischarged insolvent, or not being an Indian citizen — but both Articles also open the door for Parliament to add further grounds "by law," and RPA 1951 is exactly that law. It supplies several additional, more specific disqualifying grounds.</p>
+  <div class="te">Article 102 (Parliament), Article 191 (రాష్ట్ర శాసనసభలు) ఇప్పటికే office of profit కలిగి ఉండటం, మతిస్థిమితం సరిగా లేకపోవడం, undischarged insolvent కావడం, భారత పౌరుడు కాకపోవడం లాంటి కారణాలతో ఒక వ్యక్తిని disqualify చేస్తాయి — కానీ ఈ రెండు Articles, Parliament "చట్టం ద్వారా" మరిన్ని కారణాలు చేర్చడానికి కూడా వీలు కల్పిస్తాయి, RPA 1951 సరిగ్గా అలాంటి చట్టమే. ఇది ఇంకా కొన్ని అదనపు, మరింత నిర్దిష్టమైన disqualifying కారణాలు అందిస్తుంది.</div>
+
+  <table>
+    <caption>RPA 1951 — additional disqualification grounds</caption>
+    <thead><tr><th style="width:16%">Section</th><th>Ground</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">Sec. 8</td><td>Conviction for specified offences carrying a prescribed term of imprisonment</td></tr>
+      <tr><td class="hlg">Sec. 8A</td><td>Disqualification on the ground of corrupt practices</td></tr>
+      <tr><td class="hlg">Sec. 9</td><td>Dismissal from government service for corruption or disloyalty</td></tr>
+      <tr><td class="hlg">Sec. 9A</td><td>Holding a subsisting government contract for goods or services</td></tr>
+      <tr><td class="hlg">Sec. 10</td><td>Holding office as director/managing agent of a government company</td></tr>
+      <tr><td class="hlg">Sec. 10A</td><td>Failure to lodge an account of election expenses as required</td></tr>
+      <tr><td class="hlg">Sec. 11</td><td>Election Commission's power to remove or reduce a disqualification period</td></tr>
+    </tbody>
+  </table>
+  <p class="eng" style="margin-top:6px">Note that Section 11 cuts the other way — it does not add a disqualification, it lets the <b class="hlp">Election Commission</b> shorten or lift one that already applies, which is why the Commission is sometimes seen granting relief in individual disqualification cases.</p>
+  <div class="te">గమనించండి, Section 11 దీనికి వ్యతిరేక దిశలో పనిచేస్తుంది — ఇది కొత్త disqualification జోడించదు, ఇప్పటికే వర్తించే దానిని <b class="hlp">Election Commission</b> తగ్గించడానికి లేదా తొలగించడానికి వీలు కల్పిస్తుంది — అందుకే వ్యక్తిగత disqualification కేసుల్లో Commission కొన్నిసార్లు relief ఇవ్వడం కనిపిస్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Qualifications &amp; Disqualifications</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Minimum age for Rajya Sabha/Legislative Council membership?</td><td>30 years</td></tr>
+      <tr><td>Which section disqualifies on conviction for specified offences?</td><td>Section 8</td></tr>
+      <tr><td>Which section lets the EC reduce/remove a disqualification?</td><td>Section 11</td></tr>
+      <tr><td>Which Articles carry the base constitutional disqualifications RPA 1951 adds to?</td><td>Article 102 (Parliament) and Article 191 (state legislatures)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Corrupt Practices — Section 123 of RPA 1951</div>
+  <p class="eng">RPA 1951 defines a closed list of acts as <b class="term">corrupt practices</b> — proof of any one of these against a winning candidate (or their agent, with the candidate's consent) is itself a ground on which an election petition can void the result.</p>
+  <div class="te">RPA 1951, <b class="term">corrupt practices</b> గా ఒక నిర్దిష్ట జాబితాను నిర్వచిస్తుంది — గెలిచిన అభ్యర్థిపై (లేదా, అభ్యర్థి అంగీకారంతో వారి agent పై) ఈ జాబితాలోని ఏదైనా ఒక చర్య రుజువైతే, అదే ఫలితాన్ని రద్దు చేయగల ఒక election petition ground అవుతుంది.</div>
+
+  <ul>
+    <li><b>Bribery</b> and <b>undue influence</b> over an elector's choice
+      <div class="note" style="font-size:13px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:5px 9px;margin-top:4px">Bribery, undue influence — ఓటరు ఎంపికను ప్రభావితం చేసే చర్యలు</div></li>
+    <li>An appeal to vote (or not to vote) on grounds of <b>religion, race, caste, community or language</b>, or the use of religious symbols for this purpose
+      <div class="note" style="font-size:13px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:5px 9px;margin-top:4px">మతం, జాతి, కులం, community, భాష ఆధారంగా ఓటు అభ్యర్థన లేదా మతపరమైన చిహ్నాల వాడకం</div></li>
+    <li>Promoting <b>enmity or hatred</b> between different classes of citizens in connection with the election
+      <div class="note" style="font-size:13px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:5px 9px;margin-top:4px">ఎన్నికల సందర్భంగా వేర్వేరు citizens వర్గాల మధ్య enmity, hatred పెంచడం</div></li>
+    <li>Publishing a <b>false statement</b> about a candidate's personal character or conduct to hurt their election prospects
+      <div class="note" style="font-size:13px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:5px 9px;margin-top:4px">అభ్యర్థి వ్యక్తిగత character/conduct గురించి తప్పుడు statement ప్రచురించడం</div></li>
+    <li>Hiring or procuring vehicles beyond what is permitted, to convey electors to or from a polling station
+      <div class="note" style="font-size:13px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:5px 9px;margin-top:4px">అనుమతించిన దానికి మించి, ఓటర్లను polling station కు తీసుకెళ్లడానికి vehicles hire చేయడం</div></li>
+    <li>Incurring or authorising <b>election expenditure beyond the prescribed ceiling</b>
+      <div class="note" style="font-size:13px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:5px 9px;margin-top:4px">నిర్దేశిత ceiling దాటి election expenditure చేయడం లేదా అనుమతించడం</div></li>
+    <li>Seeking assistance for the election from <b>government servants</b> in their official capacity
+      <div class="note" style="font-size:13px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:5px 9px;margin-top:4px">government servants నుండి వారి అధికారిక హోదాలో ఎన్నికల కోసం సహాయం కోరడం</div></li>
+    <li><b>Booth capturing</b>
+      <div class="note" style="font-size:13px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:5px 9px;margin-top:4px">Booth capturing</div></li>
+  </ul>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Corrupt Practices</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which section of RPA 1951 defines corrupt practices?</td><td>Section 123</td></tr>
+      <tr><td>Name two corrupt practices tied to religion/community/language.</td><td>Appeal to vote on those grounds; promoting enmity/hatred between classes</td></tr>
+      <tr><td>Does exceeding the election-expense ceiling count as a corrupt practice?</td><td>Yes</td></tr>
+      <tr><td>Effect of a proved corrupt practice on the winning candidate?</td><td>Can void the election via an election petition</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Election Disputes / Petitions · Election Offences</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Disputes Regarding Elections — the Five Sub-Matters, and How a Petition Runs</div>
+  <p class="eng">Head 7 of RPA 1951 — disputes regarding elections — likewise breaks into five connected sub-matters: <b>(1)</b> presentation of an election petition to the <b class="hlp">High Court</b>; <b>(2)</b> trial of that petition; <b>(3)</b> withdrawal and abatement of a petition already filed; <b>(4)</b> appeal to the <b class="hlp">Supreme Court</b> against the High Court's decision; and <b>(5)</b> costs and security for costs in such proceedings. The overall shape of the process is worth holding onto: an aggrieved candidate or elector cannot approach an ordinary civil court — RPA 1951 (echoing RPA 1950's own civil-court bar) channels every election dispute exclusively through an election petition filed in the High Court, tried there by a single judge, with only one further appeal available, and that appeal goes straight to the Supreme Court rather than through any intermediate forum. A petition can succeed on grounds such as improper acceptance or rejection of a nomination, a proved corrupt practice by the returned candidate or their agent, improper acceptance of votes, or a material non-compliance with the Constitution, the Act, or the election rules — and where it succeeds, the result is either a fresh election or the seating of a different, validly-elected candidate in place of the one originally declared.</p>
+  <div class="te">RPA 1951 లోని Head 7 — election disputes — కూడా ఐదు అనుసంధాన sub-matters గా విడిపోతుంది — <b>(1)</b> election petition ను <b class="hlp">High Court</b> కు సమర్పించడం; <b>(2)</b> ఆ petition trial; <b>(3)</b> ఇప్పటికే దాఖలు చేసిన petition ను withdraw చేయడం, abatement; <b>(4)</b> High Court నిర్ణయంపై <b class="hlp">Supreme Court</b> కు appeal; <b>(5)</b> ఇలాంటి proceedings లో costs, costs కోసం security. ఈ ప్రక్రియ మొత్తం రూపాన్ని గుర్తుంచుకోవాలి — బాధిత అభ్యర్థి లేదా ఓటరు ఒక సాధారణ civil court వద్దకు వెళ్లలేరు — RPA 1951 (RPA 1950 తనదైన civil-court bar ను ప్రతిధ్వనిస్తూ) ప్రతి election dispute నే High Court లో దాఖలు చేసే election petition ద్వారానే మార్గం చూపిస్తుంది, అక్కడ ఒక్క judge దీన్ని trial చేస్తారు, ఒకే ఒక్క further appeal అందుబాటులో ఉంటుంది — ఆ appeal నేరుగా Supreme Court కు వెళుతుంది, మధ్యలో మరో forum ఉండదు. improper గా ఒక nomination ను accept లేదా reject చేయడం, గెలిచిన అభ్యర్థి లేదా వారి agent చేసిన రుజువైన corrupt practice, ఓట్ల improper acceptance, లేదా Constitution/Act/election rules కు గణనీయమైన non-compliance — వీటి ఆధారంగా petition విజయవంతం కావచ్చు — విజయవంతమైతే, ఫలితం కొత్త ఎన్నిక లేదా, ప్రకటించిన అభ్యర్థి స్థానంలో వేరే చెల్లుబాటు అయిన అభ్యర్థిని కూర్చోబెట్టడం అవుతుంది.</div>
+
+  <table>
+    <caption>Election petitions — process at a glance</caption>
+    <thead><tr><th style="width:36%">Stage</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td>Presented to</td><td>The High Court (never an ordinary civil court)</td></tr>
+      <tr><td>Tried by</td><td>A judge of the High Court</td></tr>
+      <tr><td>Withdrawal/abatement</td><td>Governed separately — e.g., abates on the petitioner's death</td></tr>
+      <tr><td>Appeal against High Court's order</td><td>Lies only to the Supreme Court</td></tr>
+      <tr><td>Costs</td><td>Court may award costs, including security for costs</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Election Disputes</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Where must an election petition first be filed?</td><td>The High Court</td></tr>
+      <tr><td>Where does the only further appeal go?</td><td>The Supreme Court</td></tr>
+      <tr><td>Name one ground on which an election can be declared void.</td><td>Improper acceptance/rejection of nomination (or: proved corrupt practice, improper vote acceptance, material non-compliance)</td></tr>
+      <tr><td>Can a civil court hear an election dispute instead?</td><td>No — jurisdiction of civil courts is barred</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Election Offences — Distinct from Corrupt Practices</div>
+  <p class="eng">RPA 1951 also separately lists a set of <b class="term">election offences</b> — these are ordinary criminal wrongs connected with an election (for example, impersonating another elector at the poll, or breaching the secrecy of the ballot) rather than the specific, election-voiding "corrupt practices" of Section 123. An offence attracts criminal punishment through the ordinary courts; a corrupt practice, by contrast, is what an election petition relies on to have the result itself set aside. The two categories can overlap in practice — the same underlying misconduct sometimes qualifies as both — but they serve different legal purposes and are examined through different proceedings.</p>
+  <div class="te">RPA 1951, <b class="term">election offences</b> అనే విడి జాబితా కూడా ఇస్తుంది — ఇవి ఎన్నికతో ముడిపడిన సాధారణ criminal wrongs (ఉదాహరణకు, పోలింగ్ లో వేరొక ఓటరు వలె నటించడం, లేదా ballot secrecy ను ఉల్లంఘించడం), Section 123 లోని నిర్దిష్టమైన, ఎన్నికను రద్దు చేయగల "corrupt practices" కు ఇవి వేరు. ఒక offence కు సాధారణ courts ద్వారా criminal punishment పడుతుంది; అదే సమయంలో, ఒక corrupt practice రుజువైతే, దాన్ని ఆధారంగా చేసుకుని election petition ఫలితాన్నే రద్దు చేయవచ్చు. ఆచరణలో ఈ రెండు categories అతివ్యాప్తి చెందవచ్చు — ఒకే దుష్ప్రవర్తన కొన్నిసార్లు రెండింటిలోనూ ఇమిడిపోవచ్చు — కానీ ఇవి వేర్వేరు legal purposes కు ఉపయోగపడతాయి, వేర్వేరు proceedings ద్వారా పరిశీలించబడతాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Election Offences vs Corrupt Practices</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Give one example of an election offence.</td><td>Impersonating another elector at the poll (or: breach of ballot secrecy)</td></tr>
+      <tr><td>What does a proved "corrupt practice" primarily affect?</td><td>It can void the election result via an election petition</td></tr>
+      <tr><td>What does a proved "election offence" primarily attract?</td><td>Ordinary criminal punishment, through the regular courts</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Delimitation Act, 2002 · Other Acts Relating to Elections</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Delimitation Act, 2002 — Redrawing the Map on the 2001 Census</div>
+  <p class="eng"><b class="hlg">Articles 82 and 170</b> call for every state to be carved afresh into <b>Parliamentary and Assembly constituencies</b> once each census is out, using whatever method Parliament fixes by law; <b class="hlg">Articles 330 and 332</b> similarly call for the SC/ST reserved-seat count in the Lok Sabha and state Assemblies to be worked out afresh against that same census. The delimitation actually in force for a long stretch, however, rested on the <b class="imp">1971 census</b> — because population had since grown very unevenly across constituencies (and migration, especially from rural to urban areas, had widened the gap further), constituency sizes had drifted far apart even within a single state. The <b class="term">Delimitation Act, 2002</b> responded by setting up a <b>Delimitation Commission</b> to redraw constituencies on the basis of the <b class="hlg">2001 census</b> and correct this distortion; three earlier Delimitation Acts — enacted in 1952, 1962 and 1972 — had likewise followed the 1951, 1961 and 1971 censuses respectively.</p>
+  <div class="te"><b class="hlg">Articles 82, 170</b>, ప్రతి రాష్ట్రాన్ని తాజా census ఆధారంగా <b>Parliamentary, Assembly constituencies</b> గా, Parliament చట్టం ద్వారా నిర్ణయించే విధానంలో మళ్లీ విభజించాలని నిర్దేశిస్తాయి; <b class="hlg">Articles 330, 332</b> కూడా <b class="hlb">Scheduled Castes, Scheduled Tribes</b> కు reserved seats సంఖ్యను అదే census ఆధారంగా re-fix చేయాలని నిర్దేశిస్తాయి. అయితే, చాలాకాలం అమల్లో ఉన్న delimitation <b class="imp">1971 census</b> ఆధారంగానే ఉంది — ఈ మధ్యకాలంలో constituencies మధ్య population అసమానంగా పెరగడం (ముఖ్యంగా rural నుండి urban కు migration ఈ అంతరాన్ని మరింత పెంచడం) వల్ల, ఒకే రాష్ట్రంలోనే constituency సైజులు చాలా దూరమైపోయాయి. <b class="term">Delimitation Act, 2002</b>, <b class="hlg">2001 census</b> ఆధారంగా constituencies ను మళ్లీ గీయడానికి, ఈ వక్రీకరణను సరిదిద్దడానికి ఒక <b>Delimitation Commission</b> ను ఏర్పాటు చేసింది; ఇంతకుముందు మూడు Delimitation Acts — 1952, 1962, 1972లలో enact అయ్యాయి — వరుసగా 1951, 1961, 1971 census ల తర్వాత ఇదే పని చేశాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Delimitation Act, 2002</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which Articles require redivision into constituencies?</td><td>Articles 82 and 170</td></tr>
+      <tr><td>Which Articles require re-fixing SC/ST reserved seats?</td><td>Articles 330 and 332</td></tr>
+      <tr><td>Which census did the delimitation replaced by the 2002 Act rest on?</td><td>1971 census</td></tr>
+      <tr><td>Which census does the Delimitation Act, 2002 use?</td><td>2001 census</td></tr>
+      <tr><td>Name the three earlier Delimitation Acts.</td><td>1952, 1962 and 1972</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Other Acts Relating to Elections</div>
+  <p class="eng">A handful of further statutes round out India's election-law framework, each handling one narrow but important slice of the subject.</p>
+  <div class="te">భారత ఎన్నికల చట్ట framework ను పూర్తి చేసే మరికొన్ని చట్టాలు ఉన్నాయి, ప్రతి ఒక్కటి ఒక ఇరుకైన కానీ ముఖ్యమైన అంశాన్ని నిర్వహిస్తుంది.</div>
+
+  <table>
+    <caption>Other Acts relating to elections</caption>
+    <thead><tr><th style="width:38%">Act</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td>Parliament (Prevention of Disqualification) Act, <b class="hlg">1959</b></td><td>Declares that holding certain offices of profit under government does not disqualify a person from Parliament membership</td></tr>
+      <tr><td>SC &amp; ST Orders (Amendment) Act, <b class="hlg">1976</b></td><td>Adjusts the lists of Scheduled Castes/Scheduled Tribes, feeding into readjustment of constituency representation</td></tr>
+      <tr><td>Government of Union Territories Act, <b class="hlg">1963</b></td><td>Governs UT legislature-related matters, including elections</td></tr>
+      <tr><td>Government of NCT of Delhi Act, <b class="hlg">1991</b></td><td>Governs Delhi's legislature-related matters, including elections</td></tr>
+      <tr><td>Presidential and Vice-Presidential Elections Act, <b class="hlg">1952</b></td><td>Regulates matters connected with electing the President and Vice-President</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Other Election-related Acts</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which Act protects certain office-of-profit holders from disqualification?</td><td>Parliament (Prevention of Disqualification) Act, 1959</td></tr>
+      <tr><td>Which Act governs Presidential/Vice-Presidential elections?</td><td>Presidential and Vice-Presidential Elections Act, 1952</td></tr>
+      <tr><td>Which Act deals with SC/ST list changes affecting constituency representation?</td><td>SC and ST Orders (Amendment) Act, 1976</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Rules &amp; Orders Relating to Elections · Chapter 82 at a Glance</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Rules Relating to Elections</div>
+  <p class="eng">Below the level of an Act, a set of <b class="term">Rules</b> works out the day-to-day operational detail — how rolls are actually prepared, how a poll is actually conducted, and so on.</p>
+  <div class="te">Act స్థాయి కంటే కింద, <b class="term">Rules</b> అనే ఒక సెట్ day-to-day operational detail ను — rolls ఎలా తయారు చేయాలి, poll ఎలా నిర్వహించాలి వంటివి — నిర్ణయిస్తుంది.</div>
+
+  <table>
+    <caption>Rules relating to elections</caption>
+    <thead><tr><th style="width:52%">Rules</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Registration of Electors Rules, <b class="hlg">1960</b></td><td>Preparation &amp; publication of electoral rolls</td></tr>
+      <tr><td>Conduct of Elections Rules, <b class="hlg">1961</b></td><td>Facilitates free &amp; fair conduct of Parliament/State Legislature elections</td></tr>
+      <tr><td>Prohibition of Simultaneous Membership Rules, <b class="hlg">1950</b></td><td>Bars simultaneous membership situations as prescribed</td></tr>
+      <tr><td>Members of Lok Sabha (Disqualification on Ground of Defection) Rules, <b class="hlg">1985</b></td><td>Procedural rules for anti-defection disqualification in the Lok Sabha</td></tr>
+      <tr><td>Members of Rajya Sabha (Disqualification on Ground of Defection) Rules, <b class="hlg">1985</b></td><td>Same, for the Rajya Sabha</td></tr>
+      <tr><td>Presidential and Vice-Presidential Elections Rules, <b class="hlg">1974</b></td><td>Replaced the earlier 1952 Rules on the same subject</td></tr>
+      <tr><td>Members of Lok Sabha (Declaration of Assets and Liabilities) Rules, <b class="hlg">2004</b></td><td>Financial-disclosure procedure for Lok Sabha members</td></tr>
+      <tr><td>Members of Rajya Sabha (Declaration of Assets and Liabilities) Rules, <b class="hlg">2004</b></td><td>Same, for Rajya Sabha members</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Rules Relating to Elections</caption>
+    <thead><tr><th class="gn2" style="width:40%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which Rules govern preparation of electoral rolls?</td><td>Registration of Electors Rules, 1960</td></tr>
+      <tr><td>Which year's Rules govern the actual conduct of elections?</td><td>1961 — Conduct of Elections Rules</td></tr>
+      <tr><td>Which Rules replaced the 1952 Presidential/VP Elections Rules?</td><td>The 1974 Presidential and Vice-Presidential Elections Rules</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Orders Relating to Elections</div>
+  <ul>
+    <li>Election Symbols (Reservation and Allotment) Order, <b class="hlg">1968</b> — governs specification, reservation, choice and allotment of election symbols, and recognition of political parties in that connection
+      <div class="note" style="font-size:13px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:5px 9px;margin-top:4px">1968 Order — election symbols reservation, allotment, ఈ సందర్భంగా political parties గుర్తింపు</div></li>
+    <li>Registration of Political Parties (Furnishing of Additional Particulars) Order, <b class="hlg">1992</b> — requires an association seeking registration as a political party to furnish additional particulars to the Election Commission
+      <div class="note" style="font-size:13px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:5px 9px;margin-top:4px">1992 Order — political party గా register కావాలనుకునే association, Election Commission కి additional particulars ఇవ్వాలి</div></li>
+  </ul>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Chapter 82 — Facts at a Glance</div>
+  <table>
+    <caption>Election Laws — key facts, one table</caption>
+    <thead><tr><th style="width:40%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Constitutional basis for seat allocation</td><td>Articles 81, 170 (Parliament/Assembly); Article 171 (Legislative Council)</td></tr>
+      <tr><td>RPA 1950 — core subject-matter</td><td>Seat allocation, delimitation (via President, after EC consultation), electoral rolls, elector qualification</td></tr>
+      <tr><td>RPA 1951 — core subject-matter</td><td>Conduct of elections, candidate qualification/disqualification, corrupt practices, election disputes</td></tr>
+      <tr><td>Common feature of both Acts</td><td>Bar jurisdiction of civil courts</td></tr>
+      <tr><td>Minimum candidate age</td><td>25 (Lok Sabha/Assembly); 30 (Rajya Sabha/Council)</td></tr>
+      <tr><td>Key disqualification sections (RPA 1951)</td><td>Sections 8, 8A, 9, 9A, 10, 10A, 11</td></tr>
+      <tr><td>Corrupt practices section</td><td>Section 123, RPA 1951</td></tr>
+      <tr><td>Election petitions — filed where, appeal to whom</td><td>High Court; appeal only to Supreme Court</td></tr>
+      <tr><td>Delimitation Act, 2002 — census basis</td><td>2001 census (replacing the 1971-census-based delimitation)</td></tr>
+      <tr><td>Earlier Delimitation Acts</td><td>1952, 1962, 1972</td></tr>
+      <tr><td>Presidential/VP elections governed by</td><td>Presidential and Vice-Presidential Elections Act, 1952</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Supreme Court on Special Intensive Revision (SIR) of Electoral Rolls <span class="caasof">(as of 25.08.2026, verified via live web search on this date — re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>Supreme Court upholds the Election Commission's power to conduct a Special Intensive Revision of electoral rolls:</b> On <b class="hlg">27 May 2026</b>, the Supreme Court decided <b class="term">Association for Democratic Reforms &amp; Ors. vs Election Commission of India &amp; Ors.</b> (reported as <b class="hlg">2026 INSC 564</b>), arising from petitions challenging the Election Commission's <b class="hlb">Special Intensive Revision (SIR)</b> exercise on electoral rolls in Bihar. The Court upheld the Commission's constitutional authority to carry out such an intensive revision of the electoral rolls. Since preparation and revision of electoral rolls is exactly the subject-matter that <b class="imp">RPA 1950</b> and the <b class="imp">Registration of Electors Rules, 1960</b> govern, this ruling is a live, directly on-topic addition to this chapter's core RPA 1950 material — it confirms the Commission's power to conduct such a roll-revision drive under the existing legal framework, rather than changing the framework itself.</p>
+    <div class="te"><b>Special Intensive Revision (SIR) పై Supreme Court తీర్పు — EC అధికారం సమర్థన:</b> <b class="hlg">2026 మే 27</b>న, Supreme Court, Bihar లో Election Commission నిర్వహించిన <b class="hlb">Special Intensive Revision (SIR)</b> ను సవాలు చేస్తూ దాఖలైన petitions పై <b class="term">Association for Democratic Reforms &amp; Ors. vs Election Commission of India &amp; Ors.</b> (<b class="hlg">2026 INSC 564</b>) కేసులో తీర్పు ఇచ్చింది. ఇలాంటి intensive electoral-roll revision నిర్వహించే constitutional అధికారం Commission కు ఉందని Court సమర్థించింది. electoral rolls తయారీ, revision అనేది సరిగ్గా <b class="imp">RPA 1950</b>, <b class="imp">Registration of Electors Rules, 1960</b> కవర్ చేసే subject-matter కాబట్టి, ఈ తీర్పు ఈ chapter లోని RPA 1950 core content కు నేరుగా సంబంధించిన ఒక live అంశం — ఇది framework నే మార్చకుండా, ఇలాంటి roll-revision drive నిర్వహించే Commission అధికారాన్ని ప్రస్తుత చట్ట ఫ్రేమ్‌వర్క్ కిందే ధృవీకరిస్తుంది.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — recent electoral-roll current affairs</caption>
+      <thead><tr><th style="width:22%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">27 May 2026</td><td>Supreme Court (2026 INSC 564) upholds EC's power to conduct Special Intensive Revision of electoral rolls, in the Bihar SIR litigation</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: keep the RPA 1950/RPA 1951 distinction and the Rajendra-type qualification/disqualification/corrupt-practice sections from RPA 1951 as the stable core. Treat this SIR ruling as a live illustration of how the electoral-roll machinery set up by RPA 1950 continues to be tested and interpreted today — worth re-checking near your exam date since litigation on the SIR process may continue to develop.</p>
+    <div class="te">Exam కోసం — RPA 1950/RPA 1951 distinction, RPA 1951 లోని qualification/disqualification/corrupt-practice sections ను స్థిరమైన core గా ఉంచుకోండి. ఈ SIR తీర్పును, RPA 1950 ఏర్పాటు చేసిన electoral-roll machinery ఈరోజు కూడా ఎలా పరీక్షకు, వ్యాఖ్యానానికి గురవుతుందో చూపే ఒక live ఉదాహరణగా చూడండి — SIR ప్రక్రియపై litigation మరింత అభివృద్ధి చెందే అవకాశం ఉంది కాబట్టి, మీ exam తేదీకి దగ్గరగా దీన్ని మళ్లీ చెక్ చేసుకోవడం మంచిది.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 82 — Election Laws · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.83 — Electoral Reforms</span><span class="dpart">Part X &middot; Book 1 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

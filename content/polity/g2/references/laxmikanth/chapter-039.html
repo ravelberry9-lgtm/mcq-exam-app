@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part V — Complete Study Notes</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 39 — Panchayati Raj</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Part V (Local Government) — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle">Meaning &amp; Constitutional Basis</div>
+  <p class="eng">The term <b class="term">Panchayati Raj</b> denotes the system of <b>rural local self-government</b> in India — bodies established at the village, intermediate and district levels to bring democracy and development down to the grassroot level. Although Panchayati Raj institutions existed in various forms across states well before 1992, it was only <b class="imp">constitutionalised</b> through the <b class="hlg">73rd Constitutional Amendment Act, 1992</b>. In the Centre-state division of subjects, "local government" is placed in the <b>State List</b> as <b class="hlg">Entry 5</b> of the Seventh Schedule — so, structurally, Panchayati Raj is a state subject, and each state has established its own panchayats through its own state legislature's Acts, even though the 1992 amendment now lays down a common constitutional framework binding all of them.</p>
+  <div class="te"><b class="term">Panchayati Raj</b> అంటే India లో గ్రామీణ <b>local self-government</b> వ్యవస్థ — గ్రామం, intermediate, district స్థాయిల్లో ఏర్పాటైన బాడీలు — గ్రామస్థాయి వరకు democracy, development తీసుకెళ్ళడానికి ఉద్దేశించినవి. 1992కి ముందు కూడా వివిధ రాష్ట్రాల్లో రకరకాల రూపాల్లో Panchayati Raj సంస్థలు ఉన్నా, వీటిని <b class="imp">constitutionalise</b> చేసింది మాత్రం <b class="hlg">73వ రాజ్యాంగ సవరణ చట్టం, 1992</b>. Centre-state అధికారాల విభజనలో, "local government" అనేది <b>State List</b> లో <b class="hlg">Entry 5</b> గా ఉంటుంది — కాబట్టి నిర్మాణాత్మకంగా Panchayati Raj రాష్ట్ర subject — ప్రతి రాష్ట్రం తన సొంత శాసనసభ చట్టాల ద్వారానే పంచాయతీలను ఏర్పాటు చేసుకుంది, అయితే 1992 సవరణ ఇప్పుడు అందరికీ వర్తించే ఒక ఉమ్మడి రాజ్యాంగ చట్రాన్ని ఏర్పాటు చేసింది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Balwant Rai Mehta Committee (1957) — the Origin of Panchayati Raj</div>
+  <p class="eng">In <b class="hlg">January 1957</b>, the Government of India appointed a committee, chaired by <b class="hlp">Balwant Rai Mehta</b>, to examine how the <b>Community Development Programme (1952)</b> and the <b>National Extension Service (1953)</b> were functioning and to suggest improvements. The committee submitted its report in <b class="hlg">November 1957</b>, recommending a scheme of <b class="term">democratic decentralisation</b> — which eventually came to be known as Panchayati Raj. Its key recommendations were: (1) establish a <b class="imp">three-tier</b> system — <b>gram panchayat</b> at village level, <b>panchayat samiti</b> at block level, and <b>zila parishad</b> at district level — organically linked through indirect elections; (2) the gram panchayat alone should have <b>directly elected</b> members, while the samiti and parishad should be constituted <b>indirectly</b>; (3) all planning and development work should be entrusted to these bodies; (4) the panchayat samiti should be the <b>executive</b> body, while the zila parishad should play an <b>advisory, coordinating and supervisory</b> role; (5) the <b>district collector</b> should chair the zila parishad; (6) there should be a genuine transfer of power and responsibility; (7) adequate resources should be transferred to let these bodies actually function; and (8) a mechanism should exist to devolve further authority over time.</p>
+  <div class="te"><b class="hlg">1957 జనవరి</b>లో, <b>Community Development Programme (1952)</b>, <b>National Extension Service (1953)</b> ఎలా పనిచేస్తున్నాయో పరిశీలించి మెరుగుదలలు సూచించడానికి, భారత ప్రభుత్వం <b class="hlp">Balwant Rai Mehta</b> చైర్మన్ గా ఒక committee నియమించింది. Committee <b class="hlg">1957 నవంబర్</b>లో తన report సమర్పించి, <b class="term">democratic decentralisation</b> పథకాన్ని సిఫారసు చేసింది — ఇదే తర్వాత Panchayati Raj గా పేరు పొందింది. కీలక సిఫారసులు — (1) <b class="imp">మూడు tier</b> వ్యవస్థ — గ్రామస్థాయిలో <b>gram panchayat</b>, block స్థాయిలో <b>panchayat samiti</b>, district స్థాయిలో <b>zila parishad</b> — వీటిని indirect elections ద్వారా organically అనుసంధానించాలి; (2) gram panchayat సభ్యులు మాత్రమే <b>directly elected</b>, samiti, parishad సభ్యులు <b>indirect</b> గా ఎన్నికవ్వాలి; (3) ప్రణాళిక, development పనులన్నీ ఈ బాడీలకే అప్పగించాలి; (4) panchayat samiti <b>executive</b> బాడీగా, zila parishad <b>advisory, coordinating, supervisory</b> బాడీగా ఉండాలి; (5) <b>district collector</b> zila parishad కు chairman గా ఉండాలి; (6) ఈ democratic బాడీలకు నిజమైన అధికార, బాధ్యతల బదిలీ జరగాలి; (7) ఈ బాడీలకు తమ విధులు నిర్వర్తించడానికి తగిన వనరులు బదిలీ చేయాలి; (8) భవిష్యత్తులో మరింత devolution జరిగేలా ఒక వ్యవస్థను రూపొందించాలి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Meaning &amp; Balwant Rai Mehta Committee</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which Amendment constitutionalised Panchayati Raj?</td><td>73rd Constitutional Amendment Act, 1992</td></tr>
+      <tr><td>"Local government" appears where in the Constitution?</td><td>Entry 5, State List, Seventh Schedule</td></tr>
+      <tr><td>Who chaired the 1957 committee and what did it examine?</td><td>Balwant Rai Mehta — working of Community Development Programme &amp; National Extension Service</td></tr>
+      <tr><td>Scheme recommended by the committee?</td><td>"Democratic decentralisation" — became known as Panchayati Raj</td></tr>
+      <tr><td>Three-tier structure proposed?</td><td>Gram panchayat (village) — panchayat samiti (block) — zila parishad (district)</td></tr>
+      <tr><td>Who should chair the zila parishad, per this committee?</td><td>The district collector</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">State-Level Adoption &amp; Variation, 1958-60s · Study Teams and Committees</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Acceptance by the NDC &amp; State-wise Variation</div>
+  <p class="eng">The <b class="hlp">National Development Council</b> accepted the Balwant Rai Mehta Committee's recommendations in <b class="hlg">January 1958</b>, but deliberately declined to prescribe a single rigid pattern — states were left free to design their own systems suited to local conditions, subject only to the basic principles being identical across the country. <b class="hlp">Rajasthan</b> became the first state to establish Panchayati Raj, inaugurated by the Prime Minister on <b class="hlg">2 October 1959</b> in Nagaur district; <b class="hlp">Andhra Pradesh</b> followed later the same year. By the mid-1960s most states had set up Panchayati Raj institutions, but with real structural differences — Rajasthan and Tamil Nadu illustrate the extremes, with Rajasthan adopting the three-tier model while Tamil Nadu adopted a <b class="imp">two-tier</b> system, and West Bengal went further still with a <b class="imp">four-tier</b> system. There were also differences in where real power sat: in the Rajasthan-Andhra Pradesh pattern the <b>panchayat samiti</b> (block-level) was the powerful unit since the block was the planning unit, whereas in the Maharashtra-Gujarat pattern the <b>zila parishad</b> (district-level) was powerful since the district was the planning unit. Some states additionally created <b class="hlb">nyaya panchayats</b> — judicial panchayats for petty civil and criminal cases.</p>
+  <div class="te"><b class="hlp">National Development Council</b>, Balwant Rai Mehta Committee సిఫారసులను <b class="hlg">1958 జనవరి</b>లో ఆమోదించింది, కానీ ఉద్దేశపూర్వకంగా ఒకే rigid pattern నిర్దేశించలేదు — దేశమంతటా basic principles ఒకేలా ఉంటే చాలు, స్థానిక పరిస్థితులకు తగినట్టుగా సొంత వ్యవస్థలను రూపొందించుకునే స్వేచ్ఛ రాష్ట్రాలకు ఇచ్చింది. <b class="hlp">Rajasthan</b> మొదటి రాష్ట్రంగా Panchayati Raj ఏర్పాటు చేసింది — <b class="hlg">1959 అక్టోబర్ 2</b>న Nagaur district లో ప్రధాని దీన్ని ప్రారంభించారు; అదే సంవత్సరం తర్వాత <b class="hlp">Andhra Pradesh</b> కూడా అనుసరించింది. 1960ల మధ్యలోగా చాలా రాష్ట్రాలు Panchayati Raj సంస్థలు ఏర్పాటు చేసుకున్నా, నిర్మాణంలో నిజమైన తేడాలు ఉన్నాయి — Rajasthan మూడు-tier వ్యవస్థను, Tamil Nadu <b class="imp">రెండు-tier</b> వ్యవస్థను స్వీకరించాయి, West Bengal మరింత ముందుకెళ్ళి <b class="imp">నాలుగు-tier</b> వ్యవస్థను స్వీకరించింది. నిజమైన అధికారం ఎక్కడ ఉందనే విషయంలోనూ తేడాలు ఉన్నాయి — Rajasthan-Andhra Pradesh pattern లో block ప్రణాళిక యూనిట్ కావడంతో <b>panchayat samiti</b> శక్తివంతమైనది, Maharashtra-Gujarat pattern లో district ప్రణాళిక యూనిట్ కావడంతో <b>zila parishad</b> శక్తివంతమైనది. కొన్ని రాష్ట్రాలు చిన్న civil, criminal కేసుల కోసం <b class="hlb">nyaya panchayats</b> అనే judicial పంచాయతీలను కూడా ఏర్పాటు చేశాయి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Study Teams and Committees since 1960 (Table 39.1)</div>
+  <p class="eng">Between <b class="hlg">1960</b> and <b class="hlg">1976</b>, many study teams, committees and working groups examined different aspects of Panchayati Raj's functioning — a whole cluster of them, well before the more famous Ashok Mehta Committee. These are worth memorising by year and chairman for objective-type questions, rather than by content, since most simply examined narrow administrative aspects (statistics, cooperatives, finances, elections, training, audit).</p>
+  <div class="te"><b class="hlg">1960</b> నుండి <b class="hlg">1976</b> మధ్య, Panchayati Raj వివిధ కోణాలను పరిశీలించడానికి అనేక study teams, committees, working groups ఏర్పాటయ్యాయి — మరింత ప్రసిద్ధి పొందిన Ashok Mehta Committee కంటే ముందే ఇవన్నీ వచ్చాయి. ఇవి content కంటే సంవత్సరం, chairman పేరు ఆధారంగా గుర్తుంచుకోవడం objective-type ప్రశ్నలకు ఉపయోగపడుతుంది — ఎందుకంటే చాలావరకు ఇవి కేవలం ఇరుకైన administrative అంశాలనే (statistics, cooperatives, finances, elections, training, audit) పరిశీలించాయి.</div>
+
+  <table>
+    <caption>Table 39.1 — Study Teams &amp; Committees on Panchayati Raj (1960-76)</caption>
+    <thead><tr><th class="n" style="width:6%">#</th><th style="width:12%">Year</th><th style="width:52%">Study Team / Committee</th><th>Chairman</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td class="hlg">1960</td><td>Committee on Rationalisation of Panchayat Statistics</td><td>V.R. Rao</td></tr>
+      <tr><td class="n">2</td><td class="hlg">1961</td><td>Working Group on Panchayats and Cooperatives</td><td>S.D. Mishra</td></tr>
+      <tr><td class="n">3</td><td class="hlg">1961</td><td>Study Team on Panchayati Raj Administration</td><td>V. Iswaran</td></tr>
+      <tr><td class="n">4</td><td class="hlg">1962</td><td>Study Team on Nyaya Panchayats</td><td>G.R. Rajgopal</td></tr>
+      <tr><td class="n">5</td><td class="hlg">1963</td><td>Study Team on Position of Gram Sabha in Panchayati Raj Movement</td><td>R.R. Diwakar</td></tr>
+      <tr><td class="n">6</td><td class="hlg">1963</td><td>Study Group on Budgeting &amp; Accounting Procedure of PRIs</td><td>M. Rama Krishnayya</td></tr>
+      <tr><td class="n">7</td><td class="hlg">1963</td><td>Study Team on Panchayati Raj Finances</td><td>K. Santhanam</td></tr>
+      <tr><td class="n">8</td><td class="hlg">1965</td><td>Committee on Panchayati Raj Elections</td><td>K. Santhanam</td></tr>
+      <tr><td class="n">9</td><td class="hlg">1965</td><td>Study Team on Audit &amp; Accounts of Panchayati Raj Bodies</td><td>R.K. Khanna</td></tr>
+      <tr><td class="n">10</td><td class="hlg">1966</td><td>Committee on Panchayati Raj Training Centres</td><td>G. Ramachandran</td></tr>
+      <tr><td class="n">11</td><td class="hlg">1969</td><td>Study Team on Involvement of CD Agency &amp; PRIs in Land Reform Implementation</td><td>V. Ramanathan</td></tr>
+      <tr><td class="n">12</td><td class="hlg">1972</td><td>Working Group for 5th Plan on Community Development &amp; Panchayati Raj</td><td>N. Ramakrishnayya</td></tr>
+      <tr><td class="n">13</td><td class="hlg">1976</td><td>Committee on Community Development &amp; Panchayati Raj</td><td>Smt. Daya Choubey</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — State Adoption &amp; Early Committees</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which body accepted the BRM recommendations, and when?</td><td>National Development Council, January 1958</td></tr>
+      <tr><td>First state to establish Panchayati Raj, and date?</td><td>Rajasthan — 2 October 1959, Nagaur district</td></tr>
+      <tr><td>Second state to adopt it?</td><td>Andhra Pradesh, 1959</td></tr>
+      <tr><td>Which state adopted a 2-tier system? A 4-tier system?</td><td>Tamil Nadu (2-tier); West Bengal (4-tier)</td></tr>
+      <tr><td>Where was panchayat samiti powerful vs zila parishad powerful?</td><td>Rajasthan-AP pattern (samiti powerful); Maharashtra-Gujarat pattern (parishad powerful)</td></tr>
+      <tr><td>What are nyaya panchayats?</td><td>Judicial panchayats set up by some states for petty civil/criminal cases</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Ashok Mehta Committee (1977-78)</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Ashok Mehta Committee — Reviving a Declining System</div>
+  <p class="eng">In <b class="hlg">December 1977</b>, the Janata Government appointed a committee on panchayati raj institutions chaired by <b class="hlp">Ashok Mehta</b>. It reported in <b class="hlg">August 1978</b> with as many as <b class="hlg">132</b> recommendations aimed at reviving and strengthening a system that had, by then, visibly declined. Its central proposal was structural — replace the three-tier system with a <b class="imp">two-tier</b> system: the <b>zila parishad</b> at district level, and below it, a <b>mandal panchayat</b> covering a group of villages with a combined population of roughly <b class="hlg">15,000-20,000</b>. It argued the district should be the first real point of decentralisation below the state level, with the zila parishad as the district's executive and planning body. Other significant recommendations: official participation of political parties in panchayat elections; compulsory powers of taxation for panchayats to mobilise their own resources; regular social audit — by a district-level agency and a committee of legislators — to verify that funds meant for vulnerable groups actually reach them; a bar on state governments superseding panchayati raj bodies except in genuinely compelling situations, with fresh elections mandatory within six months of any such supersession; nyaya panchayats kept separate from development panchayats and headed by a qualified judge; panchayat elections to be organised by the state's chief electoral officer in consultation with the Election Commission; development staff to work under the zila parishad's control; a dedicated state minister for panchayati raj; reservation of seats for SCs and STs in proportion to their population; and — most importantly for the chapter's later history — a recommendation that panchayati raj bodies be given <b class="imp">constitutional recognition</b>, to secure their status and continuous functioning.</p>
+  <div class="te"><b class="hlg">1977 డిసెంబర్</b>లో, Janata ప్రభుత్వం <b class="hlp">Ashok Mehta</b> చైర్మన్ గా panchayati raj సంస్థలపై ఒక committee నియమించింది. అది <b class="hlg">1978 ఆగస్టు</b>లో ఏకంగా <b class="hlg">132</b> సిఫారసులతో report ఇచ్చింది — అప్పటికే స్పష్టంగా క్షీణించిన వ్యవస్థను పునరుద్ధరించి బలోపేతం చేయడమే లక్ష్యం. దీని ప్రధాన ప్రతిపాదన నిర్మాణపరమైనది — మూడు-tier వ్యవస్థ స్థానంలో <b class="imp">రెండు-tier</b> వ్యవస్థ — district స్థాయిలో <b>zila parishad</b>, దాని కింద దాదాపు <b class="hlg">15,000-20,000</b> జనాభా గల గ్రామాల సమూహాన్ని కవర్ చేసే <b>mandal panchayat</b>. రాష్ట్ర స్థాయి కింద decentralisation కు district నే మొదటి నిజమైన పాయింట్ కావాలని, zila parishad district కు executive, planning బాడీగా ఉండాలని వాదించింది. ఇతర ముఖ్యమైన సిఫారసులు — panchayat ఎన్నికల్లో రాజకీయ పార్టీల అధికారిక భాగస్వామ్యం; పంచాయతీలు తమ సొంత వనరులు సమీకరించుకోవడానికి తప్పనిసరి taxation అధికారాలు; vulnerable groups కు కేటాయించిన నిధులు నిజంగా వారికే చేరుతున్నాయో లేదో సరిచూసేందుకు — district-level agency, legislators committee ద్వారా — regular social audit; నిజంగా అనివార్యమైన పరిస్థితుల్లో తప్ప రాష్ట్ర ప్రభుత్వాలు panchayati raj బాడీలను supersede చేయకూడదని, అలా చేస్తే 6 నెలల్లో తప్పనిసరిగా తిరిగి ఎన్నికలు జరపాలని; nyaya panchayats ను development panchayats నుండి వేరుగా ఉంచి, qualified judge చేత నడిపించాలని; panchayat ఎన్నికలను రాష్ట్ర chief electoral officer, Election Commission తో సంప్రదించి నిర్వహించాలని; development staff అంతా zila parishad నియంత్రణలో పనిచేయాలని; panchayati raj కోసం ప్రత్యేక రాష్ట్ర మంత్రి ఉండాలని; SC/ST లకు వారి జనాభా నిష్పత్తిలో సీట్ల reservation ఉండాలని; అన్నింటికన్నా ఈ chapter తర్వాతి చరిత్రకు ముఖ్యమైనది — panchayati raj బాడీలకు <b class="imp">రాజ్యాంగ గుర్తింపు</b> ఇవ్వాలని — వాటి status, నిరంతర పనితీరుకు రక్షణ కల్పించేందుకు.</div>
+  <p class="eng">Because the Janata Government collapsed before its term ended, no action was taken on these recommendations at the Central level — but three states, <b class="hlp">Karnataka</b>, <b class="hlp">West Bengal</b> and <b class="hlp">Andhra Pradesh</b>, moved on their own to revitalise Panchayati Raj drawing on some of the committee's ideas.</p>
+  <div class="te">Janata ప్రభుత్వం తన పదవీకాలం పూర్తయ్యే ముందే కూలిపోవడంతో, Central స్థాయిలో ఈ సిఫారసులపై ఎలాంటి చర్యా తీసుకోలేదు — కానీ <b class="hlp">Karnataka</b>, <b class="hlp">West Bengal</b>, <b class="hlp">Andhra Pradesh</b> అనే మూడు రాష్ట్రాలు committee ఆలోచనల్లో కొన్నింటిని ఆధారంగా చేసుకుని, తమంతట తామే Panchayati Raj ను పునరుజ్జీవింపజేయడానికి ముందుకొచ్చాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Ashok Mehta Committee</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Appointed by whom, when?</td><td>Janata Government, December 1977</td></tr>
+      <tr><td>Report submitted, and number of recommendations?</td><td>August 1978, 132 recommendations</td></tr>
+      <tr><td>Tier structure proposed?</td><td>Two-tier — zila parishad (district) + mandal panchayat (15,000-20,000 population)</td></tr>
+      <tr><td>Most consequential long-term recommendation?</td><td>Constitutional recognition for panchayati raj bodies</td></tr>
+      <tr><td>Why were no Central-level steps taken?</td><td>Janata Government fell before completing its term</td></tr>
+      <tr><td>Which states acted on some recommendations anyway?</td><td>Karnataka, West Bengal, Andhra Pradesh</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">G.V.K. Rao Committee (1985) · Dantwala &amp; Hanumantha Rao Committees</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">G.V.K. Rao Committee — "Grass Without Roots"</div>
+  <p class="eng">The Planning Commission appointed a committee in <b class="hlg">1985</b>, chaired by <b class="hlp">G.V.K. Rao</b>, to review the administrative arrangements for rural development and poverty-alleviation programmes. Its diagnosis was memorable: the development process had become steadily <b>bureaucratised</b> and cut off from Panchayati Raj, and this bureaucratisation — as against democratisation — had weakened PRIs into what the committee vividly called <b class="imp">"grass without roots."</b> Its recommendations followed from this diagnosis: the zila parishad should be of <b>pivotal importance</b> in decentralised development, since the district is the natural unit for planning; PRIs at district level and below should be assigned a real role in planning, implementation and monitoring of rural development programmes; some state-level planning functions should be transferred to district-level planning units; a new post of <b>District Development Commissioner</b> should be created to act as the zila parishad's chief executive officer and head of all district development departments; and elections to PRIs should be held regularly — the committee had found elections overdue in one or more tiers across <b class="hlg">11</b> states. In assigning this leading role to Panchayati Raj in local planning and development, the G.V.K. Rao Committee's approach differed sharply from two other bodies studying decentralised planning around the same time.</p>
+  <div class="te">Planning Commission <b class="hlg">1985</b>లో <b class="hlp">G.V.K. Rao</b> చైర్మన్ గా rural development, poverty-alleviation programmes కు సంబంధించిన administrative arrangements సమీక్షించడానికి ఒక committee నియమించింది. దీని నిర్ధారణ గుర్తుంచుకోదగినది — development ప్రక్రియ క్రమంగా <b>bureaucratise</b> అయిపోయి, Panchayati Raj నుండి విడిపోయిందని, democratisation కు బదులు bureaucratisation జరగడం వల్ల PRIs బలహీనపడి committee దీన్ని <b class="imp">"grass without roots"</b> (వేర్లు లేని గడ్డి) అని వర్ణించింది. దీని సిఫారసులు ఈ నిర్ధారణ ఆధారంగానే వచ్చాయి — district ప్రణాళికకు సహజ యూనిట్ కావడంతో decentralised development లో <b>zila parishad</b> కు కీలక ప్రాముఖ్యత ఉండాలని; district, దాని కింది స్థాయి PRIs కు rural development programmes ప్రణాళిక, అమలు, monitoring లో నిజమైన పాత్ర ఇవ్వాలని; రాష్ట్ర స్థాయి ప్రణాళిక విధుల్లో కొన్నింటిని district-level planning units కు బదిలీ చేయాలని; zila parishad కు chief executive officer గా, district development departments అన్నింటికీ అధిపతిగా వ్యవహరించే <b>District Development Commissioner</b> అనే కొత్త పోస్ట్ సృష్టించాలని; PRIs కు ఎన్నికలు క్రమం తప్పకుండా జరపాలని — <b class="hlg">11</b> రాష్ట్రాల్లో ఒకటి లేదా అంతకంటే ఎక్కువ tiers లో ఎన్నికలు overdue అయినట్టు committee గుర్తించింది. Local planning, development లో Panchayati Raj కు ఈ ప్రధాన పాత్రను ఇవ్వడంలో, అదే సమయంలో decentralised planning పరిశీలిస్తున్న మరో రెండు బాడీల విధానానికి G.V.K. Rao Committee విధానం చాలా భిన్నంగా ఉంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Dantwala &amp; Hanumantha Rao Committees — a Contrasting View on District Planning</div>
+  <p class="eng">The <b class="hlp">Dantwala Committee Report on Block-Level Planning (1978)</b> and the <b class="hlp">Hanumantha Rao Committee Report on District Planning (1984)</b> both agreed that basic decentralised planning should happen at the district level — but, unlike G.V.K. Rao, the Hanumantha Rao Committee favoured separate district planning bodies functioning under either the <b>District Collector</b> or a minister, with the Collector playing a significant coordinating role in both models (even while conceding that PRIs would also be associated with the process). In other words, where Balwant Rai Mehta, the First Administrative Reforms Commission, Ashok Mehta and G.V.K. Rao all pushed to <b class="imp">reduce</b> the District Collector's developmental role in favour of PRIs, the Hanumantha Rao Committee went the other way, recommending the Collector as the coordinator of all developmental and planning activity at district level.</p>
+  <div class="te"><b class="hlp">Dantwala Committee Report on Block-Level Planning (1978)</b>, <b class="hlp">Hanumantha Rao Committee Report on District Planning (1984)</b> రెండూ — basic decentralised planning district స్థాయిలోనే జరగాలని ఏకీభవించాయి — కానీ G.V.K. Rao కు భిన్నంగా, Hanumantha Rao Committee <b>District Collector</b> లేదా ఒక మంత్రి కింద పనిచేసే వేర్వేరు district planning బాడీలను సమర్థించింది — రెండు models లోనూ Collector కీలక coordinating పాత్ర పోషించాలని (PRIs కూడా ఈ ప్రక్రియతో అనుసంధానమవుతాయని అంగీకరించినా). అంటే, Balwant Rai Mehta, First Administrative Reforms Commission, Ashok Mehta, G.V.K. Rao అందరూ District Collector developmental పాత్రను <b class="imp">తగ్గించి</b> PRIs కు ప్రాధాన్యత ఇవ్వాలని కోరితే, Hanumantha Rao Committee మాత్రం వేరే దిశలో వెళ్లి, district స్థాయిలో developmental, planning కార్యకలాపాలన్నింటికీ Collector నే coordinator గా ఉండాలని సిఫారసు చేసింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — G.V.K. Rao, Dantwala &amp; Hanumantha Rao Committees</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who appointed the G.V.K. Rao Committee, and when?</td><td>Planning Commission, 1985</td></tr>
+      <tr><td>Famous phrase used by the G.V.K. Rao Committee?</td><td>"Grass without roots"</td></tr>
+      <tr><td>New post recommended by G.V.K. Rao Committee?</td><td>District Development Commissioner</td></tr>
+      <tr><td>Who favoured a strong Collector-led district planning body instead?</td><td>Hanumantha Rao Committee (1984)</td></tr>
+      <tr><td>Which committees wanted to reduce the Collector's developmental role?</td><td>Balwant Rai Mehta, 1st ARC, Ashok Mehta, G.V.K. Rao Committees</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">L.M. Singhvi, Thungon &amp; Gadgil Committees — Building the Case for a Constitutional Amendment</div>
+
+<div class="para">
+  <div class="ptitle">L.M. Singhvi Committee (1986)</div>
+  <p class="eng">In <b class="hlg">1986</b>, the Rajiv Gandhi government appointed a committee chaired by <b class="hlp">L.M. Singhvi</b> to prepare a concept paper on revitalising Panchayati Raj institutions for democracy and development. It recommended that PRIs be <b class="imp">constitutionally recognised, protected and preserved</b> — through a new chapter in the Constitution — to make their identity substantially inviolate, along with constitutional provisions guaranteeing regular, free and fair elections; that nyaya panchayats be established for a cluster of villages; that villages be reorganised to make gram panchayats more viable, with the committee specifically praising the <b>Gram Sabha</b> as the "embodiment of direct democracy"; that village panchayats be given more financial resources; and that judicial tribunals be set up in each state to adjudicate disputes about panchayat elections, dissolution and other functioning matters.</p>
+  <div class="te"><b class="hlg">1986</b>లో, Rajiv Gandhi ప్రభుత్వం <b class="hlp">L.M. Singhvi</b> చైర్మన్ గా Panchayati Raj సంస్థలను democracy, development కోసం పునరుజ్జీవింపజేయడంపై ఒక concept paper తయారు చేయడానికి committee నియమించింది. ఇది PRIs కు — రాజ్యాంగంలో ఒక కొత్త chapter ద్వారా — <b class="imp">రాజ్యాంగ గుర్తింపు, రక్షణ</b> ఇవ్వాలని, వాటి identity ను గణనీయంగా inviolate చేయాలని, క్రమం తప్పని, free, fair ఎన్నికలకు రాజ్యాంగ హామీ ఇవ్వాలని సిఫారసు చేసింది; గ్రామాల సమూహానికి nyaya panchayats ఏర్పాటు చేయాలని; gram panchayats మరింత viable గా ఉండేలా గ్రామాలను పునర్వ్యవస్థీకరించాలని — ఇందులో committee <b>Gram Sabha</b> ను ప్రత్యేకంగా ప్రశంసిస్తూ "direct democracy కు embodiment" అని పేర్కొంది; village panchayats కు మరిన్ని ఆర్థిక వనరులు ఇవ్వాలని; panchayat ఎన్నికలు, dissolution, ఇతర పనితీరు వివాదాలను పరిష్కరించడానికి ప్రతి రాష్ట్రంలో judicial tribunals ఏర్పాటు చేయాలని సిఫారసు చేసింది.</div>
+</div>
+
+<div class="para">
+  <div class="ptitle rd">Thungon Committee (1988)</div>
+  <p class="eng">In <b class="hlg">1988</b>, a sub-committee of Parliament's Consultative Committee, chaired by <b class="hlp">P.K. Thungon</b>, examined the political and administrative structure at the district level for district planning purposes and recommended strengthening Panchayati Raj — constitutional recognition for PRIs; a <b class="imp">three-tier</b> system (village, block, district); the zila parishad as the pivot, acting as the district's planning and development agency; a fixed <b>five-year</b> tenure with supersession capped at six months; a state-level planning and co-ordination committee chaired by the minister for planning, with zila parishad presidents as members; a detailed list of Panchayati Raj subjects incorporated into the Constitution; reservation of seats across all three tiers based on population, plus reservation for women; a <b>State Finance Commission</b> in each state to set the criteria for devolution of finances; and the district collector as the zila parishad's chief executive officer.</p>
+  <div class="te"><b class="hlg">1988</b>లో, Parliament యొక్క Consultative Committee లోని ఒక sub-committee — <b class="hlp">P.K. Thungon</b> చైర్మన్ గా — district planning ప్రయోజనం కోసం district స్థాయి రాజకీయ, administrative నిర్మాణాన్ని పరిశీలించి Panchayati Raj ను బలోపేతం చేయాలని సిఫారసు చేసింది — PRIs కు రాజ్యాంగ గుర్తింపు; <b class="imp">మూడు-tier</b> వ్యవస్థ (village, block, district); zila parishad పివోట్ గా, district ప్రణాళిక, development ఏజెన్సీగా వ్యవహరించాలని; <b>ఐదు సంవత్సరాల</b> స్థిర పదవీకాలం, supersession ను 6 నెలలకు పరిమితం చేయాలని; planning మంత్రి అధ్యక్షతన రాష్ట్ర స్థాయి planning and co-ordination committee, zila parishad presidents సభ్యులుగా ఉండాలని; Panchayati Raj subjects వివరణాత్మక జాబితాను రాజ్యాంగంలో చేర్చాలని; మూడు tiers లోనూ జనాభా ఆధారంగా reservation, మహిళలకు reservation ఉండాలని; devolution of finances కు ప్రమాణాలు నిర్దేశించేందుకు ప్రతి రాష్ట్రంలో <b>State Finance Commission</b> ఉండాలని; district collector zila parishad కు chief executive officer గా ఉండాలని.</div>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Gadgil Committee (1988) — the Direct Basis for the Amendment Bill</div>
+  <p class="eng">Also in <b class="hlg">1988</b>, the Congress party's Committee on Policy and Programmes, chaired by <b class="hlp">V.N. Gadgil</b>, examined how PRIs could be made effective and recommended: constitutional status for PRIs; a three-tier system (village, block, district); a fixed five-year term; direct election of members at all three levels; reservation for SCs, STs and women; a constitutionally specified list of subjects for socio-economic planning and implementation; powers to levy, collect and appropriate taxes and duties; a <b>State Finance Commission</b> for allocating finances; and a <b>State Election Commission</b> to conduct panchayat elections. This committee's recommendations directly became the <b class="imp">basis for drafting</b> the constitutional amendment bill that eventually gave Panchayati Raj its constitutional status.</p>
+  <div class="te">అదే <b class="hlg">1988</b>లో, Congress పార్టీ Committee on Policy and Programmes — <b class="hlp">V.N. Gadgil</b> చైర్మన్ గా — PRIs ను ఎలా ప్రభావవంతం చేయవచ్చో పరిశీలించి — PRIs కు రాజ్యాంగ status; మూడు-tier వ్యవస్థ (village, block, district); ఐదు సంవత్సరాల స్థిర పదవీకాలం; మూడు స్థాయిల్లోనూ సభ్యుల direct election; SC, ST, మహిళలకు reservation; socio-economic planning, అమలుకు రాజ్యాంగంలో నిర్దేశించిన subjects జాబితా; taxes, duties విధించి, వసూలు చేసి, appropriate చేసే అధికారాలు; finances కేటాయించడానికి <b>State Finance Commission</b>; panchayat ఎన్నికలు నిర్వహించడానికి <b>State Election Commission</b> — అని సిఫారసు చేసింది. ఈ committee సిఫారసులే, Panchayati Raj కు చివరికి రాజ్యాంగ status ఇచ్చిన సవరణ బిల్లు రూపొందించడానికి <b class="imp">నేరుగా ఆధారం</b> అయ్యాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Singhvi, Thungon &amp; Gadgil Committees</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What did Singhvi Committee call the Gram Sabha?</td><td>"Embodiment of direct democracy"</td></tr>
+      <tr><td>What did Thungon Committee recommend for planning coordination?</td><td>State-level planning &amp; co-ordination committee under the planning minister</td></tr>
+      <tr><td>Which committee's recommendations directly fed the amendment bill?</td><td>Gadgil Committee (1988)</td></tr>
+      <tr><td>Two new institutions Gadgil Committee proposed?</td><td>State Finance Commission + State Election Commission</td></tr>
+      <tr><td>Common thread across Singhvi, Thungon, Gadgil?</td><td>All pushed for constitutional recognition of PRIs</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Constitutionalisation — From the 64th Amendment Bill to the 73rd CAA, 1992</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">The Long Road to the 73rd Amendment</div>
+  <p class="eng">Turning the Gadgil Committee's recommendations into law took three attempts across three different governments. The <b class="hlp">Rajiv Gandhi Government</b> introduced the <b class="hlg">64th Constitutional Amendment Bill</b> in the Lok Sabha in <b class="hlg">July 1989</b> to constitutionalise Panchayati Raj and make it more powerful and broad-based; the Lok Sabha passed it in August 1989, but the <b class="imp">Rajya Sabha rejected it</b> — the Opposition argued it would actually strengthen centralisation within the federal system, the opposite of its stated purpose. The <b class="hlp">V.P. Singh Government</b> (National Front), soon after taking office in November 1989, held a two-day conference of state chief ministers in <b class="hlg">June 1990</b> to build consensus, and introduced a fresh bill in the Lok Sabha in <b class="hlg">September 1990</b> — but the government fell before the bill could be passed, and it lapsed. Finally, the <b class="hlp">P.V. Narasimha Rao Government</b> revisited the matter, deliberately dropping the more controversial elements from the earlier drafts, and introduced a new bill in the Lok Sabha in <b class="hlg">September 1991</b>. This bill was passed by the Lok Sabha on <b class="hlg">22 December 1992</b> and the Rajya Sabha on <b class="hlg">23 December 1992</b>, ratified by <b class="hlg">17</b> state assemblies, received the President's assent on <b class="hlg">20 April 1993</b>, and finally came into force as the <b class="imp">73rd Constitutional Amendment Act, 1992</b> on <b class="hlg">24 April 1993</b>.</p>
+  <div class="te">Gadgil Committee సిఫారసులను చట్టంగా మార్చడానికి మూడు వేర్వేరు ప్రభుత్వాల్లో మూడు ప్రయత్నాలు జరిగాయి. <b class="hlp">Rajiv Gandhi ప్రభుత్వం</b> <b class="hlg">1989 జూలై</b>లో Lok Sabha లో <b class="hlg">64వ రాజ్యాంగ సవరణ బిల్లు</b>ను ప్రవేశపెట్టింది — Panchayati Raj ను constitutionalise చేసి మరింత శక్తివంతం, విస్తృతం చేయడానికి; Lok Sabha 1989 ఆగస్టులో దీన్ని పాస్ చేసినా, <b class="imp">Rajya Sabha తిరస్కరించింది</b> — దీని ప్రకటిత లక్ష్యానికి విరుద్ధంగా, ఇది federal వ్యవస్థలో centralisation ను బలోపేతం చేస్తుందని ప్రతిపక్షం వాదించింది. <b class="hlp">V.P. Singh ప్రభుత్వం</b> (National Front), 1989 నవంబర్ లో అధికారంలోకి వచ్చిన వెంటనే, ఏకాభిప్రాయం కోసం <b class="hlg">1990 జూన్</b>లో రాష్ట్ర ముఖ్యమంత్రుల రెండు రోజుల సదస్సు నిర్వహించి, <b class="hlg">1990 సెప్టెంబర్</b>లో Lok Sabha లో కొత్త బిల్లు ప్రవేశపెట్టింది — కానీ బిల్లు పాస్ కాకముందే ప్రభుత్వం పడిపోవడంతో అది lapse అయింది. చివరగా, <b class="hlp">P.V. Narasimha Rao ప్రభుత్వం</b> ఈ విషయాన్ని మళ్ళీ చేపట్టి, గత drafts లోని వివాదాస్పద అంశాలను ఉద్దేశపూర్వకంగా తొలగించి, <b class="hlg">1991 సెప్టెంబర్</b>లో Lok Sabha లో కొత్త బిల్లు ప్రవేశపెట్టింది. ఈ బిల్లును Lok Sabha <b class="hlg">1992 డిసెంబర్ 22</b>న, Rajya Sabha <b class="hlg">1992 డిసెంబర్ 23</b>న పాస్ చేశాయి, <b class="hlg">17</b> రాష్ట్రాల శాసనసభలు ఆమోదించాయి, President assent <b class="hlg">1993 ఏప్రిల్ 20</b>న వచ్చింది, చివరికి ఇది <b class="imp">73వ రాజ్యాంగ సవరణ చట్టం, 1992</b>గా <b class="hlg">1993 ఏప్రిల్ 24</b>న అమల్లోకి వచ్చింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Constitutionalisation Timeline</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which bill failed at the Rajya Sabha stage, and why?</td><td>64th CAA Bill, 1989 — Opposition feared it would strengthen centralisation</td></tr>
+      <tr><td>Why did the V.P. Singh government's 1990 bill lapse?</td><td>The government fell before it could be passed</td></tr>
+      <tr><td>Which government's bill finally became the 73rd CAA?</td><td>P.V. Narasimha Rao Government's Sept. 1991 bill</td></tr>
+      <tr><td>Lok Sabha / Rajya Sabha passage dates?</td><td>22 Dec 1992 (LS) / 23 Dec 1992 (RS)</td></tr>
+      <tr><td>President's assent date? Commencement date?</td><td>20 April 1993 (assent); 24 April 1993 (came into force)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">73rd CAA — Significance, Gram Sabha &amp; the Three-Tier System</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Significance of the 73rd Constitutional Amendment Act</div>
+  <p class="eng">The 73rd CAA added a new <b class="imp">Part IX</b> — titled "The Panchayats" — to the Constitution, consisting of <b class="hlg">Articles 243 to 243-O</b>, and a new <b class="hlg">Eleventh Schedule</b> listing <b class="hlg">29</b> functional subjects for panchayats (referenced by Article 243G). It gives practical, enforceable shape to <b class="hlg">Article 40</b>, a Directive Principle which had merely directed states to "organise village panchayats and endow them with such powers... as may be necessary to enable them to function as units of self-government." By placing panchayats under the Constitution's <b class="term">justiciable part</b>, the Act converts a constitutional obligation into something states can no longer simply choose to ignore — neither the formation of panchayats nor the holding of regular elections depends any more on a state government's will. The Act's provisions split into two categories: <b class="imp">compulsory</b> provisions that every state law must include, and <b class="imp">voluntary</b> provisions left to each state's discretion — this design deliberately balances constitutional uniformity with room for local, geographic and administrative variation. Laxmikanth describes the Act as transforming <b>representative democracy into participatory democracy</b> — a genuinely revolutionary step for grassroot governance in India.</p>
+  <div class="te">73వ CAA రాజ్యాంగంలో "The Panchayats" అనే కొత్త <b class="imp">Part IX</b> ను చేర్చింది — ఇందులో <b class="hlg">Articles 243 నుండి 243-O</b> వరకూ ఉంటాయి — పంచాయతీలకు <b class="hlg">29</b> functional subjects జాబితా చేసే కొత్త <b class="hlg">Eleventh Schedule</b> కూడా చేర్చింది (Article 243G ద్వారా reference). రాష్ట్రాలు "village panchayats ఏర్పాటు చేసి, self-government యూనిట్లుగా పనిచేయడానికి అవసరమైన అధికారాలు ఇవ్వాలి" అని కేవలం directive గా చెప్పిన <b class="hlg">Article 40</b> కు ఇది practical, enforceable రూపం ఇస్తుంది. పంచాయతీలను రాజ్యాంగం యొక్క <b class="term">justiciable భాగం</b> కిందికి తీసుకురావడం ద్వారా, రాష్ట్రాలు ఇకపై నిర్లక్ష్యం చేయలేని constitutional obligation గా ఈ Act దీన్ని మారుస్తుంది — పంచాయతీల ఏర్పాటు గానీ, క్రమం తప్పకుండా ఎన్నికలు జరపడం గానీ ఇకపై రాష్ట్ర ప్రభుత్వ ఇష్టంపై ఆధారపడవు. Act నిబంధనలు రెండు వర్గాలుగా విడిపోతాయి — ప్రతి రాష్ట్ర చట్టం తప్పనిసరిగా చేర్చవలసిన <b class="imp">compulsory</b> నిబంధనలు, ప్రతి రాష్ట్రం తన విచక్షణ మేరకు నిర్ణయించుకునే <b class="imp">voluntary</b> నిబంధనలు — ఈ డిజైన్ constitutional uniformity ను, స్థానిక, భౌగోళిక, administrative వైవిధ్యానికి తావు ఇవ్వడాన్ని ఉద్దేశపూర్వకంగా బ్యాలెన్స్ చేస్తుంది. Laxmikanth ఈ Act ను <b>representative democracy</b> ను <b>participatory democracy</b>గా మారుస్తుందని వర్ణించారు — India గ్రామస్థాయి governance కు నిజంగా విప్లవాత్మక అడుగు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Gram Sabha (Article 243A)</div>
+  <p class="eng">The Act establishes the <b class="term">Gram Sabha</b> as the <b class="imp">foundation</b> of the whole Panchayati Raj system — it is a village assembly consisting of all persons registered in the electoral rolls within a panchayat's area at the village level. It is not itself an elected body — it is simply every registered voter in that panchayat area, meeting together. What powers and functions it actually exercises is left to the discretion of each state legislature to determine, which is why the Gram Sabha's real weight varies considerably from state to state (this variation, and its consequences, are examined later in the "Reasons for Ineffective Performance" section).</p>
+  <div class="te">Act మొత్తం Panchayati Raj వ్యవస్థకు <b class="imp">పునాదిగా</b> <b class="term">Gram Sabha</b>ను ఏర్పాటు చేస్తుంది — ఇది గ్రామస్థాయిలో ఒక panchayat area లో electoral rolls లో నమోదైన వ్యక్తులందరితో కూడిన village assembly. ఇది స్వయంగా ఎన్నికైన బాడీ కాదు — ఆ panchayat area లో నమోదైన ఓటర్లందరూ కలిసినదే. ఇది వాస్తవంగా ఏ అధికారాలు, విధులు వినియోగించాలో ప్రతి రాష్ట్ర శాసనసభ విచక్షణకే వదిలేశారు — అందుకే Gram Sabha యొక్క నిజమైన బరువు రాష్ట్రాన్ని బట్టి గణనీయంగా మారుతుంది (ఈ వైవిధ్యం, దాని పర్యవసానాలను తర్వాత "Reasons for Ineffective Performance" section లో పరిశీలిస్తాం).</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Three-Tier System (Article 243B)</div>
+  <p class="eng">The Act mandates a <b class="imp">uniform three-tier</b> structure across every state — panchayats at the <b>village, intermediate and district</b> levels — bringing structural uniformity for the first time nationally. The one built-in exception: a state with a population <b class="hlg">not exceeding 20 lakh</b> may choose not to constitute an intermediate-level panchayat at all. The Act itself defines the relevant terms — a <b>panchayat</b> is any institution (whatever its local name) of rural self-government; a <b>village</b> is whatever the governor notifies as a village for this purpose (which may include a group of villages); the <b>intermediate level</b> is a level between village and district that the governor similarly notifies; and a <b>district</b> is a district within the state.</p>
+  <div class="te">ప్రతి రాష్ట్రంలోనూ Act <b class="imp">ఒకేలాంటి మూడు-tier</b> నిర్మాణాన్ని తప్పనిసరి చేస్తుంది — <b>village, intermediate, district</b> స్థాయిల్లో పంచాయతీలు — దేశవ్యాప్తంగా మొదటిసారిగా నిర్మాణాత్మక uniformity తీసుకొస్తుంది. అంతర్నిర్మిత మినహాయింపు ఒక్కటే — <b class="hlg">20 లక్షలు మించని</b> జనాభా గల రాష్ట్రం intermediate-level పంచాయతీని అస్సలు ఏర్పాటు చేయకుండా ఎంచుకోవచ్చు. Act సంబంధిత పదాలను స్వయంగా నిర్వచిస్తుంది — <b>panchayat</b> అంటే (స్థానికంగా ఏ పేరుతో పిలిచినా) rural self-government సంస్థ ఏదైనా; <b>village</b> అంటే governor ఈ ప్రయోజనం కోసం notify చేసిన గ్రామం (గ్రామాల సమూహం కూడా కావచ్చు); <b>intermediate level</b> అంటే village, district మధ్య governor notify చేసిన ఒక స్థాయి; <b>district</b> అంటే రాష్ట్రంలోని ఒక district.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Significance, Gram Sabha, Three-Tier System</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>New Part &amp; Article range added by 73rd CAA?</td><td>Part IX, Articles 243-243O</td></tr>
+      <tr><td>Which Schedule was newly added, and how many items?</td><td>Eleventh Schedule, 29 items (via Art. 243G)</td></tr>
+      <tr><td>Which DPSP does the Act give practical shape to?</td><td>Article 40</td></tr>
+      <tr><td>What is the Gram Sabha?</td><td>Village assembly of all registered voters in a panchayat area</td></tr>
+      <tr><td>Who decides Gram Sabha's actual powers?</td><td>The state legislature (a voluntary provision)</td></tr>
+      <tr><td>When can a state skip the intermediate-level panchayat?</td><td>If its population does not exceed 20 lakh</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Elections &amp; Reservation of Seats (Articles 243C-243D)</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Election of Members and Chairpersons</div>
+  <p class="eng">All members of panchayats at all three levels — village, intermediate, district — must be <b class="imp">directly elected</b> by the people of the respective panchayat area. The chairperson at the intermediate and district levels, however, is elected <b>indirectly</b>, by and from among the elected members themselves; only the village-level chairperson's mode of election is left to the state legislature to decide (which is why this is listed among the voluntary provisions later in the chapter). Both the chairperson and other members — however elected — have the right to vote in panchayat meetings.</p>
+  <div class="te">village, intermediate, district — మూడు స్థాయిల్లోనూ పంచాయతీ సభ్యులందరూ ఆ panchayat area ప్రజలచే <b class="imp">నేరుగా (direct) ఎన్నికవ్వాలి</b>. అయితే intermediate, district స్థాయిల్లో chairperson <b>indirect</b> గా — ఎన్నికైన సభ్యుల నుండి, వారి ద్వారానే — ఎన్నికవ్వాలి; village-level chairperson ఎన్నిక పద్ధతిని మాత్రమే రాష్ట్ర శాసనసభకు వదిలేశారు (అందుకే దీన్ని ఈ chapter లో తర్వాత voluntary provisions లో చేర్చారు). chairperson, ఇతర సభ్యులు — ఎలా ఎన్నికైనా — పంచాయతీ సమావేశాల్లో ఓటు హక్కు కలిగి ఉంటారు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Reservation of Seats — SC/ST, Women and OBCs</div>
+  <p class="eng">The Act reserves seats for <b>Scheduled Castes and Scheduled Tribes</b> in every panchayat at all three levels, in proportion to their population share in the panchayat area — and the state legislature must similarly reserve chairperson offices for SCs/STs at the village or any other level. Separately, the Act reserves <b class="imp">not less than one-third</b> of the total seats for <b>women</b> (this one-third figure already includes seats reserved for SC/ST women), and, again, not less than one-third of chairperson offices at each level must go to women. Beyond this, the state legislature <em>may</em> — as a voluntary provision — additionally reserve seats or chairperson offices for backward classes. The SC/ST reservation (for both members and chairpersons) ceases to have effect once the period specified in <b class="hlg">Article 334</b> expires — presently <b class="hlg">80 years</b>, i.e. till <b class="hlg">2030</b>. One notable carve-out: this SC reservation provision does not apply to <b class="hlp">Arunachal Pradesh</b> — since the state is populated entirely by indigenous tribal communities and has no Scheduled Castes at all — a clarification added later by the <b class="hlg">83rd Constitutional Amendment Act, 2000</b>.</p>
+  <div class="te">panchayat area లో వారి జనాభా నిష్పత్తికి తగినట్టు, మూడు స్థాయిల్లోనూ ప్రతి పంచాయతీలో <b>SC, ST</b> లకు సీట్లు Act reserve చేస్తుంది — village లేదా ఇతర ఏ స్థాయిలోనైనా chairperson పదవులను కూడా SC/ST లకు రాష్ట్ర శాసనసభ అలాగే reserve చేయాలి. వేరుగా, మొత్తం సీట్లలో <b class="imp">కనీసం మూడో వంతు (1/3)</b> ను <b>మహిళలకు</b> Act reserve చేస్తుంది (ఈ 1/3 లో SC/ST మహిళలకు reserve చేసిన సీట్లు కూడా కలిసే ఉంటాయి), ప్రతి స్థాయిలోనూ కనీసం మూడో వంతు chairperson పదవులు కూడా మహిళలకే వెళ్ళాలి. దీనికి మించి, backward classes కు కూడా సీట్లు లేదా chairperson పదవులను — voluntary provision గా — రాష్ట్ర శాసనసభ అదనంగా reserve <em>చేయవచ్చు</em>. <b class="hlg">Article 334</b> లో నిర్దేశించిన కాలం ముగిశాక SC/ST reservation (members, chairpersons రెండింటికీ) రద్దవుతుంది — ప్రస్తుతం ఇది <b class="hlg">80 సంవత్సరాలు</b>, అంటే <b class="hlg">2030</b> వరకు. ఒక ముఖ్యమైన మినహాయింపు — <b class="hlp">Arunachal Pradesh</b> కు ఈ SC reservation నిబంధన వర్తించదు — ఎందుకంటే ఆ రాష్ట్రం పూర్తిగా స్థానిక తెగల ప్రజలతో నిండి ఉంది, అక్కడ Scheduled Castes అస్సలు లేరు — దీన్ని తర్వాత <b class="hlg">83వ రాజ్యాంగ సవరణ చట్టం, 2000</b> స్పష్టం చేసింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Elections &amp; Reservation</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How are village/intermediate/district panchayat members elected?</td><td>Directly, by the people</td></tr>
+      <tr><td>How is the intermediate/district chairperson elected?</td><td>Indirectly, by and from among elected members</td></tr>
+      <tr><td>Women's reservation — how much, and where?</td><td>Not less than 1/3 of seats AND 1/3 of chairperson offices, at each level</td></tr>
+      <tr><td>Is OBC reservation compulsory or voluntary under the Act?</td><td>Voluntary — left to state legislature's discretion</td></tr>
+      <tr><td>When does SC/ST reservation in panchayats cease (per Art. 334)?</td><td>After 80 years — i.e., 2030 (as currently specified)</td></tr>
+      <tr><td>Which state is exempt from SC reservation, and why?</td><td>Arunachal Pradesh — no Scheduled Castes there (83rd CAA, 2000)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Duration, Disqualifications &amp; State Election Commission (Articles 243E-243F, 243K)</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Duration of Panchayats (Article 243E)</div>
+  <p class="eng">Every panchayat, at every level, gets a <b class="imp">five-year</b> term counted from the date of its first meeting — though it can be dissolved earlier. Fresh elections must be completed either before the five-year term expires, or, in case of earlier dissolution, before six months elapse from the dissolution date — except that if the remaining unexpired period is itself less than six months, no fresh election need be held for that short remainder at all. Crucially, a panchayat reconstituted after premature dissolution does <b>not</b> get a fresh full five-year term — it only serves out the remainder of the original panchayat's term, exactly as if the dissolution had never happened. As with municipalities (Article 243U), <b>no amendment to any law in force can, by itself, cause a functioning panchayat's dissolution</b> before the expiry of its five-year term.</p>
+  <div class="te">ప్రతి స్థాయిలోని ప్రతి పంచాయతీకి, తన మొదటి సమావేశం తేదీ నుండి <b class="imp">ఐదు సంవత్సరాల</b> పదవీకాలం ఉంటుంది — అయినా ముందుగానే dissolve కావచ్చు. ఐదు సంవత్సరాల term ముగిసేలోగా, లేదా ముందుగా dissolve అయితే dissolution తేదీ నుండి 6 నెలల్లోగా, తిరిగి ఎన్నికలు పూర్తి చేయాలి — అయితే మిగిలిన కాలం 6 నెలల కంటే తక్కువ ఉంటే, ఆ కొద్ది మిగిలిన కాలానికి తిరిగి ఎన్నిక అవసరం లేదు. ముఖ్యంగా, ముందస్తు dissolution తర్వాత reconstitute అయిన పంచాయతీకి కొత్తగా పూర్తి ఐదు సంవత్సరాల term రాదు — dissolution జరగనట్టుగానే, అసలు పంచాయతీ term లో మిగిలిన కాలం మాత్రమే అది పూర్తి చేస్తుంది. Municipalities (Article 243U) మాదిరిగానే, పనిచేస్తున్న పంచాయతీని దాని ఐదు సంవత్సరాల term ముగియకముందే <b>ఏ చట్ట సవరణ కూడా, తనంతట తానుగా dissolve చేయలేదు</b>.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Disqualifications (Article 243F)</div>
+  <p class="eng">A person is disqualified from being chosen as, or from continuing as, a panchayat member if he/she is disqualified either under any law currently in force for elections to the state legislature, or under any law the state legislature itself makes for this purpose. However, there is a deliberately lower <b class="imp">age floor</b> here compared to the general state-legislature disqualification law — no one can be disqualified merely for being under 25 years of age, as long as he/she has attained 21 years. All questions relating to such disqualifications are referred to whatever authority the state legislature determines.</p>
+  <div class="te">ప్రస్తుతం అమల్లో ఉన్న రాష్ట్ర శాసనసభ ఎన్నికల చట్టం కింద గానీ, రాష్ట్ర శాసనసభే ఈ ప్రయోజనం కోసం రూపొందించిన చట్టం కింద గానీ ఎవరైనా disqualify అయితే, ఆ వ్యక్తి పంచాయతీ సభ్యుడిగా ఎన్నికవ్వడానికి గానీ, కొనసాగడానికి గానీ అనర్హుడు. అయితే సాధారణ రాష్ట్ర శాసనసభ disqualification చట్టంతో పోలిస్తే ఇక్కడ ఉద్దేశపూర్వకంగా <b class="imp">తక్కువ వయసు పరిమితి</b> ఉంటుంది — 21 సంవత్సరాలు నిండిన వ్యక్తిని కేవలం 25 ఏళ్ళు నిండలేదన్న కారణంతో అనర్హుడిగా చేయలేరు. disqualification కు సంబంధించిన ప్రశ్నలన్నీ రాష్ట్ర శాసనసభ నిర్దేశించిన అధికారానికి రిఫర్ చేస్తారు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">State Election Commission (Article 243K)</div>
+  <p class="eng">The superintendence, direction and control of preparing electoral rolls and conducting <b>all</b> panchayat elections vests in the <b class="term">State Election Commission</b> — headed by a State Election Commissioner appointed by the <b>governor</b>. The governor also fixes this commissioner's conditions of service and tenure of office. But once appointed, the security of tenure is real: the commissioner can be removed only in the same manner and on the same grounds as a judge of the state high court — <b class="imp">not</b> at the governor's own discretion — and conditions of service cannot be varied to the commissioner's disadvantage after appointment. (Since only Parliament, on the recommendation of Parliament itself, can remove a High Court judge, this effectively means a governor cannot remove the state election commissioner he/she appointed.) Beyond the Commission's own conduct of elections, the state legislature retains the power to legislate on all other matters relating to panchayat elections.</p>
+  <div class="te">panchayat ఎన్నికలన్నింటి electoral rolls తయారీ, నిర్వహణ యొక్క superintendence, direction, control <b class="term">State Election Commission</b> వద్దే ఉంటుంది — దీనికి <b>governor</b> నియమించిన State Election Commissioner అధిపతి. ఈ commissioner service conditions, పదవీకాలాన్ని కూడా governor నే నిర్ణయిస్తారు. కానీ ఒకసారి నియమించాక, tenure security నిజమైనదే — commissioner ను రాష్ట్ర High Court judge ను తొలగించే పద్ధతిలో, అదే కారణాలపైనే తొలగించాలి — governor తనంతట తానుగా <b class="imp">తొలగించలేరు</b> — నియామకం తర్వాత service conditions ను ప్రతికూలంగా మార్చలేరు. (High Court judge ను Parliament సిఫారసుపైనే Parliament తొలగించగలదు కాబట్టి, తాను నియమించిన State Election Commissioner ను governor తొలగించలేరని దీని అర్థం.) Commission ఎన్నికల నిర్వహణకు మించి, panchayat ఎన్నికలకు సంబంధించిన ఇతర అంశాలపై చట్టం చేసే అధికారం రాష్ట్ర శాసనసభకే ఉంటుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Duration, Disqualification, State Election Commission</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Panchayat term, and from when?</td><td>5 years from the date of its first meeting</td></tr>
+      <tr><td>Fresh election window after dissolution?</td><td>Within 6 months (skip if remaining term itself is under 6 months)</td></tr>
+      <tr><td>Does a reconstituted panchayat get a fresh 5-year term?</td><td>No — only the remainder of the dissolved panchayat's term</td></tr>
+      <tr><td>Minimum age to contest panchayat elections?</td><td>21 years (lower than the general 25-year state-legislature bar)</td></tr>
+      <tr><td>Who appoints the State Election Commissioner?</td><td>The Governor</td></tr>
+      <tr><td>How can the SEC be removed?</td><td>Only like a High Court judge — governor cannot remove at own discretion</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 10 ═══════════ -->
+<div class="page">
+<div class="sub">Powers, Functions, Finances &amp; the State Finance Commission (Articles 243G-243J)</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Powers and Functions (Article 243G)</div>
+  <p class="eng">Whether and how much power panchayats actually get to exercise is left to the <b class="imp">state legislature</b>, which may endow them with such powers and authority as are necessary for them to function as institutions of self-government — including devolving powers and responsibilities for (a) preparing plans for economic development and social justice, and (b) implementing schemes for economic development and social justice, potentially covering any or all of the <b class="hlg">29 matters</b> listed in the Eleventh Schedule. This is a voluntary, not compulsory, provision — which is exactly why the actual scope of panchayat functioning varies so widely from state to state, a point examined more fully in the "Reasons for Ineffective Performance" section later.</p>
+  <div class="te">పంచాయతీలు వాస్తవంగా ఎంత అధికారాన్ని వినియోగించగలవో <b class="imp">రాష్ట్ర శాసనసభ</b> విచక్షణకే వదిలేశారు — self-government సంస్థలుగా పనిచేయడానికి అవసరమైన అధికారాలు, authority వాటికి ఇవ్వవచ్చు — economic development, social justice కోసం (a) ప్రణాళికల తయారీ, (b) పథకాల అమలుకు సంబంధించిన అధికారాలు, బాధ్యతలను devolve చేయడం కూడా ఇందులో ఉంటుంది — Eleventh Schedule లోని <b class="hlg">29 అంశాలు</b> లో ఏవైనా లేదా అన్నింటినీ ఇందులో కవర్ చేయవచ్చు. ఇది voluntary నిబంధనే, compulsory కాదు — అందుకే రాష్ట్రాన్ని బట్టి పంచాయతీల వాస్తవ పనితీరు పరిధి చాలా వైవిధ్యంగా ఉంటుంది — ఈ అంశాన్ని తర్వాత "Reasons for Ineffective Performance" section లో మరింత లోతుగా చూస్తాం.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Finances &amp; the State Finance Commission (Articles 243H, 243-I)</div>
+  <p class="eng">On finances, the state legislature <em>may</em> — again, voluntarily — authorise a panchayat to levy, collect and appropriate taxes, duties, tolls and fees; assign to a panchayat taxes/duties/tolls/fees the state government itself levies and collects; provide grants-in-aid from the state's consolidated fund; and set up funds into which all panchayat moneys are credited. To institutionalise this, the governor must — <b class="imp">compulsorily</b>, after every <b class="hlg">five years</b> — constitute a <b class="term">State Finance Commission</b> (Art. 243-I) to review panchayats' financial position and recommend: (1) the principles governing the distribution between the state and panchayats of the net proceeds of taxes/duties/tolls/fees the state levies, and the allocation of shares among panchayats at different levels; (2) which taxes/duties/tolls/fees may be assigned to panchayats directly; (3) grants-in-aid from the state's consolidated fund; (4) measures to improve panchayats' financial position generally; and (5) any other matter the governor refers to it in the interest of sound panchayat finance. The state legislature decides the commission's composition and the qualifications/selection manner of its members, and the governor must place both the commission's recommendations and an action-taken report before the state legislature. Separately, the <b>Central Finance Commission</b> (under Article 280) also recommends measures to augment a state's consolidated fund so it can supplement panchayat resources — based specifically on what the state's own Finance Commission has recommended.</p>
+  <div class="te">Finances విషయంలో, రాష్ట్ర శాసనసభ — మళ్ళీ voluntary గానే — పంచాయతీకి taxes, duties, tolls, fees విధించి, వసూలు చేసి, appropriate చేసే అధికారం ఇవ్వవచ్చు; రాష్ట్ర ప్రభుత్వమే విధించి, వసూలు చేసే taxes/duties/tolls/fees లను పంచాయతీకి assign చేయవచ్చు; రాష్ట్ర consolidated fund నుండి grants-in-aid ఇవ్వవచ్చు; పంచాయతీ డబ్బు మొత్తం జమయ్యే funds ఏర్పాటు చేయవచ్చు. దీన్ని institutionalise చేయడానికి, ప్రతి <b class="hlg">ఐదు సంవత్సరాలకు</b> ఒకసారి governor <b class="imp">తప్పనిసరిగా</b> పంచాయతీల ఆర్థిక పరిస్థితిని సమీక్షించడానికి ఒక <b class="term">State Finance Commission</b> (Art. 243-I) ఏర్పాటు చేయాలి — ఇది సిఫారసు చేస్తుంది — (1) రాష్ట్రం విధించే taxes/duties/tolls/fees నికర ఆదాయాన్ని రాష్ట్రం-పంచాయతీల మధ్య, వివిధ స్థాయిల పంచాయతీల మధ్య ఎలా పంచాలో నియంత్రించే principles; (2) ఏ taxes/duties/tolls/fees నేరుగా పంచాయతీలకు assign చేయవచ్చో; (3) రాష్ట్ర consolidated fund నుండి grants-in-aid; (4) పంచాయతీల ఆర్థిక పరిస్థితి మెరుగుపరచడానికి సాధారణ చర్యలు; (5) సౌండ్ పంచాయతీ ఫైనాన్స్ ప్రయోజనార్థం governor రిఫర్ చేసిన ఏ ఇతర అంశమైనా. Commission composition, సభ్యుల qualifications/selection పద్ధతిని రాష్ట్ర శాసనసభ నిర్ణయిస్తుంది, Commission సిఫారసులను, action-taken report ను governor రాష్ట్ర శాసనసభ ముందు ఉంచాలి. వేరుగా, <b>Central Finance Commission</b> (Article 280 కింద) కూడా — నిర్దిష్టంగా రాష్ట్రం సొంత Finance Commission సిఫారసుల ఆధారంగా — పంచాయతీ వనరులను భర్తీ చేయడానికి రాష్ట్ర consolidated fund ను పెంచే చర్యలు సిఫారసు చేస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Audit of Accounts (Article 243J)</div>
+  <p class="eng">The state legislature may also make provisions relating to the maintenance and auditing of panchayat accounts — again a voluntary provision, so audit rigour and mechanisms vary state to state.</p>
+  <div class="te">పంచాయతీ accounts నిర్వహణ, auditing కు సంబంధించిన నిబంధనలు కూడా రాష్ట్ర శాసనసభ చేయవచ్చు — ఇదీ voluntary నిబంధనే, కాబట్టి audit కఠినత్వం, యంత్రాంగం రాష్ట్రాన్ని బట్టి మారుతుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Powers, Finances, State Finance Commission, Audit</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Is devolution of powers to panchayats compulsory or voluntary?</td><td>Voluntary — decided by each state legislature</td></tr>
+      <tr><td>Article dealing with State Finance Commission?</td><td>Article 243-I</td></tr>
+      <tr><td>How often must the SFC be constituted, and by whom?</td><td>Every 5 years, by the governor — this part is compulsory</td></tr>
+      <tr><td>Who tables the SFC's recommendations before the legislature?</td><td>The Governor, along with an action-taken report</td></tr>
+      <tr><td>How does the Central Finance Commission relate to panchayat finance?</td><td>Recommends measures (under Art. 280) to augment the state's fund, based on the SFC's own recommendations</td></tr>
+      <tr><td>Is panchayat account auditing compulsory or voluntary?</td><td>Voluntary — state legislature decides</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 11 ═══════════ -->
+<div class="page">
+<div class="sub">Union Territories, Exempted Areas &amp; Court Interference (Articles 243L, 243M-243O)</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Application to Union Territories (Article 243L)</div>
+  <p class="eng">Part IX's provisions apply to Union Territories as well, but the <b>President</b> may direct that they apply to a specific UT with such exceptions and modifications as he/she specifies — giving the Centre flexibility to adapt the panchayat framework for UTs with very different administrative situations.</p>
+  <div class="te">Part IX నిబంధనలు Union Territories కు కూడా వర్తిస్తాయి, కానీ ఏదైనా నిర్దిష్ట UT కు — <b>President</b> తాను నిర్దేశించిన మినహాయింపులు, మార్పులతో వాటిని వర్తింపజేయమని ఆదేశించవచ్చు — చాలా భిన్నమైన administrative పరిస్థితులున్న UTs కు panchayat చట్రాన్ని అనుగుణంగా మార్చుకునే వెసులుబాటు Centre కు ఇది ఇస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Exempted States and Areas (Article 243M) — the PESA Trigger</div>
+  <p class="eng">The Act does <b class="imp">not</b> automatically apply to <b class="hlp">Nagaland, Meghalaya and Mizoram</b>, nor to certain other special areas — namely, the <b>scheduled areas and tribal areas</b> in various states, the <b>hill areas of Manipur</b> which have their own district councils, and the <b>Darjeeling district</b> of West Bengal, which has the Darjeeling Gorkha Hill Council. However, Parliament <em>may</em> extend Part IX's provisions to scheduled areas and tribal areas, subject to whatever exceptions and modifications it specifies — and it is precisely this enabling clause that Parliament used to enact the <b class="term">"Provisions of the Panchayats (Extension to the Scheduled Areas) Act", 1996</b> — popularly known as the <b class="imp">PESA Act</b> or the Extension Act, covered in full detail later in this chapter.</p>
+  <div class="te"><b class="hlp">Nagaland, Meghalaya, Mizoram</b> కు, అలాగే కొన్ని ఇతర ప్రత్యేక ప్రాంతాలకు — వివిధ రాష్ట్రాల్లోని <b>scheduled areas, tribal areas</b>, సొంత district councils ఉన్న <b>Manipur hill areas</b>, Darjeeling Gorkha Hill Council ఉన్న West Bengal లోని <b>Darjeeling district</b> — Act <b class="imp">స్వయంచాలకంగా వర్తించదు</b>. అయితే Parliament, తాను నిర్దేశించిన మినహాయింపులు, మార్పులతో Part IX నిబంధనలను scheduled areas, tribal areas కు విస్తరించ<em>వచ్చు</em> — ఈ enabling క్లాజ్ నే వాడి Parliament <b class="term">"Provisions of the Panchayats (Extension to the Scheduled Areas) Act", 1996</b> ను — ప్రసిద్ధి చెందిన పేరు <b class="imp">PESA Act</b> లేదా Extension Act — చేసింది — దీన్ని ఈ chapter లో తర్వాత పూర్తి వివరాలతో చూస్తాం.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Continuance of Existing Laws &amp; Bar to Interference by Courts (Articles 243N, 243-O)</div>
+  <p class="eng">Pre-existing state panchayat laws continued in force only for a maximum of <b>one year</b> from the Act's commencement (i.e., until roughly 24 April 1994) — states had to adopt the new system within that window, though panchayats already existing when the Act commenced could continue until their term expired, unless the state legislature dissolved them sooner. In practice, most states passed their new Panchayati Raj Acts in <b class="hlg">1993 and 1994</b>. Finally, the Act <b class="imp">bars courts from interfering</b> in electoral matters of panchayats — the validity of any law on delimitation of constituencies or seat allotment cannot be questioned in any court, and no panchayat election can be challenged except through an election petition presented to whatever authority the state legislature prescribes.</p>
+  <div class="te">Act అమల్లోకి వచ్చిన తేదీ నుండి గరిష్టంగా <b>ఒక సంవత్సరం</b> వరకు మాత్రమే (అంటే దాదాపు 1994 ఏప్రిల్ 24 వరకు) పాత రాష్ట్ర panchayat చట్టాలు అమల్లో కొనసాగాయి — ఆ కాలంలోగా రాష్ట్రాలు కొత్త వ్యవస్థను స్వీకరించాలి, అయితే Act అమల్లోకి వచ్చేనాటికే ఉన్న పంచాయతీలు, రాష్ట్ర శాసనసభ ముందుగా dissolve చేయకపోతే, తమ term ముగిసేవరకు కొనసాగవచ్చు. ఆచరణలో, చాలా రాష్ట్రాలు <b class="hlg">1993, 1994</b> లలో తమ కొత్త Panchayati Raj చట్టాలు పాస్ చేశాయి. చివరగా, పంచాయతీల ఎన్నికల విషయాల్లో <b class="imp">కోర్టుల జోక్యాన్ని Act నిషేధిస్తుంది</b> — constituencies delimitation, seat allotment కు సంబంధించిన ఏ చట్టం చెల్లుబాటునూ ఏ కోర్టూ ప్రశ్నించలేదు, రాష్ట్ర శాసనసభ నిర్దేశించిన అధికారానికి election petition ద్వారానే తప్ప, ఏ panchayat ఎన్నికనూ సవాలు చేయలేరు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — UTs, Exempted Areas, Continuance, Bar to Courts</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who decides how Part IX applies to a specific UT?</td><td>The President, with exceptions/modifications as specified</td></tr>
+      <tr><td>Three states fully exempted from the 73rd CAA?</td><td>Nagaland, Meghalaya, Mizoram</td></tr>
+      <tr><td>Other exempted areas?</td><td>Scheduled/tribal areas; Manipur hill areas; Darjeeling district (WB)</td></tr>
+      <tr><td>What Act extends Part IX (modified) to scheduled areas?</td><td>PESA Act, 1996</td></tr>
+      <tr><td>Deadline for states to pass new panchayat laws?</td><td>Within 1 year of commencement (by ~24 April 1994)</td></tr>
+      <tr><td>Can courts question delimitation/seat-allotment laws for panchayats?</td><td>No — Article 243-O bars this</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 12 ═══════════ -->
+<div class="page">
+<div class="sub">The Eleventh Schedule — 29 Functional Items (Article 243G)</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Eleventh Schedule — What Panchayats May Be Given Responsibility For</div>
+  <p class="eng">The Eleventh Schedule lists <b class="hlg">29</b> subjects that a state legislature <em>may</em> devolve to panchayats — it is a <b class="imp">menu of possible functions</b>, not an automatic transfer of power, which is exactly why real-world devolution of these 29 items varies enormously across states (a point returned to in the "Reasons for Ineffective Performance" section). The list spans agriculture and allied activities, rural infrastructure, welfare and social sectors.</p>
+  <div class="te">Eleventh Schedule <b class="hlg">29</b> అంశాలను జాబితా చేస్తుంది, వీటిని రాష్ట్ర శాసనసభ పంచాయతీలకు devolve <em>చేయవచ్చు</em> — ఇది <b class="imp">సాధ్యమయ్యే విధుల మెనూ</b>, స్వయంచాలక అధికార బదిలీ కాదు — అందుకే వాస్తవంగా ఈ 29 అంశాల devolution రాష్ట్రాన్ని బట్టి చాలా వైవిధ్యంగా ఉంటుంది (దీన్ని "Reasons for Ineffective Performance" section లో మళ్ళీ చూస్తాం). జాబితాలో agriculture, allied activities, rural infrastructure, welfare, social sectors అన్నీ ఉంటాయి.</div>
+
+  <table>
+    <caption>Eleventh Schedule — 29 Functional Items Placed Within Panchayats' Purview</caption>
+    <thead><tr><th class="n" style="width:6%">#</th><th>Subject</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Agriculture, including agricultural extension</td></tr>
+      <tr><td class="n">2</td><td>Land improvement, land reforms implementation, land consolidation, soil conservation</td></tr>
+      <tr><td class="n">3</td><td>Minor irrigation, water management, watershed development</td></tr>
+      <tr><td class="n">4</td><td>Animal husbandry, dairying, poultry</td></tr>
+      <tr><td class="n">5</td><td>Fisheries</td></tr>
+      <tr><td class="n">6</td><td>Social forestry and farm forestry</td></tr>
+      <tr><td class="n">7</td><td>Minor forest produce</td></tr>
+      <tr><td class="n">8</td><td>Small-scale industries, including food processing industries</td></tr>
+      <tr><td class="n">9</td><td>Khadi, village and cottage industries</td></tr>
+      <tr><td class="n">10</td><td>Rural housing</td></tr>
+      <tr><td class="n">11</td><td>Drinking water</td></tr>
+      <tr><td class="n">12</td><td>Fuel and fodder</td></tr>
+      <tr><td class="n">13</td><td>Roads, culverts, bridges, ferries, waterways and other means of communication</td></tr>
+      <tr><td class="n">14</td><td>Rural electrification, including distribution of electricity</td></tr>
+      <tr><td class="n">15</td><td>Non-conventional energy sources</td></tr>
+      <tr><td class="n">16</td><td>Poverty alleviation programme</td></tr>
+      <tr><td class="n">17</td><td>Education, including primary and secondary schools</td></tr>
+      <tr><td class="n">18</td><td>Technical training and vocational education</td></tr>
+      <tr><td class="n">19</td><td>Adult and non-formal education</td></tr>
+      <tr><td class="n">20</td><td>Libraries</td></tr>
+      <tr><td class="n">21</td><td>Cultural activities</td></tr>
+      <tr><td class="n">22</td><td>Markets and fairs</td></tr>
+      <tr><td class="n">23</td><td>Health and sanitation, including hospitals, primary health centres, dispensaries</td></tr>
+      <tr><td class="n">24</td><td>Family welfare</td></tr>
+      <tr><td class="n">25</td><td>Women and child development</td></tr>
+      <tr><td class="n">26</td><td>Social welfare, including welfare of the handicapped and mentally retarded</td></tr>
+      <tr><td class="n">27</td><td>Welfare of the weaker sections, particularly SCs and STs</td></tr>
+      <tr><td class="n">28</td><td>Public distribution system</td></tr>
+      <tr><td class="n">29</td><td>Maintenance of community assets</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Eleventh Schedule</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How many items are in the Eleventh Schedule?</td><td>29</td></tr>
+      <tr><td>Which Article connects panchayats to the Eleventh Schedule?</td><td>Article 243G</td></tr>
+      <tr><td>Is devolution of these 29 items automatic?</td><td>No — it's a voluntary "menu," decided item-by-item by each state</td></tr>
+      <tr><td>Name three "critical" items often under-devolved in practice?</td><td>Primary education, healthcare, minor irrigation (per 2nd ARC)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 13 ═══════════ -->
+<div class="page">
+<div class="sub">Compulsory vs Voluntary Provisions of the 73rd CAA</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Why This Distinction Matters</div>
+  <p class="eng">Since much of the 73rd CAA's design was described piece-by-piece across the previous pages, it is worth consolidating it into the book's own two clean lists — because the exam commonly tests exactly this classification (is a given feature compulsory, or merely voluntary?). Getting this distinction wrong is one of the most common mistakes candidates make on this chapter.</p>
+  <div class="te">73వ CAA యొక్క డిజైన్ లో ఎక్కువ భాగం ఇంతకుముందు పేజీల్లో ముక్కలుముక్కలుగా వివరించాం కాబట్టి, పుస్తకంలోని రెండు స్పష్టమైన జాబితాలుగా దీన్ని ఏకీకృతం చేయడం అవసరం — ఎందుకంటే exam సాధారణంగా సరిగ్గా ఈ classification నే పరీక్షిస్తుంది (ఇచ్చిన feature compulsory నా, కేవలం voluntary నా?). ఈ తేడాను తప్పుగా అర్థం చేసుకోవడం ఈ chapter పై అభ్యర్థులు చేసే అత్యంత సాధారణ తప్పుల్లో ఒకటి.</div>
+
+  <table>
+    <caption class="qs">A. Compulsory Provisions (Must Be in Every State's Panchayat Law)</caption>
+    <thead><tr><th class="n gn2" style="width:6%">#</th><th>Provision</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Organisation of Gram Sabha in a village or group of villages</td></tr>
+      <tr><td class="n">2</td><td>Establishment of panchayats at village, intermediate and district levels</td></tr>
+      <tr><td class="n">3</td><td>Direct elections to all seats at all three levels</td></tr>
+      <tr><td class="n">4</td><td>Indirect elections to chairperson posts at intermediate and district levels</td></tr>
+      <tr><td class="n">5</td><td>Voting rights of chairperson and members, directly or indirectly elected</td></tr>
+      <tr><td class="n">6</td><td>Minimum age of 21 years to contest panchayat elections</td></tr>
+      <tr><td class="n">7</td><td>Reservation of seats/chairperson offices for SCs and STs at all 3 levels</td></tr>
+      <tr><td class="n">8</td><td>Reservation of 1/3 of seats/chairperson offices for women at all 3 levels</td></tr>
+      <tr><td class="n">9</td><td>Fixed 5-year tenure; fresh elections within 6 months of supersession</td></tr>
+      <tr><td class="n">10</td><td>Establishment of a State Election Commission</td></tr>
+      <tr><td class="n">11</td><td>Constitution of a State Finance Commission every 5 years</td></tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption class="qs">B. Voluntary Provisions (Left to Each State's Discretion)</caption>
+    <thead><tr><th class="n gn2" style="width:6%">#</th><th>Provision</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Endowing Gram Sabha with actual powers &amp; functions at village level</td></tr>
+      <tr><td class="n">2</td><td>Manner of election of the village panchayat's chairperson</td></tr>
+      <tr><td class="n">3</td><td>Representation of village chairpersons in intermediate (or district, if no intermediate tier) panchayats</td></tr>
+      <tr><td class="n">4</td><td>Representation of intermediate chairpersons in district panchayats</td></tr>
+      <tr><td class="n">5</td><td>Representation of MPs and MLAs/MLCs in panchayats within their constituencies</td></tr>
+      <tr><td class="n">6</td><td>Reservation of seats/chairperson offices for backward classes at any level</td></tr>
+      <tr><td class="n">7</td><td>Granting powers/authority to function as institutions of self-government</td></tr>
+      <tr><td class="n">8</td><td>Devolution of powers/responsibilities for socio-economic plans, incl. the 29 Eleventh Schedule items</td></tr>
+      <tr><td class="n">9</td><td>Financial powers — levy, collect, appropriate taxes/duties/tolls/fees</td></tr>
+      <tr><td class="n">10</td><td>Assigning state-collected taxes/duties/tolls/fees to a panchayat</td></tr>
+      <tr><td class="n">11</td><td>Grants-in-aid to panchayats from the state's consolidated fund</td></tr>
+      <tr><td class="n">12</td><td>Constitution of funds for crediting all panchayat moneys</td></tr>
+    </tbody>
+  </table>
+
+  <div class="te">Compulsory జాబితాలో ఎక్కువగా <b>structure</b> (Gram Sabha, three tiers, elections, reservation, tenure), <b>institutions</b> (SEC, SFC) ఉన్నాయి — ఇవి state discretion లేకుండా తప్పనిసరి. Voluntary జాబితాలో ఎక్కువగా <b>actual power</b> (Gram Sabha powers, functions, finances, taxation) ఉంది — ఇక్కడే రాష్ట్రాల మధ్య నిజమైన వ్యత్యాసం కనిపిస్తుంది — ఒక రాష్ట్రం రాజ్యాంగపరంగా అవసరమైన structure ను సెటప్ చేసినా, పంచాయతీలకు నిజమైన అధికారం ఇవ్వకపోవచ్చు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Compulsory vs Voluntary</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Broad pattern of what's compulsory?</td><td>Structure, elections, reservation, SEC, SFC — the "skeleton"</td></tr>
+      <tr><td>Broad pattern of what's voluntary?</td><td>Actual powers, functions, finances, taxation — the "flesh"</td></tr>
+      <tr><td>How many compulsory provisions listed by the book?</td><td>11</td></tr>
+      <tr><td>How many voluntary provisions listed by the book?</td><td>12</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 14 ═══════════ -->
+<div class="page">
+<div class="sub">PESA Act, 1996 — Background &amp; Objectives</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Background — Why a Separate Act for Scheduled Areas</div>
+  <p class="eng">As noted earlier, Part IX's provisions do not automatically apply to <b class="term">Fifth Schedule (Scheduled) Areas</b> — but Parliament may extend them, with such exceptions and modifications as it thinks fit. Parliament exercised precisely this power to enact the <b class="imp">"Provisions of the Panchayats (Extension to the Scheduled Areas) Act", 1996</b> — the <b class="term">PESA Act</b>, which received the President's assent on <b class="hlg">24 December 1996</b>. At present, <b class="hlg">ten</b> states have Fifth Schedule Areas: <b class="hlp">Andhra Pradesh, Telangana, Chhattisgarh, Gujarat, Himachal Pradesh, Jharkhand, Madhya Pradesh, Maharashtra, Odisha and Rajasthan</b> — and all ten have amended their respective Panchayati Raj Acts to comply with PESA's requirements.</p>
+  <div class="te">ఇంతకుముందు గమనించినట్టు, Part IX నిబంధనలు <b class="term">Fifth Schedule (Scheduled) Areas</b> కు స్వయంచాలకంగా వర్తించవు — కానీ Parliament తనకు తగినట్టు మినహాయింపులు, మార్పులతో వాటిని విస్తరించవచ్చు. Parliament సరిగ్గా ఈ అధికారాన్నే వినియోగించి <b class="imp">"Provisions of the Panchayats (Extension to the Scheduled Areas) Act", 1996</b> — <b class="term">PESA Act</b> ను చేసింది — దీనికి President assent <b class="hlg">1996 డిసెంబర్ 24</b>న వచ్చింది. ప్రస్తుతం <b class="hlg">పది</b> రాష్ట్రాల్లో Fifth Schedule Areas ఉన్నాయి — <b class="hlp">Andhra Pradesh, Telangana, Chhattisgarh, Gujarat, Himachal Pradesh, Jharkhand, Madhya Pradesh, Maharashtra, Odisha, Rajasthan</b> — పదింటి రాష్ట్రాలూ PESA అవసరాలకు అనుగుణంగా తమ Panchayati Raj చట్టాలను సవరించాయి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Objectives of the PESA Act</div>
+  <p class="eng">PESA's objectives, as laid out in the book, form a coherent picture — the Act is not simply Part IX "copy-pasted" onto tribal areas, but a deliberately adapted version respecting tribal self-rule: (1) extend Part IX's panchayat provisions to scheduled areas, but with modifications; (2) provide <b class="imp">self-rule</b> for the bulk of the tribal population; (3) establish village governance based on participatory democracy, making the <b>Gram Sabha the nucleus</b> of all activity; (4) evolve an administrative framework consistent with traditional tribal practices; (5) safeguard and preserve tribal traditions and customs; (6) empower panchayats at the appropriate level with powers specifically suited to tribal requirements; and (7) prevent higher-level panchayats from encroaching on the powers of lower-level panchayats or the Gram Sabha itself.</p>
+  <div class="te">పుస్తకంలో ఇచ్చిన PESA లక్ష్యాలు ఒక స్పష్టమైన చిత్రాన్ని ఇస్తాయి — Act అంటే Part IX ను తెగల ప్రాంతాలపై "కాపీ-పేస్ట్" చేయడం కాదు, tribal self-rule ను గౌరవించే ఉద్దేశపూర్వకంగా మార్చిన వెర్షన్ — (1) Part IX పంచాయతీ నిబంధనలను, మార్పులతో scheduled areas కు విస్తరించడం; (2) తెగల జనాభాలో ఎక్కువమందికి <b class="imp">self-rule</b> కల్పించడం; (3) participatory democracy ఆధారంగా village governance ఏర్పాటు చేయడం, <b>Gram Sabha ను అన్ని కార్యకలాపాలకూ nucleus</b> గా మార్చడం; (4) సాంప్రదాయ తెగల పద్ధతులకు అనుగుణమైన administrative చట్రాన్ని రూపొందించడం; (5) తెగల సంప్రదాయాలు, ఆచారాలను రక్షించి, కాపాడటం; (6) తగిన స్థాయిలో పంచాయతీలకు తెగల అవసరాలకు అనుగుణమైన నిర్దిష్ట అధికారాలు ఇవ్వడం; (7) ఎగువ స్థాయి పంచాయతీలు దిగువ స్థాయి పంచాయతీ లేదా Gram Sabha అధికారాలను ఆక్రమించకుండా నివారించడం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — PESA Background &amp; Objectives</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What is PESA's full name?</td><td>Provisions of the Panchayats (Extension to the Scheduled Areas) Act, 1996</td></tr>
+      <tr><td>Date of President's assent to PESA?</td><td>24 December 1996</td></tr>
+      <tr><td>How many states currently have Fifth Schedule Areas?</td><td>10 — AP, Telangana, Chhattisgarh, Gujarat, HP, Jharkhand, MP, Maharashtra, Odisha, Rajasthan</td></tr>
+      <tr><td>Which body does PESA make the "nucleus" of village activity?</td><td>The Gram Sabha</td></tr>
+      <tr><td>What does PESA aim to prevent between panchayat tiers?</td><td>Higher-level panchayats assuming powers of lower-level ones/Gram Sabha</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 15 ═══════════ -->
+<div class="page">
+<div class="sub">PESA Act, 1996 — Key Features</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Features of the PESA Act</div>
+  <p class="eng">PESA's actual provisions build heavily on customary tribal governance rather than displacing it. State legislation on panchayats in scheduled areas must be <b class="imp">consonant with customary law</b>, social/religious practices and traditional management of community resources. A "village" here ordinarily means a habitation, hamlet or group of them, managing its own affairs by tradition and custom — and every such village has a <b>Gram Sabha</b> of persons on the village panchayat's electoral rolls, competent to safeguard tribal traditions, cultural identity, community resources and customary dispute-resolution. Every Gram Sabha must <b>approve</b> plans/programmes/projects for social and economic development before the village panchayat implements them, and must identify beneficiaries for poverty-alleviation and similar schemes; correspondingly, the village panchayat must obtain a <b>certification of fund utilisation</b> from the Gram Sabha for these programmes.</p>
+  <div class="te">PESA వాస్తవ నిబంధనలు సాంప్రదాయ తెగల governance ను స్థానభ్రంశం చేయడం కాదు, దానిపైనే ఎక్కువగా ఆధారపడతాయి. Scheduled areas లో పంచాయతీలపై రాష్ట్ర చట్టం <b class="imp">customary law</b>, సామాజిక/మతపరమైన ఆచారాలు, community resources సాంప్రదాయ నిర్వహణతో సరిపడాలి. ఇక్కడ "village" అంటే సాధారణంగా ఒక habitation, hamlet లేదా వాటి సమూహం, సంప్రదాయం, ఆచారం ప్రకారం తన వ్యవహారాలను తానే నిర్వహించుకునేది — ప్రతి అలాంటి గ్రామానికీ village panchayat electoral rolls లో ఉన్న వ్యక్తులతో కూడిన <b>Gram Sabha</b> ఉంటుంది, తెగల సంప్రదాయాలు, cultural identity, community resources, సంప్రదాయ dispute-resolution రక్షించే సామర్థ్యం దానికి ఉంటుంది. Village panchayat అమలు చేసేముందు social, economic development ప్రణాళికలు/పథకాలు/ప్రాజెక్టులను ప్రతి Gram Sabha <b>ఆమోదించాలి</b>, poverty-alleviation వంటి పథకాలకు లబ్ధిదారులను గుర్తించాలి; తదనుగుణంగా, ఈ పథకాలకు నిధుల వినియోగ <b>certification</b> ను village panchayat Gram Sabha నుండి పొందాలి.</div>
+  <p class="eng">On reservation, PESA sets a <b class="imp">higher floor</b> than the general 73rd CAA rule — reservation in Scheduled Areas is proportional to population as under Part IX, except that <b>ST reservation must be at least one-half (50%)</b> of total seats, and <b>all Chairperson posts at all levels are reserved for STs</b>. The state government may also nominate STs with no representation at the intermediate/district level, capped at one-tenth of that panchayat's elected strength. On land, resources and development, PESA gives the Gram Sabha/appropriate-level Panchayat a genuinely strong consultative and, in some cases, decisive role: it must be <b>consulted</b> before land acquisition or resettlement/rehabilitation for development projects (though actual planning/implementation stays coordinated at state level); it is entrusted with planning/management of minor water bodies; and its <b>recommendation is mandatory</b> — not merely consultative — before granting a prospecting licence or mining lease for minor minerals, and before granting a concession for minor mineral exploitation by auction. State legislatures must further specifically endow panchayats/Gram Sabhas in scheduled areas with powers over: enforcing prohibition or regulating intoxicant sale/consumption; ownership of minor forest produce; preventing and reversing unlawful alienation of tribal land; managing village markets; controlling money-lending to STs; controlling institutions/functionaries in social sectors; and controlling local plans and resources, including tribal sub-plans. Finally, states must design district-level administrative arrangements in scheduled areas broadly following the pattern of the <b class="hlb">Sixth Schedule</b>, and must ensure no higher panchayat encroaches on a lower one's or the Gram Sabha's powers; any inconsistent existing law ceased to have effect one year after PESA received presidential assent, though panchayats existing at that time could continue till their term expired.</p>
+  <div class="te">Reservation విషయంలో, PESA సాధారణ 73వ CAA నియమం కంటే <b class="imp">ఎక్కువ ఫ్లోర్</b> నిర్దేశిస్తుంది — Scheduled Areas లో reservation Part IX మాదిరిగానే జనాభా ప్రకారమే ఉంటుంది, కానీ <b>ST reservation కనీసం సగం (50%)</b> సీట్లు ఉండాలి, <b>అన్ని స్థాయిల్లోని Chairperson పదవులన్నీ STs కే</b> reserve అవుతాయి. intermediate/district స్థాయిలో ప్రాతినిధ్యం లేని STs ను, ఆ పంచాయతీ ఎన్నికైన సభ్యుల్లో పదో వంతుకు మించకుండా, రాష్ట్ర ప్రభుత్వం నామినేట్ చేయవచ్చు. భూమి, వనరులు, development విషయంలో, PESA Gram Sabha/తగిన స్థాయి Panchayat కు నిజంగా బలమైన consultative, కొన్నిసార్లు నిర్ణాయక పాత్రను ఇస్తుంది — development ప్రాజెక్టుల కోసం భూసేకరణ లేదా resettlement/rehabilitation కు ముందు దాన్ని <b>సంప్రదించాలి</b> (వాస్తవ ప్రణాళిక, అమలు మాత్రం రాష్ట్ర స్థాయిలోనే coordinate అవుతుంది); చిన్న నీటి వనరుల ప్రణాళిక, నిర్వహణ దానికే అప్పగించారు; minor minerals కోసం prospecting license, mining lease మంజూరుకు, auction ద్వారా minor minerals exploitation concession మంజూరుకు దాని <b>సిఫారసు తప్పనిసరి</b> — కేవలం consultative కాదు. Scheduled areas లోని పంచాయతీలు/Gram Sabhas కు రాష్ట్ర శాసనసభలు నిర్దిష్టంగా ఈ అధికారాలు ఇవ్వాలి — మత్తుపదార్థాల అమ్మకం/వినియోగంపై prohibition అమలు లేదా నియంత్రణ; minor forest produce యాజమాన్యం; తెగల భూమి అక్రమ alienation నివారణ, తిరిగి పొందడం; village markets నిర్వహణ; STs కు money-lending పై నియంత్రణ; social sectors institutions/functionaries పై నియంత్రణ; tribal sub-plans తో సహా local plans, వనరులపై నియంత్రణ. చివరగా, రాష్ట్రాలు scheduled areas లో district-level administrative ఏర్పాట్లను <b class="hlb">Sixth Schedule</b> పద్ధతిని ఆధారంగా చేసుకుని రూపొందించాలి, ఎగువ పంచాయతీ ఏదీ దిగువ పంచాయతీ లేదా Gram Sabha అధికారాలను ఆక్రమించకుండా చూడాలి; PESA కు Presidential assent వచ్చాక ఒక సంవత్సరం తర్వాత, దానికి విరుద్ధమైన ఏ ఇప్పటి చట్టమైనా అమల్లో ఉండదు, అయితే అప్పటికే ఉన్న పంచాయతీలు తమ term ముగిసేవరకు కొనసాగవచ్చు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — PESA Features</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Minimum ST reservation in Scheduled Area panchayats?</td><td>At least one-half (50%) of total seats</td></tr>
+      <tr><td>Who holds ALL Chairperson posts in Scheduled Area panchayats?</td><td>Reserved exclusively for Scheduled Tribes</td></tr>
+      <tr><td>Cap on nominated ST members at intermediate/district level?</td><td>Not more than 1/10 of the panchayat's elected members</td></tr>
+      <tr><td>Whose recommendation is mandatory for minor mineral licences/leases?</td><td>Gram Sabha or appropriate-level Panchayat</td></tr>
+      <tr><td>Which Schedule's pattern should district-level PESA arrangements follow?</td><td>Sixth Schedule</td></tr>
+      <tr><td>What must a village panchayat get from the Gram Sabha after implementing a scheme?</td><td>A certification of utilisation of funds</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 16 ═══════════ -->
+<div class="page">
+<div class="sub">Finances of Panchayati Raj — 2nd ARC's Assessment</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Sources of PRI Revenue &amp; Their Financial Problems (2nd ARC, 2005-09)</div>
+  <p class="eng">The <b class="hlp">Second Administrative Reforms Commission</b> (2005-09) summarised how Panchayati Raj Institutions (PRIs) actually receive funds — through <b>five</b> channels: (i) grants from the Union Government, per the recommendations of the <b>Central Finance Commission</b> (Article 280); (ii) devolution from the state government, per the recommendations of the <b>State Finance Commission</b> (Article 243-I); (iii) loans/grants from the state government; (iv) programme-specific allocations under <b>Centrally Sponsored Schemes</b> and Additional Central Assistance; and (v) internal resource generation (tax and non-tax). Despite structural empowerment under Part IX, the Commission found that states had generally <b class="imp">not given adequate attention</b> to fiscally empowering panchayats — even in Kerala, Karnataka and Tamil Nadu, considered relatively progressive on PRI empowerment, panchayats remain heavily dependent on government grants.</p>
+  <div class="te"><b class="hlp">Second Administrative Reforms Commission</b> (2005-09), Panchayati Raj Institutions (PRIs) కు వాస్తవంగా నిధులు ఎలా వస్తాయో సంక్షిప్తీకరించింది — <b>ఐదు</b> మార్గాల ద్వారా — (i) <b>Central Finance Commission</b> (Article 280) సిఫారసుల మేరకు Union Government గ్రాంట్లు; (ii) <b>State Finance Commission</b> (Article 243-I) సిఫారసుల మేరకు రాష్ట్ర ప్రభుత్వం నుండి devolution; (iii) రాష్ట్ర ప్రభుత్వం నుండి loans/grants; (iv) <b>Centrally Sponsored Schemes</b>, Additional Central Assistance కింద పథకం-నిర్దిష్ట కేటాయింపులు; (v) internal resource generation (tax, non-tax). Part IX కింద structural empowerment ఉన్నా, పంచాయతీలను ఆర్థికంగా బలోపేతం చేయడంపై రాష్ట్రాలు సాధారణంగా <b class="imp">తగినంత శ్రద్ధ చూపలేదని</b> Commission గుర్తించింది — PRI empowerment లో సాపేక్షంగా ముందున్నవిగా భావించే Kerala, Karnataka, Tamil Nadu లలో కూడా పంచాయతీలు ప్రభుత్వ గ్రాంట్లపైనే ఎక్కువగా ఆధారపడతాయి.</div>
+  <p class="eng">The Commission's broader conclusions read almost like a diagnosis: internal resource generation at the panchayat level is weak, partly due to a thin tax domain and partly due to panchayats' own reluctance to collect revenue; panchayats are heavily dependent on Union/State grants, most of which are scheme-specific, leaving little discretion in spending; states, tight on their own fiscal position, are not keen to devolve further funds; even in critical Eleventh Schedule areas like primary education, healthcare, water supply, sanitation and minor irrigation, it is usually the <b>state government</b> that remains directly responsible for implementation and expenditure — so, overall, panchayats end up with <b class="imp">responsibility without matching resources</b>. On own-resource generation, gram panchayats are comparatively better placed, since they hold their own tax domain — property/house tax, profession tax, land tax/cess, vehicle taxes/tolls, entertainment tax, licence fees, cattle registration fees, sanitation/drainage tax, water rate, lighting rate, education cess, and fair/festival tax among them — while the intermediate and district panchayats are confined to a smaller revenue domain of secondary items like ferry services, markets, water/conservancy services, vehicle registration and cess on stamp duty.</p>
+  <div class="te">Commission విస్తృత తీర్మానాలు ఒక diagnosis లాగానే ఉన్నాయి — panchayat స్థాయిలో internal resource generation బలహీనంగా ఉంది — ఇందుకు తగినంత తక్కువ tax domain, అలాగే revenue వసూలు చేయడంలో పంచాయతీల సొంత అయిష్టత కారణాలు; పంచాయతీలు Union/State గ్రాంట్లపైనే ఎక్కువగా ఆధారపడతాయి, వీటిలో ఎక్కువ scheme-specific గా ఉంటాయి — ఖర్చు పెట్టడంలో పెద్దగా discretion ఉండదు; తమ సొంత ఆర్థిక పరిస్థితి ఇబ్బందుల్లో ఉన్న రాష్ట్రాలు మరింత నిధులు devolve చేయడానికి ఆసక్తి చూపవు; primary education, healthcare, water supply, sanitation, minor irrigation వంటి కీలకమైన Eleventh Schedule అంశాల్లో కూడా, అమలు, వ్యయానికి సాధారణంగా <b>రాష్ట్ర ప్రభుత్వమే</b> నేరుగా బాధ్యత వహిస్తుంది — కాబట్టి మొత్తంమీద పంచాయతీలకు <b class="imp">వనరులకు మించిన బాధ్యత</b> మిగులుతుంది. own-resource generation విషయంలో, gram panchayats సాపేక్షంగా మెరుగైన స్థితిలో ఉన్నాయి, ఎందుకంటే వాటికి సొంత tax domain ఉంది — property/house tax, profession tax, land tax/cess, vehicle taxes/tolls, entertainment tax, license fees, cattle registration fee, sanitation/drainage tax, water rate, lighting rate, education cess, fairs/festivals tax వంటివి — intermediate, district పంచాయతీలు మాత్రం ferry services, markets, water/conservancy services, vehicle registration, stamp duty cess వంటి చిన్న revenue domain కే పరిమితం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Finances of Panchayati Raj</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which body summarised PRI revenue sources, and when?</td><td>2nd Administrative Reforms Commission, 2005-09</td></tr>
+      <tr><td>Five sources of PRI funds?</td><td>Central FC grants, State FC devolution, state loans/grants, CSS allocations, internal resources</td></tr>
+      <tr><td>Which tier of panchayat has the strongest own tax domain?</td><td>Gram Panchayat (village level)</td></tr>
+      <tr><td>What does the intermediate/district tier rely on instead?</td><td>Tolls, fees, non-tax revenue (ferry, markets, stamp cess, etc.)</td></tr>
+      <tr><td>Even "progressive" PRI states (Kerala, Karnataka, TN) — still what?</td><td>Heavily dependent on government grants</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 17 ═══════════ -->
+<div class="page">
+<div class="sub">Reasons for Ineffective Performance of PRIs</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Why PRIs Have Underperformed Despite Constitutional Protection</div>
+  <p class="eng">Even after the 73rd Amendment gave PRIs constitutional status, the book (drawing on the Ministry of Panchayati Raj's <em>Roadmap for Panchayati Raj, 2011-16</em>) lists <b class="hlg">eight</b> broad reasons for their sub-optimal performance: (1) <b class="imp">lack of adequate devolution</b> — many states haven't devolved the "3Fs" (functions, funds, functionaries), and even where State Finance Commissions have recommended fiscal viability measures, few states have actually implemented them; (2) <b>excessive bureaucratic control</b> — in some states Gram Panchayats are effectively subordinated, forcing Sarpanches to spend excessive time visiting Block Offices for funds/technical approval, distorting their role as elected representatives; (3) <b>tied nature of funds</b> — scheme-specific activities aren't always locally appropriate, causing unsuitable spending or under-utilisation; (4) <b>overwhelming dependency on government funding</b> — when panchayats mostly receive rather than raise resources, people demand social audit far less; (5) <b>reluctance to use fiscal powers</b> — Gram Panchayats rarely levy property/business/market taxes or service charges (like street lighting, public toilets), often because levying tax on one's own community, where one also lives, feels politically difficult; (6) <b>weak status of the Gram Sabha</b> — many state Acts never spelt out Gram Sabha powers or procedures, or penalties for non-compliant officials, wasting its potential as a transparency/accountability tool; (7) <b>creation of Parallel Bodies</b> — schemes and "Missions" set up outside the mainstream PRI structure, ostensibly for speedier implementation, often create disconnect and duality, and — with their superior resource endowment — demoralise and usurp the legitimate space of PRIs; and (8) <b>poor infrastructure</b> — many Gram Panchayats lack even a full-time secretary or a proper office building, with weak planning/monitoring databases. On top of all this, a large share of elected PRI representatives are semi-literate or illiterate and, for want of regular, relevant training, struggle to perform their roles effectively.</p>
+  <div class="te">73వ సవరణ PRIs కు రాజ్యాంగ status ఇచ్చినా, పుస్తకం (Ministry of Panchayati Raj <em>Roadmap for Panchayati Raj, 2011-16</em> ఆధారంగా) వాటి sub-optimal పనితీరుకు <b class="hlg">ఎనిమిది</b> విస్తృత కారణాలు ఇస్తుంది — (1) <b class="imp">తగినంత devolution లేకపోవడం</b> — చాలా రాష్ట్రాలు "3Fs" (functions, funds, functionaries) ను devolve చేయలేదు, State Finance Commissions fiscal viability చర్యలు సిఫారసు చేసినా, కొన్ని రాష్ట్రాలే వాటిని అమలు చేశాయి; (2) <b>అధిక bureaucratic నియంత్రణ</b> — కొన్ని రాష్ట్రాల్లో Gram Panchayats ఆచరణలో subordinate స్థానంలో ఉన్నాయి, నిధులు/technical ఆమోదం కోసం Block Offices కు తిరగడానికి Sarpanches అధిక సమయం వెచ్చించాల్సి వస్తుంది — ఎన్నికైన ప్రతినిధులుగా వారి పాత్రను ఇది వక్రీకరిస్తుంది; (3) <b>నిధుల tied స్వభావం</b> — scheme-specific కార్యకలాపాలు స్థానికంగా ఎప్పుడూ తగినట్టుగా ఉండవు, అనుచిత ఖర్చు లేదా under-utilisation కు దారితీస్తాయి; (4) <b>ప్రభుత్వ నిధులపై అధిక ఆధారపడటం</b> — పంచాయతీలు వనరులు సమకూర్చుకోకుండా బయటి నుండి నిధులు పొందితే, ప్రజలు social audit ను తక్కువగా కోరతారు; (5) <b>fiscal powers వాడటానికి అయిష్టత</b> — property/business/market taxes, street lighting, public toilets వంటి service charges ను Gram Panchayats అరుదుగానే విధిస్తాయి — ఎందుకంటే తాము నివసించే సొంత సముదాయంపైనే tax విధించడం రాజకీయంగా కష్టంగా అనిపిస్తుంది; (6) <b>Gram Sabha బలహీన status</b> — చాలా రాష్ట్ర చట్టాలు Gram Sabha అధికారాలు, procedures, పాటించని officials కు penalties ఎప్పుడూ స్పష్టంగా చెప్పలేదు — transparency/accountability tool గా దాని సామర్థ్యాన్ని ఇది వృధా చేస్తుంది; (7) <b>Parallel Bodies సృష్టి</b> — mainstream PRI నిర్మాణం బయట, వేగవంతమైన అమలు కోసమని ఏర్పాటైన పథకాలు, "Missions" తరచుగా disconnect, duality సృష్టిస్తాయి — వాటి superior resource endowment తో PRIs ను demoralise చేసి, వాటి చట్టబద్ధమైన స్థానాన్ని ఆక్రమిస్తాయి; (8) <b>పేద infrastructure</b> — చాలా Gram Panchayats కు full-time secretary గానీ, సరైన office building గానీ లేదు, planning/monitoring databases కూడా బలహీనంగా ఉన్నాయి. వీటన్నింటికి తోడు, PRIs లో ఎన్నికైన ప్రతినిధుల్లో ఎక్కువమంది semi-literate లేదా illiterate — క్రమమైన, relevant training లేకపోవడం వల్ల తమ పాత్రలను సమర్థంగా నిర్వర్తించడంలో ఇబ్బంది పడతారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Reasons for Ineffective Performance</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What are the "3Fs" many states fail to devolve?</td><td>Functions, Funds, Functionaries</td></tr>
+      <tr><td>Why do Sarpanches lose real autonomy in some states?</td><td>Excessive dependence on Block Offices for funds/approvals</td></tr>
+      <tr><td>Why do Panchayats rarely levy their own taxes?</td><td>Politically difficult to tax one's own community/neighbours</td></tr>
+      <tr><td>What is a "Parallel Body," and its typical effect?</td><td>A scheme/Mission outside PRI structure — demoralises &amp; sidelines PRIs</td></tr>
+      <tr><td>Which document did the book draw these 8 reasons from?</td><td>Ministry of Panchayati Raj, Roadmap for Panchayati Raj (2011-16)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 18 ═══════════ -->
+<div class="page">
+<div class="sub">Reference Tables — Articles at a Glance &amp; Post-Constitutionalisation Committees</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Table 39.2 — Articles Related to Panchayats, at a Glance</div>
+  <table>
+    <caption>Articles 243-243O (Part IX)</caption>
+    <thead><tr><th style="width:16%">Article</th><th>Subject-matter</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">243</td><td>Definitions</td></tr>
+      <tr><td class="hlg">243A</td><td>Gram Sabha</td></tr>
+      <tr><td class="hlg">243B</td><td>Constitution of panchayats</td></tr>
+      <tr><td class="hlg">243C</td><td>Composition of panchayats</td></tr>
+      <tr><td class="hlg">243D</td><td>Reservation of seats</td></tr>
+      <tr><td class="hlg">243E</td><td>Duration of panchayats, and so on</td></tr>
+      <tr><td class="hlg">243F</td><td>Disqualifications for membership</td></tr>
+      <tr><td class="hlg">243G</td><td>Powers, authority and responsibilities of panchayats</td></tr>
+      <tr><td class="hlg">243H</td><td>Powers to impose taxes by, and funds of, the panchayats</td></tr>
+      <tr><td class="hlg">243-I</td><td>Constitution of finance commission to review financial position</td></tr>
+      <tr><td class="hlg">243J</td><td>Audit of accounts of panchayats</td></tr>
+      <tr><td class="hlg">243K</td><td>Elections to the panchayats</td></tr>
+      <tr><td class="hlg">243L</td><td>Application to union territories</td></tr>
+      <tr><td class="hlg">243M</td><td>Part not to apply to certain areas</td></tr>
+      <tr><td class="hlg">243N</td><td>Continuance of existing laws and panchayats</td></tr>
+      <tr><td class="hlg">243-O</td><td>Bar to interference by courts in electoral matters</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Table 39.3 — Committees Related to Panchayati Raj (After Constitutionalisation)</div>
+  <p class="eng">Even after 1992, several expert bodies continued examining panchayat devolution, planning and delivery mechanisms — these are the more recent, post-1993 reference points, distinct from the pre-1992 committees covered earlier in this chapter.</p>
+  <div class="te">1992 తర్వాత కూడా, panchayat devolution, planning, delivery mechanisms పరిశీలిస్తూ అనేక expert బాడీలు కొనసాగాయి — ఇవి 1993 తర్వాతి, ఇటీవలి reference పాయింట్లు — ఈ chapter లో ముందు చూసిన 1992కి ముందటి committees కి భిన్నమైనవి.</div>
+
+  <table>
+    <caption>Post-Constitutionalisation Committees</caption>
+    <thead><tr><th class="n" style="width:6%">#</th><th style="width:44%">Committee</th><th style="width:20%">Chairman</th><th style="width:15%">Appointed</th><th>Reported</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Task Force on Devolution of Powers and Functions to PRIs</td><td>Lalit Mathur</td><td class="hlg">2001</td><td class="hlg">2001</td></tr>
+      <tr><td class="n">2</td><td>Expert Group on Planning at the Grassroots Level</td><td>V. Ramachandran</td><td class="hlg">2005</td><td class="hlg">2006</td></tr>
+      <tr><td class="n">3</td><td>Task Force for Preparation of a Manual for District Planning</td><td>Smt. Rajwant Sandhu</td><td class="hlg">2008</td><td class="hlg">2008</td></tr>
+      <tr><td class="n">4</td><td>Committee on Restructuring of DRDA (District Rural Development Agency)</td><td>V. Ramachandran</td><td class="hlg">2010</td><td class="hlg">2012</td></tr>
+      <tr><td class="n">5</td><td>Expert Committee on Leveraging Panchayats for Efficient Delivery of Public Goods and Services</td><td>Mani Shankar Aiyar</td><td class="hlg">2012</td><td class="hlg">2013</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Reference Tables</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Article for reservation of seats? For state finance commission?</td><td>243D (reservation); 243-I (finance commission)</td></tr>
+      <tr><td>Article barring court interference in panchayat elections?</td><td>Article 243-O</td></tr>
+      <tr><td>Who chaired the 2001 Task Force on Devolution?</td><td>Lalit Mathur</td></tr>
+      <tr><td>Who chaired both the 2005-06 Grassroots Planning Expert Group and the 2010-12 DRDA Restructuring Committee?</td><td>V. Ramachandran</td></tr>
+      <tr><td>Who chaired the 2012-13 Expert Committee on Leveraging Panchayats?</td><td>Mani Shankar Aiyar</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలాలు — Balwant Rai Mehta Committee Report (1957); Ashok Mehta Committee Report (1978); G.V.K. Rao Committee Report (1986); L.M. Singhvi Concept Paper (1986); Gadgil Committee Report (1988); 73rd Constitutional Amendment Act, 1992; PESA Act, 1996; Second Administrative Reforms Commission, Report on Local Governance (2007); Ministry of Panchayati Raj, Roadmap for Panchayati Raj (2011-16).</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 19 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Panchayati Raj Implementation, 2025-26 <span class="caasof">(as of 17.08.2026, verified via live web search on this date — re-verify closer to your exam date, since local-body elections and devolution figures change frequently)</span></div>
+
+    <p class="eng"><b>1. PESA finally implemented in Jharkhand (2 January 2026), 25 years after the state's own formation:</b> Jharkhand — one of the ten Fifth Schedule states — notified its PESA Rules on the night of <b class="hlg">2 January 2026</b> (cabinet approval had come on 23 December 2025), a full <b class="hlg">25 years</b> after Jharkhand itself became a state in November 2000 — not 25 years after the national PESA Act, which is nearly three decades old (1996). The Rules apply fully in <b class="hlg">13</b> districts and partially in <b class="hlg">3</b> more, and formally recognise the Gram Sabha as the most powerful local institution in these areas, with authority over community resources ("jal, jangal, zameen" — water, forest, land), including forest produce and water bodies, plus limited traditional dispute-resolution powers. This is a useful real-world illustration of a point the chapter's "Reasons for Ineffective Performance" section makes more generally — that constitutional/statutory recognition (1996, in PESA's case) and actual on-the-ground implementation can be separated by decades.</p>
+    <div class="te"><b>1. Jharkhand లో చివరకు PESA అమలు (2 జనవరి 2026), రాష్ట్రం ఏర్పడిన 25 సంవత్సరాల తర్వాత:</b> పది Fifth Schedule రాష్ట్రాల్లో ఒకటైన Jharkhand, తన PESA Rules ను <b class="hlg">2026 జనవరి 2</b>న రాత్రి notify చేసింది (cabinet ఆమోదం 2025 డిసెంబర్ 23న వచ్చింది) — ఇది 1996 నాటి జాతీయ PESA Act తర్వాత కాదు, 2000 నవంబర్‌లో Jharkhand రాష్ట్రంగా ఏర్పడిన తర్వాత పూర్తి <b class="hlg">25 సంవత్సరాలు</b> గడిచాక (PESA Act స్వయంగా దాదాపు మూడు దశాబ్దాల నాటిది — 1996). ఈ Rules <b class="hlg">13</b> districts లో పూర్తిగా, మరో <b class="hlg">3</b> districts లో పాక్షికంగా వర్తిస్తాయి — ఈ ప్రాంతాల్లో Gram Sabha నే అత్యంత శక్తివంతమైన స్థానిక సంస్థగా అధికారికంగా గుర్తించి, community resources ("jal, jangal, zameen" — నీరు, అడవి, భూమి) పై అధికారం ఇచ్చాయి — forest produce, water bodies తో పాటు పరిమిత సంప్రదాయ dispute-resolution అధికారాలు కూడా. Chapter లో "Reasons for Ineffective Performance" section లో సాధారణంగా చెప్పిన అంశానికి ఇది ఒక ఆచరణాత్మక ఉదాహరణ — constitutional/statutory గుర్తింపు (PESA విషయంలో 1996) కు, వాస్తవ ఆచరణలో అమలుకు మధ్య దశాబ్దాల అంతరం ఉండవచ్చు.</div>
+
+    <p class="eng"><b>2. Maharashtra local-body elections and the 50% reservation ceiling (2025-26):</b> A long-pending batch of Maharashtra local-body elections (municipal corporations, councils, zila parishads and panchayat samitis) became entangled in a Supreme Court case testing the constitutional <b class="imp">50% overall reservation ceiling</b> for SC/ST/OBC seats combined — the same ceiling principle the book's reservation provisions implicitly assume is respected (established through the Court's earlier jurisprudence on local-body OBC reservation, notably <b class="hlp">K. Krishna Murthy vs Union of India</b>, 2010). In <b class="hlg">57</b> of <b class="hlg">288</b> notified local bodies, state-approved reservation (following the state's Banthia Commission process) was found to breach the 50% ceiling. Chief Justice <b class="hlp">Surya Kant</b>'s bench allowed those 57 bodies' elections to proceed but held the reservation there "subject to the final outcome" of the case, while directing that any further elections notified must comply strictly with the 50% ceiling; the Court had earlier set a firm <b class="hlg">31 January 2026</b> outer deadline for completing Maharashtra's long-overdue local body polls (many bodies had been without elected representatives for 500+ days). That deadline was met for the 29 municipal corporations, which polled on 15 January 2026 (see Chapter 40's Current Affairs Update for that side of the story), but the zila parishad and panchayat samiti elections that are this chapter's direct concern needed a further Court-permitted extension — their results (Mahayuti again dominant, <b class="hlg">552</b> of <b class="hlg">731</b> declared seats) were announced only on <b class="hlg">10 February 2026</b>.</p>
+    <div class="te"><b>2. Maharashtra స్థానిక సంస్థల ఎన్నికలు, 50% reservation ceiling (2025-26):</b> చాలాకాలంగా పెండింగ్ లో ఉన్న Maharashtra స్థానిక సంస్థల ఎన్నికల batch (municipal corporations, councils, zila parishads, panchayat samitis) — SC/ST/OBC సీట్లు కలిపి రాజ్యాంగపరమైన <b class="imp">50% మొత్తం reservation ceiling</b> ను పరీక్షించే Supreme Court కేసులో చిక్కుకుంది — పుస్తకంలోని reservation నిబంధనలు implicit గా గౌరవించాలని భావించే అదే ceiling సూత్రం ఇది (Court యొక్క ముందటి local-body OBC reservation న్యాయశాస్త్రం, ముఖ్యంగా <b class="hlp">K. Krishna Murthy vs Union of India</b>, 2010 ద్వారా స్థాపించబడింది). Notify చేసిన <b class="hlg">288</b> స్థానిక సంస్థల్లో <b class="hlg">57</b> లో, రాష్ట్రం ఆమోదించిన reservation (రాష్ట్రం Banthia Commission ప్రక్రియ ప్రకారం) 50% ceiling ను అతిక్రమించినట్టు తేలింది. Chief Justice <b class="hlp">Surya Kant</b> బెంచ్ ఆ 57 బాడీల ఎన్నికలు కొనసాగడానికి అనుమతించింది కానీ అక్కడి reservation ను కేసు "తుది ఫలితానికి లోబడి" ఉంటుందని పేర్కొంది, ఇకపై notify చేసే ఏ ఎన్నికైనా 50% ceiling ను కచ్చితంగా పాటించాలని ఆదేశించింది; Maharashtra లో చాలాకాలంగా pending ఉన్న స్థానిక సంస్థల ఎన్నికలు పూర్తి చేయడానికి Court ముందే <b class="hlg">31 జనవరి 2026</b> అంతిమ గడువు నిర్దేశించింది (చాలా బాడీల్లో 500+ రోజులుగా ఎన్నికైన ప్రతినిధులే లేరు). ఈ గడువు <b class="hlg">29</b> municipal corporations కు పాటించబడింది — అవి <b class="hlg">15 జనవరి 2026</b> న పోలయ్యాయి (ఆ కథ కోసం Chapter 40 Current Affairs Update చూడండి) — కానీ ఈ chapter నేరుగా సంబంధించిన zila parishad, panchayat samiti ఎన్నికలకు Court మరో extension ఇవ్వాల్సి వచ్చింది — వాటి ఫలితాలు (Mahayuti మళ్ళీ ఆధిపత్యం — ప్రకటించిన <b class="hlg">731</b> సీట్లలో <b class="hlg">552</b> గెలిచింది) <b class="hlg">10 ఫిబ్రవరి 2026</b> న మాత్రమే వెల్లడయ్యాయి.</div>
+
+    <p class="eng"><b>3. Ministry of Panchayati Raj's Devolution Index — financial empowerment still uneven:</b> The Ministry's "Status of Devolution to Panchayats in States" ranking (six dimensions — <b>Framework, Functions, Finances, Functionaries, Capacity Enhancement, Accountability</b>) continued to be highlighted through <b class="hlg">2025-26</b>, confirming the book's own diagnosis that devolution remains structurally uneven across states. On the positive side, digital financial management has scaled up sharply — the <b class="hlb">eGramSwaraj-PFMS</b> integration is now used by roughly <b class="hlg">90-96%</b> of gram panchayats for plan uploads and payments, and the <b class="hlg">15th Finance Commission</b> period saw roughly <b class="hlg">₹2.82 lakh crore</b> disbursed to PRIs — but the report's own text still flags the same structural gaps this chapter covers: many gram panchayats remain short of funds, staff and real functional authority.</p>
+    <div class="te"><b>3. Ministry of Panchayati Raj Devolution Index — ఆర్థిక empowerment ఇంకా అసమానంగానే:</b> Ministry యొక్క "Status of Devolution to Panchayats in States" ranking (ఆరు dimensions — <b>Framework, Functions, Finances, Functionaries, Capacity Enhancement, Accountability</b>) <b class="hlg">2025-26</b> అంతటా highlight అవుతూనే ఉంది — devolution రాష్ట్రాలవారీగా నిర్మాణాత్మకంగా అసమానంగానే ఉందని పుస్తకం సొంత నిర్ధారణనే ఇది ధృవీకరిస్తుంది. సానుకూల వైపు చూస్తే, digital financial management గణనీయంగా పెరిగింది — <b class="hlb">eGramSwaraj-PFMS</b> integration ను ఇప్పుడు దాదాపు <b class="hlg">90-96%</b> gram panchayats plan uploads, payments కోసం వాడుతున్నాయి, <b class="hlg">15వ Finance Commission</b> కాలంలో PRIs కు దాదాపు <b class="hlg">₹2.82 లక్షల కోట్లు</b> పంపిణీ అయ్యాయి — కానీ ఈ chapter కవర్ చేసిన అదే నిర్మాణాత్మక లోపాలను report సొంత టెక్స్ట్ లోనే ఇంకా ఎత్తిచూపుతుంది — చాలా gram panchayats కు ఇప్పటికీ నిధులు, సిబ్బంది, నిజమైన functional అధికారం కొరతే.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — Panchayati Raj current affairs, 2025-26</caption>
+      <thead><tr><th style="width:26%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">Feb 2025</td><td>Ministry of Panchayati Raj releases "Status of Devolution to Panchayats in States, 2024" ranking (6 dimensions)</td></tr>
+        <tr><td class="hlg">2 Jan 2026</td><td>Jharkhand notifies PESA Rules — 25 years after the state's formation (2000), not the 1996 Act</td></tr>
+        <tr><td class="hlg">31 Jan 2026</td><td>SC-mandated outer deadline — met for the 29 municipal corporations (Ch.40); zila parishad/panchayat samiti polls separately extended</td></tr>
+        <tr><td class="hlg">10 Feb 2026</td><td>Zila Parishad results declared — Mahayuti wins 552 of 731 declared seats</td></tr>
+        <tr><td class="hlg">Jul 2026</td><td>Devolution Index findings re-highlighted by Ministry — eGramSwaraj-PFMS uptake, ₹2.82L cr disbursed under 15th FC</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: the book's constitutional-text position remains the stable core answer — 73rd CAA's compulsory/voluntary framework, PESA's 1996 provisions, and the Finance Commission mechanism under Article 243-I. But be ready for current-affairs MCQs referencing specific 2025-26 developments — the Jharkhand PESA rollout, the Maharashtra 50% reservation-ceiling litigation, and the latest Devolution Index figures — since these are exactly the kind of evolving, exam-relevant facts the Rulebook flags as needing re-verification before each exam cycle.</p>
+    <div class="te">Exam కోసం — పుస్తకం రాజ్యాంగ టెక్స్ట్ స్థానం ఇప్పటికీ స్థిరమైన ప్రధాన సమాధానం — 73వ CAA compulsory/voluntary చట్రం, PESA 1996 నిబంధనలు, Article 243-I కింద Finance Commission యంత్రాంగం. కానీ 2025-26 నిర్దిష్ట పరిణామాలను ప్రస్తావించే current-affairs MCQs కు సిద్ధంగా ఉండండి — Jharkhand PESA అమలు, Maharashtra 50% reservation-ceiling వ్యాజ్యం, తాజా Devolution Index గణాంకాలు — ఇవి సరిగ్గా ప్రతి exam cycle ముందూ re-verify చేయాల్సిన రకమైన, evolving, exam-relevant facts గా Rulebook సూచించిన అంశాలు.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 39 — Panchayati Raj · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.40 — Municipalities</span><span class="dpart">Part V &middot; Complete Edition</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

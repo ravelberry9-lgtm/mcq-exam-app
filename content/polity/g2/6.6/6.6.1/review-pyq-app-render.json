@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "response200": true,
+    "all3questionanchors": true,
+    "full_duty_guide": true,
+    "committee_guide_content": true,
+    "bilingual_rationale": true
+  },
+  "scope": "Flask rendered HTML checks only, browser visual verification outstanding",
+  "test_adjustment": "Table IDs are lookup keys, not rendered element IDs; checked actual guide title instead.",
+  "chapter_complete": false
+}

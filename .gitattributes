@@ -1,1 +1,4 @@
 content/ap_history_canonical/*.html -text -diff
+# Preserve audited content bytes and manifest checksums across Windows/Linux.
+content/polity/** -text
+static/polity/** -text

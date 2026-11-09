@@ -1,0 +1,50 @@
+{% macro question_card(q) %}
+<article id="{{ q.id }}"{% if q.scored is defined %} data-scored="{{ 'true' if q.scored else 'false' }}"{% endif %}>
+  {% for memory_map in unit6_maps_for(q.id) %}<p><a href="{{ url_for('polity_maps.page',map_id=memory_map.map_id) }}">See memory map / జ్ఞాపక పటం చూడండి</a></p>{% endfor %}
+  {% if q.scored is defined and not q.scored %}<p><strong>UNSCORED · Study answer only / స్కోరు లేదు · అధ్యయన సమాధానం మాత్రమే</strong></p>{% endif %}
+  {% if q.source %}
+    <h3>{{ q.source }}</h3>
+    {% set mapping = pyq_mapping[q.id] %}
+    <p>{{ mapping.master_primary_subchapter or mapping.primary_subchapter }} · GBK Ch. {{ mapping.gbk.chapter }} · Laxmikanth Ch. {{ mapping.laxmikanth.chapter }} — {{ mapping.laxmikanth.section }}</p>
+  {% endif %}
+  {% if q.source_page %}<p>GBK p. {{ q.source_page }} · {{ q.id }}</p>{% endif %}
+  <p lang="te">{{ q.question_te }}</p>
+  <p lang="en">{{ q.question_en }}</p>
+  <ol>
+  {% for option in q.options_te %}
+    <li><span lang="te">{{ option }}</span><br><span lang="en">{{ q.options_en[loop.index0] }}</span></li>
+  {% endfor %}
+  </ol>
+  <details>
+    <summary>జవాబు / Answer</summary>
+    {% set display_answer = q.study_answer if q.scored is defined and not q.scored else q.answer %}
+    {% if display_answer in [1, 2, 3, 4] %}
+    <p>{{ display_answer }}. {{ q.options_te[display_answer - 1] }} · {{ q.options_en[display_answer - 1] }}</p>
+    {% else %}<p>Unresolved / నిర్ధారణ కాలేదు</p>{% endif %}
+    {% set explanation = explanations.questions[q.explanation_id] %}
+    <p lang="te">{{ explanation.te }}</p><p lang="en">{{ explanation.en }}</p>
+    {% if explanation.table_id %}
+      {% set table = explanations.tables[explanation.table_id] %}
+      <table>
+        <caption>{{ table.title }}</caption>
+        <thead><tr>{% for heading in table.headers %}<th scope="col">{{ heading }}</th>{% endfor %}</tr></thead>
+        <tbody>{% for row in table.rows %}<tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+      </table>
+    {% endif %}
+    {% if explanation.related_questions %}
+      <ul aria-label="Related practice">
+      {% for related in explanation.related_questions if related.url.startswith("/learn/polity/") %}
+        <li><a href="{{ related.url }}"><span lang="te">{{ related.label_te }}</span> · <span lang="en">{{ related.label_en }}</span></a></li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    {% if explanation.sources %}
+      <ul aria-label="Sources">
+      {% for source in explanation.sources if source.startswith("https://") %}
+        <li><a href="{{ source }}">Source {{ loop.index }}</a></li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </details>
+</article>
+{% endmacro %}

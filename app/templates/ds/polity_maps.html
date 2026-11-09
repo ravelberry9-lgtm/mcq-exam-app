@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+.u6-reader{max-width:68rem;margin:auto;padding:1rem;overflow-wrap:anywhere;min-width:0}.u6-reader p{white-space:pre-line;line-height:1.75}.u6-reader nav{display:flex;gap:1rem;flex-wrap:wrap}.u6-reader li{margin:.6rem 0}.u6-reader [lang]{overflow-wrap:anywhere}
+</style>
+<main class="u6-reader">
+<nav><a href="{{ url_for('polity.master_index') }}">Polity / రాజ్యాంగం</a><a href="{{ url_for('polity_maps.index') }}">Memory maps / జ్ఞాపక పటాలు</a></nav>
+{% if question %}
+<article id="{{ question.id }}" data-scored="{{ 'true' if question._scored else 'false' }}">
+<h1>{{ question._chapter }} · {{ question.id }}</h1>
+{% if not question._scored %}<p><strong>Unscored · Study material only / స్కోరు లేదు · అధ్యయనం కోసం మాత్రమే</strong></p>{% endif %}
+<p lang="te">{{ question.question_te }}</p><p lang="en">{{ question.question_en }}</p>
+<ol>{% for option in question.options_en %}<li><span lang="te">{{ question.options_te[loop.index0] }}</span><br><span lang="en">{{ option }}</span></li>{% endfor %}</ol>
+<details><summary>Study answer and explanation / అధ్యయన సమాధానం, వివరణ</summary>
+<p>{% if question._answer in [1,2,3,4] %}{{ question._answer }}. {{ question.options_te[question._answer-1] }} · {{ question.options_en[question._answer-1] }}{% else %}Unresolved / నిర్ధారణ కాలేదు{% endif %}</p>
+{% if question.official_key is defined %}<p>Recorded key (unchanged) / నమోదైన కీ (మార్చలేదు): {{ question.official_key }}</p>{% endif %}
+{% if question.printed_book_key is defined %}<p>Printed key (unchanged) / ముద్రిత కీ (మార్చలేదు): {{ question.printed_book_key }}</p>{% endif %}
+<p lang="te">{{ question._te }}</p><p lang="en">{{ question._en }}</p>
+</details>
+</article>
+{% endif %}
+{% if map %}<h1>{{ map.title }}</h1><p><a href="{{ url_for('polity_maps.page',map_id=map.map_id) }}">Open memory map / జ్ఞాపక పటం తెరవండి</a></p>
+<p>{{ items|length }} linked questions / అనుసంధానించిన ప్రశ్నలు. Partial links explain part of a question. A map link does not verify an answer key. / పాక్షిక అనుసంధానం ప్రశ్నలో కొంత భాగాన్నే వివరిస్తుంది. పటానికి అనుసంధానం సమాధాన కీని ధృవీకరించదు.</p>
+<ul>{% for q,link in items %}<li><a href="{{ url_for('polity_maps.question',item_id=q.id) }}">{{ q.id }} · <span lang="en">{{ q.question_en }}</span><span lang="te">{{ q.question_te }}</span></a> · {{ link.strength }}{% if not q._scored %} · Unscored / స్కోరు లేదు{% endif %}</li>{% endfor %}</ul>
+{% else %}<h2>{% if question %}See memory map / జ్ఞాపక పటం చూడండి{% else %}Unit 6 memory maps / యూనిట్ 6 జ్ఞాపక పటాలు{% endif %}</h2>
+<ul>{% for m in maps %}<li><a href="{{ url_for('polity_maps.page',map_id=m.map_id) }}">{{ m.title }}</a> · {{ m.links|length }} <a href="{{ url_for('polity_maps.linked_questions',map_id=m.map_id) }}">linked questions / అనుసంధానించిన ప్రశ్నలు</a></li>{% else %}<li>No map available yet / పటం ఇంకా అందుబాటులో లేదు</li>{% endfor %}</ul>{% endif %}
+</main>
+{% endblock %}

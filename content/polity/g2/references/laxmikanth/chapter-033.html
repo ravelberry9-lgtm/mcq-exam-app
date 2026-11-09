@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part IV — Book 1: State Executive & Legislature</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 33 — State Legislature</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Full-Depth Bilingual Study Notes — Part IV, State Government</div>
+
+<div class="para">
+  <div class="ptitle">Introduction &amp; Constitutional Basis</div>
+  <p class="eng">The <b>state legislature</b> occupies a pre-eminent and central position in the political system of a state — it is, structurally, the state-level mirror of Parliament (covered in Ch.23). <b class="hlg">Articles 168 to 212</b>, placed in <b>Part VI</b> of the Constitution, deal with the state legislature's organisation, composition, duration, officers, procedures, privileges and powers. While much of this design is <b class="imp">similar</b> to Parliament's, a careful reading reveals several deliberate differences — most importantly, the state legislature's second chamber (where one exists) is far weaker than the Rajya Sabha, and there is no joint-sitting mechanism to resolve inter-House deadlocks at the state level. This chapter builds out those parallels and contrasts throughout.</p>
+  <div class="te"><b>State legislature</b> ఒక రాష్ట్ర political system లో అత్యంత ప్రాముఖ్యమైన, కేంద్ర స్థానంలో ఉంటుంది — నిర్మాణపరంగా ఇది రాష్ట్ర స్థాయిలో Parliament (Ch.23 చూడండి) కు అద్దం లాంటిది. రాజ్యాంగం <b>Part VI</b> లోని <b class="hlg">Articles 168 నుండి 212</b> వరకు — state legislature నిర్మాణం, కూర్పు, పదవీకాలం, అధికారులు, procedures, privileges, అధికారాలు గురించి వివరిస్తాయి. ఇందులో చాలా భాగం Parliament design కు <b class="imp">similar</b> అయినా, జాగ్రత్తగా చదివితే కొన్ని ఉద్దేశపూర్వక తేడాలు కనిపిస్తాయి — అన్నింటికంటే ముఖ్యమైనది, రాష్ట్ర legislature రెండో సభ (ఉన్నచోట) Rajya Sabha కంటే చాలా బలహీనం, రాష్ట్ర స్థాయిలో Houses మధ్య deadlock పరిష్కరించడానికి joint-sitting mechanism ఏదీ లేదు. ఈ అధ్యాయం అంతటా ఈ పోలికలు, తేడాలను నిర్మిస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Organisation — Unicameral vs Bicameral</div>
+  <p class="eng">There is <b class="imp">no uniformity</b> in how India's state legislatures are organised. Most states have a <b class="term">unicameral</b> system (a single House); at present, only <b class="hlg">6</b> states have a <b class="term">bicameral</b> system (two Houses) — <b class="hlp">Andhra Pradesh, Telangana, Uttar Pradesh, Bihar, Maharashtra</b> and <b class="hlp">Karnataka</b>. The remaining <b class="hlg">22</b> states are unicameral. In a unicameral state, the state legislature consists of the <b>Governor</b> and the <b>legislative assembly</b> alone; in a bicameral state, it consists of the Governor, the <b>legislative council</b> and the <b>legislative assembly</b>. The legislative council (<span class="hlb">Vidhan Parishad</span>) is the upper house — the second chamber, or house of elders — while the legislative assembly (<span class="hlb">Vidhan Sabha</span>) is the lower house, the popular (directly-elected) chamber.</p>
+  <div class="te">India state legislatures నిర్మాణంలో ఏకరూపత <b class="imp">లేదు</b>. చాలా రాష్ట్రాలు <b class="term">unicameral</b> వ్యవస్థ (ఒకే House) కలిగి ఉంటాయి; ప్రస్తుతం <b class="hlg">6</b> రాష్ట్రాలే <b class="term">bicameral</b> వ్యవస్థ (రెండు Houses) కలిగి ఉన్నాయి — <b class="hlp">Andhra Pradesh, Telangana, Uttar Pradesh, Bihar, Maharashtra, Karnataka</b>. మిగిలిన <b class="hlg">22</b> రాష్ట్రాలు unicameral. Unicameral రాష్ట్రంలో state legislature = <b>Governor + legislative assembly</b> మాత్రమే; bicameral రాష్ట్రంలో = Governor + <b>legislative council</b> + <b>legislative assembly</b>. Legislative council (Vidhan Parishad) upper house — second chamber, elders సభ; legislative assembly (Vidhan Sabha) lower house — directly-ఎన్నికైన popular సభ.</div>
+
+  <p class="eng">Several states have shifted between unicameral and bicameral status over the decades, showing how genuinely optional Article 169's mechanism is (discussed next). The <b class="hlp">Jammu &amp; Kashmir</b> Legislative Council — which existed under the erstwhile state's own separate state Constitution, not the Indian one — was <b class="imp">abolished</b> by the J&amp;K Reorganisation Act, <b class="hlg">2019</b>, when J&amp;K became a Union Territory. The <b class="hlb">Tamil Nadu Legislative Council Act, 2010</b>, though enacted, has <b class="imp">not come into force</b> to date. The <b class="hlp">Andhra Pradesh</b> Legislative Council was revived by the AP Legislative Council Act, <b class="hlg">2005</b>. And the <b class="hlg">7th Amendment Act, 1956</b> authorised a Legislative Council for <b class="hlp">Madhya Pradesh</b> — but this requires a <b>Presidential notification</b> to actually take effect, and no such notification has ever been issued, so MP continues to be unicameral in practice.</p>
+  <div class="te">అనేక రాష్ట్రాలు దశాబ్దాలుగా unicameral, bicameral స్థితుల మధ్య మారాయి — Article 169 mechanism (తర్వాత చర్చిస్తాం) నిజంగా ఎంత optional అనేది ఇది చూపిస్తుంది. పూర్వపు రాష్ట్రం సొంత ప్రత్యేక రాష్ట్ర రాజ్యాంగం కింద ఉండిన <b class="hlp">Jammu &amp; Kashmir</b> Legislative Council ను, J&amp;K UT గా మారినప్పుడు J&amp;K Reorganisation Act, <b class="hlg">2019</b> రద్దు చేసింది. <b class="hlb">Tamil Nadu Legislative Council Act, 2010</b> చట్టం అయినా, ఇప్పటివరకూ అమలులోకి రాలేదు. <b class="hlp">Andhra Pradesh</b> Legislative Council ను AP Legislative Council Act, <b class="hlg">2005</b> పునరుద్ధరించింది. <b class="hlg">7వ సవరణ చట్టం, 1956</b> <b class="hlp">Madhya Pradesh</b> కు Legislative Council కు అనుమతించింది — కానీ దీనికి Presidential notification అవసరం, అలాంటి notification ఇప్పటివరకు జారీ కాలేదు — MP ఆచరణలో ఇప్పటికీ unicameral గా కొనసాగుతోంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Article 169 — Abolition or Creation of Legislative Councils</div>
+  <p class="eng"><b class="hlg">Article 169</b> gives <b>Parliament</b> the power to abolish an existing legislative council, or create one where a state doesn't have one — but only if that state's <b>legislative assembly</b> first passes a resolution to that effect, by <b class="imp">special majority</b> (a majority of the assembly's total membership, and a majority of not less than two-thirds of members present &amp; voting). Notably, the resulting Act of Parliament is <b class="imp">not</b> treated as a constitutional amendment for the purposes of <b class="hlg">Article 368</b> — it is passed like an ordinary piece of legislation, by simple majority. This design choice traces to the Constituent Assembly debate itself: the idea of a state second chamber was criticised there as unrepresentative of the people, as delaying the legislative process, and as an expensive institution — so the framers deliberately made it <b>optional</b>, letting each state decide for itself, according to its own willingness and financial strength, whether it wants a second chamber at all.</p>
+  <div class="te"><b class="hlg">Article 169</b> ఉన్న Legislative Council ను రద్దు చేసే, లేదా లేని చోట సృష్టించే అధికారాన్ని <b>Parliament</b> కు ఇస్తుంది — కానీ ముందు ఆ రాష్ట్రం <b>legislative assembly</b> <b class="imp">special majority</b> తో (మొత్తం సభ్యత్వంలో మెజారిటీ, హాజరై ఓటేసిన వారిలో కనీసం 2/3 మెజారిటీ) resolution పాస్ చేయాలి. గమనార్హం ఏమిటంటే, ఈ Parliament చట్టాన్ని Article 368 ప్రయోజనం కోసం constitutional amendment గా పరిగణించరు — ఇది ఒక ordinary చట్టంలానే, simple majority తో పాస్ అవుతుంది. ఈ design ఎంపిక స్వయంగా Constituent Assembly చర్చ నుండి వచ్చింది — రాష్ట్ర second chamber ఆలోచనను అక్కడ విమర్శించారు — ప్రజలకు representative కాదని, చట్ట ప్రక్రియను ఆలస్యం చేస్తుందని, ఖరీదైన సంస్థ అని — అందుకే framers దీన్ని ఉద్దేశపూర్వకంగా <b>optional</b> గా ఉంచారు, ప్రతి రాష్ట్రం తన ఇష్టం/ఆర్థిక స్థోమతను బట్టి second chamber కావాలో వద్దో నిర్ణయించుకోగలదు.</div>
+
+  <p class="eng">The history of individual states illustrates just how genuinely optional this provision is in practice. <b class="hlp">Andhra Pradesh</b> got its council created in <b class="hlg">1957</b>, had it abolished in <b class="hlg">1985</b>, and saw it revived in <b class="hlg">2007</b> (via the AP LC Act, 2005). <b class="hlp">Tamil Nadu's</b> council was abolished in <b class="hlg">1986</b>; <b class="hlp">Punjab</b> and <b class="hlp">West Bengal's</b> councils were both abolished in <b class="hlg">1969</b>. The Tamil Nadu case is particularly instructive of how quickly political will can reverse itself: in <b class="hlg">2010</b>, the TN Assembly passed a resolution seeking revival of its council, and Parliament duly enacted the Tamil Nadu Legislative Council Act, 2010 to create it — but <b>before this Act could even be enforced</b>, the very same TN Assembly passed <b>another resolution in 2011</b> seeking abolition of the still-unborn council, and the Act never came into force. Table 33.4 below lists all such Parliamentary laws made under Article 169.</p>
+  <div class="te">వ్యక్తిగత రాష్ట్రాల చరిత్ర ఈ నిబంధన ఆచరణలో ఎంత నిజంగా optional అనేది చూపిస్తుంది. <b class="hlp">Andhra Pradesh</b> <b class="hlg">1957</b>లో council సృష్టించుకుంది, <b class="hlg">1985</b>లో రద్దు చేసుకుంది, <b class="hlg">2007</b>లో (AP LC Act, 2005 ద్వారా) పునరుద్ధరించుకుంది. <b class="hlp">Tamil Nadu</b> council <b class="hlg">1986</b>లో రద్దైంది; <b class="hlp">Punjab</b>, <b class="hlp">West Bengal</b> councils రెండూ <b class="hlg">1969</b>లో రద్దయ్యాయి. రాజకీయ సంకల్పం ఎంత త్వరగా తారుమారు కావచ్చో Tamil Nadu ఘటన బాగా చూపిస్తుంది — <b class="hlg">2010</b>లో TN Assembly తన council పునరుద్ధరణ కోరుతూ resolution పాస్ చేసింది, Parliament దానికోసం Tamil Nadu Legislative Council Act, 2010 చేసింది — కానీ ఈ చట్టం అమలుకు ముందే, అదే TN Assembly <b class="hlg">2011</b>లో మరో resolution పాస్ చేసి ఇంకా పుట్టని council రద్దును కోరింది — ఆ చట్టం ఎప్పుడూ అమలులోకి రాలేదు. కింద Table 33.4 లో Article 169 కింద చేసిన అన్ని Parliament చట్టాలు ఉన్నాయి.</div>
+
+  <table>
+    <caption>Table 33.4 — Parliament's Laws (under Art. 169) on Abolition/Creation of State Legislative Councils</caption>
+    <thead><tr><th style="width:40%">Act</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td>West Bengal LC (Abolition) Act, <span class="hlg">1969</span></td><td>Abolished West Bengal's Legislative Council</td></tr>
+      <tr><td>Punjab LC (Abolition) Act, <span class="hlg">1969</span></td><td>Abolished Punjab's Legislative Council</td></tr>
+      <tr><td>Andhra Pradesh LC (Abolition) Act, <span class="hlg">1985</span></td><td>Abolished AP's Legislative Council</td></tr>
+      <tr><td>Tamil Nadu LC (Abolition) Act, <span class="hlg">1986</span></td><td>Abolished TN's Legislative Council</td></tr>
+      <tr><td>Andhra Pradesh LC Act, <span class="hlg">2005</span></td><td>Created (revived) AP's Legislative Council — in force 2007</td></tr>
+      <tr><td>Tamil Nadu LC Act, <span class="hlg">2010</span></td><td>Provided for creation — <b class="imp">never enforced</b> (2011 assembly resolution reversed the demand)</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Organisation of State Legislature</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Constitutional basis?</td><td>Art. 168-212, Part VI</td></tr>
+      <tr><td>How many bicameral states today?</td><td>6 — AP, Telangana, UP, Bihar, Maharashtra, Karnataka</td></tr>
+      <tr><td>Which state's council law exists but is unenforced?</td><td>Tamil Nadu — LC Act 2010 never came into force</td></tr>
+      <tr><td>Which state's LC needs a Presidential notification never given?</td><td>Madhya Pradesh (7th A.A., 1956)</td></tr>
+      <tr><td>Article for abolition/creation of a state LC?</td><td>Art. 169 — assembly special-majority resolution, then ordinary Parliament law (not Art.368 amendment)</td></tr>
+      <tr><td>Why was the council idea criticised in the Constituent Assembly?</td><td>Unrepresentative, delays legislation, expensive — hence made optional</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Composition of the Legislative Assembly</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Composition of the Assembly — Strength</div>
+  <p class="eng">The legislative assembly consists of representatives <b>directly elected</b> by the people on the basis of <b>universal adult franchise</b>. Its strength is constitutionally bounded — maximum <b class="hlg">500</b>, minimum <b class="hlg">60</b> — and the actual number for any given state falls somewhere in that range depending on population size. A handful of small states get special minimum floors below 60: <b class="hlp">Arunachal Pradesh, Sikkim</b> and <b class="hlp">Goa</b> have a minimum of <b class="hlg">30</b>; <b class="hlp">Mizoram's</b> minimum is <b class="hlg">40</b>; and <b class="hlp">Nagaland's</b> is <b class="hlg">46</b>. Additionally, some members of the assemblies in <b>Sikkim and Nagaland</b> are elected <b>indirectly</b> rather than directly — an unusual departure from the general rule.</p>
+  <div class="te">Legislative assembly లో <b>directly elected</b> representatives (universal adult franchise ఆధారంగా) ఉంటారు. దీని strength రాజ్యాంగపరంగా పరిమితం — గరిష్టం <b class="hlg">500</b>, కనిష్టం <b class="hlg">60</b> — ఏ రాష్ట్రానికైనా వాస్తవ సంఖ్య జనాభాను బట్టి ఈ పరిధిలో ఉంటుంది. కొన్ని చిన్న రాష్ట్రాలకు 60 కంటే తక్కువ ప్రత్యేక కనీస పరిమితి ఉంది — <b class="hlp">Arunachal Pradesh, Sikkim, Goa</b> కు కనిష్టం <b class="hlg">30</b>; <b class="hlp">Mizoram</b> కు <b class="hlg">40</b>; <b class="hlp">Nagaland</b> కు <b class="hlg">46</b>. అదనంగా, <b>Sikkim, Nagaland</b> assemblies లో కొందరు members <b>indirect</b> గా ఎన్నికవుతారు — సాధారణ నియమానికి అసాధారణ మినహాయింపు.</div>
+
+  <p class="eng">Until <b class="hlg">2020</b>, there was also a <b class="term">nominated Anglo-Indian member</b> mechanism: the Governor could nominate one Anglo-Indian community member to the assembly if the community was judged not adequately represented. Originally meant to operate for just <b class="hlg">10</b> years (i.e., up to 1960), this provision was extended by 10 years each time it neared expiry — the last such extension, to <b class="hlg">2020</b>, was made by the <b class="hlg">95th Amendment Act, 2009</b>. But the <b class="hlg">104th Amendment Act, 2019</b> broke that recurring-extension pattern — it simply did <b class="imp">not</b> extend the provision further, discontinuing this special representation. As a result, it ceased to have effect on <b class="hlg">25 January 2020</b>. This is a frequently-tested current fact: students often assume this nomination still exists because it was a recurring feature for seven decades, but it is now constitutionally defunct.</p>
+  <div class="te"><b class="hlg">2020</b> వరకు, <b class="term">nominated Anglo-Indian member</b> అనే mechanism కూడా ఉండేది — Anglo-Indian సముదాయానికి తగినంత representation లేదని అనిపిస్తే Governor ఒకరిని assembly కు నామినేట్ చేయగలిగేవారు. మొదట్లో కేవలం <b class="hlg">10</b> సంవత్సరాలు (1960 వరకు) మాత్రమే ఉద్దేశించారు, కానీ గడువు ముగిసిన ప్రతిసారీ 10 సంవత్సరాలు పొడిగించేవారు — చివరి పొడిగింపు, 2020 వరకు, <b class="hlg">95వ సవరణ చట్టం, 2009</b> ద్వారా వచ్చింది. కానీ <b class="hlg">104వ సవరణ చట్టం, 2019</b> ఈ పునరావృత-పొడిగింపు pattern ను విరమించింది — దీన్ని ఇక పొడిగించలేదు, ఈ ప్రత్యేక representation ను ఆపేసింది. ఫలితంగా, ఇది <b class="hlg">25 జనవరి 2020</b> నుండి అమలులో లేదు. ఇది తరచుగా అడిగే current fact — ఏడు దశాబ్దాలుగా పునరావృత feature కావడం వల్ల ఇది ఇప్పటికీ ఉందని విద్యార్థులు అనుకుంటారు, కానీ ఇది ఇప్పుడు రాజ్యాంగపరంగా రద్దయిపోయింది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Delimitation — Territorial Constituencies &amp; the Freeze</div>
+  <p class="eng">For direct elections, each state is divided into <b>territorial constituencies</b>, demarcated so that the ratio between a constituency's population and the number of seats allotted to it is <b>uniform</b> throughout the state — ensuring equal representation across different parts of the state. "Population" here means the figures of the last preceding published census. After each census, a <b>readjustment</b> must be made in (a) the total number of assembly seats for each state, and (b) the division into territorial constituencies; Parliament is empowered to determine the authority and manner for doing this, and has enacted <b>Delimitation Commission Acts</b> in <b class="hlg">1952, 1962, 1972</b> and <b class="hlg">2002</b>.</p>
+  <div class="te">Direct ఎన్నికల కోసం, ప్రతి రాష్ట్రాన్ని <b>territorial constituencies</b> గా విభజిస్తారు — ఒక constituency population, దానికి కేటాయించిన seats నిష్పత్తి రాష్ట్రవ్యాప్తంగా <b>ఏకరీతి</b>గా ఉండేలా — రాష్ట్రంలోని వేర్వేరు భాగాలకు సమాన representation కల్పించడానికి. ఇక్కడ "population" అంటే చివరిగా ప్రచురించిన census గణాంకాలు. ప్రతి census తర్వాత, (a) ప్రతి రాష్ట్రం assembly total seats, (b) territorial constituencies విభజన లో <b>readjustment</b> చేయాలి; దీని authority/manner Parliament నిర్ణయిస్తుంది — <b>Delimitation Commission Acts</b> 1952, 1962, 1972, 2002 లో చేశారు.</div>
+
+  <p class="eng">However, this readjustment process has been <b class="imp">frozen</b> for decades — and this freeze is one of the chapter's most exam-relevant, and currently politically live, topics. The <b class="hlg">42nd Amendment Act, 1976</b> froze the total number of seats in each state's assembly, and the division into territorial constituencies, at the <b class="hlg">1971</b> census level, until the year <b class="hlg">2000</b>. The <b class="hlg">84th Amendment Act, 2001</b> then <b>extended</b> this freeze up to the year <b class="hlg">2026</b> — with the explicit objective of not penalising states that had successfully controlled their population growth (a state with a smaller population increase would otherwise lose relative seat-share to faster-growing states). The same 84th Amendment separately empowered a more limited kind of readjustment — rationalising constituency <b>boundaries</b> (not total seat counts) based on the <b class="hlg">1991</b> census; the <b class="hlg">87th Amendment Act, 2003</b> later updated this boundary-basis to the <b class="hlg">2001</b> census — again, crucially, <b class="imp">without</b> altering the total number of seats in any state's assembly.</p>
+  <div class="te">అయితే, ఈ readjustment ప్రక్రియ దశాబ్దాలుగా <b class="imp">స్తంభించి</b> ఉంది — ఇది ఈ అధ్యాయంలో అత్యంత exam-relevant, ప్రస్తుతం రాజకీయంగా live గా ఉన్న అంశాల్లో ఒకటి. <b class="hlg">42వ సవరణ చట్టం, 1976</b> ప్రతి రాష్ట్రం assembly total seats, territorial constituencies విభజనను <b class="hlg">1971</b> census స్థాయిలో, <b class="hlg">2000</b> సంవత్సరం వరకు స్తంభింపజేసింది. <b class="hlg">84వ సవరణ చట్టం, 2001</b> ఈ freeze ను <b class="hlg">2026</b> సంవత్సరం వరకు <b>పొడిగించింది</b> — జనాభా నియంత్రణలో విజయం సాధించిన రాష్ట్రాలను penalize చేయకూడదనే స్పష్టమైన లక్ష్యంతో (లేకపోతే తక్కువ జనాభా పెరుగుదల ఉన్న రాష్ట్రం వేగంగా పెరిగే రాష్ట్రాలతో పోలిస్తే సాపేక్ష seat-share కోల్పోతుంది). అదే 84వ సవరణ మరింత పరిమిత రకమైన readjustment కు అధికారం ఇచ్చింది — constituency <b>boundaries</b> (total seats కాదు) ను 1991 census ఆధారంగా హేతుబద్ధీకరించడం; <b class="hlg">87వ సవరణ చట్టం, 2003</b> తర్వాత ఈ boundary-ఆధారాన్ని 2001 census కు అప్డేట్ చేసింది — మళ్ళీ, కీలకంగా, ఏ రాష్ట్రం assembly total seats నూ మార్చకుండా.</div>
+
+  <p class="eng">A subtle but important exam point: the freeze is commonly described as running "up to 2026", but the underlying constitutional text (mirrored at both the Lok Sabha level, Article 81, and the state assembly level, Article 170) actually ties the freeze's end to the <b>first census taken after the year 2026</b> — not to the calendar year 2026 itself. This distinction became the centre of a major, genuinely live political and constitutional controversy in 2026 — covered in detail in the Current Affairs Update at the end of this chapter, since it is exactly the kind of time-sensitive development the Rulebook flags for separate treatment.</p>
+  <div class="te">ఒక సూక్ష్మమైన కానీ ముఖ్యమైన exam పాయింట్ — ఈ freeze "2026 వరకు" నడుస్తుందని సాధారణంగా చెబుతారు, కానీ దాని అంతర్లీన రాజ్యాంగ టెక్స్ట్ (Lok Sabha స్థాయిలో Article 81, state assembly స్థాయిలో Article 170 రెండింటిలోనూ ప్రతిబింబిస్తుంది) ఈ freeze ముగింపును <b>2026 తర్వాతి మొదటి census</b> తో ముడిపెడుతుంది — 2026 calendar సంవత్సరంతో కాదు. ఈ తేడాయే 2026లో ఒక పెద్ద, నిజంగా live అయిన రాజకీయ, రాజ్యాంగ వివాదానికి కేంద్రంగా మారింది — ఈ అధ్యాయం చివర Current Affairs Update లో వివరంగా చూద్దాం, ఎందుకంటే ఇది సరిగ్గా Rulebook ప్రత్యేకంగా చూపించమని చెప్పే time-sensitive అంశం.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Reservation of Seats for SCs and STs</div>
+  <p class="eng">The Constitution provides for reservation of assembly seats for <b>Scheduled Castes and Scheduled Tribes</b> in each state, on the basis of <b>population ratios</b> — meaning the proportion of seats reserved for SCs/STs in a state's assembly matches that community's share of the state's total population. Like the Anglo-Indian nomination, this reservation was originally meant to operate for just <b class="hlg">10</b> years (up to 1960), and was likewise extended by 10 years at each expiry. Under the <b class="hlg">104th Amendment Act, 2019</b> — the same amendment that discontinued Anglo-Indian nomination — this SC/ST reservation was extended, and is now to last until <b class="hlg">2030</b>. Note the contrast carefully: the 104th Amendment extended one provision (SC/ST reservation) while simultaneously discontinuing another (Anglo-Indian nomination) — a common trap in MCQs that lump both together.</p>
+  <div class="te">Constitution ప్రతి రాష్ట్రంలో <b>Scheduled Castes, Scheduled Tribes</b> కు assembly seats reservation ఇస్తుంది — <b>population నిష్పత్తి</b> ఆధారంగా — అంటే ఒక రాష్ట్రం assembly లో SC/ST కు reserve చేసిన seats నిష్పత్తి, ఆ సముదాయం మొత్తం రాష్ట్ర జనాభాలో వాటాకు సమానంగా ఉంటుంది. Anglo-Indian నామినేషన్ లాగే, ఈ reservation కూడా మొదట్లో కేవలం <b class="hlg">10</b> సంవత్సరాలు (1960 వరకు) మాత్రమే ఉద్దేశించారు, ప్రతి గడువు ముగిసినప్పుడూ 10 సంవత్సరాలు పొడిగించారు. <b class="hlg">104వ సవరణ చట్టం, 2019</b> — Anglo-Indian నామినేషన్ ను ఆపిన అదే సవరణ — ఈ SC/ST reservation ను పొడిగించింది, ఇప్పుడు <b class="hlg">2030</b> వరకు కొనసాగుతుంది. ఈ తేడాను జాగ్రత్తగా గమనించండి — 104వ సవరణ ఒక నిబంధన (SC/ST reservation) ను పొడిగించి, అదే సమయంలో మరో నిబంధన (Anglo-Indian నామినేషన్) ను ఆపేసింది — ఈ రెండింటినీ కలిపేసే MCQs లో ఇది సాధారణ ఉచ్చు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Composition of the Assembly</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Assembly strength range?</td><td>60 (min) to 500 (max); special floors 30/40/46 for a few small states</td></tr>
+      <tr><td>Anglo-Indian nomination status?</td><td>Discontinued 25 Jan 2020 — 104th A.A. 2019 didn't extend the 95th A.A. 2009's extension-to-2020</td></tr>
+      <tr><td>Delimitation Commission Acts?</td><td>1952, 1962, 1972, 2002</td></tr>
+      <tr><td>Seat/constituency freeze — original &amp; extended till?</td><td>42nd A.A. 1976 (1971 level, till 2000) → 84th A.A. 2001 (till "2026")</td></tr>
+      <tr><td>What does the freeze actually run until?</td><td>First census taken after 2026 is published — not literally calendar year 2026</td></tr>
+      <tr><td>Boundary-rationalisation basis?</td><td>84th A.A. 2001 (1991 census) → 87th A.A. 2003 (2001 census); total seats unchanged</td></tr>
+      <tr><td>SC/ST reservation — current validity?</td><td>Till 2030, per 104th Amendment Act, 2019</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Composition of the Legislative Council</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Composition of the Council — Strength</div>
+  <p class="eng">Unlike assembly members, members of the legislative council are (mostly) <b class="imp">indirectly elected</b>. The maximum strength of a council is fixed at <b class="hlg">one-third</b> of the total strength of that state's assembly, and the minimum strength is fixed at <b class="hlg">40</b>. This design is deliberate — by tying the council's ceiling to a fraction of the assembly's size, the Constitution ensures the <b>predominance</b> of the directly-elected House in the state's legislative affairs from the outset, rather than leaving that predominance to be established only through the differing legislative powers discussed later in this chapter. While the Constitution fixes only the outer max/min limits, the <b>actual</b> strength of any particular state's council is fixed by <b>Parliament</b>. For instance, Andhra Pradesh's council strength was raised from <b class="hlg">50</b> to <b class="hlg">58</b> by the <b class="hlp">AP Reorganisation (Amendment) Act, 2015</b>.</p>
+  <div class="te">Assembly members కు భిన్నంగా, legislative council members చాలావరకు <b class="imp">indirect</b> గా ఎన్నికవుతారు. Council గరిష్ట strength ఆ రాష్ట్రం assembly total strength లో <b class="hlg">1/3</b> గా, కనిష్ట strength <b class="hlg">40</b> గా నిర్ణయించారు. ఈ design ఉద్దేశపూర్వకమైనది — council గరిష్ట పరిమితిని assembly పరిమాణంలో ఒక భాగానికి ముడిపెట్టడం ద్వారా, రాజ్యాంగం directly-ఎన్నికైన House predominance ను మొదటి నుండే నిర్ధారిస్తుంది — ఈ అధ్యాయంలో తర్వాత చర్చించే వేర్వేరు legislative అధికారాల ద్వారానే ఈ predominance ఏర్పడాల్సిన అవసరం లేకుండా. Constitution కేవలం బాహ్య max/min పరిమితులు మాత్రమే నిర్ణయిస్తుంది, ఒక నిర్దిష్ట రాష్ట్రం council <b>వాస్తవ</b> strength ను <b>Parliament</b> నిర్ణయిస్తుంది. ఉదాహరణకు, Andhra Pradesh council strength ను AP Reorganisation (Amendment) Act, 2015 <b class="hlg">50</b> నుండి <b class="hlg">58</b> కి పెంచింది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Manner of Election to the Council</div>
+  <p class="eng">The council's composition is deliberately heterogeneous, drawing members from several distinct electorates rather than one uniform pool. Of the total number of members: <b class="hlg">1/3</b> are elected by members of <b>local bodies</b> in the state — municipalities, district boards, and the like; <b class="hlg">1/12</b> are elected by <b>graduates</b> of three years' standing who reside within the state; <b class="hlg">1/12</b> are elected by <b>teachers</b> of three years' standing, of a level not lower than secondary school; <b class="hlg">1/3</b> are elected by the members of the <b>legislative assembly</b> of the state, from among persons who are not themselves assembly members; and the <b>remainder</b> — which works out to <b class="hlg">1/6</b> — is <b>nominated</b> by the <b>Governor</b>, from among persons possessing special knowledge or practical experience in literature, science, art, the cooperative movement, or social service.</p>
+  <div class="te">Council కూర్పు ఉద్దేశపూర్వకంగా heterogeneous గా ఉంటుంది — ఒకే ఏకరీతి electorate నుండి కాకుండా అనేక వేర్వేరు electorates నుండి members వస్తారు. మొత్తం members లో — <b class="hlg">1/3</b> ను రాష్ట్రంలోని <b>local bodies</b> సభ్యులు (municipalities, district boards వంటివి) ఎన్నుకుంటారు; <b class="hlg">1/12</b> ను రాష్ట్రంలో నివసించే మూడు సంవత్సరాల standing గల <b>graduates</b> ఎన్నుకుంటారు; <b class="hlg">1/12</b> ను మూడు సంవత్సరాల standing గల <b>teachers</b> (secondary school కంటే తక్కువ కాకుండా) ఎన్నుకుంటారు; <b class="hlg">1/3</b> ను రాష్ట్రం <b>legislative assembly</b> members, assembly సభ్యులు కానివారిలో నుండి ఎన్నుకుంటారు; మిగిలిన భాగం — అంటే <b class="hlg">1/6</b> — ను <b>Governor</b> — literature, science, art, cooperative movement, social service లో ప్రత్యేక పరిజ్ఞానం/ఆచరణాత్మక అనుభవం ఉన్నవారి నుండి <b>నామినేట్</b> చేస్తారు.</div>
+
+  <p class="eng">Thus, <b class="hlg">5/6</b> of a council's total membership is <b>indirectly elected</b>, and <b class="hlg">1/6</b> is <b>nominated</b> by the Governor. Elected members are chosen through the system of <b class="hlb">proportional representation by means of a single transferable vote</b> — the same electoral method used for Rajya Sabha elections (Ch.23). It's worth noting explicitly that this entire composition scheme, as laid down in the Constitution, is only <b class="imp">tentative and not final</b> — Parliament has the authority to modify or replace it entirely by ordinary law, though it has not chosen to enact any such law so far. This heterogeneous composition — multiple distinct electorates plus a nominated component — later becomes one of the key reasons (discussed on a later page) why the council is considered structurally weaker and less cohesive than the homogeneously-elected Rajya Sabha.</p>
+  <div class="te">అంటే, council మొత్తం సభ్యత్వంలో <b class="hlg">5/6</b> <b>indirect</b> గా ఎన్నికవుతారు, <b class="hlg">1/6</b> ను Governor <b>నామినేట్</b> చేస్తారు. ఎన్నికైన members ను <b class="hlb">proportional representation, single transferable vote</b> పద్ధతిలో ఎన్నుకుంటారు — Rajya Sabha ఎన్నికల్లో (Ch.23) వాడే అదే పద్ధతి. రాజ్యాంగం నిర్దేశించిన ఈ మొత్తం composition scheme <b class="imp">tentative మాత్రమే, final కాదు</b> అనేది స్పష్టంగా గమనించాలి — Parliament దీన్ని ordinary చట్టం ద్వారా పూర్తిగా మార్చవచ్చు లేదా భర్తీ చేయవచ్చు, కానీ ఇప్పటివరకు అలాంటి చట్టం చేయలేదు. ఈ heterogeneous composition — అనేక వేర్వేరు electorates + నామినేటెడ్ భాగం — తర్వాతి పేజీలో చర్చించే council ను homogeneously-ఎన్నికైన Rajya Sabha కంటే structurally బలహీనం, తక్కువ cohesive గా పరిగణించడానికి కీలక కారణాల్లో ఒకటి అవుతుంది.</div>
+
+  <table>
+    <caption>Manner of Election to the Legislative Council — At a Glance</caption>
+    <thead><tr><th style="width:16%">Share</th><th>Elected/Nominated by</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">1/3</td><td>Members of local bodies (municipalities, district boards, etc.) in the state</td></tr>
+      <tr><td class="hlg">1/12</td><td>Graduates of 3+ years' standing, residing in the state</td></tr>
+      <tr><td class="hlg">1/12</td><td>Teachers of 3+ years' standing (not below secondary school)</td></tr>
+      <tr><td class="hlg">1/3</td><td>MLAs, from among non-members of the assembly</td></tr>
+      <tr><td class="hlg">1/6 (remainder)</td><td><b class="hlp">Nominated by Governor</b> — literature/science/art/co-op movement/social service experts</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Composition of the Council</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Council strength limits?</td><td>Max = 1/3 of assembly strength; min = 40; actual figure fixed by Parliament</td></tr>
+      <tr><td>AP council strength change?</td><td>50 → 58, by AP Reorganisation (Amendment) Act, 2015</td></tr>
+      <tr><td>Electorate shares?</td><td>1/3 local bodies, 1/12 graduates, 1/12 teachers, 1/3 MLAs, 1/6 Governor-nominated</td></tr>
+      <tr><td>Overall elected vs nominated split?</td><td>5/6 indirectly elected, 1/6 nominated</td></tr>
+      <tr><td>Election method?</td><td>Proportional representation by single transferable vote</td></tr>
+      <tr><td>Is this composition scheme permanent?</td><td>No — tentative; Parliament can alter it, hasn't done so yet</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Table 33.2 — State-wise Strength (Assembly, SC/ST Reservation, Council)</div>
+  <p class="eng">The book tabulates every state's actual figures together in one place — reproduced below — since these exact numbers (especially for Andhra Pradesh and Telangana) are directly examinable for APPSC candidates, and also make the abstract max/min rules discussed above concrete.</p>
+  <div class="te">పుస్తకం ప్రతి రాష్ట్రం వాస్తవ గణాంకాలను ఒకేచోట పట్టిక చేసింది — కింద పునరుత్పత్తి చేశాం — ఎందుకంటే ఈ ఖచ్చితమైన సంఖ్యలు (ముఖ్యంగా Andhra Pradesh, Telangana కు) APPSC అభ్యర్థులకు నేరుగా పరీక్షార్హం, పైన చర్చించిన నైరూప్య max/min నియమాలను కూడా ఇవి కాంక్రీట్ గా చూపిస్తాయి.</div>
+
+  <table>
+    <caption>Table 33.2 — Strength of Assemblies &amp; Councils, SC/ST Reservation</caption>
+    <thead><tr><th style="width:24%">State</th><th>Assembly</th><th>SC seats</th><th>ST seats</th><th>Council</th></tr></thead>
+    <tbody>
+      <tr><td><b class="hlp">Andhra Pradesh</b></td><td class="hlg">175</td><td>29</td><td>7</td><td class="hlg">58</td></tr>
+      <tr><td>Arunachal Pradesh</td><td>60</td><td>—</td><td>59</td><td>—</td></tr>
+      <tr><td>Assam</td><td>126</td><td>8</td><td>16</td><td>—</td></tr>
+      <tr><td>Bihar</td><td>243</td><td>38</td><td>2</td><td class="hlg">75</td></tr>
+      <tr><td>Chhattisgarh</td><td>90</td><td>10</td><td>29</td><td>—</td></tr>
+      <tr><td>Goa</td><td>40</td><td>1</td><td>—</td><td>—</td></tr>
+      <tr><td>Gujarat</td><td>182</td><td>13</td><td>27</td><td>—</td></tr>
+      <tr><td>Haryana</td><td>90</td><td>17</td><td>—</td><td>—</td></tr>
+      <tr><td>Himachal Pradesh</td><td>68</td><td>17</td><td>3</td><td>—</td></tr>
+      <tr><td>Jharkhand</td><td>81</td><td>9</td><td>28</td><td>—</td></tr>
+      <tr><td>Karnataka</td><td class="hlg">224</td><td>36</td><td>15</td><td class="hlg">75</td></tr>
+      <tr><td>Kerala</td><td>140</td><td>14</td><td>2</td><td>—</td></tr>
+      <tr><td>Madhya Pradesh</td><td>230</td><td>35</td><td>47</td><td>—</td></tr>
+      <tr><td>Maharashtra</td><td class="hlg">288</td><td>29</td><td>25</td><td class="hlg">78</td></tr>
+      <tr><td>Manipur</td><td>60</td><td>1</td><td>19</td><td>—</td></tr>
+      <tr><td>Meghalaya</td><td>60</td><td>—</td><td>55</td><td>—</td></tr>
+      <tr><td>Mizoram</td><td>40</td><td>—</td><td>38</td><td>—</td></tr>
+      <tr><td>Nagaland</td><td>60</td><td>—</td><td>59</td><td>—</td></tr>
+      <tr><td>Odisha</td><td>147</td><td>24</td><td>33</td><td>—</td></tr>
+      <tr><td>Punjab</td><td>117</td><td>34</td><td>—</td><td>—</td></tr>
+      <tr><td>Rajasthan</td><td>200</td><td>34</td><td>25</td><td>—</td></tr>
+      <tr><td>Sikkim</td><td>32</td><td>2</td><td>12</td><td>—</td></tr>
+      <tr><td>Tamil Nadu</td><td>234</td><td>44</td><td>2</td><td>—</td></tr>
+      <tr><td><b class="hlp">Telangana</b></td><td class="hlg">119</td><td>19</td><td>12</td><td class="hlg">40</td></tr>
+      <tr><td>Tripura</td><td>60</td><td>10</td><td>20</td><td>—</td></tr>
+      <tr><td>Uttarakhand</td><td>70</td><td>13</td><td>2</td><td>—</td></tr>
+      <tr><td>Uttar Pradesh</td><td class="hlg">403</td><td>85</td><td>—</td><td class="hlg">100</td></tr>
+      <tr><td>West Bengal</td><td>294</td><td>68</td><td>16</td><td>—</td></tr>
+      <tr><td>NCT of Delhi (UT)</td><td>70</td><td>12</td><td>—</td><td>—</td></tr>
+      <tr><td>Puducherry (UT)</td><td>30</td><td>5</td><td>—</td><td>—</td></tr>
+      <tr><td>Jammu &amp; Kashmir (UT)</td><td>83 (of 107; 24 PoK seats vacant)</td><td>6</td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Table 33.2 Highlights</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Largest assembly?</td><td>Uttar Pradesh — 403 seats</td></tr>
+      <tr><td>Largest council?</td><td>Uttar Pradesh — 100 seats (Maharashtra 78 next)</td></tr>
+      <tr><td>AP's figures?</td><td>Assembly 175 (SC 29, ST 7); Council 58</td></tr>
+      <tr><td>Telangana's figures?</td><td>Assembly 119 (SC 19, ST 12); Council 40</td></tr>
+      <tr><td>J&amp;K assembly quirk?</td><td>107 total seats, but only 83 reckoned — 24 PoK seats vacant</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Duration of the Two Houses</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Duration of the Assembly</div>
+  <p class="eng">Like the Lok Sabha, the legislative assembly is <b class="imp">not a continuing chamber</b> — its normal term is <b class="hlg">five years</b> from the date of its first meeting after the general elections, and the expiry of this five-year period causes <b>automatic dissolution</b> of the assembly, with no separate act required to end its life. However, the <b>Governor</b> is independently authorised to dissolve the assembly at <b>any time</b> — even well before the five years are up — to pave the way for fresh elections; this dissolution power is analogous to the President's power to dissolve the Lok Sabha early.</p>
+  <div class="te">Lok Sabha లాగే, legislative assembly <b class="imp">continuing chamber కాదు</b> — దాని normal term సాధారణ ఎన్నికల తర్వాత మొదటి సమావేశం తేదీ నుండి <b class="hlg">ఐదు సంవత్సరాలు</b>, ఈ ఐదు సంవత్సరాల గడువు ముగియగానే assembly <b>automatic గా dissolve</b> అవుతుంది, దీని జీవితం ముగించడానికి వేరే చర్య అవసరం లేదు. అయితే, <b>Governor</b> assembly ను <b>ఎప్పుడైనా</b> — ఐదు సంవత్సరాలు పూర్తికాకముందే కూడా — dissolve చేయగల స్వతంత్ర అధికారం కలిగి ఉంటారు, తాజా ఎన్నికలకు దారి తీయడానికి; ఈ dissolution అధికారం Lok Sabha ను ముందుగా dissolve చేసే President అధికారానికి సమానం.</div>
+
+  <p class="eng">The assembly's term can also be extended in one specific circumstance: during a <b class="hlb">national emergency</b>, Parliament may extend the assembly's term by law, for <b class="hlg">one year</b> at a time — and this can be repeated for any length of time the emergency continues. However, this extension power is not open-ended even after the emergency ends: it <b class="imp">cannot continue beyond a period of six months</b> after the national emergency ceases to operate, meaning the assembly must be re-elected within six months of the emergency's revocation.</p>
+  <div class="te">Assembly పదవీకాలాన్ని ఒక నిర్దిష్ట పరిస్థితిలో కూడా పొడిగించవచ్చు — <b class="hlb">national emergency</b> సమయంలో, Parliament assembly పదవీకాలాన్ని ఒకసారికి <b class="hlg">ఒక సంవత్సరం</b> చొప్పున చట్టం ద్వారా పొడిగించవచ్చు — emergency కొనసాగినంత కాలం ఎన్నిసార్లయినా దీన్ని పునరావృతం చేయవచ్చు. అయితే emergency ముగిసిన తర్వాత కూడా ఈ పొడిగింపు అధికారం అపరిమితం కాదు — emergency ముగిసిన తర్వాత <b class="imp">6 నెలలకు మించి కొనసాగించలేరు</b> — అంటే emergency రద్దయిన 6 నెలల్లోపు assembly ను తిరిగి ఎన్నుకోవాలి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Duration of the Council</div>
+  <p class="eng">Like the Rajya Sabha, the legislative council is a <b class="term">continuing chamber</b> — a permanent body that is <b class="imp">not subject to dissolution</b> at all. Instead of a fixed collective term, <b class="hlg">one-third</b> of its members retire on the expiration of every <b class="hlg">second</b> year, which means each individual member's term works out to <b class="hlg">six years</b>. The vacant seats created by this rolling retirement are filled through fresh elections and nominations (by the Governor) at the beginning of every <b>third</b> year. Retiring members remain eligible for re-election and re-nomination any number of times, with no term-limit cap.</p>
+  <div class="te">Rajya Sabha లాగే, legislative council ఒక <b class="term">continuing chamber</b> — శాశ్వతమైన body, dissolution కు అస్సలు లోబడదు. స్థిర సామూహిక term బదులుగా, ప్రతి <b class="hlg">రెండో</b> సంవత్సరం ముగింపులో దాని <b class="hlg">1/3</b> members retire అవుతారు — అంటే ప్రతి individual member term <b class="hlg">ఆరు సంవత్సరాలు</b>. ఈ rolling retirement వల్ల ఏర్పడిన ఖాళీ seats ను ప్రతి <b>మూడో</b> సంవత్సరం మొదట్లో fresh elections, (Governor చే) nominations ద్వారా భర్తీ చేస్తారు. Retire అయిన members ఎన్నిసార్లయినా, term-limit లేకుండా, తిరిగి ఎన్నికకు లేదా నామినేషన్ కు అర్హులు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Duration of the Two Houses</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Assembly term?</td><td>5 years from first meeting; auto-dissolves; Governor can dissolve earlier</td></tr>
+      <tr><td>Emergency extension of assembly term?</td><td>1 year at a time, by Parliament law; max 6 months post-emergency</td></tr>
+      <tr><td>Council nature?</td><td>Continuing/permanent chamber — never dissolved</td></tr>
+      <tr><td>Council member's individual term?</td><td>6 years; 1/3 retire every 2nd year, refilled at start of every 3rd year</td></tr>
+      <tr><td>Re-election/re-nomination limit for retiring council members?</td><td>None — unlimited</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Membership — Qualifications, Disqualifications &amp; Defection</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">1. Qualifications for Membership</div>
+  <p class="eng">The Constitution lays down four basic conditions for a person to be chosen as a member of the state legislature. First, he/she must be a <b>citizen of India</b>. Second, he/she must make and subscribe an <b>oath or affirmation</b> before a person authorised by the <b class="hlb">Election Commission</b> for this purpose, swearing (i) true faith and allegiance to the Constitution of India, and (ii) to uphold the sovereignty and integrity of India. Third, a minimum-age requirement applies: <b class="hlg">not less than 30</b> years of age for the legislative council, and <b class="hlg">not less than 25</b> years for the legislative assembly. Fourth, he/she must possess any other qualifications prescribed by <b>Parliament</b>.</p>
+  <div class="te">State legislature సభ్యుడిగా ఎన్నుకోబడాలంటే Constitution నాలుగు ప్రాథమిక షరతులు నిర్దేశిస్తుంది. మొదటిది, <b>భారత పౌరుడై</b> ఉండాలి. రెండోది, <b class="hlb">Election Commission</b> అధీకృత వ్యక్తి ముందు <b>ఓత్/affirmation</b> చేయాలి — (i) భారత రాజ్యాంగం పట్ల నమ్మకం, (ii) India సార్వభౌమత్వం-సమగ్రత సమర్థన అని ప్రమాణం. మూడోది, కనీస వయసు అవసరం — Legislative council కు <b class="hlg">కనీసం 30</b> సంవత్సరాలు, legislative assembly కు <b class="hlg">కనీసం 25</b> సంవత్సరాలు. నాలుగోది, <b>Parliament</b> నిర్దేశించిన ఇతర అర్హతలు కలిగి ఉండాలి.</div>
+
+  <p class="eng">Under this fourth head, Parliament has laid down additional qualifications in the <b class="hlb">Representation of People Act, 1951</b>. A person seeking election to the legislative council must be an <b>elector for an assembly constituency</b> in that state, and — to be qualified for a Governor's nomination specifically — must also be a <b>resident</b> in that state. A person seeking election to the legislative assembly must likewise be an elector for an assembly constituency in that state. And a person must belong to a Scheduled Caste or Scheduled Tribe to contest a seat <b>reserved</b> for that community — though, notably, an SC/ST member is free to contest an <b class="imp">unreserved</b> seat as well.</p>
+  <div class="te">ఈ నాలుగో అంశం కింద, Parliament <b class="hlb">Representation of People Act, 1951</b> లో అదనపు అర్హతలు నిర్దేశించింది. Legislative council కు ఎన్నికకు, ఆ రాష్ట్రంలో <b>assembly constituency</b> కు <b>elector</b> గా ఉండాలి, Governor నామినేషన్ కు అర్హత పొందాలంటే ఆ రాష్ట్రంలో <b>నివాసి</b> కూడా అయి ఉండాలి. Legislative assembly కు ఎన్నికకు కూడా ఆ రాష్ట్రంలో assembly constituency కు elector గా ఉండాలి. Reserved seat పోటీ చేయాలంటే SC లేదా ST సభ్యుడై ఉండాలి — గమనార్హం ఏమిటంటే, SC/ST సభ్యుడు <b class="imp">unreserved</b> seat కు కూడా స్వేచ్ఛగా పోటీ చేయవచ్చు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">2. Disqualifications</div>
+  <p class="eng">Under the Constitution, a person is disqualified for being chosen as, or for being, a member of either House of a state legislature under five heads: (1) holding any <b>office of profit</b> under the Union or a state government (except a minister's office, or any other office the state legislature has specifically exempted); (2) being of <b>unsound mind</b> and court-declared as such; (3) being an <b>undischarged insolvent</b>; (4) not being a citizen of India, or having voluntarily acquired the citizenship of a foreign state, or being under any acknowledgement of allegiance to a foreign state; and (5) being disqualified under <b>any law made by Parliament</b>.</p>
+  <div class="te">Constitution ప్రకారం, state legislature ఏ House కైనా సభ్యుడిగా ఎన్నుకోబడటానికి లేదా సభ్యుడిగా కొనసాగడానికి ఒక వ్యక్తి ఐదు అంశాల కింద అనర్హుడు — (1) Union లేదా state ప్రభుత్వం కింద <b>office of profit</b> కలిగి ఉంటే (minister పదవి తప్ప, లేదా state legislature ప్రత్యేకంగా మినహాయించిన ఇతర పదవి తప్ప); (2) court unsound mind అని ప్రకటిస్తే; (3) undischarged insolvent అయితే; (4) India పౌరుడు కాకపోతే, foreign state citizenship స్వచ్ఛందంగా తీసుకుంటే, foreign state కు allegiance ఉంటే; (5) Parliament చేసిన ఏదైనా చట్టం కింద అనర్హులైతే.</div>
+
+  <p class="eng">Under the fifth head, Parliament has prescribed a number of additional disqualifications in the Representation of People Act, 1951 — closely paralleling the equivalent disqualifications for Parliament membership (Ch.23). These include: having been found guilty of certain electoral offences or corrupt practices; having been convicted of an offence resulting in imprisonment for <b class="hlg">two or more</b> years (though detention under a preventive-detention law is specifically <b class="imp">not</b> a disqualification); having failed to lodge an account of election expenses within the prescribed time; having an interest in government contracts, works, or services; being a director/managing agent, or holding an office of profit, in a corporation with at least <b class="hlg">25%</b> government shareholding; having been dismissed from government service for corruption or disloyalty to the state; having been convicted for promoting enmity between different groups or for the offence of bribery; and having been punished for preaching or practising social crimes such as untouchability, dowry, and sati.</p>
+  <div class="te">ఐదో అంశం కింద, Parliament Representation of People Act, 1951 లో అనేక అదనపు అనర్హతలు నిర్దేశించింది — Parliament సభ్యత్వానికి ఉన్న సమానమైన అనర్హతలను (Ch.23) దగ్గరగా అనుసరిస్తూ. వీటిలో — ఎన్నికల నేరాలు/అవినీతి పద్ధతుల్లో దోషిగా తేలడం; <b class="hlg">2 సంవత్సరాలు లేదా అంతకంటే ఎక్కువ</b> జైలుశిక్ష విధించే నేరంలో దోషిగా తేలడం (preventive detention చట్టం కింద నిర్బంధం ప్రత్యేకంగా అనర్హత కాదు); ఎన్నికల ఖర్చు లెక్కలు నిర్దేశిత సమయంలో సమర్పించకపోవడం; government contracts, works, services లో ఆసక్తి కలిగి ఉండటం; కనీసం <b class="hlg">25%</b> government వాటా ఉన్న corporation లో director/managing agent గా ఉండటం లేదా office of profit కలిగి ఉండటం; అవినీతి/రాష్ట్రానికి విద్రోహం కారణంగా government service నుండి తొలగించబడటం; groups మధ్య శత్రుత్వం ప్రేరేపించడం లేదా bribery నేరంలో దోషిగా తేలడం; untouchability, dowry, sati వంటి social crimes ఆచరించినందుకు శిక్షించబడటం ఉన్నాయి.</div>
+
+  <p class="eng">On the question whether a member has become subject to any of these disqualifications, the <b>Governor's decision is final</b> — but with an important procedural check: the Governor must first obtain the opinion of the <b class="hlb">Election Commission</b>, and must act in accordance with that opinion. This mirrors the President's equivalent obligation for MP disqualifications at the Union level.</p>
+  <div class="te">ఒక member ఈ అనర్హతల్లో దేనికైనా లోబడ్డాడా అనే ప్రశ్నపై, <b>Governor నిర్ణయం final</b> — కానీ ఒక ముఖ్యమైన procedural check ఉంటుంది — Governor ముందుగా <b class="hlb">Election Commission</b> అభిప్రాయం తీసుకోవాలి, ఆ అభిప్రాయం ప్రకారమే వ్యవహరించాలి. ఇది Union స్థాయిలో MP అనర్హతలకు President కు ఉన్న సమానమైన బాధ్యతను ప్రతిబింబిస్తుంది.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Defection, Oath, and Vacation of Seats</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Disqualification on Ground of Defection</div>
+  <p class="eng">Separately from the disqualifications above, the Constitution also lays down that a person shall be disqualified for being a member of either House of a state legislature if he/she is disqualified on the ground of <b class="term">defection</b>, under the provisions of the <b class="hlb">Tenth Schedule</b> — the same anti-defection framework that applies at the Union level. The question of disqualification under the Tenth Schedule is decided by the <b>Chairman</b>, in the case of the legislative council, and the <b>Speaker</b>, in the case of the legislative assembly — <b class="imp">not</b> by the Governor. In <b class="hlp">Kihoto Hollohan vs Zachillhu</b> (<b class="hlg">1992</b>), the Supreme Court ruled that this decision of the Chairman/Speaker is <b class="imp">subject to judicial review</b> — meaning it is not the last word, and can be challenged in court.</p>
+  <div class="te">పైన చెప్పిన అనర్హతలకు వేరుగా, Constitution — <b class="hlb">Tenth Schedule</b> నిబంధనల కింద <b class="term">defection</b> కారణంగా అనర్హులైన వ్యక్తి state legislature ఏ House కైనా సభ్యుడు కావడానికి అనర్హులని కూడా చెబుతుంది — Union స్థాయిలో వర్తించే అదే anti-defection framework. Tenth Schedule కింద అనర్హత ప్రశ్నను — Legislative council విషయంలో <b>Chairman</b>, legislative assembly విషయంలో <b>Speaker</b> నిర్ణయిస్తారు — Governor కాదు. <b class="hlp">Kihoto Hollohan vs Zachillhu</b> (<b class="hlg">1992</b>) కేసులో, Supreme Court ఈ Chairman/Speaker నిర్ణయం <b class="imp">judicial review కు లోబడుతుందని</b> తీర్పు ఇచ్చింది — అంటే ఇది తుది మాట కాదు, court లో సవాలు చేయవచ్చు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">3. Oath or Affirmation</div>
+  <p class="eng">Every member of either House, before taking his/her seat, must make and subscribe an oath or affirmation before the <b>Governor</b> — or a person appointed by the Governor for this specific purpose. In this oath, the member swears (i) to bear true faith and allegiance to the Constitution of India; (ii) to uphold the sovereignty and integrity of India; and (iii) to faithfully discharge the duty of his/her office. Until a member takes this oath, he/she <b class="imp">cannot vote or participate</b> in House proceedings, and does not become eligible for the privileges and immunities of the state legislature.</p>
+  <div class="te">ప్రతి House సభ్యుడు తన seat తీసుకునేముందు <b>Governor</b> — లేదా ఈ నిర్దిష్ట ప్రయోజనం కోసం Governor నియమించిన వ్యక్తి — ముందు ఓత్/affirmation చేయాలి. ఈ ఓత్ లో member ప్రమాణం చేసేది — (i) భారత రాజ్యాంగం పట్ల నిజమైన నమ్మకం, allegiance; (ii) India సార్వభౌమత్వం, సమగ్రత సమర్థన; (iii) తన పదవి విధులను నమ్మకంగా నిర్వర్తించడం. ఈ ఓత్ చేసేవరకు, member House proceedings లో <b class="imp">ఓటు వేయలేరు లేదా పాల్గొనలేరు</b>, state legislature privileges/immunities కు కూడా అర్హులు కారు.</div>
+
+  <p class="eng">A person is liable to a penalty of <b class="hlg">₹500</b> for each day he/she sits or votes as a member in a House: (1) before taking and subscribing the prescribed oath or affirmation; or (2) while knowing that he/she is not qualified, or is disqualified, for membership; or (3) while knowing that he/she is prohibited from sitting or voting in the House by virtue of any law made by Parliament or the state legislature. Members are entitled to receive such salaries and allowances as may from time to time be determined by the state legislature itself.</p>
+  <div class="te">కూర్చున్న/ఓటేసిన ప్రతి రోజుకూ <b class="hlg">₹500</b> జరిమానాకు ఒక వ్యక్తి లోబడతారు — (1) నిర్దేశిత ఓత్/affirmation చేయకముందే; లేదా (2) తాను qualify కాలేదని లేదా అనర్హుడని తెలిసినా; లేదా (3) Parliament లేదా state legislature చట్టం ద్వారా కూర్చోవడం/ఓటేయడం నిషేధించబడ్డానని తెలిసినా. Members కు state legislature ఎప్పటికప్పుడు నిర్ణయించిన జీతాలు, allowances పొందే హక్కు ఉంటుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">4. Vacation of Seats</div>
+  <p class="eng">A member of the state legislature vacates his/her seat in several defined circumstances. Under <b>double membership</b>, since a person cannot be a member of both Houses at the same time, if elected to both, the seat in one of the Houses falls vacant as per a law made by the state legislature itself. Under <b>disqualification</b>, the seat becomes vacant if the member becomes subject to any of the disqualifications discussed above. Under <b>resignation</b>, a member may resign by writing to the Chairman (council) or Speaker (assembly) as applicable — the seat falls vacant only when the resignation is <b>accepted</b>, and the Chairman/Speaker need not accept a resignation they are not satisfied is voluntary or genuine. Under <b>absence</b>, a House can declare a member's seat vacant if he/she is absent from all its meetings for <b class="hlg">60 days</b> without the House's permission. Finally, under a set of <b>other cases</b>, a member must vacate his/her seat if his/her election is declared void by a court, if expelled by the House, if elected to the office of President or Vice-President, or if appointed to the office of Governor of a state.</p>
+  <div class="te">State legislature member తన seat ను అనేక నిర్దిష్ట పరిస్థితుల్లో వదులుకుంటారు. <b>Double membership</b> కింద, ఒక వ్యక్తి రెండు Houses లో ఒకేసారి సభ్యుడు కాలేరు కాబట్టి, రెండింటికీ ఎన్నికైతే, ఏ House లో seat ఖాళీ అవుతుందో state legislature చేసిన చట్టం నిర్ణయిస్తుంది. <b>Disqualification</b> కింద, పైన చెప్పిన అనర్హతల్లో దేనికైనా లోబడితే seat ఖాళీ అవుతుంది. <b>Resignation</b> కింద, member Chairman (council) లేదా Speaker (assembly) కు రాసి రాజీనామా చేయవచ్చు — రాజీనామా <b>ఆమోదించినప్పుడే</b> seat ఖాళీ అవుతుంది, రాజీనామా స్వచ్ఛందం/నిజాయితీ కాదని అనిపిస్తే Chairman/Speaker దాన్ని ఆమోదించనవసరం లేదు. <b>Absence</b> కింద, member అనుమతి లేకుండా <b class="hlg">60 రోజులు</b> అన్ని సమావేశాలకూ గైర్హాజరైతే House ఆ seat ను ఖాళీగా ప్రకటించవచ్చు. చివరగా, <b>ఇతర సందర్భాల్లో</b> — court ఎన్నికను void అని ప్రకటిస్తే, House expel చేస్తే, President లేదా Vice-President పదవికి ఎన్నికైతే, లేదా ఒక రాష్ట్రం Governor గా నియమితమైతే — member తన seat వదులుకోవాలి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Membership, Defection, Oath &amp; Vacation</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Age qualification — Council / Assembly?</td><td>≥30 years / ≥25 years</td></tr>
+      <tr><td>SC/ST candidate — can contest unreserved seat?</td><td>Yes</td></tr>
+      <tr><td>Governor's disqualification decision — bound by whom?</td><td>Must follow the Election Commission's opinion</td></tr>
+      <tr><td>Who decides defection disqualification?</td><td>Chairman (council) / Speaker (assembly) — not Governor</td></tr>
+      <tr><td>Kihoto Hollohan case (1992) held?</td><td>Chairman/Speaker's defection decision is subject to judicial review</td></tr>
+      <tr><td>Oath is taken before whom?</td><td>Governor (or Governor's nominee)</td></tr>
+      <tr><td>Penalty for sitting/voting without oath or while disqualified?</td><td>₹500 per day</td></tr>
+      <tr><td>Absence threshold for seat forfeiture?</td><td>60 days, all meetings, without permission</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Presiding Officers — Speaker &amp; Deputy Speaker of the Assembly</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Presiding Officers — Overview</div>
+  <p class="eng">Each House of the state legislature has its own presiding officer(s). The assembly has a <b>Speaker</b> and a <b>Deputy Speaker</b>; the council has a <b>Chairman</b> and a <b>Deputy Chairman</b>. A panel of chairman (for the assembly) and a panel of vice-chairman (for the council) are also appointed, to stand in for the two principal presiding officers when both are absent. The salaries and allowances of all four office-holders are fixed by the state legislature, and are charged on the <b class="hlb">Consolidated Fund of the State</b> — meaning they are, like judicial salaries, <b class="imp">not subject to the state legislature's annual vote</b>.</p>
+  <div class="te">State legislature ప్రతి House కు దాని సొంత presiding officer(లు) ఉంటారు. Assembly కు <b>Speaker</b>, <b>Deputy Speaker</b>; Council కు <b>Chairman</b>, <b>Deputy Chairman</b>. ఇద్దరు ప్రధాన presiding officers గైర్హాజరైనప్పుడు వారి స్థానంలో ఉండేందుకు assembly కు panel of chairman, council కు panel of vice-chairman కూడా నియమిస్తారు. ఈ నలుగురి జీతాలు, allowances state legislature నిర్ణయిస్తుంది, <b class="hlb">Consolidated Fund of the State</b> పై ఖర్చు అవుతుంది — అంటే, judicial జీతాల్లాగే, state legislature వార్షిక ఓటింగ్ కు <b class="imp">లోబడవు</b>.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Speaker of the Assembly</div>
+  <p class="eng">The Speaker is elected by the assembly itself from among its own members. Usually, the Speaker remains in office throughout the life of the assembly, but vacates office earlier in any of three cases: (1) if he/she ceases to be a member of the assembly; (2) if he/she resigns by writing to the <b>Deputy Speaker</b>; or (3) if he/she is removed by a resolution passed by a majority of <b>all the then members</b> of the assembly (i.e., an <b class="term">effective majority</b>) — such a resolution can only be moved after giving <b class="hlg">14 days'</b> advance notice.</p>
+  <div class="te">Assembly తనలోని members నుండే Speaker ను ఎన్నుకుంటుంది. సాధారణంగా, Speaker assembly జీవితకాలం అంతా పదవిలో ఉంటారు, కానీ ఈ మూడు సందర్భాల్లో ముందుగానే పదవి వదులుకుంటారు — (1) assembly సభ్యత్వం కోల్పోతే; (2) <b>Deputy Speaker</b> కు రాసి రాజీనామా చేస్తే; లేదా (3) assembly అప్పటి <b>మొత్తం members</b> లో మెజారిటీ (అంటే <b class="term">effective majority</b>) resolution పాస్ చేస్తే — ఇలాంటి resolution పెట్టాలంటే <b class="hlg">14 రోజుల</b> ముందస్తు నోటీసు అవసరం.</div>
+
+  <p class="eng">The Speaker's powers and duties are extensive. He/she maintains order and decorum in the assembly for conducting its business and regulating its proceedings — this is the Speaker's primary responsibility, and the Speaker has final power in this regard. He/she is the <b>final interpreter</b>, within the assembly, of (a) the Constitution of India, (b) the rules of procedure and conduct of business of the assembly, and (c) legislative precedents. He/she adjourns the assembly or suspends the meeting in the absence of a quorum; does not vote in the first instance but can exercise a <b>casting vote</b> in case of a tie; can allow a "secret" sitting of the House at the request of the leader of the House; decides whether a bill is a <b>Money Bill</b> or not, with his/her decision on this question being <b class="imp">final</b>; decides questions of a member's disqualification arising from defection under the Tenth Schedule; and appoints the chairman of all the assembly's committees, supervising their functioning while personally chairing the Business Advisory Committee, the Rules Committee, and the General Purpose Committee.</p>
+  <div class="te">Speaker అధికారాలు, విధులు విస్తృతమైనవి. Business నిర్వహణ, proceedings నియంత్రణ కోసం assembly లో order, decorum కాపాడతారు — ఇది Speaker ప్రాథమిక బాధ్యత, దీనిపై Speaker కు final అధికారం ఉంటుంది. Assembly లోపల (a) India రాజ్యాంగం, (b) assembly procedure, business నిర్వహణ నియమాలు, (c) legislative precedents — వీటికి <b>final interpreter</b> గా ఉంటారు. Quorum లేనప్పుడు assembly ను adjourn చేస్తారు లేదా సమావేశాన్ని suspend చేస్తారు; మొదట ఓటేయరు కానీ tie లో <b>casting vote</b> వాడతారు; leader of the House అభ్యర్థనపై "secret" sitting అనుమతించవచ్చు; ఒక బిల్లు <b>Money Bill</b> అవునా కాదా అని నిర్ణయిస్తారు, ఈ ప్రశ్నపై నిర్ణయం <b class="imp">final</b>; Tenth Schedule కింద defection కారణంగా member అనర్హత ప్రశ్నలను నిర్ణయిస్తారు; assembly అన్ని committees కు chairman లను నియమిస్తారు, వాటి పనితీరును పర్యవేక్షిస్తారు, స్వయంగా Business Advisory Committee, Rules Committee, General Purpose Committee కు chair గా వ్యవహరిస్తారు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Deputy Speaker of the Assembly</div>
+  <p class="eng">Like the Speaker, the Deputy Speaker is also elected by the assembly from among its members — but the election takes place <b>after</b> the Speaker's election has been completed. The Deputy Speaker likewise remains in office usually during the life of the assembly, and vacates office earlier under the same three kinds of circumstances as the Speaker (with resignation directed to the <b>Speaker</b> instead). The Deputy Speaker performs the duties of the Speaker's office when it is vacant, and also acts as Speaker when the Speaker is absent from a sitting of the assembly — in both scenarios, he/she has <b>all</b> the powers of the Speaker. Separately, the Speaker nominates from among the members a <b>panel of chairman</b>; any one of them can preside over the assembly in the absence of both the Speaker and the Deputy Speaker, with the same powers as the Speaker while so presiding, and holds this standing until a new panel of chairman is nominated.</p>
+  <div class="te">Speaker లాగే, Deputy Speaker ను కూడా assembly తనలోని members నుండి ఎన్నుకుంటుంది — కానీ ఈ ఎన్నిక Speaker ఎన్నిక పూర్తయ్యాక జరుగుతుంది. Deputy Speaker కూడా సాధారణంగా assembly జీవితకాలం అంతా పదవిలో ఉంటారు, Speaker కు ఉన్న అదే మూడు సందర్భాల్లో ముందుగానే పదవి వదులుకుంటారు (రాజీనామా మాత్రం <b>Speaker</b> కు రాయాలి). Speaker పదవి ఖాళీగా ఉన్నప్పుడు Deputy Speaker ఆ విధులు నిర్వహిస్తారు, Speaker assembly సమావేశానికి గైర్హాజరైనప్పుడు Speaker గా వ్యవహరిస్తారు — రెండు సందర్భాల్లోనూ Speaker అధికారాలు అన్నీ కలిగి ఉంటారు. వేరుగా, Speaker members నుండి <b>panel of chairman</b> ను నామినేట్ చేస్తారు; Speaker, Deputy Speaker ఇద్దరూ గైర్హాజరైనప్పుడు వారిలో ఎవరైనా అదే అధికారంతో అధ్యక్షత వహించవచ్చు, కొత్త panel of chairman నామినేట్ అయ్యేవరకు ఈ హోదాలో కొనసాగుతారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Speaker &amp; Deputy Speaker</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How is the Speaker elected?</td><td>By the assembly, from among its own members</td></tr>
+      <tr><td>3 ways Speaker vacates office early?</td><td>Ceasing to be a member; resigning to Dy. Speaker; effective-majority removal (14 days' notice)</td></tr>
+      <tr><td>Speaker's exclusive/final power among presiding officers?</td><td>Deciding whether a bill is a Money Bill</td></tr>
+      <tr><td>Who decides defection-disqualification in the assembly?</td><td>The Speaker</td></tr>
+      <tr><td>3 committees the Speaker personally chairs?</td><td>Business Advisory Committee, Rules Committee, General Purpose Committee</td></tr>
+      <tr><td>When is the Deputy Speaker elected?</td><td>After the Speaker's election, by the assembly from its members</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Presiding Officers — Chairman &amp; Deputy Chairman of the Council</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Chairman of the Council</div>
+  <p class="eng">The Chairman, like the Speaker, is elected by the council itself from among its members. The Chairman vacates office in the same three kinds of cases as the Speaker: if he/she ceases to be a council member; if he/she resigns by writing to the <b>Deputy Chairman</b>; or if removed by an effective-majority resolution of the council, moved after 14 days' advance notice. As a presiding officer, the Chairman's powers and functions in the council closely mirror those of the Speaker in the assembly. However, there is one important exception — the Speaker enjoys a special power that the Chairman does <b class="imp">not</b>: the power to decide whether a bill is a <b>Money Bill</b>, with a final and unchallengeable decision. This exception is not accidental — it fits the wider pattern discussed later in this chapter, under which the council is deliberately kept out of the state's financial legislation entirely, and the assembly alone controls the Money Bill process from introduction to final characterisation.</p>
+  <div class="te">Chairman ను కూడా, Speaker లాగే, council తనలోని members నుండి ఎన్నుకుంటుంది. Chairman Speaker కు ఉన్న అదే మూడు సందర్భాల్లో పదవి వదులుకుంటారు — council సభ్యత్వం కోల్పోతే; <b>Deputy Chairman</b> కు రాసి రాజీనామా చేస్తే; లేదా 14 రోజుల ముందస్తు నోటీసుతో పెట్టిన effective-majority resolution తో తొలగించబడితే. Presiding officer గా, council లో Chairman అధికారాలు, విధులు assembly లో Speaker అధికారాలను దగ్గరగా ప్రతిబింబిస్తాయి. అయితే, ఒక ముఖ్యమైన మినహాయింపు ఉంది — Speaker కు మాత్రమే ఉండే ఒక ప్రత్యేక అధికారం Chairman కు <b class="imp">లేదు</b> — ఒక బిల్లు <b>Money Bill</b> అవునా కాదా అని నిర్ణయించే, final, సవాలు చేయలేని అధికారం. ఈ మినహాయింపు యాదృచ్ఛికం కాదు — ఇది ఈ అధ్యాయంలో తర్వాత చర్చించే విస్తృత pattern కు సరిపోతుంది — council ను ఉద్దేశపూర్వకంగా రాష్ట్రం financial legislation నుండి పూర్తిగా దూరంగా ఉంచుతారు, Money Bill ప్రక్రియను ప్రవేశపెట్టడం నుండి తుది classification వరకూ అంతా assembly ఒక్కటే నియంత్రిస్తుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Deputy Chairman of the Council</div>
+  <p class="eng">The Deputy Chairman is also elected by the council from among its members, and vacates office under the same three kinds of circumstances (with resignation directed to the <b>Chairman</b>). The Deputy Chairman performs the duties of the Chairman's office when it is vacant, and acts as Chairman when the Chairman is absent from a council sitting — in both cases enjoying all the Chairman's powers. Just as the Speaker nominates a panel of chairman, the Chairman here nominates a <b>panel of vice-chairman</b> from among the council's members; any one of them can preside over the council in the absence of both the Chairman and the Deputy Chairman, with the same powers as the Chairman while so presiding, and continues in this role until a new panel of vice-chairman is nominated.</p>
+  <div class="te">Deputy Chairman ను కూడా council తనలోని members నుండి ఎన్నుకుంటుంది, అదే మూడు సందర్భాల్లో పదవి వదులుకుంటారు (రాజీనామా <b>Chairman</b> కు రాయాలి). Chairman పదవి ఖాళీగా ఉన్నప్పుడు Deputy Chairman ఆ విధులు నిర్వహిస్తారు, Chairman council సమావేశానికి గైర్హాజరైనప్పుడు Chairman గా వ్యవహరిస్తారు — రెండు సందర్భాల్లోనూ Chairman అధికారాలు అన్నీ కలిగి ఉంటారు. Speaker panel of chairman నామినేట్ చేసినట్టే, ఇక్కడ Chairman council members నుండి <b>panel of vice-chairman</b> ను నామినేట్ చేస్తారు; Chairman, Deputy Chairman ఇద్దరూ గైర్హాజరైనప్పుడు వారిలో ఎవరైనా అదే అధికారంతో అధ్యక్షత వహించవచ్చు, కొత్త panel of vice-chairman నామినేట్ అయ్యేవరకు ఈ పాత్రలో కొనసాగుతారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Chairman &amp; Deputy Chairman of the Council</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How is the Chairman elected?</td><td>By the council, from among its own members</td></tr>
+      <tr><td>3 ways Chairman vacates office early?</td><td>Ceasing to be a member; resigning to Dy. Chairman; effective-majority removal (14 days' notice)</td></tr>
+      <tr><td>Key power the Chairman lacks vs the Speaker?</td><td>Deciding whether a bill is a Money Bill — only the Speaker has this</td></tr>
+      <tr><td>What does the Chairman nominate?</td><td>A panel of vice-chairman, to preside when both Chairman &amp; Deputy Chairman are absent</td></tr>
+      <tr><td>Structural parallel to remember?</td><td>Speaker↔Chairman, Dy.Speaker↔Dy.Chairman, panel of chairman↔panel of vice-chairman</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Sessions of the State Legislature</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Summoning, Adjournment, Prorogation</div>
+  <p class="eng">The <b>Governor</b> summons each House of the state legislature to meet, from time to time. The maximum gap permitted between two sessions of the state legislature <b class="imp">cannot exceed six months</b> — in other words, the state legislature must meet at least twice a year. A single session of the state legislature is made up of many individual sittings.</p>
+  <div class="te"><b>Governor</b> ఎప్పటికప్పుడు state legislature ప్రతి House ను సమావేశపరచడానికి summon చేస్తారు. State legislature రెండు sessions మధ్య అనుమతించే గరిష్ట గ్యాప్ <b class="imp">6 నెలలు మించకూడదు</b> — అంటే, state legislature సంవత్సరానికి కనీసం రెండుసార్లు సమావేశం కావాలి. ఒక session లో అనేక వ్యక్తిగత sittings ఉంటాయి.</div>
+
+  <p class="eng">An <b class="term">adjournment</b> suspends the work in a sitting for a specified time, which may be hours, days, or weeks. <span class="hlb">Adjournment sine die</span> means terminating a sitting of the state legislature for an indefinite period, with no fixed date of resumption. The power of adjournment, as well as of adjournment sine die, lies entirely with the <b>presiding officer</b> of the House. A <b class="term">prorogation</b> works differently: the presiding officer (Speaker or Chairman) declares the House adjourned sine die once the business of a session is completed, and within the next few days, the <b>Governor</b> issues a formal notification proroguing the session. The Governor can also independently prorogue a House that is still in session. Unlike an adjournment — which suspends a sitting — a prorogation <b class="imp">terminates an entire session</b> of the House.</p>
+  <div class="te"><b class="term">Adjournment</b> ఒక నిర్దిష్ట సమయం — గంటలు, రోజులు, లేదా వారాలు కావచ్చు — వరకు sitting లో పనిని నిలిపివేస్తుంది. <span class="hlb">Adjournment sine die</span> అంటే — తిరిగి ప్రారంభం అయ్యే నిర్దిష్ట తేదీ లేకుండా, state legislature sitting ను నిరవధిక కాలానికి ముగించడం. Adjournment, adjournment sine die రెండింటి అధికారం పూర్తిగా House <b>presiding officer</b> కు ఉంటుంది. <b class="term">Prorogation</b> వేరేగా పనిచేస్తుంది — session పని పూర్తయ్యాక presiding officer (Speaker లేదా Chairman) House ను sine die adjourn చేసినట్టు ప్రకటిస్తారు, తర్వాతి కొద్ది రోజుల్లో <b>Governor</b> session ను prorogue చేస్తూ అధికారికంగా notification జారీ చేస్తారు. Session లో ఇంకా ఉన్న House ను కూడా Governor స్వతంత్రంగా prorogue చేయవచ్చు. Adjournment ఒక sitting ను నిలిపివేస్తే, prorogation House యొక్క <b class="imp">మొత్తం session ను ముగిస్తుంది</b> — ఇది ఈ రెండింటి మధ్య తేడా.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Dissolution &amp; the Lapsing of Bills</div>
+  <p class="eng">The legislative council, being a permanent House, is <b class="imp">not</b> subject to dissolution at all — only the legislative assembly is. Unlike a prorogation (which ends only a session), a dissolution <b>ends the very life</b> of the existing House, and an entirely new House is constituted after fresh general elections are held. This distinction — session-ending vs House-ending — has direct practical consequences for pending legislation, summarised below.</p>
+  <div class="te">Legislative council శాశ్వత House కావడం వల్ల <b class="imp">dissolution</b> కు అస్సలు లోబడదు — legislative assembly మాత్రమే లోబడుతుంది. Prorogation (కేవలం ఒక session ను ముగించడం) కు భిన్నంగా, dissolution ఉన్న House యొక్క <b>మొత్తం జీవితాన్నే</b> ముగిస్తుంది, తాజా సాధారణ ఎన్నికల తర్వాత పూర్తిగా కొత్త House ఏర్పడుతుంది. Session-ముగింపు vs House-ముగింపు అనే ఈ తేడాకు pending legislation పై ప్రత్యక్ష ఆచరణాత్మక పర్యవసానాలు ఉన్నాయి, కింద సంక్షిప్తీకరించాం.</div>
+
+  <table>
+    <caption>Effect of Assembly Dissolution on Pending Bills</caption>
+    <thead><tr><th class="n" style="width:6%">#</th><th style="width:36%">Status of Bill</th><th>Lapses?</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Pending in the assembly (originated there, or transmitted by council)</td><td class="imp">Lapses</td></tr>
+      <tr><td class="n">2</td><td>Passed by assembly, pending in council</td><td class="imp">Lapses</td></tr>
+      <tr><td class="n">3</td><td>Pending in council, but not passed by assembly</td><td class="hlg">Does not lapse</td></tr>
+      <tr><td class="n">4</td><td>Passed by assembly (or both Houses) but pending Governor's/President's assent</td><td class="hlg">Does not lapse</td></tr>
+      <tr><td class="n">5</td><td>Passed by assembly (or both Houses) but returned by President for reconsideration</td><td class="hlg">Does not lapse</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:13.3px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;padding:8px 11px;margin-top:8px;border-radius:2px">The underlying logic — a bill lapses only if the <b>assembly's own role</b> in the process is still incomplete (rows 1-2); once the assembly has done its part and the bill has moved beyond it (rows 3-5), dissolving the assembly doesn't kill the bill.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Quorum, Voting, Language, and Rights of Ministers</div>
+  <p class="eng"><b class="term">Quorum</b> is the minimum number of members required to be present before a House can transact any business — set at <b class="hlg">10</b> members, or <b class="hlg">one-tenth</b> of the total membership of the House (including the presiding officer), whichever is <b>greater</b>. If there is no quorum during a meeting, it is the presiding officer's duty to either adjourn the House or suspend the meeting until a quorum is present. On <b class="term">voting</b>, all matters at any sitting of either House are decided by a majority of the members present and voting, excluding the presiding officer — only a few specifically-mentioned matters in the Constitution require an effective or special majority rather than a simple majority; the presiding officer does not vote in the first instance, but exercises a casting vote in case of a tie.</p>
+  <div class="te"><b class="term">Quorum</b> అంటే — ఒక House ఏదైనా business నిర్వహించే ముందు హాజరు కావాల్సిన కనీస members సంఖ్య — ఇది <b class="hlg">10</b> members, లేదా House మొత్తం membership (presiding officer తో సహా) లో <b class="hlg">1/10</b>, వీటిలో ఏది <b>ఎక్కువో</b> అది. సమావేశంలో quorum లేకపోతే, House ను adjourn చేయడం లేదా quorum వచ్చేవరకు సమావేశాన్ని suspend చేయడం presiding officer బాధ్యత. <b class="term">Voting</b> విషయంలో, ఏ House సమావేశంలోనైనా అన్ని అంశాలూ హాజరై ఓటేసిన members మెజారిటీతో నిర్ణయిస్తారు, presiding officer మినహాయించి — Constitution ప్రత్యేకంగా పేర్కొన్న కొన్ని అంశాలకు మాత్రమే simple majority బదులు effective లేదా special majority అవసరం; presiding officer మొదట ఓటేయరు, కానీ tie లో casting vote వాడతారు.</div>
+
+  <p class="eng">On <b class="term">language</b>, the Constitution declares the official language(s) of the state, or Hindi, or English, to be the language(s) for transacting business in the state legislature — though the presiding officer can permit a member to address the House in his/her own mother-tongue. The state legislature itself is authorised to decide whether to continue or discontinue English as a floor language after the completion of <b class="hlg">15</b> years from the commencement of the Constitution (i.e., from <b class="hlg">1965</b>); this time limit is extended to <b class="hlg">25</b> years for Himachal Pradesh, Manipur, Meghalaya and Tripura, and to <b class="hlg">40</b> years for Arunachal Pradesh, Goa and Mizoram. Finally, on the <b>rights of ministers and the Advocate General</b>: in addition to House members, every minister and the state's Advocate General have the right to speak and take part in the proceedings of either House or any of its committees of which they are a named member — <b class="imp">without being entitled to vote</b>. Two reasons underlie this provision: (1) it lets a minister participate in the proceedings of a House of which he/she is not a member; and (2) it lets a minister who is a member of neither House participate in the proceedings of both Houses (a person can, in fact, remain a minister for up to <b class="hlg">6 months</b> without being a member of either House at all).</p>
+  <div class="te"><b class="term">Language</b> విషయంలో, Constitution రాష్ట్రం అధికార భాష(లు), లేదా Hindi, లేదా English — వీటిని state legislature business నిర్వహణ భాష(లు)గా ప్రకటిస్తుంది — presiding officer ఒక member ను తన సొంత mother-tongue లో House నందు మాట్లాడేందుకు అనుమతించవచ్చు. Constitution మొదలైన <b class="hlg">15</b> సంవత్సరాల (అంటే <b class="hlg">1965</b> నుండి) తర్వాత English ను floor language గా కొనసాగించాలా వద్దా అని state legislature స్వయంగా నిర్ణయించుకోవచ్చు; ఈ గడువు Himachal Pradesh, Manipur, Meghalaya, Tripura కు <b class="hlg">25</b> సంవత్సరాలు, Arunachal Pradesh, Goa, Mizoram కు <b class="hlg">40</b> సంవత్సరాలు. చివరగా, <b>ministers, Advocate General హక్కుల</b> విషయంలో — House members తో పాటు, ప్రతి minister, రాష్ట్రం Advocate General — తాము named member గా ఉన్న ఏ House లోనైనా లేదా దాని ఏ committee లోనైనా మాట్లాడే, పాల్గొనే హక్కు కలిగి ఉంటారు — కానీ <b class="imp">ఓటు వేసే హక్కు ఉండదు</b>. దీనికి రెండు కారణాలు — (1) తాను member కాని House proceedings లో కూడా minister పాల్గొనవచ్చు; (2) ఏ House లోనూ member కాని minister రెండు Houses proceedings లోనూ పాల్గొనవచ్చు (వాస్తవానికి, ఒక వ్యక్తి ఏ House లోనూ member కాకుండానే <b class="hlg">6 నెలల</b> వరకు minister గా కొనసాగవచ్చు).</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Sessions of the State Legislature</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Max gap between sessions?</td><td>6 months — must meet at least twice a year</td></tr>
+      <tr><td>Who has adjournment/sine-die power?</td><td>The presiding officer</td></tr>
+      <tr><td>Who prorogues a session, and how?</td><td>Governor, by notification, after presiding officer adjourns sine die</td></tr>
+      <tr><td>Which House is never dissolved?</td><td>The council (permanent); only the assembly dissolves</td></tr>
+      <tr><td>Quorum formula?</td><td>10, or 1/10 of total House membership (incl. presiding officer) — whichever greater</td></tr>
+      <tr><td>Default majority for House decisions?</td><td>Simple majority of those present &amp; voting, excluding presiding officer</td></tr>
+      <tr><td>When can a state discontinue English as floor language?</td><td>After 15 yrs from 1965 (25/40 yrs for specified states)</td></tr>
+      <tr><td>Can a non-member minister address a House?</td><td>Yes — right to speak/participate, no vote; can be minister 6 months without House membership</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 10 ═══════════ -->
+<div class="page">
+<div class="sub">Legislative Procedure — Ordinary Bills</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Ordinary Bills — Originating House &amp; Second House</div>
+  <p class="eng">An ordinary bill can originate in <b>either House</b> of a bicameral state legislature, and can be introduced either by a minister or by any other member. In the originating House, the bill passes through three stages — <b>first reading</b>, <b>second reading</b>, and <b>third reading</b>. Once passed by the originating House, it is transmitted to the second House for its own consideration and passage, where it likewise passes through all three stages. A bill is deemed to have been passed by the state legislature only when <b>both Houses</b> have agreed to it, either with or without amendments. In a <b>unicameral</b> legislature, this two-House dynamic doesn't apply at all — a bill passed by the legislative assembly is sent directly to the Governor for assent.</p>
+  <div class="te">Ordinary bill bicameral state legislature లోని <b>ఏ House లోనైనా</b> originate కావచ్చు, దాన్ని minister గానీ మరో member గానీ ప్రవేశపెట్టవచ్చు. Originating House లో బిల్లు మూడు దశలు దాటుతుంది — <b>first reading</b>, <b>second reading</b>, <b>third reading</b>. Originating House పాస్ చేశాక, దాన్ని second House కు consideration/passage కోసం పంపుతారు, అక్కడ కూడా మూడు దశలూ దాటుతుంది. బిల్లు state legislature పాస్ చేసినట్టుగా పరిగణించాలంటే <b>రెండు Houses</b> ఒప్పుకోవాలి, సవరణలతో గానీ లేకుండా గానీ. <b>Unicameral</b> legislature లో ఈ రెండు-House dynamic వర్తించదు — assembly పాస్ చేసిన బిల్లు నేరుగా Governor assent కోసం వెళుతుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">The Council's Four Alternatives &amp; the Deadlock Mechanism</div>
+  <p class="eng">When a bill is passed by the legislative assembly and transmitted to the legislative council, the council has <b class="hlg">four</b> alternatives before it: (1) it may pass the bill exactly as sent (i.e., without amendments); (2) it may pass it with amendments and return it to the assembly for reconsideration; (3) it may reject the bill altogether; or (4) it may simply take no action, letting the bill sit pending. If the council passes the bill without amendments, or the assembly accepts the amendments suggested by the council, the bill is deemed passed by both Houses and sent to the Governor for assent. On the other hand, if the assembly rejects the council's amendments, or the council rejects the bill altogether, or the council fails to act for <b class="hlg">three months</b>, the assembly may pass the bill <b>again</b> and transmit it to the council once more.</p>
+  <div class="te">Assembly ఒక బిల్లు పాస్ చేసి council కు పంపినప్పుడు, council కు <b class="hlg">నాలుగు</b> ప్రత్యామ్నాయాలు ఉంటాయి — (1) పంపిన రూపంలోనే (సవరణలు లేకుండా) పాస్ చేయడం; (2) సవరణలతో పాస్ చేసి assembly కు reconsideration కోసం తిరిగి పంపడం; (3) బిల్లును పూర్తిగా తిరస్కరించడం; లేదా (4) ఏమీ చేయకుండా బిల్లును పెండింగ్ లో ఉంచడం. Council సవరణలు లేకుండా పాస్ చేస్తే, లేదా assembly council సూచించిన సవరణలను ఆమోదిస్తే, బిల్లు రెండు Houses పాస్ చేసినట్టుగా పరిగణించి, Governor assent కోసం పంపుతారు. మరోవైపు, assembly council సవరణలను తిరస్కరిస్తే, లేదా council బిల్లును పూర్తిగా తిరస్కరిస్తే, లేదా council <b class="hlg">మూడు నెలలు</b> ఏమీ చేయకపోతే, assembly బిల్లును <b>మళ్ళీ</b> పాస్ చేసి council కు మరోసారి పంపవచ్చు.</div>
+
+  <p class="eng">If, on this second passage, the council rejects the bill again, or passes it with amendments that are not acceptable to the assembly, or fails to pass it within <b class="hlg">one month</b>, then the bill is deemed to have been passed by both Houses in the exact form in which the assembly passed it the second time. The ultimate power of passing an ordinary bill is therefore vested entirely in the <b>assembly</b>; at the most, the council can detain or delay a bill for a total period of <b class="hlg">four months</b> — three months in the first instance and one month in the second. Two structural points stand out clearly from this mechanism: first, the Constitution provides <b class="imp">no joint-sitting mechanism</b> for state legislatures at all, unlike the joint sitting of the Lok Sabha and Rajya Sabha that resolves ordinary-bill deadlocks at the Centre (Ch.23) — the state-level answer to a deadlock is simply letting the assembly override the council by re-passing the bill. Second, when a bill originating in the council is sent to the assembly and rejected by the assembly, the bill simply <b class="imp">ends and becomes dead</b> — there is no equivalent override mechanism running the other way. Taken together, these two features are exactly why the council has been given much lesser significance, position and authority than the Rajya Sabha enjoys at the Centre.</p>
+  <div class="te">ఈ రెండోసారి, council మళ్ళీ బిల్లును తిరస్కరిస్తే, లేదా assembly కు ఆమోదయోగ్యం కాని సవరణలతో పాస్ చేస్తే, లేదా <b class="hlg">ఒక నెల</b> లోపు పాస్ చేయకపోతే, assembly రెండోసారి పాస్ చేసిన అదే రూపంలో బిల్లు రెండు Houses పాస్ చేసినట్టుగా పరిగణించబడుతుంది. కాబట్టి ordinary బిల్లు పాస్ చేసే అంతిమ అధికారం పూర్తిగా <b>assembly</b> చేతిలోనే ఉంటుంది; council గరిష్టంగా బిల్లును మొత్తం <b class="hlg">నాలుగు నెలలు</b> — మొదటిసారి మూడు నెలలు, రెండోసారి ఒక నెల — ఆలస్యం చేయగలదు. ఈ mechanism నుండి రెండు structural పాయింట్లు స్పష్టంగా కనిపిస్తాయి — మొదటిది, Centre లో ordinary-bill deadlocks పరిష్కరించే Lok Sabha-Rajya Sabha joint sitting (Ch.23) కు భిన్నంగా, state legislatures కు <b class="imp">joint-sitting mechanism ఏదీ లేదు</b> — state స్థాయిలో deadlock కు సమాధానం, assembly బిల్లును తిరిగి పాస్ చేసి council ను override చేయడమే. రెండోది, council లో originate అయి assembly కు పంపిన బిల్లును assembly తిరస్కరిస్తే, ఆ బిల్లు <b class="imp">అంతటితో ముగుస్తుంది</b> — వ్యతిరేక దిశలో నడిచే override mechanism ఏదీ లేదు. ఈ రెండు లక్షణాలూ కలిపి, Centre లో Rajya Sabha కు ఉన్న దానికంటే council కు చాలా తక్కువ ప్రాముఖ్యత, స్థానం, అధికారం ఇవ్వడానికి ఖచ్చితమైన కారణం.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Assent of the Governor &amp; the President (Ordinary Bills)</div>
+  <p class="eng">Every bill, once passed by the assembly (or by both Houses in a bicameral state), is presented to the <b>Governor</b> for assent, who has <b class="hlg">four</b> alternatives: (1) give assent to the bill; (2) withhold assent; (3) return the bill for reconsideration of the House or Houses; or (4) reserve the bill for the <b>President's</b> consideration. If the Governor assents, the bill becomes an Act and is placed on the Statute Book. If the Governor withholds assent, the bill simply ends and does not become an Act. If the Governor returns the bill for reconsideration, and it is passed again by the House(s) — with or without amendments — and re-presented, the Governor <b class="imp">must</b> give assent this time. This means the Governor enjoys only a <b class="term">suspensive veto</b> over ordinary bills — the same position the President holds at the Centre.</p>
+  <div class="te">పాస్ అయిన ప్రతి బిల్లు (assembly లో, లేదా bicameral రాష్ట్రంలో రెండు Houses లో) assent కోసం <b>Governor</b> కు వెళుతుంది — Governor కు <b class="hlg">నాలుగు</b> ప్రత్యామ్నాయాలు — (1) బిల్లుకు assent ఇవ్వడం; (2) assent నిలిపివేయడం; (3) House(లు) reconsideration కోసం బిల్లును తిరిగి పంపడం; (4) బిల్లును <b>President</b> consideration కు reserve చేయడం. Governor assent ఇస్తే బిల్లు Act గా మారి Statute Book లో చేరుతుంది. Governor assent నిలిపివేస్తే బిల్లు అంతటితో ముగిసి Act కాదు. Governor reconsideration కోసం తిరిగి పంపి, House(లు) మళ్ళీ పాస్ చేసి (సవరణలతో గానీ లేకుండా గానీ) తిరిగి సమర్పిస్తే, ఈసారి Governor తప్పనిసరిగా assent ఇవ్వాలి. అంటే Governor కు ordinary బిల్లులపై కేవలం <b class="term">suspensive veto</b> మాత్రమే ఉంటుంది — Centre లో President కు ఉన్న అదే స్థానం.</div>
+
+  <p class="eng">When a bill is reserved by the Governor for the President's consideration, the President may either give assent, withhold assent, or return the bill for reconsideration of the House or Houses of the state legislature. When so returned, the House(s) must reconsider it within a period of <b class="hlg">six months</b>, and once passed again (with or without amendments), it is presented again for presidential assent. Notably, the Constitution does <b class="imp">not</b> specify whether it is obligatory on the President's part to give assent to such a reconsidered bill — an ambiguity that leaves the President with more effective discretion at this final stage than the Governor has at the equivalent stage for an ordinary bill.</p>
+  <div class="te">Governor President consideration కోసం బిల్లును reserve చేసినప్పుడు, President assent ఇవ్వచ్చు, నిలిపివేయచ్చు, లేదా state legislature House(లు) reconsideration కోసం తిరిగి పంపవచ్చు. అలా తిరిగి పంపితే, House(లు) <b class="hlg">6 నెలల్లోపు</b> reconsider చేయాలి, మళ్ళీ పాస్ చేశాక (సవరణలతో గానీ లేకుండా గానీ) మళ్ళీ presidential assent కోసం సమర్పిస్తారు. గమనార్హం ఏమిటంటే, అలా reconsider చేసిన బిల్లుకు President తప్పనిసరిగా assent ఇవ్వాలా అనే విషయం Constitution లో స్పష్టంగా చెప్పలేదు — ఈ అస్పష్టత ordinary బిల్లు విషయంలో సమానమైన దశలో Governor కు ఉన్నదానికంటే President కు ఈ చివరి దశలో ఎక్కువ నిజమైన discretion ఇస్తుంది.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 11 ═══════════ -->
+<div class="page">
+<div class="sub">Legislative Procedure — Money Bills &amp; Bills Reserved for the President</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Money Bills — Special Procedure</div>
+  <p class="eng">The Constitution lays down a special procedure for the passing of Money Bills in the state legislature. A Money Bill <b class="imp">cannot</b> be introduced in the legislative council at all — it can be introduced only in the legislative <b>assembly</b>, and only on the <b>recommendation of the Governor</b>. Every such bill is considered a government bill, and can be introduced only by a <b>minister</b>. After the assembly passes a Money Bill, it is transmitted to the council for consideration — but the council's powers here are <b class="imp">strictly restricted</b>: it cannot reject or amend a Money Bill in any way. It can only make recommendations, and must return the bill to the assembly within <b class="hlg">14 days</b>. The assembly can then either accept or reject all or any of the council's recommendations, entirely at its discretion.</p>
+  <div class="te">Constitution state legislature లో Money Bills పాస్ చేయడానికి ప్రత్యేక procedure నిర్దేశిస్తుంది. Money Bill ను legislative council లో ప్రవేశపెట్టలేరు — దీన్ని <b>assembly</b> లో మాత్రమే, అది కూడా <b>Governor సిఫారసుపైనే</b> ప్రవేశపెట్టగలరు. ఇలాంటి ప్రతి బిల్లునూ government బిల్లుగా పరిగణిస్తారు, దీన్ని <b>minister</b> మాత్రమే ప్రవేశపెట్టగలరు. Assembly Money Bill పాస్ చేశాక, దాన్ని consideration కోసం council కు పంపుతారు — కానీ ఇక్కడ council అధికారాలు <b class="imp">కఠినంగా పరిమితం</b> — Money Bill ను ఏ విధంగానూ తిరస్కరించజాలదు, సవరించజాలదు. కేవలం సిఫారసులు చేయగలదు మాత్రమే, <b class="hlg">14 రోజుల్లోపు</b> బిల్లును assembly కు తిరిగి పంపాలి. అప్పుడు assembly council సిఫారసుల్లో అన్నింటినీ లేదా కొన్నింటిని పూర్తి తన విచక్షణతో ఆమోదించవచ్చు లేదా తిరస్కరించవచ్చు.</div>
+
+  <p class="eng">If the assembly accepts any recommendation, the bill is then deemed passed by both Houses in that modified form. If the assembly does not accept any recommendation, the bill is deemed passed by both Houses in the form originally passed by the assembly, without any change. And if the council fails to return the bill to the assembly within the 14-day window, the bill is simply deemed passed by both Houses at the expiry of that period, in the form originally passed by the assembly. Thus, the assembly's powers over a Money Bill vastly exceed the council's — at the most, the council can detain or delay a Money Bill for a period of just <b class="hlg">14 days</b>, a far shorter window even than the 4-month maximum delay available for ordinary bills.</p>
+  <div class="te">Assembly ఏదైనా సిఫారసును ఆమోదిస్తే, ఆ మార్పు చేసిన రూపంలో బిల్లు రెండు Houses పాస్ చేసినట్టుగా పరిగణించబడుతుంది. Assembly ఏ సిఫారసునూ ఆమోదించకపోతే, assembly మొదట పాస్ చేసిన అసలు రూపంలోనే బిల్లు రెండు Houses పాస్ చేసినట్టుగా పరిగణించబడుతుంది. Council 14-రోజుల గడువులోపు బిల్లును assembly కు తిరిగి పంపకపోతే, గడువు ముగిసిన వెంటనే assembly మొదట పాస్ చేసిన రూపంలోనే బిల్లు రెండు Houses పాస్ చేసినట్టుగా పరిగణించబడుతుంది. అంటే Money Bill పై assembly అధికారాలు council కంటే చాలా ఎక్కువ — council గరిష్టంగా Money Bill ను కేవలం <b class="hlg">14 రోజులు</b> మాత్రమే ఆలస్యం చేయగలదు — ordinary bills కు లభించే 4-నెలల గరిష్ట delay కంటే ఇది చాలా తక్కువ.</div>
+
+  <p class="eng">Finally, when a Money Bill is presented to the Governor, he/she may either give assent, withhold assent, or reserve the bill for the President's assent — but <b class="imp">cannot</b> return the bill for reconsideration of the state legislature (unlike the reconsideration option available for ordinary bills). Normally, the Governor gives assent to a Money Bill without hesitation, since it was introduced in the state legislature with the Governor's own prior permission in the first place. If a Money Bill is reserved for the President's consideration, the President may either give assent or withhold assent — but here too, cannot return the bill for reconsideration of the state legislature.</p>
+  <div class="te">చివరగా, Money Bill Governor కు సమర్పించినప్పుడు, Governor assent ఇవ్వచ్చు, assent నిలిపివేయచ్చు, లేదా President assent కోసం బిల్లును reserve చేయచ్చు — కానీ (ordinary bills కు ఉన్న reconsideration ఎంపికకు భిన్నంగా) state legislature reconsideration కోసం బిల్లును తిరిగి పంపలేరు. సాధారణంగా, Governor Money Bill కు సందేహం లేకుండా assent ఇస్తారు, ఎందుకంటే ఇది మొదటి నుండే Governor స్వంత ముందస్తు అనుమతితోనే state legislature లో ప్రవేశపెట్టబడింది. Money Bill President consideration కోసం reserve చేస్తే, President assent ఇవ్వచ్చు లేదా నిలిపివేయచ్చు — కానీ ఇక్కడ కూడా state legislature reconsideration కోసం బిల్లును తిరిగి పంపలేరు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Bills Reserved for the President's Consideration — Sarkaria Classification</div>
+  <p class="eng">The <b class="hlp">Sarkaria Commission</b> on Centre-State Relations (<b class="hlg">1983-88</b>) classified the state bills reserved for the President's consideration under the Constitution into three useful categories, summarised below.</p>
+  <div class="te"><b class="hlp">Sarkaria Commission</b>, Centre-State Relations పై (<b class="hlg">1983-88</b>) — Constitution కింద President consideration కోసం reserve చేసిన state బిల్లులను మూడు ఉపయోగకరమైన categories గా వర్గీకరించింది, కింద సంక్షిప్తీకరించాం.</div>
+
+  <table>
+    <caption>Sarkaria Commission's 3 Categories of Reserved Bills</caption>
+    <thead><tr><th style="width:22%">Category</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td><b>1. Must be reserved</b></td><td>Bills so derogating from HC's powers as to endanger its constitutionally-designed position (Art.200); bills relating to taxes on water/electricity in certain cases, attracting Art.288; bills falling within Art.360, during a financial emergency</td></tr>
+      <tr><td><b>2. May be reserved for specific purposes</b></td><td>To secure immunity from Art.14 &amp; 19 — bills for estate acquisition etc. (Art.31A), or giving effect to certain DPSPs (Art.31C); a Concurrent-List bill seeking to secure operation despite repugnancy to Union law, via Art.254 assent; a trade/commerce-restriction bill needing prior Art.304 presidential sanction not yet obtained</td></tr>
+      <tr><td><b>3. May be reserved, discretionary</b></td><td>Bills not specifically falling under either category above, which the Governor nonetheless chooses to reserve under the general discretion in Art.200</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Money Bills &amp; Reserved Bills</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who recommends a Money Bill's introduction?</td><td>The Governor — bill introduced only in the assembly, only by a minister</td></tr>
+      <tr><td>Council's powers over a Money Bill?</td><td>Only recommend, within 14 days — cannot amend/reject</td></tr>
+      <tr><td>Max delay council can cause on a Money Bill?</td><td>14 days (vs 4 months for ordinary bills)</td></tr>
+      <tr><td>Can Governor return a Money Bill for reconsideration?</td><td>No — assent, withhold, or reserve only</td></tr>
+      <tr><td>Sarkaria Commission — years &amp; subject?</td><td>1983-88, Centre-State Relations — classified reserved bills into 3 categories</td></tr>
+      <tr><td>Example of a "must reserve" bill?</td><td>Bills derogating from a High Court's constitutional position (Art.200)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 12 ═══════════ -->
+<div class="page">
+<div class="sub">Legislative Procedure Compared — Parliament vs State Legislature (Table 33.1)</div>
+
+<div class="para">
+  <div class="ptitle gn" style="margin-top:0">Table 33.1 — Ordinary Bills: Parliament vs State Legislature</div>
+  <p class="eng">Since the state legislature's ordinary-bill procedure closely mirrors Parliament's (Ch.23) up to a point, the book presents a direct side-by-side comparison — Table 33.1 — that is worth studying as a contrast table rather than two separate procedures, since most exam questions test exactly where the two diverge.</p>
+  <div class="te">State legislature ordinary-bill procedure ఒక పాయింట్ వరకూ Parliament procedure (Ch.23) ను దగ్గరగా ప్రతిబింబిస్తుంది కాబట్టి, పుస్తకం ఒక ప్రత్యక్ష పక్కపక్కన పోలిక — Table 33.1 — ఇస్తుంది — దీన్ని రెండు వేర్వేరు procedures గా కాకుండా ఒక contrast table గా చదవడం మంచిది, ఎందుకంటే చాలా exam ప్రశ్నలు ఖచ్చితంగా ఈ రెండూ ఎక్కడ విడిపోతాయో దాన్నే పరీక్షిస్తాయి.</div>
+
+  <table>
+    <thead><tr><th style="width:48%">Parliament</th><th>State Legislature</th></tr></thead>
+    <tbody>
+      <tr><td>Deadlock when 2nd House rejects/amends unacceptably or doesn't pass within <b class="hlg">6 months</b></td><td>Deadlock when council rejects/amends unacceptably or doesn't pass within <b class="hlg">3 months</b></td></tr>
+      <tr><td>Constitution provides a <b class="imp">joint sitting</b> mechanism (both Houses, whichever originated) to resolve the deadlock</td><td>Constitution provides <b class="imp">no joint-sitting</b> mechanism at all</td></tr>
+      <tr><td>Neither LS nor RS can override the other alone — only a joint sitting resolves it; if the President doesn't summon one, the bill dies</td><td>The <b>assembly can override</b> the council — by passing the bill again a second time; if council rejects/unacceptably amends/delays beyond 1 month even then, the bill is deemed passed as per the assembly's second-time version</td></tr>
+      <tr><td>Joint-sitting mechanism applies to a bill whether it originated in the LS or the RS</td><td>The 2nd-passage override mechanism applies <b>only</b> to bills originating in the assembly; a council-originated bill rejected by the assembly simply <b class="imp">dies</b></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle rd">Table 33.1 — Money Bills: Parliament vs State Legislature</div>
+  <table>
+    <thead><tr><th style="width:48%">Parliament</th><th>State Legislature</th></tr></thead>
+    <tbody>
+      <tr><td>Introduced only in the <b>Lok Sabha</b>, on the <b>President's</b> recommendation, by a minister only</td><td>Introduced only in the <b>Assembly</b>, on the <b>Governor's</b> recommendation, by a minister only</td></tr>
+      <tr><td>Rajya Sabha cannot reject/amend; must return to the Lok Sabha within <b class="hlg">14 days</b></td><td>Council cannot reject/amend; must return to the assembly within <b class="hlg">14 days</b></td></tr>
+      <tr><td>Lok Sabha may accept/reject Rajya Sabha's recommendations — bill deemed passed either way</td><td>Assembly may accept/reject council's recommendations — bill deemed passed either way</td></tr>
+      <tr><td>If RS doesn't return the bill within 14 days → deemed passed as originally passed by LS</td><td>If council doesn't return the bill within 14 days → deemed passed as originally passed by assembly</td></tr>
+      <tr><td>No deadlock-resolution mechanism is needed, because the <b>Lok Sabha's will prevails</b> over the Rajya Sabha's</td><td>No deadlock-resolution mechanism is needed, because the <b>assembly's will prevails</b> over the council's</td></tr>
+    </tbody>
+  </table>
+  <p class="eng">The pattern that emerges from this comparison is striking: on <b>Money Bills</b>, the state-level procedure is almost a perfect mirror of the Union-level procedure — same 14-day window, same executive-recommendation requirement, same minister-only introduction rule, same principle that the lower/popular House's will simply prevails. But on <b>ordinary bills</b>, the two systems diverge sharply — Parliament resolves an inter-House deadlock through a joint sitting of both Houses together, while the state legislature has no such mechanism at all, relying instead on the assembly's own power to simply out-vote the council by re-passing the bill a second time. This single structural absence — no joint sitting — is one of the most frequently tested facts in this entire chapter.</p>
+  <div class="te">ఈ పోలిక నుండి కనిపించే pattern ఆసక్తికరం — <b>Money Bills</b> విషయంలో, state-level procedure Union-level procedure కు దాదాపు perfect mirror — అదే 14-రోజుల గడువు, అదే executive-recommendation అవసరం, అదే minister-only ప్రవేశపెట్టే నియమం, lower/popular House ఇష్టమే నెగ్గాలనే అదే సూత్రం. కానీ <b>ordinary bills</b> విషయంలో, ఈ రెండు వ్యవస్థలు తీవ్రంగా విడిపోతాయి — Parliament రెండు Houses joint sitting ద్వారా deadlock పరిష్కరిస్తుంది, state legislature కు అలాంటి mechanism ఏదీ లేదు — బదులుగా assembly బిల్లును రెండోసారి పాస్ చేసి council ను outvote చేసే తన సొంత అధికారంపైనే ఆధారపడుతుంది. Joint sitting లేకపోవడం అనే ఈ ఒక్క structural లోపమే ఈ మొత్తం అధ్యాయంలో అత్యంత తరచుగా అడిగే వాస్తవాల్లో ఒకటి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Legislative Procedure Compared</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Ordinary-bill deadlock window — Parliament vs State?</td><td>6 months vs 3 months</td></tr>
+      <tr><td>Does the state legislature have a joint-sitting mechanism?</td><td>No — unique to Parliament</td></tr>
+      <tr><td>How does the state legislature resolve an ordinary-bill deadlock?</td><td>Assembly re-passes the bill a 2nd time, overriding the council</td></tr>
+      <tr><td>Is the Money Bill procedure similar at both levels?</td><td>Yes — almost identical (14-day rule, executive recommendation, minister-only)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 13 ═══════════ -->
+<div class="page">
+<div class="sub">Position of the Legislative Council vis-à-vis the Assembly</div>
+
+<div class="para">
+  <div class="ptitle gn" style="margin-top:0">Spheres of Equality with the Assembly</div>
+  <p class="eng">The constitutional position of the council, compared with the assembly, can be studied from two angles — spheres where it is broadly equal, and spheres where it is clearly unequal. In the following matters, the council's powers and status are broadly <b>equal</b> to the assembly's: (1) introduction and passage of ordinary bills — though, as covered above, the assembly's will ultimately prevails in case of disagreement; (2) approval of ordinances issued by the Governor; (3) selection of ministers, including the Chief Minister — under the Constitution, ministers (including the CM) can be members of either House, but irrespective of which House they belong to, they remain responsible <b class="imp">only to the assembly</b>; (4) consideration of the reports of constitutional bodies like the State Finance Commission, the State Public Service Commission, and the Comptroller and Auditor General of India; and (5) enlargement of the jurisdiction of the State Public Service Commission.</p>
+  <div class="te">Council రాజ్యాంగపరమైన స్థానాన్ని, assembly తో పోల్చి, రెండు కోణాల నుండి పరిశీలించవచ్చు — దాదాపు సమానంగా ఉండే అంశాలు, స్పష్టంగా అసమానంగా ఉండే అంశాలు. కింది అంశాల్లో council అధికారాలు, హోదా assembly కు దాదాపు <b>సమానం</b> — (1) ordinary bills ప్రవేశపెట్టడం, పాస్ చేయడం — పైన చెప్పినట్టు, విభేదిస్తే assembly ఇష్టమే చివరకు నెగ్గుతుంది; (2) Governor ordinances కు ఆమోదం; (3) ministers, CM సహా, ఎంపిక — Constitution ప్రకారం, ministers (CM తో సహా) ఏ House నుండైనా కావచ్చు, కానీ ఏ House వారైనా బాధ్యత <b class="imp">assembly కు మాత్రమే</b>; (4) State Finance Commission, State Public Service Commission, Comptroller and Auditor General of India వంటి constitutional bodies reports పరిశీలన; (5) State Public Service Commission jurisdiction విస్తరణ.</div>
+</div>
+
+<div class="para">
+  <div class="ptitle rd">Spheres of Inequality with the Assembly</div>
+  <p class="eng">In eleven distinct matters, the council's powers and status are clearly <b>unequal</b> to the assembly's. A Money Bill can be introduced only in the assembly, never the council; the council cannot amend or reject a Money Bill, and must return it within 14 days; the assembly can accept or reject any of the council's recommendations at will, and either way the bill is deemed passed; the final power to decide whether a particular bill is a Money Bill at all is vested solely in the <b>Speaker</b> of the assembly; and the final power of passing an ordinary bill also lies with the assembly, with the council able to detain or delay it for at most four months (three months first instance, one month second instance) — in other words, the council is <b class="imp">not even a revising body</b> like the Rajya Sabha; it is only a <b>dilatory chamber</b> or an <b>advisory body</b>.</p>
+  <div class="te">పదకొండు నిర్దిష్ట అంశాల్లో, council అధికారాలు, హోదా assembly కు స్పష్టంగా <b>అసమానం</b>. Money Bill ను assembly లో మాత్రమే ప్రవేశపెట్టగలరు, council లో ఎప్పుడూ కాదు; council Money Bill ను సవరించజాలదు, తిరస్కరించజాలదు, 14 రోజుల్లో తిరిగి పంపాలి; assembly council సిఫారసుల్లో దేన్నైనా తన ఇష్టం వచ్చినట్టు ఆమోదించవచ్చు లేదా తిరస్కరించవచ్చు, ఏ విధంగానైనా బిల్లు పాస్ అయినట్టుగానే పరిగణిస్తారు; ఒక బిల్లు Money Bill అవునా కాదా అనే తుది నిర్ణయాధికారం assembly <b>Speaker</b> వద్దే ఉంటుంది; ordinary బిల్లు పాస్ చేసే తుది అధికారం కూడా assembly దే, council దాన్ని గరిష్టంగా నాలుగు నెలలు (మొదటిసారి మూడు, రెండోసారి ఒకటి) మాత్రమే ఆలస్యం చేయగలదు — అంటే council Rajya Sabha లాంటి <b class="imp">revising body కూడా కాదు</b>; ఇది కేవలం <b>dilatory chamber</b> లేదా <b>advisory body</b> మాత్రమే.</div>
+
+  <p class="eng">Additional inequalities: the council can only <b>discuss</b> the budget but cannot vote on the demands for grants, which is the assembly's exclusive privilege; the council cannot remove the Council of Ministers by passing a no-confidence motion, since the ministry is collectively responsible only to the assembly — though the council can still discuss and criticise government policies and activities; when an ordinary bill originating in the council is sent to the assembly and rejected there, the bill ends and becomes dead; the council does not participate at all in the election of the President of India, or in electing the state's representatives to the Rajya Sabha; the council has no effective say in the ratification of a constitutional amendment bill, with the assembly's will prevailing there too; and finally, the very existence of the council depends entirely on the will of the assembly — the council can be abolished by Parliament on the assembly's own recommendation, under Article 169.</p>
+  <div class="te">అదనపు అసమానతలు — council బడ్జెట్ ను <b>discuss</b> చేయగలదు మాత్రమే, demands for grants పై ఓటు వేయజాలదు, ఇది assembly ప్రత్యేక హక్కు; council no-confidence motion పాస్ చేసి Council of Ministers ను తొలగించజాలదు, ఎందుకంటే ministry collectively assembly కు మాత్రమే బాధ్యత వహిస్తుంది — అయినా council ప్రభుత్వ విధానాలు, కార్యకలాపాలను discuss చేయగలదు, విమర్శించగలదు; council లో originate అయి assembly కు పంపిన ordinary బిల్లును assembly తిరస్కరిస్తే, ఆ బిల్లు ముగుస్తుంది; council India President ఎన్నికలో గానీ, రాష్ట్రం Rajya Sabha representatives ఎన్నికలో గానీ అస్సలు పాల్గొనదు; constitutional amendment bill ratification లో council కు నిజమైన మాట లేదు, అక్కడ కూడా assembly ఇష్టమే నెగ్గుతుంది; చివరకు council ఉనికే పూర్తిగా assembly ఇష్టంపై ఆధారపడి ఉంటుంది — Article 169 కింద, assembly స్వంత సిఫారసుపై Parliament council ను రద్దు చేయగలదు.</div>
+
+  <p class="eng">From all this, it is clear that the council's position vis-à-vis the assembly is much weaker than the Rajya Sabha's vis-à-vis the Lok Sabha — the Rajya Sabha has equal powers with the Lok Sabha in every sphere except financial matters and control over the government, while the council is subordinate to the assembly in virtually all respects, fully establishing the assembly's predominance.</p>
+  <div class="te">ఇదంతా చూస్తే, assembly కు వ్యతిరేకంగా council స్థానం, Lok Sabha కు వ్యతిరేకంగా Rajya Sabha స్థానం కంటే చాలా బలహీనం అని స్పష్టం అవుతుంది — Rajya Sabha కు financial విషయాలు, ప్రభుత్వంపై నియంత్రణ మినహా ప్రతి రంగంలోనూ Lok Sabha తో సమాన అధికారాలు ఉంటాయి, కానీ council దాదాపు అన్ని రంగాల్లోనూ assembly కు లోబడి ఉంటుంది — assembly predominance పూర్తిగా స్థాపించబడింది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Why the Council is Weaker than the Rajya Sabha, and the Criticism/Utility Debate</div>
+  <p class="eng">Three reasons explain why the Constitution deliberately gives the council much less importance than the Rajya Sabha, even though both are technically "second chambers". First, the Rajya Sabha consists of representatives of the states and thus reflects the <b>federal element</b> of the polity — it maintains federal equilibrium by protecting states' interests against undue Centre interference, so it has to be an effective revising body rather than a merely advisory/dilatory one; the issue of federal significance simply doesn't arise for a council, since a council doesn't represent anything beyond its own state. Second, the council is <b>heterogeneously</b> constituted — it represents different interests, consists of differently-elected members drawn from separate electorates, and includes nominated members too — and this very composition weakens its position and reduces its utility as an effective revising body; the Rajya Sabha, by contrast, is <b>homogeneously</b> constituted, representing states and union territories through mainly elected members (only 12 out of 250 are nominated). Third, the council-yields-to-assembly pattern follows principles of democracy and is adopted from the <b class="hlb">British model</b>: in Britain, the House of Lords (upper house) cannot oppose or obstruct the House of Commons (lower house) — it is only a dilatory chamber, able to delay an ordinary bill for at most one year, and a money bill for one month.</p>
+  <div class="te">రెండూ సాంకేతికంగా "second chambers" అయినా, Rajya Sabha కంటే council కు రాజ్యాంగం ఉద్దేశపూర్వకంగా చాలా తక్కువ ప్రాముఖ్యత ఇవ్వడానికి మూడు కారణాలు ఉన్నాయి. మొదటిది, Rajya Sabha రాష్ట్రాల representatives తో కూడి, రాజకీయ వ్యవస్థ యొక్క <b>federal element</b> ను ప్రతిబింబిస్తుంది — Centre అనవసర జోక్యానికి వ్యతిరేకంగా రాష్ట్రాల ప్రయోజనాలను రక్షిస్తూ federal equilibrium కాపాడుతుంది, కాబట్టి కేవలం advisory/dilatory body కాకుండా బలమైన revising body కావాలి; council కు దీనికంటే మించి ఏమీ ప్రాతినిధ్యం వహించదు కాబట్టి, council విషయంలో federal ప్రాముఖ్యత ప్రశ్నే తలెత్తదు. రెండోది, council <b>heterogeneously</b> constituted — వేర్వేరు ప్రయోజనాలకు ప్రాతినిధ్యం వహిస్తుంది, వేర్వేరు electorates నుండి ఎన్నికైన members తో పాటు నామినేటెడ్ members కూడా ఉంటారు — ఈ కూర్పే దాని స్థానాన్ని బలహీనం చేస్తుంది, ఒక ప్రభావవంతమైన revising body గా దాని ఉపయోగాన్ని తగ్గిస్తుంది; దీనికి భిన్నంగా Rajya Sabha <b>homogeneously</b> constituted — రాష్ట్రాలు, union territories కు ఎక్కువగా ఎన్నికైన members ద్వారా ప్రాతినిధ్యం (250 లో 12 మాత్రమే నామినేటెడ్). మూడోది, council-assembly కు లొంగే pattern ప్రజాస్వామ్య సూత్రాలను అనుసరిస్తుంది, <b class="hlb">British model</b> నుండి తీసుకున్నది — Britain లో House of Lords (upper house) House of Commons (lower house) ను వ్యతిరేకించజాలదు, అడ్డుకోజాలదు — ఇది కేవలం dilatory chamber, ordinary బిల్లును గరిష్టంగా ఒక సంవత్సరం, money bill ను ఒక నెల మాత్రమే ఆలస్యం చేయగలదు.</div>
+
+  <p class="eng">Given this weak, powerless and insignificant position and role, critics have described the council as a "secondary chamber", a "costly ornamental luxury", and a "white elephant" — opining that it has served as a refuge for politicians defeated in assembly elections, enabling unpopular, rejected and ambitious politicians to occupy the post of Chief Minister, minister, or member of the state legislature through the back door. Defenders, however, point to two genuine benefits: (1) it checks hasty, defective, careless and ill-considered legislation made by the assembly, by making provision for revision and thought; and (2) it facilitates representation of eminent professionals and experts who cannot or would not face direct elections, since the Governor nominates one-sixth of its members specifically to provide representation for such people.</p>
+  <div class="te">ఈ బలహీన, అధికారం లేని, ప్రాముఖ్యత లేని స్థానం, పాత్రను చూసి, విమర్శకులు council ను "secondary chamber", "costly ornamental luxury", "white elephant" అని వర్ణించారు — assembly ఎన్నికల్లో ఓడిన రాజకీయ నాయకులకు ఆశ్రయంగా ఇది పనిచేసిందని, వెనుక తలుపు ద్వారా అప్రజాదరణ పొందిన, తిరస్కరించబడిన, ప్రతిష్టాత్మక రాజకీయ నాయకులు CM, minister, లేదా state legislature member పదవిని ఆక్రమించడానికి వీలు కల్పించిందని అభిప్రాయపడ్డారు. కానీ సమర్థకులు రెండు నిజమైన ప్రయోజనాలను చూపిస్తారు — (1) assembly చేసే తొందరపాటు, లోపభూయిష్ట, అజాగ్రత్త, సరిగా ఆలోచించని చట్టాలను revision, ఆలోచన కోసం అవకాశం కల్పించడం ద్వారా అరికడుతుంది; (2) direct ఎన్నికల్లో పోటీ చేయలేని లేదా చేయని ప్రముఖ నిపుణులకు ప్రాతినిధ్యం కల్పిస్తుంది, ఎందుకంటే Governor అలాంటివారికి ప్రాతినిధ్యం ఇవ్వడానికే council సభ్యుల్లో ఆరో వంతును నామినేట్ చేస్తారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Position of the Council</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>5 spheres of equality with the assembly?</td><td>Ordinary bills, ordinance approval, minister/CM selection, constitutional-body reports, SPSC jurisdiction</td></tr>
+      <tr><td>Council's role, described in one phrase?</td><td>"Dilatory chamber" / "advisory body" — not even a revising body like the Rajya Sabha</td></tr>
+      <tr><td>3 reasons council is weaker than Rajya Sabha?</td><td>No federal role; heterogeneous composition; British Lords-vs-Commons model</td></tr>
+      <tr><td>Common criticisms of the council?</td><td>"Secondary chamber", "costly ornamental luxury", "white elephant", refuge for defeated politicians</td></tr>
+      <tr><td>2 defences of the council's utility?</td><td>Checks hasty legislation; represents experts who can't win direct elections</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 14 ═══════════ -->
+<div class="page">
+<div class="sub">Privileges of the State Legislature</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Privileges — Overview</div>
+  <p class="eng"><b class="term">Privileges</b> of a state legislature are a sum of special rights, immunities and exemptions enjoyed by the Houses of the state legislature, their committees, and their members — necessary to secure the independence and effectiveness of their actions. Without these privileges, the Houses could neither maintain their own authority, dignity and honour, nor protect their members from obstruction in discharging their legislative responsibilities. The Constitution extends these privileges to persons who are entitled to speak and take part in the proceedings of a House or its committees even though they aren't members — specifically, the state's <b class="hlb">Advocate General</b> and state ministers. It should be clarified, however, that these privileges do <b class="imp">not</b> extend to the <b>Governor</b>, even though the Governor is technically an integral part of the state legislature. The privileges are classified into two broad categories: those enjoyed by each House <b>collectively</b>, and those enjoyed by members <b>individually</b>.</p>
+  <div class="te">State legislature <b class="term">Privileges</b> అంటే — state legislature Houses, వాటి committees, members అనుభవించే ప్రత్యేక హక్కులు, immunities, మినహాయింపుల మొత్తం — వారి చర్యల independence, effectiveness కాపాడుకోవడానికి అవసరం. ఈ privileges లేకుండా, Houses తమ authority, dignity, honour కాపాడుకోలేవు, తమ legislative బాధ్యతలు నిర్వర్తించడంలో members కు ఎదురయ్యే అడ్డంకుల నుండి రక్షించలేవు. సభ్యులు కాకపోయినా House లేదా దాని committees ప్రొసీడింగ్స్ లో మాట్లాడే, పాల్గొనే హక్కు ఉన్నవారికి — నిర్దిష్టంగా రాష్ట్రం <b class="hlb">Advocate General</b>, state ministers కు — Constitution ఈ privileges ను విస్తరిస్తుంది. అయితే, ఈ privileges <b>Governor</b> కు వర్తించవని స్పష్టం చేయాలి, Governor సాంకేతికంగా state legislature లో అంతర్భాగమే అయినా. Privileges రెండు విస్తృత categories గా వర్గీకరించబడతాయి — ప్రతి House <b>collectively</b> అనుభవించేవి, members <b>individually</b> అనుభవించేవి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Collective Privileges</div>
+  <p class="eng">The privileges belonging to each House of the state legislature collectively are eight in number. It has the right to publish its reports, debates and proceedings, and also the right to prohibit others from publishing the same — though the <b class="hlg">44th Amendment Act, 1978</b> restored the freedom of the press specifically to publish <b>true</b> reports of the state legislature without needing its prior permission (this exemption, however, does <b class="imp">not</b> apply to a secret sitting of the House). It can exclude strangers from its proceedings and hold secret sittings to discuss important matters; it can make rules to regulate its own procedure and conduct of business, and to adjudicate upon such matters; and it can punish members as well as outsiders for breach of its privileges or its contempt, by reprimand, admonition or imprisonment (with suspension or expulsion also available for members specifically).</p>
+  <div class="te">State legislature ప్రతి House collectively అనుభవించే privileges ఎనిమిది ఉన్నాయి. తన reports, debates, proceedings ప్రచురించే హక్కు, ఇతరులను వాటిని ప్రచురించకుండా నిరోధించే హక్కు కూడా ఉంటుంది — అయితే <b class="hlg">44వ సవరణ చట్టం, 1978</b> ముందస్తు అనుమతి అవసరం లేకుండా state legislature యొక్క <b>నిజమైన</b> reports ప్రచురించే పత్రికా స్వేచ్ఛను ప్రత్యేకంగా పునరుద్ధరించింది (ఈ మినహాయింపు మాత్రం secret sitting కు వర్తించదు). బయటివారిని తన ప్రొసీడింగ్స్ నుండి మినహాయించగలదు, ముఖ్యమైన అంశాలు చర్చించడానికి secret sittings నిర్వహించగలదు; తన procedure, business నిర్వహణ నియమాలు రూపొందించుకోగలదు, ఆ అంశాలపై నిర్ణయం తీసుకోగలదు; privilege ఉల్లంఘన లేదా తన contempt కోసం members, బయటివారిని — reprimand, admonition, లేదా imprisonment ద్వారా — శిక్షించగలదు (members కు ప్రత్యేకంగా suspension, expulsion కూడా అందుబాటులో ఉంటుంది).</div>
+
+  <p class="eng">It has the right to receive immediate information of the arrest, detention, conviction, imprisonment, and release of a member; it can institute inquiries and order the attendance of witnesses, and send for relevant papers and records; the courts are prohibited from inquiring into the proceedings of a House or its committees; and no person — whether a member or an outsider — can be arrested, and no legal process, civil or criminal, can be served within the precincts of the House without the permission of the presiding officer.</p>
+  <div class="te">Member అరెస్టు, నిర్బంధం, దోషిగా తేలడం, జైలుశిక్ష, విడుదల గురించి తక్షణం సమాచారం పొందే హక్కు ఉంటుంది; విచారణలు జరపగలదు, సాక్షుల హాజరు ఆదేశించగలదు, సంబంధిత papers, records కోరగలదు; House లేదా దాని committees ప్రొసీడింగ్స్ పై courts విచారణ జరపడం నిషేధం; presiding officer అనుమతి లేకుండా House ప్రాంగణంలో ఏ వ్యక్తినీ (member గానీ బయటివారు గానీ) అరెస్టు చేయలేరు, ఏ civil లేదా criminal legal process నూ అమలు చేయలేరు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Individual Privileges</div>
+  <p class="eng">The privileges belonging to members individually are three in number. Members cannot be arrested during a session of the state legislature, or during the <b class="hlg">40 days</b> before it begins and the <b class="hlg">40 days</b> after it ends — but this privilege is available <b>only in civil cases</b>, not in criminal cases or preventive-detention cases. Members have <b class="term">freedom of speech</b> in the state legislature — no member is liable to any proceedings in any court for anything said or any vote given by him/her in the state legislature or its committees, though this freedom remains subject to the provisions of the Constitution and to the rules and standing orders regulating the state legislature's procedure (<b class="hlg">Article 211</b>, notably, bars any discussion in a state legislature about the conduct of a Supreme Court or High Court judge in the discharge of his/her duties). And members are exempted from jury service — they can refuse to give evidence and appear as a witness in a case pending before a court when the state legislature is in session.</p>
+  <div class="te">Members వ్యక్తిగతంగా అనుభవించే privileges మూడు ఉన్నాయి. State legislature session సమయంలో, session మొదలవడానికి <b class="hlg">40 రోజుల</b> ముందు, ముగిసిన <b class="hlg">40 రోజుల</b> తర్వాత members ను అరెస్టు చేయలేరు — కానీ ఈ privilege <b>civil cases కు మాత్రమే</b> వర్తిస్తుంది, criminal cases లేదా preventive-detention cases కు కాదు. Members కు state legislature లో <b class="term">freedom of speech</b> ఉంటుంది — state legislature లో లేదా దాని committees లో చెప్పిన మాటకు, ఇచ్చిన ఓటుకు ఏ member నూ ఏ court లోనూ ఏ ప్రొసీడింగ్స్ కూ బాధ్యుడిని చేయలేరు, అయితే ఈ స్వేచ్ఛ Constitution నిబంధనలకు, state legislature procedure ను నియంత్రించే rules, standing orders కు లోబడి ఉంటుంది (గమనార్హంగా, <b class="hlg">Article 211</b> — Supreme Court లేదా High Court judge విధి నిర్వహణపై state legislature లో ఏ చర్చనూ నిషేధిస్తుంది). Members jury service నుండి మినహాయించబడతారు — state legislature session లో ఉన్నప్పుడు court లో పెండింగ్ కేసులో సాక్ష్యం ఇవ్వడానికి లేదా సాక్షిగా హాజరు కావడానికి నిరాకరించవచ్చు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Privileges of the State Legislature</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Do privileges extend to the Governor?</td><td>No — even though Governor is part of the legislature</td></tr>
+      <tr><td>44th Amendment (1978) restored what?</td><td>Press freedom to publish true reports without prior permission (not for secret sittings)</td></tr>
+      <tr><td>Individual privilege — arrest immunity window?</td><td>Session + 40 days before + 40 days after; civil cases only</td></tr>
+      <tr><td>What does Article 211 bar?</td><td>Discussion of SC/HC judge's conduct in discharge of duties</td></tr>
+      <tr><td>Are members exempt from jury service?</td><td>Yes, and can refuse witness duty while House is in session</td></tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Table 33.3 — Key Articles at a Glance (168-213)</caption>
+    <thead><tr><th style="width:16%">Article</th><th>Subject-matter</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">168</td><td>Constitution of legislatures in states</td></tr>
+      <tr><td class="hlg">169</td><td>Abolition/creation of Legislative Councils</td></tr>
+      <tr><td class="hlg">170</td><td>Composition of the Legislative Assemblies</td></tr>
+      <tr><td class="hlg">171</td><td>Composition of the Legislative Councils</td></tr>
+      <tr><td class="hlg">172</td><td>Duration of state legislatures</td></tr>
+      <tr><td class="hlg">173</td><td>Qualification for membership</td></tr>
+      <tr><td class="hlg">174</td><td>Sessions, prorogation, dissolution</td></tr>
+      <tr><td class="hlg">178-181</td><td>Speaker &amp; Deputy Speaker — election, vacation, removal, presiding</td></tr>
+      <tr><td class="hlg">182-185</td><td>Chairman &amp; Deputy Chairman — election, vacation, removal, presiding</td></tr>
+      <tr><td class="hlg">186-187</td><td>Salaries of presiding officers; Secretariat of state legislature</td></tr>
+      <tr><td class="hlg">188-189</td><td>Oath; voting, quorum</td></tr>
+      <tr><td class="hlg">190-193</td><td>Vacation of seats; disqualifications; deciding authority; penalty</td></tr>
+      <tr><td class="hlg">194-195</td><td>Powers, privileges, immunities; salaries of members</td></tr>
+      <tr><td class="hlg">196-201</td><td>Legislative procedure — ordinary bills, council's restricted powers, Money Bills, definition, assent, reservation</td></tr>
+      <tr><td class="hlg">202-207</td><td>Financial procedure — annual financial statement, estimates, appropriation/supplementary/vote-on-account, financial bills</td></tr>
+      <tr><td class="hlg">208-212</td><td>Rules of procedure; language; restriction on discussion; courts barred from inquiry</td></tr>
+      <tr><td class="hlg">213</td><td>Governor's power to promulgate Ordinances during legislature's recess</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 15 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — The 2026 Delimitation Freeze Controversy <span class="caasof">(as of 17.08.2026, verified via live web search on this date — re-verify closer to your exam date, since this is an unresolved, ongoing political question)</span></div>
+
+    <p class="eng">This chapter's own text on the assembly-seat freeze — "extended for another [period], i.e., upto year 2026, by the <b class="hlg">84th Amendment Act of 2001</b>" — turned out to be exactly the constitutional provision at the centre of one of 2026's biggest political-constitutional battles, making this an unusually direct convergence between the book's static text and a live current-affairs story. As explained on Page 2 of these notes, the freeze (mirrored at the Union level in Article 81, and at the state-assembly level in Article 170) does not literally expire on the calendar date "2026" — it runs until the <b>first census taken after the year 2026</b> is published, which in practice points to the 2031 census and its data being published sometime in the 2030s.</p>
+    <div class="te">ఈ అధ్యాయం అసలు టెక్స్ట్ లోనే ఉన్న assembly-seat freeze గురించిన వాక్యం — "<b class="hlg">84వ సవరణ చట్టం, 2001</b> ద్వారా మరో [కాలానికి], అంటే 2026 సంవత్సరం వరకు పొడిగించారు" — ఇది సరిగ్గా 2026లో జరిగిన అతిపెద్ద రాజకీయ-రాజ్యాంగ యుద్ధాల్లో ఒకదానికి కేంద్రంగా ఉన్న రాజ్యాంగ నిబంధనే అని తేలింది — పుస్తకం స్థిర టెక్స్ట్, ఒక live current-affairs కథ మధ్య అసాధారణమైన ప్రత్యక్ష సమాంతరం ఇది. ఈ నోట్స్ Page 2 లో వివరించినట్టు, ఈ freeze (Union స్థాయిలో Article 81, state-assembly స్థాయిలో Article 170 రెండింటిలోనూ ప్రతిబింబిస్తుంది) "2026" అనే calendar తేదీన అక్షరాలా ముగియదు — ఇది <b>2026 తర్వాతి మొదటి census</b> ప్రచురించే వరకు కొనసాగుతుంది — ఆచరణలో ఇది 2031 census, దాని గణాంకాలు 2030ల్లో ఎప్పుడో ప్రచురితం కావడాన్ని సూచిస్తుంది.</div>
+
+    <p class="eng">In April 2026, the government attempted to pre-empt this long wait by introducing three linked bills: the <b>Delimitation Bill, 2026</b>, the <b>Constitution (131st Amendment) Bill, 2026</b>, and the <b>Union Territories Laws (Amendment) Bill, 2026</b>. Together, these bills sought to abandon the "wait for the post-2026 census" approach entirely and instead conduct fresh delimitation using the already-available <b class="hlg">2011</b> census — while also enlarging the Lok Sabha's maximum size from 543/550 to as many as <b class="hlg">850</b> seats, and operationalising the women's-reservation mechanism created by the 106th Amendment Act, 2023 (a topic from a later chapter's Fundamental Rights/electoral-reform coverage). Because such a change touches the federal balance of representation between states, it required amending the Constitution, which in turn required the <b class="hlg">special majority</b> prescribed by <b class="hlg">Article 368</b> — a two-thirds majority of members present and voting, along with a majority of the total membership.</p>
+    <div class="te">2026 ఏప్రిల్ లో, ఈ సుదీర్ఘ నిరీక్షణను ముందస్తుగా అధిగమించడానికి ప్రభుత్వం మూడు అనుసంధాన బిల్లులు ప్రవేశపెట్టింది — <b>Delimitation Bill, 2026</b>, <b>Constitution (131st Amendment) Bill, 2026</b>, <b>Union Territories Laws (Amendment) Bill, 2026</b>. ఈ బిల్లులు కలిసి "2026 తర్వాతి census కోసం వేచి ఉండటం" విధానాన్ని పూర్తిగా వదిలేసి, అప్పటికే అందుబాటులో ఉన్న <b class="hlg">2011</b> census ఆధారంగా తాజా delimitation నిర్వహించాలని కోరాయి — అదే సమయంలో Lok Sabha గరిష్ట పరిమాణాన్ని 543/550 నుండి <b class="hlg">850</b> seats వరకు పెంచాలని, 106వ సవరణ చట్టం, 2023 (తర్వాతి అధ్యాయం Fundamental Rights/ఎన్నికల-సంస్కరణ కవరేజ్ నుండి ఒక అంశం) సృష్టించిన women's-reservation mechanism ను అమలు చేయాలని కూడా ఉద్దేశించాయి. ఇలాంటి మార్పు రాష్ట్రాల మధ్య representation యొక్క federal balance ను తాకుతుంది కాబట్టి, రాజ్యాంగాన్ని సవరించాల్సి వచ్చింది — దీనికి <b class="hlg">Article 368</b> నిర్దేశించిన <b class="hlg">special majority</b> అవసరం — హాజరై ఓటేసిన వారిలో 2/3 మెజారిటీ, మొత్తం సభ్యత్వంలో మెజారిటీ కూడా.</div>
+
+    <p class="eng">The Constitution (131st Amendment) Bill, 2026 was put to vote in the <b>Lok Sabha on 17 April 2026</b>, and was <b class="imp">defeated</b> — it received <b class="hlg">298</b> votes in favour against <b class="hlg">230</b> opposing, out of 528 members present and voting, falling short of the two-thirds special majority Article 368 requires. Following this defeat, the government withdrew the two companion bills — the Delimitation Bill, 2026 and the Union Territories Laws (Amendment) Bill, 2026 — the very next day. The proposed change had triggered sharp opposition primarily from southern states (Tamil Nadu, Kerala, Andhra Pradesh, Karnataka, Telangana), whose population growth had slowed relative to northern states (Uttar Pradesh, Bihar, Rajasthan, and others) since the 1971 census baseline — meaning a straightforward population-proportional reallocation using 2011 figures would have shifted a significant number of seats northward, reducing southern states' relative share of both Lok Sabha and, by extension, assembly representation.</p>
+    <div class="te">Constitution (131st Amendment) Bill, 2026 ను <b>17 ఏప్రిల్ 2026</b> న Lok Sabha లో ఓటింగ్ కు పెట్టారు, అది <b class="imp">ఓడిపోయింది</b> — 528 మంది హాజరై ఓటేసిన వారిలో <b class="hlg">298</b> ఓట్లు అనుకూలంగా, <b class="hlg">230</b> ఓట్లు వ్యతిరేకంగా వచ్చాయి — Article 368 కోరే 2/3 special majority కు తక్కువగా. ఈ ఓటమి తర్వాత, ప్రభుత్వం మరుసటి రోజే రెండు అనుబంధ బిల్లులు — Delimitation Bill, 2026, Union Territories Laws (Amendment) Bill, 2026 — ను ఉపసంహరించుకుంది. ఈ ప్రతిపాదిత మార్పు ప్రధానంగా దక్షిణాది రాష్ట్రాల (Tamil Nadu, Kerala, Andhra Pradesh, Karnataka, Telangana) నుండి తీవ్ర వ్యతిరేకతను రేకెత్తించింది — 1971 census baseline నుండి వీటి జనాభా పెరుగుదల ఉత్తరాది రాష్ట్రాలతో (Uttar Pradesh, Bihar, Rajasthan తదితరాలు) పోలిస్తే మందగించింది — అంటే 2011 గణాంకాలతో సూటిగా జనాభా-నిష్పత్తి పునఃకేటాయింపు చేస్తే గణనీయమైన seats ఉత్తరం వైపు మారేవి, దక్షిణాది రాష్ట్రాల Lok Sabha, తద్వారా assembly representation సాపేక్ష వాటా తగ్గేది.</div>
+
+    <table class="ca2">
+      <caption class="ca2">2026 Delimitation Episode — Key Facts at a Glance</caption>
+      <thead><tr><th style="width:36%">Item</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Bills introduced</td><td>Delimitation Bill 2026; Constitution (131st Amendment) Bill 2026; UT Laws (Amendment) Bill 2026 — introduced 16 Apr 2026</td></tr>
+        <tr><td>Core proposal</td><td>Use 2011 census (not post-2026 census) for fresh delimitation; enlarge Lok Sabha to up to 850 seats; operationalise 106th A.A. 2023 women's reservation</td></tr>
+        <tr><td>Vote on 131st A.A. Bill</td><td class="imp">Defeated — 298 for vs 230 against (528 present &amp; voting), 17 Apr 2026</td></tr>
+        <tr><td>Result</td><td>Delimitation Bill 2026 &amp; UT Laws Bill 2026 withdrawn; freeze continues as before</td></tr>
+        <tr><td>Political fault-line</td><td>South (TN/Kerala/AP/Karnataka/Telangana — slower growth since 1971) vs North (UP/Bihar/Rajasthan etc. — faster growth)</td></tr>
+      </tbody>
+    </table>
+
+    <p class="eng">For the exam: continue to cite the book's constitutional-history sequence exactly as written — 42nd A.A. 1976 (freeze at 1971 level, till 2000) → 84th A.A. 2001 (extended till 2026) → 87th A.A. 2003 (2001-census boundary basis, no seat-count change) — but be ready for an MCQ or a short-note question testing whether the freeze <b>actually ended</b> in 2026 (it did <b>not</b>) and why the 2026 attempt to change this failed (a constitutional amendment bill fell short of Article 368's special majority in the Lok Sabha). This is a textbook illustration of a broader principle worth remembering for other chapters too: even a government with a working majority cannot bypass Article 368's special-majority requirement for amendments touching federal representation, however politically motivated the attempt.</p>
+    <div class="te">Exam కోసం — పుస్తకం రాజ్యాంగ చరిత్ర క్రమాన్ని రాసినట్టుగానే కొనసాగించి చదవండి — 42వ సవరణ, 1976 (1971 స్థాయిలో freeze, 2000 వరకు) → 84వ సవరణ, 2001 (2026 వరకు పొడిగింపు) → 87వ సవరణ, 2003 (2001-census boundary basis, seat-count మార్పు లేదు) — కానీ freeze <b>నిజంగా 2026లో ముగిసిందా</b> (ముగియలేదు) అని, 2026లో దీన్ని మార్చే ప్రయత్నం ఎందుకు విఫలమైంది (Lok Sabha లో constitutional amendment bill Article 368 special majority కు తక్కువగా ఉండటం వల్ల) అని అడిగే MCQ లేదా short-note ప్రశ్నకు సిద్ధంగా ఉండండి. ఇది ఇతర అధ్యాయాలకు కూడా గుర్తుంచుకోదగిన విస్తృత సూత్రానికి ఒక పాఠ్యపుస్తక ఉదాహరణ — పనిచేసే మెజారిటీ ఉన్న ప్రభుత్వం కూడా, ఎంత రాజకీయ ప్రేరణ ఉన్నా, federal representation ను తాకే సవరణలకు Article 368 special-majority అవసరాన్ని దాటవేయజాలదు.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 33 — State Legislature · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+</body></html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part VIII &mdash; Book 2</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 63 — State Information Commission</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Right to Information Act, 2005 — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">What the State Information Commission Is</div>
+  <p class="eng">Under the <b class="hlb">Right to Information Act, 2005</b>, every state was required to set up its own <b class="term">State Information Commission (SIC)</b>, mirroring the <b class="hlp">Central Information Commission (CIC)</b> that the same Act sets up at the national level — and by now, every state has one running. Like the CIC, the SIC owes its entire existence to this 2005 statute; no Article of the Constitution creates it, so the first fact worth locking in is that an SIC is <b class="imp">not a constitutional body</b>. It sits in the same broad category as many ordinary regulatory authorities — a <b>state-level, statutory</b> body, not a state-level constitutional office such as a State Public Service Commission or a Governor.</p>
+  <div class="te"><b class="hlb">Right to Information Act, 2005</b> జాతీయ స్థాయిలో <b class="hlp">Central Information Commission (CIC)</b> ను మాత్రమే కాకుండా, ప్రతి రాష్ట్రంలో ఒక <b class="term">State Information Commission (SIC)</b> ను కూడా ఏర్పాటు చేయాలని చెబుతుంది. దాని ప్రకారం, అన్ని రాష్ట్రాలు తమ సొంత State Information Commissions ను ఏర్పాటు చేశాయి. CIC లాగే, SIC కూడా <b class="imp">constitutional body కాదు</b> — ఇది పూర్తిగా RTI Act, 2005 అనే ఒక సాధారణ parliamentary చట్టం వల్లే ఉనికిలోకి వచ్చింది, రాజ్యాంగంలోని ఏ Article వల్లనూ కాదు. ఇది మొదట గుర్తుంచుకోవాల్సిన fact — State Information Commission అనేది <b>state-level, statutory</b> body, State Public Service Commission లేదా Governor లాంటి state-level constitutional body కాదు.</div>
+
+  <p class="eng">The SIC functions as a <b class="imp">high-powered, independent body</b> whose core job is twofold — hearing complaints and ruling on appeals. Its reach, however, stops at the state border: it only takes up cases involving offices, financial institutions, PSUs and similar bodies that fall <b>under that particular state government</b>, which is precisely the line dividing SIC territory from CIC territory. Where the CIC deals with RTI matters tied to the Union Government and Union Territories, an SIC deals only with matters tied to public authorities of its own state government. A student should never picture the two Commissions as interchangeable — an appeal that belongs before one will never be entertained by the other.</p>
+  <div class="te">SIC ఒక <b class="imp">high-powered, independent body</b> — ఇది తనకు వచ్చిన complaints ను పరిశీలించడం, appeals మీద నిర్ణయం తీసుకోవడం లాంటి పనులు చేస్తుంది. దీని జురిస్డిక్షన్ <b>సంబంధిత state government</b> కింద ఉన్న offices, financial institutions, public sector undertakings వంటి వాటికి సంబంధించిన complaints, appeals వరకే పరిమితం — ఇదే SIC, CIC ల మధ్య ఉన్న ముఖ్యమైన జురిస్డిక్షన్ తేడా. CIC, Central Government, Union Territories కు సంబంధించిన RTI విషయాలు చూస్తుంది; SIC ఆ particular state government పరిధిలోని public authorities RTI విషయాలు చూస్తుంది. ఒక Commission ముందుకు రావాల్సిన appeal ను రెండో Commission వినదు అని విద్యార్థి ఎప్పుడూ గుర్తుంచుకోవాలి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — What the SIC Is</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Statute creating the SIC?</td><td>Right to Information Act, 2005</td></tr>
+      <tr><td>Constitutional or statutory body?</td><td>Statutory — NOT a constitutional body (like the CIC)</td></tr>
+      <tr><td>SIC's jurisdiction — whose public authorities?</td><td>Offices/financial institutions/PSUs under the concerned STATE government only</td></tr>
+      <tr><td>Who handles Central govt./UT RTI matters instead?</td><td>The CIC — separate body, separate turf</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Composition — State CIC, State ICs, and the Appointing Committee</div>
+  <p class="eng">Heading the Commission is one <b class="term">State Chief Information Commissioner (SCIC)</b>, supported by <b class="imp">up to ten</b> <b class="term">State Information Commissioners (SICs)</b> — only a ceiling is fixed by law, not a floor, so the actual headcount differs from state to state. Appointment is the <b class="hlp">Governor's</b> job on paper, but the Governor does not pick freely — a three-member panel must first recommend the names: <b class="hlp">the Chief Minister</b> heading it, the <b class="hlp">Leader of Opposition</b> in the Assembly, and a <b class="hlp">State Cabinet Minister</b> whom the CM nominates. And if no Leader of Opposition has been officially recognised, whoever heads the single largest opposition group simply stands in for that role.</p>
+  <div class="te">Commission లో ఒక <b class="term">State Chief Information Commissioner (SCIC)</b>, <b class="imp">పది మందికి మించకుండా</b> <b class="term">State Information Commissioners (SICs)</b> ఉంటారు — నిజంగా ఎంతమందిని appoint చేస్తారనేది state నుండి state కు మారుతుంది, ఎందుకంటే చట్టం కేవలం ఒక upper limit మాత్రమే పెట్టింది, కనీస సంఖ్య పెట్టలేదు. వీరిని రాష్ట్ర <b class="hlp">Governor</b> నియమిస్తారు — కానీ ఇది Governor సొంత విచక్షణతో కాదు, ఒక <b>committee సిఫారసు మీదే</b> నియామకం జరుగుతుంది — ఆ committee లో: (1) <b class="hlp">Chief Minister</b> Chairperson గా, (2) Legislative Assembly లో <b class="hlp">Leader of Opposition</b>, (3) Chief Minister నామినేట్ చేసిన <b class="hlp">State Cabinet Minister</b> ఉంటారు. Leader of Opposition అధికారికంగా గుర్తింపు పొందకపోతే, Assembly లో అతిపెద్ద opposition గ్రూప్ నాయకుడినే ఈ ప్రయోజనం కోసం Leader of Opposition గా భావిస్తారు.</div>
+
+  <p class="eng">The eligibility bar is deliberately broad but demanding: a nominee must have earned <b>standing in public life</b> and built up real depth in one of several named fields — <b>management, or law, or science &amp; technology, or journalism and mass media, or social service, or public administration</b> — the list is broad by design. What disqualifies someone is equally clear — sitting as an MP, or as an MLA/MLC of any state or Union Territory, rules a person <b class="imp">out</b>. So does holding any other paid office, keeping a political-party affiliation, or running a business or profession on the side. The point of all these bars is straightforward: keep the Commission's bench free of political or commercial ties while it rules on cases that can directly touch the state government's own conduct.</p>
+  <div class="te">Members <b>public life లో eminence ఉన్న వ్యక్తులు</b> అయి, <b>management, law, science &amp; technology, journalism/mass media, social service, లేదా administration and governance</b> — ఈ రంగాల్లో ఏదో ఒక దానిలో విస్తృత knowledge, experience కలిగి ఉండాలి. వీరు ఏ రాష్ట్రం లేదా Union Territory <b class="imp">Parliament సభ్యులు లేదా Legislature సభ్యులు కాకూడదు</b>. అలాగే వేరే office of profit ఉండకూడదు, ఏ political party తోనూ సంబంధం ఉండకూడదు, ఏ business లేదా profession నూ కొనసాగించకూడదు — Commission నేరుగా state government కే సంబంధించిన కేసులు నిర్ణయించే సమయంలో, దాని membership active political లేదా commercial ఇబ్బందుల నుండి దూరంగా ఉండేలా ఈ restrictions పెట్టారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Composition &amp; Appointing Committee</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Composition of SIC?</td><td>1 SCIC + up to 10 SICs (number varies by state)</td></tr>
+      <tr><td>Appointing authority?</td><td>The Governor</td></tr>
+      <tr><td>Recommending committee (3 members)?</td><td>CM (Chairperson) + Leader of Opposition (Assembly) + a State Cabinet Minister nominated by CM</td></tr>
+      <tr><td>If LOP not formally recognised?</td><td>Leader of largest single opposition group deemed LOP</td></tr>
+      <tr><td>Can members be MPs/MLAs, or hold other office of profit?</td><td>No — barred, along with political-party ties and business/profession</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Tenure &amp; Service Conditions · Removal — 5 General Grounds</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Tenure and Service Conditions</div>
+  <p class="eng">How long does an <b class="term">SCIC</b> or <b class="term">SIC</b> stay in office? Whatever term the <b class="imp">Central Government chooses to set</b> — note that, even though this is a state body, it is <b>not</b> the state government that decides this — and that term ends early if the officeholder turns <b class="hlg">65</b> first. Once out, <b class="imp">reappointment is off the table</b>. This open-ended "term set by the Centre" formula did not always exist — it was introduced by the <b class="hlb">RTI (Amendment) Act, 2019</b> (examined fully later in this chapter); before that, the law simply fixed the term at <b class="hlg">5 years</b>, again capped by the age-65 limit.</p>
+  <div class="te"><b class="term">State Chief Information Commissioner</b>, <b class="term">State Information Commissioner</b> — వీరు <b class="imp">Central Government నిర్దేశించిన మేరకు</b> పదవిలో ఉంటారు — ఇది <b>state-level body అయినా</b>, term ను state government కాదు, Central Government నే prescribe చేస్తుంది — లేదా <b class="hlg">65 ఏళ్ల వయసు</b> వచ్చేవరకు, ఏది ముందు వస్తే అది. వీరికి <b class="imp">reappointment అర్హత లేదు</b>. "fixed period కు బదులు Central Government నిర్దేశించిన term" అనే ఈ rule <b class="hlb">RTI (Amendment) Act, 2019</b> వల్ల వచ్చింది — దీని గురించి ఈ chapter చివర్లో వివరంగా చూద్దాం — 2019 కి ముందు term ఖచ్చితంగా <b class="hlg">5 సంవత్సరాలు</b> (లేదా 65 ఏళ్లు, ఏది ముందు వస్తే అది) గా ఫిక్స్ అయి ఉండేది.</div>
+
+  <p class="eng">A serving Commissioner can certainly move up to become Chief Commissioner — that path is open. But there's a ceiling attached: time already served as an ordinary Commissioner counts toward a combined cap, so that person's <b class="imp">total time across both posts cannot cross five years</b>. This closes an obvious loophole — nobody can dodge the tenure limit just by getting "promoted" partway through their term.</p>
+  <div class="te">ఒక State Information Commissioner, State Chief Information Commissioner గా appoint కావడానికి అర్హులే, కానీ అలాంటి వ్యక్తి — State Information Commissioner గా గతంలో చేసిన term తో కలిపి — <b class="imp">మొత్తం ఐదు సంవత్సరాలకు మించి</b> పదవిలో ఉండలేరు — Commissioner నుండి Chief Commissioner స్థాయికి మధ్యలో "promote" అయిన మాత్రాన ఎవరైనా SIC-స్థాయి పదవిలో అనంతంగా కొనసాగకుండా ఈ career-ceiling ఆపుతుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Tenure</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Current tenure rule (post-2019 Amendment)?</td><td>Term prescribed by Central Govt, or age 65, whichever earlier</td></tr>
+      <tr><td>Pre-2019 tenure rule?</td><td>Fixed 5 years, or age 65, whichever earlier</td></tr>
+      <tr><td>Eligible for reappointment?</td><td>No</td></tr>
+      <tr><td>SIC → SCIC promotion cap?</td><td>Combined tenure (as SIC + SCIC) cannot exceed 5 years total</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Removal by the Governor — Five General Grounds</div>
+  <p class="eng">Five specific situations let the <b class="hlp">Governor</b> remove an SCIC or SIC directly, without any outside enquiry: being declared <b class="imp">insolvent</b> <b>(1)</b>; a criminal <b>conviction</b> that the <b>Governor personally judges</b> to involve moral turpitude <b>(2)</b>; taking up <b>paid work outside the office's duties</b> while still serving <b>(3)</b>; being, again in the <b>Governor's own judgment</b>, no longer fit for the post because of <b>mental or physical infirmity</b> <b>(4)</b>; or picking up a <b>financial or other stake</b> capable of clouding official decisions <b>(5)</b>. What makes grounds 2 and 4 distinctive is that the <b>Governor's opinion alone settles the matter</b> — unlike the misbehaviour/incapacity route covered next, no separate enquiry has to be conducted first.</p>
+  <div class="te"><b class="hlp">Governor</b>, State Chief Information Commissioner ను గానీ, ఏ State Information Commissioner ను గానీ కింది <b class="hlg">ఐదు</b> పరిస్థితుల్లో పదవి నుండి తొలగించగలరు — <b>(1)</b> <b class="imp">insolvent</b> గా declare అయితే; <b>(2)</b> <b>Governor అభిప్రాయం</b> ప్రకారం moral turpitude ఉన్న నేరంలో <b>convict</b> అయితే; <b>(3)</b> పదవీకాలంలో, తన office duties కు వెలుపల ఏదైనా <b>paid employment</b> లో పాల్గొంటే; <b>(4)</b> <b>Governor అభిప్రాయం</b> ప్రకారం, mind లేదా body <b>infirmity</b> వల్ల పదవిలో కొనసాగడానికి unfit అయితే; లేదా <b>(5)</b> తన official పనులను ప్రతికూలంగా ప్రభావితం చేసేంత <b>financial లేదా ఇతర interest</b> సంపాదిస్తే. గ్రౌండ్స్ 2, 4 లలో — <b>Governor సొంత అభిప్రాయమే</b> నిర్ణాయకం — తర్వాత చూసే misbehaviour/incapacity గ్రౌండ్ లా కాకుండా, ఈ రెండు గ్రౌండ్స్ కు వేరే enquiry అవసరం లేదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — 5 Removal Grounds</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>5 grounds, in brief?</td><td>Insolvency; moral-turpitude conviction; outside paid employment; infirmity of mind/body; prejudicial financial interest</td></tr>
+      <tr><td>For which 2 grounds is the Governor's own opinion decisive?</td><td>Moral-turpitude conviction (ground 2), infirmity (ground 4)</td></tr>
+      <tr><td>Is a separate enquiry needed for these 5 grounds?</td><td>No — unlike misbehaviour/incapacity</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Removal — Misbehaviour/Incapacity (SC Enquiry) · Salary &amp; Service Conditions</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Removal on Proved Misbehaviour or Incapacity — the Supreme Court Route</div>
+  <p class="eng">In addition to the five grounds above, the Governor can also remove the SCIC or any SIC on the ground of <b class="imp">proved misbehaviour or incapacity</b>. However, in this case, the Governor <b class="imp">cannot decide alone</b> — the matter must first be <b>referred to the Supreme Court</b> for an enquiry. Only if the Supreme Court, after enquiry, upholds the cause for removal and so advises, can the Governor actually remove the person. Note the striking detail here: even though this is a <b>state-level</b> functionary being removed by a <b>state-level</b> authority (the Governor), the enquiry body is the <b class="hlp">Supreme Court of India</b> — <b>not</b> the concerned state's High Court. This centralises the most serious removal procedure at the apex judicial level for both the CIC and SIC alike.</p>
+  <div class="te">పైన చెప్పిన ఐదు గ్రౌండ్స్ కాకుండా, <b class="imp">proved misbehaviour లేదా incapacity</b> గ్రౌండ్ మీద కూడా Governor SCIC ను గానీ, ఏ SIC ను గానీ తొలగించగలరు. కానీ ఈ కేసులో, Governor <b class="imp">ఒక్కరే నిర్ణయం తీసుకోలేరు</b> — ముందు ఈ విషయాన్ని enquiry కోసం <b>Supreme Court కు refer</b> చేయాలి. Supreme Court, enquiry తర్వాత, తొలగింపు కారణాన్ని సమర్థించి, అలాగే advise చేస్తేనే, Governor అసలు ఆ వ్యక్తిని తొలగించగలరు. ఇక్కడ ఒక ఆసక్తికరమైన విషయం గమనించాలి — ఇది <b>state-level</b> functionary ను <b>state-level</b> authority (Governor) తొలగించే విషయమే అయినా, enquiry చేసేది <b class="hlp">Supreme Court of India</b> — ఆ రాష్ట్రం High Court <b>కాదు</b>. CIC కు, SIC కు రెండింటికీ, అత్యంత తీవ్రమైన ఈ removal procedure apex judicial స్థాయిలోనే centralise అయి ఉంటుంది.</div>
+
+  <p class="eng">What actually counts as <b>misbehaviour</b> here? Having a stake — direct or indirect — in a contract the state government has entered into, or drawing any share of its profit or benefit, qualifies, with one narrow carve-out: holding shares in an incorporated company alongside its other ordinary shareholders does not, by itself, amount to misbehaviour.</p>
+  <div class="te">ఈ ప్రయోజనం కోసం, ఒక వ్యక్తి state government చేసిన ఏదైనా contract లేదా agreement లో సంబంధం గానీ, interest గానీ కలిగి ఉంటే, లేదా ఆ contract/agreement లాభంలో ఏదో రూపంలో పాల్గొంటే, లేదా దాని నుండి వచ్చే benefit/emolument లో పాలుపంచుకుంటే — ఒక incorporated company లో ఇతర members తో సమానంగా ఉన్న ఒక సాధారణ member గా తప్ప — అలాంటి వ్యక్తిని <b>misbehaviour</b> చేసినట్టుగా భావిస్తారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Misbehaviour/Incapacity Removal</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who enquires into misbehaviour/incapacity charges?</td><td>The Supreme Court of India (NOT the state High Court)</td></tr>
+      <tr><td>Can the Governor remove without the SC's advice?</td><td>No — removal only if SC upholds the cause and so advises</td></tr>
+      <tr><td>When is a person "deemed guilty of misbehaviour"?</td><td>If interested/profiting in a state govt. contract, other than as an ordinary shareholder-type member</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Salary, Allowances &amp; Other Service Conditions</div>
+  <p class="eng">Pay, allowances and every other service condition for an SCIC/SIC follow whatever the <b class="imp">Central Government fixes</b> — again, this is a state-appointed body, yet the <b>Centre</b>, not the state, controls the purse-strings on this front. And just as with the CIC's members, once fixed, none of it can be <b class="imp">changed to their disadvantage</b> while they remain in office — a safeguard designed to shield them from pressure after they've already taken up the post.</p>
+  <div class="te">SCIC, SIC ల salary, allowances, ఇతర service conditions <b class="imp">Central Government నిర్దేశించిన మేరకు</b> ఉంటాయి — మళ్ళీ గమనించండి — SIC state's own Governor నియమించిన state-level body అయినా, salary, service conditions నిర్ణయించేది state government కాదు, <b>Central</b> Government. కానీ, CIC కు లాగే, ఈ conditions ఒకసారి fix అయ్యాక, పదవిలో ఉన్నంత కాలం వాటిని <b class="imp">నష్టానికి మార్చలేరు</b> — నియామకం తర్వాత pressure నుండి వారిని insulate చేయడానికి ఈ service-condition రక్షణ ఉంటుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Salary/Service Conditions</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who prescribes SCIC/SIC salary &amp; service conditions?</td><td>The Central Government — not the state government</td></tr>
+      <tr><td>Can these be changed to their disadvantage after fixing?</td><td>No</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Powers &amp; Functions — Complaints, Civil-Court Powers, Compliance</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Duty to Receive and Inquire into Complaints</div>
+  <p class="eng">Six distinct situations obligate the Commission to take up and inquire into someone's complaint: no PIO exists at all so a request could never even be filed <b>(1)</b>; a request was flatly <b>refused</b> <b>(2)</b>; the reply never arrived within the <b>allotted time window</b> <b>(3)</b>; the applicant feels the <b>fee demanded is excessive</b> <b>(4)</b>; the material handed over looks <b>incomplete, misleading, or outright false</b> <b>(5)</b>; or the grievance is simply <b>any other information-access issue</b> not covered above <b>(6)</b>. On top of reacting to complaints, the Commission also carries a <b class="term">suo-moto power</b>: given reasonable grounds, it can launch an inquiry entirely on its own, with no complaint needed to trigger it.</p>
+  <div class="te">ఏ వ్యక్తి నుండి అయినా వచ్చిన complaint ను స్వీకరించి, దానిపై inquire చేయడం Commission విధి — <b>(1)</b> <b>Public Information Officer నియామకం జరగకపోవడం</b> వల్ల information request పెట్టలేకపోయిన వారు; <b>(2)</b> అడిగిన information ను <b>refuse</b> చేసినప్పుడు; <b>(3)</b> <b>specified time limits</b> లోపు తన information request కు response రాలేదు అనుకునే వారు; <b>(4)</b> విధించిన <b>fees అనవసరంగా ఎక్కువ</b> అని భావించే వారు; <b>(5)</b> ఇచ్చిన information <b>అసంపూర్ణం, తప్పుదారి పట్టించేది, లేదా false</b> అని భావించే వారు; <b>(6)</b> information పొందడానికి సంబంధించిన ఇతర ఏ విషయం అయినా. Complaints స్వీకరించడమే కాకుండా, Commission కు <b class="term">suo-moto power</b> కూడా ఉంటుంది — complaint వచ్చేవరకూ ఆగకుండా, reasonable grounds ఉంటే, ఏదైనా విషయంలో తానే స్వయంగా inquiry order చేయగలదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Complaint Grounds &amp; Suo-Moto</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>6 complaint grounds, in brief?</td><td>No PIO appointed; info refused; no timely response; fee unreasonable; info incomplete/false; other info-related matters</td></tr>
+      <tr><td>Suo-moto power — meaning?</td><td>Commission can order inquiry on its own, without a complaint, if reasonable grounds exist</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Civil-Court Powers While Inquiring</div>
+  <p class="eng">Once an inquiry is underway, the Commission effectively acts like a <b class="term">civil court</b>: it can call people in and make them show up, put them under oath to testify or produce papers <b>(1)</b>; force disclosure and inspection of documents <b>(2)</b>; accept sworn affidavits as evidence <b>(3)</b>; pull any official record from a court or office <b>(4)</b>; summon witnesses or paperwork for scrutiny <b>(5)</b>; and handle whatever else the rules may add later <b>(6)</b>. Beyond these court-like powers, there's a blanket rule during inquiries: whatever record a public authority is sitting on, the Commission can call for it, and <b class="imp">the authority has no ground on which to refuse</b> — nothing can lawfully be kept back once an inquiry is examining it.</p>
+  <div class="te">ఏదైనా విషయాన్ని inquire చేస్తున్నప్పుడు, Commission కు <b class="term">civil court</b> అధికారాలు ఉంటాయి — <b>(1)</b> వ్యక్తులను summon చేయడం, హాజరు అయ్యేలా చేయడం, ప్రమాణం మీద oral లేదా written evidence ఇచ్చేలా, documents/things సమర్పించేలా compel చేయడం; <b>(2)</b> documents discovery, inspection అవసరం చేయడం; <b>(3)</b> affidavit మీద evidence స్వీకరించడం; <b>(4)</b> ఏ court లేదా office నుండి అయినా public record requisition చేయడం; <b>(5)</b> witnesses లేదా documents examination కోసం summons జారీ చేయడం; <b>(6)</b> prescribe చేయబడే ఇతర ఏ విషయమైనా. అంతేకాక, complaint inquiry సమయంలో, public authority control లో ఉన్న <b>ఏ record నైనా</b> Commission పరిశీలించవచ్చు, ఎలాంటి గ్రౌండ్స్ మీదైనా అలాంటి record ను దాచడానికి వీలు లేదు — అంటే, inquiry సమయంలో Commission పరిశీలన కోసం public records అన్నీ ఎలాంటి మినహాయింపులు లేకుండా ఇవ్వాలి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Civil-Court Powers &amp; Record Access</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Whose powers does the Commission exercise while inquiring?</td><td>A civil court's powers (6 specific matters)</td></tr>
+      <tr><td>Can any public record be withheld from the Commission during inquiry?</td><td>No — none, on any grounds</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Powers &amp; Functions — Securing Compliance · Annual Report</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Power to Secure Compliance of Its Decisions</div>
+  <p class="eng">To make sure its orders actually get followed, the Commission has a nine-item toolkit against the public authority concerned: hand over information in whatever form was asked for <b>(1)</b>; get a PIO installed wherever that post sits empty <b>(2)</b>; push out information proactively, category by category <b>(3)</b>; force a rework of how records are managed, kept, or disposed of <b>(4)</b>; ramp up staff training on RTI obligations <b>(5)</b>; call for a yearly compliance report <b>(6)</b>; make the authority pay the applicant for any loss suffered <b>(7)</b>; <b class="imp">levy a penalty</b> <b>(8)</b>; or simply turn down the application <b>(9)</b>. Among these nine, the <b class="imp">penalty clause</b> gets tested most often: a PIO can be fined <b class="hlg">₹250 for every day</b> of default, capped at <b class="hlg">₹25,000</b>, and the Commission may separately push for disciplinary proceedings against that officer too.</p>
+  <div class="te">తన నిర్ణయాలను public authority పాటించేలా చూసే <b class="term">compliance</b> power Commission కు ఉంటుంది. ఇందులో ఇవి ఉంటాయి — <b>(1)</b> ఒక ప్రత్యేక రూపంలో information కు access ఇవ్వడం; <b>(2)</b> Public Information Officer లేని చోట, ఒకరిని appoint చేయమని public authority కు direct చేయడం; <b>(3)</b> information ను లేదా information categories ను publish చేయడం; <b>(4)</b> records management, maintenance, destruction practices లో మార్పులు అవసరం చేయడం; <b>(5)</b> right to information పై officials కు training పెంచడం; <b>(6)</b> చట్టం compliance పై public authority నుండి annual report అడగడం; <b>(7)</b> applicant కు జరిగిన నష్టానికి public authority పరిహారం ఇచ్చేలా చేయడం; <b>(8)</b> చట్టం కింద <b class="imp">penalties విధించడం</b>; <b>(9)</b> application ను reject చేయడం. ఈ తొమ్మిది compliance-tools లో, <b class="imp">penalty power</b> అత్యంత ఎక్కువగా అడిగే పాయింట్ — Commission, Public Information Officer మీద రోజుకు <b class="hlg">₹250</b> చొప్పున, గరిష్టంగా <b class="hlg">₹25,000</b> వరకు penalty విధించగలదు, అదనంగా errant official మీద disciplinary action కు కూడా సిఫారసు చేయగలదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Compliance Powers &amp; Penalty</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How many compliance-securing tools listed?</td><td>9, including penalty and rejecting the application</td></tr>
+      <tr><td>Penalty rate on the PIO?</td><td>₹250/day, capped at ₹25,000</td></tr>
+      <tr><td>Beyond penalty, what else can the Commission recommend?</td><td>Disciplinary action against the errant official</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Annual Report &amp; Recommending Conformity</div>
+  <p class="eng">Every year, the Commission draws up an <b class="term">annual report</b> on how well the Act is being carried out and hands it to the <b>State Government</b>, which then <b>tables it before the State Legislature</b> — the exact state-level counterpart of the CIC's report travelling to the Union Government and on to Parliament. Separate from all this, if a public authority is simply falling short of the Act's requirements, the Commission can step in with a <b>recommendation</b> — laying out the steps that authority ought to take — a gentler, advisory tool that works alongside its sharper compliance and penalty powers rather than replacing them.</p>
+  <div class="te">చట్టం అమలుపై Commission ఒక <b class="term">annual report</b> ను <b>State Government</b> కు సమర్పిస్తుంది; ఆ తర్వాత State Government ఆ report ను <b>State Legislature ముందు పెడుతుంది</b> — CIC annual report Central Government కు, తర్వాత Parliament కు వెళ్లే విధానానికి, state స్థాయిలో ఇది అద్దం లాంటిది. దీనికి వేరుగా, ఒక public authority చట్ట నిబంధనలను పాటించనప్పుడు, ఆ authority conformity పాటించడానికి తీసుకోవాల్సిన చర్యలను Commission <b>recommend</b> చేయగలదు — దీని కఠినమైన compliance, penalty అధికారాల పక్కనే ఉండే ఒక మృదువైన, advisory power ఇది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Annual Report &amp; Recommendation Power</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>SIC's annual report goes to whom, then where?</td><td>State Government → placed before the State Legislature</td></tr>
+      <tr><td>Softer power alongside penalty/compliance?</td><td>Recommending steps to a non-conforming public authority</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">RTI (Amendment) Act, 2019 — What Changed for the SIC · CIC vs SIC Master Comparison</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">RTI (Amendment) Act, 2019 — SIC-Relevant Changes</div>
+  <p class="eng">The <b class="hlb">Right to Information (Amendment) Act, 2019</b> rewrote several rules shared by the CIC and SIC alike. On the SIC side specifically, three changes matter: <b>(1)</b> an SCIC/SIC's tenure switched from a fixed <b class="hlg">5-year</b> term to whatever <b class="imp">term the Centre chooses to prescribe</b>; <b>(2)</b> their pay and service conditions switched from being pegged to a comparator post to whatever the <b class="imp">Centre prescribes</b> — previously, an SCIC's package tracked an <b>Election Commissioner's</b>, and an ordinary SIC's tracked a state's <b>Chief Secretary</b>; <b>(3)</b> the Act also scrapped older rules that had deducted an officeholder's salary on account of pension or other retirement benefits already being drawn from earlier government service — a change that applied equally to the CIC/IC side. Point (2) is worth keeping distinct from the CIC's own pre-2019 comparators: the CIC tracked the <b>Chief Election Commissioner</b>, an ordinary IC tracked an <b>Election Commissioner</b>, an SCIC also tracked an <b>Election Commissioner</b> (not the CEC), and an ordinary SIC tracked the state <b>Chief Secretary</b> — four separate reference posts across the four office-types, all collapsed post-2019 into one identical formula: "as prescribed by the Central Government."</p>
+  <div class="te"><b class="hlb">Right to Information (Amendment) Act, 2019</b>, CIC, SIC రెండింటికీ common గా వర్తించే కొన్ని provisions మార్చింది. SIC విషయంలో సంబంధిత మార్పులు — <b>(1)</b> SCIC, SIC — <b class="imp">Central Government నిర్దేశించిన term</b> వరకు పదవిలో ఉంటారు — ఈ amendment కు ముందు, వారి term ఖచ్చితంగా <b class="hlg">5 సంవత్సరాలు</b> గా ఫిక్స్ అయి ఉండేది; <b>(2)</b> SCIC, SIC salary, allowances, service conditions — <b class="imp">Central Government నిర్దేశించిన మేరకు</b> ఉంటాయి — ఈ amendment కు ముందు, SCIC salary/conditions జాతీయ Election Commission లోని <b>Election Commissioner</b> కు సమానంగా, SIC salary/conditions state <b>Chief Secretary</b> కు సమానంగా ఉండేవి; <b>(3)</b> గతంలో ప్రభుత్వ సర్వీసు కారణంగా పొందుతున్న pension లేదా ఇతర retirement benefits కారణంగా SCIC/SIC (అలాగే CIC/IC కూడా) salary లో చేసే <b>deductions</b> గురించిన నిబంధనలను కూడా ఈ Act తీసివేసింది. రెండో పాయింట్ నిజంగా ముఖ్యమైన CIC-vs-SIC తేడా, 2019 కి ముందు స్థితి గురించి గుర్తుంచుకోవాలి — CIC 2019-పూర్వ salary parity <b>Chief Election Commissioner</b> తో, IC parity <b>Election Commissioner</b> తో ఉండేది; SCIC 2019-పూర్వ parity <b>Election Commissioner</b> తో (CEC తో కాదు), సాధారణ SIC parity state <b>Chief Secretary</b> తో ఉండేది — నాలుగు రకాల office-holders కు నాలుగు వేర్వేరు 2019-పూర్వ reference points, ఇవన్నీ 2019 తర్వాత ఒకే విధంగా "Central Government నిర్దేశించిన మేరకు" గా మారిపోయాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — RTI Amendment Act, 2019 (SIC)</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Pre-2019 SCIC/SIC tenure?</td><td>Fixed 5 years, or age 65, whichever earlier</td></tr>
+      <tr><td>Post-2019 SCIC/SIC tenure?</td><td>Term prescribed by Central Government, or age 65, whichever earlier</td></tr>
+      <tr><td>Pre-2019 SCIC salary parity?</td><td>Similar to an Election Commissioner</td></tr>
+      <tr><td>Pre-2019 (ordinary) SIC salary parity?</td><td>Similar to the state's Chief Secretary</td></tr>
+      <tr><td>Another 2019 change re: salary?</td><td>Removed pension/retirement-benefit deduction provisions</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle rd">CIC vs SIC — Master Comparison Table</div>
+  <p class="eng">The table below sets the CIC and SIC side by side, right at the points where students most often confuse one for the other. The one similarity worth remembering above all else: post-<b class="hlb">2019 Amendment</b>, <b class="imp">tenure and salary now read identically</b> for both — "as prescribed by the Central Government" — despite the SIC being a state creature, appointed by the Governor and answerable to a state legislature.</p>
+  <div class="te">కింద table CIC, SIC రెండింటినీ — విద్యార్థులు ఎక్కువగా confuse అయ్యే పాయింట్ల వద్ద — పక్కపక్కనే పెడుతుంది. గుర్తుంచుకోవాల్సిన అతిపెద్ద similarity — <b class="hlb">2019 Amendment</b> తర్వాత, SIC ను state authority (Governor) నియమించి, state legislature కు report చేసినా, రెండు bodies కూ <b class="imp">tenure, salary rules ఇప్పుడు రూపంలో ఒకటే</b> — "Central Government నిర్దేశించిన మేరకు".</div>
+
+  <table>
+    <caption>Master Comparison — CIC vs SIC</caption>
+    <thead><tr><th style="width:24%">Point</th><th style="width:38%">CIC (Central)</th><th>SIC (State)</th></tr></thead>
+    <tbody>
+      <tr><td>Statute</td><td>RTI Act, 2005 — statutory, not constitutional</td><td>RTI Act, 2005 — statutory, not constitutional</td></tr>
+      <tr><td>Jurisdiction</td><td>Central Government &amp; Union Territories</td><td class="imp">The concerned STATE government's own public authorities</td></tr>
+      <tr><td>Composition</td><td>1 CIC + up to 10 Information Commissioners</td><td>1 SCIC + up to 10 State Information Commissioners</td></tr>
+      <tr><td>Appointing authority</td><td class="imp">President</td><td class="imp">Governor</td></tr>
+      <tr><td>Recommending committee</td><td>PM (Chair) + Leader of Opposition, Lok Sabha + 1 Union Cabinet Minister (PM-nominated)</td><td>CM (Chair) + Leader of Opposition, State Assembly + 1 State Cabinet Minister (CM-nominated)</td></tr>
+      <tr><td>Removal authority</td><td>President</td><td>Governor</td></tr>
+      <tr><td>Misbehaviour/incapacity enquiry</td><td colspan="2" style="text-align:center">Identical for both — matter referred to the <b>Supreme Court</b> (not any High Court); removal only if SC upholds &amp; advises</td></tr>
+      <tr><td>Tenure rule (post-2019 Amendment)</td><td colspan="2" style="text-align:center">Identical — term as prescribed by the Central Government, or age 65, whichever earlier; no reappointment</td></tr>
+      <tr><td>Tenure rule (pre-2019, historical)</td><td>Fixed 5 years, or age 65</td><td>Fixed 5 years, or age 65</td></tr>
+      <tr><td>Salary/service conditions</td><td colspan="2" style="text-align:center">Identical mechanism — as prescribed by the <b>Central Government</b> for both (SIC salary is NOT fixed by the state govt.); cannot be varied to disadvantage</td></tr>
+      <tr><td>Pre-2019 salary parity</td><td>CIC ~ CEC; IC ~ Election Commissioner</td><td>SCIC ~ Election Commissioner; SIC ~ state Chief Secretary</td></tr>
+      <tr><td>Powers &amp; functions</td><td colspan="2" style="text-align:center">Structurally identical — complaint-receipt, suo-moto, civil-court powers, compliance powers (incl. ₹250/day–₹25,000 penalty), annual report, recommend conformity</td></tr>
+      <tr><td>Annual report goes to</td><td>Central Government → both Houses of Parliament</td><td>State Government → State Legislature</td></tr>
+    </tbody>
+  </table>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — CIC vs SIC</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Biggest appointment-side difference?</td><td>President (CIC) vs Governor (SIC)</td></tr>
+      <tr><td>Committee's 3rd member — CIC vs SIC?</td><td>PM-nominated Union Cabinet Minister vs CM-nominated State Cabinet Minister</td></tr>
+      <tr><td>Who enquires into misbehaviour/incapacity — for either body?</td><td>Supreme Court, in both cases — never a High Court</td></tr>
+      <tr><td>Is the post-2019 tenure rule the same for CIC and SIC?</td><td>Yes — identical: Central-Govt-prescribed term or age 65</td></tr>
+      <tr><td>Who fixes SIC salary — state govt. or Central govt.?</td><td>Central Government, even though SIC is a state body</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Chapter Facts at a Glance</div>
+
+<div class="para">
+  <div class="ptitle gn" style="margin-top:0">Chapter 63 — Facts at a Glance</div>
+  <table>
+    <caption>State Information Commission — key facts, one table</caption>
+    <thead><tr><th style="width:34%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Governing statute</td><td>Right to Information Act, 2005 (SIC — statutory, not constitutional body)</td></tr>
+      <tr><td>Composition</td><td>1 State Chief Information Commissioner + up to 10 State Information Commissioners</td></tr>
+      <tr><td>Appointing authority</td><td>Governor, on recommendation of a committee</td></tr>
+      <tr><td>Recommending committee</td><td>CM (Chair) + LOP (state Assembly) + State Cabinet Minister nominated by CM</td></tr>
+      <tr><td>Jurisdiction</td><td>Offices/financial institutions/PSUs under the concerned state government</td></tr>
+      <tr><td>Tenure (post-2019 Amendment)</td><td>Term prescribed by Central Govt, or age 65, whichever earlier; no reappointment</td></tr>
+      <tr><td>Tenure (pre-2019)</td><td>Fixed 5 years, or age 65, whichever earlier</td></tr>
+      <tr><td>SIC → SCIC combined-term cap</td><td>Max 5 years total across both roles</td></tr>
+      <tr><td>Removal — 5 general grounds</td><td>Insolvency; moral-turpitude conviction; outside paid employment; infirmity; prejudicial financial interest</td></tr>
+      <tr><td>Removal — misbehaviour/incapacity</td><td>Governor refers to Supreme Court; removal only if SC upholds &amp; advises</td></tr>
+      <tr><td>Salary/service conditions fixed by</td><td>Central Government (not state govt.); can't be varied to disadvantage</td></tr>
+      <tr><td>Penalty on PIO</td><td>₹250/day, max ₹25,000 + possible disciplinary-action recommendation</td></tr>
+      <tr><td>Annual report route</td><td>Commission → State Government → State Legislature</td></tr>
+      <tr><td>CIC's parallel appointing authority/committee</td><td>President; PM + LOP (Lok Sabha) + Union Cabinet Minister</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలాలు — Right to Information Act, 2005; Right to Information (Amendment) Act, 2019; M. Laxmikanth, Indian Polity, 8th Edition, Chapters 62-63.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — RTI Rules 2019 Figures &amp; the AP/Telangana Vacancy-Backlog Saga <span class="caasof">(as of 25.08.2026, verified via live web search on this date — SIC vacancies/backlogs are a chronic, evolving problem across states; re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>1. RTI Rules, 2019 — the actual prescribed figures for SCIC/SIC:</b> The single Rules notification that followed the 2019 Amendment covers Central and State commissioners together. For State commissioners, the Centre fixed the term at <b class="hlg">three years</b> (down from the earlier fixed five) and set monthly pay at <b class="hlg">₹2,25,000</b> for both the SCIC and an ordinary SIC alike — unlike the Centre, where the CIC (₹2.5 lakh) and an IC (₹2.25 lakh) get different figures. Structurally, this is the same "delinked from Parliament" point as with the CIC: these numbers exist only as subordinate Rules, so the Central Government can revise them again without a fresh Act of Parliament.</p>
+    <div class="te"><b>1. RTI Rules, 2019 — SCIC/SIC కోసం వాస్తవంగా prescribe అయిన figures:</b> 2019 Amendment తర్వాత వచ్చిన ఒకే Rules notification, Central, State commissioners ఇద్దరినీ కవర్ చేస్తుంది. State commissioners కోసం, term ను Centre <b class="hlg">మూడు సంవత్సరాలు</b> గా (ముందు ఐదు నుండి తగ్గించి) ఫిక్స్ చేసింది, నెల జీతం SCIC, ఒక SIC ఇద్దరికీ <b class="hlg">₹2,25,000</b> గా సెట్ చేసింది — Centre లో మాత్రం CIC (₹2.5 లక్ష), IC (₹2.25 లక్ష) కు వేర్వేరు figures ఉంటాయి. Structurally, CIC విషయంలో లాగే ఇక్కడ కూడా ముఖ్యమైన పాయింట్ — ఈ numbers Parliament నుండి delink అయ్యాయి — ఇవి subordinate Rules మాత్రమే కాబట్టి, కొత్త Act అవసరం లేకుండానే Central Government వీటిని మళ్ళీ మార్చవచ్చు.</div>
+
+    <p class="eng"><b>2. Nationwide pattern — SICs chronically understaffed and backlogged:</b> The Satark Nagrik Sangathan's "RTI @ 20" Report Card, released around the Act's 20th anniversary in October 2025, put total pending appeals/complaints across all Central and State Information Commissions at roughly <b class="hlg">4.14 lakh (4,13,972)</b> as of <b class="hlg">30 June 2025</b>, with several commissions — including the SICs of Andhra Pradesh and Chhattisgarh, and even the central CIC at one point — <b class="imp">functioning without a sitting Chief Information Commissioner</b>. This is exactly the kind of practical, on-ground problem an APPSC candidate should connect back to the book's composition/tenure provisions: a Commission with sanctioned strength of 11 (1 SCIC + up to 10 SICs), left running with only a handful of members or none at the top, behaves very differently from a full-strength one even though the Act's text hasn't changed at all.</p>
+    <div class="te"><b>2. దేశవ్యాప్త pattern — SICs chronic గా understaffed, backlog తో నిండి ఉంటాయి:</b> RTI Act 20వ వార్షికోత్సవం సందర్భంగా 2025 అక్టోబర్‌లో వచ్చిన Satark Nagrik Sangathan "RTI @ 20" Report Card ప్రకారం, అన్ని Central, State Information Commissions కలిపి <b class="hlg">2025 జూన్ 30</b> నాటికి పెండింగ్ appeals/complaints సుమారు <b class="hlg">4.14 లక్షలు (4,13,972)</b> — ఇందులో Andhra Pradesh, Chhattisgarh SICs తో పాటు, ఒక దశలో central CIC కూడా <b class="imp">Chief Information Commissioner లేకుండానే</b> నడిచాయి. ఇది సరిగ్గా పుస్తకం composition/tenure నిబంధనలతో ఒక APPSC candidate connect చేయగల practical, ground-level సమస్య — Act టెక్స్ట్ అస్సలు మారకపోయినా, sanctioned strength 11 (1 SCIC + 10 SICs వరకు) ఉన్న ఒక Commission, కేవలం కొద్దిమంది members తోనో, పైన ఎవరూ లేకుండానో నడిస్తే చాలా వేరుగా పనిచేస్తుంది.</div>
+
+    <p class="eng"><b>3. Andhra Pradesh — backlog, then a headless Commission, then refilled:</b> An earlier SNS Report Card (covering July 2023-June 2024, published February 2025) showed pendency before the <b class="hlp">Andhra Pradesh Information Commission</b> nearly <b class="imp">tripling</b> in one year — from about <b class="hlg">3,245</b> (30 June 2023) to about <b class="hlg">10,809</b> (30 June 2024). By the time of the October 2025 "RTI @ 20" report, the AP Commission had gone a step further and was sitting <b class="imp">without any Chief Information Commissioner</b> at all. That gap has since been closed: on <b class="hlg">18 January 2026</b>, the state government appointed <b class="hlp">Vajja Srinivasa Rao</b>, a senior High Court advocate, as State Chief Information Commissioner, along with four new State Information Commissioners — <b class="hlp">Paravada Simhachalam Naidu</b>, <b class="hlp">Vonteru Ravi Babu</b>, <b class="hlp">Adenna Gajula</b>, and <b class="hlp">Sarath Chandra Kalyana Chakravarthy Vattikutti</b> — each for a three-year term or till age 65, whichever is earlier.</p>
+    <div class="te"><b>3. Andhra Pradesh — backlog, తర్వాత head లేని Commission, తర్వాత మళ్ళీ నింపడం:</b> ఇంతకుముందు వచ్చిన SNS Report Card (2023 జూలై-2024 జూన్ కాలానికి, 2025 ఫిబ్రవరిలో publish) ప్రకారం, <b class="hlp">Andhra Pradesh Information Commission</b> ముందు pendency ఒక్క సంవత్సరంలోనే దాదాపు <b class="imp">మూడు రెట్లు</b> పెరిగింది — 2023 జూన్ 30 నాటికి దాదాపు <b class="hlg">3,245</b> నుండి, 2024 జూన్ 30 నాటికి దాదాపు <b class="hlg">10,809</b> కు. 2025 అక్టోబర్ "RTI @ 20" report నాటికి, AP Commission ఇంకో మెట్టు దిగి <b class="imp">Chief Information Commissioner లేకుండానే</b> నడిచింది. ఆ ఖాళీ ఇప్పుడు పూరించారు — <b class="hlg">2026 జనవరి 18</b>న, రాష్ట్ర ప్రభుత్వం సీనియర్ High Court advocate <b class="hlp">Vajja Srinivasa Rao</b> ను State Chief Information Commissioner గా, వీరితో పాటు నలుగురు కొత్త State Information Commissioners — <b class="hlp">Paravada Simhachalam Naidu</b>, <b class="hlp">Vonteru Ravi Babu</b>, <b class="hlp">Adenna Gajula</b>, <b class="hlp">Sarath Chandra Kalyana Chakravarthy Vattikutti</b> — ముగ్గురు సంవత్సరాల term కు (లేదా 65 ఏళ్లు, ఏది ముందో అది) నియమించింది.</div>
+
+    <p class="eng"><b>4. Telangana — reconstituted, but still the slowest Commission in the country:</b> The <b class="hlp">Telangana State Information Commission</b> had gone <b class="imp">fully defunct from 24 February 2023</b> (its SCIC post had already been vacant since <b class="hlg">August 2020</b>), leaving citizens without an RTI appellate remedy in the state for an extended stretch. It was reconstituted in <b class="hlg">May 2025</b>, with <b class="hlp">G. Chandrasekhar Reddy</b> (a retired IFS officer) sworn in as SCIC alongside four new SICs — <b class="hlp">Boreddy Ayodhya Reddy</b>, <b class="hlp">P.V. Srinivasa Rao</b>, <b class="hlp">Mohsina Parveen</b>, and <b class="hlp">Deshala Ashok</b>. Yet the October 2025 "RTI @ 20" report found Telangana's disposal rate to be the <b class="imp">worst of any commission in India</b>: at the pace then prevailing, a case filed on 1 July 2025 would need roughly <b class="hlg">29 years</b> to be resolved, putting disposal around <b class="hlg">2054</b>. The lesson worth remembering distinctly from AP's story: AP's problem was "too few hands, too many cases," while Telangana shows that even a freshly reconstituted Commission can remain functionally clogged if the accumulated backlog is large enough.</p>
+    <div class="te"><b>4. Telangana — reconstitute అయినా, దేశంలోనే అత్యంత నెమ్మది Commission:</b> <b class="hlp">Telangana State Information Commission</b> <b class="hlg">2023 ఫిబ్రవరి 24</b> నుండి <b class="imp">పూర్తిగా defunct</b> అయింది (SCIC పోస్టు అప్పటికే <b class="hlg">2020 ఆగస్టు</b> నుండి ఖాళీగా ఉంది) — దీనివల్ల రాష్ట్రంలో citizens కు చాలా కాలం పాటు RTI appellate remedy లేకుండా పోయింది. <b class="hlg">2025 మే</b>లో ఇది reconstitute అయింది — రిటైర్డ్ IFS officer <b class="hlp">G. Chandrasekhar Reddy</b> SCIC గా, నలుగురు కొత్త SICs — <b class="hlp">Boreddy Ayodhya Reddy</b>, <b class="hlp">P.V. Srinivasa Rao</b>, <b class="hlp">Mohsina Parveen</b>, <b class="hlp">Deshala Ashok</b> — ప్రమాణ స్వీకారం చేశారు. అయినా, 2025 అక్టోబర్ "RTI @ 20" report ప్రకారం, Telangana disposal rate దేశంలోని అన్ని commissions లో <b class="imp">అత్యంత నెమ్మది</b>గా తేలింది — అప్పటి రేటు ప్రకారం, 2025 జూలై 1న ఫైల్ చేసిన కేసు పరిష్కారానికి సుమారు <b class="hlg">29 సంవత్సరాలు</b> పట్టవచ్చు — అంటే సుమారు <b class="hlg">2054</b> నాటికి. AP కథ నుండి వేరుగా గుర్తుంచుకోవాల్సిన పాఠం ఇదే — AP సమస్య "చేతులు తక్కువ, కేసులు ఎక్కువ" అయితే, Telangana చూపేది వేరే విషయం: కొత్తగా reconstitute అయినా, backlog చాలా పెద్దదైతే Commission ఇంకా practically stuck గానే ఉండిపోవచ్చు.</div>
+
+    <p class="eng"><b>5. Reading all this together, for the exam:</b> Every one of these episodes traces back to the same book-level provisions — the Governor's appointing role (needing the CM-led committee to actually convene), the fixed ceiling of "not more than ten" SICs, and the tenure rule that determines when a batch of terms lapses together. Treat the statutory framework — RTI Act 2005 plus the 2019 Amendment and its Rules — as the stable, examinable "core," and treat specific vacancy figures, backlog numbers and named office-holders as fast-changing current affairs to be re-verified nearer the exam.</p>
+    <div class="te"><b>5. Exam కోసం వీటన్నింటినీ కలిపి చూడటం:</b> ఈ ఎపిసోడ్లన్నీ ఈ chapter లో చూసిన అదే book-level నిబంధనల నుండే వస్తాయి — Governor appointing role (CM నేతృత్వంలోని committee నిజంగా సమావేశం కావాల్సి ఉంటుంది), "పది మందికి మించకుండా" అనే SICs fixed ceiling, commissioners batch term ఎప్పుడు కలిసి lapse అవుతుందో నిర్ణయించే tenure rule. విద్యార్థులు statutory framework ను — RTI Act 2005, 2019 Amendment, దాని Rules — స్థిరమైన, examinable "core" గా చూడాలి, నిర్దిష్ట vacancy figures, backlog numbers, పేర్లతో ఉన్న office-holders ను వేగంగా మారే current affairs గా భావించి, exam దగ్గరపడేకొద్దీ re-verify చేసుకోవాలి.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — AP &amp; Telangana SIC current affairs, 2020-2026</caption>
+      <thead><tr><th style="width:20%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">2019</td><td>RTI Rules, 2019 notified — SCIC/SIC term set at 3 years; salary ₹2,25,000/month for both</td></tr>
+        <tr><td class="hlg">Aug 2020</td><td>Telangana SCIC post falls vacant</td></tr>
+        <tr><td class="hlg">24 Feb 2023</td><td>Telangana SIC becomes fully defunct — all remaining ICs' terms lapse, none replaced</td></tr>
+        <tr><td class="hlg">30 Jun 2024</td><td>AP SIC pendency risen to ~10,809 (from ~3,245 a year earlier)</td></tr>
+        <tr><td class="hlg">Feb 2025</td><td>SNS "Report Card of Information Commissions 2023-24" publishes these figures</td></tr>
+        <tr><td class="hlg">May 2025</td><td>Telangana SIC reconstituted — G. Chandrasekhar Reddy (SCIC) + 4 new SICs take charge</td></tr>
+        <tr><td class="hlg">30 Jun 2025</td><td>~4.14 lakh appeals/complaints pending nationally (all commissions); AP SIC found without a CIC</td></tr>
+        <tr><td class="hlg">Oct 2025</td><td>SNS "RTI @ 20" Report Card — Telangana flagged as slowest-disposing commission nationally (~29-yr wait)</td></tr>
+        <tr><td class="hlg">18 Jan 2026</td><td>AP SIC vacancy filled — Vajja Srinivasa Rao (SCIC) + 4 new SICs appointed</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: cite the RTI Act, 2005 and the 2019 Amendment as the stable statutory core (composition, appointment, tenure, salary, removal, powers), and the RTI Rules, 2019's 3-year/₹2,25,000 figures as the specific-but-changeable subordinate detail. For current affairs, be ready for questions on (a) which state's SIC went defunct and for how long (Telangana, Feb 2023 to May 2025), (b) SIC vacancies and backlogs driving up wait times (AP's backlog nearly tripling in a year, and Telangana's ~29-year disposal estimate even after reconstitution, are strong illustrative figures), and (c) treating any named current office-holder — including AP's January 2026 appointees — as provisional, to be re-checked before the exam.</p>
+    <div class="te">Exam కోసం — RTI Act, 2005, 2019 Amendment ను స్థిరమైన statutory core గా (composition, appointment, tenure, salary, removal, powers), RTI Rules, 2019 3-సంవత్సరాలు/₹2,25,000 figures ను నిర్దిష్టమైనా మారగల subordinate detail గా ఉదహరించండి. Current affairs కోసం — (a) ఏ రాష్ట్రం SIC defunct అయింది, ఎంతకాలం (Telangana, 2023 ఫిబ్రవరి నుండి 2025 మే వరకు), (b) SIC vacancies, backlogs వల్ల wait times పెరగడం (AP backlog ఒక్క ఏడాదిలోనే దాదాపు మూడు రెట్లు పెరగడం, reconstitute అయినా Telangana ~29-సంవత్సరాల disposal estimate — రెండూ మంచి ఉదాహరణలు), (c) AP 2026 జనవరి నియామకాలతో సహా, పేరుతో ఉన్న ఏ current office-holder నైనా provisional గా భావించి, exam కు ముందు మళ్ళీ చెక్ చేసుకోవడం — ఇలాంటి MCQs కు సిద్ధంగా ఉండండి.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 63 — State Information Commission · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.64 — Central Vigilance Commission</span><span class="dpart">Part VIII &middot; Book 2 of 3</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

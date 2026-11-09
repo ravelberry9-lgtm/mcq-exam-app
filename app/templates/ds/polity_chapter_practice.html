@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+{% from "ds/polity_question_card.html" import question_card with context %}
+<main style="max-width: 65rem; margin: auto; padding: 1rem">
+  <nav><a href="{{ reader_url or url_for(reader_endpoint|default('polity.chapter_two_reader')) }}">Back to reading tabs</a></nav>
+  <h1>{{ chapter_title }}</h1>
+  {% if chapter_test_url %}<p><a href="{{ chapter_test_url }}">Whole-chapter test / మొత్తం అధ్యాయ సాధన పరీక్ష</a></p>{% endif %}
+  {% if pyqs %}
+  <h2>Verified APPSC Group II PYQs</h2>
+  {% for q in pyqs %}{{ question_card(q) }}{% endfor %}
+  {% endif %}
+  {% if pyq_review_url %}<p><a href="{{ pyq_review_url }}">Unscored Group 2 PYQs: wording and key review / స్కోరు లేని గత ప్రశ్నల సమీక్ష</a></p>{% endif %}
+  {% if related_pyqs %}
+  <h2>Related verified Group II PYQs / సంబంధిత ధృవీకరించిన గత ప్రశ్నలు</h2>
+  <p>Shared from their primary topics; not additional PYQ counts. / ప్రధాన అంశాల నుంచి అనుసంధానం; అదనపు గత ప్రశ్నల లెక్క కాదు.</p>
+  {% for q in related_pyqs %}
+    <p>Primary chapter / ప్రధాన అధ్యాయం: {{ pyq_mapping[q.id].primary_subchapter }}</p>
+    {{ question_card(q) }}
+  {% endfor %}
+  {% endif %}
+  {% if bank_pyqs %}
+  <h2>PYQ bank practice / గత ప్రశ్నల బ్యాంకు సాధన</h2>
+  <p>Exam details and recorded keys come from the source bank; original papers and final-key pairings have not been independently authenticated here. Study answers are reviewed separately. Flagged questions remain unscored.</p>
+  <p lang="te">పరీక్ష వివరాలు, నమోదైన కీలు మూల బ్యాంకు నుంచి తీసుకున్నవి; అసలు ప్రశ్నపత్రం–తుది కీ అనుసంధానాన్ని ఇక్కడ స్వతంత్రంగా ధ్రువీకరించలేదు. అధ్యయన సమాధానాలను విడిగా సమీక్షించాం. సందేహాలున్న ప్రశ్నలకు స్కోరు లేదు.</p>
+  {% for q in bank_pyqs %}
+  <article id="{{ q.id }}" data-scored="{{ 'true' if q.scored else 'false' }}">
+    {% for memory_map in unit6_maps_for(q.id) %}<p><a href="{{ url_for('polity_maps.page',map_id=memory_map.map_id) }}">See memory map / జ్ఞాపక పటం చూడండి</a></p>{% endfor %}
+    <h3>{{ q.exam }} · {{ q.year }} · {{ q.stage }}</h3>
+    <p>{{ q.paper }}{% if q.series_set %} · {{ q.series_set }}{% endif %} · Bank question label / బ్యాంకు ప్రశ్న సంఖ్య: {{ q.question_number }}</p>
+    <p><strong>{% if q.scored %}Study-scored practice / అధ్యయన స్కోరు సాధన{% else %}UNSCORED · {{ q.key_status }} / స్కోరు లేదు{% endif %}</strong></p>
+    <p lang="te" style="white-space:pre-line">{{ q.question_te }}</p>
+    <p lang="en" style="white-space:pre-line">{{ q.question_en }}</p>
+    <ol>{% for option in q.options_en %}<li><span lang="te">{{ q.options_te[loop.index0] }}</span><br><span lang="en">{{ option }}</span></li>{% endfor %}</ol>
+    <details><summary>Study answer and key status / అధ్యయన సమాధానం, కీ స్థితి</summary>
+      <p>Recorded key (unchanged) / నమోదైన కీ (మార్చలేదు): {{ q.official_key if q.official_key is not none else 'Not supplied / లేదు' }}</p>
+      <p>Reviewed study answer / సమీక్షించిన అధ్యయన సమాధానం: {{ q.study_answer if q.study_answer is not none else 'Unresolved / నిర్ధారణ కాలేదు' }}</p>
+      <p lang="te">{{ q.explanation_te }}</p><p lang="en">{{ q.explanation_en }}</p>
+      {% if q.verification_sources %}<ul aria-label="Verification sources">{% for source in q.verification_sources if source.startswith('https://') %}<li><a href="{{ source }}">Source {{ loop.index }}</a></li>{% endfor %}</ul>{% endif %}
+    </details>
+  </article>
+  {% endfor %}
+  {% endif %}
+  {% if expected %}
+  <h2>Expected Questions · PYQ-derived practice</h2>
+  {% for q in expected %}
+    <p>Derived from <a href="#{{ q.parent_pyq_id }}">{{ q.parent_pyq_id }}</a> · {% if q.sources.gbk.printed_page %}GBK p. {{ q.sources.gbk.printed_page }}{% else %}GBK passage matching pending / పుస్తక భాగం అనుసంధానం పెండింగ్{% endif %} · Laxmikanth Ch. {{ q.sources.laxmikanth.chapter }}</p>
+    {{ question_card(q) }}
+  {% endfor %}
+  {% endif %}
+  {% if questions %}<h2>Page-wise MCQs · పేజీల వారీ అభ్యాసం</h2>{% endif %}
+  <p>Coverage and chapter review in progress.</p>
+  <div style="white-space: pre-line">
+  {% for q in questions %}
+    {% if q.reused_from_chapter %}<p>Shared question from Chapter {{ q.reused_from_chapter }} / అదే ప్రశ్నను సంబంధిత అధ్యాయం నుంచి ఉపయోగిస్తున్నాం.</p>{% endif %}
+    {{ question_card(q) }}
+  {% endfor %}
+  </div>
+  {% if publisher_questions %}
+  <h2>Publisher exercises / ప్రచురణకర్తల సాధన ప్రశ్నలు</h2>
+  <p>Book exercises with reviewed study answers. Examination tags are not verified PYQ provenance. / సమీక్షించిన సమాధానాలతో పుస్తక సాధన ప్రశ్నలు. పరీక్ష పేర్లు ధృవీకరించిన గత ప్రశ్నలకు ఆధారం కావు.</p>
+  {% for q in publisher_questions %}
+    <p>{{ q.publisher_name|default('GBK') }} p. {{ q.publisher_source_page|default(q.gbk_page) }} · Printed key / ముద్రిత కీ: {{ q.printed_book_key }}{% if q.adapted_practice %} · Adapted practice / సవరించిన సాధన ప్రశ్న{% endif %}</p>
+    {{ question_card(q) }}
+  {% endfor %}
+  {% endif %}
+</main>
+{% endblock %}

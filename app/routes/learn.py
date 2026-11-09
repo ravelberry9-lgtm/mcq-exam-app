@@ -219,6 +219,10 @@ def _fresh_practice(slug, ch, live):
 
 @bp.route("/subject/<slug>")
 def subject(slug):
+    if slug == 'indian_constitution' and request.args.get('legacy') != '1':
+        from .polity_unit6 import enabled
+        if enabled():
+            return redirect(url_for('polity_unit6.home'))
     sub = Subject.query.filter_by(slug=slug).first_or_404()
     if sub.slug == syl.SUBJECT_SLUG and syl.is_loaded():
         return redirect(url_for("learn.ap_history"))

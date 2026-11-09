@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part X &mdash; Book 1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 81 — Elections</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Articles 324-329, Part XV — Full-Depth Bilingual Study Notes</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Part XV, Articles 324-329 — the Legal Skeleton of India's Electoral System</div>
+  <p class="eng"><b class="hlg">Part XV</b> of the Constitution, running from <b class="hlg">Article 324</b> to <b class="hlg">Article 329</b>, sets out the ground rules on which every Indian election actually runs. This chapter focuses on those working parts of the <b class="term">electoral system and process</b> — rolls, franchise, legislative competence, and the finality of election-related orders — rather than on the Election Commission's own make-up. The EC's <b>composition, appointment, tenure, removal and independence safeguards</b> under Article 324 are covered fully in <b class="hlb">Ch.43 — Election Commission</b> (see <i>deep_election_commission.html</i>, Part VII) and are only cross-referenced here where relevant.</p>
+  <div class="te"><b class="hlg">Part XV</b> (Article <b class="hlg">324</b> నుండి <b class="hlg">329</b> వరకు) — India ఎన్నికలు ఎలా జరుగుతాయో నిర్దేశించే మూల నియమాలను నిర్దేశిస్తుంది. ఈ chapter <b class="term">electoral system, process</b> లోని పని భాగాలపై దృష్టి పెడుతుంది — rolls, franchise, ఎవరు చట్టం చేయవచ్చు, delimitation orders finality వంటివి — EC సొంత composition గురించి కాదు. Article 324 కింద EC <b>composition, appointment, tenure, removal, independence safeguards</b> గురించి <b class="hlb">Ch.43 — Election Commission</b> (<i>deep_election_commission.html</i>, Part VII) లో పూర్తిగా చర్చించాం — ఇక్కడ అవసరమైనచోట మాత్రమే cross-reference చేస్తాం.</div>
+
+  <p class="eng">A <b class="term">single, common electoral roll</b> governs every territorial constituency for Parliament and state-legislature elections — a deliberate rejection of the old practice of separate, community-wise electorates, a system historically linked to the country's partition. Building on this, <b class="hlg">Article 325</b> bars keeping anyone off an electoral roll, or giving anyone a special roll, on the ground of <b>religion, race, caste or sex</b> — every citizen's claim to vote stands on identical footing regardless of these attributes.</p>
+  <div class="te">Parliament, state-legislature ఎన్నికల ప్రతి territorial constituency కూ ఒకే <b class="term">common electoral roll</b> వర్తిస్తుంది — ఇది పాత కాలంలో ఉండిన community-వారీ separate electorates పద్ధతిని ఉద్దేశపూర్వకంగా తిరస్కరించడమే, ఆ పద్ధతే దేశ విభజనతో చారిత్రకంగా ముడిపడి ఉంది. దీనికి కొనసాగింపుగా, <b class="hlg">Article 325</b> — <b>మతం, జాతి, కులం, లింగం</b> ఆధారంగా ఎవరినీ electoral roll నుండి తప్పించడాన్ని, లేదా ఎవరికైనా ప్రత్యేక roll ఇవ్వడాన్ని నిషేధిస్తుంది — ఈ లక్షణాలతో సంబంధం లేకుండా ప్రతి పౌరుడి ఓటు హక్కు క్లెయిమ్ ఒకేలా నిలుస్తుంది.</div>
+
+  <p class="eng">Lok Sabha and state-assembly elections rest on <b class="term">universal adult franchise</b> under <b class="hlg">Article 326</b>: any citizen aged <b class="hlg">18</b> or above can vote, unless disqualified by the Constitution or by an appropriate law on grounds such as non-residence, unsoundness of mind, or a crime/corrupt or illegal practice. (The voting age itself was brought down from 21 to 18 by the <b class="hlg">61st Amendment Act, 1988</b>, effective <b class="hlg">28 March 1989</b> — this fact and its link to the EC's own 1989 expansion are detailed in Ch.43.)</p>
+  <div class="te"><b class="hlg">Article 326</b> కింద, Lok Sabha, state-assembly ఎన్నికలు <b class="term">universal adult franchise</b> పైనే ఆధారపడతాయి — <b class="hlg">18</b> ఏళ్లు నిండిన ఏ పౌరుడైనా ఓటు వేయవచ్చు, non-residence, unsound mind, నేరం/corrupt లేదా illegal practice వంటి కారణాలపై Constitution లేదా తగిన చట్టం disqualify చేయకపోతే. (ఓటు వయసును 21 నుండి 18 కి తగ్గించింది <b class="hlg">61వ సవరణ చట్టం, 1988</b> — <b class="hlg">1989 మార్చి 28</b> నుండి అమల్లోకి వచ్చింది — దీని గురించి, దీనితో EC 1989 విస్తరణకు ఉన్న సంబంధం గురించి Ch.43 లో వివరంగా చూడండి.)</div>
+
+  <p class="eng">On who may legislate: <b class="hlg">Article 327</b> gives <b>Parliament</b> the lead power to make law on matters touching Parliament/state-legislature elections — covering electoral-roll preparation, delimitation of constituencies and everything else needed to properly constitute these Houses. <b class="hlg">Article 328</b> lets a <b>state legislature</b> also legislate on elections to its own House, but only to fill gaps Parliament's own law leaves open — a state law may <i>supplement</i> Parliament's law, never override it.</p>
+  <div class="te">ఎవరు చట్టం చేయవచ్చు అనే విషయంలో — <b class="hlg">Article 327</b>, Parliament/state-legislature ఎన్నికలకు సంబంధించిన విషయాల్లో — electoral-roll తయారీ, constituencies delimitation, ఈ Houses సరిగ్గా ఏర్పాటు కావడానికి అవసరమైన మిగతా అన్నింటిపై — చట్టం చేసే ప్రధాన అధికారాన్ని <b>Parliament</b> కు ఇస్తుంది. <b class="hlg">Article 328</b>, ఒక <b>state legislature</b> తన సొంత House ఎన్నికలపై కూడా చట్టం చేసుకోవడానికి అనుమతిస్తుంది — కానీ Parliament చట్టం వదిలేసిన ఖాళీలను పూరించడానికే — state చట్టం Parliament చట్టాన్ని <i>supplement</i> చేయవచ్చే తప్ప, దాన్ని override చేయజాలదు.</div>
+
+  <p class="eng"><b class="hlg">Article 329</b> then does two separate things. First, it puts delimitation-related orders beyond the reach of any court: the validity of a law on delimiting constituencies, or on allotting seats to them, cannot be questioned judicially at all — which is exactly why the Delimitation Commission's own orders, discussed fully in <b class="hlb">Ch.71 — Delimitation Commission</b> (see <i>deep_delimitation_commission.html</i>, Part VIII), carry final, unchallengeable force. Second, Article 329 closes off every other route to contest an election: the <b class="imp">only</b> way to challenge an election to Parliament or a state legislature is by filing an <b class="term">election petition</b>, in the manner the appropriate legislature's own law lays down. Since <b class="hlg">1966</b>, such petitions have been triable exclusively by <b>High Courts</b>, with any further appeal reaching only the <b>Supreme Court</b>.</p>
+  <div class="te"><b class="hlg">Article 329</b> రెండు వేర్వేరు పనులు చేస్తుంది. మొదటిది — delimitation-సంబంధిత orders ను ఏ కోర్టు పరిధికి అందకుండా చేస్తుంది — constituencies delimit చేసే లేదా వాటికి seats కేటాయించే చట్టం చెల్లుబాటును న్యాయపరంగా ప్రశ్నించలేరు — అందుకే Delimitation Commission orders (<b class="hlb">Ch.71</b>, <i>deep_delimitation_commission.html</i>, Part VIII లో పూర్తిగా చర్చించాం) చివరివిగా, challenge చేయలేనివిగా ఉంటాయి. రెండోది — ఎన్నికను సవాలు చేయడానికి ఇతర మార్గాలన్నింటినీ Article 329 మూసివేస్తుంది — Parliament లేదా state legislature ఎన్నికను సవాలు చేయడానికి <b class="imp">ఒకే</b> మార్గం — తగిన legislature చట్టం నిర్దేశించిన పద్ధతిలో <b class="term">election petition</b> దాఖలు చేయడం. <b class="hlg">1966</b> నుండి, ఇలాంటి petitions ను <b>High Courts</b> మాత్రమే విచారిస్తాయి, తదుపరి appeal <b>Supreme Court</b> కు మాత్రమే వెళ్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Articles 324-329</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What does Article 325 guarantee?</td><td>Electoral rolls must treat every citizen alike, regardless of religion/race/caste/sex</td></tr>
+      <tr><td>Basis of Lok Sabha/Assembly elections (Art. 326)?</td><td>Universal adult franchise, voting age 18 (61st CAA, 1988)</td></tr>
+      <tr><td>Who legislates on elections, and how do the two levels interact?</td><td>Parliament (Art. 327) leads; state legislature (Art. 328) only supplements, cannot override</td></tr>
+      <tr><td>Can a delimitation order be challenged in court?</td><td>No — Article 329 bars it entirely (see Ch.71 for the Delimitation Commission itself)</td></tr>
+      <tr><td>Only way to challenge an election result?</td><td>An election petition; tried by High Court (since 1966), appeal only to Supreme Court</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Article 323B and the Election-Tribunal Idea That Never Took Off</div>
+  <p class="eng"><b class="hlg">Article 323B</b> separately empowers the appropriate legislature (Parliament or a state legislature) to set up a <b class="term">tribunal</b> to adjudicate election disputes, and to bar every court's jurisdiction over such disputes except the Supreme Court's own special-leave appellate power. In practice, <b class="imp">no such tribunal has ever been created</b>. The ouster-of-jurisdiction idea itself also took a legal hit: in <b class="hlp">L. Chandra Kumar vs Union of India (1997)</b>, the Supreme Court declared this kind of jurisdiction-exclusion clause <b class="imp">unconstitutional</b>. The practical upshot: were an election tribunal ever actually set up under Article 323B, an appeal from its decision would still go to a High Court, rather than being cut off from ordinary judicial review altogether.</p>
+  <div class="te"><b class="hlg">Article 323B</b> వేరుగా, తగిన legislature (Parliament లేదా state legislature) కు — election disputes పరిష్కారానికి ఒక <b class="term">tribunal</b> ఏర్పాటు చేసే అధికారం, Supreme Court special-leave appellate power తప్ప మిగతా అన్ని కోర్టుల jurisdiction ను అలాంటి disputes పై నిషేధించే అధికారం ఇస్తుంది. ఆచరణలో, <b class="imp">ఇలాంటి tribunal ఎప్పుడూ ఏర్పాటు కాలేదు</b>. jurisdiction-మినహాయింపు ఆలోచనకే ఒక న్యాయపరమైన దెబ్బ తగిలింది — <b class="hlp">L. Chandra Kumar vs Union of India (1997)</b> కేసులో, ఇలాంటి jurisdiction-మినహాయింపు clause ను Supreme Court <b class="imp">రాజ్యాంగ విరుద్ధం</b> గా ప్రకటించింది. ఆచరణాత్మక ఫలితం — Article 323B కింద ఎప్పుడైనా election tribunal ఏర్పాటైతే, దాని తీర్పుపై appeal, సాధారణ న్యాయ సమీక్ష నుండి పూర్తిగా తప్పించుకోకుండా, High Court కే వెళ్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Article 323B &amp; the Tribunal</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What does Article 323B allow, and has it been used?</td><td>An election-dispute tribunal, with limited court oversight — never actually set up so far</td></tr>
+      <tr><td>What did L. Chandra Kumar (1997) rule?</td><td>The clause ousting court jurisdiction over such a tribunal is unconstitutional</td></tr>
+      <tr><td>Where would an appeal from such a tribunal go, per that ruling?</td><td>To a High Court</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Election Machinery (I) — Chief Electoral Officer &amp; District Election Officer</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Running an Election on the Ground — Below the Commission</div>
+  <p class="eng">Conducting a poll across a country the size of India takes far more hands than the Election Commission itself. Below the Commission sits a working chain of officers — each created, nominated or designated by the EC — that turns its directions into an actual poll, state by state, district by district and booth by booth. None of these officers are constitutional appointees in their own right; they operate entirely under the EC's superintendence.</p>
+  <div class="te">India అంత పెద్ద దేశంలో ఎన్నిక నిర్వహించడానికి, Election Commission ఒక్కటే సరిపోదు. Commission కింద ఒక పని చేసే chain ఉంటుంది — ప్రతి officer నూ EC సృష్టిస్తుంది, నామినేట్ లేదా designate చేస్తుంది — వీరే EC directions ను రాష్ట్రం, జిల్లా, booth స్థాయిలో నిజమైన ఎన్నికగా మారుస్తారు. వీరిలో ఎవరూ స్వతంత్రంగా constitutional appointees కారు — వీరంతా EC superintendence కిందే పనిచేస్తారు.</div>
+
+  <div class="stitle">Chief Electoral Officer (CEO)</div>
+  <p class="eng">At the state/UT level, a <b class="term">Chief Electoral Officer</b> supervises election-related work, subject to the EC's overall superintendence, direction and control. The EC nominates or designates this officer — an existing officer of that state/UT government — after consulting the state government or UT administration concerned.</p>
+  <div class="te">State/UT స్థాయిలో, <b class="term">Chief Electoral Officer</b> — EC superintendence, direction, control కు లోబడి ఎన్నికల పనిని పర్యవేక్షిస్తారు. ఈ officer ను — ఆ state/UT government లో ఇప్పటికే ఉన్న officer నే — సంబంధిత state government/UT administration తో సంప్రదించి EC నామినేట్ లేదా designate చేస్తుంది.</div>
+
+  <div class="stitle">District Election Officer (DEO)</div>
+  <p class="eng">One level down, a <b class="term">District Election Officer</b> supervises election work within a district. As with the CEO, the EC nominates or designates a state-government officer for this role, in consultation with the state government.</p>
+  <div class="te">దీనికి ఒక స్థాయి కింద, <b class="term">District Election Officer</b> — ఒక district లో ఎన్నికల పనిని పర్యవేక్షిస్తారు. CEO లాగే, state government officer ను ఈ పాత్రకు EC, state government తో సంప్రదించి నామినేట్ లేదా designate చేస్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — CEO &amp; DEO</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>CEO's level, and who appoints?</td><td>State/UT level; EC nominates/designates, consulting the state/UT government</td></tr>
+      <tr><td>DEO's level, and who appoints?</td><td>District level; EC nominates/designates a state-govt officer, consulting the state govt</td></tr>
+      <tr><td>Whose superintendence do both work under?</td><td>The Election Commission of India's</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Returning Officer (RO) &amp; Electoral Registration Officer (ERO)</div>
+  <p class="eng">For each parliamentary or assembly constituency, a <b class="term">Returning Officer</b> is answerable for how the election is actually conducted in that constituency — nominated or designated by the EC (an officer of the government or of a local authority), in consultation with the state government/UT administration. Working alongside is a separate <b class="term">Electoral Registration Officer</b>, responsible specifically for compiling the electoral roll of that constituency — appointed by the EC, again from government or local-authority ranks, in consultation with the state/UT government.</p>
+  <div class="te">ప్రతి parliamentary లేదా assembly constituency కు, <b class="term">Returning Officer</b> — ఆ constituency లో ఎన్నిక ఎలా జరిగిందో బాధ్యత వహిస్తారు — government లేదా local authority officer ను, state government/UT administration తో సంప్రదించి EC నామినేట్/designate చేస్తుంది. దీనితో పాటు, ఆ constituency electoral roll తయారీ బాధ్యత ప్రత్యేకంగా ఉన్న <b class="term">Electoral Registration Officer</b> ఉంటారు — government లేదా local-authority officer నే, state/UT government తో సంప్రదించి EC నియమిస్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — RO &amp; ERO</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>RO's responsibility?</td><td>Conducting the election in one parliamentary/assembly constituency</td></tr>
+      <tr><td>ERO's responsibility?</td><td>Preparing the electoral roll for that constituency</td></tr>
+      <tr><td>Who appoints both, and how?</td><td>The EC, consulting the state/UT government, drawing on govt/local-authority officers</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Presiding Officer &amp; the Booth-Level Poll</div>
+  <p class="eng">At the polling-booth level itself, a <b class="term">Presiding Officer</b>, helped by polling officers, actually conducts the poll on the day. The <b>District Election Officer</b> appoints both the Presiding Officers and the Polling Officers; in <b>Union Territories</b>, this appointment power instead rests with the Returning Officer.</p>
+  <div class="te">Polling-booth స్థాయిలో, <b class="term">Presiding Officer</b> — polling officers సహాయంతో — ఆ రోజు poll ను నిజంగా నిర్వహిస్తారు. Presiding Officers, Polling Officers ఇద్దరినీ <b>District Election Officer</b> నియమిస్తారు; <b>Union Territories</b> లో మాత్రం ఈ నియామక అధికారం Returning Officer కు ఉంటుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Presiding Officer</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who runs the poll at a single booth?</td><td>The Presiding Officer, assisted by polling officers</td></tr>
+      <tr><td>Who appoints Presiding/Polling Officers normally, and in UTs?</td><td>District Election Officer normally; Returning Officer in Union Territories</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Election Machinery (II) — Observers: General, Expenditure &amp; Police</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Observers — the EC's Eyes on the Ground</div>
+  <p class="eng">The Election Commission also nominates <b class="term">Observers</b> — government officers deployed to each parliamentary/assembly constituency to watch the process independently of the local machinery. The book groups these into <b class="hlg">three</b> distinct kinds, each with a different, non-overlapping brief.</p>
+  <div class="te">Election Commission, government officers నుండి <b class="term">Observers</b> నూ నామినేట్ చేస్తుంది — వీరిని ప్రతి parliamentary/assembly constituency కు, స్థానిక machinery నుండి స్వతంత్రంగా ప్రక్రియను గమనించడానికి deploy చేస్తారు. పుస్తకం వీటిని <b class="hlg">మూడు</b> వేర్వేరు రకాలుగా విభజిస్తుంది — ఒక్కోదానికీ వేరైన, overlap కాని బాధ్యత ఉంటుంది.</div>
+
+  <div class="stitle">1. General Observers</div>
+  <p class="eng">Deployed in adequate numbers across constituencies, <b class="term">General Observers</b> keep a close watch over every stage of the electoral process, so as to help ensure the election stays free and fair overall.</p>
+  <div class="te">Constituencies అంతటా తగినంత సంఖ్యలో deploy అయ్యే <b class="term">General Observers</b>, electoral process ప్రతి దశనూ నిశితంగా గమనిస్తారు — మొత్తంగా ఎన్నిక free, fair గా ఉండేలా చూడటానికి.</div>
+
+  <div class="stitle">2. Expenditure Observers</div>
+  <p class="eng"><b class="term">Expenditure Observers</b>, along with Assistant Expenditure Observers, keep a dedicated, exclusive watch on how much money each contesting candidate actually spends on the campaign.</p>
+  <div class="te"><b class="term">Expenditure Observers</b>, Assistant Expenditure Observers తో కలిసి — ప్రతి contesting candidate campaign పై ఎంత ఖర్చు చేస్తున్నారో ప్రత్యేకంగా, exclusive గా గమనిస్తారు.</div>
+
+  <div class="stitle">3. Police Observers</div>
+  <p class="eng"><b class="term">Police Observers</b> are <b class="hlb">IPS</b> officers posted at state and district level, wherever a constituency's sensitivity calls for it. Their brief covers force deployment and the law-and-order situation, and coordinating between the civil and police administration to help keep the election free and fair.</p>
+  <div class="te"><b class="term">Police Observers</b> — <b class="hlb">IPS</b> officers, constituency సున్నితత్వాన్ని బట్టి state, district స్థాయిలో పోస్ట్ చేస్తారు. వీరి బాధ్యత — force deployment, law-and-order పరిస్థితిని గమనించడం, civil, police administration మధ్య coordinate చేయడం — ఎన్నిక free, fair గా జరిగేలా చూడటానికి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Three Kinds of Observers</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>General Observers — role?</td><td>Watch every stage of the process, ensure overall free/fair conduct</td></tr>
+      <tr><td>Expenditure Observers — role?</td><td>Exclusively monitor candidate/party election expenditure</td></tr>
+      <tr><td>Police Observers — who are they, role?</td><td>IPS officers; monitor force deployment, law-and-order, civil-police coordination</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">The Full Machinery Chain, at a Glance</div>
+  <table>
+    <caption>Election machinery — level, officer, appointed by</caption>
+    <thead><tr><th style="width:24%">Level</th><th style="width:30%">Officer</th><th>Appointed/nominated by</th></tr></thead>
+    <tbody>
+      <tr><td>State/UT</td><td class="hlp">Chief Electoral Officer</td><td>EC, consulting state govt/UT administration</td></tr>
+      <tr><td>District</td><td class="hlp">District Election Officer</td><td>EC, consulting state government</td></tr>
+      <tr><td>Constituency</td><td class="hlp">Returning Officer</td><td>EC, consulting state govt/UT administration</td></tr>
+      <tr><td>Constituency</td><td class="hlp">Electoral Registration Officer</td><td>EC, consulting state/UT government</td></tr>
+      <tr><td>Polling booth</td><td class="hlp">Presiding Officer + polling officers</td><td>District Election Officer (Returning Officer in UTs)</td></tr>
+      <tr><td>Constituency (oversight)</td><td class="hlp">General / Expenditure / Police Observers</td><td>Election Commission of India</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Election Process (I) — Timing, Schedule, Notification, Nomination &amp; Oath</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Time of Elections — the Five-Year Clock</div>
+  <p class="eng">Both the Lok Sabha and every state Legislative Assembly must go to the polls at least once every <b class="hlg">five years</b>, sooner if dissolved earlier. The <b class="hlp">President</b> can dissolve the Lok Sabha and call a fresh general election before the five years run out, if the government of the day can no longer command the House's confidence and no alternative government is available to take its place.</p>
+  <div class="te">Lok Sabha, ప్రతి state Legislative Assembly కూ కనీసం <b class="hlg">ఐదు సంవత్సరాలకు</b> ఒకసారి ఎన్నికలు జరగాలి, ముందుగా రద్దయితే త్వరగా జరుగుతాయి. ప్రస్తుత ప్రభుత్వం House confidence కోల్పోయి, ప్రత్యామ్నాయ ప్రభుత్వం అందుబాటులో లేకపోతే, ఐదేళ్లు ముగియకముందే <b class="hlp">President</b> Lok Sabha ను రద్దు చేసి కొత్త general election పిలవవచ్చు.</div>
+
+  <div class="stitle">Schedule of Elections</div>
+  <p class="eng">Once the five-year clock runs out — or a House is dissolved and fresh elections called — the Election Commission sets its machinery in motion. The Constitution allows <b class="imp">no more than six months</b> to pass between the last sitting of the outgoing Lok Sabha and the first sitting of the new one, so the whole exercise must be wrapped up comfortably inside that window. In practice, the Commission typically unveils the schedule at a major press conference some weeks before the formal process begins — and the moment that announcement is made, the <b class="term">Model Code of Conduct</b> (detailed on the next page) automatically comes into force for candidates and parties.</p>
+  <div class="te">ఐదేళ్ల గడువు ముగిసినప్పుడు — లేదా House రద్దయి కొత్త ఎన్నికలు పిలిచినప్పుడు — Election Commission తన machinery ను కదిలిస్తుంది. పాత Lok Sabha చివరి సమావేశం, కొత్త House మొదటి సమావేశం మధ్య <b class="imp">ఆరు నెలలు మించి</b> గడవకూడదని Constitution చెప్తుంది — కాబట్టి మొత్తం ప్రక్రియ ఆ వ్యవధిలోనే పూర్తి కావాలి. ఆచరణలో, Commission సాధారణంగా formal process మొదలయ్యే కొన్ని వారాల ముందు ఒక పెద్ద press conference లో schedule ప్రకటిస్తుంది — ఆ ప్రకటన వచ్చిన వెంటనే, candidates, parties కు <b class="term">Model Code of Conduct</b> (తర్వాతి పేజీలో వివరంగా) వెంటనే అమల్లోకి వస్తుంది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Timing &amp; Schedule</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Normal term of Lok Sabha/Assembly?</td><td>5 years, unless dissolved earlier</td></tr>
+      <tr><td>When can the President dissolve the Lok Sabha early?</td><td>Govt loses the House's confidence, and no alternative govt is available</td></tr>
+      <tr><td>Max gap allowed between old LS's last sitting and new LS's first?</td><td>6 months</td></tr>
+      <tr><td>When does the MCC come into force?</td><td>Immediately on the EC's schedule announcement</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Notification, Nomination, Scrutiny &amp; Withdrawal</div>
+  <p class="eng">The formal process itself opens with a <b class="term">Notification</b> (or set of Notifications) calling on the electorate to choose the members of a House. From that point, candidates get roughly a <b class="hlg">week</b> to file nominations in whichever constituency they wish to contest. <b>Returning Officers</b> scrutinise every nomination and may reject a defective one after a brief hearing; a validly nominated candidate may still withdraw within <b class="hlg">two days</b> of that scrutiny being completed.</p>
+  <div class="te">Formal process ఒక <b class="term">Notification</b> (లేదా Notifications సమూహం) తో మొదలవుతుంది — House సభ్యులను ఎన్నుకోమని electorate కు పిలుపు ఇస్తూ. అప్పటి నుండి, contest చేయాలనుకున్న constituency లో nominations దాఖలు చేయడానికి candidates కు దాదాపు ఒక <b class="hlg">వారం</b> సమయం ఉంటుంది. <b>Returning Officers</b> ప్రతి nomination ను పరిశీలించి, లోపం ఉంటే క్లుప్తంగా విచారించిన తర్వాత తిరస్కరించవచ్చు; సరిగ్గా nominate అయిన candidate, scrutiny పూర్తయిన <b class="hlg">రెండు రోజుల్లో</b> withdraw చేసుకోవచ్చు.</div>
+
+  <div class="stitle">Oath or Affirmation</div>
+  <p class="eng">Before contesting, a candidate must also make and subscribe an <b class="term">oath or affirmation</b>, administered by an officer the EC has authorised for this purpose — typically the Returning Officer or the Assistant Returning Officer of that constituency. This must be done in person, ordinarily right after filing the nomination papers, and in any event no later than the day before scrutiny takes place.</p>
+  <div class="te">Contest చేయడానికి ముందు, candidate EC అధీకృత officer ముందు — సాధారణంగా ఆ constituency Returning Officer లేదా Assistant Returning Officer ముందు — <b class="term">oath లేదా affirmation</b> చేసి సంతకం చేయాలి. ఇది స్వయంగా, సాధారణంగా nomination papers సమర్పించిన వెంటనే, ఏ పరిస్థితిలోనూ scrutiny కంటే ఒక రోజు ముందు వరకే చేయాలి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Notification to Oath</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What formally opens the election process?</td><td>A Notification (or Notifications) calling for election</td></tr>
+      <tr><td>Time given for filing nominations?</td><td>About a week</td></tr>
+      <tr><td>Who scrutinises nominations, and can reject how?</td><td>Returning Officer — after a summary hearing, if defective</td></tr>
+      <tr><td>Withdrawal window after scrutiny?</td><td>Within 2 days</td></tr>
+      <tr><td>Oath/affirmation — by when, before whom?</td><td>Right after nomination, no later than the day before scrutiny; before RO/ARO</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Election Process (II) — Campaign Period &amp; the Model Code of Conduct</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">The Campaign Period</div>
+  <p class="eng">The <b class="term">campaign</b> is the stretch during which parties put their candidates and their case before voters, hoping to win their support. The <b>official</b> campaign period runs for at least <b class="hlg">two weeks</b> from when the list of validly nominated candidates is drawn up, and by convention it closes <b class="hlg">48 hours</b> before polling ends in that constituency.</p>
+  <div class="te"><b class="term">Campaign</b> అంటే — parties తమ candidates ను, వాదనలను voters ముందు పెట్టి, మద్దతు కోరుకునే సమయం. <b>Official</b> campaign period, సరిగ్గా nominate అయిన candidates జాబితా తయారైనప్పటి నుండి కనీసం <b class="hlg">రెండు వారాలు</b> కొనసాగుతుంది, ఆ constituency లో polling ముగియడానికి <b class="hlg">48 గంటల ముందు</b> ఆచరణ ప్రకారం ముగుస్తుంది.</div>
+
+  <div class="stitle">Model Code of Conduct (MCC) — Purpose &amp; Content</div>
+  <p class="eng">Throughout this period, parties and candidates are expected to hold to a <b class="term">Model Code of Conduct (MCC)</b> — guidelines the Election Commission has built up over time, resting on a broad <b>consensus among political parties</b> themselves rather than on any single statute. Its underlying purpose is to keep campaigning on healthy, civil lines: heading off clashes between rival camps, preserving peace both during the campaign and after results are declared, and — crucially — stopping whichever party happens to be in power, at the Centre or in a state, from turning its official position into a campaign advantage, so every contestant gets a genuinely level field.</p>
+  <div class="te">ఈ కాలంలో, parties, candidates <b class="term">Model Code of Conduct (MCC)</b> పాటించాలని అంచనా — ఇవి కాలక్రమేణా Election Commission రూపొందించిన guidelines, ఏదో ఒక చట్టం మీద కాకుండా, political parties మధ్య విస్తృత <b>consensus</b> మీద ఆధారపడినవి. దీని ముఖ్య ఉద్దేశం — campaign ను ఆరోగ్యకరమైన, civil పద్ధతిలో ఉంచడం — ప్రత్యర్థి వర్గాల మధ్య conflicts నివారించడం, campaign సమయంలో, ఫలితాలు వచ్చాక కూడా శాంతి కాపాడటం — ముఖ్యంగా, Centre లో లేదా state లో అధికారంలో ఉన్న పార్టీ తన official position ను campaign advantage గా మార్చుకోకుండా ఆపడం — తద్వారా ప్రతి contestant కూ నిజమైన level field దొరుకుతుంది.</div>
+
+  <p class="eng">Once an election is called, parties typically release <b>manifestos</b> setting out what they would do in office, while also using <b>rallies and public meetings</b> to build support for their own side and, often, to attack rivals' records.</p>
+  <div class="te">ఎన్నిక పిలిచిన తర్వాత, parties సాధారణంగా అధికారంలోకి వస్తే ఏం చేస్తారో తెలిపే <b>manifestos</b> విడుదల చేస్తాయి, తమ మద్దతును పెంచుకోవడానికి, తరచుగా ప్రత్యర్థుల రికార్డును విమర్శించడానికి <b>rallies, public meetings</b> ను కూడా వాడుకుంటాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Campaign &amp; MCC</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Minimum official campaign length?</td><td>At least 2 weeks from the nominated-candidates list</td></tr>
+      <tr><td>When does official campaigning close?</td><td>48 hours before polling ends in that constituency</td></tr>
+      <tr><td>What is the MCC's legal basis?</td><td>Consensus among political parties — not a single statute</td></tr>
+      <tr><td>Key MCC guardrail on the ruling party?</td><td>Bars using official position for campaign advantage</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Election Process (III) — Polling Days, Ballot Papers/Symbols &amp; EVMs</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Polling Days — Why Voting Is Staggered</div>
+  <p class="eng">Polling across the country's many constituencies is normally spread over <b>several different days</b> rather than held everywhere at once. This staggering gives security forces and election monitors the room they need to keep order, and to keep the process honest, wherever they happen to be deployed at a given time.</p>
+  <div class="te">దేశంలోని అనేక constituencies లో polling సాధారణంగా అన్ని చోట్ల ఒకేసారి కాకుండా <b>వేర్వేరు రోజుల్లో</b> జరుగుతుంది. ఈ staggering వల్ల, security forces, ఎన్నికలను గమనించేవారు — ఏ సమయంలో ఎక్కడ deploy అయినా — శాంతిభద్రతలు కాపాడటానికి, ప్రక్రియ నిజాయితీగా జరిగేలా చూడటానికి తగినంత వ్యవధి దొరుకుతుంది.</div>
+
+  <div class="stitle">Ballot Papers &amp; Symbols</div>
+  <p class="eng">Once nominations are finalised, the Returning Officer prepares the list of contesting candidates, and ballot papers are printed showing each candidate's name — in whichever languages the EC has specified for that state — along with the symbol allotted to them. Candidates fielded by a <b>recognised party</b> carry that party's own reserved symbol.</p>
+  <div class="te">Nominations ఖరారైన తర్వాత, Returning Officer contesting candidates జాబితా తయారు చేస్తారు, ballot papers ను — EC ఆ రాష్ట్రానికి నిర్దేశించిన భాషల్లో — ప్రతి candidate పేరు, వారికి కేటాయించిన symbol తో ముద్రిస్తారు. <b>గుర్తింపు పొందిన party</b> నుండి పోటీ చేసే candidates కు ఆ పార్టీ సొంత reserved symbol లభిస్తుంది.</div>
+
+  <div class="stitle">Electronic Voting Machines (EVMs) — How They Arrived</div>
+  <p class="eng">Ballot boxes have been steadily replaced by <b class="hlb">Electronic Voting Machines (EVMs)</b> since <b class="hlg">1998</b>. By <b class="hlg">2003</b>, every state election and by-election was being run on EVMs, and building on that experience, the Commission took the milestone decision to run the entire <b class="hlg">2004</b> Lok Sabha general election on EVMs alone — <b class="imp">over a million</b> machines were deployed for that one election.</p>
+  <div class="te">ballot boxes స్థానంలో <b class="hlg">1998</b> నుండి క్రమంగా <b class="hlb">Electronic Voting Machines (EVMs)</b> వచ్చాయి. <b class="hlg">2003</b> నాటికి, ప్రతి state election, by-election EVMs మీదే జరిగింది, ఈ అనుభవంతో, <b class="hlg">2004</b> Lok Sabha general election మొత్తాన్ని EVMs మీదే నిర్వహించాలని Commission ఒక చారిత్రక నిర్ణయం తీసుకుంది — ఆ ఒక్క ఎన్నికలోనే <b class="imp">10 లక్షలకు పైగా</b> machines వాడారు.</div>
+
+  <div class="stitle">What an EVM Is, and Its Advantages</div>
+  <p class="eng">An <b class="term">EVM</b> is simply an electronic device that records a vote directly, replacing the older ballot-paper-and-box system. Its commonly cited advantages include: cutting out <b>invalid or doubtful ballots</b> — traditionally a major source of disputes and election petitions; making the <b>count</b> itself far quicker than a manual paper count; sharply cutting <b>paper use</b> (saving trees, making the process more eco-friendly); and lowering printing cost, since a polling station now needs only a single ballot sheet loaded into the machine, rather than a large printed stock.</p>
+  <div class="te"><b class="term">EVM</b> అంటే — ఓటు నేరుగా నమోదు చేసే ఒక ఎలక్ట్రానిక్ పరికరం, పాత ballot-paper-and-box పద్ధతి స్థానంలో వచ్చింది. దీని ప్రయోజనాలు — <b>invalid, doubtful ballots</b> ను తొలగించడం — ఇవి సాంప్రదాయకంగా disputes, election petitions కు ప్రధాన కారణం; <b>counting</b> ను manual paper counting కంటే చాలా వేగంగా చేయడం; <b>paper వాడకాన్ని</b> బాగా తగ్గించడం (చెట్లు కాపాడటం, eco-friendly చేయడం); printing ఖర్చు తగ్గడం — ఎందుకంటే ఇప్పుడు ఒక్క polling station కు machine లో పెట్టే ఒక్క ballot sheet చాలు, పెద్ద ముద్రిత stock అవసరం లేదు.</div>
+
+  <div class="stitle">VVPAT — The Paper-Trail Backup to the EVM</div>
+  <p class="eng">Alongside the EVM sits the <b class="term">Voter Verifiable Paper Audit Trail (VVPAT)</b> — a printer attached to the EVM that prints a slip showing the symbol and name of the candidate voted for, visible to the voter for a few seconds through a window before it drops into a sealed box, letting the voter confirm the machine recorded the intended vote. VVPAT was first field-tried in <b class="hlg">2013</b>, in the Noksen assembly constituency of Nagaland, and the Supreme Court mandated its phased, government-funded rollout in <b class="hlp">Dr Subramanian Swamy vs Election Commission of India (2013)</b>. Rollout reached <b class="imp">all polling stations nationwide by 2017</b>, so every EVM used in a general election has been paired with a VVPAT since the <b class="hlg">2019</b> Lok Sabha election onward.</p>
+  <div class="te">EVM తోపాటు <b class="term">Voter Verifiable Paper Audit Trail (VVPAT)</b> ఉంటుంది — EVM కు జతచేసిన ఒక printer, ఓటు వేసిన candidate పేరు, గుర్తు చూపే ఒక slip ప్రింట్ చేస్తుంది, ఇది కొన్ని సెకన్ల పాటు voter కు window ద్వారా కనిపించి, తర్వాత సీల్ చేసిన బాక్స్ లో పడిపోతుంది — దీనివల్ల machine తాను అనుకున్న ఓటునే నమోదు చేసిందని voter నిర్ధారించుకోవచ్చు. VVPAT ను మొదటిసారి <b class="hlg">2013</b> లో Nagaland లోని Noksen assembly constituency లో field-trial చేశారు, దీని దశలవారీ, ప్రభుత్వ-నిధులతో కూడిన rollout ను <b class="hlp">Dr Subramanian Swamy vs Election Commission of India (2013)</b> కేసులో Supreme Court mandate చేసింది. <b class="imp">2017</b> నాటికి దేశవ్యాప్తంగా అన్ని polling stations కు rollout చేరుకుంది — కాబట్టి <b class="hlg">2019</b> Lok Sabha ఎన్నిక నుండి, general election లో వాడిన ప్రతి EVM కూ VVPAT జతచేయబడింది.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Polling Days, Symbols, EVMs &amp; VVPAT</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Why is polling staggered across days?</td><td>Lets security/monitoring resources be deployed effectively, constituency by constituency</td></tr>
+      <tr><td>Who gets a party symbol on the ballot?</td><td>Candidates of recognised parties (their party's reserved symbol)</td></tr>
+      <tr><td>When did EVM use begin, and become universal for state polls?</td><td>Began 1998; all state elections/by-elections on EVM by 2003</td></tr>
+      <tr><td>First Lok Sabha election run entirely on EVMs?</td><td>2004 — over 1 million EVMs deployed</td></tr>
+      <tr><td>Name two EVM advantages over paper ballots.</td><td>Eliminates invalid/doubtful votes; much faster counting (also: less paper, lower cost)</td></tr>
+      <tr><td>VVPAT — what is it, and case that mandated it?</td><td>EVM-attached paper-slip printer for vote verification; Subramanian Swamy vs ECI (2013)</td></tr>
+      <tr><td>VVPAT — first trial and full nationwide rollout?</td><td>2013 (Noksen, Nagaland) trial; 100% rollout by 2017, universal from 2019 LS poll</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Election Process (IV) — Voting Procedure, Media Coverage &amp; Opinion/Exit Polls</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Voting Procedure — What Happens at the Booth</div>
+  <p class="eng">Voting is by <b class="term">secret ballot</b>. Polling booths are usually set up in public buildings — schools and community halls are typical. The Commission's officials aim to keep every voter within about <b class="hlg">two kilometres</b> of a polling station, while capping each station's electorate at roughly <b class="hlg">1,200 voters</b>; every station stays open for at least <b class="hlg">eight hours</b> on polling day.</p>
+  <div class="te">Voting <b class="term">secret ballot</b> పద్ధతిలో జరుగుతుంది. Polling booths సాధారణంగా public buildings లో — schools, community halls లాంటివి — ఏర్పాటు చేస్తారు. Commission officials, ప్రతి voter కూ దాదాపు <b class="hlg">రెండు కిలోమీటర్ల</b> లోపు polling station ఉండేలా, ఒక్కో station కు దాదాపు <b class="hlg">1,200 voters</b> మించకుండా చూస్తారు; ప్రతి station polling రోజున కనీసం <b class="hlg">ఎనిమిది గంటలు</b> తెరిచి ఉంటుంది.</div>
+
+  <p class="eng">On arrival, a voter's name is checked against the <b>electoral roll</b> and an identity document is verified; an <b class="term">indelible-ink</b> mark goes on the left forefinger, a voter slip is handed over, and the voter then casts the vote by pressing the ballot button on the control unit, with the presiding officer's assistance.</p>
+  <div class="te">వచ్చిన వెంటనే, voter పేరును <b>electoral roll</b> తో సరిపోల్చి, identity document verify చేస్తారు; ఎడమ చూపుడు వేలికి <b class="term">indelible-ink</b> గుర్తు వేస్తారు, voter slip ఇస్తారు, తర్వాత voter — presiding officer సహాయంతో — control unit లో ballot button నొక్కి ఓటు వేస్తారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Voting Procedure</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Max distance to a polling station, target?</td><td>~2 km from every voter</td></tr>
+      <tr><td>Max voters per polling station, target?</td><td>~1,200</td></tr>
+      <tr><td>Minimum hours a station stays open?</td><td>8 hours</td></tr>
+      <tr><td>Checks done before a vote is cast?</td><td>Roll check + ID verification + indelible ink + voter slip</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Media Coverage, Opinion Polls &amp; Exit Polls</div>
+  <p class="eng">To keep the process visible, media personnel get special passes to cover both polling booths and counting halls — always subject to preserving the <b class="imp">secrecy of the vote</b> itself. Media houses also remain free to run <b class="term">opinion polls</b>, but the EC bars publishing their results in the window between <b class="hlg">two days before</b> polling begins and the close of polling in any constituency involved. <b class="term">Exit polls</b> face a lighter restriction — their results may be published only from <b class="hlg">half an hour</b> after voting ends on the last day of that election.</p>
+  <div class="te">ప్రక్రియ కనిపించేలా ఉండటానికి, media personnel కు polling booths, counting halls రెండింటినీ కవర్ చేయడానికి ప్రత్యేక passes ఇస్తారు — అయితే ఓటు <b class="imp">secrecy</b> కు లోబడే. Media houses <b class="term">opinion polls</b> నిర్వహించడానికి స్వేచ్ఛగా ఉంటాయి, కానీ పోలింగ్ మొదలవడానికి <b class="hlg">రెండు రోజుల ముందు</b> నుండి, ఏ constituency లోనైనా పోలింగ్ ముగిసే వరకు, వాటి ఫలితాలను ప్రచురించడాన్ని EC నిషేధిస్తుంది. <b class="term">Exit polls</b> కు కొంచెం తేలికైన నియంత్రణ ఉంది — ఆ ఎన్నిక చివరి రోజు polling ముగిసిన <b class="hlg">అరగంట తర్వాత</b> నుండే వాటి ఫలితాలు ప్రచురించవచ్చు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Media, Opinion &amp; Exit Polls</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Opinion-poll publication ban — window?</td><td>2 days before polling starts, till the close of polling in that constituency</td></tr>
+      <tr><td>Exit-poll publication — allowed from when?</td><td>Half an hour after voting ends, on the last day of that election</td></tr>
+      <tr><td>What must media coverage always respect?</td><td>Secrecy of the vote</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 8 ═══════════ -->
+<div class="page">
+<div class="sub">Election Process (V) — Counting, FPTP, Election Petitions &amp; Table 81.2</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Counting of Votes &amp; First-Past-the-Post</div>
+  <p class="eng">Once polling ends, the votes recorded in the EVMs are counted under the joint watch of the <b>Returning Officer</b> and the Commission's <b>Observers</b>. The Returning Officer then declares whichever candidate has polled the largest number of votes as the winner, returned by that constituency to the House concerned.</p>
+  <div class="te">Polling ముగిసిన తర్వాత, EVMs లో నమోదైన votes ను <b>Returning Officer</b>, Commission <b>Observers</b> ఇద్దరి పర్యవేక్షణలో లెక్కిస్తారు. ఎక్కువ ఓట్లు పొందిన candidate ను, ఆ constituency నుండి సంబంధిత House కు ఎన్నికైన వ్యక్తిగా Returning Officer ప్రకటిస్తారు.</div>
+
+  <p class="eng">Both Lok Sabha and state-assembly elections run on a <b class="term">first-past-the-post (FPTP)</b> system: the country (or state) is broken into single-member territorial constituencies, each elector gets one vote, and simply polling more votes than any rival — not any particular share of the total — is enough to win. Once every constituency's result is in, the Commission compiles the full list of elected members and issues a notification formally constituting the House, after which the <b class="hlp">President</b> (for the Lok Sabha) or the <b class="hlp">Governor</b> concerned (for a state Assembly) can summon that House into session.</p>
+  <div class="te">Lok Sabha, state-assembly ఎన్నికలు రెండూ <b class="term">first-past-the-post (FPTP)</b> పద్ధతిలో జరుగుతాయి — దేశాన్ని (లేదా రాష్ట్రాన్ని) single-member territorial constituencies గా విభజిస్తారు, ప్రతి elector కు ఒక్క ఓటు ఉంటుంది, గెలవడానికి — మొత్తంలో ఎంత శాతం అనేది కాదు — ప్రత్యర్థుల కంటే ఎక్కువ ఓట్లు పొందితే చాలు. ప్రతి constituency ఫలితం వచ్చిన తర్వాత, Commission ఎన్నికైన సభ్యుల పూర్తి జాబితా తయారు చేసి, House ను అధికారికంగా ఏర్పాటు చేస్తూ notification జారీ చేస్తుంది — తర్వాత Lok Sabha కు <b class="hlp">President</b>, state Assembly కు సంబంధిత <b class="hlp">Governor</b> ఆ House ను సమావేశపరచవచ్చు.</div>
+
+  <div class="stitle">Election Petitions — Contesting a Result</div>
+  <p class="eng">Any elector or candidate who suspects malpractice can challenge that specific election's result by filing an <b class="term">election petition</b> — treated in law not as an ordinary civil suit but as a dispute involving the entire constituency's electorate. As already noted on Page 1, it is the concerned state's <b>High Court</b> where such a petition gets tried, and a successful petition can even lead to a <b>fresh election</b> being ordered in that constituency.</p>
+  <div class="te">malpractice అనుమానం ఉన్న ఏ elector లేదా candidate అయినా, ఆ నిర్దిష్ట ఎన్నిక ఫలితాన్ని <b class="term">election petition</b> దాఖలు చేసి సవాలు చేయవచ్చు — దీన్ని చట్టపరంగా ఒక సాధారణ civil suit గా కాకుండా, ఆ constituency electorate మొత్తానికి సంబంధించిన వివాదంగా పరిగణిస్తారు. Page 1 లో చెప్పినట్టుగా, ఇలాంటి petitions ను సంబంధిత రాష్ట్ర <b>High Court</b> విచారిస్తుంది, petition విజయవంతమైతే ఆ constituency లో <b>మళ్ళీ ఎన్నిక</b> కూడా జరగవచ్చు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Counting, FPTP &amp; Petitions</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who declares the winner, on what basis?</td><td>Returning Officer — candidate with the largest number of votes</td></tr>
+      <tr><td>Electoral system used for LS/Assembly elections?</td><td>First-past-the-post, single-member constituencies</td></tr>
+      <tr><td>Who summons the new House into session?</td><td>President (Lok Sabha) / Governor (state Assembly)</td></tr>
+      <tr><td>What is an election petition treated as, in law?</td><td>Not an ordinary civil suit — a dispute involving the whole constituency</td></tr>
+      <tr><td>Possible outcome of a successful petition?</td><td>A fresh election ordered in that constituency</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Table 81.2 — Quick Index of Election-Related Articles</div>
+  <table>
+    <caption>Part XV election-related Articles — index</caption>
+    <thead><tr><th style="width:16%">Article</th><th>Subject-matter</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">324</td><td>Superintendence, direction and control of elections vested in the Election Commission</td></tr>
+      <tr><td class="hlg">325</td><td>Electoral rolls must treat every citizen alike, regardless of religion/race/caste/sex</td></tr>
+      <tr><td class="hlg">326</td><td>Elections to Lok Sabha and state Assemblies on the basis of adult suffrage</td></tr>
+      <tr><td class="hlg">327</td><td>Parliament's power to legislate on elections to the Legislatures</td></tr>
+      <tr><td class="hlg">328</td><td>State legislature's power to legislate on elections to itself</td></tr>
+      <tr><td class="hlg">329</td><td>Bar to court interference in electoral matters</td></tr>
+      <tr><td class="hlg">329A</td><td>Special provision on elections of PM/Speaker (Repealed)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 9 ═══════════ -->
+<div class="page">
+<div class="sub">Table 81.1 — Lok Sabha General Election Results, at a Glance</div>
+
+<div class="para">
+  <div class="ptitle" style="margin-top:0">Table 81.1 — Lok Sabha General Elections, Seats Won</div>
+  <p class="eng">The book's own results table tracks every Lok Sabha general election through the <b class="hlg">Seventeenth (2019)</b>. Seats of very small parties and independents are left out for compactness; only leading parties/fronts are shown per election.</p>
+  <div class="te">పుస్తకంలోని results table, Lok Sabha ప్రతి general election ను <b class="hlg">Seventeenth (2019)</b> వరకు ట్రాక్ చేస్తుంది. చిన్న పార్టీలు, independents seats ను క్లుప్తత కోసం వదిలేశారు; ప్రతి ఎన్నికకూ ప్రధాన పార్టీలు/fronts మాత్రమే చూపిస్తున్నాం.</div>
+
+  <table style="font-size:12.3px">
+    <caption>General elections to the Lok Sabha — elective seats &amp; leading parties</caption>
+    <thead><tr><th style="width:16%">Election (Year)</th><th style="width:10%">Seats</th><th>Leading parties (seats won)</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">First (1952)</td><td>489</td><td>Congress 364, Communist 16, Socialist 12</td></tr>
+      <tr><td class="hlg">Second (1957)</td><td>494</td><td>Congress 371, Communist 27, Praja Socialist 19</td></tr>
+      <tr><td class="hlg">Third (1962)</td><td>494</td><td>Congress 361, Communist 29, Swatantra 18</td></tr>
+      <tr><td class="hlg">Fourth (1967)</td><td>520</td><td>Congress 283, Swatantra 44, Jana Sangh 35</td></tr>
+      <tr><td class="hlg">Fifth (1971)</td><td>518</td><td>Congress 352, CPM 25, CPI 24</td></tr>
+      <tr><td class="hlg">Sixth (1977)</td><td>542</td><td>Janata 298, Congress 154, CPM 22</td></tr>
+      <tr><td class="hlg">Seventh (1980)</td><td>542</td><td>Congress 197, Janata Dal 141, BJP 86</td></tr>
+      <tr><td class="hlg">Tenth (1991)</td><td>543</td><td>Congress 232, BJP 119, Janata Dal 59</td></tr>
+      <tr><td class="hlg">Eleventh (1996)</td><td>543</td><td>BJP 161, Congress 140, Janata Dal 46</td></tr>
+      <tr><td class="hlg">Twelfth (1998)</td><td>543</td><td>BJP 182, Congress 141, CPM 32</td></tr>
+      <tr><td class="hlg">Thirteenth (1999)</td><td>543</td><td>BJP 182, Congress 114, CPM 33</td></tr>
+      <tr><td class="hlg">Fourteenth (2004)</td><td>543</td><td>Congress 145, BJP 138, CPM 43</td></tr>
+      <tr><td class="hlg">Fifteenth (2009)</td><td>543</td><td>Congress 206, BJP 116, SP 23</td></tr>
+      <tr><td class="hlg">Sixteenth (2014)</td><td>543</td><td>BJP 282, Congress 44, AIADMK 37</td></tr>
+      <tr><td class="hlg">Seventeenth (2019)</td><td>543</td><td>BJP 303, Congress 52, DMK 23</td></tr>
+    </tbody>
+  </table>
+  <p class="eng" style="margin-top:6px;font-size:13px">A general election has since taken place beyond the book's edition: the <b class="hlg">Eighteenth General Election (2024)</b> returned a <b class="imp">543</b>-seat Lok Sabha with the <b class="hlb">NDA</b> alliance winning <b class="hlg">292</b> seats (BJP alone 240) and the <b class="hlb">INDIA</b> bloc <b class="hlg">234</b> seats (Congress 99) — this is now settled historical fact, not a live current-affairs question, so it is noted here rather than on the Current Affairs page.</p>
+  <div class="te">పుస్తకం edition దాటి, ఇంకో general election కూడా జరిగింది — <b class="hlg">Eighteenth General Election (2024)</b> లో <b class="imp">543</b>-seat Lok Sabha లో <b class="hlb">NDA</b> alliance <b class="hlg">292</b> seats (ఒంటరిగా BJP 240) గెలిచింది, <b class="hlb">INDIA</b> bloc <b class="hlg">234</b> seats (Congress 99) గెలిచింది — ఇది ఇప్పుడు స్థిరపడిన చారిత్రక వాస్తవం, live current-affairs ప్రశ్న కాదు కాబట్టి దీన్ని Current Affairs పేజీలో కాకుండా ఇక్కడే గమనించాం.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Table 81.1</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>How many general elections had been held per the book's edition?</td><td>Seventeen (through 2019)</td></tr>
+      <tr><td>Which was the first election with 543 elective seats?</td><td>Tenth (1991) onward — 543 seats each time since</td></tr>
+      <tr><td>2024 election — NDA vs INDIA bloc seats?</td><td>NDA 292 (BJP 240); INDIA bloc 234 (Congress 99)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="ptitle gn">Chapter 81 — Facts at a Glance</div>
+  <table>
+    <caption>Elections — key facts, one table</caption>
+    <thead><tr><th style="width:36%">Point</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Governing Articles</td><td>324-329 (Part XV); 329A (Repealed); 323B (election tribunal)</td></tr>
+      <tr><td>Adult franchise age</td><td>18 years (61st CAA, 1988 — see Ch.43)</td></tr>
+      <tr><td>Delimitation orders — court challenge?</td><td>Barred entirely, Article 329 (Delimitation Commission — see Ch.71)</td></tr>
+      <tr><td>Election petitions — tried by / appeal to</td><td>High Court (since 1966) / Supreme Court only</td></tr>
+      <tr><td>L. Chandra Kumar case (1997)</td><td>Struck down the Art. 323B jurisdiction-ouster clause as unconstitutional</td></tr>
+      <tr><td>Max gap: old LS's last sitting → new LS's first</td><td>6 months</td></tr>
+      <tr><td>Min campaign period / closes before poll</td><td>2 weeks / 48 hours before polling ends</td></tr>
+      <tr><td>Nomination window / withdrawal window</td><td>~1 week / within 2 days of scrutiny</td></tr>
+      <tr><td>EVM — began / all-EVM state polls / all-EVM LS poll</td><td>1998 / 2003 / 2004 (&gt;1 million EVMs)</td></tr>
+      <tr><td>VVPAT — trial / SC mandate / full rollout</td><td>2013 (Noksen, Nagaland) / Subramanian Swamy vs ECI (2013) / 2017, universal from 2019 LS poll</td></tr>
+      <tr><td>Polling station norms</td><td>~2 km max distance; ~1,200 voters cap; ≥8 hours open</td></tr>
+      <tr><td>Opinion-poll ban / exit-poll release</td><td>2 days before polling to close of poll / 30 min after last-day polling ends</td></tr>
+      <tr><td>Electoral system</td><td>First-past-the-post, single-member constituencies</td></tr>
+      <tr><td>18th General Election (2024)</td><td>NDA 292 (BJP 240); INDIA bloc 234 (Congress 99)</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="font-size:12px;color:#666;margin-top:6px">మూలాలు — Constitution of India, Articles 324-329, 323B; 61st Constitutional Amendment Act, 1988; L. Chandra Kumar vs Union of India (1997); Election Commission of India website; General Elections 2009 Reference Handbook, PIB.</div>
+</div>
+
+</div>
+
+
+<!-- ═══════════ PAGE 10 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — 2026 State Assembly Elections: Schedule &amp; Multi-Phase Polling in Action <span class="caasof">(as of 25.08.2026, verified via live web search on this date — re-verify closer to your exam date)</span></div>
+
+    <p class="eng"><b>A live worked example of this chapter's "Schedule of Elections" and "Polling Days" sections:</b> On <b class="hlg">15 March 2026</b>, the Election Commission announced the schedule for Assembly elections in <b class="hlg">four states and one Union Territory</b> — <b class="hlp">Assam</b>, <b class="hlp">Kerala</b>, <b class="hlp">Tamil Nadu</b>, <b class="hlp">West Bengal</b> and <b class="hlp">Puducherry</b> — with the <b class="term">Model Code of Conduct</b> coming into force for all five the moment the announcement was made, exactly as this chapter's general rule describes. Nominations for Assam, Kerala and Puducherry closed on <b class="hlg">23 March 2026</b>, with those three going to a <b class="imp">single-phase</b> poll on <b class="hlg">9 April 2026</b>. Nominations for Tamil Nadu and West Bengal opened on <b class="hlg">30 March 2026</b>; Tamil Nadu then held a single-phase poll on <b class="hlg">23 April 2026</b>, while West Bengal's poll ran in <b class="imp">two phases</b>, on <b class="hlg">23</b> and <b class="hlg">29 April 2026</b> — a real, current illustration of exactly the staggered, multi-phase polling logic this chapter's "Polling Days" section explains in the abstract.</p>
+    <div class="te"><b>ఈ chapter "Schedule of Elections", "Polling Days" భాగాలకు ఒక live ఉదాహరణ:</b> <b class="hlg">2026 మార్చి 15</b>న, Election Commission <b class="hlg">నాలుగు రాష్ట్రాలు, ఒక Union Territory</b> — <b class="hlp">Assam</b>, <b class="hlp">Kerala</b>, <b class="hlp">Tamil Nadu</b>, <b class="hlp">West Bengal</b>, <b class="hlp">Puducherry</b> — Assembly ఎన్నికల schedule ప్రకటించింది — ఈ ప్రకటన వచ్చిన వెంటనే, ఈ chapter సాధారణ నియమం చెప్పినట్టుగానే, అన్ని ఐదింటికీ <b class="term">Model Code of Conduct</b> అమల్లోకి వచ్చింది. Assam, Kerala, Puducherry నామినేషన్లు <b class="hlg">2026 మార్చి 23</b>న ముగిశాయి, ఈ మూడూ <b class="imp">single-phase</b> polling — <b class="hlg">2026 ఏప్రిల్ 9</b>న జరిగింది. Tamil Nadu, West Bengal నామినేషన్లు <b class="hlg">2026 మార్చి 30</b>న మొదలయ్యాయి; Tamil Nadu single-phase polling <b class="hlg">2026 ఏప్రిల్ 23</b>న జరిగింది, West Bengal polling మాత్రం <b class="imp">రెండు phases</b> గా — <b class="hlg">ఏప్రిల్ 23</b>, <b class="hlg">29</b> తేదీల్లో — జరిగింది — ఈ chapter "Polling Days" భాగం సూత్రప్రాయంగా వివరించిన staggered, multi-phase polling కు ఇది ఒక నిజమైన, ప్రస్తుత ఉదాహరణ.</div>
+
+    <p class="eng"><b>Cross-reference note:</b> the Election Commission's electoral-roll revision powers — specifically the <b class="hlb">Special Intensive Revision (SIR)</b> of Bihar's rolls and the Supreme Court's <b class="hlg">27 May 2026</b> ruling upholding it — are covered fully on Ch.43's own Current Affairs page (see <i>deep_election_commission.html</i>, Part VII); this chapter's own roll-related text (Article 325's equality principle, and the ERO's roll-preparation role on Page 2) is unaffected by that ruling and is not repeated here.</p>
+    <div class="te"><b>Cross-reference గమనిక:</b> Election Commission electoral-roll revision అధికారాలు — ప్రత్యేకంగా Bihar rolls <b class="hlb">Special Intensive Revision (SIR)</b>, దాన్ని upheld చేసిన <b class="hlg">2026 మే 27</b> Supreme Court తీర్పు — Ch.43 సొంత Current Affairs పేజీలో (<i>deep_election_commission.html</i>, Part VII) పూర్తిగా కవర్ చేశాం; ఈ chapter లోని roll-సంబంధిత టెక్స్ట్ (Article 325 equality సూత్రం, Page 2 లోని ERO roll-తయారీ role) ఆ తీర్పు వల్ల మారదు కాబట్టి ఇక్కడ మళ్ళీ చెప్పడం లేదు.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Timeline — 2026 Assembly elections (Assam, Kerala, TN, WB, Puducherry)</caption>
+      <thead><tr><th style="width:22%">Date</th><th>Development</th></tr></thead>
+      <tbody>
+        <tr><td class="hlg">15 Mar 2026</td><td>EC announces schedule for 4 states + 1 UT; MCC comes into force for all five</td></tr>
+        <tr><td class="hlg">23 Mar 2026</td><td>Nominations close — Assam, Kerala, Puducherry</td></tr>
+        <tr><td class="hlg">30 Mar 2026</td><td>Nominations open — Tamil Nadu, West Bengal</td></tr>
+        <tr><td class="hlg">9 Apr 2026</td><td>Single-phase polling — Assam, Kerala, Puducherry</td></tr>
+        <tr><td class="hlg">23 Apr 2026</td><td>Single-phase polling — Tamil Nadu; Phase 1 polling — West Bengal</td></tr>
+        <tr><td class="hlg">29 Apr 2026</td><td>Phase 2 polling — West Bengal (poll concludes)</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">For the exam: keep Articles 324-329 and the process stages (schedule → notification → nomination → campaign/MCC → polling → counting → petition) as the stable core. Treat this 2026 election cycle as a live worked example of "schedule announced weeks ahead," "MCC on announcement" and "staggered/multi-phase polling" — useful for a current-affairs MCQ, but re-verify the exact dates nearer your exam since a fresh cycle may already be underway by then.</p>
+    <div class="te">Exam కోసం — Articles 324-329, process దశలను (schedule → notification → nomination → campaign/MCC → polling → counting → petition) స్థిరమైన core గా ఉంచుకోండి. ఈ 2026 election cycle ను "schedule ముందుగానే ప్రకటించడం," "ప్రకటనతోనే MCC అమలు," "staggered/multi-phase polling" కు ఒక live ఉదాహరణగా చూడండి — current-affairs MCQ కు ఉపయోగపడుతుంది, కానీ exam సమయానికి కొత్త cycle మొదలైందేమో అని ఖచ్చితమైన తేదీలను మళ్ళీ verify చేసుకోండి.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 81 — Elections · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.82 — Election Laws</span><span class="dpart">Part X &middot; Book 1 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

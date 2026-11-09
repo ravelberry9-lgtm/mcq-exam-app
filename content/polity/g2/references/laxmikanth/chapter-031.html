@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<title>Part IV — Book 1: State Executive & Legislature</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans Telugu','Noto Sans',sans-serif;
+    background:#dde1e8;color:#1a1a1a;
+    font-size:14.8px;line-height:1.72;
+  }
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;
+    padding:16mm 16mm 12mm;box-shadow:0 3px 16px rgba(0,0,0,.15);
+  }
+  h1{font-size:22px;font-weight:700;color:#132a52}
+  .sub{font-size:12.5px;color:#666;margin-top:3px;margin-bottom:4px}
+
+  .para{margin:16px 0}
+  .ptitle{
+    font-size:15.5px;font-weight:700;color:#fff;background:#2c4a80;
+    display:inline-block;padding:5px 11px;border-radius:3px;margin-bottom:8px;
+  }
+  .ptitle.rd{background:#8a2a20}
+  .ptitle.gn{background:#1a6b3c}
+  .stitle{font-size:14.8px;font-weight:700;color:#132a52;margin:12px 0 5px;border-bottom:2px solid #d8dce3;padding-bottom:2px}
+
+  p.eng{margin:8px 0 4px}
+  ul{margin-left:20px}
+  li{margin:5px 0}
+  li::marker{color:#2c4a80}
+
+  .imp{background:#fff4c2;padding:0 3px}
+  .hlg{background:#c9f2c9;padding:0 3px}
+  .hlp{background:#ffd3e6;padding:0 3px}
+  .hlb{background:#c9e4ff;padding:0 3px}
+  b{font-weight:700}
+  .term{font-weight:700;text-decoration:underline;text-decoration-color:#2c4a80;text-decoration-thickness:2px;text-underline-offset:2px;color:#132a52}
+
+  hr{border:none;border-top:1px solid #d8dce3;margin:18px 0}
+
+  .te{
+    font-size:13.6px;color:#1d4d8f;background:#f0f5fc;border-left:3px solid #7fa8de;
+    padding:8px 11px;margin:5px 0 10px;line-height:1.68;
+  }
+  .q{border-left:3px solid #b3891a;background:#fffbe6;padding:6px 10px;margin:6px 0;font-size:13.3px;color:#3a3016}
+  .q .who{font-weight:700;color:#7a6212}
+
+  caption.qs{color:#1a6b3c}
+  table.qs th{background:#1a6b3c}
+
+  .ca{background:#eef7f6;border:1px solid #9bc9c3;border-left:4px solid #1a7a6e;padding:10px 13px;margin:10px 0;border-radius:4px}
+  .ca .catitle{font-weight:700;color:#0f5951;margin-bottom:6px;font-size:14.3px}
+  .ca .caasof{font-weight:400;font-size:11.5px;color:#5a8a84}
+  .ca p.eng{margin:6px 0 3px}
+  .ca .te{margin:3px 0 10px}
+  caption.ca2{color:#0f5951}
+  table.ca2 th{background:#1a7a6e}
+
+  table{width:100%;border-collapse:collapse;margin:9px 0;font-size:13.3px}
+  caption{caption-side:top;text-align:left;font-weight:700;color:#132a52;padding-bottom:4px}
+  th{background:#2c4a80;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:13.3px}
+  th.rd{background:#8a2a20}
+  th.nt{background:#54606f}
+  th.gn2{background:#1a6b3c}
+  td{padding:5px 9px;border-bottom:1px solid #e2e4ea}
+  tbody tr:nth-child(even) td{background:#f4f5f8}
+  td.n{width:26px;text-align:center;color:#888;font-weight:700;background:#eceef3!important}
+
+  .foot{margin-top:16px;font-size:11px;color:#999;text-align:center;border-top:1px solid #e2e4ea;padding-top:5px}
+
+  @page{size:A4;margin:16mm 16mm 12mm}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0 0 6mm;padding:0;width:auto;min-height:0}
+    tr,td,th,.te,.q{page-break-inside:avoid}
+    thead{display:table-header-group}
+  }
+
+
+/* ===== Combined-document chrome: cover page + table of contents + chapter divider ===== */
+  .coverpage{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250mm}
+  .coverpage h1{font-size:30px;margin-bottom:10px}
+  .coverpage .sub{font-size:15px;margin-bottom:26px}
+  .coverpage .covermeta{font-size:13px;color:#555;margin-top:40px;line-height:1.9}
+  .toc{margin-top:10px}
+  .toc ol{margin-left:22px}
+  .toc li{margin:7px 0;font-size:14.5px}
+  .toc .tocnote{font-size:12.5px;color:#666;margin:10px 0 16px}
+  .divider{background:#132a52;color:#fff;padding:14px 18px;border-radius:5px;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+  .divider .dtitle{font-size:18px;font-weight:700}
+  .divider .dpart{font-size:12px;color:#c3d0e8;letter-spacing:.5px;text-transform:uppercase}
+  @media print{ .divider{page-break-before:always} }
+
+</style>
+</head>
+<body><nav style="padding:1rem;font:16px system-ui,sans-serif"><a href="/learn/polity/g2/master-index">Master index · Units6–10</a><p>Prepared bilingual notes supplied by the user · English paragraphs and Telugu explanations preserved. These are the prepared HTML notes, not a newly verified verbatim textbook transcription.</p></nav><div class="page">
+<h1>Chapter 31 — Chief Minister</h1>
+<div class="sub">M. Laxmikanth, Indian Polity, 8th Edition — Full-Depth Bilingual Study Notes · Part IV — State Government</div>
+
+<div class="para">
+  <div class="ptitle">Governor vs Chief Minister — Nominal vs Real Executive</div>
+  <p class="eng">In the parliamentary system of government that the Constitution provides for the states, executive authority is split between two offices exactly the way it is at the Centre. The <b>Governor</b> is the <b class="imp">nominal (de jure) executive</b> — the formal, constitutional head of the <i>State</i> — while the <b>Chief Minister</b> is the <b class="imp">real (de facto) executive</b> — the actual head of the <i>Government</i> who wields day-to-day power. This split means the Governor's position at the state level is <span class="term">analogous</span> to the President's position at the Centre, and correspondingly, the Chief Minister's position is analogous to the <b>Prime Minister's</b> — this chapter mirrors Chapter 20 (Prime Minister) almost point for point, simply substituting "Governor" wherever the earlier chapter said "President."</p>
+  <div class="te">రాజ్యాంగం రాష్ట్రాలకు కల్పించిన parliamentary system లో, executive అధికారం కేంద్రంలో లాగే రెండు పదవుల మధ్య విభజించబడింది. <b>Governor</b> <b class="imp">నామమాత్రపు (de jure) executive</b> — State కు అధికారిక, రాజ్యాంగబద్ధమైన head; <b>Chief Minister</b> <b class="imp">వాస్తవ (de facto) executive</b> — రోజువారీ అధికారాన్ని వినియోగించే Government కు అసలైన head. ఈ విభజన వల్ల రాష్ట్ర స్థాయిలో Governor స్థానం కేంద్రంలో President స్థానానికి <span class="term">సమానం (analogous)</span>, అలాగే Chief Minister స్థానం <b>Prime Minister</b> స్థానానికి సమానం — ఈ chapter చాలావరకు Chapter 20 (Prime Minister) నే పోలి ఉంటుంది, కేవలం అంతకుముందు "President" అన్న చోట ఇప్పుడు "Governor" అని మాత్రమే మారుతుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Appointment — The Bare Constitutional Text</div>
+  <p class="eng">The Constitution contains <b class="imp">no specific procedure</b> for the selection and appointment of the Chief Minister. <b class="hlg">Article 164</b> says only that the CM "shall be appointed by the Governor" — nothing more. Read literally, this single line could suggest the Governor has a free hand. However, that reading would be wrong: in accordance with the <b class="hlb">conventions</b> of the parliamentary system of government (unwritten practices that operate alongside the written Constitution — see the analogous discussion for the President/PM in Ch.20), the Governor is bound to appoint the <b>leader of the majority party</b> in the state legislative assembly as Chief Minister. The formal constitutional text and the actual working rule are therefore two different things, and this gap is a favourite examiner's point.</p>
+  <div class="te">Chief Minister ఎంపిక, నియామకానికి రాజ్యాంగంలో <b class="imp">నిర్దిష్ట procedure ఏదీ లేదు</b>. <b class="hlg">Article 164</b> CM ను "Governor నియమిస్తారు" అని మాత్రమే చెబుతుంది — ఇంతకు మించి ఏమీ లేదు. అక్షరాలా చదివితే, Governor కు స్వేచ్ఛ ఉన్నట్టు అనిపించవచ్చు. కానీ ఆ అర్థం తప్పు — parliamentary వ్యవస్థ <b class="hlb">conventions</b> ప్రకారం (వ్రాతపూర్వక రాజ్యాంగంతో పాటు పనిచేసే అలిఖిత ఆచరణలు — President/PM విషయంలో Ch.20 లో ఇదే చర్చ చూడండి), Assembly లో మెజారిటీ పార్టీ నాయకుడినే CM గా నియమించాల్సిన బాధ్యత Governor కు ఉంటుంది. అంటే రాజ్యాంగ టెక్స్ట్, వాస్తవ ఆచరణ నియమం రెండూ వేర్వేరు — ఇది exam లో తరచుగా అడిగే తేడా.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Hung Assembly, Sudden Death, and No Prior Proof of Majority</div>
+  <p class="eng">When <b>no party has a clear majority</b> in the assembly (a "hung" assembly), the Governor may exercise <span class="term">personal discretion</span> in selecting the CM. In such a case, the usual practice is for the Governor to appoint the leader of the <b>largest party or coalition</b> in the assembly and ask that person to seek a <span class="hlb">vote of confidence</span> in the House within <b class="hlg">one month</b>. A related, rarer scenario is where a sitting CM dies suddenly and there is no obvious successor — here too the Governor may have to exercise individual judgement; but in practice, the ruling party usually elects a new leader quickly, leaving the Governor with <b class="imp">no real choice</b> but to appoint that person. Separately, the Constitution does <b>not</b> require a person to prove majority in the assembly <i>before</i> being appointed CM — the Governor may first appoint someone as CM and only then ask him/her to prove majority within a <b>reasonable period</b>, i.e. proof of majority can follow appointment rather than precede it.</p>
+  <div class="te">Assembly లో ఏ పార్టీకీ స్పష్టమైన మెజారిటీ లేనప్పుడు ("hung" assembly), CM ఎంపికలో Governor <span class="term">personal discretion</span> వినియోగించవచ్చు. అలాంటప్పుడు సాధారణ ఆచరణ ఏమిటంటే — Assembly లో <b>అతిపెద్ద పార్టీ లేదా కూటమి</b> నాయకుడిని Governor CM గా నియమించి, <b class="hlg">ఒక నెల</b>లో సభలో <span class="hlb">vote of confidence</span> నిరూపించుకోమని అడగడం. దీనికి సంబంధించిన, అరుదైన మరో పరిస్థితి — పదవిలో ఉన్న CM అకస్మాత్తుగా చనిపోయి స్పష్టమైన వారసుడు లేనప్పుడు — ఇక్కడ కూడా Governor వ్యక్తిగత judgement వాడాల్సి రావచ్చు; కానీ ఆచరణలో, ruling party వెంటనే కొత్త నాయకుడిని ఎన్నుకుంటుంది, దాంతో Governor కు ఆ వ్యక్తిని నియమించడం తప్ప <b class="imp">నిజమైన ఎంపిక ఉండదు</b>. వేరుగా — CM గా నియమించబడటానికి ముందే Assembly లో మెజారిటీ నిరూపించుకోవాలని రాజ్యాంగం అడగదు — Governor ముందు ఒక వ్యక్తిని CM గా నియమించి, తర్వాత reasonable period లో మెజారిటీ నిరూపించుకోమని అడగవచ్చు — అంటే మెజారిటీ నిరూపణ నియామకానికి ముందు కాదు, తర్వాత రావచ్చు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Non-Member CM and Choice of House</div>
+  <p class="eng">A person who is <b>not a member</b> of the state legislature at the time can still be appointed Chief Minister — but only for <b class="imp hlg">six months</b>. Within that window, he/she must get elected to the state legislature; failing that, he/she <b class="imp">ceases to be Chief Minister</b> automatically. Further, the Chief Minister may be drawn from <b>either House</b> of a state legislature (in states that have a bicameral legislature) — while Chief Ministers have usually been selected from the Lower House (the Legislative Assembly), on a number of occasions a member of the Upper House (the Legislative Council) has also been appointed CM.</p>
+  <div class="te">అప్పటికి state legislature సభ్యుడు కాని వ్యక్తిని కూడా Chief Minister గా నియమించవచ్చు — కానీ కేవలం <b class="hlg">ఆరు నెలల</b> వరకే. ఆ వ్యవధిలో, అతను/ఆమె state legislature కు తప్పనిసరిగా ఎన్నికవ్వాలి; అలా జరగకపోతే <b class="imp">Chief Minister పదవి ఆటోమేటిక్ గా పోతుంది</b>. ఇంకా, (bicameral legislature ఉన్న రాష్ట్రాల్లో) Chief Minister రెండు Houses లో ఏదైనా ఒకదాని నుండి రావచ్చు — సాధారణంగా Lower House (Legislative Assembly) నుండి CM లను ఎంపిక చేసినా, చాలాసార్లు Upper House (Legislative Council) సభ్యుడిని కూడా CM గా నియమించిన సందర్భాలు ఉన్నాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Appointment of Chief Minister</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Constitutional basis for appointment?</td><td>Article 164 — "CM shall be appointed by the Governor"; no procedure specified</td></tr>
+      <tr><td>Who must the Governor actually appoint?</td><td>By convention, leader of the majority party in the assembly</td></tr>
+      <tr><td>Hung assembly — what does Governor do?</td><td>Personal discretion; appoints leader of largest party/coalition, seeks vote of confidence in 1 month</td></tr>
+      <tr><td>Must majority be proved before appointment?</td><td>No — can be appointed first, prove majority within a reasonable period</td></tr>
+      <tr><td>Non-member CM — time limit?</td><td>6 months to get elected to the legislature, else ceases to be CM</td></tr>
+      <tr><td>Can CM be from the Legislative Council (Upper House)?</td><td>Yes — usually from Assembly, but Council members have also been CM</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="sub">Sarkaria Commission Recommendations on Selection of the Chief Minister</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Why the Sarkaria Commission's Guidance Matters</div>
+  <p class="eng">Because Article 164 is silent on <i>how</i> the Governor should choose among competing claimants — especially in a fractured assembly — the <b class="hlp">Sarkaria Commission on Centre-State Relations</b> (<b class="hlg">1983–88</b>) was asked to lay down clearer guiding principles. Its central premise was that the Governor's role in this exercise is essentially <b>facilitative, not political</b>: the party or combination of parties commanding the <b>widest support</b> in the Legislative Assembly should be called upon to form the government, and the Governor's task is to <b>see that a government is formed</b> — not to try to engineer a government that will pursue policies he/she personally approves of.</p>
+  <div class="te">Article 164 Governor పోటీ దావేదారుల మధ్య <i>ఎలా</i> ఎంపిక చేయాలో చెప్పదు కాబట్టి — ముఖ్యంగా fractured assembly లో — <b class="hlp">Sarkaria Commission on Centre-State Relations</b> (<b class="hlg">1983–88</b>) కు స్పష్టమైన మార్గదర్శక సూత్రాలను రూపొందించే బాధ్యత అప్పగించారు. దీని ప్రధాన ఆలోచన ఏమిటంటే — ఈ విషయంలో Governor పాత్ర <b>సహాయక పాత్రే, రాజకీయమైనది కాదు</b> — Legislative Assembly లో <b>అత్యధిక మద్దతు</b> ఉన్న పార్టీ లేదా పార్టీల కూటమినే ప్రభుత్వం ఏర్పాటుకు పిలవాలి, Governor పని ప్రభుత్వం ఏర్పడేలా చూడటమే — తనకు నచ్చిన policies అనుసరించే ప్రభుత్వాన్ని కృత్రిమంగా తీసుకురావడం కాదు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">The Order of Preference When No Single Party Has a Majority</div>
+  <p class="eng">If a single party has an <b>absolute majority</b> in the Assembly, its leader should <b>automatically</b> be asked to become Chief Minister — no discretion is needed at all in that case. Where there is no such party, the Sarkaria Commission recommended the Governor select a CM by sounding out potential claimants <b>in a fixed order of preference</b>: first, an alliance of parties formed <b>prior to</b> the elections; second, the largest single party staking a claim to form government with outside support (including independents); third, a <b>post-electoral coalition</b> of parties, with all the partners actually joining the government; and fourth (least preferred), a <b>post-electoral alliance</b> where only some of the parties form the government while the rest, including independents, merely support it from outside. Throughout this process, the Governor should select whichever leader, in his/her own judgement, is <b>most likely to command a majority</b> in the Assembly.</p>
+  <div class="te">Assembly లో ఒకే పార్టీకి <b>absolute majority</b> ఉంటే, ఆ నాయకుడినే <b>ఆటోమేటిక్ గా</b> Chief Minister గా కోరాలి — ఈ సందర్భంలో ఎలాంటి discretion అవసరం లేదు. అలాంటి పార్టీ లేనప్పుడు, Sarkaria Commission Governor <b>ఒక నిర్దిష్ట క్రమంలో</b> దావేదారులను పరిశీలించాలని సిఫారసు చేసింది — మొదట, ఎన్నికలకు <b>ముందు</b> ఏర్పడిన పార్టీల కూటమి; రెండవది, బయటి వారి (independents తో సహా) మద్దతుతో ప్రభుత్వ ఏర్పాటుకు దావా వేసిన అతిపెద్ద ఒంటరి పార్టీ; మూడవది, భాగస్వాములందరూ నిజంగా ప్రభుత్వంలో చేరే <b>post-electoral coalition</b>; నాలుగవది (అతి తక్కువ ప్రాధాన్యత), కొన్ని పార్టీలు మాత్రమే ప్రభుత్వంలో చేరి, మిగతావి (independents తో సహా) కేవలం బయటి నుండి మద్దతిచ్చే <b>post-electoral alliance</b>. ఈ మొత్తం ప్రక్రియలో, Governor తన సొంత judgement లో Assembly లో <b>మెజారిటీ సాధించగలరని</b> అనిపించే నాయకుడినే ఎంచుకోవాలి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Vote of Confidence Timeline and Floor Test on Disputed Majority</div>
+  <p class="eng">The Commission also recommended a discipline on <i>timing</i>: a Chief Minister, unless he/she already leads a party with an absolute majority in the Assembly, should seek a <span class="hlb">vote of confidence</span> in the Assembly within <b class="hlg">30 days</b> of taking office — this prevents an indefinitely prolonged period where a government functions without having demonstrated it actually commands the House. Finally, on a related but distinct question — what happens when a number of MLAs approach the Governor mid-term claiming the incumbent CM has <b>lost</b> majority support — the Commission was equally clear: the Governor should <b>not</b> attempt to determine this contested question of majority support on his/her own, outside the Assembly. The prudent course is to have the rival claims tested on the <span class="term">floor of the House</span> — i.e., a <b>floor test</b>. This principle re-appears prominently in the constitutional law around CM dismissal (see next page, and the S.R. Bommai case).</p>
+  <div class="te">Commission సమయ క్రమశిక్షణ కూడా సిఫారసు చేసింది — Chief Minister (ఇప్పటికే absolute majority పార్టీకి నాయకుడు కాకపోతే) పదవి చేపట్టిన <b class="hlg">30 రోజుల్లో</b> Assembly లో <span class="hlb">vote of confidence</span> తీసుకోవాలి — దీనివల్ల ఒక ప్రభుత్వం సభ మద్దతును నిరూపించుకోకుండా అనిశ్చితంగా కొనసాగే అవకాశం ఉండదు. చివరగా, సంబంధిత కానీ వేరైన ప్రశ్న — మధ్యలో చాలామంది MLAs Governor వద్దకు వెళ్లి ప్రస్తుత CM మెజారిటీ <b>కోల్పోయారని</b> వాదిస్తే ఏం జరుగుతుంది — దీనిపై కూడా Commission స్పష్టంగా చెప్పింది — Governor ఈ వివాదాస్పద మెజారిటీ ప్రశ్నను Assembly బయట <b>తానే నిర్ణయించకూడదు</b>. సరైన మార్గం రెండు వైపుల వాదనలను <span class="term">సభ నేలపైనే</span> పరీక్షించడం — అంటే <b>floor test</b>. ఈ సూత్రం CM తొలగింపు చుట్టూ ఉన్న రాజ్యాంగపరమైన చట్టంలో మళ్ళీ ప్రముఖంగా కనిపిస్తుంది (తర్వాతి పేజీ, S.R. Bommai కేసు చూడండి).</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Sarkaria Commission Recommendations</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Which commission, and when?</td><td>Sarkaria Commission on Centre-State Relations, 1983–88</td></tr>
+      <tr><td>Governor's role per the Commission?</td><td>Facilitative only — ensure a govt is formed, not push own policy preference</td></tr>
+      <tr><td>Order of preference (no absolute majority)?</td><td>Pre-poll alliance → largest party w/ outside support → post-poll coalition (all join) → post-poll alliance (some join, rest support outside)</td></tr>
+      <tr><td>Vote-of-confidence deadline?</td><td>Within 30 days of taking office (unless absolute-majority leader)</td></tr>
+      <tr><td>Disputed majority mid-term — Governor's role?</td><td>Must NOT decide alone — floor test on the House floor is the correct course</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+<div class="page">
+<div class="sub">Oath, Term and Salary of the Chief Minister</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Oaths of Office and Secrecy</div>
+  <p class="eng">Before the Chief Minister enters office, the <b>Governor</b> administers the oaths of <b>office</b> and <b>secrecy</b> — the same form of oath used for any state minister. In the oath of office, the CM swears to: (1) bear true faith and allegiance to the Constitution of India; (2) uphold the sovereignty and integrity of India; (3) faithfully and conscientiously discharge the duties of the office; and (4) do right to all manner of people in accordance with the Constitution and the law, without fear or favour, affection or ill-will. In the oath of secrecy, the CM separately swears not to directly or indirectly communicate or reveal to any person any matter that is brought under his/her consideration, or becomes known to him/her, as a state minister — except as required for the due discharge of his/her duties.</p>
+  <div class="te">Chief Minister పదవి చేపట్టేముందు, <b>Governor</b> అతనితో/ఆమెతో <b>office</b>, <b>secrecy</b> ప్రమాణాలు చేయిస్తారు — ఇది ఏ state minister కైనా ఉపయోగించే అదే ఫారమ్. Oath of office లో CM ఇలా ప్రమాణం చేస్తారు — (1) India రాజ్యాంగం పట్ల నిజమైన విశ్వాసం, విధేయత; (2) India సార్వభౌమత్వం, సమగ్రత సమర్థన; (3) పదవి విధులను నిజాయితీగా, జాగ్రత్తగా నిర్వహించడం; (4) భయం లేదా పక్షపాతం, ఇష్టం లేదా అయిష్టం లేకుండా రాజ్యాంగం-చట్టం ప్రకారం అందరికీ న్యాయం చేయడం. Oath of secrecy లో CM వేరుగా ప్రమాణం చేస్తారు — state minister గా తన పరిశీలనలో ఉన్న లేదా తెలిసిన ఏ విషయాన్నీ ఎవరికీ నేరుగా గానీ పరోక్షంగా గానీ చెప్పనని — విధి నిర్వహణకు అవసరమైతే తప్ప.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Term — Pleasure of the Governor, Bounded by Majority Support</div>
+  <p class="eng">The term of the Chief Minister is <b>not fixed</b> by the Constitution — he/she holds office "during the pleasure of the Governor." Read on its own, that phrase could suggest the Governor can remove a CM at will. However, this is <b>not</b> the case in practice: the CM cannot be dismissed by the Governor as long as he/she enjoys <b class="imp">majority support</b> in the legislative assembly — a rule laid down by the Supreme Court in <b class="hlp">S.R. Bommai vs Union of India</b> (<b class="hlg">1994</b>). Only if the CM loses the confidence of the assembly must he/she resign, or the Governor may dismiss him/her. In practice, however, there have been documented instances where governors have dismissed Chief Ministers <b>without</b> giving them the constitutionally-expected opportunity to prove majority on the floor of the House — a recurring point of controversy that connects directly back to the Sarkaria Commission's "floor test, not Governor's own determination" principle discussed on the previous page.</p>
+  <div class="te">Chief Minister పదవీకాలం రాజ్యాంగం ప్రకారం <b>నిర్దిష్టంగా లేదు</b> — "Governor pleasure" పైనే ఆధారపడి ఉంటుంది. ఇది విడిగా చదివితే, Governor ఇష్టం వచ్చినప్పుడు CM ను తొలగించగలరని అనిపించవచ్చు. కానీ ఆచరణలో ఇది <b>నిజం కాదు</b> — Assembly లో <b class="imp">మెజారిటీ మద్దతు</b> ఉన్నంతవరకూ Governor CM ను తొలగించలేరు — ఈ నియమాన్ని Supreme Court <b class="hlp">S.R. Bommai vs Union of India</b> (<b class="hlg">1994</b>) కేసులో నిర్దేశించింది. CM Assembly విశ్వాసం కోల్పోతేనే రాజీనామా చేయాలి, లేదా Governor తొలగించవచ్చు. అయితే ఆచరణలో, governors CM లకు సభ నేలపై మెజారిటీ నిరూపించుకునే రాజ్యాంగబద్ధమైన అవకాశం <b>ఇవ్వకుండానే</b> తొలగించిన సందర్భాలు నమోదయ్యాయి — ఇది తరచుగా వివాదాస్పదమయ్యే అంశం, మునుపటి పేజీలో చర్చించిన Sarkaria Commission "Governor స్వయంగా నిర్ణయించకూడదు, floor test జరపాలి" సూత్రానికి నేరుగా అనుసంధానమవుతుంది.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Salary and Allowances</div>
+  <p class="eng">The salary and allowances of the Chief Minister are determined by the <b>state legislature</b>, not fixed permanently in the Constitution — a design that gives states flexibility, mirroring how Parliament fixes the President's/PM's emoluments at the Centre. In addition to the salary and allowances payable to him/her as an ordinary member of the state legislature, the CM also receives a <span class="hlb">sumptuary allowance</span> (an allowance meant to cover the ceremonial/hospitality expenses of high office), free accommodation, a travelling allowance, medical facilities, and similar perquisites.</p>
+  <div class="te">Chief Minister జీతం, allowances రాజ్యాంగంలో శాశ్వతంగా ఫిక్స్ చేయకుండా, <b>state legislature</b> నిర్ణయిస్తుంది — ఇది రాష్ట్రాలకు flexibility ఇచ్చే design, కేంద్రంలో Parliament President/PM జీతం నిర్ణయించే పద్ధతిని పోలి ఉంటుంది. ఒక సాధారణ state legislature సభ్యుడిగా వచ్చే జీతం, allowances తో పాటు, CM కు <span class="hlb">sumptuary allowance</span> (ఉన్నత పదవి యొక్క ceremonial/hospitality ఖర్చుల కోసం ఇచ్చే allowance), ఉచిత నివాసం, travelling allowance, medical సౌకర్యాలు వంటివి కూడా లభిస్తాయి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Oath, Term &amp; Salary</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who administers the oath?</td><td>The Governor</td></tr>
+      <tr><td>Two oaths taken?</td><td>Oath of office + oath of secrecy (same form as any state minister)</td></tr>
+      <tr><td>Fixed term?</td><td>No — holds office during the pleasure of the Governor</td></tr>
+      <tr><td>Limit on Governor's dismissal power?</td><td>Cannot dismiss while CM enjoys majority support — S.R. Bommai case, 1994</td></tr>
+      <tr><td>Who fixes salary/allowances?</td><td>The state legislature</td></tr>
+      <tr><td>Extra perks beyond legislature-member salary?</td><td>Sumptuary allowance, free accommodation, TA, medical facilities</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 4 ═══════════ -->
+<div class="page">
+<div class="sub">Powers and Functions — In Relation to Council of Ministers &amp; Governor</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">In Relation to the Council of Ministers</div>
+  <p class="eng">As head of the state Council of Ministers, the Chief Minister enjoys wide-ranging powers over its formation and functioning. The Governor appoints only those persons as ministers who are <b>recommended by the CM</b> — meaning ministerial selection is effectively the CM's call, not the Governor's. The CM <b>allocates and reshuffles</b> portfolios among ministers, and can ask a minister to resign, or advise the Governor to dismiss him/her, in case of a difference of opinion. The CM also <b>presides</b> over meetings of the Council of Ministers and thereby influences its decisions, and more broadly <b>guides, directs, controls and coordinates</b> the activities of all the ministers. Perhaps the most structurally significant power is this: because the CM is the head of the Council of Ministers, his/her <b>resignation or death automatically dissolves the entire Council</b> — every other minister loses office along with the CM. By contrast, the resignation or death of any <i>other</i> minister merely creates a vacancy, which the CM may or may not choose to fill.</p>
+  <div class="te">State Council of Ministers కు head గా, Chief Minister దాని ఏర్పాటు, పనితీరుపై విస్తృత అధికారాలు కలిగి ఉంటారు. Governor <b>CM సిఫారసు చేసిన వారినే</b> ministers గా నియమిస్తారు — అంటే ministers ఎంపిక వాస్తవంగా CM నిర్ణయమే, Governor నిర్ణయం కాదు. CM ministers మధ్య portfolios ను <b>కేటాయిస్తారు, మారుస్తారు</b>, అభిప్రాయ భేదం ఉంటే ఒక minister ను రాజీనామా చేయమని అడగవచ్చు లేదా Governor కు తొలగించమని సలహా ఇవ్వవచ్చు. CM Council of Ministers సమావేశాలకు <b>అధ్యక్షత</b> వహిస్తారు, తద్వారా నిర్ణయాలను ప్రభావితం చేస్తారు, అలాగే విస్తృతంగా అందరు ministers కార్యకలాపాలను <b>మార్గదర్శనం, నిర్దేశనం, నియంత్రణ, సమన్వయం</b> చేస్తారు. బహుశా అత్యంత structurally ముఖ్యమైన అధికారం ఇదే — CM Council of Ministers కు head కాబట్టి, అతని/ఆమె <b>రాజీనామా లేదా మరణం మొత్తం Council నే ఆటోమేటిక్ గా రద్దు చేస్తుంది</b> — CM తో పాటు మిగతా ministers అందరూ పదవి కోల్పోతారు. దీనికి విరుద్ధంగా, మరో minister రాజీనామా లేదా మరణం కేవలం ఖాళీని సృష్టిస్తుంది, దాన్ని CM పూరించవచ్చు లేదా పూరించకపోవచ్చు.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">In Relation to the Governor</div>
+  <p class="eng">The Chief Minister also functions as the <span class="term">principal channel of communication</span> between the Governor and the Council of Ministers — this is not merely descriptive but a formal constitutional duty, spelt out in <b class="hlg">Article 167</b> (covered in more detail on page 6). Concretely, it is the CM's duty: (i) to communicate to the Governor all decisions of the Council of Ministers relating to the administration of the state's affairs and proposals for legislation; (ii) to furnish such information relating to state administration and legislative proposals as the Governor may call for; and (iii) if the Governor so requires, to submit for the Council's consideration any matter on which a decision has been taken by an individual minister but which has not yet been considered by the full Council. Beyond this communication role, the CM also <b>advises</b> the Governor on the appointment of important officials — for example the advocate general, the chairman and members of the State Public Service Commission, and the state election commissioner, among others.</p>
+  <div class="te">Chief Minister Governor, Council of Ministers మధ్య <span class="term">ప్రధాన సమాచార మార్గం</span> గా కూడా వ్యవహరిస్తారు — ఇది కేవలం వర్ణనాత్మకం కాదు, <b class="hlg">Article 167</b> లో స్పష్టంగా పేర్కొన్న ఒక అధికారిక రాజ్యాంగ బాధ్యత (దీని గురించి మరింత వివరంగా page 6 లో చూద్దాం). వాస్తవంగా, CM విధి — (i) రాష్ట్ర administration, legislative proposals కు సంబంధించిన Council of Ministers నిర్ణయాలన్నింటినీ Governor కు తెలియజేయడం; (ii) Governor కోరిన రాష్ట్ర administration, legislative proposals సమాచారాన్ని అందించడం; (iii) Governor కోరితే, ఒక individual minister నిర్ణయించి పూర్తి Council ఇంకా పరిశీలించని విషయాన్ని Council ముందుకు తేవడం. ఈ సమాచార పాత్రకు మించి, CM ముఖ్యమైన అధికారుల నియామకంపై కూడా Governor కు <b>సలహా</b> ఇస్తారు — ఉదాహరణకు advocate general, State Public Service Commission chairman/members, state election commissioner వంటివారు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Powers re: CoM &amp; Governor</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Who does the Governor appoint as ministers?</td><td>Only those recommended by the CM</td></tr>
+      <tr><td>What happens to CoM if CM resigns/dies?</td><td>Whole Council automatically dissolves (unlike an ordinary minister's exit)</td></tr>
+      <tr><td>CM's formal communication duty to Governor?</td><td>Article 167 — communicate decisions, furnish info, submit un-considered matters if required</td></tr>
+      <tr><td>Which appointments does CM advise Governor on?</td><td>Advocate general, SPSC chairman/members, state election commissioner, etc.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 5 ═══════════ -->
+<div class="page">
+<div class="sub">Powers and Functions — In Relation to Legislature &amp; Other Functions</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">In Relation to the State Legislature</div>
+  <p class="eng">As the leader of the House, the Chief Minister enjoys a further set of powers concerning the state legislature. He/she advises the Governor with regard to the <b>summoning and proroguing</b> of the sessions of the state legislature, can recommend the <b>dissolution</b> of the legislative assembly to the Governor at any time, and announces the government's <b>policies</b> on the floor of the House. These closely parallel the Prime Minister's equivalent powers vis-à-vis Parliament and the President at the Centre.</p>
+  <div class="te">సభకు నాయకుడిగా, Chief Minister కు state legislature కు సంబంధించిన మరో అధికారాల సమూహం ఉంటుంది. State legislature sessions <b>summon, prorogue</b> చేయడంపై Governor కు సలహా ఇస్తారు, ఎప్పుడైనా Assembly <b>dissolution</b>ను Governor కు సిఫారసు చేయవచ్చు, సభలో ప్రభుత్వ <b>policies</b>ను ప్రకటిస్తారు. ఇవి కేంద్రంలో Parliament, President విషయంలో Prime Minister కు ఉండే సమానమైన అధికారాలను దగ్గరగా పోలి ఉంటాయి.</div>
+</div>
+
+<div class="para">
+  <div class="stitle">Other Powers and Functions</div>
+  <p class="eng">Beyond these three formal relationships, the Chief Minister performs several additional roles that extend well outside the strict text of the Constitution. He/she is the <b>chairman of the State Planning Board</b>, and acts as <b>vice-chairman</b> of the concerned <span class="hlb">zonal council</span> by rotation, holding that office for one year at a time (the <b>Union Home Minister</b> is chairman of <b>all</b> the zonal councils, giving the Centre a standing presence in each). The CM is also a member of the <span class="hlb">Inter-State Council</span> and the <b>Governing Council of NITI Aayog</b>, both of which are headed by the Prime Minister — placing the CM directly inside the Centre's key cooperative-federalism forums. Additionally, the CM functions as the <b>chief spokesman</b> of the state government, the <b>crisis manager-in-chief</b> at the political level during emergencies, a leader who meets various sections of the people and receives their memoranda on local problems, the <b>leader of the party in power</b>, and the <b>political head of the services</b> (i.e., of the state's permanent civil service/bureaucracy). Taken together, the CM plays a highly significant and crucial role in state administration — though it bears repeating that the Governor's own <b class="imp">discretionary powers</b> (studied in Ch.30) reduce, to some extent, the CM's power, authority, influence, prestige and overall role.</p>
+  <div class="te">ఈ మూడు అధికారిక సంబంధాలకు మించి, Chief Minister రాజ్యాంగ టెక్స్ట్ కు వెలుపల కూడా అనేక అదనపు పాత్రలు నిర్వహిస్తారు. <b>State Planning Board</b> కు chairman గా ఉంటారు, సంబంధిత <span class="hlb">zonal council</span> కు rotation ప్రకారం ఒక సంవత్సరం పాటు <b>vice-chairman</b> గా వ్యవహరిస్తారు (అన్ని zonal councils కు <b>Union Home Minister</b> chairman గా ఉంటారు — దీనివల్ల ప్రతి zonal council లో కేంద్రానికి స్థిరమైన ఉనికి ఉంటుంది). CM <span class="hlb">Inter-State Council</span>, <b>NITI Aayog Governing Council</b> లలో సభ్యుడిగా కూడా ఉంటారు — రెండింటికీ Prime Minister అధ్యక్షుడు — దీనివల్ల CM నేరుగా కేంద్రం యొక్క cooperative-federalism వేదికల్లో భాగమవుతారు. అదనంగా, CM రాష్ట్ర ప్రభుత్వానికి <b>ప్రధాన అధికార ప్రతినిధి</b>గా, అత్యవసర పరిస్థితుల్లో రాజకీయ స్థాయిలో <b>crisis manager-in-chief</b> గా, స్థానిక సమస్యలపై వివిధ వర్గాల ప్రజలను కలిసి memoranda స్వీకరించే నాయకుడిగా, <b>అధికారంలో ఉన్న పార్టీకి నాయకుడిగా</b>, services కు (అంటే రాష్ట్ర permanent civil service/బ్యూరోక్రసీకి) <b>రాజకీయ అధిపతిగా</b> వ్యవహరిస్తారు. వీటన్నింటినీ కలిపి చూస్తే, CM రాష్ట్ర administration లో అత్యంత ప్రాముఖ్యత, కీలకమైన పాత్ర పోషిస్తారు — అయితే Governor కు ఉన్న సొంత <b class="imp">discretionary powers</b> (Ch.30 లో చదివాం) CM అధికారం, ప్రభావం, ప్రతిష్ఠను కొంతమేర తగ్గిస్తాయని కూడా గుర్తుంచుకోవాలి.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Powers re: Legislature &amp; Other Functions</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>CM's role re: summoning/proroguing sessions?</td><td>Advises the Governor</td></tr>
+      <tr><td>Who chairs the State Planning Board?</td><td>The Chief Minister</td></tr>
+      <tr><td>CM's role in the zonal council?</td><td>Vice-chairman by rotation, 1 year at a time (Union Home Minister chairs all)</td></tr>
+      <tr><td>CM's memberships at the Centre-state interface?</td><td>Inter-State Council + NITI Aayog Governing Council (both PM-headed)</td></tr>
+      <tr><td>What limits the CM's overall power?</td><td>The Governor's own discretionary powers</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 6 ═══════════ -->
+<div class="page">
+<div class="sub">Relationship with the Governor — Constitutional Provisions</div>
+
+<div class="para">
+  <div class="stitle" style="margin-top:0">Articles 163, 164 and 167</div>
+  <p class="eng">Three specific Articles govern the constitutional relationship between the Governor and the Chief Minister. <b class="hlg">Article 163</b> establishes that there shall be a Council of Ministers with the Chief Minister as its head, to <span class="term">aid and advise</span> the Governor in the exercise of his/her functions — except in so far as the Governor is required by the Constitution to exercise any function in his/her own <b>discretion</b> (Ch.30 covers exactly which functions those are). <b class="hlg">Article 164</b> bundles together three separate rules: (1) the CM is appointed by the Governor, and other ministers are appointed by the Governor <b>on the advice of the CM</b>; (2) ministers hold office <b>during the pleasure of the Governor</b>; and (3) the Council of Ministers is <span class="term">collectively responsible</span> to the state's Legislative Assembly. <b class="hlg">Article 167</b> then spells out, as a distinct constitutional duty (already discussed on page 4 in substance), that it is the duty of the CM to communicate all CoM decisions to the Governor, to furnish information the Governor calls for, and to submit un-considered ministerial decisions to the full Council if the Governor so requires.</p>
+  <div class="te">Governor, Chief Minister మధ్య రాజ్యాంగ సంబంధాన్ని మూడు నిర్దిష్ట Articles నియంత్రిస్తాయి. <b class="hlg">Article 163</b> — Chief Minister head గా ఉండే Council of Ministers ఉంటుందని, ఇది Governor తన విధులను నిర్వర్తించడంలో <span class="term">aid and advise</span> చేస్తుందని చెబుతుంది — రాజ్యాంగం ప్రకారం Governor తన <b>discretion</b>లో వ్యవహరించాల్సిన విధులు తప్ప (ఇవి ఏమిటో Ch.30 లో వివరంగా చూశాం). <b class="hlg">Article 164</b> మూడు వేర్వేరు నియమాలను కలిపి ఉంచుతుంది — (1) CM ను Governor నియమిస్తారు, ఇతర ministers ను Governor <b>CM సలహాపై</b> నియమిస్తారు; (2) ministers <b>Governor pleasure</b> పైనే పదవిలో ఉంటారు; (3) Council of Ministers రాష్ట్ర Legislative Assembly కు <span class="term">collectively responsible</span>. <b class="hlg">Article 167</b> అప్పుడు, ఒక ప్రత్యేక రాజ్యాంగ బాధ్యతగా (సారాంశంలో page 4 లో ఇప్పటికే చర్చించాం), CM అన్ని CoM నిర్ణయాలను Governor కు తెలియజేయాలని, Governor అడిగిన సమాచారం ఇవ్వాలని, Governor కోరితే Council పరిశీలించని minister నిర్ణయాలను Council ముందుకు తేవాలని స్పష్టం చేస్తుంది.</div>
+
+  <table>
+    <caption>Table 31.1 — Articles Related to Chief Minister at a Glance</caption>
+    <thead><tr><th style="width:16%">Article No.</th><th>Subject-matter</th></tr></thead>
+    <tbody>
+      <tr><td class="hlg">163</td><td>Council of Ministers to aid and advise Governor</td></tr>
+      <tr><td class="hlg">164</td><td>Other provisions as to Ministers</td></tr>
+      <tr><td class="hlg">166</td><td>Conduct of business of the Government of a State</td></tr>
+      <tr><td class="hlg">167</td><td>Duties of Chief Minister as respects the furnishing of information to Governor, etc.</td></tr>
+      <tr><td class="hlg">177</td><td>Rights of Ministers as respects the Houses</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="para">
+  <div class="stitle">Putting It Together — The Governor-CM Relationship as a Whole</div>
+  <p class="eng">Reading Articles 163, 164 and 167 together makes clear that the Governor-CM relationship is designed on the same basic template as the President-PM relationship at the Centre: real executive power is exercised by an elected political leader (the CM) heading a ministry collectively answerable to the elected House, while the formal head of state (the Governor) acts on that leader's aid and advice for most functions, retaining only a narrow, explicitly-carved-out zone of personal discretion. The three-duty formula in Article 167 exists precisely because, without it, a Governor who exercises constitutional functions independently of day-to-day government business would otherwise have no guaranteed channel of information about what the Council of Ministers is actually deciding.</p>
+  <div class="te">Articles 163, 164, 167 లను కలిపి చదివితే, Governor-CM సంబంధం కేంద్రంలో President-PM సంబంధానికి అదే ప్రాథమిక టెంప్లేట్ పై రూపొందించబడిందని స్పష్టమవుతుంది — వాస్తవ executive అధికారాన్ని ఎన్నికైన రాజకీయ నాయకుడు (CM) వినియోగిస్తారు, అతను/ఆమె ఎన్నికైన సభకు collectively జవాబుదారీగా ఉండే మంత్రివర్గానికి నాయకత్వం వహిస్తారు, అదే సమయంలో అధికారిక state head (Governor) చాలా విధుల్లో ఆ నాయకుడి aid, advice పైనే వ్యవహరిస్తారు — స్పష్టంగా వేరు చేయబడిన, ఇరుకైన personal discretion జోన్ మాత్రమే Governor కు ఉంటుంది. Article 167 లోని మూడు-బాధ్యతల ఫార్ములా ఎందుకు అవసరమంటే — అది లేకపోతే, రోజువారీ ప్రభుత్వ వ్యవహారాలతో సంబంధం లేకుండా రాజ్యాంగ విధులను స్వతంత్రంగా నిర్వర్తించే Governor కు, Council of Ministers వాస్తవంగా ఏమి నిర్ణయిస్తుందో తెలుసుకోవడానికి హామీ ఇచ్చే సమాచార మార్గం ఉండదు.</div>
+
+  <table class="qs">
+    <caption class="qs">Quick Summary — Governor-CM Constitutional Relationship</caption>
+    <thead><tr><th class="gn2" style="width:38%">Question</th><th>One-line Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Article 163?</td><td>CoM headed by CM to aid/advise Governor, except in Governor's discretion</td></tr>
+      <tr><td>Article 164 — 3 rules?</td><td>CM appointed by Governor; others on CM's advice; pleasure doctrine; collective responsibility to Assembly</td></tr>
+      <tr><td>Article 167?</td><td>CM's duty to communicate CoM decisions, furnish info, submit un-considered matters</td></tr>
+      <tr><td>Article 166?</td><td>Conduct of business of the Government of a State</td></tr>
+      <tr><td>Article 177?</td><td>Rights of Ministers as respects the Houses</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- ═══════════ PAGE 7 ═══════════ -->
+<div class="page">
+<div class="sub">Current Affairs Update</div>
+
+<div class="para">
+  <div class="ca">
+    <div class="catitle">Current Affairs Update — Current Chief Minister of Andhra Pradesh <span class="caasof">(as of 17.08.2026, verified via live web search on this date — re-verify closer to your exam date, as officeholders change on their own schedule independent of the book's text)</span></div>
+
+    <p class="eng">The book's discussion of the Chief Minister's office (appointment, oath, powers) is <b>institution-level</b> — it describes the rules that govern <i>whoever</i> holds the office, not any particular person, and none of those rules go stale. What does need periodic updating is the identity of the <b>current officeholder</b> in the student's own state, since APPSC Group 2 candidates are frequently asked this as a direct current-affairs question. As of this update, the Chief Minister of <b class="hlg">Andhra Pradesh</b> is <b class="hlp">Nara Chandrababu Naidu</b> (Telugu Desam Party), who was sworn in on <b class="hlg">12 June 2024</b> for his <b class="hlg">4th</b> term as Chief Minister, following the TDP-led NDA alliance's victory in the 2024 Andhra Pradesh Legislative Assembly election.</p>
+    <div class="te">పుస్తకంలో Chief Minister పదవి (నియామకం, ప్రమాణం, అధికారాలు) గురించి చర్చ <b>institution-level</b> అయినది — ఈ పదవిని <i>ఎవరు</i> కలిగి ఉన్నా వర్తించే నియమాలను వివరిస్తుంది తప్ప, ఏ ఒక్క నిర్దిష్ట వ్యక్తి గురించి కాదు, ఆ నియమాలు ఏవీ కాలం చెల్లిపోవు. కాలానుగుణంగా అప్‌డేట్ చేయాల్సింది విద్యార్థి సొంత రాష్ట్రంలో <b>ప్రస్తుత పదవీధరుడి</b> గుర్తింపు మాత్రమే, ఎందుకంటే APPSC Group 2 అభ్యర్థులను దీన్ని తరచుగా direct current-affairs ప్రశ్నగా అడుగుతారు. ఈ అప్‌డేట్ ప్రకారం, <b class="hlg">Andhra Pradesh</b> Chief Minister <b class="hlp">Nara Chandrababu Naidu</b> (Telugu Desam Party) — 2024 Andhra Pradesh Legislative Assembly ఎన్నికల్లో TDP-నేతృత్వంలోని NDA కూటమి విజయం తర్వాత, <b class="hlg">12 జూన్ 2024</b> న తన <b class="hlg">4వ</b> సారి Chief Minister గా ప్రమాణం చేశారు.</div>
+
+    <p class="eng">This is a good moment to connect the current fact back to the chapter's constitutional mechanics: because the TDP-led NDA alliance won an absolute majority of assembly seats in that election, the Governor's appointment of Naidu as CM required <b>no discretion</b> at all — it followed the straightforward "single party/alliance with absolute majority → automatic CM" rule discussed under the Sarkaria Commission recommendations (page 2), not the more complex hung-assembly or floor-test scenarios. For the exam, keep the book's institutional rules (Art. 164, Sarkaria Commission principles, Bommai case) as the tested <b>legal framework</b>, and treat "who is the current CM" as a separate, fast-changing <b>factual</b> question layered on top of it.</p>
+    <div class="te">ఇది chapter లోని రాజ్యాంగ మెకానిక్స్ తో ప్రస్తుత వాస్తవాన్ని అనుసంధానించుకోవడానికి మంచి సందర్భం — ఆ ఎన్నికల్లో TDP-నేతృత్వంలోని NDA కూటమి Assembly సీట్లలో absolute majority సాధించింది కాబట్టి, Naidu ను CM గా నియమించడంలో Governor కు <b>ఎలాంటి discretion అవసరం లేదు</b> — ఇది page 2 లో Sarkaria Commission సిఫారసుల కింద చర్చించిన సూటి "absolute majority ఉన్న ఒకే పార్టీ/కూటమి → ఆటోమేటిక్ CM" నియమాన్నే అనుసరించింది, hung-assembly లేదా floor-test వంటి క్లిష్టమైన పరిస్థితులు కాదు. Exam కోసం, పుస్తకంలోని institutional నియమాలను (Art.164, Sarkaria Commission సూత్రాలు, Bommai కేసు) పరీక్షించే <b>legal framework</b> గా ఉంచుకోండి, "ప్రస్తుత CM ఎవరు" అనే ప్రశ్నను దానిపైన ఉన్న వేరైన, వేగంగా మారే <b>వాస్తవిక (factual)</b> ప్రశ్నగా చూడండి.</div>
+
+    <table class="ca2">
+      <caption class="ca2">Andhra Pradesh Chief Minister — Current Position (as of 17.08.2026)</caption>
+      <thead><tr><th style="width:30%">Detail</th><th>Fact</th></tr></thead>
+      <tbody>
+        <tr><td>Current CM</td><td class="imp">Nara Chandrababu Naidu</td></tr>
+        <tr><td>Party / Alliance</td><td>Telugu Desam Party (TDP), leading the NDA alliance in AP</td></tr>
+        <tr><td>Sworn in</td><td class="hlg">12 June 2024</td></tr>
+        <tr><td>Term number</td><td class="hlg">4th term as AP CM</td></tr>
+        <tr><td>Basis of appointment</td><td>TDP-led NDA won absolute majority in the 2024 AP Assembly election — automatic appointment, no Governor discretion needed</td></tr>
+      </tbody>
+    </table>
+    <p class="eng" style="margin-top:8px">Note on scope: this update deliberately covers only the current officeholder, since that is the one CM-chapter fact that goes stale on a fixed political calendar (state elections, roughly every 5 years, or an earlier change of government). The chapter's legal/constitutional content — Article 164, the Sarkaria Commission principles, and the S.R. Bommai (1994) rule on dismissal — is stable doctrine and does not need a current-affairs refresh the way an officeholder's name does.</p>
+    <div class="te">పరిధి గమనిక — ఈ అప్‌డేట్ ఉద్దేశపూర్వకంగా కేవలం ప్రస్తుత పదవీధరుడిని మాత్రమే కవర్ చేస్తుంది, ఎందుకంటే ఇదే CM-chapter లో స్థిర రాజకీయ క్యాలెండర్ (సుమారు ప్రతి 5 సంవత్సరాలకు రాష్ట్ర ఎన్నికలు, లేదా అంతకుముందే ప్రభుత్వ మార్పు) పై కాలం చెల్లిపోయే ఏకైక వాస్తవం. Chapter లోని legal/రాజ్యాంగ విషయం — Article 164, Sarkaria Commission సూత్రాలు, తొలగింపుపై S.R. Bommai (1994) నియమం — స్థిరమైన doctrine, పదవీధరుడి పేరులా current-affairs refresh అవసరం లేదు.</div>
+  </div>
+</div>
+
+<div class="foot">M. Laxmikanth · Indian Polity 8th Edition · Chapter 31 — Chief Minister · APPSC Group 2 · Full-Depth Notes</div>
+</div>
+
+<div class="divider"><span class="dtitle">Ch.32 — State Council of Ministers</span><span class="dpart">Part IV &middot; Book 1 of 2</span></div>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+</body></html>

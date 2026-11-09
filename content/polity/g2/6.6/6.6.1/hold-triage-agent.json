@@ -1,0 +1,365 @@
+{
+  "chapter": "6.6.1",
+  "original_holds_triaged": 30,
+  "categories": {
+    "primary_comparative_constitution": 3,
+    "quote_attribution": 9,
+    "primary_international_text": 1,
+    "committee_primary_report": 1,
+    "observance_primary_notification": 1,
+    "interpretive_concept_or_source_wording": 2,
+    "primary_case_identity_and_scope": 5,
+    "unattributed_policy_proposal": 8
+  },
+  "status_counts": {
+    "open": 15,
+    "resolved_scoped_text": 1,
+    "partly_resolved_identity_hold": 1,
+    "partly_resolved_historical_scope": 1,
+    "partly_resolved": 1,
+    "resolved_scoped_holding": 1,
+    "editorial_final_preserved_unscored_proposal": 8,
+    "resolved_atomic_components": 1,
+    "resolved_historical_text": 1
+  },
+  "holds": [
+    {
+      "id": "POL-6110-P134-C04",
+      "saved_claim": "Japan and comparative democratic duty lists",
+      "category": "primary_comparative_constitution",
+      "status": "open",
+      "evidence": [
+        "review-manual-question-set-agent.json",
+        "https://www.gesetze-im-internet.de/englisch_gg/englisch_gg.html"
+      ],
+      "question_coverage_scope": "Blanket democracy exclusion separately disproved by POL-661-P136-006; Japan-only/list-specific proposition remains open.",
+      "next_action": "Verify specified country and historical edition, distinguishing express individual duties from a separate Indian-style list."
+    },
+    {
+      "id": "POL-6110-P134-C06",
+      "saved_claim": "Ambedkar explanation for omission",
+      "category": "quote_attribution",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Locate exact original author/report passage before testing an attribution; preserve saved GBK wording."
+    },
+    {
+      "id": "POL-6110-P134-C07",
+      "saved_claim": "Agra18March1956/PayBacktoSociety attribution",
+      "category": "quote_attribution",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Locate exact original author/report passage before testing an attribution; preserve saved GBK wording."
+    },
+    {
+      "id": "POL-661-P135-UDHR29",
+      "saved_claim": "UDHR29(1)comparison",
+      "category": "primary_international_text",
+      "status": "resolved_scoped_text",
+      "evidence": [
+        "review-UDHR-primary-agent.json",
+        "https://humanrights.mfa.go.th/en/documents/universal-declaration-of-human-rights/"
+      ],
+      "question_coverage_scope": "POL-661-P135-012 tests community duty and lawful limitations, actual Article29(1)–(3).",
+      "next_action": "No further legal-content hold for this scope; exact GBK wording remains under separate source gate."
+    },
+    {
+      "id": "POL-661-P135-rejected",
+      "saved_claim": "Tax/penalty/court-exclusionproposalsnotaccepted",
+      "category": "committee_primary_report",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "PreparedLax10paragraph4 directly supports tax/penalty/immunity rejection; locate originalcommittee/report for attribution-level claim. Do not infer absence of ordinary legislative power."
+    },
+    {
+      "id": "POL-661-P135-dutyday",
+      "saved_claim": "FundamentalDutiesDayclaim",
+      "category": "observance_primary_notification",
+      "status": "open",
+      "evidence": [
+        "review-amendment-commencement-primary.json"
+      ],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Distinguish verified3Jan1977commencement from an officially proclaimed annualDutiesDay. Notificationnotlocated; do notscoreobservanceaslaw."
+    },
+    {
+      "id": "POL-661-P135-culture",
+      "saved_claim": "Traditionalcultureoriginclaim",
+      "category": "interpretive_concept_or_source_wording",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "POL-661-P134-002 tests complementarity, not attribution or every metaphor.",
+      "next_action": "Treat broad cultural origin/right-duty asymmetry as interpretive discussion, not a proved universal historical fact. Existing complementarity question tests the sound constitutional concept."
+    },
+    {
+      "id": "POL-661-P136-1992",
+      "saved_claim": "Unspecified1992reasonablerestrictionholding",
+      "category": "primary_case_identity_and_scope",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Book gives no case identity; do not equate every duty with an independent Article19restriction. Compare named precedents only with actualjudgment evidence."
+    },
+    {
+      "id": "POL-661-P136-2003case",
+      "saved_claim": "ShyamNarayanShukla2003flag/anthemidentityclaim",
+      "category": "primary_case_identity_and_scope",
+      "status": "partly_resolved_identity_hold",
+      "evidence": [
+        "review-anthem-primary-agent.json"
+      ],
+      "question_coverage_scope": "Related24July2003ShyamNarayanChouksey MPHighCourt case identified. PrintedShukla/SupremeCourt/flag-advertising proposition not verified or counted tested.",
+      "next_action": "Retain source identity hold; no question based on unresolved printed proposition."
+    },
+    {
+      "id": "POL-661-P136-2016anthem",
+      "saved_claim": "2016cinemaanthemhistoricaldirection/currentstatus",
+      "category": "primary_case_identity_and_scope",
+      "status": "partly_resolved_historical_scope",
+      "evidence": [
+        "review-anthem-primary-agent.json"
+      ],
+      "question_coverage_scope": "POL-6.1.9-P106-04 tests9Jan2018modification of2016cinema direction; actual final paragraph33 read. CanonicalRightsquestionreusedinDuties;no duplicate score.",
+      "next_action": "Do not present2016interim cinema compulsion as unchanged current law; complete current executive-rules audit remains separate."
+    },
+    {
+      "id": "POL-661-P137-mehta",
+      "saved_claim": "MCMehta1986weeklyenvironmenteducationclaim",
+      "category": "primary_case_identity_and_scope",
+      "status": "partly_resolved",
+      "evidence": [
+        "review-environment-cases-primary-agent.json",
+        "https://www.ielrc.org/content/e8804.pdf"
+      ],
+      "question_coverage_scope": "POL-661-P137-007 tests12Jan1988para24weeklydirection; printed1986date remainsunverified.",
+      "next_action": "Match actual judgment date,court,operative reasoning; no substitution of a different same-name case."
+    },
+    {
+      "id": "POL-661-P137-rural",
+      "saved_claim": "RuralLitigation18December1986paragraph20:environmentpreservation/ecologicalbalanceistaskofgovernmentandeverycitizen;51A(g).",
+      "category": "primary_case_identity_and_scope",
+      "status": "resolved_scoped_holding",
+      "evidence": [
+        "review-environment-cases-primary-agent.json",
+        "https://indiankanoon.org/doc/43168610/"
+      ],
+      "question_coverage_scope": "POL-661-P137-008 tests government+citizen environmentalresponsibility, actualpara20. Notautomaticpenalties.",
+      "next_action": "Match actual judgment date,court,operative reasoning; no substitution of a different same-name case."
+    },
+    {
+      "id": "POL-661-P138-rec01",
+      "saved_claim": "Jan3observanceproposal",
+      "category": "unattributed_policy_proposal",
+      "status": "editorial_final_preserved_unscored_proposal",
+      "evidence": [],
+      "question_coverage_scope": "A policy idea may be discussed in GroupI as a recommendation, explicitly labelled, without asserting legal compulsion.",
+      "next_action": "Book labels these more recommendations, not enacted constitutional duties. Establish recommending body/date before an attribution MCQ; do not manufacture according-to-book questions.",
+      "previous_status": "open",
+      "primary_provenance_verified": false,
+      "final_disposition": "Saved GBK138 has only the heading More recommendations, without committee attribution. Preserve as unattributed normative source proposals, unscored. Do not present as enacted law, official adoption or a named committee recommendation.",
+      "remaining_gate": "GBK exact wording separate; actual author/provenance not established and not asserted."
+    },
+    {
+      "id": "POL-661-P138-rec02",
+      "saved_claim": "Curriculumproposal",
+      "category": "unattributed_policy_proposal",
+      "status": "editorial_final_preserved_unscored_proposal",
+      "evidence": [],
+      "question_coverage_scope": "A policy idea may be discussed in GroupI as a recommendation, explicitly labelled, without asserting legal compulsion.",
+      "next_action": "Book labels these more recommendations, not enacted constitutional duties. Establish recommending body/date before an attribution MCQ; do not manufacture according-to-book questions.",
+      "previous_status": "open",
+      "primary_provenance_verified": false,
+      "final_disposition": "Saved GBK138 has only the heading More recommendations, without committee attribution. Preserve as unattributed normative source proposals, unscored. Do not present as enacted law, official adoption or a named committee recommendation.",
+      "remaining_gate": "GBK exact wording separate; actual author/provenance not established and not asserted."
+    },
+    {
+      "id": "POL-661-P138-rec03",
+      "saved_claim": "NCCproposal",
+      "category": "unattributed_policy_proposal",
+      "status": "editorial_final_preserved_unscored_proposal",
+      "evidence": [],
+      "question_coverage_scope": "A policy idea may be discussed in GroupI as a recommendation, explicitly labelled, without asserting legal compulsion.",
+      "next_action": "Book labels these more recommendations, not enacted constitutional duties. Establish recommending body/date before an attribution MCQ; do not manufacture according-to-book questions.",
+      "previous_status": "open",
+      "primary_provenance_verified": false,
+      "final_disposition": "Saved GBK138 has only the heading More recommendations, without committee attribution. Preserve as unattributed normative source proposals, unscored. Do not present as enacted law, official adoption or a named committee recommendation.",
+      "remaining_gate": "GBK exact wording separate; actual author/provenance not established and not asserted."
+    },
+    {
+      "id": "POL-661-P138-rec04",
+      "saved_claim": "Mediapublicityproposal",
+      "category": "unattributed_policy_proposal",
+      "status": "editorial_final_preserved_unscored_proposal",
+      "evidence": [],
+      "question_coverage_scope": "A policy idea may be discussed in GroupI as a recommendation, explicitly labelled, without asserting legal compulsion.",
+      "next_action": "Book labels these more recommendations, not enacted constitutional duties. Establish recommending body/date before an attribution MCQ; do not manufacture according-to-book questions.",
+      "previous_status": "open",
+      "primary_provenance_verified": false,
+      "final_disposition": "Saved GBK138 has only the heading More recommendations, without committee attribution. Preserve as unattributed normative source proposals, unscored. Do not present as enacted law, official adoption or a named committee recommendation.",
+      "remaining_gate": "GBK exact wording separate; actual author/provenance not established and not asserted."
+    },
+    {
+      "id": "POL-661-P138-rec05",
+      "saved_claim": "Ombudsmanproposal",
+      "category": "unattributed_policy_proposal",
+      "status": "editorial_final_preserved_unscored_proposal",
+      "evidence": [],
+      "question_coverage_scope": "A policy idea may be discussed in GroupI as a recommendation, explicitly labelled, without asserting legal compulsion.",
+      "next_action": "Book labels these more recommendations, not enacted constitutional duties. Establish recommending body/date before an attribution MCQ; do not manufacture according-to-book questions.",
+      "previous_status": "open",
+      "primary_provenance_verified": false,
+      "final_disposition": "Saved GBK138 has only the heading More recommendations, without committee attribution. Preserve as unattributed normative source proposals, unscored. Do not present as enacted law, official adoption or a named committee recommendation.",
+      "remaining_gate": "GBK exact wording separate; actual author/provenance not established and not asserted."
+    },
+    {
+      "id": "POL-661-P138-rec06",
+      "saved_claim": "Publicdisplayproposal",
+      "category": "unattributed_policy_proposal",
+      "status": "editorial_final_preserved_unscored_proposal",
+      "evidence": [],
+      "question_coverage_scope": "A policy idea may be discussed in GroupI as a recommendation, explicitly labelled, without asserting legal compulsion.",
+      "next_action": "Book labels these more recommendations, not enacted constitutional duties. Establish recommending body/date before an attribution MCQ; do not manufacture according-to-book questions.",
+      "previous_status": "open",
+      "primary_provenance_verified": false,
+      "final_disposition": "Saved GBK138 has only the heading More recommendations, without committee attribution. Preserve as unattributed normative source proposals, unscored. Do not present as enacted law, official adoption or a named committee recommendation.",
+      "remaining_gate": "GBK exact wording separate; actual author/provenance not established and not asserted."
+    },
+    {
+      "id": "POL-661-P138-rec07",
+      "saved_claim": "FilmTVregulationproposal",
+      "category": "unattributed_policy_proposal",
+      "status": "editorial_final_preserved_unscored_proposal",
+      "evidence": [],
+      "question_coverage_scope": "A policy idea may be discussed in GroupI as a recommendation, explicitly labelled, without asserting legal compulsion.",
+      "next_action": "Book labels these more recommendations, not enacted constitutional duties. Establish recommending body/date before an attribution MCQ; do not manufacture according-to-book questions.",
+      "previous_status": "open",
+      "primary_provenance_verified": false,
+      "final_disposition": "Saved GBK138 has only the heading More recommendations, without committee attribution. Preserve as unattributed normative source proposals, unscored. Do not present as enacted law, official adoption or a named committee recommendation.",
+      "remaining_gate": "GBK exact wording separate; actual author/provenance not established and not asserted."
+    },
+    {
+      "id": "POL-661-P138-rec08",
+      "saved_claim": "Bookletproposal",
+      "category": "unattributed_policy_proposal",
+      "status": "editorial_final_preserved_unscored_proposal",
+      "evidence": [],
+      "question_coverage_scope": "A policy idea may be discussed in GroupI as a recommendation, explicitly labelled, without asserting legal compulsion.",
+      "next_action": "Book labels these more recommendations, not enacted constitutional duties. Establish recommending body/date before an attribution MCQ; do not manufacture according-to-book questions.",
+      "previous_status": "open",
+      "primary_provenance_verified": false,
+      "final_disposition": "Saved GBK138 has only the heading More recommendations, without committee attribution. Preserve as unattributed normative source proposals, unscored. Do not present as enacted law, official adoption or a named committee recommendation.",
+      "remaining_gate": "GBK exact wording separate; actual author/provenance not established and not asserted."
+    },
+    {
+      "id": "POL-661-P138-ref01",
+      "saved_claim": "Japaneducation/tax/welfareduties",
+      "category": "primary_comparative_constitution",
+      "status": "resolved_atomic_components",
+      "evidence": [
+        "review-foreign-duties-primary-agent.json"
+      ],
+      "question_coverage_scope": "POL-661-P138-001 tests Japan12/26/30; three canonical atomic facts replace grouped alias in coverage counts.",
+      "next_action": "Do not count grouped alias a second time or infer Japan is the only democracy with duties."
+    },
+    {
+      "id": "POL-661-P138-ref02",
+      "saved_claim": "1977USSRArticle66includedchildrenscare/helpforparents;notautomaticallyanIndian51Aduty.",
+      "category": "primary_comparative_constitution",
+      "status": "resolved_historical_text",
+      "evidence": [
+        "review-foreign-duties-primary-agent.json"
+      ],
+      "question_coverage_scope": "POL-661-P138-002 tests historical1977USSR66; not current Russian law.",
+      "next_action": "Preserve historical date and academic reproduction provenance."
+    },
+    {
+      "id": "POL-661-P138-ref03",
+      "saved_claim": "DD_Basu",
+      "category": "quote_attribution",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Locate exact original author/report passage before testing an attribution; preserve saved GBK wording."
+    },
+    {
+      "id": "POL-661-P138-ref04",
+      "saved_claim": "KV_Mathew",
+      "category": "quote_attribution",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Locate exact original author/report passage before testing an attribution; preserve saved GBK wording."
+    },
+    {
+      "id": "POL-661-P138-ref05",
+      "saved_claim": "HJ_Laski",
+      "category": "quote_attribution",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Locate exact original author/report passage before testing an attribution; preserve saved GBK wording."
+    },
+    {
+      "id": "POL-661-P138-ref06",
+      "saved_claim": "NaniPalkhivala",
+      "category": "quote_attribution",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Locate exact original author/report passage before testing an attribution; preserve saved GBK wording."
+    },
+    {
+      "id": "POL-661-P138-ref07",
+      "saved_claim": "NK_Sen",
+      "category": "quote_attribution",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Locate exact original author/report passage before testing an attribution; preserve saved GBK wording."
+    },
+    {
+      "id": "POL-661-P138-ref08",
+      "saved_claim": "NCRWCchildquote",
+      "category": "quote_attribution",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Locate exact original author/report passage before testing an attribution; preserve saved GBK wording."
+    },
+    {
+      "id": "POL-661-P138-ref09",
+      "saved_claim": "IndiraGandhi",
+      "category": "quote_attribution",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "No new tested coverage.",
+      "next_action": "Locate exact original author/report passage before testing an attribution; preserve saved GBK wording."
+    },
+    {
+      "id": "POL-661-P138-ref10",
+      "saved_claim": "Rightdutyasymmetry",
+      "category": "interpretive_concept_or_source_wording",
+      "status": "open",
+      "evidence": [],
+      "question_coverage_scope": "POL-661-P134-002 tests complementarity, not attribution or every metaphor.",
+      "next_action": "Treat broad cultural origin/right-duty asymmetry as interpretive discussion, not a proved universal historical fact. Existing complementarity question tests the sound constitutional concept."
+    }
+  ],
+  "source_wording_gate": {
+    "pages": [
+      134,
+      135,
+      136,
+      137,
+      138
+    ],
+    "passes_each": 3,
+    "further_scan_reads": false,
+    "scope": "Fine wording/quotation tokens remain uncertified; legal verification does not close transcription exactness."
+  },
+  "completion": false,
+  "editorial_update": "Eight normative proposals have final preserved-unscored treatment. This is not primary verification; other named quotations/factual claims remain held."
+}
