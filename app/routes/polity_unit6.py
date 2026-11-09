@@ -45,8 +45,7 @@ def concept_cards(chapter_id):
         if review:args.update(review='1',choice=choice)
         target=url_for('.practice',item_id=q['id'],**args)+'#answer-result'
     lax=[l for l in (c.get('laxmikanth') or []) if (LAX_DIR/f"chapter-{int(l['chapter']):03d}.html").is_file()]
-    tabs=dict(show=True,src='cards',lx=None,lax=[],gbk=url_for('.notes',chapter_id=chapter_id,**qkeep),cards=url_for('.concept_cards',chapter_id=chapter_id,qlang=lang,hl=','.join(hl),**qkeep),
-        laxurl=url_for('.notes',chapter_id=chapter_id,src='lax',lx=lax[0]['chapter'],**qkeep) if lax else '')
+    tabs=dict(show=False)
     toolbar=render_template('ds/polity_note_toolbar.html',chapter_url=url_for('.chapter',chapter_id=chapter_id),question_url=target,tabs=tabs)
     return render_template('ds/polity_cards.html',cards=cards,key=key,hl=hl,lang=lang,chapter=c,chapter_id=chapter_id,toolbar=toolbar,qkeep=qkeep)
 @bp.app_context_processor
@@ -350,8 +349,8 @@ def notes(chapter_id):
         content=_re.sub(r'</head>',lambda m:LAX_CSS+m.group(0),content,count=1,flags=_re.I)
     else:content=numbered_notes(chapter_id)
     keep={k:v for k,v in request.args.items() if k not in ('src','lx')}
-    tabs=dict(show=bool(lax) or bool(_cards.chapter_cards(_cards.chapter_key(chapter_id))),src=src,lx=lx,lax=[dict(n=l['chapter'],title=l.get('title',''),url=url_for('.notes',chapter_id=chapter_id,src='lax',lx=l['chapter'],**keep)) for l in lax],
-        gbk=url_for('.notes',chapter_id=chapter_id,**keep),cards=(url_for('.concept_cards',chapter_id=chapter_id,**({'item_id':q['id']} if q else {})) if _cards.chapter_cards(_cards.chapter_key(chapter_id)) else ''),laxurl=url_for('.notes',chapter_id=chapter_id,src='lax',lx=lax[0]['chapter'],**keep) if lax else '')
+    tabs=dict(show=bool(lax),src=src,lx=lx,lax=[dict(n=l['chapter'],title=l.get('title',''),url=url_for('.notes',chapter_id=chapter_id,src='lax',lx=l['chapter'],**keep)) for l in lax],
+        gbk=url_for('.notes',chapter_id=chapter_id,**keep),laxurl=url_for('.notes',chapter_id=chapter_id,src='lax',lx=lax[0]['chapter'],**keep) if lax else '')
     back=url_for('.chapter',chapter_id=chapter_id)
     target=None
     if q:

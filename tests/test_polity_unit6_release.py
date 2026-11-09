@@ -173,7 +173,7 @@ def test_concept_cards_page_and_notes_tab(client,app):
     assert r.status_code==200 and 'cc-hl' in r.get_data(as_text=True)
     assert client.get('/learn/polity/unit6/cards/9.9').status_code==404
     n=client.get('/learn/polity/unit6/chapters/6.6.1/notes').get_data(as_text=True)
-    assert 'Concept cards / కార్డులు' in n and '/cards/6.6.1' in n
+    assert 'Concept cards / కార్డులు' not in n
 
 
 def test_concept_cards_full_page_looks_like_notes(client,app):
@@ -182,5 +182,4 @@ def test_concept_cards_full_page_looks_like_notes(client,app):
     with app.app_context():
         q=next(x for x in records().values() if x['_chapter']=='6.6.1' and x.get('_kind')=='bank' and x.get('_answer') in (1,2,3,4))
     h=client.get('/learn/polity/unit6/cards/6.6.1?item_id='+q['id']+'&hl=CC-6.6-01').get_data(as_text=True)
-    assert 'u6-reader-nav' in h and 'data-return-question' in h and 'GBK notes' in h and 'Laxmikanth' in h
-    assert 'aria-current="page">Concept cards' in h and 'cc-hl' in h
+    assert 'u6-reader-nav' in h and 'data-return-question' in h and 'class="u6-tabs"' not in h and 'cc-hl' in h

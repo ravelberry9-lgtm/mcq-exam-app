@@ -213,7 +213,7 @@ def test_notes_have_gbk_and_laxmikanth_tabs(client,app):
     app.config['POLITY_UNIT6_ENABLED']=True
     gbk=soup(client.get('/learn/polity/unit6/chapters/6.4.1/notes'))
     tabs=gbk.select('.u6-tabs a')
-    assert len(tabs)==3 and tabs[0].get('aria-current')=='page'
+    assert len(tabs)==2 and tabs[0].get('aria-current')=='page'
     lax=client.get(tabs[1]['href']);assert lax.status_code==200
     page=soup(lax);assert page.select('.u6-tabs a')[1].get('aria-current')=='page' and '.page{width:auto!important' in lax.get_data(as_text=True)
     assert 'Fundamental Rights' in page.get_text()
