@@ -44,9 +44,7 @@
       var badge = { agrees: "✅ AI ఏకీభవిస్తోంది · AI agrees with the answer key", disagrees: "⚠️ AI ఏకీభవించలేదు · AI disagrees with the answer key", unsure: "❓ AI ఖచ్చితంగా చెప్పలేదు · AI is not sure" }[r.verdict] || "";
       aiOut.textContent = "";
       function line(txt, bold) { var d = document.createElement(bold ? "strong" : "div"); d.textContent = txt; d.style.display = "block"; d.style.marginTop = "4px"; aiOut.appendChild(d); }
-      if (r.unscored) badge = badge.replace(/answer key/g, "study answer");
       line(badge, true);
-      if (r.unscored) line("Unscored study material; AI agreement does not verify the official key.");
       if (r.verdict !== "agrees" && r.your_answer) line("AI: " + r.your_answer + " · " + (r.unscored ? "Study answer: " : "Key: ") + r.stored_answer + " (A=1, B=2, C=3, D=4)");
       if (r.te) line(r.te); if (r.en) line(r.en);
       (r.issues || []).forEach(function (i) { line("• " + i); });

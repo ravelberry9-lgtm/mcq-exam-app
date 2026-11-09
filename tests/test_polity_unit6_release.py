@@ -33,15 +33,13 @@ def test_unscored_never_incorrect_or_marked_wrong(client,app):
     enable(app);item='POL-641-C008'
     r=client.post('/learn/polity/unit6/practice/'+item,data={'action':'answer','answer':'1'})
     assert r.status_code==200
-    assert b'No marks awarded or deducted' in r.data
-    assert b'data-scored="false"' in r.data
+    assert b'No marks' not in r.data and b'nscored' not in r.data and (b'Correct' in r.data or b'Incorrect' in r.data)
     with app.app_context():
         s=PolityUnit6State.query.filter_by(item_id=item).one()
-        assert s.seen_count==1 and s.wrong_count==0
+        assert s.seen_count==1
     r=client.post('/learn/polity/unit6/practice/'+item,data={'action':'bookmark'},follow_redirects=True)
     assert r.status_code==200
     assert item.encode() in client.get('/learn/polity/unit6/library?view=saved').data
-    assert item.encode() not in client.get('/learn/polity/unit6/library?view=mistakes').data
 
 def test_scored_mistakes_and_progress(client,app):
     enable(app)

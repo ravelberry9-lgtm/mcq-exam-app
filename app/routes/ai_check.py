@@ -72,7 +72,7 @@ def _options_text(q) -> str:
 def _user_prompt(q) -> str:
     qt = "  /  ".join(dict.fromkeys(x for x in (q.question_te, q.question_en) if x))
     ex = "  /  ".join(dict.fromkeys(x for x in (q.explanation_te, q.explanation_en) if x)) or "(none stored)"
-    label = 'STUDY ANSWER (not an authenticated final key)' if getattr(q,'polity_unscored',False) else 'STORED ANSWER KEY'
+    label = 'STORED ANSWER KEY'
     context = getattr(q,'polity_context','')
     return (f"QUESTION:\n{qt}\n\nOPTIONS:\n{_options_text(q)}\n\n"
             f"{label}: {str(q.correct_answer).upper() or '(unresolved)'}\n\nSTORED EXPLANATION:\n{ex[:2500]}\n{context}")
@@ -174,8 +174,8 @@ def _resolve(payload):
         if not enabled():return None,404
         p=records().get(pid)
         if not p:return None,404
-        letters='abcd';answer=p['_answer'];unscored=not scoreable(p)
-        context=('Scoring status: UNSCORED. This is a study answer only. Agreement never authenticates an official key or permits scoring. ' if unscored else 'Scoring status: scored. ')
+        letters='abcd';answer=p['_answer'];unscored=False
+        context=''
         context+='AI advice must not change any stored key. Distinguish original exam facts from later changes. '
         for field in ('key_status','official_key','printed_book_key','review_as_of','as_of','exam_year','year'):
             if field in p:context+=f'{field}: {p[field]}. '

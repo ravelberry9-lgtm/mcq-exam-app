@@ -5,6 +5,8 @@ from app.services.polity_sections import section_links,chapter_locators
 from app.polity_models import PolityUnit6State
 from app.routes import ai_check
 
+from app.routes.polity_unit6 import visible
+
 def soup(response):
     assert response.status_code==200
     return BeautifulSoup(response.data,'html.parser')
@@ -30,34 +32,34 @@ def test_hierarchy_and_filtered_previous_next(client,app):
     assert back.path==initial.path and parse_qs(back.query)==parse_qs(initial.query)
     global_library=soup(client.get('/learn/polity/unit6/library'))
     start=next(a['href'] for a in global_library.select('a') if 'Start practice' in a.text)
-    assert '1 / 1726' in soup(client.get(start)).get_text()
+    assert '1 / 1700' in soup(client.get(start)).get_text()
 
 def test_every_locator_resolves_and_fallback_returns_without_rescoring(client,app):
     app.config['POLITY_UNIT6_ENABLED']=True
     with app.app_context():
         qs=records()
-        assert len(qs)==2324 and sum(q['_scored'] for q in qs.values())==1933
+        assert len(qs)==2324
         for q in qs.values():
             for link in section_links(q):
                 if link['anchor'].startswith('u6s-'):
                     from app.routes.polity_unit6 import numbered_notes
                     assert f'id="{link["anchor"]}"' in numbered_notes(q['_chapter'])
                 else:assert link['anchor'] in chapter_locators(q['_chapter'])[0]
-        q=next(q for q in qs.values() if not section_links(q) and not q['_scored'])
+        q=next(q for q in qs.values() if not section_links(q) and visible(q))
     url='/learn/polity/unit6/practice/'+q['id']+'?chapter='+q['_chapter']+'&kind='+q['_kind']+'&qlang=both'
     answered=soup(client.post(url,data={'answer':'1'}))
-    assert not answered.select('.is-correct,.is-wrong')
+    assert answered.select('.is-correct') and 'nscored' not in str(answered)
     notes_url=answered.select_one('[data-chapter-link]')['href']
     assert notes_url.endswith('#question-explanation')
     notes=soup(client.get(notes_url))
     assert notes.select_one('#question-explanation')
-    assert q['_en'] in notes.get_text() and q['_te'] in notes.get_text()
+    assert notes.select_one('.u6-expl')
     returned=soup(client.get(notes.select_one('[data-return-question]')['href']))
-    assert 'No marks awarded or deducted' in returned.get_text()
+    assert 'Answer:' in returned.get_text() and 'No marks' not in returned.get_text()
     assert returned.select_one('#aichk')
     with app.app_context():
         state=PolityUnit6State.query.filter_by(item_id=q['id']).one()
-        assert state.seen_count==1 and state.wrong_count==0
+        assert state.seen_count==1
 
 def test_polity_ai_reads_stored_content_and_never_scores(client,app,monkeypatch):
     app.config['POLITY_UNIT6_ENABLED']=True
@@ -69,12 +71,11 @@ def test_polity_ai_reads_stored_content_and_never_scores(client,app,monkeypatch)
         return {'verdict':'agrees','your_answer':'abcd'[q['_answer']-1],'te':'సలహా','en':'Advice','issues':[]} if kw.get('json_mode',True) else 'Study advice only.'
     monkeypatch.setattr(ai_check,'_call_openai',fake)
     response=client.post('/api/ai/check',json={'polity_id':q['id'],'question':'FORGED QUESTION'})
-    assert response.status_code==200 and response.json['unscored'] is True
-    assert 'STUDY ANSWER' in calls[0][1]['content'] and 'FORGED QUESTION' not in str(calls)
+    assert response.status_code==200 and response.json['unscored'] is False
+    assert 'STORED ANSWER KEY' in calls[0][1]['content'] and 'FORGED QUESTION' not in str(calls)
     assert client.post('/api/ai/chat',json={'polity_id':q['id'],'message':'Explain this'}).status_code==200
-    assert 'UNSCORED' in calls[-1][0]['content']
     with app.app_context():
-        assert PolityUnit6State.query.count()==0 and records()[q['id']]['_scored'] is False
+        assert PolityUnit6State.query.count()==0 and records()[q['id']]['_scored'] is True
     assert client.post('/api/ai/check',json={'polity_id':q['id'],'geo_lesson':1}).status_code==400
     assert client.post('/api/ai/check',json={'polity_id':'absent'}).status_code==404
     app.config['POLITY_UNIT6_ENABLED']=False
@@ -138,11 +139,11 @@ def test_counts_on_learn_unit_and_subject_pages(client,app):
     app.config['POLITY_UNIT6_ENABLED']=True
     with app.test_request_context():
         st=unit6_stats()
-    assert (st['chapters'],st['mcq'],st['pyq'])==(14,1210,516)
+    assert (st['chapters'],st['mcq'],st['pyq'])==(14,1210,490)
     learn=client.get('/learn/').get_data(as_text=True)
-    assert '14 chapters · 1210 MCQs · 516 PYQs' in learn and '91 chapters' not in learn
+    assert '14 chapters · 1210 MCQs · 490 PYQs' in learn and '91 chapters' not in learn
     unit=client.get('/learn/polity/unit6/unit').get_data(as_text=True)
-    assert '1210' in unit and '516' in unit and unit.count('u6-chcard')>=14
+    assert '1210' in unit and '490' in unit and unit.count('u6-chcard')>=14
     assert 'MCQs' in client.get('/learn/polity/unit6/').get_data(as_text=True)
 
 
@@ -187,3 +188,36 @@ def test_heading_button_shows_concept_title(client,app):
     iid,v=next((k,x) for k,x in json.load(open(CONTENT/'_shared/Note-Section-Map.json'))['items'].items() if x['title_en'])
     h=client.get(f'/learn/polity/unit6/practice/{iid}').get_data(as_text=True)
     assert v['title_en'] in h
+
+
+def test_wrong_is_red_points_explanation_and_no_unscored_text(client,app):
+    app.config['POLITY_UNIT6_ENABLED']=True
+    with app.app_context():
+        from app.routes.polity_unit6 import visible
+        qs=[q for q in records().values() if visible(q)]
+        was_unscored=next(q for q in qs if not q['_orig_scored'])
+        multi=next(q for q in qs if q['_en'].count('. ')>=3)
+    for q in (was_unscored,multi):
+        wrong=q['_answer']%4+1
+        page=soup(client.post('/learn/polity/unit6/practice/'+q['id'],data={'answer':str(wrong)}))
+        assert page.select('.geo-option.is-wrong') and page.select('.geo-answer.is-wrong') and page.select('.geo-option.is-correct')
+        text=page.get_text().lower()
+        assert 'unscored' not in text and 'no marks' not in text and 'study only' not in text
+        assert page.select('.u6-expl .lead')
+    assert soup(client.post('/learn/polity/unit6/practice/'+multi['id'],data={'answer':str(multi['_answer'])})).select('.u6-expl ul.pts li')
+    ok=soup(client.post('/learn/polity/unit6/practice/'+multi['id'],data={'answer':str(multi['_answer'])}))
+    assert ok.select('.geo-answer.is-right')
+
+
+def test_notes_have_gbk_and_laxmikanth_tabs(client,app):
+    app.config['POLITY_UNIT6_ENABLED']=True
+    gbk=soup(client.get('/learn/polity/unit6/chapters/6.4.1/notes'))
+    tabs=gbk.select('.u6-tabs a')
+    assert len(tabs)==2 and tabs[0].get('aria-current')=='page'
+    lax=client.get(tabs[1]['href']);assert lax.status_code==200
+    page=soup(lax);assert page.select('.u6-tabs a')[1].get('aria-current')=='page' and '.page{width:auto!important' in lax.get_data(as_text=True)
+    assert 'Fundamental Rights' in page.get_text()
+    chapter=client.get('/learn/polity/unit6/chapters/6.4.1').get_data(as_text=True)
+    assert '/references/laxmikanth/' not in chapter
+    multi=soup(client.get('/learn/polity/unit6/chapters/6.5.2/notes?src=lax'))
+    assert len(multi.select('.u6-lxsub a'))==3

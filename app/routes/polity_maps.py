@@ -62,6 +62,8 @@ def _load_records():
         rationale=shared_ex.get(q.get('explanation_id',q['id']),{})
         q['_en']=q.get('explanation_en') or rationale.get('en','');q['_te']=q.get('explanation_te') or rationale.get('te','')
         result.setdefault(q['id'],q)
+    for q in result.values():
+        q['_orig_scored']=q['_scored'];q['_scored']=q['_answer'] in (1,2,3,4)
     return result
 
 def catalog():

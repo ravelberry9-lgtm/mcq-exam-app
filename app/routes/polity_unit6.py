@@ -7,7 +7,7 @@ from ..polity_models import PolityUnit6State,PolityUnit6Progress,PolityUnit6Exam
 from ..services.device import device_id
 from .polity_maps import CONTENT,read,records,catalog
 from ..services.polity_sections import section_links,directory
-import re as _re
+import re,re as _re
 _JARGON=_re.compile(r'(fact register|bank key|authenticated pairing|tests separately|untested|source[- ]bank|content team|GBK paragraph|Laxmikanth paragraph)',_re.I)
 _IDS=_re.compile(r'\s*[\(\[]?\b(?:POL|APPSC|BK|GBK\d*|PYQ)-[A-Za-z0-9._-]+\b[\)\]]?')
 def clean_text(t):
@@ -20,8 +20,8 @@ def clean_text(t):
 bp=Blueprint('polity_unit6',__name__,url_prefix='/learn/polity/unit6')
 def unit6_stats():
     corpus=records()
-    mcq=sum(1 for q in corpus.values() if q['_kind']=='bank')
-    pyq=sum(1 for q in corpus.values() if q['_kind'] in ('pyq','primary_pyq'))
+    mcq=sum(1 for q in corpus.values() if q['_kind']=='bank' and visible(q))
+    pyq=sum(1 for q in corpus.values() if q['_kind'] in ('pyq','primary_pyq') and visible(q))
     return dict(chapters=len(chapters()),mcq=mcq,pyq=pyq,total=mcq+pyq)
 @bp.app_context_processor
 def _stats_ctx():
@@ -88,6 +88,30 @@ def _pyq_label(q):
     if series and series.lower() not in ('a','b','c','d') :pass
     detail=' · '.join(x for x in (stage,paper,series,('Q'+str(q['question_number'])) if q.get('question_number') else '') if x)
     return dict(title=' · '.join(x for x in (exam,year) if x),detail=detail)
+
+_ABBR=re.compile(r"(?:\b(?:Ch|No|Nos|Art|Arts|Sec|Cl|Sch|Vol|vs|v|Dr|Mr|Shri|Smt|Pt|St|etc|viz|cf|ed|Pr|Fig|Sl)|\b[A-Z])\.$")
+def _sentences(par):
+    parts=re.split(r"(?<=[.!?])\s+",par.strip());out=[]
+    for x in parts:
+        if out and _ABBR.search(out[-1]):out[-1]+=' '+x
+        else:out.append(x)
+    return [x for x in out if x]
+def format_expl(t):
+    t=clean_text(t or '').strip()
+    if not t:return Markup('')
+    pars=[x for x in re.split(r"\n+",t) if x.strip()]
+    sents=[x for par in pars for x in _sentences(par)]
+    if len(sents)<=1:return Markup('<p class="lead">'+str(escape(sents[0] if sents else t))+'</p>')
+    out=['<p class="lead">'+str(escape(sents[0]))+'</p><ul class="pts">']
+    for x in sents[1:]:
+        clauses=[c.strip() for c in re.split(r";\s+",x) if c.strip()]
+        if len(x)>170 and len(clauses)>1:
+            out.append('<li>'+str(escape(clauses[0]))+'<ul>'+''.join('<li>'+str(escape(c))+'</li>' for c in clauses[1:])+'</ul></li>')
+        else:out.append('<li>'+str(escape(x))+'</li>')
+    out.append('</ul>')
+    return Markup(''.join(out))
+@bp.app_template_filter('fmt_expl')
+def _fmt_expl(t):return format_expl(t)
 @bp.app_template_filter('clean_expl')
 def _clean_expl(t):return clean_text(t)
 
@@ -101,9 +125,9 @@ def chapters():
 def chapter_or_404(cid):
     return next((c for c in chapters() if c['id']==cid),None) or abort(404)
 VISIBLE_KINDS=('bank','pyq','primary_pyq')
-def visible(q):return q['_kind'] in VISIBLE_KINDS
+def visible(q):return q['_kind'] in VISIBLE_KINDS and q['_answer'] in (1,2,3,4)
 def scoreable(q):
-    return q['_scored'] and q['_answer'] in (1,2,3,4) and q.get('key_status') not in ('disputed','no_official_key','needs_user_decision')
+    return q['_answer'] in (1,2,3,4)
 def state_for(item_id):
     key=(device_id(),item_id);state=db.session.get(PolityUnit6State,key)
     if state is None:
@@ -178,7 +202,7 @@ def question_page(q,choice=None,review=False,qs=None):
     # visible without silently switching to the full bank.
     if pos is None:qs=[q];pos=0
     lang=language();feedback=None
-    if review:feedback=('correct' if choice==q['_answer'] else 'incorrect') if scoreable(q) else 'unscored'
+    if review:feedback='correct' if choice==q['_answer'] else 'incorrect'
     context={**values,'qlang':lang}
     review_args={'review':'1','choice':choice} if review and choice in (1,2,3,4) else {}
     notes=url_for('.notes',chapter_id=q['_chapter'],item_id=q['id'],**context,**review_args)
@@ -201,11 +225,25 @@ def numbered_notes(chapter_id):
         return f'<a id="u6s-{i}"></a>'+m.group(0) if ' id=' in m.group(0) else m.group(0)[:-1]+f' id="u6s-{i}">'
     return _re.sub(r'<h[1-4]\b[^>]*>',add,html)
 
+from pathlib import Path as _P
+LAX_DIR=CONTENT/'references'/'laxmikanth'
+LAX_CSS='''<style>body{background:#f4f6f8!important;font-size:16px!important;overflow-wrap:anywhere}.page{width:auto!important;max-width:900px!important;min-height:0!important;margin:0 auto!important;padding:14px 14px 30px!important;box-shadow:none!important;background:#fff!important}body>nav[style]{display:none!important}img,svg{max-width:100%;height:auto}table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}h1{font-size:1.35rem!important;line-height:1.4}.ptitle{display:block!important}@media(max-width:640px){body{font-size:15.5px!important}.page{padding:10px 10px 26px!important}[style*="columns"],[style*="column-count"]{column-count:1!important;columns:1!important}td,th{min-width:84px}ul{margin-left:16px!important}}</style>'''
 @bp.get('/chapters/<chapter_id>/notes')
 def notes(chapter_id):
     chapter_or_404(chapter_id);item_id=request.args.get('item_id');q=records().get(item_id) if item_id else None
     if item_id and (not q or q['_chapter']!=chapter_id):abort(404)
-    content=numbered_notes(chapter_id)
+    c=chapter_or_404(chapter_id)
+    lax=[l for l in (c.get('laxmikanth') or []) if (LAX_DIR/f"chapter-{int(l['chapter']):03d}.html").is_file()]
+    src='lax' if request.args.get('src')=='lax' and lax else 'gbk'
+    lx=request.args.get('lx',type=int)
+    if src=='lax':
+        if lx not in [l['chapter'] for l in lax]:lx=lax[0]['chapter']
+        content=(LAX_DIR/f"chapter-{lx:03d}.html").read_text(encoding='utf-8-sig')
+        content=_re.sub(r'</head>',lambda m:LAX_CSS+m.group(0),content,count=1,flags=_re.I)
+    else:content=numbered_notes(chapter_id)
+    keep={k:v for k,v in request.args.items() if k not in ('src','lx')}
+    tabs=dict(show=bool(lax),src=src,lx=lx,lax=[dict(n=l['chapter'],title=l.get('title',''),url=url_for('.notes',chapter_id=chapter_id,src='lax',lx=l['chapter'],**keep)) for l in lax],
+        gbk=url_for('.notes',chapter_id=chapter_id,**keep),laxurl=url_for('.notes',chapter_id=chapter_id,src='lax',lx=lax[0]['chapter'],**keep) if lax else '')
     back=url_for('.chapter',chapter_id=chapter_id)
     target=None
     if q:
@@ -214,12 +252,12 @@ def notes(chapter_id):
         if request.args.get('review')=='1' and choice in (1,2,3,4):args.update(review='1',choice=choice)
         target=url_for('.practice',item_id=q['id'],**args)+'#answer-result'
     ids=[c['id'] for c in chapters()];nxt=ids[ids.index(chapter_id)+1] if ids.index(chapter_id)+1<len(ids) else None
-    toolbar=render_template('ds/polity_note_toolbar.html',chapter_url=back,question_url=target)
+    toolbar=render_template('ds/polity_note_toolbar.html',chapter_url=back,question_url=target,tabs=tabs)
     footer=render_template('ds/polity_note_footer.html',chapter_id=chapter_id,next_id=nxt)
     import re
     content=re.sub(r'(<body\b[^>]*>)',lambda m:m.group(1)+toolbar,content,count=1,flags=re.I)
     content=re.sub(r'</body>',lambda m:footer+m.group(0),content,count=1,flags=re.I)
-    if q and not section_links(q):
+    if q and src=='gbk' and not section_links(q):
         appendix=render_template('ds/polity_note_explanation.html',question=q,lang=language())
         content=re.sub(r'</body>',lambda m:appendix+m.group(0),content,count=1,flags=re.I)
     response=make_response(content);response.headers['Content-Type']='text/html; charset=utf-8'
@@ -248,11 +286,9 @@ def answer(item_id):
     if selected not in (1,2,3,4):abort(400)
     qs=selection(filters(q['_chapter']))
     state.seen_count+=1;state.last_seen_at=datetime.utcnow()
-    feedback='unscored'
-    if scoreable(q):
-        feedback='correct' if selected==q['_answer'] else 'incorrect'
-        if feedback=='incorrect':state.wrong_count+=1
-        else:state.wrong_count=0
+    feedback='correct' if selected==q['_answer'] else 'incorrect'
+    if feedback=='incorrect':state.wrong_count+=1
+    else:state.wrong_count=0
     db.session.commit()
     return question_page(q,selected,True,qs)
 
