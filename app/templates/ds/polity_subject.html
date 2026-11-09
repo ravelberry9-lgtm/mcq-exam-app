@@ -1,0 +1,9 @@
+{% extends 'ds/base.html' %}
+{% block title %}Indian Polity · Group 2{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="/learn">‹ Subjects</a><strong>Indian Polity</strong></div>{% endblock %}
+{% block content %}<div class="u6">
+<section class="card geo-intro"><h1>Indian Polity / భారత రాజ్యాంగం</h1><p>Group 2 syllabus units / గ్రూప్ 2 సిలబస్ యూనిట్లు</p></section>
+{% for unit in units if unit.unit==6 %}<section class="card"><h2>Unit 6 / యూనిట్ 6</h2><p>{{ unit.title }}</p><details><summary>Group 2 syllabus</summary><p>{{ unit.official_syllabus_text }}</p></details><p>14 chapters · Notes, PYQs and practice</p><a class="btn primary" href="{{ url_for('polity_unit6.unit') }}">Open chapters / అధ్యాయాలు చూడండి →</a></section>{% endfor %}
+<section class="card"><a href="/learn/subject/indian_constitution?legacy=1">Previous Polity library and progress / పాత గ్రంథాలయం, పురోగతి</a></section>
+</div>{% endblock %}

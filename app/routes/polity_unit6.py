@@ -1,11 +1,12 @@
 """Complete Unit 6 learner entry point backed by immutable authored records."""
 import os,random,uuid
 from datetime import datetime,timedelta
-from flask import Blueprint,abort,current_app,redirect,render_template,request,url_for
+from flask import Blueprint,abort,current_app,redirect,render_template,request,url_for,make_response
 from ..db import db
 from ..polity_models import PolityUnit6State,PolityUnit6Progress,PolityUnit6Exam
 from ..services.device import device_id
 from .polity_maps import CONTENT,read,records
+from ..services.polity_sections import section_links,directory
 bp=Blueprint('polity_unit6',__name__,url_prefix='/learn/polity/unit6')
 
 def enabled():return current_app.config.get('POLITY_UNIT6_ENABLED',os.environ.get('POLITY_UNIT6_ENABLED','0')=='1')
@@ -32,28 +33,94 @@ def test_records(cid):
 
 @bp.get('/')
 def home():
+    units=read(CONTENT/'MASTER-INDEX.json')['units']
+    return render_template('ds/polity_subject.html',units=units)
+
+@bp.get('/unit')
+def unit():
     corpus=records();rows=[]
     progress={p.chapter_id:p for p in PolityUnit6Progress.query.filter_by(device_id=device_id())}
     for c in chapters():
         own=[q for q in corpus.values() if q['_chapter']==c['id']]
         rows.append(dict(chapter=c,total=len(own),unscored=sum(not q['_scored'] for q in own),completed=bool(progress.get(c['id']) and progress[c['id']].completed)))
-    return render_template('ds/polity_unit6.html',mode='home',rows=rows)
+    return render_template('ds/polity_browse.html',mode='unit',rows=rows)
 
-@bp.get('/library')
-def library():
-    chapter=request.args.get('chapter','');kind=request.args.get('kind','');query=request.args.get('q','').strip().casefold();view=request.args.get('view','')
-    if chapter:chapter_or_404(chapter)
+@bp.get('/chapters/<chapter_id>')
+def chapter(chapter_id):
+    c=chapter_or_404(chapter_id)
+    own=[q for q in records().values() if q['_chapter']==chapter_id]
+    progress=db.session.get(PolityUnit6Progress,(device_id(),chapter_id))
+    return render_template('ds/polity_browse.html',mode='chapter',chapter=c,total=len(own),unscored=sum(not q['_scored'] for q in own),progress=progress)
+
+def filters(default_chapter=''):
+    values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view')}
+    if not any(k in request.args for k in values):values['chapter']=default_chapter
+    if values['chapter']:chapter_or_404(values['chapter'])
+    return values
+
+def selection(values):
+    chapter,kind,query,view=(values[k] for k in ('chapter','kind','q','view'))
     qs=test_records(chapter) if kind=='chaptertest' and chapter else list(records().values())
     if chapter:qs=[q for q in qs if q['_chapter']==chapter]
     if kind and kind!='chaptertest':qs=[q for q in qs if q['_kind']==kind or kind=='pyq' and q['_kind']=='primary_pyq']
     if kind=='chaptertest' and not chapter:qs=[q for c in chapters() for q in test_records(c['id'])]
-    if query:qs=[q for q in qs if query in (q.get('question_en','')+' '+q.get('question_te','')+' '+q['id']).casefold()]
+    if query:qs=[q for q in qs if query.casefold() in (q.get('question_en','')+' '+q.get('question_te','')+' '+q['id']).casefold()]
     if view in ('saved','mistakes'):
         states=PolityUnit6State.query.filter_by(device_id=device_id()).all()
         ids={s.item_id for s in states if s.saved} if view=='saved' else {s.item_id for s in states if s.wrong_count>0}
         qs=[q for q in qs if q['id'] in ids]
+    return list({q['id']:q for q in qs}.values())
+
+def language():
+    lang=request.args.get('qlang','te')
+    if lang not in ('te','en','both'):abort(400)
+    return lang
+
+@bp.get('/library')
+def library():
+    values=filters();qs=selection(values)
     page=max(1,request.args.get('page',1,type=int));total=len(qs)
-    return render_template('ds/polity_unit6.html',mode='library',questions=qs[(page-1)*40:page*40],total=total,page=page,chapter=chapter,kind=kind,query=request.args.get('q',''),view=view)
+    return render_template('ds/polity_browse.html',mode='library',questions=qs[(page-1)*40:page*40],total=total,page=page,filters=values,lang=language(),start=qs[0]['id'] if qs else None)
+
+def question_page(q,choice=None,review=False,qs=None):
+    values=filters(q['_chapter']);qs=selection(values) if qs is None else qs
+    pos=next((i for i,r in enumerate(qs) if r['id']==q['id']),None)
+    # A bookmarked question may disappear from the filter after an action; keep it
+    # visible without silently switching to the full bank.
+    if pos is None:qs=[q];pos=0
+    lang=language();feedback=None
+    if review:feedback=('correct' if choice==q['_answer'] else 'incorrect') if scoreable(q) else 'unscored'
+    context={**values,'qlang':lang}
+    review_args={'review':'1','choice':choice} if review and choice in (1,2,3,4) else {}
+    notes=url_for('.notes',chapter_id=q['_chapter'],item_id=q['id'],**context,**review_args)
+    locators=section_links(q)
+    links=[dict(url=notes+'#'+l['anchor'],basis=l['basis']) for l in locators]
+    if not links:links=[dict(url=notes+'#question-explanation',basis='explanation')]
+    return render_template('ds/polity_question.html',question=q,choice=choice,feedback=feedback,lang=lang,context=context,
+        state=db.session.get(PolityUnit6State,(device_id(),q['id'])),position=pos+1,total=len(qs),
+        previous=qs[pos-1]['id'] if pos else None,following=qs[pos+1]['id'] if pos+1<len(qs) else None,
+        notes_url=notes,section_links=links,review_args=review_args)
+
+@bp.get('/chapters/<chapter_id>/notes')
+def notes(chapter_id):
+    chapter_or_404(chapter_id);item_id=request.args.get('item_id');q=records().get(item_id) if item_id else None
+    if item_id and (not q or q['_chapter']!=chapter_id):abort(404)
+    content=(directory(chapter_id)/'Notes.html').read_text(encoding='utf-8-sig')
+    back=url_for('.chapter',chapter_id=chapter_id)
+    target=None
+    if q:
+        args={**filters(chapter_id),'qlang':language()}
+        choice=request.args.get('choice',type=int)
+        if request.args.get('review')=='1' and choice in (1,2,3,4):args.update(review='1',choice=choice)
+        target=url_for('.practice',item_id=q['id'],**args)+'#answer-result'
+    toolbar=render_template('ds/polity_note_toolbar.html',chapter_url=back,question_url=target)
+    import re
+    content=re.sub(r'(<body\b[^>]*>)',lambda m:m.group(1)+toolbar,content,count=1,flags=re.I)
+    if q and not section_links(q):
+        appendix=render_template('ds/polity_note_explanation.html',question=q,lang=language())
+        content=re.sub(r'</body>',lambda m:appendix+m.group(0),content,count=1,flags=re.I)
+    response=make_response(content);response.headers['Content-Type']='text/html; charset=utf-8'
+    return response
 
 @bp.get('/practice/<item_id>')
 def practice(item_id):
@@ -62,16 +129,21 @@ def practice(item_id):
         alias=next((r.get('canonical_question_id') for r in read(CONTENT/'_shared/Expected-Questions.json') if r['id']==item_id),None)
         if alias in records():return redirect(url_for('.practice',item_id=alias))
         abort(404)
-    state=db.session.get(PolityUnit6State,(device_id(),item_id))
-    return render_template('ds/polity_unit6.html',mode='question',question=q,state=state,feedback=None)
+    choice=request.args.get('choice',type=int)
+    return question_page(q,choice,request.args.get('review')=='1' and choice in (1,2,3,4))
 
 @bp.post('/practice/<item_id>')
 def answer(item_id):
     q=records().get(item_id) or abort(404);state=state_for(item_id)
     if request.form.get('action')=='bookmark':
-        state.saved=not state.saved;db.session.commit();return redirect(url_for('.practice',item_id=item_id))
+        state.saved=not state.saved;db.session.commit()
+        args={**filters(q['_chapter']),'qlang':language()}
+        choice=request.args.get('choice',type=int)
+        if request.args.get('review')=='1' and choice in (1,2,3,4):args.update(review='1',choice=choice)
+        return redirect(url_for('.practice',item_id=item_id,**args))
     selected=request.form.get('answer',type=int)
     if selected not in (1,2,3,4):abort(400)
+    qs=selection(filters(q['_chapter']))
     state.seen_count+=1;state.last_seen_at=datetime.utcnow()
     feedback='unscored'
     if scoreable(q):
@@ -79,7 +151,7 @@ def answer(item_id):
         if feedback=='incorrect':state.wrong_count+=1
         else:state.wrong_count=0
     db.session.commit()
-    return render_template('ds/polity_unit6.html',mode='question',question=q,state=state,feedback=feedback)
+    return question_page(q,selected,True,qs)
 
 @bp.post('/progress/<chapter_id>')
 def progress(chapter_id):
@@ -87,7 +159,7 @@ def progress(chapter_id):
     p=db.session.get(PolityUnit6Progress,key)
     if p is None:p=PolityUnit6Progress(device_id=key[0],chapter_id=chapter_id);db.session.add(p)
     p.completed=request.form.get('completed')=='1';p.updated_at=datetime.utcnow();db.session.commit()
-    return redirect(url_for('.home'))
+    return redirect(url_for('.chapter',chapter_id=chapter_id))
 
 @bp.post('/tests')
 def start_test():

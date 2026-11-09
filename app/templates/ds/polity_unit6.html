@@ -1,4 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'ds/base.html' %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><strong>Chapter test</strong></div>{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
 {% macro stem(q) %}<p lang="te">{{ q.question_te }}</p><p lang="en">{{ q.question_en }}</p>{% endmacro %}
 {% macro choices(q,field,selected=none) %}<fieldset><legend>Choose an option / ఒక ఎంపికను ఎంచుకోండి</legend>{% for option in q.options_en %}<label class="u6-option"><input type="radio" name="{{ field }}" value="{{ loop.index }}"{% if selected == loop.index %} checked{% endif %}> <span>{{ loop.index }}. <span lang="te">{{ q.options_te[loop.index0] }}</span><br><span lang="en">{{ option }}</span></span></label>{% endfor %}</fieldset>{% endmacro %}
 {% macro rationale(q) %}<details><summary>Study answer and explanation / అధ్యయన సమాధానం, వివరణ</summary><p>{% if q._answer in [1,2,3,4] %}{{ q._answer }}. <span lang="te">{{ q.options_te[q._answer-1] }}</span> <span lang="en">{{ q.options_en[q._answer-1] }}</span>{% else %}Unresolved / నిర్ధారణ కాలేదు{% endif %}</p>{% if q.official_key is defined %}<p>Recorded key (unchanged) / నమోదైన కీ (మార్చలేదు): {{ q.official_key }}</p>{% endif %}{% if q.printed_book_key is defined %}<p>Printed key (unchanged) / ముద్రిత కీ (మార్చలేదు): {{ q.printed_book_key }}</p>{% endif %}<p lang="te">{{ q._te }}</p><p lang="en">{{ q._en }}</p></details>{% endmacro %}

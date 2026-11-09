@@ -1,4 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'ds/base.html' %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><strong>Memory maps</strong></div>{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
 {% block content %}
 <style>
 .u6-reader{max-width:68rem;margin:auto;padding:1rem;overflow-wrap:anywhere;min-width:0}.u6-reader p{white-space:pre-line;line-height:1.75}.u6-reader nav{display:flex;gap:1rem;flex-wrap:wrap}.u6-reader li{margin:.6rem 0}.u6-reader [lang]{overflow-wrap:anywhere}

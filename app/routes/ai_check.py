@@ -72,8 +72,10 @@ def _options_text(q) -> str:
 def _user_prompt(q) -> str:
     qt = "  /  ".join(dict.fromkeys(x for x in (q.question_te, q.question_en) if x))
     ex = "  /  ".join(dict.fromkeys(x for x in (q.explanation_te, q.explanation_en) if x)) or "(none stored)"
+    label = 'STUDY ANSWER (not an authenticated final key)' if getattr(q,'polity_unscored',False) else 'STORED ANSWER KEY'
+    context = getattr(q,'polity_context','')
     return (f"QUESTION:\n{qt}\n\nOPTIONS:\n{_options_text(q)}\n\n"
-            f"STORED ANSWER KEY: {str(q.correct_answer).upper()}\n\nSTORED EXPLANATION:\n{ex[:2500]}")
+            f"{label}: {str(q.correct_answer).upper() or '(unresolved)'}\n\nSTORED EXPLANATION:\n{ex[:2500]}\n{context}")
 
 
 def _call_openai(messages, json_mode: bool = True, max_tokens: int = 700):
@@ -163,6 +165,26 @@ def _resolve(payload):
     """Find the question the client means. Two sources, both read on the server (the client never sends question text):
     a database id (`question_id`), or a Group 2 Geography lesson number + question id (`geo_lesson`, `geo_qid`).
     Returns (cache_key, question-like object) or (None, http-error-code)."""
+    if 'polity_id' in payload:
+        from .polity_unit6 import enabled,scoreable
+        from .polity_maps import records
+        pid=payload['polity_id']
+        if not isinstance(pid,str) or not pid or len(pid)>128 or any(k in payload for k in ('question_id','geo_lesson','geo_qid')):
+            return None,400
+        if not enabled():return None,404
+        p=records().get(pid)
+        if not p:return None,404
+        letters='abcd';answer=p['_answer'];unscored=not scoreable(p)
+        context=('Scoring status: UNSCORED. This is a study answer only. Agreement never authenticates an official key or permits scoring. ' if unscored else 'Scoring status: scored. ')
+        context+='AI advice must not change any stored key. Distinguish original exam facts from later changes. '
+        for field in ('key_status','official_key','printed_book_key','review_as_of','as_of','exam_year','year'):
+            if field in p:context+=f'{field}: {p[field]}. '
+        q=SimpleNamespace(question_te=p.get('question_te'),question_en=p.get('question_en'),
+            options_te={letters[i]:t for i,t in enumerate(p.get('options_te') or [])},
+            options_en={letters[i]:t for i,t in enumerate(p.get('options_en') or [])},
+            correct_answer=letters[answer-1] if answer in (1,2,3,4) else '',
+            explanation_te=p['_te'],explanation_en=p['_en'],polity_unscored=unscored,polity_context=context)
+        return ('polity6',pid),q
     gl, gq = payload.get("geo_lesson"), payload.get("geo_qid")
     if gl is not None or gq is not None:
         if not isinstance(gl, int) or isinstance(gl, bool) or not isinstance(gq, str) or not (1 <= gl <= 99) or len(gq) > 60:
@@ -226,6 +248,9 @@ def ai_check():
         reason = str(e)
         return jsonify({"error": "not_configured" if reason == "not_configured" else "unavailable"}), 503
     res = _clean(raw, str(q.correct_answer).strip().lower())
+    if hasattr(q,'polity_unscored'):
+        res['unscored']=q.polity_unscored
+        if not q.correct_answer:res['verdict']='unsure'
     res["model"] = _model()
     with _LOCK:
         if len(_CACHE) > 5000:
