@@ -375,3 +375,13 @@ def test_recall_case_teacher_layout_and_fallback(client,app,monkeypatch):
     assert rd.chains()=={};rd.chains.cache_clear();enable(app)
     am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
     assert 'ct-exam' not in am and 'ct-one' not in am
+
+def test_case_tiles_and_hero_use_parties(client,app):
+    enable(app)
+    html=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
+    assert '<div class="s-short"><span class="ac-te" lang="te">కేశవానంద భారతి</span><span class="ac-en" lang="en">Kesavananda Bharati</span></div>' in html
+    assert '<span class="ac-en" lang="en">vs State of Kerala</span>' in html
+    assert '<span class="ac-en" lang="en">Kesavananda Bharati vs State of Kerala</span></div>' in html
+    assert '<div class="s-vs"></div>' in html  # 'In re:' references have no vs line
+    js=open('static/polity_articles.js',encoding='utf-8').read()
+    assert 't-p1' in js and 't-vs' in js and 'p-parties' in js and 'p-short' in js

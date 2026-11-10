@@ -86,6 +86,10 @@ def _stats_ctx():
 ACCENTS={'6.1':('#0F766E','#5EEAD4'),'6.2':('#4338CA','#A5B4FC'),'6.3':('#A21CAF','#F0ABFC'),'6.4':('#7C2D12','#FDBA74'),'6.5':('#0E7490','#67E8F9'),
          '6.6':('#BE185D','#F9A8D4'),'6.7':('#334155','#CBD5E1'),'6.8':('#6B21A8','#D8B4FE'),'6.9':('#854D0E','#FDE68A')}
 def _acc_pair(cid):return ACCENTS.get('.'.join(str(cid).split('.')[:2]),ACCENTS['6.1'])
+@bp.app_template_filter('drop_brackets')
+def drop_brackets(t):
+    import re as _r
+    return _r.sub(r'\s*\([^)]*\)','',t or '')
 @bp.app_template_filter('accent')
 def _accent(cid):return _acc_pair(cid)[0]
 @bp.app_template_filter('accent_ink')

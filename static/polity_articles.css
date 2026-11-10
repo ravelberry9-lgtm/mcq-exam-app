@@ -436,3 +436,16 @@ html.ac-studying,html.ac-studying body{background:var(--ground)}
 /* small chapter chip on an opened case card: chapter colour (tiles there use theme colour) */
 .ac-meta .ac-chchip{color:var(--acc-t);border:1px solid color-mix(in srgb,var(--acc) 45%,var(--card));border-radius:99px;padding:0 8px;font-weight:700}
 @media (prefers-color-scheme:dark){body:has(#ac) .ct-sec .ac-lbl,body:has(#ac) .ct-chh,body:has(#ac) .ct-clbl{color:#A9B2C4}}
+/* case tiles: first party large, 'vs second party' smaller and lighter, year last; opened card shows the full 'X vs Y' */
+.t-case .t-p1,.t-case .t-vs{display:block}
+.t-case .t-vs{margin-top:3px;font-size:.7em;font-weight:600;line-height:1.25;color:var(--muted);letter-spacing:0}
+.t-case .t-vs .ac-te{line-height:1.35}
+.ac-stage[data-lang="both"] .t-case .t-vs .ac-en{display:none!important}
+.ac-stage[data-lang="both"] .t-case .t-p1 .ac-te+.ac-en{font-size:.62em;font-weight:600;opacity:.8}
+.t-cue.clamp .t-case{display:block;-webkit-line-clamp:unset}
+.t-cue.clamp .t-case>span{display:block!important}
+.t-cue.clamp .t-case .t-p1,.t-cue.clamp .t-case .t-vs{display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.t-cue.clamp .t-case .t-vs{-webkit-line-clamp:1}
+.ac-pill.ac-case .p-parties{display:block;font-size:1.05em;line-height:1.3}
+.ac-pill.ac-case .p-short{display:block;margin-top:6px;font-size:.62em;font-weight:600;opacity:.88}
+.ac-pill.ac-case .p-short .ac-te+.ac-en{font-size:1em}

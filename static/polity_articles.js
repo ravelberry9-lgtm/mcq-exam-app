@@ -219,6 +219,11 @@
       label = "Theme: " + conceptEn(id) + ", " + n + " cases, " + stateText;
       cue = '<span class="t-front">' + src.querySelector(".s-front").innerHTML + '<span class="t-sub">' + biText(n + " cases", n + " కేసులు") + "</span></span>";
     } else if (run.mode === "b") cue = '<span class="t-con">' + src.querySelector(".s-con").innerHTML + "</span>";
+    else if (src.querySelector(".s-short")) {
+      var vsEl = src.querySelector(".s-vs");
+      cue = '<span class="t-front t-case"><span class="t-p1">' + src.querySelector(".s-short").innerHTML + "</span>" +
+        (vsEl && vsEl.textContent.trim() ? '<span class="t-vs">' + vsEl.innerHTML + "</span>" : "") + (sb ? '<span class="t-sub">' + esc(sb) + "</span>" : "") + "</span>";
+    }
     else if (TEXT_FRONT) cue = '<span class="t-front">' + src.querySelector(".s-front").innerHTML + (sb ? '<span class="t-sub">' + esc(sb) + "</span>" : "") + "</span>";
     else if (sb && D.deck !== "articles") cue = '<span class="t-numwrap"><b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + '</b><span class="t-sub">' + esc(sb) + "</span></span>";
     else cue = '<b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + "</b>";
@@ -392,7 +397,11 @@
     detail.dataset.state = progress[id] || "";
     $("ac-dchap").innerHTML = src.querySelector(".s-chap").innerHTML;
     var sb = esc(sub(id)), pill = isTheme(id) ? biText("Theme", "అంశం") : biText(D.pillEn || "Article", D.pillTe || "ప్రకరణ");
-    var head = TEXT_FRONT
+    var pEl = src.querySelector(".s-parties"), sameName = pEl && frontEn(id) === pEl.querySelector(".ac-en").textContent.trim();
+    var head = pEl
+      ? '<span class="ac-pill txt ac-case"><small>' + pill + '</small><span class="p-parties">' + pEl.innerHTML + "</span>" +
+        (sameName ? "" : '<span class="p-short">' + src.querySelector(".s-front").innerHTML + "</span>") + (sb ? '<span class="p-sub">' + sb + "</span>" : "") + "</span>"
+      : TEXT_FRONT
       ? '<span class="ac-pill txt"><small>' + pill + "</small>" + src.querySelector(".s-front").innerHTML + (sb ? '<span class="p-sub">' + sb + "</span>" : "") + "</span>"
       : '<span class="ac-pill"><small>' + pill + "</small>" + n + (sb && D.deck !== "articles" ? '<span class="p-sub">' + sb + "</span>" : "") + "</span>";
     $("ac-dtitle").innerHTML = head + (isTheme(id) ? "" : '<span class="ac-anstext">' + src.querySelector(".s-title").innerHTML + "</span>");
