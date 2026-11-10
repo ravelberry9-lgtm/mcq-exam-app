@@ -62,7 +62,7 @@
       </section>{% endif %}
 {%- endmacro %}
 {% block title %}{{ d.title_en }} · Recall cards · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110k') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110n') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.recall_hub') }}">‹ Recall</a><b>{{ d.title_en }} · {{ d.title_te }}</b></div>{% endblock %}
 {% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}" data-deck="{{ d.id }}" data-store="{{ d.store }}" data-setup-store="{{ d.setup_store }}" data-lang-store="{{ d.lang_store }}" data-kind="{{ d.front_kind }}" data-order-en="{{ d.order_en }}" data-order-te="{{ d.order_te }}" data-pill-en="{{ d.pill_en }}" data-pill-te="{{ d.pill_te }}" data-title="{{ d.title_en }}" data-themes="{{ 1 if d.themes else 0 }}">
 
@@ -129,7 +129,7 @@
   <article class="ac-src" data-id="{{ c.id }}" data-ch="{{ c.chapter }}" data-acc="{{ c.theme_acc if TH and c.theme_acc else c.chapter|accent }}" data-src="{{ c.source }}" data-two="{{ 1 if c.two_way else 0 }}"{% if TH %} data-theme="{{ c.theme_id }}"{% endif %}>
     <div class="s-num">{{ c.front_short }}</div>
     <div class="s-front">{{ bi(c.front_en, c.front_te) }}</div>
-    <div class="s-sub">{{ '' if TH else (c.front_sub or '') }}</div>
+    <div class="s-sub">{{ (c.front_sub or '')[:4] if (c.front_sub or '')[:4].isdigit() else (c.front_sub or '') }}</div>
     <div class="s-con">{{ bi(c.cue_en, c.cue_te) }}</div>
     {% if TH %}<div class="s-band">{{ bi(c.theme_short_en, c.theme_short_te) }}</div>
     <div class="s-title">{{ bi(c.cue_en, c.cue_te) }}</div>
@@ -222,4 +222,4 @@
   <p class="sr" id="ac-live" aria-live="polite"></p>
 </div>
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110k') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110n') }}" defer></script>{% endblock %}

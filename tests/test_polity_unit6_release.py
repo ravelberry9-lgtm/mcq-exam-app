@@ -309,7 +309,7 @@ def test_recall_case_themes_and_theme_view(client,app):
     for t in th:assert f'data-id="{t["id"]}"' in page and t['te'] in page
     k=next(c for c in rd.items('cases') if c['id']=='CS-kesavananda-1973')
     src=page[page.index('data-id="CS-kesavananda-1973"'):];src=src[:src.index('</article>')]
-    assert re.search(r'<div class="s-sub">\s*</div>',src)  # year is not on the tile face
+    assert '<div class="s-sub">1973' in src  # year is a muted subline on the tile face
     assert 'class="ac-year">1973' in src and k['cue_en'] in src
     am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
     assert 'data-theme-tile' not in am and 'data-themes="0"' in am

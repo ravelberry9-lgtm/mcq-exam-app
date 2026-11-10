@@ -210,17 +210,25 @@ html.ac-studying,html.ac-studying body{background:var(--ground)}
 .ac-meta a{display:inline-flex;align-items:center;min-height:44px;color:var(--teal);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .ac-stage[data-lang="both"] .ac-meta a .ac-en{display:none}
 
-/* self-check: two big zones at the bottom */
-.ac-judge{flex:none;display:grid;grid-template-columns:1fr 1fr;width:100%;max-width:720px;margin:0 auto}
-.ac-judge button{min-height:calc(78px + env(safe-area-inset-bottom));padding:8px 10px env(safe-area-inset-bottom);border:0;border-radius:0;cursor:pointer;
-  font-size:1.1rem;font-weight:700;line-height:1.3;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.ac-judge .x{background:var(--no)}
-.ac-judge .k{background:var(--ok)}
-.ac-detail[data-state="k"] .ac-judge .k,.ac-detail[data-state="x"] .ac-judge .x{box-shadow:inset 0 0 0 4px color-mix(in srgb,#fff 55%,transparent)}
-.ac-stage[data-lang="both"] .ac-judge .ac-te+.ac-en{color:inherit;opacity:.88;font-size:.8rem}
-body:has(#ac) .ac-judge button{color:#fff}
-.ac-judge button:focus-visible{outline:3px solid var(--ink);outline-offset:-7px}
-@media (prefers-color-scheme:dark){body:has(#ac) .ac-judge .k{background:#15803D}body:has(#ac) .ac-judge .x{background:#C0362C}}
+/* self-check: a slim strip of two quiet pills; solid fill only when the card carries that mark */
+.ac-stage{--ok-ink:#14532D; --no-ink:#7F1D1D; --ok-solid:#15803D; --no-solid:#B42318}
+.ac-judge{flex:none;display:flex;gap:10px;justify-content:center;width:100%;box-sizing:border-box;
+  padding:6px max(12px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));
+  background:var(--card);border-top:1px solid var(--line)}
+.ac-judge button{flex:1 1 0;max-width:240px;min-width:0;height:44px;padding:0 12px;border-radius:999px;cursor:pointer;
+  border:1.5px solid var(--c);background:color-mix(in srgb,var(--c) 9%,var(--card));color:var(--i);
+  font:inherit;font-size:.95rem;font-weight:700;line-height:1.15;white-space:nowrap;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;transition:background .12s,color .12s}
+.ac-judge .x{--c:var(--no);--i:var(--no-ink);--s:var(--no-solid)}
+.ac-judge .k{--c:var(--ok);--i:var(--ok-ink);--s:var(--ok-solid)}
+.ac-judge button>span::before{font-weight:800;margin-right:.35em}
+.ac-judge .k>span::before{content:"\2713"}
+.ac-judge .x>span::before{content:"\21BB"}
+.ac-judge button:active,.ac-detail[data-state="k"] .ac-judge .k,.ac-detail[data-state="x"] .ac-judge .x{background:var(--s);border-color:var(--s);color:#fff}
+.ac-stage[data-lang="both"] .ac-judge .ac-te+.ac-en{display:block;color:inherit;opacity:.85;font-size:.7rem;font-weight:600;margin:1px 0 0}
+.ac-stage[data-lang="both"] .ac-judge .ac-te+.ac-en::before{content:none}
+.ac-judge button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+@media (prefers-color-scheme:dark){body:has(#ac) .ac-stage{--ok-ink:#BBF7D0;--no-ink:#FECACA;--no-solid:#C0362C}}
 
 /* ───────── summary overlay ───────── */
 .ac-sum{position:fixed;inset:0;z-index:1020;display:flex;align-items:center;justify-content:center;padding:16px;
@@ -244,13 +252,14 @@ body:has(#ac) .ac-judge button{color:#fff}
 .ac-stage[data-lang="both"] .ac-link .ac-en{display:none}
 
 @media (prefers-reduced-motion:reduce){.ac-tile,.ac-tog::after{transition:none}.ac-tile:active{transform:none}}
-@media (min-width:760px){.ac-dhead,.ac-body{padding-left:32px;padding-right:32px}.ac-judge{border-radius:18px 18px 0 0;overflow:hidden}}
-/* landscape phones: the self-check zones become a side column so the text keeps the height */
+@media (min-width:760px){.ac-dhead,.ac-body{padding-left:32px;padding-right:32px}}
+/* landscape phones: a narrow side column of the same pills so the text keeps the height */
 @media (orientation:landscape) and (max-height:520px){
-  .ac-detail{display:grid;grid-template-columns:minmax(0,1fr) 148px;grid-template-rows:auto minmax(0,1fr)}
+  .ac-detail{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto minmax(0,1fr)}
   .ac-dbar{grid-column:1 / -1}
-  .ac-detail .ac-judge{grid-template-columns:1fr;grid-template-rows:1fr 1fr;max-width:none;margin:0;border-radius:0}
-  .ac-judge button{min-height:0;padding:8px 8px env(safe-area-inset-bottom)}
+  .ac-detail .ac-judge{flex-direction:column;justify-content:center;width:auto;max-width:none;margin:0;gap:10px;
+    padding:8px max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) 10px;border-top:0;border-left:1px solid var(--line)}
+  .ac-judge button{flex:none;width:132px}
   .ac-judge .k{order:-1}
 }
 @media (max-height:480px){.ac-pill{min-width:64px;height:64px;font-size:1.8rem}.ac-dbar{height:calc(46px + env(safe-area-inset-top))}}
@@ -375,15 +384,15 @@ body:has(#ac) .ac-judge button{color:#fff}
 .ct-opt{display:flex;align-items:flex-start;gap:10px;min-height:48px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:.97rem;line-height:1.45;text-align:left;cursor:pointer}
 .ct-opt i{flex:none;font-style:normal;font-weight:800;width:1.4em;color:var(--muted)}
 .ct-opt:disabled{cursor:default;opacity:.75}
-.ct-opt[data-res="ok"]{opacity:1;border-color:#15803D;background:#DCFCE7;color:#14532D}
-.ct-opt[data-res="no"]{opacity:1;border-color:#B91C1C;background:#FEE2E2;color:#7F1D1D}
+.ct-opt[data-res="ok"]{opacity:1;border-color:var(--ok);background:var(--ok-soft);color:var(--ok-ink,#14532D)}
+.ct-opt[data-res="no"]{opacity:1;border-color:var(--no);background:var(--no-soft);color:var(--no-ink,#7F1D1D)}
 .ct-why{padding:10px 12px;border-radius:10px;background:color-mix(in srgb,#1d4ed8 8%,var(--card));font-size:.95rem;line-height:1.6}
 .ct-why>b{display:block;margin-bottom:4px}
 .ct-why>b .ac-te,.ct-why>b .ac-en{display:inline!important;margin:0!important;font-size:inherit!important;color:inherit!important}
 .ac-stage[data-lang="both"] .ct-why>b .ac-te::after{content:" · "}
 .ac-stage[data-lang="te"] .ct-why>b .ac-en,.ac-stage[data-lang="en"] .ct-why>b .ac-te{display:none!important}
 .ct-prac[data-done="ok"] .ct-why>b{color:#15803D}.ct-prac[data-done="no"] .ct-why>b{color:#B91C1C}
-@media (prefers-color-scheme:dark){body:has(#ac) .ct-opt[data-res="ok"]{background:#14361F;color:#BBF7D0}body:has(#ac) .ct-opt[data-res="no"]{background:#3B1414;color:#FECACA}}
+
 /* cases: first-know box, chain timeline */
 .ct-know{padding:12px 14px;border-radius:12px;background:color-mix(in srgb,#0369a1 8%,var(--card));border:1px solid color-mix(in srgb,#0369a1 28%,var(--card));border-left:4px solid #0369a1}
 .ct-know>b{display:block;margin-bottom:4px;font-size:.8rem;font-weight:800;color:color-mix(in srgb,#0369a1 85%,var(--mix))}
