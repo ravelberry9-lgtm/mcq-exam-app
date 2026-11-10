@@ -148,3 +148,29 @@ def deck(deck_id):
 
 def all_decks():
     return [deck(k) for k in DECKS]
+
+
+CHAINS_FILE = DIR / 'case_chains.json'
+
+
+@lru_cache(maxsize=None)
+def chains():
+    """{chain_id: chain} from case_chains.json ({chains:[{chain_id,title_te/en,intro_te/en,steps[...]}]}); missing/bad -> {}."""
+    try:
+        data = json.loads(CHAINS_FILE.read_text(encoding='utf-8'))
+    except (ValueError, OSError):
+        return {}
+    out = {}
+    for ch in (data.get('chains') if isinstance(data, dict) else data) or []:
+        if isinstance(ch, dict) and ch.get('chain_id'):
+            ch = dict(ch, steps=sorted(ch.get('steps') or [], key=lambda s: s.get('step') or 0))
+            out[ch['chain_id']] = ch
+    return out
+
+
+_EXAM_PREFIX = re.compile(r'^\s*other\s+credible\s+examinations\s*(?:-|–|—)\s*', re.I)
+
+
+def exam_label(s):
+    """'Other credible examinations - TSPSC Group IV' -> 'TSPSC Group IV'."""
+    return _EXAM_PREFIX.sub('', s or '')

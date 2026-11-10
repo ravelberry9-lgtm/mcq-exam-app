@@ -4,14 +4,32 @@
 {% macro sec(cls, en, te) -%}<section class="ct-sec {{ cls }}"><h3 class="ac-lbl">{{ bi(en, te) }}</h3>{{ caller() }}</section>{%- endmacro %}
 {#- Cases: teacher layout for a beginner. New optional fields (one_line, story, question, held, meaning, remember, compare, exam)
     each fall back to the older fields (says, points, trap) when absent. -#}
+{#- Case chain timeline: cur = this card's step (None in the theme view). Case steps that are cards in the deck can jump there. -#}
+{% macro timeline(ch, cur=None, intro=False) -%}
+      <section class="ct-chain" aria-label="{{ ch.title_en }}">
+        <h3 class="ct-chh">{{ bi(ch.title_en, ch.title_te) }}</h3>
+        {% if intro and ch.intro_en %}<p class="ct-chintro">{{ bi(ch.intro_en, ch.intro_te) }}</p>{% endif %}
+        <ol class="ct-tl">{% for s in ch.steps|sort(attribute='step') %}{% set isc = s.kind == 'case' and cards|selectattr('id', 'equalto', s.ref)|first %}
+          <li class="ct-st {{ 'am' if s.kind == 'amendment' else 'cs' }}{{ ' cur' if cur is not none and s.step == cur }}"{% if cur is not none and s.step == cur %} aria-current="step"{% endif %}>
+            <span class="ct-dot" aria-hidden="true">{{ '§' if s.kind == 'amendment' else s.step }}</span>
+            <div class="ct-stb">{% if isc and not (cur is not none and s.step == cur) %}<button type="button" class="ct-jump" data-jump="{{ s.ref }}">{{ bi(s.label_en, s.label_te) }}</button>{% else %}<b class="ct-stl">{{ bi(s.label_en, s.label_te) }}</b>{% endif %}
+              {% if s.who_en %}<small class="ct-who">{{ bi(s.who_en, s.who_te) }}</small>{% endif %}
+              {% if s.said_en %}<p class="ct-said">{{ bi(s.said_en, s.said_te) }}</p>{% endif %}</div>
+          </li>{% endfor %}
+        </ol>
+      </section>
+{%- endmacro %}
 {% macro teach(c) -%}
       {% if c.source == 'new' %}<p class="ac-new">{{ bi('New · after Laxmikanth', 'కొత్తది · లక్ష్మీకాంత్ తర్వాత') }}</p>{% endif %}
       {% if c.one_line_en %}<div class="ct-one"><b>{{ bi('In one line', 'ఒక్క మాటలో') }}</b><p>{{ bi(c.one_line_en, c.one_line_te) }}</p></div>{% endif %}
+      {% if c.first_know_en %}<div class="ct-know"><b>{{ bi('First know this', 'ముందు ఇది తెలుసుకోండి') }}</b><p>{{ bi(c.first_know_en, c.first_know_te) }}</p></div>{% endif %}
       {% if c.story_en %}{% call sec('ct-story', 'The story', 'కథ') %}<div class="ac-says">{{ bi(c.story_en, c.story_te) }}</div>{% endcall %}{% endif %}
       {% if c.question_en %}{% call sec('ct-q', 'The question', 'కోర్టు ముందున్న ప్రశ్న') %}<div class="ct-qtext">{{ bi(c.question_en, c.question_te) }}</div>{% endcall %}{% endif %}
+      {% if c.argument_en %}{% call sec('ct-arg', 'The argument', 'వాదన') %}<div class="ac-says">{{ bi(c.argument_en, c.argument_te) }}</div>{% endcall %}{% endif %}
       {% call sec('ct-held', 'What the Court said', 'కోర్టు ఏమంది?') %}<div class="ac-says">{{ bi(c.held_en or c.says_en, c.held_te or c.says_te) }}</div>{% endcall %}
       {% if c.points_en and not c.held_en %}<div class="ac-points">{{ bl(c.points_en, c.points_te) }}</div>{% endif %}
       {% if c.meaning_en %}{% call sec('ct-mean', 'Why it matters', 'దీని అర్థం') %}<div class="ac-says">{{ bi(c.meaning_en, c.meaning_te) }}</div>{% endcall %}{% endif %}
+      {% if c.next_en %}{% call sec('ct-next', 'What happened next', 'తర్వాత ఏమైంది?') %}<div class="ac-says">{{ bi(c.next_en, c.next_te) }}</div>{% endcall %}{% endif %}
       {% set cmp = c.compare %}{% if cmp and cmp.rows %}{% set o = cards|selectattr('id', 'equalto', cmp.with_id)|first %}
       <div class="ct-cmp" role="table" aria-label="Compare">
         <div class="ct-crow ct-chead" role="row"><span role="columnheader">{{ bi(c.front_en, c.front_te) }}</span><span role="columnheader">{{ bi(o.front_en, o.front_te) if o else cmp.with_id }}</span></div>
@@ -24,12 +42,13 @@
       <p class="ac-ref">{{ bi(c.title_en, c.title_te) }}{% if c.front_sub %} · <span class="ac-year">{{ c.front_sub }}</span>{% endif %}</p>
       {% if c.articles %}<div class="ac-arts">{% for a in c.articles %}<span class="ac-art"><small lang="te">ప్రకరణ</small> {{ a }}</span>{% endfor %}</div>{% endif %}
       <div class="ac-meta"><span>Ch {{ c.chapter }}</span>{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}{% if c.laxmikanth.section %} · {{ c.laxmikanth.section }}{% endif %}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.card_ids[0].split('-')[1],hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
+      {% set chn = c.chain and chains.get(c.chain.chain_id) %}{% if chn %}{{ timeline(chn, c.chain.step) }}{% endif %}
       {% set ex = c.exam %}{% if ex and (ex.patterns_en or ex.pyqs or ex.practice) %}
       <section class="ct-exam">
         <h3 class="ct-exh">{{ bi('How it is asked in exams', 'పరీక్షల్లో ఇలా అడుగుతారు') }}</h3>
         {% if ex.patterns_en %}<div class="ac-points">{{ bl(ex.patterns_en, ex.patterns_te) }}</div>{% endif %}
         {% if ex.pyqs %}<ol class="ct-pyqs">{% for q in ex.pyqs %}
-          <li class="ct-pyq"><span class="ct-badge{{ ' mcq' if q.kind != 'pyq' }}">{% if q.kind == 'pyq' %}PYQ · {{ q.exam or 'APPSC' }}{% if q.year %} {{ q.year }}{% endif %}{% else %}MCQ{% endif %}</span>
+          <li class="ct-pyq"><span class="ct-badge{{ ' mcq' if q.kind != 'pyq' }}">{% if q.kind == 'pyq' %}PYQ · {{ exam_label(q.exam) or 'APPSC' }}{% if q.year %} {{ q.year }}{% endif %}{% else %}MCQ{% endif %}</span>
             <div class="ct-pq">{{ bi(q.q_en, q.q_te) }}</div>
             <details class="ct-reveal"><summary>{{ bi('Show answer', 'జవాబు') }}</summary><div>{{ bi(q.answer_en, q.answer_te) }}</div></details></li>{% endfor %}
         </ol>{% endif %}
@@ -43,7 +62,7 @@
       </section>{% endif %}
 {%- endmacro %}
 {% block title %}{{ d.title_en }} · Recall cards · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110j') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110k') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.recall_hub') }}">‹ Recall</a><b>{{ d.title_en }} · {{ d.title_te }}</b></div>{% endblock %}
 {% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}" data-deck="{{ d.id }}" data-store="{{ d.store }}" data-setup-store="{{ d.setup_store }}" data-lang-store="{{ d.lang_store }}" data-kind="{{ d.front_kind }}" data-order-en="{{ d.order_en }}" data-order-te="{{ d.order_te }}" data-pill-en="{{ d.pill_en }}" data-pill-te="{{ d.pill_te }}" data-title="{{ d.title_en }}" data-themes="{{ 1 if d.themes else 0 }}">
 
@@ -140,6 +159,8 @@
     <div class="s-title">{{ bi(t.en, t.te) }}</div>
     <div class="s-chap">{{ bi('Theme ' ~ (t.i + 1) ~ ' of ' ~ themes|length, (themes|length) ~ ' అంశాల్లో ' ~ (t.i + 1) ~ 'వది') }}</div>
     <div class="s-back">
+      {%- set ns = namespace(ids=[]) %}{% for c in t.cases %}{% if c.chain and c.chain.chain_id in chains and c.chain.chain_id not in ns.ids %}{% set ns.ids = ns.ids + [c.chain.chain_id] %}{% endif %}{% endfor %}
+      {% for cid in ns.ids %}{{ timeline(chains[cid], None, True) }}{% endfor %}
       <p class="ac-lbl">{{ bi('Cases in this theme — say what each one dealt with', 'ఈ అంశంలోని కేసులు — ఒక్కోటి దేని గురించో చెప్పండి') }}</p>
       <ol class="ac-thlist">{% for c in t.cases %}
         <li data-ch="{{ c.chapter }}" data-src="{{ c.source }}"><b>{{ bi(c.front_en, c.front_te) }}</b>{% if c.source == 'new' %}<i class="ac-newdot">{{ bi('New', 'కొత్త') }}</i>{% endif %}<span>{{ bi(c.cue_en, c.cue_te) }}</span></li>{% endfor %}
@@ -201,4 +222,4 @@
   <p class="sr" id="ac-live" aria-live="polite"></p>
 </div>
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110j') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110k') }}" defer></script>{% endblock %}

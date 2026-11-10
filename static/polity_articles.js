@@ -399,6 +399,10 @@
       var keep = themeRows(src, run).map(function (li) { return [].indexOf.call(li.parentNode.children, li); });
       [].forEach.call($("ac-dbody").querySelectorAll(".ac-thlist li"), function (li, i) { if (keep.indexOf(i) < 0) li.remove(); });
     }
+    // chain timeline: a step can jump only to a card that is in this run
+    [].forEach.call($("ac-dbody").querySelectorAll("[data-jump]"), function (b) {
+      if (run.ids.indexOf(b.dataset.jump) < 0) { b.disabled = true; b.removeAttribute("data-jump"); }
+    });
     $("ac-dscroll").scrollTop = 0;
     $("ac-pos").textContent = (index + 1) + " / " + run.ids.length;
     $("ac-prev").disabled = index === 0;
@@ -444,12 +448,16 @@
     };
     if (r) animateClip("inset(0px 0px 0px 0px round 0px)", clipFrom(r), finish); else finish();
   }
+  function jumpTo(id) {
+    var i = run.ids.indexOf(id);
+    if (i >= 0 && i !== run.cur) step(i - run.cur);
+  }
   function step(d) {
     var i = run.cur + d;
     if (i < 0 || i >= run.ids.length) return;
     fillDetail(i);
     var body = $("ac-dscroll");
-    if (!reduceMotion && body.animate) body.animate([{ opacity: 0, transform: "translateX(" + (d * 24) + "px)" }, { opacity: 1, transform: "none" }], { duration: 180, easing: "ease-out" });
+    if (!reduceMotion && body.animate) body.animate([{ opacity: 0, transform: "translateX(" + (Math.sign(d) * 24) + "px)" }, { opacity: 1, transform: "none" }], { duration: 180, easing: "ease-out" });
   }
   function judge(value) {
     var id = run.ids[run.cur];
@@ -510,6 +518,7 @@
     if (actions[b.id]) return actions[b.id]();
     if (b.classList.contains("ac-tile")) return openDetail(+b.dataset.i);
     if (b.dataset.opt) return answerPractice(b);
+    if (b.dataset.jump) return jumpTo(b.dataset.jump);
     if (b.dataset.judge) return judge(b.dataset.judge);
     if (b.dataset.act === "missed") return reviseMissed();
     if (b.dataset.act === "back") return exitStudy();

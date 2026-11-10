@@ -270,7 +270,7 @@ def test_recall_deck_files_schema():
     from app.services import recall_decks as rd
     root=Path(rd.__file__).resolve().parents[2]/'content'/'polity'/'g2'
     card_ids={c['id'] for f in (root/'concept_cards').glob('cards_*.json') for c in json.loads(f.read_text(encoding='utf-8'))}
-    files=sorted(rd.DIR.glob('*.json'));assert files
+    files=sorted(p for p in rd.DIR.glob('*.json') if p.name!='case_chains.json');assert files
     seen=set()
     for f in files:
         deck=f.stem.removesuffix('_new');assert deck in rd.DECKS,f
@@ -322,7 +322,7 @@ def test_recall_case_teacher_layout_and_fallback(client,app,monkeypatch):
     def card(page,cid):
         s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
     # fallback: no new fields -> says under 'What the Court said', no exam section, no compare table
-    NEW=('one_line','story','question','held','meaning','remember')
+    NEW=('one_line','story','question','held','meaning','remember','first_know','argument','next','chain')
     bare=[{k:v for k,v in c.items() if k not in ('compare','exam') and not k.startswith(NEW)} for c in base]
     orig=rd.items
     monkeypatch.setattr(rd,'items',lambda d:bare if d=='cases' else orig(d))
@@ -342,5 +342,36 @@ def test_recall_case_teacher_layout_and_fallback(client,app,monkeypatch):
     assert gop['says_en'][:40] not in g and 'Maneka Gandhi case' in g and 'NARROW' in g and 'WIDE' in g
     assert 'PYQ · APPSC Group II 2011' in g and 'ANS-EN' in g and '<details class="ct-reveal">' in g
     assert 'data-ans="2"' in g and g.count('class="ct-opt"')==4 and 'WHY-EN' in g
+    # fallback: no first_know/argument/next/chain -> none of those boxes, no timeline
+    assert 'ct-know' not in g and 'ct-arg' not in g and 'ct-next' not in g and 'ct-chain' not in g
+    # new boxes, chain timeline, exam label stripping
+    CH={'c1':{'chain_id':'c1','title_en':'CHAIN-T','title_te':'గొలుసు','intro_en':'CHAIN-INTRO','intro_te':'పరిచయం','steps':[
+        {'step':2,'kind':'case','ref':'CS-maneka-gandhi-1978','label_en':'STEP-MANEKA','label_te':'మేనకా','said_en':'S2'},
+        {'step':1,'kind':'case','ref':'CS-gopalan-1950','label_en':'STEP-GOPALAN','label_te':'గోపాలన్','said_en':'S1'},
+        {'step':3,'kind':'amendment','ref':'AM-44','label_en':'STEP-AM44','label_te':'44','said_en':'S3'}]}}
+    monkeypatch.setattr(rd,'chains',lambda:CH)
+    ex2=dict(extra,first_know_en='KNOW-EN',first_know_te='తెలుసు',argument_en='ARG-EN',argument_te='వాదం',next_en='NEXT-EN',next_te='తర్వాత',
+             chain={'chain_id':'c1','step':1},exam=dict(extra['exam'],pyqs=[dict(extra['exam']['pyqs'][0],exam='Other Credible Examinations — TSPSC Group IV',year=2023)]))
+    cs=[dict(c,**ex2) if c['id']=='CS-gopalan-1950' else dict(c,chain={'chain_id':'c1','step':2}) if c['id']=='CS-maneka-gandhi-1978' else c for c in base]
+    monkeypatch.setattr(rd,'items',lambda d:cs if d=='cases' else base)
+    page=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
+    g=card(page,'CS-gopalan-1950')
+    order=[g.index(k) for k in ('ONE-LINE-EN','class="ct-know"','STORY-EN','Q-EN','ARG-EN','HELD-EN','MEAN-EN','NEXT-EN','HOOK-EN','class="ct-chain"','class="ct-exam"')]
+    assert order==sorted(order)
+    assert 'ముందు ఇది తెలుసుకోండి' in g and 'వాదన' in g and 'తర్వాత ఏమైంది?' in g
+    tl=g[g.index('class="ct-chain"'):g.index('class="ct-exam"')]
+    assert tl.index('STEP-GOPALAN')<tl.index('STEP-MANEKA')<tl.index('STEP-AM44')  # sorted by step
+    cur=tl[tl.index('aria-current="step"')-80:tl.index('STEP-MANEKA')]
+    assert tl.count('aria-current="step"')==1 and 'STEP-GOPALAN' in cur and 'data-jump="CS-gopalan-1950"' not in tl
+    assert 'data-jump="CS-maneka-gandhi-1978"' in tl and 'ct-st am' in tl and 'data-jump="AM-44"' not in tl and 'CHAIN-INTRO' not in tl
+    assert 'PYQ · TSPSC Group IV 2023' in g and 'Other Credible' not in g
+    m=card(page,'CS-maneka-gandhi-1978');mt=m[m.index('class="ct-chain"'):]
+    assert 'data-jump="CS-gopalan-1950"' in mt and 'data-jump="CS-maneka-gandhi-1978"' not in mt
+    th=card(page,'TH-liberty')
+    assert th.index('class="ct-chain"')<th.index('CHAIN-INTRO')<th.index('ac-thlist') and 'aria-current' not in th and th.count('class="ct-chain"')==1
+    from app.services.recall_decks import exam_label
+    assert exam_label('other credible examinations - APPSC Group 1')=='APPSC Group 1' and exam_label('APPSC Group II')=='APPSC Group II' and exam_label(None)==''
+    monkeypatch.undo();monkeypatch.setattr(rd,'CHAINS_FILE',rd.DIR/'__missing__.json');rd.chains.cache_clear()
+    assert rd.chains()=={};rd.chains.cache_clear();enable(app)
     am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
     assert 'ct-exam' not in am and 'ct-one' not in am

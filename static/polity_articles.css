@@ -384,3 +384,30 @@ body:has(#ac) .ac-judge button{color:#fff}
 .ac-stage[data-lang="te"] .ct-why>b .ac-en,.ac-stage[data-lang="en"] .ct-why>b .ac-te{display:none!important}
 .ct-prac[data-done="ok"] .ct-why>b{color:#15803D}.ct-prac[data-done="no"] .ct-why>b{color:#B91C1C}
 @media (prefers-color-scheme:dark){body:has(#ac) .ct-opt[data-res="ok"]{background:#14361F;color:#BBF7D0}body:has(#ac) .ct-opt[data-res="no"]{background:#3B1414;color:#FECACA}}
+/* cases: first-know box, chain timeline */
+.ct-know{padding:12px 14px;border-radius:12px;background:color-mix(in srgb,#0369a1 8%,var(--card));border:1px solid color-mix(in srgb,#0369a1 28%,var(--card));border-left:4px solid #0369a1}
+.ct-know>b{display:block;margin-bottom:4px;font-size:.8rem;font-weight:800;color:color-mix(in srgb,#0369a1 85%,var(--mix))}
+.ct-know p{margin:0;font-size:1rem;line-height:1.6;color:var(--ink)}
+.ac-stage[data-lang="both"] .ct-know>b .ac-te,.ac-stage[data-lang="both"] .ct-know>b .ac-en,
+.ac-stage[data-lang="both"] .ct-chh .ac-te,.ac-stage[data-lang="both"] .ct-chh .ac-en{display:inline;margin:0;font-size:inherit;color:inherit}
+.ac-stage[data-lang="both"] .ct-know>b .ac-te::after,.ac-stage[data-lang="both"] .ct-chh .ac-te::after{content:" / "}
+.ct-chain{padding:14px 12px;border-radius:14px;border:1px solid color-mix(in srgb,var(--acc) 25%,var(--line));background:color-mix(in srgb,var(--acc) 4%,var(--card));display:flex;flex-direction:column;gap:8px}
+.ct-chh{margin:0;font-size:1rem;font-weight:800;color:color-mix(in srgb,var(--acc) 85%,var(--mix))}
+.ct-chintro{margin:0;font-size:.95rem;line-height:1.6}
+.ct-tl{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
+.ct-st{position:relative;display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:10px;padding:0 0 12px}
+.ct-st:not(:last-child)::before{content:"";position:absolute;left:13px;top:28px;bottom:0;width:2px;background:color-mix(in srgb,var(--acc) 30%,var(--line))}
+.ct-dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:800;background:var(--card);border:2px solid color-mix(in srgb,var(--acc) 55%,var(--line));color:color-mix(in srgb,var(--acc) 85%,var(--mix))}
+.ct-st.am .ct-dot{border-radius:6px;border-style:dashed;border-color:#a16207;color:#a16207;transform:scale(.86)}
+.ct-st.cur .ct-dot{background:var(--acc);border-color:var(--acc);color:#fff}
+.ct-stb{min-width:0;display:flex;flex-direction:column;gap:2px;padding-top:3px}
+.ct-stl,.ct-jump{font-size:.98rem;font-weight:750;line-height:1.4;overflow-wrap:anywhere}
+.ac-stage .ct-jump{font-weight:750;font-size:.98rem;align-self:flex-start;min-height:32px;padding:2px 0;border:0;background:none;color:var(--teal);font-family:inherit;text-align:left;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.ct-jump:disabled{color:var(--ink);text-decoration:none;cursor:default}
+.ct-st.cur .ct-stl{color:color-mix(in srgb,var(--acc) 85%,var(--mix))}
+.ct-st.cur .ct-stb{padding:4px 8px 6px;margin-left:-4px;border-radius:8px;background:color-mix(in srgb,var(--acc) 12%,var(--card))}
+.ct-who{font-size:.8rem;color:var(--muted)}
+.ct-said{margin:0;font-size:.92rem;line-height:1.55}
+.ac-stage[data-lang="both"] .ct-st .ac-te+.ac-en{font-size:.88em}
+.ac-stage[data-lang="both"] .ct-who .ac-te,.ac-stage[data-lang="both"] .ct-who .ac-en{display:inline;margin:0;font-size:inherit;color:inherit}
+.ac-stage[data-lang="both"] .ct-who .ac-te::after{content:" / "}
