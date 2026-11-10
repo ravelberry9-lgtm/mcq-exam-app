@@ -9,6 +9,8 @@ import re
 from functools import lru_cache
 from pathlib import Path
 
+from markupsafe import Markup, escape
+
 from . import article_cards as _art
 
 DIR = Path(__file__).resolve().parents[2] / 'content' / 'polity' / 'g2' / 'recall_decks'
@@ -89,8 +91,13 @@ for _d in DECKS.values():
     _d.setdefault('lang_store', 'u6_artcards_lang')
 
 
+ARTICLE_RICH = ('one_line_en', 'one_line_te', 'text_en', 'text_te', 'text_te_note', 'clauses', 'meaning_en', 'meaning_te',
+                'implications_en', 'implications_te', 'origin_en', 'origin_te', 'amendments', 'cases', 'remember_en', 'remember_te', 'exam')
+
+
 def _article_item(c):
-    return {
+    rich = {k: c[k] for k in ARTICLE_RICH if c.get(k)}
+    return rich | {
         'id': c['id'], 'deck': 'articles', 'chapter': c['chapter'], 'sort': _art.article_key(c['article']),
         'front_en': f"Article {c['article']}", 'front_te': f"ప్రకరణ {c['article']}", 'front_short': c['article'],
         'front_sub': c.get('part') or '',
@@ -174,3 +181,139 @@ _EXAM_PREFIX = re.compile(r'^\s*other\s+credible\s+examinations\s*(?:-|–|—)\
 def exam_label(s):
     """'Other credible examinations - TSPSC Group IV' -> 'TSPSC Group IV'."""
     return _EXAM_PREFIX.sub('', s or '')
+
+
+# ── interlinking: links.json + mention index + auto-linking ──
+LINKS_FILE = DIR / 'links.json'
+DECK_OF = {'AC': 'articles', 'AM': 'amendments', 'CS': 'cases'}
+KIND = {'articles': 'art', 'amendments': 'am', 'cases': 'case'}
+
+
+def deck_of(card_id):
+    return DECK_OF.get(str(card_id or '')[:2])
+
+
+@lru_cache(maxsize=None)
+def links():
+    """{card_id: {articles:[ids], amendments:[ids], cases:[ids]}}; missing/bad file -> {}."""
+    try:
+        data = json.loads(LINKS_FILE.read_text(encoding='utf-8'))
+    except (ValueError, OSError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _ord(n):
+    n = int(n)
+    return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
+def _variants(it):
+    """Name variants a text may use for this card (English, Telugu)."""
+    d, v = it.get('deck') or deck_of(it['id']), []
+    if d == 'articles':
+        a = it.get('front_short') or ''
+        v = [f'Article {a}', f'Art. {a}', f'Art {a}', f'ప్రకరణ {a}', f'ప్రకరణ (Article) {a}', f'ప్ర. {a}']
+    elif d == 'amendments':
+        n = str(it.get('sort') or '')
+        if n.isdigit():
+            v = [f'{_ord(n)} Amendment', f'{_ord(n)} Constitutional Amendment', f'{n}వ సవరణ', f'{n}వ రాజ్యాంగ సవరణ']
+        v += [it.get('front_en') or '', it.get('front_te') or '']
+    elif d == 'cases':
+        fe, ft = it.get('front_en') or '', it.get('front_te') or ''
+        v = [fe, re.sub(r'\s+case$', '', fe, flags=re.I), ft, re.sub(r'\s*కేసు$', '', ft), it.get('short_en') or '', it.get('short_te') or '']
+        for p in (it.get('parties_en'), it.get('parties_te')):
+            if p:
+                v += [p, re.sub(r'\s*\([^)]*\)', '', p)]
+    return [x.strip() for x in dict.fromkeys(v) if x and len(x.strip()) >= 4]
+
+
+_INDEX = {}
+
+
+def index():
+    """{'cards': {id: item}, 'names': {variant: id}, 'rx': compiled regex} over all three decks (rebuilt when items change)."""
+    lists = [items(k) for k in DECKS]
+    key = tuple(id(x) for x in lists)
+    if _INDEX.get('key') == key:
+        return _INDEX
+    cards, names, dup = {}, {}, set()
+    for lst in lists:
+        for it in lst:
+            cards[it['id']] = it
+            for n in _variants(it):
+                if n in names and names[n] != it['id']:
+                    dup.add(n)
+                names.setdefault(n, it['id'])
+    for n in dup:  # a name shared by two cards is ambiguous: never auto-link it
+        names.pop(n)
+    alts = sorted(names, key=len, reverse=True)
+    rx = re.compile('(?<![0-9A-Za-z])(' + '|'.join(re.escape(str(escape(n))) for n in alts) + ')(?![0-9A-Za-z])') if alts else None
+    _INDEX.clear()
+    _INDEX.update(key=key, cards=cards, names={str(escape(k)): v for k, v in names.items()}, rx=rx)
+    return _INDEX
+
+
+def card_url(card_id, **kw):
+    from flask import url_for
+    return url_for('polity_unit6.recall_deck', deck_id=deck_of(card_id), open=card_id, **kw)
+
+
+def autolink(text, own_id=None):
+    """Escape text and wrap mentions of OTHER cards in <a class="xl xl-art|xl-am|xl-case" data-go=id>; one link per target."""
+    if not text:
+        return Markup('')
+    s, ix = str(escape(text)), index()
+    if not ix['rx']:
+        return Markup(s)
+    seen = set()
+
+    def rep(m):
+        cid = ix['names'].get(m.group(1))
+        if not cid or cid == own_id or cid in seen:
+            return m.group(0)
+        seen.add(cid)
+        d = deck_of(cid)
+        return f'<a class="xl xl-{KIND[d]}" data-go="{cid}" data-deck="{d}" href="{escape(card_url(cid))}">{m.group(0)}</a>'
+    return Markup(ix['rx'].sub(rep, s))
+
+
+def label(card_id):
+    """Short chip label (en, te): 'Art 21A', '42nd Amdt', 'Maneka Gandhi'."""
+    it = index()['cards'].get(card_id)
+    if not it:
+        return None
+    d = deck_of(card_id)
+    if d == 'articles':
+        return f"Art {it['front_short']}", f"ప్ర. {it['front_short']}"
+    if d == 'amendments':
+        n = str(it.get('sort') or '')
+        return (f'{_ord(n)} Amdt', f'{n}వ సవరణ') if n.isdigit() else (it['front_en'], it['front_te'])
+    return it.get('short_en') or re.sub(r'\s+case$', '', it['front_en'], flags=re.I), it.get('short_te') or re.sub(r'\s*కేసు$', '', it.get('front_te') or '')
+
+
+def _ids(v):
+    for x in v or []:
+        yield x.get('id') if isinstance(x, dict) else x
+
+
+def related(it):
+    """{'articles': [...], 'amendments': [...], 'cases': [...]} of {id, deck, en, te, url}, from links.json + structured fields."""
+    ix = index()
+    art_by_no = {c.get('front_short'): c['id'] for c in ix['cards'].values() if c.get('deck') == 'articles' or c['id'].startswith('AC-')}
+    want = {k: list(v) for k, v in (links().get(it['id']) or {}).items() if k in KIND}
+    for k in KIND:
+        for x in _ids(it.get(k) if isinstance(it.get(k), list) else []):
+            if k == 'articles' and x and not str(x).startswith('AC-'):
+                x = art_by_no.get(str(x))
+            want.setdefault(k, []).append(x)
+        for ch in it.get('changes') or []:  # amendment changes -> articles
+            if k == 'articles' and ch.get('article'):
+                want.setdefault(k, []).append(ch['article'] if str(ch['article']).startswith('AC-') else art_by_no.get(str(ch['article'])))
+    out = {}
+    for k in KIND:
+        ids = [x for x in dict.fromkeys(want.get(k) or []) if x and x != it['id'] and x in ix['cards']]
+        if k == 'articles':
+            ids.sort(key=lambda x: ix['cards'][x].get('sort') or ())
+        out[k] = [{'id': x, 'deck': k, 'en': label(x)[0], 'te': label(x)[1], 'url': card_url(x)} for x in ids]
+    return out

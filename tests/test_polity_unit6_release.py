@@ -1,3 +1,4 @@
+import re
 from datetime import datetime,timedelta
 from app.db import db
 from app.polity_models import PolityUnit6State,PolityUnit6Exam
@@ -270,7 +271,7 @@ def test_recall_deck_files_schema():
     from app.services import recall_decks as rd
     root=Path(rd.__file__).resolve().parents[2]/'content'/'polity'/'g2'
     card_ids={c['id'] for f in (root/'concept_cards').glob('cards_*.json') for c in json.loads(f.read_text(encoding='utf-8'))}
-    files=sorted(p for p in rd.DIR.glob('*.json') if p.name!='case_chains.json');assert files
+    files=sorted(p for p in rd.DIR.glob('*.json') if p.name not in ('case_chains.json','links.json'));assert files
     seen=set()
     for f in files:
         deck=f.stem.removesuffix('_new');assert deck in rd.DECKS,f
@@ -329,7 +330,7 @@ def test_recall_case_teacher_layout_and_fallback(client,app,monkeypatch):
     page=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
     base=bare
     g=card(page,'CS-gopalan-1950');gop=next(c for c in base if c['id']=='CS-gopalan-1950')
-    assert 'కోర్టు ఏమంది?' in g and gop['says_en'][:40] in g and 'ct-exam' not in g and 'ct-cmp' not in g and 'ct-one' not in g
+    assert 'కోర్టు ఏమంది?' in g and gop['says_en'][:40] in re.sub(r'<[^>]+>','',g) and 'ct-exam' not in g and 'ct-cmp' not in g and 'ct-one' not in g
     extra=dict(one_line_en='ONE-LINE-EN',one_line_te='ఒకటి',story_en='STORY-EN',story_te='కథ',question_en='Q-EN',question_te='ప్ర',
                held_en='HELD-EN',held_te='చెప్పింది',meaning_en='MEAN-EN',meaning_te='అర్థం',remember_en=['HOOK-EN'],remember_te=['హుక్'],
                compare={'with_id':'CS-maneka-gandhi-1978','rows':[{'label_en':'L','label_te':'ల','this_en':'NARROW','this_te':'ఇ','other_en':'WIDE','other_te':'వి'}]},
@@ -374,7 +375,7 @@ def test_recall_case_teacher_layout_and_fallback(client,app,monkeypatch):
     monkeypatch.undo();monkeypatch.setattr(rd,'CHAINS_FILE',rd.DIR/'__missing__.json');rd.chains.cache_clear()
     assert rd.chains()=={};rd.chains.cache_clear();enable(app)
     am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
-    assert 'ct-exam' not in am and 'ct-one' not in am
+    assert 'ct-exam' in am  # amendments now have their own exam section
 
 def test_case_tiles_and_hero_use_parties(client,app):
     enable(app)
@@ -385,3 +386,78 @@ def test_case_tiles_and_hero_use_parties(client,app):
     assert '<div class="s-vs"></div>' in html  # 'In re:' references have no vs line
     js=open('static/polity_articles.js',encoding='utf-8').read()
     assert 't-p1' in js and 't-vs' in js and 'p-parties' in js and 'p-short' in js
+
+def _rich(rd,monkeypatch):
+    orig,cache=rd.items,{}
+    R={'AC-6.4-21':dict(one_line_en='ONE-21',one_line_te='ఒక్క 21',text_en='No person shall be deprived of his life.',text_te='ఏ వ్యక్తి ప్రాణాన్నీ.',
+        meaning_en='MEANING since Maneka Gandhi and the 44th Amendment; Article 21 itself.',meaning_te='మేనకా గాంధీ కేసు తర్వాత అర్థం.',
+        implications_en=['IMP Article 20 and Article 20 again'],implications_te=['ప్రకరణ 20'],
+        amendments=[{'id':'AM-044','label_en':'44th Amendment (1978)','label_te':'44వ సవరణ','what_en':'WHAT44','what_te':'ఏమి'}],
+        cases=[{'id':'CS-maneka-gandhi-1978','label_en':'Maneka Gandhi vs Union of India','label_te':'మేనకా','held_en':'HELD-MG','held_te':'చెప్పింది'}],
+        exam={'pyqs':[{'kind':'pyq','exam':'APPSC','q_en':'PYQ Maneka Gandhi Article?','q_te':'మేనకా గాంధీ?','answer_en':'Article 21','answer_te':'ప్రకరణ 21'}]}),
+       'AM-042':dict(one_line_en='ONE-42',one_line_te='ఒక్క 42',background_en='WHY-42',background_te='ఎందుకు',
+        changes=[{'article':'AC-6.7-368','label_en':'Article 368','label_te':'ప్రకరణ 368','kind':'amended','before_en':'BEFORE','before_te':'ముందు','after_en':'AFTER','after_te':'తర్వాత','what_en':'Struck down in Minerva Mills.','what_te':'కొట్టివేసింది'}],
+        cases=[{'id':'CS-minerva-mills-1980','label_en':'Minerva Mills','label_te':'మినర్వా','held_en':'HELD-MM','held_te':'చెప్పింది'}])}
+    def items(d):
+        if d not in cache:cache[d]=[dict(c,**R[c['id']]) if c['id'] in R else c for c in orig(d)]
+        return cache[d]
+    monkeypatch.setattr(rd,'items',items)
+
+def test_recall_links_resolve(app):
+    from app.services import recall_decks as rd
+    L=rd.links();assert L,'links.json missing'
+    ids=set(rd.index()['cards'])
+    for cid,v in L.items():
+        assert cid in ids,cid
+        for k in ('articles','amendments','cases'):
+            for x in v.get(k,[]):assert x in ids and rd.deck_of(x)==k,(cid,x)
+    with app.test_request_context():r=rd.related(rd.index()['cards']['AC-6.4-21'])
+    assert any(x['id']=='CS-maneka-gandhi-1978' and x['en']=='Maneka Gandhi' for x in r['cases'])
+    assert rd.label('AM-042')==('42nd Amdt','42వ సవరణ') and rd.label('AC-6.4-21')[0]=='Art 21'
+
+def test_recall_autolink_filter(app):
+    from app.services import recall_decks as rd
+    with app.test_request_context():
+        s=str(rd.autolink('Since Maneka Gandhi (1978) and Maneka Gandhi again, Article 21 and Article 21A; the 42nd Amendment <b>; ప్రకరణ 368.','AC-6.4-21'))
+    assert s.count('data-go="CS-maneka-gandhi-1978"')==1 and 'class="xl xl-case"' in s  # one link per target per field
+    assert 'data-go="AC-6.4-21"' not in s and 'data-go="AC-6.4-21A"' in s  # own name skipped; longest match wins
+    assert 'xl-am" data-go="AM-042"' in s and 'data-go="AC-6.7-368"' in s and '&lt;b&gt;' in s  # Telugu variant; text escaped
+    assert str(rd.autolink('',None))==''
+
+def test_recall_rich_article_amendment_and_cross_deck(client,app,monkeypatch):
+    from app.services import recall_decks as rd
+    enable(app);_rich(rd,monkeypatch)
+    def card(page,cid):
+        s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
+    page=client.get('/learn/polity/unit6/recall/articles?open=AC-6.4-21&back=cases:CS-maneka-gandhi-1978').get_data(as_text=True)
+    assert 'data-open="AC-6.4-21"' in page and 'data-back-url="/learn/polity/unit6/recall/cases?open=CS-maneka-gandhi-1978"' in page and 'data-back-en="Maneka Gandhi case"' in page
+    a=card(page,'AC-6.4-21')
+    for t in ('ONE-21','ప్రకరణ పాఠం','అనువాదం (translation)','ముఖ్యమైన అంశాలు','WHAT44','HELD-MG','class="xr"','ct-exam'):assert t in a,t
+    mean=a[a.index('MEANING'):a.index('MEANING')+900]
+    assert 'data-go="CS-maneka-gandhi-1978"' in mean and 'data-go="AM-044"' in mean
+    imp=a[a.index('IMP '):a.index('</li>',a.index('IMP '))];assert imp.count('data-go="AC-6.4-20"')==1
+    pyq=a[a.index('ct-pyqs'):];pyq=pyq[:pyq.index('</ol>')];assert 'class="xl' not in pyq  # bank text never linked
+    assert a.index('class="xr"')<a.index('ct-exam')
+    am=card(client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True),'AM-042')
+    for t in ('ONE-42','WHY-42','BEFORE','AFTER','xm-changes','data-go="AC-6.7-368"','HELD-MM','data-go="CS-minerva-mills-1980"'):assert t in am,t
+    # unknown ?open / bad back are ignored
+    p2=client.get('/learn/polity/unit6/recall/cases?open=NOPE&back=articles:CS-x').get_data(as_text=True)
+    assert 'data-open=""' in p2 and 'data-back-url' not in p2
+
+def test_recall_fallback_without_rich_fields_and_links(client,app,monkeypatch):
+    from app.services import recall_decks as rd
+    enable(app)
+    def card(page,cid):
+        s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
+    a=card(client.get('/learn/polity/unit6/recall/articles').get_data(as_text=True),'AC-6.4-21')
+    # real data now carries the rich fields
+    assert 'ప్రకరణ పాఠం' in a and 'ct-exam' in a
+    am=card(client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True),'AM-042')
+    assert 'xm-changes' in am and 'class="xr"' in am and 'ct-exam' in am
+    monkeypatch.setattr(rd,'LINKS_FILE',rd.DIR/'__missing__.json');rd.links.cache_clear()
+    try:
+        assert rd.links()=={}
+        a=card(client.get('/learn/polity/unit6/recall/articles').get_data(as_text=True),'AC-6.4-21')
+        assert 'ప్రకరణ పాఠం' in a  # structured fields still give a Related strip
+    finally:
+        monkeypatch.undo();rd.links.cache_clear()

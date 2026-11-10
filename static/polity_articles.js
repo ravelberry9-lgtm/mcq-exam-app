@@ -447,6 +447,7 @@
     else hideDetail();
   }
   function hideDetail() {
+    backStack = []; bootBack = false; paintBack();
     var index = run.cur;
     var page = Math.floor(index / perPage());
     if (page !== run.page) run.page = page;
@@ -471,6 +472,7 @@
     var body = $("ac-dscroll");
     if (!reduceMotion && body.animate) body.animate([{ opacity: 0, transform: "translateX(" + (Math.sign(d) * 24) + "px)" }, { opacity: 1, transform: "none" }], { duration: 180, easing: "ease-out" });
   }
+  function nav(d) { backStack = []; bootBack = false; step(d); paintBack(); }
   function judge(value) {
     var id = run.ids[run.cur];
     progress[id] = value;
@@ -522,9 +524,50 @@
   var actions = {
     "ac-exit": exitStudy, "ac-mode": toggleMode, "ac-lang": cycleLang, "ac-order": toggleOrder, "ac-reshuffle": reshuffle,
     "ac-pprev": function () { goPage(-1); }, "ac-pnext": function () { goPage(1); },
-    "ac-collapse": collapse, "ac-prev": function () { step(-1); }, "ac-next": function () { step(1); }
+    "ac-collapse": collapse, "ac-prev": function () { nav(-1); }, "ac-next": function () { nav(1); }
   };
+  // ── interlinking: .xl links and Related chips open a card; same deck in place (with a back stack), other decks by URL ──
+  var backStack = [];
+  var BACK = D.backUrl ? { url: D.backUrl, deck: D.backDeck, en: D.backEn, te: D.backTe } : null;
+  var bootBack = false; // this page was opened from another deck's card and still shows that first card
+  function frontTe(id) { var e = byId[id].querySelector(".s-front .ac-te"); return e ? e.textContent.trim() : frontEn(id); }
+  function showCard(id) {
+    var i = run.ids.indexOf(id);
+    if (i < 0) { run.ids.push(id); i = run.ids.length - 1; } // linked card outside this run's filter: visit it at the end
+    step(i - run.cur);
+    paintBack();
+  }
+  function go(id, href) {
+    var cur = run && run.cur >= 0 ? run.ids[run.cur] : "";
+    if (byId[id] && !isTheme(id)) {
+      if (!cur || id === cur) return;
+      if (detail.hidden) { openDetail(run.ids.indexOf(id) >= 0 ? run.ids.indexOf(id) : (run.ids.push(id), run.ids.length - 1)); paintBack(); return; }
+      backStack.push(cur);
+      bootBack = false;
+      return showCard(id);
+    }
+    // another deck: remember this card in our own URL (Back / reload reopens it), then go
+    try { history.replaceState(history.state, "", location.pathname + "?open=" + encodeURIComponent(cur)); } catch (e) { /* ignore */ }
+    location.href = href + (href.indexOf("?") < 0 ? "?" : "&") + "back=" + encodeURIComponent(D.deck + ":" + cur);
+  }
+  function paintBack() {
+    var b = $("ac-xback"), prev = backStack[backStack.length - 1];
+    if (prev) b.querySelector(".xb-name").innerHTML = biText(esc(frontEn(prev)), esc(frontTe(prev)));
+    else if (bootBack && BACK) b.querySelector(".xb-name").innerHTML = biText(esc(BACK.en), esc(BACK.te));
+    b.hidden = !(prev || (bootBack && BACK));
+  }
+  function goBack() {
+    if (backStack.length) return showCard(backStack.pop());
+    if (!bootBack || !BACK) return;
+    // came here from another deck: step back through our own study entries to that page; else load it
+    if (document.referrer.indexOf("/recall/" + BACK.deck) >= 0 && history.state && history.state.acDetail && history.length > 3) history.go(-3);
+    else location.href = BACK.url;
+  }
+  actions["ac-xback"] = goBack;
+
   function onStageClick(e) {
+    var a = e.target.closest("a[data-go]");
+    if (a && run) { e.preventDefault(); return go(a.dataset.go, a.getAttribute("href")); }
     var b = e.target.closest("button");
     if (!b || !run) return;
     if (actions[b.id]) return actions[b.id]();
@@ -582,4 +625,14 @@
   if (history.state && (history.state.acStudy || history.state.acDetail)) history.replaceState(null, ""); // reload mid-study: start at setup
   restoreChoices();
   paintSetup();
+  // ?open=<id>: skip setup and open that card (linked from another card); &back=<deck>:<id> shows the way back
+  if (D.open && byId[D.open]) {
+    var c0 = choices();
+    var ids0 = pickIds({ chapter: "", only: false, newer: true, mode: "a" });
+    if (ids0.indexOf(D.open) < 0) ids0.push(D.open);
+    startRun(ids0, { chapter: "", mode: "a", lang: c0.lang, density: c0.density, order: "seq", only: false, newer: true });
+    bootBack = !!BACK;
+    openDetail(run.ids.indexOf(D.open));
+    paintBack();
+  }
 })();

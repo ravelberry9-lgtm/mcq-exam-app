@@ -1,6 +1,8 @@
 {% extends 'ds/base.html' %}
 {% macro bi(en, te) -%}<span class="ac-te" lang="te">{{ te or en }}</span><span class="ac-en" lang="en">{{ en }}</span>{%- endmacro %}
 {% macro bl(en, te) -%}<ul class="ac-te" lang="te">{% for p in (te or en) %}<li>{{ p }}</li>{% endfor %}</ul><ul class="ac-en" lang="en">{% for p in en %}<li>{{ p }}</li>{% endfor %}</ul>{%- endmacro %}
+{% macro bx(en, te, own) -%}<span class="ac-te" lang="te">{{ (te or en)|xl(own) }}</span><span class="ac-en" lang="en">{{ en|xl(own) }}</span>{%- endmacro %}
+{% macro blx(en, te, own) -%}<ul class="ac-te" lang="te">{% for p in (te or en) %}<li>{{ p|xl(own) }}</li>{% endfor %}</ul><ul class="ac-en" lang="en">{% for p in en %}<li>{{ p|xl(own) }}</li>{% endfor %}</ul>{%- endmacro %}
 {% macro sec(cls, en, te) -%}<section class="ct-sec {{ cls }}"><h3 class="ac-lbl">{{ bi(en, te) }}</h3>{{ caller() }}</section>{%- endmacro %}
 {#- Cases: teacher layout for a beginner. New optional fields (one_line, story, question, held, meaning, remember, compare, exam)
     each fall back to the older fields (says, points, trap) when absent. -#}
@@ -22,27 +24,44 @@
 {% macro teach(c) -%}
       {% if c.source == 'new' %}<p class="ac-new">{{ bi('New · after Laxmikanth', 'కొత్తది · లక్ష్మీకాంత్ తర్వాత') }}</p>{% endif %}
       {% if c.one_line_en %}<div class="ct-one"><b>{{ bi('In one line', 'ఒక్క మాటలో') }}</b><p>{{ bi(c.one_line_en, c.one_line_te) }}</p></div>{% endif %}
-      {% if c.first_know_en %}<div class="ct-know"><b>{{ bi('First know this', 'ముందు ఇది తెలుసుకోండి') }}</b><p>{{ bi(c.first_know_en, c.first_know_te) }}</p></div>{% endif %}
-      {% if c.story_en %}{% call sec('ct-story', 'The story', 'కథ') %}<div class="ac-says">{{ bi(c.story_en, c.story_te) }}</div>{% endcall %}{% endif %}
+      {% if c.first_know_en %}<div class="ct-know"><b>{{ bi('First know this', 'ముందు ఇది తెలుసుకోండి') }}</b><p>{{ bx(c.first_know_en, c.first_know_te, c.id) }}</p></div>{% endif %}
+      {% if c.story_en %}{% call sec('ct-story', 'The story', 'కథ') %}<div class="ac-says">{{ bx(c.story_en, c.story_te, c.id) }}</div>{% endcall %}{% endif %}
       {% if c.question_en %}{% call sec('ct-q', 'The question', 'కోర్టు ముందున్న ప్రశ్న') %}<div class="ct-qtext">{{ bi(c.question_en, c.question_te) }}</div>{% endcall %}{% endif %}
-      {% if c.argument_en %}{% call sec('ct-arg', 'The argument', 'వాదన') %}<div class="ac-says">{{ bi(c.argument_en, c.argument_te) }}</div>{% endcall %}{% endif %}
-      {% call sec('ct-held', 'What the Court said', 'కోర్టు ఏమంది?') %}<div class="ac-says">{{ bi(c.held_en or c.says_en, c.held_te or c.says_te) }}</div>{% endcall %}
-      {% if c.points_en and not c.held_en %}<div class="ac-points">{{ bl(c.points_en, c.points_te) }}</div>{% endif %}
-      {% if c.meaning_en %}{% call sec('ct-mean', 'Why it matters', 'దీని అర్థం') %}<div class="ac-says">{{ bi(c.meaning_en, c.meaning_te) }}</div>{% endcall %}{% endif %}
-      {% if c.next_en %}{% call sec('ct-next', 'What happened next', 'తర్వాత ఏమైంది?') %}<div class="ac-says">{{ bi(c.next_en, c.next_te) }}</div>{% endcall %}{% endif %}
+      {% if c.argument_en %}{% call sec('ct-arg', 'The argument', 'వాదన') %}<div class="ac-says">{{ bx(c.argument_en, c.argument_te, c.id) }}</div>{% endcall %}{% endif %}
+      {% call sec('ct-held', 'What the Court said', 'కోర్టు ఏమంది?') %}<div class="ac-says">{{ bx(c.held_en or c.says_en, c.held_te or c.says_te, c.id) }}</div>{% endcall %}
+      {% if c.points_en and not c.held_en %}<div class="ac-points">{{ blx(c.points_en, c.points_te, c.id) }}</div>{% endif %}
+      {% if c.meaning_en %}{% call sec('ct-mean', 'Why it matters', 'దీని అర్థం') %}<div class="ac-says">{{ bx(c.meaning_en, c.meaning_te, c.id) }}</div>{% endcall %}{% endif %}
+      {% if c.next_en %}{% call sec('ct-next', 'What happened next', 'తర్వాత ఏమైంది?') %}<div class="ac-says">{{ bx(c.next_en, c.next_te, c.id) }}</div>{% endcall %}{% endif %}
       {% set cmp = c.compare %}{% if cmp and cmp.rows %}{% set o = cards|selectattr('id', 'equalto', cmp.with_id)|first %}
       <div class="ct-cmp" role="table" aria-label="Compare">
         <div class="ct-crow ct-chead" role="row"><span role="columnheader">{{ bi(c.front_en, c.front_te) }}</span><span role="columnheader">{{ bi(o.front_en, o.front_te) if o else cmp.with_id }}</span></div>
-        {% for r in cmp.rows %}<div class="ct-crow" role="row"><b class="ct-clbl" role="rowheader">{{ bi(r.label_en, r.label_te) }}</b><span role="cell">{{ bi(r.this_en, r.this_te) }}</span><span role="cell">{{ bi(r.other_en, r.other_te) }}</span></div>{% endfor %}
+        {% for r in cmp.rows %}<div class="ct-crow" role="row"><b class="ct-clbl" role="rowheader">{{ bi(r.label_en, r.label_te) }}</b><span role="cell">{{ bx(r.this_en, r.this_te, c.id) }}</span><span role="cell">{{ bx(r.other_en, r.other_te, c.id) }}</span></div>{% endfor %}
       </div>{% endif %}
-      {% if c.remember_en %}{% call sec('ct-rem', 'Remember', 'గుర్తుపెట్టుకోండి') %}<div class="ac-points">{{ bl(c.remember_en, c.remember_te) }}</div>{% endcall %}{% endif %}
-      {% if c.trap_en %}<div class="ac-note ac-trap"><b>{{ bi('Exam trap','పరీక్షలో జాగ్రత్త') }}</b>{{ bi(c.trap_en, c.trap_te) }}</div>{% endif %}
-      {% if c.flag %}<div class="ac-note">{{ c.flag }}</div>{% endif %}
-      {% if c.as_of %}<div class="ac-asof">{{ c.as_of }}</div>{% endif %}
+      {% if c.remember_en %}{% call sec('ct-rem', 'Remember', 'గుర్తుపెట్టుకోండి') %}<div class="ac-points">{{ blx(c.remember_en, c.remember_te, c.id) }}</div>{% endcall %}{% endif %}
+      {{ trapflag(c) }}
       <p class="ac-ref">{{ bi(c.title_en, c.title_te) }}{% if c.front_sub %} · <span class="ac-year">{{ c.front_sub }}</span>{% endif %}</p>
       {% if c.articles %}<div class="ac-arts">{% for a in c.articles %}<span class="ac-art"><small lang="te">ప్రకరణ</small> {{ a }}</span>{% endfor %}</div>{% endif %}
       <div class="ac-meta"><span class="ac-chchip" style="--acc:{{ c.chapter|accent }};--acc-ink:{{ c.chapter|accent_ink }}">Ch {{ c.chapter }}</span>{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}{% if c.laxmikanth.section %} · {{ c.laxmikanth.section }}{% endif %}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.card_ids[0].split('-')[1],hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
       {% set chn = c.chain and chains.get(c.chain.chain_id) %}{% if chn %}{{ timeline(chn, c.chain.step) }}{% endif %}
+      {{ relstrip(c) }}
+      {{ examsec(c) }}
+{%- endmacro %}
+{% macro trapflag(c) -%}
+      {% if c.trap_en %}<div class="ac-note ac-trap"><b>{{ bi('Exam trap','పరీక్షలో జాగ్రత్త') }}</b>{{ bx(c.trap_en, c.trap_te, c.id) }}</div>{% endif %}
+      {% if c.flag %}<div class="ac-note">{{ c.flag|xl(c.id) }}</div>{% endif %}
+      {% if c.as_of %}<div class="ac-asof">{{ c.as_of }}</div>{% endif %}
+{%- endmacro %}
+{#- Related strip: chips to every linked article / amendment / case (links.json + the card's structured fields). -#}
+{% macro chip(r) %}<a class="xr-chip" data-go="{{ r.id }}" data-deck="{{ r.deck }}" href="{{ r.url }}">{{ bi(r.en, r.te) }}</a>{% endmacro %}
+{% macro relstrip(c) -%}{% set R = related(c) %}{% if R.articles or R.amendments or R.cases %}
+      <nav class="xr" aria-label="Related">
+        <h3 class="ac-lbl">{{ bi('Related', 'సంబంధిత అంశాలు') }}</h3>
+        {% for k, ic, en, te in [('articles', '§', 'Articles', 'ప్రకరణలు'), ('amendments', '✎', 'Amendments', 'సవరణలు'), ('cases', '⚖', 'Cases', 'కేసులు')] %}{% if R[k] %}
+        <div class="xr-g xr-{{ k }}"><span class="xr-h"><i aria-hidden="true">{{ ic }}</i>{{ bi(en, te) }}</span>
+          <div class="xr-chips">{% for r in R[k][:10] %}{{ chip(r) }}{% endfor %}{% if R[k]|length > 10 %}<details class="xr-more"><summary>{{ bi('+' ~ (R[k]|length - 10) ~ ' more', 'ఇంకా ' ~ (R[k]|length - 10)) }}</summary>{% for r in R[k][10:] %}{{ chip(r) }}{% endfor %}</details>{% endif %}</div></div>{% endif %}{% endfor %}
+      </nav>{% endif %}
+{%- endmacro %}
+{% macro examsec(c) -%}
       {% set ex = c.exam %}{% if ex and (ex.patterns_en or ex.pyqs or ex.practice) %}
       <section class="ct-exam">
         <h3 class="ct-exh">{{ bi('How it is asked in exams', 'పరీక్షల్లో ఇలా అడుగుతారు') }}</h3>
@@ -61,10 +80,55 @@
         </div>{% endif %}
       </section>{% endif %}
 {%- endmacro %}
+{#- Shared tail for article / amendment cards. -#}
+{% macro reflinks(c) -%}
+      {% if c.articles %}<div class="ac-arts">{% for a in c.articles %}<span class="ac-art"><small lang="te">ప్రకరణ</small> {{ a }}</span>{% endfor %}</div>{% endif %}
+      <div class="ac-meta">{% if c.part %}<span>{{ c.part }}</span>{% endif %}{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}{% if c.laxmikanth.section and d.id != 'articles' %} · {{ c.laxmikanth.section }}{% endif %}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.card_ids[0].split('-')[1],hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
+{%- endmacro %}
+{% macro xlist(rows, kind, c_id=None) -%}<ul class="xa-list">{% for r in rows %}<li>{% if r.id %}<a class="xa-lbl xl xl-{{ kind }}" data-go="{{ r.id }}" href="{{ url_for('polity_unit6.recall_deck', deck_id='amendments' if kind == 'am' else 'cases', open=r.id) }}">{{ bi(r.label_en, r.label_te) }}</a>{% else %}<b class="xa-lbl">{{ bi(r.label_en, r.label_te) }}</b>{% endif %}
+        <span class="xa-what">{{ bx(r.what_en or r.held_en, r.what_te or r.held_te, c_id) }}</span></li>{% endfor %}</ul>{%- endmacro %}
+{#- Articles: teacher layout. New optional fields fall back to says / trap. -#}
+{% macro art_teach(c) -%}
+      {% if c.one_line_en %}<div class="ct-one"><b>{{ bi('In one line', 'ఒక్క మాటలో') }}</b><p>{{ bx(c.one_line_en, c.one_line_te, c.id) }}</p></div>{% endif %}
+      {% if c.text_en %}<details class="xa-text"{% if (c.text_en|length) < 420 %} open{% endif %}>
+        <summary><span class="ac-lbl">{{ bi('Text of the Article', 'ప్రకరణ పాఠం') }}</span><span class="xa-more">{{ bi('Show', 'చూపించు') }}</span></summary>
+        <blockquote class="xa-quote"><span class="ac-te" lang="te">{{ (c.text_te or c.text_en)|xl(c.id) }}{% if c.text_te %}<small class="xa-note">{{ c.text_te_note or 'అనువాదం (translation)' }}</small>{% endif %}</span><span class="ac-en" lang="en">{{ c.text_en|xl(c.id) }}</span></blockquote>
+      </details>{% endif %}
+      {% if c.clauses %}{% call sec('xa-cl', 'Clause by clause', 'క్లాజుల వారీగా') %}<dl class="xa-clauses">{% for k in c.clauses %}<div><dt>{{ k.label }}</dt><dd>{{ bx(k.en, k.te, c.id) }}</dd></div>{% endfor %}</dl>{% endcall %}{% endif %}
+      {% if c.meaning_en %}{% call sec('ct-mean', 'What it means', 'అర్థం') %}<div class="ac-says">{{ bx(c.meaning_en, c.meaning_te, c.id) }}</div>{% endcall %}
+      {% elif not c.text_en %}<div class="ac-says">{{ bx(c.says_en, c.says_te, c.id) }}</div>{% endif %}
+      {% if c.implications_en %}{% call sec('xa-imp', 'Key points', 'ముఖ్యమైన అంశాలు') %}<div class="ac-points">{{ blx(c.implications_en, c.implications_te, c.id) }}</div>{% endcall %}{% endif %}
+      {% if c.origin_en %}<p class="xa-origin"><b>{{ bi('Origin', 'మూలం') }}</b> {{ bi(c.origin_en, c.origin_te) }}</p>{% endif %}
+      {% if c.amendments %}{% call sec('xa-am', 'Amendments', 'సవరణలు') %}{{ xlist(c.amendments, 'am', c_id=c.id) }}{% endcall %}{% endif %}
+      {% if c.cases %}{% call sec('xa-cs', 'Cases', 'కేసులు') %}{{ xlist(c.cases, 'case', c_id=c.id) }}{% endcall %}{% endif %}
+      {% if c.remember_en %}{% call sec('ct-rem', 'Remember', 'గుర్తుపెట్టుకోండి') %}<div class="ac-points">{{ blx(c.remember_en, c.remember_te, c.id) }}</div>{% endcall %}{% endif %}
+      {{ trapflag(c) }}
+      {{ reflinks(c) }}
+      {{ relstrip(c) }}
+      {{ examsec(c) }}
+{%- endmacro %}
+{#- Amendments: why -> what changed (article by article, before/after) -> cases. -#}
+{% macro am_teach(c) -%}{% set KINDS = {'inserted': ('Inserted', 'చేర్చింది'), 'omitted': ('Omitted', 'తొలగించింది'), 'substituted': ('Substituted', 'మార్చి రాసింది'), 'amended': ('Amended', 'సవరించింది')} %}
+      {% if c.source == 'new' %}<p class="ac-new">{{ bi('New · after Laxmikanth', 'కొత్తది · లక్ష్మీకాంత్ తర్వాత') }}</p>{% endif %}
+      {% if c.one_line_en %}<div class="ct-one"><b>{{ bi('In one line', 'ఒక్క మాటలో') }}</b><p>{{ bx(c.one_line_en, c.one_line_te, c.id) }}</p></div>{% endif %}
+      {% if c.background_en %}{% call sec('ct-story', 'Why it was made', 'ఎందుకు తెచ్చారు?') %}<div class="ac-says">{{ bx(c.background_en, c.background_te, c.id) }}</div>{% endcall %}
+      {% elif not c.changes %}<div class="ac-says">{{ bx(c.says_en, c.says_te, c.id) }}</div>{% endif %}
+      {% if c.changes %}{% call sec('xm-sec', 'What it changed', 'ఏమి మార్చింది?') %}<ol class="xm-changes">{% for g in c.changes %}{% set kd = KINDS.get(g.kind) %}
+        <li class="xm-c" data-kind="{{ g.kind }}"><div class="xm-ch">{% set aid = g.article if (g.article or '')[:3] == 'AC-' else None %}{% if aid %}<a class="xl xl-art xm-art" data-go="{{ aid }}" href="{{ url_for('polity_unit6.recall_deck', deck_id='articles', open=aid) }}">{{ bi(g.label_en or g.label, g.label_te or g.label) }}</a>{% else %}<b class="xm-art">{{ bi(g.label_en or g.label, g.label_te or g.label) }}</b>{% endif %}{% if kd %}<span class="xm-kind">{{ bi(kd[0], kd[1]) }}</span>{% endif %}</div>
+          {% if g.before_en or g.after_en %}<div class="xm-ba">{% if g.before_en %}<p class="xm-b"><small>{{ bi('Before', 'ముందు') }}</small>{{ bx(g.before_en, g.before_te, c.id) }}</p>{% endif %}{% if g.after_en %}<p class="xm-a"><small>{{ bi('After', 'తర్వాత') }}</small>{{ bx(g.after_en, g.after_te, c.id) }}</p>{% endif %}</div>{% endif %}
+          {% if g.what_en %}<p class="xm-what">{{ bx(g.what_en, g.what_te, c.id) }}</p>{% endif %}</li>{% endfor %}
+      </ol>{% endcall %}{% elif c.points_en %}<div class="ac-points">{{ blx(c.points_en, c.points_te, c.id) }}</div>{% endif %}
+      {% if c.cases %}{% call sec('xa-cs', 'Cases', 'కేసులు') %}{{ xlist(c.cases, 'case', c_id=c.id) }}{% endcall %}{% endif %}
+      {% if c.remember_en %}{% call sec('ct-rem', 'Remember', 'గుర్తుపెట్టుకోండి') %}<div class="ac-points">{{ blx(c.remember_en, c.remember_te, c.id) }}</div>{% endcall %}{% endif %}
+      {{ trapflag(c) }}
+      {{ reflinks(c) }}
+      {{ relstrip(c) }}
+      {{ examsec(c) }}
+{%- endmacro %}
 {% block title %}{{ d.title_en }} · Recall cards · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261110q') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110q') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111a') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111a') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.recall_hub') }}">‹ Recall</a><b>{{ d.title_en }} · {{ d.title_te }}</b></div>{% endblock %}
-{% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}" data-deck="{{ d.id }}" data-store="{{ d.store }}" data-setup-store="{{ d.setup_store }}" data-lang-store="{{ d.lang_store }}" data-kind="{{ d.front_kind }}" data-order-en="{{ d.order_en }}" data-order-te="{{ d.order_te }}" data-pill-en="{{ d.pill_en }}" data-pill-te="{{ d.pill_te }}" data-title="{{ d.title_en }}" data-themes="{{ 1 if d.themes else 0 }}">
+{% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}" data-deck="{{ d.id }}" data-store="{{ d.store }}" data-setup-store="{{ d.setup_store }}" data-lang-store="{{ d.lang_store }}" data-kind="{{ d.front_kind }}" data-order-en="{{ d.order_en }}" data-order-te="{{ d.order_te }}" data-pill-en="{{ d.pill_en }}" data-pill-te="{{ d.pill_te }}" data-title="{{ d.title_en }}" data-themes="{{ 1 if d.themes else 0 }}" data-open="{{ open_id }}"{% if back %} data-back-url="{{ back.url }}" data-back-deck="{{ back.deck }}" data-back-en="{{ back.en }}" data-back-te="{{ back.te }}"{% endif %}>
 
 <form class="ac-setup" id="ac-setup" novalidate>
   <h1 class="ac-title">{{ bi(d.prompt_en, d.prompt_te) }}</h1>
@@ -139,16 +203,14 @@
     <div class="s-chap">{{ bi(c.theme_en, c.theme_te) }}</div>
     {% else %}<div class="s-title">{{ bi(c.title_en, c.title_te) }}</div>
     <div class="s-chap">{{ c.chapter }}{% if c.chapter in names %} {{ bi(names[c.chapter][0], names[c.chapter][1]) }}{% endif %}</div>{% endif %}
-    <div class="s-back">{% if TH %}{{ teach(c) }}{% else %}
+    <div class="s-back">{% if TH %}{{ teach(c) }}{% elif d.id == 'articles' %}{{ art_teach(c) }}{% elif d.id == 'amendments' and (c.one_line_en or c.changes or c.background_en) %}{{ am_teach(c) }}{% else %}
       {% if c.source == 'new' %}<p class="ac-new">{{ bi('New · after Laxmikanth', 'కొత్తది · లక్ష్మీకాంత్ తర్వాత') }}</p>{% endif %}
-      <div class="ac-says">{{ bi(c.says_en, c.says_te) }}</div>
-      {% if c.points_en %}<div class="ac-points"><ul class="ac-te" lang="te">{% for p in (c.points_te or c.points_en) %}<li>{{ p }}</li>{% endfor %}</ul><ul class="ac-en" lang="en">{% for p in c.points_en %}<li>{{ p }}</li>{% endfor %}</ul></div>{% endif %}
-      {% if c.articles %}<div class="ac-arts">{% for a in c.articles %}<span class="ac-art"><small lang="te">ప్రకరణ</small> {{ a }}</span>{% endfor %}</div>{% endif %}
-      {% if c.trap_en %}<div class="ac-note ac-trap"><b>{{ bi('Exam trap','పరీక్షలో జాగ్రత్త') }}</b>{{ bi(c.trap_en, c.trap_te) }}</div>{% endif %}
-      {% if c.flag %}<div class="ac-note">{{ c.flag }}</div>{% endif %}
-      {% if c.as_of %}<div class="ac-asof">{{ c.as_of }}</div>{% endif %}
-      {% if TH %}<p class="ac-ref">{{ bi(c.title_en, c.title_te) }}{% if c.front_sub %} · <span class="ac-year">{{ c.front_sub }}</span>{% endif %}</p>{% endif %}
-      <div class="ac-meta">{% if c.part %}<span>{{ c.part }}</span>{% endif %}{% if TH %}<span class="ac-chchip" style="--acc:{{ c.chapter|accent }};--acc-ink:{{ c.chapter|accent_ink }}">Ch {{ c.chapter }}</span>{% endif %}{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}{% if c.laxmikanth.section and d.id != 'articles' %} · {{ c.laxmikanth.section }}{% endif %}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.card_ids[0].split('-')[1],hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
+      <div class="ac-says">{{ bx(c.says_en, c.says_te, c.id) }}</div>
+      {% if c.points_en %}<div class="ac-points">{{ blx(c.points_en, c.points_te, c.id) }}</div>{% endif %}
+      {{ trapflag(c) }}
+      {{ reflinks(c) }}
+      {{ relstrip(c) }}
+      {{ examsec(c) }}
       {% endif %}
     </div>
   </article>{% endfor %}
@@ -198,6 +260,7 @@
       <button type="button" class="ac-ib" id="ac-prev" aria-label="Previous card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6l-6 6 6 6"/></svg></button>
       <button type="button" class="ac-ib" id="ac-next" aria-label="Next card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></button>
     </div>
+    <button type="button" class="ac-xback" id="ac-xback" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="xb-to">{{ bi('Back to', 'వెనక్కి') }}</span><span class="xb-name"></span></button>
     <div class="ac-dscroll" id="ac-dscroll">
       <div class="ac-dhead">
         <p class="ac-chap" id="ac-dchap"></p>
@@ -225,4 +288,4 @@
   <p class="sr" id="ac-live" aria-live="polite"></p>
 </div>
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110q') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261111a') }}" defer></script>{% endblock %}
