@@ -109,6 +109,21 @@ html.ac-studying .topbar,html.ac-studying .bottomnav,html.ac-studying .pwa-insta
 .ac-mode .m-b{border-radius:0 8px 8px 0;font-size:.95rem;line-height:1}
 .ac-stage[data-mode="a"] .ac-mode .m-a,.ac-stage[data-mode="b"] .ac-mode .m-b{background:var(--ink);border-color:var(--ink);color:var(--card)}
 .ac-lang{padding:0 6px;font-size:.82rem;font-weight:800;letter-spacing:.01em;color:var(--teal)}
+/* card order: one icon shows the live order (numbered list = article order, crossing arrows = random); reshuffle appears only in random */
+.ac-order svg{display:none}
+.ac-stage:not([data-order="rand"]) .ac-order .o-seq,.ac-stage[data-order="rand"] .ac-order .o-rand{display:block}
+.ac-order[aria-pressed="true"]{color:var(--teal)}
+.ac-reshuf{min-width:36px}
+.ac-reshuf svg{width:19px;height:19px}
+.ac-toast{position:absolute;z-index:5;left:50%;top:calc(52px + env(safe-area-inset-top));transform:translateX(-50%);margin:0;padding:6px 14px;border-radius:99px;
+  max-width:calc(100% - 32px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none;
+  background:var(--ink);color:var(--card);font-size:.82rem;font-weight:700;line-height:1.4;box-shadow:0 8px 20px -10px rgba(0,0,0,.5)}
+.ac-toast span{display:inline!important;margin:0!important;font-size:inherit!important;color:inherit!important}
+.ac-stage[data-lang="both"] .ac-toast .ac-te::after{content:" · "}
+@media (prefers-reduced-motion:no-preference){.ac-toast:not([hidden]){animation:ac-toast-in .18s ease-out}}
+@keyframes ac-toast-in{from{opacity:0;transform:translate(-50%,-6px)}}
+/* narrow phones in random order: the chapter dot stays, its name gives way to the reshuffle button */
+@media (max-width:440px){.ac-stage[data-order="rand"] .ac-where .w-ch{display:none}}
 .ac-pager{flex:none;display:flex;align-items:center}
 .ac-page{min-width:2.2em;text-align:center;font-size:.82rem;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
 .ac-meter{position:absolute;left:0;right:0;bottom:-1px;height:3px;pointer-events:none;

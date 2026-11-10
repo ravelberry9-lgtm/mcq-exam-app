@@ -200,8 +200,10 @@ def test_article_cards_page(client,app):
     # setup offers both matrix densities (3x6 default, 4x8 compact) and every chapter
     assert 'name="density" value="18" checked' in h and 'name="density" value="32"' in h
     assert all(f'name="chapter" value="{ch}"' in h for ch in {c['chapter'] for c in cards})
+    # card order: setup offers In order (default) / Random; the matrix bar can switch live and reshuffle
+    assert 'name="order" value="seq" checked' in h and 'name="order" value="rand"' in h and 'name="shuffle"' not in h
     # matrix bar: page arrows, cue-mode and language toggles; detail view: collapse + prev/next + self-check; summary overlay
-    for el in ('ac-pprev','ac-pnext','ac-page','ac-mode','ac-lang','ac-detail','ac-collapse','ac-prev','ac-next','ac-sum'):assert f'id="{el}"' in h
+    for el in ('ac-pprev','ac-pnext','ac-page','ac-mode','ac-lang','ac-order','ac-reshuffle','ac-detail','ac-collapse','ac-prev','ac-next','ac-sum'):assert f'id="{el}"' in h
     assert 'aria-label="Collapse to card matrix"' in h and 'aria-label="Previous card"' in h and 'aria-label="Next card"' in h
     assert 'data-judge="k"' in h and 'data-judge="x"' in h and 'data-act="missed"' in h and 'data-act="back"' in h
     assert not re.search(r'\son(click|change|keydown)=', h.split('id="ac"')[1])

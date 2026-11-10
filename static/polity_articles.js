@@ -20,7 +20,8 @@
   deck.forEach(function (s) { byId[s.dataset.id] = s; });
 
   var progress = readJSON(KEY);
-  var run = null; // { ids, page, cur, marks:{}, mode, lang, density, chapter }
+  var run = null; // { base, ids, order, page, cur, marks:{}, mode, lang, density, chapter }
+  var ORDERS = ["seq", "rand"];
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ── storage: private mode / blocked storage must never break the page ──
@@ -54,7 +55,7 @@
     var f = form.elements;
     return {
       chapter: f.chapter.value, mode: f.mode.value, lang: f.lang.value, density: f.density.value,
-      only: f.only.checked, shuffle: f.shuffle.checked
+      only: f.only.checked, order: f.order.value
     };
   }
   function setRadio(name, value) {
@@ -70,11 +71,12 @@
     var lang = saved.lang || readRaw(LANG_KEY);
     if (!langFromUrl && LANGS.indexOf(lang) >= 0) setRadio("lang", lang);
     form.elements.only.checked = !!saved.only;
-    form.elements.shuffle.checked = !!saved.shuffle;
+    var order = ORDERS.indexOf(saved.order) >= 0 ? saved.order : saved.shuffle ? "rand" : "seq"; // older saves had a Shuffle toggle
+    setRadio("order", order);
   }
   function saveChoices() {
     var c = choices();
-    if (run) { c.mode = run.mode; c.lang = run.lang; }
+    if (run) { c.mode = run.mode; c.lang = run.lang; c.order = run.order; }
     writeJSON(SETUP_KEY, c);
   }
   function pickIds(c) {
@@ -115,10 +117,12 @@
   }
 
   // ── run lifecycle ──
+  // ids always arrive in article order (chapters ascending, articles ascending); Random shuffles a copy
   function startRun(ids, c) {
     if (!ids.length) return;
+    var order = c.order === "rand" ? "rand" : "seq";
     run = {
-      ids: c.shuffle ? shuffled(ids) : ids, page: 0, cur: -1, marks: {},
+      base: ids.slice(), ids: order === "rand" ? shuffled(ids) : ids.slice(), order: order, page: 0, cur: -1, marks: {},
       mode: c.mode, lang: c.lang, density: c.density || "18", chapter: c.chapter || ""
     };
     sum.hidden = true;
@@ -142,6 +146,7 @@
     document.documentElement.classList.remove("ac-studying");
     var app = document.querySelector(".app");
     if (app) app.inert = false;
+    if (run) { setRadio("order", run.order); setRadio("mode", run.mode); setRadio("lang", run.lang); }
     run = null;
     paintSetup();
     $("ac-start").focus({ preventScroll: true });
@@ -212,6 +217,11 @@
     var modeBtn = $("ac-mode");
     modeBtn.setAttribute("aria-pressed", run.mode === "b" ? "true" : "false");
     modeBtn.setAttribute("aria-label", run.mode === "a" ? "Showing article numbers. Show concepts instead" : "Showing concepts. Show article numbers instead");
+    var rand = run.order === "rand", orderBtn = $("ac-order");
+    stage.dataset.order = run.order;
+    orderBtn.setAttribute("aria-pressed", rand ? "true" : "false");
+    orderBtn.setAttribute("aria-label", rand ? "Cards in random order. Switch to article order" : "Cards in article order. Switch to random order");
+    $("ac-reshuffle").hidden = !rand;
     var langBtn = $("ac-lang");
     langBtn.textContent = LANG_LABEL[run.lang];
     langBtn.setAttribute("aria-label", "Language: " + LANG_NAME[run.lang] + ". Change language");
@@ -272,6 +282,37 @@
     saveChoices();
     renderMatrix();
     live.textContent = "Language: " + LANG_NAME[run.lang];
+  }
+
+  // Order <-> Random. Switching (or reshuffling) keeps every mark, since marks are per card id, and starts again at page 1.
+  var toastTimer = 0;
+  function toast(en, te) {
+    var t = $("ac-toast");
+    t.innerHTML = biText(en, te);
+    t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 1600);
+  }
+  function setOrder(order) {
+    run.order = order;
+    run.ids = order === "rand" ? shuffled(run.base) : run.base.slice();
+    run.page = 0;
+    run.cur = -1;
+    saveChoices();
+    renderMatrix();
+    grid.scrollTop = 0;
+  }
+  function toggleOrder() {
+    var rand = run.order !== "rand";
+    setOrder(rand ? "rand" : "seq");
+    if (rand) toast("Random order", "యాదృచ్ఛిక క్రమం"); else toast("In article order", "ప్రకరణల క్రమంలో");
+    live.textContent = rand ? "Cards shuffled into random order" : "Cards back in article order";
+  }
+  function reshuffle() {
+    setOrder("rand");
+    toast("Reshuffled", "మళ్ళీ కలిపాం");
+    live.textContent = "Cards reshuffled";
+    $("ac-reshuffle").focus({ preventScroll: true });
   }
 
   // ── detail view ──
@@ -359,8 +400,8 @@
     (x ? missed : sum.querySelector('[data-act="back"]')).focus({ preventScroll: true });
   }
   function reviseMissed() {
-    var ids = run.ids.filter(function (id) { return run.marks[id] === "x"; });
-    startRun(ids, { shuffle: false, mode: run.mode, lang: run.lang, density: run.density, chapter: run.chapter });
+    var ids = run.base.filter(function (id) { return run.marks[id] === "x"; });
+    startRun(ids, { order: run.order, mode: run.mode, lang: run.lang, density: run.density, chapter: run.chapter });
   }
   function dismissSummary() {
     sum.hidden = true;
@@ -370,7 +411,7 @@
 
   // ── events ──
   var actions = {
-    "ac-exit": exitStudy, "ac-mode": toggleMode, "ac-lang": cycleLang,
+    "ac-exit": exitStudy, "ac-mode": toggleMode, "ac-lang": cycleLang, "ac-order": toggleOrder, "ac-reshuffle": reshuffle,
     "ac-pprev": function () { goPage(-1); }, "ac-pnext": function () { goPage(1); },
     "ac-collapse": collapse, "ac-prev": function () { step(-1); }, "ac-next": function () { step(1); }
   };

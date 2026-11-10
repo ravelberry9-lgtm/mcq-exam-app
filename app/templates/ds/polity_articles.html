@@ -1,7 +1,7 @@
 {% extends 'ds/base.html' %}
 {% macro bi(en, te) -%}<span class="ac-te" lang="te">{{ te or en }}</span><span class="ac-en" lang="en">{{ en }}</span>{%- endmacro %}
 {% block title %}Article cards · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110c') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110d') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><b>Article cards · ప్రకరణ కార్డులు</b></div>{% endblock %}
 {% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}">
 
@@ -45,9 +45,16 @@
     </div>
   </fieldset>
 
+  <fieldset class="ac-field">
+    <legend>{{ bi('Card order', 'కార్డుల క్రమం') }}</legend>
+    <div class="ac-opts two">
+      <label class="ac-opt"><input type="radio" name="order" value="seq" checked><b>In order</b><small lang="te">క్రమంగా</small></label>
+      <label class="ac-opt"><input type="radio" name="order" value="rand"><b>Random</b><small lang="te">యాదృచ్ఛికం</small></label>
+    </div>
+  </fieldset>
+
   <div class="ac-toggles">
     <label class="ac-tog"><input type="checkbox" name="only" role="switch"><span>{{ bi('Only cards to revise', 'మళ్ళీ చూడాల్సినవి మాత్రమే') }}<small id="ac-xcount"></small></span></label>
-    <label class="ac-tog"><input type="checkbox" name="shuffle" role="switch"><span>{{ bi('Shuffle', 'కలిపి చూపించు') }}</span></label>
   </div>
 
   <p class="ac-msg" id="ac-msg" role="status" hidden></p>
@@ -77,6 +84,8 @@
     <p class="ac-where" id="ac-where"></p>
     <button type="button" class="ac-ib ac-mode" id="ac-mode" aria-pressed="false"><span class="m-a">21</span><span class="m-b" lang="te">అ</span></button>
     <button type="button" class="ac-ib ac-lang" id="ac-lang"></button>
+    <button type="button" class="ac-ib ac-order" id="ac-order" aria-pressed="false" aria-label="Cards in article order. Switch to random order"><svg class="o-seq" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6h10M10 12h10M10 18h10M4 4.5l1.6-1v5M3.6 14.6a1.6 1.6 0 1 1 2.6 1.3L3.6 19.5h3"/></svg><svg class="o-rand" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h2.2c1.3 0 2.5-.7 3.2-1.8l5.2-7.4C14.3 6.7 15.5 6 16.8 6H21M18 3l3 3-3 3M3 7h2.2c1.2 0 2.3.6 3 1.5M21 18h-4.2c-1.3 0-2.5-.7-3.2-1.8l-.4-.6M18 15l3 3-3 3"/></svg></button>
+    <button type="button" class="ac-ib ac-reshuf" id="ac-reshuffle" aria-label="Reshuffle the cards" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.4-5.7L20 8.6M20 3.5v5.1h-5.1"/></svg></button>
     <div class="ac-pager" id="ac-pager">
       <button type="button" class="ac-ib" id="ac-pprev" aria-label="Previous page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6l-6 6 6 6"/></svg></button>
       <span class="ac-page" id="ac-page" aria-live="polite"></span>
@@ -84,6 +93,7 @@
     </div>
     <span class="ac-meter" id="ac-meter" aria-hidden="true"><i class="k"></i><i class="x"></i></span>
   </div>
+  <p class="ac-toast" id="ac-toast" aria-hidden="true" hidden></p>
   <div class="ac-grid" id="ac-grid" aria-label="Article cards"></div>
 
   <section class="ac-detail" id="ac-detail" role="dialog" aria-modal="true" aria-labelledby="ac-dtitle" hidden>
@@ -120,4 +130,4 @@
   <p class="sr" id="ac-live" aria-live="polite"></p>
 </div>
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110c') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110d') }}" defer></script>{% endblock %}
