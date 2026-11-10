@@ -127,6 +127,7 @@
     msg.textContent = ids.length ? "" : "No cards here are marked Revise yet. Turn off ‘Only cards to revise’ to study them all.";
     var acc = form.querySelector('input[name="chapter"]:checked').closest(".ac-ch").style.getPropertyValue("--acc");
     form.style.setProperty("--acc", acc);
+    form.style.setProperty("--acc-ink", form.querySelector('input[name="chapter"]:checked').closest(".ac-ch").style.getPropertyValue("--acc-ink"));
   }
   function resetProgress() {
     if (!window.confirm("Reset all " + (D.title || "").toLowerCase() + " card progress?\nపురోగతి మొత్తం రీసెట్ చేయాలా?")) return;
@@ -221,7 +222,7 @@
     else if (TEXT_FRONT) cue = '<span class="t-front">' + src.querySelector(".s-front").innerHTML + (sb ? '<span class="t-sub">' + esc(sb) + "</span>" : "") + "</span>";
     else if (sb && D.deck !== "articles") cue = '<span class="t-numwrap"><b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + '</b><span class="t-sub">' + esc(sb) + "</span></span>";
     else cue = '<b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + "</b>";
-    return '<button type="button" class="ac-tile" data-i="' + index + '" data-state="' + state + '" style="--acc:' + src.dataset.acc +
+    return '<button type="button" class="ac-tile" data-i="' + index + '" data-state="' + state + '" style="--acc:' + src.dataset.acc + ';--acc-ink:' + (src.dataset.ink || '') +
       '" aria-label="' + esc(label) + '"><span class="t-ch' + (band ? " t-band" : "") + '" aria-hidden="true">' + (band ? band.innerHTML : src.dataset.ch) +
       '</span><span class="t-mark" aria-hidden="true"></span><span class="t-cue">' + cue + "</span></button>";
   }
@@ -259,7 +260,8 @@
         biText("All", "అన్ని") + "</span></span>";
       where.setAttribute("aria-label", "All chapters");
     }
-    stage.style.setProperty("--acc", run.chapter ? byId[ids[0]].dataset.acc : "#0f766e");
+    stage.style.setProperty("--acc", run.chapter ? byId[ids[0]].dataset.acc : "#0F766E");
+    stage.style.setProperty("--acc-ink", run.chapter ? byId[ids[0]].dataset.ink : "#5EEAD4");
     $("ac-pager").hidden = pages < 2;
     $("ac-page").textContent = (run.page + 1) + "/" + pages;
     $("ac-pprev").disabled = run.page === 0;
@@ -385,6 +387,7 @@
     var id = run.ids[index], src = byId[id], n = esc(num(id));
     run.cur = index;
     detail.style.setProperty("--acc", src.dataset.acc);
+    detail.style.setProperty("--acc-ink", src.dataset.ink);
     detail.dataset.lang = run.lang;
     detail.dataset.state = progress[id] || "";
     $("ac-dchap").innerHTML = src.querySelector(".s-chap").innerHTML;

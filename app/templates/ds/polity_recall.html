@@ -41,7 +41,7 @@
       {% if c.as_of %}<div class="ac-asof">{{ c.as_of }}</div>{% endif %}
       <p class="ac-ref">{{ bi(c.title_en, c.title_te) }}{% if c.front_sub %} · <span class="ac-year">{{ c.front_sub }}</span>{% endif %}</p>
       {% if c.articles %}<div class="ac-arts">{% for a in c.articles %}<span class="ac-art"><small lang="te">ప్రకరణ</small> {{ a }}</span>{% endfor %}</div>{% endif %}
-      <div class="ac-meta"><span>Ch {{ c.chapter }}</span>{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}{% if c.laxmikanth.section %} · {{ c.laxmikanth.section }}{% endif %}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.card_ids[0].split('-')[1],hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
+      <div class="ac-meta"><span class="ac-chchip" style="--acc:{{ c.chapter|accent }};--acc-ink:{{ c.chapter|accent_ink }}">Ch {{ c.chapter }}</span>{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}{% if c.laxmikanth.section %} · {{ c.laxmikanth.section }}{% endif %}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.card_ids[0].split('-')[1],hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
       {% set chn = c.chain and chains.get(c.chain.chain_id) %}{% if chn %}{{ timeline(chn, c.chain.step) }}{% endif %}
       {% set ex = c.exam %}{% if ex and (ex.patterns_en or ex.pyqs or ex.practice) %}
       <section class="ct-exam">
@@ -62,7 +62,7 @@
       </section>{% endif %}
 {%- endmacro %}
 {% block title %}{{ d.title_en }} · Recall cards · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110n') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261110p') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110p') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.recall_hub') }}">‹ Recall</a><b>{{ d.title_en }} · {{ d.title_te }}</b></div>{% endblock %}
 {% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}" data-deck="{{ d.id }}" data-store="{{ d.store }}" data-setup-store="{{ d.setup_store }}" data-lang-store="{{ d.lang_store }}" data-kind="{{ d.front_kind }}" data-order-en="{{ d.order_en }}" data-order-te="{{ d.order_te }}" data-pill-en="{{ d.pill_en }}" data-pill-te="{{ d.pill_te }}" data-title="{{ d.title_en }}" data-themes="{{ 1 if d.themes else 0 }}">
 
@@ -72,10 +72,10 @@
   <fieldset class="ac-field">
     <legend>{{ bi('Chapter', 'అధ్యాయం') }}</legend>
     <div class="ac-chapters">
-      <label class="ac-ch" style="--acc:#0f766e"><input type="radio" name="chapter" value=""{% if not chapter %} checked{% endif %}>
+      <label class="ac-ch" style="--acc:#0F766E;--acc-ink:#5EEAD4"><input type="radio" name="chapter" value=""{% if not chapter %} checked{% endif %}>
         <span class="ac-ch-no">All</span><span class="ac-ch-name">{{ bi('All chapters', 'అన్ని అధ్యాయాలు') }}</span><span class="ac-ch-n" data-count="">{{ total }}</span></label>
       {%- for c in chs %}
-      <label class="ac-ch" style="--acc:{{ c|accent }}"><input type="radio" name="chapter" value="{{ c }}"{% if chapter==c %} checked{% endif %}>
+      <label class="ac-ch" style="--acc:{{ c|accent }};--acc-ink:{{ c|accent_ink }}"><input type="radio" name="chapter" value="{{ c }}"{% if chapter==c %} checked{% endif %}>
         <span class="ac-ch-no">{{ c }}</span><span class="ac-ch-name">{% if c in names %}{{ bi(names[c][0], names[c][1]) }}{% endif %}</span><span class="ac-ch-n" data-count="{{ c }}">{{ counts[c] }}</span></label>
       {%- endfor %}
     </div>
@@ -125,8 +125,10 @@
   <button type="button" class="ac-reset" id="ac-reset">{{ bi('Reset my progress', 'నా పురోగతిని రీసెట్ చేయి') }}</button>
 </form>
 
+{#- Colour rule: in the Cases deck tiles/cards carry the THEME colour (themes are the learning unit there);
+    only the small "Ch 6.x" chip on an opened card (.ac-chchip) uses the chapter colour. Other decks use chapter colour throughout. -#}
 <div class="ac-deck" id="ac-deck" hidden>{% set TH = d.themes %}{% for c in cards %}
-  <article class="ac-src" data-id="{{ c.id }}" data-ch="{{ c.chapter }}" data-acc="{{ c.theme_acc if TH and c.theme_acc else c.chapter|accent }}" data-src="{{ c.source }}" data-two="{{ 1 if c.two_way else 0 }}"{% if TH %} data-theme="{{ c.theme_id }}"{% endif %}>
+  <article class="ac-src" data-id="{{ c.id }}" data-ch="{{ c.chapter }}" data-acc="{{ c.theme_acc if TH and c.theme_acc else c.chapter|accent }}" data-ink="{{ c.theme_ink if TH and c.theme_ink else c.chapter|accent_ink }}" data-src="{{ c.source }}" data-two="{{ 1 if c.two_way else 0 }}"{% if TH %} data-theme="{{ c.theme_id }}"{% endif %}>
     <div class="s-num">{{ c.front_short }}</div>
     <div class="s-front">{{ bi(c.front_en, c.front_te) }}</div>
     <div class="s-sub">{{ (c.front_sub or '')[:4] if (c.front_sub or '')[:4].isdigit() else (c.front_sub or '') }}</div>
@@ -145,12 +147,12 @@
       {% if c.flag %}<div class="ac-note">{{ c.flag }}</div>{% endif %}
       {% if c.as_of %}<div class="ac-asof">{{ c.as_of }}</div>{% endif %}
       {% if TH %}<p class="ac-ref">{{ bi(c.title_en, c.title_te) }}{% if c.front_sub %} · <span class="ac-year">{{ c.front_sub }}</span>{% endif %}</p>{% endif %}
-      <div class="ac-meta">{% if c.part %}<span>{{ c.part }}</span>{% endif %}{% if TH %}<span>Ch {{ c.chapter }}</span>{% endif %}{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}{% if c.laxmikanth.section and d.id != 'articles' %} · {{ c.laxmikanth.section }}{% endif %}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.card_ids[0].split('-')[1],hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
+      <div class="ac-meta">{% if c.part %}<span>{{ c.part }}</span>{% endif %}{% if TH %}<span class="ac-chchip" style="--acc:{{ c.chapter|accent }};--acc-ink:{{ c.chapter|accent_ink }}">Ch {{ c.chapter }}</span>{% endif %}{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}{% if c.laxmikanth.section and d.id != 'articles' %} · {{ c.laxmikanth.section }}{% endif %}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.card_ids[0].split('-')[1],hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
       {% endif %}
     </div>
   </article>{% endfor %}
   {%- for t in themes %}
-  <article class="ac-src ac-thsrc" data-id="{{ t.id }}" data-ch="" data-acc="{{ t.acc }}" data-src="" data-two="0" data-theme-tile="1" data-n="{{ t.cases|length }}">
+  <article class="ac-src ac-thsrc" data-id="{{ t.id }}" data-ch="" data-acc="{{ t.acc }}" data-ink="{{ t.ink }}" data-src="" data-two="0" data-theme-tile="1" data-n="{{ t.cases|length }}">
     <div class="s-num">{{ t.i + 1 }}</div>
     <div class="s-front">{{ bi(t.en, t.te) }}</div>
     <div class="s-sub"></div>
@@ -222,4 +224,4 @@
   <p class="sr" id="ac-live" aria-live="polite"></p>
 </div>
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110n') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110p') }}" defer></script>{% endblock %}

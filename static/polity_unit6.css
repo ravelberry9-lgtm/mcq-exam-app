@@ -6,7 +6,8 @@
 .u6-chcard{display:flex;align-items:center;gap:12px;margin:10px 0;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid #e2e8f0;border-left:6px solid var(--acc);text-decoration:none;color:inherit;min-height:64px}.u6-chcard:active{background:#f8fafc}
 .u6-chcard .num{flex:none;font-weight:700;color:#fff;background:var(--acc);border-radius:10px;padding:6px 8px;font-size:.85rem}.u6-chcard .ttl{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.u6-chcard em{font-style:normal;color:#475569;font-size:.9rem}.u6-chcard .go{font-size:1.6rem;color:var(--acc)}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}.chips i{font-style:normal;font-size:.78rem;font-weight:600;padding:2px 9px;border-radius:999px}.chips .mc{background:#dbeafe;color:#1d4ed8}.chips .pq{background:#ffedd5;color:#c2410c}.chips .ok{background:#dcfce7;color:#15803d}
-.u6-quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.u6-quick a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;padding:8px;border-radius:12px;text-decoration:none;font-weight:600;font-size:.88rem;line-height:1.25;color:#fff}.u6-quick .q1{background:#475569}.u6-quick .q2{background:#ca8a04}.u6-quick .q3{background:#dc2626}.u6-quick .q4{background:#7c3aed}
+.u6-quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.u6-quick a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;padding:8px;border-radius:12px;text-decoration:none;font-weight:600;font-size:.88rem;line-height:1.25;color:#fff}.u6-quick .q1{background:#475569}.u6-quick .q2{background:#854D0E}.u6-quick .q3{background:#B42318}.u6-quick .q4{background:#6D28D9}
+.u6-quick .q5{background:#0F766E}
 .u6-src{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 6px}.u6-src b{background:#ea580c;color:#fff;border-radius:999px;padding:4px 12px;font-size:.9rem}.u6-src span{background:#ffedd5;color:#9a3412;border-radius:999px;padding:4px 10px;font-size:.8rem;font-weight:600}
 
 .u6-text .u6-intro,.u6-text .u6-tail{margin:0 0 8px;line-height:1.6}.u6-stmts{list-style:none;margin:8px 0;padding:0;display:flex;flex-direction:column;gap:8px}.u6-stmts li{display:flex;gap:10px;align-items:flex-start;background:#f1f5f9;border-radius:12px;padding:10px 12px}.u6-stmts b{flex:none;background:#0f766e;color:#fff;border-radius:8px;min-width:26px;text-align:center;padding:1px 6px}.u6-stmts span{line-height:1.55}
@@ -72,3 +73,22 @@ a.st{text-decoration:none}.u6-stats a.st:active{opacity:.85}
 .cd-sec{margin:0;padding:12px 0 8px;border-bottom:1px solid #e6efeb}.cd-sec h3{font-size:1.02rem;margin:0 0 2px;color:#0f3d36}
 .cd-sec.cd-hl{background:#eef8f5;margin:0 -12px;padding:12px;border-radius:8px;border-left:5px solid #0f766e}.cd-mark{font-size:.75rem;font-style:normal;color:#0f766e;background:#dff3ee;padding:1px 7px;border-radius:8px}
 @media(max-width:600px){.cd{padding:14px 12px;border-radius:0;border-left:0;border-right:0}.cd-toc ol{columns:1}}
+
+/* reserved meanings on Unit 6 pages: known/correct green, revise/wrong red, exam/PYQ blue */
+:root{--ok:#15803D;--no:#B42318;--pyq:#1D4ED8}
+.chips .mc{background:#EAEEF5;color:#14213D}.chips .pq{background:#DBEAFE;color:#1D4ED8}.chips .ok{color:#15803D}
+.u6-stats .c2{background:#334155}.u6-stats .c3{background:#1D4ED8}.u6-stats .c4{background:#6D28D9}
+/* disabled bottom-nav items are aria-disabled; keep their label legible */
+body:has(.u6) .bottomnav .navoff{opacity:1!important;color:#4B556B}
+@media (prefers-color-scheme:dark){
+  body:has(.u6-quick){--ink:#E7EBF3;--muted:#A9B2C4;--ground:#0F1626;--card:#172036;--line:#2B3651;--chip:#212B44;
+    --teal:#2DB3A6;--teal-soft:#123B3A;--teal-ink:#9BE3DA;background:#0A0F1A;color:var(--ink);color-scheme:dark}
+  body:has(.u6-quick) .u6-chcard{background:var(--card);border-color:var(--line);border-left-color:var(--acc)}
+  body:has(.u6-quick) .u6-chcard em,body:has(.u6-quick) .u6-chcard .go{color:var(--muted)}
+  body:has(.u6-quick) .chips .mc{background:#1E2636;color:#E7EBF3}body:has(.u6-quick) .chips .pq{background:#1E2A4A;color:#93C5FD}
+  body:has(.u6-quick) .chips .ok{background:#14321F;color:#86EFAC}body:has(.u6-quick) .chips i.ds{background:#2A2145;color:#D8B4FE}
+  body:has(.u6) .bottomnav .navoff{color:#A9B2C4}
+  body:has(.u6-quick) .geo-field label{color:var(--ink)}
+  body:has(.u6-quick) .btn.primary{background:#0F766E;border-color:#0F766E;color:#fff}
+  body:has(.u6-quick) select,body:has(.u6-quick) input{background:var(--chip);color:var(--ink)}
+}

@@ -66,24 +66,30 @@ def concept_cards(chapter_id):
         m=_re.match(r'\s*<style>.*?</style>',page,flags=_re.S);base=m.group(0) if m else '';page=page[len(base):]
         page=base+recap[:recap_css_i]+nav+recap[recap_css_i:]+divider+page
     doc=('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Concept cards '+key+' · Unit 6</title>'
-        +'<style>'+CARDS_CSS+hl_css+'</style></head><body>'+toolbar+page+(scroll if recap else '')+'</body></html>')
+        +'<style>:root{--acc:'+_accent(chapter_id)+'}'+CARDS_CSS+hl_css+'</style></head><body>'+toolbar+page+(scroll if recap else '')+'</body></html>')
     response=make_response(doc);response.headers['Content-Type']='text/html; charset=utf-8'
     return response
 CARDS_CSS="""body{background:#e0f4f1}.page{width:auto!important;max-width:1040px!important;min-height:0!important;margin:0 auto 12px!important;padding:12px 14px!important;overflow-wrap:anywhere}
 .secl{font-size:11.5px;color:#546e7a;margin-top:2px}.fact em.en{font-style:italic;color:#37474f;font-size:13.5px}.fact.flag{background:#fff3e0;border-radius:5px;padding:1px 4px}
 .asof{font-size:11px;font-style:normal;color:#00695c;background:#d7ece6;border-radius:8px;padding:1px 6px;white-space:nowrap}.warn{font-size:11px;font-style:normal;font-weight:700;color:#b45309}
 table{display:block;overflow-x:auto;max-width:100%}
-.rc-nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:8px;background:#e0f4f1}.rc-nav a{background:#fff;border:1.5px solid #0f766e;color:#0f766e;font-weight:700;font-size:14px;border-radius:18px;padding:5px 14px;text-decoration:none}
-.rc-divider{max-width:1040px;margin:18px auto 12px;padding:12px 14px;border-radius:10px;background:#0f766e;color:#fff;display:flex;flex-direction:column;gap:2px;font-size:16px}.rc-divider span{font-size:13.5px;opacity:.9}
+.rc-nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:8px;background:#e0f4f1}.rc-nav a{background:#fff;border:1.5px solid var(--acc,#0f766e);color:var(--acc,#0f766e);font-weight:700;font-size:14px;border-radius:18px;padding:5px 14px;text-decoration:none}
+.rc-divider{max-width:1040px;margin:18px auto 12px;padding:12px 14px;border-radius:10px;background:var(--acc,#0f766e);color:#fff;display:flex;flex-direction:column;gap:2px;font-size:16px}.rc-divider span{font-size:13.5px;opacity:.9}
 html{scroll-behavior:smooth;scroll-padding-top:52px}
 @media(max-width:480px){.rc-nav{gap:5px;padding:6px}.rc-nav a{font-size:12px;padding:4px 9px}}
 @media(max-width:700px){.g2,.g3,.g4,.wgrid{grid-template-columns:1fr!important}.page{padding:10px 8px!important}.header{flex-wrap:wrap}.hmeta{margin-left:0!important;text-align:left!important}}"""
 @bp.app_context_processor
 def _stats_ctx():
     return {'unit6_enabled':enabled(),'unit6_stats':unit6_stats}
-ACCENTS={'6.1':'#0f766e','6.2':'#4f46e5','6.3':'#9333ea','6.4':'#ea580c','6.5':'#16a34a','6.6':'#db2777','6.7':'#2563eb','6.8':'#dc2626','6.9':'#ca8a04'}
+# Chapter accents: (fill, ink). fill = light-mode colour (white text on it, tinted tiles); ink = light text for dark mode.
+# Kept away (CIEDE2000 >= 10) from the reserved meanings: known green, revise red, trap amber, PYQ blue.
+ACCENTS={'6.1':('#0F766E','#5EEAD4'),'6.2':('#4338CA','#A5B4FC'),'6.3':('#A21CAF','#F0ABFC'),'6.4':('#7C2D12','#FDBA74'),'6.5':('#0E7490','#67E8F9'),
+         '6.6':('#BE185D','#F9A8D4'),'6.7':('#334155','#CBD5E1'),'6.8':('#6B21A8','#D8B4FE'),'6.9':('#854D0E','#FDE68A')}
+def _acc_pair(cid):return ACCENTS.get('.'.join(str(cid).split('.')[:2]),ACCENTS['6.1'])
 @bp.app_template_filter('accent')
-def _accent(cid):return ACCENTS.get('.'.join(cid.split('.')[:2]),'#0f766e')
+def _accent(cid):return _acc_pair(cid)[0]
+@bp.app_template_filter('accent_ink')
+def _accent_ink(cid):return _acc_pair(cid)[1]
 TE_TITLES={'6.1.1':'ప్రాథమిక భావనలు, పదజాలం','6.1.2':'రాజ్యాంగ భావన, వర్గీకరణ','6.1.3':'రాజ్యాంగ పరిణామం','6.1.4':'రాజ్యాంగ రచన','6.2.1':'భారత రాజ్యాంగ ముఖ్య లక్షణాలు','6.3.1':'ప్రవేశిక, రాజ్యాంగ తత్వం','6.4.1':'ప్రాథమిక హక్కులు','6.5.1':'ఆదేశిక సూత్రాలు','6.5.2':'ప్రాథమిక హక్కులు–ఆదేశిక సూత్రాల సంబంధం','6.6.1':'ప్రాథమిక విధులు','6.7.1':'రాజ్యాంగ సవరణ','6.8.1':'ప్రాథమిక స్వరూప సిద్ధాంతం','6.9.1':'భారత భూభాగం, యూనియన్','6.9.2':'పౌరసత్వం'}
 @bp.app_template_filter('chapter_te')
 def _chapter_te(cid):return TE_TITLES.get(cid,'')

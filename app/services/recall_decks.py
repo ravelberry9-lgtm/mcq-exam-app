@@ -44,20 +44,20 @@ DECKS = {
 }
 # Cases are tested as CASE -> ISSUE and THEME -> which cases belong (match / odd one out), not by year.
 # One fixed theme list; the data carries theme_en/theme_te (must match a row here). Order = 'In order' for cases.
-# (id, theme_en, theme_te, short_en, short_te, colour)
+# (id, theme_en, theme_te, short_en, short_te, colour (light fill), ink (dark-mode text))
 THEMES = [
-    ('basic', 'Amending power & basic structure', 'సవరణ అధికారం, మౌలిక స్వరూపం', 'Basic str.', 'మౌలిక', '#6d28d9'),
-    ('property', 'Right to property & Ninth Schedule', 'ఆస్తి హక్కు, తొమ్మిదో షెడ్యూల్', 'Property', 'ఆస్తి', '#a16207'),
-    ('liberty', 'Life & personal liberty (Article 21)', 'జీవించే హక్కు, వ్యక్తిగత స్వేచ్ఛ (ప్రకరణ 21)', 'Art 21', 'ప్ర.21', '#0f766e'),
-    ('art21plus', 'Rights read into Article 21', 'ప్రకరణ 21 లోకి చేర్చిన హక్కులు', 'Art 21 +', 'ప్ర.21 +', '#15803d'),
-    ('equality', 'Equality & reservation', 'సమానత్వం, రిజర్వేషన్లు', 'Equality', 'సమానత్వం', '#1d4ed8'),
-    ('gender', 'Privacy, gender & personal law', 'గోప్యత, లింగ సమానత్వం, వ్యక్తిగత చట్టాలు', 'Privacy·gender', 'గోప్యత', '#be185d'),
-    ('freedoms', 'Speech, religion & minority rights', 'భావ ప్రకటన, మతం, మైనారిటీ హక్కులు', 'Freedoms', 'స్వేచ్ఛలు', '#c2410c'),
-    ('dpsp', 'DPSP & Fundamental Duties', 'ఆదేశిక సూత్రాలు, ప్రాథమిక విధులు', 'DPSP·duties', 'ఆదేశిక', '#4d7c0f'),
-    ('federal', 'Federalism & Emergency', 'సమాఖ్య వ్యవస్థ, అత్యవసర పరిస్థితి', 'Federal', 'సమాఖ్య', '#0e7490'),
-    ('elections', 'Elections & democracy', 'ఎన్నికలు, ప్రజాస్వామ్యం', 'Elections', 'ఎన్నికలు', '#b91c1c'),
-    ('judiciary', 'Judiciary & tribunals', 'న్యాయవ్యవస్థ, ట్రిబ్యునళ్లు', 'Judiciary', 'న్యాయ', '#334155'),
-    ('preamble', 'Preamble, citizenship & territory', 'ప్రవేశిక, పౌరసత్వం, భూభాగం', 'Preamble', 'ప్రవేశిక', '#57534e'),
+    ('basic', 'Amending power & basic structure', 'సవరణ అధికారం, మౌలిక స్వరూపం', 'Basic str.', 'మౌలిక', '#6B21A8', '#D8B4FE'),
+    ('property', 'Right to property & Ninth Schedule', 'ఆస్తి హక్కు, తొమ్మిదో షెడ్యూల్', 'Property', 'ఆస్తి', '#854D0E', '#FDE68A'),
+    ('liberty', 'Life & personal liberty (Article 21)', 'జీవించే హక్కు, వ్యక్తిగత స్వేచ్ఛ (ప్రకరణ 21)', 'Art 21', 'ప్ర.21', '#0F766E', '#5EEAD4'),
+    ('art21plus', 'Rights read into Article 21', 'ప్రకరణ 21 లోకి చేర్చిన హక్కులు', 'Art 21 +', 'ప్ర.21 +', '#115E59', '#99F6E4'),
+    ('equality', 'Equality & reservation', 'సమానత్వం, రిజర్వేషన్లు', 'Equality', 'సమానత్వం', '#4338CA', '#A5B4FC'),
+    ('gender', 'Privacy, gender & personal law', 'గోప్యత, లింగ సమానత్వం, వ్యక్తిగత చట్టాలు', 'Privacy·gender', 'గోప్యత', '#BE185D', '#F9A8D4'),
+    ('freedoms', 'Speech, religion & minority rights', 'భావ ప్రకటన, మతం, మైనారిటీ హక్కులు', 'Freedoms', 'స్వేచ్ఛలు', '#7C2D12', '#FDBA74'),
+    ('dpsp', 'DPSP & Fundamental Duties', 'ఆదేశిక సూత్రాలు, ప్రాథమిక విధులు', 'DPSP·duties', 'ఆదేశిక', '#3F6212', '#BEF264'),
+    ('federal', 'Federalism & Emergency', 'సమాఖ్య వ్యవస్థ, అత్యవసర పరిస్థితి', 'Federal', 'సమాఖ్య', '#0E7490', '#67E8F9'),
+    ('elections', 'Elections & democracy', 'ఎన్నికలు, ప్రజాస్వామ్యం', 'Elections', 'ఎన్నికలు', '#9F1239', '#FDA4AF'),
+    ('judiciary', 'Judiciary & tribunals', 'న్యాయవ్యవస్థ, ట్రిబ్యునళ్లు', 'Judiciary', 'న్యాయ', '#334155', '#CBD5E1'),
+    ('preamble', 'Preamble, citizenship & territory', 'ప్రవేశిక, పౌరసత్వం, భూభాగం', 'Preamble', 'ప్రవేశిక', '#57534E', '#D6D3D1'),
 ]
 THEME_BY_EN = {t[1]: i for i, t in enumerate(THEMES)}
 
@@ -67,7 +67,7 @@ def _theme_fields(it):
     if i is None:
         return
     t = THEMES[i]
-    it.update(theme_i=i, theme_id=t[0], theme_te=it.get('theme_te') or t[2], theme_short_en=t[3], theme_short_te=t[4], theme_acc=t[5])
+    it.update(theme_i=i, theme_id=t[0], theme_te=it.get('theme_te') or t[2], theme_short_en=t[3], theme_short_te=t[4], theme_acc=t[5], theme_ink=t[6])
 
 
 def themes(deck_id):
@@ -79,7 +79,7 @@ def themes(deck_id):
     for i, t in enumerate(THEMES):
         cs = [c for c in its if c.get('theme_i') == i]
         if cs:
-            out.append({'id': 'TH-' + t[0], 'i': i, 'en': t[1], 'te': t[2], 'short_en': t[3], 'short_te': t[4], 'acc': t[5], 'cases': cs})
+            out.append({'id': 'TH-' + t[0], 'i': i, 'en': t[1], 'te': t[2], 'short_en': t[3], 'short_te': t[4], 'acc': t[5], 'ink': t[6], 'cases': cs})
     return out
 
 

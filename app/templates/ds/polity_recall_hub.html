@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% block title %}Recall cards · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110i') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261110p') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110p') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><b>Recall cards · రీకాల్ కార్డులు</b></div>{% endblock %}
 {% block content %}<div class="u6 ac rh" id="ac" data-lang="both">
   <header class="rh-head">
@@ -21,4 +21,4 @@
   </ul>
   <p class="rh-note">Progress is saved on this device only · పురోగతి ఈ పరికరంలోనే సేవ్ అవుతుంది</p>
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_recall_hub.js',v='20261110i') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_recall_hub.js',v='20261110p') }}" defer></script>{% endblock %}
