@@ -183,3 +183,17 @@ def test_concept_cards_full_page_looks_like_notes(client,app):
         q=next(x for x in records().values() if x['_chapter']=='6.6.1' and x.get('_kind')=='bank' and x.get('_answer') in (1,2,3,4))
     h=client.get('/learn/polity/unit6/cards/6.6.1?item_id='+q['id']+'&hl=CC-6.6-01').get_data(as_text=True)
     assert 'u6-reader-nav' in h and 'data-return-question' in h and 'class="u6-tabs"' not in h and '[id="CC-6.6-01"]{' in h and 'id="recap"' in h and 'id="full-details"' in h and 'class="sh"' in h
+
+def test_article_cards_page(client,app):
+    import re
+    from app.services import article_cards as ac
+    enable(app)
+    cards=ac.all_cards()
+    assert len(cards)>=150 and len({c['id'] for c in cards})==len(cards)
+    for c in cards:
+        assert not re.search(r'\d',c['concept_en']+c['concept_te']) or c['article'] not in c['concept_en']
+        assert c['says_en'] and c['says_te'] and c['concept_te']
+    h=client.get('/learn/polity/unit6/articles').get_data(as_text=True)
+    assert 'data-id="AC-6.4-21A"' in h
+    assert client.get('/learn/polity/unit6/articles?chapter=6.4').status_code==200
+    assert client.get('/learn/polity/unit6/articles?chapter=9.9').status_code==404

@@ -9,6 +9,7 @@ from ..services.device import device_id
 from .polity_maps import CONTENT,read,records,catalog
 from ..services.polity_sections import section_links,directory
 from ..services import polity_cards as _cards
+from ..services import article_cards as _artcards
 import re,re as _re
 from functools import lru_cache
 _JARGON=_re.compile(r'(fact register|bank key|authenticated pairing|tests separately|untested|source[- ]bank|content team|GBK paragraph|Laxmikanth paragraph)',_re.I)
@@ -197,6 +198,14 @@ def home():
     units=read(CONTENT/'MASTER-INDEX.json')['units']
     return render_template('ds/polity_subject.html',units=units)
 
+@bp.get('/articles')
+def articles():
+    ch=request.args.get('chapter') or None
+    if ch and ch not in {c['chapter'] for c in _artcards.all_cards()}:abort(404)
+    cards=_artcards.chapter_cards(ch)
+    if not cards and not _artcards.all_cards():abort(404)
+    chs=sorted({c['chapter'] for c in _artcards.all_cards()})
+    return render_template('ds/polity_articles.html',groups=_artcards.groups(cards),total=len(cards),chapter=ch,chs=chs,lang=language())
 @bp.get('/unit')
 def unit():
     corpus=records();rows=[]
