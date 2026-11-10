@@ -1,7 +1,7 @@
 {% extends 'ds/base.html' %}
 {% macro bi(en, te) -%}<span class="ac-te" lang="te">{{ te or en }}</span><span class="ac-en" lang="en">{{ en }}</span>{%- endmacro %}
 {% block title %}Article cards · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110b') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110c') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><b>Article cards · ప్రకరణ కార్డులు</b></div>{% endblock %}
 {% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}">
 
@@ -25,6 +25,14 @@
     <div class="ac-opts two">
       <label class="ac-opt"><input type="radio" name="mode" value="a" checked><b>Article → Concept</b><small lang="te">ప్రకరణ → భావన</small></label>
       <label class="ac-opt"><input type="radio" name="mode" value="b"><b>Concept → Article</b><small lang="te">భావన → ప్రకరణ</small></label>
+    </div>
+  </fieldset>
+
+  <fieldset class="ac-field">
+    <legend>{{ bi('Cards per screen', 'ఒక్క తెరపై కార్డులు') }}</legend>
+    <div class="ac-opts two">
+      <label class="ac-opt"><input type="radio" name="density" value="18" checked><b>3 × 6</b><small>{{ bi('18 cards, larger', '18 కార్డులు, పెద్దగా') }}</small></label>
+      <label class="ac-opt"><input type="radio" name="density" value="32"><b>4 × 8</b><small>{{ bi('32 cards, compact', '32 కార్డులు, చిన్నగా') }}</small></label>
     </div>
   </fieldset>
 
@@ -63,39 +71,53 @@
   </article>{% endfor %}
 </div>
 
-<div class="ac-stage" id="ac-stage" role="dialog" aria-modal="true" aria-label="Article card" hidden>
-  <button type="button" class="ac-icon ac-exit" id="ac-exit" aria-label="Back to card settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-  <button type="button" class="ac-icon ac-skip" id="ac-skip" aria-label="Next card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-  <div class="ac-sheet" id="ac-sheet"></div>
-  <p class="sr" id="ac-live" aria-live="polite"></p>
-</div>
+<div class="ac-stage" id="ac-stage" role="dialog" aria-modal="true" aria-label="Article card matrix" hidden>
+  <div class="ac-bar">
+    <button type="button" class="ac-ib" id="ac-exit" aria-label="Back to card settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <p class="ac-where" id="ac-where"></p>
+    <button type="button" class="ac-ib ac-mode" id="ac-mode" aria-pressed="false"><span class="m-a">21</span><span class="m-b" lang="te">అ</span></button>
+    <button type="button" class="ac-ib ac-lang" id="ac-lang"></button>
+    <div class="ac-pager" id="ac-pager">
+      <button type="button" class="ac-ib" id="ac-pprev" aria-label="Previous page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6l-6 6 6 6"/></svg></button>
+      <span class="ac-page" id="ac-page" aria-live="polite"></span>
+      <button type="button" class="ac-ib" id="ac-pnext" aria-label="Next page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></button>
+    </div>
+    <span class="ac-meter" id="ac-meter" aria-hidden="true"><i class="k"></i><i class="x"></i></span>
+  </div>
+  <div class="ac-grid" id="ac-grid" aria-label="Article cards"></div>
 
-<template id="ac-tpl-card">
-  <button type="button" class="ac-front" aria-label="Show answer">
-    <span class="ac-chap"></span>
-    <span class="ac-cue"></span>
-    <span class="ac-hint">{{ bi('Tap to check', 'నొక్కి సరిచూడండి') }}</span>
-  </button>
-  <div class="ac-reveal" hidden>
-    <div class="ac-head"><span class="ac-chap"></span><span class="ac-ans"></span></div>
-    <div class="ac-body"></div>
+  <section class="ac-detail" id="ac-detail" role="dialog" aria-modal="true" aria-labelledby="ac-dtitle" hidden>
+    <div class="ac-dbar">
+      <button type="button" class="ac-ib" id="ac-collapse" aria-label="Collapse to card matrix"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg></button>
+      <span class="ac-pos" id="ac-pos"></span>
+      <button type="button" class="ac-ib" id="ac-prev" aria-label="Previous card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6l-6 6 6 6"/></svg></button>
+      <button type="button" class="ac-ib" id="ac-next" aria-label="Next card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="ac-dscroll" id="ac-dscroll">
+      <div class="ac-dhead">
+        <p class="ac-chap" id="ac-dchap"></p>
+        <div class="ac-ans" id="ac-dtitle"></div>
+      </div>
+      <div class="ac-body" id="ac-dbody"></div>
+    </div>
     <div class="ac-judge">
       <button type="button" class="x" data-judge="x">{{ bi('Revise', 'మళ్ళీ చూడాలి') }}</button>
       <button type="button" class="k" data-judge="k">{{ bi('I knew it', 'తెలుసు') }}</button>
     </div>
-  </div>
-  <span class="ac-count" aria-hidden="true"></span>
-</template>
+  </section>
 
-<template id="ac-tpl-done">
-  <div class="ac-done">
-    <h2>{{ bi('Round finished', 'ఈ రౌండ్ పూర్తయింది') }}</h2>
-    <div class="ac-tally"><p class="k"><b data-n="k">0</b>{{ bi('knew it', 'తెలుసు') }}</p><p class="x"><b data-n="x">0</b>{{ bi('to revise', 'మళ్ళీ చూడాలి') }}</p></div>
-    <div class="ac-done-act">
-      <button type="button" class="ac-start" data-act="missed">{{ bi('Revise missed cards', 'తప్పినవి మళ్ళీ చూడండి') }}</button>
-      <button type="button" class="ac-ghost" data-act="back">{{ bi('Back', 'వెనక్కి') }}</button>
+  <div class="ac-sum" id="ac-sum" role="alertdialog" aria-modal="true" aria-labelledby="ac-sum-h" hidden>
+    <div class="ac-sum-card">
+      <h2 id="ac-sum-h">{{ bi('All cards marked', 'అన్ని కార్డులు పూర్తయ్యాయి') }}</h2>
+      <div class="ac-tally"><p class="k"><b data-n="k">0</b>{{ bi('knew it', 'తెలుసు') }}</p><p class="x"><b data-n="x">0</b>{{ bi('to revise', 'మళ్ళీ చూడాలి') }}</p></div>
+      <div class="ac-done-act">
+        <button type="button" class="ac-start" data-act="missed">{{ bi('Revise missed cards', 'తప్పినవి మళ్ళీ చూడండి') }}</button>
+        <button type="button" class="ac-ghost" data-act="back">{{ bi('Back to setup', 'సెట్టింగ్‌లకు వెనక్కి') }}</button>
+        <button type="button" class="ac-link" data-act="stay">{{ bi('Look at the cards again', 'కార్డులను మళ్ళీ చూడండి') }}</button>
+      </div>
     </div>
   </div>
-</template>
+  <p class="sr" id="ac-live" aria-live="polite"></p>
+</div>
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110b') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110c') }}" defer></script>{% endblock %}

@@ -196,8 +196,15 @@ def test_article_cards_page(client,app):
     h=client.get('/learn/polity/unit6/articles').get_data(as_text=True)
     # every card is embedded for the full-screen study deck; setup screen offers every chapter
     assert 'data-id="AC-6.4-21A"' in h and h.count('class="ac-src"')==len(cards)
-    assert 'id="ac-setup"' in h and 'id="ac-stage"' in h and 'aria-label="Back to card settings"' in h and 'aria-label="Next card"' in h
+    assert 'id="ac-setup"' in h and 'id="ac-stage"' in h and 'id="ac-grid"' in h and 'aria-label="Back to card settings"' in h
+    # setup offers both matrix densities (3x6 default, 4x8 compact) and every chapter
+    assert 'name="density" value="18" checked' in h and 'name="density" value="32"' in h
     assert all(f'name="chapter" value="{ch}"' in h for ch in {c['chapter'] for c in cards})
+    # matrix bar: page arrows, cue-mode and language toggles; detail view: collapse + prev/next + self-check; summary overlay
+    for el in ('ac-pprev','ac-pnext','ac-page','ac-mode','ac-lang','ac-detail','ac-collapse','ac-prev','ac-next','ac-sum'):assert f'id="{el}"' in h
+    assert 'aria-label="Collapse to card matrix"' in h and 'aria-label="Previous card"' in h and 'aria-label="Next card"' in h
+    assert 'data-judge="k"' in h and 'data-judge="x"' in h and 'data-act="missed"' in h and 'data-act="back"' in h
+    assert not re.search(r'\son(click|change|keydown)=', h.split('id="ac"')[1])
     assert 'polity_articles.js?v=' in h and 'polity_articles.css?v=' in h
     h=client.get('/learn/polity/unit6/articles?chapter=6.4&qlang=en').get_data(as_text=True)
     assert 'value="6.4" checked' in h and 'value="en" checked' in h and 'data-lang-set="1"' in h
