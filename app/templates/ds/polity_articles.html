@@ -1,89 +1,72 @@
 {% extends 'ds/base.html' %}
+{% macro bi(en, te) -%}<span class="ac-te" lang="te">{{ te or en }}</span><span class="ac-en" lang="en">{{ en }}</span>{%- endmacro %}
 {% block title %}Article cards · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}">
-<style>
-.ac{max-width:1100px;margin:0 auto}
-.ac-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
-.ac-seg{display:inline-flex;border:1px solid #b9c7c4;border-radius:10px;overflow:hidden}
-.ac-seg button{border:0;background:#fff;padding:9px 12px;font:inherit;cursor:pointer;color:#255}
-.ac-seg button[aria-pressed=true]{background:#0f766e;color:#fff}
-.ac-chips a{display:inline-block;margin:2px;padding:6px 10px;border-radius:999px;border:1px solid #b9c7c4;text-decoration:none;color:#255;font-size:.9rem}
-.ac-chips a.on{background:#0f766e;color:#fff;border-color:#0f766e}
-.ac-bar .btn{width:auto;flex:0 0 auto;padding:6px 10px;font-size:.82rem;min-height:0;margin:0}
-.ac-card .cue{overflow-wrap:anywhere}
-.ac-score{display:flex;gap:12px;flex-wrap:wrap;font-weight:600}
-.ac-score .g{color:#15803d}.ac-score .m{color:#b91c1c}.ac-score .n{color:#555}
-.ac-h{margin:18px 0 6px;font-size:1.05rem;color:#0f766e}
-.ac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.ac-card{position:relative;min-height:128px;border:2px solid #cfe0dd;border-radius:14px;background:#fff;padding:10px;text-align:center;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;font:inherit;color:#123;width:100%}
-.ac-card:focus-visible{outline:3px solid #0f766e}
-.ac-card .cue{font-size:1.15rem;font-weight:700;line-height:1.3}
-.ac-card .cue.num{font-size:1.5rem;color:#0f766e}
-.ac-card .hint{font-size:.78rem;color:#6b7c78;margin-top:4px}
-.ac-card .ans{display:none;width:100%}
-.ac-card.open{border-color:#0f766e;background:#f1faf8;text-align:left;align-items:stretch;grid-column:span 2}
-.ac-card.open .front{display:none}.ac-card.open .ans{display:block}
-.ac-card .big{font-size:1.4rem;font-weight:800;color:#0f766e}
-.ac-card .says{margin:6px 0;font-size:.95rem;line-height:1.5}
-.ac-card .trap{font-size:.85rem;color:#92400e;background:#fff7e6;border-radius:8px;padding:5px 8px;margin:6px 0}
-.ac-card .jb{display:flex;gap:8px;margin-top:8px}
-.ac-card .jb span{flex:1;text-align:center;padding:8px;border-radius:9px;font-weight:700;border:1px solid}
-.ac-card .jb .ok{background:#dcfce7;color:#15803d;border-color:#86efac}.ac-card .jb .no{background:#fee2e2;color:#b91c1c;border-color:#fca5a5}
-.ac-card.k{border-color:#22c55e}.ac-card.k::after{content:"✓";position:absolute;top:6px;right:9px;color:#15803d;font-weight:800}
-.ac-card.x{border-color:#ef4444}.ac-card.x::after{content:"↻";position:absolute;top:6px;right:9px;color:#b91c1c;font-weight:800}
-.ac-card .lk{font-size:.8rem;color:#555;margin-top:6px}
-[data-lang=te] .en,[data-lang=en] .te{display:none}
-@media (max-width:480px){.ac-grid{grid-template-columns:repeat(2,1fr)}.ac-card.open{grid-column:span 2}}
-</style>{% endblock %}
-{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><b>Article cards · ప్రకరణ కార్డులు</b></div>{% endblock %}
-{% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang if lang!='both' else 'both' }}" data-chapter="{{ chapter or 'all' }}">
-<section class="card geo-intro"><h1>Article cards <span lang="te">· ప్రకరణ కార్డులు</span></h1>
-<p>{{ total }} articles. Recall first, then tap the card to check. / గుర్తుకు తెచ్చుకుని, కార్డు నొక్కి సరిచూసుకోండి.</p></section>
-<section class="card">
-<div class="ac-bar"><div class="ac-seg" role="group" aria-label="Mode"><button type="button" data-mode="a" aria-pressed="true">Article → Concept<br><small lang="te">ప్రకరణం → భావన</small></button><button type="button" data-mode="b" aria-pressed="false">Concept → Article<br><small lang="te">భావన → ప్రకరణం</small></button></div>
-<div class="ac-seg" role="group" aria-label="Language"><button type="button" data-l="te" aria-pressed="{{ 'true' if lang=='te' else 'false' }}">తెలుగు</button><button type="button" data-l="en" aria-pressed="{{ 'true' if lang=='en' else 'false' }}">English</button><button type="button" data-l="both" aria-pressed="{{ 'true' if lang=='both' else 'false' }}">Both</button></div></div>
-<div class="ac-chips"><a href="{{ url_for('polity_unit6.articles') }}" class="{{ '' if chapter else 'on' }}">All</a>{% for c in chs %}<a href="{{ url_for('polity_unit6.articles',chapter=c) }}" class="{{ 'on' if chapter==c else '' }}">{{ c }}</a>{% endfor %}</div>
-<div class="ac-bar ac-score"><span class="g">✓ <b id="ng">0</b> known</span><span class="m">↻ <b id="nm">0</b> to revise</span><span class="n"><b id="nn">0</b> left</span>
-<button type="button" class="btn" id="shuf">Shuffle / కలపండి</button><button type="button" class="btn" id="rev">Only revise / మళ్ళీ చూడాలి</button><button type="button" class="btn" id="rst">Reset / రీసెట్</button></div>
-</section>
-{% if not groups %}<section class="card"><p>No article cards yet.</p></section>{% endif %}
-{% for g in groups %}<section class="card ac-sec"><h2 class="ac-h"><span class="en">{{ g.chapter }} · {{ g.group_en }}</span><span class="te" lang="te">{{ g.chapter }} · {{ g.group_te or g.group_en }}</span></h2>
-<div class="ac-grid">{% for c in g.cards %}<div class="ac-card" role="button" tabindex="0" data-id="{{ c.id }}">
-<div class="front"><div class="cue" data-a><span class="num">Article {{ c.article }}</span><br><span class="te num" lang="te">ప్రకరణ {{ c.article }}</span></div>
-<div class="cue" data-b hidden><span class="en">{{ c.concept_en }}</span><span class="te" lang="te">{{ c.concept_te }}</span></div><div class="hint">Tap to check / నొక్కండి</div></div>
-<div class="ans"><div class="big"><span class="en">Article {{ c.article }}</span><span class="te" lang="te">ప్రకరణ {{ c.article }}</span> <small>{% if c.part %}· {{ c.part }}{% endif %}</small></div>
-<div><b><span class="en">{{ c.concept_en }}</span><span class="te" lang="te">{{ c.concept_te }}</span></b></div>
-<p class="says"><span class="en">{{ c.says_en }}</span><span class="te" lang="te">{{ c.says_te }}</span></p>
-{% if c.trap_en %}<p class="trap"><span class="en">⚠ {{ c.trap_en }}</span><span class="te" lang="te">⚠ {{ c.trap_te or c.trap_en }}</span></p>{% endif %}
-{% if c.flag %}<p class="trap">{{ c.flag }}</p>{% endif %}
-{% if c.as_of %}<p class="lk">{{ c.as_of }}</p>{% endif %}
-<p class="lk">{% if c.laxmikanth %}Laxmikanth ch.{{ c.laxmikanth.chapter }}{% endif %}{% if c.gbk %} · {{ c.gbk }}{% endif %}{% if c.card_ids %} · <a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.chapter,hl=c.card_ids|join(',')) }}">Concept notes</a>{% endif %}</p>
-<div class="jb"><span class="ok" data-j="k">✓ I knew it / తెలుసు</span><span class="no" data-j="x">↻ Revise / మళ్ళీ</span></div></div></div>{% endfor %}</div></section>{% endfor %}
-<script>
-(function(){
-var root=document.getElementById('ac'),mode='a',KEY='u6_artcards_v1',st={},onlyRev=false;
-try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){st={}}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
-var cards=[].slice.call(root.querySelectorAll('.ac-card'));
-function paint(){var g=0,m=0;cards.forEach(function(c){var s=st[c.dataset.id];c.classList.toggle('k',s==='k');c.classList.toggle('x',s==='x');if(s==='k')g++;if(s==='x')m++;
- c.hidden=onlyRev&&s!=='x';});
- root.querySelectorAll('.ac-sec').forEach(function(sec){sec.hidden=!sec.querySelector('.ac-card:not([hidden])')});
- document.getElementById('ng').textContent=g;document.getElementById('nm').textContent=m;document.getElementById('nn').textContent=cards.length-g-m;}
-function setMode(x){mode=x;cards.forEach(function(c){c.classList.remove('open');c.querySelector('[data-a]').hidden=x!=='a';c.querySelector('[data-b]').hidden=x!=='b'});
- root.querySelectorAll('[data-mode]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.mode===x)})}
-function setLang(l){root.dataset.lang=l;root.querySelectorAll('[data-l]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});try{localStorage.setItem('u6_artcards_lang',l)}catch(e){}}
-root.addEventListener('click',function(e){
- var mb=e.target.closest('[data-mode]');if(mb){setMode(mb.dataset.mode);return}
- var lb=e.target.closest('[data-l]');if(lb){setLang(lb.dataset.l);return}
- var j=e.target.closest('[data-j]');if(j){var c=j.closest('.ac-card');st[c.dataset.id]=j.dataset.j;save();c.classList.remove('open');paint();e.stopPropagation();e.preventDefault();return}
- if(e.target.closest('a'))return;
- var c=e.target.closest('.ac-card');if(c){c.classList.toggle('open')}});
-root.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('ac-card')){e.preventDefault();e.target.classList.toggle('open')}});
-document.getElementById('shuf').onclick=function(){root.querySelectorAll('.ac-grid').forEach(function(gr){var a=[].slice.call(gr.children);for(var i=a.length-1;i>0;i--){var k=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[k];a[k]=t}a.forEach(function(n){gr.appendChild(n)})})};
-document.getElementById('rev').onclick=function(){onlyRev=!onlyRev;this.textContent=onlyRev?'Show all / అన్నీ':'Only revise / మళ్ళీ చూడాలి';paint()};
-document.getElementById('rst').onclick=function(){if(!confirm('Reset all article card progress? / పురోగతి రీసెట్ చేయాలా?'))return;st={};save();onlyRev=false;paint()};
-(function(){var l=null;try{l=localStorage.getItem('u6_artcards_lang')}catch(e){}if(l&&!/[?&]qlang=/.test(location.search))setLang(l)})();
-setMode('a');paint();
-})();
-</script>
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><b>Article cards · ప్రకరణ కార్డులు</b></div>{% endblock %}
+{% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-mode="a" data-total="{{ total }}">
+
+<header class="ac-intro">
+  <h1 class="sr">Article cards, Unit 6</h1>
+  <p><b>{{ total }} articles{% if chapter %} in {{ chapter }} {{ names[chapter][0] if chapter in names else '' }}{% endif %}.</b> Recall the answer, then tap the card to check.</p>
+  <p lang="te">ముందు మీరే గుర్తు చేసుకోండి, తర్వాత కార్డు నొక్కి సరిచూసుకోండి.</p>
+</header>
+
+<nav class="ac-chips" aria-label="Chapter">
+  <a href="{{ url_for('polity_unit6.articles') }}"{% if not chapter %} aria-current="page"{% endif %}><b>All</b><span lang="te">అన్నీ</span></a>
+  {%- for c in chs %}<a href="{{ url_for('polity_unit6.articles',chapter=c) }}" style="--acc:{{ c|accent }}"{% if chapter==c %} aria-current="page"{% endif %}><b>{{ c }}</b>{% if c in names %}<span>{{ names[c][0] }}</span>{% endif %}</a>{% endfor %}
+</nav>
+
+<div class="ac-bar" id="ac-bar">
+  <div class="ac-seg ac-mode" role="group" aria-label="Card front">
+    <button type="button" data-mode="a" aria-pressed="true"><b>Article → Concept</b><small lang="te">ప్రకరణ → భావన</small></button>
+    <button type="button" data-mode="b" aria-pressed="false"><b>Concept → Article</b><small lang="te">భావన → ప్రకరణ</small></button>
+  </div>
+  <div class="ac-seg ac-lang" role="group" aria-label="Language">
+    <button type="button" data-l="te" lang="te" aria-pressed="{{ 'true' if lang=='te' else 'false' }}">తెలుగు</button>
+    <button type="button" data-l="en" aria-pressed="{{ 'true' if lang=='en' else 'false' }}">English</button>
+    <button type="button" data-l="both" aria-pressed="{{ 'true' if lang=='both' else 'false' }}">Both</button>
+  </div>
+  <button type="button" class="ac-next" id="ac-next"><b>Next card</b><small lang="te">తర్వాతి కార్డు</small></button>
+  <div class="ac-progress">
+    <div class="ac-track" aria-hidden="true"><i class="k" id="ac-pk"></i><i class="x" id="ac-px"></i></div>
+    <div class="ac-count" aria-hidden="true"><span class="k">✓ <b id="ac-nk">0</b></span><span class="x">↻ <b id="ac-nx">0</b></span><span class="n"><b id="ac-nn">{{ total }}</b> left</span></div>
+    <p class="sr" id="ac-live" aria-live="polite"></p>
+  </div>
+</div>
+
+<div class="ac-tools">
+  <button type="button" id="ac-only" aria-pressed="false">Only revise <small lang="te">మళ్ళీ చూడాల్సినవి</small></button>
+  <button type="button" id="ac-shuffle" aria-pressed="false">Shuffle <small lang="te">కలపండి</small></button>
+  <button type="button" id="ac-reset">Reset <small lang="te">రీసెట్</small></button>
+</div>
+
+<p class="ac-empty" id="ac-empty" hidden>No cards are marked Revise yet. Tap a card and choose Revise to collect it here.<br><span lang="te">ఇంకా ఏ కార్డునూ “మళ్ళీ” అని గుర్తించలేదు.</span></p>
+{% if not groups %}<p class="ac-empty">No article cards yet.</p>{% endif %}
+
+{% for g in groups %}<section class="ac-sec" style="--acc:{{ g.chapter|accent }}" aria-labelledby="ac-h{{ loop.index }}">
+  <h2 id="ac-h{{ loop.index }}"><span class="ac-chno">{{ g.chapter }}</span><span class="ac-gname">{{ bi(g.group_en, g.group_te) }}</span></h2>
+  <div class="ac-grid">{% for c in g.cards %}{% set k = c.id|replace('.','-') %}
+  <article class="ac-card" data-id="{{ c.id }}" id="{{ k }}">
+    <button type="button" class="ac-face" aria-expanded="false" aria-controls="{{ k }}-b">
+      <span class="ac-num"><small>{{ bi('Article','ప్రకరణ') }}</small><b>{{ c.article }}</b></span>
+      <span class="ac-concept">{{ bi(c.concept_en, c.concept_te) }}</span>
+      <span class="ac-hint" aria-hidden="true">{{ bi('Tap to check','నొక్కి చూడండి') }}</span>
+      <span class="ac-mark"><span class="sr"></span></span>
+    </button>
+    <div class="ac-back" id="{{ k }}-b" hidden>
+      {% if c.part %}<span class="ac-part">{{ c.part }}</span>{% endif %}
+      <div class="ac-says">{{ bi(c.says_en, c.says_te) }}</div>
+      {% if c.trap_en %}<div class="ac-note ac-trap"><b>{{ bi('Exam trap','పరీక్షలో జాగ్రత్త') }}</b>{{ bi(c.trap_en, c.trap_te) }}</div>{% endif %}
+      {% if c.flag %}<div class="ac-note">{{ c.flag }}</div>{% endif %}
+      {% if c.as_of %}<div class="ac-asof">{{ c.as_of }}</div>{% endif %}
+      <div class="ac-meta">{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.chapter,hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
+      <div class="ac-judge">
+        <button type="button" class="k" data-judge="k" aria-pressed="false">✓ {{ bi('I knew it','తెలుసు') }}</button>
+        <button type="button" class="x" data-judge="x" aria-pressed="false">↻ {{ bi('Revise','మళ్ళీ చూడాలి') }}</button>
+      </div>
+    </div>
+  </article>{% endfor %}
+  </div>
+</section>{% endfor %}
 </div>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110') }}" defer></script>{% endblock %}

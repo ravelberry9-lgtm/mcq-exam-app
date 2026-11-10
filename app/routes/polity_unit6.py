@@ -205,7 +205,13 @@ def articles():
     cards=_artcards.chapter_cards(ch)
     if not cards and not _artcards.all_cards():abort(404)
     chs=sorted({c['chapter'] for c in _artcards.all_cards()})
-    return render_template('ds/polity_articles.html',groups=_artcards.groups(cards),total=len(cards),chapter=ch,chs=chs,lang=language())
+    return render_template('ds/polity_articles.html',groups=_artcards.groups(cards),total=len(cards),chapter=ch,chs=chs,
+                           names=ARTCARD_CHAPTERS,lang=language())
+# Short chapter names for the article-card chips (number, English, Telugu).
+ARTCARD_CHAPTERS={'6.1':('Nature and development','స్వభావం, పరిణామం'),'6.2':('Salient features','ముఖ్య లక్షణాలు'),
+    '6.3':('Preamble','ప్రవేశిక'),'6.4':('Fundamental Rights','ప్రాథమిక హక్కులు'),'6.5':('Directive Principles','ఆదేశిక సూత్రాలు'),
+    '6.6':('Fundamental Duties','ప్రాథమిక విధులు'),'6.7':('Amendment','రాజ్యాంగ సవరణ'),'6.8':('Basic structure','ప్రాథమిక స్వరూపం'),
+    '6.9':('Territory and citizenship','భూభాగం, పౌరసత్వం')}
 @bp.get('/unit')
 def unit():
     corpus=records();rows=[]
