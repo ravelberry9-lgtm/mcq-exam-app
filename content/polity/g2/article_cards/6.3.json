@@ -75,8 +75,16 @@
    "Even a reserved seat has one common roll."
   ],
   "exam": {
-   "patterns_te": "ఏ ప్రకరణ ఒకే ఓటర్ల జాబితా ఇస్తుంది, ఏ కారణాలు నిషేధం, రాజకీయ సమానత్వం ఏ ప్రకరణల ద్వారా అనే ప్రశ్నలు వస్తాయి.",
-   "patterns_en": "Questions ask which Article provides one electoral roll, which grounds are barred, and which Articles secure political equality.",
+   "patterns_te": [
+    "ఏ ప్రకరణ ఒకే ఓటర్ల జాబితా ఇస్తుంది",
+    "ఏ కారణాలు నిషేధం",
+    "రాజకీయ సమానత్వం ఏ ప్రకరణల ద్వారా"
+   ],
+   "patterns_en": [
+    "Which Article provides one electoral roll",
+    "Which grounds are barred",
+    "Which Articles secure political equality"
+   ],
    "pyqs": [
     {
      "kind": "mcq",
@@ -160,7 +168,8 @@
     "answer_en": "All voters on the one general electoral roll of that constituency",
     "answer_te": "ఆ నియోజకవర్గపు ఒకే సాధారణ ఓటర్ల జాబితాలోని ఓటర్లందరూ",
     "why_en": "Article 325 gives one general roll per constituency and bars special rolls on caste; reservation limits who can contest, not who can vote.",
-    "why_te": "ప్రకరణ 325 ప్రతి నియోజకవర్గానికి ఒకే జాబితా ఇచ్చి, కులం ఆధారంగా ప్రత్యేక జాబితాను నిషేధిస్తుంది; రిజర్వేషన్ పోటీ చేసేవారిని పరిమితం చేస్తుంది, ఓటర్లను కాదు."
+    "why_te": "ప్రకరణ 325 ప్రతి నియోజకవర్గానికి ఒకే జాబితా ఇచ్చి, కులం ఆధారంగా ప్రత్యేక జాబితాను నిషేధిస్తుంది; రిజర్వేషన్ పోటీ చేసేవారిని పరిమితం చేస్తుంది, ఓటర్లను కాదు.",
+    "answer": 2
    }
   },
   "facts_checked": [

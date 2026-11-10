@@ -65,8 +65,18 @@
    "The oath is administered by the CJI."
   ],
   "exam": {
-   "patterns_te": "ఎవరు ప్రమాణం చేయిస్తారు (CJI), ప్రమాణ రూపాలు ఎక్కడ ఉన్నాయి (మూడో షెడ్యూల్ vs ప్రకరణ 60), ఏ ప్రకరణలు 26 నవంబర్ 1949 నుండే అమలయ్యాయి అనే ప్రశ్నలు వస్తాయి.",
-   "patterns_en": "Questions ask who administers the oath (the CJI), where oath forms are found (Third Schedule vs Article 60), and which Articles came into force on 26 November 1949.",
+   "patterns_te": [
+    "రాష్ట్రపతితో ప్రమాణం ఎవరు చేయిస్తారు? (భారత ప్రధాన న్యాయమూర్తి)",
+    "ప్రమాణ నమూనాలు ఏ షెడ్యూల్‌లో ఉన్నాయి? (మూడో షెడ్యూల్ — కానీ రాష్ట్రపతి, ఉపరాష్ట్రపతి, గవర్నర్ ప్రమాణాలు వాటి ప్రకరణలలోనే)",
+    "ఎవరి ప్రమాణం మూడో షెడ్యూల్‌లో లేదు? (గవర్నర్ / రాష్ట్రపతి)",
+    "26 నవంబర్ 1949 నుండే అమలైన ప్రకరణలు ఏవి? (ప్రకరణ 60 వాటిలో ఒకటి)"
+   ],
+   "patterns_en": [
+    "Who administers the President's oath? (the Chief Justice of India)",
+    "In which Schedule are the forms of oath? (Third Schedule — but the President's, Vice-President's and Governor's oaths are in their own Articles)",
+    "Whose oath is NOT in the Third Schedule? (Governor / President)",
+    "Which Articles came into force on 26 November 1949? (Article 60 is one)"
+   ],
    "pyqs": [
     {
      "kind": "pyq",
@@ -88,7 +98,33 @@
       "నాలుగో షెడ్యూల్"
      ],
      "answer_en": "Third Schedule",
-     "answer_te": "మూడో షెడ్యూల్"
+     "answer_te": "మూడో షెడ్యూల్",
+     "note_en": "Most oaths (Ministers, MPs, judges, CAG) are in the Third Schedule, but the President's oath is written in Article 60 itself.",
+     "note_te": "మంత్రులు, ఎంపీలు, న్యాయమూర్తులు, CAG ప్రమాణాలు మూడో షెడ్యూల్‌లో ఉంటాయి; కానీ రాష్ట్రపతి ప్రమాణం ప్రకరణ 60 లోనే రాసి ఉంది."
+    },
+    {
+     "kind": "mcq",
+     "id": "POL-621-N002",
+     "exam": "Question bank",
+     "year": null,
+     "q_en": "Four persons assume office on the same day: a Union Cabinet Minister, a Judge of a High Court, the Comptroller and Auditor-General of India, and the Governor of a State. For which of them is the form of oath or affirmation NOT set out in the Third Schedule?",
+     "q_te": "ఒకే రోజున నలుగురు పదవి చేపడుతున్నారు: ఒక కేంద్ర కేబినెట్ మంత్రి, ఒక హైకోర్టు న్యాయమూర్తి, భారత కంప్ట్రోలర్ అండ్ ఆడిటర్ జనరల్, ఒక రాష్ట్ర గవర్నర్. వీరిలో ఎవరి ప్రమాణం లేదా ప్రతిజ్ఞ నమూనా మూడో షెడ్యూలులో లేదు?",
+     "options_en": [
+      "The Union Cabinet Minister",
+      "The Governor of the State",
+      "The Judge of the High Court",
+      "The Comptroller and Auditor-General of India"
+     ],
+     "options_te": [
+      "కేంద్ర కేబినెట్ మంత్రి",
+      "రాష్ట్ర గవర్నర్",
+      "హైకోర్టు న్యాయమూర్తి",
+      "భారత కంప్ట్రోలర్ అండ్ ఆడిటర్ జనరల్"
+     ],
+     "answer_en": "The Governor of the State",
+     "answer_te": "రాష్ట్ర గవర్నర్",
+     "note_en": "The Governor's oath is in Article 159, just as the President's is in Article 60.",
+     "note_te": "గవర్నర్ ప్రమాణం ప్రకరణ 159 లో ఉంది — రాష్ట్రపతి ప్రమాణం ప్రకరణ 60 లో ఉన్నట్లే."
     }
    ],
    "practice": {
@@ -109,7 +145,8 @@
     "answer_en": "The Chief Justice of India",
     "answer_te": "భారత ప్రధాన న్యాయమూర్తి",
     "why_en": "Article 60 requires the oath to be made before the Chief Justice of India, or in his absence the senior-most available Supreme Court judge.",
-    "why_te": "ప్రకరణ 60 ప్రకారం ప్రమాణం CJI ఎదుట, ఆయన లేనప్పుడు అందుబాటులో ఉన్న సీనియర్‌మోస్ట్ సుప్రీంకోర్టు న్యాయమూర్తి ఎదుట జరగాలి."
+    "why_te": "ప్రకరణ 60 ప్రకారం ప్రమాణం CJI ఎదుట, ఆయన లేనప్పుడు అందుబాటులో ఉన్న సీనియర్‌మోస్ట్ సుప్రీంకోర్టు న్యాయమూర్తి ఎదుట జరగాలి.",
+    "answer": 3
    }
   },
   "facts_checked": [
@@ -244,8 +281,22 @@
    "1-3-1-3: one (1950) → three (1989) → one (1990) → three (1993)."
   ],
   "exam": {
-   "patterns_te": "ఎన్నికల సంఘం పరిధి (ఏ ఎన్నికలు), కూర్పు చరిత్ర (1989/1990/1993), CEC తొలగింపు పద్ధతి, అనూప్ బరన్వాల్ కేసు, 2023 చట్టం, 26 నవంబర్ 1949 నుండే అమలైన ప్రకరణ అనే కోణాల్లో ప్రశ్నలు వస్తాయి.",
-   "patterns_en": "Questions test the EC's scope (which elections), its composition history (1989/1990/1993), how the CEC is removed, the Anoop Baranwal case, the 2023 Act, and its early commencement on 26 November 1949.",
+   "patterns_te": [
+    "ఎన్నికల సంఘం పరిధి (ఏ ఎన్నికలు)",
+    "కూర్పు చరిత్ర (1989/1990/1993)",
+    "CEC తొలగింపు పద్ధతి",
+    "అనూప్ బరన్వాల్ కేసు",
+    "2023 చట్టం",
+    "26 నవంబర్ 1949 నుండే అమలైన ప్రకరణ అనే కోణాల్లో ప్రశ్నలు వస్తాయి"
+   ],
+   "patterns_en": [
+    "The EC's scope (which elections)",
+    "Its composition history (1989/1990/1993)",
+    "How the CEC is removed",
+    "The Anoop Baranwal case",
+    "The 2023 Act",
+    "Its early commencement on 26 November 1949"
+   ],
    "pyqs": [
     {
      "kind": "mcq",
@@ -329,7 +380,8 @@
     "answer_en": "2 only",
     "answer_te": "2 మాత్రమే",
     "why_en": "Clause (2) leaves the number to the President; the second proviso to clause (5) protects other Commissioners by requiring the CEC's recommendation for removal.",
-    "why_te": "క్లాజు (2) సంఖ్యను రాష్ట్రపతికి వదిలేసింది; క్లాజు (5) రెండో నిబంధన (proviso) ప్రకారం ఇతర కమిషనర్ల తొలగింపుకు CEC సిఫారసు తప్పనిసరి."
+    "why_te": "క్లాజు (2) సంఖ్యను రాష్ట్రపతికి వదిలేసింది; క్లాజు (5) రెండో నిబంధన (proviso) ప్రకారం ఇతర కమిషనర్ల తొలగింపుకు CEC సిఫారసు తప్పనిసరి.",
+    "answer": 2
    }
   },
   "facts_checked": [
@@ -489,8 +541,17 @@
    "366(18): 'Proclamation of Emergency' = Article 352 only."
   ],
   "exam": {
-   "patterns_te": "26 నవంబర్ 1949 నుండి అమలైన ప్రకరణల జాబితా, 'అత్యవసర ప్రకటన' నిర్వచనం, GST నిర్వచనం (101వ సవరణ), ఆంగ్లో-ఇండియన్ నిర్వచనం ఏ ప్రకరణలో ఉంది అనే ప్రశ్నలు వస్తాయి.",
-   "patterns_en": "Questions use it in the list of Articles in force from 26 November 1949, and ask where 'Proclamation of Emergency', GST (101st Amendment) or 'Anglo-Indian' is defined.",
+   "patterns_te": [
+    "26 నవంబర్ 1949 నుండి అమలైన ప్రకరణల జాబితా",
+    "'అత్యవసర ప్రకటన' నిర్వచనం",
+    "GST నిర్వచనం (101వ సవరణ)",
+    "ఆంగ్లో-ఇండియన్ నిర్వచనం ఏ ప్రకరణలో ఉంది"
+   ],
+   "patterns_en": [
+    "Questions use it in the list of Articles in force from 26 November 1949",
+    "Ask where 'Proclamation of Emergency'",
+    "GST (101st Amendment) or 'Anglo-Indian' is defined"
+   ],
    "pyqs": [],
    "practice": {
     "q_en": "Under Article 366 of the Constitution, the expression 'Proclamation of Emergency' means a Proclamation issued under:",
@@ -510,7 +571,8 @@
     "answer_en": "Article 352(1)",
     "answer_te": "ప్రకరణ 352(1)",
     "why_en": "Clause (18) of Article 366 ties the term only to a Proclamation under clause (1) of Article 352.",
-    "why_te": "ప్రకరణ 366 క్లాజు (18) ఈ పదాన్ని ప్రకరణ 352 క్లాజు (1) ప్రకటనకు మాత్రమే ముడిపెడుతుంది."
+    "why_te": "ప్రకరణ 366 క్లాజు (18) ఈ పదాన్ని ప్రకరణ 352 క్లాజు (1) ప్రకటనకు మాత్రమే ముడిపెడుతుంది.",
+    "answer": 4
    }
   },
   "facts_checked": [
@@ -577,8 +639,13 @@
    "393 = name, 394 = commencement, 394A = Hindi text, 395 = repeals."
   ],
   "exam": {
-   "patterns_te": "భాగం XXII లోని ప్రకరణలు, ఏవి 26 నవంబర్ 1949 నుండి అమలైనవి అనే జతపరచే ప్రశ్నల్లో ఇది వస్తుంది.",
-   "patterns_en": "It appears in matching questions on Part XXII and on the Articles in force from 26 November 1949.",
+   "patterns_te": [
+    "భాగం XXII లోని ప్రకరణలు",
+    "ఏవి 26 నవంబర్ 1949 నుండి అమలైనవి అనే జతపరచే ప్రశ్నల్లో ఇది వస్తుంది"
+   ],
+   "patterns_en": [
+    "It appears in matching questions on Part XXII and on the Articles in force from 26 November 1949"
+   ],
    "pyqs": [],
    "practice": {
     "q_en": "Which Article of the Constitution gives it the short title 'the Constitution of India'?",
@@ -598,7 +665,8 @@
     "answer_en": "Article 393",
     "answer_te": "ప్రకరణ 393",
     "why_en": "Article 393 says 'This Constitution may be called the Constitution of India'; Article 1 names the country, not the document.",
-    "why_te": "ప్రకరణ 393 'ఈ రాజ్యాంగాన్ని భారత రాజ్యాంగం అని పిలవవచ్చు' అంటుంది; ప్రకరణ 1 దేశం పేరు చెబుతుంది, పత్రం పేరు కాదు."
+    "why_te": "ప్రకరణ 393 'ఈ రాజ్యాంగాన్ని భారత రాజ్యాంగం అని పిలవవచ్చు' అంటుంది; ప్రకరణ 1 దేశం పేరు చెబుతుంది, పత్రం పేరు కాదు.",
+    "answer": 1
    }
   },
   "facts_checked": [
@@ -666,8 +734,16 @@
    "Adopted 26-11-1949; commenced 26-01-1950."
   ],
   "exam": {
-   "patterns_te": "26 నవంబర్ 1949 నుండి అమలైన ప్రకరణ ఏది/కానిది, 26 జనవరి ఎందుకు, రాజ్యాంగం ఏ సంవత్సరం ఆమోదం/అమలు అనే ప్రశ్నలు తరచూ వస్తాయి.",
-   "patterns_en": "Frequent questions: which Article did / did not come into force on 26 November 1949, why 26 January, and the years of adoption and commencement.",
+   "patterns_te": [
+    "26 నవంబర్ 1949 నుండి అమలైన ప్రకరణ ఏది/కానిది",
+    "26 జనవరి ఎందుకు",
+    "రాజ్యాంగం ఏ సంవత్సరం ఆమోదం/అమలు అనే ప్రశ్నలు తరచూ వస్తాయి"
+   ],
+   "patterns_en": [
+    "Frequent questions: which Article did / did not come into force on 26 November 1949",
+    "Why 26 January",
+    "The years of adoption and commencement"
+   ],
    "pyqs": [
     {
      "kind": "pyq",
@@ -775,7 +851,8 @@
     "answer_en": "Article 368",
     "answer_te": "ప్రకరణ 368",
     "why_en": "Article 394 lists 5–9, 60, 324, 366, 367, 379, 380, 388, 391, 392, 393 and itself; Article 368 began with the rest on 26 January 1950.",
-    "why_te": "ప్రకరణ 394 జాబితాలో 5–9, 60, 324, 366, 367, 379, 380, 388, 391, 392, 393, తానే ఉన్నాయి; ప్రకరణ 368 మిగతా వాటితో పాటు 26 జనవరి 1950 న అమలైంది."
+    "why_te": "ప్రకరణ 394 జాబితాలో 5–9, 60, 324, 366, 367, 379, 380, 388, 391, 392, 393, తానే ఉన్నాయి; ప్రకరణ 368 మిగతా వాటితో పాటు 26 జనవరి 1950 న అమలైంది.",
+    "answer": 2
    }
   },
   "facts_checked": [
@@ -870,8 +947,16 @@
    "58 → 394A → Hindi text; published by the President."
   ],
   "exam": {
-   "patterns_te": "ఏ సవరణ 394A ను చేర్చింది (58వ, 1987), ఎవరు ప్రచురిస్తారు (రాష్ట్రపతి), హిందీ పాఠం ఏ భాగంలో ఉంది (XXII) అనే ప్రశ్నలు వస్తాయి.",
-   "patterns_en": "Questions ask which amendment inserted it (58th, 1987), who publishes (the President), and in which Part it sits (XXII).",
+   "patterns_te": [
+    "ఏ సవరణ 394A ను చేర్చింది (58వ, 1987)",
+    "ఎవరు ప్రచురిస్తారు (రాష్ట్రపతి)",
+    "హిందీ పాఠం ఏ భాగంలో ఉంది (XXII)"
+   ],
+   "patterns_en": [
+    "Which amendment inserted it (58th, 1987)",
+    "Who publishes (the President)",
+    "In which Part it sits (XXII)"
+   ],
    "pyqs": [
     {
      "kind": "mcq",
@@ -913,7 +998,8 @@
     "answer_en": "Article 394A, inserted by the 58th Amendment",
     "answer_te": "58వ సవరణ చేర్చిన ప్రకరణ 394A",
     "why_en": "Article 394A was inserted by the 58th Amendment Act, 1987; Article 343 is about the official language, and Article 351 (original) about developing Hindi.",
-    "why_te": "ప్రకరణ 394A ను 58వ సవరణ చట్టం, 1987 చేర్చింది; ప్రకరణ 343 రాజభాష గురించి, ప్రకరణ 351 (అసలు ప్రకరణ) హిందీ అభివృద్ధి గురించి."
+    "why_te": "ప్రకరణ 394A ను 58వ సవరణ చట్టం, 1987 చేర్చింది; ప్రకరణ 343 రాజభాష గురించి, ప్రకరణ 351 (అసలు ప్రకరణ) హిందీ అభివృద్ధి గురించి.",
+    "answer": 2
    }
   },
   "facts_checked": [
@@ -979,8 +1065,16 @@
    "395 = repeals: 1947 + 1935 gone; the 1949 Privy Council Act survived."
   ],
   "exam": {
-   "patterns_te": "1950 కి ముందు భారత్ ఏ చట్టం కింద పాలించబడింది, ఏ చట్టాలు రద్దు అయ్యాయి/కాలేదు, రాజ్యాంగంపై అత్యధిక ప్రభావం చూపిన చట్టం ఏది అనే ప్రశ్నలు వస్తాయి.",
-   "patterns_en": "Questions ask under which Act India was governed before 1950, which Acts were or were not repealed, and which Act most influenced the Constitution.",
+   "patterns_te": [
+    "1950 కి ముందు భారత్ ఏ చట్టం కింద పాలించబడింది",
+    "ఏ చట్టాలు రద్దు అయ్యాయి/కాలేదు",
+    "రాజ్యాంగంపై అత్యధిక ప్రభావం చూపిన చట్టం ఏది"
+   ],
+   "patterns_en": [
+    "Under which Act India was governed before 1950",
+    "Which Acts were or were not repealed",
+    "Which Act most influenced the Constitution"
+   ],
    "pyqs": [
     {
      "kind": "pyq",
@@ -1067,7 +1161,8 @@
     "answer_en": "Abolition of Privy Council Jurisdiction Act, 1949",
     "answer_te": "ప్రివీ కౌన్సిల్ అధికార పరిధి రద్దు చట్టం, 1949",
     "why_en": "Article 395 expressly excludes the 1949 Act from the repeal.",
-    "why_te": "ప్రకరణ 395 ఈ 1949 చట్టాన్ని రద్దు నుండి స్పష్టంగా మినహాయించింది."
+    "why_te": "ప్రకరణ 395 ఈ 1949 చట్టాన్ని రద్దు నుండి స్పష్టంగా మినహాయించింది.",
+    "answer": 4
    }
   },
   "facts_checked": [

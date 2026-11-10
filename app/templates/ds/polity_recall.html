@@ -65,19 +65,20 @@
       {% set ex = c.exam %}{% if ex and (ex.patterns_en or ex.pyqs or ex.practice) %}
       <section class="ct-exam">
         <h3 class="ct-exh">{{ bi('How it is asked in exams', 'పరీక్షల్లో ఇలా అడుగుతారు') }}</h3>
-        {% if ex.patterns_en %}<div class="ac-points">{{ bl(ex.patterns_en, ex.patterns_te) }}</div>{% endif %}
+        {% if ex.patterns_en %}<div class="ac-points">{{ bl(ex.patterns_en if ex.patterns_en is not string else [ex.patterns_en], ex.patterns_te if ex.patterns_te is not string else [ex.patterns_te]) }}</div>{% endif %}
         {% if ex.pyqs %}<ol class="ct-pyqs">{% for q in ex.pyqs %}
           <li class="ct-pyq"><span class="ct-badge{{ ' mcq' if q.kind != 'pyq' }}">{% if q.kind == 'pyq' %}PYQ · {{ exam_label(q.exam) or 'APPSC' }}{% if q.year %} {{ q.year }}{% endif %}{% else %}MCQ{% endif %}</span>
             <div class="ct-pq">{{ bi(q.q_en, q.q_te) }}</div>
-            <details class="ct-reveal"><summary>{{ bi('Show answer', 'జవాబు') }}</summary><div>{{ bi(q.answer_en, q.answer_te) }}</div></details></li>{% endfor %}
+            {% if q.options_en %}<ol class="ct-qopts" type="A">{% for o in q.options_en %}<li>{{ bi(o, (q.options_te or [])[loop.index0]) }}</li>{% endfor %}</ol>{% endif %}
+            <details class="ct-reveal"><summary>{{ bi('Show answer', 'జవాబు') }}</summary><div>{{ bi(q.answer_en, q.answer_te) }}</div>{% if q.disputed %}<div class="ct-qnote">{{ bi(q.note_en or '⚠ The key for this question is disputed', q.note_te or '⚠ ఈ ప్రశ్న జవాబుపై వివాదం ఉంది') }}</div>{% elif q.note_en %}<div class="ct-qnote">{{ bi(q.note_en, q.note_te) }}</div>{% endif %}</details></li>{% endfor %}
         </ol>{% endif %}
-        {% set pr = ex.practice %}{% if pr and pr.options_en %}
-        <div class="ct-prac" data-ans="{{ pr.answer }}">
+        {% set prs = ex.practice if ex.practice is sequence and ex.practice is not mapping else [ex.practice] %}{% for pr in prs %}{% if pr and pr.options_en %}
+        <div class="ct-prac" data-ans="{{ pr.answer or ((pr.options_en.index(pr.answer_en) + 1) if pr.answer_en in pr.options_en else '') }}">
           <p class="ct-ptag">{{ bi('Try one', 'ఒకటి ప్రయత్నించండి') }}</p>
           <div class="ct-pq">{{ bi(pr.q_en, pr.q_te) }}</div>
           <div class="ct-opts">{% for o in pr.options_en %}<button type="button" class="ct-opt" data-opt="{{ loop.index }}"><i>{{ 'ABCD'[loop.index0] }}</i><span>{{ bi(o, (pr.options_te or [])[loop.index0]) }}</span></button>{% endfor %}</div>
           <div class="ct-why" hidden>{{ bi(pr.why_en, pr.why_te) }}</div>
-        </div>{% endif %}
+        </div>{% endif %}{% endfor %}
       </section>{% endif %}
 {%- endmacro %}
 {#- Shared tail for article / amendment cards. -#}
@@ -126,7 +127,7 @@
       {{ examsec(c) }}
 {%- endmacro %}
 {% block title %}{{ d.title_en }} · Recall cards · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111a') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111a') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111b') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111b') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.recall_hub') }}">‹ Recall</a><b>{{ d.title_en }} · {{ d.title_te }}</b></div>{% endblock %}
 {% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}" data-deck="{{ d.id }}" data-store="{{ d.store }}" data-setup-store="{{ d.setup_store }}" data-lang-store="{{ d.lang_store }}" data-kind="{{ d.front_kind }}" data-order-en="{{ d.order_en }}" data-order-te="{{ d.order_te }}" data-pill-en="{{ d.pill_en }}" data-pill-te="{{ d.pill_te }}" data-title="{{ d.title_en }}" data-themes="{{ 1 if d.themes else 0 }}" data-open="{{ open_id }}"{% if back %} data-back-url="{{ back.url }}" data-back-deck="{{ back.deck }}" data-back-en="{{ back.en }}" data-back-te="{{ back.te }}"{% endif %}>
 
@@ -288,4 +289,4 @@
   <p class="sr" id="ac-live" aria-live="polite"></p>
 </div>
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261111a') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261111b') }}" defer></script>{% endblock %}
