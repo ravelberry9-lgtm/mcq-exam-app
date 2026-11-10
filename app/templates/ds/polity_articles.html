@@ -1,72 +1,101 @@
 {% extends 'ds/base.html' %}
 {% macro bi(en, te) -%}<span class="ac-te" lang="te">{{ te or en }}</span><span class="ac-en" lang="en">{{ en }}</span>{%- endmacro %}
 {% block title %}Article cards · Unit 6{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110b') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><b>Article cards · ప్రకరణ కార్డులు</b></div>{% endblock %}
-{% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-mode="a" data-total="{{ total }}">
+{% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}">
 
-<header class="ac-intro">
-  <h1 class="sr">Article cards, Unit 6</h1>
-  <p><b>{{ total }} articles{% if chapter %} in {{ chapter }} {{ names[chapter][0] if chapter in names else '' }}{% endif %}.</b> Recall the answer, then tap the card to check.</p>
-  <p lang="te">ముందు మీరే గుర్తు చేసుకోండి, తర్వాత కార్డు నొక్కి సరిచూసుకోండి.</p>
-</header>
+<form class="ac-setup" id="ac-setup" novalidate>
+  <h1 class="ac-title">{{ bi('Recall the article, then check', 'ప్రకరణను గుర్తు చేసుకుని, సరిచూసుకోండి') }}</h1>
 
-<nav class="ac-chips" aria-label="Chapter">
-  <a href="{{ url_for('polity_unit6.articles') }}"{% if not chapter %} aria-current="page"{% endif %}><b>All</b><span lang="te">అన్నీ</span></a>
-  {%- for c in chs %}<a href="{{ url_for('polity_unit6.articles',chapter=c) }}" style="--acc:{{ c|accent }}"{% if chapter==c %} aria-current="page"{% endif %}><b>{{ c }}</b>{% if c in names %}<span>{{ names[c][0] }}</span>{% endif %}</a>{% endfor %}
-</nav>
+  <fieldset class="ac-field">
+    <legend>{{ bi('Chapter', 'అధ్యాయం') }}</legend>
+    <div class="ac-chapters">
+      <label class="ac-ch" style="--acc:#0f766e"><input type="radio" name="chapter" value=""{% if not chapter %} checked{% endif %}>
+        <span class="ac-ch-no">All</span><span class="ac-ch-name">{{ bi('All chapters', 'అన్ని అధ్యాయాలు') }}</span><span class="ac-ch-n" data-count="">{{ total }}</span></label>
+      {%- for c in chs %}
+      <label class="ac-ch" style="--acc:{{ c|accent }}"><input type="radio" name="chapter" value="{{ c }}"{% if chapter==c %} checked{% endif %}>
+        <span class="ac-ch-no">{{ c }}</span><span class="ac-ch-name">{% if c in names %}{{ bi(names[c][0], names[c][1]) }}{% endif %}</span><span class="ac-ch-n" data-count="{{ c }}">{{ counts[c] }}</span></label>
+      {%- endfor %}
+    </div>
+  </fieldset>
 
-<div class="ac-bar" id="ac-bar">
-  <div class="ac-seg ac-mode" role="group" aria-label="Card front">
-    <button type="button" data-mode="a" aria-pressed="true"><b>Article → Concept</b><small lang="te">ప్రకరణ → భావన</small></button>
-    <button type="button" data-mode="b" aria-pressed="false"><b>Concept → Article</b><small lang="te">భావన → ప్రకరణ</small></button>
+  <fieldset class="ac-field">
+    <legend>{{ bi('Card front', 'కార్డు ముందు వైపు') }}</legend>
+    <div class="ac-opts two">
+      <label class="ac-opt"><input type="radio" name="mode" value="a" checked><b>Article → Concept</b><small lang="te">ప్రకరణ → భావన</small></label>
+      <label class="ac-opt"><input type="radio" name="mode" value="b"><b>Concept → Article</b><small lang="te">భావన → ప్రకరణ</small></label>
+    </div>
+  </fieldset>
+
+  <fieldset class="ac-field">
+    <legend>{{ bi('Language', 'భాష') }}</legend>
+    <div class="ac-opts three">
+      <label class="ac-opt"><input type="radio" name="lang" value="te"{% if lang=='te' %} checked{% endif %}><b lang="te">తెలుగు</b></label>
+      <label class="ac-opt"><input type="radio" name="lang" value="en"{% if lang=='en' %} checked{% endif %}><b>English</b></label>
+      <label class="ac-opt"><input type="radio" name="lang" value="both"{% if lang=='both' %} checked{% endif %}><b>Both</b></label>
+    </div>
+  </fieldset>
+
+  <div class="ac-toggles">
+    <label class="ac-tog"><input type="checkbox" name="only" role="switch"><span>{{ bi('Only cards to revise', 'మళ్ళీ చూడాల్సినవి మాత్రమే') }}<small id="ac-xcount"></small></span></label>
+    <label class="ac-tog"><input type="checkbox" name="shuffle" role="switch"><span>{{ bi('Shuffle', 'కలిపి చూపించు') }}</span></label>
   </div>
-  <div class="ac-seg ac-lang" role="group" aria-label="Language">
-    <button type="button" data-l="te" lang="te" aria-pressed="{{ 'true' if lang=='te' else 'false' }}">తెలుగు</button>
-    <button type="button" data-l="en" aria-pressed="{{ 'true' if lang=='en' else 'false' }}">English</button>
-    <button type="button" data-l="both" aria-pressed="{{ 'true' if lang=='both' else 'false' }}">Both</button>
-  </div>
-  <button type="button" class="ac-next" id="ac-next"><b>Next card</b><small lang="te">తర్వాతి కార్డు</small></button>
-  <div class="ac-progress">
-    <div class="ac-track" aria-hidden="true"><i class="k" id="ac-pk"></i><i class="x" id="ac-px"></i></div>
-    <div class="ac-count" aria-hidden="true"><span class="k">✓ <b id="ac-nk">0</b></span><span class="x">↻ <b id="ac-nx">0</b></span><span class="n"><b id="ac-nn">{{ total }}</b> left</span></div>
-    <p class="sr" id="ac-live" aria-live="polite"></p>
-  </div>
-</div>
 
-<div class="ac-tools">
-  <button type="button" id="ac-only" aria-pressed="false">Only revise <small lang="te">మళ్ళీ చూడాల్సినవి</small></button>
-  <button type="button" id="ac-shuffle" aria-pressed="false">Shuffle <small lang="te">కలపండి</small></button>
-  <button type="button" id="ac-reset">Reset <small lang="te">రీసెట్</small></button>
-</div>
+  <p class="ac-msg" id="ac-msg" role="status" hidden></p>
+  <button type="submit" class="ac-start" id="ac-start"><b>{{ bi('Start', 'మొదలుపెట్టండి') }}</b><small id="ac-start-n"></small></button>
+  <p class="ac-saved" id="ac-saved"></p>
+  <button type="button" class="ac-reset" id="ac-reset">{{ bi('Reset my progress', 'నా పురోగతిని రీసెట్ చేయి') }}</button>
+</form>
 
-<p class="ac-empty" id="ac-empty" hidden>No cards are marked Revise yet. Tap a card and choose Revise to collect it here.<br><span lang="te">ఇంకా ఏ కార్డునూ “మళ్ళీ” అని గుర్తించలేదు.</span></p>
-{% if not groups %}<p class="ac-empty">No article cards yet.</p>{% endif %}
-
-{% for g in groups %}<section class="ac-sec" style="--acc:{{ g.chapter|accent }}" aria-labelledby="ac-h{{ loop.index }}">
-  <h2 id="ac-h{{ loop.index }}"><span class="ac-chno">{{ g.chapter }}</span><span class="ac-gname">{{ bi(g.group_en, g.group_te) }}</span></h2>
-  <div class="ac-grid">{% for c in g.cards %}{% set k = c.id|replace('.','-') %}
-  <article class="ac-card" data-id="{{ c.id }}" id="{{ k }}">
-    <button type="button" class="ac-face" aria-expanded="false" aria-controls="{{ k }}-b">
-      <span class="ac-num"><small>{{ bi('Article','ప్రకరణ') }}</small><b>{{ c.article }}</b></span>
-      <span class="ac-concept">{{ bi(c.concept_en, c.concept_te) }}</span>
-      <span class="ac-hint" aria-hidden="true">{{ bi('Tap to check','నొక్కి చూడండి') }}</span>
-      <span class="ac-mark"><span class="sr"></span></span>
-    </button>
-    <div class="ac-back" id="{{ k }}-b" hidden>
-      {% if c.part %}<span class="ac-part">{{ c.part }}</span>{% endif %}
+<div class="ac-deck" id="ac-deck" hidden>{% for c in cards %}
+  <article class="ac-src" data-id="{{ c.id }}" data-ch="{{ c.chapter }}" data-acc="{{ c.chapter|accent }}">
+    <div class="s-num">{{ c.article }}</div>
+    <div class="s-con">{{ bi(c.concept_en, c.concept_te) }}</div>
+    <div class="s-chap">{{ c.chapter }}{% if c.chapter in names %} {{ bi(names[c.chapter][0], names[c.chapter][1]) }}{% endif %}</div>
+    <div class="s-back">
       <div class="ac-says">{{ bi(c.says_en, c.says_te) }}</div>
       {% if c.trap_en %}<div class="ac-note ac-trap"><b>{{ bi('Exam trap','పరీక్షలో జాగ్రత్త') }}</b>{{ bi(c.trap_en, c.trap_te) }}</div>{% endif %}
       {% if c.flag %}<div class="ac-note">{{ c.flag }}</div>{% endif %}
       {% if c.as_of %}<div class="ac-asof">{{ c.as_of }}</div>{% endif %}
-      <div class="ac-meta">{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.chapter,hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
-      <div class="ac-judge">
-        <button type="button" class="k" data-judge="k" aria-pressed="false">✓ {{ bi('I knew it','తెలుసు') }}</button>
-        <button type="button" class="x" data-judge="x" aria-pressed="false">↻ {{ bi('Revise','మళ్ళీ చూడాలి') }}</button>
-      </div>
+      <div class="ac-meta">{% if c.part %}<span>{{ c.part }}</span>{% endif %}{% if c.laxmikanth %}<span>Laxmikanth ch {{ c.laxmikanth.chapter }}</span>{% endif %}{% if c.gbk %}<span>{{ c.gbk }}</span>{% endif %}{% if c.card_ids %}<a href="{{ url_for('polity_unit6.concept_cards',chapter_id=c.chapter,hl=c.card_ids|join(',')) }}">{{ bi('Concept notes','భావన నోట్స్') }}</a>{% endif %}</div>
     </div>
   </article>{% endfor %}
+</div>
+
+<div class="ac-stage" id="ac-stage" role="dialog" aria-modal="true" aria-label="Article card" hidden>
+  <button type="button" class="ac-icon ac-exit" id="ac-exit" aria-label="Back to card settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button type="button" class="ac-icon ac-skip" id="ac-skip" aria-label="Next card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="ac-sheet" id="ac-sheet"></div>
+  <p class="sr" id="ac-live" aria-live="polite"></p>
+</div>
+
+<template id="ac-tpl-card">
+  <button type="button" class="ac-front" aria-label="Show answer">
+    <span class="ac-chap"></span>
+    <span class="ac-cue"></span>
+    <span class="ac-hint">{{ bi('Tap to check', 'నొక్కి సరిచూడండి') }}</span>
+  </button>
+  <div class="ac-reveal" hidden>
+    <div class="ac-head"><span class="ac-chap"></span><span class="ac-ans"></span></div>
+    <div class="ac-body"></div>
+    <div class="ac-judge">
+      <button type="button" class="x" data-judge="x">{{ bi('Revise', 'మళ్ళీ చూడాలి') }}</button>
+      <button type="button" class="k" data-judge="k">{{ bi('I knew it', 'తెలుసు') }}</button>
+    </div>
   </div>
-</section>{% endfor %}
+  <span class="ac-count" aria-hidden="true"></span>
+</template>
+
+<template id="ac-tpl-done">
+  <div class="ac-done">
+    <h2>{{ bi('Round finished', 'ఈ రౌండ్ పూర్తయింది') }}</h2>
+    <div class="ac-tally"><p class="k"><b data-n="k">0</b>{{ bi('knew it', 'తెలుసు') }}</p><p class="x"><b data-n="x">0</b>{{ bi('to revise', 'మళ్ళీ చూడాలి') }}</p></div>
+    <div class="ac-done-act">
+      <button type="button" class="ac-start" data-act="missed">{{ bi('Revise missed cards', 'తప్పినవి మళ్ళీ చూడండి') }}</button>
+      <button type="button" class="ac-ghost" data-act="back">{{ bi('Back', 'వెనక్కి') }}</button>
+    </div>
+  </div>
+</template>
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261110b') }}" defer></script>{% endblock %}

@@ -194,6 +194,11 @@ def test_article_cards_page(client,app):
         assert not re.search(r'\d',c['concept_en']+c['concept_te']) or c['article'] not in c['concept_en']
         assert c['says_en'] and c['says_te'] and c['concept_te']
     h=client.get('/learn/polity/unit6/articles').get_data(as_text=True)
-    assert 'data-id="AC-6.4-21A"' in h
-    assert client.get('/learn/polity/unit6/articles?chapter=6.4').status_code==200
+    # every card is embedded for the full-screen study deck; setup screen offers every chapter
+    assert 'data-id="AC-6.4-21A"' in h and h.count('class="ac-src"')==len(cards)
+    assert 'id="ac-setup"' in h and 'id="ac-stage"' in h and 'aria-label="Back to card settings"' in h and 'aria-label="Next card"' in h
+    assert all(f'name="chapter" value="{ch}"' in h for ch in {c['chapter'] for c in cards})
+    assert 'polity_articles.js?v=' in h and 'polity_articles.css?v=' in h
+    h=client.get('/learn/polity/unit6/articles?chapter=6.4&qlang=en').get_data(as_text=True)
+    assert 'value="6.4" checked' in h and 'value="en" checked' in h and 'data-lang-set="1"' in h
     assert client.get('/learn/polity/unit6/articles?chapter=9.9').status_code==404
