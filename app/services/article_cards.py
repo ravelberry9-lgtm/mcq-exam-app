@@ -1,15 +1,33 @@
 """Article recall deck for Unit 6 (article number <-> concept cards)."""
 import json
+import re
 from functools import lru_cache
 from pathlib import Path
 
 DIR = Path(__file__).resolve().parents[2] / 'content' / 'polity' / 'g2' / 'article_cards'
 
 
+_ART = re.compile(r'^\s*(\d+)\s*([A-Za-z]*)\s*(?:\(\s*([^)]*?)\s*\))?(.*)$')
+
+
+def article_key(article):
+    """Natural sort key for an article label.
+
+    Numeric part first, then the letter suffix, then a clause in brackets:
+    21 < 21A < 21B < 22; 239A < 239AA < 239B; 243A < 243Z < 243ZA; 371 < 371A .. 371J;
+    51A < 51A(a) < 51A(b) .. 51A(k); 394 < 394A < 395. Labels with no leading number sort last.
+    """
+    s = str(article)
+    m = _ART.match(s)
+    if not m:
+        return (1, 0, '', (), s)
+    num, suf, clause, rest = m.groups()
+    ck = () if clause is None else ((0, int(clause), '') if clause.isdigit() else (1, 0, clause.lower()),)
+    return (0, int(num), suf.upper(), ck, rest)
+
+
 def _sort_key(a):
-    s = str(a['article'])
-    num = ''.join(ch for ch in s if ch.isdigit())
-    return (int(num) if num else 0, s)
+    return article_key(a['article'])
 
 
 @lru_cache(maxsize=1)
@@ -21,7 +39,8 @@ def all_cards():
                 out.extend(json.loads(f.read_text(encoding='utf-8')))
             except (ValueError, OSError):
                 continue
-    return sorted(out, key=lambda a: (a['chapter'], _sort_key(a)))
+    # one continuous ascending article sequence across chapters; chapter order breaks any tie
+    return sorted(out, key=lambda a: (_sort_key(a), a['chapter']))
 
 
 def chapter_cards(chapter_id=None):

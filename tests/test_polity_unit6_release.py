@@ -211,3 +211,26 @@ def test_article_cards_page(client,app):
     h=client.get('/learn/polity/unit6/articles?chapter=6.4&qlang=en').get_data(as_text=True)
     assert 'value="6.4" checked' in h and 'value="en" checked' in h and 'data-lang-set="1"' in h
     assert client.get('/learn/polity/unit6/articles?chapter=9.9').status_code==404
+
+
+def test_article_key_natural_sort():
+    from app.services.article_cards import article_key as k
+    assert sorted(['22','21A','21','21B'],key=k)==['21','21A','21B','22']
+    assert sorted(['243ZA','243B','243A','243Z','243'],key=k)==['243','243A','243B','243Z','243ZA']
+    assert sorted(['371J','371','371A','371D','372'],key=k)==['371','371A','371D','371J','372']
+    assert sorted(['51A(k)','51A(b)','51A','51A(a)','51','52'],key=k)==['51','51A','51A(a)','51A(b)','51A(k)','52']
+    assert sorted(['395','394A','394','60','324'],key=k)==['60','324','394','394A','395']
+    assert sorted(['239B','239AA','239A'],key=k)==['239A','239AA','239B']
+
+
+def test_article_cards_embedded_in_ascending_article_order(client,app):
+    import re
+    from app.services import article_cards as ac
+    enable(app)
+    cards=ac.all_cards()
+    keys=[ac.article_key(c['article']) for c in cards]
+    assert keys==sorted(keys) and len({c['chapter'] for c in cards})>1
+    h=client.get('/learn/polity/unit6/articles').get_data(as_text=True)
+    nums=re.findall(r'<div class="s-num">([^<]+)</div>',h)
+    assert nums==[c['article'] for c in cards] and [ac.article_key(n) for n in nums]==sorted(ac.article_key(n) for n in nums)
+    i=nums.index;assert i('12')<i('21')<i('21A')<i('22')<i('51A(a)')<i('51A(k)')<i('60')<i('324')<i('394')<i('394A')<i('395')

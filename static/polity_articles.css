@@ -81,10 +81,14 @@
 /* ───────── study stage: a full-screen matrix of recall tiles ───────── */
 html.ac-studying,html.ac-studying body{overflow:hidden}
 html.ac-studying .topbar,html.ac-studying .bottomnav,html.ac-studying .pwa-install,html.ac-studying #pwa-install{display:none!important}
-.ac-stage{position:fixed;inset:0;z-index:1000;height:100vh;height:100dvh;display:flex;flex-direction:column;
+/* full-screen stage: 100vh fallback, 100dvh where supported; min-height:100% (the fixed containing block) is a floor so a
+   short-reporting dvh (seen on iPhone) can never leave a blank strip under the last row. The safe area is inner padding only. */
+.ac-stage{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000;height:100vh;min-height:100%;box-sizing:border-box;display:flex;flex-direction:column;
   background:var(--ground);color:var(--ink);font-family:"Plus Jakarta Sans","Noto Sans Telugu",system-ui,sans-serif;touch-action:pan-y}
 .ac-stage button{font:inherit;-webkit-tap-highlight-color:transparent}
 .ac-stage button:focus-visible{outline:3px solid #1D4ED8;outline-offset:2px}
+@supports (height:100dvh){.ac-stage{height:100dvh}}
+html.ac-studying,html.ac-studying body{background:var(--ground)}
 @media (prefers-color-scheme:dark){body:has(#ac) .ac-stage button:focus-visible{outline-color:#93B4FF}}
 
 /* slim top bar: back, where am I, cue mode, language, pages; a hairline meter shows known/revise share */
@@ -95,11 +99,15 @@ html.ac-studying .topbar,html.ac-studying .bottomnav,html.ac-studying .pwa-insta
 .ac-ib svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
 .ac-ib:disabled{color:var(--line);cursor:default}
 .ac-ib:not(:disabled):active{background:var(--chip)}
-.ac-where{flex:1;min-width:0;margin:0 4px 0 2px;display:flex;align-items:center;gap:7px;font-size:.88rem;font-weight:700;line-height:1.3;color:var(--ink)}
-.ac-where::before{content:"";flex:none;width:9px;height:9px;border-radius:3px;background:var(--acc)}
-.w-ch{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.w-ch span{display:inline!important;margin:0!important;font-size:inherit!important;color:inherit!important}
-.ac-stage[data-lang="te"] .w-ch .ac-en,.ac-stage[data-lang="en"] .w-ch .ac-te,.ac-stage[data-lang="both"] .w-ch .ac-en{display:none!important}
+/* where am I: a compact chip, never a truncated word. One chapter = its number ("6.4"); All = a multi-colour dot + All / అన్ని */
+.ac-where{flex:1;min-width:0;margin:0 2px;display:flex;align-items:center;overflow:hidden}
+.w-chip{flex:none;display:inline-flex;align-items:center;gap:5px;height:28px;padding:0 8px;border-radius:99px;white-space:nowrap;
+  font-size:.82rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;
+  background:color-mix(in srgb,var(--acc) 14%,var(--card));color:color-mix(in srgb,var(--acc) 80%,var(--mix));border:1.5px solid color-mix(in srgb,var(--acc) 40%,var(--card))}
+.w-dot{flex:none;width:10px;height:10px;border-radius:50%;background:var(--dots,var(--acc))}
+.w-chip.all{background:var(--chip);color:var(--ink);border-color:var(--line)}
+.w-chip span{display:inline!important;margin:0!important;font-size:inherit!important;color:inherit!important}
+.ac-stage[data-lang="te"] .w-chip .ac-en,.ac-stage[data-lang="en"] .w-chip .ac-te,.ac-stage[data-lang="both"] .w-chip .ac-en{display:none!important}
 
 /* cue-mode switch: two little segments, the live one filled */
 .ac-mode{gap:0;padding:0 4px}
@@ -122,8 +130,8 @@ html.ac-studying .topbar,html.ac-studying .bottomnav,html.ac-studying .pwa-insta
 .ac-stage[data-lang="both"] .ac-toast .ac-te::after{content:" · "}
 @media (prefers-reduced-motion:no-preference){.ac-toast:not([hidden]){animation:ac-toast-in .18s ease-out}}
 @keyframes ac-toast-in{from{opacity:0;transform:translate(-50%,-6px)}}
-/* narrow phones in random order: the chapter dot stays, its name gives way to the reshuffle button */
-@media (max-width:440px){.ac-stage[data-order="rand"] .ac-where .w-ch{display:none}}
+/* narrow phones in random order: the All chip keeps its dot, its word gives way to the reshuffle button */
+@media (max-width:440px){.ac-stage[data-order="rand"] .w-chip.all .w-txt{display:none!important}.ac-stage[data-order="rand"] .w-chip.all{padding:0 8px}}
 .ac-pager{flex:none;display:flex;align-items:center}
 .ac-page{min-width:2.2em;text-align:center;font-size:.82rem;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
 .ac-meter{position:absolute;left:0;right:0;bottom:-1px;height:3px;pointer-events:none;
@@ -131,7 +139,7 @@ html.ac-studying .topbar,html.ac-studying .bottomnav,html.ac-studying .pwa-insta
 
 /* the matrix: rows x columns fill whatever is left of the screen */
 .ac-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));grid-template-rows:repeat(var(--rows,6),minmax(0,1fr));
-  gap:6px;padding:6px max(6px,env(safe-area-inset-right)) max(6px,env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-left))}
+  gap:6px;padding:6px max(6px,env(safe-area-inset-right)) max(6px,calc(env(safe-area-inset-bottom) - 16px)) max(6px,env(safe-area-inset-left))}
 .ac-grid[data-density="32"]{gap:4px;padding-top:4px}
 .ac-tile{position:relative;container-type:size;min-width:0;min-height:0;margin:0;padding:0;border-radius:10px;cursor:pointer;color:var(--ink);
   background:color-mix(in srgb,var(--acc) 9%,var(--card));border:1px solid color-mix(in srgb,var(--acc) 26%,var(--card));

@@ -117,7 +117,8 @@
   }
 
   // ── run lifecycle ──
-  // ids always arrive in article order (chapters ascending, articles ascending); Random shuffles a copy
+  // ids always arrive in the server's order: one ascending article sequence (natural sort, article_cards.article_key),
+  // across chapters when All is picked. In order uses it as is; Random shuffles a copy. Never re-sorted here.
   function startRun(ids, c) {
     if (!ids.length) return;
     var order = c.order === "rand" ? "rand" : "seq";
@@ -205,10 +206,25 @@
     paintBar();
     fitTiles();
   }
+  // One colour slice per chapter in the run, for the "All" chip's dot.
+  function chapterDots(ids) {
+    var seen = {}, cols = [];
+    ids.forEach(function (id) { var s = byId[id]; if (!seen[s.dataset.ch]) { seen[s.dataset.ch] = 1; cols.push(s.dataset.acc); } });
+    if (cols.length < 2) return cols[0] || "#0f766e";
+    var step = 360 / cols.length;
+    return "conic-gradient(" + cols.map(function (c, i) { return c + " " + (i * step) + "deg " + ((i + 1) * step) + "deg"; }).join(",") + ")";
+  }
   function paintBar() {
     var pages = pageCount(), ids = run.ids;
-    var where = run.chapter ? byId[ids[0]].querySelector(".s-chap").innerHTML : biText("All chapters", "అన్ని అధ్యాయాలు");
-    $("ac-where").innerHTML = '<span class="w-ch">' + where + "</span>";
+    var where = $("ac-where");
+    if (run.chapter) {
+      where.innerHTML = '<span class="w-chip">' + esc(run.chapter) + "</span>";
+      where.setAttribute("aria-label", "Chapter " + run.chapter);
+    } else {
+      where.innerHTML = '<span class="w-chip all" style="--dots:' + chapterDots(ids) + '"><i class="w-dot" aria-hidden="true"></i><span class="w-txt">' +
+        biText("All", "అన్ని") + "</span></span>";
+      where.setAttribute("aria-label", "All chapters");
+    }
     stage.style.setProperty("--acc", run.chapter ? byId[ids[0]].dataset.acc : "#0f766e");
     $("ac-pager").hidden = pages < 2;
     $("ac-page").textContent = (run.page + 1) + "/" + pages;
