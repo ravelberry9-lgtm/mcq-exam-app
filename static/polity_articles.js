@@ -1,13 +1,17 @@
-// Unit 6 article recall cards: setup screen -> full-screen card matrix -> full-screen detail view.
-// Vanilla JS, no inline handlers. Progress format is unchanged: localStorage u6_artcards_v1 = { cardId: "k" | "x" }.
+// Unit 6 recall decks (articles, amendments, cases ...): setup screen -> full-screen card matrix -> full-screen detail view.
+// Vanilla JS, no inline handlers. The deck comes from data-* on #ac. Progress: localStorage <data-store> = { cardId: "k" | "x" }
+// (articles keeps u6_artcards_v1, unchanged; every other deck has its own key).
 (function () {
   "use strict";
   var root = document.getElementById("ac");
   if (!root) return;
 
-  var KEY = "u6_artcards_v1";          // progress (unchanged format)
-  var LANG_KEY = "u6_artcards_lang";   // older saved language choice
-  var SETUP_KEY = "u6_artcards_setup"; // last setup choices
+  var D = root.dataset;
+  var KEY = D.store || "u6_artcards_v1";            // progress
+  var LANG_KEY = D.langStore || "u6_artcards_lang"; // older saved language choice
+  var SETUP_KEY = D.setupStore || "u6_artcards_setup"; // last setup choices
+  var TEXT_FRONT = D.kind === "text";
+  var THEMES = D.themes === "1"; // cases: direction B is a theme view (one tile per theme, opened = its cases)
   var LANGS = ["te", "en", "both"];
   var LANG_LABEL = { te: "తె", en: "EN", both: "తె+EN" };
   var LANG_NAME = { te: "Telugu", en: "English", both: "Telugu and English" };
@@ -15,9 +19,18 @@
 
   var $ = function (id) { return document.getElementById(id); };
   var form = $("ac-setup"), stage = $("ac-stage"), grid = $("ac-grid"), detail = $("ac-detail"), sum = $("ac-sum"), live = $("ac-live");
-  var deck = [].slice.call(root.querySelectorAll(".ac-src"));
+  var all = [].slice.call(root.querySelectorAll(".ac-src"));
   var byId = {};
-  deck.forEach(function (s) { byId[s.dataset.id] = s; });
+  all.forEach(function (s) { byId[s.dataset.id] = s; });
+  var deck = all.filter(function (s) { return !s.dataset.themeTile; });
+  var themeTiles = all.filter(function (s) { return s.dataset.themeTile; });
+  function isTheme(id) { return !!byId[id].dataset.themeTile; }
+  // cases of a theme tile that pass the run's chapter / newer filters
+  function themeRows(src, c) {
+    return [].filter.call(src.querySelectorAll(".ac-thlist li"), function (li) {
+      return (!c.chapter || li.dataset.ch === c.chapter) && (c.newer !== false || li.dataset.src !== "new");
+    });
+  }
 
   var progress = readJSON(KEY);
   var run = null; // { base, ids, order, page, cur, marks:{}, mode, lang, density, chapter }
@@ -43,7 +56,11 @@
     return '<span class="ac-te" lang="te">' + te + '</span><span class="ac-en" lang="en">' + en + "</span>";
   }
   function num(id) { return byId[id].querySelector(".s-num").textContent.trim(); }
+  function frontEn(id) { return byId[id].querySelector(".s-front .ac-en").textContent.trim(); }
+  function sub(id) { return byId[id].querySelector(".s-sub").textContent.trim(); }
   function conceptEn(id) { return byId[id].querySelector(".s-con .ac-en").textContent.trim(); }
+  var anyTwoWay = deck.some(function (s) { return s.dataset.two === "1"; });
+  function canB(id) { return byId[id].dataset.two === "1"; }
   function shuffled(list) {
     var a = list.slice();
     for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
@@ -55,7 +72,7 @@
     var f = form.elements;
     return {
       chapter: f.chapter.value, mode: f.mode.value, lang: f.lang.value, density: f.density.value,
-      only: f.only.checked, order: f.order.value
+      only: f.only.checked, order: f.order.value, newer: f.newer ? f.newer.checked : true
     };
   }
   function setRadio(name, value) {
@@ -66,7 +83,8 @@
     var saved = readJSON(SETUP_KEY);
     var urlChapter = root.dataset.chapter, langFromUrl = root.dataset.langSet === "1";
     if (!urlChapter && typeof saved.chapter === "string") setRadio("chapter", saved.chapter);
-    if (/^[ab]$/.test(saved.mode)) setRadio("mode", saved.mode);
+    if (/^[ab]$/.test(saved.mode) && (saved.mode === "a" || anyTwoWay)) setRadio("mode", saved.mode);
+    if (form.elements.newer && saved.newer === false) form.elements.newer.checked = false;
     if (GRIDS[saved.density]) setRadio("density", saved.density);
     var lang = saved.lang || readRaw(LANG_KEY);
     if (!langFromUrl && LANGS.indexOf(lang) >= 0) setRadio("lang", lang);
@@ -80,8 +98,14 @@
     writeJSON(SETUP_KEY, c);
   }
   function pickIds(c) {
+    if (THEMES && c.mode === "b") {
+      return themeTiles.filter(function (s) {
+        return themeRows(s, c).length && (!c.only || progress[s.dataset.id] === "x");
+      }).map(function (s) { return s.dataset.id; });
+    }
     return deck.filter(function (s) {
-      return (!c.chapter || s.dataset.ch === c.chapter) && (!c.only || progress[s.dataset.id] === "x");
+      return (!c.chapter || s.dataset.ch === c.chapter) && (!c.only || progress[s.dataset.id] === "x") &&
+        (c.newer !== false || s.dataset.src !== "new") && (c.mode !== "b" || s.dataset.two === "1");
     }).map(function (s) { return s.dataset.id; });
   }
   function countState(ids, v) {
@@ -90,11 +114,12 @@
   function paintSetup() {
     var c = choices();
     root.dataset.lang = c.lang;
-    var inChapter = pickIds({ chapter: c.chapter, only: false });
+    var inChapter = pickIds({ chapter: c.chapter, only: false, newer: c.newer });
     var ids = pickIds(c);
     var k = countState(inChapter, "k"), x = countState(inChapter, "x");
     $("ac-xcount").textContent = x ? " (" + x + ")" : "";
-    $("ac-start-n").textContent = ids.length + (ids.length === 1 ? " card" : " cards");
+    var unit = THEMES && c.mode === "b" ? ["theme", "themes"] : ["card", "cards"];
+    $("ac-start-n").textContent = ids.length + " " + unit[ids.length === 1 ? 0 : 1];
     $("ac-start").disabled = !ids.length;
     $("ac-saved").textContent = (k || x) ? "Saved on this device: " + k + " known, " + x + " to revise" : "";
     var msg = $("ac-msg");
@@ -104,7 +129,7 @@
     form.style.setProperty("--acc", acc);
   }
   function resetProgress() {
-    if (!window.confirm("Reset all article card progress?\nపురోగతి మొత్తం రీసెట్ చేయాలా?")) return;
+    if (!window.confirm("Reset all " + (D.title || "").toLowerCase() + " card progress?\nపురోగతి మొత్తం రీసెట్ చేయాలా?")) return;
     progress = {};
     writeJSON(KEY, progress);
     paintSetup();
@@ -123,8 +148,9 @@
     if (!ids.length) return;
     var order = c.order === "rand" ? "rand" : "seq";
     run = {
+      all: c.all || pickIds({ chapter: c.chapter, only: c.only, newer: c.newer, mode: "a" }),
       base: ids.slice(), ids: order === "rand" ? shuffled(ids) : ids.slice(), order: order, page: 0, cur: -1, marks: {},
-      mode: c.mode, lang: c.lang, density: c.density || "18", chapter: c.chapter || ""
+      mode: c.mode, lang: c.lang, density: c.density || "18", chapter: c.chapter || "", only: !!c.only, newer: c.newer !== false
     };
     sum.hidden = true;
     detail.hidden = true;
@@ -183,19 +209,27 @@
   function tileHTML(id, index) {
     var src = byId[id], state = progress[id] || "";
     var n = num(id), stateText = state === "k" ? "known" : state === "x" ? "to revise" : "not marked yet";
-    var label = run.mode === "a"
-      ? "Article " + n + ", chapter " + src.dataset.ch + ", " + stateText
-      : conceptEn(id) + ", chapter " + src.dataset.ch + ", " + stateText;
-    var cue = run.mode === "a"
-      ? '<b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + "</b>"
-      : '<span class="t-con">' + src.querySelector(".s-con").innerHTML + "</span>";
+    var sb = sub(id);
+    var band = src.querySelector(".s-band");
+    var label = (run.mode === "a" ? frontEn(id) + (sb ? " " + sb : "") : conceptEn(id)) + (band ? "" : ", chapter " + src.dataset.ch) + ", " + stateText;
+    var cue;
+    if (isTheme(id)) {
+      var n = themeRows(src, run).length;
+      label = "Theme: " + conceptEn(id) + ", " + n + " cases, " + stateText;
+      cue = '<span class="t-front">' + src.querySelector(".s-front").innerHTML + '<span class="t-sub">' + biText(n + " cases", n + " కేసులు") + "</span></span>";
+    } else if (run.mode === "b") cue = '<span class="t-con">' + src.querySelector(".s-con").innerHTML + "</span>";
+    else if (TEXT_FRONT) cue = '<span class="t-front">' + src.querySelector(".s-front").innerHTML + (sb ? '<span class="t-sub">' + esc(sb) + "</span>" : "") + "</span>";
+    else if (sb && D.deck !== "articles") cue = '<span class="t-numwrap"><b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + '</b><span class="t-sub">' + esc(sb) + "</span></span>";
+    else cue = '<b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + "</b>";
     return '<button type="button" class="ac-tile" data-i="' + index + '" data-state="' + state + '" style="--acc:' + src.dataset.acc +
-      '" aria-label="' + esc(label) + '"><span class="t-ch" aria-hidden="true">' + src.dataset.ch +
+      '" aria-label="' + esc(label) + '"><span class="t-ch' + (band ? " t-band" : "") + '" aria-hidden="true">' + (band ? band.innerHTML : src.dataset.ch) +
       '</span><span class="t-mark" aria-hidden="true"></span><span class="t-cue">' + cue + "</span></button>";
   }
   function renderMatrix() {
     stage.dataset.lang = run.lang;
     stage.dataset.mode = run.mode;
+    stage.dataset.kind = (run.mode === "a" || THEMES) && TEXT_FRONT ? "text" : run.mode === "a" ? "num" : "cue";
+    stage.dataset.themes = THEMES ? "1" : "";
     stage.dataset.one = run.chapter ? "1" : "";
     applyShape();
     var start = run.page * perPage(), html = "";
@@ -232,11 +266,12 @@
     $("ac-pnext").disabled = run.page >= pages - 1;
     var modeBtn = $("ac-mode");
     modeBtn.setAttribute("aria-pressed", run.mode === "b" ? "true" : "false");
-    modeBtn.setAttribute("aria-label", run.mode === "a" ? "Showing article numbers. Show concepts instead" : "Showing concepts. Show article numbers instead");
+    modeBtn.hidden = !anyTwoWay;
+    modeBtn.setAttribute("aria-label", run.mode === "a" ? "Showing the card fronts. Show the ideas instead" : "Showing the ideas. Show the card fronts instead");
     var rand = run.order === "rand", orderBtn = $("ac-order");
     stage.dataset.order = run.order;
     orderBtn.setAttribute("aria-pressed", rand ? "true" : "false");
-    orderBtn.setAttribute("aria-label", rand ? "Cards in random order. Switch to article order" : "Cards in article order. Switch to random order");
+    orderBtn.setAttribute("aria-label", rand ? "Cards in random order. Switch to " + (D.orderEn || "In order").toLowerCase() : "Cards " + (D.orderEn || "in order").toLowerCase() + ". Switch to random order");
     $("ac-reshuffle").hidden = !rand;
     var langBtn = $("ac-lang");
     langBtn.textContent = LANG_LABEL[run.lang];
@@ -249,11 +284,12 @@
   // An ellipsis clamp is used only when a cue cannot fit even at the minimum size.
   var MIN_FS = 11;
   function fitTiles() {
-    if (!run || run.mode !== "b") return;
+    if (!run || (run.mode !== "b" && !TEXT_FRONT)) return;
     var boxes = [].slice.call(grid.querySelectorAll(".t-cue"));
     if (!boxes.length) return;
     var b0 = boxes[0];
-    var max = Math.max(13, Math.min(26, Math.round(Math.min(b0.clientWidth / 6.5, b0.clientHeight / 4))));
+    var max = run.mode === "a" || THEMES ? Math.max(13, Math.min(30, Math.round(Math.min(b0.clientWidth / 5.5, b0.clientHeight / 3.2))))
+      : Math.max(13, Math.min(26, Math.round(Math.min(b0.clientWidth / 6.5, b0.clientHeight / 4))));
     var fits = boxes.map(function (box) { return fitOne(box, max); });
     var sorted = fits.slice().sort(function (a, b) { return a - b; });
     var common = sorted[Math.floor(sorted.length / 2)];
@@ -287,8 +323,21 @@
     var t = grid.querySelector('.ac-tile[data-i="' + index + '"]') || grid.querySelector(".ac-tile");
     if (t) t.focus({ preventScroll: true });
   }
+  // Direction B shows only two-way cards (a cue that maps to exactly one front); switching re-filters and keeps marks.
   function toggleMode() {
-    run.mode = run.mode === "a" ? "b" : "a";
+    if (!anyTwoWay) return;
+    var mode = run.mode === "a" ? "b" : "a";
+    var ids = THEMES ? pickIds({ chapter: run.chapter, only: run.only, newer: run.newer, mode: mode })
+      : run.all.filter(function (id) { return mode === "a" || canB(id); });
+    if (!ids.length) { toast("No two-way cards here", "ఇక్కడ రెండు వైపుల కార్డులు లేవు"); return; }
+    if (THEMES) toast(mode === "b" ? "Theme → Cases" : "Case → Issue", mode === "b" ? "అంశం → కేసులు" : "కేసు → అంశం");
+    if (THEMES || ids.length !== run.base.length) {
+      run.base = ids;
+      run.ids = run.order === "rand" ? shuffled(ids) : ids.slice();
+      run.page = 0;
+      if (mode === "b" && !THEMES) toast(ids.length + " two-way cards", ids.length + " రెండు వైపుల కార్డులు");
+    }
+    run.mode = mode;
     saveChoices();
     renderMatrix();
   }
@@ -321,8 +370,8 @@
   function toggleOrder() {
     var rand = run.order !== "rand";
     setOrder(rand ? "rand" : "seq");
-    if (rand) toast("Random order", "యాదృచ్ఛిక క్రమం"); else toast("In article order", "ప్రకరణల క్రమంలో");
-    live.textContent = rand ? "Cards shuffled into random order" : "Cards back in article order";
+    if (rand) toast("Random order", "యాదృచ్ఛిక క్రమం"); else toast(D.orderEn || "In order", D.orderTe || "క్రమంగా");
+    live.textContent = rand ? "Cards shuffled into random order" : "Cards back in order";
   }
   function reshuffle() {
     setOrder("rand");
@@ -339,14 +388,22 @@
     detail.dataset.lang = run.lang;
     detail.dataset.state = progress[id] || "";
     $("ac-dchap").innerHTML = src.querySelector(".s-chap").innerHTML;
-    $("ac-dtitle").innerHTML = '<span class="ac-pill"><small>' + biText("Article", "ప్రకరణ") + "</small>" + n + "</span>" +
-      '<span class="ac-anstext">' + src.querySelector(".s-con").innerHTML + "</span>";
+    var sb = esc(sub(id)), pill = isTheme(id) ? biText("Theme", "అంశం") : biText(D.pillEn || "Article", D.pillTe || "ప్రకరణ");
+    var head = TEXT_FRONT
+      ? '<span class="ac-pill txt"><small>' + pill + "</small>" + src.querySelector(".s-front").innerHTML + (sb ? '<span class="p-sub">' + sb + "</span>" : "") + "</span>"
+      : '<span class="ac-pill"><small>' + pill + "</small>" + n + (sb && D.deck !== "articles" ? '<span class="p-sub">' + sb + "</span>" : "") + "</span>";
+    $("ac-dtitle").innerHTML = head + (isTheme(id) ? "" : '<span class="ac-anstext">' + src.querySelector(".s-title").innerHTML + "</span>");
     $("ac-dbody").innerHTML = src.querySelector(".s-back").innerHTML;
+    detail.dataset.theme = isTheme(id) ? "1" : "";
+    if (isTheme(id)) {
+      var keep = themeRows(src, run).map(function (li) { return [].indexOf.call(li.parentNode.children, li); });
+      [].forEach.call($("ac-dbody").querySelectorAll(".ac-thlist li"), function (li, i) { if (keep.indexOf(i) < 0) li.remove(); });
+    }
     $("ac-dscroll").scrollTop = 0;
     $("ac-pos").textContent = (index + 1) + " / " + run.ids.length;
     $("ac-prev").disabled = index === 0;
     $("ac-next").disabled = index >= run.ids.length - 1;
-    live.textContent = "Article " + num(id) + ", card " + (index + 1) + " of " + run.ids.length;
+    live.textContent = frontEn(id) + ", card " + (index + 1) + " of " + run.ids.length;
   }
   function tileRect(index) {
     var t = grid.querySelector('.ac-tile[data-i="' + index + '"]');
@@ -403,6 +460,22 @@
     collapse();
   }
 
+  // Cases practice MCQ: one try, then the right option turns green, a wrong pick red, and the reason shows.
+  function answerPractice(b) {
+    var box = b.closest(".ct-prac");
+    if (!box || box.dataset.done) return;
+    var ans = box.dataset.ans, ok = b.dataset.opt === ans;
+    box.dataset.done = ok ? "ok" : "no";
+    [].forEach.call(box.querySelectorAll(".ct-opt"), function (o) {
+      o.disabled = true;
+      if (o.dataset.opt === ans) o.dataset.res = "ok"; else if (o === b) o.dataset.res = "no";
+    });
+    var why = box.querySelector(".ct-why");
+    why.insertAdjacentHTML("afterbegin", "<b>" + (ok ? biText("Correct", "సరైనది") : biText("Not quite", "సరైనది కాదు")) + "</b>");
+    why.hidden = false;
+    live.textContent = ok ? "Correct" : "Wrong. The answer is option " + "ABCD".charAt(ans - 1);
+  }
+
   // ── summary ──
   function showSummary() {
     var k = 0, x = 0;
@@ -417,7 +490,7 @@
   }
   function reviseMissed() {
     var ids = run.base.filter(function (id) { return run.marks[id] === "x"; });
-    startRun(ids, { order: run.order, mode: run.mode, lang: run.lang, density: run.density, chapter: run.chapter });
+    startRun(ids, { order: run.order, mode: run.mode, lang: run.lang, density: run.density, chapter: run.chapter, all: ids.slice() });
   }
   function dismissSummary() {
     sum.hidden = true;
@@ -436,6 +509,7 @@
     if (!b || !run) return;
     if (actions[b.id]) return actions[b.id]();
     if (b.classList.contains("ac-tile")) return openDetail(+b.dataset.i);
+    if (b.dataset.opt) return answerPractice(b);
     if (b.dataset.judge) return judge(b.dataset.judge);
     if (b.dataset.act === "missed") return reviseMissed();
     if (b.dataset.act === "back") return exitStudy();

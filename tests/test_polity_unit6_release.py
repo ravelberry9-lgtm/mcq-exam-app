@@ -234,3 +234,113 @@ def test_article_cards_embedded_in_ascending_article_order(client,app):
     nums=re.findall(r'<div class="s-num">([^<]+)</div>',h)
     assert nums==[c['article'] for c in cards] and [ac.article_key(n) for n in nums]==sorted(ac.article_key(n) for n in nums)
     i=nums.index;assert i('12')<i('21')<i('21A')<i('22')<i('51A(a)')<i('51A(k)')<i('60')<i('324')<i('394')<i('394A')<i('395')
+
+
+def test_recall_hub_and_decks(client,app):
+    from app.services import recall_decks as rd
+    enable(app)
+    h=client.get('/learn/polity/unit6/recall').get_data(as_text=True)
+    assert client.get('/learn/polity/unit6/recall').status_code==200
+    for d in rd.DECKS:
+        assert f'/learn/polity/unit6/recall/{d}"' in h
+        r=client.get(f'/learn/polity/unit6/recall/{d}');assert r.status_code==200,d
+        page=r.get_data(as_text=True)
+        assert page.count('class="ac-src"')==len(rd.items(d)) and f'data-store="{rd.DECKS[d]["store"]}"' in page
+    assert client.get('/learn/polity/unit6/recall/nope').status_code==404
+    assert client.get('/learn/polity/unit6/recall/cases?chapter=9.9').status_code==404
+    # articles deck keeps its URL and its localStorage key
+    a=client.get('/learn/polity/unit6/articles?chapter=6.4').get_data(as_text=True)
+    assert 'data-store="u6_artcards_v1"' in a and 'data-setup-store="u6_artcards_setup"' in a and 'value="6.4" checked' in a
+    assert len({d['store'] for d in rd.DECKS.values()})==len(rd.DECKS)
+    c=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
+    assert 'Case → Issue' in c and 'Theme → Cases' in c and 'data-kind="text"' in c and 'Kesavananda Bharati case' in c
+    u=client.get('/learn/polity/unit6/unit').get_data(as_text=True)
+    assert 'Recall cards / రీకాల్ కార్డులు' in u and '/learn/polity/unit6/recall"' in u
+
+
+def test_recall_sort_order():
+    from app.services import recall_decks as rd
+    assert [i['sort'] for i in rd.items('amendments')]==sorted(i['sort'] for i in rd.items('amendments'))
+    cs=[(i['theme_i'],i['sort'],i['front_en'].lower()) for i in rd.items('cases')];assert cs==sorted(cs)
+
+
+def test_recall_deck_files_schema():
+    import json,re
+    from pathlib import Path
+    from app.services import recall_decks as rd
+    root=Path(rd.__file__).resolve().parents[2]/'content'/'polity'/'g2'
+    card_ids={c['id'] for f in (root/'concept_cards').glob('cards_*.json') for c in json.loads(f.read_text(encoding='utf-8'))}
+    files=sorted(rd.DIR.glob('*.json'));assert files
+    seen=set()
+    for f in files:
+        deck=f.stem.removesuffix('_new');assert deck in rd.DECKS,f
+        for it in json.loads(f.read_text(encoding='utf-8')):
+            assert it['id'] not in seen,it['id'];seen.add(it['id'])
+            assert it['deck']==deck and it['source'] in ('laxmikanth','new') and isinstance(it['two_way'],bool)
+            assert (it['source']=='new')==f.stem.endswith('_new'),it['id']
+            assert isinstance(it['sort'],int) and re.fullmatch(r'6\.[1-9]',it['chapter'])
+            for k in ('front','cue','title','says'):assert it[k+'_en'].strip() and it[k+'_te'].strip(),(it['id'],k)
+            assert bool(it.get('trap_en'))==bool(it.get('trap_te')) and len(it.get('points_en') or [])==len(it.get('points_te') or [])
+            assert re.search(r'[ఀ-౿]',it['front_te']+it['says_te']),it['id']
+            # the cue must not give the answer away: no number, name or year from the front
+            cue=(it['cue_en']+' '+it['cue_te']).lower()
+            num=re.match(r'\d+',it['front_en'])
+            if num:assert not re.search(r'(?<!\d)'+num.group()+r'(?!\d)',cue),it['id']
+            # party names only: a bracketed alias such as '(Fourth Judges case)' is not checked
+            for w in re.findall(r'[A-Za-z]{4,}',re.sub(r'\([^)]*\)','',it['front_en'])):
+                if w.lower() not in ('case','amendment','union','state','india','constitution','college','association','foundation','society','students'):assert w.lower() not in cue,(it['id'],w)
+            if it.get('front_sub'):assert str(it['front_sub']) not in cue,it['id']
+            assert all(c in card_ids for c in it['card_ids']),it['id']
+
+
+def test_recall_case_themes_and_theme_view(client,app):
+    import json,re
+    from app.services import recall_decks as rd
+    enable(app)
+    names={t[1]:t[2] for t in rd.THEMES}
+    for f in rd.deck_files('cases'):
+        for it in json.loads(f.read_text(encoding='utf-8')):
+            assert it.get('theme_en') in names and it.get('theme_te')==names[it['theme_en']],it['id']
+            assert '(' not in it['front_en'] or 'Judges' in it['front_en'],it['id']  # no descriptive brackets on the tile face
+    th=rd.themes('cases');assert 8<=len(th)<=12 and sum(len(t['cases']) for t in th)==len(rd.items('cases'))
+    assert rd.themes('amendments')==[]
+    page=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
+    assert page.count('data-theme-tile="1"')==len(th) and 'data-themes="1"' in page
+    for t in th:assert f'data-id="{t["id"]}"' in page and t['te'] in page
+    k=next(c for c in rd.items('cases') if c['id']=='CS-kesavananda-1973')
+    src=page[page.index('data-id="CS-kesavananda-1973"'):];src=src[:src.index('</article>')]
+    assert re.search(r'<div class="s-sub">\s*</div>',src)  # year is not on the tile face
+    assert 'class="ac-year">1973' in src and k['cue_en'] in src
+    am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
+    assert 'data-theme-tile' not in am and 'data-themes="0"' in am
+
+
+def test_recall_case_teacher_layout_and_fallback(client,app,monkeypatch):
+    from app.services import recall_decks as rd
+    enable(app)
+    base=rd.items('cases')
+    def card(page,cid):
+        s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
+    # fallback: no new fields -> says under 'What the Court said', no exam section, no compare table
+    NEW=('one_line','story','question','held','meaning','remember')
+    bare=[{k:v for k,v in c.items() if k not in ('compare','exam') and not k.startswith(NEW)} for c in base]
+    orig=rd.items
+    monkeypatch.setattr(rd,'items',lambda d:bare if d=='cases' else orig(d))
+    page=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
+    base=bare
+    g=card(page,'CS-gopalan-1950');gop=next(c for c in base if c['id']=='CS-gopalan-1950')
+    assert 'కోర్టు ఏమంది?' in g and gop['says_en'][:40] in g and 'ct-exam' not in g and 'ct-cmp' not in g and 'ct-one' not in g
+    extra=dict(one_line_en='ONE-LINE-EN',one_line_te='ఒకటి',story_en='STORY-EN',story_te='కథ',question_en='Q-EN',question_te='ప్ర',
+               held_en='HELD-EN',held_te='చెప్పింది',meaning_en='MEAN-EN',meaning_te='అర్థం',remember_en=['HOOK-EN'],remember_te=['హుక్'],
+               compare={'with_id':'CS-maneka-gandhi-1978','rows':[{'label_en':'L','label_te':'ల','this_en':'NARROW','this_te':'ఇ','other_en':'WIDE','other_te':'వి'}]},
+               exam={'patterns_en':['PAT-EN'],'patterns_te':['ప'],'pyqs':[{'qid':'PYQ-X','kind':'pyq','exam':'APPSC Group II','year':2011,'q_en':'PYQ-Q','q_te':'ప్రశ్న','answer_en':'ANS-EN','answer_te':'జ'}],
+                     'practice':{'q_en':'PR-Q','q_te':'ప్ర','options_en':['a','b','c','d'],'options_te':['అ','ఆ','ఇ','ఈ'],'answer':2,'why_en':'WHY-EN','why_te':'ఎందుకు'}})
+    monkeypatch.setattr(rd,'items',lambda d:[dict(c,**extra) if c['id']=='CS-gopalan-1950' else c for c in base] if d=='cases' else base)
+    g=card(client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True),'CS-gopalan-1950')
+    order=[g.index(k) for k in ('ONE-LINE-EN','STORY-EN','Q-EN','HELD-EN','MEAN-EN','class="ct-cmp"','HOOK-EN','ac-trap','class="ac-ref"','class="ct-exam"','PAT-EN','PYQ-Q','PR-Q')]
+    assert order==sorted(order)
+    assert gop['says_en'][:40] not in g and 'Maneka Gandhi case' in g and 'NARROW' in g and 'WIDE' in g
+    assert 'PYQ · APPSC Group II 2011' in g and 'ANS-EN' in g and '<details class="ct-reveal">' in g
+    assert 'data-ans="2"' in g and g.count('class="ct-opt"')==4 and 'WHY-EN' in g
+    am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
+    assert 'ct-exam' not in am and 'ct-one' not in am

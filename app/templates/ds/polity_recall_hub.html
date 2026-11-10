@@ -1,0 +1,24 @@
+{% extends 'ds/base.html' %}
+{% block title %}Recall cards · Unit 6{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261110i') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><b>Recall cards · రీకాల్ కార్డులు</b></div>{% endblock %}
+{% block content %}<div class="u6 ac rh" id="ac" data-lang="both">
+  <header class="rh-head">
+    <h1 class="ac-title"><span class="ac-te" lang="te">ఏ కార్డులతో సాధన చేద్దాం?</span><span class="ac-en" lang="en">Pick a deck to recall</span></h1>
+    <p class="rh-lede"><span lang="te">ముందు వైపు చూసి జవాబు గుర్తు చేసుకోండి, తర్వాత తెరిచి సరిచూసుకోండి.</span></p>
+  </header>
+  <ul class="rh-list">{% for d in decks %}
+    <li><a class="rh-tile" href="{{ url_for('polity_unit6.recall_deck',deck_id=d.id) }}" data-store="{{ d.store }}" data-total="{{ d.count }}">
+      <span class="rh-ico" aria-hidden="true">{{ d.icon }}</span>
+      <span class="rh-main">
+        <b class="rh-name"><span lang="te">{{ d.title_te }}</span> <span class="rh-en">{{ d.title_en }}</span></b>
+        <span class="rh-desc"><span lang="te">{{ d.desc_te }}</span><span class="rh-en">{{ d.desc_en }}</span></span>
+        <span class="rh-bar" aria-hidden="true"><i class="k"></i><i class="x"></i></span>
+        <span class="rh-stat"><b>{{ d.count }}</b> cards<span class="rh-prog"></span>{% if d.new %} · {{ d.new }} new{% endif %}</span>
+      </span>
+      <span class="rh-go" aria-hidden="true">›</span>
+    </a></li>{% endfor %}
+  </ul>
+  <p class="rh-note">Progress is saved on this device only · పురోగతి ఈ పరికరంలోనే సేవ్ అవుతుంది</p>
+</div>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_recall_hub.js',v='20261110i') }}" defer></script>{% endblock %}

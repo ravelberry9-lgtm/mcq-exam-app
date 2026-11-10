@@ -10,6 +10,7 @@ from .polity_maps import CONTENT,read,records,catalog
 from ..services.polity_sections import section_links,directory
 from ..services import polity_cards as _cards
 from ..services import article_cards as _artcards
+from ..services import recall_decks as _recall
 import re,re as _re
 from functools import lru_cache
 _JARGON=_re.compile(r'(fact register|bank key|authenticated pairing|tests separately|untested|source[- ]bank|content team|GBK paragraph|Laxmikanth paragraph)',_re.I)
@@ -198,16 +199,24 @@ def home():
     units=read(CONTENT/'MASTER-INDEX.json')['units']
     return render_template('ds/polity_subject.html',units=units)
 
-@bp.get('/articles')
-def articles():
-    ch=request.args.get('chapter') or None
-    if ch and ch not in {c['chapter'] for c in _artcards.all_cards()}:abort(404)
-    cards=_artcards.all_cards()
+def _recall_page(deck_id):
+    d=_recall.deck(deck_id)
+    if not d:abort(404)
+    cards=_recall.items(deck_id)
     if not cards:abort(404)
+    ch=request.args.get('chapter') or None
+    if ch and ch not in {c['chapter'] for c in cards}:abort(404)
     counts={}
     for c in cards:counts[c['chapter']]=counts.get(c['chapter'],0)+1
-    return render_template('ds/polity_articles.html',cards=cards,total=len(cards),counts=counts,chapter=ch,chs=sorted(counts),
-                           names=ARTCARD_CHAPTERS,lang=language(),lang_set='qlang' in request.args)
+    return render_template('ds/polity_recall.html',d=d,cards=cards,total=len(cards),counts=counts,chapter=ch,chs=sorted(counts),
+                           names=ARTCARD_CHAPTERS,lang=language(),lang_set='qlang' in request.args,themes=_recall.themes(deck_id))
+@bp.get('/articles')
+def articles():return _recall_page('articles')
+@bp.get('/recall')
+def recall_hub():
+    return render_template('ds/polity_recall_hub.html',decks=[d for d in _recall.all_decks() if d['count']],lang=language())
+@bp.get('/recall/<deck_id>')
+def recall_deck(deck_id):return _recall_page(deck_id)
 # Short chapter names for the article-card chips (number, English, Telugu).
 ARTCARD_CHAPTERS={'6.1':('Nature and development','స్వభావం, పరిణామం'),'6.2':('Salient features','ముఖ్య లక్షణాలు'),
     '6.3':('Preamble','ప్రవేశిక'),'6.4':('Fundamental Rights','ప్రాథమిక హక్కులు'),'6.5':('Directive Principles','ఆదేశిక సూత్రాలు'),
