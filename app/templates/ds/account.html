@@ -8,7 +8,7 @@
 .acc .ok{background:#f0fdf4;border:1px solid #bbf7d0;padding:12px;border-radius:12px}.acc .code{font:700 1.5rem ui-monospace,monospace;letter-spacing:.08em;text-align:center;padding:14px;margin:10px 0;background:#fff7ed;border:2px dashed #f59e0b;border-radius:12px;user-select:all}
 .acc .alt{margin-top:14px;font-size:.92rem}.acc .alt a{color:#0f766e;font-weight:600}.acc .muted{color:#64748b;font-size:.9rem}
 </style>{% endblock %}
-{% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><b>My account</b></div>{% if fresh %}<script>try{Object.keys(localStorage).forEach(function(k){if(k.indexOf("mk:")===0)localStorage.removeItem(k)})}catch(e){}</script>{% endif %}{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a class="back" href="/learn">‹ Learn</a><b>My account</b></div>{% if fresh %}<script>try{Object.keys(localStorage).forEach(function(k){if(k.indexOf("mk:")===0)localStorage.removeItem(k)})}catch(e){}</script>{% endif %}{% endblock %}
 {% block content %}<div class="acc">
 {% if error %}<p class="err" role="alert">{{ error }}</p>{% endif %}
 {% if mode=='created' %}

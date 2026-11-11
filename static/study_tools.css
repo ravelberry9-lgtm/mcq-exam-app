@@ -22,6 +22,13 @@ span.mk-hl.mk-red,span.mk-hl.mk-purple{background:#fecaca}
 .mk-toast[hidden]{display:none}
 /* saved list page */
 .mk-saved-link{display:inline-block;margin:6px 0 12px;font-weight:700;color:#b45309;text-decoration:none}
-.mk-list{max-width:46rem;margin:auto;padding:1rem}.mk-list h1{font-size:1.25rem}.mk-list h2{font-size:1.05rem;margin-top:1.4rem}
+.mk-list{max-width:46rem;margin:0 auto;padding:.5rem 0 1rem;width:100%}.mk-list h1{font-size:1.25rem}.mk-list h2{font-size:1.05rem;margin-top:1.4rem}
 .mk-list ul{list-style:none;padding:0;margin:0}.mk-list li{padding:10px 12px;margin:8px 0;border:1px solid #e2e8f0;border-radius:12px;background:#fff;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
 .mk-list li a{font-weight:600;color:#0f766e;text-decoration:none;flex:1 1 60%}.mk-n{font-size:.8rem;color:#64748b}.mk-list em{flex-basis:100%;font-size:.88rem;color:#475569}
+/* floating dock on every page */
+.mk-dock{position:fixed;right:10px;bottom:calc(150px + env(safe-area-inset-bottom));z-index:9000;display:flex;flex-direction:column;gap:8px}
+.mk-dock .mk-star,.mk-dock-saved,.mk-dock-pen{width:44px;height:44px;min-width:44px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;padding:0;border:1px solid #e2e8f0}
+.mk-dock .mk-star{order:0}.mk-dock-pen{order:1;cursor:pointer}.mk-dock-saved{order:2}
+.mk-bar:not(.has-sel) .mk-sw{opacity:.55}
+.reading-mode .mk-dock,.infography-reading .mk-dock{opacity:.85}
+@media print{.mk-dock,.mk-bar{display:none!important}}

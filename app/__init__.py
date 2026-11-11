@@ -95,6 +95,8 @@ def create_app(config_class: type = Config) -> Flask:
     from .routes.account import bp as account_bp, current_account
     app.register_blueprint(account_bp)
     app.add_template_global(current_account, 'current_account')
+    from .services.marks_inject import init_marks_inject
+    init_marks_inject(app)
     from .routes.access import bp as access_bp
     app.register_blueprint(access_bp)
 

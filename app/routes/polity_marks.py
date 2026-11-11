@@ -5,7 +5,7 @@ from ..db import db
 from ..polity_models import PolityMark
 from ..services.device import device_id
 
-bp = Blueprint('polity_marks', __name__, url_prefix='/learn/polity/marks')
+bp = Blueprint('polity_marks', __name__, url_prefix='/learn/my-saved')
 _ready = []
 MAX_MARKS = 500
 MAX_BODY = 256 * 1024
