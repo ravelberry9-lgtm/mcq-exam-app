@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from app.routes.polity_maps import CONTENT, records
 from app.services import pyq_metrics as P
 
-BANK = CONTENT.parent / 'pyq_bank' / 'indian_polity_pyq_bank_v3.70.0.json'
+BANK = CONTENT.parent / 'pyq_bank' / 'indian_polity_pyq_bank_v3.71.0.json'
 
 
 def soup(r):

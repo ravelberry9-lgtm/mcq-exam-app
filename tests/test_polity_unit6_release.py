@@ -8,7 +8,7 @@ from app.routes.polity_unit6 import test_records as chapter_test_records
 def enable(app):app.config['POLITY_UNIT6_ENABLED']=True
 
 def added_ids():
-    """Ids from the unit-distribution files (PYQ bank v3.70.0 records outside unit 6's reviewed sets, Laxmikanth MCQs)."""
+    """Ids from the unit-distribution files (PYQ bank v3.71.0 records outside unit 6's reviewed sets, Laxmikanth MCQs)."""
     import json
     from app.routes.polity_maps import CONTENT
     ids=set()
@@ -726,7 +726,7 @@ def test_recall_pyq_count_matches_cards_and_map():
     from pathlib import Path
     from app.services import recall_decks as rd
     root=Path(__file__).resolve().parents[1]/'content'/'polity'
-    mb={r['record_id']:r for r in json.loads((root/'pyq_bank'/'indian_polity_pyq_bank_v3.70.0.json').read_text(encoding='utf-8'))}
+    mb={r['record_id']:r for r in json.loads((root/'pyq_bank'/'indian_polity_pyq_bank_v3.71.0.json').read_text(encoding='utf-8'))}
     pm=json.loads((root/'g2'/'recall_decks'/'pyq_map.json').read_text(encoding='utf-8'))
     total=0
     for d in rd.DECKS:
