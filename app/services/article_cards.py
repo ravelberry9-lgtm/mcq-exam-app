@@ -15,9 +15,11 @@ def article_key(article):
 
     Numeric part first, then the letter suffix, then a clause in brackets:
     21 < 21A < 21B < 22; 239A < 239AA < 239B; 243A < 243Z < 243ZA; 371 < 371A .. 371J;
-    51A < 51A(a) < 51A(b) .. 51A(k); 394 < 394A < 395. Labels with no leading number sort last.
+    51A < 51A(a) < 51A(b) .. 51A(k); 394 < 394A < 395. 'Preamble' sorts first; other labels with no leading number sort last.
     """
     s = str(article)
+    if s.strip().lower() == 'preamble':  # the Preamble comes before Article 1
+        return (-1, 0, '', (), s)
     m = _ART.match(s)
     if not m:
         return (1, 0, '', (), s)

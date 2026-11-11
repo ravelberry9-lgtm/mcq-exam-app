@@ -2,7 +2,7 @@
 import os,random,uuid
 from pathlib import Path
 from datetime import datetime,timedelta
-from flask import Blueprint,abort,current_app,redirect,render_template,request,url_for,make_response
+from flask import Blueprint,abort,current_app,redirect,render_template,request,url_for,make_response,jsonify
 from ..db import db
 from ..polity_models import PolityUnit6State,PolityUnit6Progress,PolityUnit6Exam
 from ..services.device import device_id
@@ -209,12 +209,12 @@ def test_records(cid):
 
 @bp.before_request
 def _recall_fresh():
-    if request.endpoint in ('polity_unit6.home','polity_unit6.recall_hub','polity_unit6.recall_deck','polity_unit6.recall_card','polity_unit6.articles','polity_unit6.unit'):_recall.refresh()
+    if request.endpoint in ('polity_unit6.home','polity_unit6.recall_hub','polity_unit6.recall_deck','polity_unit6.recall_card','polity_unit6.articles','polity_unit6.unit','polity_unit6.recall_trees','polity_unit6.recall_trees_chains'):_recall.refresh()
 @bp.get('/')
 def home():
     units=read(CONTENT/'MASTER-INDEX.json')['units']
     decks=[d for d in _recall.all_decks() if d['count']] if enabled() else []
-    return render_template('ds/polity_subject.html',units=units,decks=decks,pm=_pm.metrics() if decks else None)
+    return render_template('ds/polity_subject.html',units=units,decks=decks,pm=_pm.metrics() if decks else None,trees=_recall.trees()['counts'] if decks else None)
 
 def _recall_page(deck_id):
     d=_recall.deck(deck_id)
@@ -225,7 +225,10 @@ def _recall_page(deck_id):
     if ch and ch not in {c['chapter'] for c in cards}:abort(404)
     _open=request.args.get('open') or ''
     _back=None;bk=request.args.get('back') or ''
-    if ':' in bk:
+    if bk.startswith('trees'):
+        tab=bk.split(':',1)[1] if ':' in bk else ''
+        _back={'id':'','deck':'trees','en':'Timeline trees','te':'కాలక్రమ వృక్షాలు (Trees)','url':url_for('polity_unit6.recall_trees')+('#'+tab if tab in ('am','case','both','lines') else '')}
+    elif ':' in bk:
         bd,bid=bk.split(':',1);bc=_recall.index()['cards'].get(bid) if _recall.deck_of(bid)==bd else None;lb=bc and (bc['front_en'],bc.get('front_te') or bc['front_en'])
         if lb:_back={'id':bid,'deck':bd,'en':lb[0],'te':lb[1],'url':_recall.card_url(bid)}
     # ?for=<card id>: a matrix of exactly the cards of this deck linked to that card (from its Related row)
@@ -267,7 +270,16 @@ def recall_card(deck_id,card_id):
 def articles():return _recall_page('articles')
 @bp.get('/recall')
 def recall_hub():
-    return render_template('ds/polity_recall_hub.html',decks=[d for d in _recall.all_decks() if d['count']],lang=language(),pm=_pm.metrics())
+    return render_template('ds/polity_recall_hub.html',decks=[d for d in _recall.all_decks() if d['count']],lang=language(),pm=_pm.metrics(),trees=_recall.trees()['counts'])
+@bp.get('/recall/trees')
+def recall_trees():
+    t=_recall.trees();light={k:t[k] for k in ('v','nodes','themes','parts','counts')}
+    import json as _j  # raw UTF-8 (tojson's \\u escapes double the Telugu bytes); '<' escaped so the script tag cannot close early
+    blob=_j.dumps(light,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
+    return render_template('ds/polity_trees.html',light=light,blob=blob,lang=language())
+@bp.get('/recall/trees/chains.json')
+def recall_trees_chains():
+    r=jsonify(_recall.trees()['chains']);r.headers['Cache-Control']='public, max-age=600';return r
 @bp.get('/recall/<deck_id>')
 def recall_deck(deck_id):return _recall_page(deck_id)
 # Short chapter names for the article-card chips (number, English, Telugu).

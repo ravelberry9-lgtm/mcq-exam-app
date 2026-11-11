@@ -100,7 +100,8 @@ def _article_item(c):
     rich = {k: c[k] for k in ARTICLE_RICH if c.get(k)}
     return rich | {
         'id': c['id'], 'deck': 'articles', 'chapter': c['chapter'], 'sort': _art.article_key(c['article']),
-        'front_en': f"Article {c['article']}", 'front_te': f"ప్రకరణ {c['article']}", 'front_short': c['article'],
+        'front_en': c['label_en'] if c['article'] == 'Preamble' else f"Article {c['article']}",
+        'front_te': c['label_te'] if c['article'] == 'Preamble' else f"ప్రకరణ {c['article']}", 'front_short': c['article'],
         'front_sub': c.get('part') or '',
         'cue_en': c['concept_en'], 'cue_te': c['concept_te'], 'two_way': True,
         'title_en': c['concept_en'], 'title_te': c['concept_te'], 'says_en': c['says_en'], 'says_te': c['says_te'],
@@ -539,3 +540,122 @@ def art_ref(no):
     by = {c.get('front_short'): c['id'] for c in index()['cards'].values() if c['id'].startswith('AC-')}
     cid = by.get(s) or by.get(re.sub(r'\(.*$', '', s))
     return (cid, card_url(cid)) if cid else None
+
+
+# ── timeline trees: one light index of amendments + cases by year, with lineage relations ──
+def _first_sentence(s, n=150):
+    s = re.sub(r'\s+', ' ', s or '').strip()
+    m = re.match(r'(.+?[.!?।])(\s|$)', s)
+    s = m.group(1) if m and len(m.group(1)) >= 40 else s
+    return s if len(s) <= n else s[:n].rsplit(' ', 1)[0] + '…'
+
+
+def _brief(s, n=110):
+    """First sentence of a one-line description, cut at a clause (or word) boundary near n chars."""
+    s = re.sub(r'\s+', ' ', s or '').strip()
+    for m in re.finditer(r'[.!?।](?=\s|$)', s):  # first real sentence end; skip initials like 'A.K.' / 'ఎ.కె.'
+        tok = s[:m.start()].rsplit(' ', 1)[-1]
+        if m.start() >= 40 and len(tok) > 3 and '.' not in tok:
+            s = s[:m.end()]
+            break
+    if len(s) <= n:
+        return s
+    cut = s[:n]
+    i = max(cut.rfind(x) for x in ('; ', ': ', ', ', ' — '))
+    cut = cut[:i] if i >= n * 0.55 else cut.rsplit(' ', 1)[0]
+    return cut.rstrip(' ,;:—') + '…'
+
+
+_REL = {  # (from kind, to kind, direction) -> (en, te); 'nx' = later step on the same lineage, 'pv' = earlier step
+    ('case', 'am', 'nx'): ('led to', 'దీని ఫలితం'), ('am', 'case', 'nx'): ('challenged in', 'సవాలు చేసిన కేసు'),
+    ('case', 'case', 'nx'): ('followed by', 'తర్వాతి కేసు'), ('am', 'am', 'nx'): ('followed by', 'తర్వాతి సవరణ'),
+    ('am', 'case', 'pv'): ('reply to', 'దీనికి కారణం'), ('case', 'am', 'pv'): ('reviewed', 'పరిశీలించిన సవరణ'),
+    ('case', 'case', 'pv'): ('after', 'దీనికి ముందు'), ('am', 'am', 'pv'): ('after', 'దీనికి ముందు'),
+}
+
+
+def _year(v):
+    m = re.search(r'(1[789]|20)\d\d', str(v or ''))
+    return int(m.group(0)) if m else None
+
+
+_TREES = {}
+
+
+def trees():
+    key = (data_version(), tuple(id(items(k)) for k in DECKS))
+    if _TREES.get('key') != key:
+        _TREES.clear()
+        _TREES.update(key=key, val=_build_trees())
+    return _TREES['val']
+
+
+def _build_trees():
+    """Light index for the Trees page: nodes (no full card content) sorted by year, chain lineages, filter chips."""
+    allc = index()['cards']
+    lk = links()
+    nodes = []
+    for deck_id, k in (('amendments', 'am'), ('cases', 'case')):
+        for it in items(deck_id):
+            y = _year(it.get('front_sub')) if k == 'am' else (_year(it.get('sort')) or _year(it.get('front_sub')))
+            if not y:
+                continue
+            o = {'id': it['id'], 'k': k, 'y': y, 'n': [it.get('front_en') or '', it.get('front_te') or it.get('front_en') or ''],
+                 'l': [_brief(it.get('one_line_en') or it.get('cue_en')),
+                       _brief(it.get('one_line_te') or it.get('cue_te') or it.get('one_line_en'))]}
+            if k == 'am':
+                o['no'] = int(it['sort']) if str(it.get('sort') or '').isdigit() else None
+                o['p'] = it.get('part') or ''
+            else:
+                o['th'] = it.get('theme_id') or ''
+                if it.get('popular_en'):
+                    o['pop'] = [it['popular_en'], it.get('popular_te') or it['popular_en']]
+            q = int(it.get('pyq_count') or 0)
+            if q:
+                o['q'] = q
+            if y < 1950:
+                o['old'] = 1
+            other = 'cases' if k == 'am' else 'amendments'
+            ln = [x for x in (lk.get(it['id']) or {}).get(other, []) if x in allc]
+            if ln:
+                o['ln'] = ln[:6]
+            nodes.append(o)
+    nodes.sort(key=lambda o: (o['y'], o['k'] != 'case', o.get('no') or 0, o['n'][0].lower()))
+    have = {o['id'] for o in nodes}
+    rel, lines = {}, []
+    for ch in chains().values():
+        steps = []
+        for s in ch.get('steps') or []:
+            ref = s.get('ref') if s.get('ref') in have else None
+            steps.append({'k': s.get('kind') or '', 'id': ref, 'y': _year(s.get('date')) or _year(s.get('label_en')),
+                          'n': [s.get('label_en') or '', s.get('label_te') or s.get('label_en') or ''],
+                          'w': [s.get('who_en') or '', s.get('who_te') or s.get('who_en') or ''],
+                          's': [_first_sentence(s.get('said_en'), 150), _first_sentence(s.get('said_te'), 150)]})
+        for a, b in zip(steps, steps[1:]):
+            if a['id'] and b['id']:
+                rel.setdefault(a['id'], []).append((b['id'], 'nx'))
+                rel.setdefault(b['id'], []).append((a['id'], 'pv'))
+        lines.append({'id': ch['chain_id'], 't': [ch.get('title_en') or '', ch.get('title_te') or ''],
+                      'sh': [ch.get('short_en') or '', ch.get('short_te') or ''],
+                      'i': [_first_sentence(ch.get('intro_en'), 220), _first_sentence(ch.get('intro_te'), 220)], 'st': steps})
+    kind = {o['id']: o['k'] for o in nodes}
+    for o in nodes:  # at most 2 relations: later lineage steps first, then earlier ones, then plain links.json links
+        cand = [x for x in rel.get(o['id'], []) if x[1] == 'nx'] + [x for x in rel.get(o['id'], []) if x[1] == 'pv']
+        cand += [(x, '') for x in o.get('ln', []) if x in kind]
+        seen, out = {o['id']}, []
+        for rid, d in cand:
+            if rid in seen:
+                continue
+            seen.add(rid)
+            en, te = _REL.get((o['k'], kind[rid], d), ('linked to', 'సంబంధిత'))
+            out.append([rid, en, te])
+            if len(out) == 2:
+                break
+        if out:
+            o['r'] = out
+    used_th = {o.get('th') for o in nodes}
+    used_p = {o.get('p') for o in nodes if o['k'] == 'am'}
+    return {'v': data_version(), 'nodes': nodes, 'chains': lines,
+            'themes': [[t[0], t[3], t[4], t[5], t[6], t[1], t[2]] for t in THEMES if t[0] in used_th],
+            'parts': [[P[0], P[1], P[2], P[4], P[5]] for P in PARTS if P[0] in used_p],
+            'counts': {'am': sum(o['k'] == 'am' for o in nodes), 'case': sum(o['k'] == 'case' for o in nodes)}}

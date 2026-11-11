@@ -733,7 +733,7 @@ def test_recall_pyq_count_matches_cards_and_map():
                 if r['correct_option'] in ('1','2','3','4'):
                     assert p['answer_en']==opts[int(r['correct_option'])-1],(it['id'],p['id'])
                 if not r['question_te']:
-                    assert p['q_te'] in ('',) or p['id'][4:]==r['record_id']  # empty unless the app's own Telugu exists
+                    assert p['q_te'] in ('',) or p['id'][4:]==r['record_id'] or p.get('translated')  # empty unless the app's own Telugu exists or ours (translated:true)
             total+=len(real)
     assert total>=600 and len({i for v in pm.values() for i in v})>=300
 

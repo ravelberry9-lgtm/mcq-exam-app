@@ -129,3 +129,8 @@ body:has(.u6) .bottomnav .navoff{opacity:1!important;color:#4B556B}
 .rh .pq{margin:14px 0 4px}
 @media (prefers-reduced-motion:reduce){.pq-more>summary::before{transition:none}}
 .pq-t th.pq-d{white-space:nowrap}
+/* 4th recall tile: Trees (timeline of amendments + cases) */
+.pr-row:has(.pr-trees){grid-template-columns:repeat(2,minmax(0,1fr))}@media(min-width:700px){.pr-row:has(.pr-trees){grid-template-columns:repeat(4,minmax(0,1fr))}}
+.pr-trees{--c:#334155}.pr-trees .pr-n{font-size:.86rem;line-height:1.35}
+.rh-trees .rh-ico{color:#334155}
+@media (prefers-color-scheme:dark){.pr-trees{--c:#CBD5E1}.rh-trees .rh-ico{color:#CBD5E1}}

@@ -1,0 +1,34 @@
+{% extends 'ds/base.html' %}
+{% block title %}Polity timeline trees{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111x') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_trees.css',v='20261111b') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.recall_hub') }}">‹ Recall cards</a><b>Timeline trees · కాలక్రమ వృక్షాలు</b></div>{% endblock %}
+{% block content %}<div class="u6 tr" id="tr" data-lang="{{ lang if lang in ('te','en','both') else 'both' }}" data-deck-url="{{ url_for('polity_unit6.recall_deck',deck_id='__DECK__') }}" data-chains-url="{{ url_for('polity_unit6.recall_trees_chains') }}">
+  <header class="tr-head">
+    <h1><span class="tr-te" lang="te">సవరణలు, కేసులు — కాలక్రమంలో</span><span class="tr-en" lang="en">Amendments and cases, year by year</span></h1>
+    <p class="tr-sub">{{ light.counts.am }} amendments · {{ light.counts.case }} cases · 1950–{{ light.nodes[-1].y }}</p>
+  </header>
+  <div class="tr-bar">
+    <div class="tr-tabs" role="tablist" aria-label="View">
+      <button role="tab" id="tab-am" data-tab="am" aria-selected="true"><i class="mk am" aria-hidden="true"></i><span class="lg">Amendments</span><span class="sm" aria-hidden="true">Amend.</span></button>
+      <button role="tab" id="tab-case" data-tab="case" aria-selected="false"><i class="mk case" aria-hidden="true"></i><span>Cases</span></button>
+      <button role="tab" id="tab-both" data-tab="both" aria-selected="false"><i class="mk both" aria-hidden="true"></i><span class="lg">Together</span><span class="sm" aria-hidden="true">Both</span></button>
+      <button role="tab" id="tab-lines" data-tab="lines" aria-selected="false"><i class="mk lines" aria-hidden="true"></i><span class="lg">Lineages</span><span class="sm" aria-hidden="true">Lines</span></button>
+    </div>
+    <div class="tr-tools">
+      <input type="search" id="tr-q" placeholder="Search name or no. · పేరు / సంఖ్య" aria-label="Search by name or amendment number" autocomplete="off">
+      <button type="button" class="tr-lang" id="tr-lang" aria-label="Change language"></button>
+      <button type="button" class="tr-fbtn" id="tr-fbtn" aria-expanded="false" aria-controls="tr-sheet"><span>Filters</span><b id="tr-fn" hidden></b></button>
+    </div>
+    <div class="tr-sheet" id="tr-sheet" hidden>
+      <div class="tr-chips" id="tr-chips" aria-label="Filter"></div>
+      <label class="tr-pyq"><input type="checkbox" id="tr-pyq"> <span>Only asked in PYQs</span></label>
+      <label class="tr-pyq tr-oldl"><input type="checkbox" id="tr-old"> <span>Show pre-1950 &amp; foreign cases</span></label>
+    </div>
+  </div>
+  <nav class="tr-jump" id="tr-jump" aria-label="Jump to decade"></nav>
+  <p class="tr-count" id="tr-count" aria-live="polite"></p>
+  <div class="tr-body" id="tr-body"></div>
+  <noscript><p class="tr-count">This timeline needs JavaScript. Open the <a href="{{ url_for('polity_unit6.recall_deck',deck_id='amendments') }}">amendment cards</a> or <a href="{{ url_for('polity_unit6.recall_deck',deck_id='cases') }}">case cards</a>.</p></noscript>
+</div>
+<script id="tr-data" type="application/json">{{ blob|safe }}</script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_trees.js',v='20261111b') }}" defer></script>{% endblock %}

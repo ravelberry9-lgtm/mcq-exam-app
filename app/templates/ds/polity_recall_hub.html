@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% block title %}Polity recall cards{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111w') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111q') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111x') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111q') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><b>Polity recall cards · పాలిటీ రీకాల్ కార్డులు</b></div>{% endblock %}
 {% block content %}<div class="u6 ac rh" id="ac" data-lang="both">
   <header class="rh-head">
@@ -19,6 +19,14 @@
         {% set q=pm.by_deck.get(d.id) %}{% if q %}<span class="pq-tile"><span>PYQ <b>{{ q.pyqs }}</b></span><span>APPSC <b>{{ q.appsc_pyqs }}</b></span></span>{% endif %}</span>
       <span class="rh-go" aria-hidden="true">›</span>
     </a></li>{% endfor %}
+    <li><a class="rh-tile rh-trees" href="{{ url_for('polity_unit6.recall_trees') }}">
+      <span class="rh-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3v18"/><circle cx="6" cy="6" r="2" fill="currentColor"/><rect x="4" y="12" width="4" height="4" rx=".5" fill="currentColor"/><path d="M10 6h10M10 14h7"/></svg></span>
+      <span class="rh-main">
+        <b class="rh-name"><span class="rh-en">Trees</span></b>
+        <span class="rh-desc"><span class="rh-en">Amendments and cases on one timeline, 1951 to today, with the lineages that link them</span></span>
+        <span class="rh-stat"><b>{{ trees.am }}</b> amendments · <b>{{ trees.case }}</b> cases</span></span>
+      <span class="rh-go" aria-hidden="true">›</span>
+    </a></li>
   </ul>
   {% include "ds/_pyq_metrics.html" %}
   <p class="rh-note">Progress is saved on this device only · పురోగతి ఈ పరికరంలోనే సేవ్ అవుతుంది</p>
