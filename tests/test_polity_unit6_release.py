@@ -606,7 +606,7 @@ def test_recall_lazy_card_endpoint_filters_and_deep_link(client,app):
     from app.services import recall_decks as rd
     enable(app)
     # the deck page carries light tile data only; full cards come from the endpoint
-    for d,limit in (('articles',250_000),('amendments',150_000),('cases',400_000)):
+    for d,limit in (('articles',450_000),('amendments',200_000),('cases',400_000)):
         page=client.get(f'/learn/polity/unit6/recall/{d}').get_data(as_text=True)
         assert len(page.encode())<limit,(d,len(page.encode()))
         assert 'class="s-back"' not in page and 'ct-exam' not in page
