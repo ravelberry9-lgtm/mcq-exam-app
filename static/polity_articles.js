@@ -222,14 +222,19 @@
     else if (src.querySelector(".s-short")) {
       var vsEl = src.querySelector(".s-vs");
       cue = '<span class="t-front t-case"><span class="t-p1">' + src.querySelector(".s-short").innerHTML + "</span>" +
-        (vsEl && vsEl.textContent.trim() ? '<span class="t-vs">' + vsEl.innerHTML + "</span>" : "") + (sb ? '<span class="t-sub">' + esc(sb) + "</span>" : "") + "</span>";
+        (vsEl && vsEl.textContent.trim() ? '<span class="t-vs">' + vsEl.innerHTML + "</span>" : "") + (sb ? '<span class="t-sub">' + esc(sb) + "</span>" : "") + popHTML(src) + "</span>";
     }
-    else if (TEXT_FRONT) cue = '<span class="t-front">' + src.querySelector(".s-front").innerHTML + (sb ? '<span class="t-sub">' + esc(sb) + "</span>" : "") + "</span>";
+    else if (TEXT_FRONT) cue = '<span class="t-front">' + src.querySelector(".s-front").innerHTML + (sb ? '<span class="t-sub">' + esc(sb) + "</span>" : "") + popHTML(src) + "</span>";
     else if (sb && D.deck !== "articles") cue = '<span class="t-numwrap"><b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + '</b><span class="t-sub">' + esc(sb) + "</span></span>";
     else cue = '<b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + "</b>";
     return '<button type="button" class="ac-tile" data-i="' + index + '" data-state="' + state + '" style="--acc:' + src.dataset.acc + ';--acc-ink:' + (src.dataset.ink || '') +
       '" aria-label="' + esc(label) + '"><span class="t-ch' + (band ? " t-band" : "") + '" aria-hidden="true">' + (band ? band.innerHTML : src.dataset.ch) +
       '</span><span class="t-mark" aria-hidden="true"></span><span class="t-cue">' + cue + "</span></button>";
+  }
+  // popular name ('Cross Roads case') under the year: 3 x 6 only, and fitTiles drops it when it would shrink the cue
+  function popHTML(src) {
+    var p = src.querySelector(".s-pop");
+    return p && run.density === "18" ? '<span class="t-pop">' + p.innerHTML + "</span>" : "";
   }
   function renderMatrix() {
     stage.dataset.lang = run.lang;
@@ -297,7 +302,16 @@
     var b0 = boxes[0];
     var max = run.mode === "a" || THEMES ? Math.max(13, Math.min(30, Math.round(Math.min(b0.clientWidth / 5.5, b0.clientHeight / 3.2))))
       : Math.max(13, Math.min(26, Math.round(Math.min(b0.clientWidth / 6.5, b0.clientHeight / 4))));
-    var fits = boxes.map(function (box) { return fitOne(box, max); });
+    var fits = boxes.map(function (box) {
+      var fs = fitOne(box, max), pop = box.querySelector(".t-pop");
+      if (!pop) return fs;
+      var hold = pop.parentNode, next = pop.nextSibling;
+      hold.removeChild(pop);
+      var bare = fitOne(box, max);
+      if (bare > fs || box.classList.contains("clamp")) return bare; // never crowd: keep the name only when the cue keeps its size
+      hold.insertBefore(pop, next);
+      return fitOne(box, max);
+    });
     var sorted = fits.slice().sort(function (a, b) { return a - b; });
     var common = sorted[Math.floor(sorted.length / 2)];
     boxes.forEach(function (box, i) { if (fits[i] > common) fitOne(box, common); });
@@ -395,7 +409,8 @@
     detail.style.setProperty("--acc-ink", src.dataset.ink);
     detail.dataset.lang = run.lang;
     detail.dataset.state = progress[id] || "";
-    $("ac-dchap").innerHTML = src.querySelector(".s-chap").innerHTML;
+    var topic = src.querySelector(".s-topic"), heroX = src.querySelector(".s-hero");
+    $("ac-dchap").innerHTML = src.querySelector(".s-chap").innerHTML + (topic ? " " + topic.innerHTML : "");
     var sb = esc(sub(id)), pill = isTheme(id) ? biText("Theme", "అంశం") : biText(D.pillEn || "Article", D.pillTe || "ప్రకరణ");
     var pEl = src.querySelector(".s-parties"), sameName = pEl && frontEn(id) === pEl.querySelector(".ac-en").textContent.trim();
     var head = pEl
@@ -404,7 +419,9 @@
       : TEXT_FRONT
       ? '<span class="ac-pill txt"><small>' + pill + "</small>" + src.querySelector(".s-front").innerHTML + (sb ? '<span class="p-sub">' + sb + "</span>" : "") + "</span>"
       : '<span class="ac-pill"><small>' + pill + "</small>" + n + (sb && D.deck !== "articles" ? '<span class="p-sub">' + sb + "</span>" : "") + "</span>";
-    $("ac-dtitle").innerHTML = head + (isTheme(id) ? "" : '<span class="ac-anstext">' + src.querySelector(".s-title").innerHTML + "</span>");
+    var popl = src.querySelector(".s-popline");
+    $("ac-dtitle").innerHTML = head + (popl ? '<div class="ch-hero">' + popl.innerHTML + "</div>" : "") + (isTheme(id) ? "" : '<span class="ac-anstext">' + src.querySelector(".s-title").innerHTML + "</span>") +
+      (heroX ? '<div class="ch-hero">' + heroX.innerHTML + "</div>" : "");
     $("ac-dbody").innerHTML = src.querySelector(".s-back").innerHTML;
     detail.dataset.theme = isTheme(id) ? "1" : "";
     if (isTheme(id)) {
@@ -574,10 +591,17 @@
     if (b.classList.contains("ac-tile")) return openDetail(+b.dataset.i);
     if (b.dataset.opt) return answerPractice(b);
     if (b.dataset.jump) return jumpTo(b.dataset.jump);
+    if (b.dataset.tab) return chainTab(b);
     if (b.dataset.judge) return judge(b.dataset.judge);
     if (b.dataset.act === "missed") return reviseMissed();
     if (b.dataset.act === "back") return exitStudy();
     if (b.dataset.act === "stay") return dismissSummary();
+  }
+  // a card in several story chains: tabs switch which chain's timeline is shown
+  function chainTab(b) {
+    var box = b.closest(".ct-chains");
+    [].forEach.call(box.querySelectorAll("[data-tab]"), function (t) { t.setAttribute("aria-selected", t === b ? "true" : "false"); });
+    [].forEach.call(box.querySelectorAll("[data-panel]"), function (p) { p.hidden = p.dataset.panel !== b.dataset.tab; });
   }
   function onKey(e) {
     if (stage.hidden || !run || e.altKey || e.ctrlKey || e.metaKey) return;

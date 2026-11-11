@@ -410,6 +410,17 @@ html.ac-studying,html.ac-studying body{background:var(--ground)}
 .ac-stage[data-lang="both"] .ct-know>b .ac-te::after,.ac-stage[data-lang="both"] .ct-chh .ac-te::after{content:" / "}
 .ct-chain{padding:14px 12px;border-radius:14px;border:1px solid color-mix(in srgb,var(--acc) 25%,var(--line));background:color-mix(in srgb,var(--acc) 4%,var(--card));display:flex;flex-direction:column;gap:8px}
 .ct-chh{margin:0;font-size:1rem;font-weight:800;color:var(--acc-t)}
+.ct-chain[hidden]{display:none!important}
+.ct-chains{display:flex;flex-direction:column;gap:8px}
+.ct-chains .ct-chlbl{margin:0}
+.ct-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.ac-stage .ct-tab{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 12px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:.88rem;font-weight:700;cursor:pointer}
+.ac-stage .ct-tab small{font-size:.75rem;font-weight:700;color:var(--muted)}
+.ac-stage .ct-tab[aria-selected="true"]{background:color-mix(in srgb,var(--acc) 14%,var(--card));border-color:var(--acc);color:var(--acc-t)}
+.ac-stage[data-lang="both"] .ct-tab .ac-te,.ac-stage[data-lang="both"] .ct-tab .ac-en{display:inline;margin:0;font-size:inherit;color:inherit}
+.ac-stage[data-lang="both"] .ct-tab .ac-te::after{content:" / "}
+.ct-st.ev .ct-dot{border-style:dotted}
+.ac-stage a.ct-jump{display:inline-flex;align-items:center}
 .ct-chintro{margin:0;font-size:.95rem;line-height:1.6}
 .ct-tl{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
 .ct-st{position:relative;display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:10px;padding:0 0 12px}
@@ -538,3 +549,25 @@ html.ac-studying,html.ac-studying body{background:var(--ground)}
 .ct-qopts{margin:6px 0 4px 1.4em;padding:0;font-size:.92em}
 .ct-qopts li{margin:2px 0}
 .ct-qnote{margin-top:6px;font-size:.88em;color:var(--muted)}
+/* list-valued text fields: one paragraph per item */
+.ac-p{display:block}.ac-p+.ac-p{margin-top:8px}
+/* case hero extras (popular name, topic, article/schedule chips, right added to Art 21) */
+.s-pop,.s-popline,.s-topic,.s-hero{display:none}
+.ac-dhead .ch-hero{display:flex;flex-direction:column;gap:8px}
+.ch-pop,.ch-right{margin:0;font-size:.95rem;line-height:1.5;color:var(--ink)}
+.ch-pop small,.ch-right small,.ch-topic small{font-size:.78rem;font-weight:600;color:var(--muted)}
+.ch-pop .ac-te,.ch-pop .ac-en,.ch-right .ac-te,.ch-right .ac-en,.ch-topic .ac-te,.ch-topic .ac-en{display:inline!important;margin:0!important;font-size:inherit!important;color:inherit!important;font-weight:inherit!important}
+.ac-stage[data-lang="both"] .ch-hero .ac-te+.ac-en::before,.ac-stage[data-lang="both"] .ch-topic .ac-te+.ac-en::before{content:" · "}
+.ac-stage[data-lang="te"] .ch-hero .ac-en,.ac-stage[data-lang="en"] .ch-hero .ac-te,.ac-stage[data-lang="te"] .ch-topic .ac-en,.ac-stage[data-lang="en"] .ch-topic .ac-te{display:none!important}
+.ch-pop{font-weight:700}
+.ch-right{align-self:flex-start;padding:6px 12px;border-radius:12px;font-weight:700;background:color-mix(in srgb,var(--acc) 14%,var(--card));border:1px solid color-mix(in srgb,var(--acc) 45%,var(--card))}
+.ch-right small{display:block;margin-bottom:2px}
+.ac-chap .ch-topic{display:table;margin:6px 0 0;padding:1px 10px;border-radius:99px;border:1px solid color-mix(in srgb,var(--acc) 40%,var(--line));font-weight:600;color:var(--ink)}
+a.ac-art{text-decoration:none;min-height:32px;align-items:center}
+a.ac-art:hover,a.ac-art:focus-visible{background:color-mix(in srgb,var(--acc) 22%,var(--card))}
+.ac-art.ch-sch{font-variant-numeric:normal;border-style:dashed}
+.ct-impact{border-left:4px solid var(--acc);padding-left:12px}
+/* tile: popular name, 3 x 6 only (removed by JS when it would shrink the cue) */
+.t-pop{display:none}
+.ac-grid[data-density="18"] .t-pop{display:block;margin-top:3px;font-size:.62em;font-weight:600;font-style:italic;line-height:1.2;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ac-stage[data-lang="both"] .t-pop .ac-en{display:none!important}

@@ -175,6 +175,28 @@ def chains():
     return out
 
 
+# A case's own theme decides which of its chains is shown first (and which chain the theme view shows).
+THEME_CHAIN = {'Amending power & basic structure': 'CH-amending-power', 'Right to property & Ninth Schedule': 'CH-property-ninth-schedule',
+               'Equality & reservation': 'CH-reservation', 'Life & personal liberty (Article 21)': 'CH-article-21',
+               'Rights read into Article 21': 'CH-article-21', 'Privacy, gender & personal law': 'CH-article-21',
+               'DPSP & Fundamental Duties': 'CH-fr-dpsp', 'Judiciary & tribunals': 'CH-tribunals'}
+
+
+def card_chains(c):
+    """[(chain, step)] for every chain that lists card c — from c['chains'] (or legacy c['chain']); the card's theme chain first."""
+    allc = chains()
+    refs = c.get('chains') or ([c['chain']] if isinstance(c.get('chain'), dict) else [])
+    out = [(allc[r['chain_id']], r.get('step')) for r in refs if isinstance(r, dict) and r.get('chain_id') in allc]
+    home = THEME_CHAIN.get(c.get('theme_en'))
+    out.sort(key=lambda x: x[0]['chain_id'] != home)
+    return out
+
+
+def ref_url(ref):
+    """Deck URL of a chain step's card, or None when the ref is not a card."""
+    return card_url(ref) if ref and ref in index()['cards'] else None
+
+
 _EXAM_PREFIX = re.compile(r'^\s*other\s+credible\s+examinations\s*(?:-|–|—)\s*', re.I)
 
 
@@ -222,11 +244,15 @@ def _variants(it):
     elif d == 'cases':
         fe, ft = it.get('front_en') or '', it.get('front_te') or ''
         v = [fe, re.sub(r'\s+case$', '', fe, flags=re.I), ft, re.sub(r'\s*కేసు$', '', ft), it.get('short_en') or '', it.get('short_te') or '']
+        # popular names ('Cross Roads case', 'Mandal case') only in full: the bare words ('Fundamental Rights') are too generic
+        v += [p for p in (it.get('popular_en'), it.get('popular_te')) if p and p.strip().lower() not in GENERIC]
         for p in (it.get('parties_en'), it.get('parties_te')):
             if p:
                 v += [p, re.sub(r'\s*\([^)]*\)', '', p)]
     return [x.strip() for x in dict.fromkeys(v) if x and len(x.strip()) >= 4]
 
+
+GENERIC = {'case', 'the case', 'కేసు', 'fundamental rights', 'privacy', 'emergency', 'equality', 'reservation'}
 
 _INDEX = {}
 
@@ -317,3 +343,13 @@ def related(it):
             ids.sort(key=lambda x: ix['cards'][x].get('sort') or ())
         out[k] = [{'id': x, 'deck': k, 'en': label(x)[0], 'te': label(x)[1], 'url': card_url(x)} for x in ids]
     return out
+
+
+def art_ref(no):
+    """(card_id, url) of the articles-deck card for an article number ('21', '19(1)(g)' -> Art 19 if no exact card), else None."""
+    s = str(no or '').strip()
+    if not s:
+        return None
+    by = {c.get('front_short'): c['id'] for c in index()['cards'].values() if c['id'].startswith('AC-')}
+    cid = by.get(s) or by.get(re.sub(r'\(.*$', '', s))
+    return (cid, card_url(cid)) if cid else None

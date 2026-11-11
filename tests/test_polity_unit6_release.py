@@ -363,11 +363,11 @@ def test_recall_case_teacher_layout_and_fallback(client,app,monkeypatch):
     tl=g[g.index('class="ct-chain"'):g.index('class="ct-exam"')]
     assert tl.index('STEP-GOPALAN')<tl.index('STEP-MANEKA')<tl.index('STEP-AM44')  # sorted by step
     cur=tl[tl.index('aria-current="step"')-80:tl.index('STEP-MANEKA')]
-    assert tl.count('aria-current="step"')==1 and 'STEP-GOPALAN' in cur and 'data-jump="CS-gopalan-1950"' not in tl
-    assert 'data-jump="CS-maneka-gandhi-1978"' in tl and 'ct-st am' in tl and 'data-jump="AM-44"' not in tl and 'CHAIN-INTRO' not in tl
+    assert tl.count('aria-current="step"')==1 and 'STEP-GOPALAN' in cur and 'data-go="CS-gopalan-1950"' not in tl
+    assert 'data-go="CS-maneka-gandhi-1978"' in tl and 'ct-st am' in tl and 'data-go="AM-44"' not in tl and 'CHAIN-INTRO' not in tl
     assert 'PYQ · TSPSC Group IV 2023' in g and 'Other Credible' not in g
     m=card(page,'CS-maneka-gandhi-1978');mt=m[m.index('class="ct-chain"'):]
-    assert 'data-jump="CS-gopalan-1950"' in mt and 'data-jump="CS-maneka-gandhi-1978"' not in mt
+    assert 'data-go="CS-gopalan-1950"' in mt and 'data-go="CS-maneka-gandhi-1978"' not in mt
     th=card(page,'TH-liberty')
     assert th.index('class="ct-chain"')<th.index('CHAIN-INTRO')<th.index('ac-thlist') and 'aria-current' not in th and th.count('class="ct-chain"')==1
     from app.services.recall_decks import exam_label
@@ -376,6 +376,78 @@ def test_recall_case_teacher_layout_and_fallback(client,app,monkeypatch):
     assert rd.chains()=={};rd.chains.cache_clear();enable(app)
     am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
     assert 'ct-exam' in am  # amendments now have their own exam section
+
+def test_case_chains_data_complete_dated_and_linked():
+    import json
+    from app.services import recall_decks as rd
+    rd.chains.cache_clear()
+    raw=json.loads(rd.CHAINS_FILE.read_text(encoding='utf-8'));ix=rd.index()['cards']
+    assert {c['chain_id'] for c in raw}>={'CH-amending-power','CH-article-21','CH-property-ninth-schedule','CH-reservation','CH-tribunals'}
+    DATE=re.compile(r'^\d{4}(-\d\d-\d\d)?$')
+    listed={}
+    for ch in raw:
+        assert ch['title_te'] and ch['title_en'] and ch['short_te'] and ch['short_en'] and ch['intro_te'] and ch['intro_en']
+        st=ch['steps'];assert [s['step'] for s in st]==list(range(1,len(st)+1)),ch['chain_id']
+        for s in st:
+            assert s['kind'] in ('case','amendment','event') and DATE.match(s['date']),(ch['chain_id'],s)
+            for k in ('label','said','who'):assert s[k+'_te'] and s[k+'_en'],(ch['chain_id'],s['step'],k)
+            assert s['source']
+            if s['kind']=='event':assert s['ref'] is None
+            else:
+                assert s['ref'] in ix,(ch['chain_id'],s['ref'])
+                assert rd.deck_of(s['ref'])==('cases' if s['kind']=='case' else 'amendments')
+                listed.setdefault(s['ref'],set()).add((ch['chain_id'],s['step']))
+        refs=[s['ref'] for s in st if s['ref']];assert len(refs)==len(set(refs)),ch['chain_id']
+        # strictly chronological; a tie is allowed only for two full, identical dates (same-day judgments)
+        for a,b in zip(st,st[1:]):
+            da,db_=a['date'],b['date']
+            if da[:4]==db_[:4]:assert len(da)==len(db_)==10,(ch['chain_id'],a['step'],b['step'])
+            assert da<db_ or (da==db_ and len(da)==10),(ch['chain_id'],a['label_en'],b['label_en'])
+    # every card listed in a chain carries that chain (and only chains that list it); no legacy single `chain`
+    for c in ix.values():
+        assert 'chain' not in c,c['id']
+        have={(r['chain_id'],r['step']) for r in c.get('chains') or []}
+        assert have==listed.get(c['id'],set()),c['id']
+    # the property story starts with the 1st Amendment, then Shankari Prasad, and keeps the compensation cases
+    prop=next(c for c in raw if c['chain_id']=='CH-property-ninth-schedule')['steps'];pr=[s['ref'] or s['label_en'] for s in prop]
+    assert pr[:3]==['AM-001','CS-shankari-prasad-1951','Bela Banerjee (1953)']
+    for x in ('AM-004','AM-017','CS-sajjan-singh-1964','CS-golaknath-1967','CS-rc-cooper-1970','AM-025','CS-kesavananda-1973','AM-044','CS-waman-rao-1980','CS-bhim-singhji-1980','CS-ir-coelho-2007','CS-property-owners-2024'):assert x in pr
+    assert pr.index('CS-waman-rao-1980')<pr.index('CS-bhim-singhji-1980')
+    res=[s['ref'] for s in next(c for c in raw if c['chain_id']=='CH-reservation')['steps']]
+    for x in ('CS-mr-balaji-1962','CS-nm-thomas-1975','CS-indra-sawhney-ii-1999','CS-ajit-singh-ii-1999','CS-ashoka-kumar-thakur-2008','CS-jaishri-patil-2021'):assert x in res
+    assert 'AM-025' in [s['ref'] for s in next(c for c in raw if c['chain_id']=='CH-amending-power')['steps']]
+
+def test_case_card_shows_all_its_chains(client,app):
+    from app.services import recall_decks as rd
+    rd.chains.cache_clear();enable(app)
+    page=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
+    def card(cid):
+        s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
+    def panels(g):
+        box=g[g.index('class="ct-chains"'):];box=box[:box.index('<nav class="xr"')] if '<nav class="xr"' in box else box
+        return box,re.findall(r'<section class="ct-chain" aria-label="([^"]+)" data-panel="(\d)" role="tabpanel"( hidden)?>',box)
+    # Waman Rao: property chain first (its theme), then amending power; one current step per timeline
+    box,P=panels(card('CS-waman-rao-1980'))
+    assert [p[0] for p in P][:1]==['Right to property and the Ninth Schedule'] and 'Amending power and the basic structure' in [p[0] for p in P]
+    assert P[0][2]=='' and all(p[2]==' hidden' for p in P[1:]) and box.count('aria-current="step"')==len(P)
+    assert box.count('class="ct-tab"')==len(P) and 'data-tab="0"' in box and 'aria-selected="true"' in box
+    prop=box[box.index('data-panel="0"'):box.index('data-panel="1"')]
+    assert prop.index('data-go="AM-001"')<prop.index('data-go="CS-shankari-prasad-1951"')<prop.index('Bela Banerjee')<prop.index('aria-current="step"')<prop.index('data-go="CS-bhim-singhji-1980"')
+    assert 'href="/learn/polity/unit6/recall/amendments?open=AM-001"' in prop and 'data-go="CS-waman-rao-1980"' not in box
+    assert 'ct-st ev' in prop  # Bela Banerjee has no card: plain event step, not a link
+    # Shankari Prasad: two timelines, amending power first
+    box,P=panels(card('CS-shankari-prasad-1951'))
+    assert [p[0] for p in P]==['Amending power and the basic structure','Right to property and the Ninth Schedule'] and box.count('aria-current="step"')==2
+    # a single-chain case gets a timeline without tabs
+    g=card('CS-davinder-singh-2024');assert 'class="ct-chain"' in g and 'ct-tab' not in g
+    # theme view: one timeline per chain, each theme's own chain, with intro and no current step
+    th=next(t for t in rd.themes('cases') if any(c['id']=='CS-waman-rao-1980' for c in t['cases']))
+    tg=card(th['id']);assert tg.count('class="ct-chain"')==1 and 'Right to property and the Ninth Schedule' in tg and 'aria-current' not in tg and 'ct-chintro' in tg
+    # amendment card: its chains, current step, cases link across decks
+    am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
+    s=am[am.index('data-id="AM-001"'):];g=s[:s.index('</article>')]
+    box,P=panels(g);assert len(P)==4 and box.count('aria-current="step"')==4 and 'href="/learn/polity/unit6/recall/cases?open=CS-shankari-prasad-1951"' in box
+    assert 'Article 19 freedoms and their limits' in [p[0] for p in P] and 'href="/learn/polity/unit6/recall/cases?open=CS-romesh-thappar-1950"' in box
 
 def test_case_tiles_and_hero_use_parties(client,app):
     enable(app)
@@ -461,3 +533,55 @@ def test_recall_fallback_without_rich_fields_and_links(client,app,monkeypatch):
         assert 'ప్రకరణ పాఠం' in a  # structured fields still give a Related strip
     finally:
         monkeypatch.undo();rd.links.cache_clear()
+
+def _lax_fields(rd,monkeypatch):
+    """In-memory Laxmikanth ch.91/92 fields: a Romesh Thappar-like card (popular name, topic, schedule) and Puttaswamy (right added to Art 21)."""
+    orig,cache=rd.items,{}
+    rt=dict(next(c for c in orig('cases') if c['id']=='CS-gopalan-1950'),id='CS-zz-fixture-1950',chains=[],compare=None,
+            front_en='Romesh Thappar case',front_te='రొమేష్ థాపర్ కేసు',short_en='Romesh Thappar',short_te='రొమేష్ థాపర్',vs_en='vs State of Madras',vs_te='vs మద్రాస్ రాష్ట్రం',
+            parties_en='Romesh Thappar vs State of Madras',parties_te='రొమేష్ థాపర్ vs మద్రాస్ రాష్ట్రం',theme_en='Speech, religion & minority rights',theme_te=None,
+            cue_en='Ban on a journal violated free speech',cue_te='పత్రికపై నిషేధం భావ ప్రకటన స్వేచ్ఛకు భంగం',title_en='Romesh Thappar vs State of Madras — press freedom',title_te='రొమేష్ థాపర్ vs మద్రాస్ రాష్ట్రం — పత్రికా స్వేచ్ఛ',
+            popular_en='Cross Roads case',popular_te='క్రాస్ రోడ్స్ కేసు',topic_en='Freedom of the press',topic_te='పత్రికా స్వేచ్ఛ',
+            articles=['19(1)(a)','19(2)'],schedules=['Ninth Schedule'],
+            impact_en='IMPACT-RT: it led to the 1st Amendment, which widened Article 19(2); see Maneka Gandhi case.',impact_te='ప్రభావం: 1వ సవరణ వచ్చింది.')
+    put=dict(right_en='Right to privacy',right_te='గోప్యత హక్కు',popular_en='Privacy case',popular_te='ప్రైవసీ కేసు',impact_en=['IMPACT-P1','IMPACT-P2'],impact_te=['ప్రభావం 1','ప్రభావం 2'])
+    def items(d):
+        if d not in cache:
+            L=[dict(c,**put) if c['id']=='CS-puttaswamy-2017' else c for c in orig(d)]
+            if d=='cases':L=[c for c in L if c['id']!='CS-romesh-thappar-1950'];L.append(rd._theme_fields(rt) or rt)
+            cache[d]=L
+        return cache[d]
+    monkeypatch.setattr(rd,'items',items)
+
+def test_case_laxmikanth_fields_render_and_fallback(client,app,monkeypatch):
+    from app.services import recall_decks as rd
+    enable(app)
+    def card(page,cid):
+        s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
+    # without the fields: no hero extras, no impact box; article chips still shown
+    g=card(client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True),'CS-central-coal-fields-1980')
+    for t in ('s-pop','s-topic','ch-right','ct-impact','ch-sch','Popular name'):assert t not in g,t
+    assert 'class="s-hero"' in g and 'data-go="AC-' in g
+    _lax_fields(rd,monkeypatch)
+    page=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
+    r=card(page,'CS-zz-fixture-1950')
+    assert 'ప్రసిద్ధ పేరు / Popular name:' in r and 'Cross Roads case' in r and 'క్రాస్ రోడ్స్ కేసు' in r
+    assert 'అంశం / Topic:' in r and 'Freedom of the press' in r and 'పత్రికా స్వేచ్ఛ' in r
+    assert 'class="ac-art ch-sch">Ninth Schedule<' in r and 'data-go="AC-6.4-19"' in r and 'ch-right' not in r
+    imp=r[r.index('ct-impact'):];imp=imp[:imp.index('</section>')]
+    assert 'తీర్పు ప్రభావం' in imp and 'Impact of the judgement' in imp and 'data-go="CS-maneka-gandhi-1978"' in imp and 'data-go="AM-001"' in imp
+    assert r.index('ct-sec ct-mean')<r.index('ct-sec ct-impact')
+    p=card(page,'CS-puttaswamy-2017')
+    assert 'ప్రకరణ 21 కు జోడించిన హక్కు / Right added to Article 21:' in p and 'Right to privacy' in p and 'గోప్యత హక్కు' in p
+    assert p.index('ct-sec ct-mean')<p.index('ct-sec ct-impact')<p.index('ct-sec ct-next') and '<span class="ac-p">IMPACT-P1</span><span class="ac-p">IMPACT-P2</span>' in p
+    js=open('static/polity_articles.js',encoding='utf-8').read()
+    assert 's-popline' in js and 't-pop' in js and 'run.density === "18"' in js and 's-topic' in js
+
+def test_case_popular_name_autolinks(app,monkeypatch):
+    from app.services import recall_decks as rd
+    _lax_fields(rd,monkeypatch)
+    with app.test_request_context():
+        s=str(rd.autolink('The Cross Roads case and the క్రాస్ రోడ్స్ కేసు; Privacy case. Fundamental Rights and privacy are generic.','AC-6.4-21'))
+    assert s.count('data-go="CS-zz-fixture-1950"')==1 and s.count('data-go="CS-puttaswamy-2017"')==1
+    assert '>Cross Roads case</a>' in s and '>Privacy case</a>' in s and '>privacy<' not in s
+    assert 'Fundamental Rights and' in s

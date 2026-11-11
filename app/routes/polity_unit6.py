@@ -227,7 +227,7 @@ def _recall_page(deck_id):
     for c in cards:counts[c['chapter']]=counts.get(c['chapter'],0)+1
     return render_template('ds/polity_recall.html',d=d,cards=cards,total=len(cards),counts=counts,chapter=ch,chs=sorted(counts),
                            names=ARTCARD_CHAPTERS,lang=language(),lang_set='qlang' in request.args,themes=_recall.themes(deck_id),
-                           chains=_recall.chains(),exam_label=_recall.exam_label,related=_recall.related,
+                           chains=_recall.chains(),card_chains=_recall.card_chains,ref_url=_recall.ref_url,art_ref=_recall.art_ref,exam_label=_recall.exam_label,related=_recall.related,
                            open_id=_open if _open in {c['id'] for c in cards} else '',back=_back)
 @bp.get('/articles')
 def articles():return _recall_page('articles')
