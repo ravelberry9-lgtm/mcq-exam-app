@@ -47,7 +47,7 @@ def test_metrics_match_direct_recount():
     m = P.metrics()
     bank, grp, appsc, out = _recount()
     allm = set().union(*(v[-1] for v in out.values()))
-    assert m["total"] == len(bank) == 2764  # v3.71.0: 2,828 records minus 1 excluded by the key audit, minus 64 relabelled 2026-11-11 (26 practice, 38 superseded; POL-2F79E2FADE36 is both excluded and practice)
+    assert m["total"] == len(bank) == 2763  # v3.71.0: 2,828 records minus 1 excluded by the key audit, minus 65 relabelled 2026-11-11 (26 practice, 39 superseded incl. 2015 Q37; POL-2F79E2FADE36 is both excluded and practice)
     assert m['distinct_total'] == len(set(grp.values())) < m['total']
     assert m['appsc_total'] == len(appsc)
     assert m['mapped'] == len(allm) and m['appsc_mapped'] == len(allm & appsc)

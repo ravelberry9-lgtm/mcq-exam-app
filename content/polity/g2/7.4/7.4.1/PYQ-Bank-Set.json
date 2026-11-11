@@ -162,14 +162,19 @@
    "series_set": "site order (not official series booklet number)",
    "question_number": "71",
    "question_en": "The power of the Supreme Court of India to decide disputes between the Centre and the States falls under its",
-   "question_te": "",
+   "question_te": "కేంద్రం, రాష్ట్రాల మధ్య వివాదాలను పరిష్కరించే భారత సుప్రీంకోర్టు అధికారం దాని ఏ అధికార పరిధి (jurisdiction) కిందకు వస్తుంది?",
    "options_en": [
     "advisory jurisdiction",
     "appellate jurisdiction",
     "original jurisdiction",
     "writ jurisdiction"
    ],
-   "options_te": [],
+   "options_te": [
+    "సలహా అధికార పరిధి (advisory)",
+    "అప్పీలు అధికార పరిధి (appellate)",
+    "ప్రాథమిక/మూల అధికార పరిధి (original)",
+    "రిట్ అధికార పరిధి (writ)"
+   ],
    "official_key": 3,
    "study_answer": 3,
    "key_status": "third_party",
@@ -181,9 +186,9 @@
    "answer_text": "original jurisdiction",
    "topic": "Supreme Court, High Courts and judicial review",
    "original_answer_status": "OFFICIAL_FINAL_KEY_CONFIRMED",
-   "language_status": "English structured extraction; Telugu not included in index",
-   "explanation_en": "Option 3 (original jurisdiction). The Supreme Court of India possesses various types of jurisdictions. Let's analyze the one relevant to disputes between the Centre and the States:\n\nOriginal Jurisdiction: This refers to the power of a court to hear a case for the first time, not by way of appeal. (Explanation adapted from the third-party source dalvoy/ExamDay.)",
-   "explanation_te": "సరైన జవాబు: ఎంపిక 3. ఈ ప్రశ్నను అసలు UPSC పేపర్‌లోని పాఠంతో మార్చాం; పూర్తి తెలుగు వివరణ ఇంకా రాయాల్సి ఉంది.",
+   "language_status": "English verbatim paper text; Telugu is a reviewed translation (translated: true)",
+   "explanation_en": "Option 3 is correct. Under Article 131 the Supreme Court has exclusive original jurisdiction in any dispute between the Government of India and one or more States, between the Centre and some States on one side and other States on the other, or between two or more States, where a legal right is involved; such a case starts directly in the Supreme Court. Advisory jurisdiction (Article 143) is the President's reference for the Court's opinion, not a dispute between parties (option 1). Appellate jurisdiction (Articles 132-134, 136) is about appeals from lower courts (option 2). Writ jurisdiction (Article 32) is for enforcement of Fundamental Rights (option 4).",
+   "explanation_te": "3 వ ఎంపిక సరైనది. ప్రకరణ 131 ప్రకారం భారత ప్రభుత్వం, ఒకటి లేదా అంతకంటే ఎక్కువ రాష్ట్రాల మధ్య; కేంద్రం, కొన్ని రాష్ట్రాలు ఒకవైపు, మరికొన్ని రాష్ట్రాలు మరోవైపు; లేదా రెండు అంతకంటే ఎక్కువ రాష్ట్రాల మధ్య, చట్టపరమైన హక్కుతో ముడిపడిన వివాదంలో సుప్రీంకోర్టుకు ప్రత్యేక మూల అధికార పరిధి (exclusive original jurisdiction) ఉంది; అలాంటి కేసు నేరుగా సుప్రీంకోర్టులోనే మొదలవుతుంది. సలహా అధికార పరిధి (ప్రకరణ 143) రాష్ట్రపతి కోర్టు అభిప్రాయం కోరడం; పక్షాల మధ్య వివాదం కాదు (1 వ ఎంపిక తప్పు). అప్పీలు అధికార పరిధి (ప్రకరణ 132-134, 136) కింది కోర్టుల తీర్పులపై అప్పీళ్లకు సంబంధించింది (2 వ ఎంపిక తప్పు). రిట్ అధికార పరిధి (ప్రకరణ 32) ప్రాథమిక హక్కుల అమలు కోసం (4 వ ఎంపిక తప్పు).",
    "chapter_assignment": {
     "basis": "topic+keyword:stem",
     "assigned": "2026-11-11",
@@ -213,8 +218,10 @@
     "audited": "2026-11-11"
    },
    "verify_flags": [
-    "2026-11-11: stem/options replaced with the verbatim real UPSC text (dalvoy/ExamDay); Telugu and explanation need re-authoring."
-   ]
+    "2026-11-11: key checked by blind solve against the official UPSC key; Telugu and bilingual explanation authored."
+   ],
+   "translated": true,
+   "telugu_origin": "author_reviewed_translation_of_verbatim_English"
   },
   {
    "id": "PYQ-POL-11C7BFED82D0",
@@ -619,14 +626,19 @@
    "series_set": "site order (not official series booklet number)",
    "question_number": "11",
    "question_en": "Consider the following statements:\n1. Pursuant to the report of H.N. Sanyal Committee, the Contempt of Courts Act, 1971 was passed.\n2. The Constitution of India empowers the Supreme Court and the High Courts to punish for contempt of themselves.\n3. The Constitution of India defines Civil Contempt and Criminal Contempt.\n4. In India, the Parliament is vested with the powers to make laws on Contempt of Court.\nWhich of the statements given above is/are correct?",
-   "question_te": "",
+   "question_te": "కింది ప్రకటనలను పరిశీలించండి:\n1. హెచ్.ఎన్. సన్యాల్ కమిటీ నివేదిక ఆధారంగా కోర్టు ధిక్కార చట్టం (Contempt of Courts Act), 1971 ఆమోదించారు.\n2. తమ ధిక్కారానికి శిక్ష విధించే అధికారాన్ని భారత రాజ్యాంగం సుప్రీంకోర్టుకు, హైకోర్టులకు ఇస్తుంది.\n3. భారత రాజ్యాంగం సివిల్ ధిక్కారం (Civil Contempt), క్రిమినల్ ధిక్కారం (Criminal Contempt) లను నిర్వచిస్తుంది.\n4. భారతదేశంలో కోర్టు ధిక్కారంపై చట్టాలు చేసే అధికారం పార్లమెంటుకు ఉంది.\nపై ప్రకటనలలో ఏది/ఏవి సరైనవి?",
    "options_en": [
     "1 and 2 only",
     "1, 2 and 4",
     "3 and 4 only",
     "3 only"
    ],
-   "options_te": [],
+   "options_te": [
+    "1, 2 మాత్రమే",
+    "1, 2, 4",
+    "3, 4 మాత్రమే",
+    "3 మాత్రమే"
+   ],
    "official_key": 2,
    "study_answer": 2,
    "key_status": "third_party",
@@ -638,9 +650,9 @@
    "answer_text": "1, 2 and 4",
    "topic": "Schedules, Articles and constitutional terminology",
    "original_answer_status": "OFFICIAL_FINAL_KEY_CONFIRMED",
-   "language_status": "English structured extraction; Telugu not included in index",
-   "explanation_en": "Option 2 (1, 2 and 4). Let's evaluate each statement:\n\n1. Pursuant to the report of H.N. Sanyal Committee, the Contempt of Courts Act, 1971 was passed: The H.N. Sanyal Committee was constituted in 1961 to examine the law relating to contempt of court. (Explanation adapted from the third-party source dalvoy/ExamDay.)",
-   "explanation_te": "సరైన జవాబు: ఎంపిక 2. ఈ ప్రశ్నను అసలు UPSC పేపర్‌లోని పాఠంతో మార్చాం; పూర్తి తెలుగు వివరణ ఇంకా రాయాల్సి ఉంది.",
+   "language_status": "English verbatim paper text; Telugu is a reviewed translation (translated: true)",
+   "explanation_en": "Option 2 is correct. Statement 1: the H.N. Sanyal Committee (1961) reviewed contempt law and the Contempt of Courts Act, 1971 was enacted on its report. Statement 2: Article 129 makes the Supreme Court, and Article 215 each High Court, a court of record with power to punish for contempt of itself. Statement 3 is wrong: the Constitution does not define civil or criminal contempt; Section 2 of the 1971 Act does. Statement 4: Parliament can legislate on contempt of the Supreme Court (Entry 77, Union List) and on contempt of courts other than the Supreme Court (Entry 14, Concurrent List). So options 1 (incomplete), 3 and 4 (include statement 3) fail.",
+   "explanation_te": "2 వ ఎంపిక సరైనది. ప్రకటన 1: హెచ్.ఎన్. సన్యాల్ కమిటీ (1961) ధిక్కార చట్టాన్ని సమీక్షించింది; దాని నివేదిక ఆధారంగా కోర్టు ధిక్కార చట్టం, 1971 వచ్చింది. ప్రకటన 2: ప్రకరణ 129 సుప్రీంకోర్టును, ప్రకరణ 215 ప్రతి హైకోర్టును రికార్డు న్యాయస్థానం (court of record) గా చేసి, తమ ధిక్కారానికి శిక్ష విధించే అధికారం ఇస్తాయి. ప్రకటన 3 తప్పు: రాజ్యాంగం సివిల్, క్రిమినల్ ధిక్కారాలను నిర్వచించలేదు; 1971 చట్టంలోని సెక్షన్ 2 నిర్వచిస్తుంది. ప్రకటన 4: సుప్రీంకోర్టు ధిక్కారంపై (కేంద్ర జాబితా ఎంట్రీ 77), సుప్రీంకోర్టు కాని ఇతర కోర్టుల ధిక్కారంపై (ఉమ్మడి జాబితా ఎంట్రీ 14) పార్లమెంటు చట్టాలు చేయవచ్చు. కాబట్టి 1 వ ఎంపిక అసంపూర్ణం; ప్రకటన 3 ఉన్న 3, 4 ఎంపికలు తప్పు.",
    "chapter_assignment": {
     "basis": "keyword:stem",
     "assigned": "2026-11-11",
@@ -671,8 +683,10 @@
     "audited": "2026-11-11"
    },
    "verify_flags": [
-    "2026-11-11: stem/options replaced with the verbatim real UPSC text (dalvoy/ExamDay); Telugu and explanation need re-authoring."
-   ]
+    "2026-11-11: key checked by blind solve against the official UPSC key; Telugu and bilingual explanation authored."
+   ],
+   "translated": true,
+   "telugu_origin": "author_reviewed_translation_of_verbatim_English"
   },
   {
    "id": "PYQ-POL-38DD6A895867",

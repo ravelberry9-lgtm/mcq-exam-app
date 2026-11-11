@@ -513,21 +513,26 @@
       "series_set": "site order (not official series booklet number)",
       "question_number": "36",
       "question_en": "Which of the following statements is/are true of the Fundamental Duties of an Indian citizen?\n1. A legislative process has been provided to enforce these duties.\n2. They are correlative to legal duties.\nSelect the correct answer using the code given below:",
-      "question_te": "",
+      "question_te": "భారత పౌరుని ప్రాథమిక విధుల (Fundamental Duties) గురించి కింది ప్రకటనలలో ఏది/ఏవి నిజం?\n1. ఈ విధులను అమలు చేయడానికి ఒక శాసన ప్రక్రియ (legislative process) ఏర్పాటు చేశారు.\n2. ఇవి చట్టపరమైన విధులకు సహసంబంధమైనవి (correlative to legal duties).\nకింద ఇచ్చిన కోడ్ ఉపయోగించి సరైన జవాబును ఎంచుకోండి:",
       "options_en": [
         "1 only",
         "2 only",
         "Both 1 and 2",
         "Neither 1 nor 2"
       ],
-      "options_te": [],
+      "options_te": [
+        "1 మాత్రమే",
+        "2 మాత్రమే",
+        "1, 2 రెండూ",
+        "1, 2 రెండూ కావు"
+      ],
       "official_key": 4,
       "study_answer": 4,
       "key_status": "third_party",
       "scored": true,
       "status": "include",
-      "explanation_en": "Option 4 (Neither 1 nor 2). Statement 1 is incorrect. While the Fundamental Duties are part of the Indian Constitution (Article 51A), there is no specific legislative process provided in the Constitution for their direct enforcement. They are not directly enforceable by courts in the same way as Fundamental Rights. (Explanation adapted from the third-party source dalvoy/ExamDay.)",
-      "explanation_te": "సరైన జవాబు: ఎంపిక 4. ఈ ప్రశ్నను అసలు UPSC పేపర్‌లోని పాఠంతో మార్చాం; పూర్తి తెలుగు వివరణ ఇంకా రాయాల్సి ఉంది.",
+      "explanation_en": "Option 4 is correct. The Fundamental Duties were added as Part IVA (Article 51A) by the 42nd Amendment, 1976 on the Swaran Singh Committee's recommendation. Statement 1 is wrong: the Constitution provides no legislative process or mechanism to enforce them; they are non-justiciable, though Parliament may give effect to some through ordinary laws (e.g. the Prevention of Insults to National Honour Act, 1971) and courts may use them to interpret laws. Statement 2 is wrong: they are moral and civic obligations, not correlative to legal duties (unlike the Fundamental Rights, they carry no corresponding legal right or sanction). Hence options 1, 2 and 3 fail.",
+      "explanation_te": "4 వ ఎంపిక సరైనది. స్వరణ్ సింగ్ కమిటీ సిఫార్సుతో 42 వ సవరణ, 1976 ప్రాథమిక విధులను నాలుగో-ఎ భాగం (Part IVA, ప్రకరణ 51A) గా చేర్చింది. ప్రకటన 1 తప్పు: వీటిని అమలు చేయడానికి రాజ్యాంగం ఏ శాసన ప్రక్రియ, యంత్రాంగాన్నీ ఏర్పాటు చేయలేదు; ఇవి న్యాయస్థానాల ద్వారా అమలు చేయించుకోలేనివి (non-justiciable). అయితే పార్లమెంటు సాధారణ చట్టాల ద్వారా కొన్నింటిని అమలు చేయవచ్చు (ఉదా. జాతీయ గౌరవ అవమానాల నిరోధక చట్టం, 1971); చట్టాల వ్యాఖ్యానంలో కోర్టులు వీటిని ఉపయోగించుకోవచ్చు. ప్రకటన 2 తప్పు: ఇవి నైతిక, పౌర బాధ్యతలు; చట్టపరమైన విధులకు సహసంబంధమైనవి కావు (వీటికి అనుబంధ చట్టపరమైన హక్కు లేదా శిక్ష ఉండదు). కాబట్టి 1, 2, 3 ఎంపికలు తప్పు.",
       "guide_table_id": "POL-661-committee-enactment-review",
       "fact_ids": [
         "POL-661-P135-nonjusticiable",
@@ -541,9 +546,9 @@
       "difficulty": "easy",
       "verify_flags": [
         "Bank correct_option=4 contradicts bank note (all three correct); verify against UPSC 2017 official key mirror.",
-        "2026-11-11: stem/options replaced with the verbatim real UPSC text (dalvoy/ExamDay); Telugu and explanation need re-authoring."
+        "2026-11-11: key checked by blind solve against the official UPSC key; Telugu and bilingual explanation authored."
       ],
-      "telugu_origin": "author_translation_reviewed",
+      "telugu_origin": "author_reviewed_translation_of_verbatim_English",
       "bank_key_reference": 4,
       "blind_answer": 3,
       "blind_confidence": 0.95,
@@ -595,7 +600,9 @@
         "evidence": "full key verification (keys2/result_1.json)",
         "audited": "2026-11-11"
       },
-      "answer_text": "Neither 1 nor 2"
+      "answer_text": "Neither 1 nor 2",
+      "translated": true,
+      "language_status": "English verbatim paper text; Telugu is a reviewed translation (translated: true)"
     },
     {
       "id": "PYQ-POL-2D7FB3C1C919",
