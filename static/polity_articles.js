@@ -97,7 +97,9 @@
   function biText(en, te) {
     return '<span class="ac-te" lang="te">' + te + '</span><span class="ac-en" lang="en">' + en + "</span>";
   }
-  function num(id) { return byId[id].querySelector(".s-num").textContent.trim(); }
+  function num(id) { return byId[id].querySelector(".s-num").textContent.trim().replace(/^Sch(?=\d)/, ""); }
+  function isSch(id) { return /^AC-sch-/.test(id); }
+  function pillOf(id) { return isTheme(id) ? biText("Theme", "అంశం") : isSch(id) ? biText("Schedule", "షెడ్యూల్") : biText(D.pillEn || "Article", D.pillTe || "ప్రకరణ"); }
   function frontEn(id) { return byId[id].querySelector(".s-front .ac-en").textContent.trim(); }
   function sub(id) { return byId[id].querySelector(".s-sub").textContent.trim(); }
   function conceptEn(id) { return byId[id].querySelector(".s-con .ac-en").textContent.trim(); }
@@ -546,7 +548,7 @@
     detail.dataset.state = progress[id] || "";
     var topic = src.querySelector(".s-topic"), heroX = src.querySelector(".s-hero");
     $("ac-dchap").innerHTML = src.querySelector(".s-chap").innerHTML + (topic ? " " + topic.innerHTML : "");
-    var sb = esc(sub(id)), pill = isTheme(id) ? biText("Theme", "అంశం") : biText(D.pillEn || "Article", D.pillTe || "ప్రకరణ");
+    var sb = esc(sub(id)), pill = pillOf(id);
     var pEl = src.querySelector(".s-parties"), sameName = pEl && frontEn(id) === pEl.querySelector(".ac-en").textContent.trim();
     var head = pEl
       ? '<span class="ac-pill txt ac-case"><small>' + pill + '</small><span class="p-parties">' + pEl.innerHTML + "</span>" +
@@ -583,7 +585,7 @@
     detail.setAttribute("aria-busy", failed ? "false" : "true");
     $("ac-dchap").innerHTML = "";
     var sb = sub(id);
-    $("ac-dtitle").innerHTML = '<span class="ac-pill txt"><small>' + (isTheme(id) ? biText("Theme", "అంశం") : biText(D.pillEn || "Article", D.pillTe || "ప్రకరణ")) + "</small>" +
+    $("ac-dtitle").innerHTML = '<span class="ac-pill txt"><small>' + pillOf(id) + "</small>" +
       src.querySelector(".s-front").innerHTML + (sb ? '<span class="p-sub">' + esc(sb) + "</span>" : "") + "</span>" +
       '<span class="ac-anstext">' + src.querySelector(".s-con").innerHTML + "</span>";
     $("ac-dbody").innerHTML = failed
