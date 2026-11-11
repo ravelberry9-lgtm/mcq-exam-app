@@ -86,9 +86,11 @@ def _load(f, default):
 
 def bank():
     """{record_id: exam} for every master record that is not marked duplicate_of another record
-    and not excluded by the key audit (key_audit.excluded, e.g. a fabricated question)."""
+    and not excluded by the key audit (key_audit.excluded, e.g. a fabricated question),
+    and not relabelled as practice (is_pyq false) or superseded by the real record (superseded_by)."""
     return {r['record_id']: r.get('exam') or '' for r in _load(BANK_FILE, [])
-            if not (r.get('duplicate_of') or '').strip() and not (r.get('key_audit') or {}).get('excluded')}
+            if not (r.get('duplicate_of') or '').strip() and not (r.get('key_audit') or {}).get('excluded')
+            and r.get('is_pyq', True) is not False and not r.get('superseded_by')}
 
 
 def group_of(b):

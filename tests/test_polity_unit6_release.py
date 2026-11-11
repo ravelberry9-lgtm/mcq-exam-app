@@ -41,13 +41,13 @@ def test_all_sources_maps_and_readers(client,app):
         allqs=records();maps=catalog()
         # Unit 6's authored records are unchanged; bank PYQs / Laxmikanth MCQs added for units 6-10 live in their own files.
         qs={k:q for k,q in allqs.items() if k not in added_ids()}
-        assert sum(1 for q in qs.values() if q['_chapter'].startswith('6.'))==2324
+        assert sum(1 for q in qs.values() if q['_chapter'].startswith('6.'))==2315  # 2324 minus 9 reworded UPSC copies superseded 2026-11-11
         qs={k:q for k,q in qs.items() if q['_chapter'].startswith('6.')}
         assert sum(q['_kind']=='expected' for q in qs.values())==32
         assert all(q['_en'] and q['_te'] for q in qs.values())
         assert len(maps)==5
         assert sum(len(m['links']) for m in maps.values())==411
-        assert all(x['item_id'] in qs for m in maps.values() for x in m['links'])
+        assert all(x['item_id'] in qs or x['item_id'].startswith('PYQ-POL-WEB-') and x['item_id'] in allqs for m in maps.values() for x in m['links'])  # superseded reworded UPSC copies point to the real v3.71 record
         assert sum(len(chapter_test_records(c)) for c in {q['_chapter'] for q in qs.values()})==90
         for chapter in sorted({q['_chapter'] for q in qs.values()}):
             a,b,c=chapter.split('.')

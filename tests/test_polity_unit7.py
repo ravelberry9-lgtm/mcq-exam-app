@@ -27,7 +27,7 @@ def test_polity_unit7_chapters_and_records(client,app):
         d=[q for q in records().values() if q.get('audit_note')]
     # the 2026-11-11 full key verification corrected some of them against the official paper (scored on the audited key)
     fixed=[q for q in d if (q.get('key_audit') or {}).get('scored')]
-    assert len(d)==7 and all(q.get('official_key') for q in d)
+    assert len(d)==5 and all(q.get('official_key') for q in d)  # 2 superseded by verbatim UPSC records 2026-11-11
     assert all(q['key_status']=='confirmed' and q['study_answer']==q['official_key']==q['key_audit']['study_answer'] for q in fixed)
     assert all(q['key_status']=='disputed' for q in d if q not in fixed)
 
