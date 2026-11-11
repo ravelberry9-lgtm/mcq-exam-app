@@ -58,6 +58,7 @@ THEMES = [
     ('dpsp', 'DPSP & Fundamental Duties', 'ఆదేశిక సూత్రాలు, ప్రాథమిక విధులు', 'DPSP·duties', 'ఆదేశిక', '#3F6212', '#BEF264'),
     ('federal', 'Federalism & Emergency', 'సమాఖ్య వ్యవస్థ, అత్యవసర పరిస్థితి', 'Federal', 'సమాఖ్య', '#0E7490', '#67E8F9'),
     ('elections', 'Elections & democracy', 'ఎన్నికలు, ప్రజాస్వామ్యం', 'Elections', 'ఎన్నికలు', '#9F1239', '#FDA4AF'),
+    ('executive', 'Parliament & Union executive', 'పార్లమెంటు, కేంద్ర కార్యనిర్వాహక వ్యవస్థ', 'Union', 'కేంద్రం', '#1E40AF', '#93C5FD'),
     ('judiciary', 'Judiciary & tribunals', 'న్యాయవ్యవస్థ, ట్రిబ్యునళ్లు', 'Judiciary', 'న్యాయ', '#334155', '#CBD5E1'),
     ('preamble', 'Preamble, citizenship & territory', 'ప్రవేశిక, పౌరసత్వం, భూభాగం', 'Preamble', 'ప్రవేశిక', '#57534E', '#D6D3D1'),
 ]
@@ -79,7 +80,7 @@ def themes(deck_id):
     its = items(deck_id)
     out = []
     for i, t in enumerate(THEMES):
-        cs = [c for c in its if c.get('theme_i') == i]
+        cs = [c for c in its if c.get('theme_i') == i or t[0] in (c.get('also_themes') or [])]
         if cs:
             out.append({'id': 'TH-' + t[0], 'i': i, 'en': t[1], 'te': t[2], 'short_en': t[3], 'short_te': t[4], 'acc': t[5], 'ink': t[6], 'cases': cs})
     return out
@@ -210,6 +211,9 @@ def classify(it):
     except ValueError:
         unit = None
     it['unit'] = unit if unit in UNITS else PART_BY[it['part']][3]
+    _pp = PART_BY[it['part']]
+    it['part_label_en'] = _pp[0] if _pp[0] in ('Preamble', 'Schedules', 'General') else _pp[0] + ' · ' + _pp[1]
+    it['part_label_te'] = ('భాగం ' + _pp[0][5:] + ' · ' + _pp[2]) if _pp[0].startswith('Part ') else _pp[2]
     return it
 
 

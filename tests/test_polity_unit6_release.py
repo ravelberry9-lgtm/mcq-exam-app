@@ -316,7 +316,7 @@ def test_recall_case_themes_and_theme_view(client,app):
         for it in json.loads(f.read_text(encoding='utf-8')):
             assert it.get('theme_en') in names and it.get('theme_te')==names[it['theme_en']],it['id']
             assert '(' not in it['front_en'] or 'Judges' in it['front_en'],it['id']  # no descriptive brackets on the tile face
-    th=rd.themes('cases');assert 8<=len(th)<=12 and sum(len(t['cases']) for t in th)==len(rd.items('cases'))
+    th=rd.themes('cases');assert 8<=len(th)<=16 and sum(len(t['cases']) for t in th)==len(rd.items('cases'))+sum(len(c.get('also_themes') or []) for c in rd.items('cases'))
     assert rd.themes('amendments')==[]
     page=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
     D=deck_data(page);assert [t['id'] for t in D['themes']]==[t['id'] for t in th] and 'data-themes="1"' in page
@@ -660,3 +660,30 @@ def test_recall_refresh_drops_stale_cache(monkeypatch):
     rd.items('cases');rd.refresh();n=rd.items.cache_info().currsize
     monkeypatch.setattr(rd,'data_version',lambda:'changed');rd.refresh()
     assert n and rd.items.cache_info().currsize==0
+
+def test_related_jump_row_and_for_matrix(client,app):
+    enable(app)
+    from app.services import recall_decks as rd
+    with app.test_request_context():
+        R=rd.related(rd.index()['cards']['AC-6.1-324'])
+    h=frag(client,'AC-6.1-324')
+    assert 'class="xj"' in h and h.index('class="xj"')<h.index('class="xr"')  # jump row sits above the Related strip
+    assert f'ఈ ప్రకరణపై కేసులు' in h and f'<b class="xj-n">{len(R["cases"])}</b>' in h and f'<b class="xj-n">{len(R["amendments"])}</b>' in h
+    assert '?for=AC-6.1-324&amp;back=articles%3AAC-6.1-324' in h
+    p=client.get('/learn/polity/unit6/recall/cases?for=AC-6.1-324&back=articles:AC-6.1-324').get_data(as_text=True)
+    ids=re.search(r'data-for-ids="([^"]*)"',p).group(1).split(',')
+    assert ids==[r['id'] for r in R['cases']] and 'data-for-id="AC-6.1-324"' in p
+    assert 'data-back-url=' in p and 'open=AC-6.1-324' in p
+    p2=client.get('/learn/polity/unit6/recall/cases?for=AC-6.1-324').get_data(as_text=True)  # back defaults to the source card
+    assert 'data-back-deck="articles"' in p2
+    assert client.get('/learn/polity/unit6/recall/cases?for=NOPE').status_code==404
+    am=frag(client,'AM-007');assert 'Articles changed' in am and 'xj-cases' in h
+
+def test_setup_more_options_and_slim_nav(client,app):
+    enable(app)
+    p=client.get('/learn/polity/unit6/recall/articles').get_data(as_text=True)
+    more=p[p.index('id="ac-more"'):p.index('</details>',p.index('id="ac-more"'))]
+    for n in ('density','lang','order','only'):assert f'name="{n}"' in more
+    assert 'మరిన్ని ఎంపికలు' in more and 'id="ac-more-sum"' in more
+    assert 'name="part"' not in more and 'name="unit"' not in more and p.index('id="ac-start"')<p.index('id="ac-more"')
+    assert 'class="nv-l"' in client.get('/learn/').get_data(as_text=True)

@@ -167,8 +167,20 @@
   function countState(ids, v) {
     return ids.filter(function (id) { return progress[id] === v; }).length;
   }
+  // "More options" summary: one line naming what the folded options are set to
+  var MORE_KEY = SETUP_KEY + "_more";
+  function paintMore(c) {
+    var el = $("ac-more-sum");
+    if (!el) return;
+    var L = { te: ["తెలుగు", "Telugu"], en: ["ఇంగ్లీష్", "English"], both: ["రెండూ", "Both"] }[c.lang] || ["", ""];
+    var te = [c.density === "32" ? "4×8" : "3×6", L[0], c.order === "rand" ? "కలగలుపు" : "వరుసగా"], en = [c.density === "32" ? "4×8" : "3×6", L[1], c.order === "rand" ? "Random" : "In order"];
+    if (c.only) { te.push("మళ్ళీ చూడాల్సినవి"); en.push("Revise only"); }
+    if (form.elements.newer && !c.newer) { te.push("కొత్తవి లేకుండా"); en.push("No newer"); }
+    el.innerHTML = biText(esc(en.join(", ")), esc(te.join(", ")));
+  }
   function paintSetup() {
     var c = choices();
+    paintMore(c);
     root.dataset.lang = c.lang;
     var inChapter = pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: false, newer: c.newer });
     // Part counts follow the unit / chapter / newer filters
@@ -273,6 +285,7 @@
     $("ac-start").focus({ preventScroll: true });
   }
   function exitStudy() {
+    if (FOR && BACK) { location.href = BACK.url; return; } // ?for= matrix: Back returns to the card it came from
     if (history.state && history.state.acDetail) { history.go(-2); return; }
     if (history.state && history.state.acStudy) history.back(); // popstate closes the stage
     else closeStage();
@@ -356,7 +369,10 @@
     var pages = pageCount(), ids = run.ids;
     var where = $("ac-where");
     var pl = run.parts.map(function (p) { return p.replace(/^Part /, ""); });
-    if (run.chapter) {
+    if (FOR) {
+      where.innerHTML = '<span class="w-chip w-for">' + biText(esc(FOR.en), esc(FOR.te)) + "</span>";
+      where.setAttribute("aria-label", "Linked to " + FOR.en);
+    } else if (run.chapter) {
       where.innerHTML = '<span class="w-chip">' + esc(run.chapter) + "</span>";
       where.setAttribute("aria-label", "Chapter " + run.chapter);
     } else if (pl.length) {
@@ -683,6 +699,7 @@
   // ── interlinking: .xl links and Related chips open a card; same deck in place (with a back stack), other decks by URL ──
   var backStack = [];
   var BACK = D.backUrl ? { url: D.backUrl, deck: D.backDeck, en: D.backEn, te: D.backTe } : null;
+  var FOR = D.forId ? { id: D.forId, ids: (D.forIds || "").split(",").filter(function (x) { return x && byId[x]; }), en: D.forEn, te: D.forTe } : null;
   var bootBack = false; // this page was opened from another deck's card and still shows that first card
   function frontTe(id) { var e = byId[id].querySelector(".s-front .ac-te"); return e ? e.textContent.trim() : frontEn(id); }
   function showCard(id) {
@@ -720,6 +737,11 @@
   actions["ac-xback"] = goBack;
 
   function onStageClick(e) {
+    var fa = e.target.closest("a[data-for]");
+    if (fa && run && run.cur >= 0) {
+      try { history.replaceState(history.state, "", location.pathname + "?open=" + encodeURIComponent(run.ids[run.cur])); } catch (er) { /* ignore */ }
+      return; // the link itself navigates
+    }
     var a = e.target.closest("a[data-go]");
     if (a && run) { e.preventDefault(); return go(a.dataset.go, a.getAttribute("href")); }
     var b = e.target.closest("button");
@@ -787,10 +809,20 @@
   // ── init ──
   if (history.state && (history.state.acStudy || history.state.acDetail)) history.replaceState(null, ""); // reload mid-study: start at setup
   restoreChoices();
+  var more = $("ac-more");
+  if (more) {
+    if (readRaw(MORE_KEY) === "1") more.open = true;
+    more.addEventListener("toggle", function () { try { localStorage.setItem(MORE_KEY, more.open ? "1" : "0"); } catch (e) { /* ignore */ } });
+  }
   paintSetup();
   paintContinue();
   // ?open=<id>: skip setup and open that card (linked from another card); &back=<deck>:<id> shows the way back
-  if (D.open && byId[D.open]) {
+  if (FOR && FOR.ids.length) {
+    // ?for=<card>: a matrix of exactly the cards linked to that card; the exit button goes back to it
+    deepLink = true;
+    var cf = choices();
+    startRun(FOR.ids, { chapter: "", parts: [], unit: "", mode: "a", lang: cf.lang, density: cf.density, order: "seq", only: false, newer: true });
+  } else if (D.open && byId[D.open]) {
     deepLink = true;
     var c0 = choices();
     var ids0 = pickIds({ chapter: "", parts: [], unit: "", only: false, newer: true, mode: "a" });

@@ -1,9 +1,9 @@
 {% extends 'ds/base.html' %}
 {% macro bi(en, te) -%}<span class="ac-te" lang="te">{{ te or en }}</span><span class="ac-en" lang="en">{{ en }}</span>{%- endmacro %}
 {% block title %}{{ d.title_en }} · Polity recall cards{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111n') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111n') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111p') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111p') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader">{% if request.args.get('from')=='polity' %}<a class="back" href="{{ url_for('polity_unit6.home') }}">‹ Polity</a>{% else %}<a class="back" href="{{ url_for('polity_unit6.recall_hub') }}">‹ Recall cards</a>{% endif %}<b>{{ d.title_en }} · {{ d.title_te }}</b></div>{% endblock %}
-{% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}" data-deck="{{ d.id }}" data-store="{{ d.store }}" data-setup-store="{{ d.setup_store }}" data-lang-store="{{ d.lang_store }}" data-kind="{{ d.front_kind }}" data-order-en="{{ d.order_en }}" data-order-te="{{ d.order_te }}" data-pill-en="{{ d.pill_en }}" data-pill-te="{{ d.pill_te }}" data-title="{{ d.title_en }}" data-themes="{{ 1 if d.themes else 0 }}" data-open="{{ open_id }}" data-card-url="{{ url_for('polity_unit6.recall_card',deck_id=d.id,card_id='__ID__') }}"{% if back %} data-back-url="{{ back.url }}" data-back-deck="{{ back.deck }}" data-back-en="{{ back.en }}" data-back-te="{{ back.te }}"{% endif %}>
+{% block content %}<div class="u6 ac" id="ac" data-lang="{{ lang }}" data-lang-set="{{ 1 if lang_set else 0 }}" data-chapter="{{ chapter or '' }}" data-deck="{{ d.id }}" data-store="{{ d.store }}" data-setup-store="{{ d.setup_store }}" data-lang-store="{{ d.lang_store }}" data-kind="{{ d.front_kind }}" data-order-en="{{ d.order_en }}" data-order-te="{{ d.order_te }}" data-pill-en="{{ d.pill_en }}" data-pill-te="{{ d.pill_te }}" data-title="{{ d.title_en }}" data-themes="{{ 1 if d.themes else 0 }}" data-open="{{ open_id }}" data-card-url="{{ url_for('polity_unit6.recall_card',deck_id=d.id,card_id='__ID__') }}"{% if for_ %} data-for-id="{{ for_.id }}" data-for-ids="{{ for_.ids|join(',') }}" data-for-en="{{ for_.en }}" data-for-te="{{ for_.te }}"{% endif %}{% if back %} data-back-url="{{ back.url }}" data-back-deck="{{ back.deck }}" data-back-en="{{ back.en }}" data-back-te="{{ back.te }}"{% endif %}>
 
 <form class="ac-setup" id="ac-setup" novalidate>
   <h1 class="ac-title">{{ bi(d.prompt_en, d.prompt_te) }}</h1>
@@ -15,6 +15,7 @@
   </div>
   <p class="ac-msg" id="ac-msg" role="status" hidden></p>
   <p class="ac-opt-note">{{ bi('Filters below are optional', 'కింది ఎంపికలు ఐచ్ఛికం, మార్చకపోయినా సరే') }}</p>
+  {% if for_ %}<p class="ac-forsetup">{{ bi('Linked to ' ~ for_.en, for_.te ~ ' కు సంబంధించినవి') }}: {{ for_.ids|length }}</p>{% endif %}
 
   {% if chapter %}<label class="ac-chfilter" style="--acc:{{ chapter|accent }};--acc-ink:{{ chapter|accent_ink }}"><input type="checkbox" name="chapter" value="{{ chapter }}" checked>
     <span class="ac-chf-t">{{ bi('Only chapter ' ~ chapter, 'అధ్యాయం ' ~ chapter ~ ' మాత్రమే') }}{% if chapter in names %} <small>{{ bi(names[chapter][0], names[chapter][1]) }}</small>{% endif %}</span><span class="ac-chf-x" aria-hidden="true">×</span></label>{% endif %}
@@ -49,6 +50,10 @@
     </div>
   </fieldset>
 
+  {#- Rarely changed options fold away (open/closed remembered per deck); the summary shows what is set. -#}
+  <details class="ac-more" id="ac-more">
+    <summary><span class="am-h"><span lang="te">మరిన్ని ఎంపికలు</span> <span lang="en">More options</span></span><span class="am-sum" id="ac-more-sum"></span></summary>
+    <div class="am-body">
   <fieldset class="ac-field">
     <legend>{{ bi('Cards per screen', 'ఒక్క తెరపై కార్డులు') }}</legend>
     <div class="ac-opts two">
@@ -78,6 +83,9 @@
     {% if d.new %}<label class="ac-tog"><input type="checkbox" name="newer" role="switch" checked><span>{{ bi('Include newer items (not in Laxmikanth)', 'కొత్త అంశాలు కూడా (లక్ష్మీకాంత్‌లో లేనివి)') }}<small> ({{ d.new }})</small></span></label>
     {% endif %}<label class="ac-tog"><input type="checkbox" name="only" role="switch"><span>{{ bi('Only cards to revise', 'మళ్ళీ చూడాల్సినవి మాత్రమే') }}<small id="ac-xcount"></small></span></label>
   </div>
+
+    </div>
+  </details>
 
   <p class="ac-saved" id="ac-saved"></p>
   <button type="button" class="ac-reset" id="ac-reset">{{ bi('Reset my progress', 'నా పురోగతిని రీసెట్ చేయి') }}</button>
@@ -140,4 +148,4 @@
   <p class="sr" id="ac-live" aria-live="polite"></p>
 </div>
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261111n') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_articles.js',v='20261111p') }}" defer></script>{% endblock %}

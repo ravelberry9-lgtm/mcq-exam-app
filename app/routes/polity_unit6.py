@@ -226,13 +226,21 @@ def _recall_page(deck_id):
     if ':' in bk:
         bd,bid=bk.split(':',1);bc=_recall.index()['cards'].get(bid) if _recall.deck_of(bid)==bd else None;lb=bc and (bc['front_en'],bc.get('front_te') or bc['front_en'])
         if lb:_back={'id':bid,'deck':bd,'en':lb[0],'te':lb[1],'url':_recall.card_url(bid)}
+    # ?for=<card id>: a matrix of exactly the cards of this deck linked to that card (from its Related row)
+    _for=None;fid=request.args.get('for') or ''
+    if fid:
+        fc=_recall.index()['cards'].get(fid)
+        if not fc:abort(404)
+        have={c['id'] for c in cards};fids=[r['id'] for r in _recall.related(fc).get(deck_id,[]) if r['id'] in have]
+        _for={'id':fid,'ids':fids,'en':fc['front_en'],'te':fc.get('front_te') or fc['front_en']}
+        if not _back:_back={'id':fid,'deck':_recall.deck_of(fid),'en':_for['en'],'te':_for['te'],'url':_recall.card_url(fid)}
     light={'v':_recall.data_version(),'cards':[_recall.light(c,d) for c in cards],'themes':_recall.light_themes(deck_id),
            'parts':{P[0]:[P[1],P[2],P[4],P[5]] for P in _recall.PARTS}}
     for x in light['cards']:
         if 'acc' not in x:x['acc'],x['ink']=_acc_pair(x['ch'])
     return render_template('ds/polity_recall.html',d=d,total=len(cards),chapter=ch,names=ARTCARD_CHAPTERS,lang=language(),lang_set='qlang' in request.args,
                            parts=_recall.part_counts(cards),units=_recall.UNITS,ucounts=_recall.unit_counts(cards),light=light,
-                           open_id=_open if _open in {c['id'] for c in cards} else '',back=_back)
+                           open_id=_open if _open in {c['id'] for c in cards} else '',back=_back,for_=_for)
 @bp.get('/recall/<deck_id>/card/<card_id>')
 def recall_card(deck_id,card_id):
     """One card's full detail markup (<article class="ac-src">), fetched lazily when the card is opened. Cached by data version."""

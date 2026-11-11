@@ -72,6 +72,15 @@
 {%- endmacro %}
 {#- Related strip: chips to every linked article / amendment / case (links.json + the card's structured fields). -#}
 {% macro chip(r) %}<a class="xr-chip" data-go="{{ r.id }}" data-deck="{{ r.deck }}" href="{{ r.url }}">{{ bi(r.en, r.te) }}</a>{% endmacro %}
+{#- Jump row at the top of a card: counts of linked cards in the other two decks; each opens a matrix of exactly those (?for=). -#}
+{% macro jumprow(c) -%}{% set R = related(c) %}{% set K = {'articles': [('cases', '⚖', 'Cases', 'ఈ ప్రకరణపై కేసులు'), ('amendments', '✎', 'Amendments', 'సవరణలు')],
+  'amendments': [('articles', '§', 'Articles changed', 'మారిన ప్రకరణలు'), ('cases', '⚖', 'Cases', 'కేసులు')],
+  'cases': [('articles', '§', 'Articles', 'ప్రకరణలు'), ('amendments', '✎', 'Amendments', 'సవరణలు')]}.get(d.id, []) %}
+  {%- if K and (R[K[0][0]] or R[K[1][0]]) %}
+      <nav class="xj" aria-label="Related cards">{% for k, ic, en, te in K %}{% if R[k] %}
+        <a class="xj-go xj-{{ k }}" data-for="{{ k }}" href="{{ url_for('polity_unit6.recall_deck', deck_id=k) }}?for={{ c.id|urlencode }}&amp;back={{ (d.id ~ ':' ~ c.id)|urlencode }}"><i aria-hidden="true">{{ ic }}</i><span class="xj-t">{{ bi(en, te) }}</span><b class="xj-n">{{ R[k]|length }}</b></a>{% endif %}{% endfor %}
+      </nav>{% endif %}
+{%- endmacro %}
 {% macro relstrip(c) -%}{% set R = related(c) %}{% if R.articles or R.amendments or R.cases %}
       <nav class="xr" aria-label="Related">
         <h3 class="ac-lbl">{{ bi('Related', 'సంబంధిత అంశాలు') }}</h3>
@@ -160,8 +169,8 @@
     <div class="s-chap">{{ bi(c.theme_en, c.theme_te) }}</div>
     {{ hero(c) }}
     {% else %}<div class="s-title">{{ bi(c.title_en, c.title_te) }}</div>
-    <div class="s-chap">{{ c.chapter }}{% if c.chapter in names %} {{ bi(names[c.chapter][0], names[c.chapter][1]) }}{% endif %}</div>{% endif %}
-    <div class="s-back">{% if TH %}{{ teach(c) }}{% elif d.id == 'articles' %}{{ art_teach(c) }}{% elif d.id == 'amendments' and (c.one_line_en or c.changes or c.background_en) %}{{ am_teach(c) }}{% else %}
+    <div class="s-chap">{% if c.chapter in names %}{{ c.chapter }} {{ bi(names[c.chapter][0], names[c.chapter][1]) }}{% elif c.part_label_en %}{{ bi(c.part_label_en, c.part_label_te) }}{% else %}{{ c.chapter }}{% endif %}</div>{% endif %}
+    <div class="s-back">{{ jumprow(c) }}{% if TH %}{{ teach(c) }}{% elif d.id == 'articles' %}{{ art_teach(c) }}{% elif d.id == 'amendments' and (c.one_line_en or c.changes or c.background_en) %}{{ am_teach(c) }}{% else %}
       {% if c.source == 'new' %}<p class="ac-new">{{ bi('New · after Laxmikanth', 'కొత్తది · లక్ష్మీకాంత్ తర్వాత') }}</p>{% endif %}
       <div class="ac-says">{{ bx(c.says_en, c.says_te, c.id) }}</div>
       {% if c.points_en %}<div class="ac-points">{{ blx(c.points_en, c.points_te, c.id) }}</div>{% endif %}
@@ -181,7 +190,7 @@
     <div class="s-title">{{ bi(t.en, t.te) }}</div>
     <div class="s-chap">{{ bi('Theme ' ~ (t.i + 1) ~ ' of ' ~ themes|length, (themes|length) ~ ' అంశాల్లో ' ~ (t.i + 1) ~ 'వది') }}</div>
     <div class="s-back">
-      {%- set ns = namespace(ids=[]) %}{% for c in t.cases %}{% set CC = card_chains(c) %}{% if CC and CC[0][0].chain_id not in ns.ids %}{% set ns.ids = ns.ids + [CC[0][0].chain_id] %}{% endif %}{% endfor %}
+      {%- set ns = namespace(ids=[]) %}{% for c in t.cases %}{% set CC = card_chains(c) %}{% if c.theme_en == t.en and CC and CC[0][0].chain_id not in ns.ids %}{% set ns.ids = ns.ids + [CC[0][0].chain_id] %}{% endif %}{% endfor %}
       {% for cid in ns.ids %}{{ timeline(chains[cid], None, True) }}{% endfor %}
       <p class="ac-lbl">{{ bi('Cases in this theme — say what each one dealt with', 'ఈ అంశంలోని కేసులు — ఒక్కోటి దేని గురించో చెప్పండి') }}</p>
       <ol class="ac-thlist">{% for c in t.cases %}

@@ -34,7 +34,7 @@ def _sort_key(a):
 def all_cards():
     out = []
     if DIR.is_dir():
-        for f in sorted(DIR.glob('6.*.json')):
+        for f in sorted([*DIR.glob('6.*.json'), *DIR.glob('p*.json')]):
             try:
                 out.extend(json.loads(f.read_text(encoding='utf-8')))
             except (ValueError, OSError):

@@ -627,3 +627,33 @@ a.ac-art:hover,a.ac-art:focus-visible{background:color-mix(in srgb,var(--acc) 22
 .ac-lfail p{margin:0;color:var(--ink)}
 .ac-detail[data-loading="1"] .ac-judge button,.ac-detail[data-loading="fail"] .ac-judge button{opacity:.6}
 .rh-ask{margin:0;font-weight:600;color:var(--ink)}
+
+/* setup: rarely changed options fold behind "More options"; the summary line says what is set */
+.ac-more{border:1.5px solid var(--line);border-radius:14px;background:var(--card)}
+.ac-more>summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;min-height:52px;padding:13px 44px 13px 14px;position:relative;cursor:pointer;list-style:none;font-weight:700}
+.ac-more>summary::-webkit-details-marker{display:none}
+.ac-more>summary::after{content:"";position:absolute;right:18px;top:50%;width:9px;height:9px;margin-top:-7px;border:solid var(--muted);border-width:0 2px 2px 0;transform:rotate(45deg);transition:transform .15s}
+.ac-more[open]>summary::after{transform:rotate(-135deg);margin-top:-2px}
+.ac-more>summary:focus-visible{outline:2px solid var(--acc,#0F766E);outline-offset:2px;border-radius:12px}
+.am-h [lang="en"]{color:var(--muted);font-weight:600}
+.am-sum{font-size:.85rem;font-weight:600;color:var(--muted);min-width:0}
+.ac[data-lang="both"] .am-sum .ac-en{display:none}
+.am-body{display:flex;flex-direction:column;gap:18px;padding:4px 14px 16px;border-top:1px solid var(--line);padding-top:14px}
+.ac-forsetup{margin:0;font-size:.9rem;font-weight:700}
+@media (prefers-reduced-motion:reduce){.ac-more>summary::after{transition:none}}
+
+/* jump row at the top of a card: linked cases / amendments / articles with counts -> a matrix of exactly those */
+.xj{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.xj-go{--k:var(--xl-art);flex:1 1 150px;display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px;border-radius:12px;
+  border:1.5px solid color-mix(in srgb,var(--k) 55%,var(--line));background:color-mix(in srgb,var(--k) 9%,var(--card));color:var(--ink);
+  font-weight:700;font-size:.92rem;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.xj-amendments{--k:var(--xl-am)}.xj-cases{--k:var(--xl-case)}
+.xj-go>i{font-style:normal;color:var(--k);font-size:1.05rem;flex:none}
+.xj-t{flex:1;min-width:0}
+.xj-t .ac-te,.xj-t .ac-en{display:inline!important;margin:0!important;padding:0!important;border:0!important;font-size:inherit!important;color:inherit!important}
+.xj-t .ac-te+.ac-en{margin-left:5px!important;color:var(--muted)!important;font-weight:600}
+.ac-stage[data-lang="te"] .xj-t .ac-en,.ac-stage[data-lang="en"] .xj-t .ac-te{display:none!important}
+.xj-n{flex:none;min-width:28px;padding:2px 8px;border-radius:99px;background:var(--k);color:#fff;text-align:center;font-size:.82rem}
+@media (prefers-color-scheme:dark){body:has(#ac) .xj-n{color:#0F1626}}
+.xj-go:hover{background:color-mix(in srgb,var(--k) 16%,var(--card))}
+.xj-go:focus-visible{outline:2px solid var(--k);outline-offset:2px}
