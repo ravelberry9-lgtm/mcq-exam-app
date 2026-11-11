@@ -238,7 +238,7 @@ def test_subject_page_lists_all_units_with_topics(client,app):
     units=page.select('.u6-unit')
     assert len(units)==5 and page.select_one('a.u6-unit-h')['href'].endswith('/unit')
     assert units[0].select('.u6-topics li') and 'Preamble' in units[0].get_text() and 'Coming soon' in units[1].get_text()
-    assert len(page.select('section.card'))==6
+    assert len(page.select('section.card'))==7 and page.select_one('section.card.pr')  # intro + recall decks + 5 units
 
 
 def test_descriptive_questions_page(client,app):

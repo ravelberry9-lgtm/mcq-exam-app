@@ -10,6 +10,7 @@
   var KEY = D.store || "u6_artcards_v1";            // progress
   var LANG_KEY = D.langStore || "u6_artcards_lang"; // older saved language choice
   var SETUP_KEY = D.setupStore || "u6_artcards_setup"; // last setup choices
+  var deepLink = false, POS_KEY = SETUP_KEY + "_pos"; // last run: card order + page + open card, for "Continue where you left off"
   var TEXT_FRONT = D.kind === "text";
   var THEMES = D.themes === "1"; // cases: direction B is a theme view (one tile per theme, opened = its cases)
   var LANGS = ["te", "en", "both"];
@@ -19,18 +20,59 @@
 
   var $ = function (id) { return document.getElementById(id); };
   var form = $("ac-setup"), stage = $("ac-stage"), grid = $("ac-grid"), detail = $("ac-detail"), sum = $("ac-sum"), live = $("ac-live");
-  var all = [].slice.call(root.querySelectorAll(".ac-src"));
-  var byId = {};
-  all.forEach(function (s) { byId[s.dataset.id] = s; });
-  var deck = all.filter(function (s) { return !s.dataset.themeTile; });
-  var themeTiles = all.filter(function (s) { return s.dataset.themeTile; });
-  function isTheme(id) { return !!byId[id].dataset.themeTile; }
-  // cases of a theme tile that pass the run's chapter / newer filters
-  function themeRows(src, c) {
-    return [].filter.call(src.querySelectorAll(".ac-thlist li"), function (li) {
-      return (!c.chapter || li.dataset.ch === c.chapter) && (c.newer !== false || li.dataset.src !== "new");
-    });
+  // Lazy deck: the page embeds only light tile data (#ac-data JSON). Each card's full detail markup is fetched on open
+  // from data-card-url (cached in memory, next / previous prefetched). Stub .ac-src elements carry the tile parts only.
+  var DATA = {};
+  try { DATA = JSON.parse(($("ac-data") || {}).textContent || "{}"); } catch (e) { DATA = {}; }
+  var CARDS = DATA.cards || [], PARTS = DATA.parts || {};
+  var info = {}, byId = {};
+  function bt(v) { v = v || ["", ""]; return '<span class="ac-te" lang="te">' + esc(v[1] || v[0]) + '</span><span class="ac-en" lang="en">' + esc(v[0]) + "</span>"; }
+  function stub(o) {
+    var el = document.createElement("article");
+    el.className = "ac-src";
+    el.dataset.id = o.id; el.dataset.ch = o.ch || ""; el.dataset.acc = o.acc || ""; el.dataset.ink = o.ink || "";
+    el.dataset.src = o.src || ""; el.dataset.two = o.two ? "1" : "0";
+    if (o.theme) el.dataset.themeTile = "1";
+    el.innerHTML = '<div class="s-num">' + esc(o.n) + '</div><div class="s-front">' + bt(o.f) + "</div>" +
+      (o.short ? '<div class="s-short">' + bt(o.short) + '</div><div class="s-vs">' + (o.vs ? bt(o.vs) : "") + "</div>" : "") +
+      '<div class="s-sub">' + esc(o.s || "") + '</div><div class="s-con">' + bt(o.c) + "</div>" +
+      (o.band ? '<div class="s-band">' + bt(o.band) + "</div>" : "") + (o.pop ? '<div class="s-pop">' + bt(o.pop) + "</div>" : "");
+    return el;
   }
+  CARDS.concat(DATA.themes || []).forEach(function (o) { info[o.id] = o; byId[o.id] = stub(o); });
+  var deck = CARDS.map(function (o) { return byId[o.id]; });
+  var themeTiles = (DATA.themes || []).map(function (o) { return byId[o.id]; });
+  function isTheme(id) { return !!byId[id].dataset.themeTile; }
+  function passes(o, c) {
+    return (!c.chapter || o.ch === c.chapter) && (c.newer !== false || o.src !== "new") &&
+      (!c.parts || !c.parts.length || c.parts.indexOf(o.p) >= 0) && (!c.unit || String(o.u) === String(c.unit));
+  }
+  // ids of a theme tile's cases that pass the run's filters
+  function themeRows(src, c) {
+    return (info[src.dataset.id].cases || []).filter(function (id) { return info[id] && passes(info[id], c); });
+  }
+
+  // ── lazy full cards: in-memory cache + in-flight promises ──
+  var full = {}, inflight = {};
+  function cardUrl(id) { return (D.cardUrl || "").replace("__ID__", encodeURIComponent(id)) + (DATA.v ? "?v=" + DATA.v : ""); }
+  function load(id) {
+    if (full[id]) return Promise.resolve(full[id]);
+    if (inflight[id]) return inflight[id];
+    inflight[id] = fetch(cardUrl(id), { credentials: "same-origin" }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.text();
+    }).then(function (html) {
+      var box = document.createElement("div");
+      box.innerHTML = html;
+      var el = box.querySelector(".ac-src");
+      if (!el) throw new Error("bad card");
+      full[id] = el;
+      delete inflight[id];
+      return el;
+    }, function (err) { delete inflight[id]; throw err; });
+    return inflight[id];
+  }
+  function prefetch(id) { if (id && !full[id] && !inflight[id]) load(id).catch(function () { /* retried on open */ }); }
 
   var progress = readJSON(KEY);
   var run = null; // { base, ids, order, page, cur, marks:{}, mode, lang, density, chapter }
@@ -71,9 +113,20 @@
   function choices() {
     var f = form.elements;
     return {
-      chapter: f.chapter.value, mode: f.mode.value, lang: f.lang.value, density: f.density.value,
+      chapter: f.chapter && f.chapter.checked ? f.chapter.value : "", parts: pickedParts(), unit: f.unit.value, mode: f.mode.value, lang: f.lang.value, density: f.density.value,
       only: f.only.checked, order: f.order.value, newer: f.newer ? f.newer.checked : true
     };
+  }
+  function pickedParts() {
+    return [].filter.call(form.querySelectorAll('input[name="part"]'), function (i) { return i.checked; }).map(function (i) { return i.value; });
+  }
+  // Part chips: 'All' is on exactly when no single Part is picked
+  function onPartChange(e) {
+    var t = e.target;
+    if (t.name === "partall") {
+      if (t.checked) [].forEach.call(form.querySelectorAll('input[name="part"]'), function (i) { i.checked = false; });
+      else if (!pickedParts().length) t.checked = true;
+    } else if (t.name === "part") form.elements.partall.checked = !pickedParts().length;
   }
   function setRadio(name, value) {
     var r = form.querySelector('input[name="' + name + '"][value="' + value + '"]');
@@ -82,7 +135,11 @@
   function restoreChoices() {
     var saved = readJSON(SETUP_KEY);
     var urlChapter = root.dataset.chapter, langFromUrl = root.dataset.langSet === "1";
-    if (!urlChapter && typeof saved.chapter === "string") setRadio("chapter", saved.chapter);
+    if (!urlChapter && Array.isArray(saved.parts)) {
+      [].forEach.call(form.querySelectorAll('input[name="part"]'), function (i) { i.checked = saved.parts.indexOf(i.value) >= 0; });
+      form.elements.partall.checked = !pickedParts().length;
+    }
+    if (!urlChapter && saved.unit) { var ur = form.querySelector('input[name="unit"][value="' + saved.unit + '"]'); if (ur && !ur.disabled) ur.checked = true; }
     if (/^[ab]$/.test(saved.mode) && (saved.mode === "a" || anyTwoWay)) setRadio("mode", saved.mode);
     if (form.elements.newer && saved.newer === false) form.elements.newer.checked = false;
     if (GRIDS[saved.density]) setRadio("density", saved.density);
@@ -103,10 +160,9 @@
         return themeRows(s, c).length && (!c.only || progress[s.dataset.id] === "x");
       }).map(function (s) { return s.dataset.id; });
     }
-    return deck.filter(function (s) {
-      return (!c.chapter || s.dataset.ch === c.chapter) && (!c.only || progress[s.dataset.id] === "x") &&
-        (c.newer !== false || s.dataset.src !== "new") && (c.mode !== "b" || s.dataset.two === "1");
-    }).map(function (s) { return s.dataset.id; });
+    return CARDS.filter(function (o) {
+      return passes(o, c) && (!c.only || progress[o.id] === "x") && (c.mode !== "b" || o.two);
+    }).map(function (o) { return o.id; });
   }
   function countState(ids, v) {
     return ids.filter(function (id) { return progress[id] === v; }).length;
@@ -114,7 +170,13 @@
   function paintSetup() {
     var c = choices();
     root.dataset.lang = c.lang;
-    var inChapter = pickIds({ chapter: c.chapter, only: false, newer: c.newer });
+    var inChapter = pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: false, newer: c.newer });
+    // Part counts follow the unit / chapter / newer filters
+    [].forEach.call(form.querySelectorAll("[data-pcount]"), function (el) {
+      var p = el.dataset.pcount;
+      el.textContent = CARDS.filter(function (o) { return passes(o, { chapter: c.chapter, unit: c.unit, newer: c.newer, parts: p ? [p] : [] }); }).length;
+      el.closest(".ac-part").classList.toggle("none", el.textContent === "0");
+    });
     var ids = pickIds(c);
     var k = countState(inChapter, "k"), x = countState(inChapter, "x");
     $("ac-xcount").textContent = x ? " (" + x + ")" : "";
@@ -125,9 +187,9 @@
     var msg = $("ac-msg");
     msg.hidden = ids.length > 0;
     msg.textContent = ids.length ? "" : "No cards here are marked Revise yet. Turn off ‘Only cards to revise’ to study them all.";
-    var acc = form.querySelector('input[name="chapter"]:checked').closest(".ac-ch").style.getPropertyValue("--acc");
-    form.style.setProperty("--acc", acc);
-    form.style.setProperty("--acc-ink", form.querySelector('input[name="chapter"]:checked').closest(".ac-ch").style.getPropertyValue("--acc-ink"));
+    var pc = c.parts.length === 1 && PARTS[c.parts[0]];
+    form.style.setProperty("--acc", pc ? pc[2] : "#0F766E");
+    form.style.setProperty("--acc-ink", pc ? pc[3] : "#5EEAD4");
   }
   function resetProgress() {
     if (!window.confirm("Reset all " + (D.title || "").toLowerCase() + " card progress?\nపురోగతి మొత్తం రీసెట్ చేయాలా?")) return;
@@ -145,19 +207,49 @@
   // ── run lifecycle ──
   // ids always arrive in the server's order: one ascending article sequence (natural sort, article_cards.article_key),
   // across chapters when All is picked. In order uses it as is; Random shuffles a copy. Never re-sorted here.
+  function savePos() {
+    if (!run || deepLink) return; // a deep link (?open=) is a detour, not a study session
+    writeJSON(POS_KEY, { ids: run.ids, base: run.base, page: run.page, cur: run.cur, t: Date.now(),
+      c: { chapter: run.chapter, parts: run.parts, unit: run.unit, mode: run.mode, lang: run.lang, density: run.density, order: run.order, only: run.only, newer: run.newer } });
+  }
+  function savedPos() {
+    var p = readJSON(POS_KEY);
+    if (!Array.isArray(p.ids) || !p.c) return null;
+    var ids = p.ids.filter(function (id) { return byId[id]; });
+    return ids.length ? { ids: ids, base: (p.base || ids).filter(function (id) { return byId[id]; }), page: +p.page || 0, cur: +p.cur, c: p.c } : null;
+  }
+  function paintContinue() {
+    var p = savedPos(), b = $("ac-cont");
+    b.hidden = !p;
+    if (!p) return;
+    var pages = Math.max(1, Math.ceil(p.ids.length / (+p.c.density || 18)));
+    $("ac-cont-n").textContent = p.cur >= 0 ? "Card " + (p.cur + 1) + " of " + p.ids.length : "Page " + (Math.min(p.page, pages - 1) + 1) + " of " + pages + " · " + p.ids.length + " cards";
+  }
+  function continueRun() {
+    var p = savedPos();
+    if (!p) return;
+    startRun(p.ids, Object.assign({}, p.c, { order: "seq" }));
+    run.order = p.c.order === "rand" ? "rand" : "seq"; run.base = p.base.length ? p.base : p.ids.slice();
+    run.page = Math.min(Math.max(0, p.page), pageCount() - 1);
+    renderMatrix();
+    var i = p.cur >= 0 && p.cur < run.ids.length ? p.cur : run.page * perPage();
+    focusTile(i);
+    if (p.cur >= 0 && p.cur < run.ids.length) openDetail(i);
+  }
   function startRun(ids, c) {
     if (!ids.length) return;
     var order = c.order === "rand" ? "rand" : "seq";
     run = {
-      all: c.all || pickIds({ chapter: c.chapter, only: c.only, newer: c.newer, mode: "a" }),
+      all: c.all || pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: c.only, newer: c.newer, mode: "a" }),
       base: ids.slice(), ids: order === "rand" ? shuffled(ids) : ids.slice(), order: order, page: 0, cur: -1, marks: {},
-      mode: c.mode, lang: c.lang, density: c.density || "18", chapter: c.chapter || "", only: !!c.only, newer: c.newer !== false
+      mode: c.mode, lang: c.lang, density: c.density || "18", chapter: c.chapter || "", parts: (c.parts || []).slice(), unit: c.unit || "", only: !!c.only, newer: c.newer !== false
     };
     sum.hidden = true;
     detail.hidden = true;
     openStage();
     renderMatrix();
     focusTile(0);
+    savePos();
   }
   function openStage() {
     if (stage.parentNode !== document.body) document.body.appendChild(stage);
@@ -177,6 +269,7 @@
     if (run) { setRadio("order", run.order); setRadio("mode", run.mode); setRadio("lang", run.lang); }
     run = null;
     paintSetup();
+    paintContinue();
     $("ac-start").focus({ preventScroll: true });
   }
   function exitStudy() {
@@ -262,9 +355,18 @@
   function paintBar() {
     var pages = pageCount(), ids = run.ids;
     var where = $("ac-where");
+    var pl = run.parts.map(function (p) { return p.replace(/^Part /, ""); });
     if (run.chapter) {
       where.innerHTML = '<span class="w-chip">' + esc(run.chapter) + "</span>";
       where.setAttribute("aria-label", "Chapter " + run.chapter);
+    } else if (pl.length) {
+      var p0 = PARTS[run.parts[0]] || [];
+      where.innerHTML = '<span class="w-chip w-part" style="--pc:' + (run.parts.length === 1 ? p0[2] : "var(--ink)") + '">' +
+        esc(pl.length > 2 ? pl.slice(0, 2).join(" · ") + " +" + (pl.length - 2) : pl.join(" · ")) + "</span>";
+      where.setAttribute("aria-label", (run.parts.length === 1 ? "" : "Parts ") + run.parts.join(", "));
+    } else if (run.unit) {
+      where.innerHTML = '<span class="w-chip">' + biText("Unit " + esc(run.unit), "యూనిట్ " + esc(run.unit)) + "</span>";
+      where.setAttribute("aria-label", "Unit " + run.unit);
     } else {
       where.innerHTML = '<span class="w-chip all" style="--dots:' + chapterDots(ids) + '"><i class="w-dot" aria-hidden="true"></i><span class="w-txt">' +
         biText("All", "అన్ని") + "</span></span>";
@@ -338,6 +440,7 @@
     if (p < 0 || p >= pageCount()) return;
     run.page = p;
     renderMatrix();
+    savePos();
     live.textContent = "Page " + (p + 1) + " of " + pageCount();
   }
   function focusTile(index) {
@@ -348,7 +451,7 @@
   function toggleMode() {
     if (!anyTwoWay) return;
     var mode = run.mode === "a" ? "b" : "a";
-    var ids = THEMES ? pickIds({ chapter: run.chapter, only: run.only, newer: run.newer, mode: mode })
+    var ids = THEMES ? pickIds({ chapter: run.chapter, parts: run.parts, unit: run.unit, only: run.only, newer: run.newer, mode: mode })
       : run.all.filter(function (id) { return mode === "a" || canB(id); });
     if (!ids.length) { toast("No two-way cards here", "ఇక్కడ రెండు వైపుల కార్డులు లేవు"); return; }
     if (THEMES) toast(mode === "b" ? "Theme → Cases" : "Case → Issue", mode === "b" ? "అంశం → కేసులు" : "కేసు → అంశం");
@@ -403,8 +506,16 @@
 
   // ── detail view ──
   function fillDetail(index) {
-    var id = run.ids[index], src = byId[id], n = esc(num(id));
+    var id = run.ids[index], n = esc(num(id));
     run.cur = index;
+    savePos();
+    $("ac-pos").textContent = (index + 1) + " / " + run.ids.length;
+    $("ac-prev").disabled = index === 0;
+    $("ac-next").disabled = index >= run.ids.length - 1;
+    var src = full[id];
+    if (!src) { paintLoading(index); return; }
+    detail.removeAttribute("aria-busy");
+    detail.dataset.loading = "";
     detail.style.setProperty("--acc", src.dataset.acc);
     detail.style.setProperty("--acc-ink", src.dataset.ink);
     detail.dataset.lang = run.lang;
@@ -425,18 +536,43 @@
     $("ac-dbody").innerHTML = src.querySelector(".s-back").innerHTML;
     detail.dataset.theme = isTheme(id) ? "1" : "";
     if (isTheme(id)) {
-      var keep = themeRows(src, run).map(function (li) { return [].indexOf.call(li.parentNode.children, li); });
-      [].forEach.call($("ac-dbody").querySelectorAll(".ac-thlist li"), function (li, i) { if (keep.indexOf(i) < 0) li.remove(); });
+      var keep = themeRows(src, run);
+      [].forEach.call($("ac-dbody").querySelectorAll(".ac-thlist li"), function (li) { if (keep.indexOf(li.dataset.id) < 0) li.remove(); });
     }
     // chain timeline: a step can jump only to a card that is in this run
     [].forEach.call($("ac-dbody").querySelectorAll("[data-jump]"), function (b) {
       if (run.ids.indexOf(b.dataset.jump) < 0) { b.disabled = true; b.removeAttribute("data-jump"); }
     });
     $("ac-dscroll").scrollTop = 0;
-    $("ac-pos").textContent = (index + 1) + " / " + run.ids.length;
-    $("ac-prev").disabled = index === 0;
-    $("ac-next").disabled = index >= run.ids.length - 1;
     live.textContent = frontEn(id) + ", card " + (index + 1) + " of " + run.ids.length;
+    prefetch(run.ids[index + 1]);
+    prefetch(run.ids[index - 1]);
+  }
+  // Not fetched yet: show the card face at once (front + cue from the light data), then fill when it arrives.
+  function paintLoading(index, failed) {
+    var id = run.ids[index], src = byId[id];
+    detail.style.setProperty("--acc", src.dataset.acc);
+    detail.style.setProperty("--acc-ink", src.dataset.ink);
+    detail.dataset.lang = run.lang;
+    detail.dataset.state = progress[id] || "";
+    detail.dataset.loading = failed ? "fail" : "1";
+    detail.setAttribute("aria-busy", failed ? "false" : "true");
+    $("ac-dchap").innerHTML = "";
+    var sb = sub(id);
+    $("ac-dtitle").innerHTML = '<span class="ac-pill txt"><small>' + (isTheme(id) ? biText("Theme", "అంశం") : biText(D.pillEn || "Article", D.pillTe || "ప్రకరణ")) + "</small>" +
+      src.querySelector(".s-front").innerHTML + (sb ? '<span class="p-sub">' + esc(sb) + "</span>" : "") + "</span>" +
+      '<span class="ac-anstext">' + src.querySelector(".s-con").innerHTML + "</span>";
+    $("ac-dbody").innerHTML = failed
+      ? '<div class="ac-lfail" role="alert"><p>' + biText("This card did not load. Check your connection and try again.", "ఈ కార్డు లోడ్ కాలేదు. ఇంటర్నెట్ చూసి మళ్ళీ ప్రయత్నించండి.") +
+        '</p><button type="button" class="ac-ghost" data-retry="1">' + biText("Try again", "మళ్ళీ ప్రయత్నించండి") + "</button></div>"
+      : '<div class="ac-lbones" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="s"></i></div>';
+    $("ac-dscroll").scrollTop = 0;
+    if (failed) return;
+    load(id).then(function () {
+      if (run && run.ids[run.cur] === id) fillDetail(run.cur);
+    }, function () {
+      if (run && run.ids[run.cur] === id) paintLoading(run.cur, true);
+    });
   }
   function tileRect(index) {
     var t = grid.querySelector('.ac-tile[data-i="' + index + '"]');
@@ -468,6 +604,7 @@
     var index = run.cur;
     var page = Math.floor(index / perPage());
     if (page !== run.page) run.page = page;
+    run.cur = -1; savePos(); run.cur = index;
     renderMatrix();
     var r = tileRect(index);
     var finish = function () {
@@ -529,7 +666,7 @@
   }
   function reviseMissed() {
     var ids = run.base.filter(function (id) { return run.marks[id] === "x"; });
-    startRun(ids, { order: run.order, mode: run.mode, lang: run.lang, density: run.density, chapter: run.chapter, all: ids.slice() });
+    startRun(ids, { order: run.order, mode: run.mode, lang: run.lang, density: run.density, chapter: run.chapter, parts: run.parts, unit: run.unit, all: ids.slice() });
   }
   function dismissSummary() {
     sum.hidden = true;
@@ -590,6 +727,7 @@
     if (actions[b.id]) return actions[b.id]();
     if (b.classList.contains("ac-tile")) return openDetail(+b.dataset.i);
     if (b.dataset.opt) return answerPractice(b);
+    if (b.dataset.retry) return fillDetail(run.cur);
     if (b.dataset.jump) return jumpTo(b.dataset.jump);
     if (b.dataset.tab) return chainTab(b);
     if (b.dataset.judge) return judge(b.dataset.judge);
@@ -635,9 +773,10 @@
     resizeTimer = setTimeout(function () { applyShape(); fitTiles(); }, 80);
   }
 
-  form.addEventListener("change", paintSetup);
+  form.addEventListener("change", function (e) { onPartChange(e); paintSetup(); });
   form.addEventListener("submit", onStart);
   $("ac-reset").addEventListener("click", resetProgress);
+  $("ac-cont").addEventListener("click", continueRun);
   stage.addEventListener("click", onStageClick);
   stage.addEventListener("touchstart", onTouchStart, { passive: true });
   stage.addEventListener("touchend", onTouchEnd, { passive: true });
@@ -649,12 +788,15 @@
   if (history.state && (history.state.acStudy || history.state.acDetail)) history.replaceState(null, ""); // reload mid-study: start at setup
   restoreChoices();
   paintSetup();
+  paintContinue();
   // ?open=<id>: skip setup and open that card (linked from another card); &back=<deck>:<id> shows the way back
   if (D.open && byId[D.open]) {
+    deepLink = true;
     var c0 = choices();
-    var ids0 = pickIds({ chapter: "", only: false, newer: true, mode: "a" });
+    var ids0 = pickIds({ chapter: "", parts: [], unit: "", only: false, newer: true, mode: "a" });
     if (ids0.indexOf(D.open) < 0) ids0.push(D.open);
-    startRun(ids0, { chapter: "", mode: "a", lang: c0.lang, density: c0.density, order: "seq", only: false, newer: true });
+    load(D.open).catch(function () { /* the detail view shows a retry */ });
+    startRun(ids0, { chapter: "", parts: [], unit: "", mode: "a", lang: c0.lang, density: c0.density, order: "seq", only: false, newer: true });
     bootBack = !!BACK;
     openDetail(run.ids.indexOf(D.open));
     paintBack();

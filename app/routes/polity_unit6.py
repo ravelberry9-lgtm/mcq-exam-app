@@ -206,10 +206,13 @@ def test_records(cid):
     d=read(p);ids=[q['id'] for q in d.get('questions',[])]+d.get('question_ids',[])
     corpus=records();return [corpus[i] for i in dict.fromkeys(ids) if i in corpus]
 
+@bp.before_request
+def _recall_fresh():
+    if request.endpoint in ('polity_unit6.home','polity_unit6.recall_hub','polity_unit6.recall_deck','polity_unit6.recall_card','polity_unit6.articles','polity_unit6.unit'):_recall.refresh()
 @bp.get('/')
 def home():
     units=read(CONTENT/'MASTER-INDEX.json')['units']
-    return render_template('ds/polity_subject.html',units=units)
+    return render_template('ds/polity_subject.html',units=units,decks=[d for d in _recall.all_decks() if d['count']] if enabled() else [])
 
 def _recall_page(deck_id):
     d=_recall.deck(deck_id)
@@ -223,12 +226,32 @@ def _recall_page(deck_id):
     if ':' in bk:
         bd,bid=bk.split(':',1);bc=_recall.index()['cards'].get(bid) if _recall.deck_of(bid)==bd else None;lb=bc and (bc['front_en'],bc.get('front_te') or bc['front_en'])
         if lb:_back={'id':bid,'deck':bd,'en':lb[0],'te':lb[1],'url':_recall.card_url(bid)}
-    counts={}
-    for c in cards:counts[c['chapter']]=counts.get(c['chapter'],0)+1
-    return render_template('ds/polity_recall.html',d=d,cards=cards,total=len(cards),counts=counts,chapter=ch,chs=sorted(counts),
-                           names=ARTCARD_CHAPTERS,lang=language(),lang_set='qlang' in request.args,themes=_recall.themes(deck_id),
-                           chains=_recall.chains(),card_chains=_recall.card_chains,ref_url=_recall.ref_url,art_ref=_recall.art_ref,exam_label=_recall.exam_label,related=_recall.related,
+    light={'v':_recall.data_version(),'cards':[_recall.light(c,d) for c in cards],'themes':_recall.light_themes(deck_id),
+           'parts':{P[0]:[P[1],P[2],P[4],P[5]] for P in _recall.PARTS}}
+    for x in light['cards']:
+        if 'acc' not in x:x['acc'],x['ink']=_acc_pair(x['ch'])
+    return render_template('ds/polity_recall.html',d=d,total=len(cards),chapter=ch,names=ARTCARD_CHAPTERS,lang=language(),lang_set='qlang' in request.args,
+                           parts=_recall.part_counts(cards),units=_recall.UNITS,ucounts=_recall.unit_counts(cards),light=light,
                            open_id=_open if _open in {c['id'] for c in cards} else '',back=_back)
+@bp.get('/recall/<deck_id>/card/<card_id>')
+def recall_card(deck_id,card_id):
+    """One card's full detail markup (<article class="ac-src">), fetched lazily when the card is opened. Cached by data version."""
+    d=_recall.deck(deck_id)
+    if not d:abort(404)
+    cards=_recall.items(deck_id);c=next((x for x in cards if x['id']==card_id),None);t=None
+    if not c:
+        t=next((x for x in _recall.themes(deck_id) if x['id']==card_id),None)
+        if not t:abort(404)
+    etag='"%s-%s-%s"'%(_recall.data_version(),deck_id,card_id)
+    if request.if_none_match and etag.strip('"') in request.if_none_match:
+        r=make_response('',304)
+    else:
+        r=make_response(render_template('ds/polity_recall_card.html',d=d,card=c,t=t,cards=cards,names=ARTCARD_CHAPTERS,themes=_recall.themes(deck_id),
+                        chains=_recall.chains(),card_chains=_recall.card_chains,ref_url=_recall.ref_url,art_ref=_recall.art_ref,exam_label=_recall.exam_label,related=_recall.related))
+        r.headers['Content-Type']='text/html; charset=utf-8'
+    r.headers['ETag']=etag;r.headers['Cache-Control']='public, max-age=604800' if request.args.get('v') else 'no-cache'
+    r.headers['Vary']='Accept-Encoding'
+    return r
 @bp.get('/articles')
 def articles():return _recall_page('articles')
 @bp.get('/recall')

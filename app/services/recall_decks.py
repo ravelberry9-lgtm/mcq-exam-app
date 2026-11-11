@@ -48,7 +48,7 @@ DECKS = {
 # One fixed theme list; the data carries theme_en/theme_te (must match a row here). Order = 'In order' for cases.
 # (id, theme_en, theme_te, short_en, short_te, colour (light fill), ink (dark-mode text))
 THEMES = [
-    ('basic', 'Amending power & basic structure', 'సవరణ అధికారం, మౌలిక స్వరూపం', 'Basic str.', 'మౌలిక', '#6B21A8', '#D8B4FE'),
+    ('basic', 'Amending power & basic structure', 'సవరణ అధికారం, మౌలిక నిర్మాణం', 'Basic str.', 'మౌలిక', '#6B21A8', '#D8B4FE'),
     ('property', 'Right to property & Ninth Schedule', 'ఆస్తి హక్కు, తొమ్మిదో షెడ్యూల్', 'Property', 'ఆస్తి', '#854D0E', '#FDE68A'),
     ('liberty', 'Life & personal liberty (Article 21)', 'జీవించే హక్కు, వ్యక్తిగత స్వేచ్ఛ (ప్రకరణ 21)', 'Art 21', 'ప్ర.21', '#0F766E', '#5EEAD4'),
     ('art21plus', 'Rights read into Article 21', 'ప్రకరణ 21 లోకి చేర్చిన హక్కులు', 'Art 21 +', 'ప్ర.21 +', '#115E59', '#99F6E4'),
@@ -110,6 +110,181 @@ def _article_item(c):
     }
 
 
+# ── Part-wise organisation: every card gets 'part' (Constitution Part / 'Schedules' / 'Preamble' / 'General') and 'unit' (6-10) ──
+# (first article, last article, part) by natural article order; 243 splits into IX / IXA / IXB by its letter suffix.
+PART_RANGES = [(1, 4, 'Part I'), (5, 11, 'Part II'), (12, 35, 'Part III'), (36, 51, 'Part IV'), (52, 151, 'Part V'), (152, 237, 'Part VI'),
+               (238, 238, 'Part VII'), (239, 242, 'Part VIII'), (244, 244, 'Part X'), (245, 263, 'Part XI'), (264, 300, 'Part XII'),
+               (301, 307, 'Part XIII'), (308, 323, 'Part XIV'), (324, 329, 'Part XV'), (330, 342, 'Part XVI'), (343, 351, 'Part XVII'),
+               (352, 360, 'Part XVIII'), (361, 367, 'Part XIX'), (368, 368, 'Part XX'), (369, 392, 'Part XXI'), (393, 395, 'Part XXII')]
+# (part, short_en, short_te, unit, colour, dark ink) in Constitution order: the setup chips follow this list.
+PARTS = [
+    ('Preamble', 'Preamble', 'ప్రవేశిక', 6, '#57534E', '#D6D3D1'),
+    ('Part I', 'Union & territory', 'సమాఖ్య, భూభాగం', 6, '#0F766E', '#5EEAD4'),
+    ('Part II', 'Citizenship', 'పౌరసత్వం', 6, '#0E7490', '#67E8F9'),
+    ('Part III', 'Fundamental Rights', 'ప్రాథమిక హక్కులు', 6, '#7C2D12', '#FDBA74'),
+    ('Part IV', 'Directive Principles', 'ఆదేశిక సూత్రాలు', 6, '#3F6212', '#BEF264'),
+    ('Part IVA', 'Fundamental Duties', 'ప్రాథమిక విధులు', 6, '#854D0E', '#FDE68A'),
+    ('Part V', 'The Union', 'కేంద్ర ప్రభుత్వం', 7, '#4338CA', '#A5B4FC'),
+    ('Part VI', 'The States', 'రాష్ట్రాలు', 7, '#6B21A8', '#D8B4FE'),
+    ('Part VII', 'Part B States (repealed)', 'పార్ట్ B రాష్ట్రాలు (రద్దు)', 7, '#64748B', '#CBD5E1'),
+    ('Part VIII', 'Union Territories', 'కేంద్రపాలిత ప్రాంతాలు', 7, '#155E75', '#A5F3FC'),
+    ('Part IX', 'Panchayats', 'పంచాయతీలు', 10, '#166534', '#86EFAC'),
+    ('Part IXA', 'Municipalities', 'పురపాలికలు', 10, '#15803D', '#BBF7D0'),
+    ('Part IXB', 'Co-operative societies', 'సహకార సంఘాలు', 10, '#4D7C0F', '#D9F99D'),
+    ('Part X', 'Scheduled & tribal areas', 'షెడ్యూల్డ్, గిరిజన ప్రాంతాలు', 8, '#9A3412', '#FED7AA'),
+    ('Part XI', 'Union–State relations', 'కేంద్ర–రాష్ట్ర సంబంధాలు', 8, '#1E40AF', '#BFDBFE'),
+    ('Part XII', 'Finance & property', 'ఆర్థికం, ఆస్తి', 8, '#A16207', '#FEF08A'),
+    ('Part XIII', 'Trade & commerce', 'వర్తకం, వాణిజ్యం', 8, '#B45309', '#FDE68A'),
+    ('Part XIV', 'Services', 'సర్వీసులు', 8, '#475569', '#E2E8F0'),
+    ('Part XIVA', 'Tribunals', 'ట్రిబ్యునళ్లు', 7, '#334155', '#CBD5E1'),
+    ('Part XV', 'Elections', 'ఎన్నికలు', 9, '#9F1239', '#FDA4AF'),
+    ('Part XVI', 'Special provisions for classes', 'కొన్ని వర్గాలకు ప్రత్యేక నిబంధనలు', 6, '#4F46E5', '#C7D2FE'),
+    ('Part XVII', 'Official language', 'అధికార భాష', 8, '#0369A1', '#BAE6FD'),
+    ('Part XVIII', 'Emergency', 'అత్యవసర పరిస్థితి', 8, '#B91C1C', '#FCA5A5'),
+    ('Part XIX', 'Miscellaneous', 'ఇతర నిబంధనలు', 7, '#57534E', '#E7E5E4'),
+    ('Part XX', 'Amendment', 'రాజ్యాంగ సవరణ', 6, '#A21CAF', '#F0ABFC'),
+    ('Part XXI', 'Temporary & special provisions', 'తాత్కాలిక, ప్రత్యేక నిబంధనలు', 8, '#BE185D', '#F9A8D4'),
+    ('Part XXII', 'Short title & repeals', 'సంక్షిప్త నామం, రద్దులు', 6, '#78716C', '#D6D3D1'),
+    ('Schedules', 'Schedules', 'షెడ్యూళ్లు', 6, '#0F766E', '#99F6E4'),
+    ('General', 'General', 'సాధారణ', 6, '#475569', '#CBD5E1'),
+]
+PART_BY = {p[0]: p for p in PARTS}
+PART_ORDER = {p[0]: i for i, p in enumerate(PARTS)}
+UNITS = (6, 7, 8, 9, 10)
+
+
+def norm_part(p):
+    """'Part XIV-A' -> 'Part XIVA'; unknown / empty -> None."""
+    p = re.sub(r'\s+', ' ', str(p or '')).strip().replace('-', '')
+    p = re.sub(r'^part ', 'Part ', p, flags=re.I)
+    return p if p in PART_BY else None
+
+
+def part_of_article(no):
+    """Constitution Part of an article label: '21' -> 'Part III', '51A(a)' -> 'Part IVA', '243ZH' -> 'Part IXB', 'Preamble' -> 'Preamble'."""
+    s = str(no or '').strip()
+    if re.match(r'preamble', s, re.I):
+        return 'Preamble'
+    if re.search(r'schedule', s, re.I):
+        return 'Schedules'
+    m = re.match(r'(\d+)([A-Z]*)', s.upper())
+    if not m:
+        return None
+    n, suf = int(m.group(1)), m.group(2)
+    if (n, suf) == (51, 'A'):
+        return 'Part IVA'
+    if n == 323 and suf in ('A', 'B'):
+        return 'Part XIVA'
+    if n == 243:
+        if not suf or (len(suf) == 1 and suf <= 'O'):
+            return 'Part IX'
+        return 'Part IXA' if len(suf) == 1 or suf <= 'ZG' else 'Part IXB'
+    for a, b, part in PART_RANGES:
+        if a <= n <= b:
+            return part
+    return None
+
+
+def _first_part(nos):
+    for no in nos:
+        p = part_of_article(no)
+        if p:
+            return p
+    return None
+
+
+def classify(it):
+    """Fill it['part'] / it['unit'] when missing (in place). Articles: their own number; amendments: the articles they changed
+    (changes first, then articles); cases: their articles, else 'General'. Unit: the card's chapter ('6.4' -> 6), else the Part's unit."""
+    d = it.get('deck') or deck_of(it.get('id'))
+    part = norm_part(it.get('part'))
+    if not part:
+        if d == 'articles':
+            part = part_of_article(it.get('front_short'))
+        else:
+            nos = [str(ch.get('article_id') or ch.get('article') or '').rsplit('-', 1)[-1] for ch in it.get('changes') or [] if isinstance(ch, dict)]
+            part = _first_part(nos + [str(a) for a in it.get('articles') or []] + list(it.get('schedules') or []))
+    it['part'] = part or 'General'
+    try:
+        unit = int(it.get('unit') or str(it.get('chapter') or '').split('.')[0])
+    except ValueError:
+        unit = None
+    it['unit'] = unit if unit in UNITS else PART_BY[it['part']][3]
+    return it
+
+
+def part_counts(its):
+    """[(part tuple, count)] for the Parts present, in Constitution order."""
+    c = {}
+    for i in its:
+        c[i['part']] = c.get(i['part'], 0) + 1
+    return [(PART_BY[p], c[p]) for p in sorted(c, key=lambda p: PART_ORDER.get(p, 99))]
+
+
+def unit_counts(its):
+    c = {u: 0 for u in UNITS}
+    for i in its:
+        c[i['unit']] = c.get(i['unit'], 0) + 1
+    return c
+
+
+def _tile_sub(it):
+    s = str(it.get('front_sub') or '')
+    return s[:4] if s[:4].isdigit() else s
+
+
+def light(it, deck_cfg):
+    """The tile / index data of one card (embedded in the deck page; the full card is fetched on open)."""
+    th = deck_cfg.get('themes') and it.get('theme_acc')
+    o = {'id': it['id'], 'n': it.get('front_short') or '', 'f': [it.get('front_en') or '', it.get('front_te') or ''],
+         'c': [it.get('cue_en') or '', it.get('cue_te') or ''], 's': _tile_sub(it), 'ch': it.get('chapter') or '',
+         'p': it['part'], 'u': it['unit'], 'src': it.get('source') or '', 'two': 1 if it.get('two_way') else 0}
+    if th:
+        o.update(acc=it['theme_acc'], ink=it['theme_ink'], th=it.get('theme_id'), band=[it.get('theme_short_en'), it.get('theme_short_te')])
+    if it.get('parties_en'):
+        vte = re.sub(r'\s*\([^)]*\)', '', it.get('vs_te') or '').strip()
+        o['short'] = [it.get('short_en') or '', it.get('short_te') or it.get('short_en') or '']
+        o['vs'] = [it.get('vs_en') or '', vte or it.get('vs_en') or ''] if it.get('vs_en') else None
+    if it.get('popular_en'):
+        o['pop'] = [it['popular_en'], it.get('popular_te') or it['popular_en']]
+    return o
+
+
+def light_themes(deck_id):
+    return [{'id': t['id'], 'n': str(t['i'] + 1), 'f': [t['en'], t['te']], 'c': [t['en'], t['te']], 'acc': t['acc'], 'ink': t['ink'],
+             'band': [t['short_en'], t['short_te']], 'cases': [c['id'] for c in t['cases']], 'theme': 1} for t in themes(deck_id)]
+
+
+def data_version():
+    """Changes whenever a deck / article / chain / links file or the card template changes (ETag + fetch URL)."""
+    import hashlib
+    root = Path(__file__).resolve().parents[2]
+    files = sorted(DIR.glob('*.json')) + sorted(_art.DIR.glob('*.json')) + [root / 'app' / 'templates' / 'ds' / 'polity_recall_card.html']
+    h = hashlib.sha1()
+    for f in files:
+        try:
+            st = f.stat()
+            h.update(f'{f.name}:{st.st_mtime_ns}:{st.st_size};'.encode())
+        except OSError:
+            continue
+    return h.hexdigest()[:12]
+
+
+_SEEN = {'v': None}
+
+
+def refresh():
+    """Drop cached decks when any source file changed (a running server otherwise keeps stale counts, e.g. 140 of 174 cases)."""
+    v = data_version()
+    if _SEEN['v'] not in (None, v):
+        for mod in (globals(), vars(_art)):
+            for f in list(mod.values()):
+                if callable(getattr(f, 'cache_clear', None)) and getattr(f, '__module__', '') in (__name__, _art.__name__):
+                    f.cache_clear()
+    _SEEN['v'] = v
+    return v
+
+
 def deck_files(deck_id):
     return [p for p in (DIR / f'{deck_id}.json', DIR / f'{deck_id}_new.json') if p.is_file()]
 
@@ -124,7 +299,7 @@ def items(deck_id):
     if deck_id not in DECKS:
         return []
     if deck_id == 'articles':
-        return [_article_item(c) for c in _art.all_cards()]
+        return [classify(_article_item(c)) for c in _art.all_cards()]
     out = []
     for f in deck_files(deck_id):
         try:
@@ -139,7 +314,7 @@ def items(deck_id):
                 it[k] = it.get(k) or []
             it.setdefault('front_short', _short(it))
             _theme_fields(it)
-            out.append(it)
+            out.append(classify(it))
     if DECKS[deck_id].get('themes'):  # grouped by theme (list order), then by year: doctrine develops case by case
         return sorted(out, key=lambda i: (i.get('theme_i', 99), i.get('sort') or 0, i['front_en'].lower()))
     return sorted(out, key=lambda i: (i.get('sort') or 0, i['id']))

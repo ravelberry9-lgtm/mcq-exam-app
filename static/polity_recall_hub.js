@@ -8,7 +8,8 @@
     Object.keys(p).forEach(function (id) { if (/^TH-/.test(id)) return; /* theme tiles are not cards */ if (p[id] === "k") k++; else if (p[id] === "x") x++; });
     k = Math.min(k, total); x = Math.min(x, total - k);
     if (!k && !x) return;
-    a.querySelector(".rh-prog").textContent = " · " + k + " known · " + x + " to revise";
+    var pr = a.querySelector(".rh-prog");
+    if (pr) pr.textContent = a.classList.contains("pr-tile") ? " · " + k + " ✓ " + x + " ↻" : " · " + k + " known · " + x + " to revise";
     var bar = a.querySelector(".rh-bar");
     bar.style.setProperty("--k", (k / total * 100) + "%");
     bar.style.setProperty("--x", (x / total * 100) + "%");

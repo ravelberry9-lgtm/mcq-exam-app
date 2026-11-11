@@ -7,6 +7,17 @@ from app.routes.polity_unit6 import test_records as chapter_test_records
 
 def enable(app):app.config['POLITY_UNIT6_ENABLED']=True
 
+def deck_data(page):
+    import json
+    return json.loads(re.search(r'<script type="application/json" id="ac-data">(.*?)</script>',page,re.S).group(1))
+
+def frag(client,cid):
+    """The lazily fetched full card (<article class="ac-src">) of any deck."""
+    from app.services import recall_decks as rd
+    d='cases' if cid.startswith('TH-') else rd.deck_of(cid)
+    r=client.get(f'/learn/polity/unit6/recall/{d}/card/{cid}');assert r.status_code==200,(cid,r.status_code)
+    return r.get_data(as_text=True)
+
 def test_entry_flag_and_old_library(client,app):
     assert client.get('/learn/polity/unit6/').status_code==404
     enable(app)
@@ -196,11 +207,13 @@ def test_article_cards_page(client,app):
         assert c['says_en'] and c['says_te'] and c['concept_te']
     h=client.get('/learn/polity/unit6/articles').get_data(as_text=True)
     # every card is embedded for the full-screen study deck; setup screen offers every chapter
-    assert 'data-id="AC-6.4-21A"' in h and h.count('class="ac-src"')==len(cards)
+    D=deck_data(h);assert [x['id'] for x in D['cards']]==[c['id'] for c in cards] and 'class="ac-src"' not in h and 'AC-6.4-21A' in h
     assert 'id="ac-setup"' in h and 'id="ac-stage"' in h and 'id="ac-grid"' in h and 'aria-label="Back to card settings"' in h
     # setup offers both matrix densities (3x6 default, 4x8 compact) and every chapter
     assert 'name="density" value="18" checked' in h and 'name="density" value="32"' in h
-    assert all(f'name="chapter" value="{ch}"' in h for ch in {c['chapter'] for c in cards})
+    # Part filter chips (multi-select, All default) + Unit filter replace the chapter chips
+    assert 'name="partall" value="1" checked' in h and all(f'name="part" value="{p}"' in h for p in {x['p'] for x in D['cards']})
+    assert 'name="unit" value="" checked' in h and all(f'name="unit" value="{u}"' in h for u in (6,7,8,9,10)) and 'name="chapter"' not in h
     # card order: setup offers In order (default) / Random; the matrix bar can switch live and reshuffle
     assert 'name="order" value="seq" checked' in h and 'name="order" value="rand"' in h and 'name="shuffle"' not in h
     # matrix bar: page arrows, cue-mode and language toggles; detail view: collapse + prev/next + self-check; summary overlay
@@ -232,7 +245,7 @@ def test_article_cards_embedded_in_ascending_article_order(client,app):
     keys=[ac.article_key(c['article']) for c in cards]
     assert keys==sorted(keys) and len({c['chapter'] for c in cards})>1
     h=client.get('/learn/polity/unit6/articles').get_data(as_text=True)
-    nums=re.findall(r'<div class="s-num">([^<]+)</div>',h)
+    nums=[x['n'] for x in deck_data(h)['cards']]
     assert nums==[c['article'] for c in cards] and [ac.article_key(n) for n in nums]==sorted(ac.article_key(n) for n in nums)
     i=nums.index;assert i('12')<i('21')<i('21A')<i('22')<i('51A(a)')<i('51A(k)')<i('60')<i('324')<i('394')<i('394A')<i('395')
 
@@ -246,7 +259,7 @@ def test_recall_hub_and_decks(client,app):
         assert f'/learn/polity/unit6/recall/{d}"' in h
         r=client.get(f'/learn/polity/unit6/recall/{d}');assert r.status_code==200,d
         page=r.get_data(as_text=True)
-        assert page.count('class="ac-src"')==len(rd.items(d)) and f'data-store="{rd.DECKS[d]["store"]}"' in page
+        assert len(deck_data(page)['cards'])==len(rd.items(d)) and f'data-store="{rd.DECKS[d]["store"]}"' in page
     assert client.get('/learn/polity/unit6/recall/nope').status_code==404
     assert client.get('/learn/polity/unit6/recall/cases?chapter=9.9').status_code==404
     # articles deck keeps its URL and its localStorage key
@@ -279,7 +292,7 @@ def test_recall_deck_files_schema():
             assert it['id'] not in seen,it['id'];seen.add(it['id'])
             assert it['deck']==deck and it['source'] in ('laxmikanth','new') and isinstance(it['two_way'],bool)
             assert (it['source']=='new')==f.stem.endswith('_new'),it['id']
-            assert isinstance(it['sort'],int) and re.fullmatch(r'6\.[1-9]',it['chapter'])
+            assert isinstance(it['sort'],int) and re.fullmatch(r'6\.[1-9]|polity',it['chapter'])
             for k in ('front','cue','title','says'):assert it[k+'_en'].strip() and it[k+'_te'].strip(),(it['id'],k)
             assert bool(it.get('trap_en'))==bool(it.get('trap_te')) and len(it.get('points_en') or [])==len(it.get('points_te') or [])
             assert re.search(r'[ఀ-౿]',it['front_te']+it['says_te']),it['id']
@@ -306,10 +319,11 @@ def test_recall_case_themes_and_theme_view(client,app):
     th=rd.themes('cases');assert 8<=len(th)<=12 and sum(len(t['cases']) for t in th)==len(rd.items('cases'))
     assert rd.themes('amendments')==[]
     page=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
-    assert page.count('data-theme-tile="1"')==len(th) and 'data-themes="1"' in page
-    for t in th:assert f'data-id="{t["id"]}"' in page and t['te'] in page
+    D=deck_data(page);assert [t['id'] for t in D['themes']]==[t['id'] for t in th] and 'data-themes="1"' in page
+    for t in th:assert t['te'] in page.encode('ascii','backslashreplace').decode('unicode_escape') or t['te'] in frag(client,t['id'])
+    assert all(D['themes'][i]['cases']==[c['id'] for c in t['cases']] for i,t in enumerate(th))
     k=next(c for c in rd.items('cases') if c['id']=='CS-kesavananda-1973')
-    src=page[page.index('data-id="CS-kesavananda-1973"'):];src=src[:src.index('</article>')]
+    src=frag(client,'CS-kesavananda-1973')
     assert '<div class="s-sub">1973' in src  # year is a muted subline on the tile face
     assert 'class="ac-year">1973' in src and k['cue_en'] in src
     am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
@@ -320,8 +334,7 @@ def test_recall_case_teacher_layout_and_fallback(client,app,monkeypatch):
     from app.services import recall_decks as rd
     enable(app)
     base=rd.items('cases')
-    def card(page,cid):
-        s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
+    def card(page,cid):return frag(client,cid)
     # fallback: no new fields -> says under 'What the Court said', no exam section, no compare table
     NEW=('one_line','story','question','held','meaning','remember','first_know','argument','next','chain')
     bare=[{k:v for k,v in c.items() if k not in ('compare','exam') and not k.startswith(NEW)} for c in base]
@@ -374,7 +387,7 @@ def test_recall_case_teacher_layout_and_fallback(client,app,monkeypatch):
     assert exam_label('other credible examinations - APPSC Group 1')=='APPSC Group 1' and exam_label('APPSC Group II')=='APPSC Group II' and exam_label(None)==''
     monkeypatch.undo();monkeypatch.setattr(rd,'CHAINS_FILE',rd.DIR/'__missing__.json');rd.chains.cache_clear()
     assert rd.chains()=={};rd.chains.cache_clear();enable(app)
-    am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
+    am=frag(client,'AM-042')
     assert 'ct-exam' in am  # amendments now have their own exam section
 
 def test_case_chains_data_complete_dated_and_linked():
@@ -421,8 +434,7 @@ def test_case_card_shows_all_its_chains(client,app):
     from app.services import recall_decks as rd
     rd.chains.cache_clear();enable(app)
     page=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
-    def card(cid):
-        s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
+    def card(cid):return frag(client,cid)
     def panels(g):
         box=g[g.index('class="ct-chains"'):];box=box[:box.index('<nav class="xr"')] if '<nav class="xr"' in box else box
         return box,re.findall(r'<section class="ct-chain" aria-label="([^"]+)" data-panel="(\d)" role="tabpanel"( hidden)?>',box)
@@ -445,13 +457,13 @@ def test_case_card_shows_all_its_chains(client,app):
     tg=card(th['id']);assert tg.count('class="ct-chain"')==1 and 'Right to property and the Ninth Schedule' in tg and 'aria-current' not in tg and 'ct-chintro' in tg
     # amendment card: its chains, current step, cases link across decks
     am=client.get('/learn/polity/unit6/recall/amendments').get_data(as_text=True)
-    s=am[am.index('data-id="AM-001"'):];g=s[:s.index('</article>')]
+    g=frag(client,'AM-001')
     box,P=panels(g);assert len(P)==4 and box.count('aria-current="step"')==4 and 'href="/learn/polity/unit6/recall/cases?open=CS-shankari-prasad-1951"' in box
     assert 'Article 19 freedoms and their limits' in [p[0] for p in P] and 'href="/learn/polity/unit6/recall/cases?open=CS-romesh-thappar-1950"' in box
 
 def test_case_tiles_and_hero_use_parties(client,app):
     enable(app)
-    html=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
+    html=frag(client,'CS-kesavananda-1973')+frag(client,'CS-noise-pollution-2005')
     assert '<div class="s-short"><span class="ac-te" lang="te">కేశవానంద భారతి</span><span class="ac-en" lang="en">Kesavananda Bharati</span></div>' in html
     assert '<span class="ac-en" lang="en">vs State of Kerala</span>' in html
     assert '<span class="ac-en" lang="en">Kesavananda Bharati vs State of Kerala</span></div>' in html
@@ -499,8 +511,7 @@ def test_recall_autolink_filter(app):
 def test_recall_rich_article_amendment_and_cross_deck(client,app,monkeypatch):
     from app.services import recall_decks as rd
     enable(app);_rich(rd,monkeypatch)
-    def card(page,cid):
-        s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
+    def card(page,cid):return frag(client,cid)
     page=client.get('/learn/polity/unit6/recall/articles?open=AC-6.4-21&back=cases:CS-maneka-gandhi-1978').get_data(as_text=True)
     assert 'data-open="AC-6.4-21"' in page and 'data-back-url="/learn/polity/unit6/recall/cases?open=CS-maneka-gandhi-1978"' in page and 'data-back-en="Maneka Gandhi case"' in page
     a=card(page,'AC-6.4-21')
@@ -519,8 +530,7 @@ def test_recall_rich_article_amendment_and_cross_deck(client,app,monkeypatch):
 def test_recall_fallback_without_rich_fields_and_links(client,app,monkeypatch):
     from app.services import recall_decks as rd
     enable(app)
-    def card(page,cid):
-        s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
+    def card(page,cid):return frag(client,cid)
     a=card(client.get('/learn/polity/unit6/recall/articles').get_data(as_text=True),'AC-6.4-21')
     # real data now carries the rich fields
     assert 'ప్రకరణ పాఠం' in a and 'ct-exam' in a
@@ -556,8 +566,7 @@ def _lax_fields(rd,monkeypatch):
 def test_case_laxmikanth_fields_render_and_fallback(client,app,monkeypatch):
     from app.services import recall_decks as rd
     enable(app)
-    def card(page,cid):
-        s=page[page.index(f'data-id="{cid}"'):];return s[:s.index('</article>')]
+    def card(page,cid):return frag(client,cid)
     # without the fields: no hero extras, no impact box; article chips still shown
     g=card(client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True),'CS-central-coal-fields-1980')
     for t in ('s-pop','s-topic','ch-right','ct-impact','ch-sch','Popular name'):assert t not in g,t
@@ -585,3 +594,69 @@ def test_case_popular_name_autolinks(app,monkeypatch):
     assert s.count('data-go="CS-zz-fixture-1950"')==1 and s.count('data-go="CS-puttaswamy-2017"')==1
     assert '>Cross Roads case</a>' in s and '>Privacy case</a>' in s and '>privacy<' not in s
     assert 'Fundamental Rights and' in s
+
+
+def test_recall_lazy_card_endpoint_filters_and_deep_link(client,app):
+    from app.services import recall_decks as rd
+    enable(app)
+    # the deck page carries light tile data only; full cards come from the endpoint
+    for d,limit in (('articles',250_000),('amendments',150_000),('cases',400_000)):
+        page=client.get(f'/learn/polity/unit6/recall/{d}').get_data(as_text=True)
+        assert len(page.encode())<limit,(d,len(page.encode()))
+        assert 'class="s-back"' not in page and 'ct-exam' not in page
+        assert 'data-card-url="/learn/polity/unit6/recall/%s/card/__ID__"'%d in page
+        D=deck_data(page);assert D['v']==rd.data_version() and all({'id','n','f','c','p','u','acc','two'}<=set(x) for x in D['cards'])
+    r=client.get('/learn/polity/unit6/recall/cases/card/CS-kesavananda-1973')
+    assert r.status_code==200 and r.mimetype=='text/html' and r.get_data(as_text=True).lstrip().startswith('<article class="ac-src"')
+    g=r.get_data(as_text=True);assert '<!doctype' not in g.lower() and 'class="s-back"' in g and 'ct-exam' in g and 'class="xr"' in g
+    et=r.headers['ETag'];assert rd.data_version() in et and 'no-cache' in r.headers['Cache-Control']
+    assert 'max-age' in client.get('/learn/polity/unit6/recall/cases/card/CS-kesavananda-1973?v=x').headers['Cache-Control']
+    assert client.get('/learn/polity/unit6/recall/cases/card/CS-kesavananda-1973',headers={'If-None-Match':et}).status_code==304
+    assert 'ac-thlist' in client.get('/learn/polity/unit6/recall/cases/card/TH-basic').get_data(as_text=True)
+    for u in ('/learn/polity/unit6/recall/cases/card/NOPE','/learn/polity/unit6/recall/cases/card/AC-6.4-21','/learn/polity/unit6/recall/nope/card/AC-6.4-21'):
+        assert client.get(u).status_code==404,u
+    # ?open= deep link still works (the card is fetched by the page); unknown ids are dropped
+    p=client.get('/learn/polity/unit6/recall/amendments?open=AM-042').get_data(as_text=True)
+    assert 'data-open="AM-042"' in p and any(x['id']=='AM-042' for x in deck_data(p)['cards'])
+    # Part / Unit on every card; filters on the setup screen; ?chapter= still works
+    assert rd.part_of_article('21')=='Part III' and rd.part_of_article('51A(a)')=='Part IVA' and rd.part_of_article('243ZH')=='Part IXB'
+    assert rd.part_of_article('243P')=='Part IXA' and rd.part_of_article('323A')=='Part XIVA' and rd.part_of_article('Preamble')=='Preamble' and rd.norm_part('Part XIV-A')=='Part XIVA'
+    for d in rd.DECKS:
+        assert all(i['part'] in rd.PART_BY and i['unit'] in rd.UNITS for i in rd.items(d)),d
+    a=next(i for i in rd.items('articles') if i['id']=='AC-6.4-21');assert (a['part'],a['unit'])==('Part III',6)
+    m=next(i for i in rd.items('amendments') if i['id']=='AM-044');assert m['part']!='General'
+    cases=client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
+    n3=sum(1 for i in rd.items('cases') if i['part']=='Part III')
+    assert f'data-pcount="Part III">{n3}<' in cases and 'name="unit" value="6"' in cases and 'name="chapter"' not in cases
+    ch=client.get('/learn/polity/unit6/recall/cases?chapter=6.4').get_data(as_text=True)
+    assert 'name="chapter" value="6.4" checked' in ch and 'data-chapter="6.4"' in ch
+    js=open('static/polity_articles.js',encoding='utf-8').read()
+    for t in ('ac-data','cardUrl','prefetch(','passes(','data-retry','u6_artcards_v1'):assert t in js,t
+    # hub renamed, URLs unchanged
+    h=client.get('/learn/polity/unit6/recall').get_data(as_text=True)
+    assert 'Polity recall cards' in h and 'పాలిటీ రీకాల్ కార్డులు' in h and '/learn/polity/unit6/recall/cases"' in h
+
+
+def test_recall_entry_on_polity_page_and_start_first(client,app):
+    from app.services import recall_decks as rd
+    enable(app)
+    h=client.get('/learn/polity/unit6/').get_data(as_text=True)
+    # recall decks sit above the units, each tile opens its deck directly (hub skipped) with its count
+    assert h.index('class="card pr"')<h.index('u6-unit')
+    for d in rd.DECKS:
+        assert f'/learn/polity/unit6/recall/{d}?from=polity"' in h and f'data-total="{len(rd.items(d))}"' in h
+    assert 'ప్రకరణలు' in h and 'సవరణలు' in h and 'కేసులు' in h and '/learn/polity/unit6/recall"' in h
+    c=client.get('/learn/polity/unit6/recall/cases?from=polity').get_data(as_text=True)
+    assert '‹ Polity' in c and '‹ Recall cards' in client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
+    # Start (with live count) comes before every optional filter; Continue sits beside it
+    assert c.index('id="ac-start"')<c.index('name="partall"')<c.index('name="order"') and 'id="ac-cont"' in c
+    js=open('static/polity_articles.js',encoding='utf-8').read()
+    for t in ('POS_KEY','continueRun','savePos','paintContinue'):assert t in js,t
+    assert '‹ Polity' in client.get('/learn/polity/unit6/recall').get_data(as_text=True)
+
+
+def test_recall_refresh_drops_stale_cache(monkeypatch):
+    from app.services import recall_decks as rd
+    rd.items('cases');rd.refresh();n=rd.items.cache_info().currsize
+    monkeypatch.setattr(rd,'data_version',lambda:'changed');rd.refresh()
+    assert n and rd.items.cache_info().currsize==0

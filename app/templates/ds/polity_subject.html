@@ -1,12 +1,18 @@
 {% extends 'ds/base.html' %}
 {% block title %}Indian Polity · Group 2{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261110p') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111n') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="/learn">‹ Subjects</a><strong>Indian Polity</strong></div>{% endblock %}
 {% block content %}<div class="u6">
 <section class="card geo-intro"><h1>Indian Polity / భారత రాజ్యాంగం</h1></section>
+{% if decks %}<section class="card pr" aria-labelledby="pr-h">
+<div class="pr-head"><h2 id="pr-h"><span lang="te">రీకాల్ కార్డులు</span> <span class="pr-en">Polity recall cards</span></h2><a class="pr-all" href="{{ url_for('polity_unit6.recall_hub') }}">All decks</a></div>
+<ul class="pr-row">{% for d in decks %}<li><a class="rh-tile pr-tile pr-{{ d.id }}" href="{{ url_for('polity_unit6.recall_deck',deck_id=d.id,**{'from':'polity'}) }}" data-store="{{ d.store }}" data-total="{{ d.count }}">
+<span class="pr-ico" aria-hidden="true">{{ d.icon }}</span><b lang="te">{{ d.title_te }}</b><span class="pr-en">{{ d.title_en }}</span><span class="pr-n">{{ d.count }} <small>cards</small><span class="rh-prog"></span></span><span class="rh-bar" aria-hidden="true"><i class="k"></i><i class="x"></i></span></a></li>{% endfor %}</ul>
+</section>{% endif %}
 {% set st=unit6_stats() %}{% set colors={6:'#0f766e',7:'#4f46e5',8:'#ea580c',9:'#9333ea',10:'#2563eb'} %}
 {% for unit in units %}{% set live=unit.unit==6 %}<section class="card u6-unit{{ '' if live else ' soon' }}" style="--ac:{{ colors.get(unit.unit,'#0f766e') }}">
 {% if live %}<a class="u6-unit-h" href="{{ url_for('polity_unit6.unit') }}"><span class="no">Unit {{ unit.unit }} / యూనిట్ {{ unit.unit }}</span><b>{{ unit.title }}</b><i>›</i></a>{% else %}<div class="u6-unit-h"><span class="no">Unit {{ unit.unit }} / యూనిట్ {{ unit.unit }}</span><b>{{ unit.title }}</b><em>Coming soon / త్వరలో</em></div>{% endif %}
 {% if live %}<div class="u6-stats"><div class="st c1"><b>{{ st.chapters }}</b><span>Chapters<br>అధ్యాయాలు</span></div><a class="st c2" href="{{ url_for('polity_unit6.library',kind='bank') }}"><b>{{ st.mcq }}</b><span>MCQs<br>సాధన ప్రశ్నలు</span></a><a class="st c3" href="{{ url_for('polity_unit6.library',kind='pyq') }}"><b>{{ st.pyq }}</b><span>PYQs<br>గత ప్రశ్నలు</span></a><a class="st c4" href="{{ url_for('polity_unit6.descriptive') }}"><b>{{ st.desc }}</b><span>Descriptive<br>వివరణాత్మక</span></a></div>{% endif %}
 <ol class="u6-topics">{% for sec in unit.sections %}<li>{{ sec.title }}</li>{% endfor %}</ol></section>{% endfor %}
 </div>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_recall_hub.js',v='20261111n') }}" defer></script>{% endblock %}

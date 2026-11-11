@@ -1,7 +1,7 @@
 {% extends 'ds/base.html' %}
 {% block title %}{{ map.title if map else 'Memory maps' }} · Unit 6{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_maps.page',map_id=map.map_id,qlang=lang) if map else url_for('polity_unit6.unit') }}">‹ {{ 'Back to map / పటానికి' if map else 'Unit 6' }}</a><strong>{{ 'Practice' if map else 'Memory maps / జ్ఞాపక పటాలు' }}</strong></div>{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261110p') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111n') }}">{% endblock %}
 {% block content %}
 <style>
 .mm{max-width:46rem;margin:0 auto;padding:1rem;overflow-wrap:anywhere}.mm h1{font-size:1.25rem;margin:.2rem 0 .6rem}.mm h2{font-size:1rem;margin:1.2rem 0 .5rem;color:var(--muted,#475569)}

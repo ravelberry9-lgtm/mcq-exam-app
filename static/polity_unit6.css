@@ -92,3 +92,18 @@ body:has(.u6) .bottomnav .navoff{opacity:1!important;color:#4B556B}
   body:has(.u6-quick) .btn.primary{background:#0F766E;border-color:#0F766E;color:#fff}
   body:has(.u6-quick) select,body:has(.u6-quick) input{background:var(--chip);color:var(--ink)}
 }
+/* Polity page: recall decks first, one tap into each deck */
+.pr{padding:14px 14px 16px}.pr-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
+.pr-head h2{margin:0;font-size:1.08rem;line-height:1.4}.pr-en{color:var(--muted,#64748b);font-weight:600;font-size:.86em}
+.pr-all{flex:none;min-height:44px;display:inline-flex;align-items:center;font-size:.86rem;font-weight:650;color:#0f766e}
+.pr-row{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pr-tile{--c:#0f766e;position:relative;display:flex;flex-direction:column;gap:2px;min-height:112px;padding:12px 10px 14px;border-radius:14px;text-decoration:none;color:inherit;
+  border:1.5px solid color-mix(in srgb,var(--c) 30%,transparent);background:color-mix(in srgb,var(--c) 7%,transparent);overflow:hidden}
+.pr-tile:hover,.pr-tile:focus-visible{border-color:var(--c)}.pr-tile:focus-visible{outline:3px solid color-mix(in srgb,var(--c) 45%,transparent);outline-offset:2px}
+.pr-amendments{--c:#b45309}.pr-cases{--c:#7e22ce}
+.pr-ico{font-size:1.35rem;line-height:1;color:var(--c);margin-bottom:4px}.pr-tile b{font-size:1.05rem;line-height:1.35}
+.pr-tile .pr-en{font-size:.8rem}.pr-n{margin-top:auto;padding-top:6px;font-weight:750;color:var(--c);font-size:.95rem}.pr-n small{font-weight:600;color:var(--muted,#64748b)}
+.pr-n .rh-prog{display:block;font-weight:600;font-size:.74rem;color:var(--muted,#64748b)}
+.pr-tile .rh-bar{position:absolute;left:0;right:0;bottom:0;height:4px;display:flex;background:transparent}
+.pr-tile .rh-bar i{display:block;height:100%}.pr-tile .rh-bar .k{width:var(--k,0);background:#16a34a}.pr-tile .rh-bar .x{width:var(--x,0);background:#dc2626}
+@media(min-width:700px){.pr-tile{min-height:96px;padding:14px 16px 16px}.pr-tile b{font-size:1.15rem}}
