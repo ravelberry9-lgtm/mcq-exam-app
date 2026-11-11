@@ -119,14 +119,28 @@
 {%- endmacro %}
 {% macro xlist(rows, kind, c_id=None) -%}<ul class="xa-list">{% for r in rows %}<li>{% if r.id %}<a class="xa-lbl xl xl-{{ kind }}" data-go="{{ r.id }}" href="{{ url_for('polity_unit6.recall_deck', deck_id='amendments' if kind == 'am' else 'cases', open=r.id) }}">{{ bi(r.label_en, r.label_te) }}</a>{% else %}<b class="xa-lbl">{{ bi(r.label_en, r.label_te) }}</b>{% endif %}
         <span class="xa-what">{{ bx(r.what_en or r.held_en, r.what_te or r.held_te, c_id) }}</span></li>{% endfor %}</ul>{%- endmacro %}
+{#- Omitted Article / clauses: a banner right under the title, with what it said and why it went; the amendment links to its card. -#}
+{% macro amlink(o, te) -%}{% set t = o.by_label_te if te else o.by_label_en %}{% if o.by %}<a class="xl xl-am om-by" data-go="{{ o.by }}" href="{{ url_for('polity_unit6.recall_deck', deck_id='amendments', open=o.by) }}">{{ t }}</a>{% else %}<b class="om-by">{{ t }}</b>{% endif %}{%- endmacro %}
+{% macro ombanner(c) -%}{% set OM = c.omitted or [] %}{% if OM %}
+      <aside class="om-ban{{ ' whole' if c.om_whole }}" aria-label="Omitted">
+        {% for o in OM %}<div class="om-row">
+          {% if not o.clause %}<p class="om-h"><i aria-hidden="true">⊘</i><span class="ac-te" lang="te">ఈ ప్రకరణను {{ amlink(o, 1) }} రద్దు చేసింది (Omitted)</span><span class="ac-en" lang="en">This Article was omitted by the {{ amlink(o, 0) }}</span></p>
+          {% else %}<p class="om-h"><i aria-hidden="true">⊘</i><span class="ac-te" lang="te">{{ o.what_te }} — {{ o.topic_te }} — {{ amlink(o, 1) }} తొలగించింది</span><span class="ac-en" lang="en">{{ o.what_en }} — {{ o.topic_en }} — omitted by the {{ amlink(o, 0) }}</span></p>{% endif %}
+          {% if o.wef %}<small class="om-wef">{{ bi('Omission in force from ' ~ o.wef, o.wef ~ ' నుంచి రద్దు అమలులోకి వచ్చింది') }}</small>{% endif %}
+          <p class="om-said"><b>{{ bi('It used to say', 'ఇంతకు ముందు ఇది చెప్పింది') }}</b> {{ bx(o.said_en, o.said_te, c.id) }}</p>
+          <p class="om-why"><b>{{ bi('Why it was removed', 'ఎందుకు తీసేశారు?') }}</b> {{ bx(o.why_en, o.why_te, c.id) }}</p>
+        </div>{% endfor %}
+      </aside>{% endif %}
+{%- endmacro %}
 {#- Articles: teacher layout. New optional fields fall back to says / trap. -#}
 {% macro art_teach(c) -%}
+      {{ ombanner(c) }}
       {% if c.one_line_en %}<div class="ct-one"><b>{{ bi('In one line', 'ఒక్క మాటలో') }}</b><p>{{ bx(c.one_line_en, c.one_line_te, c.id) }}</p></div>{% endif %}
       {% if c.text_en %}<details class="xa-text"{% if (c.text_en|length) < 420 %} open{% endif %}>
         <summary><span class="ac-lbl">{{ bi('Text of the Article', 'ప్రకరణ పాఠం') }}</span><span class="xa-more">{{ bi('Show', 'చూపించు') }}</span></summary>
         <blockquote class="xa-quote"><span class="ac-te" lang="te">{{ (c.text_te or c.text_en)|xl(c.id) }}{% if c.text_te %}<small class="xa-note">{{ c.text_te_note or 'అనువాదం (translation)' }}</small>{% endif %}</span><span class="ac-en" lang="en">{{ c.text_en|xl(c.id) }}</span></blockquote>
       </details>{% endif %}
-      {% if c.clauses %}{% call sec('xa-cl', 'Clause by clause', 'క్లాజుల వారీగా') %}<dl class="xa-clauses">{% for k in c.clauses %}<div><dt>{{ k.label }}</dt><dd>{{ bx(k.en, k.te, c.id) }}</dd></div>{% endfor %}</dl>{% endcall %}{% endif %}
+      {% if c.clauses %}{% call sec('xa-cl', 'Clause by clause', 'క్లాజుల వారీగా') %}<dl class="xa-clauses">{% for k in c.clauses %}{% set kom = k.omitted or k.label in (c.om_clauses or []) %}<div{% if kom %} class="om-cl"{% endif %}><dt>{{ k.label }}{% if kom %}<span class="om-tag">{{ bi('Omitted', 'రద్దు') }}</span>{% endif %}</dt><dd>{{ bx(k.en, k.te, c.id) }}</dd></div>{% endfor %}</dl>{% endcall %}{% endif %}
       {% if c.meaning_en %}{% call sec('ct-mean', 'What it means', 'అర్థం') %}<div class="ac-says">{{ bx(c.meaning_en, c.meaning_te, c.id) }}</div>{% endcall %}
       {% elif not c.text_en %}<div class="ac-says">{{ bx(c.says_en, c.says_te, c.id) }}</div>{% endif %}
       {% if c.implications_en %}{% call sec('xa-imp', 'Key points', 'ముఖ్యమైన అంశాలు') %}<div class="ac-points">{{ blx(c.implications_en, c.implications_te, c.id) }}</div>{% endcall %}{% endif %}

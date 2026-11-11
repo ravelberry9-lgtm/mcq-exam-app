@@ -11,6 +11,7 @@ from ..services.polity_sections import section_links,directory
 from ..services import polity_cards as _cards
 from ..services import article_cards as _artcards
 from ..services import recall_decks as _recall
+from ..services import pyq_metrics as _pm
 import re,re as _re
 from functools import lru_cache
 _JARGON=_re.compile(r'(fact register|bank key|authenticated pairing|tests separately|untested|source[- ]bank|content team|GBK paragraph|Laxmikanth paragraph)',_re.I)
@@ -212,7 +213,8 @@ def _recall_fresh():
 @bp.get('/')
 def home():
     units=read(CONTENT/'MASTER-INDEX.json')['units']
-    return render_template('ds/polity_subject.html',units=units,decks=[d for d in _recall.all_decks() if d['count']] if enabled() else [])
+    decks=[d for d in _recall.all_decks() if d['count']] if enabled() else []
+    return render_template('ds/polity_subject.html',units=units,decks=decks,pm=_pm.metrics() if decks else None)
 
 def _recall_page(deck_id):
     d=_recall.deck(deck_id)
@@ -241,7 +243,7 @@ def _recall_page(deck_id):
     return render_template('ds/polity_recall.html',d=d,total=len(cards),chapter=ch,names=ARTCARD_CHAPTERS,lang=language(),lang_set='qlang' in request.args,
                            parts=_recall.part_counts(cards),units=_recall.UNITS,ucounts=_recall.unit_counts(cards),light=light,
                            open_id=_open if _open in {c['id'] for c in cards} else '',back=_back,for_=_for,
-                           pyq_cards=sum(1 for c in cards if c.get('pyq_count')))
+                           pyq_cards=sum(1 for c in cards if c.get('pyq_count')),om_cards=sum(1 for c in cards if c.get('omitted')))
 @bp.get('/recall/<deck_id>/card/<card_id>')
 def recall_card(deck_id,card_id):
     """One card's full detail markup (<article class="ac-src">), fetched lazily when the card is opened. Cached by data version."""
@@ -265,7 +267,7 @@ def recall_card(deck_id,card_id):
 def articles():return _recall_page('articles')
 @bp.get('/recall')
 def recall_hub():
-    return render_template('ds/polity_recall_hub.html',decks=[d for d in _recall.all_decks() if d['count']],lang=language())
+    return render_template('ds/polity_recall_hub.html',decks=[d for d in _recall.all_decks() if d['count']],lang=language(),pm=_pm.metrics())
 @bp.get('/recall/<deck_id>')
 def recall_deck(deck_id):return _recall_page(deck_id)
 # Short chapter names for the article-card chips (number, English, Telugu).

@@ -108,6 +108,8 @@ def _article_item(c):
         'articles': [], 'laxmikanth': c.get('laxmikanth'), 'gbk': c.get('gbk'), 'card_ids': c.get('card_ids') or [],
         'tested_count': c.get('tested_count', 0), 'pyq_count': c.get('pyq_count', 0), 'as_of': c.get('as_of'), 'flag': c.get('flag'), 'source': 'laxmikanth',
         'part': c.get('part'),
+        'omitted': _art.omitted_list(c), 'om_whole': _art.omitted_whole(c),
+        'om_clauses': [x['clause'] for x in _art.omitted_list(c) if x.get('clause')],
     }
 
 
@@ -251,6 +253,8 @@ def light(it, deck_cfg):
         o['vs'] = [it.get('vs_en') or '', vte or it.get('vs_en') or ''] if it.get('vs_en') else None
     if it.get('popular_en'):
         o['pop'] = [it['popular_en'], it.get('popular_te') or it['popular_en']]
+    if it.get('omitted'):
+        o['om'] = 2 if it.get('om_whole') else 1  # 2 = whole Article omitted (tile badge, struck number), 1 = a clause omitted
     if it.get('pyq_count'):
         o['q'] = it['pyq_count']  # real PYQs on the card: tile badge + 'Only asked in PYQs' filter
     return o

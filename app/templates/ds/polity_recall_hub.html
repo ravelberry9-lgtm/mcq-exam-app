@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% block title %}Polity recall cards{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111p') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111q') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111pm') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111q') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><b>Polity recall cards · పాలిటీ రీకాల్ కార్డులు</b></div>{% endblock %}
 {% block content %}<div class="u6 ac rh" id="ac" data-lang="both">
   <header class="rh-head">
@@ -16,10 +16,11 @@
         <span class="rh-desc"><span lang="te">{{ d.desc_te }}</span><span class="rh-en">{{ d.desc_en }}</span></span>
         <span class="rh-bar" aria-hidden="true"><i class="k"></i><i class="x"></i></span>
         <span class="rh-stat"><b>{{ d.count }}</b> cards<span class="rh-prog"></span>{% if d.new %} · {{ d.new }} new{% endif %}</span>
-      </span>
+        {% set q=pm.by_deck.get(d.id) %}{% if q %}<span class="pq-tile"><span>PYQ <b>{{ q.pyqs }}</b></span><span>APPSC <b>{{ q.appsc_pyqs }}</b></span></span>{% endif %}</span>
       <span class="rh-go" aria-hidden="true">›</span>
     </a></li>{% endfor %}
   </ul>
+  {% include "ds/_pyq_metrics.html" %}
   <p class="rh-note">Progress is saved on this device only · పురోగతి ఈ పరికరంలోనే సేవ్ అవుతుంది</p>
 </div>{% endblock %}
 {% block scripts %}<script src="{{ url_for('static',filename='polity_recall_hub.js',v='20261111p') }}" defer></script>{% endblock %}

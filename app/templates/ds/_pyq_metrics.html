@@ -1,0 +1,20 @@
+{# PYQ coverage strip + details table. Needs pm = pyq_metrics.metrics(). #}
+<div class="pq" aria-label="PYQ coverage">
+  <p class="pq-strip">
+    <span class="pq-n"><b>{{ pm.total }}</b> <span lang="te">గత ప్రశ్నలు</span> <span class="pq-en">PYQs</span><small>{{ pm.mapped }} <span lang="te">కార్డుల్లో</span> <span class="pq-en">on cards</span></small></span>
+    <span class="pq-n pq-ap"><b>{{ pm.appsc_total }}</b> APPSC<small>{{ pm.appsc_mapped }} <span lang="te">కార్డుల్లో</span> <span class="pq-en">on cards</span></small></span>
+  </p>
+  <details class="pq-more">
+    <summary><span lang="te">PYQ వివరాలు</span> <span class="pq-en">PYQ details</span></summary>
+    <ul class="pq-decks">{% for d in pm.decks %}<li><b><span lang="te">{{ d.title_te }}</span> <span class="pq-en">{{ d.title_en }}</span></b>
+      <span>{{ d.pyqs }} PYQs · {{ d.cards }}/{{ d.total_cards }} <span lang="te">కార్డులు</span><span class="pq-en"> cards</span></span>
+      <span class="pq-ap">APPSC {{ d.appsc_pyqs }} · {{ d.appsc_cards }}/{{ d.total_cards }}</span></li>{% endfor %}</ul>
+    <div class="pq-wrap"><table class="pq-t">
+      <thead><tr><th scope="col"><span lang="te">పరీక్ష</span> <span class="pq-en">Exam</span></th><th scope="col"><span lang="te">బ్యాంకు</span><span class="pq-en"> Bank</span></th><th scope="col"><span lang="te">కార్డుల్లో</span><span class="pq-en"> On cards</span></th>{% for d in pm.decks %}<th scope="col" class="pq-d" title="{{ d.title_te }} {{ d.title_en }}"><span aria-hidden="true">{{ {'articles':'§','amendments':'✎','cases':'⚖'}.get(d.id,'') }}</span> {{ {'articles':'Art','amendments':'Amd','cases':'Case'}.get(d.id,d.title_en) }}</th>{% endfor %}</tr></thead>
+      <tbody>{% for f in pm.families %}<tr{% if f.id=='appsc' %} class="pq-ap"{% endif %}><th scope="row"><span lang="te">{{ f.te }}</span>{% if f.te!=f.en %} <span class="pq-en">{{ f.en }}</span>{% endif %}</th><td>{{ f.bank }}</td><td>{{ f.mapped }}</td>{% for n in f.decks %}<td>{{ n }}</td>{% endfor %}</tr>
+      {% if f.id=='appsc' %}{% for g in pm.appsc_groups %}<tr class="pq-sub"><th scope="row"><span lang="te">{{ g.te }}</span> <span class="pq-en">{{ g.en }}</span></th><td>{{ g.bank }}</td><td>{{ g.mapped }}</td>{% for n in g.decks %}<td>{{ n }}</td>{% endfor %}</tr>{% endfor %}{% endif %}{% endfor %}
+      <tr class="pq-all"><th scope="row"><span lang="te">మొత్తం</span> <span class="pq-en">All</span></th><td>{{ pm.total }}</td><td>{{ pm.mapped }}</td>{% for d in pm.decks %}<td>{{ d.pyqs }}</td>{% endfor %}</tr></tbody>
+    </table></div>
+    <p class="pq-note"><span lang="te">ఒకే ప్రశ్న రెండు డెక్‌లలో ఉండవచ్చు, కాబట్టి డెక్ సంఖ్యల మొత్తం "కార్డుల్లో" కంటే ఎక్కువ.</span> <span class="pq-en">A question can sit in more than one deck, so deck columns add up to more than “on cards”.</span></p>
+  </details>
+</div>

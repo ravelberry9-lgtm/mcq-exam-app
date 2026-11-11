@@ -1,13 +1,14 @@
 {% extends 'ds/base.html' %}
 {% block title %}Indian Polity · Group 2{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111n') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111pm') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="/learn">‹ Subjects</a><strong>Indian Polity</strong></div>{% endblock %}
 {% block content %}<div class="u6">
 <section class="card geo-intro"><h1>Indian Polity / భారత రాజ్యాంగం</h1></section>
 {% if decks %}<section class="card pr" aria-labelledby="pr-h">
 <div class="pr-head"><h2 id="pr-h"><span lang="te">రీకాల్ కార్డులు</span> <span class="pr-en">Polity recall cards</span></h2><a class="pr-all" href="{{ url_for('polity_unit6.recall_hub') }}">All decks</a></div>
 <ul class="pr-row">{% for d in decks %}<li><a class="rh-tile pr-tile pr-{{ d.id }}" href="{{ url_for('polity_unit6.recall_deck',deck_id=d.id,**{'from':'polity'}) }}" data-store="{{ d.store }}" data-total="{{ d.count }}">
-<span class="pr-ico" aria-hidden="true">{{ d.icon }}</span><b lang="te">{{ d.title_te }}</b><span class="pr-en">{{ d.title_en }}</span><span class="pr-n">{{ d.count }} <small>cards</small><span class="rh-prog"></span></span><span class="rh-bar" aria-hidden="true"><i class="k"></i><i class="x"></i></span></a></li>{% endfor %}</ul>
+<span class="pr-ico" aria-hidden="true">{{ d.icon }}</span><b lang="te">{{ d.title_te }}</b><span class="pr-en">{{ d.title_en }}</span><span class="pr-n">{{ d.count }} <small>cards</small><span class="rh-prog"></span></span>{% set q=pm.by_deck.get(d.id) if pm else None %}{% if q %}<span class="pq-tile"><span>PYQ <b>{{ q.pyqs }}</b></span><span>APPSC <b>{{ q.appsc_pyqs }}</b></span></span>{% endif %}<span class="rh-bar" aria-hidden="true"><i class="k"></i><i class="x"></i></span></a></li>{% endfor %}</ul>
+{% if pm %}{% include "ds/_pyq_metrics.html" %}{% endif %}
 </section>{% endif %}
 {% set st=unit6_stats() %}{% set colors={6:'#0f766e',7:'#4f46e5',8:'#ea580c',9:'#9333ea',10:'#2563eb'} %}
 {% for unit in units %}{% set live=unit.unit==6 %}<section class="card u6-unit{{ '' if live else ' soon' }}" style="--ac:{{ colors.get(unit.unit,'#0f766e') }}">

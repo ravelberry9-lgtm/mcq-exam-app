@@ -34,13 +34,24 @@ def _sort_key(a):
 def all_cards():
     out = []
     if DIR.is_dir():
-        for f in sorted([*DIR.glob('6.*.json'), *DIR.glob('p*.json')]):
+        for f in sorted([*DIR.glob('6.*.json'), *DIR.glob('p*.json'), *DIR.glob('omitted.json')]):
             try:
                 out.extend(json.loads(f.read_text(encoding='utf-8')))
             except (ValueError, OSError):
                 continue
     # one continuous ascending article sequence across chapters; chapter order breaks any tie
     return sorted(out, key=lambda a: (_sort_key(a), a['chapter']))
+
+
+def omitted_list(c):
+    """A card's `omitted` field as a list (whole Article and/or clauses); [] when nothing was omitted."""
+    o = c.get('omitted')
+    return [x for x in (o if isinstance(o, list) else [o]) if isinstance(x, dict)] if o else []
+
+
+def omitted_whole(c):
+    """True when the whole Article was omitted (an `omitted` entry with no clause label)."""
+    return any(not x.get('clause') for x in omitted_list(c))
 
 
 def chapter_cards(chapter_id=None):

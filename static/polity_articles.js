@@ -45,7 +45,7 @@
   function isTheme(id) { return !!byId[id].dataset.themeTile; }
   function passes(o, c) {
     return (!c.chapter || o.ch === c.chapter) && (c.newer !== false || o.src !== "new") &&
-      (!c.parts || !c.parts.length || c.parts.indexOf(o.p) >= 0) && (!c.unit || String(o.u) === String(c.unit)) && (!c.pyq || o.q > 0);
+      (!c.parts || !c.parts.length || c.parts.indexOf(o.p) >= 0) && (!c.unit || String(o.u) === String(c.unit)) && (!c.pyq || o.q > 0) && (!c.om || o.om > 0);
   }
   // ids of a theme tile's cases that pass the run's filters
   function themeRows(src, c) {
@@ -114,7 +114,7 @@
     var f = form.elements;
     return {
       chapter: f.chapter && f.chapter.checked ? f.chapter.value : "", parts: pickedParts(), unit: f.unit.value, mode: f.mode.value, lang: f.lang.value, density: f.density.value,
-      only: f.only.checked, order: f.order.value, newer: f.newer ? f.newer.checked : true, pyq: f.pyq ? f.pyq.checked : false
+      only: f.only.checked, order: f.order.value, newer: f.newer ? f.newer.checked : true, pyq: f.pyq ? f.pyq.checked : false, om: f.om ? f.om.checked : false
     };
   }
   function pickedParts() {
@@ -147,6 +147,7 @@
     if (!langFromUrl && LANGS.indexOf(lang) >= 0) setRadio("lang", lang);
     form.elements.only.checked = !!saved.only;
     if (form.elements.pyq) form.elements.pyq.checked = !!saved.pyq;
+    if (form.elements.om) form.elements.om.checked = !!saved.om;
     var order = ORDERS.indexOf(saved.order) >= 0 ? saved.order : saved.shuffle ? "rand" : "seq"; // older saves had a Shuffle toggle
     setRadio("order", order);
   }
@@ -178,17 +179,18 @@
     if (c.only) { te.push("మళ్ళీ చూడాల్సినవి"); en.push("Revise only"); }
     if (form.elements.newer && !c.newer) { te.push("కొత్తవి లేకుండా"); en.push("No newer"); }
     if (c.pyq) { te.push("PYQ వచ్చినవి"); en.push("PYQ cards"); }
+    if (c.om) { te.push("రద్దయినవి"); en.push("Omitted only"); }
     el.innerHTML = biText(esc(en.join(", ")), esc(te.join(", ")));
   }
   function paintSetup() {
     var c = choices();
     paintMore(c);
     root.dataset.lang = c.lang;
-    var inChapter = pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: false, newer: c.newer, pyq: c.pyq });
+    var inChapter = pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: false, newer: c.newer, pyq: c.pyq, om: c.om });
     // Part counts follow the unit / chapter / newer filters
     [].forEach.call(form.querySelectorAll("[data-pcount]"), function (el) {
       var p = el.dataset.pcount;
-      el.textContent = CARDS.filter(function (o) { return passes(o, { chapter: c.chapter, unit: c.unit, newer: c.newer, pyq: c.pyq, parts: p ? [p] : [] }); }).length;
+      el.textContent = CARDS.filter(function (o) { return passes(o, { chapter: c.chapter, unit: c.unit, newer: c.newer, pyq: c.pyq, om: c.om, parts: p ? [p] : [] }); }).length;
       el.closest(".ac-part").classList.toggle("none", el.textContent === "0");
     });
     var ids = pickIds(c);
@@ -224,7 +226,7 @@
   function savePos() {
     if (!run || deepLink) return; // a deep link (?open=) is a detour, not a study session
     writeJSON(POS_KEY, { ids: run.ids, base: run.base, page: run.page, cur: run.cur, t: Date.now(),
-      c: { chapter: run.chapter, parts: run.parts, unit: run.unit, mode: run.mode, lang: run.lang, density: run.density, order: run.order, only: run.only, newer: run.newer, pyq: run.pyq } });
+      c: { chapter: run.chapter, parts: run.parts, unit: run.unit, mode: run.mode, lang: run.lang, density: run.density, order: run.order, only: run.only, newer: run.newer, pyq: run.pyq, om: run.om } });
   }
   function savedPos() {
     var p = readJSON(POS_KEY);
@@ -254,9 +256,9 @@
     if (!ids.length) return;
     var order = c.order === "rand" ? "rand" : "seq";
     run = {
-      all: c.all || pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: c.only, newer: c.newer, pyq: c.pyq, mode: "a" }),
+      all: c.all || pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: c.only, newer: c.newer, pyq: c.pyq, om: c.om, mode: "a" }),
       base: ids.slice(), ids: order === "rand" ? shuffled(ids) : ids.slice(), order: order, page: 0, cur: -1, marks: {},
-      mode: c.mode, lang: c.lang, density: c.density || "18", chapter: c.chapter || "", parts: (c.parts || []).slice(), unit: c.unit || "", only: !!c.only, newer: c.newer !== false, pyq: !!c.pyq
+      mode: c.mode, lang: c.lang, density: c.density || "18", chapter: c.chapter || "", parts: (c.parts || []).slice(), unit: c.unit || "", only: !!c.only, newer: c.newer !== false, pyq: !!c.pyq, om: !!c.om
     };
     sum.hidden = true;
     detail.hidden = true;
@@ -321,7 +323,7 @@
     var sb = sub(id);
     var band = src.querySelector(".s-band");
     var label = (run.mode === "a" ? frontEn(id) + (sb ? " " + sb : "") : conceptEn(id)) + (band ? "" : ", chapter " + src.dataset.ch) +
-      (info[id] && info[id].q ? ", " + info[id].q + " PYQs" : "") + ", " + stateText;
+      (info[id] && info[id].q ? ", " + info[id].q + " PYQs" : "") + (info[id] && info[id].om ? (info[id].om === 2 ? ", omitted" : ", a clause omitted") : "") + ", " + stateText;
     var cue;
     if (isTheme(id)) {
       var n = themeRows(src, run).length;
@@ -336,10 +338,12 @@
     else if (TEXT_FRONT) cue = '<span class="t-front">' + src.querySelector(".s-front").innerHTML + (sb ? '<span class="t-sub">' + esc(sb) + "</span>" : "") + popHTML(src) + "</span>";
     else if (sb && D.deck !== "articles") cue = '<span class="t-numwrap"><b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + '</b><span class="t-sub">' + esc(sb) + "</span></span>";
     else cue = '<b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + "</b>";
-    return '<button type="button" class="ac-tile" data-i="' + index + '" data-state="' + state + '" style="--acc:' + src.dataset.acc + ';--acc-ink:' + (src.dataset.ink || '') +
+    var om = info[id] && info[id].om;
+    return '<button type="button" class="ac-tile" data-i="' + index + '" data-state="' + state + '"' + (om ? ' data-om="' + om + '"' : "") + ' style="--acc:' + src.dataset.acc + ';--acc-ink:' + (src.dataset.ink || '') +
       '" aria-label="' + esc(label) + '"><span class="t-ch' + (band ? " t-band" : "") + '" aria-hidden="true">' + (band ? band.innerHTML : src.dataset.ch) +
       '</span><span class="t-mark" aria-hidden="true"></span><span class="t-cue">' + cue + "</span>" +
-      (info[id] && info[id].q ? '<span class="t-pyq" aria-hidden="true">PYQ ' + info[id].q + "</span>" : "") + "</button>";
+      (info[id] && info[id].q ? '<span class="t-pyq" aria-hidden="true">PYQ ' + info[id].q + "</span>" : "") +
+      (om === 2 ? '<span class="t-om" aria-hidden="true">' + biText("Omitted", "రద్దు") + "</span>" : om ? '<span class="t-om part" aria-hidden="true">⊘</span>' : "") + "</button>";
   }
   // popular name ('Cross Roads case') under the year: 3 x 6 only, and fitTiles drops it when it would shrink the cue
   function popHTML(src) {
@@ -471,7 +475,7 @@
   function toggleMode() {
     if (!anyTwoWay) return;
     var mode = run.mode === "a" ? "b" : "a";
-    var ids = THEMES ? pickIds({ chapter: run.chapter, parts: run.parts, unit: run.unit, only: run.only, newer: run.newer, pyq: run.pyq, mode: mode })
+    var ids = THEMES ? pickIds({ chapter: run.chapter, parts: run.parts, unit: run.unit, only: run.only, newer: run.newer, pyq: run.pyq, om: run.om, mode: mode })
       : run.all.filter(function (id) { return mode === "a" || canB(id); });
     if (!ids.length) { toast("No two-way cards here", "ఇక్కడ రెండు వైపుల కార్డులు లేవు"); return; }
     if (THEMES) toast(mode === "b" ? "Theme → Cases" : "Case → Issue", mode === "b" ? "అంశం → కేసులు" : "కేసు → అంశం");

@@ -302,7 +302,7 @@ def test_recall_deck_files_schema():
             if num:assert not re.search(r'(?<!\d)'+num.group()+r'(?!\d)',cue),it['id']
             # party names only: a bracketed alias such as '(Fourth Judges case)' is not checked
             for w in re.findall(r'[A-Za-z]{4,}',re.sub(r'\([^)]*\)','',it['front_en'])):
-                if w.lower() not in ('case','amendment','union','state','india','constitution','college','association','foundation','society','students'):assert w.lower() not in cue,(it['id'],w)
+                if w.lower() not in ('case','amendment','union','state','india','constitution','college','association','foundation','society','students','governor','principal','secretary'):assert w.lower() not in cue,(it['id'],w)
             if it.get('front_sub'):assert str(it['front_sub']) not in cue,it['id']
             assert all(c in card_ids for c in it['card_ids']),it['id']
 
@@ -739,3 +739,45 @@ def test_recall_pyq_chip_badge_and_filter(client,app):
     D=deck_data(page);q={x['id']:x.get('q') for x in D['cards']}
     assert q['AC-6.4-32']==n and q[zero['id']] is None
     js=open('static/polity_articles.js',encoding='utf-8').read();assert 'o.q > 0' in js and 't-pyq' in js and 'showPyqs' in js
+
+
+def test_omitted_articles_data():
+    import re
+    from app.services import article_cards as ac, recall_decks as rd
+    cards={c['id']:c for c in ac.all_cards()};ams={i['id'] for i in rd.items('amendments')}
+    om={k:ac.omitted_list(c) for k,c in cards.items() if c.get('omitted')}
+    # existing cards carry the omission; whole Articles vs clauses
+    for k in ('AC-6.4-31','AC-6.9-2A','AC-6.8-329A'):assert ac.omitted_whole(cards[k]),k
+    assert [o['clause'] for o in om['AC-6.4-19']]==['19(1)(f)'] and om['AC-6.4-19'][0]['by']=='AM-044' and not ac.omitted_whole(cards['AC-6.4-19'])
+    assert om['AC-p5-132'][0]['clause']=='132(2)' and om['AC-6.4-31'][0]['by']=='AM-044'
+    # new compact cards for omitted Articles that had none
+    for a in ('31D','32A','131A','144A','226A','228A','238','257A','268A','272','278','291','306','359A','362'):
+        c=cards[f'AC-om-{a}'];assert c['article']==a and ac.omitted_whole(c) and c['text_en'].startswith(f'{a}. [') and 'Omitted' in c['text_en']
+        assert c['part']==rd.part_of_article(a) and c['unit'] in rd.UNITS and c['exam']['patterns_en'] and len(c['exam']['patterns_en'])==len(c['exam']['patterns_te'])
+    assert cards['AC-om-238']['part']=='Part VII' and om['AC-om-291'][0]['by']=='AM-026' and om['AC-om-272'][0]['by'] is None
+    for k,L in om.items():
+        for o in L:
+            for f in ('what_en','what_te','by_label_en','by_label_te','said_en','said_te','why_en','why_te','wef'):assert o.get(f),(k,f)
+            assert o['by'] is None or o['by'] in ams,(k,o['by'])
+            assert re.fullmatch(r'\d{1,2}-\d{1,2}-\d{4}',o['wef']),k
+            assert re.search(r'[ఀ-౿]',o['said_te']+o['why_te']+o['what_te']),k
+    assert len({c['id'] for c in cards.values()})==len(cards)
+
+
+def test_omitted_banner_badge_and_filter(client,app):
+    from app.services import recall_decks as rd
+    enable(app)
+    g=frag(client,'AC-6.4-31')
+    assert 'class="om-ban whole"' in g and 'ఈ ప్రకరణను' in g and 'రద్దు చేసింది (Omitted)' in g and 'data-go="AM-044"' in g and '20-6-1979' in g
+    g=frag(client,'AC-6.4-19')
+    assert 'class="om-ban"' in g and 'class="om-cl"><dt>19(1)(f)<span class="om-tag">' in g and 'ఆస్తి హక్కు' in g and 'తొలగించింది' in g
+    assert 'class="om-cl"><dt>132(2)' in frag(client,'AC-p5-132')
+    g=frag(client,'AC-om-226A');assert 'om-ban whole' in g and 'data-go="AM-043"' in g and 'PYQ-POL-C150CC03972F' not in g or 'PYQ' in g
+    assert 'om-ban' not in frag(client,'AC-6.4-21')
+    page=client.get('/learn/polity/unit6/recall/articles').get_data(as_text=True)
+    assert 'name="om"' in page and 'Omitted only' in page and 'రద్దయినవి మాత్రమే' in page and 'polity_articles.js?v=20261111r' in page
+    D={x['id']:x.get('om') for x in deck_data(page)['cards']}
+    assert D['AC-6.4-31']==2 and D['AC-om-238']==2 and D['AC-6.4-19']==1 and D['AC-6.4-21'] is None
+    n=sum(1 for i in rd.items('articles') if i.get('omitted'));assert f'Omitted only' in page and f'<small> ({n})</small>' in page
+    js=open('static/polity_articles.js',encoding='utf-8').read();assert 'o.om > 0' in js and 't-om' in js and 'data-om=' in js
+    css=open('static/polity_articles.css',encoding='utf-8').read();assert '.om-ban' in css and '.t-om' in css
