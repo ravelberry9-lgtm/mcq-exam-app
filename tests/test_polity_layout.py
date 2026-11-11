@@ -30,15 +30,17 @@ def test_hierarchy_and_filtered_previous_next(client,app):
     second=soup(client.get(second_url))
     back=urlsplit(second.select_one('a[rel=prev]')['href']);initial=urlsplit(start)
     assert back.path==initial.path and parse_qs(back.query)==parse_qs(initial.query)
-    global_library=soup(client.get('/learn/polity/unit6/library'))
+    global_library=soup(client.get('/learn/polity/unit6/library?unit=6'))
     start=next(a['href'] for a in global_library.select('a') if 'Start practice' in a.text)
-    assert '1 / 1700' in soup(client.get(start)).get_text()
+    from app.routes.polity_unit6 import unit6_stats
+    with app.test_request_context():st=unit6_stats(6)
+    assert f"1 / {st['total']}" in soup(client.get(start)).get_text()
 
 def test_every_locator_resolves_and_fallback_returns_without_rescoring(client,app):
     app.config['POLITY_UNIT6_ENABLED']=True
     with app.app_context():
         qs=records()
-        assert len(qs)==2324
+        assert len(qs)>=2324
         for q in qs.values():
             for link in section_links(q):
                 if link['anchor'].startswith('u6s-'):
@@ -138,12 +140,14 @@ def test_counts_on_learn_unit_and_subject_pages(client,app):
     from app.routes.polity_unit6 import unit6_stats
     app.config['POLITY_UNIT6_ENABLED']=True
     with app.test_request_context():
-        st=unit6_stats()
-    assert (st['chapters'],st['mcq'],st['pyq'])==(14,1210,490)
+        st=unit6_stats(6);al=unit6_stats()
+    # Unit 6: 1210 authored MCQs + Laxmikanth appendix MCQs; 490 reviewed PYQs + PYQ-bank records assigned to unit 6.
+    assert st['chapters']==14 and st['mcq']>=1210 and st['pyq']>=490
+    assert al['mcq']>=st['mcq'] and al['pyq']>st['pyq']
     learn=client.get('/learn/').get_data(as_text=True)
-    assert '14 chapters · 1210 MCQs · 490 PYQs' in learn and '91 chapters' not in learn
+    assert f"Units 6–10 · {al['mcq']} MCQs · {al['pyq']} PYQs" in learn and '91 chapters' not in learn
     unit=client.get('/learn/polity/unit6/unit').get_data(as_text=True)
-    assert '1210' in unit and '490' in unit and unit.count('u6-chcard')>=14
+    assert str(st['mcq']) in unit and str(st['pyq']) in unit and unit.count('u6-chcard')>=14
     assert 'MCQs' in client.get('/learn/polity/unit6/').get_data(as_text=True)
 
 
@@ -229,7 +233,9 @@ def test_stat_tiles_open_whole_unit_lists(client,app):
     hrefs=[a['href'] for a in page.select('a.st')]
     assert any('kind=bank' in h for h in hrefs) and any('kind=pyq' in h for h in hrefs)
     assert all('chapter=' not in h for h in hrefs)
-    r=client.get([h for h in hrefs if 'kind=pyq' in h][0]);assert r.status_code==200 and '490' in r.get_data(as_text=True)
+    from app.routes.polity_unit6 import unit6_stats
+    with app.test_request_context():n=unit6_stats(6)['pyq']
+    r=client.get([h for h in hrefs if 'kind=pyq' in h][0]);assert r.status_code==200 and f'{n} results' in r.get_data(as_text=True)
 
 
 def test_subject_page_lists_all_units_with_topics(client,app):
@@ -237,14 +243,17 @@ def test_subject_page_lists_all_units_with_topics(client,app):
     page=soup(client.get('/learn/polity/unit6/'))
     units=page.select('.u6-unit')
     assert len(units)==5 and page.select_one('a.u6-unit-h')['href'].endswith('/unit')
-    assert units[0].select('.u6-topics li') and 'Preamble' in units[0].get_text() and 'Coming soon' in units[1].get_text()
+    from app.routes.polity_unit6 import unit6_stats
+    assert units[0].select('.u6-topics li') and 'Preamble' in units[0].get_text()
+    with app.test_request_context():live=[bool(unit6_stats(n)['total'] or unit6_stats(n)['desc']) for n in (6,7,8,9,10)]
+    assert [('Coming soon' not in u.get_text()) for u in units]==live and all(live[n-6] for n in (6,8,9,10))
     assert len(page.select('section.card'))==7 and page.select_one('section.card.pr')  # intro + recall decks + 5 units
 
 
 def test_descriptive_questions_page(client,app):
     app.config['POLITY_UNIT6_ENABLED']=True
     page=soup(client.get('/learn/polity/unit6/descriptive?qlang=both'))
-    assert len(page.select('article.u6-desc'))==82
+    assert sum(1 for a in page.select('article.u6-desc') if a.select_one('.u6-src b').text.startswith('6.'))==82
     assert page.select('details .da') and page.select('.u6-chpills a')
     one=soup(client.get('/learn/polity/unit6/descriptive?chapter=6.4.1'))
     assert len(one.select('article.u6-desc'))==19

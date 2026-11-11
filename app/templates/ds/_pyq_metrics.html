@@ -16,6 +16,10 @@
       {% if f.id=='appsc' %}{% for g in pm.appsc_groups %}<tr class="pq-sub"><th scope="row"><span class="pq-en">{{ g.en }}</span></th><td>{{ g.bank }}</td><td>{{ g.mapped }}</td>{% for n in g.decks %}<td>{{ n }}</td>{% endfor %}</tr>{% endfor %}{% endif %}{% endfor %}
       <tr class="pq-all"><th scope="row"><span class="pq-en">All</span></th><td>{{ pm.total }}</td><td>{{ pm.mapped }}</td>{% for d in pm.decks %}<td>{{ d.pyqs }}</td>{% endfor %}</tr></tbody>
     </table></div>
+    {% if pm.units %}<div class="pq-wrap"><table class="pq-t pq-units" aria-label="PYQs by syllabus unit">
+      <thead><tr><th scope="col">Syllabus unit</th><th scope="col">PYQs</th><th scope="col">APPSC</th>{% for g in pm.unit_group_labels %}<th scope="col">{{ g }}</th>{% endfor %}{% for f in pm.unit_family_labels %}<th scope="col">{{ f }}</th>{% endfor %}</tr></thead>
+      <tbody>{% for u in pm.units %}<tr{% if loop.last %} class="pq-sub"{% endif %}><th scope="row">{{ u.en }}</th><td>{{ u.total }}</td><td>{{ u.appsc }}</td>{% for n in u.groups %}<td>{{ n }}</td>{% endfor %}{% for n in u.families %}<td>{{ n }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+    </table></div>{% endif %}
     <p class="pq-note pq-wait"><b>{{ pm.waiting }}</b> <span class="pq-en">PYQs are about an Article/Schedule with no card yet ({{ pm.waiting_unmapped }} on no card)</span></p>
     <p class="pq-note"><span class="pq-en">A question can sit in more than one deck, so deck columns add up to more than “on cards”.</span></p>
   </details>

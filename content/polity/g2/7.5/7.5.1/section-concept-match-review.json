@@ -1,0 +1,21 @@
+{
+  "chapter": "7.5.1",
+  "method": "Manual comparison of preserved GBK page-topic evidence with complete supplied prepared Chapter 27 English sections and their Telugu companions. No GBK scan opened.",
+  "prepared_source": "references/laxmikanth/chapter-027.html",
+  "prepared_source_qualification": "User-supplied bilingual preparation; not certified verbatim publisher-original text.",
+  "matches": [
+    {"gbk":"p297: meaning, constitutional supremacy and constitutional basis","prepared_section":"Meaning & Classification of Judicial Review; Constitutional Provisions for Judicial Review","match":"direct concept; exact GBK wording remains unverified","tested_facts":["POL-751-categories","POL-751-article13","POL-751-routes"]},
+    {"gbk":"p297: federal division and rights protection","prepared_section":"Importance of Judicial Review","match":"direct","tested_facts":["POL-751-purposes"]},
+    {"gbk":"p298: doctrines and major constitutional cases","prepared_section":"Scope of Judicial Review; Judicial Review of Constitutional Amendments","match":"partial; historical GBK case-by-case list not fully recoverable from current source transcript","hold":"Need complete GBK transcription to prove every listed doctrine/case has an atomic inventory entry."},
+    {"gbk":"pp298-299: basic structure and later review cases","prepared_section":"Judicial Review of Constitutional Amendments; Judicial Review of the Ninth Schedule","match":"direct central doctrine; partial historical detail","tested_facts":["POL-751-amendment-review","POL-751-review-basic-feature","POL-751-ninth-schedule"]},
+    {"gbk":"p299: areas described as outside review","prepared_section":"Scope of Judicial Review; Significance of Judicial Review — and the Criticism It Draws","match":"partial and potentially conflicting if source exclusions are read absolutely","correction":"Do not convert a subject-specific procedural immunity into immunity from every constitutional challenge."},
+    {"gbk":"No exact preserved locator for the full Ninth Schedule chronology","prepared_section":"Judicial Review of the Ninth Schedule","match":"prepared-source supplementation within the shared judicial-review concept","tested_facts":["POL-751-31b","POL-751-ninth-schedule"],"qualification":"Not a claim that every detail occurs on the GBK page."}
+  ],
+  "academic_corrections_outside_source": [
+    {"issue":"Some supplied prepared paragraphs describe Indian review as confined to substantive competence and contrast it too sharply with American due process.","treatment":"Keep supplied reader unchanged. Teach the qualified modern position separately: constitutional rights, procedural fairness and reasonableness are not categorically excluded from Indian judicial review; the chapter's own Maneka Gandhi discussion supplies relevant context."},
+    {"issue":"The Ninth Schedule cutoff should not be taught as an automatic invalidation of every later listed law.","treatment":"The effect on the basic structure must be examined. The I.R. Coelho holding uses amendments on or after 24 April 1973, with qualifications for previously upheld laws and completed transactions.","primary_source":"https://api.sci.gov.in/judgment/judis/28469.pdf"},
+    {"issue":"Original English Group-I answer begins with an unexplained pronoun while Telugu opens with a definition; final Telugu paragraph has additional analysis absent from English.","treatment":"Correct the introduction and record bilingual equivalence as still open until both whole answers are reconciled."}
+  ],
+  "coverage_complete": false,
+  "remaining_gates": ["Complete exact GBK source transcription","Every case/doctrine/exception inventoried","Question stems/options checked against each atomic concept","Full bilingual descriptive equivalence review","Verified descriptive-PYQ-first search"]
+}

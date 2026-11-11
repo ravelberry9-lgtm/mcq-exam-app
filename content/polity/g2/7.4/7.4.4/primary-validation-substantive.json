@@ -1,0 +1,38 @@
+{
+  "chapter": "7.4.4",
+  "completion": false,
+  "source_transcription_certified": false,
+  "checks": {
+    "json_parses": true,
+    "local_questions": 31,
+    "manual_review_records": 31,
+    "fact_ids_resolve": true,
+    "explanation_ids_resolve": true,
+    "bilingual_option_counts_four": true,
+    "unique_local_ids": true,
+    "existing_ten_ids_preserved": true,
+    "held_items_in_scored_bank": 0,
+    "canonical_reference_resolves": true,
+    "new_exact_stem_duplicates_in_40_banks": 0,
+    "gram_family_additions": 0,
+    "ui_test_performed": false
+  },
+  "meaning": "These checks verify structure and link integrity only. Content reasoning is in manual-review-substantive.json; exact source, full atomic coverage and PYQ gates remain false.",
+  "additional_primary_corroboration": [
+    {
+      "target": "POL-744-A21",
+      "claim": "CAT1985 and PrincipalBenchNewDelhi",
+      "sources": [
+        "https://efiling.cgat.gov.in/ecat/introduction.php — establishment in1985",
+        "https://efiling.cgat.gov.in/ecat/org_structure.php — PrincipalBench(NewDelhi)"
+      ],
+      "qualification": "No current numerical bench/organisation totals adopted."
+    },
+    {
+      "target": "POL-744-A22",
+      "claim": "FirstLokAdalatcampStateGujarat, year1982suppliedinstem",
+      "source": "https://nta.ac.in/Download/ExamPaper/Paper_20240220113223.pdf — question identifying firstcampinJunagarh,Gujarat",
+      "qualification": "Officialexamdocument corroborates location; not imported or represented as an APPSC PYQ. No exactday/date newlyassessed."
+    }
+  ]
+}

@@ -24,11 +24,14 @@ def clean_text(t):
     return ' '.join(kept) if kept else t
 
 bp=Blueprint('polity_unit6',__name__,url_prefix='/learn/polity/unit6')
-def unit6_stats():
-    corpus=records()
-    mcq=sum(1 for q in corpus.values() if q['_kind']=='bank' and visible(q))
-    pyq=sum(1 for q in corpus.values() if q['_kind'] in ('pyq','primary_pyq') and visible(q))
-    return dict(chapters=len(chapters()),mcq=mcq,pyq=pyq,total=mcq+pyq,desc=len(descriptive_items()))
+def unit_of(cid):return int(str(cid).split('.')[0])
+def unit6_stats(unit=None):
+    """Counts for one syllabus unit (6-10), or for all units when unit is None."""
+    corpus=[q for q in records().values() if unit is None or unit_of(q['_chapter'])==unit]
+    mcq=sum(1 for q in corpus if q['_kind']=='bank' and visible(q))
+    pyq=sum(1 for q in corpus if q['_kind'] in ('pyq','primary_pyq') and visible(q))
+    desc=sum(1 for x in descriptive_items() if unit is None or unit_of(x['chapter'])==unit)
+    return dict(chapters=len(chapters(unit)),mcq=mcq,pyq=pyq,total=mcq+pyq,desc=desc)
 @bp.app_context_processor
 def _cards_ctx():
     return {'unit6_cards_for':lambda q,n=3:_cards.cards_for_question(q,n),'unit6_chapter_cards':lambda c:_cards.chapter_cards(_cards.chapter_key(c)),'unit6_chapter_key':_cards.chapter_key}
@@ -98,6 +101,7 @@ def _accent(cid):return _acc_pair(cid)[0]
 @bp.app_template_filter('accent_ink')
 def _accent_ink(cid):return _acc_pair(cid)[1]
 TE_TITLES={'6.1.1':'ప్రాథమిక భావనలు, పదజాలం','6.1.2':'రాజ్యాంగ భావన, వర్గీకరణ','6.1.3':'రాజ్యాంగ పరిణామం','6.1.4':'రాజ్యాంగ రచన','6.2.1':'భారత రాజ్యాంగ ముఖ్య లక్షణాలు','6.3.1':'ప్రవేశిక, రాజ్యాంగ తత్వం','6.4.1':'ప్రాథమిక హక్కులు','6.5.1':'ఆదేశిక సూత్రాలు','6.5.2':'ప్రాథమిక హక్కులు–ఆదేశిక సూత్రాల సంబంధం','6.6.1':'ప్రాథమిక విధులు','6.7.1':'రాజ్యాంగ సవరణ','6.8.1':'ప్రాథమిక స్వరూప సిద్ధాంతం','6.9.1':'భారత భూభాగం, యూనియన్','6.9.2':'పౌరసత్వం'}
+TE_TITLES.update({'7.1.1':'ప్రభుత్వ అంగాలు','7.2.1':'ఏకసభ, ద్విసభ శాసనసభలు','7.2.2':'పార్లమెంటు','7.2.3':'రాష్ట్ర శాసనసభ','7.2.4':'శాసనసభ కమిటీలు','7.3.1':'పార్లమెంటరీ వ్యవస్థ','7.3.2':'రాష్ట్రపతి','7.3.3':'ఉపరాష్ట్రపతి','7.3.4':'ప్రధానమంత్రి, కేంద్ర మంత్రిమండలి','7.3.5':'గవర్నర్','7.3.6':'ముఖ్యమంత్రి, రాష్ట్ర మంత్రిమండలి','7.4.1':'సుప్రీంకోర్టు','7.4.2':'హైకోర్టులు','7.4.3':'దిగువ న్యాయస్థానాలు','7.4.4':'ట్రిబ్యునళ్లు, న్యాయ సహాయం','7.5.1':'న్యాయ సమీక్ష','7.6.1':'న్యాయ క్రియాశీలత, న్యాయ నిగ్రహం','7.6.2':'ప్రజా ప్రయోజన వ్యాజ్యం'})
 @bp.app_template_filter('chapter_te')
 def _chapter_te(cid):return TE_TITLES.get(cid,'')
 from markupsafe import Markup,escape
@@ -158,10 +162,12 @@ def _pyq_label(q):
     return dict(title=' · '.join(x for x in (exam,year) if x),detail=detail)
 
 _ABBR=re.compile(r"(?:\b(?:Ch|No|Nos|Art|Arts|Sec|Cl|Sch|Vol|vs|v|Dr|Mr|Shri|Smt|Pt|St|etc|viz|cf|ed|Pr|Fig|Sl)|\b[A-Z])\.$")
+# Telugu initials and titles ("డా. బి. ఆర్. అంబేద్కర్"): one letter (+vowel sign, +conjunct ending in virama) or డా/శ్రీ/శ్రీమతి.
+_ABBR_TE=re.compile(r"(?:^|\s)(?:డా|శ్రీ|శ్రీమతి|[\u0C05-\u0C14\u0C15-\u0C39][\u0C3E-\u0C4C\u0C02]?(?:[\u0C15-\u0C39]\u0C4D)?)\.$")
 def _sentences(par):
     parts=re.split(r"(?<=[.!?])\s+",par.strip());out=[]
     for x in parts:
-        if out and _ABBR.search(out[-1]):out[-1]+=' '+x
+        if out and (_ABBR.search(out[-1]) or _ABBR_TE.search(out[-1])):out[-1]+=' '+x
         else:out.append(x)
     return [x for x in out if x]
 def format_expl(t):
@@ -188,8 +194,14 @@ def enabled():return current_app.config.get('POLITY_UNIT6_ENABLED',os.environ.ge
 def availability():
     if not enabled():abort(404)
 
-def chapters():
-    return [c for u in read(CONTENT/'MASTER-INDEX.json')['units'] if u['unit']==6 for s in u['sections'] for c in s['chapters']]
+UNITS=(6,7,8,9,10)
+def units():
+    return [u for u in read(CONTENT/'MASTER-INDEX.json')['units'] if u['unit'] in UNITS]
+def chapters(unit=None):
+    """Syllabus chapters of units 6-10 (or of one unit), in MASTER-INDEX order."""
+    return [c for u in units() if unit is None or u['unit']==unit for s in u['sections'] for c in s['chapters']]
+def unit_or_404(n):
+    return next((u for u in units() if u['unit']==n),None) or abort(404)
 def chapter_or_404(cid):
     return next((c for c in chapters() if c['id']==cid),None) or abort(404)
 VISIBLE_KINDS=('bank','pyq','primary_pyq')
@@ -287,24 +299,26 @@ ARTCARD_CHAPTERS={'6.1':('Nature and development','స్వభావం, పర
     '6.3':('Preamble','ప్రవేశిక'),'6.4':('Fundamental Rights','ప్రాథమిక హక్కులు'),'6.5':('Directive Principles','ఆదేశిక సూత్రాలు'),
     '6.6':('Fundamental Duties','ప్రాథమిక విధులు'),'6.7':('Amendment','రాజ్యాంగ సవరణ'),'6.8':('Basic structure','ప్రాథమిక స్వరూపం'),
     '6.9':('Territory and citizenship','భూభాగం, పౌరసత్వం')}
-@bp.get('/unit')
-def unit():
-    corpus=records();rows=[]
+@bp.get('/unit',defaults={'n':6})
+@bp.get('/unit/<int:n>')
+def unit(n):
+    u=unit_or_404(n);corpus=records();rows=[]
     progress={p.chapter_id:p for p in PolityUnit6Progress.query.filter_by(device_id=device_id())}
-    for c in chapters():
+    for c in chapters(n):
         own=[q for q in corpus.values() if q['_chapter']==c['id'] and visible(q)]
         rows.append(dict(chapter=c,desc=sum(1 for x in descriptive_items() if x['chapter']==c['id']),total=len(own),mcq=sum(q['_kind']=='bank' for q in own),pyq=sum(q['_kind'] in ('pyq','primary_pyq') for q in own),unscored=sum(not q['_scored'] for q in own),completed=bool(progress.get(c['id']) and progress[c['id']].completed)))
-    return render_template('ds/polity_browse.html',mode='unit',rows=rows,stats=unit6_stats())
+    return render_template('ds/polity_browse.html',mode='unit',rows=rows,stats=unit6_stats(n),unit=u,unit_no=n)
 
 @bp.get('/chapters/<chapter_id>')
 def chapter(chapter_id):
     c=chapter_or_404(chapter_id)
     own=[q for q in records().values() if q['_chapter']==chapter_id and visible(q)]
     progress=db.session.get(PolityUnit6Progress,(device_id(),chapter_id))
-    return render_template('ds/polity_browse.html',mode='chapter',chapter=c,desc=sum(1 for x in descriptive_items() if x['chapter']==c['id']),mcq=sum(q['_kind']=='bank' for q in own),pyq=sum(q['_kind'] in ('pyq','primary_pyq') for q in own),total=len(own),unscored=sum(not q['_scored'] for q in own),progress=progress)
+    return render_template('ds/polity_browse.html',mode='chapter',chapter=c,unit_no=unit_of(chapter_id),has_notes=(directory(chapter_id)/'Notes.html').is_file(),desc=sum(1 for x in descriptive_items() if x['chapter']==c['id']),mcq=sum(q['_kind']=='bank' for q in own),pyq=sum(q['_kind'] in ('pyq','primary_pyq') for q in own),total=len(own),unscored=sum(not q['_scored'] for q in own),progress=progress)
 
 def filters(default_chapter=''):
-    values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view','map')}
+    values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view','map','unit')}
+    if values['unit'] and (not values['unit'].isdigit() or int(values['unit']) not in UNITS):abort(404)
     if values['map'] and values['map'] not in catalog():abort(404)
     if not any(k in request.args for k in values):values['chapter']=default_chapter
     if values['chapter']:chapter_or_404(values['chapter'])
@@ -317,6 +331,7 @@ def selection(values):
         return list({q['id']:q for q in qs}.values())
     qs=test_records(chapter) if kind=='chaptertest' and chapter else list(records().values())
     if chapter:qs=[q for q in qs if q['_chapter']==chapter]
+    elif values.get('unit'):qs=[q for q in qs if str(q['_chapter']).split('.')[0]==values['unit']]
     if kind and kind!='chaptertest':qs=[q for q in qs if q['_kind']==kind or kind=='pyq' and q['_kind']=='primary_pyq']
     if kind=='chaptertest' and not chapter:qs=[q for c in chapters() for q in test_records(c['id'])]
     if kind!='chaptertest':qs=[q for q in qs if visible(q)]
@@ -398,7 +413,7 @@ def descriptive_items():
                 exam=exam if re.match(r'APPSC',exam) and 'style' not in exam.lower() else ''
                 st=structured.get(it.get('id'))
                 out.append(dict(id=it.get('id'),chapter=c['id'],s=st,exam=exam,marks=it.get('marks'),
-                    q_en=it.get('question_en') or '',q_te=it.get('question_te') or '',
+                    q_en=it.get('question_en') or it.get('prompt_en') or '',q_te=it.get('question_te') or it.get('prompt_te') or '',
                     a_en=paras(it.get('answer_en') or it.get('model_answer_en')),a_te=paras(it.get('answer_te') or it.get('model_answer_te'))))
     for x in out:
         if x.get('s'):x['a_en']=struct_flat(x['s'],'en');x['a_te']=struct_flat(x['s'],'te')
@@ -423,9 +438,16 @@ def library():
 def question_page(q,choice=None,review=False,qs=None):
     values=filters(q['_chapter']);qs=selection(values) if qs is None else qs
     pos=next((i for i,r in enumerate(qs) if r['id']==q['id']),None)
-    # A bookmarked question may disappear from the filter after an action; keep it
-    # visible without silently switching to the full bank.
-    if pos is None:qs=[q];pos=0
+    if pos is None:
+        # The question left a saved/mistakes view (unbookmarked, or answered right) or is outside the
+        # filter: keep Previous/Next by placing it where it sits in the unfiltered chapter order, so the
+        # learner can always move on (never a dead end with only "Finish").
+        base=selection({**values,'view':''}) if values.get('view') else []
+        order={r['id']:i for i,r in enumerate(base)}
+        if q['id'] in order:
+            k=order[q['id']];before=[r for r in qs if order.get(r['id'],-1)<k];after=[r for r in qs if order.get(r['id'],-1)>k]
+            qs=before+[q]+after;pos=len(before)
+        else:qs=[q]+list(qs);pos=0
     lang=language();feedback=None
     if review:feedback='correct' if choice==q['_answer'] else 'incorrect'
     context={**values,'qlang':lang}
@@ -433,7 +455,9 @@ def question_page(q,choice=None,review=False,qs=None):
     notes=url_for('.notes',chapter_id=q['_chapter'],item_id=q['id'],**context,**review_args)
     locators=section_links(q)
     links=[dict(url=notes+'#'+l['anchor'],basis=l['basis'],title=l.get('title','')) for l in locators]
-    if not links:links=[dict(url=notes+'#question-explanation',basis='explanation')]
+    has_notes=(directory(q['_chapter'])/'Notes.html').is_file()
+    if not links and has_notes:links=[dict(url=notes+'#question-explanation',basis='explanation')]
+    if not has_notes:notes=None
     return render_template('ds/polity_question.html',question=q,choice=choice,feedback=feedback,lang=lang,context=context,
         state=db.session.get(PolityUnit6State,(device_id(),q['id'])),position=pos+1,total=len(qs),
         previous=qs[pos-1]['id'] if pos else None,following=qs[pos+1]['id'] if pos+1<len(qs) else None,
@@ -455,7 +479,9 @@ LAX_DIR=CONTENT/'references'/'laxmikanth'
 LAX_CSS='''<style>body{background:#f4f6f8!important;font-size:16px!important;overflow-wrap:anywhere}.page{width:auto!important;max-width:900px!important;min-height:0!important;margin:0 auto!important;padding:14px 14px 30px!important;box-shadow:none!important;background:#fff!important}body>nav[style]{display:none!important}img,svg{max-width:100%;height:auto}table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}h1{font-size:1.35rem!important;line-height:1.4}.ptitle{display:block!important}@media(max-width:640px){body{font-size:15.5px!important}.page{padding:10px 10px 26px!important}[style*="columns"],[style*="column-count"]{column-count:1!important;columns:1!important}td,th{min-width:84px}ul{margin-left:16px!important}}</style>'''
 @bp.get('/chapters/<chapter_id>/notes')
 def notes(chapter_id):
-    chapter_or_404(chapter_id);item_id=request.args.get('item_id');q=records().get(item_id) if item_id else None
+    chapter_or_404(chapter_id)
+    if not (directory(chapter_id)/'Notes.html').is_file():abort(404)
+    item_id=request.args.get('item_id');q=records().get(item_id) if item_id else None
     if item_id and (not q or q['_chapter']!=chapter_id):abort(404)
     c=chapter_or_404(chapter_id)
     lax=[l for l in (c.get('laxmikanth') or []) if (LAX_DIR/f"chapter-{int(l['chapter']):03d}.html").is_file()]
@@ -476,7 +502,7 @@ def notes(chapter_id):
         choice=request.args.get('choice',type=int)
         if request.args.get('review')=='1' and choice in (1,2,3,4):args.update(review='1',choice=choice)
         target=url_for('.practice',item_id=q['id'],**args)+'#answer-result'
-    ids=[c['id'] for c in chapters()];nxt=ids[ids.index(chapter_id)+1] if ids.index(chapter_id)+1<len(ids) else None
+    ids=[c['id'] for c in chapters(unit_of(chapter_id))];nxt=ids[ids.index(chapter_id)+1] if ids.index(chapter_id)+1<len(ids) else None
     toolbar=render_template('ds/polity_note_toolbar.html',chapter_url=back,question_url=target,tabs=tabs)
     footer=render_template('ds/polity_note_footer.html',chapter_id=chapter_id,next_id=nxt)
     import re
@@ -529,7 +555,8 @@ def progress(chapter_id):
 def start_test():
     cid=request.form.get('chapter','');chapter_mode=request.form.get('kind')=='chaptertest'
     if cid:chapter_or_404(cid)
-    qs=test_records(cid) if chapter_mode and cid else [q for q in records().values() if visible(q) and (not cid or q['_chapter']==cid)]
+    un=request.form.get('unit','')
+    qs=test_records(cid) if chapter_mode and cid else [q for q in records().values() if visible(q) and (not cid or q['_chapter']==cid) and (cid or not un or str(q['_chapter']).split('.')[0]==un)]
     qs=[q for q in qs if scoreable(q)]
     count=min(100,max(1,request.form.get('count',25,type=int)));minutes=min(180,max(1,request.form.get('minutes',30,type=int)))
     if not chapter_mode:random.SystemRandom().shuffle(qs)

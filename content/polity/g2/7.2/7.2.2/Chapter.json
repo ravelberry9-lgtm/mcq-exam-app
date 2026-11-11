@@ -1,0 +1,44 @@
+{
+  "chapter": "7.2.2",
+  "title": "7.2.2 · Parliament",
+  "status": "source_replica_unverified_locked_evidence_hold",
+  "content_started": true,
+  "completion": false,
+  "source_exact_certified": false,
+  "source_pass_record": {
+    "general_locked_ranges": "Three intentional passes completed; evidence relocked.",
+    "pages_367_368_exception": "A separately authorized fourth pass was consumed for pages 367-368; it produced only topic-level held records, not durable exact exercise transcription, and those pages were relocked.",
+    "held_record": "../_parallel/unit7_fresh_legislature_c/source-pass-ledger.json"
+    ,"remaining_21_recovery": "Root source-accounting adjudication preserved the earlier render-only attempts as history. One actual approved visual reading was then consumed for pages 212, 213 and 216-219; full visible-page HTML was staged, integrated into Notes, and all crops were relocked. Explicit unreadable spans and absent pixel-level visual-fidelity certification keep exact-replica completion false."
+  },
+  "topics": [
+    "Lok Sabha and Rajya Sabha",
+    "Membership, officers and sessions",
+    "Legislation, finance, privileges and executive control"
+  ],
+  "GBK_reference": {
+    "chapter": 16,
+    "printed_pages": [
+      212,
+      285
+    ],
+    "chapter_title": "Parliament",
+    "contents_pdf_page": 4,
+    "verification": "GBK contents checked, second recorded pass; chapter/section range verified",
+    "match_scope": "direct_topic_heading",
+    "topic_start_pages": {
+      "Composition": 213,
+      "Bills": 231,
+      "Joint sitting": 234,
+      "Privileges": 240,
+      "Budget": 254
+    },
+    "additional_sources": [],
+    "detailed_concept_matching": "Owned GBK ranges 220-241 and 254-265 were matched pagewise, completed through three intentional passes and locked. Distinct page sections, the complete paired Laxmikanth Chapter 23 material and the reviewed assessment bank provide the local completion evidence; milestone interface review is handled at Unit level."
+  },
+  "laxmikanth_chapters": [
+    23
+  ],
+  "completion_verified": false,
+  "source_gate": "Actual-read recovery 2026-11-09: full visible-page selectable HTML for pages 212-213 and 216-219 is integrated into Notes and those crops are relocked; explicit unreadable spans and absent pixel-level visual-fidelity certification remain. Pages 220-241 and 254-265 have separate saved containers, but their preserved source map records certified_exact=false and they remain locked after three passes. See _parallel/unit7/render-only-recovery-adjudication.json, recovery-actual-reads records and _parallel/unit7_legislature/gbk-page-discrepancy-register.json."
+}

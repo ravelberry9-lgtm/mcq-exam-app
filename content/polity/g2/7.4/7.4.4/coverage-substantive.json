@@ -1,0 +1,62 @@
+{
+  "chapter": "7.4.4",
+  "completion": false,
+  "exact_source_gate": false,
+  "all_atomic_coverage_gate": false,
+  "pyq_gate": false,
+  "counts": {
+    "local_questions": 31,
+    "preserved_original_records": 10,
+    "new_reviewed_questions": 21,
+    "fact_records": 35,
+    "canonical_question_references": 1,
+    "held_and_open_inventory_records": 27,
+    "new_gram_questions": 0
+  },
+  "count_qualification": "Fact records include list claim families. Counts do not imply each atomic clause/year/detail is assessed; actual per-question targets and supplied-stem facts are recorded separately.",
+  "global_dedup": {
+    "banks_searched": 40,
+    "scope": "All40Questions.json searched by tribunal/legal-services/Lok/Gram/39A/323A/323B and relevant service/eligibility terms; relevant hits manually compared conceptually. Not a blind manual reread of every unrelated question.",
+    "canonical_reused": [
+      {
+        "chapter": "6.5.1",
+        "id": "POL-651-P148-001",
+        "target": "LSAActenactmentandcommencement"
+      }
+    ],
+    "existing_overlap_proposal": [
+      {
+        "local": "POL-744-P329-01",
+        "canonical_chapter": "6.8.1",
+        "canonical_id": "POL-681-P516-008",
+        "decision": "preserved; proposed futurecanonicalhandoffonly",
+        "reason": "Bothassesscaseidentificationandtribunal/HC-reviewholding; cannotretirelocalID untilallincomingreferencesandaliasresolververified."
+      }
+    ],
+    "related_but_distinct": [
+      {
+        "local": "POL-744-P307-01",
+        "other": "6.5.1/POL-651-P144-005",
+        "distinction": "LocalrecognisesArticle39A; existingUnit6itemassessesextent/economic-otherdisability/notcriminalonly. Strongconceptoverlaprecorded, no claim of whollynewcoverage."
+      },
+      {
+        "local": "POL-744-P327-01",
+        "other": "6.7.1/POL-671-P514-001",
+        "distinction": "LocalasksamendmentinsertingXIVA; Unit6matchingassessesPartsubject, notsamekeyedclaim."
+      },
+      {
+        "local": "POL-744-A08",
+        "other": "6.8.1/POL-681-N004",
+        "distinction": "Localexplicit hierarchy323B3a target; Unit6casestruckcourtexclusionclauses. (d)clauses aredistractors, notnewclaimedcoverage."
+      }
+    ],
+    "unit6_mutated": false
+  },
+  "source_holds": "Seeatomic-inventory-substantive.json: datedages/tenures/counts/fees/officeholders/unverified2026claims/sourcegaps remainheld; Gram/Family delegated741; ordinary/PLA detailedreferral/powers/majorityprocedure remainopen and notrepresented as covered.",
+  "source_corrections": [
+    "QualifiedexistingCH03eligible/no-offence/publicutilitymeritsconditions.",
+    "ExpandedP30702toavoidGBKviolation-of-awardordinaryappealerror.",
+    "DistinguishedconstitutionalreviewfromordinaryappealinP32901."
+  ],
+  "no_ui_test_requested_or_performed": true
+}

@@ -1,0 +1,40 @@
+{
+  "chapter": "7.4.4",
+  "review_date": "2026-11-09",
+  "benchmark": "Unit 6 book-style production standard",
+  "checks": {
+    "index_navigation": "passed; GBK, complete Laxmikanth, MCQ, PYQ, Group-I and chapter-test destinations present",
+    "gbk_page_sections": 4,
+    "gbk_claim_rule": "not passed for replica certification; pages are disclosed reconstructions but have not been checked for every visible source element under the mandatory complete-page checklist",
+    "laxmikanth_reader": "passed; complete canonical supplied chapter mapping [36, 38]",
+    "group_i": {
+      "status": "schema_and_length_pass_substantive_review_open",
+      "answers": 1,
+      "word_counts": [
+        {
+          "id": "POL-744-G1-ORIG-001",
+          "en": 273,
+          "te": 249
+        }
+      ],
+      "word_target": "225-275 words per language",
+      "qualification": "Word count and schema do not prove argument quality, Telugu equivalence or PYQ-first completeness.",
+      "aggregate_audit": "../../_parallel/unit7/group-i-long-form-audit.json"
+    },
+    "chapter_test": {
+      "status": "synthesis_cross_section_manually_reviewed_source_coverage_open",
+      "questions": 16,
+      "qualification": "Fresh-bank structure does not prove full chapter coverage or manual correctness of every option."
+    },
+    "answers_and_explanations": "embedded bilingually in the book-style assessment pages",
+    "pyq_provenance": "linked to the chapter PYQ review record and rendered as a structured bilingual provenance page",
+    "audit_evidence": {
+      "reader_structure": "../../_parallel/unit7/owned-reader-audit.json",
+      "assessment_structure_and_independence": "../../_parallel/unit7/owned-assessment-audit.json",
+      "group_i_length_and_schema": "../../_parallel/unit7/group-i-long-form-audit.json",
+      "gbk_page_discrepancies": "../../_parallel/unit7/page-discrepancy-register.json",
+      "full_unit7_production": "../../_parallel/unit7/unit7-production-audit.json"
+    }
+  },
+  "result": "active_correction_source_fidelity_coverage_pyq_and_manual_review_open"
+}

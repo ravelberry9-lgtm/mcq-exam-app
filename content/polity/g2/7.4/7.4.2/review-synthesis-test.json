@@ -1,0 +1,275 @@
+{
+  "chapter": "7.4.2",
+  "status": "manual_synthesis_test_review_complete_fact_mapping_source_and_app_gates_open",
+  "completion": false,
+  "source_complete": false,
+  "source_reads": 0,
+  "review_method": [
+    "Compared every old test item with current Questions.json; ten old items repeat the original bank's basic recall claims.",
+    "Replaced all ten with cross-section reasoning while preserving active IDs; old text retained as unscored legacy history.",
+    "Solved each new scenario before comparing to supplied Chapter34 and relevant primary support; checked every option in English and Telugu.",
+    "Checked conceptual rather than exact-stem overlap; explicitly distinguish reused curriculum from duplicate response tasks."
+  ],
+  "legacy_recall_mapping": [
+    {
+      "old_test": "T-01",
+      "original_question": "POL-742-P312-01",
+      "claim": "Common High Court Article231"
+    },
+    {
+      "old_test": "T-02",
+      "original_question": "POL-742-P313-01",
+      "claim": "Composition Article216"
+    },
+    {
+      "old_test": "T-03",
+      "original_question": "POL-742-P313-02",
+      "claim": "Appointment President/consultations"
+    },
+    {
+      "old_test": "T-04",
+      "original_question": "POL-742-P313-03",
+      "claim": "Ten-year qualification route"
+    },
+    {
+      "old_test": "T-05",
+      "original_question": "POL-742-P314-01",
+      "claim": "Retirement62"
+    },
+    {
+      "old_test": "T-06",
+      "original_question": "POL-742-P315-01",
+      "claim": "Transfer Article222"
+    },
+    {
+      "old_test": "T-07",
+      "original_question": "POL-742-P316-01",
+      "claim": "Court of record Article215"
+    },
+    {
+      "old_test": "T-08",
+      "original_question": "POL-742-CH-01",
+      "claim": "Writ Article226"
+    },
+    {
+      "old_test": "T-09",
+      "original_question": "POL-742-P317-01",
+      "claim": "Superintendence Article227"
+    },
+    {
+      "old_test": "T-10",
+      "original_question": "POL-742-CH-02",
+      "claim": "Subordinate control Article235"
+    }
+  ],
+  "questions": [
+    {
+      "id": "POL-742-T-01",
+      "independently_solved_answer": 3,
+      "bilingual_best_answer_unique": true,
+      "what_is_actually_assessed": "Distinguish broad rights remedies from unlimited supremacy; combine226and215.",
+      "distractor_review": "Article 226 covers Fundamental Rights and other legal rights. Article 215 gives record status and contempt power; it does not place the High Court above the Constitution. Thus statement 1 is true and statement 2 is false. A wider remedial scope should not be confused with unlimited institutional supremacy.",
+      "page_bank_overlap": "Same constitutional curriculum, but no one-Article recall task retained. The new item combines powers, applies an exception or distinguishes institutional roles.",
+      "fact_ids": [
+        "POL-742-writ",
+        "POL-742-record"
+      ],
+      "new_fact_mapping_required": false,
+      "qualification": "Question review does not certify source completeness or all-claim coverage."
+    },
+    {
+      "id": "POL-742-T-02",
+      "independently_solved_answer": 2,
+      "bilingual_best_answer_unique": true,
+      "what_is_actually_assessed": "Separate three stages and authorities rather than recall one appointer.",
+      "distractor_review": "Appointment, oath and transfer are distinct acts under Articles 217, 219 and 222. The Governor's role in oath-taking does not make the Governor the appointing authority. For transfer Article 222 requires consultation with the Chief Justice of India; appointment has its own consultation framework.",
+      "page_bank_overlap": "Same constitutional curriculum, but no one-Article recall task retained. The new item combines powers, applies an exception or distinguishes institutional roles.",
+      "fact_ids": [
+        "POL-742-appointment",
+        "POL-742-transfer"
+      ],
+      "new_fact_mapping_required": false,
+      "qualification": "Question review does not certify source completeness or all-claim coverage."
+    },
+    {
+      "id": "POL-742-T-03",
+      "independently_solved_answer": 4,
+      "bilingual_best_answer_unique": true,
+      "what_is_actually_assessed": "Infer tenure security from separation of appointment consultation and removal powers.",
+      "distractor_review": "A High Court judge does not hold office at the State ministry's pleasure. Removal uses the constitutionally specified grounds and parliamentary address, followed by a presidential order. Neither a Governor's appointment consultation nor the Chief Justice's administrative role substitutes for those safeguards.",
+      "page_bank_overlap": "Same constitutional curriculum, but no one-Article recall task retained. The new item combines powers, applies an exception or distinguishes institutional roles.",
+      "fact_ids": [],
+      "new_fact_mapping_required": true,
+      "qualification": "Question review does not certify source completeness or all-claim coverage."
+    },
+    {
+      "id": "POL-742-T-04",
+      "independently_solved_answer": 1,
+      "bilingual_best_answer_unique": true,
+      "what_is_actually_assessed": "Apply restraint to supervisory power rather than identify its Article.",
+      "distractor_review": "Article 227 is a constitutional supervisory power, exercised sparingly to keep courts within legal bounds. It is broader than the existence of a statutory appeal but does not create an unrestricted opportunity to reappraise evidence. Options 2 and 3 wrongly turn exceptional supervision into either compulsory appeal or complete absence of control; option 4 narrows its institutional reach incorrectly.",
+      "page_bank_overlap": "Same constitutional curriculum, but no one-Article recall task retained. The new item combines powers, applies an exception or distinguishes institutional roles.",
+      "fact_ids": [
+        "POL-742-superintendence"
+      ],
+      "new_fact_mapping_required": false,
+      "qualification": "Question review does not certify source completeness or all-claim coverage."
+    },
+    {
+      "id": "POL-742-T-05",
+      "independently_solved_answer": 3,
+      "bilingual_best_answer_unique": true,
+      "what_is_actually_assessed": "Compare entry into service with subsequent administrative control; cross-chapter synthesis.",
+      "distractor_review": "Recruitment and service control should not be merged. Article 234 concerns appointments under rules made after consultation with the State Public Service Commission and High Court. Article 235 places control, including posting, promotion and leave of officers below district-judge rank, in the High Court, subject to applicable service-law safeguards.",
+      "page_bank_overlap": "Same constitutional curriculum, but no one-Article recall task retained. The new item combines powers, applies an exception or distinguishes institutional roles.",
+      "fact_ids": [
+        "POL-742-control",
+        "POL-743-other-judges"
+      ],
+      "new_fact_mapping_required": false,
+      "qualification": "Question review does not certify source completeness or all-claim coverage."
+    },
+    {
+      "id": "POL-742-T-06",
+      "independently_solved_answer": 2,
+      "bilingual_best_answer_unique": true,
+      "what_is_actually_assessed": "Choose constitutionally permitted procedural responses and distinguish withdrawal from advisory jurisdiction.",
+      "distractor_review": "Article 228 offers two routes: dispose of the withdrawn case, or decide the necessary constitutional question and send the case back with the ruling. The latter preserves the subordinate court's role while ensuring constitutional consistency. Neither a presidential advisory reference nor blanket closure of other cases follows.",
+      "page_bank_overlap": "Same constitutional curriculum, but no one-Article recall task retained. The new item combines powers, applies an exception or distinguishes institutional roles.",
+      "fact_ids": [],
+      "new_fact_mapping_required": true,
+      "qualification": "Question review does not certify source completeness or all-claim coverage."
+    },
+    {
+      "id": "POL-742-T-07",
+      "independently_solved_answer": 1,
+      "bilingual_best_answer_unique": true,
+      "what_is_actually_assessed": "Apply a qualified exception and compare High Court/Supreme Court safeguards.",
+      "distractor_review": "Article 220 prohibits a former permanent High Court judge from pleading or acting before courts or authorities except the Supreme Court and other High Courts. This is not the same as Article 124(7)'s bar for a former Supreme Court judge. An executive permission cannot rewrite either constitutional restriction.",
+      "page_bank_overlap": "Same constitutional curriculum, but no one-Article recall task retained. The new item combines powers, applies an exception or distinguishes institutional roles.",
+      "fact_ids": [],
+      "new_fact_mapping_required": true,
+      "qualification": "Question review does not certify source completeness or all-claim coverage."
+    },
+    {
+      "id": "POL-742-T-08",
+      "independently_solved_answer": 4,
+      "bilingual_best_answer_unique": true,
+      "what_is_actually_assessed": "Apply territorial nexus distinct from ordinary-right versus Fundamental-Right scope.",
+      "distractor_review": "The territorial inquiry concerns a wholly or partly arising cause of action under Article 226(2). The authority's external seat does not by itself defeat jurisdiction. Equally, a petitioner's residence without material facts is not a universal jurisdictional shortcut. This question tests territorial connection, not automatic success on the merits.",
+      "page_bank_overlap": "Same constitutional curriculum, but no one-Article recall task retained. The new item combines powers, applies an exception or distinguishes institutional roles.",
+      "fact_ids": [
+        "POL-742-writ"
+      ],
+      "new_fact_mapping_required": false,
+      "qualification": "Question review does not certify source completeness or all-claim coverage."
+    },
+    {
+      "id": "POL-742-T-09",
+      "independently_solved_answer": 2,
+      "bilingual_best_answer_unique": true,
+      "what_is_actually_assessed": "Relate territorial organisation to independent constitutional status within appellate hierarchy.",
+      "distractor_review": "Article 231 permits the common-court arrangement specified in statement 1. Judicial hierarchy and binding precedent do not erase a High Court's independent constitutional status. Appellate correction by the Supreme Court should therefore not be equated with treating High Courts as its administrative offices.",
+      "page_bank_overlap": "Same constitutional curriculum, but no one-Article recall task retained. The new item combines powers, applies an exception or distinguishes institutional roles.",
+      "fact_ids": [
+        "POL-742-common-hc"
+      ],
+      "new_fact_mapping_required": false,
+      "qualification": "Question review does not certify source completeness or all-claim coverage."
+    },
+    {
+      "id": "POL-742-T-10",
+      "independently_solved_answer": 4,
+      "bilingual_best_answer_unique": true,
+      "what_is_actually_assessed": "Combine tenure security and distinguish institutional expenditure from judicial pensions.",
+      "distractor_review": "Security of tenure and financial insulation are distinct safeguards. An ordinary State cabinet decision cannot remove a High Court judge. High Court administrative expenditure is charged on the State Consolidated Fund; the judge's pension is a Union Consolidated Fund charge. Charged expenditure is not voted on, which does not mean that all discussion or constitutional financial procedure disappears.",
+      "page_bank_overlap": "Same constitutional curriculum, but no one-Article recall task retained. The new item combines powers, applies an exception or distinguishes institutional roles.",
+      "fact_ids": [],
+      "new_fact_mapping_required": true,
+      "qualification": "Question review does not certify source completeness or all-claim coverage."
+    }
+  ],
+  "counts": {
+    "active_synthesis": 10,
+    "retired_unscored_recall": 10,
+    "answer_positions": {
+      "1": 2,
+      "2": 3,
+      "3": 2,
+      "4": 3
+    },
+    "moderate": 4,
+    "hard": 6
+  },
+  "source_match": {
+    "direct": [
+      "Chapter34:Appointment of Judges;Oath or Affirmation;Transfer of Judges",
+      "Chapter34:Writ Jurisdiction;Supervisory Jurisdiction;Control over Subordinate Courts;A Court of Record",
+      "Chapter34:Independence safeguards2,4,6"
+    ],
+    "partial": [
+      "High Court independent constitutional status is supported by the reader's introductory integrated-judiciary discussion and qualified by primary Supreme Court material.",
+      "Article234 recruitment comparison also uses supplied Chapter35; it is a cross-chapter relationship rather than exclusively Chapter34."
+    ],
+    "excluded": [
+      "Current office-holders, sanctioned strength, numerical salary or pension amounts",
+      "Dated/possibly obsolete statutory criminal-appeal limits",
+      "Unqualified claims that contempt prohibits all criticism or that court status gives unlimited power"
+    ],
+    "source_body_untouched": true
+  },
+  "proposed_fact_mapping_handoff": [
+    {
+      "test_id": "POL-742-T-02",
+      "existing_ids": [
+        "POL-742-appointment",
+        "POL-742-transfer"
+      ],
+      "new_claim": "Article219 oath authority",
+      "suggested_id": "POL-742-oath-authority"
+    },
+    {
+      "test_id": "POL-742-T-03",
+      "new_claim": "Appointment consultation does not create pleasure tenure; constitutional removal safeguards",
+      "suggested_id": "POL-742-tenure-security"
+    },
+    {
+      "test_id": "POL-742-T-06",
+      "new_claim": "Article228 withdrawal and alternative disposal routes",
+      "suggested_id": "POL-742-constitutional-case-withdrawal"
+    },
+    {
+      "test_id": "POL-742-T-07",
+      "new_claim": "Article220 qualified post-retirement practice restriction versusArticle124(7)",
+      "suggested_id": "POL-742-retired-practice-exceptions"
+    },
+    {
+      "test_id": "POL-742-T-08",
+      "existing_ids": [
+        "POL-742-writ"
+      ],
+      "new_claim": "Article226(2) territorial cause-of-action nexus",
+      "suggested_id": "POL-742-writ-territorial-nexus"
+    },
+    {
+      "test_id": "POL-742-T-09",
+      "existing_ids": [
+        "POL-742-common-hc"
+      ],
+      "new_claim": "Independent High Court constitutional status versus binding Supreme Court precedent",
+      "suggested_id": "POL-742-constitutional-status"
+    },
+    {
+      "test_id": "POL-742-T-10",
+      "new_claim": "State fund administrative expenditure versus Union fund High Court judicial pension",
+      "suggested_id": "POL-742-financial-independence-funds"
+    }
+  ],
+  "remaining_holds": [
+    "Intentional concept reuse remains: T01 combines the original bank's writ/record concepts; T09 combines common-court organisation with independent constitutional status; T03 and T10 both touch tenure security, with T10 additionally testing financial-fund distinctions. These are compound response tasks, not proof that every atomic concept is new or that conceptual overlap is zero.",
+    "Chapter owner must reconcile newly assessed atomic claims with existing cross-unit fact IDs; this task did not modify Fact-register.json.",
+    "Full source content and layout remain uncertified.",
+    "No app route/browser verification performed in this scope.",
+    "This selected test does not establish full page/section/fact coverage."
+  ]
+}

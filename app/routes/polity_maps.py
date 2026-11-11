@@ -14,10 +14,14 @@ def read(path):
     return json.loads(path.read_text(encoding='utf-8-sig'))
 
 _record_cache = (None, None)
+_CHAPTER_DIR=re.compile(r'^(?:[6-9]|10)\.\d+\.\d+$')
+def chapter_dirs():
+    """Chapter folders of syllabus units 6-10 (content/polity/g2/<unit>.<sec>/<unit>.<sec>.<ch>)."""
+    return sorted((d for d in CONTENT.glob('*.*/*') if d.is_dir() and _CHAPTER_DIR.match(d.name) and d.parent.name==d.name.rsplit('.',1)[0]),key=lambda d:[int(x) for x in d.name.split('.')])
 
 def base_records():
     global _record_cache
-    paths=sorted(CONTENT.glob('6.*/*/*.json'))+sorted((CONTENT/'_shared').glob('*.json'))
+    paths=sorted(p for d in chapter_dirs() for p in d.glob('*.json'))+sorted((CONTENT/'_shared').glob('*.json'))
     signature=tuple((str(p),p.stat().st_mtime_ns,p.stat().st_size) for p in paths)
     if signature!=_record_cache[0]:
         _record_cache=(signature,_load_records())
@@ -67,11 +71,10 @@ def _load_records():
     result = {}
     shared = read(CONTENT/'_shared/Explanations.json')
     shared_ex = shared.get('questions', shared.get('explanations', {}))
-    for chapter in sorted(CONTENT.glob('6.*/*')):
-        if not chapter.is_dir(): continue
+    for chapter in chapter_dirs():
         ex = read(chapter/'Explanations.json') if (chapter/'Explanations.json').is_file() else {}
         ex = {**shared_ex, **ex.get('questions',ex.get('explanations',ex))}
-        for filename,kind in [('Chapter-Test.json','chaptertest'),('Questions.json','bank'),('PYQ-Set.json','pyq'),('Publisher-Questions.json','publisher')]:
+        for filename,kind in [('Chapter-Test.json','chaptertest'),('Questions.json','bank'),('Laxmikanth-Questions.json','bank'),('PYQ-Set.json','pyq'),('PYQ-Bank-Set.json','pyq'),('Publisher-Questions.json','publisher')]:
             path=chapter/filename
             if not path.is_file():continue
             data=read(path)

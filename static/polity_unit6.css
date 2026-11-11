@@ -134,3 +134,11 @@ body:has(.u6) .bottomnav .navoff{opacity:1!important;color:#4B556B}
 .pr-trees{--c:#334155}.pr-trees .pr-n{font-size:.86rem;line-height:1.35}
 .rh-trees .rh-ico{color:#334155}
 @media (prefers-color-scheme:dark){.pr-trees{--c:#CBD5E1}.rh-trees .rh-ico{color:#CBD5E1}}
+
+/* Unit 6-10 practice: key-status note, Telugu-missing note, inline Next after the answer */
+.u6-keynote{margin:.6rem 0 0;padding:.5rem .7rem;border-left:3px solid #b45309;background:#fffbeb;color:#78350f;border-radius:6px;font-size:.92rem;line-height:1.5}
+.u6-note{color:#64748b;margin:.3rem 0 0}
+.u6-next-inline{display:flex;justify-content:flex-end;margin-top:.9rem}
+.u6-next-inline .btn{min-height:44px}
+.pq-t td,.pq-t thead th{white-space:nowrap}
+.pq-units th[scope=row]{white-space:nowrap}

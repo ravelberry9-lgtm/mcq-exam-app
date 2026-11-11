@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% block title %}Polity timeline trees{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111x') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_trees.css',v='rel4b') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111z') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_trees.css',v='rel4b') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.recall_hub') }}">‹ Recall cards</a><b>Timeline trees · కాలక్రమ వృక్షాలు</b></div>{% endblock %}
 {% block content %}<div class="u6 tr" id="tr" data-lang="{{ lang if lang in ('te','en','both') else 'both' }}" data-deck-url="{{ url_for('polity_unit6.recall_deck',deck_id='__DECK__') }}" data-chains-url="{{ url_for('polity_unit6.recall_trees_chains') }}">
   <header class="tr-head">

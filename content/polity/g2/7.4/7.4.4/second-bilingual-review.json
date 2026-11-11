@@ -1,0 +1,44 @@
+{
+  "chapter": "7.4.4",
+  "review_date": "2026-11-09",
+  "scope": {
+    "chapter_questions": 10,
+    "original_primary_pagewise": 5,
+    "original_preserved_pagewise": 2,
+    "original_whole_chapter": 3,
+    "verified_pyqs": 0
+  },
+  "checks": {
+    "english_telugu_stem_alignment": "passed",
+    "four_option_alignment_and_order": "passed",
+    "answer_range_and_key_consistency": "passed",
+    "terminology": "passed; administrative tribunal, judicial review, natural justice, legal aid, Lok Adalat award and Permanent Lok Adalat aligned",
+    "question_specific_explanations": "passed; all 10 IDs resolve",
+    "source_fact_coverage": "passed",
+    "constitutional_precision": "passed; Parliament-only Article 323A is distinguished from Article 323B, High Court judicial review is preserved under L. Chandra Kumar, Article 39A is exact, and ordinary versus Permanent Lok Adalat authority is separated",
+    "time_sensitive_data": "passed; office-holders, monetary thresholds, tribunal tenure and age rules, current statistics and dated reform updates excluded",
+    "pyq_integrity": "passed; no direct verified local PYQ found"
+  },
+  "duplicate_audit": {
+    "inventory_compared": 1156,
+    "fields": [
+      "id",
+      "question_en exact normalized",
+      "question_te exact normalized"
+    ],
+    "collisions": 0,
+    "parse_failures": 0,
+    "scope_note": "Compared with every parseable Questions.json outside 7.4.4 under content/polity/g2."
+  },
+  "locked_source_policy": {
+    "primary_pages": "327-329",
+    "primary_page_count": 3,
+    "passes_each": 3,
+    "preserved_related_page": 307,
+    "reopened_after_lock": false
+  },
+  "interface_review": {
+    "status": "deferred to milestone per user instruction"
+  },
+  "result": "passed_content_gate_pending_milestone_interface_review"
+}

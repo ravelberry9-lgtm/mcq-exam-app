@@ -1,0 +1,551 @@
+{
+ "chapter": "7.2.1",
+ "status": "fresh_cross_section_synthesis_review_pending",
+ "completion": false,
+ "questions": [
+  {
+   "id": "POL-721-SYN-001",
+   "kind": "synthesis",
+   "format": "statement-combination",
+   "difficulty": "hard",
+   "question_en": "Consider the following: 1. The President is part of Parliament but not a member of either House. 2. A Governor is part of the State Legislature even in a unicameral State. 3. Every constituent part of a legislature must possess a vote in its House. Which are correct?",
+   "question_te": "పరిశీలించండి: 1. రాష్ట్రపతి పార్లమెంటులో భాగం, కానీ ఏ సభలోనూ సభ్యుడు కాదు. 2. ఏకసభా రాష్ట్రంలో కూడా గవర్నర్ రాష్ట్ర శాసన వ్యవస్థలో భాగం. 3. శాసన వ్యవస్థలోని ప్రతి భాగానికి సభలో ఓటు ఉండాలి. సరైనవి ఏవి?",
+   "options_en": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ],
+   "options_te": [
+    "1 మాత్రమే",
+    "1, 2 మాత్రమే",
+    "2, 3 మాత్రమే",
+    "1, 2, 3"
+   ],
+   "answer": 2,
+   "fact_ids": [
+    "POL-721-parliament-composition",
+    "POL-721-state-unicameral-bicameral"
+   ],
+   "explanation_en": "Articles 79 and 168 include the constitutional heads without making them voting members of a House.",
+   "explanation_te": "ప్రకరణలు 79, 168 రాజ్యాంగ అధిపతులను భాగాలుగా చేర్చుతాయి; వారిని సభలో ఓటు సభ్యులుగా చేయవు.",
+   "guide_url": "/learn/polity/g2/7/2/1/Teaching-Guide.html#ct-synthesis-721",
+   "table_id": "ct-synthesis-721",
+   "test_fact_references": [
+    {
+     "id": "POL-721-parliament-composition",
+     "question_id": "POL-721-SYN-001",
+     "source_path": "7.2/7.2.1/Fact-register.json",
+     "source_fact_sha256": "9da5ac85ec04123da2b1ca9fc8cb67a909582accbba13d045bbe8ea90c6e70db",
+     "source_baseline_file_sha256": "5dd5819ae8ccb42209782fa55d5c2469daf3c52f23581a2b626fc26c587af63f",
+     "assessment_body_sha256": "2e47e91ecfcfb82c838b6952b96054b7089c398e934868744e4d7bff93e423a0",
+     "assessed_question_en": "Consider the following: 1. The President is part of Parliament but not a member of either House. 2. A Governor is part of the State Legislature even in a unicameral State. 3. Every constituent part of a legislature must possess a vote in its House. Which are correct?",
+     "assessed_question_te": "పరిశీలించండి: 1. రాష్ట్రపతి పార్లమెంటులో భాగం, కానీ ఏ సభలోనూ సభ్యుడు కాదు. 2. ఏకసభా రాష్ట్రంలో కూడా గవర్నర్ రాష్ట్ర శాసన వ్యవస్థలో భాగం. 3. శాసన వ్యవస్థలోని ప్రతి భాగానికి సభలో ఓటు ఉండాలి. సరైనవి ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    },
+    {
+     "id": "POL-721-state-unicameral-bicameral",
+     "question_id": "POL-721-SYN-001",
+     "source_path": "7.2/7.2.1/Fact-register.json",
+     "source_fact_sha256": "a4355639225332de502e63c53f784a5e86f761ac01d1d5795fb1ae8beeaa8d9b",
+     "source_baseline_file_sha256": "5dd5819ae8ccb42209782fa55d5c2469daf3c52f23581a2b626fc26c587af63f",
+     "assessment_body_sha256": "2e47e91ecfcfb82c838b6952b96054b7089c398e934868744e4d7bff93e423a0",
+     "assessed_question_en": "Consider the following: 1. The President is part of Parliament but not a member of either House. 2. A Governor is part of the State Legislature even in a unicameral State. 3. Every constituent part of a legislature must possess a vote in its House. Which are correct?",
+     "assessed_question_te": "పరిశీలించండి: 1. రాష్ట్రపతి పార్లమెంటులో భాగం, కానీ ఏ సభలోనూ సభ్యుడు కాదు. 2. ఏకసభా రాష్ట్రంలో కూడా గవర్నర్ రాష్ట్ర శాసన వ్యవస్థలో భాగం. 3. శాసన వ్యవస్థలోని ప్రతి భాగానికి సభలో ఓటు ఉండాలి. సరైనవి ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    }
+   ],
+   "source_urls": [
+    "/learn/polity/g2/7/2/1/Laxmikanth.html",
+    "https://www.legislative.gov.in/constitution-of-india/"
+   ]
+  },
+  {
+   "id": "POL-721-SYN-002",
+   "kind": "synthesis",
+   "format": "application",
+   "difficulty": "hard",
+   "question_en": "A State Assembly passes an Article 169 resolution by 55% of its total membership, but only 60% of members present and voting support it. What is the result?",
+   "question_te": "ఒక రాష్ట్ర విధానసభలో మొత్తం సభ్యత్వంలో 55% మంది ప్రకరణ 169 తీర్మానానికి మద్దతిచ్చారు; కానీ హాజరై ఓటు వేసిన వారిలో 60% మాత్రమే మద్దతిచ్చారు. ఫలితం ఏమిటి?",
+   "options_en": [
+    "It passes because the total-membership majority is sufficient",
+    "It passes if the Governor assents",
+    "It fails because the two-thirds present-and-voting limb is unmet",
+    "It automatically becomes an Article 368 bill"
+   ],
+   "options_te": [
+    "మొత్తం సభ్యత్వ మెజారిటీ చాలు కాబట్టి ఆమోదం",
+    "గవర్నర్ ఆమోదిస్తే ఆమోదం",
+    "హాజరై ఓటు వేసిన వారిలో మూడింట రెండొంతులు లేక విఫలం",
+    "స్వయంగా ప్రకరణ 368 బిల్లు అవుతుంది"
+   ],
+   "answer": 3,
+   "fact_ids": [
+    "POL-721-article169"
+   ],
+   "explanation_en": "Both limbs of the prescribed Assembly majority must be satisfied before Parliament may act.",
+   "explanation_te": "పార్లమెంటు చర్యకు ముందు విధానసభ మెజారిటీలోని రెండు షరతులూ నెరవేరాలి.",
+   "guide_url": "/learn/polity/g2/7/2/1/Teaching-Guide.html#ct-synthesis-721",
+   "table_id": "ct-synthesis-721",
+   "test_fact_references": [
+    {
+     "id": "POL-721-article169",
+     "question_id": "POL-721-SYN-002",
+     "source_path": "7.2/7.2.1/Fact-register.json",
+     "source_fact_sha256": "1c45b96d0e212f6a7fed74e31a866ef8134ee12654d46b6aaae3c2520619e5cf",
+     "source_baseline_file_sha256": "5dd5819ae8ccb42209782fa55d5c2469daf3c52f23581a2b626fc26c587af63f",
+     "assessment_body_sha256": "a7a8491b45f1323e36a2705da2528c68831adc63fd3f2681a2f543968ca1c921",
+     "assessed_question_en": "A State Assembly passes an Article 169 resolution by 55% of its total membership, but only 60% of members present and voting support it. What is the result?",
+     "assessed_question_te": "ఒక రాష్ట్ర విధానసభలో మొత్తం సభ్యత్వంలో 55% మంది ప్రకరణ 169 తీర్మానానికి మద్దతిచ్చారు; కానీ హాజరై ఓటు వేసిన వారిలో 60% మాత్రమే మద్దతిచ్చారు. ఫలితం ఏమిటి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    }
+   ],
+   "source_urls": [
+    "/learn/polity/g2/7/2/1/Laxmikanth.html",
+    "https://www.legislative.gov.in/constitution-of-india/"
+   ]
+  },
+  {
+   "id": "POL-721-SYN-003",
+   "kind": "original-whole-chapter-synthesis",
+   "format": "application-statement-comparison",
+   "difficulty": "moderate-to-hard",
+   "question_en": "A State Assembly is dissolved while the Legislative Council continues. A minister belonging to the Council argues that the continuing chamber guarantees the ministry a six-year tenure. Assess the following claims.\n1. The Council itself is not dissolved with the Assembly.\n2. The Council’s continuity gives the ministry a guaranteed six-year term.\n3. Council membership does not shift collective responsibility away from the Assembly.\nWhich statements are correct?",
+   "question_te": "రాష్ట్ర విధానసభ రద్దయినా విధానపరిషత్ కొనసాగుతోంది. పరిషత్ సభ్యుడైన మంత్రి, నిరంతర సభ ఉండటం వల్ల మంత్రిమండలికి ఆరేళ్ల పదవీకాలం హామీ ఉంటుందని వాదించారు. ఈ ప్రకటనలను పరిశీలించండి.\n1. విధానసభతో పాటు పరిషత్ కూడా రద్దు కాదు.\n2. పరిషత్ కొనసాగడం వల్ల మంత్రిమండలికి ఆరేళ్ల హామీ పదవీకాలం ఉంటుంది.\n3. పరిషత్ సభ్యత్వం వల్ల మంత్రిమండలి సమిష్టి బాధ్యత విధానసభ నుంచి మారదు.\nసరైన ప్రకటనలు ఏవి?",
+   "options_en": [
+    "1, 2, 3",
+    "2, 3 only",
+    "1, 2 only",
+    "1, 3 only"
+   ],
+   "options_te": [
+    "1, 2, 3",
+    "2, 3 మాత్రమే",
+    "1, 2 మాత్రమే",
+    "1, 3 మాత్రమే"
+   ],
+   "answer": 4,
+   "fact_ids": [
+    "POL-721-continuing-houses",
+    "POL-721-assembly-primacy",
+    "POL-736-collective-responsibility"
+   ],
+   "explanation_en": "A State Assembly is dissolved while the Legislative Council continues. A minister belonging to the Council argues that the continuing chamber guarantees the ministry a six-year tenure. Assess the following claims. A continuing Council is distinct from the dissolvable Assembly. A member’s normal term and the chamber’s continuity do not create a fixed ministerial tenure. Article164(2) fixes collective responsibility to the Assembly, including ministers from the Council.",
+   "explanation_te": "రాష్ట్ర విధానసభ రద్దయినా విధానపరిషత్ కొనసాగుతోంది. పరిషత్ సభ్యుడైన మంత్రి, నిరంతర సభ ఉండటం వల్ల మంత్రిమండలికి ఆరేళ్ల పదవీకాలం హామీ ఉంటుందని వాదించారు. ఈ ప్రకటనలను పరిశీలించండి. నిరంతర సభ అయిన పరిషత్, రద్దు చేయదగిన విధానసభకు వేరు. సభ్యుని సాధారణ పదవీకాలం, సభ కొనసాగింపు మంత్రిమండలికి నిర్దిష్ట పదవీకాలాన్ని కల్పించవు. ప్రకరణ164(2) ప్రకారం పరిషత్ నుంచి వచ్చిన మంత్రులతో సహా మంత్రిమండలి విధానసభకు సమిష్టిగా బాధ్యత వహిస్తుంది.",
+   "replacement_history": "Replaced near-duplicate/workflow-only frozen item after independent review; original ID preserved.",
+   "option_notes": [
+    {
+     "option": 1,
+     "en": "For this constitutional scenario, option 1 does not select exactly the correct statements. A member’s normal term and the chamber’s continuity do not create a fixed ministerial tenure.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 1వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకోదు. సభ్యుని సాధారణ పదవీకాలం, సభ కొనసాగింపు మంత్రిమండలికి నిర్దిష్ట పదవీకాలాన్ని కల్పించవు."
+    },
+    {
+     "option": 2,
+     "en": "For this constitutional scenario, option 2 does not select exactly the correct statements. A continuing Council is distinct from the dissolvable Assembly. A member’s normal term and the chamber’s continuity do not create a fixed ministerial tenure.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 2వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకోదు. నిరంతర సభ అయిన పరిషత్, రద్దు చేయదగిన విధానసభకు వేరు. సభ్యుని సాధారణ పదవీకాలం, సభ కొనసాగింపు మంత్రిమండలికి నిర్దిష్ట పదవీకాలాన్ని కల్పించవు."
+    },
+    {
+     "option": 3,
+     "en": "For this constitutional scenario, option 3 does not select exactly the correct statements. A member’s normal term and the chamber’s continuity do not create a fixed ministerial tenure. Article 164(2) fixes collective responsibility to the Assembly, including ministers from the Council.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 3వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకోదు. సభ్యుని సాధారణ పదవీకాలం, సభ కొనసాగింపు మంత్రిమండలికి నిర్దిష్ట పదవీకాలాన్ని కల్పించవు. ప్రకరణ 164(2) ప్రకారం పరిషత్ నుంచి వచ్చిన మంత్రులతో సహా మంత్రిమండలి విధానసభకు సమిష్టిగా బాధ్యత వహిస్తుంది."
+    },
+    {
+     "option": 4,
+     "en": "For this constitutional scenario, option 4 selects exactly the correct statements. A continuing Council is distinct from the dissolvable Assembly. A member’s normal term and the chamber’s continuity do not create a fixed ministerial tenure. Article 164(2) fixes collective responsibility to the Assembly, including ministers from the Council.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 4వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకుంటుంది. నిరంతర సభ అయిన పరిషత్, రద్దు చేయదగిన విధానసభకు వేరు. సభ్యుని సాధారణ పదవీకాలం, సభ కొనసాగింపు మంత్రిమండలికి నిర్దిష్ట పదవీకాలాన్ని కల్పించవు. ప్రకరణ 164(2) ప్రకారం పరిషత్ నుంచి వచ్చిన మంత్రులతో సహా మంత్రిమండలి విధానసభకు సమిష్టిగా బాధ్యత వహిస్తుంది."
+    }
+   ],
+   "guide_url": "/learn/polity/g2/7/2/1/Teaching-Guide.html#ct-synthesis-721",
+   "table_id": "ct-synthesis-721",
+   "scored": true,
+   "review_status": "independently_reviewed_whole_chapter_test_revision",
+   "revision_history": [
+    {
+     "full_original_question": {
+      "id": "POL-721-SYN-003",
+      "kind": "synthesis",
+      "format": "application",
+      "difficulty": "moderate",
+      "question_en": "A Legislative Council member completes the normal individual term. Which statement is correct?",
+      "question_te": "ఒక విధానపరిషత్ సభ్యుడు సాధారణ వ్యక్తిగత పదవీకాలాన్ని పూర్తి చేశాడు. సరైన ప్రకటన ఏది?",
+      "options_en": [
+       "The term is six years, while the Council itself is continuing",
+       "The whole Council dissolves after five years",
+       "The term is two years for every member",
+       "The Governor dissolves one-third annually"
+      ],
+      "options_te": [
+       "పదవీకాలం ఆరు సంవత్సరాలు; పరిషత్ మాత్రం నిరంతర సభ",
+       "మొత్తం పరిషత్ ఐదు సంవత్సరాల తరువాత రద్దవుతుంది",
+       "ప్రతి సభ్యుని పదవీకాలం రెండు సంవత్సరాలు",
+       "గవర్నర్ ప్రతి సంవత్సరం మూడవ వంతును రద్దు చేస్తారు"
+      ],
+      "answer": 1,
+      "fact_ids": [
+       "POL-721-continuing-houses"
+      ],
+      "explanation_en": "Council members normally serve six-year terms with staggered retirement; the chamber is not dissolved.",
+      "explanation_te": "పరిషత్ సభ్యులు సాధారణంగా ఆరు సంవత్సరాల పదవీకాలం పూర్తి చేస్తారు; పదవీ విరమణ దశలవారీగా జరుగుతుంది, సభ రద్దు కాదు.",
+      "replacement_history": "Replaced near-duplicate/workflow-only frozen item after independent review; original ID preserved."
+     },
+     "original_object_sha256": "30d6443ed1d2a452808f9ce191e59de50d14b222c2b34971e9a2e8220420a66f",
+     "reason": "Only six-year tenure and continuing-chamber recall; rewrite with retirement/individual vacancy/composition interaction."
+    }
+   ],
+   "status": "independently_reviewed_active_test",
+   "independent_content_review": {
+    "file": "_parallel/unit7/second-review-unit7-test-revisions-postfix.json",
+    "sha256": "ee13745036cf250fdbd80518313431d25e0479e00771a95697904455a219cf1e",
+    "packet_sha256": "c5bf72f199b400cffcd36d02edd4a98a5ba93634aa42231b282da2359a03cc36"
+   },
+   "test_fact_references": [
+    {
+     "id": "POL-721-continuing-houses",
+     "question_id": "POL-721-SYN-003",
+     "source_path": "7.2/7.2.1/Fact-register.json",
+     "source_fact_sha256": "8b2d1cc26814f2f29394373949cf1fafbdf3a9a98ac8e7c0794f41f119bb11c5",
+     "source_baseline_file_sha256": "5dd5819ae8ccb42209782fa55d5c2469daf3c52f23581a2b626fc26c587af63f",
+     "assessment_body_sha256": "9ab4a329d6024bf5725b5b7867b7b0d9ff9db621822011dfdd1ea41733bbad91",
+     "assessed_question_en": "A State Assembly is dissolved while the Legislative Council continues. A minister belonging to the Council argues that the continuing chamber guarantees the ministry a six-year tenure. Assess the following claims.\n1. The Council itself is not dissolved with the Assembly.\n2. The Council’s continuity gives the ministry a guaranteed six-year term.\n3. Council membership does not shift collective responsibility away from the Assembly.\nWhich statements are correct?",
+     "assessed_question_te": "రాష్ట్ర విధానసభ రద్దయినా విధానపరిషత్ కొనసాగుతోంది. పరిషత్ సభ్యుడైన మంత్రి, నిరంతర సభ ఉండటం వల్ల మంత్రిమండలికి ఆరేళ్ల పదవీకాలం హామీ ఉంటుందని వాదించారు. ఈ ప్రకటనలను పరిశీలించండి.\n1. విధానసభతో పాటు పరిషత్ కూడా రద్దు కాదు.\n2. పరిషత్ కొనసాగడం వల్ల మంత్రిమండలికి ఆరేళ్ల హామీ పదవీకాలం ఉంటుంది.\n3. పరిషత్ సభ్యత్వం వల్ల మంత్రిమండలి సమిష్టి బాధ్యత విధానసభ నుంచి మారదు.\nసరైన ప్రకటనలు ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    },
+    {
+     "id": "POL-721-assembly-primacy",
+     "question_id": "POL-721-SYN-003",
+     "source_path": "7.2/7.2.1/Fact-register.json",
+     "source_fact_sha256": "8ea5353e0d11f2a06cc82bfd160a8113556aa759ecea1b6edc51cf428b839edf",
+     "source_baseline_file_sha256": "5dd5819ae8ccb42209782fa55d5c2469daf3c52f23581a2b626fc26c587af63f",
+     "assessment_body_sha256": "9ab4a329d6024bf5725b5b7867b7b0d9ff9db621822011dfdd1ea41733bbad91",
+     "assessed_question_en": "A State Assembly is dissolved while the Legislative Council continues. A minister belonging to the Council argues that the continuing chamber guarantees the ministry a six-year tenure. Assess the following claims.\n1. The Council itself is not dissolved with the Assembly.\n2. The Council’s continuity gives the ministry a guaranteed six-year term.\n3. Council membership does not shift collective responsibility away from the Assembly.\nWhich statements are correct?",
+     "assessed_question_te": "రాష్ట్ర విధానసభ రద్దయినా విధానపరిషత్ కొనసాగుతోంది. పరిషత్ సభ్యుడైన మంత్రి, నిరంతర సభ ఉండటం వల్ల మంత్రిమండలికి ఆరేళ్ల పదవీకాలం హామీ ఉంటుందని వాదించారు. ఈ ప్రకటనలను పరిశీలించండి.\n1. విధానసభతో పాటు పరిషత్ కూడా రద్దు కాదు.\n2. పరిషత్ కొనసాగడం వల్ల మంత్రిమండలికి ఆరేళ్ల హామీ పదవీకాలం ఉంటుంది.\n3. పరిషత్ సభ్యత్వం వల్ల మంత్రిమండలి సమిష్టి బాధ్యత విధానసభ నుంచి మారదు.\nసరైన ప్రకటనలు ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    },
+    {
+     "id": "POL-736-collective-responsibility",
+     "question_id": "POL-721-SYN-003",
+     "source_path": "7.3/7.3.6/Fact-register.json",
+     "source_fact_sha256": "cf3fb126bf73ea5f9e098a886acc028581b81a8f24cddd333d55986757c51800",
+     "source_baseline_file_sha256": "658ec79da80039342926e8044d8b0d4178b2fcf50b7723afdd71cb631d727652",
+     "assessment_body_sha256": "9ab4a329d6024bf5725b5b7867b7b0d9ff9db621822011dfdd1ea41733bbad91",
+     "assessed_question_en": "A State Assembly is dissolved while the Legislative Council continues. A minister belonging to the Council argues that the continuing chamber guarantees the ministry a six-year tenure. Assess the following claims.\n1. The Council itself is not dissolved with the Assembly.\n2. The Council’s continuity gives the ministry a guaranteed six-year term.\n3. Council membership does not shift collective responsibility away from the Assembly.\nWhich statements are correct?",
+     "assessed_question_te": "రాష్ట్ర విధానసభ రద్దయినా విధానపరిషత్ కొనసాగుతోంది. పరిషత్ సభ్యుడైన మంత్రి, నిరంతర సభ ఉండటం వల్ల మంత్రిమండలికి ఆరేళ్ల పదవీకాలం హామీ ఉంటుందని వాదించారు. ఈ ప్రకటనలను పరిశీలించండి.\n1. విధానసభతో పాటు పరిషత్ కూడా రద్దు కాదు.\n2. పరిషత్ కొనసాగడం వల్ల మంత్రిమండలికి ఆరేళ్ల హామీ పదవీకాలం ఉంటుంది.\n3. పరిషత్ సభ్యత్వం వల్ల మంత్రిమండలి సమిష్టి బాధ్యత విధానసభ నుంచి మారదు.\nసరైన ప్రకటనలు ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    }
+   ],
+   "source_urls": [
+    "/learn/polity/g2/7/2/1/Laxmikanth.html",
+    "https://www.legislative.gov.in/constitution-of-india/"
+   ]
+  },
+  {
+   "id": "POL-721-SYN-004",
+   "kind": "synthesis",
+   "format": "application",
+   "difficulty": "hard",
+   "question_en": "An Assembly-origin ordinary bill is passed by the Assembly twice. For how long may the Council hold it at the first and second stages respectively?",
+   "question_te": "విధానసభలో ప్రారంభమైన సాధారణ బిల్లును విధానసభ రెండుసార్లు ఆమోదించింది. మొదటి, రెండో దశల్లో పరిషత్ వరుసగా ఎంతకాలం నిలిపివేయగలదు?",
+   "options_en": [
+    "Three months and one month",
+    "Fourteen days and fourteen days",
+    "Six months and three months",
+    "One month and three months"
+   ],
+   "options_te": [
+    "మూడు నెలలు, ఒక నెల",
+    "పద్నాలుగు రోజులు, పద్నాలుగు రోజులు",
+    "ఆరు నెలలు, మూడు నెలలు",
+    "ఒక నెల, మూడు నెలలు"
+   ],
+   "fact_ids": [
+    "POL-721-council-weaker"
+   ],
+   "explanation_en": "For an Assembly-origin ordinary bill, the Council may delay up to three months at the first passage and one month after the Assembly passes it again.",
+   "explanation_te": "విధానసభలో ప్రారంభమైన సాధారణ బిల్లును పరిషత్ మొదటి దశలో మూడు నెలలు, విధానసభ మళ్లీ ఆమోదించిన తరువాత ఒక నెల వరకు ఆలస్యం చేయగలదు.",
+   "replacement_history": "Replaced near-duplicate/workflow-only frozen item after independent review; original ID preserved.",
+   "scored": false,
+   "status": "retired_after_independent_semantic_review",
+   "retirement_references": [
+    {
+     "id": "POL-721-CH-03",
+     "chapter": "7.2.1",
+     "file": "7.2/7.2.1/Questions.json",
+     "source_file_sha256": "4c987832b8c4f907e05c34b96589d79e2bf8628ac1f4a742ba90e2b705dea7e7",
+     "object": {
+      "id": "POL-721-CH-03",
+      "kind": "original-whole-chapter-test",
+      "source_page": null,
+      "fact_ids": [
+       "POL-721-council-weaker"
+      ],
+      "format": "application",
+      "difficulty": "hard",
+      "question_en": "A State Legislative Council rejects an ordinary bill passed by the Assembly for a second time. Which outcome best reflects the constitutional design?",
+      "question_te": "విధానసభ రెండవసారి ఆమోదించిన సాధారణ బిల్లును రాష్ట్ర విధానపరిషత్ తిరస్కరించింది. రాజ్యాంగ నిర్మాణానికి సరైన పరిణామం ఏది?",
+      "options_en": [
+       "The bill is permanently defeated",
+       "A joint sitting is compulsory",
+       "The Assembly can ultimately prevail; there is no joint sitting",
+       "The Governor must dissolve both Houses"
+      ],
+      "options_te": [
+       "బిల్లు శాశ్వతంగా విఫలమవుతుంది",
+       "సంయుక్త సమావేశం తప్పనిసరి",
+       "విధానసభ చివరకు ఆధిక్యం సాధిస్తుంది; సంయుక్త సమావేశం లేదు",
+       "గవర్నర్ రెండు సభలను రద్దు చేయాలి"
+      ],
+      "answer": 3,
+      "explanation_id": "POL-721-CH-03"
+     },
+     "object_sha256": "edfa148fe1be962cc0ab2abe824abc65c515dac3b3fc855116b701ce3f1e0580",
+     "key": 3,
+     "bilingual_explanation": {
+      "en": "The Council has only a suspensive role over an ordinary bill. The Assembly can pass it again and ultimately prevail; the Constitution provides no joint sitting at State level.",
+      "te": "సాధారణ బిల్లుపై విధానపరిషత్‌కు ఆలస్యం చేసే పాత్ర మాత్రమే. విధానసభ మళ్లీ ఆమోదించి చివరకు ఆధిక్యం సాధిస్తుంది; రాష్ట్ర స్థాయిలో సంయుక్త సమావేశం లేదు."
+     },
+     "bilingual_explanation_sha256": "670fe75765fc3e93842914d0d786c7f7291f0deb0ac92a5da4330865cbf7ffd8",
+     "eligible_current_canonical": true,
+     "scope": "Selected answer tests Assembly ultimate primacy/no State joint sitting. It DOES NOT positively assess the first-three-month/second-one-month periods.",
+     "credit_role": "adjacent_primacy_only_no_period_credit",
+     "whole_compound_fact_credit": false
+    }
+   ],
+   "revision_history": [
+    {
+     "full_original_question": {
+      "id": "POL-721-SYN-004",
+      "kind": "synthesis",
+      "format": "application",
+      "difficulty": "hard",
+      "question_en": "An Assembly-origin ordinary bill is passed by the Assembly twice. For how long may the Council hold it at the first and second stages respectively?",
+      "question_te": "విధానసభలో ప్రారంభమైన సాధారణ బిల్లును విధానసభ రెండుసార్లు ఆమోదించింది. మొదటి, రెండో దశల్లో పరిషత్ వరుసగా ఎంతకాలం నిలిపివేయగలదు?",
+      "options_en": [
+       "Three months and one month",
+       "Fourteen days and fourteen days",
+       "Six months and three months",
+       "One month and three months"
+      ],
+      "options_te": [
+       "మూడు నెలలు, ఒక నెల",
+       "పద్నాలుగు రోజులు, పద్నాలుగు రోజులు",
+       "ఆరు నెలలు, మూడు నెలలు",
+       "ఒక నెల, మూడు నెలలు"
+      ],
+      "answer": 1,
+      "fact_ids": [
+       "POL-721-council-weaker"
+      ],
+      "explanation_en": "For an Assembly-origin ordinary bill, the Council may delay up to three months at the first passage and one month after the Assembly passes it again.",
+      "explanation_te": "విధానసభలో ప్రారంభమైన సాధారణ బిల్లును పరిషత్ మొదటి దశలో మూడు నెలలు, విధానసభ మళ్లీ ఆమోదించిన తరువాత ఒక నెల వరకు ఆలస్యం చేయగలదు.",
+      "replacement_history": "Replaced near-duplicate/workflow-only frozen item after independent review; original ID preserved."
+     },
+     "reason": "Retire weak single-rule recall; Council delay periods remain a required assessment gap unless an actual positive period core is identified. Old stem and source fact remain preserved."
+    }
+   ]
+  },
+  {
+   "id": "POL-721-SYN-005",
+   "kind": "synthesis",
+   "format": "statement-combination",
+   "difficulty": "hard",
+   "question_en": "Regarding a State Legislative Council: 1. Its maximum is generally one-third of Assembly strength. 2. Local authorities and MLAs each elect approximately one-third. 3. All members retire together after six years. Which are correct?",
+   "question_te": "రాష్ట్ర విధానపరిషత్‌పై: 1. గరిష్ట బలం సాధారణంగా విధానసభ బలంలో మూడవ వంతు. 2. స్థానిక సంస్థలు, ఎమ్మెల్యేలు ఒక్కొక్కరు సుమారు మూడవ వంతును ఎన్నుకుంటారు. 3. సభ్యులందరూ ఆరు సంవత్సరాల తరువాత ఒకేసారి విరమిస్తారు. సరైనవి ఏవి?",
+   "options_en": [
+    "1 only",
+    "2 and 3 only",
+    "1 and 2 only",
+    "1, 2 and 3"
+   ],
+   "options_te": [
+    "1 మాత్రమే",
+    "2, 3 మాత్రమే",
+    "1, 2 మాత్రమే",
+    "1, 2, 3"
+   ],
+   "fact_ids": [
+    "POL-721-council-strength",
+    "POL-721-council-composition",
+    "POL-721-continuing-houses"
+   ],
+   "explanation_en": "The Council is continuing and retirement is staggered, so statement 3 is false.",
+   "explanation_te": "పరిషత్ నిరంతర సభ; పదవీ విరమణ దశలవారీగా జరుగుతుంది. కాబట్టి 3 తప్పు.",
+   "scored": false,
+   "status": "retired_after_independent_semantic_review",
+   "retirement_references": [
+    {
+     "id": "POL-721-P358-01",
+     "chapter": "7.2.1",
+     "file": "7.2/7.2.1/Questions.json",
+     "source_file_sha256": "4c987832b8c4f907e05c34b96589d79e2bf8628ac1f4a742ba90e2b705dea7e7",
+     "object": {
+      "id": "POL-721-P358-01",
+      "kind": "original-pagewise",
+      "source_page": 358,
+      "fact_ids": [
+       "POL-721-council-strength",
+       "POL-721-continuing-houses"
+      ],
+      "format": "statement-combination",
+      "difficulty": "moderate",
+      "question_en": "Consider the following statements about a State Legislative Council. 1. Its maximum strength is one-third of the Assembly's strength. 2. It is a continuing chamber. 3. Its entire membership retires together after six years. Which statements are correct?",
+      "question_te": "రాష్ట్ర విధానపరిషత్ గురించి కింది ప్రకటనలను పరిశీలించండి. 1. గరిష్ట బలం విధానసభ బలంలో మూడవ వంతు. 2. ఇది నిరంతర సభ. 3. మొత్తం సభ్యత్వం ఆరు సంవత్సరాల తరువాత ఒకేసారి పదవీ విరమణ చేస్తుంది. సరైనవి ఏవి?",
+      "options_en": [
+       "1 only",
+       "1 and 2 only",
+       "2 and 3 only",
+       "1, 2 and 3"
+      ],
+      "options_te": [
+       "1 మాత్రమే",
+       "1, 2 మాత్రమే",
+       "2, 3 మాత్రమే",
+       "1, 2, 3"
+      ],
+      "answer": 2,
+      "explanation_id": "POL-721-P358-01"
+     },
+     "object_sha256": "c6719ee5f11819a1f977dc95fc2ef1e2515f9a449d23700c8e3afdd11a1bbd2e",
+     "key": 2,
+     "bilingual_explanation": {
+      "en": "Statements 1 and 2 are correct. The Council is continuing; members have staggered terms, so the whole membership does not retire together.",
+      "te": "1, 2 సరైనవి. విధానపరిషత్ నిరంతర సభ; సభ్యుల కాలం దశలవారీగా ముగుస్తుంది, మొత్తం సభ్యత్వం ఒకేసారి పదవీ విరమణ చేయదు."
+     },
+     "bilingual_explanation_sha256": "ca016e4adee5ee090160ee3ff2679a91c5980598bf09b2f0c6d742bed367c9fc",
+     "eligible_current_canonical": true,
+     "scope": "Selected statements1and2 affirm maximum strength and continuing chamber; rejection of statement3 rejects all-members-retire-together. No electoral-share credit.",
+     "credit_role": "selected_positive_or_explicit_rejection",
+     "whole_compound_fact_credit": false
+    },
+    {
+     "id": "POL-721-P357-01",
+     "chapter": "7.2.1",
+     "file": "7.2/7.2.1/Questions.json",
+     "source_file_sha256": "4c987832b8c4f907e05c34b96589d79e2bf8628ac1f4a742ba90e2b705dea7e7",
+     "object": {
+      "id": "POL-721-P357-01",
+      "kind": "original-pagewise",
+      "source_page": 357,
+      "fact_ids": [
+       "POL-721-council-composition"
+      ],
+      "format": "matching",
+      "difficulty": "moderate",
+      "question_en": "Which Legislative Council component is correctly matched?",
+      "question_te": "విధానపరిషత్ కూర్పులో సరిగ్గా జతపరచినది ఏది?",
+      "options_en": [
+       "Local authorities — about one-third",
+       "Graduates — about one-third",
+       "Teachers — about one-sixth",
+       "Governor's nominees — about one-third"
+      ],
+      "options_te": [
+       "స్థానిక సంస్థలు — సుమారు మూడవ వంతు",
+       "పట్టభద్రులు — సుమారు మూడవ వంతు",
+       "ఉపాధ్యాయులు — సుమారు ఆరవ వంతు",
+       "గవర్నర్ నామినీలు — సుమారు మూడవ వంతు"
+      ],
+      "answer": 1,
+      "explanation_id": "POL-721-P357-01"
+     },
+     "object_sha256": "60f82eeee36a4f352115d055509ab60caa186282fb87104e99d32396ff4ecd29",
+     "key": 1,
+     "bilingual_explanation": {
+      "en": "About one-third is elected by electorates consisting of members of local authorities. Graduates and teachers each account for about one-twelfth, MLAs about one-third, and Governor's nominees about one-sixth.",
+      "te": "స్థానిక సంస్థల ఎన్నికల మండలి సుమారు మూడవ వంతును ఎన్నుకుంటుంది. పట్టభద్రులు, ఉపాధ్యాయులు ఒక్కొక్కరు 1/12; ఎమ్మెల్యేలు 1/3; గవర్నర్ నామినీలు 1/6."
+     },
+     "bilingual_explanation_sha256": "cf8f4df27f7e066bf6c767f64eaaecfa657a223968256c008dddb904c8b0ce3e",
+     "eligible_current_canonical": true,
+     "scope": "Selected option1 positively assesses local-authority component as about one-third ONLY. MLA approximately-one-third share is NOT positively tested by its incorrect distractors.",
+     "credit_role": "selected_positive_or_explicit_rejection",
+     "whole_compound_fact_credit": false
+    }
+   ],
+   "revision_history": [
+    {
+     "full_original_question": {
+      "id": "POL-721-SYN-005",
+      "kind": "synthesis",
+      "format": "statement-combination",
+      "difficulty": "hard",
+      "question_en": "Regarding a State Legislative Council: 1. Its maximum is generally one-third of Assembly strength. 2. Local authorities and MLAs each elect approximately one-third. 3. All members retire together after six years. Which are correct?",
+      "question_te": "రాష్ట్ర విధానపరిషత్‌పై: 1. గరిష్ట బలం సాధారణంగా విధానసభ బలంలో మూడవ వంతు. 2. స్థానిక సంస్థలు, ఎమ్మెల్యేలు ఒక్కొక్కరు సుమారు మూడవ వంతును ఎన్నుకుంటారు. 3. సభ్యులందరూ ఆరు సంవత్సరాల తరువాత ఒకేసారి విరమిస్తారు. సరైనవి ఏవి?",
+      "options_en": [
+       "1 only",
+       "2 and 3 only",
+       "1 and 2 only",
+       "1, 2 and 3"
+      ],
+      "options_te": [
+       "1 మాత్రమే",
+       "2, 3 మాత్రమే",
+       "1, 2 మాత్రమే",
+       "1, 2, 3"
+      ],
+      "answer": 3,
+      "fact_ids": [
+       "POL-721-council-strength",
+       "POL-721-council-composition",
+       "POL-721-continuing-houses"
+      ],
+      "explanation_en": "The Council is continuing and retirement is staggered, so statement 3 is false.",
+      "explanation_te": "పరిషత్ నిరంతర సభ; పదవీ విరమణ దశలవారీగా జరుగుతుంది. కాబట్టి 3 తప్పు."
+     },
+     "reason": "Retire nonfresh composite recall; reuse maximum/continuity and local-authority share narrowly. Preserve MLA one-third source fact as an explicit separate assessment gap."
+    }
+   ]
+  },
+  {
+   "id": "POL-721-SYN-006",
+   "kind": "synthesis",
+   "format": "application",
+   "difficulty": "hard",
+   "question_en": "A Legislative Council originates an ordinary bill, but the Assembly rejects it. What follows?",
+   "question_te": "ఒక సాధారణ బిల్లు విధానపరిషత్‌లో ప్రారంభమైంది; విధానసభ దాన్ని తిరస్కరించింది. ఫలితం ఏమిటి?",
+   "options_en": [
+    "The bill ends; the Council cannot override the Assembly",
+    "A State joint sitting is compulsory",
+    "The Governor must enact it",
+    "The Council passes it alone after one month"
+   ],
+   "options_te": [
+    "బిల్లు ముగుస్తుంది; విధానసభను అధిగమించే అధికారం పరిషత్‌కు లేదు",
+    "రాష్ట్ర సంయుక్త సమావేశం తప్పనిసరి",
+    "గవర్నర్ దాన్ని చట్టంగా చేయాలి",
+    "ఒక నెల తరువాత పరిషత్ ఒంటరిగా ఆమోదిస్తుంది"
+   ],
+   "answer": 1,
+   "fact_ids": [
+    "POL-721-council-weaker"
+   ],
+   "explanation_en": "A Council-origin ordinary bill rejected by the Assembly ends; the constitutional delay mechanism protects Assembly-origin bills, not Council primacy.",
+   "explanation_te": "పరిషత్‌లో ప్రారంభమైన సాధారణ బిల్లును విధానసభ తిరస్కరిస్తే అది ముగుస్తుంది; ఆలస్య పద్ధతి పరిషత్ ఆధిక్యాన్ని కల్పించదు.",
+   "replacement_history": "Replaced near-duplicate/workflow-only frozen item after independent review; original ID preserved.",
+   "guide_url": "/learn/polity/g2/7/2/1/Teaching-Guide.html#ct-synthesis-721",
+   "table_id": "ct-synthesis-721",
+   "test_fact_references": [
+    {
+     "id": "POL-721-council-weaker",
+     "question_id": "POL-721-SYN-006",
+     "source_path": "7.2/7.2.1/Fact-register.json",
+     "source_fact_sha256": "828fa61aa820fbf3841cb96f5a8a103e6d54795379a7473b3fdae7edf2acf0b0",
+     "source_baseline_file_sha256": "5dd5819ae8ccb42209782fa55d5c2469daf3c52f23581a2b626fc26c587af63f",
+     "assessment_body_sha256": "6f38f3f35f8255af7495b62b5c7b78bc6dc1cb898e0221b9a0a2b53d610eea95",
+     "assessed_question_en": "A Legislative Council originates an ordinary bill, but the Assembly rejects it. What follows?",
+     "assessed_question_te": "ఒక సాధారణ బిల్లు విధానపరిషత్‌లో ప్రారంభమైంది; విధానసభ దాన్ని తిరస్కరించింది. ఫలితం ఏమిటి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    }
+   ],
+   "source_urls": [
+    "/learn/polity/g2/7/2/1/Laxmikanth.html",
+    "https://www.legislative.gov.in/constitution-of-india/"
+   ]
+  }
+ ]
+}

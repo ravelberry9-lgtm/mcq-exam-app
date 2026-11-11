@@ -7,6 +7,17 @@ from app.routes.polity_unit6 import test_records as chapter_test_records
 
 def enable(app):app.config['POLITY_UNIT6_ENABLED']=True
 
+def added_ids():
+    """Ids from the unit-distribution files (PYQ bank v3.70.0 records outside unit 6's reviewed sets, Laxmikanth MCQs)."""
+    import json
+    from app.routes.polity_maps import CONTENT
+    ids=set()
+    for name in ('PYQ-Bank-Set.json','Laxmikanth-Questions.json'):
+        for f in CONTENT.glob('*.*/*/'+name):ids|={q['id'] for q in json.loads(f.read_text(encoding='utf-8'))['questions']}
+    for f in CONTENT.glob('*.*/*/PYQ-Set.json'):
+        if not f.parent.name.startswith('6.'):ids|={q['id'] for q in json.loads(f.read_text(encoding='utf-8'))['questions']}
+    return ids
+
 def deck_data(page):
     import json
     return json.loads(re.search(r'<script type="application/json" id="ac-data">(.*?)</script>',page,re.S).group(1))
@@ -27,8 +38,11 @@ def test_entry_flag_and_old_library(client,app):
 def test_all_sources_maps_and_readers(client,app):
     enable(app)
     with app.app_context():
-        qs=records();maps=catalog()
-        assert len(qs)==2324
+        allqs=records();maps=catalog()
+        # Unit 6's authored records are unchanged; bank PYQs / Laxmikanth MCQs added for units 6-10 live in their own files.
+        qs={k:q for k,q in allqs.items() if k not in added_ids()}
+        assert sum(1 for q in qs.values() if q['_chapter'].startswith('6.'))==2324
+        qs={k:q for k,q in qs.items() if q['_chapter'].startswith('6.')}
         assert sum(q['_kind']=='expected' for q in qs.values())==32
         assert all(q['_en'] and q['_te'] for q in qs.values())
         assert len(maps)==5

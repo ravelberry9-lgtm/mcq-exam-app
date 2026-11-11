@@ -1,0 +1,42 @@
+{
+  "chapter": "7.4.2",
+  "review_date": "2026-11-08",
+  "scope": {
+    "chapter_questions": 10,
+    "original_pagewise": 8,
+    "original_whole_chapter": 2,
+    "verified_pyqs": 0
+  },
+  "checks": {
+    "english_telugu_stem_alignment": "passed",
+    "four_option_alignment_and_order": "passed",
+    "answer_range_and_key_consistency": "passed",
+    "terminology": "passed; common High Court, court of record, writ jurisdiction, superintendence and subordinate-court control aligned",
+    "question_specific_explanations": "passed; all 10 IDs resolve",
+    "source_fact_coverage": "passed",
+    "constitutional_precision": "passed; Article 217 consultation and alternative qualification routes are preserved, Article 226 broader subject scope is distinguished from Article 32, Article 227(4) Armed Forces exception is retained, and Article 235 control is separated from Article 227 superintendence",
+    "time_sensitive_data": "passed; current judges, salary amounts, court and judge counts, dated removal attempts and current bench status excluded from scored items",
+    "pyq_integrity": "passed; APPSC-G2-2024-A-105 remains under its canonical 6.4.1 fact"
+  },
+  "duplicate_audit": {
+    "inventory_compared": 810,
+    "fields": [
+      "id",
+      "question_en exact normalized",
+      "question_te exact normalized"
+    ],
+    "collisions": 0,
+    "parse_failures": 0,
+    "scope_note": "Compared with every parseable Questions.json outside 7.4.2 under content/polity/g2."
+  },
+  "locked_source_policy": {
+    "pages": "312-322",
+    "page_count": 11,
+    "passes_each": 3,
+    "reopened_after_lock": false
+  },
+  "interface_review": {
+    "status": "deferred to milestone per user instruction"
+  },
+  "result": "passed_content_gate_pending_milestone_interface_review"
+}

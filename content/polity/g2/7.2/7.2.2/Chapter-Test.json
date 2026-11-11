@@ -1,0 +1,584 @@
+{
+ "chapter": "7.2.2",
+ "status": "fresh_cross_section_synthesis_review_pending",
+ "completion": false,
+ "questions": [
+  {
+   "id": "POL-722-SYN-001",
+   "kind": "synthesis",
+   "format": "application",
+   "difficulty": "hard",
+   "question_en": "A bill contains only Article 110 matters. Rajya Sabha returns it after sixteen days with recommendations. Which position is correct?",
+   "question_te": "ఒక బిల్లులో ప్రకరణ 110 అంశాలు మాత్రమే ఉన్నాయి. రాజ్యసభ పదహారు రోజుల తరువాత సిఫారసులతో తిరిగి పంపింది. సరైన స్థితి ఏది?",
+   "options_en": [
+    "The bill fails",
+    "A joint sitting follows",
+    "Lok Sabha must accept every recommendation",
+    "The bill is deemed passed in the Lok Sabha form after the fourteen-day period"
+   ],
+   "options_te": [
+    "బిల్లు విఫలం",
+    "సంయుక్త సమావేశం జరుగుతుంది",
+    "ప్రతి సిఫారసును లోక్‌సభ అంగీకరించాలి",
+    "14 రోజుల తరువాత లోక్‌సభ రూపంలో ఆమోదమైనట్లు భావిస్తారు"
+   ],
+   "answer": 4,
+   "fact_ids": [
+    "POL-722-money-bill"
+   ],
+   "explanation_en": "Rajya Sabha has a fourteen-day recommendatory window and no final veto over a Money Bill.",
+   "explanation_te": "ద్రవ్య బిల్లుపై రాజ్యసభకు 14 రోజుల సిఫారసు అవకాశం మాత్రమే; తుది వీటో లేదు.",
+   "guide_url": "/learn/polity/g2/7/2/2/Teaching-Guide.html#ct-synthesis-722",
+   "table_id": "ct-synthesis-722",
+   "test_fact_references": [
+    {
+     "id": "POL-722-money-bill",
+     "question_id": "POL-722-SYN-001",
+     "source_path": "7.2/7.2.2/Fact-register.json",
+     "source_fact_sha256": "e94e98161854629716e98f589d91b15fbe20a2ef14657bd09f43b0dc9511b348",
+     "source_baseline_file_sha256": "4baae43f5db2d75738ca7353aa498ac1ac74010f81ee9508bf1a36cfb48ecc0f",
+     "assessment_body_sha256": "75a31d9490428adbe109eb4007e52b20abd0d36715903e38d7943a45082ad9b0",
+     "assessed_question_en": "A bill contains only Article 110 matters. Rajya Sabha returns it after sixteen days with recommendations. Which position is correct?",
+     "assessed_question_te": "ఒక బిల్లులో ప్రకరణ 110 అంశాలు మాత్రమే ఉన్నాయి. రాజ్యసభ పదహారు రోజుల తరువాత సిఫారసులతో తిరిగి పంపింది. సరైన స్థితి ఏది?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    }
+   ],
+   "source_urls": [
+    "/learn/polity/g2/7/2/2/Laxmikanth.html",
+    "https://www.legislative.gov.in/constitution-of-india/"
+   ]
+  },
+  {
+   "id": "POL-722-SYN-002",
+   "kind": "synthesis",
+   "format": "statement-combination",
+   "difficulty": "hard",
+   "question_en": "Consider: 1. A joint sitting may resolve an ordinary-bill deadlock. 2. A joint sitting may resolve a Money Bill dispute. 3. A joint sitting is unavailable for a constitutional amendment bill. Which are correct?",
+   "question_te": "పరిశీలించండి: 1. సాధారణ బిల్లు ప్రతిష్ఠంభనను సంయుక్త సమావేశం పరిష్కరించవచ్చు. 2. ద్రవ్య బిల్లు వివాదాన్ని సంయుక్త సమావేశం పరిష్కరించవచ్చు. 3. రాజ్యాంగ సవరణ బిల్లుకు సంయుక్త సమావేశం లేదు. సరైనవి ఏవి?",
+   "options_en": [
+    "1 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ],
+   "options_te": [
+    "1 మాత్రమే",
+    "1, 3 మాత్రమే",
+    "2, 3 మాత్రమే",
+    "1, 2, 3"
+   ],
+   "answer": 2,
+   "fact_ids": [
+    "POL-722-joint-sitting",
+    "POL-722-money-bill"
+   ],
+   "explanation_en": "Money Bills and constitutional amendment bills are outside the Article 108 deadlock mechanism.",
+   "explanation_te": "ద్రవ్య బిల్లులు, రాజ్యాంగ సవరణ బిల్లులు ప్రకరణ 108 ప్రతిష్ఠంభన విధానానికి బయట ఉంటాయి.",
+   "guide_url": "/learn/polity/g2/7/2/2/Teaching-Guide.html#ct-synthesis-722",
+   "table_id": "ct-synthesis-722",
+   "test_fact_references": [
+    {
+     "id": "POL-722-joint-sitting",
+     "question_id": "POL-722-SYN-002",
+     "source_path": "7.2/7.2.2/Fact-register.json",
+     "source_fact_sha256": "82098d04c51dc2111cab5040c3c70c509a94a1330df1665d9c48a4d7c20dde12",
+     "source_baseline_file_sha256": "4baae43f5db2d75738ca7353aa498ac1ac74010f81ee9508bf1a36cfb48ecc0f",
+     "assessment_body_sha256": "2387e35502f4e990816f7170f10e29838078c3d116a0e969b9af346c4e048277",
+     "assessed_question_en": "Consider: 1. A joint sitting may resolve an ordinary-bill deadlock. 2. A joint sitting may resolve a Money Bill dispute. 3. A joint sitting is unavailable for a constitutional amendment bill. Which are correct?",
+     "assessed_question_te": "పరిశీలించండి: 1. సాధారణ బిల్లు ప్రతిష్ఠంభనను సంయుక్త సమావేశం పరిష్కరించవచ్చు. 2. ద్రవ్య బిల్లు వివాదాన్ని సంయుక్త సమావేశం పరిష్కరించవచ్చు. 3. రాజ్యాంగ సవరణ బిల్లుకు సంయుక్త సమావేశం లేదు. సరైనవి ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    },
+    {
+     "id": "POL-722-money-bill",
+     "question_id": "POL-722-SYN-002",
+     "source_path": "7.2/7.2.2/Fact-register.json",
+     "source_fact_sha256": "e94e98161854629716e98f589d91b15fbe20a2ef14657bd09f43b0dc9511b348",
+     "source_baseline_file_sha256": "4baae43f5db2d75738ca7353aa498ac1ac74010f81ee9508bf1a36cfb48ecc0f",
+     "assessment_body_sha256": "2387e35502f4e990816f7170f10e29838078c3d116a0e969b9af346c4e048277",
+     "assessed_question_en": "Consider: 1. A joint sitting may resolve an ordinary-bill deadlock. 2. A joint sitting may resolve a Money Bill dispute. 3. A joint sitting is unavailable for a constitutional amendment bill. Which are correct?",
+     "assessed_question_te": "పరిశీలించండి: 1. సాధారణ బిల్లు ప్రతిష్ఠంభనను సంయుక్త సమావేశం పరిష్కరించవచ్చు. 2. ద్రవ్య బిల్లు వివాదాన్ని సంయుక్త సమావేశం పరిష్కరించవచ్చు. 3. రాజ్యాంగ సవరణ బిల్లుకు సంయుక్త సమావేశం లేదు. సరైనవి ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    }
+   ],
+   "source_urls": [
+    "/learn/polity/g2/7/2/2/Laxmikanth.html",
+    "https://www.legislative.gov.in/constitution-of-india/"
+   ]
+  },
+  {
+   "id": "POL-722-SYN-003",
+   "kind": "original-whole-chapter-synthesis",
+   "format": "application-statement-comparison",
+   "difficulty": "moderate-to-hard",
+   "question_en": "Rajya Sabha rejects an ordinary bill passed by Lok Sabha. Its Chairman claims that this rejection both permits a joint sitting and automatically makes him the presiding officer of that sitting. Consider:\n1. Rejection by Rajya Sabha automatically transfers joint-sitting chairmanship to its Chairman.\n2. The rejection can constitute an Article 108 deadlock ground.\n3. The Lok Sabha Speaker normally presides over the joint sitting.\nWhich statements are correct?",
+   "question_te": "లోక్‌సభ ఆమోదించిన సాధారణ బిల్లును రాజ్యసభ తిరస్కరించింది. ఈ తిరస్కరణ వల్ల సంయుక్త సమావేశానికి అవకాశం రావడమే కాక, తానే స్వయంగా దానికి అధ్యక్షత వహిస్తానని రాజ్యసభ ఛైర్మన్ వాదించారు. పరిశీలించండి:\n1. రాజ్యసభ తిరస్కరణతో సంయుక్త సమావేశ అధ్యక్షత స్వయంగా రాజ్యసభ ఛైర్మన్‌కు మారుతుంది.\n2. ఈ తిరస్కరణ ప్రకరణ 108 ప్రతిష్ఠంభనకు ఆధారం కావచ్చు.\n3. సంయుక్త సమావేశానికి సాధారణంగా లోక్‌సభ స్పీకర్ అధ్యక్షత వహిస్తారు.\nసరైన ప్రకటనలు ఏవి?",
+   "options_en": [
+    "1, 2 only",
+    "1, 2, 3",
+    "2, 3 only",
+    "1, 3 only"
+   ],
+   "options_te": [
+    "1, 2 మాత్రమే",
+    "1, 2, 3",
+    "2, 3 మాత్రమే",
+    "1, 3 మాత్రమే"
+   ],
+   "answer": 3,
+   "fact_ids": [
+    "POL-722-joint-sitting",
+    "POL-722-presiding-officers"
+   ],
+   "explanation_en": "Rajya Sabha rejects an ordinary bill passed by Lok Sabha. Its Chairman claims that this rejection both permits a joint sitting and automatically makes him the presiding officer of that sitting. Consider: A House’s role in a deadlock does not determine the joint sitting’s presiding officer. An ordinary-bill rejection is a specified deadlock ground; a joint sitting is not an automatic meeting. The ordinary presiding rule for a joint sitting differs from Rajya Sabha’s own chairmanship.",
+   "explanation_te": "లోక్‌సభ ఆమోదించిన సాధారణ బిల్లును రాజ్యసభ తిరస్కరించింది. ఈ తిరస్కరణ వల్ల సంయుక్త సమావేశానికి అవకాశం రావడమే కాక, తానే స్వయంగా దానికి అధ్యక్షత వహిస్తానని రాజ్యసభ ఛైర్మన్ వాదించారు. పరిశీలించండి: ప్రతిష్ఠంభనలో ఒక సభ పాత్ర ఉన్నంత మాత్రాన సంయుక్త సమావేశ అధ్యక్ష అధికారి మారరు. సాధారణ బిల్లు తిరస్కరణ నిర్దిష్ట ప్రతిష్ఠంభన కారణం; సంయుక్త సమావేశం స్వయంచాలకంగా జరిగే సమావేశం కాదు. సంయుక్త సమావేశ అధ్యక్షత నియమం, రాజ్యసభ స్వంత అధ్యక్షతకు వేరు.",
+   "status": "independently_reviewed_active_test",
+   "replacement_history": "Replaced near-duplicate/workflow-only frozen item after independent review; original ID preserved.",
+   "option_notes": [
+    {
+     "option": 1,
+     "en": "For this constitutional scenario, option 1 does not select exactly the correct statements. A House’s role in a deadlock does not determine the joint sitting’s presiding officer. The ordinary presiding rule for a joint sitting differs from Rajya Sabha’s own chairmanship.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 1వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకోదు. ప్రతిష్ఠంభనలో ఒక సభ పాత్ర ఉన్నంత మాత్రాన సంయుక్త సమావేశ అధ్యక్ష అధికారి మారరు. సంయుక్త సమావేశ అధ్యక్షత నియమం, రాజ్యసభ స్వంత అధ్యక్షతకు వేరు."
+    },
+    {
+     "option": 2,
+     "en": "For this constitutional scenario, option 2 does not select exactly the correct statements. A House’s role in a deadlock does not determine the joint sitting’s presiding officer.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 2వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకోదు. ప్రతిష్ఠంభనలో ఒక సభ పాత్ర ఉన్నంత మాత్రాన సంయుక్త సమావేశ అధ్యక్ష అధికారి మారరు."
+    },
+    {
+     "option": 3,
+     "en": "For this constitutional scenario, option 3 selects exactly the correct statements. A House’s role in a deadlock does not determine the joint sitting’s presiding officer. An ordinary-bill rejection is a specified deadlock ground; a joint sitting is not an automatic meeting. The ordinary presiding rule for a joint sitting differs from Rajya Sabha’s own chairmanship.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 3వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకుంటుంది. ప్రతిష్ఠంభనలో ఒక సభ పాత్ర ఉన్నంత మాత్రాన సంయుక్త సమావేశ అధ్యక్ష అధికారి మారరు. సాధారణ బిల్లు తిరస్కరణ నిర్దిష్ట ప్రతిష్ఠంభన కారణం; సంయుక్త సమావేశం స్వయంచాలకంగా జరిగే సమావేశం కాదు. సంయుక్త సమావేశ అధ్యక్షత నియమం, రాజ్యసభ స్వంత అధ్యక్షతకు వేరు."
+    },
+    {
+     "option": 4,
+     "en": "For this constitutional scenario, option 4 does not select exactly the correct statements. A House’s role in a deadlock does not determine the joint sitting’s presiding officer. An ordinary-bill rejection is a specified deadlock ground; a joint sitting is not an automatic meeting.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 4వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకోదు. ప్రతిష్ఠంభనలో ఒక సభ పాత్ర ఉన్నంత మాత్రాన సంయుక్త సమావేశ అధ్యక్ష అధికారి మారరు. సాధారణ బిల్లు తిరస్కరణ నిర్దిష్ట ప్రతిష్ఠంభన కారణం; సంయుక్త సమావేశం స్వయంచాలకంగా జరిగే సమావేశం కాదు."
+    }
+   ],
+   "guide_url": "/learn/polity/g2/7/2/2/Teaching-Guide.html#ct-synthesis-722",
+   "table_id": "ct-synthesis-722",
+   "scored": true,
+   "review_status": "independently_reviewed_whole_chapter_test_revision",
+   "revision_history": [
+    {
+     "full_original_question": {
+      "id": "POL-722-SYN-003",
+      "kind": "synthesis",
+      "format": "application",
+      "difficulty": "hard",
+      "question_en": "Lok Sabha passes an ordinary bill. Rajya Sabha rejects it, and the Houses finally disagree on amendments. Which constitutional device may the President notify?",
+      "question_te": "లోక్‌సభ ఒక సాధారణ బిల్లును ఆమోదించింది. రాజ్యసభ దాన్ని తిరస్కరించింది; సవరణలపై సభలు తుది అసమ్మతికి వచ్చాయి. రాష్ట్రపతి ఏ రాజ్యాంగ పద్ధతిని ప్రకటించవచ్చు?",
+      "options_en": [
+       "Joint sitting under Article 108",
+       "Money Bill certification",
+       "Automatic dissolution of Rajya Sabha",
+       "State ratification"
+      ],
+      "options_te": [
+       "ప్రకరణ 108 ప్రకారం సంయుక్త సమావేశం",
+       "ద్రవ్య బిల్లు ధృవీకరణ",
+       "రాజ్యసభ స్వయంచాలక రద్దు",
+       "రాష్ట్రాల ఆమోదం"
+      ],
+      "answer": 1,
+      "fact_ids": [
+       "POL-722-joint-sitting"
+      ],
+      "explanation_en": "Rejection or final disagreement on amendments to an ordinary bill is an Article 108 deadlock ground; Money Bills and Constitution Amendment Bills are excluded.",
+      "explanation_te": "సాధారణ బిల్లును తిరస్కరించడం లేదా సవరణలపై తుది అసమ్మతి ప్రకరణ 108 ప్రతిష్ఠంభనకు ఆధారం; ద్రవ్య బిల్లులు, రాజ్యాంగ సవరణ బిల్లులు మినహాయింపు.",
+      "status": "synthesis_review_pending",
+      "replacement_history": "Replaced near-duplicate/workflow-only frozen item after independent review; original ID preserved."
+     },
+     "original_object_sha256": "e57ab729f9daffbd1c41a75d8f61181b4ebf429402b7ce5004802fffe8f90dcd",
+     "reason": "Ordinary-bill rejection merely asks name108device; rewrite with dissolution/notice/exception interaction."
+    }
+   ],
+   "independent_content_review": {
+    "file": "_parallel/unit7/second-review-unit7-test-revisions-postfix.json",
+    "sha256": "ee13745036cf250fdbd80518313431d25e0479e00771a95697904455a219cf1e",
+    "packet_sha256": "c5bf72f199b400cffcd36d02edd4a98a5ba93634aa42231b282da2359a03cc36"
+   },
+   "test_fact_references": [
+    {
+     "id": "POL-722-joint-sitting",
+     "question_id": "POL-722-SYN-003",
+     "source_path": "7.2/7.2.2/Fact-register.json",
+     "source_fact_sha256": "82098d04c51dc2111cab5040c3c70c509a94a1330df1665d9c48a4d7c20dde12",
+     "source_baseline_file_sha256": "4baae43f5db2d75738ca7353aa498ac1ac74010f81ee9508bf1a36cfb48ecc0f",
+     "assessment_body_sha256": "e41901f6543c0b8a9558d5c760207de147685442ea4bbafee25ecc2788952c81",
+     "assessed_question_en": "Rajya Sabha rejects an ordinary bill passed by Lok Sabha. Its Chairman claims that this rejection both permits a joint sitting and automatically makes him the presiding officer of that sitting. Consider:\n1. Rejection by Rajya Sabha automatically transfers joint-sitting chairmanship to its Chairman.\n2. The rejection can constitute an Article108 deadlock ground.\n3. The Lok Sabha Speaker normally presides over the joint sitting.\nWhich statements are correct?",
+     "assessed_question_te": "లోక్‌సభ ఆమోదించిన సాధారణ బిల్లును రాజ్యసభ తిరస్కరించింది. ఈ తిరస్కరణ వల్ల సంయుక్త సమావేశానికి అవకాశం రావడమే కాక, తానే స్వయంగా దానికి అధ్యక్షత వహిస్తానని రాజ్యసభ ఛైర్మన్ వాదించారు. పరిశీలించండి:\n1. రాజ్యసభ తిరస్కరణతో సంయుక్త సమావేశ అధ్యక్షత స్వయంగా రాజ్యసభ ఛైర్మన్‌కు మారుతుంది.\n2. ఈ తిరస్కరణ ప్రకరణ108 ప్రతిష్ఠంభనకు ఆధారం కావచ్చు.\n3. సంయుక్త సమావేశానికి సాధారణంగా లోక్‌సభ స్పీకర్ అధ్యక్షత వహిస్తారు.\nసరైన ప్రకటనలు ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    },
+    {
+     "id": "POL-722-presiding-officers",
+     "question_id": "POL-722-SYN-003",
+     "source_path": "7.2/7.2.2/Fact-register.json",
+     "source_fact_sha256": "9a373f9635b9f80757e491ce266d1ae8005c53758d9c741732d252cf9e4f2659",
+     "source_baseline_file_sha256": "4baae43f5db2d75738ca7353aa498ac1ac74010f81ee9508bf1a36cfb48ecc0f",
+     "assessment_body_sha256": "e41901f6543c0b8a9558d5c760207de147685442ea4bbafee25ecc2788952c81",
+     "assessed_question_en": "Rajya Sabha rejects an ordinary bill passed by Lok Sabha. Its Chairman claims that this rejection both permits a joint sitting and automatically makes him the presiding officer of that sitting. Consider:\n1. Rejection by Rajya Sabha automatically transfers joint-sitting chairmanship to its Chairman.\n2. The rejection can constitute an Article108 deadlock ground.\n3. The Lok Sabha Speaker normally presides over the joint sitting.\nWhich statements are correct?",
+     "assessed_question_te": "లోక్‌సభ ఆమోదించిన సాధారణ బిల్లును రాజ్యసభ తిరస్కరించింది. ఈ తిరస్కరణ వల్ల సంయుక్త సమావేశానికి అవకాశం రావడమే కాక, తానే స్వయంగా దానికి అధ్యక్షత వహిస్తానని రాజ్యసభ ఛైర్మన్ వాదించారు. పరిశీలించండి:\n1. రాజ్యసభ తిరస్కరణతో సంయుక్త సమావేశ అధ్యక్షత స్వయంగా రాజ్యసభ ఛైర్మన్‌కు మారుతుంది.\n2. ఈ తిరస్కరణ ప్రకరణ108 ప్రతిష్ఠంభనకు ఆధారం కావచ్చు.\n3. సంయుక్త సమావేశానికి సాధారణంగా లోక్‌సభ స్పీకర్ అధ్యక్షత వహిస్తారు.\nసరైన ప్రకటనలు ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    }
+   ],
+   "source_urls": [
+    "/learn/polity/g2/7/2/2/Laxmikanth.html",
+    "https://www.legislative.gov.in/constitution-of-india/"
+   ]
+  },
+  {
+   "id": "POL-722-SYN-004",
+   "kind": "synthesis",
+   "format": "sequence",
+   "difficulty": "moderate",
+   "question_en": "Which sequence correctly places major budget stages?",
+   "question_te": "బడ్జెట్ ప్రధాన దశల సరైన క్రమం ఏది?",
+   "options_en": [
+    "Demands for Grants → General Discussion → Appropriation Bill → Presentation",
+    "Presentation → General Discussion → Demands for Grants → Appropriation Bill",
+    "General Discussion → Presentation → Finance Bill → Demands for Grants",
+    "Appropriation Bill → Presentation → Demands for Grants → General Discussion"
+   ],
+   "options_te": [
+    "గ్రాంట్ల డిమాండ్లు → సాధారణ చర్చ → ద్రవ్య వినియోగ బిల్లు → సమర్పణ",
+    "సమర్పణ → సాధారణ చర్చ → గ్రాంట్ల డిమాండ్లు → ద్రవ్య వినియోగ బిల్లు",
+    "సాధారణ చర్చ → సమర్పణ → ఆర్థిక బిల్లు → గ్రాంట్ల డిమాండ్లు",
+    "ద్రవ్య వినియోగ బిల్లు → సమర్పణ → గ్రాంట్ల డిమాండ్లు → సాధారణ చర్చ"
+   ],
+   "fact_ids": [
+    "POL-722-budget-stages"
+   ],
+   "explanation_en": "Presentation and general discussion precede detailed grant voting and appropriation.",
+   "explanation_te": "సమర్పణ, సాధారణ చర్చ తరువాత గ్రాంట్ల ఓటింగ్, ద్రవ్య వినియోగం వస్తాయి.",
+   "scored": false,
+   "status": "retired_after_independent_semantic_review",
+   "retirement_references": [
+    {
+     "id": "POL-722-AR-02",
+     "chapter": "7.2.2",
+     "file": "7.2/7.2.2/Questions.json",
+     "source_file_sha256": "206c3f4c65a3e9ee5175b766da1a29e33f3edaf01b89c26af3a8959882d0db7f",
+     "object": {
+      "id": "POL-722-AR-02",
+      "kind": "original-atomic-review",
+      "source_page": null,
+      "fact_ids": [
+       "POL-722-demand-for-grants"
+      ],
+      "format": "statement-combination",
+      "difficulty": "moderate",
+      "question_en": "Consider the Union budget: 1. Demands for grants are voted only by Lok Sabha. 2. Charged expenditure is submitted to vote. Which are correct?",
+      "question_te": "కేంద్ర బడ్జెట్‌పై పరిశీలించండి: 1. గ్రాంట్ల డిమాండ్లపై లోక్‌సభ మాత్రమే ఓటు వేస్తుంది. 2. చార్జ్డ్ వ్యయాన్ని ఓటుకు పెడతారు. సరైనవి ఏవి?",
+      "options_en": [
+       "1 only",
+       "2 only",
+       "Both 1 and 2",
+       "Neither 1 nor 2"
+      ],
+      "options_te": [
+       "1 మాత్రమే",
+       "2 మాత్రమే",
+       "1, 2 రెండూ",
+       "రెండూ కావు"
+      ],
+      "answer": 1,
+      "explanation_id": "POL-722-AR-02"
+     },
+     "object_sha256": "a2fedb412e5155752bd7e556332e6d8ffea944fdfd345e91f36270cdb61aafa6",
+     "key": 1,
+     "bilingual_explanation": {
+      "en": "Only statement 1 is correct. Lok Sabha votes demands for grants; charged expenditure may be discussed but is not voted.",
+      "te": "1 మాత్రమే సరైనది. గ్రాంట్ల డిమాండ్లపై లోక్‌సభ ఓటు వేస్తుంది; చార్జ్డ్ వ్యయాన్ని చర్చించవచ్చు కానీ ఓటుకు పెట్టరు."
+     },
+     "bilingual_explanation_sha256": "9b0490086c37036ab1f77c236c24b1da894a818550ddc2586df3ef69a8ae0fb2",
+     "eligible_current_canonical": true,
+     "scope": "Selected statement1 affirms that only Lok Sabha votes Demands for Grants; statement2 rejection rejects voting on charged expenditure. No credit for unrelated budget stages.",
+     "credit_role": "selected_positive_or_explicit_rejection",
+     "whole_compound_fact_credit": false
+    },
+    {
+     "id": "POL-742-P314-04",
+     "chapter": "7.4.2",
+     "file": "7.4/7.4.2/Questions.json",
+     "source_file_sha256": "9afa36562692adf4cc8c4f41be0d81799354c5413f5505f54fd9417e7b35b38d",
+     "object": {
+      "id": "POL-742-P314-04",
+      "kind": "original-pagewise",
+      "source_page": 314,
+      "fact_ids": [
+       "POL-742-charged-expenditure-discussion"
+      ],
+      "format": "statement-combination",
+      "difficulty": "moderate",
+      "question_en": "A member argues that because High Court expenditure is charged on the State Consolidated Fund, the legislature can neither vote on it nor discuss it. Which statement correctly applies Article 203(1)?",
+      "question_te": "హైకోర్టు వ్యయం రాష్ట్ర సంచిత నిధిపై భారితమైంది కాబట్టి శాసనసంస్థ దానిపై ఓటింగ్ చేయలేదని, చర్చించలేదని ఒక సభ్యుడు వాదించారు. ప్రకరణ 203(1)ను ఏ ప్రకటన సరిగ్గా వర్తింపజేస్తుంది?",
+      "options_en": [
+       "It must be voted on but cannot be discussed",
+       "It can neither be voted on nor discussed",
+       "It is not submitted to the Assembly's vote, but discussion is permitted",
+       "It is voted on only if the Governor demands it"
+      ],
+      "options_te": [
+       "దానిపై తప్పనిసరిగా ఓటింగ్ జరగాలి; చర్చించకూడదు",
+       "దానిపై ఓటింగ్ గానీ చర్చ గానీ జరగకూడదు",
+       "దాన్ని శాసనసభ ఓటింగ్‌కు పెట్టరు; కానీ చర్చ అనుమతించబడుతుంది",
+       "గవర్నర్ కోరితే మాత్రమే ఓటింగ్ జరుగుతుంది"
+      ],
+      "answer": 3,
+      "explanation_id": "POL-742-P314-04",
+      "practice_approved": true,
+      "review_status": "approved-manual-option-solve-and-bilingual-review",
+      "scored": true
+     },
+     "object_sha256": "93390db95289cd634911ce0333be7015cf1746b8725069a9a57ca1f685577806",
+     "key": 3,
+     "bilingual_explanation": {
+      "en": "Article 203(1) separates voting from discussion. Charged expenditure is insulated from an Assembly vote, yet the legislature may discuss it. Financial protection therefore does not erase accountability or all financial procedure. The Governor cannot convert a charged item into a voted item merely by demanding a vote.",
+      "te": "ప్రకరణ 203(1) ఓటింగ్‌ను చర్చ నుంచి వేరుచేస్తుంది. భారిత వ్యయాన్ని శాసనసభ ఓటింగ్ నుంచి రక్షిస్తుంది; అయినా శాసనసంస్థ దానిపై చర్చించవచ్చు. ఆర్థిక రక్షణ జవాబుదారీతనాన్ని లేదా ఆర్థిక ప్రక్రియలన్నింటినీ తొలగించదు. గవర్నర్ కోరినంత మాత్రాన భారిత అంశాన్ని ఓటింగ్ అంశంగా మార్చలేరు.",
+      "source_refs": [
+       "Laxmikanth supplied Ch34 — Expenses Charged on Consolidated Fund — primary-source qualification",
+       "Article 203(1); https://www.legislative.gov.in/static/uploads/2025/07/359f70a69695affb9d72f8393102bd2e.pdf"
+      ],
+      "guide_url": "Source-qualifications.html",
+      "review_status": "approved-manual-option-review"
+     },
+     "bilingual_explanation_sha256": "051e1379f323c556be2f5c821965a25b3d8f63e8cc2ac6eaf2472f1cab4c05c1",
+     "eligible_current_canonical": true,
+     "scope": "Selected answer positively distinguishes discussion from voting on charged expenditure. Preserve its actual Union/State wording; do not claim every financial rule is tested.",
+     "credit_role": "selected_positive_or_explicit_rejection",
+     "whole_compound_fact_credit": false
+    }
+   ],
+   "revision_history": [
+    {
+     "full_original_question": {
+      "id": "POL-722-SYN-004",
+      "kind": "synthesis",
+      "format": "sequence",
+      "difficulty": "moderate",
+      "question_en": "Which sequence correctly places major budget stages?",
+      "question_te": "బడ్జెట్ ప్రధాన దశల సరైన క్రమం ఏది?",
+      "options_en": [
+       "Demands for Grants → General Discussion → Appropriation Bill → Presentation",
+       "Presentation → General Discussion → Demands for Grants → Appropriation Bill",
+       "General Discussion → Presentation → Finance Bill → Demands for Grants",
+       "Appropriation Bill → Presentation → Demands for Grants → General Discussion"
+      ],
+      "options_te": [
+       "గ్రాంట్ల డిమాండ్లు → సాధారణ చర్చ → ద్రవ్య వినియోగ బిల్లు → సమర్పణ",
+       "సమర్పణ → సాధారణ చర్చ → గ్రాంట్ల డిమాండ్లు → ద్రవ్య వినియోగ బిల్లు",
+       "సాధారణ చర్చ → సమర్పణ → ఆర్థిక బిల్లు → గ్రాంట్ల డిమాండ్లు",
+       "ద్రవ్య వినియోగ బిల్లు → సమర్పణ → గ్రాంట్ల డిమాండ్లు → సాధారణ చర్చ"
+      ],
+      "answer": 2,
+      "fact_ids": [
+       "POL-722-budget-stages"
+      ],
+      "explanation_en": "Presentation and general discussion precede detailed grant voting and appropriation.",
+      "explanation_te": "సమర్పణ, సాధారణ చర్చ తరువాత గ్రాంట్ల ఓటింగ్, ద్రవ్య వినియోగం వస్తాయి."
+     },
+     "reason": "Grant voting limited to Lok Sabha and discussion without voting on charged expenditure already positively tested. Adding Rajya Sabha discussion does not create a distinct operative application. Retire with narrow references or replace with genuinely distinct supported decision."
+    }
+   ]
+  },
+  {
+   "id": "POL-722-SYN-005",
+   "kind": "original-whole-chapter-synthesis",
+   "format": "application-statement-comparison",
+   "difficulty": "moderate-to-hard",
+   "question_en": "Lok Sabha considers one cut intended to disapprove a policy and another intended to ventilate a specific grievance. The government defeats both amendments. Consider:\n1. A policy cut proposes reduction of the demand to one rupee.\n2. A token cut proposes reduction by one hundred rupees.\n3. Defeat of an opposition cut motion is itself a defeat of the ministry in a confidence test.\nWhich statements are correct?",
+   "question_te": "లోక్‌సభలో ఒక విధానాన్ని వ్యతిరేకించే కోతను, ఒక నిర్దిష్ట ఫిర్యాదును వెల్లడించే మరో కోతను పరిశీలించారు. ప్రభుత్వం రెండు సవరణలనూ ఓడించింది. పరిశీలించండి:\n1. విధాన కోతలో డిమాండ్‌ను ఒక రూపాయికి తగ్గించాలని ప్రతిపాదిస్తారు.\n2. నామమాత్ర కోతలో వంద రూపాయలు తగ్గించాలని ప్రతిపాదిస్తారు.\n3. ప్రతిపక్ష కోత తీర్మానం ఓడిపోవడమే మంత్రిమండలి విశ్వాస పరీక్షలో ఓటమి.\nసరైన ప్రకటనలు ఏవి?",
+   "options_en": [
+    "1, 2 only",
+    "1, 3 only",
+    "1, 2, 3",
+    "2, 3 only"
+   ],
+   "options_te": [
+    "1, 2 మాత్రమే",
+    "1, 3 మాత్రమే",
+    "1, 2, 3",
+    "2, 3 మాత్రమే"
+   ],
+   "answer": 1,
+   "fact_ids": [
+    "POL-722-cut-motions",
+    "POL-722-demand-for-grants",
+    "POL-722-no-confidence"
+   ],
+   "explanation_en": "Lok Sabha considers one cut intended to disapprove a policy and another intended to ventilate a specific grievance. The government defeats both amendments. Consider: The one-rupee form expresses disapproval of the underlying policy. A token cut ventilates a specific grievance through a Rs100 reduction. Rejecting the proposed cut does not mean that the ministry has lost the House’s support.",
+   "explanation_te": "లోక్‌సభలో ఒక విధానాన్ని వ్యతిరేకించే కోతను, ఒక నిర్దిష్ట ఫిర్యాదును వెల్లడించే మరో కోతను పరిశీలించారు. ప్రభుత్వం రెండు సవరణలనూ ఓడించింది. పరిశీలించండి: ఒక రూపాయి రూపం మూల విధానంపై వ్యతిరేకతను వ్యక్తం చేస్తుంది. వంద రూపాయల తగ్గింపుతో నామమాత్ర కోత ఒక నిర్దిష్ట ఫిర్యాదును వెల్లడిస్తుంది. ప్రతిపాదిత కోతను సభ తిరస్కరించడం అంటే మంత్రిమండలి సభ మద్దతు కోల్పోవడం కాదు.",
+   "option_notes": [
+    {
+     "option": 1,
+     "en": "For this constitutional scenario, option 1 selects exactly the correct statements. The one-rupee form expresses disapproval of the underlying policy. A token cut ventilates a specific grievance through a Rs100 reduction. Rejecting the proposed cut does not mean that the ministry has lost the House’s support.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 1వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకుంటుంది. ఒక రూపాయి రూపం మూల విధానంపై వ్యతిరేకతను వ్యక్తం చేస్తుంది. వంద రూపాయల తగ్గింపుతో నామమాత్ర కోత ఒక నిర్దిష్ట ఫిర్యాదును వెల్లడిస్తుంది. ప్రతిపాదిత కోతను సభ తిరస్కరించడం అంటే మంత్రిమండలి సభ మద్దతు కోల్పోవడం కాదు."
+    },
+    {
+     "option": 2,
+     "en": "For this constitutional scenario, option 2 does not select exactly the correct statements. A token cut ventilates a specific grievance through a Rs100 reduction. Rejecting the proposed cut does not mean that the ministry has lost the House’s support.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 2వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకోదు. వంద రూపాయల తగ్గింపుతో నామమాత్ర కోత ఒక నిర్దిష్ట ఫిర్యాదును వెల్లడిస్తుంది. ప్రతిపాదిత కోతను సభ తిరస్కరించడం అంటే మంత్రిమండలి సభ మద్దతు కోల్పోవడం కాదు."
+    },
+    {
+     "option": 3,
+     "en": "For this constitutional scenario, option 3 does not select exactly the correct statements. Rejecting the proposed cut does not mean that the ministry has lost the House’s support.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 3వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకోదు. ప్రతిపాదిత కోతను సభ తిరస్కరించడం అంటే మంత్రిమండలి సభ మద్దతు కోల్పోవడం కాదు."
+    },
+    {
+     "option": 4,
+     "en": "For this constitutional scenario, option 4 does not select exactly the correct statements. The one-rupee form expresses disapproval of the underlying policy. Rejecting the proposed cut does not mean that the ministry has lost the House’s support.",
+     "te": "ఈ రాజ్యాంగ సందర్భంలో 4వ ఎంపిక సరైన ప్రకటనలను మాత్రమే ఎంచుకోదు. ఒక రూపాయి రూపం మూల విధానంపై వ్యతిరేకతను వ్యక్తం చేస్తుంది. ప్రతిపాదిత కోతను సభ తిరస్కరించడం అంటే మంత్రిమండలి సభ మద్దతు కోల్పోవడం కాదు."
+    }
+   ],
+   "guide_url": "/learn/polity/g2/7/2/2/Teaching-Guide.html#ct-synthesis-722",
+   "table_id": "ct-synthesis-722",
+   "scored": true,
+   "review_status": "independently_reviewed_whole_chapter_test_revision",
+   "revision_history": [
+    {
+     "full_original_question": {
+      "id": "POL-722-SYN-005",
+      "kind": "synthesis",
+      "format": "application",
+      "difficulty": "hard",
+      "question_en": "A member seeks to censure a specific policy by reducing a demand to one rupee. Which device is appropriate?",
+      "question_te": "ఒక విధానాన్ని వ్యతిరేకిస్తూ డిమాండ్‌ను ఒక రూపాయికి తగ్గించాలని సభ్యుడు కోరాడు. సరైన సాధనం ఏది?",
+      "options_en": [
+       "Token cut",
+       "Guillotine",
+       "Economy cut",
+       "Policy cut"
+      ],
+      "options_te": [
+       "నామమాత్ర కోత",
+       "గిలెటిన్",
+       "ఆర్థిక కోత",
+       "విధాన కోత"
+      ],
+      "answer": 4,
+      "fact_ids": [
+       "POL-722-cut-motions"
+      ],
+      "explanation_en": "A policy cut reduces the demand to one rupee to record disapproval of the underlying policy.",
+      "explanation_te": "విధాన కోత మూల విధానాన్ని వ్యతిరేకిస్తూ డిమాండ్‌ను ఒక రూపాయికి తగ్గిస్తుంది."
+     },
+     "original_object_sha256": "59cf8432ad9f3b52b0d7f2f8ee910172a2962589be2fbc30a297a8f06dba2438",
+     "reason": "Policycut identity fromone-rupee amount is singlefact recall; connectcutversusappropriation/politicaleffect."
+    }
+   ],
+   "status": "independently_reviewed_active_test",
+   "independent_content_review": {
+    "file": "_parallel/unit7/second-review-unit7-test-revisions-postfix.json",
+    "sha256": "ee13745036cf250fdbd80518313431d25e0479e00771a95697904455a219cf1e",
+    "packet_sha256": "c5bf72f199b400cffcd36d02edd4a98a5ba93634aa42231b282da2359a03cc36"
+   },
+   "test_fact_references": [
+    {
+     "id": "POL-722-cut-motions",
+     "question_id": "POL-722-SYN-005",
+     "source_path": "7.2/7.2.2/Fact-register.json",
+     "source_fact_sha256": "771c26447ddfbf2d8471b5a465cf1a0984f2d376dd8706db5dd7deaeb74a997c",
+     "source_baseline_file_sha256": "4baae43f5db2d75738ca7353aa498ac1ac74010f81ee9508bf1a36cfb48ecc0f",
+     "assessment_body_sha256": "ab998bcaf19ae7acd8ad8f041aa16c42fe3ec04ffdce6d6d5c52037a7d6c725b",
+     "assessed_question_en": "Lok Sabha considers one cut intended to disapprove a policy and another intended to ventilate a specific grievance. The government defeats both amendments. Consider:\n1. A policy cut proposes reduction of the demand to one rupee.\n2. A token cut proposes reduction by one hundred rupees.\n3. Defeat of an opposition cut motion is itself a defeat of the ministry in a confidence test.\nWhich statements are correct?",
+     "assessed_question_te": "లోక్‌సభలో ఒక విధానాన్ని వ్యతిరేకించే కోతను, ఒక నిర్దిష్ట ఫిర్యాదును వెల్లడించే మరో కోతను పరిశీలించారు. ప్రభుత్వం రెండు సవరణలనూ ఓడించింది. పరిశీలించండి:\n1. విధాన కోతలో డిమాండ్‌ను ఒక రూపాయికి తగ్గించాలని ప్రతిపాదిస్తారు.\n2. నామమాత్ర కోతలో వంద రూపాయలు తగ్గించాలని ప్రతిపాదిస్తారు.\n3. ప్రతిపక్ష కోత తీర్మానం ఓడిపోవడమే మంత్రిమండలి విశ్వాస పరీక్షలో ఓటమి.\nసరైన ప్రకటనలు ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    },
+    {
+     "id": "POL-722-demand-for-grants",
+     "question_id": "POL-722-SYN-005",
+     "source_path": "7.2/7.2.2/Fact-register.json",
+     "source_fact_sha256": "0fe40572b411bc06b352ee9eb1deffa5230bba10b49777074f752bff5ef9131d",
+     "source_baseline_file_sha256": "4baae43f5db2d75738ca7353aa498ac1ac74010f81ee9508bf1a36cfb48ecc0f",
+     "assessment_body_sha256": "ab998bcaf19ae7acd8ad8f041aa16c42fe3ec04ffdce6d6d5c52037a7d6c725b",
+     "assessed_question_en": "Lok Sabha considers one cut intended to disapprove a policy and another intended to ventilate a specific grievance. The government defeats both amendments. Consider:\n1. A policy cut proposes reduction of the demand to one rupee.\n2. A token cut proposes reduction by one hundred rupees.\n3. Defeat of an opposition cut motion is itself a defeat of the ministry in a confidence test.\nWhich statements are correct?",
+     "assessed_question_te": "లోక్‌సభలో ఒక విధానాన్ని వ్యతిరేకించే కోతను, ఒక నిర్దిష్ట ఫిర్యాదును వెల్లడించే మరో కోతను పరిశీలించారు. ప్రభుత్వం రెండు సవరణలనూ ఓడించింది. పరిశీలించండి:\n1. విధాన కోతలో డిమాండ్‌ను ఒక రూపాయికి తగ్గించాలని ప్రతిపాదిస్తారు.\n2. నామమాత్ర కోతలో వంద రూపాయలు తగ్గించాలని ప్రతిపాదిస్తారు.\n3. ప్రతిపక్ష కోత తీర్మానం ఓడిపోవడమే మంత్రిమండలి విశ్వాస పరీక్షలో ఓటమి.\nసరైన ప్రకటనలు ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    },
+    {
+     "id": "POL-722-no-confidence",
+     "question_id": "POL-722-SYN-005",
+     "source_path": "7.2/7.2.2/Fact-register.json",
+     "source_fact_sha256": "dbb6e3ab1c50f6095d78a17a0533c888244b81b777cd67304ee5bdceb4708548",
+     "source_baseline_file_sha256": "4baae43f5db2d75738ca7353aa498ac1ac74010f81ee9508bf1a36cfb48ecc0f",
+     "assessment_body_sha256": "ab998bcaf19ae7acd8ad8f041aa16c42fe3ec04ffdce6d6d5c52037a7d6c725b",
+     "assessed_question_en": "Lok Sabha considers one cut intended to disapprove a policy and another intended to ventilate a specific grievance. The government defeats both amendments. Consider:\n1. A policy cut proposes reduction of the demand to one rupee.\n2. A token cut proposes reduction by one hundred rupees.\n3. Defeat of an opposition cut motion is itself a defeat of the ministry in a confidence test.\nWhich statements are correct?",
+     "assessed_question_te": "లోక్‌సభలో ఒక విధానాన్ని వ్యతిరేకించే కోతను, ఒక నిర్దిష్ట ఫిర్యాదును వెల్లడించే మరో కోతను పరిశీలించారు. ప్రభుత్వం రెండు సవరణలనూ ఓడించింది. పరిశీలించండి:\n1. విధాన కోతలో డిమాండ్‌ను ఒక రూపాయికి తగ్గించాలని ప్రతిపాదిస్తారు.\n2. నామమాత్ర కోతలో వంద రూపాయలు తగ్గించాలని ప్రతిపాదిస్తారు.\n3. ప్రతిపక్ష కోత తీర్మానం ఓడిపోవడమే మంత్రిమండలి విశ్వాస పరీక్షలో ఓటమి.\nసరైన ప్రకటనలు ఏవి?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    }
+   ],
+   "source_urls": [
+    "/learn/polity/g2/7/2/2/Laxmikanth.html",
+    "https://www.legislative.gov.in/constitution-of-india/"
+   ]
+  },
+  {
+   "id": "POL-722-SYN-006",
+   "kind": "synthesis",
+   "format": "comparison",
+   "difficulty": "hard",
+   "question_en": "Which pair most directly links day-to-day information seeking with ultimate political responsibility?",
+   "question_te": "రోజువారీ సమాచార సాధనాన్ని తుది రాజకీయ బాధ్యతతో నేరుగా కలిపే జత ఏది?",
+   "options_en": [
+    "Question Hour and no-confidence motion",
+    "Zero Hour and judicial review",
+    "Quorum and joint sitting",
+    "Privilege motion and Money Bill certification"
+   ],
+   "options_te": [
+    "ప్రశ్నోత్తర సమయం, అవిశ్వాస తీర్మానం",
+    "జీరో అవర్, న్యాయ సమీక్ష",
+    "కోరం, సంయుక్త సమావేశం",
+    "ప్రివిలేజ్ తీర్మానం, ద్రవ్య బిల్లు ధృవీకరణ"
+   ],
+   "answer": 1,
+   "fact_ids": [
+    "POL-722-question-hour-oversight",
+    "POL-722-no-confidence"
+   ],
+   "explanation_en": "Question Hour supplies routine scrutiny; no-confidence tests collective responsibility to Lok Sabha.",
+   "explanation_te": "ప్రశ్నోత్తర సమయం దైనందిన పర్యవేక్షణ; అవిశ్వాస తీర్మానం లోక్‌సభకు సమిష్టి బాధ్యతను పరీక్షిస్తుంది.",
+   "guide_url": "/learn/polity/g2/7/2/2/Teaching-Guide.html#ct-synthesis-722",
+   "table_id": "ct-synthesis-722",
+   "test_fact_references": [
+    {
+     "id": "POL-722-question-hour-oversight",
+     "question_id": "POL-722-SYN-006",
+     "source_path": "7.2/7.2.2/Fact-register.json",
+     "source_fact_sha256": "ac9862afbe597f606db096870923526ec5e24a2618c5ad51b82d736946402b80",
+     "source_baseline_file_sha256": "4baae43f5db2d75738ca7353aa498ac1ac74010f81ee9508bf1a36cfb48ecc0f",
+     "assessment_body_sha256": "2f76f1edbe8d7686cd6d789b8782a9034d37560bd263bdacafd1a459fc537f44",
+     "assessed_question_en": "Which pair most directly links day-to-day information seeking with ultimate political responsibility?",
+     "assessed_question_te": "రోజువారీ సమాచార సాధనాన్ని తుది రాజకీయ బాధ్యతతో నేరుగా కలిపే జత ఏది?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    },
+    {
+     "id": "POL-722-no-confidence",
+     "question_id": "POL-722-SYN-006",
+     "source_path": "7.2/7.2.2/Fact-register.json",
+     "source_fact_sha256": "dbb6e3ab1c50f6095d78a17a0533c888244b81b777cd67304ee5bdceb4708548",
+     "source_baseline_file_sha256": "4baae43f5db2d75738ca7353aa498ac1ac74010f81ee9508bf1a36cfb48ecc0f",
+     "assessment_body_sha256": "2f76f1edbe8d7686cd6d789b8782a9034d37560bd263bdacafd1a459fc537f44",
+     "assessed_question_en": "Which pair most directly links day-to-day information seeking with ultimate political responsibility?",
+     "assessed_question_te": "రోజువారీ సమాచార సాధనాన్ని తుది రాజకీయ బాధ్యతతో నేరుగా కలిపే జత ఏది?",
+     "whole_compound_tested": false,
+     "scope": "Onlyactualpositiveorrejectionpropositionsinthetest;noautomaticwholecompoundcredit"
+    }
+   ],
+   "source_urls": [
+    "/learn/polity/g2/7/2/2/Laxmikanth.html",
+    "https://www.legislative.gov.in/constitution-of-india/"
+   ]
+  }
+ ]
+}

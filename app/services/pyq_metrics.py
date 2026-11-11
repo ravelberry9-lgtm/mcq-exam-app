@@ -7,7 +7,9 @@ Bank   = the master Indian Polity PYQ bank, content/polity/pyq_bank/indian_polit
 Card's PYQs = master record ids in its exam.pyqs (master_id / master_ids, or id 'PYQ-<record_id>')
               ∪ pyq_map.json[card id], limited to bank ids.
 waiting_for_card.json = records about an Article / Schedule / Preamble with no card yet.
-Cached on a version string built from recall_decks.data_version() + bank file mtimes.
+Units  = each bank record's syllabus unit (6-10) from the chapter PYQ files (PYQ-Set.json / PYQ-Bank-Set.json,
+         source_record_id); records in no chapter file are 'Not in Units 6-10'.
+Cached on a version string built from recall_decks.data_version() + bank and chapter PYQ file mtimes.
 """
 import hashlib
 import json
@@ -43,8 +45,32 @@ def family(exam):
     return 'other'
 
 
+G2 = ROOT / 'g2'
+UNIT_PYQ_FILES = ('PYQ-Set.json', 'PYQ-Bank-Set.json')
+UNITS = (6, 7, 8, 9, 10)
+
+
+def unit_files():
+    return sorted(f for name in UNIT_PYQ_FILES for f in G2.glob('*.*/*/' + name))
+
+
 def bank_files():
-    return [f for f in (BANK_FILE, GROUPS_FILE, WAITING_FILE) if f.exists()]
+    return [f for f in (BANK_FILE, GROUPS_FILE, WAITING_FILE) if f.exists()] + unit_files()
+
+
+def unit_of_records():
+    """{bank record_id: unit} from the chapter PYQ files; first file in sorted order wins."""
+    out = {}
+    for f in unit_files():
+        try:
+            unit = int(f.parent.name.split('.')[0])
+        except ValueError:
+            continue
+        for q in (_load(f, {}).get('questions') or []):
+            rid = q.get('source_record_id') or _rid(q.get('id'))
+            if rid and unit in UNITS:
+                out.setdefault(rid, unit)
+    return out
 
 
 def _load(f, default):
@@ -130,11 +156,21 @@ def compute():
             groups.append({'en': en, 'te': te, 'bank': len(keep), 'mapped': len(keep & mapped), 'decks': [len(keep & d['_ids']) for d in decks]})
     for d in decks:
         d.pop('_ids')
+    where = unit_of_records()
+
+    def row(label, keep):
+        return {'en': label, 'total': len(keep), 'appsc': len(keep & appsc),
+                'groups': [len({i for i in keep if b[i] == name}) for name, _, _ in APPSC_GROUPS],
+                'families': [len({i for i in keep if family(b[i]) == fid}) for fid, _, _ in FAMILIES if fid != 'appsc']}
+    unit_rows = [row(f'Unit {u}', {i for i in b if where.get(i) == u}) for u in UNITS]
+    unit_rows.append(row('Not in Units 6-10', {i for i in b if i not in where}))
     return {'total': len(b), 'distinct_total': distinct(b), 'repeated_total': repeated(b),
             'mapped': len(mapped), 'distinct_mapped': distinct(mapped),
             'appsc_total': len(appsc), 'appsc_mapped': len(appsc & mapped),
             'waiting': len(waiting), 'waiting_unmapped': len(waiting - mapped),
-            'decks': decks, 'by_deck': {d['id']: d for d in decks}, 'families': fam_rows, 'appsc_groups': groups}
+            'decks': decks, 'by_deck': {d['id']: d for d in decks}, 'families': fam_rows, 'appsc_groups': groups,
+            'units': unit_rows, 'unit_group_labels': ['G1', 'G2', 'G4'],
+            'unit_family_labels': ['UPSC', 'AP HC', 'Other']}
 
 
 def version():

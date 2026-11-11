@@ -69,7 +69,7 @@
 </a>
 {% if unit6_enabled %}{% set st=unit6_stats() %}<a class="card" href="{{ url_for('polity_unit6.home') }}" data-subject="indian_constitution">
   <div class="row between"><h2>{{ c.bi('Indian Polity — Unit 6', 'భారత రాజ్యాంగం — యూనిట్ 6') }}</h2>{{ c.tag('ok', t('common.available')) }}</div>
-  <span class="small muted">{{ c.bi(st.chapters ~ ' chapters · ' ~ st.mcq ~ ' MCQs · ' ~ st.pyq ~ ' PYQs', st.chapters ~ ' అధ్యాయాలు · ' ~ st.mcq ~ ' MCQs · ' ~ st.pyq ~ ' PYQs') }}</span>
+  <span class="small muted">{{ c.bi('Units 6–10 · ' ~ st.mcq ~ ' MCQs · ' ~ st.pyq ~ ' PYQs', 'యూనిట్లు 6–10 · ' ~ st.mcq ~ ' MCQs · ' ~ st.pyq ~ ' PYQs') }}</span>
 </a>{% endif %}
 {{ subject_cards(data.subjects) }}
 {% endblock %}

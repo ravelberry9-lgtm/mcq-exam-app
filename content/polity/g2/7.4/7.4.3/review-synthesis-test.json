@@ -1,0 +1,22 @@
+{
+  "chapter": "7.4.3",
+  "date": "2026-11-09",
+  "source_reads": 0,
+  "review": "Manual bilingual solve and option review of six replacement synthesis items using supplied Chapter 35 constitutional provisions and existing fact register.",
+  "replacement_scope": "POL-743-T-01 through T-06 now assess allocation/comparison/application rather than single-Article recall.",
+  "legacy_ids": "POL-743-T-07 through T-10 retained in JSON with scored=false and excluded from rendered synthesis test; their original recall concepts remain available in page practice.",
+  "answer_positions": [2,3,1,4,3,1],
+  "manual_checks": [
+    {"id":"POL-743-T-01","answer":2,"tested":"Appointment does not imply exclusive executive control; Articles 50 and 235 applied together.","distractors":"Conflate appointment/control, replace High Court by PSC, or reverse Article237."},
+    {"id":"POL-743-T-02","answer":3,"tested":"Contrasts 233 and 234 consultation rather than merely naming one authority.","distractors":"Wrong authority or collapse the distinct consultation arrangements."},
+    {"id":"POL-743-T-03","answer":1,"tested":"Applies 312(3) rank floor with Article236 definition.","distractors":"Invent State waiver, criminal-only coverage, or notification override."},
+    {"id":"POL-743-T-04","answer":4,"tested":"Rejects overbroad judicial-service membership inference while recognizing237 mechanism.","distractors":"Treat every judicial function as membership or deny notification mechanism."},
+    {"id":"POL-743-T-05","answer":3,"tested":"Distinguishes State organizational variation from common constitutional control framework.","distractors":"Equate differing names with constitutional invalidity or absence of control."},
+    {"id":"POL-743-T-06","answer":1,"tested":"Explains why executive participation and judicial control are compatible.","distractors":"Incorrect truth/explanatory relationship combinations."}
+  ],
+  "conceptual_overlap": "All six necessarily revisit chapter concepts; T02 overlaps original appointment questions in constituent facts, but assesses comparative allocation. T01/T06 both concern executive participation versus High Court control and should be rotated, not treated as two independent coverage gains.",
+  "expected_questions": "No new Expected bank added because available adjacent core concepts are already tested; avoid creating word-swapped duplicates merely to populate a bank.",
+  "guide": "Source-qualifications.html#judicial-service-guide",
+  "holds": ["Unit source-fidelity and full coverage remain open.","Second independent human review and app integration are not certified.","Root builder must exclude legacy_retained/scored=false items if rebuilding HTML; otherwise the four retired recall items could reappear."],
+  "completion": false
+}

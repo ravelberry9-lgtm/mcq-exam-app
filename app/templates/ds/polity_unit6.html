@@ -1,5 +1,5 @@
 {% extends 'ds/base.html' %}
-{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.unit') }}">‹ Unit 6</a><strong>Chapter test</strong></div>{% endblock %}
+{% block topbar %}<div class="geo-qheader">{% set eu=(exam.questions[0]['_chapter'].split('.')[0]|int) if exam and exam.questions else 6 %}<a href="{{ url_for('polity_unit6.unit',n=eu) }}">‹ Unit {{ eu }}</a><strong>Chapter test</strong></div>{% endblock %}
 {% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}">{% endblock %}
 {% macro stem(q) %}<p lang="te">{{ q.question_te }}</p><p lang="en">{{ q.question_en }}</p>{% endmacro %}
 {% macro choices(q,field,selected=none) %}<fieldset><legend>Choose an option / ఒక ఎంపికను ఎంచుకోండి</legend>{% for option in q.options_en %}<label class="u6-option"><input type="radio" name="{{ field }}" value="{{ loop.index }}"{% if selected == loop.index %} checked{% endif %}> <span>{{ loop.index }}. <span lang="te">{{ q.options_te[loop.index0] }}</span><br><span lang="en">{{ option }}</span></span></label>{% endfor %}</fieldset>{% endmacro %}

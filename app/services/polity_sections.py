@@ -9,7 +9,9 @@ def directory(chapter):
 @lru_cache(maxsize=20)
 def chapter_locators(chapter):
     root=directory(chapter)
-    ids={tag['id'] for tag in BeautifulSoup((root/'Notes.html').read_text(encoding='utf-8-sig'),'html.parser').select('[id]')}
+    notes=root/'Notes.html'
+    # Chapters without lesson notes yet (units 7-10 practice-only) have no anchors to link to.
+    ids={tag['id'] for tag in BeautifulSoup(notes.read_text(encoding='utf-8-sig'),'html.parser').select('[id]')} if notes.is_file() else set()
     p=root/'Fact-register.json'
     facts=read(p).get('facts',[]) if p.is_file() else []
     return ids,{f['id']:f for f in facts if 'id' in f}
