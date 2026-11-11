@@ -1,14 +1,15 @@
 {% extends 'ds/base.html' %}
 {% block title %}My saved pages{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='st1') }}"><link rel="stylesheet" href="{{ url_for('static',filename='study_tools.css',v='st1') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='st2') }}"><link rel="stylesheet" href="{{ url_for('static',filename='study_tools.css',v='st3') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="/learn">‹ Learn</a><b>My saved pages</b></div>{% endblock %}
 {% block content %}<div class="mk-list">
 <h1>Bookmarks and highlights</h1>{% set ac=current_account() %}<p class="mk-acct">{% if ac %}Signed in as <b>{{ ac.username }}</b> — these sync to all your devices. <a href="{{ url_for('account.home') }}">Account</a>{% else %}Saved on this device only. Sign in to see them on your tablet too.</p><p><a class="btn primary" href="{{ url_for('account.login', next=request.path) }}">👤 Sign in</a> <a class="btn" href="{{ url_for('account.signup', next=request.path) }}">Create account</a>{% endif %}</p>
-{% set bm = rows|selectattr('bookmarked')|list %}{% set hl = rows|rejectattr('bookmarked')|list %}
-<h2>★ Bookmarked ({{ bm|length }})</h2>
-{% if not bm %}<p class="u6-note">Nothing bookmarked yet. Tap ☆ on any page, card or question to save it here.</p>{% endif %}
-<ul>{% for r in bm %}<li><a href="{{ r.url }}">{{ r.title or r.key }}</a>{% if r.marks %}<span class="mk-n">{{ r.marks|length }} mark{{ "s" if r.marks|length != 1 }}</span>{% endif %}</li>{% endfor %}</ul>
-<h2>Highlighted ({{ hl|length }})</h2>
-{% if not hl %}<p class="u6-note">Select text on any page and choose a colour to highlight or underline it.</p>{% endif %}
-<ul>{% for r in hl %}<li><a href="{{ r.url }}">{{ r.title or r.key }}</a><span class="mk-n">{{ r.marks|length }} mark{{ "s" if r.marks|length != 1 }}</span>{% if r.marks %}<em>“{{ r.marks[0].t[:80] }}”</em>{% endif %}</li>{% endfor %}</ul>
+<p class="mk-how">Tap ☆ on any page to bookmark it. Tap 🖍, then drag across a sentence to highlight it in pink.</p>
+{% if not rows %}<p class="u6-note">Nothing saved yet.</p>{% endif %}
+{% for r in rows %}<section class="mk-page">
+  <header><h2>{% if r.bookmarked %}<span class="mk-bm" title="Bookmarked">★</span> {% endif %}{{ r.title or 'Page' }}</h2>
+  <span class="mk-n">{% if r.marks %}{{ r.marks|length }} highlight{{ "s" if r.marks|length != 1 }}{% else %}Bookmarked{% endif %}</span></header>
+  {% if r.marks %}<ol class="mk-quotes">{% for m in r.marks|sort(attribute='s') %}{% if m.t %}<li><mark>{{ m.t }}</mark></li>{% endif %}{% endfor %}</ol>{% endif %}
+  <a class="mk-open" href="{{ r.url }}">Open page ›</a>
+</section>{% endfor %}
 </div>{% endblock %}

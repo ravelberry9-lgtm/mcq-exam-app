@@ -31,7 +31,7 @@ def _clean(marks):
         except (KeyError, TypeError, ValueError):
             continue
         if 0 <= s < e <= 200000 and m.get('k') in KINDS and m.get('c') in COLORS:
-            out.append({'s': s, 'e': e, 'k': m['k'], 'c': m['c'], 't': str(m.get('t', ''))[:200]})
+            out.append({'s': s, 'e': e, 'k': m['k'], 'c': m['c'], 't': str(m.get('t', ''))[:1000]})
     return out
 
 

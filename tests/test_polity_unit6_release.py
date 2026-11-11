@@ -809,7 +809,7 @@ def test_omitted_banner_badge_and_filter(client,app):
     g=frag(client,'AC-om-226A');assert 'om-ban whole' in g and 'data-go="AM-043"' in g and 'PYQ-POL-C150CC03972F' not in g or 'PYQ' in g
     assert 'om-ban' not in frag(client,'AC-6.4-21')
     page=client.get('/learn/polity/unit6/recall/articles').get_data(as_text=True)
-    assert 'name="om"' in page and 'Omitted only' in page and 'రద్దయినవి మాత్రమే' in page and 'polity_articles.js?v=st1' in page
+    assert 'name="om"' in page and 'Omitted only' in page and 'రద్దయినవి మాత్రమే' in page and 'polity_articles.js?v=st2' in page
     D={x['id']:x.get('om') for x in deck_data(page)['cards']}
     assert D['AC-6.4-31']==2 and D['AC-om-238']==2 and D['AC-6.4-19']==1 and D['AC-6.4-21'] is None
     n=sum(1 for i in rd.items('articles') if i.get('omitted'));assert f'Omitted only' in page and f'<small> ({n})</small>' in page

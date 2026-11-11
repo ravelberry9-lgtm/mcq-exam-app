@@ -1,15 +1,10 @@
-// Highlight / underline / erase / undo and bookmark for Polity cards and question pages.
+// Pink highlighter (tap 🖍 then drag), undo, and page bookmarks — on every page of the app.
 // Usage: PolityMarks.attach(rootEl, {key, title, url, starHost}). Marks are stored per device on the server
 // (with a localStorage copy so they show instantly and survive a lost connection).
 (function () {
   "use strict";
   var API = "/learn/my-saved/api";
-  var HL = ["yellow", "green", "pink", "blue"], UL = ["red", "green", "purple"];
   var roots = [];            // attached states
-  var cur = null;            // state the toolbar is acting on
-  var saved = null;          // last non-collapsed selection {st, s, e}
-  var tapped = null;         // mark index tapped (for erase)
-  var bar, hideT, pinned = false, last = null; // last: selection kept briefly in case a tap clears it (Android)
 
   function csrf() { var m = document.querySelector('meta[name="csrf-token"]'); return m ? m.content : ""; }
   function lsGet(k) { try { return JSON.parse(localStorage.getItem("mk:" + k) || "null"); } catch (e) { return null; } }
@@ -65,88 +60,86 @@
   }
   function change(st, next) { st.undo.push(JSON.stringify(st.marks)); if (st.undo.length > 50) st.undo.shift(); st.marks = next; paint(st); save(st); }
 
-  function selNow() { return saved || (last && Date.now() - last.at < 1500 ? last : null); }
-  function addMark(k, c) {
-    var sl = selNow();
-    if (!sl) { toast("Select some text first, then tap a colour"); return; }
-    var st = sl.st, s = sl.s, e = sl.e, txt = st.root.textContent;
-    var rest = st.marks.filter(function (m) { return !(m.k === k && m.s < e && m.e > s); }); // same kind replaces overlap
-    rest.push({ s: s, e: e, k: k, c: c, t: txt.slice(s, e).replace(/\s+/g, " ").trim().slice(0, 200) });
-    rest.sort(function (x, y) { return x.s - y.s; });
-    change(st, rest);
-    clearSel();
+  // ---- pink highlighter: tap 🖍, then drag a finger across the text ----
+  var pen = false, drag = null, lastSt = null, penBtn = null, undoBtn = null;
+  function caretAt(x, y) {
+    if (document.caretRangeFromPoint) { var r = document.caretRangeFromPoint(x, y); return r && { node: r.startContainer, off: r.startOffset }; }
+    if (document.caretPositionFromPoint) { var p = document.caretPositionFromPoint(x, y); return p && { node: p.offsetNode, off: p.offset }; }
+    return null;
   }
-  function erase() {
-    var sl = selNow(), st = (sl && sl.st) || cur; if (!st) return;
-    var next;
-    if (sl) next = st.marks.filter(function (m) { return !(m.s < sl.e && m.e > sl.s); });
-    else if (tapped !== null) next = st.marks.filter(function (_, i) { return i !== tapped; });
-    else { toast("Select highlighted text (or tap a mark), then tap the eraser"); return; }
-    change(st, next); clearSel();
-  }
-  function undo() {
-    var st = cur; if (!st || !st.undo.length) return;
-    st.marks = JSON.parse(st.undo.pop()); paint(st); save(st); show(st, false);
-  }
-  function clearSel() { saved = null; last = null; tapped = null; try { window.getSelection().removeAllRanges(); } catch (e) {} show(cur, false); }
-
-  // ---- toolbar ----
-  function build() {
-    bar = document.createElement("div");
-    bar.className = "mk-ui mk-bar"; bar.hidden = true; bar.setAttribute("role", "toolbar"); bar.setAttribute("aria-label", "Highlight tools");
-    var h = "";
-    HL.forEach(function (c) { h += '<button type="button" class="mk-sw mk-hl mk-' + c + '" data-k="hl" data-c="' + c + '" aria-label="Highlight ' + c + '"></button>'; });
-    h += '<span class="mk-lab" aria-hidden="true"></span>';
-    UL.forEach(function (c) { h += '<button type="button" class="mk-sw mk-ulb mk-' + c + '" data-k="ul" data-c="' + c + '" aria-label="Underline ' + c + '"><u>A</u></button>'; });
-    h += '<span class="mk-lab" aria-hidden="true"></span>';
-    h += '<button type="button" class="mk-tool" data-a="erase" aria-label="Erase"><svg viewBox="0 0 24 24"><path d="M16 3l5 5-11 11H5l-2-2 13-14zM9 19h12"/></svg></button>';
-    h += '<button type="button" class="mk-tool" data-a="undo" aria-label="Undo"><svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5M4 9h10a6 6 0 0 1 0 12h-3"/></svg></button>';
-    h += '<button type="button" class="mk-tool" data-a="close" aria-label="Close">✕</button>';
-    bar.innerHTML = h;
-    // keep the text selection when a button is pressed
-    bar.addEventListener("pointerdown", function (e) { e.preventDefault(); });
-    bar.addEventListener("mousedown", function (e) { e.preventDefault(); });
-    bar.addEventListener("click", function (e) {
-      var b = e.target.closest("button"); if (!b) return;
-      if (b.dataset.k) addMark(b.dataset.k, b.dataset.c);
-      else if (b.dataset.a === "erase") erase();
-      else if (b.dataset.a === "undo") undo();
-      else { pinned = false; bar.hidden = true; clearSel(); }
-    });
-    document.body.appendChild(bar);
-  }
-  function show(st, sticky) {
-    if (!bar) build();
-    clearTimeout(hideT);
-    if (!st) { if (!pinned) bar.hidden = true; return; }
-    cur = st;
-    if (sticky) pinned = true;               // once opened, the toolbar stays until ✕ is tapped
-    var has = !!saved || tapped !== null;
-    bar.classList.toggle("has-sel", has);
-    bar.querySelector('[data-a="undo"]').disabled = !st.undo.length;
-    bar.hidden = !pinned && !has;
-  }
-
   function stateFor(node) {
     for (var i = 0; i < roots.length; i++) if (roots[i].root.isConnected && roots[i].root.contains(node)) return roots[i];
     return null;
   }
-  document.addEventListener("selectionchange", function () {
-    var sel = window.getSelection();
-    if (!sel || !sel.rangeCount || sel.isCollapsed) { if (saved) { last = { st: saved.st, s: saved.s, e: saved.e, at: Date.now() }; saved = null; show(cur, false); } return; }
-    var r = sel.getRangeAt(0), st = stateFor(r.commonAncestorContainer);
-    if (!st) return;
-    var s = offsetOf(st.root, r.startContainer, r.startOffset), e = offsetOf(st.root, r.endContainer, r.endOffset);
-    if (s < 0 || e <= s) return;
-    saved = { st: st, s: s, e: e }; tapped = null;
-    show(st, true);
-  });
-  document.addEventListener("click", function (e) {
-    var sp = e.target.closest && e.target.closest("span.mk");
-    if (!sp || (window.getSelection() && !window.getSelection().isCollapsed)) return;
-    var st = stateFor(sp); if (!st) return;
-    tapped = +sp.dataset.mi; saved = null; show(st, true);
-  });
+  function posAt(st, x, y) {
+    var c = caretAt(x, y);
+    if (!c || c.node.nodeType !== 3 || !st.root.contains(c.node) || (c.node.parentNode.closest && c.node.parentNode.closest(".mk-ui"))) return -1;
+    return offsetOf(st.root, c.node, c.off);
+  }
+  function wordSnap(txt, s, e) {               // grow to whole words so a rough drag still marks clean words
+    while (s > 0 && /\S/.test(txt[s - 1])) s--;
+    while (e < txt.length && /\S/.test(txt[e])) e++;
+    return [s, e];
+  }
+  function preview(st, s, e) {
+    try {
+      var list = texts(st.root), pos = 0, a = null, b = null;
+      list.forEach(function (tn) { var n = tn.data.length; if (!a && s <= pos + n) a = [tn, s - pos]; if (!b && e <= pos + n) b = [tn, e - pos]; pos += n; });
+      if (!a || !b) return;
+      var r = document.createRange(); r.setStart(a[0], a[1]); r.setEnd(b[0], b[1]);
+      var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    } catch (err) {}
+  }
+  function addPink(st, s, e) {
+    var txt = st.root.textContent, w = wordSnap(txt, s, e); s = w[0]; e = w[1];
+    if (e <= s || !txt.slice(s, e).trim()) return;
+    var keep = [], ns = s, ne = e;
+    st.marks.forEach(function (m) {            // merge with touching pink highlights
+      if (m.k === "hl" && m.s <= ne && m.e >= ns) { ns = Math.min(ns, m.s); ne = Math.max(ne, m.e); } else keep.push(m);
+    });
+    keep.push({ s: ns, e: ne, k: "hl", c: "pink", t: txt.slice(ns, ne).replace(/\s+/g, " ").trim().slice(0, 1000) });
+    keep.sort(function (x, y) { return x.s - y.s; });
+    change(st, keep); lastSt = st; refreshUndo();
+  }
+  function removeMark(st, idx) { change(st, st.marks.filter(function (_, i) { return i !== idx; })); lastSt = st; refreshUndo(); }
+  function undo() {
+    var st = lastSt && lastSt.root.isConnected ? lastSt : null;
+    if (!st || !st.undo.length) { toast("Nothing to undo"); return; }
+    st.marks = JSON.parse(st.undo.pop()); paint(st); save(st); refreshUndo();
+  }
+  function refreshUndo() { if (undoBtn) undoBtn.classList.toggle("off", !(lastSt && lastSt.undo.length)); }
+  function setPen(on) {
+    pen = on; document.body.classList.toggle("mk-pen-on", on);
+    if (penBtn) { penBtn.classList.toggle("on", on); penBtn.setAttribute("aria-pressed", on ? "true" : "false"); }
+    if (on) toast("Highlighter on — drag across text. Tap 🖍 again to scroll.");
+  }
+  document.addEventListener("pointerdown", function (e) {
+    if (!pen || e.button > 0 || (e.target.closest && e.target.closest(".mk-ui"))) return;
+    var st = stateFor(e.target); if (!st) return;
+    e.preventDefault();
+    var s = posAt(st, e.clientX, e.clientY);
+    drag = { st: st, s: s, e: s, x: e.clientX, y: e.clientY, moved: false, mark: e.target.closest && e.target.closest("span.mk") };
+  }, true);
+  document.addEventListener("pointermove", function (e) {
+    if (!drag) return;
+    e.preventDefault();
+    if (Math.abs(e.clientX - drag.x) + Math.abs(e.clientY - drag.y) > 8) drag.moved = true;
+    var p = posAt(drag.st, e.clientX, e.clientY);
+    if (p >= 0 && (drag.s < 0 || Math.abs(p - drag.s) < 3000)) { if (drag.s < 0) drag.s = p; drag.e = p; if (drag.s >= 0) preview(drag.st, Math.min(drag.s, p), Math.max(drag.s, p)); }
+  }, true);
+  function endDrag() {
+    if (!drag) return;
+    var d = drag; drag = null;
+    try { getSelection().removeAllRanges(); } catch (err) {}
+    if (!d.moved) { if (d.mark) removeMark(d.st, +d.mark.dataset.mi); return; }   // tap a pink mark to remove it
+    if (d.s < 0 || d.e < 0) return;
+    addPink(d.st, Math.min(d.s, d.e), Math.max(d.s, d.e));
+  }
+  document.addEventListener("pointerup", endDrag, true);
+  document.addEventListener("pointercancel", function () { drag = null; }, true);
+  document.addEventListener("click", function (e) {      // while the pen is on, taps on text never open links
+    if (pen && !(e.target.closest && e.target.closest(".mk-ui")) && stateFor(e.target)) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
 
   // ---- bookmark star ----
   function star(st) {
@@ -180,6 +173,7 @@
     var st = null;
     for (var i = 0; i < roots.length; i++) if (roots[i].root === root) st = roots[i];
     if (!st) { st = { root: root }; roots.push(st); }
+    root.classList.add("mk-pen-root");
     st.key = opt.key; st.title = opt.title || document.title; st.url = opt.url || location.pathname + location.search;
     st.host = opt.starHost || null; st.undo = []; st.marks = []; st.bm = false;
     var local = lsGet(st.key);
@@ -196,8 +190,7 @@
   // stop marking a root whose content is being replaced (e.g. a card still loading)
   function detach(root) {
     roots = roots.filter(function (s) { return s.root !== root; }); // a pending save already holds its own copy
-    if (saved && saved.st.root === root) saved = null;
-    if (cur && cur.root === root) { cur = null; tapped = null; if (bar) bar.hidden = true; }
+    if (drag && drag.st.root === root) drag = null;
   }
   window.PolityMarks = { attach: attach, detach: detach };
   // static pages: any element with data-mk-key
@@ -215,15 +208,14 @@
       var title = (document.querySelector("h1") || {}).textContent || document.title;
       attach(root, { key: "page:" + location.pathname + location.search, title: (title || "").trim().slice(0, 200), url: location.pathname + location.search, starHost: dock });
     }
-    var pen = document.createElement("button");
-    pen.type = "button"; pen.className = "mk-dock-pen"; pen.textContent = "🖍"; pen.setAttribute("aria-label", "Open highlighter");
-    pen.addEventListener("click", function () {
-      var st = cur || roots.filter(function (r) { return r.root.isConnected; }).pop();
-      if (!st) return;
-      if (bar && !bar.hidden && pinned) { pinned = false; bar.hidden = true; return; }
-      show(st, true); toast("Select text, then tap a colour");
-    });
-    dock.appendChild(pen);
+    penBtn = document.createElement("button");
+    penBtn.type = "button"; penBtn.className = "mk-dock-pen"; penBtn.textContent = "🖍"; penBtn.setAttribute("aria-label", "Pink highlighter on or off"); penBtn.setAttribute("aria-pressed", "false");
+    penBtn.addEventListener("click", function () { setPen(!pen); });
+    dock.appendChild(penBtn);
+    undoBtn = document.createElement("button");
+    undoBtn.type = "button"; undoBtn.className = "mk-dock-undo off"; undoBtn.textContent = "↶"; undoBtn.setAttribute("aria-label", "Undo last highlight");
+    undoBtn.addEventListener("click", undo);
+    dock.appendChild(undoBtn);
     var a = document.createElement("a");
     a.className = "mk-dock-saved"; a.href = window.MK_SAVED || "/learn/my-saved/"; a.setAttribute("aria-label", "My saved pages and account"); a.textContent = "📑";
     dock.appendChild(a);
