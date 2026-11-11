@@ -75,16 +75,16 @@
     if (n.q) t += '<span class="tg q" title="Asked in ' + n.q + ' previous papers">PYQ ' + n.q + "</span>";
     return t;
   }
-  function rels(n) { // Together view only: up to 2 links to the related amendment / case, each jumps to that node
+  function rels(n) { // Together view only: up to 2 forward links (a case Parliament answered; an amendment a later case tested)
     if (st.tab !== "both" || !n.r) return "";
     var out = n.r.filter(function (r) { return BY[r[0]]; }).map(function (r) {
       var m = BY[r[0]];
-      return '<a class="rl" href="#n-' + esc(m.id) + '" data-go="' + esc(m.id) + '"><span class="rv">' + esc(T1(r[1], r[2])) + "</span> " + esc(T1(m.n[0], m.n[1])) + " <span class=\"ry\">(" + m.y + ")</span></a>";
+      return '<a class="rl ' + m.k + '" href="#n-' + esc(m.id) + '" data-go="' + esc(m.id) + '"><span class="rv">' + esc(T1(r[1], r[2])) + '</span> <span class="rt">' + esc(T1(m.n[0], m.n[1])) + " (" + m.y + ")</span></a>";
     }).join("");
     return out ? '<div class="rls">' + out + "</div>" : "";
   }
-  function node(n, showYear) {
-    return '<li class="nd ' + n.k + (showYear ? " fy" : "") + '" id="n-' + esc(n.id) + '"><span class="yr">' + (showYear ? n.y : "") + '</span><i class="mk ' + n.k + '" aria-hidden="true"></i>' +
+  function node(n, first) { // every node carries its own year; the first of a year gets the full-size marker
+    return '<li class="nd ' + n.k + (first ? " fy" : "") + '" id="n-' + esc(n.id) + '"><span class="yr">' + n.y + '</span><i class="mk ' + n.k + '" aria-hidden="true"></i>' +
       '<div class="bx"><a class="cd" href="' + esc(url(n)) + '" data-id="' + esc(n.id) + '"><b class="nm">' + T(n.n) + '</b><span class="ln">' + T(n.l) + '</span><span class="tgs">' + tags(n) + "</span></a>" + rels(n) + "</div></li>";
   }
 
@@ -179,8 +179,9 @@
     var p = pend; if (!p) return;
     pend = null;
     var el = findNode(p); if (!el) return;
-    var sc = scroller(el), want = p.top != null ? p.top : window.innerHeight / 2 - 40;
-    sc.scrollTop += el.getBoundingClientRect().top - want;
+    var sc = scroller(el), want = p.top != null ? p.top : window.innerHeight / 2 - 40, n = 0;
+    // decades above use content-visibility, so their real height lands a frame or two after the jump: re-aim until steady
+    (function aim() { var d = el.getBoundingClientRect().top - want; if (Math.abs(d) > 2) sc.scrollTop += d; if (n++ < 12 && (Math.abs(d) > 2 || n < 4)) requestAnimationFrame(aim); })();
     flash(el);
   }
   window.addEventListener("pageshow", function (e) { // restored from the back-forward cache: same scroll, just flash the node

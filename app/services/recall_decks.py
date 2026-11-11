@@ -630,11 +630,50 @@ def _pair_line(it, k):
             best_line([it.get('one_line_te'), it.get('says_te'), it.get('held_te')], it.get('cue_te'), 140, k) or _brief(it.get('one_line_te') or it.get('cue_te') or it.get('one_line_en'))]
 
 
-_REL = {  # (from kind, to kind, direction) -> (en, te); 'nx' = later step on the same lineage, 'pv' = earlier step
-    ('case', 'am', 'nx'): ('led to', 'దీని ఫలితం'), ('am', 'case', 'nx'): ('challenged in', 'సవాలు చేసిన కేసు'),
-    ('case', 'case', 'nx'): ('followed by', 'తర్వాతి కేసు'), ('am', 'am', 'nx'): ('followed by', 'తర్వాతి సవరణ'),
-    ('am', 'case', 'pv'): ('reply to', 'దీనికి కారణం'), ('case', 'am', 'pv'): ('reviewed', 'పరిశీలించిన సవరణ'),
-    ('case', 'case', 'pv'): ('after', 'దీనికి ముందు'), ('am', 'am', 'pv'): ('after', 'దీనికి ముందు'),
+# Checked by hand against each amendment card's 'cases' held line where the wording alone is ambiguous; None = drop.
+_REL_FIX = {
+    ('AM-001', 'CS-champakam-1951'): 'prompt', ('AM-001', 'CS-ir-coelho-2007'): None, ('AM-025', 'CS-minerva-mills-1980'): None,
+    ('AM-034', 'CS-ir-coelho-2007'): 'review', ('AM-066', 'CS-ir-coelho-2007'): 'review', ('AM-078', 'CS-ir-coelho-2007'): 'review',
+    ('AM-066', 'CS-waman-rao-1980'): None, ('AM-029', 'CS-waman-rao-1980'): 'kept', ('AM-038', 'CS-sr-bommai-1994'): None,
+    ('AM-044', 'CS-minerva-mills-1980'): None, ('AM-044', 'CS-sr-bommai-1994'): None, ('AM-039', 'CS-indira-raj-narain-1975'): 'part',
+    ('AM-039', 'CS-kesavananda-1973'): None, ('AM-086', 'CS-mohini-jain-1992'): None,
+    ('AM-093', 'CS-tma-pai-2002'): None, ('AM-040', 'CS-bhim-singhji-1980'): 'test', ('AM-102', 'CS-jaishri-patil-2021'): 'read',
+    ('AM-105', 'CS-jaishri-patil-2021'): 'prompt', ('AM-097', 'CS-rajendra-shah-2021'): 'part',
+    ('AM-076', 'CS-ir-coelho-2007'): 'review', ('AM-042', 'CS-minerva-mills-1980'): 'part', ('AM-042', 'CS-chandra-kumar-1997'): 'part',
+    ('AM-032', 'CS-sambamurthy-1986'): 'part',
+}
+
+
+def _rel_verb(held, am_no, case_y, am_y):
+    """How an amendment card's 'cases' entry relates that case to the amendment, read from held_en.
+    'prompt' = the case came first and Parliament answered it with this amendment; otherwise how the case treated it."""
+    h = (held or '').lower()
+    tok = re.search(r'\b%d(st|nd|rd|th)\b' % am_no, h) is not None
+    answered = re.search(r'overc[oa]me|nullif|to undo|respon|reverse|override|set aside|answer|was made|were made|was needed'
+                         r'|made it taxable|main reason|one aim|one cause|led to|replaced|did it|made this|follow', h)
+    if case_y < am_y or (case_y == am_y and answered and tok and not h.startswith(('upheld', 'struck'))):
+        if not answered:
+            return None
+        return 'led' if re.search(r'main reason|one cause|one aim|led to|urged|follow', h) else 'prompt'
+    if not tok and not h.startswith(('upheld', 'struck down', 'held')):
+        return None
+    hit = re.search(r'struck down|invalid|unconstitutional', h)
+    if hit and re.search(r'upheld|but struck', h):
+        return 'part'
+    if hit:
+        return 'down'
+    if re.search(r'upheld|\bvalid\b', h):
+        return 'up'
+    return 'test'
+
+
+_RV = {  # verb -> text on the EARLIER node, followed by the later node's name and year
+    'prompt': ('Parliament replied with the', 'దీనికి పార్లమెంటు జవాబు:'),
+    'led': ('Led to the', 'దీని ఫలితంగా వచ్చినది:'),
+    'down': ('Struck down in', 'కొట్టివేసిన కేసు:'), 'part': ('Partly struck down in', 'పాక్షికంగా కొట్టివేసిన కేసు:'),
+    'up': ('Upheld in', 'సమర్థించిన కేసు:'), 'test': ('Challenged in', 'సవాలు చేసిన కేసు:'),
+    'review': ('Opened to basic-structure review in', 'మౌలిక నిర్మాణం సమీక్షకు తెరిచిన కేసు:'),
+    'kept': ('Protection kept in', 'రక్షణ నిలిపిన కేసు:'), 'read': ('Interpreted in', 'అర్థం చెప్పిన కేసు:'),
 }
 
 
@@ -701,21 +740,32 @@ def _build_trees():
         lines.append({'id': ch['chain_id'], 't': [ch.get('title_en') or '', ch.get('title_te') or ''],
                       'sh': [ch.get('short_en') or '', ch.get('short_te') or ''],
                       'i': [_first_sentence(ch.get('intro_en'), 220), _first_sentence(ch.get('intro_te'), 220)], 'st': steps})
-    kind = {o['id']: o['k'] for o in nodes}
-    for o in nodes:  # at most 2 relations: later lineage steps first, then earlier ones, then plain links.json links
-        cand = [x for x in rel.get(o['id'], []) if x[1] == 'nx'] + [x for x in rel.get(o['id'], []) if x[1] == 'pv']
-        cand += [(x, '') for x in o.get('ln', []) if x in kind]
-        seen, out = {o['id']}, []
-        for rid, d in cand:
-            if rid in seen:
+    # Relations: only amendment <-> case pairs stated on the amendment card ('cases' with a held line), shown on the
+    # EARLIER node and pointing forward in time (a case that prompted a later amendment; an amendment later tested in a case).
+    byid = {o['id']: o for o in nodes}
+    pri = {'down': 0, 'part': 1, 'prompt': 2, 'led': 2, 'up': 3, 'review': 4, 'kept': 5, 'read': 6, 'test': 7}
+    cand = {}
+    for it in items('amendments'):
+        A = byid.get(it['id'])
+        if not A or A['k'] != 'am':
+            continue
+        for c in it.get('cases') or []:
+            C = byid.get(c.get('id'))
+            if not C or C['k'] != 'case':
                 continue
-            seen.add(rid)
-            en, te = _REL.get((o['k'], kind[rid], d), ('linked to', 'సంబంధిత'))
-            out.append([rid, en, te])
-            if len(out) == 2:
-                break
-        if out:
-            o['r'] = out
+            key = (A['id'], C['id'])
+            v = _REL_FIX[key] if key in _REL_FIX else _rel_verb(c.get('held_en'), A.get('no') or 0, C['y'], A['y'])
+            if not v:
+                continue
+            src, dst = (C, A) if v in ('prompt', 'led') else (A, C)
+            cand.setdefault(src['id'], []).append((pri[v], dst['y'], dst['id'], v))
+    for sid, cs in cand.items():
+        out, seen = [], set()
+        for _, _, did, v in sorted(cs):
+            if did not in seen:
+                seen.add(did)
+                out.append([did, _RV[v][0], _RV[v][1]])
+        byid[sid]['r'] = out[:2]
     used_th = {o.get('th') for o in nodes}
     used_p = {o.get('p') for o in nodes if o['k'] == 'am'}
     return {'v': data_version(), 'nodes': nodes, 'chains': lines,

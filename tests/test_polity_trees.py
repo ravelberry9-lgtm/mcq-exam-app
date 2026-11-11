@@ -55,9 +55,13 @@ def test_polity_trees_compact_controls_old_cases_and_relations(client, app):
     by = {n['id']: n for n in d['nodes']}
     rel = [n for n in d['nodes'] if n.get('r')]
     assert rel and all(len(n['r']) <= 2 and all(r[0] != n['id'] and r[1] and r[2] for r in n['r']) for n in rel)
-    am24 = by.get('AM-024')
-    if am24:
-        assert any(r[1] == 'reply to' for r in am24.get('r', []))
+    # relations point forward in time, only between an amendment and a case, never the weak 'linked to'
+    assert all(by[r[0]]['y'] >= n['y'] and by[r[0]]['k'] != n['k'] and r[1] != 'linked to' for n in rel for r in n['r'])
+    gn = by.get('CS-golaknath-1967')
+    if gn and by.get('AM-024'):
+        assert ['AM-024', 'Parliament replied with the'] in [r[:2] for r in gn.get('r', [])]
+    if by.get('AM-099') and by.get('CS-njac-2015'):
+        assert any(r[1] == 'Struck down in' for r in by['AM-099'].get('r', []))
     assert all(len(n['l'][0]) <= 140 and not n['l'][0].endswith('…') and not n['l'][1].endswith('…') for n in d['nodes'])
 
 

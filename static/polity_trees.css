@@ -59,6 +59,7 @@
 .nd{position:relative;display:grid;grid-template-columns:3rem 18px minmax(0,1fr);column-gap:8px;padding:4px 0}
 .nd::before{content:"";position:absolute;left:calc(3rem + 8px + 8px);top:0;bottom:0;width:2px;background:var(--spine)}
 .nd .yr{grid-column:1;padding-top:12px;text-align:right;font-weight:800;font-size:.92rem;font-variant-numeric:tabular-nums;color:var(--tk)}
+.nd:not(.fy) .yr{font-weight:650;font-size:.8rem;color:var(--tm);padding-top:13px}
 .nd .mk{grid-column:2;justify-self:center;margin-top:14px;position:relative;z-index:1}
 .nd .bx{grid-column:3;min-width:0}
 .mk{display:inline-block;width:12px;height:12px;flex:none}
@@ -85,11 +86,11 @@ a.cd:hover{border-color:var(--tm)}.nd.am a.cd:hover{border-left-color:var(--am)}
 .nd.hl .cd,.ls.hl .cd{outline:3px solid var(--hl);outline-offset:1px;transition:outline-color .6s}
 @media (prefers-reduced-motion:no-preference){.nd.hl .cd,.ls.hl .cd{animation:tr-hl 1.2s ease-out 1}@keyframes tr-hl{0%{box-shadow:0 0 0 8px var(--hl)}100%{box-shadow:0 0 0 0 transparent}}}
 /* relations (Together view): the amendment or case this one is tied to */
-.rls{display:flex;flex-direction:column;margin:2px 0 2px 12px}
-.rl{display:flex;align-items:baseline;gap:4px;flex-wrap:wrap;padding:5px 0;min-height:32px;font-size:.8rem;line-height:1.4;color:var(--tk);text-decoration:none;font-weight:650}
-.rl::before{content:"↳";color:var(--tm);font-weight:700}
-.rl .rv{color:var(--tm);font-weight:550}.rl .ry{color:var(--tm);font-weight:550;font-variant-numeric:tabular-nums}
-.rl:hover{text-decoration:underline;text-underline-offset:3px}
+.rls{display:flex;flex-direction:column;gap:0;margin:0 4px 4px 14px;padding:2px 0 0 10px;border-left:1.5px dashed var(--tl)}
+.rl{display:block;padding:6px 0;min-height:32px;font-size:.78rem;line-height:1.4;color:var(--tm);text-decoration:none}
+.rl .rt{font-weight:700;color:var(--rc,var(--tk));text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent)}
+.rl.am{--rc:var(--am)}.rl.case{--rc:var(--cs)}
+.rl:hover .rt{text-decoration-color:currentColor}
 /* Together: one spine for both kinds. Cases outnumber amendments 2-10x in every decade, so a left/right split left the
    amendment lane mostly empty; instead one centred column, amendments lifted with a warm tint so they stand out */
 .tr[data-tab=both] .nd.am .cd{background:color-mix(in srgb,var(--am-soft) 60%,var(--tc))}
@@ -123,4 +124,4 @@ a.cd:hover{border-color:var(--tm)}.nd.am a.cd:hover{border-left-color:var(--am)}
 /* phone: compact top so the first node shows early */
 @media(max-width:520px){.tr{margin-top:-16px}.tr-head{padding:4px 16px 0}.tr-tabs{padding:3px}.tr-tabs button{min-height:38px}.tr-head h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.tr-sub{margin:0;font-size:.8rem}
   .tr-bar{gap:8px;padding-top:6px}.tr-jump{padding:6px 16px 4px}.tr-jump a{min-height:34px}.tr-count:not(.on){display:none}
-  .dh{top:44px;padding:5px 16px 0}.tl{padding-top:0}.dn{font-size:1.6rem}.dc{scroll-margin-top:46px}}
+  .dh{top:44px;padding:5px 16px 0}.nd{grid-template-columns:2.4rem 14px minmax(0,1fr);column-gap:6px}.nd::before{left:calc(2.4rem + 6px + 6px)}.nd .yr{font-size:.82rem}.nd:not(.fy) .yr{font-size:.74rem}.tl{padding-top:0}.dn{font-size:1.6rem}.dc{scroll-margin-top:46px}}

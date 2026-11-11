@@ -8,7 +8,7 @@ function rec(vp, path, ok, note) { rows.push([vp, path, ok ? 'PASS' : 'FAIL', no
 const wait = (p, ms) => p.waitForTimeout(ms);
 async function settle(p) { await p.waitForLoadState('load'); await wait(p, 700); }
 async function nodeInView(p, sel = 'a.cd[data-id]') {
-  return p.evaluate((sel) => { const h = innerHeight; for (const a of document.querySelectorAll(sel)) { const r = a.getBoundingClientRect(); if (r.top > h * 0.35 && r.bottom < h * 0.8) return a.dataset.id; } for (const a of document.querySelectorAll(sel)) { const r = a.getBoundingClientRect(); if (r.top > 60 && r.bottom < h) return a.dataset.id; } return null; }, sel);
+  return p.evaluate((sel) => { const h = innerHeight; for (const a of document.querySelectorAll(sel)) { const r = a.getBoundingClientRect(); if (r.top > h * 0.35 && r.bottom < h * 0.8) return a.dataset.id; } for (const a of document.querySelectorAll(sel)) { const r = a.getBoundingClientRect(); if (r.top > 160 && r.bottom < h) return a.dataset.id; } return null; }, sel);
 }
 async function treeState(p) {
   return p.evaluate(() => ({ y: Math.round((document.querySelector('main') || document.scrollingElement).scrollTop), hash: location.hash, path: location.pathname, hl: (document.querySelector('.nd.hl a.cd,.ls.hl a.cd') || {}).dataset?.id || null,
