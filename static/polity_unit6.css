@@ -169,3 +169,10 @@ body:has(.u6) .bottomnav .navoff{opacity:1!important;color:#4B556B}
 .xp-t tr.ok td{background:#ecfdf5;font-weight:600}
 .xp-t th:first-child{white-space:nowrap}.xp-t th{white-space:normal}.xp-t td,.xp-t th{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto}.xp-t td:nth-child(2){min-width:7.5em}
 .xp-better{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin:8px 0 0!important;padding:10px 12px;background:#fff7ed;border:1px solid #fdba74;border-radius:10px;font-weight:600}.xp-better .xp-k{color:#b45309}.xp-better .xp-num{background:#b45309}
+/* instant practice: options answer on tap; swipe hint animation */
+.pr-instant .geo-submit{display:none}
+.pr-instant .geo-option{cursor:pointer}
+.geo-option.is-picked{outline:3px solid #0f766e;outline-offset:2px}
+body.pr-go-next main{transform:translateX(-24px);opacity:.6;transition:transform .15s,opacity .15s}
+body.pr-go-prev main{transform:translateX(24px);opacity:.6;transition:transform .15s,opacity .15s}
+.pr-swipe-hint{text-align:center;color:#64748b;font-size:.82rem;margin:6px 0 0}

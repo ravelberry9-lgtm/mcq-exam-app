@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% block title %}Indian Polity · Group 2{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111x1') }}"><link rel="stylesheet" href="{{ url_for('static',filename='study_tools.css',v='st3') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111x1') }}"><link rel="stylesheet" href="{{ url_for('static',filename='study_tools.css',v='st3') }}"><link rel="stylesheet" href="{{ url_for('static',filename='practice_pick.css',v='pk2') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="/learn">‹ Subjects</a><strong>Indian Polity</strong></div>{% endblock %}
 {% block content %}<div class="u6">
 <section class="card geo-intro"><h1>Indian Polity / భారత రాజ్యాంగం</h1></section>
@@ -16,4 +16,4 @@
 {% if live %}<div class="u6-stats"><div class="st c1"><b>{{ st.chapters }}</b><span>Chapters<br>అధ్యాయాలు</span></div><a class="st c2" href="{{ url_for('polity_unit6.library',kind='bank',unit=unit.unit) }}"><b>{{ st.mcq }}</b><span>MCQs<br>సాధన ప్రశ్నలు</span></a><a class="st c3" href="{{ url_for('polity_unit6.library',kind='pyq',unit=unit.unit) }}"><b>{{ st.pyq }}</b><span>PYQs<br>గత ప్రశ్నలు</span></a>{% if st.desc %}<a class="st c4" href="{{ url_for('polity_unit6.descriptive') }}"><b>{{ st.desc }}</b><span>Descriptive<br>వివరణాత్మక</span></a>{% else %}<div class="st c4"><b>0</b><span>Descriptive<br>త్వరలో</span></div>{% endif %}</div>{% endif %}
 <ol class="u6-topics">{% for sec in unit.sections %}<li>{{ sec.title }}</li>{% endfor %}</ol></section>{% endfor %}
 </div>{% endblock %}
-{% block scripts %}<script src="{{ url_for('static',filename='polity_recall_hub.js',v='20261111n') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='practice_pick.js',v='pk1') }}" defer></script><script src="{{ url_for('static',filename='polity_recall_hub.js',v='20261111n') }}" defer></script>{% endblock %}

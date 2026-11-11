@@ -600,3 +600,22 @@ def save_exam_answer(exam_id):
     if item_id not in {q['id'] for q in e.questions} or answer not in (1,2,3,4):abort(400)
     e.answers={**(e.answers or {}),item_id:answer};db.session.commit()
     return {'saved':True}
+
+
+@bp.get('/pick.json')
+def pick():
+    """Section chooser for MCQ/PYQ practice: 'All' for the unit plus one entry per chapter, each with a start link."""
+    from flask import jsonify
+    kind=request.args.get('kind','bank')
+    if kind not in ('bank','pyq'):abort(400)
+    n=request.args.get('unit',type=int)
+    if n not in UNITS:abort(404)
+    lang=request.args.get('qlang','en') if request.args.get('qlang') in ('te','en','both') else 'en'
+    def entry(label,vals):
+        qs=selection({'chapter':'','kind':kind,'q':'','view':'','map':'','unit':'',**vals})
+        return dict(label=label,count=len(qs),url=url_for('.practice',item_id=qs[0]['id'],qlang=lang,kind=kind,**vals) if qs else None)
+    items=[entry('All of Unit %d'%n,{'unit':str(n)})]
+    for c in chapters(n):
+        items.append(entry(c['id']+'  '+c['title'],{'chapter':c['id']}))
+    return jsonify(kind=kind,unit=n,items=[i for i in items if i['count']],
+                   list_url=url_for('.library',kind=kind,unit=n,qlang=lang))
