@@ -24,10 +24,10 @@
    ],
    "options_te": [],
    "official_key": 2,
-   "study_answer": 2,
-   "key_status": "confirmed",
-   "scored": true,
-   "unresolved_key": false,
+   "study_answer": null,
+   "key_status": "disputed",
+   "scored": false,
+   "unresolved_key": true,
    "status": "include",
    "kind": "pyq",
    "answer": null,
@@ -35,8 +35,8 @@
    "topic": "Schedules, Articles and constitutional terminology",
    "original_answer_status": "OFFICIAL_ANSWER_KEY_CONFIRMED",
    "language_status": "English structured extraction; Telugu not included in index",
-   "explanation_en": "",
-   "explanation_te": "",
+   "explanation_en": "⚠ Disputed, not scored. Option 2 is incorrect (Art 243ZM: audit within six months). Options 3 (State Legislature, not Governor, prescribes qualifications) and 4 (report laid before State Legislature, not just Council) are also incorrect. Multiple answers; ambiguous.",
+   "explanation_te": "⚠ ఈ ప్రశ్నపై వివాదం ఉంది (disputed), అందుకే మార్కులు లెక్కించడం లేదు. AP హైకోర్టు 2026 అధికారిక కీ Q24 = 2. ప్రకరణ (Article) 243ZM ప్రకారం ఆరు నెలల్లో ఆడిట్ కావాలి, కాబట్టి 2 తప్పు. కానీ 3, 4 వాక్యాలు కూడా తప్పే (అర్హతలు రాష్ట్ర శాసనసభ నిర్ణయిస్తుంది). ఒకటి కంటే ఎక్కువ జవాబులు; అస్పష్టం.",
    "chapter_assignment": {
     "basis": "keyword:options",
     "assigned": "2026-11-11",
@@ -51,7 +51,19 @@
     "original_paper_verified": false
    },
    "review_date": "2026-11-11",
-   "explanation_id": "PYQ-POL-0413D7C0447B"
+   "explanation_id": "PYQ-POL-0413D7C0447B",
+   "key_audit": {
+    "category": "ambiguous",
+    "recorded_key": "2",
+    "official_key": 2,
+    "scored": false,
+    "note_en": "Disputed, not scored. Option 2 is incorrect (Art 243ZM: audit within six months). Options 3 (State Legislature, not Governor, prescribes qualifications) and 4 (report laid before State Legislature, not just Council) are also incorrect. Multiple answers; ambiguous.",
+    "note_te": "ఈ ప్రశ్నపై వివాదం ఉంది (disputed), అందుకే మార్కులు లెక్కించడం లేదు. AP హైకోర్టు 2026 అధికారిక కీ Q24 = 2. ప్రకరణ (Article) 243ZM ప్రకారం ఆరు నెలల్లో ఆడిట్ కావాలి, కాబట్టి 2 తప్పు. కానీ 3, 4 వాక్యాలు కూడా తప్పే (అర్హతలు రాష్ట్ర శాసనసభ నిర్ణయిస్తుంది). ఒకటి కంటే ఎక్కువ జవాబులు; అస్పష్టం.",
+    "evidence_en": "Official AP High Court 2026 key gives Q24 = 2 (bank matches). Option 2 is incorrect (Art 243ZM: audit within six months). Options 3 (State Legislature, not Governor, prescribes qualifications) and 4 (report laid before State Legislature, not just Council) are also incorrect. Multiple answers; ambiguous.",
+    "source": "keysrc/kstage/aphc_t4_official_key_reconciliation.csv; https://aphc.gov.in/docs/notification_1779972285_5.pdf Q24",
+    "evidence": "official paper re-check (keys2/official_check.json)",
+    "audited": "2026-11-11"
+   }
   },
   {
    "id": "PYQ-POL-47E26A7B15FC",

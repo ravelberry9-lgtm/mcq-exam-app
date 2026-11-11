@@ -744,7 +744,13 @@ def test_recall_pyq_count_matches_cards_and_map():
                     continue
                 opts=[r[f'option_{k}'] for k in range(1,5)]
                 assert p['q_en']==r['question_en'] and p['options_en']==opts,(it['id'],p['id'])
-                if r['correct_option'] in ('1','2','3','4'):
+                ka=r.get('key_audit') or {}
+                assert not ka.get('excluded'),(it['id'],p['id'])
+                if ka.get('study_answer'):  # audited key wins over the recorded correct_option
+                    assert p['answer_en']==opts[ka['study_answer']-1] and bool(p.get('disputed'))==(not ka['scored']),(it['id'],p['id'])
+                elif ka:
+                    assert p.get('disputed'),(it['id'],p['id'])
+                elif r['correct_option'] in ('1','2','3','4'):
                     assert p['answer_en']==opts[int(r['correct_option'])-1],(it['id'],p['id'])
                 if not r['question_te']:
                     assert p['q_te'] in ('',) or p['id'][4:]==r['record_id'] or p.get('translated')  # empty unless the app's own Telugu exists or ours (translated:true)

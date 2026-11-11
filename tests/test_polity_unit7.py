@@ -19,11 +19,17 @@ def test_polity_unit7_chapters_and_records(client,app):
     with app.app_context():
         qs=[q for q in records().values() if q['_chapter'].startswith('7.')]
     assert {q['_chapter'] for q in qs}>=set(U7)-{'7.2.3'} or {q['_chapter'] for q in qs}==set(U7)
-    assert sum(q['_kind']=='bank' for q in qs)>=800 and sum(q['_kind'] in ('pyq','primary_pyq') for q in qs)>=390
+    assert sum(q['_kind']=='bank' for q in qs)>=800 and sum(q['_kind'] in ('pyq','primary_pyq') for q in qs)>=380  # 386 after the 2026-11-11 chapter remap
     assert all(q['_answer'] in (1,2,3,4) for q in qs if q['_kind']=='bank')
     # official keys are never rewritten: disputed ones keep their recorded key and are flagged
-    d=[q for q in qs if q.get('key_status')=='disputed' and q.get('audit_note')]
+    # (3 of the 7 Unit 7 audit records now sit in their syllabus chapters in Units 8-9, so count across units)
+    with app.app_context():
+        d=[q for q in records().values() if q.get('audit_note')]
+    # the 2026-11-11 full key verification corrected some of them against the official paper (scored on the audited key)
+    fixed=[q for q in d if (q.get('key_audit') or {}).get('scored')]
     assert len(d)==7 and all(q.get('official_key') for q in d)
+    assert all(q['key_status']=='confirmed' and q['study_answer']==q['official_key']==q['key_audit']['study_answer'] for q in fixed)
+    assert all(q['key_status']=='disputed' for q in d if q not in fixed)
 
 def test_polity_unit7_chapter_notes_practice_descriptive(client,app):
     on(app)

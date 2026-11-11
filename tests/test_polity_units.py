@@ -50,7 +50,14 @@ def test_bank_records_copied_exactly_once():
             r = bank[rid]
             assert q['question_en'] == r['question_en'] and q['options_en'] == [r['option_%d' % i] for i in range(1, 5)]
             k = int(r['correct_option']) if r['correct_option'] in '1234' and r['correct_option'] else None
-            assert q['study_answer'] in (k, None) and (q['official_key'] in (k, None))
+            ka = r.get('key_audit') or {}  # audited key: corrected/reworded -> scored on the audited answer; else disputed
+            assert not ka.get('excluded'), rid
+            if ka.get('scored'):
+                assert q['study_answer'] == q['official_key'] == ka['study_answer'] and q['scored'] is True and q['key_status'] == 'confirmed'
+            elif ka:
+                assert q['study_answer'] == ka.get('study_answer') and q['key_status'] == 'disputed' and q['scored'] is False
+            else:
+                assert q['study_answer'] in (k, None) and q['official_key'] in (k, None)
             assert q['chapter'] == f.parent.name
     assert len(seen) >= 1350  # every bank record except ones outside units 6-10
     units = {int(f.parent.name.split('.')[0]) for f in seen.values()}

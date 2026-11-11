@@ -20,7 +20,7 @@ def _rid(x):
 
 def _recount():
     bank = {r['record_id']: r['exam'] for r in json.load(open(BANK / 'indian_polity_pyq_bank_v3.70.0.json', encoding='utf-8'))
-            if not r.get('duplicate_of')}
+            if not r.get('duplicate_of') and not (r.get('key_audit') or {}).get('excluded')}
     grp = {rid: rid for rid in bank}
     for gid, rids in json.load(open(BANK / 'repeat_groups.json', encoding='utf-8'))['groups'].items():
         for rid in rids:
@@ -46,7 +46,7 @@ def test_metrics_match_direct_recount():
     m = P.metrics()
     bank, grp, appsc, out = _recount()
     allm = set().union(*(v[-1] for v in out.values()))
-    assert m['total'] == len(bank) == 1458
+    assert m['total'] == len(bank) == 1457  # 1458 records minus 1 excluded by the key audit
     assert m['distinct_total'] == len(set(grp.values())) < m['total']
     assert m['appsc_total'] == len(appsc)
     assert m['mapped'] == len(allm) and m['appsc_mapped'] == len(allm & appsc)
@@ -67,7 +67,9 @@ def test_app_copies_not_counted_twice():
     for f in glob.glob(str(G2 / '**' / 'PYQ-Set.json'), recursive=True):
         for q in json.load(open(f, encoding='utf-8'))['questions']:
             assert q['source_record_id'] in bank
-    assert P.metrics()['total'] == len(bank)
+    excluded = {r['record_id'] for r in json.load(open(BANK / 'indian_polity_pyq_bank_v3.70.0.json', encoding='utf-8'))
+                if (r.get('key_audit') or {}).get('excluded')}
+    assert P.metrics()['total'] == len(bank) - len(excluded)
 
 
 def test_repeats_grouped_and_untranslated_shows_english(client, app):
