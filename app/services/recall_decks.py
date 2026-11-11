@@ -364,7 +364,8 @@ def chains():
 THEME_CHAIN = {'Amending power & basic structure': 'CH-amending-power', 'Right to property & Ninth Schedule': 'CH-property-ninth-schedule',
                'Equality & reservation': 'CH-reservation', 'Life & personal liberty (Article 21)': 'CH-article-21',
                'Rights read into Article 21': 'CH-article-21', 'Privacy, gender & personal law': 'CH-article-21',
-               'DPSP & Fundamental Duties': 'CH-fr-dpsp', 'Judiciary & tribunals': 'CH-tribunals'}
+               'DPSP & Fundamental Duties': 'CH-fr-dpsp', 'Judiciary & tribunals': 'CH-tribunals',
+               'Speech, religion & minority rights': 'CH-speech'}
 
 
 def card_chains(c):

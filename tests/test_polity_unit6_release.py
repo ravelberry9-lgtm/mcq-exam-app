@@ -430,6 +430,12 @@ def test_case_chains_data_complete_dated_and_linked():
     for x in ('CS-mr-balaji-1962','CS-nm-thomas-1975','CS-indra-sawhney-ii-1999','CS-ajit-singh-ii-1999','CS-ashoka-kumar-thakur-2008','CS-jaishri-patil-2021'):assert x in res
     assert 'AM-025' in [s['ref'] for s in next(c for c in raw if c['chain_id']=='CH-amending-power')['steps']]
 
+def test_theme_chain_map_points_to_real_chains():
+    from app.services import recall_decks as rd
+    rd.chains.cache_clear()
+    assert rd.THEME_CHAIN['Speech, religion & minority rights']=='CH-speech'
+    assert set(rd.THEME_CHAIN.values())<=set(rd.chains())
+
 def test_case_card_shows_all_its_chains(client,app):
     from app.services import recall_decks as rd
     rd.chains.cache_clear();enable(app)

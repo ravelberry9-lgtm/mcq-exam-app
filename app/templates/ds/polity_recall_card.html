@@ -67,7 +67,7 @@
 {%- endmacro %}
 {% macro trapflag(c) -%}
       {% if c.trap_en %}<div class="ac-note ac-trap"><b>{{ bi('Exam trap','పరీక్షలో జాగ్రత్త') }}</b>{{ bx(c.trap_en, c.trap_te, c.id) }}</div>{% endif %}
-      {% if c.flag %}<div class="ac-note">{{ c.flag|xl(c.id) }}</div>{% endif %}
+      {% if c.flag %}<div class="ac-note">{% if c.flag_te %}{{ bi(c.flag, c.flag_te) }}{% else %}{{ c.flag|xl(c.id) }}{% endif %}</div>{% endif %}
       {% if c.as_of %}<div class="ac-asof">{{ c.as_of }}</div>{% endif %}
 {%- endmacro %}
 {#- Related strip: chips to every linked article / amendment / case (links.json + the card's structured fields). -#}
