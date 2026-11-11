@@ -1,7 +1,7 @@
 """Unit 6 recall decks: one generic card schema behind the full-screen recall UI.
 
 Generic item fields: id, deck, chapter, sort, front_en/te, front_sub, cue_en/te, two_way, title_en/te, says_en/te,
-points_en/te, trap_en/te, articles, laxmikanth, gbk, card_ids, tested_count, as_of, flag, source ('laxmikanth'|'new').
+points_en/te, trap_en/te, articles, laxmikanth, gbk, card_ids, tested_count, pyq_count, as_of, flag, source ('laxmikanth'|'new').
 Data: content/polity/g2/recall_decks/<deck>.json (+ <deck>_new.json). The articles deck adapts article_cards.
 """
 import json
@@ -106,7 +106,7 @@ def _article_item(c):
         'title_en': c['concept_en'], 'title_te': c['concept_te'], 'says_en': c['says_en'], 'says_te': c['says_te'],
         'points_en': [], 'points_te': [], 'trap_en': c.get('trap_en'), 'trap_te': c.get('trap_te'),
         'articles': [], 'laxmikanth': c.get('laxmikanth'), 'gbk': c.get('gbk'), 'card_ids': c.get('card_ids') or [],
-        'tested_count': c.get('tested_count', 0), 'as_of': c.get('as_of'), 'flag': c.get('flag'), 'source': 'laxmikanth',
+        'tested_count': c.get('tested_count', 0), 'pyq_count': c.get('pyq_count', 0), 'as_of': c.get('as_of'), 'flag': c.get('flag'), 'source': 'laxmikanth',
         'part': c.get('part'),
     }
 
@@ -251,6 +251,8 @@ def light(it, deck_cfg):
         o['vs'] = [it.get('vs_en') or '', vte or it.get('vs_en') or ''] if it.get('vs_en') else None
     if it.get('popular_en'):
         o['pop'] = [it['popular_en'], it.get('popular_te') or it['popular_en']]
+    if it.get('pyq_count'):
+        o['q'] = it['pyq_count']  # real PYQs on the card: tile badge + 'Only asked in PYQs' filter
     return o
 
 

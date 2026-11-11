@@ -657,3 +657,17 @@ a.ac-art:hover,a.ac-art:focus-visible{background:color-mix(in srgb,var(--acc) 22
 @media (prefers-color-scheme:dark){body:has(#ac) .xj-n{color:#0F1626}}
 .xj-go:hover{background:color-mix(in srgb,var(--k) 16%,var(--card))}
 .xj-go:focus-visible{outline:2px solid var(--k);outline-offset:2px}
+
+/* PYQ chip in the jump row, tile badge, long-list toggle */
+.ac-stage{--xl-pyq:var(--pyq-t)}
+.xj-pyq{--k:var(--xl-pyq)}
+.xj-pyq>i{font-weight:900}
+.ct-pyqs{scroll-margin-top:64px}
+.ct-pyqs:focus{outline:none}
+.ct-pyqall{align-self:flex-start;margin:10px 0 0;min-height:40px;padding:6px 14px;border-radius:99px;border:1.5px solid var(--pyq);
+  background:transparent;color:var(--ink);font:inherit;font-weight:700;font-size:.88rem;cursor:pointer}
+.ct-pyqall:focus-visible{outline:2px solid var(--pyq);outline-offset:2px}
+.t-pyq{position:absolute;right:4px;bottom:4px;padding:1px 5px;border-radius:99px;font-size:9px;font-weight:800;line-height:1.35;
+  background:color-mix(in srgb,var(--xl-pyq) 16%,var(--card));color:var(--ink);border:1px solid color-mix(in srgb,var(--xl-pyq) 60%,transparent);pointer-events:none}
+@container (max-height:70px){.t-pyq{font-size:8px;right:3px;bottom:3px;padding:0 4px}}
+@container (max-width:64px){.t-pyq{font-size:8px;padding:0 3px}}

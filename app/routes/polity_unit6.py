@@ -240,7 +240,8 @@ def _recall_page(deck_id):
         if 'acc' not in x:x['acc'],x['ink']=_acc_pair(x['ch'])
     return render_template('ds/polity_recall.html',d=d,total=len(cards),chapter=ch,names=ARTCARD_CHAPTERS,lang=language(),lang_set='qlang' in request.args,
                            parts=_recall.part_counts(cards),units=_recall.UNITS,ucounts=_recall.unit_counts(cards),light=light,
-                           open_id=_open if _open in {c['id'] for c in cards} else '',back=_back,for_=_for)
+                           open_id=_open if _open in {c['id'] for c in cards} else '',back=_back,for_=_for,
+                           pyq_cards=sum(1 for c in cards if c.get('pyq_count')))
 @bp.get('/recall/<deck_id>/card/<card_id>')
 def recall_card(deck_id,card_id):
     """One card's full detail markup (<article class="ac-src">), fetched lazily when the card is opened. Cached by data version."""

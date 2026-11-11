@@ -284,7 +284,7 @@ def test_recall_deck_files_schema():
     from app.services import recall_decks as rd
     root=Path(rd.__file__).resolve().parents[2]/'content'/'polity'/'g2'
     card_ids={c['id'] for f in (root/'concept_cards').glob('cards_*.json') for c in json.loads(f.read_text(encoding='utf-8'))}
-    files=sorted(p for p in rd.DIR.glob('*.json') if p.name not in ('case_chains.json','links.json'));assert files
+    files=sorted(p for p in rd.DIR.glob('*.json') if p.name not in ('case_chains.json','links.json','pyq_map.json'));assert files
     seen=set()
     for f in files:
         deck=f.stem.removesuffix('_new');assert deck in rd.DECKS,f
@@ -687,3 +687,55 @@ def test_setup_more_options_and_slim_nav(client,app):
     assert 'మరిన్ని ఎంపికలు' in more and 'id="ac-more-sum"' in more
     assert 'name="part"' not in more and 'name="unit"' not in more and p.index('id="ac-start"')<p.index('id="ac-more"')
     assert 'class="nv-l"' in client.get('/learn/').get_data(as_text=True)
+
+
+def _pyq_bank():
+    import json
+    from pathlib import Path
+    root=Path(__file__).resolve().parents[1]/'content'/'polity'/'g2'
+    bank={}
+    for f in root.glob('**/PYQ-Set.json'):
+        for q in json.loads(f.read_text(encoding='utf-8'))['questions']:bank[q['id']]=(q['question_en'],q['options_en'],q['study_answer'] or q.get('answer'))
+    for q in json.loads((root/'_shared'/'PYQs.json').read_text(encoding='utf-8')):bank[q['id']]=(q['question_en'],q['options_en'],q['answer'])
+    return root,bank
+
+
+def test_recall_pyq_count_matches_cards_and_map():
+    import json,re
+    from app.services import recall_decks as rd
+    root,bank=_pyq_bank()
+    pm=json.loads((root/'recall_decks'/'pyq_map.json').read_text(encoding='utf-8'))
+    total=0
+    for d in rd.DECKS:
+        for it in rd.items(d):
+            ps=(it.get('exam') or {}).get('pyqs') or [];real=[p for p in ps if p.get('kind')=='pyq']
+            assert it.get('pyq_count',0)==len(real),it['id']
+            assert it.get('tested_count',0)==len(real),it['id']
+            # real PYQs come first, newest year first
+            assert ps[:len(real)]==real,it['id']
+            yrs=[int(m.group()) if (m:=re.search(r'\d{4}',str(p.get('year') or ''))) else 0 for p in real];assert yrs==sorted(yrs,reverse=True),it['id']
+            ids=[p.get('id') or p.get('qid') for p in real]
+            assert set(pm.get(it['id'],[]))<=set(ids)|{None},it['id']
+            for p in real:
+                i=p.get('id') or p.get('qid')
+                if i in bank and p.get('options_en') and bank[i][2]:  # copied exactly from the bank, answer = the study answer's option text
+                    q,opts,ans=bank[i];assert p['q_en']==q and p['options_en']==opts and p['answer_en']==opts[ans-1],(it['id'],i)
+            total+=len(real)
+    assert total>=600 and len({i for v in pm.values() for i in v})>=300
+
+
+def test_recall_pyq_chip_badge_and_filter(client,app):
+    from app.services import recall_decks as rd
+    enable(app)
+    its={i['id']:i for i in rd.items('articles')}
+    g=frag(client,'AC-6.4-32')
+    n=its['AC-6.4-32']['pyq_count'];assert n>12
+    assert 'class="xj-go xj-pyq" data-pyq="pyq-AC-6.4-32" href="#pyq-AC-6.4-32"' in g and 'PYQలు' in g and f'<b class="xj-n">{n}</b>' in g
+    assert 'id="pyq-AC-6.4-32"' in g and 'data-pyqall="pyq-AC-6.4-32"' in g and g.count('data-more hidden')==n+len([p for p in its['AC-6.4-32']['exam']['pyqs'] if p.get('kind')!='pyq'])-6
+    zero=next(i for i in its.values() if not i.get('pyq_count'))
+    assert 'xj-pyq' not in frag(client,zero['id'])
+    page=client.get('/learn/polity/unit6/recall/articles').get_data(as_text=True)
+    assert 'name="pyq"' in page and 'Only asked in PYQs' in page and 'PYQ వచ్చినవి మాత్రమే' in page
+    D=deck_data(page);q={x['id']:x.get('q') for x in D['cards']}
+    assert q['AC-6.4-32']==n and q[zero['id']] is None
+    js=open('static/polity_articles.js',encoding='utf-8').read();assert 'o.q > 0' in js and 't-pyq' in js and 'showPyqs' in js

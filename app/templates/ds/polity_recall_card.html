@@ -76,9 +76,12 @@
 {% macro jumprow(c) -%}{% set R = related(c) %}{% set K = {'articles': [('cases', '⚖', 'Cases', 'ఈ ప్రకరణపై కేసులు'), ('amendments', '✎', 'Amendments', 'సవరణలు')],
   'amendments': [('articles', '§', 'Articles changed', 'మారిన ప్రకరణలు'), ('cases', '⚖', 'Cases', 'కేసులు')],
   'cases': [('articles', '§', 'Articles', 'ప్రకరణలు'), ('amendments', '✎', 'Amendments', 'సవరణలు')]}.get(d.id, []) %}
-  {%- if K and (R[K[0][0]] or R[K[1][0]]) %}
+  {%- set NP = c.pyq_count or 0 %}
+  {%- if (K and (R[K[0][0]] or R[K[1][0]])) or NP %}
       <nav class="xj" aria-label="Related cards">{% for k, ic, en, te in K %}{% if R[k] %}
         <a class="xj-go xj-{{ k }}" data-for="{{ k }}" href="{{ url_for('polity_unit6.recall_deck', deck_id=k) }}?for={{ c.id|urlencode }}&amp;back={{ (d.id ~ ':' ~ c.id)|urlencode }}"><i aria-hidden="true">{{ ic }}</i><span class="xj-t">{{ bi(en, te) }}</span><b class="xj-n">{{ R[k]|length }}</b></a>{% endif %}{% endfor %}
+        {%- if NP %}
+        <a class="xj-go xj-pyq" data-pyq="pyq-{{ c.id }}" href="#pyq-{{ c.id }}"><i aria-hidden="true">?</i><span class="xj-t">{{ bi('PYQs', 'PYQలు') }}</span><b class="xj-n">{{ NP }}</b></a>{% endif %}
       </nav>{% endif %}
 {%- endmacro %}
 {% macro relstrip(c) -%}{% set R = related(c) %}{% if R.articles or R.amendments or R.cases %}
@@ -94,12 +97,12 @@
       <section class="ct-exam">
         <h3 class="ct-exh">{{ bi('How it is asked in exams', 'పరీక్షల్లో ఇలా అడుగుతారు') }}</h3>
         {% if ex.patterns_en %}<div class="ac-points">{{ bl(ex.patterns_en if ex.patterns_en is not string else [ex.patterns_en], ex.patterns_te if ex.patterns_te is not string else [ex.patterns_te]) }}</div>{% endif %}
-        {% if ex.pyqs %}<ol class="ct-pyqs">{% for q in ex.pyqs %}
-          <li class="ct-pyq"><span class="ct-badge{{ ' mcq' if q.kind != 'pyq' }}">{% if q.kind == 'pyq' %}PYQ · {{ exam_label(q.exam) or 'APPSC' }}{% if q.year %} {{ q.year }}{% endif %}{% else %}MCQ{% endif %}</span>
+        {% if ex.pyqs %}{% set LONG = ex.pyqs|length > 12 %}<ol class="ct-pyqs{{ ' long' if LONG }}" id="pyq-{{ c.id }}" tabindex="-1">{% for q in ex.pyqs %}
+          <li class="ct-pyq"{% if LONG and loop.index > 6 %} data-more hidden{% endif %}><span class="ct-badge{{ ' mcq' if q.kind != 'pyq' }}">{% if q.kind == 'pyq' %}PYQ · {{ exam_label(q.exam) or 'APPSC' }}{% if q.year %} {{ q.year }}{% endif %}{% else %}MCQ{% endif %}</span>
             <div class="ct-pq">{{ bi(q.q_en, q.q_te) }}</div>
             {% if q.options_en %}<ol class="ct-qopts" type="A">{% for o in q.options_en %}<li>{{ bi(o, (q.options_te or [])[loop.index0]) }}</li>{% endfor %}</ol>{% endif %}
             <details class="ct-reveal"><summary>{{ bi('Show answer', 'జవాబు') }}</summary><div>{{ bi(q.answer_en, q.answer_te) }}</div>{% if q.disputed %}<div class="ct-qnote">{{ bi(q.note_en or '⚠ The key for this question is disputed', q.note_te or '⚠ ఈ ప్రశ్న జవాబుపై వివాదం ఉంది') }}</div>{% elif q.note_en %}<div class="ct-qnote">{{ bi(q.note_en, q.note_te) }}</div>{% endif %}</details></li>{% endfor %}
-        </ol>{% endif %}
+        </ol>{% if LONG %}<button type="button" class="ct-pyqall" data-pyqall="pyq-{{ c.id }}" aria-expanded="false">{{ bi('Show all ' ~ ex.pyqs|length, 'అన్నీ చూపించు (' ~ ex.pyqs|length ~ ')') }}</button>{% endif %}{% endif %}
         {% set prs = ex.practice if ex.practice is sequence and ex.practice is not mapping else [ex.practice] %}{% for pr in prs %}{% if pr and pr.options_en %}
         <div class="ct-prac" data-ans="{{ pr.answer or ((pr.options_en.index(pr.answer_en) + 1) if pr.answer_en in pr.options_en else '') }}">
           <p class="ct-ptag">{{ bi('Try one', 'ఒకటి ప్రయత్నించండి') }}</p>

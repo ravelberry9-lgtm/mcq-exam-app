@@ -45,7 +45,7 @@
   function isTheme(id) { return !!byId[id].dataset.themeTile; }
   function passes(o, c) {
     return (!c.chapter || o.ch === c.chapter) && (c.newer !== false || o.src !== "new") &&
-      (!c.parts || !c.parts.length || c.parts.indexOf(o.p) >= 0) && (!c.unit || String(o.u) === String(c.unit));
+      (!c.parts || !c.parts.length || c.parts.indexOf(o.p) >= 0) && (!c.unit || String(o.u) === String(c.unit)) && (!c.pyq || o.q > 0);
   }
   // ids of a theme tile's cases that pass the run's filters
   function themeRows(src, c) {
@@ -114,7 +114,7 @@
     var f = form.elements;
     return {
       chapter: f.chapter && f.chapter.checked ? f.chapter.value : "", parts: pickedParts(), unit: f.unit.value, mode: f.mode.value, lang: f.lang.value, density: f.density.value,
-      only: f.only.checked, order: f.order.value, newer: f.newer ? f.newer.checked : true
+      only: f.only.checked, order: f.order.value, newer: f.newer ? f.newer.checked : true, pyq: f.pyq ? f.pyq.checked : false
     };
   }
   function pickedParts() {
@@ -146,6 +146,7 @@
     var lang = saved.lang || readRaw(LANG_KEY);
     if (!langFromUrl && LANGS.indexOf(lang) >= 0) setRadio("lang", lang);
     form.elements.only.checked = !!saved.only;
+    if (form.elements.pyq) form.elements.pyq.checked = !!saved.pyq;
     var order = ORDERS.indexOf(saved.order) >= 0 ? saved.order : saved.shuffle ? "rand" : "seq"; // older saves had a Shuffle toggle
     setRadio("order", order);
   }
@@ -176,17 +177,18 @@
     var te = [c.density === "32" ? "4×8" : "3×6", L[0], c.order === "rand" ? "కలగలుపు" : "వరుసగా"], en = [c.density === "32" ? "4×8" : "3×6", L[1], c.order === "rand" ? "Random" : "In order"];
     if (c.only) { te.push("మళ్ళీ చూడాల్సినవి"); en.push("Revise only"); }
     if (form.elements.newer && !c.newer) { te.push("కొత్తవి లేకుండా"); en.push("No newer"); }
+    if (c.pyq) { te.push("PYQ వచ్చినవి"); en.push("PYQ cards"); }
     el.innerHTML = biText(esc(en.join(", ")), esc(te.join(", ")));
   }
   function paintSetup() {
     var c = choices();
     paintMore(c);
     root.dataset.lang = c.lang;
-    var inChapter = pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: false, newer: c.newer });
+    var inChapter = pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: false, newer: c.newer, pyq: c.pyq });
     // Part counts follow the unit / chapter / newer filters
     [].forEach.call(form.querySelectorAll("[data-pcount]"), function (el) {
       var p = el.dataset.pcount;
-      el.textContent = CARDS.filter(function (o) { return passes(o, { chapter: c.chapter, unit: c.unit, newer: c.newer, parts: p ? [p] : [] }); }).length;
+      el.textContent = CARDS.filter(function (o) { return passes(o, { chapter: c.chapter, unit: c.unit, newer: c.newer, pyq: c.pyq, parts: p ? [p] : [] }); }).length;
       el.closest(".ac-part").classList.toggle("none", el.textContent === "0");
     });
     var ids = pickIds(c);
@@ -222,7 +224,7 @@
   function savePos() {
     if (!run || deepLink) return; // a deep link (?open=) is a detour, not a study session
     writeJSON(POS_KEY, { ids: run.ids, base: run.base, page: run.page, cur: run.cur, t: Date.now(),
-      c: { chapter: run.chapter, parts: run.parts, unit: run.unit, mode: run.mode, lang: run.lang, density: run.density, order: run.order, only: run.only, newer: run.newer } });
+      c: { chapter: run.chapter, parts: run.parts, unit: run.unit, mode: run.mode, lang: run.lang, density: run.density, order: run.order, only: run.only, newer: run.newer, pyq: run.pyq } });
   }
   function savedPos() {
     var p = readJSON(POS_KEY);
@@ -252,9 +254,9 @@
     if (!ids.length) return;
     var order = c.order === "rand" ? "rand" : "seq";
     run = {
-      all: c.all || pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: c.only, newer: c.newer, mode: "a" }),
+      all: c.all || pickIds({ chapter: c.chapter, parts: c.parts, unit: c.unit, only: c.only, newer: c.newer, pyq: c.pyq, mode: "a" }),
       base: ids.slice(), ids: order === "rand" ? shuffled(ids) : ids.slice(), order: order, page: 0, cur: -1, marks: {},
-      mode: c.mode, lang: c.lang, density: c.density || "18", chapter: c.chapter || "", parts: (c.parts || []).slice(), unit: c.unit || "", only: !!c.only, newer: c.newer !== false
+      mode: c.mode, lang: c.lang, density: c.density || "18", chapter: c.chapter || "", parts: (c.parts || []).slice(), unit: c.unit || "", only: !!c.only, newer: c.newer !== false, pyq: !!c.pyq
     };
     sum.hidden = true;
     detail.hidden = true;
@@ -318,7 +320,8 @@
     var n = num(id), stateText = state === "k" ? "known" : state === "x" ? "to revise" : "not marked yet";
     var sb = sub(id);
     var band = src.querySelector(".s-band");
-    var label = (run.mode === "a" ? frontEn(id) + (sb ? " " + sb : "") : conceptEn(id)) + (band ? "" : ", chapter " + src.dataset.ch) + ", " + stateText;
+    var label = (run.mode === "a" ? frontEn(id) + (sb ? " " + sb : "") : conceptEn(id)) + (band ? "" : ", chapter " + src.dataset.ch) +
+      (info[id] && info[id].q ? ", " + info[id].q + " PYQs" : "") + ", " + stateText;
     var cue;
     if (isTheme(id)) {
       var n = themeRows(src, run).length;
@@ -335,7 +338,8 @@
     else cue = '<b class="t-num" style="--len:' + Math.max(3, n.length) + '">' + esc(n) + "</b>";
     return '<button type="button" class="ac-tile" data-i="' + index + '" data-state="' + state + '" style="--acc:' + src.dataset.acc + ';--acc-ink:' + (src.dataset.ink || '') +
       '" aria-label="' + esc(label) + '"><span class="t-ch' + (band ? " t-band" : "") + '" aria-hidden="true">' + (band ? band.innerHTML : src.dataset.ch) +
-      '</span><span class="t-mark" aria-hidden="true"></span><span class="t-cue">' + cue + "</span></button>";
+      '</span><span class="t-mark" aria-hidden="true"></span><span class="t-cue">' + cue + "</span>" +
+      (info[id] && info[id].q ? '<span class="t-pyq" aria-hidden="true">PYQ ' + info[id].q + "</span>" : "") + "</button>";
   }
   // popular name ('Cross Roads case') under the year: 3 x 6 only, and fitTiles drops it when it would shrink the cue
   function popHTML(src) {
@@ -467,7 +471,7 @@
   function toggleMode() {
     if (!anyTwoWay) return;
     var mode = run.mode === "a" ? "b" : "a";
-    var ids = THEMES ? pickIds({ chapter: run.chapter, parts: run.parts, unit: run.unit, only: run.only, newer: run.newer, mode: mode })
+    var ids = THEMES ? pickIds({ chapter: run.chapter, parts: run.parts, unit: run.unit, only: run.only, newer: run.newer, pyq: run.pyq, mode: mode })
       : run.all.filter(function (id) { return mode === "a" || canB(id); });
     if (!ids.length) { toast("No two-way cards here", "ఇక్కడ రెండు వైపుల కార్డులు లేవు"); return; }
     if (THEMES) toast(mode === "b" ? "Theme → Cases" : "Case → Issue", mode === "b" ? "అంశం → కేసులు" : "కేసు → అంశం");
@@ -742,6 +746,10 @@
       try { history.replaceState(history.state, "", location.pathname + "?open=" + encodeURIComponent(run.ids[run.cur])); } catch (er) { /* ignore */ }
       return; // the link itself navigates
     }
+    var pq = e.target.closest("a[data-pyq]");
+    if (pq) { e.preventDefault(); return showPyqs(pq.dataset.pyq); }
+    var all = e.target.closest("button[data-pyqall]");
+    if (all) return togglePyqAll(all);
     var a = e.target.closest("a[data-go]");
     if (a && run) { e.preventDefault(); return go(a.dataset.go, a.getAttribute("href")); }
     var b = e.target.closest("button");
@@ -756,6 +764,23 @@
     if (b.dataset.act === "missed") return reviseMissed();
     if (b.dataset.act === "back") return exitStudy();
     if (b.dataset.act === "stay") return dismissSummary();
+  }
+  // jump row 'PYQs N' chip: scroll the open card to its PYQ list (no hash change: history drives the card view)
+  function showPyqs(listId) {
+    var el = document.getElementById(listId);
+    if (!el) return;
+    for (var p = el.parentElement; p && p !== detail; p = p.parentElement) if (p.tagName === "DETAILS") p.open = true;
+    el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    try { el.focus({ preventScroll: true }); } catch (er) { el.focus(); }
+  }
+  // long PYQ lists (> 12) show 6 first; the button reveals / hides the rest
+  function togglePyqAll(b) {
+    var ol = document.getElementById(b.dataset.pyqall);
+    if (!ol) return;
+    var open = b.getAttribute("aria-expanded") !== "true";
+    [].forEach.call(ol.querySelectorAll("[data-more]"), function (li) { li.hidden = !open; });
+    b.setAttribute("aria-expanded", open ? "true" : "false");
+    b.hidden = open;
   }
   // a card in several story chains: tabs switch which chain's timeline is shown
   function chainTab(b) {
