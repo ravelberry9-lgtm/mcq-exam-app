@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% block title %}Edit {{ item_id }}{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111n') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111w') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="{{ request.args.get('back') if request.args.get('back','').startswith('/learn/polity/unit6/') else url_for('polity_admin.home') }}">‹ Back</a><strong>{{ item_id }}</strong></div>{% endblock %}
 {% block content %}<div class="u6 u6-admin">
 {% with m=get_flashed_messages() %}{% for x in m %}<p class="u6-flash">{{ x }}</p>{% endfor %}{% endwith %}

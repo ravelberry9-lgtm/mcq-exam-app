@@ -634,7 +634,7 @@ def test_recall_lazy_card_endpoint_filters_and_deep_link(client,app):
     for t in ('ac-data','cardUrl','prefetch(','passes(','data-retry','u6_artcards_v1'):assert t in js,t
     # hub renamed, URLs unchanged
     h=client.get('/learn/polity/unit6/recall').get_data(as_text=True)
-    assert 'Polity recall cards' in h and 'పాలిటీ రీకాల్ కార్డులు' in h and '/learn/polity/unit6/recall/cases"' in h
+    assert 'Polity recall cards' in h and '<span class="ac-te" lang="te">పాలిటీ' not in h and '/learn/polity/unit6/recall/cases"' in h
 
 
 def test_recall_entry_on_polity_page_and_start_first(client,app):
@@ -645,7 +645,7 @@ def test_recall_entry_on_polity_page_and_start_first(client,app):
     assert h.index('class="card pr"')<h.index('u6-unit')
     for d in rd.DECKS:
         assert f'/learn/polity/unit6/recall/{d}?from=polity"' in h and f'data-total="{len(rd.items(d))}"' in h
-    assert 'ప్రకరణలు' in h and 'సవరణలు' in h and 'కేసులు' in h and '/learn/polity/unit6/recall"' in h
+    assert 'Articles' in h and 'Amendments' in h and 'Cases' in h and 'ప్రకరణలు' not in h and '/learn/polity/unit6/recall"' in h
     c=client.get('/learn/polity/unit6/recall/cases?from=polity').get_data(as_text=True)
     assert '‹ Polity' in c and '‹ Recall cards' in client.get('/learn/polity/unit6/recall/cases').get_data(as_text=True)
     # Start (with live count) comes before every optional filter; Continue sits beside it
@@ -701,25 +701,33 @@ def _pyq_bank():
 
 
 def test_recall_pyq_count_matches_cards_and_map():
+    """Card PYQs are copied exactly from the master bank (content/polity/pyq_bank), key = correct_option's text; repeats grouped."""
     import json,re
+    from pathlib import Path
     from app.services import recall_decks as rd
-    root,bank=_pyq_bank()
-    pm=json.loads((root/'recall_decks'/'pyq_map.json').read_text(encoding='utf-8'))
+    root=Path(__file__).resolve().parents[1]/'content'/'polity'
+    mb={r['record_id']:r for r in json.loads((root/'pyq_bank'/'indian_polity_pyq_bank_v3.70.0.json').read_text(encoding='utf-8'))}
+    pm=json.loads((root/'g2'/'recall_decks'/'pyq_map.json').read_text(encoding='utf-8'))
     total=0
     for d in rd.DECKS:
         for it in rd.items(d):
             ps=(it.get('exam') or {}).get('pyqs') or [];real=[p for p in ps if p.get('kind')=='pyq']
             assert it.get('pyq_count',0)==len(real),it['id']
-            assert it.get('tested_count',0)==len(real),it['id']
-            # real PYQs come first, newest year first
+            assert it.get('tested_count',0)==sum(len(p.get('asked') or [1]) for p in real),it['id']
             assert ps[:len(real)]==real,it['id']
             yrs=[int(m.group()) if (m:=re.search(r'\d{4}',str(p.get('year') or ''))) else 0 for p in real];assert yrs==sorted(yrs,reverse=True),it['id']
-            ids=[p.get('id') or p.get('qid') for p in real]
-            assert set(pm.get(it['id'],[]))<=set(ids)|{None},it['id']
+            mids={x for p in real for x in (p.get('master_ids') or [p.get('master_id')]) if x}
+            assert {x[4:] for x in pm.get(it['id'],[])}<=mids,it['id']
             for p in real:
-                i=p.get('id') or p.get('qid')
-                if i in bank and p.get('options_en') and bank[i][2]:  # copied exactly from the bank, answer = the study answer's option text
-                    q,opts,ans=bank[i];assert p['q_en']==q and p['options_en']==opts and p['answer_en']==opts[ans-1],(it['id'],i)
+                r=mb.get(p.get('master_id'))
+                if not r:
+                    continue
+                opts=[r[f'option_{k}'] for k in range(1,5)]
+                assert p['q_en']==r['question_en'] and p['options_en']==opts,(it['id'],p['id'])
+                if r['correct_option'] in ('1','2','3','4'):
+                    assert p['answer_en']==opts[int(r['correct_option'])-1],(it['id'],p['id'])
+                if not r['question_te']:
+                    assert p['q_te'] in ('',) or p['id'][4:]==r['record_id']  # empty unless the app's own Telugu exists
             total+=len(real)
     assert total>=600 and len({i for v in pm.values() for i in v})>=300
 

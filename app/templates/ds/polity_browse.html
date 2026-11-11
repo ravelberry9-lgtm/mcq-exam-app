@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% block title %}Unit 6 · Indian Polity{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111n') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111w') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.home') if mode=='unit' else url_for('polity_unit6.chapter',chapter_id=filters.chapter) if mode=='library' and filters.chapter else url_for('polity_unit6.unit') }}">‹ {{ 'Polity' if mode=='unit' else 'Chapter' if mode=='library' and filters.chapter else 'Unit 6' }}</a><strong>{{ 'Chapters' if mode=='unit' else 'Practice' if mode=='library' else chapter.id }}</strong></div>{% endblock %}
 {% block content %}<div class="u6">
 {% if mode=='unit' %}

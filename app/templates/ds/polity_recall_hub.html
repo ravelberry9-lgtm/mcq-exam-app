@@ -1,19 +1,19 @@
 {% extends 'ds/base.html' %}
 {% block title %}Polity recall cards{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111pm') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111q') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111w') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_articles.css',v='20261111q') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><b>Polity recall cards · పాలిటీ రీకాల్ కార్డులు</b></div>{% endblock %}
 {% block content %}<div class="u6 ac rh" id="ac" data-lang="both">
   <header class="rh-head">
-    <h1 class="ac-title"><span class="ac-te" lang="te">పాలిటీ రీకాల్ కార్డులు</span><span class="ac-en" lang="en">Polity recall cards</span></h1>
-    <p class="rh-ask"><span lang="te">ఏ కార్డులతో సాధన చేద్దాం?</span> <span class="rh-en">Pick a deck to recall</span></p>
-    <p class="rh-lede"><span lang="te">ముందు వైపు చూసి జవాబు గుర్తు చేసుకోండి, తర్వాత తెరిచి సరిచూసుకోండి.</span></p>
+    <h1 class="ac-title"><span class="ac-en" lang="en">Polity recall cards</span></h1>
+    <p class="rh-ask"><span class="rh-en">Pick a deck to recall</span></p>
+    <p class="rh-lede"></p>
   </header>
   <ul class="rh-list">{% for d in decks %}
     <li><a class="rh-tile" href="{{ url_for('polity_unit6.recall_deck',deck_id=d.id) }}" data-store="{{ d.store }}" data-total="{{ d.count }}">
       <span class="rh-ico" aria-hidden="true">{{ d.icon }}</span>
       <span class="rh-main">
-        <b class="rh-name"><span lang="te">{{ d.title_te }}</span> <span class="rh-en">{{ d.title_en }}</span></b>
-        <span class="rh-desc"><span lang="te">{{ d.desc_te }}</span><span class="rh-en">{{ d.desc_en }}</span></span>
+        <b class="rh-name"><span class="rh-en">{{ d.title_en }}</span></b>
+        <span class="rh-desc"><span class="rh-en">{{ d.desc_en }}</span></span>
         <span class="rh-bar" aria-hidden="true"><i class="k"></i><i class="x"></i></span>
         <span class="rh-stat"><b>{{ d.count }}</b> cards<span class="rh-prog"></span>{% if d.new %} · {{ d.new }} new{% endif %}</span>
         {% set q=pm.by_deck.get(d.id) %}{% if q %}<span class="pq-tile"><span>PYQ <b>{{ q.pyqs }}</b></span><span>APPSC <b>{{ q.appsc_pyqs }}</b></span></span>{% endif %}</span>
