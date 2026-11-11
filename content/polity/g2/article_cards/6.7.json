@@ -192,16 +192,18 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఏ ప్రకరణ / ఏ భాగం (XX)?",
-    "ఎవరు ప్రారంభించవచ్చు; రాష్ట్రపతి అనుమతి కావాలా; రాష్ట్రం ప్రారంభించగలదా?",
-    "ఏ అంశాలకు రాష్ట్రాల ధృవీకరణ కావాలి (54, 55, 73, 162, 241, 279A, న్యాయవ్యవస్థ, ఏడో షెడ్యూల్, ప్రాతినిధ్యం, 368 స్వయంగా)?",
-    "కేసుల గొలుసు, 24వ / 42వ సవరణలు."
+    "రాజ్యాంగాన్ని సవరించే పార్లమెంట్ అధికారం ఏ ప్రకరణలో, ఏ భాగంలో ఉంది? (ప్రకరణ 368, భాగం XX)",
+    "సవరణ బిల్లును ఎవరు ప్రవేశపెట్టవచ్చు? (ఏ సభలోనైనా — మంత్రి లేదా ప్రైవేట్ సభ్యుడు; రాష్ట్రపతి ముందస్తు అనుమతి అక్కర్లేదు; రాష్ట్ర శాసనసభ ప్రారంభించలేదు)",
+    "ఏ అంశాలకు సవరణకు సగం రాష్ట్రాల ఆమోదం (ratification) కావాలి? (రాష్ట్రపతి ఎన్నిక, కేంద్ర/రాష్ట్ర కార్యనిర్వాహక పరిధి, న్యాయవ్యవస్థ, ఏడో షెడ్యూల్, పార్లమెంట్‌లో రాష్ట్రాల ప్రాతినిధ్యం, ప్రకరణ 368 స్వయంగా)",
+    "ప్రాథమిక హక్కులతో సహా ఏ భాగాన్నైనా సవరించే అధికారం పార్లమెంట్‌కు ఉందని స్పష్టం చేసిన సవరణ ఏది? (24వ సవరణ, 1971)",
+    "ప్రకరణ 368 పరిధికి బయట సాధారణ మెజారిటీతో మార్చగలిగేవి ఏవి? (కొత్త రాష్ట్రాలు — ప్రకరణలు 2, 3; కోరం; ఎంపీల జీతాలు; పౌరసత్వం మొదలైనవి)"
    ],
    "patterns_en": [
-    "Which Article / which Part (XX)?",
-    "Who can initiate; is President's permission needed; can a State initiate?",
-    "Which items need State ratification (54, 55, 73, 162, 241, 279A, judiciary, Seventh Schedule, representation, 368 itself)?",
-    "Case chain and the 24th / 42nd Amendments."
+    "Which Article and Part give Parliament the power to amend the Constitution? (Article 368, Part XX)",
+    "Who can introduce an Amendment Bill? (either House — a minister or a private member; no prior Presidential sanction; a State Legislature cannot initiate)",
+    "Which matters need ratification by half the States? (President's election, extent of Union/State executive power, judiciary, Seventh Schedule, States' representation in Parliament, Article 368 itself)",
+    "Which amendment affirmed Parliament's power to amend any part, including Fundamental Rights? (24th Amendment, 1971)",
+    "Which matters can be changed by simple majority outside Article 368? (new States — Articles 2, 3; quorum; MPs' salaries; citizenship, etc.)"
    ],
    "pyqs": [
     {
@@ -514,12 +516,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?"
+    "పార్లమెంట్ సభల కోరం (quorum) ఏ ప్రకరణలో ఉంది? (ప్రకరణ 100)",
+    "ప్రకరణ 100 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "పార్లమెంట్ సభల కోరం ఎంత? (సభ మొత్తం సభ్యుల్లో పదో వంతు — హాజరైనవారిలో కాదు)",
+    "సాధారణ మెజారిటీతో మార్చగల అంశాల్లో ఇది ఉందా? (అవును — కోరం, జీతాలు, ప్రక్రియ నియమాలు అన్నీ ఈ వర్గమే)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?"
+    "Which Article deals with the quorum of the Houses of Parliament? (Article 100)",
+    "Is changing the matter in Article 100 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "What is the quorum of a House of Parliament? (one-tenth of its total membership — not of members present)",
+    "Is quorum among the matters changeable by simple majority? (Yes — like salaries and rules of procedure)"
    ],
    "pyqs": [
     {
@@ -542,7 +548,9 @@
       "1, 2, 3 మాత్రమే"
      ],
      "answer_en": "1, 2 and 3 only",
-     "answer_te": "1, 2, 3 మాత్రమే"
+     "answer_te": "1, 2, 3 మాత్రమే",
+     "note_en": "Quorum under Article 100 is not in the ratification list; Parliament can change it by ordinary law.",
+     "note_te": "ప్రకరణ 100 లోని కోరం రాష్ట్రాల ఆమోద జాబితాలో లేదు; పార్లమెంట్ సాధారణ చట్టంతోనే దాన్ని మార్చవచ్చు."
     }
    ],
    "practice": {
@@ -671,14 +679,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?",
-    "లంచంపై సీతా సోరెన్ (2024)."
+    "పార్లమెంట్, దాని సభ్యులు, కమిటీల ప్రత్యేక హక్కులు (privileges) ఏ ప్రకరణలో ఉంది? (ప్రకరణ 105)",
+    "ప్రకరణ 105 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "పార్లమెంటరీ ప్రత్యేక హక్కులను చట్టంగా క్రోడీకరించారా? (లేదు — ఇంకా కాలేదు)",
+    "సభలో ఓటు లేదా ప్రసంగం కోసం లంచం తీసుకుంటే ప్రత్యేక హక్కు రక్షణ ఉంటుందా? (లేదు — సీతా సోరెన్ కేసు, 2024)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?",
-    "Sita Soren (2024) on bribery."
+    "Which Article deals with the privileges of Parliament and its members? (Article 105)",
+    "Is changing the matter in Article 105 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "Have parliamentary privileges been codified by law? (No — not yet)",
+    "Does privilege protect an MP who takes a bribe for a vote or speech? (No — Sita Soren, 2024)"
    ],
    "pyqs": [
     {
@@ -783,12 +793,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?"
+    "ఎంపీల జీతాలు, భత్యాలు ఏ ప్రకరణలో ఉంది? (ప్రకరణ 106)",
+    "ప్రకరణ 106 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "ఎంపీల జీతాలు ఎవరు నిర్ణయిస్తారు? (పార్లమెంట్ చట్టం ద్వారా)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?"
+    "Which Article deals with the salaries and allowances of MPs? (Article 106)",
+    "Is changing the matter in Article 106 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "Who fixes MPs' salaries? (Parliament, by law)"
    ],
    "pyqs": [],
    "practice": {
@@ -882,14 +894,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?",
-    "ఉమ్మడి సమావేశానికి ఎవరు అధ్యక్షత వహిస్తారు?"
+    "పార్లమెంట్ ప్రక్రియ నియమాలు (rules of procedure) ఏ ప్రకరణలో ఉంది? (ప్రకరణ 118)",
+    "ప్రకరణ 118 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "ఉభయ సభల సంయుక్త సమావేశ నియమాలు ఎవరు చేస్తారు? (రాష్ట్రపతి, ఇద్దరు అధ్యక్షులతో సంప్రదించి)",
+    "సంయుక్త సమావేశానికి ఎవరు అధ్యక్షత వహిస్తారు? (లోక్‌సభ స్పీకర్)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?",
-    "Who presides over a joint sitting?"
+    "Which Article deals with the rules of procedure of Parliament? (Article 118)",
+    "Is changing the matter in Article 118 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "Who makes the rules for joint sittings? (the President, after consulting both presiding officers)",
+    "Who presides over a joint sitting? (the Speaker of the Lok Sabha)"
    ],
    "pyqs": [],
    "practice": {
@@ -982,12 +996,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?"
+    "పార్లమెంట్‌లో వాడే భాష ఏ ప్రకరణలో ఉంది? (ప్రకరణ 120)",
+    "ప్రకరణ 120 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "15 ఏళ్ల తర్వాత పార్లమెంట్‌లో ఇంగ్లీష్ వాడకం ఆగిపోయిందా? (లేదు — అధికార భాషల చట్టం 1963 ద్వారా కొనసాగింది)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?"
+    "Which Article deals with the language to be used in Parliament? (Article 120)",
+    "Is changing the matter in Article 120 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "Did English stop being used in Parliament after 15 years? (No — continued by the Official Languages Act, 1963)"
    ],
    "pyqs": [
     {
@@ -1105,14 +1121,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?",
-    "ప్రత్యేక మెజారిటీ ఏ సంస్థలో కావాలి?"
+    "రాష్ట్ర శాసన మండలి (Legislative Council) ఏర్పాటు లేదా రద్దు ఏ ప్రకరణలో ఉంది? (ప్రకరణ 169)",
+    "ప్రకరణ 169 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "శాసన మండలి ఏర్పాటు/రద్దుకు ప్రత్యేక మెజారిటీ తీర్మానం ఎవరు చేయాలి? (రాష్ట్ర శాసనసభ — పార్లమెంట్ కాదు)",
+    "ప్రస్తుతం శాసన మండలి ఉన్న రాష్ట్రాలు ఏవి? (ఆంధ్రప్రదేశ్, తెలంగాణ, బిహార్, కర్ణాటక, మహారాష్ట్ర, ఉత్తరప్రదేశ్)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?",
-    "Which body needs the special majority?"
+    "Which Article deals with creating or abolishing a State Legislative Council? (Article 169)",
+    "Is changing the matter in Article 169 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "Which body must pass a special-majority resolution to create or abolish a Council? (the State Assembly — not Parliament)",
+    "Which States now have a Legislative Council? (Andhra Pradesh, Telangana, Bihar, Karnataka, Maharashtra, Uttar Pradesh)"
    ],
    "pyqs": [
     {
@@ -1252,14 +1270,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?",
-    "ఏ జనాభా లెక్కల సంవత్సరాలు స్తంభించాయి?"
+    "ప్రతి జనగణన తర్వాత నియోజకవర్గాల పునర్విభజన ఏ ప్రకరణలో ఉంది? (ప్రకరణ 82)",
+    "ప్రకరణ 82 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "ప్రస్తుత నియోజకవర్గ సరిహద్దులు ఏ జనగణన ఆధారంగా ఉన్నాయి? (2001)",
+    "రాష్ట్రాల వారీ లోక్‌సభ స్థానాల సంఖ్య ఏ జనగణనపై స్తంభింపజేశారు? (1971)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?",
-    "Which census years are frozen?"
+    "Which Article deals with readjustment of constituencies after each census? (Article 82)",
+    "Is changing the matter in Article 82 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "On which census are the present constituency boundaries based? (2001)",
+    "On which census is the number of Lok Sabha seats per State frozen? (1971)"
    ],
    "pyqs": [
     {
@@ -1365,12 +1385,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?"
+    "ఎన్నికలపై చట్టాలు చేసే పార్లమెంట్ అధికారం ఏ ప్రకరణలో ఉంది? (ప్రకరణ 327)",
+    "ప్రకరణ 327 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "ప్రజాప్రాతినిధ్య చట్టాలు (1950, 1951) ఏ ప్రకరణ కింద చేశారు? (ప్రకరణ 327 — సాధారణ చట్టాలు)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?"
+    "Which Article deals with Parliament's power to make election laws? (Article 327)",
+    "Is changing the matter in Article 327 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "Under which Article were the Representation of the People Acts (1950, 1951) made? (Article 327 — ordinary laws)"
    ],
    "pyqs": [],
    "practice": {
@@ -1467,14 +1489,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?",
-    "అధికార భాష లిపి, అంకెలు."
+    "కేంద్ర అధికార భాష ఏ ప్రకరణలో ఉంది? (ప్రకరణ 343)",
+    "ప్రకరణ 343 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "కేంద్ర అధికార భాష ఏది? (దేవనాగరి లిపిలో హిందీ — 'జాతీయ భాష' కాదు)",
+    "అధికార అవసరాలకు ఏ అంకెలు వాడాలి? (భారతీయ అంకెల అంతర్జాతీయ రూపం — దేవనాగరి అంకెలు కాదు)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?",
-    "Script and numerals of the official language."
+    "Which Article deals with the official language of the Union? (Article 343)",
+    "Is changing the matter in Article 343 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "What is the official language of the Union? (Hindi in Devanagari script — not a 'national language')",
+    "Which numerals are used for official purposes? (the international form of Indian numerals — not Devanagari)"
    ],
    "pyqs": [
     {
@@ -1606,14 +1630,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?",
-    "ప్రస్తుత మంజూరైన సంఖ్య."
+    "సుప్రీంకోర్టు ఏర్పాటు, న్యాయమూర్తుల సంఖ్య ఏ ప్రకరణలో ఉంది? (ప్రకరణ 124)",
+    "ప్రకరణ 124 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "సుప్రీంకోర్టు న్యాయమూర్తుల సంఖ్య పెంచడానికి ఏం కావాలి? (పార్లమెంట్ సాధారణ చట్టం — రాజ్యాంగ సవరణ కాదు)",
+    "సుప్రీంకోర్టు ప్రస్తుత మంజూరు సంఖ్య ఎంత? (ప్రధాన న్యాయమూర్తి సహా 34)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?",
-    "Current sanctioned strength."
+    "Which Article deals with the establishment and strength of the Supreme Court? (Article 124)",
+    "Is changing the matter in Article 124 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "What is needed to increase the number of Supreme Court judges? (an ordinary Act of Parliament — not an amendment)",
+    "What is the Supreme Court's present sanctioned strength? (34, including the Chief Justice)"
    ],
    "pyqs": [
     {
@@ -1636,7 +1662,9 @@
       "A–3, B–4, C–2, D–1"
      ],
      "answer_en": "A–3, B–4, C–1, D–2",
-     "answer_te": "A–3, B–4, C–1, D–2"
+     "answer_te": "A–3, B–4, C–1, D–2",
+     "note_en": "The 1935 Act's Federal Court was replaced by the Supreme Court, which Article 124 now establishes.",
+     "note_te": "1935 చట్టంలోని ఫెడరల్ కోర్టు స్థానంలో వచ్చినదే సుప్రీంకోర్టు; దాన్ని ఇప్పుడు ప్రకరణ 124 ఏర్పాటు చేస్తుంది."
     },
     {
      "id": "POL-671-P510-002",
@@ -1754,12 +1782,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?"
+    "సుప్రీంకోర్టు అధికార పరిధి విస్తరణ ఏ ప్రకరణలో ఉంది? (ప్రకరణ 138)",
+    "ప్రకరణ 138 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "సుప్రీంకోర్టు అధికార పరిధి విస్తరణకు రాష్ట్రాల ఆమోదం కావాలా? (లేదు — సాధారణ చట్టమే)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?"
+    "Which Article deals with enlarging the Supreme Court's jurisdiction? (Article 138)",
+    "Is changing the matter in Article 138 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "Does enlarging the Supreme Court's jurisdiction need State ratification? (No — it is an ordinary law)"
    ],
    "pyqs": [],
    "practice": {
@@ -1840,14 +1870,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఇది సాధారణ మెజారిటీ అంశమా, లేక ప్రకరణ 368 సవరణా?",
-    "ఏ క్లాజు పార్లమెంటుకు చట్టం ద్వారా మార్చే వీలు ఇస్తుంది?",
-    "ప్రకరణ 32 vs 226 vs 139."
+    "సుప్రీంకోర్టుకు అదనపు రిట్ అధికారాలు ఏ ప్రకరణలో ఉంది? (ప్రకరణ 139)",
+    "ప్రకరణ 139 లోని అంశాన్ని మార్చడం ప్రకరణ 368 కింద రాజ్యాంగ సవరణా? (కాదు — పార్లమెంట్ సాధారణ చట్టంతో, సాధారణ మెజారిటీతో మార్చవచ్చు)",
+    "ప్రకరణ 139 స్వయంగా రిట్ అధికారం ఇస్తుందా? (లేదు — పార్లమెంట్ చట్టం చేయాలి)",
+    "రిట్ అధికారాలను ప్రకరణలతో జతపరచండి (సుప్రీంకోర్టు — 32, హైకోర్టు — 226, అదనపు అధికారం — 139)"
    ],
    "patterns_en": [
-    "Is this a simple-majority item or an Article 368 amendment?",
-    "Which clause lets Parliament change it by law?",
-    "Article 32 vs Article 226 vs Article 139."
+    "Which Article deals with conferring extra writ powers on the Supreme Court? (Article 139)",
+    "Is changing the matter in Article 139 an amendment under Article 368? (No — Parliament can change it by ordinary law, by simple majority)",
+    "Does Article 139 itself give the extra writ power? (No — Parliament must make a law)",
+    "Match writ powers with Articles (Supreme Court — 32, High Court — 226, extra power by law — 139)"
    ],
    "pyqs": [
     {
@@ -1870,7 +1902,9 @@
       "రెండూ కావు"
      ],
      "answer_en": "Both 1 and 2",
-     "answer_te": "1, 2 రెండూ"
+     "answer_te": "1, 2 రెండూ",
+     "note_en": "A distractor: 'Article 139' in the Swiss Constitution is unrelated; India's Article 139 lets Parliament give the Supreme Court extra writ powers.",
+     "note_te": "తికమక పెట్టే ఎంపిక: స్విస్ రాజ్యాంగంలోని 'Article 139' వేరు; భారత ప్రకరణ 139 సుప్రీంకోర్టుకు అదనపు రిట్ అధికారాలు ఇచ్చే అవకాశం పార్లమెంట్‌కు ఇస్తుంది."
     },
     {
      "id": "POL-671-P510-002",
@@ -1992,12 +2026,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని సవరించడానికి రాష్ట్రాల ధృవీకరణ కావాలా?",
-    "ప్రకరణ 368 proviso జాబితాలో 'భిన్నమైనది ఏది' ప్రశ్నలు."
+    "రాష్ట్రపతిని ఎన్నుకునే ఎన్నికల గణం (electoral college) ఏ ప్రకరణలో ఉంది? (ప్రకరణ 54)",
+    "ప్రకరణ 54 ను సవరించాలంటే ఏం కావాలి? (పార్లమెంట్ ప్రత్యేక మెజారిటీ + కనీసం సగం రాష్ట్రాల ఆమోదం (ratification))",
+    "ప్రకరణ 368 ఆమోద జాబితాలో లేనిది ఏది? (ఉదా. ప్రాథమిక హక్కులు, ప్రకరణలు 2/3, కోరం — ఇవి జాబితాలో లేవు)",
+    "రాష్ట్రపతి ఎన్నికల్లో ఎవరు ఓటు వేయరు? (నామినేటెడ్ ఎంపీలు, ఎమ్మెల్సీలు; ఢిల్లీ, పుదుచ్చేరి ఎమ్మెల్యేలు వేస్తారు)"
    ],
    "patterns_en": [
-    "Does amending this need State ratification?",
-    "Odd-one-out lists of the Article 368 proviso."
+    "Which Article deals with the electoral college for the President? (Article 54)",
+    "What is needed to amend Article 54? (special majority in Parliament + ratification by at least half the States)",
+    "Which is NOT in the Article 368 ratification list? (e.g. Fundamental Rights, Articles 2/3, quorum are not)",
+    "Who does NOT vote in the President's election? (nominated MPs and MLCs; Delhi and Puducherry MLAs do vote)"
    ],
    "pyqs": [
     {
@@ -2020,7 +2058,9 @@
       "ప్రకరణ 54 (B)"
      ],
      "answer_en": "Article 51 (D)",
-     "answer_te": "ప్రకరణ 51 (D)"
+     "answer_te": "ప్రకరణ 51 (D)",
+     "note_en": "A distractor-heavy question: the answer (Article 51(d)) is unrelated, but Article 54 appears as an option alongside other Article numbers.",
+     "note_te": "తికమక ఎంపికల ప్రశ్న: జవాబు (ప్రకరణ 51(d)) వేరే అంశం; ప్రకరణ 54 ఇతర ప్రకరణ సంఖ్యలతో పాటు ఎంపికగా వస్తుంది."
     },
     {
      "id": "POL-671-S007",
@@ -2159,14 +2199,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని సవరించడానికి రాష్ట్రాల ధృవీకరణ కావాలా?",
-    "ప్రకరణ 368 proviso జాబితాలో 'భిన్నమైనది ఏది' ప్రశ్నలు.",
-    "ఓటు విలువ సూత్రం, జనాభా లెక్కల సంవత్సరం."
+    "రాష్ట్రపతి ఎన్నిక విధానం ఏ ప్రకరణలో ఉంది? (ప్రకరణ 55)",
+    "ప్రకరణ 55 ను సవరించాలంటే ఏం కావాలి? (పార్లమెంట్ ప్రత్యేక మెజారిటీ + కనీసం సగం రాష్ట్రాల ఆమోదం (ratification))",
+    "ప్రకరణ 368 ఆమోద జాబితాలో లేనిది ఏది? (ఉదా. ప్రాథమిక హక్కులు, ప్రకరణలు 2/3, కోరం — ఇవి జాబితాలో లేవు)",
+    "రాష్ట్రపతి ఎన్నిక ఏ పద్ధతిలో జరుగుతుంది? (ఒకే బదిలీ ఓటుతో దామాషా ప్రాతినిధ్యం; ఓటు విలువకు 1971 జనాభా)"
    ],
    "patterns_en": [
-    "Does amending this need State ratification?",
-    "Odd-one-out lists of the Article 368 proviso.",
-    "Vote-value formula and census year."
+    "Which Article deals with the manner of the President's election? (Article 55)",
+    "What is needed to amend Article 55? (special majority in Parliament + ratification by at least half the States)",
+    "Which is NOT in the Article 368 ratification list? (e.g. Fundamental Rights, Articles 2/3, quorum are not)",
+    "By what system is the President elected? (proportional representation by single transferable vote; vote value on 1971 population)"
    ],
    "pyqs": [
     {
@@ -2289,12 +2331,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని సవరించడానికి రాష్ట్రాల ధృవీకరణ కావాలా?",
-    "ప్రకరణ 368 proviso జాబితాలో 'భిన్నమైనది ఏది' ప్రశ్నలు."
+    "కేంద్ర కార్యనిర్వాహక అధికార పరిధి ఏ ప్రకరణలో ఉంది? (ప్రకరణ 73)",
+    "ప్రకరణ 73 ను సవరించాలంటే ఏం కావాలి? (పార్లమెంట్ ప్రత్యేక మెజారిటీ + కనీసం సగం రాష్ట్రాల ఆమోదం (ratification))",
+    "ప్రకరణ 368 ఆమోద జాబితాలో లేనిది ఏది? (ఉదా. ప్రాథమిక హక్కులు, ప్రకరణలు 2/3, కోరం — ఇవి జాబితాలో లేవు)",
+    "ఉమ్మడి జాబితా అంశాల్లో కార్యనిర్వాహక అధికారం సాధారణంగా ఎవరిది? (రాష్ట్రాలది)"
    ],
    "patterns_en": [
-    "Does amending this need State ratification?",
-    "Odd-one-out lists of the Article 368 proviso."
+    "Which Article deals with the extent of the Union's executive power? (Article 73)",
+    "What is needed to amend Article 73? (special majority in Parliament + ratification by at least half the States)",
+    "Which is NOT in the Article 368 ratification list? (e.g. Fundamental Rights, Articles 2/3, quorum are not)",
+    "Who ordinarily holds executive power on Concurrent List subjects? (the States)"
    ],
    "pyqs": [
     {
@@ -2398,12 +2444,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని సవరించడానికి రాష్ట్రాల ధృవీకరణ కావాలా?",
-    "ప్రకరణ 368 proviso జాబితాలో 'భిన్నమైనది ఏది' ప్రశ్నలు."
+    "రాష్ట్ర కార్యనిర్వాహక అధికార పరిధి ఏ ప్రకరణలో ఉంది? (ప్రకరణ 162)",
+    "ప్రకరణ 162 ను సవరించాలంటే ఏం కావాలి? (పార్లమెంట్ ప్రత్యేక మెజారిటీ + కనీసం సగం రాష్ట్రాల ఆమోదం (ratification))",
+    "ప్రకరణ 368 ఆమోద జాబితాలో లేనిది ఏది? (ఉదా. ప్రాథమిక హక్కులు, ప్రకరణలు 2/3, కోరం — ఇవి జాబితాలో లేవు)",
+    "ఆమోద జాబితాలో ఉన్నది ప్రకరణ 162 నా, 163/164 నా? (ప్రకరణ 162 మాత్రమే)"
    ],
    "patterns_en": [
-    "Does amending this need State ratification?",
-    "Odd-one-out lists of the Article 368 proviso."
+    "Which Article deals with the extent of a State's executive power? (Article 162)",
+    "What is needed to amend Article 162? (special majority in Parliament + ratification by at least half the States)",
+    "Which is NOT in the Article 368 ratification list? (e.g. Fundamental Rights, Articles 2/3, quorum are not)",
+    "Is it Article 162 or 163/164 that is in the ratification list? (only Article 162)"
    ],
    "pyqs": [
     {
@@ -2426,7 +2476,9 @@
       "3–2–1"
      ],
      "answer_en": "1–2–3",
-     "answer_te": "1–2–3"
+     "answer_te": "1–2–3",
+     "note_en": "Whether a proposal needs State ratification depends on whether it touches a listed item such as Article 162.",
+     "note_te": "ఒక ప్రతిపాదనకు రాష్ట్రాల ఆమోదం కావాలా అనేది అది ప్రకరణ 162 వంటి జాబితాలోని అంశాన్ని తాకుతుందా అనే దానిపై ఆధారపడుతుంది."
     }
    ],
    "practice": {
@@ -2543,14 +2595,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని సవరించడానికి రాష్ట్రాల ధృవీకరణ కావాలా?",
-    "ప్రకరణ 368 proviso జాబితాలో 'భిన్నమైనది ఏది' ప్రశ్నలు.",
-    "కౌన్సిల్ కూర్పు, ఓటు బరువులు."
+    "వస్తు సేవల పన్ను మండలి (GST Council) ఏ ప్రకరణలో ఉంది? (ప్రకరణ 279A)",
+    "ప్రకరణ 279A ను సవరించాలంటే ఏం కావాలి? (పార్లమెంట్ ప్రత్యేక మెజారిటీ + కనీసం సగం రాష్ట్రాల ఆమోదం (ratification))",
+    "ప్రకరణ 368 ఆమోద జాబితాలో లేనిది ఏది? (ఉదా. ప్రాథమిక హక్కులు, ప్రకరణలు 2/3, కోరం — ఇవి జాబితాలో లేవు)",
+    "GST మండలికి అధ్యక్షుడు ఎవరు? నిర్ణయాలకు ఎంత మెజారిటీ? (కేంద్ర ఆర్థిక మంత్రి; మూడొంతుల వెయిటెడ్ ఓట్లు — కేంద్రం 1/3, రాష్ట్రాలు 2/3)"
    ],
    "patterns_en": [
-    "Does amending this need State ratification?",
-    "Odd-one-out lists of the Article 368 proviso.",
-    "Composition and voting weights of the Council."
+    "Which Article deals with the GST Council? (Article 279A)",
+    "What is needed to amend Article 279A? (special majority in Parliament + ratification by at least half the States)",
+    "Which is NOT in the Article 368 ratification list? (e.g. Fundamental Rights, Articles 2/3, quorum are not)",
+    "Who chairs the GST Council and what majority do decisions need? (the Union Finance Minister; three-fourths of weighted votes — Centre 1/3, States 2/3)"
    ],
    "pyqs": [
     {
@@ -2691,14 +2745,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని సవరించడానికి రాష్ట్రాల ధృవీకరణ కావాలా?",
-    "ప్రకరణ 368 proviso జాబితాలో 'భిన్నమైనది ఏది' ప్రశ్నలు.",
-    "కూర్పు సంఖ్యలు, నామినేషన్ రంగాలు."
+    "రాజ్యసభ కూర్పు ఏ ప్రకరణలో ఉంది? (ప్రకరణ 80)",
+    "ప్రకరణ 80 ను సవరించాలంటే ఏం కావాలి? (పార్లమెంట్ ప్రత్యేక మెజారిటీ + కనీసం సగం రాష్ట్రాల ఆమోదం (ratification))",
+    "ప్రకరణ 368 ఆమోద జాబితాలో లేనిది ఏది? (ఉదా. ప్రాథమిక హక్కులు, ప్రకరణలు 2/3, కోరం — ఇవి జాబితాలో లేవు)",
+    "రాజ్యసభకు రాష్ట్రపతి ఎంతమందిని, ఏ రంగాల నుండి నామినేట్ చేస్తారు? (12 — సాహిత్యం, విజ్ఞానం, కళ, సామాజిక సేవ)"
    ],
    "patterns_en": [
-    "Does amending this need State ratification?",
-    "Odd-one-out lists of the Article 368 proviso.",
-    "Composition numbers and nomination fields."
+    "Which Article deals with the composition of the Council of States? (Article 80)",
+    "What is needed to amend Article 80? (special majority in Parliament + ratification by at least half the States)",
+    "Which is NOT in the Article 368 ratification list? (e.g. Fundamental Rights, Articles 2/3, quorum are not)",
+    "How many members does the President nominate to the Rajya Sabha, and from which fields? (12 — literature, science, art, social service)"
    ],
    "pyqs": [],
    "practice": {
@@ -2832,14 +2888,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని సవరించడానికి రాష్ట్రాల ధృవీకరణ కావాలా?",
-    "ప్రకరణ 368 proviso జాబితాలో 'భిన్నమైనది ఏది' ప్రశ్నలు.",
-    "గరిష్ఠ సంఖ్య, జనాభా లెక్కల సంవత్సరాలు."
+    "లోక్‌సభ కూర్పు ఏ ప్రకరణలో ఉంది? (ప్రకరణ 81)",
+    "ప్రకరణ 81 ను సవరించాలంటే ఏం కావాలి? (పార్లమెంట్ ప్రత్యేక మెజారిటీ + కనీసం సగం రాష్ట్రాల ఆమోదం (ratification))",
+    "ప్రకరణ 368 ఆమోద జాబితాలో లేనిది ఏది? (ఉదా. ప్రాథమిక హక్కులు, ప్రకరణలు 2/3, కోరం — ఇవి జాబితాలో లేవు)",
+    "లోక్‌సభ గరిష్ఠ బలం ఎంత? (రాష్ట్రాల నుండి 530, కేంద్రపాలిత ప్రాంతాల నుండి 20)"
    ],
    "patterns_en": [
-    "Does amending this need State ratification?",
-    "Odd-one-out lists of the Article 368 proviso.",
-    "Maximum strength and census years."
+    "Which Article deals with the composition of the House of the People? (Article 81)",
+    "What is needed to amend Article 81? (special majority in Parliament + ratification by at least half the States)",
+    "Which is NOT in the Article 368 ratification list? (e.g. Fundamental Rights, Articles 2/3, quorum are not)",
+    "What is the maximum strength of the Lok Sabha? (530 from States, 20 from Union Territories)"
    ],
    "pyqs": [],
    "practice": {
@@ -2935,12 +2993,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఏ బిల్లులు ఉమ్మడి సమావేశానికి వెళ్ళవచ్చు?",
-    "ఇప్పటివరకు ఎన్ని ఉమ్మడి సమావేశాలు?"
+    "ఉభయ సభల సంయుక్త సమావేశం (joint sitting) ఏ ప్రకరణలో ఉంది? (ప్రకరణ 108)",
+    "ఏ బిల్లులకు సంయుక్త సమావేశం ఉండదు? (ద్రవ్య బిల్లు, రాజ్యాంగ సవరణ బిల్లు)",
+    "ఇప్పటివరకు ఎన్ని సంయుక్త సమావేశాలు జరిగాయి? (మూడు — 1961 వరకట్న నిషేధం, 1978 బ్యాంకింగ్ సర్వీస్ కమిషన్ రద్దు, 2002 పోటా)",
+    "సభల మధ్య విభేదిస్తే సవరణ బిల్లు ఏమవుతుంది? (రద్దవుతుంది — సంయుక్త సమావేశం లేదు)"
    ],
    "patterns_en": [
-    "Which Bills can go to a joint sitting?",
-    "How many joint sittings so far?"
+    "Which Article provides for a joint sitting of both Houses? (Article 108)",
+    "Which Bills cannot go to a joint sitting? (Money Bills and Constitution Amendment Bills)",
+    "How many joint sittings have been held? (three — Dowry Prohibition 1961, Banking Service Commission repeal 1978, POTA 2002)",
+    "What happens to an Amendment Bill if the Houses disagree? (it fails — there is no joint sitting)"
    ],
    "pyqs": [
     {
@@ -3078,12 +3140,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ద్రవ్య బిల్లును ఎవరు ధృవీకరిస్తారు?",
-    "ద్రవ్య బిల్లు vs సవరణ బిల్లు విధానం."
+    "ద్రవ్య బిల్లు (Money Bill) నిర్వచనం ఏ ప్రకరణలో ఉంది? (ప్రకరణ 110)",
+    "ఒక బిల్లు ద్రవ్య బిల్లు అని ఎవరు ధృవీకరిస్తారు? (లోక్‌సభ స్పీకర్)",
+    "ఆర్థిక అంశాలున్న రాజ్యాంగ సవరణ బిల్లును రాజ్యసభలో ప్రవేశపెట్టవచ్చా? (అవును — సవరణ బిల్లు ద్రవ్య బిల్లు కాదు)"
    ],
    "patterns_en": [
-    "Who certifies a Money Bill?",
-    "Money Bill vs Amendment Bill procedure."
+    "Which Article defines a Money Bill? (Article 110)",
+    "Who certifies a Bill as a Money Bill? (the Speaker of the Lok Sabha)",
+    "Can a Constitution Amendment Bill on money matters be introduced in the Rajya Sabha? (Yes — it is not a Money Bill)"
    ],
    "pyqs": [],
    "practice": {
@@ -3171,12 +3235,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఏ రాష్ట్రాల్లో మండళ్ళు ఉన్నాయి?",
-    "రాష్ట్ర శాసనవ్యవస్థలో ఎవరెవరు?"
+    "రాష్ట్ర శాసనవ్యవస్థ కూర్పు ఏ ప్రకరణలో ఉంది? (ప్రకరణ 168)",
+    "రాష్ట్ర శాసనవ్యవస్థలో ఎవరు భాగం? (గవర్నర్ + శాసనసభ, ఉన్నచోట శాసన మండలి)",
+    "ద్విసభా శాసనవ్యవస్థ ఉన్న రాష్ట్రాలు ఏవి? (ఆంధ్రప్రదేశ్, తెలంగాణ, బిహార్, కర్ణాటక, మహారాష్ట్ర, ఉత్తరప్రదేశ్)"
    ],
    "patterns_en": [
-    "Which States have Councils?",
-    "Who forms the State Legislature?"
+    "Which Article constitutes the State Legislatures? (Article 168)",
+    "Who forms the State Legislature? (the Governor + the Assembly, and the Council where one exists)",
+    "Which States have a bicameral legislature? (Andhra Pradesh, Telangana, Bihar, Karnataka, Maharashtra, Uttar Pradesh)"
    ],
    "pyqs": [],
    "practice": {
@@ -3276,12 +3342,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "శాసనమండలి గరిష్ఠ జాప్యం ఎంత?",
-    "రాష్ట్రంలో ఉమ్మడి సమావేశం ఉందా?"
+    "సాధారణ బిల్లులపై శాసన మండలి అధికారం ఏ ప్రకరణలో ఉంది? (ప్రకరణ 197)",
+    "శాసన మండలి ఒక సాధారణ బిల్లును గరిష్ఠంగా ఎంతకాలం ఆపగలదు? (మొత్తం నాలుగు నెలలు — మొదటిసారి మూడు, రెండోసారి ఒక నెల)",
+    "రాష్ట్ర శాసనవ్యవస్థలో సంయుక్త సమావేశం ఉందా? (లేదు — శాసనసభ మాటే చివరిది)"
    ],
    "patterns_en": [
-    "Maximum delay by a Legislative Council.",
-    "Does the State have a joint sitting?"
+    "Which Article limits the Legislative Council's power over ordinary Bills? (Article 197)",
+    "For how long at most can a Council delay an ordinary Bill? (four months in all — three the first time, one the second)",
+    "Is there a joint sitting in a State Legislature? (No — the Assembly has the final word)"
    ],
    "pyqs": [],
    "practice": {
@@ -3401,10 +3469,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "ఏ సవరణ సలహాను కట్టుబడేదిగా చేసింది / పునఃపరిశీలనను చేర్చింది?"
+    "రాష్ట్రపతికి సహాయం, సలహా ఇచ్చే మంత్రిమండలి ఏ ప్రకరణలో ఉంది? (ప్రకరణ 74)",
+    "మంత్రిమండలి సలహా రాష్ట్రపతిని బంధించేలా చేసిన సవరణ ఏది? (42వ సవరణ, 1976)",
+    "సలహాను ఒకసారి పునఃపరిశీలనకు పంపే అధికారం ఏ సవరణ ఇచ్చింది? (44వ సవరణ, 1978)"
    ],
    "patterns_en": [
-    "Which Amendment made advice binding / added reconsideration?"
+    "Which Article provides a Council of Ministers to aid and advise the President? (Article 74)",
+    "Which amendment made ministerial advice binding on the President? (42nd Amendment, 1976)",
+    "Which amendment let the President return advice once for reconsideration? (44th Amendment, 1978)"
    ],
    "pyqs": [
     {
@@ -3538,12 +3610,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "మంత్రివర్గ పరిమాణ పరిమితిని ఏ సవరణ తెచ్చింది?",
-    "దేనిలో 15%?"
+    "కేంద్ర మంత్రుల నియామకం ఏ ప్రకరణలో ఉంది? (ప్రకరణ 75)",
+    "మంత్రిమండలి పరిమాణంపై పరిమితి విధించిన సవరణ ఏది? (91వ సవరణ, 2003)",
+    "కేంద్ర మంత్రిమండలి గరిష్ఠ పరిమాణం ఎంత? (లోక్‌సభ మొత్తం బలంలో 15% — ప్రధాని సహా)"
    ],
    "patterns_en": [
-    "Which Amendment capped the ministry size?",
-    "15% of what?"
+    "Which Article deals with appointing Union ministers? (Article 75)",
+    "Which amendment capped the size of the ministry? (91st Amendment, 2003)",
+    "What is the maximum size of the Union ministry? (15% of the Lok Sabha's total strength — including the PM)"
    ],
    "pyqs": [],
    "practice": {
@@ -3656,10 +3730,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "రాష్ట్ర మంత్రివర్గ కనీస, గరిష్ఠ పరిమాణం."
+    "రాష్ట్ర మంత్రుల నియామకం ఏ ప్రకరణలో ఉంది? (ప్రకరణ 164)",
+    "రాష్ట్ర మంత్రిమండలి కనిష్ఠ, గరిష్ఠ పరిమాణం ఎంత? (కనీసం 12; గరిష్ఠం శాసనసభ మొత్తం బలంలో 15%)",
+    "కనీసం 12 మంది మంత్రులు నియమం కేంద్రానికీ వర్తిస్తుందా? (లేదు — రాష్ట్రాలకే)"
    ],
    "patterns_en": [
-    "Minimum and maximum size of a State ministry."
+    "Which Article deals with appointing State ministers? (Article 164)",
+    "What are the minimum and maximum sizes of a State ministry? (at least 12; at most 15% of the Assembly's total strength)",
+    "Does the minimum-12 rule apply to the Union too? (No — only to States)"
    ],
    "pyqs": [],
    "practice": {
@@ -3772,14 +3850,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని ఏ సవరణ చేర్చింది, ఏం చేస్తుంది?",
-    "ఇది ప్రత్యేక మెజారిటీ సవరణా, రాష్ట్రాల ధృవీకరణ అవసరమైందా?",
-    "అంతర్రాష్ట్ర సరఫరాపై పన్ను అధికారం ఏ ప్రకరణ ఇస్తుంది?"
+    "వస్తు సేవల పన్ను (GST) పై ప్రత్యేక శాసనాధికారం ఇచ్చే ప్రకరణ 246A ను ఏ సవరణ చేర్చింది? (101వ సవరణ, 2016)",
+    "ప్రకరణ 246A అధికారం ఏ రకం? (పార్లమెంట్, రాష్ట్రాలకు ఏకకాల అధికారం — ఉమ్మడి జాబితా అధికారం కాదు)",
+    "అంతర్రాష్ట్ర సరఫరాపై GST విధించే అధికారం ఎవరిది? (పార్లమెంట్‌కు మాత్రమే — ప్రకరణ 246A(2))",
+    "101వ సవరణకు రాష్ట్రాల ఆమోదం అవసరమైందా? (అవును)"
    ],
    "patterns_en": [
-    "Which Amendment inserted it, and what does it do?",
-    "Is it a special-majority amendment, and did it need State ratification?",
-    "Which Article gives power to tax inter-State supply?"
+    "Which amendment inserted Article 246A, the special power to legislate on GST? (101st Amendment, 2016)",
+    "What kind of power does Article 246A give? (simultaneous power to Parliament and States — not Concurrent List power)",
+    "Who alone can tax inter-State supplies? (Parliament — Article 246A(2))",
+    "Did the 101st Amendment need State ratification? (Yes)"
    ],
    "pyqs": [
     {
@@ -3946,12 +4026,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని ఏ సవరణ చేర్చింది, ఏం చేస్తుంది?",
-    "ఇది ప్రత్యేక మెజారిటీ సవరణా, రాష్ట్రాల ధృవీకరణ అవసరమైందా?"
+    "జాతీయ వెనుకబడిన తరగతుల కమిషన్ (NCBC) కు రాజ్యాంగ హోదా ఏ సవరణ, ఏ ప్రకరణ ద్వారా వచ్చింది? (102వ సవరణ, 2018 — ప్రకరణ 338B)",
+    "105వ సవరణ ఏం చేసింది? (రాష్ట్రాలు తమ వెనుకబడిన తరగతుల జాబితా తయారుచేసే అధికారాన్ని పునరుద్ధరించింది — NCBC ని సృష్టించలేదు)",
+    "జాతీయ SC, ST కమిషన్లు ఏ ప్రకరణలలో ఉన్నాయి? (ప్రకరణ 338 — SC; 338A — ST)"
    ],
    "patterns_en": [
-    "Which Amendment inserted it, and what does it do?",
-    "Is it a special-majority amendment, and did it need State ratification?"
+    "By which amendment and Article did the NCBC get constitutional status? (102nd Amendment, 2018 — Article 338B)",
+    "What did the 105th Amendment do? (restored the States' power to prepare their own backward-class lists — it did not create NCBC)",
+    "In which Articles are the National SC and ST Commissions? (Article 338 — SC; 338A — ST)"
    ],
    "pyqs": [
     {
@@ -4096,14 +4178,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని ఏ సవరణ చేర్చింది, ఏం చేస్తుంది?",
-    "ఇది ప్రత్యేక మెజారిటీ సవరణా, రాష్ట్రాల ధృవీకరణ అవసరమైందా?",
-    "కేంద్ర జాబితాను ఎవరు మార్చగలరు?"
+    "సామాజికంగా, విద్యాపరంగా వెనుకబడిన తరగతుల జాబితా ఏ ప్రకరణలో ఉంది? (ప్రకరణ 342A)",
+    "రాష్ట్రాలు తమ జాబితాలు తయారుచేసే ప్రకరణ 342A(3) ను ఏ సవరణ చేర్చింది? (105వ సవరణ, 2021 — 102వది కాదు)",
+    "కేంద్ర జాబితాను ఎవరు మార్చవచ్చు? (పార్లమెంట్ చట్టం ద్వారా మాత్రమే — కొత్త రాష్ట్రపతి నోటిఫికేషన్‌తో కాదు)",
+    "సవరణలను అవి చేర్చిన ప్రకరణలతో జతపరచండి (77వ — 16(4A), 86వ — 21A, 102వ — 338B, 342A)"
    ],
    "patterns_en": [
-    "Which Amendment inserted it, and what does it do?",
-    "Is it a special-majority amendment, and did it need State ratification?",
-    "Who can change the Central List?"
+    "Which Article deals with the list of socially and educationally backward classes? (Article 342A)",
+    "Which amendment added Article 342A(3) letting States prepare their own lists? (105th Amendment, 2021 — not the 102nd)",
+    "Who can change the Central List? (only Parliament, by law — not a fresh Presidential notification)",
+    "Match amendments with the provisions they inserted (77th — 16(4A), 86th — 21A, 102nd — 338B and 342A)"
    ],
    "pyqs": [
     {
@@ -4251,14 +4335,14 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "దీన్ని ఏ సవరణ చేర్చింది, ఏం చేస్తుంది?",
-    "ఇది ప్రత్యేక మెజారిటీ సవరణా, రాష్ట్రాల ధృవీకరణ అవసరమైందా?",
-    "ఆ అధికారి ఎవరికి నివేదిస్తారు?"
+    "భాషా మైనారిటీల ప్రత్యేక అధికారి (Special Officer) ఏ ప్రకరణలో ఉన్నారు? (ప్రకరణ 350B)",
+    "ప్రకరణ 350B ను ఏ సవరణ చేర్చింది? (7వ సవరణ, 1956)",
+    "ప్రత్యేక అధికారిని ఎవరు నియమిస్తారు, ఎవరికి నివేదిక ఇస్తారు? (రాష్ట్రపతి నియమిస్తారు; నివేదిక రాష్ట్రపతికే)"
    ],
    "patterns_en": [
-    "Which Amendment inserted it, and what does it do?",
-    "Is it a special-majority amendment, and did it need State ratification?",
-    "To whom does the officer report?"
+    "Which Article provides a Special Officer for linguistic minorities? (Article 350B)",
+    "Which amendment inserted Article 350B? (7th Amendment, 1956)",
+    "Who appoints the Special Officer and to whom does he report? (appointed by the President; reports to the President)"
    ],
    "pyqs": [
     {
@@ -4381,12 +4465,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "106వ సవరణ ఏ ప్రకరణలను చేర్చింది?",
-    "ఎప్పుడు మొదలవుతుంది, ఎంతకాలం?"
+    "లోక్‌సభలో స్త్రీలకు రిజర్వేషన్ ఏ ప్రకరణలో ఉంది? (ప్రకరణ 330A)",
+    "106వ సవరణ (2023) చేర్చిన ప్రకరణలు ఏవి? (330A — లోక్‌సభ, 332A — శాసనసభలు, 334A — ప్రారంభం, కాలపరిమితి; 239AA లో ఢిల్లీ)",
+    "స్త్రీల రిజర్వేషన్ ఎప్పుడు మొదలవుతుంది, ఎంతకాలం? (జనగణన తర్వాత పునర్విభజన పూర్తయ్యాక; 15 ఏళ్లు)",
+    "రాజ్యసభ, శాసన మండళ్లలో స్త్రీల రిజర్వేషన్ ఉందా? (లేదు)"
    ],
    "patterns_en": [
-    "Which Articles did the 106th Amendment insert?",
-    "When does it start and for how long?"
+    "Which Article reserves seats for women in the Lok Sabha? (Article 330A)",
+    "Which Articles did the 106th Amendment (2023) insert? (330A — Lok Sabha, 332A — Assemblies, 334A — start and duration; Delhi in 239AA)",
+    "When does women's reservation start and for how long? (after delimitation following the next census; 15 years)",
+    "Is there women's reservation in the Rajya Sabha or Legislative Councils? (No)"
    ],
    "pyqs": [
     {
@@ -4532,12 +4620,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "106వ సవరణ ఏ ప్రకరణలను చేర్చింది?",
-    "ఎప్పుడు మొదలవుతుంది, ఎంతకాలం?"
+    "రాష్ట్ర శాసనసభల్లో స్త్రీలకు రిజర్వేషన్ ఏ ప్రకరణలో ఉంది? (ప్రకరణ 332A)",
+    "106వ సవరణ (2023) చేర్చిన ప్రకరణలు ఏవి? (330A — లోక్‌సభ, 332A — శాసనసభలు, 334A — ప్రారంభం, కాలపరిమితి; 239AA లో ఢిల్లీ)",
+    "స్త్రీల రిజర్వేషన్ ఎప్పుడు మొదలవుతుంది, ఎంతకాలం? (జనగణన తర్వాత పునర్విభజన పూర్తయ్యాక; 15 ఏళ్లు)",
+    "రాజ్యసభ, శాసన మండళ్లలో స్త్రీల రిజర్వేషన్ ఉందా? (లేదు)"
    ],
    "patterns_en": [
-    "Which Articles did the 106th Amendment insert?",
-    "When does it start and for how long?"
+    "Which Article reserves seats for women in State Legislative Assemblies? (Article 332A)",
+    "Which Articles did the 106th Amendment (2023) insert? (330A — Lok Sabha, 332A — Assemblies, 334A — start and duration; Delhi in 239AA)",
+    "When does women's reservation start and for how long? (after delimitation following the next census; 15 years)",
+    "Is there women's reservation in the Rajya Sabha or Legislative Councils? (No)"
    ],
    "pyqs": [
     {
@@ -4696,12 +4788,16 @@
   "text_te_note": "అనువాదం (translation)",
   "exam": {
    "patterns_te": [
-    "106వ సవరణ ఏ ప్రకరణలను చేర్చింది?",
-    "ఎప్పుడు మొదలవుతుంది, ఎంతకాలం?"
+    "స్త్రీల రిజర్వేషన్ ప్రారంభం, కాలపరిమితి ఏ ప్రకరణలో ఉన్నాయి? (ప్రకరణ 334A)",
+    "స్త్రీల రిజర్వేషన్ ఎప్పుడు మొదలవుతుంది? (106వ సవరణ తర్వాత జరిగే జనగణన ఆధారంగా పునర్విభజన పూర్తయ్యాక)",
+    "రిజర్వేషన్ ఎంతకాలం? పొడిగించవచ్చా? (15 ఏళ్లు; పార్లమెంట్ చట్టంతో పొడిగించవచ్చు)",
+    "ప్రతి పునర్విభజన తర్వాత స్త్రీల రిజర్వ్‌డ్ స్థానాలు ఏమవుతాయి? (రొటేషన్ ద్వారా మారుతాయి)"
    ],
    "patterns_en": [
-    "Which Articles did the 106th Amendment insert?",
-    "When does it start and for how long?"
+    "Which Article fixes the start and duration of women's reservation? (Article 334A)",
+    "When does women's reservation begin? (after delimitation based on the first census after the 106th Amendment)",
+    "How long does it last, and can it be extended? (15 years; Parliament can extend it by law)",
+    "What happens to women's reserved seats after each delimitation? (they rotate)"
    ],
    "pyqs": [
     {
