@@ -110,7 +110,7 @@ def test_unconfirmed_key_marker_and_telugu_fallback(client, app):
     with app.app_context():
         q = next(q for q in records().values() if q['_chapter'].startswith('8.') and q.get('key_status') == 'no_official_key' and q['_answer'] in (1, 2, 3, 4) and not q.get('question_te'))
     page = soup(client.post(f"/learn/polity/unit6/practice/{q['id']}?chapter={q['_chapter']}&kind=pyq&qlang=te", data={'answer': str(q['_answer'])}))
-    assert page.select_one('.u6-keynote[data-key-status=no_official_key]')
+    assert page.select_one('.xp-key[data-key-status=no_official_key]')
     stem = page.select_one('.geo-question').get_text()
     assert q['question_en'].split('\n')[0][:40] in stem and 'Telugu text not available' in stem
     assert all(o.get_text(strip=True) for o in page.select('.geo-option-text'))

@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% set un=unit_no or (filters.chapter.split('.')[0]|int if filters and filters.chapter else (filters.unit|int if filters and filters.unit else 6)) %}{% block title %}Unit {{ un }} · Indian Polity{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111z') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111x1') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.home') if mode=='unit' else url_for('polity_unit6.chapter',chapter_id=filters.chapter) if mode=='library' and filters.chapter else url_for('polity_unit6.unit',n=un) }}">‹ {{ 'Polity' if mode=='unit' else 'Chapter' if mode=='library' and filters.chapter else 'Unit ' ~ un }}</a><strong>{{ 'Chapters' if mode=='unit' else 'Practice' if mode=='library' else chapter.id }}</strong></div>{% endblock %}
 {% block content %}<div class="u6">
 {% if mode=='unit' %}

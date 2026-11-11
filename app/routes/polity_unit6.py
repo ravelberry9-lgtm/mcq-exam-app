@@ -186,6 +186,13 @@ def format_expl(t):
     return Markup(''.join(out))
 @bp.app_template_filter('fmt_expl')
 def _fmt_expl(t):return format_expl(t)
+from ..services import student_text as _st
+@bp.app_template_filter('student')
+def _student(t):return _st.strip_meta(t)
+@bp.app_template_global('explain_parts')
+def _explain_parts(t,options=(),answer=None):return _st.explain_parts(clean_text(t or ''),options,answer)
+@bp.app_template_global('options_te_usable')
+def _otu(q):return _st.options_te_usable(q)
 @bp.app_template_filter('clean_expl')
 def _clean_expl(t):return clean_text(t)
 
@@ -343,7 +350,7 @@ def selection(values):
     return list({q['id']:q for q in qs}.values())
 
 def language():
-    lang=request.args.get('qlang','te')
+    lang=request.args.get('qlang','en')
     if lang not in ('te','en','both'):abort(400)
     return lang
 
@@ -583,7 +590,7 @@ def exam(exam_id):
             if answers[q['id']]!=q['_answer']:s.wrong_count+=1
             else:s.wrong_count=0
         db.session.commit()
-    return render_template('ds/polity_unit6.html',mode='exam',exam=e,seconds=max(0,int((e.deadline-now).total_seconds())))
+    return render_template('ds/polity_unit6.html',mode='exam',exam=e,lang=language(),seconds=max(0,int((e.deadline-now).total_seconds())))
 
 @bp.post('/tests/<exam_id>/save')
 def save_exam_answer(exam_id):

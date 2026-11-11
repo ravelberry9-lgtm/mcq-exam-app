@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 {% from "ds/polity_question_card.html" import question_card with context %}
+{% from 'ds/polity_explain.html' import explain_panel with context %}
+<link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261111x1') }}">
 <main style="max-width: 65rem; margin: auto; padding: 1rem">
   <nav><a href="{{ reader_url or url_for(reader_endpoint|default('polity.chapter_two_reader')) }}">Back to reading tabs</a></nav>
   <h1>{{ chapter_title }}</h1>
@@ -34,7 +36,7 @@
     <details><summary>Study answer and key status / అధ్యయన సమాధానం, కీ స్థితి</summary>
       <p>Recorded key (unchanged) / నమోదైన కీ (మార్చలేదు): {{ q.official_key if q.official_key is not none else 'Not supplied / లేదు' }}</p>
       <p>Reviewed study answer / సమీక్షించిన అధ్యయన సమాధానం: {{ q.study_answer if q.study_answer is not none else 'Unresolved / నిర్ధారణ కాలేదు' }}</p>
-      <p lang="te">{{ q.explanation_te }}</p><p lang="en">{{ q.explanation_en }}</p>
+      {{ explain_panel(q,'both',q.study_answer,q.explanation_te,q.explanation_en) }}
       {% if q.verification_sources %}<ul aria-label="Verification sources">{% for source in q.verification_sources if source.startswith('https://') %}<li><a href="{{ source }}">Source {{ loop.index }}</a></li>{% endfor %}</ul>{% endif %}
     </details>
   </article>

@@ -44,7 +44,7 @@ def test_all_sources_maps_and_readers(client,app):
         assert sum(1 for q in qs.values() if q['_chapter'].startswith('6.'))==2315  # 2324 minus 9 reworded UPSC copies superseded 2026-11-11
         qs={k:q for k,q in qs.items() if q['_chapter'].startswith('6.')}
         assert sum(q['_kind']=='expected' for q in qs.values())==32
-        assert all(q['_en'] and q['_te'] for q in qs.values())
+        assert all(q['_en'] and (q['_te'] or q.get('_v2')) for q in qs.values())  # v2 PYQ explanations are English-only
         assert len(maps)==5
         assert sum(len(m['links']) for m in maps.values())==411
         assert all(x['item_id'] in qs or x['item_id'].startswith('PYQ-POL-WEB-') and x['item_id'] in allqs for m in maps.values() for x in m['links'])  # superseded reworded UPSC copies point to the real v3.71 record
@@ -187,7 +187,7 @@ def test_concept_notes_after_explanation_and_expand(client,app):
     r=client.post('/learn/polity/unit6/practice/'+q['id']+'?qlang=both',data={'answer':str(q['_answer'])})
     html=r.get_data(as_text=True)
     assert 'id="concept-notes"' in html and 'cc-allbtn' in html and 'Show all chapter cards' in html and '/cards/' in html
-    assert html.index('class="u6-expl"')<html.index('id="concept-notes"')<html.index('id="aichk"')
+    assert html.index('class="xp"')<html.index('id="concept-notes"')<html.index('id="aichk"')
     assert 'Memory map' not in html
     # not shown before answering
     assert 'concept-notes' not in client.get('/learn/polity/unit6/practice/'+q['id']).get_data(as_text=True)

@@ -1,3 +1,4 @@
+{% from 'ds/polity_explain.html' import explain_panel with context %}
 {% macro question_card(q) %}
 <article id="{{ q.id }}"{% if q.scored is defined %} data-scored="{{ 'true' if q.scored else 'false' }}"{% endif %}>
   {% for memory_map in unit6_maps_for(q.id) %}<p><a href="{{ url_for('polity_maps.page',map_id=memory_map.map_id) }}">See memory map / జ్ఞాపక పటం చూడండి</a></p>{% endfor %}
@@ -18,11 +19,8 @@
   <details>
     <summary>జవాబు / Answer</summary>
     {% set display_answer = q.study_answer if q.scored is defined and not q.scored else q.answer %}
-    {% if display_answer in [1, 2, 3, 4] %}
-    <p>{{ display_answer }}. {{ q.options_te[display_answer - 1] }} · {{ q.options_en[display_answer - 1] }}</p>
-    {% else %}<p>Unresolved / నిర్ధారణ కాలేదు</p>{% endif %}
     {% set explanation = explanations.questions[q.explanation_id] %}
-    <p lang="te">{{ explanation.te }}</p><p lang="en">{{ explanation.en }}</p>
+    {{ explain_panel(q,'both',display_answer,explanation.te,explanation.en) }}
     {% if explanation.table_id %}
       {% set table = explanations.tables[explanation.table_id] %}
       <table>

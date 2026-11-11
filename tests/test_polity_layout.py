@@ -57,7 +57,7 @@ def test_every_locator_resolves_and_fallback_returns_without_rescoring(client,ap
     assert notes.select_one('#question-explanation')
     assert notes.select_one('.u6-expl')
     returned=soup(client.get(notes.select_one('[data-return-question]')['href']))
-    assert 'Answer:' in returned.get_text() and 'No marks' not in returned.get_text()
+    assert returned.select_one('.xp-ans') and 'No marks' not in returned.get_text()
     assert returned.select_one('#aichk')
     with app.app_context():
         state=PolityUnit6State.query.filter_by(item_id=q['id']).one()
@@ -207,8 +207,8 @@ def test_wrong_is_red_points_explanation_and_no_unscored_text(client,app):
         assert page.select('.geo-option.is-wrong') and page.select('.geo-answer.is-wrong') and page.select('.geo-option.is-correct')
         text=page.get_text().lower()
         assert 'unscored' not in text and 'no marks' not in text and 'study only' not in text
-        assert page.select('.u6-expl .lead')
-    assert soup(client.post('/learn/polity/unit6/practice/'+multi['id'],data={'answer':str(multi['_answer'])})).select('.u6-expl ul.pts li')
+        assert page.select('.xp-lead')
+    assert soup(client.post('/learn/polity/unit6/practice/'+multi['id'],data={'answer':str(multi['_answer'])})).select('.xp-pts li')
     ok=soup(client.post('/learn/polity/unit6/practice/'+multi['id'],data={'answer':str(multi['_answer'])}))
     assert ok.select('.geo-answer.is-right')
 

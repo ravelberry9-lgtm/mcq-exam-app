@@ -1,0 +1,46 @@
+{# Shared answer + explanation panel for every Polity practice flow.
+   explain_panel(q, lang, answer, te, en): te/en are the stored explanation strings (unchanged). #}
+{% macro _lbl(lang,te,en) %}{% if lang=='te' %}{{ te }}{% elif lang=='en' %}{{ en }}{% else %}{{ te }} · {{ en }}{% endif %}{% endmacro %}
+{% macro explain_panel(q,lang,answer,te,en) %}
+{% set ote_ok=options_te_usable(q) %}
+{% set show_te=lang in ('te','both') and te %}
+{% set show_en=(lang in ('en','both') or not te) and en %}
+{% set pte=explain_parts(te,[q.options_te if ote_ok else none,q.options_en]|select|list,answer) if show_te else none %}
+{% set pen=explain_parts(en,[q.options_en],answer) if show_en else none %}
+{% set alt=pte and pen %}
+<div class="xp">
+  <p class="xp-ans"><span class="xp-k">{{ _lbl(lang,'సమాధానం','Answer') }}</span>
+  {% if answer in [1,2,3,4] %}<b class="xp-num">{{ answer }}</b> <span{% if lang!='en' and ote_ok %} lang="te"{% endif %}>{{ q.options_te[answer-1] if (lang!='en' and ote_ok) else q.options_en[answer-1] }}</span>{% if lang=='both' and ote_ok %}<span class="xp-alt" lang="en">{{ q.options_en[answer-1] }}</span>{% endif %}
+  {% else %}<span>Unresolved / నిర్ధారణ కాలేదు</span>{% endif %}</p>
+  {% if q._better %}<p class="xp-better"><span class="xp-k">Better answer</span> <b class="xp-num">{{ q._better }}</b> <span>{{ q.options_en[q._better-1] }}</span></p>
+  <p class="xp-none">The recorded key above is disputed; the explanation below explains the better answer.</p>
+  {% elif q.key_status in ('disputed','no_official_key') %}
+  <details class="xp-key" data-key-status="{{ q.key_status }}"><summary>{{ ('Disputed key' if q.key_status=='disputed' else 'No official key') if lang=='en' else ('కీ వివాదాస్పదం' if q.key_status=='disputed' else 'అధికారిక కీ లేదు') }}</summary>
+    <p>{% if q.key_status=='disputed' %}Recorded key {{ q.official_key if q.official_key else '—' }}; the study answer is shown above.{% else %}Answer as recorded in the question bank; not confirmed against an official final key.{% endif %}</p></details>
+  {% endif %}
+  {% if not (pte or pen) %}<p class="xp-none">No written explanation for this question yet. / వివరణ ఇంకా లేదు.</p>
+  {% else %}
+  <section class="xp-why">
+    <h3 class="xp-h">{{ _lbl(lang,'ఎందుకు','Why') }}</h3>
+    {% if pte %}<p class="xp-lead" lang="te">{{ pte.lead }}</p>{% endif %}
+    {% if pen %}<p class="xp-lead{% if alt %} xp-alt{% endif %}" lang="en">{{ pen.lead }}</p>{% endif %}
+    {% if q.explain_table and (pen or not pte) %}<div class="xp-tw"><table class="xp-t"><thead><tr>{% for h in q.explain_table.head %}<th>{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for r in q.explain_table.rows %}<tr{% if '✓' in r[0] %} class="ok"{% endif %}>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% endif %}
+    {% if pte and pte.why %}<ul class="xp-pts" lang="te">{% for s in pte.why %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}
+    {% if pen and pen.why %}<ul class="xp-pts{% if alt %} xp-alt{% endif %}" lang="en">{% for s in pen.why %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}
+  </section>
+  {% set ote=pte.others if pte else [] %}{% set oen=pen.others if pen else [] %}
+  {% if ote or oen %}
+  <section class="xp-other">
+    <h3 class="xp-h">{{ _lbl(lang,'ఇతర ఎంపికలు','Other options') }}</h3>
+    <ul class="xp-opts">
+    {% set primary=ote if ote else oen %}
+    {% for o in primary %}{% set match=(oen|selectattr('nums','equalto',o.nums)|first) if (ote and oen) else none %}
+      <li><b class="xp-num">{{ o.nums|join(', ') }}</b><div><p{% if ote %} lang="te"{% else %} lang="en"{% endif %}>{{ o.text }}</p>{% if match %}<p class="xp-alt" lang="en">{{ match.text }}</p>{% endif %}</div></li>
+    {% endfor %}
+    {% if ote and oen %}{% set tnums=ote|map(attribute='nums')|list %}{% for o in oen if o.nums not in tnums %}<li><b class="xp-num">{{ o.nums|join(', ') }}</b><div><p class="xp-alt" lang="en">{{ o.text }}</p></div></li>{% endfor %}{% endif %}
+    </ul>
+  </section>
+  {% endif %}
+  {% endif %}
+</div>
+{% endmacro %}

@@ -105,6 +105,13 @@ def _load_records():
         rationale=shared_ex.get(q.get('explanation_id',q['id']),{})
         q['_en']=q.get('explanation_en') or rationale.get('en','');q['_te']=q.get('explanation_te') or rationale.get('te','')
         result.setdefault(q['id'],q)
+    v2=read(CONTENT/'_shared/PYQ-Explanations-v2.json') if (CONTENT/'_shared/PYQ-Explanations-v2.json').is_file() else {}
+    for qid,x in (v2.get('questions',{}) if isinstance(v2,dict) else {}).items():
+        q=result.get(qid)
+        if not q or not x.get('lead'):continue
+        lines=[x['lead']]+list(x.get('points') or [])+(['Also remember: '+x['also']] if x.get('also') else [])
+        q['_en']='\n'.join(lines);q['_te']='';q['_v2']=True;q['explain_table']=x.get('table')
+        if x.get('better_answer') in (1,2,3,4) and x['better_answer']!=q.get('_answer'):q['_better']=x['better_answer'];q['key_status']='disputed';q.setdefault('official_key',q.get('_answer'))
     for q in result.values():
         q['_orig_scored']=q['_scored'];q['_scored']=q['_answer'] in (1,2,3,4)
     return result
