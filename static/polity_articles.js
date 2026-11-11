@@ -591,6 +591,7 @@
       if (run.ids.indexOf(b.dataset.jump) < 0) { b.disabled = true; b.removeAttribute("data-jump"); }
     });
     $("ac-dscroll").scrollTop = 0;
+    if (window.PolityMarks) window.PolityMarks.attach($("ac-dscroll"), { key: "card:" + (D.deck || "") + ":" + id, title: frontEn(id), url: location.pathname + "?open=" + encodeURIComponent(id), starHost: detail.querySelector(".ac-dbar") });
     live.textContent = frontEn(id) + ", card " + (index + 1) + " of " + run.ids.length;
     prefetch(run.ids[index + 1]);
     prefetch(run.ids[index - 1]);
@@ -603,6 +604,7 @@
     detail.dataset.lang = run.lang;
     detail.dataset.state = progress[id] || "";
     detail.dataset.loading = failed ? "fail" : "1";
+    if (window.PolityMarks && window.PolityMarks.detach) window.PolityMarks.detach($("ac-dscroll"));
     detail.setAttribute("aria-busy", failed ? "false" : "true");
     $("ac-dchap").innerHTML = "";
     var sb = sub(id);

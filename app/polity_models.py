@@ -46,3 +46,14 @@ class PolityUnit6Submission(db.Model):
     text=db.Column(db.Text,nullable=False)
     status=db.Column(db.String(16),nullable=False,default='new')
     created_at=db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
+
+class PolityMark(db.Model):
+    """A learner's highlights/underlines and bookmark for one page or card (per device)."""
+    __tablename__='polity_mark'
+    device_id=db.Column(db.String(64),primary_key=True)
+    key=db.Column(db.String(200),primary_key=True)
+    marks=db.Column(db.JSON,nullable=False,default=list)
+    bookmarked=db.Column(db.Boolean,nullable=False,default=False)
+    title=db.Column(db.String(300),nullable=False,default='')
+    url=db.Column(db.String(500),nullable=False,default='')
+    updated_at=db.Column(db.DateTime,nullable=False,default=datetime.utcnow)

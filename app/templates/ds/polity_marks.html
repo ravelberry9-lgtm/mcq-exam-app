@@ -1,0 +1,14 @@
+{% extends 'ds/base.html' %}
+{% block title %}My saved pages{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='mk1') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_marks.css',v='mk2') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><b>My saved pages</b></div>{% endblock %}
+{% block content %}<div class="mk-list">
+<h1>Bookmarks and highlights</h1>{% set ac=current_account() %}<p class="mk-acct">{% if ac %}Signed in as <b>{{ ac.username }}</b> — these sync to all your devices. <a href="{{ url_for('account.home') }}">Account</a>{% else %}Saved on this device only. <a href="{{ url_for('account.login', next=request.path) }}">Sign in</a> or <a href="{{ url_for('account.signup', next=request.path) }}">create an account</a> to see them on your tablet too.{% endif %}</p>
+{% set bm = rows|selectattr('bookmarked')|list %}{% set hl = rows|rejectattr('bookmarked')|list %}
+<h2>★ Bookmarked ({{ bm|length }})</h2>
+{% if not bm %}<p class="u6-note">Nothing bookmarked yet. Tap ☆ on any card or question to save it here.</p>{% endif %}
+<ul>{% for r in bm %}<li><a href="{{ r.url }}">{{ r.title or r.key }}</a>{% if r.marks %}<span class="mk-n">{{ r.marks|length }} marks</span>{% endif %}</li>{% endfor %}</ul>
+<h2>Highlighted ({{ hl|length }})</h2>
+{% if not hl %}<p class="u6-note">Select text on a card or question and choose a colour to highlight or underline it.</p>{% endif %}
+<ul>{% for r in hl %}<li><a href="{{ r.url }}">{{ r.title or r.key }}</a><span class="mk-n">{{ r.marks|length }} marks</span>{% if r.marks %}<em>“{{ r.marks[0].t[:80] }}”</em>{% endif %}</li>{% endfor %}</ul>
+</div>{% endblock %}

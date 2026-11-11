@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}App access code{% endblock %}
+{% block content %}
+<div class="admin-wrap" style="max-width:28rem">
+  <p><a href="{{ url_for('admin.index') }}">‹ Admin</a></p>
+  <h2>App access code</h2>
+  <p>Status: <b>{{ 'ON — a 6-digit code is required' if on else 'OFF — anyone with the link can open the app' }}</b></p>
+  {% if msg %}<p style="background:#f0fdf4;border:1px solid #bbf7d0;padding:10px;border-radius:8px">{{ msg }}</p>{% endif %}
+  {% if err %}<p style="background:#fef2f2;border:1px solid #fecaca;padding:10px;border-radius:8px">{{ err }}</p>{% endif %}
+  <form method="post" style="display:flex;flex-direction:column;gap:10px;margin:14px 0">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>New 6-digit code<br><input name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required style="font-size:1.4rem;letter-spacing:.3em;padding:8px"></label>
+    <label>Type it again<br><input name="code2" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required style="font-size:1.4rem;letter-spacing:.3em;padding:8px"></label>
+    <button type="submit">{{ 'Change code' if on else 'Turn on with this code' }}</button>
+  </form>
+  {% if on %}<form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="action" value="off"><button type="submit">Turn access code off</button></form>{% endif %}
+  <p style="color:#64748b">The code is stored only as a secure hash. Changing it asks every device to enter the new code once. Admin pages never ask for it.</p>
+</div>
+{% endblock %}

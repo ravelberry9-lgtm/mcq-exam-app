@@ -1,0 +1,63 @@
+{% extends 'ds/base.html' %}
+{% block title %}My account{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><style>
+.acc{max-width:26rem;margin:0 auto;padding:1rem 16px 2rem}.acc h1{font-size:1.3rem;margin:.6rem 0 .3rem}.acc p{line-height:1.6}
+.acc form{display:flex;flex-direction:column;gap:12px;margin-top:12px}.acc label{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:.92rem}
+.acc input{font:inherit;padding:12px;border:1.5px solid #cbd5e1;border-radius:10px;background:#fff;color:#111827}
+.acc .btn{min-height:46px;font-weight:700}.acc .err{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:10px 12px;border-radius:10px}
+.acc .ok{background:#f0fdf4;border:1px solid #bbf7d0;padding:12px;border-radius:12px}.acc .code{font:700 1.5rem ui-monospace,monospace;letter-spacing:.08em;text-align:center;padding:14px;margin:10px 0;background:#fff7ed;border:2px dashed #f59e0b;border-radius:12px;user-select:all}
+.acc .alt{margin-top:14px;font-size:.92rem}.acc .alt a{color:#0f766e;font-weight:600}.acc .muted{color:#64748b;font-size:.9rem}
+</style>{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a class="back" href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><b>My account</b></div>{% if fresh %}<script>try{Object.keys(localStorage).forEach(function(k){if(k.indexOf("mk:")===0)localStorage.removeItem(k)})}catch(e){}</script>{% endif %}{% endblock %}
+{% block content %}<div class="acc">
+{% if error %}<p class="err" role="alert">{{ error }}</p>{% endif %}
+{% if mode=='created' %}
+  <h1>{{ 'Password changed' if reset else 'Account created' }} ✓</h1>
+  <p>You are signed in as <b>{{ acct.username }}</b>. Your progress, bookmarks and highlights on this device are now saved to your account.</p>
+  <p><b>Write down this recovery code.</b> It is the only way to reset your password if you forget it. It is shown only once.</p>
+  <p class="code">{{ code }}</p>
+  <p class="muted">On your tablet or another phone, open My account → Sign in with the same username and password to see everything there.</p>
+  <a class="btn primary" href="{{ nxt or url_for('polity_marks.saved') }}">Continue</a>
+{% elif mode=='signup' %}
+  <h1>Create account</h1>
+  <p class="muted">Use the same account on your phone and tablet to share bookmarks, highlights and progress.</p>
+  <form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% if nxt %}<input type="hidden" name="next" value="{{ nxt }}">{% endif %}
+    <label>Username<input name="username" value="{{ username or '' }}" autocomplete="username" autocapitalize="none" required minlength="3" maxlength="30" pattern="[a-zA-Z0-9_.]+"></label>
+    <label>Password (8+ characters)<input type="password" name="password" autocomplete="new-password" required minlength="8"></label>
+    <label>Password again<input type="password" name="password2" autocomplete="new-password" required minlength="8"></label>
+    <button class="btn primary">Create account</button></form>
+  <p class="alt">Already have an account? <a href="{{ url_for('account.login', next=nxt) }}">Sign in</a></p>
+{% elif mode=='login' %}
+  <h1>Sign in</h1>
+  <form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% if nxt %}<input type="hidden" name="next" value="{{ nxt }}">{% endif %}
+    <label>Username<input name="username" value="{{ username or '' }}" autocomplete="username" autocapitalize="none" required></label>
+    <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+    <button class="btn primary">Sign in</button></form>
+  <p class="muted">Signing in shows this account's bookmarks, highlights and progress on this device.</p>
+  <p class="alt">New here? <a href="{{ url_for('account.signup', next=nxt) }}">Create account</a> · <a href="{{ url_for('account.reset') }}">Forgot password?</a></p>
+{% elif mode=='reset' %}
+  <h1>Reset password</h1>
+  <p class="muted">Enter your username and the recovery code you wrote down when you created the account.</p>
+  <form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>Username<input name="username" value="{{ username or '' }}" autocapitalize="none" required></label>
+    <label>Recovery code<input name="code" placeholder="XXXX-XXXX-XXXX" autocapitalize="characters" required></label>
+    <label>New password (8+ characters)<input type="password" name="password" autocomplete="new-password" required minlength="8"></label>
+    <label>New password again<input type="password" name="password2" autocomplete="new-password" required minlength="8"></label>
+    <button class="btn primary">Set new password</button></form>
+  <p class="alt"><a href="{{ url_for('account.login') }}">Back to sign in</a></p>
+{% else %}
+  {% if acct %}
+  <h1>Hi, {{ acct.username }}</h1>
+  <p class="ok">You are signed in. Bookmarks, highlights and progress are shared on every device where you sign in with this account.</p>
+  <p><a class="btn primary" href="{{ nxt or url_for('polity_marks.saved') }}">{{ 'Continue' if nxt else '★ My saved pages' }}</a></p>
+  <form method="post" action="{{ url_for('account.logout') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn">Sign out</button></form>
+  <p class="muted">Signing out leaves this device with an empty profile. Sign in again to get everything back.</p>
+  {% else %}
+  <h1>My account</h1>
+  <p>Sign in to keep your bookmarks, highlights and progress on both your phone and tablet.</p>
+  <p><a class="btn primary" href="{{ url_for('account.login', next=nxt) }}">Sign in</a></p>
+  <p><a class="btn" href="{{ url_for('account.signup', next=nxt) }}">Create account</a></p>
+  <p class="muted">Without an account, everything is saved only in this browser.</p>
+  {% endif %}
+{% endif %}
+</div>{% if fresh %}<script>try{Object.keys(localStorage).forEach(function(k){if(k.indexOf("mk:")===0)localStorage.removeItem(k)})}catch(e){}</script>{% endif %}{% endblock %}

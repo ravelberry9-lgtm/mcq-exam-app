@@ -405,3 +405,27 @@ def collections_switch():
         return _collections_page(str(e), ok=False, status=400)
     msg = (f"{res['chapter']}: now {res['active']}" if res["changed"] else f"{res['chapter']}: already {res['active']}, nothing changed")
     return _collections_page(msg)
+
+
+@bp.route("/access-code", methods=["GET", "POST"])
+def access_code():
+    """Set, change or turn off the 6-digit code every device must enter once to open the app."""
+    guard = _require_auth()
+    if guard:
+        return guard
+    from ..services import access_gate as ag
+    msg = err = None
+    if request.method == "POST":
+        if request.form.get("action") == "off":
+            ag.set_code("")
+            msg = "Access code turned off. Anyone with the link can open the app."
+        else:
+            code = (request.form.get("code") or "").strip()
+            if not (len(code) == 6 and code.isdigit()):
+                err = "The code must be exactly 6 digits."
+            elif code != (request.form.get("code2") or "").strip():
+                err = "The two codes do not match."
+            else:
+                ag.set_code(code)
+                msg = "Access code saved. Every device (including this one) must enter it once."
+    return render_template("admin/access_code.html", on=bool(ag.code_hash()), msg=msg, err=err)
