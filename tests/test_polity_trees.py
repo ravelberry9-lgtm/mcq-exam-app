@@ -58,4 +58,15 @@ def test_polity_trees_compact_controls_old_cases_and_relations(client, app):
     am24 = by.get('AM-024')
     if am24:
         assert any(r[1] == 'reply to' for r in am24.get('r', []))
-    assert all(len(n['l'][0]) <= 111 for n in d['nodes'])
+    assert all(len(n['l'][0]) <= 140 and not n['l'][0].endswith('…') and not n['l'][1].endswith('…') for n in d['nodes'])
+
+
+def test_polity_trees_line_is_a_complete_holding_sentence():
+    from app.services.recall_decks import best_line
+    one = ("When U.P. nationalised bus routes under a 1955 law, private operators like Deep Chand challenged it; in 1959 the "
+           "Supreme Court upheld the Act and held that the doctrine of eclipse applies only to old laws.")
+    got = best_line([one, 'It was void. Yes, said the Court.'], 'Still-born law', 120, 'case')
+    assert got.startswith('In 1959 the Supreme Court upheld') and got.endswith('.') and len(got) <= 120
+    # nothing standalone and short enough: the cue, never a cut fragment
+    assert best_line(['It said so; and then more of the same, without any subject at all, for a very long while indeed.'], 'Cue text', 120, 'am') == 'Cue text'
+    assert best_line(['The 61st Amendment, 1988 lowered the voting age from 21 to 18 years.'], 'x', 120, 'am').startswith('The 61st Amendment')

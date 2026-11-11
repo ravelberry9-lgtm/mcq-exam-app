@@ -277,6 +277,25 @@
     if (app) app.inert = true;
     if (!history.state || !history.state.acStudy) history.pushState({ acStudy: 1 }, "");
   }
+  // ── return paths ──
+  // A deep link (?open= / ?for=) lives in ONE history entry: no extra pushes, so phone Back leaves to where the student
+  // came from. HIST = that origin is the previous history entry (set by the origin page just before it navigated here,
+  // or carried in this entry's state across reloads); then Back / collapse use history.back() so the origin is restored
+  // exactly (bfcache or its own saved state). Opened fresh: replace() to the origin URL, or stay on this deck's matrix.
+  var HIST = false, bootDetail = false;
+  try {
+    var nr = JSON.parse(sessionStorage.getItem("u6_nav") || "null");
+    if (nr && nr.to === location.pathname + location.search) HIST = true;
+    sessionStorage.removeItem("u6_nav");
+  } catch (e) { /* ignore */ }
+  try { if (history.state && history.state.hist) HIST = true; } catch (e) { /* ignore */ }
+  function deepState(detailOpen) { try { history.replaceState({ acStudy: 1, acDetail: detailOpen ? 1 : 0, deep: 1, hist: HIST ? 1 : 0 }, ""); } catch (e) { /* ignore */ } }
+  function markNav(href) { try { var u = new URL(href, location.href); sessionStorage.setItem("u6_nav", JSON.stringify({ to: u.pathname + u.search })); } catch (e) { /* ignore */ } }
+  function leave(steps) {
+    if (HIST && history.length > 1) { history.go(-(steps || 1)); return; }
+    if (BACK.deck === "trees" && D.open) { try { sessionStorage.setItem("u6_trees_hl", D.open); } catch (e) { /* ignore */ } }
+    location.replace(BACK.url);
+  }
   function closeStage() {
     stage.hidden = true;
     detail.hidden = true;
@@ -291,7 +310,8 @@
     $("ac-start").focus({ preventScroll: true });
   }
   function exitStudy() {
-    if (FOR && BACK) { location.href = BACK.url; return; } // ?for= matrix: Back returns to the card it came from
+    if (FOR && BACK) return leave(history.state && history.state.acDetail && !history.state.deep ? 2 : 1); // ?for= matrix: back to its card
+    if (history.state && history.state.deep) { try { history.replaceState(null, ""); } catch (e) { /* ignore */ } closeStage(); return; }
     if (history.state && history.state.acDetail) { history.go(-2); return; }
     if (history.state && history.state.acStudy) history.back(); // popstate closes the stage
     else closeStage();
@@ -469,9 +489,10 @@
     savePos();
     live.textContent = "Page " + (p + 1) + " of " + pageCount();
   }
-  function focusTile(index) {
+  function focusTile(index, flash) {
     var t = grid.querySelector('.ac-tile[data-i="' + index + '"]') || grid.querySelector(".ac-tile");
     if (t) t.focus({ preventScroll: true });
+    if (t && flash) { t.classList.add("ac-hl"); setTimeout(function () { t.classList.remove("ac-hl"); }, 2600); }
   }
   // Direction B shows only two-way cards (a cue that maps to exactly one front); switching re-filters and keeps marks.
   function toggleMode() {
@@ -533,7 +554,7 @@
   // ── detail view ──
   function fillDetail(index) {
     var id = run.ids[index], n = esc(num(id));
-    run.cur = index;
+    run.cur = index; detail.dataset.id = id;
     savePos();
     $("ac-pos").textContent = (index + 1) + " / " + run.ids.length;
     $("ac-prev").disabled = index === 0;
@@ -618,15 +639,18 @@
     detail.hidden = false;
     var r = tileRect(index);
     if (r) animateClip(clipFrom(r), "inset(0px 0px 0px 0px round 0px)");
-    if (!history.state || !history.state.acDetail) history.pushState({ acStudy: 1, acDetail: 1 }, "");
+    if (bootDetail) deepState(true);
+    else if (!history.state || !history.state.acDetail) history.pushState({ acStudy: 1, acDetail: 1, deep: history.state && history.state.deep ? 1 : 0, hist: HIST ? 1 : 0 }, "");
     $("ac-collapse").focus({ preventScroll: true });
   }
   function collapse() {
+    if (bootDetail && BACK) return leave(); // card opened from Trees / another card: collapse goes back there
+    if (bootDetail) { hideDetail(); deepState(false); return; } // opened fresh: this deck's matrix, card highlighted
     if (history.state && history.state.acDetail) history.back(); // popstate hides the detail
     else hideDetail();
   }
   function hideDetail() {
-    backStack = []; bootBack = false; paintBack();
+    backStack = []; bootBack = false; bootDetail = false; paintBack();
     var index = run.cur;
     var page = Math.floor(index / perPage());
     if (page !== run.page) run.page = page;
@@ -636,7 +660,7 @@
     var finish = function () {
       detail.hidden = true;
       if (!run) return;
-      focusTile(index);
+      focusTile(index, true);
       if (Object.keys(run.marks).length === run.ids.length) showSummary();
     };
     if (r) animateClip("inset(0px 0px 0px 0px round 0px)", clipFrom(r), finish); else finish();
@@ -727,9 +751,21 @@
       bootBack = false;
       return showCard(id);
     }
-    // another deck: remember this card in our own URL (Back / reload reopens it), then go
-    try { history.replaceState(history.state, "", location.pathname + "?open=" + encodeURIComponent(cur)); } catch (e) { /* ignore */ }
-    location.href = href + (href.indexOf("?") < 0 ? "?" : "&") + "back=" + encodeURIComponent(D.deck + ":" + cur);
+    // another deck: remember this card in our own entry (Back / reload reopens it), then go
+    keepHere(cur);
+    var to = href + (href.indexOf("?") < 0 ? "?" : "&") + "back=" + encodeURIComponent(D.deck + ":" + cur);
+    markNav(to);
+    location.href = to;
+  }
+  // Leaving for another page from an open card: a deep-link entry keeps its URL (with its own &back=) pointed at this
+  // card; a normal study run saves its position and marks the entry so a reload resumes the same run on this card.
+  function keepHere(cur) {
+    try {
+      if (deepLink) {
+        var q = new URLSearchParams(location.search); q.set("open", cur); q.delete("for");
+        history.replaceState(Object.assign({}, history.state, { acDetail: 1, deep: 1, hist: HIST ? 1 : 0 }), "", location.pathname + "?" + q.toString());
+      } else { savePos(); history.replaceState(Object.assign({}, history.state, { resume: 1 }), ""); }
+    } catch (e) { /* ignore */ }
   }
   function paintBack() {
     var b = $("ac-xback"), prev = backStack[backStack.length - 1];
@@ -740,16 +776,14 @@
   function goBack() {
     if (backStack.length) return showCard(backStack.pop());
     if (!bootBack || !BACK) return;
-    // came here from another deck: step back through our own study entries to that page; else load it
-    if (document.referrer.indexOf("/recall/" + BACK.deck) >= 0 && history.state && history.state.acDetail && history.length > 3) history.go(-3);
-    else location.href = BACK.url;
+    leave(); // came here from Trees or another deck's card: the deep link is one entry, so one step back
   }
   actions["ac-xback"] = goBack;
 
   function onStageClick(e) {
     var fa = e.target.closest("a[data-for]");
     if (fa && run && run.cur >= 0) {
-      try { history.replaceState(history.state, "", location.pathname + "?open=" + encodeURIComponent(run.ids[run.cur])); } catch (er) { /* ignore */ }
+      keepHere(run.ids[run.cur]); markNav(fa.href);
       return; // the link itself navigates
     }
     var pq = e.target.closest("a[data-pyq]");
@@ -838,6 +872,7 @@
   window.addEventListener("resize", onResize);
 
   // ── init ──
+  var RESUME = !!(history.state && history.state.resume);
   if (history.state && (history.state.acStudy || history.state.acDetail)) history.replaceState(null, ""); // reload mid-study: start at setup
   restoreChoices();
   var more = $("ac-more");
@@ -851,10 +886,12 @@
   if (FOR && FOR.ids.length) {
     // ?for=<card>: a matrix of exactly the cards linked to that card; the exit button goes back to it
     deepLink = true;
+    deepState(false);
     var cf = choices();
     startRun(FOR.ids, { chapter: "", parts: [], unit: "", mode: "a", lang: cf.lang, density: cf.density, order: "seq", only: false, newer: true });
   } else if (D.open && byId[D.open]) {
     deepLink = true;
+    deepState(true); bootDetail = true;
     var c0 = choices();
     var ids0 = pickIds({ chapter: "", parts: [], unit: "", only: false, newer: true, mode: "a" });
     if (ids0.indexOf(D.open) < 0) ids0.push(D.open);
@@ -863,5 +900,9 @@
     bootBack = !!BACK;
     openDetail(run.ids.indexOf(D.open));
     paintBack();
+  } else if (RESUME && savedPos()) {
+    // back to a study run that left for another deck's card (page reloaded, not from bfcache): same run, same card
+    try { history.replaceState({ acStudy: 1, acDetail: 1 }, ""); } catch (e) { /* ignore */ }
+    continueRun();
   }
 })();

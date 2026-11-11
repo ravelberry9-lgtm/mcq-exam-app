@@ -82,27 +82,20 @@ a.cd:hover{border-color:var(--tm)}.nd.am a.cd:hover{border-left-color:var(--am)}
 .tg.th{background:color-mix(in srgb,var(--a) 12%,transparent);color:var(--a)}
 .tg.q{background:#DBEAFE;color:#1D4ED8}
 .tg.pop{font-style:italic;font-weight:600}
-.nd.hl .cd,.ls.hl .cd{outline:3px solid var(--hl);outline-offset:1px}
+.nd.hl .cd,.ls.hl .cd{outline:3px solid var(--hl);outline-offset:1px;transition:outline-color .6s}
+@media (prefers-reduced-motion:no-preference){.nd.hl .cd,.ls.hl .cd{animation:tr-hl 1.2s ease-out 1}@keyframes tr-hl{0%{box-shadow:0 0 0 8px var(--hl)}100%{box-shadow:0 0 0 0 transparent}}}
 /* relations (Together view): the amendment or case this one is tied to */
 .rls{display:flex;flex-direction:column;margin:2px 0 2px 12px}
 .rl{display:flex;align-items:baseline;gap:4px;flex-wrap:wrap;padding:5px 0;min-height:32px;font-size:.8rem;line-height:1.4;color:var(--tk);text-decoration:none;font-weight:650}
 .rl::before{content:"↳";color:var(--tm);font-weight:700}
 .rl .rv{color:var(--tm);font-weight:550}.rl .ry{color:var(--tm);font-weight:550;font-variant-numeric:tabular-nums}
 .rl:hover{text-decoration:underline;text-underline-offset:3px}
-/* Together on wide screens: amendments left of the spine, cases right */
+/* Together: one spine for both kinds. Cases outnumber amendments 2-10x in every decade, so a left/right split left the
+   amendment lane mostly empty; instead one centred column, amendments lifted with a warm tint so they stand out */
+.tr[data-tab=both] .nd.am .cd{background:color-mix(in srgb,var(--am-soft) 60%,var(--tc))}
 @media(min-width:760px){
-  .tr[data-tab=both] .nd{grid-template-columns:minmax(0,1fr) 3.6rem minmax(0,1fr);column-gap:14px}
-  .tr[data-tab=both] .nd::before{left:50%;transform:translateX(-1px)}
-  .tr[data-tab=both] .nd .yr{grid-column:2;grid-row:1;text-align:center;padding-top:0;margin-top:-2px;position:relative;z-index:2;align-self:start}
-  .tr[data-tab=both] .nd.fy .yr{background:var(--ground,#F6F7FB);padding:8px 0 4px}
-  .tr[data-tab=both] .nd .mk{grid-column:2;grid-row:1;margin-top:34px}
-  .tr[data-tab=both] .nd:not(.fy) .mk{margin-top:16px}
-  .tr[data-tab=both] .nd.am .bx{grid-column:1;grid-row:1}
-  .tr[data-tab=both] .nd.case .bx{grid-column:3;grid-row:1}
-  .tr[data-tab=both] .nd.am .cd{border-left:1.5px solid var(--tl);border-right:4px solid var(--am);text-align:right}
-  .tr[data-tab=both] .nd.am .tgs{justify-content:flex-end}
-  .tr[data-tab=both] .nd.am .rls{margin:2px 12px 2px 0;align-items:flex-end}.tr[data-tab=both] .nd.am .rl{justify-content:flex-end;text-align:right}
   .tl{padding-left:24px;padding-right:24px}
+  .tr[data-tab=both] .tl,.tr[data-tab=am] .tl,.tr[data-tab=case] .tl,.tr .dh{max-width:780px;margin-left:auto;margin-right:auto}
 }
 /* lineages: one vertical tree per chain */
 .ch{margin:18px 16px 26px;scroll-margin-top:56px}

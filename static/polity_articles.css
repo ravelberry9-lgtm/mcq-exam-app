@@ -701,3 +701,5 @@ a.ac-art:hover,a.ac-art:focus-visible{background:color-mix(in srgb,var(--acc) 22
 .ac-stage[data-lang="both"] .om-tag .ac-en{display:none!important}
 .ct-badge.ct-rep{background:#B45309;color:#fff;margin-left:.3em}
 .ct-asked{margin:.25em 0 .4em;font-size:.82em;opacity:.8}
+.ac-tile.ac-hl{outline:3px solid #F59E0B;outline-offset:2px;z-index:2}
+@media (prefers-reduced-motion:no-preference){.ac-tile.ac-hl{animation:ac-hl 1.2s ease-out 1}@keyframes ac-hl{0%{box-shadow:0 0 0 8px rgba(245,158,11,.55)}100%{box-shadow:0 0 0 0 rgba(245,158,11,0)}}}

@@ -550,6 +550,56 @@ def _first_sentence(s, n=150):
     return s if len(s) <= n else s[:n].rsplit(' ', 1)[0] + '…'
 
 
+_VERB = re.compile(r'\b(held|holds|upheld|struck|ruled|said|says|declared|laid down|added|inserted|made|removed|created|gave|reduced|lowered|raised|replaced|introduced|extended|allowed|let|set up|recognised|recognized|read|ordered|quashed|invalidated|restored|omitted|curtailed|abolished|validated|provided|changed|widened)\b', re.I)
+_TEV = re.compile(r'చేర్చ|తొలగించ|సమర్థించ|కొట్టివేస|కొట్టేస|చెప్పింది|తగ్గించ|పెంచ|మార్చ|ఇచ్చింది|రద్దు|కల్పించ|తీర్పు')
+def _sentences(s):
+    s = re.sub(r'\s+', ' ', s or '').strip()
+    out, st = [], 0
+    for m in re.finditer(r'[.!?।](?=\s|$)', s):
+        tok = s[st:m.start()].rsplit(' ', 1)[-1]
+        if len(tok) <= 3 and tok[:1].isupper() or (len(tok) <= 3 and '.' in tok) or re.fullmatch(r'(?:[A-Z]\.)+[A-Z]?', tok) or tok in ('v', 'vs', 'Art', 'No', 'St', 'Co', 'Ltd', 'Mr', 'Dr'):
+            continue
+        out.append(s[st:m.end()].strip()); st = m.end()
+    if s[st:].strip(): out.append(s[st:].strip())
+    return [x for x in out if x]
+def _parts(s):
+    """Sentences, plus each '; '-clause of a sentence (as its own sentence) for one-liners like 'facts; holding'."""
+    res = []
+    for x in _sentences(s):
+        res.append(x)
+        bits = [b.strip() for b in re.split(r'; | — ', x.rstrip('.।'))]
+        if len(bits) > 1 and not re.search(r'[\u0C00-\u0C7F]', x):  # Telugu clauses are verb-final: a '; ' piece is rarely standalone
+            for b in bits:
+                if b and len(b.split()) >= 5:
+                    b = b[0].upper() + b[1:]
+                    res.append(b + ('।' if x.endswith('।') else '.'))
+    return res
+_DEP = re.compile(r"(It|Its|This|That|These|Those|They|Their|So|But|However|Also|Thus|Hence|Then|Here|There|Such|He|She|The same|Both|దీని|దాని|దాంతో|దానికి|అందుకే|అయితే|కానీ|ఇది|ఇవి|వీటి|ఆ |అదే|కాబట్టి|అలాగే|అప్పుడు)(?=[\s,])")
+_SUBJ = {'am': re.compile(r'Amendment|సవరణ'), 'case': re.compile(r'Court|court|held|upheld|struck|ruled|కోర్టు|తీర్పు|ధర్మాసనం')}
+def best_line(fields, cue, n=120, kind='am'):
+    """A complete short line (<= n chars) that says what was held / done; never a cut fragment. Falls back to the cue."""
+    best = None
+    for rank, f in enumerate(fields):
+        if isinstance(f, (list, tuple)): f = ' '.join(map(str, f))
+        for i, c in enumerate(_parts(f)):
+            if len(c) > n or len(c) < 30 or re.match(r'(Yes|No)\b', c) or c.endswith(':') or _DEP.match(c) or not _SUBJ[kind].search(c) or re.search(r'\b(also|said (yes|no)|Laxmikanth|had been)\b|లక్ష్మీకాంత్', c) or c.count('(') != c.count(')') or c.count("'") % 2:
+                continue
+            score = rank * 3 + i * 0.5 - (4 if _VERB.search(c) or _TEV.search(c) else 0) + (3 if 'వచ్చింది' in c else 0) - (2 if re.search(r'\b(Court|Amendment|Parliament)\b', c) else 0)
+            if best is None or score < best[0]:
+                best = (score, c)
+    if best:
+        return best[1]
+    c = re.sub(r'\s+', ' ', cue or '').strip()
+    if c and len(c) <= n + 20 and not c.endswith('…'):
+        return c
+    for f in fields:  # cue unusable: the shortest complete sentence or clause of any field, without the subject rule
+        if isinstance(f, (list, tuple)): f = ' '.join(map(str, f))
+        ok = [x for x in _parts(f) if 30 <= len(x) <= n + 20 and x.count('(') == x.count(')') and not _DEP.match(x)]
+        if ok:
+            return min(ok, key=len)
+    return ''
+
+
 def _brief(s, n=110):
     """First sentence of a one-line description, cut at a clause (or word) boundary near n chars."""
     s = re.sub(r'\s+', ' ', s or '').strip()
@@ -564,6 +614,20 @@ def _brief(s, n=110):
     i = max(cut.rfind(x) for x in ('; ', ': ', ', ', ' — '))
     cut = cut[:i] if i >= n * 0.55 else cut.rsplit(' ', 1)[0]
     return cut.rstrip(' ,;:—') + '…'
+
+
+
+def _pair_line(it, k):
+    """English and Telugu short lines, from the SAME field where possible so both say the same thing."""
+    if it.get('tl_en') and it.get('tl_te'):
+        return [it['tl_en'], it['tl_te']]
+    for f in ('one_line', 'says', 'held'):
+        en = best_line([it.get(f + '_en')], None, 120, k)
+        te = en and best_line([it.get(f + '_te')], None, 140, k)
+        if en and te:
+            return [en, te]
+    return [best_line([it.get('one_line_en'), it.get('says_en'), it.get('held_en')], it.get('cue_en'), 120, k) or _brief(it.get('one_line_en') or it.get('cue_en')),
+            best_line([it.get('one_line_te'), it.get('says_te'), it.get('held_te')], it.get('cue_te'), 140, k) or _brief(it.get('one_line_te') or it.get('cue_te') or it.get('one_line_en'))]
 
 
 _REL = {  # (from kind, to kind, direction) -> (en, te); 'nx' = later step on the same lineage, 'pv' = earlier step
@@ -601,8 +665,7 @@ def _build_trees():
             if not y:
                 continue
             o = {'id': it['id'], 'k': k, 'y': y, 'n': [it.get('front_en') or '', it.get('front_te') or it.get('front_en') or ''],
-                 'l': [_brief(it.get('one_line_en') or it.get('cue_en')),
-                       _brief(it.get('one_line_te') or it.get('cue_te') or it.get('one_line_en'))]}
+                 'l': _pair_line(it, k)}
             if k == 'am':
                 o['no'] = int(it['sort']) if str(it.get('sort') or '').isdigit() else None
                 o['p'] = it.get('part') or ''

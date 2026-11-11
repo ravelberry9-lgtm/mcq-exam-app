@@ -9,7 +9,7 @@
   var TH = {}; DATA.themes.forEach(function (t) { TH[t[0]] = t; });
   var PT = {}; DATA.parts.forEach(function (p) { PT[p[0]] = p; });
   var LANGS = ["te", "en", "both"], LNAME = { te: "తెలుగు", en: "English", both: "తె + En" };
-  var LKEY = "u6_trees_lang", OKEY = "u6_trees_old", OLD = "u6_artcards_lang", POS = "u6_trees_last";
+  var LKEY = "u6_trees_lang", OKEY = "u6_trees_old", OLD = "u6_artcards_lang", POS = "u6_trees_last"; // legacy key, no longer written
   var body = document.getElementById("tr-body"), chipsEl = document.getElementById("tr-chips"),
       jump = document.getElementById("tr-jump"), countEl = document.getElementById("tr-count"),
       qEl = document.getElementById("tr-q"), pyqEl = document.getElementById("tr-pyq"), langBtn = document.getElementById("tr-lang"),
@@ -24,6 +24,20 @@
   if (saved && saved.charAt(0) === "{") { try { saved = JSON.parse(saved).lang; } catch (e) { saved = null; } }
   if (LANGS.indexOf(saved) >= 0) st.lang = saved;
   var h = location.hash.slice(1); if (["am", "case", "both", "lines"].indexOf(h) >= 0) st.tab = h;
+  // Coming back from a card (Back, collapse, phone back): history.state of this entry holds the exact view the student left.
+  // A card opened fresh (no history) that returns here by replace leaves only the node id in sessionStorage.
+  var HL = "u6_trees_hl", NAV = "u6_nav", pend = null;
+  try { pend = history.state && history.state.tr; } catch (e) { pend = null; }
+  if (!pend && sget(HL)) { pend = { id: sget(HL) }; var pn = BY[pend.id]; if (pn && st.tab !== "lines" && st.tab !== "both" && st.tab !== pn.k) st.tab = pn.k; }
+  sset(HL, "");
+  if (pend) {
+    if (pend.tab) st.tab = pend.tab;
+    st.chip = pend.chip || ""; st.q = pend.q || ""; st.pyq = !!pend.pyq; if (pend.old != null) st.old = !!pend.old;
+    if (pend.lang && LANGS.indexOf(pend.lang) >= 0) st.lang = pend.lang;
+    qEl.value = st.q; pyqEl.checked = st.pyq; oldEl.checked = st.old;
+    if (pend.sheet && st.tab !== "lines") { sheet.hidden = false; fBtn.setAttribute("aria-expanded", "true"); }
+    if (BY[pend.id] && BY[pend.id].old && st.tab !== "lines") { st.old = true; oldEl.checked = true; }
+  }
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function T(p) { // [en, te] in the current language; both = Telugu first, English under it
@@ -144,17 +158,41 @@
     restore();
   }
 
-  function restore() {
-    var id = sget(POS); if (!id) return;
-    sset(POS, "");
-    var el = document.getElementById("n-" + id) || body.querySelector('[data-id="' + id.replace(/"/g, "") + '"]');
-    if (el) { el.scrollIntoView({ block: "center" }); el.classList.add("hl"); }
+  function findNode(p) {
+    var id = String(p.id).replace(/"/g, ""), box = p.cid && document.getElementById(p.cid);
+    return (box && box.querySelector('[data-id="' + id + '"]')) || document.getElementById("n-" + id) || body.querySelector('[data-id="' + id + '"]');
   }
+  function scroller(el) { // the page scrolls inside <main> in this layout, not the window
+    for (var n = el.parentElement; n && n !== document.body; n = n.parentElement) {
+      var o = getComputedStyle(n).overflowY;
+      if ((o === "auto" || o === "scroll") && n.scrollHeight > n.clientHeight) return n;
+    }
+    return document.scrollingElement || document.documentElement;
+  }
+  var hlT = 0;
+  function flash(el) {
+    body.querySelectorAll(".hl").forEach(function (x) { x.classList.remove("hl"); });
+    var it = el.closest(".nd,.ls") || el; it.classList.add("hl");
+    clearTimeout(hlT); hlT = setTimeout(function () { it.classList.remove("hl"); }, 2600);
+  }
+  function restore() { // put the opened node back exactly where it was on screen, and flash it
+    var p = pend; if (!p) return;
+    pend = null;
+    var el = findNode(p); if (!el) return;
+    var sc = scroller(el), want = p.top != null ? p.top : window.innerHeight / 2 - 40;
+    sc.scrollTop += el.getBoundingClientRect().top - want;
+    flash(el);
+  }
+  window.addEventListener("pageshow", function (e) { // restored from the back-forward cache: same scroll, just flash the node
+    if (!e.persisted) return;
+    var s = history.state && history.state.tr; if (!s) return;
+    var el = findNode(s); if (el) flash(el);
+  });
 
   document.querySelector(".tr-tabs").addEventListener("click", function (e) {
     var b = e.target.closest("[data-tab]"); if (!b || b.dataset.tab === st.tab) return;
     st.tab = b.dataset.tab; st.chip = "";
-    history.replaceState(null, "", "#" + st.tab);
+    try { history.replaceState(null, "", "#" + st.tab); } catch (er) { /* ignore */ }
     render();
   });
   document.querySelector(".tr-tabs").addEventListener("keydown", function (e) {
@@ -180,7 +218,12 @@
       var tries = 0; (function find() { el = document.getElementById("n-" + go.dataset.go); if (el) { el.scrollIntoView({ block: "center", behavior: "smooth" }); body.querySelectorAll(".hl").forEach(function (x) { x.classList.remove("hl"); }); el.classList.add("hl"); } else if (tries++ < 30) requestAnimationFrame(find); })();
       return;
     }
-    var a = e.target.closest("a.cd[data-id]"); if (a) sset(POS, a.dataset.id);
+    var a = e.target.closest("a.cd[data-id]");
+    if (a) { // remember the exact view in this history entry, and tell the card page it was reached from here
+      var ch = a.closest(".ch"), u = new URL(a.href, location.href);
+      try { history.replaceState({ tr: { id: a.dataset.id, cid: ch ? ch.id : "", tab: st.tab, chip: st.chip, q: st.q, pyq: st.pyq, old: st.old, lang: st.lang, sheet: !sheet.hidden, top: (a.closest(".nd,.ls") || a).getBoundingClientRect().top } }, "", "#" + st.tab); } catch (er) { /* ignore */ }
+      sset(NAV, JSON.stringify({ to: u.pathname + u.search }));
+    }
   });
   render();
 })();
