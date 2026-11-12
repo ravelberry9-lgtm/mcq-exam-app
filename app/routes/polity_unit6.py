@@ -462,6 +462,12 @@ def question_page(q,choice=None,review=False,qs=None):
     notes=url_for('.notes',chapter_id=q['_chapter'],item_id=q['id'],**context,**review_args)
     locators=section_links(q)
     links=[dict(url=notes+'#'+l['anchor'],basis=l['basis'],title=l.get('title','')) for l in locators]
+    rl=read_links().get(q['id'])
+    if rl:
+        if rl['src']=='lax':
+            u=url_for('.notes',chapter_id=q['_chapter'],item_id=q['id'],src='lax',lx=rl['lx'],**context,**review_args)+'#'+rl['pid']
+            links=[dict(url=u,basis='exact',title='Laxmikanth')]+[l for l in links if l['basis']=='heading'][:1]
+        else:links=[dict(url=notes+'#'+rl['pid'],basis='exact',title='GBK notes')]+[l for l in links if l['basis']=='heading'][:1]
     has_notes=(directory(q['_chapter'])/'Notes.html').is_file()
     if not links and has_notes:links=[dict(url=notes+'#question-explanation',basis='explanation')]
     if not has_notes:notes=None
@@ -471,6 +477,11 @@ def question_page(q,choice=None,review=False,qs=None):
         notes_url=notes,section_links=links,review_args=review_args)
 
 from functools import lru_cache
+@lru_cache(maxsize=1)
+def read_links():
+    f=CONTENT/'_shared'/'Read-Links.json'
+    if not f.is_file():return {}
+    import json as _j;return _j.loads(f.read_text(encoding='utf-8')).get('links',{})
 @lru_cache(maxsize=16)
 def numbered_notes(chapter_id):
     """Stored notes HTML is untouched on disk; headings get stable ids at response time."""
@@ -482,6 +493,7 @@ def numbered_notes(chapter_id):
     return _re.sub(r'<h[1-4]\b[^>]*>',add,html)
 
 from pathlib import Path as _P
+from app.services import para_anchors as _pa
 LAX_DIR=CONTENT/'references'/'laxmikanth'
 LAX_CSS='''<style>body{background:#f4f6f8!important;font-size:16px!important;overflow-wrap:anywhere}.page{width:auto!important;max-width:900px!important;min-height:0!important;margin:0 auto!important;padding:14px 14px 30px!important;box-shadow:none!important;background:#fff!important}body>nav[style]{display:none!important}img,svg{max-width:100%;height:auto}table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}h1{font-size:1.35rem!important;line-height:1.4}.ptitle{display:block!important}@media(max-width:640px){body{font-size:15.5px!important}.page{padding:10px 10px 26px!important}[style*="columns"],[style*="column-count"]{column-count:1!important;columns:1!important}td,th{min-width:84px}ul{margin-left:16px!important}}</style>'''
 @bp.get('/chapters/<chapter_id>/notes')
@@ -492,13 +504,18 @@ def notes(chapter_id):
     if item_id and (not q or q['_chapter']!=chapter_id):abort(404)
     c=chapter_or_404(chapter_id)
     lax=[l for l in (c.get('laxmikanth') or []) if (LAX_DIR/f"chapter-{int(l['chapter']):03d}.html").is_file()]
-    src='lax' if request.args.get('src')=='lax' and lax else 'gbk'
     lx=request.args.get('lx',type=int)
+    if not lax and q and lx and (LAX_DIR/f"chapter-{lx:03d}.html").is_file():lax=[dict(chapter=lx,title='')]
+    src='lax' if request.args.get('src')=='lax' and lax else 'gbk'
     if src=='lax':
-        if lx not in [l['chapter'] for l in lax]:lx=lax[0]['chapter']
+        if lx not in [l['chapter'] for l in lax]:
+            if lx and (LAX_DIR/f"chapter-{lx:03d}.html").is_file() and q:lax=lax+[dict(chapter=lx,title='')]
+            else:lx=lax[0]['chapter']
         content=(LAX_DIR/f"chapter-{lx:03d}.html").read_text(encoding='utf-8-sig')
         content=_re.sub(r'</head>',lambda m:LAX_CSS+m.group(0),content,count=1,flags=_re.I)
-    else:content=numbered_notes(chapter_id)
+        content=_pa.add_ids(content,'lp')
+    else:content=_pa.add_ids(numbered_notes(chapter_id),'gp')
+    content=_pa.decorate(content)
     keep={k:v for k,v in request.args.items() if k not in ('src','lx')}
     tabs=dict(show=bool(lax),src=src,lx=lx,lax=[dict(n=l['chapter'],title=l.get('title',''),url=url_for('.notes',chapter_id=chapter_id,src='lax',lx=l['chapter'],**keep)) for l in lax],
         gbk=url_for('.notes',chapter_id=chapter_id,**keep),laxurl=url_for('.notes',chapter_id=chapter_id,src='lax',lx=lax[0]['chapter'],**keep) if lax else '')

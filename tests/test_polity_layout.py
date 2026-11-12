@@ -47,7 +47,8 @@ def test_every_locator_resolves_and_fallback_returns_without_rescoring(client,ap
                     from app.routes.polity_unit6 import numbered_notes
                     assert f'id="{link["anchor"]}"' in numbered_notes(q['_chapter'])
                 else:assert link['anchor'] in chapter_locators(q['_chapter'])[0]
-        q=next(q for q in qs.values() if not section_links(q) and visible(q))
+        from app.routes.polity_unit6 import read_links
+        q=next(q for q in qs.values() if not section_links(q) and visible(q) and q['id'] not in read_links())
     url='/learn/polity/unit6/practice/'+q['id']+'?chapter='+q['_chapter']+'&kind='+q['_kind']+'&qlang=both'
     answered=soup(client.post(url,data={'answer':'1'}))
     assert answered.select('.is-correct') and 'nscored' not in str(answered)
