@@ -465,9 +465,10 @@ def question_page(q,choice=None,review=False,qs=None):
     rl=read_links().get(q['id'])
     if rl:
         if rl['src']=='lax':
-            u=url_for('.notes',chapter_id=q['_chapter'],item_id=q['id'],src='lax',lx=rl['lx'],**context,**review_args)+'#'+rl['pid']
+            ex={'also':','.join(rl['also'])} if rl.get('also') else {}
+            u=url_for('.notes',chapter_id=q['_chapter'],item_id=q['id'],src='lax',lx=rl['lx'],**context,**review_args,**ex)+'#'+rl['pid']
             links=[dict(url=u,basis='exact',title='Laxmikanth')]+[l for l in links if l['basis']=='heading'][:1]
-        else:links=[dict(url=notes+'#'+rl['pid'],basis='exact',title='GBK notes')]+[l for l in links if l['basis']=='heading'][:1]
+        else:links=[dict(url=(url_for('.notes',chapter_id=q['_chapter'],item_id=q['id'],also=','.join(rl['also']),**context,**review_args) if rl.get('also') else notes)+'#'+rl['pid'],basis='exact',title='GBK notes')]+[l for l in links if l['basis']=='heading'][:1]
     has_notes=(directory(q['_chapter'])/'Notes.html').is_file()
     if not links and has_notes:links=[dict(url=notes+'#question-explanation',basis='explanation')]
     if not has_notes:notes=None

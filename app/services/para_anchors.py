@@ -11,7 +11,7 @@ CSS = ('<style>[id^="lp-"],[id^="gp-"]{scroll-margin-top:84px}'
        'tr.rd-hit td{background:#ffe4ef!important}</style>')
 JS = ('<script>(function(){var h=location.hash.slice(1);if(!/^(lp|gp)-\\d+$/.test(h))return;'
       'function go(){var e=document.getElementById(h)||document.querySelector("[data-pid=\\""+h+"\\"]");if(!e)return;e.classList.add("rd-hit");'
-      'e.scrollIntoView({block:"center"});}'
+      'e.scrollIntoView({block:"start"});var m=/[?&]also=([^&]+)/.exec(location.search);if(m)decodeURIComponent(m[1]).split(",").forEach(function(x){if(!/^(lp|gp)-\\d+$/.test(x))return;var f=document.getElementById(x)||document.querySelector("[data-pid=\\""+x+"\\"]");if(f)f.classList.add("rd-hit");});}'
       'if(document.readyState!="loading")go();else document.addEventListener("DOMContentLoaded",go);'
       'setTimeout(go,400);})();</script>')
 
