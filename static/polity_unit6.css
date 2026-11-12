@@ -165,9 +165,9 @@ body:has(.u6) .bottomnav .navoff{opacity:1!important;color:#4B556B}
 .xp-t{width:100%;border-collapse:collapse;font-size:.92rem;line-height:1.5;background:#fff}
 .xp-t th{background:#0f766e;color:#fff;text-align:left;padding:7px 8px;font-weight:600}
 .xp-t td{border:1px solid #e2e8f0;padding:7px 8px;vertical-align:top}
-.xp-t td:first-child{font-weight:700;white-space:nowrap;text-align:center}
+.xp-t td:first-child{font-weight:700;text-align:left;min-width:4.5em}
 .xp-t tr.ok td{background:#ecfdf5;font-weight:600}
-.xp-t th:first-child{white-space:nowrap}.xp-t th{white-space:normal}.xp-t td,.xp-t th{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto}.xp-t td:nth-child(2){min-width:7.5em}
+.xp-t th{white-space:normal}.xp-t td,.xp-t th{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto}.xp-t td:nth-child(2){min-width:7.5em}
 .xp-better{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin:8px 0 0!important;padding:10px 12px;background:#fff7ed;border:1px solid #fdba74;border-radius:10px;font-weight:600}.xp-better .xp-k{color:#b45309}.xp-better .xp-num{background:#b45309}
 /* instant practice: options answer on tap; swipe hint animation */
 .pr-instant .geo-submit{display:none}
@@ -179,3 +179,5 @@ body.pr-go-prev main{transform:translateX(24px);opacity:.6;transition:transform 
 
 .u6-langmini{display:inline-flex;margin-left:auto;border:1px solid #cbd5e1;border-radius:999px;overflow:hidden;flex:none}.u6-langmini a{padding:3px 9px;font-size:.78rem;font-weight:600;line-height:1.6;text-decoration:none;color:#475569;min-width:28px;text-align:center}.u6-langmini a+a{border-left:1px solid #cbd5e1}.u6-langmini a[aria-current]{background:#0f766e;color:#fff}
 .u6-ar{display:flex;flex-direction:column;gap:8px;margin:8px 0}.u6-ar p{margin:0;display:flex;flex-direction:column;gap:2px;padding:8px 10px;border-left:3px solid #0f766e;background:#f2f8f6;border-radius:6px}.u6-ar b{font-size:.78rem;letter-spacing:.02em;color:#0f766e}
+
+@media (max-width:600px){.xp-t{font-size:.86rem}.xp-t th,.xp-t td{padding:6px}.xp-t td,.xp-t th{-webkit-hyphens:manual;hyphens:manual;overflow-wrap:break-word}}
