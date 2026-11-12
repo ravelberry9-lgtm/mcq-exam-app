@@ -1,0 +1,60 @@
+{% extends 'ds/base.html' %}
+{% block title %}Practice · Indian Polity{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261112p') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><strong>Practice</strong></div>{% endblock %}
+{% block content %}<i hidden data-no-tools></i><div class="u6 ph">
+{% set kind=v.kind %}{% set pyqish=kind in ('pyq','') %}
+<form class="ph-form" method="get" action="{{ url_for('polity_unit6.practice_hub') }}" id="ph-form">
+<section class="card ph-top">
+  <h1 class="ph-h">Practice</h1>
+  <div class="ph-seg" role="radiogroup" aria-label="Question type">
+    <label class="{{ 'on' if kind=='pyq' }}"><input type="radio" name="kind" value="pyq" {{ 'checked' if kind=='pyq' }}><b>PYQs</b><small>{{ totals.pyq }}</small></label>
+    <label class="{{ 'on' if kind=='bank' }}"><input type="radio" name="kind" value="bank" {{ 'checked' if kind=='bank' }}><b>MCQs</b><small>{{ totals.bank }}</small></label>
+    <label class="{{ 'on' if kind=='' }}"><input type="radio" name="kind" value="" {{ 'checked' if kind=='' }}><b>All</b><small>{{ totals.pyq+totals.bank }}</small></label>
+  </div>
+  <p class="ph-note">Filters are optional. Leave them empty to practise everything.</p>
+</section>
+
+{% if kind=='pyq' %}
+<section class="card ph-sec"><h2>Exam</h2>
+  <div class="ph-chips" role="radiogroup" aria-label="Exam">
+    <label class="{{ 'on' if not v.exam }}"><input type="radio" name="exam" value="" {{ 'checked' if not v.exam }}>Any exam</label>
+    {% for g,name in groups %}<label class="{{ 'on' if v.exam==g }}"><input type="radio" name="exam" value="{{ g }}" {{ 'checked' if v.exam==g }}>{{ name }} <small>{{ exam_counts[g] }}</small></label>{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="card ph-sec"><h2><label for="ph-ch">Chapter</label></h2>
+  <select id="ph-ch" name="chapter" class="ph-sel">
+    <option value="">Any chapter</option>
+    {% set ns=namespace(u=None) %}
+    {% for c,n in chapters %}{% set u=c.id.split('.')[0] %}{% if u!=ns.u %}{% if ns.u %}</optgroup>{% endif %}<optgroup label="Unit {{ u }}">{% set ns.u=u %}{% endif %}
+    <option value="{{ c.id }}" {{ 'selected' if v.chapter==c.id }}>{{ c.id }} {{ c.title }} ({{ n }})</option>{% endfor %}{% if ns.u %}</optgroup>{% endif %}
+  </select>
+</section>
+
+{% if kind!='bank' %}
+<section class="card ph-sec"><h2>Focus <small>optional</small></h2>
+  <div class="ph-grid">
+    <label class="ph-f"><span>Article</span><select name="art" class="ph-sel"><option value="">Any article</option>{% for k,lab,n in facets.art %}<option value="{{ k }}" {{ 'selected' if v.art==k }}>{{ lab }} ({{ n }})</option>{% endfor %}</select></label>
+    <label class="ph-f"><span>Amendment</span><select name="amd" class="ph-sel"><option value="">Any amendment</option>{% for k,lab,n in facets.amd %}<option value="{{ k }}" {{ 'selected' if v.amd==k }}>{{ lab }} ({{ n }})</option>{% endfor %}</select></label>
+    <label class="ph-f"><span>Case</span><select name="case" class="ph-sel"><option value="">Any case</option>{% for k,lab,n in facets.case %}<option value="{{ k }}" {{ 'selected' if v.case==k }}>{{ lab }} ({{ n }})</option>{% endfor %}</select></label>
+  </div>
+  <label class="ph-toggle {{ 'on' if v.ca }}"><input type="checkbox" name="ca" value="1" {{ 'checked' if v.ca }}><span>Current affairs only</span></label>
+</section>
+{% endif %}
+
+<noscript><button class="ph-apply" type="submit">Apply filters</button></noscript>
+<div class="ph-bar">
+  <div class="ph-count"><b>{{ count }}</b> question{{ '' if count==1 else 's' }}{% if v.chapter or v.exam or v.art or v.amd or v.case or v.ca %} · <a href="{{ url_for('polity_unit6.practice_hub',kind=kind) }}">Clear filters</a>{% endif %}</div>
+  {% if start %}<a class="ph-go" href="{{ start }}">Start practice</a>{% else %}<span class="ph-go off" aria-disabled="true">No questions</span>{% endif %}
+</div>
+</form>
+</div>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='focus_mode.js',v='fm1') }}" defer></script><script>
+(function(){var f=document.getElementById('ph-form');if(!f)return;
+f.addEventListener('change',function(e){
+ if(e.target.name==='kind'){['exam','art','amd','case','ca','chapter'].forEach(function(n){var el=f.elements[n];if(!el)return;if(el.length&&!el.tagName){for(var i=0;i<el.length;i++)el[i].checked=el[i].value==='';}else if(el.type==='checkbox')el.checked=false;else if(n!=='chapter')el.value='';});}
+ var d=new FormData(f),p=new URLSearchParams();d.forEach(function(x,k){if(x!==''||k==='kind')p.append(k,x)});
+ location.href=f.action+'?'+p.toString();});
+})();</script>{% endblock %}

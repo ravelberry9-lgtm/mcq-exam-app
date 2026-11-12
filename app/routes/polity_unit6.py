@@ -121,7 +121,7 @@ _ITEM=_re.compile(r'^\s*(\(?)([1-9]|[A-Ea-e]|i{1,3}|iv|v)([.)])\s+(.*\S)\s*$')
 def _kind(m):
     t=m.group(2)
     return 'num' if t.isdigit() else 'roman' if t in('i','ii','iii','iv','v') else 'upper' if t.isupper() else 'lower'
-_LHDR=_re.compile(r'^\s*((?:List|LIST)[- ]?(?:I{1,2}|1|2)\b[^:：]*|జాబితా[- ]?(?:I{1,2}|1|2)\b[^:：]*|Categories|వర్గాలు|Codes?|కోడ్‌?లు?)\s*[:：]?\s*(.*)$')
+_LHDR=_re.compile(r'^\s*((?:List|LIST)[- ]?(?:I{1,2}|1|2|A|B)\b[^:：]*|జాబితా[- ]?(?:I{1,2}|1|2|A|B)\b[^:：]*|Categories|వర్గాలు|Codes?|కోడ్‌?లు?)\s*[:：]?\s*(.*)$')
 _SEQS=[['I','II','III','IV','V','VI'],[c for c in 'ABCDEFG'],[c for c in 'abcdefg'],[str(i) for i in range(1,10)],['i','ii','iii','iv','v','vi']]
 def _split_seq(line):
     """'A. x  B. y  C. z' -> ['A. x','B. y','C. z'] following the label sequence, so names like 'B. R. Ambedkar' inside an item are safe."""
@@ -305,7 +305,9 @@ def _recall_fresh():
 def home():
     units=read(CONTENT/'MASTER-INDEX.json')['units']
     decks=[d for d in _recall.all_decks() if d['count']] if enabled() else []
-    return render_template('ds/polity_subject.html',units=units,decks=decks,pm=_pm.metrics() if decks else None,trees=_recall.trees()['counts'] if decks else None)
+    allq=[q for q in records().values() if visible(q)] if enabled() else []
+    pt={'bank':sum(q['_kind']=='bank' for q in allq),'pyq':sum(q['_kind']!='bank' for q in allq)}
+    return render_template('ds/polity_subject.html',practice_totals=lambda:pt,units=units,decks=decks,pm=_pm.metrics() if decks else None,trees=_recall.trees()['counts'] if decks else None)
 
 def _recall_page(deck_id):
     d=_recall.deck(deck_id)
@@ -395,11 +397,63 @@ def chapter(chapter_id):
     progress=db.session.get(PolityUnit6Progress,(device_id(),chapter_id))
     return render_template('ds/polity_browse.html',mode='chapter',chapter=c,unit_no=unit_of(chapter_id),has_notes=(directory(chapter_id)/'Notes.html').is_file(),desc=sum(1 for x in descriptive_items() if x['chapter']==c['id']),mcq=sum(q['_kind']=='bank' for q in own),pyq=sum(q['_kind'] in ('pyq','primary_pyq') for q in own),total=len(own),unscored=sum(not q['_scored'] for q in own),progress=progress)
 
+EXAM_GROUPS=[('upsc','UPSC'),('g2','APPSC Group 2'),('g1','APPSC Group 1'),('tspsc','TSPSC / TGPSC'),('appsc','APPSC other'),('other','Other')]
+def exam_group(exam):
+    e=(exam or '').upper()
+    if e.startswith('UPSC'):return 'upsc'
+    if 'TSPSC' in e or 'TGPSC' in e:return 'tspsc'
+    if re.match(r'APPSC GROUP[- ]?(II|2)\b',e):return 'g2'
+    if re.match(r'APPSC GROUP[- ]?(I|1)\b',e):return 'g1'
+    if e.startswith('APPSC'):return 'appsc'
+    return 'other'
+_ART=re.compile(r'\bArt(?:icle)?s?\.?\s*(\d{1,3}[A-Z]{0,2}(?:\s*\(\d+\))?(?:\s*(?:,|and|&|or)\s*\d{1,3}[A-Z]{0,2}(?:\s*\(\d+\))?)*)')
+_AMD=re.compile(r'\b(\d{1,3})(?:st|nd|rd|th)\s+(?:Constitutional\s+|Constitution\s+)?\(?Amendment',re.I)
+_AMD2=re.compile(r'Constitution\s*\((\d{1,3})(?:st|nd|rd|th)\s+Amendment',re.I)
+_CA=re.compile(r'\b(recent(ly)?|in (the )?news|current(ly)?)\b|(?<!\()\b20(2[2-6])\b(?!\))',re.I)
+@lru_cache(maxsize=1)
+def _case_keys():
+    out=[]
+    for c in _recall.items('cases') or []:
+        name=re.sub(r'\s+case$','',c.get('front_en') or '',flags=re.I).strip()
+        if len(name)>=4:out.append((c['id'],name,[k for k in {name,(c.get('short_en') or '').strip()} if len(k)>=5]))
+    return out
+_TAGS={}
+def q_tags(q):
+    key=(q['id'],q.get('question_en'),tuple(q.get('options_en') or ()),q.get('exam'))
+    t=_TAGS.get(key)
+    if t is not None:return t
+    txt=' '.join([q.get('question_en') or '']+list(q.get('options_en') or []))
+    arts=set()
+    for m in _ART.finditer(txt):
+        for n in re.findall(r'\d{1,3}[A-Z]{0,2}',re.sub(r'\(\d+\)','',m.group(1))):
+            if 1<=int(re.match(r'\d+',n).group())<=395:arts.add(n)
+    amds={m.group(1) for r in (_AMD,_AMD2) for m in r.finditer(txt) if 1<=int(m.group(1))<=106}
+    low=txt.casefold();cases={cid for cid,_,keys in _case_keys() if any(k.casefold() in low for k in keys)}
+    stem=q.get('question_en') or ''
+    t={'exam':exam_group(q.get('exam')) if q['_kind'] in ('pyq','primary_pyq') else '','art':arts,'amd':amds,'case':cases,'ca':bool(_CA.search(stem))}
+    _TAGS[key]=t;return t
+def _artkey(a):m=re.match(r'(\d+)(.*)',a);return (int(m.group(1)),m.group(2))
+def facet_options(qs):
+    """Values (with counts) for the article / amendment / case dropdowns of a question set."""
+    from collections import Counter
+    a=Counter();m=Counter();c=Counter()
+    for q in qs:
+        t=q_tags(q);a.update(t['art']);m.update(t['amd']);c.update(t['case'])
+    names={cid:n for cid,n,_ in _case_keys()}
+    return {'art':[(k,'Article '+k,a[k]) for k in sorted(a,key=_artkey)],
+            'amd':[(k,k+_ordinal(int(k))+' Amendment',m[k]) for k in sorted(m,key=int)],
+            'case':sorted(((k,names[k],c[k]) for k in c),key=lambda x:x[1].casefold())}
+def _ordinal(n):return 'th' if 10<=n%100<=20 else {1:'st',2:'nd',3:'rd'}.get(n%10,'th')
+FACETS=('exam','art','amd','case','ca')
+
 def filters(default_chapter=''):
-    values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view','map','unit')}
+    values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view','map','unit')+FACETS}
+    if values['exam'] and values['exam'] not in dict(EXAM_GROUPS):abort(404)
+    if values['ca'] not in ('','1'):abort(404)
     if values['unit'] and (not values['unit'].isdigit() or int(values['unit']) not in UNITS):abort(404)
     if values['map'] and values['map'] not in catalog():abort(404)
     if not any(k in request.args for k in values):values['chapter']=default_chapter
+    if any(values[k] for k in FACETS) and not any(k in request.args for k in ('chapter','unit')):values['chapter']=''
     if values['chapter']:chapter_or_404(values['chapter'])
     return values
 
@@ -415,6 +469,10 @@ def selection(values):
     if kind=='chaptertest' and not chapter:qs=[q for c in chapters() for q in test_records(c['id'])]
     if kind!='chaptertest':qs=[q for q in qs if visible(q)]
     else:qs=[q for q in qs if q.get('hold_reason')!='retired, no key']
+    if values.get('exam'):qs=[q for q in qs if q_tags(q)['exam']==values['exam']]
+    for k in ('art','amd','case'):
+        if values.get(k):qs=[q for q in qs if values[k] in q_tags(q)[k]]
+    if values.get('ca'):qs=[q for q in qs if q_tags(q)['ca']]
     if query:qs=[q for q in qs if query.casefold() in (q.get('question_en','')+' '+q.get('question_te','')+' '+q['id']).casefold()]
     if view in ('saved','mistakes'):
         states=PolityUnit6State.query.filter_by(device_id=device_id()).all()
@@ -693,6 +751,29 @@ def save_exam_answer(exam_id):
     return {'saved':True}
 
 
+def _hub_values():
+    v={k:request.args.get(k,'').strip() for k in ('kind','chapter')+FACETS}
+    if v['kind'] not in ('','bank','pyq'):abort(404)
+    if v['exam'] and v['exam'] not in dict(EXAM_GROUPS):abort(404)
+    if v['chapter']:chapter_or_404(v['chapter'])
+    if v['kind']=='bank':
+        for k in FACETS:v[k]=''
+    if v['kind']=='':v['exam']=''
+    return v
+def _hub_select(v):return selection({'q':'','view':'','map':'','unit':'',**v})
+@bp.get('/practice')
+def practice_hub():
+    v=_hub_values();qs=_hub_select(v)
+    base=_hub_select({**v,'chapter':''});fbase=_hub_select({**v,'art':'','amd':'','case':'','ca':''})
+    allq=[q for q in records().values() if visible(q)]
+    ex={g:sum(1 for q in allq if q['_kind']!='bank' and q_tags(q)['exam']==g) for g,_ in EXAM_GROUPS}
+    chs=[(c,sum(1 for q in base if q['_chapter']==c['id'])) for c in chapters()]
+    lang=language()
+    start=url_for('.practice',item_id=qs[0]['id'],qlang=lang,**{k:x for k,x in v.items() if x}) if qs else None
+    return render_template('ds/polity_practice_hub.html',v=v,count=len(qs),start=start,groups=EXAM_GROUPS,exam_counts=ex,
+        chapters=[c for c in chs if c[1]],facets=facet_options(fbase),
+        totals={'bank':sum(q['_kind']=='bank' for q in allq),'pyq':sum(q['_kind']!='bank' for q in allq)},
+        list_url=url_for('.library',**{k:x for k,x in v.items() if x}))
 @bp.get('/pick.json')
 def pick():
     """Section chooser for MCQ/PYQ practice: 'All' for the unit plus one entry per chapter, each with a start link."""

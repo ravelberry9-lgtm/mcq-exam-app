@@ -19,6 +19,8 @@ def init_marks_inject(app):
             if any(p == s.rstrip('/') or p.startswith(s if s.endswith('/') else s + '/') for s in SKIP):
                 return resp
             body = resp.get_data(as_text=True)
+            if 'data-no-tools' in body:              # practice pages: no highlighter/notes tools
+                return resp
             if '</body>' not in body or 'study_tools.js' in body and 'data-mk-auto' in body:
                 return resp
             add = ''
