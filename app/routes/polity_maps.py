@@ -111,6 +111,8 @@ def _load_records():
         if not q or not x.get('lead'):continue
         lines=[x['lead']]+list(x.get('points') or [])+(['Also remember: '+x['also']] if x.get('also') else [])
         q['_en']='\n'.join(lines);q['_te']='';q['_v2']=True;q['explain_table']=x.get('table')
+        t=x.get('te') or {}
+        if t.get('lead'):q['_te']='\n'.join([t['lead']]+list(t.get('points') or [])+(['ఇది కూడా గుర్తుంచుకోండి: '+t['also']] if t.get('also') else []));q['explain_table_te']=t.get('table')
         if x.get('better_answer') in (1,2,3,4) and x['better_answer']!=q.get('_answer'):q['_better']=x['better_answer'];q['key_status']='disputed';q.setdefault('official_key',q.get('_answer'))
     for q in result.values():
         q['_orig_scored']=q['_scored'];q['_scored']=q['_answer'] in (1,2,3,4)

@@ -24,7 +24,7 @@
     <h3 class="xp-h">{{ _lbl(lang,'ఎందుకు','Why') }}</h3>
     {% if pte %}<p class="xp-lead" lang="te">{{ pte.lead }}</p>{% endif %}
     {% if pen %}<p class="xp-lead{% if alt %} xp-alt{% endif %}" lang="en">{{ pen.lead }}</p>{% endif %}
-    {% if q.explain_table and (pen or not pte) %}<div class="xp-tw"><table class="xp-t"><thead><tr>{% for h in q.explain_table.head %}<th>{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for r in q.explain_table.rows %}<tr{% if '✓' in r|join(' ') %} class="ok"{% endif %}>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% endif %}
+    {% if pte and q.explain_table_te %}<div class="xp-tw" lang="te"><table class="xp-t"><thead><tr>{% for h in q.explain_table_te.head %}<th>{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for r in q.explain_table_te.rows %}<tr{% if '✓' in r|join(' ') %} class="ok"{% endif %}>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% endif %}{% if q.explain_table and (pen or not pte) and not (lang=='te' and q.explain_table_te) %}<div class="xp-tw"><table class="xp-t"><thead><tr>{% for h in q.explain_table.head %}<th>{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for r in q.explain_table.rows %}<tr{% if '✓' in r|join(' ') %} class="ok"{% endif %}>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% endif %}
     {% if pte and pte.why %}<ul class="xp-pts" lang="te">{% for s in pte.why %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}
     {% if pen and pen.why %}<ul class="xp-pts{% if alt %} xp-alt{% endif %}" lang="en">{% for s in pen.why %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}
   </section>
