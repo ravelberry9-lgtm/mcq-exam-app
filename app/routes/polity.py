@@ -120,7 +120,17 @@ def unit_61():
         explanation_id = question.get("explanation_id", question["id"])
         if explanation_id in shared_explanations["questions"]:
             explanations["questions"][explanation_id] = shared_explanations["questions"][explanation_id]
+    v2 = json.loads((SHARED / "PYQ-Explanations-v2.json").read_text(encoding="utf-8-sig"))["questions"]
+    for question in questions["questions"]:
+        explanation_id = question.get("explanation_id", question["id"])
+        if explanation_id not in explanations["questions"] and explanation_id in v2:
+            entry = v2[explanation_id]
+            text = " ".join(part for part in [entry.get("lead")] + list(entry.get("points") or []) + [entry.get("also")] if part)
+            explanations["questions"][explanation_id] = {"en": text, "te": ""}
     pyq_mapping = json.loads((SHARED / "PYQ-mapping.json").read_text(encoding="utf-8-sig"))
+    for question in questions["questions"]:
+        if question.get("source") and question["id"] not in pyq_mapping:
+            question.pop("source")  # book reference of an original question, not a PYQ source line
     expected = json.loads((SHARED / "Expected-Questions.json").read_text(encoding="utf-8-sig"))
     return render_template(
         "ds/polity_unit.html", questions=questions["questions"],

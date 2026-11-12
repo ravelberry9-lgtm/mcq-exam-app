@@ -489,21 +489,21 @@
       ],
       "format": "matching",
       "difficulty": "moderate",
-      "question_en": "Under Pitt’s India Act, 1784, match the institution with its principal sphere.\nA. Board of Control\nB. Court of Directors\n1. Commercial affairs\n2. Political affairs\nChoose the A–B sequence.",
-      "question_te": "1784 పిట్ ఇండియా చట్టం కింద సంస్థను దాని ప్రధాన రంగంతో జతపరచండి.\nA. బోర్డ్ ఆఫ్ కంట్రోల్\nB. కోర్ట్ ఆఫ్ డైరెక్టర్స్\n1. వాణిజ్య వ్యవహారాలు\n2. రాజకీయ వ్యవహారాలు\nA–B క్రమం ఎంచుకోండి.",
+      "question_en": "Consider the following statements about Pitt's India Act, 1784:\n1. It distinguished between the commercial and political functions of the Company.\n2. It created a Board of Control to manage political affairs, leaving commercial affairs to the Court of Directors.\n3. It abolished the Court of Directors.\nWhich statements are correct?",
+      "question_te": "పిట్స్ ఇండియా చట్టం, 1784 గురించి కింది వాక్యాలను పరిశీలించండి:\n1. ఇది కంపెనీ వాణిజ్య విధులను, రాజకీయ విధులను వేరు చేసింది.\n2. రాజకీయ వ్యవహారాల కోసం బోర్డ్ ఆఫ్ కంట్రోల్ (Board of Control) ను ఏర్పాటు చేసింది; వాణిజ్య వ్యవహారాలు కోర్ట్ ఆఫ్ డైరెక్టర్స్ (Court of Directors) వద్దే ఉన్నాయి.\n3. ఇది కోర్ట్ ఆఫ్ డైరెక్టర్స్‌ను రద్దు చేసింది.\nవీటిలో సరైనవి ఏవి?",
       "options_en": [
-        "1–2",
-        "1–1",
-        "2–2",
-        "2–1"
+        "1 only",
+        "1 and 2 only",
+        "2 and 3 only",
+        "1, 2 and 3"
       ],
       "options_te": [
-        "1–2",
-        "1–1",
-        "2–2",
-        "2–1"
+        "1 మాత్రమే",
+        "1, 2 మాత్రమే",
+        "2, 3 మాత్రమే",
+        "1, 2, 3"
       ],
-      "answer": 4,
+      "answer": 2,
       "explanation_id": "POL-6.1.3-P13-18",
       "review_status": "Author hand-curated and solved all bilingual options; not independent review",
       "sources": {
@@ -1216,7 +1216,8 @@
           "section": "Government of India Act1935",
           "match": "Actual corresponding English paragraph and Telugu explanation read. RBI statutory basis separately corrected using RBI’s own history."
         }
-      }
+      },
+      "hold_reason": "Removed in 2026-11-12 audit: Same fact and same match format as POL-6.1.3-MT03 (59/54/36 items in the 1935 lists); MT03 is the fuller version."
     },
     {
       "id": "POL-613-P23-12",
@@ -1783,6 +1784,167 @@
         "decision_register": "claude-wave2-newmcq-review.json",
         "source_fidelity": "Independently reviewed original practice; no printed-source transcription claim."
       }
+    },
+    {
+      "id": "POL-6.1.3-AR01",
+      "kind": "original",
+      "format": "assertion",
+      "difficulty": "easy",
+      "question_en": "Assertion (A): The Charter Act of 1833 made the Governor-General of Bengal the Governor-General of India.\nReason (R): The Charter Act of 1833 was the final step towards centralisation in British India.",
+      "question_te": "ప్రతిపాదన (A): 1833 చార్టర్ చట్టం (Charter Act) బెంగాల్ గవర్నర్ జనరల్‌ను భారత గవర్నర్ జనరల్‌గా మార్చింది.\nకారణం (R): బ్రిటిష్ ఇండియాలో కేంద్రీకరణ (centralisation) దిశగా వేసిన చివరి అడుగు 1833 చార్టర్ చట్టమే.",
+      "options_en": [
+        "Both A and R are true and R is the correct explanation of A",
+        "Both A and R are true but R is not the correct explanation of A",
+        "A is true but R is false",
+        "A is false but R is true"
+      ],
+      "options_te": [
+        "A, R రెండూ నిజం; A కు R సరైన వివరణ",
+        "A, R రెండూ నిజం; కానీ A కు R సరైన వివరణ కాదు",
+        "A నిజం, కానీ R తప్పు",
+        "A తప్పు, కానీ R నిజం"
+      ],
+      "answer": 1,
+      "explanation_id": "POL-6.1.3-AR01",
+      "source": "GBK p.13 / Laxmikanth ch.1"
+    },
+    {
+      "id": "POL-6.1.3-AR02",
+      "kind": "original",
+      "format": "assertion",
+      "difficulty": "medium",
+      "question_en": "Assertion (A): Lord Minto is known as the 'Father of Communal Electorate'.\nReason (R): The Indian Councils Act of 1909 introduced dyarchy in the provinces.",
+      "question_te": "ప్రతిపాదన (A): లార్డ్ మింటోను 'మత ప్రాతిపదిక నియోజకవర్గాల పితామహుడు (Father of Communal Electorate)' అంటారు.\nకారణం (R): 1909 భారత కౌన్సిళ్ల చట్టం (Indian Councils Act) రాష్ట్రాలలో ద్వంద్వ పాలన (dyarchy) ప్రవేశపెట్టింది.",
+      "options_en": [
+        "Both A and R are true and R is the correct explanation of A",
+        "Both A and R are true but R is not the correct explanation of A",
+        "A is true but R is false",
+        "A is false but R is true"
+      ],
+      "options_te": [
+        "A, R రెండూ నిజం; A కు R సరైన వివరణ",
+        "A, R రెండూ నిజం; కానీ A కు R సరైన వివరణ కాదు",
+        "A నిజం, కానీ R తప్పు",
+        "A తప్పు, కానీ R నిజం"
+      ],
+      "answer": 3,
+      "explanation_id": "POL-6.1.3-AR02",
+      "source": "GBK p.15 / Laxmikanth ch.1"
+    },
+    {
+      "id": "POL-6.1.3-AR03",
+      "kind": "original",
+      "format": "assertion",
+      "difficulty": "medium",
+      "question_en": "Assertion (A): The Charter Act of 1813 ended the East India Company's trade monopoly in India.\nReason (R): The Charter Act of 1833 ended the activities of the East India Company as a commercial body.",
+      "question_te": "ప్రతిపాదన (A): 1813 చార్టర్ చట్టం భారతదేశంలో ఈస్ట్ ఇండియా కంపెనీ వ్యాపార గుత్తాధిపత్యాన్ని (trade monopoly) రద్దు చేసింది.\nకారణం (R): 1833 చార్టర్ చట్టం కంపెనీని వాణిజ్య సంస్థ (commercial body) గా పనిచేయకుండా ముగించింది.",
+      "options_en": [
+        "Both A and R are true and R is the correct explanation of A",
+        "Both A and R are true but R is not the correct explanation of A",
+        "A is true but R is false",
+        "A is false but R is true"
+      ],
+      "options_te": [
+        "A, R రెండూ నిజం; A కు R సరైన వివరణ",
+        "A, R రెండూ నిజం; కానీ A కు R సరైన వివరణ కాదు",
+        "A నిజం, కానీ R తప్పు",
+        "A తప్పు, కానీ R నిజం"
+      ],
+      "answer": 2,
+      "explanation_id": "POL-6.1.3-AR03",
+      "source": "GBK p.13 / Laxmikanth ch.1"
+    },
+    {
+      "id": "POL-6.1.3-AR04",
+      "kind": "original",
+      "format": "assertion",
+      "difficulty": "hard",
+      "question_en": "Assertion (A): The Government of India Act of 1935 introduced dyarchy in the provinces.\nReason (R): The Government of India Act of 1919 divided provincial subjects into 'transferred' and 'reserved' subjects.",
+      "question_te": "ప్రతిపాదన (A): 1935 భారత ప్రభుత్వ చట్టం (Government of India Act) రాష్ట్రాలలో ద్వంద్వ పాలన (dyarchy) ప్రవేశపెట్టింది.\nకారణం (R): 1919 భారత ప్రభుత్వ చట్టం రాష్ట్ర అంశాలను 'బదిలీ చేసిన (transferred)', 'రిజర్వు చేసిన (reserved)' అంశాలుగా విభజించింది.",
+      "options_en": [
+        "Both A and R are true and R is the correct explanation of A",
+        "Both A and R are true but R is not the correct explanation of A",
+        "A is true but R is false",
+        "A is false but R is true"
+      ],
+      "options_te": [
+        "A, R రెండూ నిజం; A కు R సరైన వివరణ",
+        "A, R రెండూ నిజం; కానీ A కు R సరైన వివరణ కాదు",
+        "A నిజం, కానీ R తప్పు",
+        "A తప్పు, కానీ R నిజం"
+      ],
+      "answer": 4,
+      "explanation_id": "POL-6.1.3-AR04",
+      "source": "GBK p.17 / Laxmikanth ch.1"
+    },
+    {
+      "id": "POL-6.1.3-MT01",
+      "kind": "original",
+      "format": "match",
+      "difficulty": "easy",
+      "question_en": "Match List-I with List-II and select the correct answer using the codes given below:\nList-I (Measure)\nA. Indian Councils Act, 1909\nB. Government of India Act, 1919\nC. Communal Award, 1932\nD. Plan for partition, June 1947\nList-II (Associated with)\n1. Ramsay MacDonald\n2. Morley and Minto\n3. Lord Mountbatten\n4. Montagu and Chelmsford",
+      "question_te": "జాబితా-I ని జాబితా-II తో జతపరచి, కింద ఇచ్చిన సంకేతాల ద్వారా సరైన సమాధానాన్ని ఎంచుకోండి:\nజాబితా-I (చర్య)\nA. భారత కౌన్సిళ్ల చట్టం, 1909\nB. భారత ప్రభుత్వ చట్టం, 1919\nC. కమ్యూనల్ అవార్డు (Communal Award), 1932\nD. దేశ విభజన ప్రణాళిక, జూన్ 1947\nజాబితా-II (సంబంధిత వ్యక్తి)\n1. రామ్సే మెక్‌డొనాల్డ్\n2. మార్లే, మింటో\n3. లార్డ్ మౌంట్‌బాటన్\n4. మాంటేగ్, చెమ్స్‌ఫర్డ్",
+      "options_en": [
+        "A-4, B-2, C-1, D-3",
+        "A-2, B-4, C-1, D-3",
+        "A-2, B-4, C-3, D-1",
+        "A-1, B-4, C-2, D-3"
+      ],
+      "options_te": [
+        "A-4, B-2, C-1, D-3",
+        "A-2, B-4, C-1, D-3",
+        "A-2, B-4, C-3, D-1",
+        "A-1, B-4, C-2, D-3"
+      ],
+      "answer": 2,
+      "explanation_id": "POL-6.1.3-MT01",
+      "source": "GBK p.15-18 / Laxmikanth ch.1"
+    },
+    {
+      "id": "POL-6.1.3-MT02",
+      "kind": "original",
+      "format": "match",
+      "difficulty": "medium",
+      "question_en": "Match List-I with List-II and select the correct answer using the codes given below:\nList-I (Act)\nA. Regulating Act, 1773\nB. Charter Act, 1853\nC. Indian Councils Act, 1892\nD. Government of India Act, 1919\nList-II (Provision introduced)\n1. Supreme Court at Calcutta\n2. Limited, indirect use of election for non-official members\n3. Open competition for recruitment of civil servants\n4. Extension of separate electorates to Sikhs, Indian Christians, Anglo-Indians and Europeans",
+      "question_te": "జాబితా-I ని జాబితా-II తో జతపరచి, కింద ఇచ్చిన సంకేతాల ద్వారా సరైన సమాధానాన్ని ఎంచుకోండి:\nజాబితా-I (చట్టం)\nA. రెగ్యులేటింగ్ చట్టం, 1773\nB. చార్టర్ చట్టం, 1853\nC. భారత కౌన్సిళ్ల చట్టం, 1892\nD. భారత ప్రభుత్వ చట్టం, 1919\nజాబితా-II (ప్రవేశపెట్టిన అంశం)\n1. కలకత్తాలో సుప్రీంకోర్టు\n2. అనధికార సభ్యుల ఎంపికలో పరిమిత, పరోక్ష ఎన్నిక\n3. సివిల్ సర్వెంట్ల నియామకానికి బహిరంగ పోటీ (open competition) విధానం\n4. సిక్కులు, భారతీయ క్రైస్తవులు, ఆంగ్లో-ఇండియన్లు, యూరోపియన్లకు ప్రత్యేక నియోజకవర్గాల విస్తరణ",
+      "options_en": [
+        "A-1, B-2, C-3, D-4",
+        "A-3, B-1, C-2, D-4",
+        "A-1, B-3, C-4, D-2",
+        "A-1, B-3, C-2, D-4"
+      ],
+      "options_te": [
+        "A-1, B-2, C-3, D-4",
+        "A-3, B-1, C-2, D-4",
+        "A-1, B-3, C-4, D-2",
+        "A-1, B-3, C-2, D-4"
+      ],
+      "answer": 4,
+      "explanation_id": "POL-6.1.3-MT02",
+      "source": "GBK p.13-16 / Laxmikanth ch.1"
+    },
+    {
+      "id": "POL-6.1.3-MT03",
+      "kind": "original",
+      "format": "match",
+      "difficulty": "hard",
+      "question_en": "Match List-I with List-II and select the correct answer using the codes given below:\nList-I (Under the Government of India Act, 1935)\nA. Federal List\nB. Provincial List\nC. Concurrent List\nD. Residuary powers\nList-II (Content)\n1. 54 items\n2. Vested in the Governor-General\n3. 36 items\n4. 59 items",
+      "question_te": "జాబితా-I ని జాబితా-II తో జతపరచి, కింద ఇచ్చిన సంకేతాల ద్వారా సరైన సమాధానాన్ని ఎంచుకోండి:\nజాబితా-I (1935 భారత ప్రభుత్వ చట్టం కింద)\nA. ఫెడరల్ జాబితా (Federal List)\nB. ప్రాంతీయ జాబితా (Provincial List)\nC. ఉమ్మడి జాబితా (Concurrent List)\nD. అవశిష్ట అధికారాలు (Residuary powers)\nజాబితా-II (వివరం)\n1. 54 అంశాలు\n2. గవర్నర్ జనరల్‌కు అప్పగించారు\n3. 36 అంశాలు\n4. 59 అంశాలు",
+      "options_en": [
+        "A-4, B-1, C-3, D-2",
+        "A-1, B-4, C-3, D-2",
+        "A-4, B-3, C-1, D-2",
+        "A-4, B-1, C-2, D-3"
+      ],
+      "options_te": [
+        "A-4, B-1, C-3, D-2",
+        "A-1, B-4, C-3, D-2",
+        "A-4, B-3, C-1, D-2",
+        "A-4, B-1, C-2, D-3"
+      ],
+      "answer": 1,
+      "explanation_id": "POL-6.1.3-MT03",
+      "source": "GBK p.17 / Laxmikanth ch.1"
     }
   ]
 }

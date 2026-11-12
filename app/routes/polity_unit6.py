@@ -109,12 +109,69 @@ _ITEM=_re.compile(r'^\s*(\(?)([1-9]|[A-Ea-e]|i{1,3}|iv|v)([.)])\s+(.*\S)\s*$')
 def _kind(m):
     t=m.group(2)
     return 'num' if t.isdigit() else 'roman' if t in('i','ii','iii','iv','v') else 'upper' if t.isupper() else 'lower'
+_LHDR=_re.compile(r'^\s*((?:List|LIST)[- ]?(?:I{1,2}|1|2)\b[^:：]*|జాబితా[- ]?(?:I{1,2}|1|2)\b[^:：]*|Categories|వర్గాలు|Codes?|కోడ్‌?లు?)\s*[:：]?\s*(.*)$')
+_SEQS=[['I','II','III','IV','V','VI'],[c for c in 'ABCDEFG'],[c for c in 'abcdefg'],[str(i) for i in range(1,10)],['i','ii','iii','iv','v','vi']]
+def _split_seq(line):
+    """'A. x  B. y  C. z' -> ['A. x','B. y','C. z'] following the label sequence, so names like 'B. R. Ambedkar' inside an item are safe."""
+    m=_re.match(r'\s*\(?([A-Ga-g]|[1-9]|I{1,3}|IV|i{1,3}|iv|vi?)[.)](?:\s+|(?=[^\W\d_]))',line)
+    if not m:return [line]
+    first=m.group(1);seq=next((q for q in _SEQS if first in q and q.index(first)==0),None)
+    if not seq:return [line]
+    parts=[];pos=0;idx=1
+    while idx<len(seq):
+        mm=_re.compile(r'(?:\s|,|;|\|)\s*\(?'+_re.escape(seq[idx])+r'[.)](?:\s+|(?=[^\W\d_]))').search(line,pos+2)
+        if not mm:break
+        parts.append(line[pos:mm.start()].strip(' ,;|'));pos=mm.start()+len(mm.group(0))-len(mm.group(0).lstrip(' ,;|'));idx+=1
+    parts.append(line[pos:].strip(' ,;|'))
+    return parts if len(parts)>1 else [line]
+_AR_A=_re.compile(r'(Assertion\s*(?:\(A\)|A)?|(?:ప్రతిపాదన|ప్రకటన|వాదన|ధృవీకరణ|వక్కాణింపు|నిశ్చితాభిప్రాయం|నిశ్చిత వాక్యం|నిశ్చితం|అభిప్రాయం)\s*\(A\))\s*[:：]\s*')
+_AR_R=_re.compile(r'(Reason\s*(?:\(R\)|R)?|కారణం\s*\(R\))\s*[:：]\s*')
+_AR_TAIL=_re.compile(r'\s*(?:\n|(?<=[.?])\s+)(?=(?:In the context|Choose|Select|Which (?:one )?of the following|సరైన|పై రెండు|కింది వాటిలో))')
+def _format_ar(text):
+    a=_AR_A.search(text);r=_AR_R.search(text,a.end()) if a else None
+    if not(a and r):return None
+    intro=text[:a.start()].strip();A=text[a.end():r.start()].strip();rest=text[r.end():]
+    t=_AR_TAIL.search(rest);R=(rest[:t.start()] if t else rest).strip();tail=(rest[t.end():] if t else '').strip()
+    te=bool(_re.search(r'[ఀ-౿]',text))
+    la,lr=('ప్రతిపాదన (A)','కారణం (R)') if te else ('Assertion (A)','Reason (R)')
+    out=['<div class="u6-stem">']
+    if intro:out.append('<p class="u6-intro">'+str(escape(intro))+'</p>')
+    out.append('<div class="u6-ar"><p><b>'+la+'</b><span>'+str(escape(A))+'</span></p><p><b>'+lr+'</b><span>'+str(escape(R))+'</span></p></div>')
+    if tail:out.append('<p class="u6-tail">'+str(escape(tail))+'</p>')
+    out.append('</div>');return Markup(''.join(out))
+_PAIR=_re.compile(r'^\s*\(?([A-Ga-g])[.)]\s*(.+?)\s+\(?([1-9]|i{1,3}|iv|v)[.)]\s+(.+)$')
+def _normalize_lists(text):
+    raw=[l.strip().strip('|').strip() for l in str(text).replace('\r','').split('\n') if not _re.match(r'^\s*\|?\s*-{3,}',l)]
+    raw=[_re.sub(r'\s*\|\s*','  ',l) if _re.match(r'^\(?[A-Ga-g][.)]\s',l) else l for l in raw]
+    pairs=[_PAIR.match(l) for l in raw]
+    if sum(1 for p in pairs if p)>=2:
+        L=[f'{p.group(1)}. {p.group(2)}' for p in pairs if p];R=[f'{p.group(3)}. {p.group(4)}' for p in pairs if p]
+        first=next(i for i,p in enumerate(pairs) if p);last=max(i for i,p in enumerate(pairs) if p)
+        text='\n'.join(raw[:first]+L+R+raw[last+1:])
+    out=[]
+    for line in str(text).replace('\r','').replace(' | ','\n').split('\n'):
+        h=_LHDR.match(line)
+        if h:
+            out.append('§HDR§'+h.group(1).strip());line=h.group(2)
+            if not line.strip():continue
+        lead=_re.match(r'^(.*?[:：])\s*(?=\(?(?:A|a|1|i|I)[.)](?:\s|[^\W\d_]))',line)
+        if lead and not _re.match(r'\s*\(?(?:[A-Ga-g]|[1-9]|i{1,3}|iv)[.)]\s',line):
+            out.append(lead.group(1).strip());line=line[lead.end():]
+        out.extend(_split_seq(line))
+    return out
 def format_stem(text):
     """Match-the-following and numbered statements get a tidy layout; wording is untouched."""
     if not text:return Markup('')
-    lines=[l for l in str(text).replace('\r','').split('\n')]
-    items=[];intro=[];tail=[];state='intro'
+    ar=_format_ar(str(text))
+    if ar is not None:return ar
+    lines=_normalize_lists(text)
+    items=[];intro=[];tail=[];state='intro';heads=[]
     for l in lines:
+        if l.startswith('§HDR§'):
+            heads.append(l[5:])
+            if state=='intro' and not items:continue
+            if state=='items':continue
+            continue
         m=_ITEM.match(l)
         if m and state in('intro','items'):
             items.append((_kind(m),m.group(2),m.group(4)));state='items'
@@ -123,6 +180,8 @@ def format_stem(text):
         elif state=='intro' and l.strip():intro.append(l.strip())
         elif state=='tail' and l.strip():tail.append(l.strip())
     if not items:return Markup('<span class="u6-plain">'+str(escape(text))+'</span>')
+    kinds=list(dict.fromkeys(k for k,_,_ in items))
+    if len(kinds)==2:items=sorted(items,key=lambda it:kinds.index(it[0]))
     groups=[];
     for k,label,body in items:
         if groups and groups[-1][0]==k:groups[-1][1].append((label,body))
@@ -132,7 +191,8 @@ def format_stem(text):
     if len(groups)==2 and all(len(g[1])>=2 for g in groups):
         a,b=groups[0][1],groups[1][1]
         out.append('<div class="u6-match">')
-        for col,head in ((a,'List I / జాబితా I'),(b,'List II / జాబితా II')):
+        h1,h2=(heads+['',''])[:2] if len(heads)>=2 else ('','')
+        for col,head in ((a,h1 or 'List I / జాబితా I'),(b,h2 or 'List II / జాబితా II')):
             out.append('<div class="mcol"><div class="mh">'+head+'</div>')
             for label,body in col:out.append('<div class="mc"><b>'+str(escape(label.upper() if col is a else label))+'</b><span>'+str(escape(body))+'</span></div>')
             out.append('</div>')
@@ -212,7 +272,7 @@ def unit_or_404(n):
 def chapter_or_404(cid):
     return next((c for c in chapters() if c['id']==cid),None) or abort(404)
 VISIBLE_KINDS=('bank','pyq','primary_pyq')
-def visible(q):return q['_kind'] in VISIBLE_KINDS and q['_answer'] in (1,2,3,4)
+def visible(q):return q['_kind'] in VISIBLE_KINDS and q['_answer'] in (1,2,3,4) and not q.get('hold_reason')
 def scoreable(q):
     return q['_answer'] in (1,2,3,4)
 def state_for(item_id):
