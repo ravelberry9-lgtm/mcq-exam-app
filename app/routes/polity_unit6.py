@@ -414,6 +414,7 @@ def selection(values):
     if kind and kind!='chaptertest':qs=[q for q in qs if q['_kind']==kind or kind=='pyq' and q['_kind']=='primary_pyq']
     if kind=='chaptertest' and not chapter:qs=[q for c in chapters() for q in test_records(c['id'])]
     if kind!='chaptertest':qs=[q for q in qs if visible(q)]
+    else:qs=[q for q in qs if q.get('hold_reason')!='retired, no key']
     if query:qs=[q for q in qs if query.casefold() in (q.get('question_en','')+' '+q.get('question_te','')+' '+q['id']).casefold()]
     if view in ('saved','mistakes'):
         states=PolityUnit6State.query.filter_by(device_id=device_id()).all()
