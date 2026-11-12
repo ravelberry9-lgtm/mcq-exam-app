@@ -25,9 +25,9 @@ def init_marks_inject(app):
             if 'name="csrf-token"' not in body:
                 add += '<meta name="csrf-token" content="%s">' % csrf_token()
             if 'study_tools.css' not in body:
-                add += '<link rel="stylesheet" href="%s">' % url_for('static', filename='study_tools.css', v='st3')
+                add += '<link rel="stylesheet" href="%s">' % url_for('static', filename='study_tools.css', v='st4')
             if 'study_tools.js' not in body:
-                add += '<script src="%s" defer></script>' % url_for('static', filename='study_tools.js', v='st3')
+                add += '<script src="%s" defer></script>' % url_for('static', filename='study_tools.js', v='st4')
             add += '<script data-mk-auto>window.MK_SAVED=%r;window.MK_ACCOUNT=%r;</script>' % (url_for('polity_marks.saved'), url_for('account.home'))
             i = body.rfind('</body>')
             resp.set_data(body[:i] + add + body[i:])

@@ -1,4 +1,4 @@
-// Pink highlighter (tap 🖍 then drag), undo, and page bookmarks — on every page of the app.
+// Pink highlighter (select text, then tap 🖍; tap a highlight to remove it), undo, and page bookmarks — on every page.
 // Usage: PolityMarks.attach(rootEl, {key, title, url, starHost}). Marks are stored per device on the server
 // (with a localStorage copy so they show instantly and survive a lost connection).
 (function () {
@@ -60,86 +60,75 @@
   }
   function change(st, next) { st.undo.push(JSON.stringify(st.marks)); if (st.undo.length > 50) st.undo.shift(); st.marks = next; paint(st); save(st); }
 
-  // ---- pink highlighter: tap 🖍, then drag a finger across the text ----
-  var pen = false, drag = null, lastSt = null, penBtn = null, undoBtn = null;
-  function caretAt(x, y) {
-    if (document.caretRangeFromPoint) { var r = document.caretRangeFromPoint(x, y); return r && { node: r.startContainer, off: r.startOffset }; }
-    if (document.caretPositionFromPoint) { var p = document.caretPositionFromPoint(x, y); return p && { node: p.offsetNode, off: p.offset }; }
-    return null;
-  }
+  // ---- pink highlighter: select text normally, then tap 🖍. Tap a highlight to remove it. ----
+  var pending = null, lastSt = null, penBtn = null, undoBtn = null, chip = null;
   function stateFor(node) {
     for (var i = 0; i < roots.length; i++) if (roots[i].root.isConnected && roots[i].root.contains(node)) return roots[i];
     return null;
   }
-  function posAt(st, x, y) {
-    var c = caretAt(x, y);
-    if (!c || c.node.nodeType !== 3 || !st.root.contains(c.node) || (c.node.parentNode.closest && c.node.parentNode.closest(".mk-ui"))) return -1;
-    return offsetOf(st.root, c.node, c.off);
+  function inUi(n) { var el = n && (n.nodeType === 1 ? n : n.parentNode); return !!(el && el.closest && el.closest(".mk-ui")); }
+  function readSelection() {
+    var sel = window.getSelection && getSelection();
+    if (!sel || sel.isCollapsed || !sel.rangeCount) return null;
+    var r = sel.getRangeAt(0); if (inUi(r.startContainer) || inUi(r.endContainer)) return null;
+    var st = stateFor(r.startContainer); if (!st || !st.root.contains(r.endContainer)) return null;
+    var s = offsetOf(st.root, r.startContainer, r.startOffset), e = offsetOf(st.root, r.endContainer, r.endOffset);
+    if (s < 0 || e <= s || !sel.toString().trim()) return null;
+    return { st: st, s: s, e: e };
   }
-  function wordSnap(txt, s, e) {               // grow to whole words so a rough drag still marks clean words
+  document.addEventListener("selectionchange", function () {
+    var p = readSelection(); if (p) pending = p;
+    if (penBtn) penBtn.classList.toggle("ready", !!p);
+  });
+  function wordSnap(txt, s, e) {
     while (s > 0 && /\S/.test(txt[s - 1])) s--;
     while (e < txt.length && /\S/.test(txt[e])) e++;
     return [s, e];
-  }
-  function preview(st, s, e) {
-    try {
-      var list = texts(st.root), pos = 0, a = null, b = null;
-      list.forEach(function (tn) { var n = tn.data.length; if (!a && s <= pos + n) a = [tn, s - pos]; if (!b && e <= pos + n) b = [tn, e - pos]; pos += n; });
-      if (!a || !b) return;
-      var r = document.createRange(); r.setStart(a[0], a[1]); r.setEnd(b[0], b[1]);
-      var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
-    } catch (err) {}
   }
   function addPink(st, s, e) {
     var txt = st.root.textContent, w = wordSnap(txt, s, e); s = w[0]; e = w[1];
     if (e <= s || !txt.slice(s, e).trim()) return;
     var keep = [], ns = s, ne = e;
-    st.marks.forEach(function (m) {            // merge with touching pink highlights
+    st.marks.forEach(function (m) {
       if (m.k === "hl" && m.s <= ne && m.e >= ns) { ns = Math.min(ns, m.s); ne = Math.max(ne, m.e); } else keep.push(m);
     });
     keep.push({ s: ns, e: ne, k: "hl", c: "pink", t: txt.slice(ns, ne).replace(/\s+/g, " ").trim().slice(0, 1000) });
     keep.sort(function (x, y) { return x.s - y.s; });
     change(st, keep); lastSt = st; refreshUndo();
   }
-  function removeMark(st, idx) { change(st, st.marks.filter(function (_, i) { return i !== idx; })); lastSt = st; refreshUndo(); }
+  function highlightNow() {
+    var p = readSelection() || pending; pending = null;
+    if (!p || !p.st.root.isConnected) { toast("Select some text first, then tap 🖍"); return; }
+    addPink(p.st, p.s, p.e);
+    try { getSelection().removeAllRanges(); } catch (err) {}
+    if (penBtn) penBtn.classList.remove("ready");
+  }
+  function removeMark(st, idx) { change(st, st.marks.filter(function (_, i) { return i !== idx; })); lastSt = st; refreshUndo(); toast("Highlight removed"); }
   function undo() {
     var st = lastSt && lastSt.root.isConnected ? lastSt : null;
     if (!st || !st.undo.length) { toast("Nothing to undo"); return; }
     st.marks = JSON.parse(st.undo.pop()); paint(st); save(st); refreshUndo();
   }
   function refreshUndo() { if (undoBtn) undoBtn.classList.toggle("off", !(lastSt && lastSt.undo.length)); }
-  function setPen(on) {
-    pen = on; document.body.classList.toggle("mk-pen-on", on);
-    if (penBtn) { penBtn.classList.toggle("on", on); penBtn.setAttribute("aria-pressed", on ? "true" : "false"); }
-    if (on) toast("Highlighter on — drag across text. Tap 🖍 again to scroll.");
-  }
-  document.addEventListener("pointerdown", function (e) {
-    if (!pen || e.button > 0 || (e.target.closest && e.target.closest(".mk-ui"))) return;
-    var st = stateFor(e.target); if (!st) return;
-    e.preventDefault();
-    var s = posAt(st, e.clientX, e.clientY);
-    drag = { st: st, s: s, e: s, x: e.clientX, y: e.clientY, moved: false, mark: e.target.closest && e.target.closest("span.mk") };
+  function hideChip() { if (chip) chip.hidden = true; }
+  document.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest(".mk-ui")) return;
+    var mk = e.target.closest && e.target.closest("span.mk");
+    var sel = window.getSelection && getSelection();
+    if (!mk || (sel && !sel.isCollapsed)) { hideChip(); return; }
+    var st = stateFor(mk); if (!st) return;
+    if (!chip) {
+      chip = document.createElement("button"); chip.type = "button"; chip.className = "mk-ui mk-chip"; chip.textContent = "✕ Remove highlight";
+      chip.addEventListener("click", function () { var c = chip._t; hideChip(); if (c && c.st.root.isConnected) removeMark(c.st, c.idx); });
+      document.body.appendChild(chip);
+    }
+    var r = mk.getBoundingClientRect();
+    chip._t = { st: st, idx: +mk.dataset.mi };
+    chip.style.top = (window.scrollY + r.bottom + 6) + "px";
+    chip.style.left = Math.max(8, Math.min(window.scrollX + r.left, window.scrollX + document.documentElement.clientWidth - 190)) + "px";
+    chip.hidden = false;
   }, true);
-  document.addEventListener("pointermove", function (e) {
-    if (!drag) return;
-    e.preventDefault();
-    if (Math.abs(e.clientX - drag.x) + Math.abs(e.clientY - drag.y) > 8) drag.moved = true;
-    var p = posAt(drag.st, e.clientX, e.clientY);
-    if (p >= 0 && (drag.s < 0 || Math.abs(p - drag.s) < 3000)) { if (drag.s < 0) drag.s = p; drag.e = p; if (drag.s >= 0) preview(drag.st, Math.min(drag.s, p), Math.max(drag.s, p)); }
-  }, true);
-  function endDrag() {
-    if (!drag) return;
-    var d = drag; drag = null;
-    try { getSelection().removeAllRanges(); } catch (err) {}
-    if (!d.moved) { if (d.mark) removeMark(d.st, +d.mark.dataset.mi); return; }   // tap a pink mark to remove it
-    if (d.s < 0 || d.e < 0) return;
-    addPink(d.st, Math.min(d.s, d.e), Math.max(d.s, d.e));
-  }
-  document.addEventListener("pointerup", endDrag, true);
-  document.addEventListener("pointercancel", function () { drag = null; }, true);
-  document.addEventListener("click", function (e) {      // while the pen is on, taps on text never open links
-    if (pen && !(e.target.closest && e.target.closest(".mk-ui")) && stateFor(e.target)) { e.preventDefault(); e.stopPropagation(); }
-  }, true);
+  window.addEventListener("scroll", hideChip, { passive: true });
 
   // ---- bookmark star ----
   function star(st) {
@@ -190,7 +179,7 @@
   // stop marking a root whose content is being replaced (e.g. a card still loading)
   function detach(root) {
     roots = roots.filter(function (s) { return s.root !== root; }); // a pending save already holds its own copy
-    if (drag && drag.st.root === root) drag = null;
+    if (pending && pending.st.root === root) pending = null;
   }
   window.PolityMarks = { attach: attach, detach: detach };
   // static pages: any element with data-mk-key
@@ -209,8 +198,10 @@
       attach(root, { key: "page:" + location.pathname + location.search, title: (title || "").trim().slice(0, 200), url: location.pathname + location.search, starHost: dock });
     }
     penBtn = document.createElement("button");
-    penBtn.type = "button"; penBtn.className = "mk-dock-pen"; penBtn.textContent = "🖍"; penBtn.setAttribute("aria-label", "Pink highlighter on or off"); penBtn.setAttribute("aria-pressed", "false");
-    penBtn.addEventListener("click", function () { setPen(!pen); });
+    penBtn.type = "button"; penBtn.className = "mk-dock-pen"; penBtn.textContent = "🖍"; penBtn.setAttribute("aria-label", "Highlight the selected text in pink");
+    penBtn.addEventListener("pointerdown", function (e) { e.preventDefault(); });   // keep the text selection
+    penBtn.addEventListener("mousedown", function (e) { e.preventDefault(); });
+    penBtn.addEventListener("click", highlightNow);
     dock.appendChild(penBtn);
     undoBtn = document.createElement("button");
     undoBtn.type = "button"; undoBtn.className = "mk-dock-undo off"; undoBtn.textContent = "↶"; undoBtn.setAttribute("aria-label", "Undo last highlight");

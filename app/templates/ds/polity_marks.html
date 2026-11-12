@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% block title %}My saved pages{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='st2') }}"><link rel="stylesheet" href="{{ url_for('static',filename='study_tools.css',v='st3') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='st2') }}"><link rel="stylesheet" href="{{ url_for('static',filename='study_tools.css',v='st4') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a class="back" href="/learn">‹ Learn</a><b>My saved pages</b></div>{% endblock %}
 {% block content %}<div class="mk-list">
 <h1>Bookmarks and highlights</h1>{% set ac=current_account() %}<p class="mk-acct">{% if ac %}Signed in as <b>{{ ac.username }}</b> — these sync to all your devices. <a href="{{ url_for('account.home') }}">Account</a>{% else %}Saved on this device only. Sign in to see them on your tablet too.</p><p><a class="btn primary" href="{{ url_for('account.login', next=request.path) }}">👤 Sign in</a> <a class="btn" href="{{ url_for('account.signup', next=request.path) }}">Create account</a>{% endif %}</p>
