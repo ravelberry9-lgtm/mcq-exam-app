@@ -58,7 +58,7 @@ def concept_cards(chapter_id):
     if not f.is_file():
         return render_template('ds/polity_cards.html',cards=cards,key=key,hl=hl,lang=lang,chapter=c,chapter_id=chapter_id,toolbar=toolbar,qkeep=qkeep)
     hl_css=''.join(f'[id="{h}"]{{background:#fff8e1!important;border-color:#ffb300!important;box-shadow:0 0 0 3px #ffe082}}[id="{h}"] .ch::after{{content:" ◀ related";font-size:11px;color:#8d6e00;background:#ffecb3;border-radius:8px;padding:1px 7px;margin-left:6px}}' for h in hl if _re.fullmatch(r'CC-[0-9.]+-\d+',h))
-    page=f.read_text(encoding='utf-8');scroll=''
+    page=f.read_text(encoding='utf-8')+_pyq_cards_html(cards,hl);scroll=''
     rf=f.parents[1]/'concept_recaps'/f'{key}.html'
     recap=rf.read_text(encoding='utf-8') if rf.is_file() else ''
     if recap:
@@ -73,6 +73,18 @@ def concept_cards(chapter_id):
         +'<style>:root{--acc:'+_accent(chapter_id)+'}'+CARDS_CSS+hl_css+'</style></head><body>'+toolbar+page+(scroll if recap else '')+'</body></html>')
     response=make_response(doc);response.headers['Content-Type']='text/html; charset=utf-8'
     return response
+PYQ_HEAD='APPSC PYQ additions — facts asked in APPSC papers, not covered in GBK / Laxmikanth · APPSC ప్రశ్నల్లో అడిగినవి, GBK / లక్ష్మీకాంత్‌లో లేనివి'
+def _pyq_cards_html(cards,hl):
+    from markupsafe import escape as e
+    lst=[c for c in cards if c.get('pyq_addition')]
+    if not lst:return ''
+    out=['<div class="page"><div class="sh">'+str(e(PYQ_HEAD))+'</div><div class="g2">']
+    for c in lst:
+        out.append('<div class="card ncard'+(' hl' if c['id'] in hl else '')+'" id="'+str(e(c['id']))+'"><div class="ch">'+str(e(c['title_te']))+' · '+str(e(c['title_en']))+'</div>')
+        for it in c['items']:
+            out.append('<div class="fact"><span lang="te">'+str(e(it['te']))+'</span><br><em class="en" lang="en">'+str(e(it['en']))+'</em>'+(' <em class="asof">as of '+str(e(it['as_of']))+'</em>' if it.get('as_of') else '')+'</div>')
+        out.append('</div>')
+    out.append('</div></div>');return ''.join(out)
 CARDS_CSS="""body{background:#e0f4f1}.page{width:auto!important;max-width:1040px!important;min-height:0!important;margin:0 auto 12px!important;padding:12px 14px!important;overflow-wrap:anywhere}
 .secl{font-size:11.5px;color:#546e7a;margin-top:2px}.fact em.en{font-style:italic;color:#37474f;font-size:13.5px}.fact.flag{background:#fff3e0;border-radius:5px;padding:1px 4px}
 .asof{font-size:11px;font-style:normal;color:#00695c;background:#d7ece6;border-radius:8px;padding:1px 6px;white-space:nowrap}.warn{font-size:11px;font-style:normal;font-weight:700;color:#b45309}

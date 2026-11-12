@@ -192,6 +192,13 @@ def chapter_four_practice():
 @bp.get("/g2/<int:unit>/<int:section>/<int:chapter>/<any(Notes.html,Laxmikanth.html,'Group-I.html','Teaching-Guide.html','Publisher-review.html','PYQ-review.html','Source-qualifications.html','Chapter-Test.html','Chapter-Test-Answers.html'):filename>")
 def catalog_chapter_reader(unit, section, chapter, filename="index.html"):
     requested = f"{unit}.{section}.{chapter}"
+    folder = CONTENT_ROOT / f"{unit}.{section}" / requested
+    if not (folder / "index.html").is_file() and (folder / "Notes.html").is_file():
+        # Units 8-10 chapters are served by the unit pages; send old catalogue links there.
+        if filename == "Notes.html":
+            return redirect(url_for("polity_unit6.notes", chapter_id=requested), code=302)
+        if filename == "index.html":
+            return redirect(url_for("polity_unit6.chapter", chapter_id=requested), code=302)
     row, legacy = master_chapter(requested)
     if requested != row["id"]:
         a, b, c = map(int, row["id"].split("."))
