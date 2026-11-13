@@ -801,7 +801,7 @@ def concept_card(tid):
     open_sub=sub if sub in ids else (ids[0] if ids else '')
     back=request.args.get('back','');back_url=back if back.startswith('/learn/polity/') else None
     n=_concept_qcount().get(tid,0)
-    return render_template('ds/polity_concept_card.html',t=t,n=n,open_sub=open_sub,back_url=back_url,
+    return render_template('ds/polity_concept_card.html',pilot=request.args.get('plain')!='1',t=t,n=n,open_sub=open_sub,back_url=back_url,
         practice_url=url_for('.practice_hub',kind='',cg=tid),xl=_xl,link_url=_concept_url)
 
 @bp.get('/pick.json')
@@ -862,3 +862,14 @@ def rv_direct(q):
     st=q.get('question_en') or ''
     if len(st)>220 or '\n' in st.strip() or _RV_NEED.search(st):return False
     return bool(_RV_ASK.search(st) and (_RV_THING.search(st) or len(st)<140))
+@lru_cache(maxsize=1)
+def _cell_layout():
+    f=CONTENT/'concepts'/'layout.json'
+    if not f.is_file():return {}
+    import json as _j;return _j.loads(f.read_text(encoding='utf-8'))
+@bp.app_template_global('cell_parts')
+def cell_parts(text):
+    """Hand-checked layout for a dense table cell (lead + points); same words, only shown as bullets."""
+    v=_cell_layout().get(str(text or '').strip())
+    if not v:return None
+    return {'lead':v.get('lead',''),'items':[i if isinstance(i,dict) else {'text':i} for i in v.get('items',[])]}
