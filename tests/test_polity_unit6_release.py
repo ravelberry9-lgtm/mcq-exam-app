@@ -183,7 +183,8 @@ def test_concept_notes_after_explanation_and_expand(client,app):
     from app.routes.polity_maps import records
     enable(app)
     with app.app_context():
-        q=next(x for x in records().values() if x['_chapter'].startswith('6.6') and x.get('_kind')=='bank' and x.get('_answer') in (1,2,3,4))
+        from app.services import concepts as _cg
+        q=next(x for x in records().values() if x.get('_kind')=='bank' and x.get('_answer') in (1,2,3,4) and not _cg.subs_for(x['id']))
     r=client.post('/learn/polity/unit6/practice/'+q['id']+'?qlang=both',data={'answer':str(q['_answer'])})
     html=r.get_data(as_text=True)
     assert 'id="concept-notes"' in html and 'cc-allbtn' in html and 'Show all chapter cards' in html and '/cards/' in html
