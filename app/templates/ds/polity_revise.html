@@ -1,0 +1,22 @@
+{% extends 'ds/base.html' %}
+{% set nav_active='practice' %}
+{% block title %}Revise all questions · Indian Polity{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261112p') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_revise.css',v='rv2') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><strong>Revise topic-wise</strong></div>{% endblock %}
+{% block content %}<i hidden data-no-tools></i><div class="rv" data-kind="{{ kind }}" data-lang="{{ lang }}" data-part="{{ url_for('polity_unit6.revise_part') }}" data-open="{{ open_ch }}">
+<section class="card rv-top">
+<h1>Revise all questions</h1>
+<p>Every question in Laxmikanth chapter order, grouped concept by concept. Try each one, then tap the answer box to check.</p>
+<div class="rv-ctl" role="group" aria-label="Question type">{% for k,label in kinds.items() %}<a class="rv-chip{{ ' on' if k==kind }}" href="{{ url_for('polity_unit6.revise',kind=k,qlang=lang) }}"{% if k==kind %} aria-current="true"{% endif %}>{{ label }}</a>{% endfor %}</div>
+<div class="rv-ctl" role="group" aria-label="Language / భాష">{% for code,label in [('en','English'),('te','తెలుగు'),('both','తెలుగు + English')] %}<a class="rv-chip sm{{ ' on' if code==lang }}" href="{{ url_for('polity_unit6.revise',kind=kind,qlang=code) }}"{% if code==lang %} aria-current="true"{% endif %}>{{ label }}</a>{% endfor %}</div>
+<p class="rv-total"><b>{{ total }}</b> {{ kinds[kind] }} in {{ chapters|length }} chapters</p>
+<label class="rv-jump"><span>Go to chapter</span><select id="rv-jump"><option value="">Choose a chapter…</option>{% for c in chapters %}<option value="{{ c.key }}">{{ ('Ch ' ~ (c.lx|int) ~ ' · ') if c.lx else '' }}{{ c.title }} ({{ c.count }})</option>{% endfor %}</select></label>
+<div class="rv-ctl"><button type="button" class="rv-btn" id="rv-showall">Show all answers</button><button type="button" class="rv-btn" id="rv-showopts">Show options for all</button></div><p class="rv-hint">Options are hidden for direct questions, so you recall the answer yourself. Questions that need their options (statements, match, "which of the following") show them.</p>
+</section>
+{% for c in chapters %}<section class="rv-ch" id="{{ c.key }}" data-ch="{{ c.key }}" data-start="{{ c.start }}">
+<h2 class="rv-chh"><span class="rv-chn">{{ ('Chapter ' ~ (c.lx|int)) if c.lx else 'Extra' }}</span>{{ c.title }} <small>Q{{ c.start }}–{{ c.start + c.count - 1 }}</small></h2>
+<div class="rv-body" style="min-height:{{ [c.count*14,1200]|min }}px"><p class="rv-load">Loading {{ c.count }} questions…</p></div>
+</section>{% endfor %}
+<a class="rv-up" href="#main" aria-label="Back to top">↑</a>
+</div>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_revise.js',v='rv2') }}" defer></script>{% endblock %}

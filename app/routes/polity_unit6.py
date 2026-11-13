@@ -821,3 +821,44 @@ def pick():
         items.append(entry(c['id']+'  '+c['title'],{'chapter':c['id']}))
     return jsonify(kind=kind,unit=n,items=[i for i in items if i['count']],
                    list_url=url_for('.library',kind=kind,unit=n,qlang=lang))
+
+# ---- Topic-wise revision list: every PYQ/MCQ in Laxmikanth chapter order, answers hidden until tapped ----
+@lru_cache(maxsize=1)
+def _revise_order():
+    f=CONTENT/'revise'/'order.json'
+    if not f.is_file():return []
+    import json as _j;return _j.loads(f.read_text(encoding='utf-8'))['chapters']
+_REV_KINDS={'pyq':'PYQs','bank':'MCQs','both':'PYQs + MCQs'}
+def _rev_kind():
+    k=request.args.get('kind','pyq');return k if k in _REV_KINDS else 'pyq'
+def _rev_match(q,kind):return q is not None and visible(q) and (kind=='both' or (q['_kind']=='bank')==(kind=='bank'))
+def _rev_chapters(kind):
+    recs=records();out=[];n=0
+    for c in _revise_order():
+        groups=[]
+        for g in c['groups']:
+            ids=[i for i in g['ids'] if _rev_match(recs.get(i),kind)]
+            if ids:groups.append({**g,'ids':ids})
+        cnt=sum(len(g['ids']) for g in groups)
+        if cnt:out.append({**c,'groups':groups,'count':cnt,'start':n+1});n+=cnt
+    return out,n
+@bp.get('/revise')
+def revise():
+    kind=_rev_kind();lang=language();chs,total=_rev_chapters(kind)
+    return render_template('ds/polity_revise.html',kind=kind,kinds=_REV_KINDS,lang=lang,chapters=chs,total=total,
+        open_ch=request.args.get('ch',''))
+@bp.get('/revise/part')
+def revise_part():
+    kind=_rev_kind();lang=language();chs,_=_rev_chapters(kind)
+    c=next((x for x in chs if x['key']==request.args.get('ch')),None) or abort(404)
+    recs=records();back=url_for('.revise',kind=kind,qlang=lang,ch=c['key'])
+    return render_template('ds/polity_revise_part.html',c=c,recs=recs,lang=lang,kind=kind,back=back)
+_RV_ASK=re.compile(r'\b(which|who|whom|when|what|name|in which|under which)\b',re.I)
+_RV_THING=re.compile(r'\b(articles?|case|cases|act|enactment|amendment|year|committee|commission|provision|schedule|part|person|court|body|state|chair\w*|first|president|minister|judge|session|list|entry|writ|doctrine|report|day|date|number|how many|minimum|maximum|age|term|tenure|founder|known as|called|term used)\b',re.I)
+_RV_NEED=re.compile(r'following|statement|match|list[- ]?i\b|assertion|reason|\bnot\b|incorrect|correct|\btrue\b|false|pairs?\b|arrange|chronolog|\bcodes?\b|best|propos|follows?\b|most (accurate|appropriate|likely|valid)|consider|except|odd one|wrong|valid|invalid|implication|outcome|result|effect|reflects|accurately|describes|options?\b',re.I)
+@bp.app_template_global('rv_direct')
+def rv_direct(q):
+    """True when a question can be asked without its options (pure recall, e.g. 'Which Article…?')."""
+    st=q.get('question_en') or ''
+    if len(st)>220 or '\n' in st.strip() or _RV_NEED.search(st):return False
+    return bool(_RV_ASK.search(st) and (_RV_THING.search(st) or len(st)<140))

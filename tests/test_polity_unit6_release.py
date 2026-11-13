@@ -816,3 +816,12 @@ def test_omitted_banner_badge_and_filter(client,app):
     n=sum(1 for i in rd.items('articles') if i.get('omitted'));assert f'Omitted only' in page and f'<small> ({n})</small>' in page
     js=open('static/polity_articles.js',encoding='utf-8').read();assert 'o.om > 0' in js and 't-om' in js and 'data-om=' in js
     css=open('static/polity_articles.css',encoding='utf-8').read();assert '.om-ban' in css and '.t-om' in css
+
+
+def test_quick_revision_list(client,app):
+    enable(app)
+    r=client.get('/learn/polity/unit6/revise?kind=both&qlang=both');html=r.get_data(as_text=True)
+    assert r.status_code==200 and 'rv-jump' in html and 'Fundamental Rights' in html
+    p=client.get('/learn/polity/unit6/revise/part?ch=lx8&kind=pyq&qlang=en').get_data(as_text=True)
+    assert 'rv-ab' in p and 'back=' in p and 'review=1' in p
+    assert client.get('/learn/polity/unit6/revise/part?ch=nope&kind=pyq').status_code==404
