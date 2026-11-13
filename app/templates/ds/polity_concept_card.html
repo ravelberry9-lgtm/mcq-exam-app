@@ -1,0 +1,30 @@
+{% extends 'ds/base.html' %}
+{% block title %}{{ t.title }} · Concept card{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_concepts.css',v='cc3') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader">{% if back_url %}<a href="{{ back_url }}">‹ Back to question</a>{% else %}<a href="{{ url_for('polity_unit6.concepts_hub') }}">‹ Concepts</a>{% endif %}<strong>{{ t.title }}</strong></div>{% endblock %}
+{% macro cell(x) %}{{ xl(x|string) }}{% endmacro %}
+{% macro tree(nodes) %}<ul>{% for n in nodes %}<li><span>{{ cell(n.label) }}</span>{% if n.children %}{{ tree(n.children) }}{% endif %}</li>{% endfor %}</ul>{% endmacro %}
+{% macro block(b) %}
+{% if b.type=='text' %}<p class="cb-text">{{ cell(b.text) }}</p>
+{% elif b.type in ('points','remember') %}<div class="cb-{{ b.type }}">{% if b.title %}<h4>{{ b.title }}</h4>{% elif b.type=='remember' %}<h4>⚠ Remember</h4>{% endif %}<ul>{% for i in b['items'] %}<li>{{ cell(i) }}</li>{% endfor %}</ul></div>
+{% elif b.type in ('table','compare','quote') %}<figure class="cb-table cb-{{ b.type }}">{% if b.title %}<figcaption>{{ b.title }}</figcaption>{% endif %}<div class="cb-tw"><table><thead><tr>{% for h in b.head %}<th>{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for r in b.rows %}<tr>{% for c in r %}<td data-h="{{ b.head[loop.index0] if loop.index0 < b.head|length }}">{{ cell(c) }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% if b.note %}<p class="cb-note">{{ cell(b.note) }}</p>{% endif %}</figure>
+{% elif b.type=='timeline' %}<div class="cb-timeline">{% if b.title %}<h4>{{ b.title }}</h4>{% endif %}<ol>{% for i in b['items'] %}<li><b class="tl-when">{{ i.when }}</b><div><span class="tl-what">{{ cell(i.what) }}</span>{% if i.detail %}<small>{{ cell(i.detail) }}</small>{% endif %}</div></li>{% endfor %}</ol></div>
+{% elif b.type=='flow' %}<div class="cb-flow">{% if b.title %}<h4>{{ b.title }}</h4>{% endif %}<ol>{% for s in b.steps %}<li><b>{{ cell(s.step) }}</b>{% if s.detail %}<small>{{ cell(s.detail) }}</small>{% endif %}</li>{% endfor %}</ol></div>
+{% elif b.type=='tree' %}<div class="cb-tree">{% if b.title %}<h4>{{ b.title }}</h4>{% endif %}<div class="tr-root">{{ cell(b.root) }}</div>{{ tree(b.children) }}</div>
+{% elif b.type=='link' %}{% set lt=link_url(b.to) %}{% if lt %}<p class="cb-link"><a href="{{ lt }}">→ {{ b.text }}</a></p>{% endif %}
+{% endif %}
+{% endmacro %}
+{% block content %}<i hidden data-no-tools></i><div class="cg-topic" data-open="{{ open_sub }}">
+<header class="card cg-head"><h1>{{ t.title }}</h1><p>{{ t.summary }}</p>
+<div class="cg-tools"><button type="button" class="cg-btn" id="cg-expand">Expand all</button><button type="button" class="cg-btn" id="cg-revise" aria-pressed="false">Quick revise</button>{% if n %}<a class="cg-btn primary" href="{{ practice_url }}">Practise {{ n }} questions</a>{% endif %}</div></header>
+<div class="cg-layout">
+<nav class="cg-nav" aria-label="Sub-topics"><ol>{% for s in t.subcards %}<li><a href="#{{ s.id }}" data-sub="{{ s.id }}"{% if s.id==open_sub %} aria-current="true"{% endif %}><span class="n">{{ loop.index }}</span>{{ s.title }}</a></li>{% endfor %}</ol></nav>
+<div class="cg-subs">
+{% for s in t.subcards %}<details class="card cg-sub" id="{{ s.id }}"{% if s.id==open_sub %} open{% endif %}>
+<summary><span class="n">{{ loop.index }}</span><span class="tt"><b>{{ s.title }}</b><small>{{ s.summary }}</small></span><i class="chev" aria-hidden="true">⌄</i></summary>
+<div class="cg-body">
+{% if s.at_a_glance %}<table class="cg-glance"><tbody>{% for k,v in s.at_a_glance %}<tr><th>{{ k }}</th><td>{{ cell(v) }}</td></tr>{% endfor %}</tbody></table>{% endif %}
+{% for sec in s.sections %}<details class="cg-sec{{ ' traps' if 'trap' in sec.heading|lower }}"{% if sec.open %} open{% endif %}><summary>{{ sec.heading }}</summary><div class="cg-secbody">{% for b in sec.blocks %}{{ block(b) }}{% endfor %}</div></details>{% endfor %}
+</div></details>{% endfor %}
+</div></div></div>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='polity_concepts.js',v='cc2') }}" defer></script>{% endblock %}

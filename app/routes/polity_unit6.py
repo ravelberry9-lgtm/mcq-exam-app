@@ -12,6 +12,7 @@ from ..services import polity_cards as _cards
 from ..services import article_cards as _artcards
 from ..services import recall_decks as _recall
 from ..services import pyq_metrics as _pm
+from ..services import concepts as _cg
 import re,re as _re
 from functools import lru_cache
 _JARGON=_re.compile(r'(fact register|bank key|authenticated pairing|tests separately|untested|source[- ]bank|content team|GBK paragraph|Laxmikanth paragraph)',_re.I)
@@ -444,7 +445,7 @@ def facet_options(qs):
             'amd':[(k,k+_ordinal(int(k))+' Amendment',m[k]) for k in sorted(m,key=int)],
             'case':sorted(((k,names[k],c[k]) for k in c),key=lambda x:x[1].casefold())}
 def _ordinal(n):return 'th' if 10<=n%100<=20 else {1:'st',2:'nd',3:'rd'}.get(n%10,'th')
-FACETS=('exam','art','amd','case','ca')
+FACETS=('exam','art','amd','case','ca','cg')
 
 def filters(default_chapter=''):
     values={k:request.args.get(k,'').strip() for k in ('chapter','kind','q','view','map','unit')+FACETS}
@@ -473,6 +474,7 @@ def selection(values):
     for k in ('art','amd','case'):
         if values.get(k):qs=[q for q in qs if values[k] in q_tags(q)[k]]
     if values.get('ca'):qs=[q for q in qs if q_tags(q)['ca']]
+    if values.get('cg'):qs=[q for q in qs if any(_cg.topic_of(x)==values['cg'] for x in _cg.index()['qmap'].get(q['id'],[]))]
     if query:qs=[q for q in qs if query.casefold() in (q.get('question_en','')+' '+q.get('question_te','')+' '+q['id']).casefold()]
     if view in ('saved','mistakes'):
         states=PolityUnit6State.query.filter_by(device_id=device_id()).all()
@@ -603,7 +605,7 @@ def question_page(q,choice=None,review=False,qs=None):
     has_notes=(directory(q['_chapter'])/'Notes.html').is_file()
     if not links and has_notes:links=[dict(url=notes+'#question-explanation',basis='explanation')]
     if not has_notes:notes=None
-    return render_template('ds/polity_question.html',question=q,choice=choice,feedback=feedback,lang=lang,context=context,
+    return render_template('ds/polity_question.html',concept_subs=lambda i:_cg.subs_for(i),question=q,choice=choice,feedback=feedback,lang=lang,context=context,
         state=db.session.get(PolityUnit6State,(device_id(),q['id'])),position=pos+1,total=len(qs),
         previous=qs[pos-1]['id'] if pos else None,following=qs[pos+1]['id'] if pos+1<len(qs) else None,
         notes_url=notes,section_links=links,review_args=review_args)
@@ -757,8 +759,10 @@ def _hub_values():
     if v['exam'] and v['exam'] not in dict(EXAM_GROUPS):abort(404)
     if v['chapter']:chapter_or_404(v['chapter'])
     if v['kind']=='bank':
-        for k in FACETS:v[k]=''
+        for k in FACETS:
+            if k!='cg':v[k]=''
     if v['kind']=='':v['exam']=''
+    if v['cg'] and v['cg'] not in _cg.index()['by_id']:abort(404)
     return v
 def _hub_select(v):return selection({'q':'','view':'','map':'','unit':'',**v})
 @bp.get('/practice')
@@ -774,6 +778,32 @@ def practice_hub():
         chapters=[c for c in chs if c[1]],facets=facet_options(fbase),
         totals={'bank':sum(q['_kind']=='bank' for q in allq),'pyq':sum(q['_kind']!='bank' for q in allq)},
         list_url=url_for('.library',**{k:x for k,x in v.items() if x}))
+def _concept_url(ref,**kw):
+    t,sub=_cg.link_target(ref)
+    if not t:return None
+    return url_for('.concept_card',tid=t,**({'sub':sub} if sub else {}),**kw)+('#'+sub if sub else '')
+def _concept_qcount():
+    vis={q['id'] for q in records().values() if visible(q)};c={}
+    for qid,lst in _cg.index()['qmap'].items():
+        if qid in vis:
+            for t in {_cg.topic_of(x) for x in lst}:
+                if t:c[t]=c.get(t,0)+1
+    return c
+@bp.get('/concepts')
+def concepts_hub():
+    ts=[t for t in _cg.topics() if _cg.topic(t['id'])]
+    return render_template('ds/polity_concepts.html',topics=ts,counts=_concept_qcount())
+@bp.get('/concepts/<tid>')
+def concept_card(tid):
+    t=_cg.topic(tid) or abort(404)
+    sub=request.args.get('sub','')
+    ids=[s['id'] for s in t['subcards']]
+    open_sub=sub if sub in ids else (ids[0] if ids else '')
+    back=request.args.get('back','');back_url=back if back.startswith('/learn/polity/') else None
+    n=_concept_qcount().get(tid,0)
+    return render_template('ds/polity_concept_card.html',t=t,n=n,open_sub=open_sub,back_url=back_url,
+        practice_url=url_for('.practice_hub',kind='',cg=tid),xl=_xl,link_url=_concept_url)
+
 @bp.get('/pick.json')
 def pick():
     """Section chooser for MCQ/PYQ practice: 'All' for the unit plus one entry per chapter, each with a start link."""

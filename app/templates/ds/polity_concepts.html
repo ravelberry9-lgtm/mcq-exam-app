@@ -1,0 +1,12 @@
+{% extends 'ds/base.html' %}
+{% block title %}Concept cards · Indian Polity{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_concepts.css',v='cc3') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><strong>Concept cards</strong></div>{% endblock %}
+{% block content %}<i hidden data-no-tools></i><div class="cg">
+<section class="card cg-top"><h1>Concept cards</h1><p>Everything you need to revise each concept, in one place.</p>
+<label class="cg-search"><span class="sr">Search concepts</span><input id="cg-q" type="search" placeholder="Search: writs, Article 21, governor…" autocomplete="off"></label></section>
+<ul class="cg-list" id="cg-list">{% for t in topics %}<li data-s="{{ (t.title ~ ' ' ~ t.summary ~ ' ' ~ (t.subs|map(attribute='title')|join(' ')))|lower }}"><a class="cg-item" href="{{ url_for('polity_unit6.concept_card',tid=t.id) }}"><b>{{ t.title }}</b><small>{{ t.summary }}</small><span class="cg-subchips">{% for s in t.subs %}<i>{{ s.title }}</i>{% endfor %}</span><span class="cg-count">{{ counts.get(t.id,0) }} questions</span></a></li>{% endfor %}</ul>
+<p class="cg-none" id="cg-none" hidden>No concept matches. Try another word.</p>
+</div>{% endblock %}
+{% block scripts %}<script>(function(){var q=document.getElementById('cg-q'),li=[].slice.call(document.querySelectorAll('#cg-list li')),none=document.getElementById('cg-none');
+q.addEventListener('input',function(){var t=q.value.trim().toLowerCase().split(/\s+/).filter(Boolean),n=0;li.forEach(function(l){var ok=t.every(function(w){return l.dataset.s.indexOf(w)>=0});l.hidden=!ok;if(ok)n++});none.hidden=n>0;});})();</script>{% endblock %}
