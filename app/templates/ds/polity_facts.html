@@ -1,0 +1,14 @@
+{% extends 'ds/base.html' %}
+{% block title %}Concept book · Indian Polity{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_concepts.css',v='cc5') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_facts.css',v='qf7') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><strong>Concept book</strong></div>{% endblock %}
+{% block content %}<i hidden data-no-tools></i><div class="qf" data-part="{{ url_for('polity_unit6.quick_facts_part') }}">
+<section class="card qf-top"><h1>Concept book</h1><p>All {{ nsubs }} concept cards in one scroll, arranged chapter by chapter in Laxmikanth order.</p>
+<label class="qf-jump"><span>Go to chapter</span><select id="qf-jump"><option value="">Choose a chapter…</option>{% for c in chapters %}<option value="{{ c.key }}">{{ ('Ch ' ~ (c.lx|int) ~ ' · ') if c.lx else '' }}{{ c.title }}</option>{% endfor %}</select></label></section>
+{% for c in chapters %}<details class="qb-ch" id="{{ c.key }}" data-ch="{{ c.key }}"><summary class="qb-chh"><span>{{ ('Chapter ' ~ (c.lx|int)) if c.lx else '' }}</span>{{ c.title }} <small>{{ c.subs|length }} card{{ 's' if c.subs|length>1 }}</small><i class="qb-chev" aria-hidden="true">⌄</i></summary>
+<div class="qb-body"><p class="rv-load">Loading…</p></div></details>{% endfor %}
+<a class="qf-up" href="#main" aria-label="Back to top">↑</a></div>{% endblock %}
+{% block scripts %}<script>(function(){var root=document.querySelector('.qf'),base=root.dataset.part,done={};
+function load(d){var k=d.dataset.ch;if(done[k])return done[k];done[k]=fetch(base+'?ch='+k,{credentials:'same-origin'}).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(h){d.querySelector('.qb-body').innerHTML=h}).catch(function(){done[k]=null;d.querySelector('.qb-body').innerHTML='<p class="rv-load">Could not load. Close and open again.</p>'});return done[k];}
+document.querySelectorAll('.qb-ch').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)load(d)})});
+document.getElementById('qf-jump').addEventListener('change',function(){var d=document.getElementById(this.value);if(d){d.open=true;load(d).then(function(){d.scrollIntoView({block:'start'})})}});})();</script>{% endblock %}

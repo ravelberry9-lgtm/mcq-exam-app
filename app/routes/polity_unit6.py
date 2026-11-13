@@ -876,3 +876,22 @@ def cell_parts(text):
     v=_cell_layout().get(str(text or '').strip())
     if not v:return None
     return {'lead':v.get('lead',''),'items':[i if isinstance(i,dict) else {'text':i} for i in v.get('items',[])]}
+def _book_chapters():
+    subs={s['id']:(t['id'],s) for t in [_cg.topic(x['id']) for x in _cg.topics()] if t for s in t['subcards']}
+    from ..routes.polity_unit6 import _revise_order as _ro
+    import json as _j
+    # chapter -> sub-cards, in the Laxmikanth order used by the revision list (includes cards with no questions)
+    out=[]
+    for c in _ro():
+        ids=list(dict.fromkeys(g['sub'] for g in c['groups'] if g['sub'] in subs))
+        if ids:out.append({**c,'subs':[subs[i] for i in ids]})
+    return out
+@bp.get('/facts')
+def quick_facts():
+    """Concept book: every concept card, chapter by chapter in Laxmikanth order, in one scroll (cards themselves unchanged)."""
+    chs=_book_chapters()
+    return render_template('ds/polity_facts.html',chapters=chs,nsubs=sum(len(c['subs']) for c in chs))
+@bp.get('/facts/part')
+def quick_facts_part():
+    c=next((x for x in _book_chapters() if x['key']==request.args.get('ch')),None) or abort(404)
+    return render_template('ds/polity_facts_part.html',subs=c['subs'],xl=_xl,link_url=_concept_url,pilot=True)

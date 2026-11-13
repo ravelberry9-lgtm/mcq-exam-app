@@ -825,3 +825,11 @@ def test_quick_revision_list(client,app):
     p=client.get('/learn/polity/unit6/revise/part?ch=lx8&kind=pyq&qlang=en').get_data(as_text=True)
     assert 'rv-ab' in p and 'back=' in p and 'review=1' in p
     assert client.get('/learn/polity/unit6/revise/part?ch=nope&kind=pyq').status_code==404
+
+
+def test_concept_book(client,app):
+    enable(app)
+    h=client.get('/learn/polity/unit6/facts').get_data(as_text=True)
+    assert 'qb-ch' in h and '<details' in h and 'Historical Background' in h
+    p=client.get('/learn/polity/unit6/facts/part?ch=lx18')
+    assert p.status_code==200 and 'cg-glance' in p.get_data(as_text=True)

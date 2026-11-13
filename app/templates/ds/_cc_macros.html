@@ -1,0 +1,13 @@
+{% macro cell(x) %}{{ xl(x|string) }}{% endmacro %}
+{% macro rcell(x) %}{% set cp=cell_parts(x) if pilot else None %}{% if cp %}{% if cp.lead %}{% if cp.lead.isdigit() %}<span class="cp-count">{{ cp.lead }} in all</span>{% else %}<b class="cp-lead">{{ cell(cp.lead) }}</b>{% endif %}{% endif %}<ul class="cp-list">{% for i in cp['items'] %}<li>{% if i.who %}<span class="cp-who">{{ cell(i.who) }}</span> <span class="cp-arrow" aria-hidden="true">→</span> <span class="cp-what">{{ i.what }}</span>{% else %}{{ cell(i.text) }}{% endif %}</li>{% endfor %}</ul>{% else %}{{ cell(x) }}{% endif %}{% endmacro %}
+{% macro tree(nodes) %}<ul>{% for n in nodes %}<li><span>{{ cell(n.label) }}</span>{% if n.children %}{{ tree(n.children) }}{% endif %}</li>{% endfor %}</ul>{% endmacro %}
+{% macro block(b) %}
+{% if b.type=='text' %}<p class="cb-text">{{ cell(b.text) }}</p>
+{% elif b.type in ('points','remember') %}<div class="cb-{{ b.type }}">{% if b.title %}<h4>{{ b.title }}</h4>{% elif b.type=='remember' %}<h4>⚠ Remember</h4>{% endif %}<ul>{% for i in b['items'] %}<li>{{ cell(i) }}</li>{% endfor %}</ul></div>
+{% elif b.type in ('table','compare','quote') %}<figure class="cb-table cb-{{ b.type }}">{% if b.title %}<figcaption>{{ b.title }}</figcaption>{% endif %}<div class="cb-tw"><table><thead><tr>{% for h in b.head %}<th>{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for r in b.rows %}<tr>{% for c in r %}<td data-h="{{ b.head[loop.index0] if loop.index0 < b.head|length }}">{{ rcell(c) }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% if b.note %}<p class="cb-note">{{ cell(b.note) }}</p>{% endif %}</figure>
+{% elif b.type=='timeline' %}<div class="cb-timeline">{% if b.title %}<h4>{{ b.title }}</h4>{% endif %}<ol>{% for i in b['items'] %}<li><b class="tl-when">{{ i.when }}</b><div><span class="tl-what">{{ cell(i.what) }}</span>{% if i.detail %}<small>{{ cell(i.detail) }}</small>{% endif %}</div></li>{% endfor %}</ol></div>
+{% elif b.type=='flow' %}<div class="cb-flow">{% if b.title %}<h4>{{ b.title }}</h4>{% endif %}<ol>{% for s in b.steps %}<li><b>{{ cell(s.step) }}</b>{% if s.detail %}<small>{{ cell(s.detail) }}</small>{% endif %}</li>{% endfor %}</ol></div>
+{% elif b.type=='tree' %}<div class="cb-tree">{% if b.title %}<h4>{{ b.title }}</h4>{% endif %}<div class="tr-root">{{ cell(b.root) }}</div>{{ tree(b.children) }}</div>
+{% elif b.type=='link' %}{% set lt=link_url(b.to) %}{% if lt %}<p class="cb-link"><a href="{{ lt }}">→ {{ b.text }}</a></p>{% endif %}
+{% endif %}
+{% endmacro %}
