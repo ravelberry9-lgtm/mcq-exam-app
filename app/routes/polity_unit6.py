@@ -189,7 +189,10 @@ def format_stem(text):
         if m and state in('intro','items'):
             items.append((_kind(m),m.group(2),m.group(4)));state='items'
         elif state=='items' and l.strip():
-            if items:tail.append(l.strip());state='tail'
+            # a statement wrapped onto the next line (no closing punctuation yet): join it back
+            if items and _re.match(r'[a-z(]',l.strip()) and not items[-1][2].rstrip().endswith(('.','?','!',':',';')) or items and items[-1][2].rstrip().endswith('\u0c4d') and not l.strip().endswith((':','?','：')):
+                k0,lb0,b0=items[-1];items[-1]=(k0,lb0,b0.rstrip()+('' if b0.rstrip().endswith('\u0c4d') else ' ')+l.strip())
+            elif items:tail.append(l.strip());state='tail'
         elif state=='intro' and l.strip():intro.append(l.strip())
         elif state=='tail' and l.strip():tail.append(l.strip())
     if not items:return Markup('<span class="u6-plain">'+str(escape(text))+'</span>')
