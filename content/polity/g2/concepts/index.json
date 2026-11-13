@@ -119,6 +119,41 @@
 "title": "Cabinet & cabinet committees"
 }
 ]
+},
+{
+"id": "parliament",
+"title": "Parliament",
+"summary": "How Parliament is made up, how it works, makes laws, passes the budget and checks the government.",
+"subs": [
+{
+"id": "parl-composition",
+"title": "Composition: Lok Sabha & Rajya Sabha"
+},
+{
+"id": "parl-members",
+"title": "Members: qualifications, disqualification, oath, salary, privileges"
+},
+{
+"id": "parl-officers",
+"title": "Presiding officers & leaders"
+},
+{
+"id": "parl-sessions",
+"title": "Sessions, sittings & devices"
+},
+{
+"id": "parl-bills",
+"title": "Legislative procedure: how a bill becomes law"
+},
+{
+"id": "parl-budget",
+"title": "Budget & financial control"
+},
+{
+"id": "parl-committees",
+"title": "Parliamentary Committees"
+}
+]
 }
 ],
 "qmap": {
@@ -743,6 +778,7 @@
 "fr-religion"
 ],
 "POL-6.1.9-P104-05": [
+"parl-members",
 "fr-freedom"
 ],
 "POL-6.1.9-P104-06": [
@@ -1976,6 +2012,7 @@
 "fr-equality"
 ],
 "PYQ-POL-CF57298D4B4E": [
+"parl-composition",
 "fr-equality"
 ],
 "PYQ-POL-WEB-1F07D0": [
@@ -3299,6 +3336,7 @@
 "fr-equality"
 ],
 "POL-6.1.9-P96-03": [
+"parl-members",
 "fr-equality"
 ],
 "POL-6.1.9-P96-04": [
@@ -3928,6 +3966,7 @@
 "jud-overview"
 ],
 "POL-741-SUPP-legislative-irregularity-illegality": [
+"parl-members",
 "jud-review-activism"
 ],
 "POL-741-SUPP-notice-admission-discretion": [
@@ -4452,6 +4491,7 @@
 "jud-review-activism"
 ],
 "POL-7.5.1-MT07": [
+"parl-members",
 "jud-review-activism"
 ],
 "POL-751-AT-certificate-consideration": [
@@ -4598,7 +4638,8 @@
 "jud-high-court"
 ],
 "POL-742-P314-04": [
-"jud-high-court"
+"jud-high-court",
+"parl-budget"
 ],
 "POL-742-P315-01": [
 "jud-high-court"
@@ -4945,6 +4986,7 @@
 "jud-review-activism"
 ],
 "PYQ-POL-WEB-1973B6": [
+"parl-budget",
 "jud-supreme-court"
 ],
 "PYQ-POL-WEB-1C3A25": [
@@ -5009,6 +5051,7 @@
 "jud-supreme-court"
 ],
 "PYQ-POL-WEB-BCA261": [
+"parl-budget",
 "jud-supreme-court"
 ],
 "PYQ-POL-WEB-BCF69F": [
@@ -5367,6 +5410,7 @@
 "pres-position"
 ],
 "PYQ-POL-WEB-0A2898": [
+"parl-composition",
 "com",
 "pm",
 "pres-election",
@@ -5395,15 +5439,18 @@
 "pres-position"
 ],
 "PYQ-POL-APK-3EA6B9": [
+"parl-composition",
 "pres-powers"
 ],
 "PYQ-POL-APK-A84B30": [
+"parl-officers",
 "vp"
 ],
 "PYQ-POL-WEB-4DE68A": [
 "vp"
 ],
 "PYQ-POL-WEB-7F67EA": [
+"parl-officers",
 "pres-election"
 ],
 "POL-7.2.3-XCMT05": [
@@ -5454,6 +5501,7 @@
 "pres-position"
 ],
 "POL-6.1.1-MT06": [
+"parl-composition",
 "pres-election",
 "pres-powers"
 ],
@@ -5464,9 +5512,12 @@
 "pres-election"
 ],
 "POL-9.5.1-Q02": [
+"parl-composition",
 "vp"
 ],
 "POL-9.5.1-Q16": [
+"parl-composition",
+"parl-sessions",
 "pres-powers"
 ],
 "PYQ-POL-WEB-A13881": [
@@ -5485,9 +5536,11 @@
 "pres-veto-ordinance-pardon"
 ],
 "POL-7.2.2-PG02-02": [
+"parl-officers",
 "pres-election"
 ],
 "POL-7.2.2-PG02-16": [
+"parl-bills",
 "pres-veto-ordinance-pardon"
 ],
 "PYQ-POL-DF48AF800814": [
@@ -5527,7 +5580,8 @@
 "pres-election"
 ],
 "POL-7.3.2-AR02": [
-"pres-veto-ordinance-pardon"
+"pres-veto-ordinance-pardon",
+"parl-bills"
 ],
 "POL-7.3.2-AR03": [
 "pres-veto-ordinance-pardon"
@@ -5545,7 +5599,8 @@
 "pres-veto-ordinance-pardon"
 ],
 "POL-7.3.2-MT02": [
-"pres-veto-ordinance-pardon"
+"pres-veto-ordinance-pardon",
+"parl-bills"
 ],
 "POL-7.3.2-MT03": [
 "pres-veto-ordinance-pardon"
@@ -5554,6 +5609,7 @@
 "pres-election"
 ],
 "POL-7.3.2-MT05": [
+"parl-officers",
 "pres-election",
 "vp",
 "pres-impeachment"
@@ -5594,6 +5650,7 @@
 "pres-election"
 ],
 "POL-7.3.2-XCMT01": [
+"parl-officers",
 "pres-election",
 "vp"
 ],
@@ -5647,6 +5704,8 @@
 "pres-position"
 ],
 "POL-732-P166-LEG-01": [
+"parl-composition",
+"parl-sessions",
 "pres-powers"
 ],
 "POL-732-P167-01": [
@@ -5660,19 +5719,22 @@
 "pres-veto-ordinance-pardon"
 ],
 "POL-732-P169-POCKET-TIME-01": [
-"pres-veto-ordinance-pardon"
+"pres-veto-ordinance-pardon",
+"parl-bills"
 ],
 "POL-732-P169-STATE-01": [
 "pres-veto-ordinance-pardon"
 ],
 "POL-732-P169-VETO-LIM-01": [
-"pres-veto-ordinance-pardon"
+"pres-veto-ordinance-pardon",
+"parl-bills"
 ],
 "POL-732-P170-01": [
 "pres-veto-ordinance-pardon"
 ],
 "POL-732-P170-FIN-01": [
-"pres-powers"
+"pres-powers",
+"parl-budget"
 ],
 "POL-732-P171-CLEM-CMP-01": [
 "pres-veto-ordinance-pardon"
@@ -5712,7 +5774,8 @@
 ],
 "PYQ-POL-36CB2B3D4015": [
 "pres-election",
-"pres-veto-ordinance-pardon"
+"pres-veto-ordinance-pardon",
+"parl-bills"
 ],
 "PYQ-POL-44AC888926DD": [
 "pres-election"
@@ -5726,6 +5789,7 @@
 "pres-powers"
 ],
 "PYQ-POL-5BF92C0B445E": [
+"parl-sessions",
 "pres-powers"
 ],
 "PYQ-POL-69889BEA9FE3": [
@@ -5758,7 +5822,8 @@
 "pres-election"
 ],
 "PYQ-POL-AF3B916244A4": [
-"pres-veto-ordinance-pardon"
+"pres-veto-ordinance-pardon",
+"parl-bills"
 ],
 "PYQ-POL-APK-083448": [
 "pres-election"
@@ -5790,12 +5855,14 @@
 "pres-position"
 ],
 "PYQ-POL-APK-4360E4": [
+"parl-budget",
 "pres-powers"
 ],
 "PYQ-POL-APK-4A8AB6": [
 "pres-veto-ordinance-pardon"
 ],
 "PYQ-POL-APK-606966": [
+"parl-bills",
 "pres-veto-ordinance-pardon",
 "pres-powers"
 ],
@@ -5810,6 +5877,7 @@
 "pres-powers"
 ],
 "PYQ-POL-APK-A3045C": [
+"parl-composition",
 "pres-powers"
 ],
 "PYQ-POL-APK-B57028": [
@@ -5930,9 +5998,11 @@
 "pres-impeachment"
 ],
 "POL-733-P182-01": [
+"parl-officers",
 "vp"
 ],
 "POL-733-P182-02": [
+"parl-officers",
 "vp"
 ],
 "POL-733-P182-ACT-LIMIT-01": [
@@ -6024,6 +6094,8 @@
 "vp"
 ],
 "PYQ-POL-WEB-12D1BE": [
+"parl-officers",
+"parl-composition",
 "vp"
 ],
 "PYQ-POL-WEB-18E7DB": [
@@ -6103,7 +6175,8 @@
 ],
 "POL-734-LAX-08": [
 "pm",
-"pres-position"
+"pres-position",
+"parl-sessions"
 ],
 "POL-734-LAX-09": [
 "com",
@@ -6111,7 +6184,8 @@
 ],
 "POL-734-LAX-21": [
 "com",
-"pres-position"
+"pres-position",
+"parl-sessions"
 ],
 "POL-734-LAX-22": [
 "com",
@@ -6143,6 +6217,7 @@
 "pres-election"
 ],
 "PYQ-POL-APK-E88DC3": [
+"parl-members",
 "pres-powers",
 "pres-position"
 ],
@@ -6187,7 +6262,8 @@
 "pres-election"
 ],
 "PYQ-POL-ED121CA014F5": [
-"pres-veto-ordinance-pardon"
+"pres-veto-ordinance-pardon",
+"parl-bills"
 ],
 "PYQ-POL-EEE6118723DB": [
 "pres-veto-ordinance-pardon"
@@ -6197,6 +6273,7 @@
 "pres-powers"
 ],
 "PYQ-POL-WEB-033F9B": [
+"parl-composition",
 "pres-election",
 "pres-powers"
 ],
@@ -6204,6 +6281,7 @@
 "pres-impeachment"
 ],
 "PYQ-POL-WEB-093BD4": [
+"parl-composition",
 "pres-powers"
 ],
 "PYQ-POL-WEB-0B8666": [
@@ -6214,7 +6292,8 @@
 ],
 "PYQ-POL-WEB-14F4E5": [
 "pres-powers",
-"pres-veto-ordinance-pardon"
+"pres-veto-ordinance-pardon",
+"parl-bills"
 ],
 "PYQ-POL-WEB-17A57B": [
 "pres-veto-ordinance-pardon"
@@ -6274,14 +6353,17 @@
 "pres-impeachment"
 ],
 "PYQ-POL-WEB-A91FF8": [
+"parl-composition",
 "pres-powers"
 ],
 "PYQ-POL-WEB-B67451": [
+"parl-composition",
 "pres-powers"
 ],
 "PYQ-POL-WEB-BFC5F7": [
 "pres-powers",
-"pres-position"
+"pres-position",
+"parl-members"
 ],
 "PYQ-POL-WEB-D10EE7": [
 "pres-veto-ordinance-pardon",
@@ -6307,6 +6389,7 @@
 "pres-veto-ordinance-pardon"
 ],
 "PYQ-POL-WEB-FD74B7": [
+"parl-composition",
 "pres-powers"
 ],
 "POL-7.3.3-AR01": [
@@ -6348,10 +6431,12 @@
 "vp"
 ],
 "POL-7.3.3-MT05": [
+"parl-officers",
 "vp",
 "pres-election"
 ],
 "POL-7.3.3-MT06": [
+"parl-officers",
 "vp"
 ],
 "POL-7.3.3-MT07": [
@@ -6394,7 +6479,8 @@
 "vp"
 ],
 "POL-733-P181-COND-01": [
-"vp"
+"vp",
+"parl-members"
 ],
 "POL-733-P181-OATH-01": [
 "vp"
@@ -6403,30 +6489,42 @@
 "vp"
 ],
 "POL-7.2.2-XLMT03": [
+"parl-officers",
 "vp"
 ],
 "POL-N16-CUR-011": [
 "pres-election"
 ],
 "POL-R21-PRES-parliamentary-functions": [
+"parl-composition",
 "pres-powers"
 ],
 "PRAC-POL-0EAB2074C70D": [
+"parl-officers",
+"parl-composition",
 "vp"
 ],
 "PYQ-POL-482B0353BF6F": [
+"parl-officers",
+"parl-composition",
 "vp"
 ],
 "PYQ-POL-6A1E8A802507": [
+"parl-officers",
+"parl-composition",
 "vp"
 ],
 "PYQ-POL-6E39CB332A1C": [
+"parl-bills",
 "pres-powers"
 ],
 "PYQ-POL-954BAD31D368": [
+"parl-sessions",
+"parl-composition",
 "pres-powers"
 ],
 "PYQ-POL-APK-098E5E": [
+"parl-composition",
 "pres-powers"
 ],
 "POL-6.1.5-P50-02": [
@@ -6461,6 +6559,7 @@
 "com"
 ],
 "PYQ-POL-5396248EF37B": [
+"parl-sessions",
 "com",
 "pm"
 ],
@@ -6468,6 +6567,7 @@
 "pm"
 ],
 "PYQ-POL-63EC71B966B4": [
+"parl-sessions",
 "com"
 ],
 "PYQ-POL-776F7AF84F6A": [
@@ -6556,16 +6656,21 @@
 "com"
 ],
 "PYQ-POL-WEB-EA4DA0": [
-"pm"
+"pm",
+"parl-sessions",
+"parl-composition"
 ],
 "PYQ-POL-WEB-FCABC2": [
 "pm"
 ],
 "PYQ-POL-APK-39D268": [
+"parl-sessions",
+"parl-officers",
 "com",
 "pm"
 ],
 "PYQ-POL-EF99BF683F92": [
+"parl-sessions",
 "com",
 "pm"
 ],
@@ -6583,9 +6688,12 @@
 "pm"
 ],
 "POL-7.3.1-AR06": [
+"parl-sessions",
+"parl-composition",
 "com"
 ],
 "POL-7.3.1-AR07": [
+"parl-composition",
 "com"
 ],
 "POL-7.3.1-MT03": [
@@ -6673,16 +6781,21 @@
 "pm"
 ],
 "LX-UPSC-2014-Q11": [
+"parl-sessions",
+"parl-composition",
 "com",
 "pm"
 ],
 "LX-UPSC-2017-Q16": [
+"parl-sessions",
 "com"
 ],
 "POL-7.2.2-PG02-05": [
+"parl-officers",
 "pm"
 ],
 "POL-7.2.2-PG02-18": [
+"parl-composition",
 "com"
 ],
 "POL-671-C004": [
@@ -6698,9 +6811,12 @@
 "com"
 ],
 "POL-7.2.2-PG02-21": [
+"parl-sessions",
+"parl-officers",
 "com"
 ],
 "POL-722-CH-02": [
+"parl-sessions",
 "com"
 ],
 "POL-N16-CUR-029": [
@@ -6711,6 +6827,8 @@
 "com"
 ],
 "POL-R21-PH-early-dissolution-advice-emergency": [
+"parl-sessions",
+"parl-composition",
 "com",
 "pm"
 ],
@@ -6737,6 +6855,7 @@
 "cabinet"
 ],
 "LX-PQ-118": [
+"parl-sessions",
 "com"
 ],
 "LX-PQ-128": [
@@ -6801,7 +6920,8 @@
 "com"
 ],
 "POL-734-LAX-02": [
-"com"
+"com",
+"parl-members"
 ],
 "POL-734-LAX-03": [
 "pm",
@@ -6893,10 +7013,1795 @@
 "pm"
 ],
 "PYQ-POL-WEB-C909FB": [
+"parl-committees",
 "cabinet"
 ],
 "PYQ-POL-WEB-FC989E": [
 "pm"
+],
+"POL-724-P248-01": [
+"parl-committees"
+],
+"POL-724-P249-01": [
+"parl-committees"
+],
+"POL-724-REC-STAGE-001": [
+"parl-committees"
+],
+"POL-R21-COM-assurances-subleg-structure": [
+"parl-committees"
+],
+"POL-R21-COM-constitutional-references": [
+"parl-committees"
+],
+"POL-R21-COM-consultative-arrangements": [
+"parl-committees"
+],
+"POL-R21-COM-functional-families": [
+"parl-committees"
+],
+"POL-R21-COM-joint-composition": [
+"parl-committees"
+],
+"POL-R21-COM-offices-profit-structure": [
+"parl-committees"
+],
+"POL-R21-COM-ordinary-membership-patterns": [
+"parl-committees"
+],
+"POL-R21-COM-quorum-subcommittee": [
+"parl-committees"
+],
+"POL-R21-COM-salaries-statutory-structure": [
+"parl-committees"
+],
+"POL-R21-COM-specific-functions": [
+"parl-committees"
+],
+"POL-R21-COM-standing-adhoc-continuity": [
+"parl-committees"
+],
+"POL-R21-COM-welfare-service-functions": [
+"parl-committees"
+],
+"POL-R21-COPU-business-boundary": [
+"parl-committees"
+],
+"POL-R21-COPU-remit-boundaries": [
+"parl-committees"
+],
+"POL-R21-DRSC-constitution": [
+"parl-committees"
+],
+"POL-R21-DRSC-history-distribution": [
+"parl-committees"
+],
+"POL-R21-DRSC-longterm-policy": [
+"parl-committees",
+"parl-budget"
+],
+"POL-R21-EST-continuous-selected-review": [
+"parl-committees"
+],
+"POL-R21-EST-specific-functions": [
+"parl-committees"
+],
+"POL-R21-FIN-LS-election-term": [
+"parl-committees"
+],
+"POL-R21-FIN-REMAIN-BAC-constitution": [
+"parl-committees"
+],
+"POL-R21-FIN-REMAIN-BAC-time-role": [
+"parl-committees"
+],
+"POL-R21-FIN-REMAIN-PAC-chair-20261103": [
+"parl-committees"
+],
+"POL-R21-FIN-REMAIN-Petitions-chair": [
+"parl-committees",
+"parl-officers"
+],
+"POL-R21-FIN-REMAIN-RS-election-method": [
+"parl-committees"
+],
+"POL-R21-FIN-REMAIN-classification": [
+"parl-committees"
+],
+"POL-R21-FIN-REMAIN-financial-descriptions": [
+"parl-committees"
+],
+"POL-R21-FIN-REMAIN-historical-expansion": [
+"parl-committees"
+],
+"POL-R21-FIN-composition": [
+"parl-committees"
+],
+"POL-R21-FIN-ministers-chairs": [
+"parl-committees"
+],
+"POL-R21-FIN-origins": [
+"parl-committees"
+],
+"POL-R21-JE-JPC-pesticide-finding-limits": [
+"parl-committees"
+],
+"POL-R21-JPC-LS-motion-dates": [
+"parl-committees"
+],
+"POL-R21-JPC-Securities-government-response": [
+"parl-committees"
+],
+"POL-R21-JPC-Telecom-membership": [
+"parl-committees"
+],
+"POL-R21-JPC-formal-constitution": [
+"parl-committees"
+],
+"POL-R21-JPC-sittings-presentation": [
+"parl-committees"
+],
+"POL-R21-JPC-three-chairs-parties": [
+"parl-committees"
+],
+"POL-R21-JPC-two-historical-profiles": [
+"parl-committees"
+],
+"POL-R21-ORD-absence-ls": [
+"parl-committees"
+],
+"POL-R21-ORD-chairs-appointment": [
+"parl-committees"
+],
+"POL-R21-ORD-drsc-recommendation-purpose": [
+"parl-committees",
+"parl-budget"
+],
+"POL-R21-ORD-ethics-origins": [
+"parl-committees"
+],
+"POL-R21-ORD-ethics-standing-term": [
+"parl-committees"
+],
+"POL-R21-ORD-general-purposes": [
+"parl-committees"
+],
+"POL-R21-ORD-inquiry-jpc-routes": [
+"parl-committees"
+],
+"POL-R21-ORD-inquiry-jpc-subject": [
+"parl-committees"
+],
+"POL-R21-ORD-ls-assurances-subleg": [
+"parl-committees"
+],
+"POL-R21-ORD-official-language-election": [
+"parl-committees"
+],
+"POL-R21-ORD-private-bills": [
+"parl-committees",
+"parl-bills"
+],
+"POL-R21-ORD-privileges-semi-judicial": [
+"parl-committees"
+],
+"POL-R21-ORD-rs-continuity": [
+"parl-committees"
+],
+"POL-R21-ORD-scst-election-term": [
+"parl-committees"
+],
+"POL-R21-ORD-women-library-term": [
+"parl-committees"
+],
+"POL-R21-PAC-CAG-autonomous-review": [
+"parl-committees"
+],
+"POL-R21-PAC-appropriation-review": [
+"parl-committees"
+],
+"POL-R21-PAC-chair-convention": [
+"parl-committees"
+],
+"POL-R21-PAC-policy-implementation-boundary": [
+"parl-committees"
+],
+"POL-R21-PAC-retrospective-limits": [
+"parl-committees"
+],
+"PRAC-POL-452548EE9DF7": [
+"parl-committees"
+],
+"PYQ-POL-064B86E638F3": [
+"parl-committees"
+],
+"PYQ-POL-330A3C4B8AF5": [
+"parl-committees"
+],
+"PYQ-POL-39F368ABDD8F": [
+"parl-committees"
+],
+"PYQ-POL-90938B81669A": [
+"parl-committees"
+],
+"PYQ-POL-91C8B4A03FBE": [
+"parl-committees"
+],
+"PYQ-POL-92F31427B9B1": [
+"parl-committees"
+],
+"PYQ-POL-96DD0F7AAE54": [
+"parl-committees"
+],
+"PYQ-POL-988E6A321C1A": [
+"parl-committees"
+],
+"PYQ-POL-APK-A22A08": [
+"parl-committees"
+],
+"PYQ-POL-E162AC024CBA": [
+"parl-committees"
+],
+"PYQ-POL-E797393796E7": [
+"parl-committees"
+],
+"PYQ-POL-WEB-031114": [
+"parl-committees"
+],
+"PYQ-POL-WEB-3CB6CB": [
+"parl-committees"
+],
+"PYQ-POL-WEB-3E5839": [
+"parl-committees"
+],
+"PYQ-POL-WEB-58D2CC": [
+"parl-committees"
+],
+"PYQ-POL-WEB-7348A8": [
+"parl-committees"
+],
+"PYQ-POL-WEB-AC8415": [
+"parl-committees"
+],
+"PYQ-POL-WEB-D4AA61": [
+"parl-committees"
+],
+"PYQ-POL-WEB-FA6857": [
+"parl-committees"
+],
+"POL-9.5.2-Q11": [
+"parl-members"
+],
+"POL-9.5.2-Q13": [
+"parl-members",
+"parl-composition"
+],
+"POL-9.5.2-Q14": [
+"parl-members"
+],
+"POL-9.5.2-Q15": [
+"parl-members",
+"parl-composition"
+],
+"POL-9.5.2-Q17": [
+"parl-members"
+],
+"POL-9.5.2-Q18": [
+"parl-members"
+],
+"POL-9.5.2-Q19": [
+"parl-members"
+],
+"POL-9.5.2-Q20": [
+"parl-members"
+],
+"POL-9.5.2-Q21": [
+"parl-members"
+],
+"POL-9.5.2-Q22": [
+"parl-members"
+],
+"POL-9.5.2-Q23": [
+"parl-members"
+],
+"POL-9.5.2-Q43": [
+"parl-members"
+],
+"POL-9.5.2-Q48": [
+"parl-members"
+],
+"PYQ-POL-WEB-6681BD": [
+"parl-sessions",
+"parl-officers"
+],
+"PYQ-POL-WEB-670803": [
+"parl-bills"
+],
+"PYQ-POL-WEB-67E641": [
+"parl-officers"
+],
+"PYQ-POL-WEB-67FAF7": [
+"parl-officers",
+"parl-sessions"
+],
+"PYQ-POL-WEB-6A2AFA": [
+"parl-bills"
+],
+"PYQ-POL-WEB-6B29F6": [
+"parl-officers"
+],
+"PYQ-POL-WEB-6B7D61": [
+"parl-sessions"
+],
+"PYQ-POL-WEB-6B7F69": [
+"parl-composition"
+],
+"PYQ-POL-WEB-6C5B8B": [
+"parl-sessions"
+],
+"PYQ-POL-WEB-6D2A98": [
+"parl-composition"
+],
+"PYQ-POL-WEB-73223B": [
+"parl-members"
+],
+"PYQ-POL-WEB-745876": [
+"parl-officers"
+],
+"PYQ-POL-WEB-74A5EA": [
+"parl-bills"
+],
+"PYQ-POL-WEB-7B01E0": [
+"parl-bills",
+"parl-officers"
+],
+"PYQ-POL-WEB-81B7A4": [
+"parl-composition"
+],
+"PYQ-POL-WEB-842B75": [
+"parl-composition"
+],
+"PYQ-POL-WEB-8ACBC6": [
+"parl-officers"
+],
+"PYQ-POL-WEB-8C787A": [
+"parl-committees"
+],
+"PYQ-POL-WEB-9610E4": [
+"parl-sessions",
+"parl-officers"
+],
+"PYQ-POL-WEB-9919FB": [
+"parl-composition"
+],
+"PYQ-POL-WEB-99F553": [
+"parl-officers"
+],
+"PYQ-POL-WEB-9AC54D": [
+"parl-bills"
+],
+"PYQ-POL-WEB-9BDCE1": [
+"parl-members"
+],
+"PYQ-POL-WEB-A0E66C": [
+"parl-composition"
+],
+"PYQ-POL-WEB-A9A222": [
+"parl-officers",
+"parl-sessions",
+"parl-composition"
+],
+"PYQ-POL-WEB-AC823A": [
+"parl-officers"
+],
+"PYQ-POL-WEB-AD6941": [
+"parl-bills"
+],
+"PYQ-POL-WEB-AFA1D4": [
+"parl-composition"
+],
+"PYQ-POL-WEB-B190A6": [
+"parl-budget"
+],
+"PYQ-POL-WEB-B77BFF": [
+"parl-bills"
+],
+"PYQ-POL-WEB-BA22BE": [
+"parl-officers"
+],
+"PYQ-POL-WEB-BB785D": [
+"parl-composition"
+],
+"PYQ-POL-WEB-BDFFF6": [
+"parl-composition",
+"parl-sessions"
+],
+"PYQ-POL-WEB-BF58FF": [
+"parl-officers"
+],
+"PYQ-POL-WEB-BF67DA": [
+"parl-composition"
+],
+"PYQ-POL-WEB-C08BCC": [
+"parl-composition"
+],
+"PYQ-POL-WEB-C3643B": [
+"parl-budget"
+],
+"PYQ-POL-WEB-C52A0F": [
+"parl-composition"
+],
+"PYQ-POL-WEB-CD6829": [
+"parl-bills"
+],
+"PYQ-POL-WEB-D28558": [
+"parl-composition"
+],
+"PYQ-POL-WEB-D502CB": [
+"parl-members",
+"parl-committees"
+],
+"PYQ-POL-WEB-D6350C": [
+"parl-officers"
+],
+"PYQ-POL-WEB-D78AFC": [
+"parl-bills"
+],
+"PYQ-POL-WEB-E41291": [
+"parl-composition"
+],
+"PYQ-POL-WEB-E42900": [
+"parl-bills"
+],
+"PYQ-POL-WEB-E57685": [
+"parl-bills"
+],
+"PYQ-POL-WEB-E8BD45": [
+"parl-officers"
+],
+"PYQ-POL-WEB-EA597E": [
+"parl-sessions"
+],
+"PYQ-POL-WEB-F8571C": [
+"parl-officers"
+],
+"PYQ-POL-WEB-FA53DD": [
+"parl-officers",
+"parl-bills"
+],
+"POL-7.2.3-XDMT01": [
+"parl-members"
+],
+"POL-7.2.3-XDMT02": [
+"parl-members",
+"parl-officers"
+],
+"POL-N16-CUR-002": [
+"parl-composition"
+],
+"POL-N16-CUR-045": [
+"parl-members"
+],
+"POL-R21-PRIV-Raja-expulsion-review": [
+"parl-members"
+],
+"POL-R21-WOM-2023-TS-Mizoram": [
+"parl-composition"
+],
+"LX-PQ-003": [
+"parl-committees"
+],
+"LX-PQ-121": [
+"parl-committees"
+],
+"LX-PQ-143": [
+"parl-committees"
+],
+"LX-PQ-157": [
+"parl-budget",
+"parl-committees"
+],
+"POL-7.2.4-AR01": [
+"parl-committees"
+],
+"POL-7.2.4-AR02": [
+"parl-committees"
+],
+"POL-7.2.4-AR03": [
+"parl-committees"
+],
+"POL-7.2.4-AR04": [
+"parl-committees",
+"parl-members"
+],
+"POL-7.2.4-AR05": [
+"parl-committees"
+],
+"POL-7.2.4-AR06": [
+"parl-committees",
+"parl-bills"
+],
+"POL-7.2.4-AR07": [
+"parl-committees"
+],
+"POL-7.2.4-AR08": [
+"parl-committees"
+],
+"POL-7.2.4-MT01": [
+"parl-committees"
+],
+"POL-7.2.4-MT02": [
+"parl-committees"
+],
+"POL-7.2.4-MT03": [
+"parl-committees"
+],
+"POL-7.2.4-MT04": [
+"parl-committees",
+"parl-officers"
+],
+"POL-7.2.4-MT05": [
+"parl-committees"
+],
+"POL-7.2.4-MT06": [
+"parl-committees"
+],
+"POL-7.2.4-MT07": [
+"parl-committees"
+],
+"POL-7.2.4-MT08": [
+"parl-committees"
+],
+"POL-7.2.4-XDAR03": [
+"parl-committees",
+"parl-budget"
+],
+"POL-7.2.4-XDAR08": [
+"parl-committees",
+"parl-officers"
+],
+"POL-724-AR-01": [
+"parl-committees"
+],
+"POL-724-AR-02": [
+"parl-committees",
+"parl-bills"
+],
+"POL-724-CH-01": [
+"parl-committees"
+],
+"POL-724-CH-02": [
+"parl-committees"
+],
+"POL-724-P243-01": [
+"parl-committees"
+],
+"POL-724-P244-01": [
+"parl-committees"
+],
+"POL-724-P245-01": [
+"parl-committees"
+],
+"POL-724-P246-01": [
+"parl-committees"
+],
+"POL-671-C007": [
+"parl-composition"
+],
+"POL-671-N025": [
+"parl-composition"
+],
+"POL-671-N027": [
+"parl-composition"
+],
+"POL-671-N028": [
+"parl-composition"
+],
+"POL-671-N029": [
+"parl-composition"
+],
+"POL-671-N030": [
+"parl-composition"
+],
+"POL-671-N031": [
+"parl-composition"
+],
+"PYQ-POL-318790F2B484": [
+"parl-composition"
+],
+"PYQ-POL-APK-1EEC55": [
+"parl-composition"
+],
+"PYQ-POL-APK-AC8C19": [
+"parl-composition"
+],
+"PYQ-POL-CCC012CC2A45": [
+"parl-composition"
+],
+"PYQ-POL-CD8513751ABE": [
+"parl-composition"
+],
+"PYQ-POL-E53681049DB5": [
+"parl-composition"
+],
+"PYQ-POL-F143A9BFC6E4": [
+"parl-composition"
+],
+"PYQ-POL-F2B91C0D698D": [
+"parl-composition"
+],
+"PYQ-POL-FEDA565A504F": [
+"parl-composition"
+],
+"POL-671-P509-003": [
+"parl-members"
+],
+"POL-671-P511-003": [
+"parl-bills"
+],
+"POL-671-S003": [
+"parl-bills"
+],
+"PYQ-POL-APK-2384FE": [
+"parl-bills"
+],
+"LX-PQ-061": [
+"parl-budget"
+],
+"PYQ-POL-WEB-049B19": [
+"parl-composition"
+],
+"POL-7.2.2-PG02-20": [
+"parl-composition"
+],
+"POL-7.2.2-PG02-22": [
+"parl-sessions"
+],
+"POL-7.2.2-XCMT03": [
+"parl-sessions",
+"parl-bills"
+],
+"POL-7.2.2-XDAR01": [
+"parl-sessions"
+],
+"POL-7.2.2-XDAR02": [
+"parl-members"
+],
+"POL-7.2.2-XDAR04": [
+"parl-budget",
+"parl-composition"
+],
+"POL-7.2.2-XDMT04": [
+"parl-composition",
+"parl-sessions"
+],
+"POL-722-AR-01": [
+"parl-sessions"
+],
+"POL-722-AR-02": [
+"parl-budget"
+],
+"POL-722-CH-01": [
+"parl-bills"
+],
+"POL-722-P234-01": [
+"parl-officers",
+"parl-bills"
+],
+"POL-722-P236-01": [
+"parl-officers"
+],
+"POL-722-P237-01": [
+"parl-bills"
+],
+"POL-722-P255-01": [
+"parl-budget"
+],
+"POL-722-P257-01": [
+"parl-budget"
+],
+"POL-722-P260-01": [
+"parl-sessions"
+],
+"POL-722-REC-STAGE-001": [
+"parl-members"
+],
+"POL-722-REC-STAGE-002": [
+"parl-composition"
+],
+"POL-722-REC-STAGE-003": [
+"parl-members"
+],
+"POL-N16-CUR-003": [
+"parl-composition"
+],
+"POL-N16-CUR-006": [
+"parl-composition"
+],
+"POL-N16-CUR-013": [
+"parl-sessions"
+],
+"POL-N16-CUR-014": [
+"parl-budget"
+],
+"POL-N16-CUR-015": [
+"parl-budget"
+],
+"POL-N16-CUR-016": [
+"parl-budget"
+],
+"POL-N16-CUR-019": [
+"parl-officers"
+],
+"POL-N16-CUR-020": [
+"parl-bills"
+],
+"POL-N16-CUR-021": [
+"parl-composition"
+],
+"POL-N16-CUR-022": [
+"parl-composition"
+],
+"POL-N16-CUR-023": [
+"parl-sessions"
+],
+"POL-N16-CUR-024": [
+"parl-sessions"
+],
+"POL-N16-CUR-025": [
+"parl-sessions"
+],
+"POL-N16-CUR-026": [
+"parl-sessions"
+],
+"POL-N16-CUR-027": [
+"parl-sessions"
+],
+"POL-9.5.3-Q20": [
+"parl-members"
+],
+"POL-9.5.3-Q32": [
+"parl-composition"
+],
+"POL-9.5.3-Q33": [
+"parl-composition",
+"parl-members"
+],
+"POL-9.5.3-Q44": [
+"parl-members"
+],
+"POL-9.5.3-Q56": [
+"parl-committees"
+],
+"POL-6.1-P07-03": [
+"parl-bills"
+],
+"LX-PQ-032": [
+"parl-budget"
+],
+"LX-PQ-159": [
+"parl-bills",
+"parl-budget"
+],
+"POL-8.2.3-Q06": [
+"parl-budget"
+],
+"POL-8.2.3-Q07": [
+"parl-budget"
+],
+"POL-8.2.3-Q16": [
+"parl-bills",
+"parl-budget"
+],
+"PYQ-POL-402BF43917D9": [
+"parl-budget"
+],
+"PYQ-POL-APK-2B7DE9": [
+"parl-bills",
+"parl-budget"
+],
+"PYQ-POL-WEB-B3C45E": [
+"parl-budget"
+],
+"POL-9.5.1-Q28": [
+"parl-composition"
+],
+"PYQ-POL-8FBF8EA65602": [
+"parl-composition"
+],
+"PYQ-POL-WEB-54EDFC": [
+"parl-composition"
+],
+"PYQ-POL-WEB-C3C5FD": [
+"parl-composition"
+],
+"POL-9.5.2-AR01": [
+"parl-members"
+],
+"POL-9.5.2-AR03": [
+"parl-composition",
+"parl-members"
+],
+"POL-9.5.2-Q02": [
+"parl-composition"
+],
+"LX-PQ-012": [
+"parl-sessions"
+],
+"APPSC-G2-2025-A-130": [
+"parl-sessions"
+],
+"POL-7.1.1-AR02": [
+"parl-composition"
+],
+"POL-7.1.1-MT07": [
+"parl-composition"
+],
+"POL-7.2.1-AR05": [
+"parl-composition"
+],
+"POL-7.2.1-MT04": [
+"parl-composition"
+],
+"POL-7.2.1-PG0401": [
+"parl-composition"
+],
+"POL-7.2.1-PG0402": [
+"parl-composition",
+"parl-members"
+],
+"POL-7.2.1-XCMT06": [
+"parl-composition"
+],
+"POL-721-AR-02": [
+"parl-composition"
+],
+"POL-721-CH-04": [
+"parl-composition"
+],
+"POL-721-P213-01": [
+"parl-composition"
+],
+"POL-721-P219-01": [
+"parl-composition"
+],
+"PYQ-POL-WEB-263CE9": [
+"parl-composition"
+],
+"APPSC-G2-2017-P2-Q148": [
+"parl-sessions"
+],
+"LX-PQ-001": [
+"parl-officers",
+"parl-committees"
+],
+"LX-PQ-002": [
+"parl-sessions"
+],
+"LX-PQ-007": [
+"parl-sessions"
+],
+"LX-PQ-009": [
+"parl-sessions"
+],
+"LX-PQ-011": [
+"parl-sessions"
+],
+"LX-PQ-021": [
+"parl-budget"
+],
+"LX-PQ-022": [
+"parl-budget"
+],
+"LX-PQ-023": [
+"parl-budget"
+],
+"LX-PQ-024": [
+"parl-budget"
+],
+"LX-PQ-026": [
+"parl-budget"
+],
+"LX-PQ-027": [
+"parl-bills",
+"parl-budget",
+"parl-composition"
+],
+"LX-PQ-029": [
+"parl-budget"
+],
+"LX-PQ-030": [
+"parl-budget"
+],
+"LX-PQ-031": [
+"parl-budget"
+],
+"LX-PQ-033": [
+"parl-budget"
+],
+"LX-PQ-034": [
+"parl-budget"
+],
+"LX-PQ-035": [
+"parl-budget",
+"parl-composition"
+],
+"LX-PQ-036": [
+"parl-budget"
+],
+"LX-PQ-123": [
+"parl-sessions"
+],
+"LX-PQ-132": [
+"parl-budget"
+],
+"LX-PQ-135": [
+"parl-budget"
+],
+"LX-PQ-144": [
+"parl-budget"
+],
+"LX-PQ-145": [
+"parl-budget"
+],
+"LX-PQ-148": [
+"parl-sessions"
+],
+"LX-PQ-158": [
+"parl-budget"
+],
+"LX-PQ-174": [
+"parl-committees"
+],
+"LX-PQ-187": [
+"parl-budget"
+],
+"LX-PQ-188": [
+"parl-budget"
+],
+"LX-UPSC-2013-Q06": [
+"parl-officers",
+"parl-composition"
+],
+"LX-UPSC-2013-Q11": [
+"parl-bills",
+"parl-budget"
+],
+"LX-UPSC-2015-Q04": [
+"parl-bills"
+],
+"LX-UPSC-2015-Q08": [
+"parl-budget"
+],
+"LX-UPSC-2016-Q01": [
+"parl-sessions"
+],
+"LX-UPSC-2017-Q17": [
+"parl-bills"
+],
+"LX-UPSC-2018-Q10": [
+"parl-officers"
+],
+"LX-UPSC-2022-Q03": [
+"parl-bills"
+],
+"POL-7.2.2-AR01": [
+"parl-bills"
+],
+"POL-7.2.2-AR02": [
+"parl-bills",
+"parl-officers"
+],
+"POL-7.2.2-AR03": [
+"parl-sessions"
+],
+"POL-7.2.2-AR04": [
+"parl-officers"
+],
+"POL-7.2.2-AR05": [
+"parl-members"
+],
+"POL-7.2.2-MT01": [
+"parl-sessions",
+"parl-bills",
+"parl-members"
+],
+"POL-7.2.2-MT02": [
+"parl-sessions"
+],
+"POL-7.2.2-MT03": [
+"parl-composition"
+],
+"POL-7.2.2-PG02-01": [
+"parl-officers"
+],
+"POL-7.2.2-PG02-03": [
+"parl-officers"
+],
+"POL-7.2.2-PG02-04": [
+"parl-officers",
+"parl-composition"
+],
+"POL-7.2.2-PG02-06": [
+"parl-members"
+],
+"POL-7.2.2-PG02-07": [
+"parl-composition"
+],
+"POL-7.2.2-PG02-08": [
+"parl-members"
+],
+"POL-7.2.2-PG02-09": [
+"parl-members"
+],
+"POL-7.2.2-PG02-10": [
+"parl-members"
+],
+"POL-7.2.2-PG02-11": [
+"parl-sessions"
+],
+"POL-7.2.2-PG02-12": [
+"parl-sessions"
+],
+"POL-7.2.2-PG02-13": [
+"parl-sessions"
+],
+"POL-7.2.2-PG02-14": [
+"parl-bills"
+],
+"POL-7.2.2-PG02-15": [
+"parl-bills"
+],
+"POL-7.2.2-PG02-19": [
+"parl-composition"
+],
+"POL-8.6.1-Q11": [
+"parl-sessions"
+],
+"LX-UPSC-2022-Q05": [
+"parl-composition"
+],
+"POL-9.2.2-Q21": [
+"parl-composition"
+],
+"POL-9.2.2-XGAR05": [
+"parl-composition"
+],
+"PYQ-POL-0D99EEDDB0AA": [
+"parl-composition"
+],
+"POL-9.1.4-Q13": [
+"parl-composition"
+],
+"POL-9.1.4-Q14": [
+"parl-composition"
+],
+"POL-9.1.4-Q38": [
+"parl-composition"
+],
+"POL-9.2.1-Q23": [
+"parl-composition"
+],
+"POL-9.2.1-Q31": [
+"parl-composition"
+],
+"POL-9.2.1-Q38": [
+"parl-composition"
+],
+"PYQ-POL-APK-BE73EF": [
+"parl-composition"
+],
+"PYQ-POL-WEB-5ADD04": [
+"parl-composition"
+],
+"PYQ-POL-APK-E7968C": [
+"parl-composition",
+"parl-members"
+],
+"POL-8.3.11-Q31": [
+"parl-members"
+],
+"POL-8.3.11-Q33": [
+"parl-members"
+],
+"PYQ-POL-6B0666C7EC46": [
+"parl-members"
+],
+"PYQ-POL-WEB-6A088B": [
+"parl-members"
+],
+"LX-PQ-146": [
+"parl-budget"
+],
+"POL-8.3.2-Q18": [
+"parl-budget"
+],
+"POL-8.3.3-Q17": [
+"parl-budget"
+],
+"POL-N16-CUR-028": [
+"parl-sessions",
+"parl-officers"
+],
+"POL-N16-CUR-031": [
+"parl-sessions"
+],
+"POL-N16-CUR-033": [
+"parl-sessions",
+"parl-officers"
+],
+"POL-N16-CUR-034": [
+"parl-officers"
+],
+"POL-N16-CUR-035": [
+"parl-committees",
+"parl-officers"
+],
+"POL-N16-CUR-036": [
+"parl-officers"
+],
+"POL-N16-CUR-037": [
+"parl-officers"
+],
+"POL-N16-CUR-038": [
+"parl-members"
+],
+"POL-N16-CUR-039": [
+"parl-members"
+],
+"POL-N16-CUR-057": [
+"parl-composition"
+],
+"POL-N16-CUR-059": [
+"parl-composition"
+],
+"POL-N16-CUR-060": [
+"parl-officers"
+],
+"POL-N16-CUR-062": [
+"parl-officers"
+],
+"POL-R21-HIST-Parliament-etymology": [
+"parl-composition"
+],
+"POL-R21-LS-2004-reserved-seat-pair": [
+"parl-composition"
+],
+"POL-R21-LS-2024-elected-total": [
+"parl-composition"
+],
+"POL-R21-LS-AP-TS-reserved-counts": [
+"parl-composition"
+],
+"POL-R21-LS-AP-TS-reserved-identities": [
+"parl-composition"
+],
+"POL-R21-LS-Article81-elected-ceilings": [
+"parl-composition"
+],
+"POL-R21-LS-Delhi-JK-total": [
+"parl-composition"
+],
+"POL-R21-LS-State-reservation-patterns": [
+"parl-composition"
+],
+"POL-R21-LS-UT-single-seat-group": [
+"parl-composition"
+],
+"POL-R21-LS-constitutional-disqualification": [
+"parl-members"
+],
+"POL-R21-LS-large-State-allocation-A": [
+"parl-composition"
+],
+"POL-R21-LS-large-State-allocation-B": [
+"parl-composition"
+],
+"POL-R21-LS-membership-qualifications": [
+"parl-members",
+"parl-composition"
+],
+"POL-R21-LS-reserved-totals-maxima": [
+"parl-composition"
+],
+"POL-R21-LS-small-State-groups": [
+"parl-composition"
+],
+"POL-R21-PARL-constitutional-map": [
+"parl-composition"
+],
+"POL-R21-PH-31st-1973-corrected-ceilings": [
+"parl-composition"
+],
+"POL-R21-PH-Articles80-82-associations": [
+"parl-composition"
+],
+"POL-R21-PH-RS-State-election-population": [
+"parl-composition"
+],
+"POL-R21-PH-RS-constitution-first-sitting-diamond": [
+"parl-composition"
+],
+"POL-R21-PH-RS-nomination-identities": [
+"parl-composition"
+],
+"POL-R21-PH-RS-post2019-seat-allocation": [
+"parl-composition"
+],
+"POL-R21-PH-RajyaSabha-Hindi-naming": [
+"parl-composition"
+],
+"POL-R21-PH-Sansad-name-old-location": [
+"parl-composition"
+],
+"POL-R21-PH-fifth-LS-extension-dissolution-sequence": [
+"parl-composition"
+],
+"POL-R21-PH-first-LS-limit-and-elected-seats": [
+"parl-composition"
+],
+"POL-R21-PRIV-PV-chronology-bench": [
+"parl-members"
+],
+"POL-R21-PRIV-PV-historical-rule": [
+"parl-members"
+],
+"POL-R21-PRIV-Sita-background": [
+"parl-members"
+],
+"POL-R21-PRIV-Sita-bench": [
+"parl-members"
+],
+"POL-R21-RH-1996-1999-legislative-fates": [
+"parl-composition"
+],
+"POL-R21-RH-2008-2014-bill-course": [
+"parl-composition"
+],
+"POL-R21-RH-2023-event-date-match": [
+"parl-composition"
+],
+"POL-R21-RH-early-extension-titles": [
+"parl-composition"
+],
+"POL-R21-RH-first-bill-profile": [
+"parl-composition"
+],
+"POL-R21-RH-later-extension-title-match": [
+"parl-composition"
+],
+"POL-R21-RS-ceiling-nomination-fields": [
+"parl-composition"
+],
+"POL-R21-RS-quota-180-four": [
+"parl-composition"
+],
+"PRAC-POL-0450AF8A1B3F": [
+"parl-sessions"
+],
+"PRAC-POL-67FACD83C2ED": [
+"parl-bills",
+"parl-composition"
+],
+"PYQ-POL-00D8CC61D2EA": [
+"parl-sessions",
+"parl-members"
+],
+"PYQ-POL-041122C852A3": [
+"parl-officers"
+],
+"PYQ-POL-05BB9F2C2776": [
+"parl-budget"
+],
+"PYQ-POL-06ADFFA3C76F": [
+"parl-members",
+"parl-officers"
+],
+"PYQ-POL-0C0B9EF1282A": [
+"parl-composition"
+],
+"PYQ-POL-1478CD0B877B": [
+"parl-officers"
+],
+"PYQ-POL-1732D0F139F7": [
+"parl-budget"
+],
+"PYQ-POL-1AC5FB18A75C": [
+"parl-officers"
+],
+"PYQ-POL-1F99AA9FE03B": [
+"parl-composition"
+],
+"PYQ-POL-1FAD1AC36332": [
+"parl-composition"
+],
+"PYQ-POL-1FDD1D9D3AF4": [
+"parl-bills",
+"parl-budget"
+],
+"PYQ-POL-266C52A61CE4": [
+"parl-sessions"
+],
+"PYQ-POL-2BAB00052EF4": [
+"parl-composition"
+],
+"PYQ-POL-359E755F373F": [
+"parl-members",
+"parl-composition"
+],
+"PYQ-POL-370EBB870D64": [
+"parl-composition"
+],
+"PYQ-POL-375C66847AE0": [
+"parl-bills"
+],
+"PYQ-POL-39D86EF80429": [
+"parl-bills",
+"parl-officers"
+],
+"PYQ-POL-3AD2CDB91DA6": [
+"parl-composition"
+],
+"PYQ-POL-3B2B855F8AB5": [
+"parl-budget"
+],
+"PYQ-POL-3CFFC3CD62DC": [
+"parl-budget"
+],
+"PYQ-POL-3D5FA7006079": [
+"parl-composition"
+],
+"PYQ-POL-3F05C7AB43EC": [
+"parl-composition"
+],
+"PYQ-POL-42B0A9BEFF2A": [
+"parl-sessions"
+],
+"PYQ-POL-443D9DCF6576": [
+"parl-committees"
+],
+"PYQ-POL-44C2D0FAD66D": [
+"parl-members"
+],
+"PYQ-POL-480E144EE499": [
+"parl-composition"
+],
+"PYQ-POL-48C4B270A9D5": [
+"parl-bills",
+"parl-officers"
+],
+"PYQ-POL-4AF205B65472": [
+"parl-composition"
+],
+"PYQ-POL-4F3454ECE42A": [
+"parl-composition"
+],
+"PYQ-POL-5418C2631B7F": [
+"parl-officers"
+],
+"PYQ-POL-5613168707B6": [
+"parl-bills"
+],
+"PYQ-POL-5A68BA645A8B": [
+"parl-sessions"
+],
+"PYQ-POL-5B2FB955CCB7": [
+"parl-sessions"
+],
+"PYQ-POL-5E32FC692A91": [
+"parl-budget"
+],
+"PYQ-POL-60AE438B0D70": [
+"parl-composition"
+],
+"PYQ-POL-61F2A61BBB70": [
+"parl-bills",
+"parl-officers"
+],
+"PYQ-POL-626E08B17DFA": [
+"parl-sessions"
+],
+"PYQ-POL-62DA51469BA9": [
+"parl-sessions"
+],
+"PYQ-POL-64F1E8453BA4": [
+"parl-composition"
+],
+"PYQ-POL-656D09B3432E": [
+"parl-bills"
+],
+"PYQ-POL-6A9D7284CA21": [
+"parl-sessions"
+],
+"PYQ-POL-6AD66C030E2A": [
+"parl-sessions"
+],
+"PYQ-POL-73F524941163": [
+"parl-bills"
+],
+"PYQ-POL-7885A91BBFE8": [
+"parl-sessions"
+],
+"PYQ-POL-7936950BC86D": [
+"parl-officers"
+],
+"PYQ-POL-798ECCF4A078": [
+"parl-composition"
+],
+"PYQ-POL-7F6BF9C133CE": [
+"parl-bills",
+"parl-officers"
+],
+"PYQ-POL-85B22955E0D6": [
+"parl-composition"
+],
+"PYQ-POL-8860EAA37813": [
+"parl-composition"
+],
+"PYQ-POL-8DB2A871EDE1": [
+"parl-officers"
+],
+"PYQ-POL-8F9BC9DBE2E8": [
+"parl-bills"
+],
+"PYQ-POL-9017FEA119C5": [
+"parl-bills",
+"parl-budget"
+],
+"PYQ-POL-92CFE7DA9229": [
+"parl-members"
+],
+"PYQ-POL-9433A0A6CC39": [
+"parl-budget"
+],
+"PYQ-POL-95EB48265F61": [
+"parl-composition"
+],
+"PYQ-POL-971A2FF38239": [
+"parl-composition"
+],
+"PYQ-POL-98AA4B4B268A": [
+"parl-budget"
+],
+"PYQ-POL-9DD65C9F42D4": [
+"parl-sessions"
+],
+"PYQ-POL-9FF0CFC4FC15": [
+"parl-composition"
+],
+"PYQ-POL-A6A15B2D238D": [
+"parl-composition",
+"parl-budget"
+],
+"PYQ-POL-A752DF688B04": [
+"parl-bills",
+"parl-officers"
+],
+"PYQ-POL-AB1D80782666": [
+"parl-composition"
+],
+"PYQ-POL-AC1EE60057D5": [
+"parl-composition"
+],
+"PYQ-POL-AF26B733D690": [
+"parl-composition"
+],
+"PYQ-POL-AF652947C42B": [
+"parl-composition"
+],
+"PYQ-POL-APK-0382F4": [
+"parl-bills"
+],
+"PYQ-POL-APK-08899A": [
+"parl-members",
+"parl-composition"
+],
+"PYQ-POL-APK-11CB03": [
+"parl-composition"
+],
+"POL-8.1.2-Q33": [
+"parl-composition"
+],
+"LX-PQ-074": [
+"parl-composition"
+],
+"POL-8.2.2-AR01": [
+"parl-composition"
+],
+"POL-8.2.2-Q35": [
+"parl-composition"
+],
+"LX-PQ-173": [
+"parl-budget"
+],
+"POL-621-C102": [
+"parl-composition"
+],
+"PYQ-POL-APK-917B4A": [
+"parl-composition"
+],
+"PYQ-POL-WEB-CD3696": [
+"parl-officers"
+],
+"LX-PQ-161": [
+"parl-composition"
+],
+"POL-6.7.1-PG08-02": [
+"parl-bills"
+],
+"PYQ-POL-24F9E4E4C4B0": [
+"parl-composition"
+],
+"PYQ-POL-39542BD13000": [
+"parl-composition"
+],
+"PYQ-POL-WEB-2AD75F": [
+"parl-budget"
+],
+"PYQ-POL-WEB-37410B": [
+"parl-composition"
+],
+"PYQ-POL-APK-24F7A6": [
+"parl-composition"
+],
+"POL-691-P68-002": [
+"parl-bills"
+],
+"POL-691-P68-003": [
+"parl-bills"
+],
+"PYQ-POL-19E9E9FECFBB": [
+"parl-composition"
+],
+"LX-PQ-028": [
+"parl-budget"
+],
+"LX-PQ-134": [
+"parl-committees"
+],
+"LX-PQ-147": [
+"parl-committees"
+],
+"LX-PQ-156": [
+"parl-budget"
+],
+"LX-UPSC-2013-Q02": [
+"parl-committees"
+],
+"PYQ-POL-WEB-817DD2": [
+"parl-bills",
+"parl-composition"
+],
+"PYQ-POL-WEB-9FF4EA": [
+"parl-composition"
+],
+"PYQ-POL-9E209D3E0901": [
+"parl-composition"
+],
+"LX-PQ-004": [
+"parl-sessions"
+],
+"LX-PQ-008": [
+"parl-sessions"
+],
+"LX-UPSC-2022-Q09": [
+"parl-officers"
+],
+"PYQ-POL-APK-185803": [
+"parl-bills",
+"parl-composition"
+],
+"PYQ-POL-APK-287D97": [
+"parl-committees"
+],
+"PYQ-POL-APK-288993": [
+"parl-composition"
+],
+"PYQ-POL-APK-2EEF69": [
+"parl-officers"
+],
+"PYQ-POL-APK-2F3C59": [
+"parl-composition"
+],
+"PYQ-POL-APK-3870CB": [
+"parl-budget"
+],
+"PYQ-POL-APK-410CD0": [
+"parl-bills",
+"parl-composition"
+],
+"PYQ-POL-APK-472E8E": [
+"parl-budget"
+],
+"PYQ-POL-APK-571C00": [
+"parl-composition"
+],
+"PYQ-POL-APK-5A9CB6": [
+"parl-sessions"
+],
+"PYQ-POL-APK-6543ED": [
+"parl-sessions"
+],
+"PYQ-POL-APK-70685A": [
+"parl-composition"
+],
+"PYQ-POL-APK-78568D": [
+"parl-officers"
+],
+"PYQ-POL-APK-7977CB": [
+"parl-sessions"
+],
+"PYQ-POL-APK-79B0E1": [
+"parl-composition"
+],
+"PYQ-POL-APK-8BFAF0": [
+"parl-composition"
+],
+"PYQ-POL-APK-9FB835": [
+"parl-bills"
+],
+"PYQ-POL-APK-B6FCE3": [
+"parl-bills"
+],
+"PYQ-POL-APK-BE0116": [
+"parl-budget",
+"parl-sessions"
+],
+"PYQ-POL-APK-CCEDA1": [
+"parl-sessions"
+],
+"PYQ-POL-APK-D01384": [
+"parl-committees"
+],
+"PYQ-POL-APK-D67D7A": [
+"parl-bills"
+],
+"PYQ-POL-APK-D7E12D": [
+"parl-composition"
+],
+"PYQ-POL-APK-D92B22": [
+"parl-composition"
+],
+"PYQ-POL-APK-F651C4": [
+"parl-composition"
+],
+"PYQ-POL-B122035B69F4": [
+"parl-members"
+],
+"PYQ-POL-B773C6D4C066": [
+"parl-composition"
+],
+"PYQ-POL-B96E2CE2AD33": [
+"parl-sessions"
+],
+"PYQ-POL-BC7F1C16EE55": [
+"parl-officers"
+],
+"PYQ-POL-BE9852448314": [
+"parl-members"
+],
+"PYQ-POL-BFC64C5789C7": [
+"parl-sessions"
+],
+"PYQ-POL-C2E436EB5FE5": [
+"parl-officers"
+],
+"PYQ-POL-C335EC2A3B25": [
+"parl-officers"
+],
+"PYQ-POL-CFC8A6A1485A": [
+"parl-bills"
+],
+"PYQ-POL-CFCE8A0E2079": [
+"parl-sessions"
+],
+"PYQ-POL-D4A3C5504D7C": [
+"parl-composition"
+],
+"PYQ-POL-DCF99ED8B255": [
+"parl-composition"
+],
+"PYQ-POL-DE3B57369B99": [
+"parl-composition"
+],
+"PYQ-POL-E2E9B9CE1FA4": [
+"parl-sessions"
+],
+"PYQ-POL-E8729FF50810": [
+"parl-sessions"
+],
+"PYQ-POL-E8E5B385A5AA": [
+"parl-budget"
+],
+"PYQ-POL-EBAB01563609": [
+"parl-bills",
+"parl-sessions"
+],
+"PYQ-POL-F10C78EAB965": [
+"parl-bills",
+"parl-composition"
+],
+"PYQ-POL-F1338FA11142": [
+"parl-members"
+],
+"PYQ-POL-F1DF44E41BE3": [
+"parl-sessions"
+],
+"PYQ-POL-F3FB5D1DAF01": [
+"parl-budget",
+"parl-composition"
+],
+"PYQ-POL-F96EA9B09D9E": [
+"parl-sessions"
+],
+"PYQ-POL-FE182FD7AE18": [
+"parl-composition"
+],
+"PYQ-POL-FF7D8CBF66CC": [
+"parl-officers"
+],
+"PYQ-POL-WEB-04EF14": [
+"parl-budget"
+],
+"PYQ-POL-WEB-0841E0": [
+"parl-bills"
+],
+"PYQ-POL-WEB-0EC43D": [
+"parl-committees"
+],
+"PYQ-POL-WEB-10B119": [
+"parl-composition"
+],
+"PYQ-POL-WEB-16F9E5": [
+"parl-officers"
+],
+"PYQ-POL-WEB-1B4188": [
+"parl-bills"
+],
+"PYQ-POL-WEB-1E270C": [
+"parl-budget"
+],
+"PYQ-POL-WEB-2067E1": [
+"parl-bills"
+],
+"PYQ-POL-WEB-20D4CC": [
+"parl-bills"
+],
+"PYQ-POL-WEB-231608": [
+"parl-committees"
+],
+"PYQ-POL-WEB-24FFA4": [
+"parl-composition"
+],
+"PYQ-POL-WEB-26523F": [
+"parl-bills"
+],
+"PYQ-POL-WEB-283646": [
+"parl-committees"
+],
+"PYQ-POL-WEB-333BF7": [
+"parl-bills"
+],
+"PYQ-POL-WEB-33BF5E": [
+"parl-sessions"
+],
+"PYQ-POL-WEB-3F81CC": [
+"parl-composition"
+],
+"PYQ-POL-WEB-446BA8": [
+"parl-officers"
+],
+"PYQ-POL-WEB-4859A0": [
+"parl-members"
+],
+"PYQ-POL-WEB-49D26C": [
+"parl-officers"
+],
+"PYQ-POL-WEB-4F6920": [
+"parl-composition"
+],
+"PYQ-POL-WEB-62D38E": [
+"parl-bills"
 ]
 }
 }
