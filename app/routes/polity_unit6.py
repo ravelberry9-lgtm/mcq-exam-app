@@ -979,7 +979,7 @@ def ca_home():
     n=sum(len(t.get('mcqs',[])) for t in ts)
     return render_template('ds/polity_ca.html',groups=[g for g in groups if g[3]],lang=lang,periods=have,per=per,
         span=dict((p[0],p[2]) for p in periods)[per],ntopics=len(ts),nmcq=n,start_all=_ca_first(per,lang))
-WHO_TABS=[('persons','Persons','వ్యక్తులు'),('days','Days','దినోత్సవాలు'),('books','Books & writers','పుస్తకాలు & రచయితలు'),('quotes','Quotes','సూక్తులు'),('present','Present office holders','ప్రస్తుత పదవుల్లో ఉన్నవారు')]
+WHO_TABS=[('persons','Persons','వ్యక్తులు'),('days','Days','దినోత్సవాలు'),('books','Books & writers','పుస్తకాలు & రచయితలు'),('quotes','Quotes','సూక్తులు'),('present','Present office holders','ప్రస్తుత పదవుల్లో ఉన్నవారు'),('places','States, UTs & places','రాష్ట్రాలు, UTలు & ప్రదేశాలు'),('dates','Landmark dates','ముఖ్య తేదీలు'),('lists','All office holders since 1950','1950 నుంచి పదవి చేపట్టినవారు')]
 @lru_cache(maxsize=1)
 def who_data():
     d={k:[] for k,_,_ in WHO_TABS};asof={}

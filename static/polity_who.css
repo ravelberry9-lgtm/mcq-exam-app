@@ -11,11 +11,13 @@
 .w-role{font-size:.85rem;color:#0f766e;font-weight:600}
 .w-post{font-size:.78rem;text-transform:uppercase;letter-spacing:.03em;color:#64748b;font-weight:700}
 .w-en{display:block;color:#64748b;font-size:.92em}
-.w-days{flex-direction:row;gap:12px;align-items:flex-start}
-.w-days>div{display:flex;flex-direction:column;gap:3px;min-width:0}
+.w-days,.w-dates{flex-direction:row;gap:12px;align-items:flex-start}
+.w-days>div,.w-dates>div{display:flex;flex-direction:column;gap:3px;min-width:0}
 .w-date{flex:0 0 64px;text-align:center;background:#ecfeff;border:1px solid #99f6e4;border-radius:8px;padding:6px 4px;font-weight:700;color:#0f766e;font-size:.85rem}
 .w-quotes blockquote{margin:0;padding:2px 0 2px 12px;border-left:3px solid #0f766e;font-style:italic;font-size:.98rem;color:#0f172a}
 .w-src{font-size:.78rem;color:#64748b}
 .w-none{text-align:center;color:#64748b}
 @media(min-width:760px){.w-present .w-name{font-size:1.05rem}}
 .w-quotes blockquote>span::before{content:'“'}.w-quotes blockquote>span::after{content:'”'}
+.w-lx{font-size:.72rem;color:#94a3b8}
+.w-dates .w-date{flex:0 0 88px}
