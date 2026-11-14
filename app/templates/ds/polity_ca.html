@@ -1,6 +1,6 @@
 {% extends 'ds/base.html' %}
 {% block title %}Current affairs · Indian Polity{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc4') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261112p') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_ca.css',v='ca3') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc4') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261112p') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_ca.css',v='ca4') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><strong>Current affairs</strong></div>{% endblock %}
 {% block content %}<div class="ca">
 <section class="card ca-top"><h1>{{ 'కరెంట్ అఫైర్స్ — రాజ్యాంగం & ఏపీ' if lang=='te' else 'Current affairs — Indian & AP polity' }}</h1>
