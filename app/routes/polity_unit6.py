@@ -893,5 +893,6 @@ def quick_facts():
     return render_template('ds/polity_facts.html',chapters=chs,nsubs=sum(len(c['subs']) for c in chs))
 @bp.get('/facts/part')
 def quick_facts_part():
-    c=next((x for x in _book_chapters() if x['key']==request.args.get('ch')),None) or abort(404)
-    return render_template('ds/polity_facts_part.html',subs=c['subs'],xl=_xl,link_url=_concept_url,pilot=True)
+    sid=request.args.get('sub','')
+    hit=[ts for c in _book_chapters() for ts in c['subs'] if ts[1]['id']==sid] or abort(404)
+    return render_template('ds/polity_facts_part.html',subs=hit[:1],xl=_xl,link_url=_concept_url,pilot=True)

@@ -1,4 +1,4 @@
-{% import 'ds/_cc_macros.html' as m with context %}{% for tid,s in subs %}<article class="card cg-sub qb-sub" id="{{ s.id }}"><header class="qb-sh"><h3>{{ s.title }}</h3><a href="{{ url_for('polity_unit6.concept_card',tid=tid,sub=s.id) }}#{{ s.id }}">Open card ›</a></header><div class="cg-body">
+{% import 'ds/_cc_macros.html' as m with context %}{% for tid,s in subs %}<article class="cg-sub qb-sub" id="b-{{ s.id }}"><p class="qb-open"><a href="{{ url_for('polity_unit6.concept_card',tid=tid,sub=s.id) }}#{{ s.id }}">Open as concept card ›</a></p><div class="cg-body">
 {% if s.at_a_glance %}<table class="cg-glance cp-on"><tbody>{% for k,v in s.at_a_glance %}<tr><th><i class="cp-dot" aria-hidden="true"></i>{{ k }}</th><td>{{ m.rcell(v) }}</td></tr>{% endfor %}</tbody></table>{% endif %}
 {% for sec in s.sections %}<section class="qb-sec{{ ' traps' if 'trap' in sec.heading|lower }}"><h4>{{ sec.heading }}</h4><div class="cg-secbody">{% for b in sec.blocks %}{{ m.block(b) }}{% endfor %}</div></section>{% endfor %}
 </div></article>{% endfor %}

@@ -831,5 +831,5 @@ def test_concept_book(client,app):
     enable(app)
     h=client.get('/learn/polity/unit6/facts').get_data(as_text=True)
     assert 'qb-ch' in h and '<details' in h and 'Historical Background' in h
-    p=client.get('/learn/polity/unit6/facts/part?ch=lx18')
+    p=client.get('/learn/polity/unit6/facts/part?sub=pres-election')
     assert p.status_code==200 and 'cg-glance' in p.get_data(as_text=True)
