@@ -877,7 +877,7 @@ def test_answer_post_redirect_get_and_ca_practice_filter(client,app):
 
 def test_whos_who_tabs(client,app):
     enable(app)
-    for t in ('persons','days','books','quotes','present','places','dates','lists'):
+    for t in ('persons','days','books','quotes','present','places','dates','numbers','records','symbols','parties','lists'):
         for l in ('en','te','both'):
             r=client.get(f'/learn/polity/unit6/whos-who?t={t}&qlang={l}');assert r.status_code==200
     h=client.get('/learn/polity/unit6/whos-who?t=present&qlang=en').get_data(as_text=True)
