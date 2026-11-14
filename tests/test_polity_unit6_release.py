@@ -883,3 +883,15 @@ def test_whos_who_tabs(client,app):
     h=client.get('/learn/polity/unit6/whos-who?t=present&qlang=en').get_data(as_text=True)
     assert 'Droupadi Murmu' in h and 'As of' in h
     assert '/whos-who' in client.get('/learn/polity').get_data(as_text=True) or True
+
+def test_ap_reorg_section_and_whoswho_sets(client,app):
+    enable(app)
+    h=client.get('/learn/polity/unit6/ap-reorganisation-act').get_data(as_text=True)
+    assert 'AP Reorganisation Act, 2014' in h and '/current-affairs/ra01' in h
+    assert client.get('/learn/polity/unit6/current-affairs/ra07').status_code==200
+    q=client.get('/learn/polity/unit6/practice/CA-ra01-Q1?cat=ra01&qlang=en').get_data(as_text=True)
+    assert 'AP Reorg' in q
+    w=client.get('/learn/polity/unit6/whos-who?t=quickmap').get_data(as_text=True)
+    assert 'w-practise' in w
+    ca=client.get('/learn/polity/unit6/current-affairs?p=recent').get_data(as_text=True)
+    assert '/current-affairs/ra01' not in ca

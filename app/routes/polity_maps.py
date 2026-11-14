@@ -111,7 +111,7 @@ def _load_records():
         for t in read(caf).get('topics',[]):
             for m in t.get('mcqs',[]):
                 q={'id':m['id'],'question_en':m['question_en'],'question_te':m.get('question_te',''),'options_en':m['options_en'],'options_te':m.get('options_te',[]),'answer':m['answer']}
-                q.update(_kind='bank',_chapter=t.get('host_chapter','6.1.1'),_scored=True,_answer=m['answer'],_en=m.get('explanation_en',''),_te=m.get('explanation_te',''),ca_topic=t['id'],ca_period=t.get('period','recent'),_ca=True,ca_trap=bool(m.get('trap')))
+                q.update(_kind='bank',_chapter=t.get('host_chapter','6.1.1'),_scored=True,_answer=m['answer'],_en=m.get('explanation_en',''),_te=m.get('explanation_te',''),ca_topic=t['id'],ca_period=t.get('period','recent'),_ca=True,ca_trap=bool(m.get('trap')),ca_pyq=m.get('pyq',''),ca_disputed=bool(m.get('disputed')))
                 result.setdefault(q['id'],q)
     v2=read(CONTENT/'_shared/PYQ-Explanations-v2.json') if (CONTENT/'_shared/PYQ-Explanations-v2.json').is_file() else {}
     for qid,x in (v2.get('questions',{}) if isinstance(v2,dict) else {}).items():

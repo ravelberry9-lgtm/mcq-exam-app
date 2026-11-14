@@ -477,7 +477,7 @@ def selection(values):
     for k in ('art','amd','case'):
         if values.get(k):qs=[q for q in qs if values[k] in q_tags(q)[k]]
     if values.get('ca'):qs=[q for q in qs if q_tags(q)['ca']]
-    if values.get('cat'):qs=[q for q in qs if q.get('ca_topic')==values['cat'] or values['cat'] in ('all','recent','earlier') and q.get('_ca') and (values['cat']=='all' or q.get('ca_period')==values['cat'])]
+    if values.get('cat'):qs=[q for q in qs if q.get('ca_topic')==values['cat'] or values['cat'] in ('all','recent','earlier','apra') and q.get('_ca') and (values['cat']=='all' and q.get('ca_period') in ('recent','earlier') or q.get('ca_period')==values['cat'])]
     if values.get('cg'):qs=[q for q in qs if any(_cg.topic_of(x)==values['cg'] for x in _cg.index()['qmap'].get(q['id'],[]))]
     if query:qs=[q for q in qs if query.casefold() in (q.get('question_en','')+' '+q.get('question_te','')+' '+q['id']).casefold()]
     if view in ('saved','mistakes'):
@@ -768,7 +768,7 @@ def save_exam_answer(exam_id):
 def _hub_values():
     v={k:request.args.get(k,'').strip() for k in ('kind','chapter')+FACETS}
     v['cat']=request.args.get('cat','').strip()
-    if v['cat'] not in ('','all','recent','earlier'):v['cat']=''
+    if v['cat'] not in ('','all','recent','earlier','apra'):v['cat']=''
     if v['cat'] and v['kind']=='pyq':v['cat']=''
     if v['kind'] not in ('','bank','pyq'):abort(404)
     if v['exam'] and v['exam'] not in dict(EXAM_GROUPS):abort(404)
@@ -791,7 +791,7 @@ def practice_hub():
     start=url_for('.practice',item_id=qs[0]['id'],qlang=lang,**{k:x for k,x in v.items() if x}) if qs else None
     return render_template('ds/polity_practice_hub.html',v=v,count=len(qs),start=start,groups=EXAM_GROUPS,exam_counts=ex,
         chapters=[c for c in chs if c[1]],facets=facet_options(fbase),
-        totals={'bank':sum(q['_kind']=='bank' for q in allq),'pyq':sum(q['_kind']!='bank' for q in allq)},ca_counts={p:sum(1 for q in allq if q.get('_ca') and (p=='all' or q.get('ca_period')==p)) for p in ('all','recent','earlier')},
+        totals={'bank':sum(q['_kind']=='bank' for q in allq),'pyq':sum(q['_kind']!='bank' for q in allq)},ca_counts={p:sum(1 for q in allq if q.get('_ca') and (p=='all' and q.get('ca_period') in ('recent','earlier') or q.get('ca_period')==p)) for p in ('all','recent','earlier','apra')},
         list_url=url_for('.library',**{k:x for k,x in v.items() if x}),resume=_resume_for(v,qs,lang),**_wrong_entry(lang))
 def _concept_url(ref,**kw):
     t,sub=_cg.link_target(ref)
@@ -956,7 +956,7 @@ def _resume_for(v,qs,lang):
     return {'pos':pos+1,'url':url_for('.practice',item_id=item,qlang=lang,**{k:x for k,x in v.items() if x})}
 
 # ---- Current affairs (Indian & AP polity, Nov 2025 – Nov 2026): notes + MCQs ----
-CA_SECTIONS=[('P','Parliament & Constitution amendments','పార్లమెంట్ & రాజ్యాంగ సవరణలు'),('J','Judiciary','న్యాయవ్యవస్థ'),('E','Elections','ఎన్నికలు'),('X','Executive & constitutional bodies','కార్యనిర్వాహక వర్గం & రాజ్యాంగ సంస్థలు'),('F','Federalism & rights','సమాఖ్య విధానం & హక్కులు'),('L','Local government & governance','స్థానిక ప్రభుత్వాలు & పాలన'),('A','Andhra Pradesh polity','ఆంధ్రప్రదేశ్ రాజకీయ వ్యవస్థ'),('R','Reports, indices & days','నివేదికలు, సూచీలు & దినోత్సవాలు')]
+CA_SECTIONS=[('P','Parliament & Constitution amendments','పార్లమెంట్ & రాజ్యాంగ సవరణలు'),('J','Judiciary','న్యాయవ్యవస్థ'),('E','Elections','ఎన్నికలు'),('X','Executive & constitutional bodies','కార్యనిర్వాహక వర్గం & రాజ్యాంగ సంస్థలు'),('F','Federalism & rights','సమాఖ్య విధానం & హక్కులు'),('L','Local government & governance','స్థానిక ప్రభుత్వాలు & పాలన'),('A','Andhra Pradesh polity','ఆంధ్రప్రదేశ్ రాజకీయ వ్యవస్థ'),('R','Reports, indices & days','నివేదికలు, సూచీలు & దినోత్సవాలు'),('Z','AP Reorganisation Act, 2014','ఏపీ పునర్వ్యవస్థీకరణ చట్టం, 2014')]
 @lru_cache(maxsize=1)
 def ca_data():
     f=CONTENT/'current-affairs'/'topics.json'
@@ -965,7 +965,7 @@ def ca_data():
 def ca_for_concept(sub_id):
     return [t for t in ca_data()['topics'] if sub_id in (t.get('concepts') or [])]
 def _ca_first(cat,lang):
-    qs=[q for q in records().values() if visible(q) and q.get('_ca') and (cat=='all' or q.get('ca_topic')==cat or q.get('ca_period')==cat)]
+    qs=[q for q in records().values() if visible(q) and q.get('_ca') and (cat=='all' and q.get('ca_period') in ('recent','earlier') or q.get('ca_topic')==cat or q.get('ca_period')==cat)]
     return url_for('.practice',item_id=qs[0]['id'],cat=cat,chapter='',qlang=lang,fresh='1') if qs else None
 @bp.get('/current-affairs')
 def ca_home():
@@ -979,7 +979,7 @@ def ca_home():
     n=sum(len(t.get('mcqs',[])) for t in ts)
     return render_template('ds/polity_ca.html',groups=[g for g in groups if g[3]],lang=lang,periods=have,per=per,
         span=dict((p[0],p[2]) for p in periods)[per],ntopics=len(ts),nmcq=n,start_all=_ca_first(per,lang))
-WHO_TABS=[('persons','Persons','వ్యక్తులు'),('days','Days','దినోత్సవాలు'),('books','Books & writers','పుస్తకాలు & రచయితలు'),('quotes','Quotes','సూక్తులు'),('present','Present office holders','ప్రస్తుత పదవుల్లో ఉన్నవారు'),('places','States, UTs & places','రాష్ట్రాలు, UTలు & ప్రదేశాలు'),('dates','Landmark dates','ముఖ్య తేదీలు'),('numbers','Numbers to remember','గుర్తుంచుకోవలసిన సంఖ్యలు'),('records','Highest, longest, first','అత్యధికం, సుదీర్ఘం, మొదటి'),('symbols','Symbols & languages','చిహ్నాలు & భాషలు'),('parties','Parties & alliances','పార్టీలు & కూటములు'),('lists','All office holders since 1950','1950 నుంచి పదవి చేపట్టినవారు')]
+WHO_TABS=[('persons','Persons','వ్యక్తులు'),('days','Days','దినోత్సవాలు'),('books','Books & writers','పుస్తకాలు & రచయితలు'),('quotes','Quotes','సూక్తులు'),('present','Present office holders','ప్రస్తుత పదవుల్లో ఉన్నవారు'),('places','States, UTs & places','రాష్ట్రాలు, UTలు & ప్రదేశాలు'),('dates','Landmark dates','ముఖ్య తేదీలు'),('numbers','Numbers to remember','గుర్తుంచుకోవలసిన సంఖ్యలు'),('records','Highest, longest, first','అత్యధికం, సుదీర్ఘం, మొదటి'),('symbols','Symbols & languages','చిహ్నాలు & భాషలు'),('parties','Parties & alliances','పార్టీలు & కూటములు'),('quickmap','Quick map: Articles, Parts, cases','త్వరిత పటం: ప్రకరణలు, భాగాలు, కేసులు'),('lists','All office holders since 1950','1950 నుంచి పదవి చేపట్టినవారు')]
 @lru_cache(maxsize=1)
 def who_data():
     d={k:[] for k,_,_ in WHO_TABS};asof={}
@@ -995,13 +995,21 @@ def whos_who():
     tab=request.args.get('t','persons')
     if tab not in d:tab='persons'
     tabs=[(k,en,te,sum(len(g.get('items',[])) for g in d[k])) for k,en,te in WHO_TABS if d[k]]
-    return render_template('ds/polity_who.html',tabs=tabs,tab=tab,groups=d[tab],asof=asof.get(tab,''),lang=lang)
+    sets=[(t['id'],t['title_te'] if lang=='te' and t.get('title_te') else t['title_en'],len(t.get('mcqs',[])),_ca_first(t['id'],lang)) for t in ca_data()['topics'] if t.get('period')=='who' and t.get('wtab')==tab]
+    return render_template('ds/polity_who.html',tabs=tabs,tab=tab,groups=d[tab],asof=asof.get(tab,''),lang=lang,sets=sets)
+@bp.get('/ap-reorganisation-act')
+def ap_reorg():
+    lang=language();ts=[t for t in ca_data()['topics'] if t.get('period')=='apra']
+    if not ts:abort(404)
+    n=sum(len(t.get('mcqs',[])) for t in ts);npyq=sum(1 for t in ts for m in t.get('mcqs',[]) if m.get('pyq'))
+    return render_template('ds/polity_ca.html',groups=[('Z','AP Reorganisation Act, 2014','ఏపీ పునర్వ్యవస్థీకరణ చట్టం, 2014',ts)],lang=lang,periods=[],per='apra',
+        span=f'{npyq} PYQs included',ntopics=len(ts),nmcq=n,start_all=_ca_first('apra',lang),apra=True)
 @bp.get('/current-affairs/<tid>')
 def ca_topic(tid):
     lang=language();t=next((x for x in ca_data()['topics'] if x['id']==tid),None) or abort(404)
     subs={s['id']:(tp['id'],s['title']) for tp in [_cg.topic(x['id']) for x in _cg.topics()] if tp for s in tp['subcards']}
     links=[(subs[c][1],url_for('.concept_card',tid=subs[c][0],sub=c)+'#'+c) for c in t.get('concepts',[]) if c in subs]
-    order=[x['id'] for x in ca_data()['topics']];i=order.index(tid)
+    order=[x['id'] for x in ca_data()['topics'] if x.get('period','recent')==t.get('period','recent')];i=order.index(tid)
     return render_template('ds/polity_ca_topic.html',t=t,lang=lang,links=links,start=_ca_first(tid,lang),
         prev=order[i-1] if i else None,next=order[i+1] if i+1<len(order) else None,sections={k:(en,te) for k,en,te in CA_SECTIONS})
 @bp.app_template_filter('ca_title')

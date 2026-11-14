@@ -1,13 +1,13 @@
 {% extends 'ds/base.html' %}
-{% block title %}Current affairs · Indian Polity{% endblock %}
+{% block title %}{{ 'AP Reorganisation Act, 2014' if apra else 'Current affairs' }} · Indian Polity{% endblock %}
 {% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc4') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261112p') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_ca.css',v='ca4') }}">{% endblock %}
-{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><strong>Current affairs</strong></div>{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><strong>{{ 'AP Reorganisation Act' if apra else 'Current affairs' }}</strong></div>{% endblock %}
 {% block content %}<div class="ca">
-<section class="card ca-top"><h1>{{ 'కరెంట్ అఫైర్స్ — రాజ్యాంగం & ఏపీ' if lang=='te' else 'Current affairs — Indian & AP polity' }}</h1>
+<section class="card ca-top"><h1>{% if apra %}{{ 'ఏపీ పునర్వ్యవస్థీకరణ చట్టం, 2014 — పూర్తి విభాగం' if lang=='te' else 'AP Reorganisation Act, 2014 — complete section' }}{% else %}{{ 'కరెంట్ అఫైర్స్ — రాజ్యాంగం & ఏపీ' if lang=='te' else 'Current affairs — Indian & AP polity' }}{% endif %}</h1>
 {% if periods|length>1 %}<div class="ca-per" role="tablist">{% for k,label,sp in periods %}<a role="tab" class="{{ 'on' if k==per }}" aria-selected="{{ 'true' if k==per else 'false' }}" href="{{ url_for('polity_unit6.ca_home',p=k,qlang=lang) }}"><b>{{ label }}</b><small>{{ sp }}</small></a>{% endfor %}</div>{% endif %}
 <p>{{ ntopics }} topics · {{ nmcq }} MCQs · {{ span }}</p>
-<div class="ca-lang" role="group" aria-label="Language / భాష">{% for code,label in [('en','English'),('te','తెలుగు'),('both','తెలుగు + English')] %}<a class="{{ 'on' if code==lang }}" href="{{ url_for('polity_unit6.ca_home',qlang=code,p=per) }}">{{ label }}</a>{% endfor %}</div>
-{% if start_all %}<a class="ca-go" href="{{ start_all }}">Practise all {{ nmcq }} MCQs of this period ›</a>{% endif %}</section>
+<div class="ca-lang" role="group" aria-label="Language / భాష">{% for code,label in [('en','English'),('te','తెలుగు'),('both','తెలుగు + English')] %}<a class="{{ 'on' if code==lang }}" href="{{ url_for('polity_unit6.ap_reorg',qlang=code) if apra else url_for('polity_unit6.ca_home',qlang=code,p=per) }}">{{ label }}</a>{% endfor %}</div>
+{% if start_all %}<a class="ca-go" href="{{ start_all }}">Practise all {{ nmcq }} {{ 'questions' if apra else 'MCQs of this period' }} ›</a>{% endif %}</section>
 {% for k,en,te,ts in groups %}<details class="ca-sec" {{ 'open' if loop.first }}><summary><span>{{ te if lang=='te' else en }}</span><small>{{ ts|length }} topics</small><i aria-hidden="true">⌄</i></summary>
 <div class="ca-list">{% for t in ts %}<a class="ca-item" href="{{ url_for('polity_unit6.ca_topic',tid=t.id,qlang=lang) }}"><span class="ca-date">{{ t.date }}</span><b>{{ t.title_te if lang=='te' and t.title_te else t.title_en }}</b><small>{{ t.mcqs|length }} MCQs</small></a>{% endfor %}</div></details>{% endfor %}
 </div>{% endblock %}
