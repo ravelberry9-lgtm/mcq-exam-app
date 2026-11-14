@@ -979,6 +979,23 @@ def ca_home():
     n=sum(len(t.get('mcqs',[])) for t in ts)
     return render_template('ds/polity_ca.html',groups=[g for g in groups if g[3]],lang=lang,periods=have,per=per,
         span=dict((p[0],p[2]) for p in periods)[per],ntopics=len(ts),nmcq=n,start_all=_ca_first(per,lang))
+WHO_TABS=[('persons','Persons','వ్యక్తులు'),('days','Days','దినోత్సవాలు'),('books','Books & writers','పుస్తకాలు & రచయితలు'),('quotes','Quotes','సూక్తులు'),('present','Present office holders','ప్రస్తుత పదవుల్లో ఉన్నవారు')]
+@lru_cache(maxsize=1)
+def who_data():
+    d={k:[] for k,_,_ in WHO_TABS};asof={}
+    folder=CONTENT/'whoswho'
+    if folder.exists():
+        for f in sorted(folder.glob('*.json')):
+            j=read(f);t=j.get('tab')
+            if t in d:d[t]+=j.get('groups',[]);asof[t]=j.get('asof','')
+    return d,asof
+@bp.get('/whos-who')
+def whos_who():
+    lang=language();d,asof=who_data()
+    tab=request.args.get('t','persons')
+    if tab not in d:tab='persons'
+    tabs=[(k,en,te,sum(len(g.get('items',[])) for g in d[k])) for k,en,te in WHO_TABS if d[k]]
+    return render_template('ds/polity_who.html',tabs=tabs,tab=tab,groups=d[tab],asof=asof.get(tab,''),lang=lang)
 @bp.get('/current-affairs/<tid>')
 def ca_topic(tid):
     lang=language();t=next((x for x in ca_data()['topics'] if x['id']==tid),None) or abort(404)

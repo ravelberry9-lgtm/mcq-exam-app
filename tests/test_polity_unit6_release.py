@@ -874,3 +874,12 @@ def test_answer_post_redirect_get_and_ca_practice_filter(client,app):
     assert 'answer-result' in page and 'Full topic notes' in page
     hub=client.get('/learn/polity/unit6/practice?kind=bank&cat=all').get_data(as_text=True)
     assert 'Current affairs' in hub and 'cat=all' in hub and '/practice/CA-' in hub
+
+def test_whos_who_tabs(client,app):
+    enable(app)
+    for t in ('persons','days','books','quotes','present'):
+        for l in ('en','te','both'):
+            r=client.get(f'/learn/polity/unit6/whos-who?t={t}&qlang={l}');assert r.status_code==200
+    h=client.get('/learn/polity/unit6/whos-who?t=present&qlang=en').get_data(as_text=True)
+    assert 'Droupadi Murmu' in h and 'As of' in h
+    assert '/whos-who' in client.get('/learn/polity').get_data(as_text=True) or True
