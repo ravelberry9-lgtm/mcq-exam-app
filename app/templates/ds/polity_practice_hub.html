@@ -1,9 +1,11 @@
 {% extends 'ds/base.html' %}
+{% set nav_active='practice' %}
 {% block title %}Practice · Indian Polity{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc2') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261112p') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc4') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_unit6.css',v='20261112p') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.home') }}">‹ Polity</a><strong>Practice</strong></div>{% endblock %}
 {% block content %}<i hidden data-no-tools></i><div class="u6 ph">
 {% set kind=v.kind %}{% set pyqish=kind in ('pyq','') %}
+{% if wrong_start %}<a class="card ph-wrongcard" href="{{ wrong_start }}"><span class="ph-wx" aria-hidden="true">✗</span><span><b>My wrong answers</b><small>{{ wrong_n }} question{{ '' if wrong_n==1 else 's' }} to practise again</small></span><i aria-hidden="true">›</i></a>{% endif %}
 <form class="ph-form" method="get" action="{{ url_for('polity_unit6.practice_hub') }}" id="ph-form">
 <section class="card ph-top">
   <h1 class="ph-h">Practice</h1>
@@ -47,7 +49,7 @@
 <noscript><button class="ph-apply" type="submit">Apply filters</button></noscript>
 <div class="ph-bar">
   <div class="ph-count"><b>{{ count }}</b> question{{ '' if count==1 else 's' }}{% if v.chapter or v.exam or v.art or v.amd or v.case or v.ca %} · <a href="{{ url_for('polity_unit6.practice_hub',kind=kind) }}">Clear filters</a>{% endif %}</div>
-  {% if start and resume %}<a class="ph-go" href="{{ resume.url }}">Resume from Q{{ resume.pos }} of {{ count }}</a><a class="ph-restart" href="{{ start ~ ('&' if '?' in start else '?') ~ 'fresh=1' }}">↺ Start from beginning</a>{% elif start %}<a class="ph-go" href="{{ start ~ ('&' if '?' in start else '?') ~ 'fresh=1' }}">Start practice</a>{% else %}<span class="ph-go off" aria-disabled="true">No questions</span>{% endif %}{% if wrong_start %}<a class="ph-wrong" href="{{ wrong_start }}">✗ Practise my wrong answers <b>{{ wrong_n }}</b></a>{% endif %}
+  {% if start and resume %}<div class="ph-acts"><a class="ph-go" href="{{ resume.url }}">Resume · Q{{ resume.pos }}</a><a class="ph-restart" href="{{ start ~ ('&' if '?' in start else '?') ~ 'fresh=1' }}">↺ Start from Q1</a></div>{% elif start %}<a class="ph-go" href="{{ start ~ ('&' if '?' in start else '?') ~ 'fresh=1' }}">Start practice</a>{% else %}<span class="ph-go off" aria-disabled="true">No questions</span>{% endif %}
 </div>
 </form>
 </div>{% endblock %}

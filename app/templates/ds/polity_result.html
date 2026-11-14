@@ -1,7 +1,7 @@
 {% extends 'ds/base.html' %}
 {% set nav_active='practice' %}
 {% block title %}Practice result · Indian Polity{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc2') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_result.css',v='r1') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc4') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_result.css',v='r1') }}">{% endblock %}
 {% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.practice_hub',qlang=lang) }}">‹ Practice</a><strong>Your result</strong></div>{% endblock %}
 {% block content %}{% set pct=((run.ok*100/run.n)|round|int) if run.n else 0 %}<div class="rs">
 <section class="card rs-top">
