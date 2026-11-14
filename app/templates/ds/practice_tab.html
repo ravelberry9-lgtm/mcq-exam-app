@@ -1,0 +1,10 @@
+{% extends 'ds/base.html' %}{% import 'ds/_c.html' as c %}
+{% set nav_active='practice' %}
+{% block title %}Practice{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc2') }}"><link rel="stylesheet" href="{{ url_for('static',filename='practice_start.css',v='ps2') }}">{% endblock %}
+{% block content %}<div class="ps">
+<h1 class="ps-h">Practice</h1><p class="ps-sub">Choose a subject.</p>
+{% if unit6_enabled %}<a class="card ps-card" href="{{ url_for('polity_unit6.practice_start') }}"><span class="ps-ico" aria-hidden="true">⚖️</span><span><b>{{ c.bi('Indian Polity','భారత రాజ్యాంగం') }}</b><small>Practice · Wrong answers</small></span><i aria-hidden="true">›</i></a>{% endif %}
+<a class="card ps-card" href="{{ url_for('geography.index') }}"><span class="ps-ico" aria-hidden="true">🌏</span><span><b>{{ c.bi('Geography','భూగోళశాస్త్రం') }}</b><small>World, India &amp; Andhra Pradesh</small></span><i aria-hidden="true">›</i></a>
+{% if science_available %}<a class="card ps-card" href="{{ url_for('science.index') }}"><span class="ps-ico" aria-hidden="true">🔬</span><span><b>{{ c.bi('Science & Technology','సైన్స్ & టెక్నాలజీ') }}</b><small>Mapped MCQs</small></span><i aria-hidden="true">›</i></a>{% endif %}
+</div>{% endblock %}

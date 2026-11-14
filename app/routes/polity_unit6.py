@@ -2,7 +2,7 @@
 import os,random,uuid
 from pathlib import Path
 from datetime import datetime,timedelta
-from flask import Blueprint,abort,current_app,redirect,render_template,request,url_for,make_response,jsonify
+from flask import Blueprint,abort,current_app,redirect,render_template,request,url_for,make_response,jsonify,session
 from ..db import db
 from ..polity_models import PolityUnit6State,PolityUnit6Progress,PolityUnit6Exam
 from ..services.device import device_id
@@ -608,7 +608,7 @@ def question_page(q,choice=None,review=False,qs=None):
     has_notes=(directory(q['_chapter'])/'Notes.html').is_file()
     if not links and has_notes:links=[dict(url=notes+'#question-explanation',basis='explanation')]
     if not has_notes:notes=None
-    return render_template('ds/polity_question.html',concept_subs=lambda i:_cg.subs_for(i),question=q,choice=choice,feedback=feedback,lang=lang,context=context,
+    return render_template('ds/polity_question.html',run=_run(),concept_subs=lambda i:_cg.subs_for(i),question=q,choice=choice,feedback=feedback,lang=lang,context=context,
         state=db.session.get(PolityUnit6State,(device_id(),q['id'])),position=pos+1,total=len(qs),
         previous=qs[pos-1]['id'] if pos else None,following=qs[pos+1]['id'] if pos+1<len(qs) else None,
         notes_url=notes,section_links=links,review_args=review_args)
@@ -682,7 +682,11 @@ def practice(item_id):
         alias=next((r.get('canonical_question_id') for r in read(CONTENT/'_shared/Expected-Questions.json') if r['id']==item_id),None)
         if alias in records():return redirect(url_for('.practice',item_id=alias))
         abort(404)
+    if request.args.get('fresh')=='1':
+        _run_reset();args={k:v for k,v in request.args.items() if k!='fresh'}
+        return redirect(url_for('.practice',item_id=item_id,**args))
     choice=request.args.get('choice',type=int)
+    _remember_last(item_id)
     return question_page(q,choice,request.args.get('review')=='1' and choice in (1,2,3,4))
 
 @bp.post('/practice/<item_id>')
@@ -702,6 +706,7 @@ def answer(item_id):
     if feedback=='incorrect':state.wrong_count+=1
     else:state.wrong_count=0
     db.session.commit()
+    _run_record(q['id'],feedback=='correct');_remember_last(q['id'])
     return question_page(q,selected,True,qs)
 
 @bp.post('/progress/<chapter_id>')
@@ -780,7 +785,7 @@ def practice_hub():
     return render_template('ds/polity_practice_hub.html',v=v,count=len(qs),start=start,groups=EXAM_GROUPS,exam_counts=ex,
         chapters=[c for c in chs if c[1]],facets=facet_options(fbase),
         totals={'bank':sum(q['_kind']=='bank' for q in allq),'pyq':sum(q['_kind']!='bank' for q in allq)},
-        list_url=url_for('.library',**{k:x for k,x in v.items() if x}))
+        list_url=url_for('.library',**{k:x for k,x in v.items() if x}),resume=_resume_for(v,qs,lang),**_wrong_entry(lang))
 def _concept_url(ref,**kw):
     t,sub=_cg.link_target(ref)
     if not t:return None
@@ -896,3 +901,49 @@ def quick_facts_part():
     sid=request.args.get('sub','')
     hit=[ts for c in _book_chapters() for ts in c['subs'] if ts[1]['id']==sid] or abort(404)
     return render_template('ds/polity_facts_part.html',subs=hit[:1],xl=_xl,link_url=_concept_url,pilot=True)
+
+
+# ---- Practice score: marks for the current practice run (kept in the browser session) ----
+def _run():
+    r=session.get('u6run') or {}
+    return {'n':r.get('n',0),'ok':r.get('ok',0),'wrong':r.get('wrong',[]),'seen':r.get('seen',[])}
+def _run_reset():session['u6run']={'n':0,'ok':0,'wrong':[],'seen':[]}
+def _run_record(item_id,correct):
+    r=_run()
+    if item_id in r['seen']:return            # first attempt only counts for marks
+    r['seen']=(r['seen']+[item_id])[-150:];r['n']+=1
+    if correct:r['ok']+=1
+    else:r['wrong']=(r['wrong']+[item_id])[-100:]
+    session['u6run']=r
+@bp.get('/practice/result')
+def practice_result():
+    r=_run();lang=language();recs=records()
+    wrong=[recs[i] for i in r['wrong'] if i in recs]
+    pending={s.item_id for s in PolityUnit6State.query.filter_by(device_id=device_id()).all() if s.wrong_count>0}
+    allwrong=[q for q in recs.values() if q['id'] in pending and visible(q)]
+    return render_template('ds/polity_result.html',run=r,wrong=wrong,lang=lang,total_wrong=len(allwrong),
+        retry=url_for('.practice',item_id=allwrong[0]['id'],view='mistakes',chapter='',qlang=lang,fresh='1') if allwrong else None)
+def _wrong_entry(lang):
+    ids={s.item_id for s in PolityUnit6State.query.filter_by(device_id=device_id()).all() if s.wrong_count>0}
+    qs=[q for q in records().values() if q['id'] in ids and visible(q)]
+    return {'wrong_n':len(qs),'wrong_start':url_for('.practice',item_id=qs[0]['id'],view='mistakes',chapter='',qlang=lang,fresh='1') if qs else None}
+@bp.get('/practice-start')
+def practice_start():
+    """Indian Polity from the Practice tab: practise, or practise only my wrong answers."""
+    lang=language()
+    return render_template('ds/polity_practice_start.html',lang=lang,**_wrong_entry(lang))
+
+# ---- Resume: remember the last question opened for each practice selection ----
+def _sel_sig(args):
+    return '&'.join(f'{k}={args.get(k)}' for k in ('kind','chapter')+tuple(FACETS) if args.get(k))
+def _remember_last(item_id):
+    if request.args.get('view') or request.args.get('review')=='1':return
+    d=dict(session.get('u6last') or {});sig=_sel_sig(request.args)
+    d.pop(sig,None);d[sig]=item_id
+    while len(d)>25:d.pop(next(iter(d)))
+    session['u6last']=d
+def _resume_for(v,qs,lang):
+    item=(session.get('u6last') or {}).get(_sel_sig(v))
+    pos=next((i for i,q in enumerate(qs) if q['id']==item),None)
+    if pos is None or pos==0:return None
+    return {'pos':pos+1,'url':url_for('.practice',item_id=item,qlang=lang,**{k:x for k,x in v.items() if x})}

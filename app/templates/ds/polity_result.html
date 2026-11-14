@@ -1,0 +1,16 @@
+{% extends 'ds/base.html' %}
+{% set nav_active='practice' %}
+{% block title %}Practice result · Indian Polity{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc2') }}"><link rel="stylesheet" href="{{ url_for('static',filename='polity_result.css',v='r1') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('polity_unit6.practice_hub',qlang=lang) }}">‹ Practice</a><strong>Your result</strong></div>{% endblock %}
+{% block content %}{% set pct=((run.ok*100/run.n)|round|int) if run.n else 0 %}<div class="rs">
+<section class="card rs-top">
+{% if run.n %}<p class="rs-big"><b>{{ run.ok }}</b> / {{ run.n }}</p><p class="rs-pct">{{ pct }}% correct</p>
+<div class="rs-bar" aria-hidden="true"><i style="width:{{ pct }}%"></i></div>
+<ul class="rs-sum"><li class="ok">✓ {{ run.ok }} correct</li><li class="no">✗ {{ run.n-run.ok }} wrong</li></ul>
+{% else %}<p class="rs-pct">You haven't answered any questions in this practice yet.</p>{% endif %}
+<div class="rs-act">{% if retry %}<a class="rs-btn primary" href="{{ retry }}">Practise my wrong answers ({{ total_wrong }})</a>{% endif %}<a class="rs-btn" href="{{ url_for('polity_unit6.practice_hub',qlang=lang) }}">New practice</a></div>
+<p class="rs-note">Wrong answers stay in "my wrong answers" until you answer them correctly; then they drop off by themselves.</p>
+</section>
+{% if wrong %}<section class="card"><h2>Wrong in this practice ({{ wrong|length }})</h2><ol class="rs-list">{% for q in wrong %}<li><a href="{{ url_for('polity_unit6.practice',item_id=q.id,qlang=lang,review='1',choice=q._answer) }}">{{ (q.question_te if lang=='te' and q.question_te else q.question_en)|truncate(140) }}</a></li>{% endfor %}</ol></section>{% endif %}
+</div>{% endblock %}

@@ -53,6 +53,13 @@ def hub():
                            science_available=science_available)
 
 
+@bp.route("/practice")
+def practice_tab():
+    """Bottom-bar Practice tab: pick a subject to practise."""
+    science_available = any(science_content.load_book(item["slug"]) for item in science_content.CHAPTERS)
+    return render_template("ds/practice_tab.html", science_available=science_available)
+
+
 @bp.route("/section/<int:section_id>")
 def section(section_id):
     sec = db.session.get(ExamSection, section_id) or abort(404)

@@ -1,0 +1,11 @@
+{% extends 'ds/base.html' %}
+{% set nav_active='practice' %}
+{% block title %}Practice · Indian Polity{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static',filename='geography.css',v='sc2') }}"><link rel="stylesheet" href="{{ url_for('static',filename='practice_start.css',v='ps2') }}">{% endblock %}
+{% block topbar %}<div class="geo-qheader"><a href="{{ url_for('learn.practice_tab') }}">‹ Practice</a><strong>Indian Polity</strong></div>{% endblock %}
+{% block content %}<div class="ps">
+<a class="card ps-big" href="{{ url_for('polity_unit6.practice_hub',qlang=lang) }}"><span class="ps-ico" aria-hidden="true">✓</span><span><b>Practice</b><small>PYQs and MCQs by chapter, exam or topic. Your score is shown as you go.</small></span><i aria-hidden="true">›</i></a>
+{% if wrong_start %}<a class="card ps-big ps-wrong" href="{{ wrong_start }}"><span class="ps-ico" aria-hidden="true">✗</span><span><b>Wrong answers only <em>{{ wrong_n }}</em></b><small>Questions you got wrong. Answer one correctly and it drops off the list.</small></span><i aria-hidden="true">›</i></a>
+{% else %}<div class="card ps-big ps-wrong off" aria-disabled="true"><span class="ps-ico" aria-hidden="true">✗</span><span><b>Wrong answers only</b><small>No wrong answers yet. Questions you get wrong in practice will collect here.</small></span></div>{% endif %}
+<a class="card ps-big" href="{{ url_for('polity_unit6.practice_result',qlang=lang) }}"><span class="ps-ico" aria-hidden="true">📊</span><span><b>Last practice result</b><small>Marks and wrong answers from your current practice.</small></span><i aria-hidden="true">›</i></a>
+</div>{% endblock %}

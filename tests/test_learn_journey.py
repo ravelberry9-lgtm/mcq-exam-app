@@ -147,7 +147,7 @@ def test_topic_hub_enables_real_tiles_and_disables_unbuilt_ones(c, world):
     assert html.count('aria-disabled="true"') >= 4              # PYQ, infographics, news, test
     # a chapter without MCQs: the MCQ tile is inert
     html = c.get(f'/learn/topic/{world["c3"].id}').get_data(as_text=True)
-    assert "/practice" not in html
+    assert "/practice" not in html.replace('href="/learn/practice"', '')   # bottom-bar Practice tab is allowed
 
 
 # ── notes ──────────────────────────────────────────────────────────

@@ -833,3 +833,22 @@ def test_concept_book(client,app):
     assert 'qb-ch' in h and '<details' in h and 'Historical Background' in h
     p=client.get('/learn/polity/unit6/facts/part?sub=pres-election')
     assert p.status_code==200 and 'cg-glance' in p.get_data(as_text=True)
+
+
+def test_practice_score_and_result(client,app):
+    enable(app)
+    from app.routes.polity_maps import records
+    q=next(x for x in records().values() if x.get('_kind')=='bank' and x.get('_answer') in (1,2,3,4) and not x.get('hold_reason'))
+    client.get(f"/learn/polity/unit6/practice/{q['id']}?fresh=1")
+    wrong=1 if q['_answer']!=1 else 2
+    h=client.post(f"/learn/polity/unit6/practice/{q['id']}",data={'answer':wrong}).get_data(as_text=True)
+    assert 'Score <b>0</b> / 1' in h
+    r=client.get('/learn/polity/unit6/practice/result').get_data(as_text=True)
+    assert 'Practise my wrong answers' in r and '0</b> / 1' in r
+
+
+def test_practice_tab_and_start(client,app):
+    enable(app)
+    assert 'Indian Polity' in client.get('/learn/practice').get_data(as_text=True)
+    h=client.get('/learn/polity/unit6/practice-start').get_data(as_text=True)
+    assert 'Wrong answers only' in h and 'Last practice result' in h
